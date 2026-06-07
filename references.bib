@@ -4,7 +4,7 @@
 % Key convention:  <firstauthorlastname><year>  (all lower-case)
 % Source of truth: content/schema/references.ts (CSL-JSON)
 % Generator:       content/pipeline/export-bibtex.ts
-% Generated:       2026-06-02T14:50:58.699Z
+% Generated:       2026-06-07T04:21:46.387Z
 @article{garoufalidis2004,
   author  = {Garoufalidis, Stavros},
   title   = {{On the characteristic and deformation varieties of a knot}},
@@ -3094,12 +3094,13 @@
 }
 
 @article{halverson-1998-markov-weights,
-  author     = {Halverson, Tom},
+  author     = {Orellana, Rosa C.},
   title      = {{Weights of Markov Traces on Hecke Algebras}},
-  journal    = {arXiv preprint},
+  journal    = {Journal of Algebra},
   year       = {1998},
+  doi        = {10.1006/jabr.1998.7437},
   url        = {https://arxiv.org/abs/math/9806163},
-  note       = {arXiv:math/9806163. Added 2026-05-19 from uploads/ gap audit. DIRECT fit with QOU's Wedderburn-block weight content (y-lambda-closed-form-wenzl-bridge.md, etc.). Potential citation target.},
+  note       = {arXiv:math/9806163; J. Algebra (1998), DOI 10.1006/jabr.1998.7437. AUTHOR CORRECTED 2026-06-04: this is R.C. ORELLANA's paper, not Halverson's — both the arXiv ID and the DOI resolve to Orellana, 'Weights of Markov Traces on Hecke Algebras'. The id 'halverson-1998-markov-weights' is a legacy misnomer kept to avoid re-keying 5 citers (MarkovTrace.lean, Hoefsmit.lean, hecke-branching-trace-decomposition.{lean,ts}, wedderburn-weight-canonical.ts); rename in a dedicated pass. FLAG: the hecke-branching citer invokes a 'Murnaghan–Nakayama-type rule', better served by [ram1991]/[hoefsmit1974] than this weights paper — review citation appropriateness separately.},
   annotation = {[Verified] by agent (claude-opus-4-7) 2026-05-19},
 }
 
@@ -3121,6 +3122,115 @@
   url        = {https://arxiv.org/abs/math/9911033},
   note       = {arXiv:math/9911033. Added 2026-05-19 from uploads/ gap audit. Possible fit with QOU's Riemann-surface / Bring's-surface geometry (archimedean-universe chapters) but no obvious citation target found in current QOU prose; mark pending-placement.},
   annotation = {[Pending-Placement] by agent (claude-opus-4-7) 2026-05-19},
+}
+
+@article{kontsevich-soibelman-2008,
+  author  = {Kontsevich, Maxim and Soibelman, Yan},
+  title   = {{Stability structures, motivic Donaldson-Thomas invariants and cluster transformations}},
+  journal = {arXiv preprint},
+  year    = {2008},
+  url     = {https://arxiv.org/abs/0811.2435},
+  note    = {arXiv:0811.2435 (148 pp, arXiv-only). Added 2026-06-04 from uploads/0811.2435v1.pdf. Comparison with QOU in docs/audits/2026-06-04-kontsevich-soibelman-0811.2435-qou-comparison.md: source of the special-Lagrangian <-> central/trace-observable dictionary, the Euler-form <-> Frobenius-pairing analogy, and the multiplicative wall-crossing formula QOU avoids by pinning q_0. RIGOR CAVEAT: many KS proofs are sketches (Thm 3/4 say 'details to the reader'); admit to QOU content only if Lean-backable.},
+}
+
+@article{garoufalidis-zagier-2024,
+  author  = {Garoufalidis, Stavros and Zagier, Don},
+  title   = {{Knots, Perturbative Series and Quantum Modularity}},
+  journal = {Symmetry, Integrability and Geometry: Methods and Applications (SIGMA)},
+  year    = {2024},
+  volume  = {20},
+  pages   = {055},
+  doi     = {10.3842/SIGMA.2024.055},
+  url     = {https://arxiv.org/abs/2111.06645},
+  note    = {arXiv:2111.06645, SIGMA 20 (2024) 055. Added 2026-06-04 from uploads/2111.06645v3.pdf. Rigorous all-orders refinement of the Kashaev volume conjecture: a matrix invariant whose (sigma_0, sigma_1) entry is the Kashaev invariant in the Habiro ring (sigma_0 = trivial rep / unknot column). DIRECT fit with QOU's Kashaev / Habiro-ring content (QOU.Kashaev.VolumeConjecture, Phi_q / Li_2^q). Preferred citation for the Kashaev-on-trivial-knot sub-part over the bare 1995 conjecture.},
+}
+
+@misc{pr1750,
+  author = {QOU project (litlfred/qou)},
+  title  = {{Markov-trace SHAPE collapse: T_β = S · 1 (substrate min-norm Markov–Frobenius collapse theorem)}},
+  year   = {2026},
+  url    = {https://github.com/litlfred/qou/pull/1750},
+  note   = {Internal QOU pull request #1750 (merged). Proves the SDP min-norm element satisfying τX = S is X = S·1 in the substrate model (A = R, τ = id) via the completing-the-square identity; applied to the Iwahori–Hecke algebra with the Jones–Markov trace this gives T_β = S·1. Cited by t-beta-markov-collapse-general-lift.lean, markov-trace-frobenius-selection.lean, t-beta-markov-frobenius-collapse.lean. Companion audit: docs/audits/2026-06-03-qbeta-markov-trace-shape-collapse.md.},
+}
+
+@misc{pr1769,
+  author = {QOU project (litlfred/qou)},
+  title  = {{S(q) = Q_β(q) / E_0(q) vanishes at the classical point q = 1}},
+  year   = {2026},
+  url    = {https://github.com/litlfred/qou/pull/1769},
+  note   = {Internal QOU pull request #1769. The simplified substrate ratio S(q) = (2q + 1 − q²)(q² − 1)/(2q²) inherits a (q − 1) factor, so S(1) = 0 — the 'c_k from u-ladder Taylor of Q_β/E_0' recipe is degenerate at the classical point. Cited by q-beta-over-e0-classical-vanishing.lean.},
+}
+
+@misc{pr1602,
+  author = {QOU project (litlfred/qou)},
+  title  = {{c_k precision-ladder recursion from the Habiro q-difference equation; proved seed c_2 = −1}},
+  year   = {2026},
+  url    = {https://github.com/litlfred/qou/pull/1602},
+  note   = {Internal QOU pull request #1602. Establishes the depth-d linear recursion on the c_k ladder induced by a fibre-level Habiro element satisfying a q-difference equation, and the bar-even seed c_2 = −1. Cited by q-beta-c-k-recursion-from-habiro-q-difference.lean, q-beta-c-2-eq-neg-one-structural.lean.},
+}
+
+@misc{pr1786,
+  author = {QOU project (litlfred/qou)},
+  title  = {{Leading-bias correction identity for joint-fit c_k extraction}},
+  year   = {2026},
+  url    = {https://github.com/litlfred/qou/pull/1786},
+  note   = {Internal QOU pull request #1786. The bias-corrected value ĉ_k − ĉ_{k+1}·u equals c_alg(k) − c_alg(k+2)·u², recovering the algebraic ladder coefficient modulo an order-u² residual. Cited by q-beta-c-k-leading-bias-correction-identity.lean; empirical core in folio-assistant/computations/qbeta/qbeta_ck_truncation_bias_correction_probe.py.},
+}
+
+@misc{pr1521,
+  author = {QOU project (litlfred/qou)},
+  title  = {{Q_β bar-even kernel invariant: the q ↦ q⁻¹ parity obstruction (integer u-powers ⇒ even-in-t; odd-in-t forces a √u branch)}},
+  year   = {2026},
+  url    = {https://github.com/litlfred/qou/pull/1521},
+  note   = {Internal QOU pull request #1521. Since u = b·ℏ_q² has a double zero at q = 1, a power series in integer powers of u absorbs only even-in-t (t = q − 1) Taylor content; odd-in-t content forces a √u branch. Cited by q-beta-bar-even-kernel-invariant.lean.},
+}
+
+@misc{pr1727,
+  author = {QOU project (litlfred/qou)},
+  title  = {{Q_β radius-of-convergence gate: §4(a) simple-pole-at-u_substrate test for candidate Habiro elements}},
+  year   = {2026},
+  url    = {https://github.com/litlfred/qou/pull/1727},
+  note   = {Internal QOU pull request #1727. Asymptotic-pole test (qbeta_singularity_type_probe.py) establishing a simple pole at u_substrate for the canonical SDP-pinned c_k (branch-fit β ≈ 1). Cited by q-beta-radius-of-convergence-gate.lean, q-beta-bar-even-kernel-typeclass.lean.},
+}
+
+@misc{pr1850,
+  author = {QOU project (litlfred/qou)},
+  title  = {{Q_β direction-sanity gate: §4(d) order-of-magnitude invariant (refuted the trace-level Markov-stabilization attack)}},
+  year   = {2026},
+  url    = {https://github.com/litlfred/qou/pull/1850},
+  note   = {Internal QOU pull request #1850. Any candidate Habiro element must have |F(q_0)| within an order of magnitude of the target ratio; the trace-level Markov-stabilization attack (refuted-class row C12) was killed because z(q_0) ≈ 0.4993 < 1 cannot reach linking_weight ≈ 2.53. Cited by q-beta-direction-sanity-gate.lean, q-beta-bar-even-kernel-typeclass.lean.},
+}
+
+@misc{pr1889,
+  author = {QOU project (litlfred/qou)},
+  title  = {{Q_β bar-even kernel §4 formalize-first gate (Track A/B; bundled into the BarEvenKernel typeclass)}},
+  year   = {2026},
+  url    = {https://github.com/litlfred/qou/pull/1889},
+  note   = {Internal QOU pull request #1889. One of the four §4 formalize-first invariants (Tracks A + B) bundled by prop:q-beta-bar-even-kernel-typeclass into a single parametric Lean class. Cited by q-beta-bar-even-kernel-typeclass.lean.},
+}
+
+@misc{pr1890,
+  author = {QOU project (litlfred/qou)},
+  title  = {{Q_β bar-even kernel §4 formalize-first gate (Track A/B; bundled into the BarEvenKernel typeclass)}},
+  year   = {2026},
+  url    = {https://github.com/litlfred/qou/pull/1890},
+  note   = {Internal QOU pull request #1890. One of the four §4 formalize-first invariants (Tracks A + B) bundled by prop:q-beta-bar-even-kernel-typeclass into a single parametric Lean class. Cited by q-beta-bar-even-kernel-typeclass.lean.},
+}
+
+@misc{pr1896,
+  author = {QOU project (litlfred/qou)},
+  title  = {{Mass-side kernel §4 formalize-first gate (mass-side §4 matrix)}},
+  year   = {2026},
+  url    = {https://github.com/litlfred/qou/pull/1896},
+  note   = {Internal QOU pull request #1896 (mass-side §4 matrix). Mass-side analogue of the §4 formalize-first invariant gates. Cited by mass-side-kernel-formalize-first-gates.lean.},
+}
+
+@misc{pr1899,
+  author = {QOU project (litlfred/qou)},
+  title  = {{Mass-side kernel §4 formalize-first gate (q=1 anchor hunt: Σ f^λ/4 = 5/2)}},
+  year   = {2026},
+  url    = {https://github.com/litlfred/qou/pull/1899},
+  note   = {Internal QOU pull request #1899 (mass-side q=1 anchor hunt: Σ f^λ/4 = 5/2). Mass-side analogue of the §4 formalize-first invariant gates. Cited by mass-side-kernel-formalize-first-gates.lean.},
 }
 
 @unpublished{thurston1979,
