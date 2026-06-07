@@ -45,12 +45,3 @@ KLR shift, and by
 explain the GS engine's homological pruning.  No new $\mathrm{sorry}$
 is introduced in Lean: the conjecture replaces a class of brute-force
 S-polynomial bounds rather than an existing proof.*
-
-*A formalization architecture for the Lean side — decomposing the claim
-into a buildable GS-rewriting/shortlex layer, a substantive
-$\S$3b-cond class, and the single conjectural input (the order-match
-$\bigstar$: that the shortlex GS irreducibles match the Brundan–Kleshchev
-canonical-basis labels on the nose) — together with the Mathlib
-dependency table a full closure would need (KLR diagrammatic algebra,
-cyclotomic quotient, Kashiwara crystal API), is given in
-[`docs/audits/2026-06-07-klr-gs-order-formalization-plan.md`](../../../docs/audits/2026-06-07-klr-gs-order-formalization-plan.md).*

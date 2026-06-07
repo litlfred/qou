@@ -2218,6 +2218,25 @@
         "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/mobius-energy.lean:21: invalid 'import' command, it must be used in the beginning of the file"
+      },
+      {
+        "field_hash": {
+          "md": "fd29d6d88331",
+          "ts": "8130d3c72c0e",
+          "lean": "64dc901b37bb"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "cf383b911867",
+          "script_commit_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
+          "deps_hash": "4b9cd43e52e5"
+        },
+        "reviewed_at": "2026-06-05T14:22:44.851Z",
+        "reviewed_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
+        "notes": "stale: cached lean diagnostics have no lean_sha (legacy v1 cache); re-run content/pipeline/lean-compile-audit.ts to refresh"
       }
     ],
     "voice-author-notes-pollution": [
@@ -2550,95 +2569,7 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
-    ],
-    "voice-statement-no-interpretation": [
-      {
-        "field_hash": {
-          "md": "fd29d6d88331",
-          "ts": "8130d3c72c0e",
-          "lean": "64dc901b37bb"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "mobius-energy.md:1 - proposition with classical limit formula; Categorical origin section is mathematical derivation",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T13:55:26.682Z",
-        "reviewed_sha": "4709587dba74dd2bed7bbba2d9a28e05fadc6e7e",
-        "notes": "Categorical origin section elaborates mathematical structure; no physical-meaning prose triggering the criterion"
-      }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "fd29d6d88331",
-          "ts": "8130d3c72c0e",
-          "lean": "64dc901b37bb"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "climax-volume-mass.ts:sec:mobius-energy includes mobius-energy",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T13:55:26.720Z",
-        "reviewed_sha": "4709587dba74dd2bed7bbba2d9a28e05fadc6e7e",
-        "notes": "proposition for categorical recovery of Mobius energy; central result of sec:mobius-energy"
-      }
-    ],
-    "wall-side-statement": [
-      {
-        "field_hash": {
-          "md": "fd29d6d88331",
-          "ts": "8130d3c72c0e",
-          "lean": "64dc901b37bb"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "mobius-energy.md:17 - lim_{q->1} E_cat(rho) = (1/4)E(rho)+const; archimedean classical limit",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T13:55:26.756Z",
-        "reviewed_sha": "4709587dba74dd2bed7bbba2d9a28e05fadc6e7e",
-        "notes": "chapter is archimedean; limit formula appropriately uses classical archimedean norm; no wall violation"
-      }
-    ],
-    "wall-side-proof": [
-      {
-        "field_hash": {
-          "md": "fd29d6d88331",
-          "ts": "8130d3c72c0e",
-          "lean": "64dc901b37bb"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "mobius-energy.lean:50 - ClassicalLimit extends CategoricalMobiusEnergy with classical_limit field",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T13:55:26.792Z",
-        "reviewed_sha": "4709587dba74dd2bed7bbba2d9a28e05fadc6e7e",
-        "notes": "lean encodes limit as a structural field; archimedean comparison commented out appropriately; no mismatch"
-      }
     ]
   },
-  "updated_at": "2026-06-07T13:55:26.792Z"
+  "updated_at": "2026-06-05T14:22:44.851Z"
 }

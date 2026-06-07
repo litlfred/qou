@@ -89,6 +89,44 @@
         "evidence": "content/quantum-observable-universe/braids-and-knots/habiro-precision-ladder-equivalence.md:27: P4:date-ref: > **Author note (scope, 2026-05-28).** A historical \"precision ladder\""
       }
     ],
+    "detangler-block-tanglement": [
+      {
+        "field_hash": {
+          "ts": "871fa7725fdf"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "detangler-block-tanglement-audit",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/detangler-integration-watcher"
+        },
+        "reviewed_at": "2026-05-27",
+        "metrics": {
+          "fwd_emitted": 2,
+          "fwd_received": 0,
+          "tanglement_score": 2
+        }
+      },
+      {
+        "field_hash": {
+          "md": "8134597b040e",
+          "ts": "5b55e3b75642",
+          "lean": "fa3eea6663eb"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "8055e5864896",
+          "script_commit_sha": "7d3eeba998ed7051fd1624bce43cb8d0e006a14c"
+        },
+        "reviewed_at": "2026-06-02T19:35:58.523Z",
+        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
+      }
+    ],
     "proof-no-bare-sorries": [
       {
         "field_hash": {
@@ -696,6 +734,25 @@
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
       }
     ],
+    "canonical-calibration-count": [
+      {
+        "field_hash": {
+          "md": "8134597b040e",
+          "ts": "5b55e3b75642",
+          "lean": "fa3eea6663eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "8055e5864896",
+          "script_commit_sha": "7d3eeba998ed7051fd1624bce43cb8d0e006a14c"
+        },
+        "reviewed_at": "2026-06-02T19:34:22.348Z",
+        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
+      }
+    ],
     "canonical-no-numerology": [
       {
         "field_hash": {
@@ -1191,96 +1248,7 @@
         "reviewed_sha": "a46485f7b73bd6f1c1342413da990136e02a2c68",
         "notes": "Archimedean references are qualitative/contextual, not wall violations."
       }
-    ],
-    "detangler-topic-coherence": [
-      {
-        "field_hash": {
-          "md": "f3eb1219a5f3",
-          "ts": "7dab5c9cd72f",
-          "lean": "fa3eea6663eb"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6b0daec15a39",
-          "script_commit_sha": "1b04ccd94e84859e842739184abe528c941fd8d6"
-        },
-        "reviewed_at": "2026-06-07T04:50:22.937Z",
-        "reviewed_sha": "8e315ca2cc049b1d869a7b31681ac98ac0873c57"
-      }
-    ],
-    "detangler-block-tanglement": [
-      {
-        "field_hash": {
-          "md": "f3eb1219a5f3",
-          "ts": "7dab5c9cd72f",
-          "lean": "fa3eea6663eb"
-        },
-        "result": "warn",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "2dc4e0b4dcad",
-          "script_commit_sha": "9abab946953ee1807044ca56a312ca371e1149c6"
-        },
-        "reviewed_at": "2026-06-07T04:58:08.431Z",
-        "reviewed_sha": "eb046edef4314c266e36974ce9af9496a53889f3",
-        "metrics": {
-          "fwd_emitted": 1,
-          "fwd_received": 0,
-          "tanglement_score": 1,
-          "out_degree": 3,
-          "in_degree": 1,
-          "cone_size": 148,
-          "depth": 32,
-          "pagerank": 0.0002,
-          "edge_span_max": 0,
-          "edge_span_mean": 0,
-          "worst_target": "emits fwd-ref to mass-theory: prop:mass-endomorphism-tower"
-        }
-      }
-    ],
-    "canonical-calibration-count": [
-      {
-        "field_hash": {
-          "md": "f3eb1219a5f3",
-          "ts": "7dab5c9cd72f",
-          "lean": "fa3eea6663eb"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "f85a8e7bf89c",
-          "script_commit_sha": "505f4df12175e60f8da8fddbcfe814c39f63a326"
-        },
-        "reviewed_at": "2026-06-07T05:35:26.749Z",
-        "reviewed_sha": "505f4df12175e60f8da8fddbcfe814c39f63a326"
-      }
-    ],
-    "detangler-graph-energy": [
-      {
-        "field_hash": {
-          "md": "f3eb1219a5f3",
-          "ts": "7dab5c9cd72f",
-          "lean": "fa3eea6663eb"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "6fcbacc4b3ceaa9160c1d877e595a26d6998471d"
-        },
-        "reviewed_at": "2026-06-07T05:58:41.267Z",
-        "reviewed_sha": "738ed713806a3976739e57e01d0100f3540f79e5"
-      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-06T01:49:09.374Z"
 }

@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/mass-theory/binding-alpha-shift-extension.lean"
   },
   "source_hashes": {
-    "md": "1d5376d18a38",
+    "md": "6b6e88f4e534",
     "ts": "452c4d3b4759",
     "lean": "a2268765afda"
   },
@@ -233,6 +233,25 @@
         },
         "reviewed_at": "2026-06-01T16:06:38.106Z",
         "reviewed_sha": "d4a8cf462aeef2262429b13571ddd385968bce63"
+      }
+    ],
+    "canonical-calibration-count": [
+      {
+        "field_hash": {
+          "md": "18baf7b61941",
+          "ts": "452c4d3b4759",
+          "lean": "a2268765afda"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "8055e5864896",
+          "script_commit_sha": "7d3eeba998ed7051fd1624bce43cb8d0e006a14c"
+        },
+        "reviewed_at": "2026-06-02T19:34:22.348Z",
+        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
       }
     ],
     "canonical-no-numerology": [
@@ -922,114 +941,118 @@
         "reviewed_sha": "19118a572290d7bf9fc5b30e8a174c4bc86e6ad5"
       }
     ],
-    "voice-statement-no-interpretation": [
+    "detangler-block-tanglement": [
       {
         "field_hash": {
-          "md": "1d5376d18a38",
+          "md": "18baf7b61941",
           "ts": "452c4d3b4759",
           "lean": "a2268765afda"
         },
-        "result": "warn",
-        "severity": "minor",
-        "evidence": "binding-alpha-shift-extension.md:9 -- ## Setting section and ## Lean structure section extend beyond the statement",
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "8055e5864896",
+          "script_commit_sha": "7d3eeba998ed7051fd1624bce43cb8d0e006a14c"
+        },
+        "reviewed_at": "2026-06-02T19:35:58.523Z",
+        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
+      }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "18baf7b61941",
+          "ts": "452c4d3b4759",
+          "lean": "a2268765afda"
+        },
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
+          "agent_date": "2026-06-04",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-07T13:44:31.643Z",
-        "reviewed_sha": "af638213a478dd151bf02a1c7949162067f278fa",
-        "notes": "Setting, Lean structure, and Remaining open math sections interpret the proposition; no companion remark"
+        "reviewed_at": "2026-06-04T14:14:18.535Z",
+        "reviewed_sha": "ca48f1cf8d32b70bb0f3df8a60c7308a921cdf31"
       }
     ],
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "1d5376d18a38",
+          "md": "18baf7b61941",
           "ts": "452c4d3b4759",
           "lean": "a2268765afda"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "binding-alpha-shift-extension.ts:2 -- proposition",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
+          "agent_date": "2026-06-04",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-07T13:44:31.693Z",
-        "reviewed_sha": "af638213a478dd151bf02a1c7949162067f278fa",
-        "notes": "Binding energy A>=3 via Reeb phase fits mass-theory chapter"
+        "reviewed_at": "2026-06-04T14:14:33.830Z",
+        "reviewed_sha": "ca48f1cf8d32b70bb0f3df8a60c7308a921cdf31"
       }
     ],
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "1d5376d18a38",
+          "md": "18baf7b61941",
           "ts": "452c4d3b4759",
           "lean": "a2268765afda"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "binding-alpha-shift-extension.md:1-2 -- archimedean statement about MeV binding energy",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
+          "agent_date": "2026-06-04",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-07T13:44:31.739Z",
-        "reviewed_sha": "af638213a478dd151bf02a1c7949162067f278fa",
-        "notes": "mass-theory is archimedean; binding energy formula uses q_0 archimedean evaluation appropriately"
+        "reviewed_at": "2026-06-04T14:14:33.867Z",
+        "reviewed_sha": "ca48f1cf8d32b70bb0f3df8a60c7308a921cdf31"
       }
     ],
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "1d5376d18a38",
+          "md": "18baf7b61941",
           "ts": "452c4d3b4759",
           "lean": "a2268765afda"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "binding-alpha-shift-extension.md:85+ -- Lean structure section describes conditional class proof",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
+          "agent_date": "2026-06-04",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-07T13:44:31.782Z",
-        "reviewed_sha": "af638213a478dd151bf02a1c7949162067f278fa",
-        "notes": "Proof routes through categorical then archimedean; appropriately declares specialisation via alpha_shift formula"
+        "reviewed_at": "2026-06-04T14:14:33.905Z",
+        "reviewed_sha": "ca48f1cf8d32b70bb0f3df8a60c7308a921cdf31"
       }
     ],
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "1d5376d18a38",
+          "md": "18baf7b61941",
           "ts": "452c4d3b4759",
           "lean": "a2268765afda"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "binding-alpha-shift-extension.lean -- conditional class pattern per sec 3b-cond",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
+          "agent_date": "2026-06-04",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-07T13:44:31.825Z",
-        "reviewed_sha": "af638213a478dd151bf02a1c7949162067f278fa",
-        "notes": "Lean uses conditional class for alpha_shift; narrative describes same conditional structure; no divergence"
+        "reviewed_at": "2026-06-04T14:14:33.944Z",
+        "reviewed_sha": "ca48f1cf8d32b70bb0f3df8a60c7308a921cdf31"
       }
     ],
     "detangler-no-forward-ref": [
@@ -1070,101 +1093,7 @@
         "reviewed_at": "2026-06-05T14:22:44.851Z",
         "reviewed_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb"
       }
-    ],
-    "detangler-topic-coherence": [
-      {
-        "field_hash": {
-          "md": "1d5376d18a38",
-          "ts": "452c4d3b4759",
-          "lean": "a2268765afda"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6b0daec15a39",
-          "script_commit_sha": "1b04ccd94e84859e842739184abe528c941fd8d6"
-        },
-        "reviewed_at": "2026-06-07T04:50:22.937Z",
-        "reviewed_sha": "8e315ca2cc049b1d869a7b31681ac98ac0873c57"
-      }
-    ],
-    "detangler-block-tanglement": [
-      {
-        "field_hash": {
-          "md": "1d5376d18a38",
-          "ts": "452c4d3b4759",
-          "lean": "a2268765afda"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "2dc4e0b4dcad",
-          "script_commit_sha": "9abab946953ee1807044ca56a312ca371e1149c6"
-        },
-        "reviewed_at": "2026-06-07T04:58:08.431Z",
-        "reviewed_sha": "eb046edef4314c266e36974ce9af9496a53889f3",
-        "metrics": {
-          "fwd_emitted": 0,
-          "fwd_received": 0,
-          "tanglement_score": 0,
-          "out_degree": 0,
-          "in_degree": 1,
-          "cone_size": 0,
-          "depth": 0,
-          "pagerank": 0.000152,
-          "edge_span_max": 0,
-          "edge_span_mean": 0,
-          "worst_target": ""
-        }
-      }
-    ],
-    "canonical-calibration-count": [
-      {
-        "field_hash": {
-          "md": "1d5376d18a38",
-          "ts": "452c4d3b4759",
-          "lean": "a2268765afda"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "f85a8e7bf89c",
-          "script_commit_sha": "505f4df12175e60f8da8fddbcfe814c39f63a326"
-        },
-        "reviewed_at": "2026-06-07T05:35:26.749Z",
-        "reviewed_sha": "505f4df12175e60f8da8fddbcfe814c39f63a326"
-      }
-    ],
-    "detangler-graph-energy": [
-      {
-        "field_hash": {
-          "md": "1d5376d18a38",
-          "ts": "452c4d3b4759",
-          "lean": "a2268765afda"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "6fcbacc4b3ceaa9160c1d877e595a26d6998471d"
-        },
-        "reviewed_at": "2026-06-07T05:58:41.267Z",
-        "reviewed_sha": "738ed713806a3976739e57e01d0100f3540f79e5",
-        "metrics": {
-          "graph_energy": 0,
-          "fwd_edge_count": 0,
-          "worst_span": 0
-        }
-      }
     ]
   },
-  "updated_at": "2026-06-07T13:44:31.825Z"
+  "updated_at": "2026-06-05T14:52:06.986Z"
 }

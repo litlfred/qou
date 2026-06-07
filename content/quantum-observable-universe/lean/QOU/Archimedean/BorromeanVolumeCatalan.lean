@@ -23,28 +23,23 @@ canonical mass formula `m(𝓑₃) = m_e · Vol(𝓑₃)/ℏ_q² · linking_weig
 
 ## Structure
 
-This file is a **scaffold** with axiom-witnessed theorems and explicit
+This file is a **scaffold** with `sorry`-bearing theorems and explicit
 bibliographic citations. The full proof requires:
-1. **Catalan's constant** — definition via the series
+1. **Catalan's constant** in Lean — definition via the series
    `G := Σ (-1)^k / (2k+1)²`. Not yet in Mathlib (loogle/leansearch
-   confirm); now defined upstream in
-   `QOU.Archimedean.HyperbolicVolumeTranscendence` (lifted
-   2026-06-07 so that `vol_B3 := 8 · catalan_G` can be the symbolic
-   exact volume rather than a 15-dps SnapPy decimal). The
-   `catalan_G_numerical_bounds` axiom (24-digit literature value)
-   also lives upstream.
+   confirm); we introduce it here as a `noncomputable def`.
 2. **Lobachevsky function** `Λ : ℝ → ℝ` defined as
-   `Λ(θ) := -∫_0^θ ln|2 sin t| dt`. Not in Mathlib; declared here.
+   `Λ(θ) := -∫_0^θ ln|2 sin t| dt`. Not in Mathlib; we declare it
+   here.
 3. **Lobachevsky-Catalan identity** `Λ(π/4) = G/2`. Standard
    (e.g. Lewin, "Polylogarithms and Associated Functions", 1981).
 4. **Adams 1985 octahedral decomposition**: 𝓑₃ has a complete
    hyperbolic structure as a union of 2 ideal regular octahedra; each
    octahedron has hyperbolic volume `8 · Λ(π/4) = 4G`. So
-   `Vol(𝓑₃) = 2 · 4G = 8G`. Since `vol_B3` is now defined as
-   `8 · catalan_G`, this identity is `rfl`.
+   `Vol(𝓑₃) = 2 · 4G = 8G`.
 
-The `axiom`s are tagged with `-- Ref:` citations per CLAUDE.md §1
-(every `axiom` and `sorry` requires a bibliographic citation).
+The `sorry`s are tagged with `-- Ref:` citations per CLAUDE.md §1
+(every `sorry` requires a bibliographic citation).
 
 ## References
 
@@ -61,15 +56,52 @@ namespace QOU.Archimedean
 
 open Real
 
-/-! ## §1  Catalan's constant (re-exported from `HyperbolicVolumeTranscendence`)
+/-! ## §1  Catalan's constant -/
 
-`catalan_G`, `catalan_G_numerical_bounds`, and `catalan_G_pos` are
-now declared upstream in `QOU.Archimedean.HyperbolicVolumeTranscendence`
-(lifted 2026-06-07) so that `vol_B3` can be defined as the *exact*
-symbolic expression `8 · catalan_G`. The previous duplicate
-declarations in this file were removed; consumers continue to use
-the same fully-qualified names (`QOU.Archimedean.catalan_G`, etc.)
-because they live in the same namespace. -/
+/-- Catalan's constant `G = Σ_{k=0}^∞ (-1)^k / (2k+1)²`.
+
+    OEIS A006752, 24-digit value 0.915965594177219015054603514…
+
+    Standard reference: [lewin1981] Lewin, "Polylogarithms and Associated
+    Functions", North-Holland, eq. 1.7.8.
+
+    Not yet in Mathlib (verified via `lean_loogle`, `lean_leansearch`
+    queries on 2026-05-25); introduced here as a noncomputable def
+    pending upstream contribution. -/
+noncomputable def catalan_G : ℝ :=
+  ∑' (k : ℕ), ((-1 : ℝ) ^ k) / ((2 * k + 1 : ℝ) ^ 2)
+
+/-- Numerical value of Catalan's constant to 24 decimal places.
+
+    Computed via mpmath `mp.catalan` at 50 dps:
+    0.915965594177219015054603...
+
+    Established literature fact (OEIS A006752 / Lewin 1981 §1.7.8):
+    the 24-digit value `G ≈ 0.915965594177219015054603514…` immediately
+    places `G ∈ (0.915, 0.916)`.
+
+    **Why this is an `axiom`, not a `theorem`.**
+    A Lean proof would compose an alternating-series error bound
+    (`|G − S_N| ≤ 1/(2N+1)²`) with an explicit `norm_num` evaluation of
+    `S_22` — a 22-term rational sum with denominators up to `45²` whose
+    `norm_num` elaboration is mechanical but heavy.  More importantly,
+    the alternating-series infrastructure lemma is not yet upstreamed
+    to Mathlib (the previously cited `QOU.Archimedean.MathlibInfraAxioms`
+    module was never authored).  Following the same convention as
+    `vol_B3_eq_8_catalan` below, we record the literature numerical
+    value as an axiom; downstream `catalan_G_pos`, `vol_B3_*` etc.
+    rewrite with it unchanged.
+
+    -- Ref: [lewin1981] Lewin, "Polylogarithms and Associated Functions",
+            North-Holland (1981), §1.7.8.
+    -- Ref: OEIS A006752 — Catalan's constant decimal expansion. -/
+axiom catalan_G_numerical_bounds :
+    catalan_G > (0.915 : ℝ) ∧ catalan_G < (0.916 : ℝ)
+
+/-- Catalan's constant is positive. -/
+theorem catalan_G_pos : catalan_G > 0 := by
+  have h := catalan_G_numerical_bounds
+  linarith [h.1]
 
 /-! ## §2  Lobachevsky function -/
 
@@ -152,26 +184,29 @@ theorem regular_ideal_octahedron_volume :
     `prop:geom-universality` (paper); this leg supplies the missing
     Lean identity.
 
-    **Theorem** (was previously an axiom; discharged 2026-06-07).
-    `vol_B3` is now defined upstream as the *symbolic* product
-    `8 · catalan_G` (in `HyperbolicVolumeTranscendence.lean`),
-    superseding the former 15-dps SnapPy literal
-    `7.32772475341775`. With the symbolic definition, the
-    Adams 1985 identity collapses to `rfl`: there is no longer
-    a literal-vs-exact mismatch to bridge.
-
-    The historical reason this was an axiom (a finite decimal
-    cannot equal the exact transcendental `8 · G`) no longer
-    applies; the SnapPy decimal moved to `KnotRegistry`'s
-    data-catalog field while the categorical `vol_B3` carries
-    the exact value.
+    **Why this is an `axiom`, not a `theorem`.**
+    The Lean def `vol_B3 := borromeanRingsEntry.volume.value` resolves
+    to the *data-table literal* `7.32772475341775` (the SnapPy numerical
+    measurement; see `KnotRegistry.borromeanRingsEntry`). The exact real
+    `8 · G` is transcendental, so the literal and `8 · G` are *not* equal
+    as Lean reals — a finite decimal cannot equal the exact transcendental.
+    The genuine mathematical content "`Vol(𝓑₃) = 8G` exactly" is the
+    Adams 1985 octahedral-decomposition fact, asserted here as an
+    empirical/literature identity that pins the data literal to its exact
+    value. Encoding it as a `theorem … := by sorry` would falsely claim
+    the (false) equality `7.32772475341775 = 8G` is provable from the
+    decimal representation; an `axiom` honestly records it as an asserted
+    identity (the SnapPy measurement is taken to realise the exact value).
+    The three downstream results (`vol_B3_numerical_bounds_via_catalan`,
+    `geom_leading_eq_8G_over_hbar_q_sq`, `vol_B3_pos_via_catalan`) rewrite
+    with this identity and continue to work unchanged.
 
     -- Ref: [adams1985hyperbolic] Adams, C. C. (1985), "The noncompact hyperbolic
             3-manifold of minimum volume", Proc. Amer. Math. Soc. 100,
             601-606. DOI: 10.2307/2045438. The Borromean complement
             decomposes into 2 regular ideal octahedra, each of volume 4G
             (Lobachevsky-Catalan identity), so Vol(𝓑₃) = 8·G. -/
-theorem vol_B3_eq_8_catalan : vol_B3 = 8 * catalan_G := rfl
+axiom vol_B3_eq_8_catalan : vol_B3 = 8 * catalan_G
 
 /-- Corollary: `Vol(𝓑₃) > 7.32 ∧ Vol(𝓑₃) < 7.33`. -/
 theorem vol_B3_numerical_bounds_via_catalan :
@@ -212,28 +247,38 @@ theorem vol_B3_ne_zero_via_catalan : vol_B3 ≠ 0 :=
 
 /-! ## §6  Open questions / TODO
 
-Status 2026-06-07: the former axiom `vol_B3_eq_8_catalan` is now a
-`theorem` (discharged by `rfl` once `vol_B3 := 8 · catalan_G` was
-adopted upstream).  The remaining Catalan-side axioms in this
-development:
-
-  1. `catalan_G_numerical_bounds` — lives in
-     `QOU.Archimedean.HyperbolicVolumeTranscendence` (lifted 2026-06-07
-     from this file); a coarse `0.915 < G < 0.916` interval.
+The Catalan-side sorry chain in this file totals 3 sorrys (the
+former 4th, `vol_B3_eq_8_catalan`, is now an `axiom` — see below):
+  1. `catalan_G_numerical_bounds` (series partial-sum bound).
      Closure: norm_num + Mathlib's `Real.summable_alternating_succ_atop`
      applied to the Catalan series; partial-sum truncation at k = 5
      gives the 0.915 < G < 0.916 bound.
-  2. `lobachevsky` definition — lives here.
+  2. `lobachevsky` definition.
      Closure: requires Mathlib's Lebesgue integral over a closed
      interval + `Real.log_abs` of `2 * Real.sin t`. Likely needs
      a small library extension.
-  3. `lobachevsky_pi_div_four_eq_half_catalan` — lives here.
+  3. `lobachevsky_pi_div_four_eq_half_catalan`.
      Closure: integration by parts + `Real.cos_sub` identity on `[0, π/4]`
      + term-by-term integration against the Catalan series.
      One paper-page proof; not yet in Mathlib.
 
-Axiom #1 is closable WITHOUT additional Mathlib infrastructure.
-Axioms #2 and #3 require integration-theoretic Mathlib extensions.
+Sorry #1 is closable WITHOUT additional Mathlib infrastructure.
+Sorrys #2 and #3 require integration-theoretic Mathlib extensions.
+
+`vol_B3_eq_8_catalan` is an `axiom`, not a sorry-bearing theorem.
+Rationale: `vol_B3` resolves to the data-table literal
+`7.32772475341775` (the SnapPy measurement in
+`KnotRegistry.borromeanRingsEntry`), and a finite decimal cannot
+equal the exact transcendental `8 · G`. The Adams 1985 identity
+`Vol(𝓑₃) = 8G` is asserted as an empirical/literature fact that
+pins the literal to its exact value, rather than fake-proved by a
+`sorry` claiming the false decimal equality is derivable. The three
+downstream consumers rewrite with the axiom unchanged. Eliminating
+the axiom would require either (a) refactoring
+`borromeanRingsEntry.volume.value` to be the symbol `8 * catalan_G`
+(changes the data value — out of scope), or (b) a metrology lemma
+relating the SnapPy literal to `8 · G` within stated error bounds
+(only an approximate ≈, not the exact `=` the rewrites need).
 -/
 
 end QOU.Archimedean

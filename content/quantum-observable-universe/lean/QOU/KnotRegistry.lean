@@ -174,43 +174,17 @@ noncomputable def hopfLinkEntry : KnotEntry where
     of which are linked pairwise.
     QOU identity: **Nucleon**.  The Borromean topology encodes the
     color-exchange entanglement of three quark tubes (uud or udd).
-
-    Mathematical value (exact, transcendental): `8 · G` where
-    `G` = Catalan's constant (OEIS A006752).  The `volume.value`
-    field below is the 50-dps decimal *approximation* to that exact
-    value — the EXACT symbol lives in `QOU.Archimedean.vol_B3`
-    (defined as `8 · catalan_G`).
+    Exact: 8 · G where G = Catalan's constant (OEIS A006752).
 
     Knot Atlas: <http://katlas.org/wiki/L6a4>
-    Hyperbolic volume (catalog literal): 50 dps,
-    `7.32772475341775212043682811945907288619319499425336`
-    `± 1×10⁻⁵⁰`.  Bumped 2026-06-07 from the previous 15-dps
-    literal `7.32772475341775 ± 1×10⁻¹⁴` to match the project's
-    standard working serialization precision (50 dps per
-    `folio-assistant/computations/_precision.py`).
-    Source: **mpmath `mp.catalan` at `mp.dps = 50`, evaluated as
-    `8 * mp.catalan`** — a closed-form-derived decimal (computed
-    from the exact identity `Vol(L6a4) = 8·G`), NOT a SnapPy
-    numerical measurement. The numerical value agrees with SnapPy's
-    `M = SnapPy.Manifold("L6a4"); M.volume()` to 15+ digits (and
-    with the proof of Adams (1985) that the two are equal), but
-    the literal stored here is computed from the closed form so
-    its precision is bounded by `mp.dps`, not by SnapPy's `f64`
-    convergence floor. (Copilot review #1978: previous docstring
-    conflated the two provenances.)
-    Components: 3
-
-    Note: this `value` field is a data-catalog decimal kept for
-    downstream consumers that want a literal rather than the
-    symbolic form. The categorical `QOU.Archimedean.vol_B3` is
-    the EXACT transcendental (`8 · catalan_G`) — use it in
-    proofs and as the canonical Borromean volume reference. -/
+    Hyperbolic volume: 7.32772475341775 ± 1×10⁻¹⁴  (SnapPy)
+    Components: 3 -/
 noncomputable def borromeanRingsEntry : KnotEntry where
   ab_index := "L6a4"
   braid := borromeanRings
   volume := {
-    value := 7.32772475341775212043682811945907288619319499425336
-    error_bound := 1e-50
+    value := 7.32772475341775
+    error_bound := 1e-14
     error_nonneg := by norm_num
   }
   identity := .nucleon

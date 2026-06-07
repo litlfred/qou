@@ -46,7 +46,6 @@
 -/
 
 import Mathlib.Data.Real.Basic
-import QOU.Archimedean.HyperbolicVolumeTranscendence
 
 namespace QOU.Archimedean.SnapPyAxioms
 
@@ -61,30 +60,19 @@ namespace QOU.Archimedean.SnapPyAxioms
     `folio-assistant/computations/borromean_volume_100dps.py`
     (Lobachevsky integration at 100 dps).
 
-    **Definitional bridge** (2026-06-07).  The closed-form
-    characterisation `snappy_L6a4_volume = 8·G` is the
-    `vol_B3_eq_8_catalan` theorem in
-    [`BorromeanVolumeCatalan.lean`](./BorromeanVolumeCatalan.lean);
-    that theorem was previously an axiom and is now closed by `rfl`
-    after `vol_B3` was redefined symbolically as `8 · catalan_G`.
-    Per the file-level docstring's promise — *"when that theorem
-    closes, this axiom becomes a named constant whose value is
-    `8·G`"* — `snappy_L6a4_volume` and its positivity are now
-    discharged here as `def` / `theorem` referencing the upstream
-    `QOU.Archimedean.{catalan_G, catalan_G_pos}`.
+    The closed-form characterisation `snappy_L6a4_volume = 8·G`
+    is the content of [`BorromeanVolumeCatalan.lean`'s
+    `vol_B3_eq_8_catalan` theorem](./BorromeanVolumeCatalan.lean);
+    when that theorem closes, this axiom becomes a named
+    constant whose value is `8·G`.
 
     -- Ref: [culler2024] snappy-borromean-volume.witness.json
     -- Ref: [adams1985hyperbolic] Adams 1985, Proc. Amer. Math. Soc. 100, 601-606
 -/
-noncomputable def snappy_L6a4_volume : ℝ := 8 * QOU.Archimedean.catalan_G
+axiom snappy_L6a4_volume : ℝ
 
-/-- The hyperbolic volume of L6a4 is positive.  **Theorem** (was
-    previously an axiom; discharged 2026-06-07).  Proof: `8 · G > 0`
-    via `catalan_G_pos`. -/
+/-- The hyperbolic volume of L6a4 is positive. -/
 -- Ref: [adams1985hyperbolic] hyperbolic structure non-degenerate
-theorem snappy_L6a4_volume_pos : 0 < snappy_L6a4_volume := by
-  unfold snappy_L6a4_volume
-  have := QOU.Archimedean.catalan_G_pos
-  linarith
+axiom snappy_L6a4_volume_pos : 0 < snappy_L6a4_volume
 
 end QOU.Archimedean.SnapPyAxioms

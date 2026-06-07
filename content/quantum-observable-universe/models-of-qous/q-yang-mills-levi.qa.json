@@ -1651,6 +1651,25 @@
         "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/models-of-qous/q-yang-mills-levi.lean:13: invalid 'import' command, it must be used in the beginning of the file"
+      },
+      {
+        "field_hash": {
+          "md": "77628dc83a30",
+          "ts": "fd5a281d25fd",
+          "lean": "9d77962d8e14"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "cf383b911867",
+          "script_commit_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
+          "deps_hash": "4b9cd43e52e5"
+        },
+        "reviewed_at": "2026-06-05T14:22:44.851Z",
+        "reviewed_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
+        "notes": "stale: cached lean diagnostics have no lean_sha (legacy v1 cache); re-run content/pipeline/lean-compile-audit.ts to refresh"
       }
     ],
     "voice-author-notes-pollution": [
@@ -1947,50 +1966,7 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "77628dc83a30",
-          "ts": "fd5a281d25fd",
-          "lean": "9d77962d8e14"
-        },
-        "result": "pass",
-        "evidence": "q-yang-mills-levi.ts:3 — definition; q-yang-mills-levi.md:1-12 — S_q functional definition",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T14:04:44.519Z",
-        "reviewed_sha": "a72996e8ab52ec378111223aabe5285606d1d90a",
-        "notes": "Definition in sec:physical-interpretation. The q-YM-Levi functional is the central construct for the main commutative diagram; proper placement directly before prop:main-commutative-diagram."
-      }
-    ],
-    "wall-side-statement": [
-      {
-        "field_hash": {
-          "md": "77628dc83a30",
-          "ts": "fd5a281d25fd",
-          "lean": "9d77962d8e14"
-        },
-        "result": "warn",
-        "severity": "minor",
-        "evidence": "q-yang-mills-levi.lean:24-28 — 'Ground ring: ℝ ... NOT part of the formal proof chain'; q-yang-mills-levi.lean:43 — structure over CQuantumObservableUniverse with integrand:M→ℝ",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T14:04:44.559Z",
-        "reviewed_sha": "a72996e8ab52ec378111223aabe5285606d1d90a",
-        "notes": "Lean file is explicitly over ℝ with a comment that it is NOT part of the formal proof chain. The .md definition text uses abstract notation (integral, curvature) without ℝ-specific constructs. The archimedean leak is in the lean sibling only, which is annotated as archimedean realisation. The .md itself is wall-clean; however the lean file lacks the CLAUDE.md §7c banner format used in witt-vector-lift.md. Minor warn: lean file should carry the §7c banner in its module doc comment."
-      }
     ]
   },
-  "updated_at": "2026-06-07T14:04:44.559Z"
+  "updated_at": "2026-06-05T14:22:44.851Z"
 }

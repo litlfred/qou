@@ -67,17 +67,13 @@ noncomputable def m_n : ℝ := 939.56542194
 -- Ref: [codata2022] https://doi.org/10.1103/RevModPhys.97.025002
 noncomputable def m_e : ℝ := 0.51099895069
 
-/-- Catalan's constant `G ≈ 0.91596559417721901505460351493238411077414937428167`
-    (mpmath `mp.dps = 50`).
+/-- Catalan's constant `G ≈ 0.9159655941772190150546035149324`.
     Defined as the rational approximation; the irrationality of
     Catalan's constant is open (Apéry-style result not yet
     available in Mathlib), so we use the standard high-precision
-    decimal. Bumped from 22-dps to 50-dps literal 2026-06-07
-    (paired with the symbolic `QOU.Archimedean.catalan_G` /
-    `vol_B3 := 8 · catalan_G` refactor — see
-    `QOU.Archimedean.HyperbolicVolumeTranscendence` §0). -/
+    decimal. -/
 -- Ref: [oeis-A006752] Decimal expansion of Catalan's constant — see content/schema/references.ts
-noncomputable def catalan_G : ℝ := 0.91596559417721901505460351493238411077414937428167
+noncomputable def catalan_G : ℝ := 0.91596559417721901505
 
 /-- Binding scale `α = m_e · 8 G`. -/
 noncomputable def alpha_bind : ℝ := m_e * 8 * catalan_G

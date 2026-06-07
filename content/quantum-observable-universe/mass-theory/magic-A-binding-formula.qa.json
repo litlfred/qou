@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/mass-theory/magic-A-binding-formula.lean"
   },
   "source_hashes": {
-    "md": "979832b38831",
+    "md": "5fed5257b1ec",
     "ts": "ac9c0ac75141",
     "lean": "08a3ccb842a7"
   },
@@ -233,6 +233,25 @@
         },
         "reviewed_at": "2026-06-01T16:06:38.106Z",
         "reviewed_sha": "d4a8cf462aeef2262429b13571ddd385968bce63"
+      }
+    ],
+    "canonical-calibration-count": [
+      {
+        "field_hash": {
+          "md": "6caa25bf7879",
+          "ts": "ac9c0ac75141",
+          "lean": "08a3ccb842a7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "8055e5864896",
+          "script_commit_sha": "7d3eeba998ed7051fd1624bce43cb8d0e006a14c"
+        },
+        "reviewed_at": "2026-06-02T19:34:22.348Z",
+        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
       }
     ],
     "canonical-no-numerology": [
@@ -922,6 +941,25 @@
         "reviewed_sha": "19118a572290d7bf9fc5b30e8a174c4bc86e6ad5"
       }
     ],
+    "detangler-block-tanglement": [
+      {
+        "field_hash": {
+          "md": "6caa25bf7879",
+          "ts": "ac9c0ac75141",
+          "lean": "08a3ccb842a7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "8055e5864896",
+          "script_commit_sha": "7d3eeba998ed7051fd1624bce43cb8d0e006a14c"
+        },
+        "reviewed_at": "2026-06-02T19:35:58.523Z",
+        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
+      }
+    ],
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
@@ -942,26 +980,6 @@
         "reviewed_at": "2026-06-06T01:19:03.533Z",
         "reviewed_sha": "237e5cd114e617f2aedd06a71e0e5fc75053f33c",
         "notes": "Move Status/Reanalysis banners to authorNotes; keep §3b-cond conditional banner in prose."
-      },
-      {
-        "field_hash": {
-          "md": "979832b38831",
-          "ts": "ac9c0ac75141",
-          "lean": "08a3ccb842a7"
-        },
-        "result": "warn",
-        "severity": "minor",
-        "evidence": "magic-A-binding-formula.md:37+ -- ## Why doubly-magic and ## Status sections interpret proposition",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T13:44:31.868Z",
-        "reviewed_sha": "af638213a478dd151bf02a1c7949162067f278fa",
-        "notes": "Extended interpretive sections; proposition is conditional theorem with companion remark absent"
       }
     ],
     "fit-section-chapter": [
@@ -984,26 +1002,6 @@
         "reviewed_at": "2026-06-06T01:19:03.567Z",
         "reviewed_sha": "237e5cd114e617f2aedd06a71e0e5fc75053f33c",
         "notes": "Block placement is appropriate."
-      },
-      {
-        "field_hash": {
-          "md": "979832b38831",
-          "ts": "ac9c0ac75141",
-          "lean": "08a3ccb842a7"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "magic-A-binding-formula.ts:2 -- proposition",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T13:44:31.910Z",
-        "reviewed_sha": "af638213a478dd151bf02a1c7949162067f278fa",
-        "notes": "Doubly-magic binding formula fits mass-theory chapter"
       }
     ],
     "wall-side-statement": [
@@ -1026,26 +1024,6 @@
         "reviewed_at": "2026-06-06T01:19:03.607Z",
         "reviewed_sha": "237e5cd114e617f2aedd06a71e0e5fc75053f33c",
         "notes": "Archimedean specialisation is properly bracketed in the statement."
-      },
-      {
-        "field_hash": {
-          "md": "979832b38831",
-          "ts": "ac9c0ac75141",
-          "lean": "08a3ccb842a7"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "magic-A-binding-formula.md:1 -- Lean sibling: archimedean specialisation over R banner",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T13:44:31.954Z",
-        "reviewed_sha": "af638213a478dd151bf02a1c7949162067f278fa",
-        "notes": "Block has explicit archimedean banner per CLAUDE.md 7c; legitimately uses R for MeV comparison"
       }
     ],
     "wall-side-proof": [
@@ -1068,26 +1046,6 @@
         "reviewed_at": "2026-06-06T01:19:03.647Z",
         "reviewed_sha": "237e5cd114e617f2aedd06a71e0e5fc75053f33c",
         "notes": "Proof stays on categorical side; MeV values are in statement context only."
-      },
-      {
-        "field_hash": {
-          "md": "979832b38831",
-          "ts": "ac9c0ac75141",
-          "lean": "08a3ccb842a7"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "magic-A-binding-formula.lean -- archimedean proof of mass formula",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T13:44:31.997Z",
-        "reviewed_sha": "af638213a478dd151bf02a1c7949162067f278fa",
-        "notes": "Proof is archimedean evaluation of MeV mass; appropriately uses R with explicit banner"
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1110,122 +1068,8 @@
         "reviewed_at": "2026-06-06T01:19:03.683Z",
         "reviewed_sha": "237e5cd114e617f2aedd06a71e0e5fc75053f33c",
         "notes": "Narrative and Lean both state the same conditional theorem structure."
-      },
-      {
-        "field_hash": {
-          "md": "979832b38831",
-          "ts": "ac9c0ac75141",
-          "lean": "08a3ccb842a7"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "magic-A-binding-formula.lean -- conditional theorem on magic-numbers-bring and gravity-spectral-prefactor",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T13:44:32.054Z",
-        "reviewed_sha": "af638213a478dd151bf02a1c7949162067f278fa",
-        "notes": "Narrative and lean both state conditional theorem on two conjectures; same hypotheses and conclusion"
-      }
-    ],
-    "detangler-topic-coherence": [
-      {
-        "field_hash": {
-          "md": "979832b38831",
-          "ts": "ac9c0ac75141",
-          "lean": "08a3ccb842a7"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6b0daec15a39",
-          "script_commit_sha": "1b04ccd94e84859e842739184abe528c941fd8d6"
-        },
-        "reviewed_at": "2026-06-07T04:50:22.937Z",
-        "reviewed_sha": "8e315ca2cc049b1d869a7b31681ac98ac0873c57"
-      }
-    ],
-    "detangler-block-tanglement": [
-      {
-        "field_hash": {
-          "md": "979832b38831",
-          "ts": "ac9c0ac75141",
-          "lean": "08a3ccb842a7"
-        },
-        "result": "warn",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "2dc4e0b4dcad",
-          "script_commit_sha": "9abab946953ee1807044ca56a312ca371e1149c6"
-        },
-        "reviewed_at": "2026-06-07T04:58:08.431Z",
-        "reviewed_sha": "eb046edef4314c266e36974ce9af9496a53889f3",
-        "metrics": {
-          "fwd_emitted": 2,
-          "fwd_received": 0,
-          "tanglement_score": 2,
-          "out_degree": 3,
-          "in_degree": 1,
-          "cone_size": 68,
-          "depth": 16,
-          "pagerank": 0.000174,
-          "edge_span_max": 1,
-          "edge_span_mean": 1,
-          "worst_target": "emits fwd-ref to observations: prop:diagrammatic-double-magic-lr-fusion"
-        }
-      }
-    ],
-    "canonical-calibration-count": [
-      {
-        "field_hash": {
-          "md": "979832b38831",
-          "ts": "ac9c0ac75141",
-          "lean": "08a3ccb842a7"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "f85a8e7bf89c",
-          "script_commit_sha": "505f4df12175e60f8da8fddbcfe814c39f63a326"
-        },
-        "reviewed_at": "2026-06-07T05:35:26.749Z",
-        "reviewed_sha": "505f4df12175e60f8da8fddbcfe814c39f63a326"
-      }
-    ],
-    "detangler-graph-energy": [
-      {
-        "field_hash": {
-          "md": "979832b38831",
-          "ts": "ac9c0ac75141",
-          "lean": "08a3ccb842a7"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "6fcbacc4b3ceaa9160c1d877e595a26d6998471d"
-        },
-        "reviewed_at": "2026-06-07T05:58:41.267Z",
-        "reviewed_sha": "738ed713806a3976739e57e01d0100f3540f79e5",
-        "metrics": {
-          "graph_energy": 0,
-          "fwd_edge_count": 0,
-          "worst_span": 0
-        }
       }
     ]
   },
-  "updated_at": "2026-06-07T13:44:32.054Z"
+  "updated_at": "2026-06-06T01:19:03.683Z"
 }

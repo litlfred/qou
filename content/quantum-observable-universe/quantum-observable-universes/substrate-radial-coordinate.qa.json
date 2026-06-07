@@ -955,6 +955,59 @@
         "reviewed_sha": "26d6c0987a94ca9ddede91fdc1d3f655bf8c25f0"
       }
     ],
+    "canonical-calibration-count": [
+      {
+        "field_hash": {
+          "md": "40b474a40cb3",
+          "ts": "cf7113d6a47d",
+          "lean": "0a758e47e4c1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "570ccb51ec4d",
+          "script_commit_sha": "383eb73ecb958e3e8b9d2229e16239126f69f50f"
+        },
+        "reviewed_at": "2026-05-25T07:06:37.458Z",
+        "reviewed_sha": "cabb1e3313038ed0df2555c1ef1dbb25436d34ca"
+      },
+      {
+        "field_hash": {
+          "md": "40b474a40cb3",
+          "ts": "cf7113d6a47d",
+          "lean": "0a758e47e4c1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6b3b5d8e420d",
+          "script_commit_sha": "e9e1a41d6cae07d2ecfb5b1cf0afa4a840a4b614"
+        },
+        "reviewed_at": "2026-05-25T23:28:35.242Z",
+        "reviewed_sha": "82e22b09358a7d8ef9d1a6e43b0b996db4a40264"
+      },
+      {
+        "field_hash": {
+          "md": "40b474a40cb3",
+          "ts": "cf7113d6a47d",
+          "lean": "6b36e06e35e6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "8055e5864896",
+          "script_commit_sha": "7d3eeba998ed7051fd1624bce43cb8d0e006a14c"
+        },
+        "reviewed_at": "2026-06-02T19:34:22.348Z",
+        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
+      }
+    ],
     "canonical-no-numerology": [
       {
         "field_hash": {
@@ -2202,6 +2255,27 @@
         "reviewed_at": "2026-05-27"
       }
     ],
+    "detangler-block-tanglement": [
+      {
+        "field_hash": {
+          "ts": "cf7113d6a47d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "detangler-block-tanglement-audit",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/detangler-integration-watcher"
+        },
+        "reviewed_at": "2026-05-27",
+        "metrics": {
+          "fwd_emitted": 0,
+          "fwd_received": 0,
+          "tanglement_score": 0
+        }
+      }
+    ],
     "q-usage-regime-detected": [
       {
         "field_hash": {
@@ -2495,189 +2569,7 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
-    ],
-    "detangler-topic-coherence": [
-      {
-        "field_hash": {
-          "md": "40b474a40cb3",
-          "ts": "cf7113d6a47d",
-          "lean": "6b36e06e35e6"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6b0daec15a39",
-          "script_commit_sha": "1b04ccd94e84859e842739184abe528c941fd8d6"
-        },
-        "reviewed_at": "2026-06-07T04:50:22.937Z",
-        "reviewed_sha": "8e315ca2cc049b1d869a7b31681ac98ac0873c57"
-      }
-    ],
-    "detangler-block-tanglement": [
-      {
-        "field_hash": {
-          "md": "40b474a40cb3",
-          "ts": "cf7113d6a47d",
-          "lean": "6b36e06e35e6"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "2dc4e0b4dcad",
-          "script_commit_sha": "9abab946953ee1807044ca56a312ca371e1149c6"
-        },
-        "reviewed_at": "2026-06-07T04:58:08.431Z",
-        "reviewed_sha": "eb046edef4314c266e36974ce9af9496a53889f3",
-        "metrics": {
-          "fwd_emitted": 0,
-          "fwd_received": 0,
-          "tanglement_score": 0,
-          "out_degree": 4,
-          "in_degree": 3,
-          "cone_size": 27,
-          "depth": 14,
-          "pagerank": 0.000672,
-          "edge_span_max": 128,
-          "edge_span_mean": 58,
-          "worst_target": ""
-        }
-      }
-    ],
-    "canonical-calibration-count": [
-      {
-        "field_hash": {
-          "md": "40b474a40cb3",
-          "ts": "cf7113d6a47d",
-          "lean": "6b36e06e35e6"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "f85a8e7bf89c",
-          "script_commit_sha": "505f4df12175e60f8da8fddbcfe814c39f63a326"
-        },
-        "reviewed_at": "2026-06-07T05:35:26.749Z",
-        "reviewed_sha": "505f4df12175e60f8da8fddbcfe814c39f63a326"
-      }
-    ],
-    "detangler-graph-energy": [
-      {
-        "field_hash": {
-          "md": "40b474a40cb3",
-          "ts": "cf7113d6a47d",
-          "lean": "6b36e06e35e6"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "6fcbacc4b3ceaa9160c1d877e595a26d6998471d"
-        },
-        "reviewed_at": "2026-06-07T05:58:41.267Z",
-        "reviewed_sha": "738ed713806a3976739e57e01d0100f3540f79e5",
-        "metrics": {
-          "graph_energy": 0,
-          "fwd_edge_count": 0,
-          "worst_span": 0
-        }
-      }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "40b474a40cb3",
-          "ts": "cf7113d6a47d",
-          "lean": "6b36e06e35e6"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "quantum-observable-universes.ts:130 — block in sec:differential-structures-fiber-adjoint",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-08T09:24:41.560Z",
-        "reviewed_sha": "400ece7d8dc4400bfdff82ecbc55e4d8baaab6fa",
-        "notes": "Proposition on substrate radial coordinate; fits sec:differential-structures-fiber-adjoint."
-      }
-    ],
-    "voice-statement-no-interpretation": [
-      {
-        "field_hash": {
-          "md": "40b474a40cb3",
-          "ts": "cf7113d6a47d",
-          "lean": "6b36e06e35e6"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "substrate-radial-coordinate.md:3-16 — statement + Lie derivative equation; no separate ## Interpretation heading following statement",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-08T09:24:41.596Z",
-        "reviewed_sha": "400ece7d8dc4400bfdff82ecbc55e4d8baaab6fa",
-        "notes": "Statement block; no substantive interpretive prose beyond statement formula."
-      }
-    ],
-    "wall-side-statement": [
-      {
-        "field_hash": {
-          "md": "40b474a40cb3",
-          "ts": "cf7113d6a47d",
-          "lean": "6b36e06e35e6"
-        },
-        "result": "warn",
-        "severity": "minor",
-        "evidence": "substrate-radial-coordinate.md:1 — Lean sibling banner: archimedean specialisation over R; statement uses Z->0 as q->inf, Z->inf as q->1 which implies real ordering",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-08T09:24:41.627Z",
-        "reviewed_sha": "400ece7d8dc4400bfdff82ecbc55e4d8baaab6fa",
-        "notes": "Statement has Real-ordering language (Z->0 as q->inf, q->1 as classical limit). Banner present acknowledging archimedean specialisation. WARN: wall: field absent in .ts manifest despite banner in .md."
-      }
-    ],
-    "wall-side-proof": [
-      {
-        "field_hash": {
-          "md": "40b474a40cb3",
-          "ts": "cf7113d6a47d",
-          "lean": "6b36e06e35e6"
-        },
-        "result": "n/a",
-        "severity": "minor",
-        "evidence": "substrate-radial-coordinate.md — no **Proof.** body; proof in separate prf: block",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-08T09:24:41.659Z",
-        "reviewed_sha": "400ece7d8dc4400bfdff82ecbc55e4d8baaab6fa",
-        "notes": "Proof is in separate proof block; n/a here."
-      }
     ]
   },
-  "updated_at": "2026-06-08T09:24:41.659Z"
+  "updated_at": "2026-06-05T14:22:44.851Z"
 }

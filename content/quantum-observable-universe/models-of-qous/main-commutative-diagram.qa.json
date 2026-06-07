@@ -2218,6 +2218,25 @@
         "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/models-of-qous/main-commutative-diagram.lean:25: invalid 'import' command, it must be used in the beginning of the file"
+      },
+      {
+        "field_hash": {
+          "md": "03848e564716",
+          "ts": "a976307c8751",
+          "lean": "7645958beeb8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "cf383b911867",
+          "script_commit_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
+          "deps_hash": "4b9cd43e52e5"
+        },
+        "reviewed_at": "2026-06-05T14:22:44.851Z",
+        "reviewed_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
+        "notes": "stale: cached lean diagnostics have no lean_sha (legacy v1 cache); re-run content/pipeline/lean-compile-audit.ts to refresh"
       }
     ],
     "voice-author-notes-pollution": [
@@ -2550,91 +2569,7 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "03848e564716",
-          "ts": "a976307c8751",
-          "lean": "7645958beeb8"
-        },
-        "result": "pass",
-        "evidence": "main-commutative-diagram.ts:3 — proposition; main-commutative-diagram.md:1-33 — tikzcd diagram with EL operator and parallel transport",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T14:05:14.449Z",
-        "reviewed_sha": "a72996e8ab52ec378111223aabe5285606d1d90a",
-        "notes": "Proposition block in sec:physical-interpretation. The main commutative diagram is the central result for this section; placement and labelling are correct."
-      }
-    ],
-    "voice-statement-no-interpretation": [
-      {
-        "field_hash": {
-          "md": "03848e564716",
-          "ts": "a976307c8751",
-          "lean": "7645958beeb8"
-        },
-        "result": "pass",
-        "evidence": "main-commutative-diagram.md:1-8 — formal statement with hypotheses and tikzcd diagram; md:9-32 — brief legend of arrows",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T14:05:14.487Z",
-        "reviewed_sha": "a72996e8ab52ec378111223aabe5285606d1d90a",
-        "notes": "The .md opens with a formal proposition setup (hypotheses: archimedean QOU, instanton, substrate parameter; conclusion: diagram commutes). No interpretive or motivational prose pollutes the statement block; the arrow legend is definitional clarification. Correct voice for a proposition statement."
-      }
-    ],
-    "wall-side-statement": [
-      {
-        "field_hash": {
-          "md": "03848e564716",
-          "ts": "a976307c8751",
-          "lean": "7645958beeb8"
-        },
-        "result": "pass",
-        "evidence": "main-commutative-diagram.lean:34 — abbrev R_q := LaurentPolynomial ℤ; lean:52 — q_gt_one commented out '(archimedean; not meaningful over R_q)'",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T14:05:14.528Z",
-        "reviewed_sha": "a72996e8ab52ec378111223aabe5285606d1d90a",
-        "notes": "Lean file is explicitly over R_q = LaurentPolynomial ℤ (generic Laurent ring). The archimedean ordering predicate (q > 1) is commented out with an explanatory note. The structure fields are all of type R_q, not ℝ. Wall-clean on the Lean side. The .md statement says 'archimedean QOU' in prose but this is the hypothesis qualifier for the proposition, not an archimedean leak."
-      }
-    ],
-    "wall-side-proof": [
-      {
-        "field_hash": {
-          "md": "03848e564716",
-          "ts": "a976307c8751",
-          "lean": "7645958beeb8"
-        },
-        "result": "pass",
-        "evidence": "main-commutative-diagram.lean:73-77 — theorem diagram_commutes proved by 'exact d.commutativity' over R_q",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T14:05:14.566Z",
-        "reviewed_sha": "a72996e8ab52ec378111223aabe5285606d1d90a",
-        "notes": "The Lean proof is trivial (exact field access); over R_q. The narrative proof (main-commutative-diagram-proof.md) traces the top-right and left-bottom paths; both paths are described abstractly in terms of categorical/variational operations without crossing to archimedean arithmetic. No ℝ-specific identities appear in the proof narrative."
-      }
     ]
   },
-  "updated_at": "2026-06-07T14:05:14.566Z"
+  "updated_at": "2026-06-05T14:22:44.851Z"
 }

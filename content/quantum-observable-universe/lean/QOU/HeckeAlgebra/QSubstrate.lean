@@ -43,36 +43,14 @@ number existence claim.
 
 namespace QOU.HeckeAlgebra.QSubstrate
 
-/-- **The QOU substrate parameter** `q_0`.
+/-- **The QOU substrate parameter** `q_0`.  Axiomatised as a real
+    number greater than 1 (per the categorical derivation in
+    `def:m-mu-over-m-e-calibration`); concrete 50-dps value lives
+    in `folio-assistant/computations/substrate/q_parameter.py`. -/
+axiom q_0 : ℝ
 
-    **`def` form** (was previously an `axiom`).  Discharged
-    2026-06-07 in PR #1978 via the same placeholder-literal pattern
-    used for `H3BraneTowerScaffold.q0` (same numerical value: the
-    50-dps decimal expansion from
-    `folio-assistant/computations/full-twist-delta-n2-verification.witness.json::q_0`,
-    produced by the proton-anchor re-pin of 2026-05-28 in
-    `tools/qou-substrate/python/qou_substrate/constants.py::Q_50_DIGIT_STR`).
-
-    Consumer audit (2026-06-07): only `QOU.HeckeAlgebra.Realification`
-    references `q_0` by name, and only via the derived `q_0_ne_zero`.
-    Other downstream files (`PerNucleusMassDerivation`,
-    `JonesMarkovWenzl`, `HeckeAlgebra` root module) `open` the
-    namespace but don't read the symbol — they parameterise on `q`
-    generically. Locking `q_0` to a literal therefore does not
-    constrain any downstream proof; a future refactor will rebind
-    this `def` to the substrate-derivation pipeline output once the
-    `def:m-mu-over-m-e-calibration` Lean port lands. -/
--- Ref: q-pinning-50-digit.witness.json (proton-anchor re-pin, 2026-05-28)
--- Ref: [manuscript] def:m-mu-over-m-e-calibration
-noncomputable def q_0 : ℝ :=
-  1.10997858275138080759166909561076887987449912187357763605672
-
-/-- `q_0 > 1` (categorical-derivation property).
-    **Theorem** (was previously an `axiom`).  Discharged 2026-06-07
-    by `norm_num` against the literal `def q_0` above. -/
-theorem q_0_gt_one : 1 < q_0 := by
-  unfold q_0
-  norm_num
+/-- `q_0 > 1` (categorical-derivation property). -/
+axiom q_0_gt_one : 1 < q_0
 
 /-- `q_0 ≠ 0` (immediate from `q_0 > 1`). -/
 theorem q_0_ne_zero : q_0 ≠ 0 :=

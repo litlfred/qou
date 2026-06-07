@@ -43,44 +43,26 @@ namespace QOU.LiftingDescent.H3BraneTowerScaffold
 
 open scoped LinearMap
 
-/-- Substrate parameter `q_0`.  Bound here to the canonical 50-dps
-    literal from
-    `folio-assistant/computations/full-twist-delta-n2-verification.witness.json`
-    (`q_0` field), produced by the proton-anchor re-pin of 2026-05-28
-    (`tools/qou-substrate/python/qou_substrate/constants.py::Q_50_DIGIT_STR`).
+/-- Substrate parameter `q_0`.  Treated symbolically here; the numerical
+    value `q_0 ≈ 1.10997859555…` is loaded from `q_parameter.py`'s
+    `Q_50_DIGIT_STR` in the Python realisation.
 
-    **`def` form** (was previously an `axiom`).  Discharged 2026-06-07
-    in PR #1978 via the same placeholder-literal pattern used for
-    `m_e_cat`: the consumer side of this scaffold (`tau_hat_0_idem`)
-    treats `q0` as an opaque scalar — no consumer reads its value, so
-    binding to a literal does not constrain any downstream proof.  A
-    future refactor will rebind this `def` to a substrate-derivation
-    output once the q_0 categorical pipeline returns a Lean-typed real
-    (the symbolic `findroot` evaluation in `qou_substrate.constants`). -/
+    Axiomatised at this layer; concrete numerical specialisation lives
+    in `q-pinning-50-digit.witness.json`. -/
 -- Ref: [manuscript] §6, Definition: Substrate parameter
--- Ref: q-pinning-50-digit.witness.json (proton-anchor re-pin, 2026-05-28)
-noncomputable def q0 : ℝ :=
-  1.10997858275138080759166909561076887987449912187357763605672
+axiom q0 : ℝ
 
-/-- Markov parameter `z = 1/(q_0^{1/2} + q_0^{-1/2}) = √q_0 / (q_0+1)`.
-    Bound here to the 50-dps literal value computed from `q0` via
-    `√q_0 / (q_0+1)` (avoiding the `Real.sqrt` import).
-
-    **`def` form** (was previously an `axiom`).  Discharged 2026-06-07
-    by binding to the literal value derived from `q0` above. -/
+/-- Markov parameter `z = 1/(q_0^{1/2} + q_0^{-1/2})`.
+    Axiomatised at this layer; concrete realisation in
+    `q_parameter.py`'s `Z_MARKOV_50_DIGIT_STR`. -/
 -- Ref: [manuscript] §5, eq. Markov parameter
-noncomputable def z_markov : ℝ :=
-  0.499320334183694452413442680257666303751948164041532207464350
+axiom z_markov : ℝ
 
-/-- Hecke deformation `h = q_0 - q_0^{-1}`.  Defined symbolically in
-    terms of `q0` above — no new literal needed.
-
-    **`def` form** (was previously an `axiom`).  Discharged 2026-06-07
-    by binding to `q0 - q0⁻¹`, which gives the 50-dps value
-    `0.209060298795639315430846213129674943859757495263022562533409`
-    when `q0` is the literal above. -/
+/-- Hecke deformation `h = q_0 - q_0^{-1}`.
+    Axiomatised at this layer; concrete realisation in
+    `q_parameter.py`'s `H_HECKE_50_DIGIT_STR`. -/
 -- Ref: [manuscript] §5, eq. Hecke relation
-noncomputable def h_hecke : ℝ := q0 - q0⁻¹
+axiom h_hecke : ℝ
 
 /-- The level-0 module: `A_0 = H_3(q_0)` realised as `ℝ^6` with the
     Hecke-algebra multiplication.  The Python realisation builds this

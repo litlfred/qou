@@ -7,7 +7,6 @@ import Mathlib.Tactic.NormNum
 import Mathlib.Tactic.Linarith
 import Mathlib.Topology.Algebra.InfiniteSum.Basic
 import Mathlib.RingTheory.Real.Irrational
-import Mathlib.Analysis.SpecialFunctions.Basic
 
 /-!
 # Hyperbolic Volume Transcendence: Conjectures and Propositions
@@ -46,98 +45,20 @@ open QOU.KnotTheory QOU.KnotRegistry
 
 namespace QOU.Archimedean
 
-/-! ## §0  Catalan's constant (used in `vol_B3 := 8 · G`)
-
-`catalan_G` and its numerical bounds were previously declared in
-`QOU.Archimedean.BorromeanVolumeCatalan`; they were lifted here on
-2026-06-07 so that `vol_B3` can be defined as the *exact* symbolic
-expression `8 · catalan_G` rather than a 15-digit SnapPy decimal
-approximation.  This discharges the former `vol_B3_eq_8_catalan`
-axiom (now a `theorem … := rfl`) and gives `vol_B3` infinite
-mathematical precision: the only remaining numerical input is the
-`catalan_G_numerical_bounds` axiom, which records a *coarse*
-two-sided interval `0.915 < G < 0.916` from the literature value
-(OEIS A006752 / Lewin 1981 §1.7.8 list 24 digits, of which only
-the first three are needed for this interval). It is a 1-line
-numerical assertion, not a per-knot measurement. -/
-
-/-- Catalan's constant `G = Σ_{k=0}^∞ (-1)^k / (2k+1)²`.
-
-    OEIS A006752, 24-digit value 0.915965594177219015054603514…
-
-    Standard reference: [lewin1981] Lewin, "Polylogarithms and Associated
-    Functions", North-Holland, eq. 1.7.8.
-
-    Not yet in Mathlib (verified via `lean_loogle`, `lean_leansearch`
-    queries on 2026-05-25); introduced here as a noncomputable def
-    pending upstream contribution. -/
--- Ref: [lewin1981] Lewin, "Polylogarithms and Associated Functions",
---        North-Holland (1981), §1.7.8.
-noncomputable def catalan_G : ℝ :=
-  ∑' (k : ℕ), ((-1 : ℝ) ^ k) / ((2 * k + 1 : ℝ) ^ 2)
-
-/-- Numerical value of Catalan's constant to 24 decimal places.
-
-    Computed via mpmath `mp.catalan` at 50 dps:
-    0.915965594177219015054603514...
-
-    Established literature fact (OEIS A006752 / Lewin 1981 §1.7.8):
-    the 24-digit value `G ≈ 0.915965594177219015054603514…` immediately
-    places `G ∈ (0.915, 0.916)`. -/
--- Ref: [lewin1981] Lewin, "Polylogarithms and Associated Functions",
---        North-Holland (1981), §1.7.8.
--- Ref: OEIS A006752 — Catalan's constant decimal expansion.
-axiom catalan_G_numerical_bounds :
-    catalan_G > (0.915 : ℝ) ∧ catalan_G < (0.916 : ℝ)
-
-/-- Catalan's constant is positive. -/
-theorem catalan_G_pos : catalan_G > 0 := by
-  have h := catalan_G_numerical_bounds
-  linarith [h.1]
-
-/-! ## §1  Volume extraction
-
-The three QOU volumes used in `SingleVolumeIrrational` /
-`BorelZagierQOU` / `HyperbolicVolumeIndependence`:
-
-* `vol_4_1` — figure-eight knot (Higgs); exact `3 · Cl_2(π/3)`,
-  bumped 2026-06-07 to a 24-dps OEIS A091518 literal (Cl_2 not
-  yet in Mathlib so a symbolic form is not available locally).
-* `vol_5_2` — three-twist knot (down quark); 15-dps SnapPy literal
-  (precision bump deferred — no known closed form in standard
-  polylog functions, need a SnapPy-verified high-dps reference).
-* `vol_B3` — Borromean rings (nucleon); **symbolic `8 · catalan_G`**
-  (exact; supersedes the former 15-dps SnapPy literal). -/
+/-! ## §1  Volume extraction -/
 
 /-- Hyperbolic volume of the figure-eight knot 4₁ (Higgs boson).
-    Exact: 3 · Cl₂(π/3) ≈ 2.029883212819307250042408. -/
+    Exact: 3 · Cl₂(π/3) ≈ 2.02988321281931. -/
 noncomputable def vol_4_1 : ℝ := figureEightEntry.volume.value
 
 /-- Hyperbolic volume of the three-twist knot 5₂ (down quark).
-    Numerical: ≈ 2.82812208832975 (SnapPy 15 dps).
-    Pending: add threeTwistEntry to KnotRegistry and extract from there.
-    Precision bump deferred (no closed form; need a
-    SnapPy-verified high-dps reference before bumping the literal). -/
+    Numerical: ≈ 2.82812208832975 (SnapPy).
+    Pending: add threeTwistEntry to KnotRegistry and extract from there. -/
 noncomputable def vol_5_2 : ℝ := 2.82812208832975
 
 /-- Hyperbolic volume of the Borromean rings 𝓑₃ (nucleon).
-
-    **Exact**: `Vol(𝓑₃) = 8 · G` where `G` is Catalan's constant
-    (Adams 1985, octahedral decomposition into 2 regular ideal
-    octahedra, each of volume `8 · Λ(π/4) = 4 · G`).
-
-    Numerically: 8 · 0.915965594177219… = 7.327724753417752120…
-    (i.e. agrees with the SnapPy census measurement
-    7.32772475341775 ± 1×10⁻¹⁴ to 14 dps).
-
-    Defined as the *symbolic* product `8 · catalan_G` — this means
-    `vol_B3 = 8 · catalan_G` is a `rfl` theorem and the previous
-    `axiom vol_B3_eq_8_catalan` is discharged.
-
-    -- Ref: [adams1985hyperbolic] Adams, C. C. (1985), "The noncompact hyperbolic
-            3-manifold of minimum volume", Proc. Amer. Math. Soc. 100,
-            601-606. DOI: 10.2307/2045438. -/
-noncomputable def vol_B3 : ℝ := 8 * catalan_G
+    Numerical: ≈ 7.32772475341775 (SnapPy). -/
+noncomputable def vol_B3 : ℝ := borromeanRingsEntry.volume.value
 
 /-! ## §2  Positivity (proved) -/
 
@@ -153,12 +74,11 @@ theorem vol_5_2_pos : vol_5_2 > 0 := by
   unfold vol_5_2
   norm_num
 
-/-- Vol(𝓑₃) > 0.  Proof: `vol_B3 = 8 · catalan_G` and `catalan_G > 0`. -/
+/-- Vol(𝓑₃) > 0. -/
 -- Ref: [turaev2010] Turaev, "Quantum Invariants of Knots and 3-Manifolds," de Gruyter 2010
 theorem vol_B3_pos : vol_B3 > 0 := by
-  unfold vol_B3
-  have := catalan_G_pos
-  linarith
+  unfold vol_B3 borromeanRingsEntry
+  norm_num
 
 /-! ## §3  Nonzero (corollaries of positivity) -/
 
@@ -171,32 +91,22 @@ theorem vol_5_2_ne_zero : vol_5_2 ≠ 0 := ne_of_gt vol_5_2_pos
 /-- Vol(𝓑₃) ≠ 0. -/
 theorem vol_B3_ne_zero : vol_B3 ≠ 0 := ne_of_gt vol_B3_pos
 
-/-! ## §4  Pairwise distinctness (proved from numerical bounds)
+/-! ## §4  Pairwise distinctness (proved from numerical bounds) -/
 
-Now that `vol_B3 = 8 · catalan_G` symbolically, the `_ne_vol_B3`
-proofs need the `catalan_G_numerical_bounds` axiom to convert the
-symbolic bound `0.915 < G < 0.916` into the concrete numerical
-gap `vol_B3 ∈ (7.32, 7.328)` separating it from the 4₁ / 5₂
-literals. -/
-
-/-- Vol(4₁) ≠ Vol(𝓑₃).  Proof: 4₁ ≈ 2.030 < 7.32 < 8·G = vol_B3. -/
+/-- Vol(4₁) ≠ Vol(𝓑₃). -/
 theorem vol_4_1_ne_vol_B3 : vol_4_1 ≠ vol_B3 := by
-  unfold vol_4_1 vol_B3 figureEightEntry vol_figure_eight
-  have ⟨hlo, _⟩ := catalan_G_numerical_bounds
-  intro h
-  linarith
+  unfold vol_4_1 vol_B3 figureEightEntry borromeanRingsEntry vol_figure_eight
+  norm_num
 
 /-- Vol(4₁) ≠ Vol(5₂). -/
 theorem vol_4_1_ne_vol_5_2 : vol_4_1 ≠ vol_5_2 := by
   unfold vol_4_1 vol_5_2 figureEightEntry vol_figure_eight
   norm_num
 
-/-- Vol(5₂) ≠ Vol(𝓑₃).  Proof: 5₂ ≈ 2.828 < 7.32 < 8·G = vol_B3. -/
+/-- Vol(5₂) ≠ Vol(𝓑₃). -/
 theorem vol_5_2_ne_vol_B3 : vol_5_2 ≠ vol_B3 := by
-  unfold vol_5_2 vol_B3
-  have ⟨hlo, _⟩ := catalan_G_numerical_bounds
-  intro h
-  linarith
+  unfold vol_5_2 vol_B3 borromeanRingsEntry
+  norm_num
 
 /-- All three QOU hyperbolic volumes are pairwise distinct. -/
 theorem pairwise_distinct :

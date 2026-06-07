@@ -2218,6 +2218,25 @@
         "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/models-of-qous/skew-poisson-integration.lean:14: invalid 'import' command, it must be used in the beginning of the file"
+      },
+      {
+        "field_hash": {
+          "md": "f3818444d485",
+          "ts": "1bac86251e8a",
+          "lean": "2168a3f7d16b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "cf383b911867",
+          "script_commit_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
+          "deps_hash": "4b9cd43e52e5"
+        },
+        "reviewed_at": "2026-06-05T14:22:44.851Z",
+        "reviewed_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
+        "notes": "stale: cached lean diagnostics have no lean_sha (legacy v1 cache); re-run content/pipeline/lean-compile-audit.ts to refresh"
       }
     ],
     "voice-author-notes-pollution": [
@@ -2550,91 +2569,7 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "f3818444d485",
-          "ts": "1bac86251e8a",
-          "lean": "2168a3f7d16b"
-        },
-        "result": "pass",
-        "evidence": "skew-poisson-integration.ts:3 — proposition kind; skew-poisson-integration.md:1-17 — three-item proposition about formal group lift",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T14:09:29.896Z",
-        "reviewed_sha": "a72996e8ab52ec378111223aabe5285606d1d90a",
-        "notes": "Proposition in sec:witt-vector-lifting. States the existence of a formal group G/Z_p lifting H/F_p with three properties. Central result of the Witt-vector lifting section."
-      }
-    ],
-    "voice-statement-no-interpretation": [
-      {
-        "field_hash": {
-          "md": "f3818444d485",
-          "ts": "1bac86251e8a",
-          "lean": "2168a3f7d16b"
-        },
-        "result": "pass",
-        "evidence": "skew-poisson-integration.md:1 — §7c banner; md:3-17 — formal hypotheses and three-item conclusion; no interpretive prose in statement block",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T14:09:29.935Z",
-        "reviewed_sha": "a72996e8ab52ec378111223aabe5285606d1d90a",
-        "notes": "The statement opens with the §7c banner (which is a technical annotation, not interpretation), then gives clean formal hypotheses and three-item conclusion. Interpretation is deferred to the witt-lift-qou remark block. Voice is correct for a proposition."
-      }
-    ],
-    "wall-side-statement": [
-      {
-        "field_hash": {
-          "md": "f3818444d485",
-          "ts": "1bac86251e8a",
-          "lean": "2168a3f7d16b"
-        },
-        "result": "pass",
-        "evidence": "skew-poisson-integration.lean:34-52 — structure SkewPoissonIntegration with p:ℕ (prime), dim:ℕ; no ℝ usage; skew-poisson-integration.md:1 — §7c banner present; md:3 — H/F_p, π_<, Z_p, formal-group language throughout",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T14:09:29.974Z",
-        "reviewed_sha": "a72996e8ab52ec378111223aabe5285606d1d90a",
-        "notes": "The .md carries the §7c banner. The proposition body uses formal-group / ring-theoretic language (F_p, Z_p, Dist(G), Gröbner-Shirshov) with no ℝ-specific constructs. The Lean structure uses ℕ and Bool fields (no ℝ). The lean file imports Mathlib.Data.Real.Basic but the theorems themselves don't use ℝ; the import appears to be incidental. Wall-clean."
-      }
-    ],
-    "wall-side-proof": [
-      {
-        "field_hash": {
-          "md": "f3818444d485",
-          "ts": "1bac86251e8a",
-          "lean": "2168a3f7d16b"
-        },
-        "result": "pass",
-        "evidence": "skew-poisson-integration-proof.md:1-7 — proof cites Fresse's Main Theorem; items (1)(2)(3) attributed to existence/GS normal-form/strong multiplicativity; no ℝ-specific identities",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T14:09:30.012Z",
-        "reviewed_sha": "a72996e8ab52ec378111223aabe5285606d1d90a",
-        "notes": "Narrative proof attributes the three items to Fresse's theorem. No archimedean arithmetic; the proof is a citation to an external theorem. Wall-clean."
-      }
     ]
   },
-  "updated_at": "2026-06-07T14:09:30.012Z"
+  "updated_at": "2026-06-05T14:22:44.851Z"
 }
