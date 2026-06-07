@@ -1213,30 +1213,63 @@ export function checkCanonicalCkTieredNotBinary(
 
 // ─── Detangler axis ─────────────────────────────────────────────
 
+// Resolve a block slug (filename without .ts) under a chapter dir to
+// its kind, handling both declaration forms (`kind: "x"` and the
+// `export default <builder>(` builder call). Returns "" if unresolved.
+function blockKindForSlug(chapterDir: string, slug: string): string {
+  const p = join(chapterDir, `${slug}.ts`);
+  if (!existsSync(p)) return "";
+  const src = readFileSync(p, "utf-8");
+  const m =
+    src.match(/kind:\s*"([^"]+)"/) ||
+    src.match(/export\s+default\s+(\w+)\s*\(/);
+  return m ? m[1] : "";
+}
+
 export function checkDetanglerSectionBand(
   tsPath: string | undefined,
 ): CheckerResult {
   const ts = readMaybe(tsPath);
-  if (!ts) return { result: "n/a", hits: [] };
-  // Only applies to chapter manifests (which list sections).
+  if (!ts || !tsPath) return { result: "n/a", hits: [] };
+  const chapterDir = dirname(tsPath);
+  // Only applies to chapter manifests (which list sections). Capture
+  // the section TITLE too, so intro/overview sections can be skipped
+  // (detangler H4 excludes them from the sparse-section check).
   const sectionRe =
-    /\{\s*title:\s*["'][^"']*["']\s*,\s*blocks:\s*\[([^\]]*)\]/g;
-  const lengths: number[] = [];
+    /\{\s*title:\s*["']([^"']*)["']\s*,\s*blocks:\s*\[([^\]]*)\]/g;
+  const sections: Array<{ title: string; nonProse: number }> = [];
   for (const m of ts.matchAll(sectionRe)) {
-    const blocks = m[1]
+    const slugs = m[2]
       .split(",")
-      .map((s) => s.trim())
+      .map((s) => s.trim().replace(/^["']|["']$/g, ""))
       .filter(Boolean);
-    lengths.push(blocks.length);
+    // Count NON-PROSE blocks only (detangler H4/H5 measure "content
+    // blocks", not narrative prose/section-intro text). Resolving each
+    // slug's kind avoids the old bug of counting every ref — including
+    // prose — which inflated dense counts and masked sparse ones.
+    let nonProse = 0;
+    for (const slug of slugs) {
+      const kind = blockKindForSlug(chapterDir, slug);
+      // Unresolved slugs (kind "") count as content (conservative — do
+      // not silently drop a block we failed to read).
+      if (kind !== "prose") nonProse++;
+    }
+    sections.push({ title: m[1], nonProse });
   }
-  if (lengths.length === 0) return { result: "n/a", hits: [] };
+  if (sections.length === 0) return { result: "n/a", hits: [] };
+  const isIntro = (t: string) =>
+    /\b(introduction|overview|preliminaries|motivation)\b/i.test(t);
   const hits: CheckerHit[] = [];
-  lengths.forEach((n, i) => {
-    if (n < 3 || n > 18) {
+  sections.forEach((s, i) => {
+    // Sparse check excludes intro/overview sections (H4); dense check
+    // applies to all.
+    const sparse = s.nonProse < 3 && !isIntro(s.title);
+    const dense = s.nonProse > 18;
+    if (sparse || dense) {
       hits.push({
-        file: tsPath ?? "(unknown)",
+        file: tsPath,
         line: 1,
-        text: `section ${i + 1}: ${n} blocks (out of R1-R3 band 3..18)`,
+        text: `section ${i + 1} "${s.title}": ${s.nonProse} non-prose blocks (out of band 3..18)`,
       });
     }
   });
