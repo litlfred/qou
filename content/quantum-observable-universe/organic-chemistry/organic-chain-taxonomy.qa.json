@@ -1921,7 +1921,28 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "bd6db3635ce9",
+          "ts": "054b2b8c28c6"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Remark in §3 'Carbon chains, benzene, and organic chain taxonomy'; interprets def:molecular-hopf-chain, derives alkane/alkene/alkyne classes from bond-order patterns",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T02:43:36.709Z",
+        "reviewed_sha": "7e0f68ff7b36f1d9fd1c0092f0942cbce2167912",
+        "notes": "Belongs; the taxonomy coda P11-folded into the carbon-chains-benzene section per chapter manifest"
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-07T02:43:36.709Z"
 }
