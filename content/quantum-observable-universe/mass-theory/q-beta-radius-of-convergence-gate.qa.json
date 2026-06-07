@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "cd87a70d1f22",
     "ts": "ca0a757dbe40",
-    "lean": "ac4239b9f1ab"
+    "lean": "e6375664698f"
   },
   "criteria": {
     "detangler-graph-energy": [
@@ -82,7 +82,26 @@
           "worst_target": ""
         }
       }
+    ],
+    "canonical-calibration-count": [
+      {
+        "field_hash": {
+          "md": "cd87a70d1f22",
+          "ts": "ca0a757dbe40",
+          "lean": "e6375664698f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f85a8e7bf89c",
+          "script_commit_sha": "505f4df12175e60f8da8fddbcfe814c39f63a326"
+        },
+        "reviewed_at": "2026-06-07T05:35:26.749Z",
+        "reviewed_sha": "505f4df12175e60f8da8fddbcfe814c39f63a326"
+      }
     ]
   },
-  "updated_at": "2026-06-07T04:58:08.431Z"
+  "updated_at": "2026-06-07T05:35:26.749Z"
 }
