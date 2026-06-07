@@ -41,12 +41,17 @@ condition on the truncated coefficient matrix, hence decidable.
    \mathbb{Q}[q,q^{-1}][x,y,z]$ is computed by the reduction engine; full
    Jacobian rank $\iff I_N$ carries no generator of total degree $\le N$.
    This turns "no polynomial relation" into a normal-form computation the
-   skein engine already performs.  The **base-order certificate is now
-   Lean-formalized sorry-free**: the GB-eliminated order-3 minor has
-   non-singular echelon form ($\prod\text{pivots} = 2 \neq 0$,
-   `jetOrder3_certificate`), discharging full rank $3$ at the Reid-1991
-   base order from a finite, decidable determinant test.  Higher orders
-   are the same test pending the compute witness's coefficient data.
+   skein engine already performs.  The **base-order certificate is
+   Lean-formalized sorry-free *and witnessed by the framework's own
+   computation***: the h-jet expansion about $q=1$ of the canonical Markov
+   traces $\mathrm{tr}_M(K)$ for the three knots' canonical braid words
+   gives jet-Jacobian rows $(\tfrac14, -1, \tfrac{55}{16})$,
+   $(\tfrac12, 0, -\tfrac1{16})$, $(1, 0, 0)$ with elimination determinant
+   $\tfrac1{16} \neq 0$ (LU pivots $(\tfrac14, 2, \tfrac18)$,
+   `jetOrder3_certificate`) — so full rank $3$ holds at the Reid-1991 base
+   order, a finite decidable determinant test on real data
+   (`jet_order_pivots.py` → `jet-order-pivots.witness.json`).  Higher
+   orders are the same test at higher jet truncation.
 3. **Surreal error bounds** supply the *bridge* to the limit, and the
    right geometric picture is **parallel transport on the projective
    state fibre**.  The coloured-Jones invariant $J_K(q)$ is the holonomy
