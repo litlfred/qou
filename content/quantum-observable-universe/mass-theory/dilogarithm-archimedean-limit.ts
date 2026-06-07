@@ -16,6 +16,7 @@ export default conjecture({
   ],
   cites: ["faddeev1994", "kashaev1997", "zagier1986"],
   tags: [
+    "tier:keystone",
     "q-pochhammer",
     "dilogarithm",
     "bloch-wigner",

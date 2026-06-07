@@ -24,6 +24,7 @@ export default conjecture({
     "neumann-zagier1985",
   ],
   tags: [
+    "tier:keystone",
     "graded-mikusinski",
     "goncharov-periods",
     "archimedean-wall",
