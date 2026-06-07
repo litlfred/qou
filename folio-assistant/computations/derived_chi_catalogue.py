@@ -91,9 +91,12 @@ class KnotPartitionAtomCell:
     """n_K, the strand count of the braid representative."""
 
     chi_lambda_q_taylor: list[tuple[int, str]]
-    """Taylor expansion of χ^λ(β_K)(q) around q = 1 in h = q − 1,
-    as a list of (h-degree, coefficient-mpf-string) pairs. Example for
-    χ⁽²,¹⁾(β_Bor) = 2 − 3h⁴ − h⁶:
+    """Polynomial expression of χ^λ(β_K) in the canonical Kassel-Faddeev
+    variable `h = q − q⁻¹`, as a list of (h-degree, coefficient-string)
+    pairs. The expansion is in **`h`, not `q − 1`** — see T17 (PR #1933)
+    and `2026-06-07-knot-partition-atom-catalogue-3-axis-workplan.md` §
+    notation for why. Example for χ⁽²,¹⁾(β_Bor) = 2 − 3h⁴ − h⁶ with
+    h = q − q⁻¹:
         [(0, '2'), (4, '-3'), (6, '-1')]."""
 
     mu_eigenvalues: list[str]
@@ -267,8 +270,14 @@ def load_catalogue() -> DerivedChiCatalogue:
         )
     raw = json.loads(_CATALOGUE_WITNESS.read_text())
     data = raw.get("data", raw)
+    # The build script emits the catalogue under `data.catalogue` (a
+    # dedicated sub-section of the witness), keeping room for non-cell
+    # data alongside (e.g. `h_convention`, `rmatrix_trace_*`). Accept
+    # either shape — top-level for hand-authored witnesses or nested
+    # for the build-script output.
+    cells_root = data.get("catalogue", data)
     cat = DerivedChiCatalogue()
-    for c in data.get("cells", []):
+    for c in cells_root.get("cells", []):
         cat.add(KnotPartitionAtomCell(
             knot=c["knot"],
             partition=tuple(c["partition"]),

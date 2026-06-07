@@ -1,0 +1,156 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-06-07T04:07:48.444707+00:00",
+  "commitSha": "09367c815aacbc2cf25fcdd7a7935c874f15ec3a",
+  "assertions": [
+    {
+      "name": "rmatrix_reproduces_T17_chi_21",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "The independent R-matrix derivation of χ^(2,1)(β_Bor) must reproduce T17 (PR #1933): 2 − 3h⁴ − h⁶ to all orders ≤ h⁶. Cross-validates T17 and confirms the catalogue's first derived cell."
+    },
+    {
+      "name": "chi_trivial_is_unity",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "χ^(3)(β_Bor) from trivial Hecke rep (σ_i → q, σ_i⁻¹ → q⁻¹) evaluated on (σ_1⁻¹σ_2)^3 is q⁻¹·q·q⁻¹·q·q⁻¹·q = 1 exactly."
+    },
+    {
+      "name": "chi_sign_is_unity",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "χ^(1,1,1)(β_Bor) from sign Hecke rep (σ_i → −q⁻¹, σ_i⁻¹ → −q) evaluated on (σ_1⁻¹σ_2)^3 is ((−q)·(−q⁻¹))^3 = 1 exactly."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 318,
+  "computation": "derived-chi-catalogue",
+  "scriptFile": "derived_chi_catalogue_build.py",
+  "scriptHash": "a69c97799150",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.4.0"
+  },
+  "description": "Phase 1 of the 3-axis (knot, partition, atom) derived-χ catalogue. Emits the first three Borromean cells via R-matrix on V⊗³ (matches T17 / PR #1933 conventions) plus the (3) and (1,1,1) blocks from the 1-dim Hecke reps. Independent re-derivation; cross-validates T17.",
+  "data": {
+    "catalogue": {
+      "schema_version": "1.0.0",
+      "cell_count": 3,
+      "tier_counts": {
+        "derived": 3,
+        "cal-anchored": 0,
+        "extracted": 0
+      },
+      "cells": [
+        {
+          "knot": "borromean",
+          "partition": [
+            3
+          ],
+          "atom": "borromean-baryon",
+          "braid_word": "(σ_1^{-1}·σ_2)^3",
+          "strand_count": 3,
+          "chi_lambda_q_taylor": [
+            {
+              "h_degree": 0,
+              "coefficient": "1"
+            }
+          ],
+          "mu_eigenvalues": [
+            "1"
+          ],
+          "k_lambda": 2,
+          "y_lambda_at_zero": "1",
+          "y_star_shadow_price": null,
+          "tier": "derived",
+          "derivation_ref": "qou/folio-assistant/computations/derived_chi_catalogue_build.py (this script; independent re-derivation cross-validating PR #1933 / T17) / trivial Hecke rep σ_i ↦ q",
+          "notes": "χ^(3)(β_Bor) = 1 exactly (q-independent), from the 1-dim trivial Hecke rep."
+        },
+        {
+          "knot": "borromean",
+          "partition": [
+            2,
+            1
+          ],
+          "atom": "borromean-baryon",
+          "braid_word": "(σ_1^{-1}·σ_2)^3",
+          "strand_count": 3,
+          "chi_lambda_q_taylor": [
+            {
+              "h_degree": 0,
+              "coefficient": "2"
+            },
+            {
+              "h_degree": 4,
+              "coefficient": "-3"
+            },
+            {
+              "h_degree": 6,
+              "coefficient": "-1"
+            }
+          ],
+          "mu_eigenvalues": [
+            "?",
+            "?"
+          ],
+          "k_lambda": 1,
+          "y_lambda_at_zero": "1/4",
+          "y_star_shadow_price": null,
+          "tier": "derived",
+          "derivation_ref": "qou/folio-assistant/computations/derived_chi_catalogue_build.py (this script; independent re-derivation cross-validating PR #1933 / T17); cross-validates PR #1933 (T17 R-matrix); y_lambda from main@b6c23f2053 (T18 Markov-normalisation)",
+          "notes": "χ^(2,1)(β_Bor) = 2 − 3h⁴ − h⁶ derived independently via Schur-Weyl + R-matrix on V⊗³; reproduces T17 exactly. mu_eigenvalues populated in a follow-up commit using the Hoefsmit seminormal form."
+        },
+        {
+          "knot": "borromean",
+          "partition": [
+            1,
+            1,
+            1
+          ],
+          "atom": "borromean-baryon",
+          "braid_word": "(σ_1^{-1}·σ_2)^3",
+          "strand_count": 3,
+          "chi_lambda_q_taylor": [
+            {
+              "h_degree": 0,
+              "coefficient": "1"
+            }
+          ],
+          "mu_eigenvalues": [
+            "1"
+          ],
+          "k_lambda": 2,
+          "y_lambda_at_zero": "1",
+          "y_star_shadow_price": null,
+          "tier": "derived",
+          "derivation_ref": "qou/folio-assistant/computations/derived_chi_catalogue_build.py (this script; independent re-derivation cross-validating PR #1933 / T17) / sign Hecke rep σ_i ↦ −q⁻¹",
+          "notes": "χ^(1,1,1)(β_Bor) = 1 exactly (q-independent), from the 1-dim sign Hecke rep. Not visible in V⊗³ at U_q(sl₂); derived algebraically."
+        }
+      ]
+    },
+    "h_convention": "h = q − q⁻¹ (Kassel-Faddeev; matches T17 / PR #1933)",
+    "rmatrix_trace_borromean_q": "-2*q**6 + 6*q**4 - 6*q**2 + 12 - 6/q**2 + 6/q**4 - 2/q**6",
+    "rmatrix_trace_borromean_h": "8 − 6h⁴ − 2h⁶  with  h = q − q⁻¹",
+    "schur_weyl_check": {
+      "tr_VotimesThree_in_q": "-2*q**6 + 6*q**4 - 6*q**2 + 12 - 6/q**2 + 6/q**4 - 2/q**6",
+      "four_times_chi_3": "4",
+      "two_times_chi_21_in_q": "-2*q**6 + 6*q**4 - 6*q**2 + 8 - 6/q**2 + 6/q**4 - 2/q**6",
+      "sum_minus_tr": "0"
+    }
+  }
+}
