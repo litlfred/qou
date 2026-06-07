@@ -2534,7 +2534,95 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "00d75d768d95",
+          "ts": "645c253fbdcb",
+          "lean": "0413e92dee34"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Statement lists 4 simultaneous degenerations under L (planck/q-diff/braiding/Reeb) + Frobenius-Hopf descent (lines 3-21); no 'why this matters'/motivation prose",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T02:08:11.230Z",
+        "reviewed_sha": "453653a9aa6bde12cf848fa9b2190371326af15d",
+        "notes": "Statement-only; no mislocated interpretation."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "00d75d768d95",
+          "ts": "645c253fbdcb",
+          "lean": "0413e92dee34"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Section 'Classical limit: construction'; collapse of quantum gap under classical limit functor L is squarely in-scope",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T02:08:11.274Z",
+        "reviewed_sha": "453653a9aa6bde12cf848fa9b2190371326af15d",
+        "notes": "Well-placed."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "00d75d768d95",
+          "ts": "645c253fbdcb",
+          "lean": "0413e92dee34"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Line 1 carries explicit §7c banner: 'Lean sibling: archimedean specialisation over R ... combinatorial content stays generic to any commutative ring'; hbar_q->0, Omega_q->inf limits flagged",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T02:08:11.318Z",
+        "reviewed_sha": "453653a9aa6bde12cf848fa9b2190371326af15d",
+        "notes": "Archimedean limits correctly banner'd per §7c."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "00d75d768d95",
+          "ts": "645c253fbdcb",
+          "lean": "0413e92dee34"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "No archimedean-only machinery applied to an algebraic statement; degeneration limits flagged archimedean by line-1 banner; no linarith/IVT proof of an algebraic identity",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T02:08:11.363Z",
+        "reviewed_sha": "453653a9aa6bde12cf848fa9b2190371326af15d",
+        "notes": "Method side consistent with banner."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-07T02:08:11.363Z"
 }
