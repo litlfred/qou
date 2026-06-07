@@ -2680,7 +2680,100 @@
         "reviewed_at": "2026-06-04T17:07:39.599Z",
         "reviewed_sha": "089eb575d5308fd37d3442c274d2b9a37380f3b7"
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "c6a99ea3828d",
+          "ts": "07d4028e4f75",
+          "lean": "1ace8c84c8f0"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.75,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:16.825Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "MD enumerates the 5-step GS-NF construction (ground-state ordering, electron insertion, per-step reduction, accumulation/stripping, certificates) clearly."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "c6a99ea3828d",
+          "ts": "07d4028e4f75",
+          "lean": "1ace8c84c8f0"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0.3,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:16.859Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Sibling Lean is ': True := trivial' — none of the NF-witness construction formalized."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "c6a99ea3828d",
+          "ts": "07d4028e4f75",
+          "lean": "1ace8c84c8f0"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:16.903Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Inductive GS reduction + transfer matrix; framework-standard."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "c6a99ea3828d",
+          "ts": "07d4028e4f75",
+          "lean": "1ace8c84c8f0"
+        },
+        "result": "fail",
+        "severity": "critical",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:16.943Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "lean.ref QOU.ParticleInteractions.atomic_nf_witness proves ': True := trivial' — = True vacuous stub. INTEGRITY FAIL."
+      }
     ]
   },
-  "updated_at": "2026-06-05T14:22:44.851Z"
+  "updated_at": "2026-06-07T06:00:16.943Z"
 }

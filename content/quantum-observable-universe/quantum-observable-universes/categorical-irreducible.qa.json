@@ -2657,7 +2657,99 @@
         "reviewed_sha": "89af330cf662e0b0624ed33fce05d4f9304258f9",
         "notes": "No proof body"
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "7299c8d304c3",
+          "ts": "60d90b7f1673",
+          "lean": "8bd8acd71fc2"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.7,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:01:00.040Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Short but explicit single-step plan: Hom(1,Ad A)=0 follows directly from QOU condition (ii) Subsingleton(1 -> Ad A)."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "7299c8d304c3",
+          "ts": "60d90b7f1673",
+          "lean": "8bd8acd71fc2"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:01:00.082Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Sorry-free and legitimately proved: categorical_irreducible via Subsingleton.elim from qou.adjoint_vanishing (a genuine QOU axiom field, not an introduced axiom)."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "7299c8d304c3",
+          "ts": "60d90b7f1673",
+          "lean": "8bd8acd71fc2"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:01:00.119Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Standard Subsingleton.elim application; correct but routine."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "7299c8d304c3",
+          "ts": "60d90b7f1673",
+          "lean": "8bd8acd71fc2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:01:00.154Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "lean.ref QOU.categorical_irreducible present; proves f=g for f,g:(1 -> Ad A), matching md's Hom-vanishing. Faithful."
+      }
     ]
   },
-  "updated_at": "2026-06-05T14:22:44.851Z"
+  "updated_at": "2026-06-07T06:01:00.154Z"
 }

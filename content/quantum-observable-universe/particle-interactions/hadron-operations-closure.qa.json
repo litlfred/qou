@@ -2659,7 +2659,100 @@
         "reviewed_sha": "94076d45967b9ff7315eb00a435ae6b52e209759",
         "notes": "No archimedean machinery in narrative proof."
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "6177719bd45d",
+          "ts": "55e2532e5311",
+          "lean": "4b79bb21bc55"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.75,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:21.222Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "MD lists 4 closure operations (braiding involution w/ -1 on identical fermions, Hopf-linking two-sided inverse, skein resolution → mass formula, fusion Sym^{n1}×Sym^{n2}→Sym^{n1+n2}); each described."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "6177719bd45d",
+          "ts": "55e2532e5311",
+          "lean": "4b79bb21bc55"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0.2,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:21.257Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Lean proves only ∀h,∃h',h'=op(h) for each op via ⟨_,rfl⟩ — vacuously true for ANY function; the real claims (braiding gives -1, linking inverse, skein mass formula) are absent. All ops are 'axiom's."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "6177719bd45d",
+          "ts": "55e2532e5311",
+          "lean": "4b79bb21bc55"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:21.290Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Symmetric-product closure under braided-monoidal operations is standard category theory."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "6177719bd45d",
+          "ts": "55e2532e5311",
+          "lean": "4b79bb21bc55"
+        },
+        "result": "fail",
+        "severity": "critical",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:21.324Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "lean.ref QOU.Hadron.hadron_operations_closure proves ∀h,∃h',h'=op(h) via ⟨_,rfl⟩ for all 4 ops — vacuous existence tautology (the AlphaProof ⟨_,rfl⟩ anti-pattern; identical to the alpha-k-derivation precedent). Proves nothing about the MD's actual closure content. INTEGRITY FAIL."
+      }
     ]
   },
-  "updated_at": "2026-06-05T15:18:40.348Z"
+  "updated_at": "2026-06-07T06:00:21.324Z"
 }

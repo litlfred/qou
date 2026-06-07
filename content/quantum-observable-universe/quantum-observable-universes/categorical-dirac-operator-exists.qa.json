@@ -2657,7 +2657,102 @@
         "reviewed_sha": "26b58e3ed6158dda216862c9fdd8f7693af04ed3",
         "notes": "Nothing to flag; proof block is separate."
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "1ee32fd60067",
+          "ts": "9468277ca030",
+          "lean": "7d7afeb2417a"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:58.997Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Terse statement-only md (D = q^{-1} nabla + (1-q^{-1}) iota_xi nabla exists)."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "1ee32fd60067",
+          "ts": "9468277ca030",
+          "lean": "7d7afeb2417a"
+        },
+        "result": "fail",
+        "severity": "minor",
+        "score": {
+          "value": 0.3,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:59.034Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Lean proves Nonempty via a trivial all-identity witness; docstring admits the intended D = q^{-1}nabla+... is sharper and needs spectral-triple infra not in Mathlib."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "1ee32fd60067",
+          "ts": "9468277ca030",
+          "lean": "7d7afeb2417a"
+        },
+        "result": "fail",
+        "severity": "minor",
+        "score": {
+          "value": 0.2,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:59.073Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Vacuous existence over a free-field structure."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "1ee32fd60067",
+          "ts": "9468277ca030",
+          "lean": "7d7afeb2417a"
+        },
+        "result": "fail",
+        "severity": "critical",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:59.107Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "INTEGRITY FAIL: lean.ref QOU.CategoricalDirac.exists proves Nonempty of a free-field struct by a trivial witness, not the md's Dirac formula; docstring self-admits the gap."
+      }
     ]
   },
-  "updated_at": "2026-06-05T14:22:44.851Z"
+  "updated_at": "2026-06-07T06:00:59.107Z"
 }

@@ -2171,7 +2171,99 @@
         "reviewed_sha": "c47bf012be554f6d4bad7fd2fa0ec6e6e52c8075",
         "notes": "Clean wall separation."
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "35f1c615078a",
+          "ts": "b3f6fc431da4",
+          "lean": "ff73012a8ad8"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.9,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:20.575Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "MD tabulates all 21 distinct Gram entries as Laurent polys in u=√q, states 3 properties with an explicit proof-status table, and the det factorization with the second-root correctness finding (u>1); excellent."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "35f1c615078a",
+          "ts": "b3f6fc431da4",
+          "lean": "ff73012a8ad8"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.6,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:20.647Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Lean proves gramMatrix_isSymm + gramMatrix_top_left + all six detFactor_pos lemmas + gramMatrix_det_ne_zero_conditional (real); BUT gramMatrix_det_eq_factorization is a bare 'sorry' (720-term det identity), so the unconditional gramMatrix_det_ne_zero is sorry-backed. 2/3 properties fully proved, 3rd honestly deferred."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "35f1c615078a",
+          "ts": "b3f6fc431da4",
+          "lean": "ff73012a8ad8"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.7,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:20.717Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Closed-form categorical Gram entries (replacing decimal stubs) + the discovered second determinant root (u³+u-1) is concrete, non-routine symbolic work."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "35f1c615078a",
+          "ts": "b3f6fc431da4",
+          "lean": "ff73012a8ad8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:20.753Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "lean.ref QOU.Interactions.GramMatrixH3Symbolic.gramMatrix resolves to a real def with proved isSymm/top_left/positivity-lemmas. One bare 'sorry' (gramMatrix_det_eq_factorization) is disclosed in MD's proof-status table; statement is real, not vacuous."
+      }
     ]
   },
-  "updated_at": "2026-06-05T14:54:00.890Z"
+  "updated_at": "2026-06-07T06:00:20.753Z"
 }

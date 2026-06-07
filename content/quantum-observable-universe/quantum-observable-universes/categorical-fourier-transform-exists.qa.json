@@ -2657,7 +2657,102 @@
         "reviewed_sha": "2b0769871812e302cb45b7d4bb95e8247f40564f",
         "notes": "Proof inherits existence from Laplace via algebraic Wick rotation — correct wall-side"
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "4174cb3012fb",
+          "ts": "cd775eb85369",
+          "lean": "691a228a659a"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:59.446Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Terse statement-only md (the monoidal functor F[f](xi)=tr_M(exp_q(i xi .) . f) exists)."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "4174cb3012fb",
+          "ts": "cd775eb85369",
+          "lean": "691a228a659a"
+        },
+        "result": "fail",
+        "severity": "minor",
+        "score": {
+          "value": 0.3,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:59.483Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Lean proves Nonempty via a trivial project = id witness (monoidal by rfl); docstring admits the intended Wick-rotation + Peter-Weyl witness needs infra not in Mathlib."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "4174cb3012fb",
+          "ts": "cd775eb85369",
+          "lean": "691a228a659a"
+        },
+        "result": "fail",
+        "severity": "minor",
+        "score": {
+          "value": 0.2,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:59.521Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Vacuous existence; identity witness."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "4174cb3012fb",
+          "ts": "cd775eb85369",
+          "lean": "691a228a659a"
+        },
+        "result": "fail",
+        "severity": "critical",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:59.560Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "INTEGRITY FAIL: lean.ref QOU.CategoricalFourier.exists proves a vacuous Nonempty via identity projections, not the md's transform; docstring self-admits the gap."
+      }
     ]
   },
-  "updated_at": "2026-06-05T14:22:44.851Z"
+  "updated_at": "2026-06-07T06:00:59.560Z"
 }

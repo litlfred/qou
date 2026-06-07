@@ -2657,7 +2657,102 @@
         "reviewed_sha": "152d82c80981d9b88990101d924320d1c4b85871",
         "notes": "Lean proof uses simp+Category.comp_id only; method matches categorical wall."
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "17466e305272",
+          "ts": "a09dbae8ac7c",
+          "lean": "c7d4a0c61b5e"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:59.745Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Terse statement-only md (there exists a connection whose curvature is star_q-self-dual)."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "17466e305272",
+          "ts": "a09dbae8ac7c",
+          "lean": "c7d4a0c61b5e"
+        },
+        "result": "fail",
+        "severity": "minor",
+        "score": {
+          "value": 0.3,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:59.782Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Lean proves Nonempty via the trivial zero/identity connection (self_dual by simp); docstring admits the intended BPST descent witness needs gauge-bundle infra not in Mathlib."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "17466e305272",
+          "ts": "a09dbae8ac7c",
+          "lean": "c7d4a0c61b5e"
+        },
+        "result": "fail",
+        "severity": "minor",
+        "score": {
+          "value": 0.2,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:59.818Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Vacuous existence; zero/identity witness."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "17466e305272",
+          "ts": "a09dbae8ac7c",
+          "lean": "c7d4a0c61b5e"
+        },
+        "result": "fail",
+        "severity": "critical",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:59.853Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "INTEGRITY FAIL: lean.ref QOU.CategoricalInstanton.exists proves a vacuous Nonempty via an identity witness, not a substantive self-dual instanton; docstring self-admits the gap."
+      }
     ]
   },
-  "updated_at": "2026-06-05T14:22:44.851Z"
+  "updated_at": "2026-06-07T06:00:59.853Z"
 }

@@ -2659,7 +2659,99 @@
         "reviewed_sha": "4f73e8158a0fa05777a1e36846ca01b39efa16c4",
         "notes": "N/A: proof block separate"
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "c80e69427cbe",
+          "ts": "e630c6809289",
+          "lean": "eea0a1ad4abb"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.55,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:48.441Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "md terse (3 lines): p = B_3(u,u,d) exists as well-defined H_3(q) element with Frobenius stability G x[gamma] >= 0 at every LP step. Plan implicit; real construction only in docstring."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "c80e69427cbe",
+          "ts": "e630c6809289",
+          "lean": "eea0a1ad4abb"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.4,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:48.475Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Weak proxy: theorem CategoricalProton.exists := <{skein_uu:=0, skein_ud:=0}> proves Nonempty of a structure with NO Frobenius-stability/positivity constraints (free real fields); docstring admits 'Trivial witness ... degenerate proton ... intended Borromean B_3(u,u,d) x L_- witness is sharper but requires Hecke NF infra'. Sorry-free but skips the md's LP-stability content."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "c80e69427cbe",
+          "ts": "e630c6809289",
+          "lean": "eea0a1ad4abb"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.4,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:48.510Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Standard Nonempty-witness existence; construction lives in def:categorical-proton."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "c80e69427cbe",
+          "ts": "e630c6809289",
+          "lean": "eea0a1ad4abb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:48.545Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "lean.ref qou:QOU.CategoricalProton.exists present; Nonempty CategoricalProton is a faithful (weak) rendering of 'the proton exists' - not =True, not <_,rfl> target-restatement. NOTE CategoricalProton has free real fields and no stability constraint, so witness is degenerate (recorded under plausibility)."
+      }
     ]
   },
-  "updated_at": "2026-06-05T14:22:44.851Z"
+  "updated_at": "2026-06-07T06:00:48.545Z"
 }

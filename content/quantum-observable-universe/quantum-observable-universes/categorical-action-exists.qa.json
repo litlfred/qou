@@ -2817,7 +2817,102 @@
         "reviewed_at": "2026-06-04T22:13:51.141Z",
         "reviewed_sha": "8785f5be62c418e8aad897bd5fbec3c6b9fc0217"
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "f646226a95de",
+          "ts": "10be89cdd156",
+          "lean": "c541d0b86fdf"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:58.544Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Terse statement-only md (defines S_Phi = ev o (id (x) Phi) o coev = tr(Phi)); no proof plan beyond the formula."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "f646226a95de",
+          "ts": "10be89cdd156",
+          "lean": "c541d0b86fdf"
+        },
+        "result": "fail",
+        "severity": "minor",
+        "score": {
+          "value": 0.3,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:58.581Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Lean proves only Nonempty(CategoricalAction) via a trivial all-identity witness on a struct with free fields; docstring admits this is NOT the rigid-trace witness S_Phi = tr(Phi)."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "f646226a95de",
+          "ts": "10be89cdd156",
+          "lean": "c541d0b86fdf"
+        },
+        "result": "fail",
+        "severity": "minor",
+        "score": {
+          "value": 0.2,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:58.619Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Vacuous existence over a free-field structure; no argument."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "f646226a95de",
+          "ts": "10be89cdd156",
+          "lean": "c541d0b86fdf"
+        },
+        "result": "fail",
+        "severity": "critical",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:58.654Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "INTEGRITY FAIL: lean.ref QOU.CategoricalAction.exists proves a vacuously-satisfiable weaker claim (Nonempty of a free-field struct), not the md's S_Phi = tr(Phi); docstring self-admits the gap. Trivial-witness restates a weaker target."
+      }
     ]
   },
-  "updated_at": "2026-06-05T14:22:44.851Z"
+  "updated_at": "2026-06-07T06:00:58.654Z"
 }

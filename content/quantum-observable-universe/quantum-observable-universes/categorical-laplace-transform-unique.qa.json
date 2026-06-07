@@ -2657,7 +2657,102 @@
         "reviewed_sha": "2b41fc5b0c2cf640a29afdc2d615faea4540cc29",
         "notes": "Lean theorem uses axiom CategoricalLaplace.unique_axiom — no archimedean leak."
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "ea64659fffb7",
+          "ts": "137537f15aad",
+          "lean": "e29f5546bdd8"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:01:00.647Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Terse statement-only md (L is the unique monoidal functor intertwining convolution and product; mate of Delta_q)."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "ea64659fffb7",
+          "ts": "137537f15aad",
+          "lean": "e29f5546bdd8"
+        },
+        "result": "fail",
+        "severity": "minor",
+        "score": {
+          "value": 0.3,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:01:00.685Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Closed by CategoricalLaplace.unique_axiom; docstring states 'bare Subsingleton is too strong (3b-cond pattern)', i.e. self-diagnosed as not actually true."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "ea64659fffb7",
+          "ts": "137537f15aad",
+          "lean": "e29f5546bdd8"
+        },
+        "result": "fail",
+        "severity": "minor",
+        "score": {
+          "value": 0.2,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:01:00.724Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Axiom-laundered Subsingleton boilerplate."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "ea64659fffb7",
+          "ts": "137537f15aad",
+          "lean": "e29f5546bdd8"
+        },
+        "result": "fail",
+        "severity": "critical",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:01:00.758Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "INTEGRITY FAIL: lean.ref QOU.CategoricalLaplace.unique is := an axiom the file's docstring flags as 'too strong' (false in general); statement does not faithfully encode a true claim (parallels categorical-action-unique)."
+      }
     ]
   },
-  "updated_at": "2026-06-05T18:14:00.852Z"
+  "updated_at": "2026-06-07T06:01:00.758Z"
 }

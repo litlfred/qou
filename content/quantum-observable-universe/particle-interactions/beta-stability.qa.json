@@ -2648,7 +2648,99 @@
         "reviewed_at": "2026-06-04T17:38:18.068Z",
         "reviewed_sha": "10259933c791246a0070a8b46db04de1c4ab5169"
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "df718a62669a",
+          "ts": "d91e9d7955e8",
+          "lean": "2264f91668ab"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.8,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:17.165Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "MD derives the beta-stability line by extremizing the Skein binding Lagrangian; classical-limit + fixed-point forms stated explicitly."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "df718a62669a",
+          "ts": "d91e9d7955e8",
+          "lean": "2264f91668ab"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:17.202Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Lean defines betaStabilityLine over R_q and proves classical_limit_symmetric (a_C=0 ⇒ A/2); but neutron_excess and nOverP_classical theorems are COMMENTED OUT (header lines '-- theorem ... (archimedean; not meaningful over R_q)') leaving orphan tactic blocks — file likely does NOT compile as-is."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "df718a62669a",
+          "ts": "d91e9d7955e8",
+          "lean": "2264f91668ab"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:17.241Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Semi-empirical-mass-formula-style stability line recast categorically; standard physics content."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "df718a62669a",
+          "ts": "d91e9d7955e8",
+          "lean": "2264f91668ab"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:17.277Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "lean.ref QOU.Braiding.beta_stability — betaStabilityLine def + classical_limit_symmetric are real, non-vacuous. FLAG: two theorems are commented-out headers leaving dangling 'by ...' proof blocks → probable non-compiling .lean (compile-status follow-up, not a statement-falsity)."
+      }
     ]
   },
-  "updated_at": "2026-06-05T14:22:44.851Z"
+  "updated_at": "2026-06-07T06:00:17.277Z"
 }

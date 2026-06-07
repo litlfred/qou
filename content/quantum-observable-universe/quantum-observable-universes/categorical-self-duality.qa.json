@@ -2657,7 +2657,102 @@
         "reviewed_sha": "2e62172e9e2e1e4545106ce5e8658dc33f890042",
         "notes": "Correct side of the wall."
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "dde19d0e0e4e",
+          "ts": "083a2efb476b",
+          "lean": "8f7c837ba535"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.7,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:01:01.853Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "md states critical points of the Yang-Mills functional S[nabla] are instantons, with a commuting diagram and the implication F in Omega^+."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "dde19d0e0e4e",
+          "ts": "083a2efb476b",
+          "lean": "8f7c837ba535"
+        },
+        "result": "fail",
+        "severity": "minor",
+        "score": {
+          "value": 0.3,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:01:01.891Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Lean does NOT prove 'critical point => instanton': Instanton is a structure whose field anti_self_dual_vanishes IS F.projMinus=0, and critical_point_is_instanton just returns that field; the variational argument is absent."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "dde19d0e0e4e",
+          "ts": "083a2efb476b",
+          "lean": "8f7c837ba535"
+        },
+        "result": "fail",
+        "severity": "minor",
+        "score": {
+          "value": 0.2,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:01:01.929Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Structure-hypothesis projection; conclusion = the Instanton struct's defining field."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "dde19d0e0e4e",
+          "ts": "083a2efb476b",
+          "lean": "8f7c837ba535"
+        },
+        "result": "fail",
+        "severity": "critical",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:01:02.013Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "INTEGRITY FAIL: lean.ref QOU.categorical_self_duality is ABSENT (file has critical_point_is_instanton); and that theorem restates its hypothesis (assumes Instanton, returns its anti_self_dual_vanishes field)."
+      }
     ]
   },
-  "updated_at": "2026-06-05T19:17:51.232Z"
+  "updated_at": "2026-06-07T06:01:02.013Z"
 }

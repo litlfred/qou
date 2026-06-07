@@ -2657,7 +2657,101 @@
         "reviewed_sha": "4cf1c02c396253505eea1fefb294d2744f74cfd3",
         "notes": "No proof body here to violate wall."
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "7e5e4449dcb5",
+          "ts": "02d616051db9",
+          "lean": "b91ab188bbd3"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.7,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:01:01.398Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "md states 3 characterising properties (d_q=q^{-1}d on horizontal, =d on vertical, R-linear) as the uniqueness criterion."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "7e5e4449dcb5",
+          "ts": "02d616051db9",
+          "lean": "b91ab188bbd3"
+        },
+        "result": "fail",
+        "severity": "minor",
+        "score": {
+          "value": 0.3,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:01:01.438Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Closed by CategoricalQExtDeriv.unique_axiom (pure axiom); the characterisation is not proved from the 3 properties."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "7e5e4449dcb5",
+          "ts": "02d616051db9",
+          "lean": "b91ab188bbd3"
+        },
+        "result": "fail",
+        "severity": "minor",
+        "score": {
+          "value": 0.2,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:01:01.478Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Axiom-laundered Subsingleton boilerplate."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "7e5e4449dcb5",
+          "ts": "02d616051db9",
+          "lean": "b91ab188bbd3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:01:01.515Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "lean.ref QOU.CategoricalQExtDeriv.unique present (theorem := axiom) matching md; honest axiom. Plausibility, not integrity, is the issue."
+      }
     ]
   },
-  "updated_at": "2026-06-05T18:50:47.261Z"
+  "updated_at": "2026-06-07T06:01:01.515Z"
 }

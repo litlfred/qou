@@ -2659,7 +2659,99 @@
         "reviewed_sha": "beb4340382ed4d5d96213c9ea7b4af9d3bac9068",
         "notes": "Clean statement; passes"
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "ae64a85f3131",
+          "ts": "6f42b5090f09",
+          "lean": "3d4829755e87"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.55,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T05:58:59.974Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "md is terse (3 lines): asserts n = B_3(u,d,d) exists as LP-stable element of H_3(q), defers uniqueness. Plan implicit; the real construction (Borromean + Hopf stabiliser, negative crossing energy) is only in the docstring, not argued."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "ae64a85f3131",
+          "ts": "6f42b5090f09",
+          "lean": "3d4829755e87"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.4,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T05:59:00.009Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Weak proxy: theorem CategoricalNeutron.exists := <{skein_ud:=0, skein_dd:=0}> proves Nonempty of a structure with NO stability/positivity field constraints (skein_ud/dd are free reals); docstring admits 'Trivial witness ... intended Borromean B_3(u,d,d) x (L_- o L_-) witness is sharper but requires Hecke NF infra'. Existence is sorry-free but skips the md's LP-stable / negative-crossing-energy content."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "ae64a85f3131",
+          "ts": "6f42b5090f09",
+          "lean": "3d4829755e87"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.4,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T05:59:00.044Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Standard Nonempty-witness existence; the categorical-neutron construction idea is in def:categorical-neutron, not novel to this block."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "ae64a85f3131",
+          "ts": "6f42b5090f09",
+          "lean": "3d4829755e87"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T05:59:00.079Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "lean.ref qou:QOU.CategoricalNeutron.exists present; statement Nonempty CategoricalNeutron is a faithful (if weak) rendering of 'the neutron exists' — not =True, not <_,rfl> on a target-restatement. NOTE: CategoricalNeutron structure carries no stability constraints, so the witness is degenerate (recorded under plausibility, not integrity)."
+      }
     ]
   },
-  "updated_at": "2026-06-05T14:22:44.851Z"
+  "updated_at": "2026-06-07T05:59:00.079Z"
 }

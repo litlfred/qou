@@ -2691,7 +2691,99 @@
         "reviewed_sha": "b49e071810d0d495b8f9e49812584ad4ba71ad07",
         "notes": "Proof is sorry-free; conjectural content correctly in class instance only"
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "b3532932549a",
+          "ts": "9ac7729d1a9a",
+          "lean": "eb43c1c13ad7"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.9,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:18.275Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "MD is an exemplary §3b-cond conditional: states the iff (confinement level = KLR top degree), documents all 4 conditional-class requirements, and gives the empirical k_max≤7 witness table."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "b3532932549a",
+          "ts": "9ac7729d1a9a",
+          "lean": "eb43c1c13ad7"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.7,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:18.311Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Lean proves the iff directly from the class field (rw chain, no sorry in body) — a rigorous conditional result modulo the single class instance, exactly per §3b-cond. (Uses 'constant' carriers — compile risk on current toolchain.)"
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "b3532932549a",
+          "ts": "9ac7729d1a9a",
+          "lean": "eb43c1c13ad7"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.75,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:18.346Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Identifying the confinement filtration with the KLR Z-grading (Brundan-Kleshchev) is a genuinely novel categorical bridge."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "b3532932549a",
+          "ts": "9ac7729d1a9a",
+          "lean": "eb43c1c13ad7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:18.381Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "lean.ref confinement_grading_correspondence_conditional resolves to a real iff proven from the class hypothesis, no sorry in proof body; conditional banner + uses[] conjecture present. (Flag: 'constant' decls — toolchain compile check advisable.)"
+      }
     ]
   },
-  "updated_at": "2026-06-05T14:22:44.851Z"
+  "updated_at": "2026-06-07T06:00:18.381Z"
 }

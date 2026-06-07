@@ -2657,7 +2657,100 @@
         "reviewed_sha": "b75789bbff37b2446b647dbac94963f3416a575f",
         "notes": "Proof stays on generic/substrate side throughout."
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "85388ae1aa86",
+          "ts": "f437221f9042",
+          "lean": "d5bf216192af"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.85,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:19.744Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "MD proves knot(1-comp)↔fermion/odd-n and link(2-comp)↔boson/even-n via components=gcd(2,n), with a spin-statistics-from-topology corollary; both cases explicit."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "85388ae1aa86",
+          "ts": "f437221f9042",
+          "lean": "d5bf216192af"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0.3,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:19.779Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "lean.ref decl QOU.Braiding.fermion_boson_knot_link is a structure-hypothesis PROJECTION: it assumes a class FermionBosonKnotLinkContext whose fields ARE the conclusions (claim_knot_iff_odd, ...) and returns them ⟨ctx.claim_..., ...⟩ — proves nothing. (A REAL gcd↔parity proof exists in the SIBLING under different decl names fermion_iff_odd/boson_iff_even, but those are not the ref.)"
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "85388ae1aa86",
+          "ts": "f437221f9042",
+          "lean": "d5bf216192af"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:19.814Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "components=gcd(2,n) ⇒ parity is standard torus-knot number theory; the fermion/boson dictionary mapping is the framework contribution."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "85388ae1aa86",
+          "ts": "f437221f9042",
+          "lean": "d5bf216192af"
+        },
+        "result": "fail",
+        "severity": "critical",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:19.875Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "lean.ref QOU.Braiding.fermion_boson_knot_link RESTATES-TARGET: theorem [ctx:FermionBosonKnotLinkContext] : (...) := ⟨ctx.claim_knot_iff_odd, ctx.claim_link_iff_even, ctx.claim_fermion_boson_knot_link⟩ — the class fields are the verbatim conclusions (a self-assuming projection, not a §3b-cond conjecture). INTEGRITY FAIL. NB the real omega proof lives in the sibling under non-ref names."
+      }
     ]
   },
-  "updated_at": "2026-06-05T14:22:53.923Z"
+  "updated_at": "2026-06-07T06:00:19.875Z"
 }

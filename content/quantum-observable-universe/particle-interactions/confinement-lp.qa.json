@@ -2669,7 +2669,99 @@
         "reviewed_at": "2026-06-05T00:25:05.508Z",
         "reviewed_sha": "446b118303ec7a4f82dae0f1dedf5a68c0fbfbdb"
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "c25d86096904",
+          "ts": "c7919bd9ed8d",
+          "lean": "ce16a6021fe6"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.85,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:18.726Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "MD lays out primal (min Σt_i x_i s.t. net + Frobenius positivity), dual (shadow prices y_0,y_i), strong duality, the B3 vertex, and the local-minimum caveat; LP structure fully explicit."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "c25d86096904",
+          "ts": "c7919bd9ed8d",
+          "lean": "ce16a6021fe6"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0.3,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:18.764Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Canonical lean.ref decl (QOU.Interactions.lp_achieves_zero_trace, ConfinementLP.lean) proves only hopfPlus≠hopfMinus (L+≠L-), a WEAKENED PROXY — the LP-optimum=0 / not-braid-realizable claim is admitted unformalized ('Full proof requires ...'). Sibling stub is ': True'."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "c25d86096904",
+          "ts": "c7919bd9ed8d",
+          "lean": "ce16a6021fe6"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.7,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:18.800Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Recasting confinement operator selection as an LP with shadow-price duals (binding-energy interpretation) is a substantive framework device."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "c25d86096904",
+          "ts": "c7919bd9ed8d",
+          "lean": "ce16a6021fe6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:18.834Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "lean.ref resolves to the package decl QOU.Interactions.lp_achieves_zero_trace (ConfinementLP.lean:92), which proves hopfPlus≠hopfMinus via hopf_ne — real & sorry-free (NOT the sibling ': True' shim). md↔Lean coverage gap flagged under plausibility."
+      }
     ]
   },
-  "updated_at": "2026-06-05T14:22:44.851Z"
+  "updated_at": "2026-06-07T06:00:18.834Z"
 }

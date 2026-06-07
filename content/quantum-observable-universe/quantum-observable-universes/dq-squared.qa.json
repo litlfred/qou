@@ -2657,7 +2657,100 @@
         "reviewed_sha": "c1e349075d04c6f25ca2a6f5d23678de3a782141",
         "notes": "Proof method matches archimedean-specialisation statement."
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "c99bb88df467",
+          "ts": "08f0c5aa12d3",
+          "lean": "a57efade39bf"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.7,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:01:02.053Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "md gives the explicit archimedean formula d_q^2 = q^{-1}(1-q^{-1}) dTheta ^ L_xi alpha with iff-vanishing and a diagram."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "c99bb88df467",
+          "ts": "08f0c5aa12d3",
+          "lean": "a57efade39bf"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:01:02.091Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Sorry-free and compiles (unlike categorical-dq-squared): dq_squared_zero_reeb_invariant / _zero_classical / _cochain_on_invariant proved by simp; no broken q_pos reference here."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "c99bb88df467",
+          "ts": "08f0c5aa12d3",
+          "lean": "a57efade39bf"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:01:02.133Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Standard simp-based vanishing arguments over the obstruction product."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "c99bb88df467",
+          "ts": "08f0c5aa12d3",
+          "lean": "a57efade39bf"
+        },
+        "result": "fail",
+        "severity": "critical",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:01:02.166Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "INTEGRITY FAIL: lean.ref QOU.dq_squared is ABSENT (file has only the ArchimedeanDqSquared struct field dq_squared and the *_zero_* / _cochain_ theorems; no top-level decl named dq_squared)."
+      }
     ]
   },
-  "updated_at": "2026-06-05T19:38:35.779Z"
+  "updated_at": "2026-06-07T06:01:02.166Z"
 }

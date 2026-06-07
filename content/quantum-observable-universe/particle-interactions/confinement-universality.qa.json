@@ -2673,7 +2673,100 @@
         "reviewed_sha": "00bc610952fe85191d86ff3d6e1d1dbfeafea99b",
         "notes": "Proof correctly uses algebraic stage analysis without numeric q_0 evaluation"
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "3a8ca0786b76",
+          "ts": "c7b4681b4542",
+          "lean": "fd09fe5cd7a0"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.8,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:19.304Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "MD gives the 2-stage argument: stage-2 confinement takes only quark types (not photon φ-weights), so the nucleon NF is φ-independent (asymptotic-freedom analogue); clear."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "3a8ca0786b76",
+          "ts": "c7b4681b4542",
+          "lean": "fd09fe5cd7a0"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0.3,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:19.341Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Sibling Lean is ': True := trivial' — the φ-independence claim is not formalized."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "3a8ca0786b76",
+          "ts": "c7b4681b4542",
+          "lean": "fd09fe5cd7a0"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.7,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:19.382Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Casting confinement-washes-out-EM-initial-conditions as categorical asymptotic freedom is a non-routine interpretation."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "3a8ca0786b76",
+          "ts": "c7b4681b4542",
+          "lean": "fd09fe5cd7a0"
+        },
+        "result": "fail",
+        "severity": "critical",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:19.419Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "lean.ref QOU.Interactions.confinementUniversality proves ': True := trivial' — = True vacuous stub. INTEGRITY FAIL."
+      }
     ]
   },
-  "updated_at": "2026-06-05T14:22:44.851Z"
+  "updated_at": "2026-06-07T06:00:19.419Z"
 }

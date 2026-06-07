@@ -2659,7 +2659,100 @@
         "reviewed_sha": "f1e1bb1806b35ab32edbbc756ad8250bad123ce1",
         "notes": "Proof uses GS uniqueness and symmetry; matches algebraic statement"
       }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "4cc7f33738da",
+          "ts": "ba6b293f846b",
+          "lean": "fb6db4a866cb"
+        },
+        "result": "fail",
+        "severity": "critical",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T05:59:42.718Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "UNSOUND AXIOM: theorem CategoricalNeutron.unique_up_to_isotopy := CategoricalNeutron.unique_up_to_isotopy_axiom, and 'axiom ... : Subsingleton CategoricalNeutron'. But CategoricalNeutron is a structure with FREE real fields skein_ud, skein_dd (no constraints) - two distinct reals give two distinct neutrons, so Subsingleton CategoricalNeutron is FALSE. The proof is an axiom asserting a false proposition (derives anything). decl present but statement-as-proven is unsound."
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "4cc7f33738da",
+          "ts": "ba6b293f846b",
+          "lean": "fb6db4a866cb"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T05:59:42.757Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "md (6 lines) sketches the uniqueness argument (Hecke NF unique in H_3(q) + S_3-symmetry on color tubes) but does not carry it out; Lean defers entirely to an axiom."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "4cc7f33738da",
+          "ts": "ba6b293f846b",
+          "lean": "fb6db4a866cb"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0.3,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T05:59:42.795Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Key Lean is an 'axiom' (auto-extracted from a single-sorry body per docstring); per rubric axiom => ~0.3. Compounded: the axiomatised Subsingleton is false for the free-field structure (see integrity fail)."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "4cc7f33738da",
+          "ts": "ba6b293f846b",
+          "lean": "fb6db4a866cb"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.4,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T05:59:42.831Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Standard uniqueness-up-to-isotopy claim; the Hecke-NF + S_3-symmetry argument is conventional knot/representation theory, not novel."
+      }
     ]
   },
-  "updated_at": "2026-06-05T14:22:44.851Z"
+  "updated_at": "2026-06-07T05:59:42.831Z"
 }

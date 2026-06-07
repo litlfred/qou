@@ -2868,7 +2868,99 @@
         "reviewed_at": "2026-06-04T17:09:35.547Z",
         "reviewed_sha": "089eb575d5308fd37d3442c274d2b9a37380f3b7"
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "559a2d5256a9",
+          "ts": "8acccd8124ef",
+          "lean": "96544b218e86"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.9,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:17.002Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "MD separates parts (1) Plancherel bar-invariance (2) transpose-pair (3) conditional Type-B fold, each with explicit q-integer/hook-length calculation; Lean mirrors structure."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "559a2d5256a9",
+          "ts": "8acccd8124ef",
+          "lean": "96544b218e86"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:17.040Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Parts (1)(2) proved real (q_integer_bar_invariant via field_simp; plancherel via List.Perm), but transpose rests on 'axiom hookLengths_transpose' and part (3) is class-conditional on conj:symmetric-crystal-pair-production; uses 'constant' (compile risk in modern Lean)."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "559a2d5256a9",
+          "ts": "8acccd8124ef",
+          "lean": "96544b218e86"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.7,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:17.091Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Packaging bar-invariance as a CPT regression-witness via Type-B folding is a non-routine framework contribution."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "559a2d5256a9",
+          "ts": "8acccd8124ef",
+          "lean": "96544b218e86"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:17.129Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "lean.ref bar_involution_invariance resolves to a real conjunction (Plancherel bar-inv ∧ transpose-eq), proof body sorry-free. Conditional banner present per §3b-cond. (Flag: 'constant'/'axiom' usage may not compile on current toolchain.)"
+      }
     ]
   },
-  "updated_at": "2026-06-05T14:22:44.851Z"
+  "updated_at": "2026-06-07T06:00:17.129Z"
 }

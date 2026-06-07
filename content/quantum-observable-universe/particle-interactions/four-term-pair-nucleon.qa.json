@@ -2673,7 +2673,100 @@
         "reviewed_sha": "5ea95c49fcdf44b541c59bf7d2778be28c5f28dd",
         "notes": "Archimedean evaluation mixed into proof body without explicit banner; warn."
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "3fe79ad24d2b",
+          "ts": "9282a4203255",
+          "lean": "c53fabc81a66"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.8,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:19.947Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "MD gives the derivation chain γγ→qq̄ (×3) → B3·crossings → nucleon NF with net(p)≈0.999, net(n)≈0.811 and the φ-independence note; steps explicit (table-backed)."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "3fe79ad24d2b",
+          "ts": "9282a4203255",
+          "lean": "c53fabc81a66"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0.3,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:20.010Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Sibling Lean is ': True := trivial' — the nucleon-from-pair-production derivation is not formalized."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "3fe79ad24d2b",
+          "ts": "9282a4203255",
+          "lean": "c53fabc81a66"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.7,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:20.067Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Deriving (not asserting) p and n from three γγ pair productions + minimum-action B3 confinement is a substantive framework derivation."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "3fe79ad24d2b",
+          "ts": "9282a4203255",
+          "lean": "c53fabc81a66"
+        },
+        "result": "fail",
+        "severity": "critical",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:20.124Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "lean.ref QOU.ParticleInteractions.four_term_pair_nucleon proves ': True := trivial' — = True vacuous stub. INTEGRITY FAIL."
+      }
     ]
   },
-  "updated_at": "2026-06-05T14:25:58.482Z"
+  "updated_at": "2026-06-07T06:00:20.124Z"
 }

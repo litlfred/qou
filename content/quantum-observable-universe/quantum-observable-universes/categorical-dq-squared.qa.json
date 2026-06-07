@@ -2657,7 +2657,101 @@
         "reviewed_sha": "52ea72a86af7040f88761f4f0ec1cd82ba77c6bc",
         "notes": "Nothing to flag."
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "e60bdfb92931",
+          "ts": "5df4ac855463",
+          "lean": "a9cff8e08cb6"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.7,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:59.297Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "md gives the explicit obstruction formula d_q^2 = q^{-1}(1-q^{-1}) omega_V ^_q [xi,alpha] with iff-vanishing and a commuting diagram."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "e60bdfb92931",
+          "ts": "5df4ac855463",
+          "lean": "a9cff8e08cb6"
+        },
+        "result": "fail",
+        "severity": "minor",
+        "score": {
+          "value": 0.3,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:59.336Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "DOES NOT COMPILE: struct field q_pos is commented out (line 45) but referenced as obs.q_pos at lines 62 and 87 in dq_squared_vanishes_iff and dq_squared_nonzero_generic. Core theorems are broken."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "e60bdfb92931",
+          "ts": "5df4ac855463",
+          "lean": "a9cff8e08cb6"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:59.374Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Standard mul_eq_zero case analysis (modulo the compile break)."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "e60bdfb92931",
+          "ts": "5df4ac855463",
+          "lean": "a9cff8e08cb6"
+        },
+        "result": "fail",
+        "severity": "critical",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:59.408Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "INTEGRITY FAIL: lean.ref QOU.categorical_dq_squared is ABSENT (file has only dq_squared_vanishes_iff / _zero_on_invariant / _nonzero_generic and the DqSquaredObstruction struct). Plus the file does not compile (obs.q_pos)."
+      }
     ]
   },
-  "updated_at": "2026-06-05T14:22:44.851Z"
+  "updated_at": "2026-06-07T06:00:59.408Z"
 }

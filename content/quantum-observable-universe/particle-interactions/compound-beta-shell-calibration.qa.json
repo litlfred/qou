@@ -2832,7 +2832,100 @@
         "reviewed_sha": "9f84fda22add4316afdc8edcf9d02c3609f8f303",
         "notes": "Proof method matches statement regime; no wall violation"
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "401c335e6fa0",
+          "ts": "81b5947fae0f",
+          "lean": "532c7423266c"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.7,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:17.784Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "MD distinguishes magic vs non-magic decays, gives chain-Q-value extraction and the tr_M-difference formula; but ends 'Open: full implementation ... is the next step' — plan stated, completion deferred."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "401c335e6fa0",
+          "ts": "81b5947fae0f",
+          "lean": "532c7423266c"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0.3,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:17.821Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Lean compound_beta_y_target_extraction proves ∃ y_target, y_target = (...) := ⟨(...), rfl⟩ — vacuous existence-by-rfl; single_calibration_framework is (1:ℕ)=1:=rfl. MD itself flags the derivation as Open."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "401c335e6fa0",
+          "ts": "81b5947fae0f",
+          "lean": "532c7423266c"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:17.882Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Chain-Q-value shell calibration is a sensible but standard nuclear-data bookkeeping idea."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "401c335e6fa0",
+          "ts": "81b5947fae0f",
+          "lean": "532c7423266c"
+        },
+        "result": "fail",
+        "severity": "critical",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:17.967Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "lean.ref QOU.BraidKnot.CompoundBetaShellCalibration: compound_beta_y_target_extraction is ⟨_,rfl⟩ vacuous existence (the AlphaProof anti-pattern), single_calibration_framework is 1=1:=rfl. Neither proves the MD claim. INTEGRITY FAIL."
+      }
     ]
   },
-  "updated_at": "2026-06-05T14:22:44.851Z"
+  "updated_at": "2026-06-07T06:00:17.967Z"
 }

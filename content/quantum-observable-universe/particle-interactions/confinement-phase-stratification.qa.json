@@ -2832,7 +2832,99 @@
         "reviewed_sha": "b0d1387e463bbd084eb66fc59396c0749b9fbf0e",
         "notes": "No algebraic claim proved purely by archimedean machinery on wrong side of wall."
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "366ae0556c8d",
+          "ts": "08d5240ba178",
+          "lean": "39d20f7f303a"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.85,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:19.010Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "MD gives 5 numbered claims (openness, stratification, local constancy, scope, phase transitions) each with a proof paragraph citing Boyd-Vandenberghe Slater perturbation; well-structured."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "366ae0556c8d",
+          "ts": "08d5240ba178",
+          "lean": "39d20f7f303a"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0.3,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:19.047Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Lean replaces the SDP feasibility predicate with a 'unit-particle model' confined:=fun _ _=>True, mu:=fun _ _=>2 — so openness=IsOpen univ and mu-constancy=rfl. A WEAKENED PROXY: claims (2) stratification and (5) phase transitions are not captured; headline proves only IsOpen univ."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "366ae0556c8d",
+          "ts": "08d5240ba178",
+          "lean": "39d20f7f303a"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.7,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:19.083Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Phase-scoped applicability (confinement theorems hold per-component, fail on boundaries) via SDP Slater-strict stratification is a genuinely useful framing."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "366ae0556c8d",
+          "ts": "08d5240ba178",
+          "lean": "39d20f7f303a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:19.121Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "lean.ref QOU.BraidKnot.ConfinementPhaseStratification resolves to IsOpen (confinementLocus P), a real Prop; but on the trivial model it reduces to IsOpen univ. Honestly documented as a concrete-model replacement; gap captured under plausibility."
+      }
     ]
   },
-  "updated_at": "2026-06-05T14:22:44.851Z"
+  "updated_at": "2026-06-07T06:00:19.121Z"
 }

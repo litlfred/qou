@@ -980,7 +980,102 @@
         "reviewed_sha": "d4f47105b9e213c50f8944fe16627d1a988d5832",
         "notes": "Structural equivalence holds but Lean proof is axiomatic via structure field rather than derived; steps not independently verified."
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "35f2f281de10",
+          "ts": "1ea7de4cef06",
+          "lean": "83f7c2d7b2eb"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.7,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:01:00.797Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "md gives a detailed 4-step proof (square Dirac, Clifford identity, Cartan cross-term, Weitzenbock assembly) plus parallel-Reeb specialisation."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "35f2f281de10",
+          "ts": "1ea7de4cef06",
+          "lean": "83f7c2d7b2eb"
+        },
+        "result": "fail",
+        "severity": "minor",
+        "score": {
+          "value": 0.3,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:01:00.834Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Lean does NOT verify the 4-step argument: QDiracLichnerowiczData carries the identity itself as a field (lichnerowicz : qLaplacian = qDiracSq + qScalarCurv), and qDirac just returns that field; the categorical content is assumed, not derived."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "35f2f281de10",
+          "ts": "1ea7de4cef06",
+          "lean": "83f7c2d7b2eb"
+        },
+        "result": "fail",
+        "severity": "minor",
+        "score": {
+          "value": 0.2,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:01:00.870Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Structure-hypothesis projection: the conclusion is verbatim the input field."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "35f2f281de10",
+          "ts": "1ea7de4cef06",
+          "lean": "83f7c2d7b2eb"
+        },
+        "result": "fail",
+        "severity": "critical",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:01:00.903Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "INTEGRITY FAIL: lean.ref QOU.Lichnerowicz.qDirac restates its own hypothesis (assumes the Lichnerowicz identity as a struct field and returns it); the conclusion equals the assumption (restates-target)."
+      }
     ]
   },
-  "updated_at": "2026-06-05T18:17:18.572Z"
+  "updated_at": "2026-06-07T06:01:00.903Z"
 }
