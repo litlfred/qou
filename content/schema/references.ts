@@ -1561,9 +1561,11 @@ export const references: CSLData[] = [
     "container-title": "Algebraic & Geometric Topology",
     issued: { "date-parts": [[2006]] },
     volume: "6",
+    issue: "3",
     page: "1113-1214",
-    DOI: "10.2140/gt.2008.12.2091",
-    note: "First circulated 2002 (arxiv:math/0505219); published Algebr. Geom. Topol. 6 (2006), 1113-1214 — the bib `issued` year was corrected from 2008 to 2006 on 2026-05-19 per validate-bib year-mismatch finding.",
+    DOI: "10.2140/agt.2006.6.1113",
+    URL: "https://arxiv.org/abs/math/0505219",
+    note: "Algebr. Geom. Topol. 6 (2006), no. 3, 1113-1214; arXiv:math/0505219. DOI corrected 2026-06-07 from the spurious 10.2140/gt.2008.12.2091 to the authoritative AGT DOI 10.2140/agt.2006.6.1113 (verified via Project Euclid / msp.org). This entry is the 'Bottom tangles and universal invariants' paper; QOU citers that intend the Habiro RING Ẑ[q] (q-Pochhammer / cyclotomic completion) were re-keyed to habiro2004cyclotomic, and colored-Jones citers to habiro2000, on 2026-06-07.",
     URL: "https://arxiv.org/abs/math/0505219",
   }),
 
@@ -1579,6 +1581,21 @@ export const references: CSLData[] = [
     DOI: "10.1007/s00222-007-0071-0",
     note: "Preprint 2004; introduces the Habiro ring cyclotomic expansion.",
     URL: "https://arxiv.org/abs/math/0605314",
+  }),
+
+  ref({
+    id: "habiro2004cyclotomic",
+    type: "article-journal",
+    title: "Cyclotomic completions of polynomial rings",
+    author: [{ family: "Habiro", given: "Kazuo" }],
+    "container-title": "Publications of the Research Institute for Mathematical Sciences",
+    issued: { "date-parts": [[2004]] },
+    volume: "40",
+    issue: "4",
+    page: "1127-1146",
+    DOI: "10.2977/prims/1145475444",
+    URL: "https://arxiv.org/abs/math/0209324",
+    note: "Publ. RIMS Kyoto Univ. 40 (2004), no. 4, 1127-1146; arXiv:math/0209324. The canonical definition of the Habiro ring Ẑ[q] = cyclotomic completion of ℤ[q] (the q-Pochhammer / cyclotomic-completion object QOU's mass-side Habiro-ring constructions use). Added 2026-06-07 to untangle the overloaded [habiro2002] key: most QOU citers intended this ring-definition paper, not 'Bottom tangles' (habiro2002) or 'colored Jones of simple links' (habiro2000). Verified via EMS Press / arXiv.",
   }),
 
   // ── Nuclear shell model (Mayer–Jensen) ──────────────────────────

@@ -78,7 +78,7 @@ class QbetaCkTruncationCanonicalClass (c : ℕ → ℝ → ℝ) : Prop where
 --   (content/quantum-observable-universe/appendix-qvalues/qbeta-ck-truncation-canonical.md;
 --    docs/audits/2026-05-31-qbeta-ck-truncation-order-canonical-framing.md)
 -- Ref: [jones1985] doi:10.2307/1971403 (Hopf-link Jones polynomial)
--- Ref: [habiro2002] (Habiro element / cyclotomic completion roadmap)
+-- Ref: [habiro2004cyclotomic] (Habiro element / cyclotomic completion roadmap)
 theorem qbeta_ck_truncation_canonical_conjecture :
     ∃ c : ℕ → ℝ → ℝ, QbetaCkTruncationCanonicalClass c := by
   -- Open: the canonical anchor-independent c_k closed form is the

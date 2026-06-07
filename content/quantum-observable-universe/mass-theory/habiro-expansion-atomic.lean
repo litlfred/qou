@@ -20,7 +20,7 @@ Specialised to `p(u) = D(u) · tr_M(T_w, u²)` for the atomic
 braid `T_w(Z, N) ∈ H_{3A}(q)`, with `D(u)` the cyclotomic
 Markov-normalisation denominator.
 
-Ref: [habiro2002] https://doi.org/10.1016/S0040-9383(01)00031-8
+Ref: [habiro2004cyclotomic] arXiv:math/0209324
      [kassel1995] Quantum Groups, Ch. III
      [jones1987] Hecke algebras and knot polynomials
 LaTeX label: `prop:habiro-expansion-atomic`
@@ -129,7 +129,7 @@ theorem habiro_step_zero (p : ℤ[X]) :
 /-- **External axiom (Habiro 2002):** Habiro expansion exists for
     every integer polynomial. -/
 -- Ref: [manuscript] `prop:habiro-expansion-atomic` Step 2–4
--- Ref: [habiro2002] Habiro, "On the colored Jones polynomials of some simple links," arXiv:math/0505219
+-- Ref: [habiro2004cyclotomic] Habiro, "Cyclotomic completions of polynomial rings," arXiv:math/0209324
 axiom habiro_expansion_exists_axiom :
     ∀ (p : ℤ[X]), Nonempty (HabiroExpansion p)
 
