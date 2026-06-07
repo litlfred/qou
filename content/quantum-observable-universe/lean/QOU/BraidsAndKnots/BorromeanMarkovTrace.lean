@@ -1,17 +1,33 @@
 /-
-  Borromean Markov trace: exact closed form as a rational function of h.
+  Borromean Markov trace: exact closed form, stated over `R[h]`.
 
-  tr_M(β_Bor, q) = (4 + h² − 3h⁴ − h⁶) / (h² + 4)
+  The Markov trace of the Borromean braid `β_Bor = (σ₁⁻¹σ₂)³` on `H_3(q)`,
+  evaluated via the Jones polynomial of the Borromean rings, is the unique
+  value `t` satisfying the multiplicative relation
 
-  where h = q − q⁻¹ and β_Bor = (σ₁⁻¹σ₂)³ is the Borromean braid.
+      [2]_q² · t = 4 + h² − 3h⁴ − h⁶,    [2]_q² = h² + 4,   h = q − q⁻¹.
 
-  Derivation:
+  Equivalently, when `[2]_q²` is invertible (e.g. over `ℝ`/`ℚ` at real `q`),
+
+      tr_M(β_Bor, q) = (4 + h² − 3h⁴ − h⁶) / (h² + 4).
+
+  FAITHFUL BASE RING.  Every character / closed-form / reconstruction /
+  bar-symmetry identity below is a *polynomial identity in `h`* — provable
+  by `ring` with NO division and NO field.  It is therefore stated over a
+  generic `{R : Type*} [CommRing R] (h : R)`, i.e. over the polynomial ring
+  `R[h]`.  Instantiating `R = LaurentPolynomial ℤ`, `h = T − T⁻¹` recovers
+  the genuine `ℤ[q, q⁻¹]` statements (`h ∈ ℤ[q,q⁻¹]`, integer coefficients).
+  This is the **fibre** object (formal `q`); only the quotient form and the
+  positivity `[2]_q² > 0` descend to the **archimedean** leg, isolated in
+  the final `ℚ` section.
+
+  Derivation (used to obtain the numerator/denominator):
     1. Jones polynomial: V(𝓑₃, t) = −t⁻³ + 3t⁻² − 2t⁻¹ + 4 − 2t + 3t² − t³
     2. In u = q² + q⁻²: V = −u³ + 3u² + u − 2
     3. [2]_q² = (q + q⁻¹)² = u + 2
     4. tr_M = V / [2]² = (−u³ + 3u² + u − 2) / (u + 2)
     5. Polynomial division: = −u² + 5u − 9 + 16/(u + 2)
-    6. Substituting u = h² + 2: = (4 + h² − 3h⁴ − h⁶) / (h² + 4)
+    6. Substituting u = h² + 2: tr_M·(h² + 4) = 4 + h² − 3h⁴ − h⁶
 
   h-expansion (purely even):
     tr_M = 1 + 0·h² − (3/4)·h⁴ − (1/16)·h⁶ + (1/64)·h⁸ + ...
@@ -28,24 +44,148 @@ import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.NormNum
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Positivity
+import Mathlib.Tactic.LinearCombination
 
 namespace QOU.BraidsAndKnots
 
-variable (h : ℚ)
+/-! ## `R[h]` layer — multiplicative identities over a generic commutative ring
 
-/-- The numerator of tr_M(β_Bor) as a polynomial in h. -/
-def trM_borromean_num (h : ℚ) : ℚ := 4 + h^2 - 3 * h^4 - h^6
+Everything in this section holds over `{R : Type*} [CommRing R] (h : R)`,
+i.e. in the polynomial ring `R[h]`.  No division, no field, no ordering —
+the `tr_M` closed form is encoded as the multiplicative relation
+`[2]_q² · t = numerator` (see `IsBorromeanMarkovTrace`). -/
 
-/-- The denominator of tr_M(β_Bor) as a polynomial in h. -/
-def trM_borromean_den (h : ℚ) : ℚ := h^2 + 4
+section CommRing
+variable {R : Type*} [CommRing R]
 
-/-- The Borromean Markov trace as a rational function of h. -/
+/-- The numerator of tr_M(β_Bor) as a polynomial in h: `4 + h² − 3h⁴ − h⁶`. -/
+def trM_borromean_num (h : R) : R := 4 + h^2 - 3 * h^4 - h^6
+
+/-- The denominator `[2]_q² = h² + 4` as a polynomial in h. -/
+def trM_borromean_den (h : R) : R := h^2 + 4
+
+/-- **The defining multiplicative relation for the Borromean Markov trace.**
+    A value `t : R` *is* the Borromean Markov trace at `h` iff
+
+      `[2]_q² · t = numerator`,   i.e.   `(h² + 4)·t = 4 + h² − 3h⁴ − h⁶`.
+
+    This replaces the division-form `tr_M := num/den`, characterising `tr_M`
+    WITHOUT inverting `[2]_q²`, so it makes sense over any `R[h]`.  Over a
+    field where `h² + 4 ≠ 0` it pins `t = num/den` uniquely (see
+    `trM_borromean_isTrace` in the `ℚ` section). -/
+def IsBorromeanMarkovTrace (h t : R) : Prop :=
+  trM_borromean_den h * t = trM_borromean_num h
+
+/-- At `h = 0` (q = 1), `t = 1` solves the defining relation: `4·1 = 4`. -/
+theorem isBorromeanMarkovTrace_one_at_zero :
+    IsBorromeanMarkovTrace (0 : R) 1 := by
+  unfold IsBorromeanMarkovTrace trM_borromean_den trM_borromean_num
+  ring
+
+/-- The Jones polynomial of the Borromean rings in u = q² + q⁻². -/
+def jones_borromean_in_u (u : R) : R := -u^3 + 3 * u^2 + u - 2
+
+/-- [2]_q² = (q + q⁻¹)² in terms of u = q² + q⁻². -/
+def bracket2_sq_in_u (u : R) : R := u + 2
+
+/-- The polynomial division: V / [2]² = quotient + 16/(u+2).
+    Equivalently: V = (u+2) · (−u² + 5u − 9) + 16. -/
+theorem jones_division (u : R) :
+    jones_borromean_in_u u =
+    bracket2_sq_in_u u * (-u^2 + 5*u - 9) + 16 := by
+  unfold jones_borromean_in_u bracket2_sq_in_u
+  ring
+
+/-- The substitution u = h² + 2 maps the Jones polynomial
+    to the numerator of tr_M. -/
+theorem jones_to_trM_num (h : R) :
+    jones_borromean_in_u (h^2 + 2) = trM_borromean_num h := by
+  unfold jones_borromean_in_u trM_borromean_num
+  ring
+
+/-- The substitution u = h² + 2 maps [2]² to the denominator. -/
+theorem bracket2_to_trM_den (h : R) :
+    bracket2_sq_in_u (h^2 + 2) = trM_borromean_den h := by
+  unfold bracket2_sq_in_u trM_borromean_den
+  ring
+
+/-- The h⁴ coefficient of the numerator is −3.
+    Since the denominator's leading term is 4,
+    the h⁴ coefficient of tr_M is −3/4. -/
+theorem h4_coefficient_of_num (h : R) :
+    trM_borromean_num h = 4 * (1 : R) + 1 * h^2 + (-3) * h^4 + (-1) * h^6 := by
+  unfold trM_borromean_num
+  ring
+
+/-- **The `h² = 0` cancellation, multiplicatively.**
+    The numerator splits as `[2]_q²·1 + (−3h⁴ − h⁶)` — i.e. the `h⁰…h²`
+    part of the numerator is *exactly* the denominator `4 + h²`, so a `t`
+    satisfying the defining relation has `t − 1` divisible by `[2]_q²` with
+    a pure-`h⁴` tail (`tr_M = 1 + (−3h⁴ − h⁶)/[2]_q²`, no `h¹,h²,h³`).
+    Pure `ring`, no division. -/
+theorem h2_coefficient_cancellation (h : R) :
+    trM_borromean_num h = trM_borromean_den h * 1 +
+    (-3 * h^4 - h^6) := by
+  unfold trM_borromean_num trM_borromean_den
+  ring
+
+/-- **Closed form, multiplicative (`R[h]`).**  Any `t` satisfying the
+    defining relation `IsBorromeanMarkovTrace h t` satisfies
+
+      `[2]_q² · (t − 1) = −3h⁴ − h⁶ = h⁴·(−3 − h²)`.
+
+    This is the division-free statement of
+    `tr_M = 1 + (−3h⁴ − h⁶)/[2]_q²`: it says `tr_M − 1` factors through
+    `h⁴` once `[2]_q²` is cleared, with no `h⁰…h³` correction (the
+    structural `h² = 0` fact). -/
+theorem borromean_markov_trace_closed_form_mul (h t : R)
+    (ht : IsBorromeanMarkovTrace h t) :
+    trM_borromean_den h * (t - 1) = h^4 * (-3 - h^2) := by
+  unfold IsBorromeanMarkovTrace trM_borromean_den trM_borromean_num at ht ⊢
+  linear_combination ht
+
+/-! ### Bar-(anti-)symmetric structure, over `R[h]`
+
+The bar-involution sends `q ↦ q⁻¹`, equivalently `h = q − q⁻¹ ↦ −h`.
+The numerator `4 + h² − 3h⁴ − h⁶` and denominator `h² + 4` are *even*
+polynomials in `h`, so the defining relation is invariant under `h ↦ −h`:
+the SAME trace value `t` solves the relation at `h` and at `−h`.  Hence the
+bar-anti-symmetric companion vanishes structurally (the `ℚ`/field statement
+`Q_borromean_eq_zero` below is the archimedean shadow of this). -/
+
+/-- The numerator polynomial `4 + h² − 3h⁴ − h⁶` is even in `h`. -/
+theorem trM_borromean_num_even (h : R) :
+    trM_borromean_num (-h) = trM_borromean_num h := by
+  unfold trM_borromean_num
+  ring
+
+/-- The denominator polynomial `h² + 4` is even in `h`. -/
+theorem trM_borromean_den_even (h : R) :
+    trM_borromean_den (-h) = trM_borromean_den h := by
+  unfold trM_borromean_den
+  ring
+
+/-- **Bar-invariance of the defining relation.**  A value `t` is the
+    Borromean Markov trace at `h` iff it is the trace at `−h`.  Division-free
+    consequence of the evenness of numerator and denominator. -/
+theorem isBorromeanMarkovTrace_neg (h t : R) :
+    IsBorromeanMarkovTrace (-h) t ↔ IsBorromeanMarkovTrace h t := by
+  unfold IsBorromeanMarkovTrace
+  rw [trM_borromean_num_even, trM_borromean_den_even]
+
+end CommRing
+
+/-! ## Archimedean (`ℚ`) layer — quotient form and positivity
+
+The genuine *division* form `tr_M := num/den` and the *ordering* fact
+`[2]_q² > 0` are archimedean: they live over an ordered field, here `ℚ`.
+Each result below is recovered from the `R[h]` multiplicative core above by
+clearing `[2]_q²` (which is a unit since `[2]_q² = h² + 4 > 0`). -/
+
+/-- The Borromean Markov trace as a rational function of h (archimedean
+    quotient form).  Pinned by `IsBorromeanMarkovTrace` once `[2]_q²` is
+    invertible — see `trM_borromean_isTrace`. -/
 noncomputable def trM_borromean (h : ℚ) : ℚ := trM_borromean_num h / trM_borromean_den h
-
-/-- At h = 0 (q = 1), the Markov trace is exactly 1. -/
-theorem trM_borromean_at_h_zero : trM_borromean 0 = 1 := by
-  unfold trM_borromean trM_borromean_num trM_borromean_den
-  norm_num
 
 /-- The denominator is always positive (hence non-zero) for real h. -/
 theorem trM_borromean_den_pos (h : ℚ) : trM_borromean_den h > 0 := by
@@ -56,54 +196,26 @@ theorem trM_borromean_den_pos (h : ℚ) : trM_borromean_den h > 0 := by
 theorem trM_borromean_den_ne_zero (h : ℚ) : trM_borromean_den h ≠ 0 := by
   exact ne_of_gt (trM_borromean_den_pos h)
 
-/-- The Jones polynomial of the Borromean rings in u = q² + q⁻². -/
-def jones_borromean_in_u (u : ℚ) : ℚ := -u^3 + 3 * u^2 + u - 2
+/-- **The quotient form satisfies the multiplicative defining relation.**
+    Bridges the `ℚ` division form to the `R[h]` characterisation
+    `IsBorromeanMarkovTrace`: `[2]_q² · (num/den) = num`. -/
+theorem trM_borromean_isTrace (h : ℚ) :
+    IsBorromeanMarkovTrace h (trM_borromean h) := by
+  unfold IsBorromeanMarkovTrace trM_borromean
+  have hne := trM_borromean_den_ne_zero h
+  field_simp
 
-/-- [2]_q² = (q + q⁻¹)² in terms of u = q² + q⁻². -/
-def bracket2_sq_in_u (u : ℚ) : ℚ := u + 2
-
-/-- The polynomial division: V / [2]² = quotient + 16/(u+2).
-    Equivalently: V = (u+2) · (−u² + 5u − 9) + 16. -/
-theorem jones_division (u : ℚ) :
-    jones_borromean_in_u u =
-    bracket2_sq_in_u u * (-u^2 + 5*u - 9) + 16 := by
-  unfold jones_borromean_in_u bracket2_sq_in_u
-  ring
-
-/-- The substitution u = h² + 2 maps the Jones polynomial
-    to the numerator of tr_M. -/
-theorem jones_to_trM_num (h : ℚ) :
-    jones_borromean_in_u (h^2 + 2) = trM_borromean_num h := by
-  unfold jones_borromean_in_u trM_borromean_num
-  ring
-
-/-- The substitution u = h² + 2 maps [2]² to the denominator. -/
-theorem bracket2_to_trM_den (h : ℚ) :
-    bracket2_sq_in_u (h^2 + 2) = trM_borromean_den h := by
-  unfold bracket2_sq_in_u trM_borromean_den
-  ring
-
-/-- The h⁴ coefficient of the numerator is −3.
-    Since the denominator's leading term is 4,
-    the h⁴ coefficient of tr_M is −3/4. -/
-theorem h4_coefficient_of_num :
-    trM_borromean_num h = 4 * (1 : ℚ) + 1 * h^2 + (-3) * h^4 + (-1) * h^6 := by
-  unfold trM_borromean_num
-  ring
-
-/-- The h² coefficient of the numerator is +1 (NOT zero).
-    But the h² coefficient of tr_M = num/den IS zero because
-    den = 4 + h² and (4 + h²)·(1 + 0·h² + ...) = 4 + h² + ...
-    matches the numerator's h² coefficient of +1 exactly. -/
-theorem h2_coefficient_cancellation :
-    trM_borromean_num h = trM_borromean_den h * 1 +
-    (-3 * h^4 - h^6) := by
-  unfold trM_borromean_num trM_borromean_den
-  ring
+/-- At h = 0 (q = 1), the Markov trace is exactly 1. -/
+theorem trM_borromean_at_h_zero : trM_borromean 0 = 1 := by
+  unfold trM_borromean trM_borromean_num trM_borromean_den
+  norm_num
 
 /-- Main result: the Borromean Markov trace, combining all steps.
     V(𝓑₃) / [2]_q² = (4 + h² − 3h⁴ − h⁶) / (h² + 4)
-    with the h² coefficient being exactly zero (cancellation). -/
+    with the h² coefficient being exactly zero (cancellation).
+
+    Quotient-form shadow of `borromean_markov_trace_closed_form_mul`; the
+    division here is legitimate because `[2]_q² = h² + 4 ≠ 0`. -/
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
 theorem borromean_markov_trace_closed_form (h : ℚ) (hne : trM_borromean_den h ≠ 0) :
     trM_borromean h = 1 + (-3 * h^4 - h^6) / trM_borromean_den h := by
@@ -121,7 +233,8 @@ theorem borromean_markov_trace_closed_form (h : ℚ) (hne : trM_borromean_den h 
 
     This makes the h² = 0 structural fact explicit (no Taylor-series
     machinery needed; it follows by algebraic division of the
-    rational expression).
+    rational expression).  Archimedean shadow of
+    `borromean_markov_trace_closed_form_mul`.
 
     Audit chain: `docs/audits/2026-05-24-derivation-chain-gb-jet-orders-and-pentagon.md`
     (T1 closure). -/
@@ -139,45 +252,9 @@ theorem h4_leading_coefficient_eq_neg_three_quarters :
   unfold trM_borromean_den
   norm_num
 
-/-! ### Bar-(anti-)symmetric structure of the Borromean trace
-
-The bar-involution sends `q ↦ q^{-1}`, equivalently `h = q − q^{-1} ↦ −h`.
-
-The Borromean closed form is purely even in `h`:
-both numerator `4 + h² − 3h⁴ − h⁶` and denominator `h² + 4` involve
-only even powers of `h`. Therefore `trM_borromean` is invariant under
-`h ↦ −h` (bar-symmetric), and its bar-anti-symmetric companion
-`Q_borromean h := (trM_borromean h − trM_borromean (−h)) / 2` vanishes
-identically.
-
-Compare PR #1153 (`sinh_bar_antisymmetric_partner.py`) for the torus
-`T(2, 2m)` family: those `Q_m(h)` are non-zero (carry the Coulomb /
-EM channel via `sinh((2m+1) η)`). The Borromean braid `𝓑₃` is NOT
-in the torus family — it is hyperbolic (the 3-cusped Borromean rings
-have Vol ≈ 7.32) — and its bar-anti-symmetric companion is structurally
-zero, not merely "small at substrate".
-
-Audit chain: PR #1153 audit `docs/audits/2026-05-24-sinh-bar-anti-
-symmetric-partner-probe.md` §"Refined-framing note" cites this fact;
-PR #1196 audit `docs/audits/2026-05-24-sinh-cosh-lean-integration-
-audit.md` flags it as the next concrete Lean proof gap (this
-section closes it).
--/
-
-/-- The numerator polynomial `4 + h² − 3h⁴ − h⁶` is even in `h`. -/
-theorem trM_borromean_num_even (h : ℚ) :
-    trM_borromean_num (-h) = trM_borromean_num h := by
-  unfold trM_borromean_num
-  ring
-
-/-- The denominator polynomial `h² + 4` is even in `h`. -/
-theorem trM_borromean_den_even (h : ℚ) :
-    trM_borromean_den (-h) = trM_borromean_den h := by
-  unfold trM_borromean_den
-  ring
-
 /-- The Borromean Markov trace is invariant under the bar-involution
-    `h ↦ −h` (equivalently `q ↦ q^{-1}`). -/
+    `h ↦ −h` (equivalently `q ↦ q⁻¹`).  Archimedean shadow of
+    `isBorromeanMarkovTrace_neg`. -/
 theorem trM_borromean_bar_invariant (h : ℚ) :
     trM_borromean (-h) = trM_borromean h := by
   unfold trM_borromean
@@ -218,6 +295,9 @@ has been computed via two independent routes — both Lean-proved — that
 turn out to give different values. This section makes the
 inconsistency explicit at the Lean level so future work can address
 it categorically rather than by silent normalisation choices.
+
+The `+5/2` leading constants and the `/2` in the family-A weight are
+archimedean (rational coefficients), so this section also lives over `ℚ`.
 
 **Route 1 — Family A (Wedderburn dim sum on H_4)**:
   λ_A(q) := (1/4) · Σ_{λ ⊢ 4} dim_q V_λ = 5/2 + (3/4)·h²

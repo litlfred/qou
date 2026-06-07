@@ -38,12 +38,41 @@ import Mathlib.Tactic.NormNum
 
 namespace QOU.BraidsAndKnots
 
+/-! ## `R[h]` layer — the standard-irrep character as a polynomial in `h`
+
+The faithful base of the standard-irrep character is the polynomial
+`χ^{(2,1)} = 2 − 3h⁴ − h⁶ ∈ R[h]` — pure `ring`, no division, no field.
+Instantiating `R = LaurentPolynomial ℤ`, `h = T − T⁻¹` gives the genuine
+`ℤ[q, q⁻¹]` character.  Only the q-rational form (`… / q⁶`) needs `q`
+inverted, and lives in the `ℚ` section below. -/
+
+section CommRing
+variable {R : Type*} [CommRing R]
+
+/-- The standard-irrep Borromean character as a polynomial in `h`:
+    `χ^{(2,1)}(β_Bor) = 2 − 3h⁴ − h⁶`.  This is the faithful `R[h]` form
+    (no division); `h = q − q⁻¹`. -/
+def chi21_borromean (h : R) : R := 2 - 3 * h^4 - h^6
+
+/-- The `R[h]` character `2 − 3h⁴ − h⁶` is even in `h` (bar-invariant under
+    `h ↦ −h`, i.e. `q ↦ q⁻¹`): only even powers `h⁴, h⁶` appear. -/
+theorem chi21_borromean_even (h : R) :
+    chi21_borromean (-h) = chi21_borromean h := by
+  unfold chi21_borromean
+  ring
+
+end CommRing
+
+/-! ## Archimedean (`ℚ`) layer — the q-rational form and the form bridge
+
+The q-rational form divides by `q⁶`, so it lives over a field; here `ℚ`. -/
+
 /- §7c base-ring convention: these are pure algebraic identities with no
    ordering and no `Real.*` constructs, so they are stated over a generic
    `{R : Type*} [Field R]` rather than specialised to `ℚ`. `Field` (not
-   merely `CommRing`) is the weakest typeclass that admits the Kauffman
-   Laurent's genuine inverses (`1/q`, negative `q`-powers). `ℚ` is a
-   `Field`, so every existing call site still unifies. -/
+   merely `CommRing`) is the weakest typeclass that admits the genuine
+   inverses (`1/q`, negative `q`-powers). `ℚ` is a `Field`, so every existing
+   call site still unifies. -/
 
 /-- The standard-irrep Borromean character in its q-rational form. -/
 def chi21_borromean_qform {R : Type*} [Field R] (q : R) : R :=
@@ -60,6 +89,14 @@ theorem chi21_borromean_qform_eq_hform {R : Type*} [Field R] (q : R) (hq : q ≠
     chi21_borromean_qform q = chi21_borromean_hform q := by
   unfold chi21_borromean_qform chi21_borromean_hform
   field_simp
+  ring
+
+/-- The `ℚ` h-form is exactly the `R[h]` polynomial character
+    `chi21_borromean` evaluated at `h = q − q⁻¹`.  Connects the archimedean
+    h-form to the faithful `R[h]` object above. -/
+theorem chi21_borromean_hform_eq_poly (q : ℚ) :
+    chi21_borromean_hform q = chi21_borromean (q - 1/q) := by
+  unfold chi21_borromean_hform chi21_borromean
   ring
 
 /-- The h-form is purely even in `h = q − q⁻¹` (bar-invariant under
