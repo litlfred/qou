@@ -42,6 +42,31 @@ Band → `result`: `≥ 0.66 → pass`, `0.33–0.66 → warn`, `< 0.33 → fail
 baseline entry: strategy-clarity 0.9, goal-plausibility 1.0, novelty 0.85,
 statement-integrity pass. Demonstrates the end-to-end write path.
 
+## First batch results — mass-theory (12 blocks, 48 entries)
+
+A background agent scored the 12 provable-kind blocks returned by the proof-block
+grep (0 skipped; the CLI handled all 48 writes first try). The run doubled as a
+scale-test and surfaced a **band↔score consistency gap** in `qa-agent-write` (a
+`--result`/`--score` mismatch was possible) — now closed with a band guard
+(`≥0.66 pass, ≥0.33 warn, else fail`) that errors on mismatch; 3 mis-banded
+entries were corrected, and all 39 scored entries are now consistent.
+
+**Strategy-clarity was uniformly 1.0** (every block states its plan / case-split
+/ cited lemmas up front). The rate half surfaced these lowest-score
+**improve-backlog** items:
+
+| Block | Finding | Score |
+|---|---|---|
+| `alpha-k-derivation-procedure` | **statement-integrity FAIL (critical)** — Lean `theorem … := ⟨_, rfl⟩` is a vacuous existence tautology, not the `.md`'s real claim (character-matrix invertibility ⇒ unique `y_λ`) | integrity fail |
+| `alpha-shift-torus-knot` | core gap — maximality pt 1 only case-by-case (6 pairs) + conjectured/deferred categorical argument | plausibility 0.3 |
+| `atom-knot-mass-derivation` | core gap — ~173× m_p shortfall acknowledged; key Lean is a substrate `axiom`; `MassIdentity` weakened to a 25 %-tolerance proxy | plausibility 0.3 |
+| `beta-decay-transfer-matrix` | **md↔Lean mismatch** — `.md` boxes `Δ_β = ½(q−q⁻¹)𝕀` (diagonal) but sorry-free Lean proves off-diagonal `(1−q²)/2 ≠ 0` (Lean self-consistent ⇒ integrity passes; correctness follow-up) | flag |
+
+These are recorded as the **baseline, not fixed here** — the improve half
+(`/integration-backlog proof`, ascending-score) routes `alpha-k-derivation-procedure`
+→ `lean-proof-review`, the two core-gap blocks → `proof-triage`, and files the
+beta-decay mismatch for a correctness pass.
+
 ## Rollout (remaining corpus)
 
 The full baseline is drained in **≤ 49-file batches** via `/integration-backlog
@@ -51,5 +76,5 @@ needs-agent queue; each block is scored with `qa-agent-write --score`. Batches
 proceed chapter-by-chapter so a mis-calibrated rubric is caught early rather
 than across the whole corpus at once.
 
-**Status:** infra + worked example landed; first chapter batch in progress.
-Baseline scores are a *starting point* — the backlog's job is to raise them.
+**Status:** infra + worked example + first batch (mass-theory, 12 blocks)
+landed. Baseline scores are a *starting point* — the backlog's job is to raise them.

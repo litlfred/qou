@@ -2903,7 +2903,100 @@
         "reviewed_at": "2026-06-04T17:15:06.798Z",
         "reviewed_sha": "a5fd9501f52decb0cc8a7770fa148322b64d3343"
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "aa311f7a7134",
+          "ts": "82492d372b39",
+          "lean": "38361d743506"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T01:34:06.913Z",
+        "reviewed_sha": "5b22f37e27e74b674fb6b50fae73e0792e7212e2",
+        "notes": "Explicit tikzcd pipeline (Yekutieli finite-slice -> SDP -> T_w -> Wedderburn -> tr_M -> M -> archimedean B); algorithm spelled out step-by-step with caveats up front."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "aa311f7a7134",
+          "ts": "82492d372b39",
+          "lean": "38361d743506"
+        },
+        "result": "fail",
+        "severity": "minor",
+        "score": {
+          "value": 0.3,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T01:39:41.437Z",
+        "reviewed_sha": "5b22f37e27e74b674fb6b50fae73e0792e7212e2",
+        "notes": "core gap: ~173x m_p shortfall; key Lean is a substrate axiom; MassIdentity weakened to 25% proxy"
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "aa311f7a7134",
+          "ts": "82492d372b39",
+          "lean": "38361d743506"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.8,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T01:34:06.982Z",
+        "reviewed_sha": "5b22f37e27e74b674fb6b50fae73e0792e7212e2",
+        "notes": "Novel: end-to-end categorical mass pipeline via finite-slice Yekutieli + GB spectral collapse, replacing the geometric/volume-conjecture leg with finite Markov-trace computation."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "aa311f7a7134",
+          "ts": "82492d372b39",
+          "lean": "38361d743506"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T01:34:07.015Z",
+        "reviewed_sha": "5b22f37e27e74b674fb6b50fae73e0792e7212e2",
+        "notes": "atom_knot_mass_derivation is a DECLARED substrate axiom (S2), documented w/ Mathlib-gap path, not an obviously-suspect axiom; per-atom MassIdentity theorems are honest norm_num on the 25% proxy. Not a True-stub."
+      }
     ]
   },
-  "updated_at": "2026-06-05T14:22:44.851Z"
+  "updated_at": "2026-06-07T01:39:41.437Z"
 }

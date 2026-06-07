@@ -2701,7 +2701,99 @@
         "reviewed_at": "2026-06-04T17:13:59.798Z",
         "reviewed_sha": "a5fd9501f52decb0cc8a7770fa148322b64d3343"
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "fb35a7a5963a",
+          "ts": "05cb5b94eaf8",
+          "lean": "2810d8047e3d"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T01:33:40.998Z",
+        "reviewed_sha": "5b22f37e27e74b674fb6b50fae73e0792e7212e2",
+        "notes": "3 named ingredients: pentagon-coherence on substrate, Bloch-Suslin uniqueness, archimedean matching; explicit §3b-cond banner + class hypotheses C1/C2 stated up front."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "fb35a7a5963a",
+          "ts": "05cb5b94eaf8",
+          "lean": "2810d8047e3d"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T01:33:41.033Z",
+        "reviewed_sha": "5b22f37e27e74b674fb6b50fae73e0792e7212e2",
+        "notes": "Lean archimedean_functor_uniqueness proved sorry-free as hD.uniqueness(...); rigorous-conditional on BlochSuslinUniqueness + ArchimedeanLimit classes (well-established results awaiting Mathlib)."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "fb35a7a5963a",
+          "ts": "05cb5b94eaf8",
+          "lean": "2810d8047e3d"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.8,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T01:33:41.065Z",
+        "reviewed_sha": "5b22f37e27e74b674fb6b50fae73e0792e7212e2",
+        "notes": "Novel: characterises the substrate's archimedean exit functor via Bloch-Suslin pentagon-rigidity, forecloses arbitrary pi-imports. Not duplicated elsewhere."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "fb35a7a5963a",
+          "ts": "05cb5b94eaf8",
+          "lean": "2810d8047e3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T01:33:41.096Z",
+        "reviewed_sha": "5b22f37e27e74b674fb6b50fae73e0792e7212e2",
+        "notes": "Sorry-free conditional theorem; the two classes are honest §3b-cond axiomatisations of named classical results (Suslin 1991), not suspect axioms. md banner matches Lean."
+      }
     ]
   },
-  "updated_at": "2026-06-05T14:22:44.851Z"
+  "updated_at": "2026-06-07T01:33:41.096Z"
 }

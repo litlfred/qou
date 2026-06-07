@@ -2646,7 +2646,99 @@
         "reviewed_at": "2026-06-04T17:44:27.549Z",
         "reviewed_sha": "caf92c63d6227772dff112c426906eb978b5f24b"
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "a315cc8d9069",
+          "ts": "1e95851efe5a",
+          "lean": "84772f2ca7f3"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T01:34:49.208Z",
+        "reviewed_sha": "5b22f37e27e74b674fb6b50fae73e0792e7212e2",
+        "notes": "Strategy explicit: 3 crossing transfer matrices T_pp/T_nn/T_mix; universality via T_mix=midpoint(T_pp,T_nn) so both decay steps equal; short direct difference proof."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "a315cc8d9069",
+          "ts": "1e95851efe5a",
+          "lean": "84772f2ca7f3"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.9,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T01:34:49.241Z",
+        "reviewed_sha": "5b22f37e27e74b674fb6b50fae73e0792e7212e2",
+        "notes": "Sorry-free, substantial Lean (beta_decay_universal/T_mix_midpoint/decay_offdiag_formula via ring,nlinarith,norm_num). Caveat: md boxes Delta_beta=1/2(q-q^-1)I but Lean proves off-diag=(1-q^2)/2!=0 — md/Lean formula mismatch."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "a315cc8d9069",
+          "ts": "1e95851efe5a",
+          "lean": "84772f2ca7f3"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.7,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T01:34:49.273Z",
+        "reviewed_sha": "5b22f37e27e74b674fb6b50fae73e0792e7212e2",
+        "notes": "Transfer-matrix formulation of beta decay with a universal decay matrix is a reasonably novel QOU construction; not duplicated in a sibling block."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "a315cc8d9069",
+          "ts": "1e95851efe5a",
+          "lean": "84772f2ca7f3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T01:34:49.304Z",
+        "reviewed_sha": "5b22f37e27e74b674fb6b50fae73e0792e7212e2",
+        "notes": "Lean is NOT a stub — proves real theorems sorry-free, no suspect axiom. (md vs Lean Delta_beta formula discrepancy is a correctness flag for follow-up, not a placeholder.)"
+      }
     ]
   },
-  "updated_at": "2026-06-05T14:22:44.851Z"
+  "updated_at": "2026-06-07T01:34:49.304Z"
 }

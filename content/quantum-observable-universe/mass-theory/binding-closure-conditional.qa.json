@@ -1,0 +1,110 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "thm:binding-closure-conditional",
+  "kind": "theorem",
+  "paths": {
+    "ts": "content/quantum-observable-universe/mass-theory/binding-closure-conditional.ts",
+    "md": "content/quantum-observable-universe/mass-theory/binding-closure-conditional.md",
+    "lean": "content/quantum-observable-universe/mass-theory/binding-closure-conditional.lean"
+  },
+  "source_hashes": {
+    "md": "4034a3724a28",
+    "ts": "85e75c9b1c9f",
+    "lean": "9d859da88c03"
+  },
+  "criteria": {
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "4034a3724a28",
+          "ts": "85e75c9b1c9f",
+          "lean": "9d859da88c03"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T01:35:25.323Z",
+        "reviewed_sha": "5b22f37e27e74b674fb6b50fae73e0792e7212e2",
+        "notes": "Crystal: obligations (C proved grading), (B conditional mass id), (D residue form proved) named up front w/ conditional banner; B(K)=m_e.Sum a_D^(n) closed form stated."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "4034a3724a28",
+          "ts": "85e75c9b1c9f",
+          "lean": "9d859da88c03"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T01:35:25.353Z",
+        "reviewed_sha": "5b22f37e27e74b674fb6b50fae73e0792e7212e2",
+        "notes": "Sorry-free: binding_closure_conditional proved from BindingClosureInput via rw[body_is_series,Finset.mul_sum]+sum_congr. Open input (B) is a named class field, not a hidden gap — rigorous-conditional."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "4034a3724a28",
+          "ts": "85e75c9b1c9f",
+          "lean": "9d859da88c03"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T01:35:25.382Z",
+        "reviewed_sha": "5b22f37e27e74b674fb6b50fae73e0792e7212e2",
+        "notes": "Body-order = Sum m_e.a_D^(n) (SW periods) framing is coherent but the Lean is a standard factor-out-m_e over a Finset; conditional-class packaging is the same §3b-cond pattern as siblings."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "4034a3724a28",
+          "ts": "85e75c9b1c9f",
+          "lean": "9d859da88c03"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T01:35:25.413Z",
+        "reviewed_sha": "5b22f37e27e74b674fb6b50fae73e0792e7212e2",
+        "notes": "Sorry-free §3b-cond theorem; BindingClosureInput honestly bundles proved (C) + open (B) as class fields; no suspect axiom, no True-stub. md banner matches Lean."
+      }
+    ]
+  },
+  "updated_at": "2026-06-07T01:35:25.413Z"
+}

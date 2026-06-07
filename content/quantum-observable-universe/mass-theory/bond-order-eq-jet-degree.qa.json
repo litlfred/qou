@@ -1,0 +1,111 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "lem:bond-order-eq-jet-degree",
+  "kind": "lemma",
+  "paths": {
+    "ts": "content/quantum-observable-universe/mass-theory/bond-order-eq-jet-degree.ts",
+    "md": "content/quantum-observable-universe/mass-theory/bond-order-eq-jet-degree.md",
+    "lean": "content/quantum-observable-universe/mass-theory/bond-order-eq-jet-degree.lean"
+  },
+  "source_hashes": {
+    "md": "e627d564b059",
+    "ts": "c75199ce08f1",
+    "lean": "e45f31393b92"
+  },
+  "criteria": {
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "e627d564b059",
+          "ts": "c75199ce08f1",
+          "lean": "e45f31393b92"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T01:36:17.363Z",
+        "reviewed_sha": "5b22f37e27e74b674fb6b50fae73e0792e7212e2",
+        "notes": "Clear: 2 numbered claims (n-cluster sub-braid sits at jet degree n; gr_n = n-body term) => body-order series = jet-graded total; obligation (C) of the many-body conjecture."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "e627d564b059",
+          "ts": "c75199ce08f1",
+          "lean": "e45f31393b92"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T01:36:17.394Z",
+        "reviewed_sha": "5b22f37e27e74b674fb6b50fae73e0792e7212e2",
+        "notes": "Sorry-free: bodyorder_eq_jet_total via rw[total_eq]+sum_congr. Caveat: substantive grading-match (Steps 1-2) packaged as structure fields body_eq_graded/total_eq (assumed), extracted as series identity. Gap named."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "e627d564b059",
+          "ts": "c75199ce08f1",
+          "lean": "e45f31393b92"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "score": {
+          "value": 0.6,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T01:39:41.470Z",
+        "reviewed_sha": "5b22f37e27e74b674fb6b50fae73e0792e7212e2",
+        "notes": "standard jet-degree argument; structure-hypothesis projection (theorem extracts S field)"
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "e627d564b059",
+          "ts": "c75199ce08f1",
+          "lean": "e45f31393b92"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T01:36:17.456Z",
+        "reviewed_sha": "5b22f37e27e74b674fb6b50fae73e0792e7212e2",
+        "notes": "Sorry-free; BodyOrderJetGrading honestly packages the grading match + exhaustiveness as hypotheses; no suspect axiom, no True-stub. md ties (C) to gb-spectral-sequence/jet-prefix steps."
+      }
+    ]
+  },
+  "updated_at": "2026-06-07T01:39:41.470Z"
+}

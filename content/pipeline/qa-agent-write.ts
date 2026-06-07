@@ -126,6 +126,18 @@ if (scoreRaw !== undefined) {
   }
   score = { value, max, ...(rubric ? { rubric } : {}) };
 }
+// Enforce the rubric band↔result mapping when a score is present (prevents
+// e.g. `--result pass --score 0.1`): ≥0.66 ⇒ pass, ≥0.33 ⇒ warn, else fail.
+if (score) {
+  const frac = score.value / score.max;
+  const band = frac >= 0.66 ? "pass" : frac >= 0.33 ? "warn" : "fail";
+  if (result !== band) {
+    fail(
+      `--result "${result}" contradicts --score ${score.value}/${score.max} ` +
+        `(band "${band}"); use --result ${band} or adjust the score`,
+    );
+  }
+}
 const model = arg("model") ?? "claude-opus-4-8";
 const skill = arg("skill") ?? "local/qa-agent-drain";
 
@@ -200,5 +212,5 @@ report.criteria[criterion] = [...kept, entry];
 
 saveQaReport(qaPath, report);
 console.log(
-  `qa-agent-write: ${criterion} = ${result}${severity ? ` (${severity})` : ""}  -> ${relative(REPO_ROOT, qaPath)}`,
+  `qa-agent-write: ${criterion} = ${result}${severity ? ` (${severity})` : ""}${score ? ` score=${score.value}/${score.max}` : ""}  -> ${relative(REPO_ROOT, qaPath)}`,
 );
