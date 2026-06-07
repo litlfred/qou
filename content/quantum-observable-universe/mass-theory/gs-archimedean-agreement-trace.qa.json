@@ -2134,25 +2134,6 @@
         "evidence": "quantum-observable-universe/mass-theory/gs-archimedean-agreement-trace.ts:0: forward edge to prop:habiro-residue-sum-equivalence spans 152 manifest positions | quantum-observable-universe/mass-theory/gs-archimedean-agreement-trace.ts:0: forward edge to def:archimedean-realization-functor spans 58 manifest positions"
       }
     ],
-    "detangler-topic-coherence": [
-      {
-        "field_hash": {
-          "md": "b45d99d03e6c",
-          "ts": "da265e2b38ef",
-          "lean": "8b251a2192e9"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "4e0e86aefa4e",
-          "script_commit_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2"
-        },
-        "reviewed_at": "2026-06-07T04:13:32.223Z",
-        "reviewed_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2"
-      }
-    ],
     "detangler-block-tanglement": [
       {
         "field_hash": {
@@ -2184,7 +2165,26 @@
           "worst_target": ""
         }
       }
+    ],
+    "detangler-topic-coherence": [
+      {
+        "field_hash": {
+          "md": "b45d99d03e6c",
+          "ts": "da265e2b38ef",
+          "lean": "8b251a2192e9"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6b0daec15a39",
+          "script_commit_sha": "1b04ccd94e84859e842739184abe528c941fd8d6"
+        },
+        "reviewed_at": "2026-06-07T04:50:22.937Z",
+        "reviewed_sha": "8e315ca2cc049b1d869a7b31681ac98ac0873c57"
+      }
     ]
   },
-  "updated_at": "2026-06-07T04:35:11.106Z"
+  "updated_at": "2026-06-07T04:50:22.937Z"
 }
