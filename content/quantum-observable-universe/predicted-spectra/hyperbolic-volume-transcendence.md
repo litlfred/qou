@@ -42,7 +42,7 @@ $5_2$ is non-arithmetic; the Borromean rings $\mathcal{B}_3$, as a
 three complements are pairwise non-commensurable, so the Borel--Zagier
 conjecture would at least yield their $\mathbb{Q}$-linear independence.
 
-**Scope --- external open problem, partial categorical approach.**
+**Scope: external open problem, partial categorical approach.**
 This conjecture is *not* internal to the framework.  In all three of its
 forms
 
@@ -75,8 +75,10 @@ formalisation proves only the *structural* half --- the tower
 decomposition, Chern--Simons faithfulness, and the downstream
 implications (algebraic independence $\Rightarrow$ Borel--Zagier
 $\Rightarrow$ irrationality) --- while the transcendence core is
-axiomatised as the class `HyperbolicVolumeIndependence` per the
-conditional-class convention.
+axiomatised as the Lean class `HyperbolicVolumeIndependence` following
+the conditional-class convention (the conjecture's content *is* the class
+instance, so downstream results stay rigorous-conditional rather than
+asserting an unproved theorem).
 
 The conjecture is retained not because the paper depends on it, but as
 the *ideal* statement: the guarantee that the predicted spectrum is no
