@@ -17,17 +17,20 @@ cross-method agreement.
 
 PROOF-STATUS HONESTY (do not overclaim). This is NOT "two independent proofs":
 
-  - Path A — R-matrix/Schur-Weyl on V^⊗3 → Jones polynomial of 𝓑₃ (main,
-    T17/#1933, content prop #1942). A NARRATIVE proof in the content .md that
-    *cites* the Borromean Jones polynomial (Murasugi 1996) + polynomial long
-    division. It is NOT Lean-verified (the .ts lean ref has no .lean sibling).
-  - Path B — signed seminormal Hecke characters, skein-validated (this engine).
-    A NUMERICAL computation (χ is float64-bounded via chi_lambda_braid), NOT a
-    proof.
+  - The Borromean tr_M CLOSED FORM is Lean-proved (sorry-free) in
+    QOU/BraidsAndKnots/BorromeanMarkovTrace.lean (field_simp; ring on the
+    algebraic core, modulo the cited topological inputs V(𝓑₃)=Murasugi Jones
+    poly and tr_M=V/[2]²).
+  - BUT the per-representation χ^λ forms checked HERE
+    (χ^{(3)}=χ^{(1³)}=1, χ^{(2,1)}=2−3h⁴−h⁶) are NARRATIVE-ONLY (content .md
+    lines 93–111) — they are NOT in that .lean.
+  - Path B (this engine) computes those χ^λ NUMERICALLY (float64-bounded via
+    chi_lambda_braid), validated against the skein reference.
 
-So this script is an independent NUMERICAL CONFIRMATION of Path A's per-rep
-forms (corroboration, not a theorem of equivalence). They agree to ≤ 4e-50 at
-every tested q (regression gate TOL = 1e-45). Claims checked
+So this script is an independent NUMERICAL CONFIRMATION of the narrative-only
+per-rep χ^λ forms (corroboration, not a theorem; and not redundant with the
+Lean, which covers the tr_M closed form, a different layer). They agree to
+≤ 4e-50 at every tested q (regression gate TOL = 1e-45). Claims checked
 (`borromean-markov-trace-closed-form.md` lines 93–111):
 
   χ^{(3)}(β_Bor)   = 1                       (writhe-0, trivial eigenvalue)
