@@ -1769,7 +1769,28 @@
         "reviewed_at": "2026-06-02T19:35:55.253Z",
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "2bfd73c7120e",
+          "ts": "d62ab4676490"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Constructs T-weight isotypic projectors e_lambda; pi_H=e_0, pi_V=id-e_0",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T01:31:39.570Z",
+        "reviewed_sha": "65c743a7668b55c7aeac1ca5d618fe1070f03e6e",
+        "notes": "Proof of weight-decomposition existence; squarely in 'Maximal torus and weight decomposition' section."
+      }
     ]
   },
-  "updated_at": "2026-06-03T13:06:09.584Z"
+  "updated_at": "2026-06-07T01:31:39.570Z"
 }
