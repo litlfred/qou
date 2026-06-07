@@ -92,7 +92,6 @@ section({
       blocks: [
         "p-vs-np-boundary-intro",
         "computational-horizon",
-        "skein-resolution-obstruction",
         "p-bandwidth-bound",
         "p-vs-np-boundary",
         "p-vs-np-boundary-table2-data",
