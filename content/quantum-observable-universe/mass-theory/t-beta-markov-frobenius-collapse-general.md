@@ -42,7 +42,7 @@ The Lean proof in [`t-beta-markov-collapse-general-lift.lean`](t-beta-markov-col
    Mechanical expansion using centrality of $S \cdot 1_A$ (`Algebra.commutes`) plus $R$-linearity of $\tau$.
 2. **Constraint substitution** ($\tau(X) = S$, $\tau(1) = 1$):
    $$\tau(X \cdot X) = \tau\!\big((X - S \cdot 1)^2\big) + S^2.$$
-3. **PSD bound** (`PSDTrace.psd`): $\tau\!\big((X - S \cdot 1)^2\big) \ge 0$ ⇒ $\tau(X \cdot X) \ge S^2$.
+3. **PSD bound** (`PSDTrace.psd`): $\tau\!\big((X - S \cdot 1)^2\big) \ge 0$ $\Rightarrow$ $\tau(X \cdot X) \ge S^2$.
 4. **Equality case** (`markov_frobenius_min_norm_uniqueness`, using `NonDegTrace.nondeg`): $\tau\!\big((X - S \cdot 1)^2\big) = 0 \Leftrightarrow X - S \cdot 1 = 0$.
 
 ## Application to the Iwahori–Hecke algebra
@@ -55,7 +55,7 @@ $$
 
 This is the Markov-trace collapse of PR #1750 (substrate model) lifted to the genuine non-commutative Hecke algebra.
 
-The L2-Euclidean coordinate-norm picture (PR #1739: 6-channel $A_i x_i^{L2}$ SHAPE × S decomposition) and the Markov-Frobenius picture (this proposition: $T_\beta = S \cdot 1$) are **two different operators** inside $H_n(R, q)$ that **both reproduce the SDP constraint** $\tau_M(T_\beta) = S$. The observable $c_k$ Taylor coefficients of $Q_\beta(q)$ are L2/Markov-invariant: see [PR #1750](https://github.com/litlfred/qou/pull/1750) Step 4 diagnostic.
+The L2-Euclidean coordinate-norm picture (PR #1739: 6-channel $A_i x_i^{L2}$ SHAPE $\times$ S decomposition) and the Markov-Frobenius picture (this proposition: $T_\beta = S \cdot 1$) are **two different operators** inside $H_n(R, q)$ that **both reproduce the SDP constraint** $\tau_M(T_\beta) = S$. The observable $c_k$ Taylor coefficients of $Q_\beta(q)$ are L2/Markov-invariant: see [PR #1750](https://github.com/litlfred/qou/pull/1750) Step 4 diagnostic.
 
 ## References
 

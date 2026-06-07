@@ -50,7 +50,7 @@ This block is a CLAUDE.md §3b-cond conditional theorem:
   `delta_tau_M_canonical_has_q2_minus_1_factor` carries
   `[CanonicalMarkovWeightsH3]` as an explicit `[Instance]` hypothesis.
 - **Explicit conditional banner on narrative side.** The opening
-  "Proposition (conditional on …)" above.
+  "Proposition (conditional on ...)" above.
 - **`uses[]` includes the conjectural upstream.** The block uses
   `prop:qbeta-per-block-chi-closed-forms`, whose Lean file hosts
   the class declaration.
