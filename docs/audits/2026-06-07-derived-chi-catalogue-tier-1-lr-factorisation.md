@@ -1,5 +1,37 @@
 # Tier 1 — LR / parabolic factorisation for atomic-braid characters (2026-06-07)
 
+> **Status update (2026-06-07 PM)**: the simple LR factorisation
+> formula derived empirically in
+> [`derived_chi_catalogue_bridge_factor_deuteron.py`](../../folio-assistant/computations/derived_chi_catalogue_bridge_factor_deuteron.py)
+> on the deuteron is **proven to fail for c_LR > 1 cases**. The
+> decomposition `χ^λ(T_β) = Σ ω(μ_p, μ_n, λ; q) · χ^{μ_p}(T_{w_p}) · χ^{μ_n}(T_{w_n})`
+> works **only for c_LR = 1 triples** (yields `ω = ±q²` or `±q⁻²`,
+> the σ_b eigenvalues). Across 11 deuteron λ × 3-5 active pairs:
+> 2 of 35 triples derived cleanly (the c_LR=1 cases at λ = (6) and
+> λ = (1,1,1,1,1,1)); 33 of 35 yielded **no consistent solution**
+> across multi-equation tests and **fail** on held-out cross-
+> validation (6/33 pass, 27/33 fail).
+>
+> **Root cause** (§4 below): σ_b on the (μ_p, μ_n) isotypic component
+> with c_LR > 1 does NOT commute with the parabolic H_3 ⊗ H_3 action
+> — by Schur's lemma, its diagonal block does not factor as
+> `M_multiplicity ⊗ id_{V_{μ_p} ⊗ V_{μ_n}}`. So the trace doesn't
+> reduce to `tr(M) · χ^{μ_p} · χ^{μ_n}`; it depends on the specific
+> (w_p, w_n) in a way the simple factorisation misses.
+>
+> **Implication**: Tier 1 as a generic speedup over `chi_q_via_gp`
+> for all atoms is **not achievable via this formula**. A correct
+> formula needs the full Hecke parabolic-restriction infrastructure
+> (Geck-Pfeiffer §9.5 — Yang-Baxter intertwiner explicit matrix
+> elements), which is research-grade and not landing in this PR.
+>
+> **What DOES work**: the GIL release + Tier 3 bar-symmetry +
+> multiprocessing (all landed in this PR) capture the bulk of the
+> achievable speedup. The C_LR=1 cells (which are most cells for
+> small atoms) can use the simple formula, but the multi-multiplicity
+> cells need direct `chi_q_via_gp`. Net: no realistic gain over the
+> already-landed optimisations.
+
 > **Mathematical optimisation** for `χ^λ(T_β_atom)` exploiting the
 > parabolic structure of `atom_braid_word_3A(Z, N)`. The intra-nucleon
 > factors live in **disjoint `H_3(q)` sub-algebras** and decompose
@@ -8,10 +40,11 @@
 > Expected speedup: **~30-50×** on the heavy atoms (⁷Be – ⁹Be) where
 > the current `chi_q_via_gp` GP reduction is the bottleneck.
 >
-> **Status**: scaffold + audit doc landed in PR #1952. Full
-> implementation (deuteron base case + recursive multi-bridge case)
-> requires the Hecke parabolic-restriction machinery sketched below
-> and is a follow-up.
+> **Original status (audit doc as first drafted)**: scaffold + audit
+> doc landed in PR #1952. Full implementation (deuteron base case +
+> recursive multi-bridge case) requires the Hecke parabolic-
+> restriction machinery sketched below. **The above status update
+> supersedes this — see §4 for the proven obstruction.**
 
 ## 1. What we are factorising
 
