@@ -1376,6 +1376,13 @@ let _inCyclePath: Map<string, string[]> | null = null;
 // within the chapter's ordered sections[].blocks[]). Drives the
 // same-chapter forward-ref check.
 let _blockPos: Map<string, number> | null = null;
+// block label -> global section id (chapterIndex*STRIDE + section index
+// within the chapter's ordered sections[]). Two blocks share a section
+// iff their ids match. Drives the within-section graph-energy measure:
+// a forward edge ACROSS sections reflects the chapter's intentional
+// face ordering (Algebraic→Geometric→…), not a reorderable local
+// tangle, so graph-energy only counts WITHIN-section forward edges.
+let _blockSection: Map<string, number> | null = null;
 // Set true only after a *successful* graph build. Checkers gate on
 // this (not on map nullability) so a missing paper manifest yields
 // `n/a` rather than a false "everything passes".
@@ -1440,17 +1447,23 @@ function loadChapterGraph(): void {
   // Build label→position from each chapter manifest's ordered
   // `sections[].blocks[]` slug lists.
   const blockPos = new Map<string, number>();
+  const blockSection = new Map<string, number>();
   dirs.forEach((dir, ci) => {
     const manifestPath = join(base, dir, `${dir}.ts`);
     if (!existsSync(manifestPath)) return;
     const mc = readFileSync(manifestPath, "utf-8");
     let within = 0;
+    let sectionIdx = 0;
     for (const bm of mc.matchAll(/blocks\s*:\s*\[([\s\S]*?)\]/g)) {
       for (const sm of bm[1].matchAll(/"([^"]+)"/g)) {
         const lbl = slugToLabel.get(sm[1]);
-        if (lbl && !blockPos.has(lbl)) blockPos.set(lbl, ci * CHAPTER_POS_STRIDE + within);
+        if (lbl && !blockPos.has(lbl)) {
+          blockPos.set(lbl, ci * CHAPTER_POS_STRIDE + within);
+          blockSection.set(lbl, ci * CHAPTER_POS_STRIDE + sectionIdx);
+        }
         within++;
       }
+      sectionIdx++;
     }
   });
 
@@ -1530,6 +1543,7 @@ function loadChapterGraph(): void {
   _pagerank = pagerank;
   _inCyclePath = inCyclePath;
   _blockPos = blockPos;
+  _blockSection = blockSection;
   _graphLoaded = true;
 }
 
@@ -1706,14 +1720,21 @@ export function checkDetanglerGraphEnergy(
   const label = labelMatch[1];
   const myPos = _blockPos.get(label);
   if (myPos === undefined) return { result: "pass", hits: [] };
-  const myChapter = _labelToChapter.get(label);
+  const mySection = _blockSection?.get(label);
 
   let energy = 0;
   let fwdEdges = 0;
   let worstSpan = 0;
   const hits: CheckerHit[] = [];
   for (const u of _usesGraph.get(label) ?? []) {
-    if (_labelToChapter.get(u) !== myChapter) continue; // same-chapter only
+    // Count only WITHIN-section forward edges. A forward edge that
+    // crosses a section boundary reflects the chapter's intentional
+    // face ordering (e.g. a Geometric-face block citing an Archimedean-
+    // face result) — not a tangle a within-section reorder can fix, so
+    // it would be a false "reorder me" signal. Same-section forward
+    // edges ARE locally reorderable and are the actionable tangle.
+    if (mySection === undefined || _blockSection?.get(u) !== mySection)
+      continue;
     const uPos = _blockPos.get(u);
     if (uPos !== undefined && uPos > myPos) {
       const span = uPos - myPos;
@@ -1723,7 +1744,7 @@ export function checkDetanglerGraphEnergy(
       hits.push({
         file: tsPath,
         line: 0,
-        text: `forward edge to ${u} spans ${span} manifest positions`,
+        text: `within-section forward edge to ${u} spans ${span} manifest positions`,
       });
     }
   }
