@@ -2302,7 +2302,29 @@
           "worst_span": 0
         }
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "ba57bcae3cd2",
+          "ts": "31e3af739f0f",
+          "lean": "baed9d814c54"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "p-from-braid-mirror.ts:2 -- conjecture",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T13:38:07.827Z",
+        "reviewed_sha": "ea16b464d587fbd725060636a1beb8dbcaabd167",
+        "notes": "Proton from braid mirror conjecture fits mass-theory"
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-07T13:38:07.827Z"
 }

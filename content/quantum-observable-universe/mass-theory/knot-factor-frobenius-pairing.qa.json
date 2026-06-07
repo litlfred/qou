@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/mass-theory/knot-factor-frobenius-pairing.lean"
   },
   "source_hashes": {
-    "md": "3b4c0b81a912",
+    "md": "02d02e5c4016",
     "ts": "a89eba184007",
     "lean": "c67771902e95"
   },
@@ -2070,6 +2070,26 @@
         "reviewed_at": "2026-06-06T00:25:48.840Z",
         "reviewed_sha": "64a6146c31c66c467dd483dda2d93105635c45ab",
         "notes": "Placement is appropriate."
+      },
+      {
+        "field_hash": {
+          "md": "02d02e5c4016",
+          "ts": "a89eba184007",
+          "lean": "c67771902e95"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "knot-factor-frobenius-pairing.ts -- block in mass-theory chapter",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T13:38:43.764Z",
+        "reviewed_sha": "ea16b464d587fbd725060636a1beb8dbcaabd167",
+        "notes": "Block subject fits mass-theory chapter scope"
       }
     ],
     "detangler-topic-coherence": [
@@ -2167,5 +2187,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-07T13:38:43.764Z"
 }
