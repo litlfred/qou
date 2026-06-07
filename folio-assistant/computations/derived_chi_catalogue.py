@@ -52,23 +52,31 @@ from typing import Any, Iterable, Literal
 
 # ── Provenance tier ────────────────────────────────────────────────
 
+# ── Schema version (validated at load time) ───────────────────────
+
+_SCHEMA_VERSION = "1.0.0"
+# Bump when the on-disk witness shape changes incompatibly. The loader
+# rejects unknown versions with a clear error so production compute
+# can't silently consume a corrupted/mis-versioned witness.
+
+
+# Tier of catalogue-cell provenance.
+# - 'derived':      structurally derived, safe to wire as a prediction.
+# - 'cal-anchored': extracted from CODATA (circular, never counted toward L2).
+# - 'extracted':    back-solved from a related compute (weaker than cal-anchored).
 Tier = Literal["derived", "cal-anchored", "extracted"]
-"""Catalogue-cell provenance. `derived` is the only tier safe to
-wire as a prediction; the other two are cached and audited but never
-counted toward an L2 pass."""
 
+_VALID_TIERS: frozenset[str] = frozenset({"derived", "cal-anchored", "extracted"})
+
+# Variable convention for the stored `chi_lambda_q_laurent`:
+# - 'kauffman': Rust / pyhecke_native canonical (Kauffman bracket t = q²);
+#   degrees are integer for every (knot, partition). Default for new cells.
+# - 'kassel':   skein-relation convention used by the sympy R-matrix build
+#   (degrees half the Kauffman ones; kept only for legacy cells derived
+#   via sympy before the Phase 3 migration).
 QConvention = Literal["kauffman", "kassel"]
-"""Variable convention for the stored `chi_lambda_q_laurent`:
 
-  - `kauffman` — the Rust / pyhecke_native canonical (Kauffman bracket
-    `t = q²`); degrees are integer for every (knot, partition).
-  - `kassel`   — the skein-relation convention used by the sympy
-    R-matrix build (degrees half the Kauffman ones; can be
-    half-integer in pathological cases — kept only for legacy cells
-    derived via sympy before the Phase 3 migration).
-
-Production-derived cells are always `kauffman` (the Rust backend uses
-this natively). Consumers must respect the convention recorded here."""
+_VALID_Q_CONVENTIONS: frozenset[str] = frozenset({"kauffman", "kassel"})
 
 
 # ── Per-cell record ────────────────────────────────────────────────
@@ -84,80 +92,60 @@ class KnotPartitionAtomCell:
     (degree, coefficient) pairs so Laurent forms survive serialisation.
     """
 
-    # --- 3-axis index ---
+    # ── 3-axis index ──
+    # `knot`: knot-operator name (must appear in the PR #1677 census).
     knot: str
-    """Knot operator name (must appear in the PR #1677 census)."""
-
+    # `partition`: λ ⊢ n_K, in non-increasing order, e.g. (2, 1).
     partition: tuple[int, ...]
-    """Partition λ of n_K, in non-increasing order, e.g. (2, 1)."""
-
+    # `atom`: QOU atom / observable target (e.g. 'electron',
+    # 'borromean-baryon', '4He', 'muon'). Multiple atoms may share a (K, λ) row.
     atom: str
-    """QOU atom / observable target (e.g. 'electron', 'borromean-baryon',
-    '4He', 'muon'). Multiple atoms may share a (K, λ) row."""
 
-    # --- structural data ---
+    # ── Structural data ──
+    # `braid_word`: canonical braid word for K in B_{n_K}, as a sigma-string,
+    # e.g. 'σ_1·σ_2⁻¹·σ_1·σ_2⁻¹·σ_1·σ_2⁻¹' (Borromean).
     braid_word: str
-    """The canonical braid word for K in B_{n_K}, as a sigma-string,
-    e.g. 'σ_1·σ_2⁻¹·σ_1·σ_2⁻¹·σ_1·σ_2⁻¹' (Borromean)."""
-
+    # `strand_count`: n_K, the strand count of the braid representative.
     strand_count: int
-    """n_K, the strand count of the braid representative."""
-
+    # `chi_lambda_q_laurent`: χ^λ(β_K) as a Laurent polynomial in q, stored
+    # as a list of (q-degree, coefficient-string) pairs. Negative degrees
+    # allowed. Convention recorded in `q_convention`. Examples:
+    #   χ⁽²,¹⁾(β_Bor) = −q⁶ + 3q⁴ − 3q² + 4 − 3q⁻² + 3q⁻⁴ − q⁻⁶
+    #     [(−6,'−1'), (−4,'3'), (−2,'−3'), (0,'4'), (2,'−3'), (4,'3'), (6,'−1')]
+    #   χ⁽²⁾(σ_1³) = q³ → [(3, '1')]
+    #   χ⁽¹,¹⁾(σ_1³) = −q⁻³ → [(−3, '−1')]
     chi_lambda_q_laurent: list[tuple[int, str]]
-    """χ^λ(β_K) as a **Laurent polynomial in q**, stored as a list of
-    (q-degree, coefficient-string) pairs. Negative degrees allowed.
-
-    This is the catalogue's canonical encoding: it handles every case
-    (palindromic and non-palindromic) without exception, and consumers
-    evaluate it by direct substitution.
-
-    Examples:
-      χ⁽²,¹⁾(β_Bor) = −q⁶ + 3q⁴ − 3q² + 4 − 3q⁻² + 3q⁻⁴ − q⁻⁶
-        [(−6,'−1'), (−4,'3'), (−2,'−3'), (0,'4'), (2,'−3'), (4,'3'), (6,'−1')]
-      χ⁽²⁾(σ_1³) = q³
-        [(3, '1')]
-      χ⁽¹,¹⁾(σ_1³) = −q⁻³
-        [(−3, '−1')]
-
-    For palindromic cases (f(q) = f(q⁻¹), as for amphichiral knots like
-    Borromean), the h-polynomial form with h = q − q⁻¹ can be cited in
-    `notes` or `derivation_ref` — but the catalogue stores the
-    canonical Laurent form."""
-
+    # `mu_eigenvalues`: eigenvalues |μ_a^(λ)| of ρ_λ(β_K) in Hoefsmit
+    # seminormal form, as mpf strings, in non-increasing magnitude order.
+    # Feeds k_λ.
     mu_eigenvalues: list[str]
-    """Eigenvalues |μ_a^(λ)| of ρ_λ(β_K) in Hoefsmit seminormal form,
-    as mpf strings, in non-increasing magnitude order. Feeds k_λ."""
-
+    # `k_lambda`: per-partition truncation order. 1 iff λ is the max-|μ|
+    # partition of β_H (per `prop:per-partition-k-lambda-rule`), 2 otherwise.
     k_lambda: int
-    """Per-partition truncation order. 1 iff λ is the max-|μ| partition
-    of β_H (β-Hadamard, per `prop:per-partition-k-lambda-rule`), 2
-    otherwise."""
-
+    # `y_lambda_at_zero`: leading Markov-normalisation weight y_λ(0), as an
+    # mpf string. Derived via T18 template (Markov axioms on the Wedderburn
+    # block).
     y_lambda_at_zero: str
-    """Leading Markov-normalisation weight y_λ(0), as an mpf string.
-    Derived via T18 template (Markov axioms on the Wedderburn block)."""
-
+    # `y_star_shadow_price`: dual variable y_λ⋆ from the per-atom SDP active
+    # set (`prop:operator-selection-lp`). None if this (K, λ, A) cell is NOT
+    # in the active set for atom A — useful for negative entries.
     y_star_shadow_price: str | None
-    """Dual variable y_λ⋆ from the per-atom SDP active set
-    (`prop:operator-selection-lp`). None if this (K, λ, A) cell is
-    NOT in the active set for atom A — useful for negative entries."""
 
-    # --- provenance ---
+    # ── Provenance ──
+    # `tier`: provenance flag (see `Tier` module-level comment).
     tier: Tier
-    """Provenance flag (see module docstring)."""
-
+    # `derivation_ref`: citation — commit-sha or audit-doc path of the
+    # structural derivation (R-matrix script for `derived` cells; CODATA-
+    # extraction audit for `cal-anchored`). Required for every cell.
     derivation_ref: str
-    """Citation: commit-sha or audit-doc path of the structural
-    derivation (R-matrix script for `derived` cells; CODATA-extraction
-    audit for `cal-anchored`). Required for every cell."""
 
+    # `q_convention`: variable convention for `chi_lambda_q_laurent` (see
+    # `QConvention` module-level comment). Defaults to `kauffman` (Rust /
+    # pyhecke_native native); legacy sympy R-matrix cells from before
+    # Phase 3 may carry `kassel`.
     q_convention: QConvention = "kauffman"
-    """Variable convention for `chi_lambda_q_laurent` (see `QConvention`
-    docstring). Defaults to `kauffman` (Rust / pyhecke_native native);
-    legacy sympy R-matrix cells from before Phase 3 may carry `kassel`."""
-
+    # `notes`: optional human notes (open caveats, partial derivations, etc.).
     notes: str = ""
-    """Optional human notes (open caveats, partial derivations, etc.)."""
 
 
 # ── Catalogue container ────────────────────────────────────────────
@@ -166,44 +154,47 @@ class KnotPartitionAtomCell:
 @dataclass
 class DerivedChiCatalogue:
     """In-memory catalogue indexed by the three axes. The on-disk
-    representation is the corresponding witness JSON."""
+    representation is the corresponding witness JSON.
+
+    Cells are stored in `cells` (preserves insertion order) and indexed
+    via `_index` (dict keyed by `(knot, partition, atom)`) for O(1)
+    `add()`/`lookup()`/duplicate checks."""
 
     cells: list[KnotPartitionAtomCell] = field(default_factory=list)
+    # Private O(1) index — (knot, partition, atom) → position in `cells`.
+    # Maintained by `add()`; consumers should not touch directly.
+    _index: dict[tuple[str, tuple[int, ...], str], int] = field(
+        default_factory=dict, repr=False
+    )
 
-    # --- mutation ---
+    # ── Mutation ──
 
     def add(self, cell: KnotPartitionAtomCell) -> None:
-        for existing in self.cells:
-            if (
-                existing.knot == cell.knot
-                and existing.partition == cell.partition
-                and existing.atom == cell.atom
-            ):
-                raise ValueError(
-                    f"duplicate catalogue cell {(cell.knot, cell.partition, cell.atom)}; "
-                    f"re-derive or update the existing record explicitly."
-                )
+        key = (cell.knot, cell.partition, cell.atom)
+        if key in self._index:
+            raise ValueError(
+                f"duplicate catalogue cell {key}; re-derive or update the "
+                "existing record explicitly."
+            )
+        self._index[key] = len(self.cells)
         self.cells.append(cell)
 
-    # --- lookup ---
+    # ── Lookup ──
 
     def lookup(
         self, knot: str, partition: tuple[int, ...], atom: str
     ) -> KnotPartitionAtomCell:
         """Strict lookup — raises if the cell is missing."""
-        for cell in self.cells:
-            if (
-                cell.knot == knot
-                and cell.partition == partition
-                and cell.atom == atom
-            ):
-                return cell
-        raise KeyError(
-            f"no catalogue cell for {(knot, partition, atom)} — the "
-            "expected (K, λ, A) triple has not been derived (or recorded). "
-            "Run `derived_chi_catalogue_build.py` to regenerate, or add the "
-            "missing derivation."
-        )
+        key = (knot, partition, atom)
+        idx = self._index.get(key)
+        if idx is None:
+            raise KeyError(
+                f"no catalogue cell for {key} — the expected (K, λ, A) "
+                "triple has not been derived (or recorded). Run "
+                "`derived_chi_catalogue_build.py` to regenerate, or add the "
+                "missing derivation."
+            )
+        return self.cells[idx]
 
     def lookup_derived(
         self, knot: str, partition: tuple[int, ...], atom: str
@@ -251,7 +242,7 @@ class DerivedChiCatalogue:
 
     def to_dict(self) -> dict[str, Any]:
         return {
-            "schema_version": "1.0.0",
+            "schema_version": _SCHEMA_VERSION,
             "cell_count": len(self.cells),
             "tier_counts": self.tier_counts(),
             "cells": [
@@ -299,7 +290,9 @@ def load_catalogue() -> DerivedChiCatalogue:
             f"catalogue witness not found at {_CATALOGUE_WITNESS}; "
             "build it with `python3 derived_chi_catalogue_build.py`."
         )
-    raw = json.loads(_CATALOGUE_WITNESS.read_text())
+    # Explicit utf-8 encoding so behaviour is deterministic in CI /
+    # containers / dev machines regardless of platform default.
+    raw = json.loads(_CATALOGUE_WITNESS.read_text(encoding="utf-8"))
     data = raw.get("data", raw)
     # The build script emits the catalogue under `data.catalogue` (a
     # dedicated sub-section of the witness), keeping room for non-cell
@@ -307,6 +300,18 @@ def load_catalogue() -> DerivedChiCatalogue:
     # either shape — top-level for hand-authored witnesses or nested
     # for the build-script output.
     cells_root = data.get("catalogue", data)
+    # Fail fast on unknown schema versions so production compute can't
+    # silently consume a mis-versioned witness. The `schema_version` is
+    # optional for the legacy in-flight witnesses written before this
+    # check landed; new emissions always include it.
+    schema_version = cells_root.get("schema_version")
+    if schema_version is not None and schema_version != _SCHEMA_VERSION:
+        raise ValueError(
+            f"catalogue witness schema_version={schema_version!r} does not "
+            f"match the expected {_SCHEMA_VERSION!r}. Either upgrade the "
+            "catalogue with a migration script or pin the loader to the "
+            "older schema. Refusing to load to avoid silent data corruption."
+        )
     cat = DerivedChiCatalogue()
     for c in cells_root.get("cells", []):
         # Accept either the canonical `chi_lambda_q_laurent` (q-degree
@@ -325,6 +330,21 @@ def load_catalogue() -> DerivedChiCatalogue:
                 "`derived_chi_catalogue_build.py` (the h-degree encoding was "
                 "retired in the Phase 2 schema migration)."
             )
+        tier = c["tier"]
+        if tier not in _VALID_TIERS:
+            raise ValueError(
+                f"catalogue cell for {(c['knot'], tuple(c['partition']), c['atom'])} "
+                f"has unknown tier {tier!r}; valid tiers are "
+                f"{sorted(_VALID_TIERS)}. Refusing to load — the provenance "
+                "guard depends on this field being one of the known values."
+            )
+        q_convention = c.get("q_convention", "kauffman")
+        if q_convention not in _VALID_Q_CONVENTIONS:
+            raise ValueError(
+                f"catalogue cell for {(c['knot'], tuple(c['partition']), c['atom'])} "
+                f"has unknown q_convention {q_convention!r}; valid values are "
+                f"{sorted(_VALID_Q_CONVENTIONS)}. Refusing to load."
+            )
         cat.add(KnotPartitionAtomCell(
             knot=c["knot"],
             partition=tuple(c["partition"]),
@@ -339,8 +359,8 @@ def load_catalogue() -> DerivedChiCatalogue:
                 str(c["y_star_shadow_price"])
                 if c.get("y_star_shadow_price") is not None else None
             ),
-            tier=c["tier"],
-            q_convention=c.get("q_convention", "kauffman"),
+            tier=tier,
+            q_convention=q_convention,
             derivation_ref=c["derivation_ref"],
             notes=c.get("notes", ""),
         ))
