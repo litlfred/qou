@@ -41,10 +41,17 @@ git fetch --depth=1 origin "lake-cache/qou-$SLUG" \
 Per `docs/coordination/1ppq-qbeta.md` (flagged to PR #1871): a restore seeded
 with a `git config url."file://…".insteadOf` redirect (introduced in #1857)
 can make a *restoring* container re-materialise Mathlib **from source** instead
-of using the oleans — defeating the whole point. The
-`2026-06-05-integration-backlog-qa.md` note records the fix: a
-`lake env true` source-materialisation step plus re-applying / normalising the
-package-URL redirect.
+of using the oleans — defeating the whole point. The mitigation is to
+**re-apply / normalise the package-URL redirect** (see the checklist).
+
+> **⛔ Do NOT run `lake env true` / `lake update` / `lake exe cache get` to
+> "fix" a restore.** `docs/coordination/2026-06-05-integration-backlog-qa.md`
+> (now in `formalizer.md §7c`) is explicit: *"never `lake env true` /
+> `lake update` / `cache get` — they wipe"* the restored oleans by
+> re-resolving the manifest. And `lean-environment-setup.md` §"global
+> `insteadOf` … destructive re-clone loop" warns the redirect itself can loop.
+> Keep the mitigation to **remote/redirect** fixes only; never the
+> manifest-touching commands.
 
 **Restorer checklist (do all before concluding "Lean unavailable"):**
 1. Run the Step 0 restore above.
