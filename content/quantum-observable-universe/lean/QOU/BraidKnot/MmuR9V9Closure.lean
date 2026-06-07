@@ -205,7 +205,7 @@ theorem habiroT25_framing_family_exists (q : ℝ) :
       framing 5 q = habiroT25 q ∧
       ∀ n, framing n q = quantumInt 3 q / (n : ℝ) ^ 2 := by
   -- Ref: [jones1985] doi:10.2307/1971403 (Jones polynomial of T(2,n))
-  -- Ref: [habiro2004cyclotomic] arXiv:math/0209324 (Habiro ring of unity)
+  -- Ref: [habiro2002] doi:10.2140/gt.2002.6.165 (Habiro ring of unity)
   refine ⟨fun n _ => quantumInt 3 q / (n : ℝ) ^ 2, ?_, fun _ => rfl⟩
   unfold habiroT25
   have h25 : ((5 : ℕ) : ℝ) ^ 2 = (25 : ℝ) := by norm_num

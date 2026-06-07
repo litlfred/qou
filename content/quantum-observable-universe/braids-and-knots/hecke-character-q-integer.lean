@@ -7,7 +7,7 @@
   This is the key identity connecting the Hecke character
   χ_{(2,1)}(σ₁ⁿ) on V_(2,1) to the q-integer tower.
 
-  -- Ref: [jones1987] https://doi.org/10.2307/1971403
+  -- Ref: [jones1987] https://doi.org/10.1090/S0273-0979-1985-15304-2
 -/
 
 import Mathlib.Tactic.Ring
@@ -66,7 +66,7 @@ theorem hecke_times_qInteger_five (hh : q - q⁻¹ ≠ 0) :
 
   Proof is `field_simp` + `ring` over `ℝ` (algebraic; the pole/branch
   analysis is archimedean, real `q > 0`). -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] https://doi.org/10.1090/S0273-0979-1985-15304-2
 theorem qLambert_single_term (n : ℕ) (hh : q - q⁻¹ ≠ 0) :
     qInteger q n * (q - q⁻¹) * q⁻¹^n = 1 - q⁻¹^(2*n) := by
   unfold qInteger

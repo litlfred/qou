@@ -10,7 +10,6 @@ export default conjecture({
     "prop:root-of-unity-truncation",
   ],
   tags: [
-    "tier:famous",
     "conjecture",
     "levi-form",
     "contact-degeneracy",

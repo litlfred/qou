@@ -7,7 +7,7 @@
   H₃+ it fails (standard rep breaks the equivalence).
 
   -- Ref: [wenzl1988c] https://doi.org/10.1007/BF01388470
-  -- Ref: [jones1987] https://doi.org/10.2307/1971403
+  -- Ref: [jones1987] https://doi.org/10.1090/S0273-0979-1985-15304-2
 -/
 
 import Mathlib.Tactic.Omega

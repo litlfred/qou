@@ -12,7 +12,6 @@ export default conjecture({
   uses: ["def:electron-shell-braid-capacity"],
   cites: ["iwahori1964", "jones1987"],
   tags: [
-    "tier:E",
     "normal-form",
     "quotient-ideal",
     "hecke-algebra",

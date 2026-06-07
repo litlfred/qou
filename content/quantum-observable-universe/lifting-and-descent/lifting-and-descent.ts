@@ -91,7 +91,6 @@ export default chapter({
       label: "sec:yekutieli-lifting-kummer-motivic",
       blocks: [
         "yekutieli-lifting-kummer-motivic-intro",
-        "p3-blowup-yekutieli",
         "fermionic-twisted-sectors",
         "kummer-filtration-obstruction",
         "kummer-tower",

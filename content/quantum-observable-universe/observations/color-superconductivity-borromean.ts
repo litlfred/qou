@@ -9,7 +9,6 @@ export default conjecture({
     validation: "not_checked",
   },
   tags: [
-    "tier:E",
     "color-superconductivity",
     "diquark",
     "cooper-pair",

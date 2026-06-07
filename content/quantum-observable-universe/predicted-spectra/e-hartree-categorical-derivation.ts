@@ -55,7 +55,6 @@ export default conjecture({
     status: "verified",
   },
   tags: [
-    "tier:E",
     "hartree-energy",
     "molecular-binding",
     "fine-structure",

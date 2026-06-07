@@ -12,7 +12,6 @@ export default conjecture({
   uses: ["conj:shell-closure-nf-term-count"],
   cites: ["iwahori1964", "jones1987"],
   tags: [
-    "tier:E",
     "normal-form",
     "palindromicity",
     "orbital-type",

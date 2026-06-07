@@ -16,7 +16,6 @@ export default conjecture({
     "khovanovlauda2009",
   ],
   tags: [
-    "tier:S",
     "anyon",
     "braid-group",
     "hecke-algebra",

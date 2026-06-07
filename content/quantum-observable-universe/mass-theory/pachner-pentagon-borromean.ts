@@ -26,7 +26,6 @@ export default conjecture({
     "neumann-zagier1985",
   ],
   tags: [
-    "tier:S",
     "pachner",
     "pentagon",
     "duality-d15",

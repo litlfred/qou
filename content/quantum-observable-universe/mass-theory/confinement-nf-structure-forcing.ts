@@ -54,7 +54,6 @@ export default conjecture({
   },
   // No Lean stub: this is a conjecture (CLAUDE.md §3b).
   tags: [
-    "tier:S",
     "conjecture",
     "confinement",
     "nh-basis",

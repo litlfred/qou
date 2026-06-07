@@ -43,14 +43,6 @@ export interface CheckerResult {
    * the merged `AUTOMATED_CHECKERS` registry stays type-compatible.
    */
   notes?: string;
-  /**
-   * Optional structured numeric/heuristic measures persisted into the
-   * sidecar entry's `metrics` field. Kept structurally identical to the
-   * `CheckerResult` in `qa-checkers-extended.ts` so the merged
-   * `AUTOMATED_CHECKERS` registry stays type-compatible; the detangler
-   * checkers populate it.
-   */
-  metrics?: Record<string, number | string>;
 }
 
 function readLines(path: string): string[] {

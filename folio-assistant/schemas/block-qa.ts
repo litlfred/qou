@@ -121,18 +121,6 @@ export interface QaCriterionEntry {
   score?: { value: number; max: number; rubric?: Record<string, number> };
   /** Evidence: file:line + verbatim quote (for fail/warn). */
   evidence?: string;
-  /**
-   * Optional structured numeric/heuristic measures a checker emits
-   * alongside its verdict — e.g. the detangler axis records per-block
-   * graph metrics (`fwd_emitted`, `out_degree`, `in_degree`,
-   * `cone_size`, `edge_span_max`, `graph_energy`, `topic_*`). Unlike
-   * `score` (a quality rubric to improve over time) these are
-   * descriptive structural measures of the block's position in the
-   * dependency graph. Keys are checker-defined; values are scalars or
-   * short strings (e.g. a worst-offending target label). Persisted so
-   * the sidecar carries the heuristic snapshot, not just pass/fail.
-   */
-  metrics?: Record<string, number | string>;
   /** Reviewer identity + provenance. */
   reviewer: QaReviewer;
   /** When the audit ran (ISO-8601 UTC). */

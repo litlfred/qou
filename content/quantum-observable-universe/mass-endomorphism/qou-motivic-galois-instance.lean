@@ -36,7 +36,7 @@ which is not yet fully formalised.
 - [def:motivic-galois-character] (axiomatic class)
 - [conj:motivic-perpetual-obstruction] (downstream consumer)
 - `habiro-frobenius-probe.witness.json` (numerical evidence)
-- Ref: [habiro2004cyclotomic] arXiv:math/0209324
+- Ref: [habiro2002] https://doi.org/10.2140/gt.2008.12.2091
 - Ref: [yekutieli2010] (obstruction theory)
 - Ref: [manuscript] §R6 in `docs/audits/2026-05-02-queued-research.md`
 -/

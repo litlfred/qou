@@ -47,22 +47,6 @@ with the Hecke eigenvalues $q^{-1}$ and $-q$ as roots.
 The sign of $c_Z$ alternates: positive for odd $Z$, negative
 for even $Z$.  This alternation drives the pairing mechanism.
 
-**Proved (algebraic engine).** The reduction
-$(\sigma^{-1})^Z = c_Z\sigma + d_Z$ with these closed forms, and the
-sign-alternation $c_Z<0$ (even $Z$) / $c_Z>0$ (odd $Z$) with $|c_Z|$
-strictly increasing for $q>1$, is established rigorously by
-diagonalising $\sigma$ in the two-dimensional $H_2(q)$ (eigenvalues
-$q,-q^{-1}$, so $(\sigma^{-1})^Z$ has eigenvalues $q^{-Z},(-1)^Zq^Z$),
-and confirmed numerically as an exact $q$-independent identity to
-$10^{-40}$. See
-[`docs/audits/2026-06-07-chebyshev-pairing-engine-proved.md`](../../../docs/audits/2026-06-07-chebyshev-pairing-engine-proved.md)
-and witness
-[`chebyshev-pairing-engine.witness.json`](../../../folio-assistant/computations/chebyshev-pairing-engine.witness.json).
-The conjectural content of this block is therefore **not** the engine
-but how its sign-alternation *propagates* through the full
-Gröbner–Shirshov reduction of the quotient atom in $H_{Z+1}(q)$ to the
-three $\gamma$-regimes above.
-
 **The NF.** Build the atom by sequential Hopf-linking:
 start with $\mathcal{N}$, add $e_1, e_2, \ldots, e_Z$ one at
 a time, reducing via Gröbner–Shirshov at each step.

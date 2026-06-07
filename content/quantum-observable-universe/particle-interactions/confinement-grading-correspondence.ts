@@ -11,7 +11,6 @@ export default conjecture({
     "brundankleshchev2009",
   ],
   tags: [
-    "tier:E",
     "confinement",
     "klr",
     "grading",

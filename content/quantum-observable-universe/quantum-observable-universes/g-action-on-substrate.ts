@@ -11,7 +11,6 @@ export default conjecture({
     "rem:hecke-algebra-from-braiding",
   ],
   tags: [
-    "tier:S",
     "g-action",
     "electroweak",
     "frobenius-hopf-substrate",

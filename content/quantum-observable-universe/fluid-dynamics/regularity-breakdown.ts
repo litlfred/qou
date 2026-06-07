@@ -10,7 +10,6 @@ export default conjecture({
     "rem:hamilton-jacobi-phase",
   ],
   tags: [
-    "tier:famous",
     "navier-stokes",
     "millennium-problem",
     "regularity",

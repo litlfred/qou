@@ -42,7 +42,6 @@ export default conjecture({
     },
   ],
   tags: [
-    "tier:S",
     "rho_k",
     "graded-expansion",
     "pair-gen",

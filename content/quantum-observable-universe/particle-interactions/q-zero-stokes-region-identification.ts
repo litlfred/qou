@@ -20,7 +20,6 @@ export default conjecture({
     "champanerkar-kofman-mullen2008",
   ],
   tags: [
-    "tier:S",
     "q-zero-identification",
     "stokes-region",
     "generating-function",

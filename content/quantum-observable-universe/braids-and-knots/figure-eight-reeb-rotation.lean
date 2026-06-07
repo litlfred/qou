@@ -4,7 +4,7 @@
   M_{4₁} = (σ₁σ₂⁻¹)² has det = 1 and real trace on V_(2,1),
   forcing eigenvalues to be complex conjugates on the unit circle.
 
-  -- Ref: [jones1987] https://doi.org/10.2307/1971403
+  -- Ref: [jones1987] https://doi.org/10.1090/S0273-0979-1985-15304-2
   -- Ref: [kashaev1997] https://doi.org/10.1007/s100529801020
 -/
 

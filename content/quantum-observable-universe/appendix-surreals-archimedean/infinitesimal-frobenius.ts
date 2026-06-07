@@ -6,7 +6,6 @@ export default conjecture({
     "Infinitesimal Frobenius pairing: $\\int_A \\circ \\mu = \\mathrm{id} + O(\\varepsilon)$",
   lean: { ref: "qou:QOU.AppendixSurreals.InfinitesimalFrobenius", validation: "stub" },
   tags: [
-    "tier:P",
     "surreal-numbers",
     "frobenius",
     "infinitesimal",

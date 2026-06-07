@@ -10,7 +10,7 @@ import Mathlib.Topology.Algebra.InfiniteSum.Basic
 The Habiro ring is the inverse limit of Z[q] / ((q;q)_n),
 the cyclotomic completion where all quantum invariants coexist.
 
--- Ref: [habiro2004cyclotomic] Habiro, "Cyclotomic completions of polynomial rings," arXiv:math/0209324
+-- Ref: [habiro2002] Habiro, "On the colored Jones polynomials of some simple links," arXiv:math/0505219
 -/
 
 namespace QOU.HabiroRing
@@ -23,14 +23,14 @@ noncomputable def qPochhammer (q : ℝ) : ℕ → ℝ
 /-- The quotient ring Z[q] / ((q;q)_n) as an equivalence relation.
     Two polynomials are equivalent modulo (q;q)_n if their
     difference is divisible by (1-q)(1-q²)...(1-qⁿ). -/
--- Ref: [habiro2004cyclotomic]
+-- Ref: [habiro2002]
 def HabiroEquiv (n : ℕ) (f g : ℝ → ℝ) : Prop :=
   ∀ q : ℝ, qPochhammer q n ≠ 0 →
     ∃ h : ℝ → ℝ, f q - g q = qPochhammer q n * h q
 
 /-- The Habiro ring is the inverse limit of these quotients.
     An element is a compatible family of equivalence classes. -/
--- Ref: [habiro2004cyclotomic]
+-- Ref: [habiro2002]
 structure HabiroElement where
   /-- Representatives at each level. -/
   family : ℕ → (ℝ → ℝ)

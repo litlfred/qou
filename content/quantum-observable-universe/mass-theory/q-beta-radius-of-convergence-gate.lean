@@ -34,7 +34,7 @@
        [pr1839] https://github.com/litlfred/qou/pull/1839
        [pr1875] https://github.com/litlfred/qou/pull/1875
        [habiro2004] https://doi.org/10.4310/MRL.2004.v11.n4.a4
-       [jones1987] https://doi.org/10.2307/1971403
+       [jones1987] https://doi.org/10.1090/S0273-0979-1985-15304-2
        docs/audits/2026-06-02-qbeta-1ppq-singularity-simple-pole-fibre-level.md
        docs/audits/2026-06-05-qbeta-formalize-first-gates-consolidation.md
 -/

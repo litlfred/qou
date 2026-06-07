@@ -112,20 +112,6 @@ This recovers the empirical BW knot factors:
   `nuclear-knot-classification`)
 - $A = 4$ (Borromean): $a_K = (1 - h^2)^2$
 
-*(The product $\prod_c(1+\mathrm{sign}(c)\,h)$ expands exactly to these
-values for the crossing-sign assignment of `nuclear-knot-classification`,
-and $1-h^2 = 4-[3]_q$. Here $a_K$ is the **h-content reduction** — $1$
-minus the summed h-content of the pn-crossings — not the literal
-figure-eight Jones polynomial $V(4_1)$, which is a distinct
-higher-degree invariant; "Skein eigenvalue of $4_1$" denotes this
-reduced quantity. See
-[audit](../../../docs/audits/2026-06-07-knot-factor-skein-verification.md)
-+ witness
-[`knot-factor-skein-verification.witness.json`](../../../folio-assistant/computations/knot-factor-skein-verification.witness.json).
-The crossing-sign assignment, the $A\geq5$ extension, and the
-identification of $a_K$ as the canonical mass-formula knot factor remain
-conjectural.)*
-
 For $A \geq 5$ the closed-form product generalises beyond the
 local-knot regime via the Wenzl-LR branching identity on the
 self-conjugate stratum (cf.

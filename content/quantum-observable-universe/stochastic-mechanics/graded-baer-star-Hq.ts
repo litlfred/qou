@@ -7,7 +7,6 @@ export default conjecture({
   lean: { ref: "qou:QOU.BraidKnot.GradedBaerStarHq", validation: "stub" },
   cites: ["bloch2000", "kontsevich1995"],
   tags: [
-    "tier:S",
     "graded-baer-star",
     "graded-mikusinski",
     "depth-filtration",

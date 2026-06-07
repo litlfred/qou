@@ -5,7 +5,6 @@ export default conjecture({
   title: "Irrationality of a single hyperbolic knot volume",
   lean: { ref: "qou:QOU.Archimedean.SingleVolumeIrrationality", validation: "stub" },
   tags: [
-    "tier:famous",
     "irrationality",
     "hyperbolic-volume",
     "bloch-wigner",

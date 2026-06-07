@@ -361,13 +361,6 @@ function run(): void {
       // from `proof-lean-compiles`) so the sidecar records WHY a result
       // is what it is, not just the verdict.
       if (checkRes.notes) entry.notes = checkRes.notes;
-      // Persist any structured heuristic measures the checker emits
-      // (e.g. the detangler graph metrics) so the sidecar carries the
-      // numeric snapshot, not just the pass/fail verdict. Recorded for
-      // every result kind (pass/warn/fail), since the measure is useful
-      // even when the block is within band.
-      if (checkRes.metrics && Object.keys(checkRes.metrics).length > 0)
-        entry.metrics = checkRes.metrics;
       if (checkRes.result === "fail") {
         entry.severity = def.default_severity;
         entry.evidence = checkRes.hits

@@ -7,7 +7,7 @@ export default definition({
     ref: "qou:QOU.PhiQPiece.subLink",
     validation: "not_checked",
   },
-  uses: ["def:quantum-bloch-group"],
+  uses: ["rem:quantum-bloch-group"],
   cites: ["kauffman1991", "faddeev1994"],
   tags: [
     "phi-q",

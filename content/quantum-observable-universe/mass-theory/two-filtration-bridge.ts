@@ -8,7 +8,6 @@ export default conjecture({
   uses: ["prop:explicit-central-idempotent"],
   cites: ["bloch2000"],
   tags: [
-    "tier:S",
     "two-filtration-bridge",
     "iterated-integral-depth",
     "partition-cellular-depth",

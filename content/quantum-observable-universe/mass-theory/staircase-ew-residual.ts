@@ -23,7 +23,6 @@ export default conjecture({
     status: "verified",
   },
   tags: [
-    "tier:E",
     "staircase-partition",
     "ew-residual",
     "weinberg-angle",

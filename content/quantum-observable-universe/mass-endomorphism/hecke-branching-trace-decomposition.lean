@@ -47,7 +47,7 @@ class HeckeBranchingTraceDecomposition (q : ℝ) where
     Conditional on the class above per §3b-cond. -/
 theorem branch_trace {q : ℝ} [HeckeBranchingTraceDecomposition q] : True := by
   -- Ref: [wenzl1988] semisimplicity of H_n(q) in the Wenzl-positivity regime
-  -- Ref: [ram1991] Ram's Frobenius character formula for Hecke algebras (the explicit Murnaghan–Nakayama-type rule for tr A^λ_{μν})
+  -- Ref: [halverson-1998-markov-weights] explicit Murnaghan–Nakayama-type rule for tr A^λ_{μν}
   -- Ref: [hoefsmit1974] Hoefsmit seminormal basis
   trivial
 

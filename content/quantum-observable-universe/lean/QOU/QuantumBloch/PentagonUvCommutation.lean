@@ -28,7 +28,7 @@ Open: std-block (2x2) check; sharpness of residual R_q.
 ## References
 
 - [prop:pentagon-uv-commutation]
-- [def:quantum-bloch-group]
+- [rem:quantum-bloch-group]
 - [prop:descended-level-zero]
 -/
 

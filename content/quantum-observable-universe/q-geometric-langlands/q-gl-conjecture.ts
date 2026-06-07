@@ -9,5 +9,5 @@ export default conjecture({
     "def:q-langlands-dual",
   ],
   cites: ["frenkel2007", "aganagic2018"],
-  tags: ["tier:keystone", "geometric-langlands", "q-deformation", "main-conjecture"],
+  tags: ["geometric-langlands", "q-deformation", "main-conjecture"],
 });

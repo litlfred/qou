@@ -22,7 +22,6 @@ export default conjecture({
     status: "experimental",
   },
   tags: [
-    "tier:S",
     "frobenius-reciprocity",
     "curvature-rank",
     "knot-ideal",

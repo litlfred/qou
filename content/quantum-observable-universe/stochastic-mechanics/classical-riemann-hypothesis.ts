@@ -6,7 +6,6 @@ export default conjecture({
   lean: { ref: "qou:QOU.BraidKnot.ClassicalRiemannHypothesis", validation: "stub" },
   uses: ["def:classical-riemann-zeta"],
   tags: [
-    "tier:famous",
     "riemann-hypothesis",
     "millennium-problem",
     "critical-line",

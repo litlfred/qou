@@ -20,7 +20,6 @@ export default conjecture({
     "kazhdanwenzl1993",
   ],
   tags: [
-    "tier:P",
     "wenzl-positivity",
     "c-star-frobenius",
     "muger-positivity",

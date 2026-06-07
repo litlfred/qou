@@ -9,7 +9,6 @@ export default conjecture({
     "conj:brane-tower-z-habiro",
   ],
   tags: [
-    "tier:E",
     "knot-identification",
     "sdp",
     "confinement",

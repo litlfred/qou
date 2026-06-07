@@ -1,0 +1,23 @@
+import { proposition } from "../../schema/builders";
+
+export default proposition({
+  label: "prop:blowup-yekutieli",
+  lean: { ref: "qou:QOU.FluidDynamics.BlowupYekutieli" },
+  title:
+    "Blowup mechanism as Yekutieli lifting obstruction in the brane tower",
+  uses: [
+    "conj:regularity-breakdown",
+    "prop:descent-condition",
+    "def:local-cohomology-group",
+    "rem:vortex-reconnection",
+  ],
+  tags: [
+    "blowup",
+    "yekutieli",
+    "obstruction",
+    "cohomology",
+    "brane-tower",
+    "gerbe",
+    "millennium-problem",
+  ],
+});

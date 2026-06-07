@@ -10,7 +10,6 @@ export default conjecture({
     "thm:qou-obstruction-reduction",
   ],
   tags: [
-    "tier:famous",
     "collatz",
     "skein-module",
     "hecke-algebra",

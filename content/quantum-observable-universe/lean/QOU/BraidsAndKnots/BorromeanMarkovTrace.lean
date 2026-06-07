@@ -19,7 +19,7 @@
   The h² coefficient is EXACTLY ZERO. The first topological invariant
   of the Borromean linking structure appears at h⁴ = −3/4.
 
-  -- Ref: [jones1987] https://doi.org/10.2307/1971403
+  -- Ref: [jones1987] https://doi.org/10.1090/S0273-0979-1985-15304-2
   -- Ref: [murasugi1996] ISBN 978-0-8176-3817-7
 -/
 import Mathlib.Data.Rat.Basic
@@ -102,7 +102,7 @@ theorem h2_coefficient_cancellation :
 /-- Main result: the Borromean Markov trace, combining all steps.
     V(𝓑₃) / [2]_q² = (4 + h² − 3h⁴ − h⁶) / (h² + 4)
     with the h² coefficient being exactly zero (cancellation). -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] https://doi.org/10.1090/S0273-0979-1985-15304-2
 theorem borromean_markov_trace_closed_form (h : ℚ) (hne : trM_borromean_den h ≠ 0) :
     trM_borromean h = 1 + (-3 * h^4 - h^6) / trM_borromean_den h := by
   unfold trM_borromean

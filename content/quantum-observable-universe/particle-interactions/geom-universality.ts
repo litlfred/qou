@@ -10,7 +10,6 @@ export default conjecture({
   uses: ["conj:geom-yekutieli-alignment"],
   cites: ["yekutieli2015", "neumann-zagier1985"],
   tags: [
-    "tier:S",
     "universality",
     "volume-conjecture",
     "chern-simons",

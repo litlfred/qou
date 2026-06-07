@@ -5,7 +5,6 @@ export default conjecture({
   title:
     "Crossing-graded expansion of the categorical mass endomorphism",
   tags: [
-    "tier:S",
     "crossing-expansion",
     "skein",
     "quantum-dilogarithm",

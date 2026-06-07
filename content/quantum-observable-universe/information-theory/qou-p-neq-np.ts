@@ -6,7 +6,6 @@ export default conjecture({
     "$\\mathrm{P} \\neq \\mathrm{NP}$ at non-torsion $q \\in \\mathbb{G}_m$",
   lean: { ref: "qou:QOU.Information.QouPNeqNp", validation: "stub" },
   tags: [
-    "tier:famous",
     "P-vs-NP",
     "Gm-torsion",
     "obstruction",

@@ -41,7 +41,7 @@ formula is a separate structural problem.
 
 ## References
 
-- [habiro2004cyclotomic] Habiro ring and q-Pochhammer convergence
+- [habiro2002] Habiro ring and q-Pochhammer convergence
 - [manuscript] prop:beta-decay-energy-scale §"calibration cross-check"
   (cites the 0.75% brane-tower correction as the gap between N=0
    single-tick and the convergent infinite product)
@@ -54,7 +54,7 @@ namespace QOU.MassEndomorphism.PhiQConvergence
 
 /-! ## Key analytic lemma: geometric summability -/
 
--- Ref: [habiro2004cyclotomic] §2 q-Pochhammer convergence; std analysis
+-- Ref: [habiro2002] §2 q-Pochhammer convergence; std analysis
 /-- For `1 < q : ℝ`, the geometric series `Σ_{k≥0} q^(-(k+1))`
     converges absolutely. This is the foundation for Φ_q
     convergence — every term in the q-Pochhammer / quantum
@@ -115,7 +115,7 @@ We state the corollary directly:
     This is the analytic content underpinning
     `mass-endomorphism-tower.lean §QOU.MassEndomorphism.Arch.quantumDilog`. -/
 -- Ref: [manuscript] prop:beta-decay-energy-scale §"calibration cross-check"
--- Ref: [habiro2004cyclotomic] q-Pochhammer
+-- Ref: [habiro2002] q-Pochhammer
 theorem quantumDilog_factors_nonzero
     {q z : ℝ} (hq : 1 < q) (hz : |z| < q) :
     ∀ k : ℕ, (1 - q ^ (-((k : ℤ) + 1)) * z) ≠ 0 := by

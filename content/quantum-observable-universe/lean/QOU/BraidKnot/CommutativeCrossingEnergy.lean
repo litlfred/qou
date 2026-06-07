@@ -50,15 +50,14 @@ Computed symbolically by the Path A pipeline
 (`per_irrep_pole_atom.py`) via Hoefsmit seminormal-form pole-order
 extraction; the closed-form is given by `ord_u_zero_trM_eq` below.
 
-This is declared as a closed-form `def` because full kernel
-verification of *how* the Hoefsmit seminormal-form pole-order
-extraction arrives at this closed form would require formalising
-substantial Hecke / representation-theory machinery beyond the
-present scope. The Path A pipeline (`per_irrep_pole_atom.py`)
-witnesses the value substrate-derivedly; the closed form below is
-its substrate-derived output. -/
+This is declared as an `axiom` because full kernel verification
+would require formalising the Hoefsmit seminormal form, the
+canonical Markov trace expansion, and the symbolic pole-order
+extraction — substantial Hecke / representation-theory machinery
+beyond the present scope. The Path A pipeline witnesses the value
+substrate-derivedly. -/
 -- Ref: [manuscript] folio-assistant/computations/per_irrep_pole_atom.py
-def ord_u_zero_trM (Z N : ℕ) : ℕ := 18 * Z + 21 * N + 1
+axiom ord_u_zero_trM (Z N : ℕ) : ℕ
 
 /-- **Path A pipeline closed-form** (GAP-B-1 closure, 2026-05-09):
 
@@ -74,12 +73,10 @@ Established by symbolic Hoefsmit pole-order analysis in
 formula's experimental implications (atomic binding energies via
 the single-generator $\rho_K$ formula) match AME 2020 to
 $\leq 0.30\%$ across $Z = 1\ldots 20$, recorded in
-`rho-k-pair-gen-v2-wedderburn.witness.json`.
-
-**Theorem** (was previously an axiom). Discharged by `def` above. -/
+`rho-k-pair-gen-v2-wedderburn.witness.json`. -/
 -- Ref: [manuscript] folio-assistant/computations/per_irrep_pole_atom.py
 -- Ref: [manuscript] folio-assistant/computations/rho-k-pair-gen-v2-wedderburn.witness.json
-theorem ord_u_zero_trM_eq (Z N : ℕ) : ord_u_zero_trM Z N = 18 * Z + 21 * N + 1 := rfl
+axiom ord_u_zero_trM_eq (Z N : ℕ) : ord_u_zero_trM Z N = 18 * Z + 21 * N + 1
 
 /-- **Proton** ($Z=1$, $N=0$): $\mathrm{ord}_{u=0}(\mathrm{tr}_M) = 19$. -/
 theorem ord_u_zero_proton : ord_u_zero_trM 1 0 = 19 := by

@@ -5,7 +5,6 @@ export default conjecture({
   title:
     "Classical-limit functor as standard-part of evaluation at $q = 1 + \\varepsilon$",
   tags: [
-    "tier:P",
     "surreal-numbers",
     "classical-limit",
     "standard-part",

@@ -5,7 +5,6 @@ export default conjecture({
   title:
     "Locality of lifted-crossing contributions in the mass expansion",
   tags: [
-    "tier:E",
     "locality",
     "crossing-expansion",
     "quantum-dilogarithm",

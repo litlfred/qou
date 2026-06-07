@@ -18,7 +18,6 @@ export default conjecture({
     "kassel1995",
   ],
   tags: [
-    "tier:E",
     "alpha-k",
     "categorical-closure",
     "geometric-series",

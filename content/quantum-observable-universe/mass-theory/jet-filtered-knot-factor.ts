@@ -12,7 +12,6 @@ export default conjecture({
     "prop:hook-weight-derivation",
   ],
   tags: [
-    "tier:S",
     "knot-factor",
     "jet-filtration",
     "character-convergence",

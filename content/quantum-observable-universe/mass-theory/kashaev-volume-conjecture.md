@@ -93,7 +93,7 @@ $q = \exp(2\pi i / N)$ is the $q$-deformed avatar of that class
 $\tau_{\mathrm{arch}} = \pi_\infty \circ \tau$ as the archimedean
 realisation functor on the algebraic data $\Phi_q(\lvert V_S\rvert)$
 — a class in the quantum Bloch group
-([quantum Bloch group](#def:quantum-bloch-group)) — landing in
+([quantum Bloch group](#rem:quantum-bloch-group)) — landing in
 $\mathbb{R}$ as the hyperbolic volume of the corresponding
 Φ$_q$-piece. KVC, in this presentation, is the assertion that the
 $q$-deformed regulator agrees with the classical one in the Kashaev

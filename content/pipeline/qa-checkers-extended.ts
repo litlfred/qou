@@ -56,14 +56,6 @@ export interface CheckerResult {
    * instance "cached diagnostics are stale relative to current .lean".
    */
   notes?: string;
-  /**
-   * Optional structured numeric/heuristic measures persisted into the
-   * sidecar entry's `metrics` field (see `QaCriterionEntry.metrics`).
-   * Used by the detangler axis to record per-block graph measures
-   * (degree, dependency-cone size, edge span, graph energy, topic
-   * coherence) alongside the pass/fail verdict.
-   */
-  metrics?: Record<string, number | string>;
 }
 
 // ── Lazy-loaded bib-qa report (cached across calls per process) ─
@@ -686,12 +678,7 @@ export function checkCanonicalCalibrationCount(
   const md = readMaybe(mdPath);
   const ts = readMaybe(tsPath);
   const combined = md + "\n" + ts;
-  // De-duplicate: the same calibration anchor is routinely declared in
-  // BOTH the .md narrative and the .ts manifest, so a raw global-regex
-  // count double-counts it and can push a legitimate 3-calibration
-  // block over the threshold into a false fail. Count distinct anchor
-  // declarations only.
-  const matches = [...new Set(combined.match(CALIBRATION_RE) ?? [])];
+  const matches = combined.match(CALIBRATION_RE) ?? [];
   if (matches.length <= 3) return { result: "pass", hits: [] };
   return {
     result: "fail",
@@ -1218,63 +1205,30 @@ export function checkCanonicalCkTieredNotBinary(
 
 // ─── Detangler axis ─────────────────────────────────────────────
 
-// Resolve a block slug (filename without .ts) under a chapter dir to
-// its kind, handling both declaration forms (`kind: "x"` and the
-// `export default <builder>(` builder call). Returns "" if unresolved.
-function blockKindForSlug(chapterDir: string, slug: string): string {
-  const p = join(chapterDir, `${slug}.ts`);
-  if (!existsSync(p)) return "";
-  const src = readFileSync(p, "utf-8");
-  const m =
-    src.match(/kind:\s*"([^"]+)"/) ||
-    src.match(/export\s+default\s+(\w+)\s*\(/);
-  return m ? m[1] : "";
-}
-
 export function checkDetanglerSectionBand(
   tsPath: string | undefined,
 ): CheckerResult {
   const ts = readMaybe(tsPath);
-  if (!ts || !tsPath) return { result: "n/a", hits: [] };
-  const chapterDir = dirname(tsPath);
-  // Only applies to chapter manifests (which list sections). Capture
-  // the section TITLE too, so intro/overview sections can be skipped
-  // (detangler H4 excludes them from the sparse-section check).
+  if (!ts) return { result: "n/a", hits: [] };
+  // Only applies to chapter manifests (which list sections).
   const sectionRe =
-    /\{\s*title:\s*["']([^"']*)["']\s*,\s*blocks:\s*\[([^\]]*)\]/g;
-  const sections: Array<{ title: string; nonProse: number }> = [];
+    /\{\s*title:\s*["'][^"']*["']\s*,\s*blocks:\s*\[([^\]]*)\]/g;
+  const lengths: number[] = [];
   for (const m of ts.matchAll(sectionRe)) {
-    const slugs = m[2]
+    const blocks = m[1]
       .split(",")
-      .map((s) => s.trim().replace(/^["']|["']$/g, ""))
+      .map((s) => s.trim())
       .filter(Boolean);
-    // Count NON-PROSE blocks only (detangler H4/H5 measure "content
-    // blocks", not narrative prose/section-intro text). Resolving each
-    // slug's kind avoids the old bug of counting every ref — including
-    // prose — which inflated dense counts and masked sparse ones.
-    let nonProse = 0;
-    for (const slug of slugs) {
-      const kind = blockKindForSlug(chapterDir, slug);
-      // Unresolved slugs (kind "") count as content (conservative — do
-      // not silently drop a block we failed to read).
-      if (kind !== "prose") nonProse++;
-    }
-    sections.push({ title: m[1], nonProse });
+    lengths.push(blocks.length);
   }
-  if (sections.length === 0) return { result: "n/a", hits: [] };
-  const isIntro = (t: string) =>
-    /\b(introduction|overview|preliminaries|motivation)\b/i.test(t);
+  if (lengths.length === 0) return { result: "n/a", hits: [] };
   const hits: CheckerHit[] = [];
-  sections.forEach((s, i) => {
-    // Sparse check excludes intro/overview sections (H4); dense check
-    // applies to all.
-    const sparse = s.nonProse < 3 && !isIntro(s.title);
-    const dense = s.nonProse > 18;
-    if (sparse || dense) {
+  lengths.forEach((n, i) => {
+    if (n < 3 || n > 18) {
       hits.push({
-        file: tsPath,
+        file: tsPath ?? "(unknown)",
         line: 1,
-        text: `section ${i + 1} "${s.title}": ${s.nonProse} non-prose blocks (out of band 3..18)`,
+        text: `section ${i + 1}: ${n} blocks (out of R1-R3 band 3..18)`,
       });
     }
   });
@@ -1348,26 +1302,6 @@ export function checkDetanglerArchimedeanWall(
 let _chapterOrder: Map<string, number> | null = null;
 let _labelToChapter: Map<string, string> | null = null;
 let _usesGraph: Map<string, string[]> | null = null;
-// Reverse adjacency: block label -> labels whose uses[] reference it.
-// Drives the per-block in-degree metric (how foundational a block is)
-// without a per-call full scan.
-let _reverseUses: Map<string, string[]> | null = null;
-// Memoized transitive dependency-cone sizes (label -> count), filled
-// lazily by `dependencyConeSize` and reset on each graph (re)build so
-// the per-block cone metric is O(1) amortised across a full sweep
-// rather than re-walking the graph once per block.
-let _coneSizeCache: Map<string, number> | null = null;
-// Memoized longest `uses[]` dependency chain depth (label -> count of
-// edges on the longest acyclic path out of the block). Back-edges
-// (cycles) are skipped so depth stays well-defined on the rare cyclic
-// block. A deep chain ⇒ the block sits atop a tall argument tower —
-// the proof-depth proxy. Reset on each graph build.
-let _depthCache: Map<string, number> | null = null;
-// PageRank centrality over the `uses[]` graph (label -> score in
-// [0,1], summing to ~1). Computed once per graph build by power
-// iteration. High score ⇒ a foundational block many others lean on
-// (a weighted refinement of raw in-degree). Reset on each build.
-let _pagerank: Map<string, number> | null = null;
 // Precomputed once per load: block label -> an example uses[] cycle
 // path through it (only present for labels that sit on a cycle), so
 // the per-block cycle check is an O(1) lookup, not a per-call DFS.
@@ -1376,13 +1310,6 @@ let _inCyclePath: Map<string, string[]> | null = null;
 // within the chapter's ordered sections[].blocks[]). Drives the
 // same-chapter forward-ref check.
 let _blockPos: Map<string, number> | null = null;
-// block label -> global section id (chapterIndex*STRIDE + section index
-// within the chapter's ordered sections[]). Two blocks share a section
-// iff their ids match. Drives the within-section graph-energy measure:
-// a forward edge ACROSS sections reflects the chapter's intentional
-// face ordering (Algebraic→Geometric→…), not a reorderable local
-// tangle, so graph-energy only counts WITHIN-section forward edges.
-let _blockSection: Map<string, number> | null = null;
 // Set true only after a *successful* graph build. Checkers gate on
 // this (not on map nullability) so a missing paper manifest yields
 // `n/a` rather than a false "everything passes".
@@ -1432,11 +1359,8 @@ function loadChapterGraph(): void {
           // uses array — NOT cites/interprets/own-label) for cycle
           // detection.
           const usesM = content.match(/uses\s*:\s*\[([\s\S]*?)\]/);
-          // De-duplicate: a block listing the same `uses:` label twice
-          // must not inflate out-degree / in-degree / cone size — count
-          // unique dependency edges only.
           const useLabels = usesM
-            ? [...new Set([...usesM[1].matchAll(/"([^"]+)"/g)].map((x) => x[1]))]
+            ? [...usesM[1].matchAll(/"([^"]+)"/g)].map((x) => x[1])
             : [];
           usesGraph.set(m[1], useLabels);
         }
@@ -1447,36 +1371,19 @@ function loadChapterGraph(): void {
   // Build label→position from each chapter manifest's ordered
   // `sections[].blocks[]` slug lists.
   const blockPos = new Map<string, number>();
-  const blockSection = new Map<string, number>();
   dirs.forEach((dir, ci) => {
     const manifestPath = join(base, dir, `${dir}.ts`);
     if (!existsSync(manifestPath)) return;
     const mc = readFileSync(manifestPath, "utf-8");
     let within = 0;
-    let sectionIdx = 0;
     for (const bm of mc.matchAll(/blocks\s*:\s*\[([\s\S]*?)\]/g)) {
       for (const sm of bm[1].matchAll(/"([^"]+)"/g)) {
         const lbl = slugToLabel.get(sm[1]);
-        if (lbl && !blockPos.has(lbl)) {
-          blockPos.set(lbl, ci * CHAPTER_POS_STRIDE + within);
-          blockSection.set(lbl, ci * CHAPTER_POS_STRIDE + sectionIdx);
-        }
+        if (lbl && !blockPos.has(lbl)) blockPos.set(lbl, ci * CHAPTER_POS_STRIDE + within);
         within++;
       }
-      sectionIdx++;
     }
   });
-
-  // Build the reverse adjacency (label -> users) once so per-block
-  // in-degree is an O(1) lookup rather than a full corpus scan.
-  const reverseUses = new Map<string, string[]>();
-  for (const [user, deps] of usesGraph) {
-    for (const dep of deps) {
-      const arr = reverseUses.get(dep);
-      if (arr) arr.push(user);
-      else reverseUses.set(dep, [user]);
-    }
-  }
 
   // Precompute uses[]-cycle membership ONCE: for each label on a
   // dependency cycle, store an example back-to-self path. Per-block
@@ -1502,100 +1409,12 @@ function loadChapterGraph(): void {
     if (cyc) inCyclePath.set(start, cyc);
   }
 
-  // PageRank over the uses[] graph by power iteration. Nodes = all
-  // labels appearing as a block or as a dependency target. An edge
-  // b -> d (block depends on d) contributes rank mass to d, so a
-  // heavily-depended-on foundational block accrues a high score.
-  const nodes = new Set<string>([...usesGraph.keys()]);
-  for (const deps of usesGraph.values()) for (const d of deps) nodes.add(d);
-  const N = nodes.size;
-  const pagerank = new Map<string, number>();
-  if (N > 0) {
-    const damping = 0.85;
-    const base = (1 - damping) / N;
-    for (const n of nodes) pagerank.set(n, 1 / N);
-    for (let iter = 0; iter < 40; iter++) {
-      const next = new Map<string, number>();
-      for (const n of nodes) next.set(n, base);
-      let dangling = 0;
-      for (const n of nodes) {
-        const outs = usesGraph.get(n) ?? [];
-        if (outs.length === 0) dangling += pagerank.get(n)! / N;
-        else {
-          const share = (damping * pagerank.get(n)!) / outs.length;
-          for (const d of outs) next.set(d, (next.get(d) ?? base) + share);
-        }
-      }
-      // Redistribute dangling-node mass uniformly (standard PageRank).
-      if (dangling > 0)
-        for (const n of nodes)
-          next.set(n, next.get(n)! + damping * dangling);
-      for (const [k, v] of next) pagerank.set(k, v);
-    }
-  }
-
   _chapterOrder = chapterOrder;
   _labelToChapter = labelToChapter;
   _usesGraph = usesGraph;
-  _reverseUses = reverseUses;
-  _coneSizeCache = new Map();
-  _depthCache = new Map();
-  _pagerank = pagerank;
   _inCyclePath = inCyclePath;
   _blockPos = blockPos;
-  _blockSection = blockSection;
   _graphLoaded = true;
-}
-
-// Longest acyclic `uses[]` dependency chain out of a block (edge
-// count). Recursive memoized DFS with an on-stack guard so a rare
-// dependency cycle does not loop forever (back-edges contribute 0).
-// Recursion depth is bounded by the longest dependency chain (tens of
-// levels on this corpus), so it is stack-safe. Memoized in
-// `_depthCache`, so amortised O(1) per block across a sweep.
-function dependencyDepth(start: string): number {
-  if (!_usesGraph) return 0;
-  const cached = _depthCache?.get(start);
-  if (cached !== undefined) return cached;
-  const onStack = new Set<string>();
-  const compute = (node: string): number => {
-    const memo = _depthCache?.get(node);
-    if (memo !== undefined) return memo;
-    if (onStack.has(node)) return 0; // back-edge: don't extend depth
-    onStack.add(node);
-    let best = 0;
-    for (const dep of _usesGraph!.get(node) ?? []) {
-      const d = 1 + compute(dep);
-      if (d > best) best = d;
-    }
-    onStack.delete(node);
-    _depthCache?.set(node, best);
-    return best;
-  };
-  return compute(start);
-}
-
-// Transitive `uses[]` dependency-cone size from a starting label:
-// the count of distinct blocks reachable by following uses[] edges
-// (excluding the start itself). A large cone means "much breaks if
-// this block changes" — the downstream-impact proxy used by the
-// dependency-graph section of CLAUDE.md.
-function dependencyConeSize(start: string): number {
-  if (!_usesGraph) return 0;
-  const cached = _coneSizeCache?.get(start);
-  if (cached !== undefined) return cached;
-  const seen = new Set<string>();
-  const stack = [...(_usesGraph.get(start) ?? [])];
-  while (stack.length) {
-    const node = stack.pop()!;
-    if (node === start || seen.has(node)) continue;
-    seen.add(node);
-    for (const next of _usesGraph.get(node) ?? []) {
-      if (next !== start && !seen.has(next)) stack.push(next);
-    }
-  }
-  _coneSizeCache?.set(start, seen.size);
-  return seen.size;
 }
 
 export function checkDetanglerBlockTanglement(
@@ -1613,19 +1432,12 @@ export function checkDetanglerBlockTanglement(
 
   // Determine this block's chapter
   const relPath = relative(join(CONTENT_DIR, "quantum-observable-universe"), tsPath);
-  // Platform-aware split: `relative()` yields `\` on Windows.
-  const thisChapter = relPath.split(/[\\/]/)[0];
+  const thisChapter = relPath.split("/")[0];
   const thisIdx = _chapterOrder.get(thisChapter) ?? 999;
 
-  // Count forward refs emitted: LOGICAL dependencies (`uses[]`) whose
-  // target lives in a later chapter. Use the parsed `_usesGraph`
-  // adjacency, NOT a raw label scan of the whole .ts — the latter also
-  // matches `examples:` / `cites:` / `interprets:` pointers, which are
-  // illustrative/back-references, not logical forward dependencies, and
-  // over-count the tangle (e.g. a prop listing later-chapter example
-  // remarks is not a dependency tangle). Consistent with the
-  // graph-energy and no-forward-ref checkers, which key off `uses[]`.
-  const uses = _usesGraph?.get(label) ?? [];
+  // Count forward refs emitted (uses[] targets in later chapters)
+  const uses = [...content.matchAll(/"((?:def|prop|thm|lem|cor|conj|rem|ex|prf|sim|tbl):[\w-]+)"/g)]
+    .map(m => m[1]);
   let fwdEmitted = 0;
   const hits: CheckerHit[] = [];
   for (const u of uses) {
@@ -1636,291 +1448,19 @@ export function checkDetanglerBlockTanglement(
     }
   }
 
-  // Receive-side: blocks in EARLIER chapters that reference this label
-  // (now an O(1) reverse-index lookup, not a deferred full scan).
+  // Count forward refs received (earlier chapters referencing this label)
   let fwdReceived = 0;
-  for (const user of _reverseUses?.get(label) ?? []) {
-    const userCh = _labelToChapter.get(user);
-    if (userCh && (_chapterOrder.get(userCh) ?? 999) < thisIdx) fwdReceived++;
-  }
+  // (Expensive full scan — in production this would use a prebuilt index)
+  // For the checker, we approximate by checking if label appears commonly.
+  // Full scan deferred to batch audit; here we use emit-only for per-block.
 
-  // ── Structural graph metrics (canonical uses[] adjacency) ──────
-  // out-degree = direct dependency fan-out; in-degree = how many
-  // blocks build on this one (fan-in / "foundational-ness");
-  // cone-size = transitive downstream-impact blast radius;
-  // edge-span = the manifest-position distance of this block's
-  // same-chapter dependency edges (max + mean), the magnitude that
-  // bare forward-ref counts miss.
-  const outDegree = (_usesGraph?.get(label) ?? []).length;
-  const inDegree = (_reverseUses?.get(label) ?? []).length;
-  const coneSize = dependencyConeSize(label);
-  // depth = longest dependency chain (proof-depth proxy); pagerank =
-  // weighted centrality (refines in-degree by who depends on you).
-  const depth = dependencyDepth(label);
-  const pagerank =
-    Math.round((_pagerank?.get(label) ?? 0) * 1e6) / 1e6;
-
-  const myPos = _blockPos?.get(label);
-  const spans: number[] = [];
-  if (myPos !== undefined) {
-    for (const u of _usesGraph?.get(label) ?? []) {
-      if (_labelToChapter.get(u) !== thisChapter) continue; // same-chapter only
-      const uPos = _blockPos?.get(u);
-      if (uPos !== undefined) spans.push(Math.abs(myPos - uPos));
-    }
-  }
-  const edgeSpanMax = spans.length ? Math.max(...spans) : 0;
-  const edgeSpanMean = spans.length
-    ? Math.round((spans.reduce((a, b) => a + b, 0) / spans.length) * 100) / 100
-    : 0;
-
-  const score = fwdEmitted; // emit-side cross-chapter forward refs
+  const score = fwdEmitted; // receive-side computed in batch only
   const result = score >= 4 ? "fail" : score >= 1 ? "warn" : "pass";
 
   return {
     result,
     hits: hits.slice(0, 10),
-    metrics: {
-      fwd_emitted: fwdEmitted,
-      fwd_received: fwdReceived,
-      tanglement_score: score,
-      out_degree: outDegree,
-      in_degree: inDegree,
-      cone_size: coneSize,
-      depth: depth,
-      pagerank: pagerank,
-      edge_span_max: edgeSpanMax,
-      edge_span_mean: edgeSpanMean,
-      worst_target: hits[0]?.text ?? "",
-    },
-  };
-}
-
-// ─── detangler-graph-energy ─────────────────────────────────────
-// Per-block contribution to the chapter's graph energy
-//   E(b) = Σ_{d ∈ uses(b), pos(d) > pos(b)} (pos(d) − pos(b))
-// summed over SAME-chapter dependency edges that point *forward* in
-// the manifest order (i.e. backward edges in the dependency DAG — the
-// reader must skip ahead). Where `detangler-no-forward-ref` is a
-// binary count, energy weights each forward edge by how far it
-// reaches: one definition used 30 blocks later is a worse tangle than
-// one used 2 blocks later. Mirrors the `chapter-complexity-review`
-// graph-energy metric, projected onto a single block.
-export function checkDetanglerGraphEnergy(
-  tsPath: string | undefined,
-): CheckerResult & { metrics?: Record<string, number | string> } {
-  if (!tsPath || !existsSync(tsPath)) return { result: "pass", hits: [] };
-  loadChapterGraph();
-  if (!_graphLoaded || !_blockPos || !_usesGraph || !_labelToChapter)
-    return { result: "n/a", hits: [] };
-
-  const content = readFileSync(tsPath, "utf-8");
-  const labelMatch = content.match(/label:\s*"([^"]+)"/);
-  if (!labelMatch) return { result: "pass", hits: [] };
-  const label = labelMatch[1];
-  const myPos = _blockPos.get(label);
-  if (myPos === undefined) return { result: "pass", hits: [] };
-  const mySection = _blockSection?.get(label);
-
-  let energy = 0;
-  let fwdEdges = 0;
-  let worstSpan = 0;
-  const hits: CheckerHit[] = [];
-  for (const u of _usesGraph.get(label) ?? []) {
-    // Count only WITHIN-section forward edges. A forward edge that
-    // crosses a section boundary reflects the chapter's intentional
-    // face ordering (e.g. a Geometric-face block citing an Archimedean-
-    // face result) — not a tangle a within-section reorder can fix, so
-    // it would be a false "reorder me" signal. Same-section forward
-    // edges ARE locally reorderable and are the actionable tangle.
-    if (mySection === undefined || _blockSection?.get(u) !== mySection)
-      continue;
-    const uPos = _blockPos.get(u);
-    if (uPos !== undefined && uPos > myPos) {
-      const span = uPos - myPos;
-      energy += span;
-      fwdEdges++;
-      if (span > worstSpan) worstSpan = span;
-      hits.push({
-        file: tsPath,
-        line: 0,
-        text: `within-section forward edge to ${u} spans ${span} manifest positions`,
-      });
-    }
-  }
-
-  // 0 → pass; any forward edge → warn; deep tangle (≥ 100, i.e. far
-  // above the corpus median non-zero energy of ~18) → fail. The metrics
-  // payload records the exact energy regardless, so the verdict gates
-  // only the pathological cases while the measure is always available.
-  const result = energy === 0 ? "pass" : energy >= 100 ? "fail" : "warn";
-  return {
-    result,
-    hits: hits.slice(0, 10),
-    metrics: {
-      graph_energy: energy,
-      fwd_edge_count: fwdEdges,
-      worst_span: worstSpan,
-    },
-  };
-}
-
-// ─── detangler-topic-coherence ──────────────────────────────────
-// Keyword-based topic-fit heuristic, ported from
-// `content/pipeline/block-density-audit.py` (multi-topic check R-?).
-// A block whose prose scores more chapter-keyword hits for some OTHER
-// chapter than for its own home chapter is a candidate for relocation
-// or splitting. Soft (warn) — keyword overlap is noisy — but the
-// metrics payload records the scores so a reviewer can adjudicate.
-const DETANGLER_CHAPTER_KEYWORDS: Record<string, string[]> = {
-  introduction: ["overview", "outline", "motivation"],
-  "quantum-universes": [
-    "quantum universe", "fibre functor", "Tannaka", "monoidal",
-    "dagger", "Frobenius",
-  ],
-  "quantum-observable-universes": [
-    "observable", "QOU", "theta", "state bundle", "jet bundle",
-    "q-codifferential",
-  ],
-  "lifting-and-descent": [
-    "lifting", "descent", "torsion", "jet", "prolongation",
-    "brane tower",
-  ],
-  "braids-and-knots": [
-    "braid", "knot", "Hecke", "Markov trace", "skein", "crossing",
-    "Jones polynomial", "SU(2)", "SO(3)", "vertex operator",
-    "transfer matrix", "trefoil",
-  ],
-  "models-of-qous": [
-    "Calabi-Yau", "ALE", "instanton", "Reeb", "Riemannian", "Webster",
-    "inner product",
-  ],
-  "descartes-universe": [
-    "Bring", "Descartes", "color tube", "coral", "shell", "hadron",
-    "proton", "neutron", "quark", "beta decay", "nucleus", "nuclear",
-    "half-life", "periodic table", "torus knot T_{",
-  ],
-  "algebraic-substrate": [
-    "substrate", "Collatz", "algebraic", "classical limit",
-    "Hasse-Weil", "Birch", "rigid dualizing",
-  ],
-  "fluid-dynamics": [
-    "fluid", "Navier--Stokes", "vortex", "turbulence", "Reynolds",
-    "helicity", "Madelung",
-  ],
-  "information-theory": [
-    "information", "entropy", "Planck", "speed of light",
-    "gravitational constant", "Bekenstein", "horizon", "CMB",
-    "big bang", "aeon",
-  ],
-  observations: [
-    "CODATA", "PDG", "experiment", "measurement", "prediction",
-    "crystal", "photonic Hall", "fine structure", "lepton",
-    "proton radius",
-  ],
-  "organic-chemistry": [
-    "benzene", "covalent", "carbon", "organic", "molecular",
-    "ring closure",
-  ],
-  glossary: ["glossary"],
-};
-
-// Topic-coherence is only meaningful signal for LOAD-BEARING logical
-// blocks: a `definition`/`proposition`/`theorem`/`lemma`/`corollary`
-// whose prose is mostly about another chapter's topic is a genuine
-// misplacement. Interpretive/narrative kinds (`remark`, `example`,
-// `prose`, `proof`, `diagram`, `simulator`, `conjecture`) reference
-// upstream concepts by nature, so flagging them is noise — they are
-// excluded (n/a). Empirically, restricting to these kinds + requiring
-// a clear margin cut a 153-warn dragnet (61 remarks, 79 in the
-// cross-cutting observations chapter) down to genuine signal.
-const TOPIC_COHERENCE_KINDS = new Set([
-  "definition",
-  "proposition",
-  "theorem",
-  "lemma",
-  "corollary",
-]);
-
-export function checkDetanglerTopicCoherence(
-  mdPath: string | undefined,
-): CheckerResult & { metrics?: Record<string, number | string> } {
-  if (!mdPath || !existsSync(mdPath)) return { result: "n/a", hits: [] };
-  // Read the block kind from the .ts sibling; only audit load-bearing
-  // logical kinds (see TOPIC_COHERENCE_KINDS rationale above). Blocks
-  // declare their kind in one of two forms — an explicit `kind: "x"`
-  // field OR a builder call `export default <kind>({ ... })` (the
-  // builder name IS the kind). Detect both, matching the convention in
-  // block-density-audit.py.
-  const tsPath = mdPath.replace(/\.md$/, ".ts");
-  if (existsSync(tsPath)) {
-    const tsSrc = readFileSync(tsPath, "utf-8");
-    const kindM =
-      tsSrc.match(/kind:\s*"([^"]+)"/) ||
-      tsSrc.match(/export\s+default\s+(\w+)\s*\(/);
-    if (kindM && !TOPIC_COHERENCE_KINDS.has(kindM[1]))
-      return { result: "n/a", hits: [] };
-  }
-  const content = readFileSync(mdPath, "utf-8");
-  const nonBlank = content.split("\n").filter((l) => l.trim().length > 0);
-  // Match the Python gate: only audit substantive blocks (> 20 lines);
-  // short blocks rarely accumulate enough keyword signal to judge.
-  if (nonBlank.length <= 20) return { result: "n/a", hits: [] };
-
-  const homeChapter = relative(
-    join(CONTENT_DIR, "quantum-observable-universe"),
-    mdPath,
-  ).split(/[\\/]/)[0]; // platform-aware (relative() yields `\` on Windows)
-  // If we have no keyword profile for the home chapter we cannot judge
-  // coherence — its home score is structurally 0, so ANY other-chapter
-  // hit would spuriously "win". Report n/a rather than a false warn.
-  // (The ported keyword map predates some current chapters, e.g.
-  // particle-interactions; absence ⇒ undecidable, not a mismatch.)
-  if (!(homeChapter in DETANGLER_CHAPTER_KEYWORDS))
-    return { result: "n/a", hits: [] };
-  const lower = content.toLowerCase();
-
-  const scores: Record<string, number> = {};
-  for (const [ch, kws] of Object.entries(DETANGLER_CHAPTER_KEYWORDS)) {
-    let hits = 0;
-    for (const kw of kws) if (lower.includes(kw.toLowerCase())) hits++;
-    if (hits > 0) scores[ch] = hits;
-  }
-  const homeScore = scores[homeChapter] ?? 0;
-
-  let topOther = "";
-  let topOtherScore = 0;
-  for (const [ch, s] of Object.entries(scores)) {
-    if (ch !== homeChapter && s > topOtherScore) {
-      topOther = ch;
-      topOtherScore = s;
-    }
-  }
-
-  // Require a CLEAR margin (≥ 3 more hits than home), not a bare tie-
-  // break: "4 vs 3" is within keyword-overlap noise, "6 vs 1" is a real
-  // misplacement. `top_other_score >= home_score + 3` filters borderline
-  // cases the bare `>` rule let through.
-  const mismatch =
-    topOtherScore >= 3 && topOtherScore >= homeScore + 3;
-  const hits: CheckerHit[] = mismatch
-    ? [
-        {
-          file: mdPath,
-          line: 0,
-          text: `${topOtherScore} keyword hits for '${topOther}' but only ${homeScore} for home chapter '${homeChapter}'`,
-        },
-      ]
-    : [];
-  return {
-    result: mismatch ? "warn" : "pass",
-    hits,
-    metrics: {
-      home_chapter: homeChapter,
-      home_score: homeScore,
-      top_other_chapter: topOther || "(none)",
-      top_other_score: topOtherScore,
-    },
+    metrics: { fwd_emitted: fwdEmitted, tanglement_score: score, worst_target: hits[0]?.text ?? "" },
   };
 }
 
@@ -2583,8 +2123,6 @@ export const EXTENDED_AUTOMATED_CHECKERS: Record<
   "detangler-archimedean-wall": (p) =>
     checkDetanglerArchimedeanWall(p.ts, p.lean),
   "detangler-block-tanglement": (p) => checkDetanglerBlockTanglement(p.ts),
-  "detangler-graph-energy": (p) => checkDetanglerGraphEnergy(p.ts),
-  "detangler-topic-coherence": (p) => checkDetanglerTopicCoherence(p.md),
   "detangler-no-dependency-cycle": (p) =>
     checkDetanglerNoDependencyCycle(p.ts),
   // proof

@@ -15,7 +15,6 @@ export default conjecture({
     "brundankleshchev2009",
   ],
   tags: [
-    "tier:S",
     "cemetery-group",
     "decoupling",
     "homological-filter",

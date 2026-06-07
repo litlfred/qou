@@ -4,7 +4,6 @@ export default conjecture({
   label: "conj:hyperbolic-volume-transcendence",
   title: "Algebraic independence of QOU hyperbolic volumes",
   tags: [
-    "tier:famous",
     "hyperbolic-volume",
     "transcendence",
     "algebraic-independence",

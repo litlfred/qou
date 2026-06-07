@@ -28,7 +28,7 @@
   Ref: [pr1602] https://github.com/litlfred/qou/pull/1602
        [pr1769] https://github.com/litlfred/qou/pull/1769
        [pr1786] https://github.com/litlfred/qou/pull/1786
-       [jones1987] https://doi.org/10.2307/1971403
+       [jones1987] https://doi.org/10.1090/S0273-0979-1985-15304-2
        [wenzl1988] https://doi.org/10.1007/BF02101492
        folio-assistant/computations/probe_q_beta_operator_valued_N3.py
        folio-assistant/computations/qbeta/qbeta_symbolic_chain_alpha_b.py

@@ -16,7 +16,6 @@ export default conjecture({
     "lecouvey2007",
   ],
   tags: [
-    "tier:S",
     "classical-limit",
     "kazhdan-lusztig-basis",
     "klr-canonical-basis",

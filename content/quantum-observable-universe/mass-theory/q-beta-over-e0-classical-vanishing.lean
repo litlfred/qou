@@ -21,7 +21,7 @@
 
   Ref: [pr1769] https://github.com/litlfred/qou/pull/1769
        [pr1752] https://github.com/litlfred/qou/pull/1752
-       [jones1987] https://doi.org/10.2307/1971403
+       [jones1987] https://doi.org/10.1090/S0273-0979-1985-15304-2
        [wenzl1988] https://doi.org/10.1007/BF02101492
        docs/audits/2026-06-03-qbeta-markov-trace-shape-collapse.md
        docs/audits/2026-06-03-qbeta-sdp-strict-complementarity-partial.md

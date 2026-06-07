@@ -1,11 +1,8 @@
-**Conjecture (conditional on [`conj:borromean-quark`](#conj:borromean-quark)).**
+**Proposition (conditional on [`conj:borromean-quark`](#conj:borromean-quark)).**
 The topological mass formula is a knot invariant (R-I, R-II,
 R-III).  The binding energy of linked particles is an
 embedding invariant (R-II, R-III but not R-I).  Shell
-transitions are R-I moves on the embedding. *(The three
-Reidemeister invariances follow from the hyperbolic-volume
-invariant and the embedding structure; the shell-transition
-R-I reading is the conjectural part.)*
+transitions are R-I moves on the embedding.
 
 **The three Reidemeister moves.**
 

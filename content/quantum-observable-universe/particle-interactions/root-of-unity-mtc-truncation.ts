@@ -17,7 +17,6 @@ export default conjecture({
     "kashiwara1991",
   ],
   tags: [
-    "tier:S",
     "anyon",
     "modular-tensor-category",
     "non-abelian-anyon",
