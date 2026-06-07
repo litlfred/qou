@@ -1896,7 +1896,29 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "1a777af9406f",
+          "ts": "5b2b8500c567",
+          "lean": "b1f680c76288"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Section 'Markov axioms and braid-link enumeration (continued)'; remark factorises 3-fold Markov closure -> Hopf-link substructure (Alexander-Markov + Jones value), directly the section's Markov-closure-map subject",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T02:08:57.809Z",
+        "reviewed_sha": "bf44abc9f8e8e9632cb826c37bf3a882170197db",
+        "notes": "Interpretive remark interprets rem:F3-eps6 / c_3 content; in-scope. (Status leak noted but that is a separate criterion.)"
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-07T02:08:57.809Z"
 }
