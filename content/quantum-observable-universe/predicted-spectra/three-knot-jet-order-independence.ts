@@ -17,6 +17,6 @@ export default conjecture({
   ],
   lean: {
     ref: "qou:QOU.Archimedean.JetOrderIndependence",
-    validation: "not_checked",
+    validation: "stub",
   },
 });

@@ -42,14 +42,40 @@ condition on the truncated coefficient matrix, hence decidable.
    Jacobian rank $\iff I_N$ carries no generator of total degree $\le N$.
    This turns "no polynomial relation" into a normal-form computation the
    skein engine already performs.
-3. **Surreal error bounds** supply the *bridge* to the limit.  The volume
-   conjecture gives
+3. **Surreal error bounds** supply the *bridge* to the limit, and the
+   right geometric picture is **parallel transport on the projective
+   state fibre**.  The coloured-Jones invariant $J_K(q)$ is the holonomy
+   of the categorical (Yekutieli non-abelian Stokes / KZ) connection
+   parallel-transported along the substrate $q$-deformation path on
+   $\mathcal{S} = P \times_G \mathbb{CP}^1$, and the volume is its
+   singular-limit asymptotics
    $\mathrm{Vol}(K) = \lim_{n\to\infty} \tfrac{2\pi}{n}\log\lvert
-   J_K(e^{2\pi i/n})\rvert$; transferring order-$N$ independence of the
-   $J_K$ to algebraic independence of the *limit volumes* requires a
-   non-Archimedean error term that is uniformly controlled as
-   $n \to \infty$.  The surreal-number error field of the framework is
-   the natural home for that uniform bound.
+   J_K(e^{2\pi i/n})\rvert$.  The surreal error bound measures the
+   transport error as $q$ deforms toward the root-of-unity point; it is
+   surreal (non-Archimedean) precisely because that point is a
+   *singularity* of the connection, so the error is an infinitesimal in
+   the surreal field rather than a real number.  Three issues must hold
+   for the bridge:
+
+   - **(I1) Uniformity in jet order.**  The transport error must be
+     bounded *uniformly* in $N$ — equivalently, the connection's
+     curvature is uniformly controlled along the deformation path
+     independent of the truncation order.  Error growing with $N$ breaks
+     the transfer.
+   - **(I2) Archimedean projection (the fibre-vs-observable wall).**  The
+     error lives at the *fibre* level (surreal, carrying the $\operatorname{Im}(q)$
+     structure), while the volume is *archimedean* ($\operatorname{Im}(q_0) = 0$,
+     real).  The surreal infinitesimal must project to *exactly* $0$
+     under $\tau$; a non-infinitesimal archimedean shadow would inject a
+     spurious polynomial relation among the volumes.
+   - **(I3) Monodromy separation.**  Transport around the cusp is flat
+     only at generic $q$; at the root-of-unity limit the holonomy picks
+     up cusp/modular monodromy.  The bound must separate the physical
+     holonomy ($\to \mathrm{Vol}$) from the monodromy artifact.
+
+   The surreal-number error field of the framework is the natural home
+   for the uniform bound; the Lean reduction axiomatises (I1)+(I2)+(I3)
+   as the single vanishing-shadow input of the bridge class.
 
 **The one remaining gap (stated honestly).**  The reduction is *not* a
 proof of the deep conjecture.  It is a reduction of it to a single
