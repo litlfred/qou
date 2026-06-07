@@ -49,7 +49,7 @@ following, and only the first two are theorems:
    \neq \tau(x_{\mathfrak n}-x_{\mathfrak p})$
    (`archimedean_does_not_commute_sub`, witnessed by $\tau=(\cdot)^2$).
    So the two orders — *masses-then-delta* and
-   *delta-then-archimedean* — are genuinely different operations; one
+   *delta-then-archimedean* — are different operations; one
    cannot be substituted for the other.
 
 3. **EXPOSITORY CONVENTION (not a theorem).** *Which* order the paper
