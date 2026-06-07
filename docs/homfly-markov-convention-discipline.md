@@ -118,14 +118,22 @@ tr_M(β_Bor)      = (4 + h² − 3h⁴ − h⁶)/(h² + 4)
 ```
 
 `borromean_chi_independent_crosscheck.py` confirms the three **χ^λ** forms from
-the skein-validated seminormal engine to **≤ 4e-50** at every tested q — two
-genuinely independent derivations of the same characters (the external anchor
-§5 said the `tr_M` cluster lacked).
+the skein-validated seminormal engine to **≤ 4e-50** at every tested q.
+
+**Proof-status (do not overclaim).** This is *not* two independent proofs. Main's
+Path A is a **narrative** proof in the content `.md` that cites the Borromean
+Jones polynomial (Murasugi 1996) + long division, and is **not Lean-verified**
+(the `.ts` `lean.ref` has no `.lean` sibling). This engine's Path B is a
+**numerical** computation (χ float64-bounded). So the cross-check is an
+independent **numerical confirmation** of Path A's per-rep forms — the external
+numerical anchor §5 said the `tr_M` cluster lacked — *not* a theorem of
+equivalence. Full status:
+`docs/audits/2026-06-07-borromean-chi-crossmethod-proof-status.md`.
 
 **Do NOT equate the two weight families.** They share `χ^λ(β)` but use different
 normalisations, and are *not* a constant multiple of each other:
 
-| | main's `y_λ` (Wenzl/Markov) | this engine's `w_λ` (Ocneanu/HOMFLY) |
+| aspect | main's `y_λ` (Wenzl/Markov) | this engine's `w_λ` (Ocneanu/HOMFLY) |
 |---|---|---|
 | normalisation | `Σ_λ y_λ d_λ = tr_M(id) = 1` | unknot closure = 1, writhe kept |
 | `tr_M(β_Bor)` form | `Σ y_λ χ^λ = (4+h²−3h⁴−h⁶)/(h²+4) ≈ 1` | `Σ w_λ χ^λ ≈ 4.0` (HOMFLY-closure norm) |

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-07T03:12:25.483567+00:00",
-  "commitSha": "7487e796331a2a0588f91a216d4d8edbb3c4a401",
+  "computedAt": "2026-06-07T03:24:38.726661+00:00",
+  "commitSha": "e85700daff3842598fd54cee73e26a4fdd58b39c",
   "assertions": [
     {
       "name": "two_methods_agree",
@@ -16,8 +16,8 @@
   "durationMs": 6,
   "computation": "borromean-chi-independent-crosscheck",
   "scriptFile": "borromean_chi_independent_crosscheck.py",
-  "scriptHash": "1bdc98230272",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "21dc552ac668",
+  "scriptCommitSha": "e85700daff3842598fd54cee73e26a4fdd58b39c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -35,9 +35,9 @@
   },
   "contentBlock": "prop:borromean-markov-trace-closed-form",
   "parameters": {
-    "dps": 50,
+    "script_mp_dps": 50,
     "beta_bor": "(sigma1^-1 sigma2)^3",
-    "tolerance": "1.0e-40"
+    "tolerance": "1.0e-45"
   },
   "data": {
     "method_a": "R-matrix/Schur-Weyl → Jones (main, T17/#1933)",
