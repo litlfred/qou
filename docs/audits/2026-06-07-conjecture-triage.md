@@ -148,6 +148,48 @@ These are conjectural only because their `uses[]` cone touches another
 
 ---
 
+## E. Verification pass — which flagged blocks actually needed a change
+
+The §A/§B "recommended action" columns above are the *first-pass*
+classification from the parallel triage agents. Before editing, every
+flagged block was opened and read at file level. The result: **8 of the
+12 were already honestly caveated** — the first-pass agents keyed on
+each conjecture's aspirational *statement* and under-weighted its
+already-present caveat apparatus (authorNotes, conditional banners,
+tiered titles, dedicated `## Status` sections, `partial-refutation`
+tags). Only **4 warranted an edit**.
+
+### Already-honest — no change (8)
+
+| Block | Why no change |
+|-------|---------------|
+| `q-integer-mass-formula` | `.md` already opens "*Conjecture (BW-emergence … conditional on conj:palindromicity-orbital-type and conj:shell-closure-nf-term-count)*"; coefficients are explicit near-matches (0.2–2.1 %); `uses[]` carries two conjectures → §3b forbids promotion to theorem. Correctly a conjecture. |
+| `casimir-epsilon-vacuum` | Two authorNotes already split resolved ε-scaling vs still-open prefactor; `uses[]` carries three conjectures. Correctly a conjecture. |
+| `qbeta-ck-truncation-canonical` | Title is already tiered (proved c₂ / near-match c₃ / cal-anchored c_{k≥3}); two authorNotes spell out the status. Gold-standard honesty. |
+| `spin-from-so3-fiber` | authorNote (2026-06-01) already documents the falsified premises + surviving core; block correctly stays conjecture. |
+| `knot-factor-frobenius-pairing` | `.md` opens "**Conjecture.**" — kind and prose agree; the conjectural content (bulk-binding = trace-defect, tower extension) is genuinely open. |
+| `conj-atom-braid-exterior-algebra` | Title/prose say "partial-closure: verified at A≤4, general A open"; authorNote says "categorical proof open". Empirical table is accurate. |
+| `conj-chirality-ribbon-frobenius` | Two authorNotes already say "Refuted at the audited atomic braids … scoped as historical/aspirational". Correctly flagged. |
+| `wenzl-positivity-implies-substrate-positivity` | `uses[]` carries `conj:os-reflection-positivity-from-reeb`; the bridge is genuinely unproved. Correctly a conjecture (in the speculative surreals appendix). |
+
+### Edited (4)
+
+| Block | Edit |
+|-------|------|
+| `reidemeister-mass-invariance` | `uses[]` omitted the `conj:borromean-quark` its prose declares it conditional on (manifest gap) → added; prose banner said "**Proposition**" while kind is `conjecture` (env mismatch) → banner reworded to "**Conjecture (conditional on …)**" acknowledging the proved Reidemeister core; status authorNote added. |
+| `conj-lepton-tower-h-n-plus-1-branching` | Title stated the *superseded* muon-only form `d_q(std_rep)·[2]_q/[n+1]_q` (whose τ prediction was falsified) → retitled to the unifying form `ξ_m = [2m−1]_q·[m]_q/[2m]_q` (PR #1253), which the authorNotes already document. |
+| `brane-tower-z-habiro` | n⋆-refutation lived only in tags + scattered prose → consolidated into a first-class split-status authorNote (algebraic Cauchy-limit open; n⋆ refuted across six families). |
+| `reading-a-conditional-linking-weight` | Falsified-candidate status lived only in the `.md` `## Status` section → lifted to a manifest authorNote + `falsified-candidate` tag. |
+
+**Net:** no kind-flips were made. Every §3b constraint was respected
+(no conjecture-downstream block promoted to a provable kind without the
+§3b-cond class machinery, which none currently has). The corpus's
+status-tracking discipline (authorNotes per §4d, conditional banners,
+tiered titles) is working well; the residual drift was confined to two
+stale headlines (lepton title, reidemeister banner), one manifest
+dependency gap (reidemeister `uses[]`), and two not-yet-first-class
+statuses (brane-tower, reading-a).
+
 ## Method note
 
 Triage executed by five parallel read-only Explore sub-agents, one per
