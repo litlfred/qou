@@ -1753,7 +1753,28 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "12ec3b1d5b1b",
+          "ts": "be542a51e5a8"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Prose intro frames categorical measurement via fibre functor tau; sits in sec:measurement-observation-intro",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T02:37:49.474Z",
+        "reviewed_sha": "6467ae460db7deb0d70403e3af1aadaaa208c968",
+        "notes": "Content (tau=measurement, decoherence/Born as consequences) is exactly the chapter scope; migration-scaffold note is acceptable intro framing."
+      }
     ]
   },
-  "updated_at": "2026-06-03T20:30:24.391Z"
+  "updated_at": "2026-06-07T02:37:49.474Z"
 }
