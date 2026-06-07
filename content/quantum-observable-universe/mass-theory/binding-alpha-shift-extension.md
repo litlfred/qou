@@ -10,9 +10,9 @@ substrate-fixed force-carrier torus knot* $T(p_A, k_A)$
 
 The binding-endomorphism analogy
 ([binding-endomorphism analogy audit](../../../docs/audits/2026-05-28-binding-endomorphism-analogy.md))
-closes the deuteron via $B = m_e \cdot \mathrm{Vol}(\mathcal{B}_3) \cdot \Delta\tr$
+closes the deuteron via $B = m_e \cdot \mathrm{Vol}(\mathcal{B}_3) \cdot \Delta\mathrm{tr}$
 to **+0.19 %**, but undershoots $A \ge 3$ by 44–72 %.  Diagnosis:
-$\Delta\tr$ is the **linear truncation** of $\log(\tr) \sim \mathrm{Vol}$;
+$\Delta\mathrm{tr}$ is the **linear truncation** of $\log(\mathrm{tr}) \sim \mathrm{Vol}$;
 the extensive observable lives in the **per-rep q-Reeb rotation
 phase** on the column-rich irrep of a substrate-fixed force-carrier
 torus knot.
