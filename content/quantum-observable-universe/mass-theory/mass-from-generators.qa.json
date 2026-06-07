@@ -1879,7 +1879,29 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "482b2a6da38c",
+          "ts": "749085341560",
+          "lean": "43fe1c2fd866"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "remark interprets def:knot-particle-generation; traces generator->linking->CODATA-mass pipeline; mass-theory chapter, 'mass-tower structure' section; mass-spectrum synthesis on-topic",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T02:08:04.236Z",
+        "reviewed_sha": "80146c3505fffb35b1952f74769e80a67c58481f",
+        "notes": "Interpretive remark synthesising the chapter's mass pipeline; well placed"
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-07T02:08:04.236Z"
 }
