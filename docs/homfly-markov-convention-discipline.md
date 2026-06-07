@@ -120,15 +120,17 @@ tr_M(β_Bor)      = (4 + h² − 3h⁴ − h⁶)/(h² + 4)
 `borromean_chi_independent_crosscheck.py` confirms the three **χ^λ** forms from
 the skein-validated seminormal engine to **≤ 4e-50** at every tested q.
 
-**Proof-status (do not overclaim).** This is *not* two independent proofs. Main's
-Path A is a **narrative** proof in the content `.md` that cites the Borromean
-Jones polynomial (Murasugi 1996) + long division, and is **not Lean-verified**
-(the `.ts` `lean.ref` has no `.lean` sibling). This engine's Path B is a
-**numerical** computation (χ float64-bounded). So the cross-check is an
-independent **numerical confirmation** of Path A's per-rep forms — the external
-numerical anchor §5 said the `tr_M` cluster lacked — *not* a theorem of
-equivalence. Full status:
-`docs/audits/2026-06-07-borromean-chi-crossmethod-proof-status.md`.
+**Proof-status (do not overclaim).** This is *not* two independent proofs, and
+the layers differ:
+- The Borromean **tr_M closed form** IS Lean-proved (sorry-free) in
+  `QOU/BraidsAndKnots/BorromeanMarkovTrace.lean` (`field_simp; ring` on the
+  algebraic core, modulo the *cited* topological inputs `V(𝓑₃)`=Murasugi Jones
+  poly and `tr_M=V/[2]²`).
+- The **per-rep `χ^λ` forms** this cross-check verifies (`χ^{(3)}=χ^{(1³)}=1`,
+  `χ^{(2,1)}=2−3h⁴−h⁶`) are **narrative-only** (content `.md`), *not* in that
+  `.lean` — so the numerical confirmation here anchors a layer the Lean does
+  not cover (corroboration, not a theorem of equivalence). Full status:
+  `docs/audits/2026-06-07-borromean-chi-crossmethod-proof-status.md`.
 
 **Do NOT equate the two weight families.** They share `χ^λ(β)` but use different
 normalisations, and are *not* a constant multiple of each other:
