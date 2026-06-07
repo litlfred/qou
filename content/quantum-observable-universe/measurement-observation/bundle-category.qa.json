@@ -1923,7 +1923,28 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "12f29c3b8aeb",
+          "ts": "1842b9fd4cf3"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Remark defining category Bun(P(V)) of finite bundles; closes sec:bundle-observation per manifest",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T02:38:54.454Z",
+        "reviewed_sha": "3cb37bad77b5857b36a0e467328f697fcadf1f89",
+        "notes": "Categorical home for the bundle/observation picture (objects=initial conditions, morphisms=isotopy+permutation, torsion-flow endofunctor); fits the observation section."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-07T02:38:54.454Z"
 }
