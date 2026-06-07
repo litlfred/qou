@@ -345,6 +345,18 @@ jobs:
 
       - name: Compile LaTeX to PDF
         run: |
+          # The "Quick LaTeX syntax check (draftmode)" step above runs
+          # `latexmk -pdf -draftmode`, which makes pdflatex SKIP writing
+          # main.pdf while still recording a completed build in
+          # main.fdb_latexmk. A plain `latexmk -pdf` then sees the sources
+          # unchanged and reports "Nothing to do ... All targets (main.pdf)
+          # are up-to-date", so it never re-runs pdflatex: main.pdf is never
+          # written and the gate below fails with "pdflatex: failed to create
+          # output file in previous invocation of latexmk". Wipe latexmk's
+          # state (incl. main.fdb_latexmk) so this is a real from-scratch
+          # build that actually emits the PDF.
+          latexmk -C main.tex >/dev/null 2>&1 || true
+          rm -f main.fdb_latexmk
           # -f forces latexmk through the full bibtex cycle even though the
           # first pdflatex pass returns 1 on undefined-citation warnings
           # (before the .bbl exists). Without -f latexmk stops before
