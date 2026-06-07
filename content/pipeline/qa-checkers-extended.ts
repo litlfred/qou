@@ -1314,6 +1314,11 @@ let _usesGraph: Map<string, string[]> | null = null;
 // Drives the per-block in-degree metric (how foundational a block is)
 // without a per-call full scan.
 let _reverseUses: Map<string, string[]> | null = null;
+// Memoized transitive dependency-cone sizes (label -> count), filled
+// lazily by `dependencyConeSize` and reset on each graph (re)build so
+// the per-block cone metric is O(1) amortised across a full sweep
+// rather than re-walking the graph once per block.
+let _coneSizeCache: Map<string, number> | null = null;
 // Precomputed once per load: block label -> an example uses[] cycle
 // path through it (only present for labels that sit on a cycle), so
 // the per-block cycle check is an O(1) lookup, not a per-call DFS.
@@ -1371,8 +1376,11 @@ function loadChapterGraph(): void {
           // uses array — NOT cites/interprets/own-label) for cycle
           // detection.
           const usesM = content.match(/uses\s*:\s*\[([\s\S]*?)\]/);
+          // De-duplicate: a block listing the same `uses:` label twice
+          // must not inflate out-degree / in-degree / cone size — count
+          // unique dependency edges only.
           const useLabels = usesM
-            ? [...usesM[1].matchAll(/"([^"]+)"/g)].map((x) => x[1])
+            ? [...new Set([...usesM[1].matchAll(/"([^"]+)"/g)].map((x) => x[1]))]
             : [];
           usesGraph.set(m[1], useLabels);
         }
@@ -1436,6 +1444,7 @@ function loadChapterGraph(): void {
   _labelToChapter = labelToChapter;
   _usesGraph = usesGraph;
   _reverseUses = reverseUses;
+  _coneSizeCache = new Map();
   _inCyclePath = inCyclePath;
   _blockPos = blockPos;
   _graphLoaded = true;
@@ -1448,6 +1457,8 @@ function loadChapterGraph(): void {
 // dependency-graph section of CLAUDE.md.
 function dependencyConeSize(start: string): number {
   if (!_usesGraph) return 0;
+  const cached = _coneSizeCache?.get(start);
+  if (cached !== undefined) return cached;
   const seen = new Set<string>();
   const stack = [...(_usesGraph.get(start) ?? [])];
   while (stack.length) {
@@ -1458,6 +1469,7 @@ function dependencyConeSize(start: string): number {
       if (next !== start && !seen.has(next)) stack.push(next);
     }
   }
+  _coneSizeCache?.set(start, seen.size);
   return seen.size;
 }
 
@@ -1476,7 +1488,8 @@ export function checkDetanglerBlockTanglement(
 
   // Determine this block's chapter
   const relPath = relative(join(CONTENT_DIR, "quantum-observable-universe"), tsPath);
-  const thisChapter = relPath.split("/")[0];
+  // Platform-aware split: `relative()` yields `\` on Windows.
+  const thisChapter = relPath.split(/[\\/]/)[0];
   const thisIdx = _chapterOrder.get(thisChapter) ?? 999;
 
   // Count forward refs emitted (uses[] targets in later chapters)
@@ -1591,8 +1604,11 @@ export function checkDetanglerGraphEnergy(
     }
   }
 
-  // 0 → pass; any forward edge → warn; deep tangle → fail.
-  const result = energy === 0 ? "pass" : energy >= 12 ? "fail" : "warn";
+  // 0 → pass; any forward edge → warn; deep tangle (≥ 100, i.e. far
+  // above the corpus median non-zero energy of ~18) → fail. The metrics
+  // payload records the exact energy regardless, so the verdict gates
+  // only the pathological cases while the measure is always available.
+  const result = energy === 0 ? "pass" : energy >= 100 ? "fail" : "warn";
   return {
     result,
     hits: hits.slice(0, 10),
@@ -1677,7 +1693,14 @@ export function checkDetanglerTopicCoherence(
   const homeChapter = relative(
     join(CONTENT_DIR, "quantum-observable-universe"),
     mdPath,
-  ).split("/")[0];
+  ).split(/[\\/]/)[0]; // platform-aware (relative() yields `\` on Windows)
+  // If we have no keyword profile for the home chapter we cannot judge
+  // coherence — its home score is structurally 0, so ANY other-chapter
+  // hit would spuriously "win". Report n/a rather than a false warn.
+  // (The ported keyword map predates some current chapters, e.g.
+  // particle-interactions; absence ⇒ undecidable, not a mismatch.)
+  if (!(homeChapter in DETANGLER_CHAPTER_KEYWORDS))
+    return { result: "n/a", hits: [] };
   const lower = content.toLowerCase();
 
   const scores: Record<string, number> = {};

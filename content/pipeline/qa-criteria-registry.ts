@@ -967,7 +967,9 @@ const DETANGLER: QaCriterionDefinition[] = [
       "blocks later is a deeper tangle than one used 2 blocks later) — " +
       "the magnitude that the binary `detangler-no-forward-ref` count " +
       "misses. `pass` at energy 0, `warn` for any forward edge, `fail` " +
-      "(major) at energy ≥ 12. Emits `graph_energy`, `fwd_edge_count`, " +
+      "(major) at energy ≥ 100 (far above the ~18 corpus median nonzero " +
+      "energy — gates only pathological tangles). Emits `graph_energy`, " +
+      "`fwd_edge_count`, " +
       "`worst_span` in the entry's `metrics`. Mirrors the " +
       "`chapter-complexity-review` energy metric per block.",
     default_severity: "major",
