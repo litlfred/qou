@@ -177,14 +177,23 @@ noncomputable def hopfLinkEntry : KnotEntry where
     Exact: 8 · G where G = Catalan's constant (OEIS A006752).
 
     Knot Atlas: <http://katlas.org/wiki/L6a4>
-    Hyperbolic volume: 7.32772475341775 ± 1×10⁻¹⁴  (SnapPy)
-    Components: 3 -/
+    Hyperbolic volume: 7.327724753417752120436828119459 ± 1×10⁻³⁰
+    (mpmath `mp.dps = 50`, `8 * mp.catalan`; previous 15-dps literal
+    `7.32772475341775 ± 1×10⁻¹⁴` bumped 2026-06-07).
+    Components: 3
+
+    Note: the categorical `QOU.Archimedean.vol_B3` is defined
+    symbolically as `8 · catalan_G`, so it carries the EXACT
+    transcendental value — this `value` field is the
+    data-catalog SnapPy measurement, retained for catalog /
+    lookup purposes and for downstream consumers that want a
+    decimal rather than the symbolic form. -/
 noncomputable def borromeanRingsEntry : KnotEntry where
   ab_index := "L6a4"
   braid := borromeanRings
   volume := {
-    value := 7.32772475341775
-    error_bound := 1e-14
+    value := 7.327724753417752120436828119459
+    error_bound := 1e-30
     error_nonneg := by norm_num
   }
   identity := .nucleon
