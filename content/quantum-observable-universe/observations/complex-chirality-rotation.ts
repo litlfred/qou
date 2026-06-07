@@ -11,6 +11,5 @@ export default conjecture({
     "rem:complex-substrate-interpretation",
     "rem:chirality-trefoil-electron-positron",
   ],
-  tags: [
-    "tier:S","complex-q", "chirality", "CPT", "phase", "conjecture"],
+  tags: ["tier:S", "complex-q", "chirality", "CPT", "phase", "conjecture"],
 });
