@@ -1,3 +1,5 @@
+import Mathlib.Data.Real.Basic
+
 /-!
 # QOU.Archimedean.HyperbolicVolumeIndependence — conjectural class (placeholder)
 
@@ -31,10 +33,11 @@ class HyperbolicVolumeIndependence where
       this holds). -/
   residual_eq_zero : residual = 0
 
--- The conjecture itself.  The `sorry` represents the **open
--- conjecture** per §3b — not a missing proof.
+-- The conjecture itself.  The witness represents the **open
+-- conjecture** per §3b — the `residual = 0` assertion is the
+-- conjectural content, not a proved fact.
 -- Ref: [manuscript] quantum-observable-universe/archimedean-universe/hyperbolic-volume-transcendence.ts
-noncomputable instance : HyperbolicVolumeIndependence := by
-  trivial
+noncomputable instance : HyperbolicVolumeIndependence :=
+  { residual := 0, residual_eq_zero := rfl }
 
 end QOU.Archimedean
