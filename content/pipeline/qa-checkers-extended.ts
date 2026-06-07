@@ -56,6 +56,14 @@ export interface CheckerResult {
    * instance "cached diagnostics are stale relative to current .lean".
    */
   notes?: string;
+  /**
+   * Optional structured numeric/heuristic measures persisted into the
+   * sidecar entry's `metrics` field (see `QaCriterionEntry.metrics`).
+   * Used by the detangler axis to record per-block graph measures
+   * (degree, dependency-cone size, edge span, graph energy, topic
+   * coherence) alongside the pass/fail verdict.
+   */
+  metrics?: Record<string, number | string>;
 }
 
 // ── Lazy-loaded bib-qa report (cached across calls per process) ─
@@ -1302,6 +1310,10 @@ export function checkDetanglerArchimedeanWall(
 let _chapterOrder: Map<string, number> | null = null;
 let _labelToChapter: Map<string, string> | null = null;
 let _usesGraph: Map<string, string[]> | null = null;
+// Reverse adjacency: block label -> labels whose uses[] reference it.
+// Drives the per-block in-degree metric (how foundational a block is)
+// without a per-call full scan.
+let _reverseUses: Map<string, string[]> | null = null;
 // Precomputed once per load: block label -> an example uses[] cycle
 // path through it (only present for labels that sit on a cycle), so
 // the per-block cycle check is an O(1) lookup, not a per-call DFS.
@@ -1385,6 +1397,17 @@ function loadChapterGraph(): void {
     }
   });
 
+  // Build the reverse adjacency (label -> users) once so per-block
+  // in-degree is an O(1) lookup rather than a full corpus scan.
+  const reverseUses = new Map<string, string[]>();
+  for (const [user, deps] of usesGraph) {
+    for (const dep of deps) {
+      const arr = reverseUses.get(dep);
+      if (arr) arr.push(user);
+      else reverseUses.set(dep, [user]);
+    }
+  }
+
   // Precompute uses[]-cycle membership ONCE: for each label on a
   // dependency cycle, store an example back-to-self path. Per-block
   // checks then become an O(1) lookup.
@@ -1412,9 +1435,30 @@ function loadChapterGraph(): void {
   _chapterOrder = chapterOrder;
   _labelToChapter = labelToChapter;
   _usesGraph = usesGraph;
+  _reverseUses = reverseUses;
   _inCyclePath = inCyclePath;
   _blockPos = blockPos;
   _graphLoaded = true;
+}
+
+// Transitive `uses[]` dependency-cone size from a starting label:
+// the count of distinct blocks reachable by following uses[] edges
+// (excluding the start itself). A large cone means "much breaks if
+// this block changes" — the downstream-impact proxy used by the
+// dependency-graph section of CLAUDE.md.
+function dependencyConeSize(start: string): number {
+  if (!_usesGraph) return 0;
+  const seen = new Set<string>();
+  const stack = [...(_usesGraph.get(start) ?? [])];
+  while (stack.length) {
+    const node = stack.pop()!;
+    if (node === start || seen.has(node)) continue;
+    seen.add(node);
+    for (const next of _usesGraph.get(node) ?? []) {
+      if (next !== start && !seen.has(next)) stack.push(next);
+    }
+  }
+  return seen.size;
 }
 
 export function checkDetanglerBlockTanglement(
@@ -1448,19 +1492,230 @@ export function checkDetanglerBlockTanglement(
     }
   }
 
-  // Count forward refs received (earlier chapters referencing this label)
+  // Receive-side: blocks in EARLIER chapters that reference this label
+  // (now an O(1) reverse-index lookup, not a deferred full scan).
   let fwdReceived = 0;
-  // (Expensive full scan — in production this would use a prebuilt index)
-  // For the checker, we approximate by checking if label appears commonly.
-  // Full scan deferred to batch audit; here we use emit-only for per-block.
+  for (const user of _reverseUses?.get(label) ?? []) {
+    const userCh = _labelToChapter.get(user);
+    if (userCh && (_chapterOrder.get(userCh) ?? 999) < thisIdx) fwdReceived++;
+  }
 
-  const score = fwdEmitted; // receive-side computed in batch only
+  // ── Structural graph metrics (canonical uses[] adjacency) ──────
+  // out-degree = direct dependency fan-out; in-degree = how many
+  // blocks build on this one (fan-in / "foundational-ness");
+  // cone-size = transitive downstream-impact blast radius;
+  // edge-span = the manifest-position distance of this block's
+  // same-chapter dependency edges (max + mean), the magnitude that
+  // bare forward-ref counts miss.
+  const outDegree = (_usesGraph?.get(label) ?? []).length;
+  const inDegree = (_reverseUses?.get(label) ?? []).length;
+  const coneSize = dependencyConeSize(label);
+
+  const myPos = _blockPos?.get(label);
+  const spans: number[] = [];
+  if (myPos !== undefined) {
+    for (const u of _usesGraph?.get(label) ?? []) {
+      if (_labelToChapter.get(u) !== thisChapter) continue; // same-chapter only
+      const uPos = _blockPos?.get(u);
+      if (uPos !== undefined) spans.push(Math.abs(myPos - uPos));
+    }
+  }
+  const edgeSpanMax = spans.length ? Math.max(...spans) : 0;
+  const edgeSpanMean = spans.length
+    ? Math.round((spans.reduce((a, b) => a + b, 0) / spans.length) * 100) / 100
+    : 0;
+
+  const score = fwdEmitted; // emit-side cross-chapter forward refs
   const result = score >= 4 ? "fail" : score >= 1 ? "warn" : "pass";
 
   return {
     result,
     hits: hits.slice(0, 10),
-    metrics: { fwd_emitted: fwdEmitted, tanglement_score: score, worst_target: hits[0]?.text ?? "" },
+    metrics: {
+      fwd_emitted: fwdEmitted,
+      fwd_received: fwdReceived,
+      tanglement_score: score,
+      out_degree: outDegree,
+      in_degree: inDegree,
+      cone_size: coneSize,
+      edge_span_max: edgeSpanMax,
+      edge_span_mean: edgeSpanMean,
+      worst_target: hits[0]?.text ?? "",
+    },
+  };
+}
+
+// ─── detangler-graph-energy ─────────────────────────────────────
+// Per-block contribution to the chapter's graph energy
+//   E(b) = Σ_{d ∈ uses(b), pos(d) > pos(b)} (pos(d) − pos(b))
+// summed over SAME-chapter dependency edges that point *forward* in
+// the manifest order (i.e. backward edges in the dependency DAG — the
+// reader must skip ahead). Where `detangler-no-forward-ref` is a
+// binary count, energy weights each forward edge by how far it
+// reaches: one definition used 30 blocks later is a worse tangle than
+// one used 2 blocks later. Mirrors the `chapter-complexity-review`
+// graph-energy metric, projected onto a single block.
+export function checkDetanglerGraphEnergy(
+  tsPath: string | undefined,
+): CheckerResult & { metrics?: Record<string, number | string> } {
+  if (!tsPath || !existsSync(tsPath)) return { result: "pass", hits: [] };
+  loadChapterGraph();
+  if (!_graphLoaded || !_blockPos || !_usesGraph || !_labelToChapter)
+    return { result: "n/a", hits: [] };
+
+  const content = readFileSync(tsPath, "utf-8");
+  const labelMatch = content.match(/label:\s*"([^"]+)"/);
+  if (!labelMatch) return { result: "pass", hits: [] };
+  const label = labelMatch[1];
+  const myPos = _blockPos.get(label);
+  if (myPos === undefined) return { result: "pass", hits: [] };
+  const myChapter = _labelToChapter.get(label);
+
+  let energy = 0;
+  let fwdEdges = 0;
+  let worstSpan = 0;
+  const hits: CheckerHit[] = [];
+  for (const u of _usesGraph.get(label) ?? []) {
+    if (_labelToChapter.get(u) !== myChapter) continue; // same-chapter only
+    const uPos = _blockPos.get(u);
+    if (uPos !== undefined && uPos > myPos) {
+      const span = uPos - myPos;
+      energy += span;
+      fwdEdges++;
+      if (span > worstSpan) worstSpan = span;
+      hits.push({
+        file: tsPath,
+        line: 0,
+        text: `forward edge to ${u} spans ${span} manifest positions`,
+      });
+    }
+  }
+
+  // 0 → pass; any forward edge → warn; deep tangle → fail.
+  const result = energy === 0 ? "pass" : energy >= 12 ? "fail" : "warn";
+  return {
+    result,
+    hits: hits.slice(0, 10),
+    metrics: {
+      graph_energy: energy,
+      fwd_edge_count: fwdEdges,
+      worst_span: worstSpan,
+    },
+  };
+}
+
+// ─── detangler-topic-coherence ──────────────────────────────────
+// Keyword-based topic-fit heuristic, ported from
+// `content/pipeline/block-density-audit.py` (multi-topic check R-?).
+// A block whose prose scores more chapter-keyword hits for some OTHER
+// chapter than for its own home chapter is a candidate for relocation
+// or splitting. Soft (warn) — keyword overlap is noisy — but the
+// metrics payload records the scores so a reviewer can adjudicate.
+const DETANGLER_CHAPTER_KEYWORDS: Record<string, string[]> = {
+  introduction: ["overview", "outline", "motivation"],
+  "quantum-universes": [
+    "quantum universe", "fibre functor", "Tannaka", "monoidal",
+    "dagger", "Frobenius",
+  ],
+  "quantum-observable-universes": [
+    "observable", "QOU", "theta", "state bundle", "jet bundle",
+    "q-codifferential",
+  ],
+  "lifting-and-descent": [
+    "lifting", "descent", "torsion", "jet", "prolongation",
+    "brane tower",
+  ],
+  "braids-and-knots": [
+    "braid", "knot", "Hecke", "Markov trace", "skein", "crossing",
+    "Jones polynomial", "SU(2)", "SO(3)", "vertex operator",
+    "transfer matrix", "trefoil",
+  ],
+  "models-of-qous": [
+    "Calabi-Yau", "ALE", "instanton", "Reeb", "Riemannian", "Webster",
+    "inner product",
+  ],
+  "descartes-universe": [
+    "Bring", "Descartes", "color tube", "coral", "shell", "hadron",
+    "proton", "neutron", "quark", "beta decay", "nucleus", "nuclear",
+    "half-life", "periodic table", "torus knot T_{",
+  ],
+  "algebraic-substrate": [
+    "substrate", "Collatz", "algebraic", "classical limit",
+    "Hasse-Weil", "Birch", "rigid dualizing",
+  ],
+  "fluid-dynamics": [
+    "fluid", "Navier--Stokes", "vortex", "turbulence", "Reynolds",
+    "helicity", "Madelung",
+  ],
+  "information-theory": [
+    "information", "entropy", "Planck", "speed of light",
+    "gravitational constant", "Bekenstein", "horizon", "CMB",
+    "big bang", "aeon",
+  ],
+  observations: [
+    "CODATA", "PDG", "experiment", "measurement", "prediction",
+    "crystal", "photonic Hall", "fine structure", "lepton",
+    "proton radius",
+  ],
+  "organic-chemistry": [
+    "benzene", "covalent", "carbon", "organic", "molecular",
+    "ring closure",
+  ],
+  glossary: ["glossary"],
+};
+
+export function checkDetanglerTopicCoherence(
+  mdPath: string | undefined,
+): CheckerResult & { metrics?: Record<string, number | string> } {
+  if (!mdPath || !existsSync(mdPath)) return { result: "n/a", hits: [] };
+  const content = readFileSync(mdPath, "utf-8");
+  const nonBlank = content.split("\n").filter((l) => l.trim().length > 0);
+  // Match the Python gate: only audit substantive blocks (> 20 lines);
+  // short blocks rarely accumulate enough keyword signal to judge.
+  if (nonBlank.length <= 20) return { result: "n/a", hits: [] };
+
+  const homeChapter = relative(
+    join(CONTENT_DIR, "quantum-observable-universe"),
+    mdPath,
+  ).split("/")[0];
+  const lower = content.toLowerCase();
+
+  const scores: Record<string, number> = {};
+  for (const [ch, kws] of Object.entries(DETANGLER_CHAPTER_KEYWORDS)) {
+    let hits = 0;
+    for (const kw of kws) if (lower.includes(kw.toLowerCase())) hits++;
+    if (hits > 0) scores[ch] = hits;
+  }
+  const homeScore = scores[homeChapter] ?? 0;
+
+  let topOther = "";
+  let topOtherScore = 0;
+  for (const [ch, s] of Object.entries(scores)) {
+    if (ch !== homeChapter && s > topOtherScore) {
+      topOther = ch;
+      topOtherScore = s;
+    }
+  }
+
+  const mismatch = topOtherScore > homeScore && topOtherScore >= 3;
+  const hits: CheckerHit[] = mismatch
+    ? [
+        {
+          file: mdPath,
+          line: 0,
+          text: `${topOtherScore} keyword hits for '${topOther}' but only ${homeScore} for home chapter '${homeChapter}'`,
+        },
+      ]
+    : [];
+  return {
+    result: mismatch ? "warn" : "pass",
+    hits,
+    metrics: {
+      home_chapter: homeChapter,
+      home_score: homeScore,
+      top_other_chapter: topOther || "(none)",
+      top_other_score: topOtherScore,
+    },
   };
 }
 
@@ -2123,6 +2378,8 @@ export const EXTENDED_AUTOMATED_CHECKERS: Record<
   "detangler-archimedean-wall": (p) =>
     checkDetanglerArchimedeanWall(p.ts, p.lean),
   "detangler-block-tanglement": (p) => checkDetanglerBlockTanglement(p.ts),
+  "detangler-graph-energy": (p) => checkDetanglerGraphEnergy(p.ts),
+  "detangler-topic-coherence": (p) => checkDetanglerTopicCoherence(p.md),
   "detangler-no-dependency-cycle": (p) =>
     checkDetanglerNoDependencyCycle(p.ts),
   // proof
