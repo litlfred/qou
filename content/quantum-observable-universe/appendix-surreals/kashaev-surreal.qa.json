@@ -1833,7 +1833,29 @@
         "reviewed_at": "2026-06-03T22:40:47.501Z",
         "reviewed_sha": "adcb03e136a9cea82a8536f577666f09b63ea5be"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "bec9cf894f72",
+          "ts": "ca7070c5a203",
+          "lean": "f335f41cff5b"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Conjecture is a speculative surreal reformulation of the Kashaev volume conjecture; sits in 'Speculative reformulations' section",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T00:39:40.477Z",
+        "reviewed_sha": "de38fc7c0bc6a3ba55443455d29401329f257b12",
+        "notes": "On-scope speculative reformulation"
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-07T00:39:40.477Z"
 }
