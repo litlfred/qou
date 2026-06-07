@@ -1905,7 +1905,28 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "f42eae9e1fab",
+          "ts": "ed6d1948efc5"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Section 'markov-closure-map' intro names 'canonical Q_beta gamma-gamma form' + 'c_k coefficients' as its scope; block delivers exactly that",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T01:50:24.987Z",
+        "reviewed_sha": "8bc5cbec540e76dd9b124aff51013a9423fee746",
+        "notes": "remark interprets prop:q-beta-categorical-precision-ladder; topic in section scope, no sibling carries same claim"
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-07T01:50:24.987Z"
 }
