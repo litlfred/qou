@@ -2077,7 +2077,28 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "229f84c9df08",
+          "ts": "4da32ee3ccfd"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Chapter intro previewing q-NS framework, global regularity for q>1, and NS obstruction at q=1 — matches chapter scope",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T00:54:21.433Z",
+        "reviewed_sha": "8a6f6371359be999fb7514b3a7d6eaca21b0e522",
+        "notes": "Standard chapter-opening prose; on-topic."
+      }
     ]
   },
-  "updated_at": "2026-06-03T20:30:24.391Z"
+  "updated_at": "2026-06-07T00:54:21.433Z"
 }
