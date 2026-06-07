@@ -9,6 +9,7 @@ export default conjecture({
     validation: "not_checked",
   },
   tags: [
+    "tier:famous",
     "p-vs-np",
     "millennium-problem",
     "complexity",

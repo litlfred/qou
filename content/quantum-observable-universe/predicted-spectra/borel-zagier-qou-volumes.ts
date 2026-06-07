@@ -6,6 +6,7 @@ export default conjecture({
     "Rational linear independence of QOU hyperbolic volumes (Borel--Zagier)",
   lean: { ref: "qou:QOU.Archimedean.BorelZagierQouVolumes", validation: "stub" },
   tags: [
+    "tier:famous",
     "borel-regulator",
     "zagier-conjecture",
     "linear-independence",

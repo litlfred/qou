@@ -13,6 +13,7 @@ export default conjecture({
     "prop:sw-period-residue-sum",
   ],
   tags: [
+    "tier:keystone",
     "binding",
     "q-difference",
     "seiberg-witten",
