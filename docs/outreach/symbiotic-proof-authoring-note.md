@@ -324,3 +324,87 @@ A one-line summary:
 We would genuinely enjoy comparing notes — on the gap taxonomy, on integrity
 checking, on where a search core could plug into an authoring loop, and on what
 each paradigm has learned about keeping large language models honest.
+
+---
+
+## Appendix: content blocks, sidecars, and the full QA dimensions
+
+A concrete look at the data structures the workflow above operates on.
+
+### A. Content-block kinds (the atomic unit)
+
+Each knowledge object's *kind* drives its formal obligation and its label prefix:
+
+| Kind | Lean formalization | Label prefix |
+|---|---|---|
+| `definition` | **required** (enforced at type level) | `def:` |
+| `theorem` / `lemma` / `proposition` / `corollary` | expected (warning if missing) | `thm:` / `lem:` / `prop:` / `cor:` |
+| `conjecture` / `example` / `remark` | optional (a conjecture may carry an unproved placeholder by design) | `conj:` / `ex:` / `rem:` |
+| `simulator` | n/a | `sim:` |
+| `prose` / `equation` / `diagram` | n/a | — |
+
+A `theorem`/`lemma`/`proposition`/`corollary` whose dependency cone touches a
+`conjecture` cannot stay a provable kind: it is demoted, or made conditional on
+the conjecture as an explicit hypothesis (typed conjectural propagation, §4).
+
+### B. The QA sidecar (`<block>.qa.json`)
+
+One sidecar per object. Under each criterion id sits an append-only array of
+reviewer verdicts (script, agent, or human), each pinned to the content hash it
+judged so it auto-stales on edit:
+
+```jsonc
+// <block>.qa.json   —   criteria: { "<criterion-id>": QaCriterionEntry[] }
+{
+  "kind": "theorem",
+  "source_hashes": { "ts": "<sha12>", "md": "<sha12>", "lean": "<sha12>" },
+  "criteria": {
+    "proof-statement-integrity": [ {
+      "field_hash":   { "md": "<sha12>", "ts": "<sha12>", "lean": "<sha12>" },
+      "result":       "fail",                  // pass | warn | fail | n/a
+      "severity":     "critical",              // critical | major | minor (optional)
+      "reviewer":     { "kind": "agent", "id": "local/lean-proof-review" },
+      "reviewed_at":  "2026-06-07T...Z",
+      "reviewed_sha": "<commit>",
+      "evidence":     "Lean is `<_, rfl>` — a vacuous existence tautology, not the md claim"
+    } ],
+    "proof-rater-goal-plausibility": [ {
+      "field_hash":   { "md": "<sha12>", "ts": "<sha12>", "lean": "<sha12>" },
+      "result":       "fail",
+      "score":        { "value": 0.3, "max": 1 },   // scored raters carry a 0..1 score
+      "reviewer":     { "kind": "agent", "id": "local/proof-integration-watcher" },
+      "reviewed_at":  "2026-06-07T...Z",
+      "reviewed_sha": "<commit>",
+      "evidence":     "core gap: the key step is an axiom"
+    } ]
+  }
+}
+```
+
+A sibling `<block>.script.json` records the deterministic (script-reviewer)
+verdicts in the same shape. The `field_hash` / `source_hashes` are what make a
+verdict falsifiable: when the source's hash no longer matches, the verdict is
+stale and re-run.
+
+### C. The full QA dimensions
+
+Every object is continuously audited on **nine axes** (~67 criteria today). A
+finding on any axis is a typed, located artifact that drains into a fix-PR
+(`/integration-backlog <axis>`):
+
+| Axis | Representative criteria | What it enforces |
+|---|---|---|
+| **Proof (formal)** | `proof-statement-integrity`, `proof-rater-{strategy-clarity, goal-plausibility, novelty}`, `proof-no-bare-sorries`, `proof-no-axiom-growth`, `proof-build-green`, `proof-lean-compiles`, `proof-narrative-lean-equiv`, `proof-no-conj-propagation-violation`, `proof-no-trivial-skeleton`, `proof-conditional-class-banner` | the Lean faithfully proves the narrative claim (no vacuous / `= True` / restates-target proofs), builds, every `sorry` is cited, no axiom growth; the rater scores strategy / plausibility / novelty |
+| **Canonical-discipline** | `canonical-{calibration-count, no-numerology, witness-pinned, no-hardcoded-observable, cal4-acknowledged, ck-tiered-not-binary, dilogarithm-context, script-not-deprecated, no-negative-result-in-paper}` | no post-hoc fits or numerology; calibration inputs counted; observables pinned to a witness; near-results reported tiered, not binary |
+| **Compute** | `compute-{prop-has-probe, prop-has-consumer, witness-exists, lp-dual-present}` | every computational claim is wired to a probe + a consumer + a witness; optimisation solves emit their dual |
+| **Detangler (structural)** | `detangler-{no-forward-ref, no-xchapter-fwd, no-dependency-cycle, section-band, block-tanglement, archimedean-wall}` | dependency-graph health: no forward / cross-chapter references, no cycles, correct section banding and wall placement |
+| **Voice / exposition** | `voice-{status-leak, ai-slop, emoji-content, first-person-work, time-stamped-notes, unicode-crash, editorializing, scholarly-default, title-scholarly, statement-no-interpretation, author-notes-pollution}` | one consistent scholarly voice; no status / work-tracking leak, emoji, AI-tells, or unicode that breaks rendering |
+| **q-regime** | `q-usage-{regime-detected, fixed-q0-leak, archimedean-in-categorical-chapter, positivity-implicit, modulus-vs-real-mismatch, root-of-unity-undeclared, narrative-chapter-mismatch}` | the deformation parameter is used in the regime its chapter declares (categorical/formal vs archimedean/numerical) |
+| **Bibliography** | `bib-{cite-resolves, cited-ref-has-url, cited-ref-metadata-ok, cited-ref-has-screenshot}` | every citation resolves to a real, URL-backed, metadata-complete reference |
+| **Substrate wall** | `framework-canonical`, `fit-section-chapter`, `wall-side-{correct, statement, proof}` | content sits on the correct side of the substrate↔archimedean wall; canonical vs exploratory placement is honest |
+| **Compute-author (code quality)** | `does_not_default_to_float`, `respects_archimedean_wall`, `variables_typed`, `code_is_commented`, `has_references_to_paper`, `connected_to_ci_pipeline`, `uses_library_framework_appropriately`, `deprecated` | compute scripts keep precision discipline, are typed / commented / CI-wired, and trace back to the paper |
+
+The proof axis's `statement-integrity` and `rater` criteria are the direct
+AlphaProof-Nexus adoption (their SafeVerify gate + good-gap/bad-gap rater),
+generalised from a per-episode check into a standing, corpus-wide, hash-tracked
+audit.
