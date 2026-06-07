@@ -6,51 +6,61 @@ Borromean h⁴ = -3/4 derived as (-3) · (1/4) via R-matrix + Markov normalisati
 The h⁴ coefficient of the Borromean Markov trace
 `tr_M(β_Bor) = (4 + h² - 3h⁴ - h⁶)/(h² + 4)` factorises as
 `(-3) · (1/4)` where `-3` is the h⁴ coefficient of the standard-irrep
-character `χ^{(2,1)}(β_Bor) = 2 - 3h⁴ - h⁶` (T17: R-matrix on
-V_{1/2}^⊗3 via Schur-Weyl), and `1/4 = 1/[2]_q²|_{q=1}` is the standard
-Markov-trace normalisation for c=3-component link closure (T18).
+character `χ^{(2,1)}(β_Bor) = 2 - 3h⁴ - h⁶` (derived from the R-matrix
+on V_{1/2}^⊗3 via Schur-Weyl), and `1/4 = 1/[2]_q²|_{q=1}` is the
+standard Markov-trace normalisation for c=3-component link closure.
 
-This file states the proposition formally with `sorry`, citing the
-computational probes T17 (`gap_a4_T17_schur_weyl_rmatrix_probe.py`)
-and T18 (`gap_a4_T18_markov_normalization_probe.py`) that verified
-the derivation at 50 dps. A full Lean proof requires the q-Schur
-duality theorem, the Markov-trace existence/uniqueness on H_n(q),
-and the explicit R-matrix construction — all standard but substantial
-formalisation work, deferred to a follow-up Lean PR.
+This file is currently a **numeric lemma** stating the arithmetic
+factorisation identity `(-3) · (1/4) = -3/4` and proving it by
+`norm_num`. The full **categorical statement** — that this identity
+arises as the Frobenius-expansion + R-matrix-derivation decomposition
+of the Markov trace coefficient — is deferred to a follow-up Lean PR
+since it requires q-Schur duality + Markov-trace existence theorems
+not yet formalised in Mathlib at the needed depth.
+
+Computational verification (50 dps) lives in the probe scripts
+referenced in the `.ts` manifest:
+- T15 (`gap_a4_T15_character_polynomial_probe.py`) — algebraic
+  derivation of `χ^{(2,1)}(β_Bor) = 2 − 3h⁴ − h⁶`.
+- T18 (`gap_a4_T18_markov_normalization_probe.py`) — Markov
+  normalisation derivation of `y_{(2,1)}(q=1) = 1/4`.
 -/
 
 import Mathlib
 
 namespace QOU.BraidsAndKnots
 
-/-- The h⁴ coefficient of the Borromean Markov trace factorises as
-`(-3) · (1/4) = -3/4` where `-3` is the h⁴ coefficient of
-`χ^{(2,1)}(β_Bor) = 2 - 3h⁴ - h⁶` (R-matrix on V_{1/2}^⊗3) and `1/4`
-is the Markov normalisation `1/[2]_q²|_{q=1}` for c=3-component link
-closure.
+/-- **Numeric factorisation lemma** for the Borromean h⁴ coefficient.
 
-Verified to 50 dps by:
-- T17 (gap-a4-T17-schur-weyl-rmatrix-probe.witness.json) — derives
-  χ^{(2,1)}(β_Bor) = 2 − 3h⁴ − h⁶ directly from the U_q(sl_2)
-  R-matrix on V_{1/2}^⊗3 via Schur-Weyl duality, matching the
-  closed form to 50 digits at q_0 ≈ 1.10998.
-- T18 (gap-a4-T18-markov-normalization-probe.witness.json) — derives
-  y_{(2,1)}(q=1) = 1/4 = 1/[2]_q²|_{q=1} from the Frobenius expansion
-  combined with the Markov normalisation Σ_λ y_λ d_λ = 1. -/
-theorem BorromeanH4CategoricalDerivation :
-    -- The h⁴ coefficient of tr_M(β_Bor) equals -3/4, derived as the
-    -- product (-3) · (1/4) where each factor is independently
-    -- categorically derived.
+States the arithmetic identity `(-3) · (1/4) = -3/4` — the
+combinatorial core of the categorical chain:
+
+  h⁴(tr_M(β_Bor)) = [χ^{(2,1)} R-matrix coeff] · [Markov normalisation]
+                  = (-3) · (1/4)
+                  = -3/4
+
+This is **not** a categorical statement about Markov traces or
+R-matrices; it is the numeric kernel that the (deferred) full
+categorical derivation reduces to once the structural factors are
+extracted. The accompanying `.md` proof provides the full categorical
+chain narrative; the computational probes T15 + T18 verify the
+identity at 50 dps. -/
+theorem borromean_h4_numeric_factorisation :
     (-3 : ℝ) * (1/4 : ℝ) = -3/4 := by
   norm_num
 
 -- Ref: [murasugi1996] https://doi.org/10.1007/978-3-642-58947-1
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
--- (Full categorical derivation: T17 R-matrix probe at
---  folio-assistant/computations/probes/gap_a4_T17_schur_weyl_rmatrix_probe.py
---  + T18 Markov normalisation probe at
---  folio-assistant/computations/probes/gap_a4_T18_markov_normalization_probe.py.
---  Lean formalisation of the full chain requires q-Schur duality
---  + Markov trace existence theorems — substantial work deferred.)
+-- Full categorical Lean derivation (deferred — requires q-Schur duality
+-- + Markov-trace existence theorems): the statement would be
+--
+--   theorem BorromeanH4CategoricalDerivation :
+--     h4_coefficient (markov_trace (closure beta_Bor)) =
+--       chi_standard_irrep_h4_coeff * markov_normalisation_3_components
+--     := sorry
+--
+-- where `chi_standard_irrep_h4_coeff = -3` derives from the R-matrix
+-- on V_{1/2}^⊗3 via Schur-Weyl, and `markov_normalisation_3_components
+-- = 1/[2]_q²|_{q=1} = 1/4`.
 
 end QOU.BraidsAndKnots

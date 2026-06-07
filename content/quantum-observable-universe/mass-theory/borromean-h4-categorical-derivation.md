@@ -136,7 +136,7 @@ $\sum_\lambda y_\lambda \cdot d_\lambda = \mathrm{tr}_M(\mathbf{1}_3) = 1$
 for the identity braid. The $h^4$ coefficient is therefore
 
 $$
-  \bigl[h^4\text{-coeff of }\mathrm{tr}_M\bigr] \;=\; -3 \cdot y_{(2,1)}(0).
+  \bigl[h^4\text{-coeff of }\mathrm{tr}_M\bigr] \;=\; -3 \cdot y_{(2,1)}(q=1).
 $$
 
 From the closed form
@@ -145,9 +145,9 @@ the $h^4$ coefficient is $-3/4$ (exact symbolic series division).
 Solving:
 
 $$
-  -3 \cdot y_{(2,1)}(0) \;=\; -\tfrac{3}{4}
+  -3 \cdot y_{(2,1)}(q=1) \;=\; -\tfrac{3}{4}
   \quad\Longrightarrow\quad
-  y_{(2,1)}(0) \;=\; \tfrac{1}{4} \;=\; \frac{1}{[2]_q^2|_{q=1}}.
+  y_{(2,1)}(q=1) \;=\; \tfrac{1}{4} \;=\; \frac{1}{[2]_q^2|_{q=1}}.
 $$
 
 The factor $[2]_q^{c-1}$ is the standard Markov-trace normalisation for
@@ -159,7 +159,7 @@ $\mathrm{tr}_M(\beta_{\mathrm{Bor}}) = (\cdots)/(h^2 + 4)$.
 By the bar-involution symmetry $q \leftrightarrow q^{-1}$ exchanging
 $\chi^{(3)}$ and $\chi^{(1^3)}$ at $q = 1$, plus the Markov sum
 $\sum_\lambda y_\lambda(0) \cdot d_\lambda = 1$, all three $\mathrm{H}_3$
-Wenzl weights satisfy $y_\lambda(0) = 1/4 = 1/[2]_q^{n-1}|_{q=1}$
+Wenzl weights satisfy $y_\lambda(q=1) = 1/4 = 1/[2]_q^{n-1}|_{q=1}$
 (universal for $n = 3$ strands).
 
 ### Combining Steps 1 and 2.
@@ -184,7 +184,7 @@ $\mathcal{B}_3$ from the trivial 3-component unlink — is now derived
 | Step | Source | Result |
 |---|---|---|
 | 1 | $U_q(\mathfrak{sl}_2)$ R-matrix on $V_{1/2}^{\otimes 3}$ | $\chi^{(2,1)}(\beta_{\mathrm{Bor}}) = 2 - 3h^4 - h^6$ |
-| 2 | Markov normalisation for $c = 3$ link closure | $y_{(2,1)}(0) = 1/4 = 1/[2]_q^2\|_{q=1}$ |
+| 2 | Markov normalisation for $c = 3$ link closure | $y_{(2,1)}(q=1) = 1/4 = 1/[2]_q^2|_{q=1}$ |
 | 3 | Combined Frobenius expansion | $h^4(\mathrm{tr}_M) = (-3) \cdot (1/4) = -3/4$ |
 
 The derivation is purely categorical — no empirical fitting, no
