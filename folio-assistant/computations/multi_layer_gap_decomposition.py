@@ -3,7 +3,7 @@
 Per `docs/audits/2026-05-24-single-knot-vs-multi-nucleon-reconciliation.md`,
 the +2.89-3.86 % multi-isotope gap decomposes as three layers:
 
-    m_atom(Z, N) = Σ_i m_nucleon_i           (L1: single-knot Geom_full)
+    m_atom(Z, N) = Σ_i m_nucleon_i           (L1: single-knot VolDensity)
                  + Σ_{(i,j)} V_inter(i,j)    (L2: inter-nucleon channels)
                  + V_shell(Z, N)             (L3: nuclear-shell binding)
 
@@ -306,7 +306,7 @@ def main() -> None:
             "docs/audits/2026-05-24-single-knot-vs-multi-nucleon-reconciliation.md",
             "docs/audits/2026-05-24-family-a-gap-audit.md",
             "docs/audits/2026-05-24-h4-coefficient-source-trace-and-so3-gap.md",
-            "folio-assistant/computations/geom_full_borromean_h4_probe.py",
+            "folio-assistant/computations/vol_density_borromean_h4_probe.py",
             "folio-assistant/computations/low-isotope-mass-table.witness.json",
             "PR #1089 (open) — multi-nucleon sign-flip diagnostic",
         ],

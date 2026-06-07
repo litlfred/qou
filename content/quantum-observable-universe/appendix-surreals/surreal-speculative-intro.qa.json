@@ -653,28 +653,7 @@
         "reviewed_at": "2026-06-02T19:35:58.523Z",
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
       }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "e06d8f46250b",
-          "ts": "e44c99146a33"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "prose intro to sec:surreal-speculative; previews surreal-valued invariants, transfinite braids, set-theoretic independence",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T01:10:36.728Z",
-        "reviewed_sha": "7c88e25fa1a678578126850eb8e4716f2cf5d665",
-        "notes": "Section-intro prose in correct section; no provable claim, no proof, fits 'Speculative reformulations'."
-      }
     ]
   },
-  "updated_at": "2026-06-07T01:10:36.728Z"
+  "updated_at": "2026-06-03T20:30:24.391Z"
 }

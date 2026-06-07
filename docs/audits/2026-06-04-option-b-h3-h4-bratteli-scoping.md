@@ -10,7 +10,7 @@
 ## §1. The H₃ → H₄ jump (recap)
 
 PR #1762 §2 identified the **derivation gap** at the heart of the
-`Geom_full` bridge:
+`VolDensity` bridge:
 
 - The proton braid lives in **H₃** (3-strand braid `𝓑₃`).
 - Production `linking_weight_family_a(q)` = `(3q²+4+3q⁻²)/4 ≈ 2.53`

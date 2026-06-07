@@ -717,28 +717,7 @@
         "reviewed_at": "2026-06-02T19:35:58.523Z",
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
       }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "28c244cc9c1b",
-          "ts": "b1740d0296b0"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "Prose intro for the physical-predictions face: previews n-p splitting, Borromean baryon mass, q-integer mass formula, tower binding, mass table — all mass-theory blocks",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T01:29:18.442Z",
-        "reviewed_sha": "311ecd603bcadcc1344414a70d7690f20568c3d7",
-        "notes": "Correctly kind=prose (no provable claim); intro forward-refs are intra-chapter section overviews, well-placed"
-      }
     ]
   },
-  "updated_at": "2026-06-07T01:29:18.442Z"
+  "updated_at": "2026-06-03T20:30:24.391Z"
 }

@@ -34,7 +34,7 @@ with A (⁸Be +10%, ¹²C +5.4%, ²⁰Ne +8.3%, ⁴⁰Ca +19.5%).
 
 | Atom | Pred | Exp | Err | Method |
 |---|---|---|---|---|
-| p | 965.38 | 938.272 | **+2.89%** | Family-A Geom_full(𝓑₃) |
+| p | 965.38 | 938.272 | **+2.89%** | Family-A VolDensity(𝓑₃) |
 | n | 966.71 | 939.565 | **+2.89%** | Family-A |
 | D | 2.249 (B) | 2.2246 | +1.09% | canonical-trace / census 6₂ |
 | T | 8.469 (B) | 8.482 | −0.16% | canonical-trace / census 8₁₁ |
@@ -49,7 +49,7 @@ with A (⁸Be +10%, ¹²C +5.4%, ²⁰Ne +8.3%, ⁴⁰Ca +19.5%).
 
 | Atom(s) | Class | Evidence |
 |---|---|---|
-| p, n (Geom_full +2.89%) | **(a) Derived** — honest gap | Family-A λ_A=5/2+¾h² proved |
+| p, n (VolDensity +2.89%) | **(a) Derived** — honest gap | Family-A λ_A=5/2+¾h² proved |
 | **m_p/m_n/m_μ in 100x dashboard** | **(c) EMPIRICAL** — `role:"validation"`, pred=codata identically, ratio-anchored to CODATA m_e | `per_observable_100x_status.py:94` |
 | D, T, ³He | **(d)→(b)** census-assigned knots = "AME-driven fitting" | `mass_table_ppb.py:18-21`, `origin:"hyp: census-assigned (EXPLORATORY)"` |
 | ⁴He | **(d)** "magic rule, ν_SDP extrapolated" | `mass_table_ppb.py:110` |
@@ -138,7 +138,7 @@ ppm), the spectral decomposition shifts only 0.19 ppm under the
 −11.5 ppb re-pin. So the 130 ppm is intrinsic to the decomposition,
 not a pin artifact — and it is a **separate derived** m_p path,
 distinct from #1422's m_p-as-anchor (which is 0 by construction). The sweep's
-`Geom_full(𝓑₃)` computes the leading `Vol/ℏ²·lw_A` and **omits** this
+`VolDensity(𝓑₃)` computes the leading `Vol/ℏ²·lw_A` and **omits** this
 factor. Wiring it closes nucleons +2.89% → 130 ppm (the residual is
 the arccos Taylor truncation, h⁴-order). This is a legitimate,
 derivable wiring — distinct from the α-cluster (+5–20%, binding

@@ -93,7 +93,7 @@ $c_4$ holds **empirical** tier until that upstream $c_8$ categorical
 proof lands: the product identity is a structural relation *among
 empirical rungs*, not an unconditional derivation (only $c_2 = -1$ is
 canonical). The conditional "derived" above is exactly the
-"machinery-proved ≠ values-derived" distinction the registry codifies.
+"machinery-proved $\neq$ values-derived" distinction the registry codifies.
 
 ## q-usage discipline
 

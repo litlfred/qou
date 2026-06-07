@@ -2239,6 +2239,24 @@
         "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/stochastic-mechanics/q-zero-complex-extension.lean:20: invalid 'import' command, it must be used in the beginning of the file"
+      },
+      {
+        "field_hash": {
+          "md": "b7241f5c8b39",
+          "ts": "4921fc30d1e6",
+          "lean": "921c6453f2ec"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "cf383b911867",
+          "script_commit_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
+          "deps_hash": "4b9cd43e52e5"
+        },
+        "reviewed_at": "2026-06-05T14:22:44.851Z",
+        "reviewed_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb"
       }
     ],
     "voice-author-notes-pollution": [
@@ -2588,95 +2606,7 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
-    ],
-    "voice-statement-no-interpretation": [
-      {
-        "field_hash": {
-          "md": "b7241f5c8b39",
-          "ts": "4921fc30d1e6",
-          "lean": "921c6453f2ec"
-        },
-        "result": "warn",
-        "severity": "minor",
-        "evidence": "Statement clean; ## Significance + ## Relation interpretive prose in-block, no interprets: remark",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T01:56:48.358Z",
-        "reviewed_sha": "179aee9d979b759ba39e8cb0c067a3f45904f1b9",
-        "notes": "CAL-4 caveat + Im(q) discussion are interpretive; borderline — could move to a linked remark"
-      }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "b7241f5c8b39",
-          "ts": "4921fc30d1e6",
-          "lean": "921c6453f2ec"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "q-zero complex extension is substrate infrastructure for mass derivation; fits mass-theory",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T01:56:48.403Z",
-        "reviewed_sha": "179aee9d979b759ba39e8cb0c067a3f45904f1b9",
-        "notes": "Names admissibility of complex q with |q|>1; no sibling carries the same claim"
-      }
-    ],
-    "wall-side-statement": [
-      {
-        "field_hash": {
-          "md": "b7241f5c8b39",
-          "ts": "4921fc30d1e6",
-          "lean": "921c6453f2ec"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "Statement is generic {R}[CommRing], uses |q|>1 modulus not real ordering; §7c cited at line 26",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T01:56:48.449Z",
-        "reviewed_sha": "179aee9d979b759ba39e8cb0c067a3f45904f1b9",
-        "notes": "Correctly framed: |q|>1 replaces archimedean q>1 as substrate non-degeneracy"
-      }
-    ],
-    "wall-side-proof": [
-      {
-        "field_hash": {
-          "md": "b7241f5c8b39",
-          "ts": "4921fc30d1e6",
-          "lean": "921c6453f2ec"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "Proof cites generic typing + §7c; Lean unit-witness 1<‖q‖→IsUnit q on ℂ is the named archimedean realization",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T01:56:48.493Z",
-        "reviewed_sha": "179aee9d979b759ba39e8cb0c067a3f45904f1b9",
-        "notes": "Algebraic specialization point named; no unflagged archimedean machinery in algebraic claim"
-      }
     ]
   },
-  "updated_at": "2026-06-07T01:56:48.493Z"
+  "updated_at": "2026-06-05T14:22:44.851Z"
 }

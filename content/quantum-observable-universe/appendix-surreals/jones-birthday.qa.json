@@ -1603,6 +1603,25 @@
         },
         "reviewed_at": "2026-05-27T08:55:11.920Z",
         "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48"
+      },
+      {
+        "field_hash": {
+          "md": "f9aa07bb76a3",
+          "ts": "4566532360e1",
+          "lean": "15a701f06b36"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "cf383b911867",
+          "script_commit_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
+          "deps_hash": "4b9cd43e52e5"
+        },
+        "reviewed_at": "2026-06-05T14:22:44.851Z",
+        "reviewed_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
+        "notes": "stale: cached lean diagnostics have no lean_sha (legacy v1 cache); re-run content/pipeline/lean-compile-audit.ts to refresh"
       }
     ],
     "voice-author-notes-pollution": [
@@ -1831,29 +1850,7 @@
         "reviewed_at": "2026-06-03T22:40:47.501Z",
         "reviewed_sha": "adcb03e136a9cea82a8536f577666f09b63ea5be"
       }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "f9aa07bb76a3",
-          "ts": "4566532360e1",
-          "lean": "15a701f06b36"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "Conjecture stratifies Jones polynomial by surreal birthday via prop:hoefsmit-is-surreal-construction; sits in sec:surreal-construction-grading",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T01:22:58.731Z",
-        "reviewed_sha": "2b0c19647e5402c2503b88d7c072b28783bae080",
-        "notes": "Birthday refinement of Jones is core surreal-construction-as-grading content; correct section."
-      }
     ]
   },
-  "updated_at": "2026-06-07T01:22:58.731Z"
+  "updated_at": "2026-06-05T14:22:44.851Z"
 }

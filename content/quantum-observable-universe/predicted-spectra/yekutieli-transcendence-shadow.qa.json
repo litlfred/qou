@@ -1923,28 +1923,7 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "78f5764b254c",
-          "ts": "f7c11c7e6762"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "Remark on algebraic independence of hyperbolic volumes as transcendence shadow of the motivic Galois character; placed in sec:topological-mass-galois-baryons",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-06",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-06T20:16:18.488Z",
-        "reviewed_sha": "e2767fc498dd2250b546472e7517bd26a69edf89",
-        "notes": "Galois-orbit / volume-tower transcendence is the section/chapter scope (Topological mass and volume-tower transcendence); interprets motivic-perpetual-obstruction conjecture."
-      }
     ]
   },
-  "updated_at": "2026-06-06T20:16:18.488Z"
+  "updated_at": "2026-06-03T22:40:47.501Z"
 }

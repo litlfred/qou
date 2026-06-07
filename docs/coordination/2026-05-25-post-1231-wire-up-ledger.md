@@ -59,7 +59,7 @@
 | [#1220](https://github.com/litlfred/qou/pull/1220) | DOWNSTREAM — α-cluster recursion bug likely from H_3/H_{3A} | [comment](https://github.com/litlfred/qou/pull/1220#issuecomment-4531057403) |
 | [#1211](https://github.com/litlfred/qou/pull/1211) | UPSTREAM — Q_borromean = 0 Lean proof | [comment](https://github.com/litlfred/qou/pull/1211#issuecomment-4530543819) from earlier session |
 | [#1241](https://github.com/litlfred/qou/pull/1241) | DIRECT FILE OVERLAP — wires `atom_per_generator_volumes` into pyhecke public API; my PR #1240 added DeprecationWarning to same function | [comment](https://github.com/litlfred/qou/pull/1241#issuecomment-4531185437) — 2026-05-25 sweep |
-| [#1228](https://github.com/litlfred/qou/pull/1228) | DOWNSTREAM — geom-derivation §9 cites PR #1211 + commit `68e51f80e` (my ⋈_K bar-sym); my AJ-conjecture algebraic identity supplies additional structural anchor | [comment](https://github.com/litlfred/qou/pull/1228#issuecomment-4531186638) — 2026-05-25 sweep |
+| [#1228](https://github.com/litlfred/qou/pull/1228) | DOWNSTREAM — vol-density-derivation §9 cites PR #1211 + commit `68e51f80e` (my ⋈_K bar-sym); my AJ-conjecture algebraic identity supplies additional structural anchor | [comment](https://github.com/litlfred/qou/pull/1228#issuecomment-4531186638) — 2026-05-25 sweep |
 | [#1127](https://github.com/litlfred/qou/pull/1127) | UPSTREAM CITED — their `prop:q-zero-complex-extension` + `prop:lusztig-vs-hermitian-bar` cited in my audit §10 (don't assume q_0 real) | [comment](https://github.com/litlfred/qou/pull/1127#issuecomment-4531187667) — 2026-05-25 sweep |
 
 ## H_3 vs H_{3A} fix — design + risk

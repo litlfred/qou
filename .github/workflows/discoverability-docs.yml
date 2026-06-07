@@ -15,16 +15,6 @@ name: Discoverability docs (cargo doc + pdoc + TypeDoc)
 # doc) does not block the others.
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - 'tools/hecke-engine/src/**'
-      - 'tools/hecke-engine/Cargo.toml'
-      - 'tools/pyhecke/**'
-      - 'tools/pyhecke-native/src/**'
-      - 'folio-assistant/schemas/**'
-      - 'folio-assistant/adapters/paper/schemas/**'
-      - '.github/workflows/discoverability-docs.yml'
   workflow_dispatch:
 
 permissions:

@@ -535,6 +535,43 @@ production change?  → Step 1 yes  → Step 2 q-locality < 10² ppm/q  → Step
                                                                       (any "no" → Rule 14 escalation)
 ```
 
+## Tunable-knob fences (`EVOLVE-VALUE` markers)
+
+A syntactic complement to the categories above, adopted (and **inverted**)
+from AlphaProof Nexus's `EVOLVE-VALUE` markers (arXiv:2605.22763; see
+[`docs/audits/2026-06-06-alphaproof-nexus-comparative-assessment.md`](../../../docs/audits/2026-06-06-alphaproof-nexus-comparative-assessment.md)).
+There the marker *grants* a search agent freedom to vary a value; here it is
+a **fence that labels the few legitimately tunable knobs** — everything
+outside a fence is FIXED (canonical / derived, never tuned).
+
+Fence syntax (compute scripts):
+
+```python
+# EVOLVE-VALUE-START kind=production knob=N rationale="truncation order; N>=log10(1/eps)/2.07-1"
+N_TRUNCATION = 5
+# EVOLVE-VALUE-END
+
+# EVOLVE-VALUE-START kind=exploratory knob=c_3 see=docs/audits/2026-05-31-qbeta-ck-truncation-order-canonical-framing.md
+C3_NEAR_MATCH = -2.0   # J_Hopf(q=1) near-match — NOT a derived value
+# EVOLVE-VALUE-END
+```
+
+Rules:
+
+| Situation | Allowed? |
+|---|---|
+| Vary a `kind=exploratory` knob in a `probe_*` / exploratory script | ✓ (that is what exploratory scripts are for) |
+| Vary a `kind=production` knob | ✓ **only** if the stated `rationale` still holds (e.g. raising a truncation order for more precision) |
+| Tune a value **outside** any fence | ✗ — it is canonical / derived; changing it is a CAL-4 / numerology risk |
+| Introduce a **new** `kind=production` fenced knob off the 13-driver menu | ✗ → **Rule 14** escalation |
+| A `:val[…]`-witnessed (derived) value inside an *exploratory* fence | ✗ contradiction — a value is derived **or** tunable, never both (`witnessed-values.md`) |
+
+The fence makes "what may be searched" auditable and gives the
+production/exploratory bright line a concrete syntactic hook: a post-hoc
+audit can grep `EVOLVE-VALUE-START kind=production` and check each knob's
+`rationale` against the 13-driver menu, and grep `kind=exploratory` to
+confirm those values never leak into a `canonical_*` / production script.
+
 ## How to recognize what category an EXISTING script is in
 
 Grep / file-pattern heuristics for retrospective audit:

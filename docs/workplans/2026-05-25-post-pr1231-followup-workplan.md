@@ -60,7 +60,7 @@ Ship Tier 0 + Tier 1 in PRs that each close a specific gap:
 Sibling-coordination posts already up:
 - PR #1214 (wiring-status taxonomy, 0/17 wired) — coordinated 2026-05-25
 - TODO: PR #1220 (α-cluster recursion bug) — likely overlap with H_4 atlas
-- TODO: PR #1228 (geom-derivation KLR path) — likely overlap with Tier 2a
+- TODO: PR #1228 (vol-density-derivation KLR path) — likely overlap with Tier 2a
 
 ## Mostow-Prasad clarification (record)
 
@@ -117,7 +117,7 @@ This is research-grade. In-session: document the question + scope; deferred for 
 Will post intent comments on:
 1. PR #1214 — DONE (wiring-status taxonomy overlap)
 2. PR #1220 — TODO (α-cluster recursion bug — likely overlaps with H_4 atlas)
-3. PR #1228 — TODO (geom-derivation KLR path — likely overlaps with Tier 2a)
+3. PR #1228 — TODO (vol-density-derivation KLR path — likely overlaps with Tier 2a)
 
 ## Status checklist
 

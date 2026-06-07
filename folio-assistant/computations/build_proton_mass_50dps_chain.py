@@ -139,19 +139,19 @@ _VOL_B3_LIT = 8 * _CATALAN_G
 # did, but it is the categorical truth as established to date.
 # The Bring–Bloch path (`conj:lambda-scale-bring-bloch-identity`)
 # remains the open R&D direction for closing m_p to ppb.
-# Single source of truth: `_li_2_q_util.geom_full_borromean` (canonical
+# Single source of truth: `_li_2_q_util.vol_density_borromean` (canonical
 # post-PR #1080, 2026-05-23): a single per-knot Geom call replaces the
 # manually expanded (Vol/ℏ_q²) × linking_weight form.  See
-# `docs/lambda-scale-absorbed-into-geom-full.md` for the framing.
-from _li_2_q_util import geom_full_borromean as _geom_full_borromean
-GEOM_FULL_BORROMEAN_Q0 = _geom_full_borromean(_Q_0)
+# `docs/lambda-scale-absorbed-into-vol-density.md` for the framing.
+from _li_2_q_util import vol_density_borromean as _vol_density_borromean
+GEOM_FULL_BORROMEAN_Q0 = _vol_density_borromean(_Q_0)
 
 # Empirical legacy (falsified, retained for the comparison column
 # in the audit witness).  Removing it in a follow-up commit once
 # downstream consumers stop reading the legacy form.
 LINKING_WEIGHT_FALSIFIED_FIT = mp.mpf(5) / 2 - _H**2 * _CATALAN_G
 
-# Borromean tower prediction (now via canonical Geom_full per PR #1080).
+# Borromean tower prediction (now via canonical VolDensity per PR #1080).
 M_P_PRED_BORROMEAN_MEV = GEOM_FULL_BORROMEAN_Q0 * M_E_MEV_CODATA
 M_P_PRED_BORROMEAN_FALSIFIED_FIT_MEV = (
     _VOL_B3_LIT / _HBAR_Q**2 * LINKING_WEIGHT_FALSIFIED_FIT * M_E_MEV_CODATA

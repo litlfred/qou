@@ -2235,6 +2235,25 @@
         "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/quantum-observable-universes/q-resolvent-exists.lean:15: invalid 'import' command, it must be used in the beginning of the file"
+      },
+      {
+        "field_hash": {
+          "md": "b2038143f999",
+          "ts": "c43ef745ceb9",
+          "lean": "1523df0183f8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "cf383b911867",
+          "script_commit_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
+          "deps_hash": "4b9cd43e52e5"
+        },
+        "reviewed_at": "2026-06-05T14:22:44.851Z",
+        "reviewed_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
+        "notes": "stale: cached lean diagnostics have no lean_sha (legacy v1 cache); re-run content/pipeline/lean-compile-audit.ts to refresh"
       }
     ],
     "voice-author-notes-pollution": [
@@ -2584,95 +2603,7 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
-    ],
-    "voice-statement-no-interpretation": [
-      {
-        "field_hash": {
-          "md": "b2038143f999",
-          "ts": "c43ef745ceb9",
-          "lean": "1523df0183f8"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "Bare existence claim: R_q(s)=(s+Delta_q)^-1 exists outside spectrum",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T01:50:09.297Z",
-        "reviewed_sha": "685f3a7ee3890e93a150c74280a6c4c184a8fe67",
-        "notes": "No interpretive prose; uniqueness deferred to separate prop"
-      }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "b2038143f999",
-          "ts": "c43ef745ceb9",
-          "lean": "1523df0183f8"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "Categorical q-resolvent existence; substrate-operator section of qou chapter",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T01:50:09.346Z",
-        "reviewed_sha": "685f3a7ee3890e93a150c74280a6c4c184a8fe67",
-        "notes": "Correct placement"
-      }
-    ],
-    "wall-side-statement": [
-      {
-        "field_hash": {
-          "md": "b2038143f999",
-          "ts": "c43ef745ceb9",
-          "lean": "1523df0183f8"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "Endomorphism of End_C(A); no q0/MeV/Real.* numerics in statement",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T01:50:09.392Z",
-        "reviewed_sha": "685f3a7ee3890e93a150c74280a6c4c184a8fe67",
-        "notes": "Algebraic/categorical statement"
-      }
-    ],
-    "wall-side-proof": [
-      {
-        "field_hash": {
-          "md": "b2038143f999",
-          "ts": "c43ef745ceb9",
-          "lean": "1523df0183f8"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "Laplace + Peter-Weyl diagonal; spectral identity is formal, no IVT/continuity over R",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T01:50:09.440Z",
-        "reviewed_sha": "685f3a7ee3890e93a150c74280a6c4c184a8fe67",
-        "notes": "Categorical/formal spectral proof, no archimedean machinery"
-      }
     ]
   },
-  "updated_at": "2026-06-07T01:50:09.440Z"
+  "updated_at": "2026-06-05T14:22:44.851Z"
 }

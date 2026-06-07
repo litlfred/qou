@@ -2254,6 +2254,24 @@
         "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/mass-application/chi-lambda-w0-sign-weighting.lean:26: invalid 'import' command, it must be used in the beginning of the file"
+      },
+      {
+        "field_hash": {
+          "md": "e0d07bab65a9",
+          "ts": "1bcca1dce67d",
+          "lean": "0879c2a6fe9f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "cf383b911867",
+          "script_commit_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
+          "deps_hash": "4b9cd43e52e5"
+        },
+        "reviewed_at": "2026-06-05T14:22:44.851Z",
+        "reviewed_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb"
       }
     ],
     "voice-author-notes-pollution": [
@@ -2683,5 +2701,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-04T17:37:34.556Z"
+  "updated_at": "2026-06-05T14:22:44.851Z"
 }

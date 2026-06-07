@@ -27,4 +27,11 @@ export default proposition({
     "1ppQ",
     "categorical-witness",
   ],
+  authorNotes: [
+    {
+      kind: "note",
+      date: "2026-06-01",
+      body: "The companion audit doc `docs/audits/2026-06-01-qbeta-habiro-phi8-interpretation.md` landed via PR #1579 (now on `main`).",
+    },
+  ],
 });

@@ -1605,6 +1605,24 @@
         "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/particle-interactions/q-integer-mass-formula.lean:89: No goals to be solved"
+      },
+      {
+        "field_hash": {
+          "md": "6d96d7d479e9",
+          "ts": "650a541ff25a",
+          "lean": "5af611a80943"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "cf383b911867",
+          "script_commit_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
+          "deps_hash": "4b9cd43e52e5"
+        },
+        "reviewed_at": "2026-06-05T14:22:44.851Z",
+        "reviewed_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb"
       }
     ],
     "voice-author-notes-pollution": [
@@ -1901,29 +1919,7 @@
         "reviewed_at": "2026-06-03T22:40:47.501Z",
         "reviewed_sha": "adcb03e136a9cea82a8536f577666f09b63ea5be"
       }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "6d96d7d479e9",
-          "ts": "650a541ff25a",
-          "lean": "5af611a80943"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "Conjecture in section 'Physical face: mass formulas and predictions' (mass-theory.ts:732,739); BW-emergence of liquid-drop coeffs as q-integer products is a mass-formula prediction.",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T01:34:48.916Z",
-        "reviewed_sha": "b7ffd7fa4dbf476a88d651c1fc97ffa113a01d52",
-        "notes": "Topic (q-integer mass coefficients, MAE over 32 isotopes) is squarely in mass-theory's physical-face scope; no sibling restates this BW-emergence claim. Well-placed."
-      }
     ]
   },
-  "updated_at": "2026-06-07T01:34:48.916Z"
+  "updated_at": "2026-06-05T14:22:44.851Z"
 }

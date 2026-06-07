@@ -2232,6 +2232,25 @@
         },
         "reviewed_at": "2026-05-27T08:55:11.920Z",
         "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48"
+      },
+      {
+        "field_hash": {
+          "md": "2c79f88dd993",
+          "ts": "4d32bd777f35",
+          "lean": "95baed5bf9b5"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "cf383b911867",
+          "script_commit_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
+          "deps_hash": "4b9cd43e52e5"
+        },
+        "reviewed_at": "2026-06-05T14:22:44.851Z",
+        "reviewed_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
+        "notes": "stale: cached lean diagnostics have no lean_sha (legacy v1 cache); re-run content/pipeline/lean-compile-audit.ts to refresh"
       }
     ],
     "voice-author-notes-pollution": [
@@ -2566,95 +2585,7 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "2c79f88dd993",
-          "ts": "4d32bd777f35",
-          "lean": "95baed5bf9b5"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "prop is the CH4 LP-dual / S4-symmetry result; sits in the CH4 tetrahedral section of the chapter",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T02:21:20.365Z",
-        "reviewed_sha": "dfbffa8d2874276d287996a694135a64a968613f",
-        "notes": "Well-placed; uses def:ch4-molecular-braid + prop:h2-lp-dual-binding upstream."
-      }
-    ],
-    "wall-side-statement": [
-      {
-        "field_hash": {
-          "md": "2c79f88dd993",
-          "ts": "4d32bd777f35",
-          "lean": "95baed5bf9b5"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "Generic LP-dual in H_26(q); no numeric q0, no MeV, no Real.* or order hypothesis",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T02:21:20.411Z",
-        "reviewed_sha": "dfbffa8d2874276d287996a694135a64a968613f",
-        "notes": "Generic-ring statement, no wall violation."
-      }
-    ],
-    "wall-side-proof": [
-      {
-        "field_hash": {
-          "md": "2c79f88dd993",
-          "ts": "4d32bd777f35",
-          "lean": "95baed5bf9b5"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "No narrative Proof body; S4-symmetry / shadow-price argument is algebraic",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T02:21:20.455Z",
-        "reviewed_sha": "dfbffa8d2874276d287996a694135a64a968613f",
-        "notes": "No archimedean machinery."
-      }
-    ],
-    "voice-statement-no-interpretation": [
-      {
-        "field_hash": {
-          "md": "2c79f88dd993",
-          "ts": "4d32bd777f35",
-          "lean": "95baed5bf9b5"
-        },
-        "result": "warn",
-        "severity": "minor",
-        "evidence": "Statement + LP-dual shadow prices, but closing lines tie y_sym to 'braid-theoretic origin of the regular tetrahedron' in same block",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T02:21:20.501Z",
-        "reviewed_sha": "dfbffa8d2874276d287996a694135a64a968613f",
-        "notes": "Borderline interpretive correspondence; no companion interprets-remark holds it."
-      }
     ]
   },
-  "updated_at": "2026-06-07T02:21:20.501Z"
+  "updated_at": "2026-06-05T14:22:44.851Z"
 }

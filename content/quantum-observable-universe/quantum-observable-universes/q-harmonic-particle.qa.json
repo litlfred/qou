@@ -1921,28 +1921,7 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "e655cf0fc28f",
-          "ts": "321c69db4670"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "remark in 'Geometric interpretations' section beside q-laplacian-interpretation/hodge-laplacian-relation/categorical-lichnerowicz",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T00:41:37.324Z",
-        "reviewed_sha": "0ea24b1438ebe351ce8bc9055615873aaad2c15f",
-        "notes": "interprets def:q-harmonic-form; lays out QOU->particle logical chain; on-topic for section, no sibling duplication"
-      }
     ]
   },
-  "updated_at": "2026-06-07T00:41:37.324Z"
+  "updated_at": "2026-06-03T22:40:47.501Z"
 }

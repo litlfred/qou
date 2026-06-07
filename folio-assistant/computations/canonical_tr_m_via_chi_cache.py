@@ -100,28 +100,54 @@ def canonical_tr_m(atom_name: str, Z: int, N: int) -> dict[str, object]:
     Falls back to the symbolic chi cache (slower, partial-aware)
     when the numerical cache is missing.
     """
+    # Normalize short aliases ("D" → "deuteron", "3He" → "helium-3", …)
+    # to the canonical ATOMS key the chi caches are written under: the
+    # producer (chi_at_q0_via_hoefsmit_mpfr.py) keys cache files by the
+    # full name, so a short-alias caller would otherwise miss
+    # (chi-D-h6 vs chi-deuteron-h6). Idempotent on canonical names.
+    atom_name = ATOM_ALIASES.get(atom_name, atom_name)
     n = 3 * (Z + N)
 
-    # Fast path: numerical chi cache is complete (one mpf per partition,
-    # tr_M already summed). All 5 production atoms ship at this tier.
+    # Fast path: numerical χ^λ@q_0 cache (one mpf per partition, built by
+    # chi_at_q0_via_hoefsmit_mpfr.py). The cache stores χ^λ only — NOT the
+    # central weights y_λ, the per-λ contributions, or the summed tr_M — so
+    # the consumer combines them here per the docstring recipe (steps 3-4):
+    # load y_λ(q_0) and sum Σ_λ y_λ · χ^λ. This is faster than the symbolic
+    # path below (the cached χ are already numeric — no sympify/subst) while
+    # producing the identical return schema.
     numerical = _load_numerical_chi_cache(atom_name, n)
     if numerical is not None:
         q_0 = mp.mpf(Q_50_DIGIT_STR)  # 50-dps q, not f64-quantised
-        per_lambda = [{
-            "partition": entry["partition"],
-            "y_lambda_at_q0": entry["y_lambda"],
-            "chi_lambda_at_q0": entry["chi_lambda"],
-            "contribution": entry["contribution"],
-        } for entry in numerical["by_partition"]]
-        tr_m = mp.mpf(numerical["tr_M_at_q0"])
-        # The witness may be a partial incremental build (see
-        # chi_at_q0_via_hoefsmit_mpfr.py per-partition saves):
-        # n_partitions_total > n_partitions when the cache is still
-        # filling. Surface that distinction to downstream consumers
-        # so the 1ppb gate can flag truncated traces.
-        n_total = numerical.get("n_partitions_total", len(per_lambda))
-        n_used = numerical.get("n_partitions", len(per_lambda))
+        n_total = numerical.get("n_partitions_total", len(numerical["by_partition"]))
+        n_used = numerical.get("n_partitions", len(numerical["by_partition"]))
         is_partial = bool(numerical.get("partial", False)) or n_used < n_total
+
+        t0 = time.time()
+        y_lams = y_lambda_at(n, q_0)
+        t_y = time.time() - t0
+
+        t0 = time.time()
+        tr_m = mp.mpf(0)
+        per_lambda = []
+        for entry in numerical["by_partition"]:
+            raw = entry["partition"]
+            # The numerical cache serialises the partition as a JSON
+            # string ("[6]"); the symbolic cache uses a list. Accept both.
+            lam = tuple(json.loads(raw)) if isinstance(raw, str) else tuple(raw)
+            if lam not in y_lams:
+                continue
+            chi_val = mp.mpf(entry["chi_lambda"])
+            y_val = mp.mpf(str(y_lams[lam]))
+            contrib = y_val * chi_val
+            tr_m += contrib
+            per_lambda.append({
+                "partition": list(lam),
+                "y_lambda_at_q0": str(y_val),
+                "chi_lambda_at_q0": str(chi_val),
+                "contribution": str(contrib),
+            })
+        t_sum = time.time() - t0
+
         return {
             "atom": atom_name,
             "Z": Z,
@@ -134,8 +160,8 @@ def canonical_tr_m(atom_name: str, Z: int, N: int) -> dict[str, object]:
             "q_0_50dps": str(q_0),
             "tr_M_q0": str(tr_m),
             "abs_tr_M_q0": str(abs(tr_m)),
-            "y_lambda_load_time_sec": 0.0,
-            "tr_m_sum_time_sec": 0.0,
+            "y_lambda_load_time_sec": round(t_y, 3),
+            "tr_m_sum_time_sec": round(t_sum, 3),
             "per_lambda": per_lambda,
         }
 

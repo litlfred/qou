@@ -1605,6 +1605,25 @@
         "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/p5-counterexample.lean:53: failed to synthesize | content/quantum-observable-universe/fluid-dynamics/p5-counterexample.lean:53: Function expected at | content/quantum-observable-universe/fluid-dynamics/p5-counterexample.lean:53: failed to synthesize | content/quantum-observable-universe/fluid-dynamics/p5-counterexample.lean:55: unexpected token ':'; expected command | content/quantum-observable-universe/fluid-dynamics/p5-counterexample.lean:55: expected token"
+      },
+      {
+        "field_hash": {
+          "md": "1bbfe183c84a",
+          "ts": "102f58c45a63",
+          "lean": "44bf86f09b7e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "cf383b911867",
+          "script_commit_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
+          "deps_hash": "4b9cd43e52e5"
+        },
+        "reviewed_at": "2026-06-05T14:22:44.851Z",
+        "reviewed_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
+        "notes": "stale: cached lean diagnostics have no lean_sha (legacy v1 cache); re-run content/pipeline/lean-compile-audit.ts to refresh"
       }
     ],
     "voice-author-notes-pollution": [
@@ -1992,95 +2011,7 @@
         "reviewed_at": "2026-06-02T19:35:56.961Z",
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
       }
-    ],
-    "voice-statement-no-interpretation": [
-      {
-        "field_hash": {
-          "md": "1bbfe183c84a",
-          "ts": "102f58c45a63",
-          "lean": "44bf86f09b7e"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "constructive proposition: initial data + Phases 1-3 + Claims 1-4 with *Reason:* justifications + boxed homological address; no separate editorializing Interpretation section",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-06",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-06T20:28:26.576Z",
-        "reviewed_sha": "4e7248b0616dbadf53dd3c5c47dd1130cf291f03",
-        "notes": "all prose is the construction/proof of the counter-example; no mislocated physical-meaning aside"
-      }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "1bbfe183c84a",
-          "ts": "102f58c45a63",
-          "lean": "44bf86f09b7e"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "in sec:ns-approaches; q->1 degeneration counter-example to NS regularity (millennium-problem tag) is the section's open-problem subject",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-06",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-06T20:28:26.623Z",
-        "reviewed_sha": "4e7248b0616dbadf53dd3c5c47dd1130cf291f03",
-        "notes": "uses prop:universality + acoustic-horizon; no sibling carries the homological counter-example; correctly placed"
-      }
-    ],
-    "wall-side-statement": [
-      {
-        "field_hash": {
-          "md": "1bbfe183c84a",
-          "ts": "102f58c45a63",
-          "lean": "44bf86f09b7e"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "q>1 evolution + q->1 limit + blowup time T* are the q-NS blowup chapter's native archimedean regime, not a leaked categorical pin",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-06",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-06T20:28:26.670Z",
-        "reviewed_sha": "4e7248b0616dbadf53dd3c5c47dd1130cf291f03",
-        "notes": "the counter-example is intrinsically about the classical q->1 limit; no out-of-regime MeV/Real.* pin"
-      }
-    ],
-    "wall-side-proof": [
-      {
-        "field_hash": {
-          "md": "1bbfe183c84a",
-          "ts": "102f58c45a63",
-          "lean": "44bf86f09b7e"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "proof mixes Hecke channel amplitudes + homological obstruction (kappa_2, local cohomology) with a q->1 limit blowup estimate d(t)~sqrt(d0^2-c*Gamma*t); limit argument is the declared specialisation point of the counter-example",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-06",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-06T20:28:26.717Z",
-        "reviewed_sha": "4e7248b0616dbadf53dd3c5c47dd1130cf291f03",
-        "notes": "archimedean q->1 limit is the explicit, named specialisation the proposition is about; method matches statement side"
-      }
     ]
   },
-  "updated_at": "2026-06-06T20:28:26.717Z"
+  "updated_at": "2026-06-05T14:22:44.851Z"
 }

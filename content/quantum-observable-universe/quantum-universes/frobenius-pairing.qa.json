@@ -1651,6 +1651,25 @@
         "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/quantum-universes/frobenius-pairing.lean:11: invalid 'import' command, it must be used in the beginning of the file"
+      },
+      {
+        "field_hash": {
+          "md": "299b15328408",
+          "ts": "5e442650695a",
+          "lean": "cace8951b226"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "cf383b911867",
+          "script_commit_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
+          "deps_hash": "4b9cd43e52e5"
+        },
+        "reviewed_at": "2026-06-05T14:22:44.851Z",
+        "reviewed_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
+        "notes": "stale: cached lean diagnostics have no lean_sha (legacy v1 cache); re-run content/pipeline/lean-compile-audit.ts to refresh"
       }
     ],
     "voice-author-notes-pollution": [
@@ -1879,51 +1898,7 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "299b15328408",
-          "ts": "5e442650695a",
-          "lean": "cace8951b226"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "Defines Frobenius pairing as composite mu;int_A on quantum-universe (C,A,tau), non-degeneracy via snake identities; core quantum-universes content",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-06",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-06T20:48:16.255Z",
-        "reviewed_sha": "eff152eb14298af0e12d6b84b8fba28605c70e95",
-        "notes": "In scope"
-      }
-    ],
-    "wall-side-statement": [
-      {
-        "field_hash": {
-          "md": "299b15328408",
-          "ts": "5e442650695a",
-          "lean": "cace8951b226"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "Purely categorical statement (morphisms, dual object, snake/coevaluation); no Real.*, no numeric q0, no MeV, no order hypothesis",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-06",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-06T20:48:16.301Z",
-        "reviewed_sha": "eff152eb14298af0e12d6b84b8fba28605c70e95",
-        "notes": "Generic-ring, matches chapter regime"
-      }
     ]
   },
-  "updated_at": "2026-06-06T20:48:16.301Z"
+  "updated_at": "2026-06-05T14:22:44.851Z"
 }

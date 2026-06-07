@@ -2218,6 +2218,25 @@
         "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/quantum-observable-universes/spectral-chart-correspondence.lean:34: invalid 'import' command, it must be used in the beginning of the file"
+      },
+      {
+        "field_hash": {
+          "md": "a08a7adf3c65",
+          "ts": "1f84ecfc2633",
+          "lean": "cb3e0980427a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "cf383b911867",
+          "script_commit_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
+          "deps_hash": "4b9cd43e52e5"
+        },
+        "reviewed_at": "2026-06-05T14:22:44.851Z",
+        "reviewed_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
+        "notes": "stale: cached lean diagnostics have no lean_sha (legacy v1 cache); re-run content/pipeline/lean-compile-audit.ts to refresh"
       }
     ],
     "voice-author-notes-pollution": [
@@ -2550,95 +2569,7 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
-    ],
-    "voice-statement-no-interpretation": [
-      {
-        "field_hash": {
-          "md": "a08a7adf3c65",
-          "ts": "1f84ecfc2633",
-          "lean": "cb3e0980427a"
-        },
-        "result": "warn",
-        "severity": "minor",
-        "evidence": "Statement followed by 'Two readings of the same equality' (glue-from-antisymmetric-line; classical degeneration) in same block; no separate interprets: remark",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-06",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-06T20:33:31.565Z",
-        "reviewed_sha": "060199c6e7f61eeb1c84ed4e40443d3fed5d1eb5",
-        "notes": "Readings are scope clarifications of one identity rather than mislocated physical-meaning prose; borderline, no companion remark"
-      }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "a08a7adf3c65",
-          "ts": "1f84ecfc2633",
-          "lean": "cb3e0980427a"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "In section 'Substrate parameter and deformation'; subject is spectral/chart extraction of q via Hecke eigenvalues, tags substrate-parameter/categorical",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-06",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-06T20:33:31.610Z",
-        "reviewed_sha": "060199c6e7f61eeb1c84ed4e40443d3fed5d1eb5",
-        "notes": "Topic in section scope; no sibling carries same claim"
-      }
-    ],
-    "wall-side-statement": [
-      {
-        "field_hash": {
-          "md": "a08a7adf3c65",
-          "ts": "1f84ecfc2633",
-          "lean": "cb3e0980427a"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "Generic-ring statement (lambda_+=q, lambda_-=-q^{-1}, kappa=q^{-1}); Lean is generic Field K; q=1 limit is algebraic",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-06",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-06T20:33:31.655Z",
-        "reviewed_sha": "060199c6e7f61eeb1c84ed4e40443d3fed5d1eb5",
-        "notes": "Top banner mentions R but Lean+narrative content is generic-ring; matches qou-universes regime"
-      }
-    ],
-    "wall-side-proof": [
-      {
-        "field_hash": {
-          "md": "a08a7adf3c65",
-          "ts": "1f84ecfc2633",
-          "lean": "cb3e0980427a"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "No narrative Proof. block; reasoning (Hecke determinant identity, q=1 collapse) is generic algebra, no linarith/IVT/continuity/Real.*",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-06",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-06T20:33:31.701Z",
-        "reviewed_sha": "060199c6e7f61eeb1c84ed4e40443d3fed5d1eb5",
-        "notes": "Proof method matches generic-ring side"
-      }
     ]
   },
-  "updated_at": "2026-06-06T20:33:31.701Z"
+  "updated_at": "2026-06-05T14:22:44.851Z"
 }

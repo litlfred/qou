@@ -74,7 +74,7 @@
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1"
   },
-  "description": "Per-atom hyperbolic volumes Vol(K_atom) for the canonical atom-knot atlas (proton=𝓑₃, ²H=6_2, ³H=8_11, ³He=L6a4, ⁴He=4·8G magic-A). Input to Subgoal-1 per-knot mass formula via geom_full_per_block(vol_K, tr_M_K, q).",
+  "description": "Per-atom hyperbolic volumes Vol(K_atom) for the canonical atom-knot atlas (proton=𝓑₃, ²H=6_2, ³H=8_11, ³He=L6a4, ⁴He=4·8G magic-A). Input to Subgoal-1 per-knot mass formula via vol_density_per_block(vol_K, tr_M_K, q).",
   "data": {
     "Vol_p": "7.327724753417753",
     "knot_p": "B_3 (Borromean)",

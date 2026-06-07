@@ -1651,6 +1651,25 @@
         "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/quantum-observable-universes/q-harmonic-form.lean:13: invalid 'import' command, it must be used in the beginning of the file"
+      },
+      {
+        "field_hash": {
+          "md": "e0126dd49171",
+          "ts": "f567f33bacf8",
+          "lean": "4f4a3a46c460"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "cf383b911867",
+          "script_commit_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
+          "deps_hash": "4b9cd43e52e5"
+        },
+        "reviewed_at": "2026-06-05T14:22:44.851Z",
+        "reviewed_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
+        "notes": "stale: cached lean diagnostics have no lean_sha (legacy v1 cache); re-run content/pipeline/lean-compile-audit.ts to refresh"
       }
     ],
     "voice-author-notes-pollution": [
@@ -1947,51 +1966,7 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "e0126dd49171",
-          "ts": "f567f33bacf8",
-          "lean": "4f4a3a46c460"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "Defines 'particle' as q-harmonic form via q-Laplacian Δ_q over (C,A,τ); core QOU definition",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T01:44:17.785Z",
-        "reviewed_sha": "2c13f3b0113c65d1afac69a19fb0c581fe2c38f6",
-        "notes": "Belongs in quantum-observable-universes"
-      }
-    ],
-    "wall-side-statement": [
-      {
-        "field_hash": {
-          "md": "e0126dd49171",
-          "ts": "f567f33bacf8",
-          "lean": "4f4a3a46c460"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "Statement over Ω^k(A), ground ring ℤ[q,q⁻¹] (Lean); no Real./numeric q0/MeV in .md statement",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T01:44:17.830Z",
-        "reviewed_sha": "2c13f3b0113c65d1afac69a19fb0c581fe2c38f6",
-        "notes": "Generic-ring definition; archimedean specialisation deferred via ι:R_q→ℝ in Lean comment, not in statement"
-      }
     ]
   },
-  "updated_at": "2026-06-07T01:44:17.830Z"
+  "updated_at": "2026-06-05T14:22:44.851Z"
 }

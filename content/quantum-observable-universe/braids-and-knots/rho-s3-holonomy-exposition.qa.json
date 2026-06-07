@@ -1857,28 +1857,7 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "02727eb4078a",
-          "ts": "6fc4471d1a4a"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "Remark interprets def:braid-twist-flip; geometric exposition of rho as S_3 holonomy on chiral sheets, no new provable claim",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-06",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-06T19:45:43.945Z",
-        "reviewed_sha": "33aea18c611b54e4b52f9e26d131592446609a58",
-        "notes": "Interpretive remark properly linked; fits SU(2)/holonomy section"
-      }
     ]
   },
-  "updated_at": "2026-06-06T19:45:43.945Z"
+  "updated_at": "2026-06-03T22:40:47.501Z"
 }

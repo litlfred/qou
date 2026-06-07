@@ -1635,6 +1635,25 @@
         "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/information-theory/planck-time.lean:25: unknown tactic | content/quantum-observable-universe/information-theory/planck-time.lean:20: unsolved goals | content/quantum-observable-universe/information-theory/planck-time.lean:35: unknown tactic | content/quantum-observable-universe/information-theory/planck-time.lean:30: unsolved goals"
+      },
+      {
+        "field_hash": {
+          "md": "9da3676baaa0",
+          "ts": "c6bd7a4f634e",
+          "lean": "918bec1f0532"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "cf383b911867",
+          "script_commit_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
+          "deps_hash": "4b9cd43e52e5"
+        },
+        "reviewed_at": "2026-06-05T14:22:44.851Z",
+        "reviewed_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
+        "notes": "stale: cached lean diagnostics have no lean_sha (legacy v1 cache); re-run content/pipeline/lean-compile-audit.ts to refresh"
       }
     ],
     "voice-author-notes-pollution": [
@@ -1933,5 +1952,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-03T20:30:24.391Z"
+  "updated_at": "2026-06-05T14:22:44.851Z"
 }

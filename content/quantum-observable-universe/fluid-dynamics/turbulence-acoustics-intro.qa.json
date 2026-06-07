@@ -2077,28 +2077,7 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "27f5171fcbdd",
-          "ts": "85e9a6ed7271"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "Prose section intro for turbulence/acoustics: energy cascade, Kolmogorov spectrum, Kelvin waves, acoustic horizons",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T01:11:14.370Z",
-        "reviewed_sha": "8a6291768f844264dcf418ebfc42bf25445d880a",
-        "notes": "Section-intro prose; all forward-references are fluid-dynamics blocks. Belongs in chapter."
-      }
     ]
   },
-  "updated_at": "2026-06-07T01:11:14.370Z"
+  "updated_at": "2026-06-03T20:30:24.391Z"
 }

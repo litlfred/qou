@@ -1603,6 +1603,25 @@
         },
         "reviewed_at": "2026-05-27T08:55:11.920Z",
         "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48"
+      },
+      {
+        "field_hash": {
+          "md": "173ffeae5c62",
+          "ts": "13af48adbfa5",
+          "lean": "29f8e354a169"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "cf383b911867",
+          "script_commit_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
+          "deps_hash": "4b9cd43e52e5"
+        },
+        "reviewed_at": "2026-06-05T14:22:44.851Z",
+        "reviewed_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
+        "notes": "stale: cached lean diagnostics have no lean_sha (legacy v1 cache); re-run content/pipeline/lean-compile-audit.ts to refresh"
       }
     ],
     "voice-author-notes-pollution": [
@@ -1848,29 +1867,7 @@
         "reviewed_at": "2026-06-03T22:40:47.501Z",
         "reviewed_sha": "adcb03e136a9cea82a8536f577666f09b63ea5be"
       }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "173ffeae5c62",
-          "ts": "13af48adbfa5",
-          "lean": "29f8e354a169"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "In sec:surreal-survives-breaks; continues the depth-2->depth-3 Goncharov thread (depth-2-identification-bloch-suslin sibling) toward the B1 keystone",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T01:32:37.856Z",
-        "reviewed_sha": "94bdf2a5c1e39ace89a84611e3b7bd2f7ed04a8a",
-        "notes": "Conjecture proposing QOU Hecke-NF + Bring-S5 infra discharges Goncharov depth-3 at Q(zeta5); fits the keystone/period-discharge subsection, distinct from the depth-2 sibling"
-      }
     ]
   },
-  "updated_at": "2026-06-07T01:32:37.856Z"
+  "updated_at": "2026-06-05T14:22:44.851Z"
 }

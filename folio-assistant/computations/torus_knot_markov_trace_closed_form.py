@@ -196,7 +196,7 @@ def main() -> None:
         print(f"                          → h² coefficient is NON-ZERO ({higgs_c2:+.4f})")
         print("                            (different structure from Borromean)")
 
-    # CRITICAL: torus knots are NOT hyperbolic; Geom_full fails
+    # CRITICAL: torus knots are NOT hyperbolic; VolDensity fails
     print("\n" + "=" * 75)
     print("CRITICAL: torus knots have Vol = 0 (Seifert-fibered, not hyperbolic)")
     print("=" * 75)
@@ -205,7 +205,7 @@ def main() -> None:
     print("go through a DIFFERENT categorical chain — most likely Reshetikhin-")
     print("Turaev at root-of-unity q (see Q2: pentagon-rt-torus-knot-higgs-probe.py).")
     print("\nThis is a foundational separation:")
-    print("  - Hyperbolic knots/links (4_1 muon, 𝓑_3 baryons): Geom_full chain")
+    print("  - Hyperbolic knots/links (4_1 muon, 𝓑_3 baryons): VolDensity chain")
     print("  - Torus knots/links (H/W/Z/strong-force): RT-at-root-of-unity chain")
     print("\nThe Markov-trace closed forms computed here ARE the input data for")
     print("the RT chain — they're the (uncolored) Jones polynomial values that")

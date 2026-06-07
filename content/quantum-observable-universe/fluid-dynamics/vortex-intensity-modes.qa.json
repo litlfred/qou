@@ -1923,28 +1923,7 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "e68455990bb9",
-          "ts": "4ae4691d95c6"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "Remark on q-discreteness of vortex circulation; sits in sec:vortex-spectrum (Vortex spectrum and helicity)",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T00:39:33.715Z",
-        "reviewed_sha": "a6ebe076b3317ab442d3810d12a684aa6b83af46",
-        "notes": "interprets def:substrate-parameter; four classical-fluid bridges (Kelvin, superfluid, breakdown, stability) all vortex-spectrum topics. Correct section."
-      }
     ]
   },
-  "updated_at": "2026-06-07T00:39:33.715Z"
+  "updated_at": "2026-06-03T22:40:47.501Z"
 }

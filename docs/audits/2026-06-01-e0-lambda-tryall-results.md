@@ -88,7 +88,7 @@ is 0 by the pin.
 
 | # | Candidate | E₀^λ {(3),(2,1),(1³)} | e⁻ resid | n resid | Verdict |
 |---|-----------|------------------------|----------|---------|---------|
-| 1 | Archimedean per-block (`Geom_full·χ^λ`) | 2121, 3216, −1722 | +929× | −0.78 | **FAIL** |
+| 1 | Archimedean per-block (`VolDensity·χ^λ`) | 2121, 3216, −1722 | +929× | −0.78 | **FAIL** |
 | 2 | q-dimension `dim_q(λ)` | 10.67, 8.26, 1.0 | +862× | −0.37 | **FAIL** |
 | 2b | q-dimension² | 113.8, 68.3, 1.0 | +983× | −0.33 | **FAIL** |
 | 3 | ρ_w energy functional (`Σ a_T²`) | 2.46, 2.58, 1.62 | +617× | −0.36 | **FAIL** |
@@ -103,12 +103,12 @@ residual is ~+600× to +7000×.
 
 ### Candidate-specific findings
 
-- **1 — Archimedean.** `Geom_full(𝓑₃, q₀)` is a **single knot-level scalar**
-  (`Vol(𝓑₃)/ℏ_q² × linking_weight`), with `m(K) = m_e·Geom_full(K)`. It has
+- **1 — Archimedean.** `VolDensity(𝓑₃, q₀)` is a **single knot-level scalar**
+  (`Vol(𝓑₃)/ℏ_q² × linking_weight`), with `m(K) = m_e·VolDensity(K)`. It has
   **no per-block decomposition** — the only per-block object in `_li_2_q_util.py`
   is the *exploratory* spectral correction, which reads one block's character
-  χ^(2,1). So "Geom_full restricted to block λ" does not exist as a function of
-  λ; the charitable reading `w_λ = Geom_full·χ^λ` fails.
+  χ^(2,1). So "VolDensity restricted to block λ" does not exist as a function of
+  λ; the charitable reading `w_λ = VolDensity·χ^λ` fails.
 - **3 — ρ_w energy functional.** This was the subtle one. The plain crystal
   trace `Σ_w ρ_w = χ^λ` (proved #1592) carries no new degree of freedom. We
   built a genuinely **non-linear** per-vertex functional `Σ_{T∈SYT(λ)} Σ_i a_{T,i}²`

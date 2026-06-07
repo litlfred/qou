@@ -84,6 +84,13 @@ For each resolved axis, run §1 → §6 in order. The loop body in
 1. Read every `<block>.qa.json` (or watcher queue file) for the
    axis to compute the **open-fail list**: per-block label, path,
    criterion, severity, and a brief evidence quote.
+   - **Scored rater criteria (`proof-rater-*`, AlphaProof-Nexus adoption)**
+     have no binary fail; instead order by **ascending `score`** (lowest
+     quality first) and treat any block with `score.value < 0.66` as open.
+     After the routed improver (`proof-simplifier` / `proof-triage` /
+     `proposition-consolidation-audit`) runs, **re-rate** (re-dispatch the
+     rater agent) and confirm `score` rose before closing — the rate→improve
+     loop.
 2. Cluster the open list into **batches** with these constraints:
    - **≤ 49 files changed per batch** (Gemini's review-comment
      limit — at 50+ files Gemini truncates). The accounting

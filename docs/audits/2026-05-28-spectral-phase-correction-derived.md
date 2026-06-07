@@ -1,7 +1,7 @@
 # Audit: top-down spectral-phase correction for m_avg (−819 ppm, no fitting)
 
 > **Correction (2026-05-29).** An earlier version of this doc reported
-> "130 ppm vs m_p". That was an m_avg-vs-m_p conflation: `geom_full × m_e`
+> "130 ppm vs m_p". That was an m_avg-vs-m_p conflation: `vol_density × m_e`
 > is the **average nucleon mass** m_avg, which must be compared to CODATA
 > m_avg = 938.92 MeV, giving **−819 ppm** — not 130 ppm. The value 938.15
 > lands ~130 ppm from the *proton* (938.27) only by coincidence. The
@@ -14,9 +14,9 @@
 > `True := by trivial` Lean stub, the result is −819 ppm (not precision),
 > and a sinh(θ) refinement (which closes to ~+150 ppm) is an open lead.
 > Per the production-vs-exploratory discipline ("only wire proved"), the
-> production `geom_full_borromean` uses **only** the proved Family-A
+> production `vol_density_borromean` uses **only** the proved Family-A
 > linking weight (→ m_avg ≈ 966 MeV, +2.89 %, an open R&D gap). The
-> spectral correction lives in `geom_full_borromean_spectral` /
+> spectral correction lives in `vol_density_borromean_spectral` /
 > `spectral_correction_borromean`, both explicitly labelled exploratory.
 
 **Date:** 2026-05-28
@@ -54,7 +54,7 @@ math-exact; either way the more accurate proton value. This spectral
 route is a coarser independent derivation of the average mass.)
 
 Verified numerically at 50 dps (`_li_2_q_util.spectral_correction_borromean`,
-`geom_full_borromean_spectral`). The `(q+1)²√(3+h²)/8` form in commit
+`vol_density_borromean_spectral`). The `(q+1)²√(3+h²)/8` form in commit
 `b7fd0cfd0` is the Taylor approximation of the exact arccos.
 
 ## Why it's specific to links (muon asymmetry — validation)
@@ -117,7 +117,7 @@ was buggy.
 ## Production wiring
 
 Added `spectral_correction_borromean(q)` and
-`geom_full_borromean_spectral(q)` to `_li_2_q_util.py`. Kept the
-leading-order `geom_full_borromean` (many consumers) — migrate
+`vol_density_borromean_spectral(q)` to `_li_2_q_util.py`. Kept the
+leading-order `vol_density_borromean` (many consumers) — migrate
 deliberately. Dashboard rewiring deferred (it changes claimed precision
 and is coupled to the recalibration decision above).

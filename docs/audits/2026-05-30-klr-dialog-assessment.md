@@ -32,9 +32,9 @@
 
 1. **Mis-frames the QOU mass formula.** Dialog repeatedly writes `m = m_0 · P_K(q_0)` with `m_0` as Planck mass or Higgs VEV. The canonical QOU formula since 2026-05-23 (commit `ffdd84409`) is
 
-       m(K) = m_e · Geom_full(K, q_0)
+       m(K) = m_e · VolDensity(K, q_0)
 
-   — a single per-knot evaluation with `m_e` as CAL-1 anchor. The factor the dialog calls `m_0` is exactly the **purged** `λ_scale`. See [`docs/lambda-scale-absorbed-into-geom-full.md`](../lambda-scale-absorbed-into-geom-full.md).
+   — a single per-knot evaluation with `m_e` as CAL-1 anchor. The factor the dialog calls `m_0` is exactly the **purged** `λ_scale`. See [`docs/lambda-scale-absorbed-into-vol-density.md`](../lambda-scale-absorbed-into-vol-density.md).
 
 2. **Trefoil is not hyperbolic.** The dialog's "uniqueness of ω via dilog transcendence at 3rd/5th roots of unity" pitch evaluates Bloch-Wigner D(z) on the knot complement. The trefoil complement is Seifert-fibered, so D(z) = 0 there. The argument applies to the figure-eight (Z[ω], ω primitive 6th root), not to the electron knot ansatz. The dialog acknowledges this then proceeds anyway.
 
@@ -44,7 +44,7 @@
 
    The dialog's Option E re-pitch does not address this failure mode.
 
-4. **"GS → crystal traversal speedup" is unsupported.** Canonical-basis / crystal-graph construction is itself expensive (Soergel bimodules, W-graphs, cell decomposition). The dialog supplies no benchmark, no algorithm, no scaling estimate. The current `Geom_full` + LP/SDP pipeline (`lp_dual_solver.py`, `solve_psd_operator_selection_sdp`) already factors the expensive bits.
+4. **"GS → crystal traversal speedup" is unsupported.** Canonical-basis / crystal-graph construction is itself expensive (Soergel bimodules, W-graphs, cell decomposition). The dialog supplies no benchmark, no algorithm, no scaling estimate. The current `VolDensity` + LP/SDP pipeline (`lp_dual_solver.py`, `solve_psd_operator_selection_sdp`) already factors the expensive bits.
 
 5. **Cemetery group as Serre subcategory** is a rebranding, not new content. The current cemetery-group narrative already characterizes the off-diagonal terms that annihilate under the trace; calling that "a localizing subcategory" adds no new prediction, no new compute, no new constraint.
 
@@ -129,7 +129,7 @@ The single near-miss (Candidate 2, `hecke-normal-form.md`) already cross-referen
 ## Cross-references
 
 - [`docs/audits/2026-05-18-delta-lambda-gating-context.md`](2026-05-18-delta-lambda-gating-context.md) — Δ_λ gate, six ansätze, 2026-05-29 retraction.
-- [`docs/lambda-scale-absorbed-into-geom-full.md`](../lambda-scale-absorbed-into-geom-full.md) — why `m = m_e · Geom_full(K, q_0)` is single-eval; no separate `m_0`.
+- [`docs/lambda-scale-absorbed-into-vol-density.md`](../lambda-scale-absorbed-into-vol-density.md) — why `m = m_e · VolDensity(K, q_0)` is single-eval; no separate `m_0`.
 - [`docs/precision-goals.md`](../precision-goals.md) — L1 / L2 precision targets the Δ_λ closure would help reach.
 - [`docs/canonical-derivation-cheat-sheet.md`](../canonical-derivation-cheat-sheet.md) — substrate → archimedean pipeline; KLR layer would sit between Hecke and Wedderburn.
 - CLAUDE.md §7b — Symmetric-crystal techniques (KLR / Kashiwara) authoring guidance.

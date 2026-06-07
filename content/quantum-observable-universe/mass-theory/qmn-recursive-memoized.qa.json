@@ -2235,6 +2235,24 @@
         "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/mass-application/qmn-recursive-memoized.lean:75: unsolved goals | content/quantum-observable-universe/mass-application/qmn-recursive-memoized.lean:102: unsolved goals | content/quantum-observable-universe/mass-application/qmn-recursive-memoized.lean:170: unsolved goals"
+      },
+      {
+        "field_hash": {
+          "md": "fd368a5a0f9b",
+          "ts": "64d8bbab9849",
+          "lean": "e42575e87bf2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "cf383b911867",
+          "script_commit_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
+          "deps_hash": "4b9cd43e52e5"
+        },
+        "reviewed_at": "2026-06-05T14:22:44.851Z",
+        "reviewed_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb"
       }
     ],
     "voice-author-notes-pollution": [
@@ -2584,95 +2602,7 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
-    ],
-    "voice-statement-no-interpretation": [
-      {
-        "field_hash": {
-          "md": "fd368a5a0f9b",
-          "ts": "64d8bbab9849",
-          "lean": "e42575e87bf2"
-        },
-        "result": "warn",
-        "severity": "minor",
-        "evidence": "## Open lists implementation/profiling tasks ('estimated 1-day work', 'this PR / follow-up'); ## Why memoisation wins is motivation prose in-block",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T01:16:22.875Z",
-        "reviewed_sha": "03b7f7dcf5ce59ea388daad8c3bb893d7e7a33e0",
-        "notes": "Borderline: compute-rationale + work-plan prose follows the complexity statement; no interprets: remark holds it. Warn not fail."
-      }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "fd368a5a0f9b",
-          "ts": "64d8bbab9849",
-          "lean": "e42575e87bf2"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "Recursive-memoised q-MN character compute fits mass-theory chapter's character/Hoefsmit/Markov-trace machinery scope (sec:vertex-factorisation-markov, Hoefsmit-convergence sections)",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T01:16:22.922Z",
-        "reviewed_sha": "03b7f7dcf5ce59ea388daad8c3bb893d7e7a33e0",
-        "notes": "Compute-infra prop for atom-knot character evaluation; no misfiling, no sibling redundancy."
-      }
-    ],
-    "wall-side-statement": [
-      {
-        "field_hash": {
-          "md": "fd368a5a0f9b",
-          "ts": "64d8bbab9849",
-          "lean": "e42575e87bf2"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "Statement is generic-q combinatorial complexity (border-strip recursion, O(p(n)^2)); q_0 appears only as the level-evaluation point H_18/H_21, no numeric q approx, no MeV, no Real.*",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T01:16:22.970Z",
-        "reviewed_sha": "03b7f7dcf5ce59ea388daad8c3bb893d7e7a33e0",
-        "notes": "Generic-ring character recursion; no archimedean construct in statement."
-      }
-    ],
-    "wall-side-proof": [
-      {
-        "field_hash": {
-          "md": "fd368a5a0f9b",
-          "ts": "64d8bbab9849",
-          "lean": "e42575e87bf2"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "No narrative Proof. block; justification is a combinatorial/complexity argument (recursion depth, cache size) — no linarith/IVT/continuity/Real.* machinery",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T01:16:23.016Z",
-        "reviewed_sha": "03b7f7dcf5ce59ea388daad8c3bb893d7e7a33e0",
-        "notes": "Proof-side method matches generic-ring statement."
-      }
     ]
   },
-  "updated_at": "2026-06-07T01:16:23.016Z"
+  "updated_at": "2026-06-05T14:22:44.851Z"
 }

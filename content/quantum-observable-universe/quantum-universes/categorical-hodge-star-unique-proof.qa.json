@@ -1737,28 +1737,7 @@
         "reviewed_at": "2026-06-02T19:35:55.253Z",
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
       }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "7d8785a48a0b",
-          "ts": "12d14603be2b"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "Proof of prop:categorical-hodge-star-unique via wedge-pairing non-degeneracy; same section as its parent proposition",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T00:41:15.256Z",
-        "reviewed_sha": "bf6d2041d36b0c5aa46384c6d224a4d91cb82eef",
-        "notes": "proof kind backing the uniqueness prop; correctly placed"
-      }
     ]
   },
-  "updated_at": "2026-06-07T00:41:15.256Z"
+  "updated_at": "2026-06-03T13:06:09.584Z"
 }

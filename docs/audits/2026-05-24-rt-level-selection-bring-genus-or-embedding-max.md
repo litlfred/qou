@@ -106,7 +106,7 @@ specializations.
 
 This would unify the chain split (§1 of the SM-categorical-map audit):
 the **same** substrate $q_0$ gives:
-- Real specialization → hyperbolic Geom_full chain (Vol-anchored)
+- Real specialization → hyperbolic VolDensity chain (Vol-anchored)
 - Root-of-unity specialization → RT chain (level-anchored)
 
 The two-chain framework would then be one chain with two views.

@@ -31,7 +31,7 @@ for non-hyperbolic (torus) knots, replacing the hyperbolic volume
 used for baryons.
 
 In the meson mass formula, each quark-leg contributes one factor of
-V_S to the geometric part of Geom_full. For a meson with n_q = 2
+V_S to the geometric part of VolDensity. For a meson with n_q = 2
 quark legs:
 
     Geom_meson ∝ V_S(quark)^{n_q} = V_S^2

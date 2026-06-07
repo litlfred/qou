@@ -1923,28 +1923,7 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "91a52e20324e",
-          "ts": "8bd093714b7b"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "remark connecting Reeb-flow Julia set Hausdorff dim to photon-envelope information density; section line 46",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-06",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-06T20:17:29.954Z",
-        "reviewed_sha": "fd64fd45e53396ec1d5e0aee2a216aa009feedaa",
-        "notes": "Frames d_H(q) as information density of photon envelope; fits Information Theory chapter."
-      }
     ]
   },
-  "updated_at": "2026-06-06T20:17:29.954Z"
+  "updated_at": "2026-06-03T22:40:47.501Z"
 }

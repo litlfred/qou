@@ -157,7 +157,39 @@ that the build tools auto-detect a clone at `../mathlib4`, but in
 practice the auto-detection requires manual git redirect setup when
 elan / cache hosts are network-restricted.
 
-**Workaround (battle-tested on PR #1761 + PR #1772):**
+> **⚡ FIRST RESORT — restore prebuilt oleans (≈2 min). Do NOT build from
+> source until you have tried this.** A full build is already preserved on
+> the orphan branch `lake-cache/qou-v4-24-0` (lean `v4.24.0`); restoring it
+> skips the 30–60 min from-source Mathlib build entirely. **This is the
+> single most common wasted hour for agents in this repo** (the from-source
+> sections below are a *fallback*, not the default). RESTORE before anything
+> else:
+>
+> ```bash
+> # Derive the cache branch from the pinned toolchain — do NOT hard-code the slug
+> # (works from any subdir; CRLF-safe):
+> ROOT=$(git rev-parse --show-toplevel); TGZ=$(mktemp)
+> SLUG=$(cut -d: -f2 "$ROOT/lean-toolchain" | tr -d '\r' | tr . -)   # v4.24.0 -> v4-24-0
+> BR="lake-cache/qou-$SLUG"
+> git fetch --depth=1 origin "$BR" \
+>   && git ls-tree --name-only FETCH_HEAD | grep '^lake-oleans\.tgz\.part' | sort \
+>      | while read -r p; do git show "FETCH_HEAD:$p"; done > "$TGZ" \
+>   && tar xzf "$TGZ" -C "$ROOT" \
+>   && echo "restored .lake oleans from $BR — NO rebuild needed"
+> ```
+>
+> The `SLUG` line derives the branch from the pinned toolchain so it never goes
+> stale (`leanprover/lean4:v4.24.0` → `lake-cache/qou-v4-24-0`); the tarball
+> goes to a `mktemp` file and extracts with `-C "$ROOT"` (repo root), not the
+> current directory. Full restore/seed details (incl. how to **SEED** after a
+> fresh build) are in the **🗄️ PRESERVE THE BUILD** section further down this file.
+> Only if the fetch fails (branch unseeded) or the oleans are a
+> toolchain/`lakefile.toml` **miss** do you fall back to the source-clone +
+> from-source build below — and **SEED the cache branch afterwards** so the
+> next agent restores in 2 min instead of rebuilding.
+
+**Fallback workaround — source clone + from-source build (only when the
+cache-branch restore above misses; battle-tested on PR #1761 + PR #1772):**
 
 ```bash
 # Step 1: Clone mathlib source locally (shallow OK, ~144 MB).

@@ -1668,6 +1668,25 @@
         "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/stochastic-mechanics/classical-limit-functor.lean:13: invalid 'import' command, it must be used in the beginning of the file"
+      },
+      {
+        "field_hash": {
+          "md": "80e75df8f1ee",
+          "ts": "6fbfbd3b9f26",
+          "lean": "4c8ffab63cdc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "cf383b911867",
+          "script_commit_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
+          "deps_hash": "4b9cd43e52e5"
+        },
+        "reviewed_at": "2026-06-05T14:22:44.851Z",
+        "reviewed_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
+        "notes": "stale: cached lean diagnostics have no lean_sha (legacy v1 cache); re-run content/pipeline/lean-compile-audit.ts to refresh"
       }
     ],
     "voice-author-notes-pollution": [
@@ -1981,51 +2000,7 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "80e75df8f1ee",
-          "ts": "6fbfbd3b9f26",
-          "lean": "4c8ffab63cdc"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "Defines q->1 classical-limit functor; placed in sec:classical-limit-construction of stochastic-mechanics ch",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T02:14:32.638Z",
-        "reviewed_sha": "4cfea31de40db427e35ee50558a47d5677bc8a49",
-        "notes": "Definition of the archimedean realization L:C_q->C_1; squarely in the Classical limit construction section."
-      }
-    ],
-    "wall-side-statement": [
-      {
-        "field_hash": {
-          "md": "80e75df8f1ee",
-          "ts": "6fbfbd3b9f26",
-          "lean": "4c8ffab63cdc"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "Uses q->1, hbar_q, Jackson deriv, R-codomain only as the explicitly-labeled archimedean place rho_infty; no q0~1.11 / MeV hardcode",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T02:14:55.685Z",
-        "reviewed_sha": "4cfea31de40db427e35ee50558a47d5677bc8a49",
-        "notes": "Generic substrate definition; R appears only as codomain of the archimedean realization, self-flagged as archimedean component. No silent archimedean leak."
-      }
     ]
   },
-  "updated_at": "2026-06-07T02:14:55.685Z"
+  "updated_at": "2026-06-05T14:22:44.851Z"
 }

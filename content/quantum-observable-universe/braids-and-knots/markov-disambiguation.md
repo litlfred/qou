@@ -9,7 +9,7 @@ Cat$\to$Alg$\to$Geom$\to$Arch$\to$Phys arc.
    = z \cdot \mathrm{tr}_M^{(n-1)}(x)$, and $\mathrm{tr}_M(1)=1$.
    This is the **algebraic** object that feeds the mass formula:
    $\mathfrak{m}(\varrho) = m_e \cdot
-   |\mathrm{tr}_M(\rho(\beta))| \cdot \mathrm{Geom}_{\mathrm{full}}(K,q_0)$.
+   |\mathrm{tr}_M(\rho(\beta))| \cdot \mathrm{VolDensity}(K,q_0)$.
    Symbol: $\mathrm{tr}_M$.
 
 2. **Markov chain** (stochastic dynamics).  The random walk on
@@ -31,7 +31,7 @@ Cat$\to$Alg$\to$Geom$\to$Arch$\to$Phys arc.
    the **topological** input that makes the Jones polynomial a
    knot invariant.
 
-These three uses are cleanly separated: (1) is an algebraic
+These three uses are separated: (1) is an algebraic
 functional, (2) is a probability measure, (3) is an equivalence
 relation.  Context always disambiguates, but when precision matters
 we write $\mathrm{tr}_M$ for (1), "Markov chain" for (2), and

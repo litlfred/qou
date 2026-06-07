@@ -1857,28 +1857,7 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "9202f0afa7fb",
-          "ts": "6ceb179dccc2"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "In sec:millennium-bounds-via-surreals 'P vs NP' block list; expresses conj:p-vs-np-qou as a surreal inequality",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T01:31:46.808Z",
-        "reviewed_sha": "c9d1b1021308baa23c506dae4e7fe38a394fd281",
-        "notes": "Remark interpreting the Reeb-period complexity argument as a literal surreal bound; matches the P-vs-NP subgroup of the millennium-bounds section"
-      }
     ]
   },
-  "updated_at": "2026-06-07T01:31:46.808Z"
+  "updated_at": "2026-06-03T22:40:47.501Z"
 }

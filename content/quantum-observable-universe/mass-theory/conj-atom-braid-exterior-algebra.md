@@ -40,7 +40,7 @@ Boolean grading" — is the load-bearing categorical claim.
 
 The Lean sibling file factors Step 4 into a dedicated
 [`AtomBraidStep4Hypothesis (Z N : ℕ)`](conj-atom-braid-exterior-algebra.lean)
-§3b-cond class with a `Prop` placeholder field
+§3b-cond class with a `Prop` hypothesis field
 `avg_crossing_preserves_grade`, plus a bridging theorem
 `step4_implies_exterior_algebra_structure` that derives the full
 `AtomBraidExteriorAlgebraStructure` instance once Step 4 is

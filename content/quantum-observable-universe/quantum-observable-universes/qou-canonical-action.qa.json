@@ -2332,26 +2332,6 @@
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
         "notes": "Label 'prop:qou-canonical-action' → expected 'qou_canonical_action'; Lean declares: QOUCanonicalAction, qou_canonical_action_dirac_sq, qou_canonical_action_unique_up_to_scalar. Structural match via content."
-      },
-      {
-        "field_hash": {
-          "md": "700e54f6a474",
-          "ts": "ab87d5e81e28",
-          "lean": "b6c523c7317e"
-        },
-        "result": "warn",
-        "severity": "major",
-        "evidence": "Lean qou:QOU.qou_canonical_action present, but theorems qou_canonical_action_dirac_sq and the structure fields are reflexivity placeholders (e.g. action.gravity = action.gravity, proved by rfl)",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T00:34:17.059Z",
-        "reviewed_sha": "056bd2842ba48927961a1829c760100eeea23eec",
-        "notes": "Narrative asserts a real 3-term decomposition + uniqueness-up-to-scalar; Lean only records the structure with trivial x=x proofs, so it does not verify the claimed identities."
       }
     ],
     "proof-lean-compiles": [
@@ -2374,6 +2354,25 @@
         "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/quantum-observable-universes/qou-canonical-action.lean:19: invalid 'import' command, it must be used in the beginning of the file"
+      },
+      {
+        "field_hash": {
+          "md": "700e54f6a474",
+          "ts": "ab87d5e81e28",
+          "lean": "b6c523c7317e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "cf383b911867",
+          "script_commit_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
+          "deps_hash": "4b9cd43e52e5"
+        },
+        "reviewed_at": "2026-06-05T14:22:44.851Z",
+        "reviewed_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
+        "notes": "stale: cached lean diagnostics have no lean_sha (legacy v1 cache); re-run content/pipeline/lean-compile-audit.ts to refresh"
       }
     ],
     "voice-author-notes-pollution": [
@@ -2723,95 +2722,7 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "700e54f6a474",
-          "ts": "ab87d5e81e28",
-          "lean": "b6c523c7317e"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "Proposition stating the canonical categorical action S_q=tr(L_q); placed in section 'Categorical action'",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T00:33:46.348Z",
-        "reviewed_sha": "056bd2842ba48927961a1829c760100eeea23eec",
-        "notes": "Defines the gravity+gauge+matter action decomposition; correctly sited."
-      }
-    ],
-    "wall-side-statement": [
-      {
-        "field_hash": {
-          "md": "700e54f6a474",
-          "ts": "ab87d5e81e28",
-          "lean": "b6c523c7317e"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "Statement is generic categorical (tr, F_nabla, R-int, scalar lambda in R^x); no numeric q0/MeV literal or Real.*/ordering in .md or .lean",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T00:33:46.414Z",
-        "reviewed_sha": "056bd2842ba48927961a1829c760100eeea23eec",
-        "notes": "No archimedean specialization in the statement; §7c banner not required."
-      }
-    ],
-    "wall-side-proof": [
-      {
-        "field_hash": {
-          "md": "700e54f6a474",
-          "ts": "ab87d5e81e28",
-          "lean": "b6c523c7317e"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "Uniqueness-up-to-scalar argument is categorical (ev/coev duality data, Frobenius-Hopf axioms, H^2 obstruction); no numeric q0/MeV or Real.*/ordering",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T00:33:46.461Z",
-        "reviewed_sha": "056bd2842ba48927961a1829c760100eeea23eec",
-        "notes": "Proof stays generic-ring; no archimedean leak, no §7c banner needed."
-      }
-    ],
-    "voice-statement-no-interpretation": [
-      {
-        "field_hash": {
-          "md": "700e54f6a474",
-          "ts": "ab87d5e81e28",
-          "lean": "b6c523c7317e"
-        },
-        "result": "warn",
-        "severity": "major",
-        "evidence": "Proposition prose weaves physical interpretation into the statement: 'gravity'/'gauge'/'matter' labels, 'categorical analog of the choice of physical units', G/g^2/hbar 'physicist translation', 'no endomorphism is invisible to integration'",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T00:34:16.996Z",
-        "reviewed_sha": "056bd2842ba48927961a1829c760100eeea23eec",
-        "notes": "Statement block editorializes physical meaning rather than stating the math purely; interpretive prose better suited to an interprets: remark."
-      }
     ]
   },
-  "updated_at": "2026-06-07T00:34:17.059Z"
+  "updated_at": "2026-06-05T14:22:44.851Z"
 }

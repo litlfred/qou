@@ -2232,6 +2232,25 @@
         },
         "reviewed_at": "2026-05-27T08:55:11.920Z",
         "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48"
+      },
+      {
+        "field_hash": {
+          "md": "bdd1161a5b0d",
+          "ts": "a9a1673e816c",
+          "lean": "94dbf355636c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "cf383b911867",
+          "script_commit_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
+          "deps_hash": "4b9cd43e52e5"
+        },
+        "reviewed_at": "2026-06-05T14:22:44.851Z",
+        "reviewed_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
+        "notes": "stale: cached lean diagnostics have no lean_sha (legacy v1 cache); re-run content/pipeline/lean-compile-audit.ts to refresh"
       }
     ],
     "voice-author-notes-pollution": [
@@ -2566,95 +2585,7 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
-    ],
-    "voice-statement-no-interpretation": [
-      {
-        "field_hash": {
-          "md": "bdd1161a5b0d",
-          "ts": "a9a1673e816c",
-          "lean": "94dbf355636c"
-        },
-        "result": "warn",
-        "severity": "minor",
-        "evidence": "Statement block carries a > **Summary.** banner plus physical-interpretation prose ('annihilation', 'Electron-electron'/'Generation mixing' coupling table, 'What remains' meta-commentary)",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T00:41:23.532Z",
-        "reviewed_sha": "3f9cd380177b82a2c3b0d6b7f0050b0228ab06b1",
-        "notes": "Substantial derivation+interpretation woven into a proposition; the physical-channel reading would be cleaner in a linked interprets: remark. Minor voice leak, not a hard fail."
-      }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "bdd1161a5b0d",
-          "ts": "a9a1673e816c",
-          "lean": "94dbf355636c"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "Self-similar Leray blowup profile with SU_q(2) truncation; sits in sec:ns-approaches (Approaches and open problems)",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T00:41:23.578Z",
-        "reviewed_sha": "3f9cd380177b82a2c3b0d6b7f0050b0228ab06b1",
-        "notes": "Constructive-counterexample approach to the NS singularity question; on-topic for the approaches section."
-      }
-    ],
-    "wall-side-statement": [
-      {
-        "field_hash": {
-          "md": "bdd1161a5b0d",
-          "ts": "a9a1673e816c",
-          "lean": "94dbf355636c"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "Numeric q~1.110 and viscosity nu appear, but fluid-dynamics is an archimedean (NS) chapter; the physical-q evaluation is native",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T00:41:23.625Z",
-        "reviewed_sha": "3f9cd380177b82a2c3b0d6b7f0050b0228ab06b1",
-        "notes": "q~1.110 / k_max~4 are legitimate physical evaluations in an archimedean chapter, not a categorical-chapter leak."
-      }
-    ],
-    "wall-side-proof": [
-      {
-        "field_hash": {
-          "md": "bdd1161a5b0d",
-          "ts": "a9a1673e816c",
-          "lean": "94dbf355636c"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "Derivation uses Leray rescaling / elliptic-PDE / numeric q~1.110 — archimedean machinery matching the archimedean statement",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T00:41:23.671Z",
-        "reviewed_sha": "3f9cd380177b82a2c3b0d6b7f0050b0228ab06b1",
-        "notes": "Method (real PDE analysis, shooting) matches the chapter's archimedean side of the wall."
-      }
     ]
   },
-  "updated_at": "2026-06-07T00:41:23.671Z"
+  "updated_at": "2026-06-05T14:22:44.851Z"
 }

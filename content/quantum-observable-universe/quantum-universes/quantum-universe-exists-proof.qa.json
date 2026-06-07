@@ -1737,28 +1737,7 @@
         "reviewed_at": "2026-06-02T19:35:55.253Z",
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
       }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "fc4cd96e7807",
-          "ts": "767a54150e5a"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "Proof of prop:quantum-universe-exists, placed in sec:quantum-universe directly after the proposition",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T00:50:06.886Z",
-        "reviewed_sha": "5cf11e87bd2255a124af2e4e48da03c1f27c407a",
-        "notes": "Existence witness (R-Mod + Rep(SU_q(2))); kind=proof matches content; correctly filed"
-      }
     ]
   },
-  "updated_at": "2026-06-07T00:50:06.886Z"
+  "updated_at": "2026-06-03T13:06:09.584Z"
 }

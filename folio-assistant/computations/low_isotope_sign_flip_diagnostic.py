@@ -5,7 +5,7 @@ channel counts?
 ## Question
 
 PR #1063 frames the +2.89 % m_p / m_n residual as a *single* refinement
-gap inside `Geom_full(𝓑₃)`. That hypothesis predicts every isotope
+gap inside `VolDensity(𝓑₃)`. That hypothesis predicts every isotope
 overshoots by the same fractional amount. The low-isotope witness
 table shows otherwise:
 
@@ -18,7 +18,7 @@ table shows otherwise:
 |  ³He | 2 | 1 | 3 |  -2.97% | 1 pp, 1 pn        |
 |  ⁴He | 2 | 2 | 4 |  +5.87% | 1 pp, 1 pn, 1 nn  |
 
-Sign flips → the residual is NOT a uniform Geom_full scale gap. This
+Sign flips → the residual is NOT a uniform VolDensity scale gap. This
 script quantifies the channel-count vs error relationship and emits a
 witness JSON for downstream audits + the coordination comment on PR
 #1063.
@@ -38,7 +38,7 @@ For each low-isotope row in `low-isotope-mass-table.witness.json`:
 
 If `err_pct` ≈ α + β · n_inter or ≈ α + β · signed_h_weight with
 high r², the per-isotope inter-nucleon channel assignment is the
-load-bearing miscalibration, NOT the single-knot Geom_full(𝓑₃)
+load-bearing miscalibration, NOT the single-knot VolDensity(𝓑₃)
 refinement. That would falsify PR #1063's framing for the
 low-isotope cluster and redirect R&D toward the categorical
 backing of the pp/pn/nn channel assignment rule (see
@@ -173,7 +173,7 @@ def main() -> int:
         verdict = (
             "STRONG correlation between err_pct and inter-nucleon channel "
             "counts/weights — the per-isotope error is dominated by the "
-            "channel-assignment layer, NOT by a single-knot Geom_full(𝓑₃) "
+            "channel-assignment layer, NOT by a single-knot VolDensity(𝓑₃) "
             "refinement.  This FALSIFIES the PR #1063 framing for the "
             "low-isotope cluster.  R&D should redirect to the categorical "
             "backing of the pp/pn/nn channel assignment (no `prop:` block "
@@ -182,7 +182,7 @@ def main() -> int:
     elif r2_n > 0.5 or r2_w > 0.5:
         verdict = (
             "MODERATE correlation between err_pct and inter-nucleon channel "
-            "counts/weights.  Single-knot Geom_full(𝓑₃) refinement alone "
+            "counts/weights.  Single-knot VolDensity(𝓑₃) refinement alone "
             "(PR #1063) cannot account for the sign-flips; partial "
             "channel-assignment effects are at play.  Both refinements "
             "needed."
@@ -209,7 +209,7 @@ def main() -> int:
         "Per-isotope diagnostic correlating B_E (or mass) error against "
         "inter-nucleon channel counts (pp / pn / nn) and the signed "
         "h-weight sum.  Tests whether the +2.89 % residual is uniform "
-        "(PR #1063 single-knot Geom_full refinement framing) or whether "
+        "(PR #1063 single-knot VolDensity refinement framing) or whether "
         "channel-assignment effects drive sign-flips across the "
         "low-isotope sequence.  KLR-positivity (observables ≥ 0) is "
         "checked separately; sign-flips in PREDICTION error are not a "
@@ -259,7 +259,7 @@ def main() -> int:
         "observed prediction error against structural channel counts to "
         "surface miscalibration patterns.  It does NOT introduce any new "
         "calibration or fit.  A high R² indicates WHERE the miscalibration "
-        "lives (channel weights vs Geom_full refinement); the FIX must "
+        "lives (channel weights vs VolDensity refinement); the FIX must "
         "still come from a categorical derivation, not from this regression."
     )
     w.add_assertion(

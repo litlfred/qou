@@ -102,7 +102,7 @@ Total ≈ 100–200 candidates per n — manageable in one PR.
   closure claim.
 - **ℏ_q from `(q − 1)/q`**, never hard-coded.
 - **No production wiring** — this script is diagnostic-only.
-- **No λ_scale re-framing** (absorbed into Geom_full 2026-05-23).
+- **No λ_scale re-framing** (absorbed into VolDensity 2026-05-23).
 - **No Δ_λ closure claim** without the 4-grep checklist + the gating
   audit.
 - **4-grep checklist** before declaring "open": done at verdict time.

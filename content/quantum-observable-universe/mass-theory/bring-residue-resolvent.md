@@ -1,4 +1,4 @@
-**Proposition (Bring residue → canonical resolvent form).**
+**Proposition (Bring residue $\to$ canonical resolvent form).**
 *The substrate evaluation of the residue / Schwarz integral on
 Bring's surface around the simple pole of order $n$ of $\sigma$
 on the torus knot $T(p, k)$ with $\alpha_{\text{shift}}(p, k) = n$
@@ -10,10 +10,10 @@ universal chain's specialisations.*
 ## The shared smaller-scope open math, now scaffolded
 
 The α_shift universal derivation chain (audit doc
-[2026-05-30](../../../docs/audits/2026-05-30-alpha-shift-universal-derivation-chain.md))
+[α_shift universal derivation chain](../../../docs/audits/2026-05-30-alpha-shift-universal-derivation-chain.md))
 identified the pole-order origin of the q-integer indices in several
-"empirical" fits.  What remained shared across PRs #1444 (α_EM),
-the merged #1445 (p-n averaging), and #1455 (meson m_K/m_π) was
+"empirical" fits.  What remained shared across the α_EM, p-n averaging,
+and meson m_K/m_π treatments was
 the residue/resolvent step: deriving the closed form
 $F_n(q) = 1 / (1 - h_q \cdot q^n)$ from the contour-integral
 evaluation on Bring's surface.
@@ -25,17 +25,23 @@ downstream.
 ## Lean structure (§3b-cond)
 
 - `class BringResidueAtOrder {R} [Field R] (n : ℕ) (q : R)` — the
-  contour-integral / Schwarz-integral axiomatisation.  The class
-  field `equals_resolvent` asserts the residue evaluation equals
-  `canonicalResolvent n q := 1 / (1 - h_q · q^n)`.
-- `theorem bring_residue_gives_resolvent` — sorry-free, immediate
-  from the class field.
+  contour-integral / Schwarz-integral axiomatisation.  Its sole field
+  `pole_nonzero : 1 - h_q · q^n ≠ 0` records the **pole
+  non-vanishing** — the substantive output any concrete contour route
+  must establish.  (Strengthened 2026-05-30 from an earlier
+  literal-`rfl` `equals_resolvent` field — the trivially-provable
+  loophole #1460 closed for `BringZeroModeBlochClass` — so the class
+  now carries genuine content.)
+- `theorem bring_residue_equation` — sorry-free: given the class, the
+  canonical resolvent $F_n(q) = (1 - h_q \cdot q^n)^{-1}$ satisfies the
+  **resolvent equation** $(1 - h_q \cdot q^n) \cdot F_n(q) = 1$ (proof:
+  `mul_inv_cancel₀ h.pole_nonzero`).
 - Three specialisations:
   - `bring_residue_at_T_3_5` — pole order 10, used by p-n averaging
     (merged #1445);
   - `bring_residue_at_T_2_9` — pole order 9, used by 1/α_EM (#1444);
   - `bring_residue_meson_pair` — pole orders 3 and 4, used by
-    m_K²/m_π² (#1455).
+    $m_K^2/m_\pi^2$ (#1455).
 - `bring_residue_subsingleton` — Subsingleton companion.
 
 ## Closing the class instance

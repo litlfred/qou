@@ -41,7 +41,7 @@ The h² coefficient **diverges** with n rather than stabilising. This is a **smo
 2. **Mode counting** in `ℝ² × [0, d]` (`k_z = nπ/d`, `k_⊥` continuous) — purely combinatorial / geometric, NOT q-deformed.
 3. **`ζ_R`-function regularization** of the divergent mode sum — standard analytic continuation, NOT q-deformed (the analytic continuation principle is q-independent).
 
-The substrate `q` enters QOU through the Hecke algebra structure used for **masses** (`m_p = 12 m_e` via Borromean Geom_full), **decay widths** (`Q_β` via Wedderburn pairings), and **per-particle internal structure**. But the Casimir effect doesn't use any of these — it's a pure-EM vacuum-energy phenomenon set by geometry.
+The substrate `q` enters QOU through the Hecke algebra structure used for **masses** (`m_p = 12 m_e` via Borromean VolDensity), **decay widths** (`Q_β` via Wedderburn pairings), and **per-particle internal structure**. But the Casimir effect doesn't use any of these — it's a pure-EM vacuum-energy phenomenon set by geometry.
 
 Therefore:
 
@@ -101,7 +101,7 @@ The 5-source ξ_2 survey was useful: it showed that Hecke-derived candidates DIS
 
 This derivation is **structural** but not yet formalised in Lean. The claim "Casimir doesn't go through Hecke" is a physical statement about how QOU partitions phenomena across its algebraic spaces, not a proven theorem. To make it rigorous:
 
-1. State precisely which QOU functors compute each observable (Geom_full for masses, ε-Geom for Casimir, …).
+1. State precisely which QOU functors compute each observable (VolDensity for masses, ε-Geom for Casimir, …).
 2. Show ε-Geom factors through standard EM mode-counting with no Hecke involvement at rank 0.
 3. Verify rank ≥ 1 contributions from any Hecke source cancel by bar-symmetry or vanish by tree-level argument.
 

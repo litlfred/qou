@@ -1737,29 +1737,7 @@
         "reviewed_at": "2026-06-01T16:06:38.106Z",
         "reviewed_sha": "d4a8cf462aeef2262429b13571ddd385968bce63"
       }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "a0b75b01a8c0",
-          "ts": "176e528535e5",
-          "lean": "2ba6631c1522"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "Example interprets def:categorical-reeb; q-deformed Lie bracket in archimedean realisation fits QOU Reeb/q-deformation scope",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T00:57:59.700Z",
-        "reviewed_sha": "16685dd91880b18b4c758bf86c49e5e2de5fa199",
-        "notes": "Well-placed worked example"
-      }
     ]
   },
-  "updated_at": "2026-06-07T00:57:59.700Z"
+  "updated_at": "2026-06-03T13:06:09.584Z"
 }

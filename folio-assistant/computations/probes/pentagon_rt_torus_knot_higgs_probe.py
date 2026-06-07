@@ -1,7 +1,7 @@
 """Q2: Reshetikhin-Turaev at root-of-unity → Higgs mass candidate via T(2, 8).
 
 Per Q3 finding (`torus_knot_markov_trace_closed_form.py`): torus knots
-have Vol = 0; the canonical Geom_full mass formula gives zero. The
+have Vol = 0; the canonical VolDensity mass formula gives zero. The
 Higgs/W/Z/strong-force-torus masses need a separate categorical chain.
 
 The standard alternative for torus knots is **Reshetikhin-Turaev (RT)

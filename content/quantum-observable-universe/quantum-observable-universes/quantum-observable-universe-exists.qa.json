@@ -2218,6 +2218,25 @@
         "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/quantum-observable-universes/quantum-observable-universe-exists.lean:16: invalid 'import' command, it must be used in the beginning of the file"
+      },
+      {
+        "field_hash": {
+          "md": "b47e9f6122be",
+          "ts": "a243ee09d888",
+          "lean": "60e126a06902"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "cf383b911867",
+          "script_commit_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
+          "deps_hash": "4b9cd43e52e5"
+        },
+        "reviewed_at": "2026-06-05T14:22:44.851Z",
+        "reviewed_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
+        "notes": "stale: cached lean diagnostics have no lean_sha (legacy v1 cache); re-run content/pipeline/lean-compile-audit.ts to refresh"
       }
     ],
     "voice-author-notes-pollution": [
@@ -2552,95 +2571,7 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
-    ],
-    "voice-statement-no-interpretation": [
-      {
-        "field_hash": {
-          "md": "b47e9f6122be",
-          "ts": "a243ee09d888",
-          "lean": "60e126a06902"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "Existence claim + explicit (C,A,tau) construction; trailing para clarifies measurability-hypothesis realisations + no universal uniqueness",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-06",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-06T20:07:56.803Z",
-        "reviewed_sha": "078960fcb3db4ffff2c521e60ba15aa726a86338",
-        "notes": "Scope/applicability clarification, not physical interpretation; proof in prf: block"
-      }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "b47e9f6122be",
-          "ts": "a243ee09d888",
-          "lean": "60e126a06902"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "proposition in 'The Quantum Observable Universe' §; uses ex:qou-su2, ex:c-quantum-observable-universe (same chapter)",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-06",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-06T20:07:56.847Z",
-        "reviewed_sha": "078960fcb3db4ffff2c521e60ba15aa726a86338",
-        "notes": "Existence of the chapter's central object; squarely on-scope"
-      }
-    ],
-    "wall-side-statement": [
-      {
-        "field_hash": {
-          "md": "b47e9f6122be",
-          "ts": "a243ee09d888",
-          "lean": "60e126a06902"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "q in C^x, U_q(g)/O_q(G), root-of-unity regime e^{pi i/(k+h^v)}; no real q0~1.11, no MeV, no Real.*",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-06",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-06T20:07:56.890Z",
-        "reviewed_sha": "078960fcb3db4ffff2c521e60ba15aa726a86338",
-        "notes": "Categorical/generic statement; root-of-unity regime declared in prose"
-      }
-    ],
-    "wall-side-proof": [
-      {
-        "field_hash": {
-          "md": "b47e9f6122be",
-          "ts": "a243ee09d888",
-          "lean": "60e126a06902"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "No Proof. body in .md (proof is prf:quantum-observable-universe-exists); statement categorical, no linarith/IVT/Real.*",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-06",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-06T20:07:56.931Z",
-        "reviewed_sha": "078960fcb3db4ffff2c521e60ba15aa726a86338",
-        "notes": "Constructive categorical proof deferred; no archimedean machinery in statement"
-      }
     ]
   },
-  "updated_at": "2026-06-06T20:07:56.931Z"
+  "updated_at": "2026-06-05T14:22:44.851Z"
 }

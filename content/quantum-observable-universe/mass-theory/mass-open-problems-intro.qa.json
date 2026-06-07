@@ -717,28 +717,7 @@
         "reviewed_at": "2026-06-02T19:35:58.523Z",
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
       }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "5ce3fdc3089d",
-          "ts": "2d8ed9b561a7"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "Section-intro prose for 'Open problems: mass-tower structure and crystal basis' section in mass-theory; previews terminal-resolution / crystal-basis / volume-tower blocks",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T01:10:04.176Z",
-        "reviewed_sha": "2aa6afb60bbf5376f799e2e4071d1b2cedf5a032",
-        "notes": "Correct kind=prose (pure exposition, no provable claim); subject squarely in section/chapter scope."
-      }
     ]
   },
-  "updated_at": "2026-06-07T01:10:04.176Z"
+  "updated_at": "2026-06-03T20:30:24.391Z"
 }

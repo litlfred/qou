@@ -1879,29 +1879,7 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "e7a286167614",
-          "ts": "a74b7f9e684a",
-          "lean": "bf2bc1887daf"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "Remark interprets conj:levi-degeneracy; sits in sec:ns-approaches (Approaches and open problems)",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T00:40:05.403Z",
-        "reviewed_sha": "b4bc0649fcaa6361b88f684ad70a457ca9284396",
-        "notes": "Works the Townsend ODE under Biot-Savart strain toward the q->1 NS-regularity question; on-topic for the approaches/open-problems section of the fluid-dynamics chapter."
-      }
     ]
   },
-  "updated_at": "2026-06-07T00:40:05.403Z"
+  "updated_at": "2026-06-03T22:40:47.501Z"
 }

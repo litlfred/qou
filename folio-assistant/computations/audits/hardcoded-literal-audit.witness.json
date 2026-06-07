@@ -626,7 +626,7 @@
             "matches_constant": "M_P_MEV_VALIDATION",
             "registry_value": "938.27208816",
             "rel_err": "9.396e-8",
-            "snippet": "print(f\"  m_p (Geom_full)= {float(m_p_pred):.3f} MeV  (vs 938.272 CODATA, {float(fabs(m_p_pred-mpf('938.27208816'))/mpf("
+            "snippet": "print(f\"  m_p (VolDensity)= {float(m_p_pred):.3f} MeV  (vs 938.272 CODATA, {float(fabs(m_p_pred-mpf('938.27208816'))/mpf("
           },
           {
             "line_number": 58,
@@ -634,7 +634,7 @@
             "matches_constant": "M_P_MEV_VALIDATION",
             "registry_value": "938.27208816",
             "rel_err": "0.0",
-            "snippet": "print(f\"  m_p (Geom_full)= {float(m_p_pred):.3f} MeV  (vs 938.272 CODATA, {float(fabs(m_p_pred-mpf('938.27208816'))/mpf("
+            "snippet": "print(f\"  m_p (VolDensity)= {float(m_p_pred):.3f} MeV  (vs 938.272 CODATA, {float(fabs(m_p_pred-mpf('938.27208816'))/mpf("
           },
           {
             "line_number": 58,
@@ -642,7 +642,7 @@
             "matches_constant": "M_P_MEV_VALIDATION",
             "registry_value": "938.27208816",
             "rel_err": "0.0",
-            "snippet": "print(f\"  m_p (Geom_full)= {float(m_p_pred):.3f} MeV  (vs 938.272 CODATA, {float(fabs(m_p_pred-mpf('938.27208816'))/mpf("
+            "snippet": "print(f\"  m_p (VolDensity)= {float(m_p_pred):.3f} MeV  (vs 938.272 CODATA, {float(fabs(m_p_pred-mpf('938.27208816'))/mpf("
           },
           {
             "line_number": 69,
@@ -1368,7 +1368,7 @@
         "result": "i9_violation"
       },
       {
-        "path": "folio-assistant/computations/meson_geom_full.py",
+        "path": "folio-assistant/computations/meson_vol_density.py",
         "imported_codata_names": [],
         "hit_count": 6,
         "hits": [
@@ -4529,7 +4529,7 @@
         "result": "i9_violation"
       },
       {
-        "path": "folio-assistant/computations/probes/geom_full_borromean_h4_probe.py",
+        "path": "folio-assistant/computations/probes/vol_density_borromean_h4_probe.py",
         "imported_codata_names": [],
         "hit_count": 2,
         "hits": [
@@ -4554,7 +4554,7 @@
         "result": "i9_violation"
       },
       {
-        "path": "folio-assistant/computations/probes/geom_full_borromean_q_locality_probe.py",
+        "path": "folio-assistant/computations/probes/vol_density_borromean_q_locality_probe.py",
         "imported_codata_names": [],
         "hit_count": 2,
         "hits": [

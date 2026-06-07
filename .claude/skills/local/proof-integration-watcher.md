@@ -97,6 +97,20 @@ batch.
 | `proof-lean-compiles` | script | `lean-build-fix` | Invoke `mcp__lean-lsp__lean_diagnostic_messages` on the `.lean` file; read compiler errors; patch → re-check |
 | `proof-narrative-lean-equiv` | agent | `proof-narrative-lean-equivalence` | Adjudicate the four drift classes A/B/C/D |
 | `proof-substantive` | script | `lean-substantive-pass` | Bulk-split typed sub-claims; replace `holds:Prop` with hypothesis |
+| `proof-statement-integrity` | agent | `lean-proof-review` (Review Type 4) | Signature-diff vs prior commit + `lean_verify` axiom sweep; FAIL on weakened statement / `sorryAx` |
+| `proof-rater-strategy-clarity` | agent **(score)** | `proof-simplifier` / `proof-conciseness` | Score 0–1 → `score` field; if < 0.66, make the strategy explicit, re-rate |
+| `proof-rater-goal-plausibility` | agent **(score)** | `proof-triage` / `lean-build-fix` | Score 0–1 (cross-ref gap-criticality); improve by discharging `routine` gaps, re-rate |
+| `proof-rater-novelty` | agent **(score)** | `proposition-consolidation-audit` | Score 0–1; if redundant (~0), consolidate with the sibling, re-rate |
+
+> **Rater rubric (scored, not gating).** The `proof-rater-*` criteria
+> (AlphaProof-Nexus adoption — [`docs/audits/2026-06-07-google-paper-qa-rubrics-and-tooling.md`](../../../docs/audits/2026-06-07-google-paper-qa-rubrics-and-tooling.md))
+> write a **0–1 `score`** to the block's `.qa.json` (`QaCriterionEntry.score`),
+> NOT a merge gate. The watcher is the **rate** half (dispatch a rater agent
+> per fresh proof block → write `score`); `/integration-backlog proof` is the
+> **improve** half (drain ascending-score, apply the routed skill, **re-rate**
+> to confirm the score rose). This raises *corpus* quality the way their Elo
+> search raises sketch quality — but the population is the whole corpus, not a
+> single proof.
 
 Watcher invocation pattern:
 

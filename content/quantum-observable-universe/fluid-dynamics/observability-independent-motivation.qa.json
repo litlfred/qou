@@ -2067,28 +2067,7 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "8979ffbf4978",
-          "ts": "616d7739e1a9"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "Remark motivates the observability axiom consumed by thm:ns-singularity-descartes (fluid-dynamics theorem)",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T00:59:40.651Z",
-        "reviewed_sha": "4b4837d147b0f947bd524d331c704ae9d88a0b70",
-        "notes": "Belongs in q-NS regularity scope; explains why observability is not an NS assumption. Distinct content, no sibling overlap."
-      }
     ]
   },
-  "updated_at": "2026-06-07T00:59:40.651Z"
+  "updated_at": "2026-06-03T22:40:47.501Z"
 }

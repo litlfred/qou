@@ -1635,6 +1635,24 @@
         "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/reeb-bundle.lean:29: failed to synthesize | content/quantum-observable-universe/climax-volume-mass/reeb-bundle.lean:29: failed to synthesize"
+      },
+      {
+        "field_hash": {
+          "md": "8b5054fbca61",
+          "ts": "dc1c7773da8e",
+          "lean": "536bb43e3cd7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "cf383b911867",
+          "script_commit_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
+          "deps_hash": "4b9cd43e52e5"
+        },
+        "reviewed_at": "2026-06-05T14:22:44.851Z",
+        "reviewed_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb"
       }
     ],
     "voice-author-notes-pollution": [
@@ -1931,51 +1949,7 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "8b5054fbca61",
-          "ts": "dc1c7773da8e",
-          "lean": "536bb43e3cd7"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "Definition names a new construction (Reeb bundle = Hopf fibration over exceptional divisor) used by mass-theory Geometric face; uses def:exceptional-divisor + ex:q-reeb-vector-field",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T02:22:11.170Z",
-        "reviewed_sha": "c19585e0071a7a71c568d1d45fc94747fc111fa4",
-        "notes": "definition is non-trivial; geometric-face fit"
-      }
-    ],
-    "wall-side-statement": [
-      {
-        "field_hash": {
-          "md": "8b5054fbca61",
-          "ts": "dc1c7773da8e",
-          "lean": "536bb43e3cd7"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": ".md opens with §7c banner ('archimedean specialisation over R ... combinatorial content stays generic'); Lean q:R, q>1, Real.exp/pi properly declared archimedean",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T02:22:11.213Z",
-        "reviewed_sha": "c19585e0071a7a71c568d1d45fc94747fc111fa4",
-        "notes": "Archimedean-with-banner, matches wall convention"
-      }
     ]
   },
-  "updated_at": "2026-06-07T02:22:11.213Z"
+  "updated_at": "2026-06-05T14:22:44.851Z"
 }

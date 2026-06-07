@@ -59,7 +59,7 @@ The probe is **diagnostic only** — it does NOT propose a new `linking_weight` 
 
 - **Q_β §4 invariant chain (this session):** PRs #1875, #1889, #1890, #1893
 - **Existing bar-symmetry test:** [`bar_symmetry_three_candidates.py`](../../folio-assistant/computations/bar_symmetry_three_candidates.py)
-- **linking_weight CODATA-implied near-match audit:** PR #1850 + the `_li_2_q_util.geom_full_borromean` docstring ([`_li_2_q_util.py`](../../folio-assistant/computations/_li_2_q_util.py))
+- **linking_weight CODATA-implied near-match audit:** PR #1850 + the `_li_2_q_util.vol_density_borromean` docstring ([`_li_2_q_util.py`](../../folio-assistant/computations/_li_2_q_util.py))
 - **Registry §3 (Q_β c_k canonicity gates):** [`ck-dk-canonical-registry.md`](../coordination/ck-dk-canonical-registry.md)
 - **Mass = Vol × Density formalization:** PR #1834 (merged) + PR #1871 (open, SU(2)/SO(3) density)
 - **§4(b) bar-even Lean lemma:** [`prop:q-beta-bar-even-kernel-invariant`](../../content/quantum-observable-universe/mass-theory/q-beta-bar-even-kernel-invariant.md) (PR #1875)

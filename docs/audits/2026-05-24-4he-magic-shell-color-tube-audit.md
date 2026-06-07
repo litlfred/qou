@@ -104,6 +104,6 @@ The ⁴He shell saturation is conditional on the S₅ ↔ SO(3) class being form
 - Parent audit: [`2026-05-24-low-isotope-mass-error-anatomy.md`](2026-05-24-low-isotope-mass-error-anatomy.md)
 - Sign-flip interpretation: [`2026-05-24-sign-flip-interpretation.md`](2026-05-24-sign-flip-interpretation.md)
 - Bring color-tube cheat-sheet entry: [`docs/canonical-derivation-cheat-sheet.md` §"Bring color-tube weighted averaging"](../canonical-derivation-cheat-sheet.md)
-- λ_scale-absorbed reference: [`docs/lambda-scale-absorbed-into-geom-full.md`](../lambda-scale-absorbed-into-geom-full.md)
+- λ_scale-absorbed reference: [`docs/lambda-scale-absorbed-into-vol-density.md`](../lambda-scale-absorbed-into-vol-density.md)
 - PR [#1081](https://github.com/litlfred/qou/pull/1081) Task 3 — S₅ ↔ SO(3) fiber action (categorical class supplier)
 - Existing color-tube content blocks: `content/quantum-observable-universe/archimedean-universe/color-tube-{coordinates,fibers,subloci,cubic,constraints,interpretation}.{md,ts,lean}`

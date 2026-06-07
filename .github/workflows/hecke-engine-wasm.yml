@@ -1,25 +1,6 @@
 name: hecke-engine-wasm Build & Test
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - 'tools/hecke-engine/Cargo.toml'
-      - 'tools/hecke-engine/src/lib.rs'
-      - 'tools/hecke-engine/src/operator_selection_lp.rs'
-      - 'tools/hecke-engine/src/bin/clarabel_operator_selection_lp.rs'
-      - 'tools/hecke-engine/src/operator_selection_sdp.rs'
-      - 'tools/hecke-engine-wasm/**'
-      - '.github/workflows/hecke-engine-wasm.yml'
-  pull_request:
-    paths:
-      - 'tools/hecke-engine/Cargo.toml'
-      - 'tools/hecke-engine/src/lib.rs'
-      - 'tools/hecke-engine/src/operator_selection_lp.rs'
-      - 'tools/hecke-engine/src/bin/clarabel_operator_selection_lp.rs'
-      - 'tools/hecke-engine/src/operator_selection_sdp.rs'
-      - 'tools/hecke-engine-wasm/**'
-      - '.github/workflows/hecke-engine-wasm.yml'
   workflow_dispatch:
     inputs:
       publish:

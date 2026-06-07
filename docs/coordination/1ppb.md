@@ -283,7 +283,7 @@ Total: 33 commits, +5500 lines, -200 lines.
 
 ## 2026-05-25 PR #1228 — Geom-derivation audit + chi_lambda wiring (atlas delivered)
 
-**Session branch**: `claude/geom-derivation-bug-squash-2026-05-25`
+**Session branch**: `claude/vol-density-derivation-bug-squash-2026-05-25`
 **Open companion PRs (mine)**: [#1212](https://github.com/litlfred/qou/pull/1212), [#1214](https://github.com/litlfred/qou/pull/1214), [#1220](https://github.com/litlfred/qou/pull/1220), [#1228](https://github.com/litlfred/qou/pull/1228)
 
 ### Delivered
@@ -333,7 +333,7 @@ Open PRs in the Δ_λ / GAP-A-3 / GAP-A-4 / Kashiwara / per-isotope binding clus
 | Sibling | Title | Overlap | Classification | Action |
 |---------|-------|---------|----------------|--------|
 | [#1224](https://github.com/litlfred/qou/pull/1224) | audit(delta-lambda): closure-synthesis + 3 probes + Option E | **direct** — #1229 implements its probe-1 | **dependency satisfied** (synthesis doc cited by probe header) | post intent: probe-1 result |
-| [#1228](https://github.com/litlfred/qou/pull/1228) | audit(geom-derivation): error localization + KLR path | **adjacent** — same canonical-wiring gap, different vector (empirical h² coefficient variance) | **complementary** — joint root-cause: framework lacks per-isotope structural closure | post intent: probe-1 not a substitute for canonical 4He wiring |
+| [#1228](https://github.com/litlfred/qou/pull/1228) | audit(vol-density-derivation): error localization + KLR path | **adjacent** — same canonical-wiring gap, different vector (empirical h² coefficient variance) | **complementary** — joint root-cause: framework lacks per-isotope structural closure | post intent: probe-1 not a substitute for canonical 4He wiring |
 | [#1220](https://github.com/litlfred/qou/pull/1220) | diag(mass-sweep): α-cluster recursion bug at h² | adjacent — #1228 sibling | **complementary diagnostic** | none (subsumed by #1228 coordination) |
 | [#1214](https://github.com/litlfred/qou/pull/1214) | diag(mass-sweep): wiring-status taxonomy + KLR check | adjacent — predecessor of #1220 | **complementary diagnostic** | none |
 | [#1127](https://github.com/litlfred/qou/pull/1127) | Q_β net-ansatz fitting finding + complex-q substrate lift | orthogonal axis — CAL-3 fitting, not L2 binding | **distinct gap, shared framework** | post intent: Δ_λ closure independent of Q_β derivation; both block 1ppb on different legs |

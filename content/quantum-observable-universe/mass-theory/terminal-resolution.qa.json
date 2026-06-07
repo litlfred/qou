@@ -2218,6 +2218,24 @@
         "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/predicted-spectra/terminal-resolution.lean:32: invalid 'import' command, it must be used in the beginning of the file"
+      },
+      {
+        "field_hash": {
+          "md": "2fa66662c8d9",
+          "ts": "ebe8e1270041",
+          "lean": "2f9e0cc7b1d6"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "cf383b911867",
+          "script_commit_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
+          "deps_hash": "4b9cd43e52e5"
+        },
+        "reviewed_at": "2026-06-05T14:22:44.851Z",
+        "reviewed_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb"
       }
     ],
     "voice-author-notes-pollution": [
@@ -2550,95 +2568,7 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
-    ],
-    "voice-statement-no-interpretation": [
-      {
-        "field_hash": {
-          "md": "2fa66662c8d9",
-          "ts": "ebe8e1270041",
-          "lean": "2f9e0cc7b1d6"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "Statement is a 4-row CODATA comparison table; no physical-meaning/motivation prose appended",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T02:15:43.188Z",
-        "reviewed_sha": "86855cad73fd89ed51491cd1b7e2dfa018a5c6cb",
-        "notes": "interpretation lives in rem:skein-mass-relation; this block states only"
-      }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "2fa66662c8d9",
-          "ts": "ebe8e1270041",
-          "lean": "2f9e0cc7b1d6"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "Hadronic mass collapse to neutrino-drag + strong-binding linear combination; p/n/deuteron mass + binding rows",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T02:15:43.235Z",
-        "reviewed_sha": "86855cad73fd89ed51491cd1b7e2dfa018a5c6cb",
-        "notes": "core mass-theory result; correctly in chapter scope"
-      }
-    ],
-    "wall-side-statement": [
-      {
-        "field_hash": {
-          "md": "2fa66662c8d9",
-          "ts": "ebe8e1270041",
-          "lean": "2f9e0cc7b1d6"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "Hard-codes MeV values + derived q_0, but line-1 carries explicit CLAUDE.md §7c archimedean-specialisation banner",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T02:15:43.282Z",
-        "reviewed_sha": "86855cad73fd89ed51491cd1b7e2dfa018a5c6cb",
-        "notes": "archimedean-chapter-style statement properly flagged; combinatorial content noted generic"
-      }
-    ],
-    "wall-side-proof": [
-      {
-        "field_hash": {
-          "md": "2fa66662c8d9",
-          "ts": "ebe8e1270041",
-          "lean": "2f9e0cc7b1d6"
-        },
-        "result": "warn",
-        "severity": "minor",
-        "evidence": "Proof block prf:terminal-resolution has no narrative .md body to adjudicate",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T02:15:43.329Z",
-        "reviewed_sha": "86855cad73fd89ed51491cd1b7e2dfa018a5c6cb",
-        "notes": "statement is archimedean-with-§7c-banner; no algebraic-proved-by-archimedean violation visible; proof narrative absent"
-      }
     ]
   },
-  "updated_at": "2026-06-07T02:15:43.329Z"
+  "updated_at": "2026-06-05T14:22:44.851Z"
 }

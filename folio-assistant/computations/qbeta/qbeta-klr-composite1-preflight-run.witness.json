@@ -1,0 +1,75 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-06-06T19:53:54.727251+00:00",
+  "commitSha": "a1968542378c31d01808f1764e8f492d62b91166",
+  "assertions": [
+    {
+      "name": "standard_demazure_qpoch_sign_refuted_at_u2_both_anchors",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true
+    },
+    {
+      "name": "u2_coefficient_is_positive_both_anchors",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 10,
+  "computation": "qbeta-klr-composite1-preflight-run",
+  "scriptFile": "qbeta_klr_composite1_preflight_run.py",
+  "scriptHash": "e60bc8c299f6",
+  "scriptCommitSha": "a1968542378c31d01808f1764e8f492d62b91166",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "KLR tranche 2 — Composite-1 (Demazure × q-Pochhammer) preflight RUN, sibling to the Composite-4 preflight. Tests the u² sign of the cont. 9 Option C ansatz F(u) = Σ_w D_w(λ)·(q;q)_{ℓ(w)}·u^{ℓ(w)} for sl_3 at fundamental weight ω_1, using the explicit Demazure-character formula from qbeta_chain4_demazure_fund_weights.py (Σ_S q^{Σ(a_k-1)}, positive at q > 0). At q₀ > 1: Σ_{ℓ(w)=2} D_w > 0 and (q;q)_2 = (1-q)(1-q²) > 0, so [u²]F > 0, sign-incompatible with proved c_2 = -1. STANDARD Demazure × (q;q)_k REFUTED at u² by sign; Demazure-Lusztig variant untested. cont. 9 Option C (5-7 sessions) NOT authorised in its natural reading.",
+  "contentBlock": "conj:qbeta-precision-ladder",
+  "data": {
+    "anchors": [
+      {
+        "anchor": "proton",
+        "q": "1.10997858275138080759166909561076887987449912187357873607281",
+        "q_pochhammer_2": "0.0255208000332404491052504207629559359869169759821893390498063",
+        "q_pochhammer_2_sign": 1,
+        "q_pochhammer_3": "-0.00938021693268649923478499093380479044045579981797913125123435",
+        "sum_Demazure_ell_eq_2_omega_1_sl_3": "5.45200961966952554645314270475717394459867966666415727362892",
+        "sum_Demazure_sign": 1,
+        "u2_coefficient": "0.139139647282889275849881931594540633122077763092790220381577",
+        "u2_sign": 1,
+        "c2_target": "-1.00000000000000000000000000000000000000000000000000000000000",
+        "c2_target_sign": -1,
+        "u2_sign_matches_c2_target": false
+      },
+      {
+        "anchor": "muon",
+        "q": "1.10997859555418057528159407960950937799328227995868622546675",
+        "q_pochhammer_2": "0.0255208061299366025028155986841074227806587940917252394200220",
+        "q_pochhammer_2_sign": 1,
+        "q_pochhammer_3": "-0.00938022038121260079850169158811173486698277684466309855044209",
+        "sum_Demazure_ell_eq_2_omega_1_sl_3": "5.45200967369679232852501532092902005502366191981079658544928",
+        "sum_Demazure_sign": 1,
+        "u2_coefficient": "0.139139681900954753651220663732063215590875693737977297546599",
+        "u2_sign": 1,
+        "c2_target": "-1.00000000000000000000000000000000000000000000000000000000000",
+        "c2_target_sign": -1,
+        "u2_sign_matches_c2_target": false
+      }
+    ],
+    "verdict": "STANDARD_DEMAZURE_X_QPOCH_SIGN_REFUTED_AT_U2",
+    "interpretation": "Same preflight template as Composite-4 (PR #1914 RUN result), applied to Composite-1. Where Composite-4 was refuted by MAGNITUDE (|A_2| ≈ 0.011 vs target 1, off by ~92×), Composite-1 with standard Demazure is refuted by SIGN at the same u² rung. Both cont. 9 Options B (Composite 4) and C (Composite 1 standard reading) are now refuted via formalize-first preflights costing ~1 session each — combined ~10-12 sessions of infra build avoided. Remaining cont. 9 menu: Option A (accept residue A as CAL-3-anchored permanently), Option D (Composite 3 Type-B folded crystal, 12-17 sessions — alignment with §7b but high cost), or amended Composite-1 with Demazure-Lusztig (signed variant, separate preflight needed)."
+  }
+}

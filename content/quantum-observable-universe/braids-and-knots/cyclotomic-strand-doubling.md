@@ -61,13 +61,13 @@ question for investigation.
 
 Cross-references:
 
-- [Strand-doubling FALSIFIED (2026-06-01)](https://github.com/litlfred/qou/blob/main/docs/audits/2026-06-01-qbeta-habiro-strand-doubling-FALSIFIED.md)
+- [Strand-doubling FALSIFIED](https://github.com/litlfred/qou/blob/main/docs/audits/2026-06-01-qbeta-habiro-strand-doubling-FALSIFIED.md)
 - [Phase~5q convention test — $\Phi_8^2$ survives](https://github.com/litlfred/qou/blob/main/docs/audits/2026-06-01-qbeta-habiro-phase5q-dn-convention-test.md)
-- [Mechanism investigation — z(q)² hypothesis refuted](https://github.com/litlfred/qou/blob/main/docs/audits/2026-06-01-qbeta-habiro-phi8-squared-mechanism.md)
+- [Mechanism investigation — $z(q)^2$ hypothesis refuted](https://github.com/litlfred/qou/blob/main/docs/audits/2026-06-01-qbeta-habiro-phi8-squared-mechanism.md)
 
 ## Historical note — strand-doubling interpretation refuted
 
-An earlier (2026-06-01) interpretation conjectured that the
+An earlier interpretation conjectured that the
 substitution $X \mapsto X^2$ is a **strand-doubling map** lifting
 $B_2$-representations (single nucleon, $\Phi_4$ denominator) to
 $B_4$-representations (deuteron, $\Phi_8$ factor), and predicted a

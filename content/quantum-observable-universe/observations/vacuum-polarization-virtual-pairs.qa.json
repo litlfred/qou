@@ -2083,28 +2083,7 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "3e6f2cfb60b1",
-          "ts": "56d1d731b656"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "In section 'Complexity and Interpretation'; interprets def:recursive-brane-tower; maps QFT vacuum-polarisation/virtual-pairs to brane-tower Skein resolution",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-06",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-06T19:49:52.166Z",
-        "reviewed_sha": "547fcea59294c92952e9db5f4ec9203ef584a054",
-        "notes": "Interpretive QOU<->QFT mapping fits the Interpretation section; no sibling carries same claim"
-      }
     ]
   },
-  "updated_at": "2026-06-06T19:49:52.166Z"
+  "updated_at": "2026-06-03T22:40:47.501Z"
 }

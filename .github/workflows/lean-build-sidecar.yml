@@ -23,18 +23,6 @@
 name: Lean build sidecar
 
 on:
-  push:
-    branches:
-      - 'claude/**'
-    paths:
-      - '**/*.lean'
-      - '**/lakefile.toml'
-      - '**/lakefile.lean'
-      - '**/lean-toolchain'
-      - 'lean-toolchain'
-      - 'scripts/lean-build-all.sh'
-      - 'scripts/lib/lean-build-sidecar.py'
-      - '.github/workflows/lean-build-sidecar.yml'
   workflow_dispatch:
     inputs:
       ref:

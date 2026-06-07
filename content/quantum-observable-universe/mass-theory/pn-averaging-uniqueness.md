@@ -27,7 +27,7 @@ averaging is determined.  Closing the `ColorFlavorCompatible`
 class to the Bring weighted derivation refines the admissible
 normalisation $z$ to a unique canonical form.
 
-### Derivation chain for the closed-form weight (2026-05-30 finding)
+### Derivation chain for the closed-form weight
 
 The substrate evaluation $w(t, t', q) = 1/(1 - h_q \cdot q^{10})$ per
 `lambda_scale_refinement_h4_correction_bring.py` is **not purely
@@ -64,9 +64,9 @@ pattern](../../../CLAUDE.md):
 
 - `BarInvariant R σ_pn` — substrate axiom (bar-involution-respecting).
 - `ColorFlavorCompatible R σ_pn` — **open**: refines once the
-  categorical color-sheet ↔ quark-flavor mapping lands (per
+  categorical color-sheet $\leftrightarrow$ quark-flavor mapping lands (per
   `probe_pn_flavor_asymmetry.py` Scheme 4).  Currently carried as a
-  per-instance witness with `True` placeholder.
+  per-instance witness instantiated by `True`.
 - `StandardNorm R σ_pn z` — pointwise $\sigma_{pn} = z$.
 
 Conditional on the three classes, `theorem pn_averaging_unique`
@@ -81,11 +81,11 @@ proved *conditional on the class instance* per CLAUDE.md §3b-cond.
 ## Computational consequence
 
 The closed-form `closed_form_tau_M.py` already exposes the
-opt-in `pn_convention="bring_color_weighted"` placeholder that
+opt-in `pn_convention="bring_color_weighted"` option that
 raises `NotImplementedError` with the queue context.  Implementing
 the Bring weighted convention requires (a) extending the closed
 form to accept quark-mass inputs, and (b) defining the canonical
-color-sheet ↔ quark-flavor mapping.
+color-sheet $\leftrightarrow$ quark-flavor mapping.
 
 ## Status
 

@@ -162,10 +162,10 @@ theorem bring_residue_meson_pair
     is unique as a closed-form element of the substrate field). -/
 theorem bring_residue_subsingleton
     {R : Type u} [Field R] (n : ℕ) (q : R) :
-    Subsingleton {r : R // r = canonicalResolvent n q} := by
-  refine ⟨fun ⟨r, hr⟩ ⟨r', hr'⟩ => ?_⟩
-  apply Subtype.ext
-  rw [hr, hr']
+    Subsingleton {r : R // r = canonicalResolvent n q} :=
+  -- Term-mode: `rw [hr, hr']` fails (motive not type-correct — `r`
+  -- occurs in the subtype proof); both vals equal `canonicalResolvent`.
+  ⟨fun ⟨r, hr⟩ ⟨r', hr'⟩ => Subtype.ext (hr.trans hr'.symm)⟩
 
 /-- **Default instance** for the strengthened class: any concrete
     `(n, q)` with the pole non-vanishing hypothesis (carried as a
@@ -177,77 +177,77 @@ instance bringResidueAtOrder_of_pole_nonzero
     [h : Fact (1 - hShift q * q^n ≠ 0)] : BringResidueAtOrder n q where
   pole_nonzero := h.out
 
-/-! ### Phase 3 concrete instances at `q = 2 : ℝ`
+/-! ### Phase 3 concrete instances at `q = 2 : ℚ`
 
     The default instance `bringResidueAtOrder_of_pole_nonzero` lifts
     a `Fact (1 - hShift q * q^n ≠ 0)` to a `BringResidueAtOrder n q`
     instance.  This section proves the `Fact` for the **specific
-    concrete value** `q = 2 : ℝ` at the four pole orders used
+    concrete value** `q = 2 : ℚ` at the four pole orders used
     downstream (n ∈ {3, 4, 9, 10} per the meson, EM and p-n averaging
     specialisations above), giving concrete sorry-free Lean witnesses
     for the §3b-cond axiom-class closure path.
 
     The substrate's actual physical value `q₀ ≈ 1.1097` would close
     similarly once a real-number tactic for that specific evaluation
-    lands; for now `q = 2 : ℝ` provides a clean decidable concrete
+    lands; for now `q = 2 : ℚ` provides a clean decidable concrete
     case that demonstrates the Phase-3 closure path end-to-end. -/
 
-/-- Phase-3 concrete pole non-vanishing at n = 3, q = 2 : ℝ
+/-- Phase-3 concrete pole non-vanishing at n = 3, q = 2 : ℚ
     (meson `[3]_q` index).  `hShift 2 = 3/2`, so
     `1 - (3/2) · 2³ = 1 - 12 = -11 ≠ 0`. -/
 theorem bring_residue_q_eq_2_pole_nonzero_at_3 :
-    1 - hShift (2 : ℝ) * (2 : ℝ)^3 ≠ 0 := by
-  unfold hShift; norm_num
+    1 - hShift (2 : ℚ) * (2 : ℚ)^3 ≠ 0 := by
+  unfold hShift; native_decide
 
-/-- Phase-3 concrete pole non-vanishing at n = 4, q = 2 : ℝ
+/-- Phase-3 concrete pole non-vanishing at n = 4, q = 2 : ℚ
     (meson `[4]_q` index).  `1 - (3/2) · 2⁴ = 1 - 24 = -23 ≠ 0`. -/
 theorem bring_residue_q_eq_2_pole_nonzero_at_4 :
-    1 - hShift (2 : ℝ) * (2 : ℝ)^4 ≠ 0 := by
-  unfold hShift; norm_num
+    1 - hShift (2 : ℚ) * (2 : ℚ)^4 ≠ 0 := by
+  unfold hShift; native_decide
 
-/-- Phase-3 concrete pole non-vanishing at n = 9, q = 2 : ℝ
+/-- Phase-3 concrete pole non-vanishing at n = 9, q = 2 : ℚ
     (#1444 α_EM `[9]_q`).  `1 - (3/2) · 2⁹ = 1 - 768 = -767 ≠ 0`. -/
 theorem bring_residue_q_eq_2_pole_nonzero_at_9 :
-    1 - hShift (2 : ℝ) * (2 : ℝ)^9 ≠ 0 := by
-  unfold hShift; norm_num
+    1 - hShift (2 : ℚ) * (2 : ℚ)^9 ≠ 0 := by
+  unfold hShift; native_decide
 
-/-- Phase-3 concrete pole non-vanishing at n = 10, q = 2 : ℝ
+/-- Phase-3 concrete pole non-vanishing at n = 10, q = 2 : ℚ
     (#1445 p-n averaging color-tube weight `[10]_q`).
     `1 - (3/2) · 2¹⁰ = 1 - 1536 = -1535 ≠ 0`. -/
 theorem bring_residue_q_eq_2_pole_nonzero_at_10 :
-    1 - hShift (2 : ℝ) * (2 : ℝ)^10 ≠ 0 := by
-  unfold hShift; norm_num
+    1 - hShift (2 : ℚ) * (2 : ℚ)^10 ≠ 0 := by
+  unfold hShift; native_decide
 
 /-- `Fact`-instance carrying the n=3 pole non-vanishing. Fires the
     default `bringResidueAtOrder_of_pole_nonzero` to give a concrete
-    sorry-free `BringResidueAtOrder 3 (2 : ℝ)`. -/
-instance : Fact (1 - hShift (2 : ℝ) * (2 : ℝ)^3 ≠ 0) :=
+    sorry-free `BringResidueAtOrder 3 (2 : ℚ)`. -/
+instance : Fact (1 - hShift (2 : ℚ) * (2 : ℚ)^3 ≠ 0) :=
   ⟨bring_residue_q_eq_2_pole_nonzero_at_3⟩
 
-instance : Fact (1 - hShift (2 : ℝ) * (2 : ℝ)^4 ≠ 0) :=
+instance : Fact (1 - hShift (2 : ℚ) * (2 : ℚ)^4 ≠ 0) :=
   ⟨bring_residue_q_eq_2_pole_nonzero_at_4⟩
 
-instance : Fact (1 - hShift (2 : ℝ) * (2 : ℝ)^9 ≠ 0) :=
+instance : Fact (1 - hShift (2 : ℚ) * (2 : ℚ)^9 ≠ 0) :=
   ⟨bring_residue_q_eq_2_pole_nonzero_at_9⟩
 
-instance : Fact (1 - hShift (2 : ℝ) * (2 : ℝ)^10 ≠ 0) :=
+instance : Fact (1 - hShift (2 : ℚ) * (2 : ℚ)^10 ≠ 0) :=
   ⟨bring_residue_q_eq_2_pole_nonzero_at_10⟩
 
-/-- **Phase-3 cascade check.**  At `q = 2 : ℝ`, the resolvent
+/-- **Phase-3 cascade check.**  At `q = 2 : ℚ`, the resolvent
     equation holds concretely at all four downstream pole orders —
     discharged via the `Fact`-instances above firing the default
     `bringResidueAtOrder_of_pole_nonzero`, then composing with the
     specialisations `bring_residue_at_T_3_5`, `bring_residue_at_T_2_9`
     and `bring_residue_meson_pair`. No hypothesis required. -/
 theorem bring_residue_at_q_eq_2_cascade :
-    ((1 - hShift (2 : ℝ) * (2 : ℝ)^10) * canonicalResolvent 10 (2 : ℝ) = 1) ∧
-    ((1 - hShift (2 : ℝ) * (2 : ℝ)^9) * canonicalResolvent 9 (2 : ℝ) = 1) ∧
-    ((1 - hShift (2 : ℝ) * (2 : ℝ)^3) * canonicalResolvent 3 (2 : ℝ) = 1) ∧
-    ((1 - hShift (2 : ℝ) * (2 : ℝ)^4) * canonicalResolvent 4 (2 : ℝ) = 1) := by
+    ((1 - hShift (2 : ℚ) * (2 : ℚ)^10) * canonicalResolvent 10 (2 : ℚ) = 1) ∧
+    ((1 - hShift (2 : ℚ) * (2 : ℚ)^9) * canonicalResolvent 9 (2 : ℚ) = 1) ∧
+    ((1 - hShift (2 : ℚ) * (2 : ℚ)^3) * canonicalResolvent 3 (2 : ℚ) = 1) ∧
+    ((1 - hShift (2 : ℚ) * (2 : ℚ)^4) * canonicalResolvent 4 (2 : ℚ) = 1) := by
   refine ⟨?_, ?_, ?_, ?_⟩
-  · exact bring_residue_at_T_3_5 (2 : ℝ)
-  · exact bring_residue_at_T_2_9 (2 : ℝ)
-  · exact (bring_residue_meson_pair (2 : ℝ)).1
-  · exact (bring_residue_meson_pair (2 : ℝ)).2
+  · exact bring_residue_at_T_3_5 (2 : ℚ)
+  · exact bring_residue_at_T_2_9 (2 : ℚ)
+  · exact (bring_residue_meson_pair (2 : ℚ)).1
+  · exact (bring_residue_meson_pair (2 : ℚ)).2
 
 end QOU.BraidKnot

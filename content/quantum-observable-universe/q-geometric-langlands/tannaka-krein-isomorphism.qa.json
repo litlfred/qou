@@ -2218,6 +2218,25 @@
         "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/q-geometric-langlands/tannaka-krein-isomorphism.lean:10: invalid 'import' command, it must be used in the beginning of the file"
+      },
+      {
+        "field_hash": {
+          "md": "fb2828f43082",
+          "ts": "30a9217a058c",
+          "lean": "244e66c0df16"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "cf383b911867",
+          "script_commit_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
+          "deps_hash": "4b9cd43e52e5"
+        },
+        "reviewed_at": "2026-06-05T14:22:44.851Z",
+        "reviewed_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
+        "notes": "stale: cached lean diagnostics have no lean_sha (legacy v1 cache); re-run content/pipeline/lean-compile-audit.ts to refresh"
       }
     ],
     "voice-author-notes-pollution": [
@@ -2584,95 +2603,7 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "fb2828f43082",
-          "ts": "30a9217a058c",
-          "lean": "244e66c0df16"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "Tannaka-Krein duality is the Tannakian mediation core to the q-GL chapter",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T02:15:50.298Z",
-        "reviewed_sha": "2253637bab40ba38262994074129f52af053dbb0",
-        "notes": "Rep_loc(A) ~ Comod(H_xi) self-duality belongs in q-geometric-langlands"
-      }
-    ],
-    "voice-statement-no-interpretation": [
-      {
-        "field_hash": {
-          "md": "fb2828f43082",
-          "ts": "30a9217a058c",
-          "lean": "244e66c0df16"
-        },
-        "result": "warn",
-        "severity": "minor",
-        "evidence": "md editorializes: 'equivalent descriptions of the same physical content' rather than stating the equivalence",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T02:15:50.343Z",
-        "reviewed_sha": "2253637bab40ba38262994074129f52af053dbb0",
-        "notes": "Theorem statement carries physical-interpretation prose; move to a remark/interprets sibling"
-      }
-    ],
-    "wall-side-statement": [
-      {
-        "field_hash": {
-          "md": "fb2828f43082",
-          "ts": "30a9217a058c",
-          "lean": "244e66c0df16"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "Pure categorical equivalence; no q0~1.11 numeric or MeV literal",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T02:15:50.387Z",
-        "reviewed_sha": "2253637bab40ba38262994074129f52af053dbb0",
-        "notes": "No archimedean-wall banner needed"
-      }
-    ],
-    "wall-side-proof": [
-      {
-        "field_hash": {
-          "md": "fb2828f43082",
-          "ts": "30a9217a058c",
-          "lean": "244e66c0df16"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "Lean uses opaque categorical types only; no Real.*/ordering in proof",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T02:15:50.430Z",
-        "reviewed_sha": "2253637bab40ba38262994074129f52af053dbb0",
-        "notes": "Proof side is generic-categorical"
-      }
     ]
   },
-  "updated_at": "2026-06-07T02:15:50.430Z"
+  "updated_at": "2026-06-05T14:22:44.851Z"
 }

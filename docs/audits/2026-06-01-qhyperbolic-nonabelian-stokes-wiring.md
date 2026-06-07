@@ -5,11 +5,11 @@
 **Date:** 2026-06-01
 **Status:** read-only trace + design. No fit, no fabrication.
 
-> Companion to the Geom_full derivation trace
-> (`docs/audits/2026-06-01-geom-full-derivation-trace.md`, this session,
+> Companion to the VolDensity derivation trace
+> (`docs/audits/2026-06-01-vol-density-derivation-trace.md`, this session,
 > PR #1608), which found the `C-action → Yekutieli non-abelian Stokes →
 > Hecke` chain link is ASSERTED (`conj:geom-yekutieli-alignment`,
-> trivial `:= True` stubs), not derived. Overlaps PR #1610 (Geom_full
+> trivial `:= True` stubs), not derived. Overlaps PR #1610 (VolDensity
 > compute-vs-paper). A sibling agent runs the Reeb/Bring geometric escape
 > test on `claude/reeb-bring-geometric-escape-2026-06-01`; this branch
 > uses distinct `-qhyp`-themed filenames and does not touch it.
@@ -90,7 +90,7 @@ Markov-trace map.
 
 ---
 
-## 2. The intended derivation — how Yekutieli SHOULD produce Geom_full
+## 2. The intended derivation — how Yekutieli SHOULD produce VolDensity
 
 Reading the paper's stated chain (`geom-yekutieli-alignment.md:3-152`,
 `figure-eight-reeb-rotation.md`, `NonAbelianStokes.lean` docstrings):
@@ -194,7 +194,7 @@ Production **collapses the per-operator geometry to a single global
 scalar** and injects the p/n distinction from elsewhere:
 
 1. Both proton and neutron use the SAME knot `𝓑₃` and the SAME
-   `geom_full_borromean(q) = Vol(𝓑₃)/ℏ_q² · linking_weight`
+   `vol_density_borromean(q) = Vol(𝓑₃)/ℏ_q² · linking_weight`
    (`mass_table_comprehensive.py:206`, `_li_2_q_util.py:210-254`).
    `Vol(𝓑₃) = 8·Catalan` is a hardcoded constant
    (`_li_2_q_util.py:243`).

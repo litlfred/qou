@@ -1923,28 +1923,7 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "1f2afa8ed67d",
-          "ts": "b7e3d0d0ba42"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "Remark interprets prop:antiparticle-crossing-reversal vs Kleckner/Irvine fluid experiments",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-06",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-06T19:54:13.181Z",
-        "reviewed_sha": "b1766dc516a39cad5b94d1f3daa6482e1aa96c05",
-        "notes": "Empirical fluid-vortex data contrasted with categorical trefoil; fits observations chapter."
-      }
     ]
   },
-  "updated_at": "2026-06-06T19:54:13.181Z"
+  "updated_at": "2026-06-03T22:40:47.501Z"
 }

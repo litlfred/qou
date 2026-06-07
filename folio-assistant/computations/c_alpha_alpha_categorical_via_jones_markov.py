@@ -13,7 +13,7 @@ constant `c_αα`. Currently this is set to
             ≈ 2.4269 MeV
 
 — uses Vol(7²_1) directly (no ℏ_q² scaling), unlike the proton
-mass formula `m_p = m_e · Geom_full(𝓑₃)` which scales by
+mass formula `m_p = m_e · VolDensity(𝓑₃)` which scales by
 `Vol(𝓑₃) / ℏ_q² × linking_weight`. This dimensional discrepancy
 is itself an open question (`c_αα` is a binding scale ~MeV vs
 `m_p` is a rest-mass scale ~GeV; both use `m_e` as calibration
@@ -40,12 +40,12 @@ The bare Markov trace gives ~22.7× smaller than the literature
 volume-based c_αα. This mirrors the proton case:
 
   |tr_M(𝓑₃, q_0)|_Wenzl    ≈ 0.998     →  m_e·|tr_M| ≈ 0.510 MeV
-  Geom_full(𝓑₃, q_0)        ≈ 1836      →  m_e·Geom   ≈ 938 MeV
+  VolDensity(𝓑₃, q_0)        ≈ 1836      →  m_e·Geom   ≈ 938 MeV
 
 i.e. `|tr_M|` alone is NOT the right substrate-pure derivation
 of binding/mass scales — the framework's volume × ℏ_q² × linking-
 weight machinery is the correct chain (per `prop:geom-universality`
-and the Geom_full formula). This script is a NEGATIVE finding: the
+and the VolDensity formula). This script is a NEGATIVE finding: the
 Markov-trace value is interesting but does NOT substitute for the
 literature `Vol(7²_1)` in `alpha_cluster_recursion.py`.
 
@@ -108,7 +108,7 @@ def main() -> int:
         "Result: bare Markov-trace value is ~22.7× smaller than "
         "the literature; the substitution does NOT work. Mirrors the "
         "proton-mass case (|tr_M(𝓑₃)| << m_p) — bare |tr_M| is not "
-        "the substrate-pure binding-scale derivation; Geom_full chain "
+        "the substrate-pure binding-scale derivation; VolDensity chain "
         "(Vol/ℏ_q² × linking_weight) is. This probe does NOT propose "
         "changing alpha_cluster_recursion.py."
     )

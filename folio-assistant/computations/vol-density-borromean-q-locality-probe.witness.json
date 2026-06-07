@@ -1,0 +1,71 @@
+{
+  "compute": "vol_density_borromean_q_locality_probe",
+  "description": "q-locality discipline test applied to canonical `vol_density_borromean(q)` near q_0. Tests whether the linking weight inside VolDensity has the same local q-derivative as the CODATA-implied target.",
+  "historical_baselines": {
+    "bare_replace_5_2_minus_G_h2": "-1.7e7 ppm/q (PR #951)",
+    "faddeev_x_bring_1_over_1_minus_hq_q010": "-1.5e7 ppm/q",
+    "family_a_canonical_5_2_plus_3h2_over_4": "-1.69e7 ppm/q (PR #951)",
+    "strategy_g_5_2_minus_hbar2_borr_trace": "-1.69e7 ppm/q (PR #916)",
+    "upstream_q_locality_tolerance": "\u2264 1e5 ppm/q",
+    "v_7_strategy_h": "-1.86e7 ppm/q (PR #916)",
+    "yekutieli_purged_5_2_plus_3_4_minus_G_h2": "-1.69e7 ppm/q (PR #951)"
+  },
+  "parameters": {
+    "M_E_MEV": "0.51099895",
+    "M_P_CODATA_MEV": "938.27208816",
+    "Q_0": "1.1097",
+    "dps": 50,
+    "precision": "mpfr",
+    "sweep_deltas": [
+      0.001,
+      0.01,
+      0.05
+    ],
+    "tolerance_ppm_per_q": 100000.0
+  },
+  "results": {
+    "gap_at_q0": 0.08388692361302227,
+    "gap_ppm_at_q0": 34257.25364363127,
+    "vol_density_at_q0": 1899.0542212872192,
+    "lambda_p_codata_at_q0": 2.4487346383827124,
+    "linking_weight_at_q0": 2.5326215619957346,
+    "m_p_codata_MeV": 938.27208816,
+    "m_p_pred_MeV": 970.4147130708367,
+    "relative_error": 0.034257253643631275,
+    "relative_error_pct": 3.425725364363127,
+    "slopes_by_delta": [
+      {
+        "abs_slope_ppm_per_q": 15661140.098367414,
+        "delta": 0.001,
+        "pass_q_locality": false,
+        "slope_ppm_per_q": -15661140.098367414
+      },
+      {
+        "abs_slope_ppm_per_q": 15650843.618292332,
+        "delta": 0.01,
+        "pass_q_locality": false,
+        "slope_ppm_per_q": -15650843.618292332
+      },
+      {
+        "abs_slope_ppm_per_q": 15400151.030192878,
+        "delta": 0.05,
+        "pass_q_locality": false,
+        "slope_ppm_per_q": -15400151.030192878
+      }
+    ]
+  },
+  "scriptCommitSha": "5dc2c25f916bea59d5ad5687ef82d75f0bd896ac",
+  "status": "exploratory",
+  "tags": [
+    "q-locality",
+    "vol-density-refinement",
+    "smooth-crossing",
+    "family-a-gap",
+    "borromean"
+  ],
+  "verdict": {
+    "all_deltas_pass": false,
+    "interpretation": "FAIL \u2014 VolDensity's linking weight does NOT track \u03bb_p_codata locally; slope dominated by \u210f_q\u00b2 prefactor as in all prior bare-polynomial probes. Production Family A linking weight (5/2 + 3h\u00b2/4) is not structurally q-local with respect to the CODATA target near q_0. Closure requires refinement of VolDensity at higher h\u00b2 orders (S_4\u2193S_3 bijection + S_5\u2194SO(3) fiber action \u2014 see docs/audits/2026-05-24-family-a-gap-audit.md).",
+    "max_abs_slope_ppm_per_q": 15661140.098367414
+  }
+}

@@ -1737,28 +1737,7 @@
         "reviewed_at": "2026-06-02T19:35:55.253Z",
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
       }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "de87813830fa",
-          "ts": "067bde7605eb"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "Proves uniqueness of Frobenius form up to unit scalar via 1-dim Hom(A^v,1) for simple A; categorical, in quantum-universes Frobenius scope",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-06",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-06T20:47:59.214Z",
-        "reviewed_sha": "8c75c6e3257a0abdcefdae57fe782980a2a0dca5",
-        "notes": "In scope, no misfiling"
-      }
     ]
   },
-  "updated_at": "2026-06-06T20:47:59.214Z"
+  "updated_at": "2026-06-03T13:06:09.584Z"
 }

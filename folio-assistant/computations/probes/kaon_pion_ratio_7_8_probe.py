@@ -85,13 +85,13 @@ vol_41 = 2 * mp.clsin(2, mp.pi/3)
 hbar_q_sq = vol_41 / mpf('206.7682830')
 print(f"  m_μ/m_e        = Vol(4₁)/ℏ_q² = 206.7683 (exact)")
 
-# m_p (existing Geom_full)
+# m_p (existing VolDensity)
 vol_b3 = 8 * catalan
 hbar_q = 1 - qi
 lw = mpf(5)/2 + mpf(3)*mp.power(q0-qi, 2)/4
 geom_p = vol_b3 / hbar_q**2 * lw
 m_p_pred = m_e * geom_p
-print(f"  m_p (Geom_full)= {float(m_p_pred):.3f} MeV  (vs 938.272 CODATA, {float(fabs(m_p_pred-mpf('938.27208816'))/mpf('938.27208816')*1e6):.0f} ppm)")
+print(f"  m_p (VolDensity)= {float(m_p_pred):.3f} MeV  (vs 938.272 CODATA, {float(fabs(m_p_pred-mpf('938.27208816'))/mpf('938.27208816')*1e6):.0f} ppm)")
 
 # m_K (this formula)
 print(f"  m_K (7/8×[2]²) = {float(m_K_pred):.3f} MeV  (vs {float(m_K_pdg):.3f} PDG, {err_ratio:.0f} ppm)")

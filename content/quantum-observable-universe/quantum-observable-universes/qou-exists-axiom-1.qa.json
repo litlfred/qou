@@ -2222,6 +2222,25 @@
         "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-1.lean:28: invalid 'import' command, it must be used in the beginning of the file"
+      },
+      {
+        "field_hash": {
+          "md": "059f7603e41c",
+          "ts": "2569152e2b22",
+          "lean": "88df195234d3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "cf383b911867",
+          "script_commit_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
+          "deps_hash": "4b9cd43e52e5"
+        },
+        "reviewed_at": "2026-06-05T14:22:44.851Z",
+        "reviewed_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
+        "notes": "stale: cached lean diagnostics have no lean_sha (legacy v1 cache); re-run content/pipeline/lean-compile-audit.ts to refresh"
       }
     ],
     "voice-author-notes-pollution": [
@@ -2554,95 +2573,7 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
-    ],
-    "voice-statement-no-interpretation": [
-      {
-        "field_hash": {
-          "md": "059f7603e41c",
-          "ts": "2569152e2b22",
-          "lean": "88df195234d3"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "Lemma states Haar-state pairing faithful / A≅A^∨; no interpretive prose, motivation in sibling proof+def",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-06",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-06T20:37:49.982Z",
-        "reviewed_sha": "a8cb58bd3c1734d0ba63b357efa2b091d4ef1f7b",
-        "notes": "Statement-only lemma; nondegeneracy is the bare claim"
-      }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "059f7603e41c",
-          "ts": "2569152e2b22",
-          "lean": "88df195234d3"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "In sec:qou-definition; verifies Axiom 1 of def:quantum-observable-universe",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-06",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-06T20:37:50.027Z",
-        "reviewed_sha": "a8cb58bd3c1734d0ba63b357efa2b091d4ef1f7b",
-        "notes": "Correctly placed in QOU definition section"
-      }
-    ],
-    "wall-side-statement": [
-      {
-        "field_hash": {
-          "md": "059f7603e41c",
-          "ts": "2569152e2b22",
-          "lean": "88df195234d3"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "Generic field k (Field k); no Real.*, no numeric q0, no MeV; categorical chapter regime",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-06",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-06T20:37:50.075Z",
-        "reviewed_sha": "a8cb58bd3c1734d0ba63b357efa2b091d4ef1f7b",
-        "notes": "Purely algebraic Frobenius-pairing statement"
-      }
-    ],
-    "wall-side-proof": [
-      {
-        "field_hash": {
-          "md": "059f7603e41c",
-          "ts": "2569152e2b22",
-          "lean": "88df195234d3"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "Proof lives in sibling prf block; statement+Lean def use only categorical/snake-identity machinery, no archimedean tactics",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-06",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-06T20:37:50.118Z",
-        "reviewed_sha": "a8cb58bd3c1734d0ba63b357efa2b091d4ef1f7b",
-        "notes": "No linarith/IVT/Real.*; matches algebraic side"
-      }
     ]
   },
-  "updated_at": "2026-06-06T20:37:50.118Z"
+  "updated_at": "2026-06-05T14:22:44.851Z"
 }

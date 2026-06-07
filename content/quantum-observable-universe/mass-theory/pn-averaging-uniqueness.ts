@@ -9,4 +9,11 @@ export default proposition({
   defines: [],
   tags: ["normalization", "frobenius", "no-fitting", "uniqueness"],
   lean: { ref: "qou:QOU.BraidKnot.pn_averaging_unique" },
+  authorNotes: [
+    {
+      kind: "note",
+      date: "2026-05-30",
+      body: "The closed-form-weight derivation chain was established 2026-05-30.",
+    },
+  ],
 });

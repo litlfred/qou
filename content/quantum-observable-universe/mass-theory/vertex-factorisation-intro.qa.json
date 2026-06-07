@@ -2079,28 +2079,7 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "91f0eec9fb30",
-          "ts": "3705dbc65bea"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "Section-intro prose roadmapping the vertex-factorisation section (vertex operators -> exceptional divisor -> Markov trace -> Feynman/categorical trace); mass-theory scope",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T01:44:15.183Z",
-        "reviewed_sha": "e29802da46989e9d01949b679e94c6ac8eb4c367",
-        "notes": "Roadmap prose, asserts no new provable claim; correctly a prose section opener"
-      }
     ]
   },
-  "updated_at": "2026-06-07T01:44:15.183Z"
+  "updated_at": "2026-06-03T20:30:24.391Z"
 }

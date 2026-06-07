@@ -35,7 +35,7 @@ Euclidean Wightman correlation functions
 $\tau_{\mathrm{arch}}\bigl(\langle \phi_1 \cdots \phi_n \rangle_F\bigr)$
 on the $\varepsilon \to 0$ standard manifold $\mathbb{R}^4$.*
 
-## Why $\mathbb{Z}_2$ ⊂ $U(1)_{\xi}$ is the OS reflection
+## Why $\mathbb{Z}_2 \subset U(1)_{\xi}$ is the OS reflection
 
 The Osterwalder–Schrader reflection $\theta_{\mathrm{OS}}$ on
 Euclidean spacetime is reflection in the $\tau = 0$ hyperplane,
@@ -76,7 +76,7 @@ needed is that the antipode-twisted pairing $\langle \theta(\cdot),
 \cdot \rangle_F$ descends through $\tau_{\mathrm{arch}}$ to a
 positive-definite inner product on the half-line $L^2(\mathbb{R}_{>0})$.
 
-## Why the surreal bound + this conjecture ⇒ Wightman
+## Why the surreal bound + this conjecture $\Rightarrow$ Wightman
 
 The Osterwalder–Schrader theorem
 [`osterwalder1973`, `osterwalder1975`] states: a family of Euclidean

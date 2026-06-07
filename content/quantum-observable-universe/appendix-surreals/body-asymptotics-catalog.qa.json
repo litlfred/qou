@@ -1873,28 +1873,7 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "3146df5118e7",
-          "ts": "eebcc10db48f"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "Remark catalogs body Big-O/little-o bounds in ordw/Conway-normal-form terms; sits in 'Conway normal form and asymptotic notation' section",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T00:39:40.233Z",
-        "reviewed_sha": "adb23a9ab3fe68060cad6c63cc244c729c5ae80e",
-        "notes": "Subject is the asymptotic-notation dictionary; matches section scope"
-      }
     ]
   },
-  "updated_at": "2026-06-07T00:39:40.233Z"
+  "updated_at": "2026-06-03T22:40:47.501Z"
 }

@@ -2221,28 +2221,7 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "ba660dcf36ad",
-          "ts": "ec007a3ea7d4"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "Prose preamble introduces q-dilogarithm sub-section within q-special-functions of the qou chapter; topic in scope",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T01:37:02.080Z",
-        "reviewed_sha": "5a14061c0ce17b5ba94c15505d1945e505cacc75",
-        "notes": "Section intro tying dilog to preceding Reeb-flow material; well placed"
-      }
     ]
   },
-  "updated_at": "2026-06-07T01:37:02.080Z"
+  "updated_at": "2026-06-03T20:30:24.391Z"
 }

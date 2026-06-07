@@ -1,0 +1,57 @@
+{
+  "engine": "python3/mpmath",
+  "engineVersion": "50dps",
+  "computedAt": "2026-05-26T14:10:24Z",
+  "computation": "meson-vol-density",
+  "scriptFile": "meson_vol_density.py",
+  "description": "Meson-sector VolDensity analog. Baryons use m=m_e\u00d7Vol/\u210f_q\u00b2\u00d7linking_weight; mesons use m=m_\u03c0\u00d7Geom_meson where m_\u03c0 is CAL-3. Tests three m_K candidates. Also cross-checks Q_\u03b2 as derived from CAL-1+CAL-2.",
+  "parameters": {
+    "q0": "1.1099785955541805752815940796095093779932822799587",
+    "m_e": "0.51099895069",
+    "m_pi": "139.57039"
+  },
+  "data": {
+    "baryon_geom": {
+      "vol_density": 1890.5119536990953,
+      "m_p_pred": 966.0496246071397,
+      "err_ppm": 29604.990703296746
+    },
+    "meson_geom_candidates": {
+      "A_nf_ratio": {
+        "geom": 1.1451684856682947,
+        "m_K_pred": 159.83161216043328,
+        "err_ppm": 676242.5388251159
+      },
+      "B_two_q_sq": {
+        "geom": 4.043706218230512,
+        "m_K_pred": 564.3816539238577,
+        "err_ppm": 143220.47396143162
+      },
+      "C_goldstone": {
+        "geom": 2.882042317630516,
+        "m_K_pred": 402.247770268195,
+        "err_ppm": 185200.50505047833
+      }
+    },
+    "q_beta_crosscheck": {
+      "pred": 0.7836458039031041,
+      "codata": 0.78233341,
+      "err_ppm": 1677.53784553836
+    },
+    "proton_pion_ratio": {
+      "pdg": 6.722572661436283,
+      "geom": 6.9215943625803416
+    }
+  },
+  "assertions": [
+    {
+      "label": "m_p within 30,000 ppm (known 2.89% gap)",
+      "passed": true
+    },
+    {
+      "label": "Q_\u03b2 within 2000 ppm",
+      "passed": true
+    }
+  ],
+  "allPassed": true
+}

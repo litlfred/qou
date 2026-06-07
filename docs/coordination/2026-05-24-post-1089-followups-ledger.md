@@ -5,7 +5,7 @@
 
 | # | Tier | Title | Status |
 |---|------|-------|--------|
-| 1 | 1 | Wire ⁵Li / ⁶Li / ⁷Li predictions | knot-census + multi-knot Geom_full path audit |
+| 1 | 1 | Wire ⁵Li / ⁶Li / ⁷Li predictions | knot-census + multi-knot VolDensity path audit |
 | 2 | 1 | Categorical formalization of pp/pn/nn channel-assignment | `conj:` block authored, conditional on PR #1081 Task 3 |
 | 3 | 1 | Sign-flip diagnostic interpretation | audit authored, R² = 0.83 confirmed, color-tube reading |
 | 4 | 1 | Rename remaining `lambda_scale_*` script filenames | deferred to follow-up commit (invasive) |
@@ -37,7 +37,7 @@
 | Sibling PR | Relationship | Action |
 |------------|--------------|--------|
 | [#1081](https://github.com/litlfred/qou/pull/1081) | **SUPPLIER** for items #2, #7 (S₅↔SO(3) Task 3 supplies categorical class) | Advisory comment with channel-assignment + ⁴He saturation hypothesis cross-link |
-| [#1063](https://github.com/litlfred/qou/pull/1063) | **OVERLAP** for items #3, #7 (Family A gap, single-Geom_full framing) | Advisory note pointing at sign-flip interpretation + ⁴He color-tube reading |
+| [#1063](https://github.com/litlfred/qou/pull/1063) | **OVERLAP** for items #3, #7 (Family A gap, single-VolDensity framing) | Advisory note pointing at sign-flip interpretation + ⁴He color-tube reading |
 
 ## Key findings
 
@@ -56,8 +56,8 @@ The "magic A·8G shell" closure (`A=4` for ⁴He) is hypothesised as the categor
 ### Item #5 — atom→knot census admits PSD-cone fragility
 Per the existing `atom-knot-mass-derivation.md`, ²H ↔ 6₂ is NOT PSD-feasible alone (α* = 0.89, only top 45%) while ³He ↔ L6a4 is PSD-top-17%. The census map is scaffolding — R5-full SDP solver supersedes it when it lands.
 
-### Item #1 — ⁵Li / ⁶Li / ⁷Li await PR #1081 Task 3 multi-knot Geom_full
-No SnapPy single-knot candidate cleanly matches the target volumes 51.5 / 62.6 / 76.8 (or the 2m_e half-values 25.8 / 31.3 / 38.4). ⁵Li is unbound (resonance → Demazure sub-crystal, per CLAUDE.md §7b); ⁶Li is naturally `α + d` link; ⁷Li has J^π = 3/2⁻ spin sector. Recommendation: wait for `Geom_full(K_1 ⊔ K_2)` multi-knot evaluation from PR #1081 Task 3.
+### Item #1 — ⁵Li / ⁶Li / ⁷Li await PR #1081 Task 3 multi-knot VolDensity
+No SnapPy single-knot candidate cleanly matches the target volumes 51.5 / 62.6 / 76.8 (or the 2m_e half-values 25.8 / 31.3 / 38.4). ⁵Li is unbound (resonance → Demazure sub-crystal, per CLAUDE.md §7b); ⁶Li is naturally `α + d` link; ⁷Li has J^π = 3/2⁻ spin sector. Recommendation: wait for `VolDensity(K_1 ⊔ K_2)` multi-knot evaluation from PR #1081 Task 3.
 
 ## Decisions
 
@@ -73,7 +73,7 @@ No SnapPy single-knot candidate cleanly matches the target volumes 51.5 / 62.6 /
 - Did NOT invent ⁵Li/⁶Li/⁷Li atom→knot assignments by census-search (would extend the existing CAL-4-equivalent risk surfaced by Rule-14 escalation #5)
 - Did NOT promote `conj:inter-nucleon-channel-color-tube` to `proposition` despite the cheat-sheet's strong evidence (would violate §3b-cond — needs the class formalised first)
 - Did NOT touch script names (item #4) inline with this PR — file-rename PRs are best handled standalone for clean review
-- Did NOT split inconsistencies between sign-flip and PR #1063's framing silently — sign-flip audit explicitly **falsifies** the single-Geom_full framing for A ≥ 3 and recommends amendment
+- Did NOT split inconsistencies between sign-flip and PR #1063's framing silently — sign-flip audit explicitly **falsifies** the single-VolDensity framing for A ≥ 3 and recommends amendment
 
 ## Owner decisions 2026-05-24 (Rule-14 items)
 
@@ -93,7 +93,7 @@ No SnapPy single-knot candidate cleanly matches the target volumes 51.5 / 62.6 /
 ## Cross-references
 
 - Parent PR ledger: [`2026-05-24-low-isotope-mass-anatomy-ledger.md`](2026-05-24-low-isotope-mass-anatomy-ledger.md)
-- λ_scale-absorbed canonical reference: [`docs/lambda-scale-absorbed-into-geom-full.md`](../lambda-scale-absorbed-into-geom-full.md)
+- λ_scale-absorbed canonical reference: [`docs/lambda-scale-absorbed-into-vol-density.md`](../lambda-scale-absorbed-into-vol-density.md)
 - 13-driver categorical menu: [`docs/audits/2026-05-23-lambda-scale-canonical-unification.md`](../audits/2026-05-23-lambda-scale-canonical-unification.md)
 - Bring color-tube cheat-sheet entry: [`docs/canonical-derivation-cheat-sheet.md`](../canonical-derivation-cheat-sheet.md)
 - Sibling: PR [#1081](https://github.com/litlfred/qou/pull/1081) (s4-s3 bijection + Tasks 2/3)

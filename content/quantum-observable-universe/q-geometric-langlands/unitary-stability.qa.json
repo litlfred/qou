@@ -1953,28 +1953,7 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "4af6b8a823b1",
-          "ts": "84f4c96c5275"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "Interprets cor:spectral-half-line (critical-line confinement) re observer-drift stability",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T02:21:18.921Z",
-        "reviewed_sha": "e17313ddf05d623a1df3d8e36290d8181aa90675",
-        "notes": "Remark sits in explicit-formula/spectral-half-line section of q-geometric-langlands; on-scope."
-      }
     ]
   },
-  "updated_at": "2026-06-07T02:21:18.921Z"
+  "updated_at": "2026-06-03T22:40:47.501Z"
 }

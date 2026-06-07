@@ -12,7 +12,7 @@ The L2-Subgoal-1 binding gap localizes to ONE missing object: a parameter-free m
 **χ^λ(K) → M_λ(K)** (substrate-derived per-block energies E₀^λ in MeV). This doc
 enumerates and ranks five candidate constructions for that map.
 
-**Verdict (short):** Four of the five candidates (Archimedean per-block Geom_full,
+**Verdict (short):** Four of the five candidates (Archimedean per-block VolDensity,
 q-dimension weighting, co-Casimir, ribbon twist) are killed by the **same proved
 impossibility theorem** (GAP-A-4 verifier, `rho-prefactor-structural-verifier.witness.json`,
 `allPassed: True`): **any function `f(χ_λ, y_λ, q₀)` of the H_3-level Wedderburn data is
@@ -176,21 +176,21 @@ long-horizon track while Candidate 3 is the short-horizon probe.
 
 ---
 
-### 🔴 #3 — Candidate 1: Archimedean functor per-block Geom_full
+### 🔴 #3 — Candidate 1: Archimedean functor per-block VolDensity
 
-**Idea.** The mass formula `m(K) = m_e · Geom_full(K, q₀)`. Ask whether Geom_full acts
-per-Wedderburn-block, giving `M_λ = m_e · Geom_full|_λ` directly from the functor's action on
+**Idea.** The mass formula `m(K) = m_e · VolDensity(K, q₀)`. Ask whether VolDensity acts
+per-Wedderburn-block, giving `M_λ = m_e · VolDensity|_λ` directly from the functor's action on
 the block's Specht module.
 
-**Verdict: 🔴 PROVED-INSUFFICIENT (this is exactly the GAP-A-4 impossibility).** Geom_full
+**Verdict: 🔴 PROVED-INSUFFICIENT (this is exactly the GAP-A-4 impossibility).** VolDensity
 restricted to block λ is a function of that block's character + q-data, i.e.
 `f(χ_λ, y_λ, q₀)`. By the H_3 impossibility theorem it is **constant across Markov-equivalent
 {p, n, ³He}**, so it cannot supply the distinct M_λ they require. Additionally, the global
-Geom_full is the object behind the **uniform +2.89% m_p/m_n gap** (cheat-sheet §5) — that gap
+VolDensity is the object behind the **uniform +2.89% m_p/m_n gap** (cheat-sheet §5) — that gap
 is bar-symmetric and block-uniform, i.e. a single scale error, the OPPOSITE of the
 per-block-resolved structure binding needs. The deprecated `per_block_phi_q.mass_per_block`
 *does* compute per-block masses `(m_sym, m_std, m_alt)` — but it then needs **three fitted
-E₀^block scales** to hit MeV. Removing the fit leaves only `Geom_full|_λ ∝ f(χ_λ)`, which the
+E₀^block scales** to hit MeV. Removing the fit leaves only `VolDensity|_λ ∝ f(χ_λ)`, which the
 theorem forbids. **Latent fit.** Do not advance as a standalone closure.
 
 **Reproduces {e⁻, p, n}?** Only via the 3 fitted E₀ scales (= the deprecated fit). No.
@@ -256,7 +256,7 @@ standalone.
 |------|-----------|------------------------|-----------------|----------------------|--------------|------|
 | 1 | **3. per-vertex eigenphase / q-Reeb θ_λ** | seminormal eigenphases (off-diagonal, free-vs-atom Δθ_λ) | YES if scale = derived μ₀; RED if γ fit | not yet (closes *differences* only: ³H−³He 2%, B_D −9%) | this-session→days | 🟢 only non-circular object |
 | 2 | **GAP-A-1 K-identification** | substrate-only SDP for binding operator K at H_{3A} | YES iff SDP uniquely pins K w/o AME | untested as closure | multi-week | 🟢 highest leverage |
-| 3 | 1. Archimedean Geom_full per-block | f(χ_λ, y_λ, q₀) on Specht module | NO (needs 3 fitted E₀) | NO | — | 🔴 GAP-A-4 theorem |
+| 3 | 1. Archimedean VolDensity per-block | f(χ_λ, y_λ, q₀) on Specht module | NO (needs 3 fitted E₀) | NO | — | 🔴 GAP-A-4 theorem |
 | 4 | 2. q-dimension weighting | dim_q(λ) | NO | NO (5/5 rules falsified) | — | 🔴 GAP-A-4 theorem |
 | 5 | 4. (co-)Casimir eigenvalue | 1/dim_q(λ), τ-invariant | NO (vortex-blind) | NO (Option B failed) | — | 🔴 GAP-A-4 theorem |
 | 6 | 5. ribbon twist θ_λ = q^{2c} | content-sum power of q | NO (content-only + phase) | NO | — | 🔴 subsumed by #1 |

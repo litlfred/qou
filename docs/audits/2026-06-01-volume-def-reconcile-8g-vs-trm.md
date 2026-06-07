@@ -49,7 +49,7 @@ opposite sides of that wall.
 
 For 𝓑₃ this is the classical SnapPy value `Vol(𝓑₃) = 8·G = 7.32772…`
 (G = Catalan; Adams 1985). It is used verbatim in
-[`_li_2_q_util.geom_full_borromean`](../../folio-assistant/computations/_li_2_q_util.py)
+[`_li_2_q_util.vol_density_borromean`](../../folio-assistant/computations/_li_2_q_util.py)
 as `vol_b3 = 8 * mp.catalan`, then `Geom_leading = Vol/ℏ_q²`.
 
 **Chain stage: POST-τ.** `Vol(K)` is already a real number in ℝ — it is the
@@ -155,7 +155,7 @@ Production's +2.89 % reproduces the keystone audit and the sibling
 perblock-wiring-fix gate exactly. The +2.89 % is the **separate** residual:
 the H₄ `linking_weight = 2.533` vs the CODATA-implied `λ ≈ 2.460` — the
 λ_scale-absorbed item per
-[`lambda-scale-absorbed-into-geom-full.md`](../lambda-scale-absorbed-into-geom-full.md),
+[`lambda-scale-absorbed-into-vol-density.md`](../lambda-scale-absorbed-into-vol-density.md),
 **not** a volume-definition inconsistency.
 
 ---

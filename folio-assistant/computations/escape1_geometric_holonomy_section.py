@@ -509,7 +509,7 @@ def main():
         "block invariant used ONLY as a falsification reference; no operator, line, "
         "cross-ratio, or normalization is chosen to reproduce it. The Bring color-"
         "tube cross-ratio path (closed_form_tau_M, touched by sibling branch "
-        "claude/geom-full-bz3-refinement) is referenced for context only; this "
+        "claude/vol-density-bz3-refinement) is referenced for context only; this "
         "probe changes no production value and emits no LP/SDP solve (no dual "
         "required).")
 

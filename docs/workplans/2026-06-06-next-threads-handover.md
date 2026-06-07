@@ -8,18 +8,18 @@ session — long mega-sessions are the observed failure mode, CLAUDE.md).
 
 ---
 
-## Thread 2 (TOP) — per-knot `Geom_full(K)` wire-up (the +2.89% headline gap)
+## Thread 2 (TOP) — per-knot `VolDensity(K)` wire-up (the +2.89% headline gap)
 
 **Goal.** Replace uniform `Vol(𝓑₃)` with per-knot `Vol(K)` so the mass table
 stops carrying the +2.89 % (m_p) → +3.73 % (¹²C) error.
 
 **The bug (canonical audit):** [`2026-06-02-vol-usage-audit-uniform-vs-per-knot.md`](../audits/2026-06-02-vol-usage-audit-uniform-vs-per-knot.md)
-— **64 atom-touching scripts** use `geom_full_borromean(q)` (uniform `Vol(𝓑₃)`); only 2 use the per-knot path.
+— **64 atom-touching scripts** use `vol_density_borromean(q)` (uniform `Vol(𝓑₃)`); only 2 use the per-knot path.
 
-**Infra already exists:** `_li_2_q_util.py::geom_full_per_block(vol_K, tr_M_K, q)`
-(line 393) takes `vol_K` explicitly; the uniform shortcut is `geom_full_borromean`
+**Infra already exists:** `_li_2_q_util.py::vol_density_per_block(vol_K, tr_M_K, q)`
+(line 393) takes `vol_K` explicitly; the uniform shortcut is `vol_density_borromean`
 (line 303, its own docstring labels it "global-scalar collapse, NOT the paper's
-per-block sum"). Sole consumer: `geom_full_per_block_wiring.py` (testbed).
+per-block sum"). Sole consumer: `vol_density_per_block_wiring.py` (testbed).
 
 **The gate — `Vol(K)` per atom:**
 | atom | `Vol(K)` | status |
@@ -29,9 +29,9 @@ per-block sum"). Sole consumer: `geom_full_per_block_wiring.py` (testbed).
 | T, ³He, ⁴He (A≥3) | `Vol(β_atom)` | 🔴 **heuristic/open — §9.3 link-volume assignment ⇒ couples to Thread 4** |
 
 **First concrete step (fresh session):** demonstrate the **deuteron** per-knot
-`Geom_full` — `geom_full_per_block(Vol(6₂), tr_M(β_D), q₀)` vs the uniform
-`geom_full_borromean` — and show the error drops from +2.86 % toward the AME value.
-Then migrate the *mechanical* path (`geom_full_borromean` → `geom_full_per_block`)
+`VolDensity` — `vol_density_per_block(Vol(6₂), tr_M(β_D), q₀)` vs the uniform
+`vol_density_borromean` — and show the error drops from +2.86 % toward the AME value.
+Then migrate the *mechanical* path (`vol_density_borromean` → `vol_density_per_block`)
 for p/n/D only; A≥3 waits on Thread 4. (Machinery is fragile under ad-hoc
 `PYTHONPATH` — run from `folio-assistant/computations/`.)
 

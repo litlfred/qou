@@ -33,15 +33,6 @@ name: Build & Publish
 #     workflow so existing runbooks keep working.
 
 on:
-  pull_request:
-    paths:
-      - 'content/**'
-      - 'chapters/**'
-      - 'main.tex'
-      - 'tools/**'
-      - 'folio-assistant/**'
-      - '.github/workflows/publish.yml'
-      - '.github/workflows/paper-builder-image.yml'
   workflow_dispatch:
     inputs:
       source_branch:
@@ -280,6 +271,21 @@ jobs:
           echo "── Generated artefacts ──"
           ls -la ../main.tex ../chapters/*.tex 2>/dev/null | head -20 || \
             { echo "::error::main.tex was not generated"; exit 1; }
+
+      - name: LaTeX preflight (macro lint — fast, no TeX)
+        # Fast static gate (~1 s, no TeX install) on the GENERATED compile
+        # unit (main.tex + every \input'd chapters/*.tex). Catches the three
+        # recurring fatal-pdflatex classes that the unified-latex AST
+        # validation is structurally blind to (it never resolves macros):
+        #   A. duplicate \newcommand  → "Command \X already defined"
+        #   B. undefined control seq  → "! Undefined control sequence"
+        #   C. fragile math accent as bare sub/superscript ("Q^\check{q}")
+        # This gates EVERY PR even when the heavy `paper-pdf` job no-ops
+        # (GitHub Actions billing block / [skip-ci]) — exactly the
+        # conditions under which classes A/B/C historically reached main
+        # and needed a manual fix(latex) commit (see
+        # docs/audits/2026-06-07-latex-compile-bug-prevention.md).
+        run: cd content && bun run pipeline/latex-preflight.ts ../main.tex
 
       - name: Compute output filename base
         id: filename

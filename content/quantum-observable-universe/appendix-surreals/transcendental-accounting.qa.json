@@ -1873,28 +1873,7 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "5bf9ca6f75d5",
-          "ts": "be3beb06d0d1"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "Remark = transcendental/period ledger indexed by Goncharov depth; sits in sec:surreal-survives-breaks as dual to rem:algebraic-core-survives",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T00:44:45.282Z",
-        "reviewed_sha": "af6706fc5f611c748c094381f21086fd3c1cdff7",
-        "notes": "Tabulation remark aggregating paper periods; topic squarely in appendix-surreals (period/depth/standard-part) scope"
-      }
     ]
   },
-  "updated_at": "2026-06-07T00:44:45.282Z"
+  "updated_at": "2026-06-03T22:40:47.501Z"
 }

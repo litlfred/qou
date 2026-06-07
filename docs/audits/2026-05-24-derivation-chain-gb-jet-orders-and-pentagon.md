@@ -24,7 +24,7 @@ substrate q_0
   → Frobenius pairing tr_M = Σ y_λ χ_λ
   → GB filtration / spectral sequence
   → confinement SDP / canonical T_w
-  → Geom functor (Geom_full(K, q_0))
+  → Geom functor (VolDensity(K, q_0))
   → Archimedean functor (substitute q_0, pull back to MeV)
   → observable mass
 ```
@@ -156,10 +156,10 @@ by pentagon coherence applied to the $\ell = 2$ data.
 - **Source**: [`prop:operator-selection-lp`](../../content/quantum-observable-universe/braids-and-knots/operator-selection-lp.md)
   + CLAUDE.md §LP/SDP duals
 
-### Step 9. **Geom functor ($\mathrm{Geom_{full}}(K, q_0)$)**
+### Step 9. **Geom functor ($\mathrm{VolDensity}(K, q_0)$)**
 
 - **Jet grade**: aggregates all earlier jets
-- **h-content**: $\mathrm{Geom_{full}}(K, q) = \mathrm{Vol}(K)/\hbar_q^2 \cdot \mathrm{linking\_weight}(q)$ — by current production
+- **h-content**: $\mathrm{VolDensity}(K, q) = \mathrm{Vol}(K)/\hbar_q^2 \cdot \mathrm{linking\_weight}(q)$ — by current production
 - **Source**: [`prop:geom-universality`](../../content/quantum-observable-universe/braids-and-knots/geom-universality.md), [`_li_2_q_util.py:201-236`](../../folio-assistant/computations/_li_2_q_util.py)
 - **What linking_weight should equal**: the production uses
   `linking_weight = 5/2 + (3/4)·h²` (Family A's H_4 half-symmetric
@@ -175,7 +175,7 @@ by pentagon coherence applied to the $\ell = 2$ data.
 - **h-content**: $h(q_0) \approx 0.209$, $h^2 \approx 0.0436$,
   $h^4 \approx 0.0019$
 - **What's determined**: the numerical MeV prediction is
-  $m_p^{\mathrm{pred}} = m_e \cdot \mathrm{Geom_{full}}(\mathcal{B}_3, q_0)$
+  $m_p^{\mathrm{pred}} = m_e \cdot \mathrm{VolDensity}(\mathcal{B}_3, q_0)$
 - **Per-jet contribution magnitudes**:
   - jet 0 (Vol/ℏ_q² ≈ 746.4): dominates
   - jet 1 ((3/4)·h² ≈ 0.033, fractional contribution of Family A's
@@ -264,7 +264,7 @@ proved categorical identity (queued: §4 below).
 
 Combining the per-step analysis with the empirical h⁴ probe results
 (commit `2184c84d3`, witness
-`geom-full-borromean-h4-probe.witness.json`):
+`vol-density-borromean-h4-probe.witness.json`):
 
 | Question | Status |
 |---|---|
@@ -288,7 +288,7 @@ Combining the per-step analysis with the empirical h⁴ probe results
 
 ## §5. Cross-references
 
-- [`docs/lambda-scale-absorbed-into-geom-full.md`](../lambda-scale-absorbed-into-geom-full.md) — **canonical framing reference** (post-PR #1080); explains why λ_scale ≠ separate object (now in main)
+- [`docs/lambda-scale-absorbed-into-vol-density.md`](../lambda-scale-absorbed-into-vol-density.md) — **canonical framing reference** (post-PR #1080); explains why λ_scale ≠ separate object (now in main)
 - [`docs/canonical-derivation-cheat-sheet.md`](../canonical-derivation-cheat-sheet.md) — the canonical chain (this audit traces through it)
 - [`docs/audits/2026-05-24-yekutieli-mi-derivation-path.md`](2026-05-24-yekutieli-mi-derivation-path.md) — Yekutieli MI tessellation, jet grades
 - [`docs/audits/2026-05-24-h4-coefficient-source-trace-and-so3-gap.md`](2026-05-24-h4-coefficient-source-trace-and-so3-gap.md) — h⁴ source trace + SO(3) gap
@@ -297,4 +297,4 @@ Combining the per-step analysis with the empirical h⁴ probe results
 - [`content/quantum-observable-universe/braids-and-knots/borromean-markov-trace-closed-form.md`](../../content/quantum-observable-universe/braids-and-knots/borromean-markov-trace-closed-form.md) — exact $\mathrm{tr}_M$, h² = 0, h⁴ = -3/4
 - [`content/quantum-observable-universe/braids-and-knots/gb-spectral-sequence.md`](../../content/quantum-observable-universe/braids-and-knots/gb-spectral-sequence.md) — spectral sequence
 - [`content/quantum-observable-universe/braids-and-knots/spectral-sequence-collapse.md`](../../content/quantum-observable-universe/braids-and-knots/spectral-sequence-collapse.md) — collapse at $E_2$
-- [`folio-assistant/computations/probes/geom_full_borromean_h4_probe.py`](../../folio-assistant/computations/probes/geom_full_borromean_h4_probe.py) — empirical h⁴ probe (commit `2184c84d3`)
+- [`folio-assistant/computations/probes/vol_density_borromean_h4_probe.py`](../../folio-assistant/computations/probes/vol_density_borromean_h4_probe.py) — empirical h⁴ probe (commit `2184c84d3`)

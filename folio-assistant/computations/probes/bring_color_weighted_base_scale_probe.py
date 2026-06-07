@@ -34,8 +34,8 @@ import mpmath as mp  # noqa: E402
 
 from _li_2_q_util import (  # noqa: E402
     bring_color_weighted_linking_weight,
-    geom_full_borromean,
-    geom_full_borromean_bring_color_weighted,
+    vol_density_borromean,
+    vol_density_borromean_bring_color_weighted,
     linking_weight_family_a,
     flavor_split_subleading,
 )
@@ -70,10 +70,10 @@ for (Z, N, label) in [(1, 0, "proton"), (0, 1, "neutron"),
           f"shift = {mp.nstr(shift_ppm, 4)} ppm")
 print()
 
-# Mass predictions (using geom_full_borromean directly for m_p, m_n)
-m_p_family_a = m_e * geom_full_borromean(q)  # H_4 average (production)
-m_p_bring = m_e * geom_full_borromean_bring_color_weighted(1, 0, q)
-m_n_bring = m_e * geom_full_borromean_bring_color_weighted(0, 1, q)
+# Mass predictions (using vol_density_borromean directly for m_p, m_n)
+m_p_family_a = m_e * vol_density_borromean(q)  # H_4 average (production)
+m_p_bring = m_e * vol_density_borromean_bring_color_weighted(1, 0, q)
+m_n_bring = m_e * vol_density_borromean_bring_color_weighted(0, 1, q)
 m_avg_family_a = m_p_family_a
 m_avg_bring = (m_p_bring + m_n_bring) / 2
 
@@ -102,4 +102,4 @@ print(f"         Required to close +2.89%: {mp.nstr(gap_ppm, 4)} ppm = "
 ratio = gap_ppm * 1000 / abs(shift_avg_ppb) if shift_avg_ppb != 0 else mp.inf
 print(f"         Required/Actual ratio: ~{mp.nstr(ratio, 4)}×")
 print(f"         → Bring-color-tube at H_4 is STRUCTURALLY INSUFFICIENT for m_avg")
-print(f"         (confirms `lambda-scale-absorbed-into-geom-full.md`)")
+print(f"         (confirms `lambda-scale-absorbed-into-vol-density.md`)")

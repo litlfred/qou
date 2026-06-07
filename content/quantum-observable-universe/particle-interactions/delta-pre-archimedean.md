@@ -49,7 +49,7 @@ following, and only the first two are theorems:
    \neq \tau(x_{\mathfrak n}-x_{\mathfrak p})$
    (`archimedean_does_not_commute_sub`, witnessed by $\tau=(\cdot)^2$).
    So the two orders — *masses-then-delta* and
-   *delta-then-archimedean* — are genuinely different operations; one
+   *delta-then-archimedean* — are different operations; one
    cannot be substituted for the other.
 
 3. **EXPOSITORY CONVENTION (not a theorem).** *Which* order the paper
@@ -85,7 +85,7 @@ would **not** commute with the difference of two $\tau$-images. Hence:
 > pre-archimedean delta.** Computing the absolute masses first and
 > subtracting would interleave the nonlinear $\tau$ with the
 > subtraction, breaking fold-invariance and (empirically) over-
-> amplifying the split by ~10².
+> amplifying the split by $\sim\!10^2$.
 
 ## Lean structure
 

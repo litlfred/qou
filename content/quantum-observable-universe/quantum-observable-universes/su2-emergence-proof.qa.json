@@ -1769,28 +1769,7 @@
         "reviewed_at": "2026-06-02T19:35:55.253Z",
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
       }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "e96eae39775b",
-          "ts": "c36212ff3397"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "proof in sec:emergence; proves thm:su2-emergence via volume-determinant + dagger-unitarity lemmas (G=SL(2)∩U(2)=SU(2))",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-06",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-06T20:39:07.795Z",
-        "reviewed_sha": "96e1359b1bb533a2523ea014607bf37980be5cc8",
-        "notes": "Proof block correctly co-located with its theorem in the emergence section"
-      }
     ]
   },
-  "updated_at": "2026-06-06T20:39:07.795Z"
+  "updated_at": "2026-06-03T13:06:09.584Z"
 }

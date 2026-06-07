@@ -1937,28 +1937,7 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "9badba2562d1",
-          "ts": "83def23d2abb"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "In sec:q-hydrodynamics; remark interprets def:q-navier-stokes via Cardona-Miranda contact-metric picture",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-06",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-06T20:47:49.592Z",
-        "reviewed_sha": "87d15fc06ea1dbf86afa0cbabb8a0c027ceadd48",
-        "notes": "q-deformation as contact metric change belongs squarely in q-deformed hydrodynamics section of fluid-dynamics chapter"
-      }
     ]
   },
-  "updated_at": "2026-06-06T20:47:49.592Z"
+  "updated_at": "2026-06-03T22:40:47.501Z"
 }

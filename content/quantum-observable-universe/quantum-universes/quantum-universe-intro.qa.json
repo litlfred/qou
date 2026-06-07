@@ -2013,28 +2013,7 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "cb3c7fc99928",
-          "ts": "b18db4ca5665"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "Section intro for 'The Quantum Universe'; recaps def/prop/ex blocks of the section",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T00:45:11.790Z",
-        "reviewed_sha": "5fe1ecf025a9bccaf342ac6fa5c364d27d82415d",
-        "notes": "Prose recap, no new provable claim; on-topic"
-      }
     ]
   },
-  "updated_at": "2026-06-07T00:45:11.790Z"
+  "updated_at": "2026-06-03T20:30:24.391Z"
 }

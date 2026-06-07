@@ -1785,28 +1785,7 @@
         "reviewed_at": "2026-06-02T19:35:55.253Z",
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
       }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "bccd12e72cbb",
-          "ts": "eaaac0532b65"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "Proof of prop:trace-locality-meets-gs-non-locality (Markov locality + GS non-locality + Wenzl factorisation) in sec:non-comm-probability-q-clt",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-06",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-06T20:14:42.972Z",
-        "reviewed_sha": "3ad5d29b3eef717cc0a47a6d075519c4e9caab1b",
-        "notes": "Matches its proposition sibling; the non-commutative-probability/Markov reconciliation theme is the section scope."
-      }
     ]
   },
-  "updated_at": "2026-06-06T20:14:42.972Z"
+  "updated_at": "2026-06-03T13:06:09.584Z"
 }

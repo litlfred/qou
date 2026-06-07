@@ -1,24 +1,24 @@
-**Proposition (binding A≥3 via per-rep Reeb phase at a force-carrier torus knot).**
+**Proposition (binding $A\ge3$ via per-rep Reeb phase at a force-carrier torus knot).**
 *The light-atom binding energy* $B(A) = m_e \cdot \rho_0 \cdot \alpha_{\text{shift}}(T(p_A, k_A))$
 *is uniquely determined by* (i) *the substrate-universal per-rep
 Reeb coupling* $\rho_0$ *pinned by the deuteron, and* (ii) *the
 substrate-fixed force-carrier torus knot* $T(p_A, k_A)$
-*per nucleus.  Both legs route through the proved* α_shift = k·(p-1)
+*per nucleus.  Both legs route through the proved* $\alpha_{\mathrm{shift}} = k\cdot(p-1)$
 *formula (`prop:alpha-shift-torus-knot`).*
 
-## Setting — the A ≥ 3 binding gap
+## Setting — the $A \ge 3$ binding gap
 
 The binding-endomorphism analogy
-([2026-05-28 audit](../../../docs/audits/2026-05-28-binding-endomorphism-analogy.md))
-closes the deuteron via $B = m_e \cdot \mathrm{Vol}(\mathcal{B}_3) \cdot \Delta\tr$
-to **+0.19 %**, but undershoots A ≥ 3 by 44–72 %.  Diagnosis:
-$\Delta\tr$ is the **linear truncation** of $\log(\tr) \sim \mathrm{Vol}$;
+([binding-endomorphism analogy audit](../../../docs/audits/2026-05-28-binding-endomorphism-analogy.md))
+closes the deuteron via $B = m_e \cdot \mathrm{Vol}(\mathcal{B}_3) \cdot \Delta\mathrm{tr}$
+to **+0.19 %**, but undershoots $A \ge 3$ by 44–72 %.  Diagnosis:
+$\Delta\mathrm{tr}$ is the **linear truncation** of $\log(\mathrm{tr}) \sim \mathrm{Vol}$;
 the extensive observable lives in the **per-rep q-Reeb rotation
 phase** on the column-rich irrep of a substrate-fixed force-carrier
 torus knot.
 
 The merged α_shift universal chain
-([2026-05-30 audit](../../../docs/audits/2026-05-30-alpha-shift-universal-derivation-chain.md))
+([α_shift universal derivation chain audit](../../../docs/audits/2026-05-30-alpha-shift-universal-derivation-chain.md))
 proves $\alpha_{\text{shift}}(T_{p, k}) = k \cdot (p - 1)$ — the
 **pole order of σ** on the column-rich irrep, equivalently the
 boundary holonomy of the Yekutieli non-abelian Stokes integral
@@ -40,20 +40,19 @@ $$
 |---|---:|---|---:|---|
 | deuteron (D) | 2 | T(2, 3) candidate | 3 | open (#1485) |
 | tritium (T) | 3 | T(2, 5) candidate | 5 | open |
-| ³He | 3 | T(2, 5) candidate (mirror) | 5 | open |
-| ⁴He | 4 | T(3, 4) candidate | 8 | open |
+| $^3$He | 3 | T(2, 5) candidate (mirror) | 5 | open |
+| $^4$He | 4 | T(3, 4) candidate | 8 | open |
 
-The candidate `(p, k)` values are per the agent-survey hypothesis
-(2026-05-30); the rigorous identification from the substrate's
+The candidate `(p, k)` values are hypothesised; the rigorous
+identification from the substrate's
 Hecke-Wedderburn block structure on $H_{3A}(q)$ is Phase 3 open math.
 
-The deuteron candidate $T(2, 3)$ was added on 2026-05-30 (PR #1485)
-with the following rationale:
+The deuteron candidate $T(2, 3)$ is motivated by the following rationale:
 
 1. *Smallest non-trivial torus knot.*  $T(2, 3)$ is the trefoil —
    the minimum-pole-order column-rich irrep, matching the deuteron's
    role as the lightest $A \ge 2$ nucleus.
-2. *$\mathcal{B}_3$-braid-closure consistency.*  The 2026-05-28
+2. *$\mathcal{B}_3$-braid-closure consistency.*  The
    binding-endomorphism analogy closes the deuteron via
    $B = m_e \cdot \mathrm{Vol}(\mathcal{B}_3) \cdot \Delta\mathrm{tr}$
    to $+0.19\,\%$.  $T(2, 3)$ is the canonical boundary torus knot
@@ -75,7 +74,7 @@ with the following rationale:
    phase-weighted aggregation — bridged by the $\alpha_{\mathrm{shift}} = 3$
    normalisation.
 
-This is the A≥3 analogue of:
+This is the $A\ge3$ analogue of:
 - [`meson-color-tube-uniqueness`](#prop:meson-color-tube-uniqueness)
   for $m_K / m_\pi$ (smallest non-trivial pair $\{T(2, 3), T(2, 4)\}$);
 - [`em-coupling-bring-zero-mode`](#prop:em-coupling-bring-zero-mode)
@@ -98,7 +97,7 @@ This is the A≥3 analogue of:
   \alpha_{\text{shift}})$ agree pointwise.
 - `theorem binding_subsingleton` — Subsingleton companion.
 
-### Concrete light-nuclei candidate instance (2026-05-30, #1485)
+### Concrete light-nuclei candidate instance
 
 The Phase-3 candidate table above is realised as a single Lean
 instance covering all four light nuclei $A \in \{2, 3, 4\}$:
@@ -114,7 +113,7 @@ instance covering all four light nuclei $A \in \{2, 3, 4\}$:
   per-branch sanity checks, each closing by a single `rfl`
   (deuteron: $\alpha_{\mathrm{shift}} = 3$;
   A=3 mirror: $\alpha_{\mathrm{shift}} = 5$;
-  ⁴He: $\alpha_{\mathrm{shift}} = 8$).
+  $^4$He: $\alpha_{\mathrm{shift}} = 8$).
 - `instance lightNucleiForceCarrierKnot : BindingForceCarrierKnot
   lightNucleusAlphaShift lightNucleusP lightNucleusK` — discharges
   `matches_alpha_shift` definitionally; the instance body is
@@ -130,12 +129,12 @@ the full Phase-3 candidate table.
 **Phase 3:** identify the specific $(p_A, k_A)$ for each light
 nucleus A.  The candidate hypotheses in the table above are
 informed by:
-- the deuteron's ρ₀ ≈ 14.7 MeV/rad calibration from
+- the deuteron's $\rho_0 \approx 14.7$ MeV/rad calibration from
   `binding_rotation_phase_lead.py`;
-- the mirror pair (T/³He) ρ ≈ 18.5 MeV/rad — ~25 % rise from the
+- the mirror pair (T/$^3$He) $\rho \approx 18.5$ MeV/rad — ~25 % rise from the
   deuteron, suggesting a per-λ jump in pole order;
 - the q-Hamiltonian rotational-scale probe
-  (`binding_qhamiltonian_rotational_scale.py`) confirms μ₀ ≈ 1.63 MeV
+  (`binding_qhamiltonian_rotational_scale.py`) confirms $\mu_0 \approx 1.63$ MeV
   is derived from the universal-ilp construction, narrowing the
   open question to the **per-A force-carrier knot choice**, not the
   scale.
@@ -155,7 +154,7 @@ instances**.  The per-rep Reeb phase axiom is the substrate identity
 (audit-confirmed); the force-carrier knot identification per A is
 the genuine open math.  Sorry-free Lean conditional on both classes.
 
-Closes the A≥3 binding entry in
+Closes the $A\ge3$ binding entry in
 [`docs/uniqueness-theorems-backlog.md`](../../../docs/uniqueness-theorems-backlog.md)
 as a structurally identified item, parallel to the meson + lepton
 α_shift specialisations.

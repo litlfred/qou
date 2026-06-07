@@ -1651,6 +1651,25 @@
         "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/quantum-universes/categorical-hodge-star.lean:8: invalid 'import' command, it must be used in the beginning of the file"
+      },
+      {
+        "field_hash": {
+          "md": "6d2d157ef5cd",
+          "ts": "0dba56718098",
+          "lean": "1b6b3d729dc3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "cf383b911867",
+          "script_commit_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
+          "deps_hash": "4b9cd43e52e5"
+        },
+        "reviewed_at": "2026-06-05T14:22:44.851Z",
+        "reviewed_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
+        "notes": "stale: cached lean diagnostics have no lean_sha (legacy v1 cache); re-run content/pipeline/lean-compile-audit.ts to refresh"
       }
     ],
     "voice-author-notes-pollution": [
@@ -1879,51 +1898,7 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "6d2d157ef5cd",
-          "ts": "0dba56718098",
-          "lean": "1b6b3d729dc3"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "Definition of categorical Hodge star via Frobenius form over generic (C,A,tau); belongs in qu-structures section",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T01:08:36.912Z",
-        "reviewed_sha": "7c424fd80d27c921d0809b2fd27ad48583882ec1",
-        "notes": "Differential-geometric structure of QU, fits chapter"
-      }
-    ],
-    "wall-side-statement": [
-      {
-        "field_hash": {
-          "md": "6d2d157ef5cd",
-          "ts": "0dba56718098",
-          "lean": "1b6b3d729dc3"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "Defined over generic ring R with (C,A,tau); no q0~1.11, no MeV, no Real.*/ordering in statement",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T01:08:36.957Z",
-        "reviewed_sha": "7c424fd80d27c921d0809b2fd27ad48583882ec1",
-        "notes": "Generic categorical definition; no archimedean leak needing a wall banner"
-      }
     ]
   },
-  "updated_at": "2026-06-07T01:08:36.957Z"
+  "updated_at": "2026-06-05T14:22:44.851Z"
 }

@@ -29,6 +29,24 @@
         "reviewed_at": "2026-05-27T08:55:11.920Z",
         "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "eaf82f3c1f47",
+          "ts": "1000db4bf4a4"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "cf383b911867",
+          "script_commit_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
+          "deps_hash": "4b9cd43e52e5"
+        },
+        "reviewed_at": "2026-06-05T14:22:44.851Z",
+        "reviewed_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
+        "notes": "block has no .lean sibling"
       }
     ],
     "voice-author-notes-pollution": [
@@ -750,112 +768,7 @@
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163",
         "notes": "block has no .lean sibling"
       }
-    ],
-    "voice-statement-no-interpretation": [
-      {
-        "field_hash": {
-          "md": "eaf82f3c1f47",
-          "ts": "1000db4bf4a4"
-        },
-        "result": "warn",
-        "severity": "minor",
-        "evidence": "## The baryon--meson duality section adds physical interpretation; no interprets: companion remark",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-06",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-06T20:04:48.299Z",
-        "reviewed_sha": "9bcefd1f42946680d75cfc3d8af5ec16ee9cdbef",
-        "notes": "Statement+proof bare; eigenvalue table OK but baryon/meson duality prose is borderline-mislocated interpretation."
-      }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "eaf82f3c1f47",
-          "ts": "1000db4bf4a4"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "Eigenvalues of Hecke standard rep V_(2,1); chapter scope covers braid-group representations",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-06",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-06T20:04:48.348Z",
-        "reviewed_sha": "9bcefd1f42946680d75cfc3d8af5ec16ee9cdbef",
-        "notes": "Squarely braids-and-knots."
-      }
-    ],
-    "wall-side-statement": [
-      {
-        "field_hash": {
-          "md": "eaf82f3c1f47",
-          "ts": "1000db4bf4a4"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "Statement is generic: any even braid word in H_3(q), eigenvalues on |lambda|=1; q_0/59deg numerics live in the table not the statement",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-06",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-06T20:04:48.395Z",
-        "reviewed_sha": "9bcefd1f42946680d75cfc3d8af5ec16ee9cdbef",
-        "notes": "Generic-ring statement; matches braids-and-knots regime."
-      }
-    ],
-    "wall-side-proof": [
-      {
-        "field_hash": {
-          "md": "eaf82f3c1f47",
-          "ts": "1000db4bf4a4"
-        },
-        "result": "warn",
-        "severity": "minor",
-        "evidence": "Proof invokes |tr|<=2 'for real traces of 2x2 matrices' — an ordering/archimedean step on a generic-ring statement without a declared specialisation point",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-06",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-06T20:04:48.443Z",
-        "reviewed_sha": "9bcefd1f42946680d75cfc3d8af5ec16ee9cdbef",
-        "notes": "Mixes generic det argument with a real-trace ordering bound; name the R-specialisation."
-      }
-    ],
-    "proof-narrative-lean-equiv": [
-      {
-        "field_hash": {
-          "md": "eaf82f3c1f47",
-          "ts": "1000db4bf4a4"
-        },
-        "result": "warn",
-        "severity": "minor",
-        "evidence": "No sibling .lean; lean.ref points to qou:QOU.BraidsAndKnots.borromean_eigenvalue_neg_one in another file (not this block)",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-06",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-06T20:04:48.491Z",
-        "reviewed_sha": "9bcefd1f42946680d75cfc3d8af5ec16ee9cdbef",
-        "notes": "Lean decl absent for this block; cannot compare."
-      }
     ]
   },
-  "updated_at": "2026-06-06T20:04:48.491Z"
+  "updated_at": "2026-06-05T14:22:44.851Z"
 }

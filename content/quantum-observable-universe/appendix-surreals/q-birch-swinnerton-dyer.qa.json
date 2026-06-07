@@ -1603,6 +1603,25 @@
         },
         "reviewed_at": "2026-05-27T08:55:11.920Z",
         "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48"
+      },
+      {
+        "field_hash": {
+          "md": "3aece9283f87",
+          "ts": "75ae06c96798",
+          "lean": "3e1d9c008c73"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "cf383b911867",
+          "script_commit_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
+          "deps_hash": "4b9cd43e52e5"
+        },
+        "reviewed_at": "2026-06-05T14:22:44.851Z",
+        "reviewed_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
+        "notes": "stale: cached lean diagnostics have no lean_sha (legacy v1 cache); re-run content/pipeline/lean-compile-audit.ts to refresh"
       }
     ],
     "voice-author-notes-pollution": [
@@ -1831,29 +1850,7 @@
         "reviewed_at": "2026-06-03T22:40:47.501Z",
         "reviewed_sha": "adcb03e136a9cea82a8536f577666f09b63ea5be"
       }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "3aece9283f87",
-          "ts": "75ae06c96798",
-          "lean": "3e1d9c008c73"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "q-deformed BSD reformulation (categorical Mordell-Weil, q-L-function, q-Sha); matches §'Speculative reformulations' / §'Millennium-problem surreal bounds' alongside q-NS, RH analogues",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T01:04:35.493Z",
-        "reviewed_sha": "47c892c523d013f516b72f7a826e0302b5b3d0b9",
-        "notes": "conjecture kind; the millennium-problem trio table (RH/NS/BSD) is the section's stated subject. Well-filed."
-      }
     ]
   },
-  "updated_at": "2026-06-07T01:04:35.493Z"
+  "updated_at": "2026-06-05T14:22:44.851Z"
 }

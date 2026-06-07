@@ -1773,28 +1773,7 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "957783e7eda4",
-          "ts": "e7a6eb31e68e"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "Notation prose in sec:quantum-universe explaining the tau fibre-functor choice (vs omega)",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T00:50:33.959Z",
-        "reviewed_sha": "1579f2c7150e09b55ec71c622e3dbb1f8743dea6",
-        "notes": "Pure exposition, no provable claim; topic (fibre functor tau) squarely in chapter scope"
-      }
     ]
   },
-  "updated_at": "2026-06-07T00:50:33.959Z"
+  "updated_at": "2026-06-03T20:30:24.391Z"
 }

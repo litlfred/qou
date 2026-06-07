@@ -31,7 +31,7 @@
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
-  "description": "Option A diagnostic (PR #1762 §5 / scoping #1816): measure the per-knot-vs-uniform Geom_full(K, q₀) gap for the light isotope series {p, n, D, T, ³He, ⁴He} alongside production. DOES NOT change production — flipping uniform → per-block would break m_p (the CAL-2 anchor) by ≈ 2.38× per the `_li_2_q_util.py:298-313` discipline note. Per-knot Vol(K) from `substrate/knot_volumes.py` (small-knot hyperbolic volume); tr_M from `chi-{atom}-h{3A}-at-q0-50dps.witness.json` for every atom — the probe reads whichever schema each cache carries (a pre-summed top-level `tr_M_at_q0`, or a `by_partition` array combined in-probe with `y-lambda-at-q0.witness.json`).",
+  "description": "Option A diagnostic (PR #1762 §5 / scoping #1816): measure the per-knot-vs-uniform VolDensity(K, q₀) gap for the light isotope series {p, n, D, T, ³He, ⁴He} alongside production. DOES NOT change production — flipping uniform → per-block would break m_p (the CAL-2 anchor) by ≈ 2.38× per the `_li_2_q_util.py:298-313` discipline note. Per-knot Vol(K) from `substrate/knot_volumes.py` (small-knot hyperbolic volume); tr_M from `chi-{atom}-h{3A}-at-q0-50dps.witness.json` for every atom — the probe reads whichever schema each cache carries (a pre-summed top-level `tr_M_at_q0`, or a `by_partition` array combined in-probe with `y-lambda-at-q0.witness.json`).",
   "auditOnly": "docs/audits/2026-06-04-option-a-vol-per-knot-scoping.md",
   "parameters": {
     "q_0_50dps": "1.1099785827513808075916690956107688798744991218736",
@@ -44,7 +44,7 @@
     "production_wired": false,
     "scoping_doc": "docs/audits/2026-06-04-option-a-vol-per-knot-scoping.md",
     "geom_uniform_borromean": "1890.5123448142975983338372577654540963117690463738",
-    "geom_uniform_description": "geom_full_borromean(q_0) = Vol(𝓑₃)/ℏ_q² · linking_weight_family_a(q_0) = Vol(𝓑₃)/ℏ_q² · (5/2 + (3/4)·h²); applied uniformly to every atom in production (mass_table_comprehensive.py:208).",
+    "geom_uniform_description": "vol_density_borromean(q_0) = Vol(𝓑₃)/ℏ_q² · linking_weight_family_a(q_0) = Vol(𝓑₃)/ℏ_q² · (5/2 + (3/4)·h²); applied uniformly to every atom in production (mass_table_comprehensive.py:208).",
     "m_avg_uniform_MeV": "966.04982446659753565797793103937409734667618179461",
     "rows": [
       {

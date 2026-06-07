@@ -11,7 +11,7 @@ import Mathlib.MeasureTheory.Integral.IntervalIntegral
 Formalises the Adams 1985 result `Vol(𝓑₃) = 8 · G` where `G` is
 Catalan's constant. This is the categorical Lean theorem that the
 production code (`folio-assistant/computations/m_p_borromean_verification_50dps.py`,
-`_li_2_q_util.geom_full_borromean`) currently uses as a literal
+`_li_2_q_util.vol_density_borromean`) currently uses as a literal
 `mp.catalan` numerical value.
 
 **Why this matters** (per `docs/audits/2026-05-25-m-p-m-n-full-chain-audit.md` §3):
@@ -177,7 +177,7 @@ theorem regular_ideal_octahedron_volume :
 
     This is the categorical identity behind the production literal
     `vol_borromean ≈ 7.32772475341775` in
-    `folio-assistant/computations/_li_2_q_util.geom_full_borromean`
+    `folio-assistant/computations/_li_2_q_util.vol_density_borromean`
     (where `mp.catalan ≈ 0.9159655942` is used).
 
     The narrative reference is the open problem
@@ -219,13 +219,13 @@ theorem vol_B3_numerical_bounds_via_catalan :
 
 /-! ## §5  Corollaries — categorical identities downstream of Vol(𝓑₃) = 8·G -/
 
-/-- The proton/neutron Geom_full base factor `Vol(𝓑₃)/ℏ_q²` at the
+/-- The proton/neutron VolDensity base factor `Vol(𝓑₃)/ℏ_q²` at the
     substrate is `8·G · q²/(q−1)²`, a rational function in (q, G).
 
     This is the LEADING factor of the canonical mass formula
-    `m(𝓑₃) = m_e · Geom_full(𝓑₃) = m_e · (8G/ℏ_q²) · linking_weight(q)`.
+    `m(𝓑₃) = m_e · VolDensity(𝓑₃) = m_e · (8G/ℏ_q²) · linking_weight(q)`.
 
-    -- Ref: [manuscript] see `folio-assistant/computations/_li_2_q_util.geom_full_borromean`
+    -- Ref: [manuscript] see `folio-assistant/computations/_li_2_q_util.vol_density_borromean`
             for the production implementation; this theorem is the
             categorical statement of its first factor. -/
 theorem geom_leading_eq_8G_over_hbar_q_sq (q : ℝ) (hq : q > 1) :

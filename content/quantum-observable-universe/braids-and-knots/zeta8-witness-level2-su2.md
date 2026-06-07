@@ -1,6 +1,7 @@
 **Proposition (Level-2 SU(2) Verlinde witness at $q = \zeta_8$).**
-*Let $\zeta_8 = e^{i\pi/4}$ be a primitive 8th root of unity in
-$\mathbb{C}$. Then the following three algebraic facts hold:*
+*Let $\zeta$ be a primitive 8th root of unity in a field $R$ (the
+analytic model is $\zeta_8 = e^{i\pi/4} \in \mathbb{C}$). Then the
+following three algebraic facts hold:*
 
 1. *$(\zeta_8;\zeta_8)_7 \;=\; \prod_{k=1}^{7}\,(1 - \zeta_8^k) \;=\; 8$.*
 2. *The Hecke generator $\sigma_i$ has order $8$ in $H_n(q)$ at
@@ -39,7 +40,7 @@ $q^4 = -1 = q^{-4}$, giving $q^4 - q^{-4} = 0$. Since $q - q^{-1} \neq 0$
 ## Categorical content — universal Δa_m cancellation
 
 The three identities above produce the categorical structure observed
-empirically in PR #1625 (audit
+empirically (audit
 [`docs/audits/2026-06-01-qbeta-habiro-zeta8-categorical-witness.md`](https://github.com/litlfred/qou/blob/claude/qbeta-habiro-phi8-interference-2026-06-01/docs/audits/2026-06-01-qbeta-habiro-zeta8-categorical-witness.md)):
 
 - $(\zeta_8;\zeta_8)_7 = 8$ provides the natural integer normalisation
@@ -50,7 +51,7 @@ empirically in PR #1625 (audit
 
 - $\mathrm{ord}(\sigma_i) = 8$ explains the universal boundary
   $M_{\text{first }\Phi_8} \;=\; 7 \;=\; \mathrm{ord}(\sigma_i) - 1$
-  observed across all three pair classes (D − n), (³He − D), (⁴He − ³He).
+  observed across all three pair classes (D $-$ n), ($^3$He $-$ D), ($^4$He $-$ $^3$He).
 
 - $[4]_q = 0$ is the Wenzl projector boundary: partitions $\lambda$ with
   first-column length $\geq 4$ are annihilated in the level-$k = 2$
@@ -62,8 +63,8 @@ empirically in PR #1625 (audit
 
 ## Vindicates earlier hypothesis (a)
 
-In [`docs/audits/2026-06-01-qbeta-habiro-phi8-interpretation.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-06-01-qbeta-habiro-phi8-interpretation.md)
-(PR #1579, now on `main`), the level-2 $\mathrm{SU}(2)$ hypothesis (a)
+In [`docs/audits/2026-06-01-qbeta-habiro-phi8-interpretation.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-06-01-qbeta-habiro-phi8-interpretation.md),
+the level-2 $\mathrm{SU}(2)$ hypothesis (a)
 was ruled out as "FALSE in naive form". This proposition shows the
 hypothesis is in fact correct — provided the categorical framing is the
 **Wenzl annihilator forcing Δa_m interference** rather than "level-2

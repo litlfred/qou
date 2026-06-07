@@ -168,7 +168,7 @@ a structured attack on the open queue item
 "(C) genuinely-open" volume-join verdict). Proposition DAG (roadmap:
 `docs/workplans/2026-06-04-mass-vol-density-stokes-delta-formalization.md`):
 
-- **P1** `m(K) = m_e·Vol(K)·ρ(q)/ℏ_q²` — makes `Geom_full` a theorem
+- **P1** `m(K) = m_e·Vol(K)·ρ(q)/ℏ_q²` — makes `VolDensity` a theorem
 - **P2** `ρ(q) = Σ_λ y_λ χ^λ` = `(3q²+4+3q⁻²)/4` for 𝓑₃ (Hecke energy on partitions)
 - **P3** non-abelian Stokes interface holonomy `½(σ+σ⁻¹) − (h/4)·∮F` (axiomatized class)
 - **P4** δ = `∮F` curvature integral `= (q−1)²(1−q⁻⁴)/3·(1+ℏ_q³)` (conditional on P3)
@@ -181,7 +181,7 @@ color-weighted crossing operator, and P3⇒P4 (δ from curvature) are
 greenfield. Template = `QOU/FlavorDressing/DressedMassFromSubstrateSplit.lean`;
 Stokes class = `QOU/Mathlib/NonAbelianStokes.lean`.
 
-**Sibling coordination (intent posted):** #1762 (Geom_full bridge gap —
+**Sibling coordination (intent posted):** #1762 (VolDensity bridge gap —
 parent analysis), #1816 (per-knot Vol(β_K), Option A), #1569 (avg-crossing
 `T_avg_squares_to_scalar` — algebraic backbone of the crossing operator),
 #1779 (color-averaging witness regen).

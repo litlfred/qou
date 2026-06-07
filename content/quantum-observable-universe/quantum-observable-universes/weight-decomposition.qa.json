@@ -1651,6 +1651,25 @@
         "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/quantum-observable-universes/weight-decomposition.lean:11: invalid 'import' command, it must be used in the beginning of the file"
+      },
+      {
+        "field_hash": {
+          "md": "04c438a5d215",
+          "ts": "b1cd812662dc",
+          "lean": "7184ed7c0061"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "cf383b911867",
+          "script_commit_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
+          "deps_hash": "4b9cd43e52e5"
+        },
+        "reviewed_at": "2026-06-05T14:22:44.851Z",
+        "reviewed_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
+        "notes": "stale: cached lean diagnostics have no lean_sha (legacy v1 cache); re-run content/pipeline/lean-compile-audit.ts to refresh"
       }
     ],
     "voice-author-notes-pollution": [
@@ -1947,51 +1966,7 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "04c438a5d215",
-          "ts": "b1cd812662dc",
-          "lean": "7184ed7c0061"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "Defines horizontal/vertical decomposition of Omega^k(A) via T-weight projectors pi_H, pi_V",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T01:32:28.668Z",
-        "reviewed_sha": "c07d5370eb50b18ae62c669c26e895220191ec09",
-        "notes": "Definition in 'Maximal torus and weight decomposition' section; on-scope."
-      }
-    ],
-    "wall-side-statement": [
-      {
-        "field_hash": {
-          "md": "04c438a5d215",
-          "ts": "b1cd812662dc",
-          "lean": "7184ed7c0061"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "Generic categorical statement over (C,A,tau); no Real.*, no numeric q, no order hypothesis, no MeV",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T01:32:28.714Z",
-        "reviewed_sha": "c07d5370eb50b18ae62c669c26e895220191ec09",
-        "notes": "Substrate-chapter definition; purely algebraic/categorical, no archimedean construct."
-      }
     ]
   },
-  "updated_at": "2026-06-07T01:32:28.714Z"
+  "updated_at": "2026-06-05T14:22:44.851Z"
 }

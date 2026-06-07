@@ -247,6 +247,55 @@ Concrete cheat-sheet:
 The narrative `.md` side mirrors this: `q ∈ R` in the algebraic
 discussion, `q ∈ ℝ` only when the archimedean evaluation is needed.
 
+### Wall-side QA checker — tactic constraints (learned 2026-06-06)
+
+The `wall-side-correct` QA checker (`content/pipeline/qa-checkers-voice.ts`,
+`checkWallSide`) enforces this convention mechanically. It **strips `/- -/`
++ `--` comments and `import` lines**, then scans the *code body* for
+archimedean markers — `Real.sqrt|rpow|log|exp|cos|sin|pi`, `linarith`,
+`positivity`, `nlinarith`, **`norm_num`**, `: ℝ`, `(ℝ)`,
+`LinearOrderedField` — and for generic markers (`CommRing`,
+`{R : Type*}`). Practical consequences when authoring/refactoring:
+
+* **`norm_num` counts as archimedean** even on a concrete `ℕ`/`ℤ` fact.
+  In a generic-`R` (or otherwise wall-clean) file, prove concrete numeric
+  goals with **`decide`** (`(-1:ℤ)^4 = 1`, `(3:ℕ)*4 = 2+4+6`), ring/field
+  identities with **`ring`** / **`linear_combination`** / **`field_simp`**
+  — never `linarith`/`norm_num`/`positivity`. `decide` also needs no
+  Mathlib import, so it survives in import-light files. Caveat: `decide`
+  does **not** reduce `Ne` over `ℚ` (`Rat` kernel reduction) — for
+  concrete `ℚ` facts you need a non-`norm_num` route or a different ring.
+* **A file with BOTH archimedean and generic markers fails** ("split into
+  two files per §7c"); a `.md` banner does **not** clear this mixed mode.
+  Make the file one-sided, or split the archimedean specialisation into a
+  separate file that consumes the generic result via `(R := ℝ)`.
+* **A purely-archimedean file passes** iff its `.md` acknowledges the
+  specialisation (any of: "archimedean", "over ℝ", "specialise",
+  "numerical evaluation", "codata", "experimental").
+* Comments/imports are stripped, so an `ℝ` in a docstring or a
+  `Mathlib.Data.Real.*` import is harmless — **only the code body counts**.
+
+Verification caveat: the sandbox `lake-cache/qou-v4-24-0` olean cache is
+seeded from the `QOU.Mass.MassVolDensity` import cone (Real / FieldSimp /
+Ring / Trig / Log / `CharZero.Defs`). Files importing modules outside that
+cone — `RootsOfUnity`, `Cyclotomic`, `CharZero.Lemmas`, whole
+`Mathlib.Tactic`, heavier Analysis/Topology — hit *missing-olean* errors
+(not real proof failures) until a fuller cache is seeded. Pick in-cone
+imports when you need to verify a refactor in the sandbox.
+
+**Extending the cone (verified 2026-06-06).** To verify a refactor that
+needs an out-of-cone module, build *that module* incrementally with
+`lake build Mathlib.<Module.Path>` (e.g. `lake build
+Mathlib.LinearAlgebra.Matrix.Trace`). It compiles only the uncached deps
+from the materialised source and writes the olean into `.lake` — **safe,
+fast, no wipe** (Matrix.Trace built in 3.6 s, 1851→1852 oleans). This is
+the supported way to grow the cache module-by-module. Do **NOT** use
+`lake env true` / `lake update` / `lake exe cache get` for this — those
+re-resolve the manifest and can wipe the restored oleans. Whole
+`Mathlib.Tactic` is the one practical exception: it pulls in most of
+Mathlib, so narrow `import Mathlib.Tactic` to the specific tactic modules
+(`Tactic.Ring`, `Tactic.FieldSimp`, …) rather than trying to build it.
+
 ## CRITICAL: Imports before doc blocks (Lean 4.24+)
 
 All `import` statements **must** come before `/-! ... -/` module

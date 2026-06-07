@@ -23,7 +23,7 @@ Variants tested:
   v7  (Family-A cap)  Vol/ℏ_q² · 1/λ_target(q_0) · λ_target(q)
                                           — DOES match by construction
                                           (sanity check on probe)
-  v8  (mass-form)     same as v0 but with m(K) = m_e · √Geom_full
+  v8  (mass-form)     same as v0 but with m(K) = m_e · √VolDensity
                                           — sqrt mass-formula variant
                                           (different architecture)
 

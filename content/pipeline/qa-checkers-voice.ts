@@ -34,8 +34,15 @@ export interface CheckerHit {
 }
 
 export interface CheckerResult {
-  result: "pass" | "fail";
+  result: "pass" | "fail" | "warn" | "n/a";
   hits: CheckerHit[];
+  /**
+   * Optional human-readable context threaded into the sidecar entry's
+   * `notes` field (e.g. a cache-staleness reason). Kept structurally
+   * identical to the `CheckerResult` in `qa-checkers-extended.ts` so
+   * the merged `AUTOMATED_CHECKERS` registry stays type-compatible.
+   */
+  notes?: string;
 }
 
 function readLines(path: string): string[] {

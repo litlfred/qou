@@ -45,6 +45,8 @@ When the MCP server is available, **use MCP tools for all review checks**:
 3. **`lean_profile_proof`** on complex theorems → flag tactics taking >1s
 4. **`lean_hover_info`** on key terms → verify types match LaTeX intent
 5. **`lean_references`** on modified declarations → check downstream impact
+6. **`git diff` + `lean_verify`** → statement integrity: no provable-kind
+   signature was weakened to pass, no axiom injection (see Review Type 4)
 
 ## Review Types
 
@@ -68,6 +70,42 @@ Verifies:
 Existing review type — extended to cover Lean formalization:
 - Does the formal statement match the mathematical intent?
 - Are physical/mathematical assumptions correctly encoded?
+
+### 4. Statement integrity (`statement-integrity`)
+
+Guards against the *most dangerous* way a "proof" can pass: silently
+weakening or altering the **statement** until the compiler is satisfied.
+Adopted from AlphaProof Nexus's `verify_integrity` + SafeVerify gates
+(arXiv:2605.22763; see
+[`docs/audits/2026-06-06-alphaproof-nexus-comparative-assessment.md`](../../../docs/audits/2026-06-06-alphaproof-nexus-comparative-assessment.md)).
+
+Verifies:
+- **Signature unchanged.** For every provable-kind block touched on the
+  branch — content kinds `proposition`/`corollary`/`theorem`/`lemma` all
+  render to a Lean `theorem` or `lemma` declaration — the *signature* (name,
+  binders, hypotheses, conclusion type) is identical to its prior-commit
+  form — only the proof body changed. A signature change is permitted
+  **only** as an explicit, author-approved restatement, reflected in the
+  `.md` statement and `.ts` manifest in the same diff.
+- **No axiom injection.** `lean_verify` on the (sorry-free) declaration
+  shows no `sorryAx` and no axioms beyond the declared set — no laundering a
+  hole through a `Classical`-shaped placeholder or an axiomatised helper
+  that is not a registered conjecture class (CLAUDE.md §3b-cond).
+
+Recipe:
+
+```bash
+# 1. signatures changed on this branch (provable kinds only)
+git diff origin/main...HEAD -- '*.lean' \
+  | grep -E '^[-+][[:space:]]*(theorem|lemma) '   # Lean keywords (content prop/cor render to these); heuristic — confirm multi-line signatures by hand
+# 2. for each decl now claimed proved, axiom audit (expect no sorryAx)
+#    lean_verify QOU.<Namespace>.<decl>
+```
+
+A weakened-statement or injected-axiom finding is **critical** →
+`REQUEST_CHANGES`. CI option: vendor
+[`GasStationManager/SafeVerify`](https://github.com/GasStationManager/SafeVerify)
+(Apache-2.0) into `lean_ci` to mechanise both checks.
 
 ## Review Record Schema
 
@@ -171,3 +209,5 @@ dependencies. Missing imports suggest incomplete formalization.
 - [ ] `sorry` count is accurately tracked (current: 0 active)
 - [ ] Linked LaTeX content is consistent with Lean statements
 - [ ] All sorry stubs have bibliographic citations or blocking-reason comments
+- [ ] Provable-kind signatures unchanged vs prior commit (or author-approved restatement)
+- [ ] `lean_verify` shows no `sorryAx` / unexpected axioms on declarations claimed proved

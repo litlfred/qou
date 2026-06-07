@@ -516,7 +516,7 @@ The probe surfaced a **structural correction** to the conjecture
 .md:
 
 The narrative postulated `N⊙(A, d) ~ ε⁻¹ · A/d³` (birthday rank 1
-in surreal-infinitesimal units). But the `Geom_full = Vol/ℏ_q²`
+in surreal-infinitesimal units). But the `VolDensity = Vol/ℏ_q²`
 normalisation absorbs an extra factor: at the energy-density
 level, matching `u(d)/A = -π²/(720 d³) · ℏc` requires
 
@@ -533,7 +533,7 @@ disagrees with the textbook experimental scale.
 **Two interpretations:**
 
 (a) The conjecture's narrative scaling is correct and the
-    `Geom_full = Vol/ℏ_q²` normalisation does NOT apply to the
+    `VolDensity = Vol/ℏ_q²` normalisation does NOT apply to the
     plate-bounded unknot count (the `/ℏ_q²` is an artifact of the
     *baryonic* Geom calculation, specific to Borromean-style
     linked configurations; disjoint unknots may use a different
@@ -607,7 +607,7 @@ an addendum to the original block.
 
 2. **The conjecture .md's ε-scaling needs refinement.** The
    stated `N⊙ ~ ε⁻¹ · A/d³` does not consistently combine with the
-   `Geom_full = Vol/ℏ_q²` normalisation at the energy-density
+   `VolDensity = Vol/ℏ_q²` normalisation at the energy-density
    level. Two possible resolutions; needs human judgement to
    choose.
 

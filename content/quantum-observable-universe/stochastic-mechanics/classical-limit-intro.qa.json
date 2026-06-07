@@ -2077,28 +2077,7 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "32774b6c9f86",
-          "ts": "aab7f2a94e67"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "Section intro for sec:classical-limit-construction; introduces q->1 classical limit + surreal rate-calculus skeleton, the exact section topic; prose kind asserts no provable claim",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T01:45:30.075Z",
-        "reviewed_sha": "d9b201d007ac8defba64c5cb8ccc04c68d01862e",
-        "notes": "Correctly-placed, kind-appropriate section opener; sets up the surreal-squeeze template used by the section's results"
-      }
     ]
   },
-  "updated_at": "2026-06-07T01:45:30.075Z"
+  "updated_at": "2026-06-03T20:30:24.391Z"
 }

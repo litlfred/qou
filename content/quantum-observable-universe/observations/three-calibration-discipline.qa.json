@@ -2372,6 +2372,25 @@
         "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/observations/three-calibration-discipline.lean:1: object file '/home/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Data/Polynomial/Laurent.olean' of module Mathlib.Data.Polynomial.Laurent does not exist"
+      },
+      {
+        "field_hash": {
+          "md": "79caac75e52d",
+          "ts": "cf114c28221d",
+          "lean": "7d672ab6cae8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "cf383b911867",
+          "script_commit_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
+          "deps_hash": "4b9cd43e52e5"
+        },
+        "reviewed_at": "2026-06-05T14:22:44.851Z",
+        "reviewed_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
+        "notes": "stale: cached lean diagnostics have no lean_sha (legacy v1 cache); re-run content/pipeline/lean-compile-audit.ts to refresh"
       }
     ],
     "voice-author-notes-pollution": [
@@ -2721,95 +2740,7 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "79caac75e52d",
-          "ts": "cf114c28221d",
-          "lean": "7d672ab6cae8"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "observations 'Substrate Consistency Window' section; prop:three-calibration-discipline",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-06",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-06T20:08:09.533Z",
-        "reviewed_sha": "98b54e74c314e2d8862a70b4d3a8a328581e5010",
-        "notes": "Central calibration-discipline proposition; topic in section scope, no sibling duplicates"
-      }
-    ],
-    "voice-statement-no-interpretation": [
-      {
-        "field_hash": {
-          "md": "79caac75e52d",
-          "ts": "cf114c28221d",
-          "lean": "7d672ab6cae8"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "md:1-31 Statement is bare factorisation claim; interpretation isolated in ## Discussion / ## Proof sketch",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-06",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-06T20:08:09.583Z",
-        "reviewed_sha": "98b54e74c314e2d8862a70b4d3a8a328581e5010",
-        "notes": "Statement states the three-calibration factorisation; editorializing confined to separate Discussion section"
-      }
-    ],
-    "wall-side-statement": [
-      {
-        "field_hash": {
-          "md": "79caac75e52d",
-          "ts": "cf114c28221d",
-          "lean": "7d672ab6cae8"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "observations=archimedean chapter; lean:87,104 tower kept in LaurentPolynomial Q, cast Rat.castRingHom R at eval q_0",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-06",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-06T20:08:09.635Z",
-        "reviewed_sha": "98b54e74c314e2d8862a70b4d3a8a328581e5010",
-        "notes": "Numeric q_0/Q_beta/MeV legitimate in archimedean chapter; algebraic tower stays in Q[q^+-1], ℝ only at evaluation"
-      }
-    ],
-    "wall-side-proof": [
-      {
-        "field_hash": {
-          "md": "79caac75e52d",
-          "ts": "cf114c28221d",
-          "lean": "7d672ab6cae8"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "md:72-112 induction preserves Q(q)-rationality; dimensional m_e/Q_beta enter only at final reporting step",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-06",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-06T20:08:09.685Z",
-        "reviewed_sha": "98b54e74c314e2d8862a70b4d3a8a328581e5010",
-        "notes": "Proof method matches archimedean statement; no linarith/IVT on an algebraic identity"
-      }
     ]
   },
-  "updated_at": "2026-06-06T20:08:09.685Z"
+  "updated_at": "2026-06-05T14:22:44.851Z"
 }

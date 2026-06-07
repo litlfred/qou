@@ -49,7 +49,7 @@ from mpmath import mp, mpf, acos  # noqa: E402
 
 # Substrate constants — canonical, B_AME-independent.
 from qou_substrate.constants import Q, HA, Q_INV  # noqa: E402
-from _li_2_q_util import geom_full_borromean  # noqa: E402
+from _li_2_q_util import vol_density_borromean  # noqa: E402
 
 mp.dps = 50
 
@@ -254,22 +254,22 @@ def fmt(x, dps=20):
 # The 5 candidate weight constructions.  Each returns {lam: w_λ} for H_3 blocks.
 # ----------------------------------------------------------------------------
 def candidate_1_archimedean() -> tuple[dict, str]:
-    """Archimedean per-block: does m_e·Geom_full restricted to block λ give M_λ?
+    """Archimedean per-block: does m_e·VolDensity restricted to block λ give M_λ?
 
-    FINDING (from _li_2_q_util.geom_full_borromean): Geom_full is a SINGLE
-    knot-level SCALAR (Vol(𝓑₃)/ℏ_q² × linking_weight), m(K)=m_e·Geom_full.
+    FINDING (from _li_2_q_util.vol_density_borromean): VolDensity is a SINGLE
+    knot-level SCALAR (Vol(𝓑₃)/ℏ_q² × linking_weight), m(K)=m_e·VolDensity.
     It has NO per-block decomposition — the only per-block object in that file
     is the EXPLORATORY spectral correction, which uses χ^(2,1) of ONE block.
-    So 'Geom_full restricted to block λ' does not exist as a function of λ.
+    So 'VolDensity restricted to block λ' does not exist as a function of λ.
 
     The closest substrate per-block weight is the per-block character itself
-    scaled by the knot-level Geom_full (i.e. w_λ = Geom_full · χ^λ), which is
+    scaled by the knot-level VolDensity (i.e. w_λ = VolDensity · χ^λ), which is
     the most charitable reading of 'archimedean per-block'. We test that."""
     nuc = load_nucleon_blocks()
-    g = geom_full_borromean(Q0, QI0)
+    g = vol_density_borromean(Q0, QI0)
     weights = {lam: g * nuc[lam]["chi"] for lam in H3_BLOCKS}
-    return weights, ("Geom_full is a knot-level scalar (no per-block split); "
-                     "tested w_λ = Geom_full·χ^λ as the charitable reading")
+    return weights, ("VolDensity is a knot-level scalar (no per-block split); "
+                     "tested w_λ = VolDensity·χ^λ as the charitable reading")
 
 
 def candidate_2_qdim() -> tuple[dict, str]:

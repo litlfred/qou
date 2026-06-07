@@ -1635,6 +1635,25 @@
         "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/information-theory/quantum-pressure.lean:24: unexpected token 'section'; expected 'lemma' | content/quantum-observable-universe/information-theory/quantum-pressure.lean:26: failed to compile definition, compiler IR check failed at `QOU.Information.q_param._closed_1`. Error: depends on declaration 'LaurentPolynomial.T', which has no executable code; consider marking defin | content/quantum-observable-universe/information-theory/quantum-pressure.lean:27: failed to compile definition, compiler IR check failed at `QOU.Information.q_inv_param._closed_2`. Error: depends on declaration 'LaurentPolynomial.T', which has no executable code; consider marking d | content/quantum-observable-universe/information-theory/quantum-pressure.lean:35: failed to synthesize | content/quantum-observable-universe/information-theory/quantum-pressure.lean:46: unexpected token; expected ':'"
+      },
+      {
+        "field_hash": {
+          "md": "c84e7c94b918",
+          "ts": "676d62712265",
+          "lean": "ccd413f2e26e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "cf383b911867",
+          "script_commit_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
+          "deps_hash": "4b9cd43e52e5"
+        },
+        "reviewed_at": "2026-06-05T14:22:44.851Z",
+        "reviewed_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
+        "notes": "stale: cached lean diagnostics have no lean_sha (legacy v1 cache); re-run content/pipeline/lean-compile-audit.ts to refresh"
       }
     ],
     "voice-author-notes-pollution": [
@@ -1931,51 +1950,7 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "c84e7c94b918",
-          "ts": "676d62712265",
-          "lean": "ccd413f2e26e"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "definition in sec:stat-mech; names new construction quantum pressure P_q = -dF_q/dV_q with bulk+boundary decomposition",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-06",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-06T19:58:37.391Z",
-        "reviewed_sha": "a526fdcf3ac9bb4e0cbfcc4ee8b8948fba7ffe27",
-        "notes": "Genuine definition (new named construction), correctly placed in Statistical Mechanics section"
-      }
-    ],
-    "wall-side-statement": [
-      {
-        "field_hash": {
-          "md": "c84e7c94b918",
-          "ts": "676d62712265",
-          "lean": "ccd413f2e26e"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "statement is generic-ring: (C,A,tau), T_q=hbar_q, Z_q via tr_Ad/Frobenius pairing; no numeric q0~1.11, no MeV, no Real.* or order hypothesis",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-06",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-06T19:58:37.434Z",
-        "reviewed_sha": "a526fdcf3ac9bb4e0cbfcc4ee8b8948fba7ffe27",
-        "notes": "Purely categorical/algebraic statement; no archimedean constructs requiring a §7c banner"
-      }
     ]
   },
-  "updated_at": "2026-06-06T19:58:37.434Z"
+  "updated_at": "2026-06-05T14:22:44.851Z"
 }

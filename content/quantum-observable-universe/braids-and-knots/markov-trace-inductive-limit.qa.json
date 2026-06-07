@@ -1811,29 +1811,7 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "8234294a5c8c",
-          "ts": "c799a69af8b0",
-          "lean": "4ed28a93808d"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "Markov trace on B_infty inductive limit; in sec 'Categorical braiding: Hecke quotient and knot eigenbasis' of braids-and-knots",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-06",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-06T20:11:10.478Z",
-        "reviewed_sha": "8f7793d3bf4500c25186d46fe1a5612273c01ca1",
-        "notes": "Topic (Markov trace on braid inductive limit, Jones/Wenzl) squarely in braids-and-knots scope; no sibling carries the same claim."
-      }
     ]
   },
-  "updated_at": "2026-06-06T20:11:10.478Z"
+  "updated_at": "2026-06-03T22:40:47.501Z"
 }

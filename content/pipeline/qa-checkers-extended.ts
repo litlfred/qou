@@ -26,6 +26,7 @@ import { existsSync, readFileSync } from "fs";
 import { resolve, dirname, join, relative } from "path";
 import { fileURLToPath } from "url";
 import { Q_USAGE_AUTOMATED_CHECKERS } from "./qa-checkers-q-usage";
+import { hashFile } from "./qa-utils";
 
 const __filename = fileURLToPath(import.meta.url);
 const REPO_ROOT = resolve(dirname(__filename), "..", "..");
@@ -48,6 +49,13 @@ export interface CheckerResult {
    */
   result: "pass" | "fail" | "warn" | "n/a";
   hits: CheckerHit[];
+  /**
+   * Optional human-readable context threaded into the sidecar entry's
+   * `notes` field. Used by cache-backed checkers (e.g.
+   * `proof-lean-compiles`) to record WHY a result is `n/a` — for
+   * instance "cached diagnostics are stale relative to current .lean".
+   */
+  notes?: string;
 }
 
 // ── Lazy-loaded bib-qa report (cached across calls per process) ─
@@ -1627,8 +1635,20 @@ interface LeanDiagnostic {
   message: string;
 }
 
+interface LeanCompileDiagnosticFile {
+  errors: LeanDiagnostic[];
+  /**
+   * 12-char SHA-256 prefix of the `.lean` file at the moment the
+   * diagnostics were collected (same convention as the sidecar
+   * `source_hashes.lean`, via `qa-utils.hashFile`). Absent on
+   * legacy `v1` caches — treated as "unverifiable / stale".
+   */
+  lean_sha?: string;
+  checked_at?: string;
+}
+
 interface LeanCompileDiagnostics {
-  files: Record<string, { errors: LeanDiagnostic[] }>;
+  files: Record<string, LeanCompileDiagnosticFile>;
   generated_at?: string;
 }
 
@@ -1662,6 +1682,37 @@ export function checkProofLeanCompiles(
   if (!entry) {
     return { result: "n/a", hits: [] };
   }
+
+  // Staleness gate. The cached diagnostics are only trustworthy if the
+  // `.lean` source has not changed since they were collected. Compare
+  // the cached `lean_sha` (12-char SHA-256 prefix) against the live
+  // file's hash — using the same `qa-utils.hashFile` helper the sidecar
+  // `source_hashes` use. A missing `lean_sha` (legacy v1 cache) or a
+  // mismatch means the entry is stale: return `n/a` rather than a
+  // confident `fail`, so an outdated/broken cache never masquerades as
+  // a live backlog. Regenerate via `lean-compile-audit.ts` to refresh.
+  if (!entry.lean_sha) {
+    return {
+      result: "n/a",
+      hits: [],
+      notes:
+        "stale: cached lean diagnostics have no lean_sha (legacy v1 cache); " +
+        "re-run content/pipeline/lean-compile-audit.ts to refresh",
+    };
+  }
+  // Only hash the live file once we know there is a cached SHA to
+  // compare against (skips file I/O on legacy-v1 / no-sha entries).
+  const currentSha = hashFile(leanPath);
+  if (entry.lean_sha !== currentSha) {
+    return {
+      result: "n/a",
+      hits: [],
+      notes:
+        `stale: cached lean_sha ${entry.lean_sha} != current ${currentSha ?? "missing"}; ` +
+        "re-run content/pipeline/lean-compile-audit.ts to refresh",
+    };
+  }
+
   const errors = entry.errors.filter((e) => e.severity === "error");
   if (errors.length === 0) return { result: "pass", hits: [] };
   return {

@@ -1651,6 +1651,25 @@
         "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/information-theory/skein-resolution-obstruction.lean:32: invalid 'import' command, it must be used in the beginning of the file"
+      },
+      {
+        "field_hash": {
+          "md": "641540df8b6f",
+          "ts": "1aa0d2e2e8cc",
+          "lean": "78a444cb2477"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "cf383b911867",
+          "script_commit_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
+          "deps_hash": "4b9cd43e52e5"
+        },
+        "reviewed_at": "2026-06-05T14:22:44.851Z",
+        "reviewed_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
+        "notes": "stale: cached lean diagnostics have no lean_sha (legacy v1 cache); re-run content/pipeline/lean-compile-audit.ts to refresh"
       }
     ],
     "voice-author-notes-pollution": [
@@ -1947,51 +1966,7 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "641540df8b6f",
-          "ts": "1aa0d2e2e8cc",
-          "lean": "78a444cb2477"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "Computational-horizon / P-vs-NP obstruction class fits info-theory computational scope; 4th evaluation of chi(A)",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-06",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-06T20:06:02.953Z",
-        "reviewed_sha": "5112001af8934d8ffcdc08ee4c81e133c1d438fa",
-        "notes": "Well placed; complements other obstruction blocks."
-      }
-    ],
-    "wall-side-statement": [
-      {
-        "field_hash": {
-          "md": "641540df8b6f",
-          "ts": "1aa0d2e2e8cc",
-          "lean": "78a444cb2477"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "Line 1 carries explicit §7c archimedean-wall banner; definition is generic HH^2 cohomology; q_0=1.1099... appears under that banner",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-06",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-06T20:06:02.999Z",
-        "reviewed_sha": "5112001af8934d8ffcdc08ee4c81e133c1d438fa",
-        "notes": "Properly banner'd archimedean specialisation; combinatorial content generic."
-      }
     ]
   },
-  "updated_at": "2026-06-06T20:06:02.999Z"
+  "updated_at": "2026-06-05T14:22:44.851Z"
 }

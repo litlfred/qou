@@ -101,7 +101,7 @@ Per owner directive ("aggressive removal. update coord docs. rederive mass ratio
 - Cites PR #1127 explicitly in its summary
 - Status: classified HIGH-overlap upstream — both papers critique the calibration self-referentiality
 
-**Sibling PR #1228** (geom-derivation bug squash) — implicated downstream by T6 H_3 3-channel finding:
+**Sibling PR #1228** (vol-density-derivation bug squash) — implicated downstream by T6 H_3 3-channel finding:
 - Their §10.1 action item (chi_lambda_braid Python wrapper) is closed by PR #1127's `per_generator_V_hat_general.py`
 - Coord comment already posted: https://github.com/litlfred/qou/pull/1228#issuecomment-4531215100
 

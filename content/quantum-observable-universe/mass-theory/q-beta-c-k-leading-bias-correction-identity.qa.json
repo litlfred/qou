@@ -13,116 +13,26 @@
     "lean": "29ae2f81b141"
   },
   "criteria": {
-    "wall-side-statement": [
+    "proof-lean-compiles": [
       {
         "field_hash": {
           "md": "57855e7ab457",
           "ts": "9957f8cde854",
           "lean": "29ae2f81b141"
         },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "Statement is generic CommRing R: c_alg:ℕ→R, u:R; no Real.* / numeric q0 / units in the bare claim",
+        "result": "n/a",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-06",
-          "agent_skill": "qa-agent-drain"
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "cf383b911867",
+          "script_commit_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
+          "deps_hash": "4b9cd43e52e5"
         },
-        "reviewed_at": "2026-06-06T19:36:06.486Z",
-        "reviewed_sha": "e8145c2eea11470a533a695ced51dc0224216dad",
-        "notes": "Numeric u0≈0.00852 appears only in the numerical-confirmation section, not the statement."
-      }
-    ],
-    "wall-side-proof": [
-      {
-        "field_hash": {
-          "md": "57855e7ab457",
-          "ts": "9957f8cde854",
-          "lean": "29ae2f81b141"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "Proof is a one-line ring identity (simp only [biasedExtraction]; ring) over CommRing; no archimedean machinery",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-06",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-06T19:36:06.526Z",
-        "reviewed_sha": "e8145c2eea11470a533a695ced51dc0224216dad",
-        "notes": "Substitute bias hypothesis and cancel; pure algebraic."
-      }
-    ],
-    "proof-narrative-lean-equiv": [
-      {
-        "field_hash": {
-          "md": "57855e7ab457",
-          "ts": "9957f8cde854",
-          "lean": "29ae2f81b141"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "Lean bias_correction_recovers_alg: ĉ_k − ĉ_{k+1}·u = c_alg k − c_alg(k+2)·u² matches the md proof's RHS exactly",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-06",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-06T19:36:06.567Z",
-        "reviewed_sha": "e8145c2eea11470a533a695ced51dc0224216dad",
-        "notes": "Quantifiers (∀ c_alg,u,k), hypothesis (biasedExtraction model), conclusion all match."
-      }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "57855e7ab457",
-          "ts": "9957f8cde854",
-          "lean": "29ae2f81b141"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "Q_β c_k truncation-bias identity belongs in mass-theory (Q_β precision-ladder sections); no sibling carries this claim",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-06",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-06T19:36:06.607Z",
-        "reviewed_sha": "e8145c2eea11470a533a695ced51dc0224216dad",
-        "notes": "Well-placed in the mass-derivation chapter."
-      }
-    ],
-    "voice-statement-no-interpretation": [
-      {
-        "field_hash": {
-          "md": "57855e7ab457",
-          "ts": "9957f8cde854",
-          "lean": "29ae2f81b141"
-        },
-        "result": "warn",
-        "severity": "minor",
-        "evidence": "Statement+proof are clean, but ## Structural significance and ## Implications for the 569bedda1 c_3 falsification add substantive interpretive prose in-block with no interprets: companion remark",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-06",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-06T19:36:21.617Z",
-        "reviewed_sha": "e8145c2eea11470a533a695ced51dc0224216dad",
-        "notes": "Borderline: the interpretation is discussion of downstream consequences; could be split to a linked remark. Not a hard fail."
+        "reviewed_at": "2026-06-05T14:22:44.851Z",
+        "reviewed_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb"
       }
     ]
   },
-  "updated_at": "2026-06-06T19:36:21.617Z"
+  "updated_at": "2026-06-05T14:22:44.851Z"
 }

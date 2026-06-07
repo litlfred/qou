@@ -2332,26 +2332,6 @@
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
         "notes": "Label 'prop:collatz-contact-boundary' → expected 'collatz_contact_boundary'; Lean declares: QAubinLions, NSCounterexample, CriticalExponent, BlowupYekutieli, RegularityBreakdown.... Structural match via content."
-      },
-      {
-        "field_hash": {
-          "md": "9bf2e41acd95",
-          "ts": "d696c1966911",
-          "lean": "11dfcc363108"
-        },
-        "result": "warn",
-        "severity": "major",
-        "evidence": "Lean collatz_contact_boundary_conditional concludes 'True := trivial'; narrative states ⟨v_[2]⟩≥2 ⟺ orbit converges",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T01:45:07.214Z",
-        "reviewed_sha": "b2a6e62e13179399439485ef985576475c83f42d",
-        "notes": "§3b-cond banner + 5 class hypotheses match, but Lean is a True-stub — does not encode the contact-threshold claim. Conditional skeleton, not equivalent."
       }
     ],
     "proof-lean-compiles": [
@@ -2372,6 +2352,25 @@
         },
         "reviewed_at": "2026-05-27T08:55:11.920Z",
         "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48"
+      },
+      {
+        "field_hash": {
+          "md": "9bf2e41acd95",
+          "ts": "d696c1966911",
+          "lean": "11dfcc363108"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "cf383b911867",
+          "script_commit_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
+          "deps_hash": "4b9cd43e52e5"
+        },
+        "reviewed_at": "2026-06-05T14:22:44.851Z",
+        "reviewed_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
+        "notes": "stale: cached lean diagnostics have no lean_sha (legacy v1 cache); re-run content/pipeline/lean-compile-audit.ts to refresh"
       }
     ],
     "voice-author-notes-pollution": [
@@ -2653,95 +2652,7 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "9bf2e41acd95",
-          "ts": "d696c1966911",
-          "lean": "11dfcc363108"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "In sec:millennium-bounds-via-surreals 'Collatz family' block list, directly follows conj:q-collatz; reframes q-Collatz as a [2]_q-contact condition",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T01:33:34.876Z",
-        "reviewed_sha": "702f35ce12e1b527aad55f964b27bdd35cce8817",
-        "notes": "Proposition giving the contact-order/threshold formulation of the q-Collatz conjecture; topic squarely in the Collatz-family subgroup, adds a distinct (contact-boundary) result vs the bare conjecture sibling"
-      }
-    ],
-    "voice-statement-no-interpretation": [
-      {
-        "field_hash": {
-          "md": "9bf2e41acd95",
-          "ts": "d696c1966911",
-          "lean": "11dfcc363108"
-        },
-        "result": "warn",
-        "severity": "minor",
-        "evidence": "Block interleaves the conditional proposition statement with extended interpretive sections: 'Geometric meaning', 'Why the orbit needs to touch the divisor', 'The boundary' (lines 62-67, 74-97, 172-188); no companion interprets: remark holds them",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T01:33:50.366Z",
-        "reviewed_sha": "702f35ce12e1b527aad55f964b27bdd35cce8817",
-        "notes": "Heavy physical/geometric exposition lives inside the proposition block rather than a linked remark; borderline (much is scope/derivation, not pure motivation) so warn not fail"
-      }
-    ],
-    "wall-side-statement": [
-      {
-        "field_hash": {
-          "md": "9bf2e41acd95",
-          "ts": "d696c1966911",
-          "lean": "11dfcc363108"
-        },
-        "result": "warn",
-        "severity": "minor",
-        "evidence": "appendix-surreals statement uses q=e^{iTheta} and a margin table (lines 192-197) hard-coding numeric q_0 values 4.45/3.34/1.110/0.332 without an archimedean-specialisation tag in the .ts",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T01:34:16.795Z",
-        "reviewed_sha": "702f35ce12e1b527aad55f964b27bdd35cce8817",
-        "notes": "Conditional banner (lines 1-8) covers the q-NS conjectural inputs but not the numeric q_0 specialisation; q_0 pin in a surreal/appendix chapter is a §7c fixed-q0 leak signal, warn"
-      }
-    ],
-    "wall-side-proof": [
-      {
-        "field_hash": {
-          "md": "9bf2e41acd95",
-          "ts": "d696c1966911",
-          "lean": "11dfcc363108"
-        },
-        "result": "warn",
-        "severity": "minor",
-        "evidence": "Proof mixes algebraic identity ([2]_q^2-[3]_q=q, line 155) with archimedean log/transcendental quantities (log|P|, v*=log[3]_q/log[2]_q lines 161-163, 80-90) and numeric q_0 evals",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T01:34:38.798Z",
-        "reviewed_sha": "702f35ce12e1b527aad55f964b27bdd35cce8817",
-        "notes": "Block explicitly avoids the transcendental v* in favor of the algebraic integer threshold (lines 160-164), so the load-bearing argument is generic-ring; the log-based framing is descriptive not the proof spine — warn, no specialisation point named"
-      }
     ]
   },
-  "updated_at": "2026-06-07T01:45:07.214Z"
+  "updated_at": "2026-06-05T14:22:44.851Z"
 }

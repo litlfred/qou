@@ -21,7 +21,7 @@ This is the order the **paper appendix** should present it — each topic is one
 
 1. **Three calibrations → substrate `q₀`.** `m_e`, `m_μ/m_e`, `m_π`; `Q_β` derived. *(settled — cheat-sheet §1, §8)*
 2. **Pre-archimedean chain → Markov trace.** Steps 1–8: cat action → Stokes/Hecke → Markov → Bring χ=−6 → Wedderburn `tr_M=Σ_λ y_λ χ^λ` → Frobenius → GB-filtration → jet order. *(settled; Lean debt L-1/L-2/L-3 only — §4.C)*
-3. **Step 9 splits in two.** **9a** mass `m(K)=m_e·Geom_full(K,q₀)` (per-knot wire-up gap); **9b** binding. *(9a = known wire-up bug; 9b = the frontier)*
+3. **Step 9 splits in two.** **9a** mass `m(K)=m_e·VolDensity(K,q₀)` (per-knot wire-up gap); **9b** binding. *(9a = known wire-up bug; 9b = the frontier)*
 4. **Binding is extensive, the trace-difference is intensive.** The canonical `B=E_0(|tr_M^free|−|tr_M^atom|)` saturates (~3–4 MeV); physical binding ∝ A. ⇒ an **additive many-body series** is structurally required (not a density). *(cheat-sheet §9.3)*
 5. **The many-body series = the jet-order filtration.** `B(K)=Σ_n B_n`, body-order `n` = vertical degree `n`. 2-body (pairwise bonds, A≤3 derived), 3-body (A=3 residual, open), 4-body (magic-A `2m_e·A·8G`, +5.87%). *(this doc's central identity)*
 6. **Each term is a Seiberg–Witten period = residue sum.** `B_n = m_e·Σ_p Res_p λ_SW^(n)` over **hyperbolic** link-components; `λ_SW^(n)` is the `n`-th prolonged SW differential (`mi-sw-abelianisation`); the residue theorem on `S_c≅P¹` makes the period algebraic. *(Lemmas L1, L2)*
@@ -106,7 +106,7 @@ Sources: background corpus trace (2026-06-05) + direct reads of `mi-sw-abelianis
 
 | # | Task | File(s) | Witness |
 |---|---|---|---|
-| C1 | **Per-knot `Geom_full(K,q₀)` wire-up** (step 9a, the standing 64-script uniform-Vol bug) | migrate `mass_table_comprehensive.py:208` + 63 others off `geom_full_borromean(q)` to `geom_full_per_block(vol_K, tr_M_K, q)` per `atom_braid_word_3A` | refresh `mass-table-comprehensive.witness.json` |
+| C1 | **Per-knot `VolDensity(K,q₀)` wire-up** (step 9a, the standing 64-script uniform-Vol bug) | migrate `mass_table_comprehensive.py:208` + 63 others off `vol_density_borromean(q)` to `vol_density_per_block(vol_K, tr_M_K, q)` per `atom_braid_word_3A` | refresh `mass-table-comprehensive.witness.json` |
 | C2 | **Hyperbolicity flag + per-component `Vol`** | extend `knot_volumes.py` with `is_hyperbolic(K)` + `vol_components(link)`; `D(z)=0` for torus/Seifert | new `link-component-volumes.witness.json` |
 | C3 | **Many-body series enumerator** | extend operator-valued combiner (#1698) to emit `B(K)=Σ_n B_n` with body-order `n`; reconcile 2-body bond-sum + 4-body magic-A | `binding-manybody-series.witness.json` |
 | C4 | **SW-period residue computation** tied to `λ_SW^(n)` | new `sw_period_residue.py`: `∮λ_SW^(n)` as residue sum over hyperbolic components; cross-check vs `binding_reeb_phase_decomposition.py` `θ_λ` carrier | `sw-period-residue.witness.json` |
@@ -140,7 +140,7 @@ All long computes follow the `-u … | tee /tmp/<script>.log` discipline.
 2. **C2 + C4** — hyperbolicity flag + SW-period residue compute; cross-check vs the existing `θ_λ` carrier.
 3. **C3** — many-body enumerator on the deuteron (n=2 base) then ⁴He (n=4 magic-A) — *reproduce the +5.87% no-fit number first*, as a regression anchor.
 4. **P4 + L3 + C5** — the crux: identify `F(q)=λ_SW`, extract `R(q,x)`, derive the scale rule `ρ·A`. **Formalization, not a numerical sweep.**
-5. **C1** — per-knot `Geom_full` wire-up (9a) — independent, can parallelize.
+5. **C1** — per-knot `VolDensity` wire-up (9a) — independent, can parallelize.
 6. **P6 + L5 + C-validation** — γγ/BW bar-split cross-check (A≥3).
 7. **Appendix promotion (4.A)** — only once step 9 box is green.
 

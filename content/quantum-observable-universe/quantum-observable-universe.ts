@@ -26,7 +26,13 @@ export default paper({
     "predictions.  Chapter~11 develops the $q$-geometric Langlands " +
     "correspondence.",
   macros: {
-    pp:    { tex: "\\mathfrak{p}",  unicode: "𝔭" },
+    // NOTE: `\pp` is intentionally NOT defined here. The shared preamble
+    // (latex/preamble.tex) defines `\pp` = `p` (the p-adic / finite-field
+    // prime), and all content uses it that way ($\mathbb{F}_\pp$,
+    // $\mathbb{Q}_\pp$, $v_\pp$). Re-emitting `\newcommand{\pp}{\mathfrak{p}}`
+    // here both contradicts CLAUDE.md §7aa (proton is `\mathfrak{p}`, never
+    // `\pp`) and triggered a fatal "Command \pp already defined" in the
+    // pdflatex compile. The proton is written `\mathfrak{p}` directly.
     nn:    { tex: "\\mathfrak{n}",  unicode: "𝔫" },
     frakr: { tex: "\\mathfrak{r}",  unicode: "𝔯" },
     frakg: { tex: "\\mathfrak{g}",  unicode: "𝔤" },

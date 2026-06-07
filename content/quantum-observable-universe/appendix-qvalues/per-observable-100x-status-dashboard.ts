@@ -39,4 +39,11 @@ export default remark({
     status: "verified",
     requires: ["mpmath"],
   },
+  authorNotes: [
+    {
+      kind: "note",
+      date: "2026-06-02",
+      body: "When this block was authored, the framework met the L2 100× target on 3 of 7 observables (the two anchored masses + the meson ratio m_K/m_π).",
+    },
+  ],
 });

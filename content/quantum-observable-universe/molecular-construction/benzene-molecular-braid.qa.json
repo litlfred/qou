@@ -1635,6 +1635,25 @@
         "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/molecular-construction/benzene-molecular-braid.lean:24: unknown tactic | content/quantum-observable-universe/molecular-construction/benzene-molecular-braid.lean:24: unsolved goals"
+      },
+      {
+        "field_hash": {
+          "md": "75370bb4b9e0",
+          "ts": "b27a59b728ed",
+          "lean": "0fed93634d0e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "cf383b911867",
+          "script_commit_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
+          "deps_hash": "4b9cd43e52e5"
+        },
+        "reviewed_at": "2026-06-05T14:22:44.851Z",
+        "reviewed_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
+        "notes": "stale: cached lean diagnostics have no lean_sha (legacy v1 cache); re-run content/pipeline/lean-compile-audit.ts to refresh"
       }
     ],
     "voice-author-notes-pollution": [
@@ -1931,51 +1950,7 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "75370bb4b9e0",
-          "ts": "b27a59b728ed",
-          "lean": "0fed93634d0e"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "Benzene C6H6 molecular braid in H_120(q); central object of molecular-construction chapter",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T02:02:27.021Z",
-        "reviewed_sha": "4dacb2236c5ac73a20191b8b5ac7dcf9393c1eb1",
-        "notes": "Iterative atomic-braid assembly with pi threading link; squarely in scope"
-      }
-    ],
-    "wall-side-statement": [
-      {
-        "field_hash": {
-          "md": "75370bb4b9e0",
-          "ts": "b27a59b728ed",
-          "lean": "0fed93634d0e"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "Opens with explicit §7c banner; statement uses generic Hecke H_N(q) combinatorics, no numeric q0/MeV",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T02:02:27.063Z",
-        "reviewed_sha": "4dacb2236c5ac73a20191b8b5ac7dcf9393c1eb1",
-        "notes": "Archimedean specialisation flagged in banner; combinatorial content generic"
-      }
     ]
   },
-  "updated_at": "2026-06-07T02:02:27.063Z"
+  "updated_at": "2026-06-05T14:22:44.851Z"
 }

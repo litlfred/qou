@@ -301,7 +301,7 @@ def main():
         "note": (
             "D(c_+) ≈ O(1) is a pure dimensionless hyperbolic volume; the "
             "physical isospin split is 1.29 MeV ≈ 1378 ppm of m_p. These "
-            "are NOT comparable without the full Geom_full/m_e MeV chain, "
+            "are NOT comparable without the full VolDensity/m_e MeV chain, "
             "and NO value here is tuned to the split. Listed for "
             "falsification scope only."
         ),

@@ -642,11 +642,21 @@ class WitnessBuilder:
         return out_path
 
 
-# Ephemeral meta fields that change on every validator run regardless of
-# whether the substantive content drifted. Masked in the equality check
-# so the on-disk witness is preserved when only these would change.
+# Ephemeral meta fields that change on every validator run regardless
+# of whether the substantive content drifted. Masked in the equality
+# check so the on-disk witness is preserved when only these change.
+# `environment` (Python + numeric-library versions) and per-item
+# timing fields (`elapsed_seconds`, `elapsed_sec`) are included so a
+# runtime swap alone doesn't trigger witness rewrites. The fields
+# stay IN the saved witness (for attribution / audit trail) and are
+# stripped only inside the substantive-equality comparison.
+#
+# Mirror of `qou_substrate.witness._EPHEMERAL_META_FIELDS` — keep in
+# sync. The cross-package sync is asserted by `test_ephemeral_mask_sync`
+# in `tools/qou-substrate/tests/`.
 _EPHEMERAL_META_FIELDS = frozenset({
     "commitSha", "scriptCommitSha", "computedAt", "durationMs",
+    "environment", "elapsed_seconds", "elapsed_sec",
 })
 
 

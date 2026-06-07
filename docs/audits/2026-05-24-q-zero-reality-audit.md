@@ -106,7 +106,7 @@ A complex $q_0$ with non-zero $\mathrm{Im}(q_0)$ is the *natural*
 candidate to explain bar-*asymmetric* gaps (the bar involution
 $q \mapsto q^{-1}$ acts non-trivially on Im part). It is *not* the
 natural candidate for a common-mode gap. The natural candidate for
-that gap is per-knot refinement of $\mathrm{Geom}_{\mathrm{full}}(\mathcal{B}_3)$
+that gap is per-knot refinement of $\mathrm{VolDensity}(\mathcal{B}_3)$
 (cheat-sheet §5: Bring color-tube weighted averaging, Yekutieli
 per-cell curvature, Reading-A geometrisation).
 
@@ -144,7 +144,7 @@ something". It is currently uninstantiated.
 
 | Direction | Status after this audit |
 |---|---|
-| **Complex $q_0$ as a fix for the 2.89 % $m_p$ / $m_n$ gap** | **De-prioritized.** The gap is bar-symmetric; complex $q_0$ doesn't naturally target it. Pursue cheat-sheet §5 Geom_full refinement instead. |
+| **Complex $q_0$ as a fix for the 2.89 % $m_p$ / $m_n$ gap** | **De-prioritized.** The gap is bar-symmetric; complex $q_0$ doesn't naturally target it. Pursue cheat-sheet §5 VolDensity refinement instead. |
 | **Complex $q_0$ as a categorical lift** | **Promote to research-grade.** Pre-Archimedean substrate already admits it; formalizing the Lusztig vs Hermitian split is independently valuable for the bar-symmetric / bar-asymmetric decomposition machinery (cheat-sheet §4). |
 | **$\|q\| > 1$ vs $q > 1$ ordering** | **Replace in substrate.** The pre-Archimedean substrate currently uses `q > 1` only because Hoefsmit (post-$\tau$) needs `Real.sqrt`. The substrate proper should state $\|q\| > 1$; the real specialization happens at $\tau$. |
 | **The 1ppb (L1) leg** | **Already met.** Internal cross-method `max_rel_delta = 0.0`. L1 is *not* the blocker; the L2 100× target is. |
@@ -196,7 +196,7 @@ specific Im($q_0$) hypothesis pans out.
 
 ## See also
 
-- [`docs/canonical-derivation-cheat-sheet.md`](../canonical-derivation-cheat-sheet.md) §4 (Φ_q vs Li_2^q bar-conjugate pair), §5 (Geom_full refinement queue)
+- [`docs/canonical-derivation-cheat-sheet.md`](../canonical-derivation-cheat-sheet.md) §4 (Φ_q vs Li_2^q bar-conjugate pair), §5 (VolDensity refinement queue)
 - [`docs/precision-goals.md`](../precision-goals.md) (L1 vs L2)
 - [`content/quantum-observable-universe/braids-and-knots/commutative-chirality-vanishes.md`](../../content/quantum-observable-universe/braids-and-knots/commutative-chirality-vanishes.md) (existing $q = e^{i\Theta}$ unit-circle treatment)
 - [`content/quantum-observable-universe/braids-and-knots/bar-involution.ts`](../../content/quantum-observable-universe/braids-and-knots/bar-involution.ts) (bar involution as ring-agnostic)

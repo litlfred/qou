@@ -1737,29 +1737,7 @@
         "reviewed_at": "2026-06-01T16:06:38.106Z",
         "reviewed_sha": "d4a8cf462aeef2262429b13571ddd385968bce63"
       }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "5e8d12c86010",
-          "ts": "7110a0d457ab",
-          "lean": "a9501268744b"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "Example interpreting def:categorical-reeb as the archimedean q-Reeb flow phi_t^q; in differential-structures/Reeb scope of qou chapter",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T01:37:50.135Z",
-        "reviewed_sha": "e908fd438fefbd41bc74d530e48e97b0dc521897",
-        "notes": "Archimedean realisation example, correctly tagged archimedean; belongs in chapter"
-      }
     ]
   },
-  "updated_at": "2026-06-07T01:37:50.135Z"
+  "updated_at": "2026-06-03T13:06:09.584Z"
 }

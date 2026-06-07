@@ -2077,28 +2077,7 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "41f72a663cff",
-          "ts": "7f77a4f4b29a"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "Section intro for sec:q-linear-transforms; previews q-heat/Laplace/Fourier/resolvent built on the q-shuffle Hopf algebra H_q. Top block of the section.",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-06",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-06T19:36:42.555Z",
-        "reviewed_sha": "14977e8dc37eff931e93833167bb670c9f1b7add",
-        "notes": "Umbrella narrative; correct section/chapter placement."
-      }
     ]
   },
-  "updated_at": "2026-06-06T19:36:42.555Z"
+  "updated_at": "2026-06-03T20:30:24.391Z"
 }

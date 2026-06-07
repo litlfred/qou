@@ -135,6 +135,25 @@
         "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/braids-and-knots/reading-a-conditional-linking-weight.lean:71: invalid 'import' command, it must be used in the beginning of the file"
+      },
+      {
+        "field_hash": {
+          "md": "be8dbfe1aefa",
+          "ts": "84b3b3c519a9",
+          "lean": "1e9d6852fca5"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "cf383b911867",
+          "script_commit_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
+          "deps_hash": "4b9cd43e52e5"
+        },
+        "reviewed_at": "2026-06-05T14:22:44.851Z",
+        "reviewed_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
+        "notes": "stale: cached lean diagnostics have no lean_sha (legacy v1 cache); re-run content/pipeline/lean-compile-audit.ts to refresh"
       }
     ],
     "voice-author-notes-pollution": [
@@ -1101,29 +1120,7 @@
         "reviewed_at": "2026-06-03T13:06:09.584Z",
         "reviewed_sha": "19118a572290d7bf9fc5b30e8a174c4bc86e6ad5"
       }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "be8dbfe1aefa",
-          "ts": "84b3b3c519a9",
-          "lean": "1e9d6852fca5"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "Conjecture on Borromean linking-weight h^2 coefficient at H_4 Wedderburn level (B_3 vol, Hecke dim_q)",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-06",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-06T20:33:20.488Z",
-        "reviewed_sha": "d3b9bac24b9c04c95445816560440246e5c2bc71",
-        "notes": "Knot/braid categorical content; conjecture kind matches; belongs in braids-and-knots"
-      }
     ]
   },
-  "updated_at": "2026-06-06T20:33:20.488Z"
+  "updated_at": "2026-06-05T14:22:44.851Z"
 }

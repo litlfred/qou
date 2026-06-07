@@ -1921,28 +1921,7 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "d75b4fea7ece",
-          "ts": "fbdc20abdab4"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "Remark interprets prop:braiding-eigenvalue-extraction; discusses sqrt(q), ribbon twist, and TQFT/MTC framing",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-06",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-06T20:01:55.027Z",
-        "reviewed_sha": "839800a1bd86362135aa706e2074ef2061bad741",
-        "notes": "On-topic for the QOU chapter (braiding/ribbon); correctly flags sqrt-q as post-Archimedean naming. Remark kind matches interpretive content."
-      }
     ]
   },
-  "updated_at": "2026-06-06T20:01:55.027Z"
+  "updated_at": "2026-06-03T22:40:47.501Z"
 }

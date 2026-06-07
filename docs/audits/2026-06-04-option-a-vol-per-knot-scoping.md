@@ -1,7 +1,7 @@
 # Option A scoping — per-knot Vol(β_K) for the light isotope series
 
 **Date:** 2026-06-04
-**Trigger:** PR #1762 ("1ppQ roadmap + Geom_full bridge derivation gap") §5
+**Trigger:** PR #1762 ("1ppQ roadmap + VolDensity bridge derivation gap") §5
 Option A — *"Wire up Vol(β_K) for the light series (infrastructure). Win:
 separates the Vol-uniform bug from the linking_weight question."*
 **Scope of THIS document:** read-only code map + a **safe, diagnostic-only**
@@ -14,9 +14,9 @@ production-switch decision is escalated to the owner (see §5).
 
 | Concern | Location | Behaviour |
 |---|---|---|
-| Uniform `Geom_full` | [`_li_2_q_util.py:292`](../../folio-assistant/computations/_li_2_q_util.py) `geom_full_borromean(q)` | `Vol(𝓑₃)/ℏ_q² · linking_weight_family_a(q)`, with `Vol(𝓑₃) = 8·G` hardcoded (`:344`) for **every** atom |
+| Uniform `VolDensity` | [`_li_2_q_util.py:292`](../../folio-assistant/computations/_li_2_q_util.py) `vol_density_borromean(q)` | `Vol(𝓑₃)/ℏ_q² · linking_weight_family_a(q)`, with `Vol(𝓑₃) = 8·G` hardcoded (`:344`) for **every** atom |
 | Family-A linking weight | [`_li_2_q_util.py:172`](../../folio-assistant/computations/_li_2_q_util.py) `linking_weight_family_a(q)` | `5/2 + (3/4)·h²` (the H₄ half-Wedderburn count ≈ 2.53) |
-| Mass-table consumer | [`mass_table_comprehensive.py:208`](../../folio-assistant/computations/mass_table_comprehensive.py) `borromean_mass_prediction(Z,N,q)` | line 208 `geom_full = geom_full_borromean(q)` — **same call for p, n, D, T, ³He, ⁴He** |
+| Mass-table consumer | [`mass_table_comprehensive.py:208`](../../folio-assistant/computations/mass_table_comprehensive.py) `borromean_mass_prediction(Z,N,q)` | line 208 `vol_density = vol_density_borromean(q)` — **same call for p, n, D, T, ³He, ⁴He** |
 | Bug acknowledgement | [`mass_table_comprehensive.py:100`](../../folio-assistant/computations/mass_table_comprehensive.py) `ATLAS_TAG` | D/T/³He tagged `"manual-historical-volume-match"`, ⁴He `"magic-A-formula"` — explicit KLUDGE markers |
 | Prior audit | [`docs/audits/2026-06-02-vol-usage-audit-uniform-vs-per-knot.md`](2026-06-02-vol-usage-audit-uniform-vs-per-knot.md) | 87 scripts use uniform Vol; 64 atom-touching scripts carry the bug |
 
@@ -24,7 +24,7 @@ production-switch decision is escalated to the owner (see §5).
 
 | Piece | Location | Status |
 |---|---|---|
-| Per-knot `Geom_full` | [`_li_2_q_util.py:372`](../../folio-assistant/computations/_li_2_q_util.py) `geom_full_per_block(vol_K, tr_M_K, q)` | **ready** — `Vol(K)/ℏ_q² · tr_M(K,q)` |
+| Per-knot `VolDensity` | [`_li_2_q_util.py:372`](../../folio-assistant/computations/_li_2_q_util.py) `vol_density_per_block(vol_K, tr_M_K, q)` | **ready** — `Vol(K)/ℏ_q² · tr_M(K,q)` |
 | Bare hyperbolic factor | [`_li_2_q_util.py:358`](../../folio-assistant/computations/_li_2_q_util.py) `geom_leading(vol_K, q)` | ready |
 | Per-atom braid words | [`mass_at_3A_proper.py:255`](../../folio-assistant/computations/mass_at_3A_proper.py) `atom_braid_word_3A(Z,N)` | ready — canonical `H_{3A}` words for every isotope |
 | Per-knot volume table | [`qou-mass/.../knot_volumes.py`](../../qou-mass/src/qou_mass/_internal/knot_volumes.py) | partial — Borromean (8·G), 6₂, 8₁₁, 7²₁, 4₁ at 50 dps |
@@ -43,15 +43,15 @@ The source docstring is explicit
 > per-block version is validated and **the owner approves a production
 > switch (the switch changes the m_p computation).**
 
-**Consequence:** naïvely replacing `geom_full_borromean` with
-`geom_full_per_block` in `mass_table_comprehensive.py` would multiply the
+**Consequence:** naïvely replacing `vol_density_borromean` with
+`vol_density_per_block` in `mass_table_comprehensive.py` would multiply the
 proton mass by ≈ 1.065/2.53 ≈ 0.42 — i.e. **break m_p (the CAL-2 anchor)
 by ≈ 2.38×** (this is exactly PR #1762 §2's "Form 2 = −57 % vs CODATA").
 m_p is a *calibration input*, not a free prediction, so this is not a
 permissible autonomous change.
 
 Therefore Option A, done correctly, is an **infrastructure / diagnostic**
-step: compute per-knot `Vol(β_K)` and the per-block `Geom_full` for the
+step: compute per-knot `Vol(β_K)` and the per-block `VolDensity` for the
 light series **alongside** production, emit a comparison witness, and
 **report the gap** — without flipping production. This matches #1762 §5's
 own framing ("separates the Vol-uniform bug from the linking_weight
@@ -68,8 +68,8 @@ question") and respects the production-vs-exploratory + Δ_λ-gate discipline
    - Load `tr_M(β_K, q₀)` from the chi-cache witnesses (p/n available;
      higher A flagged `needs markov_peel.tr_M_atomic`).
    - Compute three numbers per isotope at q₀: the **uniform**
-     `geom_full_borromean(q₀)`, the **per-knot**
-     `geom_full_per_block(Vol_K, tr_M_K, q₀)` (full three-argument
+     `vol_density_borromean(q₀)`, the **per-knot**
+     `vol_density_per_block(Vol_K, tr_M_K, q₀)` (full three-argument
      signature per [`_li_2_q_util.py:372`](../../folio-assistant/computations/_li_2_q_util.py)),
      and their ratio + the resulting m(K) under each.
    - **Precision:** the inputs are the canonical 50-dps witness values
@@ -82,7 +82,7 @@ question") and respects the production-vs-exploratory + Δ_λ-gate discipline
      witnessed precision.
    - Emit `option-a-vol-per-knot-light-series.witness.json` recording all
      three per isotope, with `discipline: "EXPLORATORY"`, `production_wired: false`.
-2. **No edit** to `mass_table_comprehensive.py`, `geom_full_borromean`, or
+2. **No edit** to `mass_table_comprehensive.py`, `vol_density_borromean`, or
    any Tier-1 production path.
 3. **Appendix contract:** because production is untouched, the
    `mba-step09a-mass-identity.md` `alg:` block does **not** change in this

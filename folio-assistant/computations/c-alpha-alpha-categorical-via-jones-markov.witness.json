@@ -25,7 +25,7 @@
     "guard_digits": 10,
     "truncation_bound": "1e-40"
   },
-  "description": "Phase B-4 c_αα probe (EXPLORATORY — NEGATIVE result). Tests whether the substrate-canonical Markov-trace value m_e·|tr_M(T_w(7²_1), q_0)| could replace the literature c_αα = m_e·Vol(7²_1) ≈ 2.43 MeV in alpha_cluster_recursion.py. Result: bare Markov-trace value is ~22.7× smaller than the literature; the substitution does NOT work. Mirrors the proton-mass case (|tr_M(𝓑₃)| << m_p) — bare |tr_M| is not the substrate-pure binding-scale derivation; Geom_full chain (Vol/ℏ_q² × linking_weight) is. This probe does NOT propose changing alpha_cluster_recursion.py.",
+  "description": "Phase B-4 c_αα probe (EXPLORATORY — NEGATIVE result). Tests whether the substrate-canonical Markov-trace value m_e·|tr_M(T_w(7²_1), q_0)| could replace the literature c_αα = m_e·Vol(7²_1) ≈ 2.43 MeV in alpha_cluster_recursion.py. Result: bare Markov-trace value is ~22.7× smaller than the literature; the substitution does NOT work. Mirrors the proton-mass case (|tr_M(𝓑₃)| << m_p) — bare |tr_M| is not the substrate-pure binding-scale derivation; VolDensity chain (Vol/ℏ_q² × linking_weight) is. This probe does NOT propose changing alpha_cluster_recursion.py.",
   "auditOnly": "docs/audits/2026-05-25-track-b-r5-full-sdp-extension-design.md",
   "parameters": {
     "q_0_50dps": "1.10997859555418057528159407960950937799328227995870",

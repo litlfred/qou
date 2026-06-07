@@ -35,13 +35,13 @@ The signs flip across A. This is the central observation.
 | `tr_M(q₀)` values | ✅ all positive (KLR canonical-basis positivity holds at the trace level) |
 | Prediction errors | ⚠️ 2 under-predictions (³H, ³He) + 4 over-predictions (p, n, ²H, ⁴He) |
 
-Per the owner's framing: *under-prediction → missing positive contributions or wrong weighting*. The bidirectional swing argues for **channel-weight miscalibration**, not for a uniform Geom_full scale gap.
+Per the owner's framing: *under-prediction → missing positive contributions or wrong weighting*. The bidirectional swing argues for **channel-weight miscalibration**, not for a uniform VolDensity scale gap.
 
 ## Why PR [#1063](https://github.com/litlfred/qou/pull/1063)'s framing breaks for low isotopes
 
-PR #1063 diagnoses the +2.89% gap as a `Geom_full(𝓑₃)` categorical-exactness refinement at h² order. That hypothesis predicts **every isotope** overshoots by the same fraction. The table above falsifies this for A ≥ 3 — ³H and ³He **under-predict**, ⁴He **over-predicts by 2× the proton offset**.
+PR #1063 diagnoses the +2.89% gap as a `VolDensity(𝓑₃)` categorical-exactness refinement at h² order. That hypothesis predicts **every isotope** overshoots by the same fraction. The table above falsifies this for A ≥ 3 — ³H and ³He **under-predict**, ⁴He **over-predicts by 2× the proton offset**.
 
-A single-knot Geom_full refinement cannot simultaneously fix p/n (where it would need a smaller scale) and ⁴He (where it would need a larger scale). The miscalibration is per-isotope, channel-dependent.
+A single-knot VolDensity refinement cannot simultaneously fix p/n (where it would need a smaller scale) and ⁴He (where it would need a larger scale). The miscalibration is per-isotope, channel-dependent.
 
 ## Where the channels enter — and the hidden-fitting risk
 
@@ -85,7 +85,7 @@ Quantitative regression is in [`low_isotope_sign_flip_diagnostic.py`](../../foli
 |---|---|---|---|
 | `linking_weight = (3q²+4+3q⁻²)/4` (Family A) | every mass script | ✅ [`lambda-scale-substrate-form.lean`](../../content/quantum-observable-universe/braids-and-knots/lambda-scale-substrate-form.lean) | LOW |
 | `Vol(𝓑₃) = 8·G` (Adams 1985) | every mass script | ❌ literature only; not in Mathlib | **MEDIUM** |
-| `Geom_full(K)` per-knot decomposition (`prop:geom-universality`) | PR [#1080](https://github.com/litlfred/qou/pull/1080) framing | ❌ narrative only | **MEDIUM** |
+| `VolDensity(K)` per-knot decomposition (`prop:geom-universality`) | PR [#1080](https://github.com/litlfred/qou/pull/1080) framing | ❌ narrative only | **MEDIUM** |
 | `Δm/M_N = ℏ_q²·h_q·[2]_q·(1+ℏ_q³)/3` (flavor split, PR #690) | p/n mass split | ⚠️ partial: the (1+ℏ_q³) 3-loop correction lacks Lean backing | **MEDIUM** |
 | pp/pn/nn channel-assignment rule | every multi-nucleon | ❌ no `prop:` block | **MEDIUM** |
 | q₀ substrate value (CAL-2) | every script | ❌ numerical anchor | LOW (acknowledged CAL anchor) |
@@ -128,15 +128,15 @@ No inappropriate substrate mixing was found in the production chain. The mixing 
 1. **Escalate via Rule 14** (13-driver menu) on candidates 1 and 2: their categorical derivation has been pending for too long.
 2. **Author a `prop:` block** formalising the pp/pn/nn channel-assignment rule (or escalate as Rule 14 candidate if no categorical mechanism can be identified).
 3. **Wire ⁵Li / ⁶Li** in a follow-up branch via knot-census + Kashaev (with explicit AME-fit caveat).
-4. **Comment on PR [#1063](https://github.com/litlfred/qou/pull/1063)** noting that the "single Geom_full(𝓑₃) refinement" diagnosis is incompatible with the sign-flip pattern at A ≥ 3 — amendment needed.
+4. **Comment on PR [#1063](https://github.com/litlfred/qou/pull/1063)** noting that the "single VolDensity(𝓑₃) refinement" diagnosis is incompatible with the sign-flip pattern at A ≥ 3 — amendment needed.
 
 ## Cross-references
 
 - [`docs/audits/2026-05-23-lambda-scale-canonical-unification.md`](2026-05-23-lambda-scale-canonical-unification.md) — 13-driver menu + Rule 14
-- [`docs/lambda-scale-absorbed-into-geom-full.md`](../lambda-scale-absorbed-into-geom-full.md) — PR #1080 framing
+- [`docs/lambda-scale-absorbed-into-vol-density.md`](../lambda-scale-absorbed-into-vol-density.md) — PR #1080 framing
 - [`folio-assistant/computations/low_isotope_sign_flip_diagnostic.py`](../../folio-assistant/computations/low_isotope_sign_flip_diagnostic.py) — quantitative diagnostic
 - [`folio-assistant/computations/isotope_record_schema.py`](../../folio-assistant/computations/isotope_record_schema.py) — channel-assignment definitions
 - [`folio-assistant/computations/mass_table_ppb.py`](../../folio-assistant/computations/mass_table_ppb.py) — Kashaev prediction rule + atom→knot census
 - PR [#1063](https://github.com/litlfred/qou/pull/1063) — Family A +2.89% gap audit (framing being challenged)
-- PR [#1080](https://github.com/litlfred/qou/pull/1080) — λ_scale absorbed into Geom_full (merged)
+- PR [#1080](https://github.com/litlfred/qou/pull/1080) — λ_scale absorbed into VolDensity (merged)
 - PR [#1089](https://github.com/litlfred/qou/pull/1089) — this PR (code-level cleanup + sign-flip diagnostic)

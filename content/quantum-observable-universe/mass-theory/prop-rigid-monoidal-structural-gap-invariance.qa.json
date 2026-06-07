@@ -2357,26 +2357,6 @@
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
         "notes": "Label 'prop:rigid-monoidal-structural-gap-invariance' → expected 'rigid_monoidal_structural_gap_invariance'; Lean declares: OperatorVolumeConvention, OperatorVolumeConvention.agree_on_trace, RigidMonoidalStructuralGapInvariance, trace_convention_independence, convention_equivalence_refl.... Structural match via content."
-      },
-      {
-        "field_hash": {
-          "md": "366341cb3d1c",
-          "ts": "37f725a05628",
-          "lean": "4d041bbc115f"
-        },
-        "result": "warn",
-        "severity": "major",
-        "evidence": "md claims Δ_cat(𝔥) convention-independent via unique categorical τ; Lean class RigidMonoidalStructuralGapInvariance + structural_gap_convention_independent encode same claim, but the only non-conditional discharge is a tautological categorical_trace≡0 skeleton whose convention_factorisation is a sorry (lines 324-336)",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T00:49:27.910Z",
-        "reviewed_sha": "1d7ad240c99650ae9fbcea82e12d35ce523b720d",
-        "notes": "Conditional theorems (taking [R] hypothesis) faithfully match the §3b-cond claim the md describes. Caveat: file duplicates instance canonical + theorem structural_gap_convention_independent (lines 238/324); the unconditional path routes through sorry-backed τ≡0. Narrative honestly flags conjectural status, so claims align up to the conditional caveat -> warn."
       }
     ],
     "proof-lean-compiles": [
@@ -2399,6 +2379,24 @@
         "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/prop-rigid-monoidal-structural-gap-invariance.lean:40: invalid 'import' command, it must be used in the beginning of the file"
+      },
+      {
+        "field_hash": {
+          "md": "366341cb3d1c",
+          "ts": "37f725a05628",
+          "lean": "4d041bbc115f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "cf383b911867",
+          "script_commit_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
+          "deps_hash": "4b9cd43e52e5"
+        },
+        "reviewed_at": "2026-06-05T14:22:44.851Z",
+        "reviewed_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb"
       }
     ],
     "voice-author-notes-pollution": [
@@ -2767,95 +2765,7 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
-    ],
-    "voice-statement-no-interpretation": [
-      {
-        "field_hash": {
-          "md": "366341cb3d1c",
-          "ts": "37f725a05628",
-          "lean": "4d041bbc115f"
-        },
-        "result": "warn",
-        "severity": "minor",
-        "evidence": "Statement (lines 1-28) + proof, then 'Why this is convention-independent', 'Unification of findings', 'Falsifiable predictions' sections in same block; no companion interprets: remark",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-06",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-06T19:54:24.841Z",
-        "reviewed_sha": "d7f887b540eba278fe702f9bdcd9df8022e82788",
-        "notes": "Borderline: substantial interpretive/motivational prose follows the statement+proof in-block rather than a linked remark. Not a hard mislocation but a separate interprets: remark would be cleaner."
-      }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "366341cb3d1c",
-          "ts": "37f725a05628",
-          "lean": "4d041bbc115f"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "Section 'Kashiwara-Jones interpretations and quantum dilogarithm'; block is rigid-monoidal Type-B-folding Markov-trace convention invariance",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-06",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-06T19:54:24.890Z",
-        "reviewed_sha": "d7f887b540eba278fe702f9bdcd9df8022e82788",
-        "notes": "Primary subject (Markov-trace categorical invariant, Kashiwara Type-B fold) squarely in this section's scope; no sibling carries the same claim."
-      }
-    ],
-    "wall-side-statement": [
-      {
-        "field_hash": {
-          "md": "366341cb3d1c",
-          "ts": "37f725a05628",
-          "lean": "4d041bbc115f"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "mass-theory is a physical/archimedean chapter; statement uses m_e, B_AME, MeV-scale quantities legitimately; categorical tau over C_q stated abstractly",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-06",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-06T19:54:24.935Z",
-        "reviewed_sha": "d7f887b540eba278fe702f9bdcd9df8022e82788",
-        "notes": "Archimedean physical quantities expected in mass-theory; no generic-ring statement silently specialized without a banner."
-      }
-    ],
-    "wall-side-proof": [
-      {
-        "field_hash": {
-          "md": "366341cb3d1c",
-          "ts": "37f725a05628",
-          "lean": "4d041bbc115f"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "Proof Steps 1-3 are algebraic (Markov-trace uniqueness, Jones 1985 / Wenzl 1988); no linarith/IVT/continuity/Real.* machinery",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-06",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-06T19:54:24.981Z",
-        "reviewed_sha": "d7f887b540eba278fe702f9bdcd9df8022e82788",
-        "notes": "Proof method (representation-theory uniqueness) matches the categorical/algebraic content; no archimedean-only step."
-      }
     ]
   },
-  "updated_at": "2026-06-07T00:49:27.910Z"
+  "updated_at": "2026-06-05T14:22:44.851Z"
 }

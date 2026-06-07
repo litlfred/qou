@@ -6,20 +6,20 @@
 
 ## Diagnosis (consolidated from PRs #1746, #1749, #1751, #1756)
 
-The canonical mass formula is `m(K) = m_e · Geom_full(K, q₀)` with K knot-dependent. Production violates this two ways:
+The canonical mass formula is `m(K) = m_e · VolDensity(K, q₀)` with K knot-dependent. Production violates this two ways:
 
-1. **Uniform Vol bug** — 87 of 89 atom-mass scripts use `geom_full_borromean(q)` regardless of atom; only 2 use per-knot `geom_full_per_block(vol_K, tr_M_K, q)`. 64 atom-touching scripts have the bug ([`docs/audits/2026-06-02-vol-usage-audit-uniform-vs-per-knot.md`](../audits/2026-06-02-vol-usage-audit-uniform-vs-per-knot.md)).
+1. **Uniform Vol bug** — 87 of 89 atom-mass scripts use `vol_density_borromean(q)` regardless of atom; only 2 use per-knot `vol_density_per_block(vol_K, tr_M_K, q)`. 64 atom-touching scripts have the bug ([`docs/audits/2026-06-02-vol-usage-audit-uniform-vs-per-knot.md`](../audits/2026-06-02-vol-usage-audit-uniform-vs-per-knot.md)).
 2. **Uniform linking_weight bug** — production uses H_4 Family-A `λ_A = 5/2 + 3h²/4 ≈ 2.53` for all atoms. No per-knot `linking_weight(K)` generalisation exists in compute or paper.
 
 Naive fix attempts:
-- Replace `geom_full_borromean(q)` → `geom_full_per_block(vol_K, tr_M_K, q)` in production: takes m_p from +2.89% to **−50.4%** (PR #1756 demonstration; mirrors the RED verdict of [`geom_full_per_block_wiring.py`](../../folio-assistant/computations/geom_full_per_block_wiring.py)). Per-block H_n tr_M(K) drops from 1.22 at p to 0.12 at ⁴He, while production's H_4 Family-A linking_weight stays at 2.53. The two scalars are **different objects**, not refinements.
+- Replace `vol_density_borromean(q)` → `vol_density_per_block(vol_K, tr_M_K, q)` in production: takes m_p from +2.89% to **−50.4%** (PR #1756 demonstration; mirrors the RED verdict of [`vol_density_per_block_wiring.py`](../../folio-assistant/computations/vol_density_per_block_wiring.py)). Per-block H_n tr_M(K) drops from 1.22 at p to 0.12 at ⁴He, while production's H_4 Family-A linking_weight stays at 2.53. The two scalars are **different objects**, not refinements.
 
 ## Phased implementation
 
 ### Phase 1 — Diagnosis + workplan + truth-tracking ✅ DONE TODAY
 
 - **#1746** (merged): refute 5th of 5 categorical-candidate scalar constructions for `|c|(λ)` — only 1 candidate remains, with basis-convention objection
-- **#1749** (merged): cheat-sheet `Geom_full(𝓑₃)` → `Geom_full(K)` reframing + Q_β / L2 status reconciliation
+- **#1749** (merged): cheat-sheet `VolDensity(𝓑₃)` → `VolDensity(K)` reframing + Q_β / L2 status reconciliation
 - **#1751** (merged): cheat-sheet 5 places fixed for knot-dependence + 1ppQ ledger sessions log update
 - **#1756** (open): per-knot demonstration script empirically validates the RED verdict across 6 atoms
 - **This workplan** (this PR): consolidates the 5-phase scope
@@ -61,7 +61,7 @@ The `recursive-on-⁴He` atlas tag IS the user's "build each atom recursively fr
 
 ### Phase 4 — Production wire-up (BLOCKED on Phase 3)
 
-**What**: refactor `mass_table_comprehensive.py:208` from `geom_full = geom_full_borromean(q)` to `geom_full = geom_full_per_block(vol_K, linking_weight_K(q), q)` using the per-atom Vol(K) from Phase 2 and the per-knot `linking_weight(K)` from Phase 3.
+**What**: refactor `mass_table_comprehensive.py:208` from `vol_density = vol_density_borromean(q)` to `vol_density = vol_density_per_block(vol_K, linking_weight_K(q), q)` using the per-atom Vol(K) from Phase 2 and the per-knot `linking_weight(K)` from Phase 3.
 
 **Why blocked**: requires Phase 3's `linking_weight(K)` definition. Without it, this phase would either (a) regress every isotope's prediction by ~50% (per the testbed's RED verdict), or (b) require fitting `linking_weight(K)` per atom (Δ_λ-gate forbidden).
 

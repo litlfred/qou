@@ -325,6 +325,94 @@ exploratory), `proof-gap-audit.md` §K (declaring "open"), and the
 complement: formalize-first prunes *forward*; corpus-grep prunes
 *backward* against already-known results).
 
+### <a id="formalize-the-refutation"></a>§3.4 Formalize-the-refutation (turn a dead ansatz into a Lean disproof)
+
+Formalize-first (§3.3) prunes a class *before* the scan. Its mirror prunes
+*after*: when a numerical probe **refutes** a candidate closed form, do not
+let the refutation live only in prose + a witness JSON — **formalize the
+disproof** so the dead ansatz cannot be silently re-proposed. Adopted from
+AlphaProof Nexus's disproof path (numeric counterexample → formalized →
+proved it refutes the conjecture; arXiv:2605.22763, Green #57; see
+[`docs/audits/2026-06-06-alphaproof-nexus-comparative-assessment.md`](../../../docs/audits/2026-06-06-alphaproof-nexus-comparative-assessment.md)).
+
+**When to use.** A hypothesis-class member (a Δ_λ closure ansatz, a c_k
+closed form, a recursion kernel) has been refuted at a concrete anchor by a
+witnessed computation, and "do not re-propose this" is currently enforced
+only by reviewer vigilance (e.g. the Δ_λ "no 7th ansatz" rule).
+
+**Pattern.** State the ansatz and its refuting evaluation as a Lean lemma
+whose conclusion is the **inequality** at the witnessed anchor:
+
+```lean
+-- The ansatz: a proposed closed form for the deferred quantity.
+def ansatzΔ (lam : Partition) : ℝ := …   -- e.g. a Frobenius co-Casimir form
+
+-- The refutation: at the witnessed anchor the ansatz misses the required
+-- value by more than tolerance. requiredΔ_deuteron, the residual, and tol
+-- are :leanval-pinned to a witness, so the numbers cannot drift.
+theorem ansatzΔ_refuted_deuteron :
+    tol_deuteron < |ansatzΔ deuteronPartition - requiredΔ_deuteron| := by
+  -- unfold; norm_num / native_decide against the :leanval-pinned literals
+  -- Ref: <witness JSON producing requiredΔ_deuteron + residual>
+  sorry  -- replace with the discharged numeric inequality
+```
+
+**Discipline:**
+- The literals are `:leanval[…]`-pinned to the producing witness
+  (`witnessed-values.md`) — the disproof is only as current as its witness;
+  refresh per the witness-staleness rules.
+- The lemma's `-- Ref:` cites the **witness JSON**, not "we checked once".
+- File the disproof beside the conjecture it kills; the conjecture's `.md`
+  links to it, so a future agent grepping the ansatz finds the refutation
+  (the backward complement of formalize-first).
+- This **operationalises** the `production-vs-exploratory-discipline.md`
+  "no Nth fit" rules: a refuted ansatz becomes a machine-checked `≠`, not a
+  prose warning.
+
+**Worked exemplar — Frobenius co-Casimir Δ_λ, refuted at the deuteron.**
+Numbers pinned from
+[`rho-k-h3a-co-casimir.witness.json`](../../../folio-assistant/computations/rho-k-h3a-co-casimir.witness.json)
+(`allPassed: true`, 50 dps; Option B of
+[`docs/audits/2026-05-18-delta-lambda-gating-context.md`](../../../docs/audits/2026-05-18-delta-lambda-gating-context.md)).
+The ansatz predicts a binding-density sum `+0.144959…` (m_e units); the
+empirical target `−B_D/m_e` is `−4.353367…` — wrong sign, magnitude off by
+≈30.03× (closure gap `4.498326…`, matching the witness). Stated as a decidable
+rational inequality so it compiles with no `sorry`:
+
+```lean
+namespace QOU.BraidKnot.DeltaLambdaRefutation
+
+/-- Frobenius co-Casimir predicted Σ_λ y_λ χ^λ Δ_λ at the deuteron (m_e units);
+    12 sig figs from `/data/co_casimir_prediction/sum_contributions_signed`. -/
+def coCasimirSum : ℚ :=  144959224127 / 1000000000000   -- ≈ +0.144959224127
+
+/-- Empirical −B_D/m_e (m_e units), from `/data/target_signed`. -/
+def targetSigned : ℚ := -4353367281870 / 1000000000000   -- ≈ −4.353367281870
+
+/-- Viability tolerance (the ansatz misses by > 4, with the wrong sign). -/
+def tol : ℚ := 1
+
+/-- **Refutation.** The Frobenius co-Casimir ansatz misses the deuteron target
+    by more than tolerance (gap ≈ 4.498 m_e units).
+    -- Ref: [manuscript] rho-k-h3a-co-casimir.witness.json -/
+theorem coCasimir_refuted_deuteron : tol < |coCasimirSum - targetSigned| := by
+  unfold tol coCasimirSum targetSigned
+  norm_num  -- norm_num handles |·| on ℚ natively
+
+end QOU.BraidKnot.DeltaLambdaRefutation
+```
+
+*Status (illustrative — not compiled; verify in CI):* the inequality's
+arithmetic is verified exactly — the gap `4498326505997/10^12` equals the
+witness `closure_gap`. The Lean proof is the standard rational form but is
+**not** compiled in this session (the Mathlib
+cache is unavailable in the sandbox; CLAUDE.md "Mathlib cache 403 fallback"),
+so build it in CI / a warmed env before citing it as machine-checked. Promoting
+it to a committed content-object `lem:frobenius-cocasimir-refuted-deuteron`
+beside
+[`conj:rho-prefactor-structural`](../../../content/quantum-observable-universe/braids-and-knots/conj-rho-prefactor-structural.md)
+(GAP-A-4) is the natural follow-up (`.ts`/`.md`/`.lean` triple + green build).
+
 ## §4. Rust-port patterns (when porting Python to Rust)
 
 ### §4.1 Type-mapping cheat-sheet

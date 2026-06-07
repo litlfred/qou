@@ -3,7 +3,7 @@
 Compute Vol(K_atom) for the canonical atom-knot atlas (per
 `content/quantum-observable-universe/appendix-knot-periodic-table/recursive-atom-knot-atlas.md`)
 using SnapPy.  These volumes are the input to the per-knot
-`geom_full_per_block(vol_K, tr_M_K, q)` evaluation for Subgoal-1
+`vol_density_per_block(vol_K, tr_M_K, q)` evaluation for Subgoal-1
 m_avg closure.
 
 The atlas knots are MARKOV-REDUCED minimal braids in S³ — distinct
@@ -81,7 +81,7 @@ def main() -> int:
         "Per-atom hyperbolic volumes Vol(K_atom) for the canonical "
         "atom-knot atlas (proton=𝓑₃, ²H=6_2, ³H=8_11, ³He=L6a4, "
         "⁴He=4·8G magic-A). Input to Subgoal-1 per-knot mass formula "
-        "via geom_full_per_block(vol_K, tr_M_K, q)."
+        "via vol_density_per_block(vol_K, tr_M_K, q)."
     )
     for atom, (knot, sid, tag) in ATLAS.items():
         v = vols[atom]

@@ -2,7 +2,7 @@
 """
 gamma_gamma_pair_production_decomposition.py — γγ̄ pair-production
 decomposition of the Borromean braid β_Bor at each Gröbner-Shirshov
-filtration order, localising where the 2.89% Geom_full residual enters.
+filtration order, localising where the 2.89% VolDensity residual enters.
 
 ## The γγ̄ pair-production reading of β_Bor
 
@@ -49,8 +49,8 @@ which converts to a Markov-trace expansion of all orders in h.
 ## Localising the 2.89% residual — CORRECTED FRAMING (2026-05-25)
 
 The framework's open question (per [the canonical doc]
-(../../docs/lambda-scale-absorbed-into-geom-full.md)) is **where
-inside Geom_full the gap enters**.
+(../../docs/lambda-scale-absorbed-into-vol-density.md)) is **where
+inside VolDensity the gap enters**.
 
 **First-version (BUGGY) framing**: with the WRONG Markov-trace
 normalisation `(q^{1/2} + q^{-1/2})² = q + 2 + q⁻¹` inherited from
@@ -89,9 +89,9 @@ to it.  No CODATA literal flows into a prediction.
 
 ## See also
 
-- [`docs/lambda-scale-absorbed-into-geom-full.md`](../../docs/lambda-scale-absorbed-into-geom-full.md)
+- [`docs/lambda-scale-absorbed-into-vol-density.md`](../../docs/lambda-scale-absorbed-into-vol-density.md)
 - [`folio-assistant/computations/_li_2_q_util.py`](_li_2_q_util.py)
-  (`geom_full_borromean`, `linking_weight_family_a`, `borromean_markov_trace_h2`)
+  (`vol_density_borromean`, `linking_weight_family_a`, `borromean_markov_trace_h2`)
 - [`folio-assistant/computations/knot-operator-table.py`](knot-operator-table.py)
   (γγ pair-production identification in NF basis)
 - [`docs/audits/2026-05-23-yekutieli-bijection-natural-reading-negative.md`](../../docs/audits/2026-05-23-yekutieli-bijection-natural-reading-negative.md)
@@ -334,7 +334,7 @@ def main():
         "PROVED Family A linking_weight (which terminates at h²) "
         "against the Markov-trace-via-Jones-polynomial route (all "
         "orders in h) and against the CODATA-anchor target.  Localises "
-        "whether the 2.89% Geom_full(𝓑₃) gap enters at h² (Reading-A "
+        "whether the 2.89% VolDensity(𝓑₃) gap enters at h² (Reading-A "
         "hypothesis: +3/4 h² should be −G h²) or at h⁴⁺ (q-dilog tower "
         "hypothesis: Family A truncates higher-order corrections). "
         "Audit-only — no CODATA value flows into a prediction; the "

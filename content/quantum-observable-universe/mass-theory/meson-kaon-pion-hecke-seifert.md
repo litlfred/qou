@@ -72,3 +72,36 @@ Combining: $(q_0^5 - q_0^{-5}) \times (9/5)^2 \approx 1.0914 \times
 verifies the formula at $50$-digit precision, confirms the algebraic
 identity $q^5 - q^{-5} = h \cdot [5]_q$, and validates the Seifert
 ratio $V_S(T(2,5))/V_S(T(2,3)) = 9/5$ exactly.
+
+## Lean structure — what is proved vs. the remaining gap
+
+The Lean sibling separates the **two algebraic identities** (provable,
+sorry-free) from the **physical / empirical content** of the mass-ratio
+claim (not a Lean theorem). This makes precise what remains "to be
+proved" downstream.
+
+| Lean declaration | content | status |
+|---|---|---|
+| `chi_21_odd` | $\chi^{(2,1)}(\sigma_1^n)=q^n+(-q^{-1})^n=q^n-q^{-n}$ for odd $n$ | **proved** (sorry-free) |
+| `seifert_ratio_T25_T23` | $V_S(T(2,5))/V_S(T(2,3))=9/5$ | **proved** (sorry-free; needs char $\neq 2,3,5$) |
+| `meson_squaring_exponent` | the exponent record $n_q=2$ | **proved** (`rfl`) |
+| `mesonMassRatio` | the assembled formula $\chi^{(2,1)}(\sigma_1^5)\cdot(9/5)^2$ | **definition** |
+
+**The gap (NOT Lean-proved, and intentionally so):**
+
+1. **The exponent $n_q=2$** is *physically motivated* (two-quark
+   composite) and *empirically confirmed* (the power scan: $290$ ppm at
+   $n_q=2$ vs $4.4\times 10^5$ ppm at $n_q=1$). It is **not derived** from
+   the substrate; the `meson_squaring_exponent` lemma only records the
+   value, it does not select it.
+2. **The numerical match to the PDG ratio** ($\approx 290$ ppm) is a
+   *witnessed near-match*, not a Lean equality — the witness JSON is the
+   evidence, the Lean file proves only the two underlying identities.
+
+**Base-ring note (§7c).** The Lean sibling is stated over a generic
+`[Field R]` (no archimedean `$\mathbb{R}$` dependence). `chi_21_odd` is
+unconditional; `seifert_ratio_T25_T23` carries explicit `$2,3,5\neq 0$`
+hypotheses — the invertibility the rational identity genuinely needs,
+vacuous in any characteristic-0 specialisation. This avoids `CharZero`
+entirely (so it stays inside the sandbox cache cone) and is verified
+sorry-free (`lake env lean`).

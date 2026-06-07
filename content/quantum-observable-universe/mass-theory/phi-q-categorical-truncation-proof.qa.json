@@ -2025,28 +2025,7 @@
         "reviewed_at": "2026-06-02T19:35:55.253Z",
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
       }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "39f2bc748913",
-          "ts": "45cf5a3bd0d4"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "Proof block in section 'Kashiwara-Jones interpretations and quantum dilogarithm' (mass-theory.ts:283,298); proves prop:phi-q-categorical-truncation via Phi_q product depth.",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T01:35:22.289Z",
-        "reviewed_sha": "237fc5f942f627626925a92a173352722aae5a61",
-        "notes": "Phi_q categorical truncation-depth proof belongs in the quantum-dilogarithm section of mass-theory; proves a same-chapter proposition. Well-placed."
-      }
     ]
   },
-  "updated_at": "2026-06-07T01:35:22.289Z"
+  "updated_at": "2026-06-03T13:06:09.584Z"
 }

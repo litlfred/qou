@@ -15,7 +15,7 @@ production via a sibling branch. Concretely:
     purged a *second* time in PR #1027.
   - `lambda_scale_family_a` was removed in PR #1089 under the owner
     directive "no lambda-scale ANYWHERE in production" (λ_scale was
-    absorbed into the per-knot `Geom_full(K)` evaluation, PR #1080),
+    absorbed into the per-knot `VolDensity(K)` evaluation, PR #1080),
     but the symbol kept reappearing.
 
 A purge is only durable if a guard *keeps it purged*. This audit is
@@ -96,10 +96,10 @@ BANNED_SYMBOLS = [
         "reason": (
             "Legacy lambda-scale alias. Owner directive 2026-05-24: "
             "'no lambda-scale ANYWHERE in production'. λ_scale was "
-            "absorbed into the per-knot Geom_full(K) evaluation."
+            "absorbed into the per-knot VolDensity(K) evaluation."
         ),
-        "purged_by": "PR #1080 (absorb into Geom_full) / PR #1089 (alias removal)",
-        "canonical_replacement": "linking_weight_family_a / geom_full_borromean",
+        "purged_by": "PR #1080 (absorb into VolDensity) / PR #1089 (alias removal)",
+        "canonical_replacement": "linking_weight_family_a / vol_density_borromean",
     },
 ]
 
@@ -149,10 +149,10 @@ def _symbol_banned(name: str) -> dict | None:
             "reason": (
                 "Owner directive 2026-05-24: 'no lambda-scale ANYWHERE in "
                 "production'. Any `lambda_scale_*` symbol is banned; use "
-                "linking_weight_family_a / Geom_full(K) instead."
+                "linking_weight_family_a / VolDensity(K) instead."
             ),
             "purged_by": "PR #1080 / #1089 (lambda-scale family)",
-            "canonical_replacement": "linking_weight_family_a / geom_full_borromean",
+            "canonical_replacement": "linking_weight_family_a / vol_density_borromean",
         }
     return None
 
