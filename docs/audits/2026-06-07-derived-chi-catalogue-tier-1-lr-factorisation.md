@@ -1,36 +1,54 @@
 # Tier 1 — LR / parabolic factorisation for atomic-braid characters (2026-06-07)
 
-> **Status update (2026-06-07 PM)**: the simple LR factorisation
-> formula derived empirically in
-> [`derived_chi_catalogue_bridge_factor_deuteron.py`](../../folio-assistant/computations/derived_chi_catalogue_bridge_factor_deuteron.py)
-> on the deuteron is **proven to fail for c_LR > 1 cases**. The
-> decomposition `χ^λ(T_β) = Σ ω(μ_p, μ_n, λ; q) · χ^{μ_p}(T_{w_p}) · χ^{μ_n}(T_{w_n})`
-> works **only for c_LR = 1 triples** (yields `ω = ±q²` or `±q⁻²`,
-> the σ_b eigenvalues). Across 11 deuteron λ × 3-5 active pairs:
-> 2 of 35 triples derived cleanly (the c_LR=1 cases at λ = (6) and
-> λ = (1,1,1,1,1,1)); 33 of 35 yielded **no consistent solution**
-> across multi-equation tests and **fail** on held-out cross-
-> validation (6/33 pass, 27/33 fail).
+> **Status update (2026-06-07 PM, refined)**: the simple LR
+> factorisation formula
+> `χ^λ(T_β) = Σ ω(μ_p, μ_n, λ; q) · χ^{μ_p}(T_{w_p}) · χ^{μ_n}(T_{w_n})`
+> with **scalar** `ω` is proven to work **only when V_λ itself is
+> 1-dimensional** (i.e. λ is the trivial or sign rep — `(n)` or
+> `(1ⁿ)`). For higher-dim V_λ — even with c_LR=1 — the diagonal
+> block of `σ_b` on the (μ_p, μ_n) isotypic is a **non-trivial
+> matrix on the multiplicity space**, not an eigenvalue.
 >
-> **Root cause** (§4 below): σ_b on the (μ_p, μ_n) isotypic component
-> with c_LR > 1 does NOT commute with the parabolic H_3 ⊗ H_3 action
-> — by Schur's lemma, its diagonal block does not factor as
-> `M_multiplicity ⊗ id_{V_{μ_p} ⊗ V_{μ_n}}`. So the trace doesn't
-> reduce to `tr(M) · χ^{μ_p} · χ^{μ_n}`; it depends on the specific
-> (w_p, w_n) in a way the simple factorisation misses.
+> **Refined formula** (correct, but needs matrix-valued ω):
+> ```
+> χ^λ(T_β)  =  Σ_{(μ_p, μ_n)} Tr [ M(μ_p, μ_n, λ; q) ·
+>              (ρ^{μ_p}(T_{w_p}) ⊗ ρ^{μ_n}(T_{w_n})) ]
+> ```
+> where `M(μ_p, μ_n, λ; q)` is the **full matrix** of σ_b restricted
+> to the (μ_p, μ_n) isotypic. Each `M` is a `(c_LR · dim_{μ_p} ·
+> dim_{μ_n})²` matrix with q-rational entries.
 >
-> **Implication**: Tier 1 as a generic speedup over `chi_q_via_gp`
-> for all atoms is **not achievable via this formula**. A correct
-> formula needs the full Hecke parabolic-restriction infrastructure
-> (Geck-Pfeiffer §9.5 — Yang-Baxter intertwiner explicit matrix
-> elements), which is research-grade and not landing in this PR.
+> **Direct numerical verification of the obstruction**: for λ=(5,1)
+> with all three active pairs c_LR=1:
+>   - Test β = σ_3: my scalar-ω formula predicts 4q² − q⁻² ✓ matches
+>     `chi_q_via_gp` ([(2,4), (-2,-1)]) exactly
+>   - Test β = σ_1·σ_3: predicts 3q⁴ − 2 ✓ matches ([(0,-2), (4,3)])
+>   - Test β = σ_1·σ_3·σ_4: predicts 2q⁶ − 3q²; **actual is 2q⁶ − 2q²**
+>     ([(2,-2), (6,2)])  ← OBSTRUCTION
 >
-> **What DOES work**: the GIL release + Tier 3 bar-symmetry +
-> multiprocessing (all landed in this PR) capture the bulk of the
-> achievable speedup. The C_LR=1 cells (which are most cells for
-> small atoms) can use the simple formula, but the multi-multiplicity
-> cells need direct `chi_q_via_gp`. Net: no realistic gain over the
-> already-landed optimisations.
+> The third test's mismatch by exactly `q²` proves that whatever
+> `(ω_1, ω_2, ω_3)` we pick, the formula can't simultaneously satisfy
+> all three tests — i.e. the bridge contribution depends on `(w_p, w_n)`
+> in a way **no scalar** can encode. The full matrix `M` is needed.
+>
+> **The 1-dim V_λ cases that DO work** (λ=(6) and λ=(1,1,1,1,1,1)):
+> these are 1-dimensional reps where σ_b acts as a single scalar (q²
+> for trivial, −q⁻² for sign), so the matrix `M` collapses to a
+> scalar. The formula works trivially.
+>
+> **Implication**: implementing Tier 1 as a generic speedup over
+> `chi_q_via_gp` requires the full-matrix approach — derive `M` per
+> `(μ_p, μ_n, λ)` via Hoefsmit + LR change-of-basis, tabulate
+> rationals in q, multiply against tensor-product matrices per call.
+> Tractable per partition (matrix sizes are small — `c_LR · dim_μp ·
+> dim_μn`, e.g. ≤ 2 for deuteron, ≤ ~50 for ⁹Be) but the per-`λ`
+> setup work (compute M for every (μ_p, μ_n) active pair) is
+> multi-session.
+>
+> **What still works (unchanged)**: GIL release (Patch 1) + Tier 3
+> bar-symmetry + multiprocessing — landed in this PR, capture the
+> bulk of achievable speedup without the matrix-`M` infrastructure.
+> Heavy atoms (A=7-9) tractable via extended foreground sweep.
 
 > **Mathematical optimisation** for `χ^λ(T_β_atom)` exploiting the
 > parabolic structure of `atom_braid_word_3A(Z, N)`. The intra-nucleon
