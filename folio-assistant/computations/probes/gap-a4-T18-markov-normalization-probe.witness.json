@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-07T01:24:03.718912+00:00",
-  "commitSha": "22efd1747c064a9737107503cec6ed4ce04224bd",
+  "computedAt": "2026-06-07T01:25:23.973875+00:00",
+  "commitSha": "f60355982c5eccc477d78f13e5ecebf77883fa38",
   "assertions": [
     {
       "name": "h4_coefficient_of_tr_M_equals_minus_three_quarters",
@@ -41,8 +41,8 @@
   "durationMs": 14,
   "computation": "gap-a4-T18-markov-normalization-probe",
   "scriptFile": "gap_a4_T18_markov_normalization_probe.py",
-  "scriptHash": "1d7b27f4f0b6",
-  "scriptCommitSha": "22efd1747c064a9737107503cec6ed4ce04224bd",
+  "scriptHash": "78885629414f",
+  "scriptCommitSha": "f60355982c5eccc477d78f13e5ecebf77883fa38",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

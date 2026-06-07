@@ -97,7 +97,11 @@ from _gap_a4_qsafe import Q_0_50DPS  # noqa: E402
 # coerces computed/expected to binary64 floats, so tolerances tighter
 # than ~1e-15 are meaningless (Copilot review #1938).
 TOL_FLOAT = 1e-15
-TOL_NEAR_ZERO = mp.mpf("1e-30")  # used for mpf-level diff checks before float()
+# mpf-level tolerance for diff checks BEFORE the float() coercion.
+# Dynamically tied to mp.dps so it auto-scales with set_compute_dps()
+# (Gemini review #1938: prefer mp.dps-derived tolerance to a hardcoded
+# constant when the comparison stays at mpf precision).
+TOL_NEAR_ZERO = mp.mpf(10) ** (-mp.mp.dps + 20)
 
 
 # ── Markov-trace components ───────────────────────────────────────
@@ -213,7 +217,10 @@ def check_wenzl_weight_derivation() -> dict:
     print()
     print("  Solving: −3·y_{(2,1)}(0) = −3/4  ⟹  y_{(2,1)}(0) = 1/4 ✓")
     print()
-    y_21_at_zero_derived = mp.mpf(-0.75) / mp.mpf(-3)
+    # Use string literals to avoid binary64 round-trip on values that
+    # might not be exactly representable (Gemini review #1938 — best
+    # practice for high-precision arithmetic).
+    y_21_at_zero_derived = mp.mpf("-0.75") / mp.mpf("-3")
     y_21_at_zero_expected = mp.mpf("0.25")
     print(f"  Derived: y_{{(2,1)}}(0) = (−3/4) / (−3) = "
           f"{mp.nstr(y_21_at_zero_derived, 14)}")
