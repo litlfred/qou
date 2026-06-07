@@ -70,13 +70,40 @@ def conjugate_partition(lam: tuple[int, ...]) -> tuple[int, ...]:
 def laurent_substitute_bar(
     pairs: list[tuple[int, str]],
 ) -> list[tuple[int, str]]:
-    """Apply q → −q⁻¹ to a Laurent-in-q polynomial.
+    """Apply q → −q⁻¹ to a Laurent-in-q polynomial. Handles BOTH
+    catalogue encodings the PR #1952 cells use (auto-detected per cell):
 
-    The pair (degree, coeff) becomes (-degree, ±coeff) where the
-    sign is (−1)^degree (since q^d → (−q⁻¹)^d = (−1)^d q^{−d})."""
+      - **direct encoding** (Phase-2 sympy cells like trefoil χ⁽²⁾ = q³):
+        key d = math q-exponent. Substitution gives `c · (−1)^d · q^{−d}`,
+        new term = `(−d, c · (−1)^d)`.
+
+      - **half-exponent encoding** (Phase-3 pyhecke_native cells, as
+        flagged by Copilot on PR #1952): key d = 2 · math q-exponent,
+        so the true math q-exp is k = d/2 and substitution gives
+        `c · (−1)^k · q^{−d/2}`, i.e. new term = `(−d, c · (−1)^{d/2})`.
+        Verified by `chi_q_via_gp([2], 2, [(1,1)])` returning
+        `[(2, '1')]` for the math polynomial q¹ (single positive crossing).
+
+    Detection rule: if ANY key in the polynomial is odd, the encoding
+    MUST be direct (half-exp keys are always even). Otherwise we treat
+    the polynomial as half-exp — the typical case for pyhecke_native
+    cells. This means polynomials that happen to be even-only stay
+    correct under either interpretation because all the resulting
+    factors are `+1` for `k` even.
+
+    For the trefoil χ⁽²⁾ = q³ (Phase-2) case: keys = (3,), all odd, so
+    we use direct encoding. The (−1)^3 factor gives the trefoil sign
+    rep χ⁽¹,¹⁾ = −q⁻³ exactly — matching the catalogue's stored value.
+    """
+    all_even = all(d % 2 == 0 for (d, _c) in pairs)
     out: list[tuple[int, str]] = []
     for (d, c) in pairs:
-        sign = 1 if (d % 2 == 0) else -1
+        if all_even:
+            # Half-exp encoding: true math q-exp is d/2.
+            sign = 1 if ((d // 2) % 2 == 0) else -1
+        else:
+            # Direct encoding: key is math q-exp.
+            sign = 1 if (d % 2 == 0) else -1
         new_coeff_int = int(c) * sign
         out.append((-d, str(new_coeff_int)))
     out.sort()
