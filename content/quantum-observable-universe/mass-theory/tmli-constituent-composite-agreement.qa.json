@@ -2566,7 +2566,95 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "4464738aca6b",
+          "ts": "8e1f4523b63d",
+          "lean": "8fa9e73f8e68"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Statement is bare claim + display equation; no interpretive prose",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T01:00:13.073Z",
+        "reviewed_sha": "d376bc080df8def1d8245dc4d156ad58a0207db5",
+        "notes": "Lemma states constituent product = composite Markov trace = P_K(q); statement-only."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "4464738aca6b",
+          "ts": "8e1f4523b63d",
+          "lean": "8fa9e73f8e68"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Markov-trace mass element in 'Transfer Matrix and Topological Mass' section of Mass Analysis",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T01:00:13.129Z",
+        "reviewed_sha": "d376bc080df8def1d8245dc4d156ad58a0207db5",
+        "notes": "Topic (tr_M evaluation of hadron braid) squarely in section scope."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "4464738aca6b",
+          "ts": "8e1f4523b63d",
+          "lean": "8fa9e73f8e68"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Generic H_N(q); no numeric q0, MeV, or Real.* in statement",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T01:00:13.180Z",
+        "reviewed_sha": "d376bc080df8def1d8245dc4d156ad58a0207db5",
+        "notes": "Algebraic identity in Hecke algebra; no archimedean construct."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "4464738aca6b",
+          "ts": "8e1f4523b63d",
+          "lean": "8fa9e73f8e68"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "No narrative proof in statement block (proof in sibling -proof); no archimedean machinery",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T01:00:13.228Z",
+        "reviewed_sha": "d376bc080df8def1d8245dc4d156ad58a0207db5",
+        "notes": "Statement-only block; algebraic, no linarith/Real/IVT."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-07T01:00:13.228Z"
 }
