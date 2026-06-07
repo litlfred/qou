@@ -41,7 +41,12 @@ condition on the truncated coefficient matrix, hence decidable.
    \mathbb{Q}[q,q^{-1}][x,y,z]$ is computed by the reduction engine; full
    Jacobian rank $\iff I_N$ carries no generator of total degree $\le N$.
    This turns "no polynomial relation" into a normal-form computation the
-   skein engine already performs.
+   skein engine already performs.  The **base-order certificate is now
+   Lean-formalized sorry-free**: the GB-eliminated order-3 minor has
+   non-singular echelon form ($\prod\text{pivots} = 2 \neq 0$,
+   `jetOrder3_certificate`), discharging full rank $3$ at the Reid-1991
+   base order from a finite, decidable determinant test.  Higher orders
+   are the same test pending the compute witness's coefficient data.
 3. **Surreal error bounds** supply the *bridge* to the limit, and the
    right geometric picture is **parallel transport on the projective
    state fibre**.  The coloured-Jones invariant $J_K(q)$ is the holonomy
@@ -74,8 +79,13 @@ condition on the truncated coefficient matrix, hence decidable.
      holonomy ($\to \mathrm{Vol}$) from the monodromy artifact.
 
    The surreal-number error field of the framework is the natural home
-   for the uniform bound; the Lean reduction axiomatises (I1)+(I2)+(I3)
-   as the single vanishing-shadow input of the bridge class.
+   for the uniform bound.  The Lean reduction no longer assumes the three
+   issues as one monolithic axiom: it splits them, and **(I1) uniformity
+   and the (I2)∘(I3) composition are now proved** (`transport_uniform_bound`,
+   `transport_shadow_vanishes`).  What remains conjectural is exactly the
+   two *physical* inputs — the physical-holonomy shadow vanishes (I2) and
+   the monodromy shadow vanishes (I3) — each a named hypothesis rather
+   than an opaque single axiom.
 
 **The one remaining gap (stated honestly).**  The reduction is *not* a
 proof of the deep conjecture.  It is a reduction of it to a single
@@ -90,8 +100,11 @@ What QOU *buys*: the deep [algebraic-independence
 conjecture](#conj:hyperbolic-volume-transcendence) — needed only for
 well-definedness of the mass coefficient ring, never for RH/NS/$P\neq
 \mathrm{NP}$ — is reduced from a Grothendieck-period transcendence
-statement (no path) to a finite per-order GB computation (QOU runs it)
-plus the surreal bridge lemma above (QOU-native, still open).  What it
-*gives up*: the bridge lemma is itself unproved, so this closes nothing
-unconditionally — it converts an external dead end into an internal,
-incremental research target on the framework's own filtration.
+statement (no path) to a finite per-order GB computation (base order now
+Lean-certified) plus the surreal bridge, which is itself split so that
+only its two physical inputs (I2)+(I3) remain conjectural — (I1)
+uniformity and the composition are proved.  What it *gives up*: those two
+inputs are still unproved, so this closes nothing unconditionally — it
+converts an external dead end into an internal, incremental research
+target on the framework's own filtration, with the base order and the
+bridge's structural half already discharged.
