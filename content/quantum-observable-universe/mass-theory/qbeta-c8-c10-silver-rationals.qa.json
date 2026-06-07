@@ -1,0 +1,128 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "prop:qbeta-c8-c10-silver-rationals",
+  "kind": "proposition",
+  "paths": {
+    "ts": "content/quantum-observable-universe/mass-theory/qbeta-c8-c10-silver-rationals.ts",
+    "md": "content/quantum-observable-universe/mass-theory/qbeta-c8-c10-silver-rationals.md",
+    "lean": "content/quantum-observable-universe/mass-theory/qbeta-c8-c10-silver-rationals.lean"
+  },
+  "source_hashes": {
+    "md": "da689e5f8933",
+    "ts": "a3c43b822073",
+    "lean": "996a5ae614cb"
+  },
+  "criteria": {
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "da689e5f8933",
+          "ts": "a3c43b822073",
+          "lean": "996a5ae614cb"
+        },
+        "result": "fail",
+        "severity": "minor",
+        "evidence": "Statement (3 closed forms, lines 8-22) followed by '## Why these values matter' interpretive section (lines 24-30: 'structural signal', 'where the algebraic structure is visible') in the SAME block; no interprets: companion remark exists.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T01:36:07.145Z",
+        "reviewed_sha": "3ee81b8919cb7c76c7f9ec2e43a8c89337f13767",
+        "notes": "Substantive motivation ('why these values matter', structural-signal framing) is mislocated in the proposition block; should move to a linked remark via interprets:."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "da689e5f8933",
+          "ts": "a3c43b822073",
+          "lean": "996a5ae614cb"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "Q_β c_k precision-ladder prop; topically mass-theory (consumed by sibling qbeta-c4-from-c3-c8-product-identity.ts:20) but NOT listed in any mass-theory.ts section block list (orphan from chapter manifest).",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T01:36:07.191Z",
+        "reviewed_sha": "3ee81b8919cb7c76c7f9ec2e43a8c89337f13767",
+        "notes": "Content belongs in mass-theory's Q_β/c_k ladder scope, not a different chapter; warn because the block is not yet wired into a chapter section's blocks[]."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "da689e5f8933",
+          "ts": "a3c43b822073",
+          "lean": "996a5ae614cb"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Silver ratio q=1+√2 / b²=7/8 appears, but the three identities are stated over ℚ (norm_num); .md '## q-usage discipline' banner (lines 52-59) flags q as a real algebraic anchor with fibre-level Laurent rationals.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T01:36:07.236Z",
+        "reviewed_sha": "3ee81b8919cb7c76c7f9ec2e43a8c89337f13767",
+        "notes": "Generic-ring chapter; statement is a ℚ rational identity with explicit wall/q-usage banner. Properly placed."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "da689e5f8933",
+          "ts": "a3c43b822073",
+          "lean": "996a5ae614cb"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Proof is three pure-rational identities closed by norm_num over ℚ (lean: qbeta_c8/c9/c10_at_silver); no linarith/IVT/Real.* archimedean machinery.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T01:36:07.280Z",
+        "reviewed_sha": "3ee81b8919cb7c76c7f9ec2e43a8c89337f13767",
+        "notes": "Algebraic ℚ identities proved by norm_num; proof method matches the algebraic side of the wall."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "da689e5f8933",
+          "ts": "a3c43b822073",
+          "lean": "996a5ae614cb"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Narrative c_8=49/16, c_9=-7, c_10=343/128 (md lines 8-16) match Lean theorems qbeta_c8_at_silver (4*(7/8)^2=49/16), qbeta_c9_at_silver (-8*(7/8)=-7), qbeta_c10_at_silver (4*(7/8)^3=343/128) exactly.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T01:36:07.329Z",
+        "reviewed_sha": "3ee81b8919cb7c76c7f9ec2e43a8c89337f13767",
+        "notes": "Three closed-form rationals; narrative and Lean ℚ-equalities agree element-by-element. Faithful encoding."
+      }
+    ]
+  },
+  "updated_at": "2026-06-07T01:36:07.329Z"
+}
