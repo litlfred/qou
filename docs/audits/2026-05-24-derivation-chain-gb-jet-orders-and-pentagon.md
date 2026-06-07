@@ -288,6 +288,7 @@ Combining the per-step analysis with the empirical h⁴ probe results
 
 ## §5. Cross-references
 
+- [`content/.../predicted-spectra/three-knot-jet-order-independence.md`](../../content/quantum-observable-universe/predicted-spectra/three-knot-jet-order-independence.md) + [`QOU.Archimedean.JetOrderIndependence`](../../content/quantum-observable-universe/lean/QOU/Archimedean/JetOrderIndependence.lean) (PR #1931, 2026-06-07) — **the GB-filtration / jet-order bookkeeping of this audit, instantiated as a transcendence reduction.** The order-`N` GB *elimination* certificate (`jetOrder3_certificate`: eliminated echelon minor non-singular, ∏ pivots = 2 ≠ 0) discharges jet-order independence of the three coloured-Jones series at the Reid-1991 base order — a finite, decidable determinant test, exactly the "relations smooth out per jet grade" mechanism this audit describes. Reduces `conj:hyperbolic-volume-transcendence` to two named physical inputs + the per-order certificate.
 - [`docs/lambda-scale-absorbed-into-vol-density.md`](../lambda-scale-absorbed-into-vol-density.md) — **canonical framing reference** (post-PR #1080); explains why λ_scale ≠ separate object (now in main)
 - [`docs/canonical-derivation-cheat-sheet.md`](../canonical-derivation-cheat-sheet.md) — the canonical chain (this audit traces through it)
 - [`docs/audits/2026-05-24-yekutieli-mi-derivation-path.md`](2026-05-24-yekutieli-mi-derivation-path.md) — Yekutieli MI tessellation, jet grades
