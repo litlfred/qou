@@ -319,8 +319,17 @@ def load_catalogue() -> DerivedChiCatalogue:
         # backward compatibility with witnesses emitted before the
         # Phase 2 schema migration. New code emits only the Laurent form.
         if "chi_lambda_q_laurent" in c:
+            # Each term carries either `q_degree` (legacy alias) or the
+            # clearer `half_exp` introduced post-Copilot review on PR
+            # #1952. They're the SAME integer — keyed by the pyhecke_native
+            # LaurentPolyQ half-exponent encoding (key = 2 · math q-exp).
+            # The two keys are accepted interchangeably so future writers
+            # can adopt `half_exp` without breaking older readers.
             chi_entries = [
-                (int(t["q_degree"]), str(t["coefficient"]))
+                (
+                    int(t.get("half_exp", t.get("q_degree"))),
+                    str(t["coefficient"]),
+                )
                 for t in c["chi_lambda_q_laurent"]
             ]
         else:

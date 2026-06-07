@@ -122,22 +122,27 @@ def derive_conjugate_from_bar_symmetry(
 
 
 # ── Production isotope registry (mirrors paper_six_term_isotope_sweep.ISOTOPES) ──
-# Each entry: (label, Z, N, has_braid_in_production, codata_mass_MeV).
+# Each entry: (label, Z, N, has_braid_in_production).
 # `has_braid_in_production=False` for free p, n (treated as single-nucleon
 # trivial braids in the same 3-strand-per-nucleon framework).
+# Per the Copilot review on PR #1952: the `codata_mass_MeV` column was
+# removed because (a) it was never used in the sweep, and (b) keeping
+# hardcoded CODATA-style literals here risks re-introducing P31 audit
+# issues if a future agent starts treating them as inputs to the
+# binding-energy prediction.
 PRODUCTION_ISOTOPES = [
-    ("p",   1, 0, False,  938.272),
-    ("n",   0, 1, False,  939.565),
-    ("D",   1, 1, True,  1876.124),
-    ("T",   1, 2, True,  2809.432),
-    ("3He", 2, 1, True,  2809.413),
-    ("4He", 2, 2, True,  3728.401),
-    ("5Li", 3, 2, True,  4669.151),
-    ("6Li", 3, 3, True,  5603.052),
-    ("7Li", 3, 4, True,  6535.366),
-    ("7Be", 4, 3, True,  6536.227),
-    ("8Be", 4, 4, True,  7456.894),
-    ("9Be", 4, 5, True,  8392.749),
+    ("p",   1, 0, False),
+    ("n",   0, 1, False),
+    ("D",   1, 1, True),
+    ("T",   1, 2, True),
+    ("3He", 2, 1, True),
+    ("4He", 2, 2, True),
+    ("5Li", 3, 2, True),
+    ("6Li", 3, 3, True),
+    ("7Li", 3, 4, True),
+    ("7Be", 4, 3, True),
+    ("8Be", 4, 4, True),
+    ("9Be", 4, 5, True),
 ]
 
 
@@ -236,12 +241,14 @@ def main() -> int:
     )
     parser.add_argument(
         "--workers", type=int, default=0,
-        help="ProcessPoolExecutor worker count for parallel per-partition "
-             "character computation (default: os.cpu_count(); 1 = serial). "
-             "Threads don't help — pyhecke_native holds the GIL during the "
-             "Geck-Pfeiffer compute. Future Rust-side patches (see "
+        help="Worker count for parallel per-partition character computation "
+             "(default: os.cpu_count(); 1 = serial). The parallel wrapper "
+             "auto-detects whether to use threads (when pyhecke_native "
+             "releases the GIL — Patch 1 landed in v0.9.0, see "
              "`docs/audits/2026-06-07-pyhecke-native-gil-release-patch.md`) "
-             "will lift this restriction.",
+             "or processes (older pyhecke_native installs). On a stock "
+             "v0.9.0+ install, threads are selected and scale near-linearly "
+             "with cpu_count.",
     )
     args = parser.parse_args()
     workers = args.workers if args.workers > 0 else (os.cpu_count() or 1)
@@ -290,7 +297,7 @@ def main() -> int:
     atom_summary: dict[str, dict] = {}
     sweep_t0 = time.monotonic()
 
-    for (label, Z, N, has_braid, _M_codata) in PRODUCTION_ISOTOPES:
+    for (label, Z, N, has_braid) in PRODUCTION_ISOTOPES:
         A = Z + N
         if A > args.max_A:
             print(f"  ◦ skip {label} (A={A} > max-A={args.max_A})")

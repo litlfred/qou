@@ -69,11 +69,17 @@ def laurent_pairs_to_sympy(
     pairs: list[tuple[int, str]],
     q: sp.Symbol,
 ) -> sp.Expr:
-    """Convert pyhecke_native q-Laurent format [(q_degree, coeff), …]
-    to a sympy expression in q (Kauffman convention)."""
+    """Convert pyhecke_native q-Laurent format `[(half_exp, coeff), …]`
+    to a sympy expression in q.
+
+    pyhecke_native's `chi_q_via_gp` / `mn_chi_q` keys are **half-exponents**:
+    a stored pair `(d, c)` represents the math term `c · q^{d/2}` (verified
+    empirically — `chi_q_via_gp([2], 2, [(1,1)])` returns `[(2, '1')]` for
+    the math polynomial `q^1`). The d/2 division is symbolic via
+    `sp.Rational(d, 2)`. Per the Copilot review on PR #1952."""
     expr = sp.Integer(0)
     for (d, c) in pairs:
-        expr += sp.Integer(int(c)) * q ** int(d)
+        expr += sp.Integer(int(c)) * q ** sp.Rational(int(d), 2)
     return expr
 
 
@@ -81,7 +87,12 @@ def sympy_to_laurent_pairs(
     expr: sp.Expr,
     q: sp.Symbol,
 ) -> list[tuple[int, str]]:
-    """Convert a sympy Laurent-in-q expression to pyhecke_native format."""
+    """Convert a sympy Laurent-in-q expression back to pyhecke_native's
+    `[(half_exp, coeff), …]` format. The output key is `2 * math_q_exp`
+    so this round-trips cleanly with `laurent_pairs_to_sympy`. The
+    `q^32` multiplier below shifts all exponents up to extract them
+    with `sp.Poly`; we double the exponent before storing to recover
+    the half-exponent convention."""
     expr = sp.expand(expr)
     if expr == 0:
         return []
@@ -91,7 +102,10 @@ def sympy_to_laurent_pairs(
     for d_tup, c in poly_form.all_terms()[::-1]:
         if c == 0:
             continue
-        pairs.append((int(d_tup[0]) - 32, str(c)))
+        # math q-exponent = poly_degree − 32; store as half-exponent
+        # (2 × math q-exp) to round-trip with `laurent_pairs_to_sympy`.
+        math_q_exp = int(d_tup[0]) - 32
+        pairs.append((2 * math_q_exp, str(c)))
     pairs.sort()
     return pairs
 
