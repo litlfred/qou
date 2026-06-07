@@ -602,6 +602,75 @@ const PROOF: QaCriterionDefinition[] = [
       "conjecture",
     ],
   },
+  // ── Rater rubric (AlphaProof-Nexus adoption 2026-06-07) ──────────
+  //    Agent-SCORED quality criteria (not pass/fail): populate
+  //    QaCriterionEntry.score (value 0–1, max 1). Owned by
+  //    proof-integration-watcher (rate) + integration-backlog (improve).
+  {
+    id: "proof-rater-strategy-clarity",
+    domain: "proof-rater",
+    description:
+      "QUALITY SCORE (0–1, write to QaCriterionEntry.score, max 1) — NOT a " +
+      "pass/fail gate. Is the proof STRATEGY explicit and legible: would a " +
+      "competent reader know the plan before reading the steps? 1.0 = plan " +
+      "stated up front (cited lemmas / named case split); 0.5 = recoverable " +
+      "but implicit; 0.0 = opaque step-dump. Low score routes to " +
+      "`proof-simplifier` / `proof-conciseness`. From the AlphaProof-Nexus " +
+      "rater rubric (arXiv 2605.22763).",
+    default_severity: "minor",
+    depends_on: ["md", "lean"],
+    automated: false,
+    applies_to: ["theorem", "lemma", "proposition", "corollary"],
+  },
+  {
+    id: "proof-rater-goal-plausibility",
+    domain: "proof-rater",
+    description:
+      "QUALITY SCORE (0–1, write to score, max 1) — NOT pass/fail. For any " +
+      "remaining `sorry`/gap, how plausible is closing it? Cross-reference " +
+      "the gap-criticality tag (`proof-gap-audit` §Gap criticality): " +
+      "`routine` ⇒ ~0.9, `core` ⇒ ~0.3, `restates-target` ⇒ 0.0 (the gap " +
+      "IS the goal). A sorry-free proof ⇒ 1.0. Routes to `proof-triage` / " +
+      "`lean-build-fix`. From the AlphaProof-Nexus rater rubric (plausibility " +
+      "of remaining goals).",
+    default_severity: "minor",
+    depends_on: ["lean"],
+    automated: false,
+    applies_to: ["theorem", "lemma", "proposition", "corollary", "conjecture"],
+  },
+  {
+    id: "proof-rater-novelty",
+    domain: "proof-rater",
+    description:
+      "QUALITY SCORE (0–1, write to score, max 1) — NOT pass/fail. Does the " +
+      "proof/approach add something non-redundant vs the corpus, or is it a " +
+      "near-duplicate of a sibling proof? 1.0 = novel argument; 0.5 = " +
+      "standard but not duplicated; 0.0 = redundant (candidate for " +
+      "`proposition-consolidation-audit`). From the AlphaProof-Nexus rater " +
+      "rubric (novelty).",
+    default_severity: "minor",
+    depends_on: ["md", "lean"],
+    automated: false,
+    applies_to: ["theorem", "lemma", "proposition", "corollary"],
+  },
+  // ── SafeVerify / verify_integrity (AlphaProof-Nexus adoption) ────
+  {
+    id: "proof-statement-integrity",
+    domain: "proof",
+    description:
+      "Guards against 'passing' a proof by weakening the statement or " +
+      "injecting an axiom. The provable-kind signature (name / binders / " +
+      "hypotheses / conclusion) is UNCHANGED vs the prior commit unless an " +
+      "author-approved restatement is reflected in .md + .ts in the same " +
+      "diff; AND `lean_verify` shows no `sorryAx` / unexpected axioms on a " +
+      "decl claimed proved. Agent-checked (git diff + lean-lsp). Routes to " +
+      "`lean-proof-review` (Review Type 4). From AlphaProof-Nexus " +
+      "SafeVerify / verify_integrity (arXiv 2605.22763).",
+    default_severity: "critical",
+    depends_on: ["lean"],
+    automated: false,
+    applies_to: ["theorem", "lemma", "proposition", "corollary"],
+  },
 ];
 
 // ── Domain: canonical ───────────────────────────────────────────

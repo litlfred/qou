@@ -110,6 +110,15 @@ export interface QaCriterionEntry {
   result: "pass" | "fail" | "warn" | "n/a";
   /** Severity if `result` is `"fail"` or `"warn"`. */
   severity?: "critical" | "major" | "minor";
+  /**
+   * Optional rubric score for rater-style (quality) criteria
+   * (`proof-rater-*`). `value` ∈ [0, max]; `rubric` holds per-dimension
+   * sub-scores. A score is a *quality* measure to improve over time, not
+   * a pass/fail gate. Convention: value/max ≥ 0.66 ⇒ result "pass",
+   * 0.33–0.66 ⇒ "warn", < 0.33 ⇒ "fail" (severity "minor"). Populated by
+   * `kind: "agent"` reviewers; absent for binary criteria.
+   */
+  score?: { value: number; max: number; rubric?: Record<string, number> };
   /** Evidence: file:line + verbatim quote (for fail/warn). */
   evidence?: string;
   /** Reviewer identity + provenance. */
