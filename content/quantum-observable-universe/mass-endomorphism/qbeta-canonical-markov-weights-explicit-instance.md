@@ -11,7 +11,7 @@ $$
 $$
 
 *where $z(q) = \sqrt q / (1 + q)$ is the Markov parameter
-(`markov_parameter` in PR #1764).*
+(`markov_parameter`).*
 
 **Proof of the normalisation axiom.** $y_{(3)}(q) + 2 \, y_{(2,1)}(q) + y_{(1,1,1)}(q)
 = z(q) + 2 \left( \tfrac{1}{2} - z(q) \right) + z(q)
@@ -77,7 +77,7 @@ and we are identifying ONE.
 
 - Class declaration:
   [`prop:qbeta-per-block-chi-closed-forms`](qbeta-per-block-chi-closed-forms.md)
-  §Extension #4 (PR #1764).
+  §Extension #4.
 - Conditional theorems consuming this class:
   [`prop:qbeta-delta-tau-canonical-conditional-q2-minus-1-factor`](qbeta-delta-tau-canonical-conditional-q2-minus-1-factor.md)
   (PR #1798).
