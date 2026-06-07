@@ -2872,7 +2872,100 @@
         "reviewed_at": "2026-06-04T14:17:11.989Z",
         "reviewed_sha": "ca48f1cf8d32b70bb0f3df8a60c7308a921cdf31"
       }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "a165b7bcce01",
+          "ts": "f7fbaccda4d9",
+          "lean": "a7b829d634a0"
+        },
+        "result": "fail",
+        "severity": "critical",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T05:56:57.266Z",
+        "reviewed_sha": "c47fda4d79ef12172fe90e0c9b670b761a3f4d95",
+        "notes": "VACUOUS: lean.ref qou:QOU.Archimedean.baryonProductFromAlt is 'theorem baryonProductFromAlt : forall (x:True), x := by intro h; exact h' — a True->True tautology. Docstring admits 'The True payload is a deliberate placeholder'. Does NOT state the md claim (Alt^3-isotype = product integrand). Supporting signCharacter_* lemmas are real but the referenced headline is vacuous."
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "a165b7bcce01",
+          "ts": "f7fbaccda4d9",
+          "lean": "a7b829d634a0"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.8,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T05:56:57.302Z",
+        "reviewed_sha": "c47fda4d79ef12172fe90e0c9b670b761a3f4d95",
+        "notes": "md proof is well-structured: 4 steps (Schur-Weyl decomp, Alt-projector via Frobenius char, wedge identification, Vandermonde discriminant). Plan clearly stated."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "a165b7bcce01",
+          "ts": "f7fbaccda4d9",
+          "lean": "a7b829d634a0"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0.3,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T05:56:57.336Z",
+        "reviewed_sha": "c47fda4d79ef12172fe90e0c9b670b761a3f4d95",
+        "notes": "Lean headline is a True placeholder (core content unformalized); GB/fibre-functor infra deferred per docstring. The md argument is plausible but the formal goal is a stub -> core gap."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "a165b7bcce01",
+          "ts": "f7fbaccda4d9",
+          "lean": "a7b829d634a0"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.7,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T05:56:57.370Z",
+        "reviewed_sha": "c47fda4d79ef12172fe90e0c9b670b761a3f4d95",
+        "notes": "Group-theoretic selection of the baryon channel (Alt^3 vs Sym^3 isotype) + Vandermonde/discriminant rationality is a non-trivial categorical argument specific to the color-tube cubic."
+      }
     ]
   },
-  "updated_at": "2026-06-05T14:22:44.851Z"
+  "updated_at": "2026-06-07T05:56:57.370Z"
 }

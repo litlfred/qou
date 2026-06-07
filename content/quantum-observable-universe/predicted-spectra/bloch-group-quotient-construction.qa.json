@@ -2682,7 +2682,99 @@
         "reviewed_at": "2026-06-04T17:55:40.559Z",
         "reviewed_sha": "d1b3fd1ceeb5f1b5ae327c611b69951487b4c4c4"
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "f226d5d3f043",
+          "ts": "61a6947286a9",
+          "lean": "8e31d9be4005"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.85,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T05:57:35.363Z",
+        "reviewed_sha": "c47fda4d79ef12172fe90e0c9b670b761a3f4d95",
+        "notes": "Plan up front: BlochGroup F := FreeAbelianGroup(PreBlochElement F) / pentagonSubgroup; 3 steps (free group, pentagon generators, quotient). Lean docstring + md What-this-closes/What's-still-open lay it out clearly."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "f226d5d3f043",
+          "ts": "61a6947286a9",
+          "lean": "8e31d9be4005"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.8,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T05:57:35.400Z",
+        "reviewed_sha": "c47fda4d79ef12172fe90e0c9b670b761a3f4d95",
+        "notes": "Real sorry-free construction: BlochGroup quotient AddCommGroup, quot_universal_property, RogersPair.shape3/4/5 (field_simp/linear_combination), rogersGenerator_mem/quot_rogersGenerator_eq_zero. Documented caveat (over-permissive PentagonShape) and 3 open downstream items (pentagon identity, regulator injectivity, Suslin map); HasBlochGroup R instance fields are boolean trivial placeholders. Not a core gap in THIS block's claim (the quotient construction)."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "f226d5d3f043",
+          "ts": "61a6947286a9",
+          "lean": "8e31d9be4005"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.75,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T05:57:35.434Z",
+        "reviewed_sha": "c47fda4d79ef12172fe90e0c9b670b761a3f4d95",
+        "notes": "Concrete Lean Bloch-group quotient construction (Mathlib gap filler) with Rogers-form shape parameters and universal property; genuine formalization work, not standard/duplicated."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "f226d5d3f043",
+          "ts": "61a6947286a9",
+          "lean": "8e31d9be4005"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T05:57:35.468Z",
+        "reviewed_sha": "c47fda4d79ef12172fe90e0c9b670b761a3f4d95",
+        "notes": "lean.ref qou:QOU.Archimedean.BlochQuotient.BlochGroup present as a real quotient type (PreBlochGroup F / pentagonSubgroup), with AddCommGroup instance + quot projection + universal property. Not vacuous; matches the md's boxed B(F) construction. (def, not theorem, but kind=proposition titles a construction.)"
+      }
     ]
   },
-  "updated_at": "2026-06-05T14:22:44.851Z"
+  "updated_at": "2026-06-07T05:57:35.468Z"
 }

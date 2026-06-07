@@ -2699,7 +2699,99 @@
         "reviewed_at": "2026-06-04T14:15:29.509Z",
         "reviewed_sha": "ca48f1cf8d32b70bb0f3df8a60c7308a921cdf31"
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "6c67a15cf9fa",
+          "ts": "7f75ff55be8e",
+          "lean": "17c9ab683169"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.85,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T05:55:16.672Z",
+        "reviewed_sha": "c47fda4d79ef12172fe90e0c9b670b761a3f4d95",
+        "notes": "Plan up front: bar-invariance P(q)<->P(q^-1) gives lower-bound transfer (forward via q^-1>a, reverse dual) + negation transfer; md proof is explicit forward/reverse/dual."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "6c67a15cf9fa",
+          "ts": "7f75ff55be8e",
+          "lean": "17c9ab683169"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.95,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T05:55:16.710Z",
+        "reviewed_sha": "c47fda4d79ef12172fe90e0c9b670b761a3f4d95",
+        "notes": "Sorry-free: lower_bound_transfer, bar_apply_lower, neg_transfer, bar_apply_transfer all real proofs (inv_lt_inv0, inv_pos). bar_apply_transfer = lower_bound_transfer matches md part 1. No axiom/proxy."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "6c67a15cf9fa",
+          "ts": "7f75ff55be8e",
+          "lean": "17c9ab683169"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.66,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T05:55:16.747Z",
+        "reviewed_sha": "c47fda4d79ef12172fe90e0c9b670b761a3f4d95",
+        "notes": "Generic reuse principle (one-sided bound on bar-invariant predicate extends free), useful proof-obligation-halving abstraction; standard analysis but framed as a reusable transfer lemma."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "6c67a15cf9fa",
+          "ts": "7f75ff55be8e",
+          "lean": "17c9ab683169"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T05:55:16.783Z",
+        "reviewed_sha": "c47fda4d79ef12172fe90e0c9b670b761a3f4d95",
+        "notes": "lean.ref ...BarApplyTransfer.bar_apply_transfer present; statement (forall q>a, P q) <-> (forall q in (0,a^-1), P q) matches md part 1 exactly. Not vacuous. (ts validation:not_checked but decl exists and is sorry-free.)"
+      }
     ]
   },
-  "updated_at": "2026-06-05T14:22:44.851Z"
+  "updated_at": "2026-06-07T05:55:16.783Z"
 }

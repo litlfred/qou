@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/predicted-spectra/bohr-radius-categorical.lean"
   },
   "source_hashes": {
-    "md": "0c85371d5e60",
+    "md": "22760a960031",
     "ts": "3e04cd4ed8c9",
     "lean": "d0a836478d3d"
   },
@@ -2871,7 +2871,100 @@
         "reviewed_at": "2026-06-04T17:58:11.336Z",
         "reviewed_sha": "91c1f9063e5ab4f0abf7141ed75d2cc1c004c17f"
       }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "22760a960031",
+          "ts": "3e04cd4ed8c9",
+          "lean": "d0a836478d3d"
+        },
+        "result": "fail",
+        "severity": "critical",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T05:58:13.071Z",
+        "reviewed_sha": "c47fda4d79ef12172fe90e0c9b670b761a3f4d95",
+        "notes": "lean.ref qou:QOU.Archimedean.bohr_radius_categorical is a sibling STUB: 'theorem bohr_radius_categorical : True := by trivial'. Vacuous =True, does not state the md claim a_0^cat = hbar/(m_e c alpha_EM). md itself declares 'NOT yet derived', 'tautological' match, 'not as a closed theorem'. validation:not_started in ts."
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "22760a960031",
+          "ts": "3e04cd4ed8c9",
+          "lean": "d0a836478d3d"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.7,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T05:58:13.116Z",
+        "reviewed_sha": "c47fda4d79ef12172fe90e0c9b670b761a3f4d95",
+        "notes": "md clearly lays out the virial-balance transport, an explicit rigorous-vs-transported ledger, and 5 candidate closure routes (4a-4e) with round-8 partial findings; plan is clear even though unclosed."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "22760a960031",
+          "ts": "3e04cd4ed8c9",
+          "lean": "d0a836478d3d"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0.3,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T05:58:13.152Z",
+        "reviewed_sha": "c47fda4d79ef12172fe90e0c9b670b761a3f4d95",
+        "notes": "Core gap: md self-declares the formula is TRANSPORTED from QED (not derived from Hecke); Phi_kin/Phi_Coul postulated; absolute scale m_e c^2 alpha^2 not derived; Lean is a True stub. By the rubric this is a core/restates-target-equivalent gap."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "22760a960031",
+          "ts": "3e04cd4ed8c9",
+          "lean": "d0a836478d3d"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.45,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T05:58:13.191Z",
+        "reviewed_sha": "c47fda4d79ef12172fe90e0c9b670b761a3f4d95",
+        "notes": "Identifying the Hecke-algebraic gap (no per-generator kinetic/Coulomb additive split) + the 4b shell-ratio (2k+1)^-2 = Bohr 1/n^2 recovery is mildly novel structural observation, but the headline formula is standard QED."
+      }
     ]
   },
-  "updated_at": "2026-06-05T14:22:44.851Z"
+  "updated_at": "2026-06-07T05:58:13.191Z"
 }
