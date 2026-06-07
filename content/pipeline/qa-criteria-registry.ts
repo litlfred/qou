@@ -957,6 +957,40 @@ const DETANGLER: QaCriterionDefinition[] = [
     automated: true,
   },
   {
+    id: "detangler-graph-energy",
+    domain: "detangler",
+    description:
+      "Per-block contribution to the chapter's graph energy: the sum, " +
+      "over same-chapter `uses:` edges that point forward in the " +
+      "manifest order, of the manifest-position distance to each " +
+      "target. Weights forward refs by reach (a definition used 30 " +
+      "blocks later is a deeper tangle than one used 2 blocks later) — " +
+      "the magnitude that the binary `detangler-no-forward-ref` count " +
+      "misses. `pass` at energy 0, `warn` for any forward edge, `fail` " +
+      "(major) at energy ≥ 12. Emits `graph_energy`, `fwd_edge_count`, " +
+      "`worst_span` in the entry's `metrics`. Mirrors the " +
+      "`chapter-complexity-review` energy metric per block.",
+    default_severity: "major",
+    depends_on: ["ts"],
+    automated: true,
+  },
+  {
+    id: "detangler-topic-coherence",
+    domain: "detangler",
+    description:
+      "Keyword-based topic-fit heuristic (ported from " +
+      "`block-density-audit.py`): a block whose prose scores more " +
+      "chapter-keyword hits for some OTHER chapter than for its own " +
+      "home chapter is a relocation/split candidate. Soft (`warn`, " +
+      "minor) since keyword overlap is noisy; the `metrics` payload " +
+      "records `home_chapter`, `home_score`, `top_other_chapter`, " +
+      "`top_other_score` for reviewer adjudication. Only audits " +
+      "substantive blocks (> 20 non-blank .md lines); `n/a` otherwise.",
+    default_severity: "minor",
+    depends_on: ["md"],
+    automated: true,
+  },
+  {
     id: "detangler-no-dependency-cycle",
     domain: "detangler",
     description:
