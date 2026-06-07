@@ -1769,7 +1769,28 @@
         "reviewed_at": "2026-06-02T19:35:55.253Z",
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "15b38056f842",
+          "ts": "852d9b0e5df4"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Proof block sits in section 'Substrate parameter and deformation' next to thm:substrate-parameter-exists",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T00:52:07.769Z",
+        "reviewed_sha": "915493981f243ec251dac87b472535d8eae51e24",
+        "notes": "Proves existence of q via braiding eigenvalue extraction; correct section/chapter."
+      }
     ]
   },
-  "updated_at": "2026-06-03T13:06:09.584Z"
+  "updated_at": "2026-06-07T00:52:07.769Z"
 }
