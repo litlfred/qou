@@ -27,7 +27,10 @@ namespace QOU.Archimedean
 /-- A 2×2 transfer matrix (entries are polynomials in q). -/
 -- Ref: [manuscript] §6/beta-decay-transfer-matrix
 structure TM where
-  a₁₁ : ℝ; a₁₂ : ℝ; a₂₁ : ℝ; a₂₂ : ℝ
+  a₁₁ : ℝ
+  a₁₂ : ℝ
+  a₂₁ : ℝ
+  a₂₂ : ℝ
 
 /-- Transfer matrix from crossing coefficients (c, d). -/
 -- Ref: [manuscript] §6/beta-decay-transfer-matrix
@@ -57,8 +60,10 @@ noncomputable def T_mix (q : ℝ) : TM :=
 /-- Matrix subtraction. -/
 -- Ref: [manuscript] §6/beta-decay-transfer-matrix
 def TM.sub (A B : TM) : TM where
-  a₁₁ := A.a₁₁ - B.a₁₁; a₁₂ := A.a₁₂ - B.a₁₂
-  a₂₁ := A.a₂₁ - B.a₂₁; a₂₂ := A.a₂₂ - B.a₂₂
+  a₁₁ := A.a₁₁ - B.a₁₁
+  a₁₂ := A.a₁₂ - B.a₁₂
+  a₂₁ := A.a₂₁ - B.a₂₁
+  a₂₂ := A.a₂₂ - B.a₂₂
 
 /-- The universal beta decay matrix: Δ_β = T_mix - T_nn = T_pp - T_mix.
     Both elementary decay matrices are identical. -/
