@@ -77,32 +77,33 @@ Recipe + slug rules:
 A reseed commit names the toolchain + what changed (e.g. the
 `d21ef6e748` "incl MassVolDensity §6" pattern).
 
-**Experimental seed path (PR #1957): `scripts/lake-cache-produce.py`.**
-Per-package orphan branches with per-file `.olean.xz` blobs + a
-`cache-index.json` master-index naming regen steps (decompress_xz →
-compute_hashes → touch_trace). Mathlib gets its own branch (~140 MB
-after strip + xz, down from ~1.8 GB raw); small packages (aesop / Qq /
-batteries / proofwidgets) get tiny branches.
+**Per-package seed path (PR #1957 producer + PR #1967 consumer): wired
+end-to-end.** `scripts/lake-cache-produce.py` writes per-package orphan
+branches with per-file `.olean.xz` blobs + a `cache-index.json`
+master-index; `scripts/lake-cache-fetch-multi.py` consumes them:
 
 ```bash
-./scripts/lake-cache-produce.py                          # dry-run, safe
-./scripts/lake-cache-produce.py --packages mathlib       # one package
-./scripts/lake-cache-produce.py --push --branch-suffix test  # test branch
+# Dry-run produce all 9 packages — safe:
+./scripts/lake-cache-produce.py
+# Push one package to a test branch + fetch it back to verify:
+./scripts/lake-cache-produce.py --packages Qq --push --branch-suffix test
+./scripts/lake-cache-fetch-multi.py --packages Qq --branch-suffix test
+# Push live (cutover from monolithic format):
+./scripts/lake-cache-produce.py --push
 ```
 
-⚠ **Do NOT** `--push` to the canonical (no-suffix) branch names yet —
-`scripts/lake-cache-fetch.sh` does not yet walk multiple per-package
-branches or decompress `.olean.xz` blobs. Pushing to canonical names
-without the fetcher extension would orphan the output (no consumer).
-Use `--branch-suffix test` for exploration / benchmarking only. The
-fetcher's per-package consumer is the tracked follow-up to PR #1957.
+Mathlib gets its own branch (~140 MB after strip + xz, down from ~1.8 GB
+raw); small packages (aesop / Qq / batteries / proofwidgets) get tiny
+branches. Verified end-to-end 2026-06-07 on Qq: 13 oleans round-tripped
+through produce → push → fetch → restore → regen, with .olean / .hash /
+.trace files all materialized in place.
 
 Architecture details, strip rationale, and compression head-to-head data:
 [`docs/audits/2026-06-07-lake-cache-only-new-content-design.md`](../audits/2026-06-07-lake-cache-only-new-content-design.md).
-(Note: the design doc text still references `scripts/lake-cache-produce.sh`
-in the migration plan; the producer is now `lake-cache-produce.py`
-since the .sh was deleted as a duplicate in PR #1967. Tracked for a
-follow-up doc refresh.)
+(The design doc's migration plan still references
+`scripts/lake-cache-produce.sh`; the producer is now
+`lake-cache-produce.py` since the .sh was deleted as a duplicate in
+PR #1967. Tracked for a follow-up doc refresh.)
 
 ## Open coordination item
 
