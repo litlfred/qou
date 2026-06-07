@@ -6,7 +6,7 @@ Follow-up to the merged T15 polynomial closed form
 
 T16 enumerates a small set of natural counting candidates on the (2,1)
 Young diagram and the Borromean braid structure, checks which match the
-T15 coefficient triple (h⁰, h², h⁴, h⁶) = (2, 0, −3, −1), and records
+T15 coefficient 4-tuple (h⁰, h², h⁴, h⁶) = (2, 0, −3, −1), and records
 the matches as STRUCTURAL OBSERVATIONS — explicitly NOT as a derivation
 attempt.  Per CLAUDE.md `no-7th-ansatz` / formalize-first discipline,
 the probe enumerates candidates and reports their matches without
@@ -33,7 +33,7 @@ Candidate counts checked at each h-order:
   h⁶ = −1  candidates:
     - −(#non-trivial hooks > 1)                  = −1 (just the 3)
     - −(1) generic                                = −1
-    - −(content sum of (2,1) cells, signed)       = ?
+    - content_sum signed (Σ (j − i) over cells of (2,1))
 
 MULTIPLE candidates match — this is INFORMATIVE about the structural
 richness of the (2,1) data, but per formalize-first discipline, NO
@@ -53,7 +53,7 @@ _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: F401
 del _sys, _Path, _bridge
 
-import mpmath as mp  # noqa: E402
+import mpmath as mp  # noqa: E402,F401 — used for set_compute_dps engine state + assertion floats
 
 from _precision import set_compute_dps  # noqa: E402
 set_compute_dps()
@@ -108,7 +108,7 @@ def content_sum_signed(lam: tuple) -> int:
 # ── Tests ─────────────────────────────────────────────────────────
 
 
-def test_h0_candidates() -> dict:
+def check_h0_candidates() -> dict:
     print("=" * 78)
     print("T16a — h⁰ candidates (target +2)")
     print("=" * 78)
@@ -135,7 +135,7 @@ def test_h0_candidates() -> dict:
     }
 
 
-def test_h2_candidates() -> dict:
+def check_h2_candidates() -> dict:
     print()
     print("=" * 78)
     print("T16b — h² candidates (target 0)")
@@ -164,7 +164,7 @@ def test_h2_candidates() -> dict:
     }
 
 
-def test_h4_candidates() -> dict:
+def check_h4_candidates() -> dict:
     print()
     print("=" * 78)
     print("T16c — h⁴ candidates (target −3)")
@@ -199,7 +199,7 @@ def test_h4_candidates() -> dict:
     }
 
 
-def test_h6_candidates() -> dict:
+def check_h6_candidates() -> dict:
     print()
     print("=" * 78)
     print("T16d — h⁶ candidates (target −1)")
@@ -240,7 +240,7 @@ def main():
     w.set_description(
         "GAP-A-4 T16 — enumerate combinatorial counting candidates on "
         "the (2,1) Young diagram + Borromean braid that match the T15 "
-        "coefficient triple (h⁰, h², h⁴, h⁶) = (2, 0, −3, −1). "
+        "coefficient 4-tuple (h⁰, h², h⁴, h⁶) = (2, 0, −3, −1). "
         "Records matches as OBSERVATIONS — no derivation claimed per "
         "no-7th-ansatz discipline."
     )
@@ -249,10 +249,10 @@ def main():
     w.add_data("discipline", "EXPLORATORY-OBSERVATIONS")
     w.add_data("production_wired", False)
 
-    h0 = test_h0_candidates()
-    h2 = test_h2_candidates()
-    h4 = test_h4_candidates()
-    h6 = test_h6_candidates()
+    h0 = check_h0_candidates()
+    h2 = check_h2_candidates()
+    h4 = check_h4_candidates()
+    h6 = check_h6_candidates()
 
     w.add_data("h0_candidates", h0)
     w.add_data("h2_candidates", h2)
@@ -282,11 +282,13 @@ def main():
             "(removing either yields a valid Young diagram)."
         ),
     )
+    hooks_two_one = hook_lengths(list(TWO_ONE))
+    hook_product = 1
+    for h in hooks_two_one:
+        hook_product *= h
     w.add_assertion(
         "hook_product_equals_3",
-        computed=float(hook_lengths(list(TWO_ONE))[0]
-                       * hook_lengths(list(TWO_ONE))[1]
-                       * hook_lengths(list(TWO_ONE))[2]),
+        computed=float(hook_product),
         expected=3.0,
         tolerance=0.0,
         source=(
