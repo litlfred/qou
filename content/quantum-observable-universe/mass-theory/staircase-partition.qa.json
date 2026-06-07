@@ -1947,7 +1947,51 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "82d7ddfe58a9",
+          "ts": "c3131a5bad1d",
+          "lean": "a1ad71358dce"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Defines staircase partition ρ_k indexing Specht modules of H_{n_k}(q); supports the chapter's Hoefsmit/Hecke-character algebraic scope and the EW-residual conjecture.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T01:50:22.838Z",
+        "reviewed_sha": "6ba66328215967bf34d31baaf0a596dd4bf4d219",
+        "notes": "New combinatorial construction, well-placed."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "82d7ddfe58a9",
+          "ts": "c3131a5bad1d",
+          "lean": "a1ad71358dce"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Purely combinatorial: ρ_k=(k,…,1) over ℕ Partitions, self-conjugate, indexing Specht modules. No Real.*, numeric q0≈1.11, MeV, or 0<q ordering hypothesis.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T01:50:22.884Z",
+        "reviewed_sha": "6ba66328215967bf34d31baaf0a596dd4bf4d219",
+        "notes": "Generic-ring/combinatorial statement; no archimedean construct."
+      }
     ]
   },
-  "updated_at": "2026-06-03T20:30:24.391Z"
+  "updated_at": "2026-06-07T01:50:22.884Z"
 }
