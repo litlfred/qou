@@ -1,14 +1,30 @@
 #!/usr/bin/env python3
-"""derived_chi_catalogue_parallel.py — multiprocessing wrapper around
+"""derived_chi_catalogue_parallel.py — parallel wrapper around
 pyhecke_native.chi_q_via_gp for the catalogue sweep.
 
-Per the GIL diagnosis in
-`docs/audits/2026-06-07-pyhecke-native-gil-release-patch.md`,
-`pyhecke_native.chi_q_via_gp` currently holds the GIL during the
-internal Geck-Pfeiffer compute. ThreadPoolExecutor gives 0× speedup
-as a result. ProcessPoolExecutor sidesteps the GIL by spawning
-separate Python interpreters, giving near-linear speedup (~3× on a
-4-core box measured 2026-06-07).
+## Backends
+
+Two backends are available; `parallel_chi_q_via_gp_batch` auto-detects
+which to use at first call (and caches the choice):
+
+  - **ThreadPoolExecutor** (preferred when available)
+    Requires pyhecke_native >= 0.9.0 with the `py.allow_threads` GIL
+    release on `chi_q_via_gp` (see
+    `docs/audits/2026-06-07-pyhecke-native-gil-release-patch.md`).
+    Lightweight: no IPC, shared memory.
+
+  - **ProcessPoolExecutor** (fallback)
+    Sidesteps the GIL by spawning subprocesses. Works with any
+    pyhecke_native version but ~10-20% slower due to IPC + fork
+    overhead. Used automatically when the GIL-release detection
+    fails (older pyhecke_native installed).
+
+## Auto-detection
+
+On first call, we measure a tiny probe: sequential vs 2-thread time
+on a 4-partition slice. If threads give > 1.3× speedup, the GIL is
+released and threads are the better choice. The result is cached for
+the lifetime of the process.
 
 ## Usage
 
@@ -20,40 +36,98 @@ separate Python interpreters, giving near-linear speedup (~3× on a
         workers=os.cpu_count(),
     )
     # results: dict[tuple[int,...], list[tuple[int, str]]]
-
-## Notes
-
-- Worker re-imports pyhecke_native inside the spawned process (PyO3
-  extensions are NOT picklable through the fork-default route on
-  some platforms; an import-on-entry is safe and cheap).
-- The `chunksize` parameter is tuned for ~10ms per chunk so the IPC
-  overhead amortises well.
-- When the Rust-side GIL-release + batched-GP patches land
-  (see audit doc), this wrapper becomes redundant — but the sweep
-  caller doesn't have to change. Just import a different backend.
 """
 from __future__ import annotations
 
 import os
 import sys
-from concurrent.futures import ProcessPoolExecutor
+import time
+from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor
 from pathlib import Path
 from typing import Iterable
 
+# ── pyhecke_native import (shared across backends) ────────────────
 
-# ── Top-level worker (must be picklable for ProcessPoolExecutor) ──
+HERE = Path(__file__).resolve().parent
+_PYHECKE_PATH = str(HERE.parent.parent / "tools" / "pyhecke-native" / "python")
+if _PYHECKE_PATH not in sys.path:
+    sys.path.insert(0, _PYHECKE_PATH)
+
+import pyhecke_native as ph  # noqa: E402
+
+# ── GIL-release auto-detection (cached after first call) ──────────
+
+_BACKEND_DETECTED: str | None = None
+"""'threads' if the installed pyhecke_native releases the GIL on
+chi_q_via_gp; 'processes' otherwise. None until first call."""
+
+
+def detect_backend(
+    probe_partitions: list[tuple[int, ...]] | None = None,
+    probe_n: int = 6,
+    probe_word: list[tuple[int, int]] | None = None,
+) -> str:
+    """Empirically detect whether threads scale on this pyhecke_native
+    install. Caches the result globally."""
+    global _BACKEND_DETECTED
+    if _BACKEND_DETECTED is not None:
+        return _BACKEND_DETECTED
+
+    # Build a small probe: deuteron-like braid, all 11 partitions of 6.
+    if probe_partitions is None:
+        probe_partitions = [tuple(p) for p in ph.partitions_of(probe_n)]
+    if probe_word is None:
+        # Trivial 4-crossing word in B_6 — enough compute to measure but
+        # fast enough that detection adds < 0.1 s.
+        probe_word = [(1, 1), (1, 3), (1, 5), (-1, 2)]
+
+    def _one(lam: tuple[int, ...]) -> object:
+        return ph.chi_q_via_gp(list(lam), probe_n, list(probe_word))
+
+    # Repeat probe to reduce noise.
+    repeats = 4
+    t0 = time.monotonic()
+    for _ in range(repeats):
+        for p in probe_partitions:
+            _one(p)
+    seq_time = (time.monotonic() - t0) / repeats
+
+    t0 = time.monotonic()
+    for _ in range(repeats):
+        with ThreadPoolExecutor(max_workers=2) as ex:
+            list(ex.map(_one, probe_partitions))
+    thr_time = (time.monotonic() - t0) / repeats
+
+    speedup = seq_time / thr_time if thr_time > 0 else 1.0
+    # Threshold 1.3x — comfortably above noise, below the ~2x theoretical.
+    _BACKEND_DETECTED = "threads" if speedup > 1.3 else "processes"
+    return _BACKEND_DETECTED
+
+
+# ── Worker for ProcessPoolExecutor (must be picklable) ────────────
 
 
 def _chi_q_via_gp_worker(args: tuple) -> tuple[tuple[int, ...], list[tuple[int, str]]]:
-    """Compute one character. Re-import inside the worker so the
-    pyhecke_native extension is loaded fresh in each spawned process."""
+    """Compute one character. Re-imports pyhecke_native inside the
+    worker process."""
     partition, n_strands, word = args
-    # Ensure the worker can find pyhecke_native — system install + our local path.
     here = Path(__file__).resolve().parent
     pyhecke_path = str(here.parent.parent / "tools" / "pyhecke-native" / "python")
     if pyhecke_path not in sys.path:
         sys.path.insert(0, pyhecke_path)
-    import pyhecke_native as ph  # noqa: E402
+    import pyhecke_native as ph_local
+    laurent = ph_local.chi_q_via_gp(list(partition), n_strands, list(word))
+    pairs: list[tuple[int, str]] = sorted(
+        (int(d), str(c)) for (d, c) in laurent
+    )
+    return (tuple(partition), pairs)
+
+
+# ── Worker for ThreadPoolExecutor (shares process state) ──────────
+
+
+def _chi_q_via_gp_thread(args: tuple) -> tuple[tuple[int, ...], list[tuple[int, str]]]:
+    partition, n_strands, word = args
     laurent = ph.chi_q_via_gp(list(partition), n_strands, list(word))
     pairs: list[tuple[int, str]] = sorted(
         (int(d), str(c)) for (d, c) in laurent
@@ -71,21 +145,30 @@ def parallel_chi_q_via_gp_batch(
     *,
     workers: int | None = None,
     chunksize: int = 4,
+    force_backend: str | None = None,
 ) -> dict[tuple[int, ...], list[tuple[int, str]]]:
     """Parallel batch over partitions for a single (n_strands, word).
 
-    Returns a dict keyed by partition tuple. Workers default to
-    `os.cpu_count()`. The Rust call must be CPU-bound (which it is)
-    for ProcessPoolExecutor to win — we use it instead of
-    ThreadPoolExecutor because the current pyhecke_native binding
-    holds the GIL during the Geck-Pfeiffer compute.
+    Args:
+      workers: thread / process pool size. Defaults to `os.cpu_count()`.
+      chunksize: ProcessPool chunksize (ignored for ThreadPool).
+      force_backend: 'threads' / 'processes' to skip auto-detection.
+
+    Returns dict keyed by partition tuple.
     """
     if workers is None:
         workers = os.cpu_count() or 1
     args_list = [(p, n_strands, word) for p in partitions]
     if workers == 1 or len(args_list) <= 1:
-        # No point spawning processes; sequential fallback.
-        return dict(_chi_q_via_gp_worker(a) for a in args_list)
-    with ProcessPoolExecutor(max_workers=workers) as ex:
-        results = list(ex.map(_chi_q_via_gp_worker, args_list, chunksize=chunksize))
+        return dict(_chi_q_via_gp_thread(a) for a in args_list)
+
+    backend = force_backend or detect_backend()
+
+    if backend == "threads":
+        with ThreadPoolExecutor(max_workers=workers) as ex:
+            results = list(ex.map(_chi_q_via_gp_thread, args_list))
+    else:
+        # Processes — re-import inside each worker.
+        with ProcessPoolExecutor(max_workers=workers) as ex:
+            results = list(ex.map(_chi_q_via_gp_worker, args_list, chunksize=chunksize))
     return dict(results)
