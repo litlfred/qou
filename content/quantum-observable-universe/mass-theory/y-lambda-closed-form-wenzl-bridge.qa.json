@@ -2584,7 +2584,95 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "fe3808af2882",
+          "ts": "dca519aba6b6",
+          "lean": "4c93168d08f3"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Closed form for Jones-Markov y_λ via Wenzl bridge; mass-theory chapter explicitly lists 'Wenzl bridge' in Archimedean face scope",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T00:34:46.739Z",
+        "reviewed_sha": "9cc5e4c72148600e841552fc41f1bb4e5cf7b3e0",
+        "notes": "Subject matches chapter section; no duplicate sibling"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "fe3808af2882",
+          "ts": "dca519aba6b6",
+          "lean": "4c93168d08f3"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Block opens with explicit §7c banner ('Lean sibling: archimedean specialisation over ℝ; combinatorial content stays generic'); q_0≈1.110/r_0≈2.5995 + Real-log are flagged archimedean in an archimedean-face chapter",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T00:34:46.786Z",
+        "reviewed_sha": "9cc5e4c72148600e841552fc41f1bb4e5cf7b3e0",
+        "notes": "Banner present per §7c; numeric q_0 + Real.log legitimately on archimedean side"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "fe3808af2882",
+          "ts": "dca519aba6b6",
+          "lean": "4c93168d08f3"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Proof is algebraic (Wenzl 1988 + Chlouveraki 1-dim Markov family uniqueness + convention iso g=qσ); numeric q_0 eval is the banner-flagged specialisation, not an archimedean proof of an algebraic identity",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T00:34:46.833Z",
+        "reviewed_sha": "9cc5e4c72148600e841552fc41f1bb4e5cf7b3e0",
+        "notes": "Proof method matches; specialisation point declared via §7c banner"
+      }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "fe3808af2882",
+          "ts": "dca519aba6b6",
+          "lean": "4c93168d08f3"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "Boxed Proposition + Proof are clean, but '## Significance' + '## Implications' sections discuss compute speedups/applicability in same block with no interprets: companion",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T00:34:46.882Z",
+        "reviewed_sha": "9cc5e4c72148600e841552fc41f1bb4e5cf7b3e0",
+        "notes": "Borderline: content is technical (speedup/scope), not physical editorializing; the Significance heading content is borderline-mislocated"
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-07T00:34:46.882Z"
 }
