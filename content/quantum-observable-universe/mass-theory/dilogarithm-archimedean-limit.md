@@ -49,17 +49,33 @@ $\hbar^{-1} \cdot \mathrm{Li}_2(e^{-y}) = \hbar^{-1} \cdot
 Faddeev–Kashaev quasi-classical limit
 [`faddeev1994`, `kashaev1997`].
 
+## Established sub-result: the convergence regime $q \to 1^-$
+
+For **fixed** $x \in (0,1)$ on the convergence side $q \to 1^-$, the limit
+is **elementary** — a monotone left-Riemann-sum limit with an exponential
+tail bound and the factor $(1-q)/\hbar \to 1$ — and it holds **uniformly
+on compact subsets of $(0,1)$**. No Tauberian theorem and no branch-cut
+analysis are needed: the denominator factors satisfy
+$1 - x q^k \geq 1 - x > 0$ for all $k$, so the poles of $\Phi_n$ are never
+approached. The full elementary proof (and its precise relationship to the
+earlier Tier-B Lean assessment) is recorded in
+[`docs/audits/2026-06-07-dilog-archimedean-limit-part-A-elementary.md`](../../../docs/audits/2026-06-07-dilog-archimedean-limit-part-A-elementary.md).
+This discharges the uniform-Riemann-sum requirement (gap 1 below) as a
+theorem; the conjectural content is therefore confined to the substrate
+continuation $q \to 1^+$ (gaps 2–3).
+
 ## Why it is conjectural
 
 The rigorous statement requires:
 
-1. **Uniform control of the Riemann-sum error** as $q \to 1$.
-   Standard results give pointwise convergence; the conjecture
-   asserts the convergence is uniform on compact subsets of
-   $\{0 < x < 1\}$ — strong enough to commute with applications
-   of $\tau_{\mathrm{arch}}$ in mass-formula evaluations.
+1. **Uniform control of the Riemann-sum error** *(resolved for the
+   $q \to 1^-$ regime).* For fixed $x \in (0,1)$ the convergence is
+   uniform on compact subsets of $\{0 < x < 1\}$ by the elementary
+   argument above. The residual difficulty is **not** here but in the
+   substrate continuation (item 2).
 
-2. **Branch-cut compatibility.** The classical $\mathrm{Li}_2$
+2. **Branch-cut compatibility** *(the genuine open content).* The
+   classical $\mathrm{Li}_2$
    carries a branch cut on $[1, \infty)$; the partial product
    $\Phi_n(x; q)$ has $n$ poles approaching this cut as $q \to 1$.
    The conjecture asserts the limit is the **principal-branch**
