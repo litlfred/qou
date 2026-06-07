@@ -1949,7 +1949,51 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "a95cf8fe92dc",
+          "ts": "6bd65e38d4ce",
+          "lean": "6297f6d06d59"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "In §2 'Molecular Hopf chains and rings'; defines T(2,N) torus link threading a ring, used by ring-closure-barrier",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T02:42:27.563Z",
+        "reviewed_sha": "a90ed7155e29908828d5d4b7aa6107c6f3ece213",
+        "notes": "Belongs in section/chapter; torus-link def central to ring-closure barrier story"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "a95cf8fe92dc",
+          "ts": "6bd65e38d4ce",
+          "lean": "6297f6d06d59"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "Statement evaluates Alexander Laurent polys at t=q (generic) and notes ratio->1/2 when |q|~1 (line 86); Lean is pure Nat/gcd combinatorics, no Real.* or MeV or q0~1.11",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T02:42:27.606Z",
+        "reviewed_sha": "a90ed7155e29908828d5d4b7aa6107c6f3ece213",
+        "notes": "Applied chapter; algebraic/combinatorial content, no archimedean substrate leak. |q|~1 is an informal limit label, not a hardcoded substrate value; no wall banner strictly required but flagged as borderline"
+      }
     ]
   },
-  "updated_at": "2026-06-03T20:30:24.391Z"
+  "updated_at": "2026-06-07T02:42:27.606Z"
 }
