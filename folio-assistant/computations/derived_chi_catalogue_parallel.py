@@ -158,16 +158,28 @@ def parallel_chi_q_via_gp_batch(
 
     ## Backend selection
 
-    Three paths, fastest first:
+    In order of preference at runtime:
 
-    1. **Rust batched** — when `pyhecke_native.chi_lambdas_via_gp`
-       exists (v0.9.0+ with Patch 2): single Rust call processes all
-       partitions, sharing the GP reduction. ~1.5× on 4He measured.
-    2. **Thread pool** — when the GIL release on `chi_q_via_gp` is
-       present (v0.9.0+ with Patch 1): per-partition calls in Python
-       threads. ~Nx on N-core boxes.
-    3. **Process pool** — fallback for older pyhecke_native installs.
-       Sidesteps the GIL via process isolation. ~Nx with overhead.
+    1. **Thread pool** — primary path when the GIL release on
+       `chi_q_via_gp` is present (pyhecke_native v0.9.0+ with Patch 1):
+       per-partition calls in Python threads, ~Nx on N-core boxes
+       with no IPC overhead.
+    2. **Process pool** — fallback for older pyhecke_native installs
+       (Patch 1 missing). Sidesteps the GIL via process isolation;
+       ~Nx with subprocess + IPC overhead.
+
+    Auto-detection between threads and processes is driven by
+    `detect_backend()`, which empirically times threaded vs sequential
+    on a small probe and caches the choice for the process lifetime.
+
+    **The Rust batched `chi_lambdas_via_gp` (Patch 2)** is exposed by
+    pyhecke_native but **NOT** routed by this function. Measured
+    perf on PR #1952: threads + Tier 3 bar-symmetry outperform
+    batched-Rayon at medium `n` (5Li 11.1s threaded vs 49.7s batched),
+    so the threaded path stays primary. The batched API remains
+    available for callers in non-threaded environments (single-core,
+    or a future GIL-blocked pyhecke version) and for pure-Rust
+    consumers that want a single Rust call.
     """
     if workers is None:
         workers = os.cpu_count() or 1
