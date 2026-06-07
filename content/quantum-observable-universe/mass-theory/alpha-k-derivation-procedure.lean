@@ -54,11 +54,13 @@ theorem alpha_k_derivation_procedure {p : ℕ}
     ∃! y : Fin p → ℝ, A *ᵥ y = b := by
   refine ⟨A⁻¹ *ᵥ b, ?_, ?_⟩
   · -- existence: `A *ᵥ (A⁻¹ *ᵥ b) = (A * A⁻¹) *ᵥ b = 1 *ᵥ b = b`
+    show A *ᵥ (A⁻¹ *ᵥ b) = b
     rw [Matrix.mulVec_mulVec, Matrix.mul_inv_of_invertible, Matrix.one_mulVec]
   · -- uniqueness: any solution `y` satisfies `A *ᵥ y = b = A *ᵥ (A⁻¹ *ᵥ b)`,
     -- so `y = A⁻¹ *ᵥ b` by injectivity of `(A *ᵥ ·)` for invertible `A`.
     intro y hy
     apply Matrix.mulVec_injective_of_invertible A
+    show A *ᵥ y = A *ᵥ (A⁻¹ *ᵥ b)
     rw [hy, Matrix.mulVec_mulVec, Matrix.mul_inv_of_invertible, Matrix.one_mulVec]
 
 end QOU.BraidKnot
