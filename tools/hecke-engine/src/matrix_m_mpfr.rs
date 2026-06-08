@@ -43,7 +43,6 @@
 
 use std::collections::HashMap;
 
-use rug::ops::Pow;
 use rug::Float;
 
 use crate::seminormal::standard_young_tableaux;
@@ -205,11 +204,20 @@ pub fn precompute_block_tables_mpfr(
     dps: u32,
 ) -> MatrixMCacheMpfr {
     let n: usize = shape.iter().sum();
+    // k_split is the 1-based bridge generator index; valid range is
+    // 1 ≤ k_split < n (so σ_{k_split} = sigmas[k_split - 1] exists).
+    // Without the lower bound, k_split = 0 underflows `sigmas[k_split - 1]`
+    // in the bridge extraction below.
     assert!(
-        n >= k_split + 1,
-        "shape sum {} < k_split + 1 = {} — no σ_{{k_split}} generator",
+        k_split >= 1,
+        "k_split must be ≥ 1 (it is the 1-based bridge generator index), got {}",
+        k_split,
+    );
+    assert!(
+        k_split < n,
+        "k_split = {} ≥ shape sum {} — no σ_{{k_split}} generator (need k_split < n)",
+        k_split,
         n,
-        k_split + 1,
     );
     let prec = dps_to_bits(dps);
     let q = Float::parse(q_str)
@@ -324,6 +332,7 @@ pub fn chi_via_matrix_m_mpfr(
 mod tests {
     use super::*;
     use crate::seminormal_mpfr::chi_lambda_braid_mpfr;
+    use rug::ops::Pow;
 
     /// 50 dps q ≈ 1.11 substrate string (matches `Q_50_DIGIT_STR`).
     const Q_50: &str = "1.1099785827513808075916690956107688798744991218736";
