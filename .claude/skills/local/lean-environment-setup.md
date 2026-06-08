@@ -328,6 +328,8 @@ both occur with **no** `insteadOf` redirect set (so they are additive to
    directly with a manual `LEAN_PATH`:
    ```bash
    LP=$(find "$ROOT/.lake/packages" -maxdepth 5 -type d -path '*/.lake/build/lib/lean' | tr '\n' ':')
+   # for a file that imports other QOU.* modules, also add the workspace + paper oleans:
+   LP="$LP$ROOT/.lake/build/lib/lean:$ROOT/content/quantum-observable-universe/lean/.lake/build/lib/lean"
    env LEAN_PATH="$LP" ELAN_NO_OVERRIDE_NOTICE=1 lean path/to/File.lean   # EXIT 0 = checks
    ```
    lake never runs ⇒ nothing re-resolves. (Whole-lib builds still need
