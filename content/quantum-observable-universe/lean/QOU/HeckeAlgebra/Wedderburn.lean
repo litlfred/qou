@@ -1,4 +1,6 @@
 import Mathlib.Data.Matrix.Basic
+import Mathlib.LinearAlgebra.Matrix.PosDef
+import Mathlib.Data.Real.StarOrdered
 import Mathlib.Combinatorics.Enumerative.Partition
 import Mathlib.Tactic
 import QOU.HeckeAlgebra.Common
@@ -57,36 +59,36 @@ open QOU.HeckeAlgebra QOU.HeckeAlgebra.Hoefsmit
 
 /-- **Wedderburn block** for partition `λ`: the matrix algebra
     `M_{f^λ}(ℝ)` corresponding to the irrep `V_λ`. -/
-abbrev WedderburnBlock {n : ℕ} (λ : Nat.Partition n) : Type :=
-  Matrix (Fin (seminormalDim λ)) (Fin (seminormalDim λ)) ℝ
+abbrev WedderburnBlock {n : ℕ} (lam : Nat.Partition n) : Type :=
+  Matrix (Fin (seminormalDim lam)) (Fin (seminormalDim lam)) ℝ
 
 /-- **Wedderburn decomposition** of `H_n(q_0)`: an element is
     represented by its tuple of per-block matrices, one per
     partition `λ ⊢ n`. -/
 abbrev WedderburnDecomposition (n : ℕ) : Type :=
-  ∀ (λ : Nat.Partition n), WedderburnBlock λ
+  ∀ (lam : Nat.Partition n), WedderburnBlock lam
 
 /-- **Block-PSD predicate**: a Wedderburn-decomposition element
     is "PSD" iff each block is PSD as a matrix. -/
 def WedderburnDecomposition.PosSemidef {n : ℕ}
     (x : WedderburnDecomposition n) : Prop :=
-  ∀ (λ : Nat.Partition n), (x λ).PosSemidef
+  ∀ (lam : Nat.Partition n), Matrix.PosSemidef (x lam)
 
 /-- **Block-PSD is preserved under non-negative scaling.** -/
 theorem WedderburnDecomposition.PosSemidef.smul_nonneg
     {n : ℕ} {x : WedderburnDecomposition n} (h : x.PosSemidef)
     {c : ℝ} (hc : 0 ≤ c) :
-    (fun λ => c • x λ).PosSemidef := by
-  intro λ
-  exact (h λ).smul hc
+    WedderburnDecomposition.PosSemidef (fun lam => c • x lam) := by
+  intro lam
+  exact (h lam).smul hc
 
 /-- **Block-PSD is preserved under sum.** -/
 theorem WedderburnDecomposition.PosSemidef.add
     {n : ℕ} {x y : WedderburnDecomposition n}
     (hx : x.PosSemidef) (hy : y.PosSemidef) :
-    (fun λ => x λ + y λ).PosSemidef := by
-  intro λ
-  exact (hx λ).add (hy λ)
+    WedderburnDecomposition.PosSemidef (fun lam => x lam + y lam) := by
+  intro lam
+  exact (hx lam).add (hy lam)
 
 /-- **Wedderburn embedding** into the global matrix algebra.
     Takes a per-block decomposition `⊕_λ M_{f^λ}(ℝ)` (total
