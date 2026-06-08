@@ -126,6 +126,33 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
       units: null,
     }),
 
+    // ── CO bond-order active-set probe (orthogonal-channel binding) ──
+    sigma_channel_eV: Object.freeze({
+      name: "sigma_channel_eV",
+      description:
+        "Binding of one orthogonal covalent channel (the bound σ pair) " +
+        "of CO, from the bond-order active-set probe.",
+      symbol: "b_\\sigma",
+      witnessFile:
+        "folio-assistant/computations/co-bond-order-active-set.witness.json",
+      witnessPath: "data.sigma_channel_eV",
+      defaultPrecision: 4,
+      units: "eV",
+    }),
+
+    observed_D0_CO_eV: Object.freeze({
+      name: "observed_D0_CO_eV",
+      description:
+        "Observed CO bond dissociation energy D_0(CO) — experimental " +
+        "reference for the bond-order active-set probe.",
+      symbol: "D_0(\\mathrm{CO})",
+      witnessFile:
+        "folio-assistant/computations/co-bond-order-active-set.witness.json",
+      witnessPath: "data.observed_D0_CO_eV",
+      defaultPrecision: 4,
+      units: "eV",
+    }),
+
     H_A: Object.freeze({
       name: "H_A",
       description: "Planck constant ℏ_q = q - q^{-1} at the substrate.",

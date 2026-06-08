@@ -1,45 +1,61 @@
 **Proposition (conditional on [`conj:q-integer-mass-formula`](#conj:q-integer-mass-formula)).**
-*The LP dual of the $CO$ molecular braid selects the triple-bond
-configuration (3 shared pairs) as optimal over single ($k=1$) and
-double ($k=2$) bonds.*
+*For $CO$ the covalent-bond-selection LP selects bond order $k^\star = 3$
+(a triple bond), realised as three **orthogonal orbital channels**
+$\sigma \perp \pi_x \perp \pi_y$ — not as a single accumulating chain of
+shared pairs.*
 
-*The binding LP for $CO$ is:*
+## Orthogonal channels, not one chain
+
+A multiple bond is **not** one braid chain made "tighter" by stacking
+shared pairs into a common orbital.  Each bond is an independent covalent
+channel — the reduced $4$-strand
+$[\mathfrak{p}_A,\, e_B,\, e_A,\, \mathfrak{p}_B]$ channel of
+[$H_2$](#prop:h2-lp-dual-binding) — sitting in its own **orthogonal
+orbital** ($\sigma$ head-on, $\pi_x, \pi_y$ lateral).  Because distinct
+orbitals are orthogonal, electrons in different channels share **no**
+$e$–$e$ crossing, so the channels bind independently and additively.  The
+single $\sigma$ channel binds at
+$:val[sigma_channel_eV]{precision=4, witness=folio-assistant/computations/co-bond-order-active-set.witness.json}$
+(the $H_2$-scale covalent channel).
+
+## Why a single chain fails (computational refutation)
+
+Modelling the shared pairs as one interleaved $(2k{+}2)$-strand chain is
+**refuted by computation**: only the first ($\sigma$) pair binds, while
+the second and third pairs **anti-bind**, because forcing every bonding
+electron into one orbital accumulates $e$–$e$ repulsion — the braid-model
+expression of orbital exclusion.  The bond-selection LP on that
+single-chain model has an active set of cardinality $1$, not $3$
+([witness `co-bond-order-active-set`](folio-assistant/computations/co-bond-order-active-set.witness.json)).
+The triple bond therefore *requires* the orthogonal decomposition; a
+"decreasing-but-positive marginal in one chain" does not occur.
+
+## Bond order = occupied orthogonal channels
+
+The bond-selection LP ranges over the orthogonal channels:
 
 $$
-  \min_{k, \pi} \; \Phi_1\bigl(\mathcal{M}(C, O; k\text{-bond}, \pi)\bigr)
-$$
-
-*over bond order $k \in \{1, 2, 3\}$ and strand ordering $\pi$.
-The dual:*
-
-$$
-  \max_{y_1, y_2, y_3} \; \sum_{k} k \cdot y_k
+  \max_{x} \; \sum_{i \in \{\sigma,\, \pi_x,\, \pi_y\}} b_i\, x_i
   \quad\text{s.t.}\quad
-  y_k \leq \Delta\Phi_1(k) - \Delta\Phi_1(k-1)
-  \;\;\forall\, k
+  \sum_i x_i \le V_{CO}, \quad 0 \le x_i \le 1,
 $$
 
-*where $\Delta\Phi_1(k) = \Phi_1^{\mathrm{sep}} - \Phi_1^{CO}(k)$
-is the $\Phi_1$ reduction from $k$ shared pairs.*
+with each channel binding $b_i > 0$ and $V_{CO}$ the shared valence/site
+budget.  Its **active set** — the occupied orthogonal channels — has
+cardinality equal to the bond order.  This is the molecular instance of
+the *bond order $=$ LP active-set cardinality* identity.
 
-*The marginal $\Phi_1$ reduction per additional bond:*
+For $CO$ the budget is $V_{CO} = 3$: carbon offers three of its four open
+linking sites ([carbon valence](#rem:carbon-valence)) and oxygen two
+bonding sites plus one dative pair, so $k^\star = 3$.  *The budget
+$V_{CO} = 3$ here is read from valence chemistry; deriving it directly
+from the carbon and oxygen atomic braids is open, so this proposition
+establishes the structural identity (bond order $=$ active set $=$ valence
+budget), not a from-first-principles derivation of the integer $3$.*
 
-| Bond | $k$ | Additional crossings | $\Delta\Phi_1(k) - \Delta\Phi_1(k-1)$ |
-|:-----|:----|:---------------------|:--------------------------------------|
-| $\sigma$ | 1 | 2 attractive $\sigma^{-1}$ | Large positive (first bond, biggest gain) |
-| $\pi_1$ | 2 | 2 attractive $\sigma^{-1}$, less $e$-$e$ repulsion penalty | Moderate positive |
-| $\pi_2$ | 3 | 2 attractive $\sigma^{-1}$, more $e$-$e$ repulsion penalty | Small positive but still $> 0$ |
-
-*Triple bond wins because the marginal binding gain from the
-3rd shared pair still exceeds the additional electron-electron
-repulsion penalty ($ee$ crossing is $\sigma$, eigenvalue $q$).*
-
-*The observed $CO$ bond dissociation energy is
-$D_0(CO) \approx 11.09 \;\mathrm{eV}$ — the strongest diatomic
-bond, consistent with the LP dual selecting the maximum feasible
-bond order $k = 3$ for C (valence 4, using 3) + O (valence 2,
-using 2, plus 1 dative bond from C's lone pair).*
-
-*The triple bond also explains why $CO$ is isoelectronic with
-$N_2$ in the braid framework: both have 3 shared pairs with the
-same Hecke algebra structure in the covalent channels.*
+The observed dissociation energy
+$D_0(CO) \approx :val[observed_D0_CO_eV]{precision=4, witness=folio-assistant/computations/co-bond-order-active-set.witness.json}$
+is the strongest diatomic bond, consistent with three occupied channels.
+$CO$ is isoelectronic with $\mathrm{N_2}$: both carry three shared
+orthogonal channels with the same Hecke-algebra structure in their
+covalent channels.

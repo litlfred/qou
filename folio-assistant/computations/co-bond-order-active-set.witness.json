@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-08T16:42:17.701651+00:00",
-  "commitSha": "34dc2f131196c1a81278c708002a1e20b8ecb464",
+  "computedAt": "2026-06-08T16:53:27.571442+00:00",
+  "commitSha": "6fc3411f3f815210b4295a05dc8124bfc23cf227",
   "assertions": [
     {
       "name": "bond-selection LP strong duality (gap ~ 0)",
@@ -20,11 +20,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 28,
+  "durationMs": 27,
   "computation": "co-bond-order-active-set",
   "scriptFile": "co_bond_order_active_set.py",
-  "scriptHash": "f2eac9c39000",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "a64bceee847b",
+  "scriptCommitSha": "e185e7c977975b82a118f71946177cf704871eae",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -67,6 +67,8 @@
       -12.01327503113878,
       -13.931329641555996
     ],
+    "sigma_channel_eV": 4.623136967742963,
+    "observed_D0_CO_eV": 11.09,
     "y_star": [
       0.6870120913354443,
       0.0,
