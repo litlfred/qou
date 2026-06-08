@@ -1,6 +1,5 @@
 import Mathlib.LinearAlgebra.Matrix.PosDef
 import Mathlib.LinearAlgebra.Matrix.Spectrum
-import Mathlib.Analysis.Matrix.Order
 import Mathlib.Tactic
 import QOU.MathlibExt.PosSemidefDiagZero
 import QOU.MathlibExt.FrobeniusInnerProduct
@@ -46,9 +45,21 @@ namespace QOU.MathlibExt.PosSemidefTraceZero
 
 open Matrix
 
-open scoped MatrixOrder
-
 variable {n : ℕ}
+
+/-- **PSD diagonal entries are non-negative**.  Mathlib's standard
+    fact, restated here for direct use. -/
+theorem Matrix.PosSemidef.diag_nonneg
+    {C : Matrix (Fin n) (Fin n) ℝ} (hC : C.PosSemidef) (i : Fin n) :
+    0 ≤ C i i := by
+  -- C_ii = e_iᵀ · C · e_i ≥ 0 by PSD applied to canonical basis vector.
+  have h_psd_ei := hC.2 (Pi.single i (1 : ℝ))
+  have h_compute : dotProduct (star (Pi.single i (1 : ℝ)))
+      (C.mulVec (Pi.single i (1 : ℝ))) = C i i := by
+    simp [dotProduct, Matrix.mulVec, Pi.single_apply,
+          Finset.sum_ite_eq', star_trivial, mul_ite, mul_one,
+          mul_zero, Finset.mem_univ]
+  rwa [h_compute] at h_psd_ei
 
 /-- **Cone self-polarity for PSD matrices** (real case).  For
     PSD matrices `A, B : Matrix (Fin n) (Fin n) ℝ`,
@@ -71,93 +82,113 @@ theorem Matrix.PosSemidef.trace_mul_eq_zero_iff_mul_eq_zero
     {A B : Matrix (Fin n) (Fin n) ℝ}
     (hA : A.PosSemidef) (hB : B.PosSemidef) :
     (A * B).trace = 0 ↔ A * B = 0 := by
+  classical
   refine ⟨?_, fun h => by rw [h]; exact Matrix.trace_zero (Fin n) ℝ⟩
   intro h_trace
-  -- Square-root proof (cleaner than spectral-theorem unrolling).
-  -- Let A^{1/2} := hA.sqrt (Mathlib: PSD has unique PSD square root).
-  -- Define M := A^{1/2} · B · A^{1/2} (PSD by sandwich).
-  -- tr(M) = tr(A^{1/2}·B·A^{1/2}) = tr(A^{1/2}·A^{1/2}·B) = tr(A·B) = 0.
-  -- M PSD with tr 0 ⟹ M = 0 (Mathlib: PSD trace-zero ⟹ zero matrix).
-  -- Then (A^{1/2}·B^{1/2}) · (A^{1/2}·B^{1/2})^T = A^{1/2}·B·A^{1/2} = M = 0.
-  -- X · X^T = 0 ⟹ X = 0 (Frobenius norm zero).
-  -- So A^{1/2}·B^{1/2} = 0.
-  -- A·B = (A^{1/2})² · (B^{1/2})² = A^{1/2} · (A^{1/2}·B^{1/2}) · B^{1/2} = 0.
-  -- Mathlib API drift (2025-09): `PosSemidef.sqrt`/`.sq_sqrt`/`.posSemidef_sqrt`
-  -- were deprecated in favour of the continuous-functional-calculus `CFC.sqrt`
-  -- API (`Mathlib.Analysis.Matrix.Order`).  `A.PosSemidef` now reduces to an
-  -- `And`, so the old dot-notation `hA.sqrt` resolves to a nonexistent
-  -- `And.sqrt`.  Use the explicit `CFC.*` lemmas with the `0 ≤ A` hypothesis
-  -- supplied by `PosSemidef.nonneg`.
-  set Asqrt := CFC.sqrt A with hAsqrt_def
-  set Bsqrt := CFC.sqrt B with hBsqrt_def
-  have hAsq : Asqrt * Asqrt = A := CFC.sqrt_mul_sqrt_self A hA.nonneg
-  have hBsq : Bsqrt * Bsqrt = B := CFC.sqrt_mul_sqrt_self B hB.nonneg
-  have hAsqrt_psd : Asqrt.PosSemidef := (CFC.sqrt_nonneg A).posSemidef
-  have hBsqrt_psd : Bsqrt.PosSemidef := (CFC.sqrt_nonneg B).posSemidef
-  have hAsqrt_herm : Asqrt.IsHermitian := hAsqrt_psd.1
-  have hBsqrt_herm : Bsqrt.IsHermitian := hBsqrt_psd.1
-  -- For real matrices `Aᴴ = Aᵀ`, so `IsHermitian` (i.e. `Aᴴ = A`) gives
-  -- `Aᵀ = A`.
-  have hAsqrt_tr : Asqrt.transpose = Asqrt := by
-    have h : Asqrtᴴ = Asqrt := hAsqrt_herm.eq
-    rwa [Matrix.conjTranspose_eq_transpose_of_trivial] at h
-  have hBsqrt_tr : Bsqrt.transpose = Bsqrt := by
-    have h : Bsqrtᴴ = Bsqrt := hBsqrt_herm.eq
-    rwa [Matrix.conjTranspose_eq_transpose_of_trivial] at h
-  -- Define X := Asqrt · Bsqrt.  Then X · X^T = Asqrt · B · Asqrt.
-  set X := Asqrt * Bsqrt with hX_def
-  have hXX_T : X * X.transpose = Asqrt * B * Asqrt := by
-    rw [hX_def, Matrix.transpose_mul, hBsqrt_tr, hAsqrt_tr,
-        Matrix.mul_assoc, ← Matrix.mul_assoc Bsqrt Bsqrt _, hBsq,
-        ← Matrix.mul_assoc]
-  -- tr(X · X^T) = tr(Asqrt · B · Asqrt) = tr(Asqrt² · B) = tr(A · B) = 0
-  have hXX_T_trace_zero : (X * X.transpose).trace = 0 := by
-    rw [hXX_T, Matrix.trace_mul_comm, ← Matrix.mul_assoc, hAsq]
-    exact h_trace
-  -- Direct closure via Frobenius inner product (proven in batch 10):
-  -- tr(X · X^T) = tr(X^T · X) = frobeniusInner X X (def + trace cyclicity).
-  -- frobeniusInner X X = 0 ⟹ X = 0 (`frobeniusInner_self_eq_zero_iff`,
-  -- proven in `QOU.MathlibExt.FrobeniusInnerProduct`, batch 10).
-  -- This sidesteps the PSD detour entirely.
-  have hX_zero : X = 0 := by
-    have h_fro : QOU.MathlibExt.FrobeniusInnerProduct.Matrix.frobeniusInner X X = 0 := by
-      -- frobeniusInner X X = tr(X^T · X) = tr(X · X^T) (cyclic) = 0.
-      show (X.transpose * X).trace = 0
-      rw [Matrix.trace_mul_comm]
-      exact hXX_T_trace_zero
-    exact (QOU.MathlibExt.FrobeniusInnerProduct.Matrix.frobeniusInner_self_eq_zero_iff X).mp h_fro
-  -- A · B = Asqrt² · Bsqrt² = Asqrt · (Asqrt · Bsqrt) · Bsqrt = Asqrt · X · Bsqrt
-  --      = Asqrt · 0 · Bsqrt = 0.
+  -- LIGHTWEIGHT spectral-theorem proof (no continuous-functional-calculus,
+  -- no `Mathlib.Analysis.Matrix.Order` import — that import pulls a ~2300-
+  -- module analysis cone that is unbuildable in CI budget).  We diagonalise
+  -- `A = U · D · Uᴴ` and reduce the claim to the diagonal-zero ⟹ row/col-zero
+  -- lemma already proven in `QOU.MathlibExt.PosSemidefDiagZero`.
+  --
+  -- Strategy:
+  --   A = U D Uᴴ  (spectral theorem, U unitary, D = diag(eigenvalues) ≥ 0).
+  --   Set C := Uᴴ · B · U  (PSD, by congruence of PSD `B`).
+  --   tr(A · B) = tr(U D Uᴴ B) = tr(D · (Uᴴ B U)) = tr(D · C) = Σ ev_i · C_ii.
+  --   Each summand ≥ 0 (ev_i ≥ 0, C_ii ≥ 0); sum 0 ⟹ each ev_i · C_ii = 0.
+  --   D · C = 0:  entry (i,j) is ev_i · C_ij.  Where ev_i = 0 the row is 0;
+  --     where ev_i > 0, ev_i · C_ii = 0 ⟹ C_ii = 0 ⟹ (PSD diag-zero ⟹
+  --     row-zero) C_ij = 0.  So every entry vanishes.
+  --   A · B = U · D · Uᴴ · B = U · (D · C) · Uᴴ = U · 0 · Uᴴ = 0.
+  set hAh := hA.1 with hAh_def
+  set U : Matrix (Fin n) (Fin n) ℝ :=
+    ((hAh.eigenvectorUnitary : Matrix.unitaryGroup (Fin n) ℝ) : Matrix (Fin n) (Fin n) ℝ)
+    with hU_def
+  set ev : Fin n → ℝ := hAh.eigenvalues with hev_def
+  set D : Matrix (Fin n) (Fin n) ℝ := Matrix.diagonal (RCLike.ofReal ∘ ev) with hD_def
+  -- Over `ℝ`, `RCLike.ofReal = id`, so `D = diagonal ev`.
+  have hD_ev : D = Matrix.diagonal ev := by
+    simp only [hD_def, Function.comp_def, RCLike.ofReal_real_eq_id, id_eq]
+  -- Spectral theorem: `A = U * D * Uᴴ`.
+  have hspec : A = U * D * Uᴴ := by
+    rw [hU_def, hD_def, hev_def]
+    exact hAh.spectral_theorem
+  -- `U` is unitary: `Uᴴ * U = 1` and `U * Uᴴ = 1`.
+  have hUstar : star (hAh.eigenvectorUnitary : Matrix (Fin n) (Fin n) ℝ) = Uᴴ := rfl
+  have hUU : Uᴴ * U = 1 := by
+    have := (hAh.eigenvectorUnitary).2
+    rw [Matrix.mem_unitaryGroup_iff'] at this
+    rw [hU_def]; simpa [hUstar] using this
+  have hUUstar : U * Uᴴ = 1 := by
+    have := (hAh.eigenvectorUnitary).2
+    rw [Matrix.mem_unitaryGroup_iff] at this
+    rw [hU_def]; simpa [hUstar] using this
+  -- Congruence: `C := Uᴴ * B * U` is PSD.
+  set C : Matrix (Fin n) (Fin n) ℝ := Uᴴ * B * U with hC_def
+  have hC_psd : C.PosSemidef := by
+    have := hB.conjTranspose_mul_mul_same U
+    simpa [hC_def] using this
+  -- Eigenvalues are non-negative (PSD).
+  have hev_nonneg : ∀ i, 0 ≤ ev i := fun i => hA.eigenvalues_nonneg i
+  -- Diagonal of `C` is non-negative (PSD).
+  have hCdiag_nonneg : ∀ i, 0 ≤ C i i :=
+    fun i => Matrix.PosSemidef.diag_nonneg hC_psd i
+  -- `tr(A * B) = tr(D * C) = Σ_i ev_i * C_ii`.
+  have htrace_eq : (A * B).trace = ∑ i, ev i * C i i := by
+    have h1 : (A * B).trace = (D * C).trace := by
+      rw [hspec, hC_def]
+      -- tr((U*D*Uᴴ)*B) = tr(U*(D*Uᴴ*B)) = tr((D*Uᴴ*B)*U) = tr(D*(Uᴴ*B*U)) = tr(D*C)
+      have e1 : U * D * Uᴴ * B = U * (D * Uᴴ * B) := by
+        simp only [Matrix.mul_assoc]
+      have e2 : D * Uᴴ * B * U = D * (Uᴴ * B * U) := by
+        simp only [Matrix.mul_assoc]
+      rw [e1, Matrix.trace_mul_comm U (D * Uᴴ * B), e2]
+    rw [h1]
+    -- (D * C).trace = ∑ i, ev i * C i i, with D = diagonal ev.
+    rw [hD_ev, Matrix.trace]
+    refine Finset.sum_congr rfl (fun i _ => ?_)
+    rw [Matrix.diag_apply, Matrix.mul_apply]
+    -- ∑ k, diagonal ev i k * C k i = ev i * C i i
+    rw [Finset.sum_eq_single i]
+    · rw [Matrix.diagonal_apply_eq]
+    · intro k _ hki
+      rw [Matrix.diagonal_apply_ne ev (Ne.symm hki), zero_mul]
+    · intro h; exact absurd (Finset.mem_univ i) h
+  -- Each summand is non-negative.
+  have hsummand_nonneg : ∀ i ∈ Finset.univ, 0 ≤ ev i * C i i :=
+    fun i _ => mul_nonneg (hev_nonneg i) (hCdiag_nonneg i)
+  -- Sum is zero ⟹ each summand is zero.
+  have hsummand_zero : ∀ i, ev i * C i i = 0 := by
+    have hsum_zero : ∑ i, ev i * C i i = 0 := htrace_eq ▸ h_trace
+    intro i
+    exact (Finset.sum_eq_zero_iff_of_nonneg hsummand_nonneg).mp hsum_zero i (Finset.mem_univ i)
+  -- `D * C = 0`.
+  have hDC_zero : D * C = 0 := by
+    rw [hD_ev]
+    ext i j
+    rw [Matrix.diagonal_mul]
+    simp only [Matrix.zero_apply]
+    by_cases hev0 : ev i = 0
+    · rw [hev0, zero_mul]
+    · -- ev i ≠ 0 ⟹ C i i = 0 (from ev_i · C_ii = 0) ⟹ C i j = 0 (PSD row-zero).
+      have hCii : C i i = 0 := by
+        rcases mul_eq_zero.mp (hsummand_zero i) with h | h
+        · exact absurd h hev0
+        · exact h
+      have hCij : C i j = 0 :=
+        QOU.MathlibExt.PosSemidefDiagZero.Matrix.PosSemidef.row_zero_of_diag_zero
+          hC_psd hCii j
+      rw [hCij, mul_zero]
+  -- `A * B = U * (D * C) * Uᴴ = 0`.
   calc A * B
-      = (Asqrt * Asqrt) * (Bsqrt * Bsqrt) := by rw [hAsq, hBsq]
-    _ = Asqrt * (Asqrt * Bsqrt) * Bsqrt := by
+      = (U * D * Uᴴ) * B := by rw [← hspec]
+    _ = U * D * (Uᴴ * B) := by rw [Matrix.mul_assoc]
+    _ = U * D * (Uᴴ * B * (U * Uᴴ)) := by rw [hUUstar, Matrix.mul_one]
+    _ = U * (D * (Uᴴ * B * U)) * Uᴴ := by
           simp only [← Matrix.mul_assoc]
-    _ = Asqrt * X * Bsqrt := by rw [hX_def]
-    _ = Asqrt * 0 * Bsqrt := by rw [hX_zero]
-    _ = 0 * Bsqrt := by rw [Matrix.mul_zero]
-    _ = 0 := Matrix.zero_mul _
-
-/-! ## §1.5  Diagonal-of-PSD non-negativity
-
-The diagonal entries of any PSD matrix are non-negative.  This
-is the basic building block: PSD ⟹ ∀ i, 0 ≤ M_ii.  Proven via
-the canonical basis vector test: M_ii = e_iᵀ · M · e_i ≥ 0
-(by PSD).  Mathlib likely has this as
-`Matrix.PosSemidef.diag_nonneg` (verify exact name). -/
-
-/-- **PSD diagonal entries are non-negative**.  Mathlib's standard
-    fact, restated here for direct use. -/
-theorem Matrix.PosSemidef.diag_nonneg
-    {C : Matrix (Fin n) (Fin n) ℝ} (hC : C.PosSemidef) (i : Fin n) :
-    0 ≤ C i i := by
-  -- C_ii = e_iᵀ · C · e_i ≥ 0 by PSD applied to canonical basis vector.
-  have h_psd_ei := hC.2 (Pi.single i (1 : ℝ))
-  have h_compute : dotProduct (star (Pi.single i (1 : ℝ)))
-      (C.mulVec (Pi.single i (1 : ℝ))) = C i i := by
-    simp [dotProduct, Matrix.mulVec, Pi.single_apply,
-          Finset.sum_ite_eq', star_trivial, mul_ite, mul_one,
-          mul_zero, Finset.mem_univ]
-  rwa [h_compute] at h_psd_ei
+    _ = U * (D * C) * Uᴴ := by rw [hC_def]
+    _ = U * 0 * Uᴴ := by rw [hDC_zero]
+    _ = 0 := by rw [Matrix.mul_zero, Matrix.zero_mul]
 
 /-- **Diagonal sub-case of cone self-polarity.**
 
