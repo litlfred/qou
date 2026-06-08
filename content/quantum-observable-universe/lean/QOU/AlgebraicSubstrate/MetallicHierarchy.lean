@@ -1,4 +1,5 @@
-import Mathlib
+import Mathlib.Analysis.SpecialFunctions.Sqrt
+import Mathlib.Tactic
 
 /-!
 # Metallic-ratio hierarchy of the Hecke scalar
@@ -14,12 +15,9 @@ bronze (`n = 3`), … — and the bar involution `q ↦ q⁻¹` sends `δ_n` to
 Ref: docs/audits/2026-06-08-q-regime-map-coordination.md §3b and
 docs/audits/2026-06-08-metallic-q-hierarchy-proof.md (rigorous hand proof).
 
-DRAFT — not yet machine-checked: the local sandbox Lean env was
-unavailable this session (lake-cache restore clobbered by package
-re-resolution). The proof is hand-verified (see the proof audit doc);
-this file is intentionally NOT yet aggregated into `QOU/AlgebraicSubstrate.lean`
-so an unverified tactic cannot break the library build. Wire it in once a
-clean-env session has confirmed it compiles.
+Machine-verified 2026-06-08 (lean v4.24.0): clean compile, and
+`#print axioms` on every theorem here = `[propext, Classical.choice,
+Quot.sound]` (the standard Mathlib axioms — no `sorryAx`).
 -/
 
 namespace QOU.AlgebraicSubstrate
