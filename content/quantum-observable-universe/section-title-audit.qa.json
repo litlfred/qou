@@ -2144,7 +2144,7 @@
       }
     },
     "molecular-construction": {
-      "manifest_hash": "22c3dd8eef08",
+      "manifest_hash": "0ca9abf87147",
       "stale_mode": "thorough",
       "machine": {
         "title_defects": [],
@@ -2201,14 +2201,6 @@
         },
         "sec:ch4-computation": {
           "title": "Methane: tetrahedral bonding from braid optimization",
-          "depth": 1,
-          "result": "pending",
-          "reviewer": null,
-          "reviewed_hash": null,
-          "stale_mode": "thorough"
-        },
-        "sec:h2o-computation": {
-          "title": "Water: $C_{2v}$ from the assembly projector",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
@@ -2520,7 +2512,7 @@
       }
     },
     "particle-interactions": {
-      "manifest_hash": "2e08bbafe3a1",
+      "manifest_hash": "87017ecc14ff",
       "stale_mode": "thorough",
       "machine": {
         "title_defects": [
@@ -2729,7 +2721,7 @@
       }
     },
     "predicted-spectra": {
-      "manifest_hash": "ec8af1fc3bf7",
+      "manifest_hash": "b4f93de1f2ec",
       "stale_mode": "thorough",
       "machine": {
         "title_defects": [
@@ -2987,7 +2979,7 @@
       }
     },
     "quantum-observable-universes": {
-      "manifest_hash": "eaef6c8a7f43",
+      "manifest_hash": "94c79c30c2cc",
       "stale_mode": "thorough",
       "machine": {
         "title_defects": [
@@ -3010,14 +3002,7 @@
             "detail": "3 comma-joined concepts — not concise"
           }
         ],
-        "structure_findings": [
-          {
-            "kind": "band",
-            "label": "sec:substrate-parameter",
-            "title": "Substrate parameter and deformation",
-            "detail": "19 blocks outside the 3–18 section band (P3)"
-          }
-        ]
+        "structure_findings": []
       },
       "agent": {
         "sec:qou-definition": {
