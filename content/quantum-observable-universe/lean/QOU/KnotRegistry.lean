@@ -177,7 +177,7 @@ noncomputable def hopfLinkEntry : KnotEntry where
 
     Mathematical value (exact, transcendental): `8 · G` where
     `G` = Catalan's constant (OEIS A006752).  The `volume.value`
-    field below is the SnapPy decimal *approximation* to that exact
+    field below is the 50-dps decimal *approximation* to that exact
     value — the EXACT symbol lives in `QOU.Archimedean.vol_B3`
     (defined as `8 · catalan_G`).
 
@@ -188,15 +188,23 @@ noncomputable def hopfLinkEntry : KnotEntry where
     literal `7.32772475341775 ± 1×10⁻¹⁴` to match the project's
     standard working serialization precision (50 dps per
     `folio-assistant/computations/_precision.py`).
-    Source: mpmath `mp.dps = 50` of `8 * mp.catalan`.
+    Source: **mpmath `mp.catalan` at `mp.dps = 50`, evaluated as
+    `8 * mp.catalan`** — a closed-form-derived decimal (computed
+    from the exact identity `Vol(L6a4) = 8·G`), NOT a SnapPy
+    numerical measurement. The numerical value agrees with SnapPy's
+    `M = SnapPy.Manifold("L6a4"); M.volume()` to 15+ digits (and
+    with the proof of Adams (1985) that the two are equal), but
+    the literal stored here is computed from the closed form so
+    its precision is bounded by `mp.dps`, not by SnapPy's `f64`
+    convergence floor. (Copilot review #1978: previous docstring
+    conflated the two provenances.)
     Components: 3
 
-    Note: this `value` field is the data-catalog SnapPy
-    measurement, retained for catalog / lookup purposes and for
-    downstream consumers that want a decimal rather than the
+    Note: this `value` field is a data-catalog decimal kept for
+    downstream consumers that want a literal rather than the
     symbolic form. The categorical `QOU.Archimedean.vol_B3` is
-    the EXACT transcendental — use it in proofs and as the
-    canonical Borromean volume reference. -/
+    the EXACT transcendental (`8 · catalan_G`) — use it in
+    proofs and as the canonical Borromean volume reference. -/
 noncomputable def borromeanRingsEntry : KnotEntry where
   ab_index := "L6a4"
   braid := borromeanRings
