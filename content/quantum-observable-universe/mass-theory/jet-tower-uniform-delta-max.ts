@@ -24,6 +24,7 @@ export default conjecture({
     status: "verified",
   },
   tags: [
+    "tier:S",
     "jet-tower",
     "uniform-bound",
     "convergence",

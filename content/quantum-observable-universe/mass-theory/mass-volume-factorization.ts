@@ -5,6 +5,7 @@ export default conjecture({
   title:
     "Mass-volume factorization of the categorical mass endomorphism",
   tags: [
+    "tier:S",
     "mass-endomorphism",
     "hyperbolic-volume",
     "density",

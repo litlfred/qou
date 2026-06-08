@@ -25,6 +25,7 @@ export default conjecture({
     "faddeev1994",
   ],
   tags: [
+    "tier:S",
     "yang-mills",
     "mass-gap",
     "millennium-problem",

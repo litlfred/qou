@@ -12,6 +12,7 @@ export default conjecture({
   title:
     "Motivic perpetual obstruction: $\\chi^{\\mathrm{mot}}_A$ is non-trivial at almost every finite place when $\\chi(A) \\neq 0$",
   tags: [
+    "tier:S",
     "motivic-galois",
     "perpetuity",
     "yekutieli",

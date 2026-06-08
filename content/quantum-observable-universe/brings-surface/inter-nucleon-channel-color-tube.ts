@@ -24,6 +24,7 @@ export default conjecture({
     "kashiwara1991",
   ],
   tags: [
+    "tier:keystone",
     "color-tube",
     "channel-assignment",
     "inter-nucleon",
