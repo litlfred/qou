@@ -136,6 +136,17 @@ this *intrinsically*, and the constraint is a **theorem**:
   ∎ *(structural — proves the constraint; the level-`k` truncation that pins the
   exact `γ` is the open residue.)*
 
+- **Geometric reason (why weight-0): the sphere.** The observable lives on the
+  projective line object `ℙ(V) = G_q/T_q = ℙ¹(ℂ)` — *the sphere*. A well-defined
+  object on `ℙ¹` must be `T_q`-invariant = **homogeneous of degree 0** in the
+  homogeneous coordinates `[x:y]` = total weight `0`. So `Σm=0` is precisely the
+  degree-0-homogeneity / descent-to-`ℙ¹` condition — and the LQG closed-horizon
+  (`S²`) Gauss law is *the same geometric fact* (a closed sphere forces total
+  flux `0`). The **`mod k`** refinement (`Σm=0 mod k`, the CS-level / Dirac
+  quantization on `S²`) is the **`q`-at-root-of-unity truncation** — exactly the
+  level-`k` open residue above. So: leading `Σm=0` = degree-0 homogeneity on
+  `ℙ¹` (proved); `mod k` = the `q`-truncation (open).
+
 So "the `U(1)` count comes out" at the level of *mechanism*: `U(1)` = Reeb torus
 `T_q`, punctures = Wilson loops = the Schur–Weyl weight side, Gauss law = trace
 closure. What stays open is the *value* (level-`k` / exact `γ`), not the
