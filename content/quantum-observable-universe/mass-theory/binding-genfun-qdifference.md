@@ -1,4 +1,4 @@
-**Proposition (q-difference recurrence of the binding generating function).**
+**Proposition (q-difference recurrence of the binding generating function; conditional on [`conj:binding-manybody-eq-jet-filtration`](#conj:binding-manybody-eq-jet-filtration)).**
 
 Let $G(x;q)=\sum_{n\geq 0} B_n(K)\,x^n$ be the generating function of the
 body-order binding terms

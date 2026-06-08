@@ -1,4 +1,4 @@
-**Proposition (knot-operator LP/SDP selection via Gram-inverse dual basis).**
+**Proposition (knot-operator LP/SDP selection via Gram-inverse dual basis; conditional on [`conj:weak-spectral-completeness`](#conj:weak-spectral-completeness)).**
 
 *Let $R$ be the categorical coefficient ring with $q \in R$ generic
 (not a root of unity in $R$ — note $q = 1$ IS excluded), and let

@@ -19,7 +19,7 @@ $\sim 5\%$ for $A = 1$ but under-predicts by $22\%$–$31\%$ for $A \in \{2, 3\}
 (`rho-k-codata-vs-six-term.witness.json`), so the spectral closure of
 $\rho_K$ from braid data alone remains open.*
 
-**Theorem (unified knot mass formula).**
+**Theorem (unified knot mass formula; conditional on [`conj:knot-factor-frobenius-pairing`](#conj:knot-factor-frobenius-pairing)).**
 *The categorical mass of the vortex $\varrho$ is*
 
 $$

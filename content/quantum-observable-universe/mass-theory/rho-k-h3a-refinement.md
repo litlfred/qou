@@ -1,4 +1,4 @@
-**Proposition (H_{3A} Wedderburn refinement of $\rho_K$ beyond leading-order).**
+**Proposition (H_{3A} Wedderburn refinement of $\rho_K$ beyond leading-order; conditional on [`conj:hoefsmit-scattering-pipeline`](#conj:hoefsmit-scattering-pipeline)).**
 *Let $K$ be an $A$-nucleon atom with braid word $\mathcal{B}_K \in B_{3A}$,
 and let $\mathrm{tr}_M$ denote the canonical Markov trace on $H_{3A}(q)$
 ([gs-graded Markov trace existence](#conj:gs-graded-markov-trace-existence)).

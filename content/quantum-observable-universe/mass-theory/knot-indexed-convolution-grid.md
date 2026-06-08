@@ -1,5 +1,5 @@
 **Proposition (placement of paper's existing knot-indexed
-convolutions in the bi-filtration grid).**
+convolutions in the bi-filtration grid; conditional on [`conj:joint-galois-braid-action`](#conj:joint-galois-braid-action)).**
 
 *Each existing "non-tensor product" operation in the QOU paper —
 where two morphisms are combined via a knot/braid/partition-shaped

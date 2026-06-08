@@ -23,7 +23,9 @@ export default proposition({
     "rem:i-as-braiding-orientation",
     "def:projective-line-object",
     "def:quantum-observable-universe",
-    "conj:os-reflection-positivity-from-reeb",
+    // conj:os-reflection-positivity-from-reeb removed (2026-06-08 §3b sweep):
+    // the chart-swap U(1) = Reeb U(1) identity is proved unconditionally; OS
+    // positivity is one downstream application, not a hypothesis. Prose keeps the ref.
   ],
   lean: {
     ref: "qou:QOU.ChartSwap.eqReeb",
