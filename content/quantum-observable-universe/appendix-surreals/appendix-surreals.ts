@@ -157,29 +157,51 @@ export default chapter({
       title: "Millennium-problem surreal bounds",
       label: "sec:millennium-bounds-via-surreals",
       blocks: [
-        // BSD
         "millennium-bounds-via-surreals-intro",
-        "q-birch-swinnerton-dyer",
-        "bsd-surreal-bound",
-        // RH
-        "rh-surreal-bound",
-        // Yang-Mills
-        "yang-mills-surreal-bound",
-        "os-reflection-positivity-from-reeb",
-        // P vs NP
-        "p-vs-np-conjecture",
-        "p-vs-np-surreal-bound",
-        // Collatz family
-        "q-collatz-conjecture",
-        "collatz-contact-boundary",
-        "collatz-no-cycles",
-        "collatz-three-forms",
-        "q-collatz-interpretation",
-        "collatz-surreal-bound",
-        // Graded-Mikusiński unification of the bounds.
-        "surreal-bounds-graded-mikusinski",
-        "millennium-unification",
-        "millennium-unification-table1-data",
+      ],
+      // Over-weight (P4, advisory — within the 3-18 band but heavy vs the
+      // appendix's small peers) split: 17-block section organised by
+      // millennium problem. Order preserved; parent keeps the intro.
+      subsections: [
+        {
+          title: "BSD, RH, and Yang-Mills bounds",
+          label: "sec:millennium-bsd-rh-ym",
+          blocks: [
+            // BSD
+            "q-birch-swinnerton-dyer",
+            "bsd-surreal-bound",
+            // RH
+            "rh-surreal-bound",
+            // Yang-Mills
+            "yang-mills-surreal-bound",
+            "os-reflection-positivity-from-reeb",
+          ],
+        },
+        {
+          title: "P vs NP and the Collatz family",
+          label: "sec:millennium-pnp-collatz",
+          blocks: [
+            // P vs NP
+            "p-vs-np-conjecture",
+            "p-vs-np-surreal-bound",
+            // Collatz family
+            "q-collatz-conjecture",
+            "collatz-contact-boundary",
+            "collatz-no-cycles",
+            "collatz-three-forms",
+            "q-collatz-interpretation",
+            "collatz-surreal-bound",
+          ],
+        },
+        {
+          title: "Graded-Mikusiński unification",
+          label: "sec:millennium-unification",
+          blocks: [
+            "surreal-bounds-graded-mikusinski",
+            "millennium-unification",
+            "millennium-unification-table1-data",
+          ],
+        },
       ],
     },
     {

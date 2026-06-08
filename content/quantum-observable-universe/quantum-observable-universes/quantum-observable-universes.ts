@@ -303,7 +303,7 @@ export default chapter({
 
     // ── Particles ─────────────────────────────────────────────────────
     section({
-      title: "Particles, fermions, bosons, and observation",
+      title: "Particle types and observation",
       label: "sec:particles",
       blocks: [
         "particles-intro",
