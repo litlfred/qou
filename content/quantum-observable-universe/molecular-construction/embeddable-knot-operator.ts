@@ -17,6 +17,7 @@ export default definition({
     witness: [
       "folio-assistant/computations/embeddable-knot-operator.witness.json",
     ],
+    status: "verified",
   },
   uses: ["def:covalent-bond-types"],
   tags: ["knot-operator", "embedding", "overlap-weight", "sigma-pi", "reusable"],
