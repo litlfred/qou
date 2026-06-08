@@ -18,8 +18,7 @@ sweep and will be appended.
 
 ## 1. Staleness signal is unreliable here — judge by method, not mtime
 
-This working tree is a **shallow clone** (`rev-parse
---is-shallow-repository = true`, 50 commits visible). `benzene-ring.md`
+This working tree is a **shallow clone** (`git rev-parse --is-shallow-repository` → `true`; 50 commits visible). `benzene-ring.md`
 has **2 commits in its entire visible history**; every block reports the
 same `2026-06-07` mtime because that is the clone floor, not an authoring
 date. **Conclusion: git timestamps cannot measure staleness.** A
@@ -37,7 +36,7 @@ current).
 | Energy method | Alexander-polynomial weight differences | **universal ILP** + Wedderburn channels (sym/std/alt) |
 | Energy scale | `(α² m_e/m_p)·|q+q⁻¹|_nuc` | `E_mol = m_e·α²/(q+q⁻¹)²` (= hartree/[2]_q²) |
 | Wired to the proved canonical chain? | **No** | **Yes** — same LP as confinement (B₃) + gluon |
-| Benzene model | T(2,6) threading link; barrier 193–386 kJ/mol | H₁₂₀(q) braid; LP-dual π-system |
+| Benzene model | T(2,6) threading link; barrier 193–386 kJ/mol | H₁₂₀(q) full braid (120 strands); π-system in H₆(q) |
 
 **Headline finding.** The two chapters give **incompatible foundational
 definitions of a covalent bond** (link vs knot), **two different energy
