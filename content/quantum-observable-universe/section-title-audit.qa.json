@@ -1985,44 +1985,14 @@
       }
     },
     "observations": {
-      "manifest_hash": "7cbd672b1c6c",
+      "manifest_hash": "1b4fcd7e2e4c",
       "machine": {
         "title_defects": [
-          {
-            "kind": "split-artifact",
-            "label": "sec:mass-predictions-method-feynman-qou-comparison",
-            "title": "Mass predictions: methodology and validation : comparison",
-            "detail": "trailing \" : comparison\" (known auto-split tag) — meaningless out of context"
-          },
-          {
-            "kind": "split-artifact",
-            "label": "sec:mass-predictions-derivations-terminal-resolution-proof",
-            "title": "Mass predictions: per-particle derivations : comparison",
-            "detail": "trailing \" : comparison\" (known auto-split tag) — meaningless out of context"
-          },
           {
             "kind": "compound",
             "label": "sec:beta-decay-mechanism",
             "title": "Beta decay: mechanism, half-life, and tritium",
             "detail": "3 comma-joined concepts — not concise"
-          },
-          {
-            "kind": "split-artifact",
-            "label": "sec:beta-decay-mechanism-hadron-half-life",
-            "title": "Beta decay: mechanism, half-life, and tritium : comparison",
-            "detail": "trailing \" : comparison\" (known auto-split tag) — meaningless out of context"
-          },
-          {
-            "kind": "compound",
-            "label": "sec:beta-decay-mechanism-hadron-half-life",
-            "title": "Beta decay: mechanism, half-life, and tritium : comparison",
-            "detail": "3 comma-joined concepts — not concise"
-          },
-          {
-            "kind": "split-artifact",
-            "label": "sec:beta-decay-magic-shells-k12-barrier-bypass",
-            "title": "Beta decay: magic-shell consequences : comparison",
-            "detail": "trailing \" : comparison\" (known auto-split tag) — meaningless out of context"
           },
           {
             "kind": "too-long",
@@ -2083,7 +2053,7 @@
           "reviewed_hash": null
         },
         "sec:mass-predictions-method-feynman-qou-comparison": {
-          "title": "Mass predictions: methodology and validation : comparison",
+          "title": "Mass predictions vs Feynman amplitudes",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
@@ -2097,7 +2067,7 @@
           "reviewed_hash": null
         },
         "sec:mass-predictions-derivations-terminal-resolution-proof": {
-          "title": "Mass predictions: per-particle derivations : comparison",
+          "title": "Terminal resolution and the $W$-boson discrepancy",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
@@ -2111,7 +2081,7 @@
           "reviewed_hash": null
         },
         "sec:beta-decay-mechanism-hadron-half-life": {
-          "title": "Beta decay: mechanism, half-life, and tritium : comparison",
+          "title": "Half-life regimes and the $N_V$ tower",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
@@ -2125,7 +2095,7 @@
           "reviewed_hash": null
         },
         "sec:beta-decay-magic-shells-k12-barrier-bypass": {
-          "title": "Beta decay: magic-shell consequences : comparison",
+          "title": "Magic numbers and the $k=12$ barrier",
           "depth": 1,
           "result": "pending",
           "reviewer": null,

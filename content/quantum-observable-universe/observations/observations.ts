@@ -107,7 +107,7 @@ export default chapter({
       ],
     }),
     section({
-      title: "Mass predictions: methodology and validation : comparison",
+      title: "Mass predictions vs Feynman amplitudes",
       label: "sec:mass-predictions-method-feynman-qou-comparison",
       blocks: [
         "mass-predictions-method-feynman-qou-comparison-intro",
@@ -148,7 +148,7 @@ export default chapter({
       ],
     }),
     section({
-      title: "Mass predictions: per-particle derivations : comparison",
+      title: "Terminal resolution and the $W$-boson discrepancy",
       label: "sec:mass-predictions-derivations-terminal-resolution-proof",
       blocks: [
         "mass-predictions-derivations-terminal-resolution-proof-intro",
@@ -190,7 +190,7 @@ export default chapter({
       ],
     }),
     section({
-      title: "Beta decay: mechanism, half-life, and tritium : comparison",
+      title: "Half-life regimes and the $N_V$ tower",
       label: "sec:beta-decay-mechanism-hadron-half-life",
       blocks: [
         "beta-decay-mechanism-hadron-half-life-intro",
@@ -226,7 +226,7 @@ export default chapter({
       ],
     }),
     section({
-      title: "Beta decay: magic-shell consequences : comparison",
+      title: "Magic numbers and the $k=12$ barrier",
       label: "sec:beta-decay-magic-shells-k12-barrier-bypass",
       blocks: [
         "beta-decay-magic-shells-k12-barrier-bypass-intro",
