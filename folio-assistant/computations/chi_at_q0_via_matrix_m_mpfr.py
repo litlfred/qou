@@ -78,7 +78,6 @@ from _precision import set_compute_dps  # noqa: E402
 
 set_compute_dps()
 
-from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 from per_irrep_pole_atom import ATOMS, ATOM_ALIASES, parts_of  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from tr_m_wenzl_bridge_mpfr import _load_y_lambda  # noqa: E402
@@ -278,10 +277,16 @@ def build_chi_cache_at_q0_matrix_m(
     }
 
 
-def save_witness(record: dict) -> Path:
+def save_witness(record: dict, start_time: float) -> Path:
+    """Emit the provenance witness for `record`. `start_time` is the
+    `time.monotonic()` captured BEFORE the compute began — passed to
+    WitnessBuilder so the emitted `durationMs` reflects the actual
+    matrix-M compute wall, not just the WitnessBuilder construct+save
+    time (which is microseconds and meaningless on its own)."""
     wb = WitnessBuilder(
         f"chi-at-q0-matrix-m-{record['atom']}",
         engine="python",
+        start_time=start_time,
     )
     wb.set_description(
         f"Per-λ χ^λ(β_atomic({record['Z']}, {record['N']}); q_0) cache "
@@ -307,7 +312,15 @@ def main() -> int:
         help="Atoms to build (default: deuteron — single-isotope smoke "
              "test). One of: " + ", ".join(ATOMS),
     )
-    parser.add_argument("--dps", type=int, default=50)
+    parser.add_argument(
+        "--dps", type=int, default=50,
+        help="Working mpmath precision in decimal places. The substrate "
+             "constant Q_50_DIGIT_STR has only 50 digits, so dps > 50 "
+             "doesn't increase the substrate accuracy; you would also "
+             "need a higher-precision substrate source. dps < 50 is "
+             "rejected (the catalogue / matrix-M tolerance bound is "
+             "10^-45 at dps=50; lower would not be safe).",
+    )
     parser.add_argument(
         "--max-dim", type=int, default=100,
         help="Skip partitions with dim V_λ > this. Default 100 keeps "
@@ -316,6 +329,12 @@ def main() -> int:
              "compute. Skipped partitions get placeholder cache entries.",
     )
     args = parser.parse_args()
+    if args.dps < 50:
+        parser.error(
+            f"--dps {args.dps} < 50: the substrate Q_50_DIGIT_STR has 50 "
+            f"digits and the matrix-M tolerance is 10^-(dps-5). dps must "
+            f"be ≥ 50 for safe agreement with the catalogue."
+        )
 
     if not args.atoms:
         # Default to deuteron only — fastest comparison vs hoefsmit
@@ -344,6 +363,7 @@ def main() -> int:
         if Z + N < 2:
             print(f"  {atom_name}: A=1 single nucleon, use hoefsmit producer")
             continue
+        atom_start = time.monotonic()
         try:
             record = build_chi_cache_at_q0_matrix_m(
                 atom_name, Z, N, q_str, dps=args.dps,
@@ -352,7 +372,7 @@ def main() -> int:
         except Exception as exc:  # noqa: BLE001
             print(f"  {atom_name:>10}  ERROR  {type(exc).__name__}: {exc}")
             continue
-        save_witness(record)
+        save_witness(record, start_time=atom_start)
         n_parts = record["n_partitions"]
         tr_m_short = record["tr_M_at_q0"][:22]
         print(f"  {atom_name:>10}  {record['n_strands']:>3}  "
@@ -362,7 +382,6 @@ def main() -> int:
 
         # Cross-validate against Rust chi_q_via_gp at q_0 (the
         # canonical sign-only path my matrix-M matches).
-        from per_irrep_pole_atom import parts_of as _parts
         n_strands, word = _word_for_braid_word_3a(Z, N)
         cache_data = json.loads(
             (HERE / f"chi-{atom_name}-h{n_strands}-at-q0-{args.dps}dps-matrix-m.witness.json").read_text()
