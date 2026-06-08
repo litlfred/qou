@@ -89,7 +89,7 @@ theorem HeckeRep.genInv_mul_gen (ρ : HeckeRep n d) (i : Fin (n - 1)) :
   rw [sub_mul, smul_mul_assoc, one_mul, ρ.hecke_rel i]
   abel
 
-/-- The Hecke relation for the inverse: `σ_i⁻¹² = −HA · σ_i⁻¹ + I`.
+/- The Hecke relation for the inverse: `σ_i⁻¹² = −HA · σ_i⁻¹ + I`.
 
     Proof sketch: `σ⁻¹ = σ − HA`, so
       `σ⁻¹² = σ² − 2·HA·σ + HA²` (using that `HA·1` commutes with `σ`)
@@ -143,7 +143,7 @@ theorem HeckeRep.genInv_hecke (ρ : HeckeRep n d) (i : Fin (n - 1)) :
   rw [smul_sub, smul_smul]         -- -HA_t • (gen i - HA_t • 1) factored
   -- Now both sides are expressions in `HA_t • gen i`, `(HA_t * HA_t) • 1`, `1`
   -- with matching coefficients up to sign normalization
-  abel
+  module
 
 /-! ## §3  Braid word evaluation -/
 
@@ -290,7 +290,7 @@ noncomputable def signRep (n : ℕ) : HeckeRep n 1 where
 
 /-! ## §6  Transfer matrix commutativity -/
 
-/-- Transfer matrices commute: `T(a,b) · T(c,d) = T(c,d) · T(a,b)`.
+/- Transfer matrices commute: `T(a,b) · T(c,d) = T(c,d) · T(a,b)`.
 
     This follows from the fact that every transfer matrix is of the
     form `c · A + d · I` where `A = T(1,0)` is the proton–proton
@@ -310,12 +310,12 @@ theorem transferMatrix_comm (a b c d : R_t) :
     transferMatrix a b * transferMatrix c d =
     transferMatrix c d * transferMatrix a b := by
   unfold transferMatrix
-  ext i j
+  apply Matrix.ext
+  intro i j
   fin_cases i <;> fin_cases j <;>
     simp only [Matrix.mul_apply, Fin.sum_univ_two, Matrix.of_apply,
-               Matrix.cons_val', Matrix.cons_val_zero, Matrix.cons_val_one,
-               Matrix.empty_val', Matrix.cons_val_fin_one, Matrix.head_cons,
-               Matrix.head_fin_const] <;>
+               Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.head_cons,
+               Fin.mk_zero, Fin.mk_one] <;>
     ring
 
 /-- Corollary: the product of any finite list of transfer matrices
