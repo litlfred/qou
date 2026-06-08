@@ -2159,6 +2159,26 @@
         "reviewed_at": "2026-05-28T18:29:30.189Z",
         "reviewed_sha": "48e52133aae5e86dcc7bb79865fcd7c50fca77f9",
         "notes": "Lean sibling has only stub declarations (`: True := trivial`); canonical formalisation lives elsewhere and is audited by lean-compile-audit."
+      },
+      {
+        "field_hash": {
+          "md": "b5c2f9537862",
+          "ts": "ec8301fb8dfb",
+          "lean": "a0bf52bc1c7d"
+        },
+        "result": "n/a",
+        "severity": "minor",
+        "evidence": "terms-2-6-higher-operations.lean -- stub; no lean file found",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:35:10.606Z",
+        "reviewed_sha": "630e8840c401059eddbfccf69fe56e0c83817383",
+        "notes": "lean present but check needed"
       }
     ],
     "proof-lean-compiles": [
@@ -2553,7 +2573,95 @@
           "worst_span": 0
         }
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "b5c2f9537862",
+          "ts": "ec8301fb8dfb",
+          "lean": "a0bf52bc1c7d"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "mass-theory.ts:645 -- terms-2-6-higher-operations in sec:wenzl-bridge-cyclotomic-lr-tensor-character",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:35:10.391Z",
+        "reviewed_sha": "630e8840c401059eddbfccf69fe56e0c83817383",
+        "notes": "Terms 2 and 6 as higher Gerstenhaber operations fits wenzl bridge section"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "b5c2f9537862",
+          "ts": "ec8301fb8dfb",
+          "lean": "a0bf52bc1c7d"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "terms-2-6-higher-operations.md:29 -- HH*(H_n(R,q)) Gerstenhaber; cup product; all over R",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:35:10.501Z",
+        "reviewed_sha": "630e8840c401059eddbfccf69fe56e0c83817383",
+        "notes": "statement uses generic ring Hochschild cohomology; no archimedean leak"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "b5c2f9537862",
+          "ts": "ec8301fb8dfb",
+          "lean": "a0bf52bc1c7d"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "terms-2-6-higher-operations.md -- Claim via cup-product tower; Cauchy q-exponential; algebraic",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:35:10.533Z",
+        "reviewed_sha": "630e8840c401059eddbfccf69fe56e0c83817383",
+        "notes": "proof sketch uses algebraic Hochschild/cup-product machinery; no archimedean tools"
+      }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "b5c2f9537862",
+          "ts": "ec8301fb8dfb",
+          "lean": "a0bf52bc1c7d"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "terms-2-6-higher-operations.md -- Setup + Claims; no standalone interpretation section",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:35:10.568Z",
+        "reviewed_sha": "630e8840c401059eddbfccf69fe56e0c83817383",
+        "notes": "no interpretive prose after claims; passes"
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-08T09:35:10.606Z"
 }
