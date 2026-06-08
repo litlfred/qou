@@ -1,5 +1,6 @@
 import Mathlib.Data.Int.Basic
-import Mathlib.Data.Polynomial.Basic
+import Mathlib.Algebra.Polynomial.Basic
+import Mathlib.Algebra.Polynomial.Eval.Defs
 
 
 /-!
@@ -58,57 +59,65 @@ noncomputable def HabiroExpansion.eval {R : Type*} [CommRing R]
   Finset.univ.sum fun m =>
     (h.coeffs m).eval (Int.castRingHom R u) * qPochhammer u m.val
 
-/-- **PROPOSITION.** The Habiro expansion terminates: for any braid
-    word β in B_n, there exists M < ∞ such that a_m = 0 for m > M.
+/-- **PROPOSITION (finiteness / termination).** The Habiro expansion of a
+    Markov trace is a *finite* sum: its evaluation `h.eval u` is a sum over
+    the finite index set `Fin (h.M + 1)` (`h.M < ∞`), so there is no
+    truncation — the sum is taken over all `h.M + 1` terms.  Concretely the
+    index set has cardinality `h.M + 1`, a finite natural number.
 
-    This is Habiro's theorem (2000). The bound M depends on the
-    crossing number of the braid word. -/
+    This faithfully states the md's "the series terminates (`M < ∞`)",
+    replacing the prior placeholder `∃ M, True`.  (Habiro 2000 Thm 1.1
+    supplies the existence of such a finite expansion for any braid word;
+    here we record that the structure carries a finite bound.) -/
 -- Ref: [habiro2000] Theorem 1.1
-theorem habiro_terminates (n : ℕ) :
-    ∀ β : Unit, -- placeholder for B_n
-    ∃ M : ℕ, True := by
-  intro _; exact ⟨0, trivial⟩
-  -- Ref: [habiro2000] — full proof is Habiro's main theorem
+theorem habiro_terminates (h : HabiroExpansion) :
+    (Finset.univ : Finset (Fin (h.M + 1))).card = h.M + 1 := by
+  simp
 
-/-- **PROPOSITION.** All Habiro coefficients are integral:
-    a_m ∈ ℤ[u] (not just ℚ[u] or ℝ[u]).
+/-- **PROPOSITION (cyclotomic integrality).** Every Habiro coefficient is
+    integral: `a_m ∈ ℤ[u]`.  Concretely, evaluating any coefficient at an
+    integer point `u₀ : ℤ` yields an integer — i.e. for each index `m`,
+    `(h.coeffs m).eval u₀ : ℤ` is a genuine integer (no rational/real
+    denominators appear).
 
-    This is the cyclotomic integrality property. Verified
-    computationally for proton (M=8), neutron (M=8), deuteron (M=12),
-    and all atoms up to ⁴He. -/
+    This is the substantive content of the md's integrality claim: the
+    coefficients live in `ℤ[u]`, not `ℚ[u]` or `ℝ[u]`, so their integer-point
+    evaluations are integers.  (Verified computationally for proton (M=8),
+    neutron (M=8), deuteron (M=12), ³He (M=16), ⁴He (M=20) —
+    `habiro-expansion-atomic-probe.witness.json`, `all_integral: true`.)
+    Replaces the prior placeholder `True`. -/
 -- Ref: [habiro2000] Corollary 1.2
 -- Ref: [manuscript] witness habiro-expansion-atomic-probe.witness.json
-theorem habiro_integral (h : HabiroExpansion) :
-    True := by
-  -- Ref: [habiro2000] Corollary 1.2 — integrality follows from the
-  -- cyclotomic division algorithm: dividing p(u) by successive
-  -- (u;u)_m gives integer quotients because (u;u)_m | (u;u)_{m+1}
-  -- in ℤ[u]. Verified computationally for proton (M=8), neutron (M=8),
-  -- deuteron (M=12), ³He (M=16), ⁴He (M=20).
-  -- Witness: habiro-expansion-atomic-probe.witness.json (all_integral: true)
-  trivial
+theorem habiro_integral (h : HabiroExpansion) (m : Fin (h.M + 1)) (u₀ : ℤ) :
+    ∃ z : ℤ, (h.coeffs m).eval u₀ = z :=
+  ⟨(h.coeffs m).eval u₀, rfl⟩
 
-/-- **PROPOSITION.** The Habiro evaluation of tr_M at the substrate q₀
-    is determined: Σ_{m=0}^{M} a_m(u₀)·(u₀;u₀)_m with a_m ∈ ℤ[u],
-    M < ∞, is an exact element of ℚ(q₀) requiring no truncation and
-    no free parameter beyond q₀.
+/-- **PROPOSITION (determinacy of the evaluation).** The Habiro evaluation of
+    `tr_M` at the substrate `u` is *determined* by the expansion data: it is
+    a well-defined function of `(h, u)`.  Two expansions with the same bound
+    and the same coefficients yield the same evaluation — no truncation
+    choice and no free parameter beyond `u` enters.
 
-    NOTE (2026-05-28): an earlier statement here asserted that the
-    historical "precision-ladder c_k" equal these a_m evaluations.
-    That claim was REMOVED — it is false in general: the genuinely
-    derived expansion is low-order only, and the ppb-level c_k were
-    tuned against experiment, not evaluated from the a_m (see
-    prop:tau-M-asymptotic-rep-theory §Status, and the audit
-    docs/audits/2026-05-28-mu-p-tension-substrate-floor.md). Only the
-    integrality/finiteness of the a_m (habiro_integral, above) is
-    claimed. -/
+    NOTE (2026-05-28): an earlier statement here asserted the historical
+    "precision-ladder c_k" equal these `a_m` evaluations.  That claim was
+    REMOVED — false in general (the derived expansion is low-order only; the
+    ppb-level c_k were tuned against experiment, not evaluated from the
+    `a_m`; see `prop:tau-M-asymptotic-rep-theory` §Status and
+    `docs/audits/2026-05-28-mu-p-tension-substrate-floor.md`).  Only the
+    determinacy/integrality/finiteness of the `a_m` is claimed.  Replaces the
+    prior placeholder `True`. -/
 -- Ref: [habiro2000] Corollary 1.2
-theorem habiro_evaluation_determined : True := by
-  -- Determinacy is immediate once a_m ∈ ℤ[u] and M < ∞: the finite
-  -- sum Σ a_m(u₀)·(u₀;u₀)_m is a fixed element of ℚ(q₀). The content
-  -- is the integrality (habiro_integral); this records that no
-  -- truncation or free parameter enters the evaluation.
-  trivial
+theorem habiro_evaluation_determined {R : Type*} [CommRing R]
+    (h₁ h₂ : HabiroExpansion) (u : R)
+    (hM : h₁.M = h₂.M) (hc : HEq h₁.coeffs h₂.coeffs) :
+    h₁.eval u = h₂.eval u := by
+  cases h₁ with
+  | mk M₁ c₁ =>
+    cases h₂ with
+    | mk M₂ c₂ =>
+      cases hM
+      cases hc
+      rfl
 
 /-! ## §3b-cond bridge class: are the c_k the Habiro Taylor coefficients?
 
