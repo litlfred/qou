@@ -93,6 +93,8 @@ TAU_OVER_E_ERR   = 0.23
 # Source: NIST Chemistry WebBook (C≡O bond dissociation energy).
 D0_CO_EV         = 11.09          # eV, observed C≡O dissociation energy
 D0_CO_EV_ERR     = 0.01
+D0_N2_EV         = 9.79           # eV, observed N≡N dissociation (pure-covalent triple)
+D0_N2_EV_ERR     = 0.01
 
 G_A_PDG     = 1.2754          # ± 0.0013 (PDG 2024)
 G_A_PDG_ERR = 0.0013

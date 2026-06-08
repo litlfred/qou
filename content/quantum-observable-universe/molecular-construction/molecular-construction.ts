@@ -87,6 +87,7 @@ export default chapter({
         "co-computation-intro",
         "co-molecular-braid",
         "co-lp-dual-binding",
+        "embeddable-knot-operator",
         "co-triple-bond-energy",
       ],
     }),

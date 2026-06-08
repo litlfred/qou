@@ -1,0 +1,56 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-08T18:37:01.842562+00:00",
+  "commitSha": "968bf80bbc08ea28e021067ced88456251cb699f",
+  "assertions": [
+    {
+      "name": "lateral weighting (w_perp<1) reduces the equal-channel overbind",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "E(σ+2π) = b_σ·(1 + 2·w_perp) is monotone increasing in w_perp"
+    },
+    {
+      "name": "cardinality (3 channels) independent of overlap weight",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "multiple_bond builds order operators regardless of w_perp"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 4,
+  "computation": "embeddable-knot-operator",
+  "scriptFile": "embeddable_knot_operator.py",
+  "scriptHash": "880d9aad7462",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "clarabel": "0.11.1"
+  },
+  "description": "Generic embeddable knot operator with geometric overlap weighting (axial σ w=1, transverse π w=w_perp<1). Demonstrates the lateral-π energy reduction on the σ+2π triple bond; reusable downstream.",
+  "contentBlock": "def:embeddable-knot-operator",
+  "parameters": {
+    "sigma_channel_eV": 4.623136967742963,
+    "D0_N2_eV": 9.79
+  },
+  "data": {
+    "triple_bond_energy_vs_w_perp": {
+      "1.00": 13.86941090322889,
+      "0.70": 11.095528722583111,
+      "0.50": 9.246273935485926,
+      "0.30": 7.397019148388741
+    }
+  }
+}
