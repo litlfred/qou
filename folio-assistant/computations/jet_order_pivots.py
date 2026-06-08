@@ -44,8 +44,16 @@ def jet_coeffs(knot: str, order: int = JET_ORDER) -> list[sp.Rational]:
     word = [s * g for (s, g) in bw]
     tr = markov_trace_of_word(3, word)
     # Use the trace's OWN q symbol (not a freshly-created one, which would
-    # be a distinct object and make `.subs` a silent no-op).
-    q = next(iter(tr.free_symbols))
+    # be a distinct object and make `.subs` a silent no-op). Look it up by
+    # name — set iteration order is not deterministic, so `next(iter(...))`
+    # could pick the wrong symbol if the trace ever carries more than q.
+    q_syms = [s for s in tr.free_symbols if s.name == "q"]
+    if len(q_syms) != 1:
+        raise ValueError(
+            f"expected exactly one 'q' symbol in tr_M({knot}); "
+            f"got free_symbols={sorted(str(s) for s in tr.free_symbols)}"
+        )
+    q = q_syms[0]
     # Expand about q = 1 (the jet/h grading): q = 1 + h.
     ser = sp.series(tr.subs(q, 1 + h), h, 0, order + 1).removeO()
     poly = sp.Poly(sp.expand(ser), h)
