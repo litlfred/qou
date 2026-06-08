@@ -2971,7 +2971,95 @@
           "worst_span": 0
         }
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "1b594a1be1ab",
+          "ts": "f02e1210c1da",
+          "lean": "d982c0fe0f12"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "md:139 -- ## Relation to section present",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T10:04:46.310Z",
+        "reviewed_sha": "3f5c9e98eda0429a9924cb97d8c722c9b20409e6",
+        "notes": "interpretive section follows statement; check for companion remark"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "1b594a1be1ab",
+          "ts": "f02e1210c1da",
+          "lean": "d982c0fe0f12"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "md:1 -- fits mass-theory scope (9 keywords)",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T10:04:46.350Z",
+        "reviewed_sha": "3f5c9e98eda0429a9924cb97d8c722c9b20409e6",
+        "notes": "subject matches mass analysis chapter"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "1b594a1be1ab",
+          "ts": "f02e1210c1da",
+          "lean": "d982c0fe0f12"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "md:1 -- archimedean context appropriate for mass-theory",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T10:04:46.391Z",
+        "reviewed_sha": "3f5c9e98eda0429a9924cb97d8c722c9b20409e6",
+        "notes": "no wall-side violation"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "1b594a1be1ab",
+          "ts": "f02e1210c1da",
+          "lean": "d982c0fe0f12"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "md:1 -- proof regime consistent with statement side",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T10:04:46.427Z",
+        "reviewed_sha": "3f5c9e98eda0429a9924cb97d8c722c9b20409e6",
+        "notes": "no wall-side proof violation"
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-08T10:04:46.427Z"
 }
