@@ -2595,7 +2595,93 @@
           "worst_span": 0
         }
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "2b90483339db",
+          "ts": "d7003bc28923",
+          "lean": "a6f949357d91"
+        },
+        "result": "pass",
+        "evidence": "listed in sec:q-heat-kernel-analysis line 112; proposition about Reeb-invariant q-Gaussian solving q-heat equation - fits q-heat kernel section",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T10:11:21.132Z",
+        "reviewed_sha": "cf26497e548f36d34946513bfdf7238d6f4d4ea7",
+        "notes": "section and content match"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "2b90483339db",
+          "ts": "d7003bc28923",
+          "lean": "a6f949357d91"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "title says (archimedean) but no wall: banner in block; line 87 has q_0 approx 1.11 in body; statement uses R^n and archimedean q-Laplacian without explicit wall: annotation",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T10:11:57.773Z",
+        "reviewed_sha": "cf26497e548f36d34946513bfdf7238d6f4d4ea7",
+        "notes": "archimedean block without wall: banner; minor since labelled archimedean in title"
+      }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "2b90483339db",
+          "ts": "d7003bc28923",
+          "lean": "a6f949357d91"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "block has Time rescaling interpretation and Existence at arbitrary q>0 sections with physical interpretation; no companion interprets remark",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T10:11:57.807Z",
+        "reviewed_sha": "cf26497e548f36d34946513bfdf7238d6f4d4ea7",
+        "notes": "physical interpretation embedded in proposition block; consider remark split"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "2b90483339db",
+          "ts": "d7003bc28923",
+          "lean": "a6f949357d91"
+        },
+        "result": "pass",
+        "evidence": "proof uses partial_t, nabla^2, Gaussian on R^n - correct archimedean machinery for an archimedean-specialised proposition; proof matches archimedean statement",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T10:11:57.841Z",
+        "reviewed_sha": "cf26497e548f36d34946513bfdf7238d6f4d4ea7",
+        "notes": "archimedean proof for archimedean statement - consistent"
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-08T10:11:57.841Z"
 }
