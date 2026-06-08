@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "7f0bd3c03be2",
     "ts": "c9c4ec59f6d3",
-    "lean": "1d86bfa8f59b"
+    "lean": "6bbd26a1efd4"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1002,6 +1002,29 @@
         "reviewed_at": "2026-06-07T02:33:55.639Z",
         "reviewed_sha": "8bde9de2c1add6cd380bfdd9a363e5d19ec8ab8f",
         "notes": "md states the claim (universal R-matrix satisfies Yang-Baxter; braid operator R-check = P o R gives a braid group rep). But the Lean provides no proof and no strategy -- only a data structure; the YBE appears solely in comments."
+      },
+      {
+        "field_hash": {
+          "md": "7f0bd3c03be2",
+          "ts": "c9c4ec59f6d3",
+          "lean": "6bbd26a1efd4"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.8,
+          "max": 1
+        },
+        "evidence": "Docstring states the two load-bearing claims (YBE, braid rep) and that they are stated on an abstract RMatrixBraidingContext mirroring the build-graph copy.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/integration-backlog",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/integration-backlog"
+        },
+        "reviewed_at": "2026-06-08T11:29:11.766Z",
+        "reviewed_sha": "5b21c3c29ae3e7b204c0edf2f876dc4978c83dc5",
+        "notes": "Bumped 0.6→0.8: strategy/claim made explicit; eigendata Hecke relation documented."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1026,6 +1049,29 @@
         "reviewed_at": "2026-06-07T02:33:55.698Z",
         "reviewed_sha": "8bde9de2c1add6cd380bfdd9a363e5d19ec8ab8f",
         "notes": "Core gap: neither the Yang-Baxter equation nor the braid-group representation is proved or even stated as a Lean proposition. Only structure RMatrixBraidingData + a def su2_fundamental_r_matrix. The hecke_relation field is malformed (typed ... -> Prop with body 'q != 0', a constant function ignoring its hypothesis, encoding nothing)."
+      },
+      {
+        "field_hash": {
+          "md": "7f0bd3c03be2",
+          "ts": "c9c4ec59f6d3",
+          "lean": "6bbd26a1efd4"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.9,
+          "max": 1
+        },
+        "evidence": "YBE + braid relation proved sorry-free from the context class fields; RMatrixEigenData witnesses by ring/rw. Build-verified 0 errors, 0 sorry. Was 0.3 (no decl / restates-target).",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/integration-backlog",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/integration-backlog"
+        },
+        "reviewed_at": "2026-06-08T11:29:11.671Z",
+        "reviewed_sha": "5b21c3c29ae3e7b204c0edf2f876dc4978c83dc5",
+        "notes": "Bumped 0.3→0.9: real sorry-free statements; only inputs are the abstract context-class hypotheses (standard categorical encoding)."
       }
     ],
     "proof-rater-novelty": [
@@ -1050,6 +1096,29 @@
         "reviewed_at": "2026-06-07T02:33:55.800Z",
         "reviewed_sha": "8bde9de2c1add6cd380bfdd9a363e5d19ec8ab8f",
         "notes": "The R-matrix / Yang-Baxter / braid-rep content is standard quantum-group theory; the eigenvalues q, -q^-1 (Hecke channels) are the framework tie-in. But nothing is proved, so novelty is moot here."
+      },
+      {
+        "field_hash": {
+          "md": "7f0bd3c03be2",
+          "ts": "c9c4ec59f6d3",
+          "lean": "6bbd26a1efd4"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "evidence": "Standard Yang-Baxter / braid-group-from-R-matrix material (Drinfeld, Kassel). Not novel.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/integration-backlog",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/integration-backlog"
+        },
+        "reviewed_at": "2026-06-08T11:29:11.805Z",
+        "reviewed_sha": "5b21c3c29ae3e7b204c0edf2f876dc4978c83dc5",
+        "notes": "Confirmed existing 0.5 — standard result, correctly not-novel."
       }
     ],
     "proof-statement-integrity": [
@@ -1071,8 +1140,27 @@
         "reviewed_at": "2026-06-07T02:33:55.844Z",
         "reviewed_sha": "8bde9de2c1add6cd380bfdd9a363e5d19ec8ab8f",
         "notes": "INTEGRITY FAIL: lean.ref qou:QOU.Braiding.r_matrix_braiding_structure has NO matching declaration in the file. The md's load-bearing claims (R_12 R_13 R_23 = R_23 R_13 R_12; braid-group rep from R-check) are entirely ABSENT as Lean statements -- they live only in the module docstring. The only artifacts are a data structure with a vacuous/malformed hecke_relation field (fun _ => q != 0) and a constructor def. No proposition states the md's real claim."
+      },
+      {
+        "field_hash": {
+          "md": "7f0bd3c03be2",
+          "ts": "c9c4ec59f6d3",
+          "lean": "6bbd26a1efd4"
+        },
+        "result": "pass",
+        "evidence": "r-matrix-braiding-structure.lean:64-110 — r_matrix_braiding_structure (YBE: comp(comp R12 R13) R23 = comp(comp R23 R13) R12) and braid_rep_from_R_check (braid relation Ř₁Ř₂Ř₁=Ř₂Ř₁Ř₂) now state the md's load-bearing claims; lean.ref qou:QOU.Braiding.r_matrix_braiding_structure resolves to a real theorem. Build-verified: lake build QOU._Scratch.RMatrixVerify — 0 errors.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/integration-backlog",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/integration-backlog"
+        },
+        "reviewed_at": "2026-06-08T11:29:11.625Z",
+        "reviewed_sha": "5b21c3c29ae3e7b204c0edf2f876dc4978c83dc5",
+        "notes": "Was: lean.ref had NO matching decl; YBE/braid-rep lived only in docstring; malformed hecke_relation field. Now: YBE + braid relation as theorems on RMatrixBraidingContext; eigendata repaired as RMatrixEigenData with well-formed Hecke char-poly coefficient witnesses (sum=q-q⁻¹, prod=-1, by ring). Build-verified."
       }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-08T11:29:11.805Z"
 }
