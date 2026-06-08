@@ -2143,6 +2143,25 @@
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
         "notes": "Label 'prop:q-heat-kernel-peter-weyl' → expected 'q_heat_kernel_peter_weyl'; Lean declares: jacksonInt, hbar_q, contentSumClassical, contentSumQCasimir, muLambda.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "4d17840734b2",
+          "ts": "de698ddcfef5",
+          "lean": "4015374495e7"
+        },
+        "result": "n/a",
+        "evidence": "lean ref not_checked; no lean file found to compare against narrative proof",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:57:18.708Z",
+        "reviewed_sha": "d1c970e20f187ed12d58f4bfb2ee48b53b744822",
+        "notes": "n/a: lean not yet verified"
       }
     ],
     "proof-lean-compiles": [
@@ -2595,7 +2614,93 @@
           "worst_span": 0
         }
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "4d17840734b2",
+          "ts": "de698ddcfef5",
+          "lean": "4015374495e7"
+        },
+        "result": "pass",
+        "evidence": "listed in sec:q-heat-kernel-analysis line 111; spectral decomposition of q-heat kernel via Peter-Weyl - fits q-heat kernel section",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:56:51.900Z",
+        "reviewed_sha": "d1c970e20f187ed12d58f4bfb2ee48b53b744822",
+        "notes": "section and content match"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "4d17840734b2",
+          "ts": "de698ddcfef5",
+          "lean": "4015374495e7"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "proposition title says (archimedean) and md line 57 says q_0 approx 1.11 hbar_q0^2 approx 0.00976 inline - numeric substrate value in statement body without wall: banner",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:56:51.934Z",
+        "reviewed_sha": "d1c970e20f187ed12d58f4bfb2ee48b53b744822",
+        "notes": "numeric q_0 approx in statement narrative; should have wall: banner per sec 7c; minor since it is labelled archimedean in title"
+      }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "4d17840734b2",
+          "ts": "de698ddcfef5",
+          "lean": "4015374495e7"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "md contains Role in q-heat story section with interpretive prose linking to q-dilogarithm; no companion remark block with interprets pointing here",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:57:18.640Z",
+        "reviewed_sha": "d1c970e20f187ed12d58f4bfb2ee48b53b744822",
+        "notes": "interpretive section at end of proposition block; consider splitting to remark"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "4d17840734b2",
+          "ts": "de698ddcfef5",
+          "lean": "4015374495e7"
+        },
+        "result": "pass",
+        "evidence": "proof sketch uses Schur lemma on Wedderburn block M_{d_lambda}; q-Casimir evaluation via Jucys-Murphy (Ram); algebraic proof; no linarith/IVT/Real.*",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:57:18.675Z",
+        "reviewed_sha": "d1c970e20f187ed12d58f4bfb2ee48b53b744822",
+        "notes": "proof is algebraic, no archimedean machinery"
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-08T09:57:18.708Z"
 }
