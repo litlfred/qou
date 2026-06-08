@@ -4,7 +4,7 @@
   "chapters": {
     "overview": {
       "manifest_hash": "17c29b7fe8c8",
-      "stale_mode": "manifest",
+      "stale_mode": "thorough",
       "machine": {
         "title_defects": [],
         "structure_findings": [
@@ -35,7 +35,7 @@
           "result": "pending",
           "reviewer": null,
           "reviewed_hash": null,
-          "stale_mode": "manifest"
+          "stale_mode": "thorough"
         },
         "sec:viz-brings": {
           "title": "Bring's Surface",
@@ -43,7 +43,7 @@
           "result": "pending",
           "reviewer": null,
           "reviewed_hash": null,
-          "stale_mode": "manifest"
+          "stale_mode": "thorough"
         },
         "sec:viz-knots": {
           "title": "Knot Complements",
@@ -51,7 +51,7 @@
           "result": "pending",
           "reviewer": null,
           "reviewed_hash": null,
-          "stale_mode": "manifest"
+          "stale_mode": "thorough"
         }
       }
     }

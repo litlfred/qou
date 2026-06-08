@@ -4,7 +4,7 @@
   "chapters": {
     "formal-groups-chapter": {
       "manifest_hash": "07fd5520ea6a",
-      "stale_mode": "manifest",
+      "stale_mode": "thorough",
       "machine": {
         "title_defects": [],
         "structure_findings": [
@@ -53,7 +53,7 @@
           "result": "pending",
           "reviewer": null,
           "reviewed_hash": null,
-          "stale_mode": "manifest"
+          "stale_mode": "thorough"
         },
         "sec:skewed-poisson": {
           "title": "Skewed-Poisson structure",
@@ -61,7 +61,7 @@
           "result": "pending",
           "reviewer": null,
           "reviewed_hash": null,
-          "stale_mode": "manifest"
+          "stale_mode": "thorough"
         },
         "sec:integration-theorem": {
           "title": "Integration theorem",
@@ -69,7 +69,7 @@
           "result": "pending",
           "reviewer": null,
           "reviewed_hash": null,
-          "stale_mode": "manifest"
+          "stale_mode": "thorough"
         },
         "sec:gs-deformation": {
           "title": "Gröbner–Shirshov deformation",
@@ -77,7 +77,7 @@
           "result": "pending",
           "reviewer": null,
           "reviewed_hash": null,
-          "stale_mode": "manifest"
+          "stale_mode": "thorough"
         },
         "sec:strong-multiplicativity": {
           "title": "Strong multiplicativity",
@@ -85,7 +85,7 @@
           "result": "pending",
           "reviewer": null,
           "reviewed_hash": null,
-          "stale_mode": "manifest"
+          "stale_mode": "thorough"
         },
         "sec:witt-vector-lift": {
           "title": "Witt vector lift",
@@ -93,7 +93,7 @@
           "result": "pending",
           "reviewer": null,
           "reviewed_hash": null,
-          "stale_mode": "manifest"
+          "stale_mode": "thorough"
         },
         "sec:unit-root-f-crystal": {
           "title": "Unit-root F-crystal",
@@ -101,7 +101,7 @@
           "result": "pending",
           "reviewer": null,
           "reviewed_hash": null,
-          "stale_mode": "manifest"
+          "stale_mode": "thorough"
         }
       }
     }
