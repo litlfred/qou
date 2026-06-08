@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-08T13:38:12.211167+00:00",
-  "commitSha": "7b8f67388862f11771073965d476f7faacb76b9b",
+  "computedAt": "2026-06-08T13:43:19.223036+00:00",
+  "commitSha": "469300359931efb175f0a89695af4cd1848348d9",
   "assertions": [
     {
       "name": "mpfr_matrix_m_matches_rust_within_tolerance",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5261,
+  "durationMs": 724,
   "computation": "derived-chi-catalogue-matrix-m-mpfr",
   "scriptFile": "derived_chi_catalogue_matrix_m_mpfr.py",
-  "scriptHash": "d3bf62f48430",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "d9f2ac5cc650",
+  "scriptCommitSha": "469300359931efb175f0a89695af4cd1848348d9",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -47,20 +47,20 @@
         "n_strands": 6,
         "n_partitions_tested": 6,
         "n_passed": 6,
-        "total_precompute_secs": 0.0026648269999896,
-        "total_call_secs": 0.007355854000081763,
-        "total_rust_secs": 0.004423885999983668,
-        "speedup_rust_over_call": 0.6014102509286474,
+        "total_precompute_secs": 0.0024152989999493,
+        "total_call_secs": 0.008029665999742974,
+        "total_rust_secs": 0.0045699959998728445,
+        "speedup_rust_over_call": 0.5691389903414573,
         "cases": [
           {
             "shape": [
               6
             ],
             "dim_V_lambda": 1,
-            "precompute_secs": 0.00020188100000950726,
-            "call_secs": 0.00021008400000255278,
-            "rust_secs": 0.0007660570000211919,
-            "delta": "6.628456481e-49",
+            "precompute_secs": 0.00021467099998062622,
+            "call_secs": 0.0001882199999272416,
+            "rust_secs": 0.0007424000000355591,
+            "delta": "4.917887067e-49",
             "match": true
           },
           {
@@ -69,10 +69,10 @@
               1
             ],
             "dim_V_lambda": 5,
-            "precompute_secs": 0.0007414829999561334,
-            "call_secs": 0.001447681999991346,
-            "rust_secs": 0.0007605280000007042,
-            "delta": "4.70406589e-49",
+            "precompute_secs": 0.0005805389999977706,
+            "call_secs": 0.0016072260000328242,
+            "rust_secs": 0.0008190519999971002,
+            "delta": "3.421138829e-49",
             "match": true
           },
           {
@@ -81,9 +81,9 @@
               3
             ],
             "dim_V_lambda": 5,
-            "precompute_secs": 0.0006165020000139521,
-            "call_secs": 0.002098310999997466,
-            "rust_secs": 0.0007755740000447986,
+            "precompute_secs": 0.0005048689999966882,
+            "call_secs": 0.0024463259999265574,
+            "rust_secs": 0.0008895119999579038,
             "delta": "2.191667062e-49",
             "match": true
           },
@@ -94,10 +94,10 @@
               2
             ],
             "dim_V_lambda": 5,
-            "precompute_secs": 0.0004996569999775602,
-            "call_secs": 0.002055351000024075,
-            "rust_secs": 0.0007331470000053741,
-            "delta": "3.781962065e-49",
+            "precompute_secs": 0.0005109439999841925,
+            "call_secs": 0.0021325029999843537,
+            "rust_secs": 0.0007664569999406012,
+            "delta": "1.777388532e-49",
             "match": true
           },
           {
@@ -109,10 +109,10 @@
               1
             ],
             "dim_V_lambda": 5,
-            "precompute_secs": 0.0005030020000162949,
-            "call_secs": 0.0013978460000316772,
-            "rust_secs": 0.0007950449999611919,
-            "delta": "1.336382355e-51",
+            "precompute_secs": 0.0005009210000253006,
+            "call_secs": 0.0015151829999240363,
+            "rust_secs": 0.0008081339999534976,
+            "delta": "4.009147065e-51",
             "match": true
           },
           {
@@ -125,10 +125,10 @@
               1
             ],
             "dim_V_lambda": 1,
-            "precompute_secs": 0.0001023020000161523,
-            "call_secs": 0.00014658000003464622,
-            "rust_secs": 0.0005935349999504069,
-            "delta": "4.009147065e-51",
+            "precompute_secs": 0.00010335499996472208,
+            "call_secs": 0.00014020799994796107,
+            "rust_secs": 0.0005444409999881827,
+            "delta": "2.505716916e-51",
             "match": true
           }
         ]
@@ -141,20 +141,20 @@
         "n_strands": 9,
         "n_partitions_tested": 4,
         "n_passed": 4,
-        "total_precompute_secs": 0.003534317000003284,
-        "total_call_secs": 0.018049713999971573,
-        "total_rust_secs": 0.01527022299995906,
-        "speedup_rust_over_call": 0.8460091389804354,
+        "total_precompute_secs": 0.0035557230000904383,
+        "total_call_secs": 0.01693752300025153,
+        "total_rust_secs": 0.015328608000118038,
+        "speedup_rust_over_call": 0.9050088374723034,
         "cases": [
           {
             "shape": [
               9
             ],
             "dim_V_lambda": 1,
-            "precompute_secs": 0.0001529759999812086,
-            "call_secs": 0.00023854900001651913,
-            "rust_secs": 0.003337819999956082,
-            "delta": "3.421138829e-48",
+            "precompute_secs": 0.00015389400005005882,
+            "call_secs": 0.00025340500008042,
+            "rust_secs": 0.0035133979999955045,
+            "delta": "2.480325651e-48",
             "match": true
           },
           {
@@ -163,10 +163,10 @@
               1
             ],
             "dim_V_lambda": 8,
-            "precompute_secs": 0.001715106000006017,
-            "call_secs": 0.008863306999955967,
-            "rust_secs": 0.004157636000002185,
-            "delta": "3.421138829e-48",
+            "precompute_secs": 0.0015721290000101362,
+            "call_secs": 0.008426926000083768,
+            "rust_secs": 0.004257095000070876,
+            "delta": "2.736911063e-48",
             "match": true
           },
           {
@@ -181,10 +181,10 @@
               1
             ],
             "dim_V_lambda": 8,
-            "precompute_secs": 0.0015033920000178114,
-            "call_secs": 0.008728092000012566,
-            "rust_secs": 0.004590161999999509,
-            "delta": "6.347816186e-51",
+            "precompute_secs": 0.0016758169999775419,
+            "call_secs": 0.008063276000029873,
+            "rust_secs": 0.004245309999987512,
+            "delta": "5.011433831e-51",
             "match": true
           },
           {
@@ -200,10 +200,10 @@
               1
             ],
             "dim_V_lambda": 1,
-            "precompute_secs": 0.00016284299999824725,
-            "call_secs": 0.0002197659999865209,
-            "rust_secs": 0.0031846050000012838,
-            "delta": "1.754001841e-51",
+            "precompute_secs": 0.0001538830000527014,
+            "call_secs": 0.00019391600005747023,
+            "rust_secs": 0.003312805000064145,
+            "delta": "1.127572612e-51",
             "match": true
           }
         ]
@@ -216,20 +216,20 @@
         "n_strands": 9,
         "n_partitions_tested": 4,
         "n_passed": 4,
-        "total_precompute_secs": 0.0033233979999636176,
-        "total_call_secs": 0.016787512000064453,
-        "total_rust_secs": 0.014959295999972255,
-        "speedup_rust_over_call": 0.8910966675654393,
+        "total_precompute_secs": 0.0034733539999933782,
+        "total_call_secs": 0.016973478999943836,
+        "total_rust_secs": 0.014967350000006263,
+        "speedup_rust_over_call": 0.8818080253350411,
         "cases": [
           {
             "shape": [
               9
             ],
             "dim_V_lambda": 1,
-            "precompute_secs": 0.00015911099995946643,
-            "call_secs": 0.00021291299998438262,
-            "rust_secs": 0.003614335999998275,
-            "delta": "3.421138829e-48",
+            "precompute_secs": 0.00015742799996587564,
+            "call_secs": 0.00021506199993837072,
+            "rust_secs": 0.0031776979999449395,
+            "delta": "2.480325651e-48",
             "match": true
           },
           {
@@ -238,10 +238,10 @@
               1
             ],
             "dim_V_lambda": 8,
-            "precompute_secs": 0.0014968689999932394,
-            "call_secs": 0.00824266400002216,
-            "rust_secs": 0.004098618999989867,
-            "delta": "3.421138829e-48",
+            "precompute_secs": 0.0016141749999860622,
+            "call_secs": 0.008158826999988378,
+            "rust_secs": 0.00392906199999743,
+            "delta": "2.736911063e-48",
             "match": true
           },
           {
@@ -256,10 +256,10 @@
               1
             ],
             "dim_V_lambda": 8,
-            "precompute_secs": 0.0015094180000119195,
-            "call_secs": 0.008090252000044984,
-            "rust_secs": 0.004003832000023522,
-            "delta": "6.347816186e-51",
+            "precompute_secs": 0.0014583040000388792,
+            "call_secs": 0.008374575000061668,
+            "rust_secs": 0.004496559000017442,
+            "delta": "5.011433831e-51",
             "match": true
           },
           {
@@ -275,10 +275,10 @@
               1
             ],
             "dim_V_lambda": 1,
-            "precompute_secs": 0.00015799999999899228,
-            "call_secs": 0.00024168300001292664,
-            "rust_secs": 0.0032425089999605916,
-            "delta": "1.754001841e-51",
+            "precompute_secs": 0.00024344700000256125,
+            "call_secs": 0.00022501499995541963,
+            "rust_secs": 0.0033640310000464524,
+            "delta": "1.127572612e-51",
             "match": true
           }
         ]
@@ -291,20 +291,20 @@
         "n_strands": 12,
         "n_partitions_tested": 4,
         "n_passed": 4,
-        "total_precompute_secs": 0.008275967999963996,
-        "total_call_secs": 0.06401872999998659,
-        "total_rust_secs": 0.08249386400007097,
-        "speedup_rust_over_call": 1.2885895112272339,
+        "total_precompute_secs": 0.007970828000111396,
+        "total_call_secs": 0.057052705999808495,
+        "total_rust_secs": 0.07733331200006432,
+        "speedup_rust_over_call": 1.3554714127025616,
         "cases": [
           {
             "shape": [
               12
             ],
             "dim_V_lambda": 1,
-            "precompute_secs": 0.000487773000031666,
-            "call_secs": 0.0002879830000210859,
-            "rust_secs": 0.019775039000023753,
-            "delta": "1.539512473e-47",
+            "precompute_secs": 0.000462020000099983,
+            "call_secs": 0.00026792799997110706,
+            "rust_secs": 0.01826821400004519,
+            "delta": "1.128975814e-47",
             "match": true
           },
           {
@@ -313,10 +313,10 @@
               1
             ],
             "dim_V_lambda": 11,
-            "precompute_secs": 0.0036700789999599692,
-            "call_secs": 0.031029343000000154,
-            "rust_secs": 0.02303048200002422,
-            "delta": "2.257951627e-47",
+            "precompute_secs": 0.0036191770000186807,
+            "call_secs": 0.02797783599999093,
+            "rust_secs": 0.020609087000025283,
+            "delta": "1.436878308e-47",
             "match": true
           },
           {
@@ -334,10 +334,10 @@
               1
             ],
             "dim_V_lambda": 11,
-            "precompute_secs": 0.0038495389999866347,
-            "call_secs": 0.032390386999963994,
-            "rust_secs": 0.022098083000003044,
-            "delta": "4.343242654e-51",
+            "precompute_secs": 0.003574813999989601,
+            "call_secs": 0.028451425999946878,
+            "rust_secs": 0.02132709399995747,
+            "delta": "3.340955888e-51",
             "match": true
           },
           {
@@ -356,10 +356,10 @@
               1
             ],
             "dim_V_lambda": 1,
-            "precompute_secs": 0.0002685769999857257,
-            "call_secs": 0.0003110170000013568,
-            "rust_secs": 0.017590260000019953,
-            "delta": "6.786316647e-52",
+            "precompute_secs": 0.0003148170000031314,
+            "call_secs": 0.0003555159998995805,
+            "rust_secs": 0.01712891700003638,
+            "delta": "4.385004602e-52",
             "match": true
           }
         ]

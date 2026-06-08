@@ -54,7 +54,6 @@ sys.path.insert(0, str(HERE))
 import _path_bridge  # noqa: E402, F401
 
 import mpmath  # noqa: E402
-import sympy as sp  # noqa: E402
 
 import pyhecke_native as ph  # noqa: E402
 
@@ -207,17 +206,16 @@ def chi_via_numerical_matrix_m_mpfr(
         sigmas_left = block["sigmas_left"]
         sigmas_right = block["sigmas_right"]
         M_pp_pos = block["M_pp"]
-
-        def block_sigma(table: dict, g_1based: int, sign: int) -> object:
-            mat = table[g_1based]
-            return mat if sign >= 0 else mat - h * eye_block
-
+        # Hecke inverse on a block: σ_g⁻¹ = σ_g − h·I (block extraction
+        # is linear). Inlined to avoid per-iteration function recreate.
         B_p = eye_block
         for (sign, g_1based) in word_left:
-            B_p = B_p * block_sigma(sigmas_left, g_1based, sign)
+            mat = sigmas_left[g_1based]
+            B_p = B_p * (mat if sign >= 0 else mat - h * eye_block)
         B_n = eye_block
         for (sign, g_1based) in word_right:
-            B_n = B_n * block_sigma(sigmas_right, g_1based, sign)
+            mat = sigmas_right[g_1based]
+            B_n = B_n * (mat if sign >= 0 else mat - h * eye_block)
         M = M_pp_pos if bridge_sign >= 0 else (M_pp_pos - h * eye_block)
         prod = B_p * M * B_n
         # mpmath has no direct trace; sum diagonal.
@@ -242,15 +240,15 @@ def chi_rust_at_q_mpf(
     comparison stays at the backend's working precision.
     """
     laurent = ph.chi_q_via_gp(list(shape), n_strands, list(word))
+    # Precompute sqrt_q once: half-exp keys are math q-exp · 2, so
+    # q^(d_key/2) = sqrt_q^d_key with d_key an integer. mpmath does
+    # binary integer exponentiation — much faster than fractional
+    # exp+log when d_key is odd, and uniformly handles both parities.
+    sqrt_q = mpmath.sqrt(q_mpf)
     total = mpmath.mpf(0)
     for (d_key, c_str) in laurent:
         d_int = int(d_key)
-        # half-exp: math q-exp = d_int / 2.
-        if d_int % 2 == 0:
-            term = mpmath.mpf(int(c_str)) * q_mpf ** (d_int // 2)
-        else:
-            term = mpmath.mpf(int(c_str)) * q_mpf ** (mpmath.mpf(d_int) / 2)
-        total = total + term
+        total = total + mpmath.mpf(int(c_str)) * (sqrt_q ** d_int)
     return total
 
 
@@ -280,8 +278,6 @@ def main(dps: int = 50) -> int:
 
     from q_parameter import Q_50_DIGIT_STR
     q_mpf = mpmath.mpf(Q_50_DIGIT_STR)
-    # For cross-check: also build the sp.Rational backend's q.
-    q_rat = sp.Rational(Q_50_DIGIT_STR)
     print(f"\n  q_0 (mpf) = {mpmath.nstr(q_mpf, 30)}")
 
     # Multi-isotope sweep (same as #1987).
