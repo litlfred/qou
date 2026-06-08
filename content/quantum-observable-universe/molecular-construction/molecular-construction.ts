@@ -115,6 +115,17 @@ export default chapter({
       ],
     }),
 
+    // ── §6b. H₂O: bent triatomic via the assembly projector ────────
+    section({
+      title: "Water: $C_{2v}$ from the assembly projector",
+      label: "sec:h2o-computation",
+      blocks: [
+        "h2o-molecular-braid",
+        "h2o-c2v-from-projector",
+        "h2o-bent-geometry",
+      ],
+    }),
+
     // ── §7. C₆H₆: benzene and delocalization ──────────────────────
     section({
       title: "Benzene: delocalization from threading links",
