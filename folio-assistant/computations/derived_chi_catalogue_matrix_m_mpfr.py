@@ -252,7 +252,7 @@ def chi_rust_at_q_mpf(
     return total
 
 
-# ── Main: benchmark vs Rust + sp.Rational backend ─────────────────
+# ── Main: benchmark vs Rust chi_q_via_gp ──────────────────────────
 
 
 def main(dps: int = 50) -> int:
@@ -272,7 +272,7 @@ def main(dps: int = 50) -> int:
     )
 
     print("=" * 78)
-    print(f" mpmath/mpfr backend vs Rust chi_q_via_gp + sp.Rational backend")
+    print(f" mpmath/mpfr backend vs Rust chi_q_via_gp")
     print(f"  precision: mp.dps = {dps}")
     print("=" * 78)
 
@@ -397,9 +397,11 @@ def main(dps: int = 50) -> int:
         expected=True,
         source=f"Whether the mpfr matrix-M backend (mpmath.mpf at dps={dps}) "
                f"matches Rust chi_q_via_gp summed at q_0 across ²H/³H/³He/⁴He "
-               f"to relative tolerance 1e-{dps-5}. Cumulative round-off in "
-               f"the matrix product is bounded by O(word_length · block_size · "
-               f"10^-dps).",
+               f"to ABSOLUTE tolerance 1e-{dps-5} on the difference "
+               f"abs(chi_mpf - chi_rust). Cumulative round-off in the matrix "
+               f"product is bounded by O(word_length · block_size · 10^-dps), "
+               f"which the absolute bound dominates for characters of "
+               f"O(1) magnitude at substrate q_0.",
     )
     wb.add_data("dps", dps)
     wb.add_data("q_0_substrate_str", Q_50_DIGIT_STR)
