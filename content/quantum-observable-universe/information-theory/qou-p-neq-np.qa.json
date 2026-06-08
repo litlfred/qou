@@ -9,7 +9,7 @@
   },
   "source_hashes": {
     "md": "912d5c6d0cb3",
-    "ts": "755cdc25adf6",
+    "ts": "5d1758bc9d0d",
     "lean": "b1d8a71c696d"
   },
   "criteria": {
@@ -1938,7 +1938,28 @@
           "worst_span": 0
         }
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "912d5c6d0cb3",
+          "ts": "5d1758bc9d0d",
+          "lean": "b1d8a71c696d"
+        },
+        "result": "pass",
+        "evidence": "listed in sec:p-vs-np-boundary line 103; conjecture about P!=NP at non-torsion q - fits P vs NP section",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T10:14:43.384Z",
+        "reviewed_sha": "75e46b88d0b864993058ace58925d1684ee7c826",
+        "notes": "section and content match"
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-08T10:14:43.384Z"
 }

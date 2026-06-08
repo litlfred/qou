@@ -1976,7 +1976,49 @@
           "worst_span": 0
         }
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "e69b0c64e267",
+          "ts": "9ac51e793be0",
+          "lean": "f667e65f5102"
+        },
+        "result": "pass",
+        "evidence": "listed in sec:horizons-aeons line 177; definition of observable subcategory Bun-circle - fits horizons/aeons section",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T10:14:43.552Z",
+        "reviewed_sha": "75e46b88d0b864993058ace58925d1684ee7c826",
+        "notes": "section and content match"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "e69b0c64e267",
+          "ts": "9ac51e793be0",
+          "lean": "f667e65f5102"
+        },
+        "result": "pass",
+        "evidence": "definition uses categorical notation Bun-circle, Gamma(S,A_0) != 0 - purely categorical/generic, no archimedean q values",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T10:14:43.584Z",
+        "reviewed_sha": "75e46b88d0b864993058ace58925d1684ee7c826",
+        "notes": "categorical definition, no archimedean leak"
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-08T10:14:43.584Z"
 }

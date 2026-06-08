@@ -1940,7 +1940,27 @@
           "worst_span": 0
         }
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "26fd6f6495ce",
+          "ts": "c9d75f413b1c"
+        },
+        "result": "pass",
+        "evidence": "listed in sec:stat-mech line 126; remark interprets def:quantum-volume as knot capacity - fits stat mech section",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T10:14:43.415Z",
+        "reviewed_sha": "75e46b88d0b864993058ace58925d1684ee7c826",
+        "notes": "section and content match"
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-08T10:14:43.415Z"
 }
