@@ -7,6 +7,7 @@ export default conjecture({
     "Plancherel completeness for the EW/Higgs $\\{T(2,4), T(2,6), T(2,8)\\}$ idempotent decomposition",
   uses: ["thm:em-spectral-completeness"],
   tags: [
+    "tier:S",
     "electroweak",
     "spectral-completeness",
     "plancherel",

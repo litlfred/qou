@@ -24,6 +24,7 @@ export default conjecture({
     },
   ],
   tags: [
+    "tier:S",
     "atom-braid",
     "exterior-algebra",
     "fermion-fock-space",

@@ -16,6 +16,7 @@ export default conjecture({
     "habiro2002",
   ],
   tags: [
+    "tier:E",
     "q-beta",
     "precision-ladder",
     "truncation-order",

@@ -20,6 +20,7 @@ export default conjecture({
     "def:archimedean-realization-functor",
   ],
   tags: [
+    "tier:keystone",
     "mass",
     "endomorphism",
     "quantum-dilogarithm",

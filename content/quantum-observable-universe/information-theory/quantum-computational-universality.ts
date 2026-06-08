@@ -5,6 +5,7 @@ export default conjecture({
   title:
     "Quantum computational universality via descent to roots of unity",
   tags: [
+    "tier:S",
     "computation",
     "universality",
     "descent",

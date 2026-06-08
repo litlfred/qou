@@ -9,6 +9,7 @@ export default conjecture({
     validation: "not_checked",
   },
   tags: [
+    "tier:E",
     "weinberg-angle",
     "electroweak-mixing",
     "hoefsmit-projector",

@@ -18,6 +18,7 @@ export default conjecture({
       ],
   cites: ["yekutieli2015", "kassel1995"],
   tags: [
+    "tier:keystone",
     "frobenius-pairing",
     "self-duality",
     "knot-factor",

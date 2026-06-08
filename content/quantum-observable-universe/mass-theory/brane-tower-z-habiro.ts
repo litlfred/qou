@@ -10,6 +10,7 @@ export default conjecture({
     "cor:quantum-dilogarithm",
   ],
   tags: [
+    "tier:S",
     "brane-tower",
     "habiro-ring",
     "cyclotomic-completion",
