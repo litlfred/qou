@@ -30,6 +30,14 @@ regularisation patch.
 | **Kodama state** $\Psi_K[A] = \exp\!\bigl( i \mathrm{CS}[A] \bigr)$ | $S_0$ saddle of the Faddeev WKB of $\Phi_q$ in [`conj:phi-q-wkb-greens-function`](#conj:phi-q-wkb-greens-function), evaluated at the flat-$\mathrm{SU}(2)$ critical point of a force-carrier torus knot |
 | **Reality conditions** of complex Ashtekar | [Adelic product](#def:adelic-substrate) selects the unique real archimedean realisation; the original $\gamma = \pm i$ self-dual Ashtekar formulation is recovered without the reality-condition obstruction |
 | **Relational QM** (Rovelli) \cite{rovelli2004} | Adelic product formula $\prod_v \lVert \psi \rVert_v = 1$ — states are well-defined only relative to the global algebraic-archimedean balance |
+| **Area operator / spectrum** $\hat A = 8\pi\gamma\ell_p^2 \sum_i \sqrt{j_i(j_i+1)}$ | $\mathrm{std}$ of the $\mathrm{SU}_q(2)$ Casimir on each boundary rep (per-puncture area $=$ the $q\to1$ Casimir eigenvalue) |
+| **Volume operator** | hyperbolic $\mathrm{Vol}(K)$ / vol-density — the *bulk period* (Seiberg–Witten residue) face of the non-abelian Stokes ([SW period residue sum](#prop:sw-period-residue-sum)) |
+| **Holonomy–flux algebra** ($h_e$, $E_S$) | non-abelian-Stokes (Yekutieli multiplicative-integral) holonomy + Frobenius/Markov flux ([Yekutieli–Stokes](#rem:yekutieli-stokes)) — the basic categorical variables |
+| **Diffeomorphism constraint** | built in: $\mathrm{tr}_M(\mathcal{B}_K)$ is an ambient-isotopy (knot) invariant by construction — no separate constraint to impose |
+| **Hamiltonian constraint** (Thiemann's *rigorous* operator) | the concrete [categorical Dirac](#def:categorical-dirac-operator) / Reeb generator $\mathfrak{D}_\nabla$ — the **sharp** operator realising the *formal* Wheeler–DeWitt row above; QOU sidesteps the constraint-algebra-closure / problem-of-time issue (the Reeb flow *is* time, §1) |
+| **Coherent / semiclassical states** | the archimedean ($\mathrm{std}$, $q\to1$) limit of the categorical state |
+| **LQC big bounce** (singularity-free cosmology) | Penrose conformal-cyclic **aeons** (the big-bang $\leftrightarrow$ heat-death cycling) — a *different mechanism* (conformal rescaling at heat death, not a Planck-density quantum bounce), same non-singular-cyclic outcome |
+| **Quantum-geometry discreteness** (discrete area/volume spectra) | algebraic discreteness — finite Wedderburn blocks $\bigoplus_\lambda M_{d_\lambda}$ + finite GS-filtration slices ([GB spectral sequence](#prop:gb-spectral-sequence)); discreteness is *innate to the algebra*, not a quantisation output |
 
 ## Three structural advantages
 
