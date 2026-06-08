@@ -133,8 +133,8 @@ theorem nf_b3_eq_witness (i : Fin 6) :
   -- (engine − witness) by (q·q⁻¹ − 1).  Bare `ring` cannot close these
   -- because it treats q and q⁻¹ as independent indeterminates.
   fin_cases i <;>
-    simp only [nf_b3, nf_unit2, nf_unit, mul_right_s1_inv, mul_right_s0,
-               mul_right_s1, hecke_add, hecke_smul, b3_nf_coefficients, HA]
+    simp [nf_b3, nf_unit2, nf_unit, mul_right_s1_inv, mul_right_s0,
+          mul_right_s1, hecke_add, hecke_smul, b3_nf_coefficients, HA]
   · linear_combination (4 * q ^ 2 - 6 * q * q_inv + 4 * q_inv ^ 2 - 6) * q_mul_q_inv
   · linear_combination
       (5 * q ^ 3 - 10 * q ^ 2 * q_inv + 10 * q * q_inv ^ 2 - 7 * q
@@ -167,7 +167,7 @@ noncomputable def nf_proton4 : HeckeNF :=
 theorem nf_proton4_trefoil :
     nf_proton4 5 = (q - q_inv) * (q - q_inv) *
       (q * q * q * q - 3 * q * q - 3 * q_inv * q_inv + q_inv * q_inv * q_inv * q_inv) := by
-  simp only [nf_proton4, nf_b3, nf_unit2, nf_unit, mul_right_s1_inv,
+  simp [nf_proton4, nf_b3, nf_unit2, nf_unit, mul_right_s1_inv,
         mul_right_s0, mul_right_s1, hecke_add, hecke_smul, HA]
   linear_combination
     (-4 * q ^ 4 + 14 * q ^ 3 * q_inv - 20 * q ^ 2 * q_inv ^ 2 + 4 * q ^ 2
@@ -197,7 +197,7 @@ noncomputable def nf_neutron4 : HeckeNF :=
 --      published version.
 theorem nf_neutron4_trefoil :
     nf_neutron4 5 = -((q - q_inv) * (q - q_inv) * (q * q + q_inv * q_inv + 2)) := by
-  simp only [nf_neutron4, nf_b3, nf_unit2, nf_unit, mul_right_s1_inv,
+  simp [nf_neutron4, nf_b3, nf_unit2, nf_unit, mul_right_s1_inv,
         mul_right_s0, mul_right_s1, hecke_add, hecke_smul, HA]
   linear_combination (2 * q ^ 2 - 4 * q * q_inv + 2 * q_inv ^ 2) * q_mul_q_inv
 
