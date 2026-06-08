@@ -44,6 +44,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 from q_parameter import Q as q0, Q_INV as qi, HA
 from hecke_core import E_HARTREE_EV
 from witness_base import WitnessBuilder
+from experimental_constants import D0_CO_EV  # canonical experimental ref (not inline)
 
 z = 1.0 / (q0 ** 0.5 + qi ** 0.5)
 TWO_Q = q0 + qi
@@ -107,6 +108,18 @@ def main():
     print(f"q0 = {q0:.10f}   [2]_q = {TWO_Q:.10f}   E_MOL = {E_MOL:.4f} eV")
     print()
 
+    # Build the witness up front so durationMs reflects the LP computation,
+    # not just witness serialization (per review).
+    w = WitnessBuilder("co-bond-order-active-set", engine="python")
+    w.set_description(
+        "CO bond order from the bond-selection LP active set. Computes "
+        "per-shared-pair marginal binding via the reduced (2k+2)-strand "
+        "covalent channel, solves max sum_k k*y_k s.t. 0<=y_k<=max(m_k,0), "
+        "and reports |active_set| as the predicted bond order. Probe of the "
+        "'SDP active-set = bond order' hypothesis. Zero fitted parameters."
+    )
+    w.set_content_block("prop:co-lp-dual-binding")
+
     k_max = 4
     binding = [0.0]                          # binding(0) = 0
     for k in range(1, k_max + 1):
@@ -128,6 +141,8 @@ def main():
     ub = [max(m, 0.0) for m in marginals]
     c = [-(k) for k in range(1, k_max + 1)]              # maximize -> minimize -sum
     res = linprog(c, bounds=[(0.0, u) for u in ub], method='highs')
+    if not res.success:
+        raise SystemExit(f"bond-order LP failed (HiGHS did not converge): {res.message}")
 
     y_star = list(res.x)
     primal_obj = -float(res.fun)
@@ -168,15 +183,6 @@ def main():
             print(f"      under-binds the higher pi pairs. Flagged for refinement.")
     print()
 
-    w = WitnessBuilder("co-bond-order-active-set", engine="python")
-    w.set_description(
-        "CO bond order from the bond-selection LP active set. Computes "
-        "per-shared-pair marginal binding via the reduced (2k+2)-strand "
-        "covalent channel, solves max sum_k k*y_k s.t. 0<=y_k<=max(m_k,0), "
-        "and reports |active_set| as the predicted bond order. Probe of the "
-        "'SDP active-set = bond order' hypothesis. Zero fitted parameters."
-    )
-    w.set_content_block("prop:co-lp-dual-binding")
     w.add_parameter("q", q0)
     w.add_parameter("TWO_Q", TWO_Q)
     w.add_parameter("E_MOL_eV", E_MOL)
@@ -185,7 +191,7 @@ def main():
     w.add_data("marginals_phi1", marginals)
     w.add_data("marginals_eV", [m * E_MOL for m in marginals])
     w.add_data("sigma_channel_eV", marginals[0] * E_MOL)   # the one bound pair
-    w.add_data("observed_D0_CO_eV", 11.09)                 # experimental reference
+    w.add_data("observed_D0_CO_eV", D0_CO_EV)              # from experimental_constants (not inline)
     # LP primal + dual (CLAUDE.md LP-dual schema)
     w.add_data("y_star", y_star)
     w.add_data("y0_star", 0.0)                # no net-conservation constraint in box LP
