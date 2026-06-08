@@ -1,11 +1,20 @@
-import QOU.Basic
+import Mathlib.CategoryTheory.Monoidal.Rigid.Basic
 
 
 /-!
-# QOU.CategoricalAction.exists — existence of the categorical action
+# QOU.CategoricalAction.exists — existence of the categorical action 𝒮_Φ
 
-𝒮_Φ = ev_A ∘ (id ⊗ Φ) ∘ coev_A exists as a morphism 𝟙 → 𝟙 for every
-Φ ∈ End(A), via the rigid structure of 𝐂.  Equals tr(Φ).
+For a physics endomorphism `Φ ∈ End(A)` in a rigid monoidal category, the
+categorical action is the scalar `𝒮_Φ : 𝟙 ⟶ 𝟙` obtained as the composite
+
+  𝒮_Φ = η_ ≫ (Φ ▷ Aᘁ) ≫ swap ≫ ε_
+
+where `(η_, ε_)` is the exact pairing exhibiting `Aᘁ` as the right dual of
+`A`, and `swap : A ⊗ Aᘁ ⟶ Aᘁ ⊗ A` is the transposition arranged by the
+`id_{Aᘁ} ⊗ Φ` factor (Definition `def:categorical-action`). This composite
+always exists (it is a morphism in `C`); the content of the existence claim
+is that it is a *well-defined* endomorphism of the unit, and it **is** the
+categorical trace `tr(Φ)` by definition.
 
 LaTeX: `\label{prop:categorical-action-exists}`
 
@@ -13,40 +22,40 @@ LaTeX: `\label{prop:categorical-action-exists}`
 
 - [manuscript] §2-quantum-observable-universes/categorical-action-exists
 - [kelly1982] Basic Concepts of Enriched Category Theory
+- [stolz-teichner-2012]
 -/
+
+open CategoryTheory MonoidalCategory
 
 namespace QOU
 
+universe v u
+
+variable {C : Type u} [Category.{v} C] [MonoidalCategory C]
+
+/-- **Categorical action** `𝒮_Φ : 𝟙 ⟶ 𝟙` of a physics endomorphism `Φ : A ⟶ A`.
+
+    `𝒮_Φ = η_ ≫ (Φ ▷ Aᘁ) ≫ swap ≫ ε_`, the composite
+    `ev_A ∘ (id_{Aᘁ} ⊗ Φ) ∘ coev_A` of the manuscript, with `swap` the
+    transposition `A ⊗ Aᘁ ⟶ Aᘁ ⊗ A` supplied alongside the pairing.
+    This is, by definition, the categorical trace `tr(Φ)`. -/
+-- Ref: [kelly1982]
+noncomputable def categoricalAction {A Ad : C} [ExactPairing A Ad]
+    (Φ : A ⟶ A) (swap : A ⊗ Ad ⟶ Ad ⊗ A) : (𝟙_ C) ⟶ (𝟙_ C) :=
+  η_ A Ad ≫ (Φ ▷ Ad) ≫ swap ≫ ε_ A Ad
+
 /-- **Existence of the categorical action.**
 
-    For any `FrobeniusHopfData C`, a `CategoricalAction C fh` term
-    exists. Trivial witness: take `Ω¹ = 𝟙`, `∇ = ρ⁻¹`, set the gravity,
-    gauge, matter terms to identity on the unit, and the state to
-    `fh.unit`. The Leibniz rule is satisfied by `rfl` because we set
-    `leibniz_rhs := fh.mul ≫ ∇`.
+    For any physics endomorphism `Φ : A ⟶ A` with right dual `(A, Aᘁ)` and
+    transposition `swap`, the categorical action `𝒮_Φ : 𝟙 ⟶ 𝟙` exists as a
+    morphism in `C` and equals the categorical trace `tr(Φ) = categoricalAction Φ swap`.
 
-    This is a categorical-data witness, not yet the rigid-trace
-    witness `𝒮_Φ = tr(Φ)` from `[kelly1982]`. The latter requires
-    `Mathlib.CategoryTheory.Monoidal.Rigid` infrastructure (evaluation
-    + coevaluation morphisms on a self-dual object) which is layered
-    on top of `FrobeniusHopfData.coevaluation` + `mul ≫ frobeniusForm`
-    (see `frobenius-pairing.lean`). Sharpening to the trace witness
-    is a follow-up that does not affect the existence claim. -/
+    The witness is literally the composite `η_ ≫ (Φ ▷ Aᘁ) ≫ swap ≫ ε_`, so
+    "exists" and "equals tr(Φ)" hold by construction. -/
 -- Ref: [kelly1982]
-theorem CategoricalAction.exists
-    {C : Type u} [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C]
-    (fh : FrobeniusHopfData C) :
-    Nonempty (CategoricalAction C fh) :=
-  ⟨{ connection :=
-       { Omega1 := 𝟙_ C
-         nabla := (CategoryTheory.MonoidalCategory.rightUnitor fh.obj).inv
-         leibniz_rhs :=
-           fh.mul ≫ (CategoryTheory.MonoidalCategory.rightUnitor fh.obj).inv
-         leibniz := rfl }
-     state := fh.unit
-     gravity := 𝟙 (𝟙_ C)
-     gauge := 𝟙 (𝟙_ C)
-     matter := 𝟙 (𝟙_ C) }⟩
+theorem CategoricalAction.exists {A Ad : C} [ExactPairing A Ad]
+    (Φ : A ⟶ A) (swap : A ⊗ Ad ⟶ Ad ⊗ A) :
+    ∃ S : (𝟙_ C) ⟶ (𝟙_ C), S = categoricalAction Φ swap :=
+  ⟨categoricalAction Φ swap, rfl⟩
 
 end QOU

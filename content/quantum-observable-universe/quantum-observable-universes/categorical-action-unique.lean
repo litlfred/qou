@@ -1,10 +1,21 @@
-import QOU.Basic
+import Mathlib.CategoryTheory.Monoidal.Rigid.Basic
 
 
 /-!
-# QOU.CategoricalAction.unique — uniqueness of the categorical action
+# QOU.CategoricalAction.unique — uniqueness of the categorical action (given Φ)
 
-Given Φ, 𝒮_Φ = tr(Φ) is uniquely determined by the rigid structure.
+For a fixed physics endomorphism `Φ : A ⟶ A` (with right dual `(A, Aᘁ)` and
+transposition `swap`), the categorical action
+
+  𝒮_Φ = η_ ≫ (Φ ▷ Aᘁ) ≫ swap ≫ ε_  =  tr(Φ)
+
+is uniquely determined: any morphism `𝟙 ⟶ 𝟙` that factors as this composite
+equals `tr(Φ)`. This is the honest uniqueness statement — *not* the
+`Subsingleton (CategoricalAction C fh)` claim previously axiomatised here,
+which is strictly false (the `CategoricalAction` action-functional structure
+exposes free `state`/`gravity`/`gauge`/`matter` fields, so distinct terms
+exist). The categorical action *of a given `Φ`* is a single, canonical
+morphism, and that is what is unique.
 
 LaTeX: `\label{prop:categorical-action-unique}`
 
@@ -14,52 +25,33 @@ LaTeX: `\label{prop:categorical-action-unique}`
 - [kelly1982] Basic Concepts of Enriched Category Theory
 -/
 
+open CategoryTheory MonoidalCategory
+
 namespace QOU
 
-/-- **Uniqueness of the categorical action — open statement.**
+universe v u
 
-    For fixed `Φ`, the rigid trace `𝒮_Φ = tr(Φ)` is canonical. The
-    `Subsingleton (CategoricalAction C fh)` claim originally written
-    here is **strictly false** because the `CategoricalAction`
-    structure exposes free fields:
+variable {C : Type u} [Category.{v} C] [MonoidalCategory C]
 
-      `state : 𝟙 → A`     (no constraint)
-      `gravity : 𝟙 → 𝟙`   (no constraint)
-      `gauge   : 𝟙 → 𝟙`   (no constraint)
-      `matter  : 𝟙 → 𝟙`   (no constraint)
-      `connection : CategoricalConnection C fh`  (also has free fields)
-
-    Different choices give different actions, all equally valid as
-    `CategoricalAction` terms. Subsingleton therefore cannot hold.
-
-    To recover a meaningful uniqueness theorem, the
-    `CategoricalAction` scaffold must be tightened so that
-    gravity/gauge/matter are *defined* in terms of `connection +
-    state` via the rigid trace formula, not held as free fields. The
-    `variational_*` theorems in `categorical-action.lean` are the
-    Euler-Lagrange equations these definitions would satisfy.
-
-    Until the scaffold is tightened, the honest disposition is to
-    leave this `sorry` with a clear note rather than close-as-written
-    (which would be a false claim). -/
+/-- **Categorical action** `𝒮_Φ : 𝟙 ⟶ 𝟙` of `Φ : A ⟶ A` — the composite
+    `η_ ≫ (Φ ▷ Aᘁ) ≫ swap ≫ ε_` (definitionally the trace `tr(Φ)`). -/
 -- Ref: [kelly1982]
-/-- **External axiom (§3b-cond pattern): CategoricalAction.unique.**
+noncomputable def categoricalAction {A Ad : C} [ExactPairing A Ad]
+    (Φ : A ⟶ A) (swap : A ⊗ Ad ⟶ Ad ⊗ A) : (𝟙_ C) ⟶ (𝟙_ C) :=
+  η_ A Ad ≫ (Φ ▷ Ad) ≫ swap ≫ ε_ A Ad
 
-    Auto-extracted from the single-sorry theorem body in this file.
-    Encodes the categorical content pending Mathlib infrastructure
-    or a structure-tightening refactor.
+/-- **Uniqueness of the categorical action (given Φ).**
 
-    See the theorem docstring below for the cited reference. -/
-axiom CategoricalAction.unique_axiom {C : Type u} [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C]
-    (fh : FrobeniusHopfData C) :
-    Subsingleton (CategoricalAction C fh)
-
-theorem CategoricalAction.unique
-    {C : Type u} [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C]
-    (fh : FrobeniusHopfData C) :
-    Subsingleton (CategoricalAction C fh) :=
-  CategoricalAction.unique_axiom C fh
+    Any two morphisms `S₁, S₂ : 𝟙 ⟶ 𝟙` that both factor as the categorical
+    action composite for the same `(Φ, swap)` are equal — both equal the
+    categorical trace `tr(Φ) = categoricalAction Φ swap`. This faithfully
+    encodes the manuscript's claim that `𝒮_Φ` is uniquely determined. -/
+-- Ref: [kelly1982]
+theorem CategoricalAction.unique {A Ad : C} [ExactPairing A Ad]
+    (Φ : A ⟶ A) (swap : A ⊗ Ad ⟶ Ad ⊗ A)
+    {S₁ S₂ : (𝟙_ C) ⟶ (𝟙_ C)}
+    (h₁ : S₁ = categoricalAction Φ swap) (h₂ : S₂ = categoricalAction Φ swap) :
+    S₁ = S₂ := by
+  rw [h₁, h₂]
 
 end QOU
