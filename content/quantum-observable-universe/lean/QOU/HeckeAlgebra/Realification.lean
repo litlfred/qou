@@ -79,7 +79,7 @@ Laurent polynomial at `q := q_0`. -/
     value (must be a unit; here `q_0 ≠ 0` from `q_0 > 1` gives
     `IsUnit q_0` in the field ℝ). -/
 noncomputable def realifyAtRealQ0 : LaurentPolynomial ℝ →+* ℝ :=
-  LaurentPolynomial.eval₂RingHom (RingHom.id ℝ)
+  LaurentPolynomial.eval₂ (RingHom.id ℝ)
     (isUnit_iff_ne_zero.mpr q_0_ne_zero).unit
 
 /-! ### §2  Realification at q_0 via embedded ℤ → ℝ
