@@ -311,10 +311,17 @@
       }
     },
     "appendix-surreals": {
-      "manifest_hash": "bf8b0d1ed1c8",
+      "manifest_hash": "77f6620ebaf7",
       "stale_mode": "thorough",
       "machine": {
-        "title_defects": [],
+        "title_defects": [
+          {
+            "kind": "compound",
+            "label": "sec:millennium-bsd-rh-ym",
+            "title": "BSD, RH, and Yang-Mills bounds",
+            "detail": "3 comma-joined concepts — not concise"
+          }
+        ],
         "structure_findings": [
           {
             "kind": "band",
@@ -327,12 +334,6 @@
             "label": "sec:surreal-rate-calculus",
             "title": "Surreal rate calculus and the squeeze inequality",
             "detail": "2 blocks outside the 3–18 section band (P3)"
-          },
-          {
-            "kind": "over-weight",
-            "label": "sec:millennium-bounds-via-surreals",
-            "title": "Millennium-problem surreal bounds",
-            "detail": "17 blocks > 2.5× peer mean (6.5) — split into subsections (P4)"
           },
           {
             "kind": "band",
@@ -442,6 +443,30 @@
         "sec:millennium-bounds-via-surreals": {
           "title": "Millennium-problem surreal bounds",
           "depth": 1,
+          "result": "pending",
+          "reviewer": null,
+          "reviewed_hash": null,
+          "stale_mode": "thorough"
+        },
+        "sec:millennium-bsd-rh-ym": {
+          "title": "BSD, RH, and Yang-Mills bounds",
+          "depth": 2,
+          "result": "pending",
+          "reviewer": null,
+          "reviewed_hash": null,
+          "stale_mode": "thorough"
+        },
+        "sec:millennium-pnp-collatz": {
+          "title": "P vs NP and the Collatz family",
+          "depth": 2,
+          "result": "pending",
+          "reviewer": null,
+          "reviewed_hash": null,
+          "stale_mode": "thorough"
+        },
+        "sec:millennium-unification": {
+          "title": "Graded-Mikusiński unification",
+          "depth": 2,
           "result": "pending",
           "reviewer": null,
           "reviewed_hash": null,
@@ -1534,7 +1559,7 @@
       }
     },
     "mass-theory": {
-      "manifest_hash": "68a5945412b5",
+      "manifest_hash": "f8a9a35c431c",
       "stale_mode": "thorough",
       "machine": {
         "title_defects": [
@@ -1747,7 +1772,7 @@
           "stale_mode": "thorough"
         },
         "sec:mass-bridge-orphan-reconnect": {
-          "title": "Geometric face: mass-bridge orphan blocks",
+          "title": "Geometric face: pentagon and volume bridges",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
@@ -2946,7 +2971,7 @@
       }
     },
     "quantum-observable-universes": {
-      "manifest_hash": "d140e668fb0c",
+      "manifest_hash": "94c79c30c2cc",
       "stale_mode": "thorough",
       "machine": {
         "title_defects": [
@@ -2955,12 +2980,6 @@
             "label": "sec:vectors-hadrons",
             "title": "Vectors, hadrons, and the PawLei basis",
             "detail": "3 comma-joined concepts — not concise"
-          },
-          {
-            "kind": "compound",
-            "label": "sec:particles",
-            "title": "Particles, fermions, bosons, and observation",
-            "detail": "4 comma-joined concepts — not concise"
           },
           {
             "kind": "compound",
@@ -3115,7 +3134,7 @@
           "stale_mode": "thorough"
         },
         "sec:particles": {
-          "title": "Particles, fermions, bosons, and observation",
+          "title": "Particle types and observation",
           "depth": 1,
           "result": "pending",
           "reviewer": null,

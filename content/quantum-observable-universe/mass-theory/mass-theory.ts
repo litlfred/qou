@@ -387,7 +387,7 @@ export default chapter({
       ],
     }),
     section({
-      title: "Geometric face: mass-bridge orphan blocks",
+      title: "Geometric face: pentagon and volume bridges",
       label: "sec:mass-bridge-orphan-reconnect",
       blocks: [
         "mass-bridge-orphan-reconnect-intro",
