@@ -2323,74 +2323,14 @@
       }
     },
     "predicted-spectra": {
-      "manifest_hash": "a1741f65073a",
+      "manifest_hash": "b4f93de1f2ec",
       "machine": {
         "title_defects": [
-          {
-            "kind": "split-artifact",
-            "label": "sec:mesons-nucleons-categorical-proton-unique",
-            "title": "Mesons and nucleons : characterisation",
-            "detail": "trailing \" : characterisation\" (known auto-split tag) — meaningless out of context"
-          },
-          {
-            "kind": "split-artifact",
-            "label": "sec:em-completeness-gauge-coupling-e-hartree-categorical",
-            "title": "EM completeness and gauge coupling : characterisation",
-            "detail": "trailing \" : characterisation\" (known auto-split tag) — meaningless out of context"
-          },
           {
             "kind": "compound",
             "label": "sec:archimedean-hartree-crystal",
             "title": "Archimedean Hartree, crystal basis, and Mathlib bridge",
             "detail": "3 comma-joined concepts — not concise"
-          },
-          {
-            "kind": "split-artifact",
-            "label": "sec:archimedean-hartree-crystal-mass-tower-deeper",
-            "title": "Archimedean Hartree, crystal basis, and Mathlib bridge : characterisation",
-            "detail": "trailing \" : characterisation\" (known auto-split tag) — meaningless out of context"
-          },
-          {
-            "kind": "too-long",
-            "label": "sec:archimedean-hartree-crystal-mass-tower-deeper",
-            "title": "Archimedean Hartree, crystal basis, and Mathlib bridge : characterisation",
-            "detail": "73 chars > 72"
-          },
-          {
-            "kind": "compound",
-            "label": "sec:archimedean-hartree-crystal-mass-tower-deeper",
-            "title": "Archimedean Hartree, crystal basis, and Mathlib bridge : characterisation",
-            "detail": "3 comma-joined concepts — not concise"
-          },
-          {
-            "kind": "split-artifact",
-            "label": "sec:archimedean-hartree-crystal-alpha-em-categorical",
-            "title": "Archimedean Hartree, crystal basis, and Mathlib bridge (continued) : characterisation",
-            "detail": "trailing \" : characterisation\" (known auto-split tag) — meaningless out of context"
-          },
-          {
-            "kind": "too-long",
-            "label": "sec:archimedean-hartree-crystal-alpha-em-categorical",
-            "title": "Archimedean Hartree, crystal basis, and Mathlib bridge (continued) : characterisation",
-            "detail": "85 chars > 72"
-          },
-          {
-            "kind": "compound",
-            "label": "sec:archimedean-hartree-crystal-alpha-em-categorical",
-            "title": "Archimedean Hartree, crystal basis, and Mathlib bridge (continued) : characterisation",
-            "detail": "3 comma-joined concepts — not concise"
-          },
-          {
-            "kind": "split-artifact",
-            "label": "sec:nuclear-stability-decay-hadron-half-life",
-            "title": "Nuclear stability and decay : characterisation",
-            "detail": "trailing \" : characterisation\" (known auto-split tag) — meaningless out of context"
-          },
-          {
-            "kind": "split-artifact",
-            "label": "sec:atomic-shells-foundations-skein-finiteness-bound",
-            "title": "Atomic shells: construction foundations : characterisation",
-            "detail": "trailing \" : characterisation\" (known auto-split tag) — meaningless out of context"
           }
         ],
         "structure_findings": []
@@ -2418,7 +2358,7 @@
           "reviewed_hash": null
         },
         "sec:mesons-nucleons-categorical-proton-unique": {
-          "title": "Mesons and nucleons : characterisation",
+          "title": "Categorical proton and neutron",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
@@ -2439,7 +2379,7 @@
           "reviewed_hash": null
         },
         "sec:em-completeness-gauge-coupling-e-hartree-categorical": {
-          "title": "EM completeness and gauge coupling : characterisation",
+          "title": "Categorical Hartree energy and Bohr radius",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
@@ -2453,14 +2393,14 @@
           "reviewed_hash": null
         },
         "sec:archimedean-hartree-crystal-mass-tower-deeper": {
-          "title": "Archimedean Hartree, crystal basis, and Mathlib bridge : characterisation",
+          "title": "Bloch group and the Faddeev pentagon",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
           "reviewed_hash": null
         },
         "sec:archimedean-hartree-crystal-alpha-em-categorical": {
-          "title": "Archimedean Hartree, crystal basis, and Mathlib bridge (continued) : characterisation",
+          "title": "Categorical fine-structure and color falsifiability",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
@@ -2481,7 +2421,7 @@
           "reviewed_hash": null
         },
         "sec:nuclear-stability-decay-hadron-half-life": {
-          "title": "Nuclear stability and decay : characterisation",
+          "title": "Hadron half-life and Gröbner NF",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
@@ -2495,7 +2435,7 @@
           "reviewed_hash": null
         },
         "sec:atomic-shells-foundations-skein-finiteness-bound": {
-          "title": "Atomic shells: construction foundations : characterisation",
+          "title": "Skein finiteness and shell construction",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
