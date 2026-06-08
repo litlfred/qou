@@ -44,16 +44,26 @@ Each narrowing is tagged by whether surreals are **essential** or **language**:
 | 4 | [`kashaev-surreal`](../../content/quantum-observable-universe/appendix-surreals/kashaev-surreal.md) | `std`-part identity separating the algebraic (`tr_M`) from the transcendental (`Vol`) part of the volume conjecture | Volume Conjecture (open) | **L** (`q=e^{2πi/N}` ties the scales → rank-1) |
 | 5 | `hyperbolic-volume-transcendence` (jet-order tower) | **Narrowed to finite-base-order by [PR #1990](https://github.com/litlfred/qou/pull/1990)** (jacobian rank = 3 at every `N≥3` via rank-monotonicity) — residual = surreal-bridge inputs I2/I3 only | I2 holonomy-shadow + I3 monodromy-shadow (physical, conjectural) | **L** — finite-page degeneration ⇒ rank-1 (a *worked instance* of the probe's rank-1 side) |
 | 6 | [`two-filtration-bridge`](../../content/quantum-observable-universe/stochastic-mechanics/two-filtration-bridge-small-cases.md) | bar-class ⇒ depth: self-conjugate `λ`→depth 2 (`CS=0`), chiral pair→depth 3 (`CS≠0`); verified `n≤4` | general `n≥5` Vol/CS dictionary | L |
+| 7 | [`dilogarithm-archimedean-limit`](../../content/quantum-observable-universe/mass-theory/dilogarithm-archimedean-limit.md) | `(1−q)·log Φ_n(x;q) → Li₂(x)` (Faddeev scaling); `q→1⁻` regime **proved elementary** | branch-cut compatibility on principal `Li₂` at `q→1⁺` + Mathlib Tauberian | L (single-`ε` rescaling ⇒ rank-1) |
+| 8 | [`cs-evaluation-faithfulness`](../../content/quantum-observable-universe/predicted-spectra/cs-evaluation-faithfulness.md) | `κ_n≠0 ⇒ Φ_n≠0`: each volume grade non-degenerate; `Vol=Σ_nΦ_n` perpetual but **Mostow-convergent** | arithmetic independence of `{Φ_n}` (open) | **the `ε^ω` row** — narrows to "depth-`ω` tail"; resolved **L** by Mostow (see probe §RESOLUTION) |
+| 9 | [`observables-algebraic-independence`](../../content/quantum-observable-universe/observations/observables-algebraic-independence.md) | no algebraic relation over `ℚ(q₀)` among `(m_p,m_n,m_Λ,…)`; 5 falsifiable classes (lattice ratios cleanest) | the transcendence itself (open; lattice `10⁻⁶` test) | L |
 
-## The one essential candidate (not yet in a single conjecture block)
+## The essential candidate — RESOLVED to *language* (2026-06-08)
 
-**The GS-tower compounding of the non-abelian-Stokes quadratic term.** The gauge
-term `∫tr(F∧_q⋆_qF)` → Hecke-quadratic events `(q−q⁻¹)≈2ε` → `ε^ℓ`, `ℓ=ℓ(K)→ω`.
-This is **E?** — the value group acquires an infinite generator, which the
-`ε`-adic `ℝ` line cannot express. It is *not* currently stated as a transcendental
-conjecture; the probe's next step is to check whether the **`motivic-perpetual-obstruction`**
-/ GS spectral-sequence carries a perpetual `ε^ω` tail (⇒ surreal-essential, and a
-new ledger row) or degenerates at a finite page (⇒ L, like row 5).
+The GS-tower compounding of the non-abelian-Stokes quadratic term was the one
+rank-≥2 / `ε^ω` candidate. It is **settled** by the two-tower reading
+([probe §RESOLUTION](../audits/2026-06-08-surreal-rank2-nonabelian-stokes-quadratic-probe.md)):
+
+- **Mass / GS tower collapses at E₁** (`spectral-sequence-collapse`, Whitehead /
+  semisimple) → finite-order in `ε` → rank-1 → surreal-free. Production never
+  needs surreals.
+- **Volume / lifting tower is genuinely perpetual** (`motivic-perpetual-obstruction`,
+  `cs-evaluation-faithfulness`: `κ_n≠0 ∀n`) — the real `ε^ω` structure — **but
+  Mostow rigidity makes `Vol=Σ_nΦ_n` converge** to a real value, so the
+  infinitude is in the *grading*, not the *value*. No `ε^ω` element is *forced*.
+
+**Verdict: `ε^ω` is the worthwhile *narrowing language* for the perpetual
+obstruction (row 8), not a necessity.** Surreals are kept **as language**.
 
 ## Reading of the ledger (for the keep/purge decision)
 
@@ -61,9 +71,10 @@ new ledger row) or degenerates at a finite page (⇒ L, like row 5).
   genuine reductions of open transcendental problems to named residues — the
   worthwhile product). ⇒ **keep, re-scoped as this ledger**, not as
   "millennium-problem bounds."
-- **Surreal *necessity* (E?) is still undecided** and rides entirely on the one
-  candidate above. If it resolves to L, the ledger is the *language* in which the
-  narrowings are written (still worthwhile); if E?, surreals are load-bearing.
+- **Surreal *necessity* is now resolved: language, not load-bearing** (the one
+  `ε^ω` candidate settled to L by E₁-collapse + Mostow convergence, 2026-06-08,
+  above). The ledger is the *language* in which the narrowings are written —
+  still worthwhile per the owner's criterion; no theorem requires surreals.
 - **Either way the speculative `*-surreal-bound` millennium framing is the part
   to retire** — replace each with its ledger row (narrowing + named residue).
 
