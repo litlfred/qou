@@ -2096,7 +2096,26 @@
           "worst_span": 0
         }
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "4097709ba218",
+          "ts": "5dbf4003906e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T10:23:15.942Z",
+        "reviewed_sha": "4620d6477f5adf6564dc4093330f3a7303cd2834",
+        "notes": "prose block in sec:speed-of-light"
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-08T10:23:15.942Z"
 }

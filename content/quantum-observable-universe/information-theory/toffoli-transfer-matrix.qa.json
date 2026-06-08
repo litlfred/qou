@@ -2609,7 +2609,87 @@
           "worst_span": 0
         }
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "a3fe270a38d0",
+          "ts": "254435f7b119",
+          "lean": "dc0b10961467"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T10:25:59.605Z",
+        "reviewed_sha": "4620d6477f5adf6564dc4093330f3a7303cd2834",
+        "notes": "proposition in sec:planck-scale-computation; Toffoli transfer matrix is core planck-scale computation content"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "a3fe270a38d0",
+          "ts": "254435f7b119",
+          "lean": "dc0b10961467"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T10:25:59.641Z",
+        "reviewed_sha": "4620d6477f5adf6564dc4093330f3a7303cd2834",
+        "notes": "statement is algebraic in generic q; Phi(q) formula has no hardcoded q_0; numerical values appear only in post-proof explicit-values table"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "a3fe270a38d0",
+          "ts": "254435f7b119",
+          "lean": "dc0b10961467"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T10:25:59.674Z",
+        "reviewed_sha": "4620d6477f5adf6564dc4093330f3a7303cd2834",
+        "notes": "proof proceeds algebraically via chain reduction and type-blindness lemma; q_0 numerical values appear only in post-proof table, not in proof machinery"
+      }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "a3fe270a38d0",
+          "ts": "254435f7b119",
+          "lean": "dc0b10961467"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T10:25:59.709Z",
+        "reviewed_sha": "4620d6477f5adf6564dc4093330f3a7303cd2834",
+        "notes": "proposition statement items are formal; physical interpretation follows only after proof"
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-08T10:25:59.709Z"
 }

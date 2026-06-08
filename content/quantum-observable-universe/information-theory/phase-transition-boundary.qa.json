@@ -2579,7 +2579,87 @@
           "worst_span": 0
         }
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "a84b1c1b935e",
+          "ts": "4b086c3ddcc3",
+          "lean": "1baad1f1a6f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T10:24:25.862Z",
+        "reviewed_sha": "4620d6477f5adf6564dc4093330f3a7303cd2834",
+        "notes": "proposition in sec:phase-transitions; defines gas/liquid/solid phase transition temperatures"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "a84b1c1b935e",
+          "ts": "4b086c3ddcc3",
+          "lean": "1baad1f1a6f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T10:24:25.891Z",
+        "reviewed_sha": "4620d6477f5adf6564dc4093330f3a7303cd2834",
+        "notes": "archimedean banner present; formulas are algebraic in q with no numeric q_0 hardcoding in statement"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "a84b1c1b935e",
+          "ts": "4b086c3ddcc3",
+          "lean": "1baad1f1a6f7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T10:24:25.925Z",
+        "reviewed_sha": "4620d6477f5adf6564dc4093330f3a7303cd2834",
+        "notes": "validation=not_checked; no proof body in md"
+      }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "a84b1c1b935e",
+          "ts": "4b086c3ddcc3",
+          "lean": "1baad1f1a6f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T10:24:25.957Z",
+        "reviewed_sha": "4620d6477f5adf6564dc4093330f3a7303cd2834",
+        "notes": "statement is formal; no interpretive prose mixed in"
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-08T10:24:25.957Z"
 }

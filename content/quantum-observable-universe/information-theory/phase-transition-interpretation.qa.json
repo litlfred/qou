@@ -1940,7 +1940,26 @@
           "worst_span": 0
         }
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "dea61d609432",
+          "ts": "ed1feb1934fb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T10:22:39.114Z",
+        "reviewed_sha": "4620d6477f5adf6564dc4093330f3a7303cd2834",
+        "notes": "remark in sec:phase-transitions; interprets prop:phase-transition-boundary which is in the same section"
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-08T10:22:39.114Z"
 }

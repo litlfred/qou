@@ -2020,7 +2020,87 @@
           "worst_span": 0
         }
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "d9df43d29732",
+          "ts": "d4b902c48a21",
+          "lean": "e383a6d19ff3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T10:24:25.733Z",
+        "reviewed_sha": "4620d6477f5adf6564dc4093330f3a7303cd2834",
+        "notes": "proposition in sec:p-vs-np-boundary; content directly concerns P vs NP as boundary condition"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "d9df43d29732",
+          "ts": "d4b902c48a21",
+          "lean": "e383a6d19ff3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T10:24:25.764Z",
+        "reviewed_sha": "4620d6477f5adf6564dc4093330f3a7303cd2834",
+        "notes": "archimedean banner present on line 1; q_0 mention in conjecture is explicit substrate specialization with wall: banner; categorical definitions of boundary and horizon are generic"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "d9df43d29732",
+          "ts": "d4b902c48a21",
+          "lean": "e383a6d19ff3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T10:24:25.796Z",
+        "reviewed_sha": "4620d6477f5adf6564dc4093330f3a7303cd2834",
+        "notes": "proposition body is categorical/combinatorial; no archimedean-only proof machinery; criteria stated algebraically"
+      }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "d9df43d29732",
+          "ts": "d4b902c48a21",
+          "lean": "e383a6d19ff3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T10:24:25.828Z",
+        "reviewed_sha": "4620d6477f5adf6564dc4093330f3a7303cd2834",
+        "notes": "no substantive interpretive prose mixed into statement; physical meaning follows the formal statement cleanly"
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-08T10:24:25.828Z"
 }

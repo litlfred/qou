@@ -1976,7 +1976,47 @@
           "worst_span": 0
         }
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "9da3676baaa0",
+          "ts": "c6bd7a4f634e",
+          "lean": "918bec1f0532"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T10:25:59.944Z",
+        "reviewed_sha": "4620d6477f5adf6564dc4093330f3a7303cd2834",
+        "notes": "definition in sec:info-time-computation; Planck time definition directly fits time-and-computation section"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "9da3676baaa0",
+          "ts": "c6bd7a4f634e",
+          "lean": "918bec1f0532"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T10:25:59.976Z",
+        "reviewed_sha": "4620d6477f5adf6564dc4093330f3a7303cd2834",
+        "notes": "t_P(q) = q/(q-1) is generic over any field; q_0 appears in regime table as explicit substrate reference with 'local substrate q' link, not bare hardcoding"
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-08T10:25:59.976Z"
 }
