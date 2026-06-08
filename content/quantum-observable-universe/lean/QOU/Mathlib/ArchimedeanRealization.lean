@@ -29,21 +29,31 @@ functor requires `Mathlib.Algebra.IwahoriHecke` (deferred).
 
 namespace QOU.Mathlib.ArchimedeanRealization
 
-/-- The QOU substrate parameter `q₀ ≈ 1.10998` (CODATA-adjusted
-    fundamental ratio in the QOU substrate; see
-    `q-pinning-50-digit.witness.json` for the 50-digit
-    determination). -/
-noncomputable def q_zero : ℝ := 1.10998
+/-- The QOU substrate parameter `q₀`.  Bound here to the canonical
+    50-digit decimal expansion from
+    `folio-assistant/computations/full-twist-delta-n2-verification.witness.json::q_0`
+    (proton-anchor re-pin, 2026-05-28; see
+    `tools/qou-substrate/python/qou_substrate/constants.py::Q_50_DIGIT_STR`).
+
+    Bumped 2026-06-08 from the previous 5-dps literal `1.10998` to
+    match the same canonical literal used in
+    `QOU.HeckeAlgebra.QSubstrate.q_0` and
+    `QOU.LiftingDescent.H3BraneTowerScaffold.q0` (both 50 dps, both
+    landed in PR #1978). -/
+-- Ref: q-pinning-50-digit.witness.json (proton-anchor re-pin, 2026-05-28)
+-- Ref: [manuscript] def:m-mu-over-m-e-calibration
+noncomputable def q_zero : ℝ :=
+  1.10997858275138080759166909561076887987449912187357763605672
 
 /-- `q_zero > 1`: the substrate is in the analytic-continuation
     regime where every `[k]_q` is positive and non-vanishing. -/
 theorem q_zero_gt_one : q_zero > 1 := by
-  show (1.10998 : ℝ) > 1
+  unfold q_zero
   norm_num
 
 /-- `q_zero > 0`: positivity of the substrate parameter. -/
 theorem q_zero_pos : q_zero > 0 := by
-  show (1.10998 : ℝ) > 0
+  unfold q_zero
   norm_num
 
 /-- `q_zero ≠ 0`: substrate parameter is non-zero. -/
