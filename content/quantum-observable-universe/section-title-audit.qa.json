@@ -311,7 +311,7 @@
       }
     },
     "appendix-surreals": {
-      "manifest_hash": "c5cfa0741f44",
+      "manifest_hash": "281308b1c23b",
       "stale_mode": "thorough",
       "machine": {
         "title_defects": [],
@@ -321,18 +321,6 @@
             "label": "sec:surreal-motivation",
             "title": "Motivation and scope",
             "detail": "1 blocks outside the 3–18 section band (P3)"
-          },
-          {
-            "kind": "over-weight",
-            "label": "sec:surreal-survives-breaks",
-            "title": "What survives and what breaks",
-            "detail": "24 blocks > 2.5× peer mean (6.0) — split into subsections (P4)"
-          },
-          {
-            "kind": "band",
-            "label": "sec:surreal-survives-breaks",
-            "title": "What survives and what breaks",
-            "detail": "24 blocks outside the 3–18 section band (P3)"
           },
           {
             "kind": "band",
@@ -372,6 +360,30 @@
         "sec:surreal-survives-breaks": {
           "title": "What survives and what breaks",
           "depth": 1,
+          "result": "pending",
+          "reviewer": null,
+          "reviewed_hash": null,
+          "stale_mode": "thorough"
+        },
+        "sec:surreal-transcendental-discharge": {
+          "title": "Transcendental accounting and discharge",
+          "depth": 2,
+          "result": "pending",
+          "reviewer": null,
+          "reviewed_hash": null,
+          "stale_mode": "thorough"
+        },
+        "sec:surreal-b1-theorem-rows": {
+          "title": "The B1 theorem rows",
+          "depth": 2,
+          "result": "pending",
+          "reviewer": null,
+          "reviewed_hash": null,
+          "stale_mode": "thorough"
+        },
+        "sec:surreal-b1-status": {
+          "title": "B1 status synthesis",
+          "depth": 2,
           "result": "pending",
           "reviewer": null,
           "reviewed_hash": null,
