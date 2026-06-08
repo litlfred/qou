@@ -113,7 +113,11 @@ The three QOU volumes used in `SingleVolumeIrrational` /
     Exact: 3 · Cl₂(π/3) ≈ 2.029883212819307250042408. -/
 noncomputable def vol_4_1 : ℝ := figureEightEntry.volume.value
 
-/-- Hyperbolic volume of the three-twist knot 5₂ (down quark).
+/-- Hyperbolic volume of the three-twist knot 5₂ (strange quark
+    per `folio-assistant/computations/substrate/knot-volumes.witness.json`
+    — NOT the down quark, which is an unknot with negative crossing
+    orientation per `QOU.Archimedean.DownQuark`).
+
     Numerical: `2.82812208833410` (15 dps, from
     `folio-assistant/computations/hyperbolic-volumes.witness.json`
     field `vol_5_2_decimal_15`, cross-checked against
@@ -122,6 +126,12 @@ noncomputable def vol_4_1 : ℝ := figureEightEntry.volume.value
     **Drift fix 2026-06-08**: previous literal `2.82812208832975`
     differed from the witness at digits 11+ (4.35e-12 absolute drift).
     Bumped to match the witness — both files now agree.
+
+    **Particle attribution fix 2026-06-08 (Copilot PR #1981)**:
+    previous docstring labeled 5₂ as "down quark", which conflated it
+    with the unknot-negative-crossing realisation of the down quark.
+    The strange quark is the correct attribution for 5₂ per the
+    knot-volumes witness.
 
     Pending: add threeTwistEntry to KnotRegistry and extract from
     there for full provenance; precision beyond 15 dps requires

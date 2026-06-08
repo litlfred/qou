@@ -40,7 +40,8 @@ namespace QOU.Mathlib.ArchimedeanRealization
     `QOU.HeckeAlgebra.QSubstrate.q_0` and
     `QOU.LiftingDescent.H3BraneTowerScaffold.q0` (both 50 dps, both
     landed in PR #1978). -/
--- Ref: q-pinning-50-digit.witness.json (proton-anchor re-pin, 2026-05-28)
+-- Ref: full-twist-delta-n2-verification.witness.json::q_0 (the literal source — proton-anchor re-pin, 2026-05-28)
+-- Ref: q-pinning-50-digit.witness.json (companion witness with the same q_0; canonical record of the pin)
 -- Ref: [manuscript] def:m-mu-over-m-e-calibration
 noncomputable def q_zero : ℝ :=
   1.10997858275138080759166909561076887987449912187357763605672
