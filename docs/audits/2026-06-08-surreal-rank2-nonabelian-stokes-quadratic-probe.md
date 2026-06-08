@@ -164,21 +164,64 @@ formalize-first this probe is discharged as a **rigorous symbolic argument
 first**, Lean `class` stub to follow when the cache-restore path
 (`lake-cache/qou-*`) is available.
 
-## Verdict and next step
+## RESOLUTION — the finite-page check, settled (2026-06-08, same day)
 
-- **Surreals are confirmed removable for everything tested so far** (Kashaev,
-  NS, all existing millennium "surreal bounds"): single-axis, rank-1,
-  `std`-collapsible to ordinary real asymptotics.
-- **The owner's quadratic-term lead is the one place that could flip this**: the
-  non-abelian-Stokes / categorical-action gauge term, compounded up the GS
-  tower, produces `ε^ℓ → ε^ω`, an infinite-value-group object the `ε`-adic-`ℝ`
-  line cannot express.
-- **Decision reduces to one finite check:** does the GS spectral sequence /
-  the Kummer/​motivic-perpetual obstruction degenerate at a **finite page**
-  (⇒ rank-1, purge) or carry a **perpetual `ε^ω` tail** (⇒ surreal-necessary,
-  keep)? That is the next probe — `motivic-perpetual-obstruction` +
-  `spectral-sequence-collapse` are the files to settle it, no wide search
-  required.
+The decisive check is answered by two existing blocks. They live in **two
+different towers**, and necessity resolves cleanly.
+
+### Tower 1 — mass / Markov-trace / GS filtration → collapses at **E₁** (finite)
+
+[`prop:spectral-sequence-collapse`](../../content/quantum-observable-universe/mass-theory/spectral-sequence-collapse.md):
+for semisimple `H_n(R,q)` (generic `q`), `HH^k(A,A)=0 ∀k≥1` (Whitehead), so the
+GB-filtration spectral sequence **collapses at E₁** — *"no higher-page
+differentials `d_r` (`r≥1`) need ever be computed — they all vanish"* — with
+`E_∞ = Z(A) = ⊕_{λ⊢n} R·e_λ`, a **finite** sum over partitions of `n`.
+
+⇒ The mass-side quadratic tower is **finite-order in `ε`**. The `ε^ℓ → ε^ω`
+worry is **refuted for production**: the event count grows along the *reduction
+trajectory*, but the graded object the trace sees collapses at E₁ to the finite
+centre. **Rank-1, surreal-free. No mass prediction can require surreals.**
+
+### Tower 2 — lifting / Yekutieli–Kummer / volume → genuinely **perpetual** (infinite)
+
+[`conj:motivic-perpetual-obstruction`](../../content/quantum-observable-universe/lifting-and-descent/motivic-perpetual-obstruction.md)
++ [`prop:cs-evaluation-faithfulness`](../../content/quantum-observable-universe/predicted-spectra/cs-evaluation-faithfulness.md):
+`κ_n ≠ 0` at **every** level `n ∤ χ(A)`, and `Vol(K) = Σ_n Φ_n(K)` with every
+grade `Φ_n ≠ 0`. **This is the genuine `ε^ω` candidate** — an all-orders,
+infinite-grading obstruction the `ε`-adic `ℝ` line cannot package finitely.
+
+**But the value is real.** `cs-evaluation-faithfulness` records that **Mostow
+rigidity ensures `Σ_n Φ_n` converges** to the real `Vol(K)`. So the infinitude
+lives in the **grading** (infinitely many non-zero `ℕ`-indexed grades), **not in
+the value** (a convergent real). The transcendence content — *"no finite
+polynomial absorbs infinitely many independent contributions"* — is a statement
+over `ℝ` + an `ℕ`-grading, not an assertion that needs an `ε^ω` algebraic element.
+
+### Verdict — language, not essential (but narrowing-worthwhile)
+
+| Tower | Structure | Rank | Surreal status |
+|---|---|---|---|
+| Mass / Markov / GS | collapses at **E₁** (finite) | 1 | not needed (trivially) |
+| Lifting / volume | perpetual `κ_n≠0 ∀n`, **Mostow-convergent** | ∞-graded, real value | **language** — `ε^ω` is the clean *bookkeeping* of "perpetual", not a forced element |
+
+**No confirmed surreal *necessity*.** The one genuine infinite structure narrows
+*beautifully* to a single `ε^ω` / `No` statement — *"the obstruction is the
+depth-`ω` tail"* replaces *"`κ_n ≠ 0` for all `n`"* — which is exactly the
+**worthwhile narrowing** the owner's criterion rewards. Mostow convergence means
+nothing *forces* an `ε^ω` element that `ℝ` + `ℕ`-grading cannot already express.
+
+### Consequence for keep/purge
+
+- **Keep — on narrowing value, not necessity.** Surreals are the *language* that
+  collapses the perpetual-obstruction tower (and the depth filtration) to clean
+  graded statements; they are not load-bearing for any theorem (E₁ collapse +
+  Mostow convergence remove the necessity).
+- **Purge would lose no theorem**, but would lose the narrowing language for the
+  transcendence program. Per the owner's criterion, **keep + re-scope as the
+  ledger** is the right call.
+- The `ε^ω`-as-perpetual-obstruction identity is itself **the cleanest new
+  ledger row** surreals buy: state it as a `remark` interpreting
+  `conj:motivic-perpetual-obstruction` (depth-`ω` tail = the all-levels `κ_n`).
 
 ## Cross-references
 
@@ -186,4 +229,6 @@ first**, Lean `class` stub to follow when the cache-restore path
 - Quadratic events: [`2026-05-05-piece1-gb-nf-quadratic-events.md`](2026-05-05-piece1-gb-nf-quadratic-events.md)
 - Non-abelian Stokes wiring: [`2026-06-01-qhyperbolic-nonabelian-stokes-wiring.md`](2026-06-01-qhyperbolic-nonabelian-stokes-wiring.md)
 - Canonical action: [`qou-canonical-action.md`](../../content/quantum-observable-universe/quantum-observable-universes/qou-canonical-action.md)
+- E₁ collapse (mass tower finite): [`prop:spectral-sequence-collapse`](../../content/quantum-observable-universe/mass-theory/spectral-sequence-collapse.md)
+- Perpetual obstruction (volume tower infinite): [`conj:motivic-perpetual-obstruction`](../../content/quantum-observable-universe/lifting-and-descent/motivic-perpetual-obstruction.md), [`prop:cs-evaluation-faithfulness`](../../content/quantum-observable-universe/predicted-spectra/cs-evaluation-faithfulness.md)
 - Surreal exp-log literature: Kuhlmann–Matusiński (arXiv:1203.4538, in `uploads/`); Berarducci–Mantova (arXiv:1503.00315).
