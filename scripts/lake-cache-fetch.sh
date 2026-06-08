@@ -121,7 +121,7 @@ if [ -n "$has_lake_dir" ]; then
   echo "lake-cache-fetch: extracting .lake/ tree via git archive"
   mkdir -p "$TMP/extract"
   if ! git archive --format=tar FETCH_HEAD -- .lake \
-        | tar --no-absolute-names -xC "$TMP/extract" 2>&1 | tail -3; then
+        | tar -xC "$TMP/extract" 2>&1 | tail -3; then
     echo "lake-cache-fetch: ERROR — git archive extraction failed" >&2
     exit 1
   fi
@@ -200,7 +200,7 @@ fi
 # above). Stage into a temp dir then rename so partial extraction
 # can't leave a half-populated .lake/.
 mkdir -p "$TMP/extract"
-if ! tar --no-absolute-names -xzf "$TMP/lake-oleans.tgz" -C "$TMP/extract" 2>&1 | tail -5; then
+if ! tar -xzf "$TMP/lake-oleans.tgz" -C "$TMP/extract" 2>&1 | tail -5; then
   echo "lake-cache-fetch: ERROR — tar extraction failed" >&2
   exit 1
 fi
