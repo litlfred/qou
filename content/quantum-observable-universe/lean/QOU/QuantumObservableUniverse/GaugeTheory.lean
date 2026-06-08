@@ -226,7 +226,10 @@ theorem variational_transport {C : Type u} [CategoryTheory.Category.{v} C]
     (vd : CategoricalVariationalData C fh ca)
     [HasCategoricalEOM fh ca vd] :
     ca.matter = 0 :=
-  HasCategoricalEOM.transport
+  -- `vd` must be supplied explicitly: unlike `einstein`/`yang_mills`, the
+  -- goal `ca.matter = 0` does not mention `vd`, so it cannot be inferred
+  -- from the expected type (v4.24.0 elaboration).
+  HasCategoricalEOM.transport (vd := vd)
 
 /-- **Observation** as a categorical endomorphism `O : A → A`.
     LaTeX: `\label{def:observation}` -/
