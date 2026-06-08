@@ -44,7 +44,6 @@ structure SDPState (_n : ℕ) (_q : ℝ) where
   strands : ℕ
   /-- Substrate parameter `q` at which the SDP is evaluated. -/
   qVal : ℝ
-  deriving Repr
 
 /-- The canonical confinement-SDP optimum state `ψ_n(q)`.
     Concrete model: a record pinning `strands := n`, `qVal := q`
@@ -97,7 +96,7 @@ lemma sum_ge_length_of_all_pos
   induction l with
   | nil => simp
   | cons a as ih =>
-    have h_a : 1 ≤ a := h a (by exact List.mem_cons_self a as)
+    have h_a : 1 ≤ a := h a (by simp)
     have h_tail : ∀ k ∈ as, 1 ≤ k :=
       fun k hk => h k (List.mem_cons_of_mem _ hk)
     have h_as := ih h_tail
@@ -235,7 +234,7 @@ theorem empirical_of_prime
     waiting for the SDP machinery.
 -/
 -- Ref: [manuscript] conj:algebraic-primality-equals-empirical-at-q0
-theorem magicEqualsEmpirical_of_perNAxioms
+def magicEqualsEmpirical_of_perNAxioms
     {q : ℝ} (h_q : 1 < q)
     (h_in : ∀ n ∈ empiricalMagicLadder, IsKnownMagic n q)
     (h_out : ∀ n ∉ empiricalMagicLadder, IsKnownNotMagic n q) :
