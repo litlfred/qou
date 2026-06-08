@@ -1531,7 +1531,7 @@
       }
     },
     "mass-theory": {
-      "manifest_hash": "fb76fc2f1127",
+      "manifest_hash": "58841622329e",
       "stale_mode": "thorough",
       "machine": {
         "title_defects": [
@@ -1581,24 +1581,6 @@
         "structure_findings": [
           {
             "kind": "band",
-            "label": "sec:mass-algebraic-consolidated",
-            "title": "Algebraic face: transfer matrices, Skein mass, and Markov corrections",
-            "detail": "30 blocks outside the 3–18 section band (P3)"
-          },
-          {
-            "kind": "band",
-            "label": "sec:hoefsmit-convergence-magic-shells",
-            "title": "Hoefsmit convergence: magic-shell consequences",
-            "detail": "33 blocks outside the 3–18 section band (P3)"
-          },
-          {
-            "kind": "band",
-            "label": "sec:phi-q-markov-schur-weyl-foundations",
-            "title": "$\\\\varphi_q$ resummation, Markov trace, Schur-Weyl: foundations",
-            "detail": "24 blocks outside the 3–18 section band (P3)"
-          },
-          {
-            "kind": "band",
             "label": "sec:mass-application-orphan-reconnect",
             "title": "Reconnected orphan blocks (Phase 7)",
             "detail": "19 blocks outside the 3–18 section band (P3)"
@@ -1638,6 +1620,38 @@
           "reviewed_hash": null,
           "stale_mode": "thorough"
         },
+        "sec:mass-algebraic-transfer-skein": {
+          "title": "Transfer matrices and Skein mass",
+          "depth": 2,
+          "result": "pending",
+          "reviewer": null,
+          "reviewed_hash": null,
+          "stale_mode": "thorough"
+        },
+        "sec:mass-algebraic-markov-gram": {
+          "title": "Markov corrections and the Gram matrix",
+          "depth": 2,
+          "result": "pending",
+          "reviewer": null,
+          "reviewed_hash": null,
+          "stale_mode": "thorough"
+        },
+        "sec:mass-algebraic-qbeta-ladder": {
+          "title": "The $Q_\\beta$ precision ladder",
+          "depth": 2,
+          "result": "pending",
+          "reviewer": null,
+          "reviewed_hash": null,
+          "stale_mode": "thorough"
+        },
+        "sec:mass-algebraic-bifiltration-adelic": {
+          "title": "Bi-filtration and the adelic substrate",
+          "depth": 2,
+          "result": "pending",
+          "reviewer": null,
+          "reviewed_hash": null,
+          "stale_mode": "thorough"
+        },
         "sec:hoefsmit-convergence-construction": {
           "title": "Hoefsmit convergence: construction",
           "depth": 1,
@@ -1657,6 +1671,38 @@
         "sec:hoefsmit-convergence-magic-shells": {
           "title": "Hoefsmit convergence: magic-shell consequences",
           "depth": 1,
+          "result": "pending",
+          "reviewer": null,
+          "reviewed_hash": null,
+          "stale_mode": "thorough"
+        },
+        "sec:hoefsmit-he4-magic-a-binding": {
+          "title": "He-4 channel and magic-A binding",
+          "depth": 2,
+          "result": "pending",
+          "reviewer": null,
+          "reviewed_hash": null,
+          "stale_mode": "thorough"
+        },
+        "sec:hoefsmit-binding-genfun-closure": {
+          "title": "Binding generating function and closure",
+          "depth": 2,
+          "result": "pending",
+          "reviewer": null,
+          "reviewed_hash": null,
+          "stale_mode": "thorough"
+        },
+        "sec:hoefsmit-qdifference-prolongation": {
+          "title": "q-difference prolongation and periods",
+          "depth": 2,
+          "result": "pending",
+          "reviewer": null,
+          "reviewed_hash": null,
+          "stale_mode": "thorough"
+        },
+        "sec:hoefsmit-substrate-cohomology-calibration": {
+          "title": "Substrate cohomology calibration",
+          "depth": 2,
           "result": "pending",
           "reviewer": null,
           "reviewed_hash": null,
@@ -1737,6 +1783,30 @@
         "sec:phi-q-markov-schur-weyl-foundations": {
           "title": "$\\\\varphi_q$ resummation, Markov trace, Schur-Weyl: foundations",
           "depth": 1,
+          "result": "pending",
+          "reviewer": null,
+          "reviewed_hash": null,
+          "stale_mode": "thorough"
+        },
+        "sec:phi-q-markov-resummation": {
+          "title": "Markov trace resummation",
+          "depth": 2,
+          "result": "pending",
+          "reviewer": null,
+          "reviewed_hash": null,
+          "stale_mode": "thorough"
+        },
+        "sec:phi-q-lepton-mass-tower": {
+          "title": "The lepton mass tower",
+          "depth": 2,
+          "result": "pending",
+          "reviewer": null,
+          "reviewed_hash": null,
+          "stale_mode": "thorough"
+        },
+        "sec:phi-q-schur-weyl-positivity": {
+          "title": "Schur-Weyl decomposition and positivity",
+          "depth": 2,
           "result": "pending",
           "reviewer": null,
           "reviewed_hash": null,
