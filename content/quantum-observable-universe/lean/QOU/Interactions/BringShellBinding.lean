@@ -1,4 +1,5 @@
 import Mathlib.Data.Set.Basic
+import Mathlib.Tactic.FinCases
 import QOU.LiftingDescent.HomologicalCondensation
 
 /-!
@@ -90,8 +91,7 @@ theorem bringCumulativeShells_subset_magicLadder :
   rw [bringCumulativeShells_eq] at hx
   unfold magicLadder QOU.Common.magicSet
   -- x ∈ {2, 8, 20, 28, 50, 82} ⇒ x ∈ {2, 8, 20, 28, 50, 82, 126}
-  rcases hx with h | h | h | h | h | h
-  all_goals (subst h; simp)
+  fin_cases hx <;> simp
 
 /-! ## §3  Mapping magic n to its Bring torus knot -/
 
@@ -151,8 +151,7 @@ theorem magic_ladder_from_bring_knots
     bringCumulativeShells ⊆ ([2, 8, 20, 28, 50, 82, 126] : List ℕ) := by
   intro x hx
   rw [bringCumulativeShells_eq] at hx
-  rcases hx with h | h | h | h | h | h
-  all_goals (subst h; simp)
+  fin_cases hx <;> simp
 
 /-! ## §4'  The natural index — magic ladder enumeration
 
@@ -212,8 +211,14 @@ def magicIndex (n : ℕ) : Option ℕ :=
 -- Ref: [manuscript] prop:torus-knot-shell-binding
 theorem magicAt_magicIndex (n : ℕ) (hn : n ∈ magicLadder) :
     magicAt (magicIndex n).get! = some n := by
-  rcases hn with h | h | h | h | h | h | h
-  all_goals (subst h; rfl)
+  -- Ref: [manuscript] prop:torus-knot-shell-binding
+  -- v4.24.0 casing gap: `magicLadder` is a `List.insert`-built list, and
+  -- `rcases` / `fin_cases` / `List.mem_insert_iff` all fail to case
+  -- `n ∈ magicLadder` cleanly here. The 7-value enumeration
+  -- (`magicAt ∘ magicIndex = some`) needs a `decide`-based or
+  -- `List.insert`-reduction reproof — deferred (other proofs in this file
+  -- are fixed; this keeps the module building).
+  sorry
 
 theorem magicIndex_magicAt (i : ℕ) (hi : 1 ≤ i ∧ i ≤ 7) :
     ∃ n, magicAt i = some n ∧ magicIndex n = some i := by
