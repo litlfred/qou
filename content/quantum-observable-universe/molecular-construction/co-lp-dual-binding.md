@@ -51,21 +51,29 @@ bonding sites plus one dative pair, so $k^\star = 3$.
 
 The orthogonal-channel LP $\max_x \sum_i b_i x_i$ subject to
 $\sum_i x_i \le \min(N_{\dim}, V)$ is **computed** for the diatomic
-series (witness `co-bond-order-active-set`): it returns active-set
-cardinalities $(\mathrm{O_2}, \mathrm{N_2}, \mathrm{CO}) = (2, 3, 3)$,
-matching the observed bond orders.  The **non-circular** content is the
-ceiling $N_{\dim} = 3$: physical space $\mathbb{R}^3$ admits at most
-three mutually-orthogonal directions (one axial $\sigma$, two transverse
-$\pi$), so **no $p$-block bond exceeds order three** — the active set is
-capped by the spatial dimension, not a fitted parameter.
+series (witness `co-bond-order-active-set`), with the valence budget $V$
+**derived ab initio** from the octet rule ($V_A = 10 - Z_A$ for
+second-row atoms: $\mathrm{C}=4$, $\mathrm{N}=3$, $\mathrm{O}=2$ — no
+longer an input).  The LP returns active-set cardinalities
+$(\mathrm{O_2}, \mathrm{N_2}, \mathrm{CO}) = (2, 3, 2)$.  For
+$\mathrm{O_2}$ and $\mathrm{N_2}$ this **equals the observed bond order
+with no input**.  For $\mathrm{CO}$ the covalent active-set is $2$; the
+observed triple bond includes one **dative** bond (an oxygen lone pair
+donated to carbon), which is precisely why $\mathrm{CO}$ is isoelectronic
+with $\mathrm{N_2}$ — the pure-covalent count correctly yields $2$, and
+the dative channel is a named addition, not a fitted $3$.  The
+**non-circular** ceiling is $N_{\dim} = 3$: physical space
+$\mathbb{R}^3$ admits at most three mutually-orthogonal directions (one
+axial $\sigma$, two transverse $\pi$), so **no $p$-block bond exceeds
+order three** — the active set is capped by the spatial dimension, not a
+fitted parameter.
 
-*Two honest limitations remain.* The per-molecule value $\min(V, 3)$
-still takes the valence budget $V$ as input (valence chemistry), so the
-computation confirms the structural identity bond order $=$ active set,
-not an ab-initio prediction of $V$.  And the channels are modelled as
-equal independent copies, which overbinds the total energy ($3\,b_\sigma$
-versus the observed $D_0$) pending a lateral-$\pi$ overlap reduction:
-the **cardinality** result is robust, the **energy** is not.
+*Two honest limitations remain.* (i) The covalent valence is now derived
+from $Z$ (octet rule), but $\mathrm{CO}$'s dative third bond is not yet
+derived — it is added as a named channel. (ii) The channels are modelled
+as equal independent copies, which overbinds the total energy
+($3\,b_\sigma$ versus the observed $D_0$) pending a lateral-$\pi$ overlap
+reduction: the **cardinality** result is robust, the **energy** is not.
 
 The observed dissociation energy
 $D_0(CO) \approx :val[observed_D0_CO_eV]{precision=4, witness=folio-assistant/computations/co-bond-order-active-set.witness.json}$
