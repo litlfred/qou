@@ -2248,15 +2248,9 @@
       }
     },
     "particle-interactions": {
-      "manifest_hash": "a1b97da24381",
+      "manifest_hash": "a65c02dd4cd3",
       "machine": {
         "title_defects": [
-          {
-            "kind": "split-artifact",
-            "label": "sec:confinement-selection-confinement-sdp-vs",
-            "title": "Confinement operator selection : vs",
-            "detail": "trailing \" : vs\" (known auto-split tag) — meaningless out of context"
-          },
           {
             "kind": "split-artifact",
             "label": "sec:transfer-beta-decay-q-beta-spectral",
@@ -2293,9 +2287,16 @@
           "reviewer": null,
           "reviewed_hash": null
         },
+        "sec:confinement-selection-lp": {
+          "title": "Operator selection by LP",
+          "depth": 2,
+          "result": "pending",
+          "reviewer": null,
+          "reviewed_hash": null
+        },
         "sec:confinement-selection-confinement-sdp-vs": {
-          "title": "Confinement operator selection : vs",
-          "depth": 1,
+          "title": "Which constraints survive",
+          "depth": 2,
           "result": "pending",
           "reviewer": null,
           "reviewed_hash": null
