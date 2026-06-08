@@ -1,0 +1,55 @@
+{
+  "criterion": "voice-section-title-coherence",
+  "paper": "visualizer",
+  "chapters": {
+    "overview": {
+      "manifest_hash": "17c29b7fe8c8",
+      "machine": {
+        "title_defects": [],
+        "structure_findings": [
+          {
+            "kind": "band",
+            "label": "sec:viz-intro",
+            "title": "Introduction",
+            "detail": "1 blocks outside the 3–18 section band (P3)"
+          },
+          {
+            "kind": "band",
+            "label": "sec:viz-brings",
+            "title": "Bring's Surface",
+            "detail": "1 blocks outside the 3–18 section band (P3)"
+          },
+          {
+            "kind": "band",
+            "label": "sec:viz-knots",
+            "title": "Knot Complements",
+            "detail": "1 blocks outside the 3–18 section band (P3)"
+          }
+        ]
+      },
+      "agent": {
+        "sec:viz-intro": {
+          "title": "Introduction",
+          "depth": 1,
+          "result": "pending",
+          "reviewer": null,
+          "reviewed_hash": null
+        },
+        "sec:viz-brings": {
+          "title": "Bring's Surface",
+          "depth": 1,
+          "result": "pending",
+          "reviewer": null,
+          "reviewed_hash": null
+        },
+        "sec:viz-knots": {
+          "title": "Knot Complements",
+          "depth": 1,
+          "result": "pending",
+          "reviewer": null,
+          "reviewed_hash": null
+        }
+      }
+    }
+  }
+}

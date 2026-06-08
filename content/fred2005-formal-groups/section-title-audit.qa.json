@@ -1,0 +1,101 @@
+{
+  "criterion": "voice-section-title-coherence",
+  "paper": "fred2005-formal-groups",
+  "chapters": {
+    "formal-groups-chapter": {
+      "manifest_hash": "07fd5520ea6a",
+      "machine": {
+        "title_defects": [],
+        "structure_findings": [
+          {
+            "kind": "band",
+            "label": "sec:commutative-formal-group",
+            "title": "Commutative formal group",
+            "detail": "1 blocks outside the 3–18 section band (P3)"
+          },
+          {
+            "kind": "band",
+            "label": "sec:skewed-poisson",
+            "title": "Skewed-Poisson structure",
+            "detail": "1 blocks outside the 3–18 section band (P3)"
+          },
+          {
+            "kind": "band",
+            "label": "sec:gs-deformation",
+            "title": "Gröbner–Shirshov deformation",
+            "detail": "2 blocks outside the 3–18 section band (P3)"
+          },
+          {
+            "kind": "band",
+            "label": "sec:strong-multiplicativity",
+            "title": "Strong multiplicativity",
+            "detail": "1 blocks outside the 3–18 section band (P3)"
+          },
+          {
+            "kind": "band",
+            "label": "sec:witt-vector-lift",
+            "title": "Witt vector lift",
+            "detail": "2 blocks outside the 3–18 section band (P3)"
+          },
+          {
+            "kind": "band",
+            "label": "sec:unit-root-f-crystal",
+            "title": "Unit-root F-crystal",
+            "detail": "2 blocks outside the 3–18 section band (P3)"
+          }
+        ]
+      },
+      "agent": {
+        "sec:commutative-formal-group": {
+          "title": "Commutative formal group",
+          "depth": 1,
+          "result": "pending",
+          "reviewer": null,
+          "reviewed_hash": null
+        },
+        "sec:skewed-poisson": {
+          "title": "Skewed-Poisson structure",
+          "depth": 1,
+          "result": "pending",
+          "reviewer": null,
+          "reviewed_hash": null
+        },
+        "sec:integration-theorem": {
+          "title": "Integration theorem",
+          "depth": 1,
+          "result": "pending",
+          "reviewer": null,
+          "reviewed_hash": null
+        },
+        "sec:gs-deformation": {
+          "title": "Gröbner–Shirshov deformation",
+          "depth": 1,
+          "result": "pending",
+          "reviewer": null,
+          "reviewed_hash": null
+        },
+        "sec:strong-multiplicativity": {
+          "title": "Strong multiplicativity",
+          "depth": 1,
+          "result": "pending",
+          "reviewer": null,
+          "reviewed_hash": null
+        },
+        "sec:witt-vector-lift": {
+          "title": "Witt vector lift",
+          "depth": 1,
+          "result": "pending",
+          "reviewer": null,
+          "reviewed_hash": null
+        },
+        "sec:unit-root-f-crystal": {
+          "title": "Unit-root F-crystal",
+          "depth": 1,
+          "result": "pending",
+          "reviewer": null,
+          "reviewed_hash": null
+        }
+      }
+    }
+  }
+}
