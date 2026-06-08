@@ -1,4 +1,4 @@
-import Mathlib.Data.Real.Basic
+import Mathlib.Data.Nat.Basic
 
 /-!
 # Placement of knot-indexed convolutions in the bi-filtration grid
