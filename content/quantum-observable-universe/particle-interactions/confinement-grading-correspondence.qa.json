@@ -1960,7 +1960,29 @@
           "worst_span": 0
         }
       }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "b831e974061a",
+          "ts": "d8fd4ed852ba",
+          "lean": "5071c3e5afac"
+        },
+        "result": "n/a",
+        "severity": "minor",
+        "evidence": "confinement-grading-correspondence.md:1 -- not in agent rubric",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:30:13.016Z",
+        "reviewed_sha": "3bf0aebc4a4cc009f587fc32327680090ea0bbe8",
+        "notes": "proof-rater/proof-statement criteria not in agent rubric"
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-08T09:30:13.016Z"
 }

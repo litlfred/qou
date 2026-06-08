@@ -2668,7 +2668,95 @@
           "worst_span": 0
         }
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "df718a62669a",
+          "ts": "d91e9d7955e8",
+          "lean": "2264f91668ab"
+        },
+        "result": "n/a",
+        "severity": "minor",
+        "evidence": "beta-stability.md:1 -- not in agent rubric",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:22:43.240Z",
+        "reviewed_sha": "117313f3e350b37fe79792bd2e98c3150b2c0125",
+        "notes": "proof-rater/proof-statement criteria not in agent rubric"
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "df718a62669a",
+          "ts": "d91e9d7955e8",
+          "lean": "2264f91668ab"
+        },
+        "result": "n/a",
+        "severity": "minor",
+        "evidence": "beta-stability.md:1 -- not in agent rubric",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:22:43.272Z",
+        "reviewed_sha": "117313f3e350b37fe79792bd2e98c3150b2c0125",
+        "notes": "proof-rater/proof-statement criteria not in agent rubric"
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "df718a62669a",
+          "ts": "d91e9d7955e8",
+          "lean": "2264f91668ab"
+        },
+        "result": "n/a",
+        "severity": "minor",
+        "evidence": "beta-stability.md:1 -- not in agent rubric",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:22:43.302Z",
+        "reviewed_sha": "117313f3e350b37fe79792bd2e98c3150b2c0125",
+        "notes": "proof-rater/proof-statement criteria not in agent rubric"
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "df718a62669a",
+          "ts": "d91e9d7955e8",
+          "lean": "2264f91668ab"
+        },
+        "result": "n/a",
+        "severity": "minor",
+        "evidence": "beta-stability.md:1 -- not in agent rubric",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:22:43.334Z",
+        "reviewed_sha": "117313f3e350b37fe79792bd2e98c3150b2c0125",
+        "notes": "proof-rater/proof-statement criteria not in agent rubric"
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-08T09:22:43.334Z"
 }

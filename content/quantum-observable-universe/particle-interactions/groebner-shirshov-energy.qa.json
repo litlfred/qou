@@ -2662,7 +2662,95 @@
           "worst_span": 0
         }
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "86d931e6f0ba",
+          "ts": "2469a091c744",
+          "lean": "fd32f78a9a90"
+        },
+        "result": "n/a",
+        "severity": "minor",
+        "evidence": "groebner-shirshov-energy.md:1 -- not in agent rubric",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:30:10.410Z",
+        "reviewed_sha": "d4f601785afed4808752df69ea0abf69ca50f3e9",
+        "notes": "proof-rater/proof-statement criteria not in agent rubric"
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "86d931e6f0ba",
+          "ts": "2469a091c744",
+          "lean": "fd32f78a9a90"
+        },
+        "result": "n/a",
+        "severity": "minor",
+        "evidence": "groebner-shirshov-energy.md:1 -- not in agent rubric",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:30:10.565Z",
+        "reviewed_sha": "f112b48a44ab22e41236dc4ea93c557c3251915f",
+        "notes": "proof-rater/proof-statement criteria not in agent rubric"
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "86d931e6f0ba",
+          "ts": "2469a091c744",
+          "lean": "fd32f78a9a90"
+        },
+        "result": "n/a",
+        "severity": "minor",
+        "evidence": "groebner-shirshov-energy.md:1 -- not in agent rubric",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:30:10.597Z",
+        "reviewed_sha": "f112b48a44ab22e41236dc4ea93c557c3251915f",
+        "notes": "proof-rater/proof-statement criteria not in agent rubric"
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "86d931e6f0ba",
+          "ts": "2469a091c744",
+          "lean": "fd32f78a9a90"
+        },
+        "result": "n/a",
+        "severity": "minor",
+        "evidence": "groebner-shirshov-energy.md:1 -- not in agent rubric",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:30:10.630Z",
+        "reviewed_sha": "f112b48a44ab22e41236dc4ea93c557c3251915f",
+        "notes": "proof-rater/proof-statement criteria not in agent rubric"
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-08T09:30:10.630Z"
 }
