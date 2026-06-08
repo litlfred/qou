@@ -394,6 +394,77 @@ export function checkWallSide(
   return { result: hits.length > 0 ? "fail" : "pass", hits };
 }
 
+// ── wall-base-ring-minimal ──────────────────────────────────────
+
+/**
+ * Field markers signalling a construction stated over a FIELD where a
+ * division-free restatement over the minimal base ring ℤ[q,q⁻¹]
+ * (`LaurentPolynomial ℤ`) / a generic `CommRing` may be possible
+ * (CLAUDE.md §7c base-ring convention; the `R[h]` multiplicative-relation
+ * pattern — e.g. Borromean `IsBorromeanMarkovTrace h t := (h²+4)·t = num`,
+ * or α_EM as `α·[9]_q·[10]_q = q⁻¹` rather than `q⁻¹/([9]_q·[10]_q)`).
+ *
+ * `⁻¹` and `/` are intentionally EXCLUDED: a `Units` inverse `↑q⁻¹` over a
+ * `CommRing` is the *target* division-free pattern, not a violation.
+ */
+const FIELD_MARKER_RE = /\b(?:Field|DivisionRing|field_simp)\b|ℚ/;
+/** Ring-element inverse `q⁻¹` (needs `Inv`/`Field`). A `Units` coercion
+ *  `↑q⁻¹` over a `CommRing` is the *target* division-free pattern and is
+ *  excluded by the `↑`/`Rˣ`/`Units` guard at the call site. */
+const RING_INV_RE = /⁻¹/;
+
+/**
+ * `wall-base-ring-minimal` — advisory (warn). Flags ALGEBRAIC-side Lean
+ * (no archimedean ℝ markers) carrying field structure (`Field`, `ℚ`,
+ * `DivisionRing`, `field_simp`) that may be restatable division-free over
+ * ℤ[q,q⁻¹] / `CommRing`. Archimedean-side blocks PASS (a field / ℝ is
+ * legitimate post-τ). The reviewer adjudicates whether a field is essential
+ * (an inverse not realizable as a unit, archimedean evaluation) or whether
+ * the statement is a Laurent identity that should move to the base ring.
+ */
+export function checkBaseRingMinimal(
+  leanPath: string | undefined,
+): CheckerResult {
+  if (!leanPath || !existsSync(leanPath)) {
+    return { result: "pass", hits: [] };
+  }
+  const leanSrc = readFileSync(leanPath, "utf-8");
+  const stripped = leanSrc
+    .replace(/\/-[\s\S]*?-\/|--.*$/gm, "")
+    .replace(/^\s*import\s+[^\n]*$/gm, "");
+  // Archimedean side: a field / ℝ / division is legitimate there.
+  if (ARCHIMEDEAN_LEAN_RE.test(stripped)) {
+    return { result: "pass", hits: [] };
+  }
+  const hits: CheckerHit[] = [];
+  // Blank out block comments (preserving line numbers) so docstring math
+  // such as `α_EM = q⁻¹/(...)` does not false-flag.
+  const codeOnly = leanSrc.replace(/\/-[\s\S]*?-\//g, (m) =>
+    m.replace(/[^\n]/g, " "),
+  );
+  codeOnly.split("\n").forEach((line, i) => {
+    if (/^\s*import\s/.test(line)) return;
+    const code = line.replace(/--.*$/, "");
+    const fieldHit = FIELD_MARKER_RE.test(code);
+    // ring-element inverse `q⁻¹` (needs Inv/Field), but NOT a Units
+    // coercion `↑q⁻¹` over a CommRing — that is the target pattern.
+    const ringInvHit = RING_INV_RE.test(code) && !/↑|Rˣ|Units/.test(code);
+    if (fieldHit || ringInvHit) {
+      hits.push({
+        file: leanPath,
+        line: i + 1,
+        text:
+          "Algebraic-side field/inverse marker (`Field`/`ℚ`/`DivisionRing`/" +
+          "`field_simp`/ring-`⁻¹`) — candidate for a division-free " +
+          "restatement over ℤ[q,q⁻¹] (`LaurentPolynomial ℤ`) / `CommRing` per " +
+          "§7c + the R[h] pattern. Adjudicate: is a field essential, or is " +
+          "this a Laurent identity?",
+      });
+    }
+  });
+  return { result: hits.length > 0 ? "warn" : "pass", hits };
+}
+
 // ── voice-ai-slop ───────────────────────────────────────────────
 
 /**
@@ -805,6 +876,7 @@ export const AUTOMATED_CHECKERS: Record<
   "framework-canonical": (p) =>
     p.md ? checkFrameworkCanonical(p.md) : { result: "pass", hits: [] },
   "wall-side-correct": (p) => checkWallSide(p.md, p.lean),
+  "wall-base-ring-minimal": (p) => checkBaseRingMinimal(p.lean),
   // Extended checkers for the non-voice integration axes
   // (proof, canonical, compute, detangler, bibliography). The
   // bodies live in `qa-checkers-extended.ts`; the spread below

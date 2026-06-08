@@ -267,6 +267,28 @@ const WALL: QaCriterionDefinition[] = [
     automated: true,
   },
   {
+    id: "wall-base-ring-minimal",
+    domain: "wall",
+    description:
+      "Advisory (§7c base-ring minimality). Flags **algebraic-side** Lean " +
+      "(no archimedean ℝ markers) carrying FIELD structure — `[Field R]`, " +
+      "`ℚ`, `DivisionRing`, `field_simp` — where the construction is a " +
+      "q-deformed / Laurent object that could be restated DIVISION-FREE over " +
+      "`ℤ[q, q⁻¹]` (`LaurentPolynomial ℤ`) or a generic `CommRing`, per the " +
+      "`R[h]` multiplicative-relation pattern (Borromean " +
+      "`IsBorromeanMarkovTrace h t := (h²+4)·t = num`; α_EM as " +
+      "`α·[9]_q·[10]_q = q⁻¹` rather than `q⁻¹/([9]_q·[10]_q)`). A `Units` " +
+      "inverse `↑q⁻¹` over a `CommRing` is the *target* pattern (not flagged). " +
+      "WARN when an algebraic block's `.lean` carries field markers; the " +
+      "reviewer adjudicates whether a field is essential (an inverse not " +
+      "realizable as a unit, or archimedean evaluation) or whether the " +
+      "statement is Laurent-rewritable. PASS if already over a CommRing / " +
+      "Laurent ring, archimedean, or the field is essential.",
+    default_severity: "minor",
+    depends_on: ["lean"],
+    automated: true,
+  },
+  {
     id: "wall-side-statement",
     domain: "wall",
     description:
