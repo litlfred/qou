@@ -79,7 +79,7 @@ axiom partitions_as_finset (n : ℕ) : Finset (Nat.Partition n)
 
 axiom JonesMarkovCoefficient_sum_eq_one :
     ∀ (n : ℕ) (q : ℝ),
-    (∑ λ ∈ partitions_as_finset n, JonesMarkovCoefficient λ q) = 1
+    (∑ lam ∈ partitions_as_finset n, JonesMarkovCoefficient lam q) = 1
 
 /-- **Hecke-algebra multiplication** axiom.  Pending the
     concrete categorical definition (Hoefsmit matrix
@@ -138,7 +138,7 @@ axiom markovTraceOnWedderburn :
 axiom wenzlBridge :
     ∀ {n : ℕ} (q : ℝ) (x : WedderburnDecomposition n),
     markovTraceOnWedderburn x =
-      ∑ λ ∈ partitions_as_finset n, JonesMarkovCoefficient λ q * (x λ).trace
+      ∑ lam ∈ partitions_as_finset n, JonesMarkovCoefficient lam q * (x lam).trace
 
 /-- **Trace of an additive sum** distributes.
 
