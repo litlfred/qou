@@ -76,6 +76,27 @@ $$
   \qquad Z_1(s_\star) = 1 .
 $$
 
+*(Notation: `γ` is the standard **Barbero–Immirzi parameter** — the symbol used in
+the DLM/Meissner papers. `γ_M` is **this note's shorthand** for its entropy-fixed
+value, the root of `Z_1(s_\star)=1`; it is **not** a symbol from those papers.)*
+
+**Can `γ_M` be related to `q₀`?** *Not at leading order — and that is itself
+informative.* The criticality `Z_1(s_\star)=1` is fixed by the `SU(2)` Casimir
+spectrum `√(j(j+1))` and the **plain** degeneracy `2j+1` — i.e. the `q→1` data —
+so `γ_M` is a *universal constant of the spin spectrum*, **independent of `q₀`**.
+A genuine `q₀`-dependence can only enter through the **`q`-deformation of the
+degeneracy**: replacing `2j+1 = \dim V_j` by the `q`-dimension
+`[2j+1]_{q_0} = \dim_{q_0} V_j` gives a `q`-deformed criticality
+
+$$
+  \sum_{j\in\frac12\mathbb{N}} [2j+1]_{q_0}\, e^{-2\pi\,\gamma(q_0)\sqrt{j(j+1)}} \;=\; 1,
+$$
+
+whose root `γ(q_0)` is a `q₀`-shifted **effective** Immirzi. *That* is the one
+place a `γ(q_0)` relation could live — a computable QOU refinement (the
+`q`-correction to Meissner), **not a known result**, and exactly where the
+`q`/surreal structure enters rather than the `q`-independent leading count.
+
 **The point:** the analytic Laplace/saddle becomes the algebraic statement *"the
 `q`-dimension partition function reaches `1`"* — equivalently a transfer-matrix
 **spectral-radius `= 1`** condition. The saddle is a pole. This is the
@@ -92,7 +113,9 @@ constraint selects the variant.)
   `γ_M`, same area law — with the analytic saddle replaced by a partition-function
   pole. A re-derivation, not a new physical claim.
 - **It is NOT** a from-scratch derivation of LQG, and **`γ_M ≠ q₀`**: the Immirzi
-  root `γ_M ≈ 0.274` and the QOU substrate `q₀ ≈ 1.11` are *different numbers*
+  root `γ_M` (`≈ 0.24`; conventions differ — projected/`U(1)` vs `SU(2)` counts
+  give ≈ 0.2375 vs ≈ 0.2740, check the paper's convention) and the QOU substrate
+  `q₀ ≈ 1.11` are *different numbers*
   that share a structural **role** (the single quantization-scale parameter), as
   the existing dictionary already states. QOU's distinctive content is that `q₀`
   is **derived** (substrate Reeb flow + Bring `χ = −6`), whereas `γ_M` is the
