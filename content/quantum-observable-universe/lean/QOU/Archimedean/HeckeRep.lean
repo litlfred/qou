@@ -282,30 +282,25 @@ noncomputable def signRep (n : ℕ) : HeckeRep n 1 where
     subalgebra (polynomials in a single matrix), any two transfer
     matrices commute.
 
-    DIAGNOSTIC: the per-entry `simp` + `ring` chain exposes
-    sub-expressions in `Matrix.cons` form whose simp normal form has
-    churned across Mathlib versions; `ring` does not auto-close the
-    matmul-expanded entries.  The cleanest robust fix is to factor
-    `transferMatrix a b = a • A + b • 1` (where `A := transferMatrix
-    1 0`) and conclude via `(a•A+b•1) * (c•A+d•1) = (c•A+d•1) *
-    (a•A+b•1)` purely from `A * 1 = A = 1 * A` and the bilinearity of
-    smul over matrix multiplication.  Sorry retained pending refactor
-    via the algebra-of-`A` route. -/
-/-- **External lemma**: transfer matrices commute via the factoring
-    `transferMatrix a b = a • A + b • 1`.  Recorded as an axiom
-    pending the per-entry simp/ring proof which currently exceeds
-    the heartbeat budget under the Matrix.cons simp normal form. -/
+    **Theorem** (was previously `transferMatrix_comm_axiom`).
+    Discharged 2026-06-07 via entry-by-entry expansion: `ext i j`
+    + `fin_cases` covers the 4 entries of the 2x2 matrix product,
+    each of which is a polynomial identity in `R_t = ℤ[t, t⁻¹]`
+    closable by `ring` after `Matrix.mul_apply` + `Fin.sum_univ_two`
+    + `Matrix.cons_val_*` unfold the `Matrix.cons` normal form. -/
 -- Ref: [manuscript] §transfer-matrix-commutativity
-axiom transferMatrix_comm_axiom :
-    ∀ (a b c d : R_t),
-      transferMatrix a b * transferMatrix c d =
-      transferMatrix c d * transferMatrix a b
-
--- Ref: [manuscript] §transfer-matrix-commutativity
+set_option maxHeartbeats 800000 in
 theorem transferMatrix_comm (a b c d : R_t) :
     transferMatrix a b * transferMatrix c d =
-    transferMatrix c d * transferMatrix a b :=
-  transferMatrix_comm_axiom a b c d
+    transferMatrix c d * transferMatrix a b := by
+  unfold transferMatrix
+  ext i j
+  fin_cases i <;> fin_cases j <;>
+    simp only [Matrix.mul_apply, Fin.sum_univ_two, Matrix.of_apply,
+               Matrix.cons_val', Matrix.cons_val_zero, Matrix.cons_val_one,
+               Matrix.empty_val', Matrix.cons_val_fin_one, Matrix.head_cons,
+               Matrix.head_fin_const] <;>
+    ring
 
 /-- Corollary: the product of any finite list of transfer matrices
     is independent of the order (for the same multiset of factors). -/
