@@ -26,7 +26,7 @@ source**. This skill manages that status and drives unreviewed references to
 
 - Read `references.review.json`. Any `references.ts` id whose effective status is
   not `validated` is **flagged** (absent ⇒ `unreviewed` by default).
-- An entry is **stale** when its `entryHash` (12-char SHA-256 of the
+- An entry is **stale** when its `entryHash` (12-char SHA-256 *prefix* of the
   `references.ts` entry) drifts — treat as `unreviewed`.
 - (Phase 1: status model + this audit. The automated check + `entryHash`
   computation land as `content/pipeline/validate-references-human-review.ts`,
