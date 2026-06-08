@@ -594,7 +594,7 @@
       }
     },
     "braids-and-knots": {
-      "manifest_hash": "5bb651de2d8d",
+      "manifest_hash": "e1681a6d0d92",
       "stale_mode": "thorough",
       "machine": {
         "title_defects": [
@@ -611,18 +611,6 @@
             "label": "sec:path-integrals-intro",
             "title": "Introduction",
             "detail": "1 blocks outside the 3–18 section band (P3)"
-          },
-          {
-            "kind": "over-weight",
-            "label": "sec:categorical-braiding-hecke-eigenbasis",
-            "title": "Categorical braiding: Hecke quotient and knot eigenbasis",
-            "detail": "27 blocks > 2.5× peer mean (7.8) — split into subsections (P4)"
-          },
-          {
-            "kind": "band",
-            "label": "sec:categorical-braiding-hecke-eigenbasis",
-            "title": "Categorical braiding: Hecke quotient and knot eigenbasis",
-            "detail": "27 blocks outside the 3–18 section band (P3)"
           }
         ]
       },
@@ -646,6 +634,30 @@
         "sec:categorical-braiding-hecke-eigenbasis": {
           "title": "Categorical braiding: Hecke quotient and knot eigenbasis",
           "depth": 1,
+          "result": "pending",
+          "reviewer": null,
+          "reviewed_hash": null,
+          "stale_mode": "thorough"
+        },
+        "sec:categorical-braiding-hecke-quotient": {
+          "title": "The Hecke quotient",
+          "depth": 2,
+          "result": "pending",
+          "reviewer": null,
+          "reviewed_hash": null,
+          "stale_mode": "thorough"
+        },
+        "sec:categorical-braiding-markov-trace-nf": {
+          "title": "Markov trace and normal form",
+          "depth": 2,
+          "result": "pending",
+          "reviewer": null,
+          "reviewed_hash": null,
+          "stale_mode": "thorough"
+        },
+        "sec:categorical-braiding-knot-eigenbasis": {
+          "title": "The knot eigenbasis",
+          "depth": 2,
           "result": "pending",
           "reviewer": null,
           "reviewed_hash": null,
