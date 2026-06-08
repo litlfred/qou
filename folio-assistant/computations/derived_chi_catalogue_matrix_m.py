@@ -34,10 +34,13 @@ per audit §4 (refined).
 
 The Rust `seminormal_block_generators` (`tools/hecke-engine/src/seminormal.rs:230`)
 uses the SYMMETRIC normalisation where the 2×2 blocks have
-`b = √(a·a' + 1)` — self-adjoint matrices, good for numerical f64
-work but the `√` is NOT a rational function of q in general
-(e.g. for ρ=2, `b² = (q⁴ + q² + 1)/(q² + 1)²` — rational, but the
-sqrt of that lifts out of Q(q)).
+`b = √(a·a' + 1)` — self-adjoint matrices. The Rust path used in
+production (`chi_q_via_gp`) RETURNS exact integer Laurent
+coefficients (no f64 in the production compute), but the
+intermediate symmetric form requires the `√` which is NOT a
+rational function of q in general (e.g. for ρ=2,
+`b² = (q⁴ + q² + 1)/(q² + 1)²` — rational, but the sqrt of that
+lifts out of Q(q)).
 
 The ASYMMETRIC natural form puts `c = 1, c' = a·a' + 1` on the off-
 diagonal. Then every entry is in Q(q), and the trace of any matrix
@@ -314,10 +317,13 @@ def syt_first_k_shape(
     """Shape of the sub-tableau of `syt` restricted to entries
     {1, 2, …, k} (1-based).
 
-    Returns the sorted column counts as a partition tuple. Used to
-    group SYTs of shape λ by the shape μ_p of their first-3-cells —
-    the natural index for the parabolic factorisation V_λ |_{H_3
-    × H_{n-3}} = ⊕_{μ_p ⊢ k} V_{μ_p} ⊗ V_skew(λ/μ_p).
+    Returns the row-length tuple as a partition. Each entry counts
+    how many of the first `k` SYT-entries lie in each row, in
+    row-index order — i.e. the standard partition representation
+    of the sub-tableau's shape. Used to group SYTs of shape λ by
+    the shape μ_p of their first-k cells — the natural index for
+    the parabolic factorisation
+    V_λ |_{H_k × H_{n-k}} = ⊕_{μ_p ⊢ k} V_{μ_p} ⊗ V_skew(λ/μ_p).
     """
     row_counts: dict[int, int] = {}
     for entry_idx in range(k):
@@ -401,6 +407,26 @@ def chi_lambda_via_mu_p_decomposition(
       V_{μ_n} irreps and project. This file delivers the μ_p-level
       structural rearrangement and proves it equals the full trace.
     """
+    contribs = chi_lambda_mu_p_contributions(
+        shape, word_left, bridge_sign, word_right, k_split, q,
+    )
+    return sp.cancel(sum(contribs.values()))
+
+
+def chi_lambda_mu_p_contributions(
+    shape: tuple[int, ...],
+    word_left: list[tuple[int, int]],
+    bridge_sign: int,
+    word_right: list[tuple[int, int]],
+    k_split: int,
+    q: sp.Symbol,
+) -> dict[tuple[int, ...], sp.Expr]:
+    """Same factorisation as `chi_lambda_via_mu_p_decomposition` but
+    returns the per-μ_p contributions instead of the sum. Useful for
+    inspecting which μ_p blocks dominate the character. The decomp
+    function delegates here and just sums the values; the validation
+    assertions live here so both entry points are guarded.
+    """
     n = sum(shape)
     assert 1 <= k_split <= n - 1, (
         f"k_split={k_split} must satisfy 1 ≤ k_split ≤ n-1 (n={n})"
@@ -417,72 +443,6 @@ def chi_lambda_via_mu_p_decomposition(
             f"right generators must be in [{k_split + 1}, {n - 1}]"
         )
 
-    sigmas = seminormal_matrices_qrat(shape, q)
-    dim = sigmas[0].shape[0] if sigmas else 1
-    h = q - 1 / q
-    eye = sp.eye(dim)
-    sigma_inv_cache: dict[int, sp.Matrix] = {}
-
-    def get_sigma(g_1based: int, sign: int) -> sp.Matrix:
-        idx = g_1based - 1
-        if sign >= 0:
-            return sigmas[idx]
-        if idx not in sigma_inv_cache:
-            sigma_inv_cache[idx] = (sigmas[idx] - h * eye).applyfunc(sp.cancel)
-        return sigma_inv_cache[idx]
-
-    # Build full ρ^λ(β_left), ρ^λ(σ_{k_split}^{sign}), ρ^λ(β_right) on V_λ.
-    def word_to_matrix(word: list[tuple[int, int]]) -> sp.Matrix:
-        prod = eye
-        for (sign, g_1based) in word:
-            # Element-wise sp.cancel after each multiply — without
-            # this, intermediate entries blow up exponentially in
-            # word length (same issue as chi_lambda_via_matrix_product).
-            prod = (prod * get_sigma(g_1based, sign)).applyfunc(sp.cancel)
-        return prod
-
-    B_p_full = word_to_matrix(word_left)
-    M_full = get_sigma(k_split, bridge_sign)
-    B_n_full = word_to_matrix(word_right)
-
-    # Group SYTs by μ_p (= shape of first k_split cells).
-    groups = group_syts_by_mu_p(shape, k_split)
-
-    # Sum traces of diagonal-μ_p blocks: only the diagonal contributes
-    # to Tr[B_p · M · B_n] because B_p, B_n are block-diagonal in μ_p
-    # (σ_{1..k_split-1} and σ_{k_split+1..n-1} fix the shape of the
-    # first-k_split sub-tableau).
-    total = sp.Integer(0)
-    per_mu_p: dict[tuple[int, ...], sp.Expr] = {}
-    for mu_p, idxs in groups.items():
-        idx_list = idxs
-        # Slice each matrix to the μ_p sub-block.
-        sub_B_p = B_p_full.extract(idx_list, idx_list)
-        sub_M = M_full.extract(idx_list, idx_list)
-        sub_B_n = B_n_full.extract(idx_list, idx_list)
-        contrib = sp.cancel(sp.trace(sub_B_p * sub_M * sub_B_n))
-        per_mu_p[mu_p] = contrib
-        total = total + contrib
-    total = sp.cancel(total)
-    # Stash the per-μ_p contributions on the result by attaching as
-    # an attribute is awkward with sp.Expr; the caller that needs them
-    # should use chi_lambda_mu_p_contributions below.
-    return total
-
-
-def chi_lambda_mu_p_contributions(
-    shape: tuple[int, ...],
-    word_left: list[tuple[int, int]],
-    bridge_sign: int,
-    word_right: list[tuple[int, int]],
-    k_split: int,
-    q: sp.Symbol,
-) -> dict[tuple[int, ...], sp.Expr]:
-    """Same factorisation as `chi_lambda_via_mu_p_decomposition` but
-    returns the per-μ_p contributions instead of the sum. Useful for
-    inspecting which μ_p blocks dominate the character.
-    """
-    n = sum(shape)
     sigmas = seminormal_matrices_qrat(shape, q)
     dim = sigmas[0].shape[0] if sigmas else 1
     h = q - 1 / q
@@ -562,12 +522,15 @@ def cross_validate(
     pass/fail per test q.
 
     q_test_values default to three values stressing the symbolic
-    simplifier and the Rust f64 evaluator: two small integer probes
+    simplifier and the comparison path: two small integer probes
     (`q = 2`, `q = 3`) plus the canonical substrate value
     `Q_50_DIGIT_STR` from `qou_substrate.constants` (proton-anchored
     re-pin of 2026-05-28). The substrate value flows through
     `q_parameter.Q_50_DIGIT_STR` so the test stays pinned to the
-    canonical substrate even if it is re-pinned upstream.
+    canonical substrate even if it is re-pinned upstream. The Rust
+    path (`chi_q_via_gp`) returns exact integer Laurent coefficients
+    in q; both sides are summed at each test q as `sp.Rational`, so
+    the comparison is exact — no f64 anywhere in the compute path.
     """
     n = sum(shape)
     if q_test_values is None:
@@ -589,19 +552,12 @@ def cross_validate(
     for q_val in q_test_values:
         python_val = sp.simplify(python_symbolic.subs(q, q_val))
         rust_val = chi_rust_at_qval(shape, n, word, q_val)
-        # Compare as rationals or floats — sympy handles both.
+        # Both sides are exact sp.Rational (or sp.Integer) at this q —
+        # the Rust path returns integer Laurent coefficients which we
+        # sum as sp.Rationals. Equality is decidable; no f64
+        # fallback needed.
         delta = sp.simplify(python_val - rust_val)
         match = bool(delta == 0)
-        if not match:
-            # Fall back to numerical comparison with tolerance — the
-            # Rust output is f64 internally; the symbolic Python can
-            # differ in the last bit when forced through float.
-            try:
-                py_f = float(python_val)
-                rs_f = float(rust_val)
-                match = abs(py_f - rs_f) < max(1e-10, 1e-10 * max(abs(py_f), abs(rs_f)))
-            except (TypeError, ValueError):
-                match = False
         if not match:
             all_match = False
         results.append({
@@ -929,7 +885,10 @@ def main() -> int:
     speedup = t_sym / t_num if t_num > 0 else float("inf")
     print(f"    λ={list(bench_shape)} dim=9, β = deuteron-toy (5 letters)")
     print(f"    Symbolic q:  {t_sym:.4f}s   χ(q) = {sp.cancel(chi_sym)}")
-    print(f"    Numerical q: {t_num:.4f}s   χ(q_0) ≈ {float(chi_num):.6e}")
+    # Display as a string of the exact sp.Rational — NO f64 truncation
+    # of the substrate-evaluated character. Per "no f64 in production"
+    # discipline, the printed value remains an exact rational.
+    print(f"    Numerical q: {t_num:.4f}s   χ(q_0) = {chi_num}")
     print(f"    Speedup:     {speedup:.1f}×")
     print(f"    Consistency: {'✓' if consistency else '✗'} "
           f"(sym.subs == num)")
@@ -943,7 +902,8 @@ def main() -> int:
         "speedup_factor": speedup,
         "consistency": consistency,
         "chi_symbolic": str(sp.cancel(chi_sym)),
-        "chi_numerical_f64": float(chi_num),
+        # Exact sp.Rational serialised as a string — no f64 conversion.
+        "chi_numerical_qrational_str": str(chi_num),
     }
 
     n_total = (n_total_basic + n_total_phase12 + n_total_phase13

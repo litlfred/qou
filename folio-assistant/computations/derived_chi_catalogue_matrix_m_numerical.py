@@ -6,26 +6,51 @@ Per the audit doc roadmap (Step 4):
 [`docs/audits/2026-06-07-derived-chi-catalogue-tier-1-lr-factorisation.md`](../../docs/audits/2026-06-07-derived-chi-catalogue-tier-1-lr-factorisation.md)
 the matrix-M factorisation is structurally correct (PR #1980 — 42/42
 cross-validation passes) but symbolic computation is slower than the
-Rust Geck-Pfeiffer engine. This module delivers the **numerical-cache
-backend** that turns the structural decomposition into a competitive
-runtime path:
+production Rust path. This module delivers the **block-scoped
+numerical-cache backend** that turns the structural decomposition
+into a competitive runtime path.
 
-  - **Pre-compute** σ_3, σ_4, σ_5 (and inverses) for V_λ at the
-    substrate q_0 ONCE per λ. Result: tiny sympy.Rational matrices.
-  - **At call time**: form the product `B_p · σ_3 · B_n` numerically
-    on the small μ_p-blocks, sum the traces. Each call is O(word
-    length · max_block_size²) of concrete-rational arithmetic.
-  - **Validate vs Rust** `chi_q_via_gp` at q_0 — same Laurent
-    coefficients required.
+## What is cached
 
-## Why this matters
+`precompute_block_tables(λ, k_split, q_0)` returns a per-μ_p block
+dict containing:
 
-For A=2 (deuteron, n=6) Rust `chi_q_via_gp` is already fast (~10 ms
-per call). The numerical-cache backend isn't expected to win here —
-the value is the **architecture proof**: showing that the block-
-reduction structure is real (not just symbolically convenient), and
-that the cache scales to larger atoms where Geck-Pfeiffer's Solomon-
-Tits reduction time dominates.
+  - `sigmas_left[g]` — block-restricted σ_g for g = 1, …, k_split-1
+    (left H_{k_split} parabolic generators, which preserve μ_p)
+  - `sigmas_right[g]` — block-restricted σ_g for g = k_split+1, …,
+    n-1 (right H_{n-k_split} generators, also preserve μ_p)
+  - `M_pp` — block-restricted σ_{k_split} (the BRIDGE; its full
+    matrix mixes μ_p blocks, but only the diagonal block enters the
+    trace formula)
+
+Each block is `dim(μ_p)` × `dim(μ_p)` of exact `sp.Rational` entries
+at substrate `q_0` — never built dim_V_λ × dim_V_λ at evaluation
+time. The one-time full seminormal pass is used only to extract the
+per-block sub-matrices and is then discarded.
+
+## What runs at call time
+
+`chi_via_numerical_matrix_m(...)` operates entirely on block matrices.
+For each μ_p:
+
+  - `B_p` = product of block-restricted left generators
+  - `B_n` = product of block-restricted right generators
+  - trace contribution = `Tr[B_p · M_pp · B_n]`
+
+Total cost is `Σ_{μ_p} word_length · block_size²` of concrete
+`sp.Rational` arithmetic — independent of `dim(V_λ)`. The Hecke
+inverse `σ_g⁻¹ = σ_g - h·I` carries through to blocks (block
+extraction is linear, so the block of σ_g⁻¹ is just the block of
+σ_g minus h·I_block).
+
+## NO f64 in the production compute path
+
+Both the symbolic and the numerical backends are exact: matrix
+entries at `q_0` are `sp.Rational` (50-digit canonical substrate
+expressed as an exact rational), and all matrix operations stay in
+ℚ. The benchmark below compares to Rust `chi_q_via_gp`, which
+returns **exact integer Laurent coefficients in q**; we sum them at
+`q_0` as `sp.Rational`. No f64 anywhere in the compute path.
 
 ## Δ_λ-gate
 
@@ -76,41 +101,56 @@ def precompute_block_tables(
       q_value: substrate q as exact sp.Rational.
 
     Returns a dict with:
-      - `sigmas`: list of σ_i matrices on V_λ (numerical entries)
-      - `sigma_invs`: list of σ_i⁻¹ matrices (numerical)
-      - `mu_p_groups`: dict mu_p → SYT indices in V_λ
-      - `M_pp`: dict mu_p → sub-matrix of σ_{k_split} restricted to the
-        μ_p-block. This is the matrix-M(μ_p, ·, λ; q_0) summed over
-        μ_n (the per-μ_n decomposition would split this further;
-        future Phase 1.3 work).
-      - `q`: the substrate q value (echoed for inspection).
+      - `mu_p_groups`: dict mu_p → SYT indices in V_λ.
+      - `blocks`: dict mu_p → block dict containing
+        - `size`: dim of the μ_p-block (= count of SYTs whose first-
+          k_split-cells form shape μ_p).
+        - `sigmas_left[g]`: block-restricted σ_g for left H_{k_split}
+          generators g = 1, …, k_split-1 (these preserve μ_p, so the
+          block restriction is the full action).
+        - `sigmas_right[g]`: block-restricted σ_g for right
+          H_{n-k_split} generators g = k_split+1, …, n-1.
+        - `M_pp`: block-restricted σ_{k_split} (diagonal-μ_p block
+          of the bridge — the matrix-M(μ_p, ·, λ; q_0) summed over
+          μ_n. Per-μ_n decomposition is future Phase 1.3 work).
+      - `q`, `shape`, `k_split`: echoed.
+
+    Implementation note: the full dim_V_λ × dim_V_λ seminormal pass
+    is run ONCE here to extract the per-block sub-matrices; the full
+    matrices are NOT retained in the cache. All call-time work
+    happens on the small block matrices.
     """
     q = q_value
-    # Build σ_i matrices in seminormal form, but evaluate at q_value
-    # directly (sp.Rational entries, no symbolic q).
+    n = sum(shape)
+    # One-time full seminormal pass to extract block sub-matrices;
+    # we discard the full matrices once blocks are pulled.
     sigmas = seminormal_matrices_qrat(shape, q)
-    dim = sigmas[0].shape[0] if sigmas else 1
-    h = q - 1 / q
-    eye = sp.eye(dim)
-    sigma_invs = [
-        (mat - h * eye).applyfunc(sp.cancel) for mat in sigmas
-    ]
-    # σ_{k_split} matrix (1-based gen — k_split is also the 1-based
-    # bridge generator index).
-    sigma_bridge = sigmas[k_split - 1]
     groups = group_syts_by_mu_p(shape, k_split)
-    M_pp: dict[tuple[int, ...], sp.Matrix] = {}
+    blocks: dict[tuple[int, ...], dict] = {}
     for mu_p, idxs in groups.items():
-        M_pp[mu_p] = sigma_bridge.extract(idxs, idxs)
+        sigmas_left = {
+            g: sigmas[g - 1].extract(idxs, idxs)
+            for g in range(1, k_split)
+        }
+        sigmas_right = {
+            g: sigmas[g - 1].extract(idxs, idxs)
+            for g in range(k_split + 1, n)
+        }
+        M_pp = sigmas[k_split - 1].extract(idxs, idxs)
+        blocks[mu_p] = {
+            "size": len(idxs),
+            "indices": idxs,
+            "sigmas_left": sigmas_left,
+            "sigmas_right": sigmas_right,
+            "M_pp": M_pp,
+        }
+    # Drop the full sigmas — block extraction is done.
     return {
         "shape": shape,
         "k_split": k_split,
         "q": q,
-        "dim": dim,
-        "sigmas": sigmas,
-        "sigma_invs": sigma_invs,
         "mu_p_groups": groups,
-        "M_pp": M_pp,
+        "blocks": blocks,
     }
 
 
@@ -122,42 +162,48 @@ def chi_via_numerical_matrix_m(
     cache: dict,
 ) -> sp.Rational:
     """Compute χ^λ(T_β) at the cached q_0 via the μ_p-block trace
-    formula, using the pre-computed σ matrices.
+    formula, operating entirely on the pre-computed BLOCK matrices —
+    never building dim_V_λ × dim_V_λ matrices at call time.
 
-    The matrix-M is `cache["M_pp"][μ_p]` (positive-bridge case) or
-    its appropriate q-Hecke transform for negative-bridge. For
-    bridge_sign = -1, we use the inverse formula
-    `σ_{k_split}⁻¹ = σ_{k_split} - h · I`.
+    For each μ_p:
+      B_p[μ_p]  = ∏ (block-restricted left generators)
+      B_n[μ_p]  = ∏ (block-restricted right generators)
+      contrib   = Tr [ B_p · M_pp · B_n ]   (per cache["blocks"][μ_p]["M_pp"])
+      χ        += contrib
+
+    The Hecke inverse `σ_g⁻¹ = σ_g - h·I` carries through to blocks
+    (block extraction is linear); we use it for both the parabolic
+    generators (where the block-restriction is exact) and for the
+    bridge (where the diagonal block of σ_{k_split}⁻¹ is the
+    diagonal block of σ_{k_split} minus h · I_block).
     """
+    q = cache["q"]
     k_split = cache["k_split"]
-    sigmas = cache["sigmas"]
-    sigma_invs = cache["sigma_invs"]
-    groups = cache["mu_p_groups"]
-    dim = cache["dim"]
-    eye = sp.eye(dim)
-
-    def get_sigma(g_1based: int, sign: int) -> sp.Matrix:
-        idx = g_1based - 1
-        return sigmas[idx] if sign >= 0 else sigma_invs[idx]
-
-    def word_to_matrix(word: list[tuple[int, int]]) -> sp.Matrix:
-        prod = eye
-        for (sign, g_1based) in word:
-            # No applyfunc(cancel) needed — entries are concrete sp.Rationals,
-            # multiplication keeps them as Rationals automatically.
-            prod = prod * get_sigma(g_1based, sign)
-        return prod
-
-    B_p_full = word_to_matrix(word_left)
-    B_n_full = word_to_matrix(word_right)
-    M_full = get_sigma(k_split, bridge_sign)
-
+    h = q - 1 / q
     total = sp.Integer(0)
-    for mu_p, idxs in groups.items():
-        sub_B_p = B_p_full.extract(idxs, idxs)
-        sub_M = M_full.extract(idxs, idxs)
-        sub_B_n = B_n_full.extract(idxs, idxs)
-        total = total + sp.trace(sub_B_p * sub_M * sub_B_n)
+
+    for mu_p, block in cache["blocks"].items():
+        size = block["size"]
+        eye_block = sp.eye(size)
+        sigmas_left = block["sigmas_left"]
+        sigmas_right = block["sigmas_right"]
+        M_pp_pos = block["M_pp"]
+
+        def block_sigma(table: dict, g_1based: int, sign: int) -> sp.Matrix:
+            mat = table[g_1based]
+            return mat if sign >= 0 else mat - h * eye_block
+
+        # B_p on the μ_p-block.
+        B_p = eye_block
+        for (sign, g_1based) in word_left:
+            B_p = B_p * block_sigma(sigmas_left, g_1based, sign)
+        # B_n on the μ_p-block.
+        B_n = eye_block
+        for (sign, g_1based) in word_right:
+            B_n = B_n * block_sigma(sigmas_right, g_1based, sign)
+        # Bridge: positive direct, negative via Hecke inverse on block.
+        M = M_pp_pos if bridge_sign >= 0 else (M_pp_pos - h * eye_block)
+        total = total + sp.trace(B_p * M * B_n)
     return total
 
 
