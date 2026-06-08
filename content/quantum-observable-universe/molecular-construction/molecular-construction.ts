@@ -31,6 +31,19 @@ export default chapter({
       ],
     }),
 
+    // ── §1b. Assembly projectors from symmetry (general) ───────────
+    section({
+      title: "Assembly projectors from symmetry",
+      label: "sec:molecular-assembly-projector",
+      blocks: [
+        "molecular-assembly-projector-intro",
+        "molecular-strand-partition",
+        "parabolic-hecke-subalgebra",
+        "molecular-assembly-projector",
+        "assembly-projector-exists",
+      ],
+    }),
+
     // ── §2. Electron shells as braid capacity ───────────────────────
     section({
       title: "Electron shells and bonding capacity",
