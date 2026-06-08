@@ -1940,7 +1940,27 @@
           "worst_span": 0
         }
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "07bd99dc7111",
+          "ts": "f616ca871803"
+        },
+        "result": "pass",
+        "evidence": "listed in sec:incompleteness-horizon line 163; interprets prop:quantum-ideal-gas-law; content discusses stat mech as polynomial observable subcategory - fits chapter",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:54:50.789Z",
+        "reviewed_sha": "51fa644d0ae4235855d84ef10fef91f453f60f4b",
+        "notes": "section placement and content match"
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-08T09:54:50.789Z"
 }
