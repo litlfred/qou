@@ -281,7 +281,11 @@ def chi_lambda_via_matrix_product(
         return sigma_inv_cache[g_idx_0based]
 
     # Start with identity, multiply on the right (matches word order
-    # T_β = T_{σ_{c_1}} · T_{σ_{c_2}} · … convention).
+    # T_β = T_{σ_{c_1}} · T_{σ_{c_2}} · … convention). After each
+    # multiply, apply element-wise sp.cancel — without this the
+    # intermediate matrix entries can blow up exponentially in
+    # word length (a 23-letter word on a dim-16 matrix runs out of
+    # RAM very quickly without intermediate canonicalisation).
     product = eye
     for (sign, gen_1based) in word:
         g_idx = gen_1based - 1
@@ -289,7 +293,7 @@ def chi_lambda_via_matrix_product(
             f"gen_1based={gen_1based} out of range for n={n}"
         )
         mat = sigmas[g_idx] if sign >= 0 else get_inv(g_idx)
-        product = product * mat
+        product = (product * mat).applyfunc(sp.cancel)
     # The character is a rational function in q; sp.cancel is the
     # fast canonical-form reducer (GCD-based) for this domain.
     return sp.cancel(sp.trace(product))
@@ -425,7 +429,10 @@ def chi_lambda_via_mu_p_decomposition(
     def word_to_matrix(word: list[tuple[int, int]]) -> sp.Matrix:
         prod = eye
         for (sign, g_1based) in word:
-            prod = prod * get_sigma(g_1based, sign)
+            # Element-wise sp.cancel after each multiply — without
+            # this, intermediate entries blow up exponentially in
+            # word length (same issue as chi_lambda_via_matrix_product).
+            prod = (prod * get_sigma(g_1based, sign)).applyfunc(sp.cancel)
         return prod
 
     B_p_full = word_to_matrix(word_left)
@@ -487,7 +494,10 @@ def chi_lambda_mu_p_contributions(
     def word_to_matrix(word: list[tuple[int, int]]) -> sp.Matrix:
         prod = eye
         for (sign, g_1based) in word:
-            prod = prod * get_sigma(g_1based, sign)
+            # Element-wise sp.cancel after each multiply — without
+            # this, intermediate entries blow up exponentially in
+            # word length (same issue as chi_lambda_via_matrix_product).
+            prod = (prod * get_sigma(g_1based, sign)).applyfunc(sp.cancel)
         return prod
 
     B_p_full = word_to_matrix(word_left)
