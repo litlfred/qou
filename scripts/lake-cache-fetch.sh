@@ -121,7 +121,7 @@ if [ -n "$has_lake_dir" ]; then
   echo "lake-cache-fetch: extracting .lake/ tree via git archive"
   mkdir -p "$TMP/extract"
   if ! git archive --format=tar FETCH_HEAD -- .lake \
-        | tar -xC "$TMP/extract" 2>&1 | tail -3; then
+        | tar -xf - -C "$TMP/extract" 2>&1 | tail -3; then
     echo "lake-cache-fetch: ERROR — git archive extraction failed" >&2
     exit 1
   fi
