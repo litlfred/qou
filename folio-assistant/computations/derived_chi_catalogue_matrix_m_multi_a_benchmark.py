@@ -62,8 +62,6 @@ import _path_bridge  # noqa: E402, F401
 
 import sympy as sp  # noqa: E402
 
-import pyhecke_native as ph  # noqa: E402
-
 from witness_base import WitnessBuilder  # noqa: E402
 
 from derived_chi_catalogue_matrix_m import (  # noqa: E402
@@ -169,14 +167,15 @@ def benchmark_isotope(
         # symbolic-rational-function reducer sp.cancel.
         match = (chi_python == chi_rust)
         status = "✓" if match else "✗"
-        call_vs_rust = rust_s / call_s if call_s > 0 else float("inf")
+        # speedup = rust_s / call_s  — >1× means matrix-M beats Rust.
+        speedup = rust_s / call_s if call_s > 0 else float("inf")
 
         shape_str = str(list(shape))
         print(f"      {status} λ={shape_str:<22s} dim={dim:>3d}  "
               f"pre={precompute_s*1000:>6.1f}ms  "
               f"call={call_s*1000:>6.1f}ms  "
               f"rust={rust_s*1000:>6.1f}ms  "
-              f"call/rust={call_vs_rust:.2f}×")
+              f"speedup={speedup:.2f}×")
 
         cases.append({
             "shape": list(shape),
@@ -189,14 +188,15 @@ def benchmark_isotope(
 
     n_total = len(cases)
     n_pass = sum(1 for c in cases if c["match"])
-    overall_ratio = (
+    # Aggregate speedup = total_rust / total_call (>1 means matrix-M wins).
+    speedup_overall = (
         total_rust_s / total_call_s if total_call_s > 0 else float("inf")
     )
     print(f"\n    Totals: pass={n_pass}/{n_total}  "
           f"precompute={total_precompute_s*1000:.1f}ms  "
           f"call={total_call_s*1000:.1f}ms  "
           f"rust={total_rust_s*1000:.1f}ms  "
-          f"call/rust={overall_ratio:.2f}×")
+          f"speedup={speedup_overall:.2f}×")
     return {
         "label": label,
         "Z": Z, "N": N, "A": A, "n_strands": n_strands,
@@ -205,7 +205,7 @@ def benchmark_isotope(
         "total_precompute_secs": total_precompute_s,
         "total_call_secs": total_call_s,
         "total_rust_secs": total_rust_s,
-        "call_vs_rust_ratio": overall_ratio,
+        "speedup_rust_over_call": speedup_overall,
         "cases": cases,
     }
 
@@ -260,9 +260,9 @@ def main() -> int:
     print(f"  Multi-A summary: {n_pass}/{n_total} partitions match Rust at q_0")
     print("  " + "─" * 76)
     print(f"  {'Isotope':<18}  {'A':<2}  {'n':<3}  {'pass':<6}  "
-          f"{'call ms':>8}  {'rust ms':>8}  {'call/rust':>10}")
+          f"{'call ms':>8}  {'rust ms':>8}  {'speedup':>10}")
     for r in isotope_results:
-        ratio = r["call_vs_rust_ratio"]
+        ratio = r["speedup_rust_over_call"]
         print(f"  {r['label']:<18}  {r['A']:<2}  {r['n_strands']:<3}  "
               f"{r['n_passed']}/{r['n_partitions_tested']:<4}  "
               f"{r['total_call_secs']*1000:>8.1f}  "
