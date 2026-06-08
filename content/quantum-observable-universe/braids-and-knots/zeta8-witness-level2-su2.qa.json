@@ -276,23 +276,6 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
-          "script_hash": "8055e5864896",
-          "script_commit_sha": "7d3eeba998ed7051fd1624bce43cb8d0e006a14c"
-        },
-        "reviewed_at": "2026-06-02T19:34:22.348Z",
-        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
-      },
-      {
-        "field_hash": {
-          "md": "f8720d3da75f",
-          "ts": "b68a457af648",
-          "lean": "94da38ce38b0"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
           "script_hash": "3b132a7280af",
           "script_commit_sha": "d3c07508b029723fd0bf70c593e53aec2599925d"
         },
@@ -301,23 +284,6 @@
       }
     ],
     "canonical-no-negative-result-in-paper": [
-      {
-        "field_hash": {
-          "md": "f8720d3da75f",
-          "ts": "b68a457af648",
-          "lean": "94da38ce38b0"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "8055e5864896",
-          "script_commit_sha": "7d3eeba998ed7051fd1624bce43cb8d0e006a14c"
-        },
-        "reviewed_at": "2026-06-02T19:34:22.348Z",
-        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
-      },
       {
         "field_hash": {
           "md": "f8720d3da75f",
@@ -339,23 +305,6 @@
     "voice-status-leak": [
       {
         "field_hash": {
-          "md": "f8720d3da75f",
-          "ts": "b68a457af648",
-          "lean": "94da38ce38b0"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
-          "version": "v1",
-          "script_hash": "a8a7cde19181",
-          "script_commit_sha": "52373bf7e4c2946d253764199dbd01fc20b23f49"
-        },
-        "reviewed_at": "2026-06-02T19:35:52.628Z",
-        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
-      },
-      {
-        "field_hash": {
           "md": "0812365f7b03",
           "ts": "b68a457af648",
           "lean": "94da38ce38b0"
@@ -373,23 +322,6 @@
       }
     ],
     "voice-emoji-content": [
-      {
-        "field_hash": {
-          "md": "f8720d3da75f",
-          "ts": "b68a457af648",
-          "lean": "94da38ce38b0"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
-          "version": "v1",
-          "script_hash": "a8a7cde19181",
-          "script_commit_sha": "52373bf7e4c2946d253764199dbd01fc20b23f49"
-        },
-        "reviewed_at": "2026-06-02T19:35:52.628Z",
-        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
-      },
       {
         "field_hash": {
           "md": "0812365f7b03",
@@ -430,25 +362,6 @@
     "voice-time-stamped-notes": [
       {
         "field_hash": {
-          "md": "f8720d3da75f",
-          "ts": "b68a457af648",
-          "lean": "94da38ce38b0"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
-          "version": "v1",
-          "script_hash": "a8a7cde19181",
-          "script_commit_sha": "52373bf7e4c2946d253764199dbd01fc20b23f49"
-        },
-        "reviewed_at": "2026-06-02T19:35:52.628Z",
-        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163",
-        "severity": "major",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/zeta8-witness-level2-su2.md:42: empirically in PR #1625 (audit"
-      },
-      {
-        "field_hash": {
           "md": "0812365f7b03",
           "ts": "b68a457af648",
           "lean": "94da38ce38b0"
@@ -468,25 +381,6 @@
     "voice-unicode-crash": [
       {
         "field_hash": {
-          "md": "f8720d3da75f",
-          "ts": "b68a457af648",
-          "lean": "94da38ce38b0"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
-          "version": "v1",
-          "script_hash": "a8a7cde19181",
-          "script_commit_sha": "52373bf7e4c2946d253764199dbd01fc20b23f49"
-        },
-        "reviewed_at": "2026-06-02T19:35:52.628Z",
-        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163",
-        "severity": "critical",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/zeta8-witness-level2-su2.md:53: observed across all three pair classes (D − n), (³He − D), (⁴He − ³He)."
-      },
-      {
-        "field_hash": {
           "md": "0812365f7b03",
           "ts": "b68a457af648",
           "lean": "94da38ce38b0"
@@ -504,23 +398,6 @@
       }
     ],
     "voice-editorializing": [
-      {
-        "field_hash": {
-          "md": "f8720d3da75f",
-          "ts": "b68a457af648",
-          "lean": "94da38ce38b0"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
-          "version": "v1",
-          "script_hash": "a8a7cde19181",
-          "script_commit_sha": "52373bf7e4c2946d253764199dbd01fc20b23f49"
-        },
-        "reviewed_at": "2026-06-02T19:35:52.628Z",
-        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
-      },
       {
         "field_hash": {
           "md": "0812365f7b03",
@@ -654,7 +531,7 @@
         "reviewed_at": "2026-06-02T19:35:52.628Z",
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/zeta8-witness-level2-su2.lean:1: Lean file uses archimedean constructs but .md narrative does not acknowledge archimedean specialisation. Add a §7c-style banner or move the archimedean evaluation to a sibling block."
+        "evidence": "content/quantum-observable-universe/braids-and-knots/zeta8-witness-level2-su2.lean:1: Lean file uses archimedean constructs but .md narrative does not acknowledge archimedean specialisation. Add a \u00a77c-style banner or move the archimedean evaluation to a sibling block."
       }
     ],
     "compute-prop-has-probe": [
@@ -675,7 +552,7 @@
         "reviewed_at": "2026-06-02T19:35:56.961Z",
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/zeta8-witness-level2-su2.ts:1: no `probe:` field or `computation:` block declared — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
+        "evidence": "content/quantum-observable-universe/braids-and-knots/zeta8-witness-level2-su2.ts:1: no `probe:` field or `computation:` block declared \u2014 every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration \u00a7B"
       }
     ],
     "compute-prop-has-consumer": [
@@ -696,7 +573,7 @@
         "reviewed_at": "2026-06-02T19:35:56.961Z",
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/zeta8-witness-level2-su2.ts:1: no `consumers:` field and no `computation:` declaration — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
+        "evidence": "content/quantum-observable-universe/braids-and-knots/zeta8-witness-level2-su2.ts:1: no `consumers:` field and no `computation:` declaration \u2014 the prop is NOT-WIRED per CLAUDE.md compute-integration \u00a7B (I2-I13)"
       }
     ],
     "compute-witness-exists": [
@@ -752,23 +629,6 @@
           "script_hash": "8055e5864896",
           "script_commit_sha": "7d3eeba998ed7051fd1624bce43cb8d0e006a14c"
         },
-        "reviewed_at": "2026-06-02T19:35:58.523Z",
-        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
-      },
-      {
-        "field_hash": {
-          "md": "f8720d3da75f",
-          "ts": "b68a457af648",
-          "lean": "94da38ce38b0"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "8055e5864896",
-          "script_commit_sha": "7d3eeba998ed7051fd1624bce43cb8d0e006a14c"
-        },
         "reviewed_at": "2026-06-03T13:06:09.584Z",
         "reviewed_sha": "19118a572290d7bf9fc5b30e8a174c4bc86e6ad5"
       }
@@ -788,45 +648,11 @@
           "script_hash": "8055e5864896",
           "script_commit_sha": "7d3eeba998ed7051fd1624bce43cb8d0e006a14c"
         },
-        "reviewed_at": "2026-06-02T19:35:58.523Z",
-        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
-      },
-      {
-        "field_hash": {
-          "md": "f8720d3da75f",
-          "ts": "b68a457af648",
-          "lean": "94da38ce38b0"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "8055e5864896",
-          "script_commit_sha": "7d3eeba998ed7051fd1624bce43cb8d0e006a14c"
-        },
         "reviewed_at": "2026-06-03T13:06:09.584Z",
         "reviewed_sha": "19118a572290d7bf9fc5b30e8a174c4bc86e6ad5"
       }
     ],
     "detangler-archimedean-wall": [
-      {
-        "field_hash": {
-          "md": "f8720d3da75f",
-          "ts": "b68a457af648",
-          "lean": "94da38ce38b0"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "8055e5864896",
-          "script_commit_sha": "7d3eeba998ed7051fd1624bce43cb8d0e006a14c"
-        },
-        "reviewed_at": "2026-06-02T19:35:58.523Z",
-        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
-      },
       {
         "field_hash": {
           "md": "f8720d3da75f",

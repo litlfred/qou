@@ -112,23 +112,6 @@
           "script_hash": "93cae3264dc7",
           "script_commit_sha": "6dd2b7268367e45f3c78a93d8cf81ded4a5efaaf"
         },
-        "reviewed_at": "2026-06-02T19:35:55.253Z",
-        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
-      },
-      {
-        "field_hash": {
-          "md": "e4242fc9b717",
-          "ts": "01ba651decbd",
-          "lean": "dd820c755bec"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "93cae3264dc7",
-          "script_commit_sha": "6dd2b7268367e45f3c78a93d8cf81ded4a5efaaf"
-        },
         "reviewed_at": "2026-06-03T13:06:07.086Z",
         "reviewed_sha": "19118a572290d7bf9fc5b30e8a174c4bc86e6ad5"
       }
@@ -149,7 +132,7 @@
         "reviewed_at": "2026-06-01T16:06:38.106Z",
         "reviewed_sha": "d4a8cf462aeef2262429b13571ddd385968bce63",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/appendix-surreals/os-reflection-positivity-from-reeb.md:211 — root-of-unity construction used without explicit regime declaration — inside the existing Müger / BKLR theory of unitary fusion categories"
+        "evidence": "content/quantum-observable-universe/appendix-surreals/os-reflection-positivity-from-reeb.md:211 \u2014 root-of-unity construction used without explicit regime declaration \u2014 inside the existing M\u00fcger / BKLR theory of unitary fusion categories"
       }
     ],
     "q-usage-narrative-chapter-mismatch": [
@@ -168,7 +151,7 @@
         "reviewed_at": "2026-06-01T16:06:38.106Z",
         "reviewed_sha": "d4a8cf462aeef2262429b13571ddd385968bce63",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/appendix-surreals/os-reflection-positivity-from-reeb.md:1 — detected regime [real-positive, root-of-unity] is disjoint from chapter 'appendix-surreals' expected [generic-R, na, symbolic]"
+        "evidence": "content/quantum-observable-universe/appendix-surreals/os-reflection-positivity-from-reeb.md:1 \u2014 detected regime [real-positive, root-of-unity] is disjoint from chapter 'appendix-surreals' expected [generic-R, na, symbolic]"
       }
     ],
     "canonical-no-numerology": [
@@ -297,23 +280,6 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
-          "script_hash": "8055e5864896",
-          "script_commit_sha": "7d3eeba998ed7051fd1624bce43cb8d0e006a14c"
-        },
-        "reviewed_at": "2026-06-02T19:34:22.348Z",
-        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
-      },
-      {
-        "field_hash": {
-          "md": "e4242fc9b717",
-          "ts": "01ba651decbd",
-          "lean": "dd820c755bec"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
           "script_hash": "3b132a7280af",
           "script_commit_sha": "d3c07508b029723fd0bf70c593e53aec2599925d"
         },
@@ -322,23 +288,6 @@
       }
     ],
     "voice-status-leak": [
-      {
-        "field_hash": {
-          "md": "e4242fc9b717",
-          "ts": "01ba651decbd",
-          "lean": "dd820c755bec"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
-          "version": "v1",
-          "script_hash": "a8a7cde19181",
-          "script_commit_sha": "52373bf7e4c2946d253764199dbd01fc20b23f49"
-        },
-        "reviewed_at": "2026-06-02T19:35:52.628Z",
-        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
-      },
       {
         "field_hash": {
           "md": "b36ad9a77db1",
@@ -358,23 +307,6 @@
       }
     ],
     "voice-emoji-content": [
-      {
-        "field_hash": {
-          "md": "e4242fc9b717",
-          "ts": "01ba651decbd",
-          "lean": "dd820c755bec"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
-          "version": "v1",
-          "script_hash": "a8a7cde19181",
-          "script_commit_sha": "52373bf7e4c2946d253764199dbd01fc20b23f49"
-        },
-        "reviewed_at": "2026-06-02T19:35:52.628Z",
-        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
-      },
       {
         "field_hash": {
           "md": "b36ad9a77db1",
@@ -415,23 +347,6 @@
     "voice-time-stamped-notes": [
       {
         "field_hash": {
-          "md": "e4242fc9b717",
-          "ts": "01ba651decbd",
-          "lean": "dd820c755bec"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
-          "version": "v1",
-          "script_hash": "a8a7cde19181",
-          "script_commit_sha": "52373bf7e4c2946d253764199dbd01fc20b23f49"
-        },
-        "reviewed_at": "2026-06-02T19:35:52.628Z",
-        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
-      },
-      {
-        "field_hash": {
           "md": "b36ad9a77db1",
           "ts": "01ba651decbd",
           "lean": "dd820c755bec"
@@ -451,25 +366,6 @@
     "voice-unicode-crash": [
       {
         "field_hash": {
-          "md": "e4242fc9b717",
-          "ts": "01ba651decbd",
-          "lean": "dd820c755bec"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
-          "version": "v1",
-          "script_hash": "a8a7cde19181",
-          "script_commit_sha": "52373bf7e4c2946d253764199dbd01fc20b23f49"
-        },
-        "reviewed_at": "2026-06-02T19:35:52.628Z",
-        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163",
-        "severity": "critical",
-        "evidence": "content/quantum-observable-universe/appendix-surreals/os-reflection-positivity-from-reeb.md:38: ## Why $\\mathbb{Z}_2$ ⊂ $U(1)_{\\xi}$ is the OS reflection | content/quantum-observable-universe/appendix-surreals/os-reflection-positivity-from-reeb.md:79: ## Why the surreal bound + this conjecture ⇒ Wightman"
-      },
-      {
-        "field_hash": {
           "md": "b36ad9a77db1",
           "ts": "01ba651decbd",
           "lean": "dd820c755bec"
@@ -487,23 +383,6 @@
       }
     ],
     "voice-editorializing": [
-      {
-        "field_hash": {
-          "md": "e4242fc9b717",
-          "ts": "01ba651decbd",
-          "lean": "dd820c755bec"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
-          "version": "v1",
-          "script_hash": "a8a7cde19181",
-          "script_commit_sha": "52373bf7e4c2946d253764199dbd01fc20b23f49"
-        },
-        "reviewed_at": "2026-06-02T19:35:52.628Z",
-        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
-      },
       {
         "field_hash": {
           "md": "b36ad9a77db1",
@@ -689,23 +568,6 @@
           "script_hash": "8055e5864896",
           "script_commit_sha": "7d3eeba998ed7051fd1624bce43cb8d0e006a14c"
         },
-        "reviewed_at": "2026-06-02T19:35:58.523Z",
-        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
-      },
-      {
-        "field_hash": {
-          "md": "e4242fc9b717",
-          "ts": "01ba651decbd",
-          "lean": "dd820c755bec"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "8055e5864896",
-          "script_commit_sha": "7d3eeba998ed7051fd1624bce43cb8d0e006a14c"
-        },
         "reviewed_at": "2026-06-03T13:06:09.584Z",
         "reviewed_sha": "19118a572290d7bf9fc5b30e8a174c4bc86e6ad5"
       }
@@ -725,45 +587,11 @@
           "script_hash": "8055e5864896",
           "script_commit_sha": "7d3eeba998ed7051fd1624bce43cb8d0e006a14c"
         },
-        "reviewed_at": "2026-06-02T19:35:58.523Z",
-        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
-      },
-      {
-        "field_hash": {
-          "md": "e4242fc9b717",
-          "ts": "01ba651decbd",
-          "lean": "dd820c755bec"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "8055e5864896",
-          "script_commit_sha": "7d3eeba998ed7051fd1624bce43cb8d0e006a14c"
-        },
         "reviewed_at": "2026-06-03T13:06:09.584Z",
         "reviewed_sha": "19118a572290d7bf9fc5b30e8a174c4bc86e6ad5"
       }
     ],
     "detangler-archimedean-wall": [
-      {
-        "field_hash": {
-          "md": "e4242fc9b717",
-          "ts": "01ba651decbd",
-          "lean": "dd820c755bec"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "8055e5864896",
-          "script_commit_sha": "7d3eeba998ed7051fd1624bce43cb8d0e006a14c"
-        },
-        "reviewed_at": "2026-06-02T19:35:58.523Z",
-        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
-      },
       {
         "field_hash": {
           "md": "e4242fc9b717",

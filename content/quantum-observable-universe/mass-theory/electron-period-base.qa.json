@@ -106,7 +106,117 @@
           "worst_span": 0
         }
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "147b0607fbf1",
+          "ts": "7230b7e5d3ae",
+          "lean": "1dee20a21d42"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "mass-theory.ts:195 -- electron-period-base in sec:hoefsmit-convergence-magic-shells",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:28:26.670Z",
+        "reviewed_sha": "be696cb666dcc2e1d68dc8cca401d9cdf4481711",
+        "notes": "Prop: CAL-1 m_e is n=0 base period of prolongation tower; fits mass-theory derivation chain."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "147b0607fbf1",
+          "ts": "7230b7e5d3ae",
+          "lean": "1dee20a21d42"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "electron-period-base.lean:21 -- variable {R : Type*} [CommRing R]",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:28:26.699Z",
+        "reviewed_sha": "be696cb666dcc2e1d68dc8cca401d9cdf4481711",
+        "notes": "Generic CommRing; no archimedean constructs in statement."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "147b0607fbf1",
+          "ts": "7230b7e5d3ae",
+          "lean": "1dee20a21d42"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "electron-period-base.lean:41 -- T.base0 (direct field read)",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:28:26.730Z",
+        "reviewed_sha": "be696cb666dcc2e1d68dc8cca401d9cdf4481711",
+        "notes": "Proof reads structure field; algebraic; matches generic CommRing statement."
+      }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "147b0607fbf1",
+          "ts": "7230b7e5d3ae",
+          "lean": "1dee20a21d42"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "electron-period-base.md:1 -- statement only; no interpretive H2 sections",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:28:26.756Z",
+        "reviewed_sha": "be696cb666dcc2e1d68dc8cca401d9cdf4481711",
+        "notes": "Prop kind; single paragraph statement; no standalone interpretive section."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "147b0607fbf1",
+          "ts": "7230b7e5d3ae",
+          "lean": "1dee20a21d42"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "electron-period-base.lean:41 -- electron_period_is_base: T.a 0 = T.m_e; ts ref QOU.Mass.electron_period_is_base",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:28:26.783Z",
+        "reviewed_sha": "be696cb666dcc2e1d68dc8cca401d9cdf4481711",
+        "notes": "Narrative a_D^e = m_e as n=0 base; Lean proves T.a 0 = T.m_e. Ref matches. Equivalent."
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-08T09:28:26.783Z"
 }

@@ -94,22 +94,6 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
-          "script_hash": "8055e5864896",
-          "script_commit_sha": "7d3eeba998ed7051fd1624bce43cb8d0e006a14c"
-        },
-        "reviewed_at": "2026-06-03T13:06:02.918Z",
-        "reviewed_sha": "19118a572290d7bf9fc5b30e8a174c4bc86e6ad5"
-      },
-      {
-        "field_hash": {
-          "md": "605a057db320",
-          "ts": "a4d0cbf170e3"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
           "script_hash": "3b132a7280af",
           "script_commit_sha": "b3006ea9b2daeb73b5912c919a7bcb21c5834a77"
         },
@@ -136,24 +120,6 @@
       }
     ],
     "voice-emoji-content": [
-      {
-        "field_hash": {
-          "md": "605a057db320",
-          "ts": "a4d0cbf170e3"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
-          "version": "v1",
-          "script_hash": "a8a7cde19181",
-          "script_commit_sha": "52373bf7e4c2946d253764199dbd01fc20b23f49"
-        },
-        "reviewed_at": "2026-06-03T13:06:05.843Z",
-        "reviewed_sha": "19118a572290d7bf9fc5b30e8a174c4bc86e6ad5",
-        "severity": "major",
-        "evidence": "content/quantum-observable-universe/appendix-mass-binding-algorithms/mba-intro.md:31: *Status flags* mirror the canonical derivation table: ✅ proved | content/quantum-observable-universe/appendix-mass-binding-algorithms/mba-intro.md:32: (sorry-free Lean), 🟢 derived (categorical, no fit), | content/quantum-observable-universe/appendix-mass-binding-algorithms/mba-intro.md:33: 🟡 conjecture-conditional, 🔴 open gate."
-      },
       {
         "field_hash": {
           "md": "7c557c593cb2",
@@ -208,24 +174,6 @@
       }
     ],
     "voice-unicode-crash": [
-      {
-        "field_hash": {
-          "md": "605a057db320",
-          "ts": "a4d0cbf170e3"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
-          "version": "v1",
-          "script_hash": "a8a7cde19181",
-          "script_commit_sha": "52373bf7e4c2946d253764199dbd01fc20b23f49"
-        },
-        "reviewed_at": "2026-06-03T13:06:05.843Z",
-        "reviewed_sha": "19118a572290d7bf9fc5b30e8a174c4bc86e6ad5",
-        "severity": "critical",
-        "evidence": "content/quantum-observable-universe/appendix-mass-binding-algorithms/mba-intro.md:31: *Status flags* mirror the canonical derivation table: ✅ proved"
-      },
       {
         "field_hash": {
           "md": "7c557c593cb2",
@@ -595,7 +543,7 @@
           "ts": "a4d0cbf170e3"
         },
         "result": "pass",
-        "evidence": "mba-intro.md:1-8 — prose block titled 'Scope and conventions' in sec:mba-scope; describes purpose, layered stack, conventions, and maintenance contract; exactly what an appendix intro section needs; on-topic, correct register, non-redundant with siblings",
+        "evidence": "mba-intro.md:1-8 \u2014 prose block titled 'Scope and conventions' in sec:mba-scope; describes purpose, layered stack, conventions, and maintenance contract; exactly what an appendix intro section needs; on-topic, correct register, non-redundant with siblings",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -614,7 +562,7 @@
           "ts": "a4d0cbf170e3"
         },
         "result": "pass",
-        "evidence": "mba-intro.ts:1-12 — no uses[] field; prose block has no dependencies declared; zero forward-ref risk",
+        "evidence": "mba-intro.ts:1-12 \u2014 no uses[] field; prose block has no dependencies declared; zero forward-ref risk",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
