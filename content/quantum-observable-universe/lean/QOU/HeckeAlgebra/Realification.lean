@@ -97,7 +97,7 @@ the QOU pipeline. -/
     `LaurentPolynomial.mapRingHom` no longer resolves. -/
 noncomputable def embedIntToReal :
     LaurentPolynomial ℤ →+* LaurentPolynomial ℝ :=
-  AddMonoidAlgebra.mapRangeRingHom (Int.castRingHom ℝ)
+  AddMonoidAlgebra.mapRangeRingHom ℤ (Int.castRingHom ℝ)
 
 /-- **Realification at q_0** of an integer formal Laurent
     polynomial: embed ℤ → ℝ, then eval at q_0.
