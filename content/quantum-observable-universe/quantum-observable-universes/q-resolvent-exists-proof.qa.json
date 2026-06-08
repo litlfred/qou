@@ -1788,7 +1788,28 @@
           "worst_span": 0
         }
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "029b7e05fef4",
+          "ts": "62a8b9013c72"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "quantum-observable-universes.ts:420 — proof block in sec:q-resolvent-wick",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:31:05.132Z",
+        "reviewed_sha": "2fe9059788e64c4c28b6aa6240b42ef7ace96e99",
+        "notes": "Proof of q-resolvent existence; fits sec:q-resolvent-wick."
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-08T09:31:05.132Z"
 }

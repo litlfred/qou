@@ -2597,7 +2597,95 @@
           "worst_span": 14
         }
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "b47e9f6122be",
+          "ts": "a243ee09d888",
+          "lean": "60e126a06902"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "quantum-observable-universes.ts:26 — block in sec:qou-definition",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:32:18.258Z",
+        "reviewed_sha": "54f024fb58e659d609d9b85dbcdc41608847a269",
+        "notes": "QOU existence proposition; fits sec:qou-definition."
+      }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "b47e9f6122be",
+          "ts": "a243ee09d888",
+          "lean": "60e126a06902"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "quantum-observable-universes-exists.md:1-53 — full statement with explicit construction; ends with citation; no separate ## Interpretation heading",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:32:18.291Z",
+        "reviewed_sha": "54f024fb58e659d609d9b85dbcdc41608847a269",
+        "notes": "Statement block with construction details; interpretive notes embedded in statement flow, not a separate interpretive section after the claim."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "b47e9f6122be",
+          "ts": "a243ee09d888",
+          "lean": "60e126a06902"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "quantum-observable-universes-exists.md:5-18 — statement over C^x, q in C^x; categorical; archimedean mention in parenthetical only, not as hypothesis",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:32:18.323Z",
+        "reviewed_sha": "54f024fb58e659d609d9b85dbcdc41608847a269",
+        "notes": "Statement is categorical/algebraic. Archimedean specialisation mentioned parenthetically, not as required hypothesis."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "b47e9f6122be",
+          "ts": "a243ee09d888",
+          "lean": "60e126a06902"
+        },
+        "result": "n/a",
+        "severity": "minor",
+        "evidence": "quantum-observable-universe-exists.md — no **Proof.** body; proof in prf:quantum-observable-universe-exists",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:32:18.355Z",
+        "reviewed_sha": "54f024fb58e659d609d9b85dbcdc41608847a269",
+        "notes": "Proof in separate proof block; n/a."
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-08T09:32:18.355Z"
 }

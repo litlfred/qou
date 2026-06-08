@@ -1856,7 +1856,28 @@
           "worst_span": 0
         }
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "70976700b19d",
+          "ts": "967ab60b2d44"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "quantum-observable-universes.ts:489 — block in sec:elaboration-intro; vanishing conditions prose",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:31:05.201Z",
+        "reviewed_sha": "2fe9059788e64c4c28b6aa6240b42ef7ace96e99",
+        "notes": "Vanishing conditions prose in elaboration section; fits."
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-08T09:31:05.201Z"
 }

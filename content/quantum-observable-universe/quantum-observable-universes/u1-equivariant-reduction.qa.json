@@ -2595,7 +2595,95 @@
           "worst_span": 0
         }
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "cc21ffe46a60",
+          "ts": "ede9d0b1156b",
+          "lean": "d78150a636de"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "quantum-observable-universes.ts:167 — block in sec:substrate-parameter; U(1)-equivariant reduction of exceptional divisor",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:32:50.186Z",
+        "reviewed_sha": "6eda484c46c77ca733b37af465a9966a697d076b",
+        "notes": "U(1)-equivariant reduction proposition; fits sec:substrate-parameter."
+      }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "cc21ffe46a60",
+          "ts": "ede9d0b1156b",
+          "lean": "d78150a636de"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "u1-equivariant-reduction.md:3-24 — statement + proof sketch; Scope of claim paragraph follows, no separate ## Interpretation",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:32:50.224Z",
+        "reviewed_sha": "6eda484c46c77ca733b37af465a9966a697d076b",
+        "notes": "Proposition with proof sketch; Scope paragraph is mathematical clarification of the claim, not interpretive elaboration."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "cc21ffe46a60",
+          "ts": "ede9d0b1156b",
+          "lean": "d78150a636de"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "u1-equivariant-reduction.md:1 — Lean sibling banner: archimedean specialisation over R; statement uses S^2, CP^1(C), S^1, polar axis — sphere geometry",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:32:50.260Z",
+        "reviewed_sha": "6eda484c46c77ca733b37af465a9966a697d076b",
+        "notes": "Statement references CP^1(C) and S^1, sphere geometry. Archimedean banner present. WARN: wall: field missing in .ts manifest despite banner."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "cc21ffe46a60",
+          "ts": "ede9d0b1156b",
+          "lean": "d78150a636de"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "u1-equivariant-reduction.md:27-36 — proof sketch uses spherical parametrisation, U(1) action on phase psi, orbit space [0,pi]; consistent with archimedean geometry named in statement",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:32:50.294Z",
+        "reviewed_sha": "6eda484c46c77ca733b37af465a9966a697d076b",
+        "notes": "Proof sketch uses archimedean sphere geometry consistently with the archimedean statement; no regime mismatch."
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-08T09:32:50.294Z"
 }
