@@ -140,15 +140,27 @@ axiom wenzlBridge :
     markovTraceOnWedderburn x =
       ∑ λ ∈ partitions_as_finset n, JonesMarkovCoefficient λ q * (x λ).trace
 
-/-- **Trace of an additive sum** distributes — axiomatic
-    additivity (part of `markovTrace_linear`). -/
-axiom markovTrace_add : ∀ {n : ℕ} (x y : HeckeElement n),
-    markovTrace n (x + y) = markovTrace n x + markovTrace n y
+/-- **Trace of an additive sum** distributes.
 
-/-- **Trace of a scaled element** scales by the same factor —
-    axiomatic homogeneity (part of `markovTrace_linear`). -/
-axiom markovTrace_smul : ∀ {n : ℕ} (c : ℝ) (x : HeckeElement n),
-    markovTrace n (c • x) = c * markovTrace n x
+    **Theorem** (was previously `axiom markovTrace_add`).
+    Discharged 2026-06-08: derived from the stronger
+    `markovTrace_linear` axiom (which carries both `map_add` and
+    `map_smul` via `IsLinearMap`). Net: this file shrinks by 1
+    axiom; the linearity claim is concentrated in the single
+    `markovTrace_linear` axiom upstream. -/
+theorem markovTrace_add {n : ℕ} (x y : HeckeElement n) :
+    markovTrace n (x + y) = markovTrace n x + markovTrace n y :=
+  (QOU.HeckeAlgebra.markovTrace_linear n).map_add x y
+
+/-- **Trace of a scaled element** scales by the same factor.
+
+    **Theorem** (was previously `axiom markovTrace_smul`).
+    Discharged 2026-06-08: derived from `markovTrace_linear`'s
+    `map_smul` field, with the `c • r = c * r` identity for
+    `r : ℝ` (via `smul_eq_mul`). -/
+theorem markovTrace_smul {n : ℕ} (c : ℝ) (x : HeckeElement n) :
+    markovTrace n (c • x) = c * markovTrace n x := by
+  rw [(QOU.HeckeAlgebra.markovTrace_linear n).map_smul c x, smul_eq_mul]
 
 /-- **Trace of the zero element is zero** — derived from
     homogeneity via `0 • x = 0` and `markovTrace_smul`. -/
