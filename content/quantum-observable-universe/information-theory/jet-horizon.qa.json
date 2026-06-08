@@ -1992,7 +1992,49 @@
           "worst_span": 0
         }
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "86184daf8030",
+          "ts": "dac57111d023",
+          "lean": "af8acf2e82ca"
+        },
+        "result": "pass",
+        "evidence": "jet-horizon in sec:horizons-aeons of info-theory.ts line 173; definition of jet horizon ideal fits chapter scope",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:53:36.242Z",
+        "reviewed_sha": "8b2b9773c91b3fddf1abf16f20f58d325bf77565",
+        "notes": "section placement and content match"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "86184daf8030",
+          "ts": "dac57111d023",
+          "lean": "af8acf2e82ca"
+        },
+        "result": "pass",
+        "evidence": "jet-horizon.md defines vanishing locus of ideal h in generic terms; no Real.sqrt/rpow/log/numeric q value; purely algebraic/categorical",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:54:01.911Z",
+        "reviewed_sha": "8b2b9773c91b3fddf1abf16f20f58d325bf77565",
+        "notes": "statement is categorical, no archimedean leak"
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-08T09:54:01.911Z"
 }
