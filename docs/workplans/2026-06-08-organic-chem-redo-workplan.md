@@ -138,6 +138,47 @@ Define the projector from symmetry **before** benzene.
   pathway. Validate selectivity (benzene vs hexane) against real yields.
   *Lowest priority; most ambitious.*
 
+## MO ↔ QOU dictionary (2026-06-08 — corroborates WS-C/F, informs WS-D/G)
+
+A molecular-orbital / Woodward–Hoffmann analysis of the two pathways
+translates natively (symmetry/channel content only — NOT orbital-as-
+wavefunction, which is mean-field/archimedean; and W–H/Hückel must be
+*derived* from Wedderburn selection, not imported):
+
+**HOMO/LUMO status — standard, but a frontier/simplified case.** HOMO/LUMO
+is textbook chemistry (frontier-molecular-orbital theory; Fukui &
+Hoffmann, 1981), yet it is itself a *frontier truncation*: two orbitals
+out of the full spectrum, within mean-field (single-particle) MO theory.
+In the QOU mapping it is the **2-channel (q, −q⁻¹) frontier slice of the
+full multi-block Wedderburn decomposition** — H_n(q) carries one block
+per partition λ⊢n, not two. So σᵢ↔HOMO/LUMO is a frontier analogy, not
+the full categorical object (this is *why* the [2]_q-gap claim below is
+at best frontier-level).
+
+| MO concept | Native QOU object |
+|---|---|
+| bonding (HOMO) vs antibonding (LUMO) | σᵢ eigenvalues **q** (sym) vs **−q⁻¹** (antisym), §7a |
+| HOMO–LUMO gap | *unverified hypothesis*: σᵢ's eigenvalue split (q, −q⁻¹) has difference q+q⁻¹ = [2]_q — but **dimensionless (fibre)**, not yet shown to be the eV gap |
+| thermal HOMO→LUMO promotion → radical | occupy antisym (−q⁻¹) channel = bar/chirality flip (L₊↔L₋) |
+| acetylene "orthogonal degenerate π pairs" | σ⊥πₓ⊥π_y orthogonal channels — **corroborates A2-CO/WS-F2** |
+| [2+2+2] cycloaddition | parabolic projector λ=(2,2,2)⊢6 — **corroborates WS-C benzene** |
+| Woodward–Hoffmann / Hückel 4n+2 | Wedderburn-block selection (sub-Hopf closure) |
+| aromatic π-cloud / Frost circle | Jones–Wenzl symmetric projector / C₆-cyclic spectrum (roots of unity) |
+
+**Unverified analogy — NOT a derivation (corrected 2026-06-08).** That
+the σᵢ channel-split [2]_q *is* a HOMO–LUMO gap is a hypothesis, not
+established. Two gaps: (i) [2]_q is a **dimensionless fibre**
+eigenvalue-difference; a HOMO–LUMO gap is an **eV energy** (needs an
+energy scale). (ii) The [2]_q² in E_mol is derived as a **Wedderburn
+standard-channel weight** (`h2-molecular-binding.py`), *not* as (gap)² —
+so the shared symbol may be coincidental. Solid part: E_mol =
+E_hartree/[2]_q² (repo-derived). To test the gap claim: define
+frontier-channel energies from the Markov trace / Φ₁ and check the
+splitting (WS-C/E). Do **not** assert the identity until then.
+**Heat link (WS-G):** thermal HOMO→LUMO promotion to clear the symmetry
+barrier = the activation = peak-birthday channel-flip in the partition-
+function picture.
+
 ## Validation gates (every commit touching content/compute)
 `bun run validate quantum-observable-universe`; LP-dual witness validator;
 witnessed-values (no bare literals); conjectural-propagation audit on new
