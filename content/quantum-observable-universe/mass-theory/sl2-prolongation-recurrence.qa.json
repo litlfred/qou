@@ -106,7 +106,117 @@
           "worst_span": 0
         }
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "84041b8e6b6c",
+          "ts": "29b7acbbed51",
+          "lean": "318393fd269b"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "sl2-prolongation-recurrence.md -- statement and proof of depth-2 recurrence",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T13:46:07.708Z",
+        "reviewed_sha": "af638213a478dd151bf02a1c7949162067f278fa",
+        "notes": "Block is focused on statement and proof; no extended interpretation section"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "84041b8e6b6c",
+          "ts": "29b7acbbed51",
+          "lean": "318393fd269b"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "sl2-prolongation-recurrence.ts:2 -- proposition",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T13:46:07.743Z",
+        "reviewed_sha": "af638213a478dd151bf02a1c7949162067f278fa",
+        "notes": "sl2 prolongation recurrence fits mass-theory chapter"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "84041b8e6b6c",
+          "ts": "29b7acbbed51",
+          "lean": "318393fd269b"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "sl2-prolongation-recurrence.md -- recurrence on prolonged periods; algebraic",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T13:46:07.775Z",
+        "reviewed_sha": "af638213a478dd151bf02a1c7949162067f278fa",
+        "notes": "Statement is algebraic depth-2 recurrence; no archimedean-only constructs in statement"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "84041b8e6b6c",
+          "ts": "29b7acbbed51",
+          "lean": "318393fd269b"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "sl2-prolongation-recurrence.lean -- Lean witness for depth-2 claim",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T13:46:07.810Z",
+        "reviewed_sha": "af638213a478dd151bf02a1c7949162067f278fa",
+        "notes": "Lean witness proves the depth-2 recurrence algebraically"
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "84041b8e6b6c",
+          "ts": "29b7acbbed51",
+          "lean": "318393fd269b"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "sl2-prolongation-recurrence.lean -- 2x2 operator B with tr and det matching narrative",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T13:46:07.844Z",
+        "reviewed_sha": "af638213a478dd151bf02a1c7949162067f278fa",
+        "notes": "Lean and narrative both describe depth-2 recurrence via 2x2 operator; same claim"
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-07T13:46:07.844Z"
 }

@@ -112,23 +112,6 @@
           "script_hash": "93cae3264dc7",
           "script_commit_sha": "6dd2b7268367e45f3c78a93d8cf81ded4a5efaaf"
         },
-        "reviewed_at": "2026-06-02T19:35:55.253Z",
-        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
-      },
-      {
-        "field_hash": {
-          "md": "f167b3478144",
-          "ts": "17da4fb4bda2",
-          "lean": "286fd2ed71af"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "93cae3264dc7",
-          "script_commit_sha": "6dd2b7268367e45f3c78a93d8cf81ded4a5efaaf"
-        },
         "reviewed_at": "2026-06-03T13:06:07.086Z",
         "reviewed_sha": "19118a572290d7bf9fc5b30e8a174c4bc86e6ad5"
       }
@@ -255,23 +238,6 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
-          "script_hash": "8055e5864896",
-          "script_commit_sha": "7d3eeba998ed7051fd1624bce43cb8d0e006a14c"
-        },
-        "reviewed_at": "2026-06-02T19:34:22.348Z",
-        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
-      },
-      {
-        "field_hash": {
-          "md": "f167b3478144",
-          "ts": "17da4fb4bda2",
-          "lean": "286fd2ed71af"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
           "script_hash": "3b132a7280af",
           "script_commit_sha": "b3006ea9b2daeb73b5912c919a7bcb21c5834a77"
         },
@@ -280,23 +246,6 @@
       }
     ],
     "voice-status-leak": [
-      {
-        "field_hash": {
-          "md": "f167b3478144",
-          "ts": "17da4fb4bda2",
-          "lean": "286fd2ed71af"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
-          "version": "v1",
-          "script_hash": "a8a7cde19181",
-          "script_commit_sha": "52373bf7e4c2946d253764199dbd01fc20b23f49"
-        },
-        "reviewed_at": "2026-06-02T19:35:52.628Z",
-        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
-      },
       {
         "field_hash": {
           "md": "bf6f4bf23895",
@@ -316,23 +265,6 @@
       }
     ],
     "voice-emoji-content": [
-      {
-        "field_hash": {
-          "md": "f167b3478144",
-          "ts": "17da4fb4bda2",
-          "lean": "286fd2ed71af"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
-          "version": "v1",
-          "script_hash": "a8a7cde19181",
-          "script_commit_sha": "52373bf7e4c2946d253764199dbd01fc20b23f49"
-        },
-        "reviewed_at": "2026-06-02T19:35:52.628Z",
-        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
-      },
       {
         "field_hash": {
           "md": "bf6f4bf23895",
@@ -373,23 +305,6 @@
     "voice-time-stamped-notes": [
       {
         "field_hash": {
-          "md": "f167b3478144",
-          "ts": "17da4fb4bda2",
-          "lean": "286fd2ed71af"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
-          "version": "v1",
-          "script_hash": "a8a7cde19181",
-          "script_commit_sha": "52373bf7e4c2946d253764199dbd01fc20b23f49"
-        },
-        "reviewed_at": "2026-06-02T19:35:52.628Z",
-        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
-      },
-      {
-        "field_hash": {
           "md": "bf6f4bf23895",
           "ts": "17da4fb4bda2",
           "lean": "286fd2ed71af"
@@ -409,23 +324,6 @@
     "voice-unicode-crash": [
       {
         "field_hash": {
-          "md": "f167b3478144",
-          "ts": "17da4fb4bda2",
-          "lean": "286fd2ed71af"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
-          "version": "v1",
-          "script_hash": "a8a7cde19181",
-          "script_commit_sha": "52373bf7e4c2946d253764199dbd01fc20b23f49"
-        },
-        "reviewed_at": "2026-06-02T19:35:52.628Z",
-        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
-      },
-      {
-        "field_hash": {
           "md": "bf6f4bf23895",
           "ts": "17da4fb4bda2",
           "lean": "286fd2ed71af"
@@ -443,25 +341,6 @@
       }
     ],
     "voice-editorializing": [
-      {
-        "field_hash": {
-          "md": "f167b3478144",
-          "ts": "17da4fb4bda2",
-          "lean": "286fd2ed71af"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
-          "version": "v1",
-          "script_hash": "a8a7cde19181",
-          "script_commit_sha": "52373bf7e4c2946d253764199dbd01fc20b23f49"
-        },
-        "reviewed_at": "2026-06-02T19:35:52.628Z",
-        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/f-bor-borromean-observable.md:67: Two categorical integers attach naturally to $F_{\\mathrm{Bor}}$:"
-      },
       {
         "field_hash": {
           "md": "bf6f4bf23895",
@@ -647,23 +526,6 @@
           "script_hash": "8055e5864896",
           "script_commit_sha": "7d3eeba998ed7051fd1624bce43cb8d0e006a14c"
         },
-        "reviewed_at": "2026-06-02T19:35:58.523Z",
-        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
-      },
-      {
-        "field_hash": {
-          "md": "f167b3478144",
-          "ts": "17da4fb4bda2",
-          "lean": "286fd2ed71af"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "8055e5864896",
-          "script_commit_sha": "7d3eeba998ed7051fd1624bce43cb8d0e006a14c"
-        },
         "reviewed_at": "2026-06-03T13:06:09.584Z",
         "reviewed_sha": "19118a572290d7bf9fc5b30e8a174c4bc86e6ad5"
       }
@@ -683,45 +545,11 @@
           "script_hash": "8055e5864896",
           "script_commit_sha": "7d3eeba998ed7051fd1624bce43cb8d0e006a14c"
         },
-        "reviewed_at": "2026-06-02T19:35:58.523Z",
-        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
-      },
-      {
-        "field_hash": {
-          "md": "f167b3478144",
-          "ts": "17da4fb4bda2",
-          "lean": "286fd2ed71af"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "8055e5864896",
-          "script_commit_sha": "7d3eeba998ed7051fd1624bce43cb8d0e006a14c"
-        },
         "reviewed_at": "2026-06-03T13:06:09.584Z",
         "reviewed_sha": "19118a572290d7bf9fc5b30e8a174c4bc86e6ad5"
       }
     ],
     "detangler-archimedean-wall": [
-      {
-        "field_hash": {
-          "md": "f167b3478144",
-          "ts": "17da4fb4bda2",
-          "lean": "286fd2ed71af"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "8055e5864896",
-          "script_commit_sha": "7d3eeba998ed7051fd1624bce43cb8d0e006a14c"
-        },
-        "reviewed_at": "2026-06-02T19:35:58.523Z",
-        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
-      },
       {
         "field_hash": {
           "md": "f167b3478144",
@@ -760,6 +588,26 @@
         "reviewed_at": "2026-06-06T01:27:35.758Z",
         "reviewed_sha": "b4776d23aebd94c8004980476cade9fe8e0b39c9",
         "notes": "No misplacement; no redundancy with sibling blocks."
+      },
+      {
+        "field_hash": {
+          "md": "bf6f4bf23895",
+          "ts": "17da4fb4bda2",
+          "lean": "286fd2ed71af"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "f-bor-borromean-observable.ts:37 \u2014 definition of Borromean categorical observable based on Markov trace and q-integers",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:33:10.003Z",
+        "reviewed_sha": "8b2b9773c91b3fddf1abf16f20f58d325bf77565",
+        "notes": "Borromean Markov trace observable is core knot/Hecke algebra content; fits braids-and-knots chapter."
       }
     ],
     "wall-side-statement": [
@@ -782,6 +630,26 @@
         "reviewed_at": "2026-06-06T01:27:51.895Z",
         "reviewed_sha": "b4776d23aebd94c8004980476cade9fe8e0b39c9",
         "notes": "Correctly generic; wall respected."
+      },
+      {
+        "field_hash": {
+          "md": "bf6f4bf23895",
+          "ts": "17da4fb4bda2",
+          "lean": "286fd2ed71af"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "f-bor-borromean-observable.ts:21 \u2014 comment: generic-q identity over any commutative ring; no q_0 numerical pin",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:33:10.005Z",
+        "reviewed_sha": "8b2b9773c91b3fddf1abf16f20f58d325bf77565",
+        "notes": "Definition is explicitly generic-q over any commutative ring; archimedean substrate evaluation lives elsewhere per manifest comment."
       }
     ],
     "detangler-topic-coherence": [
@@ -885,5 +753,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-08T09:33:10.005Z"
 }

@@ -94,22 +94,6 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
-          "script_hash": "8055e5864896",
-          "script_commit_sha": "7d3eeba998ed7051fd1624bce43cb8d0e006a14c"
-        },
-        "reviewed_at": "2026-06-02T19:34:22.348Z",
-        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
-      },
-      {
-        "field_hash": {
-          "md": "66610d713aa7",
-          "ts": "37c1b2791875"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
           "script_hash": "3b132a7280af",
           "script_commit_sha": "b3006ea9b2daeb73b5912c919a7bcb21c5834a77"
         },
@@ -118,22 +102,6 @@
       }
     ],
     "voice-status-leak": [
-      {
-        "field_hash": {
-          "md": "66610d713aa7",
-          "ts": "37c1b2791875"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
-          "version": "v1",
-          "script_hash": "a8a7cde19181",
-          "script_commit_sha": "52373bf7e4c2946d253764199dbd01fc20b23f49"
-        },
-        "reviewed_at": "2026-06-02T19:35:52.628Z",
-        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
-      },
       {
         "field_hash": {
           "md": "be436abe9ee4",
@@ -152,22 +120,6 @@
       }
     ],
     "voice-emoji-content": [
-      {
-        "field_hash": {
-          "md": "66610d713aa7",
-          "ts": "37c1b2791875"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
-          "version": "v1",
-          "script_hash": "a8a7cde19181",
-          "script_commit_sha": "52373bf7e4c2946d253764199dbd01fc20b23f49"
-        },
-        "reviewed_at": "2026-06-02T19:35:52.628Z",
-        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
-      },
       {
         "field_hash": {
           "md": "be436abe9ee4",
@@ -206,22 +158,6 @@
     "voice-time-stamped-notes": [
       {
         "field_hash": {
-          "md": "66610d713aa7",
-          "ts": "37c1b2791875"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
-          "version": "v1",
-          "script_hash": "a8a7cde19181",
-          "script_commit_sha": "52373bf7e4c2946d253764199dbd01fc20b23f49"
-        },
-        "reviewed_at": "2026-06-02T19:35:52.628Z",
-        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
-      },
-      {
-        "field_hash": {
           "md": "be436abe9ee4",
           "ts": "37c1b2791875"
         },
@@ -240,22 +176,6 @@
     "voice-unicode-crash": [
       {
         "field_hash": {
-          "md": "66610d713aa7",
-          "ts": "37c1b2791875"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
-          "version": "v1",
-          "script_hash": "a8a7cde19181",
-          "script_commit_sha": "52373bf7e4c2946d253764199dbd01fc20b23f49"
-        },
-        "reviewed_at": "2026-06-02T19:35:52.628Z",
-        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
-      },
-      {
-        "field_hash": {
           "md": "be436abe9ee4",
           "ts": "37c1b2791875"
         },
@@ -272,24 +192,6 @@
       }
     ],
     "voice-editorializing": [
-      {
-        "field_hash": {
-          "md": "66610d713aa7",
-          "ts": "37c1b2791875"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
-          "version": "v1",
-          "script_hash": "a8a7cde19181",
-          "script_commit_sha": "52373bf7e4c2946d253764199dbd01fc20b23f49"
-        },
-        "reviewed_at": "2026-06-02T19:35:52.628Z",
-        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/q-difference-viewpoint-method.md:6: and the Markov trace itself — are most cleanly analysed not through"
-      },
       {
         "field_hash": {
           "md": "be436abe9ee4",
@@ -326,22 +228,6 @@
       }
     ],
     "voice-title-scholarly": [
-      {
-        "field_hash": {
-          "md": "66610d713aa7",
-          "ts": "37c1b2791875"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "8055e5864896",
-          "script_commit_sha": "7d3eeba998ed7051fd1624bce43cb8d0e006a14c"
-        },
-        "reviewed_at": "2026-06-02T19:35:52.628Z",
-        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
-      },
       {
         "field_hash": {
           "md": "66610d713aa7",
@@ -609,43 +495,11 @@
           "script_hash": "8055e5864896",
           "script_commit_sha": "7d3eeba998ed7051fd1624bce43cb8d0e006a14c"
         },
-        "reviewed_at": "2026-06-02T19:35:58.523Z",
-        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
-      },
-      {
-        "field_hash": {
-          "md": "66610d713aa7",
-          "ts": "37c1b2791875"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "8055e5864896",
-          "script_commit_sha": "7d3eeba998ed7051fd1624bce43cb8d0e006a14c"
-        },
         "reviewed_at": "2026-06-03T13:06:09.584Z",
         "reviewed_sha": "19118a572290d7bf9fc5b30e8a174c4bc86e6ad5"
       }
     ],
     "detangler-no-xchapter-fwd": [
-      {
-        "field_hash": {
-          "md": "66610d713aa7",
-          "ts": "37c1b2791875"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "8055e5864896",
-          "script_commit_sha": "7d3eeba998ed7051fd1624bce43cb8d0e006a14c"
-        },
-        "reviewed_at": "2026-06-02T19:35:58.523Z",
-        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
-      },
       {
         "field_hash": {
           "md": "66610d713aa7",
@@ -771,7 +625,28 @@
           "worst_span": 0
         }
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "be436abe9ee4",
+          "ts": "37c1b2791875"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "q-difference-viewpoint-method.ts:3 \u2014 prose block about q-difference/root-of-unity method for Habiro elements",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:30:40.748Z",
+        "reviewed_sha": "8b2b9773c91b3fddf1abf16f20f58d325bf77565",
+        "notes": "Subject is q-difference machinery for Markov trace and Habiro elements; fits braids-and-knots chapter scope. Prose kind correct."
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-08T09:30:40.748Z"
 }

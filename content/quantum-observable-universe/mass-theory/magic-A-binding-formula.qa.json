@@ -61,23 +61,6 @@
           "script_hash": "93cae3264dc7",
           "script_commit_sha": "6dd2b7268367e45f3c78a93d8cf81ded4a5efaaf"
         },
-        "reviewed_at": "2026-06-02T19:35:55.253Z",
-        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
-      },
-      {
-        "field_hash": {
-          "md": "6caa25bf7879",
-          "ts": "ac9c0ac75141",
-          "lean": "08a3ccb842a7"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "93cae3264dc7",
-          "script_commit_sha": "6dd2b7268367e45f3c78a93d8cf81ded4a5efaaf"
-        },
         "reviewed_at": "2026-06-03T13:06:07.086Z",
         "reviewed_sha": "19118a572290d7bf9fc5b30e8a174c4bc86e6ad5"
       }
@@ -97,23 +80,6 @@
         },
         "reviewed_at": "2026-06-01T16:06:38.106Z",
         "reviewed_sha": "d4a8cf462aeef2262429b13571ddd385968bce63"
-      },
-      {
-        "field_hash": {
-          "md": "6caa25bf7879",
-          "ts": "ac9c0ac75141",
-          "lean": "08a3ccb842a7"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "93cae3264dc7",
-          "script_commit_sha": "6dd2b7268367e45f3c78a93d8cf81ded4a5efaaf"
-        },
-        "reviewed_at": "2026-06-02T19:35:55.253Z",
-        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
       },
       {
         "field_hash": {
@@ -165,23 +131,6 @@
         },
         "reviewed_at": "2026-06-01T16:06:38.106Z",
         "reviewed_sha": "d4a8cf462aeef2262429b13571ddd385968bce63"
-      },
-      {
-        "field_hash": {
-          "md": "6caa25bf7879",
-          "ts": "ac9c0ac75141",
-          "lean": "08a3ccb842a7"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "93cae3264dc7",
-          "script_commit_sha": "6dd2b7268367e45f3c78a93d8cf81ded4a5efaaf"
-        },
-        "reviewed_at": "2026-06-02T19:35:55.253Z",
-        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
       },
       {
         "field_hash": {
@@ -361,23 +310,6 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
-          "script_hash": "8055e5864896",
-          "script_commit_sha": "7d3eeba998ed7051fd1624bce43cb8d0e006a14c"
-        },
-        "reviewed_at": "2026-06-02T19:34:22.348Z",
-        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
-      },
-      {
-        "field_hash": {
-          "md": "6caa25bf7879",
-          "ts": "ac9c0ac75141",
-          "lean": "08a3ccb842a7"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
           "script_hash": "3b132a7280af",
           "script_commit_sha": "d3c07508b029723fd0bf70c593e53aec2599925d"
         },
@@ -386,23 +318,6 @@
       }
     ],
     "canonical-no-negative-result-in-paper": [
-      {
-        "field_hash": {
-          "md": "6caa25bf7879",
-          "ts": "ac9c0ac75141",
-          "lean": "08a3ccb842a7"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "8055e5864896",
-          "script_commit_sha": "7d3eeba998ed7051fd1624bce43cb8d0e006a14c"
-        },
-        "reviewed_at": "2026-06-02T19:34:22.348Z",
-        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
-      },
       {
         "field_hash": {
           "md": "6caa25bf7879",
@@ -424,23 +339,6 @@
     "voice-status-leak": [
       {
         "field_hash": {
-          "md": "6caa25bf7879",
-          "ts": "ac9c0ac75141",
-          "lean": "08a3ccb842a7"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
-          "version": "v1",
-          "script_hash": "a8a7cde19181",
-          "script_commit_sha": "52373bf7e4c2946d253764199dbd01fc20b23f49"
-        },
-        "reviewed_at": "2026-06-02T19:35:52.628Z",
-        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
-      },
-      {
-        "field_hash": {
           "md": "5fed5257b1ec",
           "ts": "ac9c0ac75141",
           "lean": "08a3ccb842a7"
@@ -458,23 +356,6 @@
       }
     ],
     "voice-emoji-content": [
-      {
-        "field_hash": {
-          "md": "6caa25bf7879",
-          "ts": "ac9c0ac75141",
-          "lean": "08a3ccb842a7"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
-          "version": "v1",
-          "script_hash": "a8a7cde19181",
-          "script_commit_sha": "52373bf7e4c2946d253764199dbd01fc20b23f49"
-        },
-        "reviewed_at": "2026-06-02T19:35:52.628Z",
-        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
-      },
       {
         "field_hash": {
           "md": "5fed5257b1ec",
@@ -515,23 +396,6 @@
     "voice-time-stamped-notes": [
       {
         "field_hash": {
-          "md": "6caa25bf7879",
-          "ts": "ac9c0ac75141",
-          "lean": "08a3ccb842a7"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
-          "version": "v1",
-          "script_hash": "a8a7cde19181",
-          "script_commit_sha": "52373bf7e4c2946d253764199dbd01fc20b23f49"
-        },
-        "reviewed_at": "2026-06-02T19:35:52.628Z",
-        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
-      },
-      {
-        "field_hash": {
           "md": "5fed5257b1ec",
           "ts": "ac9c0ac75141",
           "lean": "08a3ccb842a7"
@@ -551,25 +415,6 @@
     "voice-unicode-crash": [
       {
         "field_hash": {
-          "md": "6caa25bf7879",
-          "ts": "ac9c0ac75141",
-          "lean": "08a3ccb842a7"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
-          "version": "v1",
-          "script_hash": "a8a7cde19181",
-          "script_commit_sha": "52373bf7e4c2946d253764199dbd01fc20b23f49"
-        },
-        "reviewed_at": "2026-06-02T19:35:52.628Z",
-        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163",
-        "severity": "critical",
-        "evidence": "content/quantum-observable-universe/mass-theory/magic-A-binding-formula.md:33: which misses $^4_2\\mathrm{He}$ by $-79\\%$ (5× too small) because that | content/quantum-observable-universe/mass-theory/magic-A-binding-formula.md:108: hyperbolic atoms (D, T, ³He). Only the $\\nu_{\\mathrm{SDP}}(^4\\mathrm{He})$ | content/quantum-observable-universe/mass-theory/magic-A-binding-formula.md:122: (each has one pn arc); the T vs ³He f-factor spread reported by | content/quantum-observable-universe/mass-theory/magic-A-binding-formula.md:125: ³He = pp+pn) at the closed-form-ratio scale, not from a missing"
-      },
-      {
-        "field_hash": {
           "md": "5fed5257b1ec",
           "ts": "ac9c0ac75141",
           "lean": "08a3ccb842a7"
@@ -587,23 +432,6 @@
       }
     ],
     "voice-editorializing": [
-      {
-        "field_hash": {
-          "md": "6caa25bf7879",
-          "ts": "ac9c0ac75141",
-          "lean": "08a3ccb842a7"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
-          "version": "v1",
-          "script_hash": "a8a7cde19181",
-          "script_commit_sha": "52373bf7e4c2946d253764199dbd01fc20b23f49"
-        },
-        "reviewed_at": "2026-06-02T19:35:52.628Z",
-        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
-      },
       {
         "field_hash": {
           "md": "5fed5257b1ec",
@@ -829,45 +657,11 @@
           "script_hash": "8055e5864896",
           "script_commit_sha": "7d3eeba998ed7051fd1624bce43cb8d0e006a14c"
         },
-        "reviewed_at": "2026-06-02T19:35:58.523Z",
-        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
-      },
-      {
-        "field_hash": {
-          "md": "6caa25bf7879",
-          "ts": "ac9c0ac75141",
-          "lean": "08a3ccb842a7"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "8055e5864896",
-          "script_commit_sha": "7d3eeba998ed7051fd1624bce43cb8d0e006a14c"
-        },
         "reviewed_at": "2026-06-03T13:06:09.584Z",
         "reviewed_sha": "19118a572290d7bf9fc5b30e8a174c4bc86e6ad5"
       }
     ],
     "detangler-no-xchapter-fwd": [
-      {
-        "field_hash": {
-          "md": "6caa25bf7879",
-          "ts": "ac9c0ac75141",
-          "lean": "08a3ccb842a7"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "8055e5864896",
-          "script_commit_sha": "7d3eeba998ed7051fd1624bce43cb8d0e006a14c"
-        },
-        "reviewed_at": "2026-06-02T19:35:58.523Z",
-        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
-      },
       {
         "field_hash": {
           "md": "6caa25bf7879",
@@ -901,23 +695,6 @@
           "script_hash": "8055e5864896",
           "script_commit_sha": "7d3eeba998ed7051fd1624bce43cb8d0e006a14c"
         },
-        "reviewed_at": "2026-06-02T19:35:58.523Z",
-        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
-      },
-      {
-        "field_hash": {
-          "md": "6caa25bf7879",
-          "ts": "ac9c0ac75141",
-          "lean": "08a3ccb842a7"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "8055e5864896",
-          "script_commit_sha": "7d3eeba998ed7051fd1624bce43cb8d0e006a14c"
-        },
         "reviewed_at": "2026-06-03T13:06:09.584Z",
         "reviewed_sha": "19118a572290d7bf9fc5b30e8a174c4bc86e6ad5"
       }
@@ -931,7 +708,7 @@
         },
         "result": "warn",
         "severity": "minor",
-        "evidence": "Status and Reanalysis sections in .md prose body contain author-tracking notes that should be in authorNotes field per CLAUDE.md §4d.",
+        "evidence": "Status and Reanalysis sections in .md prose body contain author-tracking notes that should be in authorNotes field per CLAUDE.md \u00a74d.",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -941,7 +718,27 @@
         },
         "reviewed_at": "2026-06-06T01:19:03.533Z",
         "reviewed_sha": "237e5cd114e617f2aedd06a71e0e5fc75053f33c",
-        "notes": "Move Status/Reanalysis banners to authorNotes; keep §3b-cond conditional banner in prose."
+        "notes": "Move Status/Reanalysis banners to authorNotes; keep \u00a73b-cond conditional banner in prose."
+      },
+      {
+        "field_hash": {
+          "md": "979832b38831",
+          "ts": "ac9c0ac75141",
+          "lean": "08a3ccb842a7"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "magic-A-binding-formula.md:37+ -- ## Why doubly-magic and ## Status sections interpret proposition",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T13:44:31.868Z",
+        "reviewed_sha": "af638213a478dd151bf02a1c7949162067f278fa",
+        "notes": "Extended interpretive sections; proposition is conditional theorem with companion remark absent"
       }
     ],
     "fit-section-chapter": [
@@ -964,6 +761,26 @@
         "reviewed_at": "2026-06-06T01:19:03.567Z",
         "reviewed_sha": "237e5cd114e617f2aedd06a71e0e5fc75053f33c",
         "notes": "Block placement is appropriate."
+      },
+      {
+        "field_hash": {
+          "md": "979832b38831",
+          "ts": "ac9c0ac75141",
+          "lean": "08a3ccb842a7"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "magic-A-binding-formula.ts:2 -- proposition",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T13:44:31.910Z",
+        "reviewed_sha": "af638213a478dd151bf02a1c7949162067f278fa",
+        "notes": "Doubly-magic binding formula fits mass-theory chapter"
       }
     ],
     "wall-side-statement": [
@@ -975,7 +792,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "MeV comparison in statement uses approx (≈) and is labelled as archimedean specialisation; categorical formula is stated generically.",
+        "evidence": "MeV comparison in statement uses approx (\u2248) and is labelled as archimedean specialisation; categorical formula is stated generically.",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -986,6 +803,26 @@
         "reviewed_at": "2026-06-06T01:19:03.607Z",
         "reviewed_sha": "237e5cd114e617f2aedd06a71e0e5fc75053f33c",
         "notes": "Archimedean specialisation is properly bracketed in the statement."
+      },
+      {
+        "field_hash": {
+          "md": "979832b38831",
+          "ts": "ac9c0ac75141",
+          "lean": "08a3ccb842a7"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "magic-A-binding-formula.md:1 -- Lean sibling: archimedean specialisation over R banner",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T13:44:31.954Z",
+        "reviewed_sha": "af638213a478dd151bf02a1c7949162067f278fa",
+        "notes": "Block has explicit archimedean banner per CLAUDE.md 7c; legitimately uses R for MeV comparison"
       }
     ],
     "wall-side-proof": [
@@ -1008,6 +845,26 @@
         "reviewed_at": "2026-06-06T01:19:03.647Z",
         "reviewed_sha": "237e5cd114e617f2aedd06a71e0e5fc75053f33c",
         "notes": "Proof stays on categorical side; MeV values are in statement context only."
+      },
+      {
+        "field_hash": {
+          "md": "979832b38831",
+          "ts": "ac9c0ac75141",
+          "lean": "08a3ccb842a7"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "magic-A-binding-formula.lean -- archimedean proof of mass formula",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T13:44:31.997Z",
+        "reviewed_sha": "af638213a478dd151bf02a1c7949162067f278fa",
+        "notes": "Proof is archimedean evaluation of MeV mass; appropriately uses R with explicit banner"
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1019,7 +876,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "Lean ref qou:QOU.BraidKnot.magic_A_binding_formula present; §3b-cond conditional-class pattern documented in narrative.",
+        "evidence": "Lean ref qou:QOU.BraidKnot.magic_A_binding_formula present; \u00a73b-cond conditional-class pattern documented in narrative.",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -1030,6 +887,26 @@
         "reviewed_at": "2026-06-06T01:19:03.683Z",
         "reviewed_sha": "237e5cd114e617f2aedd06a71e0e5fc75053f33c",
         "notes": "Narrative and Lean both state the same conditional theorem structure."
+      },
+      {
+        "field_hash": {
+          "md": "979832b38831",
+          "ts": "ac9c0ac75141",
+          "lean": "08a3ccb842a7"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "magic-A-binding-formula.lean -- conditional theorem on magic-numbers-bring and gravity-spectral-prefactor",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T13:44:32.054Z",
+        "reviewed_sha": "af638213a478dd151bf02a1c7949162067f278fa",
+        "notes": "Narrative and lean both state conditional theorem on two conjectures; same hypotheses and conclusion"
       }
     ],
     "detangler-topic-coherence": [
@@ -1127,5 +1004,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-07T13:44:32.054Z"
 }

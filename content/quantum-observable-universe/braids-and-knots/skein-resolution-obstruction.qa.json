@@ -1,0 +1,62 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "def:skein-resolution-obstruction",
+  "kind": "definition",
+  "paths": {
+    "ts": "content/quantum-observable-universe/braids-and-knots/skein-resolution-obstruction.ts",
+    "md": "content/quantum-observable-universe/braids-and-knots/skein-resolution-obstruction.md",
+    "lean": "content/quantum-observable-universe/braids-and-knots/skein-resolution-obstruction.lean"
+  },
+  "source_hashes": {
+    "md": "641540df8b6f",
+    "ts": "1aa0d2e2e8cc",
+    "lean": "78a444cb2477"
+  },
+  "criteria": {
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "641540df8b6f",
+          "ts": "1aa0d2e2e8cc",
+          "lean": "78a444cb2477"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "skein-resolution-obstruction.ts:3 \u2014 definition in sec:categorical-braiding-hecke-eigenbasis section",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:32:42.202Z",
+        "reviewed_sha": "8b2b9773c91b3fddf1abf16f20f58d325bf77565",
+        "notes": "Skein resolution obstruction is Hecke/braid content; fits braids-and-knots chapter."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "641540df8b6f",
+          "ts": "1aa0d2e2e8cc",
+          "lean": "78a444cb2477"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "skein-resolution-obstruction.md:79 \u2014 q_0 = 1.109978595554181... (50 dps) numeric value appears in statement body",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:33:10.000Z",
+        "reviewed_sha": "8b2b9773c91b3fddf1abf16f20f58d325bf77565",
+        "notes": "Definition body mentions specific numeric q_0 value in field-dependence section; no wall: field but md has explicit archimedean note at top. Borderline."
+      }
+    ]
+  },
+  "updated_at": "2026-06-08T09:33:10.000Z"
+}

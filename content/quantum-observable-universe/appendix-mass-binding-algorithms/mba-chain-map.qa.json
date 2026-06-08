@@ -94,22 +94,6 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
-          "script_hash": "8055e5864896",
-          "script_commit_sha": "7d3eeba998ed7051fd1624bce43cb8d0e006a14c"
-        },
-        "reviewed_at": "2026-06-03T13:06:02.918Z",
-        "reviewed_sha": "19118a572290d7bf9fc5b30e8a174c4bc86e6ad5"
-      },
-      {
-        "field_hash": {
-          "md": "7569785ec81b",
-          "ts": "e0e6981bcb42"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
           "script_hash": "3b132a7280af",
           "script_commit_sha": "b3006ea9b2daeb73b5912c919a7bcb21c5834a77"
         },
@@ -136,40 +120,6 @@
       }
     ],
     "voice-emoji-content": [
-      {
-        "field_hash": {
-          "md": "7569785ec81b",
-          "ts": "e0e6981bcb42"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
-          "version": "v1",
-          "script_hash": "a8a7cde19181",
-          "script_commit_sha": "52373bf7e4c2946d253764199dbd01fc20b23f49"
-        },
-        "reviewed_at": "2026-06-03T13:06:05.843Z",
-        "reviewed_sha": "19118a572290d7bf9fc5b30e8a174c4bc86e6ad5",
-        "severity": "major",
-        "evidence": "content/quantum-observable-universe/appendix-mass-binding-algorithms/mba-chain-map.md:10: | 1 | Categorical action $\\rho_n\\colon B_n \\to \\mathrm{Aut}_{\\mathbf{C}}(V^{\\otimes n})$ | categorical-action of the braid group | `tools/hecke-engine/src/lib.rs` (Rust crate) | — | ✅ | | content/quantum-observable-universe/appendix-mass-binding-algorithms/mba-chain-map.md:11: | 2 | Non-abelian Stokes $\\to$ Hecke relation $\\sigma_i^2 = (q-q^{-1})\\sigma_i + 1$ | Hecke relation; GS-rewriter confluence | `pyhecke.build_nucleon_nf` / `pyhecke.build_atom_nf` (Rust core via `pyhe | content/quantum-observable-universe/appendix-mass-binding-algorithms/mba-chain-map.md:12: | 3 | Markov trace $\\mathrm{tr}_M$ on $H_n(q)$ | Alexander–Markov; uniqueness of $\\mathrm{tr}_M$ | `qou_mass.compute_tr_M(Z, N)` / `pyhecke.nf_tr(nf)` | `markov-free-energy-qvalues.witness.json` | 🟢  | content/quantum-observable-universe/appendix-mass-binding-algorithms/mba-chain-map.md:13: | 4 | Bring $\\chi = -6$ brane | (settled — Bring surface) | script `folio-assistant/computations/bring_chiral_fibre_figure.py`; constants in `qou_substrate.constants` | `bring-chiral-fibre-figure.witn | content/quantum-observable-universe/appendix-mass-binding-algorithms/mba-chain-map.md:14: | 5 | Wedderburn decomposition $\\mathrm{tr}_M = \\sum_\\lambda y_\\lambda\\,\\chi^\\lambda$ | Wedderburn / Wenzl decomposition | `pyhecke.wedderburn_weight(λ, q)` + `pyhecke.partitions_of(n)` | `wedderburn-"
-      },
-      {
-        "field_hash": {
-          "md": "59407fc442c1",
-          "ts": "e0e6981bcb42"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
-          "version": "v1",
-          "script_hash": "8dcd132bf1dc",
-          "script_commit_sha": "31936b5bfc4584eec4f5b636bbd4c4a0993031c3"
-        },
-        "reviewed_at": "2026-06-05T14:30:20.465Z",
-        "reviewed_sha": "76a1930fb66c44f1dec75e15132e8579479f8b71"
-      },
       {
         "field_hash": {
           "md": "afad271f2c78",
@@ -224,42 +174,6 @@
       }
     ],
     "voice-unicode-crash": [
-      {
-        "field_hash": {
-          "md": "7569785ec81b",
-          "ts": "e0e6981bcb42"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
-          "version": "v1",
-          "script_hash": "a8a7cde19181",
-          "script_commit_sha": "52373bf7e4c2946d253764199dbd01fc20b23f49"
-        },
-        "reviewed_at": "2026-06-03T13:06:05.843Z",
-        "reviewed_sha": "19118a572290d7bf9fc5b30e8a174c4bc86e6ad5",
-        "severity": "critical",
-        "evidence": "content/quantum-observable-universe/appendix-mass-binding-algorithms/mba-chain-map.md:10: | 1 | Categorical action $\\rho_n\\colon B_n \\to \\mathrm{Aut}_{\\mathbf{C}}(V^{\\otimes n})$ | categorical-action of the braid group | `tools/hecke-engine/src/lib.rs` (Rust crate) | — | ✅ | | content/quantum-observable-universe/appendix-mass-binding-algorithms/mba-chain-map.md:11: | 2 | Non-abelian Stokes $\\to$ Hecke relation $\\sigma_i^2 = (q-q^{-1})\\sigma_i + 1$ | Hecke relation; GS-rewriter confluence | `pyhecke.build_nucleon_nf` / `pyhecke.build_atom_nf` (Rust core via `pyhe | content/quantum-observable-universe/appendix-mass-binding-algorithms/mba-chain-map.md:15: | 6 | Frobenius pairing $\\langle a,b\\rangle_F$ + self-duality $\\Psi = S^2 = \\mathrm{id}$ | Frobenius pairing; D3/D23 self-duality | `pyhecke.check_frobenius(x)` (script: `audit_frobenius_pairing.py`)  | content/quantum-observable-universe/appendix-mass-binding-algorithms/mba-chain-map.md:24: ✅ proved (sorry-free Lean) · | content/quantum-observable-universe/appendix-mass-binding-algorithms/mba-chain-map.md:25: 🟢 derived (categorical, no fit) ·"
-      },
-      {
-        "field_hash": {
-          "md": "59407fc442c1",
-          "ts": "e0e6981bcb42"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
-          "version": "v1",
-          "script_hash": "8dcd132bf1dc",
-          "script_commit_sha": "31936b5bfc4584eec4f5b636bbd4c4a0993031c3"
-        },
-        "reviewed_at": "2026-06-05T14:30:20.465Z",
-        "reviewed_sha": "76a1930fb66c44f1dec75e15132e8579479f8b71",
-        "severity": "critical",
-        "evidence": "content/quantum-observable-universe/appendix-mass-binding-algorithms/mba-chain-map.md:24: *proved* (sorry-free Lean) · | content/quantum-observable-universe/appendix-mass-binding-algorithms/mba-chain-map.md:25: *derived* (categorical, no fit) · | content/quantum-observable-universe/appendix-mass-binding-algorithms/mba-chain-map.md:26: *conditional* (conjecture-conditional / partial) ·"
-      },
       {
         "field_hash": {
           "md": "afad271f2c78",
@@ -631,7 +545,7 @@
           "ts": "e0e6981bcb42"
         },
         "result": "pass",
-        "evidence": "mba-chain-map.md:1-53 — titled 'From propositions to compute — the chain map'; presents the 11-step chain-map table mapping steps to propositions and Python API; exactly on-topic for sec:mba-chain-map; correct register, no redundancy with intro",
+        "evidence": "mba-chain-map.md:1-53 \u2014 titled 'From propositions to compute \u2014 the chain map'; presents the 11-step chain-map table mapping steps to propositions and Python API; exactly on-topic for sec:mba-chain-map; correct register, no redundancy with intro",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -650,7 +564,7 @@
           "ts": "e0e6981bcb42"
         },
         "result": "pass",
-        "evidence": "mba-chain-map.ts:5-7 — uses: ['prose:pre-archimedean-derivation-chain']; this label is defined in mass-theory/ chapter (line 87 of paper manifest) which precedes appendix-mass-binding-algorithms (line 123); backward reference only, no forward ref",
+        "evidence": "mba-chain-map.ts:5-7 \u2014 uses: ['prose:pre-archimedean-derivation-chain']; this label is defined in mass-theory/ chapter (line 87 of paper manifest) which precedes appendix-mass-binding-algorithms (line 123); backward reference only, no forward ref",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

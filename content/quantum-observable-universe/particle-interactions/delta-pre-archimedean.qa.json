@@ -139,23 +139,6 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
-          "script_hash": "8055e5864896",
-          "script_commit_sha": "7d3eeba998ed7051fd1624bce43cb8d0e006a14c"
-        },
-        "reviewed_at": "2026-06-02T19:34:22.348Z",
-        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
-      },
-      {
-        "field_hash": {
-          "md": "824b03c598f9",
-          "ts": "fe342d55796e",
-          "lean": "af2a984d9e33"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
           "script_hash": "3b132a7280af",
           "script_commit_sha": "d3c07508b029723fd0bf70c593e53aec2599925d"
         },
@@ -164,23 +147,6 @@
       }
     ],
     "canonical-no-negative-result-in-paper": [
-      {
-        "field_hash": {
-          "md": "824b03c598f9",
-          "ts": "fe342d55796e",
-          "lean": "af2a984d9e33"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "8055e5864896",
-          "script_commit_sha": "7d3eeba998ed7051fd1624bce43cb8d0e006a14c"
-        },
-        "reviewed_at": "2026-06-02T19:34:22.348Z",
-        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
-      },
       {
         "field_hash": {
           "md": "824b03c598f9",
@@ -202,23 +168,6 @@
     "voice-status-leak": [
       {
         "field_hash": {
-          "md": "824b03c598f9",
-          "ts": "fe342d55796e",
-          "lean": "af2a984d9e33"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
-          "version": "v1",
-          "script_hash": "a8a7cde19181",
-          "script_commit_sha": "52373bf7e4c2946d253764199dbd01fc20b23f49"
-        },
-        "reviewed_at": "2026-06-02T19:35:52.628Z",
-        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
-      },
-      {
-        "field_hash": {
           "md": "84036c42e086",
           "ts": "fe342d55796e",
           "lean": "af2a984d9e33"
@@ -236,23 +185,6 @@
       }
     ],
     "voice-emoji-content": [
-      {
-        "field_hash": {
-          "md": "824b03c598f9",
-          "ts": "fe342d55796e",
-          "lean": "af2a984d9e33"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
-          "version": "v1",
-          "script_hash": "a8a7cde19181",
-          "script_commit_sha": "52373bf7e4c2946d253764199dbd01fc20b23f49"
-        },
-        "reviewed_at": "2026-06-02T19:35:52.628Z",
-        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
-      },
       {
         "field_hash": {
           "md": "84036c42e086",
@@ -293,23 +225,6 @@
     "voice-time-stamped-notes": [
       {
         "field_hash": {
-          "md": "824b03c598f9",
-          "ts": "fe342d55796e",
-          "lean": "af2a984d9e33"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
-          "version": "v1",
-          "script_hash": "a8a7cde19181",
-          "script_commit_sha": "52373bf7e4c2946d253764199dbd01fc20b23f49"
-        },
-        "reviewed_at": "2026-06-02T19:35:52.628Z",
-        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
-      },
-      {
-        "field_hash": {
           "md": "84036c42e086",
           "ts": "fe342d55796e",
           "lean": "af2a984d9e33"
@@ -329,25 +244,6 @@
     "voice-unicode-crash": [
       {
         "field_hash": {
-          "md": "824b03c598f9",
-          "ts": "fe342d55796e",
-          "lean": "af2a984d9e33"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
-          "version": "v1",
-          "script_hash": "a8a7cde19181",
-          "script_commit_sha": "52373bf7e4c2946d253764199dbd01fc20b23f49"
-        },
-        "reviewed_at": "2026-06-02T19:35:52.628Z",
-        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163",
-        "severity": "critical",
-        "evidence": "content/quantum-observable-universe/particle-interactions/delta-pre-archimedean.md:88: > amplifying the split by ~10\u00b2."
-      },
-      {
-        "field_hash": {
           "md": "84036c42e086",
           "ts": "fe342d55796e",
           "lean": "af2a984d9e33"
@@ -365,23 +261,6 @@
       }
     ],
     "voice-editorializing": [
-      {
-        "field_hash": {
-          "md": "824b03c598f9",
-          "ts": "fe342d55796e",
-          "lean": "af2a984d9e33"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
-          "version": "v1",
-          "script_hash": "a8a7cde19181",
-          "script_commit_sha": "52373bf7e4c2946d253764199dbd01fc20b23f49"
-        },
-        "reviewed_at": "2026-06-02T19:35:52.628Z",
-        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
-      },
       {
         "field_hash": {
           "md": "84036c42e086",
@@ -550,45 +429,11 @@
           "script_hash": "93cae3264dc7",
           "script_commit_sha": "6dd2b7268367e45f3c78a93d8cf81ded4a5efaaf"
         },
-        "reviewed_at": "2026-06-02T19:35:55.253Z",
-        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
-      },
-      {
-        "field_hash": {
-          "md": "824b03c598f9",
-          "ts": "fe342d55796e",
-          "lean": "af2a984d9e33"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "93cae3264dc7",
-          "script_commit_sha": "6dd2b7268367e45f3c78a93d8cf81ded4a5efaaf"
-        },
         "reviewed_at": "2026-06-03T13:06:07.086Z",
         "reviewed_sha": "19118a572290d7bf9fc5b30e8a174c4bc86e6ad5"
       }
     ],
     "q-usage-archimedean-in-categorical-chapter": [
-      {
-        "field_hash": {
-          "md": "824b03c598f9",
-          "ts": "fe342d55796e",
-          "lean": "af2a984d9e33"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "93cae3264dc7",
-          "script_commit_sha": "6dd2b7268367e45f3c78a93d8cf81ded4a5efaaf"
-        },
-        "reviewed_at": "2026-06-02T19:35:55.253Z",
-        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
-      },
       {
         "field_hash": {
           "md": "824b03c598f9",
@@ -627,23 +472,6 @@
       }
     ],
     "q-usage-modulus-vs-real-mismatch": [
-      {
-        "field_hash": {
-          "md": "824b03c598f9",
-          "ts": "fe342d55796e",
-          "lean": "af2a984d9e33"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "93cae3264dc7",
-          "script_commit_sha": "6dd2b7268367e45f3c78a93d8cf81ded4a5efaaf"
-        },
-        "reviewed_at": "2026-06-02T19:35:55.253Z",
-        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
-      },
       {
         "field_hash": {
           "md": "824b03c598f9",
@@ -791,23 +619,6 @@
           "script_hash": "8055e5864896",
           "script_commit_sha": "7d3eeba998ed7051fd1624bce43cb8d0e006a14c"
         },
-        "reviewed_at": "2026-06-02T19:35:58.523Z",
-        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
-      },
-      {
-        "field_hash": {
-          "md": "824b03c598f9",
-          "ts": "fe342d55796e",
-          "lean": "af2a984d9e33"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "8055e5864896",
-          "script_commit_sha": "7d3eeba998ed7051fd1624bce43cb8d0e006a14c"
-        },
         "reviewed_at": "2026-06-03T13:06:09.584Z",
         "reviewed_sha": "19118a572290d7bf9fc5b30e8a174c4bc86e6ad5"
       }
@@ -827,45 +638,11 @@
           "script_hash": "8055e5864896",
           "script_commit_sha": "7d3eeba998ed7051fd1624bce43cb8d0e006a14c"
         },
-        "reviewed_at": "2026-06-02T19:35:58.523Z",
-        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
-      },
-      {
-        "field_hash": {
-          "md": "824b03c598f9",
-          "ts": "fe342d55796e",
-          "lean": "af2a984d9e33"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "8055e5864896",
-          "script_commit_sha": "7d3eeba998ed7051fd1624bce43cb8d0e006a14c"
-        },
         "reviewed_at": "2026-06-03T13:06:09.584Z",
         "reviewed_sha": "19118a572290d7bf9fc5b30e8a174c4bc86e6ad5"
       }
     ],
     "detangler-archimedean-wall": [
-      {
-        "field_hash": {
-          "md": "824b03c598f9",
-          "ts": "fe342d55796e",
-          "lean": "af2a984d9e33"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "8055e5864896",
-          "script_commit_sha": "7d3eeba998ed7051fd1624bce43cb8d0e006a14c"
-        },
-        "reviewed_at": "2026-06-02T19:35:58.523Z",
-        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
-      },
       {
         "field_hash": {
           "md": "824b03c598f9",
@@ -904,6 +681,26 @@
         "reviewed_at": "2026-06-05T01:28:35.496Z",
         "reviewed_sha": "bb7ae78551d278b94dea58bd62470d1baab4ce0f",
         "notes": "Move interpretation sections to a linked remark block."
+      },
+      {
+        "field_hash": {
+          "md": "8ab90a8998ed",
+          "ts": "fe342d55796e",
+          "lean": "af2a984d9e33"
+        },
+        "result": "fail",
+        "severity": "minor",
+        "evidence": "delta-pre-archimedean.md:32 -- sections ## What is proved vs. what is expository, ## Why the order is forced for binding, ## Lean structure are interpretive prose in same block with no companion interprets: remark",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:32:46.746Z",
+        "reviewed_sha": "408464485866b17c0be73e1662112b21a1b2f231",
+        "notes": "proposition block with substantial interpretation sections; move to linked remark"
       }
     ],
     "fit-section-chapter": [
@@ -926,6 +723,26 @@
         "reviewed_at": "2026-06-05T01:29:03.274Z",
         "reviewed_sha": "bb7ae78551d278b94dea58bd62470d1baab4ce0f",
         "notes": "Fits the chapter's derivation of difference observables."
+      },
+      {
+        "field_hash": {
+          "md": "8ab90a8998ed",
+          "ts": "fe342d55796e",
+          "lean": "af2a984d9e33"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "delta-pre-archimedean.md:11 -- proposition about fibre vs archimedean order of operations for Q_beta; fits particle-interactions scope",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:32:46.781Z",
+        "reviewed_sha": "408464485866b17c0be73e1662112b21a1b2f231",
+        "notes": "fits chapter scope"
       }
     ],
     "wall-side-statement": [
@@ -948,6 +765,26 @@
         "reviewed_at": "2026-06-05T01:29:20.365Z",
         "reviewed_sha": "bb7ae78551d278b94dea58bd62470d1baab4ce0f",
         "notes": "Generic-ring regime respected in the statement."
+      },
+      {
+        "field_hash": {
+          "md": "8ab90a8998ed",
+          "ts": "fe342d55796e",
+          "lean": "af2a984d9e33"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "delta-pre-archimedean.md:12 -- fold_commutes_sub stated over generic fibre coefficient ring; no numeric q value or Real.sqrt in statement",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:32:46.812Z",
+        "reviewed_sha": "408464485866b17c0be73e1662112b21a1b2f231",
+        "notes": "generic algebraic statement; archimedean specialisation noted as separate lean sibling"
       }
     ],
     "wall-side-proof": [
@@ -970,6 +807,26 @@
         "reviewed_at": "2026-06-05T01:29:39.596Z",
         "reviewed_sha": "bb7ae78551d278b94dea58bd62470d1baab4ce0f",
         "notes": "Wall discipline respected."
+      },
+      {
+        "field_hash": {
+          "md": "8ab90a8998ed",
+          "ts": "fe342d55796e",
+          "lean": "af2a984d9e33"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "delta-pre-archimedean.md:92 -- proof uses sub_eq_add_neg + map_add + map_neg over CommRing; no archimedean machinery",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:32:46.846Z",
+        "reviewed_sha": "408464485866b17c0be73e1662112b21a1b2f231",
+        "notes": "proof stays on generic algebraic side"
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -992,6 +849,26 @@
         "reviewed_at": "2026-06-05T01:29:57.253Z",
         "reviewed_sha": "bb7ae78551d278b94dea58bd62470d1baab4ce0f",
         "notes": "Narrative and Lean are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "8ab90a8998ed",
+          "ts": "fe342d55796e",
+          "lean": "af2a984d9e33"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "delta-pre-archimedean.lean:1 -- imports QOU.ParticleInteractions.delta_pre_archimedean; ts ref qou:QOU.ParticleInteractions.fold_commutes_sub matches narrative fold_commutes_sub claim",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:32:46.878Z",
+        "reviewed_sha": "408464485866b17c0be73e1662112b21a1b2f231",
+        "notes": "narrative and Lean agree on fold commutativity over generic ring"
       }
     ],
     "proof-lean-compiles": [
@@ -1130,6 +1007,26 @@
         "reviewed_at": "2026-06-07T06:00:19.454Z",
         "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
         "notes": "Exemplary: MD explicitly separates PROVED(1) fold commutes with subtraction, PROVED(2) nonlinear \u03c4 does not, from EXPOSITORY(3) which order each observable uses \u2014 the cleanest proved-vs-convention demarcation in the batch."
+      },
+      {
+        "field_hash": {
+          "md": "8ab90a8998ed",
+          "ts": "fe342d55796e",
+          "lean": "af2a984d9e33"
+        },
+        "result": "n/a",
+        "severity": "minor",
+        "evidence": "delta-pre-archimedean.md:1 -- not in agent rubric",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:32:46.917Z",
+        "reviewed_sha": "408464485866b17c0be73e1662112b21a1b2f231",
+        "notes": "proof-rater/proof-statement criteria not in agent rubric"
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1154,6 +1051,26 @@
         "reviewed_at": "2026-06-07T06:00:19.489Z",
         "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
         "notes": "Canonical module QOU.ParticleInteractions.delta_pre_archimedean (re-exported by sibling) proves fold_commutes_sub (generic CommRing, sub_eq_add_neg+map_add+map_neg) and archimedean_does_not_commute_sub (\u03c4=(\u00b7)\u00b2 norm_num witness), both sorry-free; matches the MD's two theorems exactly."
+      },
+      {
+        "field_hash": {
+          "md": "8ab90a8998ed",
+          "ts": "fe342d55796e",
+          "lean": "af2a984d9e33"
+        },
+        "result": "n/a",
+        "severity": "minor",
+        "evidence": "delta-pre-archimedean.md:1 -- not in agent rubric",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:32:46.957Z",
+        "reviewed_sha": "408464485866b17c0be73e1662112b21a1b2f231",
+        "notes": "proof-rater/proof-statement criteria not in agent rubric"
       }
     ],
     "proof-rater-novelty": [
@@ -1178,6 +1095,26 @@
         "reviewed_at": "2026-06-07T06:00:19.532Z",
         "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
         "notes": "Formalizing 'binding works because it is a pre-archimedean delta' (fibre/observable Im(q) discipline) is a clean, framework-specific structural result."
+      },
+      {
+        "field_hash": {
+          "md": "8ab90a8998ed",
+          "ts": "fe342d55796e",
+          "lean": "af2a984d9e33"
+        },
+        "result": "n/a",
+        "severity": "minor",
+        "evidence": "delta-pre-archimedean.md:1 -- not in agent rubric",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:32:46.989Z",
+        "reviewed_sha": "408464485866b17c0be73e1662112b21a1b2f231",
+        "notes": "proof-rater/proof-statement criteria not in agent rubric"
       }
     ],
     "proof-statement-integrity": [
@@ -1198,8 +1135,28 @@
         "reviewed_at": "2026-06-07T06:00:19.565Z",
         "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
         "notes": "lean.ref QOU.ParticleInteractions.fold_commutes_sub resolves to the imported canonical module (verified present at lean/QOU/ParticleInteractions/delta_pre_archimedean.lean); real, generic, sorry-free. Sibling correctly re-exports."
+      },
+      {
+        "field_hash": {
+          "md": "8ab90a8998ed",
+          "ts": "fe342d55796e",
+          "lean": "af2a984d9e33"
+        },
+        "result": "n/a",
+        "severity": "minor",
+        "evidence": "delta-pre-archimedean.md:1 -- not in agent rubric",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:32:47.021Z",
+        "reviewed_sha": "408464485866b17c0be73e1662112b21a1b2f231",
+        "notes": "proof-rater/proof-statement criteria not in agent rubric"
       }
     ]
   },
-  "updated_at": "2026-06-07T06:00:19.565Z"
+  "updated_at": "2026-06-08T09:32:47.021Z"
 }
