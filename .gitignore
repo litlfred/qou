@@ -108,6 +108,9 @@ content/audit-wiring.json
 folio-assistant/computations/y-lambda-wenzl-bridge-n13to18-witness.json
 folio-assistant/computations/.hoefsmit_cache/
 folio-assistant/computations/.term_cache/
+# Δ_q-decoration cache written to a non-canonical hecke/ subdir by some
+# entry points (canonical tracked copy is computations/delta-q-decoration.cache.json)
+folio-assistant/computations/hecke/*.cache.json
 folio-assistant/computations/delta-lambda-empirical-tabulation.witness.json
 scripts/.bib-mcp-cli-log.json
 
