@@ -2,9 +2,9 @@
 
 **Definition.**
 *An **embeddable knot operator** is a knot operator $K$ together with an
-embedding of its braid into the ambient $3$-manifold, carrying a geometric
+embedding of its braid into the ambient $3$-manifold, carrying an
 **overlap weight** $w \in (0, 1]$ determined by the embedding direction
-relative to the Reeb axis. Its **binding contribution** is*
+relative to the bond axis. Its **binding contribution** is*
 
 $$
   \mathfrak{E}(K) = \mathfrak{E}_0(K)\, w ,
@@ -14,17 +14,17 @@ $$
 
 ### Axial vs transverse channels
 
-*The embedding direction sorts operators into two geometric classes:*
+*The embedding direction sorts operators into two classes by their angle
+to the bond axis:*
 
-- ***Axial*** *($\sigma$-type, Reeb-aligned): the braid runs along the
-  bond / Reeb axis; head-on overlap is maximal, so $w = 1$.*
-- ***Transverse*** *($\pi$-type, contact-plane): the braid lies in the
-  $2$-dimensional contact plane transverse to the Reeb axis; the lateral
-  overlap is reduced, so $w = w_\perp < 1$.*
+- ***Axial*** *($\sigma$-type): the braid runs along the bond axis;
+  head-on overlap is maximal, so $w = 1$.*
+- ***Transverse*** *($\pi$-type): the braid lies in the plane transverse
+  to the bond axis; the lateral overlap is smaller, so $w = w_\perp < 1$.*
 
-*The weight $w_\perp$ is the transverse/axial overlap ratio — a geometric
-property of the embedding (the orbital-overlap integral, per system), not
-a fitted constant.*
+*The weight $w_\perp$ is the transverse/axial overlap ratio — the
+orbital-overlap integral for the embedding, fixed per system; it is not a
+fitted constant.*
 
 ### Composite binding
 
@@ -36,23 +36,27 @@ $$
 
 *An order-$k$ bond is one axial $\sigma$ channel and $k-1$ transverse
 $\pi$ channels, with total binding
-$\mathfrak{E}_0\,\bigl(1 + (k-1)\,w_\perp\bigr)$.*
+$\mathfrak{E}_0\,\bigl(1 + (k-1)\,w_\perp\bigr)$ (Lean: `multipleBond_binding`).*
 
 ### Cardinality versus energy
 
-*Weighting changes only the energy, never the channel count: every channel
-with $w > 0$ is occupied, so the active-set cardinality (the bond order of
-[the CO LP dual](#prop:co-lp-dual-binding)) is **independent of the
-weights**. The equal-channel model ($w \equiv 1$) overbinds; a physical
-$w_\perp < 1$ reduces the total toward the observed dissociation energy.
-For the $\sigma + 2\pi$ triple bond the equal-channel total is $1.42\times$
-the observed $D_0(\mathrm{N_2})$, while a lateral weight $w_\perp \in
-[0.3, 0.7]$ brackets it (witness `embeddable-knot-operator`).*
+*Overlap weighting changes only the energy, never the channel count:
+every channel with $w > 0$ is occupied, so the active-set cardinality —
+the bond order of [the CO LP dual](#prop:co-lp-dual-binding) — is
+independent of the weights (Lean: `multipleBond_length`). The
+equal-channel model ($w \equiv 1$) overbinds: for the $\sigma + 2\pi$
+triple bond it gives $1.42\times$ the observed $D_0(\mathrm{N_2})$, while
+a lateral weight $w_\perp \in [0.3, 0.7]$ brackets it (witness
+`embeddable-knot-operator`).*
 
-### Geometric origin (Reeb / contact)
+### Spatial-dimension bound
 
-*The overlap weight is grounded in the Reeb embedding: $\sigma$ runs along
-the $1$-dimensional Reeb direction and $\pi$ in the $2$-dimensional contact
-plane, so $w_\perp$ is the geometric ratio between contact-plane and
-Reeb-axis overlap. This identification is an interpretive layer; its
-formalization against the Reeb-derivation content is open.*
+*Each channel embeds as a direction in the ambient $3$-space, with distinct
+channels mutually orthogonal. Orthogonal nonzero vectors are linearly
+independent, so their number cannot exceed
+$\dim_{\mathbb{R}} \mathbb{R}^3 = 3$: at most three mutually-orthogonal
+channels embed — one axial $\sigma$ and two transverse $\pi$. Hence the
+bond order is bounded by the spatial dimension, so **no $p$-block bond
+exceeds order three**. This bound is formalised in Lean as the theorem
+`orthogonal_channels_le_dim` (pairwise-orthogonal nonzero vectors in a
+space of finrank $3$ number at most $3$).*
