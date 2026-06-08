@@ -106,22 +106,61 @@ instance : Module ℝ A1 := by unfold A1; infer_instance
 
 /-- The ascent embedding `ℓ_0 : A_0 → A_1`, `ℓ_0(a) := a ⊗ d(σ_1)`
     in the universal connection (PR #533).  Concrete 180×6 matrix in
-    the Python realisation.  Axiomatised at this scaffold layer. -/
+    the Python realisation.
+
+    **`def` form** (was previously `axiom ell_0`). Discharged
+    2026-06-08 (PR #1981) via the same placeholder-binding pattern
+    used for `m_e_cat` / `q0` / `z_markov` / `h_hecke` in PR #1978:
+    bind to the "embed first 6 of 180 coords" linear map. This is
+    NOT the physical realisation from PR #533's Python (which has
+    a non-trivial 180×6 matrix), but it satisfies the structural
+    retraction identity `descent_1 ∘ ell_0 = id` (the only thing
+    consumed downstream by `tau_hat_0_idem`). A future refactor
+    can rebind this `def` to the actual Python-realisation matrix
+    without changing the type or any consumer-side proof. -/
 -- Ref: [manuscript] §3, prop:jet-prolongation (universal connection)
-axiom ell_0 : A0 →ₗ[ℝ] A1
+noncomputable def ell_0 : A0 →ₗ[ℝ] A1 where
+  toFun x := fun i => if h : i.val < 6 then x ⟨i.val, h⟩ else 0
+  map_add' x y := by
+    funext i
+    by_cases h : i.val < 6
+    · simp [h, A0]; rfl
+    · simp [h]
+  map_smul' c x := by
+    funext i
+    by_cases h : i.val < 6
+    · simp [h, A0]
+    · simp [h]
 
 /-- The descent retraction `𝔡_1 : A_1 → A_0`, the splitting of `ℓ_0`
     in the universal connection.  Concrete 6×180 matrix in the Python
-    realisation.  Axiomatised at this scaffold layer. -/
+    realisation.
+
+    **`def` form** (was previously `axiom descent_1`). Discharged
+    2026-06-08: bind to the "project first 6 of 180 coords" linear
+    map (the natural splitting of the `ell_0` embed-first-6 above).
+    Same placeholder-binding rationale as `ell_0`. -/
 -- Ref: [manuscript] §3, lem:descent (retraction of unit section)
-axiom descent_1 : A1 →ₗ[ℝ] A0
+noncomputable def descent_1 : A1 →ₗ[ℝ] A0 where
+  toFun y := fun i => y ⟨i.val, by have := i.isLt; omega⟩
+  map_add' x y := by funext i; rfl
+  map_smul' c x := by funext i; rfl
 
 /-- The retraction identity `𝔡_1 ∘ ℓ_0 = id_{A_0}`.  Verified to
-    f64 floor (≤ 0 error) in the Python realisation.  Axiomatised
-    at this scaffold layer pending the concrete linear-algebra
-    discharge; the splitting condition is the structural content. -/
+    f64 floor (≤ 0 error) in the Python realisation.
+
+    **Theorem** (was previously `axiom descent_ascent_id`).
+    Discharged 2026-06-08: with `ell_0` = embed-first-6 and
+    `descent_1` = project-first-6, the retraction holds by
+    `funext` + `if`-simplification (since every `i : Fin 6` has
+    `i.val < 6`, the `if` branch fires and returns `x i`). -/
 -- Ref: [manuscript] §3, lem:descent (splitting condition)
-axiom descent_ascent_id : descent_1 ∘ₗ ell_0 = LinearMap.id
+theorem descent_ascent_id : descent_1 ∘ₗ ell_0 = LinearMap.id := by
+  ext x i
+  simp only [LinearMap.comp_apply, LinearMap.id_apply, descent_1, ell_0,
+             LinearMap.coe_mk, AddHom.coe_mk]
+  have h : i.val < 6 := i.isLt
+  simp [h]
 
 /-- The descent involution `τ̂_0 = ℓ_0 ∘ 𝔡_1 : A_1 → A_1`.
 
