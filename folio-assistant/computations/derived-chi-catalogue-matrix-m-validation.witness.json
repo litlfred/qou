@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-08T09:13:07.501475+00:00",
-  "commitSha": "ed7cbccf8a6eccf9fc3bf45830c6ca4761dd2c17",
+  "computedAt": "2026-06-08T09:16:03.309932+00:00",
+  "commitSha": "dcda6510ac2b78e95636ec6809942e823ed84ece",
   "assertions": [
     {
       "name": "python_hoefsmit_matches_rust_chi_q_via_gp",
@@ -10,14 +10,21 @@
       "expected": true,
       "passed": true,
       "source": "Whether pure-Python sympy q-rational matrix product reproduces the Rust pyhecke_native chi_q_via_gp output on every (n, λ, β) test case in Tests 1-4 (covers n=2..6, all partitions, several braid words). Proves the matrix-M substrate is structurally correct."
+    },
+    {
+      "name": "mu_p_factorisation_matches_direct_trace",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "Whether the μ_p-level matrix-M factorisation χ^λ(T_β) = Σ Tr[B_p · M_pp · B_n] equals the direct trace χ^λ(T_β) = Tr[ρ^λ(β)] for all 11 partitions of 6 on a deuteron-shaped braid. This is the Phase 1.2 (audit doc §5) structural proof that the matrix-M approach is correct — the per-μ_p contributions ARE the matrix-M values summed over μ_n."
     }
   ],
   "allPassed": true,
-  "durationMs": 1411,
+  "durationMs": 7069,
   "computation": "derived-chi-catalogue-matrix-m-validation",
   "scriptFile": "derived_chi_catalogue_matrix_m.py",
-  "scriptHash": "0767c41a17c2",
-  "scriptCommitSha": "ed7cbccf8a6eccf9fc3bf45830c6ca4761dd2c17",
+  "scriptHash": "5564dc831b20",
+  "scriptCommitSha": "dcda6510ac2b78e95636ec6809942e823ed84ece",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,8 +41,8 @@
   },
   "description": "Pure-Python Hoefsmit (natural / asymmetric seminormal form) validation against Rust pyhecke_native chi_q_via_gp. Substrate for Tier 1 matrix-M extraction (audit doc 2026-06-07-derived-chi-catalogue-tier-1-lr-factorisation). Proves the q-rational matrix pipeline computes the same character as the Rust Geck-Pfeiffer engine on a sweep of (n, λ, β) test cases.",
   "data": {
-    "n_test_cases": 21,
-    "n_pass": 21,
+    "n_test_cases": 32,
+    "n_pass": 32,
     "n_fail": 0,
     "test_cases": [
       {
@@ -1021,6 +1028,418 @@
           }
         ],
         "all_match": true
+      }
+    ],
+    "phase12_cases": [
+      {
+        "shape": [
+          6
+        ],
+        "word_left": [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        "bridge_sign": 1,
+        "word_right": [
+          [
+            1,
+            4
+          ],
+          [
+            1,
+            5
+          ]
+        ],
+        "k_split": 3,
+        "direct_chi": "q**5",
+        "factored_chi": "q**5",
+        "delta": "0",
+        "match": true,
+        "per_mu_p": {
+          "[3]": "q**5"
+        }
+      },
+      {
+        "shape": [
+          5,
+          1
+        ],
+        "word_left": [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        "bridge_sign": 1,
+        "word_right": [
+          [
+            1,
+            4
+          ],
+          [
+            1,
+            5
+          ]
+        ],
+        "k_split": 3,
+        "direct_chi": "-q**3",
+        "factored_chi": "-q**3",
+        "delta": "0",
+        "match": true,
+        "per_mu_p": {
+          "[3]": "-q**3/(q**4 + q**2 + 1)",
+          "[2, 1]": "(-q**7 - q**5)/(q**4 + q**2 + 1)"
+        }
+      },
+      {
+        "shape": [
+          4,
+          2
+        ],
+        "word_left": [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        "bridge_sign": 1,
+        "word_right": [
+          [
+            1,
+            4
+          ],
+          [
+            1,
+            5
+          ]
+        ],
+        "k_split": 3,
+        "direct_chi": "0",
+        "factored_chi": "0",
+        "delta": "0",
+        "match": true,
+        "per_mu_p": {
+          "[3]": "-q**3/(q**4 + q**2 + 1)",
+          "[2, 1]": "q**3/(q**4 + q**2 + 1)"
+        }
+      },
+      {
+        "shape": [
+          4,
+          1,
+          1
+        ],
+        "word_left": [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        "bridge_sign": 1,
+        "word_right": [
+          [
+            1,
+            4
+          ],
+          [
+            1,
+            5
+          ]
+        ],
+        "k_split": 3,
+        "direct_chi": "q",
+        "factored_chi": "q",
+        "delta": "0",
+        "match": true,
+        "per_mu_p": {
+          "[3]": "q/(q**4 + q**2 + 1)",
+          "[2, 1]": "q**3/(q**4 + q**2 + 1)",
+          "[1, 1, 1]": "q**5/(q**4 + q**2 + 1)"
+        }
+      },
+      {
+        "shape": [
+          3,
+          3
+        ],
+        "word_left": [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        "bridge_sign": 1,
+        "word_right": [
+          [
+            1,
+            4
+          ],
+          [
+            1,
+            5
+          ]
+        ],
+        "k_split": 3,
+        "direct_chi": "0",
+        "factored_chi": "0",
+        "delta": "0",
+        "match": true,
+        "per_mu_p": {
+          "[3]": "-q**3/(q**4 + q**2 + 1)",
+          "[2, 1]": "q**3/(q**4 + q**2 + 1)"
+        }
+      },
+      {
+        "shape": [
+          3,
+          2,
+          1
+        ],
+        "word_left": [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        "bridge_sign": 1,
+        "word_right": [
+          [
+            1,
+            4
+          ],
+          [
+            1,
+            5
+          ]
+        ],
+        "k_split": 3,
+        "direct_chi": "0",
+        "factored_chi": "0",
+        "delta": "0",
+        "match": true,
+        "per_mu_p": {
+          "[3]": "q/(q**4 + q**2 + 1)",
+          "[2, 1]": "(q**3 - q)/(q**4 + q**2 + 1)",
+          "[1, 1, 1]": "-q**3/(q**4 + q**2 + 1)"
+        }
+      },
+      {
+        "shape": [
+          3,
+          1,
+          1,
+          1
+        ],
+        "word_left": [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        "bridge_sign": 1,
+        "word_right": [
+          [
+            1,
+            4
+          ],
+          [
+            1,
+            5
+          ]
+        ],
+        "k_split": 3,
+        "direct_chi": "-1/q",
+        "factored_chi": "-1/q",
+        "delta": "0",
+        "match": true,
+        "per_mu_p": {
+          "[3]": "-1/(q**5 + q**3 + q)",
+          "[2, 1]": "-q/(q**4 + q**2 + 1)",
+          "[1, 1, 1]": "-q**3/(q**4 + q**2 + 1)"
+        }
+      },
+      {
+        "shape": [
+          2,
+          2,
+          2
+        ],
+        "word_left": [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        "bridge_sign": 1,
+        "word_right": [
+          [
+            1,
+            4
+          ],
+          [
+            1,
+            5
+          ]
+        ],
+        "k_split": 3,
+        "direct_chi": "0",
+        "factored_chi": "0",
+        "delta": "0",
+        "match": true,
+        "per_mu_p": {
+          "[2, 1]": "-q/(q**4 + q**2 + 1)",
+          "[1, 1, 1]": "q/(q**4 + q**2 + 1)"
+        }
+      },
+      {
+        "shape": [
+          2,
+          2,
+          1,
+          1
+        ],
+        "word_left": [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        "bridge_sign": 1,
+        "word_right": [
+          [
+            1,
+            4
+          ],
+          [
+            1,
+            5
+          ]
+        ],
+        "k_split": 3,
+        "direct_chi": "0",
+        "factored_chi": "0",
+        "delta": "0",
+        "match": true,
+        "per_mu_p": {
+          "[2, 1]": "-q/(q**4 + q**2 + 1)",
+          "[1, 1, 1]": "q/(q**4 + q**2 + 1)"
+        }
+      },
+      {
+        "shape": [
+          2,
+          1,
+          1,
+          1,
+          1
+        ],
+        "word_left": [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        "bridge_sign": 1,
+        "word_right": [
+          [
+            1,
+            4
+          ],
+          [
+            1,
+            5
+          ]
+        ],
+        "k_split": 3,
+        "direct_chi": "q**(-3)",
+        "factored_chi": "q**(-3)",
+        "delta": "0",
+        "match": true,
+        "per_mu_p": {
+          "[2, 1]": "(q**2 + 1)/(q**7 + q**5 + q**3)",
+          "[1, 1, 1]": "q/(q**4 + q**2 + 1)"
+        }
+      },
+      {
+        "shape": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "word_left": [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        "bridge_sign": 1,
+        "word_right": [
+          [
+            1,
+            4
+          ],
+          [
+            1,
+            5
+          ]
+        ],
+        "k_split": 3,
+        "direct_chi": "-1/q**5",
+        "factored_chi": "-1/q**5",
+        "delta": "0",
+        "match": true,
+        "per_mu_p": {
+          "[1, 1, 1]": "-1/q**5"
+        }
       }
     ]
   }
