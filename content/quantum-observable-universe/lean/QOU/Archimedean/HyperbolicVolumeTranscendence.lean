@@ -114,11 +114,19 @@ The three QOU volumes used in `SingleVolumeIrrational` /
 noncomputable def vol_4_1 : ℝ := figureEightEntry.volume.value
 
 /-- Hyperbolic volume of the three-twist knot 5₂ (down quark).
-    Numerical: ≈ 2.82812208832975 (SnapPy 15 dps).
-    Pending: add threeTwistEntry to KnotRegistry and extract from there.
-    Precision bump deferred (no closed form; need a
-    SnapPy-verified high-dps reference before bumping the literal). -/
-noncomputable def vol_5_2 : ℝ := 2.82812208832975
+    Numerical: `2.82812208833410` (15 dps, from
+    `folio-assistant/computations/hyperbolic-volumes.witness.json`
+    field `vol_5_2_decimal_15`, cross-checked against
+    `QOU.Encounter.MostowRigidity` which uses the identical value).
+
+    **Drift fix 2026-06-08**: previous literal `2.82812208832975`
+    differed from the witness at digits 11+ (4.35e-12 absolute drift).
+    Bumped to match the witness — both files now agree.
+
+    Pending: add threeTwistEntry to KnotRegistry and extract from
+    there for full provenance; precision beyond 15 dps requires
+    SnapPy / Lobachevsky integration at higher mp.dps. -/
+noncomputable def vol_5_2 : ℝ := 2.82812208833410
 
 /-- Hyperbolic volume of the Borromean rings 𝓑₃ (nucleon).
 
