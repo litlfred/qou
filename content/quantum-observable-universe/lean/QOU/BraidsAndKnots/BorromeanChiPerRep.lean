@@ -35,6 +35,7 @@ import Mathlib.Algebra.Order.Field.Rat
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.NormNum
+import Mathlib.Tactic.LinearCombination
 
 namespace QOU.BraidsAndKnots
 
@@ -62,6 +63,62 @@ theorem chi21_borromean_even (h : R) :
   ring
 
 end CommRing
+
+/-! ## `Rˣ` layer — the published q-rational form over a commutative ring
+
+The published character
+`χ^{(2,1)}(β_Bor) = (−q¹² + 3q¹⁰ − 3q⁸ + 4q⁶ − 3q⁴ + 3q² − 1)/q⁶` divides by
+`q⁶`.  Demanding only that `q` be a **unit** of a commutative ring `R`
+(`q : Rˣ`, so `↑q⁻¹` is its ring inverse and division by `q⁶` is
+multiplication by `(↑q⁻¹)⁶`) keeps the form **division-ring-free**: it now
+instantiates over `R = LaurentPolynomial ℤ`, `q = T` (a unit, inverse `T(-1)`),
+giving the genuine `ℤ[q, q⁻¹]` character.  This is strictly more general than
+the `[Field R]` form below (every non-zero `q` in a field is a unit).
+
+The bridge `chi21_borromean_qform_unit_eq_poly` shows this published form is
+exactly the faithful `R[h]` polynomial character `chi21_borromean` at
+`h = ↑q − ↑q⁻¹`; the only input is the unit law `↑q · ↑q⁻¹ = 1` (no division,
+no field, no ordering). -/
+
+section Unit
+variable {R : Type*} [CommRing R]
+
+/-- The published q-rational Borromean character `(−q¹² + ⋯ − 1)/q⁶`, over a
+    commutative ring with `q` a unit: division by `q⁶` is `(↑q⁻¹)⁶`. -/
+def chi21_borromean_qform_unit (q : Rˣ) : R :=
+  (-(↑q : R)^12 + 3*(↑q : R)^10 - 3*(↑q : R)^8 + 4*(↑q : R)^6
+    - 3*(↑q : R)^4 + 3*(↑q : R)^2 - 1) * ((↑q⁻¹ : R))^6
+
+/-- **The published q-rational form equals the faithful `R[h]` character.**
+    `chi21_borromean_qform_unit q = chi21_borromean (↑q − ↑q⁻¹)` over any
+    commutative ring with `q` a unit — division-free, the sole hypothesis is
+    `↑q · ↑q⁻¹ = 1`.  Hence the Borromean standard-irrep character is a genuine
+    `ℤ[q, q⁻¹]` Laurent polynomial, not merely a rational function over a field.
+    (The `linear_combination` coefficient is the exact quotient of
+    `qform − chi21_borromean(↑q−↑q⁻¹)` by `↑q·↑q⁻¹ − 1`, machine-derived; the
+    residual is closed by `ring`.) -/
+theorem chi21_borromean_qform_unit_eq_poly (q : Rˣ) :
+    chi21_borromean_qform_unit q = chi21_borromean ((↑q : R) - ↑q⁻¹) := by
+  have hab : (↑q : R) * ↑q⁻¹ = 1 := q.mul_inv
+  unfold chi21_borromean_qform_unit chi21_borromean
+  set a : R := (↑q : R) with ha
+  set b : R := (↑q⁻¹ : R) with hb
+  linear_combination
+    (- a^11*b^5 - a^10*b^4 + 3*a^9*b^5 - a^9*b^3 + 3*a^8*b^4 - 3*a^7*b^5
+      - a^8*b^2 + 3*a^7*b^3 - 3*a^6*b^4 + 4*a^5*b^5 - a^7*b + 3*a^6*b^2
+      - 3*a^5*b^3 + 4*a^4*b^4 - 3*a^3*b^5 - a^6 + 3*a^5*b - 3*a^4*b^2
+      + 4*a^3*b^3 - 3*a^2*b^4 + 3*a*b^5 - 3*a^4 + 12*a^3*b - 16*a^2*b^2
+      + 12*a*b^3 - 3*b^4 + 2*a*b + 2) * hab
+
+/-- Bar-invariance over units: `q ↦ q⁻¹` fixes the character, since it sends
+    `h = ↑q − ↑q⁻¹ ↦ −h` and `chi21_borromean` is even.  Division-free. -/
+theorem chi21_borromean_qform_unit_bar_invariant (q : Rˣ) :
+    chi21_borromean_qform_unit q⁻¹ = chi21_borromean_qform_unit q := by
+  rw [chi21_borromean_qform_unit_eq_poly q⁻¹, chi21_borromean_qform_unit_eq_poly q, inv_inv]
+  rw [show ((↑q⁻¹ : R) - ↑q) = -((↑q : R) - ↑q⁻¹) by ring]
+  exact chi21_borromean_even _
+
+end Unit
 
 /-! ## Archimedean (`ℚ`) layer — the q-rational form and the form bridge
 
