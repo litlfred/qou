@@ -27,7 +27,7 @@ bindings:
 *All three converge to zero rather than a "correction near 1",
 suggesting a structural mis-identification of the prefix.*
 
-**Proposition (candidate: GB-filtration-indexed prefix).**
+**Proposition (candidate: GB-filtration-indexed prefix; conditional on [`conj:confinement-grading-correspondence`](#conj:confinement-grading-correspondence)).**
 *Define the **Gröbner–Shirshov-filtered prefix** $\beta_k^{\mathrm{GS}}$
 of an atomic braid word $T_w \in H_{3A}(q)$ as the projection of
 $T_w$ onto the filtration stratum*

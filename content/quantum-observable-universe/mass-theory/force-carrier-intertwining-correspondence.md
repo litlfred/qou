@@ -1,4 +1,4 @@
-**Proposition (force-carrier intertwining correspondence).**
+**Proposition (force-carrier intertwining correspondence; conditional on [`conj:e-hartree-categorical-derivation`](#conj:e-hartree-categorical-derivation)).**
 *Let $T_{p,q}$ be a torus-knot force carrier
 ([`prop:force-carrier-bring-uniqueness`](#prop:force-carrier-bring-uniqueness),
 genus-$4$-saturating) with $p < q$ and $\gcd(p,q) = 1$.  When

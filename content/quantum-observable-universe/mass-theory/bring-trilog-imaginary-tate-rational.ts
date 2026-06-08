@@ -15,7 +15,11 @@ export default proposition({
       "folio-assistant/computations/kummer-reflection-zeta5.witness.json",
     status: "verified",
   },
-  uses: ["conj:qou-infra-discharges-goncharov-zeta5"],
+  // conj:qou-infra-discharges-goncharov-zeta5 removed from uses[] (2026-06-08
+  // §3b sweep): the closed form Im Li_3(ζ_5) = 4π³/125 is proved unconditionally
+  // (Kummer reflection, 50-dps witness); the Goncharov program is context, not a
+  // logical hypothesis. The conceptual link remains in the .md prose cross-ref.
+  uses: [],
   cites: ["bloch2000", "zagier1986"],
   tags: [
     "kummer-reflection",
