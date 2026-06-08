@@ -1,0 +1,375 @@
+#!/usr/bin/env python3
+"""chi_at_q0_via_matrix_m_mpfr.py — fast per-λ chi at q_0 producer
+for the **sign-only chi_q_via_gp braid convention** (matches the
+derived_chi_catalogue cells emitted by PR #1952 + #1980).
+
+## Scope — important distinction
+
+The repo has TWO production paths for computing χ^λ at the
+substrate:
+
+  1. **sign-only / Geck-Pfeiffer / `chi_q_via_gp`**: takes a braid
+     word as `(sign, gen)` pairs — every crossing is ±1. This is
+     what `derived_chi_catalogue` (715 cells) stores. My matrix-M
+     backend (PR #1980 → #2000) matches this convention exactly.
+
+  2. **averaged crossings**: `chi_at_q0_via_hoefsmit_mpfr.py` calls
+     `_chi_lambda_of_word_mpf` with `atom_braid_word_3A(Z, N)`'s
+     full `(c, d, gen_0based)` triples — the d ≠ 0 entries weight
+     crossings by per-color factors. Different physics, different
+     character values.
+
+This producer is **NOT a drop-in replacement** for the hoefsmit
+producer — the chi values won't match (verified empirically: on
+deuteron the two paths give χ^(6) = 1.56 vs 11.02 = q_0^23 at q_0 ≈
+1.11). The two represent different braid encodings.
+
+What this producer IS: a fast generator of per-λ chi caches in the
+chi_q_via_gp convention, suitable for downstream consumers that
+want the SAME chi values stored in the derived_chi_catalogue (or
+that consume those catalogue cells at q_0).
+
+## Output
+
+`chi-{atom}-h{n}-at-q0-50dps-matrix-m.witness.json` —
+producer field is `"matrix-m-chi-q-via-gp"` for provenance.
+
+## Performance
+
+Per the matrix-M tier benchmarks (PR #1993, #2000):
+
+- ⁴He aggregate is 1.34× faster than direct Rust `chi_q_via_gp`
+- ⁴He λ=(12) is **56-68× faster** than Rust for dim-1 reps
+- All dim-1 partitions scale flat in n
+
+The direct Rust `chi_q_via_gp` path computes per-partition Rust
+character values; this matrix-M producer does the same compute
+on `μ_p`-block-restricted matrices (max size ≤ 4 for deuteron, ≤
+~25 for ⁴He), independent of dim V_λ.
+
+## NO f64 in compute path
+
+`mpmath.mpf` at the canonical `set_compute_dps()` precision (default
+50 dps from `_precision`). Substrate q_0 as
+`mpmath.mpf(Q_50_DIGIT_STR)`. Same discipline as PR #1993/#2000.
+
+## Δ_λ-gate
+
+Wire-in only — reuses the matrix-M trace identity (PR #1980 →
+#2000). No new ansatz, no fit, no calibration parameter.
+"""
+from __future__ import annotations
+
+import argparse
+import json
+import sys
+import time
+from pathlib import Path
+
+import mpmath as mp
+
+HERE = Path(__file__).resolve().parent
+if str(HERE) not in sys.path:
+    sys.path.insert(0, str(HERE))
+
+import _path_bridge  # noqa: E402, F401
+
+from _precision import set_compute_dps  # noqa: E402
+
+set_compute_dps()
+
+from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
+from per_irrep_pole_atom import ATOMS, ATOM_ALIASES, parts_of  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from tr_m_wenzl_bridge_mpfr import _load_y_lambda  # noqa: E402
+from witness_base import WitnessBuilder  # noqa: E402
+
+from derived_chi_catalogue_matrix_m_mpfr import (  # noqa: E402
+    precompute_block_tables_mpfr,
+    chi_via_numerical_matrix_m_mpfr,
+    chi_rust_at_q_mpf,
+)
+from derived_chi_catalogue_matrix_m import _word_for_braid_word_3a  # noqa: E402
+
+
+def _save_partial(out_path: Path, payload: dict) -> None:
+    """Atomic incremental save (per the hoefsmit producer convention)."""
+    tmp = out_path.with_suffix(out_path.suffix + ".partial")
+    tmp.write_text(json.dumps(payload, indent=2, ensure_ascii=False))
+    tmp.replace(out_path)
+
+
+def _split_atom_braid(Z: int, N: int) -> tuple[
+    int, list[tuple[int, int]], int, list[tuple[int, int]]
+]:
+    """Split `atom_braid_word_3A(Z, N)` at first bridge σ_3.
+
+    Returns (n_strands, word_left, bridge_sign, word_right) — the
+    same parabolic shape consumed by the matrix-M backend's
+    `chi_via_numerical_matrix_m_mpfr`.
+    """
+    n_strands, word = _word_for_braid_word_3a(Z, N)
+    word_left = [t for t in word if t[1] <= 2]
+    bridge = [t for t in word if t[1] == 3]
+    word_right = [t for t in word if t[1] >= 4]
+    if not bridge:
+        # A=1 case (single nucleon) — no σ_3 bridge. Caller falls back
+        # to the hoefsmit producer for these (single-nucleon caches are
+        # already cheap there).
+        raise ValueError(
+            f"atom_braid_word_3A({Z}, {N}) has no σ_3 bridge — single-"
+            f"nucleon braid (A=1) is not parabolic. Use the hoefsmit "
+            f"producer for this atom."
+        )
+    bridge_sign = bridge[0][0]
+    return n_strands, word_left, bridge_sign, word_right
+
+
+def build_chi_cache_at_q0_matrix_m(
+    atom_name: str, Z: int, N: int, q_str: str, *, dps: int = 50,
+    max_dim: int = 100,
+) -> dict:
+    """Per-λ χ^λ(β_atomic(Z, N); q_0) via the matrix-M mpfr backend.
+
+    Iterates partitions of n = 3(Z+N), uses the pre-cached block
+    tables per shape, saves incrementally. Format mirrors the
+    hoefsmit producer so downstream consumers swap in transparently.
+
+    `max_dim` caps the partitions we attempt. The pure-Python mpmath
+    matrix arithmetic at 50 dps takes ~0.1 s / dim²·word_length per
+    partition; for tritium n=9 at dim=216 a single partition is ~60 s
+    and at dim=300+ the wall is minutes. The matrix-M architecture is
+    block-bounded, but the pure-Python LEAF arithmetic is not — the
+    Rust port (Phase 1.4 follow-up) lifts this cap. Partitions over
+    the cap are SKIPPED with a placeholder entry so the cache file
+    remains a valid Phase 2 artefact while waiting on the Rust port.
+    """
+    n = 3 * (Z + N)
+    if Z + N < 2:
+        raise ValueError(
+            f"atom A={Z+N} < 2: matrix-M producer requires a σ_3 bridge; "
+            f"use chi_at_q0_via_hoefsmit_mpfr for single-nucleon atoms."
+        )
+    n_strands, word_left, bridge_sign, word_right = _split_atom_braid(Z, N)
+    assert n_strands == n, f"strand count mismatch: {n_strands} vs {n}"
+
+    q = mp.mpf(q_str)
+    out_path = HERE / f"chi-{atom_name}-h{n}-at-q0-50dps-matrix-m.witness.json"
+    # Reuse existing cache if present (incremental resume).
+    already: dict[tuple, dict] = {}
+    if out_path.exists():
+        try:
+            prior = json.loads(out_path.read_text())
+            for entry in prior.get("by_partition", []):
+                key = tuple(entry["partition"])
+                already[key] = entry
+        except (json.JSONDecodeError, KeyError):
+            pass
+
+    y_table = _load_y_lambda(n, None)
+    shapes = list(parts_of(n))
+    per_partition: list[dict] = []
+    running_total = mp.mpf(0)
+    t0 = time.time()
+
+    from murnaghan_nakayama import dim_specht
+    n_skipped = 0
+    for shape in shapes:
+        shape_t = tuple(shape)
+        if shape_t in already:
+            per_partition.append(already[shape_t])
+            running_total += mp.mpf(already[shape_t]["contribution"])
+            continue
+        dim_estimate = dim_specht(shape_t)
+        if dim_estimate > max_dim:
+            # Skip — too slow for pure-Python mpmath at this dim.
+            # Cache writes a placeholder so the file's partition list
+            # remains complete; downstream consumers can detect via
+            # `chi_lambda == "skipped-max-dim"`.
+            n_skipped += 1
+            per_partition.append({
+                "partition": list(shape_t),
+                "dim": dim_estimate,
+                "y_lambda": "skipped-max-dim",
+                "chi_lambda": "skipped-max-dim",
+                "contribution": "0",
+                "compute_time_sec": 0.0,
+            })
+            continue
+
+        t_part = time.time()
+        cache = precompute_block_tables_mpfr(shape_t, 3, q)
+        chi = chi_via_numerical_matrix_m_mpfr(
+            shape_t, word_left, bridge_sign, word_right, cache,
+        )
+        # Pull dim from the cache's block sizes.
+        dim = sum(b["size"] for b in cache["blocks"].values())
+        y_lam = y_table.get(shape_t)
+        if y_lam is None:
+            continue
+        contrib = y_lam * chi
+        running_total += contrib
+
+        entry = {
+            "partition": list(shape_t),
+            "dim": dim,
+            "y_lambda": str(y_lam),
+            "chi_lambda": str(chi),
+            "contribution": str(contrib),
+            "compute_time_sec": round(time.time() - t_part, 3),
+        }
+        per_partition.append(entry)
+        payload = {
+            "computation": f"chi-{atom_name}-h{n}-at-q0-50dps-matrix-m",
+            "description": (
+                f"Numerical χ^λ_q(β_atomic({Z}, {N})) = {atom_name} per "
+                f"partition λ ⊢ {n}, evaluated at q = q_0 at {dps} dps "
+                f"via the matrix-M block-restricted mpfr backend (PR "
+                f"#1993). Convention: sign-only crossings — matches "
+                f"`chi_q_via_gp` and the derived_chi_catalogue cells. "
+                f"NOT a drop-in for the hoefsmit averaged-crossing "
+                f"producer (different physics). Built incrementally."
+            ),
+            "producer": "matrix-m-chi-q-via-gp",
+            "convention": "sign-only-crossings",
+            "q_0_50dps": str(q),
+            "dps": dps,
+            "n_strands": n,
+            "atom": atom_name,
+            "Z": Z, "N": N,
+            "n_partitions": len(per_partition),
+            "n_partitions_total": len(shapes),
+            "partial": len(per_partition) < len(shapes),
+            "compute_time_sec_so_far": round(time.time() - t0, 2),
+            "tr_M_at_q0": str(running_total),
+            "by_partition": per_partition,
+        }
+        _save_partial(out_path, payload)
+        print(f"    λ={shape_t!s:25} dim={dim:>3}  "
+              f"+{entry['compute_time_sec']:>6.3f}s  "
+              f"({len(per_partition)}/{len(shapes)})", flush=True)
+
+    elapsed = time.time() - t0
+    return {
+        "atom": atom_name,
+        "Z": Z, "N": N,
+        "n_strands": n,
+        "n_partitions": len(per_partition),
+        "tr_M_at_q0": str(running_total),
+        "compute_time_sec": round(elapsed, 2),
+        "out_path": str(out_path),
+    }
+
+
+def save_witness(record: dict) -> Path:
+    wb = WitnessBuilder(
+        f"chi-at-q0-matrix-m-{record['atom']}",
+        engine="python",
+    )
+    wb.set_description(
+        f"Per-λ χ^λ(β_atomic({record['Z']}, {record['N']}); q_0) cache "
+        f"for {record['atom']} via the matrix-M mpfr backend. Format "
+        f"matches `chi_at_q0_via_hoefsmit_mpfr.py` so downstream "
+        f"consumers swap transparently. NO f64 in compute path."
+    )
+    wb.add_data("atom", record["atom"])
+    wb.add_data("Z", record["Z"])
+    wb.add_data("N", record["N"])
+    wb.add_data("n_strands", record["n_strands"])
+    wb.add_data("n_partitions", record["n_partitions"])
+    wb.add_data("tr_M_at_q0", record["tr_M_at_q0"])
+    wb.add_data("compute_time_sec", record["compute_time_sec"])
+    wb.add_data("cache_path", record["out_path"])
+    return wb.save()
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description=__doc__.split("\n\n", 1)[0])
+    parser.add_argument(
+        "atoms", nargs="*",
+        help="Atoms to build (default: deuteron — single-isotope smoke "
+             "test). One of: " + ", ".join(ATOMS),
+    )
+    parser.add_argument("--dps", type=int, default=50)
+    parser.add_argument(
+        "--max-dim", type=int, default=100,
+        help="Skip partitions with dim V_λ > this. Default 100 keeps "
+             "wall time per partition under ~5 s in pure-Python mpmath; "
+             "raise once the Rust port lands or at the cost of long "
+             "compute. Skipped partitions get placeholder cache entries.",
+    )
+    args = parser.parse_args()
+
+    if not args.atoms:
+        # Default to deuteron only — fastest comparison vs hoefsmit
+        # producer, finishes in seconds.
+        atoms = ["deuteron"]
+    else:
+        atoms = [ATOM_ALIASES.get(a, a) for a in args.atoms]
+
+    mp.mp.dps = args.dps
+    q_str = Q_50_DIGIT_STR
+    print("=" * 80)
+    print(" Building numerical χ^λ caches at q_0 via matrix-M mpfr backend")
+    print(f" q_0 = {Q_50_DIGIT_STR}")
+    print("=" * 80)
+    print(f"  {'atom':>10}  {'n':>3}  {'n_parts':>10}  "
+          f"{'tr_M(q_0)':>22}  {'time':>10}")
+    print("  " + "-" * 70)
+
+    last_record = None
+    q_mpf = mp.mpf(q_str)
+    for atom_name in atoms:
+        if atom_name not in ATOMS:
+            print(f"  {atom_name}: not in ATOMS, skip")
+            continue
+        Z, N = ATOMS[atom_name]
+        if Z + N < 2:
+            print(f"  {atom_name}: A=1 single nucleon, use hoefsmit producer")
+            continue
+        try:
+            record = build_chi_cache_at_q0_matrix_m(
+                atom_name, Z, N, q_str, dps=args.dps,
+                max_dim=args.max_dim,
+            )
+        except Exception as exc:  # noqa: BLE001
+            print(f"  {atom_name:>10}  ERROR  {type(exc).__name__}: {exc}")
+            continue
+        save_witness(record)
+        n_parts = record["n_partitions"]
+        tr_m_short = record["tr_M_at_q0"][:22]
+        print(f"  {atom_name:>10}  {record['n_strands']:>3}  "
+              f"{n_parts:>10}  {tr_m_short:>22}  "
+              f"{record['compute_time_sec']:>9.2f}s")
+        last_record = record
+
+        # Cross-validate against Rust chi_q_via_gp at q_0 (the
+        # canonical sign-only path my matrix-M matches).
+        from per_irrep_pole_atom import parts_of as _parts
+        n_strands, word = _word_for_braid_word_3a(Z, N)
+        cache_data = json.loads(
+            (HERE / f"chi-{atom_name}-h{n_strands}-at-q0-50dps-matrix-m.witness.json").read_text()
+        )
+        tol = mp.mpf(10) ** -(args.dps - 5)
+        n_match = 0
+        n_total = 0
+        n_skipped = 0
+        for entry in cache_data["by_partition"]:
+            if entry["chi_lambda"] == "skipped-max-dim":
+                n_skipped += 1
+                continue
+            shape = tuple(entry["partition"])
+            chi_mpf = mp.mpf(entry["chi_lambda"])
+            chi_rust = chi_rust_at_q_mpf(shape, n_strands, word, q_mpf)
+            n_total += 1
+            if abs(chi_mpf - chi_rust) < tol:
+                n_match += 1
+        print(f"  {'':>10}     cross-check vs chi_q_via_gp at q_0: "
+              f"{n_match}/{n_total} match (tol 1e-{args.dps-5}), "
+              f"{n_skipped} skipped (dim > {args.max_dim})")
+
+    return 0 if last_record is not None else 1
+
+
+if __name__ == "__main__":
+    sys.exit(main())
