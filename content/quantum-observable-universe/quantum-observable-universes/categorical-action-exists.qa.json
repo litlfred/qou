@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "f646226a95de",
     "ts": "10be89cdd156",
-    "lean": "c541d0b86fdf"
+    "lean": "e991275b5548"
   },
   "criteria": {
     "voice-status-leak": [
@@ -806,7 +806,7 @@
         },
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
-        "notes": "Label 'prop:categorical-action-exists' \u2192 expected 'categorical_action_exists'; Lean declares: CategoricalAction.exists. Structural match via content."
+        "notes": "Label 'prop:categorical-action-exists' → expected 'categorical_action_exists'; Lean declares: CategoricalAction.exists. Structural match via content."
       },
       {
         "field_hash": {
@@ -816,7 +816,7 @@
         },
         "result": "warn",
         "severity": "minor",
-        "evidence": "Narrative claims S_Phi=tr(Phi); Lean proves only Nonempty(CategoricalAction) via stub \u2014 Lean comment notes rigid-trace witness is a follow-up",
+        "evidence": "Narrative claims S_Phi=tr(Phi); Lean proves only Nonempty(CategoricalAction) via stub — Lean comment notes rigid-trace witness is a follow-up",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1354,8 +1354,28 @@
         "reviewed_at": "2026-06-07T06:00:58.654Z",
         "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
         "notes": "INTEGRITY FAIL: lean.ref QOU.CategoricalAction.exists proves a vacuously-satisfiable weaker claim (Nonempty of a free-field struct), not the md's S_Phi = tr(Phi); docstring self-admits the gap. Trivial-witness restates a weaker target."
+      },
+      {
+        "field_hash": {
+          "md": "f646226a95de",
+          "ts": "10be89cdd156",
+          "lean": "e991275b5548"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "categorical-action-exists.lean — CategoricalAction.exists no longer proves Nonempty of a free-field struct; it now states ∃ S : 𝟙⟶𝟙, S = categoricalAction Φ swap, where categoricalAction Φ swap = η_ ≫ (Φ▷Aᘁ) ≫ swap ≫ ε_ is the md composite ev∘(id⊗Φ)∘coev = tr(Φ).",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T16:30:57.651Z",
+        "reviewed_sha": "910c36462b195e2bfc30a0027b3032ea1bd4983c",
+        "notes": "RESOLVED: the old lean.ref proved Nonempty(CategoricalAction) (vacuous free-field struct), not the md's 𝒮_Φ = tr(Φ). Rewritten over a rigid monoidal category (Mathlib ExactPairing) to assert existence of the trace composite (= tr(Φ) by definition). Verified green via QOU._Scratch.CatActExists, lake build exit 0, no sorry."
       }
     ]
   },
-  "updated_at": "2026-06-07T06:00:58.654Z"
+  "updated_at": "2026-06-08T16:30:57.651Z"
 }

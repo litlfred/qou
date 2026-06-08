@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "e60bdfb92931",
     "ts": "5df4ac855463",
-    "lean": "a9cff8e08cb6"
+    "lean": "469671658a63"
   },
   "criteria": {
     "voice-status-leak": [
@@ -670,7 +670,7 @@
         },
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
-        "notes": "Label 'prop:categorical-dq-squared' \u2192 expected 'categorical_dq_squared'; Lean declares: R_q, q_param, q_inv_param, DqSquaredObstruction, dq_squared_vanishes_iff.... Structural match via content."
+        "notes": "Label 'prop:categorical-dq-squared' → expected 'categorical_dq_squared'; Lean declares: R_q, q_param, q_inv_param, DqSquaredObstruction, dq_squared_vanishes_iff.... Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -972,7 +972,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "Generic-ring chapter; Lean sibling banner declares archimedean specialisation per \u00a77c. Narrative statement uses q^{-1}, omega_V, [xi,alpha] \u2014 algebraic. No Real.* or numeric q.",
+        "evidence": "Generic-ring chapter; Lean sibling banner declares archimedean specialisation per §7c. Narrative statement uses q^{-1}, omega_V, [xi,alpha] — algebraic. No Real.* or numeric q.",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -982,7 +982,7 @@
         },
         "reviewed_at": "2026-06-04T23:11:15.874Z",
         "reviewed_sha": "52ea72a86af7040f88761f4f0ec1cd82ba77c6bc",
-        "notes": "\u00a77c banner present; statement itself is generic-ring."
+        "notes": "§7c banner present; statement itself is generic-ring."
       }
     ],
     "wall-side-proof": [
@@ -1199,8 +1199,28 @@
         "reviewed_at": "2026-06-07T06:00:59.408Z",
         "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
         "notes": "INTEGRITY FAIL: lean.ref QOU.categorical_dq_squared is ABSENT (file has only dq_squared_vanishes_iff / _zero_on_invariant / _nonzero_generic and the DqSquaredObstruction struct). Plus the file does not compile (obs.q_pos)."
+      },
+      {
+        "field_hash": {
+          "md": "e60bdfb92931",
+          "ts": "5df4ac855463",
+          "lean": "469671658a63"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "categorical-dq-squared.lean:78 — theorem categorical_dq_squared (the lean.ref target, previously ABSENT) now states obs.obstruction = 0 ↔ (obs.q = 1 ∨ obs.reeb_bracket = 0), matching the md iff; obstruction is a def of the data (non-vacuous); file compiles (q_pos removed; over [Field R]).",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T16:30:23.771Z",
+        "reviewed_sha": "910c36462b195e2bfc30a0027b3032ea1bd4983c",
+        "notes": "RESOLVED: added the named lean.ref decl QOU.categorical_dq_squared; the iff matches the md's dq²=0 ⟺ q=1 ∨ [ξ,α]=0; obstruction made a def (not a free struct field, so the iff is non-vacuous); ported off the orderless Laurent ring to generic [Field R] with q≠0 (§7c) so it compiles. Verified green via QOU._Scratch.CatDq, lake build exit 0, no sorry."
       }
     ]
   },
-  "updated_at": "2026-06-07T06:00:59.408Z"
+  "updated_at": "2026-06-08T16:30:23.771Z"
 }
