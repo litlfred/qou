@@ -46,6 +46,8 @@ namespace QOU.MathlibExt.PosSemidefTraceZero
 
 open Matrix
 
+open scoped MatrixOrder
+
 variable {n : ℕ}
 
 /-- **Cone self-polarity for PSD matrices** (real case).  For
@@ -94,13 +96,20 @@ theorem Matrix.PosSemidef.trace_mul_eq_zero_iff_mul_eq_zero
   have hBsqrt_psd : Bsqrt.PosSemidef := (CFC.sqrt_nonneg B).posSemidef
   have hAsqrt_herm : Asqrt.IsHermitian := hAsqrt_psd.1
   have hBsqrt_herm : Bsqrt.IsHermitian := hBsqrt_psd.1
+  -- For real matrices `Aᴴ = Aᵀ`, so `IsHermitian` (i.e. `Aᴴ = A`) gives
+  -- `Aᵀ = A`.
+  have hAsqrt_tr : Asqrt.transpose = Asqrt := by
+    have h : Asqrtᴴ = Asqrt := hAsqrt_herm.eq
+    rwa [Matrix.conjTranspose_eq_transpose_of_trivial] at h
+  have hBsqrt_tr : Bsqrt.transpose = Bsqrt := by
+    have h : Bsqrtᴴ = Bsqrt := hBsqrt_herm.eq
+    rwa [Matrix.conjTranspose_eq_transpose_of_trivial] at h
   -- Define X := Asqrt · Bsqrt.  Then X · X^T = Asqrt · B · Asqrt.
   set X := Asqrt * Bsqrt with hX_def
   have hXX_T : X * X.transpose = Asqrt * B * Asqrt := by
-    rw [hX_def, Matrix.transpose_mul,
-        show Bsqrt.transpose = Bsqrt from hBsqrt_herm,
-        show Asqrt.transpose = Asqrt from hAsqrt_herm,
-        Matrix.mul_assoc, ← Matrix.mul_assoc Bsqrt Bsqrt _, hBsq]
+    rw [hX_def, Matrix.transpose_mul, hBsqrt_tr, hAsqrt_tr,
+        Matrix.mul_assoc, ← Matrix.mul_assoc Bsqrt Bsqrt _, hBsq,
+        ← Matrix.mul_assoc]
   -- tr(X · X^T) = tr(Asqrt · B · Asqrt) = tr(Asqrt² · B) = tr(A · B) = 0
   have hXX_T_trace_zero : (X * X.transpose).trace = 0 := by
     rw [hXX_T, Matrix.trace_mul_comm, ← Matrix.mul_assoc, hAsq]
@@ -121,10 +130,10 @@ theorem Matrix.PosSemidef.trace_mul_eq_zero_iff_mul_eq_zero
   --      = Asqrt · 0 · Bsqrt = 0.
   calc A * B
       = (Asqrt * Asqrt) * (Bsqrt * Bsqrt) := by rw [hAsq, hBsq]
-    _ = (Asqrt * Asqrt * Bsqrt) * Bsqrt := by rw [Matrix.mul_assoc]
-    _ = (Asqrt * (Asqrt * Bsqrt)) * Bsqrt := by rw [Matrix.mul_assoc Asqrt Asqrt Bsqrt]
-    _ = (Asqrt * X) * Bsqrt := rfl
-    _ = (Asqrt * 0) * Bsqrt := by rw [hX_zero]
+    _ = Asqrt * (Asqrt * Bsqrt) * Bsqrt := by
+          simp only [← Matrix.mul_assoc]
+    _ = Asqrt * X * Bsqrt := by rw [hX_def]
+    _ = Asqrt * 0 * Bsqrt := by rw [hX_zero]
     _ = 0 * Bsqrt := by rw [Matrix.mul_zero]
     _ = 0 := Matrix.zero_mul _
 

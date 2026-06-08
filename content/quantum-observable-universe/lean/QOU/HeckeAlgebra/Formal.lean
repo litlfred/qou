@@ -76,15 +76,15 @@ namespace QOU.HeckeAlgebra.Formal
 
     Dimension uses the same `heckeDim n = n!` count as the
     archimedean form. -/
-abbrev HeckeFormalElement (R : Type*) [CommRing R] (n : ℕ) : Type :=
+abbrev HeckeFormalElement (R : Type*) [CommRing R] (n : ℕ) : Type _ :=
   Fin (QOU.HeckeAlgebra.heckeDim n) → LaurentPolynomial R
 
 /-- The formal Hecke variable `q` as a `LaurentPolynomial`. -/
-abbrev formalQ (R : Type*) [CommRing R] : LaurentPolynomial R :=
+noncomputable abbrev formalQ (R : Type*) [CommRing R] : LaurentPolynomial R :=
   LaurentPolynomial.T 1
 
 /-- The formal Hecke variable `q⁻¹` as a `LaurentPolynomial`. -/
-abbrev formalQInv (R : Type*) [CommRing R] : LaurentPolynomial R :=
+noncomputable abbrev formalQInv (R : Type*) [CommRing R] : LaurentPolynomial R :=
   LaurentPolynomial.T (-1)
 
 /-- `q · q⁻¹ = 1` in `R[q, q⁻¹]`. -/
@@ -109,7 +109,7 @@ to one in characteristic p. -/
     `LaurentPolynomial.mapRingHom` no longer resolves. -/
 noncomputable def reduceModP (p : ℕ) [Fact p.Prime] :
     LaurentPolynomial ℤ →+* LaurentPolynomial (ZMod p) :=
-  AddMonoidAlgebra.mapRangeRingHom (Int.castRingHom (ZMod p))
+  AddMonoidAlgebra.mapRangeRingHom ℤ (Int.castRingHom (ZMod p))
 
 /-- Reduction mod p preserves zero. -/
 theorem reduceModP_zero (p : ℕ) [Fact p.Prime] :
@@ -123,11 +123,11 @@ theorem reduceModP_one (p : ℕ) [Fact p.Prime] :
 theorem reduceModP_formalQ (p : ℕ) [Fact p.Prime] :
     reduceModP p (formalQ ℤ) = formalQ (ZMod p) := by
   -- `formalQ R = LaurentPolynomial.T 1 = Finsupp.single 1 1`; the
-  -- coefficient map sends `single 1 (1 : ℤ)` to `single 1 (1 : ZMod p)`.
-  unfold reduceModP formalQ
-  ext n
-  simp [AddMonoidAlgebra.mapRangeRingHom, LaurentPolynomial.T,
-    Finsupp.mapRange_single]
+  -- coefficient map `mapRangeRingHom` sends `single 1 (1 : ℤ)` to
+  -- `single 1 ((1 : ℤ) cast to ZMod p) = single 1 (1 : ZMod p)`.
+  unfold reduceModP formalQ LaurentPolynomial.T
+  rw [AddMonoidAlgebra.mapRangeRingHom_single]
+  simp
 
 /-- **Element-wise F_p reduction** of a Hecke formal element
     over ℤ. -/
@@ -200,7 +200,7 @@ relation since the coefficients `q − 1, q ∈ ℤ[q, q⁻¹]` map to
 This is the central F_p-compatibility consequence of choosing
 T-form over σ-form. -/
 
-/-- **The T-relation holds uniformly in F_p — sketch only**.
+/- **The T-relation holds uniformly in F_p — sketch only**.
 
     PER COPILOT REVIEW: this lemma's previous form returned
     `True` and was informationally empty despite the docstring

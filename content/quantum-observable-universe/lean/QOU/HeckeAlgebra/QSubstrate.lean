@@ -83,7 +83,7 @@ theorem q_0_sub_one_pos : 0 < q_0 - 1 :=
   sub_pos.mpr q_0_gt_one
 
 /-- **Speed of light in cat units**: `c_q := 1 / (q_0 - 1)`. -/
-def c_q : ℝ := 1 / (q_0 - 1)
+noncomputable def c_q : ℝ := 1 / (q_0 - 1)
 
 /-- `c_q > 0`. -/
 theorem c_q_pos : 0 < c_q := by
@@ -91,7 +91,7 @@ theorem c_q_pos : 0 < c_q := by
   exact div_pos one_pos q_0_sub_one_pos
 
 /-- **Planck constant in cat units**: `ℏ_q := (q_0 - 1) / q_0`. -/
-def hbar_q : ℝ := (q_0 - 1) / q_0
+noncomputable def hbar_q : ℝ := (q_0 - 1) / q_0
 
 /-- `ℏ_q > 0`. -/
 theorem hbar_q_pos : 0 < hbar_q := by
@@ -102,7 +102,7 @@ theorem hbar_q_pos : 0 < hbar_q := by
     q_0) = 1 / q_0`. -/
 theorem c_q_mul_hbar_q : c_q * hbar_q = 1 / q_0 := by
   unfold c_q hbar_q
-  field_simp
+  field_simp [ne_of_gt q_0_sub_one_pos, q_0_ne_zero]
 
 /-- **Markov parameter**: `z := 1 / (q_0^{1/2} + q_0^{-1/2})`.  This
     is the eigenvalue of the Markov-trace stabilisation operator
@@ -116,7 +116,7 @@ theorem q_0_sqrt_pos : 0 < q_0 ^ ((1 : ℝ) / 2) := by
   exact lt_trans one_pos q_0_gt_one
 
 /-- **Operational entropy**: `η_q := (2q_0 - 1) / q_0^3`. -/
-def eta_q : ℝ := (2 * q_0 - 1) / q_0 ^ 3
+noncomputable def eta_q : ℝ := (2 * q_0 - 1) / q_0 ^ 3
 
 /-- `η_q > 0` for `q_0 > 1/2` (in particular for our `q_0 > 1`). -/
 theorem eta_q_pos : 0 < eta_q := by
