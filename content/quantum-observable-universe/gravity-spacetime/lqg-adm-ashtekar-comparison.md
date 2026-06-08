@@ -36,7 +36,7 @@ regularisation patch.
 | **Diffeomorphism constraint** | built in: $\mathrm{tr}_M(\mathcal{B}_K)$ is an ambient-isotopy (knot) invariant by construction — no separate constraint to impose |
 | **Hamiltonian constraint** (Thiemann's *rigorous* operator) | the concrete [categorical Dirac](#def:categorical-dirac-operator) / Reeb generator $\mathfrak{D}_\nabla$ — the **sharp** operator realising the *formal* Wheeler–DeWitt row above; QOU sidesteps the constraint-algebra-closure / problem-of-time issue (the Reeb flow *is* time, §1) |
 | **Coherent / semiclassical states** | the archimedean ($\mathrm{std}$, $q\to1$) limit of the categorical state |
-| **LQC big bounce** (singularity-free cosmology) | Penrose conformal-cyclic **aeons** (the big-bang $\leftrightarrow$ heat-death cycling) — a *different mechanism* (conformal rescaling at heat death, not a Planck-density quantum bounce), same non-singular-cyclic outcome |
+| **LQC big bounce** & **Penrose CCC aeons** (singularity-free cosmology) | **One mechanism in QOU**: cosmic time $=$ the $q$-flow, with both as *endpoints of a single surreal trajectory* — Big Bang $= q\to1^+$ ($c_q\to\infty$; the $1+\varepsilon^\omega$ end), heat death $= q\to\infty=\omega$ ($\hbar_q\to1$). LQC's bounce and CCC's conformal rescaling are the two *ends*, not two mechanisms (*highly speculative*: the named-surreal evaluation is clean, the cosmological reading is bracketed) |
 | **Quantum-geometry discreteness** (discrete area/volume spectra) | algebraic discreteness — finite Wedderburn blocks $\bigoplus_\lambda M_{d_\lambda}$ + finite GS-filtration slices ([GB spectral sequence](#prop:gb-spectral-sequence)); discreteness is *innate to the algebra*, not a quantisation output |
 
 ## Three structural advantages
