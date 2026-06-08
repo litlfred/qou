@@ -1359,7 +1359,7 @@
       }
     },
     "mass-theory": {
-      "manifest_hash": "b91658a5e07e",
+      "manifest_hash": "fb76fc2f1127",
       "machine": {
         "title_defects": [
           {
@@ -1367,12 +1367,6 @@
             "label": "sec:mass-algebraic-consolidated",
             "title": "Algebraic face: transfer matrices, Skein mass, and Markov corrections",
             "detail": "3 comma-joined concepts — not concise"
-          },
-          {
-            "kind": "split-artifact",
-            "label": "sec:hoefsmit-convergence-construction-per-partition-k",
-            "title": "Hoefsmit convergence: construction : generation",
-            "detail": "trailing \" : generation\" (known auto-split tag) — meaningless out of context"
           },
           {
             "kind": "compound",
@@ -1393,39 +1387,9 @@
             "detail": "3 comma-joined concepts — not concise"
           },
           {
-            "kind": "split-artifact",
-            "label": "sec:spectral-sequence-chirality-confinement-per-nucleon-shift",
-            "title": "Spectral sequence, chirality, and confinement-NF structure : generation",
-            "detail": "trailing \" : generation\" (known auto-split tag) — meaningless out of context"
-          },
-          {
-            "kind": "compound",
-            "label": "sec:spectral-sequence-chirality-confinement-per-nucleon-shift",
-            "title": "Spectral sequence, chirality, and confinement-NF structure : generation",
-            "detail": "3 comma-joined concepts — not concise"
-          },
-          {
-            "kind": "split-artifact",
-            "label": "sec:alpha-k-procedure-atom-knot-mass",
-            "title": "$\\\\alpha_k$ derivation procedure : generation",
-            "detail": "trailing \" : generation\" (known auto-split tag) — meaningless out of context"
-          },
-          {
             "kind": "compound",
             "label": "sec:wenzl-bridge-cyclotomic",
             "title": "Wenzl bridge, cyclotomic factorisation, and explicit $\\\\alpha_k$",
-            "detail": "3 comma-joined concepts — not concise"
-          },
-          {
-            "kind": "split-artifact",
-            "label": "sec:wenzl-bridge-cyclotomic-lr-tensor-character",
-            "title": "Wenzl bridge, cyclotomic factorisation, and explicit $\\\\alpha_k$ : generation",
-            "detail": "trailing \" : generation\" (known auto-split tag) — meaningless out of context"
-          },
-          {
-            "kind": "compound",
-            "label": "sec:wenzl-bridge-cyclotomic-lr-tensor-character",
-            "title": "Wenzl bridge, cyclotomic factorisation, and explicit $\\\\alpha_k$ : generation",
             "detail": "3 comma-joined concepts — not concise"
           },
           {
@@ -1435,39 +1399,9 @@
             "detail": "3 comma-joined concepts — not concise"
           },
           {
-            "kind": "split-artifact",
-            "label": "sec:parity-classification-discrepancy-partition-sum-proton",
-            "title": "Parity classification, atomic atlas, and discrepancy resolution : generation",
-            "detail": "trailing \" : generation\" (known auto-split tag) — meaningless out of context"
-          },
-          {
-            "kind": "too-long",
-            "label": "sec:parity-classification-discrepancy-partition-sum-proton",
-            "title": "Parity classification, atomic atlas, and discrepancy resolution : generation",
-            "detail": "76 chars > 72"
-          },
-          {
-            "kind": "compound",
-            "label": "sec:parity-classification-discrepancy-partition-sum-proton",
-            "title": "Parity classification, atomic atlas, and discrepancy resolution : generation",
-            "detail": "3 comma-joined concepts — not concise"
-          },
-          {
             "kind": "compound",
             "label": "sec:six-term-crystal-isospin-chirality",
             "title": "Six-term mass formula, crystal, isospin, and chirality",
-            "detail": "4 comma-joined concepts — not concise"
-          },
-          {
-            "kind": "split-artifact",
-            "label": "sec:six-term-crystal-isospin-chirality-option-e-isospin",
-            "title": "Six-term mass formula, crystal, isospin, and chirality : generation",
-            "detail": "trailing \" : generation\" (known auto-split tag) — meaningless out of context"
-          },
-          {
-            "kind": "compound",
-            "label": "sec:six-term-crystal-isospin-chirality-option-e-isospin",
-            "title": "Six-term mass formula, crystal, isospin, and chirality : generation",
             "detail": "4 comma-joined concepts — not concise"
           }
         ],
@@ -1535,7 +1469,7 @@
           "reviewed_hash": null
         },
         "sec:hoefsmit-convergence-construction-per-partition-k": {
-          "title": "Hoefsmit convergence: construction : generation",
+          "title": "Per-partition brane-tower convergence",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
@@ -1654,7 +1588,7 @@
           "reviewed_hash": null
         },
         "sec:spectral-sequence-chirality-confinement-per-nucleon-shift": {
-          "title": "Spectral sequence, chirality, and confinement-NF structure : generation",
+          "title": "Confinement-NF forcing and the per-nucleon shift",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
@@ -1682,7 +1616,7 @@
           "reviewed_hash": null
         },
         "sec:alpha-k-procedure-atom-knot-mass": {
-          "title": "$\\\\alpha_k$ derivation procedure : generation",
+          "title": "Joint-tower SDP and closed-form weights",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
@@ -1696,7 +1630,7 @@
           "reviewed_hash": null
         },
         "sec:wenzl-bridge-cyclotomic-lr-tensor-character": {
-          "title": "Wenzl bridge, cyclotomic factorisation, and explicit $\\\\alpha_k$ : generation",
+          "title": "The LR-tensor character bridge",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
@@ -1717,7 +1651,7 @@
           "reviewed_hash": null
         },
         "sec:parity-classification-discrepancy-partition-sum-proton": {
-          "title": "Parity classification, atomic atlas, and discrepancy resolution : generation",
+          "title": "The partition-sum proton residual",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
@@ -1731,7 +1665,7 @@
           "reviewed_hash": null
         },
         "sec:six-term-crystal-isospin-chirality-option-e-isospin": {
-          "title": "Six-term mass formula, crystal, isospin, and chirality : generation",
+          "title": "Option E: crystal bases and chirality duality",
           "depth": 1,
           "result": "pending",
           "reviewer": null,

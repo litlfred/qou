@@ -146,7 +146,7 @@ export default chapter({
     }),
 
     section({
-      title: "Hoefsmit convergence: construction : generation",
+      title: "Per-partition brane-tower convergence",
       label: "sec:hoefsmit-convergence-construction-per-partition-k",
       blocks: [
         "hoefsmit-convergence-construction-per-partition-k-intro",
@@ -524,7 +524,7 @@ export default chapter({
     }),
 
     section({
-      title: "Spectral sequence, chirality, and confinement-NF structure : generation",
+      title: "Confinement-NF forcing and the per-nucleon shift",
       label: "sec:spectral-sequence-chirality-confinement-per-nucleon-shift",
       blocks: [
         "spectral-sequence-chirality-confinement-per-nucleon-shift-intro",
@@ -596,7 +596,7 @@ export default chapter({
     }),
 
     section({
-      title: "$\\\\alpha_k$ derivation procedure : generation",
+      title: "Joint-tower SDP and closed-form weights",
       label: "sec:alpha-k-procedure-atom-knot-mass",
       blocks: [
         "alpha-k-procedure-atom-knot-mass-intro",
@@ -631,7 +631,7 @@ export default chapter({
     }),
 
     section({
-      title: "Wenzl bridge, cyclotomic factorisation, and explicit $\\\\alpha_k$ : generation",
+      title: "The LR-tensor character bridge",
       label: "sec:wenzl-bridge-cyclotomic-lr-tensor-character",
       blocks: [
         "wenzl-bridge-cyclotomic-lr-tensor-character-intro",
@@ -682,7 +682,7 @@ export default chapter({
     }),
 
     section({
-      title: "Parity classification, atomic atlas, and discrepancy resolution : generation",
+      title: "The partition-sum proton residual",
       label: "sec:parity-classification-discrepancy-partition-sum-proton",
       blocks: [
         "parity-classification-discrepancy-partition-sum-proton-intro",
@@ -717,7 +717,7 @@ export default chapter({
     }),
 
     section({
-      title: "Six-term mass formula, crystal, isospin, and chirality : generation",
+      title: "Option E: crystal bases and chirality duality",
       label: "sec:six-term-crystal-isospin-chirality-option-e-isospin",
       blocks: [
         "six-term-crystal-isospin-chirality-option-e-isospin-intro",
