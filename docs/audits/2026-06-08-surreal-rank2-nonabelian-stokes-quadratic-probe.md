@@ -109,8 +109,10 @@ complexity** `ℓ(K)` (`piece1` table: trefoil 2, Borromean 6, proton word 12,
 
 `ε^ω = (1/ω)^ω = ω^{−ω} = exp(−ω log ω)` is a **surreal exp-log element**: its
 exponent `ω` is infinite, so it is **not** in the rank-1 Hahn field
-`ℝ((ε^ℚ))`. It lives in `ℝ((ε^No)) = No` (Hahn series with surreal exponents),
-i.e. exactly the structure surreals provide and the `ε`-adic-`ℝ` line does not.
+`ℝ((ε^ℚ))`. It lives in `No` — which, by the Conway normal form, is realised as
+Hahn series with real coefficients and **surreal** exponents (`Σ rᵢ ε^{aᵢ}`,
+`aᵢ ∈ No`) — exactly the structure surreals provide and the rank-1 `ε`-adic-`ℝ`
+line `ℝ((ε^ℚ))` does not.
 
 **This is genuinely independent (not Kashaev-tied):** `ε` is the `q→1`
 deformation scale; `ℓ(K)` is the Coxeter length / crossing number, a

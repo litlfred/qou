@@ -38,7 +38,8 @@ chiral-cell braids.
 ### P2 — Root-of-unity non-semisimplicity (the delicate step)
 
 `q → ζ₅` is a **root of unity**, where `H_n(q)` is **NOT semisimple**
-(Wenzl / Gyoja–Uno; CLAUDE.md "Wedderburn stays generic to keep semisimplicity").
+(Wenzl / Gyoja–Uno; cf. the genericity-keeps-Wedderburn discipline in
+[`2026-06-04-kontsevich-soibelman-0811.2435-qou-comparison.md` §6](../audits/2026-06-04-kontsevich-soibelman-0811.2435-qou-comparison.md)).
 The generic Hoefsmit seminormal form **degenerates** there. Consequences:
 
 - the Markov trace at `q = ζ₅` must be taken via **cell modules / the
@@ -46,7 +47,7 @@ The generic Hoefsmit seminormal form **degenerates** there. Consequences:
 - the depth-filtration `G^{(n)}` argument of the keystone uses **generic** `q`;
   the `ζ₅` specialization is a *limit*, so the reduction must commute with the
   specialization. **This is the load-bearing technical risk** — establish it
-  first (a `Z[q^{±1}]`-flatness / specialization-commutes lemma) before any
+  first (a `ℤ[q^{±1}]`-flatness / specialization-commutes lemma) before any
   braid enumeration.
 
 ### P3 — Realizability of the 22 arguments
@@ -67,9 +68,9 @@ recursive atom-knot atlas already stores NF tails, so filter the atlas for
 
 ## Algebraic cross-checks (must pass before claiming a hit)
 
-- **Bar-evenness:** `tr_M(β)` must respect `q ↦ q^{-1}` per the chiral-cell
-  parity (depth-3 = odd ⇒ `CS`-type, imaginary part).
-- **Borel rank:** `dim_ℚ K_5^ind(ℚ(ζ₅)) ⊗ ℚ = 2`
+- **Bar-parity:** `tr_M(β)` must respect `q ↦ q^{-1}` per the chiral-cell
+  parity — depth-3 is bar-**odd** (`CS`-type, imaginary part).
+- **Borel rank:** `dim_ℚ(K_5^ind(ℚ(ζ₅)) ⊗ ℚ) = 2`
   ([`prop:borel-partial-resolution`](../../content/quantum-observable-universe/appendix-surreals/borel-partial-resolution.md));
   the realized relations must land in a rank-2 image — a hit producing rank ≠ 2
   is wrong.
