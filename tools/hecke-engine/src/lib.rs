@@ -101,6 +101,8 @@ pub mod seminormal_mn;
 #[cfg(feature = "mpfr")]
 pub mod seminormal_mpfr;
 #[cfg(feature = "mpfr")]
+pub mod matrix_m_mpfr;
+#[cfg(feature = "mpfr")]
 pub mod atomic_reduce_cache;
 pub mod sturm_psd;
 #[cfg(feature = "mpfr")]
