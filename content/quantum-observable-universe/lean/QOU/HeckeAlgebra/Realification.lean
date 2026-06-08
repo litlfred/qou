@@ -89,10 +89,15 @@ compose: ℤ[q, q⁻¹] → ℝ[q, q⁻¹] (coefficient embedding) → ℝ
 (eval at q_0).  This is the canonical realification used by
 the QOU pipeline. -/
 
-/-- **Embed ℤ-coefficient Laurent polynomials into ℝ**. -/
+/-- **Embed ℤ-coefficient Laurent polynomials into ℝ**.
+
+    Mathlib API drift: the coefficient-map ring hom on
+    `LaurentPolynomial R = AddMonoidAlgebra R ℤ` is
+    `AddMonoidAlgebra.mapRangeRingHom`; the former
+    `LaurentPolynomial.mapRingHom` no longer resolves. -/
 noncomputable def embedIntToReal :
     LaurentPolynomial ℤ →+* LaurentPolynomial ℝ :=
-  LaurentPolynomial.mapRingHom (Int.castRingHom ℝ)
+  AddMonoidAlgebra.mapRangeRingHom (Int.castRingHom ℝ)
 
 /-- **Realification at q_0** of an integer formal Laurent
     polynomial: embed ℤ → ℝ, then eval at q_0.

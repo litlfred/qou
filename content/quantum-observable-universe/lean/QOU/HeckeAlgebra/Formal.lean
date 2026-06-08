@@ -101,11 +101,15 @@ maps `ℤ[q, q⁻¹] → F_p[q, q⁻¹]`, lifting any statement over ℤ
 to one in characteristic p. -/
 
 /-- **Reduction mod p** on Laurent polynomials: applies
-    `ZMod.castRingHom` coefficient-wise via
-    `LaurentPolynomial.map`. -/
+    `Int.castRingHom (ZMod p)` coefficient-wise.
+
+    Mathlib API drift: the coefficient-map ring hom on
+    `LaurentPolynomial R = AddMonoidAlgebra R ℤ` is
+    `AddMonoidAlgebra.mapRangeRingHom`; the former
+    `LaurentPolynomial.mapRingHom` no longer resolves. -/
 noncomputable def reduceModP (p : ℕ) [Fact p.Prime] :
     LaurentPolynomial ℤ →+* LaurentPolynomial (ZMod p) :=
-  LaurentPolynomial.mapRingHom (Int.castRingHom (ZMod p))
+  AddMonoidAlgebra.mapRangeRingHom (Int.castRingHom (ZMod p))
 
 /-- Reduction mod p preserves zero. -/
 theorem reduceModP_zero (p : ℕ) [Fact p.Prime] :
@@ -118,9 +122,12 @@ theorem reduceModP_one (p : ℕ) [Fact p.Prime] :
 /-- Reduction mod p of the formal variable `q`. -/
 theorem reduceModP_formalQ (p : ℕ) [Fact p.Prime] :
     reduceModP p (formalQ ℤ) = formalQ (ZMod p) := by
+  -- `formalQ R = LaurentPolynomial.T 1 = Finsupp.single 1 1`; the
+  -- coefficient map sends `single 1 (1 : ℤ)` to `single 1 (1 : ZMod p)`.
   unfold reduceModP formalQ
-  rw [LaurentPolynomial.mapRingHom_T]
-  rfl
+  ext n
+  simp [AddMonoidAlgebra.mapRangeRingHom, LaurentPolynomial.T,
+    Finsupp.mapRange_single]
 
 /-- **Element-wise F_p reduction** of a Hecke formal element
     over ℤ. -/
