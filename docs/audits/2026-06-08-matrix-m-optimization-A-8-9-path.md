@@ -37,9 +37,9 @@ Working from the matrix-M μ_p factorisation already proved (PRs
 
 - sp.Rational backend: **~3× slower than Rust chi_q_via_gp**
   (aggregate). Loses high-dim.
-- mpfr backend: **~1.34× faster than Rust** on ⁴He; ~equal on
-  ⁵Li; degrades further for A ≥ 6 high-dim λ because per-multiply
-  cost grows with running denominator/precision.
+- mpfr backend: **~1.29× faster than Rust** on ⁴He per PR #1993
+  benchmark; ~equal on ⁵Li; degrades further for A ≥ 6 high-dim λ
+  because per-multiply cost grows with running denominator/precision.
 - **Verdict**: matrix-M μ_p alone is NOT sufficient for A ≥ 6.
   Need a smaller per-call block size.
 
@@ -78,7 +78,9 @@ mpmath cost (~10-100 µs for 4×4 at 50 dps) with native
 
 Combined Tier 1 + Tier 2: ⁹Be sweep in seconds.
 
-### Tier 3 — multi-level recursive decomposition (audit §6.2)
+### Tier 3 — multi-level recursive decomposition
+
+Per [`docs/audits/2026-06-07-derived-chi-catalogue-tier-1-lr-factorisation.md`](2026-06-07-derived-chi-catalogue-tier-1-lr-factorisation.md) §6.2 (recursive multi-bridge):
 
 For A ≥ 3, recurse on the bridge structure:
 
@@ -103,8 +105,9 @@ already deliver "minutes per atom".
 ### 3a. Skip zero-LR (μ_p, μ_n) pairs
 
 Many partition pairs (μ_p, μ_n ⊢ 3 with λ ⊢ 3A) have c_LR = 0.
-`pyhecke_native.lr_coefficient` already computes these; skip
-nonzero pairs entirely. **Saves ~30-60% in block count.**
+`pyhecke_native.lr_coefficient` already computes these; skip the
+**zero-c_LR pairs** entirely (only compute on nonzero-c_LR pairs).
+**Saves ~30-60% in block count.**
 
 ### 3b. Precompute seminormal H_3 matrices once
 
@@ -164,7 +167,7 @@ Sequence:
 - **LR coefficient table size**: for A=9 we'd need c_LR^λ_{μ_0,
   μ_1, …, μ_8} multi-LR tables. The existing
   `pyhecke_native.lr_coefficient` is two-argument; we'd iterate it.
-  Per audit §6.2 the largest table is 51975 entries for ⁹Be —
+  Per [`docs/audits/2026-06-07-derived-chi-catalogue-tier-1-lr-factorisation.md`](2026-06-07-derived-chi-catalogue-tier-1-lr-factorisation.md) §6.2 the largest table is 51,975 entries for ⁹Be —
   one-time precompute, < 1 s.
 - **mpmath precision for stacked operations**: cumulative matrix
   products at 50 dps have error ~O(word_length · block_size · 10⁻⁵⁰).
