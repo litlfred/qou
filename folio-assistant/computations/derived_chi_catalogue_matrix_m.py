@@ -295,6 +295,215 @@ def chi_lambda_via_matrix_product(
     return sp.cancel(sp.trace(product))
 
 
+# ── Phase 1.2 — μ_p-level factorisation (matrix-M, deuteron) ──────
+
+
+def syt_first_k_shape(
+    syt: tuple[tuple[int, int], ...], k: int
+) -> tuple[int, ...]:
+    """Shape of the sub-tableau of `syt` restricted to entries
+    {1, 2, …, k} (1-based).
+
+    Returns the sorted column counts as a partition tuple. Used to
+    group SYTs of shape λ by the shape μ_p of their first-3-cells —
+    the natural index for the parabolic factorisation V_λ |_{H_3
+    × H_{n-3}} = ⊕_{μ_p ⊢ k} V_{μ_p} ⊗ V_skew(λ/μ_p).
+    """
+    row_counts: dict[int, int] = {}
+    for entry_idx in range(k):
+        row = syt[entry_idx][0]
+        row_counts[row] = row_counts.get(row, 0) + 1
+    if not row_counts:
+        return ()
+    max_row = max(row_counts.keys())
+    cells = tuple(row_counts.get(r, 0) for r in range(max_row + 1))
+    # Strip trailing zeros (a valid partition has only positive parts).
+    while cells and cells[-1] == 0:
+        cells = cells[:-1]
+    return cells
+
+
+def group_syts_by_mu_p(
+    shape: tuple[int, ...], k_split: int
+) -> dict[tuple[int, ...], list[int]]:
+    """For partition `shape` ⊢ n and split point `k_split`, return a
+    dict `mu_p → [indices into standard_young_tableaux(shape)]`. Each
+    list contains the indices of SYTs T such that the shape of
+    T|_{1, …, k_split} equals μ_p.
+
+    The order of indices within each list follows the canonical
+    `standard_young_tableaux` order — the same ordering used to build
+    seminormal-form matrices, so block extraction is a simple sub-
+    matrix slice.
+    """
+    syts = standard_young_tableaux(shape)
+    groups: dict[tuple[int, ...], list[int]] = {}
+    for i, T in enumerate(syts):
+        mu_p = syt_first_k_shape(T, k_split)
+        groups.setdefault(mu_p, []).append(i)
+    return groups
+
+
+def chi_lambda_via_mu_p_decomposition(
+    shape: tuple[int, ...],
+    word_left: list[tuple[int, int]],
+    bridge_sign: int,
+    word_right: list[tuple[int, int]],
+    k_split: int,
+    q: sp.Symbol,
+) -> sp.Expr:
+    """Phase-1.2 deliverable: compute χ^λ(T_β) for a parabolic-shaped
+    braid β = β_left · σ_{k_split}^{bridge_sign} · β_right via the
+    μ_p-level factorisation
+
+        χ^λ(T_β) = Σ_{μ_p ⊢ k_split}  Tr [ B_p[μ_p]
+                                          · M_pp[μ_p]
+                                          · B_n[μ_p] ]
+
+    where `B_p`, `B_n` are the (block-diagonal in μ_p) restrictions of
+    ρ^λ(β_left), ρ^λ(β_right) to the μ_p-isotypic subspace, and
+    `M_pp[μ_p]` is the DIAGONAL block of ρ^λ(σ_{k_split}^{bridge_sign})
+    on the same subspace.
+
+    Args:
+      shape: λ ⊢ n with n = sum(shape) = strand count.
+      word_left: braid word inside H_{k_split} (uses generators
+        σ_1, …, σ_{k_split-1} — equivalently, all 1-based generator
+        indices in `[1, k_split-1]`).
+      bridge_sign: +1 → σ_{k_split}, -1 → σ_{k_split}⁻¹.
+      word_right: braid word inside H_{n-k_split} (uses generators
+        σ_{k_split+1}, …, σ_{n-1}).
+      k_split: position of the bridge — for deuteron with n=6,
+        k_split = 3 (proton strands 1-3, neutron strands 4-6, bridge
+        σ_3).
+      q: sympy Symbol for the deformation parameter.
+
+    Returns the q-rational character. By construction this equals
+    `chi_lambda_via_matrix_product(shape, word_left + [(bridge_sign, k_split)]
+                                  + word_right, q)` — the cross-validation
+    is the proof that the μ_p block-diagonal structure holds.
+
+    Why this is the matrix-M substrate (not yet the speedup):
+      Each `M_pp[μ_p]` IS the matrix-M(μ_p, ·, λ; q) of the audit doc,
+      summed over μ_n. To recover the full (μ_p, μ_n) factorisation
+      (Phase 1.3), further diagonalise the H_{n-k_split} action of
+      σ_{k_split+1}, …, σ_{n-1} within each μ_p block to identify the
+      V_{μ_n} irreps and project. This file delivers the μ_p-level
+      structural rearrangement and proves it equals the full trace.
+    """
+    n = sum(shape)
+    assert 1 <= k_split <= n - 1, (
+        f"k_split={k_split} must satisfy 1 ≤ k_split ≤ n-1 (n={n})"
+    )
+    assert bridge_sign in (-1, +1), f"bridge_sign={bridge_sign} must be ±1"
+    for (_s, g_1based) in word_left:
+        assert 1 <= g_1based <= k_split - 1, (
+            f"word_left gen σ_{g_1based} not inside H_{k_split}; "
+            f"left generators must be in [1, {k_split - 1}]"
+        )
+    for (_s, g_1based) in word_right:
+        assert k_split + 1 <= g_1based <= n - 1, (
+            f"word_right gen σ_{g_1based} not inside H_{n - k_split}; "
+            f"right generators must be in [{k_split + 1}, {n - 1}]"
+        )
+
+    sigmas = seminormal_matrices_qrat(shape, q)
+    dim = sigmas[0].shape[0] if sigmas else 1
+    h = q - 1 / q
+    eye = sp.eye(dim)
+    sigma_inv_cache: dict[int, sp.Matrix] = {}
+
+    def get_sigma(g_1based: int, sign: int) -> sp.Matrix:
+        idx = g_1based - 1
+        if sign >= 0:
+            return sigmas[idx]
+        if idx not in sigma_inv_cache:
+            sigma_inv_cache[idx] = (sigmas[idx] - h * eye).applyfunc(sp.cancel)
+        return sigma_inv_cache[idx]
+
+    # Build full ρ^λ(β_left), ρ^λ(σ_{k_split}^{sign}), ρ^λ(β_right) on V_λ.
+    def word_to_matrix(word: list[tuple[int, int]]) -> sp.Matrix:
+        prod = eye
+        for (sign, g_1based) in word:
+            prod = prod * get_sigma(g_1based, sign)
+        return prod
+
+    B_p_full = word_to_matrix(word_left)
+    M_full = get_sigma(k_split, bridge_sign)
+    B_n_full = word_to_matrix(word_right)
+
+    # Group SYTs by μ_p (= shape of first k_split cells).
+    groups = group_syts_by_mu_p(shape, k_split)
+
+    # Sum traces of diagonal-μ_p blocks: only the diagonal contributes
+    # to Tr[B_p · M · B_n] because B_p, B_n are block-diagonal in μ_p
+    # (σ_{1..k_split-1} and σ_{k_split+1..n-1} fix the shape of the
+    # first-k_split sub-tableau).
+    total = sp.Integer(0)
+    per_mu_p: dict[tuple[int, ...], sp.Expr] = {}
+    for mu_p, idxs in groups.items():
+        idx_list = idxs
+        # Slice each matrix to the μ_p sub-block.
+        sub_B_p = B_p_full.extract(idx_list, idx_list)
+        sub_M = M_full.extract(idx_list, idx_list)
+        sub_B_n = B_n_full.extract(idx_list, idx_list)
+        contrib = sp.cancel(sp.trace(sub_B_p * sub_M * sub_B_n))
+        per_mu_p[mu_p] = contrib
+        total = total + contrib
+    total = sp.cancel(total)
+    # Stash the per-μ_p contributions on the result by attaching as
+    # an attribute is awkward with sp.Expr; the caller that needs them
+    # should use chi_lambda_mu_p_contributions below.
+    return total
+
+
+def chi_lambda_mu_p_contributions(
+    shape: tuple[int, ...],
+    word_left: list[tuple[int, int]],
+    bridge_sign: int,
+    word_right: list[tuple[int, int]],
+    k_split: int,
+    q: sp.Symbol,
+) -> dict[tuple[int, ...], sp.Expr]:
+    """Same factorisation as `chi_lambda_via_mu_p_decomposition` but
+    returns the per-μ_p contributions instead of the sum. Useful for
+    inspecting which μ_p blocks dominate the character.
+    """
+    n = sum(shape)
+    sigmas = seminormal_matrices_qrat(shape, q)
+    dim = sigmas[0].shape[0] if sigmas else 1
+    h = q - 1 / q
+    eye = sp.eye(dim)
+    sigma_inv_cache: dict[int, sp.Matrix] = {}
+
+    def get_sigma(g_1based: int, sign: int) -> sp.Matrix:
+        idx = g_1based - 1
+        if sign >= 0:
+            return sigmas[idx]
+        if idx not in sigma_inv_cache:
+            sigma_inv_cache[idx] = (sigmas[idx] - h * eye).applyfunc(sp.cancel)
+        return sigma_inv_cache[idx]
+
+    def word_to_matrix(word: list[tuple[int, int]]) -> sp.Matrix:
+        prod = eye
+        for (sign, g_1based) in word:
+            prod = prod * get_sigma(g_1based, sign)
+        return prod
+
+    B_p_full = word_to_matrix(word_left)
+    M_full = get_sigma(k_split, bridge_sign)
+    B_n_full = word_to_matrix(word_right)
+
+    groups = group_syts_by_mu_p(shape, k_split)
+    contribs: dict[tuple[int, ...], sp.Expr] = {}
+    for mu_p, idxs in groups.items():
+        sub_B_p = B_p_full.extract(idxs, idxs)
+        sub_M = M_full.extract(idxs, idxs)
+        sub_B_n = B_n_full.extract(idxs, idxs)
+        contribs[mu_p] = sp.cancel(sp.trace(sub_B_p * sub_M * sub_B_n))
+    return contribs
+
+
 # ── Cross-validation harness vs Rust ──────────────────────────────
 
 
@@ -481,17 +690,78 @@ def main() -> int:
               f"{result['python_symbolic_q'][:50]}…")
         test_cases.append(result)
 
-    # Tally
-    n_total = len(test_cases)
-    n_pass = sum(1 for t in test_cases if t["all_match"])
-    print(f"\n  ── Summary ──")
-    print(f"    Tests:  {n_total}")
-    print(f"    Passed: {n_pass}")
-    print(f"    Failed: {n_total - n_pass}")
+    # Tally Tests 1-4
+    n_total_basic = len(test_cases)
+    n_pass_basic = sum(1 for t in test_cases if t["all_match"])
+    print(f"\n  ── Summary (Tests 1-4: direct matrix product) ──")
+    print(f"    Tests:  {n_total_basic}")
+    print(f"    Passed: {n_pass_basic}")
+    print(f"    Failed: {n_total_basic - n_pass_basic}")
+
+    # Phase 1.2 — μ_p-level factorisation cross-validation.
+    # For each partition λ ⊢ 6, decompose a deuteron-shaped braid
+    # β_left · σ_3 · β_right and verify
+    #
+    #     χ^λ(T_β) = Σ_{μ_p ⊢ 3} Tr [B_p[μ_p] · M_pp[μ_p] · B_n[μ_p]]
+    #
+    # equals the full-trace formula. This is the audit-doc §5 matrix-M
+    # decomposition at the μ_p (proton-side) level; the per-μ_p
+    # contributions ARE the matrix-M(μ_p, ·, λ; q) summed over μ_n.
+    print("\n  Test 5 — n=6 μ_p-level factorisation (Phase 1.2)")
+    print("  ─────────────────────────────────────────────────")
+    # β_left ∈ H_3 (proton): σ_1 σ_2 (touches strands 1-3 only)
+    # bridge σ_3 (strand 3, 4)
+    # β_right ∈ H_3 (neutron, shifted): σ_4 σ_5 (touches strands 4-6 only)
+    deut_left = [(1, 1), (1, 2)]
+    deut_bridge_sign = 1
+    deut_right = [(1, 4), (1, 5)]
+    q_sym = sp.Symbol("q", positive=True)
+    phase12_cases: list[dict] = []
+    for shape in _shape_partitions_of(6):
+        # Direct via matrix product.
+        full_word = list(deut_left) + [(deut_bridge_sign, 3)] + list(deut_right)
+        direct = chi_lambda_via_matrix_product(shape, full_word, q_sym)
+        # Factorised via μ_p decomposition.
+        factored = chi_lambda_via_mu_p_decomposition(
+            shape, deut_left, deut_bridge_sign, deut_right, 3, q_sym,
+        )
+        delta = sp.cancel(direct - factored)
+        match = (delta == 0)
+        contribs = chi_lambda_mu_p_contributions(
+            shape, deut_left, deut_bridge_sign, deut_right, 3, q_sym,
+        )
+        status = "✓" if match else "✗"
+        contrib_str = ", ".join(
+            f"{mu_p}: {sp.cancel(c)}" for mu_p, c in contribs.items() if c != 0
+        )
+        print(f"    {status} λ={list(shape)} χ = {sp.cancel(direct)}")
+        print(f"           per-μ_p: {contrib_str[:80]}…")
+        phase12_cases.append({
+            "shape": list(shape),
+            "word_left": [list(t) for t in deut_left],
+            "bridge_sign": deut_bridge_sign,
+            "word_right": [list(t) for t in deut_right],
+            "k_split": 3,
+            "direct_chi": str(sp.cancel(direct)),
+            "factored_chi": str(sp.cancel(factored)),
+            "delta": str(delta),
+            "match": match,
+            "per_mu_p": {str(list(mu_p)): str(sp.cancel(c)) for mu_p, c in contribs.items()},
+        })
+
+    n_total_phase12 = len(phase12_cases)
+    n_pass_phase12 = sum(1 for t in phase12_cases if t["match"])
+    print(f"\n  ── Summary (Test 5: μ_p factorisation) ──")
+    print(f"    Tests:  {n_total_phase12}")
+    print(f"    Passed: {n_pass_phase12}")
+    print(f"    Failed: {n_total_phase12 - n_pass_phase12}")
+
+    n_total = n_total_basic + n_total_phase12
+    n_pass = n_pass_basic + n_pass_phase12
 
     wb.add_assertion(
         "python_hoefsmit_matches_rust_chi_q_via_gp",
-        computed=(n_pass == n_total),
+        computed=(n_pass_basic == n_total_basic),
         expected=True,
         source="Whether pure-Python sympy q-rational matrix product "
                "reproduces the Rust pyhecke_native chi_q_via_gp output "
@@ -499,10 +769,23 @@ def main() -> int:
                "n=2..6, all partitions, several braid words). Proves "
                "the matrix-M substrate is structurally correct.",
     )
+    wb.add_assertion(
+        "mu_p_factorisation_matches_direct_trace",
+        computed=(n_pass_phase12 == n_total_phase12),
+        expected=True,
+        source="Whether the μ_p-level matrix-M factorisation "
+               "χ^λ(T_β) = Σ Tr[B_p · M_pp · B_n] equals the direct "
+               "trace χ^λ(T_β) = Tr[ρ^λ(β)] for all 11 partitions of 6 "
+               "on a deuteron-shaped braid. This is the Phase 1.2 "
+               "(audit doc §5) structural proof that the matrix-M "
+               "approach is correct — the per-μ_p contributions ARE "
+               "the matrix-M values summed over μ_n.",
+    )
     wb.add_data("n_test_cases", n_total)
     wb.add_data("n_pass", n_pass)
     wb.add_data("n_fail", n_total - n_pass)
     wb.add_data("test_cases", test_cases)
+    wb.add_data("phase12_cases", phase12_cases)
     out = wb.save()
     print(f"\n  ✓ Witness: {out.name}")
     print("=" * 78)
