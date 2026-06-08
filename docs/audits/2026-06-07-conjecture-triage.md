@@ -279,3 +279,74 @@ contingent-downstream, genuinely-open}. One bucketing correction
 applied during synthesis: `gs-graded-markov-trace-existence` was
 re-graded from contingent to root (its dependencies are a theorem + a
 proposition, not conjectures).
+
+---
+
+## 2026-06-08 refresh (addendum)
+
+Same-discipline re-run on the refreshed tree (`main` @ `a983615f`, **136 live
+conjectures**). The §A–§F qualitative findings above are **confirmed current** —
+the 4 edits and the 2 deprecations landed; no conjecture is
+secretly-resolved-and-mis-kinded. This addendum (a) corrects the approximate
+headline counts against the actual `uses[]` graph and (b) adds one axis the
+original sweep did not run.
+
+### G. Count reconciliation — structural `uses[]` graph
+
+The headline "~25 contingent / ~100 open roots" was an approximation. Computed
+from the actual `uses[]` graph (excluding `_deprecated/`):
+
+| Definition of "open root (not contingent-downstream)" | roots | contingent |
+|---|---|---|
+| **Direct** — block's own `uses[]` names no `conj:` | 69 | 67 |
+| **Logical-transitive** — cone reaches no `conj:` via provable/conj edges (remark cites excluded per §3a) — *recommended* | **51** | 85 |
+| **All-block transitive** — incl. remark `uses`/`interprets` (overcounts) | 39 | 97 |
+
+The "~100 open roots" figure double-counted: it treated as "leaf roots" many
+blocks whose `uses[]` directly names another conjecture. Three of the six §C.2
+"keystone roots" are in fact transitively contingent
+(`dilogarithm-archimedean-limit`, `gb-depth-period-correspondence`,
+`qdifference-kernel-prolongation-symbol`); the first two only via remark cites
+(weak links per §3a — so they remain *near*-roots), but
+`qdifference → prop:binding-genfun-qdifference → conj:binding-manybody-eq-jet-filtration`
+is a real logical edge (see §H). Note the arrow direction: `qdifference`
+**depends on** `binding-manybody`, opposite to the "gates" wording in §C.2.
+
+### H. New axis — provable blocks that `uses` a conjecture (§3b inverse drift)
+
+The original sweep checked *conjectures wearing the wrong kind*. The inverse —
+**propositions/theorems silently depending on a conjecture** — was not swept.
+On the refreshed tree: **31** `proposition|theorem|lemma|corollary` blocks
+directly `uses` a `conj:` (without the `conditional-on-class` tag). **16** were
+already honest (a `(conditional on conj:X)` banner and/or a Lean class
+hypothesis). **15** were silent. Per-block file-level investigation gave:
+
+| Disposition | Count | Blocks |
+|---|---|---|
+| **Conditional banner added** (proof genuinely relies on the conj) | 9 | binding-genfun-qdifference, knot-mass-formula-unified, mass-element-nf, hook-weight-derivation, rho-k-h3a-refinement, jet-prefix-gb-filtration, force-carrier-intertwining-correspondence, knot-operator-lp-selection, knot-indexed-convolution-grid |
+| **Stale/contextual `uses[]` edge dropped** (result proved unconditionally) | 2 | bring-trilog-imaginary-tate-rational (Im Li₃(ζ₅)=4π³/125, 50-dps), reeb-u1-chart-swap (chart-swap U(1)=Reeb U(1)) |
+| **No change — already honest** | 1 | lambda-scale-substrate-form (deprecation authorNote: original form falsified 2026-05-18; Family-A core proved) |
+| **Deferred — owner decision** (NS / Yang-Mills chapter; "conditional-on" vs "stale edge" is a scholarly judgment) | 3 | blowup-yekutieli, critical-exponent, ns-obstruction-computation (→ regularity-breakdown / levi-degeneracy) |
+
+The banner fixes disclose the dependency on the narrative side; the Lean
+class-hypothesis wiring (second half of §3b-cond) is a tracked follow-up (Lean
+toolchain network-blocked in this environment).
+
+### I. Tier-tag completion
+
+13 logical-transitive root conjectures lacked a machine-filterable
+`tier:E|S|P|keystone` tag after the `a1259bed`/`3a217f4e` sweep. Tagged by
+objective rule (fan-out ≥ 6 → `keystone`; predicts a measured observable → `E`;
+else `S`): **keystone ×3** (`knot-factor-frobenius-pairing` fan-out 14,
+`inter-nucleon-channel-color-tube` 7, `mass-endomorphism` 7), **E ×2**
+(`qbeta-ck-truncation-canonical`, `weinberg-angle-categorical`), **S ×8**. Every
+logical-transitive root now carries a tier tag.
+
+### Method note (refresh)
+
+Graph counts computed by a `uses[]`-parser over all `*.ts` blocks (three root
+definitions: direct / logical-transitive / all-block). §3b candidates found by
+intersecting provable-kind blocks with conjecture `uses[]`, then calibrated
+against each block's `.md` banner + `.lean` class — 16 of 31 were already honest
+(same "already-caveated" pattern as §E). Two read-only sub-agents did the
+file-level per-block investigation of the 15 silent candidates.
