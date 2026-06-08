@@ -203,12 +203,23 @@ def main():
         # n_candidate = 4 > N_DIM ON PURPOSE: the cap must come from geometry,
         # not from how many candidates we happen to list.
         cap = min(N_DIM, valence_pairs)
-        b = [sigma_b] * n_candidate
+        # Break the degenerate all-equal objective so the LP returns a unique
+        # VERTEX, not a fractional point on the optimal face (per review: an
+        # all-equal objective is degenerate and the active-set size would be
+        # solver-dependent). A tiny strictly-decreasing perturbation does it;
+        # its DIRECTION (sigma >= pi_x >= pi_y) is physical, its MAGNITUDE is
+        # purely tie-breaking — far too small to change which channels bind.
+        eps = 1e-6
+        b = [sigma_b * (1.0 - eps * i) for i in range(n_candidate)]
         r = linprog([-x for x in b], A_ub=[[1.0] * n_candidate], b_ub=[float(cap)],
                     bounds=[(0.0, 1.0)] * n_candidate, method='highs')
         if not r.success:
             raise SystemExit(f"orthogonal-channel LP failed: {r.message}")
-        return cap, len([i for i in range(n_candidate) if r.x[i] > TOL])
+        # Robustness guard: the active-set is only well-defined if the optimum
+        # is a vertex (each x_i ~ 0 or 1). Fail loudly if any x_i is fractional.
+        if any(TOL < v < 1.0 - TOL for v in r.x):
+            raise SystemExit(f"non-vertex LP solution {list(r.x)} — degeneracy unbroken")
+        return cap, sum(1 for v in r.x if v > 0.5)
 
     print("--- Orthogonal-channel model (correct topology; genuine test) ---")
     print(f"  single orthogonal channel binds {sigma_b:.4f} eV (computed)")
