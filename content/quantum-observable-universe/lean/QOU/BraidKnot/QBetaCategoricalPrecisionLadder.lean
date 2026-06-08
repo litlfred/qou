@@ -347,9 +347,20 @@ under the stated `(1 + c_4·b⁴·ℏ_q^8)` factor convention; see the audit
 status. The sign-flipped form `c_4 = -(b² + 1/2)` satisfies (2) with
 residual -0.57 ppb but lacks a derived categorical source.
 -/
-axiom qbeta_inductive_categorical_closure_conjecture
-    (inst : QBetaPrecisionLadderCoefficients) :
-    True
+/-- **Theorem** (was previously `qbeta_inductive_categorical_closure_conjecture`
+    axiom). The signature `(inst : …) → True` is trivially
+    discharge-able since the conclusion is `True`.
+
+    Discharged 2026-06-08 (PR #1981): as an existential-shaped
+    statement, the `True` conclusion captures no categorical
+    content — the "inductive categorical closure" claim above is
+    fully carried by the doc and the §3b-cond conditional-class
+    scaffold below (`QbetaC3StructuralFormClass` and friends), NOT
+    by this signature. Preserved as a named theorem to maintain
+    audit visibility of the citation point. -/
+theorem qbeta_inductive_categorical_closure_conjecture
+    (_inst : QBetaPrecisionLadderCoefficients) :
+    True := trivial
 
 /-! ## §3b-cond N=3 structural-form class (mirrors PR #1508)
 
