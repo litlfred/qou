@@ -65,6 +65,8 @@ import sympy as sp  # noqa: E402
 
 import pyhecke_native as ph  # noqa: E402
 
+from witness_base import WitnessBuilder  # noqa: E402
+
 from derived_chi_catalogue_matrix_m import (  # noqa: E402
     seminormal_matrices_qrat,
     group_syts_by_mu_p,
@@ -160,11 +162,25 @@ def decompose_mu_p_block_into_mu_n(
     """For the μ_p-block of V_λ, decompose under H_3(right) via the
     q-Young symmetrizers and return per-(μ_n) image dimensions.
 
-    Validates: dim(im e_{μ_n}) = c^λ_{μ_p, μ_n} · dim(V_{μ_n})
+    Validates: dim(im e_{μ_n}) = c^λ_{μ_p, μ_n} · dim(V_{μ_p}) · dim(V_{μ_n})
 
-    Returns dict mapping μ_n → {im_dim, c_LR, dim_V_mu_n, match}.
+    The dim(V_{μ_p}) factor enters because the H_3(left)-isotypic
+    U_{μ_p} = V_{μ_p} ⊗ V_skew(λ/μ_p); the right-H_3 symmetrizer acts
+    trivially on the V_{μ_p} factor and projects only V_skew.
+
+    Returns dict mapping μ_n → {im_dim, c_LR, dim_V_mu_p, dim_V_mu_n,
+    expected_dim, match}.
     """
     n = sum(shape)
+    # We need σ_{k_split+1} and σ_{k_split+2} for the right-H_3 action,
+    # so n must be ≥ k_split + 3 (else sigmas[k_split + 1] is out of
+    # range). For k_split=3 (deuteron split), this means n ≥ 6.
+    if n < k_split + 3:
+        raise ValueError(
+            f"shape={shape!r} (sum {n}) too small for right-H_3 split at "
+            f"k_split={k_split}: need n ≥ k_split + 3 = {k_split + 3} so "
+            f"σ_{k_split+1}, σ_{k_split+2} both exist as generators."
+        )
     sigmas = seminormal_matrices_qrat(shape, q)
     groups = group_syts_by_mu_p(shape, k_split)
     if mu_p not in groups:
@@ -201,13 +217,26 @@ def decompose_mu_p_block_into_mu_n(
             "expected_dim": expected,
             "match": im_dim == expected,
         }
-    sum_dim = sum(r["expected_dim"] for r in results.values())
+    sum_expected = sum(r["expected_dim"] for r in results.values())
+    sum_computed = sum(r["im_dim"] for r in results.values())
+    # Strict validation: each per-μ_n match must hold (computed rank
+    # equals LR-predicted dim) AND the computed ranks sum to the block
+    # size. The previous formulation only checked the LR-predicted dim
+    # summed correctly, which doesn't actually use the q-Young
+    # symmetrizers at all.
+    all_per_mu_n_match = all(r["match"] for r in results.values())
+    block_decomposition_correct = (
+        all_per_mu_n_match
+        and sum_computed == block_size
+        and sum_expected == block_size
+    )
     return {
         "shape": shape,
         "mu_p": mu_p,
         "block_size": block_size,
-        "sum_expected_dim": sum_dim,
-        "block_decomposition_correct": (sum_dim == block_size),
+        "sum_expected_dim": sum_expected,
+        "sum_computed_dim": sum_computed,
+        "block_decomposition_correct": block_decomposition_correct,
         "by_mu_n": results,
     }
 
@@ -216,6 +245,20 @@ def decompose_mu_p_block_into_mu_n(
 
 
 def main() -> int:
+    import time
+    t0 = time.monotonic()
+    wb = WitnessBuilder(
+        "derived-chi-catalogue-matrix-m-mu-n-prototype",
+        engine="python",
+        start_time=t0,
+    )
+    wb.set_description(
+        "Phase 1.3 prototype: (μ_p, μ_n)-block extraction via q-Young "
+        "symmetrizers for H_3(q). Validates that the per-block image "
+        "rank matches the LR-predicted dimension c^λ_{μ_p, μ_n} · "
+        "dim(V_{μ_p}) · dim(V_{μ_n}) for each μ_p of λ ⊢ 6. NO f64 "
+        "in compute path (symbolic sympy q throughout)."
+    )
     print("=" * 78)
     print(" Phase 1.3 prototype — (μ_p, μ_n)-block extraction via q-Young symmetrizers")
     print("=" * 78)
@@ -228,6 +271,7 @@ def main() -> int:
     n_pass = 0
     n_fail = 0
     n_total = 0
+    per_block_records: list[dict] = []
     for shape in test_shapes:
         print(f"\n  λ = {shape}   (dim V_λ = {len(standard_young_tableaux(shape))})")
         groups = group_syts_by_mu_p(shape, k_split)
@@ -251,11 +295,49 @@ def main() -> int:
                       f"dim_V_μ_n={r['dim_V_mu_n']}  "
                       f"expected={r['expected_dim']}  "
                       f"im(e)={r['im_dim']}  {tick}")
+            # Convert tuple-keyed dicts to lists for JSON-serialisable witness.
+            per_block_records.append({
+                "shape": list(shape),
+                "mu_p": list(mu_p),
+                "block_size": report["block_size"],
+                "sum_expected_dim": report["sum_expected_dim"],
+                "sum_computed_dim": report["sum_computed_dim"],
+                "block_decomposition_correct": ok,
+                "by_mu_n": [
+                    {
+                        "mu_n": list(mu_n),
+                        "c_LR": r["c_LR"],
+                        "dim_V_mu_p": r["dim_V_mu_p"],
+                        "dim_V_mu_n": r["dim_V_mu_n"],
+                        "expected_dim": r["expected_dim"],
+                        "im_dim": r["im_dim"],
+                        "match": r["match"],
+                    }
+                    for mu_n, r in report["by_mu_n"].items()
+                ],
+            })
 
     print(f"\n  ── Summary ──")
     print(f"    Total μ_p blocks tested: {n_total}")
     print(f"    Block decomposition correct: {n_pass}")
     print(f"    Failed: {n_fail}")
+    wb.add_assertion(
+        "all_mu_p_blocks_decompose_via_q_young_symmetrizers",
+        computed=(n_fail == 0 and n_pass == n_total and n_total > 0),
+        expected=True,
+        source="Whether every μ_p-block of every test λ ⊢ 6 decomposes "
+               "into (μ_p, μ_n)-isotypics via the q-Young symmetrizers, "
+               "with the per-projector image rank matching the "
+               "Littlewood-Richardson prediction c^λ_{μ_p, μ_n} · "
+               "dim(V_{μ_p}) · dim(V_{μ_n}) AND the ranks summing to "
+               "the block size.",
+    )
+    wb.add_data("n_blocks_tested", n_total)
+    wb.add_data("n_pass", n_pass)
+    wb.add_data("n_fail", n_fail)
+    wb.add_data("per_block", per_block_records)
+    out = wb.save()
+    print(f"\n  ✓ Witness: {out.name}")
     return 0 if n_fail == 0 else 1
 
 
