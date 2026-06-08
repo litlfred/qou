@@ -210,7 +210,13 @@ def seminormal_matrices_qrat(
             swapped[k - 1], swapped[k] = cell_k, cell_k_minus_1
             swapped_tuple = tuple(swapped)
             partner = syt_to_idx.get(swapped_tuple)
-            if partner is None or partner == i:
+            # `partner is None` is mathematically equivalent to "swap
+            # gives an invalid SYT" (i.e. k and k+1 in same row or
+            # column). Since `swapped` is obtained by swapping two
+            # DISTINCT cells in `syts[i]`, `swapped_tuple` is never
+            # equal to `syts[i]`, so `partner` can never be `i` — the
+            # `partner == i` guard would be unreachable code.
+            if partner is None:
                 # 1×1 block.
                 M[i, i] = a
                 processed[i] = True
@@ -320,10 +326,10 @@ def syt_first_k_shape(
     if not row_counts:
         return ()
     max_row = max(row_counts.keys())
+    # `max_row` is the largest row index that received an entry, so
+    # `row_counts[max_row] >= 1`. No trailing-zero strip needed —
+    # `cells[-1]` is guaranteed positive (a valid partition trail).
     cells = tuple(row_counts.get(r, 0) for r in range(max_row + 1))
-    # Strip trailing zeros (a valid partition has only positive parts).
-    while cells and cells[-1] == 0:
-        cells = cells[:-1]
     return cells
 
 
