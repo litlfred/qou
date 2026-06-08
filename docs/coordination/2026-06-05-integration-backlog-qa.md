@@ -137,3 +137,29 @@ wall-side blocks were addressed both sides:
 single module incrementally from the restored cone — **safe, fast, no wipe** (Matrix.Trace in
 3.6 s). This is how to verify out-of-cone refactors going forward; never `lake env true` /
 `lake update` / `cache get` (they wipe). Now in `formalizer.md §7c`.
+
+## 2026-06-08 — #1939 proof-rater baseline: main-integration + sidecar union-graft + inherited Lean red
+
+**PR #1939** (`claude/proof-rater-baseline-audit-2026-06-07`) adds a new sidecar
+criterion family corpus-wide: `proof-rater-strategy-clarity`, `-goal-plausibility`,
+`-novelty`, `proof-statement-integrity` (568 entries / 142 blocks). All four are
+`needs-agent` — a mechanical full-regen will NOT recompute them.
+
+- **Conflict resolved (was `dirty`):** main moved 87 commits ahead (sibling sidecar
+  regens added `detangler-topic-coherence` / `-graph-energy` corpus-wide). Integrated
+  via merge commit + **per-file union graft**: take the other side's freshest sidecar
+  wholesale, graft in only the 4 proof-rater criterion keys. Different keys ⇒ zero data
+  loss either direction. Resolver: keep main's `criteria` object, overwrite/add the 4
+  proof-rater keys from the branch, take max `updated_at`.
+- **Sibling protocol (posted on #1945 / #1918 / #1941):** when regenerating sidecars,
+  **union-preserve existing criterion keys** rather than replacing the whole `criteria`
+  object — else the `needs-agent` proof-rater keys are dropped. Re-graft is cheap for
+  whichever PR lands second.
+- **Inherited Lean red (NOT caused by #1939, blocks any QOU `lake build`):** upstream
+  Mathlib API drift — `Matrix.PosSemidef.sqrt` dot-notation no longer resolves
+  (`hA.sqrt` → falls through to non-existent `And.sqrt`) in
+  `QOU/MathlibExt/PosSemidefTraceZero.lean` (`set Asqrt := hA.sqrt`, `hA.posSemidef_sqrt`)
+  and `QOU/HeckeAlgebra/Formal.lean`. Both files byte-identical to base. Needs a dedicated
+  lean-build-fix branch; the correct current-Mathlib name for the PSD square root must be
+  re-looked-up (candidates: `Matrix.PosSemidef.sqrt` may have moved/renamed). Out of scope
+  for #1939.
