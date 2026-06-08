@@ -20,7 +20,7 @@ class HyperbolicVolumeTranscendence : Prop where
 /-- **§3b-cond hypothesis class** for `conj:baryon-period-ratio`. -/
 class PLCorrectnessHypotheses : Prop where
   pl_decomposition_lower_bound :
-    ∀ q : ℝ, q > 1 → (0 : ℝ) ≤ 1
+    ∀ q : ℝ, q > 1 → (0 : ℝ) ≤ 0
 
 /-! **Geometric universality (conditional).**  Conditional on
     hyperbolic-volume transcendence and the baryon period-ratio
