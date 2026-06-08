@@ -1080,7 +1080,7 @@
           "value": 0.9,
           "max": 1
         },
-        "evidence": "helicity-conservation.lean — theorem goals now state concrete md formulae (spectrum/conservation/dispersion/horizon/Levi-cond), not 'True'; build-verified exit 0",
+        "evidence": "helicity-conservation.lean — theorem goals now state the md helicity claims, not 'True': helicity_conservation states the categorical helicity ℋ_q(t) is conserved, dℋ_q/dt=0 (md item 1, encoded as ℋ_q t = ℋ_q s for all t,s), helicity_decomposition states the three-part split ℋ_q = writhe + twist + linking (md item 2), and helicity_cwf_relation states the Călugăreanu–White–Fuller self-linking identity Wr_q + Tw_q = Lk_q; build-verified exit 0 vs v4.24.0 Mathlib oleans, no ': True', no sorry",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
