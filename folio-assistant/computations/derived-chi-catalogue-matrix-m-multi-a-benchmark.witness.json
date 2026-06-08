@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-08T10:45:30.142747+00:00",
-  "commitSha": "8368e96e10753a230d32aabeabbcc29b225e899a",
+  "computedAt": "2026-06-08T10:49:39.117837+00:00",
+  "commitSha": "43233d0ca57f0add04ccea432418a4be9b6f0bdd",
   "assertions": [
     {
       "name": "matrix_m_matches_rust_on_all_isotopes",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 1681,
+  "durationMs": 1626,
   "computation": "derived-chi-catalogue-matrix-m-multi-a-benchmark",
   "scriptFile": "derived_chi_catalogue_matrix_m_multi_a_benchmark.py",
-  "scriptHash": "8f386115719e",
-  "scriptCommitSha": "8368e96e10753a230d32aabeabbcc29b225e899a",
+  "scriptHash": "2aaea28cf7d1",
+  "scriptCommitSha": "43233d0ca57f0add04ccea432418a4be9b6f0bdd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -46,19 +46,19 @@
         "n_strands": 6,
         "n_partitions_tested": 6,
         "n_passed": 6,
-        "total_precompute_secs": 0.013170555000669992,
-        "total_call_secs": 0.049881960999300645,
-        "total_rust_secs": 0.015901759999906062,
-        "call_vs_rust_ratio": 0.3187877878363485,
+        "total_precompute_secs": 0.012514316999840958,
+        "total_call_secs": 0.049378087999684794,
+        "total_rust_secs": 0.01581049699916548,
+        "speedup_rust_over_call": 0.3201925720426114,
         "cases": [
           {
             "shape": [
               6
             ],
             "dim_V_lambda": 1,
-            "precompute_secs": 0.0020060970000486122,
-            "call_secs": 0.0010931269998764037,
-            "rust_secs": 0.0011150020000059158,
+            "precompute_secs": 0.0018281630000274163,
+            "call_secs": 0.0009597240000402962,
+            "rust_secs": 0.000998008999886224,
             "match": true
           },
           {
@@ -67,9 +67,9 @@
               1
             ],
             "dim_V_lambda": 5,
-            "precompute_secs": 0.00407187700011491,
-            "call_secs": 0.013421604000086518,
-            "rust_secs": 0.0029339230000005045,
+            "precompute_secs": 0.0039329800001723925,
+            "call_secs": 0.01324456000020291,
+            "rust_secs": 0.002915358999871387,
             "match": true
           },
           {
@@ -78,9 +78,9 @@
               3
             ],
             "dim_V_lambda": 5,
-            "precompute_secs": 0.002007266999953572,
-            "call_secs": 0.01067652099982297,
-            "rust_secs": 0.004908806000003096,
+            "precompute_secs": 0.002011894999668584,
+            "call_secs": 0.010564866999629885,
+            "rust_secs": 0.005002872999739338,
             "match": true
           },
           {
@@ -90,9 +90,9 @@
               2
             ],
             "dim_V_lambda": 5,
-            "precompute_secs": 0.0021867330001441587,
-            "call_secs": 0.010655550999672414,
-            "rust_secs": 0.003815952999957517,
+            "precompute_secs": 0.0020232749998285726,
+            "call_secs": 0.01067077799962135,
+            "rust_secs": 0.0037518249996537634,
             "match": true
           },
           {
@@ -104,9 +104,9 @@
               1
             ],
             "dim_V_lambda": 5,
-            "precompute_secs": 0.0022317060002023936,
-            "call_secs": 0.013301594000040495,
-            "rust_secs": 0.002267488000143203,
+            "precompute_secs": 0.00213534200020149,
+            "call_secs": 0.013176419000046735,
+            "rust_secs": 0.0022389630003090133,
             "match": true
           },
           {
@@ -119,9 +119,9 @@
               1
             ],
             "dim_V_lambda": 1,
-            "precompute_secs": 0.0006668750002063462,
-            "call_secs": 0.0007335639998018451,
-            "rust_secs": 0.0008605879997958255,
+            "precompute_secs": 0.000582661999942502,
+            "call_secs": 0.0007617400001436181,
+            "rust_secs": 0.0009034679997057538,
             "match": true
           }
         ]
@@ -134,19 +134,19 @@
         "n_strands": 9,
         "n_partitions_tested": 4,
         "n_passed": 4,
-        "total_precompute_secs": 0.014251862000037363,
-        "total_call_secs": 0.14813299899969934,
-        "total_rust_secs": 0.02647378200026651,
-        "call_vs_rust_ratio": 0.1787163034505245,
+        "total_precompute_secs": 0.013923586000146315,
+        "total_call_secs": 0.1471852019990365,
+        "total_rust_secs": 0.026175535999300337,
+        "speedup_rust_over_call": 0.1778408130966297,
         "cases": [
           {
             "shape": [
               9
             ],
             "dim_V_lambda": 1,
-            "precompute_secs": 0.0008774960001574073,
-            "call_secs": 0.0012401649996718334,
-            "rust_secs": 0.004487968999910663,
+            "precompute_secs": 0.0008901839996724448,
+            "call_secs": 0.0011932669999623613,
+            "rust_secs": 0.004541283999969892,
             "match": true
           },
           {
@@ -155,9 +155,9 @@
               1
             ],
             "dim_V_lambda": 8,
-            "precompute_secs": 0.006745460999809438,
-            "call_secs": 0.0753574230002414,
-            "rust_secs": 0.008460582000225259,
+            "precompute_secs": 0.006518633000268892,
+            "call_secs": 0.07523436399969796,
+            "rust_secs": 0.00843314499979897,
             "match": true
           },
           {
@@ -172,9 +172,9 @@
               1
             ],
             "dim_V_lambda": 8,
-            "precompute_secs": 0.005474393999975291,
-            "call_secs": 0.07030520599982992,
-            "rust_secs": 0.00921920400014642,
+            "precompute_secs": 0.005480122999870218,
+            "call_secs": 0.06948248399976364,
+            "rust_secs": 0.008866174999639043,
             "match": true
           },
           {
@@ -190,9 +190,9 @@
               1
             ],
             "dim_V_lambda": 1,
-            "precompute_secs": 0.0011545110000952263,
-            "call_secs": 0.001230204999956186,
-            "rust_secs": 0.004306026999984169,
+            "precompute_secs": 0.0010346460003347602,
+            "call_secs": 0.0012750869996125402,
+            "rust_secs": 0.004334931999892433,
             "match": true
           }
         ]
@@ -205,19 +205,19 @@
         "n_strands": 9,
         "n_partitions_tested": 4,
         "n_passed": 4,
-        "total_precompute_secs": 0.012863604000813211,
-        "total_call_secs": 0.13057076200038864,
-        "total_rust_secs": 0.01936660999990636,
-        "call_vs_rust_ratio": 0.1483227156156806,
+        "total_precompute_secs": 0.012674549000621482,
+        "total_call_secs": 0.13006363799968312,
+        "total_rust_secs": 0.01878330699946673,
+        "speedup_rust_over_call": 0.14441628181669416,
         "cases": [
           {
             "shape": [
               9
             ],
             "dim_V_lambda": 1,
-            "precompute_secs": 0.0014909040000929963,
-            "call_secs": 0.001130051000018284,
-            "rust_secs": 0.0038964239997767436,
+            "precompute_secs": 0.0009605870000086725,
+            "call_secs": 0.0010359709999647748,
+            "rust_secs": 0.0037604919998557307,
             "match": true
           },
           {
@@ -226,9 +226,9 @@
               1
             ],
             "dim_V_lambda": 8,
-            "precompute_secs": 0.00498570900026607,
-            "call_secs": 0.0680308710002464,
-            "rust_secs": 0.005824179000228469,
+            "precompute_secs": 0.0055690980002509605,
+            "call_secs": 0.06722019399967394,
+            "rust_secs": 0.00547745899984875,
             "match": true
           },
           {
@@ -243,9 +243,9 @@
               1
             ],
             "dim_V_lambda": 8,
-            "precompute_secs": 0.005346629000086978,
-            "call_secs": 0.060305575000256795,
-            "rust_secs": 0.005746513999838498,
+            "precompute_secs": 0.005158231000223168,
+            "call_secs": 0.06073953200029791,
+            "rust_secs": 0.005854602999988856,
             "match": true
           },
           {
@@ -261,9 +261,9 @@
               1
             ],
             "dim_V_lambda": 1,
-            "precompute_secs": 0.0010403620003671676,
-            "call_secs": 0.001104264999867155,
-            "rust_secs": 0.003899493000062648,
+            "precompute_secs": 0.0009866330001386814,
+            "call_secs": 0.0010679409997464973,
+            "rust_secs": 0.0036907529997733945,
             "match": true
           }
         ]
@@ -276,19 +276,19 @@
         "n_strands": 12,
         "n_partitions_tested": 4,
         "n_passed": 4,
-        "total_precompute_secs": 0.024903645999984292,
-        "total_call_secs": 0.49672845800023424,
-        "total_rust_secs": 0.11433110799998758,
-        "call_vs_rust_ratio": 0.23016822603695813,
+        "total_precompute_secs": 0.02386820500032627,
+        "total_call_secs": 0.4882744159995127,
+        "total_rust_secs": 0.11154268699965542,
+        "speedup_rust_over_call": 0.22844262026574566,
         "cases": [
           {
             "shape": [
               12
             ],
             "dim_V_lambda": 1,
-            "precompute_secs": 0.0014958070000830048,
-            "call_secs": 0.00182387299992115,
-            "rust_secs": 0.024571033000029274,
+            "precompute_secs": 0.0013336480001271411,
+            "call_secs": 0.001703481999811629,
+            "rust_secs": 0.022522152999954415,
             "match": true
           },
           {
@@ -297,9 +297,9 @@
               1
             ],
             "dim_V_lambda": 11,
-            "precompute_secs": 0.011881785999776184,
-            "call_secs": 0.2614781170000242,
-            "rust_secs": 0.034216826999909244,
+            "precompute_secs": 0.011396675000014511,
+            "call_secs": 0.256720483999743,
+            "rust_secs": 0.033136727000055544,
             "match": true
           },
           {
@@ -317,9 +317,9 @@
               1
             ],
             "dim_V_lambda": 11,
-            "precompute_secs": 0.010047003000181576,
-            "call_secs": 0.2316203380000843,
-            "rust_secs": 0.03404103999992003,
+            "precompute_secs": 0.009787166000023717,
+            "call_secs": 0.2279722859998401,
+            "rust_secs": 0.03446725099956893,
             "match": true
           },
           {
@@ -338,9 +338,9 @@
               1
             ],
             "dim_V_lambda": 1,
-            "precompute_secs": 0.001479049999943527,
-            "call_secs": 0.0018061300002045755,
-            "rust_secs": 0.02150220800012903,
+            "precompute_secs": 0.0013507160001609009,
+            "call_secs": 0.0018781640001179767,
+            "rust_secs": 0.021416556000076525,
             "match": true
           }
         ]
