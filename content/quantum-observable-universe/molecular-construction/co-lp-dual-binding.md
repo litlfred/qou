@@ -47,11 +47,25 @@ the *bond order $=$ LP active-set cardinality* identity.
 
 For $CO$ the budget is $V_{CO} = 3$: carbon offers three of its four open
 linking sites ([carbon valence](#rem:carbon-valence)) and oxygen two
-bonding sites plus one dative pair, so $k^\star = 3$.  *The budget
-$V_{CO} = 3$ here is read from valence chemistry; deriving it directly
-from the carbon and oxygen atomic braids is open, so this proposition
-establishes the structural identity (bond order $=$ active set $=$ valence
-budget), not a from-first-principles derivation of the integer $3$.*
+bonding sites plus one dative pair, so $k^\star = 3$.
+
+The orthogonal-channel LP $\max_x \sum_i b_i x_i$ subject to
+$\sum_i x_i \le \min(N_{\dim}, V)$ is **computed** for the diatomic
+series (witness `co-bond-order-active-set`): it returns active-set
+cardinalities $(\mathrm{O_2}, \mathrm{N_2}, \mathrm{CO}) = (2, 3, 3)$,
+matching the observed bond orders.  The **non-circular** content is the
+ceiling $N_{\dim} = 3$: physical space $\mathbb{R}^3$ admits at most
+three mutually-orthogonal directions (one axial $\sigma$, two transverse
+$\pi$), so **no $p$-block bond exceeds order three** — the active set is
+capped by the spatial dimension, not a fitted parameter.
+
+*Two honest limitations remain.* The per-molecule value $\min(V, 3)$
+still takes the valence budget $V$ as input (valence chemistry), so the
+computation confirms the structural identity bond order $=$ active set,
+not an ab-initio prediction of $V$.  And the channels are modelled as
+equal independent copies, which overbinds the total energy ($3\,b_\sigma$
+versus the observed $D_0$) pending a lateral-$\pi$ overlap reduction:
+the **cardinality** result is robust, the **energy** is not.
 
 The observed dissociation energy
 $D_0(CO) \approx :val[observed_D0_CO_eV]{precision=4, witness=folio-assistant/computations/co-bond-order-active-set.witness.json}$
