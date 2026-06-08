@@ -127,12 +127,22 @@ theorem nf_b3_trefoil_zero : nf_b3 5 = 0 := by
 theorem nf_b3_eq_witness (i : Fin 6) :
     nf_b3 i = b3_nf_coefficients i := by
   -- Ref: [jones1987] https://doi.org/10.2307/1971403
-  -- Enumerate all 6 indices to avoid the simp loop triggered by
-  -- unfolding an equality at a generic `Fin 6` variable.
+  -- Enumerate all 6 indices.  Each component is a polynomial identity in
+  -- q, q⁻¹ modulo the substrate relation q·q⁻¹ = 1 (`q_mul_q_inv`); the
+  -- per-index `linear_combination` coefficient is the quotient of
+  -- (engine − witness) by (q·q⁻¹ − 1).  Bare `ring` cannot close these
+  -- because it treats q and q⁻¹ as independent indeterminates.
   fin_cases i <;>
     simp only [nf_b3, nf_unit2, nf_unit, mul_right_s1_inv, mul_right_s0,
-               mul_right_s1, hecke_add, hecke_smul, b3_nf_coefficients, HA] <;>
-    ring
+               mul_right_s1, hecke_add, hecke_smul, b3_nf_coefficients, HA]
+  · linear_combination (4 * q ^ 2 - 6 * q * q_inv + 4 * q_inv ^ 2 - 6) * q_mul_q_inv
+  · linear_combination
+      (5 * q ^ 3 - 10 * q ^ 2 * q_inv + 10 * q * q_inv ^ 2 - 7 * q
+        - 5 * q_inv ^ 3 + 7 * q_inv) * q_mul_q_inv
+  · linear_combination (-3 * q + 3 * q_inv) * q_mul_q_inv
+  · linear_combination (-4 * q ^ 2 + 6 * q * q_inv - 4 * q_inv ^ 2 + 4) * q_mul_q_inv
+  · linear_combination (2 : R_q) * q_mul_q_inv
+  · ring
 
 /-! ## §5  Proton NF via Hecke engine -/
 
@@ -157,9 +167,11 @@ noncomputable def nf_proton4 : HeckeNF :=
 theorem nf_proton4_trefoil :
     nf_proton4 5 = (q - q_inv) * (q - q_inv) *
       (q * q * q * q - 3 * q * q - 3 * q_inv * q_inv + q_inv * q_inv * q_inv * q_inv) := by
-  simp [nf_proton4, nf_b3, nf_unit2, nf_unit, mul_right_s1_inv,
-        mul_right_s0, mul_right_s1, hecke_add, hecke_smul, HA, q, q_inv]
-  ring
+  simp only [nf_proton4, nf_b3, nf_unit2, nf_unit, mul_right_s1_inv,
+        mul_right_s0, mul_right_s1, hecke_add, hecke_smul, HA]
+  linear_combination
+    (-4 * q ^ 4 + 14 * q ^ 3 * q_inv - 20 * q ^ 2 * q_inv ^ 2 + 4 * q ^ 2
+      + 14 * q * q_inv ^ 3 - 8 * q * q_inv - 4 * q_inv ^ 4 + 4 * q_inv ^ 2) * q_mul_q_inv
 
 /-! ## §6  Neutron NF via Hecke engine -/
 
@@ -185,8 +197,8 @@ noncomputable def nf_neutron4 : HeckeNF :=
 --      published version.
 theorem nf_neutron4_trefoil :
     nf_neutron4 5 = -((q - q_inv) * (q - q_inv) * (q * q + q_inv * q_inv + 2)) := by
-  simp [nf_neutron4, nf_b3, nf_unit2, nf_unit, mul_right_s1_inv,
-        mul_right_s0, mul_right_s1, hecke_add, hecke_smul, HA, q, q_inv]
-  ring
+  simp only [nf_neutron4, nf_b3, nf_unit2, nf_unit, mul_right_s1_inv,
+        mul_right_s0, mul_right_s1, hecke_add, hecke_smul, HA]
+  linear_combination (2 * q ^ 2 - 4 * q * q_inv + 2 * q_inv ^ 2) * q_mul_q_inv
 
 end QOU.Interactions
