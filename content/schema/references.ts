@@ -2769,6 +2769,61 @@ export const references: CSLData[] = [
     DOI: "10.1017/CBO9780511755804",
   }),
 
+  // ── Ashtekar–Baez–Corichi–Krasnov (1998): Quantum geometry & BH entropy ──
+  ref({
+    id: "ashtekar-baez-corichi-krasnov-1998",
+    type: "article-journal",
+    title: "Quantum geometry and black hole entropy",
+    author: [
+      { family: "Ashtekar", given: "Abhay" },
+      { family: "Baez", given: "John" },
+      { family: "Corichi", given: "Alejandro" },
+      { family: "Krasnov", given: "Kirill" },
+    ],
+    "container-title": "Physical Review Letters",
+    volume: "80",
+    page: "904-907",
+    issued: { "date-parts": [[1998]] },
+    DOI: "10.1103/PhysRevLett.80.904",
+    URL: "https://arxiv.org/abs/gr-qc/9710007",
+    note: "arXiv:gr-qc/9710007. The isolated-horizon U(1) Chern-Simons + puncture state-counting framework. Added 2026-06-08; cited by the QOU<->LQG dictionary (gravity-spacetime/lqg-adm-ashtekar-comparison). HUMAN-REVIEW: unreviewed (DOI/page best-effort; see docs/workplans/2026-06-08-bib-human-review-workflow-design.md).",
+  }),
+
+  // ── Domagała–Lewandowski (2004): BH entropy from quantum geometry ──
+  ref({
+    id: "domagala-lewandowski-2004",
+    type: "article-journal",
+    title: "Black hole entropy from quantum geometry",
+    author: [
+      { family: "Domagała", given: "Marcin" },
+      { family: "Lewandowski", given: "Jerzy" },
+    ],
+    "container-title": "Classical and Quantum Gravity",
+    volume: "21",
+    issue: "22",
+    page: "5233-5243",
+    issued: { "date-parts": [[2004]] },
+    DOI: "10.1088/0264-9381/21/22/014",
+    URL: "https://arxiv.org/abs/gr-qc/0407051",
+    note: "arXiv:gr-qc/0407051. Horizon state-count + projection-constraint combinatorics. Added 2026-06-08 from uploads/0407051v2.pdf; used by docs/audits/2026-06-08-spin-network-count-q-dimension-partition-function.md. HUMAN-REVIEW: unreviewed (DOI/page best-effort).",
+  }),
+
+  // ── Meissner (2004): BH entropy in loop quantum gravity ──
+  ref({
+    id: "meissner-2004",
+    type: "article-journal",
+    title: "Black hole entropy in loop quantum gravity",
+    author: [{ family: "Meissner", given: "Krzysztof A." }],
+    "container-title": "Classical and Quantum Gravity",
+    volume: "21",
+    issue: "22",
+    page: "5245-5251",
+    issued: { "date-parts": [[2004]] },
+    DOI: "10.1088/0264-9381/21/22/015",
+    URL: "https://arxiv.org/abs/gr-qc/0407052",
+    note: "arXiv:gr-qc/0407052. The Immirzi-fixing criticality equation. Added 2026-06-08 from uploads/0407052v1.pdf; used by docs/audits/2026-06-08-spin-network-count-q-dimension-partition-function.md. HUMAN-REVIEW: unreviewed (DOI/page best-effort).",
+  }),
+
   // ── Thiemann (2007): Modern Canonical Quantum General Relativity ──
   ref({
     id: "thiemann2007",
