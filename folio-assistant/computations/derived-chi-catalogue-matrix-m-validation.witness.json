@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-08T08:56:14.347591+00:00",
-  "commitSha": "bd5d7286c2cd52ead05a17a9e5b9d454377b9b21",
+  "computedAt": "2026-06-08T09:07:57.952874+00:00",
+  "commitSha": "70620604ed9ac3fc5023224fd0cfab503a8a8195",
   "assertions": [
     {
       "name": "python_hoefsmit_matches_rust_chi_q_via_gp",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 6897,
+  "durationMs": 1455,
   "computation": "derived-chi-catalogue-matrix-m-validation",
   "scriptFile": "derived_chi_catalogue_matrix_m.py",
-  "scriptHash": "6c5dfccac9ef",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "84ffd1f28557",
+  "scriptCommitSha": "70620604ed9ac3fc5023224fd0cfab503a8a8195",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -425,7 +425,7 @@
           ]
         ],
         "n_strands": 4,
-        "python_symbolic_q": "-1 + q**(-2)",
+        "python_symbolic_q": "(1 - q**2)/q**2",
         "tests": [
           {
             "q": "2",
@@ -568,7 +568,7 @@
           ]
         ],
         "n_strands": 6,
-        "python_symbolic_q": "q*(2*q**2 - 3)",
+        "python_symbolic_q": "2*q**3 - 3*q",
         "tests": [
           {
             "q": "2",
@@ -614,7 +614,7 @@
           ]
         ],
         "n_strands": 6,
-        "python_symbolic_q": "3*q**3 - 3*q + 3/q",
+        "python_symbolic_q": "(3*q**4 - 3*q**2 + 3)/q",
         "tests": [
           {
             "q": "2",
@@ -661,7 +661,7 @@
           ]
         ],
         "n_strands": 6,
-        "python_symbolic_q": "q**3 - 6*q + 3/q",
+        "python_symbolic_q": "(q**4 - 6*q**2 + 3)/q",
         "tests": [
           {
             "q": "2",
@@ -707,7 +707,7 @@
           ]
         ],
         "n_strands": 6,
-        "python_symbolic_q": "q**3 - 3*q - 1/q**3",
+        "python_symbolic_q": "(q**6 - 3*q**4 - 1)/q**3",
         "tests": [
           {
             "q": "2",
@@ -754,7 +754,7 @@
           ]
         ],
         "n_strands": 6,
-        "python_symbolic_q": "2*q**3 - 6*q + 6/q - 2/q**3",
+        "python_symbolic_q": "(2*q**6 - 6*q**4 + 6*q**2 - 2)/q**3",
         "tests": [
           {
             "q": "2",
@@ -802,7 +802,7 @@
           ]
         ],
         "n_strands": 6,
-        "python_symbolic_q": "-3*q + 6/q - 1/q**3",
+        "python_symbolic_q": "(-3*q**4 + 6*q**2 - 1)/q**3",
         "tests": [
           {
             "q": "2",
@@ -849,7 +849,7 @@
           ]
         ],
         "n_strands": 6,
-        "python_symbolic_q": "q**3 + 3/q - 1/q**3",
+        "python_symbolic_q": "(q**6 + 3*q**2 - 1)/q**3",
         "tests": [
           {
             "q": "2",
@@ -897,7 +897,7 @@
           ]
         ],
         "n_strands": 6,
-        "python_symbolic_q": "-3*q + 3/q - 3/q**3",
+        "python_symbolic_q": "(-3*q**4 + 3*q**2 - 3)/q**3",
         "tests": [
           {
             "q": "2",
@@ -946,7 +946,7 @@
           ]
         ],
         "n_strands": 6,
-        "python_symbolic_q": "3/q - 2/q**3",
+        "python_symbolic_q": "(3*q**2 - 2)/q**3",
         "tests": [
           {
             "q": "2",
