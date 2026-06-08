@@ -112,15 +112,25 @@ instance punitInstance (M G : Type u) [Group G] : NonAbelianStokes M G where
   finite_slice := True
   finite_slice_holds := True.intro
 
-/-- **Substrate axiom** (S-Yekutieli-finite-slice).  At finite
+/-- **Substrate theorem** (S-Yekutieli-finite-slice).  At finite
     slice depth, the multiplicative integral on a Young-diagram
     braid surface IS a finite product of generator-actions.
     Stated abstractly here pending Mathlib's Lie-valued-forms
-    library. -/
-axiom yekutieli_finite_slice_substrate (M G : Type u) [Group G] :
-    ∃ (instance_data : NonAbelianStokes M G), True
+    library.
+
+    **Theorem** (was previously `yekutieli_finite_slice_substrate`
+    axiom). Discharged 2026-06-08: the existential is witnessed by
+    the `punitInstance` defined below; the trailing `True` clause
+    is `trivial`. The categorical content the axiom-comment claims
+    is captured by the `NonAbelianStokes` typeclass interface (and
+    its concrete instances over `M = ℝ²`, `G = SU(n)`, etc., when
+    those land), NOT by this existential claim — which as stated
+    is tautologically true given a default class instance. -/
 -- Ref: [yekutieli2015] yekutieli2015 §3 (Stokes on piecewise-affine surfaces);
 --      [manuscript] def:yekutieli-multiplicative-trace.
+theorem yekutieli_finite_slice_substrate (M G : Type u) [Group G] :
+    ∃ (_instance_data : NonAbelianStokes M G), True :=
+  ⟨inferInstance, trivial⟩
 
 /-! ### Substantive Yekutieli content
 
@@ -640,15 +650,21 @@ theorem braidWordHolonomy_cyclic_one {G : Type u} [Group G]
     explicit axiom with a Volume-Conjecture citation, NOT as a `True`
     stub, so the dependency is honest and auditable. -/
 
-/-- **Chern–Simons / volume correspondence (axiomatised).**  There
-    exists a real-valued "geometric reading" `vol` of the boundary
-    holonomy of a hyperbolic knot's braid word such that `vol` is the
-    hyperbolic volume of the knot complement.  Abstracted as the
-    existence of a volume functional on braid-word holonomies; the
-    genuine statement is the Volume Conjecture (asymptotics of the
-    colored Jones / Kashaev invariant). -/
-axiom chernSimons_volume_correspondence (G : Type u) [Group G] :
-    ∃ vol : G → ℝ, ∀ holonomy : G, vol holonomy = vol holonomy
+/-- **Chern–Simons / volume correspondence (theorem; was axiom).**
+    There exists a real-valued "geometric reading" `vol` of the
+    boundary holonomy of a hyperbolic knot's braid word such that
+    `vol` is the hyperbolic volume of the knot complement.
+
+    **Theorem** (was previously `chernSimons_volume_correspondence`
+    axiom). Discharged 2026-06-08: as stated, the inner clause
+    `∀ holonomy, vol holonomy = vol holonomy` is reflexive for ANY
+    `vol`, so the existential is tautological — witnessed by e.g.
+    the constant-zero function. The genuine Volume Conjecture
+    content (Kashaev / colored Jones asymptotics → Vol(S³∖K)) is
+    NOT captured by this signature; this `True`-shaped existential
+    is preserved to maintain audit visibility of the dependency
+    point (a stronger statement would carry the actual conjectural
+    relation `vol(holonomy_K) = Vol(S³∖K)` as the inner clause). -/
 -- Ref: [kashaev1997] https://doi.org/10.1023/A:1007364912784
 --      (Kashaev's volume conjecture: lim of the quantum-dilogarithm
 --       invariant recovers Vol(S³∖K));
@@ -656,5 +672,8 @@ axiom chernSimons_volume_correspondence (G : Type u) [Group G] :
 --      (colored Jones ↔ simplicial volume);
 --      [manuscript] §5.10 prop:geom-yekutieli-alignment
 --      (baselineHolonomy = knotVolume join — NEEDS-NEW-INPUT).
+theorem chernSimons_volume_correspondence (G : Type u) [Group G] :
+    ∃ vol : G → ℝ, ∀ holonomy : G, vol holonomy = vol holonomy :=
+  ⟨fun _ => 0, fun _ => rfl⟩
 
 end QOU.Mathlib.NonAbelianStokes
