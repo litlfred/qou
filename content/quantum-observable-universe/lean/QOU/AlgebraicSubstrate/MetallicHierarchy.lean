@@ -7,10 +7,10 @@ import Mathlib.Tactic
 The Iwahori–Hecke generator satisfies `σ² = (q − q⁻¹)·σ + 1`, so the
 structural scalar of the braiding is `q − q⁻¹`.  This file proves the
 owner's assertion (2026-06-08): the real values `q > 0` at which this
-scalar is a positive integer `n` are exactly the **metallic ratios**
+scalar is a non-negative integer `n` are exactly the **metallic ratios**
 `δ_n = (n + √(n²+4))/2` — golden (`n = 1`), silver (`n = 2`),
-bronze (`n = 3`), … — and the bar involution `q ↦ q⁻¹` sends `δ_n` to
-`δ_n − n = 1/δ_n`.
+bronze (`n = 3`), … (`n = 0` gives the trivial `δ_0 = 1`, i.e. `q = 1`) —
+and the bar involution `q ↦ q⁻¹` sends `δ_n` to `δ_n − n = 1/δ_n`.
 
 Ref: docs/audits/2026-06-08-q-regime-map-coordination.md §3b and
 docs/audits/2026-06-08-metallic-q-hierarchy-proof.md (rigorous hand proof).

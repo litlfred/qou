@@ -58,9 +58,9 @@ while `nq + 1 = n(n+s)/2 + 1 = (n² + ns + 2)/2`. So **`q² = nq + 1`**, and
 ## Proof of Theorem 2
 
 `δ_n` is a root of `x² − nx − 1 = 0` (shown above: `δ_n² = nδ_n + 1`).
-Divide by `δ_n > 0`: `δ_n − n = 1 + δ_n⁻¹ − ... ` — directly,
-`δ_n⁻¹ = (δ_n² − nδ_n)/δ_n · (1/δ_n)`… cleanly: from `δ_n² = nδ_n + 1`,
-`δ_n⁻¹ = δ_n − n` ⟺ `1 = δ_n(δ_n − n) = δ_n² − nδ_n = 1`. ✓ ∎
+Dividing that relation by `δ_n > 0` gives `δ_n = n + δ_n⁻¹`, hence
+`δ_n⁻¹ = δ_n − n`. (Check: `δ_n(δ_n − n) = δ_n² − nδ_n = 1`, so `δ_n − n`
+is indeed the inverse of `δ_n`.) ∎
 
 The other root of `x² − nx − 1` is `−1/δ_n` (product of roots `= −1`, sum
 `= n`), which is the image of `δ_n` under the eigenvalue involution

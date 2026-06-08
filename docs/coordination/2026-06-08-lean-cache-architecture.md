@@ -25,8 +25,11 @@ git fetch --depth=1 origin "lake-cache/qou-$SLUG" \
   && git ls-tree --name-only FETCH_HEAD | grep '^lake-oleans\.tgz\.part' | sort \
      | while read -r p; do git show "FETCH_HEAD:$p"; done > "$TGZ" \
   && tar xzf "$TGZ" -C "$ROOT" && rm -f "$TGZ"
-# 2. VERIFY a single self-contained file WITHOUT lake (see Gotcha 2):
+# 2. VERIFY a file WITHOUT lake (see Gotcha 2). Package oleans suffice for a
+#    self-contained (Mathlib-only) file; a file importing other QOU.* modules
+#    also needs the workspace + paper oleans (appended on the 2nd line):
 LP=$(find "$ROOT/.lake/packages" -maxdepth 5 -type d -path '*/.lake/build/lib/lean' | tr '\n' ':')
+LP="$LP$ROOT/.lake/build/lib/lean:$ROOT/content/quantum-observable-universe/lean/.lake/build/lib/lean"
 env LEAN_PATH="$LP" ELAN_NO_OVERRIDE_NOTICE=1 lean path/to/File.lean      # EXIT 0 = checks
 # axiom audit: append `#print axioms <Decl>` to a temp copy and run the same way.
 ```
