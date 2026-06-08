@@ -6,7 +6,7 @@
 //! the wheel small and the build simple.
 
 use hecke_engine::{
-    geck_pfeiffer, gram, littlewood_richardson,
+    geck_pfeiffer, gram, littlewood_richardson, matrix_m_mpfr,
     reduce_laurent as rust_reduce_laurent, seminormal, seminormal_mn, seminormal_mpfr,
     tr_m_atomic_mpfr as rust_tr_m_atomic_mpfr,
     tr_m_word_lq as rust_tr_m_word_lq, wenzl_lr,
@@ -788,6 +788,48 @@ fn chi_lambda_braid_mpfr(
     seminormal_mpfr::chi_lambda_braid_mpfr(&shape, &word, &q_str, dps)
 }
 
+/// Matrix-M block-restricted χ^λ at substrate q.
+///
+/// Computes χ^λ(T_β)(q_0) for a parabolic-shaped braid
+/// `β = β_left · σ_{k_split}^{bridge_sign} · β_right` via the
+/// μ_p block-restriction trace formula (see PR #2015 / Tier 2
+/// audit). The full dim_V_λ × dim_V_λ seminormal matrices are
+/// built ONCE inside this call, sub-blocks extracted, full matrices
+/// dropped — call-time work is on the small per-μ_p blocks only.
+///
+/// For multi-call use (e.g. tr_M aggregation Σ_λ y_λ χ^λ over
+/// every partition), each call rebuilds its own per-λ cache.
+/// Future API may add a cache handle to amortise the seminormal
+/// build across multiple braid words on the same shape.
+///
+/// `word_left`: list of `(sign, gen_1based)` pairs, all gens < k_split.
+/// `bridge_sign`: +1 or -1.
+/// `word_right`: list of `(sign, gen_1based)` pairs, all gens > k_split.
+/// `q_str`: substrate q as decimal string.
+/// `dps`: requested decimal precision (default 50).
+///
+/// Returns χ value as a decimal string at the working precision.
+///
+/// **NO f64 in compute path** — `rug::Float` throughout.
+#[pyfunction]
+#[pyo3(signature = (shape, word_left, bridge_sign, word_right, k_split, q_str, dps=50))]
+fn chi_via_matrix_m_mpfr(
+    shape: Vec<usize>,
+    word_left: Vec<(i32, usize)>,
+    bridge_sign: i32,
+    word_right: Vec<(i32, usize)>,
+    k_split: usize,
+    q_str: String,
+    dps: u32,
+) -> String {
+    let cache =
+        matrix_m_mpfr::precompute_block_tables_mpfr(&shape, k_split, &q_str, dps);
+    let chi = matrix_m_mpfr::chi_via_matrix_m_mpfr(
+        &cache, &word_left, bridge_sign, &word_right,
+    );
+    chi.to_string()
+}
+
 /// Operator-selection LP at MPFR precision (`prop:operator-selection-lp`).
 ///
 /// Decimal-STRING IO so 50-dps precision survives the boundary (not f64).
@@ -859,6 +901,7 @@ fn pyhecke_native(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(chi_lambdas_braid, m)?)?;
     m.add_function(wrap_pyfunction!(chi_lambda_braid_mpfr, m)?)?;
     m.add_function(wrap_pyfunction!(chi_lambdas_braid_mpfr, m)?)?;
+    m.add_function(wrap_pyfunction!(chi_via_matrix_m_mpfr, m)?)?;
     m.add_function(wrap_pyfunction!(partitions_of, m)?)?;
     m.add_function(wrap_pyfunction!(trace_weights_n, m)?)?;
     m.add_function(wrap_pyfunction!(trace_weights_n_q_schur, m)?)?;
