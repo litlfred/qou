@@ -106,6 +106,98 @@
           "worst_span": 0
         }
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "74415698f5a3",
+          "ts": "b612cef336f0",
+          "lean": "6b80e94f4159"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T01:31:40.060Z",
+        "reviewed_sha": "5b22f37e27e74b674fb6b50fae73e0792e7212e2",
+        "notes": "Strategy explicit: bar-involution even/odd split stated up front; even=cosh binding, odd=sinh Q_beta. Lean proves all 3 stmts sorry-free."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "74415698f5a3",
+          "ts": "b612cef336f0",
+          "lean": "6b80e94f4159"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T01:32:37.698Z",
+        "reviewed_sha": "5b22f37e27e74b674fb6b50fae73e0792e7212e2",
+        "notes": "Sorry-free Lean: evenPart_add_oddPart/evenPart_fixed/oddPart_anti all proved by simp+abel over generic CommRing. No gaps."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "74415698f5a3",
+          "ts": "b612cef336f0",
+          "lean": "6b80e94f4159"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T01:32:37.729Z",
+        "reviewed_sha": "5b22f37e27e74b674fb6b50fae73e0792e7212e2",
+        "notes": "Even/odd involution split is textbook linear algebra; novelty is the physical reading (binding=even cosh, beta-decay=odd sinh), not the math. Sinh/cosh parity recurs in QBetaReebSinhParity.lean siblings."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "74415698f5a3",
+          "ts": "b612cef336f0",
+          "lean": "6b80e94f4159"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T01:32:37.760Z",
+        "reviewed_sha": "5b22f37e27e74b674fb6b50fae73e0792e7212e2",
+        "notes": "Lean genuinely proves the 3 asserted decomposition statements sorry-free; no stub/True-placeholder; matches md claim."
+      }
     ]
   },
   "updated_at": "2026-06-07T05:58:41.267Z"

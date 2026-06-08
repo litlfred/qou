@@ -262,7 +262,7 @@
         },
         "reviewed_at": "2026-05-28T15:41:31.003Z",
         "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
-        "notes": "Label 'prop:frobenius-lepton-meson-bridge' → expected 'frobenius_lepton_meson_bridge'; Lean declares: h2_artin_wedderburn, h3_artin_wedderburn, h4_artin_wedderburn, two_unique_sum_of_squares, branchingH3H2.... Structural match via content."
+        "notes": "Label 'prop:frobenius-lepton-meson-bridge' \u2192 expected 'frobenius_lepton_meson_bridge'; Lean declares: h2_artin_wedderburn, h3_artin_wedderburn, h4_artin_wedderburn, two_unique_sum_of_squares, branchingH3H2.... Structural match via content."
       },
       {
         "field_hash": {
@@ -278,7 +278,7 @@
         },
         "reviewed_at": "2026-05-28T15:43:22.741Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
-        "notes": "Label 'prop:frobenius-lepton-meson-bridge' → expected 'frobenius_lepton_meson_bridge'; Lean declares: h2_artin_wedderburn, h3_artin_wedderburn, h4_artin_wedderburn, two_unique_sum_of_squares, branchingH3H2.... Structural match via content."
+        "notes": "Label 'prop:frobenius-lepton-meson-bridge' \u2192 expected 'frobenius_lepton_meson_bridge'; Lean declares: h2_artin_wedderburn, h3_artin_wedderburn, h4_artin_wedderburn, two_unique_sum_of_squares, branchingH3H2.... Structural match via content."
       },
       {
         "field_hash": {
@@ -294,7 +294,7 @@
         },
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
-        "notes": "Label 'prop:frobenius-lepton-meson-bridge' → expected 'frobenius_lepton_meson_bridge'; Lean declares: h2_artin_wedderburn, h3_artin_wedderburn, h4_artin_wedderburn, two_unique_sum_of_squares, branchingH3H2.... Structural match via content."
+        "notes": "Label 'prop:frobenius-lepton-meson-bridge' \u2192 expected 'frobenius_lepton_meson_bridge'; Lean declares: h2_artin_wedderburn, h3_artin_wedderburn, h4_artin_wedderburn, two_unique_sum_of_squares, branchingH3H2.... Structural match via content."
       }
     ],
     "q-usage-regime-detected": [
@@ -890,7 +890,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "proposition in sec:lepton-meson-parallel; primary subject is Frobenius H3↓H2 branching — on-topic",
+        "evidence": "proposition in sec:lepton-meson-parallel; primary subject is Frobenius H3\u2193H2 branching \u2014 on-topic",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -934,7 +934,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "proof uses Pieri/LR rules and Frobenius reciprocity — purely algebraic, no archimedean evaluation",
+        "evidence": "proof uses Pieri/LR rules and Frobenius reciprocity \u2014 purely algebraic, no archimedean evaluation",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -1045,6 +1045,98 @@
           "fwd_edge_count": 0,
           "worst_span": 0
         }
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "23df63665d6b",
+          "ts": "3010433f709f",
+          "lean": "c49fcd5f083a"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:29:46.590Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "Strategy stated: branching via Pieri/LR box-removal from Young diagram of each lambda |- 3; explicit per-partition restriction listed. Frobenius reciprocity invoked for multiplicity-one."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "23df63665d6b",
+          "ts": "3010433f709f",
+          "lean": "c49fcd5f083a"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:29:46.632Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "Sorry-free: standard_restricts_to_both_leptons, Artin-Wedderburn dimension checks (h2/h3/h4), and Frobenius reciprocity restatement all close by omega/rfl/simp. No axiom, no gap."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "23df63665d6b",
+          "ts": "3010433f709f",
+          "lean": "c49fcd5f083a"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.4,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:29:46.671Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "Structure-hypothesis projection: the branching V_(2,1)->V_(2)+V_(1,1) is standard rep theory encoded as a hardcoded branchingH3H2 value table; Lean theorems extract/verify the tabulated multiplicities rather than deriving them from Pieri. The entanglement/mass-bridge reading is interpretive."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "23df63665d6b",
+          "ts": "3010433f709f",
+          "lean": "c49fcd5f083a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:29:46.707Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "Lean faithfully encodes the md claim: branchingH3H2 1 0 = 1 AND 1 1 = 1 IS the statement V_(2,1) restricts to both lepton irreps. Value-table assertion, but a faithful (non-vacuous) encoding of the multiplicity content."
       }
     ]
   },

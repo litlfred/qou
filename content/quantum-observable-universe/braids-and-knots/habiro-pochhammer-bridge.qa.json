@@ -28,7 +28,7 @@
         },
         "reviewed_at": "2026-05-28T15:41:31.003Z",
         "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
-        "notes": "Label 'prop:habiro-pochhammer-bridge' → expected 'habiro_pochhammer_bridge'; Lean declares: one_sub_sq_factor, pochhammer_factor, HabiroPochhammerBridge. Structural match via content."
+        "notes": "Label 'prop:habiro-pochhammer-bridge' \u2192 expected 'habiro_pochhammer_bridge'; Lean declares: one_sub_sq_factor, pochhammer_factor, HabiroPochhammerBridge. Structural match via content."
       },
       {
         "field_hash": {
@@ -44,7 +44,7 @@
         },
         "reviewed_at": "2026-05-28T15:43:22.741Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
-        "notes": "Label 'prop:habiro-pochhammer-bridge' → expected 'habiro_pochhammer_bridge'; Lean declares: one_sub_sq_factor, pochhammer_factor, HabiroPochhammerBridge. Structural match via content."
+        "notes": "Label 'prop:habiro-pochhammer-bridge' \u2192 expected 'habiro_pochhammer_bridge'; Lean declares: one_sub_sq_factor, pochhammer_factor, HabiroPochhammerBridge. Structural match via content."
       },
       {
         "field_hash": {
@@ -60,7 +60,7 @@
         },
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
-        "notes": "Label 'prop:habiro-pochhammer-bridge' → expected 'habiro_pochhammer_bridge'; Lean declares: one_sub_sq_factor, pochhammer_factor, HabiroPochhammerBridge. Structural match via content."
+        "notes": "Label 'prop:habiro-pochhammer-bridge' \u2192 expected 'habiro_pochhammer_bridge'; Lean declares: one_sub_sq_factor, pochhammer_factor, HabiroPochhammerBridge. Structural match via content."
       }
     ],
     "q-usage-regime-detected": [
@@ -868,7 +868,7 @@
         },
         "result": "fail",
         "severity": "major",
-        "evidence": "Statement opens 'Let q ∈ ℝ_{>0}' — order hypothesis in generic/substrate chapter braids-and-knots without wall: field or §7c conditional banner.",
+        "evidence": "Statement opens 'Let q \u2208 \u211d_{>0}' \u2014 order hypothesis in generic/substrate chapter braids-and-knots without wall: field or \u00a77c conditional banner.",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -878,7 +878,7 @@
         },
         "reviewed_at": "2026-06-06T01:44:42.711Z",
         "reviewed_sha": "c34d169ec0f5e12b3f110543d7f623d3c5672ab5",
-        "notes": "Move q to generic CommRing R or add wall: field; numerical q_0≈1.1100 block in proof also leaks archimedean."
+        "notes": "Move q to generic CommRing R or add wall: field; numerical q_0\u22481.1100 block in proof also leaks archimedean."
       }
     ],
     "wall-side-proof": [
@@ -890,7 +890,7 @@
         },
         "result": "fail",
         "severity": "major",
-        "evidence": "Proof body includes numerical verification at q_0≈1.1100 with MeV-adjacent substrate values in generic/substrate chapter without wall: field.",
+        "evidence": "Proof body includes numerical verification at q_0\u22481.1100 with MeV-adjacent substrate values in generic/substrate chapter without wall: field.",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -996,6 +996,98 @@
         },
         "reviewed_at": "2026-06-07T05:58:41.267Z",
         "reviewed_sha": "738ed713806a3976739e57e01d0100f3540f79e5"
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "7bde2b6180ba",
+          "ts": "9891a18a24fd",
+          "lean": "c0ec42d1c642"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:29:46.745Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "Strategy stated: 1-q^k = 1-u^{2k} = (1-u^k)(1+u^k) for q=u^2, applied factor-wise to the Pochhammer product, then divide. Clean derivation in md + docstrings."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "7bde2b6180ba",
+          "ts": "9891a18a24fd",
+          "lean": "c0ec42d1c642"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:29:46.783Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "Sorry-free over generic CommRing: one_sub_sq_factor, pochhammer_factor by ring; HabiroPochhammerBridge product factorization by prod_mul_distrib + congr + ring. No axiom."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "7bde2b6180ba",
+          "ts": "9891a18a24fd",
+          "lean": "c0ec42d1c642"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.4,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:29:46.823Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "Elementary algebraic factorization (1-q^k = (1-u^k)(1+u^k)); the Habiro-weighted-average ratio application is the framework content but the proved identity is textbook."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "7bde2b6180ba",
+          "ts": "9891a18a24fd",
+          "lean": "c0ec42d1c642"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:29:46.860Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "Lean HabiroPochhammerBridge faithfully states the md's load-bearing identity (q;q)_m = (u;u)_m * Prod(1+u^k) as a product factorization and proves it. The ratio/weighted-average is the downstream application of this identity."
       }
     ]
   },

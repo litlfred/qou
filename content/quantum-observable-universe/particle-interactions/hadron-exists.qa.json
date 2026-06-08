@@ -2094,7 +2094,7 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'prop:hadron-exists' → expected 'hadron_exists'; Lean declares: Hadron.exists. Structural match via content."
+        "notes": "Label 'prop:hadron-exists' \u2192 expected 'hadron_exists'; Lean declares: Hadron.exists. Structural match via content."
       },
       {
         "field_hash": {
@@ -2110,7 +2110,7 @@
         },
         "reviewed_at": "2026-05-28T15:40:01.326Z",
         "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
-        "notes": "Label 'prop:hadron-exists' → expected 'hadron_exists'; Lean declares: Hadron.exists. Structural match via content."
+        "notes": "Label 'prop:hadron-exists' \u2192 expected 'hadron_exists'; Lean declares: Hadron.exists. Structural match via content."
       },
       {
         "field_hash": {
@@ -2126,7 +2126,7 @@
         },
         "reviewed_at": "2026-05-28T15:43:22.741Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
-        "notes": "Label 'prop:hadron-exists' → expected 'hadron_exists'; Lean declares: Hadron.exists. Structural match via content."
+        "notes": "Label 'prop:hadron-exists' \u2192 expected 'hadron_exists'; Lean declares: Hadron.exists. Structural match via content."
       },
       {
         "field_hash": {
@@ -2142,7 +2142,7 @@
         },
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
-        "notes": "Label 'prop:hadron-exists' → expected 'hadron_exists'; Lean declares: Hadron.exists. Structural match via content."
+        "notes": "Label 'prop:hadron-exists' \u2192 expected 'hadron_exists'; Lean declares: Hadron.exists. Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -2677,7 +2677,100 @@
           "worst_span": 0
         }
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "b1139f7a9095",
+          "ts": "f9d0c15fe9f4",
+          "lean": "fed3f7829291"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.6,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:21.082Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "MD is two sentences: asserts \u2203 stable hadron \ud835\udd25_p with E_cross<0 (proton witness) and points to hadron-unique; minimal but adequate."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "b1139f7a9095",
+          "ts": "f9d0c15fe9f4",
+          "lean": "fed3f7829291"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0.3,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:21.116Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Lean Hadron.exists proves Nonempty Hadron via a DEGENERATE witness (two unknots) that the file itself admits 'does not satisfy the physical stability condition E_cross<0' \u2014 i.e. the load-bearing stability predicate (the whole claim) is dropped. Weakened proxy."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "b1139f7a9095",
+          "ts": "f9d0c15fe9f4",
+          "lean": "fed3f7829291"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:21.150Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Existence-by-proton-witness is standard within the framework."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "b1139f7a9095",
+          "ts": "f9d0c15fe9f4",
+          "lean": "fed3f7829291"
+        },
+        "result": "fail",
+        "severity": "critical",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:21.188Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "lean.ref QOU.Hadron.exists proves Nonempty Hadron with an explicitly degenerate \u27e8{...unknot,unknot...}\u27e9 witness that drops the stability condition E_cross<0 \u2014 does NOT prove the MD's claim ('a stable hadron exists'). md\u2194Lean mismatch: stability predicate omitted. Treated as integrity FAIL (proves a strictly weaker statement than boxed)."
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-07T06:00:21.188Z"
 }

@@ -2094,7 +2094,7 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'prop:confinement-topological' → expected 'confinement_topological'; Lean declares: gram_indefinite_witness. Structural match via content."
+        "notes": "Label 'prop:confinement-topological' \u2192 expected 'confinement_topological'; Lean declares: gram_indefinite_witness. Structural match via content."
       },
       {
         "field_hash": {
@@ -2110,7 +2110,7 @@
         },
         "reviewed_at": "2026-05-28T15:40:01.326Z",
         "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
-        "notes": "Label 'prop:confinement-topological' → expected 'confinement_topological'; Lean declares: gram_indefinite_witness. Structural match via content."
+        "notes": "Label 'prop:confinement-topological' \u2192 expected 'confinement_topological'; Lean declares: gram_indefinite_witness. Structural match via content."
       },
       {
         "field_hash": {
@@ -2126,7 +2126,7 @@
         },
         "reviewed_at": "2026-05-28T15:43:22.741Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
-        "notes": "Label 'prop:confinement-topological' → expected 'confinement_topological'; Lean declares: gram_indefinite_witness. Structural match via content."
+        "notes": "Label 'prop:confinement-topological' \u2192 expected 'confinement_topological'; Lean declares: gram_indefinite_witness. Structural match via content."
       },
       {
         "field_hash": {
@@ -2142,7 +2142,7 @@
         },
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
-        "notes": "Label 'prop:confinement-topological' → expected 'confinement_topological'; Lean declares: gram_indefinite_witness. Structural match via content."
+        "notes": "Label 'prop:confinement-topological' \u2192 expected 'confinement_topological'; Lean declares: gram_indefinite_witness. Structural match via content."
       },
       {
         "field_hash": {
@@ -2585,7 +2585,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "Proof uses numeric evaluation at q_0 (lambda_- approx -0.855) and exhaustive enumeration over braid words — all archimedean machinery appropriate for this chapter",
+        "evidence": "Proof uses numeric evaluation at q_0 (lambda_- approx -0.855) and exhaustive enumeration over braid words \u2014 all archimedean machinery appropriate for this chapter",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -2691,7 +2691,99 @@
           "worst_span": 0
         }
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "62a034929c1a",
+          "ts": "943149e87540",
+          "lean": "9e52b34cf96f"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.85,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:19.157Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "MD states (i) LP optimum tr_M*=0 via negative Gram eigenvalue, (ii) optimum not in braid-group image (unbounded coeffs), (iii) B3 unique among length\u22646 braids by exhaustive 4096-word enumeration; each proved/argued."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "62a034929c1a",
+          "ts": "943149e87540",
+          "lean": "9e52b34cf96f"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:19.194Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Canonical lean.ref decl (gram_indefinite_witness, GramIndefinite.lean) proves the Gram-indefinite core (L+\u00b2+L-\u00b2\u22602\u00b7L+\u00b7L-) sorry-free \u2014 captures part (i) but NOT (ii) unbounded-optimum-not-braid-realizable nor (iii) the 4096-word enumeration. Partial coverage of the headline."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "62a034929c1a",
+          "ts": "943149e87540",
+          "lean": "9e52b34cf96f"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.7,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:19.231Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Confinement = topology + action-minimization (LP optimum unphysical without the discrete Borromean constraint) is a distinctive argument."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "62a034929c1a",
+          "ts": "943149e87540",
+          "lean": "9e52b34cf96f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:19.268Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "lean.ref resolves to package decl QOU.Interactions.gram_indefinite_witness (GramIndefinite.lean:187), proving L+\u00b2+L-\u00b2\u22602L+L- sorry-free (NOT the sibling ': True' shim). Real & non-vacuous; md\u2194Lean partial-coverage flagged under plausibility."
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-07T06:00:19.268Z"
 }

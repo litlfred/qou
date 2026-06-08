@@ -2094,7 +2094,7 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'prop:antiparticle-crossing-reversal' → expected 'antiparticle_crossing_reversal'; Lean declares: R_q, q_param, q_inv_param, KnotComposite, KnotComposite.crossingEnergy.... Structural match via content."
+        "notes": "Label 'prop:antiparticle-crossing-reversal' \u2192 expected 'antiparticle_crossing_reversal'; Lean declares: R_q, q_param, q_inv_param, KnotComposite, KnotComposite.crossingEnergy.... Structural match via content."
       },
       {
         "field_hash": {
@@ -2110,7 +2110,7 @@
         },
         "reviewed_at": "2026-05-28T15:40:01.326Z",
         "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
-        "notes": "Label 'prop:antiparticle-crossing-reversal' → expected 'antiparticle_crossing_reversal'; Lean declares: R_q, q_param, q_inv_param, KnotComposite, KnotComposite.crossingEnergy.... Structural match via content."
+        "notes": "Label 'prop:antiparticle-crossing-reversal' \u2192 expected 'antiparticle_crossing_reversal'; Lean declares: R_q, q_param, q_inv_param, KnotComposite, KnotComposite.crossingEnergy.... Structural match via content."
       },
       {
         "field_hash": {
@@ -2126,7 +2126,7 @@
         },
         "reviewed_at": "2026-05-28T15:43:22.741Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
-        "notes": "Label 'prop:antiparticle-crossing-reversal' → expected 'antiparticle_crossing_reversal'; Lean declares: R_q, q_param, q_inv_param, KnotComposite, KnotComposite.crossingEnergy.... Structural match via content."
+        "notes": "Label 'prop:antiparticle-crossing-reversal' \u2192 expected 'antiparticle_crossing_reversal'; Lean declares: R_q, q_param, q_inv_param, KnotComposite, KnotComposite.crossingEnergy.... Structural match via content."
       },
       {
         "field_hash": {
@@ -2142,7 +2142,7 @@
         },
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
-        "notes": "Label 'prop:antiparticle-crossing-reversal' → expected 'antiparticle_crossing_reversal'; Lean declares: R_q, q_param, q_inv_param, KnotComposite, KnotComposite.crossingEnergy.... Structural match via content."
+        "notes": "Label 'prop:antiparticle-crossing-reversal' \u2192 expected 'antiparticle_crossing_reversal'; Lean declares: R_q, q_param, q_inv_param, KnotComposite, KnotComposite.crossingEnergy.... Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -2683,6 +2683,99 @@
           "fwd_edge_count": 0,
           "worst_span": 0
         }
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "0e45a91f4d0d",
+          "ts": "a14b03082474",
+          "lean": "46dd44d0df68"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.75,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T05:54:48.333Z",
+        "reviewed_sha": "c47fda4d79ef12172fe90e0c9b670b761a3f4d95",
+        "notes": "md states 4 numbered parts (antiparticle def, crossing-energy sign reversal, Coulomb reversal, bare-mass invariance) with one-line proofs each; clear plan."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "0e45a91f4d0d",
+          "ts": "a14b03082474",
+          "lean": "46dd44d0df68"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T05:54:48.369Z",
+        "reviewed_sha": "c47fda4d79ef12172fe90e0c9b670b761a3f4d95",
+        "notes": "Sub-lemmas coulomb_reversal/pair_crossing_energy/bare_mass_invariance are sorry-free (push_cast; ring / omega), but the named proposition decl is absent and md part 2 (sign reversal under q<->q^-1) is not the statement Lean proves (.mirror swaps crossing counts; pair-sum identity). Partial coverage of the boxed claim."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "0e45a91f4d0d",
+          "ts": "a14b03082474",
+          "lean": "46dd44d0df68"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.4,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T05:54:48.403Z",
+        "reviewed_sha": "c47fda4d79ef12172fe90e0c9b670b761a3f4d95",
+        "notes": "Standard crossing-reversal/ring algebra; mirror = swap pos/neg crossings. No novel argument."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "0e45a91f4d0d",
+          "ts": "a14b03082474",
+          "lean": "46dd44d0df68"
+        },
+        "result": "fail",
+        "severity": "critical",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T05:54:48.296Z",
+        "reviewed_sha": "c47fda4d79ef12172fe90e0c9b670b761a3f4d95",
+        "notes": "lean.ref qou:QOU.Torsion.antiparticle_crossing_reversal resolves to an ABSENT declaration: the .lean has only pair_crossing_energy, coulomb_reversal, bare_mass_invariance (all under QOU.Torsion); 'antiparticle_crossing_reversal' appears solely in the module docstring (line 7), not as a theorem/def. Also md part 2 boxes E(H^sigma) = -E(H)|_{q<->q^-1} (bar involution) but Lean .mirror only swaps pos/neg crossing counts and pair_crossing_energy proves a pair-SUM identity, not the sign+bar reversal. md<->Lean mismatch + missing ref decl."
       }
     ]
   },

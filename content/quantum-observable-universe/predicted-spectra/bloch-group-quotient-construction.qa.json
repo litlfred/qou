@@ -2111,7 +2111,7 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'prop:bloch-group-quotient-construction' → expected 'bloch_group_quotient_construction'; Lean declares: PentagonShape, pentagonGenerator, RogersPair, RogersPair.shape₃, RogersPair.shape₄.... Structural match via content."
+        "notes": "Label 'prop:bloch-group-quotient-construction' \u2192 expected 'bloch_group_quotient_construction'; Lean declares: PentagonShape, pentagonGenerator, RogersPair, RogersPair.shape\u2083, RogersPair.shape\u2084.... Structural match via content."
       },
       {
         "field_hash": {
@@ -2127,7 +2127,7 @@
         },
         "reviewed_at": "2026-05-28T15:40:01.326Z",
         "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
-        "notes": "Label 'prop:bloch-group-quotient-construction' → expected 'bloch_group_quotient_construction'; Lean declares: PentagonShape, pentagonGenerator, RogersPair, RogersPair.shape, one_sub_inv_ne_zero.... Structural match via content."
+        "notes": "Label 'prop:bloch-group-quotient-construction' \u2192 expected 'bloch_group_quotient_construction'; Lean declares: PentagonShape, pentagonGenerator, RogersPair, RogersPair.shape, one_sub_inv_ne_zero.... Structural match via content."
       },
       {
         "field_hash": {
@@ -2143,7 +2143,7 @@
         },
         "reviewed_at": "2026-05-28T15:43:22.741Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
-        "notes": "Label 'prop:bloch-group-quotient-construction' → expected 'bloch_group_quotient_construction'; Lean declares: PentagonShape, pentagonGenerator, RogersPair, RogersPair.shape, one_sub_inv_ne_zero.... Structural match via content."
+        "notes": "Label 'prop:bloch-group-quotient-construction' \u2192 expected 'bloch_group_quotient_construction'; Lean declares: PentagonShape, pentagonGenerator, RogersPair, RogersPair.shape, one_sub_inv_ne_zero.... Structural match via content."
       },
       {
         "field_hash": {
@@ -2159,7 +2159,7 @@
         },
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
-        "notes": "Label 'prop:bloch-group-quotient-construction' → expected 'bloch_group_quotient_construction'; Lean declares: PentagonShape, pentagonGenerator, RogersPair, RogersPair.shape, one_sub_inv_ne_zero.... Structural match via content."
+        "notes": "Label 'prop:bloch-group-quotient-construction' \u2192 expected 'bloch_group_quotient_construction'; Lean declares: PentagonShape, pentagonGenerator, RogersPair, RogersPair.shape, one_sub_inv_ne_zero.... Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -2521,7 +2521,7 @@
           "lean": "8e31d9be4005"
         },
         "result": "warn",
-        "evidence": "## What this closes, ## What's still open, ## Significance sections follow statement — interpretive/motivational prose in same block without a separate remark. Minor warn only as block has no companion interprets remark.",
+        "evidence": "## What this closes, ## What's still open, ## Significance sections follow statement \u2014 interpretive/motivational prose in same block without a separate remark. Minor warn only as block has no companion interprets remark.",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -2560,7 +2560,7 @@
           "lean": "8e31d9be4005"
         },
         "result": "pass",
-        "evidence": "Proposition is about generic F (field-like type), pure algebraic/categorical statement — no archimedean constructs in the statement itself. The HasBlochGroup ℝ instance is a separate application; the main statement stays generic.",
+        "evidence": "Proposition is about generic F (field-like type), pure algebraic/categorical statement \u2014 no archimedean constructs in the statement itself. The HasBlochGroup \u211d instance is a separate application; the main statement stays generic.",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -2580,7 +2580,7 @@
           "lean": "8e31d9be4005"
         },
         "result": "pass",
-        "evidence": "No proof body in .md — block describes construction structure, not an archimedean proof. Proof is in Lean. No linarith/IVT/continuity in narrative.",
+        "evidence": "No proof body in .md \u2014 block describes construction structure, not an archimedean proof. Proof is in Lean. No linarith/IVT/continuity in narrative.",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -2684,6 +2684,98 @@
           "fwd_edge_count": 0,
           "worst_span": 0
         }
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "f226d5d3f043",
+          "ts": "61a6947286a9",
+          "lean": "8e31d9be4005"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.85,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T05:57:35.363Z",
+        "reviewed_sha": "c47fda4d79ef12172fe90e0c9b670b761a3f4d95",
+        "notes": "Plan up front: BlochGroup F := FreeAbelianGroup(PreBlochElement F) / pentagonSubgroup; 3 steps (free group, pentagon generators, quotient). Lean docstring + md What-this-closes/What's-still-open lay it out clearly."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "f226d5d3f043",
+          "ts": "61a6947286a9",
+          "lean": "8e31d9be4005"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.8,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T05:57:35.400Z",
+        "reviewed_sha": "c47fda4d79ef12172fe90e0c9b670b761a3f4d95",
+        "notes": "Real sorry-free construction: BlochGroup quotient AddCommGroup, quot_universal_property, RogersPair.shape3/4/5 (field_simp/linear_combination), rogersGenerator_mem/quot_rogersGenerator_eq_zero. Documented caveat (over-permissive PentagonShape) and 3 open downstream items (pentagon identity, regulator injectivity, Suslin map); HasBlochGroup R instance fields are boolean trivial placeholders. Not a core gap in THIS block's claim (the quotient construction)."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "f226d5d3f043",
+          "ts": "61a6947286a9",
+          "lean": "8e31d9be4005"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.75,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T05:57:35.434Z",
+        "reviewed_sha": "c47fda4d79ef12172fe90e0c9b670b761a3f4d95",
+        "notes": "Concrete Lean Bloch-group quotient construction (Mathlib gap filler) with Rogers-form shape parameters and universal property; genuine formalization work, not standard/duplicated."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "f226d5d3f043",
+          "ts": "61a6947286a9",
+          "lean": "8e31d9be4005"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T05:57:35.468Z",
+        "reviewed_sha": "c47fda4d79ef12172fe90e0c9b670b761a3f4d95",
+        "notes": "lean.ref qou:QOU.Archimedean.BlochQuotient.BlochGroup present as a real quotient type (PreBlochGroup F / pentagonSubgroup), with AddCommGroup instance + quot projection + universal property. Not vacuous; matches the md's boxed B(F) construction. (def, not theorem, but kind=proposition titles a construction.)"
       }
     ]
   },

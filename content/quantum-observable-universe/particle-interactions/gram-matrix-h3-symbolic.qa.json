@@ -31,7 +31,7 @@
         "reviewed_at": "2026-05-25T23:12:32.859Z",
         "reviewed_sha": "82e22b09358a7d8ef9d1a6e43b0b996db4a40264",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/particle-interactions/gram-matrix-h3-symbolic.md:31: | **(3) Determinant ≠ 0** | deferred | [`gramMatrix_det_ne_zero`](gram-matrix-h3-symbolic.lean) — proof strategy documented; routine symbolic-determinant factorisation pending |"
+        "evidence": "content/quantum-observable-universe/particle-interactions/gram-matrix-h3-symbolic.md:31: | **(3) Determinant \u2260 0** | deferred | [`gramMatrix_det_ne_zero`](gram-matrix-h3-symbolic.lean) \u2014 proof strategy documented; routine symbolic-determinant factorisation pending |"
       },
       {
         "field_hash": {
@@ -926,7 +926,7 @@
         "reviewed_at": "2026-05-25T23:14:29.450Z",
         "reviewed_sha": "82e22b09358a7d8ef9d1a6e43b0b996db4a40264",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/particle-interactions/gram-matrix-h3-symbolic.ts:1: no `probe:` field or `computation:` block declared — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
+        "evidence": "content/quantum-observable-universe/particle-interactions/gram-matrix-h3-symbolic.ts:1: no `probe:` field or `computation:` block declared \u2014 every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration \u00a7B"
       },
       {
         "field_hash": {
@@ -945,7 +945,7 @@
         "reviewed_at": "2026-05-25T23:28:35.242Z",
         "reviewed_sha": "82e22b09358a7d8ef9d1a6e43b0b996db4a40264",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/particle-interactions/gram-matrix-h3-symbolic.ts:1: no `probe:` field or `computation:` block declared — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
+        "evidence": "content/quantum-observable-universe/particle-interactions/gram-matrix-h3-symbolic.ts:1: no `probe:` field or `computation:` block declared \u2014 every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration \u00a7B"
       },
       {
         "field_hash": {
@@ -983,7 +983,7 @@
         "reviewed_at": "2026-05-25T23:14:29.450Z",
         "reviewed_sha": "82e22b09358a7d8ef9d1a6e43b0b996db4a40264",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/particle-interactions/gram-matrix-h3-symbolic.ts:1: no `consumers:` field and no `computation:` declaration — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
+        "evidence": "content/quantum-observable-universe/particle-interactions/gram-matrix-h3-symbolic.ts:1: no `consumers:` field and no `computation:` declaration \u2014 the prop is NOT-WIRED per CLAUDE.md compute-integration \u00a7B (I2-I13)"
       },
       {
         "field_hash": {
@@ -1002,7 +1002,7 @@
         "reviewed_at": "2026-05-25T23:28:35.242Z",
         "reviewed_sha": "82e22b09358a7d8ef9d1a6e43b0b996db4a40264",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/particle-interactions/gram-matrix-h3-symbolic.ts:1: no `consumers:` field and no `computation:` declaration — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
+        "evidence": "content/quantum-observable-universe/particle-interactions/gram-matrix-h3-symbolic.ts:1: no `consumers:` field and no `computation:` declaration \u2014 the prop is NOT-WIRED per CLAUDE.md compute-integration \u00a7B (I2-I13)"
       },
       {
         "field_hash": {
@@ -1591,7 +1591,7 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'prop:gram-matrix-h3-symbolic' → expected 'gram_matrix_h3_symbolic'; Lean declares: gramEntry, gramMatrix, gramMatrix_isSymm, gramMatrix_top_left, detFactor1.... Structural match via content."
+        "notes": "Label 'prop:gram-matrix-h3-symbolic' \u2192 expected 'gram_matrix_h3_symbolic'; Lean declares: gramEntry, gramMatrix, gramMatrix_isSymm, gramMatrix_top_left, detFactor1.... Structural match via content."
       },
       {
         "field_hash": {
@@ -1607,7 +1607,7 @@
         },
         "reviewed_at": "2026-05-28T15:40:01.326Z",
         "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
-        "notes": "Label 'prop:gram-matrix-h3-symbolic' → expected 'gram_matrix_h3_symbolic'; Lean declares: gramEntry, gramMatrix, gramMatrix_isSymm, gramMatrix_top_left, detFactor1.... Structural match via content."
+        "notes": "Label 'prop:gram-matrix-h3-symbolic' \u2192 expected 'gram_matrix_h3_symbolic'; Lean declares: gramEntry, gramMatrix, gramMatrix_isSymm, gramMatrix_top_left, detFactor1.... Structural match via content."
       },
       {
         "field_hash": {
@@ -1623,7 +1623,7 @@
         },
         "reviewed_at": "2026-05-28T15:43:22.741Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
-        "notes": "Label 'prop:gram-matrix-h3-symbolic' → expected 'gram_matrix_h3_symbolic'; Lean declares: gramEntry, gramMatrix, gramMatrix_isSymm, gramMatrix_top_left, detFactor1.... Structural match via content."
+        "notes": "Label 'prop:gram-matrix-h3-symbolic' \u2192 expected 'gram_matrix_h3_symbolic'; Lean declares: gramEntry, gramMatrix, gramMatrix_isSymm, gramMatrix_top_left, detFactor1.... Structural match via content."
       },
       {
         "field_hash": {
@@ -1639,7 +1639,7 @@
         },
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
-        "notes": "Label 'prop:gram-matrix-h3-symbolic' → expected 'gram_matrix_h3_symbolic'; Lean declares: gramEntry, gramMatrix, gramMatrix_isSymm, gramMatrix_top_left, detFactor1.... Structural match via content."
+        "notes": "Label 'prop:gram-matrix-h3-symbolic' \u2192 expected 'gram_matrix_h3_symbolic'; Lean declares: gramEntry, gramMatrix, gramMatrix_isSymm, gramMatrix_top_left, detFactor1.... Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -2046,7 +2046,7 @@
         },
         "result": "warn",
         "severity": "minor",
-        "evidence": "Statement uses 'u > 0' ordering hypothesis; particle-interactions is a substrate/generic chapter — this is an archimedean constraint that should carry a wall: field or §7c conditional banner.",
+        "evidence": "Statement uses 'u > 0' ordering hypothesis; particle-interactions is a substrate/generic chapter \u2014 this is an archimedean constraint that should carry a wall: field or \u00a77c conditional banner.",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -2056,7 +2056,7 @@
         },
         "reviewed_at": "2026-06-05T14:53:48.392Z",
         "reviewed_sha": "c47bf012be554f6d4bad7fd2fa0ec6e6e52c8075",
-        "notes": "Add wall: archimedean annotation or §7c banner to flag the ordering hypothesis."
+        "notes": "Add wall: archimedean annotation or \u00a77c banner to flag the ordering hypothesis."
       }
     ],
     "wall-side-proof": [
@@ -2068,7 +2068,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "Proof status table cites Lean rfl proofs (algebraic) for symmetry/top-left; det≠0 is deferred — no archimedean-only machinery used in the stated proofs.",
+        "evidence": "Proof status table cites Lean rfl proofs (algebraic) for symmetry/top-left; det\u22600 is deferred \u2014 no archimedean-only machinery used in the stated proofs.",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -2174,7 +2174,99 @@
           "worst_span": 0
         }
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "35f1c615078a",
+          "ts": "b3f6fc431da4",
+          "lean": "ff73012a8ad8"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.9,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:20.575Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "MD tabulates all 21 distinct Gram entries as Laurent polys in u=\u221aq, states 3 properties with an explicit proof-status table, and the det factorization with the second-root correctness finding (u>1); excellent."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "35f1c615078a",
+          "ts": "b3f6fc431da4",
+          "lean": "ff73012a8ad8"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.6,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:20.647Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Lean proves gramMatrix_isSymm + gramMatrix_top_left + all six detFactor_pos lemmas + gramMatrix_det_ne_zero_conditional (real); BUT gramMatrix_det_eq_factorization is a bare 'sorry' (720-term det identity), so the unconditional gramMatrix_det_ne_zero is sorry-backed. 2/3 properties fully proved, 3rd honestly deferred."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "35f1c615078a",
+          "ts": "b3f6fc431da4",
+          "lean": "ff73012a8ad8"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.7,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:20.717Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Closed-form categorical Gram entries (replacing decimal stubs) + the discovered second determinant root (u\u00b3+u-1) is concrete, non-routine symbolic work."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "35f1c615078a",
+          "ts": "b3f6fc431da4",
+          "lean": "ff73012a8ad8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:20.753Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "lean.ref QOU.Interactions.GramMatrixH3Symbolic.gramMatrix resolves to a real def with proved isSymm/top_left/positivity-lemmas. One bare 'sorry' (gramMatrix_det_eq_factorization) is disclosed in MD's proof-status table; statement is real, not vacuous."
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-07T06:00:20.753Z"
 }

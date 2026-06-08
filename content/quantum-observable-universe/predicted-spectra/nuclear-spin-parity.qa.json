@@ -2094,7 +2094,7 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'prop:nuclear-spin-parity' → expected 'nuclear_spin_parity'; Lean declares: SpinParity, nuclearSpinParity, nuclear_spin_parity_even, nuclear_spin_parity_odd, beta_decay_preserves_spin_parity. Structural match via content."
+        "notes": "Label 'prop:nuclear-spin-parity' \u2192 expected 'nuclear_spin_parity'; Lean declares: SpinParity, nuclearSpinParity, nuclear_spin_parity_even, nuclear_spin_parity_odd, beta_decay_preserves_spin_parity. Structural match via content."
       },
       {
         "field_hash": {
@@ -2110,7 +2110,7 @@
         },
         "reviewed_at": "2026-05-28T15:40:01.326Z",
         "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
-        "notes": "Label 'prop:nuclear-spin-parity' → expected 'nuclear_spin_parity'; Lean declares: SpinParity, nuclearSpinParity, nuclear_spin_parity_even, nuclear_spin_parity_odd, beta_decay_preserves_spin_parity. Structural match via content."
+        "notes": "Label 'prop:nuclear-spin-parity' \u2192 expected 'nuclear_spin_parity'; Lean declares: SpinParity, nuclearSpinParity, nuclear_spin_parity_even, nuclear_spin_parity_odd, beta_decay_preserves_spin_parity. Structural match via content."
       },
       {
         "field_hash": {
@@ -2126,7 +2126,7 @@
         },
         "reviewed_at": "2026-05-28T15:43:22.741Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
-        "notes": "Label 'prop:nuclear-spin-parity' → expected 'nuclear_spin_parity'; Lean declares: SpinParity, nuclearSpinParity, nuclear_spin_parity_even, nuclear_spin_parity_odd, beta_decay_preserves_spin_parity. Structural match via content."
+        "notes": "Label 'prop:nuclear-spin-parity' \u2192 expected 'nuclear_spin_parity'; Lean declares: SpinParity, nuclearSpinParity, nuclear_spin_parity_even, nuclear_spin_parity_odd, beta_decay_preserves_spin_parity. Structural match via content."
       },
       {
         "field_hash": {
@@ -2142,7 +2142,7 @@
         },
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
-        "notes": "Label 'prop:nuclear-spin-parity' → expected 'nuclear_spin_parity'; Lean declares: SpinParity, nuclearSpinParity, nuclear_spin_parity_even, nuclear_spin_parity_odd, beta_decay_preserves_spin_parity. Structural match via content."
+        "notes": "Label 'prop:nuclear-spin-parity' \u2192 expected 'nuclear_spin_parity'; Lean declares: SpinParity, nuclearSpinParity, nuclear_spin_parity_even, nuclear_spin_parity_odd, beta_decay_preserves_spin_parity. Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -2677,7 +2677,99 @@
           "worst_span": 0
         }
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "00f147dfbf7c",
+          "ts": "ad7a597c6b19",
+          "lean": "de1b586729a3"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.85,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:12:28.220Z",
+        "reviewed_sha": "4e961c6c457cf2aaa28e91304a917b1bcfdf2afe",
+        "notes": "Plan clear: each nucleon is a spin-1/2 knot; (1/2)^{otimes A} decomposes with J_min=0 (A even) or 1/2 (A odd); q-Clebsch-Gordan V_{1/2} (x) V_J = V_{J+1/2} (+) V_{J-1/2} adds 1/2 per factor so parity = A/2 mod 1. Direct rep-theory argument."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "00f147dfbf7c",
+          "ts": "ad7a597c6b19",
+          "lean": "de1b586729a3"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.85,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:12:28.286Z",
+        "reviewed_sha": "4e961c6c457cf2aaa28e91304a917b1bcfdf2afe",
+        "notes": "Sorry-free: nuclear_spin_parity_even (Even A => integer) and nuclear_spin_parity_odd (Odd A => halfInteger) proven via Nat parity; examples 14N/3H/4He by decide; beta_decay_preserves_spin_parity by omega. The _even/_odd pair exactly matches the md's J in Z <=> A even iff claim. (Lean models parity as an inductive SpinParity rather than the full SU_q(2) decomposition, but faithfully captures the stated parity result.)"
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "00f147dfbf7c",
+          "ts": "ad7a597c6b19",
+          "lean": "de1b586729a3"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:12:28.357Z",
+        "reviewed_sha": "4e961c6c457cf2aaa28e91304a917b1bcfdf2afe",
+        "notes": "Spin-statistics from A mod 2 (integer spin for even A) is a standard result; the framing is clean but the parity content is conventional SU_q(2)/tensor-product representation theory."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "00f147dfbf7c",
+          "ts": "ad7a597c6b19",
+          "lean": "de1b586729a3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:12:28.406Z",
+        "reviewed_sha": "4e961c6c457cf2aaa28e91304a917b1bcfdf2afe",
+        "notes": "Content is real and sorry-free (nuclear_spin_parity_even/odd faithfully encode the md parity claim; not vacuous). MD<->Lean REF-NAMING NIT: lean.ref qou:QOU.Archimedean.nuclear_spin_parity but the file defines def nuclearSpinParity (camelCase) + theorems nuclear_spin_parity_even/_odd; there is no bare decl exactly named nuclear_spin_parity. Snake/camel ref mismatch (content present + sound), not a vacuity/unsoundness defect - flagging for ref-name fix, not failing integrity."
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-07T06:12:28.406Z"
 }

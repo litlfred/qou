@@ -2094,7 +2094,7 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'prop:categorical-instanton-unique' → expected 'categorical_instanton_unique'; Lean declares: CategoricalInstanton.unique_up_to_gauge. Structural match via content."
+        "notes": "Label 'prop:categorical-instanton-unique' \u2192 expected 'categorical_instanton_unique'; Lean declares: CategoricalInstanton.unique_up_to_gauge. Structural match via content."
       },
       {
         "field_hash": {
@@ -2110,7 +2110,7 @@
         },
         "reviewed_at": "2026-05-28T15:40:01.326Z",
         "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
-        "notes": "Label 'prop:categorical-instanton-unique' → expected 'categorical_instanton_unique'; Lean declares: CategoricalInstanton.unique_up_to_gauge_axiom, CategoricalInstanton.unique_up_to_gauge. Structural match via content."
+        "notes": "Label 'prop:categorical-instanton-unique' \u2192 expected 'categorical_instanton_unique'; Lean declares: CategoricalInstanton.unique_up_to_gauge_axiom, CategoricalInstanton.unique_up_to_gauge. Structural match via content."
       },
       {
         "field_hash": {
@@ -2126,7 +2126,7 @@
         },
         "reviewed_at": "2026-05-28T15:43:22.741Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
-        "notes": "Label 'prop:categorical-instanton-unique' → expected 'categorical_instanton_unique'; Lean declares: CategoricalInstanton.unique_up_to_gauge_axiom, CategoricalInstanton.unique_up_to_gauge. Structural match via content."
+        "notes": "Label 'prop:categorical-instanton-unique' \u2192 expected 'categorical_instanton_unique'; Lean declares: CategoricalInstanton.unique_up_to_gauge_axiom, CategoricalInstanton.unique_up_to_gauge. Structural match via content."
       },
       {
         "field_hash": {
@@ -2142,7 +2142,7 @@
         },
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
-        "notes": "Label 'prop:categorical-instanton-unique' → expected 'categorical_instanton_unique'; Lean declares: CategoricalInstanton.unique_up_to_gauge_axiom, CategoricalInstanton.unique_up_to_gauge. Structural match via content."
+        "notes": "Label 'prop:categorical-instanton-unique' \u2192 expected 'categorical_instanton_unique'; Lean declares: CategoricalInstanton.unique_up_to_gauge_axiom, CategoricalInstanton.unique_up_to_gauge. Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -2677,7 +2677,101 @@
           "worst_span": 0
         }
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "9b6f0ddfcdc1",
+          "ts": "f3aa24beb27c",
+          "lean": "a8d2bbdee380"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:59.891Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Terse statement-only md (two instantons of equal c_2 coincide up to gauge; moduli parameterised by H^4)."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "9b6f0ddfcdc1",
+          "ts": "f3aa24beb27c",
+          "lean": "a8d2bbdee380"
+        },
+        "result": "fail",
+        "severity": "minor",
+        "score": {
+          "value": 0.3,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:59.928Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Closed by CategoricalInstanton.unique_up_to_gauge_axiom (pure axiom); the gauge-orbit uniqueness is not proved."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "9b6f0ddfcdc1",
+          "ts": "f3aa24beb27c",
+          "lean": "a8d2bbdee380"
+        },
+        "result": "fail",
+        "severity": "minor",
+        "score": {
+          "value": 0.2,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:59.968Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Axiom-laundered Subsingleton boilerplate."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "9b6f0ddfcdc1",
+          "ts": "f3aa24beb27c",
+          "lean": "a8d2bbdee380"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:01:00.003Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "lean.ref QOU.CategoricalInstanton.unique_up_to_gauge present (theorem := axiom); statement matches the md (moduli Subsingleton). Honest axiom; plausibility, not integrity, is the issue."
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-07T06:01:00.003Z"
 }

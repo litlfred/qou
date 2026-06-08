@@ -262,7 +262,7 @@
         },
         "reviewed_at": "2026-05-28T15:40:01.326Z",
         "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
-        "notes": "Label 'prop:figure-eight-reeb-rotation' → expected 'figure_eight_reeb_rotation'; Lean declares: hecke_generator_det_neg_one, figure_eight_det_one, figure_eight_unitary_on_standard. Structural match via content."
+        "notes": "Label 'prop:figure-eight-reeb-rotation' \u2192 expected 'figure_eight_reeb_rotation'; Lean declares: hecke_generator_det_neg_one, figure_eight_det_one, figure_eight_unitary_on_standard. Structural match via content."
       },
       {
         "field_hash": {
@@ -278,7 +278,7 @@
         },
         "reviewed_at": "2026-05-28T15:43:22.741Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
-        "notes": "Label 'prop:figure-eight-reeb-rotation' → expected 'figure_eight_reeb_rotation'; Lean declares: hecke_generator_det_neg_one, figure_eight_det_one, figure_eight_unitary_on_standard. Structural match via content."
+        "notes": "Label 'prop:figure-eight-reeb-rotation' \u2192 expected 'figure_eight_reeb_rotation'; Lean declares: hecke_generator_det_neg_one, figure_eight_det_one, figure_eight_unitary_on_standard. Structural match via content."
       },
       {
         "field_hash": {
@@ -294,7 +294,7 @@
         },
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
-        "notes": "Label 'prop:figure-eight-reeb-rotation' → expected 'figure_eight_reeb_rotation'; Lean declares: hecke_generator_det_neg_one, figure_eight_det_one, figure_eight_unitary_on_standard. Structural match via content."
+        "notes": "Label 'prop:figure-eight-reeb-rotation' \u2192 expected 'figure_eight_reeb_rotation'; Lean declares: hecke_generator_det_neg_one, figure_eight_det_one, figure_eight_unitary_on_standard. Structural match via content."
       }
     ],
     "q-usage-regime-detected": [
@@ -693,7 +693,7 @@
         "reviewed_at": "2026-06-02T19:35:52.628Z",
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/figure-eight-reeb-rotation.lean:1: Lean file uses archimedean constructs but .md narrative does not acknowledge archimedean specialisation. Add a §7c-style banner or move the archimedean evaluation to a sibling block."
+        "evidence": "content/quantum-observable-universe/braids-and-knots/figure-eight-reeb-rotation.lean:1: Lean file uses archimedean constructs but .md narrative does not acknowledge archimedean specialisation. Add a \u00a77c-style banner or move the archimedean evaluation to a sibling block."
       }
     ],
     "compute-prop-has-probe": [
@@ -892,7 +892,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "proposition in sec:lepton-meson-parallel; figure-eight knot operator unitary on V_(2,1) directly concerns lepton-channel structure — on-topic",
+        "evidence": "proposition in sec:lepton-meson-parallel; figure-eight knot operator unitary on V_(2,1) directly concerns lepton-channel structure \u2014 on-topic",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -914,7 +914,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "statement: eigenvalues of algebraic knot operator M_{4_1} on H_3(q) rep — no archimedean constructs, purely algebraic",
+        "evidence": "statement: eigenvalues of algebraic knot operator M_{4_1} on H_3(q) rep \u2014 no archimedean constructs, purely algebraic",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -936,7 +936,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "proof uses Hoefsmit eigenvalue algebra and determinant computation — algebraic, no linarith/IVT/archimedean machinery",
+        "evidence": "proof uses Hoefsmit eigenvalue algebra and determinant computation \u2014 algebraic, no linarith/IVT/archimedean machinery",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -1047,6 +1047,99 @@
           "fwd_edge_count": 0,
           "worst_span": 0
         }
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "6aae13577b45",
+          "ts": "3916b2547bf3",
+          "lean": "6c89801376ec"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.7,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:29:06.420Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "md proof-sketch is clear (det=1 via product of det=-1 generators, real trace => conjugate eigenvalues on unit circle). But the Lean does not implement this strategy; it only states trivia."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "6aae13577b45",
+          "ts": "3916b2547bf3",
+          "lean": "6c89801376ec"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0.3,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:29:06.462Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "Core gap: the md's real claim (M_{4_1}=(sigma1 sigma2^-1)^2 has unit-modulus eigenvalues on V_(2,1)) is NOT proved in Lean. figure_eight_unitary_on_standard only asserts (-1)^4=1 AND 2=2; the unitarity/eigenvalue content lives only in docstrings."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "6aae13577b45",
+          "ts": "3916b2547bf3",
+          "lean": "6c89801376ec"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:29:06.504Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "The q-Reeb-rotation-phase reading of the figure-eight eigenvalue on V_(2,1), connecting to Vol(4_1) and the muon anchor, is a genuinely framework-specific idea -- but it is asserted, not established, in the formalization."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "6aae13577b45",
+          "ts": "3916b2547bf3",
+          "lean": "6c89801376ec"
+        },
+        "result": "fail",
+        "severity": "critical",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:29:06.545Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "INTEGRITY FAIL: lean.ref points at figure_eight_unitary_on_standard whose statement is '(-1:Z)^4 = 1 AND (2:N) = 2' -- a vacuous tautology that does NOT state the md's proposition (figure-eight knot operator is unitary / unit-modulus eigenvalues on V_(2,1)). Placeholder/restates-trivia."
       }
     ]
   },

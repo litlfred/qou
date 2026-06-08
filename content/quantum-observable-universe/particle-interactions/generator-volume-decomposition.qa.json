@@ -2288,7 +2288,7 @@
         },
         "result": "warn",
         "severity": "minor",
-        "evidence": "Lean file defines helper functions (transferStep, nuclearEnergy) but has no theorem matching the narrative proposition E=ΣV_i; main claim is unstated in lean.",
+        "evidence": "Lean file defines helper functions (transferStep, nuclearEnergy) but has no theorem matching the narrative proposition E=\u03a3V_i; main claim is unstated in lean.",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -2773,7 +2773,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "Statement involves nuclear braid in H_A(q); lean is in QOU.Archimedean over ℝ; archimedean specialisation is appropriate for nuclear observables.",
+        "evidence": "Statement involves nuclear braid in H_A(q); lean is in QOU.Archimedean over \u211d; archimedean specialisation is appropriate for nuclear observables.",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -2795,7 +2795,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "Proof body uses transfer matrix recurrences and combinatorial jet expansion — no IVT/linarith used for an algebraic claim.",
+        "evidence": "Proof body uses transfer matrix recurrences and combinatorial jet expansion \u2014 no IVT/linarith used for an algebraic claim.",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -2901,7 +2901,99 @@
           "worst_span": 0
         }
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "387dd05deb5c",
+          "ts": "7a2938350d81",
+          "lean": "55df7d1fc523"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.9,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:20.306Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "MD develops the 2\u00d72 transfer-matrix recurrence, the jet expansion (color degree = k_i), beta/double-beta as 1-jet/2-jet variations, and the binom(A,2) exact step count; thorough and explicit."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "387dd05deb5c",
+          "ts": "7a2938350d81",
+          "lean": "55df7d1fc523"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.75,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:20.362Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Lean defines transferStep/chainReduce + proves generatorVolume_nonneg, energy_additive, and beta_decay_locality (a substantive sorry-free List take/drop + ext_getElem proof). Top-level def matches manifest; the recurrence/jet claims are partly definitional but the locality theorem is real content."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "387dd05deb5c",
+          "ts": "7a2938350d81",
+          "lean": "55df7d1fc523"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.7,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:20.434Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Jet-bundle reading of generator volumes (single/double-beta as 1-jet/2-jet, 0\u03bd\u03b2\u03b2 shared-neutrino structure) is a distinctive framework picture."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "387dd05deb5c",
+          "ts": "7a2938350d81",
+          "lean": "55df7d1fc523"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:20.505Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "lean.ref QOU.Archimedean.generator_volume_decomposition resolves to a real def; supporting beta_decay_locality theorem is genuine and sorry-free. Non-vacuous."
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-07T06:00:20.505Z"
 }

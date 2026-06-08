@@ -2403,7 +2403,7 @@
         "reviewed_at": "2026-06-02T19:35:52.628Z",
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/predicted-spectra/bohr-radius-categorical.md:25: P1:status-banner: > **Caveat — derivation status**"
+        "evidence": "content/quantum-observable-universe/predicted-spectra/bohr-radius-categorical.md:25: P1:status-banner: > **Caveat \u2014 derivation status**"
       }
     ],
     "q-usage-regime-detected": [
@@ -2627,7 +2627,7 @@
         "reviewed_at": "2026-06-01T16:06:38.106Z",
         "reviewed_sha": "d4a8cf462aeef2262429b13571ddd385968bce63",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/predicted-spectra/bohr-radius-categorical.md:1 — detected regime [symbolic] is disjoint from chapter 'predicted-spectra' expected [fixed-q0, na, real-gt-1, real-positive]"
+        "evidence": "content/quantum-observable-universe/predicted-spectra/bohr-radius-categorical.md:1 \u2014 detected regime [symbolic] is disjoint from chapter 'predicted-spectra' expected [fixed-q0, na, real-gt-1, real-positive]"
       }
     ],
     "canonical-ck-tiered-not-binary": [
@@ -2710,7 +2710,7 @@
           "lean": "d0a836478d3d"
         },
         "result": "warn",
-        "evidence": "Block contains extensive ## Companion remark, ## Recommendation, and ## Status sections in same block — substantial motivational/interpretive prose. No separate companion remark with interprets. Should be split into statement + separate remark.",
+        "evidence": "Block contains extensive ## Companion remark, ## Recommendation, and ## Status sections in same block \u2014 substantial motivational/interpretive prose. No separate companion remark with interprets. Should be split into statement + separate remark.",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -2749,7 +2749,7 @@
           "lean": "d0a836478d3d"
         },
         "result": "pass",
-        "evidence": "Statement formula a_0^cat = hbar/(m_e c alpha_EM) is in predicted-spectra chapter (explicitly archimedean), uses physical units correctly. Caveat banner present in .md declaring transport from QED. Chapter regime is archimedean — no wall violation.",
+        "evidence": "Statement formula a_0^cat = hbar/(m_e c alpha_EM) is in predicted-spectra chapter (explicitly archimedean), uses physical units correctly. Caveat banner present in .md declaring transport from QED. Chapter regime is archimedean \u2014 no wall violation.",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -2769,7 +2769,7 @@
           "lean": "d0a836478d3d"
         },
         "result": "pass",
-        "evidence": "Proof body is a transport sketch with explicit caveat declaring QED transport. No archimedean Lean machinery used in narrative proof. Postulation is explicitly disclosed — not a wall violation, correctly flagged by block itself.",
+        "evidence": "Proof body is a transport sketch with explicit caveat declaring QED transport. No archimedean Lean machinery used in narrative proof. Postulation is explicitly disclosed \u2014 not a wall violation, correctly flagged by block itself.",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -2873,6 +2873,99 @@
           "fwd_edge_count": 0,
           "worst_span": 0
         }
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "22760a960031",
+          "ts": "3e04cd4ed8c9",
+          "lean": "d0a836478d3d"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.7,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T05:58:13.116Z",
+        "reviewed_sha": "c47fda4d79ef12172fe90e0c9b670b761a3f4d95",
+        "notes": "md clearly lays out the virial-balance transport, an explicit rigorous-vs-transported ledger, and 5 candidate closure routes (4a-4e) with round-8 partial findings; plan is clear even though unclosed."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "22760a960031",
+          "ts": "3e04cd4ed8c9",
+          "lean": "d0a836478d3d"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0.3,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T05:58:13.152Z",
+        "reviewed_sha": "c47fda4d79ef12172fe90e0c9b670b761a3f4d95",
+        "notes": "Core gap: md self-declares the formula is TRANSPORTED from QED (not derived from Hecke); Phi_kin/Phi_Coul postulated; absolute scale m_e c^2 alpha^2 not derived; Lean is a True stub. By the rubric this is a core/restates-target-equivalent gap."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "22760a960031",
+          "ts": "3e04cd4ed8c9",
+          "lean": "d0a836478d3d"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.45,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T05:58:13.191Z",
+        "reviewed_sha": "c47fda4d79ef12172fe90e0c9b670b761a3f4d95",
+        "notes": "Identifying the Hecke-algebraic gap (no per-generator kinetic/Coulomb additive split) + the 4b shell-ratio (2k+1)^-2 = Bohr 1/n^2 recovery is mildly novel structural observation, but the headline formula is standard QED."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "22760a960031",
+          "ts": "3e04cd4ed8c9",
+          "lean": "d0a836478d3d"
+        },
+        "result": "fail",
+        "severity": "critical",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T05:58:13.071Z",
+        "reviewed_sha": "c47fda4d79ef12172fe90e0c9b670b761a3f4d95",
+        "notes": "lean.ref qou:QOU.Archimedean.bohr_radius_categorical is a sibling STUB: 'theorem bohr_radius_categorical : True := by trivial'. Vacuous =True, does not state the md claim a_0^cat = hbar/(m_e c alpha_EM). md itself declares 'NOT yet derived', 'tautological' match, 'not as a closed theorem'. validation:not_started in ts."
       }
     ]
   },

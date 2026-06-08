@@ -1026,6 +1026,98 @@
           "worst_span": 0
         }
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "e9037d91e83a",
+          "ts": "8af1c064a43c",
+          "lean": "aedbd7547047"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.9,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T01:24:52.427Z",
+        "reviewed_sha": "dcde1c36cd44b4f9e19a4b7aa4d8dd4aa4077762",
+        "notes": "baseline: strategy explicit up front (predicted +1796.7 vs target -4.353; gap; scope banner)"
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "e9037d91e83a",
+          "ts": "8af1c064a43c",
+          "lean": "aedbd7547047"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T01:25:48.290Z",
+        "reviewed_sha": "dcde1c36cd44b4f9e19a4b7aa4d8dd4aa4077762",
+        "notes": "sorry-free norm_num proof; no remaining gaps"
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "e9037d91e83a",
+          "ts": "8af1c064a43c",
+          "lean": "aedbd7547047"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.85,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T01:25:48.321Z",
+        "reviewed_sha": "dcde1c36cd44b4f9e19a4b7aa4d8dd4aa4077762",
+        "notes": "novel refutation; one lemma covers Option C + Option E principal-specialisation"
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "e9037d91e83a",
+          "ts": "8af1c064a43c",
+          "lean": "aedbd7547047"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T01:25:48.351Z",
+        "reviewed_sha": "dcde1c36cd44b4f9e19a4b7aa4d8dd4aa4077762",
+        "notes": "new block; sorry-free norm_num on rationals; lean_verify clean (no sorryAx)"
+      }
     ]
   },
   "updated_at": "2026-06-07T05:58:41.267Z"

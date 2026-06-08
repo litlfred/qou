@@ -2094,7 +2094,7 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'prop:atom-knot-unique' → expected 'atom_knot_unique'; Lean declares: AtomKnot.unique_up_to_markov. Structural match via content."
+        "notes": "Label 'prop:atom-knot-unique' \u2192 expected 'atom_knot_unique'; Lean declares: AtomKnot.unique_up_to_markov. Structural match via content."
       },
       {
         "field_hash": {
@@ -2110,7 +2110,7 @@
         },
         "reviewed_at": "2026-05-28T15:40:01.326Z",
         "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
-        "notes": "Label 'prop:atom-knot-unique' → expected 'atom_knot_unique'; Lean declares: AtomKnot.unique_up_to_markov. Structural match via content."
+        "notes": "Label 'prop:atom-knot-unique' \u2192 expected 'atom_knot_unique'; Lean declares: AtomKnot.unique_up_to_markov. Structural match via content."
       },
       {
         "field_hash": {
@@ -2126,7 +2126,7 @@
         },
         "reviewed_at": "2026-05-28T15:43:22.741Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
-        "notes": "Label 'prop:atom-knot-unique' → expected 'atom_knot_unique'; Lean declares: AtomKnot.unique_up_to_markov. Structural match via content."
+        "notes": "Label 'prop:atom-knot-unique' \u2192 expected 'atom_knot_unique'; Lean declares: AtomKnot.unique_up_to_markov. Structural match via content."
       },
       {
         "field_hash": {
@@ -2142,7 +2142,7 @@
         },
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
-        "notes": "Label 'prop:atom-knot-unique' → expected 'atom_knot_unique'; Lean declares: AtomKnot.unique_up_to_markov. Structural match via content."
+        "notes": "Label 'prop:atom-knot-unique' \u2192 expected 'atom_knot_unique'; Lean declares: AtomKnot.unique_up_to_markov. Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -2423,7 +2423,7 @@
         "reviewed_at": "2026-06-01T16:06:38.106Z",
         "reviewed_sha": "d4a8cf462aeef2262429b13571ddd385968bce63",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/atom-knot-unique.md:1 — detected regime [symbolic] is disjoint from chapter 'particle-interactions' expected [fixed-q0, na, real-gt-1, real-positive]"
+        "evidence": "content/quantum-observable-universe/particle-interactions/atom-knot-unique.md:1 \u2014 detected regime [symbolic] is disjoint from chapter 'particle-interactions' expected [fixed-q0, na, real-gt-1, real-positive]"
       }
     ],
     "canonical-ck-tiered-not-binary": [
@@ -2686,7 +2686,99 @@
           "worst_span": 0
         }
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "b9c5dbfe8bdd",
+          "ts": "9959e9bff925",
+          "lean": "11e3b2569183"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.8,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:16.521Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "MD lists the Markov-move generators (R2/R3/far-comm) and reduces to Diamond-Lemma NF uniqueness; plan explicit."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "b9c5dbfe8bdd",
+          "ts": "9959e9bff925",
+          "lean": "11e3b2569183"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:16.556Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Lean proves record equality K1=K2 from all-fields-equal hyps (cases;congr<;>assumption) \u2014 self-consistent but WEAKER than MD's Markov-equivalence/isotopy claim (isotopy not formalized; hypotheses already give equality)."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "b9c5dbfe8bdd",
+          "ts": "9959e9bff925",
+          "lean": "11e3b2569183"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:16.592Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Standard Markov-move argument; record-eta in Lean is routine."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "b9c5dbfe8bdd",
+          "ts": "9959e9bff925",
+          "lean": "11e3b2569183"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:16.628Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "lean.ref QOU.BraidKnot.AtomKnot.unique resolves; statement L1=L2 from structural-field equalities is a real (if weak) proposition, sorry-free. md\u2194Lean coverage gap noted (isotopy vs record-eq)."
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-07T06:00:16.628Z"
 }

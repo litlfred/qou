@@ -2581,7 +2581,7 @@
         },
         "result": "fail",
         "severity": "major",
-        "evidence": "braiding-eigenvalue-extraction.ts:18 — uses prop:tannaka-krein-reconstruction (pos 76) which appears after braiding-eigenvalue-extraction (pos 74)",
+        "evidence": "braiding-eigenvalue-extraction.ts:18 \u2014 uses prop:tannaka-krein-reconstruction (pos 76) which appears after braiding-eigenvalue-extraction (pos 74)",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -2692,7 +2692,100 @@
           "worst_span": 2
         }
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "a0f9349b6653",
+          "ts": "dc6f9a0e6d22",
+          "lean": "073f6af238d7"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.7,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:58.256Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "md gives explicit 5-point plan (spectral decomp -> eigenvalue def of q -> Hecke relation -> classical/quantum -> substrate link)."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "a0f9349b6653",
+          "ts": "dc6f9a0e6d22",
+          "lean": "073f6af238d7"
+        },
+        "result": "fail",
+        "severity": "minor",
+        "score": {
+          "value": 0.3,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:58.294Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Pure-algebra part (anti_eq_neg_inv, hecke_polynomial_roots, named theorem braiding_eigenvalue_extraction) is sorry-free, but the spectral decomposition is an axiom (spectral_decomposition_of_braiding) with Prop-valued placeholder hypotheses; the core categorical step rests on the axiom."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "a0f9349b6653",
+          "ts": "dc6f9a0e6d22",
+          "lean": "073f6af238d7"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:58.331Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Standard field_simp/ring algebra over a determinant constraint; the substantive content is the cited Kassel axiom, not a new argument."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "a0f9349b6653",
+          "ts": "dc6f9a0e6d22",
+          "lean": "073f6af238d7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:58.364Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "lean.ref QOU.braiding_eigenvalue_extraction present (theorem, line 195); proves existence of eigenvalue data satisfying the Hecke relation, consistent with md. Not vacuous."
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-07T06:00:58.364Z"
 }

@@ -2439,7 +2439,7 @@
         "reviewed_at": "2026-06-01T16:06:38.106Z",
         "reviewed_sha": "d4a8cf462aeef2262429b13571ddd385968bce63",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/predicted-spectra/force-carrier-bring-uniqueness.md:1 — detected regime [symbolic] is disjoint from chapter 'predicted-spectra' expected [fixed-q0, na, real-gt-1, real-positive]"
+        "evidence": "content/quantum-observable-universe/predicted-spectra/force-carrier-bring-uniqueness.md:1 \u2014 detected regime [symbolic] is disjoint from chapter 'predicted-spectra' expected [fixed-q0, na, real-gt-1, real-positive]"
       }
     ],
     "canonical-ck-tiered-not-binary": [
@@ -2564,7 +2564,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "Statement uses genus/symplectic homology — no archimedean constructs, purely algebraic/topological.",
+        "evidence": "Statement uses genus/symplectic homology \u2014 no archimedean constructs, purely algebraic/topological.",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -2585,7 +2585,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "Proof uses genus classification and uniqueness proposition — pure algebraic/topological, no Real.*/linarith/IVT.",
+        "evidence": "Proof uses genus classification and uniqueness proposition \u2014 pure algebraic/topological, no Real.*/linarith/IVT.",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -2691,7 +2691,95 @@
           "worst_span": 0
         }
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "28aab1d08a51",
+          "ts": "75359030d51b"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.85,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:05:42.952Z",
+        "reviewed_sha": "c73427b6738f398cb32fb2a9541142ef5650167e",
+        "notes": "Plan clear: a torus knot saturates H_1(Sigma_4)=Z^8 only if Seifert genus = g(Sigma_4)=4; combined with genus-4 classification gives {T_2,9, T_3,5}. md proof + corollary on [9]_q[10]_q complexity explicit."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "28aab1d08a51",
+          "ts": "75359030d51b"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.8,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:05:42.990Z",
+        "reviewed_sha": "c73427b6738f398cb32fb2a9541142ef5650167e",
+        "notes": "Sorry-free: theorem force_carrier_bring_uniqueness (K)(h:IsBringSaturating K) : (m=2 and n=9) or (m=3 and n=5) := torus_knot_genus_four_unique K h, plus force_carrier_categorical_complexity. Clean delegation to the upstream genus-4 Diophantine result (whose own soundness is tracked under torus-knot-genus-four-unique). No axiom/sorry locally."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "28aab1d08a51",
+          "ts": "75359030d51b"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:05:43.028Z",
+        "reviewed_sha": "c73427b6738f398cb32fb2a9541142ef5650167e",
+        "notes": "The genus-saturation framing is a reasonable structural argument but the core is the elementary Diophantine (m-1)(n-1)=8, gcd=1 => {(2,9),(3,5)}; conventional."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "28aab1d08a51",
+          "ts": "75359030d51b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:05:43.066Z",
+        "reviewed_sha": "c73427b6738f398cb32fb2a9541142ef5650167e",
+        "notes": "lean.ref qou:QOU.Archimedean.force_carrier_bring_uniqueness resolves to lean/QOU/Archimedean/ForceCarrierBringUniqueness.lean:32; statement (K.m=2 and K.n=9) or (K.m=3 and K.n=5) faithfully matches the md classification. Not vacuous, not =True, real content."
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-07T06:05:43.066Z"
 }

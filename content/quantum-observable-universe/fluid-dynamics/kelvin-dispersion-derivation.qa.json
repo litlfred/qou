@@ -2437,7 +2437,7 @@
         "reviewed_at": "2026-06-01T16:06:38.106Z",
         "reviewed_sha": "d4a8cf462aeef2262429b13571ddd385968bce63",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/kelvin-dispersion-derivation.md:1 — detected regime [root-of-unity] is disjoint from chapter 'fluid-dynamics' expected [fixed-q0, na, real-gt-1, real-positive]"
+        "evidence": "content/quantum-observable-universe/fluid-dynamics/kelvin-dispersion-derivation.md:1 \u2014 detected regime [root-of-unity] is disjoint from chapter 'fluid-dynamics' expected [fixed-q0, na, real-gt-1, real-positive]"
       }
     ],
     "canonical-ck-tiered-not-binary": [
@@ -2610,6 +2610,100 @@
           "fwd_edge_count": 0,
           "worst_span": 0
         }
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "baf9a32ad30b",
+          "ts": "24f28f7fd669",
+          "lean": "5fa269c675a0"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:26:50.858Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "Full first-principles derivation laid out: setup -> q-Laplacian eigenvalue problem -> D_q(z^k)=[k]_q z^{k-1} -> Delta_q(z^k)=-[k]_q^2 z^k -> dispersion omega_k -> damped decay rate. Step-by-step, very clear."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "baf9a32ad30b",
+          "ts": "24f28f7fd669",
+          "lean": "5fa269c675a0"
+        },
+        "result": "fail",
+        "severity": "minor",
+        "score": {
+          "value": 0.3,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:26:50.899Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "Lean is a sibling stub 'theorem kelvin_dispersion_derivation : True := by trivial'; the derived dispersion relation is not stated in Lean."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "baf9a32ad30b",
+          "ts": "24f28f7fd669",
+          "lean": "5fa269c675a0"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.55,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:26:50.938Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "A clean but fairly mechanical q-deformation of the standard Kelvin-wave dispersion (replace k by [k]_q via the q-derivative); derivation is sound but the argument is a routine q-analogue."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "baf9a32ad30b",
+          "ts": "24f28f7fd669",
+          "lean": "5fa269c675a0"
+        },
+        "result": "fail",
+        "severity": "critical",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:26:50.978Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "Sibling stub 'theorem kelvin_dispersion_derivation : True := by trivial' \u2014 True-placeholder, does not state the md dispersion result. Integrity FAIL."
       }
     ]
   },

@@ -2247,7 +2247,7 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'prop:alpha-em-shift-multiplicative-chain' → expected 'alpha_em_shift_multiplicative_chain'; Lean declares: instances, qIntegerIndex, alphaEmInvIndices, chainIndices, bareIndices.... Structural match via content."
+        "notes": "Label 'prop:alpha-em-shift-multiplicative-chain' \u2192 expected 'alpha_em_shift_multiplicative_chain'; Lean declares: instances, qIntegerIndex, alphaEmInvIndices, chainIndices, bareIndices.... Structural match via content."
       },
       {
         "field_hash": {
@@ -2263,7 +2263,7 @@
         },
         "reviewed_at": "2026-05-28T15:40:01.326Z",
         "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
-        "notes": "Label 'prop:alpha-em-shift-multiplicative-chain' → expected 'alpha_em_shift_multiplicative_chain'; Lean declares: qIntegerIndex, alphaEmInvIndices, chainIndices, bareIndices, alpha_em_shift_chain. Structural match via content."
+        "notes": "Label 'prop:alpha-em-shift-multiplicative-chain' \u2192 expected 'alpha_em_shift_multiplicative_chain'; Lean declares: qIntegerIndex, alphaEmInvIndices, chainIndices, bareIndices, alpha_em_shift_chain. Structural match via content."
       },
       {
         "field_hash": {
@@ -2279,7 +2279,7 @@
         },
         "reviewed_at": "2026-05-28T15:43:22.741Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
-        "notes": "Label 'prop:alpha-em-shift-multiplicative-chain' → expected 'alpha_em_shift_multiplicative_chain'; Lean declares: qIntegerIndex, alphaEmInvIndices, chainIndices, bareIndices, alpha_em_shift_chain. Structural match via content."
+        "notes": "Label 'prop:alpha-em-shift-multiplicative-chain' \u2192 expected 'alpha_em_shift_multiplicative_chain'; Lean declares: qIntegerIndex, alphaEmInvIndices, chainIndices, bareIndices, alpha_em_shift_chain. Structural match via content."
       },
       {
         "field_hash": {
@@ -2295,7 +2295,7 @@
         },
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
-        "notes": "Label 'prop:alpha-em-shift-multiplicative-chain' → expected 'alpha_em_shift_multiplicative_chain'; Lean declares: qIntegerIndex, alphaEmInvIndices, chainIndices, bareIndices, alpha_em_shift_chain. Structural match via content."
+        "notes": "Label 'prop:alpha-em-shift-multiplicative-chain' \u2192 expected 'alpha_em_shift_multiplicative_chain'; Lean declares: qIntegerIndex, alphaEmInvIndices, chainIndices, bareIndices, alpha_em_shift_chain. Structural match via content."
       },
       {
         "field_hash": {
@@ -2817,7 +2817,7 @@
         },
         "result": "warn",
         "severity": "minor",
-        "evidence": "Numerical verification subsection in proof body references q_0 ≈ 136.823 (archimedean evaluation); symbolic proof itself is clean but archimedean value appears in same ### Proof section",
+        "evidence": "Numerical verification subsection in proof body references q_0 \u2248 136.823 (archimedean evaluation); symbolic proof itself is clean but archimedean value appears in same ### Proof section",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -2940,6 +2940,98 @@
           "fwd_edge_count": 0,
           "worst_span": 0
         }
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "df65dfe766f1",
+          "ts": "aeba233bc626",
+          "lean": "7b72f9df356a"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.85,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T05:54:10.548Z",
+        "reviewed_sha": "c47fda4d79ef12172fe90e0c9b670b761a3f4d95",
+        "notes": "Plan up front: compose prop:em-coupling-projection (bare q[9]_q[10]_q) with prop:alpha-shift-torus-knot (alpha_shift=k(p-1)) specialised at (2,9),(3,5). Lean docstring states the rw/simp substitution."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "df65dfe766f1",
+          "ts": "aeba233bc626",
+          "lean": "7b72f9df356a"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.7,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T05:54:10.584Z",
+        "reviewed_sha": "c47fda4d79ef12172fe90e0c9b670b761a3f4d95",
+        "notes": "Sorry-free (rw alpha_shift_torus_knot; rfl) but Lean proves only the index-list proxy [alphaShift 2 9, alphaShift 3 5]=[9,10], not the full q-integer product identity; relies on witness-backed HasAlphaShiftTorus instances. Faithful to the load-bearing substitution step."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "df65dfe766f1",
+          "ts": "aeba233bc626",
+          "lean": "7b72f9df356a"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.4,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T05:54:10.619Z",
+        "reviewed_sha": "c47fda4d79ef12172fe90e0c9b670b761a3f4d95",
+        "notes": "Standard composition of two already-named identities; multiplicative-chain re-expression, not a novel argument."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "df65dfe766f1",
+          "ts": "aeba233bc626",
+          "lean": "7b72f9df356a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T05:54:10.654Z",
+        "reviewed_sha": "c47fda4d79ef12172fe90e0c9b670b761a3f4d95",
+        "notes": "lean.ref decl alpha_em_shift_chain present. Statement chainIndices=bareIndices is a faithful index-projection of the substitution (not vacuous, not =True, not restating-target); the full identity is the composed md claim."
       }
     ]
   },

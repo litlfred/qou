@@ -2230,7 +2230,7 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'prop:confinement-phase-stratification' → expected 'confinement_phase_stratification'; Lean declares: (level-sufficiency,, ConfinedParticleTy, confined, confinementLocus, mu.... Structural match via content."
+        "notes": "Label 'prop:confinement-phase-stratification' \u2192 expected 'confinement_phase_stratification'; Lean declares: (level-sufficiency,, ConfinedParticleTy, confined, confinementLocus, mu.... Structural match via content."
       },
       {
         "field_hash": {
@@ -2246,7 +2246,7 @@
         },
         "reviewed_at": "2026-05-28T15:40:01.326Z",
         "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
-        "notes": "Label 'prop:confinement-phase-stratification' → expected 'confinement_phase_stratification'; Lean declares: ConfinedParticleTy, confined, confinementLocus, mu, sigmaF.... Structural match via content."
+        "notes": "Label 'prop:confinement-phase-stratification' \u2192 expected 'confinement_phase_stratification'; Lean declares: ConfinedParticleTy, confined, confinementLocus, mu, sigmaF.... Structural match via content."
       },
       {
         "field_hash": {
@@ -2262,7 +2262,7 @@
         },
         "reviewed_at": "2026-05-28T15:43:22.741Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
-        "notes": "Label 'prop:confinement-phase-stratification' → expected 'confinement_phase_stratification'; Lean declares: ConfinedParticleTy, confined, confinementLocus, mu, sigmaF.... Structural match via content."
+        "notes": "Label 'prop:confinement-phase-stratification' \u2192 expected 'confinement_phase_stratification'; Lean declares: ConfinedParticleTy, confined, confinementLocus, mu, sigmaF.... Structural match via content."
       },
       {
         "field_hash": {
@@ -2278,7 +2278,7 @@
         },
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
-        "notes": "Label 'prop:confinement-phase-stratification' → expected 'confinement_phase_stratification'; Lean declares: ConfinedParticleTy, confined, confinementLocus, mu, sigmaF.... Structural match via content."
+        "notes": "Label 'prop:confinement-phase-stratification' \u2192 expected 'confinement_phase_stratification'; Lean declares: ConfinedParticleTy, confined, confinementLocus, mu, sigmaF.... Structural match via content."
       },
       {
         "field_hash": {
@@ -2596,7 +2596,7 @@
         "reviewed_at": "2026-06-01T16:06:38.106Z",
         "reviewed_sha": "d4a8cf462aeef2262429b13571ddd385968bce63",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/confinement-phase-stratification.md:1 — detected regime [symbolic] is disjoint from chapter 'particle-interactions' expected [fixed-q0, na, real-gt-1, real-positive]"
+        "evidence": "content/quantum-observable-universe/particle-interactions/confinement-phase-stratification.md:1 \u2014 detected regime [symbolic] is disjoint from chapter 'particle-interactions' expected [fixed-q0, na, real-gt-1, real-positive]"
       }
     ],
     "canonical-ck-tiered-not-binary": [
@@ -2724,7 +2724,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "Statement uses q in G subset R_{>1}, ordering predicates, SDP predicates — archimedean constructs matching particle-interactions chapter regime.",
+        "evidence": "Statement uses q in G subset R_{>1}, ordering predicates, SDP predicates \u2014 archimedean constructs matching particle-interactions chapter regime.",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -2746,7 +2746,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "Proof uses Boyd-Vandenberghe real-analytic lemma, polynomial determinants, SDP continuity — all archimedean, matching chapter regime.",
+        "evidence": "Proof uses Boyd-Vandenberghe real-analytic lemma, polynomial determinants, SDP continuity \u2014 all archimedean, matching chapter regime.",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -2852,7 +2852,99 @@
           "worst_span": 0
         }
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "366ae0556c8d",
+          "ts": "08d5240ba178",
+          "lean": "39d20f7f303a"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.85,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:19.010Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "MD gives 5 numbered claims (openness, stratification, local constancy, scope, phase transitions) each with a proof paragraph citing Boyd-Vandenberghe Slater perturbation; well-structured."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "366ae0556c8d",
+          "ts": "08d5240ba178",
+          "lean": "39d20f7f303a"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0.3,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:19.047Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Lean replaces the SDP feasibility predicate with a 'unit-particle model' confined:=fun _ _=>True, mu:=fun _ _=>2 \u2014 so openness=IsOpen univ and mu-constancy=rfl. A WEAKENED PROXY: claims (2) stratification and (5) phase transitions are not captured; headline proves only IsOpen univ."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "366ae0556c8d",
+          "ts": "08d5240ba178",
+          "lean": "39d20f7f303a"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.7,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:19.083Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Phase-scoped applicability (confinement theorems hold per-component, fail on boundaries) via SDP Slater-strict stratification is a genuinely useful framing."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "366ae0556c8d",
+          "ts": "08d5240ba178",
+          "lean": "39d20f7f303a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:19.121Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "lean.ref QOU.BraidKnot.ConfinementPhaseStratification resolves to IsOpen (confinementLocus P), a real Prop; but on the trivial model it reduces to IsOpen univ. Honestly documented as a concrete-model replacement; gap captured under plausibility."
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-07T06:00:19.121Z"
 }

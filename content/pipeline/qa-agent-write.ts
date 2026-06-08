@@ -16,6 +16,7 @@
  *     --criterion <criterion-id> \
  *     --result pass|fail|warn|n/a \
  *     [--severity critical|major|minor] \
+ *     [--score 0.85] [--score-max 1] [--score-rubric '{"clarity":0.9}'] \
  *     [--evidence "file:line — verbatim quote"] \
  *     [--notes "..."] \
  *     [--model claude-opus-4-8] [--skill local/qa-agent-drain]
@@ -78,6 +79,65 @@ if (severity && !["critical", "major", "minor"].includes(severity)) {
 }
 const evidence = arg("evidence");
 const notes = arg("notes");
+// Optional rubric score for scored (rater-style) criteria, e.g. proof-rater-*.
+// The agent supplies BOTH --result (band) and --score (the 0–1 value).
+const scoreRaw = arg("score");
+// --score-max / --score-rubric are meaningless without --score; reject rather
+// than silently ignore a user mistake (Copilot review #1939).
+if (scoreRaw === undefined) {
+  if (arg("score-max") !== undefined) fail("--score-max requires --score");
+  if (arg("score-rubric") !== undefined) fail("--score-rubric requires --score");
+}
+let score: QaCriterionEntry["score"] | undefined;
+if (scoreRaw !== undefined) {
+  const value = Number(scoreRaw);
+  const max = arg("score-max") !== undefined ? Number(arg("score-max")) : 1;
+  if (!Number.isFinite(value) || !Number.isFinite(max) || max <= 0) {
+    fail("--score and --score-max must be finite numbers with max > 0");
+  }
+  if (value < 0 || value > max) fail(`--score must be in [0, ${max}] (got ${value})`);
+  const rubricRaw = arg("score-rubric");
+  let rubric: Record<string, number> | undefined;
+  if (rubricRaw !== undefined) {
+    if (rubricRaw === "" || rubricRaw.startsWith("-")) {
+      fail("--score-rubric requires a JSON-object value, e.g. '{\"clarity\":0.8}'");
+    }
+    let parsed: unknown;
+    try {
+      parsed = JSON.parse(rubricRaw);
+    } catch {
+      fail("--score-rubric must be valid JSON, e.g. '{\"clarity\":0.8}'");
+    }
+    // Must be a plain object whose values are all finite numbers
+    // (matches Record<string, number>; rejects arrays/scalars/null/NaN).
+    if (
+      typeof parsed !== "object" ||
+      parsed === null ||
+      Array.isArray(parsed) ||
+      !Object.values(parsed as Record<string, unknown>).every(
+        (v) => typeof v === "number" && Number.isFinite(v),
+      )
+    ) {
+      fail(
+        "--score-rubric must be a JSON object of finite numbers, e.g. '{\"clarity\":0.8}'",
+      );
+    }
+    rubric = parsed as Record<string, number>;
+  }
+  score = { value, max, ...(rubric ? { rubric } : {}) };
+}
+// Enforce the rubric band↔result mapping when a score is present (prevents
+// e.g. `--result pass --score 0.1`): ≥0.66 ⇒ pass, ≥0.33 ⇒ warn, else fail.
+if (score) {
+  const frac = score.value / score.max;
+  const band = frac >= 0.66 ? "pass" : frac >= 0.33 ? "warn" : "fail";
+  if (result !== band) {
+    fail(
+      `--result "${result}" contradicts --score ${score.value}/${score.max} ` +
+        `(band "${band}"); use --result ${band} or adjust the score`,
+    );
+  }
+}
 const model = arg("model") ?? "claude-opus-4-8";
 const skill = arg("skill") ?? "local/qa-agent-drain";
 
@@ -126,6 +186,7 @@ const entry: QaCriterionEntry = {
   field_hash: currentHashes,
   result: result!,
   ...(severity ? { severity } : {}),
+  ...(score ? { score } : {}),
   ...(evidence ? { evidence } : {}),
   reviewer: {
     kind: "agent",
@@ -151,5 +212,5 @@ report.criteria[criterion] = [...kept, entry];
 
 saveQaReport(qaPath, report);
 console.log(
-  `qa-agent-write: ${criterion} = ${result}${severity ? ` (${severity})` : ""}  -> ${relative(REPO_ROOT, qaPath)}`,
+  `qa-agent-write: ${criterion} = ${result}${severity ? ` (${severity})` : ""}${score ? ` score=${score.value}/${score.max}` : ""}  -> ${relative(REPO_ROOT, qaPath)}`,
 );

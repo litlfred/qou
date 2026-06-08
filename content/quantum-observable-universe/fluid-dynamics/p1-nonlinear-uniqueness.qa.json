@@ -2094,7 +2094,7 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'prop:q-ns-nonlinear-uniqueness' → expected 'q_ns_nonlinear_uniqueness'; Lean declares: p1_nonlinear_uniqueness. Structural match via content."
+        "notes": "Label 'prop:q-ns-nonlinear-uniqueness' \u2192 expected 'q_ns_nonlinear_uniqueness'; Lean declares: p1_nonlinear_uniqueness. Structural match via content."
       },
       {
         "field_hash": {
@@ -2110,7 +2110,7 @@
         },
         "reviewed_at": "2026-05-28T15:40:01.326Z",
         "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
-        "notes": "Label 'prop:q-ns-nonlinear-uniqueness' → expected 'q_ns_nonlinear_uniqueness'; Lean declares: p1_nonlinear_uniqueness. Structural match via content."
+        "notes": "Label 'prop:q-ns-nonlinear-uniqueness' \u2192 expected 'q_ns_nonlinear_uniqueness'; Lean declares: p1_nonlinear_uniqueness. Structural match via content."
       },
       {
         "field_hash": {
@@ -2126,7 +2126,7 @@
         },
         "reviewed_at": "2026-05-28T15:43:22.741Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
-        "notes": "Label 'prop:q-ns-nonlinear-uniqueness' → expected 'q_ns_nonlinear_uniqueness'; Lean declares: p1_nonlinear_uniqueness. Structural match via content."
+        "notes": "Label 'prop:q-ns-nonlinear-uniqueness' \u2192 expected 'q_ns_nonlinear_uniqueness'; Lean declares: p1_nonlinear_uniqueness. Structural match via content."
       },
       {
         "field_hash": {
@@ -2142,7 +2142,7 @@
         },
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
-        "notes": "Label 'prop:q-ns-nonlinear-uniqueness' → expected 'q_ns_nonlinear_uniqueness'; Lean declares: p1_nonlinear_uniqueness. Structural match via content."
+        "notes": "Label 'prop:q-ns-nonlinear-uniqueness' \u2192 expected 'q_ns_nonlinear_uniqueness'; Lean declares: p1_nonlinear_uniqueness. Structural match via content."
       },
       {
         "field_hash": {
@@ -2608,6 +2608,100 @@
           "fwd_edge_count": 0,
           "worst_span": 0
         }
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "a34e5dba9181",
+          "ts": "a5425c5a6e2b",
+          "lean": "e62083acd377"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.85,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:28:37.503Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "md states the plan: (a) q-Ladyzhenskaya bound on the advection term, (b) enstrophy Gronwall bound (no finite-time blowup), (c) uniqueness from (a)+(b). Clear, though concise."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "a34e5dba9181",
+          "ts": "a5425c5a6e2b",
+          "lean": "e62083acd377"
+        },
+        "result": "fail",
+        "severity": "minor",
+        "score": {
+          "value": 0.3,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:28:37.541Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "Lean is a sibling stub 'theorem p1_nonlinear_uniqueness : True := by trivial'; the estimates/uniqueness are not stated. (Also: Lean Ref says prop:q-ns-nonlinear-uniqueness but .ts label is prop:p1-nonlinear-uniqueness \u2014 label drift.)"
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "a34e5dba9181",
+          "ts": "a5425c5a6e2b",
+          "lean": "e62083acd377"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:28:37.579Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "q-deformed Ladyzhenskaya inequality + enstrophy Gronwall + uniqueness is a routine q-analogue of the standard 2D NS regularity argument; sound but not a new argument."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "a34e5dba9181",
+          "ts": "a5425c5a6e2b",
+          "lean": "e62083acd377"
+        },
+        "result": "fail",
+        "severity": "critical",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:28:37.617Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "Sibling stub 'theorem p1_nonlinear_uniqueness : True := by trivial' \u2014 True-placeholder, does not state the md estimates/uniqueness. Integrity FAIL."
       }
     ]
   },

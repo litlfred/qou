@@ -2609,6 +2609,100 @@
           "worst_span": 0
         }
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "d536de25f593",
+          "ts": "f987dcc33db2",
+          "lean": "357784fd52c7"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.9,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:28:37.248Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "md proof is direct: Hom_C(1, Ad(A)) is computed in C (defined independently of q); q only sets the differential d_q on Omega^*(A), which the Hom space does not see; Ad(A) uses only the Hopf structure (mu, Delta, S). Clear."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "d536de25f593",
+          "ts": "f987dcc33db2",
+          "lean": "357784fd52c7"
+        },
+        "result": "fail",
+        "severity": "minor",
+        "score": {
+          "value": 0.3,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:28:37.294Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "The sibling .lean is a True stub 'theorem observability_q_independent : True := by trivial' \u2014 vacuous; the real claim (Hom space independent of substrate section) is not stated here (header points to GaugeFieldFluidDynamics.lean but the sibling itself proves nothing)."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "d536de25f593",
+          "ts": "f987dcc33db2",
+          "lean": "357784fd52c7"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.4,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:28:37.337Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "Clean but essentially trivial categorical observation: the observability Hom-space lives in the q-independent monoidal category, so it is constant over the substrate G_m fibre. Standard once the setup is granted."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "d536de25f593",
+          "ts": "f987dcc33db2",
+          "lean": "357784fd52c7"
+        },
+        "result": "fail",
+        "severity": "critical",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:28:37.425Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "Sibling stub 'theorem observability_q_independent : True := by trivial' \u2014 True-placeholder for a THEOREM. Does not state the md q-independence claim. Integrity FAIL."
+      }
     ]
   },
   "updated_at": "2026-06-07T05:58:41.267Z"

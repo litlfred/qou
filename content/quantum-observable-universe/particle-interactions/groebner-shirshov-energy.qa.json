@@ -2372,7 +2372,7 @@
         "reviewed_at": "2026-06-01T16:06:38.106Z",
         "reviewed_sha": "d4a8cf462aeef2262429b13571ddd385968bce63",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/groebner-shirshov-energy.md:52 — formal-power-series context uses 'q < 1' or 'q > 1' rather than '|q| < 1' / '|q| > 1' — (since $q > 1$ ensures $q - q^{-1} > 0$)."
+        "evidence": "content/quantum-observable-universe/particle-interactions/groebner-shirshov-energy.md:52 \u2014 formal-power-series context uses 'q < 1' or 'q > 1' rather than '|q| < 1' / '|q| > 1' \u2014 (since $q > 1$ ensures $q - q^{-1} > 0$)."
       }
     ],
     "q-usage-root-of-unity-undeclared": [
@@ -2534,7 +2534,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "Energy functional defined as formal Laurent polynomial in Z[q±1]; archimedean realization explicitly deferred via substrate-internal banner",
+        "evidence": "Energy functional defined as formal Laurent polynomial in Z[q\u00b11]; archimedean realization explicitly deferred via substrate-internal banner",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -2662,7 +2662,99 @@
           "worst_span": 0
         }
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "86d931e6f0ba",
+          "ts": "2469a091c744",
+          "lean": "fd32f78a9a90"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.85,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:20.939Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "MD states 3 parts (only Hecke changes energy; energy path-independent via Bergman diamond; each Hecke step \u0394=|c|(q-q\u207b\u00b9)) with proofs + the Habiro-ring substrate scoping + verification tables; clear."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "86d931e6f0ba",
+          "ts": "2469a091c744",
+          "lean": "fd32f78a9a90"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0.3,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:20.978Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Lean proves heckeEnergyChange_pos and totalEnergyChange_nonneg (real), but the HEADLINE claim \u2014 energy_path_independent (Part 2) \u2014 is an 'axiom', as is beta_decay_energy_negative; yangBaxter_energy_zero/farComm_energy_zero are vacuous (0:\u211d)=0:=rfl. Core path-independence not proved."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "86d931e6f0ba",
+          "ts": "2469a091c744",
+          "lean": "fd32f78a9a90"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.7,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:21.014Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Energy as a Gr\u00f6bner-Shirshov (diamond-lemma) invariant with each Hecke step carrying definite (q-q\u207b\u00b9) weight = Skein binding energy is a distinctive framework result."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "86d931e6f0ba",
+          "ts": "2469a091c744",
+          "lean": "fd32f78a9a90"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:21.048Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "lean.ref QOU.Archimedean.groebner_shirshov_energy resolves to a real def (the energy functional); heckeEnergyChange_pos/totalEnergyChange_nonneg are non-vacuous. The path-independence + beta-negative claims are honest 'axiom's (not hidden = True). yangBaxter/farComm 'energy_zero' lemmas are trivial fillers (flag), but the ref decl + supporting lemmas are real."
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-07T06:00:21.048Z"
 }

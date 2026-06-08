@@ -2437,7 +2437,7 @@
         "reviewed_at": "2026-06-01T16:06:38.106Z",
         "reviewed_sha": "d4a8cf462aeef2262429b13571ddd385968bce63",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/demand-stability.md:1 — detected regime [symbolic] is disjoint from chapter 'particle-interactions' expected [fixed-q0, na, real-gt-1, real-positive]"
+        "evidence": "content/quantum-observable-universe/particle-interactions/demand-stability.md:1 \u2014 detected regime [symbolic] is disjoint from chapter 'particle-interactions' expected [fixed-q0, na, real-gt-1, real-positive]"
       }
     ],
     "canonical-ck-tiered-not-binary": [
@@ -2565,7 +2565,7 @@
         },
         "result": "fail",
         "severity": "major",
-        "evidence": "Statement body includes numeric q_0 values (|c_{e^-}(n)| = 0.044, net(n) = 0.811) — archimedean numerics in a substrate-chapter proposition.",
+        "evidence": "Statement body includes numeric q_0 values (|c_{e^-}(n)| = 0.044, net(n) = 0.811) \u2014 archimedean numerics in a substrate-chapter proposition.",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -2587,7 +2587,7 @@
         },
         "result": "fail",
         "severity": "major",
-        "evidence": "Proof section contains numeric q_0 evaluations (0.044, 0.043, 0.811, 0.999) — archimedean values embedded in substrate-chapter proposition.",
+        "evidence": "Proof section contains numeric q_0 evaluations (0.044, 0.043, 0.811, 0.999) \u2014 archimedean values embedded in substrate-chapter proposition.",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -2693,7 +2693,100 @@
           "worst_span": 0
         }
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "e7f405288cff",
+          "ts": "ce2d69bc69da",
+          "lean": "1a673c5ea141"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.8,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:19.599Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "MD defines the demand profile and gives the 3-part stability criterion (beta-stable / shell-closed / doubly-magic) with the He-3 vs He-4 example and the beta-decay receptivity condition; clear."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "e7f405288cff",
+          "ts": "ce2d69bc69da",
+          "lean": "1a673c5ea141"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0.3,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:19.634Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Sibling Lean is ': True := trivial' \u2014 none of the demand-profile stability criterion formalized."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "e7f405288cff",
+          "ts": "ce2d69bc69da",
+          "lean": "1a673c5ea141"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.55,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:19.672Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Negative-NF-coefficient demand profile as a stability diagnostic is a sensible framework idea, moderately novel."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "e7f405288cff",
+          "ts": "ce2d69bc69da",
+          "lean": "1a673c5ea141"
+        },
+        "result": "fail",
+        "severity": "critical",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:19.709Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "lean.ref QOU.ParticleInteractions.demand_stability proves ': True := trivial' \u2014 = True vacuous stub. INTEGRITY FAIL."
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-07T06:00:19.709Z"
 }

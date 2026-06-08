@@ -106,6 +106,98 @@
           "worst_span": 0
         }
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "028336b2a715",
+          "ts": "fd641b09e49a",
+          "lean": "94e6ef3b8fac"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T01:35:37.598Z",
+        "reviewed_sha": "5b22f37e27e74b674fb6b50fae73e0792e7212e2",
+        "notes": "Clear: q-holonomic G(qx)=R(q,x)G(x) => depth-d P-recursive recurrence (1) + confluent differential limit (2); explicitly flags that R's existence/identity is the open part."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "028336b2a715",
+          "ts": "fd641b09e49a",
+          "lean": "94e6ef3b8fac"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T01:35:37.630Z",
+        "reviewed_sha": "5b22f37e27e74b674fb6b50fae73e0792e7212e2",
+        "notes": "Sorry-free. Caveat: theorem binding_qdifference_recurrence is just 'S.recurrence n' \u2014 it projects the recurrence out of an assumed structure field; the q-holonomic=>P-recursive passage is asserted in prose. Gap (existence of R) named/open."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "028336b2a715",
+          "ts": "fd641b09e49a",
+          "lean": "94e6ef3b8fac"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T01:35:37.660Z",
+        "reviewed_sha": "5b22f37e27e74b674fb6b50fae73e0792e7212e2",
+        "notes": "Standard q-holonomic => P-recursive machinery (md: 'same q-difference machinery as the Q_beta precision ladder'); applied to binding series. Not duplicated but not novel theory."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "028336b2a715",
+          "ts": "fd641b09e49a",
+          "lean": "94e6ef3b8fac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T01:35:37.691Z",
+        "reviewed_sha": "5b22f37e27e74b674fb6b50fae73e0792e7212e2",
+        "notes": "Sorry-free; no stub/True-placeholder/suspect-axiom. The recurrence is a structure hypothesis field (honest), and md is explicit that kernel R existence is open. Self-consistent."
+      }
     ]
   },
   "updated_at": "2026-06-07T05:58:41.267Z"

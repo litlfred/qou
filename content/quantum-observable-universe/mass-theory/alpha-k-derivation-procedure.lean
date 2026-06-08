@@ -1,3 +1,5 @@
+import Mathlib
+
 /-!
 # QOU.BraidKnot.alpha_k_derivation_procedure
 
@@ -5,7 +7,22 @@ Linear-system procedure for Jones–Markov block-weights `y_λ` at
 `H_n(R, q)`.  At generic `q` the Markov-trace property
 `tr_M(x · T_n) = z · tr_M(x)` fixes `tr_M(w_μ) = z^{n - len μ}` for
 every cycle-type representative `w_μ`, giving a `p(n) × p(n)` linear
-system that solves uniquely for `y_λ`.
+system
+
+  `Σ_λ χ_λ(w_μ) · y_λ  =  z^{n - len μ}`,   `A · y = b`,
+
+with `A_{μ,λ} = χ_λ(w_μ)`.  At generic `q` the character matrix `A`
+is invertible (Schur–Weyl–Hecke duality / cycle-type representatives
+form a class-function basis), so the system has a **unique** solution
+`y_λ`.
+
+The core mathematical content of the proposition is exactly this:
+*for an invertible square matrix `A` and any right-hand side `b`, the
+linear system `A · y = b` has a unique solution.*  The Lean statement
+below isolates that content over `ℝ` (the archimedean specialisation
+of the generic ring `R` at the substrate `q_0`); the existence witness
+is `A⁻¹ · b`, and uniqueness follows from injectivity of `v ↦ A · v`
+for invertible `A`.
 
 LaTeX label: `prop:alpha-k-derivation-procedure`
 
@@ -17,31 +34,33 @@ LaTeX label: `prop:alpha-k-derivation-procedure`
 
 namespace QOU.BraidKnot
 
-/-- Linear-system data for Jones–Markov weight extraction. -/
-structure JonesMarkovSystem (n : ℕ) where
-  partitions : List (List ℕ)              -- p(n) partitions of n
-  cycle_words : List (List ℕ)             -- p(n) cycle-type reduced words
-  chi_matrix : ℕ → ℕ → ℝ                  -- χ_λ(w_μ) entries (μ-row, λ-col)
-  z_powers : List ℝ                       -- b_μ = z^{n - len μ}
+open Matrix
 
-/-- Solve the linear system for `y_λ` (existence form). -/
-noncomputable def solveJonesMarkov (n : ℕ) (S : JonesMarkovSystem n) : List ℝ :=
-  -- Algorithmic content: numpy.linalg.solve(A, b).
-  -- The closed-form analogue uses the inverse character table.
-  S.z_powers
+/-- **Proposition (linear-system characterisation of `y_λ`)**.
 
-/-- **Proposition (linear-system characterisation of y_λ)**.
-
-    At generic `q`, the character matrix `χ_λ(w_μ)` is invertible
-    (Schur–Weyl-Hecke duality), so the linear system has a unique
-    solution `y_λ ∈ R((z))`. -/
+    At generic `q` the character matrix `A = [χ_λ(w_μ)]` is invertible
+    (Schur–Weyl–Hecke duality), so the Jones–Markov linear system
+    `A *ᵥ y = b` (with `b_μ = z^{n - len μ}`) has a **unique** solution
+    `y`.  This is the abstract content: for an invertible square matrix
+    `A` over `ℝ` and any `b`, `A *ᵥ y = b` has a unique solution,
+    namely `y = A⁻¹ *ᵥ b`. -/
 -- Ref: [manuscript] Ch. Braids and Knots, §α_k derivation procedure
 -- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
 --      — Jones, "Hecke algebra representations of braid groups and link
 --      polynomials," Ann. Math. 126 (1987). Verified against the
 --      published version.
-theorem alpha_k_derivation_procedure (n : ℕ) (S : JonesMarkovSystem n) :
-    ∃ y : List ℝ, y = solveJonesMarkov n S :=
-  ⟨solveJonesMarkov n S, rfl⟩
+theorem alpha_k_derivation_procedure {p : ℕ}
+    (A : Matrix (Fin p) (Fin p) ℝ) [Invertible A] (b : Fin p → ℝ) :
+    ∃! y : Fin p → ℝ, A *ᵥ y = b := by
+  refine ⟨A⁻¹ *ᵥ b, ?_, ?_⟩
+  · -- existence: `A *ᵥ (A⁻¹ *ᵥ b) = (A * A⁻¹) *ᵥ b = 1 *ᵥ b = b`
+    show A *ᵥ (A⁻¹ *ᵥ b) = b
+    rw [Matrix.mulVec_mulVec, Matrix.mul_inv_of_invertible, Matrix.one_mulVec]
+  · -- uniqueness: any solution `y` satisfies `A *ᵥ y = b = A *ᵥ (A⁻¹ *ᵥ b)`,
+    -- so `y = A⁻¹ *ᵥ b` by injectivity of `(A *ᵥ ·)` for invertible `A`.
+    intro y hy
+    apply Matrix.mulVec_injective_of_invertible A
+    show A *ᵥ y = A *ᵥ (A⁻¹ *ᵥ b)
+    rw [hy, Matrix.mulVec_mulVec, Matrix.mul_inv_of_invertible, Matrix.one_mulVec]
 
 end QOU.BraidKnot

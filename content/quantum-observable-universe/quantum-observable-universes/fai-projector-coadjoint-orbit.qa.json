@@ -2563,7 +2563,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "Statement uses only categorical constructs (V in C, Ad(A), coadjoint orbit) — no archimedean machinery.",
+        "evidence": "Statement uses only categorical constructs (V in C, Ad(A), coadjoint orbit) \u2014 no archimedean machinery.",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -2691,7 +2691,102 @@
           "worst_span": 0
         }
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "7ae62b4427b2",
+          "ts": "740364ec6273",
+          "lean": "b5e6e7ae74fb"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.7,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:01:02.349Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "md states the lemma clearly: traceless component sigma(rho)=rho-1/2 id is an involution ((2 sigma)^2=id) and identifies P(V)=G/T with a closed coadjoint orbit."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "7ae62b4427b2",
+          "ts": "740364ec6273",
+          "lean": "b5e6e7ae74fb"
+        },
+        "result": "fail",
+        "severity": "minor",
+        "score": {
+          "value": 0.3,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:01:02.386Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Lean is a sibling stub: theorem fai_projector_coadjoint_orbit : True := trivial. None of the lemma content is formalised."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "7ae62b4427b2",
+          "ts": "740364ec6273",
+          "lean": "b5e6e7ae74fb"
+        },
+        "result": "fail",
+        "severity": "minor",
+        "score": {
+          "value": 0.2,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:01:02.423Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Vacuous True stub; no argument."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "7ae62b4427b2",
+          "ts": "740364ec6273",
+          "lean": "b5e6e7ae74fb"
+        },
+        "result": "fail",
+        "severity": "critical",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:01:02.456Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "INTEGRITY FAIL: lean.ref QOU.QuantumObservableUniverse.fai_projector_coadjoint_orbit proves : True := trivial (= True vacuous stub), not the md's involution / coadjoint-orbit claim."
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-07T06:01:02.456Z"
 }

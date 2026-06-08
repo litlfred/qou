@@ -2230,7 +2230,7 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'prop:core-levi-form' → expected 'core_levi_form'; Lean declares: QAubinLions, NSCounterexample, CriticalExponent, BlowupYekutieli, RegularityBreakdown.... Structural match via content."
+        "notes": "Label 'prop:core-levi-form' \u2192 expected 'core_levi_form'; Lean declares: QAubinLions, NSCounterexample, CriticalExponent, BlowupYekutieli, RegularityBreakdown.... Structural match via content."
       },
       {
         "field_hash": {
@@ -2246,7 +2246,7 @@
         },
         "reviewed_at": "2026-05-28T15:40:01.326Z",
         "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
-        "notes": "Label 'prop:core-levi-form' → expected 'core_levi_form'; Lean declares: QAubinLions, NSCounterexample, CriticalExponent, BlowupYekutieli, RegularityBreakdown.... Structural match via content."
+        "notes": "Label 'prop:core-levi-form' \u2192 expected 'core_levi_form'; Lean declares: QAubinLions, NSCounterexample, CriticalExponent, BlowupYekutieli, RegularityBreakdown.... Structural match via content."
       },
       {
         "field_hash": {
@@ -2262,7 +2262,7 @@
         },
         "reviewed_at": "2026-05-28T15:43:22.741Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
-        "notes": "Label 'prop:core-levi-form' → expected 'core_levi_form'; Lean declares: QAubinLions, NSCounterexample, CriticalExponent, BlowupYekutieli, RegularityBreakdown.... Structural match via content."
+        "notes": "Label 'prop:core-levi-form' \u2192 expected 'core_levi_form'; Lean declares: QAubinLions, NSCounterexample, CriticalExponent, BlowupYekutieli, RegularityBreakdown.... Structural match via content."
       },
       {
         "field_hash": {
@@ -2278,7 +2278,7 @@
         },
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
-        "notes": "Label 'prop:core-levi-form' → expected 'core_levi_form'; Lean declares: QAubinLions, NSCounterexample, CriticalExponent, BlowupYekutieli, RegularityBreakdown.... Structural match via content."
+        "notes": "Label 'prop:core-levi-form' \u2192 expected 'core_levi_form'; Lean declares: QAubinLions, NSCounterexample, CriticalExponent, BlowupYekutieli, RegularityBreakdown.... Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -2745,6 +2745,100 @@
           "fwd_edge_count": 0,
           "worst_span": 0
         }
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "9fa41da1cf2e",
+          "ts": "d6c99adf43bc",
+          "lean": "d43579af2af8"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.9,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:26:07.930Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "md opens with explicit conditional banner (on 4 props + conj:regularity-breakdown) and lays out parts (a) aspect-ratio=sqrt(lambda_par/lambda_perp), (b) condition number, (c) 5-way equivalence, (d) q>1 bound, (e) q=1 \u2014 clear plan."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "9fa41da1cf2e",
+          "ts": "d6c99adf43bc",
+          "lean": "d43579af2af8"
+        },
+        "result": "fail",
+        "severity": "minor",
+        "score": {
+          "value": 0.3,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:26:07.972Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "Lean takes 5 [Instance] hyps but proves only 'True := trivial' \u2014 the real proposition (aspect ratio = sqrt(lambda ratio), 5-way equivalence) is NOT stated; classes are toy proxies (e.g. (3*4:N)=12). Core gap + conjecture-dependent."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "9fa41da1cf2e",
+          "ts": "d6c99adf43bc",
+          "lean": "d43579af2af8"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.75,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:26:08.013Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "Genuinely novel bridge: CR-geometry Levi-form non-degeneracy on the normal plane <=> vortex core aspect ratio bounded <=> NS regularity. Contact-geometry diagnosis of blowup is not standard."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "9fa41da1cf2e",
+          "ts": "d6c99adf43bc",
+          "lean": "d43579af2af8"
+        },
+        "result": "fail",
+        "severity": "critical",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:26:08.054Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "Lean conclusion is 'True := trivial' (with 5 class hyps); does not state the md's aspect-ratio / condition-number / 5-way-equivalence claim. Integrity FAIL."
       }
     ]
   },

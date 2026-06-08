@@ -2094,7 +2094,7 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'prop:lagrange-resolvent-transform' → expected 'lagrange_resolvent_transform'; Lean declares: ζ, ζ_pow_five, ζ_ne_zero, ζ_pow_four_eq_inv, lagrangeResolvent.... Structural match via content."
+        "notes": "Label 'prop:lagrange-resolvent-transform' \u2192 expected 'lagrange_resolvent_transform'; Lean declares: \u03b6, \u03b6_pow_five, \u03b6_ne_zero, \u03b6_pow_four_eq_inv, lagrangeResolvent.... Structural match via content."
       },
       {
         "field_hash": {
@@ -2110,7 +2110,7 @@
         },
         "reviewed_at": "2026-05-28T15:40:01.326Z",
         "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
-        "notes": "Label 'prop:lagrange-resolvent-transform' → expected 'lagrange_resolvent_transform'; Lean declares: lagrangeResolvent, cyclicPerm, lagrange_resolvent_w0_vanishes, lagrange_resolvent_diagonal_action. Structural match via content."
+        "notes": "Label 'prop:lagrange-resolvent-transform' \u2192 expected 'lagrange_resolvent_transform'; Lean declares: lagrangeResolvent, cyclicPerm, lagrange_resolvent_w0_vanishes, lagrange_resolvent_diagonal_action. Structural match via content."
       },
       {
         "field_hash": {
@@ -2126,7 +2126,7 @@
         },
         "reviewed_at": "2026-05-28T15:43:22.741Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
-        "notes": "Label 'prop:lagrange-resolvent-transform' → expected 'lagrange_resolvent_transform'; Lean declares: lagrangeResolvent, cyclicPerm, lagrange_resolvent_w0_vanishes, lagrange_resolvent_diagonal_action. Structural match via content."
+        "notes": "Label 'prop:lagrange-resolvent-transform' \u2192 expected 'lagrange_resolvent_transform'; Lean declares: lagrangeResolvent, cyclicPerm, lagrange_resolvent_w0_vanishes, lagrange_resolvent_diagonal_action. Structural match via content."
       },
       {
         "field_hash": {
@@ -2142,7 +2142,7 @@
         },
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
-        "notes": "Label 'prop:lagrange-resolvent-transform' → expected 'lagrange_resolvent_transform'; Lean declares: lagrangeResolvent, cyclicPerm, lagrange_resolvent_w0_vanishes, lagrange_resolvent_diagonal_action. Structural match via content."
+        "notes": "Label 'prop:lagrange-resolvent-transform' \u2192 expected 'lagrange_resolvent_transform'; Lean declares: lagrangeResolvent, cyclicPerm, lagrange_resolvent_w0_vanishes, lagrange_resolvent_diagonal_action. Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -2253,7 +2253,7 @@
         "reviewed_at": "2026-06-01T16:06:38.106Z",
         "reviewed_sha": "d4a8cf462aeef2262429b13571ddd385968bce63",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/lagrange-resolvent-transform.lean:70 — archimedean Real.* in categorical chapter — (1 / Complex.ofReal (Real.sqrt 5)) * ∑ j : Fin 5, ζ ^ (k.val * j.val) * x j"
+        "evidence": "content/quantum-observable-universe/braids-and-knots/lagrange-resolvent-transform.lean:70 \u2014 archimedean Real.* in categorical chapter \u2014 (1 / Complex.ofReal (Real.sqrt 5)) * \u2211 j : Fin 5, \u03b6 ^ (k.val * j.val) * x j"
       },
       {
         "field_hash": {
@@ -2268,7 +2268,7 @@
         },
         "reviewed_at": "2026-06-02T05:50:07Z",
         "reviewed_sha": "c0488b478cdbd79629bd6bcb88b5174c2f2375a7",
-        "notes": "Author dispensation. The `Real.sqrt 5` at line 70 is the **cyclotomic normalisation** of the 5th-root-of-unity Lagrange resolvent (`(1/√5) * Σ ζ^(k·j) * x_j` is the standard discrete Fourier kernel over ℤ/5). The √5 is an algebraic-integer norm of ℚ(ζ_5)/ℚ — categorical content of the cyclotomic-field decomposition — NOT an archimedean evaluation at the substrate q_0. The q-usage detector regex catches `Real.sqrt` without knowing the radicand is a small concrete integer. Block remains categorical; the resolvent is a fixed Hecke-algebra construction independent of the substrate parameter."
+        "notes": "Author dispensation. The `Real.sqrt 5` at line 70 is the **cyclotomic normalisation** of the 5th-root-of-unity Lagrange resolvent (`(1/\u221a5) * \u03a3 \u03b6^(k\u00b7j) * x_j` is the standard discrete Fourier kernel over \u2124/5). The \u221a5 is an algebraic-integer norm of \u211a(\u03b6_5)/\u211a \u2014 categorical content of the cyclotomic-field decomposition \u2014 NOT an archimedean evaluation at the substrate q_0. The q-usage detector regex catches `Real.sqrt` without knowing the radicand is a small concrete integer. Block remains categorical; the resolvent is a fixed Hecke-algebra construction independent of the substrate parameter."
       },
       {
         "field_hash": {
@@ -2283,7 +2283,7 @@
         },
         "reviewed_at": "2026-06-02T05:50:07Z",
         "reviewed_sha": "c0488b478cdbd79629bd6bcb88b5174c2f2375a7",
-        "notes": "Author dispensation. The `Real.sqrt 5` at line 70 is the **cyclotomic normalisation** of the 5th-root-of-unity Lagrange resolvent (`(1/√5) * Σ ζ^(k·j) * x_j` is the standard discrete Fourier kernel over ℤ/5). The √5 is an algebraic-integer norm of ℚ(ζ_5)/ℚ — categorical content of the cyclotomic-field decomposition — NOT an archimedean evaluation at the substrate q_0. The q-usage detector regex catches `Real.sqrt` without knowing the radicand is a small concrete integer. Block remains categorical; the resolvent is a fixed Hecke-algebra construction independent of the substrate parameter."
+        "notes": "Author dispensation. The `Real.sqrt 5` at line 70 is the **cyclotomic normalisation** of the 5th-root-of-unity Lagrange resolvent (`(1/\u221a5) * \u03a3 \u03b6^(k\u00b7j) * x_j` is the standard discrete Fourier kernel over \u2124/5). The \u221a5 is an algebraic-integer norm of \u211a(\u03b6_5)/\u211a \u2014 categorical content of the cyclotomic-field decomposition \u2014 NOT an archimedean evaluation at the substrate q_0. The q-usage detector regex catches `Real.sqrt` without knowing the radicand is a small concrete integer. Block remains categorical; the resolvent is a fixed Hecke-algebra construction independent of the substrate parameter."
       }
     ],
     "q-usage-positivity-implicit": [
@@ -2558,6 +2558,98 @@
           "fwd_edge_count": 0,
           "worst_span": 0
         }
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "41215535d687",
+          "ts": "ef6c0dbf9455",
+          "lean": "1e37cd51a4d3"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:31:29.501Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "Strategy stated: DFT w_k = (1/sqrt n) Sum zeta^{kj} x_j; w_0 vanishes from sum constraint at k=0; diagonal action by case-split on k in {0..4}, expand Fin 5 sums, reduce zeta powers mod 5 (zeta^5=1), close by ring. Periodicity simp-lemma scaffold documented."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "41215535d687",
+          "ts": "ef6c0dbf9455",
+          "lean": "1e37cd51a4d3"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:31:29.539Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "Sorry-free: lagrange_resolvent_w0_vanishes and lagrange_resolvent_diagonal_action (sigma(w_k)=zeta^{-k} w_k for n=5) proved with genuine zeta arithmetic (primitive 5th root, zeta_pow_four_eq_inv, fin_cases + ring). No axiom."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "41215535d687",
+          "ts": "ef6c0dbf9455",
+          "lean": "1e37cd51a4d3"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.55,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:31:29.578Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "DFT diagonalizing a cyclic action is standard, but the explicit n=5 Bring-surface formalization with the modular zeta-power reduction is non-trivial. The quadric/cubic constraint transforms (md part 2 examples) are stated but not formalized."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "41215535d687",
+          "ts": "ef6c0dbf9455",
+          "lean": "1e37cd51a4d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:31:29.616Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "Faithful: lagrange_resolvent_diagonal_action states the md's part-1 claim sigma(w_k)=zeta^{-k} w_k; w0_vanishes states w_0=0 under Sum x_i = 0. Both genuine, non-vacuous. (Part-2 example constraints not formalized but the two central claims are faithfully proved.)"
       }
     ]
   },

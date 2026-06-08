@@ -2437,7 +2437,7 @@
         "reviewed_at": "2026-06-01T16:06:38.106Z",
         "reviewed_sha": "d4a8cf462aeef2262429b13571ddd385968bce63",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/ns-obstruction-computation.md:1 — detected regime [symbolic] is disjoint from chapter 'fluid-dynamics' expected [fixed-q0, na, real-gt-1, real-positive]"
+        "evidence": "content/quantum-observable-universe/fluid-dynamics/ns-obstruction-computation.md:1 \u2014 detected regime [symbolic] is disjoint from chapter 'fluid-dynamics' expected [fixed-q0, na, real-gt-1, real-positive]"
       }
     ],
     "canonical-ck-tiered-not-binary": [
@@ -2610,6 +2610,100 @@
           "fwd_edge_count": 0,
           "worst_span": 0
         }
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "d0e0bc848102",
+          "ts": "ae2ffd3c1a62",
+          "lean": "13dca2fd9f0d"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.9,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:27:44.372Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "md computes the obstruction term-by-term: (a) Euler-class / local-degree term, (b) jet-correction term via Biot-Savart divergence, (c) total obstruction (complementary subgroups), (d) result kappa_n|_Sigma != 0 => NS-singular. Clear."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "d0e0bc848102",
+          "ts": "ae2ffd3c1a62",
+          "lean": "13dca2fd9f0d"
+        },
+        "result": "fail",
+        "severity": "minor",
+        "score": {
+          "value": 0.3,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:27:44.410Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "Lean is a sibling stub 'theorem ns_obstruction_computation : True := by trivial'; vacuous. The md argument also rests on the thm:qu-to-qou complementary-subgroup claim (unproved here)."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "d0e0bc848102",
+          "ts": "ae2ffd3c1a62",
+          "lean": "13dca2fd9f0d"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.65,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:27:44.446Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "Explicit local-Euler-class (excision H^2_{p}) + Biot-Savart jet-divergence |j^n v| ~ 1/(T*-t)^{(n+1)/2} computation for the anti-parallel pair is a moderately novel concrete instantiation of the obstruction tower."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "d0e0bc848102",
+          "ts": "ae2ffd3c1a62",
+          "lean": "13dca2fd9f0d"
+        },
+        "result": "fail",
+        "severity": "critical",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:27:44.485Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "Sibling stub 'theorem ns_obstruction_computation : True := by trivial' \u2014 True-placeholder, does not state the md computation. Integrity FAIL."
       }
     ]
   },

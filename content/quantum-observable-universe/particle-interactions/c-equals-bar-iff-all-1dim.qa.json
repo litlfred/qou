@@ -262,7 +262,7 @@
         },
         "reviewed_at": "2026-05-28T15:40:01.326Z",
         "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
-        "notes": "Label 'prop:c-equals-bar-iff-all-1dim' → expected 'c_equals_bar_iff_all_1dim'; Lean declares: h2_all_one_dim, two_only_unit_squares, h3_has_multidim, factorial_exceeds_two_squares, exactly_two_one_dim_irreps.... Structural match via content."
+        "notes": "Label 'prop:c-equals-bar-iff-all-1dim' \u2192 expected 'c_equals_bar_iff_all_1dim'; Lean declares: h2_all_one_dim, two_only_unit_squares, h3_has_multidim, factorial_exceeds_two_squares, exactly_two_one_dim_irreps.... Structural match via content."
       },
       {
         "field_hash": {
@@ -278,7 +278,7 @@
         },
         "reviewed_at": "2026-05-28T15:43:22.741Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
-        "notes": "Label 'prop:c-equals-bar-iff-all-1dim' → expected 'c_equals_bar_iff_all_1dim'; Lean declares: h2_all_one_dim, two_only_unit_squares, h3_has_multidim, factorial_exceeds_two_squares, exactly_two_one_dim_irreps.... Structural match via content."
+        "notes": "Label 'prop:c-equals-bar-iff-all-1dim' \u2192 expected 'c_equals_bar_iff_all_1dim'; Lean declares: h2_all_one_dim, two_only_unit_squares, h3_has_multidim, factorial_exceeds_two_squares, exactly_two_one_dim_irreps.... Structural match via content."
       },
       {
         "field_hash": {
@@ -294,7 +294,7 @@
         },
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
-        "notes": "Label 'prop:c-equals-bar-iff-all-1dim' → expected 'c_equals_bar_iff_all_1dim'; Lean declares: h2_all_one_dim, two_only_unit_squares, h3_has_multidim, factorial_exceeds_two_squares, exactly_two_one_dim_irreps.... Structural match via content."
+        "notes": "Label 'prop:c-equals-bar-iff-all-1dim' \u2192 expected 'c_equals_bar_iff_all_1dim'; Lean declares: h2_all_one_dim, two_only_unit_squares, h3_has_multidim, factorial_exceeds_two_squares, exactly_two_one_dim_irreps.... Structural match via content."
       }
     ],
     "q-usage-regime-detected": [
@@ -518,7 +518,7 @@
         "reviewed_at": "2026-06-01T16:06:38.106Z",
         "reviewed_sha": "d4a8cf462aeef2262429b13571ddd385968bce63",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/c-equals-bar-iff-all-1dim.md:1 — detected regime [symbolic] is disjoint from chapter 'particle-interactions' expected [fixed-q0, na, real-gt-1, real-positive]"
+        "evidence": "content/quantum-observable-universe/particle-interactions/c-equals-bar-iff-all-1dim.md:1 \u2014 detected regime [symbolic] is disjoint from chapter 'particle-interactions' expected [fixed-q0, na, real-gt-1, real-positive]"
       }
     ],
     "canonical-no-numerology": [
@@ -1102,7 +1102,99 @@
           "worst_span": 0
         }
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "304a48a0ab77",
+          "ts": "7f74fbf6f8a9",
+          "lean": "9e8c23f33398"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.85,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:17.635Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "MD proves both directions of the iff: forward via 1-dim eigenvalue matching, reverse via the 2-dim standard rep at H3 with explicit chi values; Artin-Wedderburn uniqueness of 2=1+1 spelled out."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "304a48a0ab77",
+          "ts": "7f74fbf6f8a9",
+          "lean": "9e8c23f33398"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.55,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:17.673Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Lean proves the supporting arithmetic (h2_all_one_dim, two_only_unit_squares, h3_has_multidim, eigenvalue lemmas via omega) but NOT the full iff (no theorem 'C=bar \u2194 all-1-dim'); exactly_two_one_dim_irreps is a trivial (2:\u2115)=2:=rfl. Core facts solid; headline iff unformalized."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "304a48a0ab77",
+          "ts": "7f74fbf6f8a9",
+          "lean": "9e8c23f33398"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.7,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:17.708Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Identifying H2 as the unique C=bar level (lepton sector algebraically distinguished) via Artin-Wedderburn is a non-routine structural observation."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "304a48a0ab77",
+          "ts": "7f74fbf6f8a9",
+          "lean": "9e8c23f33398"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:17.742Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "lean.ref QOU.ParticleInteractions.two_only_unit_squares resolves to a substantive lemma (a^2+b^2=2 \u21d2 a=b=1, omega), non-vacuous. (Note: one sibling decl exactly_two_one_dim_irreps is a (2)=2:=rfl filler, but the referenced decl is real.)"
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-07T06:00:17.742Z"
 }

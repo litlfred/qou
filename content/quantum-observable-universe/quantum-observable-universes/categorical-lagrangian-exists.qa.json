@@ -2230,7 +2230,7 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'prop:categorical-lagrangian-exists' → expected 'categorical_lagrangian_exists'; Lean declares: CategoricalLagrangian.exists. Structural match via content."
+        "notes": "Label 'prop:categorical-lagrangian-exists' \u2192 expected 'categorical_lagrangian_exists'; Lean declares: CategoricalLagrangian.exists. Structural match via content."
       },
       {
         "field_hash": {
@@ -2246,7 +2246,7 @@
         },
         "reviewed_at": "2026-05-28T15:40:01.326Z",
         "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
-        "notes": "Label 'prop:categorical-lagrangian-exists' → expected 'categorical_lagrangian_exists'; Lean declares: CategoricalLagrangian.exists. Structural match via content."
+        "notes": "Label 'prop:categorical-lagrangian-exists' \u2192 expected 'categorical_lagrangian_exists'; Lean declares: CategoricalLagrangian.exists. Structural match via content."
       },
       {
         "field_hash": {
@@ -2262,7 +2262,7 @@
         },
         "reviewed_at": "2026-05-28T15:43:22.741Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
-        "notes": "Label 'prop:categorical-lagrangian-exists' → expected 'categorical_lagrangian_exists'; Lean declares: CategoricalLagrangian.exists. Structural match via content."
+        "notes": "Label 'prop:categorical-lagrangian-exists' \u2192 expected 'categorical_lagrangian_exists'; Lean declares: CategoricalLagrangian.exists. Structural match via content."
       },
       {
         "field_hash": {
@@ -2278,7 +2278,7 @@
         },
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
-        "notes": "Label 'prop:categorical-lagrangian-exists' → expected 'categorical_lagrangian_exists'; Lean declares: CategoricalLagrangian.exists. Structural match via content."
+        "notes": "Label 'prop:categorical-lagrangian-exists' \u2192 expected 'categorical_lagrangian_exists'; Lean declares: CategoricalLagrangian.exists. Structural match via content."
       },
       {
         "field_hash": {
@@ -2288,7 +2288,7 @@
         },
         "result": "warn",
         "severity": "minor",
-        "evidence": "Lean uses trivial 𝟙 witness; narrative describes actual D_∇²+ψ*⊗D_∇ψ construction. Both assert Nonempty — reader-reconcilable gap noted in Lean comment.",
+        "evidence": "Lean uses trivial \ud835\udfd9 witness; narrative describes actual D_\u2207\u00b2+\u03c8*\u2297D_\u2207\u03c8 construction. Both assert Nonempty \u2014 reader-reconcilable gap noted in Lean comment.",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -2846,7 +2846,102 @@
           "worst_span": 0
         }
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "cf8e3278b7bb",
+          "ts": "a83573cb9f4e",
+          "lean": "4e1284dca268"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:01:00.195Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Terse statement-only md (L_q = D^2 + psi* (x) D psi exists as End(A))."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "cf8e3278b7bb",
+          "ts": "a83573cb9f4e",
+          "lean": "4e1284dca268"
+        },
+        "result": "fail",
+        "severity": "minor",
+        "score": {
+          "value": 0.3,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:01:00.234Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Lean proves Nonempty via a trivial identity Dirac + lagrangian=id witness; docstring admits the intended Connes-style D^2+psi* (x) D psi needs spectral-triple infra not in Mathlib."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "cf8e3278b7bb",
+          "ts": "a83573cb9f4e",
+          "lean": "4e1284dca268"
+        },
+        "result": "fail",
+        "severity": "minor",
+        "score": {
+          "value": 0.2,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:01:00.274Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Vacuous existence; identity witness."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "cf8e3278b7bb",
+          "ts": "a83573cb9f4e",
+          "lean": "4e1284dca268"
+        },
+        "result": "fail",
+        "severity": "critical",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:01:00.310Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "INTEGRITY FAIL: lean.ref QOU.CategoricalLagrangian.exists proves a vacuous Nonempty via an identity witness, not the md's Lagrangian; docstring self-admits the gap."
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-07T06:01:00.310Z"
 }

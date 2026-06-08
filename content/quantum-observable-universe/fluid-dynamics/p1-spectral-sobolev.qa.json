@@ -2094,7 +2094,7 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'prop:q-spectral-sobolev' → expected 'q_spectral_sobolev'; Lean declares: p1_spectral_sobolev. Structural match via content."
+        "notes": "Label 'prop:q-spectral-sobolev' \u2192 expected 'q_spectral_sobolev'; Lean declares: p1_spectral_sobolev. Structural match via content."
       },
       {
         "field_hash": {
@@ -2110,7 +2110,7 @@
         },
         "reviewed_at": "2026-05-28T15:40:01.326Z",
         "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
-        "notes": "Label 'prop:q-spectral-sobolev' → expected 'q_spectral_sobolev'; Lean declares: p1_spectral_sobolev. Structural match via content."
+        "notes": "Label 'prop:q-spectral-sobolev' \u2192 expected 'q_spectral_sobolev'; Lean declares: p1_spectral_sobolev. Structural match via content."
       },
       {
         "field_hash": {
@@ -2126,7 +2126,7 @@
         },
         "reviewed_at": "2026-05-28T15:43:22.741Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
-        "notes": "Label 'prop:q-spectral-sobolev' → expected 'q_spectral_sobolev'; Lean declares: p1_spectral_sobolev. Structural match via content."
+        "notes": "Label 'prop:q-spectral-sobolev' \u2192 expected 'q_spectral_sobolev'; Lean declares: p1_spectral_sobolev. Structural match via content."
       },
       {
         "field_hash": {
@@ -2142,7 +2142,7 @@
         },
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
-        "notes": "Label 'prop:q-spectral-sobolev' → expected 'q_spectral_sobolev'; Lean declares: p1_spectral_sobolev. Structural match via content."
+        "notes": "Label 'prop:q-spectral-sobolev' \u2192 expected 'q_spectral_sobolev'; Lean declares: p1_spectral_sobolev. Structural match via content."
       },
       {
         "field_hash": {
@@ -2608,6 +2608,100 @@
           "fwd_edge_count": 0,
           "worst_span": 0
         }
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "441c8d724c82",
+          "ts": "c430aa9da5a6",
+          "lean": "e362f561fde5"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:28:37.655Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "md states (a) compact resolvent / discrete spectrum, (b) exponential eigenvalue growth mu_k=[k]_q^2, (c) categorical Sobolev embedding, then gives full multi-step proofs (self-adjointness, non-negativity, eigenvalue computation, completeness via Peter-Weyl, trace-class resolvent; Cauchy-Schwarz for embedding). Excellent."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "441c8d724c82",
+          "ts": "c430aa9da5a6",
+          "lean": "e362f561fde5"
+        },
+        "result": "fail",
+        "severity": "minor",
+        "score": {
+          "value": 0.3,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:28:37.693Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "Lean is a sibling stub 'theorem p1_spectral_sobolev : True := by trivial' \u2014 vacuous despite a detailed md proof. (Also Lean Ref prop:q-spectral-sobolev vs .ts label prop:p1-spectral-sobolev \u2014 label drift.)"
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "441c8d724c82",
+          "ts": "c430aa9da5a6",
+          "lean": "e362f561fde5"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.7,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:28:37.731Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "Substantive q-deformed adaptation of Rellich-Kondrachov: trace-class (not merely compact) resolvent from exponential [k]_q^2 eigenvalue growth, with the q->1 embedding-failure (C_q diverges on the 3D bundle) as the regularity mechanism. More than a routine q-analogue."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "441c8d724c82",
+          "ts": "c430aa9da5a6",
+          "lean": "e362f561fde5"
+        },
+        "result": "fail",
+        "severity": "critical",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:28:37.774Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "Sibling stub 'theorem p1_spectral_sobolev : True := by trivial' \u2014 True-placeholder, does not state the md spectral/Sobolev claims. Integrity FAIL."
       }
     ]
   },

@@ -2580,7 +2580,7 @@
         },
         "result": "warn",
         "severity": "minor",
-        "evidence": "Part (iv) of the statement hardcodes 'q_0 = 1.109978595554181...' numeric value without a §7c wall: field or conditional banner.",
+        "evidence": "Part (iv) of the statement hardcodes 'q_0 = 1.109978595554181...' numeric value without a \u00a77c wall: field or conditional banner.",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -2708,7 +2708,100 @@
           "worst_span": 0
         }
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "26cde4f8c942",
+          "ts": "84b2567f1fe0",
+          "lean": "7339d96ac479"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.75,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:09:56.904Z",
+        "reviewed_sha": "4e961c6c457cf2aaa28e91304a917b1bcfdf2afe",
+        "notes": "md well-structured: (i) Wedderburn/Schur spectral decomposition of Phi, (ii) multi-channel categorical action sum, (iii) Frobenius demand(c<0)/supply(c>0) pairing via non-degenerate tr_M, (iv) minimum-action channel selection. Clear plan, though (iv) is heuristic."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "26cde4f8c942",
+          "ts": "84b2567f1fe0",
+          "lean": "7339d96ac479"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0.3,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:09:56.940Z",
+        "reviewed_sha": "4e961c6c457cf2aaa28e91304a917b1bcfdf2afe",
+        "notes": "Lean is a True stub (not_started); md is a 'proof sketch' with a heuristic argmin minimum-action selection (iv). No formal proof; core content unformalized."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "26cde4f8c942",
+          "ts": "84b2567f1fe0",
+          "lean": "7339d96ac479"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.66,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:09:56.976Z",
+        "reviewed_sha": "4e961c6c457cf2aaa28e91304a917b1bcfdf2afe",
+        "notes": "The Frobenius demand-supply pairing (negative NF coefficients = demand, positive = supply, unique minimal-norm filler via non-degeneracy) as an operator-selection mechanism is a moderately interesting categorical framing, though unproven."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "26cde4f8c942",
+          "ts": "84b2567f1fe0",
+          "lean": "7339d96ac479"
+        },
+        "result": "fail",
+        "severity": "critical",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:09:56.868Z",
+        "reviewed_sha": "4e961c6c457cf2aaa28e91304a917b1bcfdf2afe",
+        "notes": "lean.ref qou:QOU.Archimedean.knot_operator_selection is a sibling STUB: 'theorem knot_operator_selection : True := by trivial' (ts validation:not_started). Vacuous =True; does not formalize any of the md's 4 parts (spectral decomp Phi=sum d_lambda Phi_lambda, multi-channel pair production, Frobenius demand-supply, minimum-action selection)."
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-07T06:09:56.976Z"
 }

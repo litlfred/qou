@@ -2111,7 +2111,7 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'prop:gram-weighted-qvalue' → expected 'gram_weighted_qvalue'; Lean declares: GramMatrix, frobeniusNormSq, frobeniusNorm, nfReductionCost, gramWeight.... Structural match via content."
+        "notes": "Label 'prop:gram-weighted-qvalue' \u2192 expected 'gram_weighted_qvalue'; Lean declares: GramMatrix, frobeniusNormSq, frobeniusNorm, nfReductionCost, gramWeight.... Structural match via content."
       },
       {
         "field_hash": {
@@ -2127,7 +2127,7 @@
         },
         "reviewed_at": "2026-05-28T15:40:01.326Z",
         "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
-        "notes": "Label 'prop:gram-weighted-qvalue' → expected 'gram_weighted_qvalue'; Lean declares: GramMatrix, frobeniusNormSq, frobeniusNorm, nfReductionCost, gramWeight.... Structural match via content."
+        "notes": "Label 'prop:gram-weighted-qvalue' \u2192 expected 'gram_weighted_qvalue'; Lean declares: GramMatrix, frobeniusNormSq, frobeniusNorm, nfReductionCost, gramWeight.... Structural match via content."
       },
       {
         "field_hash": {
@@ -2143,7 +2143,7 @@
         },
         "reviewed_at": "2026-05-28T15:43:22.741Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
-        "notes": "Label 'prop:gram-weighted-qvalue' → expected 'gram_weighted_qvalue'; Lean declares: GramMatrix, frobeniusNormSq, frobeniusNorm, nfReductionCost, gramWeight.... Structural match via content."
+        "notes": "Label 'prop:gram-weighted-qvalue' \u2192 expected 'gram_weighted_qvalue'; Lean declares: GramMatrix, frobeniusNormSq, frobeniusNorm, nfReductionCost, gramWeight.... Structural match via content."
       },
       {
         "field_hash": {
@@ -2159,7 +2159,7 @@
         },
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
-        "notes": "Label 'prop:gram-weighted-qvalue' → expected 'gram_weighted_qvalue'; Lean declares: GramMatrix, frobeniusNormSq, frobeniusNorm, nfReductionCost, gramWeight.... Structural match via content."
+        "notes": "Label 'prop:gram-weighted-qvalue' \u2192 expected 'gram_weighted_qvalue'; Lean declares: GramMatrix, frobeniusNormSq, frobeniusNorm, nfReductionCost, gramWeight.... Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -2566,7 +2566,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "Lean ref is QOU.Archimedean.* and the .md opens with explicit §7c archimedean-specialisation banner; sqrt and MeV units are correctly flagged as archimedean.",
+        "evidence": "Lean ref is QOU.Archimedean.* and the .md opens with explicit \u00a77c archimedean-specialisation banner; sqrt and MeV units are correctly flagged as archimedean.",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -2694,7 +2694,99 @@
           "worst_span": 0
         }
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "1cbb4e425e5c",
+          "ts": "a77c2a816d41",
+          "lean": "381c8d255021"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.85,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:20.788Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "MD gives the Q-value formula with all three factors (\u0394_k NF-reduction cost, Gram weight w_k^G via Frobenius norm, neutron count N) defined by labeled equations + the non-positive-definite Gram explanation; clear."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "1cbb4e425e5c",
+          "ts": "a77c2a816d41",
+          "lean": "381c8d255021"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.7,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:20.823Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Lean defines frobeniusNorm/gramWeight/gramWeightedQ + proves gramWeight_sum_one, gramWeight_nonneg, gramWeight_uniform_when_equal (all sorry-free) \u2014 the weighting scheme's structural properties are real. (The Q-value ACCURACY, +9.7% on \u2076He, is empirical, not a Lean claim \u2014 appropriately.)"
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "1cbb4e425e5c",
+          "ts": "a77c2a816d41",
+          "lean": "381c8d255021"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.55,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:20.858Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Frobenius-norm channel weighting is a reasonable but somewhat fit-flavored construction (+9.7% \u2076He error; a Gram-pairing variant also tried at +7.0%)."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "1cbb4e425e5c",
+          "ts": "a77c2a816d41",
+          "lean": "381c8d255021"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:20.895Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "lean.ref QOU.Archimedean.gram_weighted_qvalue resolves; the proved lemmas (sum-to-1, nonneg, uniform) are real and sorry-free. Lean proves the provable structural facts, not the empirical accuracy \u2014 honest scope."
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-07T06:00:20.895Z"
 }

@@ -2457,7 +2457,7 @@
         "reviewed_at": "2026-06-01T16:06:38.106Z",
         "reviewed_sha": "d4a8cf462aeef2262429b13571ddd385968bce63",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/predicted-spectra/alpha-em-categorical-trace-ratio.md:1 — detected regime [generic-R, symbolic] is disjoint from chapter 'predicted-spectra' expected [fixed-q0, na, real-gt-1, real-positive]"
+        "evidence": "content/quantum-observable-universe/predicted-spectra/alpha-em-categorical-trace-ratio.md:1 \u2014 detected regime [generic-R, symbolic] is disjoint from chapter 'predicted-spectra' expected [fixed-q0, na, real-gt-1, real-positive]"
       }
     ],
     "canonical-ck-tiered-not-binary": [
@@ -2719,6 +2719,98 @@
           "fwd_edge_count": 0,
           "worst_span": 0
         }
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "500307a97c69",
+          "ts": "ca5be552846c",
+          "lean": "870b856da170"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.9,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T05:53:03.502Z",
+        "reviewed_sha": "c47fda4d79ef12172fe90e0c9b670b761a3f4d95",
+        "notes": "Plan stated up front: substitute delta_q(T_{2,9})=h[9]_q, delta_q(T_{3,5})=h[10]_q into the boxed ratio; derivation + Lean docstring both lay out the field_simp+ring reduction."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "500307a97c69",
+          "ts": "ca5be552846c",
+          "lean": "870b856da170"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T05:53:36.295Z",
+        "reviewed_sha": "c47fda4d79ef12172fe90e0c9b670b761a3f4d95",
+        "notes": "Sorry-free: theorem alpha_em_categorical_trace_ratio proven by field_simp; ring under (q,h,q^9-q^-9,q^10-q^-10) nonzero hyps. No axiom, no proxy weakening."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "500307a97c69",
+          "ts": "ca5be552846c",
+          "lean": "870b856da170"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.45,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T05:53:36.337Z",
+        "reviewed_sha": "c47fda4d79ef12172fe90e0c9b670b761a3f4d95",
+        "notes": "Standard algebraic refactor (substitute two delta_q definitions, cancel h^2). Re-expresses an existing identity (em-coupling-projection) in the q-dimension layer; not a novel argument."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "500307a97c69",
+          "ts": "ca5be552846c",
+          "lean": "870b856da170"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T05:53:36.402Z",
+        "reviewed_sha": "c47fda4d79ef12172fe90e0c9b670b761a3f4d95",
+        "notes": "Lean statement alpha_em_bare q = alpha_em_via_delta_q q matches md boxed identity; defs alpha_em_bare/alpha_em_via_delta_q mirror md RHS/LHS. Not vacuous, not restating-target. lean.ref decl present."
       }
     ]
   },

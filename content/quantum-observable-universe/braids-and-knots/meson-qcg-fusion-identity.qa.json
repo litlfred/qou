@@ -98,7 +98,7 @@
         "reviewed_at": "2026-06-01T16:06:38.106Z",
         "reviewed_sha": "d4a8cf462aeef2262429b13571ddd385968bce63",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/meson-qcg-fusion-identity.md:38 — MeV/CODATA reference in categorical chapter — is precisely $[3]_q \\cdot [4]_q$ — verified at $q_0$ to 203 ppm with | content/quantum-observable-universe/braids-and-knots/meson-qcg-fusion-identity.md:42 — MeV/CODATA reference in categorical chapter — The remaining 203 ppm residual is the EM/Coulomb (sinh-channel) | content/quantum-observable-universe/braids-and-knots/meson-qcg-fusion-identity.md:43 — MeV/CODATA reference in categorical chapter — correction, closed to **0.056 ppm on the full ratio** by"
+        "evidence": "content/quantum-observable-universe/braids-and-knots/meson-qcg-fusion-identity.md:38 \u2014 MeV/CODATA reference in categorical chapter \u2014 is precisely $[3]_q \\cdot [4]_q$ \u2014 verified at $q_0$ to 203 ppm with | content/quantum-observable-universe/braids-and-knots/meson-qcg-fusion-identity.md:42 \u2014 MeV/CODATA reference in categorical chapter \u2014 The remaining 203 ppm residual is the EM/Coulomb (sinh-channel) | content/quantum-observable-universe/braids-and-knots/meson-qcg-fusion-identity.md:43 \u2014 MeV/CODATA reference in categorical chapter \u2014 correction, closed to **0.056 ppm on the full ratio** by"
       },
       {
         "field_hash": {
@@ -667,7 +667,7 @@
         "reviewed_at": "2026-06-02T19:35:52.628Z",
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/meson-qcg-fusion-identity.lean:1: Lean file contains both archimedean (ℝ / Real.* / linarith) AND generic-R (CommRing / {R : Type*}) markers — split into two files per CLAUDE.md §7c."
+        "evidence": "content/quantum-observable-universe/braids-and-knots/meson-qcg-fusion-identity.lean:1: Lean file contains both archimedean (\u211d / Real.* / linarith) AND generic-R (CommRing / {R : Type*}) markers \u2014 split into two files per CLAUDE.md \u00a77c."
       }
     ],
     "compute-prop-has-probe": [
@@ -967,6 +967,98 @@
         },
         "reviewed_at": "2026-06-07T05:58:41.267Z",
         "reviewed_sha": "738ed713806a3976739e57e01d0100f3540f79e5"
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "440e90d8f01b",
+          "ts": "34026fdab4a4",
+          "lean": "b286ae91d5c9"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:31:29.810Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "Strategy stated: multiply [3]_q[4]_q=[2]_q+[4]_q+[6]_q by (q-q^-1)^2 to clear denominators, yielding a ring identity closed by ring; classical limit 3*4=2+4+6 by decide."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "440e90d8f01b",
+          "ts": "34026fdab4a4",
+          "lean": "b286ae91d5c9"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:31:29.849Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "Sorry-free over a Field: meson_qCG_3x4 (cleared-denominator form) by field_simp;ring; meson_qCG_3x4_classical by decide. No axiom."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "440e90d8f01b",
+          "ts": "34026fdab4a4",
+          "lean": "b286ae91d5c9"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.45,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:31:29.886Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "q-Clebsch-Gordan fusion [3]_q[4]_q=[2]_q+[4]_q+[6]_q is standard q-rep theory; the application to the 2-body meson m_K^2/m_pi^2 squared-ratio (vs 1-body character) is the framework-specific insight."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "440e90d8f01b",
+          "ts": "34026fdab4a4",
+          "lean": "b286ae91d5c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:31:29.924Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "Faithful: meson_qCG_3x4 proves the md's identity in the cleared-denominator form the md explicitly directs ((q^3-q^-3)(q^4-q^-4) = (q-q^-1)(...)); mathematically equivalent to the boxed [3]_q[4]_q = [2]_q+[4]_q+[6]_q. Non-vacuous."
       }
     ]
   },

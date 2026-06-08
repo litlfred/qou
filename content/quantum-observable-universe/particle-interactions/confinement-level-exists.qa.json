@@ -2111,7 +2111,7 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'prop:confinement-level-exists' → expected 'confinement_level_exists'; Lean declares: ConfinementLevel.exists. Structural match via content."
+        "notes": "Label 'prop:confinement-level-exists' \u2192 expected 'confinement_level_exists'; Lean declares: ConfinementLevel.exists. Structural match via content."
       },
       {
         "field_hash": {
@@ -2127,7 +2127,7 @@
         },
         "reviewed_at": "2026-05-28T15:40:01.326Z",
         "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
-        "notes": "Label 'prop:confinement-level-exists' → expected 'confinement_level_exists'; Lean declares: ConfinementLevel.exists. Structural match via content."
+        "notes": "Label 'prop:confinement-level-exists' \u2192 expected 'confinement_level_exists'; Lean declares: ConfinementLevel.exists. Structural match via content."
       },
       {
         "field_hash": {
@@ -2143,7 +2143,7 @@
         },
         "reviewed_at": "2026-05-28T15:43:22.741Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
-        "notes": "Label 'prop:confinement-level-exists' → expected 'confinement_level_exists'; Lean declares: ConfinementLevel.exists. Structural match via content."
+        "notes": "Label 'prop:confinement-level-exists' \u2192 expected 'confinement_level_exists'; Lean declares: ConfinementLevel.exists. Structural match via content."
       },
       {
         "field_hash": {
@@ -2159,7 +2159,7 @@
         },
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
-        "notes": "Label 'prop:confinement-level-exists' → expected 'confinement_level_exists'; Lean declares: ConfinementLevel.exists. Structural match via content."
+        "notes": "Label 'prop:confinement-level-exists' \u2192 expected 'confinement_level_exists'; Lean declares: ConfinementLevel.exists. Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -2440,7 +2440,7 @@
         "reviewed_at": "2026-06-01T16:06:38.106Z",
         "reviewed_sha": "d4a8cf462aeef2262429b13571ddd385968bce63",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/confinement-level-exists.md:1 — detected regime [generic-R, symbolic] is disjoint from chapter 'particle-interactions' expected [fixed-q0, na, real-gt-1, real-positive]"
+        "evidence": "content/quantum-observable-universe/particle-interactions/confinement-level-exists.md:1 \u2014 detected regime [generic-R, symbolic] is disjoint from chapter 'particle-interactions' expected [fixed-q0, na, real-gt-1, real-positive]"
       }
     ],
     "canonical-ck-tiered-not-binary": [
@@ -2565,7 +2565,7 @@
           "lean": "7c11db6308a5"
         },
         "result": "pass",
-        "evidence": "Statement uses generic H_n(q), NF T_w, filtration J^•(q) at generic locus — all categorical/algebraic",
+        "evidence": "Statement uses generic H_n(q), NF T_w, filtration J^\u2022(q) at generic locus \u2014 all categorical/algebraic",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -2586,7 +2586,7 @@
           "lean": "7c11db6308a5"
         },
         "result": "pass",
-        "evidence": "Proof uses finite NF basis, finite partition count, minimum of finite set — combinatorial, no archimedean machinery",
+        "evidence": "Proof uses finite NF basis, finite partition count, minimum of finite set \u2014 combinatorial, no archimedean machinery",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -2692,7 +2692,99 @@
           "worst_span": 0
         }
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "50769fe81a58",
+          "ts": "009b9fc85a42",
+          "lean": "7c11db6308a5"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.8,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:18.421Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "MD argues existence+finiteness via finiteness of the NF basis and the partition set, with the filtration min achieved; clear."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "50769fe81a58",
+          "ts": "009b9fc85a42",
+          "lean": "7c11db6308a5"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0.3,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:18.459Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Lean ConfinementLevel.exists proves Nonempty by exhibiting a junk record {braidIndex:=0,nStrands:=1,q:=0,level:=0} \u2014 the finiteness/achieved-minimum content (the actual claim) is not captured; any record inhabits the type."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "50769fe81a58",
+          "ts": "009b9fc85a42",
+          "lean": "7c11db6308a5"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:18.495Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Finite-filtration min-exists is a standard order-theoretic argument."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "50769fe81a58",
+          "ts": "009b9fc85a42",
+          "lean": "7c11db6308a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:18.533Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "lean.ref QOU.BraidKnot.ConfinementLevel.exists resolves; Nonempty (ConfinementLevel R) is a real Prop (not =True/\u27e8_,rfl\u27e9-tautology). Weak (junk witness) but honestly so; plausibility captures the gap."
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-07T06:00:18.533Z"
 }

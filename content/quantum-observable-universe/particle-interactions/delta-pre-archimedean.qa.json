@@ -344,7 +344,7 @@
         "reviewed_at": "2026-06-02T19:35:52.628Z",
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/particle-interactions/delta-pre-archimedean.md:88: > amplifying the split by ~10²."
+        "evidence": "content/quantum-observable-universe/particle-interactions/delta-pre-archimedean.md:88: > amplifying the split by ~10\u00b2."
       },
       {
         "field_hash": {
@@ -418,7 +418,7 @@
         "reviewed_at": "2026-06-02T19:35:52.628Z",
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/particle-interactions/delta-pre-archimedean.md:51: So the two orders — *masses-then-delta* and"
+        "evidence": "content/quantum-observable-universe/particle-interactions/delta-pre-archimedean.md:51: So the two orders \u2014 *masses-then-delta* and"
       }
     ],
     "voice-title-scholarly": [
@@ -915,7 +915,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "Proposition governs order-of-operations for Q_beta and binding energy B(K) — core topics of particle-interactions chapter.",
+        "evidence": "Proposition governs order-of-operations for Q_beta and binding energy B(K) \u2014 core topics of particle-interactions chapter.",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -959,7 +959,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "Proof uses sub_eq_add_neg+map_add+map_neg over CommRing; nonlinearity witness uses norm_num over ℤ — no archimedean-only machinery (linarith, IVT) for algebraic claims.",
+        "evidence": "Proof uses sub_eq_add_neg+map_add+map_neg over CommRing; nonlinearity witness uses norm_num over \u2124 \u2014 no archimedean-only machinery (linarith, IVT) for algebraic claims.",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -1107,7 +1107,99 @@
           "worst_span": 0
         }
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "84036c42e086",
+          "ts": "fe342d55796e",
+          "lean": "af2a984d9e33"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.95,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:19.454Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Exemplary: MD explicitly separates PROVED(1) fold commutes with subtraction, PROVED(2) nonlinear \u03c4 does not, from EXPOSITORY(3) which order each observable uses \u2014 the cleanest proved-vs-convention demarcation in the batch."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "84036c42e086",
+          "ts": "fe342d55796e",
+          "lean": "af2a984d9e33"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.9,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:19.489Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Canonical module QOU.ParticleInteractions.delta_pre_archimedean (re-exported by sibling) proves fold_commutes_sub (generic CommRing, sub_eq_add_neg+map_add+map_neg) and archimedean_does_not_commute_sub (\u03c4=(\u00b7)\u00b2 norm_num witness), both sorry-free; matches the MD's two theorems exactly."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "84036c42e086",
+          "ts": "fe342d55796e",
+          "lean": "af2a984d9e33"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.7,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:19.532Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Formalizing 'binding works because it is a pre-archimedean delta' (fibre/observable Im(q) discipline) is a clean, framework-specific structural result."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "84036c42e086",
+          "ts": "fe342d55796e",
+          "lean": "af2a984d9e33"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:19.565Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "lean.ref QOU.ParticleInteractions.fold_commutes_sub resolves to the imported canonical module (verified present at lean/QOU/ParticleInteractions/delta_pre_archimedean.lean); real, generic, sorry-free. Sibling correctly re-exports."
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-07T06:00:19.565Z"
 }

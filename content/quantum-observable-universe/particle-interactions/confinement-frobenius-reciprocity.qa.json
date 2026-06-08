@@ -2454,7 +2454,7 @@
         "reviewed_at": "2026-06-01T16:06:38.106Z",
         "reviewed_sha": "d4a8cf462aeef2262429b13571ddd385968bce63",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/confinement-frobenius-reciprocity.md:1 — detected regime [symbolic] is disjoint from chapter 'particle-interactions' expected [fixed-q0, na, real-gt-1, real-positive]"
+        "evidence": "content/quantum-observable-universe/particle-interactions/confinement-frobenius-reciprocity.md:1 \u2014 detected regime [symbolic] is disjoint from chapter 'particle-interactions' expected [fixed-q0, na, real-gt-1, real-positive]"
       }
     ],
     "canonical-ck-tiered-not-binary": [
@@ -2558,7 +2558,7 @@
           "lean": "2fc62ad3eb28"
         },
         "result": "pass",
-        "evidence": "Statement uses generic H_n(q), tr_M, G^{-1}, LP shadow prices — all categorical/algebraic",
+        "evidence": "Statement uses generic H_n(q), tr_M, G^{-1}, LP shadow prices \u2014 all categorical/algebraic",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -2579,7 +2579,7 @@
           "lean": "2fc62ad3eb28"
         },
         "result": "pass",
-        "evidence": "Proof sketch uses KKT stationarity, complementary slackness, LP duality — algebraic, no archimedean machinery",
+        "evidence": "Proof sketch uses KKT stationarity, complementary slackness, LP duality \u2014 algebraic, no archimedean machinery",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -2707,7 +2707,100 @@
           "worst_span": 0
         }
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "cd0554a7f770",
+          "ts": "0d7faece7fe8",
+          "lean": "2fc62ad3eb28"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.85,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:18.070Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "MD states the master formula <O>_T = \u03a3 u_i (G^-1)_ij <O,b_j> with a 2-part proof sketch (Frobenius reciprocity + LP-active reduction via complementary slackness); ingredients enumerated."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "cd0554a7f770",
+          "ts": "0d7faece7fe8",
+          "lean": "2fc62ad3eb28"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0.3,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:18.157Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Sibling Lean is ': True := trivial'; MD provides only a 'Sketch of proof', so the master formula is neither fully proved on paper nor formalized."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "cd0554a7f770",
+          "ts": "0d7faece7fe8",
+          "lean": "2fc62ad3eb28"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.7,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:18.203Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Promoting the binding-energy Frobenius pairing to ALL bound-state observables (g_A as an instance; raw-conjugation-trace zero-information corollary) is a substantive generalization."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "cd0554a7f770",
+          "ts": "0d7faece7fe8",
+          "lean": "2fc62ad3eb28"
+        },
+        "result": "fail",
+        "severity": "critical",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:18.240Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "lean.ref QOU.ParticleInteractions.confinement_frobenius_reciprocity proves ': True := trivial' \u2014 = True vacuous stub. INTEGRITY FAIL."
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-07T06:00:18.240Z"
 }

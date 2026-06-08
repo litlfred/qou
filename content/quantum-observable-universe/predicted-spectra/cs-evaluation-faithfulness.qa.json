@@ -2094,7 +2094,7 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'prop:cs-evaluation-faithfulness' → expected 'cs_evaluation_faithfulness'; Lean declares: CSEvaluationFaithful. Structural match via content."
+        "notes": "Label 'prop:cs-evaluation-faithfulness' \u2192 expected 'cs_evaluation_faithfulness'; Lean declares: CSEvaluationFaithful. Structural match via content."
       },
       {
         "field_hash": {
@@ -2110,7 +2110,7 @@
         },
         "reviewed_at": "2026-05-28T15:40:01.326Z",
         "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
-        "notes": "Label 'prop:cs-evaluation-faithfulness' → expected 'cs_evaluation_faithfulness'; Lean declares: CSEvaluationFaithful. Structural match via content."
+        "notes": "Label 'prop:cs-evaluation-faithfulness' \u2192 expected 'cs_evaluation_faithfulness'; Lean declares: CSEvaluationFaithful. Structural match via content."
       },
       {
         "field_hash": {
@@ -2126,7 +2126,7 @@
         },
         "reviewed_at": "2026-05-28T15:43:22.741Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
-        "notes": "Label 'prop:cs-evaluation-faithfulness' → expected 'cs_evaluation_faithfulness'; Lean declares: CSEvaluationFaithful. Structural match via content."
+        "notes": "Label 'prop:cs-evaluation-faithfulness' \u2192 expected 'cs_evaluation_faithfulness'; Lean declares: CSEvaluationFaithful. Structural match via content."
       },
       {
         "field_hash": {
@@ -2142,7 +2142,7 @@
         },
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
-        "notes": "Label 'prop:cs-evaluation-faithfulness' → expected 'cs_evaluation_faithfulness'; Lean declares: CSEvaluationFaithful. Structural match via content."
+        "notes": "Label 'prop:cs-evaluation-faithfulness' \u2192 expected 'cs_evaluation_faithfulness'; Lean declares: CSEvaluationFaithful. Structural match via content."
       },
       {
         "field_hash": {
@@ -2519,7 +2519,7 @@
         },
         "result": "warn",
         "severity": "minor",
-        "evidence": "Block is in predicted-spectra (archimedean chapter) but statement is purely categorical/algebraic (H^2, Vol(K), cohomological obstruction) — belongs upstream in a generic/substrate chapter per wall-side-statement criterion.",
+        "evidence": "Block is in predicted-spectra (archimedean chapter) but statement is purely categorical/algebraic (H^2, Vol(K), cohomological obstruction) \u2014 belongs upstream in a generic/substrate chapter per wall-side-statement criterion.",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -2563,7 +2563,7 @@
         },
         "result": "warn",
         "severity": "minor",
-        "evidence": "Lean sibling is a stub: 'theorem CSEvaluationFaithful : True := by trivial' — proof is not formalized; validation: not_checked.",
+        "evidence": "Lean sibling is a stub: 'theorem CSEvaluationFaithful : True := by trivial' \u2014 proof is not formalized; validation: not_checked.",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -2691,7 +2691,100 @@
           "worst_span": 0
         }
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "dc8153d02445",
+          "ts": "778b4d9916b1",
+          "lean": "2068c2885b8b"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.7,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:02:25.385Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "md clearly states the faithfulness claim kappa_n!=0 => Phi_n!=0, with 3 consequences (no accidental cancellation via Peiffer, infinite nontrivial contributions via Yekutieli, path to algebraic independence) and a Mostow-rigidity framing. Plan clear."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "dc8153d02445",
+          "ts": "778b4d9916b1",
+          "lean": "2068c2885b8b"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0.3,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:02:25.465Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Core gap: content is conjectural (depends on Yekutieli-lifting and an unproven arithmetic-independence hypothesis), and the Lean is a True stub. No actual proof of the implication."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "dc8153d02445",
+          "ts": "778b4d9916b1",
+          "lean": "2068c2885b8b"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.66,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:02:25.507Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Graded-volume faithfulness (refining Mostow rigidity into a cohomologically-controlled series with each grade nondegenerate) is a non-standard structural claim, though unproven."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "dc8153d02445",
+          "ts": "778b4d9916b1",
+          "lean": "2068c2885b8b"
+        },
+        "result": "fail",
+        "severity": "critical",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:02:25.325Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "lean.ref qou:QOU.Archimedean.CSEvaluationFaithful is a sibling STUB: 'theorem CSEvaluationFaithful : True := by trivial'. Vacuous =True, does not state the md claim (kappa_n != 0 => Phi_n(K) != 0). ALSO md is written as a CONJECTURE ('This conjecture refines...', 'the faithfulness conjecture') but ts kind=proposition -> md<->manifest kind mismatch."
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-07T06:02:25.507Z"
 }

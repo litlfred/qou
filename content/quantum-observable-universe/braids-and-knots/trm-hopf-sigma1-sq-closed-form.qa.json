@@ -2247,7 +2247,7 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'prop:trm-hopf-sigma1-sq-closed-form' → expected 'trm_hopf_sigma1_sq_closed_form'; Lean declares: TrMHopfSigma1SqClosedForm. Structural match via content."
+        "notes": "Label 'prop:trm-hopf-sigma1-sq-closed-form' \u2192 expected 'trm_hopf_sigma1_sq_closed_form'; Lean declares: TrMHopfSigma1SqClosedForm. Structural match via content."
       },
       {
         "field_hash": {
@@ -2263,7 +2263,7 @@
         },
         "reviewed_at": "2026-05-28T15:41:31.003Z",
         "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
-        "notes": "Label 'prop:trm-hopf-sigma1-sq-closed-form' → expected 'trm_hopf_sigma1_sq_closed_form'; Lean declares: TrMHopfSigma1SqClosedForm. Structural match via content."
+        "notes": "Label 'prop:trm-hopf-sigma1-sq-closed-form' \u2192 expected 'trm_hopf_sigma1_sq_closed_form'; Lean declares: TrMHopfSigma1SqClosedForm. Structural match via content."
       },
       {
         "field_hash": {
@@ -2279,7 +2279,7 @@
         },
         "reviewed_at": "2026-05-28T15:43:22.741Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
-        "notes": "Label 'prop:trm-hopf-sigma1-sq-closed-form' → expected 'trm_hopf_sigma1_sq_closed_form'; Lean declares: TrMHopfSigma1SqClosedForm. Structural match via content."
+        "notes": "Label 'prop:trm-hopf-sigma1-sq-closed-form' \u2192 expected 'trm_hopf_sigma1_sq_closed_form'; Lean declares: TrMHopfSigma1SqClosedForm. Structural match via content."
       },
       {
         "field_hash": {
@@ -2295,7 +2295,7 @@
         },
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
-        "notes": "Label 'prop:trm-hopf-sigma1-sq-closed-form' → expected 'trm_hopf_sigma1_sq_closed_form'; Lean declares: TrMHopfSigma1SqClosedForm. Structural match via content."
+        "notes": "Label 'prop:trm-hopf-sigma1-sq-closed-form' \u2192 expected 'trm_hopf_sigma1_sq_closed_form'; Lean declares: TrMHopfSigma1SqClosedForm. Structural match via content."
       },
       {
         "field_hash": {
@@ -2778,6 +2778,98 @@
           "fwd_edge_count": 0,
           "worst_span": 0
         }
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "d1ae466b6b5b",
+          "ts": "594d979e3907",
+          "lean": "4853dde67b04"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:33:55.895Z",
+        "reviewed_sha": "8bde9de2c1add6cd380bfdd9a363e5d19ec8ab8f",
+        "notes": "Strategy stated: Hecke quadratic relation sigma1^2=(q-q^-1)sigma1+1 => tr_M(sigma1^2)=(q-q^-1)z+1 with z=1/(q^1/2+q^-1/2), simplify to (q^5/2-q^1/2+q^2+q)/(q^2+q)=1+(q-1)/q^1/2; Markov invariance via stabilisation. Clear in md + package Lean."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "d1ae466b6b5b",
+          "ts": "594d979e3907",
+          "lean": "4853dde67b04"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:33:55.981Z",
+        "reviewed_sha": "8bde9de2c1add6cd380bfdd9a363e5d19ec8ab8f",
+        "notes": "Sorry-free: the canonical decl resolves to content/.../lean/QOU/Braiding/TrMHopfSigma1SqClosedForm.lean where trm_hopf_sigma1_sq_closed_form_simplified proves trM_sigma1_sq = 1+(q-1)q^(-1/2) (real rpow/sqrt bridge), plus trm_hopf_sigma1_sq_markov_invariant. No sorry in the resolved proof."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "d1ae466b6b5b",
+          "ts": "594d979e3907",
+          "lean": "4853dde67b04"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:33:56.033Z",
+        "reviewed_sha": "8bde9de2c1add6cd380bfdd9a363e5d19ec8ab8f",
+        "notes": "A specific derived Markov-trace closed form (simplest nontrivial in the framework); the value-driven finding that the bare-Markov epsilon^{2n} coefficients are NOT the Q_beta precision-ladder c_n (so F_n is a separate categorical decomposition) adds some content. Derivation itself is a standard Hecke/Markov calculation."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "d1ae466b6b5b",
+          "ts": "594d979e3907",
+          "lean": "4853dde67b04"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:33:56.075Z",
+        "reviewed_sha": "8bde9de2c1add6cd380bfdd9a363e5d19ec8ab8f",
+        "notes": "Faithful via resolution: lean.ref qou:QOU.Braiding.TrMHopfSigma1SqClosedForm; the block sibling .lean is an explicit, disclosed 'sibling-resolution stub' (theorem ...:True) pointing to the package file, where trm_hopf_sigma1_sq_closed_form_simplified genuinely states and proves the md's boxed tr_M(sigma1^2)=1+(q-1)/q^1/2. The real claim is faithfully formalized and reachable. NOTE: minor name-collision -- the ref decl name resolves to a True stub in the sibling file while the real theorems use different names in the package file; worth tidying the ref to point at the proved theorem."
       }
     ]
   },

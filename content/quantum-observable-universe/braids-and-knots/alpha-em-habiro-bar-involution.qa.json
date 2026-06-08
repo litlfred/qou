@@ -1047,6 +1047,98 @@
           "worst_span": 0
         }
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "7aca396db43a",
+          "ts": "666bc0ac6b1b",
+          "lean": "69cf83354fa9"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:28:08.500Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "Plan stated up front: bar invariance via swap q<->qi fixed by ring (q+qi symmetric, (q-qi)^2 absorbs sign); special values at q=qi=+/-1 by ring. Both md 'Lean structure' section and docstrings."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "7aca396db43a",
+          "ts": "666bc0ac6b1b",
+          "lean": "69cf83354fa9"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:28:08.536Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "Sorry-free over generic CommRing: alphaEmHabiro_bar_invariant, _at_one, _at_neg_one all close by ring. No axiom, no gap."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "7aca396db43a",
+          "ts": "666bc0ac6b1b",
+          "lean": "69cf83354fa9"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:28:08.571Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "Modest: bar-symmetry of [2]_q(1-h^2 alpha) is a ring-level observation; the fibre-vs-observable framing and zeta_4=0 dual-to-Qbeta-pole are the interesting content but the proved facts are elementary."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "7aca396db43a",
+          "ts": "666bc0ac6b1b",
+          "lean": "69cf83354fa9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:28:08.607Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "Lean faithfully states md claims: alphaEmHabiro = (q+qi)(1-(q-qi)^2 alpha) matches H=[2]_q(1-h^2 alpha); bar invariance and both special values match the md's enumerated claims 1 and 2."
+      }
     ]
   },
   "updated_at": "2026-06-07T05:58:41.267Z"
