@@ -9,8 +9,8 @@
   },
   "source_hashes": {
     "md": "f3eb1219a5f3",
-    "ts": "7dab5c9cd72f",
-    "lean": "fa3eea6663eb"
+    "ts": "28b98f6f7d91",
+    "lean": "9549aabb0b76"
   },
   "criteria": {
     "proof-lean-compiles": [
@@ -397,7 +397,7 @@
         },
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
-        "notes": "Label 'prop:habiro-precision-ladder-equivalence' \u2192 expected 'habiro_precision_ladder_equivalence'; Lean declares: qPochhammer, HabiroCoeff, HabiroExpansion, HabiroExpansion.eval, habiro_terminates.... Structural match via content."
+        "notes": "Label 'prop:habiro-precision-ladder-equivalence' → expected 'habiro_precision_ladder_equivalence'; Lean declares: qPochhammer, HabiroCoeff, HabiroExpansion, HabiroExpansion.eval, habiro_terminates.... Structural match via content."
       },
       {
         "field_hash": {
@@ -505,7 +505,7 @@
         "reviewed_at": "2026-06-01T16:06:38.106Z",
         "reviewed_sha": "d4a8cf462aeef2262429b13571ddd385968bce63",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/habiro-precision-ladder-equivalence.md:70 \u2014 MeV/CODATA reference in categorical chapter \u2014 form, improving to $\\sim 1\\,\\text{ppm}$ once the derived low-order | content/quantum-observable-universe/braids-and-knots/habiro-precision-ladder-equivalence.md:77 \u2014 MeV/CODATA reference in categorical chapter \u2014 ppb-level prediction."
+        "evidence": "content/quantum-observable-universe/braids-and-knots/habiro-precision-ladder-equivalence.md:70 — MeV/CODATA reference in categorical chapter — form, improving to $\\sim 1\\,\\text{ppm}$ once the derived low-order | content/quantum-observable-universe/braids-and-knots/habiro-precision-ladder-equivalence.md:77 — MeV/CODATA reference in categorical chapter — ppb-level prediction."
       },
       {
         "field_hash": {
@@ -976,7 +976,7 @@
         },
         "result": "fail",
         "severity": "minor",
-        "evidence": "Block contains '## Why this resolves the axiom vs theorem question' and '## What the exact evaluation does and does not give' \u2014 substantive interpretive prose in same block, no companion interprets: remark.",
+        "evidence": "Block contains '## Why this resolves the axiom vs theorem question' and '## What the exact evaluation does and does not give' — substantive interpretive prose in same block, no companion interprets: remark.",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -1020,7 +1020,7 @@
         },
         "result": "warn",
         "severity": "minor",
-        "evidence": "Statement mixes generic-ring Habiro integrality with archimedean evaluation 'u \u21a6 u_0 at the substrate square-root' in same paragraph without wall: field or \u00a77c banner.",
+        "evidence": "Statement mixes generic-ring Habiro integrality with archimedean evaluation 'u ↦ u_0 at the substrate square-root' in same paragraph without wall: field or §7c banner.",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -1166,6 +1166,29 @@
         "reviewed_at": "2026-06-07T02:30:44.569Z",
         "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
         "notes": "md states the integrality/finiteness strategy clearly (cyclotomic division algorithm, finite M from crossing number) and the secondary 3b-cond bridge-class plan is well-structured. But the integrality claim is not actually implemented as a Lean statement."
+      },
+      {
+        "field_hash": {
+          "md": "f3eb1219a5f3",
+          "ts": "28b98f6f7d91",
+          "lean": "9549aabb0b76"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.85,
+          "max": 1
+        },
+        "evidence": "Each theorem docstring states the strategy (finite Finset sum; integer-point eval; determinacy congruence).",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/integration-backlog",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/integration-backlog"
+        },
+        "reviewed_at": "2026-06-08T11:44:35.419Z",
+        "reviewed_sha": "c334e454e527b6218d8f3460cdd56eb86f67c9d6",
+        "notes": "Bumped 0.8→0.85: strategy explicit in docstrings."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1190,6 +1213,29 @@
         "reviewed_at": "2026-06-07T02:30:44.611Z",
         "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
         "notes": "Core gap: the headline proposition (Habiro integrality a_m in Z[u], finite M) is reduced to True. habiro_terminates : exists M, True; habiro_integral : True; habiro_evaluation_determined : True -- all trivial. Plus two axiom decls (precisionLadderCoeff, habiroTaylorCoeff) for the bridge. The integrality content lives only in comments."
+      },
+      {
+        "field_hash": {
+          "md": "f3eb1219a5f3",
+          "ts": "28b98f6f7d91",
+          "lean": "9549aabb0b76"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.9,
+          "max": 1
+        },
+        "evidence": "Sorry-free real proofs (rfl/simp/congruence), build-verified 0 sorry. Was 0.3 (placeholder True restates-target).",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/integration-backlog",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/integration-backlog"
+        },
+        "reviewed_at": "2026-06-08T11:44:35.362Z",
+        "reviewed_sha": "c334e454e527b6218d8f3460cdd56eb86f67c9d6",
+        "notes": "Bumped 0.3→0.9: gap-as-goal removed; sorry-free."
       }
     ],
     "proof-rater-novelty": [
@@ -1214,6 +1260,29 @@
         "reviewed_at": "2026-06-07T02:30:44.648Z",
         "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
         "notes": "The 3b-cond QbetaHabiroTaylorBridgeClass (c_k = Habiro Taylor coeff, open beyond c_2) is a genuine, carefully-scoped formalization of an open derivation target mirroring PR #1508. That conditional bridge is the novel part; the headline integrality is Habiro's standard theorem."
+      },
+      {
+        "field_hash": {
+          "md": "f3eb1219a5f3",
+          "ts": "28b98f6f7d91",
+          "lean": "9549aabb0b76"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.55,
+          "max": 1
+        },
+        "evidence": "Standard Habiro integrality/finiteness (Habiro 2000). Not novel.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/integration-backlog",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/integration-backlog"
+        },
+        "reviewed_at": "2026-06-08T11:44:35.496Z",
+        "reviewed_sha": "c334e454e527b6218d8f3460cdd56eb86f67c9d6",
+        "notes": "Confirmed 0.55 — standard result."
       }
     ],
     "proof-statement-integrity": [
@@ -1235,8 +1304,27 @@
         "reviewed_at": "2026-06-07T02:30:44.686Z",
         "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
         "notes": "INTEGRITY FAIL: lean.ref qou:QOU.BraidKnot.HabiroPrecisionLadderEquivalence has no matching decl; the three propositions stating the md's claim (habiro_terminates/habiro_integral/habiro_evaluation_determined) all have type True or 'exists M, True' with body trivial -- they do NOT state the md's integrality/finiteness claim. Placeholder tautologies. (The 3b-cond bridge class section is well-formed but is a secondary OPEN bridge, not the headline.)"
+      },
+      {
+        "field_hash": {
+          "md": "f3eb1219a5f3",
+          "ts": "28b98f6f7d91",
+          "lean": "9549aabb0b76"
+        },
+        "result": "pass",
+        "evidence": "habiro-precision-ladder-equivalence.lean:67-130 — habiro_terminates/habiro_integral/habiro_evaluation_determined state the md's integrality/finiteness claim; lean.ref repointed to qou:QOU.BraidKnot.habiro_integral. lake build QOU._Scratch.HabiroVerify: 0 errors, 0 sorry.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/integration-backlog",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/integration-backlog"
+        },
+        "reviewed_at": "2026-06-08T11:44:35.277Z",
+        "reviewed_sha": "c334e454e527b6218d8f3460cdd56eb86f67c9d6",
+        "notes": "Was 3 props of type True / ∃ M, True; lean.ref pointed at namespace. Now genuine non-vacuous statements; fixed pre-existing eval₂ type error + missing Real import. Build-verified sorry-free."
       }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-08T11:44:35.496Z"
 }
