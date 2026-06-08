@@ -2189,7 +2189,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "lean:1 -- lean theorem present and signature aligns with narrative",
+        "evidence": "y-lambda-cyclotomic-factorization.lean:71 theorem y_lambda_cyclotomic_factorization",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -2197,9 +2197,9 @@
           "agent_date": "2026-06-08",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:55:52.926Z",
-        "reviewed_sha": "8b2b9773c91b3fddf1abf16f20f58d325bf77565",
-        "notes": "no divergence found"
+        "reviewed_at": "2026-06-08T10:36:24.993Z",
+        "reviewed_sha": "51621d12699c8cffcd2836175a732f45decbf853",
+        "notes": "lean states same cyclotomic factorisation claim as narrative; both over R with t=q^(1/2)"
       }
     ],
     "proof-lean-compiles": [
@@ -2581,7 +2581,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "md:1 -- content fits mass-theory scope (6 mass-theory keywords)",
+        "evidence": "y-lambda-cyclotomic-factorization.md:3 Proposition (cyclotomic factorisation of y_lambda)",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -2589,9 +2589,9 @@
           "agent_date": "2026-06-08",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:55:52.785Z",
-        "reviewed_sha": "8b2b9773c91b3fddf1abf16f20f58d325bf77565",
-        "notes": "subject matches mass analysis chapter"
+        "reviewed_at": "2026-06-08T10:35:25.638Z",
+        "reviewed_sha": "51621d12699c8cffcd2836175a732f45decbf853",
+        "notes": "cyclotomic factorisation of Markov weights is core mass-theory content"
       }
     ],
     "voice-statement-no-interpretation": [
@@ -2623,7 +2623,7 @@
         },
         "result": "warn",
         "severity": "minor",
-        "evidence": "md:106 -- ## Significance section with interpretive prose",
+        "evidence": "y-lambda-cyclotomic-factorization.md:107 ## Significance section after proof body",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -2631,9 +2631,9 @@
           "agent_date": "2026-06-08",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:55:52.891Z",
-        "reviewed_sha": "8b2b9773c91b3fddf1abf16f20f58d325bf77565",
-        "notes": "substantive significance section follows statement; check for companion remark"
+        "reviewed_at": "2026-06-08T10:36:24.960Z",
+        "reviewed_sha": "51621d12699c8cffcd2836175a732f45decbf853",
+        "notes": "interpretive significance section after proof in same block; no companion interprets: remark"
       }
     ],
     "wall-side-statement": [
@@ -2665,7 +2665,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "md:1 -- statement side matches mass-theory archimedean context",
+        "evidence": "y-lambda-cyclotomic-factorization.md:1 Lean sibling: archimedean specialisation over R (CLAUDE.md 7c)",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -2673,9 +2673,9 @@
           "agent_date": "2026-06-08",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:55:52.821Z",
-        "reviewed_sha": "8b2b9773c91b3fddf1abf16f20f58d325bf77565",
-        "notes": "no wall-side violation"
+        "reviewed_at": "2026-06-08T10:35:45.030Z",
+        "reviewed_sha": "51621d12699c8cffcd2836175a732f45decbf853",
+        "notes": "banner explicitly declares archimedean specialisation; R use is correct per 7c"
       }
     ],
     "wall-side-proof": [
@@ -2707,7 +2707,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "md:1 -- proof regime matches statement side",
+        "evidence": "y-lambda-cyclotomic-factorization.lean:71 theorem y_lambda_cyclotomic_factorization ... t : Real",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -2715,9 +2715,9 @@
           "agent_date": "2026-06-08",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:55:52.856Z",
-        "reviewed_sha": "8b2b9773c91b3fddf1abf16f20f58d325bf77565",
-        "notes": "no wall-side proof issue"
+        "reviewed_at": "2026-06-08T10:35:45.064Z",
+        "reviewed_sha": "51621d12699c8cffcd2836175a732f45decbf853",
+        "notes": "statement is archimedean; proof uses R consistently; no algebraic statement proved by archimedean-only machinery"
       }
     ],
     "detangler-topic-coherence": [
@@ -2815,5 +2815,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-08T09:55:52.926Z"
+  "updated_at": "2026-06-08T10:36:24.993Z"
 }

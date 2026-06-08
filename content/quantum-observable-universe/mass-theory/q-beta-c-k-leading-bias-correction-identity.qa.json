@@ -131,7 +131,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "md:1 -- content fits mass-theory scope (3 mass-theory keywords)",
+        "evidence": "q-beta-c-k-leading-bias-correction-identity.md:1 Proposition (Leading-bias correction identity)",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -139,9 +139,9 @@
           "agent_date": "2026-06-08",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:55:53.414Z",
-        "reviewed_sha": "80eb6874978000d676b1d20f6fa52037a743ad8c",
-        "notes": "subject matches mass analysis chapter"
+        "reviewed_at": "2026-06-08T10:38:31.060Z",
+        "reviewed_sha": "51621d12699c8cffcd2836175a732f45decbf853",
+        "notes": "Q_beta precision-ladder bias correction is core mass-theory content"
       }
     ],
     "wall-side-statement": [
@@ -153,7 +153,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "md:1 -- statement side matches mass-theory archimedean context",
+        "evidence": "q-beta-c-k-leading-bias-correction-identity.lean:60 theorem bias_correction_recovers_alg {R : Type u} [CommRing R]",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -161,9 +161,9 @@
           "agent_date": "2026-06-08",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:55:53.445Z",
-        "reviewed_sha": "80eb6874978000d676b1d20f6fa52037a743ad8c",
-        "notes": "no wall-side violation"
+        "reviewed_at": "2026-06-08T10:38:31.087Z",
+        "reviewed_sha": "51621d12699c8cffcd2836175a732f45decbf853",
+        "notes": "statement over generic CommRing R; no archimedean leak"
       }
     ],
     "wall-side-proof": [
@@ -175,7 +175,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "md:1 -- proof regime matches statement side",
+        "evidence": "q-beta-c-k-leading-bias-correction-identity.lean:60 proved by ring in CommRing R",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -183,9 +183,9 @@
           "agent_date": "2026-06-08",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:55:53.475Z",
-        "reviewed_sha": "80eb6874978000d676b1d20f6fa52037a743ad8c",
-        "notes": "no wall-side proof issue"
+        "reviewed_at": "2026-06-08T10:38:31.119Z",
+        "reviewed_sha": "51621d12699c8cffcd2836175a732f45decbf853",
+        "notes": "ring proof; no archimedean machinery"
       }
     ],
     "voice-statement-no-interpretation": [
@@ -197,7 +197,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "md:1 -- statement and proof only, no interpretation section",
+        "evidence": "q-beta-c-k-leading-bias-correction-identity.md Lean structure section only",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -205,9 +205,9 @@
           "agent_date": "2026-06-08",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:55:53.505Z",
-        "reviewed_sha": "80eb6874978000d676b1d20f6fa52037a743ad8c",
-        "notes": "no voice violation"
+        "reviewed_at": "2026-06-08T10:38:31.152Z",
+        "reviewed_sha": "51621d12699c8cffcd2836175a732f45decbf853",
+        "notes": "lean structure section is technical not interpretive; no substantive interpretation prose"
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -219,7 +219,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "lean:1 -- lean theorem present and signature aligns with narrative",
+        "evidence": "q-beta-c-k-leading-bias-correction-identity.lean:60 matches narrative bias-correction identity claim",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -227,11 +227,11 @@
           "agent_date": "2026-06-08",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:55:53.537Z",
-        "reviewed_sha": "80eb6874978000d676b1d20f6fa52037a743ad8c",
-        "notes": "no divergence found"
+        "reviewed_at": "2026-06-08T10:38:31.184Z",
+        "reviewed_sha": "51621d12699c8cffcd2836175a732f45decbf853",
+        "notes": "lean ring identity matches narrative proposition"
       }
     ]
   },
-  "updated_at": "2026-06-08T09:55:53.537Z"
+  "updated_at": "2026-06-08T10:38:31.184Z"
 }

@@ -2585,7 +2585,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "Proof invokes Tannaka-Krein and functoriality of composition — purely categorical, no archimedean machinery.",
+        "evidence": "Proof invokes Tannaka-Krein and functoriality of composition \u2014 purely categorical, no archimedean machinery.",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -2697,7 +2697,102 @@
           "worst_span": 0
         }
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "bcd0a174ee53",
+          "ts": "1377fea2ab89",
+          "lean": "67f22d2d6329"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.7,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:01:02.640Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "md gives a 4-part proof (charts, transitions are a G-torsor, automatic cocycle, atlas is a G-gerbe) with a full narrative argument."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "bcd0a174ee53",
+          "ts": "1377fea2ab89",
+          "lean": "67f22d2d6329"
+        },
+        "result": "fail",
+        "severity": "minor",
+        "score": {
+          "value": 0.3,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:01:02.677Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Lean is a sibling stub: theorem fibre_functor_atlas : True := trivial. None of the 4-part content is formalised."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "bcd0a174ee53",
+          "ts": "1377fea2ab89",
+          "lean": "67f22d2d6329"
+        },
+        "result": "fail",
+        "severity": "minor",
+        "score": {
+          "value": 0.2,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:01:02.714Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Vacuous True stub; no argument."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "bcd0a174ee53",
+          "ts": "1377fea2ab89",
+          "lean": "67f22d2d6329"
+        },
+        "result": "fail",
+        "severity": "critical",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:01:02.751Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "INTEGRITY FAIL: lean.ref QOU.QuantumObservableUniverse.fibre_functor_atlas proves : True := trivial (= True vacuous stub), not the md's torsor/gerbe atlas claim."
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-07T06:01:02.751Z"
 }

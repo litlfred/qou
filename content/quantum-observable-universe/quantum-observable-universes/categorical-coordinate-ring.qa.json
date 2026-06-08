@@ -2094,7 +2094,7 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'prop:categorical-coordinate-ring' → expected 'categorical_coordinate_ring'; Lean declares: LaurentR, iPoly, CategoricalCoordinateRing, :, :.... Structural match via content."
+        "notes": "Label 'prop:categorical-coordinate-ring' \u2192 expected 'categorical_coordinate_ring'; Lean declares: LaurentR, iPoly, CategoricalCoordinateRing, :, :.... Structural match via content."
       },
       {
         "field_hash": {
@@ -2110,7 +2110,7 @@
         },
         "reviewed_at": "2026-05-28T15:40:01.326Z",
         "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
-        "notes": "Label 'prop:categorical-coordinate-ring' → expected 'categorical_coordinate_ring'; Lean declares: LaurentR, iPoly, CategoricalCoordinateRing, i_coord, q_coord.... Structural match via content."
+        "notes": "Label 'prop:categorical-coordinate-ring' \u2192 expected 'categorical_coordinate_ring'; Lean declares: LaurentR, iPoly, CategoricalCoordinateRing, i_coord, q_coord.... Structural match via content."
       },
       {
         "field_hash": {
@@ -2126,7 +2126,7 @@
         },
         "reviewed_at": "2026-05-28T15:43:22.741Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
-        "notes": "Label 'prop:categorical-coordinate-ring' → expected 'categorical_coordinate_ring'; Lean declares: LaurentR, iPoly, CategoricalCoordinateRing, i_coord, q_coord.... Structural match via content."
+        "notes": "Label 'prop:categorical-coordinate-ring' \u2192 expected 'categorical_coordinate_ring'; Lean declares: LaurentR, iPoly, CategoricalCoordinateRing, i_coord, q_coord.... Structural match via content."
       },
       {
         "field_hash": {
@@ -2142,7 +2142,7 @@
         },
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
-        "notes": "Label 'prop:categorical-coordinate-ring' → expected 'categorical_coordinate_ring'; Lean declares: LaurentR, iPoly, CategoricalCoordinateRing, i_coord, q_coord.... Structural match via content."
+        "notes": "Label 'prop:categorical-coordinate-ring' \u2192 expected 'categorical_coordinate_ring'; Lean declares: LaurentR, iPoly, CategoricalCoordinateRing, i_coord, q_coord.... Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -2406,7 +2406,7 @@
         "reviewed_at": "2026-06-01T16:06:38.106Z",
         "reviewed_sha": "d4a8cf462aeef2262429b13571ddd385968bce63",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/quantum-observable-universes/categorical-coordinate-ring.md:99 — root-of-unity construction used without explicit regime declaration — | Universal $R = \\mathbb{Z}$ | $\\mathbb{Z}[i, q, q^{-1}]$ | Lusztig integral form with $i$ |"
+        "evidence": "content/quantum-observable-universe/quantum-observable-universes/categorical-coordinate-ring.md:99 \u2014 root-of-unity construction used without explicit regime declaration \u2014 | Universal $R = \\mathbb{Z}$ | $\\mathbb{Z}[i, q, q^{-1}]$ | Lusztig integral form with $i$ |"
       }
     ],
     "q-usage-narrative-chapter-mismatch": [
@@ -2507,7 +2507,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "proposition on coordinate ring R[i,q^±1] of chart-transition data; chapter scope includes substrate parameter and q-deformed structures; no misfiling",
+        "evidence": "proposition on coordinate ring R[i,q^\u00b11] of chart-transition data; chapter scope includes substrate parameter and q-deformed structures; no misfiling",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -2551,7 +2551,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "statement uses generic R throughout (R[i,q^±1], R-algebra, R^times); no archimedean constructs in the claim itself",
+        "evidence": "statement uses generic R throughout (R[i,q^\u00b11], R-algebra, R^times); no archimedean constructs in the claim itself",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -2685,7 +2685,100 @@
           "worst_span": 0
         }
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "ea5966aeba15",
+          "ts": "b7ccc9ffc6e3",
+          "lean": "dd2547cd8e17"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.7,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:58.843Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "md gives a full structured proof: existence by construction, why-semidirect (z -> q^{-1}z computation), Galois/braiding triple-face, and universality via Laurent + AdjoinRoot universal properties."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "ea5966aeba15",
+          "ts": "b7ccc9ffc6e3",
+          "lean": "dd2547cd8e17"
+        },
+        "result": "fail",
+        "severity": "minor",
+        "score": {
+          "value": 0.3,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:58.881Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "i_coord_sq_eq_neg_one and q_coord_isUnit are sorry-free, but the KEY universal-property claim (categorical_coordinate_ring_universal) is an axiom; the characterising property is not proved."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "ea5966aeba15",
+          "ts": "b7ccc9ffc6e3",
+          "lean": "dd2547cd8e17"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:58.920Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Standard AdjoinRoot(X^2+1) over LaurentPolynomial construction; routine commutative-algebra."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "ea5966aeba15",
+          "ts": "b7ccc9ffc6e3",
+          "lean": "dd2547cd8e17"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:58.957Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "lean.ref QOU.QuantumObservableUniverse.CategoricalCoordinateRing present (def); the i^2=-1 and unit facts match the md. Not vacuous."
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-07T06:00:58.957Z"
 }

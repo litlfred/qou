@@ -2305,7 +2305,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "lean:1 -- lean theorem present and signature aligns with narrative",
+        "evidence": "wedderburn-as-noncomm-fourier.lean:84 peter_weyl_decomposition matches narrative inverse Fourier claim",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -2313,9 +2313,9 @@
           "agent_date": "2026-06-08",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:55:54.156Z",
-        "reviewed_sha": "48853a8f13f764766270f3254bf87282cb5b5a8a",
-        "notes": "no divergence found"
+        "reviewed_at": "2026-06-08T10:40:48.268Z",
+        "reviewed_sha": "51621d12699c8cffcd2836175a732f45decbf853",
+        "notes": "lean and narrative both state trace = sum of Fourier coefficients"
       }
     ],
     "proof-lean-compiles": [
@@ -2793,7 +2793,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "md:1 -- content fits mass-theory scope (7 mass-theory keywords)",
+        "evidence": "wedderburn-as-noncomm-fourier.md:1 character expansion underlying wedderburn mass formula",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -2801,9 +2801,9 @@
           "agent_date": "2026-06-08",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:55:54.024Z",
-        "reviewed_sha": "48853a8f13f764766270f3254bf87282cb5b5a8a",
-        "notes": "subject matches mass analysis chapter"
+        "reviewed_at": "2026-06-08T10:40:48.140Z",
+        "reviewed_sha": "51621d12699c8cffcd2836175a732f45decbf853",
+        "notes": "Wedderburn noncomm Fourier interpretation is core mass-theory content"
       }
     ],
     "wall-side-statement": [
@@ -2815,7 +2815,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "md:1 -- statement side matches mass-theory archimedean context",
+        "evidence": "wedderburn-as-noncomm-fourier.lean:84 theorem peter_weyl_decomposition (D : NonCommFourierData)",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -2823,9 +2823,9 @@
           "agent_date": "2026-06-08",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:55:54.058Z",
-        "reviewed_sha": "48853a8f13f764766270f3254bf87282cb5b5a8a",
-        "notes": "no wall-side violation"
+        "reviewed_at": "2026-06-08T10:40:48.174Z",
+        "reviewed_sha": "51621d12699c8cffcd2836175a732f45decbf853",
+        "notes": "statement over generic NonCommFourierData; no archimedean leak"
       }
     ],
     "wall-side-proof": [
@@ -2835,9 +2835,9 @@
           "ts": "16b20dd7ebaa",
           "lean": "c9bbdbffec69"
         },
-        "result": "n/a",
+        "result": "pass",
         "severity": "minor",
-        "evidence": "md:1 -- no proof body in .md",
+        "evidence": "wedderburn-as-noncomm-fourier.lean:84 proof is F.decomposition direct application",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -2845,9 +2845,9 @@
           "agent_date": "2026-06-08",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:55:54.092Z",
-        "reviewed_sha": "48853a8f13f764766270f3254bf87282cb5b5a8a",
-        "notes": "no proof body to evaluate"
+        "reviewed_at": "2026-06-08T10:40:48.203Z",
+        "reviewed_sha": "51621d12699c8cffcd2836175a732f45decbf853",
+        "notes": "proof defers to class method; no archimedean machinery"
       }
     ],
     "voice-statement-no-interpretation": [
@@ -2859,7 +2859,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "md:1 -- statement and proof only, no interpretation section",
+        "evidence": "wedderburn-as-noncomm-fourier.md No new physics brief note",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -2867,11 +2867,11 @@
           "agent_date": "2026-06-08",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:55:54.124Z",
-        "reviewed_sha": "48853a8f13f764766270f3254bf87282cb5b5a8a",
-        "notes": "no voice violation"
+        "reviewed_at": "2026-06-08T10:40:48.236Z",
+        "reviewed_sha": "51621d12699c8cffcd2836175a732f45decbf853",
+        "notes": "brief no-new-physics note is technical scope clarification not substantive interpretation"
       }
     ]
   },
-  "updated_at": "2026-06-08T09:55:54.156Z"
+  "updated_at": "2026-06-08T10:40:48.268Z"
 }

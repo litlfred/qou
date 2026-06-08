@@ -2094,7 +2094,7 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'prop:categorical-action-unique' → expected 'categorical_action_unique'; Lean declares: CategoricalAction.unique. Structural match via content."
+        "notes": "Label 'prop:categorical-action-unique' \u2192 expected 'categorical_action_unique'; Lean declares: CategoricalAction.unique. Structural match via content."
       },
       {
         "field_hash": {
@@ -2110,7 +2110,7 @@
         },
         "reviewed_at": "2026-05-28T15:40:01.326Z",
         "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
-        "notes": "Label 'prop:categorical-action-unique' → expected 'categorical_action_unique'; Lean declares: CategoricalAction.unique_axiom, CategoricalAction.unique. Structural match via content."
+        "notes": "Label 'prop:categorical-action-unique' \u2192 expected 'categorical_action_unique'; Lean declares: CategoricalAction.unique_axiom, CategoricalAction.unique. Structural match via content."
       },
       {
         "field_hash": {
@@ -2126,7 +2126,7 @@
         },
         "reviewed_at": "2026-05-28T15:43:22.741Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
-        "notes": "Label 'prop:categorical-action-unique' → expected 'categorical_action_unique'; Lean declares: CategoricalAction.unique_axiom, CategoricalAction.unique. Structural match via content."
+        "notes": "Label 'prop:categorical-action-unique' \u2192 expected 'categorical_action_unique'; Lean declares: CategoricalAction.unique_axiom, CategoricalAction.unique. Structural match via content."
       },
       {
         "field_hash": {
@@ -2142,7 +2142,7 @@
         },
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
-        "notes": "Label 'prop:categorical-action-unique' → expected 'categorical_action_unique'; Lean declares: CategoricalAction.unique_axiom, CategoricalAction.unique. Structural match via content."
+        "notes": "Label 'prop:categorical-action-unique' \u2192 expected 'categorical_action_unique'; Lean declares: CategoricalAction.unique_axiom, CategoricalAction.unique. Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -2549,7 +2549,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "Statement is purely categorical/algebraic: rigid structure, ev_A, coev_A, categorical trace — no archimedean constructs",
+        "evidence": "Statement is purely categorical/algebraic: rigid structure, ev_A, coev_A, categorical trace \u2014 no archimedean constructs",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -2559,7 +2559,7 @@
         },
         "reviewed_at": "2026-06-04T23:19:48.438Z",
         "reviewed_sha": "1e44380a7234fce2043e25abc902fc58f37cd565",
-        "notes": "Generic-ring chapter, statement stays generic; no q≈value, no Real.*, no ordering hypotheses"
+        "notes": "Generic-ring chapter, statement stays generic; no q\u2248value, no Real.*, no ordering hypotheses"
       }
     ],
     "wall-side-proof": [
@@ -2677,7 +2677,102 @@
           "worst_span": 0
         }
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "9b57eaab4051",
+          "ts": "b848a029651c",
+          "lean": "0374f5411a2c"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:58.692Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Terse statement-only md (any morphism factoring as ev o (id (x) Phi) o coev equals tr(Phi))."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "9b57eaab4051",
+          "ts": "b848a029651c",
+          "lean": "0374f5411a2c"
+        },
+        "result": "fail",
+        "severity": "minor",
+        "score": {
+          "value": 0.3,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:58.730Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Closed by CategoricalAction.unique_axiom; the docstring states the Subsingleton claim is STRICTLY FALSE (struct has free fields state/gravity/gauge/matter), so the axiom asserts a false statement."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "9b57eaab4051",
+          "ts": "b848a029651c",
+          "lean": "0374f5411a2c"
+        },
+        "result": "fail",
+        "severity": "minor",
+        "score": {
+          "value": 0.2,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:58.769Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Axiom-laundered Subsingleton; no argument."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "9b57eaab4051",
+          "ts": "b848a029651c",
+          "lean": "0374f5411a2c"
+        },
+        "result": "fail",
+        "severity": "critical",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:58.805Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "INTEGRITY FAIL: lean.ref QOU.CategoricalAction.unique is := an axiom the file's own docstring documents as strictly false; the Lean statement does not faithfully encode a true/intended claim."
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-07T06:00:58.805Z"
 }

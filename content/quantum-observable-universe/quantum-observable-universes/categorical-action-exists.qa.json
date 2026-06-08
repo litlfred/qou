@@ -2230,7 +2230,7 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'prop:categorical-action-exists' → expected 'categorical_action_exists'; Lean declares: CategoricalAction.exists. Structural match via content."
+        "notes": "Label 'prop:categorical-action-exists' \u2192 expected 'categorical_action_exists'; Lean declares: CategoricalAction.exists. Structural match via content."
       },
       {
         "field_hash": {
@@ -2246,7 +2246,7 @@
         },
         "reviewed_at": "2026-05-28T15:40:01.326Z",
         "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
-        "notes": "Label 'prop:categorical-action-exists' → expected 'categorical_action_exists'; Lean declares: CategoricalAction.exists. Structural match via content."
+        "notes": "Label 'prop:categorical-action-exists' \u2192 expected 'categorical_action_exists'; Lean declares: CategoricalAction.exists. Structural match via content."
       },
       {
         "field_hash": {
@@ -2262,7 +2262,7 @@
         },
         "reviewed_at": "2026-05-28T15:43:22.741Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
-        "notes": "Label 'prop:categorical-action-exists' → expected 'categorical_action_exists'; Lean declares: CategoricalAction.exists. Structural match via content."
+        "notes": "Label 'prop:categorical-action-exists' \u2192 expected 'categorical_action_exists'; Lean declares: CategoricalAction.exists. Structural match via content."
       },
       {
         "field_hash": {
@@ -2278,7 +2278,7 @@
         },
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
-        "notes": "Label 'prop:categorical-action-exists' → expected 'categorical_action_exists'; Lean declares: CategoricalAction.exists. Structural match via content."
+        "notes": "Label 'prop:categorical-action-exists' \u2192 expected 'categorical_action_exists'; Lean declares: CategoricalAction.exists. Structural match via content."
       },
       {
         "field_hash": {
@@ -2288,7 +2288,7 @@
         },
         "result": "warn",
         "severity": "minor",
-        "evidence": "Narrative claims S_Phi=tr(Phi); Lean proves only Nonempty(CategoricalAction) via stub — Lean comment notes rigid-trace witness is a follow-up",
+        "evidence": "Narrative claims S_Phi=tr(Phi); Lean proves only Nonempty(CategoricalAction) via stub \u2014 Lean comment notes rigid-trace witness is a follow-up",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -2837,7 +2837,102 @@
           "worst_span": 0
         }
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "f646226a95de",
+          "ts": "10be89cdd156",
+          "lean": "c541d0b86fdf"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:58.544Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Terse statement-only md (defines S_Phi = ev o (id (x) Phi) o coev = tr(Phi)); no proof plan beyond the formula."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "f646226a95de",
+          "ts": "10be89cdd156",
+          "lean": "c541d0b86fdf"
+        },
+        "result": "fail",
+        "severity": "minor",
+        "score": {
+          "value": 0.3,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:58.581Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Lean proves only Nonempty(CategoricalAction) via a trivial all-identity witness on a struct with free fields; docstring admits this is NOT the rigid-trace witness S_Phi = tr(Phi)."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "f646226a95de",
+          "ts": "10be89cdd156",
+          "lean": "c541d0b86fdf"
+        },
+        "result": "fail",
+        "severity": "minor",
+        "score": {
+          "value": 0.2,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:58.619Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Vacuous existence over a free-field structure; no argument."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "f646226a95de",
+          "ts": "10be89cdd156",
+          "lean": "c541d0b86fdf"
+        },
+        "result": "fail",
+        "severity": "critical",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:00:58.654Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "INTEGRITY FAIL: lean.ref QOU.CategoricalAction.exists proves a vacuously-satisfiable weaker claim (Nonempty of a free-field struct), not the md's S_Phi = tr(Phi); docstring self-admits the gap. Trivial-witness restates a weaker target."
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-07T06:00:58.654Z"
 }

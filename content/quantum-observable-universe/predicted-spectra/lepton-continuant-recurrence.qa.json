@@ -2437,7 +2437,7 @@
         "reviewed_at": "2026-06-01T16:06:38.106Z",
         "reviewed_sha": "d4a8cf462aeef2262429b13571ddd385968bce63",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/predicted-spectra/lepton-continuant-recurrence.md:1 — detected regime [symbolic] is disjoint from chapter 'predicted-spectra' expected [fixed-q0, na, real-gt-1, real-positive]"
+        "evidence": "content/quantum-observable-universe/predicted-spectra/lepton-continuant-recurrence.md:1 \u2014 detected regime [symbolic] is disjoint from chapter 'predicted-spectra' expected [fixed-q0, na, real-gt-1, real-positive]"
       }
     ],
     "canonical-ck-tiered-not-binary": [
@@ -2565,7 +2565,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "predicted-spectra is explicitly archimedean; statement uses q_0 numeric values correctly for this chapter; algebraic recurrence is exact in Z[q±1] with archimedean evaluation flagged.",
+        "evidence": "predicted-spectra is explicitly archimedean; statement uses q_0 numeric values correctly for this chapter; algebraic recurrence is exact in Z[q\u00b11] with archimedean evaluation flagged.",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -2587,7 +2587,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "Proof is purely algebraic Hecke-relation induction in Z[q±1]; no archimedean machinery (linarith/IVT/Real.*) used.",
+        "evidence": "Proof is purely algebraic Hecke-relation induction in Z[q\u00b11]; no archimedean machinery (linarith/IVT/Real.*) used.",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -2693,7 +2693,100 @@
           "worst_span": 0
         }
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "9e847f86cc3c",
+          "ts": "4806465ab264",
+          "lean": "d6fc6b6c94b6"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.9,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:10:30.459Z",
+        "reviewed_sha": "4e961c6c457cf2aaa28e91304a917b1bcfdf2afe",
+        "notes": "Plan crystal-clear: apply Hecke relation sigma_0^2=(q-q^-1)sigma_0+1 to sigma_0^{n+1}=sigma_0*sigma_0^n, read off a_{n+1}=b_n, b_{n+1}=a_n+h b_n=b_{n-1}+h b_n with IC. Fully laid out."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "9e847f86cc3c",
+          "ts": "4806465ab264",
+          "lean": "d6fc6b6c94b6"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.55,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:10:30.496Z",
+        "reviewed_sha": "4e961c6c457cf2aaa28e91304a917b1bcfdf2afe",
+        "notes": "The md argument is rigorous and gap-free (elementary, exact in Z[q^\u00b11]) and the Lean would be routine to write - but the actual formal artifact is a True stub, so no established formal goal exists yet. Plausible/routine math, absent formalization."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "9e847f86cc3c",
+          "ts": "4806465ab264",
+          "lean": "d6fc6b6c94b6"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.6,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:10:47.215Z",
+        "reviewed_sha": "4e961c6c457cf2aaa28e91304a917b1bcfdf2afe",
+        "notes": "Identifying the lepton-tower NF as a Morgan-Voyce continuant (positive-sign three-term recurrence, contrasted with Chebyshev U_n) is a clean structural observation, modestly novel."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "9e847f86cc3c",
+          "ts": "4806465ab264",
+          "lean": "d6fc6b6c94b6"
+        },
+        "result": "fail",
+        "severity": "critical",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:10:30.422Z",
+        "reviewed_sha": "4e961c6c457cf2aaa28e91304a917b1bcfdf2afe",
+        "notes": "lean.ref qou:QOU.Archimedean.lepton_continuant_recurrence is a sibling STUB: 'theorem lepton_continuant_recurrence : True := by trivial'. Vacuous =True; does not state the NF(sigma_0^n)=a_n*1+b_n*sigma_0 recurrence (a_{n+1}=b_n, b_{n+1}=h b_n+b_{n-1}). NOTE the md proof is COMPLETE and correct (elementary induction from sigma_0^2=h sigma_0+1) - this is formalization debt, not a math gap."
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-07T06:10:47.215Z"
 }

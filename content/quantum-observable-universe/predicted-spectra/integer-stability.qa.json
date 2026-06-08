@@ -2094,7 +2094,7 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'prop:integer-stability' → expected 'integer_stability'; Lean declares: stable_neutron_number, stable_neutron_witness, observed_neutron_numbers, stable_neutron_max_error. Structural match via content."
+        "notes": "Label 'prop:integer-stability' \u2192 expected 'integer_stability'; Lean declares: stable_neutron_number, stable_neutron_witness, observed_neutron_numbers, stable_neutron_max_error. Structural match via content."
       },
       {
         "field_hash": {
@@ -2110,7 +2110,7 @@
         },
         "reviewed_at": "2026-05-28T15:43:22.741Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
-        "notes": "Label 'prop:integer-stability' → expected 'integer_stability'; Lean declares: stable_neutron_number, stable_neutron_witness, observed_neutron_numbers, stable_neutron_max_error. Structural match via content."
+        "notes": "Label 'prop:integer-stability' \u2192 expected 'integer_stability'; Lean declares: stable_neutron_number, stable_neutron_witness, observed_neutron_numbers, stable_neutron_max_error. Structural match via content."
       },
       {
         "field_hash": {
@@ -2126,7 +2126,7 @@
         },
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
-        "notes": "Label 'prop:integer-stability' → expected 'integer_stability'; Lean declares: stable_neutron_number, stable_neutron_witness, observed_neutron_numbers, stable_neutron_max_error. Structural match via content."
+        "notes": "Label 'prop:integer-stability' \u2192 expected 'integer_stability'; Lean declares: stable_neutron_number, stable_neutron_witness, observed_neutron_numbers, stable_neutron_max_error. Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -2661,7 +2661,100 @@
           "worst_span": 0
         }
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "f77a889243b2",
+          "ts": "2e553aa598e9",
+          "lean": "6201b8a6c4ed"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.82,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:09:21.478Z",
+        "reviewed_sha": "4e961c6c457cf2aaa28e91304a917b1bcfdf2afe",
+        "notes": "md plan clear: E(p,A) convex quadratic in p => continuous min p* = gamma/2alpha => integer minimiser is one of {floor p*, ceil p*} exactly (convexity), + even-odd pairing selection + A_k regime-transition thresholds."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "f77a889243b2",
+          "ts": "2e553aa598e9",
+          "lean": "6201b8a6c4ed"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0.3,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:09:21.513Z",
+        "reviewed_sha": "4e961c6c457cf2aaa28e91304a917b1bcfdf2afe",
+        "notes": "The md's convexity-exactness proposition is unproven in Lean; the ref decl is absent (wrong namespace/name). The actual theorem stable_neutron_max_error (|n_pred - n_obs| <= 8 via native_decide) is a loose empirical table check, not the stated exactness result. Core claim unformalized."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "f77a889243b2",
+          "ts": "2e553aa598e9",
+          "lean": "6201b8a6c4ed"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:09:21.548Z",
+        "reviewed_sha": "4e961c6c457cf2aaa28e91304a917b1bcfdf2afe",
+        "notes": "Integer minimiser of a convex quadratic = nearest-integer is elementary; the even-even dominance (166/254 nuclides) explanation via pairing is a nice but standard liquid-drop-model observation."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "f77a889243b2",
+          "ts": "2e553aa598e9",
+          "lean": "6201b8a6c4ed"
+        },
+        "result": "fail",
+        "severity": "critical",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:09:21.442Z",
+        "reviewed_sha": "4e961c6c457cf2aaa28e91304a917b1bcfdf2afe",
+        "notes": "REF DECL ABSENT + claim mismatch: lean.ref qou:QOU.Archimedean.integer_stability, but the sibling .lean has NO 'namespace QOU.Archimedean' and NO declaration 'integer_stability' (only top-level stable_neutron_number / stable_neutron_witness / observed_neutron_numbers / stable_neutron_max_error). Also the md's actual claim (binding energy is convex-quadratic in p so the integer minimiser is exactly floor/ceil of p*) is NOT formalized; the only theorem stable_neutron_max_error proves predicted-vs-observed neutron numbers differ by <=8 (native_decide table check) - a loose accuracy bound, not the exactness claim."
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-07T06:09:21.548Z"
 }

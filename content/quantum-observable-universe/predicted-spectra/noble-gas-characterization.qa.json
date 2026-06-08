@@ -2694,7 +2694,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "Noble gas characterization is a spectral/particle prediction — direct fit to Ch13 predicted-spectra catalogue.",
+        "evidence": "Noble gas characterization is a spectral/particle prediction \u2014 direct fit to Ch13 predicted-spectra catalogue.",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -2716,7 +2716,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "Statement uses algebraic/topological language: Hopf links, trefoil chains, linking number — no archimedean constructs (Real.sqrt, numeric literals, ordering predicates).",
+        "evidence": "Statement uses algebraic/topological language: Hopf links, trefoil chains, linking number \u2014 no archimedean constructs (Real.sqrt, numeric literals, ordering predicates).",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -2738,7 +2738,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "Proof sketch cites prop:torus-hopf-stability and rem:electron-shells-hopf — topological/algebraic arguments with no archimedean machinery.",
+        "evidence": "Proof sketch cites prop:torus-hopf-stability and rem:electron-shells-hopf \u2014 topological/algebraic arguments with no archimedean machinery.",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -2844,7 +2844,100 @@
           "worst_span": 0
         }
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "3943bc4550e1",
+          "ts": "18908cbc1aef",
+          "lean": "5d045667b710"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.7,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:12:17.181Z",
+        "reviewed_sha": "4e961c6c457cf2aaa28e91304a917b1bcfdf2afe",
+        "notes": "md organizes a 3-condition iff (closure / exhaustion / monotone-nesting) + a proof SKETCH (forward via torus-hopf-stability; reverse via the electron-shells-hopf conjecture). Clear structure, but the reverse rests on a conjecture."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "3943bc4550e1",
+          "ts": "18908cbc1aef",
+          "lean": "5d045667b710"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0.3,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:12:17.289Z",
+        "reviewed_sha": "4e961c6c457cf2aaa28e91304a917b1bcfdf2afe",
+        "notes": "Core gap: Lean is a True stub; the md 'proof sketch' reverse direction (inertness => closed partition) depends on rem:electron-shells-hopf (a conjecture). No formal/established proof."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "3943bc4550e1",
+          "ts": "18908cbc1aef",
+          "lean": "5d045667b710"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:12:17.327Z",
+        "reviewed_sha": "4e961c6c457cf2aaa28e91304a917b1bcfdf2afe",
+        "notes": "The full-shell-as-full-curls topological characterization (closed sub-Hopf link <-> chemical inertness, ionization-energy peaks as crossing-energy maxima) is a creative knot-theoretic analogy, but qualitative and conjecture-backed."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "3943bc4550e1",
+          "ts": "18908cbc1aef",
+          "lean": "5d045667b710"
+        },
+        "result": "fail",
+        "severity": "critical",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:12:17.094Z",
+        "reviewed_sha": "4e961c6c457cf2aaa28e91304a917b1bcfdf2afe",
+        "notes": "lean.ref qou:QOU.Archimedean.noble_gas_characterization is a sibling STUB: 'theorem noble_gas_characterization : True := by trivial' (ts validation:not_started). Vacuous =True; does not formalize the iff (closed sub-Hopf partition <=> chemically inert) with its 3 conditions (closure, exhaustion, monotone nesting)."
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-07T06:12:17.327Z"
 }

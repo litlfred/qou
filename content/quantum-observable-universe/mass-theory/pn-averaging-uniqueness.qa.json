@@ -953,7 +953,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "md:1 -- content fits mass-theory scope (4 mass-theory keywords)",
+        "evidence": "pn-averaging-uniqueness.md:1 Proposition (canonical p-n averaging uniqueness)",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -961,9 +961,9 @@
           "agent_date": "2026-06-08",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:55:53.102Z",
-        "reviewed_sha": "5de1107afb7ada697456d63c5fbc7dc1add1974b",
-        "notes": "subject matches mass analysis chapter"
+        "reviewed_at": "2026-06-08T10:37:36.053Z",
+        "reviewed_sha": "51621d12699c8cffcd2836175a732f45decbf853",
+        "notes": "p-n averaging in H_{3A} fits mass-theory chapter scope"
       }
     ],
     "voice-statement-no-interpretation": [
@@ -995,7 +995,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "md:1 -- statement and proof only, no interpretation section",
+        "evidence": "pn-averaging-uniqueness.md:1 statement+conditions only",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1003,9 +1003,9 @@
           "agent_date": "2026-06-08",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:55:53.197Z",
-        "reviewed_sha": "5de1107afb7ada697456d63c5fbc7dc1add1974b",
-        "notes": "no voice violation"
+        "reviewed_at": "2026-06-08T10:37:36.162Z",
+        "reviewed_sha": "51621d12699c8cffcd2836175a732f45decbf853",
+        "notes": "no substantive interpretive prose in same block"
       }
     ],
     "wall-side-statement": [
@@ -1037,7 +1037,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "md:1 -- statement side matches mass-theory archimedean context",
+        "evidence": "pn-averaging-uniqueness.md:2 on H_{3A}(R,q) that both satisfy bar-invariance",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1045,9 +1045,9 @@
           "agent_date": "2026-06-08",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:55:53.134Z",
-        "reviewed_sha": "5de1107afb7ada697456d63c5fbc7dc1add1974b",
-        "notes": "no wall-side violation"
+        "reviewed_at": "2026-06-08T10:37:36.094Z",
+        "reviewed_sha": "51621d12699c8cffcd2836175a732f45decbf853",
+        "notes": "generic R,q; no archimedean leak"
       }
     ],
     "wall-side-proof": [
@@ -1077,9 +1077,9 @@
           "ts": "2704de932b44",
           "lean": "31f157f54b06"
         },
-        "result": "n/a",
+        "result": "pass",
         "severity": "minor",
-        "evidence": "md:1 -- no proof body in .md",
+        "evidence": "pn-averaging-uniqueness.lean:152 theorem pn_averaging_unique_via_weight",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1087,9 +1087,9 @@
           "agent_date": "2026-06-08",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:55:53.166Z",
-        "reviewed_sha": "5de1107afb7ada697456d63c5fbc7dc1add1974b",
-        "notes": "no proof body to evaluate"
+        "reviewed_at": "2026-06-08T10:37:36.128Z",
+        "reviewed_sha": "51621d12699c8cffcd2836175a732f45decbf853",
+        "notes": "proof in generic ring; no archimedean machinery"
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1121,7 +1121,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "lean:1 -- lean theorem present and signature aligns with narrative",
+        "evidence": "pn-averaging-uniqueness.lean:167 theorem pn_averaging_unique",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1129,9 +1129,9 @@
           "agent_date": "2026-06-08",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:55:53.229Z",
-        "reviewed_sha": "5de1107afb7ada697456d63c5fbc7dc1add1974b",
-        "notes": "no divergence found"
+        "reviewed_at": "2026-06-08T10:37:36.195Z",
+        "reviewed_sha": "51621d12699c8cffcd2836175a732f45decbf853",
+        "notes": "lean uniqueness theorem matches narrative uniqueness claim"
       }
     ],
     "detangler-topic-coherence": [
@@ -1229,5 +1229,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-08T09:55:53.229Z"
+  "updated_at": "2026-06-08T10:37:36.195Z"
 }

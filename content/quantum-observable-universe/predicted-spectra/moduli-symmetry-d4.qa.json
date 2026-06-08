@@ -2305,7 +2305,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "Lean moduli_symmetry_d4 proves σ⁴=id ∧ τ²=id (q≠0) ∧ (στ)²=id (q≠0), matching narrative's three dihedral relations exactly.",
+        "evidence": "Lean moduli_symmetry_d4 proves \u03c3\u2074=id \u2227 \u03c4\u00b2=id (q\u22600) \u2227 (\u03c3\u03c4)\u00b2=id (q\u22600), matching narrative's three dihedral relations exactly.",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -2315,7 +2315,7 @@
         },
         "reviewed_at": "2026-06-05T15:18:08.611Z",
         "reviewed_sha": "beece88290ed89594a189e5f1e9347af979298b1",
-        "notes": "Faithfulness is noted in docstring but not formally proved as a separate theorem; narrative also notes it informally — no divergence in the core claim."
+        "notes": "Faithfulness is noted in docstring but not formally proved as a separate theorem; narrative also notes it informally \u2014 no divergence in the core claim."
       }
     ],
     "proof-lean-compiles": [
@@ -2613,7 +2613,7 @@
         "reviewed_at": "2026-06-01T16:06:38.106Z",
         "reviewed_sha": "d4a8cf462aeef2262429b13571ddd385968bce63",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/predicted-spectra/moduli-symmetry-d4.md:1 — detected regime [root-of-unity, symbolic, unit-circle] is disjoint from chapter 'predicted-spectra' expected [fixed-q0, na, real-gt-1, real-positive]"
+        "evidence": "content/quantum-observable-universe/predicted-spectra/moduli-symmetry-d4.md:1 \u2014 detected regime [root-of-unity, symbolic, unit-circle] is disjoint from chapter 'predicted-spectra' expected [fixed-q0, na, real-gt-1, real-positive]"
       }
     ],
     "canonical-ck-tiered-not-binary": [
@@ -2697,7 +2697,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "Statement is the bare D4-action claim; extensive working sections (golden octet, Möbius lifts, unit circle) are sub-propositions within the proof, not interpretive prose mislocated from a remark.",
+        "evidence": "Statement is the bare D4-action claim; extensive working sections (golden octet, M\u00f6bius lifts, unit circle) are sub-propositions within the proof, not interpretive prose mislocated from a remark.",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -2741,7 +2741,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "Statement is purely algebraic: q in C×, involutions σ:q↦iq and τ:q↦q⁻¹ over ℂ; no archimedean constructs (Real.sqrt, ordering, numeric literal) in the statement.",
+        "evidence": "Statement is purely algebraic: q in C\u00d7, involutions \u03c3:q\u21a6iq and \u03c4:q\u21a6q\u207b\u00b9 over \u2102; no archimedean constructs (Real.sqrt, ordering, numeric literal) in the statement.",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -2751,7 +2751,7 @@
         },
         "reviewed_at": "2026-06-05T15:16:45.238Z",
         "reviewed_sha": "beece88290ed89594a189e5f1e9347af979298b1",
-        "notes": "Operates on ℂ× which is appropriate for this complex-algebraic claim."
+        "notes": "Operates on \u2102\u00d7 which is appropriate for this complex-algebraic claim."
       }
     ],
     "wall-side-proof": [
@@ -2763,7 +2763,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "Proof uses algebraic verification (τστ(q) = σ⁻¹(q) by direct computation) and polynomial arithmetic over ℤ; no archimedean machinery.",
+        "evidence": "Proof uses algebraic verification (\u03c4\u03c3\u03c4(q) = \u03c3\u207b\u00b9(q) by direct computation) and polynomial arithmetic over \u2124; no archimedean machinery.",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -2869,7 +2869,99 @@
           "worst_span": 0
         }
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "77cae42d7dfb",
+          "ts": "b854d2bc9a1c",
+          "lean": "10bb4b4cd067"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.88,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:11:33.170Z",
+        "reviewed_sha": "4e961c6c457cf2aaa28e91304a917b1bcfdf2afe",
+        "notes": "Plan clear: sigma:q->iq, tau:q->q^-1 generate D_4 via sigma^4=tau^2=(sigma tau)^2=id; the dihedral commutation tau sigma tau=sigma^-1 verified explicitly. Golden octet = D_4-orbit of phi; octet = roots of z^8-7z^4+1. Direct computation proof."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "77cae42d7dfb",
+          "ts": "b854d2bc9a1c",
+          "lean": "10bb4b4cd067"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.85,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:11:33.207Z",
+        "reviewed_sha": "4e961c6c457cf2aaa28e91304a917b1bcfdf2afe",
+        "notes": "Fully sorry-free: sigma_pow_four (I*I=-1), tau_pow_two, sigma_tau_involution (real complex-arithmetic via I_inv=-I, mul_inv_cancel0), headline moduli_symmetry_d4 conjunction of the 3 dihedral relations. NOTE Lean proves the relations but not the faithfulness (sigma genuinely order 4) nor the golden-octet orbit / z^8-7z^4+1 factorisation - faithful but partial vs md."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "77cae42d7dfb",
+          "ts": "b854d2bc9a1c",
+          "lean": "10bb4b4cd067"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.55,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:11:33.378Z",
+        "reviewed_sha": "4e961c6c457cf2aaa28e91304a917b1bcfdf2afe",
+        "notes": "D_4 action on the moduli line and the golden octet are standard group theory; the observation that Z[i] (not Z) is the natural ring of definition for the Mobius family is a mildly novel structural point."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "77cae42d7dfb",
+          "ts": "b854d2bc9a1c",
+          "lean": "10bb4b4cd067"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:11:33.478Z",
+        "reviewed_sha": "4e961c6c457cf2aaa28e91304a917b1bcfdf2afe",
+        "notes": "lean.ref ...ModuliSymmetryD4.moduli_symmetry_d4 present and sorry-free; conjunction (sigma^4=id, tau^2=id on C*, (sigma tau)^2=id) faithfully encodes the md dihedral relations. Not vacuous. Octet/faithfulness coverage gap noted under plausibility."
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-07T06:11:33.478Z"
 }

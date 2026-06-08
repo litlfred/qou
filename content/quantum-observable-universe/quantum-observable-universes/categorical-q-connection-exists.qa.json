@@ -2094,7 +2094,7 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'prop:categorical-q-connection-exists' → expected 'categorical_q_connection_exists'; Lean declares: CategoricalQConnection.exists. Structural match via content."
+        "notes": "Label 'prop:categorical-q-connection-exists' \u2192 expected 'categorical_q_connection_exists'; Lean declares: CategoricalQConnection.exists. Structural match via content."
       },
       {
         "field_hash": {
@@ -2110,7 +2110,7 @@
         },
         "reviewed_at": "2026-05-28T15:40:01.326Z",
         "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
-        "notes": "Label 'prop:categorical-q-connection-exists' → expected 'categorical_q_connection_exists'; Lean declares: CategoricalQConnection.exists. Structural match via content."
+        "notes": "Label 'prop:categorical-q-connection-exists' \u2192 expected 'categorical_q_connection_exists'; Lean declares: CategoricalQConnection.exists. Structural match via content."
       },
       {
         "field_hash": {
@@ -2126,7 +2126,7 @@
         },
         "reviewed_at": "2026-05-28T15:43:22.741Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
-        "notes": "Label 'prop:categorical-q-connection-exists' → expected 'categorical_q_connection_exists'; Lean declares: CategoricalQConnection.exists. Structural match via content."
+        "notes": "Label 'prop:categorical-q-connection-exists' \u2192 expected 'categorical_q_connection_exists'; Lean declares: CategoricalQConnection.exists. Structural match via content."
       },
       {
         "field_hash": {
@@ -2142,7 +2142,7 @@
         },
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
-        "notes": "Label 'prop:categorical-q-connection-exists' → expected 'categorical_q_connection_exists'; Lean declares: CategoricalQConnection.exists. Structural match via content."
+        "notes": "Label 'prop:categorical-q-connection-exists' \u2192 expected 'categorical_q_connection_exists'; Lean declares: CategoricalQConnection.exists. Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -2677,7 +2677,102 @@
           "worst_span": 0
         }
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "70c9acca157c",
+          "ts": "a53757e649f4",
+          "lean": "40770ed867e6"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:01:00.941Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Terse statement-only md (nabla_q = q^{-1} nabla + (1-q^{-1}) iota_xi nabla o Theta exists)."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "70c9acca157c",
+          "ts": "a53757e649f4",
+          "lean": "40770ed867e6"
+        },
+        "result": "fail",
+        "severity": "minor",
+        "score": {
+          "value": 0.3,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:01:00.980Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Lean proves Nonempty via a trivial A=Omega1=1, identity-morphisms, q=1 witness; docstring admits the intended composition needs Reeb/interior-product infra."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "70c9acca157c",
+          "ts": "a53757e649f4",
+          "lean": "40770ed867e6"
+        },
+        "result": "fail",
+        "severity": "minor",
+        "score": {
+          "value": 0.2,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:01:01.021Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Vacuous existence; identity/q=1 witness."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "70c9acca157c",
+          "ts": "a53757e649f4",
+          "lean": "40770ed867e6"
+        },
+        "result": "fail",
+        "severity": "critical",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:01:01.057Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "INTEGRITY FAIL: lean.ref QOU.CategoricalQConnection.exists proves a vacuous Nonempty via an identity witness, not the md's q-connection; docstring self-admits the gap."
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-07T06:01:01.057Z"
 }

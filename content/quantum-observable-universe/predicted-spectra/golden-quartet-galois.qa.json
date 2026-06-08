@@ -2527,7 +2527,7 @@
         },
         "result": "fail",
         "severity": "major",
-        "evidence": "Primary subject is Galois theory of Q(sqrt5) and quartic polynomial roots — pure number theory, not predicted particle spectra.",
+        "evidence": "Primary subject is Galois theory of Q(sqrt5) and quartic polynomial roots \u2014 pure number theory, not predicted particle spectra.",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -2559,7 +2559,7 @@
         },
         "reviewed_at": "2026-06-05T13:13:58.388Z",
         "reviewed_sha": "af5ea9823326ee82869e7cde3d37ee00ea4a02a7",
-        "notes": "Archimedean R-times reference in statement; consider generic-ring formulation per CLAUDE.md §7c."
+        "notes": "Archimedean R-times reference in statement; consider generic-ring formulation per CLAUDE.md \u00a77c."
       }
     ],
     "wall-side-proof": [
@@ -2677,7 +2677,99 @@
           "worst_span": 0
         }
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "76a6be6d4c15",
+          "ts": "98cb83fe1242",
+          "lean": "b0eef5a5f8f0"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.9,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:06:41.810Z",
+        "reviewed_sha": "4e961c6c457cf2aaa28e91304a917b1bcfdf2afe",
+        "notes": "Plan clear: factor P(x)=x^4-3x^2+1=(x^2-x-1)(x^2+x-1); the two quadratics are min polys of phi and 1/phi; Galois (sqrt5->-sqrt5) flips signs, bar (x->1/x) exchanges orbits; G=Z/2 x Z/2 acts with single orbit (explicit table). Direct expansion proof."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "76a6be6d4c15",
+          "ts": "98cb83fe1242",
+          "lean": "b0eef5a5f8f0"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.85,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:06:41.847Z",
+        "reviewed_sha": "4e961c6c457cf2aaa28e91304a917b1bcfdf2afe",
+        "notes": "Fully sorry-free: all four roots verified (phi_quartic etc. via ring/nlinarith[sqrt5_sq]), Galois conjugates galois_phi_eq_neg_phiInv, bar pairing phi*phiInv=1; headline golden_quartet_galois conjunction real. NOTE Lean conjunction proves root set + bar pairing but NOT the group-action transitivity/faithfulness (md's single-orbit |G|=4=|Q| claim) - faithful but partial vs md."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "76a6be6d4c15",
+          "ts": "98cb83fe1242",
+          "lean": "b0eef5a5f8f0"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.55,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:06:41.883Z",
+        "reviewed_sha": "4e961c6c457cf2aaa28e91304a917b1bcfdf2afe",
+        "notes": "Standard Galois/golden-ratio algebra; the quartet+bar-orbit framing as a zeta_5-elimination tool (replace Gal(Q(zeta_5)) bookkeeping with the real quartet orbit) is a useful exposition observation but not a novel argument."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "76a6be6d4c15",
+          "ts": "98cb83fe1242",
+          "lean": "b0eef5a5f8f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:06:41.920Z",
+        "reviewed_sha": "4e961c6c457cf2aaa28e91304a917b1bcfdf2afe",
+        "notes": "lean.ref ...GoldenQuartetGalois.golden_quartet_galois present and sorry-free; conjunction (4 roots of x^4-3x^2+1 + phi*phiInv=1) is a faithful (partial) encoding of the md proposition. Not vacuous. Group-orbit transitivity not in Lean -> coverage note under plausibility."
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-07T06:06:41.920Z"
 }

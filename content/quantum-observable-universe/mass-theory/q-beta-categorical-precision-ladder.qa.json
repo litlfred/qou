@@ -2303,7 +2303,7 @@
         },
         "result": "n/a",
         "severity": "minor",
-        "evidence": "ts:1 -- no .lean sibling",
+        "evidence": "q-beta-categorical-precision-ladder: no .lean sibling file",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -2311,9 +2311,9 @@
           "agent_date": "2026-06-08",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:55:53.842Z",
-        "reviewed_sha": "bca337a9556ced3973d8b85a1e5e399502aea7d0",
-        "notes": "no lean file to compare"
+        "reviewed_at": "2026-06-08T10:39:58.063Z",
+        "reviewed_sha": "51621d12699c8cffcd2836175a732f45decbf853",
+        "notes": "no lean sibling; criterion not applicable"
       }
     ],
     "proof-lean-compiles": [
@@ -2836,7 +2836,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "md:1 -- content fits mass-theory scope (12 mass-theory keywords)",
+        "evidence": "q-beta-categorical-precision-ladder.md:13 Q_beta categorical-derivation precision ladder",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -2844,9 +2844,9 @@
           "agent_date": "2026-06-08",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:55:53.704Z",
-        "reviewed_sha": "bca337a9556ced3973d8b85a1e5e399502aea7d0",
-        "notes": "subject matches mass analysis chapter"
+        "reviewed_at": "2026-06-08T10:39:57.927Z",
+        "reviewed_sha": "51621d12699c8cffcd2836175a732f45decbf853",
+        "notes": "Q_beta precision ladder fits mass-theory chapter"
       }
     ],
     "wall-side-statement": [
@@ -2857,7 +2857,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "md:1 -- statement side matches mass-theory archimedean context",
+        "evidence": "q-beta-categorical-precision-ladder.md:15 substrate q_0 numeric CODATA comparison",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -2865,9 +2865,9 @@
           "agent_date": "2026-06-08",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:55:53.738Z",
-        "reviewed_sha": "bca337a9556ced3973d8b85a1e5e399502aea7d0",
-        "notes": "no wall-side violation"
+        "reviewed_at": "2026-06-08T10:39:57.962Z",
+        "reviewed_sha": "51621d12699c8cffcd2836175a732f45decbf853",
+        "notes": "mass-theory is largely archimedean; q_0/ppm legitimate here"
       }
     ],
     "wall-side-proof": [
@@ -2876,9 +2876,9 @@
           "md": "535cf747d901",
           "ts": "6d713c68b433"
         },
-        "result": "n/a",
+        "result": "pass",
         "severity": "minor",
-        "evidence": "md:1 -- no proof body in .md",
+        "evidence": "q-beta-categorical-precision-ladder.md no lean; derivation narrative present",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -2886,9 +2886,9 @@
           "agent_date": "2026-06-08",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:55:53.770Z",
-        "reviewed_sha": "bca337a9556ced3973d8b85a1e5e399502aea7d0",
-        "notes": "no proof body to evaluate"
+        "reviewed_at": "2026-06-08T10:39:57.995Z",
+        "reviewed_sha": "51621d12699c8cffcd2836175a732f45decbf853",
+        "notes": "no lean file; narrative derivation references substrate evaluations; regime matched"
       }
     ],
     "voice-statement-no-interpretation": [
@@ -2897,9 +2897,9 @@
           "md": "535cf747d901",
           "ts": "6d713c68b433"
         },
-        "result": "pass",
+        "result": "warn",
         "severity": "minor",
-        "evidence": "md:1 -- statement and proof only, no interpretation section",
+        "evidence": "q-beta-categorical-precision-ladder.md open problems section after statement",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -2907,11 +2907,11 @@
           "agent_date": "2026-06-08",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:55:53.803Z",
-        "reviewed_sha": "bca337a9556ced3973d8b85a1e5e399502aea7d0",
-        "notes": "no voice violation"
+        "reviewed_at": "2026-06-08T10:39:58.029Z",
+        "reviewed_sha": "51621d12699c8cffcd2836175a732f45decbf853",
+        "notes": "open-problems / conjectural sections embedded in proposition body; no companion interprets remark"
       }
     ]
   },
-  "updated_at": "2026-06-08T09:55:53.842Z"
+  "updated_at": "2026-06-08T10:39:58.063Z"
 }

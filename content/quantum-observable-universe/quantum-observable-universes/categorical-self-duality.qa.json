@@ -2094,7 +2094,7 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'prop:categorical-self-duality' → expected 'categorical_self_duality'; Lean declares: CategoricalYangMills, Instanton, critical_point_is_instanton. Structural match via content."
+        "notes": "Label 'prop:categorical-self-duality' \u2192 expected 'categorical_self_duality'; Lean declares: CategoricalYangMills, Instanton, critical_point_is_instanton. Structural match via content."
       },
       {
         "field_hash": {
@@ -2110,7 +2110,7 @@
         },
         "reviewed_at": "2026-05-28T15:40:01.326Z",
         "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
-        "notes": "Label 'prop:categorical-self-duality' → expected 'categorical_self_duality'; Lean declares: CategoricalYangMills, Instanton, critical_point_is_instanton. Structural match via content."
+        "notes": "Label 'prop:categorical-self-duality' \u2192 expected 'categorical_self_duality'; Lean declares: CategoricalYangMills, Instanton, critical_point_is_instanton. Structural match via content."
       },
       {
         "field_hash": {
@@ -2126,7 +2126,7 @@
         },
         "reviewed_at": "2026-05-28T15:43:22.741Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
-        "notes": "Label 'prop:categorical-self-duality' → expected 'categorical_self_duality'; Lean declares: CategoricalYangMills, Instanton, critical_point_is_instanton. Structural match via content."
+        "notes": "Label 'prop:categorical-self-duality' \u2192 expected 'categorical_self_duality'; Lean declares: CategoricalYangMills, Instanton, critical_point_is_instanton. Structural match via content."
       },
       {
         "field_hash": {
@@ -2142,7 +2142,7 @@
         },
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
-        "notes": "Label 'prop:categorical-self-duality' → expected 'categorical_self_duality'; Lean declares: CategoricalYangMills, Instanton, critical_point_is_instanton. Structural match via content."
+        "notes": "Label 'prop:categorical-self-duality' \u2192 expected 'categorical_self_duality'; Lean declares: CategoricalYangMills, Instanton, critical_point_is_instanton. Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -2505,7 +2505,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "Statement is bare mathematical claim: critical point of S[∇] → instanton; no interpretation inline.",
+        "evidence": "Statement is bare mathematical claim: critical point of S[\u2207] \u2192 instanton; no interpretation inline.",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -2527,7 +2527,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "Proposition about categorical Yang-Mills / instantons in quantum-observable-universes chapter — primary subject matches.",
+        "evidence": "Proposition about categorical Yang-Mills / instantons in quantum-observable-universes chapter \u2014 primary subject matches.",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -2549,7 +2549,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "Statement uses categorical QOU tuple (C,A,τ), q-Hodge star, categorical Yang-Mills — all generic-ring/substrate, no archimedean constructs.",
+        "evidence": "Statement uses categorical QOU tuple (C,A,\u03c4), q-Hodge star, categorical Yang-Mills \u2014 all generic-ring/substrate, no archimedean constructs.",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -2571,7 +2571,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "Proof uses Bogomolny decomposition in dagger category, topological term argument — purely algebraic/categorical, no archimedean machinery.",
+        "evidence": "Proof uses Bogomolny decomposition in dagger category, topological term argument \u2014 purely algebraic/categorical, no archimedean machinery.",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -2683,7 +2683,102 @@
           "worst_span": 0
         }
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "dde19d0e0e4e",
+          "ts": "083a2efb476b",
+          "lean": "8f7c837ba535"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.7,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:01:01.853Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "md states critical points of the Yang-Mills functional S[nabla] are instantons, with a commuting diagram and the implication F in Omega^+."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "dde19d0e0e4e",
+          "ts": "083a2efb476b",
+          "lean": "8f7c837ba535"
+        },
+        "result": "fail",
+        "severity": "minor",
+        "score": {
+          "value": 0.3,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:01:01.891Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Lean does NOT prove 'critical point => instanton': Instanton is a structure whose field anti_self_dual_vanishes IS F.projMinus=0, and critical_point_is_instanton just returns that field; the variational argument is absent."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "dde19d0e0e4e",
+          "ts": "083a2efb476b",
+          "lean": "8f7c837ba535"
+        },
+        "result": "fail",
+        "severity": "minor",
+        "score": {
+          "value": 0.2,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:01:01.929Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "Structure-hypothesis projection; conclusion = the Instanton struct's defining field."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "dde19d0e0e4e",
+          "ts": "083a2efb476b",
+          "lean": "8f7c837ba535"
+        },
+        "result": "fail",
+        "severity": "critical",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:01:02.013Z",
+        "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
+        "notes": "INTEGRITY FAIL: lean.ref QOU.categorical_self_duality is ABSENT (file has critical_point_is_instanton); and that theorem restates its hypothesis (assumes Instanton, returns its anti_self_dual_vanishes field)."
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-07T06:01:02.013Z"
 }
