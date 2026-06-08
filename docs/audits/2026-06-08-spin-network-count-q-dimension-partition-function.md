@@ -66,9 +66,14 @@ $$
   \boxed{\;\sum_{j\in\frac12\mathbb{N}} (2j+1)\, e^{-s_\star \sqrt{j(j+1)}} \;=\; 1.\;}
 $$
 
-The projection constraint `Σ m_p = 0` contributes only a sub-leading `O(\log A)`
-correction (the Domagała–Lewandowski number-theoretic refinement) and does not
-move `s_\star`. Then `S = s_\star \cdot A/(8\pi\gamma\ell_p^2)`, and imposing
+The exact treatment of the projection constraint `Σ m_p = 0` is the
+Domagała–Lewandowski number-theoretic count; it — together with the `SU(2)`
+vs `U(1)` convention — selects the precise root and a sub-leading `O(\log A)`
+term (the literature spreads `γ ≈ 0.127 / 0.2375 / 0.2740` across these
+choices, so check the paper's convention). The **structural** recasting here is
+independent of which exact count is used; the boxed equation is the *schematic
+(unconstrained)* representative. Then `S = s_\star \cdot A/(8\pi\gamma\ell_p^2)`,
+and imposing
 `S = A/(4\ell_p^2)` forces `s_\star = 2\pi\gamma`. Hence the Immirzi parameter is
 
 $$
