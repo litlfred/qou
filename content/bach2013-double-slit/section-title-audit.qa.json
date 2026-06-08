@@ -4,6 +4,7 @@
   "chapters": {
     "double-slit-experiment": {
       "manifest_hash": "0f77f2af4b53",
+      "stale_mode": "thorough",
       "machine": {
         "title_defects": [],
         "structure_findings": [
@@ -21,21 +22,24 @@
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "thorough"
         },
         "sec:bach-setup": {
           "title": "Experimental setup",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "thorough"
         },
         "sec:bach-results": {
           "title": "Results",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "thorough"
         }
       }
     }

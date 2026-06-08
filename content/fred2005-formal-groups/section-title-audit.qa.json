@@ -4,6 +4,7 @@
   "chapters": {
     "formal-groups-chapter": {
       "manifest_hash": "07fd5520ea6a",
+      "stale_mode": "thorough",
       "machine": {
         "title_defects": [],
         "structure_findings": [
@@ -51,49 +52,56 @@
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "thorough"
         },
         "sec:skewed-poisson": {
           "title": "Skewed-Poisson structure",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "thorough"
         },
         "sec:integration-theorem": {
           "title": "Integration theorem",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "thorough"
         },
         "sec:gs-deformation": {
           "title": "Gröbner–Shirshov deformation",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "thorough"
         },
         "sec:strong-multiplicativity": {
           "title": "Strong multiplicativity",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "thorough"
         },
         "sec:witt-vector-lift": {
           "title": "Witt vector lift",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "thorough"
         },
         "sec:unit-root-f-crystal": {
           "title": "Unit-root F-crystal",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "thorough"
         }
       }
     }
