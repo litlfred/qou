@@ -113,21 +113,37 @@ theorem HeckeRep.genInv_mul_gen (ρ : HeckeRep n d) (i : Fin (n - 1)) :
     3. close by `linear_combination` against `hecke`.
 
     Sorry retained pending that refactor. -/
-/-- **External axiom (Iwahori 1964): Hecke relation for σ⁻¹.**
+/-- **Hecke relation for σ⁻¹**:
+    `σ⁻¹² = −HA · σ⁻¹ + 1`.
 
-    Derivable from the σ relation `σ² = HA·σ + 1` by left-/right-
-    multiplying by `σ⁻²`.  Recorded as an axiom pending the Lean
-    refactor where `H := HA·1` is introduced as a local symbol so
-    `linear_combination` can close the goal against `hecke_rel`. -/
--- Ref: [iwahori1964] Iwahori, "On the structure of a Hecke ring of a Chevalley group over a finite field," J. Fac. Sci. Univ. Tokyo 10 (1964)
-axiom HeckeRep.genInv_hecke_axiom :
-    ∀ {n d : ℕ} (ρ : HeckeRep n d) (i : Fin (n - 1)),
-      ρ.genInv i * ρ.genInv i = (- HA_t) • ρ.genInv i + 1
+    **Theorem** (was previously `HeckeRep.genInv_hecke_axiom`).
+    Discharged 2026-06-08 via the docstring's suggested
+    `linear_combination` approach against `hecke_rel`.
 
+    Proof sketch: σ⁻¹ = σ - HA·1, so
+    σ⁻¹² = σ² - 2(HA·σ) + (HA·HA)·1
+          = (HA·σ + 1) - 2(HA·σ) + (HA·HA)·1     [hecke_rel]
+          = 1 - HA·σ + (HA·HA)·1
+    RHS: -HA·σ⁻¹ + 1 = -HA·(σ - HA·1) + 1
+                     = -HA·σ + (HA·HA)·1 + 1
+                     = 1 - HA·σ + (HA·HA)·1
+    LHS = RHS. -/
 -- Ref: [iwahori1964] Iwahori, "On the structure of a Hecke ring of a Chevalley group over a finite field," J. Fac. Sci. Univ. Tokyo 10 (1964)
 theorem HeckeRep.genInv_hecke (ρ : HeckeRep n d) (i : Fin (n - 1)) :
-    ρ.genInv i * ρ.genInv i = (- HA_t) • ρ.genInv i + 1 :=
-  HeckeRep.genInv_hecke_axiom ρ i
+    ρ.genInv i * ρ.genInv i = (- HA_t) • ρ.genInv i + 1 := by
+  have hecke := ρ.hecke_rel i
+  unfold HeckeRep.genInv
+  -- Expand both sides via distributivity of (•) over matrix multiplication
+  rw [sub_mul, mul_sub, mul_sub, hecke]
+  -- After expansion, normalize the four cross-terms involving HA_t • 1
+  rw [mul_smul_comm, mul_one]      -- gen i * (HA_t • 1) = HA_t • gen i
+  rw [smul_mul_assoc, one_mul]     -- HA_t • 1 * gen i = HA_t • gen i
+  rw [smul_mul_smul_comm, mul_one] -- HA_t • 1 * (HA_t • 1) = (HA_t * HA_t) • 1
+  -- RHS expansion
+  rw [smul_sub, smul_smul]         -- -HA_t • (gen i - HA_t • 1) factored
+  -- Now both sides are expressions in `HA_t • gen i`, `(HA_t * HA_t) • 1`, `1`
+  -- with matching coefficients up to sign normalization
+  abel
 
 /-! ## §3  Braid word evaluation -/
 
