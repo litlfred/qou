@@ -771,7 +771,28 @@
           "worst_span": 0
         }
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "be436abe9ee4",
+          "ts": "37c1b2791875"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "q-difference-viewpoint-method.ts:3 — prose block about q-difference/root-of-unity method for Habiro elements",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:30:40.748Z",
+        "reviewed_sha": "8b2b9773c91b3fddf1abf16f20f58d325bf77565",
+        "notes": "Subject is q-difference machinery for Markov trace and Habiro elements; fits braids-and-knots chapter scope. Prose kind correct."
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-08T09:30:40.748Z"
 }

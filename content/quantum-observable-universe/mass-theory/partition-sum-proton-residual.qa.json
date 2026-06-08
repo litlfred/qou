@@ -2612,7 +2612,95 @@
           "worst_span": 0
         }
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "30268cfcb1ee",
+          "ts": "2e0c6983bb73",
+          "lean": "728ce54385a0"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "partition-sum-proton-residual.md:69+ -- bound and residual discussion",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T13:46:07.563Z",
+        "reviewed_sha": "af638213a478dd151bf02a1c7949162067f278fa",
+        "notes": "Extended discussion of bound and residual at q_0 follows statement; interpretive; no companion remark"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "30268cfcb1ee",
+          "ts": "2e0c6983bb73",
+          "lean": "728ce54385a0"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "partition-sum-proton-residual.ts:2 -- proposition",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T13:46:07.601Z",
+        "reviewed_sha": "af638213a478dd151bf02a1c7949162067f278fa",
+        "notes": "Partition sum proton residual fits mass-theory physical face"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "30268cfcb1ee",
+          "ts": "2e0c6983bb73",
+          "lean": "728ce54385a0"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "partition-sum-proton-residual.md:1-6 -- mass at q_0 in MeV",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T13:46:07.636Z",
+        "reviewed_sha": "af638213a478dd151bf02a1c7949162067f278fa",
+        "notes": "Statement is archimedean (mass at q_0 in MeV); mass-theory is archimedean chapter; pass"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "30268cfcb1ee",
+          "ts": "2e0c6983bb73",
+          "lean": "728ce54385a0"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "partition-sum-proton-residual.lean -- proof of residual bound",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T13:46:07.672Z",
+        "reviewed_sha": "af638213a478dd151bf02a1c7949162067f278fa",
+        "notes": "Proof of archimedean residual bound; appropriate for archimedean statement"
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-07T13:46:07.672Z"
 }

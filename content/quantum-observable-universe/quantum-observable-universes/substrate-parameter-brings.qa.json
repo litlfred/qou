@@ -1822,7 +1822,28 @@
           "worst_span": 0
         }
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "3a2addf27512",
+          "ts": "faeb785532aa"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "quantum-observable-universes.ts:156 — block in sec:substrate-parameter; Brings surface substrate example",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:29:18.777Z",
+        "reviewed_sha": "1cd5eb3feca168cd758d6b8a90d579f4749d7974",
+        "notes": "Brings surface substrate parameter example; fits sec:substrate-parameter."
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-08T09:29:18.777Z"
 }

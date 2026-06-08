@@ -8,8 +8,8 @@
     "lean": "content/quantum-observable-universe/mass-theory/kashaev-volume-conjecture.lean"
   },
   "source_hashes": {
-    "md": "9b18409335dd",
-    "ts": "0c6d8958dbe5",
+    "md": "65251f46d98c",
+    "ts": "ddfcde79c56f",
     "lean": "304a35179be4"
   },
   "criteria": {
@@ -2216,6 +2216,26 @@
         "reviewed_at": "2026-06-06T00:15:05.877Z",
         "reviewed_sha": "c7b74cc9c03bdcb2185111373f4f202ca7cdfb2c",
         "notes": "Correctly placed; motivic and archimedean framing align with chapter theme."
+      },
+      {
+        "field_hash": {
+          "md": "65251f46d98c",
+          "ts": "ddfcde79c56f",
+          "lean": "304a35179be4"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "mass-theory.ts:323 -- kashaev-volume-conjecture in sec:archimedean-realization-kashaev",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:25:25.030Z",
+        "reviewed_sha": "bbe2b241bd8cd9bdaa4c44bd83a56d9aadd1a10b",
+        "notes": "Conjecture about KVC; section is archimedean realization and Kashaev volume; perfect fit."
       }
     ],
     "detangler-topic-coherence": [
@@ -2313,5 +2333,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-08T09:25:25.030Z"
 }

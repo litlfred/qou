@@ -2066,7 +2066,28 @@
           "worst_span": 0
         }
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "d41474b622f0",
+          "ts": "8cc29cbd2ba6"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "nuclear-binding-beta-stability-intro.ts -- block in mass-theory chapter",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T13:39:43.480Z",
+        "reviewed_sha": "ea16b464d587fbd725060636a1beb8dbcaabd167",
+        "notes": "Block subject fits mass-theory chapter scope"
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-07T13:39:43.480Z"
 }

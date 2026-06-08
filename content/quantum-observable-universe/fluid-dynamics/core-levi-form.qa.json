@@ -2279,6 +2279,26 @@
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
         "notes": "Label 'prop:core-levi-form' → expected 'core_levi_form'; Lean declares: QAubinLions, NSCounterexample, CriticalExponent, BlowupYekutieli, RegularityBreakdown.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "9fa41da1cf2e",
+          "ts": "d6c99adf43bc",
+          "lean": "d43579af2af8"
+        },
+        "result": "fail",
+        "severity": "major",
+        "evidence": "lean: core_levi_form_conditional proves True:=trivial; narrative: a_perp/a_parallel=sqrt(lambda_par/lambda_perp), cond(L)=(...), 5-way equivalence",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T10:00:00.533Z",
+        "reviewed_sha": "c2b296b787f282526008689a95749a04773bbed7",
+        "notes": "lean stub; none of the 5 conditions or the aspect ratio formula is captured"
       }
     ],
     "proof-lean-compiles": [
@@ -2746,7 +2766,88 @@
           "worst_span": 0
         }
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "9fa41da1cf2e",
+          "ts": "d6c99adf43bc",
+          "lean": "d43579af2af8"
+        },
+        "result": "pass",
+        "evidence": "proposition in NS obstruction section; core aspect ratio = Levi form condition number",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T10:00:00.391Z",
+        "reviewed_sha": "c2b296b787f282526008689a95749a04773bbed7"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "9fa41da1cf2e",
+          "ts": "d6c99adf43bc",
+          "lean": "d43579af2af8"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "statement uses contact geometry Levi form (categorical) but also a_perp/a_parallel as half-max widths in R^3; mixed without banner",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T10:00:00.428Z",
+        "reviewed_sha": "c2b296b787f282526008689a95749a04773bbed7"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "9fa41da1cf2e",
+          "ts": "d6c99adf43bc",
+          "lean": "d43579af2af8"
+        },
+        "result": "n/a",
+        "evidence": "no proof body in .md; propositions (a)-(e) stated without derivation",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T10:00:00.461Z",
+        "reviewed_sha": "c2b296b787f282526008689a95749a04773bbed7"
+      }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "9fa41da1cf2e",
+          "ts": "d6c99adf43bc",
+          "lean": "d43579af2af8"
+        },
+        "result": "pass",
+        "evidence": "proposition with 5 mathematical conditions; equivalences are formal",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T10:00:00.495Z",
+        "reviewed_sha": "c2b296b787f282526008689a95749a04773bbed7"
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-08T10:00:00.533Z"
 }

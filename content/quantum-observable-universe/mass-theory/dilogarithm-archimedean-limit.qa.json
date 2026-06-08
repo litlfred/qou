@@ -1869,6 +1869,26 @@
         "reviewed_at": "2026-06-05T01:16:50.215Z",
         "reviewed_sha": "4b39880c7e38e87cecb844ef5e5685a812e47dab",
         "notes": "Archimedean limit directly feeds mass-formula evaluations via tau_arch."
+      },
+      {
+        "field_hash": {
+          "md": "1a696992157a",
+          "ts": "95dcbe17dfa2",
+          "lean": "4c2fe29ce019"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "dilogarithm-archimedean-limit.ts -- block in mass-theory chapter",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T13:38:43.804Z",
+        "reviewed_sha": "ea16b464d587fbd725060636a1beb8dbcaabd167",
+        "notes": "Block subject fits mass-theory chapter scope"
       }
     ],
     "detangler-topic-coherence": [
@@ -1966,5 +1986,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-07T13:38:43.804Z"
 }

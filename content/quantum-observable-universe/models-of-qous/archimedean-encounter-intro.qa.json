@@ -2096,7 +2096,27 @@
           "worst_span": 0
         }
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "1d086fb8d33c",
+          "ts": "7efbdb708ad3"
+        },
+        "result": "pass",
+        "evidence": "archimedean-encounter-intro.ts:3 — prose kind; archimedean-encounter-intro.md:1-2 — draft narrative for Mostow confinement section",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T14:10:11.327Z",
+        "reviewed_sha": "a72996e8ab52ec378111223aabe5285606d1d90a",
+        "notes": "Prose preamble for sec:archimedean-encounter. [draft] status noted; outlines the Mostow confinement + SDP-uniqueness narrative. Fits as the closing section opener of the chapter."
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-07T14:10:11.327Z"
 }

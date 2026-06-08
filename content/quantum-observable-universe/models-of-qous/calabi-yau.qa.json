@@ -1822,7 +1822,27 @@
           "worst_span": 5
         }
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "4d11d60c730d",
+          "ts": "075b5232689f"
+        },
+        "result": "pass",
+        "evidence": "calabi-yau.ts — archimedean example/remark or prose kind; calabi-yau.md — archimedean specialisation content",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T14:06:21.214Z",
+        "reviewed_sha": "a72996e8ab52ec378111223aabe5285606d1d90a",
+        "notes": "Block in the archimedean models section. Content is appropriate archimedean specialisation of categorical constructs. Fits its section."
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-07T14:06:21.214Z"
 }

@@ -2572,7 +2572,95 @@
           "worst_span": 0
         }
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "10fd4dd88c9f",
+          "ts": "67a003ec19b4",
+          "lean": "1305bb5bab45"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "mass-theory.ts:749 -- tower-binding-energy in sec:mass-physical-face",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:26:19.952Z",
+        "reviewed_sha": "80b79c363e3e0be747ca702faf3290714b4f028b",
+        "notes": "nuclear binding energy from 3-channel brane tower fits physical face of mass-theory"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "10fd4dd88c9f",
+          "ts": "67a003ec19b4",
+          "lean": "1305bb5bab45"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "tower-binding-energy.lean:1296 -- noncomputable def wedderburnStd (q : R) (hq : q > 1) : R -- uses q > 1 ordering; banner notes archimedean",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:26:19.985Z",
+        "reviewed_sha": "80b79c363e3e0be747ca702faf3290714b4f028b",
+        "notes": "Lean uses hq : q > 1 which is archimedean; block has archimedean banner; statement is legitimately archimedean for mass-theory"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "10fd4dd88c9f",
+          "ts": "67a003ec19b4",
+          "lean": "1305bb5bab45"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "tower-binding-energy.md:1205 -- Derivation. gauge sector of categorical action; Wedderburn-Artin decomposition; each channel independent",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:26:20.017Z",
+        "reviewed_sha": "80b79c363e3e0be747ca702faf3290714b4f028b",
+        "notes": "derivation uses algebraic Wedderburn decomposition; archimedean numeric context is appropriate for mass-theory"
+      }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "10fd4dd88c9f",
+          "ts": "67a003ec19b4",
+          "lean": "1305bb5bab45"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "tower-binding-energy.md:1203 -- ## Derivation section follows statement; ## Numerical results also follows",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:26:20.050Z",
+        "reviewed_sha": "80b79c363e3e0be747ca702faf3290714b4f028b",
+        "notes": "derivation and numerical results elaborate the proposition; normal for physics propositions"
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-08T09:26:20.050Z"
 }

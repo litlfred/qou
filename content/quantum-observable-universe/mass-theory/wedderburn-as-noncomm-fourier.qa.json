@@ -2296,6 +2296,26 @@
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
         "notes": "Label 'prop:wedderburn-as-noncomm-fourier' → expected 'wedderburn_as_noncomm_fourier'; Lean declares: NonCommFourierData, IsInverseFourier, peter_weyl_decomposition. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "069ea5016164",
+          "ts": "16b20dd7ebaa",
+          "lean": "c9bbdbffec69"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "lean:1 -- lean theorem present and signature aligns with narrative",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:55:54.156Z",
+        "reviewed_sha": "48853a8f13f764766270f3254bf87282cb5b5a8a",
+        "notes": "no divergence found"
       }
     ],
     "proof-lean-compiles": [
@@ -2763,7 +2783,95 @@
           "worst_span": 0
         }
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "069ea5016164",
+          "ts": "16b20dd7ebaa",
+          "lean": "c9bbdbffec69"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "md:1 -- content fits mass-theory scope (7 mass-theory keywords)",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:55:54.024Z",
+        "reviewed_sha": "48853a8f13f764766270f3254bf87282cb5b5a8a",
+        "notes": "subject matches mass analysis chapter"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "069ea5016164",
+          "ts": "16b20dd7ebaa",
+          "lean": "c9bbdbffec69"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "md:1 -- statement side matches mass-theory archimedean context",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:55:54.058Z",
+        "reviewed_sha": "48853a8f13f764766270f3254bf87282cb5b5a8a",
+        "notes": "no wall-side violation"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "069ea5016164",
+          "ts": "16b20dd7ebaa",
+          "lean": "c9bbdbffec69"
+        },
+        "result": "n/a",
+        "severity": "minor",
+        "evidence": "md:1 -- no proof body in .md",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:55:54.092Z",
+        "reviewed_sha": "48853a8f13f764766270f3254bf87282cb5b5a8a",
+        "notes": "no proof body to evaluate"
+      }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "069ea5016164",
+          "ts": "16b20dd7ebaa",
+          "lean": "c9bbdbffec69"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "md:1 -- statement and proof only, no interpretation section",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:55:54.124Z",
+        "reviewed_sha": "48853a8f13f764766270f3254bf87282cb5b5a8a",
+        "notes": "no voice violation"
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-08T09:55:54.156Z"
 }

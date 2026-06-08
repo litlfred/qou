@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/particle-interactions/crystal-graph-realization.lean"
   },
   "source_hashes": {
-    "md": "87fd3b86358f",
+    "md": "2edb47581fb3",
     "ts": "754d72ad0f01",
     "lean": "1da41e05e49e"
   },
@@ -1962,7 +1962,95 @@
           "worst_span": 0
         }
       }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "2edb47581fb3",
+          "ts": "754d72ad0f01",
+          "lean": "1da41e05e49e"
+        },
+        "result": "n/a",
+        "severity": "minor",
+        "evidence": "crystal-graph-realization.md:1 -- not in agent rubric",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:33:14.776Z",
+        "reviewed_sha": "529f18480b96684f0f83e103e948fe01f34f8334",
+        "notes": "proof-rater criteria not in agent rubric"
+      }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "2edb47581fb3",
+          "ts": "754d72ad0f01",
+          "lean": "1da41e05e49e"
+        },
+        "result": "n/a",
+        "severity": "minor",
+        "evidence": "crystal-graph-realization.ts:1 -- kind is conjecture, not a provable kind",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:33:14.674Z",
+        "reviewed_sha": "529f18480b96684f0f83e103e948fe01f34f8334",
+        "notes": "n/a: criterion only applies to provable kinds"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "2edb47581fb3",
+          "ts": "754d72ad0f01",
+          "lean": "1da41e05e49e"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "crystal-graph-realization.md:1 -- purely algebraic/categorical conjecture about KLR/crystal; no MeV, numeric q-value, or Real.sqrt",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:33:14.707Z",
+        "reviewed_sha": "529f18480b96684f0f83e103e948fe01f34f8334",
+        "notes": "generic algebraic conjecture; no archimedean constructs in statement"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "2edb47581fb3",
+          "ts": "754d72ad0f01",
+          "lean": "1da41e05e49e"
+        },
+        "result": "n/a",
+        "severity": "minor",
+        "evidence": "crystal-graph-realization.md:1 -- conjecture; no proof body",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:33:14.741Z",
+        "reviewed_sha": "529f18480b96684f0f83e103e948fe01f34f8334",
+        "notes": "n/a: no proof body"
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-08T09:33:14.776Z"
 }

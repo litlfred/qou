@@ -1962,7 +1962,29 @@
           "worst_span": 0
         }
       }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "b1e53e3f32d5",
+          "ts": "c10fcf81e959",
+          "lean": "b1abf731c3a6"
+        },
+        "result": "n/a",
+        "severity": "minor",
+        "evidence": "kazhdan-lusztig-classical-limit.md:1 -- not in agent rubric",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:30:19.281Z",
+        "reviewed_sha": "f99b20b4267c1cde5356a0570fce327ec2ff4fa6",
+        "notes": "proof-rater/proof-statement criteria not in agent rubric"
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-08T09:30:19.281Z"
 }

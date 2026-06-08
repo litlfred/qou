@@ -942,6 +942,26 @@
         "reviewed_at": "2026-06-06T01:19:03.533Z",
         "reviewed_sha": "237e5cd114e617f2aedd06a71e0e5fc75053f33c",
         "notes": "Move Status/Reanalysis banners to authorNotes; keep §3b-cond conditional banner in prose."
+      },
+      {
+        "field_hash": {
+          "md": "979832b38831",
+          "ts": "ac9c0ac75141",
+          "lean": "08a3ccb842a7"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "magic-A-binding-formula.md:37+ -- ## Why doubly-magic and ## Status sections interpret proposition",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T13:44:31.868Z",
+        "reviewed_sha": "af638213a478dd151bf02a1c7949162067f278fa",
+        "notes": "Extended interpretive sections; proposition is conditional theorem with companion remark absent"
       }
     ],
     "fit-section-chapter": [
@@ -964,6 +984,26 @@
         "reviewed_at": "2026-06-06T01:19:03.567Z",
         "reviewed_sha": "237e5cd114e617f2aedd06a71e0e5fc75053f33c",
         "notes": "Block placement is appropriate."
+      },
+      {
+        "field_hash": {
+          "md": "979832b38831",
+          "ts": "ac9c0ac75141",
+          "lean": "08a3ccb842a7"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "magic-A-binding-formula.ts:2 -- proposition",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T13:44:31.910Z",
+        "reviewed_sha": "af638213a478dd151bf02a1c7949162067f278fa",
+        "notes": "Doubly-magic binding formula fits mass-theory chapter"
       }
     ],
     "wall-side-statement": [
@@ -986,6 +1026,26 @@
         "reviewed_at": "2026-06-06T01:19:03.607Z",
         "reviewed_sha": "237e5cd114e617f2aedd06a71e0e5fc75053f33c",
         "notes": "Archimedean specialisation is properly bracketed in the statement."
+      },
+      {
+        "field_hash": {
+          "md": "979832b38831",
+          "ts": "ac9c0ac75141",
+          "lean": "08a3ccb842a7"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "magic-A-binding-formula.md:1 -- Lean sibling: archimedean specialisation over R banner",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T13:44:31.954Z",
+        "reviewed_sha": "af638213a478dd151bf02a1c7949162067f278fa",
+        "notes": "Block has explicit archimedean banner per CLAUDE.md 7c; legitimately uses R for MeV comparison"
       }
     ],
     "wall-side-proof": [
@@ -1008,6 +1068,26 @@
         "reviewed_at": "2026-06-06T01:19:03.647Z",
         "reviewed_sha": "237e5cd114e617f2aedd06a71e0e5fc75053f33c",
         "notes": "Proof stays on categorical side; MeV values are in statement context only."
+      },
+      {
+        "field_hash": {
+          "md": "979832b38831",
+          "ts": "ac9c0ac75141",
+          "lean": "08a3ccb842a7"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "magic-A-binding-formula.lean -- archimedean proof of mass formula",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T13:44:31.997Z",
+        "reviewed_sha": "af638213a478dd151bf02a1c7949162067f278fa",
+        "notes": "Proof is archimedean evaluation of MeV mass; appropriately uses R with explicit banner"
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1030,6 +1110,26 @@
         "reviewed_at": "2026-06-06T01:19:03.683Z",
         "reviewed_sha": "237e5cd114e617f2aedd06a71e0e5fc75053f33c",
         "notes": "Narrative and Lean both state the same conditional theorem structure."
+      },
+      {
+        "field_hash": {
+          "md": "979832b38831",
+          "ts": "ac9c0ac75141",
+          "lean": "08a3ccb842a7"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "magic-A-binding-formula.lean -- conditional theorem on magic-numbers-bring and gravity-spectral-prefactor",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T13:44:32.054Z",
+        "reviewed_sha": "af638213a478dd151bf02a1c7949162067f278fa",
+        "notes": "Narrative and lean both state conditional theorem on two conjectures; same hypotheses and conclusion"
       }
     ],
     "detangler-topic-coherence": [
@@ -1127,5 +1227,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-07T13:44:32.054Z"
 }

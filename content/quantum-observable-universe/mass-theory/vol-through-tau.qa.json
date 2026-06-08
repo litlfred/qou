@@ -2577,7 +2577,95 @@
           "worst_span": 0
         }
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "24319d3dc065",
+          "ts": "cd2e497af6fe",
+          "lean": "a837ceb09422"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "mass-theory.ts:317 -- vol-through-tau in sec:archimedean-realization-kashaev",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:28:03.094Z",
+        "reviewed_sha": "c68cdf5b88aa2ce4d69c3d3c493841caca7107ca",
+        "notes": "Vol(K) factoring through fibre functor tau fits archimedean realization section"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "24319d3dc065",
+          "ts": "cd2e497af6fe",
+          "lean": "a837ceb09422"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "vol-through-tau.md:31 -- Vol(K_beta) = tau_arch(Vol_q(beta)); Real R; archimedean projection pi_infty",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:28:03.129Z",
+        "reviewed_sha": "c68cdf5b88aa2ce4d69c3d3c493841caca7107ca",
+        "notes": "statement is explicitly archimedean (real-valued Vol); mass-theory archimedean face; legitimate"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "24319d3dc065",
+          "ts": "cd2e497af6fe",
+          "lean": "a837ceb09422"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "vol-through-tau.md -- Sketch. follows from archimedean functor uniqueness via fibre functor",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:28:03.156Z",
+        "reviewed_sha": "c68cdf5b88aa2ce4d69c3d3c493841caca7107ca",
+        "notes": "proof sketch uses categorical language; archimedean specialisation correctly noted"
+      }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "24319d3dc065",
+          "ts": "cd2e497af6fe",
+          "lean": "a837ceb09422"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "vol-through-tau.md -- ## Identification section after statement explains archimedean route",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:28:03.187Z",
+        "reviewed_sha": "c68cdf5b88aa2ce4d69c3d3c493841caca7107ca",
+        "notes": "Identification section gives physical meaning of tau_arch; no companion remark exists; borderline as it extends the proposition"
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-08T09:28:03.187Z"
 }

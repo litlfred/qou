@@ -7,8 +7,8 @@
     "md": "content/quantum-observable-universe/fluid-dynamics/intro-ns-obstruction-tower-mtc.md"
   },
   "source_hashes": {
-    "ts": "d62e6a64089e",
-    "md": "fc4b9fdf7025"
+    "md": "fc4b9fdf7025",
+    "ts": "d62e6a64089e"
   },
   "criteria": {
     "q-usage-regime-detected": [
@@ -123,7 +123,102 @@
         "reviewed_at": "2026-06-01T16:06:38.106Z",
         "reviewed_sha": "d4a8cf462aeef2262429b13571ddd385968bce63"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "fc4b9fdf7025",
+          "ts": "d62e6a64089e"
+        },
+        "result": "pass",
+        "evidence": "prose",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T10:12:28.050Z",
+        "reviewed_sha": "b9d92344e258d5bcb202e00e98ef195dda20d8f4"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "fc4b9fdf7025",
+          "ts": "d62e6a64089e"
+        },
+        "result": "pass",
+        "evidence": "prose",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T10:12:28.087Z",
+        "reviewed_sha": "b9d92344e258d5bcb202e00e98ef195dda20d8f4"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "fc4b9fdf7025",
+          "ts": "d62e6a64089e"
+        },
+        "result": "n/a",
+        "evidence": "prose",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T10:12:28.118Z",
+        "reviewed_sha": "b9d92344e258d5bcb202e00e98ef195dda20d8f4"
+      }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "fc4b9fdf7025",
+          "ts": "d62e6a64089e"
+        },
+        "result": "pass",
+        "evidence": "prose",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T10:12:28.149Z",
+        "reviewed_sha": "b9d92344e258d5bcb202e00e98ef195dda20d8f4"
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "fc4b9fdf7025",
+          "ts": "d62e6a64089e"
+        },
+        "result": "n/a",
+        "evidence": "prose",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T10:12:28.176Z",
+        "reviewed_sha": "b9d92344e258d5bcb202e00e98ef195dda20d8f4"
+      }
     ]
   },
-  "updated_at": "2026-06-01T16:06:38.106Z"
+  "updated_at": "2026-06-08T10:12:28.176Z"
 }

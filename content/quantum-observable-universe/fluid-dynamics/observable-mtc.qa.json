@@ -1996,7 +1996,89 @@
           "worst_span": 0
         }
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "5af5b4c16b7e",
+          "ts": "ef7d0b5d8d3c",
+          "lean": "2457f142651a"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "def:observable-mtc uses rem:berry-vortex-moduli; content is root-of-unity MTC anyons; section context is q-hydrodynamics but MTC is more braiding/knot chapter material",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:59:02.040Z",
+        "reviewed_sha": "c2b296b787f282526008689a95749a04773bbed7",
+        "notes": "borderline; definition supports root-of-unity truncation in fluid chapter; fits by usage"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "5af5b4c16b7e",
+          "ts": "ef7d0b5d8d3c",
+          "lean": "2457f142651a"
+        },
+        "result": "pass",
+        "evidence": "definition is purely categorical: ribbon fusion category C_any(N) at q=zeta_N; no archimedean",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:59:02.073Z",
+        "reviewed_sha": "c2b296b787f282526008689a95749a04773bbed7"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "5af5b4c16b7e",
+          "ts": "ef7d0b5d8d3c",
+          "lean": "2457f142651a"
+        },
+        "result": "pass",
+        "evidence": "definition;",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T10:14:34.186Z",
+        "reviewed_sha": "b9d92344e258d5bcb202e00e98ef195dda20d8f4"
+      }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "5af5b4c16b7e",
+          "ts": "ef7d0b5d8d3c",
+          "lean": "2457f142651a"
+        },
+        "result": "pass",
+        "evidence": "definition",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T10:14:34.214Z",
+        "reviewed_sha": "b9d92344e258d5bcb202e00e98ef195dda20d8f4"
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-08T10:14:34.214Z"
 }

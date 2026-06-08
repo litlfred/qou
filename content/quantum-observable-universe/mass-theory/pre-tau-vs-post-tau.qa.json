@@ -2250,7 +2250,28 @@
           "worst_span": 0
         }
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "99f4919630c3",
+          "ts": "23d283b76cf7"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "pre-tau-vs-post-tau.ts:2 -- remark",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T13:38:07.465Z",
+        "reviewed_sha": "ea16b464d587fbd725060636a1beb8dbcaabd167",
+        "notes": "Pre-tau vs post-tau remark about wall distinction fits mass-theory"
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-07T13:38:07.465Z"
 }

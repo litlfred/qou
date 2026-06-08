@@ -2679,7 +2679,95 @@
           "worst_span": 0
         }
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "e5460e767fb3",
+          "ts": "5200620c322b",
+          "lean": "4016dce5df1c"
+        },
+        "result": "n/a",
+        "severity": "minor",
+        "evidence": "shell-schur-weyl-self-duality.md:1 -- not in agent rubric",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:30:23.415Z",
+        "reviewed_sha": "082b7db8d407c814a48360eb4fe9ad6b9721d573",
+        "notes": "proof-rater/proof-statement criteria not in agent rubric"
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "e5460e767fb3",
+          "ts": "5200620c322b",
+          "lean": "4016dce5df1c"
+        },
+        "result": "n/a",
+        "severity": "minor",
+        "evidence": "shell-schur-weyl-self-duality.md:1 -- not in agent rubric",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:30:23.591Z",
+        "reviewed_sha": "b914bb85ae9012415d31d7065da87ceb36b874b2",
+        "notes": "proof-rater/proof-statement criteria not in agent rubric"
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "e5460e767fb3",
+          "ts": "5200620c322b",
+          "lean": "4016dce5df1c"
+        },
+        "result": "n/a",
+        "severity": "minor",
+        "evidence": "shell-schur-weyl-self-duality.md:1 -- not in agent rubric",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:30:23.619Z",
+        "reviewed_sha": "b914bb85ae9012415d31d7065da87ceb36b874b2",
+        "notes": "proof-rater/proof-statement criteria not in agent rubric"
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "e5460e767fb3",
+          "ts": "5200620c322b",
+          "lean": "4016dce5df1c"
+        },
+        "result": "n/a",
+        "severity": "minor",
+        "evidence": "shell-schur-weyl-self-duality.md:1 -- not in agent rubric",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:30:23.651Z",
+        "reviewed_sha": "b914bb85ae9012415d31d7065da87ceb36b874b2",
+        "notes": "proof-rater/proof-statement criteria not in agent rubric"
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-08T09:30:23.651Z"
 }

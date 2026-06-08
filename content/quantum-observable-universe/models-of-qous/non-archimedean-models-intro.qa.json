@@ -2096,7 +2096,27 @@
           "worst_span": 0
         }
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "c601931955d9",
+          "ts": "2bc4cdc80e2d"
+        },
+        "result": "pass",
+        "evidence": "non-archimedean-models-intro.ts:3 — prose kind; non-archimedean-models-intro.md:1 — minimal placeholder text",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T14:08:15.425Z",
+        "reviewed_sha": "a72996e8ab52ec378111223aabe5285606d1d90a",
+        "notes": "Prose preamble for sec:non-archimedean-models. Content is a brief placeholder pointing forward to the enveloping-algebras block. Fits as section opener."
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-07T14:08:15.425Z"
 }

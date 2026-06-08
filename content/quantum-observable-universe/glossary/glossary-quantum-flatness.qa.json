@@ -1866,7 +1866,29 @@
           "worst_span": 0
         }
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "1a986a1a880d",
+          "ts": "b4e10f9532d7",
+          "lean": "22773c80d61c"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "glossary-quantum-flatness.ts:1 -- remark/prose with tags:[glossary,...] in Ch 8 Glossary",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T13:29:21.443Z",
+        "reviewed_sha": "82cc2ae6ed984501c503def22594f398daf4b6a5",
+        "notes": "Glossary block with glossary tag; kind=remark is correct per Ch-8 policy; fits section scope."
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-07T13:29:21.443Z"
 }

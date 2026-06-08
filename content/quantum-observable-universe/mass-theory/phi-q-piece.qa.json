@@ -8,8 +8,8 @@
     "lean": "content/quantum-observable-universe/mass-theory/phi-q-piece.lean"
   },
   "source_hashes": {
-    "md": "cba21201a297",
-    "ts": "eaf252c778a2",
+    "md": "f07b67254928",
+    "ts": "fc9d2ec8289f",
     "lean": "1b5fbdf4cc5f"
   },
   "criteria": {
@@ -2157,7 +2157,51 @@
           "worst_span": 0
         }
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "f07b67254928",
+          "ts": "fc9d2ec8289f",
+          "lean": "1b5fbdf4cc5f"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "phi-q-piece.ts -- definition in mass-theory chapter",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T13:42:03.281Z",
+        "reviewed_sha": "af638213a478dd151bf02a1c7949162067f278fa",
+        "notes": "Definition fits mass-theory chapter scope"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "f07b67254928",
+          "ts": "fc9d2ec8289f",
+          "lean": "1b5fbdf4cc5f"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "phi-q-piece.lean -- definition in mass-theory archimedean chapter",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T13:42:03.318Z",
+        "reviewed_sha": "af638213a478dd151bf02a1c7949162067f278fa",
+        "notes": "mass-theory is largely archimedean; definitions here legitimately use ℝ or generic ring constructs; no wall violation"
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-07T13:42:03.318Z"
 }

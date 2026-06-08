@@ -1990,7 +1990,28 @@
           "worst_span": 0
         }
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "d9798d95d2f4",
+          "ts": "3187017c9a97"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "mass-ordering-corrected.ts:2 -- remark",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T13:38:07.793Z",
+        "reviewed_sha": "ea16b464d587fbd725060636a1beb8dbcaabd167",
+        "notes": "Mass ordering corrected remark fits mass-theory physical face"
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-07T13:38:07.793Z"
 }

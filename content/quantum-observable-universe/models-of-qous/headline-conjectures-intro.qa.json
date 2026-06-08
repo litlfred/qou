@@ -2096,7 +2096,27 @@
           "worst_span": 0
         }
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "514da1fffcef",
+          "ts": "478508b82257"
+        },
+        "result": "pass",
+        "evidence": "headline-conjectures-intro.ts:3 — prose kind; headline-conjectures-intro.md:1 — one-line section preamble",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T14:03:51.981Z",
+        "reviewed_sha": "a72996e8ab52ec378111223aabe5285606d1d90a",
+        "notes": "Prose preamble for sec:headline-conjectures. Minimal but appropriate; identifies the section and points forward to the YM mass-gap conjecture blocks."
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-07T14:03:51.981Z"
 }

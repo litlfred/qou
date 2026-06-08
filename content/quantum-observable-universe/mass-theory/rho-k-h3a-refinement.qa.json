@@ -2348,6 +2348,26 @@
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
         "notes": "Label 'prop:rho-k-h3a-refinement' aligns with Lean declaration. Sorry-free."
+      },
+      {
+        "field_hash": {
+          "md": "6f0d9a0a774e",
+          "ts": "91bd607d932b",
+          "lean": "6c4ce7c0dd44"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "rho-k-h3a-refinement.lean -- Wedderburn-Schur decomp matching narrative",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T13:46:07.526Z",
+        "reviewed_sha": "af638213a478dd151bf02a1c7949162067f278fa",
+        "notes": "Lean and narrative both describe rho_K via Wedderburn-Schur decomposition; same claim"
       }
     ],
     "proof-lean-compiles": [
@@ -2811,7 +2831,95 @@
           "worst_span": 0
         }
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "6f0d9a0a774e",
+          "ts": "91bd607d932b",
+          "lean": "6c4ce7c0dd44"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "rho-k-h3a-refinement.md:162 -- numerical q_0 evaluation and discussion sections",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T13:46:07.380Z",
+        "reviewed_sha": "af638213a478dd151bf02a1c7949162067f278fa",
+        "notes": "Extended numerical discussion at q_0 follows the proposition; interpretive; no companion remark"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "6f0d9a0a774e",
+          "ts": "91bd607d932b",
+          "lean": "6c4ce7c0dd44"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "rho-k-h3a-refinement.ts:2 -- proposition",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T13:46:07.417Z",
+        "reviewed_sha": "af638213a478dd151bf02a1c7949162067f278fa",
+        "notes": "H_{3A} Wedderburn refinement of rho_K fits mass-theory archimedean face"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "6f0d9a0a774e",
+          "ts": "91bd607d932b",
+          "lean": "6c4ce7c0dd44"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "rho-k-h3a-refinement.md -- categorical density rho_K via Markov trace",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T13:46:07.453Z",
+        "reviewed_sha": "af638213a478dd151bf02a1c7949162067f278fa",
+        "notes": "Statement is archimedean (MeV density at q_0); mass-theory is archimedean chapter; pass"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "6f0d9a0a774e",
+          "ts": "91bd607d932b",
+          "lean": "6c4ce7c0dd44"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "rho-k-h3a-refinement.lean -- Wedderburn-Schur decomposition proof",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T13:46:07.488Z",
+        "reviewed_sha": "af638213a478dd151bf02a1c7949162067f278fa",
+        "notes": "Proof is Wedderburn decomposition of trace; algebraic then archimedean evaluation; appropriate"
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-07T13:46:07.526Z"
 }

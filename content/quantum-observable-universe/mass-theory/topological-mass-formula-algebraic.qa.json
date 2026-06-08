@@ -2607,7 +2607,95 @@
           "worst_span": 0
         }
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "d6fb6599a171",
+          "ts": "42cfc007f8b8",
+          "lean": "ef9bebbc24ac"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "topological-mass-formula-algebraic.md:67 -- ## Why this is the algebraic-side statement section",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T13:46:06.315Z",
+        "reviewed_sha": "af638213a478dd151bf02a1c7949162067f278fa",
+        "notes": "Extended Why section explains archimedean vs algebraic distinction; interpretive; no companion remark"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "d6fb6599a171",
+          "ts": "42cfc007f8b8",
+          "lean": "ef9bebbc24ac"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "topological-mass-formula-algebraic.ts:2 -- proposition",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T13:46:06.351Z",
+        "reviewed_sha": "af638213a478dd151bf02a1c7949162067f278fa",
+        "notes": "Algebraic topological mass formula fits mass-theory algebraic face"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "d6fb6599a171",
+          "ts": "42cfc007f8b8",
+          "lean": "ef9bebbc24ac"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "topological-mass-formula-algebraic.lean:1 -- import Mathlib.Algebra.Field.Defs",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T13:46:06.386Z",
+        "reviewed_sha": "af638213a478dd151bf02a1c7949162067f278fa",
+        "notes": "Block describes itself as algebraic-side statement using Field.Defs not Real; appropriate"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "d6fb6599a171",
+          "ts": "42cfc007f8b8",
+          "lean": "ef9bebbc24ac"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "topological-mass-formula-algebraic.lean -- field_simp algebraic proof",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T13:46:06.422Z",
+        "reviewed_sha": "af638213a478dd151bf02a1c7949162067f278fa",
+        "notes": "Proof uses field_simp; algebraic tactics; no archimedean-only machinery"
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-07T13:46:06.422Z"
 }

@@ -2171,7 +2171,29 @@
           "worst_span": 0
         }
       }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "ab11fff4a86e",
+          "ts": "420d4b083e25",
+          "lean": "3d58dbac08ad"
+        },
+        "result": "n/a",
+        "severity": "minor",
+        "evidence": "wigner-su4-from-spin-isospin.md:1 -- not in agent rubric",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:22:42.532Z",
+        "reviewed_sha": "2acb2709959c9706b252479706ac40f35afc7ce3",
+        "notes": "proof-rater/proof-statement criteria not in agent rubric"
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-08T09:22:42.532Z"
 }

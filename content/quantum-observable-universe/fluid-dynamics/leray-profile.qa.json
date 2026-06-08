@@ -2611,7 +2611,89 @@
           "worst_span": 0
         }
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "bdd1161a5b0d",
+          "ts": "a9a1673e816c",
+          "lean": "94dbf355636c"
+        },
+        "result": "pass",
+        "evidence": "proposition in NS obstruction section; Leray self-similar profile with SU_q(2) finite-dim truncation",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:59:01.892Z",
+        "reviewed_sha": "c2b296b787f282526008689a95749a04773bbed7"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "bdd1161a5b0d",
+          "ts": "a9a1673e816c",
+          "lean": "94dbf355636c"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "statement uses xi=x/sqrt(T*-t) in R^3, radial ODE with nu in R; mixes SU_q(2) matrix coefficients with archimedean geometry; no wall: banner",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:59:01.931Z",
+        "reviewed_sha": "c2b296b787f282526008689a95749a04773bbed7"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "bdd1161a5b0d",
+          "ts": "a9a1673e816c",
+          "lean": "94dbf355636c"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "proof uses Clebsch-Gordan + classical L^2(R^3) analysis + shooting ODE BVP; unnamed regime mix",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:59:01.973Z",
+        "reviewed_sha": "c2b296b787f282526008689a95749a04773bbed7"
+      }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "bdd1161a5b0d",
+          "ts": "a9a1673e816c",
+          "lean": "94dbf355636c"
+        },
+        "result": "pass",
+        "evidence": "proposition with detailed mathematical construction; coupling table is mathematical",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:59:02.006Z",
+        "reviewed_sha": "c2b296b787f282526008689a95749a04773bbed7"
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-08T09:59:02.006Z"
 }

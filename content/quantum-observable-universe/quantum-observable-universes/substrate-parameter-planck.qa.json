@@ -1976,7 +1976,51 @@
           "worst_span": 0
         }
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "71c75fd32b61",
+          "ts": "06c55e4988a1",
+          "lean": "1208a61bb699"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "quantum-observable-universes.ts:202 — block in sec:algebraic-substrate-reeb",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:24:12.448Z",
+        "reviewed_sha": "a37eaa826ea0de4f4fd872d49b7d9f506740f8e6",
+        "notes": "Substrate parameter + Planck constant elaboration; fits sec:algebraic-substrate-reeb."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "71c75fd32b61",
+          "ts": "06c55e4988a1",
+          "lean": "1208a61bb699"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "substrate-parameter-planck.md:8 — hbar_q = 1 - q^{-1} = (q-1)/q; q in C*, algebraic identity",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:24:12.483Z",
+        "reviewed_sha": "a37eaa826ea0de4f4fd872d49b7d9f506740f8e6",
+        "notes": "Statement is algebraic identity over C*; no archimedean specialisation."
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-08T09:24:12.483Z"
 }

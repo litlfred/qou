@@ -1757,7 +1757,28 @@
           "worst_span": 0
         }
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "03bedc0da38a",
+          "ts": "f3e2ceadb07d",
+          "lean": "d2b7c2bdcdab"
+        },
+        "result": "pass",
+        "evidence": "instanton.ts:3 — example interprets:def:categorical-instanton; instanton.md:1-9 — archimedean specialisation of categorical instanton",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T14:04:22.761Z",
+        "reviewed_sha": "a72996e8ab52ec378111223aabe5285606d1d90a",
+        "notes": "Example block in sec:physical-interpretation. The instanton connection is used by q-yang-mills-levi and main-commutative-diagram; placing it here as an archimedean realisation example is correct section fit."
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-07T14:04:22.761Z"
 }

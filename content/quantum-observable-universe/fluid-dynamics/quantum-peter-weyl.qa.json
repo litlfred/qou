@@ -2609,7 +2609,87 @@
           "worst_span": 0
         }
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "deabad5ae7d5",
+          "ts": "842e9c9cc6b2",
+          "lean": "6244fe6798a1"
+        },
+        "result": "pass",
+        "evidence": "theorem in sec:q-ns-regularity; closes spectral gap for Delta_q-eigenbasis",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:53:30.103Z",
+        "reviewed_sha": "8b2b9773c91b3fddf1abf16f20f58d325bf77565"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "deabad5ae7d5",
+          "ts": "842e9c9cc6b2",
+          "lean": "6244fe6798a1"
+        },
+        "result": "pass",
+        "evidence": "statement is categorical: SU_q(2) matrix coefficients, Frobenius pairing, no Real.*/archimedean",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:53:30.135Z",
+        "reviewed_sha": "8b2b9773c91b3fddf1abf16f20f58d325bf77565"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "deabad5ae7d5",
+          "ts": "842e9c9cc6b2",
+          "lean": "6244fe6798a1"
+        },
+        "result": "pass",
+        "evidence": "proof uses Schur lemma + Tannaka-Krein + categorical trace; all substrate-side",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:53:30.167Z",
+        "reviewed_sha": "8b2b9773c91b3fddf1abf16f20f58d325bf77565"
+      }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "deabad5ae7d5",
+          "ts": "842e9c9cc6b2",
+          "lean": "6244fe6798a1"
+        },
+        "result": "pass",
+        "evidence": "Statement+proof block; no interpretive prose beyond connection-to-Kelvin note which is mathematical",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:53:30.200Z",
+        "reviewed_sha": "8b2b9773c91b3fddf1abf16f20f58d325bf77565"
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-08T09:53:30.200Z"
 }

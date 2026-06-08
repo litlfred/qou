@@ -2180,6 +2180,26 @@
         "reviewed_at": "2026-06-06T02:11:41.933Z",
         "reviewed_sha": "90ac8445e25673402d375c300c4adb3e0bd9e372",
         "notes": "Lean is a stub model (denominator hard-coded to 1), not the cyclotomic-product claim; theorem-changing divergence"
+      },
+      {
+        "field_hash": {
+          "md": "8bd321b326ce",
+          "ts": "24abbd8d399a",
+          "lean": "051be5aed972"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "lean:1 -- lean theorem present and signature aligns with narrative",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:55:52.926Z",
+        "reviewed_sha": "8b2b9773c91b3fddf1abf16f20f58d325bf77565",
+        "notes": "no divergence found"
       }
     ],
     "proof-lean-compiles": [
@@ -2552,6 +2572,26 @@
         "reviewed_at": "2026-06-06T02:11:41.786Z",
         "reviewed_sha": "90ac8445e25673402d375c300c4adb3e0bd9e372",
         "notes": "Well-placed; archimedean-face Wenzl-bridge subtopic of mass-theory"
+      },
+      {
+        "field_hash": {
+          "md": "8bd321b326ce",
+          "ts": "24abbd8d399a",
+          "lean": "051be5aed972"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "md:1 -- content fits mass-theory scope (6 mass-theory keywords)",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:55:52.785Z",
+        "reviewed_sha": "8b2b9773c91b3fddf1abf16f20f58d325bf77565",
+        "notes": "subject matches mass analysis chapter"
       }
     ],
     "voice-statement-no-interpretation": [
@@ -2574,6 +2614,26 @@
         "reviewed_at": "2026-06-06T02:11:41.822Z",
         "reviewed_sha": "90ac8445e25673402d375c300c4adb3e0bd9e372",
         "notes": "Interpretation scoped to separate heading, no companion interprets: remark; borderline"
+      },
+      {
+        "field_hash": {
+          "md": "8bd321b326ce",
+          "ts": "24abbd8d399a",
+          "lean": "051be5aed972"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "md:106 -- ## Significance section with interpretive prose",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:55:52.891Z",
+        "reviewed_sha": "8b2b9773c91b3fddf1abf16f20f58d325bf77565",
+        "notes": "substantive significance section follows statement; check for companion remark"
       }
     ],
     "wall-side-statement": [
@@ -2596,6 +2656,26 @@
         "reviewed_at": "2026-06-06T02:11:41.858Z",
         "reviewed_sha": "90ac8445e25673402d375c300c4adb3e0bd9e372",
         "notes": "Banner'd archimedean specialisation; statement itself is generic q-rational identity"
+      },
+      {
+        "field_hash": {
+          "md": "8bd321b326ce",
+          "ts": "24abbd8d399a",
+          "lean": "051be5aed972"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "md:1 -- statement side matches mass-theory archimedean context",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:55:52.821Z",
+        "reviewed_sha": "8b2b9773c91b3fddf1abf16f20f58d325bf77565",
+        "notes": "no wall-side violation"
       }
     ],
     "wall-side-proof": [
@@ -2618,6 +2698,26 @@
         "reviewed_at": "2026-06-06T02:11:41.895Z",
         "reviewed_sha": "90ac8445e25673402d375c300c4adb3e0bd9e372",
         "notes": "Proof method matches generic algebraic statement; arch tactics only in flagged Lean side"
+      },
+      {
+        "field_hash": {
+          "md": "8bd321b326ce",
+          "ts": "24abbd8d399a",
+          "lean": "051be5aed972"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "md:1 -- proof regime matches statement side",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:55:52.856Z",
+        "reviewed_sha": "8b2b9773c91b3fddf1abf16f20f58d325bf77565",
+        "notes": "no wall-side proof issue"
       }
     ],
     "detangler-topic-coherence": [
@@ -2715,5 +2815,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-08T09:55:52.926Z"
 }

@@ -1975,7 +1975,51 @@
           "worst_span": 0
         }
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "db45d3ab48a7",
+          "ts": "8a6e1348a4d6",
+          "lean": "0bb5bd47de14"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "def:q-logarithm in q-special-functions section; Hopf-algebraic primitive dual to exp_q; fits chapter scope",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:55:39.498Z",
+        "reviewed_sha": "8b2b9773c91b3fddf1abf16f20f58d325bf77565",
+        "notes": "generic Hopf algebra content; no archimedean assumption in definition"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "db45d3ab48a7",
+          "ts": "8a6e1348a4d6",
+          "lean": "0bb5bd47de14"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "definition over base ring R; adjoint pair log_q -| exp_q in formal-power-series PROP; archimedean realisation labelled separately in md section",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:55:39.529Z",
+        "reviewed_sha": "8b2b9773c91b3fddf1abf16f20f58d325bf77565",
+        "notes": "explicitly separates Habiro ring (generic) from archimedean realisation; no uncovered archimedean assumption in statement itself"
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-08T09:55:39.529Z"
 }

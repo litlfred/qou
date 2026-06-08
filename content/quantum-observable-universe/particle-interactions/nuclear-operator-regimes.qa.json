@@ -2710,7 +2710,95 @@
           "worst_span": 1
         }
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "bf64d7a72d1b",
+          "ts": "e8c10b6e76f3",
+          "lean": "7fb7a0936387"
+        },
+        "result": "n/a",
+        "severity": "minor",
+        "evidence": "nuclear-operator-regimes.md:1 -- not in agent rubric",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:30:18.115Z",
+        "reviewed_sha": "7599c91debfbae7c5cb12df527b62c19ff6403ea",
+        "notes": "proof-rater/proof-statement criteria not in agent rubric"
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "bf64d7a72d1b",
+          "ts": "e8c10b6e76f3",
+          "lean": "7fb7a0936387"
+        },
+        "result": "n/a",
+        "severity": "minor",
+        "evidence": "nuclear-operator-regimes.md:1 -- not in agent rubric",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:30:18.275Z",
+        "reviewed_sha": "71f47944b2f63fb830c46a646a7b7b26fd6306ab",
+        "notes": "proof-rater/proof-statement criteria not in agent rubric"
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "bf64d7a72d1b",
+          "ts": "e8c10b6e76f3",
+          "lean": "7fb7a0936387"
+        },
+        "result": "n/a",
+        "severity": "minor",
+        "evidence": "nuclear-operator-regimes.md:1 -- not in agent rubric",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:30:18.301Z",
+        "reviewed_sha": "71f47944b2f63fb830c46a646a7b7b26fd6306ab",
+        "notes": "proof-rater/proof-statement criteria not in agent rubric"
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "bf64d7a72d1b",
+          "ts": "e8c10b6e76f3",
+          "lean": "7fb7a0936387"
+        },
+        "result": "n/a",
+        "severity": "minor",
+        "evidence": "nuclear-operator-regimes.md:1 -- not in agent rubric",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:30:18.334Z",
+        "reviewed_sha": "71f47944b2f63fb830c46a646a7b7b26fd6306ab",
+        "notes": "proof-rater/proof-statement criteria not in agent rubric"
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-08T09:30:18.334Z"
 }

@@ -896,7 +896,29 @@
           "worst_span": 0
         }
       }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "cb0fb7bb0c7a",
+          "ts": "c5cc8e3d4151",
+          "lean": "bc03625ee152"
+        },
+        "result": "n/a",
+        "severity": "minor",
+        "evidence": "cpt-d6-d7-d8-closure.md:1 -- not in agent rubric",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:22:42.347Z",
+        "reviewed_sha": "e6d9e94a96951f6e36c439873d08c3ca3575c598",
+        "notes": "proof-rater/proof-statement criteria not in agent rubric"
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-08T09:22:42.347Z"
 }

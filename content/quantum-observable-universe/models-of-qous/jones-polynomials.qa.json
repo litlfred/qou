@@ -2098,7 +2098,27 @@
           "worst_span": 0
         }
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "9225b5dac01f",
+          "ts": "0e7ae37cc6f6"
+        },
+        "result": "pass",
+        "evidence": "jones-polynomials.ts:3 — prose kind; jones-polynomials.md:1-35 — sketch of Jones polynomial via Markov trace and R-matrix",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T14:10:11.287Z",
+        "reviewed_sha": "a72996e8ab52ec378111223aabe5285606d1d90a",
+        "notes": "Prose block in the finite-fields subsection (sec:jones-polynomials). Bridges the finite-field model to the Jones polynomial knot invariant. Appropriate placement connecting the F_p and Witt-vector sections to the knot-theoretic output."
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-07T14:10:11.287Z"
 }

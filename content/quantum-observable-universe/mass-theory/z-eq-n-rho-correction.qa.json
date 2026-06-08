@@ -1938,7 +1938,29 @@
           "worst_span": 0
         }
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "01d007830c5b",
+          "ts": "bf424f862555",
+          "lean": "be696c8c0e56"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "z-eq-n-rho-correction.ts -- block in mass-theory chapter",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T13:39:42.940Z",
+        "reviewed_sha": "ea16b464d587fbd725060636a1beb8dbcaabd167",
+        "notes": "Block subject fits mass-theory chapter scope"
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-07T13:39:42.940Z"
 }

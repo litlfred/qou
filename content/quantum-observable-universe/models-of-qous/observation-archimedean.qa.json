@@ -1940,7 +1940,27 @@
           "worst_span": 0
         }
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "b90a9aeece52",
+          "ts": "769a862c4354"
+        },
+        "result": "pass",
+        "evidence": "observation-archimedean.ts:3 — remark interprets:def:observation; observation-archimedean.md:1-9 — archimedean realisation of observation functor",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T14:05:46.508Z",
+        "reviewed_sha": "a72996e8ab52ec378111223aabe5285606d1d90a",
+        "notes": "Remark in the archimedean models section. Correctly interprets the categorical observation definition in the archimedean context. Section fit is appropriate."
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-07T14:05:46.508Z"
 }
