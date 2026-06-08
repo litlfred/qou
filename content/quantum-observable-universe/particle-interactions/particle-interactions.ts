@@ -44,38 +44,52 @@ export default chapter({
       label: "sec:confinement-selection",
       blocks: [
         "confinement-selection-intro",
-        "confinement-lp",
-        "confinement-nucleon-unit",
-        "confinement-operator-selection",
-        "confinement-operator-selection-table2-data",
-        "confinement-operator-selection-table1-data",
-        "confinement-frobenius-reciprocity",
-        // prop:confinement-sdp moved earlier to
-        // braids-and-knots/sec:alpha-k-procedure per detangler P33.
-        // New H2 → confinement-lp accepted §5.
-        "confinement-sdp-spectral-gap",
-        "confinement-sdp-multi-operator",
       ],
-    }),
-    section({
-      title: "Confinement operator selection : vs",
-      label: "sec:confinement-selection-confinement-sdp-vs",
-      blocks: [
-        "confinement-selection-confinement-sdp-vs-intro",
-        "confinement-sdp-vs-lp",
-        "confinement-misdp",
-        "confinement-topological",
-        "lp-dual-stability",
-        "lp-dual-stability-table-data",
-        "n-equals-1-vacuous-magic",
-        // prop:operator-selection-lp moved earlier to
-        // braids-and-knots/sec:hoefsmit-convergence-atomic per
-        // detangler P28. New H2 → confinement-lp accepted §5.
-        // Absorbed from former Ch `encounter`: SDP-as-thimble-flow
-        // interprets `prop:operator-selection-lp` (now in
-        // braids-and-knots).
-        "q-beta-cos-resummation",
-        "q-beta-cos-resummation-table-data",
+      // Structural reorg (docs/structural-framework.md): the section's
+      // own LP/SDP machinery + the chapter-restructure auto-split
+      // "Confinement operator selection : vs" become two subsections
+      // (P2 needs >= 2 — a lone subsection is flagged). Block reading
+      // order is preserved, so the detangler forward-ref check is
+      // unaffected (P6).
+      subsections: [
+        section({
+          title: "Operator selection by LP",
+          label: "sec:confinement-selection-lp",
+          blocks: [
+            "confinement-lp",
+            "confinement-nucleon-unit",
+            "confinement-operator-selection",
+            "confinement-operator-selection-table2-data",
+            "confinement-operator-selection-table1-data",
+            "confinement-frobenius-reciprocity",
+            // prop:confinement-sdp moved earlier to
+            // braids-and-knots/sec:alpha-k-procedure per detangler P33.
+            // New H2 → confinement-lp accepted §5.
+            "confinement-sdp-spectral-gap",
+            "confinement-sdp-multi-operator",
+          ],
+        }),
+        section({
+          title: "Which constraints survive",
+          label: "sec:confinement-selection-confinement-sdp-vs",
+          blocks: [
+            "confinement-selection-confinement-sdp-vs-intro",
+            "confinement-sdp-vs-lp",
+            "confinement-misdp",
+            "confinement-topological",
+            "lp-dual-stability",
+            "lp-dual-stability-table-data",
+            "n-equals-1-vacuous-magic",
+            // prop:operator-selection-lp moved earlier to
+            // braids-and-knots/sec:hoefsmit-convergence-atomic per
+            // detangler P28. New H2 → confinement-lp accepted §5.
+            // Absorbed from former Ch `encounter`: SDP-as-thimble-flow
+            // interprets `prop:operator-selection-lp` (now in
+            // braids-and-knots).
+            "q-beta-cos-resummation",
+            "q-beta-cos-resummation-table-data",
+          ],
+        }),
       ],
     }),
 

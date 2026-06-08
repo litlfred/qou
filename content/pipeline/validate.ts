@@ -260,6 +260,11 @@ export async function validateObjects(
     for (const sec of chapter.sections) {
       if ("blocks" in sec) {
         blockNames.push(...(sec as Section).blocks);
+        // Subsection blocks (one structural level deeper) are part of
+        // the document too (structural-framework.md P1–P6).
+        for (const sub of (sec as Section).subsections ?? []) {
+          if ("blocks" in sub) blockNames.push(...(sub as Section).blocks);
+        }
       }
     }
 
@@ -337,6 +342,9 @@ export async function validateObjects(
         for (const sec of chapter.sections) {
           if ("blocks" in sec) {
             blockNames.push(...(sec as Section).blocks);
+            for (const sub of (sec as Section).subsections ?? []) {
+              if ("blocks" in sub) blockNames.push(...(sub as Section).blocks);
+            }
           }
         }
 

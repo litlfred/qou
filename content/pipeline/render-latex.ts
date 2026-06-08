@@ -1009,33 +1009,55 @@ export function renderSection(
     lines.push(`\\sectionannot{${section.label}}`);
   }
 
+  // Subsections (one structural level deeper → \subsection). Their
+  // blocks share the section's compact-mode reference set.
+  const subsections: Section[] = Array.isArray(section.subsections)
+    ? section.subsections.filter((s): s is Section => "blocks" in s)
+    : [];
+
   // Collect referenced example/remark labels for compact-mode filtering
   // Merge section-local refs with chapter-wide refs when available
-  const sectionRefs = collectReferencedLabels(section.blocks, blocks);
+  const sectionRefs = collectReferencedLabels(
+    [...section.blocks, ...subsections.flatMap((s) => s.blocks)],
+    blocks,
+  );
   const referencedLabels = chapterReferencedLabels
     ? new Set([...sectionRefs, ...chapterReferencedLabels])
     : sectionRefs;
 
-  for (const rootName of section.blocks) {
-    const entry = blocks.get(rootName);
-    if (!entry) {
-      lines.push(`% ERROR: block "${rootName}" not found`);
-      continue;
-    }
-    if (!shouldIncludeBlock(entry.block, referencedLabels, opts)) {
-      // Emit a phantom label so \hyperref[label]{...} references from
-      // other blocks resolve without "Hyper reference undefined" warnings.
-      const label = (entry.block && typeof entry.block === "object"
-          && "label" in entry.block)
-        ? (entry.block as { label?: string }).label
-        : undefined;
-      if (label) {
-        lines.push(`\\phantomsection\\label{${label}}% compact-mode: block excluded`);
+  const renderBlockList = (blockNames: string[]) => {
+    for (const rootName of blockNames) {
+      const entry = blocks.get(rootName);
+      if (!entry) {
+        lines.push(`% ERROR: block "${rootName}" not found`);
+        continue;
       }
-      continue;
+      if (!shouldIncludeBlock(entry.block, referencedLabels, opts)) {
+        // Emit a phantom label so \hyperref[label]{...} references from
+        // other blocks resolve without "Hyper reference undefined" warnings.
+        const label = (entry.block && typeof entry.block === "object"
+            && "label" in entry.block)
+          ? (entry.block as { label?: string }).label
+          : undefined;
+        if (label) {
+          lines.push(`\\phantomsection\\label{${label}}% compact-mode: block excluded`);
+        }
+        continue;
+      }
+      lines.push(renderBlock(entry.block, entry.mdContent, entry.sourceDir, rootName));
+      lines.push(""); // blank line between blocks
     }
-    lines.push(renderBlock(entry.block, entry.mdContent, entry.sourceDir, rootName));
-    lines.push(""); // blank line between blocks
+  };
+
+  renderBlockList(section.blocks);
+
+  for (const sub of subsections) {
+    lines.push(`\\subsection{${escapeLatex(sub.title)}}`);
+    if (sub.label) {
+      lines.push(`\\label{${sub.label}}`);
+      lines.push(`\\sectionannot{${sub.label}}`);
+    }
+    renderBlockList(sub.blocks);
   }
 
   return lines.join("\n");
@@ -1076,19 +1098,26 @@ export function renderChapter(
 
   // Collect chapter-wide referenced labels (from examples[] on ALL blocks
   // in this chapter) so compact-mode filtering works across sections.
+  // Every block in the chapter, including subsection blocks (one level
+  // deeper), so compact-mode filtering + citation collection see the
+  // whole tree.
+  const sectionAllBlocks = (sec: Section): string[] => [
+    ...sec.blocks,
+    ...(Array.isArray(sec.subsections)
+      ? sec.subsections.flatMap((s) => ("blocks" in s ? (s as Section).blocks : []))
+      : []),
+  ];
   const allChapterBlockNames: string[] = [];
   for (const section of chapter.sections) {
     if (!("blocks" in section)) continue;
-    for (const rootName of (section as Section).blocks) {
-      allChapterBlockNames.push(rootName);
-    }
+    allChapterBlockNames.push(...sectionAllBlocks(section as Section));
   }
   const chapterReferencedLabels = collectReferencedLabels(allChapterBlockNames, blocks);
 
   for (const section of chapter.sections) {
     if (!("blocks" in section)) continue;
     const sec = section as Section;
-    for (const rootName of sec.blocks) {
+    for (const rootName of sectionAllBlocks(sec)) {
       const entry = blocks.get(rootName);
       if (!entry) continue;
       for (const key of extractCitations(entry.mdContent)) {
