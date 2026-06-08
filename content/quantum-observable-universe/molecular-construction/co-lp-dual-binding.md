@@ -1,8 +1,10 @@
 **Proposition (conditional on [`conj:q-integer-mass-formula`](#conj:q-integer-mass-formula)).**
-*For $CO$ the covalent-bond-selection LP selects bond order $k^\star = 3$
-(a triple bond), realised as three **orthogonal orbital channels**
-$\sigma \perp \pi_x \perp \pi_y$ — not as a single accumulating chain of
-shared pairs.*
+*For $CO$ the covalent-bond-selection LP selects an active set of
+cardinality $2$ — two **orthogonal orbital channels** $\sigma \perp \pi$,
+each an independent covalent channel rather than one accumulating chain of
+shared pairs. The observed triple bond is completed by a third, **dative**
+channel (an oxygen lone pair donated to carbon), giving total bond order
+$3$ and making $CO$ isoelectronic with $\mathrm{N_2}$.*
 
 ## Orthogonal channels, not one chain
 
@@ -45,9 +47,10 @@ budget.  Its **active set** — the occupied orthogonal channels — has
 cardinality equal to the bond order.  This is the molecular instance of
 the *bond order $=$ LP active-set cardinality* identity.
 
-For $CO$ the budget is $V_{CO} = 3$: carbon offers three of its four open
-linking sites ([carbon valence](#rem:carbon-valence)) and oxygen two
-bonding sites plus one dative pair, so $k^\star = 3$.
+For $CO$ the covalent budget is fixed by the octet valence of carbon
+([carbon valence](#rem:carbon-valence)) and oxygen, derived ab initio
+below; an oxygen lone pair donated to carbon enters separately as a dative
+channel, not as a covalent LP term.
 
 The orthogonal-channel LP $\max_x \sum_i b_i x_i$ subject to
 $\sum_i x_i \le \min(N_{\dim}, V)$ is **computed** for the diatomic
