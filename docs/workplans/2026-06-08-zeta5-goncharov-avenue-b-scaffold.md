@@ -93,6 +93,51 @@ This is the ~1–2 week project the parent conjecture estimates; the value here 
 the **pruned** search (P1–P4) so the enumeration is over a small filtered set,
 not all of `H_n(q)`.
 
+## P2 — first structural progress (the flat part vs the pole part)
+
+The P2 risk ("does the depth reduction commute with `q → ζ₅`?") **splits into a
+free/flat part that is settled structurally, and a located pole part that is the
+genuine open work.**
+
+### P2a — the GS *filtration* commutes (free ⇒ flat ⇒ exact base change). SETTLED.
+
+The Gröbner–Shirshov normal form gives `H_n(q)` a **free `ℤ[q^{±1}]`-basis** of
+standard monomials `{T_w : w ∈ S_n}` (the PBW/GS basis). A free module is flat,
+so base change along the specialization
+
+```
+   ℤ[q^{±1}]  ⟶  ℤ[q^{±1}] / Φ₅(q)  =  ℤ[ζ₅]
+```
+
+is **exact**. Therefore each GS-filtration piece base-changes term-by-term,
+`J^ℓ ⊗ ℤ[ζ₅] = J^ℓ(ζ₅)`, and the depth grading `G^{(n)}` is **preserved** under
+`q → ζ₅`. So `G^{(n)}(ζ₅)` is well-defined and the depth structure of the
+keystone *survives the specialization* — no flatness obstruction on the
+filtration side. (Provable in Lean from the existing GS-basis freeness once the
+toolchain is restored; it is a `Module.Flat` / `TensorProduct` exactness fact, no
+analysis.)
+
+### P2b — the *Markov trace* has poles at `ζ₅` (the located open work).
+
+The trace weights `ỹ_λ = dim_q²V_λ / [n]_q!` carry the denominator
+`[n]_q! = ∏_{k=1}^{n}[k]_q`, and `[5]_q = (q⁵−q⁻⁵)/(q−q⁻¹)` **vanishes at a
+primitive 5th root** (`q⁵ = 1 ⇒ [5]_{ζ₅} = 0`). So for `n ≥ 5` the weights have a
+**pole** at `ζ₅`, and some `dim_q V_λ` vanish — the signature of the
+**non-semisimple** regime (radical, cell modules, non-trivial decomposition
+matrix; Gyoja–Uno). The generic `Σ_λ ỹ_λ χ_λ` form does **not** specialize
+naïvely.
+
+**So P2 is not a single risk — it is:** filtration side **free/flat (done)**;
+trace side a **located renormalization** — evaluate `tr_M` at `ζ₅` via the
+**cell modules / canonical basis** (Graham–Lehrer cellular structure of `H_n`),
+where the `[5]_q = 0` poles cancel against the `dim_q V_λ = 0` zeros. This is the
+real content, now isolated to a finite, named computation rather than a vague
+"specialization risk".
+
+**Revised gate:** P2a clears immediately (free-basis flatness); the avenue is
+gated on **P2b only** — the cellular renormalization of `tr_M` at `ζ₅`. That is
+the first concrete deliverable when Avenue B is run.
+
 ## Relation to the surreal keep/purge decision
 
 **Avenue B is surreal-free** (Hecke NF + Markov trace + Bloch–Suslin/Goncharov
