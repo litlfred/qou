@@ -29,24 +29,79 @@
 > q before a big behaviour-change transition, e.g. 3d→2d anyons, extreme
 > q, or linear/optical-fibre systems) to keep things tractable.
 
-## Workplan (to be refined as exploration lands)
+## Findings (2026-06-08 survey — 3 Explore agents)
 
-1. **Survey** existing phase-transition content + compute (what is
-   proven vs conjectural vs missing). — *in progress (Explore agent)*
-2. **Survey** the organic/benzene molecule-construction pattern — the
-   template for H₂O. — *in progress (Explore agent)*
-3. **Survey** confinement-level + symmetry-hierarchy + lattice + q-regime
-   content. — *in progress (Explore agent)*
-4. **Build H₂O** as a composite knot/braid object (constituent atoms →
-   molecule), analogous to the benzene block.
-5. **Knot-symmetry hierarchy of matter** — formalize the owner's
-   hypothesis: phase / matter-type ladder ← constituent knot symmetries.
-6. **Ice lattice symmetry** — connect lattice symmetry × internal H₂O
-   symmetry (intertwined); identify the space-group/symmetry object.
-7. **Phase-transition predictions** — attempt freezing / boiling /
-   sublimation points from q₀ + confinement levels; report tiered
-   (proved / near-match / fitted) per CLAUDE.md discipline.
-8. **Electron shells in lattice** — what the framework says happens.
+**Phase-transition machinery already exists** (information-theory Ch 8,
+`sec:phase-transitions`) and is partly Lean-proven:
+- [`prop:phase-transition-boundary`](../../content/quantum-observable-universe/information-theory/phase-transition-boundary.md)
+  (+ `.lean`): gas↔liquid `T_q^{g→l}=S_q^∂/[2]_q`, liquid↔solid
+  `T_q^{l→s}=S_q^∂/([2]_q·[n_K]_q)`, sublimation = non-split Hecke
+  extension `Ext¹≅ℤ` (Hopf invariant of π₃(S²)).
+- [`rem:phase-transition-interpretation`](../../content/quantum-observable-universe/information-theory/phase-transition-interpretation.md):
+  three phases = symmetric / mixed / antisymmetric Hecke channels.
+- **Temperature IS calibrated**:
+  [`def:quantum-temperature`](../../content/quantum-observable-universe/information-theory/quantum-temperature.md)
+  `T_q = ℏ_q = (q−1)/q`; Boltzmann + gas-constant blocks give the Kelvin
+  bridge. **But no numerical evaluation at q₀ yet.**
+
+**Molecular-construction chapter exists** (Ch 12) with the full template:
+[`def:molecular-braid`](../../content/quantum-observable-universe/molecular-construction/molecular-braid.md),
+benzene / CH₄ / CO₂ / CO / H₂ built; oxygen valence = 2 + 2 lone pairs
+already specified ([`valence-from-braid`](../../content/quantum-observable-universe/molecular-construction/valence-from-braid.md)).
+**No H₂O block yet** — clean new target. ⚠ Owner flags this chapter as
+**VERY OLD** → currency + compute-wiring audit launched
+([`2026-06-08-molecular-chapter-currency-wiring-audit.md`](../audits/2026-06-08-molecular-chapter-currency-wiring-audit.md),
+in flight).
+
+**Knot-symmetry hierarchy backbone exists**:
+[`cor:knot-factor-borromean-composite`](../../content/quantum-observable-universe/mass-theory/knot-factor-borromean-composite.md)
+— composite knot factor = product of constituent factors (Brunnian
+decoupling). This is the proven core of the owner's "hierarchies ←
+constituent knot symmetries" hypothesis.
+
+**Confinement filtration ladder exists**:
+[`def:confinement-level`](../../content/quantum-observable-universe/particle-interactions/confinement-level.md)
+`J^ℓ(q)`, with phase transitions at LP boundary `E(λ,q*)=0`.
+
+**Electron shells** = Hopf-linked trefoils
+([`def:electron-shell`](../../content/quantum-observable-universe/predicted-spectra/electron-shells-hopf.md),
+`def:electron-shell-braid-capacity`); shell capacity `2n²`.
+
+**GAP — lattice / crystal symmetry**: the framework is *topologically*
+periodic (Chebyshev / transfer-matrix), with **no space-group / crystal-
+lattice content**. This is exactly the owner's ice-lattice question and
+is the genuine new structure to design.
+
+**Headline science — scale-free phase ratio** (formalize-first, see
+[`2026-06-08-phase-transition-ratio-formalize-first.md`](../audits/2026-06-08-phase-transition-ratio-formalize-first.md)):
+`T_boil/T_freeze = [n_K]_q` (S_q^∂ cancels). Cheap test over the 6
+chapter-12 molecules: measured ratios cluster in (1.20, 1.45); the
+**integer-crossing reading is refuted** (integer `n_K≥2` over-predicts
+~50%). Points at the self-referential `T_q=ℏ_q` running-q fixed point —
+resolve structurally before any numerical phase build.
+
+## Workplan (reprioritized 2026-06-08)
+
+0. **[lead] Validate + currency-fix the molecular chapter** (owner's
+   newest ask — foundational). Audit in flight; then apply (i) mechanical
+   fixes, (ii) framework-currency rewrites (purged λ_scale / Geom_full /
+   scalar ρ_q), (iii) compute rewiring (canonical pkgs + LP duals +
+   witnesses). H₂O is built on the *fixed* chapter, not the stale one.
+1. **Build H₂O** (`def:h2o-molecular-braid` + siblings) against the
+   current framework — O(8,8) + 2 H, bent geometry from lone-pair
+   repulsion, in the molecular-construction chapter §"Water".
+2. **Phase-ratio fixed point** — derive the running-q form of
+   `T_boil/T_freeze`; re-test; only then absolute temps (needs Kelvin
+   scale). Witnessed compute routed through `qou_substrate`.
+3. **Knot-symmetry hierarchy of matter** — promote the owner hypothesis
+   to a proposition built on `cor:knot-factor-borromean-composite` +
+   `def:confinement-level`: matter-state ladder ← constituent knot
+   symmetries.
+4. **Ice lattice symmetry** (the gap) — design the lattice-symmetry
+   object: lattice space group × internal H₂O symmetry (intertwined);
+   connect to confinement levels.
+5. **Electron shells in lattice** — what the Hopf-trefoil shell model
+   says happens to shells under lattice bonding.
 
 ## Discipline notes (CLAUDE.md)
 
