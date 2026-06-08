@@ -53,7 +53,7 @@ export default chapter({
       ],
     }),
     section({
-      title: "The Quantum Universe : unique",
+      title: "Uniqueness and the $\\mathrm{SU}(2)$ realisation",
       label: "sec:quantum-universe-frobenius-pairing-unique",
       blocks: [
         "quantum-universe-frobenius-pairing-unique-intro",

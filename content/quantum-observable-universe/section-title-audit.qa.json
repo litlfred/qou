@@ -646,22 +646,9 @@
       }
     },
     "brings-surface": {
-      "manifest_hash": "8ae8318e934d",
+      "manifest_hash": "d132721fca30",
       "machine": {
-        "title_defects": [
-          {
-            "kind": "split-artifact",
-            "label": "sec:archimedean-condition-genus-completeness-genus-ideal-characterisation",
-            "title": "Descartes condition: torus-knot generators and genus completeness : characterisation",
-            "detail": "trailing \" : characterisation\" (known auto-split tag) — meaningless out of context"
-          },
-          {
-            "kind": "too-long",
-            "label": "sec:archimedean-condition-genus-completeness-genus-ideal-characterisation",
-            "title": "Descartes condition: torus-knot generators and genus completeness : characterisation",
-            "detail": "84 chars > 72"
-          }
-        ],
+        "title_defects": [],
         "structure_findings": [
           {
             "kind": "band",
@@ -750,7 +737,7 @@
           "reviewed_hash": null
         },
         "sec:archimedean-condition-genus-completeness-genus-ideal-characterisation": {
-          "title": "Descartes condition: torus-knot generators and genus completeness : characterisation",
+          "title": "The genus-ideal filtration",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
@@ -2920,16 +2907,9 @@
       }
     },
     "quantum-universes": {
-      "manifest_hash": "cac600ff5188",
+      "manifest_hash": "4aa36f82a5d5",
       "machine": {
-        "title_defects": [
-          {
-            "kind": "split-artifact",
-            "label": "sec:quantum-universe-frobenius-pairing-unique",
-            "title": "The Quantum Universe : unique",
-            "detail": "trailing \" : unique\" (known auto-split tag) — meaningless out of context"
-          }
-        ],
+        "title_defects": [],
         "structure_findings": [
           {
             "kind": "band",
@@ -2962,7 +2942,7 @@
           "reviewed_hash": null
         },
         "sec:quantum-universe-frobenius-pairing-unique": {
-          "title": "The Quantum Universe : unique",
+          "title": "Uniqueness and the $\\mathrm{SU}(2)$ realisation",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
