@@ -133,8 +133,9 @@ def benchmark_isotope(
 
     print(f"\n  {label}  (Z={Z}, N={N}, A={A}, n={n_strands})")
     print(f"  ──────────────────────────────────────────────")
+    # The split asserts exactly one σ_3 bridge — print the constant.
     print(f"    β = {len(full_word)} crossings  "
-          f"(left={len(deut_left)}, bridge={len(deut_right) and 1 or 0}, "
+          f"(left={len(deut_left)}, bridge=1, "
           f"right={len(deut_right)})")
     print(f"    Testing {len(small_partitions)}/{len(partitions)} partitions "
           f"(dim V_λ ≤ {max_dim})")
@@ -163,8 +164,10 @@ def benchmark_isotope(
         rust_s = time.monotonic() - t0
         total_rust_s += rust_s
 
-        delta = sp.cancel(chi_python - chi_rust)
-        match = (delta == 0)
+        # Both sides are exact sp.Rational (or sp.Integer) — direct
+        # `==` is decidable and dramatically cheaper than the
+        # symbolic-rational-function reducer sp.cancel.
+        match = (chi_python == chi_rust)
         status = "✓" if match else "✗"
         call_vs_rust = rust_s / call_s if call_s > 0 else float("inf")
 
