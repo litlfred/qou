@@ -75,6 +75,8 @@ section({
         "optical-fibre-intro",
         "one-dim-qou-channel",
         "parallel-fibre-noninteraction",
+        "fibre-channel-capacity",
+        "photon-propagation-1d",
       ],
     }),
     section({
