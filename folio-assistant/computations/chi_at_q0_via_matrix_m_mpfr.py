@@ -121,6 +121,16 @@ def _split_atom_braid(Z: int, N: int) -> tuple[
             f"nucleon braid (A=1) is not parabolic. Use the hoefsmit "
             f"producer for this atom."
         )
+    # The matrix-M trace identity (audit §5) requires exactly ONE σ_3
+    # bridge — the parabolic split at k_split = 3 isolates the proton
+    # block from everything beyond. Multiple σ_3 crossings would mix
+    # the blocks and invalidate the single-block formula.
+    if len(bridge) != 1:
+        raise ValueError(
+            f"atom_braid_word_3A({Z}, {N}) has {len(bridge)} crossings "
+            f"at the σ_3 bridge ({bridge}); the matrix-M trace identity "
+            f"requires exactly one bridge crossing."
+        )
     bridge_sign = bridge[0][0]
     return n_strands, word_left, bridge_sign, word_right
 
@@ -154,7 +164,9 @@ def build_chi_cache_at_q0_matrix_m(
     assert n_strands == n, f"strand count mismatch: {n_strands} vs {n}"
 
     q = mp.mpf(q_str)
-    out_path = HERE / f"chi-{atom_name}-h{n}-at-q0-50dps-matrix-m.witness.json"
+    # Filename + payload keys parameterised by dps so --dps=70 doesn't
+    # collide with the 50dps cache.
+    out_path = HERE / f"chi-{atom_name}-h{n}-at-q0-{dps}dps-matrix-m.witness.json"
     # Reuse existing cache if present (incremental resume).
     already: dict[tuple, dict] = {}
     if out_path.exists():
@@ -177,15 +189,18 @@ def build_chi_cache_at_q0_matrix_m(
     for shape in shapes:
         shape_t = tuple(shape)
         if shape_t in already:
-            per_partition.append(already[shape_t])
-            running_total += mp.mpf(already[shape_t]["contribution"])
-            continue
+            entry = already[shape_t]
+            # Reuse the cached entry UNLESS it was a max-dim placeholder
+            # AND the current max_dim is now high enough to recompute.
+            was_skipped = entry.get("chi_lambda") == "skipped-max-dim"
+            if (not was_skipped) or entry.get("dim", 0) > max_dim:
+                per_partition.append(entry)
+                running_total += mp.mpf(entry["contribution"])
+                continue
+        # Cheap O(n) hook-length dim check up-front to avoid building
+        # the seminormal matrices when the partition is over the cap.
         dim_estimate = dim_specht(shape_t)
         if dim_estimate > max_dim:
-            # Skip — too slow for pure-Python mpmath at this dim.
-            # Cache writes a placeholder so the file's partition list
-            # remains complete; downstream consumers can detect via
-            # `chi_lambda == "skipped-max-dim"`.
             n_skipped += 1
             per_partition.append({
                 "partition": list(shape_t),
@@ -196,6 +211,11 @@ def build_chi_cache_at_q0_matrix_m(
                 "compute_time_sec": 0.0,
             })
             continue
+        # y_lam check BEFORE the expensive block-table precompute and
+        # matrix-M evaluation (per Gemini review on PR #2004).
+        y_lam = y_table.get(shape_t)
+        if y_lam is None:
+            continue
 
         t_part = time.time()
         cache = precompute_block_tables_mpfr(shape_t, 3, q)
@@ -204,9 +224,6 @@ def build_chi_cache_at_q0_matrix_m(
         )
         # Pull dim from the cache's block sizes.
         dim = sum(b["size"] for b in cache["blocks"].values())
-        y_lam = y_table.get(shape_t)
-        if y_lam is None:
-            continue
         contrib = y_lam * chi
         running_total += contrib
 
@@ -220,7 +237,7 @@ def build_chi_cache_at_q0_matrix_m(
         }
         per_partition.append(entry)
         payload = {
-            "computation": f"chi-{atom_name}-h{n}-at-q0-50dps-matrix-m",
+            "computation": f"chi-{atom_name}-h{n}-at-q0-{dps}dps-matrix-m",
             "description": (
                 f"Numerical χ^λ_q(β_atomic({Z}, {N})) = {atom_name} per "
                 f"partition λ ⊢ {n}, evaluated at q = q_0 at {dps} dps "
@@ -232,7 +249,7 @@ def build_chi_cache_at_q0_matrix_m(
             ),
             "producer": "matrix-m-chi-q-via-gp",
             "convention": "sign-only-crossings",
-            "q_0_50dps": str(q),
+            f"q_0_{dps}dps": str(q),
             "dps": dps,
             "n_strands": n,
             "atom": atom_name,
@@ -348,7 +365,7 @@ def main() -> int:
         from per_irrep_pole_atom import parts_of as _parts
         n_strands, word = _word_for_braid_word_3a(Z, N)
         cache_data = json.loads(
-            (HERE / f"chi-{atom_name}-h{n_strands}-at-q0-50dps-matrix-m.witness.json").read_text()
+            (HERE / f"chi-{atom_name}-h{n_strands}-at-q0-{args.dps}dps-matrix-m.witness.json").read_text()
         )
         tol = mp.mpf(10) ** -(args.dps - 5)
         n_match = 0
