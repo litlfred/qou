@@ -1,0 +1,5 @@
+*Interpretation of the [H₂O molecular braid](#def:h2o-molecular-braid).*
+
+Oxygen contributes two bonding sites and **two lone pairs**. In the assembly, the lone pairs occupy two of the four tetrahedral directions around oxygen as non-bonding *phantom sites* — the $NH_3 \to H_2O$ extension of the methane $T_d$ optimisation: lone-pair repulsion relaxes the $H$–$O$–$H$ angle from the ideal $109.5^\circ$ toward the observed $\approx 104.5^\circ$.
+
+The four directions — two donor $H$ and two acceptor lone pairs — are the per-molecule input to the **ice lattice**. Each water hydrogen-bonds to four neighbours, two as donor and two as acceptor, and the resulting tetrahedral coordination tiles into hexagonal ice $I_h$ (space group $P6_3/mmc$); the open tetrahedral network is why ice is less dense than liquid water. The choice of which two of the four bonds carry "this molecule's" hydrogens, subject to the rule that every bond holds exactly one hydrogen, is the categorical origin of the Pauling residual entropy of ice, $\approx R\ln(3/2)$. The detailed tiling and its symmetry are developed in the phase-symmetry model.

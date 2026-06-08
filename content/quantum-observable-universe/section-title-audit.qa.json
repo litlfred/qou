@@ -2144,7 +2144,7 @@
       }
     },
     "molecular-construction": {
-      "manifest_hash": "28a950ab4399",
+      "manifest_hash": "debe0a18a07a",
       "stale_mode": "thorough",
       "machine": {
         "title_defects": [],
@@ -2201,6 +2201,14 @@
         },
         "sec:ch4-computation": {
           "title": "Methane: tetrahedral bonding from braid optimization",
+          "depth": 1,
+          "result": "pending",
+          "reviewer": null,
+          "reviewed_hash": null,
+          "stale_mode": "thorough"
+        },
+        "sec:h2o-computation": {
+          "title": "Water: $C_{2v}$ from the assembly projector",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
