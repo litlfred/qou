@@ -2574,7 +2574,95 @@
           "worst_span": 1
         }
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "11c18950757e",
+          "ts": "70d4d25dcf06",
+          "lean": "3a51b2970052"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "mass-theory.ts:418 -- schur-weyl-mass-decomposition in sec:phi-q-markov-schur-weyl-foundations",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:24:50.209Z",
+        "reviewed_sha": "400ece7d8dc4400bfdff82ecbc55e4d8baaab6fa",
+        "notes": "Schur-Weyl decomposition of atomic Markov trace fits mass-theory scope"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "11c18950757e",
+          "ts": "70d4d25dcf06",
+          "lean": "3a51b2970052"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "schur-weyl-mass-decomposition.lean:421 -- noncomputable def schurWeylWeight ... (q : R) : R generic",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:24:50.314Z",
+        "reviewed_sha": "400ece7d8dc4400bfdff82ecbc55e4d8baaab6fa",
+        "notes": "Lean keeps schurWeylWeight over R; narrative uses q_0 only in numerical section"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "11c18950757e",
+          "ts": "70d4d25dcf06",
+          "lean": "3a51b2970052"
+        },
+        "result": "n/a",
+        "severity": "minor",
+        "evidence": "schur-weyl-mass-decomposition.md -- no Proof section; Lean is a class axiomatisation",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:24:50.346Z",
+        "reviewed_sha": "400ece7d8dc4400bfdff82ecbc55e4d8baaab6fa",
+        "notes": "no proof body; block is a class definition with axioms; n/a"
+      }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "11c18950757e",
+          "ts": "70d4d25dcf06",
+          "lean": "3a51b2970052"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "schur-weyl-mass-decomposition.md:249 -- Three-channel regrouping and algebraic origin sections follow statement",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:24:50.378Z",
+        "reviewed_sha": "400ece7d8dc4400bfdff82ecbc55e4d8baaab6fa",
+        "notes": "elaboration sections expand the proposition; companion remark not required here; borderline but no standalone interprets remark needed as they are part of the stated proposition"
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-08T09:24:50.378Z"
 }
