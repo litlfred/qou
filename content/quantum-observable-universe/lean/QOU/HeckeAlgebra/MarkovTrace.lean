@@ -157,10 +157,12 @@ theorem markovTrace_add {n : ℕ} (x y : HeckeElement n) :
     **Theorem** (was previously `axiom markovTrace_smul`).
     Discharged 2026-06-08: derived from `markovTrace_linear`'s
     `map_smul` field, with the `c • r = c * r` identity for
-    `r : ℝ` (via `smul_eq_mul`). -/
+    `r : ℝ` (via `smul_eq_mul`). Term-mode proof for faster
+    elaboration (per gemini-code-assist review on PR #1986). -/
 theorem markovTrace_smul {n : ℕ} (c : ℝ) (x : HeckeElement n) :
-    markovTrace n (c • x) = c * markovTrace n x := by
-  rw [(QOU.HeckeAlgebra.markovTrace_linear n).map_smul c x, smul_eq_mul]
+    markovTrace n (c • x) = c * markovTrace n x :=
+  ((QOU.HeckeAlgebra.markovTrace_linear n).map_smul c x).trans
+    (smul_eq_mul c (markovTrace n x))
 
 /-- **Trace of the zero element is zero** — derived from
     homogeneity via `0 • x = 0` and `markovTrace_smul`. -/
