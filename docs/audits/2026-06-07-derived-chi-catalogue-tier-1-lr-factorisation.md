@@ -1,5 +1,35 @@
 # Tier 1 — LR / parabolic factorisation for atomic-braid characters (2026-06-07)
 
+> **Phase 1.2 update (2026-06-08, PR #1980)**: the matrix-M substrate
+> is now PROVED to compute correct characters via the μ_p-level
+> factorisation. Implementation at
+> [`folio-assistant/computations/derived_chi_catalogue_matrix_m.py`](../../folio-assistant/computations/derived_chi_catalogue_matrix_m.py)
+> using sympy q-rational matrices (asymmetric natural form of Young's
+> seminormal basis — every entry stays in Q(q), no square roots).
+> Validation passes:
+>
+>   - **Tests 1-4** (n = 2, 3, 4, 6 on toy braids): 21/21 — Python
+>     Hoefsmit ↔ Rust `chi_q_via_gp` at {q=2, q=3, q=Q_50_DIGIT_STR}.
+>   - **Test 5** (n = 6 deuteron-shaped on `σ_1·σ_2·σ_3·σ_4·σ_5`):
+>     11/11 — μ_p-level factorisation
+>     `χ^λ = Σ_{μ_p ⊢ 3} Tr[B_p · M_pp · B_n]` equals direct trace
+>     for all 11 partitions of 6.
+>   - **Test 6** (n = 6 PRODUCTION `atom_braid_word_3A(1, 1)`, 23
+>     crossings, dim V_λ ≤ 5 subset): see witness for outcome (long-
+>     compute, witness emitted by the sweep).
+>
+> The per-μ_p contributions are q-rational MATRICES with shared
+> denominators (e.g. `q^4 + q^2 + 1` for c_LR=1 H_3 blocks) that
+> cancel in the sum — empirically confirming the §4 refined formula
+> below (matrix-valued bridge factor).
+>
+> **Remaining work (Phase 1.3)**: decompose each μ_p-block further
+> under H_3(right) via σ_4, σ_5 idempotents to extract the full
+> (μ_p, μ_n) factorisation, then tabulate M(μ_p, μ_n, λ; q) for
+> cache-once / use-many. The μ_p-only decomposition above already
+> WORKS as a backend — it just doesn't yet expose the per-μ_n
+> structure that gives the maximum reuse.
+
 > **Status update (2026-06-07 PM, refined)**: the simple LR
 > factorisation formula
 > `χ^λ(T_β) = Σ ω(μ_p, μ_n, λ; q) · χ^{μ_p}(T_{w_p}) · χ^{μ_n}(T_{w_n})`
