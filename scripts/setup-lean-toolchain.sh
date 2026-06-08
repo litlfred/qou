@@ -39,19 +39,23 @@ export PATH="$ELAN_HOME/bin:$PATH"
 #    firewalled release host; the pinned toolchain is linked in step 2.
 if ! command -v elan >/dev/null 2>&1; then
   echo "setup-lean-toolchain: elan not found — bootstrapping from GitHub releases" >&2
-  ELAN_TGZ="/tmp/elan-init.tar.gz"
-  ELAN_URL="https://github.com/leanprover/elan/releases/latest/download/elan-x86_64-unknown-linux-gnu.tar.gz"
+  # Pinned for reproducibility/debuggability; override with ELAN_VERSION=vX.Y.Z.
+  ELAN_VERSION="${ELAN_VERSION:-v4.2.3}"
+  ELAN_URL="https://github.com/leanprover/elan/releases/download/$ELAN_VERSION/elan-x86_64-unknown-linux-gnu.tar.gz"
+  # mktemp dir → unique per run (no collision with concurrent sessions or a
+  # stale partial tarball from a prior failed download); removed unconditionally.
+  _elan_tmp="$(mktemp -d)"
+  ELAN_TGZ="$_elan_tmp/elan-init.tar.gz"
   if command -v curl >/dev/null 2>&1 \
-     && curl --fail --show-error -sL --max-time 180 -o "$ELAN_TGZ" "$ELAN_URL"; then
-    _elan_tmp="$(mktemp -d)"
-    if tar xzf "$ELAN_TGZ" -C "$_elan_tmp" 2>/dev/null && [ -x "$_elan_tmp/elan-init" ]; then
-      # Install elan only; the pinned toolchain is fetched from GitHub below.
-      ELAN_HOME="$ELAN_HOME" "$_elan_tmp/elan-init" -y --default-toolchain none --no-modify-path >&2 2>&1 || true
-    fi
-    rm -rf "$_elan_tmp" "$ELAN_TGZ"
+     && curl --fail --show-error -sL --max-time 180 -o "$ELAN_TGZ" "$ELAN_URL" \
+     && tar xzf "$ELAN_TGZ" -C "$_elan_tmp" 2>/dev/null \
+     && [ -x "$_elan_tmp/elan-init" ]; then
+    # Install elan only; the pinned toolchain is fetched from GitHub below.
+    ELAN_HOME="$ELAN_HOME" "$_elan_tmp/elan-init" -y --default-toolchain none --no-modify-path >&2 2>&1 || true
     export PATH="$ELAN_HOME/bin:$PATH"
     hash -r 2>/dev/null || true
   fi
+  rm -rf "$_elan_tmp"
   if ! command -v elan >/dev/null 2>&1; then
     echo "setup-lean-toolchain: elan bootstrap failed (network?) — skipping; Lean unavailable this session" >&2
     exit 0
