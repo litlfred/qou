@@ -1,0 +1,5 @@
+*Interpretation of the [one-dimensional QOU channel](#def:one-dim-qou-channel).*
+
+A photon is the trivial strand $\gamma$ — knot-trivial under Markov closure — so on a fibre it is a propagating excitation that carries no crossings of its own but advances along the line. The fibre's $n$ strands are its **modes**: a bounded fibre supports exactly $n$ propagating modes, the topological origin of mode quantisation in a waveguide (a step-index fibre admits a finite, discrete mode count fixed by its cross-section).
+
+Propagation is governed by the substrate velocity $c_q = 1/(q-1)$, and the **dispersion** of a mode is the $q$-deformation of its propagation eigenvalue: a mode of wavenumber $k$ advances with the $q$-integer phase $[k]_q$ rather than the classical $k$, so the group velocity acquires $O(1 - q^{-1})$ corrections — the same fractional deformation that appears in the photonic-Hall quantisation. In the rigid, lossless limit (a straight fibre with no scattering) these reduce to a linear dispersion, and the fibre transmits each mode independently, consistent with the non-interaction of parallel channels.
