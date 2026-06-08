@@ -1466,23 +1466,40 @@
       }
     },
     "mass-endomorphism": {
-      "manifest_hash": "ea53d0394d5e",
+      "manifest_hash": "61410b0087b2",
       "stale_mode": "thorough",
       "machine": {
         "title_defects": [],
-        "structure_findings": [
-          {
-            "kind": "band",
-            "label": "sec:mass-endomorphism-opener",
-            "title": "The Mass Endomorphism",
-            "detail": "28 blocks outside the 3–18 section band (P3)"
-          }
-        ]
+        "structure_findings": []
       },
       "agent": {
         "sec:mass-endomorphism-opener": {
           "title": "The Mass Endomorphism",
           "depth": 1,
+          "result": "pending",
+          "reviewer": null,
+          "reviewed_hash": null,
+          "stale_mode": "thorough"
+        },
+        "sec:mass-endomorphism-mass-identity": {
+          "title": "The mass identity",
+          "depth": 2,
+          "result": "pending",
+          "reviewer": null,
+          "reviewed_hash": null,
+          "stale_mode": "thorough"
+        },
+        "sec:mass-endomorphism-topological-mass": {
+          "title": "Topological mass",
+          "depth": 2,
+          "result": "pending",
+          "reviewer": null,
+          "reviewed_hash": null,
+          "stale_mode": "thorough"
+        },
+        "sec:mass-endomorphism-spectral-shell": {
+          "title": "Spectral sequence and shell condensation",
+          "depth": 2,
           "result": "pending",
           "reviewer": null,
           "reviewed_hash": null,
@@ -2940,7 +2957,7 @@
       }
     },
     "quantum-observable-universes": {
-      "manifest_hash": "9c2aa0ab617c",
+      "manifest_hash": "d140e668fb0c",
       "stale_mode": "thorough",
       "machine": {
         "title_defects": [
@@ -2969,14 +2986,7 @@
             "detail": "3 comma-joined concepts — not concise"
           }
         ],
-        "structure_findings": [
-          {
-            "kind": "band",
-            "label": "sec:emergence",
-            "title": "Emergence from observability",
-            "detail": "21 blocks outside the 3–18 section band (P3)"
-          }
-        ]
+        "structure_findings": []
       },
       "agent": {
         "sec:qou-definition": {
@@ -2990,6 +3000,30 @@
         "sec:emergence": {
           "title": "Emergence from observability",
           "depth": 1,
+          "result": "pending",
+          "reviewer": null,
+          "reviewed_hash": null,
+          "stale_mode": "thorough"
+        },
+        "sec:emergence-volume-rigidity": {
+          "title": "Volume from rigidity",
+          "depth": 2,
+          "result": "pending",
+          "reviewer": null,
+          "reviewed_hash": null,
+          "stale_mode": "thorough"
+        },
+        "sec:emergence-spin-labels": {
+          "title": "Spin labels",
+          "depth": 2,
+          "result": "pending",
+          "reviewer": null,
+          "reviewed_hash": null,
+          "stale_mode": "thorough"
+        },
+        "sec:emergence-g-action": {
+          "title": "The $G$-action on the substrate",
+          "depth": 2,
           "result": "pending",
           "reviewer": null,
           "reviewed_hash": null,
