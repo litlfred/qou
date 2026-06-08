@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-08T18:11:39.168398+00:00",
-  "commitSha": "71eadf6efea8d88a20791c5e2931622e5dd04fa2",
+  "computedAt": "2026-06-08T18:17:34.129083+00:00",
+  "commitSha": "724d7832239f8933f0def8e184ff25e4d701f8bd",
   "assertions": [
     {
       "name": "orthogonal active-set = bond order for O2/N2/CO (capped by dim 3)",
@@ -35,11 +35,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 39,
+  "durationMs": 41,
   "computation": "co-bond-order-active-set",
   "scriptFile": "co_bond_order_active_set.py",
-  "scriptHash": "6e19e58e2d31",
-  "scriptCommitSha": "71eadf6efea8d88a20791c5e2931622e5dd04fa2",
+  "scriptHash": "48fabb77db21",
+  "scriptCommitSha": "724d7832239f8933f0def8e184ff25e4d701f8bd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
