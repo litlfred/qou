@@ -58,8 +58,10 @@ class KelvinDispersionContext where
   sqrtGamma : ℝ
   aq : ℝ
   nuq : ℝ
-  /-- `√π` as an opaque constant (so `2 √π a_q` reads `2 * piConst * aq`). -/
-  piConst : ℝ
+  /-- `√π` as an opaque constant (so `2 √π a_q` reads `2 * sqrtPiConst * aq`).
+      Named `sqrtPiConst` (not `piConst`) to avoid collision with
+      `AcousticHorizonContext.piConst`, which denotes `π` rather than `√π`. -/
+  sqrtPiConst : ℝ
   /-- Undamped Kelvin dispersion frequency `ω_k` and damped decay rate `γ_k`. -/
   omega : ℕ → ℝ
   gamma : ℕ → ℝ
@@ -72,7 +74,7 @@ class KelvinDispersionContext where
   spectrum : ∀ k, lam k = (qInt k) ^ 2 * hbar / Lq ^ 2
   /-- **Undamped dispersion.** `ω_k = Γ_q^{1/2}/(2√π a_q) · [k]_q / L_q`,
       packaged with `sqrtΓ_q` and `π` as opaque positive constants. -/
-  dispersion : ∀ k, omega k = sqrtGamma / (2 * piConst * aq) * qInt k / Lq
+  dispersion : ∀ k, omega k = sqrtGamma / (2 * sqrtPiConst * aq) * qInt k / Lq
   /-- **Damped decay rate.** `γ_k = ν_q/2 · [k]_q² / L_q²`. -/
   decay : ∀ k, gamma k = nuq / 2 * (qInt k) ^ 2 / Lq ^ 2
 
@@ -95,7 +97,7 @@ theorem kelvin_spectrum [ctx : KelvinDispersionContext] (k : ℕ) :
 -- Ref: [manuscript] prop:kelvin-dispersion-derivation
 theorem kelvin_undamped_dispersion [ctx : KelvinDispersionContext] (k : ℕ) :
     ctx.omega k
-      = ctx.sqrtGamma / (2 * ctx.piConst * ctx.aq) * ctx.qInt k / ctx.Lq :=
+      = ctx.sqrtGamma / (2 * ctx.sqrtPiConst * ctx.aq) * ctx.qInt k / ctx.Lq :=
   ctx.dispersion k
 
 /-- **Damped decay rate.** `γ_k = ν_q/2 · [k]_q² / L_q²`. -/
