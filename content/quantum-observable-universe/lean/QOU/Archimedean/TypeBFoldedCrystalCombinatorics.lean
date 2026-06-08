@@ -64,7 +64,6 @@ theorem Cell.content_plus_transpose_content_eq_zero (x : Cell) :
     x.content + x.transpose.content = 0 := by
   unfold Cell.content Cell.transpose
   simp
-  ring
 
 /-- A **partition with explicit cells** — a `List` of `Cell`s
     representing the Young diagram. (We do not enforce the
@@ -98,8 +97,7 @@ theorem PartitionWithCells.content_sum_plus_transpose_content_sum_eq_zero
   rw [show (Cell.content ∘ Cell.transpose) =
         (fun x => -x.content) by
     funext x
-    simp [Cell.content, Cell.transpose]
-    ring]
+    simp [Cell.content, Cell.transpose]]
   rw [show (P.cells.map (fun x => -x.content)) =
         ((P.cells.map Cell.content).map (fun y => -y)) by
     rw [List.map_map]; rfl]
