@@ -9,6 +9,7 @@ export default proposition({
   title: "LP dual selects the triple bond as optimal for $CO$",
   computation: {
     engine: "python",
+    status: "verified",
     script: "folio-assistant/computations/co_bond_order_active_set.py",
     witness: [
       "folio-assistant/computations/co-bond-order-active-set.witness.json",
