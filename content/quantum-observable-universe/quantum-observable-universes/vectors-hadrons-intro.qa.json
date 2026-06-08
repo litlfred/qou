@@ -2096,7 +2096,28 @@
           "worst_span": 0
         }
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "d8b2be52f2df",
+          "ts": "164111a09a03"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "quantum-observable-universes.ts:95 — intro prose for sec:vectors-hadrons",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:23:06.262Z",
+        "reviewed_sha": "f1f4241d0d868c69546ddedc3ba707f27a94cc80",
+        "notes": "Intro for vectors/hadrons/PawLei section; fits scope."
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-08T09:23:06.262Z"
 }

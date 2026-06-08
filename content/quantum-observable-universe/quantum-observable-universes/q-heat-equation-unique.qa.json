@@ -2589,7 +2589,95 @@
           "worst_span": 0
         }
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "1628cdab79b8",
+          "ts": "26d0c787d3cb",
+          "lean": "6b3acdf948c7"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "quantum-observable-universes.ts:394 — block in sec:q-linear-transforms; content matches uniqueness of q-heat equation",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:21:58.923Z",
+        "reviewed_sha": "f1f4241d0d868c69546ddedc3ba707f27a94cc80",
+        "notes": "Uniqueness of q-heat-equation solutions; belongs in sec:q-linear-transforms in this chapter."
+      }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "1628cdab79b8",
+          "ts": "26d0c787d3cb",
+          "lean": "6b3acdf948c7"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "q-heat-equation-unique.md:1 — statement only: Given initial data u_0, the solution u(t) ... uniquely determined ... Two solutions ... coincide for every t.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:22:22.685Z",
+        "reviewed_sha": "f1f4241d0d868c69546ddedc3ba707f27a94cc80",
+        "notes": "Statement is pure uniqueness claim with no interpretive prose; no companion remark needed."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "1628cdab79b8",
+          "ts": "26d0c787d3cb",
+          "lean": "6b3acdf948c7"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "q-heat-equation-unique.md:1 — statement uses exp(-t Delta_q) u_0 semigroup; algebraic/categorical, no Real.sqrt or archimedean ordering.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:22:22.719Z",
+        "reviewed_sha": "f1f4241d0d868c69546ddedc3ba707f27a94cc80",
+        "notes": "Statement is purely algebraic (Hopf semigroup orbit); no archimedean constructs present."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "1628cdab79b8",
+          "ts": "26d0c787d3cb",
+          "lean": "6b3acdf948c7"
+        },
+        "result": "n/a",
+        "severity": "minor",
+        "evidence": "q-heat-equation-unique.md — no **Proof.** body in this block; proof is in separate prf: block",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:22:22.753Z",
+        "reviewed_sha": "f1f4241d0d868c69546ddedc3ba707f27a94cc80",
+        "notes": "Proof body is in a separate proof block (prf:q-heat-equation-unique); n/a here."
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-08T09:22:22.753Z"
 }

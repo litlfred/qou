@@ -1940,7 +1940,28 @@
           "worst_span": 0
         }
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "3405922b43ba",
+          "ts": "0225067ead24"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "quantum-observable-universes.ts:341 — block in sec:instanton; interprets instanton/self-duality content",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:23:47.881Z",
+        "reviewed_sha": "a37eaa826ea0de4f4fd872d49b7d9f506740f8e6",
+        "notes": "Short exact sequence remark on self-duality; fits sec:instanton."
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-08T09:23:47.881Z"
 }

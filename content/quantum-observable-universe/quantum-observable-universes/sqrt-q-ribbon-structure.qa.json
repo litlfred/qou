@@ -1940,7 +1940,28 @@
           "worst_span": 0
         }
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "d75b4fea7ece",
+          "ts": "fbdc20abdab4"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "quantum-observable-universes.ts:470 — block in sec:braiding-conventions",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:25:14.164Z",
+        "reviewed_sha": "fad9d18b86c6a3c8ce1870012078eb0c215a2a6f",
+        "notes": "Remark on sqrt(q) ribbon structure in braiding conventions section; fits."
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-08T09:25:14.164Z"
 }

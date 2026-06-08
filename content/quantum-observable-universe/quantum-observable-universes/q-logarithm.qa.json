@@ -1975,7 +1975,51 @@
           "worst_span": 0
         }
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "db45d3ab48a7",
+          "ts": "8a6e1348a4d6",
+          "lean": "0bb5bd47de14"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "quantum-observable-universes.ts:441 — block in sec:q-special-functions-exp-log",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:23:30.084Z",
+        "reviewed_sha": "f1f4241d0d868c69546ddedc3ba707f27a94cc80",
+        "notes": "q-logarithm definition fits sec:q-special-functions-exp-log."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "db45d3ab48a7",
+          "ts": "8a6e1348a4d6",
+          "lean": "0bb5bd47de14"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "q-logarithm.md:16 — definition log_q in Prim(H_q); Hopf-algebraic adjoint pair, no archimedean constructs in definition",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:23:30.118Z",
+        "reviewed_sha": "f1f4241d0d868c69546ddedc3ba707f27a94cc80",
+        "notes": "Definition is Hopf-algebraic (primitive element, adjoint pair); wall-side is generic/substrate. Archimedean Taylor series appears only in separate subsections as additional facts."
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-08T09:23:30.118Z"
 }

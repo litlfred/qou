@@ -1788,7 +1788,28 @@
           "worst_span": 0
         }
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "d6013bfab9f9",
+          "ts": "e9961c16e409"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "quantum-observable-universe-exists-proof.ts:1 — kind proof, proves prop:quantum-observable-universe-exists in sec:qou-definition",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:21:36.318Z",
+        "reviewed_sha": "f1f4241d0d868c69546ddedc3ba707f27a94cc80",
+        "notes": "Proof of QOU existence proposition; correctly placed in sec:qou-definition of chapter quantum-observable-universes."
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-08T09:21:36.318Z"
 }

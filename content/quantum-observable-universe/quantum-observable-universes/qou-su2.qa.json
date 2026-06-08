@@ -1757,7 +1757,29 @@
           "worst_span": 0
         }
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "566f9d115d53",
+          "ts": "9f742e223ced",
+          "lean": "10642f09479c"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "qou-su2.ts:3 — example interprets def:quantum-observable-universe; in sec:qou-definition",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:22:45.275Z",
+        "reviewed_sha": "f1f4241d0d868c69546ddedc3ba707f27a94cc80",
+        "notes": "SU(2) QOU example; correctly placed as example of the QOU definition in sec:qou-definition."
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-08T09:22:45.275Z"
 }
