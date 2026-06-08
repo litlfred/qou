@@ -36,6 +36,7 @@ import Mathlib.Tactic.Ring
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.NormNum
 import Mathlib.Tactic.LinearCombination
+import Mathlib.Algebra.Polynomial.Laurent
 
 namespace QOU.BraidsAndKnots
 
@@ -165,5 +166,30 @@ theorem chi21_borromean_hform_bar_invariant {R : Type*} [Field R] (q : R) (hq : 
   unfold chi21_borromean_hform
   field_simp
   ring
+
+/-! ## Payoff — instantiation over `ℤ[q, q⁻¹]` (no field)
+
+`LaurentPolynomial ℤ` is the universal home of the character: `q = T` is a
+unit (inverse `T(-1)`), so `chi21_borromean_qform_unit` evaluates there and the
+published `/q⁶` form is the genuine Laurent polynomial `2 − 3h⁴ − h⁶`,
+`h = T − T⁻¹`.  Witnesses that the `Rˣ` layer is not vacuous over a non-field. -/
+
+section LaurentWitness
+open LaurentPolynomial
+
+/-- `T` is a unit of `ℤ[q, q⁻¹] = LaurentPolynomial ℤ`, with inverse `T(-1)`. -/
+noncomputable def TUnit : (LaurentPolynomial ℤ)ˣ :=
+  Units.mkOfMulEqOne (T 1) (T (-1)) (by rw [← T_add]; simp)
+
+/-- The published Borromean q-rational character instantiated over the
+    non-field `ℤ[q, q⁻¹]`: it is the Laurent polynomial `chi21_borromean` at
+    `h = T − T⁻¹`.  Concrete witness of `chi21_borromean_qform_unit_eq_poly`
+    over a commutative ring that is not a field. -/
+theorem chi21_borromean_qform_unit_laurent :
+    chi21_borromean_qform_unit TUnit
+      = chi21_borromean ((T 1 : LaurentPolynomial ℤ) - T (-1)) :=
+  chi21_borromean_qform_unit_eq_poly TUnit
+
+end LaurentWitness
 
 end QOU.BraidsAndKnots
