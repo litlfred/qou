@@ -1251,7 +1251,7 @@
           "value": 0.9,
           "max": 1
         },
-        "evidence": "core-levi-form.lean — theorem goals now state concrete md formulae (spectrum/conservation/dispersion/horizon/Levi-cond), not 'True'; build-verified exit 0",
+        "evidence": "core-levi-form.lean — theorem goals now state the md core-Levi claims, not 'True': core_levi_form states the condition number cond = max(λ∥,λ⊥)/min(λ∥,λ⊥) (md item b, symmetric — correct for either eigenvalue ordering), core_levi_ratio_eq_aspect_sq proves the leading-order identity cond = max(a⊥/a∥, a∥/a⊥)² from (a⊥/a∥)²=λ∥/λ⊥ by case split on the ordering, core_levi_cond_aspect_bound carries the O(ℏ_q²) correction as |cond − aspect²| ≤ C₀ℏ_q² (md item b's (1+O(ℏ_q²))), core_levi_aspect_equiv gives the bounded-aspect ⟺ bounded-cond equivalence (md item c), and core_levi_cond_bound gives cond ≤ 1+C₀ℏ_q² (md item d); §3b-cond conj-cone hyps (QAubinLions/NSCounterexample/CriticalExponent/BlowupYekutieli/RegularityBreakdown) retained; build-verified exit 0, no ': True', no sorry",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

@@ -1096,7 +1096,7 @@
           "value": 0.9,
           "max": 1
         },
-        "evidence": "discrete-vortex-spectrum.lean — theorem goals now state concrete md formulae (spectrum/conservation/dispersion/horizon/Levi-cond), not 'True'; build-verified exit 0",
+        "evidence": "discrete-vortex-spectrum.lean — theorem goals now state the md discrete-vortex claims, not 'True': the headline discrete_vortex_spectrum bundles all four md bullets as a conjunction — (1) eigenvalue spectrum λ_k=[k]_q²·ℏ_q/L_q², (2) intensity energy levels E_j=ℏ_q/(2I_q)·[j]_q[j+1]_q, (3) ladder transitions with selection rule |j−j'|=1 (n+1=m ∨ m+1=n) and ΔE=E_{j'}−E_j, (4) classical limit q=1 ⇒ [k]_q→k — with projection theorems discrete_vortex_eigenvalues/energy_levels/transition_energy/ladder_rule/classical_limit; build-verified exit 0 vs v4.24.0 Mathlib oleans, no ': True', no sorry",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

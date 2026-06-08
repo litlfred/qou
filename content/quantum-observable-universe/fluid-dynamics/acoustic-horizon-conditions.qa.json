@@ -1159,7 +1159,7 @@
           "value": 0.9,
           "max": 1
         },
-        "evidence": "acoustic-horizon-conditions.lean — theorem goals now state concrete md formulae (spectrum/conservation/dispersion/horizon/Levi-cond), not 'True'; build-verified exit 0",
+        "evidence": "acoustic-horizon-conditions.lean — theorem goals now state the md acoustic-horizon claims, not 'True': acoustic_horizon_criterion_iff states the equivalence |v|=c_s ⟺ ℳ=1 (md item 1, both directions from mach_def + c_s≠0), acoustic_horizon_regularity bundles non-degeneracy ∇(ℳ²)≠0 + null-energy T₀₀≥0 (md items 2,3), and acoustic_horizon_hawking_temperature derives T_H=(q−1)/(2πq)·κ_H/c_s from ℏ_q=(q−1)/q (brane Hawking formula); build-verified exit 0 vs v4.24.0 Mathlib oleans, no live ': True', no sorry",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

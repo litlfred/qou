@@ -1098,7 +1098,7 @@
           "value": 0.9,
           "max": 1
         },
-        "evidence": "kelvin-dispersion-derivation.lean — theorem goals now state concrete md formulae (spectrum/conservation/dispersion/horizon/Levi-cond), not 'True'; build-verified exit 0",
+        "evidence": "kelvin-dispersion-derivation.lean — theorem goals now state the md Kelvin-dispersion claims, not 'True': kelvin_dispersion_derivation *proves* the q-Laplacian eigenvalue Δ_q(zᵏ)=−[k]_q² zᵏ from the q-derivative ladder zD_q(zᵏ)=[k]_q zᵏ and Δ_q=−(zD_q)² (not assumed), kelvin_spectrum gives the unit-restored spectrum λ_k=[k]_q²·ℏ_q/L_q², kelvin_undamped_dispersion gives ω_k=√Γ_q/(2√π·a_q)·[k]_q/L_q, and kelvin_damped_decay gives γ_k=ν_q/2·[k]_q²/L_q²; the √π constant is named sqrtPiConst to avoid the AcousticHorizonContext.piConst(=π) collision; build-verified exit 0 vs v4.24.0 Mathlib oleans, no ': True', no sorry",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
