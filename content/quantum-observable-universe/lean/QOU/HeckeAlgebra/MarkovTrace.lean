@@ -145,8 +145,11 @@ axiom wenzlBridge :
     **Theorem** (was previously `axiom markovTrace_add`).
     Discharged 2026-06-08: derived from the stronger
     `markovTrace_linear` axiom (which carries both `map_add` and
-    `map_smul` via `IsLinearMap`). Net: this file shrinks by 1
-    axiom; the linearity claim is concentrated in the single
+    `map_smul` via `IsLinearMap`). Net: this file shrinks by 2
+    axioms (this `markovTrace_add` and the sibling
+    `markovTrace_smul` below — both derive from `map_add` /
+    `map_smul` of the upstream `markovTrace_linear`); the
+    linearity claim is concentrated in the single
     `markovTrace_linear` axiom upstream. -/
 theorem markovTrace_add {n : ℕ} (x y : HeckeElement n) :
     markovTrace n (x + y) = markovTrace n x + markovTrace n y :=
