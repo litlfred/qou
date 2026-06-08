@@ -138,6 +138,12 @@ grep -rEn "↦|⁻|√|─|✅|·|²" "$CONTENT" --include="*.md"
 grep -rEni \
   "structural argument|\bmorally\b|essentially (the |a |zero|complete|surjective|non-local)|heuristically (replaced|exploitable|the)|simplification for exposition|simplifies (the )?exposition|simplifies the paper|provides (the |a )(mathematical framework|natural setting|canonical (duality|basis|framework))|gives a canonical (functor|grading|ordering)|for context|by way of background|broadly speaking|loosely speaking|in some sense|conceptually analogous|amount(s|ed) to|(reformulated|reformulation) as" \
   "$CONTENT" --include="*.md"
+
+# Section / subsection / chapter TITLE coherence (chapter-scoped —
+# runs on chapter manifests, not blocks): auto-split " : <tag>"
+# artifacts, trailing colons, over-long / compound titles. Hard
+# defects exit 1; emits a per-chapter agent worklist.
+bun run content/pipeline/qa-section-title-audit.ts
 ```
 
 ### 2. Triage by category
@@ -154,6 +160,7 @@ grep -rEni \
 | **H. Banner-in-prose** | `> **Status: theorem (sorry-free)...**`, `> **Caveat (over-permissive...)...**`, `> **Status (May 2026):...**`, `> **Refined-framing note (added when promoting...)...**` | **Migrate to `authorNotes` field** on the block's `.ts` manifest. Per CLAUDE.md `BlockBase.authorNotes` (the schema field added 2026-05-24), author-tracking notes belong as metadata, not in scholarly prose. Render pipeline skips them by default; `WITH_AUTHOR_NOTES=1` env var exposes them in working drafts. **EXCEPTION:** `**Theorem (conditional on [conj:X])**` banners required by CLAUDE.md §3b-cond are STRUCTURAL parts of the theorem statement, not author notes — keep in prose. |
 | **I. Audit-doc reference in paper** | `docs/audits/...`, `[audit](../../../docs/audits/...)`, `per audit`, `see audit doc` | **Remove.** Paper content must NOT reference audit documents. Audit docs are internal working artifacts — they are not part of the scholarly publication. If the audit contains a result needed in the paper, promote the result to a content block (proposition/theorem/remark) and cite that block instead. Empirical observations (percentage matches, ppm comparisons to CODATA) belong in audit docs only, never in paper `.md` blocks. |
 | **J. Empirical fit in scholarly prose** | "within X% of CODATA", "matches to Y ppm", "≈ Z MeV (close to...)", "near-match", "numerical observation" | **Remove from paper content.** Empirical comparisons are audit-doc material. Paper content states the derived formula; the audit doc records how well it matches experiment. **EXCEPTION:** a content block may state a formula's formal precision target (e.g. "the substrate identity matches CODATA to $0.24\,\mathrm{ppm}$") if the block IS a proposition about precision (e.g. `prop:proton-mass-substrate-identity`). |
+| **K. Title coherence** | section/subsection title ending in `" : vs"` / `" : generation"` / `" : characterisation"` / `" : comparison"`; a comma-list title of 3+ concepts; a title meaningless without its chapter | **Rewrite from the section's story** — read the section's intro block, make it short + coherent against its responsible parent (paper→chapter→section→subsection) and distinct from the sibling. Surfaced by `qa-section-title-audit.ts`; conventions in `one-voice-style-guide.md` §Title Conventions. |
 
 ### 3. Apply mechanical fixes
 

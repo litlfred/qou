@@ -71,6 +71,37 @@ chapter):
 | **Math voice** | Active ("we construct $X$") for new definitions; passive ("$X$ is called") for established terms | Mixing active/passive for the same concept |
 | **Reader address** | Never address the reader directly | "you can verify", "the reader will note" |
 
+## Title Conventions (chapter / section / subsection)
+
+Titles are the table-of-contents face of the paper's story. Three
+rules, enforced by `content/pipeline/qa-section-title-audit.ts` (machine
+pass) plus an agent coherence pass:
+
+1. **Short and concise.** A title is a noun phrase naming the section's
+   *one* governing idea — not a sentence, and not a comma-list of every
+   concept in the section. Three-plus comma-joined concepts
+   ("A, B, C, and D") and over-long titles are flagged.
+
+2. **Ownership hierarchy.** The **paper** is responsible for its
+   **chapter** titles, each **chapter** for its **section** titles,
+   each **section** for its **subsection** titles. A title is judged
+   coherent *read against its responsible parent*: it must make sense
+   in that container without outside context, and distinguish itself
+   from its sibling sections.
+
+3. **Title from the story, not the label.** Read the section's content
+   blocks (the intro block states the arc) and title it by what the
+   section *does* in the chapter — never by mechanically de-slugging
+   its `label`. Bad (label-derived): "Confinement operator selection :
+   vs". Good (story-derived): "Which confinement constraints survive".
+
+**Never ship an auto-split artifact title** — a trailing ` : <tag>`
+(` : vs`, ` : generation`, ` : characterisation`, ` : comparison`)
+left by the chapter-restructure migration is meaningless out of context
+and is a hard defect. Run
+`bun run content/pipeline/qa-section-title-audit.ts` before committing
+chapter-manifest changes.
+
 ## Chapter Context Snippets
 
 Use these when writing or reviewing content for a specific chapter.

@@ -88,8 +88,18 @@ echo "$changed" | grep -qE '^content/.*\.(md|ts|lean)$' && is_in_scope=true
 
 # Skill-file changes that affect the audit rubric ALSO trigger
 # (one-voice-audit, one-voice-style-guide, the registry).
-echo "$changed" | grep -qE '^\.claude/skills/local/one-voice-(audit|style-guide|integration-watcher)\.md$|^content/pipeline/qa-(sweep|staleness|criteria-registry|checkers-voice|utils)\.ts$|^folio-assistant/schemas/block-qa\.ts$' && is_in_scope=true
+echo "$changed" | grep -qE '^\.claude/skills/local/one-voice-(audit|style-guide|integration-watcher)\.md$|^content/pipeline/qa-(sweep|staleness|criteria-registry|checkers-voice|utils|section-title-audit)\.ts$|^folio-assistant/schemas/block-qa\.ts$' && is_in_scope=true
 ```
+
+> **Chapter-scoped title audit (not per-block).** Section / subsection
+> / chapter titles are audited by the standalone
+> `content/pipeline/qa-section-title-audit.ts` (criterion
+> `voice-section-title-coherence`), since titles live on chapter
+> manifests rather than block triples. A chapter-manifest change
+> (caught by the `^content/.*\.(md|ts|lean)$` trigger above) should
+> re-run that script and, for any flagged title, dispatch the agent
+> story-coherence pass per `one-voice-style-guide.md` §Title
+> Conventions.
 
 For PR review-comment events, pass through if the comment body
 mentions: `scholarly`, `voice`, `tone`, `AI slop`, `LLM`,
