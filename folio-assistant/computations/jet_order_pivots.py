@@ -61,6 +61,12 @@ def jet_coeffs(knot: str, order: int = JET_ORDER) -> list[sp.Rational]:
 
 
 def main() -> int:
+    # Construct the witness builder BEFORE the compute so its durationMs
+    # reflects the actual SymPy work (not just serialization).
+    from witness_base import WitnessBuilder
+
+    w = WitnessBuilder("jet-order-pivots", engine="sympy")
+
     rows = []
     print("Jet-order coefficient vectors (h^0, h^1, h^2) of tr_M(K):")
     for K in KNOTS:
@@ -80,10 +86,7 @@ def main() -> int:
     print(f"LU pivots (echelon diagonal): {[str(p) for p in pivots]}")
     print(f"product of pivots          : {sp.simplify(sp.prod(pivots))}")
 
-    # Emit a witness with full provenance (WitnessBuilder).
-    from witness_base import WitnessBuilder
-
-    w = WitnessBuilder("jet-order-pivots", engine="sympy")
+    # Populate the witness (builder constructed at the top of main, pre-compute).
     w.add_data("knots", KNOTS)
     w.add_data("jet_order", JET_ORDER)
     w.add_data("jet_jacobian", {
@@ -91,7 +94,7 @@ def main() -> int:
     })
     w.add_data("elimination_det", str(det))
     w.add_data("lu_pivots", [str(p) for p in pivots])
-    w.add_data("ref", "conj:three-knot-jet-order-independence")
+    w.set_content_block("conj:three-knot-jet-order-independence")
     w.add_assertion(
         "jet_order_independence_base_case",
         computed=1 if det != 0 else 0,

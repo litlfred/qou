@@ -36,7 +36,7 @@ class HyperbolicVolumeIndependence where
 -- The conjecture itself.  The witness represents the **open
 -- conjecture** per §3b — the `residual = 0` assertion is the
 -- conjectural content, not a proved fact.
--- Ref: [manuscript] quantum-observable-universe/archimedean-universe/hyperbolic-volume-transcendence.ts
+-- Ref: [manuscript] quantum-observable-universe/predicted-spectra/hyperbolic-volume-transcendence.md
 noncomputable instance : HyperbolicVolumeIndependence :=
   { residual := 0, residual_eq_zero := rfl }
 

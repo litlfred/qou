@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-06-08T09:14:03.914857+00:00",
-  "commitSha": "9ce80195f72c6a408815676ad07a8de5351746cc",
+  "computedAt": "2026-06-08T09:58:24.127956+00:00",
+  "commitSha": "78ce3174ecd7aeeb498c1ac0a2ae6d56255449d1",
   "assertions": [
     {
       "name": "jet_order_independence_base_case",
@@ -13,11 +13,12 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 17,
+  "durationMs": 2365,
   "computation": "jet-order-pivots",
   "scriptFile": "jet_order_pivots.py",
-  "scriptHash": "d4a7ee575d13",
+  "scriptHash": "380671554d5b",
   "scriptCommitSha": "9ce80195f72c6a408815676ad07a8de5351746cc",
+  "contentBlock": "conj:three-knot-jet-order-independence",
   "data": {
     "knots": [
       "4_1",
@@ -47,7 +48,6 @@
       "1/4",
       "2",
       "1/8"
-    ],
-    "ref": "conj:three-knot-jet-order-independence"
+    ]
   }
 }
