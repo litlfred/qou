@@ -2248,26 +2248,14 @@
       }
     },
     "particle-interactions": {
-      "manifest_hash": "a65c02dd4cd3",
+      "manifest_hash": "87017ecc14ff",
       "machine": {
         "title_defects": [
-          {
-            "kind": "split-artifact",
-            "label": "sec:transfer-beta-decay-q-beta-spectral",
-            "title": "Transfer matrices and beta decay : vs",
-            "detail": "trailing \" : vs\" (known auto-split tag) — meaningless out of context"
-          },
           {
             "kind": "compound",
             "label": "sec:atomic-braid-mass-crossing-locality-cpt",
             "title": "Atomic braid mass: crossing-graded, locality, CPT",
             "detail": "3 comma-joined concepts — not concise"
-          },
-          {
-            "kind": "split-artifact",
-            "label": "sec:skein-particle-generation-knot-particle-generation",
-            "title": "Skein Generation and Particle Correspondence : generation",
-            "detail": "trailing \" : generation\" (known auto-split tag) — meaningless out of context"
           }
         ],
         "structure_findings": []
@@ -2336,13 +2324,6 @@
           "reviewer": null,
           "reviewed_hash": null
         },
-        "sec:transfer-beta-decay-q-beta-spectral": {
-          "title": "Transfer matrices and beta decay : vs",
-          "depth": 1,
-          "result": "pending",
-          "reviewer": null,
-          "reviewed_hash": null
-        },
         "sec:atomic-braid-mass-foundations": {
           "title": "Atomic braid and Wedderburn mass formula: foundations",
           "depth": 1,
@@ -2373,13 +2354,6 @@
         },
         "sec:skein-particle-generation": {
           "title": "Skein Generation and Particle Correspondence",
-          "depth": 1,
-          "result": "pending",
-          "reviewer": null,
-          "reviewed_hash": null
-        },
-        "sec:skein-particle-generation-knot-particle-generation": {
-          "title": "Skein Generation and Particle Correspondence : generation",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
