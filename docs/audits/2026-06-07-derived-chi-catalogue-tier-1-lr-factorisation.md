@@ -6,7 +6,8 @@
 > [`folio-assistant/computations/derived_chi_catalogue_matrix_m.py`](../../folio-assistant/computations/derived_chi_catalogue_matrix_m.py)
 > using sympy q-rational matrices (asymmetric natural form of Young's
 > seminormal basis — every entry stays in Q(q), no square roots).
-> **All 38/38 validation tests pass**:
+> **All 42/42 validation tests pass** (plus a numerical-vs-symbolic
+> consistency benchmark as a 5th assertion):
 >
 >   - **Tests 1-4** (n = 2, 3, 4, 6 on toy braids): 21/21 — Python
 >     Hoefsmit ↔ Rust `chi_q_via_gp` at {q=2, q=3, q=Q_50_DIGIT_STR}.

@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-08T10:20:06.384551+00:00",
-  "commitSha": "941c1072387ce87c9e93638fb7292a9060ff5fc7",
+  "computedAt": "2026-06-08T10:30:16.772257+00:00",
+  "commitSha": "bd756f99eb9a5c800225e98673825a0b18d66111",
   "assertions": [
     {
       "name": "numerical_matrix_m_matches_rust_at_substrate_q",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 268,
+  "durationMs": 171,
   "computation": "derived-chi-catalogue-matrix-m-numerical",
   "scriptFile": "derived_chi_catalogue_matrix_m_numerical.py",
-  "scriptHash": "542aac2046fb",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "f30db96d251e",
+  "scriptCommitSha": "bd756f99eb9a5c800225e98673825a0b18d66111",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -43,10 +43,10 @@
           6
         ],
         "dim_V_lambda": 1,
-        "precompute_secs": 0.002646290000029694,
-        "call_secs": 0.0010762419999537087,
-        "rust_secs": 0.0010254489999397265,
-        "call_speedup_vs_rust": 0.9528052240888509,
+        "precompute_secs": 0.0016579020000335731,
+        "call_secs": 0.0009458600000016304,
+        "rust_secs": 0.001001404999897204,
+        "call_speedup_vs_rust": 1.0587243354148372,
         "match": true
       },
       {
@@ -55,10 +55,10 @@
           1
         ],
         "dim_V_lambda": 5,
-        "precompute_secs": 0.005457129000092209,
-        "call_secs": 0.013321109999992586,
-        "rust_secs": 0.003059301999996933,
-        "call_speedup_vs_rust": 0.22965818914479616,
+        "precompute_secs": 0.003958296000064365,
+        "call_secs": 0.013324611999905756,
+        "rust_secs": 0.002832098999988375,
+        "call_speedup_vs_rust": 0.2125464516346447,
         "match": true
       },
       {
@@ -67,10 +67,10 @@
           3
         ],
         "dim_V_lambda": 5,
-        "precompute_secs": 0.003407852999998795,
-        "call_secs": 0.011651684000071327,
-        "rust_secs": 0.00595948300008331,
-        "call_speedup_vs_rust": 0.5114696725423405,
+        "precompute_secs": 0.0019268149999334128,
+        "call_secs": 0.01051993299984133,
+        "rust_secs": 0.004816394000044966,
+        "call_speedup_vs_rust": 0.4578350451583304,
         "match": true
       },
       {
@@ -80,10 +80,10 @@
           2
         ],
         "dim_V_lambda": 5,
-        "precompute_secs": 0.003937731999940297,
-        "call_secs": 0.011299210999936804,
-        "rust_secs": 0.004444727000077364,
-        "call_speedup_vs_rust": 0.3933661385827934,
+        "precompute_secs": 0.0020392649998939305,
+        "call_secs": 0.010605256999951962,
+        "rust_secs": 0.003729054999894288,
+        "call_speedup_vs_rust": 0.3516232562691483,
         "match": true
       },
       {
@@ -95,10 +95,10 @@
           1
         ],
         "dim_V_lambda": 5,
-        "precompute_secs": 0.003652377999969758,
-        "call_secs": 0.013903466999977354,
-        "rust_secs": 0.0024470930000006774,
-        "call_speedup_vs_rust": 0.17600595592485407,
+        "precompute_secs": 0.0021529880000343837,
+        "call_secs": 0.013138168999830668,
+        "rust_secs": 0.002279875999875003,
+        "call_speedup_vs_rust": 0.17353072562123284,
         "match": true
       },
       {
@@ -111,15 +111,15 @@
           1
         ],
         "dim_V_lambda": 1,
-        "precompute_secs": 0.001261951000060435,
-        "call_secs": 0.00091695499997968,
-        "rust_secs": 0.0009446479999724033,
-        "call_speedup_vs_rust": 1.0302010458455835,
+        "precompute_secs": 0.0006860569999389554,
+        "call_secs": 0.0008075400000961963,
+        "rust_secs": 0.0008052709999901708,
+        "call_speedup_vs_rust": 0.9971902319318483,
         "match": true
       }
     ],
-    "total_precompute_secs": 0.02036333300009119,
-    "total_call_secs": 0.05216866899991146,
-    "total_rust_secs": 0.017880702000070414
+    "total_precompute_secs": 0.01242132299989862,
+    "total_call_secs": 0.04934137099962754,
+    "total_rust_secs": 0.015464099999690006
   }
 }

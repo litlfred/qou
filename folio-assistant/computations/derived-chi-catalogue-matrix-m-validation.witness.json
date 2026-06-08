@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-08T09:55:20.753541+00:00",
-  "commitSha": "cb517827d768cc12f8f5561854f474ea7f3a8b6b",
+  "computedAt": "2026-06-08T10:31:12.085316+00:00",
+  "commitSha": "bd756f99eb9a5c800225e98673825a0b18d66111",
   "assertions": [
     {
       "name": "python_hoefsmit_matches_rust_chi_q_via_gp",
@@ -41,11 +41,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 34123,
+  "durationMs": 31336,
   "computation": "derived-chi-catalogue-matrix-m-validation",
   "scriptFile": "derived_chi_catalogue_matrix_m.py",
-  "scriptHash": "21039f161d8f",
-  "scriptCommitSha": "fdf7b408d63b2bc745d8ec754914c2678fc5739b",
+  "scriptHash": "039d77848cab",
+  "scriptCommitSha": "a983615f98b0b47c6b686f041858c249165cd3b4",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -1612,12 +1612,12 @@
         ]
       ],
       "k_split": 3,
-      "symbolic_secs": 0.21419050700001208,
-      "numerical_secs": 0.010841724999977487,
-      "speedup_factor": 19.756128014726148,
+      "symbolic_secs": 0.2189325499998631,
+      "numerical_secs": 0.010303238000005877,
+      "speedup_factor": 21.2489073822946,
       "consistency": true,
       "chi_symbolic": "0",
-      "chi_numerical_f64": 0.0
+      "chi_numerical_qrational_str": "0"
     }
   }
 }
