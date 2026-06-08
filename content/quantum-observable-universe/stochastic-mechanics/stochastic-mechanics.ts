@@ -43,12 +43,10 @@ export default chapter({
         "bar-involution-table7-data",
         "bar-involution-table8-data",
         "polynomial-bar-involution",
-      ],
-    }),
-    section({
-      title: "Markov axioms and braid-link enumeration : generation",
-      label: "sec:markov-axioms-braid-link-li2q-phiq-bar",
-      blocks: [
+        // Merged from the former auto-split "... : generation" [4] — an
+        // over-split that cut polynomial-bar-involution-table-data off
+        // its own block (polynomial-bar-involution). Small,
+        // strongly-related continuation -> merge (13+4=17, in band).
         "markov-axioms-braid-link-li2q-phiq-bar-intro",
         "polynomial-bar-involution-table-data",
         "c5-involution-leibniz-decomposition",
@@ -56,7 +54,7 @@ export default chapter({
       ],
     }),
     section({
-      title: "Markov axioms and braid-link enumeration (continued) : generation",
+      title: "The Markov closure map and $c_k$ extraction",
       label: "sec:markov-axioms-braid-link-markov-closure-map",
       blocks: [
         "markov-axioms-braid-link-markov-closure-map-intro",

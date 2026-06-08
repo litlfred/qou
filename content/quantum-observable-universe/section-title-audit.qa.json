@@ -2965,22 +2965,9 @@
       }
     },
     "stochastic-mechanics": {
-      "manifest_hash": "63ce2668b5cf",
+      "manifest_hash": "23dc99d099f0",
       "machine": {
-        "title_defects": [
-          {
-            "kind": "split-artifact",
-            "label": "sec:markov-axioms-braid-link-li2q-phiq-bar",
-            "title": "Markov axioms and braid-link enumeration : generation",
-            "detail": "trailing \" : generation\" (known auto-split tag) — meaningless out of context"
-          },
-          {
-            "kind": "split-artifact",
-            "label": "sec:markov-axioms-braid-link-markov-closure-map",
-            "title": "Markov axioms and braid-link enumeration (continued) : generation",
-            "detail": "trailing \" : generation\" (known auto-split tag) — meaningless out of context"
-          }
-        ],
+        "title_defects": [],
         "structure_findings": [
           {
             "kind": "band",
@@ -3005,15 +2992,8 @@
           "reviewer": null,
           "reviewed_hash": null
         },
-        "sec:markov-axioms-braid-link-li2q-phiq-bar": {
-          "title": "Markov axioms and braid-link enumeration : generation",
-          "depth": 1,
-          "result": "pending",
-          "reviewer": null,
-          "reviewed_hash": null
-        },
         "sec:markov-axioms-braid-link-markov-closure-map": {
-          "title": "Markov axioms and braid-link enumeration (continued) : generation",
+          "title": "The Markov closure map and $c_k$ extraction",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
