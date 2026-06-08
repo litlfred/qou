@@ -1,3 +1,5 @@
+import Mathlib.Data.Real.Basic
+
 /-!
 # PSLQ certifies Cl_3(2π/5) - Cl_3(4π/5) is independent
 
