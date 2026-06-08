@@ -51,7 +51,13 @@ condition on the truncated coefficient matrix, hence decidable.
    `jetOrder3_certificate`) — so full rank $3$ holds at the Reid-1991 base
    order, a finite decidable determinant test on real data
    (`jet_order_pivots.py` → `jet-order-pivots.witness.json`).  Higher
-   orders are the same test at higher jet truncation.
+   orders need **no** further computation: the order-$N$ Jacobian
+   ($3 \times (N+1)$) contains this non-singular $3\times3$ minor, so its
+   rank is $\ge 3$, while the three rows bound it by $3$ — hence full rank
+   $3$ at *every* $N$ from the base order onward (rank is monotone in the
+   column count; Lean `jetJacobianBase_rank` + `jacobianRank_eq_three_of_base`).
+   Per-order independence thus propagates from the single base-order
+   certificate rather than requiring a separate test at each truncation.
 3. **Surreal error bounds** supply the *bridge* to the limit, and the
    right geometric picture is **parallel transport on the projective
    state fibre**.  The coloured-Jones invariant $J_K(q)$ is the holonomy
