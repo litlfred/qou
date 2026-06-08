@@ -11,8 +11,8 @@ the substrate `q₀` (see §Honest scoping).
 
 Loop quantum gravity computes black-hole entropy by **counting spin-network
 states** that puncture the horizon (Rovelli, gr-qc/9603063; Ashtekar–Baez–
-Corichi–Krasnov, gr-qc/9710007; Domagała–Lewandowski, gr-qc/0407051; Meissner
-2004; number-theoretic refinements 0802.4077, 1101.3660). Each puncture `p`
+Corichi–Krasnov, gr-qc/9710007; Domagała–Lewandowski, gr-qc/0407051; Meissner,
+gr-qc/0407052; number-theoretic refinements 0802.4077, 1101.3660). Each puncture `p`
 carries an `SU(2)` spin `j_p`, contributing horizon area
 
 $$
@@ -119,6 +119,6 @@ toolchain restore (elan release server firewalled in-sandbox).
 ## References
 
 Rovelli (gr-qc/9603063); Ashtekar–Baez–Corichi–Krasnov (gr-qc/9710007);
-Domagała–Lewandowski (gr-qc/0407051); Meissner (2004); number-theoretic counts
+Domagała–Lewandowski (gr-qc/0407051); Meissner (gr-qc/0407052); number-theoretic counts
 (0802.4077, 1101.3660); in-repo dictionary
 [`rem:lqg-adm-ashtekar-comparison`](../../content/quantum-observable-universe/gravity-spacetime/lqg-adm-ashtekar-comparison.md).
