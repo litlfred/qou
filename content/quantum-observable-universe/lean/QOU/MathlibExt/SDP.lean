@@ -242,7 +242,7 @@ structure StrictComplementarityPair (sdp : SDPPrimal n R ι)
   /-- Off the active set, the dual variable is exactly zero. -/
   inactive_dual_zero : ∀ i ∉ active, ystar i = 0
 
-/-- **Primal-optimum uniqueness from strict complementarity.**
+/- **Primal-optimum uniqueness from strict complementarity.**
 
     Given a strict-complementarity pair `sc` for `sdp`, the primal
     optimum `sc.Φstar` is unique among primal-feasible points
@@ -274,7 +274,7 @@ structure StrictComplementarityPair (sdp : SDPPrimal n R ι)
 -- Ref: [boyd-vandenberghe-2004] §5.5
 -- Ref: [todd2001] §3.4
 axiom strict_complementarity_unique_axiom :
-    ∀ {n : ℕ} {R : Type*} [LinearOrderedField R] {ι : Type*}
+    ∀ {n : ℕ} {R : Type*} [Field R] [LinearOrder R] [IsStrictOrderedRing R] [StarRing R] {ι : Type*}
       {sdp : SDPPrimal n R ι}
       (sc : StrictComplementarityPair sdp)
       {Φ' : Matrix (Fin n) (Fin n) R}
