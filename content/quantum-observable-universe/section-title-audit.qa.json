@@ -2512,7 +2512,7 @@
       }
     },
     "particle-interactions": {
-      "manifest_hash": "87017ecc14ff",
+      "manifest_hash": "cf7cf827cb53",
       "stale_mode": "thorough",
       "machine": {
         "title_defects": [
@@ -2979,7 +2979,7 @@
       }
     },
     "quantum-observable-universes": {
-      "manifest_hash": "94c79c30c2cc",
+      "manifest_hash": "eaef6c8a7f43",
       "stale_mode": "thorough",
       "machine": {
         "title_defects": [
@@ -3002,7 +3002,14 @@
             "detail": "3 comma-joined concepts — not concise"
           }
         ],
-        "structure_findings": []
+        "structure_findings": [
+          {
+            "kind": "band",
+            "label": "sec:substrate-parameter",
+            "title": "Substrate parameter and deformation",
+            "detail": "19 blocks outside the 3–18 section band (P3)"
+          }
+        ]
       },
       "agent": {
         "sec:qou-definition": {
