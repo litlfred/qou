@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "9b57eaab4051",
     "ts": "b848a029651c",
-    "lean": "0374f5411a2c"
+    "lean": "0bf6f69a78d5"
   },
   "criteria": {
     "voice-status-leak": [
@@ -670,7 +670,7 @@
         },
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
-        "notes": "Label 'prop:categorical-action-unique' \u2192 expected 'categorical_action_unique'; Lean declares: CategoricalAction.unique_axiom, CategoricalAction.unique. Structural match via content."
+        "notes": "Label 'prop:categorical-action-unique' → expected 'categorical_action_unique'; Lean declares: CategoricalAction.unique_axiom, CategoricalAction.unique. Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -972,7 +972,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "Statement is purely categorical/algebraic: rigid structure, ev_A, coev_A, categorical trace \u2014 no archimedean constructs",
+        "evidence": "Statement is purely categorical/algebraic: rigid structure, ev_A, coev_A, categorical trace — no archimedean constructs",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -982,7 +982,7 @@
         },
         "reviewed_at": "2026-06-04T23:19:48.438Z",
         "reviewed_sha": "1e44380a7234fce2043e25abc902fc58f37cd565",
-        "notes": "Generic-ring chapter, statement stays generic; no q\u2248value, no Real.*, no ordering hypotheses"
+        "notes": "Generic-ring chapter, statement stays generic; no q≈value, no Real.*, no ordering hypotheses"
       }
     ],
     "wall-side-proof": [
@@ -1194,8 +1194,28 @@
         "reviewed_at": "2026-06-07T06:00:58.805Z",
         "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
         "notes": "INTEGRITY FAIL: lean.ref QOU.CategoricalAction.unique is := an axiom the file's own docstring documents as strictly false; the Lean statement does not faithfully encode a true/intended claim."
+      },
+      {
+        "field_hash": {
+          "md": "9b57eaab4051",
+          "ts": "b848a029651c",
+          "lean": "0bf6f69a78d5"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "categorical-action-unique.lean — CategoricalAction.unique no longer := a Subsingleton axiom the docstring documented as strictly false; it now proves any two morphisms factoring as categoricalAction Φ swap are equal (= tr(Φ)), matching the md.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T16:30:57.692Z",
+        "reviewed_sha": "910c36462b195e2bfc30a0027b3032ea1bd4983c",
+        "notes": "RESOLVED: removed the wrong-proposition axiom Subsingleton(CategoricalAction) (false: free state/gravity/gauge/matter fields). Replaced with the md's true uniqueness claim (two morphisms factoring as the action composite for the same (Φ,swap) are equal). No axiom, no sorry. Verified green via QOU._Scratch.CatActUnique, lake build exit 0."
       }
     ]
   },
-  "updated_at": "2026-06-07T06:00:58.805Z"
+  "updated_at": "2026-06-08T16:30:57.692Z"
 }

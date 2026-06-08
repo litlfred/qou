@@ -9,7 +9,7 @@
   },
   "source_hashes": {
     "md": "776e3bc70196",
-    "ts": "a8d802909243",
+    "ts": "3bdce913dee3",
     "lean": "4efff3d5fc0f"
   },
   "criteria": {
@@ -1200,8 +1200,28 @@
         "reviewed_at": "2026-06-07T06:01:01.665Z",
         "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
         "notes": "INTEGRITY FAIL: lean.ref QOU.CategoricalReeb.ofWeightDecomposition is ABSENT (file has CategoricalReeb.fromWeightDecomposition and the axiom categorical_reeb_exists, no ofWeightDecomposition)."
+      },
+      {
+        "field_hash": {
+          "md": "776e3bc70196",
+          "ts": "3bdce913dee3",
+          "lean": "4efff3d5fc0f"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "categorical-reeb-exists.ts:6 — lean.ref repointed from the ABSENT QOU.CategoricalReeb.ofWeightDecomposition to the present QOU.categorical_reeb_exists (categorical-reeb-exists.lean:84), an axiom asserting ∃ reeb : CategoricalReeb C, reeb.forms = wd.forms ∧ reeb.proj_V = wd.proj_V — the CategoricalReeb structure bundles vertical_generator + normalisation as fields, so this faithfully encodes the md's existence claim.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T16:31:29.461Z",
+        "reviewed_sha": "910c36462b195e2bfc30a0027b3032ea1bd4983c",
+        "notes": "RESOLVED (ref correctness): the lean.ref now names a real, faithful decl (the existence axiom categorical_reeb_exists) instead of the absent ofWeightDecomposition. The .lean is unchanged from main. Build status: BUILD-PENDING — the file imports QOU.Basic and uses content-block structures (MaximalTorus/WeightDecomposition/CategoricalReeb defined in sibling content-block .lean files, not in the Lake module graph), so it does not compile standalone and verifying it requires assembling the heavy QOU.Basic cone (which exhausted disk this session). Ref correctness verified by inspection; axiom carries -- Ref: [witten1988]."
       }
     ]
   },
-  "updated_at": "2026-06-07T06:01:01.665Z"
+  "updated_at": "2026-06-08T16:31:29.461Z"
 }
