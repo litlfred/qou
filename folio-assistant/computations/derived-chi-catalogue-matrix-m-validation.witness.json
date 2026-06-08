@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-08T09:16:03.309932+00:00",
-  "commitSha": "dcda6510ac2b78e95636ec6809942e823ed84ece",
+  "computedAt": "2026-06-08T09:26:20.799890+00:00",
+  "commitSha": "80ff43cb8fa66e34935d576130ac528385fc2c6c",
   "assertions": [
     {
       "name": "python_hoefsmit_matches_rust_chi_q_via_gp",
@@ -17,14 +17,21 @@
       "expected": true,
       "passed": true,
       "source": "Whether the μ_p-level matrix-M factorisation χ^λ(T_β) = Σ Tr[B_p · M_pp · B_n] equals the direct trace χ^λ(T_β) = Tr[ρ^λ(β)] for all 11 partitions of 6 on a deuteron-shaped braid. This is the Phase 1.2 (audit doc §5) structural proof that the matrix-M approach is correct — the per-μ_p contributions ARE the matrix-M values summed over μ_n."
+    },
+    {
+      "name": "production_deuteron_braid_factorisation_holds",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "Whether the μ_p-level factorisation reproduces the direct trace on the PRODUCTION deuteron braid `atom_braid_word_3A(1, 1)` (23 crossings — 7σ_1 + 4σ_2 + σ_3 + 7σ_4 + 4σ_5) for all 11 partitions of 6 with dim V_λ ≤ 5. This is the end-to-end Phase-1.2 production validation: the matrix-M substrate works on the actual atom_braid_word_3A output, not just toy braids."
     }
   ],
   "allPassed": true,
-  "durationMs": 7069,
+  "durationMs": 26305,
   "computation": "derived-chi-catalogue-matrix-m-validation",
   "scriptFile": "derived_chi_catalogue_matrix_m.py",
-  "scriptHash": "5564dc831b20",
-  "scriptCommitSha": "dcda6510ac2b78e95636ec6809942e823ed84ece",
+  "scriptHash": "c40c271b7870",
+  "scriptCommitSha": "80ff43cb8fa66e34935d576130ac528385fc2c6c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -41,8 +48,8 @@
   },
   "description": "Pure-Python Hoefsmit (natural / asymmetric seminormal form) validation against Rust pyhecke_native chi_q_via_gp. Substrate for Tier 1 matrix-M extraction (audit doc 2026-06-07-derived-chi-catalogue-tier-1-lr-factorisation). Proves the q-rational matrix pipeline computes the same character as the Rust Geck-Pfeiffer engine on a sweep of (n, λ, β) test cases.",
   "data": {
-    "n_test_cases": 32,
-    "n_pass": 32,
+    "n_test_cases": 38,
+    "n_pass": 38,
     "n_fail": 0,
     "test_cases": [
       {
@@ -1440,6 +1447,75 @@
         "per_mu_p": {
           "[1, 1, 1]": "-1/q**5"
         }
+      }
+    ],
+    "phase13_cases": [
+      {
+        "shape": [
+          6
+        ],
+        "dim_V_lambda": 1,
+        "direct_chi": "q**23",
+        "factored_chi": "q**23",
+        "match": true
+      },
+      {
+        "shape": [
+          5,
+          1
+        ],
+        "dim_V_lambda": 5,
+        "direct_chi": "3*q**21 - 6*q**19 + 8*q**17 - 8*q**15 + 9*q**13 - 9*q**11 + 7*q**9 - 6*q**7 + 4*q**5 - 2*q**3",
+        "factored_chi": "3*q**21 - 6*q**19 + 8*q**17 - 8*q**15 + 9*q**13 - 9*q**11 + 7*q**9 - 6*q**7 + 4*q**5 - 2*q**3",
+        "match": true
+      },
+      {
+        "shape": [
+          3,
+          3
+        ],
+        "dim_V_lambda": 5,
+        "direct_chi": "(q**38 - 6*q**36 + 15*q**34 - 27*q**32 + 42*q**30 - 59*q**28 + 76*q**26 - 90*q**24 + 100*q**22 - 104*q**20 + 101*q**18 - 91*q**16 + 78*q**14 - 62*q**12 + 46*q**10 - 31*q**8 + 19*q**6 - 10*q**4 + 4*q**2 - 1)/q**19",
+        "factored_chi": "(q**38 - 6*q**36 + 15*q**34 - 27*q**32 + 42*q**30 - 59*q**28 + 76*q**26 - 90*q**24 + 100*q**22 - 104*q**20 + 101*q**18 - 91*q**16 + 78*q**14 - 62*q**12 + 46*q**10 - 31*q**8 + 19*q**6 - 10*q**4 + 4*q**2 - 1)/q**19",
+        "match": true
+      },
+      {
+        "shape": [
+          2,
+          2,
+          2
+        ],
+        "dim_V_lambda": 5,
+        "direct_chi": "(q**38 - 4*q**36 + 10*q**34 - 19*q**32 + 31*q**30 - 46*q**28 + 62*q**26 - 78*q**24 + 91*q**22 - 101*q**20 + 104*q**18 - 100*q**16 + 90*q**14 - 76*q**12 + 59*q**10 - 42*q**8 + 27*q**6 - 15*q**4 + 6*q**2 - 1)/q**19",
+        "factored_chi": "(q**38 - 4*q**36 + 10*q**34 - 19*q**32 + 31*q**30 - 46*q**28 + 62*q**26 - 78*q**24 + 91*q**22 - 101*q**20 + 104*q**18 - 100*q**16 + 90*q**14 - 76*q**12 + 59*q**10 - 42*q**8 + 27*q**6 - 15*q**4 + 6*q**2 - 1)/q**19",
+        "match": true
+      },
+      {
+        "shape": [
+          2,
+          1,
+          1,
+          1,
+          1
+        ],
+        "dim_V_lambda": 5,
+        "direct_chi": "(2*q**18 - 4*q**16 + 6*q**14 - 7*q**12 + 9*q**10 - 9*q**8 + 8*q**6 - 8*q**4 + 6*q**2 - 3)/q**21",
+        "factored_chi": "(2*q**18 - 4*q**16 + 6*q**14 - 7*q**12 + 9*q**10 - 9*q**8 + 8*q**6 - 8*q**4 + 6*q**2 - 3)/q**21",
+        "match": true
+      },
+      {
+        "shape": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "dim_V_lambda": 1,
+        "direct_chi": "-1/q**23",
+        "factored_chi": "-1/q**23",
+        "match": true
       }
     ]
   }
