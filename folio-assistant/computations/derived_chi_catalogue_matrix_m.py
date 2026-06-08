@@ -186,8 +186,10 @@ def seminormal_matrices_qrat(
 
     generators: list[sp.Matrix] = []
     for k in range(1, n):
-        # Build σ_k as a sympy SparseMatrix → convert to Matrix at end.
-        M = sp.zeros(dim, dim)
+        # σ_k is highly sparse (only 1×1 and 2×2 blocks per Hoefsmit
+        # block decomposition) — build as MutableSparseMatrix, convert
+        # to dense Matrix on return.
+        M = sp.MutableSparseMatrix(dim, dim, {})
         processed = [False] * dim
         for i in range(dim):
             if processed[i]:
@@ -195,8 +197,10 @@ def seminormal_matrices_qrat(
             cell_k_minus_1 = syts[i][k - 1]
             cell_k = syts[i][k]
             rho = _content(cell_k) - _content(cell_k_minus_1)
-            a = h / (1 - q ** (-2 * rho))
-            a = sp.simplify(a)
+            # Use sp.cancel — both a, a' and b² are rational in q;
+            # cancel does GCD-based simplification without the
+            # expensive heuristic search that sp.simplify runs.
+            a = sp.cancel(h / (1 - q ** (-2 * rho)))
 
             # Swap partner — only valid if cells are in different rows
             # AND different columns (i.e. |ρ| ≠ 1 is equivalent here).
@@ -210,9 +214,8 @@ def seminormal_matrices_qrat(
                 processed[i] = True
             else:
                 j = partner
-                a_prime = h / (1 - q ** (2 * rho))
-                a_prime = sp.simplify(a_prime)
-                b_sq = sp.simplify(a * a_prime + 1)
+                a_prime = sp.cancel(h / (1 - q ** (2 * rho)))
+                b_sq = sp.cancel(a * a_prime + 1)
                 # Asymmetric natural form: off-diagonals are (1, b²).
                 # Order by index: smaller-index row = i, larger = j.
                 lo, hi = (i, j) if i < j else (j, i)
@@ -223,7 +226,7 @@ def seminormal_matrices_qrat(
                 M[hi, hi] = a_hi
                 processed[lo] = True
                 processed[hi] = True
-        generators.append(M)
+        generators.append(sp.Matrix(M))
     return generators
 
 
@@ -267,7 +270,13 @@ def chi_lambda_via_matrix_product(
 
     def get_inv(g_idx_0based: int) -> sp.Matrix:
         if g_idx_0based not in sigma_inv_cache:
-            sigma_inv_cache[g_idx_0based] = sigmas[g_idx_0based] - h * eye
+            # Apply sp.cancel element-wise: σ_i⁻¹ = σ_i - h·I leaves the
+            # diagonal entries as `a - h` which sp doesn't auto-collapse,
+            # and unsimplified entries blow up the trace's intermediate
+            # symbolic size during long matrix products. applyfunc with
+            # cancel keeps each entry in canonical rational form.
+            inv_mat = sigmas[g_idx_0based] - h * eye
+            sigma_inv_cache[g_idx_0based] = inv_mat.applyfunc(sp.cancel)
         return sigma_inv_cache[g_idx_0based]
 
     # Start with identity, multiply on the right (matches word order
@@ -280,7 +289,9 @@ def chi_lambda_via_matrix_product(
         )
         mat = sigmas[g_idx] if sign >= 0 else get_inv(g_idx)
         product = product * mat
-    return sp.simplify(sp.trace(product))
+    # The character is a rational function in q; sp.cancel is the
+    # fast canonical-form reducer (GCD-based) for this domain.
+    return sp.cancel(sp.trace(product))
 
 
 # ── Cross-validation harness vs Rust ──────────────────────────────
