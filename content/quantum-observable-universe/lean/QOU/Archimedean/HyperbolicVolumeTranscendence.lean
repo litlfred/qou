@@ -7,7 +7,6 @@ import Mathlib.Tactic.NormNum
 import Mathlib.Tactic.Linarith
 import Mathlib.Topology.Algebra.InfiniteSum.Basic
 import Mathlib.RingTheory.Real.Irrational
-import Mathlib.Analysis.SpecialFunctions.Basic
 
 /-!
 # Hyperbolic Volume Transcendence: Conjectures and Propositions
