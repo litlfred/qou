@@ -128,6 +128,9 @@ export default chapter({
             "archimedean-functor-uniqueness",
             "em-spectral-completeness",
             "reidemeister-mass-invariance",
+            // Re-homed from the trace/operator collection: the Borromean
+            // Markov-trace closed form belongs with the Markov corrections.
+            "borromean-markov-trace-closed-form",
           ],
         }),
         section({
@@ -172,6 +175,11 @@ export default chapter({
         "z-habiro-ring",
         "brane-tower-z-habiro",
         "brane-tower-z-habiro-table1-data",
+        // Re-homed from the trace/operator collection: the Hoefsmit extended-
+        // Wedderburn cell content belongs with the construction.
+        "hoefsmit-ew-cell-content",
+        "hoefsmit-ew-cell-content-table1-data",
+        "hoefsmit-ew-cell-content-table2-data",
       ],
     }),
 
@@ -361,6 +369,10 @@ export default chapter({
         "q-pochhammer-partial-product",
         "phi-q-categorical-truncation",
         "phi-q-categorical-truncation-proof",
+        // Re-homed from the geometric-bridges collection: the pentagon
+        // identities belong with the quantum dilogarithm.
+        "pachner-pentagon-borromean",
+        "q-rogers-pentagon-archimedean",
       ],
     }),
     section({
@@ -384,6 +396,9 @@ export default chapter({
         "gb-depth-period-correspondence",
         "vc-as-depth-2-instance",
         "bring-figure-eight-depth-2-witness",
+        // Re-homed from the geometric-bridges collection: Kashaev density =
+        // SDP multiplicity belongs with the Kashaev-volume realization.
+        "kashaev-density-equals-sdp-multiplicity",
       ],
     }),
     section({
@@ -398,12 +413,12 @@ export default chapter({
         "dim-master-pentagon",
         "geometric-invariant-piecewise",
         "hopf-link-non-magic",
-        "kashaev-density-equals-sdp-multiplicity",
         "p-from-braid-mirror",
-        "pachner-pentagon-borromean",
         "poincare-lefschetz-borromean",
-        "q-rogers-pentagon-archimedean",
         "volume-perturbation-formula",
+        // Re-homed (high-confidence): kashaev-density-equals-sdp-multiplicity
+        // -> sec:archimedean-realization-kashaev; pachner-pentagon-borromean +
+        // q-rogers-pentagon-archimedean -> sec:kashiwara-jones-quantum-dilog.
       ],
     }),
 
@@ -448,6 +463,9 @@ export default chapter({
         "shared-denominator-cusp-holonomy",
         "quantum-bloch-group",
         "degree-two-baryon-weight",
+        // Re-homed from the weak-spectral/isospin collection: the Borromean
+        // Bloch-group (K3) element belongs with the Bloch group closure.
+        "borromean-bloch-group-element",
       ],
     }),
 
@@ -639,6 +657,9 @@ export default chapter({
         "spectral-sequence-h3-explicit",
         "chirality-writhe-ribbon-derivation",
         "gram-matrix-spectral-connection",
+        // Re-homed from the weak-spectral/isospin collection: weak-sector
+        // spectral completeness belongs with the Plancherel-alpha foundations.
+        "weak-spectral-completeness",
       ],
     }),
 
@@ -657,6 +678,9 @@ export default chapter({
         "mass-tower-coefficient-stratification-table1-data",
         "mass-tower-coefficient-stratification-table2-data",
         "flavor-dressing-functor",
+        // Re-homed from the staircase/character collection: the staircase
+        // EW-residual (Weinberg angle) belongs with the mass-tower closure.
+        "staircase-ew-residual",
       ],
     }),
 
@@ -794,6 +818,9 @@ export default chapter({
         "crystal-isospin-degeneracy",
         "crystal-isospin-degeneracy-table-data",
         "isospin-mass-split-em-localisation",
+        // Re-homed from the weak-spectral/isospin collection: isospin from the
+        // canonical bowtie belongs with crystal isospin.
+        "isospin-from-canonical-bowtie",
       ],
     }),
 
@@ -860,15 +887,16 @@ export default chapter({
       label: "sec:mass-theory-orphan-reconnect",
       blocks: [
         "mass-theory-orphan-reconnect-intro",
-        "borromean-bloch-group-element",
         "categorical-higgs-mechanism",
         "interface-knot-markov-z",
-        "isospin-from-canonical-bowtie",
         "rho-k-h3a-refinement",
         "s4-s3-half-symmetric-projection",
-        "weak-spectral-completeness",
         "weak-symmetric-normalization",
         "z-eq-n-rho-correction",
+        // Re-homed (high-confidence): borromean-bloch-group-element ->
+        // sec:mutant-jones-bloch-group; isospin-from-canonical-bowtie ->
+        // sec:six-term-crystal-isospin-chirality; weak-spectral-completeness
+        // -> sec:plancherel-alpha-spectral.
       ],
     }),
 
@@ -889,14 +917,13 @@ export default chapter({
           label: "sec:mass-application-trace-operator-lemmas",
           blocks: [
             "block-multiplicativity-v-free",
-            "borromean-markov-trace-closed-form",
             "crystal-r-matrix-sub-lemma",
             "depth-stratified-frobenius-reciprocity",
             "eigenvalue-product-expansion",
-            "hoefsmit-ew-cell-content",
-            "hoefsmit-ew-cell-content-table1-data",
-            "hoefsmit-ew-cell-content-table2-data",
             "knot-operator-lp-selection",
+            // Re-homed: borromean-markov-trace-closed-form ->
+            // sec:mass-algebraic-markov-gram; hoefsmit-ew-cell-content (+2
+            // tables) -> sec:hoefsmit-convergence-construction.
           ],
         }),
         section({
@@ -908,10 +935,11 @@ export default chapter({
             "sigma-shell-from-beta-chain-derivation",
             "sigma-shell-from-beta-chain-derivation-table-data",
             "staircase-corner-hook",
-            "staircase-ew-residual",
             "staircase-partition",
             "symbolic-character-table",
             "outro-mass-theory",
+            // Re-homed: staircase-ew-residual ->
+            // sec:plancherel-knot-factor-mass-tower.
           ],
         }),
       ],
