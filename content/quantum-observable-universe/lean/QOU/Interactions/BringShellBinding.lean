@@ -212,13 +212,15 @@ def magicIndex (n : ℕ) : Option ℕ :=
 theorem magicAt_magicIndex (n : ℕ) (hn : n ∈ magicLadder) :
     magicAt (magicIndex n).get! = some n := by
   -- Ref: [manuscript] prop:torus-knot-shell-binding
-  -- v4.24.0 casing gap: `magicLadder` is a `List.insert`-built list, and
-  -- `rcases` / `fin_cases` / `List.mem_insert_iff` all fail to case
-  -- `n ∈ magicLadder` cleanly here. The 7-value enumeration
-  -- (`magicAt ∘ magicIndex = some`) needs a `decide`-based or
-  -- `List.insert`-reduction reproof — deferred (other proofs in this file
-  -- are fixed; this keeps the module building).
-  sorry
+  -- `magicLadder` is the `Finset`-coercion of `QOU.Common.magicSet`; unfold to
+  -- the `insert`-chain, turn membership into the 7-way disjunction via
+  -- `Finset.mem_insert`/`mem_singleton`, then discharge each concrete value by
+  -- `decide` (`magicAt ∘ magicIndex` is computable on each magic number).
+  unfold magicLadder QOU.Common.magicSet at hn
+  simp only [Finset.coe_insert, Set.mem_insert_iff, Finset.coe_singleton,
+    Set.mem_singleton_iff, Finset.mem_insert, Finset.mem_singleton,
+    Finset.mem_coe] at hn
+  rcases hn with rfl | rfl | rfl | rfl | rfl | rfl | rfl <;> decide
 
 theorem magicIndex_magicAt (i : ℕ) (hi : 1 ≤ i ∧ i ≤ 7) :
     ∃ n, magicAt i = some n ∧ magicIndex n = some i := by
