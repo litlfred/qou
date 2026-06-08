@@ -82,4 +82,24 @@ theorem metallic_inv (n : ℕ) : (metallic n)⁻¹ = metallic n - (n : ℝ) := b
 theorem metallic_one_eq_golden : metallic 1 = (1 + Real.sqrt 5) / 2 := by
   unfold metallic; norm_num
 
+/-- `δ_n` is a root of `x² − n·x − 1 = 0`. -/
+lemma metallic_sq (n : ℕ) : (metallic n) ^ 2 = (n : ℝ) * metallic n + 1 := by
+  unfold metallic; nlinarith [sqrt_sq_metallic n]
+
+/-- **Quantum dimension at a metallic ratio.** The Temperley–Lieb loop /
+quantum dimension `[2]_q = q + q⁻¹` evaluates to `√(n²+4)` at `q = δ_n`
+(golden → `√5`, silver → `√8 = 2√2`). On the unit circle this scalar is
+`2cos θ ∈ [−2,2]`; here on the real-metallic ladder it is `√(n²+4) ≥ 2`,
+so only `n = 0` (`δ_0 = 1`, value `2`) meets the root-of-unity range — the
+algebraic reason golden is the *unique* metallic ratio that is also a
+root-of-unity quantum dimension (`φ = 2cos(π/5)`). -/
+theorem metallic_two_q (n : ℕ) :
+    metallic n + (metallic n)⁻¹ = Real.sqrt ((n : ℝ) ^ 2 + 4) := by
+  rw [metallic_inv]; unfold metallic; ring
+
+/-- **Golden self-similarity.** `φ² = φ + 1` — the defining golden identity,
+here the `n = 1` case of `metallic_sq`. -/
+theorem golden_self_similar : metallic 1 ^ 2 = metallic 1 + 1 := by
+  rw [metallic_sq]; push_cast; ring
+
 end QOU.AlgebraicSubstrate
