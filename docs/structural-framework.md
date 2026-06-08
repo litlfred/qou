@@ -24,15 +24,17 @@ ad-hoc nesting.
 weight*, and no leaf is so large it hides a missing level or so small it
 shouldn't be its own node.
 
-**P6 makes the detangler skills a prerequisite of the reorg, not an
-afterthought.** Today `detangler-no-forward-ref` and
-`detangler-section-band` (`qa-checkers-detangler*.ts`,
-`content-graph-analysis.py`) walk only top-level `sections[].blocks[]`.
-They must be **extended to recurse into `subsections[]`** so the
-flattened reading order they validate includes the new level — otherwise
-nesting can silently introduce a backward edge the detangler no longer
-sees. This extension is tracked alongside the renderer's `\subsection`
-support as the two infra prerequisites of the paper-wide pass.
+**P6 is checkable today, for free.** `detangler-no-forward-ref`
+(`qa-checkers-extended.ts` → `loadChapterGraph`) builds each block's
+reading-order position by regex-matching *every* `blocks: [...]` array
+in source order — which already includes subsection blocks after their
+parent — so a `uses[]` edge that runs backward across the nesting is
+already caught. (The `detangler-section-band` check counts each
+subsection as a section, applying the 3–18 band instead of the 2–12
+subsection band — a minor over-strictness to refine.) The real
+subsection-recursion gaps were the **renderer** (`\subsection` output)
+and the **content validator** (loading nested blocks so their labels
+resolve) — both fixed; see `docs/structural-reorg-plan.md` §Stage 0.
 
 ## When to introduce a subsection
 

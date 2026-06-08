@@ -4,6 +4,7 @@
   "chapters": {
     "appendix-atomic-mass-calculations": {
       "manifest_hash": "695d469ff697",
+      "stale_mode": "manifest",
       "machine": {
         "title_defects": [],
         "structure_findings": [
@@ -27,33 +28,38 @@
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:amc-calculations": {
           "title": "Worked calculations for all elements ($Z = 1$ to $118$)",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:amc-summary": {
           "title": "Summary and percentage deviations",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:amc-q-integer": {
           "title": "$q$-integer mass table (zero fitted parameters)",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         }
       }
     },
     "appendix-knot-operations": {
       "manifest_hash": "602c843735ae",
+      "stale_mode": "manifest",
       "machine": {
         "title_defects": [],
         "structure_findings": [
@@ -71,26 +77,30 @@
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:knot-operator-basis-table": {
           "title": "Knot operator action on basis pairs",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:hadron-level-knot-table": {
           "title": "Hadron-level knot decomposition table",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         }
       }
     },
     "appendix-knot-operations-archimedean": {
       "manifest_hash": "529679aaefd8",
+      "stale_mode": "manifest",
       "machine": {
         "title_defects": [],
         "structure_findings": [
@@ -114,19 +124,22 @@
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:knot-ops-archi-gluon-model": {
           "title": "Gluon-model comparison vs experimental Q-values",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         }
       }
     },
     "appendix-knot-periodic-table": {
       "manifest_hash": "c75b7c3cd7d8",
+      "stale_mode": "manifest",
       "machine": {
         "title_defects": [],
         "structure_findings": [
@@ -150,26 +163,30 @@
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:knot-periodic-table": {
           "title": "Knot formulas for all elements",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:knot-centric-table": {
           "title": "Knot-centric periodic table",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         }
       }
     },
     "appendix-mass-binding-algorithms": {
       "manifest_hash": "93d0e822b668",
+      "stale_mode": "manifest",
       "machine": {
         "title_defects": [],
         "structure_findings": [
@@ -199,33 +216,38 @@
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:mba-chain-map": {
           "title": "From propositions to compute — the chain map",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:mba-canonical-chain": {
           "title": "Canonical chain — algorithms",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:mba-sidecars": {
           "title": "Sidecar algorithms",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         }
       }
     },
     "appendix-nf-witnesses": {
       "manifest_hash": "e5e708379bf5",
+      "stale_mode": "manifest",
       "machine": {
         "title_defects": [],
         "structure_findings": [
@@ -243,19 +265,22 @@
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:nf-witnesses-medium": {
           "title": "Medium nuclei ($A = 13$–$60$)",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         }
       }
     },
     "appendix-qvalues": {
       "manifest_hash": "3448e4a3e4e9",
+      "stale_mode": "manifest",
       "machine": {
         "title_defects": [],
         "structure_findings": [
@@ -272,21 +297,31 @@
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "Substrate evaluations": {
           "title": "Substrate evaluations",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         }
       }
     },
     "appendix-surreals": {
-      "manifest_hash": "c69bc351d373",
+      "manifest_hash": "4a56b9df8190",
+      "stale_mode": "manifest",
       "machine": {
-        "title_defects": [],
+        "title_defects": [
+          {
+            "kind": "compound",
+            "label": "sec:millennium-bsd-rh-ym",
+            "title": "BSD, RH, and Yang-Mills bounds",
+            "detail": "3 comma-joined concepts — not concise"
+          }
+        ],
         "structure_findings": [
           {
             "kind": "band",
@@ -295,34 +330,10 @@
             "detail": "1 blocks outside the 3–18 section band (P3)"
           },
           {
-            "kind": "over-weight",
-            "label": "sec:surreal-survives-breaks",
-            "title": "What survives and what breaks",
-            "detail": "24 blocks > 2.5× peer mean (6.1) — split into subsections (P4)"
-          },
-          {
-            "kind": "band",
-            "label": "sec:surreal-survives-breaks",
-            "title": "What survives and what breaks",
-            "detail": "24 blocks outside the 3–18 section band (P3)"
-          },
-          {
-            "kind": "band",
-            "label": "sec:nimber-surreals",
-            "title": "Characteristic-$p$ companion: nimber surreals",
-            "detail": "0 blocks outside the 3–18 section band (P3)"
-          },
-          {
             "kind": "band",
             "label": "sec:surreal-rate-calculus",
             "title": "Surreal rate calculus and the squeeze inequality",
             "detail": "2 blocks outside the 3–18 section band (P3)"
-          },
-          {
-            "kind": "over-weight",
-            "label": "sec:millennium-bounds-via-surreals",
-            "title": "Millennium-problem surreal bounds",
-            "detail": "17 blocks > 2.5× peer mean (6.1) — split into subsections (P4)"
           },
           {
             "kind": "band",
@@ -338,89 +349,142 @@
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:surreal-survives-breaks": {
           "title": "What survives and what breaks",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
+        },
+        "sec:surreal-transcendental-discharge": {
+          "title": "Transcendental accounting and discharge",
+          "depth": 2,
+          "result": "pending",
+          "reviewer": null,
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
+        },
+        "sec:surreal-b1-theorem-rows": {
+          "title": "The B1 theorem rows",
+          "depth": 2,
+          "result": "pending",
+          "reviewer": null,
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
+        },
+        "sec:surreal-b1-status": {
+          "title": "B1 status synthesis",
+          "depth": 2,
+          "result": "pending",
+          "reviewer": null,
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:surreal-construction-grading": {
           "title": "Surreal construction as a grading",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:standard-part-classical-limits": {
           "title": "Standard-part replaces classical limits",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:conway-normal-form": {
           "title": "Conway normal form and asymptotic notation",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:named-surreals-singular": {
           "title": "Named surreals for singular objects",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:relaxing-strict-equalities": {
           "title": "Relaxing strict equalities to $1 + \\varepsilon$",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:surreal-speculative": {
           "title": "Speculative reformulations",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
-        },
-        "sec:nimber-surreals": {
-          "title": "Characteristic-$p$ companion: nimber surreals",
-          "depth": 1,
-          "result": "pending",
-          "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:surreal-rate-calculus": {
           "title": "Surreal rate calculus and the squeeze inequality",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:millennium-bounds-via-surreals": {
           "title": "Millennium-problem surreal bounds",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
+        },
+        "sec:millennium-bsd-rh-ym": {
+          "title": "BSD, RH, and Yang-Mills bounds",
+          "depth": 2,
+          "result": "pending",
+          "reviewer": null,
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
+        },
+        "sec:millennium-pnp-collatz": {
+          "title": "P vs NP and the Collatz family",
+          "depth": 2,
+          "result": "pending",
+          "reviewer": null,
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
+        },
+        "sec:millennium-unification": {
+          "title": "Graded-Mikusiński unification",
+          "depth": 2,
+          "result": "pending",
+          "reviewer": null,
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:surreal-outlook": {
           "title": "Outlook",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         }
       }
     },
     "appendix-surreals-archimedean": {
       "manifest_hash": "7dfc907e9d45",
+      "stale_mode": "manifest",
       "machine": {
         "title_defects": [],
         "structure_findings": [
@@ -444,33 +508,38 @@
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:surreals-archimedean-speculative": {
           "title": "Speculative reformulations at q_0",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:surreals-archimedean-char-p": {
           "title": "Characteristic-p companion at substrate",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:surreals-archimedean-millennium": {
           "title": "Substrate-positivity and millennium bounds",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         }
       }
     },
     "appendix-transfer-matrices": {
       "manifest_hash": "4963dc056724",
+      "stale_mode": "manifest",
       "machine": {
         "title_defects": [],
         "structure_findings": [
@@ -494,54 +563,62 @@
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:tm-general-form": {
           "title": "The general transfer matrix",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:tm-knot-pairs": {
           "title": "Transfer matrices of knot pairs",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:tm-interactions": {
           "title": "Interaction and decay matrices",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:tm-worked-examples": {
           "title": "Worked examples (light nuclei)",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:tm-inductive-construction": {
           "title": "Inductive construction ($A \\to A+1$)",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:tm-heavy-atom-examples": {
           "title": "Heavy-atom worked examples",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         }
       }
     },
     "braids-and-knots": {
-      "manifest_hash": "5bb651de2d8d",
+      "manifest_hash": "e1681a6d0d92",
+      "stale_mode": "manifest",
       "machine": {
         "title_defects": [
           {
@@ -557,18 +634,6 @@
             "label": "sec:path-integrals-intro",
             "title": "Introduction",
             "detail": "1 blocks outside the 3–18 section band (P3)"
-          },
-          {
-            "kind": "over-weight",
-            "label": "sec:categorical-braiding-hecke-eigenbasis",
-            "title": "Categorical braiding: Hecke quotient and knot eigenbasis",
-            "detail": "27 blocks > 2.5× peer mean (7.8) — split into subsections (P4)"
-          },
-          {
-            "kind": "band",
-            "label": "sec:categorical-braiding-hecke-eigenbasis",
-            "title": "Categorical braiding: Hecke quotient and knot eigenbasis",
-            "detail": "27 blocks outside the 3–18 section band (P3)"
           }
         ]
       },
@@ -578,90 +643,112 @@
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:categorical-braiding-action": {
           "title": "Categorical origin of braiding: the braid action",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:categorical-braiding-hecke-eigenbasis": {
           "title": "Categorical braiding: Hecke quotient and knot eigenbasis",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
+        },
+        "sec:categorical-braiding-hecke-quotient": {
+          "title": "The Hecke quotient",
+          "depth": 2,
+          "result": "pending",
+          "reviewer": null,
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
+        },
+        "sec:categorical-braiding-markov-trace-nf": {
+          "title": "Markov trace and normal form",
+          "depth": 2,
+          "result": "pending",
+          "reviewer": null,
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
+        },
+        "sec:categorical-braiding-knot-eigenbasis": {
+          "title": "The knot eigenbasis",
+          "depth": 2,
+          "result": "pending",
+          "reviewer": null,
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:braid-symmetric": {
           "title": "Braid group and symmetric group",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:su2-so3": {
           "title": "$\\mathrm{SU}(2)$ and $\\mathrm{SO}(3)$ framework",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:braid-involutions": {
           "title": "Braid involutions and holonomy",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:trefoil-knot": {
           "title": "The trefoil knot",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:knot-fundamental-groups": {
           "title": "Knot fundamental groups",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:enveloping-algebras": {
           "title": "Universal enveloping algebras and quantum groups",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:lepton-meson-parallel": {
           "title": "Leptons, mesons, and the Frobenius bridge",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         }
       }
     },
     "brings-surface": {
-      "manifest_hash": "8ae8318e934d",
+      "manifest_hash": "d132721fca30",
+      "stale_mode": "manifest",
       "machine": {
-        "title_defects": [
-          {
-            "kind": "split-artifact",
-            "label": "sec:archimedean-condition-genus-completeness-genus-ideal-characterisation",
-            "title": "Descartes condition: torus-knot generators and genus completeness : characterisation",
-            "detail": "trailing \" : characterisation\" (known auto-split tag) — meaningless out of context"
-          },
-          {
-            "kind": "too-long",
-            "label": "sec:archimedean-condition-genus-completeness-genus-ideal-characterisation",
-            "title": "Descartes condition: torus-knot generators and genus completeness : characterisation",
-            "detail": "84 chars > 72"
-          }
-        ],
+        "title_defects": [],
         "structure_findings": [
           {
             "kind": "band",
@@ -677,117 +764,134 @@
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:physical-regimes": {
           "title": "Physical regimes and limiting context",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:bring-algebraic-substructure": {
           "title": "Bring's surface algebraic substructure",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:brings-surface-qou": {
           "title": "Bring's surface as a QOU",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:color-tube-coords": {
           "title": "Color tube coordinates",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:coral-fibration-elliptic": {
           "title": "Coral fibration and elliptic curves",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:brings-smoothness": {
           "title": "Bundle structures and smoothness",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:spectral-gauge": {
           "title": "Spectral resolvents and gauge structures",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:archimedean-condition-statement": {
           "title": "The Descartes condition $\\\\chi = -6$",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:archimedean-condition-leptons": {
           "title": "Descartes condition: leptons and chirality",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:archimedean-condition-genus-completeness": {
           "title": "Descartes condition: torus-knot generators and genus completeness",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:archimedean-condition-genus-completeness-genus-ideal-characterisation": {
-          "title": "Descartes condition: torus-knot generators and genus completeness : characterisation",
+          "title": "The genus-ideal filtration",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:cohomological-defect": {
           "title": "The unit particle as a cohomological defect",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:descartes-theorem": {
           "title": "The Descartes theorem",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:orbital-symmetry-embedding": {
           "title": "Orbital Symmetry and Cohomological Embedding",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:brings-surface-orphan-reconnect": {
           "title": "Reconnected orphan blocks (Phase 7)",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         }
       }
     },
     "climax-volume-mass": {
       "manifest_hash": "4ef3e451e784",
+      "stale_mode": "manifest",
       "machine": {
         "title_defects": [],
         "structure_findings": []
@@ -798,40 +902,46 @@
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:crossing-energy": {
           "title": "Crossing energy and Coulomb charge",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:lagrange-q-kinematics": {
           "title": "Lagrange Resolvents and $q$-Deformed Kinematics",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:knot-operator-energy": {
           "title": "Knot-operator energy",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:braiding-relations": {
           "title": "Braiding Relations and the Spectral Filter",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         }
       }
     },
     "fluid-dynamics": {
       "manifest_hash": "add107dfe163",
+      "stale_mode": "manifest",
       "machine": {
         "title_defects": [
           {
@@ -849,54 +959,62 @@
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:vortex-spectrum": {
           "title": "Vortex spectrum and helicity",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:turbulence-acoustics": {
           "title": "Turbulence and acoustics",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:q-ns-regularity": {
           "title": "Global regularity for $q > 1$",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:ns-obstruction-statement": {
           "title": "NS obstruction: statement and observability",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:ns-obstruction-tower-mtc": {
           "title": "NS obstruction tower, specialisations, and observable MTC",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:ns-approaches": {
           "title": "Approaches and open problems",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         }
       }
     },
     "glossary": {
       "manifest_hash": "04d071d7185b",
+      "stale_mode": "manifest",
       "machine": {
         "title_defects": [],
         "structure_findings": [
@@ -932,61 +1050,70 @@
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:glossary-monoidal": {
           "title": "Monoidal structure",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:glossary-rigidity": {
           "title": "Duality and rigidity",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:glossary-enrichment": {
           "title": "Enrichment",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:glossary-geometry": {
           "title": "Geometry and transport",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:glossary-groups": {
           "title": "Groups and symmetry",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:glossary-information": {
           "title": "Information theory",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:glossary-elliptic": {
           "title": "Elliptic and surface geometry",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         }
       }
     },
     "gravity-spacetime": {
       "manifest_hash": "869d7a2c915f",
+      "stale_mode": "manifest",
       "machine": {
         "title_defects": [],
         "structure_findings": [
@@ -1004,19 +1131,22 @@
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:gravity-spacetime-lqg-comparison": {
           "title": "Positioning against canonical quantum-gravity programmes",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         }
       }
     },
     "index-of-definitions": {
       "manifest_hash": "106b6438d28b",
+      "stale_mode": "manifest",
       "machine": {
         "title_defects": [],
         "structure_findings": [
@@ -1039,12 +1169,14 @@
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         }
       }
     },
     "information-theory": {
       "manifest_hash": "465836547b95",
+      "stale_mode": "manifest",
       "machine": {
         "title_defects": [
           {
@@ -1069,89 +1201,102 @@
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:info-time-computation": {
           "title": "Time and Computation",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:golden-julia-dynamics": {
           "title": "Golden Ratio, Julia Sets, and Discrete Dynamics",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:speed-of-light": {
           "title": "Speed of Light and Mass--Energy Equivalence",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:planck-scale-computation": {
           "title": "Computation at Planck Time Lengths",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:p-vs-np-boundary": {
           "title": "P versus NP as a Boundary Condition",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:q-heat-kernel-analysis": {
           "title": "$q$-Heat kernel and spectral analysis",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:stat-mech": {
           "title": "Statistical Mechanics",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:phase-transitions": {
           "title": "Phase Transitions and Sublimation",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:incompleteness-horizon": {
           "title": "Incompleteness and the Horizon",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:horizons-aeons": {
           "title": "Horizons and Aeons",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:info-geometry-variants": {
           "title": "Quantum Geometry Variants",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         }
       }
     },
     "introduction": {
       "manifest_hash": "95c23bd0eae3",
+      "stale_mode": "manifest",
       "machine": {
         "title_defects": [],
         "structure_findings": [
@@ -1175,26 +1320,30 @@
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:chapter-overview": {
           "title": "Chapter overview",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:authors-note": {
           "title": "Author's note",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         }
       }
     },
     "lifting-and-descent": {
       "manifest_hash": "ed9503490e5f",
+      "stale_mode": "manifest",
       "machine": {
         "title_defects": [],
         "structure_findings": [
@@ -1218,113 +1367,121 @@
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:lifting": {
           "title": "Categorical Lifting: Transport and Torsion",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "ssec:descent-prelim": {
           "title": "Descent Preliminaries",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:yekutieli-lifting-construction": {
           "title": "Categorical lifting and quantum characteristic classes",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:yekutieli-lifting-kummer-motivic": {
           "title": "Yekutieli lifting: Kummer-motivic enrichment",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:direct-limit": {
           "title": "Direct Limit Algebra",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:mass-brane": {
           "title": "Mass in the Brane Tower",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:betti-harmonic": {
           "title": "Betti Numbers and Harmonic Basis",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "ssec:descent": {
           "title": "Descent",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "ssec:cosimplicial-crossed-groupoid": {
           "title": "Cosimplicial Crossed Groupoid Structure",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:localized-knots": {
           "title": "Localized Knots",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:archimedean-lifting-foundations": {
           "title": "Archimedean specialisations: foundations",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:archimedean-lifting-topological-mass-formula": {
           "title": "Archimedean specialisations: topological-mass formula",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:archimedean-lifting-topological-mass-variants": {
           "title": "Archimedean specialisations: topological-mass variants",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         }
       }
     },
     "mass-endomorphism": {
-      "manifest_hash": "ea53d0394d5e",
+      "manifest_hash": "61410b0087b2",
+      "stale_mode": "manifest",
       "machine": {
         "title_defects": [],
-        "structure_findings": [
-          {
-            "kind": "band",
-            "label": "sec:mass-endomorphism-opener",
-            "title": "The Mass Endomorphism",
-            "detail": "28 blocks outside the 3–18 section band (P3)"
-          }
-        ]
+        "structure_findings": []
       },
       "agent": {
         "sec:mass-endomorphism-opener": {
@@ -1332,47 +1489,78 @@
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
+        },
+        "sec:mass-endomorphism-mass-identity": {
+          "title": "The mass identity",
+          "depth": 2,
+          "result": "pending",
+          "reviewer": null,
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
+        },
+        "sec:mass-endomorphism-topological-mass": {
+          "title": "Topological mass",
+          "depth": 2,
+          "result": "pending",
+          "reviewer": null,
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
+        },
+        "sec:mass-endomorphism-spectral-shell": {
+          "title": "Spectral sequence and shell condensation",
+          "depth": 2,
+          "result": "pending",
+          "reviewer": null,
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:categorical-mass-eigenspaces": {
           "title": "Categorical mass foundations: eigenspace decompositions",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:categorical-mass-markov-trace-endomorphism": {
           "title": "Categorical mass foundations: Markov trace and endomorphism",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:hecke-chi-closed-forms": {
           "title": "Hecke $u$-coordinate and $\\chi$-character closed-forms",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:hecke-chi-closed-forms-chi-per-irrep": {
           "title": "Hecke $\\chi$-character closed-forms (generation)",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:hecke-baer-star-chirality": {
           "title": "Hecke-Baer-star foundation and chirality pairing",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         }
       }
     },
     "mass-theory": {
-      "manifest_hash": "ee28138bbfb4",
+      "manifest_hash": "b7f2c1ae8e2d",
+      "stale_mode": "manifest",
       "machine": {
         "title_defects": [
           {
@@ -1380,12 +1568,6 @@
             "label": "sec:mass-algebraic-consolidated",
             "title": "Algebraic face: transfer matrices, Skein mass, and Markov corrections",
             "detail": "3 comma-joined concepts — not concise"
-          },
-          {
-            "kind": "split-artifact",
-            "label": "sec:hoefsmit-convergence-construction-per-partition-k",
-            "title": "Hoefsmit convergence: construction : generation",
-            "detail": "trailing \" : generation\" (known auto-split tag) — meaningless out of context"
           },
           {
             "kind": "compound",
@@ -1406,39 +1588,9 @@
             "detail": "3 comma-joined concepts — not concise"
           },
           {
-            "kind": "split-artifact",
-            "label": "sec:spectral-sequence-chirality-confinement-per-nucleon-shift",
-            "title": "Spectral sequence, chirality, and confinement-NF structure : generation",
-            "detail": "trailing \" : generation\" (known auto-split tag) — meaningless out of context"
-          },
-          {
-            "kind": "compound",
-            "label": "sec:spectral-sequence-chirality-confinement-per-nucleon-shift",
-            "title": "Spectral sequence, chirality, and confinement-NF structure : generation",
-            "detail": "3 comma-joined concepts — not concise"
-          },
-          {
-            "kind": "split-artifact",
-            "label": "sec:alpha-k-procedure-atom-knot-mass",
-            "title": "$\\\\alpha_k$ derivation procedure : generation",
-            "detail": "trailing \" : generation\" (known auto-split tag) — meaningless out of context"
-          },
-          {
             "kind": "compound",
             "label": "sec:wenzl-bridge-cyclotomic",
             "title": "Wenzl bridge, cyclotomic factorisation, and explicit $\\\\alpha_k$",
-            "detail": "3 comma-joined concepts — not concise"
-          },
-          {
-            "kind": "split-artifact",
-            "label": "sec:wenzl-bridge-cyclotomic-lr-tensor-character",
-            "title": "Wenzl bridge, cyclotomic factorisation, and explicit $\\\\alpha_k$ : generation",
-            "detail": "trailing \" : generation\" (known auto-split tag) — meaningless out of context"
-          },
-          {
-            "kind": "compound",
-            "label": "sec:wenzl-bridge-cyclotomic-lr-tensor-character",
-            "title": "Wenzl bridge, cyclotomic factorisation, and explicit $\\\\alpha_k$ : generation",
             "detail": "3 comma-joined concepts — not concise"
           },
           {
@@ -1446,70 +1598,9 @@
             "label": "sec:parity-classification-discrepancy",
             "title": "Parity classification, atomic atlas, and discrepancy resolution",
             "detail": "3 comma-joined concepts — not concise"
-          },
-          {
-            "kind": "split-artifact",
-            "label": "sec:parity-classification-discrepancy-partition-sum-proton",
-            "title": "Parity classification, atomic atlas, and discrepancy resolution : generation",
-            "detail": "trailing \" : generation\" (known auto-split tag) — meaningless out of context"
-          },
-          {
-            "kind": "too-long",
-            "label": "sec:parity-classification-discrepancy-partition-sum-proton",
-            "title": "Parity classification, atomic atlas, and discrepancy resolution : generation",
-            "detail": "76 chars > 72"
-          },
-          {
-            "kind": "compound",
-            "label": "sec:parity-classification-discrepancy-partition-sum-proton",
-            "title": "Parity classification, atomic atlas, and discrepancy resolution : generation",
-            "detail": "3 comma-joined concepts — not concise"
-          },
-          {
-            "kind": "compound",
-            "label": "sec:six-term-crystal-isospin-chirality",
-            "title": "Six-term mass formula, crystal, isospin, and chirality",
-            "detail": "4 comma-joined concepts — not concise"
-          },
-          {
-            "kind": "split-artifact",
-            "label": "sec:six-term-crystal-isospin-chirality-option-e-isospin",
-            "title": "Six-term mass formula, crystal, isospin, and chirality : generation",
-            "detail": "trailing \" : generation\" (known auto-split tag) — meaningless out of context"
-          },
-          {
-            "kind": "compound",
-            "label": "sec:six-term-crystal-isospin-chirality-option-e-isospin",
-            "title": "Six-term mass formula, crystal, isospin, and chirality : generation",
-            "detail": "4 comma-joined concepts — not concise"
           }
         ],
-        "structure_findings": [
-          {
-            "kind": "band",
-            "label": "sec:mass-algebraic-consolidated",
-            "title": "Algebraic face: transfer matrices, Skein mass, and Markov corrections",
-            "detail": "30 blocks outside the 3–18 section band (P3)"
-          },
-          {
-            "kind": "band",
-            "label": "sec:hoefsmit-convergence-magic-shells",
-            "title": "Hoefsmit convergence: magic-shell consequences",
-            "detail": "33 blocks outside the 3–18 section band (P3)"
-          },
-          {
-            "kind": "band",
-            "label": "sec:phi-q-markov-schur-weyl-foundations",
-            "title": "$\\\\varphi_q$ resummation, Markov trace, Schur-Weyl: foundations",
-            "detail": "25 blocks outside the 3–18 section band (P3)"
-          },
-          {
-            "kind": "band",
-            "label": "sec:mass-application-orphan-reconnect",
-            "title": "Reconnected orphan blocks (Phase 7)",
-            "detail": "19 blocks outside the 3–18 section band (P3)"
-          }
-        ]
+        "structure_findings": []
       },
       "agent": {
         "sec:transfer-matrix-mass": {
@@ -1517,271 +1608,414 @@
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:mass-formula-derivation": {
           "title": "Mass-formula derivation",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:mass-formula-derivation-commutative-chirality-vanishes": {
           "title": "Mass-formula derivation (generation)",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:mass-algebraic-consolidated": {
           "title": "Algebraic face: transfer matrices, Skein mass, and Markov corrections",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
+        },
+        "sec:mass-algebraic-transfer-skein": {
+          "title": "Transfer matrices and Skein mass",
+          "depth": 2,
+          "result": "pending",
+          "reviewer": null,
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
+        },
+        "sec:mass-algebraic-markov-gram": {
+          "title": "Markov corrections and the Gram matrix",
+          "depth": 2,
+          "result": "pending",
+          "reviewer": null,
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
+        },
+        "sec:mass-algebraic-qbeta-ladder": {
+          "title": "The $Q_\\beta$ precision ladder",
+          "depth": 2,
+          "result": "pending",
+          "reviewer": null,
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
+        },
+        "sec:mass-algebraic-bifiltration-adelic": {
+          "title": "Bi-filtration and the adelic substrate",
+          "depth": 2,
+          "result": "pending",
+          "reviewer": null,
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:hoefsmit-convergence-construction": {
           "title": "Hoefsmit convergence: construction",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:hoefsmit-convergence-construction-per-partition-k": {
-          "title": "Hoefsmit convergence: construction : generation",
+          "title": "Per-partition brane-tower convergence",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:hoefsmit-convergence-magic-shells": {
           "title": "Hoefsmit convergence: magic-shell consequences",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
+        },
+        "sec:hoefsmit-he4-magic-a-binding": {
+          "title": "He-4 channel and magic-A binding",
+          "depth": 2,
+          "result": "pending",
+          "reviewer": null,
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
+        },
+        "sec:hoefsmit-binding-genfun-closure": {
+          "title": "Binding generating function and closure",
+          "depth": 2,
+          "result": "pending",
+          "reviewer": null,
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
+        },
+        "sec:hoefsmit-qdifference-prolongation": {
+          "title": "q-difference prolongation and periods",
+          "depth": 2,
+          "result": "pending",
+          "reviewer": null,
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
+        },
+        "sec:hoefsmit-substrate-cohomology-calibration": {
+          "title": "Substrate cohomology calibration",
+          "depth": 2,
+          "result": "pending",
+          "reviewer": null,
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:gs-axiomatic-backing": {
           "title": "Gröbner-Shirshov axiomatic backing",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:exceptional-divisor-reeb": {
           "title": "Exceptional divisor, Reeb bundle, and vertex operators",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:vertex-factorisation-markov": {
           "title": "Vertex factorisation: Markov trace",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:vertex-factorisation-feynman": {
           "title": "Vertex factorisation: Feynman identifications",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:kashiwara-jones-quantum-dilog": {
           "title": "Kashiwara-Jones interpretations and quantum dilogarithm",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:archimedean-realization-kashaev": {
           "title": "Archimedean realization and Kashaev volume",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:mass-bridge-orphan-reconnect": {
-          "title": "Geometric face: mass-bridge orphan blocks",
+          "title": "Geometric face: pentagon and volume bridges",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:mass-geometric-face": {
           "title": "Geometric face: mass-volume factorisation and crossing expansion",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:mutant-jones-bloch-group": {
           "title": "Mutant Jones falsifiability and Bloch group closure",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:phi-q-markov-schur-weyl-foundations": {
           "title": "$\\\\varphi_q$ resummation, Markov trace, Schur-Weyl: foundations",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
+        },
+        "sec:phi-q-markov-resummation": {
+          "title": "Markov trace resummation",
+          "depth": 2,
+          "result": "pending",
+          "reviewer": null,
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
+        },
+        "sec:phi-q-lepton-mass-tower": {
+          "title": "The lepton mass tower",
+          "depth": 2,
+          "result": "pending",
+          "reviewer": null,
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
+        },
+        "sec:phi-q-schur-weyl-positivity": {
+          "title": "Schur-Weyl decomposition and positivity",
+          "depth": 2,
+          "result": "pending",
+          "reviewer": null,
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:phi-q-markov-residue-habiro": {
           "title": "$\\\\varphi_q$ resummation: residue and Habiro identifications",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:cyclotomic-depth-3-trilog": {
           "title": "Cyclotomic depth-3 trilog identities",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:substrate-binding-setup": {
           "title": "Substrate binding setup",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:lp-dual-jucys-murphy": {
           "title": "LP-dual and Jucys-Murphy central elements",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:spectral-sequence-chirality-confinement": {
           "title": "Spectral sequence, chirality, and confinement-NF structure",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:spectral-sequence-chirality-confinement-per-nucleon-shift": {
-          "title": "Spectral sequence, chirality, and confinement-NF structure : generation",
+          "title": "Confinement-NF forcing and the per-nucleon shift",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:plancherel-alpha-spectral": {
           "title": "Plancherel-$\\\\alpha$ spectral foundations",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:plancherel-knot-factor-mass-tower": {
           "title": "Plancherel: knot-factor and mass-tower closure",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:alpha-k-procedure": {
           "title": "$\\\\alpha_k$ derivation procedure",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:alpha-k-procedure-atom-knot-mass": {
-          "title": "$\\\\alpha_k$ derivation procedure : generation",
+          "title": "Joint-tower SDP and closed-form weights",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:wenzl-bridge-cyclotomic": {
           "title": "Wenzl bridge, cyclotomic factorisation, and explicit $\\\\alpha_k$",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:wenzl-bridge-cyclotomic-lr-tensor-character": {
-          "title": "Wenzl bridge, cyclotomic factorisation, and explicit $\\\\alpha_k$ : generation",
+          "title": "The LR-tensor character bridge",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:derivation-audit": {
           "title": "Pre-Archimedean Derivation Chain and Audit",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:parity-classification-discrepancy": {
           "title": "Parity classification, atomic atlas, and discrepancy resolution",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:parity-classification-discrepancy-partition-sum-proton": {
-          "title": "Parity classification, atomic atlas, and discrepancy resolution : generation",
+          "title": "The partition-sum proton residual",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:six-term-crystal-isospin-chirality": {
-          "title": "Six-term mass formula, crystal, isospin, and chirality",
+          "title": "Six-term mass formula and crystal isospin",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:six-term-crystal-isospin-chirality-option-e-isospin": {
-          "title": "Six-term mass formula, crystal, isospin, and chirality : generation",
+          "title": "Option E: crystal bases and chirality duality",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:mass-physical-face": {
           "title": "Physical face: mass formulas and predictions",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:mass-open-problems": {
           "title": "Open problems: mass-tower structure and crystal basis",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:mass-theory-orphan-reconnect": {
-          "title": "Reconnected orphan blocks (Phase 7)",
+          "title": "Weak-spectral and isospin lemmas",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:mass-application-orphan-reconnect": {
-          "title": "Reconnected orphan blocks (Phase 7)",
+          "title": "Trace and staircase lemmas",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
+        },
+        "sec:mass-application-trace-operator-lemmas": {
+          "title": "Trace and operator lemmas",
+          "depth": 2,
+          "result": "pending",
+          "reviewer": null,
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
+        },
+        "sec:mass-application-staircase-hoefsmit": {
+          "title": "Staircase and character lemmas",
+          "depth": 2,
+          "result": "pending",
+          "reviewer": null,
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         }
       }
     },
     "measurement-observation": {
       "manifest_hash": "11b510b727e2",
+      "stale_mode": "manifest",
       "machine": {
         "title_defects": [],
         "structure_findings": [
@@ -1799,19 +2033,22 @@
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:bundle-observation": {
           "title": "Bundle Structure and Observation",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         }
       }
     },
     "models-of-qous": {
       "manifest_hash": "a65a3882b013",
+      "stale_mode": "manifest",
       "machine": {
         "title_defects": [],
         "structure_findings": [
@@ -1829,68 +2066,78 @@
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:physical-interpretation": {
           "title": "Physical interpretation and the main result",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:headline-conjectures": {
           "title": "Headline conjectures",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:archimedean-witnesses": {
           "title": "Archimedean witnesses",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:categorical-differential-bridge": {
           "title": "Categorical-differential bridge",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:non-archimedean-models": {
           "title": "Non-Archimedean models",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:witt-vector-lifting": {
           "title": "Lifting via Formal Groups and Witt Vectors",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:finite-fields": {
           "title": "Finite fields and Jones polynomials",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:archimedean-encounter": {
           "title": "Mostow confinement and the Archimedean wall",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         }
       }
     },
     "molecular-construction": {
-      "manifest_hash": "102ae1010061",
+      "manifest_hash": "28a950ab4399",
+      "stale_mode": "manifest",
       "machine": {
         "title_defects": [],
         "structure_findings": []
@@ -1901,54 +2148,70 @@
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
+        },
+        "sec:molecular-assembly-projector": {
+          "title": "Assembly projectors from symmetry",
+          "depth": 1,
+          "result": "pending",
+          "reviewer": null,
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:electron-shells": {
           "title": "Electron shells and bonding capacity",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:h2-computation": {
           "title": "Hydrogen molecule $H_2$: the covalent bond prototype",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:co-computation": {
           "title": "Carbon monoxide: heteronuclear bonding",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:co2-computation": {
           "title": "Carbon dioxide: linear triatomic molecule",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:ch4-computation": {
           "title": "Methane: tetrahedral bonding from braid optimization",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:benzene-computation": {
           "title": "Benzene: delocalization from threading links",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         }
       }
     },
     "notation": {
       "manifest_hash": "c00f1da8ab5c",
+      "stale_mode": "manifest",
       "machine": {
         "title_defects": [],
         "structure_findings": [
@@ -1966,56 +2229,29 @@
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:notation-collisions-section": {
           "title": "Key collision avoidances",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         }
       }
     },
     "observations": {
-      "manifest_hash": "7cbd672b1c6c",
+      "manifest_hash": "1b4fcd7e2e4c",
+      "stale_mode": "manifest",
       "machine": {
         "title_defects": [
-          {
-            "kind": "split-artifact",
-            "label": "sec:mass-predictions-method-feynman-qou-comparison",
-            "title": "Mass predictions: methodology and validation : comparison",
-            "detail": "trailing \" : comparison\" (known auto-split tag) — meaningless out of context"
-          },
-          {
-            "kind": "split-artifact",
-            "label": "sec:mass-predictions-derivations-terminal-resolution-proof",
-            "title": "Mass predictions: per-particle derivations : comparison",
-            "detail": "trailing \" : comparison\" (known auto-split tag) — meaningless out of context"
-          },
           {
             "kind": "compound",
             "label": "sec:beta-decay-mechanism",
             "title": "Beta decay: mechanism, half-life, and tritium",
             "detail": "3 comma-joined concepts — not concise"
-          },
-          {
-            "kind": "split-artifact",
-            "label": "sec:beta-decay-mechanism-hadron-half-life",
-            "title": "Beta decay: mechanism, half-life, and tritium : comparison",
-            "detail": "trailing \" : comparison\" (known auto-split tag) — meaningless out of context"
-          },
-          {
-            "kind": "compound",
-            "label": "sec:beta-decay-mechanism-hadron-half-life",
-            "title": "Beta decay: mechanism, half-life, and tritium : comparison",
-            "detail": "3 comma-joined concepts — not concise"
-          },
-          {
-            "kind": "split-artifact",
-            "label": "sec:beta-decay-magic-shells-k12-barrier-bypass",
-            "title": "Beta decay: magic-shell consequences : comparison",
-            "detail": "trailing \" : comparison\" (known auto-split tag) — meaningless out of context"
           },
           {
             "kind": "too-long",
@@ -2045,166 +2281,190 @@
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:particle-conjectures": {
           "title": "Particle Identification Conjectures",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:double-slit-experiment": {
           "title": "Double-slit experiment",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:substrate-from-leptons": {
           "title": "Substrate Parameter from Lepton Masses",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:mass-predictions-method": {
           "title": "Mass predictions: methodology and validation",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:mass-predictions-method-feynman-qou-comparison": {
-          "title": "Mass predictions: methodology and validation : comparison",
+          "title": "Mass predictions vs Feynman amplitudes",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:mass-predictions-derivations": {
           "title": "Mass predictions: per-particle derivations",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:mass-predictions-derivations-terminal-resolution-proof": {
-          "title": "Mass predictions: per-particle derivations : comparison",
+          "title": "Terminal resolution and the $W$-boson discrepancy",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:beta-decay-mechanism": {
           "title": "Beta decay: mechanism, half-life, and tritium",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:beta-decay-mechanism-hadron-half-life": {
-          "title": "Beta decay: mechanism, half-life, and tritium : comparison",
+          "title": "Half-life regimes and the $N_V$ tower",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:beta-decay-magic-shells": {
           "title": "Beta decay: magic-shell consequences",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:beta-decay-magic-shells-k12-barrier-bypass": {
-          "title": "Beta decay: magic-shell consequences : comparison",
+          "title": "Magic numbers and the $k=12$ barrier",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:large-scale": {
           "title": "Large-Scale Observations",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:nuclear-stability-observations": {
           "title": "Nuclear Stability",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:strangelet-stability": {
           "title": "Strangelet Stability and Deconfinement",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:precision-tests": {
           "title": "Precision Tests",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:proton-gravity-tests": {
           "title": "Proton Radius and Gravity Tests",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:crystal-resonance": {
           "title": "Crystal Resonance Experiments",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:breit-wheeler-pair-creation": {
           "title": "Breit--Wheeler Pair Creation",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:complexity-interpretation": {
           "title": "Complexity and Interpretation",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:non-comm-probability-q-clt": {
           "title": "Non-Commutative Probability, the q-CLT, and the Archimedean Macroscopic Limit",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:transcendence-signatures": {
           "title": "Transcendence Falsifiability Signatures",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:simulations": {
           "title": "Interactive Simulations",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         }
       }
     },
     "organic-chemistry": {
       "manifest_hash": "24df7ef89dca",
+      "stale_mode": "manifest",
       "machine": {
         "title_defects": [
           {
@@ -2222,51 +2482,37 @@
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:molecular-chains-rings": {
           "title": "Molecular Hopf chains and rings",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:carbon-chains-benzene": {
           "title": "Carbon chains, benzene, and organic chain taxonomy",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         }
       }
     },
     "particle-interactions": {
-      "manifest_hash": "a1b97da24381",
+      "manifest_hash": "87017ecc14ff",
+      "stale_mode": "manifest",
       "machine": {
         "title_defects": [
-          {
-            "kind": "split-artifact",
-            "label": "sec:confinement-selection-confinement-sdp-vs",
-            "title": "Confinement operator selection : vs",
-            "detail": "trailing \" : vs\" (known auto-split tag) — meaningless out of context"
-          },
-          {
-            "kind": "split-artifact",
-            "label": "sec:transfer-beta-decay-q-beta-spectral",
-            "title": "Transfer matrices and beta decay : vs",
-            "detail": "trailing \" : vs\" (known auto-split tag) — meaningless out of context"
-          },
           {
             "kind": "compound",
             "label": "sec:atomic-braid-mass-crossing-locality-cpt",
             "title": "Atomic braid mass: crossing-graded, locality, CPT",
             "detail": "3 comma-joined concepts — not concise"
-          },
-          {
-            "kind": "split-artifact",
-            "label": "sec:skein-particle-generation-knot-particle-generation",
-            "title": "Skein Generation and Particle Correspondence : generation",
-            "detail": "trailing \" : generation\" (known auto-split tag) — meaningless out of context"
           }
         ],
         "structure_findings": []
@@ -2277,247 +2523,205 @@
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:confinement-selection": {
           "title": "Confinement operator selection",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
-        "sec:confinement-selection-confinement-sdp-vs": {
-          "title": "Confinement operator selection : vs",
-          "depth": 1,
+        "sec:confinement-selection-lp": {
+          "title": "Operator selection by LP",
+          "depth": 2,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
+        },
+        "sec:confinement-selection-confinement-sdp-vs": {
+          "title": "Which constraints survive",
+          "depth": 2,
+          "result": "pending",
+          "reviewer": null,
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:nucleon-derivation": {
           "title": "Nucleon derivation from pair production",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:nuclear-binding": {
           "title": "Nuclear binding and magic numbers",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:derived-atoms": {
           "title": "Derived atom examples",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:garside-gram": {
           "title": "Typed Garside element and Gram-weighted $\\mathcal{Q}_q$-value",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:transfer-beta-decay": {
           "title": "Transfer matrices and beta decay",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
-        },
-        "sec:transfer-beta-decay-q-beta-spectral": {
-          "title": "Transfer matrices and beta decay : vs",
-          "depth": 1,
-          "result": "pending",
-          "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:atomic-braid-mass-foundations": {
           "title": "Atomic braid and Wedderburn mass formula: foundations",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:atomic-braid-mass-crossing-locality-cpt": {
           "title": "Atomic braid mass: crossing-graded, locality, CPT",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:branching-qvalue": {
           "title": "Branching Q-value derivation",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:hadron-algebra": {
           "title": "Hadron Algebra and Knot Factorisation",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:skein-particle-generation": {
           "title": "Skein Generation and Particle Correspondence",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
-        },
-        "sec:skein-particle-generation-knot-particle-generation": {
-          "title": "Skein Generation and Particle Correspondence : generation",
-          "depth": 1,
-          "result": "pending",
-          "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:borromean-reidemeister": {
           "title": "Borromean Baryons and Reidemeister Invariance",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:confinement-level": {
           "title": "Confinement level and the cemetery group",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:pair-production-anyon": {
           "title": "Pair production and anyon collapse",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:lepton-meson-structural-parallel": {
           "title": "Lepton–meson structural parallel",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:confined-particles-shells": {
           "title": "Confined particles and shells",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:atom-isotope-knots": {
           "title": "Atom and isotope knots",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:magic-shells": {
           "title": "Magic shells and the $\\\\kappa$ coupling",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:beta-stability-closure": {
           "title": "Beta stability closure",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:varying-euler-mirror": {
           "title": "Varying Euler Characteristic and the Mirror Bundle",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:particle-interactions-orphan-reconnect": {
           "title": "Reconnected orphan blocks (Phase 7)",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         }
       }
     },
     "predicted-spectra": {
-      "manifest_hash": "a1741f65073a",
+      "manifest_hash": "b4f93de1f2ec",
+      "stale_mode": "manifest",
       "machine": {
         "title_defects": [
-          {
-            "kind": "split-artifact",
-            "label": "sec:mesons-nucleons-categorical-proton-unique",
-            "title": "Mesons and nucleons : characterisation",
-            "detail": "trailing \" : characterisation\" (known auto-split tag) — meaningless out of context"
-          },
-          {
-            "kind": "split-artifact",
-            "label": "sec:em-completeness-gauge-coupling-e-hartree-categorical",
-            "title": "EM completeness and gauge coupling : characterisation",
-            "detail": "trailing \" : characterisation\" (known auto-split tag) — meaningless out of context"
-          },
           {
             "kind": "compound",
             "label": "sec:archimedean-hartree-crystal",
             "title": "Archimedean Hartree, crystal basis, and Mathlib bridge",
             "detail": "3 comma-joined concepts — not concise"
-          },
-          {
-            "kind": "split-artifact",
-            "label": "sec:archimedean-hartree-crystal-mass-tower-deeper",
-            "title": "Archimedean Hartree, crystal basis, and Mathlib bridge : characterisation",
-            "detail": "trailing \" : characterisation\" (known auto-split tag) — meaningless out of context"
-          },
-          {
-            "kind": "too-long",
-            "label": "sec:archimedean-hartree-crystal-mass-tower-deeper",
-            "title": "Archimedean Hartree, crystal basis, and Mathlib bridge : characterisation",
-            "detail": "73 chars > 72"
-          },
-          {
-            "kind": "compound",
-            "label": "sec:archimedean-hartree-crystal-mass-tower-deeper",
-            "title": "Archimedean Hartree, crystal basis, and Mathlib bridge : characterisation",
-            "detail": "3 comma-joined concepts — not concise"
-          },
-          {
-            "kind": "split-artifact",
-            "label": "sec:archimedean-hartree-crystal-alpha-em-categorical",
-            "title": "Archimedean Hartree, crystal basis, and Mathlib bridge (continued) : characterisation",
-            "detail": "trailing \" : characterisation\" (known auto-split tag) — meaningless out of context"
-          },
-          {
-            "kind": "too-long",
-            "label": "sec:archimedean-hartree-crystal-alpha-em-categorical",
-            "title": "Archimedean Hartree, crystal basis, and Mathlib bridge (continued) : characterisation",
-            "detail": "85 chars > 72"
-          },
-          {
-            "kind": "compound",
-            "label": "sec:archimedean-hartree-crystal-alpha-em-categorical",
-            "title": "Archimedean Hartree, crystal basis, and Mathlib bridge (continued) : characterisation",
-            "detail": "3 comma-joined concepts — not concise"
-          },
-          {
-            "kind": "split-artifact",
-            "label": "sec:nuclear-stability-decay-hadron-half-life",
-            "title": "Nuclear stability and decay : characterisation",
-            "detail": "trailing \" : characterisation\" (known auto-split tag) — meaningless out of context"
-          },
-          {
-            "kind": "split-artifact",
-            "label": "sec:atomic-shells-foundations-skein-finiteness-bound",
-            "title": "Atomic shells: construction foundations : characterisation",
-            "detail": "trailing \" : characterisation\" (known auto-split tag) — meaningless out of context"
           }
         ],
         "structure_findings": []
@@ -2528,138 +2732,158 @@
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:pair-production-knot-operators": {
           "title": "Pair production and knot-operator selection",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:mesons-nucleons": {
           "title": "Mesons and nucleons",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:mesons-nucleons-categorical-proton-unique": {
-          "title": "Mesons and nucleons : characterisation",
+          "title": "Categorical proton and neutron",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:stable-nucleus-torus-knots": {
           "title": "Stable nucleus and torus knots",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:em-completeness-gauge-coupling": {
           "title": "EM completeness and gauge coupling",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:em-completeness-gauge-coupling-e-hartree-categorical": {
-          "title": "EM completeness and gauge coupling : characterisation",
+          "title": "Categorical Hartree energy and Bohr radius",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:archimedean-hartree-crystal": {
           "title": "Archimedean Hartree, crystal basis, and Mathlib bridge",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:archimedean-hartree-crystal-mass-tower-deeper": {
-          "title": "Archimedean Hartree, crystal basis, and Mathlib bridge : characterisation",
+          "title": "Bloch group and the Faddeev pentagon",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:archimedean-hartree-crystal-alpha-em-categorical": {
-          "title": "Archimedean Hartree, crystal basis, and Mathlib bridge (continued) : characterisation",
+          "title": "Categorical fine-structure and color falsifiability",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:integer-stability-diophantine": {
           "title": "Integer stability and the Diophantine valley",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:nuclear-stability-decay": {
           "title": "Nuclear stability and decay",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:nuclear-stability-decay-hadron-half-life": {
-          "title": "Nuclear stability and decay : characterisation",
+          "title": "Hadron half-life and Gröbner NF",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:atomic-shells-foundations": {
           "title": "Atomic shells: construction foundations",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:atomic-shells-foundations-skein-finiteness-bound": {
-          "title": "Atomic shells: construction foundations : characterisation",
+          "title": "Skein finiteness and shell construction",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:atomic-shells-element-instances": {
           "title": "Atomic shells: per-element instances",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:topological-mass-formula-transcendence": {
           "title": "Topological mass and volume-tower transcendence",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:topological-mass-galois-baryons": {
           "title": "Topological mass: Galois orbit and baryon periods",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:topological-mass-pl-sw-duality": {
           "title": "Topological mass: PL-SW algebraic-geometric duality",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         }
       }
     },
     "q-geometric-langlands": {
       "manifest_hash": "5810085d7ffb",
+      "stale_mode": "manifest",
       "machine": {
         "title_defects": [],
         "structure_findings": [
@@ -2677,68 +2901,78 @@
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:q-local-systems": {
           "title": "$\\mathbb{G}_m$-torsors and $q$-local systems",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:q-hecke-correspondences": {
           "title": "$q$-Hecke correspondences",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:q-gl-conjecture": {
           "title": "The $q$-Geometric Langlands conjecture",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:q-opers": {
           "title": "$q$-Opers and the spectral side",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:q-gl-classical-limit": {
           "title": "Classical limit and physical interpretation",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:q-gl-spectral-trace-tannaka": {
           "title": "Spectral trace and Tannaka--Krein duality",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:q-gl-weil-bound-stability": {
           "title": "Geometric stability via the Weil bound",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:q-geometric-langlands-orphan-reconnect": {
           "title": "Reconnected orphan blocks (Phase 7)",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         }
       }
     },
     "quantum-observable-universes": {
-      "manifest_hash": "9c2aa0ab617c",
+      "manifest_hash": "94c79c30c2cc",
+      "stale_mode": "manifest",
       "machine": {
         "title_defects": [
           {
@@ -2746,12 +2980,6 @@
             "label": "sec:vectors-hadrons",
             "title": "Vectors, hadrons, and the PawLei basis",
             "detail": "3 comma-joined concepts — not concise"
-          },
-          {
-            "kind": "compound",
-            "label": "sec:particles",
-            "title": "Particles, fermions, bosons, and observation",
-            "detail": "4 comma-joined concepts — not concise"
           },
           {
             "kind": "compound",
@@ -2766,14 +2994,7 @@
             "detail": "3 comma-joined concepts — not concise"
           }
         ],
-        "structure_findings": [
-          {
-            "kind": "band",
-            "label": "sec:emergence",
-            "title": "Emergence from observability",
-            "detail": "21 blocks outside the 3–18 section band (P3)"
-          }
-        ]
+        "structure_findings": []
       },
       "agent": {
         "sec:qou-definition": {
@@ -2781,203 +3002,248 @@
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:emergence": {
           "title": "Emergence from observability",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
+        },
+        "sec:emergence-volume-rigidity": {
+          "title": "Volume from rigidity",
+          "depth": 2,
+          "result": "pending",
+          "reviewer": null,
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
+        },
+        "sec:emergence-spin-labels": {
+          "title": "Spin labels",
+          "depth": 2,
+          "result": "pending",
+          "reviewer": null,
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
+        },
+        "sec:emergence-g-action": {
+          "title": "The $G$-action on the substrate",
+          "depth": 2,
+          "result": "pending",
+          "reviewer": null,
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:weight-decomposition": {
           "title": "Maximal torus and weight decomposition",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:vectors-hadrons": {
           "title": "Vectors, hadrons, and the PawLei basis",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:differential-structures-reeb": {
           "title": "Differential structures: categorical Reeb",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:differential-structures-fiber-adjoint": {
           "title": "Differential structures: fibre-adjoint involution",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:substrate-parameter": {
           "title": "Substrate parameter and deformation",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:heisenberg-commutator": {
           "title": "Heisenberg commutator",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:algebraic-substrate-reeb": {
           "title": "The algebraic substrate and the Reeb derivation",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:qou-examples": {
           "title": "Examples of quantum observable universes",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:categorical-dirac-operator": {
           "title": "Categorical Dirac operator",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:categorical-lagrangian": {
           "title": "Categorical Lagrangian",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:categorical-action": {
           "title": "Categorical action",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:variational-equations": {
           "title": "Variational equations and wavefronts",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:particles": {
-          "title": "Particles, fermions, bosons, and observation",
+          "title": "Particle types and observation",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:geometric-interpretations": {
           "title": "Geometric interpretations",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:instanton": {
           "title": "Categorical instanton and self-duality",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:dq-squared": {
           "title": "Non-vanishing of $d_q^2$ and jet prolongation",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:q-deformed-operators": {
           "title": "$q$-Deformed operators",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:q-linear-transforms": {
           "title": "Linear $q$-transforms: heat, Laplace, Fourier",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:q-resolvent-wick": {
           "title": "$q$-Resolvent and categorical Wick rotation",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:q-special-functions-exp-log": {
           "title": "$q$-Exponential and $q$-logarithm",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:q-special-functions-dilog": {
           "title": "$q$-Dilogarithm",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:braiding-conventions": {
           "title": "Braiding conventions: eigenvalue labelling, ribbon, orientation",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:elaboration-intro": {
           "title": "Elaboration: categorical context",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:dq-squared-elaboration": {
           "title": "Non-vanishing of $d_q^2$ and the $q$-jacobiator",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:physical-elaborations": {
           "title": "Physical elaborations",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         }
       }
     },
     "quantum-universes": {
-      "manifest_hash": "cac600ff5188",
+      "manifest_hash": "4aa36f82a5d5",
+      "stale_mode": "manifest",
       "machine": {
-        "title_defects": [
-          {
-            "kind": "split-artifact",
-            "label": "sec:quantum-universe-frobenius-pairing-unique",
-            "title": "The Quantum Universe : unique",
-            "detail": "trailing \" : unique\" (known auto-split tag) — meaningless out of context"
-          }
-        ],
+        "title_defects": [],
         "structure_findings": [
           {
             "kind": "band",
@@ -2993,62 +3259,56 @@
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:rigid-monoidal": {
           "title": "Preliminary: rigid monoidal categories",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:quantum-universe": {
           "title": "The Quantum Universe",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:quantum-universe-frobenius-pairing-unique": {
-          "title": "The Quantum Universe : unique",
+          "title": "Uniqueness and the $\\mathrm{SU}(2)$ realisation",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:qu-consequences": {
           "title": "Consequences of the QU axioms",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:qu-structures": {
           "title": "Structures on a Quantum Universe",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         }
       }
     },
     "stochastic-mechanics": {
-      "manifest_hash": "63ce2668b5cf",
+      "manifest_hash": "23dc99d099f0",
+      "stale_mode": "manifest",
       "machine": {
-        "title_defects": [
-          {
-            "kind": "split-artifact",
-            "label": "sec:markov-axioms-braid-link-li2q-phiq-bar",
-            "title": "Markov axioms and braid-link enumeration : generation",
-            "detail": "trailing \" : generation\" (known auto-split tag) — meaningless out of context"
-          },
-          {
-            "kind": "split-artifact",
-            "label": "sec:markov-axioms-braid-link-markov-closure-map",
-            "title": "Markov axioms and braid-link enumeration (continued) : generation",
-            "detail": "trailing \" : generation\" (known auto-split tag) — meaningless out of context"
-          }
-        ],
+        "title_defects": [],
         "structure_findings": [
           {
             "kind": "band",
@@ -3064,49 +3324,48 @@
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:markov-axioms-braid-link": {
           "title": "Markov axioms and braid-link enumeration",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
-        },
-        "sec:markov-axioms-braid-link-li2q-phiq-bar": {
-          "title": "Markov axioms and braid-link enumeration : generation",
-          "depth": 1,
-          "result": "pending",
-          "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:markov-axioms-braid-link-markov-closure-map": {
-          "title": "Markov axioms and braid-link enumeration (continued) : generation",
+          "title": "The Markov closure map and $c_k$ extraction",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:classical-limit-construction": {
           "title": "Classical limit: construction",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:classical-limit-implications": {
           "title": "Classical limit: implications",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:stochastic-mechanics-orphan-reconnect": {
           "title": "Reconnected orphan blocks (Phase 7)",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         }
       }
     }

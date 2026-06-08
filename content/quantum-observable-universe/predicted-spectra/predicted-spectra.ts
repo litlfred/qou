@@ -74,7 +74,7 @@ export default chapter({
       ],
     }),
     section({
-      title: "Mesons and nucleons : characterisation",
+      title: "Categorical proton and neutron",
       label: "sec:mesons-nucleons-categorical-proton-unique",
       blocks: [
         "mesons-nucleons-categorical-proton-unique-intro",
@@ -124,7 +124,7 @@ export default chapter({
       ],
     }),
     section({
-      title: "EM completeness and gauge coupling : characterisation",
+      title: "Categorical Hartree energy and Bohr radius",
       label: "sec:em-completeness-gauge-coupling-e-hartree-categorical",
       blocks: [
         "em-completeness-gauge-coupling-e-hartree-categorical-intro",
@@ -163,7 +163,7 @@ export default chapter({
       ],
     }),
     section({
-      title: "Archimedean Hartree, crystal basis, and Mathlib bridge : characterisation",
+      title: "Bloch group and the Faddeev pentagon",
       label: "sec:archimedean-hartree-crystal-mass-tower-deeper",
       blocks: [
         "archimedean-hartree-crystal-mass-tower-deeper-intro",
@@ -178,7 +178,7 @@ export default chapter({
       ],
     }),
     section({
-      title: "Archimedean Hartree, crystal basis, and Mathlib bridge (continued) : characterisation",
+      title: "Categorical fine-structure and color falsifiability",
       label: "sec:archimedean-hartree-crystal-alpha-em-categorical",
       blocks: [
         "archimedean-hartree-crystal-alpha-em-categorical-intro",
@@ -228,7 +228,7 @@ export default chapter({
       ],
     }),
     section({
-      title: "Nuclear stability and decay : characterisation",
+      title: "Hadron half-life and Gröbner NF",
       label: "sec:nuclear-stability-decay-hadron-half-life",
       blocks: [
         "nuclear-stability-decay-hadron-half-life-intro",
@@ -270,7 +270,7 @@ export default chapter({
       ],
     }),
     section({
-      title: "Atomic shells: construction foundations : characterisation",
+      title: "Skein finiteness and shell construction",
       label: "sec:atomic-shells-foundations-skein-finiteness-bound",
       blocks: [
         "atomic-shells-foundations-skein-finiteness-bound-intro",

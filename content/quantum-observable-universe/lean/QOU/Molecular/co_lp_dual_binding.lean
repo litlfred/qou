@@ -54,20 +54,20 @@ $$
 *where $\Delta\Phi_1(k) = \Phi_1^{\mathrm{sep}} - \Phi_1^{CO}(k)$
 is the $\Phi_1$ reduction from $k$ shared pairs.*
 
-*The marginal $\Phi_1$ reduction per additional bond:*
+*Corrected mechanism (2026-06-08, witness `co-bond-order-active-set`):
+the triple bond is three ORTHOGONAL orbital channels
+$\sigma \perp \pi_x \perp \pi_y$, each an independent $H_2$-scale covalent
+channel.  A single interleaved $(2k+2)$-strand chain is refuted by
+computation — only $\sigma$ binds; the $\pi$ pairs anti-bind as $e$–$e$
+repulsion accumulates in one orbital (active set $= 1$, not $3$).  Bond
+order $=$ number of occupied orthogonal channels $=$ valence budget
+$V_{CO} = 3$ (carbon: 3 of 4 open sites; oxygen: 2 + 1 dative).  The
+earlier "decreasing-but-positive marginal in one chain" mechanism does
+not occur.  The Lean claim below (`k_star = 3` is $\Phi_1$-optimal) is
+unchanged by this correction — only its justification is.
 
-| Bond | $k$ | Additional crossings | $\Delta\Phi_1(k) - \Delta\Phi_1(k-1)$ |
-|:-----|:----|:---------------------|:--------------------------------------|
-| $\sigma$ | 1 | 2 attractive $\sigma^{-1}$ | Large positive (first bond, biggest gain) |
-| $\pi_1$ | 2 | 2 attractive $\sigma^{-1}$, less $e$-$e$ repulsion penalty | Moderate positive |
-| $\pi_2$ | 3 | 2 attractive $\sigma^{-1}$, more $e$-$e$ repulsion penalty | Small positive but still $> 0$ |
-
-*Triple bond wins because the marginal binding gain from the
-3rd shared pair still exceeds the additional electron-electron
-repulsion penalty ($ee$ crossing is $\sigma$, eigenvalue $q$).*
-
-*The observed $CO$ bond dissociation energy is
-$D_0(CO) \approx 11.
+The observed $CO$ bond dissociation energy is
+$D_0(CO) \approx 11.09$ eV (strongest diatomic).
 
     The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
     upgrading requires choosing the appropriate Lean types (Polynomial /

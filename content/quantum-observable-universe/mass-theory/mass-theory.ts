@@ -94,36 +94,69 @@ export default chapter({
       title: "Algebraic face: transfer matrices, Skein mass, and Markov corrections",
       label: "sec:mass-algebraic-consolidated",
       blocks: [
-                "mass-algebraic-consolidated-intro",
-"pentagon-uv-commutation",
-        "transfer-matrix-operator",
-        "transfer-matrix-identities",
-        "skein-polynomial-transfer-matrix",
-        "beta-decay-transfer-matrix",
-        "ground-state-ordering",
-        "skein-generation",
-        "skein-generation-proof",
-        "skein-mass-from-linking",
-        "skein-mass-from-linking-proof",
-        "corrected-markov-trace",
-        "mass-ordering-corrected",
-        "frobenius-gram-matrix",
-        "gram-determinant-plancherel-ratio",
-        "archimedean-functor-uniqueness",
-        "em-spectral-completeness",
-        "reidemeister-mass-invariance",
-        "q-beta-categorical-precision-ladder",
-        "q-beta-c3-hopf-three-fold-markov",
-        "ck-extraction-from-algebraic-rules",
-        "typed-b3-sub-braid-extraction",
-        "cl3-zeta5-geometric-realization",
-        "lusztig-vs-hermitian-bar",
-        "q-zero-complex-extension",
-        "two-filtration-bridge-general",
-        "two-filtration-bridge",
-        "hq-bi-filtration",
-        "joint-galois-braid-action",
-        "adelic-substrate",
+        "mass-algebraic-consolidated-intro",
+      ],
+      // Over-weight split (P4): 30-block algebraic-face section into 4
+      // reading-order sub-arcs (the compound title's three themes plus
+      // the Q_beta and filtration tails). Order preserved; parent keeps
+      // the intro.
+      subsections: [
+        section({
+          title: "Transfer matrices and Skein mass",
+          label: "sec:mass-algebraic-transfer-skein",
+          blocks: [
+            "pentagon-uv-commutation",
+            "transfer-matrix-operator",
+            "transfer-matrix-identities",
+            "skein-polynomial-transfer-matrix",
+            "beta-decay-transfer-matrix",
+            "ground-state-ordering",
+            "skein-generation",
+            "skein-generation-proof",
+            "skein-mass-from-linking",
+            "skein-mass-from-linking-proof",
+          ],
+        }),
+        section({
+          title: "Markov corrections and the Gram matrix",
+          label: "sec:mass-algebraic-markov-gram",
+          blocks: [
+            "corrected-markov-trace",
+            "mass-ordering-corrected",
+            "frobenius-gram-matrix",
+            "gram-determinant-plancherel-ratio",
+            "archimedean-functor-uniqueness",
+            "em-spectral-completeness",
+            "reidemeister-mass-invariance",
+            // Re-homed from the trace/operator collection: the Borromean
+            // Markov-trace closed form belongs with the Markov corrections.
+            "borromean-markov-trace-closed-form",
+          ],
+        }),
+        section({
+          title: "The $Q_\\beta$ precision ladder",
+          label: "sec:mass-algebraic-qbeta-ladder",
+          blocks: [
+            "q-beta-categorical-precision-ladder",
+            "q-beta-c3-hopf-three-fold-markov",
+            "ck-extraction-from-algebraic-rules",
+            "typed-b3-sub-braid-extraction",
+            "cl3-zeta5-geometric-realization",
+          ],
+        }),
+        section({
+          title: "Bi-filtration and the adelic substrate",
+          label: "sec:mass-algebraic-bifiltration-adelic",
+          blocks: [
+            "lusztig-vs-hermitian-bar",
+            "q-zero-complex-extension",
+            "two-filtration-bridge-general",
+            "two-filtration-bridge",
+            "hq-bi-filtration",
+            "joint-galois-braid-action",
+            "adelic-substrate",
+          ],
+        }),
       ],
     }),
 
@@ -142,11 +175,16 @@ export default chapter({
         "z-habiro-ring",
         "brane-tower-z-habiro",
         "brane-tower-z-habiro-table1-data",
+        // Re-homed from the trace/operator collection: the Hoefsmit extended-
+        // Wedderburn cell content belongs with the construction.
+        "hoefsmit-ew-cell-content",
+        "hoefsmit-ew-cell-content-table1-data",
+        "hoefsmit-ew-cell-content-table2-data",
       ],
     }),
 
     section({
-      title: "Hoefsmit convergence: construction : generation",
+      title: "Per-partition brane-tower convergence",
       label: "sec:hoefsmit-convergence-construction-per-partition-k",
       blocks: [
         "hoefsmit-convergence-construction-per-partition-k-intro",
@@ -169,38 +207,66 @@ export default chapter({
       label: "sec:hoefsmit-convergence-magic-shells",
       blocks: [
         "hoefsmit-convergence-magic-shells-intro",
-        "two-row-stratum",
-        "he4-channel-active-set",
-        "he4-two-row-dominance",
-        "markov-trace-frobenius-selection",
-        "pn-averaging-uniqueness",
-        "averaging-resonance-rule",
-        "meson-color-tube-uniqueness",
-        "bring-residue-resolvent",
-        "binding-alpha-shift-extension",
-        "magic-A-binding-formula",
-        "bond-order-eq-jet-degree",
-        "bond-order-eq-jet-degree-proof",
-        "binding-manybody-jet-filtration",
-        "binding-genfun-qdifference",
-        "binding-genfun-qdifference-proof",
-        "binding-closure-conditional",
-        "binding-closure-conditional-proof",
-        "qdifference-kernel-prolongation-symbol",
-        "prolonged-periods-fixed-depth",
-        "prolonged-periods-fixed-depth-proof",
-        "sl2-prolongation-recurrence",
-        "sl2-prolongation-recurrence-proof",
-        "substrate-cohomology-calibration-story",
-        "electron-period-base",
-        "electron-period-base-proof",
-        "calibration-cohomology-alignment",
-        "calibration-cohomology-alignment-proof",
-        "bar-parity-split",
-        "bar-parity-split-proof",
-        "lr-coefficient-hecke",
-        "hecke-1d-irrep-closed-form-character",
-        "hoefsmit-V21-cos-symmetrization",
+      ],
+      // Over-weight split (P4): 33-block magic-shell section into 4
+      // reading-order sub-arcs. Order preserved; parent keeps the intro.
+      subsections: [
+        section({
+          title: "He-4 channel and magic-A binding",
+          label: "sec:hoefsmit-he4-magic-a-binding",
+          blocks: [
+            "two-row-stratum",
+            "he4-channel-active-set",
+            "he4-two-row-dominance",
+            "markov-trace-frobenius-selection",
+            "pn-averaging-uniqueness",
+            "averaging-resonance-rule",
+            "meson-color-tube-uniqueness",
+            "bring-residue-resolvent",
+            "binding-alpha-shift-extension",
+            "magic-A-binding-formula",
+          ],
+        }),
+        section({
+          title: "Binding generating function and closure",
+          label: "sec:hoefsmit-binding-genfun-closure",
+          blocks: [
+            "bond-order-eq-jet-degree",
+            "bond-order-eq-jet-degree-proof",
+            "binding-manybody-jet-filtration",
+            "binding-genfun-qdifference",
+            "binding-genfun-qdifference-proof",
+            "binding-closure-conditional",
+            "binding-closure-conditional-proof",
+          ],
+        }),
+        section({
+          title: "q-difference prolongation and periods",
+          label: "sec:hoefsmit-qdifference-prolongation",
+          blocks: [
+            "qdifference-kernel-prolongation-symbol",
+            "prolonged-periods-fixed-depth",
+            "prolonged-periods-fixed-depth-proof",
+            "sl2-prolongation-recurrence",
+            "sl2-prolongation-recurrence-proof",
+          ],
+        }),
+        section({
+          title: "Substrate cohomology calibration",
+          label: "sec:hoefsmit-substrate-cohomology-calibration",
+          blocks: [
+            "substrate-cohomology-calibration-story",
+            "electron-period-base",
+            "electron-period-base-proof",
+            "calibration-cohomology-alignment",
+            "calibration-cohomology-alignment-proof",
+            "bar-parity-split",
+            "bar-parity-split-proof",
+            "lr-coefficient-hecke",
+            "hecke-1d-irrep-closed-form-character",
+            "hoefsmit-V21-cos-symmetrization",
+          ],
+        }),
       ],
     }),
 
@@ -303,6 +369,10 @@ export default chapter({
         "q-pochhammer-partial-product",
         "phi-q-categorical-truncation",
         "phi-q-categorical-truncation-proof",
+        // Re-homed from the geometric-bridges collection: the pentagon
+        // identities belong with the quantum dilogarithm.
+        "pachner-pentagon-borromean",
+        "q-rogers-pentagon-archimedean",
       ],
     }),
     section({
@@ -326,10 +396,13 @@ export default chapter({
         "gb-depth-period-correspondence",
         "vc-as-depth-2-instance",
         "bring-figure-eight-depth-2-witness",
+        // Re-homed from the geometric-bridges collection: Kashaev density =
+        // SDP multiplicity belongs with the Kashaev-volume realization.
+        "kashaev-density-equals-sdp-multiplicity",
       ],
     }),
     section({
-      title: "Geometric face: mass-bridge orphan blocks",
+      title: "Geometric face: pentagon and volume bridges",
       label: "sec:mass-bridge-orphan-reconnect",
       blocks: [
         "mass-bridge-orphan-reconnect-intro",
@@ -340,12 +413,12 @@ export default chapter({
         "dim-master-pentagon",
         "geometric-invariant-piecewise",
         "hopf-link-non-magic",
-        "kashaev-density-equals-sdp-multiplicity",
         "p-from-braid-mirror",
-        "pachner-pentagon-borromean",
         "poincare-lefschetz-borromean",
-        "q-rogers-pentagon-archimedean",
         "volume-perturbation-formula",
+        // Re-homed (high-confidence): kashaev-density-equals-sdp-multiplicity
+        // -> sec:archimedean-realization-kashaev; pachner-pentagon-borromean +
+        // q-rogers-pentagon-archimedean -> sec:kashiwara-jones-quantum-dilog.
       ],
     }),
 
@@ -390,6 +463,9 @@ export default chapter({
         "shared-denominator-cusp-holonomy",
         "quantum-bloch-group",
         "degree-two-baryon-weight",
+        // Re-homed from the weak-spectral/isospin collection: the Borromean
+        // Bloch-group (K3) element belongs with the Bloch group closure.
+        "borromean-bloch-group-element",
       ],
     }),
 
@@ -398,31 +474,54 @@ export default chapter({
       label: "sec:phi-q-markov-schur-weyl-foundations",
       blocks: [
         "intro-phi-q-markov-schur-weyl-tower",
-        "markov-trace-factorization",
-        // Algebraic shortcut of KS Thm 8 (multiplicative invariant) via the Markov property.
-        "ks-multiplicativity-via-markov",
-        "markov-trace-ratio-exact",
-        "vassiliev-filtration-mass-tower",
-        "hecke-quandle",
-        "knot-operator-bring-action",
-        "phi-q-resums-trace-series",
-        "phi-q-resums-trace-series-table-data",
-        "markov-axiom-recursive-ascent",
-        "per-braid-mass-tower",
-        "lepton-mass-tower-canonical",
-        "lepton-bring-surface-h3-3channel",
-        "conj-lepton-tower-h-n-plus-1-branching",
-        "conj-atom-braid-exterior-algebra",
-        "conj-psd-trace-orthogonality",
-        "three-halves-structural-factor",
-        "rem-im-q-vs-p-skew",
-        "conj-im-q-physical-role",
-        "schur-weyl-mass-decomposition",
-        "gb-residue-spectral-sum",
-        "categorical-mass-positivity",
-        "mass-spectrum-generating-function",
-        "graded-markov-trace-from-gs-filtration",
-        "residue-at-root",
+      ],
+      // Over-weight split (P4): 24-block foundations section into 3
+      // reading-order sub-arcs (matching the compound title). Order
+      // preserved; parent keeps the intro.
+      subsections: [
+        section({
+          title: "Markov trace resummation",
+          label: "sec:phi-q-markov-resummation",
+          blocks: [
+            "markov-trace-factorization",
+            // Algebraic shortcut of KS Thm 8 (multiplicative invariant) via the Markov property.
+            "ks-multiplicativity-via-markov",
+            "markov-trace-ratio-exact",
+            "vassiliev-filtration-mass-tower",
+            "hecke-quandle",
+            "knot-operator-bring-action",
+            "phi-q-resums-trace-series",
+            "phi-q-resums-trace-series-table-data",
+            "markov-axiom-recursive-ascent",
+            "per-braid-mass-tower",
+          ],
+        }),
+        section({
+          title: "The lepton mass tower",
+          label: "sec:phi-q-lepton-mass-tower",
+          blocks: [
+            "lepton-mass-tower-canonical",
+            "lepton-bring-surface-h3-3channel",
+            "conj-lepton-tower-h-n-plus-1-branching",
+            "conj-atom-braid-exterior-algebra",
+            "conj-psd-trace-orthogonality",
+            "three-halves-structural-factor",
+            "rem-im-q-vs-p-skew",
+            "conj-im-q-physical-role",
+          ],
+        }),
+        section({
+          title: "Schur-Weyl decomposition and positivity",
+          label: "sec:phi-q-schur-weyl-positivity",
+          blocks: [
+            "schur-weyl-mass-decomposition",
+            "gb-residue-spectral-sum",
+            "categorical-mass-positivity",
+            "mass-spectrum-generating-function",
+            "graded-markov-trace-from-gs-filtration",
+            "residue-at-root",
+          ],
+        }),
       ],
     }),
 
@@ -528,7 +627,7 @@ export default chapter({
     }),
 
     section({
-      title: "Spectral sequence, chirality, and confinement-NF structure : generation",
+      title: "Confinement-NF forcing and the per-nucleon shift",
       label: "sec:spectral-sequence-chirality-confinement-per-nucleon-shift",
       blocks: [
         "spectral-sequence-chirality-confinement-per-nucleon-shift-intro",
@@ -562,6 +661,9 @@ export default chapter({
         "spectral-sequence-h3-explicit",
         "chirality-writhe-ribbon-derivation",
         "gram-matrix-spectral-connection",
+        // Re-homed from the weak-spectral/isospin collection: weak-sector
+        // spectral completeness belongs with the Plancherel-alpha foundations.
+        "weak-spectral-completeness",
       ],
     }),
 
@@ -580,6 +682,9 @@ export default chapter({
         "mass-tower-coefficient-stratification-table1-data",
         "mass-tower-coefficient-stratification-table2-data",
         "flavor-dressing-functor",
+        // Re-homed from the staircase/character collection: the staircase
+        // EW-residual (Weinberg angle) belongs with the mass-tower closure.
+        "staircase-ew-residual",
       ],
     }),
 
@@ -600,7 +705,7 @@ export default chapter({
     }),
 
     section({
-      title: "$\\\\alpha_k$ derivation procedure : generation",
+      title: "Joint-tower SDP and closed-form weights",
       label: "sec:alpha-k-procedure-atom-knot-mass",
       blocks: [
         "alpha-k-procedure-atom-knot-mass-intro",
@@ -635,7 +740,7 @@ export default chapter({
     }),
 
     section({
-      title: "Wenzl bridge, cyclotomic factorisation, and explicit $\\\\alpha_k$ : generation",
+      title: "The LR-tensor character bridge",
       label: "sec:wenzl-bridge-cyclotomic-lr-tensor-character",
       blocks: [
         "wenzl-bridge-cyclotomic-lr-tensor-character-intro",
@@ -686,7 +791,7 @@ export default chapter({
     }),
 
     section({
-      title: "Parity classification, atomic atlas, and discrepancy resolution : generation",
+      title: "The partition-sum proton residual",
       label: "sec:parity-classification-discrepancy-partition-sum-proton",
       blocks: [
         "parity-classification-discrepancy-partition-sum-proton-intro",
@@ -704,7 +809,7 @@ export default chapter({
     }),
 
     section({
-      title: "Six-term mass formula, crystal, isospin, and chirality",
+      title: "Six-term mass formula and crystal isospin",
       label: "sec:six-term-crystal-isospin-chirality",
       blocks: [
         "intro-six-term-crystal-isospin-chirality",
@@ -717,11 +822,14 @@ export default chapter({
         "crystal-isospin-degeneracy",
         "crystal-isospin-degeneracy-table-data",
         "isospin-mass-split-em-localisation",
+        // Re-homed from the weak-spectral/isospin collection: isospin from the
+        // canonical bowtie belongs with crystal isospin.
+        "isospin-from-canonical-bowtie",
       ],
     }),
 
     section({
-      title: "Six-term mass formula, crystal, isospin, and chirality : generation",
+      title: "Option E: crystal bases and chirality duality",
       label: "sec:six-term-crystal-isospin-chirality-option-e-isospin",
       blocks: [
         "six-term-crystal-isospin-chirality-option-e-isospin-intro",
@@ -779,45 +887,65 @@ export default chapter({
 
     // ═══ ORPHAN RECONNECTS ═════════════════════════════════════
     section({
-      title: "Reconnected orphan blocks (Phase 7)",
+      title: "Weak-spectral and isospin lemmas",
       label: "sec:mass-theory-orphan-reconnect",
       blocks: [
         "mass-theory-orphan-reconnect-intro",
-        "borromean-bloch-group-element",
         "categorical-higgs-mechanism",
         "interface-knot-markov-z",
-        "isospin-from-canonical-bowtie",
         "rho-k-h3a-refinement",
         "s4-s3-half-symmetric-projection",
-        "weak-spectral-completeness",
         "weak-symmetric-normalization",
         "z-eq-n-rho-correction",
+        // Re-homed (high-confidence): borromean-bloch-group-element ->
+        // sec:mutant-jones-bloch-group; isospin-from-canonical-bowtie ->
+        // sec:six-term-crystal-isospin-chirality; weak-spectral-completeness
+        // -> sec:plancherel-alpha-spectral.
       ],
     }),
 
     section({
-      title: "Reconnected orphan blocks (Phase 7)",
+      title: "Trace and staircase lemmas",
       label: "sec:mass-application-orphan-reconnect",
       blocks: [
         "mass-application-orphan-reconnect-intro",
-        "block-multiplicativity-v-free",
-        "borromean-markov-trace-closed-form",
-        "crystal-r-matrix-sub-lemma",
-        "depth-stratified-frobenius-reciprocity",
-        "eigenvalue-product-expansion",
-        "hoefsmit-ew-cell-content",
-        "hoefsmit-ew-cell-content-table1-data",
-        "hoefsmit-ew-cell-content-table2-data",
-        "knot-operator-lp-selection",
-        "knot-operator-transition",
-        "qmn-recursive-memoized",
-        "sigma-shell-from-beta-chain-derivation",
-        "sigma-shell-from-beta-chain-derivation-table-data",
-        "staircase-corner-hook",
-        "staircase-ew-residual",
-        "staircase-partition",
-        "symbolic-character-table",
-        "outro-mass-theory",
+      ],
+      // De-dup + over-weight split: 19-block reconnected-orphan grab-bag
+      // retitled (was a second "Reconnected orphan blocks (Phase 7)",
+      // duplicating sec:mass-theory-orphan-reconnect) and split into 2
+      // reading-order sub-arcs. A deeper re-home of these blocks into
+      // thematic sections elsewhere is a follow-up.
+      subsections: [
+        section({
+          title: "Trace and operator lemmas",
+          label: "sec:mass-application-trace-operator-lemmas",
+          blocks: [
+            "block-multiplicativity-v-free",
+            "crystal-r-matrix-sub-lemma",
+            "depth-stratified-frobenius-reciprocity",
+            "eigenvalue-product-expansion",
+            "knot-operator-lp-selection",
+            // Re-homed: borromean-markov-trace-closed-form ->
+            // sec:mass-algebraic-markov-gram; hoefsmit-ew-cell-content (+2
+            // tables) -> sec:hoefsmit-convergence-construction.
+          ],
+        }),
+        section({
+          title: "Staircase and character lemmas",
+          label: "sec:mass-application-staircase-hoefsmit",
+          blocks: [
+            "knot-operator-transition",
+            "qmn-recursive-memoized",
+            "sigma-shell-from-beta-chain-derivation",
+            "sigma-shell-from-beta-chain-derivation-table-data",
+            "staircase-corner-hook",
+            "staircase-partition",
+            "symbolic-character-table",
+            "outro-mass-theory",
+            // Re-homed: staircase-ew-residual ->
+            // sec:plancherel-knot-factor-mass-tower.
+          ],
+        }),
       ],
     }),
 

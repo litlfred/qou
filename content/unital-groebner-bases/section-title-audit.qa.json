@@ -4,6 +4,7 @@
   "chapters": {
     "buchberger-and-pbw": {
       "manifest_hash": "07f02efb866e",
+      "stale_mode": "manifest",
       "machine": {
         "title_defects": [],
         "structure_findings": [
@@ -39,33 +40,38 @@
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:ugb-buchberger": {
           "title": "Buchberger's theorem over $R$",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:ugb-jet-stratified": {
           "title": "Jet-stratified reduction",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:ugb-pbw": {
           "title": "The PBW theorem over a commutative ring",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         }
       }
     },
     "introduction": {
       "manifest_hash": "b5334e79e411",
+      "stale_mode": "manifest",
       "machine": {
         "title_defects": [],
         "structure_findings": [
@@ -83,19 +89,22 @@
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:ugb-main-result": {
           "title": "Main result",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         }
       }
     },
     "unital-groebner-bases-chapter": {
       "manifest_hash": "55f1f9ad4e3a",
+      "stale_mode": "manifest",
       "machine": {
         "title_defects": [
           {
@@ -126,28 +135,32 @@
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:ugb-definitions": {
           "title": "Monomials, orderings, and admissible systems",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:ugb-division": {
           "title": "Division algorithm and Gröbner--Shirshov bases",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         },
         "sec:ugb-main-results": {
           "title": "Main results",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
-          "reviewed_hash": null
+          "reviewed_hash": null,
+          "stale_mode": "manifest"
         }
       }
     }

@@ -303,6 +303,40 @@ un-shallow can't get `lake build QOU` past the transitive-dep fetch
 session — fall back to a rigorous hand-audit and say so explicitly
 rather than claiming a green build you could not run.
 
+### Two more gotchas after a `lake-cache/*` restore (2026-06-08, PR #1999)
+
+Both cost a session **even though the restore itself succeeded**, and
+both occur with **no** `insteadOf` redirect set (so they are additive to
+"addendum point 3" above):
+
+1. **The cache omits the root `Mathlib.olean`.** `lake-cache/qou-v4-24-0`
+   ships thousands of Mathlib *submodule* oleans but **not** the root
+   aggregator (the QOU lib never imports bare `Mathlib`, so it was never
+   built/cached). A NEW file doing `import Mathlib` fails with
+   `object file '…/Mathlib.olean' … does not exist` despite
+   `find … -name '*.olean' | wc -l` showing ~2919 present. **Fix:** import
+   specific modules — e.g. `import Mathlib.Analysis.SpecialFunctions.Sqrt`
+   `+ import Mathlib.Tactic` — never bare `Mathlib` (also the §8
+   minimal-imports rule).
+
+2. **`lake env lean` / `lake build` re-resolves deps and WIPES the
+   restored oleans.** On the restored tree, lake decides several
+   packages' remote URLs "have changed" (the cache was seeded in another
+   env) → `deleting … cloning again` → the Mathlib olean count drops to
+   ~1. **This happens without any `insteadOf` redirect.** **Fix for
+   verifying a single self-contained file: bypass lake** — run `lean`
+   directly with a manual `LEAN_PATH`:
+   ```bash
+   LP=$(find "$ROOT/.lake/packages" -maxdepth 5 -type d -path '*/.lake/build/lib/lean' | tr '\n' ':')
+   # for a file that imports other QOU.* modules, also add the workspace + paper oleans:
+   LP="$LP$ROOT/.lake/build/lib/lean:$ROOT/content/quantum-observable-universe/lean/.lake/build/lib/lean"
+   env LEAN_PATH="$LP" ELAN_NO_OVERRIDE_NOTICE=1 lean path/to/File.lean   # EXIT 0 = checks
+   ```
+   lake never runs ⇒ nothing re-resolves. (Whole-lib builds still need
+   lake; then expect the re-clone and budget for it.) Worked example +
+   sibling scope map:
+   [`docs/coordination/2026-06-08-lean-cache-architecture.md`](../../../docs/coordination/2026-06-08-lean-cache-architecture.md).
+
 **When to use which:**
 
 - LSP iteration on one or two files → cache 403 fallback above (warm

@@ -48,27 +48,49 @@ export default chapter({
       label: "sec:emergence",
       blocks: [
         "emergence-intro",
-        "frobenius-su2",
-        "dagger-su2",
-        "volume-from-rigidity",
-        "volume-from-rigidity-proof",
-        "su2-volume-from-rigidity",
-        "su2-emergence",
-        "su2-emergence-volume-determinant",
-        "su2-emergence-volume-determinant-proof",
-        "su2-emergence-dagger-unitarity",
-        "su2-emergence-dagger-unitarity-proof",
-        "su2-emergence-proof",
-        "su2-emergence-example",
-        "spin-labels",
-        "spin-labels-proof",
-        "spin-labels-su2",
-        "spin-half-representation",
-        // Phase 7 orphan reconnection (2026-05-25):
-        "g-action-on-substrate",
-        "g-action-on-substrate-table1-data",
-        "g-action-on-substrate-table2-data",
-        "g-action-on-substrate-table3-data",
+      ],
+      // Over-weight split (P4): 21-block emergence section into 3
+      // reading-order sub-arcs. Order preserved; parent keeps the intro.
+      subsections: [
+        section({
+          title: "Volume from rigidity",
+          label: "sec:emergence-volume-rigidity",
+          blocks: [
+            "frobenius-su2",
+            "dagger-su2",
+            "volume-from-rigidity",
+            "volume-from-rigidity-proof",
+            "su2-volume-from-rigidity",
+            "su2-emergence",
+            "su2-emergence-volume-determinant",
+            "su2-emergence-volume-determinant-proof",
+            "su2-emergence-dagger-unitarity",
+            "su2-emergence-dagger-unitarity-proof",
+            "su2-emergence-proof",
+          ],
+        }),
+        section({
+          title: "Spin labels",
+          label: "sec:emergence-spin-labels",
+          blocks: [
+            "su2-emergence-example",
+            "spin-labels",
+            "spin-labels-proof",
+            "spin-labels-su2",
+            "spin-half-representation",
+          ],
+        }),
+        section({
+          title: "The $G$-action on the substrate",
+          label: "sec:emergence-g-action",
+          blocks: [
+            // Phase 7 orphan reconnection (2026-05-25):
+            "g-action-on-substrate",
+            "g-action-on-substrate-table1-data",
+            "g-action-on-substrate-table2-data",
+            "g-action-on-substrate-table3-data",
+          ],
+        }),
       ],
     }),
 
@@ -281,7 +303,7 @@ export default chapter({
 
     // ── Particles ─────────────────────────────────────────────────────
     section({
-      title: "Particles, fermions, bosons, and observation",
+      title: "Particle types and observation",
       label: "sec:particles",
       blocks: [
         "particles-intro",

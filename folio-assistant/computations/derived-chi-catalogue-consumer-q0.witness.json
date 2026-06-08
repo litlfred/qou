@@ -1,0 +1,106 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-08T18:27:04.713228+00:00",
+  "commitSha": "8fb64892cef3b2e28d7ecced6a1cfcf594aad22a",
+  "assertions": [
+    {
+      "name": "consumer_q0_wire_in_agrees_with_rust",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "Whether the catalogue path and mpfr-force path each agree with direct-rust (chi_q_via_gp + Laurent sum at q_0) on the Σ_λ χ^λ(T_β)(q_0) aggregate over all partitions of n = 3A for D/T/³He/⁴He, to absolute tolerance 1e-(dps-5). Validates the consumer-side wire-in."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 3664,
+  "computation": "derived-chi-catalogue-consumer-q0",
+  "scriptFile": "derived_chi_catalogue_consumer_q0.py",
+  "scriptHash": "9135e9d71d35",
+  "scriptCommitSha": "8fb64892cef3b2e28d7ecced6a1cfcf594aad22a",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "Consumer-side wire-in of the mpfr matrix-M backend (PR #1993). Provides chi_lambda_at_q0(K, λ, A, q_0) with three-path routing: catalogue → mpfr fallback. Benchmarks the path selection on tr_M-style aggregation across deuteron/³H/³He/⁴He. NO f64 in compute path.",
+  "data": {
+    "dps": 50,
+    "q_0_substrate_str": "1.1099785827513808075916690956107688798744991218736",
+    "isotopes": [
+      {
+        "label": "D",
+        "K": "D",
+        "Z": 1,
+        "N": 1,
+        "A": 2,
+        "n_cells_catalogue": 10,
+        "n_partitions_rust": 10,
+        "n_partitions_mpfr": 10,
+        "catalogue_secs": 0.0011289919999626363,
+        "rust_secs": 3.3737504800000124,
+        "mpfr_secs": 0.03912209299994629,
+        "speedup_mpfr_vs_rust": 86.23645161327755,
+        "agree_catalogue_vs_rust": true,
+        "agree_mpfr_vs_rust": true
+      },
+      {
+        "label": "T",
+        "K": "T",
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "n_cells_catalogue": 4,
+        "n_partitions_rust": 4,
+        "n_partitions_mpfr": 4,
+        "catalogue_secs": 0.0002680149999605419,
+        "rust_secs": 0.01445835000004081,
+        "mpfr_secs": 0.019977102999973795,
+        "speedup_mpfr_vs_rust": 0.7237460807034821,
+        "agree_catalogue_vs_rust": true,
+        "agree_mpfr_vs_rust": true
+      },
+      {
+        "label": "3He",
+        "K": "3He",
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "n_cells_catalogue": 4,
+        "n_partitions_rust": 4,
+        "n_partitions_mpfr": 4,
+        "catalogue_secs": 0.00025385499998265004,
+        "rust_secs": 0.014812046999963968,
+        "mpfr_secs": 0.01961441899993588,
+        "speedup_mpfr_vs_rust": 0.7551611393644844,
+        "agree_catalogue_vs_rust": true,
+        "agree_mpfr_vs_rust": true
+      },
+      {
+        "label": "4He",
+        "K": "4He",
+        "Z": 2,
+        "N": 2,
+        "A": 4,
+        "n_cells_catalogue": 4,
+        "n_partitions_rust": 4,
+        "n_partitions_mpfr": 4,
+        "catalogue_secs": 0.000266285000066091,
+        "rust_secs": 0.07734475799998108,
+        "mpfr_secs": 0.0652748719999181,
+        "speedup_mpfr_vs_rust": 1.1849086123076291,
+        "agree_catalogue_vs_rust": true,
+        "agree_mpfr_vs_rust": true
+      }
+    ]
+  }
+}

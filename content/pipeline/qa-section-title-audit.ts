@@ -43,6 +43,17 @@
  *   bun run content/pipeline/qa-section-title-audit.ts <paper>     # one paper
  *   bun run content/pipeline/qa-section-title-audit.ts --report-only   # never exit 1
  *   bun run content/pipeline/qa-section-title-audit.ts --max-len 64    # length budget
+ *   bun run content/pipeline/qa-section-title-audit.ts --toc <chapter> # TOC tree + weights
+ *   # record an agent title-coherence verdict (after --write-sidecar):
+ *   bun run content/pipeline/qa-section-title-audit.ts --verdict \
+ *       --chapter <paper>/<chapterDir> --list                         # show slots
+ *   bun run content/pipeline/qa-section-title-audit.ts --verdict \
+ *       --chapter <paper>/<chapterDir> --section <label|title> \
+ *       --result <pass|revise|accept> [--reviewer <who>] [--note "why"]
+ *   # add --thorough to either --write-sidecar or --verdict to gate
+ *   # staleness on per-section subtree hashes (contained block content +
+ *   # descendant subsections — all (grand*)-children), not just the
+ *   # chapter manifest. Use it consistently for write + regen.
  *
  * @module content/pipeline/qa-section-title-audit
  */
@@ -59,9 +70,47 @@ const reportOnly = args.includes("--report-only");
 // agent-review slots). CI regenerates then `git diff --exit-code`s them,
 // so a chapter-manifest edit without a re-run fails CI ("sidecars stale").
 const writeSidecar = args.includes("--write-sidecar");
+// `--toc [chapterDir]` prints the chapter→section→subsection tree with
+// per-node block weights + framework flags (for dynamic reorg review),
+// then exits.
+const tocIdx = args.indexOf("--toc");
+const tocMode = tocIdx >= 0;
+const tocChapter = tocMode && args[tocIdx + 1] && !args[tocIdx + 1].startsWith("--") ? args[tocIdx + 1] : undefined;
 const maxLenIdx = args.indexOf("--max-len");
 const MAX_LEN = maxLenIdx >= 0 ? Number(args[maxLenIdx + 1]) : 72;
 const paperArg = args.find((a) => !a.startsWith("--") && a !== String(MAX_LEN));
+
+// `--verdict` records (or lists) an agent title-coherence verdict in a
+// chapter's committed sidecar agent slot. Run `--write-sidecar` first to
+// create the slots, then:
+//   --verdict --chapter <paper>/<dir> --list
+//   --verdict --chapter <paper>/<dir> --section <label|title>
+//             --result <pass|revise|accept> [--reviewer <who>] [--note "why"]
+// The verdict is stamped with the live manifest hash, so it carries
+// forward through later `--write-sidecar` runs only while the chapter
+// manifest is unchanged (a title edit re-opens the slot as `pending`).
+const verdictMode = args.includes("--verdict");
+const vList = args.includes("--list");
+const valOf = (flag: string): string | undefined => {
+  const i = args.indexOf(flag);
+  return i >= 0 && args[i + 1] && !args[i + 1].startsWith("--") ? args[i + 1] : undefined;
+};
+const vChapter = valOf("--chapter");
+const vSection = valOf("--section");
+const vResult = valOf("--result");
+const vReviewer = valOf("--reviewer") ?? "agent";
+const vNote = valOf("--note");
+const VERDICT_RESULTS = new Set(["pass", "revise", "accept"]);
+// `--thorough` deepens the staleness gate: instead of hashing only the
+// chapter manifest, each section/subsection gets a Merkle subtree hash
+// that also folds in the *content* of every block it references
+// (.md/.ts/.lean) and, recursively, all its descendant subsections — so a
+// title-coherence verdict goes stale when any (grand*)-child drifts, not
+// only when the manifest is edited. Applies to both `--write-sidecar` and
+// `--verdict`; use it consistently for the two (a slot records its
+// `stale_mode`, and carry-forward gates each slot against the matching
+// hash, so mixing modes never silently mis-validates).
+const thorough = args.includes("--thorough");
 
 // Trailing ` : <one lowercase word>` is the auto-split artifact. The
 // observed tag vocabulary; any single lowercase trailing word matches.
@@ -211,11 +260,78 @@ function hashContent(s: string): string {
   return createHash("sha256").update(s).digest("hex").slice(0, 12);
 }
 
+/** Existing sibling source files for a block root-name. The chapter
+ *  manifest lists block *root-names* (siblings share the root), so a
+ *  block "foo" resolves to foo.md / foo.ts / foo.lean in the chapter dir. */
+function blockSourceFiles(paper: string, chapterDir: string, root: string): string[] {
+  const out: string[] = [];
+  for (const ext of ["md", "ts", "lean"]) {
+    const p = resolve("content", paper, chapterDir, `${root}.${ext}`);
+    if (existsSync(p)) out.push(p);
+  }
+  return out;
+}
+
+/** Merkle-style staleness hash of a section/subsection node. The node's
+ *  own (title | label | block-root list) is always folded in; every
+ *  referenced block's source-file content is folded in too, and the
+ *  recursion folds each child subsection's hash — so the digest changes
+ *  when any (grand*)-child drifts (a block .md/.ts/.lean edit, a moved
+ *  block, a renamed/retitled subsection). Populates `acc` (nodeKey → hash)
+ *  for every node in the subtree; returns this node's hash. */
+function subtreeStalenessHash(
+  node: Record<string, unknown>,
+  paper: string, chapterDir: string,
+  acc: Map<string, string>,
+): string {
+  const title = typeof node.title === "string" ? node.title : "";
+  const label = typeof node.label === "string" ? node.label : "";
+  const blocks = Array.isArray(node.blocks) ? (node.blocks as unknown[]).map(String) : [];
+  let h = `${title} ${label} ${blocks.join(",")}`;
+  for (const b of blocks)
+    for (const f of blockSourceFiles(paper, chapterDir, b)) {
+      try { h += ` ${b}=${hashContent(readFileSync(f, "utf8"))}`; } catch { /* unreadable block file */ }
+    }
+  const subs = Array.isArray(node.subsections)
+    ? (node.subsections as Record<string, unknown>[]).filter((s) => s && typeof s.title === "string")
+    : [];
+  for (const s of subs) h += ` sub(${subtreeStalenessHash(s, paper, chapterDir, acc)})`;
+  const digest = hashContent(h);
+  acc.set(label || title, digest);
+  return digest;
+}
+
+/** Per-node staleness keys for a chapter. Normal mode: every node shares
+ *  the chapter-manifest hash (legacy gate, no block I/O). `thorough`:
+ *  each node gets its own subtree hash (descendants + block source files),
+ *  falling back to the manifest hash for nodes not found in the tree. */
+function chapterStaleKeys(
+  paper: string, chapterDir: string, sections: unknown, thoroughMode: boolean,
+): { manifestHash: string; keyOf: (nodeKey: string) => string } {
+  const manifestPath = resolve("content", paper, chapterDir, `${chapterDir}.ts`);
+  let manifestHash = "";
+  try { manifestHash = hashContent(readFileSync(manifestPath, "utf8")); } catch { /* */ }
+  if (!thoroughMode) return { manifestHash, keyOf: () => manifestHash };
+  const perNode = new Map<string, string>();
+  if (Array.isArray(sections))
+    for (const s of sections as Record<string, unknown>[])
+      if (s && typeof s.title === "string") subtreeStalenessHash(s, paper, chapterDir, perNode);
+  return { manifestHash, keyOf: (k) => perNode.get(k) ?? manifestHash };
+}
+
 /** Emit committed per-paper title/structure audit sidecars. The
  *  `machine` block is regenerated each run; `agent` review verdicts are
- *  carried forward only while the chapter manifest hash is unchanged
- *  (a manifest edit re-opens the agent review as `stale`). */
-function writeSidecars(allNodes: TitleNode[], flags: Flag[], structureFlags: StructFlag[]): void {
+ *  carried forward only while their staleness key is unchanged. The gate
+ *  is the chapter-manifest hash by default, or — under `--thorough` — a
+ *  per-node subtree hash that also folds in contained block content +
+ *  descendant subsections (see `subtreeStalenessHash`). Each slot records
+ *  its `stale_mode`, and carry-forward gates each slot against the hash
+ *  matching its own mode, so a thorough verdict is never silently
+ *  re-validated by a shallow run (or vice-versa). */
+function writeSidecars(
+  allNodes: TitleNode[], flags: Flag[], structureFlags: StructFlag[],
+  rawSectionsByChapter: Map<string, unknown>, thoroughMode: boolean,
+): void {
   const byPaper = new Map<string, Map<string, TitleNode[]>>();
   for (const n of allNodes) {
     const p = byPaper.get(n.paper) ?? (byPaper.set(n.paper, new Map()), byPaper.get(n.paper)!);
@@ -224,31 +340,41 @@ function writeSidecars(allNodes: TitleNode[], flags: Flag[], structureFlags: Str
   }
   for (const [paper, chapters] of byPaper) {
     const sidecarPath = resolve("content", paper, "section-title-audit.qa.json");
-    let prev: { chapters?: Record<string, { agent?: Record<string, { reviewed_hash?: string }> }> } = {};
+    let prev: { chapters?: Record<string, { agent?: Record<string, { reviewed_hash?: string; stale_mode?: string }> }> } = {};
     try { prev = JSON.parse(readFileSync(sidecarPath, "utf8")); } catch { /* first run */ }
     const out: Record<string, unknown> = { criterion: "voice-section-title-coherence", paper, chapters: {} };
     const chOut = out.chapters as Record<string, unknown>;
     for (const [chapterDir, nodes] of [...chapters].sort((a, b) => a[0].localeCompare(b[0]))) {
-      const manifestPath = resolve("content", paper, chapterDir, `${chapterDir}.ts`);
-      let manifestHash = "";
-      try { manifestHash = hashContent(readFileSync(manifestPath, "utf8")); } catch { /* */ }
+      const prevAgent = prev?.chapters?.[chapterDir]?.agent ?? {};
+      // Compute subtree hashes if this run is thorough OR any carried
+      // verdict was reviewed in thorough mode (so we can re-validate it).
+      const anyThorough = thoroughMode || Object.values(prevAgent).some((s) => s?.stale_mode === "thorough");
+      const sections = rawSectionsByChapter.get(`${paper}/${chapterDir}`);
+      const { manifestHash, keyOf } = chapterStaleKeys(paper, chapterDir, sections, anyThorough);
       const titleFindings = flags
         .filter((f) => f.node.paper === paper && f.node.chapterDir === chapterDir && f.kind !== "duplicate" && f.kind !== "sibling-echo")
         .map((f) => ({ kind: f.kind, label: f.node.label, title: f.node.title, detail: f.detail }));
       const struct = structureFlags
         .filter((f) => f.paper === paper && f.chapterDir === chapterDir)
         .map((f) => ({ kind: f.kind, label: f.label, title: f.title, detail: f.detail }));
-      const prevAgent = prev?.chapters?.[chapterDir]?.agent ?? {};
       const agent: Record<string, unknown> = {};
       for (const n of nodes.filter((x) => x.depth >= 1)) {
         const key = n.label ?? n.title;
         const carried = prevAgent[key];
-        agent[key] = carried && carried.reviewed_hash === manifestHash
+        // Gate each carried slot against the hash matching ITS recorded
+        // mode; legacy slots without `stale_mode` are manifest-mode (the
+        // pre-thorough default) — NOT this run's mode, else a --thorough
+        // run would spuriously stale every manifest-mode verdict. A
+        // brand-new slot adopts this run's mode.
+        const mode = carried ? (carried.stale_mode ?? "manifest") : (thoroughMode ? "thorough" : "manifest");
+        const sk = mode === "thorough" ? keyOf(key) : manifestHash;
+        agent[key] = carried && carried.reviewed_hash === sk
           ? carried
-          : { title: n.title, depth: n.depth, result: "pending", reviewer: null, reviewed_hash: null };
+          : { title: n.title, depth: n.depth, result: "pending", reviewer: null, reviewed_hash: null, stale_mode: thoroughMode ? "thorough" : "manifest" };
       }
       chOut[chapterDir] = {
         manifest_hash: manifestHash,
+        stale_mode: thoroughMode ? "thorough" : "manifest",
         machine: { title_defects: titleFindings, structure_findings: struct },
         agent,
       };
@@ -257,11 +383,139 @@ function writeSidecars(allNodes: TitleNode[], flags: Flag[], structureFlags: Str
   }
 }
 
+/** Agent-verdict writer: stamp a title-coherence result into the chapter
+ *  sidecar's `agent[key]` slot (or list the chapter's slots with
+ *  `--list`). Slots are created by `writeSidecars`; this updates only the
+ *  agent half, leaving the machine findings untouched. The verdict carries
+ *  forward through later `--write-sidecar` runs only while the live
+ *  manifest hash matches `reviewed_hash`. */
+async function recordVerdict(): Promise<void> {
+  if (!vChapter || !vChapter.includes("/")) {
+    console.error("--verdict requires --chapter <paper>/<chapterDir>");
+    process.exit(2);
+  }
+  const [paper, chapterDir] = vChapter.split("/");
+  const sidecarPath = resolve("content", paper, "section-title-audit.qa.json");
+  let sidecar: {
+    chapters?: Record<string, {
+      manifest_hash?: string;
+      machine?: { title_defects?: unknown[]; structure_findings?: unknown[] };
+      agent?: Record<string, Record<string, unknown>>;
+    }>;
+  };
+  try { sidecar = JSON.parse(readFileSync(sidecarPath, "utf8")); }
+  catch {
+    console.error(`no sidecar at ${sidecarPath}\n  → run \`--write-sidecar\` first to create the agent slots.`);
+    process.exit(2);
+  }
+  const chEntry = sidecar.chapters?.[chapterDir];
+  if (!chEntry?.agent) {
+    console.error(`no agent slots for "${chapterDir}" in ${sidecarPath}\n  → run \`--write-sidecar\` first.`);
+    process.exit(2);
+  }
+  const agent = chEntry.agent;
+
+  if (vList) {
+    const keys = Object.keys(agent);
+    console.log(`agent title-coherence slots — ${paper}/${chapterDir} (${keys.length}):`);
+    for (const k of keys) {
+      const s = agent[k];
+      console.log(`  [${(s.result as string) ?? "pending"}] ${k}  "${s.title as string}"`
+        + (s.reviewer ? `  · by ${s.reviewer as string}` : "")
+        + (s.note ? `  — ${s.note as string}` : ""));
+    }
+    const md = chEntry.machine ?? {};
+    const findings = [...(md.title_defects ?? []), ...(md.structure_findings ?? [])] as Array<Record<string, unknown>>;
+    if (findings.length) {
+      console.log(`  machine findings to weigh (${findings.length}):`);
+      for (const f of findings) console.log(`    [${f.kind as string}] ${(f.label ?? f.title) as string}: ${f.detail as string}`);
+    }
+    return;
+  }
+
+  if (!vSection || !vResult) {
+    console.error("--verdict needs --section <label|title> --result <pass|revise|accept>  (or --list)");
+    process.exit(2);
+  }
+  if (!VERDICT_RESULTS.has(vResult))
+    console.error(`  note: result "${vResult}" is not one of pass|revise|accept (recorded anyway)`);
+
+  // Resolve the slot key: exact label first, else exact title.
+  let key: string | undefined = vSection in agent ? vSection : undefined;
+  if (!key) key = Object.keys(agent).find((k) => agent[k].title === vSection);
+  if (!key) {
+    console.error(`section "${vSection}" not found in ${chapterDir}. Available slots:`);
+    for (const k of Object.keys(agent)) console.error(`  ${k}  "${agent[k].title as string}"`);
+    process.exit(2);
+  }
+
+  // Compute the staleness key the verdict is gated on — manifest hash, or
+  // (under --thorough) this section's subtree hash incl. block content +
+  // descendant subsections. Import the manifest for its section tree.
+  const manifestPath = resolve("content", paper, chapterDir, `${chapterDir}.ts`);
+  let sections: unknown = [];
+  try {
+    const mod = (await import(pathToFileURL(manifestPath).href)) as { default?: { sections?: unknown } };
+    sections = mod.default?.sections ?? [];
+  } catch { /* fall back to manifest-only hash */ }
+  const { manifestHash, keyOf } = chapterStaleKeys(paper, chapterDir, sections, thorough);
+  const staleKey = keyOf(key);
+  if (chEntry.manifest_hash && chEntry.manifest_hash !== manifestHash)
+    console.error(`  warning: sidecar machine block is stale (hash ${chEntry.manifest_hash} ≠ live ${manifestHash}); re-run \`--write-sidecar\`${thorough ? " --thorough" : ""} to refresh findings.`);
+
+  agent[key] = {
+    ...agent[key],
+    result: vResult,
+    reviewer: vReviewer,
+    note: vNote ?? agent[key].note ?? null,
+    reviewed_hash: staleKey,
+    stale_mode: thorough ? "thorough" : "manifest",
+    reviewed_at: new Date().toISOString(),
+  };
+  writeFileSync(sidecarPath, JSON.stringify(sidecar, null, 2) + "\n");
+  console.log(`✓ verdict: ${paper}/${chapterDir} · ${key} → ${vResult} (by ${vReviewer})${vNote ? ` — ${vNote}` : ""}`);
+  console.log(`  reviewed_hash ${staleKey} · mode ${thorough ? "thorough" : "manifest"} → ${sidecarPath}`);
+}
+
+/** Print the chapter→section→subsection TOC with block weights +
+ *  framework (P1–P6) flags, for dynamic reorg review. */
+async function printToc(chapterFilter: string | undefined): Promise<void> {
+  for (const m of findChapterManifests(undefined)) {
+    const chapterDir = dirname(m).split("/").pop() ?? "?";
+    if (chapterFilter && chapterDir !== chapterFilter) continue;
+    const paper = dirname(dirname(m)).split("/").pop() ?? "?";
+    let mod: { default?: Record<string, unknown> };
+    try { mod = (await import(pathToFileURL(resolve(m)).href)) as { default?: Record<string, unknown> }; }
+    catch { continue; }
+    const ch = mod.default;
+    if (!ch || typeof ch.title !== "string") continue;
+    const sf: StructFlag[] = [];
+    auditStructure(paper, chapterDir, ch.sections, sf);
+    const flag = (s: Record<string, unknown>) => {
+      const fl = sf.filter((f) => (f.label && f.label === s.label) || (!f.label && f.title === s.title)).map((f) => f.kind);
+      return fl.length ? `  ⚑ ${[...new Set(fl)].join(", ")}` : "";
+    };
+    const secs = (Array.isArray(ch.sections) ? ch.sections : []).filter((s): s is Record<string, unknown> => !!s && typeof (s as Record<string, unknown>).title === "string");
+    const total = secs.reduce((a, s) => a + sectionWeight(s), 0);
+    console.log(`\n═══ ${ch.title}  (${paper}/${chapterDir})  ·  ${secs.length} sections, ${total} blocks ═══`);
+    secs.forEach((s, i) => {
+      console.log(`  ${i + 1}. ${s.title}   [${sectionWeight(s)}]${flag(s)}`);
+      const subs = (Array.isArray(s.subsections) ? s.subsections : []).filter((x): x is Record<string, unknown> => !!x && typeof (x as Record<string, unknown>).title === "string");
+      subs.forEach((sub, j) => console.log(`       ${i + 1}.${j + 1} ${sub.title}   [${sectionWeight(sub)}]${flag(sub)}`));
+    });
+  }
+}
+
 async function main(): Promise<void> {
+  if (tocMode) { await printToc(tocChapter); return; }
+  if (verdictMode) { await recordVerdict(); return; }
   const manifests = findChapterManifests(paperArg);
   const allNodes: TitleNode[] = [];
   const importErrors: string[] = [];
   const structureFlags: StructFlag[] = [];
+  // Raw section trees per chapter (`paper/chapterDir` → sections), used by
+  // writeSidecars for thorough per-node subtree-hash staleness.
+  const rawSectionsByChapter = new Map<string, unknown>();
   // Cache paper titles for the chapter-title parent context.
   const paperTitle = new Map<string, string>();
 
@@ -284,6 +538,7 @@ async function main(): Promise<void> {
     allNodes.push({ paper, chapterDir, depth: 0, title: ch.title, label: typeof ch.label === "string" ? ch.label : undefined, parent: paperTitle.get(paper)! });
     walkSections(ch.sections, { paper, chapterDir }, 1, ch.title, allNodes);
     auditStructure(paper, chapterDir, ch.sections, structureFlags);
+    rawSectionsByChapter.set(`${paper}/${chapterDir}`, ch.sections);
   }
 
   const flags: Flag[] = [];
@@ -353,8 +608,8 @@ async function main(): Promise<void> {
   console.log(`\n  worklist → todos/section-title-audit.json (review each title for conciseness + coherence against its parent)`);
 
   if (writeSidecar) {
-    writeSidecars(allNodes, flags, structureFlags);
-    console.log(`  sidecars → content/<paper>/section-title-audit.qa.json (machine findings + agent slots; CI git-diff-gated)`);
+    writeSidecars(allNodes, flags, structureFlags, rawSectionsByChapter, thorough);
+    console.log(`  sidecars → content/<paper>/section-title-audit.qa.json (machine findings + agent slots${thorough ? "; thorough subtree-hash gate" : ""}; CI git-diff-gated)`);
   }
 
   const depthViolations = structureFlags.filter((f) => f.kind === "depth").length;

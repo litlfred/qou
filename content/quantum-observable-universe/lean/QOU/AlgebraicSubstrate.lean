@@ -16,6 +16,7 @@ import QOU.AlgebraicSubstrate.QFromEpsilon
 import QOU.AlgebraicSubstrate.SurrealRateCalculus
 import QOU.AlgebraicSubstrate.SurrealSqueeze
 import QOU.AlgebraicSubstrate.PvsNPQou
+import QOU.AlgebraicSubstrate.MetallicHierarchy
 
 /-!
 # QOU.AlgebraicSubstrate — Chapter 8 aggregator

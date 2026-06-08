@@ -5,19 +5,27 @@ the live corpus. Staged and audit-gated; **not** a single commit. The
 audit (`content/pipeline/qa-section-title-audit.ts`) gates each stage:
 23 title hard-defects, 75 structure findings at time of writing.
 
-## Stage 0 — infra prerequisites (must land first)
+## Stage 0 — infra prerequisites
 
-Subsections are in the data model but not fully realised:
+Every pipeline component that walks `sections[].blocks[]` must also walk
+`subsections[].blocks[]`. The worked example (Stage 1, confinement)
+surfaced three — two were real gaps, one was already fine:
 
-1. **Renderer.** Add an `\subsection{}` path to `render-latex.ts`
-   (currently every L2 node → `\section`); `\setcounter{secnumdepth}{2}`
-   so subsections number.
-2. **Detangler (P6).** Extend `detangler-no-forward-ref` +
-   `detangler-section-band` (`qa-checkers-detangler*.ts`,
-   `content-graph-analysis.py`) to **recurse into `subsections[]`** so
-   the flattened reading order they validate includes the new level.
+1. **Renderer** — ✅ done. `render-latex.ts` now emits `\subsection{}`
+   for L3 nodes (the `book`/`report` class already numbers them).
+2. **Content validator** — ✅ done. `validate.ts` now loads subsection
+   blocks; otherwise every `uses:` / `interprets:` / cross-ref to a
+   nested block breaks (**39 errors** before the fix → `✓ Valid` after).
+3. **Detangler (P6)** — already correct. `loadChapterGraph` builds the
+   reading-order positions by regex-matching *every* `blocks: [...]`
+   array in source order, which already includes subsection blocks after
+   their parent — so `detangler-no-forward-ref` sees the right order.
+   (`detangler-section-band` treats each subsection as a section, band
+   3–18 vs the 2–12 we want — a minor over-strictness, refine later.)
 
-Until both land, nesting renders flat and can hide a backward edge.
+**Lesson:** subsections are a cross-cutting change. Any *other*
+`sections[]` walker (build, glossary, blueprint export) needs the same
+recursion — audit them before the corpus-wide pass.
 
 ## Stage 1 — fold the 23 `" : <tag>"` artifacts into subsections
 
