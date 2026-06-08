@@ -311,7 +311,7 @@
       }
     },
     "appendix-surreals": {
-      "manifest_hash": "281308b1c23b",
+      "manifest_hash": "bf8b0d1ed1c8",
       "stale_mode": "thorough",
       "machine": {
         "title_defects": [],
@@ -324,12 +324,6 @@
           },
           {
             "kind": "band",
-            "label": "sec:nimber-surreals",
-            "title": "Characteristic-$p$ companion: nimber surreals",
-            "detail": "0 blocks outside the 3–18 section band (P3)"
-          },
-          {
-            "kind": "band",
             "label": "sec:surreal-rate-calculus",
             "title": "Surreal rate calculus and the squeeze inequality",
             "detail": "2 blocks outside the 3–18 section band (P3)"
@@ -338,7 +332,7 @@
             "kind": "over-weight",
             "label": "sec:millennium-bounds-via-surreals",
             "title": "Millennium-problem surreal bounds",
-            "detail": "17 blocks > 2.5× peer mean (6.0) — split into subsections (P4)"
+            "detail": "17 blocks > 2.5× peer mean (6.5) — split into subsections (P4)"
           },
           {
             "kind": "band",
@@ -431,14 +425,6 @@
         },
         "sec:surreal-speculative": {
           "title": "Speculative reformulations",
-          "depth": 1,
-          "result": "pending",
-          "reviewer": null,
-          "reviewed_hash": null,
-          "stale_mode": "thorough"
-        },
-        "sec:nimber-surreals": {
-          "title": "Characteristic-$p$ companion: nimber surreals",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
@@ -1548,7 +1534,7 @@
       }
     },
     "mass-theory": {
-      "manifest_hash": "58841622329e",
+      "manifest_hash": "68a5945412b5",
       "stale_mode": "thorough",
       "machine": {
         "title_defects": [
@@ -1587,22 +1573,9 @@
             "label": "sec:parity-classification-discrepancy",
             "title": "Parity classification, atomic atlas, and discrepancy resolution",
             "detail": "3 comma-joined concepts — not concise"
-          },
-          {
-            "kind": "compound",
-            "label": "sec:six-term-crystal-isospin-chirality",
-            "title": "Six-term mass formula, crystal, isospin, and chirality",
-            "detail": "4 comma-joined concepts — not concise"
           }
         ],
-        "structure_findings": [
-          {
-            "kind": "band",
-            "label": "sec:mass-application-orphan-reconnect",
-            "title": "Reconnected orphan blocks (Phase 7)",
-            "detail": "19 blocks outside the 3–18 section band (P3)"
-          }
-        ]
+        "structure_findings": []
       },
       "agent": {
         "sec:transfer-matrix-mass": {
@@ -1950,7 +1923,7 @@
           "stale_mode": "thorough"
         },
         "sec:six-term-crystal-isospin-chirality": {
-          "title": "Six-term mass formula, crystal, isospin, and chirality",
+          "title": "Six-term mass formula and crystal isospin",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
@@ -1982,7 +1955,7 @@
           "stale_mode": "thorough"
         },
         "sec:mass-theory-orphan-reconnect": {
-          "title": "Reconnected orphan blocks (Phase 7)",
+          "title": "Weak-spectral and isospin lemmas",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
@@ -1990,8 +1963,24 @@
           "stale_mode": "thorough"
         },
         "sec:mass-application-orphan-reconnect": {
-          "title": "Reconnected orphan blocks (Phase 7)",
+          "title": "Trace and staircase lemmas",
           "depth": 1,
+          "result": "pending",
+          "reviewer": null,
+          "reviewed_hash": null,
+          "stale_mode": "thorough"
+        },
+        "sec:mass-application-trace-operator-lemmas": {
+          "title": "Trace and operator lemmas",
+          "depth": 2,
+          "result": "pending",
+          "reviewer": null,
+          "reviewed_hash": null,
+          "stale_mode": "thorough"
+        },
+        "sec:mass-application-staircase-hoefsmit": {
+          "title": "Staircase and character lemmas",
+          "depth": 2,
           "result": "pending",
           "reviewer": null,
           "reviewed_hash": null,
