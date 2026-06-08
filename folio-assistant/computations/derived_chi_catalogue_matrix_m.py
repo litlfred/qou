@@ -11,10 +11,12 @@ as the correct refinement of the (refuted) scalar-ω formula.
 A pure-Python port of the Hoefsmit **natural seminormal form** for
 H_n(q) acting on V_λ, using sympy q-rationals (exact, symbolic in q).
 
-  - `seminormal_matrices_qrat(shape)` — returns the list of
+  - `seminormal_matrices_qrat(shape, q)` — returns the list of
     σ_1, …, σ_{n-1} as sympy matrices over Q(q) in the SYT basis
-  - `chi_lambda_via_matrix_product(shape, word)` — computes χ^λ(T_β)
-    as Tr[ρ^λ(σ_{c_1}) · … · ρ^λ(σ_{c_k})] symbolically in q
+    (caller supplies the `q` symbol, e.g. `sp.Symbol("q", positive=True)`)
+  - `chi_lambda_via_matrix_product(shape, word, q)` — computes χ^λ(T_β)
+    as Tr[ρ^λ(σ_{c_1}) · … · ρ^λ(σ_{c_k})] symbolically in q (same `q`
+    symbol must be threaded through)
   - Cross-validation harness vs Rust `chi_q_via_gp` at numerical q
 
 This is the **symbolic-substrate** for the matrix-M extraction:
@@ -260,9 +262,8 @@ def chi_lambda_via_matrix_product(
     `σ_i⁻¹ = σ_i_matrix - h · eye(dim)`.
     """
     n = sum(shape)
-    syts = standard_young_tableaux(shape)
-    dim = len(syts)
     sigmas = seminormal_matrices_qrat(shape, q)
+    dim = sigmas[0].shape[0] if sigmas else 1
     h = q - 1 / q
     eye = sp.eye(dim)
 
@@ -335,17 +336,24 @@ def cross_validate(
     `chi_q_via_gp` (numerical at each test q). Returns a dict with
     pass/fail per test q.
 
-    q_test_values default to a small set covering generic + roots of
-    unity that are catalogue-relevant: {2, 3, 5, 1+i, 1.1097}.
+    q_test_values default to three values stressing the symbolic
+    simplifier and the Rust f64 evaluator: two small integer probes
+    (`q = 2`, `q = 3`) plus the canonical substrate value
+    `Q_50_DIGIT_STR` from `qou_substrate.constants` (proton-anchored
+    re-pin of 2026-05-28). The substrate value flows through
+    `q_parameter.Q_50_DIGIT_STR` so the test stays pinned to the
+    canonical substrate even if it is re-pinned upstream.
     """
     n = sum(shape)
     if q_test_values is None:
-        # Three rational + one substrate-anchor numerical to stress
-        # the symbolic simplifier and the Rust f64 evaluator.
+        # Two integer probes + the canonical substrate. Substrate is
+        # imported lazily (the validation harness should not pull the
+        # whole substrate package at module import time).
+        from q_parameter import Q_50_DIGIT_STR
         q_test_values = [
             sp.Integer(2),
             sp.Integer(3),
-            sp.Rational(11097, 10000),
+            sp.Rational(Q_50_DIGIT_STR),
         ]
 
     q = sp.Symbol("q", positive=True)
