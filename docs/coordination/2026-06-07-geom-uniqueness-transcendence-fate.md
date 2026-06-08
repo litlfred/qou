@@ -102,3 +102,24 @@ reduced (not closed) per the table above. This does **not** touch the
 separate, still-open step-9a per-knot `VolDensity(K)` *wire-up* gap (cheat
 §9 row 1) — that is a production-migration bug, orthogonal to the
 well-definedness leg settled here.
+
+## Session update — 2026-06-08 (rebase, review-drain, Lean verification)
+
+- **Re-rebased** onto current `main` (was 26→18 commits behind); zero file
+  overlap with main → clean rebase-merge. Force-pushed.
+- **Lean verification (real EXIT 0).** The sandbox from-source Mathlib rebuild
+  thrashed (resource exhaustion: 577 s typeclass inference, max-recursion-depth,
+  cascade `Unknown identifier ℕ/ℝ` — all in *unrelated* main modules, not geom).
+  Verified the geom files directly instead:
+  `lake build QOU.Archimedean.{HyperbolicVolumeIndependence,JetOrderIndependence}`
+  → EXIT 0 (731 jobs); `lake env lean` on `geom-universality.lean` +
+  `three-knot-jet-order-independence.lean` → EXIT 0.
+- **Review drain (#1931).** Gemini `q`-symbol non-determinism → fixed
+  (deterministic by-name lookup). Copilot ×6 → #8 (`vol_density_subsingleton`
+  "unclosed goal") is a **false positive** (`rw` auto-closes the `rfl` goal,
+  confirmed by the EXIT-0 compile); dead `Ref` path → `predicted-spectra/`;
+  `PLCorrectness` lower bound `0≤1`→`0≤0`; witness `set_content_block` +
+  pre-compute builder timing.
+- **Sibling sweep (§8).** Only #1981 (`lean-discharge-axioms-batch-2`) adjacent
+  (same `QOU/Archimedean/` dir, disjoint files/symbols) — intent posted. #1978
+  merged clean (zero overlap). #1982 (elan-bootstrap SessionStart fix) merged.
