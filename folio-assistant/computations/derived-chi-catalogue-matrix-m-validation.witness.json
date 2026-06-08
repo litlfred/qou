@@ -1,0 +1,1027 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-08T08:56:14.347591+00:00",
+  "commitSha": "bd5d7286c2cd52ead05a17a9e5b9d454377b9b21",
+  "assertions": [
+    {
+      "name": "python_hoefsmit_matches_rust_chi_q_via_gp",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "Whether pure-Python sympy q-rational matrix product reproduces the Rust pyhecke_native chi_q_via_gp output on every (n, λ, β) test case in Tests 1-4 (covers n=2..6, all partitions, several braid words). Proves the matrix-M substrate is structurally correct."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 6897,
+  "computation": "derived-chi-catalogue-matrix-m-validation",
+  "scriptFile": "derived_chi_catalogue_matrix_m.py",
+  "scriptHash": "6c5dfccac9ef",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "Pure-Python Hoefsmit (natural / asymmetric seminormal form) validation against Rust pyhecke_native chi_q_via_gp. Substrate for Tier 1 matrix-M extraction (audit doc 2026-06-07-derived-chi-catalogue-tier-1-lr-factorisation). Proves the q-rational matrix pipeline computes the same character as the Rust Geck-Pfeiffer engine on a sweep of (n, λ, β) test cases.",
+  "data": {
+    "n_test_cases": 21,
+    "n_pass": 21,
+    "n_fail": 0,
+    "test_cases": [
+      {
+        "shape": [
+          2
+        ],
+        "word": [
+          [
+            1,
+            1
+          ]
+        ],
+        "n_strands": 2,
+        "python_symbolic_q": "q",
+        "tests": [
+          {
+            "q": "2",
+            "python_symbolic": "2",
+            "rust": "2",
+            "delta": "0",
+            "match": true
+          },
+          {
+            "q": "3",
+            "python_symbolic": "3",
+            "rust": "3",
+            "delta": "0",
+            "match": true
+          },
+          {
+            "q": "11097/10000",
+            "python_symbolic": "11097/10000",
+            "rust": "11097/10000",
+            "delta": "0",
+            "match": true
+          }
+        ],
+        "all_match": true
+      },
+      {
+        "shape": [
+          1,
+          1
+        ],
+        "word": [
+          [
+            1,
+            1
+          ]
+        ],
+        "n_strands": 2,
+        "python_symbolic_q": "-1/q",
+        "tests": [
+          {
+            "q": "2",
+            "python_symbolic": "-1/2",
+            "rust": "-1/2",
+            "delta": "0",
+            "match": true
+          },
+          {
+            "q": "3",
+            "python_symbolic": "-1/3",
+            "rust": "-1/3",
+            "delta": "0",
+            "match": true
+          },
+          {
+            "q": "11097/10000",
+            "python_symbolic": "-10000/11097",
+            "rust": "-10000/11097",
+            "delta": "0",
+            "match": true
+          }
+        ],
+        "all_match": true
+      },
+      {
+        "shape": [
+          3
+        ],
+        "word": [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "n_strands": 3,
+        "python_symbolic_q": "q**3",
+        "tests": [
+          {
+            "q": "2",
+            "python_symbolic": "8",
+            "rust": "8",
+            "delta": "0",
+            "match": true
+          },
+          {
+            "q": "3",
+            "python_symbolic": "27",
+            "rust": "27",
+            "delta": "0",
+            "match": true
+          },
+          {
+            "q": "11097/10000",
+            "python_symbolic": "1366522409673/1000000000000",
+            "rust": "1366522409673/1000000000000",
+            "delta": "0",
+            "match": true
+          }
+        ],
+        "all_match": true
+      },
+      {
+        "shape": [
+          2,
+          1
+        ],
+        "word": [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "n_strands": 3,
+        "python_symbolic_q": "0",
+        "tests": [
+          {
+            "q": "2",
+            "python_symbolic": "0",
+            "rust": "0",
+            "delta": "0",
+            "match": true
+          },
+          {
+            "q": "3",
+            "python_symbolic": "0",
+            "rust": "0",
+            "delta": "0",
+            "match": true
+          },
+          {
+            "q": "11097/10000",
+            "python_symbolic": "0",
+            "rust": "0",
+            "delta": "0",
+            "match": true
+          }
+        ],
+        "all_match": true
+      },
+      {
+        "shape": [
+          1,
+          1,
+          1
+        ],
+        "word": [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "n_strands": 3,
+        "python_symbolic_q": "-1/q**3",
+        "tests": [
+          {
+            "q": "2",
+            "python_symbolic": "-1/8",
+            "rust": "-1/8",
+            "delta": "0",
+            "match": true
+          },
+          {
+            "q": "3",
+            "python_symbolic": "-1/27",
+            "rust": "-1/27",
+            "delta": "0",
+            "match": true
+          },
+          {
+            "q": "11097/10000",
+            "python_symbolic": "-1000000000000/1366522409673",
+            "rust": "-1000000000000/1366522409673",
+            "delta": "0",
+            "match": true
+          }
+        ],
+        "all_match": true
+      },
+      {
+        "shape": [
+          4
+        ],
+        "word": [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            -1,
+            2
+          ]
+        ],
+        "n_strands": 4,
+        "python_symbolic_q": "q**2",
+        "tests": [
+          {
+            "q": "2",
+            "python_symbolic": "4",
+            "rust": "4",
+            "delta": "0",
+            "match": true
+          },
+          {
+            "q": "3",
+            "python_symbolic": "9",
+            "rust": "9",
+            "delta": "0",
+            "match": true
+          },
+          {
+            "q": "11097/10000",
+            "python_symbolic": "123143409/100000000",
+            "rust": "123143409/100000000",
+            "delta": "0",
+            "match": true
+          }
+        ],
+        "all_match": true
+      },
+      {
+        "shape": [
+          3,
+          1
+        ],
+        "word": [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            -1,
+            2
+          ]
+        ],
+        "n_strands": 4,
+        "python_symbolic_q": "q**2 - 1",
+        "tests": [
+          {
+            "q": "2",
+            "python_symbolic": "3",
+            "rust": "3",
+            "delta": "0",
+            "match": true
+          },
+          {
+            "q": "3",
+            "python_symbolic": "8",
+            "rust": "8",
+            "delta": "0",
+            "match": true
+          },
+          {
+            "q": "11097/10000",
+            "python_symbolic": "23143409/100000000",
+            "rust": "23143409/100000000",
+            "delta": "0",
+            "match": true
+          }
+        ],
+        "all_match": true
+      },
+      {
+        "shape": [
+          2,
+          2
+        ],
+        "word": [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            -1,
+            2
+          ]
+        ],
+        "n_strands": 4,
+        "python_symbolic_q": "-1",
+        "tests": [
+          {
+            "q": "2",
+            "python_symbolic": "-1",
+            "rust": "-1",
+            "delta": "0",
+            "match": true
+          },
+          {
+            "q": "3",
+            "python_symbolic": "-1",
+            "rust": "-1",
+            "delta": "0",
+            "match": true
+          },
+          {
+            "q": "11097/10000",
+            "python_symbolic": "-1",
+            "rust": "-1",
+            "delta": "0",
+            "match": true
+          }
+        ],
+        "all_match": true
+      },
+      {
+        "shape": [
+          2,
+          1,
+          1
+        ],
+        "word": [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            -1,
+            2
+          ]
+        ],
+        "n_strands": 4,
+        "python_symbolic_q": "-1 + q**(-2)",
+        "tests": [
+          {
+            "q": "2",
+            "python_symbolic": "-3/4",
+            "rust": "-3/4",
+            "delta": "0",
+            "match": true
+          },
+          {
+            "q": "3",
+            "python_symbolic": "-8/9",
+            "rust": "-8/9",
+            "delta": "0",
+            "match": true
+          },
+          {
+            "q": "11097/10000",
+            "python_symbolic": "-23143409/123143409",
+            "rust": "-23143409/123143409",
+            "delta": "0",
+            "match": true
+          }
+        ],
+        "all_match": true
+      },
+      {
+        "shape": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "word": [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            -1,
+            2
+          ]
+        ],
+        "n_strands": 4,
+        "python_symbolic_q": "q**(-2)",
+        "tests": [
+          {
+            "q": "2",
+            "python_symbolic": "1/4",
+            "rust": "1/4",
+            "delta": "0",
+            "match": true
+          },
+          {
+            "q": "3",
+            "python_symbolic": "1/9",
+            "rust": "1/9",
+            "delta": "0",
+            "match": true
+          },
+          {
+            "q": "11097/10000",
+            "python_symbolic": "100000000/123143409",
+            "rust": "100000000/123143409",
+            "delta": "0",
+            "match": true
+          }
+        ],
+        "all_match": true
+      },
+      {
+        "shape": [
+          6
+        ],
+        "word": [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            1,
+            5
+          ]
+        ],
+        "n_strands": 6,
+        "python_symbolic_q": "q**3",
+        "tests": [
+          {
+            "q": "2",
+            "python_symbolic": "8",
+            "rust": "8",
+            "delta": "0",
+            "match": true
+          },
+          {
+            "q": "3",
+            "python_symbolic": "27",
+            "rust": "27",
+            "delta": "0",
+            "match": true
+          },
+          {
+            "q": "11097/10000",
+            "python_symbolic": "1366522409673/1000000000000",
+            "rust": "1366522409673/1000000000000",
+            "delta": "0",
+            "match": true
+          }
+        ],
+        "all_match": true
+      },
+      {
+        "shape": [
+          5,
+          1
+        ],
+        "word": [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            1,
+            5
+          ]
+        ],
+        "n_strands": 6,
+        "python_symbolic_q": "q*(2*q**2 - 3)",
+        "tests": [
+          {
+            "q": "2",
+            "python_symbolic": "10",
+            "rust": "10",
+            "delta": "0",
+            "match": true
+          },
+          {
+            "q": "3",
+            "python_symbolic": "45",
+            "rust": "45",
+            "delta": "0",
+            "match": true
+          },
+          {
+            "q": "11097/10000",
+            "python_symbolic": "-298027590327/500000000000",
+            "rust": "-298027590327/500000000000",
+            "delta": "0",
+            "match": true
+          }
+        ],
+        "all_match": true
+      },
+      {
+        "shape": [
+          4,
+          2
+        ],
+        "word": [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            1,
+            5
+          ]
+        ],
+        "n_strands": 6,
+        "python_symbolic_q": "3*q**3 - 3*q + 3/q",
+        "tests": [
+          {
+            "q": "2",
+            "python_symbolic": "39/2",
+            "rust": "39/2",
+            "delta": "0",
+            "match": true
+          },
+          {
+            "q": "3",
+            "python_symbolic": "73",
+            "rust": "73",
+            "delta": "0",
+            "match": true
+          },
+          {
+            "q": "11097/10000",
+            "python_symbolic": "12849958280141281/3699000000000000",
+            "rust": "12849958280141281/3699000000000000",
+            "delta": "0",
+            "match": true
+          }
+        ],
+        "all_match": true
+      },
+      {
+        "shape": [
+          4,
+          1,
+          1
+        ],
+        "word": [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            1,
+            5
+          ]
+        ],
+        "n_strands": 6,
+        "python_symbolic_q": "q**3 - 6*q + 3/q",
+        "tests": [
+          {
+            "q": "2",
+            "python_symbolic": "-5/2",
+            "rust": "-5/2",
+            "delta": "0",
+            "match": true
+          },
+          {
+            "q": "3",
+            "python_symbolic": "10",
+            "rust": "10",
+            "delta": "0",
+            "match": true
+          },
+          {
+            "q": "11097/10000",
+            "python_symbolic": "-9573915406619573/3699000000000000",
+            "rust": "-9573915406619573/3699000000000000",
+            "delta": "0",
+            "match": true
+          }
+        ],
+        "all_match": true
+      },
+      {
+        "shape": [
+          3,
+          3
+        ],
+        "word": [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            1,
+            5
+          ]
+        ],
+        "n_strands": 6,
+        "python_symbolic_q": "q**3 - 3*q - 1/q**3",
+        "tests": [
+          {
+            "q": "2",
+            "python_symbolic": "15/8",
+            "rust": "15/8",
+            "delta": "0",
+            "match": true
+          },
+          {
+            "q": "3",
+            "python_symbolic": "485/27",
+            "rust": "485/27",
+            "delta": "0",
+            "match": true
+          },
+          {
+            "q": "11097/10000",
+            "python_symbolic": "-3681906257903881856033071/1366522409673000000000000",
+            "rust": "-3681906257903881856033071/1366522409673000000000000",
+            "delta": "0",
+            "match": true
+          }
+        ],
+        "all_match": true
+      },
+      {
+        "shape": [
+          3,
+          2,
+          1
+        ],
+        "word": [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            1,
+            5
+          ]
+        ],
+        "n_strands": 6,
+        "python_symbolic_q": "2*q**3 - 6*q + 6/q - 2/q**3",
+        "tests": [
+          {
+            "q": "2",
+            "python_symbolic": "27/4",
+            "rust": "27/4",
+            "delta": "0",
+            "match": true
+          },
+          {
+            "q": "3",
+            "python_symbolic": "1024/27",
+            "rust": "1024/27",
+            "delta": "0",
+            "match": true
+          },
+          {
+            "q": "11097/10000",
+            "python_symbolic": "12396012096118143966929/683261204836500000000000",
+            "rust": "12396012096118143966929/683261204836500000000000",
+            "delta": "0",
+            "match": true
+          }
+        ],
+        "all_match": true
+      },
+      {
+        "shape": [
+          3,
+          1,
+          1,
+          1
+        ],
+        "word": [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            1,
+            5
+          ]
+        ],
+        "n_strands": 6,
+        "python_symbolic_q": "-3*q + 6/q - 1/q**3",
+        "tests": [
+          {
+            "q": "2",
+            "python_symbolic": "-25/8",
+            "rust": "-25/8",
+            "delta": "0",
+            "match": true
+          },
+          {
+            "q": "3",
+            "python_symbolic": "-190/27",
+            "rust": "-190/27",
+            "delta": "0",
+            "match": true
+          },
+          {
+            "q": "11097/10000",
+            "python_symbolic": "18393147859576157/13665224096730000",
+            "rust": "18393147859576157/13665224096730000",
+            "delta": "0",
+            "match": true
+          }
+        ],
+        "all_match": true
+      },
+      {
+        "shape": [
+          2,
+          2,
+          2
+        ],
+        "word": [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            1,
+            5
+          ]
+        ],
+        "n_strands": 6,
+        "python_symbolic_q": "q**3 + 3/q - 1/q**3",
+        "tests": [
+          {
+            "q": "2",
+            "python_symbolic": "75/8",
+            "rust": "75/8",
+            "delta": "0",
+            "match": true
+          },
+          {
+            "q": "3",
+            "python_symbolic": "755/27",
+            "rust": "755/27",
+            "delta": "0",
+            "match": true
+          },
+          {
+            "q": "11097/10000",
+            "python_symbolic": "4561685766138502443966929/1366522409673000000000000",
+            "rust": "4561685766138502443966929/1366522409673000000000000",
+            "delta": "0",
+            "match": true
+          }
+        ],
+        "all_match": true
+      },
+      {
+        "shape": [
+          2,
+          2,
+          1,
+          1
+        ],
+        "word": [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            1,
+            5
+          ]
+        ],
+        "n_strands": 6,
+        "python_symbolic_q": "-3*q + 3/q - 3/q**3",
+        "tests": [
+          {
+            "q": "2",
+            "python_symbolic": "-39/8",
+            "rust": "-39/8",
+            "delta": "0",
+            "match": true
+          },
+          {
+            "q": "3",
+            "python_symbolic": "-73/9",
+            "rust": "-73/9",
+            "delta": "0",
+            "match": true
+          },
+          {
+            "q": "11097/10000",
+            "python_symbolic": "-12849958280141281/4555074698910000",
+            "rust": "-12849958280141281/4555074698910000",
+            "delta": "0",
+            "match": true
+          }
+        ],
+        "all_match": true
+      },
+      {
+        "shape": [
+          2,
+          1,
+          1,
+          1,
+          1
+        ],
+        "word": [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            1,
+            5
+          ]
+        ],
+        "n_strands": 6,
+        "python_symbolic_q": "3/q - 2/q**3",
+        "tests": [
+          {
+            "q": "2",
+            "python_symbolic": "5/4",
+            "rust": "5/4",
+            "delta": "0",
+            "match": true
+          },
+          {
+            "q": "3",
+            "python_symbolic": "25/27",
+            "rust": "25/27",
+            "delta": "0",
+            "match": true
+          },
+          {
+            "q": "11097/10000",
+            "python_symbolic": "1694302270000/1366522409673",
+            "rust": "1694302270000/1366522409673",
+            "delta": "0",
+            "match": true
+          }
+        ],
+        "all_match": true
+      },
+      {
+        "shape": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "word": [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            1,
+            5
+          ]
+        ],
+        "n_strands": 6,
+        "python_symbolic_q": "-1/q**3",
+        "tests": [
+          {
+            "q": "2",
+            "python_symbolic": "-1/8",
+            "rust": "-1/8",
+            "delta": "0",
+            "match": true
+          },
+          {
+            "q": "3",
+            "python_symbolic": "-1/27",
+            "rust": "-1/27",
+            "delta": "0",
+            "match": true
+          },
+          {
+            "q": "11097/10000",
+            "python_symbolic": "-1000000000000/1366522409673",
+            "rust": "-1000000000000/1366522409673",
+            "delta": "0",
+            "match": true
+          }
+        ],
+        "all_match": true
+      }
+    ]
+  }
+}
