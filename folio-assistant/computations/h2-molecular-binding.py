@@ -33,10 +33,10 @@ from q_parameter import Q as q0, Q_INV as qi, HA, E_CROSS, TWO_Q
 from witness_base import WitnessBuilder
 
 # ── Parameters ──────────────────────────────────────────────────
+# (No hardcoded m_e / 8G here: those were a vestigial *nuclear* binding
+#  scale.  The molecular binding energy is converted via the DERIVED
+#  E_MOL = m_e·α²/(q+q⁻¹)² scale below — see hecke_core.E_MOL.)
 z = 1.0 / (q0**0.5 + qi**0.5)
-m_e_MeV = 0.51100            # electron mass in MeV
-G = 8.0                      # geometric factor
-alpha_bind = m_e_MeV * G     # universal binding scale (MeV)
 
 # B₃-dressed eigenvalues for pe crossing (from Ch 11):
 # A bare pe crossing has eigenvalues (q⁻¹, -q).
@@ -160,7 +160,6 @@ print("=" * 70)
 print(f"\nSubstrate parameter: q₀ = {q0:.10f}")
 print(f"HA = q - q⁻¹ = {HA:.10f}")
 print(f"z = 1/(q^0.5 + q^-0.5) = {z:.10f}")
-print(f"Binding scale α = m_e × 8G = {alpha_bind:.4f} MeV")
 print()
 print(f"--- Isolated H atom ---")
 print(f"  Dressed HA: q⁵ - q⁻⁵ = {q0**5 - qi**5:.10f}")
