@@ -1,12 +1,12 @@
 # Tier 1 — LR / parabolic factorisation for atomic-braid characters (2026-06-07)
 
-> **Phase 1.2 update (2026-06-08, PR #1980)**: the matrix-M substrate
-> is now PROVED to compute correct characters via the μ_p-level
-> factorisation. Implementation at
+> **Phase 1.2 update (2026-06-08, PR #1980 — Steps 1-3 done)**:
+> matrix-M substrate is PROVED to compute correct characters via the
+> μ_p-level factorisation. Implementation at
 > [`folio-assistant/computations/derived_chi_catalogue_matrix_m.py`](../../folio-assistant/computations/derived_chi_catalogue_matrix_m.py)
 > using sympy q-rational matrices (asymmetric natural form of Young's
 > seminormal basis — every entry stays in Q(q), no square roots).
-> Validation passes:
+> **All 38/38 validation tests pass**:
 >
 >   - **Tests 1-4** (n = 2, 3, 4, 6 on toy braids): 21/21 — Python
 >     Hoefsmit ↔ Rust `chi_q_via_gp` at {q=2, q=3, q=Q_50_DIGIT_STR}.
@@ -15,20 +15,39 @@
 >     `χ^λ = Σ_{μ_p ⊢ 3} Tr[B_p · M_pp · B_n]` equals direct trace
 >     for all 11 partitions of 6.
 >   - **Test 6** (n = 6 PRODUCTION `atom_braid_word_3A(1, 1)`, 23
->     crossings, dim V_λ ≤ 5 subset): see witness for outcome (long-
->     compute, witness emitted by the sweep).
+>     crossings): 6/6 across all dim-V_λ ≤ 5 partitions — production
+>     deuteron braid factorises correctly. Example outputs:
+>       - λ=(6): χ = q^23 (1 term, dim 1)
+>       - λ=(5,1): 10-term Laurent (dim 5)
+>       - λ=(3,3), (2,2,2): 19-term Laurents / q^19 (dim 5)
+>       - λ=(2,1,1,1,1): 10-term Laurent / q^21 (dim 5)
+>       - λ=(1,1,1,1,1,1): -1/q^23 (dim 1)
 >
 > The per-μ_p contributions are q-rational MATRICES with shared
 > denominators (e.g. `q^4 + q^2 + 1` for c_LR=1 H_3 blocks) that
 > cancel in the sum — empirically confirming the §4 refined formula
 > below (matrix-valued bridge factor).
 >
-> **Remaining work (Phase 1.3)**: decompose each μ_p-block further
-> under H_3(right) via σ_4, σ_5 idempotents to extract the full
-> (μ_p, μ_n) factorisation, then tabulate M(μ_p, μ_n, λ; q) for
-> cache-once / use-many. The μ_p-only decomposition above already
-> WORKS as a backend — it just doesn't yet expose the per-μ_n
-> structure that gives the maximum reuse.
+> **Engineering note**: applying `(prod * mat).applyfunc(sp.cancel)`
+> after each matrix multiply is essential — without per-step
+> canonicalisation, the rational-function entries blow up
+> exponentially in word length (the 23-letter deuteron braid OOMs at
+> 7 GB before the fix; comfortably tractable with it).
+>
+> **Roadmap — Steps 4-5 (NOT in this PR)**:
+>
+> - **Step 4 (Phase 1.3 + 1.4) — backend speedup**: extract the
+>   full (μ_p, μ_n) factorisation by decomposing each μ_p-block
+>   further under H_3(right) via Young symmetrizers / Jucys-Murphy
+>   idempotents; tabulate `M(μ_p, μ_n, λ; q_0)` *numerically* at the
+>   substrate so the backend beats direct `chi_q_via_gp`. The current
+>   μ_p-level decomposition is CORRECT but symbolic (slower than the
+>   Rust Geck-Pfeiffer engine); the numerical-cache + (μ_p, μ_n)-
+>   block specialisation is the speedup deliverable.
+> - **Step 5 (Phase 2) — recursive A ≥ 3**: §6.2 multi-bridge
+>   extension. Bridge tables `ω_{μ_0, ν_rest, λ}` grow combinatorially
+>   (51,975 entries for ⁹Be); the recursion is well-defined but the
+>   per-cell numerical computation is multi-session.
 
 > **Status update (2026-06-07 PM, refined)**: the simple LR
 > factorisation formula
