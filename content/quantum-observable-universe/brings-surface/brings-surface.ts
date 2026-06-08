@@ -183,7 +183,7 @@ export default chapter({
       ],
     }),
     section({
-      title: "Descartes condition: torus-knot generators and genus completeness : characterisation",
+      title: "The genus-ideal filtration",
       label: "sec:archimedean-condition-genus-completeness-genus-ideal-characterisation",
       blocks: [
         "archimedean-condition-genus-completeness-genus-ideal-characterisation-intro",
