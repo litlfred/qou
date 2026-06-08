@@ -100,14 +100,19 @@ def _sum_laurent_at_q0_mpf(
 
 
 _PRECOMPUTE_CACHE: dict[tuple, dict] = {}
+_CATALOGUE_CACHE: object | None = None
 
 
 def _precompute_cached(shape: tuple, k_split: int, q_mpf: object) -> dict:
     """Cache mpfr block tables per (shape, k_split). At dps=50 a
     single λ ⊢ 12 precompute is ~5-10 ms; aggregating tr_M over all
     partitions of 12 amortises ~85 precomputes against the sum, so
-    caching turns the precompute into a one-time cost per shape."""
-    key = (shape, k_split, mpmath.mp.dps, str(q_mpf))
+    caching turns the precompute into a one-time cost per shape.
+
+    Key uses `q_mpf` directly (mpmath.mpf is immutable + hashable);
+    str(q_mpf) would be O(dps²) per lookup which dominates the
+    catalogue-fast-path wall time."""
+    key = (shape, k_split, mpmath.mp.dps, q_mpf)
     cached = _PRECOMPUTE_CACHE.get(key)
     if cached is None:
         cached = precompute_block_tables_mpfr(shape, k_split, q_mpf)
@@ -151,9 +156,14 @@ def chi_lambda_at_q0(
     if sqrt_q is None:
         sqrt_q = mpmath.sqrt(q_mpf)
 
-    # Path 1: catalogue lookup.
+    # Path 1: catalogue lookup. Use the module-level cache to avoid
+    # re-loading the catalogue witness on every call — load_catalogue
+    # is O(file size) and the catalogue grows with each isotope sweep.
     if catalogue is None:
-        catalogue = load_catalogue()
+        global _CATALOGUE_CACHE
+        if _CATALOGUE_CACHE is None:
+            _CATALOGUE_CACHE = load_catalogue()
+        catalogue = _CATALOGUE_CACHE
     try:
         cell = catalogue.lookup(K, lam, A)
         return _sum_laurent_at_q0_mpf(cell.chi_lambda_q_laurent, q_mpf, sqrt_q)
@@ -204,7 +214,11 @@ def _aggregate_via_catalogue_only(
     total = mpmath.mpf(0)
     n_cells = 0
     for cell in catalogue.cells:
-        if cell.atom == K and sum(cell.partition) // 3 == A:
+        # Use exact `== 3*A` not `// 3 == A`: integer division would
+        # also match a (hypothetical) cell whose partition summed to
+        # 3A+1 or 3A+2, which would silently mis-route a downstream
+        # consumer.
+        if cell.atom == K and sum(cell.partition) == 3 * A:
             shape = tuple(cell.partition)
             if partition_filter is not None and shape not in partition_filter:
                 continue
