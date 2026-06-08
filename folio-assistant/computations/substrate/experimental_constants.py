@@ -87,6 +87,13 @@ MU_OVER_E_ERR    = 0.0000046
 TAU_OVER_E       = 3477.23        # ± 0.23 (CODATA 2022; m_τ = 1776.86 MeV, m_e = 0.511 MeV)
 TAU_OVER_E_ERR   = 0.23
 
+# ── Molecular bond dissociation energies (experimental comparison) ─
+# Observed D_0 values used purely as comparison targets for the
+# molecular binding computes — NOT inputs to any derivation.
+# Source: NIST Chemistry WebBook (C≡O bond dissociation energy).
+D0_CO_EV         = 11.09          # eV, observed C≡O dissociation energy
+D0_CO_EV_ERR     = 0.01
+
 G_A_PDG     = 1.2754          # ± 0.0013 (PDG 2024)
 G_A_PDG_ERR = 0.0013
 
