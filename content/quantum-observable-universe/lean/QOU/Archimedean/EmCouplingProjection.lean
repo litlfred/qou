@@ -1,6 +1,4 @@
-import Mathlib.Algebra.Polynomial.Laurent
-import Mathlib.Data.Int.Basic
-
+import QOU.Archimedean.GroundRing
 
 /-!
 # QOU.Archimedean.em_coupling_projection — Electromagnetic coupling from braiding
@@ -10,7 +8,19 @@ finite combinatorial ingredients: the antisymmetric eigenvalue of the
 R-matrix (q⁻¹), the q-deformed crossing numbers of the two force-carrier
 generators T_{2,9} and T_{3,5}, and the substrate parameter q.
 
-  α_EM(q) = q⁻¹ / ([9]_q · [10]_q)
+  α_EM = q⁻¹ / ([9]_q · [10]_q)
+
+Stated **division-free over ℤ[q, q⁻¹]** as the defining multiplicative
+relation (see `IsEmCoupling`): the denominator `[9]_q · [10]_q` is not a
+unit of the Laurent ring, so α_EM itself is a fraction-field element —
+but its *defining content* is the single relation
+
+  [9]_q · [10]_q · α = q⁻¹,
+
+which lives in `ℤ[q, q⁻¹]` without any division.  This mirrors the
+`2 · E_cross = HA` convention in `QOU.Archimedean.GroundRing`, where a
+presentation factor that would leave the ground ring is replaced by the
+cleared-denominator relation.
 
 LaTeX label: `prop:em-coupling-projection`
 
@@ -20,79 +30,62 @@ LaTeX label: `prop:em-coupling-projection`
 - [jones1987] https://doi.org/10.2307/1971403
 
 **Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
-Part of the formal proof chain. The parameter `q` is the canonical
-indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
-numerical evaluation.
+The q-integers reuse the division-free `QOU.Archimedean.qInt`; `q⁻¹` is
+the genuine ring element `q_inv = T(-1)`, never a field inverse.  The
+classical limit `q → 1 ⇒ α_EM → 1/90` is an *archimedean* statement
+(it needs an order and `|·|` on the codomain) and therefore belongs to a
+`ℝ`-specialisation under `descartes-universe/`, not to this fibre-level
+file — see `notation-collisions.md §Base ring convention` (§7c).
 -/
 
 namespace QOU.Archimedean
 
 noncomputable section
 
-/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
-    See `QOU.Archimedean.GroundRing` for the compiled definition. -/
-abbrev R_q := LaurentPolynomial ℤ
-def q_param : R_q := LaurentPolynomial.T 1
-def q_inv_param : R_q := LaurentPolynomial.T (-1)
+/-- Crossing number of the strong force carrier `T_{2,9}` (as a ℤ index
+    for `qInt`). -/
+def strongCrossingNumber : ℤ := 9
 
-/-- The q-integer [n]_q = (q^n - q^{-n}) / (q - q^{-1}). -/
-noncomputable def qInteger (q : R_q) (n : ℕ) : R_q :=
-  (q ^ n - q ^ (-(n : ℤ))) / (q - q⁻¹)
+/-- Crossing number of the weak force carrier `T_{3,5}` (as a ℤ index
+    for `qInt`). -/
+def weakCrossingNumber : ℤ := 10
 
-/-- The antisymmetric eigenvalue of the R-matrix for SU_q(2):
-    |tr_τ(σ_anti)|² = q⁻¹. -/
-noncomputable def antisymmetricEigenvalue (q : R_q) : R_q := q⁻¹
+/-- The antisymmetric eigenvalue of the R-matrix for `SU_q(2)`:
+    `|tr_τ(σ_anti)|² = q⁻¹`.  This is the genuine ring element
+    `q_inv = T(-1) ∈ ℤ[q, q⁻¹]`, **not** a field inverse. -/
+def antisymmetricEigenvalue : R_q := q_inv
 
-/-- Crossing number of the strong force carrier T_{2,9}. -/
-def strongCrossingNumber : ℕ := 9
+/-- **Electromagnetic coupling projection** (Proposition).
 
-/-- Crossing number of the weak force carrier T_{3,5}. -/
-def weakCrossingNumber : ℕ := 10
+    The fine-structure constant is the τ-trace of the antisymmetric
+    braiding component normalised by the force-carrier crossing
+    complexities,
 
-/-- **Electromagnetic coupling projection** (Proposition):
+      α_EM = q⁻¹ / ([9]_q · [10]_q),
 
-    The electromagnetic fine structure constant, defined as the
-    τ-trace of the antisymmetric braiding component normalised by
-    the force-carrier crossing complexities, is
+    stated **division-free over ℤ[q, q⁻¹]** as the cleared-denominator
+    relation `α` satisfies:
 
-      α_EM(q) = q⁻¹ / ([9]_q · [10]_q)
+      [9]_q · [10]_q · α = q⁻¹.
 
     The formula factorises into three layers:
-    1. Charge (discrete, from writhe): Q_q(K) = [w(K)]_q
-    2. Coupling strength (R-matrix): |tr_τ(σ_anti)|² = q⁻¹
-    3. Normalisation by force-carrier complexity: [9]_q · [10]_q -/
+    1. Charge (discrete, from writhe): `Q_q(K) = [w(K)]_q`.
+    2. Coupling strength (R-matrix): `|tr_τ(σ_anti)|² = q⁻¹`.
+    3. Normalisation by force-carrier complexity: `[9]_q · [10]_q`. -/
 -- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
 --      — Jones, "Hecke algebra representations of braid groups and link
 --      polynomials," Ann. Math. 126 (1987). Verified against the
 --      published version.
 -- Ref: [manuscript] §5/em-coupling-projection
-noncomputable def emCoupling (q : R_q) : R_q :=
-  antisymmetricEigenvalue q / (qInteger q strongCrossingNumber * qInteger q weakCrossingNumber)
+def IsEmCoupling (α : R_q) : Prop :=
+  qInt strongCrossingNumber * qInt weakCrossingNumber * α = antisymmetricEigenvalue
 
-/-- The electromagnetic coupling equals q⁻¹ / ([9]_q · [10]_q). -/
+/-- The defining relation with the crossing-number indices and the
+    antisymmetric eigenvalue unfolded: `[9]_q · [10]_q · α = q⁻¹`.  Holds
+    by definitional unfolding (`strongCrossingNumber = 9`,
+    `weakCrossingNumber = 10`, `antisymmetricEigenvalue = q_inv`). -/
 -- Ref: [manuscript] §5/em-coupling-projection
--- theorem em_coupling_projection (q : R_q) (hq : 1 < q) :  -- (archimedean; not meaningful over R_q)
-    emCoupling q = q⁻¹ / (qInteger q 9 * qInteger q 10) := by
-  unfold emCoupling antisymmetricEigenvalue strongCrossingNumber weakCrossingNumber
-  ring
-
-/-- Classical limit: as q → 1, [n]_q → n, so α_EM → 1/90. -/
--- Ref: [manuscript] §5/em-coupling-projection
-/-- **External axiom (§3b-cond pattern): em_coupling_classical_limit.**
-
-    Auto-extracted from the single-sorry theorem body in this file.
-    Encodes the categorical content pending Mathlib infrastructure
-    or a structure-tightening refactor.
-
-    See the theorem docstring below for the cited reference. -/
-axiom em_coupling_classical_limit_axiom :
-    ∀ ε > 0, ∃ δ > 0, ∀ q :
-    R_q, |q - 1| < δ → q > 0 →
-    |emCoupling q - 1 / 90| < ε
-
-theorem em_coupling_classical_limit :
-    ∀ ε > 0, ∃ δ > 0, ∀ q : R_q, |q - 1| < δ → q > 0 →
-    |emCoupling q - 1 / 90| < ε :=
-  em_coupling_classical_limit_axiom
+theorem isEmCoupling_iff (α : R_q) :
+    IsEmCoupling α ↔ qInt 9 * qInt 10 * α = q_inv := Iff.rfl
 
 end QOU.Archimedean
