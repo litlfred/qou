@@ -146,12 +146,6 @@ export default chapter({
       ],
     },
     {
-      title: "Characteristic-$p$ companion: nimber surreals",
-      label: "sec:nimber-surreals",
-      blocks: [
-      ],
-    },
-    {
       title: "Surreal rate calculus and the squeeze inequality",
       label: "sec:surreal-rate-calculus",
       blocks: [

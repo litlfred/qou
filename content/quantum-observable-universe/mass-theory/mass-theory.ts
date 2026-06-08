@@ -781,7 +781,7 @@ export default chapter({
     }),
 
     section({
-      title: "Six-term mass formula, crystal, isospin, and chirality",
+      title: "Six-term mass formula and crystal isospin",
       label: "sec:six-term-crystal-isospin-chirality",
       blocks: [
         "intro-six-term-crystal-isospin-chirality",
@@ -856,7 +856,7 @@ export default chapter({
 
     // ═══ ORPHAN RECONNECTS ═════════════════════════════════════
     section({
-      title: "Reconnected orphan blocks (Phase 7)",
+      title: "Weak-spectral and isospin lemmas",
       label: "sec:mass-theory-orphan-reconnect",
       blocks: [
         "mass-theory-orphan-reconnect-intro",
@@ -873,28 +873,47 @@ export default chapter({
     }),
 
     section({
-      title: "Reconnected orphan blocks (Phase 7)",
+      title: "Trace and staircase lemmas",
       label: "sec:mass-application-orphan-reconnect",
       blocks: [
         "mass-application-orphan-reconnect-intro",
-        "block-multiplicativity-v-free",
-        "borromean-markov-trace-closed-form",
-        "crystal-r-matrix-sub-lemma",
-        "depth-stratified-frobenius-reciprocity",
-        "eigenvalue-product-expansion",
-        "hoefsmit-ew-cell-content",
-        "hoefsmit-ew-cell-content-table1-data",
-        "hoefsmit-ew-cell-content-table2-data",
-        "knot-operator-lp-selection",
-        "knot-operator-transition",
-        "qmn-recursive-memoized",
-        "sigma-shell-from-beta-chain-derivation",
-        "sigma-shell-from-beta-chain-derivation-table-data",
-        "staircase-corner-hook",
-        "staircase-ew-residual",
-        "staircase-partition",
-        "symbolic-character-table",
-        "outro-mass-theory",
+      ],
+      // De-dup + over-weight split: 19-block reconnected-orphan grab-bag
+      // retitled (was a second "Reconnected orphan blocks (Phase 7)",
+      // duplicating sec:mass-theory-orphan-reconnect) and split into 2
+      // reading-order sub-arcs. A deeper re-home of these blocks into
+      // thematic sections elsewhere is a follow-up.
+      subsections: [
+        section({
+          title: "Trace and operator lemmas",
+          label: "sec:mass-application-trace-operator-lemmas",
+          blocks: [
+            "block-multiplicativity-v-free",
+            "borromean-markov-trace-closed-form",
+            "crystal-r-matrix-sub-lemma",
+            "depth-stratified-frobenius-reciprocity",
+            "eigenvalue-product-expansion",
+            "hoefsmit-ew-cell-content",
+            "hoefsmit-ew-cell-content-table1-data",
+            "hoefsmit-ew-cell-content-table2-data",
+            "knot-operator-lp-selection",
+          ],
+        }),
+        section({
+          title: "Staircase and character lemmas",
+          label: "sec:mass-application-staircase-hoefsmit",
+          blocks: [
+            "knot-operator-transition",
+            "qmn-recursive-memoized",
+            "sigma-shell-from-beta-chain-derivation",
+            "sigma-shell-from-beta-chain-derivation-table-data",
+            "staircase-corner-hook",
+            "staircase-ew-residual",
+            "staircase-partition",
+            "symbolic-character-table",
+            "outro-mass-theory",
+          ],
+        }),
       ],
     }),
 
