@@ -22,6 +22,22 @@
  * Future watchers (proof, canonical, compute, detangler) extend
  * the registry with their own criteria.
  *
+ * ── Chapter-scoped criteria (NOT per-block) ──────────────────────
+ *
+ * Some audit dimensions live on the chapter manifest, not on a block,
+ * so they are NOT entries in `QA_CRITERIA_REGISTRY` (the per-block
+ * sweep + agent-drain-queue would mis-scope and balloon them). They
+ * are run by dedicated standalone scripts instead:
+ *
+ * - `voice-section-title-coherence` — section/subsection/chapter
+ *   titles must be short, concise, and coherent read against their
+ *   responsible parent (paper owns chapter titles, chapter owns
+ *   section titles, section owns subsection titles). Mechanical
+ *   defects (auto-split ` : <tag>` artifacts, trailing colons,
+ *   over-long / compound titles) are flagged automatically; the
+ *   story-coherence judgement is an agent pass over the emitted
+ *   worklist. Script: `content/pipeline/qa-section-title-audit.ts`.
+ *
  * @module content/pipeline/qa-criteria-registry
  */
 
