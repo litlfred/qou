@@ -49,16 +49,28 @@ Inventory verdict: no chemistry script routes through the canonical
 `lp_dual_solver.py`; several hardcode constants and roll their own
 `hecke_mul`.
 
-- [ ] A1. `h2-molecular-binding.py`: drop hardcoded `m_e_MeV = 0.51100`,
-  `G = 8.0`; source from `qou_substrate` / `experimental_constants`.
-- [ ] A2. Route H₂ / CO / CO₂ / CH₄ / C–C LP solves through
-  `lp_dual_solver.solve_operator_selection_lp` (or the SDP variant) and
-  emit the mandated dual fields (`y0_star`, `y_star`, `active_set`,
-  `duality_gap`) — currently absent (CLAUDE.md LP/SDP rule).
-- [ ] A3. Replace custom `hecke_mul` in `molecular-frobenius-lp.py`,
-  `h2-integer-lp.py`, `ch-bond-writhe-lp.py` with `pyhecke`.
-- [ ] A4. Create backing computes for `ch4`/`co`/`co2`/`ilp-covalent`
-  (currently theory-only .md) + witnesses.
+- [x] A1. `h2-molecular-binding.py`: dropped vestigial `m_e_MeV`/`G`/
+  `alpha_bind` (dead nuclear scale; eV conversion uses derived `E_MOL`).
+  Behavior-preserving; D₀(H₂)=4.6231 eV (NF-enum). Commit 14358b95.
+- [x] A2. `molecular-frobenius-lp.py` routed through
+  `solve_operator_selection_lp(TR_M, G, n_target)`; witness now emits
+  `y0_star`/`y_star`/`active_set`/`duality_gap`, strong duality gap
+  1.27e-15. Commit 34dc2f13.
+- [x] A2-CO. New falsifiable probe `co_bond_order_active_set.py`
+  (commit e185e7c9). **FINDING:** the interleaved single-chain model
+  gives active-set = **1** (only σ binds; π pairs anti-bind via
+  ee-repulsion). This **falsifies** `co-lp-dual-binding.md`'s one-chain
+  decreasing-positive-marginal mechanism. Correct topology = 3
+  ORTHOGONAL orbital channels (σ⊥πₓ⊥π_y) → bond order = # orthogonal
+  channels (→ WS-F2). Did NOT bake in 3 (no fabricated valence cap).
+- [~] A3. **DEFERRED — infra-dependent.** Clean form = route scripts
+  through `pyhecke.molecular`, but that module's import chain
+  (`qou_substrate` via `pyhecke.gram` + a bare `hecke_core` from the
+  `substrate/` subdir) isn't cleanly resolvable without package-install
+  wiring. Per owner "assume compute infra will land" — defer until the
+  package paths land (sibling #1062), then swap + equivalence-check.
+- [ ] A4. Create backing computes for `ch4`/`co2`/`ilp-covalent`
+  (currently theory-only .md) + witnesses. (CO now has A2-CO.)
 - [ ] A5. Run `lp_dual_witness_validator.py`; chemistry witnesses green.
 
 ### WS-B — De-hardcode `.md` constants → witness-pin
@@ -113,6 +125,12 @@ Define the projector from symmetry **before** benzene.
   knot/ILP wins (it's wired + validated); migrate organic-chemistry's
   Alexander/link bonds or scope them as a complementary view with an
   explicit consistency proposition.
+- [ ] F2. **Correct `co-lp-dual-binding.md`** (surfaced by A2-CO probe):
+  its triple-bond mechanism ("one chain, decreasing-but-positive
+  marginals") is falsified — a single chain binds only σ. Rewrite to the
+  ORTHOGONAL-channel model (σ⊥πₓ⊥π_y independent ~H₂-like channels; bond
+  order = # orthogonal channels, valence-limited). Note it is "conditional
+  on `conj:q-integer-mass-formula`" — frame the correction accordingly.
 
 ### WS-G — Heat-as-probability / catalysis (research leg, one simple case)
 - [ ] G1. Markov-trace-as-partition-function framing; T via Boltzmann
