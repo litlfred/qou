@@ -1,0 +1,155 @@
+{
+  "criterion": "voice-section-title-coherence",
+  "paper": "unital-groebner-bases",
+  "chapters": {
+    "buchberger-and-pbw": {
+      "manifest_hash": "07f02efb866e",
+      "machine": {
+        "title_defects": [],
+        "structure_findings": [
+          {
+            "kind": "band",
+            "label": "sec:ugb-s-poly-cancel",
+            "title": "S-polynomial cancellation",
+            "detail": "1 blocks outside the 3–18 section band (P3)"
+          },
+          {
+            "kind": "band",
+            "label": "sec:ugb-buchberger",
+            "title": "Buchberger's theorem over $R$",
+            "detail": "1 blocks outside the 3–18 section band (P3)"
+          },
+          {
+            "kind": "band",
+            "label": "sec:ugb-jet-stratified",
+            "title": "Jet-stratified reduction",
+            "detail": "1 blocks outside the 3–18 section band (P3)"
+          },
+          {
+            "kind": "band",
+            "label": "sec:ugb-pbw",
+            "title": "The PBW theorem over a commutative ring",
+            "detail": "1 blocks outside the 3–18 section band (P3)"
+          }
+        ]
+      },
+      "agent": {
+        "sec:ugb-s-poly-cancel": {
+          "title": "S-polynomial cancellation",
+          "depth": 1,
+          "result": "pending",
+          "reviewer": null,
+          "reviewed_hash": null
+        },
+        "sec:ugb-buchberger": {
+          "title": "Buchberger's theorem over $R$",
+          "depth": 1,
+          "result": "pending",
+          "reviewer": null,
+          "reviewed_hash": null
+        },
+        "sec:ugb-jet-stratified": {
+          "title": "Jet-stratified reduction",
+          "depth": 1,
+          "result": "pending",
+          "reviewer": null,
+          "reviewed_hash": null
+        },
+        "sec:ugb-pbw": {
+          "title": "The PBW theorem over a commutative ring",
+          "depth": 1,
+          "result": "pending",
+          "reviewer": null,
+          "reviewed_hash": null
+        }
+      }
+    },
+    "introduction": {
+      "manifest_hash": "b5334e79e411",
+      "machine": {
+        "title_defects": [],
+        "structure_findings": [
+          {
+            "kind": "band",
+            "label": "sec:ugb-main-result",
+            "title": "Main result",
+            "detail": "1 blocks outside the 3–18 section band (P3)"
+          }
+        ]
+      },
+      "agent": {
+        "sec:ugb-motivation": {
+          "title": "Motivation",
+          "depth": 1,
+          "result": "pending",
+          "reviewer": null,
+          "reviewed_hash": null
+        },
+        "sec:ugb-main-result": {
+          "title": "Main result",
+          "depth": 1,
+          "result": "pending",
+          "reviewer": null,
+          "reviewed_hash": null
+        }
+      }
+    },
+    "unital-groebner-bases-chapter": {
+      "manifest_hash": "55f1f9ad4e3a",
+      "machine": {
+        "title_defects": [
+          {
+            "kind": "compound",
+            "label": "sec:ugb-definitions",
+            "title": "Monomials, orderings, and admissible systems",
+            "detail": "3 comma-joined concepts — not concise"
+          }
+        ],
+        "structure_findings": [
+          {
+            "kind": "band",
+            "label": "sec:ugb-introduction",
+            "title": "Introduction",
+            "detail": "2 blocks outside the 3–18 section band (P3)"
+          },
+          {
+            "kind": "band",
+            "label": "sec:ugb-division",
+            "title": "Division algorithm and Gröbner--Shirshov bases",
+            "detail": "2 blocks outside the 3–18 section band (P3)"
+          }
+        ]
+      },
+      "agent": {
+        "sec:ugb-introduction": {
+          "title": "Introduction",
+          "depth": 1,
+          "result": "pending",
+          "reviewer": null,
+          "reviewed_hash": null
+        },
+        "sec:ugb-definitions": {
+          "title": "Monomials, orderings, and admissible systems",
+          "depth": 1,
+          "result": "pending",
+          "reviewer": null,
+          "reviewed_hash": null
+        },
+        "sec:ugb-division": {
+          "title": "Division algorithm and Gröbner--Shirshov bases",
+          "depth": 1,
+          "result": "pending",
+          "reviewer": null,
+          "reviewed_hash": null
+        },
+        "sec:ugb-main-results": {
+          "title": "Main results",
+          "depth": 1,
+          "result": "pending",
+          "reviewer": null,
+          "reviewed_hash": null
+        }
+      }
+    }
+  }
+}

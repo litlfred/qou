@@ -46,14 +46,19 @@
  *
  * @module content/pipeline/qa-section-title-audit
  */
-import { readdirSync, existsSync, mkdirSync, writeFileSync, statSync } from "node:fs";
+import { readdirSync, existsSync, mkdirSync, writeFileSync, readFileSync, statSync } from "node:fs";
 import { resolve, dirname, join } from "node:path";
 import { pathToFileURL } from "node:url";
+import { createHash } from "node:crypto";
 
 process.chdir(resolve(import.meta.dir, "..", ".."));
 
 const args = process.argv.slice(2);
 const reportOnly = args.includes("--report-only");
+// Emit committed per-paper sidecars (machine findings + manifest hash +
+// agent-review slots). CI regenerates then `git diff --exit-code`s them,
+// so a chapter-manifest edit without a re-run fails CI ("sidecars stale").
+const writeSidecar = args.includes("--write-sidecar");
 const maxLenIdx = args.indexOf("--max-len");
 const MAX_LEN = maxLenIdx >= 0 ? Number(args[maxLenIdx + 1]) : 72;
 const paperArg = args.find((a) => !a.startsWith("--") && a !== String(MAX_LEN));
@@ -145,10 +150,118 @@ function flagNode(n: TitleNode): Flag[] {
   return flags;
 }
 
+interface StructFlag {
+  paper: string;
+  chapterDir: string;
+  kind: "over-weight" | "band" | "only-child" | "depth";
+  detail: string;
+  label?: string;
+  title?: string;
+}
+
+/** Total descendant block count of a section / subsection node. */
+function sectionWeight(s: Record<string, unknown>): number {
+  const direct = Array.isArray(s.blocks) ? (s.blocks as unknown[]).length : 0;
+  const subs = Array.isArray(s.subsections)
+    ? (s.subsections as Record<string, unknown>[])
+    : [];
+  return direct + subs.reduce((a, ss) => a + sectionWeight(ss), 0);
+}
+
+/** Structure pass — framework P1–P6 (docs/structural-framework.md). */
+function auditStructure(
+  paper: string,
+  chapterDir: string,
+  sectionsRaw: unknown,
+  out: StructFlag[],
+): void {
+  const secs = (Array.isArray(sectionsRaw) ? sectionsRaw : []).filter(
+    (s): s is Record<string, unknown> =>
+      !!s && typeof (s as Record<string, unknown>).title === "string",
+  );
+  if (secs.length === 0) return;
+  if (secs.length === 1)
+    out.push({ paper, chapterDir, kind: "only-child", title: secs[0].title as string, detail: "chapter has only 1 section — flatten or split (P2)" });
+  const weights = secs.map(sectionWeight);
+  const mean = weights.reduce((a, b) => a + b, 0) / weights.length;
+  secs.forEach((s, i) => {
+    const w = weights[i];
+    const subs = (Array.isArray(s.subsections) ? s.subsections : []).filter(
+      (x): x is Record<string, unknown> => !!x && typeof (x as Record<string, unknown>).title === "string",
+    );
+    const hasSubs = subs.length > 0;
+    const base = { paper, chapterDir, label: s.label as string | undefined, title: s.title as string };
+    if (secs.length >= 3 && w > 2.5 * mean && !hasSubs)
+      out.push({ ...base, kind: "over-weight", detail: `${w} blocks > 2.5× peer mean (${mean.toFixed(1)}) — split into subsections (P4)` });
+    if (!hasSubs && (w < 3 || w > 18))
+      out.push({ ...base, kind: "band", detail: `${w} blocks outside the 3–18 section band (P3)` });
+    if (hasSubs && subs.length === 1)
+      out.push({ ...base, kind: "only-child", detail: "section has only 1 subsection — flatten (P2)" });
+    for (const ss of subs) {
+      if (Array.isArray(ss.subsections) && (ss.subsections as unknown[]).length > 0)
+        out.push({ paper, chapterDir, label: ss.label as string | undefined, title: ss.title as string, kind: "depth", detail: "subsection has sub-subsections — exceeds depth 3 (P1)" });
+      const sw = sectionWeight(ss);
+      if (sw < 2 || sw > 12)
+        out.push({ paper, chapterDir, label: ss.label as string | undefined, title: ss.title as string, kind: "band", detail: `subsection ${sw} blocks outside the 2–12 band (P3)` });
+    }
+  });
+}
+
+function hashContent(s: string): string {
+  return createHash("sha256").update(s).digest("hex").slice(0, 12);
+}
+
+/** Emit committed per-paper title/structure audit sidecars. The
+ *  `machine` block is regenerated each run; `agent` review verdicts are
+ *  carried forward only while the chapter manifest hash is unchanged
+ *  (a manifest edit re-opens the agent review as `stale`). */
+function writeSidecars(allNodes: TitleNode[], flags: Flag[], structureFlags: StructFlag[]): void {
+  const byPaper = new Map<string, Map<string, TitleNode[]>>();
+  for (const n of allNodes) {
+    const p = byPaper.get(n.paper) ?? (byPaper.set(n.paper, new Map()), byPaper.get(n.paper)!);
+    const arr = p.get(n.chapterDir) ?? (p.set(n.chapterDir, []), p.get(n.chapterDir)!);
+    arr.push(n);
+  }
+  for (const [paper, chapters] of byPaper) {
+    const sidecarPath = resolve("content", paper, "section-title-audit.qa.json");
+    let prev: { chapters?: Record<string, { agent?: Record<string, { reviewed_hash?: string }> }> } = {};
+    try { prev = JSON.parse(readFileSync(sidecarPath, "utf8")); } catch { /* first run */ }
+    const out: Record<string, unknown> = { criterion: "voice-section-title-coherence", paper, chapters: {} };
+    const chOut = out.chapters as Record<string, unknown>;
+    for (const [chapterDir, nodes] of [...chapters].sort((a, b) => a[0].localeCompare(b[0]))) {
+      const manifestPath = resolve("content", paper, chapterDir, `${chapterDir}.ts`);
+      let manifestHash = "";
+      try { manifestHash = hashContent(readFileSync(manifestPath, "utf8")); } catch { /* */ }
+      const titleFindings = flags
+        .filter((f) => f.node.paper === paper && f.node.chapterDir === chapterDir && f.kind !== "duplicate" && f.kind !== "sibling-echo")
+        .map((f) => ({ kind: f.kind, label: f.node.label, title: f.node.title, detail: f.detail }));
+      const struct = structureFlags
+        .filter((f) => f.paper === paper && f.chapterDir === chapterDir)
+        .map((f) => ({ kind: f.kind, label: f.label, title: f.title, detail: f.detail }));
+      const prevAgent = prev?.chapters?.[chapterDir]?.agent ?? {};
+      const agent: Record<string, unknown> = {};
+      for (const n of nodes.filter((x) => x.depth >= 1)) {
+        const key = n.label ?? n.title;
+        const carried = prevAgent[key];
+        agent[key] = carried && carried.reviewed_hash === manifestHash
+          ? carried
+          : { title: n.title, depth: n.depth, result: "pending", reviewer: null, reviewed_hash: null };
+      }
+      chOut[chapterDir] = {
+        manifest_hash: manifestHash,
+        machine: { title_defects: titleFindings, structure_findings: struct },
+        agent,
+      };
+    }
+    writeFileSync(sidecarPath, JSON.stringify(out, null, 2) + "\n");
+  }
+}
+
 async function main(): Promise<void> {
   const manifests = findChapterManifests(paperArg);
   const allNodes: TitleNode[] = [];
   const importErrors: string[] = [];
+  const structureFlags: StructFlag[] = [];
   // Cache paper titles for the chapter-title parent context.
   const paperTitle = new Map<string, string>();
 
@@ -170,6 +283,7 @@ async function main(): Promise<void> {
     // depth 0: the chapter title (paper is responsible).
     allNodes.push({ paper, chapterDir, depth: 0, title: ch.title, label: typeof ch.label === "string" ? ch.label : undefined, parent: paperTitle.get(paper)! });
     walkSections(ch.sections, { paper, chapterDir }, 1, ch.title, allNodes);
+    auditStructure(paper, chapterDir, ch.sections, structureFlags);
   }
 
   const flags: Flag[] = [];
@@ -211,6 +325,15 @@ async function main(): Promise<void> {
   show("HARD defect(s)", hard);
   show("conciseness/duplicate warning(s)", soft);
 
+  // ── Structure pass (framework P1–P6) ──────────────────────────
+  if (structureFlags.length === 0) {
+    console.log("  ✓ no structure findings (depth / band / balance)");
+  } else {
+    console.log(`\n  ${structureFlags.length} structure finding(s) [framework P1–P6]:`);
+    for (const f of structureFlags)
+      console.log(`   [${f.kind}] ${f.paper}/${f.chapterDir}${f.label ? " (" + f.label + ")" : ""}\n      "${f.title ?? ""}"  — ${f.detail}`);
+  }
+
   // ── Agent worklist (ordered titles + parent chain per chapter) ─
   mkdirSync("todos", { recursive: true });
   const worklist = [...byChapter.entries()].map(([key, nodes]) => ({
@@ -226,10 +349,16 @@ async function main(): Promise<void> {
     })),
   }));
   writeFileSync("todos/section-title-audit.json", JSON.stringify(
-    { generated: new Date().toISOString(), max_len: MAX_LEN, total_titles: allNodes.length, hard_defects: hard.length, soft_warnings: soft.length, chapters: worklist }, null, 2));
+    { generated: new Date().toISOString(), max_len: MAX_LEN, total_titles: allNodes.length, hard_defects: hard.length, soft_warnings: soft.length, structure_findings: structureFlags, chapters: worklist }, null, 2));
   console.log(`\n  worklist → todos/section-title-audit.json (review each title for conciseness + coherence against its parent)`);
 
-  if (hard.length > 0 && !reportOnly) process.exit(1);
+  if (writeSidecar) {
+    writeSidecars(allNodes, flags, structureFlags);
+    console.log(`  sidecars → content/<paper>/section-title-audit.qa.json (machine findings + agent slots; CI git-diff-gated)`);
+  }
+
+  const depthViolations = structureFlags.filter((f) => f.kind === "depth").length;
+  if ((hard.length > 0 || depthViolations > 0) && !reportOnly) process.exit(1);
 }
 
 main();

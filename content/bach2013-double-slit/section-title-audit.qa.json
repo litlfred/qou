@@ -1,0 +1,43 @@
+{
+  "criterion": "voice-section-title-coherence",
+  "paper": "bach2013-double-slit",
+  "chapters": {
+    "double-slit-experiment": {
+      "manifest_hash": "0f77f2af4b53",
+      "machine": {
+        "title_defects": [],
+        "structure_findings": [
+          {
+            "kind": "band",
+            "label": "sec:bach-introduction",
+            "title": "Introduction",
+            "detail": "1 blocks outside the 3–18 section band (P3)"
+          }
+        ]
+      },
+      "agent": {
+        "sec:bach-introduction": {
+          "title": "Introduction",
+          "depth": 1,
+          "result": "pending",
+          "reviewer": null,
+          "reviewed_hash": null
+        },
+        "sec:bach-setup": {
+          "title": "Experimental setup",
+          "depth": 1,
+          "result": "pending",
+          "reviewer": null,
+          "reviewed_hash": null
+        },
+        "sec:bach-results": {
+          "title": "Results",
+          "depth": 1,
+          "result": "pending",
+          "reviewer": null,
+          "reviewed_hash": null
+        }
+      }
+    }
+  }
+}
