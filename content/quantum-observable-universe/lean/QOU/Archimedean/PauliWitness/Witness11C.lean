@@ -1,6 +1,7 @@
 import QOU.Archimedean.GroundRing
 
 set_option maxHeartbeats 4000000
+set_option maxRecDepth 20000
 namespace QOU.Archimedean.PauliWitness
 
 /-- F_Pauli for 11C (Z=6, N=5, A=11), exact in t = q^{1/2}.
