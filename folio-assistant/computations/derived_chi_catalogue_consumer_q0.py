@@ -165,7 +165,11 @@ def chi_lambda_at_q0(
             _CATALOGUE_CACHE = load_catalogue()
         catalogue = _CATALOGUE_CACHE
     try:
-        cell = catalogue.lookup(K, lam, A)
+        # Catalogue.lookup signature is (knot, partition, atom) — knot
+        # is the braid name like "atom-braid-D"; atom is the bare label
+        # like "D". K is the bare atom name; the knot string is derived
+        # from it. A is consumed only by the matrix-M fallback below.
+        cell = catalogue.lookup(f"atom-braid-{K}", lam, K)
         return _sum_laurent_at_q0_mpf(cell.chi_lambda_q_laurent, q_mpf, sqrt_q)
     except KeyError:
         pass
@@ -193,14 +197,16 @@ def chi_lambda_at_q0(
 def _filter_partitions_by_dim(
     partitions: list, max_dim: int,
 ) -> list[tuple[int, ...]]:
-    """Keep partitions with dim V_λ ≤ max_dim. Bounds the mpfr force
-    path's wall time (dim-100+ partitions take seconds each in mpmath
-    matrix math; dim ≤ 15 keeps every isotope under a minute total)."""
-    from derived_chi_catalogue_matrix_m import standard_young_tableaux
+    """Keep partitions with dim V_λ ≤ max_dim. Uses the hook-length
+    formula (`murnaghan_nakayama.dim_specht`, O(n)) rather than
+    enumerating standard Young tableaux (factorial in n). For λ ⊢ 12
+    the SYT enumeration alone can take seconds per partition; the
+    hook-length formula is microseconds."""
+    from murnaghan_nakayama import dim_specht
     out: list[tuple[int, ...]] = []
     for shape in partitions:
         st = tuple(shape)
-        if len(standard_young_tableaux(st)) <= max_dim:
+        if dim_specht(st) <= max_dim:
             out.append(st)
     return out
 
@@ -268,7 +274,11 @@ def _aggregate_via_mpfr_force(
 
 
 def main() -> int:
-    mpmath.mp.dps = 50
+    # Use the repo-standard precision-set helper so the witness's
+    # `precisionMetadata.compute_dps` and the mpmath working precision
+    # cannot drift apart (Copilot review on PR #2000).
+    from _precision import set_compute_dps
+    set_compute_dps(50)
 
     wb = WitnessBuilder(
         "derived-chi-catalogue-consumer-q0",
