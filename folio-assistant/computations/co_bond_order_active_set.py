@@ -184,6 +184,8 @@ def main():
     w.add_data("binding_per_k", binding)
     w.add_data("marginals_phi1", marginals)
     w.add_data("marginals_eV", [m * E_MOL for m in marginals])
+    w.add_data("sigma_channel_eV", marginals[0] * E_MOL)   # the one bound pair
+    w.add_data("observed_D0_CO_eV", 11.09)                 # experimental reference
     # LP primal + dual (CLAUDE.md LP-dual schema)
     w.add_data("y_star", y_star)
     w.add_data("y0_star", 0.0)                # no net-conservation constraint in box LP
