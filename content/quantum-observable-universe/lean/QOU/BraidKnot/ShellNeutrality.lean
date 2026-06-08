@@ -137,7 +137,10 @@ theorem kappa_emptyDiagram : kappa emptyDiagram = 0 := by
 theorem emptyDiagram_isSelfConjugate : isSelfConjugate emptyDiagram := by
   unfold isSelfConjugate conjugate emptyDiagram
   -- goal: ⟨0, 0, _⟩ = ⟨0, (0 : Multiset ℤ).map (·.neg), _⟩
+  -- `congr 1` reduces to the `contents` field; `Multiset.map _ 0 = 0`
+  -- closes it (`all_goals` is a no-op if `congr` already discharged all).
   congr 1
+  all_goals simp
 
 /-! ### Disjoint union and content additivity -/
 
