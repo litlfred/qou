@@ -1,4 +1,5 @@
 import Mathlib.Data.Int.Basic
+import Mathlib.Data.Real.Basic
 import Mathlib.Algebra.Polynomial.Basic
 import Mathlib.Algebra.Polynomial.Eval.Defs
 
@@ -57,7 +58,7 @@ structure HabiroExpansion where
 noncomputable def HabiroExpansion.eval {R : Type*} [CommRing R]
     (h : HabiroExpansion) (u : R) : R :=
   Finset.univ.sum fun m =>
-    (h.coeffs m).eval (Int.castRingHom R u) * qPochhammer u m.val
+    (h.coeffs m).eval₂ (Int.castRingHom R) u * qPochhammer u m.val
 
 /-- **PROPOSITION (finiteness / termination).** The Habiro expansion of a
     Markov trace is a *finite* sum: its evaluation `h.eval u` is a sum over
