@@ -1,5 +1,6 @@
 import Mathlib.LinearAlgebra.Matrix.PosDef
 import Mathlib.LinearAlgebra.Matrix.Spectrum
+import Mathlib.Analysis.Matrix.Order
 import Mathlib.Tactic
 import QOU.MathlibExt.PosSemidefDiagZero
 import QOU.MathlibExt.FrobeniusInnerProduct
@@ -79,12 +80,18 @@ theorem Matrix.PosSemidef.trace_mul_eq_zero_iff_mul_eq_zero
   -- X · X^T = 0 ⟹ X = 0 (Frobenius norm zero).
   -- So A^{1/2}·B^{1/2} = 0.
   -- A·B = (A^{1/2})² · (B^{1/2})² = A^{1/2} · (A^{1/2}·B^{1/2}) · B^{1/2} = 0.
-  set Asqrt := hA.sqrt with hAsqrt_def
-  set Bsqrt := hB.sqrt with hBsqrt_def
-  have hAsq : Asqrt * Asqrt = A := hA.sq_sqrt
-  have hBsq : Bsqrt * Bsqrt = B := hB.sq_sqrt
-  have hAsqrt_psd : Asqrt.PosSemidef := hA.posSemidef_sqrt
-  have hBsqrt_psd : Bsqrt.PosSemidef := hB.posSemidef_sqrt
+  -- Mathlib API drift (2025-09): `PosSemidef.sqrt`/`.sq_sqrt`/`.posSemidef_sqrt`
+  -- were deprecated in favour of the continuous-functional-calculus `CFC.sqrt`
+  -- API (`Mathlib.Analysis.Matrix.Order`).  `A.PosSemidef` now reduces to an
+  -- `And`, so the old dot-notation `hA.sqrt` resolves to a nonexistent
+  -- `And.sqrt`.  Use the explicit `CFC.*` lemmas with the `0 ≤ A` hypothesis
+  -- supplied by `PosSemidef.nonneg`.
+  set Asqrt := CFC.sqrt A with hAsqrt_def
+  set Bsqrt := CFC.sqrt B with hBsqrt_def
+  have hAsq : Asqrt * Asqrt = A := CFC.sqrt_mul_sqrt_self A hA.nonneg
+  have hBsq : Bsqrt * Bsqrt = B := CFC.sqrt_mul_sqrt_self B hB.nonneg
+  have hAsqrt_psd : Asqrt.PosSemidef := (CFC.sqrt_nonneg A).posSemidef
+  have hBsqrt_psd : Bsqrt.PosSemidef := (CFC.sqrt_nonneg B).posSemidef
   have hAsqrt_herm : Asqrt.IsHermitian := hAsqrt_psd.1
   have hBsqrt_herm : Bsqrt.IsHermitian := hBsqrt_psd.1
   -- Define X := Asqrt · Bsqrt.  Then X · X^T = Asqrt · B · Asqrt.
