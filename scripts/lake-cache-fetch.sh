@@ -195,10 +195,12 @@ if [ -n "$bad_entries" ]; then
   exit 1
 fi
 
-# Extract into the repo root. `--no-absolute-names` strips any leading
-# slash defensively (belt-and-suspenders after the path validation
-# above). Stage into a temp dir then rename so partial extraction
-# can't leave a half-populated .lake/.
+# Extract into the repo root. GNU tar's default behavior is to strip
+# leading slashes from member names (since tar 1.35 `--no-absolute-names`
+# is removed as redundant — the default IS that behavior). Path
+# validation above is the primary defense; tar's default-strip is
+# defense-in-depth. Stage into a temp dir then rename so partial
+# extraction can't leave a half-populated .lake/.
 mkdir -p "$TMP/extract"
 if ! tar -xzf "$TMP/lake-oleans.tgz" -C "$TMP/extract" 2>&1 | tail -5; then
   echo "lake-cache-fetch: ERROR — tar extraction failed" >&2
