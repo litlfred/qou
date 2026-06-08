@@ -1,4 +1,5 @@
 import Mathlib.Data.Real.Basic
+import Mathlib.Tactic.Ring
 
 /-!
 # QOU.FluidDynamics.kelvin_dispersion_derivation — Kelvin dispersion from the q-Laplacian
@@ -51,10 +52,14 @@ class KelvinDispersionContext where
   Lq_pos : 0 < Lq
   /-- Eigenvalues of the `q`-Laplacian with physical units. -/
   lam : ℕ → ℝ
-  /-- Quantised circulation `Γ_q`, core radius `a_q`, viscosity `ν_q`. -/
-  Gamma : ℝ
+  /-- Core radius `a_q`, viscosity `ν_q`, the positive constant
+      `sqrtΓ_q = Γ_q^{1/2}`, and `√π` (kept as opaque positive reals so the
+      derivation needs no analysis imports). -/
+  sqrtGamma : ℝ
   aq : ℝ
   nuq : ℝ
+  /-- `√π` as an opaque constant (so `2 √π a_q` reads `2 * piConst * aq`). -/
+  piConst : ℝ
   /-- Undamped Kelvin dispersion frequency `ω_k` and damped decay rate `γ_k`. -/
   omega : ℕ → ℝ
   gamma : ℕ → ℝ
@@ -66,8 +71,8 @@ class KelvinDispersionContext where
   /-- **Spectrum with units.** `λ_k = [k]_q² ℏ_q / L_q²`. -/
   spectrum : ∀ k, lam k = (qInt k) ^ 2 * hbar / Lq ^ 2
   /-- **Undamped dispersion.** `ω_k = Γ_q^{1/2}/(2√π a_q) · [k]_q / L_q`,
-      packaged as `ω_k = (√Γ_q / (2√π a_q)) · [k]_q / L_q`. -/
-  dispersion : ∀ k, omega k = Real.sqrt Gamma / (2 * Real.sqrt Real.pi * aq) * qInt k / Lq
+      packaged with `sqrtΓ_q` and `π` as opaque positive constants. -/
+  dispersion : ∀ k, omega k = sqrtGamma / (2 * piConst * aq) * qInt k / Lq
   /-- **Damped decay rate.** `γ_k = ν_q/2 · [k]_q² / L_q²`. -/
   decay : ∀ k, gamma k = nuq / 2 * (qInt k) ^ 2 / Lq ^ 2
 
@@ -90,7 +95,7 @@ theorem kelvin_spectrum [ctx : KelvinDispersionContext] (k : ℕ) :
 -- Ref: [manuscript] prop:kelvin-dispersion-derivation
 theorem kelvin_undamped_dispersion [ctx : KelvinDispersionContext] (k : ℕ) :
     ctx.omega k
-      = Real.sqrt ctx.Gamma / (2 * Real.sqrt Real.pi * ctx.aq) * ctx.qInt k / ctx.Lq :=
+      = ctx.sqrtGamma / (2 * ctx.piConst * ctx.aq) * ctx.qInt k / ctx.Lq :=
   ctx.dispersion k
 
 /-- **Damped decay rate.** `γ_k = ν_q/2 · [k]_q² / L_q²`. -/

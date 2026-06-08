@@ -1,4 +1,6 @@
 import Mathlib.Data.Real.Basic
+import Mathlib.Tactic.FieldSimp
+import Mathlib.Tactic.Ring
 
 /-!
 # QOU.FluidDynamics.acoustic_horizon_conditions — acoustic horizon formation
@@ -57,6 +59,9 @@ class AcousticHorizonContext where
   q_gt_one : 1 < q
   hbar : ℝ
   hbar_brane : hbar = (q - 1) / q
+  /-- `π` as an opaque positive constant (no analysis import needed). -/
+  piConst : ℝ
+  piConst_pos : 0 < piConst
   /-- **Horizon criterion.** On `Σ` the flow is transonic: `|v| = c_s`. -/
   transonic : vAbs = cs
   /-- **Non-degeneracy.** `∇(ℳ²) ≠ 0` on `Σ` (smooth hypersurface). -/
@@ -64,7 +69,7 @@ class AcousticHorizonContext where
   /-- **Energy condition.** The effective energy density is non-negative. -/
   energy_condition : 0 ≤ T00
   /-- **Hawking temperature.** `T_H = ℏ_q κ_H / (2π c_s)`. -/
-  hawking : TH = hbar * kappaH / (2 * Real.pi * cs)
+  hawking : TH = hbar * kappaH / (2 * piConst * cs)
 
 /-- **Acoustic horizon criterion** ([`prop:acoustic-horizon-conditions`]).
 
@@ -85,12 +90,11 @@ theorem acoustic_horizon_regularity [ctx : AcousticHorizonContext] :
     `T_H = ℏ_q κ_H / (2π c_s)` gives `T_H = (q−1)/(2π q) · κ_H / c_s`. -/
 -- Ref: [manuscript] prop:acoustic-horizon-conditions
 theorem acoustic_horizon_hawking_temperature [ctx : AcousticHorizonContext] :
-    ctx.TH = (ctx.q - 1) / (2 * Real.pi * ctx.q) * ctx.kappaH / ctx.cs := by
-  rw [ctx.hawking, ctx.hbar_brane]
+    ctx.TH = (ctx.q - 1) / (2 * ctx.piConst * ctx.q) * ctx.kappaH / ctx.cs := by
   have hq : ctx.q ≠ 0 := ne_of_gt (lt_trans one_pos ctx.q_gt_one)
   have hcs : ctx.cs ≠ 0 := ne_of_gt ctx.cs_pos
-  have hpi : Real.pi ≠ 0 := Real.pi_ne_zero
+  have hpi : ctx.piConst ≠ 0 := ne_of_gt ctx.piConst_pos
+  rw [ctx.hawking, ctx.hbar_brane]
   field_simp
-  ring
 
 end QOU.FluidDynamics

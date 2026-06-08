@@ -1,4 +1,5 @@
 import Mathlib.Data.Real.Basic
+import Mathlib.Tactic.Ring
 
 /-!
 # QOU.FluidDynamics.discrete_vortex_spectrum — discrete vortex mode spectrum
