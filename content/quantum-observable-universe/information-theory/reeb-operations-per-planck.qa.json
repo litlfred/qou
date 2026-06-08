@@ -2609,7 +2609,92 @@
           "worst_span": 0
         }
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "7045356458f2",
+          "ts": "e7ed8c21f6ff",
+          "lean": "1199ce3fd0f0"
+        },
+        "result": "pass",
+        "evidence": "listed in sec:info-time-computation line 31; proposition about discrete iterations per Reeb circuit - fits time+computation section",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:59:45.989Z",
+        "reviewed_sha": "0246bc19ce8b68efab5705fae6ad7303edc12e3b",
+        "notes": "section and content match"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "7045356458f2",
+          "ts": "e7ed8c21f6ff",
+          "lean": "1199ce3fd0f0"
+        },
+        "result": "pass",
+        "evidence": "statement: n_R(q)=q/(q-1)=1/hbar_q for q in k^times; generic field k - no hardcoded archimedean q_0 in the formal statement",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:59:46.028Z",
+        "reviewed_sha": "0246bc19ce8b68efab5705fae6ad7303edc12e3b",
+        "notes": "statement is generic/algebraic"
+      }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "7045356458f2",
+          "ts": "e7ed8c21f6ff",
+          "lean": "1199ce3fd0f0"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "block has Physical meaning at q=q_0 and Information rate sections with interpretive prose; no companion remark with interprets pointing here",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:59:46.065Z",
+        "reviewed_sha": "0246bc19ce8b68efab5705fae6ad7303edc12e3b",
+        "notes": "interpretive sections in proposition block; consider remark split"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "7045356458f2",
+          "ts": "e7ed8c21f6ff",
+          "lean": "1199ce3fd0f0"
+        },
+        "result": "pass",
+        "evidence": "proof: time increment hbar_q * T, number of iterations = 1/hbar_q = t_P(q) - purely algebraic",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:59:46.102Z",
+        "reviewed_sha": "0246bc19ce8b68efab5705fae6ad7303edc12e3b",
+        "notes": "proof is algebraic, no archimedean machinery"
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-08T09:59:46.102Z"
 }

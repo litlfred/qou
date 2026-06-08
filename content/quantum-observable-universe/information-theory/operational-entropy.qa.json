@@ -1992,7 +1992,50 @@
           "worst_span": 0
         }
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "10b7c4fefd8d",
+          "ts": "2fd5d03865fc",
+          "lean": "3f551f054a4e"
+        },
+        "result": "pass",
+        "evidence": "listed in sec:golden-julia-dynamics line 47; definition of operational entropy via Julia set Manning-McCluskey formula - fits golden/Julia dynamics section",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:59:45.911Z",
+        "reviewed_sha": "0246bc19ce8b68efab5705fae6ad7303edc12e3b",
+        "notes": "section and content match"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "10b7c4fefd8d",
+          "ts": "2fd5d03865fc",
+          "lean": "3f551f054a4e"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "definition statement is generic eta_q=(2q-1)/q^3 but regime table in body has q_0 0.892 (line 104) without wall: banner",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:59:45.952Z",
+        "reviewed_sha": "0246bc19ce8b68efab5705fae6ad7303edc12e3b",
+        "notes": "numeric q_0 values in examples section of definition; minor since clearly labeled as regime interpretation"
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-08T09:59:45.952Z"
 }
