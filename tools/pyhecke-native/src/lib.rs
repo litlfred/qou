@@ -790,12 +790,16 @@ fn chi_lambda_braid_mpfr(
 
 /// Matrix-M block-restricted χ^λ at substrate q.
 ///
-/// Computes χ^λ(T_β)(q_0) for a parabolic-shaped braid
+/// Computes χ^λ(T_β)(q) for a parabolic-shaped braid
 /// `β = β_left · σ_{k_split}^{bridge_sign} · β_right` via the
 /// μ_p block-restriction trace formula (see PR #2015 / Tier 2
-/// audit). The full dim_V_λ × dim_V_λ seminormal matrices are
-/// built ONCE inside this call, sub-blocks extracted, full matrices
-/// dropped — call-time work is on the small per-μ_p blocks only.
+/// audit). The caller supplies `q` as a decimal string — the
+/// implementation works for any q, not just the substrate q_0; the
+/// catalogue / sweep uses substrate q_0 by convention but this
+/// binding is q-agnostic. The full dim_V_λ × dim_V_λ seminormal
+/// matrices are built ONCE inside this call, sub-blocks extracted,
+/// full matrices dropped — call-time work is on the small per-μ_p
+/// blocks only.
 ///
 /// For multi-call use (e.g. tr_M aggregation Σ_λ y_λ χ^λ over
 /// every partition), each call rebuilds its own per-λ cache.
@@ -805,12 +809,17 @@ fn chi_lambda_braid_mpfr(
 /// `word_left`: list of `(sign, gen_1based)` pairs, all gens < k_split.
 /// `bridge_sign`: +1 or -1.
 /// `word_right`: list of `(sign, gen_1based)` pairs, all gens > k_split.
-/// `q_str`: substrate q as decimal string.
+/// `q_str`: deformation parameter q as decimal string.
 /// `dps`: requested decimal precision (default 50).
 ///
-/// Returns χ value as a decimal string at the working precision.
+/// Returns χ value as a decimal string with `dps` digits.
 ///
 /// **NO f64 in compute path** — `rug::Float` throughout.
+///
+/// Raises `ValueError` on invalid input (k_split out of range,
+/// generators outside the parabolic split, bridge_sign not ±1,
+/// or unparsable q_str) so a downstream Python caller does not
+/// crash the interpreter on a malformed call.
 #[pyfunction]
 #[pyo3(signature = (shape, word_left, bridge_sign, word_right, k_split, q_str, dps=50))]
 fn chi_via_matrix_m_mpfr(
@@ -821,13 +830,81 @@ fn chi_via_matrix_m_mpfr(
     k_split: usize,
     q_str: String,
     dps: u32,
-) -> String {
+) -> PyResult<String> {
+    // Validate at the binding boundary so the Python interpreter sees
+    // a clean ValueError instead of a Rust panic. Mirrors the asserts
+    // in matrix_m_mpfr::precompute_block_tables_mpfr but converts each
+    // failure to a typed exception.
+    let n: usize = shape.iter().sum();
+    if n == 0 {
+        return Err(pyo3::exceptions::PyValueError::new_err(
+            "shape must be a non-empty partition (sum > 0)".to_string(),
+        ));
+    }
+    if k_split < 1 {
+        return Err(pyo3::exceptions::PyValueError::new_err(
+            "k_split must be ≥ 1 (it is the 1-based bridge generator index)".to_string(),
+        ));
+    }
+    if k_split >= n {
+        return Err(pyo3::exceptions::PyValueError::new_err(format!(
+            "k_split = {} ≥ shape sum {}: σ_{{k_split}} would not exist (need k_split < n)",
+            k_split, n,
+        )));
+    }
+    if bridge_sign != 1 && bridge_sign != -1 {
+        return Err(pyo3::exceptions::PyValueError::new_err(format!(
+            "bridge_sign must be +1 or -1, got {}",
+            bridge_sign,
+        )));
+    }
+    for (sign, g) in &word_left {
+        if *sign != 1 && *sign != -1 {
+            return Err(pyo3::exceptions::PyValueError::new_err(format!(
+                "word_left sign must be +1 or -1, got {} at gen {}",
+                sign, g,
+            )));
+        }
+        if *g < 1 || *g >= k_split {
+            return Err(pyo3::exceptions::PyValueError::new_err(format!(
+                "word_left generator σ_{} not in left parabolic [1, {}]",
+                g, k_split - 1,
+            )));
+        }
+    }
+    for (sign, g) in &word_right {
+        if *sign != 1 && *sign != -1 {
+            return Err(pyo3::exceptions::PyValueError::new_err(format!(
+                "word_right sign must be +1 or -1, got {} at gen {}",
+                sign, g,
+            )));
+        }
+        if *g <= k_split || *g >= n {
+            return Err(pyo3::exceptions::PyValueError::new_err(format!(
+                "word_right generator σ_{} not in right parabolic [{}, {}]",
+                g, k_split + 1, n - 1,
+            )));
+        }
+    }
+    // q_str is parsed inside precompute_block_tables_mpfr; the Rust
+    // function panics on an unparsable value, which PyO3 surfaces as
+    // pyo3::panic::PanicException. We can't catch it without
+    // catch_unwind + UnwindSafe, which Rust closures over &Vec<…> are
+    // not by default. Leaving structural validation here (the common
+    // failure mode) and accepting that a bad q_str produces a
+    // PanicException with the descriptive Rust message rather than a
+    // ValueError — a follow-up can add a fallible try_ variant in
+    // matrix_m_mpfr.rs.
+
     let cache =
         matrix_m_mpfr::precompute_block_tables_mpfr(&shape, k_split, &q_str, dps);
     let chi = matrix_m_mpfr::chi_via_matrix_m_mpfr(
         &cache, &word_left, bridge_sign, &word_right,
     );
-    chi.to_string()
+    // Use `to_string_radix(10, Some(dps as usize))` so the decimal
+    // output is pinned to the requested precision (the bare to_string
+    // defaults to a precision that may not match `dps`).
+    Ok(chi.to_string_radix(10, Some(dps as usize)))
 }
 
 /// Operator-selection LP at MPFR precision (`prop:operator-selection-lp`).
