@@ -47,6 +47,17 @@ Each narrowing is tagged by whether surreals are **essential** or **language**:
 | 7 | [`dilogarithm-archimedean-limit`](../../content/quantum-observable-universe/mass-theory/dilogarithm-archimedean-limit.md) | `(1−q)·log Φ_n(x;q) → Li₂(x)` (Faddeev scaling); `q→1⁻` regime **proved elementary** | branch-cut compatibility on principal `Li₂` at `q→1⁺` + Mathlib Tauberian | L (single-`ε` rescaling ⇒ rank-1) |
 | 8 | [`cs-evaluation-faithfulness`](../../content/quantum-observable-universe/predicted-spectra/cs-evaluation-faithfulness.md) | `κ_n≠0 ⇒ Φ_n≠0`: each volume grade non-degenerate; `Vol=Σ_nΦ_n` perpetual but **Mostow-convergent** | arithmetic independence of `{Φ_n}` (open) | **the `ε^ω` row** — narrows to "depth-`ω` tail"; resolved **L** by Mostow (see probe §RESOLUTION) |
 | 9 | [`observables-algebraic-independence`](../../content/quantum-observable-universe/observations/observables-algebraic-independence.md) | no algebraic relation over `ℚ(q₀)` among `(m_p,m_n,m_Λ,…)`; 5 falsifiable classes (lattice ratios cleanest) | the transcendence itself (open; lattice `10⁻⁶` test) | L |
+| 10 | [`kashaev-surreal`](../../content/quantum-observable-universe/appendix-surreals/kashaev-surreal.md) — **Möbius-energy narrowing** (NEW, via [`lem:jones-mobius-diagonal`](../../content/quantum-observable-universe/climax-volume-mass/jones-mobius-diagonal.md)) | (a) **Embedding:** the fundamental Jones polynomial **is** the Möbius contact term, `J_K = T_reg − E_cat` (`tr_M = ` diagonal of the categorical 2-point kernel; PROVED in Lean from the Frobenius–Hopf kernel collapse + Jones–Markov). (b) **Bound:** the transcendental `Vol(K)` (= Kashaev target, row 4) is squeezed below a finite computable quantity, `Vol(K) ≤ c₀·E(K)` with `c₀ = v_oct/2π` explicit, via FHW `E ≳ 2π·c(K)` + Lackenby `Vol ≲ v_oct·c(K)`. | sharpness of the FHW / Lackenby constants off alternating knots; the Volume-Conjecture limit (= row 4 residue) | **L** (crossing-number bound = finite real constants; the embedding is the `N=2` rung — rank-1) |
+
+> **Row 10 note.** Row 10 narrows the *same* Kashaev conjecture as row 4, but
+> from the **Möbius / geometric-energy side** rather than the `std`-part side.
+> Its distinctive product is the embedding (a): the surreal recast `E_cat =
+> std(I₁−I₂)` ([`rem:mobius-surreal-renormalization`](../../content/quantum-observable-universe/appendix-surreals/mobius-surreal-renormalization.md))
+> shows `I₁` (2-point) and `I₂` (contact) share the `ω^{+1}` leading divergence,
+> and `lem:jones-mobius-diagonal` identifies that shared divergence with `J_K`.
+> So Jones (Kashaev's `N=2` base) ↪ Möbius as the contact term — a *structural*
+> link between two QOU transcendentals, surreal-graded but still **L** (the
+> bound's constants are finite reals).
 
 ## The essential candidate — RESOLVED to *language* (2026-06-08)
 
