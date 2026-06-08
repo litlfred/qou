@@ -1175,7 +1175,7 @@
       }
     },
     "information-theory": {
-      "manifest_hash": "465836547b95",
+      "manifest_hash": "8bb76f659f0a",
       "stale_mode": "thorough",
       "machine": {
         "title_defects": [
@@ -1222,6 +1222,14 @@
         },
         "sec:speed-of-light": {
           "title": "Speed of Light and Mass--Energy Equivalence",
+          "depth": 1,
+          "result": "pending",
+          "reviewer": null,
+          "reviewed_hash": null,
+          "stale_mode": "thorough"
+        },
+        "sec:optical-fibre-1d-qou": {
+          "title": "Optical Fibres and 1D Quantum Channels",
           "depth": 1,
           "result": "pending",
           "reviewer": null,

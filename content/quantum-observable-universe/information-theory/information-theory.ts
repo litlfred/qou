@@ -69,6 +69,17 @@ section({
       ],
     }),
     section({
+      title: "Optical Fibres and 1D Quantum Channels",
+      label: "sec:optical-fibre-1d-qou",
+      blocks: [
+        "optical-fibre-intro",
+        "one-dim-qou-channel",
+        "parallel-fibre-noninteraction",
+        "fibre-channel-capacity",
+        "photon-propagation-1d",
+      ],
+    }),
+    section({
       title: "Computation at Planck Time Lengths",
       label: "sec:planck-scale-computation",
       blocks: [
