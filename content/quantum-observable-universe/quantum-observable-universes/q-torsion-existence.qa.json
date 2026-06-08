@@ -1949,7 +1949,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "quantum-observable-universes.ts:376 — block in sec:q-deformed-operators",
+        "evidence": "rem:q-torsion-existence interprets def:categorical-q-connection; discusses Frobenius obstruction to torsion leaves; fits chapter",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1957,11 +1957,11 @@
           "agent_date": "2026-06-08",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:23:47.915Z",
-        "reviewed_sha": "a37eaa826ea0de4f4fd872d49b7d9f506740f8e6",
-        "notes": "Remark on q-torsion existence; fits sec:q-deformed-operators."
+        "reviewed_at": "2026-06-08T09:55:39.655Z",
+        "reviewed_sha": "8b2b9773c91b3fddf1abf16f20f58d325bf77565",
+        "notes": "remark kind appropriate; content on q-torsion leaves in QOU chapter"
       }
     ]
   },
-  "updated_at": "2026-06-08T09:23:47.915Z"
+  "updated_at": "2026-06-08T09:55:39.655Z"
 }

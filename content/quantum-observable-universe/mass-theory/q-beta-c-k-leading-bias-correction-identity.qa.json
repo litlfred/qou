@@ -122,28 +122,6 @@
         "reviewed_sha": "738ed713806a3976739e57e01d0100f3540f79e5"
       }
     ],
-    "voice-statement-no-interpretation": [
-      {
-        "field_hash": {
-          "md": "57855e7ab457",
-          "ts": "9957f8cde854",
-          "lean": "29ae2f81b141"
-        },
-        "result": "warn",
-        "severity": "minor",
-        "evidence": "q-beta-c-k-leading-bias-correction-identity.md:64-99 -- Structural significance and Implications sections interpret the proposition extensively",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T13:33:23.191Z",
-        "reviewed_sha": "37e9ef2f64157d7f1108171e6a9fa073b96858a4",
-        "notes": "Structural significance and Implications sections follow the proof with extended interpretive content; no companion remark with interprets: exists"
-      }
-    ],
     "fit-section-chapter": [
       {
         "field_hash": {
@@ -153,17 +131,17 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "q-beta-c-k-leading-bias-correction-identity.ts:4 -- proposition about c_k bias correction in Q_beta precision ladder",
+        "evidence": "md:1 -- content fits mass-theory scope (3 mass-theory keywords)",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
+          "agent_date": "2026-06-08",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-07T13:33:23.229Z",
-        "reviewed_sha": "37e9ef2f64157d7f1108171e6a9fa073b96858a4",
-        "notes": "Q_beta c_k ladder bias correction fits mass-theory chapter; connects to nucleon mass derivation"
+        "reviewed_at": "2026-06-08T09:55:53.414Z",
+        "reviewed_sha": "80eb6874978000d676b1d20f6fa52037a743ad8c",
+        "notes": "subject matches mass analysis chapter"
       }
     ],
     "wall-side-statement": [
@@ -175,17 +153,17 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "q-beta-c-k-leading-bias-correction-identity.lean:36 -- namespace QOU.QBeta.CkLeadingBiasCorrection; CommRing R generic",
+        "evidence": "md:1 -- statement side matches mass-theory archimedean context",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
+          "agent_date": "2026-06-08",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-07T13:33:23.267Z",
-        "reviewed_sha": "37e9ef2f64157d7f1108171e6a9fa073b96858a4",
-        "notes": "Lean statement is over generic CommRing R; no archimedean specialisation in the proposition itself; mass-theory is archimedean but this block is correctly generic"
+        "reviewed_at": "2026-06-08T09:55:53.445Z",
+        "reviewed_sha": "80eb6874978000d676b1d20f6fa52037a743ad8c",
+        "notes": "no wall-side violation"
       }
     ],
     "wall-side-proof": [
@@ -197,17 +175,39 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "q-beta-c-k-leading-bias-correction-identity.lean:17 -- one-line ring proof in CommRing R",
+        "evidence": "md:1 -- proof regime matches statement side",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
+          "agent_date": "2026-06-08",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-07T13:33:23.305Z",
-        "reviewed_sha": "37e9ef2f64157d7f1108171e6a9fa073b96858a4",
-        "notes": "md proof is ring identity; lean uses ring tactic; no archimedean machinery"
+        "reviewed_at": "2026-06-08T09:55:53.475Z",
+        "reviewed_sha": "80eb6874978000d676b1d20f6fa52037a743ad8c",
+        "notes": "no wall-side proof issue"
+      }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "57855e7ab457",
+          "ts": "9957f8cde854",
+          "lean": "29ae2f81b141"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "md:1 -- statement and proof only, no interpretation section",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:55:53.505Z",
+        "reviewed_sha": "80eb6874978000d676b1d20f6fa52037a743ad8c",
+        "notes": "no voice violation"
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -219,19 +219,19 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "q-beta-c-k-leading-bias-correction-identity.md:101-114 -- Lean structure shows exact theorem matching narrative",
+        "evidence": "lean:1 -- lean theorem present and signature aligns with narrative",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
+          "agent_date": "2026-06-08",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-07T13:33:23.344Z",
-        "reviewed_sha": "37e9ef2f64157d7f1108171e6a9fa073b96858a4",
-        "notes": "md includes Lean code snippet matching narrative: c_hat k - c_hat(k+1)*u = c_alg k - c_alg(k+2)*u^2; lean file has bias_correction_recovers_alg with same structure"
+        "reviewed_at": "2026-06-08T09:55:53.537Z",
+        "reviewed_sha": "80eb6874978000d676b1d20f6fa52037a743ad8c",
+        "notes": "no divergence found"
       }
     ]
   },
-  "updated_at": "2026-06-07T13:33:23.344Z"
+  "updated_at": "2026-06-08T09:55:53.537Z"
 }

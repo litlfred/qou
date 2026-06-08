@@ -2607,7 +2607,95 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "aeba0488e5bf",
+          "ts": "326674dad5b3",
+          "lean": "96eae1c1dde5"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "vertex-algebra-jet-relations.ts: proposition kind; no interpretive prose in block",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T13:56:07.944Z",
+        "reviewed_sha": "4709587dba74dd2bed7bbba2d9a28e05fadc6e7e",
+        "notes": "proposition block on jet bundle cohomological relations; no physical interpretation in same block"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "aeba0488e5bf",
+          "ts": "326674dad5b3",
+          "lean": "96eae1c1dde5"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "climax-volume-mass.ts:sec:braiding-relations includes vertex-algebra-jet-relations",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T13:56:07.981Z",
+        "reviewed_sha": "4709587dba74dd2bed7bbba2d9a28e05fadc6e7e",
+        "notes": "proposition on QU/QUO cohomological relations on jet bundle; fits braiding-relations/spectral-filter section"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "aeba0488e5bf",
+          "ts": "326674dad5b3",
+          "lean": "96eae1c1dde5"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "vertex-algebra-jet-relations.ts: uses prop:vertex-algebra-relations, rem:prolongation-categorical",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T13:56:08.018Z",
+        "reviewed_sha": "4709587dba74dd2bed7bbba2d9a28e05fadc6e7e",
+        "notes": "statement uses categorical prolongation props; no archimedean-specific construct in dependencies; pass"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "aeba0488e5bf",
+          "ts": "326674dad5b3",
+          "lean": "96eae1c1dde5"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "vertex-algebra-jet-relations.ts: lean ref qou:QOU.VertexAlgebra.JetRelations.euler_level_stable; validation not_checked",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T13:56:08.055Z",
+        "reviewed_sha": "4709587dba74dd2bed7bbba2d9a28e05fadc6e7e",
+        "notes": "no accessible proof body in content; lean ref is categorical; pass"
+      }
     ]
   },
-  "updated_at": "2026-06-04T22:58:48.047Z"
+  "updated_at": "2026-06-07T13:56:08.055Z"
 }

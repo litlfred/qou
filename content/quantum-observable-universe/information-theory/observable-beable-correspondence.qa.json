@@ -807,7 +807,27 @@
           "worst_span": 0
         }
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "ecc8934e5093",
+          "ts": "aa0d556541bb"
+        },
+        "result": "pass",
+        "evidence": "remark listed in sec:horizons-aeons line 178; interprets def:observable-subcategory which is in same section; content matches chapter scope on information-theoretic observables",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:54:37.991Z",
+        "reviewed_sha": "51fa644d0ae4235855d84ef10fef91f453f60f4b",
+        "notes": "section and content match"
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-08T09:54:37.991Z"
 }

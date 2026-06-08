@@ -1797,7 +1797,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "quantum-observable-universes.ts:396 — proof block for prop:q-heat-equation-unique in sec:q-linear-transforms",
+        "evidence": "proof for prop:q-heat-equation-unique; eigenvalue argument on isotypic components; fits q-harmonic analysis section",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1805,11 +1805,11 @@
           "agent_date": "2026-06-08",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:23:47.815Z",
-        "reviewed_sha": "a37eaa826ea0de4f4fd872d49b7d9f506740f8e6",
-        "notes": "Proof of q-heat uniqueness; correctly placed in sec:q-linear-transforms."
+        "reviewed_at": "2026-06-08T09:55:39.560Z",
+        "reviewed_sha": "8b2b9773c91b3fddf1abf16f20f58d325bf77565",
+        "notes": "categorical and base-ring independent per proof text"
       }
     ]
   },
-  "updated_at": "2026-06-08T09:23:47.815Z"
+  "updated_at": "2026-06-08T09:55:39.560Z"
 }

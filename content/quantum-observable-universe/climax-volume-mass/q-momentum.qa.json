@@ -1947,7 +1947,51 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "880a8ce397a1",
+          "ts": "522476e8903e",
+          "lean": "57f2758d467f"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "climax-volume-mass.ts:sec:lagrange-q-kinematics includes q-momentum",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T13:56:07.677Z",
+        "reviewed_sha": "4709587dba74dd2bed7bbba2d9a28e05fadc6e7e",
+        "notes": "definition of q-momentum from braid writhe; fits Lagrange kinematics section"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "880a8ce397a1",
+          "ts": "522476e8903e",
+          "lean": "57f2758d467f"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "q-momentum.md:1 - Lean sibling: archimedean specialisation banner; p_q formula is generic writhe sum",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T13:56:07.717Z",
+        "reviewed_sha": "4709587dba74dd2bed7bbba2d9a28e05fadc6e7e",
+        "notes": "archimedean banner present; definition formula is generic; numeric q_0 value only in table comment; chapter is archimedean"
+      }
     ]
   },
-  "updated_at": "2026-06-03T20:30:24.391Z"
+  "updated_at": "2026-06-07T13:56:07.717Z"
 }

@@ -1797,7 +1797,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "quantum-observable-universe-exists-proof.ts:1 — kind proof, proves prop:quantum-observable-universe-exists in sec:qou-definition",
+        "evidence": "proof block for prop:quantum-observable-universe-exists; constructs (C,A,tau) triple and verifies 4 QOU axioms; fits Chapter 2 QOU definition section",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1805,11 +1805,11 @@
           "agent_date": "2026-06-08",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:21:36.318Z",
-        "reviewed_sha": "f1f4241d0d868c69546ddedc3ba707f27a94cc80",
-        "notes": "Proof of QOU existence proposition; correctly placed in sec:qou-definition of chapter quantum-observable-universes."
+        "reviewed_at": "2026-06-08T09:53:09.192Z",
+        "reviewed_sha": "8b2b9773c91b3fddf1abf16f20f58d325bf77565",
+        "notes": "generic algebraic construction over q in Cx; no archimedean specialisation in proof body"
       }
     ]
   },
-  "updated_at": "2026-06-08T09:21:36.318Z"
+  "updated_at": "2026-06-08T09:53:09.192Z"
 }

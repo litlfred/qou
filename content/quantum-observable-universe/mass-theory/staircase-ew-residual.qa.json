@@ -2102,19 +2102,19 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "staircase-ew-residual.ts:2 -- conjecture",
+        "evidence": "md:1 -- content fits mass-theory scope (4 mass-theory keywords)",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
+          "agent_date": "2026-06-08",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-07T13:38:07.178Z",
-        "reviewed_sha": "ea16b464d587fbd725060636a1beb8dbcaabd167",
-        "notes": "EW residual staircase conjecture fits mass-theory chapter"
+        "reviewed_at": "2026-06-08T09:55:54.514Z",
+        "reviewed_sha": "c05a9ab28ed404f4fd265a863d2367ca02f4b3da",
+        "notes": "subject matches mass analysis chapter"
       }
     ]
   },
-  "updated_at": "2026-06-07T13:38:07.178Z"
+  "updated_at": "2026-06-08T09:55:54.514Z"
 }

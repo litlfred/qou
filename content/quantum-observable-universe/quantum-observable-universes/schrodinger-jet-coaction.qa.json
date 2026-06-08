@@ -1949,7 +1949,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "quantum-observable-universes.ts:524 — block in sec:physical-elaborations; remark on q-Schrodinger dynamics",
+        "evidence": "block in quantum-observable-universes chapter; kind and content match chapter scope",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1957,11 +1957,11 @@
           "agent_date": "2026-06-08",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:23:06.226Z",
-        "reviewed_sha": "f1f4241d0d868c69546ddedc3ba707f27a94cc80",
-        "notes": "Physical elaboration on q-Schrodinger equation; fits sec:physical-elaborations."
+        "reviewed_at": "2026-06-08T09:55:11.507Z",
+        "reviewed_sha": "8b2b9773c91b3fddf1abf16f20f58d325bf77565",
+        "notes": "fits chapter 2 QOU development"
       }
     ]
   },
-  "updated_at": "2026-06-08T09:23:06.226Z"
+  "updated_at": "2026-06-08T09:55:11.507Z"
 }

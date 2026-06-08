@@ -1949,7 +1949,51 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "ec34940520d5",
+          "ts": "4c095717b475",
+          "lean": "75acdb531ecb"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "climax-volume-mass.ts:sec:knot-operator-energy includes knot-operator-energy",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T13:56:07.793Z",
+        "reviewed_sha": "4709587dba74dd2bed7bbba2d9a28e05fadc6e7e",
+        "notes": "definition of knot operator energy as LP-dual shadow price; central definition in knot-operator-energy section"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "ec34940520d5",
+          "ts": "4c095717b475",
+          "lean": "75acdb531ecb"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "knot-operator-energy.md: definition over base ring R; shadow price formula in R; archimedean, p-adic cases in exists prop",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T13:56:07.830Z",
+        "reviewed_sha": "4709587dba74dd2bed7bbba2d9a28e05fadc6e7e",
+        "notes": "definition uses generic base ring; no archimedean assumption in body; chapter is archimedean (OK)"
+      }
     ]
   },
-  "updated_at": "2026-06-03T20:30:24.391Z"
+  "updated_at": "2026-06-07T13:56:07.830Z"
 }

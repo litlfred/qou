@@ -2599,7 +2599,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "quantum-observable-universes.ts:394 — block in sec:q-linear-transforms; content matches uniqueness of q-heat equation",
+        "evidence": "prop:q-heat-equation-unique in sec:q-harmonic-analysis chapter; uniqueness of q-heat equation semigroup orbit; fits scope",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -2607,9 +2607,9 @@
           "agent_date": "2026-06-08",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:21:58.923Z",
-        "reviewed_sha": "f1f4241d0d868c69546ddedc3ba707f27a94cc80",
-        "notes": "Uniqueness of q-heat-equation solutions; belongs in sec:q-linear-transforms in this chapter."
+        "reviewed_at": "2026-06-08T09:54:48.599Z",
+        "reviewed_sha": "8b2b9773c91b3fddf1abf16f20f58d325bf77565",
+        "notes": "appropriate proposition kind; uniqueness via eigenvalue-by-eigenvalue argument"
       }
     ],
     "voice-statement-no-interpretation": [
@@ -2621,7 +2621,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "q-heat-equation-unique.md:1 — statement only: Given initial data u_0, the solution u(t) ... uniquely determined ... Two solutions ... coincide for every t.",
+        "evidence": "statement is pure math uniqueness claim; no interpretive prose follows in same block",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -2629,9 +2629,9 @@
           "agent_date": "2026-06-08",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:22:22.685Z",
-        "reviewed_sha": "f1f4241d0d868c69546ddedc3ba707f27a94cc80",
-        "notes": "Statement is pure uniqueness claim with no interpretive prose; no companion remark needed."
+        "reviewed_at": "2026-06-08T09:54:48.633Z",
+        "reviewed_sha": "8b2b9773c91b3fddf1abf16f20f58d325bf77565",
+        "notes": "n/a for voice test: statement only, proof in separate block"
       }
     ],
     "wall-side-statement": [
@@ -2643,7 +2643,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "q-heat-equation-unique.md:1 — statement uses exp(-t Delta_q) u_0 semigroup; algebraic/categorical, no Real.sqrt or archimedean ordering.",
+        "evidence": "statement uses exp(-t*Delta_q) semigroup; purely algebraic operator; no archimedean ordering or Real.* functions",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -2651,9 +2651,9 @@
           "agent_date": "2026-06-08",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:22:22.719Z",
-        "reviewed_sha": "f1f4241d0d868c69546ddedc3ba707f27a94cc80",
-        "notes": "Statement is purely algebraic (Hopf semigroup orbit); no archimedean constructs present."
+        "reviewed_at": "2026-06-08T09:54:48.663Z",
+        "reviewed_sha": "8b2b9773c91b3fddf1abf16f20f58d325bf77565",
+        "notes": "categorical heat equation; eigenvalue argument is generic"
       }
     ],
     "wall-side-proof": [
@@ -2663,9 +2663,9 @@
           "ts": "26d0c787d3cb",
           "lean": "6b3acdf948c7"
         },
-        "result": "n/a",
+        "result": "pass",
         "severity": "minor",
-        "evidence": "q-heat-equation-unique.md — no **Proof.** body in this block; proof is in separate prf: block",
+        "evidence": "proof via isotypic projection pi_j(v); ODE per eigenvalue; categorical and base-ring independent per proof text",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -2673,11 +2673,11 @@
           "agent_date": "2026-06-08",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:22:22.753Z",
-        "reviewed_sha": "f1f4241d0d868c69546ddedc3ba707f27a94cc80",
-        "notes": "Proof body is in a separate proof block (prf:q-heat-equation-unique); n/a here."
+        "reviewed_at": "2026-06-08T09:54:48.696Z",
+        "reviewed_sha": "8b2b9773c91b3fddf1abf16f20f58d325bf77565",
+        "notes": "proof explicitly notes base-ring independence; no archimedean machinery"
       }
     ]
   },
-  "updated_at": "2026-06-08T09:22:22.753Z"
+  "updated_at": "2026-06-08T09:54:48.696Z"
 }

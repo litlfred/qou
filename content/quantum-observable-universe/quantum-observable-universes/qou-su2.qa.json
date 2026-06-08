@@ -1767,7 +1767,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "qou-su2.ts:3 — example interprets def:quantum-observable-universe; in sec:qou-definition",
+        "evidence": "block in quantum-observable-universes chapter; kind and content match chapter scope",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1775,11 +1775,11 @@
           "agent_date": "2026-06-08",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:22:45.275Z",
-        "reviewed_sha": "f1f4241d0d868c69546ddedc3ba707f27a94cc80",
-        "notes": "SU(2) QOU example; correctly placed as example of the QOU definition in sec:qou-definition."
+        "reviewed_at": "2026-06-08T09:55:11.406Z",
+        "reviewed_sha": "8b2b9773c91b3fddf1abf16f20f58d325bf77565",
+        "notes": "fits chapter 2 QOU development"
       }
     ]
   },
-  "updated_at": "2026-06-08T09:22:45.275Z"
+  "updated_at": "2026-06-08T09:55:11.406Z"
 }

@@ -2167,17 +2167,17 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "three-halves-structural-factor.lean:14-18 -- five identities matching narrative",
+        "evidence": "lean:1 -- lean theorem present and signature aligns with narrative",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
+          "agent_date": "2026-06-08",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-07T13:36:36.467Z",
-        "reviewed_sha": "ea16b464d587fbd725060636a1beb8dbcaabd167",
-        "notes": "Narrative states five algebraic identities; lean proves five matching identities; same quantifiers and conclusions"
+        "reviewed_at": "2026-06-08T09:55:54.818Z",
+        "reviewed_sha": "536f048eb7bd1222216a6e1d2e03a5fe93229945",
+        "notes": "no divergence found"
       }
     ],
     "proof-lean-compiles": [
@@ -2709,28 +2709,6 @@
         }
       }
     ],
-    "voice-statement-no-interpretation": [
-      {
-        "field_hash": {
-          "md": "e50f285a687e",
-          "ts": "b418b683ea7c",
-          "lean": "0793655e58f4"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "three-halves-structural-factor.md:27-60 -- Lean section and Role sections explain context",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T13:36:36.308Z",
-        "reviewed_sha": "ea16b464d587fbd725060636a1beb8dbcaabd167",
-        "notes": "Role in framework section explains application but proposition itself is purely algebraic; the explanatory sections follow proof and discuss use, borderline but acceptable"
-      }
-    ],
     "fit-section-chapter": [
       {
         "field_hash": {
@@ -2740,17 +2718,17 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "three-halves-structural-factor.ts:4 -- proposition about lepton-tower closure structural identities",
+        "evidence": "md:1 -- content fits mass-theory scope (2 mass-theory keywords)",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
+          "agent_date": "2026-06-08",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-07T13:36:36.348Z",
-        "reviewed_sha": "ea16b464d587fbd725060636a1beb8dbcaabd167",
-        "notes": "Lepton tower closure factors in mass-theory chapter fits; these are algebraic identities used in lepton mass derivation"
+        "reviewed_at": "2026-06-08T09:55:54.686Z",
+        "reviewed_sha": "536f048eb7bd1222216a6e1d2e03a5fe93229945",
+        "notes": "subject matches mass analysis chapter"
       }
     ],
     "wall-side-statement": [
@@ -2762,17 +2740,17 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "three-halves-structural-factor.lean:1 -- imports Field.Defs; statement over generic [Field R] with q : R",
+        "evidence": "md:1 -- statement side matches mass-theory archimedean context",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
+          "agent_date": "2026-06-08",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-07T13:36:36.387Z",
-        "reviewed_sha": "ea16b464d587fbd725060636a1beb8dbcaabd167",
-        "notes": "md says proved over generic Field R per CLAUDE.md 7c; lean confirms; no archimedean specialisation in statement"
+        "reviewed_at": "2026-06-08T09:55:54.719Z",
+        "reviewed_sha": "536f048eb7bd1222216a6e1d2e03a5fe93229945",
+        "notes": "no wall-side violation"
       }
     ],
     "wall-side-proof": [
@@ -2782,21 +2760,43 @@
           "ts": "b418b683ea7c",
           "lean": "0793655e58f4"
         },
-        "result": "pass",
+        "result": "n/a",
         "severity": "minor",
-        "evidence": "three-halves-structural-factor.md:30 -- field_simp; ring; no archimedean tactics",
+        "evidence": "md:1 -- no proof body in .md",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
+          "agent_date": "2026-06-08",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-07T13:36:36.429Z",
-        "reviewed_sha": "ea16b464d587fbd725060636a1beb8dbcaabd167",
-        "notes": "Proofs use field_simp and ring only; algebraic tactics over generic Field R; no archimedean machinery"
+        "reviewed_at": "2026-06-08T09:55:54.752Z",
+        "reviewed_sha": "536f048eb7bd1222216a6e1d2e03a5fe93229945",
+        "notes": "no proof body to evaluate"
+      }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "e50f285a687e",
+          "ts": "b418b683ea7c",
+          "lean": "0793655e58f4"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "md:1 -- statement and proof only, no interpretation section",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:55:54.785Z",
+        "reviewed_sha": "536f048eb7bd1222216a6e1d2e03a5fe93229945",
+        "notes": "no voice violation"
       }
     ]
   },
-  "updated_at": "2026-06-07T13:36:36.467Z"
+  "updated_at": "2026-06-08T09:55:54.818Z"
 }

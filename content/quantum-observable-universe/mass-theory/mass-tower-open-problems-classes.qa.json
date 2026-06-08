@@ -2006,19 +2006,19 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "mass-tower-open-problems-classes.ts:2 -- remark",
+        "evidence": "md:1 -- content fits mass-theory scope (7 mass-theory keywords)",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
+          "agent_date": "2026-06-08",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-07T13:38:07.143Z",
-        "reviewed_sha": "ea16b464d587fbd725060636a1beb8dbcaabd167",
-        "notes": "Open problems remark fits mass-theory chapter open-problems section"
+        "reviewed_at": "2026-06-08T09:55:54.337Z",
+        "reviewed_sha": "c4b88f29d6b72c5dd7ba2077ff7f7638fb6df30a",
+        "notes": "subject matches mass analysis chapter"
       }
     ]
   },
-  "updated_at": "2026-06-07T13:38:07.143Z"
+  "updated_at": "2026-06-08T09:55:54.337Z"
 }

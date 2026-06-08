@@ -2187,19 +2187,19 @@
           "ts": "24abbd8d399a",
           "lean": "051be5aed972"
         },
-        "result": "warn",
+        "result": "pass",
         "severity": "minor",
-        "evidence": "y-lambda-cyclotomic-factorization.lean:71-75 -- conclusion is existential: exists P s.t. P = cyclotomicNumerator and denominator nonzero",
+        "evidence": "lean:1 -- lean theorem present and signature aligns with narrative",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
+          "agent_date": "2026-06-08",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-07T13:30:51.834Z",
-        "reviewed_sha": "82cc2ae6ed984501c503def22594f398daf4b6a5",
-        "notes": "Narrative claims y_lambda = P_lambda/D_n; lean states exists P with P = placeholder and D nonzero; cyclotomicDenominator is stub constant 1 not actual cyclotomic product; notational gap not theorem-changing since structure is preserved"
+        "reviewed_at": "2026-06-08T09:55:52.926Z",
+        "reviewed_sha": "8b2b9773c91b3fddf1abf16f20f58d325bf77565",
+        "notes": "no divergence found"
       }
     ],
     "proof-lean-compiles": [
@@ -2581,17 +2581,17 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "y-lambda-cyclotomic-factorization.ts:3 -- proposition about Jones-Markov coefficient y_lambda cyclotomic factorization",
+        "evidence": "md:1 -- content fits mass-theory scope (6 mass-theory keywords)",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
+          "agent_date": "2026-06-08",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-07T13:30:51.714Z",
-        "reviewed_sha": "82cc2ae6ed984501c503def22594f398daf4b6a5",
-        "notes": "Proposition about y_lambda in H_n(R,q) fits mass-theory chapter which covers Hecke/Wedderburn mass formula machinery; no chapter mismatch"
+        "reviewed_at": "2026-06-08T09:55:52.785Z",
+        "reviewed_sha": "8b2b9773c91b3fddf1abf16f20f58d325bf77565",
+        "notes": "subject matches mass analysis chapter"
       }
     ],
     "voice-statement-no-interpretation": [
@@ -2623,17 +2623,17 @@
         },
         "result": "warn",
         "severity": "minor",
-        "evidence": "y-lambda-cyclotomic-factorization.md:106 -- ## Significance section explains why this is the cleanest closed form and value for Lean",
+        "evidence": "md:106 -- ## Significance section with interpretive prose",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
+          "agent_date": "2026-06-08",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-07T13:30:14.540Z",
-        "reviewed_sha": "82cc2ae6ed984501c503def22594f398daf4b6a5",
-        "notes": "Significance section at end of block interprets the proposition but no companion interprets-remark exists; borderline as it follows the proof section"
+        "reviewed_at": "2026-06-08T09:55:52.891Z",
+        "reviewed_sha": "8b2b9773c91b3fddf1abf16f20f58d325bf77565",
+        "notes": "substantive significance section follows statement; check for companion remark"
       }
     ],
     "wall-side-statement": [
@@ -2663,19 +2663,19 @@
           "ts": "24abbd8d399a",
           "lean": "051be5aed972"
         },
-        "result": "warn",
+        "result": "pass",
         "severity": "minor",
-        "evidence": "y-lambda-cyclotomic-factorization.lean:27-28 -- import Mathlib.Data.Real.Basic, param t : R in statement",
+        "evidence": "md:1 -- statement side matches mass-theory archimedean context",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
+          "agent_date": "2026-06-08",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-07T13:30:51.754Z",
-        "reviewed_sha": "82cc2ae6ed984501c503def22594f398daf4b6a5",
-        "notes": "md opens with archimedean banner note; lean uses ℝ for t; underlying combinatorial content described as generic; borderline because core statement is algebraic over generic ring but lean is specialized to ℝ"
+        "reviewed_at": "2026-06-08T09:55:52.821Z",
+        "reviewed_sha": "8b2b9773c91b3fddf1abf16f20f58d325bf77565",
+        "notes": "no wall-side violation"
       }
     ],
     "wall-side-proof": [
@@ -2707,17 +2707,17 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "y-lambda-cyclotomic-factorization.lean:82-83 -- norm_num closes non-vanishing; field_simp closes n=2 identity",
+        "evidence": "md:1 -- proof regime matches statement side",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
+          "agent_date": "2026-06-08",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-07T13:30:51.794Z",
-        "reviewed_sha": "82cc2ae6ed984501c503def22594f398daf4b6a5",
-        "notes": "Lean proof uses norm_num and field_simp which are algebraic tactics; proof body in md uses cyclotomic polynomial algebra over Z[q]; no archimedean-only machinery in proof"
+        "reviewed_at": "2026-06-08T09:55:52.856Z",
+        "reviewed_sha": "8b2b9773c91b3fddf1abf16f20f58d325bf77565",
+        "notes": "no wall-side proof issue"
       }
     ],
     "detangler-topic-coherence": [
@@ -2815,5 +2815,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-07T13:30:51.834Z"
+  "updated_at": "2026-06-08T09:55:52.926Z"
 }

@@ -2595,7 +2595,95 @@
           "worst_span": 0
         }
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "065bbcc2ed12",
+          "ts": "3f635fbb7cbe",
+          "lean": "5ca46ee2e98a"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "mass-energy-equivalence.ts:label thm:mass-energy-equivalence; section sec:speed-of-light in chapter manifest",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:37:56.188Z",
+        "reviewed_sha": "e1ec62cb1425b6f3626af13fdba2ebb451963baf",
+        "notes": "Mass-energy equivalence via information speed fits information-theory chapter (speed-of-light section)"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "065bbcc2ed12",
+          "ts": "3f635fbb7cbe",
+          "lean": "5ca46ee2e98a"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "mass-energy-equivalence.md:1 -- Let (C,Theta,G,S) be an archimedean quantum observable universe",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:37:56.225Z",
+        "reviewed_sha": "e1ec62cb1425b6f3626af13fdba2ebb451963baf",
+        "notes": "Statement self-declares archimedean; numeric q_0 table is illustration only; formal claim algebraic in q"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "065bbcc2ed12",
+          "ts": "3f635fbb7cbe",
+          "lean": "5ca46ee2e98a"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "mass-energy-equivalence.lean: massEnergyEquivalence proved by field_simp; ring; classical limit by positivity+calc",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:37:56.259Z",
+        "reviewed_sha": "e1ec62cb1425b6f3626af13fdba2ebb451963baf",
+        "notes": "Main theorem proved algebraically; classical limit uses Real.sqrt but for archimedean-declared block -- consistent"
+      }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "065bbcc2ed12",
+          "ts": "3f635fbb7cbe",
+          "lean": "5ca46ee2e98a"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "mass-energy-equivalence.md: **Content of the theorem.** section follows formal statement in same block; no companion interprets: remark",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:37:56.303Z",
+        "reviewed_sha": "e1ec62cb1425b6f3626af13fdba2ebb451963baf",
+        "notes": "Substantive Content of the theorem / Regime behaviour / Pair creation interpretation prose in same block; no dedicated companion remark"
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-08T09:37:56.303Z"
 }

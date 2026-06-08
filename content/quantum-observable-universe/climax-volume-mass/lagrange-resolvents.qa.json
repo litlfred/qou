@@ -1940,7 +1940,28 @@
           "worst_span": 0
         }
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "03d05793863a",
+          "ts": "ce29c836a3b8"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "climax-volume-mass.ts:sec:lagrange-q-kinematics includes lagrange-resolvents",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T13:56:07.755Z",
+        "reviewed_sha": "4709587dba74dd2bed7bbba2d9a28e05fadc6e7e",
+        "notes": "remark on Lagrange resolvent spectral form; interprets prop:lagrange-resolvent-transform; fits section"
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-07T13:56:07.755Z"
 }

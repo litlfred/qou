@@ -2096,7 +2096,28 @@
           "worst_span": 0
         }
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "d464c9bb5804",
+          "ts": "df53a4e67280"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "stat-mech-intro.ts: kind and interprets/uses fields consistent with information-theory chapter scope",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:33:15.826Z",
+        "reviewed_sha": "f7260d597794a16397f57f84daaa881e0dcbf0bc",
+        "notes": "Block subject (computation, information, stat mech, planck scale, q-heat kernel) fits chapter; proper interprets or label"
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-08T09:33:15.826Z"
 }

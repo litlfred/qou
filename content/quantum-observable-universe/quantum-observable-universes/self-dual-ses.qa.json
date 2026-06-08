@@ -1949,7 +1949,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "quantum-observable-universes.ts:341 — block in sec:instanton; interprets instanton/self-duality content",
+        "evidence": "rem:self-dual-ses interprets def:q-hodge-star; self-duality SES; fits quantum-observable-universes chapter",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1957,11 +1957,11 @@
           "agent_date": "2026-06-08",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:23:47.881Z",
-        "reviewed_sha": "a37eaa826ea0de4f4fd872d49b7d9f506740f8e6",
-        "notes": "Short exact sequence remark on self-duality; fits sec:instanton."
+        "reviewed_at": "2026-06-08T09:55:39.623Z",
+        "reviewed_sha": "8b2b9773c91b3fddf1abf16f20f58d325bf77565",
+        "notes": "remark with interprets field; categorical content"
       }
     ]
   },
-  "updated_at": "2026-06-08T09:23:47.881Z"
+  "updated_at": "2026-06-08T09:55:39.623Z"
 }

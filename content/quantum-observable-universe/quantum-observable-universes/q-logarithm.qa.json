@@ -1985,7 +1985,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "quantum-observable-universes.ts:441 — block in sec:q-special-functions-exp-log",
+        "evidence": "def:q-logarithm in q-special-functions section; Hopf-algebraic primitive dual to exp_q; fits chapter scope",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1993,9 +1993,9 @@
           "agent_date": "2026-06-08",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:23:30.084Z",
-        "reviewed_sha": "f1f4241d0d868c69546ddedc3ba707f27a94cc80",
-        "notes": "q-logarithm definition fits sec:q-special-functions-exp-log."
+        "reviewed_at": "2026-06-08T09:55:39.498Z",
+        "reviewed_sha": "8b2b9773c91b3fddf1abf16f20f58d325bf77565",
+        "notes": "generic Hopf algebra content; no archimedean assumption in definition"
       }
     ],
     "wall-side-statement": [
@@ -2007,7 +2007,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "q-logarithm.md:16 — definition log_q in Prim(H_q); Hopf-algebraic adjoint pair, no archimedean constructs in definition",
+        "evidence": "definition over base ring R; adjoint pair log_q -| exp_q in formal-power-series PROP; archimedean realisation labelled separately in md section",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -2015,11 +2015,11 @@
           "agent_date": "2026-06-08",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:23:30.118Z",
-        "reviewed_sha": "f1f4241d0d868c69546ddedc3ba707f27a94cc80",
-        "notes": "Definition is Hopf-algebraic (primitive element, adjoint pair); wall-side is generic/substrate. Archimedean Taylor series appears only in separate subsections as additional facts."
+        "reviewed_at": "2026-06-08T09:55:39.529Z",
+        "reviewed_sha": "8b2b9773c91b3fddf1abf16f20f58d325bf77565",
+        "notes": "explicitly separates Habiro ring (generic) from archimedean realisation; no uncovered archimedean assumption in statement itself"
       }
     ]
   },
-  "updated_at": "2026-06-08T09:23:30.118Z"
+  "updated_at": "2026-06-08T09:55:39.529Z"
 }
