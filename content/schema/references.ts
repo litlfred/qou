@@ -2824,6 +2824,25 @@ export const references: CSLData[] = [
     note: "arXiv:gr-qc/0407052. The Immirzi-fixing criticality equation. Added 2026-06-08 from uploads/0407052v1.pdf; used by docs/audits/2026-06-08-spin-network-count-q-dimension-partition-function.md. HUMAN-REVIEW: unreviewed (DOI/page best-effort).",
   }),
 
+  // ── Freedman–He–Wang (1994): Möbius energy of knots and unknots ──
+  ref({
+    id: "freedman-he-wang1994",
+    type: "article-journal",
+    title: "Möbius energy of knots and unknots",
+    author: [
+      { family: "Freedman", given: "Michael H." },
+      { family: "He", given: "Zheng-Xu" },
+      { family: "Wang", given: "Zhenghan" },
+    ],
+    "container-title": "Annals of Mathematics",
+    volume: "139",
+    issue: "1",
+    page: "1-50",
+    issued: { "date-parts": [[1994]] },
+    DOI: "10.2307/2946626",
+    note: "Möbius-invariant knot energy; finiteness/regularity of the renormalized integral. Added 2026-06-08; used by appendix-surreals/mobius-surreal-renormalization. HUMAN-REVIEW: unreviewed (DOI best-effort).",
+  }),
+
   // ── Thiemann (2007): Modern Canonical Quantum General Relativity ──
   ref({
     id: "thiemann2007",
@@ -3260,6 +3279,7 @@ export const references: CSLData[] = [
     page: "241-247",
     DOI: "10.1016/0040-9383(91)90010-2",
     URL: "https://doi.org/10.1016/0040-9383(91)90010-2",
+    note: "The original knot-energy functional. Also used by appendix-surreals/mobius-surreal-renormalization (Möbius-energy surreal recasting). HUMAN-REVIEW: unreviewed — DOI needs verification; an alternate candidate DOI 10.1016/0040-9383(91)90030-7 was seen during 2026-06-08 ingestion.",
   }),
 
   // ── Diaconis--Ram 2000 (random walks on Hecke algebras) ─────
