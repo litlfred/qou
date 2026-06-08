@@ -1,7 +1,7 @@
 # Phase transitions + H₂O build + knot-symmetry hierarchy of matter
 
 **Branch:** `claude/gallant-bohr-w9f6a6`
-**Started:** 2026-06-08
+**Date:** 2026-06-08
 **Status:** WIP — workplan stub (PR opened first per CLAUDE.md branch+PR policy)
 
 ## Owner request (verbatim intent)
