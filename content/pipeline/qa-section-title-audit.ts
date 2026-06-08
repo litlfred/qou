@@ -59,6 +59,12 @@ const reportOnly = args.includes("--report-only");
 // agent-review slots). CI regenerates then `git diff --exit-code`s them,
 // so a chapter-manifest edit without a re-run fails CI ("sidecars stale").
 const writeSidecar = args.includes("--write-sidecar");
+// `--toc [chapterDir]` prints the chapter→section→subsection tree with
+// per-node block weights + framework flags (for dynamic reorg review),
+// then exits.
+const tocIdx = args.indexOf("--toc");
+const tocMode = tocIdx >= 0;
+const tocChapter = tocMode && args[tocIdx + 1] && !args[tocIdx + 1].startsWith("--") ? args[tocIdx + 1] : undefined;
 const maxLenIdx = args.indexOf("--max-len");
 const MAX_LEN = maxLenIdx >= 0 ? Number(args[maxLenIdx + 1]) : 72;
 const paperArg = args.find((a) => !a.startsWith("--") && a !== String(MAX_LEN));
@@ -257,7 +263,37 @@ function writeSidecars(allNodes: TitleNode[], flags: Flag[], structureFlags: Str
   }
 }
 
+/** Print the chapter→section→subsection TOC with block weights +
+ *  framework (P1–P6) flags, for dynamic reorg review. */
+async function printToc(chapterFilter: string | undefined): Promise<void> {
+  for (const m of findChapterManifests(undefined)) {
+    const chapterDir = dirname(m).split("/").pop() ?? "?";
+    if (chapterFilter && chapterDir !== chapterFilter) continue;
+    const paper = dirname(dirname(m)).split("/").pop() ?? "?";
+    let mod: { default?: Record<string, unknown> };
+    try { mod = (await import(pathToFileURL(resolve(m)).href)) as { default?: Record<string, unknown> }; }
+    catch { continue; }
+    const ch = mod.default;
+    if (!ch || typeof ch.title !== "string") continue;
+    const sf: StructFlag[] = [];
+    auditStructure(paper, chapterDir, ch.sections, sf);
+    const flag = (s: Record<string, unknown>) => {
+      const fl = sf.filter((f) => (f.label && f.label === s.label) || (!f.label && f.title === s.title)).map((f) => f.kind);
+      return fl.length ? `  ⚑ ${[...new Set(fl)].join(", ")}` : "";
+    };
+    const secs = (Array.isArray(ch.sections) ? ch.sections : []).filter((s): s is Record<string, unknown> => !!s && typeof (s as Record<string, unknown>).title === "string");
+    const total = secs.reduce((a, s) => a + sectionWeight(s), 0);
+    console.log(`\n═══ ${ch.title}  (${paper}/${chapterDir})  ·  ${secs.length} sections, ${total} blocks ═══`);
+    secs.forEach((s, i) => {
+      console.log(`  ${i + 1}. ${s.title}   [${sectionWeight(s)}]${flag(s)}`);
+      const subs = (Array.isArray(s.subsections) ? s.subsections : []).filter((x): x is Record<string, unknown> => !!x && typeof (x as Record<string, unknown>).title === "string");
+      subs.forEach((sub, j) => console.log(`       ${i + 1}.${j + 1} ${sub.title}   [${sectionWeight(sub)}]${flag(sub)}`));
+    });
+  }
+}
+
 async function main(): Promise<void> {
+  if (tocMode) { await printToc(tocChapter); return; }
   const manifests = findChapterManifests(paperArg);
   const allNodes: TitleNode[] = [];
   const importErrors: string[] = [];

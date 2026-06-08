@@ -163,12 +163,11 @@ export default chapter({
         "ground-state-ordering-table1-data",
         "neutron-qvalue-symbolic",
         "delta-pre-archimedean",
-      ],
-    }),
-    section({
-      title: "Transfer matrices and beta decay : vs",
-      label: "sec:transfer-beta-decay-q-beta-spectral",
-      blocks: [
+        // Merged from the former auto-split "Transfer matrices and beta
+        // decay : vs" (small base, strongly-related continuation — the
+        // spectral Q_beta route to the same observable; reorg policy:
+        // strongly-related -> merge). The transition block below opens
+        // the spectral-bridge half.
         "transfer-beta-decay-q-beta-spectral-intro",
         "q-beta-spectral-bridge",
         "q-beta-spectral-bridge-table-data",
@@ -262,12 +261,10 @@ export default chapter({
         "atomic-braid-table1-data",
         "knot-particle-generation",
         "knot-particle-generation-table-data",
-      ],
-    }),
-    section({
-      title: "Skein Generation and Particle Correspondence : generation",
-      label: "sec:skein-particle-generation-knot-particle-generation",
-      blocks: [
+        // Merged from the former auto-split "Skein Generation and
+        // Particle Correspondence : generation" (small base,
+        // strongly-related continuation — the knot-particle dictionary;
+        // reorg policy: strongly-related -> merge).
         "skein-particle-generation-knot-particle-generation-intro",
         "knot-particle-generation-interpretation",
         "knot-particle-correspondence",
