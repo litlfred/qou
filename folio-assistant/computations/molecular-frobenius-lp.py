@@ -153,6 +153,27 @@ print()
 
 
 # ══════════════════════════════════════════════════════════════
+# §2b. Canonical operator-selection LP dual (CLAUDE.md LP/SDP mandate)
+# ══════════════════════════════════════════════════════════════
+# Route the molecular Frobenius operator-selection through the canonical
+# solver so the witness carries BOTH the primal coefficients AND the dual
+# shadow prices.  The active set {i : y_star[i] > 0} are the saturated
+# Frobenius/Wedderburn channels — the "most receptive sub-braids" — and
+# their cardinality is the categorical signature of bond order.
+from lp_dual_solver import solve_operator_selection_lp  # noqa: E402
+
+_lp = solve_operator_selection_lp(np.asarray(TR_M, dtype=float), G, n_target=1.0)
+print("--- Operator-selection LP dual (unit net) ---")
+print(f"  primal_obj  = {_lp.primal_obj:.6f}   dual_obj = {_lp.dual_obj:.6f}")
+print(f"  duality_gap = {_lp.duality_gap:.2e}   (strong duality)")
+print(f"  y0*         = {_lp.y0_star:.6f}   (binding-energy density shadow price)")
+print(f"  active_set  = {_lp.active_set} → "
+      f"{[NF_NAMES[i] for i in _lp.active_set]}")
+print(f"  |active_set| = {len(_lp.active_set)}  (saturated Wedderburn channels)")
+print()
+
+
+# ══════════════════════════════════════════════════════════════
 # §3. Build atoms
 # ══════════════════════════════════════════════════════════════
 
@@ -384,6 +405,17 @@ w.set_content_block("def:molecular-braid")
 w.add_parameter("q", q0)
 w.add_parameter("E_mol_eV", E_mol)
 w.add_parameter("gram_eigenvalues", sorted(np.linalg.eigvals(G).real.tolist()))
+
+# Canonical operator-selection LP dual: primal coefficients + shadow prices.
+w.add_data("operator_selection_lp_dual", _lp.to_dict())
+w.add_data("operator_selection_active_channels",
+           [NF_NAMES[i] for i in _lp.active_set])
+w.add_assertion(
+    "operator-selection LP strong duality (gap ~ 0)",
+    computed=bool(_lp.duality_gap < 1e-6),
+    expected=True,
+    source="solve_operator_selection_lp (lp_dual_solver / pyhecke)",
+)
 
 for name in ["H-H", "C-H", "C-O", "C-C", "O-H"]:
     r = results.get(name)
