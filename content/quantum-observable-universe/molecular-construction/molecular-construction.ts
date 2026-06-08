@@ -41,6 +41,8 @@ export default chapter({
         "parabolic-hecke-subalgebra",
         "molecular-assembly-projector",
         "assembly-projector-exists",
+        "benzene-symmetric-projector",
+        "aromaticity-as-symmetric-projection",
       ],
     }),
 

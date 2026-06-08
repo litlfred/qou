@@ -1890,7 +1890,7 @@
       }
     },
     "molecular-construction": {
-      "manifest_hash": "102ae1010061",
+      "manifest_hash": "28a950ab4399",
       "machine": {
         "title_defects": [],
         "structure_findings": []
@@ -1898,6 +1898,13 @@
       "agent": {
         "sec:molecular-hecke-algebra": {
           "title": "The molecular Hecke algebra",
+          "depth": 1,
+          "result": "pending",
+          "reviewer": null,
+          "reviewed_hash": null
+        },
+        "sec:molecular-assembly-projector": {
+          "title": "Assembly projectors from symmetry",
           "depth": 1,
           "result": "pending",
           "reviewer": null,
