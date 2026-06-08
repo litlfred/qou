@@ -14,6 +14,7 @@ export default proposition({
     witness: [
       "folio-assistant/computations/co-bond-order-active-set.witness.json",
     ],
+    status: "verified",
   },
   uses: [
     "def:co-molecular-braid",
