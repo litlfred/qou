@@ -10,12 +10,12 @@ weights from the embedding geometry.
 ## Model
 
 A knot operator (a covalent channel, a linking sub-braid, …) embeds into
-the ambient 3-manifold along a direction relative to the bond / Reeb axis.
+the ambient 3-manifold along a direction relative to the bond axis.
 Its binding contribution scales by an OVERLAP WEIGHT w ∈ (0, 1] set by that
 embedding geometry:
 
-  * AXIAL (Reeb-aligned, σ-type):       w = 1            (head-on, maximal)
-  * TRANSVERSE (contact-plane, π-type): w = w_perp < 1   (lateral overlap)
+  * AXIAL (σ-type):       w = 1            (head-on, maximal overlap)
+  * TRANSVERSE (π-type):  w = w_perp < 1   (lateral overlap)
 
 The total binding of a composite is the overlap-weighted sum over its
 embeddable operators. Two invariants worth stating:
@@ -26,10 +26,8 @@ embeddable operators. Two invariants worth stating:
     model overbinds.
 
 `w_perp` is the transverse/axial overlap ratio — a GEOMETRIC property of
-the embedding (derivable from the orbital overlap integral, per system),
-NOT a fitted universal constant. The Reeb/contact picture: σ runs along the
-1-D Reeb direction (full overlap); π lives in the 2-D contact plane (lateral
-overlap), and w_perp is the geometric ratio between them.
+the embedding (the orbital overlap integral, per system), NOT a fitted
+universal constant.
 
 Content block: def:embeddable-knot-operator
 """
@@ -59,12 +57,12 @@ class EmbeddableKnotOperator:
 
 
 def axial(label: str, base: float) -> EmbeddableKnotOperator:
-    """σ-type channel: Reeb-aligned, full (head-on) overlap, w = 1."""
+    """σ-type channel: full (head-on) overlap, w = 1."""
     return EmbeddableKnotOperator(label, base, 1.0)
 
 
 def transverse(label: str, base: float, w_perp: float) -> EmbeddableKnotOperator:
-    """π-type channel: contact-plane, lateral overlap, w = w_perp < 1."""
+    """π-type channel: lateral overlap, w = w_perp < 1."""
     return EmbeddableKnotOperator(label, base, w_perp)
 
 
