@@ -48,7 +48,7 @@ noncomputable section
 -- Ref: [kassel1995] Quantum Groups (Springer GTM 155), §VI.4.9
 def CasimirScalarEquiv {qs : QuantumSu2} (d : QCasimirData qs)
     (x y : qs.Algebra) : Prop :=
-  ∃ r : R_q, y = x + d.ι r * 1
+  ∃ r : R_q, y = x + d.ι r
 
 /-- **External axiom (Kassel 1995 §VI.4.9, Joseph–Letzter centre):
     q-Casimir uniqueness up to scalar.**

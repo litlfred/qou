@@ -12,7 +12,6 @@ import Mathlib.Analysis.Complex.Norm
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.LinearCombination
-import Mathlib.Tactic.Polyrith
 
 namespace QOU.BraidsAndKnots
 
@@ -97,7 +96,6 @@ theorem unit_modulus_of_det_one_small_trace
 -- Ref: [kashaev1997]
 theorem figure_eight_unitary_on_standard
     (t : ℝ) (ht : t ^ 2 < 4) (lam : ℂ)
-    (hdet : (-1 : ℝ) ^ 4 = 1)
     (hroot : lam ^ 2 - (t : ℂ) * lam + 1 = 0) :
     ‖lam‖ = 1 :=
   unit_modulus_of_det_one_small_trace t ht lam hroot
