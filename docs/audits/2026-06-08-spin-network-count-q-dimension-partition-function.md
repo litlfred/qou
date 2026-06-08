@@ -112,6 +112,51 @@ spirit as the Gröbner–Shirshov proof of PBW.
 full `SU(2)` count, `γ ≈ 0.2375` for the `U(1)` reduction — the projection
 constraint selects the variant.)
 
+## U(1) horizon structure: the Gauss constraint *is* the trace closure
+
+The LQG horizon is a `U(1)` Chern–Simons boundary (Ashtekar–Baez–Corichi–Krasnov,
+gr-qc/9710007): the bulk `SU(2)` connection restricts to `U(1)` on the isolated
+horizon, spin-network edges puncture it as `U(1)` Wilson loops, and the
+closed-horizon **`U(1)` Gauss/flux constraint** is `Σ_p m_p = 0`. QOU supplies
+this *intrinsically*, and the constraint is a **theorem**:
+
+- **The `U(1)` is the Reeb torus.** `prop:reeb-u1-chart-swap` proves the Reeb-flow
+  `U(1)` equals the maximal torus `T_q = U_q(1) ⊂ SU_q(2)`; knot operators are
+  Reeb-`U(1)` Wilson loops. So QOU's `U(1)` is the substrate Cartan direction
+  `ξ = e_3` — **not** a horizon-imposed `SU(2)→U(1)` breaking. It is the `U(1)`
+  (weight) leg of **Schur–Weyl duality**; the `H_n(q)` Markov-trace operators are
+  the other leg.
+
+- **`Σ_p m_p = 0` = Markov-trace closure (proposition).** The Reeb-`U(1)` charge
+  of a state is its `T_q`-weight `m`; the braid generators are `T_q`-equivariant
+  (`[R, Δ(\mathrm{Cartan})] = 0`), so `ρ(β)` preserves total weight; closing the
+  braid is a morphism `𝟙 → 𝟙` in `𝐂`, landing in `End_𝐂(𝟙)` = the trivial-rep
+  (weight-`0`) sector. Hence the closed-link evaluation forces `Σ_p m_p = 0`.
+  **The `U(1)` Gauss constraint is the categorical trace closure `End(𝟙)`.**
+  ∎ *(structural — proves the constraint; the level-`k` truncation that pins the
+  exact `γ` is the open residue.)*
+
+So "the `U(1)` count comes out" at the level of *mechanism*: `U(1)` = Reeb torus
+`T_q`, punctures = Wilson loops = the Schur–Weyl weight side, Gauss law = trace
+closure. What stays open is the *value* (level-`k` / exact `γ`), not the
+structure. And the `γ`-calibration (B–H entropy) ↔ `q₀`-calibration (3 inputs):
+same role — pin the quantization scale to observables — different observable,
+different number.
+
+**Two faces of "SW" at the junction.** The `U(1)`-Wilson-loop-on-boundary sits at
+a double pun that is structurally exact: **Schur–Weyl** (the *algebraic* leg —
+`T_q`/`U(1)` weights ↔ `H_n(q)` Markov operators, where `Σm=0 = trace closure`
+lives) and the **Seiberg–Witten integral** (the *geometric* leg — the
+non-abelian-Stokes *surface integral as an SW-period*, with `Vol(K)` a period
+over a cycle; QOU's *deprecated* Picard–Lefschetz/SW-thimble content in
+`_deprecated/thimble-content/`, superseded by the vol-density formulation). The
+archimedean functor **`τ` is the map `SW(Schur–Weyl, algebraic) → SW(Seiberg–
+Witten, period)`** — the categorical→archimedean wall — and it aligns the LQG
+**area** (`Casimir` sum = Schur–Weyl/algebraic) with the QOU **volume** (period =
+SW-integral/geometric). *Status:* the Schur–Weyl leg is production; the
+SW-integral leg is deprecated, so reviving the period face means un-deprecating
+the thimble work, or showing the non-abelian Stokes *is* the SW-period.
+
 ## Honest scoping (guardrails)
 
 - **It IS** an algebraic recasting of the *known* DLM/Meissner count — same
