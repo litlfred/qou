@@ -228,8 +228,15 @@ def main():
     # 2nd-row atom: valence electrons = Z - 2 (after the 1s^2 core); the
     # covalent capacity to complete the octet is 8 - (Z-2) = 10 - Z. This
     # DERIVES the per-atom valence from Z — it is no longer a hand-input.
+    # Main-group bonding capacity, general over the periodic table (matches
+    # pyhecke.molecular.valence_Z's noble-gas-core convention so downstream
+    # reuse is consistent): valence_e = Z − (largest noble-gas core below Z);
+    # octet capacity = 8 − valence_e. Reduces to 10 − Z on the 2nd row and now
+    # works for any s/p-block element (d-block would need the 18-electron rule).
+    _NOBLE_CORES = (0, 2, 10, 18, 36, 54, 86)
     def bonding_capacity(Z):
-        return 10 - Z                                # C(6)=4, N(7)=3, O(8)=2
+        core = max(c for c in _NOBLE_CORES if c < Z)
+        return 8 - (Z - core)                        # C(6)=4, N(7)=3, O(8)=2; S(16)=2, P(15)=3
 
     diatomic_Z = {"O2": (8, 8), "N2": (7, 7), "CO": (6, 8)}
     observed_bo = {"O2": 2, "N2": 3, "CO": 3}
