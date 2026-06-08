@@ -11,7 +11,7 @@ Pattern: merged PR #1984 (one slice = one PR).
 | `core-levi-form` | `: True := trivial` (5 class hyps), no aspect-ratio/cond/5-equiv claim | encode condition-number = aspect-ratio² + 5-way equivalence |
 | `helicity-conservation` | `: True := trivial`, no helicity-conservation claim | encode dH_q/dt = 0 + CWF decomposition |
 | `kelvin-dispersion-derivation` | `: True := trivial`, no dispersion result | encode Δ_q(z^k) = -[k]_q² z^k eigenvalue + dispersion |
-| `acoustic-horizon-conditions` | `: True := trivial`, no horizon claim | encode |v|=c_s horizon + transonic/non-degen/energy conditions |
+| `acoustic-horizon-conditions` | `: True := trivial`, no horizon claim | encode `|v| = c_s` horizon + transonic/non-degen/energy conditions |
 
 NS blocks (ns-*/leray/q-bkm) deferred to sibling `serene-albattani`.
 
