@@ -106,7 +106,117 @@
           "worst_span": 0
         }
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "135a111c1fba",
+          "ts": "45156b052ade",
+          "lean": "c37878c3327e"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "mass-theory.ts:197 -- calibration-cohomology-alignment in sec:hoefsmit-convergence-magic-shells",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:22:39.036Z",
+        "reviewed_sha": "f1f4241d0d868c69546ddedc3ba707f27a94cc80",
+        "notes": "Prop about 3 calibrations = 3 cohomological data of H1(Bring); fits mass-theory archimedean face."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "135a111c1fba",
+          "ts": "45156b052ade",
+          "lean": "c37878c3327e"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "calibration-cohomology-alignment.lean:28 -- variable {R : Type*} [CommRing R]",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:22:51.716Z",
+        "reviewed_sha": "f1f4241d0d868c69546ddedc3ba707f27a94cc80",
+        "notes": "Lean uses generic CommRing R; no archimedean constructs in statement."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "135a111c1fba",
+          "ts": "45156b052ade",
+          "lean": "c37878c3327e"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "calibration-cohomology-alignment.lean:54-55 -- rw [A.align1, A.align2, A.align3]",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:23:15.218Z",
+        "reviewed_sha": "f1f4241d0d868c69546ddedc3ba707f27a94cc80",
+        "notes": "Proof uses algebraic rewrite only; matches generic CommRing statement."
+      }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "135a111c1fba",
+          "ts": "45156b052ade",
+          "lean": "c37878c3327e"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "calibration-cohomology-alignment.md:1 -- statement + table only, no interpretation section",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:23:15.248Z",
+        "reviewed_sha": "f1f4241d0d868c69546ddedc3ba707f27a94cc80",
+        "notes": "Block is statement + table; no companion remark needed; no separable interpretive prose."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "135a111c1fba",
+          "ts": "45156b052ade",
+          "lean": "c37878c3327e"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "calibration-cohomology-alignment.lean:53-55 -- theorem calibrations_eq_cohomology proves (cal1,cal2,cal3)=(hodgeScale,hodgeModulus,mesonScale)",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-08T09:23:15.275Z",
+        "reviewed_sha": "f1f4241d0d868c69546ddedc3ba707f27a94cc80",
+        "notes": "Narrative triple-equals claim matches Lean conclusion exactly; count theorem cohomology_data_count matches 2+1=3."
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-08T09:23:15.275Z"
 }
