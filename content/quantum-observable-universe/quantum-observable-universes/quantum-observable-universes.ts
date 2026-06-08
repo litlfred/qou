@@ -186,6 +186,10 @@ export default chapter({
         // the state-bundle fibre + U(1)-equivariant machinery that
         // later chapters (vertex operators, gauge structure) build on.
         "exceptional-divisor",
+        // Re-homed from particle-interactions (cross-chapter forward-ref
+        // fix): a QOU-axioms definition (commutative specialisation) that
+        // u1-equivariant-reduction below depends on.
+        "commutative-qou",
         "u1-equivariant-reduction",
       ],
     }),

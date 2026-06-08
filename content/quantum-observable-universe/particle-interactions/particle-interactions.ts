@@ -408,7 +408,6 @@ export default chapter({
       blocks: [
         "varying-euler-intro",
         "genus-2-intro",
-        "commutative-qou",
         "hyperelliptic-z5-classification",
         "bring-z5-descent",
         "x5-bring-prym-jacobian",
