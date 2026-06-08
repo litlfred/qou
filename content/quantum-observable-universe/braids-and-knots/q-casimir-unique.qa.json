@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "007f4f967aa8",
     "ts": "ac04cbbb4422",
-    "lean": "a59f77832182"
+    "lean": "920ca0d1e944"
   },
   "criteria": {
     "voice-status-leak": [
@@ -670,7 +670,7 @@
         },
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
-        "notes": "Label 'prop:q-casimir-unique' \u2192 expected 'q_casimir_unique'; Lean declares: QCasimir.unique_up_to_scalar_axiom, QCasimir.unique_up_to_scalar. Structural match via content."
+        "notes": "Label 'prop:q-casimir-unique' → expected 'q_casimir_unique'; Lean declares: QCasimir.unique_up_to_scalar_axiom, QCasimir.unique_up_to_scalar. Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1001,6 +1001,29 @@
         "reviewed_at": "2026-06-07T02:33:55.407Z",
         "reviewed_sha": "8bde9de2c1add6cd380bfdd9a363e5d19ec8ab8f",
         "notes": "md states the uniqueness strategy (Joseph-Letzter centre: unique central FE+phi(K,K^-1) with eigenvalue [j]_q[j+1]_q, differing by a scalar). But the Lean docstring itself admits the chosen Subsingleton encoding does not match the up-to-scalar claim, so the on-paper strategy is not what the Lean implements."
+      },
+      {
+        "field_hash": {
+          "md": "007f4f967aa8",
+          "ts": "ac04cbbb4422",
+          "lean": "920ca0d1e944"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.8,
+          "max": 1
+        },
+        "evidence": "Docstring explains why up-to-scalar not Subsingleton (bundle vs element) + Joseph-Letzter centre argument.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/integration-backlog",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/integration-backlog"
+        },
+        "reviewed_at": "2026-06-08T11:45:09.737Z",
+        "reviewed_sha": "c334e454e527b6218d8f3460cdd56eb86f67c9d6",
+        "notes": "Bumped 0.7→0.8: statement-choice rationale explicit."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1025,6 +1048,29 @@
         "reviewed_at": "2026-06-07T02:33:55.499Z",
         "reviewed_sha": "8bde9de2c1add6cd380bfdd9a363e5d19ec8ab8f",
         "notes": "Core gap: uniqueness is asserted via axiom QCasimir.unique_up_to_scalar_axiom giving Subsingleton (QCasimirData qs). The docstring itself states this is 'too strong for the bare QCasimirData structure -- free fields admit distinct valid values', i.e. the axiom encodes a claim the author admits is wrong for the structure as written. Axiom-papered, self-admitted mis-encoding."
+      },
+      {
+        "field_hash": {
+          "md": "007f4f967aa8",
+          "ts": "ac04cbbb4422",
+          "lean": "920ca0d1e944"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.8,
+          "max": 1
+        },
+        "evidence": "Remaining input is cited external axiom (Kassel §VI.4.9 Joseph-Letzter centre), routine — not restates-target. Downstream theorem sorry-free modulo that axiom.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/integration-backlog",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/integration-backlog"
+        },
+        "reviewed_at": "2026-06-08T11:45:09.690Z",
+        "reviewed_sha": "c334e454e527b6218d8f3460cdd56eb86f67c9d6",
+        "notes": "Bumped 0.3→0.8: wrong-proposition Subsingleton axiom → honest external-citation axiom."
       }
     ],
     "proof-rater-novelty": [
@@ -1049,6 +1095,29 @@
         "reviewed_at": "2026-06-07T02:33:55.547Z",
         "reviewed_sha": "8bde9de2c1add6cd380bfdd9a363e5d19ec8ab8f",
         "notes": "Standard quantum-group result (Joseph-Letzter centre, Kassel VI.4.9); axiomatized, no new argument."
+      },
+      {
+        "field_hash": {
+          "md": "007f4f967aa8",
+          "ts": "ac04cbbb4422",
+          "lean": "920ca0d1e944"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.4,
+          "max": 1
+        },
+        "evidence": "Standard q-Casimir uniqueness (Joseph-Letzter/Kassel). Not novel.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/integration-backlog",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/integration-backlog"
+        },
+        "reviewed_at": "2026-06-08T11:45:09.798Z",
+        "reviewed_sha": "c334e454e527b6218d8f3460cdd56eb86f67c9d6",
+        "notes": "Confirmed 0.4."
       }
     ],
     "proof-statement-integrity": [
@@ -1070,8 +1139,27 @@
         "reviewed_at": "2026-06-07T02:33:55.586Z",
         "reviewed_sha": "8bde9de2c1add6cd380bfdd9a363e5d19ec8ab8f",
         "notes": "INTEGRITY FAIL: the md claims uniqueness UP TO SCALAR ('differ by a scalar multiple'), but the Lean states Subsingleton (QCasimirData qs) = at most one element (literal uniqueness, NOT up-to-scalar / quotient). The docstring itself admits this encoding is 'too strong for the bare QCasimirData structure' and is only true by an axiom that encodes the wrong proposition for the structure as written. The Lean does not faithfully state the md's real claim."
+      },
+      {
+        "field_hash": {
+          "md": "007f4f967aa8",
+          "ts": "ac04cbbb4422",
+          "lean": "920ca0d1e944"
+        },
+        "result": "pass",
+        "evidence": "q-casimir-unique.lean:40-95 — Subsingleton (QCasimirData qs) (wrong: bundle uniqueness) replaced by CasimirScalarEquiv d (QCasimir qs d) C matching md 'differ by a scalar multiple of the identity'; mis-encoding axiom removed, replaced by Joseph-Letzter axiom (Kassel §VI.4.9). Statement type-checked: lake build QOU._Scratch.QCasimirUniqueMin (minimal correct stub) — 0 errors.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/integration-backlog",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-08",
+          "agent_skill": "local/integration-backlog"
+        },
+        "reviewed_at": "2026-06-08T11:45:09.638Z",
+        "reviewed_sha": "c334e454e527b6218d8f3460cdd56eb86f67c9d6",
+        "notes": "Full sibling chain (quantum-su2/q-casimir.lean) has PRE-EXISTING breakage out of scope; unique statement build-verified vs minimal stub. Remaining axiom is honest external citation, not wrong-proposition stand-in."
       }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-08T11:45:09.798Z"
 }
