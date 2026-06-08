@@ -5,11 +5,14 @@
 **Owner ask:** "lets try and prove my assertions" (the q-hierarchy /
 metallic-ratio / involution claims).
 **Lean formalization:** [`QOU/AlgebraicSubstrate/MetallicHierarchy.lean`](../../content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/MetallicHierarchy.lean)
-**Verification status:** hand-proof complete and rigorous (below); Lean
-file committed; **local machine-check blocked** by a sandbox Lean-env
-issue (lake-cache restore was clobbered by `lake`'s package
-re-resolution — Mathlib oleans removed; from-source rebuild out of
-budget). To be machine-verified by CI / a clean-env session.
+**Verification status:** ✅ **machine-verified** 2026-06-08 (lean
+v4.24.0). Clean compile via direct `lean` with a manual `LEAN_PATH` over
+the restored `lake-cache/qou-v4-24-0` oleans (bypassing `lake` so nothing
+re-resolves; imports narrowed to `Mathlib.Analysis.SpecialFunctions.Sqrt`
++ `Mathlib.Tactic` because the cache omits the root `Mathlib.olean`).
+`#print axioms` on all three theorems = `[propext, Classical.choice,
+Quot.sound]` — no `sorryAx`. The hand proof below matches the
+formalization line-for-line.
 
 ## What is being proved
 
