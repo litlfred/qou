@@ -88,4 +88,6 @@ def IsEmCoupling (α : R_q) : Prop :=
 theorem isEmCoupling_iff (α : R_q) :
     IsEmCoupling α ↔ qInt 9 * qInt 10 * α = q_inv := Iff.rfl
 
+end
+
 end QOU.Archimedean
