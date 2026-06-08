@@ -1,6 +1,6 @@
 {
   "audit": "conjectural-propagation (CLAUDE.md §3b + §3b-cond)",
-  "generated": "2026-06-08T11:07:10.295Z",
+  "generated": "2026-06-08T11:27:08.167Z",
   "total_blocks": 1919,
   "class_axiomatised_conjectures": [
     "conj:algebraic-geometric-dilog-equivalence",
@@ -133,7 +133,7 @@
     "conj:yang-mills-mass-gap",
     "conj:z-eq-n-rho-correction"
   ],
-  "provable_blocks_touching_conjecture": 140,
+  "provable_blocks_touching_conjecture": 139,
   "violators": [],
   "conditional_on_class": [
     {
@@ -462,14 +462,6 @@
         "conj:hecke-anyonic-substrate"
       ],
       "file": "content/quantum-observable-universe/predicted-spectra/bloch-group-quotient-construction.ts"
-    },
-    {
-      "label": "prop:blowup-yekutieli",
-      "kind": "proposition",
-      "conj": [
-        "conj:regularity-breakdown"
-      ],
-      "file": "content/quantum-observable-universe/lifting-and-descent/p3-blowup-yekutieli.ts"
     },
     {
       "label": "prop:boltzmann-constant",
@@ -1190,7 +1182,6 @@
       "label": "prop:leray-profile",
       "kind": "proposition",
       "conj": [
-        "conj:levi-degeneracy",
         "conj:hoefsmit-scattering-pipeline",
         "conj:classical-limit-stpart",
         "conj:geom-yekutieli-alignment",
@@ -1316,7 +1307,6 @@
       "label": "prop:ns-kummer-specialisation",
       "kind": "proposition",
       "conj": [
-        "conj:levi-degeneracy",
         "conj:hoefsmit-scattering-pipeline",
         "conj:classical-limit-stpart",
         "conj:geom-yekutieli-alignment",
@@ -1329,7 +1319,6 @@
       "label": "prop:ns-obstruction-computation",
       "kind": "proposition",
       "conj": [
-        "conj:levi-degeneracy",
         "conj:hoefsmit-scattering-pipeline",
         "conj:classical-limit-stpart",
         "conj:geom-yekutieli-alignment",
@@ -2035,7 +2024,6 @@
       "label": "thm:ns-singularity-descartes",
       "kind": "theorem",
       "conj": [
-        "conj:levi-degeneracy",
         "conj:hoefsmit-scattering-pipeline",
         "conj:classical-limit-stpart",
         "conj:geom-yekutieli-alignment",

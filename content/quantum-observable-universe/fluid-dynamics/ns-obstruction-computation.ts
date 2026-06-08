@@ -7,7 +7,8 @@ export default proposition({
     "Computation of the NS obstruction for the Descartes universe",
   uses: [
     "prop:ns-obstruction-tower",
-    "conj:levi-degeneracy",
+    // conj:levi-degeneracy removed (2026-06-08 §3b): the Euler-class / jet-divergence
+    // computation is unconditional; Levi-degeneracy is the scenario it illustrates.
     "rem:body-asymptotics-catalog",
   ],
   tags: [
