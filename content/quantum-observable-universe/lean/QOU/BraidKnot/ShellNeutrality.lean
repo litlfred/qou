@@ -1,5 +1,8 @@
 import Mathlib.Data.Real.Basic
 import Mathlib.Data.Int.Basic
+import Mathlib.Data.Multiset.Basic
+import Mathlib.Algebra.BigOperators.Group.Multiset.Basic
+import Mathlib.Tactic
 
 /-!
 # QOU.BraidKnot.ShellNeutrality — saturated-shell neutrality conjecture
@@ -62,35 +65,38 @@ structure YoungDiagram where
   card_eq : contents.card = n
 
 /-- Total Jucys–Murphy charge `κ_λ := Σ_{x ∈ λ} c(x)`. -/
-def kappa (λ : YoungDiagram) : ℤ := λ.contents.sum
+def kappa (lam : YoungDiagram) : ℤ := lam.contents.sum
 
 /-- Conjugate (transposed) Young diagram: contents flip sign. -/
-def conjugate (λ : YoungDiagram) : YoungDiagram where
-  n := λ.n
-  contents := λ.contents.map (fun c => -c)
+def conjugate (lam : YoungDiagram) : YoungDiagram where
+  n := lam.n
+  contents := lam.contents.map (fun c => -c)
   card_eq := by
-    simp [Multiset.card_map, λ.card_eq]
+    simp [Multiset.card_map, lam.card_eq]
 
 /-- A diagram is **self-conjugate** when it equals its conjugate. -/
-def isSelfConjugate (λ : YoungDiagram) : Prop :=
-  λ = conjugate λ
+def isSelfConjugate (lam : YoungDiagram) : Prop :=
+  lam = conjugate lam
 
 /-- `κ_{λ'} = -κ_λ`. The contents multiset of the conjugate diagram
     is obtained by negating each entry, so its sum negates. -/
-theorem kappa_conjugate (λ : YoungDiagram) :
-    kappa (conjugate λ) = -kappa λ := by
+theorem kappa_conjugate (lam : YoungDiagram) :
+    kappa (conjugate lam) = -kappa lam := by
+  have key : ∀ (m : Multiset ℤ), (m.map (fun c => -c)).sum = -m.sum := by
+    intro m
+    induction m using Multiset.induction_on with
+    | empty => simp
+    | cons a s ih =>
+      simp only [Multiset.map_cons, Multiset.sum_cons, ih]
+      ring
   unfold kappa conjugate
-  -- goal: (λ.contents.map fun c => -c).sum = -λ.contents.sum
-  induction λ.contents using Multiset.induction_on with
-  | empty => simp
-  | cons a s ih =>
-    simp [Multiset.map_cons, Multiset.sum_cons, ih, neg_add]
+  exact key lam.contents
 
 /-- **Conjugation is an involution.** `(λ')' = λ`: negating contents
     twice is the identity on the multiset. -/
-theorem conjugate_involution (λ : YoungDiagram) :
-    conjugate (conjugate λ) = λ := by
-  cases λ with
+theorem conjugate_involution (lam : YoungDiagram) :
+    conjugate (conjugate lam) = lam := by
+  cases lam with
   | mk n contents card_eq =>
     simp only [conjugate, Multiset.map_map]
     congr 1
@@ -106,12 +112,12 @@ theorem conjugate_involution (λ : YoungDiagram) :
     multiset arithmetic — no Hecke / Young-lattice structure needed. -/
 -- Ref: [manuscript] conj:categorical-neutrality-saturated-shells
 theorem kappa_zero_of_self_conjugate
-    (λ : YoungDiagram) (h : isSelfConjugate λ) :
-    kappa λ = 0 := by
-  have heq : kappa λ = kappa (conjugate λ) := by
+    (lam : YoungDiagram) (h : isSelfConjugate lam) :
+    kappa lam = 0 := by
+  have heq : kappa lam = kappa (conjugate lam) := by
     conv_lhs => rw [h]
-  have hneg : kappa (conjugate λ) = -kappa λ := kappa_conjugate λ
-  have hself : kappa λ = -kappa λ := heq.trans hneg
+  have hneg : kappa (conjugate lam) = -kappa lam := kappa_conjugate lam
+  have hself : kappa lam = -kappa lam := heq.trans hneg
   linarith
 
 /-- **Empty Young diagram** (the unique `n = 0` shape): no boxes, no
@@ -132,7 +138,6 @@ theorem emptyDiagram_isSelfConjugate : isSelfConjugate emptyDiagram := by
   unfold isSelfConjugate conjugate emptyDiagram
   -- goal: ⟨0, 0, _⟩ = ⟨0, (0 : Multiset ℤ).map (·.neg), _⟩
   congr 1
-  simp
 
 /-! ### Disjoint union and content additivity -/
 
@@ -140,10 +145,10 @@ theorem emptyDiagram_isSelfConjugate : isSelfConjugate emptyDiagram := by
     contents). The corresponding combinatorial operation is
     "horizontal concatenation" of partition contents — useful when
     splitting a composite analysis along constituent shells. -/
-def unionDiagram (λ μ : YoungDiagram) : YoungDiagram where
-  n := λ.n + μ.n
-  contents := λ.contents + μ.contents
-  card_eq := by simp [Multiset.card_add, λ.card_eq, μ.card_eq]
+def unionDiagram (lam μ : YoungDiagram) : YoungDiagram where
+  n := lam.n + μ.n
+  contents := lam.contents + μ.contents
+  card_eq := by simp [Multiset.card_add, lam.card_eq, μ.card_eq]
 
 /-- **Additivity of Jucys–Murphy charge.** Charge is linear over
     multiset disjoint union: `κ(λ ⊔ μ) = κ(λ) + κ(μ)`. This is the
@@ -151,18 +156,18 @@ def unionDiagram (λ μ : YoungDiagram) : YoungDiagram where
     `LRFusion.ContentAdditive`. Provable directly from
     `Multiset.sum_add`. -/
 -- Ref: [manuscript] conj:diagrammatic-double-magic-lr-fusion
-theorem kappa_unionDiagram (λ μ : YoungDiagram) :
-    kappa (unionDiagram λ μ) = kappa λ + kappa μ := by
+theorem kappa_unionDiagram (lam μ : YoungDiagram) :
+    kappa (unionDiagram lam μ) = kappa lam + kappa μ := by
   simp [kappa, unionDiagram, Multiset.sum_add]
 
 /-- The empty diagram is a left/right identity for `unionDiagram` at
     the level of contents and charge. -/
-theorem kappa_unionDiagram_empty_left (λ : YoungDiagram) :
-    kappa (unionDiagram emptyDiagram λ) = kappa λ := by
+theorem kappa_unionDiagram_empty_left (lam : YoungDiagram) :
+    kappa (unionDiagram emptyDiagram lam) = kappa lam := by
   simp [kappa_unionDiagram, kappa_emptyDiagram]
 
-theorem kappa_unionDiagram_empty_right (λ : YoungDiagram) :
-    kappa (unionDiagram λ emptyDiagram) = kappa λ := by
+theorem kappa_unionDiagram_empty_right (lam : YoungDiagram) :
+    kappa (unionDiagram lam emptyDiagram) = kappa lam := by
   simp [kappa_unionDiagram, kappa_emptyDiagram]
 
 /-- **Self-conjugacy is preserved under disjoint union.** If both
@@ -174,21 +179,21 @@ theorem kappa_unionDiagram_empty_right (λ : YoungDiagram) :
     trivial union composite. -/
 -- Ref: [manuscript] conj:diagrammatic-double-magic-lr-fusion
 theorem unionDiagram_isSelfConjugate
-    {λ μ : YoungDiagram}
-    (hλ : isSelfConjugate λ) (hμ : isSelfConjugate μ) :
-    isSelfConjugate (unionDiagram λ μ) := by
+    {lam μ : YoungDiagram}
+    (hlam : isSelfConjugate lam) (hμ : isSelfConjugate μ) :
+    isSelfConjugate (unionDiagram lam μ) := by
   -- Extract contents equalities from constituent self-conjugacies.
-  have e_λ : λ.contents = λ.contents.map (fun c => -c) := by
-    have h := congr_arg YoungDiagram.contents hλ
+  have e_lam : lam.contents = lam.contents.map (fun c => -c) := by
+    have h := congr_arg YoungDiagram.contents hlam
     simpa [conjugate] using h
   have e_μ : μ.contents = μ.contents.map (fun c => -c) := by
     have h := congr_arg YoungDiagram.contents hμ
     simpa [conjugate] using h
   -- Show union = conjugate union: same n by construction, contents equal.
-  show unionDiagram λ μ = conjugate (unionDiagram λ μ)
+  show unionDiagram lam μ = conjugate (unionDiagram lam μ)
   unfold conjugate unionDiagram
   congr 1
-  rw [Multiset.map_add, ← e_λ, ← e_μ]
+  rw [Multiset.map_add, ← e_lam, ← e_μ]
 
 /-! ### Singleton-box diagrams -/
 
@@ -241,7 +246,7 @@ summing to zero that is not multiset-symmetric.
     saturated, the brane-tower contribution is governed entirely by
     the multiset `λ.contents`. Concrete instances expose `λ` as the
     dominant irreducible label of the Hecke module `V_λ`. -/
-class Saturated (λ : YoungDiagram) : Prop
+class Saturated (lam : YoungDiagram) : Prop
 
 /-! ## §3  Hecke folklore — exposed as typeclass fields -/
 
@@ -256,8 +261,8 @@ class Saturated (λ : YoungDiagram) : Prop
     Concrete model: defined as `kappa λ = 0` (the algebraic
     consequence of `θ_n = q^{2κ_λ} = 1` at generic q).  The genuine
     Hecke-algebra reading awaits the `H_n(q)` import. -/
-def fullTwistTrivial (λ : YoungDiagram) (_q : ℝ) : Prop :=
-  kappa λ = 0
+def fullTwistTrivial (lam : YoungDiagram) (_q : ℝ) : Prop :=
+  kappa lam = 0
 
 /-- **Hecke folklore (axiomatised here)**: at generic `q > 1`, the
     full twist acts trivially on `V_λ` iff `κ_λ = 0`.
@@ -270,7 +275,7 @@ class FullTwistContentFormula (q : ℝ) where
   q_gt_one : 1 < q
   /-- The defining equivalence. -/
   trivial_iff_kappa_zero :
-    ∀ (λ : YoungDiagram), fullTwistTrivial λ q ↔ kappa λ = 0
+    ∀ (lam : YoungDiagram), fullTwistTrivial lam q ↔ kappa lam = 0
 
 /-- **Partition arithmetic — reverse direction (axiomatised):** over
     a *saturated* spectrum, `κ_λ = 0` *implies* self-conjugacy. The
@@ -281,18 +286,18 @@ class FullTwistContentFormula (q : ℝ) where
     self-conjugate shape). -/
 class KappaZeroImpliesSelfConjugate where
   kappa_zero_imp_self_conjugate :
-    ∀ (λ : YoungDiagram) [Saturated λ],
-      kappa λ = 0 → isSelfConjugate λ
+    ∀ (lam : YoungDiagram) [Saturated lam],
+      kappa lam = 0 → isSelfConjugate lam
 
 /-- Convenience iff packaging both directions: forward is the
     proved theorem, reverse is the typeclass field. -/
 -- Ref: [manuscript] conj:categorical-neutrality-saturated-shells
 theorem kappa_zero_iff_self_conjugate
     [KappaZeroImpliesSelfConjugate]
-    (λ : YoungDiagram) [Saturated λ] :
-    kappa λ = 0 ↔ isSelfConjugate λ := by
-  refine ⟨KappaZeroImpliesSelfConjugate.kappa_zero_imp_self_conjugate λ, ?_⟩
-  exact kappa_zero_of_self_conjugate λ
+    (lam : YoungDiagram) [Saturated lam] :
+    kappa lam = 0 ↔ isSelfConjugate lam := by
+  refine ⟨KappaZeroImpliesSelfConjugate.kappa_zero_imp_self_conjugate lam, ?_⟩
+  exact kappa_zero_of_self_conjugate lam
 
 /-! ## §4  The saturated-shell neutrality conjecture -/
 
@@ -305,7 +310,7 @@ theorem kappa_zero_iff_self_conjugate
     avatar of shell completion (every box's content is matched by a
     negation, so the multiset is balanced).  The genuine "global
     section with finite mass" predicate is the upgrade target. -/
-def StableCompletedShell (λ : YoungDiagram) : Prop := isSelfConjugate λ
+def StableCompletedShell (lam : YoungDiagram) : Prop := isSelfConjugate lam
 
 /-- **Conjecture 1 — Categorical neutrality of saturated shells.**
 
@@ -323,29 +328,29 @@ def StableCompletedShell (λ : YoungDiagram) : Prop := isSelfConjugate λ
     Hecke and partition-combinatorics typeclass fields. -/
 -- Ref: [manuscript] conj:categorical-neutrality-saturated-shells
 -- Ref: [mathas1999] Mathas, "Iwahori–Hecke Algebras and Schur Algebras of the Symmetric Group," AMS Univ. Lect. Series 15, 1999
-class SaturatedShellConjecture (λ : YoungDiagram) [Saturated λ] (q : ℝ)
+class SaturatedShellConjecture (lam : YoungDiagram) [Saturated lam] (q : ℝ)
     extends FullTwistContentFormula q,
             KappaZeroImpliesSelfConjugate where
   /-- The conjectural physical-to-algebraic equivalence. -/
   shell_iff_full_twist_trivial :
-    StableCompletedShell λ ↔ fullTwistTrivial λ q
+    StableCompletedShell lam ↔ fullTwistTrivial lam q
 
 /-- Re-export 1: shell ↔ `κ_λ = 0`. -/
 -- Ref: [manuscript] conj:categorical-neutrality-saturated-shells
 theorem shell_iff_kappa_zero
-    (λ : YoungDiagram) [Saturated λ] (q : ℝ)
-    [C : SaturatedShellConjecture λ q] :
-    StableCompletedShell λ ↔ kappa λ = 0 := by
+    (lam : YoungDiagram) [Saturated lam] (q : ℝ)
+    [C : SaturatedShellConjecture lam q] :
+    StableCompletedShell lam ↔ kappa lam = 0 := by
   rw [C.shell_iff_full_twist_trivial,
-      C.trivial_iff_kappa_zero λ]
+      C.trivial_iff_kappa_zero lam]
 
 /-- Re-export 2: shell ↔ `λ` self-conjugate. -/
 -- Ref: [manuscript] conj:categorical-neutrality-saturated-shells
 theorem shell_iff_self_conjugate
-    (λ : YoungDiagram) [Saturated λ] (q : ℝ)
-    [C : SaturatedShellConjecture λ q] :
-    StableCompletedShell λ ↔ isSelfConjugate λ := by
-  rw [shell_iff_kappa_zero λ q]
-  exact kappa_zero_iff_self_conjugate λ
+    (lam : YoungDiagram) [Saturated lam] (q : ℝ)
+    [C : SaturatedShellConjecture lam q] :
+    StableCompletedShell lam ↔ isSelfConjugate lam := by
+  rw [shell_iff_kappa_zero lam q]
+  exact kappa_zero_iff_self_conjugate lam
 
 end QOU.BraidKnot.ShellNeutrality
