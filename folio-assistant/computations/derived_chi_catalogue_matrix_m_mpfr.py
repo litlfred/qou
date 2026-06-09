@@ -509,12 +509,12 @@ def _orthonormal_image_basis_mpfr(e: object, tol: object) -> object:
     for j in range(s):
         v = [e[i, j] for i in range(s)]
         for qv in cols:
-            dot = mpmath.mpf(0)
-            for i in range(s):
-                dot = dot + qv[i] * v[i]
+            # mpmath.fsum keeps the running sum at full working precision
+            # (no intermediate-rounding drift vs a manual accumulator).
+            dot = mpmath.fsum(qv[i] * v[i] for i in range(s))
             for i in range(s):
                 v[i] = v[i] - dot * qv[i]
-        nrm = mpmath.sqrt(sum(vi * vi for vi in v))
+        nrm = mpmath.sqrt(mpmath.fsum(vi * vi for vi in v))
         if nrm > tol:
             inv = MPF_ONE / nrm
             cols.append([vi * inv for vi in v])
@@ -579,12 +579,8 @@ def _adapted_basis_mpfr(
 
 
 def _subblock_mpfr(X: object, r0: int, n0: int, c0: int, m0: int) -> object:
-    """X[r0:r0+n0, c0:c0+m0] as a fresh mpmath.matrix."""
-    out = mpmath.zeros(n0, m0)
-    for i in range(n0):
-        for j in range(m0):
-            out[i, j] = X[r0 + i, c0 + j]
-    return out
+    """X[r0:r0+n0, c0:c0+m0] — native mpmath.matrix slice."""
+    return X[r0:r0 + n0, c0:c0 + m0]
 
 
 def chi_via_reduced_blocks_mpfr(
