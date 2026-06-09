@@ -42,7 +42,7 @@ universe u
     The conjectural input is the construction of the descent map;
     its existence is the GS-filtration theorem (Cartan–Eilenberg
     plus Jones' Markov-trace existence). -/
-class GradedMarkovTraceFromGSFiltration (R : Type u) [Field R] where
+class GradedMarkovTraceFromGSFiltration (R : Type u) [CommRing R] where
   /-- The graded trace value at level `ℓ`. -/
   gradedTrace : ℕ → R
   /-- The Markov-trace value carried by the instance. -/
@@ -61,7 +61,7 @@ class GradedMarkovTraceFromGSFiltration (R : Type u) [Field R] where
     trace at level 0 equals the Markov trace value. -/
 -- Ref: [manuscript] `prop:graded-markov-trace-from-gs-filtration`
 theorem graded_markov_trace_from_gs_filtration
-    {R : Type u} [Field R] [s : GradedMarkovTraceFromGSFiltration R] :
+    {R : Type u} [CommRing R] [s : GradedMarkovTraceFromGSFiltration R] :
     s.gradedTrace 0 = s.markovValue :=
   s.descends_from_markov
 

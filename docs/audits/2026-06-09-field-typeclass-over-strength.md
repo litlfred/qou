@@ -36,6 +36,35 @@ binders are relaxed and as the heuristic is refined (the subtype-safe `//`
 guard from the Gemini review re-surfaced 2 findings the old regex hid). Do not
 cite a frozen number from this prose; read `field-typeclass-audit.witness.json`.
 
+### Burn-down completion (2026-06-09, PR #2072)
+
+**0 phantom / 0 over-strong / 74 genuine.** Every remaining field-strength
+binder is either (a) syntactically field-using, or (b) a **build-verified
+exception** recorded in `field-typeclass-audit.exceptions.json` (the audit
+reclassifies those as genuine with the recorded reason). Relaxations landed
+and `lake build`-verified green:
+
+| Module | Relaxed |
+|--------|---------|
+| `SurrealRateCalculus` (merged #2066) | 3 → `CommRing` |
+| `ClassicalLimitObstruction` (structure) | 1 → `CommRing` |
+| `GradedTraceResidueSplit` | 8 → `CommRing` |
+| `GradedMarkovTraceFromGSFiltration` | 2 → `CommRing` |
+| `MathlibExt/SDP` | 2 → `CommRing` |
+| `MathlibExt/QPlancherel` (class; section `variable` stays `Field` for `dq²/Z`) | 1 → `CommRing` |
+| `DerivedCharacterCatalogue` (class + division-free named chis; 5 dividing-witness instances stay `Field`) | 11 → `CommRing` |
+
+Exception classes (see the exceptions JSON for per-decl reasons): ordering
+without `LinearOrderedCommRing` in the pinned Mathlib (QClt, TraceLocality);
+**transitive** non-unit division (`MarkovTraceAxioms` via `markovZax u =
+u/(u²+1)` — a dependence the syntactic per-decl scan cannot see); and four
+**pre-existing-broken modules** that never compiled (`HeckeAlgebra` 100+
+errors, the `IwahoriHecke` chain with deep `Ideal.Quotient` API bitrot,
+`HoefsmitV21CosSymmetrization` proof bitrot) where relaxations are
+unverifiable until the modules are repaired (own PR; parse-level repairs —
+import placement, renamed-module imports, a dead import, a universe
+annotation — landed on this PR as strict improvements).
+
 > **`over-strong` is a warn-level signal, not a proof.** The heuristic is
 > syntactic; some `over-strong` findings may still need `Field` via a Mathlib
 > lemma the regex does not see (instance resolution, a transitively-field-only

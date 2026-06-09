@@ -1,3 +1,4 @@
+import Mathlib.Data.Nat.Dist
 import Mathlib.Algebra.Star.Basic
 import Mathlib.Algebra.Module.Basic
 import Mathlib.GroupTheory.GroupAction.Basic

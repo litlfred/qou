@@ -214,6 +214,31 @@ def audit() -> list[Finding]:
     return findings
 
 
+EXCEPTIONS_PATH = Path("folio-assistant/computations/audits/field-typeclass-audit.exceptions.json")
+
+
+def apply_exceptions(findings: list[Finding]) -> list[Finding]:
+    """Reclassify findings listed in the exceptions file as genuine.
+
+    An exception records a decl whose `[Field]` relaxation was *attempted and
+    failed the build* — so the field strength is genuine-by-build even though
+    no field-only token is syntactically visible. Format: a list of
+    ``{"decl_name": ..., "file_suffix": ..., "reason": ...}``.
+    """
+    if not EXCEPTIONS_PATH.exists():
+        return findings
+    exceptions = json.loads(EXCEPTIONS_PATH.read_text())
+    for f in findings:
+        if f.classification != "over-strong":
+            continue
+        for ex in exceptions:
+            if (f.decl_name == ex["decl_name"]
+                    and f.file.endswith(ex["file_suffix"])):
+                f.classification = "genuine"
+                f.evidence = f"build-verified exception: {ex['reason']}"
+    return findings
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--strict", action="store_true",
@@ -221,7 +246,7 @@ def main() -> int:
     ap.add_argument("--witness", default="folio-assistant/computations/audits/field-typeclass-audit.witness.json")
     args = ap.parse_args()
 
-    findings = audit()
+    findings = apply_exceptions(audit())
     by_cls: dict[str, list[Finding]] = {"phantom": [], "over-strong": [], "genuine": []}
     for f in findings:
         by_cls[f.classification].append(f)

@@ -1,4 +1,4 @@
-import Mathlib.Algebra.Order.Ring.Lemmas
+import Mathlib.Algebra.Order.Ring.Defs
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 import Mathlib.Tactic
 
@@ -108,7 +108,7 @@ noncomputable def markovZax_legacy (q : ℝ) : ℝ :=
     the `q-usage-positivity-implicit` warning. There are no instances
     of this class on `main` at the time of this Phase 2 refactor, so
     no archimedean callers are broken. -/
-class MarkovTraceAxioms {R : Type*} [Field R] (u : R) : Type where
+class MarkovTraceAxioms {R : Type*} [Field R] (u : R) where
   /-- M1: scalar value of `τ` on the identity element. -/
   tau_identity : R
   /-- M1: τ(1) = 1 (normalisation). -/
