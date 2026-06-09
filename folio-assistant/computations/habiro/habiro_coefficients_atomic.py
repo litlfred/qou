@@ -46,6 +46,7 @@ import sys
 from pathlib import Path
 from datetime import datetime, timezone
 
+import mpmath as mp
 import sympy as sp
 
 # P2.5 migration: helper available; per-witness expose_polynomial call is a follow-up
@@ -280,12 +281,15 @@ def analyse_atomic_braid(label, Z, N, include_inter, q):
     # Numerical check
     q0 = Rational(int(_Q_CANONICAL * 10 ** 16), 10 ** 16)
     u0 = sp.sqrt(q0)
-    p_at_q0 = float(p_q.subs(q, q0).evalf(30))
+    # Keep substrate precision via mp.mpf (was float() — flagged by
+    # compute_no_mpf_to_float_cast). The witness field "tr_M_at_q0"
+    # below requires it as the substrate-precision value.
+    p_at_q0 = mp.mpf(str(p_q.subs(q, q0).evalf(50)))
     p_at_q0_polynomial_q = expose_polynomial(p_q, q)
-    p_u_at_u0 = float(p_u.subs(check_q, u0).evalf(30)) / float(
-        u0 ** shift if shift else 1)
-    print(f"  tr_M @ q_0 = {p_at_q0:+.6e}  "
-          f"(via check_q-poly: {p_u_at_u0:+.6e})")
+    p_u_at_u0 = mp.mpf(str(p_u.subs(check_q, u0).evalf(50))) / mp.mpf(str(
+        (u0 ** shift if shift else 1).evalf(50) if shift else 1))
+    print(f"  tr_M @ q_0 = {mp.nstr(p_at_q0, 6, strip_zeros=False)}  "
+          f"(via check_q-poly: {mp.nstr(p_u_at_u0, 6, strip_zeros=False)})")
     return {
         "Z": Z, "N": N, "include_inter": include_inter,
         # str(p_q) directly — sp.nsimplify on a degree-194 rational
@@ -299,7 +303,7 @@ def analyse_atomic_braid(label, Z, N, include_inter, q):
         "habiro_coefficients": coeffs,
         "all_integral": all(c["integral"] for c in coeffs),
         "reconstruction_matches": (diff == 0),
-        "tr_M_at_q0": p_at_q0,
+        "tr_M_at_q0": mp.nstr(p_at_q0, 30),
     }
 
 

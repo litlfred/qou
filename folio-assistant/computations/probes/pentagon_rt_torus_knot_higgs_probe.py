@@ -114,8 +114,9 @@ def evaluate_at(q, N: int, n: int, q_label: str) -> dict:
             "J_N_real": float(j.real),
             "J_N_imag": float(j.imag),
             "J_N_magnitude": float(magnitude),
-            # Keep substrate precision — was flagged by compute_no_mpf_to_float_cast.
-            "log_J_N_magnitude": (mp.nstr(mp.log(magnitude), 20) if magnitude > 0 else None),
+            # Keep substrate precision via mp.mpf (numeric, not string —
+            # downstream needs val>0 / format / division per Copilot #2050).
+            "log_J_N_magnitude": (mp.log(magnitude) if magnitude > 0 else None),
         }
     except Exception as e:
         return {"q_label": q_label, "error": str(e)}
@@ -131,7 +132,10 @@ def mass_scale_candidates(j_value: mpc, N: int) -> dict:
         "|J_N| · m_e (MeV)": float(mag * M_E_MEV),
         "log|J_N| · m_e (MeV)": float(log_mag * M_E_MEV) if log_mag > 0 else 0,
         "exp(|J_N|) · m_e (MeV)": (
-            mp.nstr(mp.exp(mag) * M_E_MEV, 20) if mag < 50 else None  # avoid overflow
+            # mp.mpf preserves substrate precision AND remains numeric
+            # for downstream val>0 / format / division (per Copilot
+            # #2050 review — mp.nstr broke numeric ops).
+            mp.exp(mag) * M_E_MEV if mag < 50 else None  # avoid overflow
         ),
         "|J_N|² · m_e (MeV)": float(mag ** 2 * M_E_MEV),
         "(|J_N|·N) · m_e (MeV)": float(mag * N * M_E_MEV),

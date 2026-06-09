@@ -50,12 +50,15 @@ if __name__ == "__main__":
     q0 = sp.Rational(11099785827513808, 10**16)
     print("Per-λ contributions to tr_M(T_w(³He)):")
     for p, contrib in per_lam.items():
-        c_q0 = float(contrib.subs(q, q0).evalf(30))
-        print(f"  λ = {p}: at q_0 = {c_q0:>+10.6f}")
+        # Use `_print` suffix to trigger the display-context exemption
+        # in compute_no_mpf_to_float_cast — these values are for the
+        # console formatter only.
+        c_q0_print = float(contrib.subs(q, q0).evalf(30))
+        print(f"  λ = {p}: at q_0 = {c_q0_print:>+10.6f}")
     print()
 
-    tr_M_q0 = float(tr_M_sym.subs(q, q0).evalf(30))
-    print(f"tr_M(T_w(³He)) at q_0 = {tr_M_q0:.6f}")
+    tr_M_q0_print = float(tr_M_sym.subs(q, q0).evalf(30))
+    print(f"tr_M(T_w(³He)) at q_0 = {tr_M_q0_print:.6f}")
     print()
 
     # Step 3: paper formula B = m_e · ρ · tr_M

@@ -307,8 +307,12 @@ def main():
 
     w.add_assertion(
         "A4_clifford_excess_identity",
-        computed=(float(a4_result["actual_excess"])
-                  - float(a4_result["self_conjugate_dimq_sum"])),
+        # Compute the difference in mp.mpf to preserve the precise
+        # cancellation (float64 leaves ~1e-15 residue that breaks
+        # tolerance=1e-30, per Copilot #2050 review). The assertion
+        # API accepts mp.mpf numeric directly.
+        computed=(mp.mpf(a4_result["actual_excess"])
+                  - mp.mpf(a4_result["self_conjugate_dimq_sum"])),
         expected=0.0,
         tolerance=1e-30,
         source=(
@@ -320,8 +324,10 @@ def main():
     )
     w.add_assertion(
         "A5_clifford_excess_identity",
-        computed=(float(a5_result["actual_excess"])
-                  - float(a5_result["self_conjugate_dimq_sum"])),
+        # Same as A4 above — mp.mpf cancellation preserves the
+        # tight tolerance=1e-30 (Copilot #2050).
+        computed=(mp.mpf(a5_result["actual_excess"])
+                  - mp.mpf(a5_result["self_conjugate_dimq_sum"])),
         expected=0.0,
         tolerance=1e-30,
         source=(

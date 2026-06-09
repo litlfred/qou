@@ -121,7 +121,10 @@ def seminormal_generator_matrix(tableaux, tab_to_idx, gen_idx, q_val):
     ha = qq - qi
     k = gen_idx + 1  # transposing values k and k+1
 
-    mat = np.zeros((dim, dim))
+    # dtype=object preserves mpmath scalars in matrix entries (the
+    # off-diagonal sqrt fills below need substrate precision; default
+    # float64 dtype would silently coerce — Copilot #2050).
+    mat = np.zeros((dim, dim), dtype=object)
 
     for i, T in enumerate(tableaux):
         d = axial_distance(T, k)
@@ -144,8 +147,9 @@ def seminormal_generator_matrix(tableaux, tab_to_idx, gen_idx, q_val):
                     j = tab_to_idx[key]
                     off_diag_sq = 1.0 - diag**2
                     # Keep mp.mpf precision in the matrix entries —
-                    # numpy/scipy downstream accepts mp.mpf elements.
-                    # Was flagged by compute_no_mpf_to_float_cast.
+                    # MUST be a dtype=object numpy array (per Copilot
+                    # #2050) otherwise float64 dtype silently coerces.
+                    # The caller now allocates with dtype=object.
                     if off_diag_sq > 0:
                         mat[i, j] = mp.sqrt(off_diag_sq)
                     else:
