@@ -43,6 +43,7 @@ import {
 import { walkScripts, type ScriptTarget } from "./script-walker";
 import {
   checkDoesNotDefaultToFloat,
+  checkComputeNoMpfToFloatCast,
   checkRespectsArchimedeanWall,
   checkCodeIsCommented,
   checkVariablesTyped,
@@ -84,6 +85,10 @@ const SCRIPT_CHECKERS: Record<string, ScriptCheckerFn> = {
   does_not_default_to_float: (t) => {
     if (t.language !== "python") return { result: "n/a", hits: [] };
     return checkDoesNotDefaultToFloat(t.abs);
+  },
+  compute_no_mpf_to_float_cast: (t) => {
+    if (t.language !== "python") return { result: "n/a", hits: [] };
+    return checkComputeNoMpfToFloatCast(t.abs);
   },
   respects_archimedean_wall: (t) => {
     if (t.language !== "python") return { result: "n/a", hits: [] };

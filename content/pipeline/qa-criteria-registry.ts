@@ -1164,6 +1164,25 @@ const SCRIPT_QUALITY: QaCriterionDefinition[] = [
     source_file: "content/pipeline/qa-checkers-python.ts",
   },
   {
+    id: "compute_no_mpf_to_float_cast",
+    domain: "script-quality",
+    description:
+      "Python script does NOT cast mpmath / sympy precision-bearing " +
+      "values to float64. Flags ONLY guaranteed-destroyer patterns: " +
+      "`float(<x>.evalf(...))`, `float(mp.<x>)`, `float(mpmath.<x>)`, " +
+      "`numpy.float64(<x>)`, `np.float64(<x>)`. These are unambiguous " +
+      "precision-loss sites — once a 50-dps value passes through " +
+      "float64, the L1 1-ppQ goal becomes unreachable for that compute " +
+      "path. Critical severity (vs `does_not_default_to_float` which is " +
+      "major and broader). String literals and `#` comments are masked " +
+      "before scanning to avoid documentation false positives. Author " +
+      "directive (2026-06-09): 'float64 is EVIL'.",
+    default_severity: "critical",
+    depends_on: ["ts"],
+    automated: true,
+    source_file: "content/pipeline/qa-checkers-python.ts",
+  },
+  {
     id: "respects_archimedean_wall",
     domain: "script-quality",
     description:
