@@ -65,11 +65,11 @@ def main() -> int:
         # Factorisation form: h = ℏ_q · (q + 1).
         factor_lhs = h
         factor_rhs = hbar_q * (q + 1)
-        factor_residue = float(mp.fabs(factor_lhs - factor_rhs))
+        factor_residue = mp.fabs(factor_lhs - factor_rhs)
         # Log form: log(1/h) = log(1/ℏ_q) − log(1 + q).
         log_lhs = log(1 / h)
         log_rhs = log(1 / hbar_q) - log(1 + q)
-        log_residue = float(mp.fabs(log_lhs - log_rhs))
+        log_residue = mp.fabs(log_lhs - log_rhs)
 
         max_factor_residue = max(max_factor_residue,
                                   mp.mpf(factor_residue))
