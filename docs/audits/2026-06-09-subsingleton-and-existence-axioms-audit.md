@@ -143,11 +143,38 @@ then wraps each in a trivially-true `∃` "theorem":
 | `qou_deuteron_bound` | 101 | `|qou_deuteron_MeV − codata_deuteron_MeV| ≤ 0.001` |
 | `qou_binding_bound` | 112 | `|qou_binding_MeV − codata_binding_MeV| ≤ 0.001` |
 
-e.g. `predicted_proton_MeV_val : ∃ predicted, |predicted − codata| ≤ 0.001 := ⟨_, qou_proton_bound⟩`.
-The proton-mass agreement is *the* headline of the paper; in Lean it is
-an axiom, not a derivation. (It may be intended as an "external
-numerical fact" — but if so it should be labelled as a calibration
-input, not presented as a proved bound.)
+**Sharper finding (2026-06-09).** Inspecting the actual terms, the
+"predictions" are the **CODATA literals copied**:
+
+```lean
+noncomputable def codata_proton_MeV : ℝ := 938.272
+noncomputable def qou_proton_MeV    : ℝ := 938.272   -- identical literal
+```
+
+(same for neutron `939.565`, deuteron `1875.613`, binding `2.2245`). So
+each `axiom qou_*_bound : |qou_*_MeV − codata_*_MeV| ≤ 0.001` is
+`|x − x| ≤ 0.001` — a **tautology** that `norm_num` proves instantly; the
+`axiom` keyword imports nothing. The agreement is *circular*: the
+prediction **is** the measurement.
+
+This answers the calibration test directly: the values do **not** reduce
+to the three sanctioned calibrations (CAL-1 `m_e`, CAL-2 `Q_β/τ_n`,
+CAL-3 `m_π`). The absolute proton mass from `q₀` is the framework's
+**open mass-gap** (CLAUDE.md "2.89% m_p gap"), so a genuine derivation
+does not exist yet — and proton mass is not itself a legal calibration
+input (that would be CAL-4). The file's docstring claim *"derived from
+the topological mass formula at q ≈ 1.1097, externally verified"* is
+**contradicted by the code**, which never evaluates the formula —
+`qou_proton_MeV` is a constant. (The header comment even lists "Binding:
+2.224 (QOU) vs 2.2245 (CODATA)" while the code sets both to `2.2245`.)
+
+**Honest fix (applied in this PR):** the 4 `axiom *_bound` become
+`theorem *_bound := by … norm_num` (they are provable), with a loud
+in-file note that `qou_*_MeV` are **CODATA-pinned placeholders**, the
+agreement is therefore **tautological, not a derivation**, and the
+`q₀`-derivation is the open mass-gap. This removes 4 spurious axioms
+from the count and stops the file presenting circularity as a proved
+prediction. It does **not** fabricate a derivation.
 
 ### 4b. Numeric values by axiom
 
