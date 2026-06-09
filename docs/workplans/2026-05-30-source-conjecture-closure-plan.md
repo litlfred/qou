@@ -315,80 +315,111 @@ Net effect: Lean baseline is v4.24.0-clean across QOU; bibliography
 workflow now structured; chemistry-side content (WS-D, benzene)
 landed; witness pipeline drift handling robust.
 
-**Phase 3 (Option E saga — audit-only, awaiting better %)**.
+**Phase 3 (Option E saga — RETRACTED as CAL-4 violation,
+audit-only)**.
 Across 9 probe iterations (v1 → v9), explored Δ_λ closure for the
-A=3 mirror pair `³H − ³He`. The breakthrough found via systematic
-symmetry exploration:
+A=3 mirror pair `³H − ³He`. The v9 finding initially appeared as a
+breakthrough:
 
   Mirror-pair difference (target 0.7637 MeV):
 
-      B_T − B_³He  =  m_π · ℏ_q · (1+q)/2 · Σ_λ y_λ ·
+      B_T − B_³He  ?  m_π · ℏ_q · (1+q)/2 · Σ_λ y_λ ·
                        (χ^λ(β_T) + χ^{λᵀ}(β_³He)) / 2
+                  =  0.7629 MeV  →  0.11 % error
 
-  Numerical: 0.7232 × 1.054855 = **0.7629 MeV** vs target
-  0.7637 MeV = **0.11% error**.
+**The v9 result is RETRACTED as CAL-4 numerology.** Per the
+discipline assessment
+[`docs/audits/2026-05-31-isospin-mirror-v9-discipline-assessment.md`](audits/2026-05-31-isospin-mirror-v9-discipline-assessment.md)
+and the canonical-derivation cheat sheet §9.3:
 
-  Every factor substrate-derived:
-   - `m_π` = 139.57 MeV (PDG pion mass; isospin-breaking scale)
-   - `ℏ_q` = 1 − q⁻¹
-   - `(1+q)/2` = bar-symmetric q-average
-   - `y_λ` = Wenzl Markov weight at q_0
-   - `(χ^λ(β_T) + χ^{λᵀ}(β_³He))/2` = cross-isotope
-     bar-symmetric combination (partition transpose λ↔λᵀ ×
-     isospin Z↔N)
+- The `(1+q)/2` correction factor was computed as the EXACT
+  ratio needed to hit the target (1.0560) and then name-matched
+  against a 9-candidate substrate menu. This is a **post-hoc fit
+  / fourth calibration input** — a CAL-4 discipline violation
+  under the three-calibration rule (CAL-1 m_e, CAL-2 q_0, CAL-3
+  Q_β).
+- The result is **stale at canonical q_0** (drifts to +0.12 %
+  under re-pin), confirming the (1+q)/2 factor is not the
+  substrate's actual q-dependence but a numerical accident at
+  the historic q_0 value.
+- The formula **fails to generalize** to absolute D / T / ³He
+  binding energies (~154 % error on absolutes), demonstrating
+  it is not a derivation.
 
-  Symmetries used: partition transpose (v7), isospin mirror
-  Z↔N (v8), bar-symmetric q-average (v9).
+**The Δ_λ gate itself is MIS-FRAMED** (per cheat sheet 2026-06-02
+update):
 
-  **Status (per owner direction 2026-06-09): AUDIT-ONLY TODO,
-  NOT promoted to a content block.** The 0.11% result is on the
-  *mirror-pair difference only*; absolute D / T / ³He binding
-  energies still miss 9% / 49% / 44% individually via the
-  canonical `E_rot = μ₀·ℏ_q·J_q²(n/2)` formula. The next
-  research goal is to extend the cross-isotope bar-symmetric
-  structure to **absolute** binding energies and to find a
-  closure that beats the 10% threshold on D, T, ³He
-  individually (not just on their difference). Until then,
-  this finding stays as a TODO in the audit/closures-ledger
-  tracking. Probe scripts + witness JSONs landed:
-   - `folio-assistant/computations/option_e_v8_hecke_involution_isospin_mirror.py`
-   - `folio-assistant/computations/option_e_v9_all_symmetries.py`
-   - `folio-assistant/computations/option-e-v8-hecke-involution-isospin-mirror.witness.json`
-   - `folio-assistant/computations/option-e-v9-all-symmetries.witness.json`
+- Nuclear binding is **EXTENSIVE** (∝ A).
+- The Path-D formula `B = m_e · Σ_λ y_λ χ^λ Δ_λ` is **INTENSIVE**
+  (the trace difference saturates at ~3-4 MeV).
+- **No per-block weight `Δ_λ` can turn an intensive quantity
+  extensive** — this is *why* all six prior ansätze + the
+  2026-06-02 probe series (volume, rotation/full-order θ_λ,
+  content-energy, content×phase) all failed.
 
-  Cumulative v1 → v9 progression (mirror-pair best error):
+**The corrected canonical closure** is the **bond-sum / many-body
+series** over the inter-nucleon interface graph:
 
-   v1 simple stats           65.6% (D-only)
-   v2 BK content sums         17.4% (D-only — coincidence)
-   v3 multi-isotope check      70–87% (refutes v2)
-   v4 naive q-Reeb              ~95%
-   v5 canonical free-vs-atom    ~99% (growth-channel missing)
-   v6 mirror-pair + μ₀          81%
-   v7 transpose + m_π           58%
-   v8 transpose + Z↔N + m_π·ℏ_q  6.15%
-   v9 + (1+q)/2 correction       0.11%  ← in audit, awaiting
-                                          extension to absolute B
+  B(K)  =  Σ_{b ∈ ⨝_K} B_b  +  4-body α term  +  higher-body residue
+
+with the deuteron (one bond) the derived base case at +3.6 %, the
+**⁴He 4-body magic-A formula `B(⁴He) = 2·m_e·A·Vol(L6a4) = 2·m_e·4·8G`
+giving +5.87 % no fit** (per
+[`docs/audits/2026-06-02-he4-binding-canonical-vs-full-theta-design.md`](audits/2026-06-02-he4-binding-canonical-vs-full-theta-design.md)
+and [`docs/audits/2026-06-02-binding-many-body-ceiling.md`](audits/2026-06-02-binding-many-body-ceiling.md))
+and the **operator-valued combiner** (PR #1698 track) carrying
+the per-bond magnitudes.
+
+**Best structural (3-calibration-clean) result**: ≈ 2.52 % on
+the mirror pair via `m_π · ℏ_q · (1+ℏ_q) · Σ y_λ M_asym` (v9
+direct, no `(1+q)/2` factor). This stays in the audit as the
+honest structural baseline.
+
+**On error type** (per owner question 2026-06-09):
+- AME observational σ on B_T − B_³He: ~16 keV ≈ 2.1 % relative.
+  The retracted v9 0.11 % (~0.84 keV) is inside AME measurement
+  uncertainty — but that is *not* what makes it a closure; the
+  CAL-4 violation makes it numerology regardless of numerical
+  proximity.
+- L2 100× downstream miss factors (Q_β 160×, m_n 180×, Δ_pn 159×)
+  are 100× larger than the mirror-pair signal; even a real closure
+  on the mirror difference would be a small leverage on those.
+
+Probe scripts + witnesses preserved as audit trail (NOT
+promoted):
+- `option_e_v8_hecke_involution_isospin_mirror.py` (and witness)
+- `option_e_v9_all_symmetries.py` (and witness)
+- `option-e-multi-isotope-delta-lambda-probe-v3.witness.json`
+- `option-e-canonical-reeb-v5.witness.json`
+- etc.
 
 ### Open Phase-4 directions (next concrete tracks)
 
-1. **Extend cross-isotope structure to absolute B values.** The
-   v9 closure is on the *difference* B_T − B_³He only. Absolute
-   D / T / ³He individually still miss 9 / 49 / 44 % via the
-   canonical E_rot. Find the additional structure that closes
-   the absolute values to 10 %.
-2. **Try the same on `m_p − m_n`** at the nucleon level. The
-   neutron-proton mass difference (1.293 MeV) is the same
-   isospin-mirror structure one level down. If the cross-iso
-   bar-symmetric formula scales there too, that's strong
-   evidence the structure is canonical.
-3. **A = 4 (⁴He) extension.** Does the formula scale up? At A=4
-   the Wedderburn block count is `p(12) = 77`; cross-isotope
-   structure requires comparing ⁴He against a sibling (none
-   directly — ⁴He is doubly magic; would need ³He → ⁴He
-   single-step).
-4. **Promote v9 finding to `prop:isospin-mirror-canonical-closure`**
-   only after item 1 or 2 lands at < 10 %. Until then it stays
-   in audit / closures-ledger as a TODO.
+1. **Bond-sum / many-body series (the canonical reframing).**
+   Per cheat sheet §9.3 (2026-06-02 update), nuclear binding is
+   extensive — closure is `B(K) = Σ_{b ∈ ⨝_K} B_b + many-body
+   residue`. The deuteron is the derived base case; ⁴He has the
+   magic-A formula at +5.87 % no fit. The open work is:
+   - Enumerate inter-nucleon bonds `⨝_K` per isotope.
+   - Derive per-bond `B_b = E_0 · Δ|tr_M|_b` from the embedded
+     sub-braid trace difference (deuteron = n=6 base case).
+   - Land the operator-valued combiner (PR #1698 track) so each
+     bond carries its own magnitude rather than collapsing to a
+     single scalar.
+   - Quantify the per-bond growth (cheat sheet: bond count
+     `C(A,2)` already gives 6× A-growth vs intensive 1.65×; the
+     residual 6× → 12.72× is per-bond growth).
+2. **A=4 (⁴He) operator-valued combiner.** Track the magic-A
+   formula `B(⁴He) = 2·m_e·A·Vol(L6a4) = 2·m_e·4·8G` integration
+   into the canonical chain. Per
+   [`docs/audits/2026-06-02-he4-binding-canonical-vs-full-theta-design.md`](audits/2026-06-02-he4-binding-canonical-vs-full-theta-design.md).
+3. **m_p − m_n at the nucleon level** (1.293 MeV, isospin mirror
+   one level down). Apply the bond-sum framing — does the
+   single-bond piece scale to the nucleon-level difference?
+4. **STAND DOWN from Option E v8/v9 cross-isotope structure** —
+   the path has been retracted as CAL-4 numerology; further
+   probes in that family violate the three-calibration discipline.
+   The probe scripts remain as audit trail; no new versions.
 
 ### Strategic state (week-end)
 
@@ -397,18 +428,21 @@ symmetry exploration:
 - **Source nodes**: 61 (was 58).
 - **My closures**: 6 (Phase 1 Tier A × 2 + Phase 2 Tier B × 4
   via §3b-cond classes).
-- **Audit-only finding**: ³H/³He mirror at 0.11 % (not yet
-  promoted; needs absolute-B extension).
+- **Option E finding**: 0.11 % v9 mirror match **RETRACTED**
+  as CAL-4 numerology (cheat sheet §9.3 + discipline assessment
+  audit). Best 3-calibration-clean: 2.52 %. Audit trail preserved.
+- **Re-framing**: Δ_λ gate was mis-framed; canonical binding is
+  extensive (bond-sum + many-body series), not intensive per-block
+  density.
 - **Phase 0 infra (sibling agents)**: Lean v4.24.0 migration
   complete; bib-human-review workflow live; chemistry-side
   content landed.
 
-The strategic priorities are unchanged: the highest-leverage
-remaining closures (`brane-tower-z-habiro` 15 users,
+The strategic priorities are: the highest-leverage remaining
+closures (`brane-tower-z-habiro` 15 users,
 `e-hartree-categorical-derivation` 14 users,
 `crystal-graph-realization` 10 users) are still Tier C-eng /
 research-grade, gated either on Mathlib upstream infra or on
-multi-month domain research. The Option E finding (v9 saga) is
-the most concrete advance toward L2 100× targets for the 3
-failing observables (Q_β, m_n, Δ_pn); its extension to absolute
-B is the highest-priority research follow-up.
+multi-month domain research. The productive binding direction is
+the **bond-sum / many-body series** (PR #1698 operator-valued
+combiner + magic-A formula), NOT further Δ_λ density probes.
