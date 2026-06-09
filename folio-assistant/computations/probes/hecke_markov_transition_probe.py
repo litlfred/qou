@@ -74,12 +74,14 @@ def main() -> int:
     # (ii) Transition probabilities — scalar identities.
     p_plus = q / two_q
     p_minus = qi / two_q
-    p_sum_residue = float(mp.fabs(p_plus + p_minus - mp.mpf(1)))
-    p_ratio_residue = float(mp.fabs(p_plus / p_minus - q * q))
+    # Keep residues at mp.mpf precision (flagged by
+    # compute_no_mpf_to_float_cast — float() dropped).
+    p_sum_residue = mp.fabs(p_plus + p_minus - mp.mpf(1))
+    p_ratio_residue = mp.fabs(p_plus / p_minus - q * q)
     p_plus_alt_form = q * q / (q * q + 1)
-    p_plus_form_residue = float(mp.fabs(p_plus - p_plus_alt_form))
+    p_plus_form_residue = mp.fabs(p_plus - p_plus_alt_form)
     p_minus_alt_form = 1 / (q * q + 1)
-    p_minus_form_residue = float(mp.fabs(p_minus - p_minus_alt_form))
+    p_minus_form_residue = mp.fabs(p_minus - p_minus_alt_form)
 
     # (i) Spectral idempotents — check in three H_3 irreps.
     per_rep: list[dict] = []

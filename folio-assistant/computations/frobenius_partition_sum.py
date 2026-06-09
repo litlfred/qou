@@ -74,6 +74,7 @@ from pathlib import Path
 from datetime import datetime, timezone
 from fractions import Fraction
 
+import mpmath as mp
 import sympy as sp
 
 # P2.5 migration: helper available; per-witness expose_polynomial call is a follow-up
@@ -166,7 +167,10 @@ if __name__ == "__main__":
                 "partition": lam,
                 "dim_q": str(sp.nsimplify(d_q)),
                 "inv_dim_q": str(sp.nsimplify(inv)),
-                "inv_at_q0": float(inv.subs(q, q0).evalf(30)),
+                # Keep at mp.mpf precision (flagged by
+                # compute_no_mpf_to_float_cast — sympy evalf -> float64
+                # was the textbook L1 destroyer).
+                "inv_at_q0": mp.mpf(str(inv.subs(q, q0).evalf(50))),
                 "inv_at_q0_polynomial_q": expose_polynomial(inv, q),
                 "conjugate": conj,
                 "self_dual": self_dual,
@@ -175,7 +179,7 @@ if __name__ == "__main__":
             level_totals[level] += inv
 
         total_simpl = sp.simplify(total_symbolic)
-        total_q0 = float(total_simpl.subs(q, q0).evalf(30))
+        total_q0 = mp.mpf(str(total_simpl.subs(q, q0).evalf(50)))
         total_q0_polynomial_q = expose_polynomial(total_simpl, q)
 
         # Classical check (q → 1)
@@ -187,7 +191,7 @@ if __name__ == "__main__":
         print(f"\n  Filtration decomposition (level = height − 1):")
         for level in sorted(by_level.keys()):
             level_sum = sp.simplify(level_totals[level])
-            level_q0 = float(level_sum.subs(q, q0).evalf(30))
+            level_q0 = mp.mpf(str(level_sum.subs(q, q0).evalf(50)))
             level_q0_polynomial_q = expose_polynomial(level_sum, q)
             print(f"    level {level}: Σ = {sp.nsimplify(level_sum)} "
                   f"(at q_0: {level_q0:.6f})")
