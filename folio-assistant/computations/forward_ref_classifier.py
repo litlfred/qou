@@ -108,6 +108,12 @@ FOUNDATIONAL_LATE = {
     "def:qz-bicompletion",
     "def:motivic-substrate",
     "def:archimedean-realization-functor",
+    "def:adelic-substrate",   # the ring of adeles 𝔸 — foundational substrate
+                              # object, peer of motivic-substrate +
+                              # archimedean-realization-functor above; used
+                              # early (lifting-and-descent motivic-Galois
+                              # character), formally developed in mass-theory
+                              # (2026-06-09 author decision, edge #2).
 }
 
 # Definition targets that genuinely BELONG in their (later) home
@@ -136,6 +142,11 @@ SUBJECT_MATCHED_DEFS = {
     "mass-endomorphism::def:mass-identity",           # mass identity
     "measurement-observation::def:bundle-isotopy-equivalence",
     "particle-interactions::def:knot-particle-generation",
+    # classical-limit functor 𝓛:𝐂_q→𝐂_1 — subject is the classical limit
+    # (7 consumers across stochastic-mechanics + appendix-surreals); the
+    # adelic-substrate forward reference is the archimedean-projection
+    # pointer, not a mis-home (2026-06-09 author decision, edge #3).
+    "stochastic-mechanics::def:classical-limit-functor",
 }
 
 # Chapters whose forward refs are waived wholesale.

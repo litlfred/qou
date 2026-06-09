@@ -17,7 +17,10 @@ export default definition({
     validation: "not_checked",
   },
   uses: [
-    "def:computational-horizon",
+    // def:computational-horizon dropped (2026-06-09): the prose never
+    // relies on the info-theory horizon — this skein obstruction is a
+    // *parallel* evaluation of the same χ(A) class, not a consumer of
+    // the computational horizon. The dependency direction was inverted.
     "thm:qou-obstruction-reduction",
     "rem:kummer-filtration-obstruction",
     "prop:ns-obstruction-tower",
