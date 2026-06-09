@@ -5,6 +5,7 @@ export default remark({
   title:
     "Adelic--Tate surreal squeeze: local Reeb-$\\varepsilon_p$ at each prime and the global Euler product",
   interprets: "thm:hasse-weil-bound",
+  uses: ["prop:adelic-reeb-restricted-product"],
   tags: [
     "adeles",
     "tate-thesis",
