@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-09T02:07:35.373291+00:00",
-  "commitSha": "51f4b15ac4f448f4df2c53298f6cf628f77d18fa",
+  "computedAt": "2026-06-09T06:02:04.744500+00:00",
+  "commitSha": "407446299f24a411f7a87e70a5b341f222b86b36",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -559,11 +559,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 4,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "8c9ce6665871",
-  "scriptCommitSha": "e4ca67904ce501d905d9ad8af42e440cd716bd82",
+  "scriptCommitSha": "5a44813463430491fdc8cd8cd5a97a404b5e7e9d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -575,8 +575,7 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "clarabel": "0.11.1"
+    "mpmath": "1.3.0"
   },
   "description": "Per-chain validation + computational-trust audit per the QOU methodology directive: every numerical claim must trace back to first-principles axioms via a DerivationChain.",
   "auditOnly": "docs/audits/2026-05-02-pr503-ci-failure-postmortem.md",
@@ -2046,6 +2045,8 @@
         "a-K-via-lp-dual.witness.json",
         "adjacent-vs-full-probe.witness.json",
         "affine-light-cone-figure.witness.json",
+        "alpha-em-4pi-fixed-point-solve.witness.json",
+        "alpha-em-4pi-q0-sensitivity.witness.json",
         "alpha-k-jones-markov-h3.witness.json",
         "alpha-k-jones-markov-h4.witness.json",
         "ame-2020-binding-energies.witness.json",
@@ -2655,6 +2656,7 @@
         "per-atom-audit-witnesses.witness.json",
         "per-atom-hyperbolic-volume.witness.json",
         "per-atom-rho-deviation.witness.json",
+        "per-basis-row-invariants-probe.witness.json",
         "per-bond-growth-a3.witness.json",
         "per-generator-V-hat-general.witness.json",
         "per-irrep-pole-atom-crystal.witness.json",
@@ -2717,6 +2719,8 @@
         "qbeta-c4-structural-product-identities.witness.json",
         "qbeta-c8-c10-pell-lucas-closed-form-predictions.witness.json",
         "qbeta-closed-form-wiring-n4-to-n10.witness.json",
+        "qbeta-multi-block-eigenphase-full-eps-probe.witness.json",
+        "qbeta-multi-block-eigenphase-probe.witness.json",
         "qm-channel-contribution-probe.witness.json",
         "qou-mass-canonical-wiring-example.witness.json",
         "r5-full-canonical-knot-solver.witness.json",
