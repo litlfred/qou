@@ -81,8 +81,9 @@ def main() -> None:
             "Inverts ρ_F · V_hyp = Δ_binding to report the required "
             "ρ_F (in units of m_e) that each atomic-link-primitive "
             "candidate (figure-eight, three-twist, Borromean) would "
-            "need to reproduce the empirical binding energy of light "
-            "isotopes (²H–²⁰Ne).  QOU's prediction is ρ_F ∈ {m_e, "
+            "need to reproduce the empirical binding energy of the "
+            "light nuclei ²H–⁷Li (the AME binding-energy witness set).  "
+            "QOU's prediction is ρ_F ∈ {m_e, "
             "2 m_e} from prop:cpt-orbit-closure-density; deviations "
             "from these two values quantify the atom-to-link mapping "
             "gap.  Bridges AME2020 binding to the "
@@ -113,11 +114,16 @@ def main() -> None:
         ("B_li6_MeV", 3, 3, "6Li"),
         ("B_li7_MeV", 3, 4, "7Li"),
     ]
+    _missing = [key for key, *_ in _AME_ISOTOPES if key not in _ame]
+    if _missing:
+        raise SystemExit(
+            "ame-2020-binding-energies.witness.json is missing required "
+            f"keys {_missing}; the analysis needs all of _AME_ISOTOPES."
+        )
     rows_in = [
         {"isotope": iso, "Z": Z, "N": N, "A": Z + N,
          "delta_binding_MeV": float(_ame[key])}
         for key, Z, N, iso in _AME_ISOTOPES
-        if key in _ame
     ]
 
     # Per-isotope analysis.
@@ -179,9 +185,9 @@ def main() -> None:
     builder.add_assertion(
         name="binding_gap_analysis_completed",
         computed=len(rows_out),
-        expected=len(rows_out),
+        expected=len(_AME_ISOTOPES),
         tolerance=0,
-        source="ame-2020-binding-energies.witness.json (B ≥ ²H)",
+        source="ame-2020-binding-energies.witness.json (all _AME_ISOTOPES, B ≥ ²H)",
     )
     builder.add_data("rows", rows_out)
     builder.add_data("matches_within_10pct", matches)

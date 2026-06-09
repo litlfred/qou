@@ -104,10 +104,10 @@ the same combination-law mistake:
    not multiplicative.
 
 Experimental per-isotope binding (AME2020) lives in
-`ame-2020-binding-energies.witness.json`; AME2020 hydrogen is reproduced
-to <100 ppb (publication-rounding-limited) and the per-isotope
-binding-energy residuals average 7.224 MeV/A — within 4% of
-empirical SEMF.
+`ame-2020-binding-energies.witness.json` (the light nuclei ²H–⁷Li).
+Per-nucleon binding rises from ~1.1 MeV/A (²H) toward the ~8 MeV/A
+SEMF plateau (⁴He ≈ 7.07, ⁷Li ≈ 5.61 MeV/A), consistent with
+empirical systematics.
 
 This re-frames the conclusions above:
 
