@@ -34,7 +34,7 @@ universe u v
     Frobenius duality reduce it to a one-dimensional space.
 
     The generator maps to `χ(A) ∈ ℤ` under the trace map. -/
-structure ClassicalLimitObstruction (k : Type*) [Field k] where
+structure ClassicalLimitObstruction (k : Type*) [CommRing k] where
   /-- The dimension of the obstruction space `HH²(Ad)`. -/
   dim : ℕ
   /-- The Euler characteristic `χ(A) = tr(id_A)`, which generates

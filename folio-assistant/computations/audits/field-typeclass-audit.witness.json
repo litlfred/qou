@@ -1,11 +1,11 @@
 {
   "audit": "field-typeclass-over-strength",
   "scanned_root": "content/quantum-observable-universe/lean/QOU",
-  "total": 87,
+  "total": 90,
   "counts": {
     "phantom": 0,
-    "over-strong": 2,
-    "genuine": 85
+    "over-strong": 43,
+    "genuine": 47
   },
   "findings": [
     {
@@ -55,8 +55,8 @@
       "decl_name": "GradedMarkovTraceFromGSFiltration",
       "type_var": "R",
       "field_class": "Field",
-      "classification": "genuine",
-      "evidence": "module uses division/inverse elsewhere (field-by-design)"
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
     },
     {
       "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/GradedMarkovTraceFromGSFiltration.lean",
@@ -65,8 +65,18 @@
       "decl_name": "graded_markov_trace_from_gs_filtration",
       "type_var": "R",
       "field_class": "Field",
-      "classification": "genuine",
-      "evidence": "module uses division/inverse elsewhere (field-by-design)"
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/HoefsmitV21CosSymmetrization.lean",
+      "line": 55,
+      "decl_kw": "def",
+      "decl_name": "hoefsmit_sigma1_gen",
+      "type_var": "R",
+      "field_class": "Field",
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
     },
     {
       "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/HoefsmitV21CosSymmetrization.lean",
@@ -95,8 +105,8 @@
       "decl_name": "HeckeRingHom",
       "type_var": "R",
       "field_class": "Field",
-      "classification": "genuine",
-      "evidence": "module uses division/inverse elsewhere (field-by-design)"
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
     },
     {
       "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/IwahoriHeckeAPI.lean",
@@ -115,8 +125,8 @@
       "decl_name": "wedderburn_decomposition_generic",
       "type_var": "R",
       "field_class": "Field",
-      "classification": "genuine",
-      "evidence": "module uses division/inverse elsewhere (field-by-design)"
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
     },
     {
       "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/IwahoriHeckeAPI.lean",
@@ -125,8 +135,8 @@
       "decl_name": "failureLocus",
       "type_var": "R",
       "field_class": "Field",
-      "classification": "genuine",
-      "evidence": "module uses division/inverse elsewhere (field-by-design)"
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
     },
     {
       "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/IwahoriHeckeAPI.lean",
@@ -135,8 +145,8 @@
       "decl_name": "not_in_failure_locus_iff_generic",
       "type_var": "R",
       "field_class": "Field",
-      "classification": "genuine",
-      "evidence": "module uses division/inverse elsewhere (field-by-design)"
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
     },
     {
       "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/MarkovAxiomsPrimitive.lean",
@@ -155,8 +165,8 @@
       "decl_name": "MarkovTraceAxioms",
       "type_var": "R",
       "field_class": "Field",
-      "classification": "genuine",
-      "evidence": "module uses division/inverse elsewhere (field-by-design)"
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
     },
     {
       "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/MarkovAxiomsPrimitive.lean",
@@ -165,8 +175,8 @@
       "decl_name": "markov_iterated_stab_gen",
       "type_var": "R",
       "field_class": "Field",
-      "classification": "genuine",
-      "evidence": "module uses division/inverse elsewhere (field-by-design)"
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
     },
     {
       "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/MarkovAxiomsPrimitive.lean",
@@ -175,8 +185,8 @@
       "decl_name": "markov_iterated_stab",
       "type_var": "R",
       "field_class": "Field",
-      "classification": "genuine",
-      "evidence": "module uses division/inverse elsewhere (field-by-design)"
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
     },
     {
       "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/MarkovAxiomsPrimitive.lean",
@@ -185,8 +195,8 @@
       "decl_name": "disjoint_product_factorisation_gen",
       "type_var": "R",
       "field_class": "Field",
-      "classification": "genuine",
-      "evidence": "module uses division/inverse elsewhere (field-by-design)"
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
     },
     {
       "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/MarkovAxiomsPrimitive.lean",
@@ -195,8 +205,8 @@
       "decl_name": "disjoint_product_factorisation",
       "type_var": "R",
       "field_class": "Field",
-      "classification": "genuine",
-      "evidence": "module uses division/inverse elsewhere (field-by-design)"
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
     },
     {
       "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/MarkovAxiomsPrimitive.lean",
@@ -205,8 +215,8 @@
       "decl_name": "MarkovTraceAxioms_implies_disjoint_stabilisation",
       "type_var": "R",
       "field_class": "Field",
-      "classification": "genuine",
-      "evidence": "module uses division/inverse elsewhere (field-by-design)"
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
     },
     {
       "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/QuaternionFromHecke.lean",
@@ -385,8 +395,8 @@
       "decl_name": "HoefsmitSeminormalBasis",
       "type_var": "R",
       "field_class": "Field",
-      "classification": "genuine",
-      "evidence": "module uses division/inverse elsewhere (field-by-design)"
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
     },
     {
       "file": "content/quantum-observable-universe/lean/QOU/IwahoriHecke/Hoefsmit.lean",
@@ -395,8 +405,8 @@
       "decl_name": "instHoefsmit_default",
       "type_var": "R",
       "field_class": "Field",
-      "classification": "genuine",
-      "evidence": "module uses division/inverse elsewhere (field-by-design)"
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
     },
     {
       "file": "content/quantum-observable-universe/lean/QOU/IwahoriHecke/Hoefsmit.lean",
@@ -405,8 +415,8 @@
       "decl_name": "hoefsmit_ew_cell_content_existence",
       "type_var": "R",
       "field_class": "Field",
-      "classification": "genuine",
-      "evidence": "module uses division/inverse elsewhere (field-by-design)"
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
     },
     {
       "file": "content/quantum-observable-universe/lean/QOU/IwahoriHecke/Hoefsmit.lean",
@@ -415,8 +425,8 @@
       "decl_name": "branchCoefficientType",
       "type_var": "R",
       "field_class": "Field",
-      "classification": "genuine",
-      "evidence": "module uses division/inverse elsewhere (field-by-design)"
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
     },
     {
       "file": "content/quantum-observable-universe/lean/QOU/IwahoriHecke/Hoefsmit.lean",
@@ -435,8 +445,8 @@
       "decl_name": "qBracket_at_one",
       "type_var": "R",
       "field_class": "Field",
-      "classification": "genuine",
-      "evidence": "module uses division/inverse elsewhere (field-by-design)"
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
     },
     {
       "file": "content/quantum-observable-universe/lean/QOU/IwahoriHecke/Hoefsmit.lean",
@@ -455,8 +465,8 @@
       "decl_name": "alphaCoefficient_zero_at_zero_diff",
       "type_var": "R",
       "field_class": "Field",
-      "classification": "genuine",
-      "evidence": "module uses division/inverse elsewhere (field-by-design)"
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
     },
     {
       "file": "content/quantum-observable-universe/lean/QOU/IwahoriHecke/TypeA.lean",
@@ -485,8 +495,8 @@
       "decl_name": "IsRMatrixDerived",
       "type_var": "R",
       "field_class": "Field",
-      "classification": "genuine",
-      "evidence": "module uses division/inverse elsewhere (field-by-design)"
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
     },
     {
       "file": "content/quantum-observable-universe/lean/QOU/Machinery/DerivedCharacterCatalogue.lean",
@@ -515,8 +525,8 @@
       "decl_name": "?",
       "type_var": "R",
       "field_class": "Field",
-      "classification": "genuine",
-      "evidence": "module uses division/inverse elsewhere (field-by-design)"
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
     },
     {
       "file": "content/quantum-observable-universe/lean/QOU/Machinery/DerivedCharacterCatalogue.lean",
@@ -525,8 +535,8 @@
       "decl_name": "hopfTwoDiquarkChi",
       "type_var": "R",
       "field_class": "Field",
-      "classification": "genuine",
-      "evidence": "module uses division/inverse elsewhere (field-by-design)"
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
     },
     {
       "file": "content/quantum-observable-universe/lean/QOU/Machinery/DerivedCharacterCatalogue.lean",
@@ -535,8 +545,8 @@
       "decl_name": "?",
       "type_var": "R",
       "field_class": "Field",
-      "classification": "genuine",
-      "evidence": "module uses division/inverse elsewhere (field-by-design)"
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
     },
     {
       "file": "content/quantum-observable-universe/lean/QOU/Machinery/DerivedCharacterCatalogue.lean",
@@ -555,8 +565,8 @@
       "decl_name": "?",
       "type_var": "R",
       "field_class": "Field",
-      "classification": "genuine",
-      "evidence": "module uses division/inverse elsewhere (field-by-design)"
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
     },
     {
       "file": "content/quantum-observable-universe/lean/QOU/Machinery/DerivedCharacterCatalogue.lean",
@@ -565,8 +575,8 @@
       "decl_name": "trefoilTwoElectronChi",
       "type_var": "R",
       "field_class": "Field",
-      "classification": "genuine",
-      "evidence": "module uses division/inverse elsewhere (field-by-design)"
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
     },
     {
       "file": "content/quantum-observable-universe/lean/QOU/Machinery/DerivedCharacterCatalogue.lean",
@@ -575,8 +585,8 @@
       "decl_name": "?",
       "type_var": "R",
       "field_class": "Field",
-      "classification": "genuine",
-      "evidence": "module uses division/inverse elsewhere (field-by-design)"
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
     },
     {
       "file": "content/quantum-observable-universe/lean/QOU/Machinery/DerivedCharacterCatalogue.lean",
@@ -595,8 +605,8 @@
       "decl_name": "?",
       "type_var": "R",
       "field_class": "Field",
-      "classification": "genuine",
-      "evidence": "module uses division/inverse elsewhere (field-by-design)"
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
     },
     {
       "file": "content/quantum-observable-universe/lean/QOU/Machinery/DerivedCharacterCatalogue.lean",
@@ -605,8 +615,8 @@
       "decl_name": "cinquefoilTwoMuonChi",
       "type_var": "R",
       "field_class": "Field",
-      "classification": "genuine",
-      "evidence": "module uses division/inverse elsewhere (field-by-design)"
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
     },
     {
       "file": "content/quantum-observable-universe/lean/QOU/Machinery/DerivedCharacterCatalogue.lean",
@@ -615,8 +625,8 @@
       "decl_name": "?",
       "type_var": "R",
       "field_class": "Field",
-      "classification": "genuine",
-      "evidence": "module uses division/inverse elsewhere (field-by-design)"
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
     },
     {
       "file": "content/quantum-observable-universe/lean/QOU/Machinery/DerivedCharacterCatalogue.lean",
@@ -635,8 +645,8 @@
       "decl_name": "?",
       "type_var": "R",
       "field_class": "Field",
-      "classification": "genuine",
-      "evidence": "module uses division/inverse elsewhere (field-by-design)"
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
     },
     {
       "file": "content/quantum-observable-universe/lean/QOU/Machinery/DerivedCharacterCatalogue.lean",
@@ -645,8 +655,8 @@
       "decl_name": "figureEightThreeHiggsChi",
       "type_var": "R",
       "field_class": "Field",
-      "classification": "genuine",
-      "evidence": "module uses division/inverse elsewhere (field-by-design)"
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
     },
     {
       "file": "content/quantum-observable-universe/lean/QOU/Machinery/DerivedCharacterCatalogue.lean",
@@ -655,8 +665,8 @@
       "decl_name": "?",
       "type_var": "R",
       "field_class": "Field",
-      "classification": "genuine",
-      "evidence": "module uses division/inverse elsewhere (field-by-design)"
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
     },
     {
       "file": "content/quantum-observable-universe/lean/QOU/Machinery/DerivedCharacterCatalogue.lean",
@@ -665,8 +675,8 @@
       "decl_name": "figureEightOneOneOneHiggsChi",
       "type_var": "R",
       "field_class": "Field",
-      "classification": "genuine",
-      "evidence": "module uses division/inverse elsewhere (field-by-design)"
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
     },
     {
       "file": "content/quantum-observable-universe/lean/QOU/Machinery/DerivedCharacterCatalogue.lean",
@@ -675,8 +685,8 @@
       "decl_name": "?",
       "type_var": "R",
       "field_class": "Field",
-      "classification": "genuine",
-      "evidence": "module uses division/inverse elsewhere (field-by-design)"
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
     },
     {
       "file": "content/quantum-observable-universe/lean/QOU/Machinery/DerivedCharacterCatalogue.lean",
@@ -695,8 +705,8 @@
       "decl_name": "?",
       "type_var": "R",
       "field_class": "Field",
-      "classification": "genuine",
-      "evidence": "module uses division/inverse elsewhere (field-by-design)"
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
     },
     {
       "file": "content/quantum-observable-universe/lean/QOU/Mathlib/HeckeAlgebra.lean",
@@ -765,8 +775,8 @@
       "decl_name": "H3.mul",
       "type_var": "R",
       "field_class": "Field",
-      "classification": "genuine",
-      "evidence": "module uses division/inverse elsewhere (field-by-design)"
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
     },
     {
       "file": "content/quantum-observable-universe/lean/QOU/Mathlib/HeckeAlgebra.lean",
@@ -775,8 +785,8 @@
       "decl_name": "H3.one_mul",
       "type_var": "R",
       "field_class": "Field",
-      "classification": "genuine",
-      "evidence": "module uses division/inverse elsewhere (field-by-design)"
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
     },
     {
       "file": "content/quantum-observable-universe/lean/QOU/MathlibExt/QPlancherel.lean",
@@ -785,8 +795,8 @@
       "decl_name": "HasPartitionFunction",
       "type_var": "R",
       "field_class": "Field",
-      "classification": "genuine",
-      "evidence": "module uses division/inverse elsewhere (field-by-design)"
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
     },
     {
       "file": "content/quantum-observable-universe/lean/QOU/MathlibExt/QPlancherel.lean",
@@ -795,8 +805,8 @@
       "decl_name": "HasPartitionFunction",
       "type_var": "R",
       "field_class": "Field",
-      "classification": "genuine",
-      "evidence": "module uses division/inverse elsewhere (field-by-design)"
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
     },
     {
       "file": "content/quantum-observable-universe/lean/QOU/MathlibExt/QPlancherel.lean",
@@ -825,6 +835,26 @@
       "decl_name": "strict_complementarity_unique_axiom",
       "type_var": "R",
       "field_class": "Field",
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/Observations/QCltNonCommutative.lean",
+      "line": 56,
+      "decl_kw": "class",
+      "decl_name": "QCltNonCommutative",
+      "type_var": "R",
+      "field_class": "LinearOrderedField",
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/Observations/TraceLocalityMeetsGsNonLocality.lean",
+      "line": 34,
+      "decl_kw": "class",
+      "decl_name": "HasReconciliation",
+      "type_var": "R",
+      "field_class": "LinearOrderedField",
       "classification": "over-strong",
       "evidence": "`R` used but no division/inverse found"
     },

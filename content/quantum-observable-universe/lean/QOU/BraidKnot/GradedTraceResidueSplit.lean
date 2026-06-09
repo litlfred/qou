@@ -32,27 +32,27 @@ universe u
 
 /-- The symbol map `σ: J^ℓ → J^ℓ/J^{ℓ+1}`.  Concrete model: identity. -/
 def GradedTraceResidueSplit.symbolMap
-    {_R : Type u} [Field _R] (_ℓ : ℕ) (_q : _R) : Unit → Unit := id
+    {_R : Type u} [CommRing _R] (_ℓ : ℕ) (_q : _R) : Unit → Unit := id
 
 /-- The Markov trace on the associated graded algebra.  Concrete
     model: returns 0. -/
 def GradedTraceResidueSplit.gradedTrace
-    {R : Type u} [Field R] (_q : R) (_x : Unit) : R := 0
+    {R : Type u} [CommRing R] (_q : R) (_x : Unit) : R := 0
 
 /-- The total residue contribution.  Concrete model: returns 0. -/
 def GradedTraceResidueSplit.gbResidue
-    {R : Type u} [Field R] (_q : R) (_x : Unit) : R := 0
+    {R : Type u} [CommRing R] (_q : R) (_x : Unit) : R := 0
 
 /-- The full Markov trace.  Concrete model: returns 0. -/
 def GradedTraceResidueSplit.markovTrace
-    {R : Type u} [Field R] (_q : R) (_x : Unit) : R := 0
+    {R : Type u} [CommRing R] (_q : R) (_x : Unit) : R := 0
 
 /-- **Graded-trace residue split.**  Polymorphic in the ground field `R`.
 
     The Markov trace decomposes as smooth (graded) + oscillating
     (residue), the categorical analogue of Strutinsky's
     macroscopic + shell-correction split. -/
-class GradedTraceResidueSplit (R : Type u) [Field R] where
+class GradedTraceResidueSplit (R : Type u) [CommRing R] where
   q : R
   element : Unit
   smooth : R       -- tr_gr(σ(element), q)
@@ -70,7 +70,7 @@ class GradedTraceResidueSplit (R : Type u) [Field R] where
 
     Ref: [manuscript] `prop:categorical-mass-markov`. -/
 theorem GradedTraceResidueSplit.level_zero_pure_descended
-    {R : Type u} [Field R] (S : GradedTraceResidueSplit R)
+    {R : Type u} [CommRing R] (S : GradedTraceResidueSplit R)
     (h : S.oscillating = 0) :
     S.total = S.smooth := by
   rw [S.split_identity, h, add_zero]
@@ -80,7 +80,7 @@ theorem GradedTraceResidueSplit.level_zero_pure_descended
 
     Ref: [manuscript] §Nuclear Binding and Beta Stability. -/
 theorem GradedTraceResidueSplit.strutinsky_analogue
-    {R : Type u} [Field R] (S : GradedTraceResidueSplit R) :
+    {R : Type u} [CommRing R] (S : GradedTraceResidueSplit R) :
     S.total = S.smooth + S.oscillating :=
   S.split_identity
 
@@ -89,7 +89,7 @@ theorem GradedTraceResidueSplit.strutinsky_analogue
     holds. -/
 -- Ref: [manuscript] `prop:graded-trace-residue-split`
 theorem graded_trace_residue_split
-    {R : Type u} [Field R] [s : GradedTraceResidueSplit R] :
+    {R : Type u} [CommRing R] [s : GradedTraceResidueSplit R] :
     s.total = s.smooth + s.oscillating :=
   s.split_identity
 
