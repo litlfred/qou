@@ -236,7 +236,8 @@ def main():
     _NOBLE_CORES = (0, 2, 10, 18, 36, 54, 86)
     def bonding_capacity(Z):
         core = max(c for c in _NOBLE_CORES if c < Z)
-        return 8 - (Z - core)                        # C(6)=4, N(7)=3, O(8)=2; S(16)=2, P(15)=3
+        valence_e = Z - core
+        return min(valence_e, 8 - valence_e)         # symmetric octet: C(6)=4, N(7)=3, O(8)=2, H(1)=1
 
     diatomic_Z = {"O2": (8, 8), "N2": (7, 7), "CO": (6, 8)}
     observed_bo = {"O2": 2, "N2": 3, "CO": 3}

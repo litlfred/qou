@@ -6,7 +6,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:co-lp-dual-binding",
   lean: { ref: "qou:QOU.Molecular.co_lp_dual_binding", validation: "not_checked" },
-  title: "LP dual selects the triple bond as optimal for $CO$",
+  title: "LP dual for $CO$: covalent active-set $2$ ($+$ dative $=$ triple)",
   computation: {
     engine: "python",
     status: "verified",
@@ -14,7 +14,6 @@ export default proposition({
     witness: [
       "folio-assistant/computations/co-bond-order-active-set.witness.json",
     ],
-    status: "verified",
   },
   uses: [
     "def:co-molecular-braid",
