@@ -83,12 +83,17 @@ DPS = 40
 mp.mp.dps = DPS + 10  # guard digits
 
 # ── canonical q_0 at mpf precision ─────────────────────────────────────
+_Q0_SOURCE = f"qou_substrate.constants.q_at({DPS})"
 try:
     from qou_substrate.constants import q_at  # noqa: E402
     Q0 = q_at(DPS)
-except Exception:  # pragma: no cover — fallback to f64-seeded value
+except (ImportError, AttributeError) as _q_err:  # narrow: only "not there"
+    # Do NOT swallow real q_at bugs — those should crash the probe.
     from qou_substrate.constants import Q as _Qf  # noqa: E402
     Q0 = mp.mpf(repr(_Qf))
+    _Q0_SOURCE = f"FALLBACK f64-seeded Q ({type(_q_err).__name__}: {_q_err})"
+    print(f"[warn] q_at unavailable — q0 precision downgraded to the "
+          f"f64-seeded value: {_q_err}", file=sys.stderr)
 
 QI = 1 / Q0
 H = Q0 - QI                         # h = q - q^-1 (Hecke scalar)
@@ -262,9 +267,12 @@ def sgn_log10(x) -> tuple[int, float]:
 
 
 def main() -> int:
-    t0 = time.time()
+    # WitnessBuilder interprets start_time as a time.monotonic() baseline
+    # (qou_substrate.witness:236) — NOT epoch time.time().
+    t0 = time.monotonic()
     w = WitnessBuilder("all-nuclides-wedderburn-spectral-v2",
                        engine="mpmath", start_time=t0)
+    w.add_data("q0_source", _Q0_SOURCE)
 
     # ── validation battery ─────────────────────────────────────────
     tol = mp.mpf(10) ** (-(DPS - 5))
@@ -397,8 +405,14 @@ def main() -> int:
     n_P = 0          # spectrally positive (all blocks)
     n_std_pos = 0    # std block alone positive
     n_parity_ok = 0  # alt sign matches (-1)^T closed form
+    n_disc_boundary = 0  # |disc| within roundoff of 0 (degenerate eigs)
     permitted_P: list[list[int]] = []
-    t_start = time.time()
+    # disc = tr^2 - 4 det is a difference of same-magnitude huge numbers
+    # (blocks reach ~10^±4000), so the roundoff guard must be RELATIVE to
+    # the operand scale, tied to the working precision — an absolute
+    # tolerance would be vacuous at those magnitudes.
+    disc_eps = mp.mpf(10) ** (-(DPS - 8))
+    t_start = time.monotonic()
     for idx, e in enumerate(entries):
         Z, N, A = int(e["Z"]), int(e["N"]), int(e["A"])
         if A < 1:
@@ -408,7 +422,12 @@ def main() -> int:
                                        N_intra=N_intra)
         tr_std, det_std = m_tr(std), m_det(std)
         disc = tr_std * tr_std - 4 * det_std
-        std_pos = bool(disc >= 0 and tr_std >= 0 and det_std >= 0)
+        disc_scale = max(tr_std * tr_std, abs(4 * det_std),
+                         mp.mpf("1e-300"))
+        if abs(disc) <= disc_eps * disc_scale:
+            n_disc_boundary += 1
+        std_pos = bool(disc >= -disc_eps * disc_scale
+                       and tr_std >= 0 and det_std >= 0)
         alt_pos = bool(alt >= 0)
         spectral_pos = bool(sym >= 0) and alt_pos and std_pos
         # (F) Frobenius pairings tr_M(b_i . a) in block land
@@ -444,7 +463,7 @@ def main() -> int:
                 6),
         })
         if (idx + 1) % 400 == 0:
-            el = time.time() - t_start
+            el = time.monotonic() - t_start
             eta = el / (idx + 1) * (len(entries) - idx - 1)
             print(f"[progress] {idx+1}/{len(entries)} "
                   f"elapsed {el:.0f}s eta {eta:.0f}s", file=sys.stderr)
@@ -468,6 +487,7 @@ def main() -> int:
         "spectrally_positive_P": n_P,
         "std_block_positive": n_std_pos,
         "alt_parity_closed_form_matches": n_parity_ok,
+        "disc_roundoff_boundary_cases": n_disc_boundary,
         "stable_nuclides_empirical": 251,
         "ame_chart": n_total,
     })
