@@ -31,6 +31,7 @@ from __future__ import annotations
 
 import json
 import sys
+import time
 from collections import Counter
 from pathlib import Path
 
@@ -47,7 +48,7 @@ from pyhecke.lp_dual_solver import (  # noqa: E402
     solve_frobenius_dual_lp,
     solve_operator_selection_lp,
 )
-from witness_base import WitnessBuilder  # noqa: E402
+from qou_substrate.witness import WitnessBuilder  # noqa: E402  (canonical, not the witness_base shim)
 
 try:
     import pyhecke_native as _native  # noqa: E402
@@ -70,10 +71,10 @@ def build_nf(Z: int, N: int) -> list[float]:
 
 
 def main() -> int:
+    _t0 = time.time()
     entries = json.loads(AME.read_text())["entries"]
     t = np.asarray(gram.TR_M, dtype=float)
     G = np.asarray(gram.gram_matrix(), dtype=float)
-    d = len(t)
 
     rows: list[dict] = []
     lp_active_hist: Counter = Counter()      # (a) active-channel count, scalar LP
@@ -135,9 +136,11 @@ def main() -> int:
     sample_duals = []
     for Z, N in sample_ZN:
         A = Z + N
-        nf = build_nf(Z, N)
-        nf_net = float(np.sum(nf))
-        if not all(np.isfinite(nf)):
+        try:
+            nf = build_nf(Z, N)
+        except Exception:
+            continue
+        if not all(np.isfinite(np.asarray(nf, dtype=float))):
             continue
         lp = solve_operator_selection_lp(t, G, float(A))
         sample_duals.append({
@@ -146,7 +149,8 @@ def main() -> int:
             "active_channels": [NF_NAMES[i] for i in lp.active_set],
         })
 
-    w = WitnessBuilder("all-nuclides-sdp-admissibility", engine="python")
+    w = WitnessBuilder("all-nuclides-sdp-admissibility", engine="python",
+                       start_time=_t0)
     w.set_description(
         "Operator-selection admissibility over the AME2020 chart at q_0. "
         "(a) per-nucleus active-channel count = |{i: y*_i>0}| of the H_3 "
