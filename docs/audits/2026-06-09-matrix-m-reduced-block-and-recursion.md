@@ -166,11 +166,28 @@ not provide; they are spec'd here for a build-equipped agent.
 
 ## 7. Verifiability matrix
 
-| Step | Verifiable here (mpmath only)? | Blocker |
-|------|-------------------------------|---------|
-| Reduced kernel correctness | ✅ (18/18) | — |
-| Recursion correctness | ✅ (D/T/³He/⁴He) | — |
-| Zero-LR pruning correctness | ✅ (pure-Python LR) | — |
-| Wall-clock speedup ≥ A=6 | ❌ | real sweep / time budget |
-| Rust port | ❌ | Rust toolchain |
-| A=8,9 sweep run | ❌ | `pyhecke` wheel + hours |
+> **UPDATE 2026-06-09 (toolchain available).** Earlier handovers said
+> "Rust kernel unavailable" — **false in this environment.** `cargo`/
+> `rustc` 1.94.1 are installed at `/root/.cargo/bin`, and
+> `pyhecke-native` builds cleanly with `maturin build --release`
+> (~40 s; wheel `pyhecke_native-0.9.0-cp311-…`). With the wheel
+> installed, the mpfr matrix-M path is confirmed against the canonical
+> Rust reference `chi_q_via_gp` (18/18 partitions of D/T/³He/⁴He at
+> q₀), so `reduced == dense == one-level == Rust`. The Rust port and
+> the catalogue sweeps are therefore **NOT blocked** here — they are
+> just larger work items. The blocker is compute *time* for the big
+> sweeps, not toolchain availability.
+>
+> Note: `pyhecke_native` already exposes `chi_via_matrix_m_mpfr`,
+> `chi_lambda_all_partitions_mpfr`, and `chi_lambdas_via_gp` — check
+> whether a Rust matrix-M reduced/recursive path already exists before
+> re-porting (avoid duplicate work; cross-check instead).
+
+| Step | Status in this env |
+|------|--------------------|
+| Reduced kernel correctness | ✅ verified 18/18 (vs dense AND vs Rust) |
+| Recursion correctness | ✅ verifiable (D/T/³He/⁴He, now also vs Rust) |
+| Zero-LR pruning | ✅ `pyhecke_native.lr_coefficient` available |
+| Wall-clock speedup ≥ A=6 | ⏳ runnable — needs compute time |
+| Rust port | ⏳ toolchain present; check existing Rust matrix-M first |
+| A=8,9 sweep run | ⏳ runnable in principle — bounded by compute hours |
