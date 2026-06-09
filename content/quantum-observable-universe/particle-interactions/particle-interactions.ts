@@ -99,6 +99,14 @@ export default chapter({
       label: "sec:nucleon-derivation",
       blocks: [
         "nucleon-derivation-intro",
+        // Quark sector re-homed from predicted-spectra (Ch13) per the
+        // cross-chapter triage (author decision: quarks before protons) —
+        // nucleons are built from quarks, so the quark defs are prior.
+        "up-quark",
+        "up-quark-properties",
+        "down-quark",
+        "down-quark-properties",
+        "quark-antiquark-production",
         "four-term-pair-nucleon",
 
         "four-term-pair-nucleon-table1-data",
