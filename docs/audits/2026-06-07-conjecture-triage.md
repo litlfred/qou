@@ -323,10 +323,14 @@ hypothesis). **15** were silent. Per-block file-level investigation gave:
 
 | Disposition | Count | Blocks |
 |---|---|---|
-| **Conditional banner added** (proof genuinely relies on the conj) | 9 | binding-genfun-qdifference, knot-mass-formula-unified, mass-element-nf, hook-weight-derivation, rho-k-h3a-refinement, jet-prefix-gb-filtration, force-carrier-intertwining-correspondence, knot-operator-lp-selection, knot-indexed-convolution-grid |
-| **Stale/contextual `uses[]` edge dropped** (result proved unconditionally) | 2 | bring-trilog-imaginary-tate-rational (Im Li₃(ζ₅)=4π³/125, 50-dps), reeb-u1-chart-swap (chart-swap U(1)=Reeb U(1)) |
+| **Conditional banner added** (proof genuinely relies on the conj) | 10 | binding-genfun-qdifference, knot-mass-formula-unified, mass-element-nf, hook-weight-derivation, rho-k-h3a-refinement, jet-prefix-gb-filtration, force-carrier-intertwining-correspondence, knot-operator-lp-selection, knot-indexed-convolution-grid, critical-exponent (enstrophy-divergence exponent is meaningful only if blow-up occurs → genuinely conditional on regularity-breakdown, edge kept) |
+| **Stale/contextual `uses[]` edge dropped** (result proved unconditionally) | 4 | bring-trilog-imaginary-tate-rational (Im Li₃(ζ₅)=4π³/125, 50-dps), reeb-u1-chart-swap (chart-swap U(1)=Reeb U(1)), blowup-yekutieli (unconditional reformulation "NS blowup ⟺ obstruction level n*"; regularity-breakdown kept as prose cross-ref), ns-obstruction-computation (Euler-class/jet-divergence computation unconditional; levi-degeneracy dropped) |
 | **No change — already honest** | 1 | lambda-scale-substrate-form (deprecation authorNote: original form falsified 2026-05-18; Family-A core proved) |
-| **Deferred — owner decision** (NS / Yang-Mills chapter; "conditional-on" vs "stale edge" is a scholarly judgment) | 3 | blowup-yekutieli, critical-exponent, ns-obstruction-computation (→ regularity-breakdown / levi-degeneracy) |
+
+The NS / Yang-Mills trio (`blowup-yekutieli`, `critical-exponent`,
+`ns-obstruction-computation`) was originally deferred for an owner
+"conditional-on vs stale-edge" judgment; resolved per owner direction —
+1 conditional banner + 2 edge-drops, folded into the counts above.
 
 The banner fixes disclose the dependency on the narrative side; the Lean
 class-hypothesis wiring (second half of §3b-cond) is a tracked follow-up (Lean
