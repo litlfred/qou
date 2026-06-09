@@ -1,57 +1,86 @@
+import UGB.GrobnerShirshov.AlgOps
+
 /-!
-# UGB.BuchbergerPBW.s_poly_decomposition — placeholder stub
+# UGB.BuchbergerPBW.s_poly_decomposition
 
-**Placeholder canonical** for content block
-[`prop:s-polynomial-decomposition`](../../../unital-groebner-bases/buchberger-and-pbw/s-polynomial-decomposition.md): *S-polynomial decomposition*.
+**Real-content formalization** (replaces the former vacuous
+`class … where holds : Prop`). The S-polynomial is built from the
+concrete `AlgElement` operations (`AlgOps.lean`: scalar-mul,
+subtraction), and the decomposition claim is a genuine **equation in
+`AlgElement G k`** — it cannot be instantiated with `True`. This is the
+`BuchbergerPBW` companion of
+`UGB.UnitalGroebner.s_polynomial_decomposition`, proving the same base
+(two-rule) case of the manuscript's telescoping decomposition.
 
-The full Lean statement and proof are pending; this stub exists so
-the `lean.ref` URI `ugb:UGB.BuchbergerPBW.s_poly_decomposition` resolves to a real declaration in the
-`ugb` Lake package.  The body is `sorry` carrying the manuscript
-citation per CLAUDE.md §1.
+Content block
+[`prop:s-polynomial-decomposition`](../../../unital-groebner-bases/buchberger-and-pbw/s-polynomial-decomposition.md):
+*$S$-polynomial decomposition*.
+
+## Manuscript statement
+
+Let $R$ be a commutative ring with unity, $A$ an $R$-algebra free as an
+$R$-module, $(B,<)$ an admissible system. Let $\alpha\in B$ and
+$f_1,\dots,f_n\in A$ with $\mathrm{LM}(f_i)=\alpha$ and
+$\mathrm{LC}(f_i)=a_i\in R^\times$. If $f:=\sum_i c_i f_i$ has
+$\mathrm{LM}(f)<\alpha$ then $f=\sum_{i\neq j} d_{i,j} S_{i,j}$ where
+$S_{i,j}:=a_i^{-1}f_i - a_j^{-1}f_j$. The proof telescopes:
+$f = c_1a_1 S_{1,2} + (c_1a_1+c_2a_2)S_{2,3} + \cdots$.
+
+## What is weakened relative to the manuscript
+
+The manuscript states the full $n$-term telescoping sum. We formalize
+the **base ($n=2$) case**: a single S-polynomial captures the cancelling
+combination $c_1f_1+c_2f_2$ (with the cancellation hypothesis
+$c_1a_1+c_2a_2=0$, the $\mathrm{LM}(f)<\alpha$ condition at $n=2$). The
+conclusion is a **concrete `AlgElement` equation**; the expected witness
+is $d=c_1a_1$. Completing it (and the general $n$) needs coefficient
+extensionality for `AlgElement` (a raw data type, not a quotient — see
+`AlgOps.lean` §6); supplying that ext principle is the remaining
+manuscript step, carried by the single cited `sorry`.
 -/
 
 namespace UGB.BuchbergerPBW
 
+open UGB.GrobnerShirshov
 
-/-- Abstract context for the `s_poly_decomposition` claim — fields encode the
-    manuscript hypotheses; the `holds` field is the substantive
-    claim of the lemma. -/
-class SPolyDecompositionContext where
-  /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+universe u v
 
-/-- **Manuscript statement** (full body):
+variable {G : Type u} {k : Type v} [Field k] [DecidableEq G]
 
-Let $R$ be a commutative ring with unity, $A$ an $R$-algebra which is free as an
-$R$-module, $(B, <)$ an admissible system on $A$. Let $\alpha \in B$ and suppose
-that $f_1, \ldots, f_n \in A$ satisfy $\LM(f_i) = \alpha$ and
-$\LC(f_i) \in R^\times$. Then if:
+/-- The **S-polynomial** about two rules with unit leading coefficients
+    `a₁, a₂`: `S(f₁,f₂) = a₁⁻¹·f₁ − a₂⁻¹·f₂`, built from the concrete
+    `AlgElement` scalar-multiplication and subtraction (`AlgOps.lean`).
+    A real construction, not an axiom. -/
+def sPoly (a₁ a₂ : k) (f₁ f₂ : AlgElement G k) : AlgElement G k :=
+  AlgElement.sub (AlgElement.smul a₁⁻¹ f₁) (AlgElement.smul a₂⁻¹ f₂)
 
-$$f := \sum_i c_i f_i \quad (c_i \in R^*)$$
+/-- **S-polynomial decomposition — base (two-rule) case.**
 
-satisfies $\LM(f) < \alpha$, we may write:
+    The two rules `f₁, f₂` share a leading monomial `α` with unit
+    leading coefficients `a₁, a₂`; the combination `c₁f₁ + c₂f₂` cancels
+    at `α` (`c₁a₁ + c₂a₂ = 0`). Then the combination is a scalar multiple
+    of the S-polynomial (witness `d = c₁·a₁`), which is the $n=2$ head of
+    the manuscript's telescoping sum.
 
-$$f = \sum_{i \neq j} d_{i,j} S_{i,j}$$
-
-where the $S_{i,j}$ are the S-polynomials about $f_i$ and $f_j$ given by:
-
-$$S_{i,j} := \frac{1}{a_i} f_i - \frac{1}{a_j} f_j, \qquad a_i := \LC(f_i),\; a_j := \LC(f_j) \in R^\times$$
-
-*Proof.* Because we have cancellation of the terms involving $\alpha$, we have
-$\sum_i c_i = 0$. Then a telescoping argument yields:
-
-$$f = c_1 a_1 S_{1,2} + (c_1 a_1 + c_2 a_2) S_{2,3} + \cdots + (c_1 a_1 + \cdots + c_{n-1} a_{n-1}) S_{n-1,n}$$
-
-which gives the desired result. $\square$
-
-    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
-    upgrading requires choosing the appropriate Lean types and translating
-    the manuscript claim above. -/
+    The conclusion is a **concrete `AlgElement` equation** — the real
+    content the former `holds : Prop` lacked. A complete proof needs
+    coefficient extensionality for `AlgElement` (a raw data structure;
+    see `AlgOps.lean` §6); supplying that ext principle is the remaining
+    manuscript step. -/
 -- Ref: [manuscript] unital-groebner-bases/buchberger-and-pbw/s-polynomial-decomposition.ts
-theorem s_poly_decomposition [ctx : SPolyDecompositionContext] : ctx.holds := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  -- Ref: [manuscript] unital-groebner-bases — sorry pending Lean translation
+theorem s_poly_decomposition
+    (a₁ a₂ c₁ c₂ : k) (f₁ f₂ : AlgElement G k)
+    (ha₁ : a₁ ≠ 0) (ha₂ : a₂ ≠ 0)
+    (hcancel : c₁ * a₁ + c₂ * a₂ = 0) :
+    ∃ d : k,
+      AlgElement.add (AlgElement.smul c₁ f₁) (AlgElement.smul c₂ f₂)
+        = AlgElement.smul d (sPoly a₁ a₂ f₁ f₂) := by
+  -- Witness d = c₁·a₁: then d·a₁⁻¹ = c₁ and −d·a₂⁻¹ = c₂ (from hcancel,
+  -- c₂ = −c₁a₁a₂⁻¹), so both sides agree coefficient-wise. The
+  -- coefficient-wise equality ⇒ AlgElement equality step is the pending
+  -- manuscript ext argument (AlgElement is not a quotient type).
+  -- Ref: [manuscript] unital-groebner-bases — s-polynomial-decomposition (base case)
+  refine ⟨c₁ * a₁, ?_⟩
   sorry
 
 end UGB.BuchbergerPBW
