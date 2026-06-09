@@ -1,4 +1,6 @@
-import Mathlib.Algebra.Field.Basic
+import Mathlib.Algebra.Ring.Basic
+import Mathlib.Tactic.Ring
+import Mathlib.Tactic.NormNum
 import QOU.AlgebraicSubstrate.ConditionalClasses
 
 /-!
@@ -15,7 +17,7 @@ as surreal-order inequalities:
 Each is stated as a leading-coefficient equation on an abstract
 field carrier `F`; downstream instances discharge by specialising
 to `𝐍𝐨` via `QOU.AppendixSurreals.StandardPart`.  The class
-requires only `[Field F]` — no ordering or positivity hypothesis;
+requires only `[CommRing F]` — no ordering or positivity hypothesis;
 those are added by downstream interpretations that need them
 (e.g.\ to compare `Ow`-orders).
 
@@ -46,7 +48,7 @@ universe u
     interpretation requires `δ ≠ 0`). -/
 -- Ref: [conway1976] On Numbers and Games §III
 -- Ref: [manuscript] Chapter 8 §5 (Surreal rate calculus)
-class SurrealRateCalculus (F : Type u) [Field F] where
+class SurrealRateCalculus (F : Type u) [CommRing F] where
   /-- The Reeb infinitesimal embedded in `F`.  Non-zero (forced
       by `reebPeriod_order : reebPeriod · epsilon = 1` below). -/
   epsilon : F
@@ -80,7 +82,7 @@ class SurrealRateCalculus (F : Type u) [Field F] where
     This is the "no infinitesimal" baseline; the substantive
     surreal content arises when ε is genuinely infinitesimal in
     `𝐍𝐨` via the standard-part embedding. -/
-instance surrealRateCalculus_classicalLimit (F : Type u) [Field F] :
+instance surrealRateCalculus_classicalLimit (F : Type u) [CommRing F] :
     SurrealRateCalculus F where
   epsilon := 1
   massGap := 1
@@ -99,11 +101,11 @@ instance surrealRateCalculus_classicalLimit (F : Type u) [Field F] :
 
     The conditional discharges to the unconditional
     `surrealRateCalculus_classicalLimit` for `F` carrying any
-    `[Field F]` structure. -/
+    `[CommRing F]` structure. -/
 theorem surreal_rate_calculus_conditional
     [QAubinLions] [NSCounterexample] [CriticalExponent]
     [BlowupYekutieli] [RegularityBreakdown]
-    (F : Type u) [Field F] :
+    (F : Type u) [CommRing F] :
     Nonempty (SurrealRateCalculus F) :=
   ⟨surrealRateCalculus_classicalLimit F⟩
 

@@ -1,43 +1,13 @@
 {
   "audit": "field-typeclass-over-strength",
   "scanned_root": "content/quantum-observable-universe/lean/QOU",
-  "total": 102,
+  "total": 99,
   "counts": {
     "phantom": 0,
-    "over-strong": 64,
+    "over-strong": 61,
     "genuine": 38
   },
   "findings": [
-    {
-      "file": "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/SurrealRateCalculus.lean",
-      "line": 49,
-      "decl_kw": "class",
-      "decl_name": "SurrealRateCalculus",
-      "type_var": "F",
-      "field_class": "Field",
-      "classification": "over-strong",
-      "evidence": "`F` used but no division/inverse found"
-    },
-    {
-      "file": "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/SurrealRateCalculus.lean",
-      "line": 83,
-      "decl_kw": "instance",
-      "decl_name": "surrealRateCalculus_classicalLimit",
-      "type_var": "F",
-      "field_class": "Field",
-      "classification": "over-strong",
-      "evidence": "`F` used but no division/inverse found"
-    },
-    {
-      "file": "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/SurrealRateCalculus.lean",
-      "line": 103,
-      "decl_kw": "theorem",
-      "decl_name": "surreal_rate_calculus_conditional",
-      "type_var": "F",
-      "field_class": "Field",
-      "classification": "over-strong",
-      "evidence": "`F` used but no division/inverse found"
-    },
     {
       "file": "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/SurrealSqueeze.lean",
       "line": 56,
