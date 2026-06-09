@@ -43,8 +43,9 @@ def emit_from_log(files, log_path):
     """
     log = Path(log_path).read_text(encoding="utf-8")
     pat = re.compile(
-        r"^(?:\./)?(content/quantum-observable-universe/[^\s:]+\.lean):(\d+):(\d+):\s+(error|warning):\s*(.*?)$",
-        re.MULTILINE,
+        r"^(?:\./)?(content/quantum-observable-universe/[^\s:]+\.lean):(\d+):(\d+):\s+(error|warning):\s*(.*?)"
+        r"(?=\n(?:\./)?content/quantum-observable-universe/[^\s:]+\.lean:\d+:\d+:\s+(?:error|warning):|\Z)",
+        re.MULTILINE | re.DOTALL,
     )
     per_file = {f: [] for f in files}
     for m in pat.finditer(log):
