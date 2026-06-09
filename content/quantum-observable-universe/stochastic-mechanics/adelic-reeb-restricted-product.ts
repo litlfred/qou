@@ -31,11 +31,15 @@ export default proposition({
         "conjecture (the per-place squeeze enters only as a hypothesis), so the " +
         "block is a clean `proposition` rather than a conjecture-downstream " +
         "remark. Promoted from interpretive content inside " +
-        "`rem:adelic-tate-squeeze`. **Lean `validation: not_checked`:** the elan " +
-        "release server is firewalled in the web sandbox (`release.lean-lang.org` " +
-        "parse error), so `lake build QOU` could not run this session; the proof " +
-        "uses only `Finset.sum_add_distrib` and `Finset.sum_lt_sum` and is " +
-        "expected to compile, but is unverified pending a CI / cache-restore build.",
+        "`rem:adelic-tate-squeeze`. **Lean: verified to compile EXIT=0** against " +
+        "the Mathlib v4.24.0 olean cache (`lake-cache/qou-v4-24-0`) via a direct " +
+        "`lean` invocation — the elan release server is firewalled in the web " +
+        "sandbox, so `lake build` itself cannot run; `validation` stays " +
+        "`not_checked` until lean CI confirms. The build caught a real bug: the " +
+        "bundled `LinearOrderedAddCommGroup` was removed in this Mathlib pin " +
+        "(hierarchy flattened), now stated as `AddCommGroup` + `LinearOrder` + " +
+        "`IsOrderedCancelAddMonoid`. Proof uses `Finset.sum_add_distrib` + " +
+        "`Finset.sum_lt_sum` (both confirmed present in the pin).",
     },
   ],
 });

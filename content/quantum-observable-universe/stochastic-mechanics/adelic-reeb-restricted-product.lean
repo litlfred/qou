@@ -37,12 +37,20 @@ LaTeX label: `prop:adelic-reeb-restricted-product`
 import Mathlib.Algebra.Order.BigOperators.Group.Finset
 
 set_option autoImplicit false
+-- The additive theorem does not consume the order instances; silence the
+-- (harmless) unused-section-variable linter rather than split the section.
+set_option linter.unusedSectionVars false
 
 namespace QOU.AlgebraicSubstrate
 
 universe u
 
-variable {ι : Type u} {Γ : Type*} [LinearOrderedAddCommGroup Γ]
+-- `Γ` is the common value group — a linearly ordered abelian group. The bundled
+-- `LinearOrderedAddCommGroup` was removed when Mathlib flattened the ordered-
+-- algebra hierarchy (≥ v4.24.0); the unbundled triple below is its replacement
+-- (verified to compile EXIT=0 against the v4.24.0 Mathlib cache).
+variable {ι : Type u} {Γ : Type*}
+  [AddCommGroup Γ] [LinearOrder Γ] [IsOrderedCancelAddMonoid Γ]
 
 /-- The global `ω`-order of an adelic observable, as the finite sum of its
     local `ω`-orders over the set `S` of active places (restricted-product

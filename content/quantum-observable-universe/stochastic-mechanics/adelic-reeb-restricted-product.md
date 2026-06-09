@@ -50,8 +50,8 @@ is the requirement that the per-place surreal orders be **commensurable** — a
 single coherent birthday filtration spanning every prime and the archimedean
 place $v = \infty$ simultaneously. Without it the sum $\sum_v \ordw_v(f_v)$ does
 not even typecheck. This shared $\Gamma$ is the genuine additional structure the
-adelic lift exposes (formalised as the `LinearOrderedAddCommGroup Γ` instance in
-Lean): it is what makes the two dual archimedean reductions of
+adelic lift exposes (formalised in Lean as a linearly ordered abelian group —
+`AddCommGroup` $+$ `LinearOrder` $+$ `IsOrderedCancelAddMonoid`): it is what makes the two dual archimedean reductions of
 [adelic–Tate surreal squeeze](#rem:adelic-tate-squeeze) — the fibre functor
 $\tau_{\mathrm{arch}} = \pi_\infty$ across places, and the standard part
 $\mathrm{St} : \mathbf{No} \to \mathbb{R}$ along the filtration — land in the
