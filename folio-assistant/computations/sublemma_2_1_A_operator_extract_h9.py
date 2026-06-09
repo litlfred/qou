@@ -190,33 +190,67 @@ def make_h3_perm_basis() -> list[list]:
             for perm in itertools.permutations(range(3))]
 
 
-def _to_braid_word(word: list, h_num: float) -> list[tuple[int, int]]:
-    """Convert a `(c, d, gen)` word to a native braid word `[(sign, gen_1based)]`.
+def _to_braid_terms(
+    word: list, h_num: float
+) -> list[tuple[float, list[tuple[int, int]]]]:
+    """Expand a `(c, d, gen)` word into native braid TERMS `[(coeff, braid)]`.
 
-    Only PURE-braid crossings are representable: σ (c=1, d=0) → +1 and
-    σ⁻¹ (c=1, d=−h) → −1. The averaged p-n crossing (c=1, d=−h/2) is a
-    Hecke COMBINATION, not a braid generator, so `--native` supports only
-    the pp / nn interfaces (both pure braid). Raises on anything else so
-    convention drift fails loudly.
+    Each `braid` is `[(sign, gen_1based)]`; by linearity of the character,
+    `χ^λ(word) = Σ_terms coeff · χ^λ(braid)`.  Crossing dictionary:
+
+      σ        (c=1, d=0)    → 1 term: (+1) generator
+      σ⁻¹      (c=1, d=−h)   → 1 term: (−1) generator
+      averaged (c=1, d=−h/2) → σ − (h/2)·1, i.e. 2 terms:
+                                 σ branch (+1 generator, coeff 1) and
+                                 identity branch (no generator, coeff −h/2)
+
+    An averaged crossing doubles the term count.  With one outer interface
+    crossing I_2 the result has 1 term (pp/nn — pure braid) or 2 terms
+    (pn — the averaged color-blind crossing).  This is what lets `--native`
+    cover the pn interface (needed for ³He) without leaving the fast
+    `chi_lambdas_braid` path: each branch is a pure braid word the Rust
+    kernel evaluates directly (the identity branch is the empty braid,
+    χ^λ(1) = d_λ).  Raises on any unrecognised crossing so convention
+    drift fails loudly.
     """
     tol = 1e-7
     h_val = float(h_num)
-    bw: list[tuple[int, int]] = []
+    # Cast (c, d) to float so the tolerance checks return Python bools even
+    # if they arrive as sympy Float/Rational rather than plain floats.
+    terms: list[tuple[float, list[tuple[int, int]]]] = [(1.0, [])]
     for c, d, g in word:
-        # Cast to float so the tolerance checks return Python bools even if
-        # (c, d) arrive as sympy Float/Rational rather than plain floats.
         c_val, d_val = float(c), float(d)
         if abs(c_val - 1.0) < tol and abs(d_val) < tol:
-            bw.append((1, g + 1))
+            terms = [(co, bw + [(1, g + 1)]) for co, bw in terms]
         elif abs(c_val - 1.0) < tol and abs(d_val + h_val) < tol:
-            bw.append((-1, g + 1))
+            terms = [(co, bw + [(-1, g + 1)]) for co, bw in terms]
+        elif abs(c_val - 1.0) < tol and abs(d_val + h_val / 2) < tol:
+            split: list[tuple[float, list[tuple[int, int]]]] = []
+            for co, bw in terms:
+                split.append((co, bw + [(1, g + 1)]))       # σ branch
+                split.append((co * (-h_val / 2.0), bw))      # identity branch
+            terms = split
         else:
             raise ValueError(
-                f"--native needs pure-braid crossings (σ or σ⁻¹); got "
-                f"(c={c}, d={d}) at gen={g}. The averaged p-n crossing "
-                f"(d=−h/2) is not a braid generator — run pn without --native."
+                f"--native: unrecognised crossing (c={c}, d={d}) at gen={g}; "
+                f"expected σ (d=0), σ⁻¹ (d=−h), or averaged (d=−h/2)."
             )
-    return bw
+    return terms
+
+
+def _to_braid_word(word: list, h_num: float) -> list[tuple[int, int]]:
+    """Single-term (pure-braid) view of `_to_braid_terms`.
+
+    Valid only when `word` has no averaged crossing; raises otherwise.
+    Retained for callers that need one braid word rather than a sum.
+    """
+    terms = _to_braid_terms(word, h_num)
+    if len(terms) != 1 or abs(terms[0][0] - 1.0) > 1e-9:
+        raise ValueError(
+            "word contains an averaged crossing — use _to_braid_terms "
+            "(linearity expansion), not _to_braid_word."
+        )
+    return terms[0][1]
 
 
 def main() -> int:
@@ -236,8 +270,10 @@ def main() -> int:
                              "(Phase 1, under-determined for high-dim λ).")
     parser.add_argument("--native", action="store_true",
                         help="evaluate χ^λ via pyhecke_native.chi_lambdas_braid "
-                             "(~900× faster; pure-braid interfaces pp/nn only). "
-                             "Makes --full-basis tractable (~30s vs ~7h).")
+                             "(~900× faster; all interfaces pp/nn/pn — pn's "
+                             "averaged crossing is handled by linearity, 2 "
+                             "braid terms). Makes --full-basis tractable "
+                             "(~30s vs ~7h).")
     args = parser.parse_args()
 
     interface = args.interface
@@ -297,10 +333,16 @@ def main() -> int:
               f"triples via pyhecke_native (batch over λ)...")
         for i, w6 in enumerate(test_words_6):
             for j, w3 in enumerate(test_words_3):
-                braid = _to_braid_word(
+                # Sum the linearity terms (1 for pp/nn, 2 for the pn
+                # averaged crossing); each branch is a pure braid word.
+                terms = _to_braid_terms(
                     with_interface_h9(w6, w3, interface), H)
-                vals = _pn.chi_lambdas_braid(parts9_lists, braid, q_native)
-                for lam, v in zip(parts_9, vals):
+                acc = [0.0] * len(parts9_lists)
+                for coeff, braid in terms:
+                    vals = _pn.chi_lambdas_braid(parts9_lists, braid, q_native)
+                    for k, v in enumerate(vals):
+                        acc[k] += coeff * v
+                for lam, v in zip(parts_9, acc):
                     chi_lam[(i, j, lam)] = complex(v)
                 progress += len(parts_9)
                 if progress % 6000 == 0 or progress == n_chi:
