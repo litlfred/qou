@@ -1,8 +1,28 @@
 /-!
 # `QOU.OptionE.CrystalDeltaLambdaScaffold` — Option E exploration scaffold
 
-**Phase 3 exploration scaffold** for the Δ_λ closure via Kashiwara
-crystal graph extension of the τ_M derivation to k ≥ 3.
+**⚠ SUPERSEDED (2026-06-09)**: The Δ_λ gate this file scaffolds
+has been **re-framed** per
+[`docs/canonical-derivation-cheat-sheet.md`](../../../../../../docs/canonical-derivation-cheat-sheet.md)
+§9.3 (2026-06-02 update). Nuclear binding is EXTENSIVE (∝ A); the
+intensive per-block density `Δ_λ` formulation cannot close binding.
+The corrected canonical closure is the **bond-sum / many-body
+series** `B(K) = Σ_{b ∈ ⨝_K} B_b + many-body residue` (deuteron
+= 1-bond base case +3.6 %; ⁴He magic-A `2·m_e·4·8G` +5.87 % no
+fit). The v9 cross-isotope `(1+q)/2` 0.11 % result was retracted
+as CAL-4 numerology per
+[`docs/audits/2026-05-31-isospin-mirror-v9-discipline-assessment.md`](../../../../../../docs/audits/2026-05-31-isospin-mirror-v9-discipline-assessment.md).
+
+This file is preserved as **audit trail** of the Option E
+exploration. Do NOT extend with new Δ_λ-density candidates — the
+productive direction is the operator-valued combiner (PR #1698
+track) carrying per-bond magnitudes.
+
+---
+
+**Phase 3 exploration scaffold (historical)** for the Δ_λ closure
+via Kashiwara crystal graph extension of the τ_M derivation to
+k ≥ 3.
 
 ## Context
 
