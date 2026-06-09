@@ -62,7 +62,8 @@ _NOBLE_CORES = (0, 2, 10, 18, 36, 54, 86)
 
 def bonding_capacity(Z: int) -> int:
     core = max(c for c in _NOBLE_CORES if c < Z)
-    return min(Z - core, 8 - (Z - core)) if Z == 1 else 8 - (Z - core)
+    valence_e = Z - core
+    return min(valence_e, 8 - valence_e)             # symmetric octet rule (matches co_bond_order; H(1)=1, no special-case)
 
 
 def orthogonal_bond_order(channel_pairs: int) -> int:
