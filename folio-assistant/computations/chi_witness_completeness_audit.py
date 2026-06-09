@@ -138,15 +138,28 @@ def main() -> int:
     builder.add_data("total_complete",
                       sum(1 for a in audits if a.get("complete") is True))
     builder.add_data("total_incomplete", len(incomplete))
-    builder.add_data(
-        "verdict",
-        "PASS — all chi witnesses complete"
-        if not incomplete
-        else f"FAIL — {len(incomplete)} chi witnesses incomplete; "
-             "downstream binding/tau_M computes that consume these "
-             "will silently substitute 0 for missing partitions and "
-             "OVER-COUNT binding."
-    )
+    builder.add_data("total_unknown", len(unknown))
+    # `unknown` = couldn't verify (JSON parse error, or n_strands not in
+    # PARTITION_COUNTS). It must NOT pass the audit: an unverifiable witness
+    # is exactly the "partial/malformed chi consumed downstream" class of
+    # bug this audit exists to catch.
+    if not incomplete and not unknown:
+        verdict = "PASS — all chi witnesses complete"
+    elif incomplete:
+        verdict = (
+            f"FAIL — {len(incomplete)} chi witnesses incomplete"
+            + (f" (+{len(unknown)} unverifiable)" if unknown else "")
+            + "; downstream binding/tau_M computes that consume these will "
+              "silently substitute 0 for missing partitions and OVER-COUNT "
+              "binding."
+        )
+    else:
+        verdict = (
+            f"FAIL — {len(unknown)} chi witnesses could not be verified "
+            "(JSON parse error or n_strands not in PARTITION_COUNTS); "
+            "completeness is UNKNOWN, so downstream consumers are not safe."
+        )
+    builder.add_data("verdict", verdict)
 
     builder.add_assertion(
         "no_incomplete_chi_witnesses",
@@ -156,10 +169,19 @@ def main() -> int:
         unit="count",
         source="audit (this script)",
     )
+    builder.add_assertion(
+        "no_unverifiable_chi_witnesses",
+        computed=len(unknown),
+        expected=0,
+        tolerance=0,
+        unit="count",
+        source="audit (this script)",
+    )
 
     builder.save()
 
-    if args.strict and incomplete:
+    # --strict fails on incomplete OR unverifiable witnesses.
+    if args.strict and (incomplete or unknown):
         return 1
     return 0
 

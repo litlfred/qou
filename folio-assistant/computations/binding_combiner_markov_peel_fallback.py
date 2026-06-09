@@ -96,12 +96,18 @@ from codata_constants import M_E_MEV  # noqa: E402
 from markov_peel import incremental_reduced_element  # noqa: E402
 from markov_trace_canonical import tr_M_element  # noqa: E402
 from hecke_symbolic import q as q_sym  # noqa: E402
-from q_parameter import Q as Q0  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 # 50 dps matches the bridge witness (atomic-tr-m-mpfr-50dps.witness.json)
 # this trace path was cross-validated against.
 mpmath.mp.dps = 50
+
+# Substrate q at full 50-dps as a sympy Float — built from the canonical
+# 50-digit STRING, never from the float `Q` (which carries only ~17
+# digits, so `tr_sym.subs(q_sym, float_Q).evalf(50)` would silently
+# evaluate a 17-digit truncation and violate the L1 50-dps floor).
+Q0_HP = sp.Float(Q_50_DIGIT_STR, mpmath.mp.dps)
 
 # AME-2020 experimental binding energies (MeV), same source as
 # binding_via_interface_knot.py.
@@ -150,9 +156,10 @@ def _trace_abs_at_q0(Z: int, N: int, *, include_inter: bool,
     tr_sym = tr_M_element(elem, n_strands, simplify=False)
     t_trace = time.time() - t0
 
-    # Evaluate at the 50-dps precision floor; mpf(str(...)) round-trips
-    # losslessly (casting to float would truncate to ~17 digits).
-    tr_at_q0 = mpmath.mpf(str(tr_sym.subs(q_sym, Q0).evalf(mpmath.mp.dps)))
+    # Substitute the full 50-dps q (Q0_HP, from the 50-digit string), then
+    # evalf at the 50-dps floor; mpf(str(...)) round-trips losslessly
+    # (casting to float would truncate to ~17 digits).
+    tr_at_q0 = mpmath.mpf(str(tr_sym.subs(q_sym, Q0_HP).evalf(mpmath.mp.dps)))
     abs_at_q0 = abs(tr_at_q0)
 
     try:
@@ -292,7 +299,7 @@ def main() -> int:
         "carries no magic-A scale factor."
     )
     w.set_content_block("prop:atomic-mass-gb-nf")
-    w.add_parameter("q0", str(Q0))
+    w.add_parameter("q0", Q_50_DIGIT_STR)
     w.add_parameter("E_0_CAL3_MeV", str(E_0_CALIBRATION_MEV))
     w.add_parameter("m_e_CAL1_MeV", str(M_E_MEV))
     w.add_parameter("pn_convention", PN_CONVENTION)
