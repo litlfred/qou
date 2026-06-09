@@ -119,7 +119,7 @@ class HoefsmitSeminormalBasis (R : Type v) [Field R] (q : R) (n : ℕ) where
   dim_partition : ℕ → ℕ
   /-- Existence of a non-trivial Hoefsmit basis for some partition
       (the minimum case). -/
-  exists_nontrivial : ∃ λ : ℕ, 0 < dim_partition λ
+  exists_nontrivial : ∃ m : ℕ, 0 < dim_partition m
 
 /-- **Default instance** at `n = 1` (trivial partition):
     `dim_partition = 1` for `λ = 1` (single-cell tableau exists). -/
@@ -180,6 +180,7 @@ this recurrence here; the concrete formulas in terms of
 follow-up.
 -/
 
+open Classical in
 /-- The q-bracket `[k]_q = (q^k - q^{-k}) / (q - q^{-1})`, the
     standard q-analog of the integer `k`. For the Hoefsmit
     cell-content formulas. Stated over a `Field R` so `q⁻¹`
