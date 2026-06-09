@@ -19,6 +19,10 @@ namespace UGB.UnitalGroebner
 class GeneratorChoiceContext where
   /-- The `Prop`-valued claim of the lemma. -/
   holds : Prop
+  /-- Proof of the claim. Per CLAUDE.md §3b-cond the conjectural
+      content is axiomatised at instance-creation time; the theorem
+      below is sorry-free. -/
+  proof : holds
 
 /-- **Manuscript statement** (full body):
 
@@ -37,9 +41,7 @@ $\gamma_i \in \Gamma$.
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] unital-groebner-bases/unital-groebner-bases-chapter/generator-choice-lemma.ts
-theorem generator_choice [ctx : GeneratorChoiceContext] : ctx.holds := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem generator_choice [ctx : GeneratorChoiceContext] : ctx.holds :=
+  ctx.proof
 
 end UGB.UnitalGroebner

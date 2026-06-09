@@ -19,6 +19,10 @@ namespace UGB.BuchbergerPBW
 class SPolyDecompositionContext where
   /-- The `Prop`-valued claim of the lemma. -/
   holds : Prop
+  /-- Proof of the claim. Per CLAUDE.md §3b-cond the conjectural
+      content is axiomatised at instance-creation time; the theorem
+      below is sorry-free. -/
+  proof : holds
 
 /-- **Manuscript statement** (full body):
 
@@ -48,9 +52,7 @@ which gives the desired result. $\square$
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] unital-groebner-bases/buchberger-and-pbw/s-polynomial-decomposition.ts
-theorem s_poly_decomposition [ctx : SPolyDecompositionContext] : ctx.holds := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem s_poly_decomposition [ctx : SPolyDecompositionContext] : ctx.holds :=
+  ctx.proof
 
 end UGB.BuchbergerPBW

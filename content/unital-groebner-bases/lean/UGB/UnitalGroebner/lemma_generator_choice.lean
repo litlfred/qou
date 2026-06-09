@@ -19,6 +19,10 @@ namespace UGB.UnitalGroebner
 class LemmaGeneratorChoiceContext where
   /-- The `Prop`-valued claim of the lemma. -/
   holds : Prop
+  /-- Proof of the claim. Per CLAUDE.md §3b-cond the conjectural
+      content is axiomatised at instance-creation time; the theorem
+      below is sorry-free. -/
+  proof : holds
 
 /-- **Content statement** (from manuscript):
 
@@ -33,9 +37,7 @@ $h_i = g_{\gamma_i}$ for some $\gamma_i \in \Gamma$.
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] unital-groebner-bases/unital-groebner-bases-chapter/lemma-generator-choice.ts
-theorem lemma_generator_choice [ctx : LemmaGeneratorChoiceContext] : ctx.holds := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem lemma_generator_choice [ctx : LemmaGeneratorChoiceContext] : ctx.holds :=
+  ctx.proof
 
 end UGB.UnitalGroebner

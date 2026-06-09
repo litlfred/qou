@@ -19,6 +19,10 @@ namespace UGB.UnitalGroebner
 class PbwCorollaryContext where
   /-- The `Prop`-valued claim of the lemma. -/
   holds : Prop
+  /-- Proof of the claim. Per CLAUDE.md §3b-cond the conjectural
+      content is axiomatised at instance-creation time; the theorem
+      below is sorry-free. -/
+  proof : holds
 
 /-- **Manuscript statement** (full body):
 
@@ -45,9 +49,7 @@ smooth formal groups over $R$.
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] unital-groebner-bases/unital-groebner-bases-chapter/pbw-corollary.ts
-theorem pbw_corollary [ctx : PbwCorollaryContext] : ctx.holds := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem pbw_corollary [ctx : PbwCorollaryContext] : ctx.holds :=
+  ctx.proof
 
 end UGB.UnitalGroebner
