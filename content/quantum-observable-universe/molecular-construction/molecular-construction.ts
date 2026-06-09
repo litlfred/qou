@@ -140,6 +140,8 @@ export default chapter({
         "benzene-threading-emergence",
         "benzene-bond-equalization",
         "benzene-assembly-spine",
+        "assembly-shortest-production",
+        "assembly-emission-ledger",
         "outro-molecular-construction",
       ],
     }),
