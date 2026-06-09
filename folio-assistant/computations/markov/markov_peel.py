@@ -54,6 +54,7 @@ import functools
 import sys
 from pathlib import Path
 
+import mpmath as mp
 import sympy as sp
 
 HERE = Path(__file__).parent
@@ -433,7 +434,13 @@ if __name__ == "__main__":
     ]:
         try:
             tr_sym = tr_M_atomic(Z, N)
-            tr_q0 = float(tr_sym.subs(q_sym, Q0).evalf(30))
-            print(f"  {label:9s}  Z={Z} N={N}  tr_M(q₀) = {tr_q0:+.16e}")
+            # Stay in mpmath the whole way — `float()` would silently
+            # truncate the 50-dps value to float64 (~17 digits), breaking
+            # the L1 1-ppQ goal for any downstream consumer. Per the
+            # author 2026-06-09 ("float64 is EVIL") + the new
+            # `compute_no_mpf_to_float_cast` critical-severity QA
+            # criterion that flags exactly this pattern.
+            tr_q0 = mp.mpf(str(tr_sym.subs(q_sym, Q0).evalf(50)))
+            print(f"  {label:9s}  Z={Z} N={N}  tr_M(q₀) = {mp.nstr(tr_q0, 16)}")
         except Exception as exc:
             print(f"  {label:9s}  Z={Z} N={N}  FAILED: {exc!r}")

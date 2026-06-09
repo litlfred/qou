@@ -307,6 +307,97 @@ export function checkDoesNotDefaultToFloat(
   };
 }
 
+// ─── compute_no_mpf_to_float_cast (critical-severity precision destroyer) ──
+
+/**
+ * Patterns that are GUARANTEED precision destroyers (no false positives,
+ * no display-context exemption — these are always wrong in production
+ * compute):
+ *   - `float(<expr>.evalf(...))` — casting a sympy high-precision eval to float64
+ *   - `float(<expr>.subs(...).evalf(...))` — same, common in symbolic substitution
+ *   - `float(mp.<X>)` / `float(mp.mpf(...))` — casting mpmath to float64
+ *   - `float(mpmath.<X>)` — fully-qualified mpmath
+ *   - `numpy.float64(<expr>)` / `np.float64(<expr>)` — explicit float64 wrap
+ *
+ * The existing `does_not_default_to_float` (`major`) is broader — catches
+ * any bare cast — but has display-context exemptions and may have false
+ * positives. This `critical` companion catches only the unambiguous cases
+ * where an mpmath / sympy precision-bearing value is dropped into float64.
+ * "float64 is EVIL" (CLAUDE.md / author directive 2026-06-09).
+ */
+// Inner-content patterns that mark a `float(...)` arg as a
+// guaranteed-destroyer precision sink.
+const MPF_INNER_DESTROYER_RE =
+  /\.evalf\s*\(|\bmp\.[A-Za-z_]|\bmpmath\.[A-Za-z_]/;
+const NUMPY_FLOAT64_CALL_RE =
+  /\b(?:numpy|np)\.float64\s*\((?:[^()]|\([^()]*\))*\)/g;
+
+export function checkComputeNoMpfToFloatCast(
+  scriptPath: string,
+): CheckerResult {
+  if (!existsSync(scriptPath)) return { result: "n/a", hits: [] };
+  if (scriptPath.includes("/_deprecated/")) {
+    return { result: "n/a", hits: [] };
+  }
+  const src = readFileSync(scriptPath, "utf-8");
+  // Mask strings + comments so documentation references don't fire.
+  const masked = maskStringsAndComments(src);
+  const hits: CheckerHit[] = [];
+  // Build a sparse newline index for fast offset → line lookup.
+  const newlineOffsets: number[] = [];
+  for (let i = 0; i < masked.length; i++) {
+    if (masked[i] === "\n") newlineOffsets.push(i);
+  }
+  const lineForOffset = (offset: number): number => {
+    let lo = 0;
+    let hi = newlineOffsets.length;
+    while (lo < hi) {
+      const mid = (lo + hi) >>> 1;
+      if (newlineOffsets[mid] < offset) lo = mid + 1;
+      else hi = mid;
+    }
+    return lo + 1;
+  };
+  // Reuse the same balanced-parens scanner the broader checker uses
+  // (`FLOAT_CALL_RE` handles one level of nesting). For each
+  // `float(...)`, inspect the arg for destroyer patterns.
+  for (const m of masked.matchAll(FLOAT_CALL_RE)) {
+    const argStart = m.index! + m[0].indexOf("(") + 1;
+    const argEnd = m.index! + m[0].lastIndexOf(")");
+    const arg = src.slice(argStart, argEnd);
+    if (!MPF_INNER_DESTROYER_RE.test(arg)) continue;
+    const lineNum = lineForOffset(m.index!);
+    const original = m[0].replace(/\s+/g, " ").trim();
+    hits.push({
+      file: scriptPath,
+      line: lineNum,
+      text:
+        `mpmath/sympy → float64 cast \`${
+          original.slice(0, 80)
+        }${original.length > 80 ? "…" : ""}\` — GUARANTEED precision loss; ` +
+        `keep the value in mpmath (\`mp.mpf(str(...))\`) or sympy ` +
+        `(\`sp.N(..., dps)\` without the outer \`float()\`).`,
+    });
+  }
+  // Direct numpy.float64(...) / np.float64(...) sites — independent
+  // family, same severity.
+  for (const m of masked.matchAll(NUMPY_FLOAT64_CALL_RE)) {
+    const lineNum = lineForOffset(m.index!);
+    const original = src
+      .slice(m.index!, m.index! + m[0].length)
+      .replace(/\s+/g, " ")
+      .trim();
+    hits.push({
+      file: scriptPath,
+      line: lineNum,
+      text:
+        `numpy.float64 cast \`${original.slice(0, 80)}\` — explicit ` +
+        `float64 wrap; use \`mp.mpf\` to keep substrate precision.`,
+    });
+  }
+  return { result: hits.length > 0 ? "fail" : "pass", hits };
+}
+
 // ─── respects_archimedean_wall ─────────────────────────────────
 
 /**
