@@ -1,8 +1,8 @@
 {
   "engine": "numpy",
   "engineVersion": "numpy 2.4.6",
-  "computedAt": "2026-06-09T20:52:17.334623+00:00",
-  "commitSha": "c53ae362b0b0a9f4f6d71d810f70d0fefd1aeb7b",
+  "computedAt": "2026-06-09T21:36:47.600989+00:00",
+  "commitSha": "9c327c7d33b7f6f76961d727df2ff18f63f96136",
   "assertions": [
     {
       "name": "overdetermined_path_a_eq_path_b_machine_eps",
@@ -16,8 +16,8 @@
   "durationMs": 30,
   "computation": "sublemma-2-1-h9-tritium-verify",
   "scriptFile": "sublemma_2_1_h9_tritium_verify.py",
-  "scriptHash": "b53d6be69f49",
-  "scriptCommitSha": "c53ae362b0b0a9f4f6d71d810f70d0fefd1aeb7b",
+  "scriptHash": "4ad6ca2b6bfa",
+  "scriptCommitSha": "9c327c7d33b7f6f76961d727df2ff18f63f96136",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
