@@ -51,13 +51,20 @@ condition on the truncated coefficient matrix, hence decidable.
    `jetOrder3_certificate`) — so full rank $3$ holds at the Reid-1991 base
    order, a finite decidable determinant test on real data
    (`jet_order_pivots.py` → `jet-order-pivots.witness.json`).  Higher
-   orders need **no** further computation: the order-$N$ Jacobian
-   ($3 \times (N+1)$) contains this non-singular $3\times3$ minor, so its
-   rank is $\ge 3$, while the three rows bound it by $3$ — hence full rank
-   $3$ at *every* $N$ from the base order onward (rank is monotone in the
-   column count; Lean `jetJacobianBase_rank` + `jacobianRank_eq_three_of_base`).
-   Per-order independence thus propagates from the single base-order
-   certificate rather than requiring a separate test at each truncation.
+   orders then need **no** further computation, by the following
+   structural argument: the order-$N$ Jacobian ($3 \times (N+1)$) contains
+   this non-singular $3\times3$ minor as a column-submatrix, so its rank is
+   $\ge 3$, while the three rows bound it by $3$ — hence rank exactly $3$ at
+   *every* $N$ from the base order onward, rank being monotone in the
+   column count.  Lean formalizes the **two endpoints** of this argument:
+   the base minor is full-rank (`jetJacobianBase_rank`, proved via
+   invertibility) and the abstract monotonicity principle
+   (`jacobianRank_eq_three_of_base`: any monotone, row-bounded rank
+   function equal to $3$ at the base order is $3$ for all $N \ge 3$).  The
+   column-extension linkage that discharges the principle's hypotheses for
+   the *concrete* order-$N$ Jacobian remains a structural input — per-order
+   independence reduces to it rather than to a separate determinant test at
+   each truncation.
 3. **Surreal error bounds** supply the *bridge* to the limit, and the
    right geometric picture is **parallel transport on the projective
    state fibre**.  The coloured-Jones invariant $J_K(q)$ is the holonomy

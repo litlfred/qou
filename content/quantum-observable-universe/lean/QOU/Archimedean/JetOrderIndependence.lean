@@ -251,15 +251,21 @@ theorem jetOrder3_certificate : eliminationDet (jetPivots 3) ≠ 0 := by
 /-! ### Rank-monotonicity: full rank at every order *from the base order*
 
 `JetOrderIndependence.full_rank` is **not** an independent claim at each
-order — it propagates from the single base-order certificate.  The
-order-`N` coefficient Jacobian is `3 × (N+1)`; its first three columns are
-the witnessed base-order minor `jetJacobianBase`, whose determinant is
-`1/16 ≠ 0`.  An invertible `3×3` block forces rank `≥ 3`
+order — mathematically it propagates from the single base-order
+certificate.  The order-`N` coefficient Jacobian is `3 × (N+1)`; its first
+three columns are the witnessed base-order minor `jetJacobianBase`, whose
+determinant is `1/16 ≠ 0`.  An invertible `3×3` block forces rank `≥ 3`
 (`Matrix.rank_submatrix_le`), while the row count `3` forces rank `≤ 3`
 (`Matrix.rank_le_height`), so the order-`N` Jacobian has rank exactly `3`
-for every `N`.  Per-order independence therefore needs **no** higher-order
-compute: it is a consequence of the base order plus the structural facts
-that rank is monotone in the column count and bounded by the row count. -/
+for every `N`, rank being monotone in the column count.
+
+This file formalizes the **two endpoints** of that argument, not the
+order-`N` Jacobian itself: (1) the base minor is full-rank
+(`jetJacobianBase_rank`, via invertibility), and (2) the abstract
+monotonicity principle (`jacobianRank_eq_three_of_base`).  Discharging the
+principle's hypotheses (`Monotone`, `≤ 3`, base `= 3`) for the *concrete*
+order-`N` Jacobian — the column-extension/submatrix linkage stated above —
+is the remaining structural input, not a lemma proved in this file. -/
 
 /-- Witnessed base-order jet-Jacobian: rows are the order-`≤2` coefficient
     vectors of `tr_M(K)` about `q = 1` for `K ∈ {4₁, 5₂, 𝓑₃}`.  Source:
