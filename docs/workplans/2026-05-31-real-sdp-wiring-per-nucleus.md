@@ -1,5 +1,10 @@
 # Real per-nucleus SDP wiring — workplan
 
+> **⚠ SUPERSEDED 2026-06-09** — folded into Phase 1 of
+> [`2026-06-09-overall-strategy-update.md`](2026-06-09-overall-strategy-update.md).
+> Consult the overall strategy doc first for "what's next" routing.
+> This document remains on-disk for historical reference.
+
 **Date:** 2026-05-31
 **Trigger:** post-session "what's next" pick — drop the abstract empty-SDP layer + wire the *real* per-nucleus SDP.
 **Status:** Workplan only. The substantive math is multi-PR / multi-week per nucleus.

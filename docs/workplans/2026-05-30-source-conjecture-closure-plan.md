@@ -1,5 +1,11 @@
 # Source-node conjecture closure workplan
 
+> **⚠ PARTIALLY SUPERSEDED 2026-06-09** — 6 closures landed (Tier-A + Tier-B
+> via IwahoriHecke Sprints 1-5); remaining work is captured at higher level
+> in [`2026-06-09-overall-strategy-update.md`](2026-06-09-overall-strategy-update.md).
+> The per-conjecture tables below remain the authoritative source for
+> closure-state tracking.
+
 **Authored:** 2026-05-30
 **Branch:** `claude/source-conj-closure-workplan-2026-05-30`
 **Audit tool:** [`local/proposition-consolidation-audit`](../../.claude/skills/local/proposition-consolidation-audit.md)

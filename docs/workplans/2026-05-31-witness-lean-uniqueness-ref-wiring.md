@@ -1,5 +1,12 @@
 # Witness `lean_uniqueness_ref` wiring workplan
 
+> **⚠ SUPERSEDED 2026-06-09** — folded into Phase 3 of
+> [`2026-06-09-overall-strategy-update.md`](2026-06-09-overall-strategy-update.md).
+> Consult the overall strategy doc first for "what's next" routing.
+> This document remains on-disk for historical reference; the per-producer
+> status table below is still the authoritative source for the wiring
+> campaign's per-script status.
+
 **Date:** 2026-05-31
 **Branch:** `claude/atlas-sdp-uniqueness-full-wiring-2026-05-31`
 **Goal:** wire every per-nucleus / per-atom witness JSON to its
