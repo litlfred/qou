@@ -88,7 +88,22 @@ pub struct MatrixMCacheMpfr {
 ///
 /// Returns a map μ_p (as partition tuple) → sorted Vec of SYT indices
 /// whose first `k_split` entries form a sub-tableau of shape μ_p.
+///
+/// `k_split = 0` is rejected: a 0-cell μ_p has no meaning under the
+/// parabolic split (and would silently drop every SYT into the empty-
+/// partition group, masking caller bugs).
 pub fn group_syts_by_mu_p(shape: &[usize], k_split: usize) -> HashMap<Vec<usize>, Vec<usize>> {
+    assert!(
+        k_split >= 1,
+        "group_syts_by_mu_p: k_split must be ≥ 1 (the 1-based bridge index); got 0 — every SYT would silently drop into an empty μ_p group",
+    );
+    let n: usize = shape.iter().sum();
+    assert!(
+        k_split <= n,
+        "group_syts_by_mu_p: k_split={} > shape sum {}: no SYT has that many cells to restrict to",
+        k_split,
+        n,
+    );
     let syts = standard_young_tableaux(shape);
     let mut groups: HashMap<Vec<usize>, Vec<usize>> = HashMap::new();
     for (i, syt) in syts.iter().enumerate() {
@@ -98,9 +113,10 @@ pub fn group_syts_by_mu_p(shape: &[usize], k_split: usize) -> HashMap<Vec<usize>
             let row = syt[k].0;
             *row_counts.entry(row).or_insert(0) += 1;
         }
-        if row_counts.is_empty() {
-            continue;
-        }
+        // With k_split ≥ 1 (asserted above) and syt.len() ≥ k_split
+        // (every SYT of a partition of n ≥ k_split has at least k_split
+        // cells), row_counts is always non-empty here.
+        debug_assert!(!row_counts.is_empty());
         let max_row = row_counts.keys().max().copied().unwrap_or(0);
         // max_row is the highest row index that received an entry,
         // so row_counts[max_row] ≥ 1 — no trailing-zero strip needed.
@@ -130,21 +146,28 @@ fn dense_eye(size: usize, prec: u32) -> DenseBlockMpfr {
 
 /// Extract sub-matrix at `indices × indices` from a sparse mpfr
 /// representation. Result is dense.
+///
+/// Uses a `Vec<Option<usize>>` lookup sized to `sparse.len()` (the
+/// full dim) for the (full-col → sub-col) map. The sparse rows have
+/// only 1–2 entries each (per `seminormal_matrices_mpfr`), so the
+/// inner loop is cheap; HashMap probing per cell would dominate.
 fn extract_block_from_sparse(
     sparse: &SparseMatrixMpfr,
     indices: &[usize],
     prec: u32,
 ) -> DenseBlockMpfr {
     let size = indices.len();
-    // Build a (full-row index → sub-row index) lookup.
-    let mut inv: HashMap<usize, usize> = HashMap::with_capacity(size);
+    let dim = sparse.len();
+    // Build a (full-col index → sub-col index) lookup as a Vec keyed by
+    // full index. Allocation-predictable, no hashing per cell.
+    let mut inv: Vec<Option<usize>> = vec![None; dim];
     for (sub_i, &full_i) in indices.iter().enumerate() {
-        inv.insert(full_i, sub_i);
+        inv[full_i] = Some(sub_i);
     }
     let mut out = dense_zero(size, prec);
     for (sub_i, &full_i) in indices.iter().enumerate() {
         for (full_j, val) in &sparse[full_i] {
-            if let Some(&sub_j) = inv.get(full_j) {
+            if let Some(sub_j) = inv[*full_j] {
                 out[sub_i][sub_j] = Float::with_val(prec, val);
             }
         }
@@ -275,6 +298,14 @@ pub fn precompute_block_tables_mpfr(
 ///
 /// `word_left` generators must satisfy `g < k_split`; `word_right`
 /// must satisfy `g > k_split`. The bridge is `σ_{k_split}^{bridge_sign}`.
+///
+/// **Sign convention** (matters because `seminormal.rs` /
+/// `seminormal_mpfr.rs` define `sign == 0` to mean "averaged crossing
+/// σ_g − h/2·I"): this API uses sign-only crossings and explicitly
+/// REJECTS `sign == 0` (and any value other than ±1) with an assert.
+/// Averaged crossings are not part of the matrix-M parabolic trace
+/// identity proved in PR #1980/#1985/#1987/#1993/#2000. If you need
+/// averaged-crossing characters, use `chi_lambda_braid_mpfr` instead.
 pub fn chi_via_matrix_m_mpfr(
     cache: &MatrixMCacheMpfr,
     word_left: &[(i32, usize)],
@@ -283,6 +314,25 @@ pub fn chi_via_matrix_m_mpfr(
 ) -> Float {
     let prec = cache.prec;
     let h = &cache.h;
+    assert!(
+        bridge_sign == 1 || bridge_sign == -1,
+        "chi_via_matrix_m_mpfr: bridge_sign must be +1 or -1 (sign-only convention); got {} — averaged crossings (sign=0, σ_g − h/2·I) are NOT supported by the matrix-M parabolic identity",
+        bridge_sign,
+    );
+    for &(sign, g) in word_left {
+        assert!(
+            sign == 1 || sign == -1,
+            "chi_via_matrix_m_mpfr: word_left sign at σ_{} must be +1 or -1; got {} — averaged (sign=0) NOT supported",
+            g, sign,
+        );
+    }
+    for &(sign, g) in word_right {
+        assert!(
+            sign == 1 || sign == -1,
+            "chi_via_matrix_m_mpfr: word_right sign at σ_{} must be +1 or -1; got {} — averaged (sign=0) NOT supported",
+            g, sign,
+        );
+    }
     let mut total = Float::with_val(prec, 0);
 
     for block in cache.blocks.values() {
@@ -294,7 +344,12 @@ pub fn chi_via_matrix_m_mpfr(
                 .sigmas_left
                 .get(&g)
                 .expect("word_left generator not in sigmas_left");
-            let sigma_signed = if sign >= 0 {
+            // sign is asserted ±1 above, so sign == 1 means positive
+            // and sign == -1 means the Hecke inverse. Using ` > 0`
+            // explicitly (not >= 0) so an off-spec sign=0 would have
+            // been caught by the assert above rather than silently
+            // taking the positive branch here.
+            let sigma_signed = if sign > 0 {
                 sigma.clone()
             } else {
                 dense_sub_h_eye(sigma, h, prec)
@@ -308,7 +363,8 @@ pub fn chi_via_matrix_m_mpfr(
                 .sigmas_right
                 .get(&g)
                 .expect("word_right generator not in sigmas_right");
-            let sigma_signed = if sign >= 0 {
+            // See word_left branch above for why ` > 0` not `>= 0`.
+            let sigma_signed = if sign > 0 {
                 sigma.clone()
             } else {
                 dense_sub_h_eye(sigma, h, prec)
@@ -316,7 +372,7 @@ pub fn chi_via_matrix_m_mpfr(
             b_n = matmul(&b_n, &sigma_signed, prec);
         }
 
-        let m = if bridge_sign >= 0 {
+        let m = if bridge_sign > 0 {
             block.m_pp.clone()
         } else {
             dense_sub_h_eye(&block.m_pp, h, prec)
