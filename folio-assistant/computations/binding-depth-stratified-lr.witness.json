@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-09T12:59:03.899521+00:00",
-  "commitSha": "4530483b0841bc153d41a8d76a1e0b78621107e5",
+  "computedAt": "2026-06-09T13:23:03.058175+00:00",
+  "commitSha": "d1a93f56710fc5cef1c402cd2f1e45820c9bfa6c",
   "assertions": [
     {
       "name": "data_loaded",
@@ -15,11 +15,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 73,
+  "durationMs": 77,
   "computation": "binding-depth-stratified-lr",
   "scriptFile": "binding_depth_stratified_lr.py",
-  "scriptHash": "8af075989d67",
-  "scriptCommitSha": "5a44813463430491fdc8cd8cd5a97a404b5e7e9d",
+  "scriptHash": "ac00b5c1718d",
+  "scriptCommitSha": "209faac9bd184d937a7efa18a22314fb8da0eade",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -357,9 +357,11 @@
         "method": "depth-stratified α_k·Φ_k via LR-decomposition"
       }
     },
+    "partition_completeness_warnings": [],
+    "all_atom_chi_witnesses_complete": true,
     "max_over_min_abs": 1.821710274444717,
     "all_signs_correct": true,
-    "verdict": "PARTIAL — max/min = 1.822, signs correct. ⁴He's partial 24-partition coverage may need full 77-partition extension for precision.",
+    "verdict": "PARTIAL — max/min = 1.822, signs correct.",
     "lean_uniqueness_ref": {
       "generic": "qou:QOU.BraidKnot.@nucleus_uniqueness_closed (3*A)",
       "framework_doc": "content/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",

@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-09T13:01:43.375445+00:00",
-  "commitSha": "4530483b0841bc153d41a8d76a1e0b78621107e5",
+  "computedAt": "2026-06-09T13:23:03.221543+00:00",
+  "commitSha": "d1a93f56710fc5cef1c402cd2f1e45820c9bfa6c",
   "assertions": [
     {
       "name": "no_incomplete_chi_witnesses",
@@ -18,8 +18,8 @@
   "durationMs": 14,
   "computation": "chi-witness-completeness-audit",
   "scriptFile": "chi_witness_completeness_audit.py",
-  "scriptHash": "c0f41afe64e4",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "1f078c64b4cf",
+  "scriptCommitSha": "209faac9bd184d937a7efa18a22314fb8da0eade",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

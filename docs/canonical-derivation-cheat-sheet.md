@@ -44,7 +44,7 @@ doc.
 | 7. GB filtration | `ℓ(w)`-graded, `E_2` collapse | 🟢 derived | — |
 | 8. Jet order | jet-prefix → `q→1` limit | 🟡 partial (Lean `sorry=4`) | proof-watcher: `SkewSYT` jet sorries |
 | 9a. Mass identity `m_p` | `m_e·VolDensity(K, q₀)` (knot-dependent) | 🟡 +2.89–3.73% gap (production uses uniform `Vol(𝓑₃)` for ALL atoms — the **lack of per-knot `VolDensity(K)` wire-up** is the bug: 64 of 65 atom-touching scripts use only `vol_density_borromean(q)`, so 63 of 65 isotopes (all A ≥ 2) get the wrong Vol(K); see [`vol-usage-audit`](audits/2026-06-02-vol-usage-audit-uniform-vs-per-knot.md)) | **per-knot `VolDensity(K)` wire-up** (NOT λ_scale); #1698 (m_avg combiner), `vol_density_per_block_wiring.py` testbed |
-| 9b. Per-isotope binding `B(K)` | **canonical default**: depth-stratified `Σ_k α_k Φ_k(K)` via `binding_depth_stratified_rust.py` — α_k structural (Markov z² at k=2, m_e·8G at k≥4); per-depth ASSIGNMENT empirical | 🟡 canonical-with-empirical-assignment ([audit](audits/2026-06-09-binding-canonical-default-depth-stratified.md)); D/T/³He undershoots 67-73%, ⁴He -50% Rust / +109% LR; flat magic-A `2·m_e·4·8G` BEATS tower on ⁴He (+5.87%) | substrate-derive per-depth α_k assignment rule; reconcile tower (§9.5) vs magic-A flat |
+| 9b. Per-isotope binding `B(K)` | **canonical default**: depth-stratified `Σ_k α_k Φ_k(K)` via `binding_depth_stratified_rust.py` — α_k structural (Markov z² at k=2, m_e·8G at k≥4); per-depth ASSIGNMENT empirical | 🟡 canonical-with-empirical-assignment ([audit](audits/2026-06-09-binding-canonical-default-depth-stratified.md)); D/T/³He undershoots 67-73%, ⁴He -50% (Rust ≡ LR post-regen 2026-06-09); flat magic-A `2·m_e·4·8G` BEATS tower on ⁴He (+5.87%) | substrate-derive per-depth α_k assignment rule; reconcile tower (§9.5) vs magic-A flat |
 | 10. Confinement SDP | canonical `T_w` | 🟢 derived | LP/SDP duals infra (`lp_dual_solver.py`) |
 | 11. β-decay `Q_β` | `\|Δ(net)\|·𝔈₀` | 🟢 derived; `c_k` truncation | `1ppq-qbeta.md` ledger (c_k tiered) |
 
@@ -570,15 +570,14 @@ Current state (per witnesses 2026-06-09 — full audit at
 | D | 0.607 MeV | 2.225 | −73 % |
 | T | 2.808 MeV | 8.482 | −67 % |
 | ³He | 2.653 MeV | 7.718 | −66 % |
-| ⁴He (Rust) | 14.063 MeV | 28.296 | −50 % |
-| ⁴He (LR) | 59.114 MeV | 28.296 | +109 % (partial-witness artifact¹) |
+| ⁴He | 14.063 MeV | 28.296 | −50 % |
 
-¹ LR ratio = Rust ratio EXACTLY for D, T, ³He (matched to 3 dp).
-The ⁴He LR vs Rust 4× spread is **entirely an artifact** of the
-partial cached ⁴He atom chi witness (24/77 partitions); LR is
-mathematically exact for the disjoint-product free config, and would
-agree with Rust direct once the cached ⁴He atom witness is completed
-to 77/77.
+LR and Rust direct now agree to 3 dp across all four atoms (verified
+post-regen 2026-06-09). An earlier session reported a 4× LR vs Rust
+disagreement on ⁴He (LR 2.089 vs Rust 0.497); this was 100 % an
+artifact of a stale binding witness consuming a 24/77 partial cached
+⁴He atom chi witness, since resolved. See the audit doc §Prevention
+for the partition-completeness gate added to prevent recurrence.
 
 **Tower sum does NOT close binding at the 10 % threshold.** The flat
 **magic-A** formula `B(⁴He) = 2·m_e·A·8G` (+5.87 %, §9.3) BEATS the
