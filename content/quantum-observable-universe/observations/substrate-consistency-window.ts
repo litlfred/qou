@@ -2,7 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:substrate-consistency-window",
-  lean: { ref: "qou:QOU.Observations.substrate_consistency_window", validation: "not_started" },
+  lean: { ref: "qou:QOU.Observations.substrate_consistency_window", validation: "not_checked" },
   title: "Overdetermination of the substrate parameter",
   tags: [
     "substrate-parameter",

@@ -2,7 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:metallic-character-knot",
-  lean: { ref: "qou:QOU.Archimedean.metallic_character_knot", validation: "not_started" },
+  lean: { ref: "qou:QOU.Archimedean.metallic_character_knot", validation: "not_checked" },
   title:
     "Metallic character from incomplete sub-Hopf links",
   tags: [
