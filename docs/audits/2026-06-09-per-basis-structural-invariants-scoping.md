@@ -173,6 +173,20 @@ with a symmetry** in a precise sense:
 So the 6 invariants are *Noether-like* in the categorical-conservation
 sense.
 
+### Refinement from the 2026-06-09 probe run
+
+`per_basis_row_invariants_probe.py` extracted all 6 basis rows' τ + Gram-diagonal at canonical q₀. Two sharper structural facts than the scoping above:
+
+1. **The 6 basis rows collapse to 3 Wedderburn blocks** with quantum dimensions `(3) → 1`, `(2,1) → [2]_q`, `(1,1,1) → 1`. The `G⁻¹_diag` values per block are `[3]_q! / 1`, `[3]_q! / (2·[2]_q)`, `[3]_q! / 1` — so at q₀ there are only **2 distinct numerical G⁻¹_diag values** (6.120579 and 1.521853), not 6. Rows γ and e⁻ are in the two 1-dim blocks and share `[3]_q!`; rows σ₀, σ₁, L₊, L₋ all sit in the (2,1) block and share the second value.
+
+   This means the "6 dimensionless coupling constants" framing in §3 is too coarse-grained: at the Wedderburn level, the per-block invariants are only **2** distinct (matching the 3-block structure with the 2 trivial blocks degenerate). The 6-fold count comes from counting Markov traces `τ(b_i)` per basis row, where the values are 1, z, z, z², z², hz²+z — five distinct numerical values, six basis indices.
+
+   Implication for §5 caching: the basis-aligned cache is even smaller than claimed — exploit the **block-level** symmetry, not just the S_3 pair symmetry; 2 G⁻¹ values + 5 τ values + the σ↔σ⁻¹ mirror.
+
+2. **No bare row = observable-ratio match exists at any row.** The probe swept m_e/m_p, m_p/m_e, α_EM, 1/α_EM, 1/(4π), 1/(8π), α_EM/(4π), √(m_e/m_p), ∛(m_e/m_p) against τ and G⁻¹_diag for each row; best match was 95.5% off (`G⁻¹_diag (3) = 6.12` vs `1/α_EM = 137.04`). This is the **expected** result per #1521's pattern — α_EM at row 1 is not a bare value match but the *composite* `α · [2]_q/(8π) · (1−h²α)` where `1/(8π) = 1/(π·dim H¹(M_Bring))` enters from the Bring shadow-world measure.
+
+   So the §4 experimental program **must** follow the composite template (Habiro element × Planck-tick scale × shadow-world geometric factor), NOT bare row-value matching. Confirmed: a one-script row-by-row identification is OUT OF SCOPE for the cheap pre-commit tests.
+
 ### Literature status (2026-06-09 scan)
 
 **The mathematical objects are all named; the physical-coupling
