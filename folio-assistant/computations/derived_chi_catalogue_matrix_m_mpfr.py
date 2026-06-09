@@ -55,7 +55,14 @@ import _path_bridge  # noqa: E402, F401
 
 import mpmath  # noqa: E402
 
-import pyhecke_native as ph  # noqa: E402
+# `pyhecke_native` (the PyO3 wheel) is only needed by the Rust
+# reference path `chi_rust_at_q_mpf`/`main`. The (μ_p, μ_n) math and
+# the `--use-mu-n-blocks` cross-validation are pure mpmath, so guard
+# the import: absent wheel ⇒ ph = None and only the Rust path raises.
+try:
+    import pyhecke_native as ph  # noqa: E402
+except ImportError:  # pragma: no cover - wheel absent in some sandboxes
+    ph = None
 
 from witness_base import WitnessBuilder  # noqa: E402
 
@@ -238,6 +245,10 @@ def chi_via_numerical_matrix_m_mpfr(
 #
 # NO f64: all arithmetic is mpmath.mpf at the working precision.
 
+# Module-level mpf constants — avoid re-initialising per call/loop.
+MPF_ZERO = mpmath.mpf(0)
+MPF_ONE = mpmath.mpf(1)
+
 # All 6 elements of S_3 as words in the two right-H_3 generators
 # s_1 ↦ σ_{k_split+1}, s_2 ↦ σ_{k_split+2}: (length, generator seq).
 _S3_ELEMENTS_MPFR: list[tuple[int, tuple[int, ...]]] = [
@@ -249,17 +260,22 @@ _S3_ELEMENTS_MPFR: list[tuple[int, tuple[int, ...]]] = [
     (3, (1, 2, 1)),
 ]
 
+_H3_PARTITIONS: tuple[tuple[int, ...], ...] = ((3,), (2, 1), (1, 1, 1))
 
-def q_young_symmetrizer_matrix_mpfr(
-    mu_n: tuple[int, ...],
+
+def q_young_symmetrizers_mpfr(
     sigma_g: object,
     sigma_g_plus_1: object,
     q_mpf: object,
-) -> object:
-    """Return the primitive idempotent e_{μ_n} of H_3(q) as an
-    `mpmath.matrix`, acting on the subspace where the two right-H_3
-    generators are `sigma_g`, `sigma_g_plus_1` (already restricted to a
-    μ_p-block).
+) -> dict:
+    """Return ALL three primitive idempotents e_{μ_n} of H_3(q) in a
+    single pass, as a dict mapping μ_n ⊢ 3 → `mpmath.matrix`, acting on
+    the subspace where the two right-H_3 generators are `sigma_g`,
+    `sigma_g_plus_1` (already restricted to a μ_p-block).
+
+    Computing all three together avoids rebuilding the six T_w (and
+    y₊, y₋) once per partition — a ~3× saving on the symmetrizer
+    construction per block.
 
     mpf port of the symbolic `q_young_symmetrizer_matrix`. The
     normalisation `(1+q²)(1+q²+q⁴)` is `≈ 8.37` at q_0 ≈ 1.11 — well
@@ -274,34 +290,49 @@ def q_young_symmetrizer_matrix_mpfr(
     eye = mpmath.eye(dim)
     q = q_mpf
     # Build T_w for each w ∈ S_3 as a matrix product of generators.
+    # For non-empty words skip the leading identity multiply.
     T_w: list[object] = []
     for (_length, seq) in _S3_ELEMENTS_MPFR:
-        mat = eye
-        for idx in seq:
+        if not seq:
+            T_w.append(eye)
+            continue
+        mat = sigmas_by_idx[seq[0]]
+        for idx in seq[1:]:
             mat = mat * sigmas_by_idx[idx]
         T_w.append(mat)
     # y_+ = Σ_w q^{ℓ(w)} T_w ;  y_- = Σ_w (-q^{-1})^{ℓ(w)} T_w
     y_plus = mpmath.zeros(dim, dim)
     y_minus = mpmath.zeros(dim, dim)
-    inv_q = mpmath.mpf(1) / q
+    inv_q = MPF_ONE / q
     for (length, _seq), mat in zip(_S3_ELEMENTS_MPFR, T_w):
         y_plus = y_plus + (q ** length) * mat
         y_minus = y_minus + ((-inv_q) ** length) * mat
     norm_scalar = (1 + q ** 2) * (1 + q ** 2 + q ** 4)
     e_plus = y_plus / norm_scalar
     e_minus = (y_minus * q ** 6) / norm_scalar
-    if mu_n == (3,):
-        return e_plus
-    if mu_n == (1, 1, 1):
-        return e_minus
-    if mu_n == (2, 1):
-        return eye - e_plus - e_minus
-    raise ValueError(
-        f"mu_n must be one of (3,), (2,1), (1,1,1); got {mu_n!r}"
-    )
+    e_std = eye - e_plus - e_minus
+    return {(3,): e_plus, (2, 1): e_std, (1, 1, 1): e_minus}
 
 
-_H3_PARTITIONS: tuple[tuple[int, ...], ...] = ((3,), (2, 1), (1, 1, 1))
+def q_young_symmetrizer_matrix_mpfr(
+    mu_n: tuple[int, ...],
+    sigma_g: object,
+    sigma_g_plus_1: object,
+    q_mpf: object,
+) -> object:
+    """Single-partition accessor — returns the one e_{μ_n} requested.
+
+    Thin wrapper over `q_young_symmetrizers_mpfr` for callers that need
+    only one idempotent. The block path uses the plural form (one pass
+    for all three).
+    """
+    es = q_young_symmetrizers_mpfr(sigma_g, sigma_g_plus_1, q_mpf)
+    try:
+        return es[mu_n]
+    except KeyError:
+        raise ValueError(
+            f"mu_n must be one of (3,), (2,1), (1,1,1); got {mu_n!r}"
+        )
 
 
 def _trace_mpfr(M: object) -> object:
@@ -309,6 +340,16 @@ def _trace_mpfr(M: object) -> object:
     total = mpmath.mpf(0)
     for i in range(M.rows):
         total = total + M[i, i]
+    return total
+
+
+def _trace_product_mpfr(A: object, B: object) -> object:
+    """Tr(A · B) in O(dim²) — avoids forming the full O(dim³) product."""
+    total = mpmath.mpf(0)
+    dim = A.rows
+    for i in range(dim):
+        for j in range(dim):
+            total = total + A[i, j] * B[j, i]
     return total
 
 
@@ -352,11 +393,10 @@ def chi_via_mu_n_blocks_mpfr(
     image dims), and `max_subblock_dim` (the bounded ≤~40 figure).
     """
     q = cache["q"]
-    one = mpmath.mpf(1)
-    h = q - one / q
+    h = q - MPF_ONE / q
 
-    chi = mpmath.mpf(0)
-    max_completeness_resid = mpmath.mpf(0)
+    chi = MPF_ZERO
+    max_completeness_resid = MPF_ZERO
     block_sizes: list[int] = []
     mu_n_dims: list[dict] = []
     max_subblock_dim = 0
@@ -385,20 +425,16 @@ def chi_via_mu_n_blocks_mpfr(
         sigma_g = sigmas_right[k_split + 1]
         sigma_g_plus_1 = sigmas_right[k_split + 2]
 
-        e_by_mu_n = {
-            mu_n: q_young_symmetrizer_matrix_mpfr(
-                mu_n, sigma_g, sigma_g_plus_1, q,
-            )
-            for mu_n in _H3_PARTITIONS
-        }
+        # All three idempotents in a single pass (no per-μ_n rebuild).
+        e_by_mu_n = q_young_symmetrizers_mpfr(sigma_g, sigma_g_plus_1, q)
         # Completeness: Σ_{μ_n} e_{μ_n} = I on the block.
         e_sum = mpmath.zeros(size, size)
         for e in e_by_mu_n.values():
             e_sum = e_sum + e
-        resid = mpmath.mpf(0)
+        resid = MPF_ZERO
         for i in range(size):
             for j in range(size):
-                d = abs(e_sum[i, j] - (one if i == j else mpmath.mpf(0)))
+                d = abs(e_sum[i, j] - (MPF_ONE if i == j else MPF_ZERO))
                 if d > resid:
                     resid = d
         if resid > max_completeness_resid:
@@ -407,8 +443,9 @@ def chi_via_mu_n_blocks_mpfr(
         BMB = B_p * M * B_n
         dims_here: dict[str, int] = {}
         for mu_n, e in e_by_mu_n.items():
-            chi = chi + _trace_mpfr(e * BMB)
-            r = int(mpmath.nint(_trace_mpfr(e).real))
+            # Tr(e · BMB) in O(size²) — no full O(size³) e·BMB product.
+            chi = chi + _trace_product_mpfr(e, BMB)
+            r = int(mpmath.nint(mpmath.re(_trace_mpfr(e))))
             dims_here[str(mu_n)] = r
             if r > max_subblock_dim:
                 max_subblock_dim = r
@@ -439,6 +476,12 @@ def chi_rust_at_q_mpf(
     the Rust path itself. We sum them at the substrate as mpf so the
     comparison stays at the backend's working precision.
     """
+    if ph is None:
+        raise RuntimeError(
+            "pyhecke_native unavailable: the Rust reference chi_q_via_gp "
+            "cannot run. The (μ_p, μ_n) cross-validation "
+            "(--use-mu-n-blocks) does not need it."
+        )
     laurent = ph.chi_q_via_gp(list(shape), n_strands, list(word))
     # Precompute sqrt_q once: half-exp keys are math q-exp · 2, so
     # q^(d_key/2) = sqrt_q^d_key with d_key an integer. mpmath does
