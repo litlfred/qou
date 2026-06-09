@@ -12,6 +12,14 @@ allowed-tools: Read Write Edit Bash Grep Glob Agent WebFetch
 
 # Paper Importer
 
+> **Bib human-review integration (2026-06-09).** When importing a paper whose
+> results back a `references.ts` entry, place the formalisation in a **per-paper
+> Lean package** (wrap, don't duplicate, any overlap with QOU results) and drive
+> the ref's status through [`local/bib-human-review`](bib-human-review.md)
+> (`source-in-repo` once the cited passage is identified → `validated` after
+> source-match + bib validation). The on-photo automation lives in
+> [`local/bib-photo-ingestion-watcher`](bib-photo-ingestion-watcher.md).
+
 ## Overview
 
 This skill imports external mathematical papers into the content object

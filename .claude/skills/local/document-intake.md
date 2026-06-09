@@ -12,6 +12,14 @@ allowed-tools: Read Write Edit Bash Grep Glob Agent WebFetch
 
 # Document Intake
 
+> **Bib human-review integration (2026-06-09).** Track per-upload ingestion
+> status in `uploads/intake.json` (identified passage, formalised?, matched?) and
+> link each upload to the `references.ts` entry it sources. An upload that
+> supplies a cited source moves that ref to `source-in-repo` (agent-identified
+> passage; no human photo) and then through the
+> [`local/bib-human-review`](bib-human-review.md) ladder to `validated`. Existing
+> `uploads/` follow the same agent-sourced path (design §5).
+
 ## Overview
 
 This skill manages the `uploads/` directory as an intake pipeline for

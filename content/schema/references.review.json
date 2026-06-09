@@ -4,14 +4,14 @@
     "statusEnum": ["unreviewed", "source-in-repo", "issue-open", "photo-uploaded", "validated"],
     "default": "unreviewed",
     "convention": "Any references.ts id NOT listed under `reviews` defaults to 'unreviewed'. The bib-human-review audit flags every reference whose effective status is not 'validated'.",
-    "staleness": "An entry is stale when its `entryHash` (12-char SHA-256 prefix of the references.ts entry) drifts from the current entry; re-review is required after drift.",
+    "staleness": "An entry is stale when its `entryHash` (12-char SHA-256 prefix of the canonical-JSON-serialized references.ts entry, recursively key-sorted) drifts from the current entry; re-review is required after drift. Computed by content/pipeline/validate-references-human-review.ts.",
     "fields": {
       "status": "one of statusEnum",
       "by": "GitHub handle of the human reviewer",
       "date": "ISO YYYY-MM-DD",
       "source": "uploads/ filename, or 'issue#NNN' of the physical-review GitHub issue",
       "page": "page(s)/section verified against the source",
-      "entryHash": "12-char SHA-256 prefix of the references.ts entry (staleness gate)"
+      "entryHash": "12-char SHA-256 prefix of the canonical-JSON-serialized references.ts entry (staleness gate)"
     }
   },
   "reviews": {}
