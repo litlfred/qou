@@ -28,6 +28,7 @@
 -/
 
 import Mathlib.Data.Real.Basic
+import Mathlib.Tactic.Linarith
 
 namespace QOU.AlgebraicSubstrate
 
