@@ -342,6 +342,11 @@ export function checkComputeNoMpfToFloatCast(
   const src = readFileSync(scriptPath, "utf-8");
   // Mask strings + comments so documentation references don't fire.
   const masked = maskStringsAndComments(src);
+  // For display-context detection we need a comments-only mask
+  // (keeps string quotes intact) so f-string markers `f"` are
+  // visible — same approach as `checkDoesNotDefaultToFloat`.
+  const srcCommentsOnly = src.replace(PY_COMMENT_RE, blankNonNewline);
+  const ctxLines = srcCommentsOnly.split("\n");
   const hits: CheckerHit[] = [];
   // Build a sparse newline index for fast offset → line lookup.
   const newlineOffsets: number[] = [];
@@ -367,6 +372,14 @@ export function checkComputeNoMpfToFloatCast(
     const arg = src.slice(argStart, argEnd);
     if (!MPF_INNER_DESTROYER_RE.test(arg)) continue;
     const lineNum = lineForOffset(m.index!);
+    // Display-context exemption — same logic as
+    // `checkDoesNotDefaultToFloat`: lines containing `f"`/`print(`/
+    // `.format(`/`assert`, or assignments to `*_pct`/`_ppb`/`_ppm`/
+    // `_print`/`_display`/`_str` variables are presentation-only,
+    // not substrate-compute paths. The conversion is INTENT (you
+    // want a Python float for `:.6f` formatting, etc.).
+    const lineCtx = ctxLines[lineNum - 1] ?? "";
+    if (isDisplayContextLine(lineCtx)) continue;
     const original = m[0].replace(/\s+/g, " ").trim();
     hits.push({
       file: scriptPath,
@@ -380,9 +393,11 @@ export function checkComputeNoMpfToFloatCast(
     });
   }
   // Direct numpy.float64(...) / np.float64(...) sites — independent
-  // family, same severity.
+  // family, same severity. Same display-context exemption.
   for (const m of masked.matchAll(NUMPY_FLOAT64_CALL_RE)) {
     const lineNum = lineForOffset(m.index!);
+    const lineCtx = ctxLines[lineNum - 1] ?? "";
+    if (isDisplayContextLine(lineCtx)) continue;
     const original = src
       .slice(m.index!, m.index! + m[0].length)
       .replace(/\s+/g, " ")

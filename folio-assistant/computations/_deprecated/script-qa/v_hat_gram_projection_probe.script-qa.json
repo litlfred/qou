@@ -3,7 +3,7 @@
   "script_path": "folio-assistant/computations/_deprecated/v_hat_gram_projection_probe.py",
   "language": "python",
   "source_hash": "480e49173829",
-  "updated_at": "2026-06-09T03:37:13.209Z",
+  "updated_at": "2026-06-09T03:47:37.719Z",
   "criteria": {
     "does_not_default_to_float": [
       {
@@ -183,6 +183,21 @@
         },
         "reviewed_at": "2026-06-09T03:37:13.209Z",
         "reviewed_sha": "76a167e10467a2b0f41dbbd968ea8245d5b4ba33"
+      },
+      {
+        "field_hash": {
+          "ts": "480e49173829"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "a08e6e1469fd",
+          "script_commit_sha": "76a167e10467a2b0f41dbbd968ea8245d5b4ba33"
+        },
+        "reviewed_at": "2026-06-09T03:47:37.719Z",
+        "reviewed_sha": "3765bc9aa9274031018ed3d7696fc515f11274be"
       }
     ]
   }
