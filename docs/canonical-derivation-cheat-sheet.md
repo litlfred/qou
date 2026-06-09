@@ -44,7 +44,7 @@ doc.
 | 7. GB filtration | `ℓ(w)`-graded, `E_2` collapse | 🟢 derived | — |
 | 8. Jet order | jet-prefix → `q→1` limit | 🟡 partial (Lean `sorry=4`) | proof-watcher: `SkewSYT` jet sorries |
 | 9a. Mass identity `m_p` | `m_e·VolDensity(K, q₀)` (knot-dependent) | 🟡 +2.89–3.73% gap (production uses uniform `Vol(𝓑₃)` for ALL atoms — the **lack of per-knot `VolDensity(K)` wire-up** is the bug: 64 of 65 atom-touching scripts use only `vol_density_borromean(q)`, so 63 of 65 isotopes (all A ≥ 2) get the wrong Vol(K); see [`vol-usage-audit`](audits/2026-06-02-vol-usage-audit-uniform-vs-per-knot.md)) | **per-knot `VolDensity(K)` wire-up** (NOT λ_scale); #1698 (m_avg combiner), `vol_density_per_block_wiring.py` testbed |
-| 9b. Per-isotope binding `B(K)` | **canonical default**: depth-stratified `Σ_k α_k Φ_k(K)` via `binding_depth_stratified_rust.py` — α_k structural (Markov z² at k=2, m_e·8G at k≥4); per-depth ASSIGNMENT empirical | 🟡 canonical-with-empirical-assignment ([audit](audits/2026-06-09-binding-canonical-default-depth-stratified.md)); D/T/³He undershoots 67-73%, ⁴He -50% (Rust ≡ LR post-regen 2026-06-09); flat magic-A `2·m_e·4·8G` BEATS tower on ⁴He (+5.87%) | substrate-derive per-depth α_k assignment rule; reconcile tower (§9.5) vs magic-A flat |
+| 9b. Per-isotope binding `B(K)` | **canonical default**: depth-stratified `Σ_k α_k Φ_k(K)` via `binding_depth_stratified_rust.py` — α_k structural (Markov z² at k=2, m_e·8G at k≥4); per-depth ASSIGNMENT empirical. **Trace-canonical baseline** (2026-06-09 reconciliation): `binding_canonical.py` = `E_0·(tr_M(W_free)−tr_M(W_atom))` on the Jones–Markov trace (`markov/markov_trace_canonical`, per `prop:categorical-mass-markov`); other session objects (abs-sum, bar product, matrix-M signed tr_M) are off-convention ([convention-split audit](audits/2026-06-09-binding-trace-convention-split.md), PR #2082) | 🟡 canonical-with-empirical-assignment ([audit](audits/2026-06-09-binding-canonical-default-depth-stratified.md)); D/T/³He undershoots 67-73%, ⁴He -50% (Rust ≡ LR post-regen 2026-06-09); flat magic-A `2·m_e·4·8G` BEATS tower on ⁴He (+5.87%). **Trace-canonical residual is structured**: `Δ_λ(K)=B_AME/B_pred ≈ q₀^(10A−5)` — D exact to 0.01 q₀-units, T −0.07, ⁴He +0.27; ³He −1.40 (Z-dep) — near-match tier, NOT wired ([residual audit](audits/2026-06-09-delta-lambda-canonical-residual.md)) | **derive-or-refute `10A−5`** from W_free vs W_atom crossing/jet bookkeeping (formalize-first); substrate-derive per-depth α_k; reconcile tower ↔ q₀^(10A−5) residual ↔ magic-A flat |
 | 10. Confinement SDP | canonical `T_w` | 🟢 derived | LP/SDP duals infra (`lp_dual_solver.py`) |
 | 11. β-decay `Q_β` | `\|Δ(net)\|·𝔈₀` | 🟢 derived; `c_k` truncation | `1ppq-qbeta.md` ledger (c_k tiered) |
 
@@ -53,7 +53,12 @@ gaps: **9a** = per-knot `VolDensity(K, q₀)` wire-up (production uses uniform
 `Vol(𝓑₃)` for all atoms — +2.89% at p,n grows to +3.73% at ¹²C; root cause
 is the Vol-uniform bug per [`vol-usage-audit`](audits/2026-06-02-vol-usage-audit-uniform-vs-per-knot.md)); **9b** = the **Δ_λ**
 per-block density (the Track-A blocker). See §9 for the mass=density×volume
-framing that unifies them.
+framing that unifies them. **9b status sharpened (2026-06-09):** on the
+trace-canonical path the whole gap collapses to a near-integer q₀-power,
+`Δ_λ(K) ≈ q₀^(10A−5)` (D exact to 0.01) — the open item is now
+**derive-or-refute `10A−5`** from the canonical chain's crossing/jet
+bookkeeping, not a search over closure ansätze
+([residual audit](audits/2026-06-09-delta-lambda-canonical-residual.md)).
 
 > ## ⚠ Critical framing — do NOT treat `λ_scale` as a separate object
 >
