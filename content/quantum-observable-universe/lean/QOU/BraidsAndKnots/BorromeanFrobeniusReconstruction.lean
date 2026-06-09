@@ -31,7 +31,7 @@
   documented in `docs/homfly-markov-convention-discipline.md §3`; do not
   conflate the two weight families.
 
-  -- Ref: [jones1987] https://doi.org/10.1090/S0273-0979-1985-15304-2
+  -- Ref: [jones1985] https://doi.org/10.1090/S0273-0979-1985-15304-2
   -- Ref: prop:borromean-markov-trace-closed-form
 -/
 import Mathlib.Data.Rat.Defs
