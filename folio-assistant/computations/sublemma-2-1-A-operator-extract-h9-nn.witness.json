@@ -1,8 +1,8 @@
 {
   "engine": "numpy",
   "engineVersion": "numpy 2.4.6",
-  "computedAt": "2026-06-09T18:00:48.070910+00:00",
-  "commitSha": "df2705def8ec22437c523607c8508278d871e277",
+  "computedAt": "2026-06-09T20:48:02.470667+00:00",
+  "commitSha": "c53ae362b0b0a9f4f6d71d810f70d0fefd1aeb7b",
   "assertions": [
     {
       "name": "overdetermined_lambda_consistent",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 24,
+  "durationMs": 32,
   "computation": "sublemma-2-1-A-operator-extract-h9-nn",
   "scriptFile": "sublemma_2_1_A_operator_extract_h9.py",
-  "scriptHash": "f800b593aa1e",
-  "scriptCommitSha": "df2705def8ec22437c523607c8508278d871e277",
+  "scriptHash": "622b55dd080d",
+  "scriptCommitSha": "c53ae362b0b0a9f4f6d71d810f70d0fefd1aeb7b",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -44,7 +44,7 @@
     "K_6_h6_test_words": 720,
     "K_3_h3_test_words": 6,
     "n_test_pairs": 4320,
-    "chi_compute_time_seconds": 8.14738375900015,
+    "chi_compute_time_seconds": 10.72226637499989,
     "n_partitions_9": 30,
     "n_overdetermined": 30,
     "n_consistent": 30,
