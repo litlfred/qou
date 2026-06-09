@@ -7,6 +7,15 @@ user_invocable: true
 
 # /coordinate — multi-agent / multi-PR coordination
 
+> **Bib human-review axis (2026-06-09).** Coordination now tracks a
+> **bib human-review** axis: every `references.ts` entry must be `validated`
+> or `issue-open` (not `unreviewed`/stale). Run
+> `bun run content/pipeline/validate-references-human-review.ts` in the sweep;
+> route flagged refs through [`local/bib-human-review`](bib-human-review.md)
+> (one physical-review issue per ref needing physical access, assigned
+> `@litlfred`). A PR that adds references should not leave them `unreviewed`
+> without flagging them for the workflow.
+
 When several Claude branches are converging on the same long-term goal
 (e.g. "reach 1 ppb on mass predictions", "close all §3b violators",
 "compute-infrastructure overhaul"), each agent has only its own
