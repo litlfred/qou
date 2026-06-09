@@ -1,0 +1,104 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-09T23:40:55.011125+00:00",
+  "commitSha": "a08e442d26aa35253e617515e596f30afd3f966d",
+  "assertions": [
+    {
+      "name": "deuteron_exponent_matches_15",
+      "computed": 0.010999999999999233,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 0.05,
+      "source": "log_q0(B_AME/B_pred) for the deuteron vs 10·2−5 = 15"
+    },
+    {
+      "name": "N_ge_Z_family_within_half_unit",
+      "computed": 0.272,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "max |log_q0 Δ_λ − (10A−5)| over D, T, ⁴He"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 8,
+  "computation": "delta-lambda-canonical-residual",
+  "scriptFile": "delta_lambda_canonical_residual.py",
+  "scriptHash": "ff2eb03bcc76",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "mpmath": "1.4.1"
+  },
+  "description": "Canonical-binding residual Δ_λ(K)=B_AME/B_pred on the Jones–Markov trace-canonical path (binding_canonical.py, per the trace-convention reconciliation). NEAR-MATCH TIER observation: log_q0 Δ_λ ≈ 10A−5 (D exact to 0.01; T −0.07; ⁴He +0.27; ³He −1.40 Z-dependent). NOT wired; the open question is a categorical derivation of 10A−5.",
+  "data": {
+    "q0": 1.1099785827513808,
+    "trace_convention": "Jones–Markov (markov/markov_trace_canonical.tr_M_element; prop:categorical-mass-markov)",
+    "binding_path": "B_pred = E_0 · (tr_M(W_free) − tr_M(W_atom)) — binding_canonical.py",
+    "rows": [
+      {
+        "atom": "D",
+        "Z": 1,
+        "N": 1,
+        "A": 2,
+        "B_AME_MeV": 2.224566,
+        "B_pred_canonical_MeV": 0.46562045436965493,
+        "Delta_lambda": 4.7776,
+        "log_q0_Delta": 14.989,
+        "law_10A_minus_5": 15,
+        "deviation_from_law": -0.011
+      },
+      {
+        "atom": "T",
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "B_AME_MeV": 8.481798,
+        "B_pred_canonical_MeV": 0.6289591666486603,
+        "Delta_lambda": 13.4855,
+        "log_q0_Delta": 24.934,
+        "law_10A_minus_5": 25,
+        "deviation_from_law": -0.066
+      },
+      {
+        "atom": "3He",
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "B_AME_MeV": 7.718043,
+        "B_pred_canonical_MeV": 0.6580815399178437,
+        "Delta_lambda": 11.7281,
+        "log_q0_Delta": 23.596,
+        "law_10A_minus_5": 25,
+        "deviation_from_law": -1.404
+      },
+      {
+        "atom": "4He",
+        "Z": 2,
+        "N": 2,
+        "A": 4,
+        "B_AME_MeV": 28.295673,
+        "B_pred_canonical_MeV": 0.7134607125562089,
+        "Delta_lambda": 39.6597,
+        "log_q0_Delta": 35.272,
+        "law_10A_minus_5": 35,
+        "deviation_from_law": 0.272
+      }
+    ],
+    "law": {
+      "candidate": "Delta_lambda(K) ≈ q0^(10A−5)",
+      "equivalently": "B_AME ≈ B_canonical · q0^(5(2A−1))",
+      "tier": "near-match (c_k tiering discipline) — observation, NOT wired",
+      "max_abs_deviation_all": 1.404,
+      "max_abs_deviation_N_ge_Z": 0.272,
+      "z_dependence_note": "³He (Z>N) deviates −1.40; the N≥Z isotopes (D, T, ⁴He) sit within 0.27 of the integer law."
+    }
+  }
+}
