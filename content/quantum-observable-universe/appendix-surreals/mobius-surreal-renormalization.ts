@@ -9,5 +9,5 @@ export default remark({
     "def:surreal-blowup-calculus",
     "rem:conway-normal-form",
   ],
-  cites: ["ohara1991", "freedman-he-wang1994"],
+  cites: ["ohara1991", "freedman1994"],
 });

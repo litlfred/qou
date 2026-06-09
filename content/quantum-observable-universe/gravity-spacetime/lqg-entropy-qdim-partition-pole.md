@@ -1,5 +1,5 @@
 The loop-quantum-gravity horizon-entropy state count (Domagała–Lewandowski
-\cite{domagala-lewandowski-2004}, Meissner \cite{meissner-2004}, in the
+\cite{domagala-lewandowski-2004}, Meissner \cite{meissner2004}, in the
 isolated-horizon $U(1)$ Chern–Simons setting of Ashtekar–Baez–Corichi–Krasnov
 \cite{ashtekar-baez-corichi-krasnov-1998}) admits a QOU recasting in which the
 analytic Laplace/saddle count becomes an **algebraic partition-function pole**.

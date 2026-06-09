@@ -36,7 +36,7 @@ paper-ingestion skills (`local/paper-importer`, `local/document-intake`), with t
   combinatorics (DL); the Immirzi-fixing criticality equation (Meissner). These
   are *already used by name* in
   [`2026-06-08-spin-network-count-q-dimension-partition-function.md`](../audits/2026-06-08-spin-network-count-q-dimension-partition-function.md).
-- **Action:** add `domagala-lewandowski-2004` + `meissner-2004` to
+- **Action:** add `domagala-lewandowski-2004` + `meissner2004` to
   `content/schema/references.ts`; switch the spin-network note (and any promoted
   content block) to `\cite{}` them. No QOU Lean overlap yet (the area-operator
   block is not formalized) → no wrapper needed until the spin-network derivation

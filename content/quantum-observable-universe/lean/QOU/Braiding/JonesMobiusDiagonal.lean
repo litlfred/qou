@@ -29,7 +29,7 @@ it specialises to `R_q = ℤ[q, q⁻¹]` and to `ℝ`.
 
 ## References
 
-- [freedman-he-wang1994] https://doi.org/10.2307/2946626
+- [freedman1994] https://doi.org/10.2307/2946626
 - [kashaev1997], [murakami-murakami2001] (coloured-trace / volume context)
 - [manuscript] climax-volume-mass/jones-mobius-diagonal
 -/
@@ -69,7 +69,7 @@ variable {R : Type*} [AddCommGroup R] [JonesMobiusDiagonal R]
     `J_K = twoPointReg − E_cat`.  The fundamental Jones data therefore embeds
     into the Möbius two-point data as its contact / diagonal term; the converse
     map loses the off-diagonal fusion content `Δ(e_λ) = Σ N^λ_{μν} e_μ ⊗ e_ν`. -/
--- Ref: [freedman-he-wang1994], [manuscript] climax-volume-mass/jones-mobius-diagonal
+-- Ref: [freedman1994], [manuscript] climax-volume-mass/jones-mobius-diagonal
 theorem markov_eq_mobius_contact :
     (markovTrace : R) = twoPointReg - mobiusEnergy := by
   have hr : (mobiusEnergy : R) = twoPointReg - contact := renormalization

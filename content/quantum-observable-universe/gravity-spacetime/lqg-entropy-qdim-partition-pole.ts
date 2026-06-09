@@ -10,7 +10,7 @@ export default conjecture({
   ],
   cites: [
     "domagala-lewandowski-2004",
-    "meissner-2004",
+    "meissner2004",
     "ashtekar-baez-corichi-krasnov-1998",
   ],
 });

@@ -13,5 +13,5 @@ export default lemma({
     "thm:jones-markov-trace",
     "rem:mobius-surreal-renormalization",
   ],
-  cites: ["freedman-he-wang1994", "ohara1991"],
+  cites: ["freedman1994", "ohara1991"],
 });

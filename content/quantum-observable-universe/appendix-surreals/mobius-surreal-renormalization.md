@@ -1,5 +1,5 @@
 The [Möbius energy](#prop:mobius-energy) (O'Hara \cite{ohara1991};
-Freedman–He–Wang \cite{freedman-he-wang1994}) is a *renormalized* quadratic
+Freedman–He–Wang \cite{freedman1994}) is a *renormalized* quadratic
 interaction: $\iint |\varrho(s)-\varrho(t)|^{-2}$ and $\iint D(s,t)^{-2}$ each
 diverge on the diagonal and the divergences cancel. Under the surreal lift this
 renormalization is **surreal arithmetic** — a difference of two infinite
