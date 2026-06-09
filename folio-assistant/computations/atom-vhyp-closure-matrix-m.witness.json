@@ -1,0 +1,79 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-09T21:18:07.923234+00:00",
+  "commitSha": "3f344ba8e8545e4f201235d21e2ab51436a5de75",
+  "assertions": [
+    {
+      "name": "canonical_trM_is_order_unity",
+      "computed": 1.3317821792991125,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 2.0,
+      "source": "matrix-M tr_M(q0) ∈ [~1, 2] — not the H₃-local 10^1025"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 6,
+  "computation": "atom-vhyp-closure-matrix-m",
+  "scriptFile": "atom_vhyp_closure_matrix_m.py",
+  "scriptHash": "a526a8a622f1",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "mpmath": "1.4.1"
+  },
+  "description": "Δ_λ closure check on the CANONICAL H_{3A} matrix-M tr_M (EXPLORATORY). Quantifies the required λ-independent Δ̄(K)=B/(m_e·tr_M) on the O(1) matrix-M Markov trace — the object the binding formula uses — vs the H₃-local NF used by #2076. Shows Δ̄ is mild (O(1–10)), not the 10^459 H₃-local scale gate; the per-nucleus Δ̄(K) is the target for the Stage-② volume route.",
+  "data": {
+    "m_e_MeV": 0.51099895069,
+    "rows": [
+      {
+        "label": "deuteron",
+        "Z": 1,
+        "N": 1,
+        "A": 2,
+        "tr_M_canonical_matrixM": 1.3317821792991125,
+        "B_AME_MeV": 2.224566,
+        "delta_bar_required": 3.2688281375098915,
+        "B_per_A_MeV": 1.112283
+      },
+      {
+        "label": "tritium",
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "tr_M_canonical_matrixM": 1.0860463545992616,
+        "B_AME_MeV": 8.481798,
+        "delta_bar_required": 15.28338504346963,
+        "B_per_A_MeV": 2.827266
+      }
+    ],
+    "canonical_trM_is_O1": {
+      "tr_M_values": [
+        1.3317821792991125,
+        1.0860463545992616
+      ],
+      "range": [
+        1.0860463545992616,
+        1.3317821792991125
+      ],
+      "note": "H_{3A} matrix-M Markov trace — O(1), decreasing with A; contrast the H₃-local NF (#2076) reaching 10^1025."
+    },
+    "required_delta_bar": {
+      "values": [
+        3.2688281375098915,
+        15.28338504346963
+      ],
+      "spread_factor": 4.675493602154354,
+      "scale_gated": false,
+      "conclusion": "On the canonical O(1) tr_M the required Δ̄(K) is mild (3.27–15.28, ~4.7× over A=2→3) — NOT the H₃-local 10^459 gate. Δ_λ(K) remains the last un-derived input, now a per-nucleus O(1–10) volume/density factor to be produced by Stage ② (no scale obstruction)."
+    }
+  }
+}
