@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-09T14:38:11.675951+00:00",
-  "commitSha": "719b728d25601ff78b4b4787c7fe98826a63d5ef",
+  "computedAt": "2026-06-09T14:41:58.403826+00:00",
+  "commitSha": "4e4f58c41f89c5cea12fc1f290ecc861a991a46c",
   "assertions": [
     {
       "name": "two_level_mu_n_chi_matches_one_level_mu_p",
@@ -27,11 +27,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 955,
+  "durationMs": 1031,
   "computation": "derived-chi-catalogue-matrix-m-mu-n-mpfr",
   "scriptFile": "derived_chi_catalogue_matrix_m_mpfr.py",
-  "scriptHash": "69fa05a241af",
-  "scriptCommitSha": "719b728d25601ff78b4b4787c7fe98826a63d5ef",
+  "scriptHash": "20abe66fb310",
+  "scriptCommitSha": "27e5167132ccc92bdf2f43e6b94c6f15aba890c6",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

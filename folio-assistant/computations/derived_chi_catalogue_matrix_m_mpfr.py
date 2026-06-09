@@ -538,12 +538,35 @@ def _adapted_basis_mpfr(
     slices = []
     off = 0
     for mu_n in _H3_PARTITIONS:
-        Q = _orthonormal_image_basis_mpfr(e_by_mu_n[mu_n], tol)
+        e = e_by_mu_n[mu_n]
+        Q = _orthonormal_image_basis_mpfr(e, tol)
         r = Q.cols
+        # Cross-check the Gram-Schmidt count against the exact rank
+        # (idempotent ⇒ rank = Tr e). A mismatch means tol under/over-
+        # counted a near-degenerate column — fail loudly rather than
+        # silently dropping a basis vector (which would corrupt χ).
+        r_exact = int(mpmath.nint(mpmath.re(_trace_mpfr(e))))
+        if r != r_exact:
+            raise RuntimeError(
+                f"adapted-basis rank mismatch for μ_n={mu_n!r}: "
+                f"Gram-Schmidt found {r} independent columns but "
+                f"Tr(e) = {r_exact}. Increase mp.dps or the basis "
+                f"tolerance; the (μ_p, μ_n) decomposition is "
+                f"numerically inconsistent at the current precision."
+            )
         if r > 0:
             blocks.append(Q)
             slices.append((mu_n, off, r))
             off += r
+    # The complete orthogonal idempotents direct-sum to the block, so
+    # P must be square; guard before inverting for a clear error.
+    if off != size:
+        raise RuntimeError(
+            f"adapted basis does not span the block: Σ_a r_a = {off} "
+            f"≠ block size {size}. Σ_{{μ_n}} e_{{μ_n}} = I should force "
+            f"equality; a shortfall indicates numerical rank loss at "
+            f"the current precision (raise mp.dps)."
+        )
     P = mpmath.zeros(size, off)
     col = 0
     for Q in blocks:
@@ -551,7 +574,7 @@ def _adapted_basis_mpfr(
             for i in range(size):
                 P[i, col] = Q[i, jj]
             col += 1
-    Pinv = P ** -1   # off == size (sectors span the block), so square.
+    Pinv = P ** -1   # square (guarded above).
     return Pinv, P, slices
 
 
