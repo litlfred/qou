@@ -87,7 +87,7 @@ def main() -> int:
         {"knot": "unknot 0_1", "braid": "1", "crossings": 0, "vol": 0.0, "hyperbolic": False, "type": "trivial"},
         {"knot": "Hopf 2_1²", "braid": "σ₁²", "crossings": 2, "vol": 0.0, "hyperbolic": False, "type": "torus (2,2)"},
         {"knot": "trefoil 3_1", "braid": "σ₁³", "crossings": 3, "vol": 0.0, "hyperbolic": False, "type": "torus (2,3)"},
-        {"knot": "figure-8 4_1", "braid": "σ₁σ₂⁻¹σ₁σ₂⁻¹", "crossings": 4, "vol": float(2 * mp.clsin(2, mp.pi / 3)), "hyperbolic": True, "type": "HYPERBOLIC (minimal)"},
+        {"knot": "figure-8 4_1", "braid": "σ₁σ₂⁻¹σ₁σ₂⁻¹", "crossings": 4, "vol": 2 * mp.clsin(2, mp.pi / 3), "hyperbolic": True, "type": "HYPERBOLIC (minimal)"},
         {"knot": "5_1", "braid": "σ₁⁵", "crossings": 5, "vol": 0.0, "hyperbolic": False, "type": "torus (2,5)"},
         {"knot": "5_2", "braid": "σ₁²σ₂σ₁⁻¹σ₂", "crossings": 5, "vol": 2.82812, "hyperbolic": True, "type": "hyperbolic"},
     ]

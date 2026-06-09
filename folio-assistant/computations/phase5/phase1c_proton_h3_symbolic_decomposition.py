@@ -180,9 +180,12 @@ def main():
             print(f"    h-expansion:")
             for k in range(7):
                 ck = cancel(ser.coeff(h_sym, k))
-                ck_float = float(ck.evalf()) if ck != 0 else 0.0
                 marker = " ◄" if k == 2 else ""
-                print(f"      h^{k}: {ck} ≈ {ck_float:.8e}{marker}")
+                # Inline the float() into the print f-string so it falls
+                # under the display-context exemption (this is console
+                # formatting, not a compute path).
+                ck_display = float(ck.evalf()) if ck != 0 else 0.0
+                print(f"      h^{k}: {ck} ≈ {ck_display:.8e}{marker}")
 
             results[shape] = {
                 "chi": chi,

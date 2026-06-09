@@ -138,7 +138,7 @@ def main() -> int:
                 "cal2_residual": str(cal2_check),
                 "cal3_residual_MeV": str(r_check),
                 "abs_q": str(mp.fabs(q_zero)),
-                "is_real_axis": float(mp.fabs(q_zero.imag)) < 1e-15,
+                "is_real_axis": bool(mp.fabs(q_zero.imag) < mp.mpf("1e-15")),
             })
             deg = float(theta_zero) * 180 / 3.141592653589793
             print(f"  θ = {deg:+.6f}°  =>  q = {float(q_zero.real):+.10f} + {float(q_zero.imag):+.10f}i")

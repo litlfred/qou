@@ -190,10 +190,12 @@ def main():
     # Import braid pattern from phase1a
     from phase1a_symbolic_trace_dominant_h_expansion import _HE4_PATTERN
 
-    q0 = float(mp.mpf(Q_50_DIGIT_STR))
-    h0 = q0 - 1.0 / q0
+    # Substrate q₀ kept at full mpmath precision (was float() — the
+    # classic L1 truncation flagged by compute_no_mpf_to_float_cast).
+    q0 = mp.mpf(Q_50_DIGIT_STR)
+    h0 = q0 - 1 / q0
 
-    print(f"  q₀ = {q0:.15f}")
+    print(f"  q₀ = {float(q0):.15f}")
     print(f"  h₀ = {h0:.15f}")
     print(f"  Braid word: {len(_HE4_PATTERN)} crossings")
     print()

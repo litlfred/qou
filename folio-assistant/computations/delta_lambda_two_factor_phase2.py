@@ -125,7 +125,7 @@ def test_two_factor(atoms: dict, V_form: str) -> dict:
         "V_form": V_form,
         "ratios": ratios,
         "mean": float(mean),
-        "rel_std": float(std / mp.mpf(mean)) if mean != 0 else float('inf'),
+        "rel_std": (std / mp.mpf(mean)) if mean != 0 else mp.inf,
         "max_over_min": float(max_min_ratio),
     }
 

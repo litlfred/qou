@@ -290,7 +290,7 @@ def main() -> int:
             "H_n": b["H_n"],
             "n_generators": b["n_generators"],
             "tr_M": str(b["tr_M"]),
-            "abs_tr_M": float(mp.fabs(b["tr_M"])),
+            "abs_tr_M": mp.fabs(b["tr_M"]),
             "mass_dim_li2q_dropped": str(b["mass_breakdown"]["total"]),
             "V_hats_estimate": [str(v) for v in b["mass_breakdown"]["V_hats_estimate"]],
             "single_sum": str(b["mass_breakdown"]["single_sum"]),

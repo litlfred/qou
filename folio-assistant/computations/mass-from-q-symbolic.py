@@ -266,8 +266,9 @@ skein_ratio_err = skein_ratio_n_p * float(mp.sqrt(
     (P_n_err / abs(P_n_num))**2 + (P_p_err / abs(P_p_num))**2
 ))
 
-# Log ratio (used in Q-value spectral decomposition)
-log_q_ratio = float(mp.log(skein_ratio_n_p) / mp.log(Q0))
+# Log ratio (used in Q-value spectral decomposition) — keep mpmath
+# precision (compute path, flagged by compute_no_mpf_to_float_cast).
+log_q_ratio = mp.log(skein_ratio_n_p) / mp.log(Q0)
 
 # CODATA mass ratio
 codata_ratio_n_p = M_N_MEV_VALIDATION / M_P_MEV_VALIDATION
