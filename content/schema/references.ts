@@ -3492,6 +3492,27 @@ export const references: CSLData[] = [
       "with branching weights determined by q-hook products.",
   }),
 
+  // ── Bożejko-Speicher 1991 (q-Gaussian positivity iff |q| ≤ 1) ──
+  ref({
+    id: "bozejko-speicher1991",
+    type: "article-journal",
+    title:
+      "An example of a generalized Brownian motion",
+    author: [
+      { family: "Bożejko", given: "Marek" },
+      { family: "Speicher", given: "Roland" },
+    ],
+    "container-title": "Communications in Mathematical Physics",
+    volume: "137",
+    page: "519-531",
+    issued: { "date-parts": [[1991]] },
+    DOI: "10.1007/BF02100489",
+    note:
+      "The q-deformed commutation relations admit a positive (Fock-space) " +
+      "representation iff -1 ≤ q ≤ 1; basis for the q-Gaussian " +
+      "obstruction at the substrate q_0 > 1 (prop:q-gaussian-obstruction-at-q0).",
+  }),
+
   // ── Féray-Méliot 2012 (q-Plancherel CLT) ──────────────────────
   ref({
     id: "feray-meliot2012",

@@ -331,6 +331,7 @@ export default chapter({
         "hecke-markov-interpretation-table-data",
         "markov-lambda-knot-operations",
         "markov-chain-fluctuations",
+        "q-gaussian-obstruction-at-q0",
       ],
     }),
     section({
