@@ -1,4 +1,5 @@
 import QOU.Basic
+import QOU.QuantumObservableUniverse.Instanton
 
 
 /-!
@@ -9,6 +10,23 @@ categorical gauge transformation.
 
 LaTeX: `\label{prop:categorical-instanton-unique}`
 
+## Honest statement (2026-06-09 axiom audit)
+
+The previous version asserted
+`axiom : Subsingleton (@CategoricalInstanton C _ _ fh)`, which is
+**false**: the structure has free data fields (`connection`,
+`curvature`, `hodge`), so distinct instantons exist in any category
+where `fh.obj` has two distinct endomorphisms.
+
+What *is* provable — with no axiom — is extensionality: instantons
+with the same connection, curvature, and Hodge structure are equal
+(self-duality is propositional).  The narrative's moduli statement
+(instantons of equal second Chern class agree up to a categorical
+gauge transformation) needs a gauge-transformation action on
+`CategoricalInstanton` (imported here from the `QOU` library), which
+the structure does not yet carry; defining that action and stating the
+quotient-level classification is the open structure refactor.
+
 ## References
 
 - [manuscript] §2-quantum-observable-universes/categorical-instanton-unique
@@ -17,30 +35,31 @@ LaTeX: `\label{prop:categorical-instanton-unique}`
 
 namespace QOU
 
-/-- **Uniqueness of categorical instantons (moduli).**
+universe u v
 
-    For fixed `FrobeniusHopfData`, the moduli of self-dual instanton
-    connections is a quotient by categorical gauge transformations;
-    `Subsingleton` expresses the type-level uniqueness of the moduli
-    point for a given topological charge. -/
--- Ref: [atiyah1978]
-/-- **External axiom (§3b-cond pattern): CategoricalInstanton.unique_up_to_gauge.**
+/-- **Uniqueness of categorical instantons (proved extensionality).**
 
-    Auto-extracted from the single-sorry theorem body in this file.
-    Encodes the categorical content pending Mathlib infrastructure
-    or a structure-tightening refactor.
-
-    See the theorem docstring below for the cited reference. -/
-axiom CategoricalInstanton.unique_up_to_gauge_axiom {C : Type u} [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C]
-    (fh : @FrobeniusHopfData C _ _) :
-    Subsingleton (@CategoricalInstanton C _ _ fh)
-
+    Two `CategoricalInstanton C fh` instances with the same connection,
+    curvature, and Hodge involution are equal: the `self_dual` field is
+    propositional.  This replaces a false
+    `Subsingleton (CategoricalInstanton C fh)` axiom (free fields admit
+    distinct instances) with the extensionality the structure genuinely
+    supports; the gauge-quotient moduli statement is the open refactor
+    (see the file docstring). -/
+-- Ref: [atiyah1978] https://doi.org/10.1098/rspa.1978.0143
 theorem CategoricalInstanton.unique_up_to_gauge
     {C : Type u} [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C]
-    (fh : @FrobeniusHopfData C _ _) :
-    Subsingleton (@CategoricalInstanton C _ _ fh) :=
-  CategoricalInstanton.unique_up_to_gauge_axiom C fh
+    (fh : @FrobeniusHopfData C _ _)
+    (I₁ I₂ : @CategoricalInstanton C _ _ fh)
+    (hconn : I₁.connection = I₂.connection)
+    (hcurv : I₁.curvature = I₂.curvature)
+    (hhodge : I₁.hodge = I₂.hodge) : I₁ = I₂ := by
+  cases I₁
+  cases I₂
+  subst hconn
+  subst hcurv
+  subst hhodge
+  rfl
 
 end QOU

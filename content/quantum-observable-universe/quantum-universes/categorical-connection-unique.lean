@@ -1,4 +1,5 @@
 import QOU.Basic
+import QOU.QuantumObservableUniverse.GaugeTheory
 
 
 /-!
@@ -8,6 +9,24 @@ Connections form an affine space over Ω¹(A) ⊗ Ad(A).
 
 LaTeX: `\label{prop:categorical-connection-unique}`
 
+## Honest statement (2026-06-09 axiom audit)
+
+The previous version asserted
+`axiom : Subsingleton (CategoricalConnection C fh)`, which is **false**:
+the structure has free data fields (`Omega1 : C` itself, plus
+`leibniz_rhs` constrained only through `leibniz`), so distinct
+instances exist in any category with two objects.
+
+What *is* provable — with no axiom — is the determination the Leibniz
+rule genuinely provides: fixing the gauge data (the 1-form object
+`Omega1` and the Leibniz right-hand side), the connection morphism is
+unique whenever the multiplication `μ` is an epimorphism, since
+`leibniz` pins `μ ≫ ∇`.  The full affine-torsor statement (difference
+of two connections is an `Ad(A)`-valued 1-form) requires a preadditive
+monoidal category to even *state* the difference; recording that
+torsor structure is the open refactor.  `CategoricalConnection` is
+imported here from the `QOU` library.
+
 ## References
 
 - [manuscript] §1-quantum-universes/categorical-connection-unique
@@ -16,30 +35,30 @@ LaTeX: `\label{prop:categorical-connection-unique}`
 
 namespace QOU
 
-/-- **Uniqueness of categorical connections up to gauge.**
+open CategoryTheory
+open MonoidalCategory
 
-    Two `CategoricalConnection C fh` terms differ by an
-    `Ad(A)`-valued 1-form: the affine structure makes the space of
-    connections a torsor over `Ω¹(A) ⊗ Ad(A)`.  `Subsingleton`
-    captures the type-level uniqueness after fixing a gauge. -/
--- Ref: [kock2004]
-/-- **External axiom (§3b-cond pattern): CategoricalConnection.unique_up_to_gauge.**
+universe u v
 
-    Auto-extracted from the single-sorry theorem body in this file.
-    Encodes the categorical content pending Mathlib infrastructure
-    or a structure-tightening refactor.
+/-- **Uniqueness of categorical connections up to gauge (proved,
+    conditional on `Epi fh.mul`).**
 
-    See the theorem docstring below for the cited reference. -/
-axiom CategoricalConnection.unique_up_to_gauge_axiom {C : Type u} [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C]
-    (fh : FrobeniusHopfData C) :
-    Subsingleton (CategoricalConnection C fh)
-
+    Two `CategoricalConnection C fh` instances with the same 1-form
+    object and the same Leibniz right-hand side (after `eqToHom`
+    transport) have the same connection morphism, provided the
+    multiplication is an epimorphism: the Leibniz rule `μ ≫ ∇ = rhs`
+    then cancels.  This replaces a false
+    `Subsingleton (CategoricalConnection C fh)` axiom (free fields
+    admit distinct instances) with the determination the Leibniz rule
+    genuinely provides. -/
+-- Ref: [kock2004] Frobenius Algebras and 2D TQFT, Ch 2
 theorem CategoricalConnection.unique_up_to_gauge
-    {C : Type u} [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C]
-    (fh : FrobeniusHopfData C) :
-    Subsingleton (CategoricalConnection C fh) :=
-  CategoricalConnection.unique_up_to_gauge_axiom C fh
+    {C : Type u} [Category.{v} C] [MonoidalCategory C]
+    (fh : FrobeniusHopfData C) [Epi fh.mul]
+    (D₁ D₂ : CategoricalConnection C fh)
+    (hΩ : D₁.Omega1 = D₂.Omega1)
+    (hrhs : D₁.leibniz_rhs ≫ (fh.obj ◁ eqToHom hΩ) = D₂.leibniz_rhs) :
+    D₁.nabla ≫ (fh.obj ◁ eqToHom hΩ) = D₂.nabla := by
+  rw [← cancel_epi fh.mul, ← Category.assoc, D₁.leibniz, hrhs, D₂.leibniz]
 
 end QOU
