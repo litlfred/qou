@@ -46,8 +46,9 @@ sys.path.insert(0, str(Path(__file__).parent))
 sys.path.insert(0, str(Path(__file__).parent / "substrate"))
 
 from qou_substrate.witness import WitnessBuilder  # noqa: E402
-from codata_constants import M_E_MEV  # noqa: E402  canonical registry (P31), not a literal
+from codata_constants import M_E_MEV as _M_E_MEV  # noqa: E402  canonical registry (P31)
 
+M_E_MEV = float(_M_E_MEV)  # registry value is mpf; this analysis is float/numpy
 HERE = Path(__file__).parent
 V2 = HERE / "all-nuclides-wedderburn-spectral-v2.witness.json"
 
