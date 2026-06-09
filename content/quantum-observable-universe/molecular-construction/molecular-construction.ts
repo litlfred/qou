@@ -123,6 +123,8 @@ export default chapter({
         "h2o-molecular-braid",
         "h2o-c2v-from-projector",
         "h2o-bent-geometry",
+        "h2o-bond-angle-shift",
+        "ice-pauling-residual",
       ],
     }),
 
