@@ -1,0 +1,143 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-09T13:01:43.375445+00:00",
+  "commitSha": "4530483b0841bc153d41a8d76a1e0b78621107e5",
+  "assertions": [
+    {
+      "name": "no_incomplete_chi_witnesses",
+      "computed": 0,
+      "expected": 0,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "count",
+      "source": "audit (this script)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 14,
+  "computation": "chi-witness-completeness-audit",
+  "scriptFile": "chi_witness_completeness_audit.py",
+  "scriptHash": "c0f41afe64e4",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Audit chi-*.witness.json files for partition completeness (p(n) coverage). Catches the class of bug where a stale binding witness silently consumed a partial chi witness. See docs/audits/2026-06-09-binding-canonical-default-depth-stratified.md §(iii).",
+  "data": {
+    "audits": [
+      {
+        "path": "chi-deuteron-free-h6-at-q0-50dps.witness.json",
+        "n_strands": 6,
+        "n_cached_partitions": 11,
+        "expected_partitions": 11,
+        "complete": true,
+        "coverage_pct": 100.0
+      },
+      {
+        "path": "chi-deuteron-h6-at-q0-50dps-matrix-m.witness.json",
+        "n_strands": 6,
+        "n_cached_partitions": 11,
+        "expected_partitions": 11,
+        "complete": true,
+        "coverage_pct": 100.0
+      },
+      {
+        "path": "chi-deuteron-h6-at-q0-50dps.witness.json",
+        "n_strands": 6,
+        "n_cached_partitions": 11,
+        "expected_partitions": 11,
+        "complete": true,
+        "coverage_pct": 100.0
+      },
+      {
+        "path": "chi-helium-3-free-h9-at-q0-50dps.witness.json",
+        "n_strands": 9,
+        "n_cached_partitions": 30,
+        "expected_partitions": 30,
+        "complete": true,
+        "coverage_pct": 100.0
+      },
+      {
+        "path": "chi-helium-3-h9-at-q0-50dps.witness.json",
+        "n_strands": 9,
+        "n_cached_partitions": 30,
+        "expected_partitions": 30,
+        "complete": true,
+        "coverage_pct": 100.0
+      },
+      {
+        "path": "chi-helium-4-free-h12-at-q0-50dps.witness.json",
+        "n_strands": 12,
+        "n_cached_partitions": 77,
+        "expected_partitions": 77,
+        "complete": true,
+        "coverage_pct": 100.0
+      },
+      {
+        "path": "chi-helium-4-h12-at-q0-50dps.witness.json",
+        "n_strands": 12,
+        "n_cached_partitions": 77,
+        "expected_partitions": 77,
+        "complete": true,
+        "coverage_pct": 100.0
+      },
+      {
+        "path": "chi-neutron-h3-at-q0-50dps.witness.json",
+        "n_strands": 3,
+        "n_cached_partitions": 3,
+        "expected_partitions": 3,
+        "complete": true,
+        "coverage_pct": 100.0
+      },
+      {
+        "path": "chi-proton-h3-at-q0-50dps.witness.json",
+        "n_strands": 3,
+        "n_cached_partitions": 3,
+        "expected_partitions": 3,
+        "complete": true,
+        "coverage_pct": 100.0
+      },
+      {
+        "path": "chi-tritium-free-h9-at-q0-50dps.witness.json",
+        "n_strands": 9,
+        "n_cached_partitions": 30,
+        "expected_partitions": 30,
+        "complete": true,
+        "coverage_pct": 100.0
+      },
+      {
+        "path": "chi-tritium-h9-at-q0-50dps-matrix-m.witness.json",
+        "n_strands": 9,
+        "n_cached_partitions": 30,
+        "expected_partitions": 30,
+        "complete": true,
+        "coverage_pct": 100.0
+      },
+      {
+        "path": "chi-tritium-h9-at-q0-50dps.witness.json",
+        "n_strands": 9,
+        "n_cached_partitions": 30,
+        "expected_partitions": 30,
+        "complete": true,
+        "coverage_pct": 100.0
+      }
+    ],
+    "incomplete": [],
+    "unknown_partition_count_strands": [],
+    "total_scanned": 12,
+    "total_complete": 12,
+    "total_incomplete": 0,
+    "verdict": "PASS — all chi witnesses complete"
+  }
+}
