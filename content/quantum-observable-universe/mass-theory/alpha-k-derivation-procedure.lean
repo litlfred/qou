@@ -1,4 +1,4 @@
-import Mathlib
+import Mathlib.LinearAlgebra.Matrix.NonsingularInverse
 
 /-!
 # QOU.BraidKnot.alpha_k_derivation_procedure

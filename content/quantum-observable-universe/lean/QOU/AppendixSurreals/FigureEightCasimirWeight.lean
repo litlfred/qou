@@ -30,7 +30,8 @@ Ref: [lickorish1997] An Introduction to Knot Theory, Springer GTM 175
 (Jones polynomial of the figure-eight knot).
 -/
 
-import Mathlib
+import Mathlib.Data.Real.Basic
+import Mathlib.Tactic
 
 namespace QOU.AppendixSurreals
 
