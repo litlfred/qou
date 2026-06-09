@@ -49,3 +49,37 @@ the Bring constant of the H₂S residual-mixing form.
 This closes the chiral-residue loop back onto Bring's surface, exactly as the
 owner anticipated ("embed it in Bring's surface"): the H₂S residual's Bring
 constant is the quintic √5 of the surface's own ζ₅ chiral fibre.
+
+## The explicit geometry: two torus knots in Σ₄, linked by S₅ (embedding, not cover)
+
+The phrasing "the chiral channel lives on the Bring chiral fibre with ζ₅
+symmetry" conflated two *distinct* structures. Precisely:
+
+**Bring's curve** `B ⊂ ℙ⁴` is genus 4 with **`Aut(B) = S₅`** — the symmetric
+group permuting the 5 homogeneous coordinates (the 5 roots the Bring radical
+resolves). Two different torus knots embed in its genus-4 Seifert fibre `Σ₄`
+(`torus-embeddable-complete`: the complete list is
+`{(2,3),(2,5),(2,7),(2,9),(3,4),(3,5)}`, from `g=(m−1)(n−1)/2 ≤ 4`), and they
+carry the two symmetries:
+
+1. **3-fold — the chiral channel.** The **color-tube cubic**
+   `c³+(4z+1)c²+(6z²+3z+1)c+(4z³+3z²+2z+1)=0` (`color-tube-cubic`) fibres Bring's
+   surface over the ℂP¹ base; its three roots are the colour tubes `(r,g,b)` and
+   the branch-point monodromy is **B₃ ↠ H₃**. This is the **trefoil `T_{2,3}`**
+   in `Σ₄` — the chiral channel, the "3 in the ED".
+
+2. **5-fold — the √5.** `S₅` contains a cyclic **ℤ₅** (a 5-cycle). The
+   hyperelliptic quintic **`𝒳₅: y²=x⁵−1`** is **embedded** (not a cover) by
+   `x = ` the **first Lagrange resolvent `w₁`** of that `ℤ₅ ⊂ S₅`
+   (`hyperelliptic-quintic`); its five branch points `{1,ζ₅,…,ζ₅⁴}` are one
+   **ℤ₅-orbit**. This is the **cinquefoil `T_{2,5}`** in `Σ₄`.
+
+So the trefoil (H₃ chiral channel) and the cinquefoil (ζ₅) are **two torus knots
+in the same `Σ₄`**, related by the ambient **`S₅`** — *not* one fibre with two
+symmetries. The chiral residue lives on the trefoil; the `ℤ₅ ⊂ S₅` acts through
+the Lagrange resolvent **`w₁`, which carries √5** (the ℤ₅-orbit Gauss sum). *That*
+is the explicit geometric channel — the S₅-linked resolvent embedding, not a
+property of the cubic fibre itself — by which the H₃ chiral residue acquires the
+quintic √5. The open monodromy step is now sharply stated: evaluate the chiral
+trefoil residue under the `w₁`-resolvent of the cinquefoil's ℤ₅, and confirm the
+normalisation is `1/√5`.
