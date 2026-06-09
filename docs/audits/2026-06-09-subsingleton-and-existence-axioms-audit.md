@@ -132,7 +132,7 @@ without constructing it. Severity varies.
 
 ### 4a. Physics headline claims, axiomatized (highest concern)
 
-[`mass-theory/terminal-resolution.lean`](https://github.com/litlfred/qou/blob/claude/jolly-ritchie-7daq16/content/quantum-observable-universe/mass-theory/terminal-resolution.lean)
+[`mass-theory/terminal-resolution.lean`](../../content/quantum-observable-universe/mass-theory/terminal-resolution.lean)
 asserts the framework's *central empirical results* as bare axioms,
 then wraps each in a trivially-true `∃` "theorem":
 
@@ -187,10 +187,10 @@ fine to keep, but should be on a tracked allowlist:
 
 Five files were already migrated off Pattern B; use them as templates:
 
-- [`braids-and-knots/q-casimir-unique.lean`](https://github.com/litlfred/qou/blob/claude/jolly-ritchie-7daq16/content/quantum-observable-universe/braids-and-knots/q-casimir-unique.lean)
+- [`braids-and-knots/q-casimir-unique.lean`](../../content/quantum-observable-universe/braids-and-knots/q-casimir-unique.lean)
   — **downgraded** `Subsingleton (QCasimirData qs)` → *unique up to a
   ground-ring scalar* (the correct proposition).
-- [`quantum-observable-universes/categorical-action-unique.lean`](https://github.com/litlfred/qou/blob/claude/jolly-ritchie-7daq16/content/quantum-observable-universe/quantum-observable-universes/categorical-action-unique.lean)
+- [`quantum-observable-universes/categorical-action-unique.lean`](../../content/quantum-observable-universe/quantum-observable-universes/categorical-action-unique.lean)
   — "claim previously axiomatised here" removed.
 - `predicted-spectra/categorical-proton-unique.lean`,
   `predicted-spectra/categorical-neutron-unique.lean` — both note the
