@@ -96,6 +96,15 @@ D0_CO_EV_ERR     = 0.01
 D0_N2_EV         = 9.79           # eV, observed N≡N dissociation (pure-covalent triple)
 D0_N2_EV_ERR     = 0.01
 
+# ── Molecular bond angles (experimental comparison) ────────────────
+# Observed H–O–H angle and the symmetric tetrahedral reference. Used
+# purely as comparison targets for the angle-shift compute — NOT inputs
+# to any derivation. Sources: H₂O gas-phase geometry (Hoy & Bunker,
+# J. Mol. Spectrosc. 74 (1979); NIST CCCBDB); tetrahedral = arccos(−1/3).
+ANGLE_H2O_HOH_DEG         = 104.5     # ± 0.1, observed H–O–H bond angle (water, gas)
+ANGLE_H2O_HOH_DEG_ERR     = 0.1
+ANGLE_H2O_TETRAHEDRAL_DEG = 109.4712  # arccos(−1/3) in degrees, symmetric reference
+
 G_A_PDG     = 1.2754          # ± 0.0013 (PDG 2024)
 G_A_PDG_ERR = 0.0013
 
