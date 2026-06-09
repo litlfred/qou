@@ -200,11 +200,15 @@ def _to_braid_word(word: list, h_num: float) -> list[tuple[int, int]]:
     convention drift fails loudly.
     """
     tol = 1e-7
+    h_val = float(h_num)
     bw: list[tuple[int, int]] = []
     for c, d, g in word:
-        if abs(c - 1.0) < tol and abs(d) < tol:
+        # Cast to float so the tolerance checks return Python bools even if
+        # (c, d) arrive as sympy Float/Rational rather than plain floats.
+        c_val, d_val = float(c), float(d)
+        if abs(c_val - 1.0) < tol and abs(d_val) < tol:
             bw.append((1, g + 1))
-        elif abs(c - 1.0) < tol and abs(d + h_num) < tol:
+        elif abs(c_val - 1.0) < tol and abs(d_val + h_val) < tol:
             bw.append((-1, g + 1))
         else:
             raise ValueError(

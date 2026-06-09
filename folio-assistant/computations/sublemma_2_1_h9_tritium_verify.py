@@ -371,12 +371,18 @@ def main() -> int:
             f"against Path B (iterated 2-interface formula with "
             f"A^λ_{{ξν}}(I_2) extracted from "
             f"sublemma-2-1-A-operator-extract-h9-nn.witness.json). "
-            f"Phase 1 (K_6 = K_3 = 12 test words) closes the iterated "
-            f"formula at machine ε for the {n_overdet} fully-"
-            f"determined λ ⊢ 9 (the 1-dim partitions (9) and (1^9) "
-            f"plus any over-determined λ at this K). The remaining "
-            f"{n_underdet} under-determined λ require K ≥ 60 test "
-            f"words on the H_6 side (Phase 2)."
+            + (
+                f"All {n_overdet}/{len(parts_9)} λ ⊢ 9 are over-determined "
+                f"and verified at machine ε — the consumed extract uses the "
+                f"full S_6×S_3 permutation basis (see the 2026-06-09 binding "
+                f"audit)."
+                if n_underdet == 0 else
+                f"{n_overdet} of {len(parts_9)} λ ⊢ 9 are fully determined "
+                f"and verified at machine ε; {n_underdet} remain "
+                f"under-determined because the consumed extract used a "
+                f"degenerate test-word set — regenerate it with "
+                f"`--full-basis --native` to close them."
+            )
         )
         .set_audit_only(
             "docs/audits/2026-05-15-sublemma-2-1-h9-multi-interface-extension.md"
@@ -404,27 +410,19 @@ def main() -> int:
             expected=n_overdet,
             source="iterated Sub-lemma 2.1 at H_9 ↓ H_6 × H_3",
         )
-        .add_caveat(
-            "Phase 1 verification: only the FULLY-DETERMINED subset "
-            "of λ ⊢ 9 (where K_6·K_3 ≥ Σ d_ξ²·d_ν² over LR support) "
-            "is verified at machine ε. At K_6 = K_3 = 12 → 144 "
-            "equations, only the 1-dim partitions (9) and (1^9) are "
-            "fully determined. The remaining 28 partitions have "
-            "least-squares A's that satisfy the test grid but do "
-            "not generalize to the full tritium braid β_T outside "
-            "that grid. Phase 2 needs K ≥ 60+ for full coverage."
-        )
-        .add_caveat(
-            "Empirical observation: the rank of the bilinear system "
-            "saturates at 1, 14, or 50-66 for K_6=K_3=12, far below "
-            "the n_unknowns 30..3390 for high-dim λ. This suggests "
-            "the test-word grid spans a sub-space of End(V_ξ ⊗ V_ν) "
-            "with effective dim ~50 — increasing K naively may not "
-            "linearly improve rank. Phase 2 needs more DIVERSE test "
-            "words, e.g. random Hecke words or branching-coset "
-            "enumeration, not just more words."
-        )
     )
+    # Caveat only applies when the consumed extract is under-determined.
+    # With the full S_6×S_3 permutation-basis extract every λ ⊢ 9 is
+    # over-determined (n_underdet = 0), so no caveat is emitted.
+    if n_underdet:
+        builder.add_caveat(
+            f"{n_underdet} of {len(parts_9)} λ ⊢ 9 are under-determined in "
+            "the consumed extract: their least-squares A's satisfy the test "
+            "grid but do not generalize to the full tritium braid β_T. The "
+            "test-word family spans only a sub-space of End(V_ξ); regenerate "
+            "the H_9 extract with `--full-basis --native` (full S_6×S_3 "
+            "permutation basis) to make every λ over-determined and full-rank."
+        )
     out_path = builder.save()
     print(f"  Witness: {out_path}")
     return 0
