@@ -186,11 +186,14 @@ def main() -> None:
     # was purged 2026-06-09).
     rfb = sources.get("rho_f_volume_binding_gap") or {}
     _brows = (rfb.get("data", {}) or {}).get("rows", []) or []
-    _bvals = [(r.get("delta_binding_MeV"), r.get("A")) for r in _brows
-              if isinstance(r.get("delta_binding_MeV"), (int, float))]
-    binding_max = max((b for b, _ in _bvals), default=None)
-    binding_avg = (sum(b / a for b, a in _bvals if a) / len(_bvals)
-                   if _bvals else None)
+    # rho_f rows always carry float delta_binding_MeV + A ≥ 2 (trust the
+    # schema — no per-row validation).  The only boundary case is an
+    # absent witness ⇒ _brows == [], handled by the empty-guards below.
+    binding_max = max((r["delta_binding_MeV"] for r in _brows), default=None)
+    binding_avg = (
+        sum(r["delta_binding_MeV"] / r["A"] for r in _brows) / len(_brows)
+        if _brows else None
+    )
 
     summary = {
         "structural_lp_dual": lp_summary,
