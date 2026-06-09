@@ -53,12 +53,24 @@ interface ReviewSidecar {
 
 const SIDECAR_PATH = resolve(import.meta.dir, "../schema/references.review.json");
 
-/** Recursively key-sorted JSON, so the hash is independent of source key order. */
+/** Recursively key-sorted JSON, so the hash is independent of source key order.
+ *  Mimics `JSON.stringify` semantics for the non-JSON values that can appear in a
+ *  TS object literal: `undefined`/function/symbol serialize as `null` in array
+ *  position and are *omitted* as object keys (so the hash never depends on a raw
+ *  `undefined`). */
 function stableStringify(value: unknown): string {
+  if (value === undefined || typeof value === "function" || typeof value === "symbol") {
+    return "null"; // JSON.stringify drops these as keys / nulls them in arrays
+  }
   if (value === null || typeof value !== "object") return JSON.stringify(value);
   if (Array.isArray(value)) return `[${value.map(stableStringify).join(",")}]`;
   const obj = value as Record<string, unknown>;
-  const keys = Object.keys(obj).sort();
+  const keys = Object.keys(obj)
+    .filter((k) => {
+      const v = obj[k];
+      return v !== undefined && typeof v !== "function" && typeof v !== "symbol";
+    })
+    .sort();
   return `{${keys
     .map((k) => `${JSON.stringify(k)}:${stableStringify(obj[k])}`)
     .join(",")}}`;
@@ -100,14 +112,17 @@ function audit() {
       flags.push({ id, effective: "unreviewed", reason: "no review record (default unreviewed)" });
       continue;
     }
-    // Staleness gate: a validated entry whose hash drifted is no longer validated.
-    if (rec.status === "validated" && rec.entryHash && rec.entryHash !== hash) {
+    // Staleness gate: a `validated` record is only trusted with a *matching*
+    // entryHash. Missing entryHash ⇒ unverifiable ⇒ stale (don't silently pass).
+    if (rec.status === "validated" && (!rec.entryHash || rec.entryHash !== hash)) {
       counts["stale"]++;
       flags.push({
         id,
         effective: "stale",
         recorded: rec.status,
-        reason: `entryHash drift (recorded ${rec.entryHash}, now ${hash}) — re-review required`,
+        reason: rec.entryHash
+          ? `entryHash drift (recorded ${rec.entryHash}, now ${hash}) — re-review required`
+          : `validated but no entryHash recorded — unverifiable, re-review required`,
       });
       continue;
     }
@@ -120,8 +135,9 @@ function audit() {
   return { total: references.length, counts, flags };
 }
 
-/** Refs that would get a physical-review issue: unreviewed / issue-open candidates
- *  that are not already source-in-repo / photo-uploaded / validated. */
+/** Refs that would get a NEW physical-review issue: those with no usable review
+ *  (`unreviewed` or `stale`). Already-`issue-open` / `source-in-repo` /
+ *  `photo-uploaded` / `validated` refs are excluded — they are past this step. */
 function seedCandidates(flags: Flag[]): Flag[] {
   return flags.filter((f) => f.effective === "unreviewed" || f.effective === "stale");
 }
@@ -169,4 +185,6 @@ function main() {
   if (strict && flags.length > 0) process.exit(1);
 }
 
-main();
+// Guard so `entryHash` / `audit` can be imported (e.g. by the bib-human-review
+// skill to record a ref's hash) without running the CLI audit.
+if (import.meta.main) main();

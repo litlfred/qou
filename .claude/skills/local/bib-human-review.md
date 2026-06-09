@@ -28,8 +28,9 @@ source**. This skill manages that status and drives unreviewed references to
   not `validated` is **flagged** (absent ⇒ `unreviewed` by default).
 - An entry is **stale** when its `entryHash` (12-char SHA-256 *prefix* of the
   canonical-JSON-serialized `references.ts` entry) drifts — treat as `unreviewed`.
-- **Automated check** (landed): `bun run content/pipeline/validate-references-human-review.ts`
-  computes each `entryHash`, reads the sidecar, and flags every non-validated ref.
+- **Automated check** (landed): `cd content && bun run pipeline/validate-references-human-review.ts`
+  (`content/` is its own Bun package) computes each `entryHash`, reads the
+  sidecar, and flags every non-validated ref.
   Flags: `--strict` (exit 1 — CI gate, warn → strict), `--json` (machine output),
   `--seed` (list refs that would get a physical-review issue). Issue template:
   [`.github/ISSUE_TEMPLATE/bib-physical-review.md`](../../../.github/ISSUE_TEMPLATE/bib-physical-review.md).
