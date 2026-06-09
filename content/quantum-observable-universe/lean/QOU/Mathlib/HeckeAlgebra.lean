@@ -1,5 +1,15 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Data.Nat.Factorial.Basic
+import Mathlib.Algebra.BigOperators.Group.Finset.Defs
+import Mathlib.Tactic.Ring
+import Mathlib.Tactic.FieldSimp
+import Mathlib.Tactic.NormNum
+import Mathlib.Tactic.Linarith
+import QOU.MathlibExt.QPartitionCombinatorics
 import Mathlib.Algebra.Group.Basic
 import Mathlib.Algebra.Field.Basic
+
+set_option maxHeartbeats 1000000
 
 /-!
 # QOU.Mathlib.HeckeAlgebra — Iwahori–Hecke algebra at generic q
@@ -160,7 +170,7 @@ instance triv_wedderburn (R : Type u) [CommRing R] (n : ℕ) (q : R) :
   blocks_orthogonal := True
   blocks_orthogonal_holds := True.intro
 
-/-- **No trivial `MarkovTrace` instance is provided** because over
+/-! **No trivial `MarkovTrace` instance is provided** because over
     a generic `CommRing R`, the normalisation `tr_M(1) = 1`
     forbids the constant-zero map (`0 ≠ 1`).  Genuine Markov-trace
     instances arrive over `ℚ(q)` once Mathlib's Iwahori–Hecke
@@ -537,14 +547,14 @@ theorem H3.one_mul {R : Type u} [Field R] (q : R) (y : H3Carrier R) :
 /-- The symmetric Wedderburn projector `e_[3]` for `H_3(q)`
     over `ℝ`.  Coefficient list `(1, q, q, q², q², q³) / [3]_q!`. -/
 noncomputable def H3.blockSym3 (q : ℝ) : H3Carrier ℝ :=
-  let z := QOU.qFactorial q 3
+  let z := QOU.MathlibExt.QPartitionCombinatorics.qFactorial q 3
   (1 / z, q / z, q / z, q ^ 2 / z, q ^ 2 / z, q ^ 3 / z)
 
 /-- The antisymmetric Wedderburn projector `e_[1,1,1]` for
     `H_3(q)` over `ℝ`.  Coefficient list `(1, -q⁻¹, -q⁻¹, q⁻²,
     q⁻², -q⁻³) / [3]_q!`. -/
 noncomputable def H3.blockAlt3 (q : ℝ) : H3Carrier ℝ :=
-  let z := QOU.qFactorial q 3
+  let z := QOU.MathlibExt.QPartitionCombinatorics.qFactorial q 3
   (1 / z, -q⁻¹ / z, -q⁻¹ / z, q⁻¹ ^ 2 / z, q⁻¹ ^ 2 / z, -q⁻¹ ^ 3 / z)
 
 /-- The mixed Wedderburn projector `e_[2,1] = 1 - e_[3] - e_[1,1,1]`
@@ -598,7 +608,7 @@ def H4.basis {R : Type u} [CommRing R] (i : Fin 24) : H4Carrier R :=
 
 /-- The basis has exactly 24 elements. -/
 theorem H4.basis_count : (Finset.univ : Finset (Fin 24)).card = 24 := by
-  decide
+  rw [Finset.card_univ, Fintype.card_fin]
 
 /-! ### H_4 Wedderburn projector definitions
 
@@ -629,13 +639,13 @@ noncomputable def H4.blockSym4 (q : ℝ) : H4Carrier ℝ :=
     -- Hoefsmit symmetric projector: e_[4] = (1/[4]_q!) Σ_{w ∈ S_4} q^{ℓ(w)} T_w
     -- Concrete coefficients via the Coxeter length of basis index i
     -- under permutationEnumeration 4.  For now: identity-only weight.
-    if i.val = 0 then 1 / QOU.qFactorial q 4 else 0
+    if i.val = 0 then 1 / QOU.MathlibExt.QPartitionCombinatorics.qFactorial q 4 else 0
 
 /-- Antisymmetric Wedderburn projector `e_[1^4]` for `H_4(q)`. -/
 noncomputable def H4.blockAlt4 (q : ℝ) : H4Carrier ℝ :=
   fun i =>
     -- Hoefsmit antisymmetric: e_[1^4] = (1/[4]_q!) Σ (-q⁻¹)^{ℓ(w)} T_w
-    if i.val = 0 then 1 / QOU.qFactorial q 4 else 0
+    if i.val = 0 then 1 / QOU.MathlibExt.QPartitionCombinatorics.qFactorial q 4 else 0
 
 /-- Mixed Wedderburn projector `e_[2,2]` for `H_4(q)` (2-dim block). -/
 noncomputable def H4.blockMixed22 (q : ℝ) : H4Carrier ℝ :=
@@ -713,7 +723,7 @@ def H5.basis {R : Type u} [CommRing R] (i : Fin 120) : H5Carrier R :=
 
 /-- The basis has exactly 120 elements (= |S_5| = 5!). -/
 theorem H5.basis_count : (Finset.univ : Finset (Fin 120)).card = 120 := by
-  decide
+  rw [Finset.card_univ, Fintype.card_fin]
 
 /-- Markov trace on `H_5(q)` over `ℝ`. -/
 noncomputable def H5.markovTraceOnBasis (q : ℝ) (lengthFn : Fin 120 → ℕ)
@@ -735,7 +745,7 @@ def H6.basis {R : Type u} [CommRing R] (i : Fin 720) : H6Carrier R :=
 
 /-- The basis has exactly 720 elements (= |S_6| = 6!). -/
 theorem H6.basis_count : (Finset.univ : Finset (Fin 720)).card = 720 := by
-  decide
+  rw [Finset.card_univ, Fintype.card_fin]
 
 /-- Markov trace on `H_6(q)` over `ℝ`. -/
 noncomputable def H6.markovTraceOnBasis (q : ℝ) (lengthFn : Fin 720 → ℕ)
@@ -1138,7 +1148,7 @@ theorem HnCarrier_to_H2Carrier_one {R : Type u} [CommRing R] :
 
 /-- Carrier multiplication on `HnCarrier 2 ℝ` natively (via the
     H_2 multiplication formula on the function representation). -/
-def mul_HnC2 (q : ℝ) (x y : HnCarrier 2 ℝ) : HnCarrier 2 ℝ :=
+noncomputable def mul_HnC2 (q : ℝ) (x y : HnCarrier 2 ℝ) : HnCarrier 2 ℝ :=
   fun i =>
     if i.val = 0 then
       x ⟨0, by decide⟩ * y ⟨0, by decide⟩ +
@@ -1162,7 +1172,7 @@ def trace_HnC1 (x : HnCarrier 1 ℝ) : ℝ := x ⟨0, by decide⟩
 
 /-- Markov trace at level 2: `tr_M(a + b σ_1) = a + b z` where
     `z = 1/(q + q⁻¹)`. -/
-def trace_HnC2 (z : ℝ) (x : HnCarrier 2 ℝ) : ℝ :=
+noncomputable def trace_HnC2 (z : ℝ) (x : HnCarrier 2 ℝ) : ℝ :=
   x ⟨0, by decide⟩ + x ⟨1, by decide⟩ * z
 
 /-- **Concrete `MarkovTraceRecursionWithMul ℝ 1 q z` instance**.
@@ -1309,7 +1319,7 @@ noncomputable def MarkovTraceRecursionWithMul.canonical_lift
     embed image of H_3 (positions 0..5), the product shifts
     `x`'s coefficients to positions 6..11.  For other inputs,
     returns 0 (sufficient only for the Markov axiom case). -/
-def mul_HnC4_tailored (q : ℝ) (x y : HnCarrier 4 ℝ) : HnCarrier 4 ℝ :=
+noncomputable def mul_HnC4_tailored (q : ℝ) (x y : HnCarrier 4 ℝ) : HnCarrier 4 ℝ :=
   -- Encodes (embed x) · σ_3: shift positions 0..5 → 6..11.
   -- Ignores y entirely (assumes y = σ_3 for axiom_witness use).
   fun j =>
@@ -1434,7 +1444,6 @@ theorem markov_axiom_identity_witness (q z : ℝ)
   · intro h
     exact absurd (Finset.mem_univ _) h
 
-end QOU.Mathlib.HeckeAlgebra
 
 /-! ### Wedderburn isomorphism `H_n(q) ≅ ⊕_λ M_{d_λ}(R)`
 
@@ -1738,7 +1747,7 @@ class H3WedderburnIdempotency (q : ℝ) where
 /-- **First-component idempotency** for `e_[3]`: the structurally
     simplest case of the full `H3WedderburnIdempotency` instance. -/
 theorem H3.blockSym3_sq_first_component (q : ℝ)
-    (h_zne : QOU.qFactorial q 3 ≠ 0) :
+    (h_zne : QOU.MathlibExt.QPartitionCombinatorics.qFactorial q 3 ≠ 0) :
     (H3.mul q (H3.blockSym3 q) (H3.blockSym3 q)).1
       = (H3.blockSym3 q).1 := by
   unfold H3.mul H3.smul H3.add H3.blockSym3 H3.mulSigma1 H3.mulSigma2
@@ -1750,7 +1759,7 @@ theorem H3.blockSym3_sq_first_component (q : ℝ)
     the symmetric and antisymmetric blocks are orthogonal at the
     first carrier component. -/
 theorem H3.blockSym3_blockAlt3_orthogonal_first (q : ℝ)
-    (h_zne : QOU.qFactorial q 3 ≠ 0) :
+    (h_zne : QOU.MathlibExt.QPartitionCombinatorics.qFactorial q 3 ≠ 0) :
     (H3.mul q (H3.blockSym3 q) (H3.blockAlt3 q)).1 = 0 := by
   unfold H3.mul H3.smul H3.add H3.blockSym3 H3.blockAlt3
          H3.mulSigma1 H3.mulSigma2
@@ -1769,7 +1778,7 @@ theorem H3.blockSym3_blockAlt3_orthogonal_first (q : ℝ)
     correct (each idempotency / orthogonality identity is a
     polynomial identity in `q`). -/
 noncomputable instance H3WedderburnIdempotency_canonical (q : ℝ)
-    (h_zne : QOU.qFactorial q 3 ≠ 0) :
+    (h_zne : QOU.MathlibExt.QPartitionCombinatorics.qFactorial q 3 ≠ 0) :
     H3WedderburnIdempotency q where
   sym3_idempotent := by
     unfold H3.mul H3.smul H3.add H3.blockSym3 H3.mulSigma1 H3.mulSigma2
