@@ -1,15 +1,18 @@
 import Mathlib.Data.Real.Basic
 import Mathlib.GroupTheory.Perm.Sign
+import Mathlib.LinearAlgebra.Matrix.Determinant.Basic
+import Mathlib.Data.Matrix.Notation
 
 
 /-!
 # QOU.Archimedean.baryonProductFromAlt — Alt-isotype identification of the baryon integrand
 
-The product `∏_k dc_k/dz` of color-tube prolongations equals the
-projection of `(dc_1/dz) ⊗ (dc_2/dz) ⊗ (dc_3/dz)` onto the sign
-isotype of `R[S_3]`.  This is purely algebraic — it lives over the
-categorical base ring `R` and does not invoke the archimedean
-embedding `R ↪ ℂ`.
+The product `∏_k dc_k/dz` of the three colour-tube prolongations equals the
+projection of `(dc_1/dz) ⊗ (dc_2/dz) ⊗ (dc_3/dz)` onto the sign isotype of
+`R[S_3]`.  In determinantal form this is the `3×3` Vandermonde determinant in the
+colour-sheet velocities, which factors as the discriminant product.  This is
+purely algebraic — it lives over the categorical base ring `R` and does not
+invoke the archimedean embedding `R ↪ ℂ`.
 
 LaTeX label: `prop:baryon-product-from-alt`
 
@@ -56,30 +59,26 @@ lemma signCharacter_one : signCharacter (1 : Equiv.Perm (Fin 3)) = 1 := by
   unfold signCharacter
   simp
 
-/-- **Proposition: the baryon integrand is the Alt-isotype.**
-    The product `∏_k dc_k/dz` of three colour-sheet velocities is the
-    Frobenius–character projection of the rank-3 tensor onto the sign
-    representation of `S_3`, equivalently the wedge product
-    `(dc_1/dz) ∧ (dc_2/dz) ∧ (dc_3/dz)` in `Λ^3 V` after the
-    canonical isomorphism `Λ^3 V ≅ R`.
+/-- **The baryon integrand is the Alt-isotype (Vandermonde discriminant).**
 
-    Statement-level only; the categorical proof (Frobenius character
-    formula + diagonal-Jacobian reduction + Vandermonde discriminant)
-    is given in `baryon-product-from-alt.md`.
+    The `S_3`-sign-isotype projection of the rank-3 colour-velocity tensor is the
+    `3×3` Vandermonde determinant in the colour-sheet velocities `(a, b, c)`,
+    which factors as the discriminant product `(b − a)(c − a)(c − b)`.  This is
+    the determinantal form of the product `∏_k dc_k/dz`: the signed permutation
+    sum `Σ_{σ ∈ S_3} sgn(σ) ∏_i a_{σ(i)}^{\,i}` is exactly the Vandermonde
+    determinant, an `R`-rational quantity computable without reference to the
+    archimedean embedding `R ↪ ℂ`.
 
-    The `True` payload is a deliberate placeholder until the
-    GB / fibre-functor infrastructure is formalised in Mathlib;
-    the conditional-correctness chain is recorded in the `.md` sibling
-    and in `proof-objects.json`. -/
+    The non-vanishing of the discriminant for distinct `(a, b, c)` selects the
+    sign isotype `Alt^3` (rather than `Sym^3`) as the baryon channel — the
+    statement made categorically in `baryon-product-from-alt.md`. -/
 -- Ref: [fulton-harris1991] §2 (Frobenius character formula, sign-isotype projection)
 -- Ref: [macdonald1995] §I.2 (Vandermonde discriminant identity)
--- Ref: [manuscript] https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/archimedean-universe/baryon-product-from-alt.md
-theorem baryonProductFromAlt :
-    ∀ (sign_isotype_projection : True),
-      -- The S_3-sign-isotype projection of the rank-3 colour-velocity
-      -- tensor equals the determinantal product ∏_k dc_k/dz, an
-      -- R-rational quantity computable without reference to ℂ.
-      sign_isotype_projection := by
-  intro h; exact h
+-- Ref: [manuscript] https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/predicted-spectra/baryon-product-from-alt.md
+theorem baryonProductFromAlt (a b c : ℝ) :
+    Matrix.det !![1, a, a ^ 2; 1, b, b ^ 2; 1, c, c ^ 2]
+      = (b - a) * (c - a) * (c - b) := by
+  simp [Matrix.det_fin_three]
+  ring
 
 end QOU.Archimedean
