@@ -55,11 +55,13 @@ count** (`L-dependency`).
 
 Every cross-chapter forward reference (a block in chapter N whose
 `uses[]` / `interprets` points at a block in chapter M > N) is
-classified into one of six categories. Categories C–F are WAIVED —
-they are permitted by the paper's structural design and excluded
-from the "actionable" forward-ref count. Categories A and B are
-ACTIONABLE — they represent genuine misplacements that block-moves
-or chapter reordering could resolve.
+emitted with a `category` plus a boolean `waived` flag. WAIVED edges
+— storytelling (`T-*`), structural (`S-*`), and the sanctioned
+logical cases `L-foundational` / `L-result-callback` /
+`L-subject-matched` — are permitted by the paper's structural design
+and excluded from the "actionable" count. The only ACTIONABLE edges
+are un-waived logical ones (`L-dependency`): genuine misplacements a
+block-move or chapter reorder could resolve.
 
 Waiver taxonomy
 ---------------
@@ -126,10 +128,11 @@ FOUNDATIONAL_LATE = {
 # (L-subject-matched). Do NOT add a label merely to lower the count —
 # the test is "does the definition's subject match its home chapter?"
 # (and, where relevant, "was its placement a considered prior
-# decision?"). The author-decision edges (skein→computational-horizon,
-# motivic-galois→adelic-substrate, adelic-substrate→classical-limit,
-# quark-antiquark→breit-wheeler) are deliberately EXCLUDED so the
-# watcher still surfaces them.
+# decision?"). The author-decision edges still surfaced on main as
+# actionable L-dependency (deliberately NOT added to any waive list)
+# are skein→computational-horizon,
+# embeddable-knot-operator→covalent-bond-types, and
+# quark-antiquark→breit-wheeler — left for an author call.
 SUBJECT_MATCHED_DEFS = {
     "brings-surface::def:su2-generators",          # PR #823 prior relocation
     "brings-surface::def:brings-surface",          # Bring's-surface def
