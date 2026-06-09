@@ -73,7 +73,7 @@ theorem coulomb_reversal (H : KnotComposite R) :
 /-- **Bare-mass invariance** (narrative claim 4): the mirror preserves the total
     crossing count (hence the knot type and its hyperbolic volume), so a particle
     and its antiparticle have equal bare mass. -/
-theorem bare_mass_invariance (H : KnotComposite R) :
+theorem bare_mass_invariance {S : Type*} (H : KnotComposite S) :
     H.mirror.pos_crossings + H.mirror.neg_crossings
       = H.pos_crossings + H.neg_crossings := by
   simp only [KnotComposite.mirror]
