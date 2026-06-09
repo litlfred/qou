@@ -307,8 +307,8 @@ def main():
 
     w.add_assertion(
         "A4_clifford_excess_identity",
-        computed=float(mp.mpf(a4_result["actual_excess"])
-                       - mp.mpf(a4_result["self_conjugate_dimq_sum"])),
+        computed=(float(a4_result["actual_excess"])
+                  - float(a4_result["self_conjugate_dimq_sum"])),
         expected=0.0,
         tolerance=1e-30,
         source=(
@@ -320,8 +320,8 @@ def main():
     )
     w.add_assertion(
         "A5_clifford_excess_identity",
-        computed=float(mp.mpf(a5_result["actual_excess"])
-                       - mp.mpf(a5_result["self_conjugate_dimq_sum"])),
+        computed=(float(a5_result["actual_excess"])
+                  - float(a5_result["self_conjugate_dimq_sum"])),
         expected=0.0,
         tolerance=1e-30,
         source=(

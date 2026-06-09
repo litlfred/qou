@@ -169,14 +169,17 @@ def analytic_residual_structure(q: mp.mpf) -> dict:
         "h_to_5": float(h ** 5),
         "cosh_h": float(cosh_h),
         "cosh_log_q": float(cosh_log_q),
-        "exp_h": float(mp.exp(h)),
-        "two_q_minus_1": float(2 * q - 1),
+        # Keep substrate precision in the witness via mp.nstr (flagged
+        # by compute_no_mpf_to_float_cast — direct float() of mpmath
+        # value was the L1 leak).
+        "exp_h": mp.nstr(mp.exp(h), 20),
+        "two_q_minus_1": mp.nstr(2 * q - 1, 20),
         # Decomposition: 2q - 1 vs exp(h) at q_0
-        "exp_h_minus_2q_plus_1": float(mp.exp(h) - 2 * q + 1),
+        "exp_h_minus_2q_plus_1": mp.nstr(mp.exp(h) - 2 * q + 1, 20),
         # The bar-symmetric component:
-        "cosh_h_at_q0": float(cosh_h),
+        "cosh_h_at_q0": mp.nstr(cosh_h, 20),
         # The bar-antisymmetric component:
-        "sinh_h_at_q0": float(mp.sinh(h)),
+        "sinh_h_at_q0": mp.nstr(mp.sinh(h), 20),
     }
 
 

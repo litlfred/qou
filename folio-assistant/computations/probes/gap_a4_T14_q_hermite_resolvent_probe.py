@@ -221,7 +221,7 @@ def main():
     # Sanity assertions
     w.add_assertion(
         "bring_quintic_root_residual_below_threshold",
-        computed=float(mp.mpf(classical["residual_at_root"])),
+        computed=float(classical["residual_at_root"]),
         expected=0.0,
         tolerance=1e-40,
         source=(
@@ -231,7 +231,7 @@ def main():
     )
     w.add_assertion(
         "bring_discriminant_at_alpha_1",
-        computed=float(mp.mpf(classical["bring_discriminant"])),
+        computed=float(classical["bring_discriminant"]),
         expected=803125.0,
         tolerance=0.0,
         source=(

@@ -171,9 +171,11 @@ def main() -> int:
         chi_triv_closed = _closed_form(Q_MP, w, m_av, alt=False)
         chi_alt_closed = _closed_form(Q_MP, w, m_av, alt=True)
 
-        res_triv = float(mp.fabs(chi_triv_direct - chi_triv_closed))
-        res_alt = float(mp.fabs(chi_alt_direct - chi_alt_closed))
-        max_residue = max(max_residue, mp.mpf(res_triv), mp.mpf(res_alt))
+        # Keep residues at mp.mpf (was float() then re-bounced via
+        # mp.mpf in the max(); flagged by compute_no_mpf_to_float_cast).
+        res_triv = mp.fabs(chi_triv_direct - chi_triv_closed)
+        res_alt = mp.fabs(chi_alt_direct - chi_alt_closed)
+        max_residue = max(max_residue, res_triv, res_alt)
 
         results.append({
             "label": label,
