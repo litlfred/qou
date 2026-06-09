@@ -59,7 +59,7 @@ structure SDPPrimal (n : ℕ) (R : Type u) [Semiring R] (ι : Type v) where
   /-- Right-hand sides of equality constraints. -/
   rhs : ι → R
 
-variable [Field R] [LinearOrder R] [IsStrictOrderedRing R] [StarRing R]
+variable [CommRing R] [LinearOrder R] [IsStrictOrderedRing R] [StarRing R]
 
 /-- **Feasibility predicate** for an SDP candidate `Φ`. -/
 def SDPPrimal.IsFeasible (sdp : SDPPrimal n R ι) (Φ : Matrix (Fin n) (Fin n) R) : Prop :=
@@ -274,7 +274,7 @@ structure StrictComplementarityPair (sdp : SDPPrimal n R ι)
 -- Ref: [boyd-vandenberghe-2004] §5.5
 -- Ref: [todd2001] §3.4
 axiom strict_complementarity_unique_axiom :
-    ∀ {n : ℕ} {R : Type*} [Field R] [LinearOrder R] [IsStrictOrderedRing R] [StarRing R] {ι : Type*}
+    ∀ {n : ℕ} {R : Type*} [CommRing R] [LinearOrder R] [IsStrictOrderedRing R] [StarRing R] {ι : Type*}
       {sdp : SDPPrimal n R ι}
       (sc : StrictComplementarityPair sdp)
       {Φ' : Matrix (Fin n) (Fin n) R}

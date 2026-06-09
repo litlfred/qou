@@ -1,3 +1,6 @@
+import QOU.IwahoriHecke.TypeA
+import Mathlib.Algebra.Module.LinearMap.Defs
+
 /-!
 # `QOU.IwahoriHecke.MarkovTrace` — Markov trace on Type-A Hecke (Sprint 4)
 
@@ -54,8 +57,6 @@ Refs:
 - [manuscript] docs/workplans/2026-05-30-iwahori-hecke-mathlib-infra-plan.md
 -/
 
-import QOU.IwahoriHecke.TypeA
-import Mathlib.Algebra.Module.LinearMap.Defs
 
 namespace QOU.IwahoriHecke.MarkovTrace
 

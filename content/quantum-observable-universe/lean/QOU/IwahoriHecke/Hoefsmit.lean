@@ -1,3 +1,6 @@
+import QOU.IwahoriHecke.TypeA
+import QOU.IwahoriHecke.MarkovTrace
+
 /-!
 # `QOU.IwahoriHecke.Hoefsmit` — Hoefsmit seminormal basis (Sprint 5)
 
@@ -87,8 +90,6 @@ Refs:
 - [manuscript] content/.../hecke-branching-trace-decomposition.md
 -/
 
-import QOU.IwahoriHecke.TypeA
-import QOU.IwahoriHecke.MarkovTrace
 
 namespace QOU.IwahoriHecke.Hoefsmit
 

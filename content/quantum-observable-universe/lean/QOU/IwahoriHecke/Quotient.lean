@@ -1,3 +1,9 @@
+import Mathlib.GroupTheory.Coxeter.Basic
+import Mathlib.Algebra.FreeAlgebra
+import Mathlib.RingTheory.Ideal.Basic
+import Mathlib.RingTheory.Ideal.Operations
+import Mathlib.Algebra.Algebra.Defs
+
 /-!
 # `QOU.IwahoriHecke.Quotient` — concrete quotient construction (Sprint 2)
 
@@ -83,11 +89,6 @@ Refs:
 - [manuscript] docs/workplans/2026-05-30-iwahori-hecke-mathlib-infra-plan.md
 -/
 
-import Mathlib.GroupTheory.Coxeter.Basic
-import Mathlib.Algebra.FreeAlgebra
-import Mathlib.RingTheory.Ideal.Basic
-import Mathlib.RingTheory.Ideal.Operations
-import Mathlib.Algebra.Algebra.Defs
 
 namespace QOU.IwahoriHecke.Quotient
 

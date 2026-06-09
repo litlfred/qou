@@ -141,7 +141,7 @@ independently confirmed numerically (≤ 4e-50) by
 `borromean_chi_independent_crosscheck.py`. The class therefore certifies
 the catalogue cell against the *formalised* T17 polynomial, not against
 an in-Lean construction of the seminormal representation. -/
-class IsRMatrixDerived (R : Type*) [Field R] (cell : KnotPartitionAtomCell) where
+class IsRMatrixDerived (R : Type*) [CommRing R] (cell : KnotPartitionAtomCell) where
   /-- A genuine `R → R` evaluation of the cell's stored Laurent
   `chiLambdaQLaurent` (in the Kauffman variable). Generic over a field
   `R` per §7c — no ordering / `Real.*` is involved, only the inverses
@@ -286,9 +286,9 @@ def hopfTwoDiquark : KnotPartitionAtomCell where
   derivationRef := "Trivial Hecke rep σ_i ↦ q on σ_1²; PR #1952"
 
 /-- The chi for Hopf `(2,)`: simply `q²`. -/
-def hopfTwoDiquarkChi {R : Type*} [Field R] (q : R) : R := q^2
+def hopfTwoDiquarkChi {R : Type*} [CommRing R] (q : R) : R := q^2
 
-instance {R : Type*} [Field R] : IsRMatrixDerived R hopfTwoDiquark where
+instance {R : Type*} [CommRing R] : IsRMatrixDerived R hopfTwoDiquark where
   storedChi := hopfTwoDiquarkChi
   rmatrixChi := hopfTwoDiquarkChi
   agrees := fun _ _ => rfl
@@ -328,9 +328,9 @@ def trefoilTwoElectron : KnotPartitionAtomCell where
   tier := Tier.derived
   derivationRef := "Trivial Hecke rep σ_i ↦ q on σ_1³; PR #1952"
 
-def trefoilTwoElectronChi {R : Type*} [Field R] (q : R) : R := q^3
+def trefoilTwoElectronChi {R : Type*} [CommRing R] (q : R) : R := q^3
 
-instance {R : Type*} [Field R] : IsRMatrixDerived R trefoilTwoElectron where
+instance {R : Type*} [CommRing R] : IsRMatrixDerived R trefoilTwoElectron where
   storedChi := trefoilTwoElectronChi
   rmatrixChi := trefoilTwoElectronChi
   agrees := fun _ _ => rfl
@@ -370,9 +370,9 @@ def cinquefoilTwoMuon : KnotPartitionAtomCell where
   tier := Tier.derived
   derivationRef := "Trivial Hecke rep σ_i ↦ q on σ_1⁵; PR #1952"
 
-def cinquefoilTwoMuonChi {R : Type*} [Field R] (q : R) : R := q^5
+def cinquefoilTwoMuonChi {R : Type*} [CommRing R] (q : R) : R := q^5
 
-instance {R : Type*} [Field R] : IsRMatrixDerived R cinquefoilTwoMuon where
+instance {R : Type*} [CommRing R] : IsRMatrixDerived R cinquefoilTwoMuon where
   storedChi := cinquefoilTwoMuonChi
   rmatrixChi := cinquefoilTwoMuonChi
   agrees := fun _ _ => rfl
@@ -417,9 +417,9 @@ def figureEightThreeHiggs : KnotPartitionAtomCell where
   tier := Tier.derived
   derivationRef := "Trivial Hecke rep on (σ_1·σ_2⁻¹)² ⇒ (q·q⁻¹)² = 1; PR #1952"
 
-def figureEightThreeHiggsChi {R : Type*} [Field R] (_q : R) : R := 1
+def figureEightThreeHiggsChi {R : Type*} [CommRing R] (_q : R) : R := 1
 
-instance {R : Type*} [Field R] : IsRMatrixDerived R figureEightThreeHiggs where
+instance {R : Type*} [CommRing R] : IsRMatrixDerived R figureEightThreeHiggs where
   storedChi := figureEightThreeHiggsChi
   rmatrixChi := figureEightThreeHiggsChi
   agrees := fun _ _ => rfl
@@ -437,9 +437,9 @@ def figureEightOneOneOneHiggs : KnotPartitionAtomCell where
   tier := Tier.derived
   derivationRef := "Sign Hecke rep on (σ_1·σ_2⁻¹)² ⇒ ((−q⁻¹)(−q))² = 1; PR #1952"
 
-def figureEightOneOneOneHiggsChi {R : Type*} [Field R] (_q : R) : R := 1
+def figureEightOneOneOneHiggsChi {R : Type*} [CommRing R] (_q : R) : R := 1
 
-instance {R : Type*} [Field R] : IsRMatrixDerived R figureEightOneOneOneHiggs where
+instance {R : Type*} [CommRing R] : IsRMatrixDerived R figureEightOneOneOneHiggs where
   storedChi := figureEightOneOneOneHiggsChi
   rmatrixChi := figureEightOneOneOneHiggsChi
   agrees := fun _ _ => rfl

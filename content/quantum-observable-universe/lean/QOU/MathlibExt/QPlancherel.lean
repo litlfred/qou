@@ -63,7 +63,7 @@ class QDimension (Λ : Type u) (R : Type v) where
     Stated as a class field rather than constructed (the
     summation requires a finite-decidable universe of partitions
     of `k`). -/
-class HasPartitionFunction (Λ : Type u) (R : Type v) [Field R] [LT R] where
+class HasPartitionFunction (Λ : Type u) (R : Type v) [CommRing R] [LT R] where
   /-- The partition function at level `k`. -/
   Z : ℕ → R
   /-- `Z(k) > 0` for all `k ≥ 0`. -/

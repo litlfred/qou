@@ -1,3 +1,6 @@
+import QOU.IwahoriHecke.Quotient
+import Mathlib.Data.Fintype.Basic
+
 /-!
 # `QOU.IwahoriHecke.TypeA` — Type-A Iwahori-Hecke specialisation (Sprint 3)
 
@@ -50,9 +53,6 @@ Refs:
 - [manuscript] docs/workplans/2026-05-30-iwahori-hecke-mathlib-infra-plan.md
 -/
 
-import QOU.IwahoriHecke.Quotient
-import Mathlib.Data.Fintype.Basic
-import Mathlib.GroupTheory.SpecificGroups.Symmetric
 
 namespace QOU.IwahoriHecke.TypeA
 

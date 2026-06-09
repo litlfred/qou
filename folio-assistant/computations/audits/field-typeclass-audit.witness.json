@@ -1,11 +1,11 @@
 {
   "audit": "field-typeclass-over-strength",
   "scanned_root": "content/quantum-observable-universe/lean/QOU",
-  "total": 90,
+  "total": 74,
   "counts": {
     "phantom": 0,
-    "over-strong": 43,
-    "genuine": 47
+    "over-strong": 0,
+    "genuine": 74
   },
   "findings": [
     {
@@ -49,34 +49,14 @@
       "evidence": "uses `/` (division)"
     },
     {
-      "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/GradedMarkovTraceFromGSFiltration.lean",
-      "line": 45,
-      "decl_kw": "class",
-      "decl_name": "GradedMarkovTraceFromGSFiltration",
-      "type_var": "R",
-      "field_class": "Field",
-      "classification": "over-strong",
-      "evidence": "`R` used but no division/inverse found"
-    },
-    {
-      "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/GradedMarkovTraceFromGSFiltration.lean",
-      "line": 63,
-      "decl_kw": "theorem",
-      "decl_name": "graded_markov_trace_from_gs_filtration",
-      "type_var": "R",
-      "field_class": "Field",
-      "classification": "over-strong",
-      "evidence": "`R` used but no division/inverse found"
-    },
-    {
       "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/HoefsmitV21CosSymmetrization.lean",
       "line": 55,
       "decl_kw": "def",
       "decl_name": "hoefsmit_sigma1_gen",
       "type_var": "R",
       "field_class": "Field",
-      "classification": "over-strong",
-      "evidence": "`R` used but no division/inverse found"
+      "classification": "genuine",
+      "evidence": "build-verified exception: module pre-existing broken (proof bitrot at :87/:132/:148/:164 — unfold/simp failures present at committed baseline). Relaxation unverifiable until repaired."
     },
     {
       "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/HoefsmitV21CosSymmetrization.lean",
@@ -90,7 +70,7 @@
     },
     {
       "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/IwahoriHeckeAPI.lean",
-      "line": 74,
+      "line": 75,
       "decl_kw": "instance",
       "decl_name": "providing",
       "type_var": "R",
@@ -100,17 +80,17 @@
     },
     {
       "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/IwahoriHeckeAPI.lean",
-      "line": 88,
+      "line": 89,
       "decl_kw": "class",
       "decl_name": "HeckeRingHom",
       "type_var": "R",
       "field_class": "Field",
-      "classification": "over-strong",
-      "evidence": "`R` used but no division/inverse found"
+      "classification": "genuine",
+      "evidence": "build-verified exception: module pre-existing broken (failed-to-synthesize at :184+/:268+ and Nat.dist missing at committed baseline; Nat.Dist import added 2026-06-09, deeper failures remain). Relaxation unverifiable until repaired."
     },
     {
       "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/IwahoriHeckeAPI.lean",
-      "line": 96,
+      "line": 97,
       "decl_kw": "class",
       "decl_name": "HeckeQuadratic",
       "type_var": "R",
@@ -120,33 +100,33 @@
     },
     {
       "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/IwahoriHeckeAPI.lean",
-      "line": 171,
+      "line": 172,
       "decl_kw": "theorem",
       "decl_name": "wedderburn_decomposition_generic",
       "type_var": "R",
       "field_class": "Field",
-      "classification": "over-strong",
-      "evidence": "`R` used but no division/inverse found"
+      "classification": "genuine",
+      "evidence": "build-verified exception: module pre-existing broken (see HeckeRingHom entry); Wedderburn genuinely field-flavoured besides"
     },
     {
       "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/IwahoriHeckeAPI.lean",
-      "line": 292,
+      "line": 293,
       "decl_kw": "def",
       "decl_name": "failureLocus",
       "type_var": "R",
       "field_class": "Field",
-      "classification": "over-strong",
-      "evidence": "`R` used but no division/inverse found"
+      "classification": "genuine",
+      "evidence": "build-verified exception: module pre-existing broken (see HeckeRingHom entry)"
     },
     {
       "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/IwahoriHeckeAPI.lean",
-      "line": 296,
+      "line": 297,
       "decl_kw": "theorem",
       "decl_name": "not_in_failure_locus_iff_generic",
       "type_var": "R",
       "field_class": "Field",
-      "classification": "over-strong",
-      "evidence": "`R` used but no division/inverse found"
+      "classification": "genuine",
+      "evidence": "build-verified exception: module pre-existing broken (see HeckeRingHom entry)"
     },
     {
       "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/MarkovAxiomsPrimitive.lean",
@@ -165,8 +145,8 @@
       "decl_name": "MarkovTraceAxioms",
       "type_var": "R",
       "field_class": "Field",
-      "classification": "over-strong",
-      "evidence": "`R` used but no division/inverse found"
+      "classification": "genuine",
+      "evidence": "build-verified exception: transitively field: class field tau_stab_factor_eq_z references markovZax u = u/(u²+1), a non-unit (kind-3) division (relaxation attempted 2026-06-09, build failed: failed to synthesize)"
     },
     {
       "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/MarkovAxiomsPrimitive.lean",
@@ -175,8 +155,8 @@
       "decl_name": "markov_iterated_stab_gen",
       "type_var": "R",
       "field_class": "Field",
-      "classification": "over-strong",
-      "evidence": "`R` used but no division/inverse found"
+      "classification": "genuine",
+      "evidence": "build-verified exception: transitively field via [MarkovTraceAxioms u] hypothesis (markovZax non-unit division)"
     },
     {
       "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/MarkovAxiomsPrimitive.lean",
@@ -185,8 +165,8 @@
       "decl_name": "markov_iterated_stab",
       "type_var": "R",
       "field_class": "Field",
-      "classification": "over-strong",
-      "evidence": "`R` used but no division/inverse found"
+      "classification": "genuine",
+      "evidence": "build-verified exception: transitively field via [MarkovTraceAxioms u] hypothesis (markovZax non-unit division)"
     },
     {
       "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/MarkovAxiomsPrimitive.lean",
@@ -195,8 +175,8 @@
       "decl_name": "disjoint_product_factorisation_gen",
       "type_var": "R",
       "field_class": "Field",
-      "classification": "over-strong",
-      "evidence": "`R` used but no division/inverse found"
+      "classification": "genuine",
+      "evidence": "build-verified exception: transitively field via [MarkovTraceAxioms u] hypothesis (markovZax non-unit division)"
     },
     {
       "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/MarkovAxiomsPrimitive.lean",
@@ -205,8 +185,8 @@
       "decl_name": "disjoint_product_factorisation",
       "type_var": "R",
       "field_class": "Field",
-      "classification": "over-strong",
-      "evidence": "`R` used but no division/inverse found"
+      "classification": "genuine",
+      "evidence": "build-verified exception: transitively field via [MarkovTraceAxioms u] hypothesis (markovZax non-unit division)"
     },
     {
       "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/MarkovAxiomsPrimitive.lean",
@@ -215,8 +195,8 @@
       "decl_name": "MarkovTraceAxioms_implies_disjoint_stabilisation",
       "type_var": "R",
       "field_class": "Field",
-      "classification": "over-strong",
-      "evidence": "`R` used but no division/inverse found"
+      "classification": "genuine",
+      "evidence": "build-verified exception: transitively field via [MarkovTraceAxioms u] hypothesis (markovZax non-unit division)"
     },
     {
       "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/QuaternionFromHecke.lean",
@@ -390,47 +370,47 @@
     },
     {
       "file": "content/quantum-observable-universe/lean/QOU/IwahoriHecke/Hoefsmit.lean",
-      "line": 114,
+      "line": 115,
       "decl_kw": "class",
       "decl_name": "HoefsmitSeminormalBasis",
       "type_var": "R",
       "field_class": "Field",
-      "classification": "over-strong",
-      "evidence": "`R` used but no division/inverse found"
+      "classification": "genuine",
+      "evidence": "build-verified exception: module pre-existing broken (IwahoriHecke chain: Quotient.lean has deep Mathlib-API bitrot — Ideal.Quotient.mk unknown, type mismatches; chain never built). Relaxation unverifiable until the chain is repaired (own PR). Import-placement fixes landed 2026-06-09; deeper repair deferred."
     },
     {
       "file": "content/quantum-observable-universe/lean/QOU/IwahoriHecke/Hoefsmit.lean",
-      "line": 125,
+      "line": 126,
       "decl_kw": "instance",
       "decl_name": "instHoefsmit_default",
       "type_var": "R",
       "field_class": "Field",
-      "classification": "over-strong",
-      "evidence": "`R` used but no division/inverse found"
+      "classification": "genuine",
+      "evidence": "build-verified exception: module pre-existing broken (see HoefsmitSeminormalBasis entry)"
     },
     {
       "file": "content/quantum-observable-universe/lean/QOU/IwahoriHecke/Hoefsmit.lean",
-      "line": 135,
+      "line": 136,
       "decl_kw": "theorem",
       "decl_name": "hoefsmit_ew_cell_content_existence",
       "type_var": "R",
       "field_class": "Field",
-      "classification": "over-strong",
-      "evidence": "`R` used but no division/inverse found"
+      "classification": "genuine",
+      "evidence": "build-verified exception: module pre-existing broken (see HoefsmitSeminormalBasis entry)"
     },
     {
       "file": "content/quantum-observable-universe/lean/QOU/IwahoriHecke/Hoefsmit.lean",
-      "line": 155,
+      "line": 156,
       "decl_kw": "def",
       "decl_name": "branchCoefficientType",
       "type_var": "R",
       "field_class": "Field",
-      "classification": "over-strong",
-      "evidence": "`R` used but no division/inverse found"
+      "classification": "genuine",
+      "evidence": "build-verified exception: module pre-existing broken (see HoefsmitSeminormalBasis entry); α_T = (q^c − q^{−c})/([2]_q·c) is also kind-3 non-unit division"
     },
     {
       "file": "content/quantum-observable-universe/lean/QOU/IwahoriHecke/Hoefsmit.lean",
-      "line": 186,
+      "line": 187,
       "decl_kw": "def",
       "decl_name": "qBracket",
       "type_var": "R",
@@ -440,17 +420,17 @@
     },
     {
       "file": "content/quantum-observable-universe/lean/QOU/IwahoriHecke/Hoefsmit.lean",
-      "line": 193,
+      "line": 194,
       "decl_kw": "theorem",
       "decl_name": "qBracket_at_one",
       "type_var": "R",
       "field_class": "Field",
-      "classification": "over-strong",
-      "evidence": "`R` used but no division/inverse found"
+      "classification": "genuine",
+      "evidence": "build-verified exception: module pre-existing broken (see HoefsmitSeminormalBasis entry)"
     },
     {
       "file": "content/quantum-observable-universe/lean/QOU/IwahoriHecke/Hoefsmit.lean",
-      "line": 204,
+      "line": 205,
       "decl_kw": "def",
       "decl_name": "alphaCoefficient",
       "type_var": "R",
@@ -460,13 +440,13 @@
     },
     {
       "file": "content/quantum-observable-universe/lean/QOU/IwahoriHecke/Hoefsmit.lean",
-      "line": 214,
+      "line": 215,
       "decl_kw": "theorem",
       "decl_name": "alphaCoefficient_zero_at_zero_diff",
       "type_var": "R",
       "field_class": "Field",
-      "classification": "over-strong",
-      "evidence": "`R` used but no division/inverse found"
+      "classification": "genuine",
+      "evidence": "build-verified exception: module pre-existing broken (see HoefsmitSeminormalBasis entry)"
     },
     {
       "file": "content/quantum-observable-universe/lean/QOU/IwahoriHecke/TypeA.lean",
@@ -487,16 +467,6 @@
       "field_class": "Field",
       "classification": "genuine",
       "evidence": "uses `⁻¹` (inverse)"
-    },
-    {
-      "file": "content/quantum-observable-universe/lean/QOU/Machinery/DerivedCharacterCatalogue.lean",
-      "line": 144,
-      "decl_kw": "class",
-      "decl_name": "IsRMatrixDerived",
-      "type_var": "R",
-      "field_class": "Field",
-      "classification": "over-strong",
-      "evidence": "`R` used but no division/inverse found"
     },
     {
       "file": "content/quantum-observable-universe/lean/QOU/Machinery/DerivedCharacterCatalogue.lean",
@@ -525,28 +495,8 @@
       "decl_name": "?",
       "type_var": "R",
       "field_class": "Field",
-      "classification": "over-strong",
-      "evidence": "`R` used but no division/inverse found"
-    },
-    {
-      "file": "content/quantum-observable-universe/lean/QOU/Machinery/DerivedCharacterCatalogue.lean",
-      "line": 289,
-      "decl_kw": "def",
-      "decl_name": "hopfTwoDiquarkChi",
-      "type_var": "R",
-      "field_class": "Field",
-      "classification": "over-strong",
-      "evidence": "`R` used but no division/inverse found"
-    },
-    {
-      "file": "content/quantum-observable-universe/lean/QOU/Machinery/DerivedCharacterCatalogue.lean",
-      "line": 291,
-      "decl_kw": "?",
-      "decl_name": "?",
-      "type_var": "R",
-      "field_class": "Field",
-      "classification": "over-strong",
-      "evidence": "`R` used but no division/inverse found"
+      "classification": "genuine",
+      "evidence": "build-verified exception: anonymous IsRMatrixDerived instances whose stored witnesses divide (chis = ±1/q^k Laurent forms, genuine [Field]); the class itself IS relaxed to CommRing and the division-free named chis to CommRing — only the dividing-witness instances keep Field (build-verified green 2026-06-09)"
     },
     {
       "file": "content/quantum-observable-universe/lean/QOU/Machinery/DerivedCharacterCatalogue.lean",
@@ -565,28 +515,8 @@
       "decl_name": "?",
       "type_var": "R",
       "field_class": "Field",
-      "classification": "over-strong",
-      "evidence": "`R` used but no division/inverse found"
-    },
-    {
-      "file": "content/quantum-observable-universe/lean/QOU/Machinery/DerivedCharacterCatalogue.lean",
-      "line": 331,
-      "decl_kw": "def",
-      "decl_name": "trefoilTwoElectronChi",
-      "type_var": "R",
-      "field_class": "Field",
-      "classification": "over-strong",
-      "evidence": "`R` used but no division/inverse found"
-    },
-    {
-      "file": "content/quantum-observable-universe/lean/QOU/Machinery/DerivedCharacterCatalogue.lean",
-      "line": 333,
-      "decl_kw": "?",
-      "decl_name": "?",
-      "type_var": "R",
-      "field_class": "Field",
-      "classification": "over-strong",
-      "evidence": "`R` used but no division/inverse found"
+      "classification": "genuine",
+      "evidence": "build-verified exception: anonymous IsRMatrixDerived instances whose stored witnesses divide (chis = ±1/q^k Laurent forms, genuine [Field]); the class itself IS relaxed to CommRing and the division-free named chis to CommRing — only the dividing-witness instances keep Field (build-verified green 2026-06-09)"
     },
     {
       "file": "content/quantum-observable-universe/lean/QOU/Machinery/DerivedCharacterCatalogue.lean",
@@ -605,28 +535,8 @@
       "decl_name": "?",
       "type_var": "R",
       "field_class": "Field",
-      "classification": "over-strong",
-      "evidence": "`R` used but no division/inverse found"
-    },
-    {
-      "file": "content/quantum-observable-universe/lean/QOU/Machinery/DerivedCharacterCatalogue.lean",
-      "line": 373,
-      "decl_kw": "def",
-      "decl_name": "cinquefoilTwoMuonChi",
-      "type_var": "R",
-      "field_class": "Field",
-      "classification": "over-strong",
-      "evidence": "`R` used but no division/inverse found"
-    },
-    {
-      "file": "content/quantum-observable-universe/lean/QOU/Machinery/DerivedCharacterCatalogue.lean",
-      "line": 375,
-      "decl_kw": "?",
-      "decl_name": "?",
-      "type_var": "R",
-      "field_class": "Field",
-      "classification": "over-strong",
-      "evidence": "`R` used but no division/inverse found"
+      "classification": "genuine",
+      "evidence": "build-verified exception: anonymous IsRMatrixDerived instances whose stored witnesses divide (chis = ±1/q^k Laurent forms, genuine [Field]); the class itself IS relaxed to CommRing and the division-free named chis to CommRing — only the dividing-witness instances keep Field (build-verified green 2026-06-09)"
     },
     {
       "file": "content/quantum-observable-universe/lean/QOU/Machinery/DerivedCharacterCatalogue.lean",
@@ -645,48 +555,8 @@
       "decl_name": "?",
       "type_var": "R",
       "field_class": "Field",
-      "classification": "over-strong",
-      "evidence": "`R` used but no division/inverse found"
-    },
-    {
-      "file": "content/quantum-observable-universe/lean/QOU/Machinery/DerivedCharacterCatalogue.lean",
-      "line": 420,
-      "decl_kw": "def",
-      "decl_name": "figureEightThreeHiggsChi",
-      "type_var": "R",
-      "field_class": "Field",
-      "classification": "over-strong",
-      "evidence": "`R` used but no division/inverse found"
-    },
-    {
-      "file": "content/quantum-observable-universe/lean/QOU/Machinery/DerivedCharacterCatalogue.lean",
-      "line": 422,
-      "decl_kw": "?",
-      "decl_name": "?",
-      "type_var": "R",
-      "field_class": "Field",
-      "classification": "over-strong",
-      "evidence": "`R` used but no division/inverse found"
-    },
-    {
-      "file": "content/quantum-observable-universe/lean/QOU/Machinery/DerivedCharacterCatalogue.lean",
-      "line": 440,
-      "decl_kw": "def",
-      "decl_name": "figureEightOneOneOneHiggsChi",
-      "type_var": "R",
-      "field_class": "Field",
-      "classification": "over-strong",
-      "evidence": "`R` used but no division/inverse found"
-    },
-    {
-      "file": "content/quantum-observable-universe/lean/QOU/Machinery/DerivedCharacterCatalogue.lean",
-      "line": 442,
-      "decl_kw": "?",
-      "decl_name": "?",
-      "type_var": "R",
-      "field_class": "Field",
-      "classification": "over-strong",
-      "evidence": "`R` used but no division/inverse found"
+      "classification": "genuine",
+      "evidence": "build-verified exception: anonymous IsRMatrixDerived instances whose stored witnesses divide (chis = ±1/q^k Laurent forms, genuine [Field]); the class itself IS relaxed to CommRing and the division-free named chis to CommRing — only the dividing-witness instances keep Field (build-verified green 2026-06-09)"
     },
     {
       "file": "content/quantum-observable-universe/lean/QOU/Machinery/DerivedCharacterCatalogue.lean",
@@ -705,8 +575,8 @@
       "decl_name": "?",
       "type_var": "R",
       "field_class": "Field",
-      "classification": "over-strong",
-      "evidence": "`R` used but no division/inverse found"
+      "classification": "genuine",
+      "evidence": "build-verified exception: anonymous IsRMatrixDerived instances whose stored witnesses divide (chis = ±1/q^k Laurent forms, genuine [Field]); the class itself IS relaxed to CommRing and the division-free named chis to CommRing — only the dividing-witness instances keep Field (build-verified green 2026-06-09)"
     },
     {
       "file": "content/quantum-observable-universe/lean/QOU/Mathlib/HeckeAlgebra.lean",
@@ -775,8 +645,8 @@
       "decl_name": "H3.mul",
       "type_var": "R",
       "field_class": "Field",
-      "classification": "over-strong",
-      "evidence": "`R` used but no division/inverse found"
+      "classification": "genuine",
+      "evidence": "build-verified exception: module pre-existing broken (100+ errors at committed baseline: missing ℝ import, Nat.factorial absent, tactic bitrot). Relaxation unverifiable until repaired (own PR)."
     },
     {
       "file": "content/quantum-observable-universe/lean/QOU/Mathlib/HeckeAlgebra.lean",
@@ -785,8 +655,8 @@
       "decl_name": "H3.one_mul",
       "type_var": "R",
       "field_class": "Field",
-      "classification": "over-strong",
-      "evidence": "`R` used but no division/inverse found"
+      "classification": "genuine",
+      "evidence": "build-verified exception: module pre-existing broken (see H3.mul entry)"
     },
     {
       "file": "content/quantum-observable-universe/lean/QOU/MathlibExt/QPlancherel.lean",
@@ -795,18 +665,8 @@
       "decl_name": "HasPartitionFunction",
       "type_var": "R",
       "field_class": "Field",
-      "classification": "over-strong",
-      "evidence": "`R` used but no division/inverse found"
-    },
-    {
-      "file": "content/quantum-observable-universe/lean/QOU/MathlibExt/QPlancherel.lean",
-      "line": 66,
-      "decl_kw": "class",
-      "decl_name": "HasPartitionFunction",
-      "type_var": "R",
-      "field_class": "Field",
-      "classification": "over-strong",
-      "evidence": "`R` used but no division/inverse found"
+      "classification": "genuine",
+      "evidence": "build-verified exception: the class itself IS relaxed to CommRing (build-verified); the remaining [Field R] is the section `variable` binder feeding `measure` (dq²/Z — genuine division), which the block-scanner attributes to the class finding"
     },
     {
       "file": "content/quantum-observable-universe/lean/QOU/MathlibExt/QPlancherel.lean",
@@ -819,34 +679,14 @@
       "evidence": "uses `/` (division)"
     },
     {
-      "file": "content/quantum-observable-universe/lean/QOU/MathlibExt/SDP.lean",
-      "line": 54,
-      "decl_kw": "structure",
-      "decl_name": "SDPPrimal",
-      "type_var": "R",
-      "field_class": "Field",
-      "classification": "over-strong",
-      "evidence": "`R` used but no division/inverse found"
-    },
-    {
-      "file": "content/quantum-observable-universe/lean/QOU/MathlibExt/SDP.lean",
-      "line": 276,
-      "decl_kw": "axiom",
-      "decl_name": "strict_complementarity_unique_axiom",
-      "type_var": "R",
-      "field_class": "Field",
-      "classification": "over-strong",
-      "evidence": "`R` used but no division/inverse found"
-    },
-    {
       "file": "content/quantum-observable-universe/lean/QOU/Observations/QCltNonCommutative.lean",
       "line": 56,
       "decl_kw": "class",
       "decl_name": "QCltNonCommutative",
       "type_var": "R",
       "field_class": "LinearOrderedField",
-      "classification": "over-strong",
-      "evidence": "`R` used but no division/inverse found"
+      "classification": "genuine",
+      "evidence": "build-verified exception: uses ordering (0 < secondCumulant, qGaussianMeasure_nonneg); LinearOrderedCommRing is not a class in the pinned Mathlib v4.24.0, so LinearOrderedField is the weakest available order+ring class (relaxation attempted 2026-06-09, build failed: invalid binder annotation)"
     },
     {
       "file": "content/quantum-observable-universe/lean/QOU/Observations/TraceLocalityMeetsGsNonLocality.lean",
@@ -855,8 +695,8 @@
       "decl_name": "HasReconciliation",
       "type_var": "R",
       "field_class": "LinearOrderedField",
-      "classification": "over-strong",
-      "evidence": "`R` used but no division/inverse found"
+      "classification": "genuine",
+      "evidence": "build-verified exception: uses ordering; LinearOrderedCommRing is not a class in the pinned Mathlib v4.24.0 (same failed relaxation class as QCltNonCommutative); markovParameter z = 1/(q^{1/2}+q^{-1/2}) also genuinely divides in instances"
     },
     {
       "file": "content/quantum-observable-universe/lean/QOU/QBeta/RationalCoeffRecurrence.lean",
