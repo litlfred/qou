@@ -280,5 +280,28 @@
       "line": 79,
       "depends_on": "lake-build-qou-completes (Gate #1)"
     }
+  },
+  {
+    "id": "lean-mathlib-drift-fix-2026-06-09",
+    "summary": "Fix Mathlib API drift in 78 QOU Lake-tree files (Lean v4.24.0 repair surge tail; blocks Gate #2)",
+    "comment": "Discovered during PR #2060's Gate #2 regen attempt: `lake build QOU` against current main fails with EXIT=1 / 340 errors across 78 files. Error families: `bad import 'Mathlib.Algebra.BigOperators.Basic'` (Mathlib relocated the module), `unexpected token 'λ'` (Lean parser change), `failed to synthesize` (typeclass-resolution after Mathlib structural changes), `motive is not type correct` (rewrite failures), `unsolved goals` (tactic changes). PRs #2001/#2024 landed the bulk of the Lean v4.24.0 repair surge but this 78-file slice remained. See `docs/audits/2026-06-09-gate-2-mathlib-drift-blocker.md` for the full triage. Estimated 1-3 sessions; needs per-error triage + possible Mathlib version pin review (lakefile.toml currently pins `mathlib` at f897ebcf72cd16f89ab4577d0c826cd14afaafc7).",
+    "status": "open",
+    "priority": "high",
+    "origin": "session-2026-06-09-gate-2-attempt",
+    "createdAt": "2026-06-09",
+    "data": {
+      "goal": "lean-discharge",
+      "blocks": ["lean-compile-diagnostics-regen"],
+      "error_count": 340,
+      "file_count": 78,
+      "error_families": [
+        "bad import 'Mathlib.Algebra.BigOperators.Basic'",
+        "unexpected token 'λ'",
+        "failed to synthesize",
+        "motive is not type correct",
+        "unsolved goals"
+      ],
+      "audit": "docs/audits/2026-06-09-gate-2-mathlib-drift-blocker.md"
+    }
   }
 ]
