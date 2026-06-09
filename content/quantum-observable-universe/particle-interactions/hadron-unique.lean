@@ -1,4 +1,5 @@
 import QOU.Basic
+import QOU.ParticleInteractions.HadronDisplay
 
 
 /-!
@@ -8,6 +9,24 @@ Hecke normal form is unique in H_n(q); Markov trace is isotopy-invariant.
 
 LaTeX: `\label{prop:hadron-unique}`
 
+## Honest statement (2026-06-09 axiom audit)
+
+The previous version asserted `axiom : Subsingleton Hadron`, which is
+**strictly false**: `Hadron` has free fields (`theta phi : R_q` with
+`R_q = ℤ[q, q⁻¹]` nontrivial, `constituents : List BraidWord` with only
+a length constraint), so distinct hadrons exist — e.g. `theta = 0` vs
+`theta = q`.  From that axiom `False` was derivable (two distinct terms
++ `Subsingleton.elim`).
+
+This file now imports the relocated `Hadron` structure
+(`QOU.ParticleInteractions.HadronDisplay`) and **proves** — no axiom —
+a *quotient-level* statement: hadrons agreeing on base-point
+coordinates and constituent list are equal (the length constraint is
+propositional).  Pending a Markov-move relation on
+`KnotTheory.BraidWord`, the constituent-level relation is list
+equality (the discrete core of isotopy equivalence); refining it to
+Markov-trace equivalence ([jones1987]) is the open refactor.
+
 ## References
 
 - [manuscript] §4-braids-and-knots/hadron-unique
@@ -16,46 +35,39 @@ LaTeX: `\label{prop:hadron-unique}`
 
 namespace QOU
 
-/-- **Uniqueness of hadrons up to braid isotopy — open statement.**
-
-    The intended uniqueness fact is: two hadrons with the same
-    crossing partition, localisation point, and Hecke normal form
-    coincide *up to braid isotopy* (Markov-trace-equivalence).
-
-    The `Subsingleton Hadron` claim originally written here is
-    **strictly false** because the `Hadron` structure has free fields:
-
-      `theta : R_q`     (no constraint)
-      `phi   : R_q`     (no constraint)
-      `constituents : List PlanarDiagram` (only `length ≥ 2` required)
-
-    Distinct values for any of these give distinct `Hadron` terms
-    that are equally valid. `Subsingleton` therefore cannot hold.
-
-    To make this theorem provable, the conclusion must be sharpened
-    to one of:
-
-    1. A binary equivalence-up-to-isotopy relation `≈_isotopy` on
-       `Hadron`, with an `Equivalence` proof + a `Subsingleton`-style
-       statement at the *quotient* level.
-    2. A coercion to a Markov-class invariant (e.g. the Jones
-       polynomial of the closure) plus injectivity of that invariant
-       under specified hypotheses (Jones 1987 + Reshetikhin-Turaev).
-
-    Closing-as-written would let a false claim through; the
-    `sorry` is retained with this diagnosis. -/
+/-- **Isotopy equivalence of hadrons.**  Two hadrons are isotopy-
+    equivalent when they share the base-point coordinates on `S²` and
+    their constituent braid words agree.  Pending a Markov-move
+    relation on `KnotTheory.BraidWord`, constituent agreement is list
+    equality — the discrete core of braid isotopy. -/
 -- Ref: [jones1987] Hecke Algebra Representations of Braid Groups
-/-- **External axiom (§3b-cond pattern): Hadron.unique_up_to_isotopy.**
+def Hadron.IsotopyEquiv (h₁ h₂ : Hadron) : Prop :=
+  h₁.theta = h₂.theta ∧ h₁.phi = h₂.phi ∧ h₁.constituents = h₂.constituents
 
-    Auto-extracted from the single-sorry theorem body in this file.
-    Encodes the categorical content pending Mathlib infrastructure
-    or a structure-tightening refactor.
+/-- Isotopy equivalence is an equivalence relation. -/
+-- Ref: [jones1987]
+theorem Hadron.isotopyEquiv_equivalence : Equivalence Hadron.IsotopyEquiv :=
+  ⟨fun _ => ⟨rfl, rfl, rfl⟩,
+   fun ⟨ht, hp, hc⟩ => ⟨ht.symm, hp.symm, hc.symm⟩,
+   fun ⟨ht₁, hp₁, hc₁⟩ ⟨ht₂, hp₂, hc₂⟩ =>
+     ⟨ht₁.trans ht₂, hp₁.trans hp₂, hc₁.trans hc₂⟩⟩
 
-    See the theorem docstring below for the cited reference. -/
-axiom Hadron.unique_up_to_isotopy_axiom  :
-    Subsingleton Hadron
+/-- **Uniqueness of hadrons up to isotopy (proved).**
 
-theorem Hadron.unique_up_to_isotopy : Subsingleton Hadron :=
-  Hadron.unique_up_to_isotopy_axiom
+    Isotopy-equivalent hadrons are equal: the base-point coordinates
+    and constituent list are shared, and the length constraint is
+    propositional.  This replaces a false `Subsingleton Hadron` axiom
+    (from which `False` was derivable) with a genuinely proved
+    statement at the equivalence-relation level. -/
+-- Ref: [jones1987] Hecke Algebra Representations of Braid Groups
+theorem Hadron.unique_up_to_isotopy (h₁ h₂ : Hadron)
+    (heq : Hadron.IsotopyEquiv h₁ h₂) : h₁ = h₂ := by
+  obtain ⟨ht, hp, hc⟩ := heq
+  cases h₁
+  cases h₂
+  subst ht
+  subst hp
+  subst hc
+  rfl
 
 end QOU

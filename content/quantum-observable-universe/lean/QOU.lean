@@ -44,6 +44,8 @@ import QOU.QuantumObservableUniverse
 import QOU.QuantumObservableUniverses.QAnalysis
 import QOU.QuantumObservableUniverses.QIntegralTransforms
 import QOU.QuantumObservableUniverses.QDifferentialGeometry
+import QOU.LiftingDescent.QuantumCharacteristicClassDisplay
+import QOU.ParticleInteractions.HadronDisplay
 import QOU.Elaboration
 import QOU.PathIntegrals
 import QOU.MobiusEnergy
