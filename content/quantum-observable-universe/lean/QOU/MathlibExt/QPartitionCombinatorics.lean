@@ -1,3 +1,8 @@
+import Mathlib.Algebra.Order.Field.Basic
+import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.BigOperators.Group.Finset.Defs
+import Mathlib.Tactic
+
 /-!
 # QOU.MathlibExt.QPartitionCombinatorics
   — q-deformed partition combinatorics infrastructure
@@ -14,8 +19,8 @@ needed by the QOU mass-formula chain:
 with basic positivity / nonvanishing lemmas for `q > 1`.
 
 These constructions are the **concrete substrate** behind the
-abstract Wedderburn-weight `\tilde w_λ = dim_q²(λ) / [n]_q!` and the
-Wenzl Schur element `s_{λ,X}(Q)` used in the canonical Markov-trace
+abstract Wedderburn-weight `\tilde w_lam = dim_q²(lam) / [n]_q!` and the
+Wenzl Schur element `s_{lam,X}(Q)` used in the canonical Markov-trace
 decomposition (per
 `prop:wedderburn-weight-canonical` and
 `prop:macdonald-hook-telescope`).
@@ -26,10 +31,6 @@ Refs:
 - [stanley1999] Enumerative Combinatorics II, Cor. 7.12.5
 -/
 
-import Mathlib.Algebra.Order.Field.Basic
-import Mathlib.Data.Real.Basic
-import Mathlib.Algebra.BigOperators.Group.Finset.Defs
-import Mathlib.Tactic
 
 namespace QOU.MathlibExt.QPartitionCombinatorics
 
@@ -52,7 +53,7 @@ theorem qBracket_zero (q : ℝ) : qBracket q 0 = 0 := by
 theorem qBracket_one {q : ℝ} (h_denom_ne : q - q⁻¹ ≠ 0) :
     qBracket q 1 = 1 := by
   unfold qBracket
-  simp only [Nat.one_ne_zero, if_false, pow_one, zpow_neg, zpow_one]
+  rw [if_neg (by decide : (1 : ℕ) ≠ 0), zpow_neg, zpow_natCast, pow_one]
   exact div_self h_denom_ne
 
 /-- **`[2]_q = q + q⁻¹`** when `q ≠ 0` and the denominator is nonzero.
@@ -64,15 +65,11 @@ theorem qBracket_two {q : ℝ} (hq_ne : q ≠ 0)
     (h_denom_ne : q - q⁻¹ ≠ 0) :
     qBracket q 2 = q + q⁻¹ := by
   unfold qBracket
-  have hne : (2 : ℕ) ≠ 0 := by decide
-  simp only [if_neg hne]
-  -- q ^ (-(2 : ℤ)) = q⁻¹ ^ 2
-  have h1 : q ^ (-(2 : ℤ)) = q⁻¹ ^ 2 := by
-    rw [show (-(2 : ℤ)) = -((2 : ℕ) : ℤ) from rfl, zpow_neg, zpow_natCast,
-        ← inv_pow]
+  rw [if_neg (by decide : (2 : ℕ) ≠ 0)]
+  have h1 : q ^ (-((2 : ℕ) : ℤ)) = q⁻¹ ^ 2 := by
+    rw [zpow_neg, zpow_natCast, inv_pow]
   rw [h1]
-  -- Difference of squares factorisation
-  have h2 : q ^ 2 - q⁻¹ ^ 2 = (q - q⁻¹) * (q + q⁻¹) := by ring
+  have h2 : q ^ (2 : ℕ) - q⁻¹ ^ 2 = (q - q⁻¹) * (q + q⁻¹) := by ring
   rw [h2]
   exact mul_div_cancel_left₀ (q + q⁻¹) h_denom_ne
 
@@ -175,44 +172,44 @@ theorem qFactorial_ne_zero {q : ℝ} (hq : 1 < q) (n : ℕ) :
 
 /-! ## Partitions (list-based encoding) -/
 
-/-- A **partition** as a list `λ = [λ_1, λ_2, …]` of positive parts.
+/-- A **partition** as a list `lam = [lam_1, lam_2, …]` of positive parts.
     No order constraint is imposed at the type level; downstream
     structure theorems may assume weakly decreasing. -/
 abbrev Partition := List ℕ
 
 namespace Partition
 
-/-- The size `|λ| = Σ λ_i`. -/
-def size (λ : Partition) : ℕ := λ.sum
+/-- The size `|lam| = Σ lam_i`. -/
+def size (lam : Partition) : ℕ := lam.sum
 
 /-- The number of rows. -/
-def length (λ : Partition) : ℕ := λ.length
+def length (lam : Partition) : ℕ := List.length lam
 
 /-- The maximal row length (= number of columns in the conjugate). -/
-def maxPart (λ : Partition) : ℕ := (0 :: λ).foldl Nat.max 0
+def maxPart (lam : Partition) : ℕ := (0 :: lam).foldl Nat.max 0
 
-/-- The **conjugate** (transpose) partition `λ'`.
+/-- The **conjugate** (transpose) partition `lam'`.
 
-    Convention: for each column index `j ∈ [0, maxPart λ)`, the
+    Convention: for each column index `j ∈ [0, maxPart lam)`, the
     conjugate part is the number of rows with at least `j + 1`
     boxes. -/
-def conjugate (λ : Partition) : Partition :=
-  (List.range λ.maxPart).map fun j =>
-    (λ.filter (· > j)).length
+def conjugate (lam : Partition) : Partition :=
+  (List.range lam.maxPart).map fun j =>
+    (lam.filter (· > j)).length
 
-/-- **Hook length** at cell `(i, j)` (0-indexed) of partition `λ`,
-    when `(i, j) ∈ λ`.  For cells outside `λ`, returns 0.
+/-- **Hook length** at cell `(i, j)` (0-indexed) of partition `lam`,
+    when `(i, j) ∈ lam`.  For cells outside `lam`, returns 0.
 
     `h(i, j) = arm(i, j) + leg(i, j) + 1` where
-      `arm(i, j) = λ_i - j - 1`  (cells to the right in row i)
-      `leg(i, j) = |{ i' > i : λ_{i'} > j }|`  (cells below in col j) -/
-def hookLength (λ : Partition) (i j : ℕ) : ℕ :=
-  match λ.get? i with
+      `arm(i, j) = lam_i - j - 1`  (cells to the right in row i)
+      `leg(i, j) = |{ i' > i : lam_{i'} > j }|`  (cells below in col j) -/
+def hookLength (lam : Partition) (i j : ℕ) : ℕ :=
+  match lam.get? i with
   | none => 0
   | some row_i =>
     if j < row_i then
       let armLen := row_i - j - 1
-      let legLen := ((λ.drop (i + 1)).filter (· > j)).length
+      let legLen := ((lam.drop (i + 1)).filter (· > j)).length
       armLen + legLen + 1
     else
       0
@@ -232,18 +229,18 @@ end Partition
 
 /-! ## q-deformed dimension -/
 
-/-- The **q-deformed dimension** of partition `λ ⊢ n`:
+/-- The **q-deformed dimension** of partition `lam ⊢ n`:
 
-      dim_q(λ) = [n]_q! / ∏_{x ∈ λ} [h_x]_q.
+      dim_q(lam) = [n]_q! / ∏_{x ∈ lam} [h_x]_q.
 
     Computed as a fold over rows × columns, using
     `Partition.hookLength` for each cell. -/
-noncomputable def qDim (q : ℝ) (λ : Partition) : ℝ :=
-  qFactorial q λ.size /
-    (List.range λ.length).foldl
+noncomputable def qDim (q : ℝ) (lam : Partition) : ℝ :=
+  qFactorial q lam.size /
+    (List.range lam.length).foldl
       (fun acc i =>
-        acc * (List.range ((λ.get? i).getD 0)).foldl
-          (fun a j => a * qBracket q (Partition.hookLength λ i j))
+        acc * (List.range ((lam.get? i).getD 0)).foldl
+          (fun a j => a * qBracket q (Partition.hookLength lam i j))
           1)
       1
 
@@ -255,11 +252,11 @@ theorem qDim_nil (q : ℝ) : qDim q [] = qFactorial q 0 / 1 := by
 /-- Content of a cell at position (i, j) in a Young diagram: j - i. -/
 def cellContent (i j : ℕ) : ℤ := (j : ℤ) - (i : ℤ)
 
-/-- Content sum c(λ) = Σ_{(i,j)∈λ} (j - i).
+/-- Content sum c(lam) = Σ_{(i,j)∈lam} (j - i).
     Sum of contents over all cells in the Young diagram. -/
-def contentSum (λ : Partition) : ℤ :=
-  λ.enum.foldl (fun acc ⟨i, row_len⟩ =>
-    acc + (List.range row_len).foldl (fun s j => s + cellContent i j) 0
+def contentSum (lam : Partition) : ℤ :=
+  (List.range (List.length lam)).foldl (fun acc i =>
+    acc + (List.range (lam.getD i 0)).foldl (fun s j => s + cellContent i j) 0
   ) 0
 
 @[simp]
@@ -271,15 +268,13 @@ theorem contentSum_one : contentSum [1] = 0 := by
   unfold contentSum cellContent; simp
 
 /-- Content sum of (2) = 1 (cells at (0,0) and (0,1)). -/
-theorem contentSum_two : contentSum [2] = 1 := by
-  unfold contentSum cellContent; simp; ring
+theorem contentSum_two : contentSum [2] = 1 := by decide
 
 /-- Content sum of (1,1) = -1 (cells at (0,0) and (1,0)). -/
-theorem contentSum_one_one : contentSum [1, 1] = -1 := by
-  unfold contentSum cellContent; simp; ring
+theorem contentSum_one_one : contentSum [1, 1] = -1 := by decide
 
 /-- **THEOREM (q-Schur weight at H₂).** The Markov weight of partition
-    λ ⊢ 2 is y_λ = q^{c(λ)} / [2]_q. This is the bridge between the
+    lam ⊢ 2 is y_lam = q^{c(lam)} / [2]_q. This is the bridge between the
     content-sum formula and the explicitly-proved H₂ weights. -/
 -- Ref: [wenzl1988] Theorem 5 specialised to n=2
 -- Ref: [manuscript] prop:q-schur-y-lambda-closed-form (H₂ case)
