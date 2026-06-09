@@ -62,5 +62,11 @@ blocks compile against the real `CategoricalConnection`.
 - The `.ts` `lean.ref`s resolve by decl name (unchanged) — no ref churn from
   the new `R` parameter.
 - All 7 touched blocks re-rated `proof-statement-integrity` → `pass`.
-- Follow-up (optional, larger blast radius): lift `[Linear k C]` onto the base
-  `(𝐂, A, τ)` triple so every consumer inherits it from one source.
+- Follow-up (larger blast radius, own PR): lift `[CommRing R] [Linear R C]`
+  onto the base `(𝐂, A, τ)` triple (`QuantumUniverse` / `QuantumObservableUniverse`)
+  so every consumer inherits it from one source.  Ground ring is `R` (a
+  commutative ring), not a field `k` — the narrative "k-linear" wording maps to
+  `Linear R C` per the §7c base-ring convention.  Additive (`⊕` / biproducts)
+  follows from semisimplicity (Ext¹-vanishing at generic q; semisimplified
+  quotient at the root-of-unity substrate q₀), so it need not be a separate
+  axiom.
