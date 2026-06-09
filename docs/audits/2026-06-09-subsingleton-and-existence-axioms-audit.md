@@ -24,6 +24,16 @@ development has an axiom audit that returns only `Classical.choice`,
 result returns a bespoke axiom that often asserts a **provably false**
 proposition. That is the audit flag.
 
+> **✅ Resolved 2026-06-09 (see [§7a](#7a-resolution-applied-2026-06-09)).**
+> All 15 Class-A `Subsingleton` axioms are remediated: **13 downgraded
+> to genuinely type-checked proofs (zero axioms)**, 2 retained as honest
+> §3b-cond conditional axioms. The 15 `*-unique.lean` files were
+> `validation:"not_checked"` display snippets that never imported their
+> structures (the names auto-bound as type variables), so the false
+> axioms never entered a checked build — **no live inconsistency**; the
+> §3 `False` derivation is now moot. 10 content-only structures were
+> relocated into the `QOU` library so the proofs type-check there.
+
 ## 1. Two patterns — one sound, one not
 
 The repo legitimately uses the **§3b-cond conditional-class** pattern
@@ -271,7 +281,60 @@ For each of the 15, pick one:
 For Class B §4a, the decision is editorial: either label the CODATA
 bounds as **calibration inputs** (honest) or derive them.
 
-None of these are applied in this PR — this is an **audit only**.
+### 7a. Resolution applied (2026-06-09)
+
+All **15** Class-A items have been remediated, and Class B §4a was
+de-axiomatised. Combination of options 1 + 3 (downgrade + tighten),
+plus a structural prerequisite the audit had missed:
+
+**Prerequisite — the 15 `*-unique.lean` files are
+`validation:"not_checked"` display snippets that never imported their
+subject structures.** Each `import`ed only `QOU.Basic`, so the
+structure name (`Hadron`, `CatHodgeInvolution`, …) **auto-bound as a
+fresh `Sort`-valued type variable**. The "`axiom : Subsingleton X`"
+therefore desugared to `∀ {α}, Subsingleton α` — provably false, but
+it never entered any *checked* build (these files are not in the
+`lake build QOU` closure). So there was **no live environment
+inconsistency**; the §3 `False` derivation is the entailment *if the
+carrier were the concrete structure* — now moot, since the axioms are
+replaced by genuinely type-checked statements.
+
+**What was done:**
+
+- **5 library-backed** (`CatHodgeInvolution`, `CategoricalInstanton`,
+  `CategoricalConnection`, `CategoricalQExtDeriv`, `FrobeniusHopfData`):
+  the `*-unique.lean` files now `import` the existing
+  `QOU.QuantumObservableUniverse.*` library structure.
+- **10 content-only structures** (`QResolvent`, `QHeatEquation`,
+  `QDilogarithm`, `CategoricalFourier`, `CategoricalLaplace`,
+  `CategoricalDiracOperator`, `CategoricalLagrangian`,
+  `CategoricalQConnection`, `QuantumCharacteristicClass`, `Hadron`)
+  were **relocated** into new authoritative library modules
+  (`QOU.QuantumObservableUniverses.{QAnalysis, QIntegralTransforms,
+  QDifferentialGeometry}`, `QOU.LiftingDescent.QuantumCharacteristicClassDisplay`,
+  `QOU.ParticleInteractions.HadronDisplay`), added to the `QOU.lean`
+  root so CI's `lake build QOU` checks them. Two latent never-checked
+  errors were fixed in passing (`QDilogarithm` needed `[Add H]`;
+  `QuantumCharacteristicClass.zero` had a non-synthesising default,
+  dropped as redundant).
+
+**Outcome — axiom accounting for the 15:**
+
+- **13 now PROVED, zero axioms** (extensionality / determination /
+  degeneracy): hodge-star, instanton, connection, q-ext-deriv, dirac,
+  lagrangian, fourier, laplace, q-connection, char-classes, hadron,
+  q-resolvent, q-heat.
+- **2 honest §3b-cond conditional axioms** (named, cited, *not*
+  `Subsingleton`): `FrobeniusHopfData.frobeniusForm_unique_axiom`
+  (up-to-invertible-scalar on a simple object, Schur, [kock2004]) and
+  `QDilogarithm.unique_axiom` (pentagon universal property,
+  [kassel1995]).
+
+Every `*-unique.lean` was verified by compiling it directly with the
+toolchain `lean` binary against the built library oleans (all exit 0).
+Declaration names are unchanged, so `.ts` `lean.ref`s did not churn.
+Class B §4a is closed by commit `4384c1eb` (terminal-resolution
+tautological CODATA bounds de-axiomatised).
 
 ## 8. Method / reproduction
 
