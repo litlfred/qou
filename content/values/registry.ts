@@ -234,6 +234,69 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
       units: "kcal/mol",
     }),
 
+    // ── Predicted bond angles (braid-weight VSEPR master table) ────────
+    predicted_ch4_deg: Object.freeze({
+      name: "predicted_ch4_deg",
+      description: "Predicted CH₄ H–C–H angle (braid-weight VSEPR, no fit).",
+      symbol: "\\theta_{\\mathrm{CH_4}}",
+      witnessFile:
+        "folio-assistant/computations/molecular-angle-master-table.witness.json",
+      witnessPath: "data.table.CH4.predicted_deg",
+      defaultPrecision: 5,
+      units: "deg",
+    }),
+    predicted_nh3_deg: Object.freeze({
+      name: "predicted_nh3_deg",
+      description: "Predicted NH₃ H–N–H angle (braid-weight VSEPR, no fit).",
+      symbol: "\\theta_{\\mathrm{NH_3}}",
+      witnessFile:
+        "folio-assistant/computations/molecular-angle-master-table.witness.json",
+      witnessPath: "data.table.NH3.predicted_deg",
+      defaultPrecision: 5,
+      units: "deg",
+    }),
+    predicted_h2o_deg: Object.freeze({
+      name: "predicted_h2o_deg",
+      description: "Predicted H₂O H–O–H angle (braid-weight VSEPR, no fit).",
+      symbol: "\\theta_{\\mathrm{H_2O}}",
+      witnessFile:
+        "folio-assistant/computations/molecular-angle-master-table.witness.json",
+      witnessPath: "data.table.H2O.predicted_deg",
+      defaultPrecision: 5,
+      units: "deg",
+    }),
+    predicted_c2h4_deg: Object.freeze({
+      name: "predicted_c2h4_deg",
+      description: "Predicted C₂H₄ H–C–H angle (braid-weight VSEPR, no fit).",
+      symbol: "\\theta_{\\mathrm{C_2H_4}}",
+      witnessFile:
+        "folio-assistant/computations/molecular-angle-master-table.witness.json",
+      witnessPath: "data.table.C2H4.predicted_deg",
+      defaultPrecision: 5,
+      units: "deg",
+    }),
+    predicted_co2_deg: Object.freeze({
+      name: "predicted_co2_deg",
+      description: "Predicted CO₂ O–C–O angle (linear, braid-weight VSEPR).",
+      symbol: "\\theta_{\\mathrm{CO_2}}",
+      witnessFile:
+        "folio-assistant/computations/molecular-angle-master-table.witness.json",
+      witnessPath: "data.table.CO2.predicted_deg",
+      defaultPrecision: 5,
+      units: "deg",
+    }),
+    predicted_h2s_deg: Object.freeze({
+      name: "predicted_h2s_deg",
+      description:
+        "Predicted H₂S H–S–H angle (pure-p base, braid-weight VSEPR).",
+      symbol: "\\theta_{\\mathrm{H_2S}}",
+      witnessFile:
+        "folio-assistant/computations/molecular-angle-master-table.witness.json",
+      witnessPath: "data.table.H2S.predicted_deg",
+      defaultPrecision: 5,
+      units: "deg",
+    }),
+
     H_A: Object.freeze({
       name: "H_A",
       description: "Planck constant ℏ_q = q - q^{-1} at the substrate.",
