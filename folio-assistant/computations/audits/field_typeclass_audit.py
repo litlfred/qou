@@ -111,9 +111,12 @@ def strip_comments_strings(text: str) -> str:
 
 
 # field-only signals (on the stripped body). Comments / strings / URLs are
-# stripped beforehand, so any surviving `/` is a (H)Div — including
-# digit-prefixed forms like `1/q` that a lookbehind would miss.
-DIV_RE = re.compile(r"/")
+# stripped beforehand, so a surviving single `/` is a (H)Div — including
+# digit-prefixed forms like `1/q` that a digit lookbehind would miss. The
+# `(?<!/)/(?!/)` guard skips Lean subtype notation `{ x // p x }` (the `//`
+# is not a comment delimiter, so it survives stripping) while still catching
+# real single-slash division. (Gemini review #2072.)
+DIV_RE = re.compile(r"(?<!/)/(?!/)")
 INV_RE = re.compile(r"⁻¹")
 FIELD_LEMMA_RE = re.compile(
     r"\b(Inv\.inv|inv_|_inv\b|div_|_div\b|mul_inv|inv_mul|field_simp|"

@@ -4,8 +4,8 @@
   "total": 87,
   "counts": {
     "phantom": 0,
-    "over-strong": 0,
-    "genuine": 87
+    "over-strong": 2,
+    "genuine": 85
   },
   "findings": [
     {
@@ -815,8 +815,8 @@
       "decl_name": "SDPPrimal",
       "type_var": "R",
       "field_class": "Field",
-      "classification": "genuine",
-      "evidence": "module uses division/inverse elsewhere (field-by-design)"
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
     },
     {
       "file": "content/quantum-observable-universe/lean/QOU/MathlibExt/SDP.lean",
@@ -825,8 +825,8 @@
       "decl_name": "strict_complementarity_unique_axiom",
       "type_var": "R",
       "field_class": "Field",
-      "classification": "genuine",
-      "evidence": "module uses division/inverse elsewhere (field-by-design)"
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
     },
     {
       "file": "content/quantum-observable-universe/lean/QOU/QBeta/RationalCoeffRecurrence.lean",
