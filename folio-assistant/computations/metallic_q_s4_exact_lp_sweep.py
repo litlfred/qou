@@ -73,8 +73,8 @@ def delta_n(n: int) -> mp.mpf:
     return (mp.mpf(n) + mp.sqrt(n * n + 4)) / 2
 
 
-METALLIC = {k: delta_n(k) for k in (1, 2, 3, 4)}
-METALLIC_NAMES = {1: "φ", 2: "δ_silver", 3: "δ_bronze", 4: "δ_4"}
+METALLIC = {k: delta_n(k) for k in (1, 2, 3, 4, 5)}
+METALLIC_NAMES = {1: "φ", 2: "δ_silver", 3: "δ_bronze", 4: "δ_4", 5: "δ_5"}
 Q0 = mp.mpf("1.1099785955541805")
 
 
@@ -165,18 +165,31 @@ def braid(word: list[int]) -> list[tuple[int, int]]:
     return [(1, g) for g in word]
 
 
-def t_and_gram(n: int, shapes: list[list[int]], words: list[list[int]],
-               q: float, convention: str) -> tuple[np.ndarray, np.ndarray]:
-    """Exact cost vector t_i = tr_M(b_i) and Gram G_ij = tr_M(b_i b_j)."""
+def _weights_f64(n: int, shapes: list[list[int]], q: float,
+                 convention: str) -> list[float]:
     if convention == "plancherel":
-        y = [float(v) for v in plancherel_weights(shapes, mp.mpf(q))]
-    else:
-        y = pn.trace_weights_n(n, q)
-    d = len(words)
-    t = np.empty(d)
+        return [float(v) for v in plancherel_weights(shapes, mp.mpf(q))]
+    return pn.trace_weights_n(n, q)
+
+
+def t_vector_f64(n: int, shapes: list[list[int]], words: list[list[int]],
+                 q: float, convention: str) -> np.ndarray:
+    """Exact cost vector t_i = tr_M(b_i) only (no Gram) — used by the
+    coincidence grid where the Gram would be O(d²) wasted work."""
+    y = _weights_f64(n, shapes, q, convention)
+    t = np.empty(len(words))
     for i, w in enumerate(words):
         chi = pn.chi_lambdas_braid(shapes, braid(w), q)
         t[i] = sum(yi * ci for yi, ci in zip(y, chi))
+    return t
+
+
+def t_and_gram(n: int, shapes: list[list[int]], words: list[list[int]],
+               q: float, convention: str) -> tuple[np.ndarray, np.ndarray]:
+    """Exact cost vector t_i = tr_M(b_i) and Gram G_ij = tr_M(b_i b_j)."""
+    y = _weights_f64(n, shapes, q, convention)
+    d = len(words)
+    t = t_vector_f64(n, shapes, words, q, convention)
     G = np.empty((d, d))
     for i in range(d):
         for j in range(i, d):
@@ -309,7 +322,7 @@ def trace_classes(n: int, shapes, words, conv: str) -> list[list[int]]:
     """Group basis indices whose cost functions are identical (probe at
     3 generic q's) — braid-conjugate words share tr_M for all q."""
     probes = [1.31, 2.07, 3.71]
-    tt = [t_and_gram(n, shapes, words, q, conv)[0] for q in probes]
+    tt = [t_vector_f64(n, shapes, words, q, conv) for q in probes]
     classes: list[list[int]] = []
     for i in range(len(words)):
         for cl in classes:
@@ -328,7 +341,7 @@ def coincidence_roots(n: int, shapes, words, labels, conv: str,
     reps = [cl[0] for cl in classes]
     grid = np.linspace(q_lo, q_hi, 600)
     tgrid = np.array(
-        [t_and_gram(n, shapes, words, float(q), conv)[0][reps] for q in grid]
+        [t_vector_f64(n, shapes, words, float(q), conv)[reps] for q in grid]
     )  # (600, n_reps)
 
     found: list[dict] = []
@@ -340,7 +353,7 @@ def coincidence_roots(n: int, shapes, words, labels, conv: str,
             lo, hi = grid[k], grid[k + 1]
 
             def d_f64(q: float) -> float:
-                t = t_and_gram(n, shapes, words, q, conv)[0]
+                t = t_vector_f64(n, shapes, words, q, conv)
                 return float(t[reps[a]] - t[reps[b]])
 
             for _ in range(60):  # f64 bisection

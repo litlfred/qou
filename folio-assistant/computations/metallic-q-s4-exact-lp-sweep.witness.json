@@ -1,6 +1,6 @@
 {
   "description": "S(4) exact metallic LP active-set sweep on the canonical T_w basis of H_4(q) (24 positive reduced words), plus the exact-Gram n=3 re-run closing the prior probe's rank-1 Gram approximation.  Exact costs t_i = tr_M(b_i) and Gram G_ij = tr_M(b_i b_j) from native Hoefsmit characters (pyhecke_native), two weight conventions: plancherel (y_\u03bb = H_q(\u03bb)\u00b2/[n]_q!, the proved-S(2) convention) and canonical Markov (trace_weights_n).  LP duals emitted per the LP/SDP discipline; cost-coincidence loci located and classified against the metallic ladder \u03b4_1..\u03b4_4.",
-  "computed_at": "2026-06-09T21:25:31.941879+00:00",
+  "computed_at": "2026-06-09T21:54:07.685063+00:00",
   "script": "metallic_q_s4_exact_lp_sweep.py",
   "engine": "pyhecke_native 0.9.0",
   "validations": {
@@ -3623,5 +3623,5 @@
     "Basis is the canonical positive T_w lift; the prior n=3 probe's NF basis used one inverse word (L_- = \u03c3\u2080\u207b\u00b9\u03c3\u2081\u207b\u00b9), replaced here by \u03c3\u2082\u03c3\u2081.  Active-set indices are therefore not 1:1 comparable to the 2026-06-09 approximate n=3 probe on that one element.",
     "n_target=1.0 and the Frobenius-cone constraint Gx \u2265 0 follow the prior probes; physical demand vectors (per-nucleus) are out of scope for this structural probe."
   ],
-  "runtime_seconds": 52.3
+  "runtime_seconds": 8.0
 }

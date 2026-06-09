@@ -1,0 +1,401 @@
+{
+  "description": "Exact symbolic proof of the q = 4 canonical-convention cost coincidences at n = 4, with the complete factored pairwise root structure and the metallic-vs-s-arithmetic verdict.  All computations exact over \u211a(s), s = \u221aq; generator convention locked to pyhecke_native by a 360-case numerical verification.",
+  "computed_at": "2026-06-09T21:53:13.915269+00:00",
+  "script": "metallic_q4_canonical_coincidence_proof.py",
+  "engine_verification": {
+    "n_checked": 360,
+    "worst_rel_err": 1.7763568394002505e-15,
+    "pass": true
+  },
+  "ocneanu_weights_exact": {
+    "(4,)": "(s**21 + s**20 + s**18 + 2*s**17 + 3*s**16 + s**15 + 3*s**14 + 4*s**13 + 4*s**12 + 3*s**11 + 4*s**10 + 5*s**9 + 3*s**8 + 5*s**7 + 4*s**6 + 6*s**5 + 3*s**4 + 3*s**3 + 3*s**2 + 1)/(s**30 + 3*s**28 + 6*s**26 + 10*s**24 + 14*s**22 + 18*s**20 + 21*s**18 + 23*s**16 + 23*s**14 + 21*s**12 + 18*s**10 + 14*s**8 + 10*s**6 + 6*s**4 + 3*s**2 + 1)",
+    "(3, 1)": "(s**16 + s**15 + s**14 + s**13 + 3*s**11 + s**10 + 3*s**9 + s**8 + s**7 + s**6 - 2*s**5 + s**4 - s**3)/(s**22 + 3*s**20 + 5*s**18 + 7*s**16 + 8*s**14 + 8*s**12 + 8*s**10 + 8*s**8 + 7*s**6 + 5*s**4 + 3*s**2 + 1)",
+    "(2, 2)": "(s**13 + s**12 + s**11 + s**10 - s**9 + s**8 - s**7)/(s**20 + 2*s**18 + 4*s**16 + 6*s**14 + 7*s**12 + 8*s**10 + 7*s**8 + 6*s**6 + 4*s**4 + 2*s**2 + 1)",
+    "(2, 1, 1)": "(s**19 + s**18 + 2*s**17 + s**16 - s**15 + s**14 - 3*s**13 + s**12 - 3*s**11 - s**9 + s**8 - s**7 + s**6)/(s**22 + 3*s**20 + 5*s**18 + 7*s**16 + 8*s**14 + 8*s**12 + 8*s**10 + 8*s**8 + 7*s**6 + 5*s**4 + 3*s**2 + 1)",
+    "(1, 1, 1, 1)": "(s**30 + 3*s**28 - 3*s**27 + 3*s**26 - 6*s**25 + 4*s**24 - 5*s**23 + 3*s**22 - 5*s**21 + 4*s**20 - 3*s**19 + 4*s**18 - 4*s**17 + 3*s**16 - s**15 + 3*s**14 - 2*s**13 + s**12 + s**10 - s**9)/(s**30 + 3*s**28 + 6*s**26 + 10*s**24 + 14*s**22 + 18*s**20 + 21*s**18 + 23*s**16 + 23*s**14 + 21*s**12 + 18*s**10 + 14*s**8 + 10*s**6 + 6*s**4 + 3*s**2 + 1)"
+  },
+  "q4_proofs": {
+    "t(\u03b3) \u2212 t(\u03c31\u03c32\u03c31)": {
+      "difference_factored": "2 - s  /  s**2 + 1",
+      "s_minus_2_divides": true,
+      "s_plus_2_divides": false,
+      "value_at_q4": "0"
+    },
+    "t(\u03c31) \u2212 t(\u03c31\u03c32\u03c31\u03c33)": {
+      "difference_factored": "-s*(s - 2)  /  (s**2 + 1)**2",
+      "s_minus_2_divides": true,
+      "s_plus_2_divides": false,
+      "value_at_q4": "0"
+    }
+  },
+  "all_pairwise": [
+    {
+      "pair": [
+        "\u03b3",
+        "\u03c31"
+      ],
+      "numerator_factored": "s**2 - s + 1",
+      "roots_q_gt_1": [],
+      "metallic_factors": []
+    },
+    {
+      "pair": [
+        "\u03b3",
+        "\u03c31\u00b7\u03c32"
+      ],
+      "numerator_factored": "(s**2 - s + 1)*(s**2 + s + 1)",
+      "roots_q_gt_1": [],
+      "metallic_factors": []
+    },
+    {
+      "pair": [
+        "\u03b3",
+        "\u03c31\u00b7\u03c32\u00b7\u03c31"
+      ],
+      "numerator_factored": "2 - s",
+      "roots_q_gt_1": [
+        4.0
+      ],
+      "metallic_factors": []
+    },
+    {
+      "pair": [
+        "\u03b3",
+        "\u03c31\u00b7\u03c32\u00b7\u03c33"
+      ],
+      "numerator_factored": "(s**2 - s + 1)*(s**4 + s**3 + 3*s**2 + s + 1)",
+      "roots_q_gt_1": [],
+      "metallic_factors": []
+    },
+    {
+      "pair": [
+        "\u03b3",
+        "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33"
+      ],
+      "numerator_factored": "s**4 - s**3 + s**2 + s + 1",
+      "roots_q_gt_1": [],
+      "metallic_factors": []
+    },
+    {
+      "pair": [
+        "\u03b3",
+        "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32"
+      ],
+      "numerator_factored": "-s**8 + 2*s**5 + s**4 + 4*s**3 + 2*s - 1",
+      "roots_q_gt_1": [
+        2.652198214
+      ],
+      "metallic_factors": []
+    },
+    {
+      "pair": [
+        "\u03b3",
+        "\u03c31\u00b7\u03c32\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+      ],
+      "numerator_factored": "-s**4 - s**3 + s**2 + 3*s - 1",
+      "roots_q_gt_1": [
+        1.532729989
+      ],
+      "metallic_factors": []
+    },
+    {
+      "pair": [
+        "\u03b3",
+        "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+      ],
+      "numerator_factored": "-s**10 - s**9 + s**8 + s**7 + 3*s**5 + s**3 - s**2 - s + 1",
+      "roots_q_gt_1": [
+        1.751761206
+      ],
+      "metallic_factors": []
+    },
+    {
+      "pair": [
+        "\u03c31",
+        "\u03c31\u00b7\u03c32"
+      ],
+      "numerator_factored": "s*(s**2 - s + 1)",
+      "roots_q_gt_1": [],
+      "metallic_factors": []
+    },
+    {
+      "pair": [
+        "\u03c31",
+        "\u03c31\u00b7\u03c32\u00b7\u03c31"
+      ],
+      "numerator_factored": "-(s - 1)*(s + 1)",
+      "roots_q_gt_1": [],
+      "metallic_factors": []
+    },
+    {
+      "pair": [
+        "\u03c31",
+        "\u03c31\u00b7\u03c32\u00b7\u03c33"
+      ],
+      "numerator_factored": "s*(s**2 - s + 1)*(s**2 + s + 1)",
+      "roots_q_gt_1": [],
+      "metallic_factors": []
+    },
+    {
+      "pair": [
+        "\u03c31",
+        "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33"
+      ],
+      "numerator_factored": "-s*(s - 2)",
+      "roots_q_gt_1": [
+        4.0
+      ],
+      "metallic_factors": []
+    },
+    {
+      "pair": [
+        "\u03c31",
+        "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32"
+      ],
+      "numerator_factored": "-s**8 - s**7 + s**6 - s**5 + 3*s**4 + s**3 + s**2 + s - 1",
+      "roots_q_gt_1": [
+        1.652416946
+      ],
+      "metallic_factors": []
+    },
+    {
+      "pair": [
+        "\u03c31",
+        "\u03c31\u00b7\u03c32\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+      ],
+      "numerator_factored": "-(s - 1)*(s + 1)*(s**2 + 2*s - 1)",
+      "roots_q_gt_1": [],
+      "metallic_factors": []
+    },
+    {
+      "pair": [
+        "\u03c31",
+        "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+      ],
+      "numerator_factored": "-s**10 - s**9 + s**8 + s**6 + s**5 + s**4 - s**2 - s + 1",
+      "roots_q_gt_1": [
+        1.33454488
+      ],
+      "metallic_factors": []
+    },
+    {
+      "pair": [
+        "\u03c31\u00b7\u03c32",
+        "\u03c31\u00b7\u03c32\u00b7\u03c31"
+      ],
+      "numerator_factored": "-s**4 - s**3 + s**2 - s + 1",
+      "roots_q_gt_1": [],
+      "metallic_factors": []
+    },
+    {
+      "pair": [
+        "\u03c31\u00b7\u03c32",
+        "\u03c31\u00b7\u03c32\u00b7\u03c33"
+      ],
+      "numerator_factored": "s**2*(s**2 - s + 1)",
+      "roots_q_gt_1": [],
+      "metallic_factors": []
+    },
+    {
+      "pair": [
+        "\u03c31\u00b7\u03c32",
+        "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33"
+      ],
+      "numerator_factored": "-s*(s - 1)*(s + 1)",
+      "roots_q_gt_1": [],
+      "metallic_factors": []
+    },
+    {
+      "pair": [
+        "\u03c31\u00b7\u03c32",
+        "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32"
+      ],
+      "numerator_factored": "-s**8 - s**7 + s**4 + 2*s**3 + s - 1",
+      "roots_q_gt_1": [
+        1.229654748
+      ],
+      "metallic_factors": []
+    },
+    {
+      "pair": [
+        "\u03c31\u00b7\u03c32",
+        "\u03c31\u00b7\u03c32\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+      ],
+      "numerator_factored": "-s**6 - 2*s**5 + s**3 + 2*s - 1",
+      "roots_q_gt_1": [],
+      "metallic_factors": []
+    },
+    {
+      "pair": [
+        "\u03c31\u00b7\u03c32",
+        "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+      ],
+      "numerator_factored": "-(s - 1)*(s + 1)*(s**8 + s**7 + s**5 - s**3 - s + 1)",
+      "roots_q_gt_1": [],
+      "metallic_factors": []
+    },
+    {
+      "pair": [
+        "\u03c31\u00b7\u03c32\u00b7\u03c31",
+        "\u03c31\u00b7\u03c32\u00b7\u03c33"
+      ],
+      "numerator_factored": "(s**3 + s - 1)*(s**3 + s**2 + 1)",
+      "roots_q_gt_1": [],
+      "metallic_factors": []
+    },
+    {
+      "pair": [
+        "\u03c31\u00b7\u03c32\u00b7\u03c31",
+        "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33"
+      ],
+      "numerator_factored": "(s**2 - s + 1)*(s**2 + s - 1)",
+      "roots_q_gt_1": [],
+      "metallic_factors": []
+    },
+    {
+      "pair": [
+        "\u03c31\u00b7\u03c32\u00b7\u03c31",
+        "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32"
+      ],
+      "numerator_factored": "-s**8 + s**6 + 3*s**4 + s**2 - 1",
+      "roots_q_gt_1": [
+        2.369205407
+      ],
+      "metallic_factors": []
+    },
+    {
+      "pair": [
+        "\u03c31\u00b7\u03c32\u00b7\u03c31",
+        "\u03c31\u00b7\u03c32\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+      ],
+      "numerator_factored": "-(s - 1)*(s + 1)*(s**2 + s - 1)",
+      "roots_q_gt_1": [],
+      "metallic_factors": []
+    },
+    {
+      "pair": [
+        "\u03c31\u00b7\u03c32\u00b7\u03c31",
+        "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+      ],
+      "numerator_factored": "-s**10 - s**9 + s**8 + s**7 + s**6 + s**5 + s**4 - s**3 - s**2 - s + 1",
+      "roots_q_gt_1": [
+        1.521541566
+      ],
+      "metallic_factors": []
+    },
+    {
+      "pair": [
+        "\u03c31\u00b7\u03c32\u00b7\u03c33",
+        "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33"
+      ],
+      "numerator_factored": "-s*(s**4 + s**3 - s**2 + s - 1)",
+      "roots_q_gt_1": [],
+      "metallic_factors": []
+    },
+    {
+      "pair": [
+        "\u03c31\u00b7\u03c32\u00b7\u03c33",
+        "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32"
+      ],
+      "numerator_factored": "-(s - 1)*(s + 1)*(s**2 + s - 1)",
+      "roots_q_gt_1": [],
+      "metallic_factors": []
+    },
+    {
+      "pair": [
+        "\u03c31\u00b7\u03c32\u00b7\u03c33",
+        "\u03c31\u00b7\u03c32\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+      ],
+      "numerator_factored": "-(s**4 + s**3 - s**2 + s - 1)*(s**4 + s**3 + s**2 + s - 1)",
+      "roots_q_gt_1": [],
+      "metallic_factors": []
+    },
+    {
+      "pair": [
+        "\u03c31\u00b7\u03c32\u00b7\u03c33",
+        "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+      ],
+      "numerator_factored": "-s**12 - s**11 - s**9 + s**8 + s**7 + s**6 + s**5 - s**4 - s**3 - s + 1",
+      "roots_q_gt_1": [],
+      "metallic_factors": []
+    },
+    {
+      "pair": [
+        "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33",
+        "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32"
+      ],
+      "numerator_factored": "-s**8 - s**7 + s**6 + s**4 + 2*s**3 - s**2 + s - 1",
+      "roots_q_gt_1": [
+        1.358242478
+      ],
+      "metallic_factors": []
+    },
+    {
+      "pair": [
+        "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33",
+        "\u03c31\u00b7\u03c32\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+      ],
+      "numerator_factored": "-(s**2 + s - 1)*(s**4 + s**3 - s**2 + s - 1)",
+      "roots_q_gt_1": [],
+      "metallic_factors": []
+    },
+    {
+      "pair": [
+        "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33",
+        "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+      ],
+      "numerator_factored": "-(s - 1)*(s + 1)*(s**4 + s - 1)*(s**4 + s**3 - 1)",
+      "roots_q_gt_1": [],
+      "metallic_factors": []
+    },
+    {
+      "pair": [
+        "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32",
+        "\u03c31\u00b7\u03c32\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+      ],
+      "numerator_factored": "-(s**3 + s - 1)*(s**3 + s**2 + 1)",
+      "roots_q_gt_1": [],
+      "metallic_factors": []
+    },
+    {
+      "pair": [
+        "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32",
+        "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+      ],
+      "numerator_factored": "-s**12 - s**11 + s**10 + s**8 + 2*s**7 - s**6 - s**4 - 2*s**3 + s**2 - s + 1",
+      "roots_q_gt_1": [],
+      "metallic_factors": []
+    },
+    {
+      "pair": [
+        "\u03c31\u00b7\u03c32\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31",
+        "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+      ],
+      "numerator_factored": "-s**10 - s**9 + 2*s**8 + 2*s**7 + s**5 - 2*s**3 - s + 1",
+      "roots_q_gt_1": [
+        1.982735823
+      ],
+      "metallic_factors": []
+    }
+  ],
+  "q4_pairs": [
+    [
+      "\u03b3",
+      "\u03c31\u00b7\u03c32\u00b7\u03c31"
+    ],
+    [
+      "\u03c31",
+      "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33"
+    ]
+  ],
+  "metallic_pairs": [],
+  "verdict": {
+    "q4_proven": true,
+    "q4_is_metallic": false,
+    "explanation": "q = 4 is NOT a metallic point: the metallic ladder is q \u2212 q\u207b\u00b9 = n (minimal polynomial q\u00b2 \u2212 nq \u2212 1; \u03b4_4 = 2+\u221a5 \u2248 4.236 \u2260 4), and no metallic minimal polynomial divides the two coincidence numerators.  The proven mechanism is s-arithmetic, not q-arithmetic: q = 4 \u27fa s = \u221aq = 2, the first integer point of s, where the Wenzl-JM Markov parameter z = 1/(s + s\u207b\u00b9) = 2/5 turns rational.  The exact factorizations (witness fields) show the vanishing factor is (s \u2212 2) \u2014 the canonical convention's coincidence arithmetic lives in \u221aq, the same variable the Markov normalization z is rational in, while the plancherel convention's lives in q \u2212 q\u207b\u00b9 (metallic).  Two conventions, two arithmetic ladders.",
+    "n_q4_pairs_among_all": 2,
+    "n_metallic_pairs_among_all": 0
+  },
+  "follow_up": "Lean lemma for the factored identities (silver_lp_coincidence pattern) \u2014 the closed forms are explicit rational functions; field_simp+ring provable.",
+  "runtime_seconds": 26.4
+}
