@@ -17,11 +17,11 @@ L/E? tag), realizing the owner's "wherever appropriate" directive. The blocks
 themselves stay (they are the worked statements); the ledger row is the
 re-scoped index entry that replaces the "speculative bound" framing.
 
-- [ ] BSD row
-- [ ] RH row
-- [ ] Yang–Mills row
-- [ ] P-vs-NP row (already known **conditional** — the one conditional column)
-- [ ] Collatz row
+- [x] BSD row
+- [x] RH row
+- [x] Yang–Mills row
+- [x] P-vs-NP row (already known **conditional** — the one conditional column)
+- [x] Collatz row
 
 ## Task 2 — settle finite-page vs perpetual-`ε^ω`
 
@@ -30,8 +30,8 @@ language" already gives the two-tower reading (mass tower → E₁ collapse →
 surreal-free; volume tower → perpetual but Mostow-convergent → L). Remaining:
 make the finite-page side rigorous.
 
-- [ ] Audit current state of `spectral-sequence-collapse` (mass-theory) +
+- [x] Audit current state of `spectral-sequence-collapse` (mass-theory) +
       `motivic-perpetual-obstruction` / `perpetual-obstruction-depth-omega`
-- [ ] Decide: is the E₁-collapse already formalized, or does it need a Lean
+- [x] Decide: is the E₁-collapse already formalized, or does it need a Lean
       lemma / rigorous writeup?
-- [ ] Record the settled verdict (L) with its rigorous backing
+- [x] Record the settled verdict (L) with its rigorous backing

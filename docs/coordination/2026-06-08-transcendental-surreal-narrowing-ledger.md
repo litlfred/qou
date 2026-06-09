@@ -88,9 +88,12 @@ The GS-tower compounding of the non-abelian-Stokes quadratic term was the one
 rank-≥2 / `ε^ω` candidate. It is **settled** by the two-tower reading
 ([probe §RESOLUTION](../audits/2026-06-08-surreal-rank2-nonabelian-stokes-quadratic-probe.md)):
 
-- **Mass / GS tower collapses at E₁** (`spectral-sequence-collapse`, Whitehead /
-  semisimple) → finite-order in `ε` → rank-1 → surreal-free. Production never
-  needs surreals.
+- **Mass / GS tower collapses at E₁** ([`prop:spectral-sequence-collapse`](../../content/quantum-observable-universe/mass-theory/spectral-sequence-collapse.md),
+  Whitehead / semisimple) → finite-order in `ε` → rank-1 → surreal-free. Production
+  never needs surreals. **Now confirmed rigorous (2026-06-09): the Lean sibling is
+  sorry-free** (Whitehead in axiom form via `-- Ref: [cartan1956]`), so the
+  finite-page leg is *proved*, not merely asserted — see
+  [finite-page-vs-perpetual settle](../audits/2026-06-09-finite-page-vs-perpetual-settle.md).
 - **Volume / lifting tower is genuinely perpetual** (`motivic-perpetual-obstruction`,
   `cs-evaluation-faithfulness`: `κ_n≠0 ∀n`) — the real `ε^ω` structure — **but
   Mostow rigidity makes `Vol=Σ_nΦ_n` converge** to a real value, so the
