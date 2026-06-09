@@ -95,6 +95,20 @@ D0_CO_EV         = 11.09          # eV, observed C≡O dissociation energy
 D0_CO_EV_ERR     = 0.01
 D0_N2_EV         = 9.79           # eV, observed N≡N dissociation (pure-covalent triple)
 D0_N2_EV_ERR     = 0.01
+D0_H2_EV         = 4.478          # ± 0.001, observed H–H bond dissociation (H₂)
+D0_H2_EV_ERR     = 0.001
+D0_CC_EV         = 3.60           # ± 0.05, observed C–C single bond (ethane-class)
+D0_CC_EV_ERR     = 0.05
+D0_CO2_DOUBLE_EV = 8.28           # ± 0.05, CO₂ C=O double-bond comparison (2-bond ref)
+D0_CO2_DOUBLE_EV_ERR = 0.05
+
+# ── Molecular bond lengths & resonance (experimental comparison) ───
+# Benzene aromatic C–C vs single/double refs (Å); benzene resonance
+# energy (kcal/mol). Comparison targets only — NOT inputs.
+BOND_LEN_BENZENE_ANG    = 1.40    # ± 0.01, observed aromatic C–C (benzene)
+BOND_LEN_CC_SINGLE_ANG  = 1.54    # ± 0.01, C–C single-bond reference
+BOND_LEN_CC_DOUBLE_ANG  = 1.34    # ± 0.01, C=C double-bond reference
+BENZENE_RESONANCE_KCAL  = 36.0    # ± 1, observed benzene resonance energy (kcal/mol)
 
 # ── Molecular bond angles (experimental comparison) ────────────────
 # Observed H–O–H angle and the symmetric tetrahedral reference. Used

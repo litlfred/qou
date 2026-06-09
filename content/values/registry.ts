@@ -153,6 +153,87 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
       units: "eV",
     }),
 
+    // ── Molecular experimental comparison refs (organic-chem WS-B B1) ──
+    d0_co2_double_ev: Object.freeze({
+      name: "d0_co2_double_ev",
+      description:
+        "Observed CO₂ C=O double-bond comparison energy (per-bond reference).",
+      symbol: "D_0(\\mathrm{CO_2})",
+      witnessFile:
+        "folio-assistant/computations/molecular-experimental-refs.witness.json",
+      witnessPath: "data.d0_co2_double_ev",
+      defaultPrecision: 3,
+      units: "eV",
+    }),
+
+    d0_h2_ev: Object.freeze({
+      name: "d0_h2_ev",
+      description:
+        "Observed H₂ bond dissociation energy D_0(H₂) — experimental reference.",
+      symbol: "D_0(\\mathrm{H_2})",
+      witnessFile:
+        "folio-assistant/computations/molecular-experimental-refs.witness.json",
+      witnessPath: "data.d0_h2_ev",
+      defaultPrecision: 4,
+      units: "eV",
+    }),
+
+    d0_cc_ev: Object.freeze({
+      name: "d0_cc_ev",
+      description:
+        "Observed C–C single-bond dissociation energy — experimental reference.",
+      symbol: "D_0(\\mathrm{C\\text{-}C})",
+      witnessFile:
+        "folio-assistant/computations/molecular-experimental-refs.witness.json",
+      witnessPath: "data.d0_cc_ev",
+      defaultPrecision: 3,
+      units: "eV",
+    }),
+
+    bond_len_benzene_ang: Object.freeze({
+      name: "bond_len_benzene_ang",
+      description: "Observed benzene aromatic C–C bond length.",
+      symbol: "r_{\\mathrm{C-C}}^{\\mathrm{benzene}}",
+      witnessFile:
+        "folio-assistant/computations/molecular-experimental-refs.witness.json",
+      witnessPath: "data.bond_len_benzene_ang",
+      defaultPrecision: 3,
+      units: "Å",
+    }),
+
+    bond_len_cc_single_ang: Object.freeze({
+      name: "bond_len_cc_single_ang",
+      description: "C–C single-bond length reference.",
+      symbol: "r_{\\mathrm{C-C}}^{\\mathrm{single}}",
+      witnessFile:
+        "folio-assistant/computations/molecular-experimental-refs.witness.json",
+      witnessPath: "data.bond_len_cc_single_ang",
+      defaultPrecision: 3,
+      units: "Å",
+    }),
+
+    bond_len_cc_double_ang: Object.freeze({
+      name: "bond_len_cc_double_ang",
+      description: "C=C double-bond length reference.",
+      symbol: "r_{\\mathrm{C=C}}^{\\mathrm{double}}",
+      witnessFile:
+        "folio-assistant/computations/molecular-experimental-refs.witness.json",
+      witnessPath: "data.bond_len_cc_double_ang",
+      defaultPrecision: 3,
+      units: "Å",
+    }),
+
+    benzene_resonance_kcal: Object.freeze({
+      name: "benzene_resonance_kcal",
+      description: "Observed benzene resonance (delocalization) energy.",
+      symbol: "E_{\\mathrm{res}}^{\\mathrm{benzene}}",
+      witnessFile:
+        "folio-assistant/computations/molecular-experimental-refs.witness.json",
+      witnessPath: "data.benzene_resonance_kcal",
+      defaultPrecision: 2,
+      units: "kcal/mol",
+    }),
+
     H_A: Object.freeze({
       name: "H_A",
       description: "Planck constant ℏ_q = q - q^{-1} at the substrate.",
