@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-09T00:21:34.049932+00:00",
-  "commitSha": "99ad763976ac7597d27ada7eee07d24d911f433c",
+  "computedAt": "2026-06-09T00:56:11.708281+00:00",
+  "commitSha": "5af5cc13345ad32d0738d36aece6a43d0e5b1179",
   "assertions": [
     {
       "name": "spine molecular layer reproduces observed bond orders (acetylene 3, benzene 3/2, cyclohexane 1)",
@@ -35,11 +35,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 23,
+  "durationMs": 22,
   "computation": "benzene-assembly-spine",
   "scriptFile": "benzene_assembly_spine.py",
-  "scriptHash": "a236d17bb391",
-  "scriptCommitSha": "9e8892cf70e1992f7adafd6bb9009c71023a50d8",
+  "scriptHash": "ea1bdc147e20",
+  "scriptCommitSha": "5af5cc13345ad32d0738d36aece6a43d0e5b1179",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
