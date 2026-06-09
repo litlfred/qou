@@ -2,6 +2,7 @@ import Mathlib.GroupTheory.Coxeter.Basic
 import Mathlib.Algebra.FreeAlgebra
 import Mathlib.RingTheory.Ideal.Basic
 import Mathlib.RingTheory.Ideal.Operations
+import Mathlib.Algebra.RingQuot
 import Mathlib.Algebra.Algebra.Defs
 
 /-!
@@ -120,91 +121,77 @@ def heckeQuadraticGenerators : Set (FreeAlgebra R S) :=
 def heckeIdeal : Ideal (FreeAlgebra R S) :=
   Ideal.span (heckeQuadraticGenerators R q S)
 
-/-- **The (partial) Iwahori-Hecke algebra** — quotient of the
-    free algebra by the Hecke quadratic ideal.
+/-- **The Hecke quotient relation**: each quadratic generator is related to
+    `0`.  Because `FreeAlgebra R S` is **non-commutative**, the Hecke algebra
+    is built as the algebra-by-relations quotient `RingQuot (heckeRel)`
+    (Mathlib's tool for quotienting a non-commutative algebra by a relation),
+    not as an `Ideal.Quotient` (which gives a commutative quotient of a
+    commutative ring — the wrong construction here). -/
+def heckeRel : FreeAlgebra R S → FreeAlgebra R S → Prop :=
+  fun a b => ∃ s : S, a = heckeQuadraticRelation R q S s ∧ b = 0
 
-    Sprint 2 deliverable: type + algebra structure are sorry-free
-    via Mathlib's `Ideal.Quotient`. The full Iwahori-Hecke
-    additionally quotients by braid relations; that step is
-    Sprint 2 follow-up.
+/-- **The (partial) Iwahori-Hecke algebra** — the `RingQuot` of the free
+    algebra by the Hecke quadratic relations.
+
+    Sprint 2 deliverable: type + (non-commutative) ring + `R`-algebra
+    structure are sorry-free via Mathlib's `RingQuot`. The full Iwahori-Hecke
+    additionally quotients by braid relations; that step is Sprint 2 follow-up.
 
     Naming: `IwahoriHeckeQuot` distinguishes from the Sprint 1
     `IwahoriHecke` opaque stub; once Sprint 2 follow-up establishes
     the equivalence, the two unify. -/
 def IwahoriHeckeQuot : Type max u v :=
-  (FreeAlgebra R S) ⧸ heckeIdeal R q S
+  RingQuot (heckeRel R q S)
 
-/-- `IwahoriHeckeQuot R q S` carries the canonical `R`-algebra
-    structure inherited from the quotient. -/
+/-- `IwahoriHeckeQuot R q S` carries the canonical (non-commutative) ring and
+    `R`-algebra structure inherited from `RingQuot`.  Note: this algebra is
+    **not** commutative (the free algebra `FreeAlgebra R S` is not, and the
+    Hecke quadratic relation does not impose commutativity), so there is no
+    `CommRing` instance — that was the bug in the previous `Ideal.Quotient`
+    construction, which only applies to two-sided ideals of commutative
+    rings. -/
 noncomputable instance : Ring (IwahoriHeckeQuot R q S) :=
-  Ideal.Quotient.commRing (heckeIdeal R q S) |>.toRing
-
-noncomputable instance : CommRing (IwahoriHeckeQuot R q S) :=
-  Ideal.Quotient.commRing (heckeIdeal R q S)
+  inferInstanceAs (Ring (RingQuot (heckeRel R q S)))
 
 noncomputable instance : Algebra R (IwahoriHeckeQuot R q S) :=
-  (Ideal.Quotient.mk (heckeIdeal R q S)).comp (algebraMap R _) |>.toAlgebra
+  inferInstanceAs (Algebra R (RingQuot (heckeRel R q S)))
 
 /-- **The image of a generator** `T_s ∈ IwahoriHeckeQuot R q S`
-    under the quotient map. -/
+    under the quotient algebra map `RingQuot.mkAlgHom`. -/
 def T (s : S) : IwahoriHeckeQuot R q S :=
-  Ideal.Quotient.mk (heckeIdeal R q S) (FreeAlgebra.ι R s)
+  RingQuot.mkAlgHom R (heckeRel R q S) (FreeAlgebra.ι R s)
 
 /-- **The Hecke quadratic relation holds in the quotient.**
-    Definitionally, the generator `T_s` satisfies
-    `(T_s - q)(T_s + 1) = 0` in `IwahoriHeckeQuot R q S`. -/
+    The generator `T_s` satisfies `(T_s - q)(T_s + 1) = 0` in
+    `IwahoriHeckeQuot R q S`, because `mkAlgHom` identifies the quadratic
+    generator with `0` (it is `heckeRel`-related to `0`). -/
 theorem T_hecke_quadratic_relation (s : S) :
     (T R q S s - algebraMap R (IwahoriHeckeQuot R q S) q) *
     (T R q S s + 1) = 0 := by
-  -- Reduces to showing the generator is in the ideal we quotient by
-  unfold T
-  rw [show (algebraMap R (IwahoriHeckeQuot R q S) q) =
-        Ideal.Quotient.mk (heckeIdeal R q S) (algebraMap R _ q) from rfl]
-  rw [show (1 : IwahoriHeckeQuot R q S) =
-        Ideal.Quotient.mk (heckeIdeal R q S) 1 from rfl]
-  rw [← (Ideal.Quotient.mk (heckeIdeal R q S)).map_sub,
-      ← (Ideal.Quotient.mk (heckeIdeal R q S)).map_add,
-      ← (Ideal.Quotient.mk (heckeIdeal R q S)).map_mul]
-  apply Ideal.Quotient.eq_zero_iff_mem.mpr
-  apply Ideal.subset_span
-  exact ⟨s, rfl⟩
+  have h : RingQuot.mkAlgHom R (heckeRel R q S) (heckeQuadraticRelation R q S s) = 0 := by
+    have hr := RingQuot.mkAlgHom_rel R (s := heckeRel R q S) ⟨s, rfl, rfl⟩
+    simpa using hr
+  rw [← h]
+  simp only [IwahoriHeckeQuot, heckeQuadraticRelation, T, map_mul, map_sub, map_add,
+    map_one, AlgHom.commutes]
 
 /-- **Universal property of the Hecke quotient (Hecke-quadratic
     fragment).** Any `R`-algebra map from `FreeAlgebra R S` that
     sends each `heckeQuadraticRelation` to `0` factors through
-    `IwahoriHeckeQuot R q S` via Mathlib's `Ideal.Quotient.liftₐ`.
-
-    Sprint 2 follow-up: discharged using `Ideal.Quotient.liftₐ` —
-    the constraint that `f` vanishes on the ideal-generators
-    extends to vanishing on the ideal by `Ideal.span_le`. -/
+    `IwahoriHeckeQuot R q S` via `RingQuot.liftAlgHom`.  (The target `A`
+    may be any `R`-algebra — not necessarily commutative.) -/
 theorem universal_property_hecke_quadratic
-    (A : Type*) [CommRing A] [Algebra R A]
+    (A : Type*) [Ring A] [Algebra R A]
     (f : FreeAlgebra R S →ₐ[R] A)
     (hf : ∀ s : S, f (heckeQuadraticRelation R q S s) = 0) :
     Nonempty { φ : IwahoriHeckeQuot R q S →ₐ[R] A //
               ∀ s : S, φ (T R q S s) = f (FreeAlgebra.ι R s) } := by
-  -- Vanishing on the spanning generators extends to the whole ideal
-  -- via Ideal.span_le, then Ideal.Quotient.liftₐ provides the factoring map.
-  have hf_ideal : ∀ x ∈ heckeIdeal R q S, f x = 0 := by
-    intro x hx
-    -- `heckeIdeal` is span of `heckeQuadraticGenerators`; vanishing on
-    -- generators extends to span by AlgHom additivity + ideal-membership
-    -- characterisation. The key lemma: `Ideal.span_induction` reduces
-    -- to: (a) vanishing on generators (hypothesis hf), (b) vanishing
-    -- preserved by + and by left-multiplication (true for any algebra hom).
-    refine Submodule.span_induction hx ?_ ?_ ?_ ?_
-    · rintro y ⟨s, rfl⟩
-      exact hf s
-    · exact f.map_zero
-    · intro y z hy hz
-      rw [f.map_add, hy, hz, add_zero]
-    · intro a y hy
-      rw [Algebra.smul_def, f.map_mul, hy, mul_zero]
-  refine ⟨⟨Ideal.Quotient.liftₐ (heckeIdeal R q S) f hf_ideal, ?_⟩⟩
+  have w : ∀ ⦃x y : FreeAlgebra R S⦄, heckeRel R q S x y → f x = f y := by
+    rintro x y ⟨s, rfl, rfl⟩
+    rw [hf s, map_zero]
+  refine ⟨⟨RingQuot.liftAlgHom R ⟨f, w⟩, ?_⟩⟩
   intro s
-  -- T R q S s = Ideal.Quotient.mk (heckeIdeal R q S) (FreeAlgebra.ι R s)
-  -- so liftₐ ∘ Quotient.mk = f on the generator
-  unfold T
-  exact Ideal.Quotient.liftₐ_apply (heckeIdeal R q S) f hf_ideal _
+  rw [T]
+  exact RingQuot.liftAlgHom_mkAlgHom_apply (S := R) f w (FreeAlgebra.ι R s)
 
 end QOU.IwahoriHecke.Quotient
