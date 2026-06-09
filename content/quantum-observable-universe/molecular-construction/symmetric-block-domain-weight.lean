@@ -41,4 +41,19 @@ weight `q³`, the `σ`-bond (length 1) has weight `q`, so the lone-pair weight i
 theorem lone_bond_ratio_q_squared (q : R) : q ^ 3 = q ^ 2 * q := by
   rw [pow_succ]
 
+/-- **Bond-order weight.** A bond of order `k` — a length-`k` braid word
+`σ^k` — has weight `q^k` on the symmetric block (single `q`, double `q²`,
+triple `q³`). Specialises `symmetric_block_domain_weight` to a constant word,
+giving the general crystal/lattice domain-weight law. -/
+theorem bond_order_weight (q : R) (gen : ι) (k : ℕ) :
+    ((List.replicate k gen).map (fun _ => q)).prod = q ^ k := by
+  rw [symmetric_block_domain_weight, List.length_replicate]
+
+/-- **Double bond `= q²`.** A double bond (order 2) weighs `q²` — numerically
+the lone/bond ratio — so on the symmetric block bond order increments the
+weight by one factor of `q`. -/
+theorem double_bond_weight_eq_q_sq (q : R) (gen : ι) :
+    ((List.replicate 2 gen).map (fun _ => q)).prod = q ^ 2 :=
+  bond_order_weight q gen 2
+
 end QOU.Molecular
