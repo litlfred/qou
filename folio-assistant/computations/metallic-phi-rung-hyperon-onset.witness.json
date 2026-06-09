@@ -1,0 +1,46 @@
+{
+  "description": "\u03c6-rung \u2194 hyperon-onset identification under the Map C power-law q\u2194\u03c1 map: anchor-independent rung-ratio exponents \u03b2 (\u03c6) and \u03b3 (\u03c6\u00b2) relative to the silver anchor; the \u039b-onset window 2\u20133 \u03c1\u2080 pins the coral-tube scale to |c_r| \u2248 0.87\u20131.14 fm (fermi-scale, bracketing 1 fm) and DERIVES silver at \u2248 4.2\u20139.6 \u03c1\u2080 (just above the heaviest known-pulsar central densities \u2014 proto-NS / second-burst territory) and \u03c6\u00b2 at \u2248 4.8\u201312.2 \u03c1\u2080.",
+  "computed_at": "2026-06-09T21:56:57.055897+00:00",
+  "script": "metallic_phi_rung_hyperon_onset.py",
+  "exponents": {
+    "beta_phi": "0.4850130734",
+    "gamma_phi2": "1.104307125",
+    "note": "\u03c1_\u03c6 = \u03c1_c^\u03b2 and \u03c1_\u03c6\u00b2 = \u03c1_c^\u03b3 hold for ANY anchor of the power-law map \u2014 the identification transfers the hyperon onset into a prediction of the silver and \u03c6\u00b2 densities with no extra freedom"
+  },
+  "lambda_onset_window_rho0": [
+    "1.9",
+    "3.5"
+  ],
+  "chains": [
+    {
+      "phi_rung_rho0": "2.0",
+      "silver_rho0": "4.17507",
+      "phi2_rho0": "4.84622",
+      "silver_gcm3": "1.1273e+15",
+      "implied_c_r_fm": "1.14395"
+    },
+    {
+      "phi_rung_rho0": "2.5",
+      "silver_rho0": "6.61413",
+      "phi2_rho0": "8.05478",
+      "silver_gcm3": "1.7858e+15",
+      "implied_c_r_fm": "0.981301"
+    },
+    {
+      "phi_rung_rho0": "3.0",
+      "silver_rho0": "9.63227",
+      "phi2_rho0": "12.1994",
+      "silver_gcm3": "2.6007e+15",
+      "implied_c_r_fm": "0.865733"
+    }
+  ],
+  "consistency": {
+    "implied_c_r_fermi_scale": true,
+    "corpus_layered_table": "conj:color-superconductivity-borromean places the hyperonic layer at \u03c1\u2080\u20132\u03c1\u2080 \u2014 adjacent to (slightly below) the literature onset; the \u03c6-rung identification sits at the literature window, i.e. the corpus table's upper edge",
+    "nicer_gate": "derived silver 4.2\u20139.6 \u03c1\u2080 is ABOVE the inferred central densities of all known pulsars (\u2264 ~4 \u03c1\u2080 at 68%) \u2014 no kink in current stars, second burst only in the heaviest proto-NS: consistent with both non-detections"
+  },
+  "limitations": [
+    "identification probe: assumes the Map C power-law form and that the \u03c6 rung IS the hyperon onset; both are hypotheses, not corpus theorems",
+    "\u039b-onset window is model-dependent (1.9 \u03c1\u2080 to >5 \u03c1\u2080 across chiral parameterizations); grid 2.0/2.5/3.0 spans the standard \u039bN-only band"
+  ]
+}

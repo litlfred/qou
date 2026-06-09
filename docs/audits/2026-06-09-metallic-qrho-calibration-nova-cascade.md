@@ -52,6 +52,52 @@ canonical Markov stability, Hecke relation, trace symmetry).
 4. All other coincidence roots are word-specific algebraic numbers in
    `(1.2, 1.6)` — the same pattern as the Jones-root nulls of #2047.
 
+### 1.5 q = 4 — PROVEN exact, and NOT metallic (owner follow-up)
+
+Symbolic proof ([`metallic_q4_canonical_coincidence_proof.py`](../../folio-assistant/computations/metallic_q4_canonical_coincidence_proof.py),
+exact over `ℚ(s)`, `s = √q`; generator convention locked to
+`pyhecke_native` by a 360-case verification, worst rel. err 1.8e-15):
+
+```
+t(γ)  − t(σ₁σ₂σ₁)    =  (2 − s) / (s² + 1)
+t(σ₁) − t(σ₁σ₂σ₁σ₃)  =  −s(s − 2) / (s² + 1)²
+```
+
+Both vanish **iff `s = 2 ⟺ q = 4`**. Verdict on "because metallic?":
+**no** — `δ_4 = 2 + √5 ≈ 4.236 ≠ 4`, and **no metallic minimal
+polynomial `q² − nq − 1` divides any of the 36 pairwise canonical
+numerators** (checked exactly). The mechanism is **s-arithmetic**: the
+canonical (Wenzl-JM) convention's coincidence arithmetic lives in
+`√q` — the variable its Markov parameter `z = 1/(s + s⁻¹)` is rational
+in (`z = 2/5` at `s = 2`) — while the plancherel convention's lives in
+`q − q⁻¹` (the metallic ladder). Two conventions, two arithmetic
+ladders. The two pairs reduce to ONE primitive identity by Markov
+stability (`t(σ₁σ₂σ₁σ₃) = z·t(σ₁σ₂σ₁)`, `t(σ₁) = z·t(γ)`):
+
+```
+tr_M(T_{σ₁σ₂σ₁}) = (s² + s − 1)/(s² + 1)  =  1 = tr_M(γ)  ⟺  s = 2.
+```
+
+Lean lemma for the factored identities is the natural capstone
+(silver_lp_coincidence pattern; `field_simp; ring`-shaped) — queued as
+follow-up, sympy certificate in the witness meanwhile.
+
+### 1.6 S(5) — silver-only continues
+
+[`metallic_q_s5_coincidence_sweep.py`](../../folio-assistant/computations/metallic_q_s5_coincidence_sweep.py):
+120-word T_w basis, 7 partitions. 139 plancherel coincidence roots,
+**exactly one metallic — the same γ-vs-σ₁ pair at δ_silver,
+mpfr-exact**; canonical: 92 roots, zero metallic; LP active set
+constant at all 22 exact-Gram checkpoints (both conventions). So
+
+```
+S(2) = S(3) = S(4) = S(5) = {δ_silver}
+```
+
+and the conjectured-general statement sharpens to: *for every n,
+`t_pl(γ) − t_pl(σ₁)` vanishes on `q > 1` exactly at `q = δ_silver`* —
+an n-indexed family of identities, prime Lean target.
+
 ## 2. q↔ρ calibration — three corpus-anchored maps
 
 Script: [`metallic_q_rho_calibration.py`](../../folio-assistant/computations/metallic_q_rho_calibration.py);
@@ -87,6 +133,30 @@ below 5 ρ₀ at 68% even for the heaviest pulsar (J0740+6620, `R ≈
   NS physics and in the corpus's own layered table (outer core
   ρ₀–2ρ₀ hyperonic). The φ rung ↔ hyperon-onset identification is the
   live near-term observable of the shallow map.
+
+### 2-bis. φ-rung ↔ hyperon-onset chain (owner item 4)
+
+Under the power-law map the rung-density *ratios* are
+anchor-independent: `ρ_φ = ρ_c^β`, `ρ_φ² = ρ_c^γ` with
+`β = ln(φ/q₀)/ln(δ_s/q₀) ≈ 0.4850`, `γ ≈ 1.1043`. Identifying the φ
+rung with the Λ onset therefore pins the whole ladder
+([`metallic_phi_rung_hyperon_onset.py`](../../folio-assistant/computations/metallic_phi_rung_hyperon_onset.py)):
+
+| Λ onset (ρ₀) | ⇒ silver (ρ₀) | ⇒ φ² (ρ₀) | implied \|c_r\| (fm) |
+|---|---|---|---|
+| 2.0 | 4.18 | 4.85 | 1.14 |
+| 2.5 | 6.61 | 8.05 | 0.98 |
+| 3.0 | 9.63 | 12.2 | 0.87 |
+
+Three consistency hits, none fitted: (i) the implied coral-tube scale
+is fermi-scale, bracketing 1 fm ≈ r_p; (ii) derived silver sits just
+*above* all known-pulsar central densities (≤ ~4 ρ₀) — no kink in
+current stars, matching non-detection; (iii) silver in the 4–10 ρ₀
+band is exactly proto-NS / second-burst territory (§4). Λ-onset
+window sources: [strange matter in compact stars (1711.11260)](https://arxiv.org/abs/1711.11260),
+[phases of dense matter (1803.01836)](https://arxiv.org/abs/1803.01836),
+[ΛNN forces & hyperon puzzle (1612.03758)](https://arxiv.org/abs/1612.03758),
+[chiral hyperon suppression (2602.12503)](https://arxiv.org/abs/2602.12503).
 
 ## 3. φ² literature check (bar-mirror gCFL/CCS prediction)
 
