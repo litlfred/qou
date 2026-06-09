@@ -18,5 +18,6 @@ export default remark({
     "rem:markov-lambda-knot-operations",
     "conj:jet-convergence-classical-limit",
     "prop:hecke-convergence-bound",
+    "prop:q-gaussian-obstruction-at-q0",
   ],
 });
