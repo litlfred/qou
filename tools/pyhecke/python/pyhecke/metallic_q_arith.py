@@ -173,10 +173,13 @@ class MetallicNumber:
             raise ZeroDivisionError("inverse of zero")
         norm = self.norm()
         if norm not in (1, -1):
+            inv_a = self.a + self.b * self.n  # numerator of rational part
             raise ValueError(
-                f"non-unit element (norm={norm}); inverse lies in "
-                f"ℚ(δ_{self.n}) but not in ℤ[δ_{self.n}].  Use to_rational() "
-                f"to get rational coefficients."
+                f"non-unit element (norm={norm}, not ±1); the inverse is "
+                f"conjugate()/norm = ({inv_a}/{norm}) + ({-self.b}/{norm})"
+                f"·δ_{self.n}, which has rational coefficients and so lies "
+                f"in ℚ(δ_{self.n}) but not in ℤ[δ_{self.n}] — it cannot be "
+                f"represented as a MetallicNumber."
             )
         conj = self.conjugate()
         if norm == 1:
