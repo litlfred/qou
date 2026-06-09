@@ -272,20 +272,27 @@ expected speedup vs effort:
 
 ### 7.1 Pair-short-circuit in Markov trace assembly
 
-**Status:** specified but not implemented.
+**Status:** IMPLEMENTED in PR #2049 as the isolated pure module
+`pyhecke.galois_paired` (`markov_trace_sigma_pair_shortcircuit`).
+Production wire-in to `trace.py` / `gram.py` is deferred to a follow-up
+(the module is additive and testable in isolation).
 **Where:** `tools/pyhecke/python/pyhecke/trace.py`, `gram.py`.
 **Change:** when iterating over partitions to compute `tr_M(b)`, group
 into transpose-pairs `{λ, λ'}` and self-conjugate singletons. For each
 pair, compute `y_λ · (χ^λ(b) + χ^{λ'}(b))` via the closed form
 `y_λ · dim(λ) · (q − q⁻¹)` instead of computing each character
 independently.
-**Speedup:** ~2× on Markov-trace assembly (paired partitions are about
-half the lattice).
+**Speedup (measured, PR #2049):** the expensive-character-call
+reduction is `p(n)/sc(n)` — self-conjugate partitions are rare, so it
+GROWS with n: 3× (n=3), 7× (n=5), 21× (n=10), 44× (n=15). The original
+"~2×" estimate was wrong: it assumed paired partitions are ~half the
+lattice, but self-conjugates are a vanishing fraction of `p(n)`.
 **Lean grounding:** `GaloisPairCharacterSum` class instance.
 
 ### 7.2 Symbolic `ℤ[δ_n]` arithmetic at metallic q
 
-**Status:** specified but not implemented.
+**Status:** IMPLEMENTED in PR #2049
+(`pyhecke.metallic_q_arith.MetallicNumber`).
 **Where:** new module `tools/pyhecke/python/pyhecke/metallic_q_arith.py`.
 **Change:** add a `MetallicNumber(a, b, n)` class representing `a + b · δ_n`
 with `a, b ∈ ℤ`. Operations: `+, −, ×, ÷` exact in ℤ[δ_n] via
@@ -311,6 +318,36 @@ into rational + irrational parts and solve as coupled rational SDPs.
 2. **(7.2) second** — useful for any future metallic control-point checks.
 3. **(7.3) deferred** — uncertain payoff; revisit if (M2)-style catalog-blind
    probes become a bottleneck.
+
+### 7.4 n=4 / S(4) feasibility (2026-06-09 follow-up session)
+
+A follow-up session scoped the next probes (the n=4 active set `S(4)`;
+the proper non-commuting (M1) characters σ₁σ₂σ₃, Δ₄) and records the
+infra status so the next agent skips the spelunking:
+
+- **`pyhecke` is H₃(q)-only.** `pyhecke.gram` hardcodes the 6-element
+  H₃(q) NF basis `[γ, σ₀, σ₁, L₊, L₋, e⁻]`; `gram_matrix()` is (6,6) and
+  `has_native()` is `False` (pure Python). There is **no n=4 Gram**.
+- **n=4 needs the Rust engine, or a from-scratch build.** Both `S(4)`
+  and the proper (M1) probe need H₄(q) GS-NF + Hoefsmit + Markov-trace
+  data, which lives only in the Rust `hecke_core` / `pyhecke_native`
+  engine (not importable here without a cargo/maturin build). Do **NOT**
+  hand-roll an H₄ approximation — that is exactly the buggy
+  single-generator shortcut already flagged inside
+  `metallic_q_n4_character_sweep.py` (its non-commuting words are stubs).
+- **(M2) catalog-blind SDP** still needs the full SDP-enumeration infra
+  (§6), unchanged — it is **not** a cheap "decisive test."
+- **`W_*` ≠ Markov-trace partition weights.** `gram.py`'s
+  `W_SYM/W_STD/W_ALT` are Wedderburn-Artin (central-idempotent) weights:
+  `Σ_λ W_λ·dim_λ ≈ 1.67 ≠ 1`, and `Σ_λ W_λ·χ^λ(σ₀) ≈ 0.174 ≠ tr_M(σ₀)=z`.
+  A partition↔NF cross-check of the §7.1 short-circuit must first solve
+  for the true Markov-trace weights `y_λ` from `tr_M` on `{1, σ, σ²}` —
+  do not reuse the `W_*` constants (verified 2026-06-09; would be a
+  false identity).
+- **Ready when an H₄ Gram exists:** numpy/scipy/clarabel +
+  `pyhecke.lp_dual_solver.solve_operator_selection_lp` (dual-emitting,
+  per the LP/SDP discipline) all import cleanly here — only the H₄ Gram
+  is missing.
 
 ## 8. Open questions / what to test next
 
