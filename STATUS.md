@@ -18,7 +18,7 @@
 | **α_EM canonical derivation** | RT Phase 3 + Schwinger; Habiro element `[2]_q·(1-h²α)` derived (PR #1511); Bring residue → resolvent | [`alpha-em.md`](docs/coordination/alpha-em.md) | #1505, #1521, #1549, #1552 |
 | **Q_β c_k flip-flop prevention** | enforcement live on main (PR #1577 merged: canonical-no-negative-result + ck-tiered-not-binary) | (lives in 1ppq-qbeta.md flip-flop history) | — |
 | **Lean uniqueness wiring** | ~18% witness coverage | (per-PR) | #1572 |
-| **Mass-sweep gap (A ≥ 4)** | mean abs err 4.25% pre-2026-06-03; α-cluster wire-up landed PR #1756 — 7 atoms (¹⁶O / ²⁰Ne / ²⁴Mg / ²⁸Si / ³²S / ³⁶Ar / ⁴⁰Ca) moved from B=0 to α-recursion B_pred, m_err improved from ~+0.9% to ~−0.1% (10× better); non-α-cluster A > 12 (32 atoms) still gated on H_{3A} kernel | (lives in option-e.md + [`docs/workplans/2026-06-03-per-knot-mass-table-wireup-workplan.md`](docs/workplans/2026-06-03-per-knot-mass-table-wireup-workplan.md)) | #1756 |
+| **Mass-sweep gap (A ≥ 4)** | α-cluster wire-up landed PR #1756 — 7 atoms (¹⁶O / ²⁰Ne / ²⁴Mg / ²⁸Si / ³²S / ³⁶Ar / ⁴⁰Ca) moved from B=0 to α-recursion B_pred, m_err ~+0.9% → ~−0.1% (10× better). **Extended to 252 stable nuclides (¹H..²⁰⁹Bi) via parameterised SDP uniqueness** (week of 2026-06-08, commit `24540f56`). non-α-cluster A > 12 still gated on H_{3A} kernel | (lives in option-e.md + [`docs/workplans/2026-06-03-per-knot-mass-table-wireup-workplan.md`](docs/workplans/2026-06-03-per-knot-mass-table-wireup-workplan.md)) | — |
 
 ## Cross-cutting queues
 
@@ -30,10 +30,10 @@
 
 ## Active sessions
 
-| Agent | Branch | Goal scope | Started | Status |
-|-------|--------|------------|---------|--------|
-| Claude (coord-infra) | `claude/coord-infra-1ppq-2026-05-31` | coord infrastructure + 1ppQ Q_β kickoff | 2026-05-31 | active |
-| Claude (CAL-3 hunt) | `claude/brave-mendel-FPxFl` (PR #1579) | CAL-3 = m_π corroboration + parallel c_3 + v9 (1+q)/2 + L2 3-failing diagnosis | 2026-05-31 | active — see [`docs/coordination/2026-05-31-cal-3-m-pi-hunt.md`](docs/coordination/2026-05-31-cal-3-m-pi-hunt.md) |
+> None currently registered. The two 2026-05-31 sessions
+> (`coord-infra-1ppq`, `brave-mendel`/#1579) are long complete; their
+> rows were cleared 2026-06-09. Agents: re-register here at session
+> start via `/session-intent`.
 
 ## Conventions
 
@@ -45,8 +45,26 @@
 
 ## Session history (recent)
 
+- **2026-06-02 → 2026-06-09** (multiple Claude sessions, ~40+ PRs;
+  board refreshed 2026-06-09 from triage, not a single session):
+  Lean v4.24.0 toolchain migration (~80% — `λ→lam`, `abel→module`,
+  heartbeat caps; lake-cache/qou-v4-24-0 orphan is the egress-block
+  workaround); bibliography human-review pipeline live
+  (`references.review.json` + `bib-human-review` criterion); molecular-
+  assembly projector `e_{λ,μ}` + H₂O/bond-order builds; mass-table
+  extended to 252 nuclides; detangler quark-sector move Ch13→Ch9
+  (#2021); Casimir conjecture leading-order **derived** (ξ₂=0 at 1/d⁴
+  unconditional; first q-correction at 1/d⁶ via figure-8 `J_{4_1}=1+(3/4)h²`,
+  3/4 proved exact in Lean) — see `docs/audits/2026-06-01-casimir-first-qcorrection-figure8.md`.
+  Strategic workplans merged: #2038 (Casimir-axis). ⚠ Figure-8 Casimir
+  q-correction and the m_μ thread (`docs/coordination/2026-05-30-mu-thread-pivot.md`)
+  **share the 4_1 Habiro element** — joint-leverage opportunity.
 - **2026-05-31 / 2026-06-01** (Claude, ~10 PRs): Built coordination infrastructure (STATUS.md, master ledgers for 1ppq-qbeta + option-e + alpha-em, queue files, `/session-intent` + `/pending-show` skills, SessionStart hook), bumped precision defaults (compute 65 → 70 dps, output 50 → 60 dps), settled c_3 q_0-stability as NEAR-MATCH not Taylor-exact (5th-and-final settlement; flip-flop history catalogued), refuted Li_2^q × spectral combiner (mech #7), recorded Δtr_M bar-decomposition as structural observation (sym 7.7% + antisym 92.3% in t=q^(1/2) basis), made fibre/observable Im(q) distinction explicit in CLAUDE.md. PRs: #1580, #1585, #1587, #1594, #1599, #1603, #1609, #1615, plus this one.
 
 ## Last updated
 
-2026-06-01 by Claude (claude-md-fibre-observable-session-refresh-2026-06-01).
+2026-06-09 by Claude (status-md-housekeeping — board refresh after
+the ~40-PR week; L-goal precision lines (L1/L2/1ppQ/Δ_λ/α_EM/Lean)
+left to their owners pending verification, only the clearly-attested
+mass-sweep extension + Active-sessions clear + session-history entry
+were updated).
