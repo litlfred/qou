@@ -38,13 +38,19 @@ def emit_empty(files):
 def emit_from_log(files, log_path):
     """Parse a lake build log for per-file errors.
 
-    lake output for an error looks like:
+    lake output for an error looks like one of:
         ./content/quantum-observable-universe/path/file.lean:42:5: error: ...
+        QOU/MathlibExt/SDPRealUniqueness.lean:139:15: error: ...
+
+    Matches any `.lean` path in the log; the `if path in per_file:`
+    filter below keeps only paths that appear in the caller's
+    `--files` list (so the script stays generic across paper
+    packages: qou, ugb, fred2005, etc.).
     """
     log = Path(log_path).read_text(encoding="utf-8")
     pat = re.compile(
-        r"^(?:\./)?(content/quantum-observable-universe/[^\s:]+\.lean):(\d+):(\d+):\s+(error|warning):\s*(.*?)"
-        r"(?=\n(?:\./)?content/quantum-observable-universe/[^\s:]+\.lean:\d+:\d+:\s+(?:error|warning):|\Z)",
+        r"^(?:\./)?([^\s:]+\.lean):(\d+):(\d+):\s+(error|warning):\s*(.*?)"
+        r"(?=\n(?:\./)?[^\s:]+\.lean:\d+:\d+:\s+(?:error|warning):|\Z)",
         re.MULTILINE | re.DOTALL,
     )
     per_file = {f: [] for f in files}
