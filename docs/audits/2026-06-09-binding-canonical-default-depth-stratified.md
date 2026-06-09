@@ -403,18 +403,64 @@ fits over the H_3 inner-test family, NOT universal). Empirically:
 `binding_via_operator_combiner.py` from scratch (which would just
 re-cover the existing A=2 work), pick one of:
 
-- **path 3 follow-up**: write `binding_combiner_markov_peel_fallback.py`
-  that uses `markov_peel.tr_M_atomic` for ALL atoms (A=2,3,4,...) and
-  forms `B = E_0·(|tr_M^free| − |tr_M^atom|)`. Bypasses the
-  rank-deficiency blocker entirely; numerically equivalent to the
-  canonical compute path, no speedup.
+- **path 3 follow-up** ✅ **DONE (this PR)**: see
+  [`binding_combiner_markov_peel_fallback.py`](../../folio-assistant/computations/binding_combiner_markov_peel_fallback.py)
+  + [`binding-combiner-markov-peel-fallback.witness.json`](../../folio-assistant/computations/binding-combiner-markov-peel-fallback.witness.json).
+  Forms `B = E_0·(|tr_M^free| − |tr_M^atom|)` from the canonical
+  markov_peel trace; succeeds for **every** A (D, T, ³He, ⁴He), with
+  the A ≥ 3 atoms — the exact ones `canonical_tr_m_via_branching.py`
+  returns `None` for — passing a machine-checkable
+  `a3plus_atoms_bypass_rank_deficiency_blocker` assertion. Results
+  below.
 - **path 1 follow-up**: regenerate H_9 / H_12 extracts with a larger
   test-word family (sympy generation of inner braid words exhaustively
   over a basis). Time-bounded; might close A=3 first.
 
-Out of scope for this PR (whose deliverable is the canonical default
-+ audit + completeness gate); flagged here so the next session has the
-infrastructure inventory ready.
+### Path 3 result (markov_peel trace difference) — blocker-free but does NOT close
+
+Run 2026-06-09 (50 dps, 81 s wall for D/T/³He/⁴He):
+
+| atom | A | \|tr_M^free\| | \|tr_M^atom\| | B_dim | B (E_0) MeV | B (m_e) MeV | B_AME | ratio (E_0) | tower ratio |
+|---|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| D | 2 | 0.9835 | 0.3883 | 0.5952 | 0.466 | 0.304 | 2.225 | **0.209** | 0.273 |
+| T | 3 | 0.9080 | 0.1041 | 0.8040 | 0.629 | 0.411 | 8.482 | **0.074** | 0.331 |
+| ³He | 3 | 1.0478 | 0.2065 | 0.8412 | 0.658 | 0.430 | 7.718 | **0.085** | 0.344 |
+| ⁴He | 4 | 0.9673 | 0.0553 | 0.9120 | 0.713 | 0.466 | 28.296 | **0.025** | 0.497 |
+
+`E_0 = E_0_CALIBRATION_MEV` (Q_β CAL-3 ≈ 0.7823 MeV); the `m_e` column
+re-scales by CAL-1 (≈ 0.654×) for cross-comparison. "tower ratio" is
+the depth-stratified default from the table above.
+
+Two conclusions:
+
+1. **Path 3 is blocker-free.** It computes A ≥ 3 binding via the exact-
+   symbolic canonical trace with no A-operator extracts at all — the
+   rank-deficiency wall that stops `canonical_tr_m_via_branching.py` at
+   A ≥ 3 never arises. This is now a baseline the operator-valued
+   combiner (PR #1698 track) must beat once its extracts are full-rank.
+2. **The trace difference does NOT close binding** — and is *worse* than
+   the depth-stratified tower at every atom, with the gap widening as A
+   grows (ratio falls 0.209 → 0.025 D → ⁴He). This is the direct
+   numerical confirmation of §"Why the tower undershoots" (iv): a
+   per-atom `|tr_M|` difference carries **no A-scale ("magic-A")
+   factor**, so it structurally cannot reproduce `2·m_e·A·8G`. Path 3 is
+   thereby closed off as a *closure* mechanism.
+
+**Convention finding (corrects the path-3 sketch above).** The sketch
+said "uses `markov_peel.tr_M_atomic`". In fact `tr_M_atomic` hardcodes
+the canonical default `pn_convention="bring_color_weighted"`, whose p-n
+interface crossing `σ − h·(½ − δ/4)` carries a **numeric**
+`δ = flavor_split_subleading(q₀)`. The markov_peel trace path is
+exact-symbolic in the *formal* variable q (`crossing_from_cd` maps each
+crossing to an exact element of ℚ(q)·H_n(q)), and a numeric δ cannot be
+a polynomial in formal q — so `tr_M_atomic(include_inter=True)` raises
+`unknown (c, d) crossing` for every atom. The implemented script
+therefore builds the bound word with `pn_convention="strict_averaged"`
+(color-blind `σ − h/2`) and traces via the markov_peel primitives
+directly. The color weighting it drops is a sub-0.1 % perturbation on
+one crossing coefficient (δ ≈ 1.4e-3) — negligible against the 5–40×
+binding shortfall, and the free config has no interface crossing at all,
+so the binding *difference* stays convention-consistent.
 
 ## See also
 
