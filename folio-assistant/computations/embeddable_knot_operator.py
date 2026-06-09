@@ -87,7 +87,6 @@ def multiple_bond(base_sigma: float, order: int, w_perp: float) -> List[Embeddab
 
 # ── Demo / witness (not imported; runs the σ+2π triple-bond example) ──────
 if __name__ == "__main__":
-    import json
     import sys
     from pathlib import Path
 
@@ -106,9 +105,11 @@ if __name__ == "__main__":
     w.set_content_block("def:embeddable-knot-operator")
 
     # De-hardcoded: source the single-channel σ binding from the computed
-    # CO bond-order witness rather than inlining a literal.
-    co_w = json.loads((HERE / "co-bond-order-active-set.witness.json").read_text())
-    sigma_b = float(co_w["data"]["sigma_channel_eV"])     # +4.62 eV (computed)
+    # CO bond-order witness. add_upstream records its sha256 + commit-SHA
+    # under data.upstream_witness_hashes so witness_dependency_drift.py flags
+    # this witness as stale if the CO witness changes (Copilot review).
+    co_w = w.add_upstream(HERE / "co-bond-order-active-set.witness.json")
+    sigma_b = float(co_w["data"]["sigma_channel_eV"])     # +4.62 eV (computed, drift-tracked)
 
     print("=" * 68)
     print("EMBEDDABLE KNOT OPERATOR — lateral-π overlap weighting")

@@ -90,7 +90,7 @@ TAU_OVER_E_ERR   = 0.23
 # ── Molecular bond dissociation energies (experimental comparison) ─
 # Observed D_0 values used purely as comparison targets for the
 # molecular binding computes — NOT inputs to any derivation.
-# Source: NIST Chemistry WebBook (C≡O bond dissociation energy).
+# Source: NIST Chemistry WebBook (C≡O and N≡N bond dissociation energies).
 D0_CO_EV         = 11.09          # eV, observed C≡O dissociation energy
 D0_CO_EV_ERR     = 0.01
 D0_N2_EV         = 9.79           # eV, observed N≡N dissociation (pure-covalent triple)
