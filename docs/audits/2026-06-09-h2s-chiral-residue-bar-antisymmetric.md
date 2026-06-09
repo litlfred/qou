@@ -60,3 +60,29 @@ gave `≈2.5°`, the bar-symmetric scale).
 The clean result is the **identification**: the molecular bond angles split, by
 the bar-involution, into a bar-symmetric backbone (the `q^ℓ` weights, the clean
 second-row angles) and a bar-anti-symmetric chiral residue (the H₂S +2°).
+
+## The chiral channel, pinned exactly (S³ holonomy)
+
+The framework's chirality machinery
+([`chirality-residue-mass-term.md`](../../content/quantum-observable-universe/mass-theory/chirality-residue-mass-term.md),
+[`residue-as-braid-holonomy.md`](../../content/quantum-observable-universe/mass-theory/residue-as-braid-holonomy.md))
+pins the chiral channel exactly. A Wedderburn block is a **chirality cell** iff
+its signed Young content `c_λ = Σ_{(i,j)∈λ}(j−i) = 0`, equivalently the q-Dirac
+curvature `D_q²(λ) = [c_λ]_q² = 0`. For H₃:
+
+| block | `c_λ` | `D_q² = [c_λ]_q²` | chirality cell? |
+|---|---|---|---|
+| sym (3) | +3 | 9.26 | no |
+| **std (2,1)** | **0** | **0** | **yes** ← |
+| alt (1,1,1) | −3 | 9.26 | no |
+
+So the chiral channel is **exactly the (2,1) standard block** — the q-Dirac
+kernel — the same block the chiral p-orbital occupies (defect 2). And the
+residue is the **holonomy ρ(β) of the braid loop around the singular fibre**
+`ζ_ℓ` — the q-deformed **Chern–Simons holonomy of a Wilson loop in S³** around
+the obstruction divisor.
+
+Therefore the H₂S +2.1° **is** the S³ braid-holonomy of the chiral p-lone on the
+`c_λ=0` (2,1) cell. The exact angle is the **monodromy phase around `ζ_ℓ`** — the
+one remaining compute. Channel and mechanism are now exactly identified;
+compute: [`h2s_chirality_residue_s3_holonomy.py`](../../folio-assistant/computations/h2s_chirality_residue_s3_holonomy.py).
