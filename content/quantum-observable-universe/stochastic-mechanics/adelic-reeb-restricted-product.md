@@ -24,7 +24,7 @@ $$
 
 **Proof.** Both parts are proved formally over the abstract value group
 $\Gamma$ in
-[`adelic-reeb-restricted-product.lean`](#prop:adelic-reeb-restricted-product).
+[`adelic-reeb-restricted-product.lean`](adelic-reeb-restricted-product.lean).
 The restricted-product condition is encoded by an explicit finite set $S$ of
 *active* places (those with $\ordw_v \neq 0$); off $S$ the local order is the
 tame archimedean reference $0$, so the sum is finite and well-defined.
