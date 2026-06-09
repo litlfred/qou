@@ -51,8 +51,10 @@ export default chapter({
       blocks: [
         "intro-pair-production-knot-operators",
         "q-value-transition",
-        "breit-wheeler-pair-production",
-        "breit-wheeler-pair-production-table-data",
+        // breit-wheeler-pair-production + its table moved to
+        // particle-interactions (Ch9) 2026-06-09 — the pair-production
+        // derivation now sits with the quark sector it feeds; this
+        // section keeps the Q-value kinematics + knot-operator selection.
         "knot-operator-selection",
         "frobenius-gram-matrix-table1-data",
         "frobenius-gram-matrix-table2-data",

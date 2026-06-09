@@ -99,6 +99,12 @@ export default chapter({
       label: "sec:nucleon-derivation",
       blocks: [
         "nucleon-derivation-intro",
+        // Breit–Wheeler pair-production template re-homed from
+        // predicted-spectra (Ch13) 2026-06-09 — the γγ→e⁻e⁺ template the
+        // quark/meson/nucleon chain builds on; placed before the quark
+        // sector that consumes it (cross-chapter triage edge #4).
+        "breit-wheeler-pair-production",
+        "breit-wheeler-pair-production-table-data",
         // Quark sector re-homed from predicted-spectra (Ch13) per the
         // cross-chapter triage (author decision: quarks before protons) —
         // nucleons are built from quarks, so the quark defs are prior.
