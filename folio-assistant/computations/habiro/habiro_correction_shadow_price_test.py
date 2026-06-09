@@ -63,7 +63,9 @@ def main():
     cache = json.loads((_pb.witness_path("chi-tritium-h9-at-q0-50dps.witness.json", HERE)).read_text())
     data = cache.get("data", cache)
     by_part = data["by_partition"]
-    tr_M = float(mp.mpf(data["tr_M_at_q0"]))
+    # Keep substrate values at mpmath precision (flagged by
+    # compute_no_mpf_to_float_cast — dropping the outer float()).
+    tr_M = mp.mpf(data["tr_M_at_q0"])
 
     partitions = []
     y_lams = []
@@ -71,9 +73,9 @@ def main():
     contribs = []
     for row in by_part:
         partitions.append(tuple(row["partition"]))
-        y_lams.append(float(mp.mpf(row["y_lambda"])))
-        chi_lams.append(float(mp.mpf(row["chi_lambda"])))
-        contribs.append(float(mp.mpf(row["contribution"])))
+        y_lams.append(mp.mpf(row["y_lambda"]))
+        chi_lams.append(mp.mpf(row["chi_lambda"]))
+        contribs.append(mp.mpf(row["contribution"]))
 
     d = len(partitions)
     print("=" * 70)
