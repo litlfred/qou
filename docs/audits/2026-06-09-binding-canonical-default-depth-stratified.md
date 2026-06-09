@@ -412,9 +412,12 @@ re-cover the existing A=2 work), pick one of:
   returns `None` for — passing a machine-checkable
   `a3plus_atoms_bypass_rank_deficiency_blocker` assertion. Results
   below.
-- **path 1 follow-up**: regenerate H_9 / H_12 extracts with a larger
-  test-word family (sympy generation of inner braid words exhaustively
-  over a basis). Time-bounded; might close A=3 first.
+- **path 1 follow-up** ✅ **DONE for A=3 / nn (this PR)**: the H_9
+  extract regenerated over the full S_6×S_3 permutation basis (native
+  chi) is full-rank for all 30 λ⊢9, and tritium Path A vs Path B agrees
+  at machine ε (max rel res 1.22e-13). The "larger test-word family" the
+  audit anticipated is specifically the **permutation basis** (the
+  bare-σ family was degenerate). See §"Path 1 CLOSED at A=3" below.
 
 ### Path 3 result (markov_peel trace difference) — blocker-free but does NOT close
 
@@ -461,6 +464,85 @@ directly. The color weighting it drops is a sub-0.1 % perturbation on
 one crossing coefficient (δ ≈ 1.4e-3) — negligible against the 5–40×
 binding shortfall, and the free config has no interface crossing at all,
 so the binding *difference* stays convention-consistent.
+
+## Path 1 CLOSED at A=3 (2026-06-09 follow-up) — the H_9 rank deficiency was a degenerate test-word set, not a structural wall
+
+The audit's path-1 ("regenerate H_9 extracts with a larger test-word
+family") is now done, and it **closes the operator-valued branching
+combiner at A=3** (tritium) at machine ε. The earlier "rank-deficient ⇒
+under-fitted ⇒ 21–42% A=3 mismatch" was a symptom; the **root cause is
+the degenerate test-word family**, not a structural limit of the
+branching ansatz.
+
+### Diagnosis (formalize-first)
+
+The Phase-1 H_9 extract used a hand-picked 12-word H_6 family (bare-σ
+products, length ≤ 3). Probed directly, that family's `ρ_ξ` image spans
+only a fraction of `End(V_ξ)`:
+
+| ξ ⊢ 6 | d_ξ² | bare-σ span (≤len 4, 791 words) | S_6 perm basis (720 words) |
+|---|---:|---:|---:|
+| (3,2,1) | 256 | **97** (partial) | **256** (FULL) |
+| (4,2) | 81 | 69 | 81 (FULL) |
+| (4,1,1) | 100 | 78 | 100 (FULL) |
+
+By the double-centralizer theorem `ρ_ξ(H_6) = End(V_ξ)`, so the **full
+S_6 permutation basis** (the 720 reduced words `T_w`, w ∈ S_6) spans
+`End(V_ξ)` exactly — verified above. The bilinear interface system is
+`χ^λ(W6·I_2·W3) = Σ c^λ_{ξν} Tr(A^λ_{ξν}·(ρ_ξ(W6)⊗ρ_ν(W3)))`; once the
+test data spans `End(V_ξ)⊗End(V_ν)` there is **no gauge freedom** in
+`A^λ_{ξν}`, so the extracted operator is the true intertwiner (Schur /
+double-centralizer) and generalizes to the deuteron-inner — which is
+exactly what the A=3 case needs.
+
+### Result (regenerated witnesses on this branch)
+
+`sublemma_2_1_A_operator_extract_h9.py --interface nn --full-basis
+--native` → **all 30/30 λ ⊢ 9 over-determined and consistent at
+~1e-14** (was rank 14/30 for (8,1), 66/3390 for (4,3,1,1)).
+
+`sublemma_2_1_h9_tritium_verify.py --atom tritium` → **Path A (direct
+χ^λ via Hoefsmit) vs Path B (iterated Sub-lemma 2.1 with the full-basis
+A): all 30/30 λ agree, max rel residual 1.22e-13.** The 21–42% mismatch
+is gone.
+
+⇒ The operator-valued branching combiner (Sub-lemma 2.1) is
+**mathematically correct at A=3**; the prior failure was 100% the
+degenerate test words. This reconciles with the audit's path-b
+(matrix-form Wenzl): the full-basis extraction realizes the same
+intertwiner determinacy empirically.
+
+### What made it tractable: native chi + S_n symmetry
+
+- **S_n symmetry** supplies the spanning set: the S_6×S_3 permutation
+  basis (720×6 words) is the minimal guaranteed-full-span test family.
+- **`pyhecke_native`** (built from source in-container — see
+  [`compute-author.md §0.1`](../../.claude/skills/local/compute-author.md))
+  evaluates χ^λ via `chi_lambdas_braid` (rayon-batch) at **4475/s vs
+  ~5/s** pure-Python — the full 129,600-eval basis runs in **8.2 s** vs
+  ~7 h. The `nn` interface is `σ⁻¹` (pure braid), so it maps directly to
+  a native braid word.
+
+### Scope and scaling (honest)
+
+- **Closed: nn (tritium).** ³He needs the **pn** interface, whose
+  averaged crossing `σ − (h/2)·1` is a Hecke combination, not a braid
+  generator. Route it through native via **linearity**:
+  `χ(W·(σ−h/2)·W') = χ(W·σ·W') − (h/2)·χ(W·W')` (two braid evals). Then
+  the same closure applies. Follow-up.
+- **Combiner None-gate** (`canonical_tr_m_via_branching.py:252`) can now
+  be lifted for the nn-closable atoms; H_12 (A=4) is tractable the same
+  way.
+- **H_18 (⁶Li) and beyond do not scale**: the full S_n basis is `n!`
+  (17! at H_18) — infeasible. There the direct `markov_peel` path, or a
+  **multiplicity-space (intertwiner) parametrization** of `A^λ_{ξν}`
+  (dimension `c^λ_{ξν}` ≪ `(d_ξ d_ν)²`, the categorical/Schur reduction),
+  is the route. This is the natural next research step beyond path 1.
+- **Binding physics unchanged.** This closes a *compute-wiring* gap (the
+  combiner now works at A=3), NOT the binding-closure gap — binding
+  still under-binds (magic-A scale factor missing; see the markov_peel
+  trace-difference result above). The combiner gives correct per-λ χ
+  decompositions, not new binding.
 
 ## See also
 
