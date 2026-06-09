@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-08T18:37:01.842562+00:00",
-  "commitSha": "968bf80bbc08ea28e021067ced88456251cb699f",
+  "computedAt": "2026-06-09T00:16:39.728055+00:00",
+  "commitSha": "1f2abe696ba8ad67921f7fa7139f9a159a9d8bd6",
   "assertions": [
     {
       "name": "lateral weighting (w_perp<1) reduces the equal-channel overbind",
@@ -20,11 +20,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 3,
   "computation": "embeddable-knot-operator",
   "scriptFile": "embeddable_knot_operator.py",
-  "scriptHash": "880d9aad7462",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "42b8ea2b218e",
+  "scriptCommitSha": "1f2abe696ba8ad67921f7fa7139f9a159a9d8bd6",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -51,6 +51,16 @@
       "0.70": 11.095528722583111,
       "0.50": 9.246273935485926,
       "0.30": 7.397019148388741
-    }
+    },
+    "upstream_witness_hashes": [
+      {
+        "path": "co-bond-order-active-set.witness.json",
+        "sha256": "0ddce3f86094a9ef4c9202ed511c731e7b5f20916525ef6fd1b29ec83d189766",
+        "size_bytes": 4752,
+        "commitSha": "1f2abe696ba8ad67921f7fa7139f9a159a9d8bd6",
+        "scriptCommitSha": "1f2abe696ba8ad67921f7fa7139f9a159a9d8bd6",
+        "computedAt": "2026-06-09T00:16:39.566663+00:00"
+      }
+    ]
   }
 }
