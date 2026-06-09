@@ -286,7 +286,7 @@ def main():
     # Sanity assertions
     w.add_assertion(
         "klein_f_leading_coefficient_one",
-        computed=float(mp.mpf(degrees["f_leading_ratio"])),
+        computed=float(degrees["f_leading_ratio"]),
         expected=1.0,
         tolerance=1e-9,
         source=(
@@ -296,9 +296,9 @@ def main():
     )
     w.add_assertion(
         "klein_syzygy_at_z0",
-        computed=float(
-            mp.mpf(syzygy["syzygy_check_at_z0"]["lhs"])
-            - mp.mpf(syzygy["syzygy_check_at_z0"]["rhs"])
+        computed=(
+            float(syzygy["syzygy_check_at_z0"]["lhs"])
+            - float(syzygy["syzygy_check_at_z0"]["rhs"])
         ),
         expected=0.0,
         tolerance=1e-30,
@@ -309,7 +309,7 @@ def main():
     )
     w.add_assertion(
         "klein_J_at_vertex_orbit_is_zero",
-        computed=float(mp.mpf(orbits["J_at_z0"])),
+        computed=float(orbits["J_at_z0"]),
         expected=0.0,
         tolerance=1e-30,
         source=(

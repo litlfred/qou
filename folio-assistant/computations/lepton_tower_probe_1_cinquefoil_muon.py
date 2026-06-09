@@ -80,8 +80,8 @@ def main() -> int:
             "Q_m": str(Q_m),
             "tr_M_conv_A": str(tr_M_A),
             "tr_M_conv_B": str(tr_M_B),
-            "abs_tr_M_A": float(mp.fabs(tr_M_A)),
-            "abs_tr_M_B": float(mp.fabs(tr_M_B)),
+            "abs_tr_M_A": mp.fabs(tr_M_A),
+            "abs_tr_M_B": mp.fabs(tr_M_B),
         })
         print(f"  m={m}  T(2,{2*m+1:2d})  P_m = {float(P_m):.8f}  Q_m = {float(Q_m):.8f}  |tr_M(A)| = {float(mp.fabs(tr_M_A)):.6f}")
         # Step
@@ -177,7 +177,9 @@ def main() -> int:
             "cinquefoil_as_muon_uniform_xi_tower": verdict_cinquefoil,
             "ratio_xi_3_xi_2_match_codata_tau_mu": float(xi_ratio_3_2),
             "expected_if_uniform": float(codata_tau_mu),
-            "relative_diff_percent": float(mp.fabs(xi_ratio_3_2 - codata_tau_mu) / codata_tau_mu * 100),
+            # mp.nstr preserves substrate precision in the JSON emit.
+            "relative_diff_percent": mp.nstr(
+                mp.fabs(xi_ratio_3_2 - codata_tau_mu) / codata_tau_mu * 100, 12),
         },
         "timestamp": datetime.now(timezone.utc).isoformat(timespec="seconds"),
     }

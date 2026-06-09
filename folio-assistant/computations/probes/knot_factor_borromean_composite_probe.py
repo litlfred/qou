@@ -157,7 +157,7 @@ def main() -> int:
         mp.mpf(1) * chi_3 * chi_3 +
         mp.mpf(1) * chi_21 * chi_21
     )
-    chi_33_h6_residue = float(mp.fabs(chi_33_h6_trace - chi_33_h6_predicted))
+    chi_33_h6_residue = mp.fabs(chi_33_h6_trace - chi_33_h6_predicted)
 
     # λ = (4,2) ⊢ 6, dim 9.  LR branching c^(4,2)_{μν}:
     #   c^(4,2)_{(3),(3)} = 1
@@ -171,7 +171,7 @@ def main() -> int:
         mp.mpf(1) * chi_21 * chi_3 +
         mp.mpf(1) * chi_21 * chi_21
     )
-    chi_42_h6_residue = float(mp.fabs(chi_42_h6_trace - chi_42_h6_predicted))
+    chi_42_h6_residue = mp.fabs(chi_42_h6_trace - chi_42_h6_predicted)
 
     # Note: the FULL ⁴He braid in H_12 is intractable
     # (per PR #798's deferred-intractable taxonomy).  The
