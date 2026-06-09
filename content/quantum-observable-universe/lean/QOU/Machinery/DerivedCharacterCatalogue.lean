@@ -467,6 +467,120 @@ instance {R : Type*} [Field R] : IsRMatrixDerived R figureEightTwoOneHiggs where
   rmatrixChi := figureEightTwoOneHiggsChi
   agrees := fun _ _ => rfl
 
+/-! ## Kind-2 Laurent reframe — division-free `unit` forms over `ℤ[q, q⁻¹]`
+
+The five dividing characters above (`/q^k`) carry `[Field R]` because the
+class field `IsRMatrixDerived.storedChi : R → R` cannot express `q⁻¹` without
+inversion.  Mirroring `BorromeanChiPerRep`'s `…_qform_unit` template, we
+provide their **division-free companions** over a commutative ring with `q` a
+**unit** (`q : Rˣ`, so `↑q⁻¹` is its ring inverse and `1/q^k = (↑q⁻¹)^k`),
+each bridged to a genuine polynomial in `h = ↑q − ↑q⁻¹` (resp.
+`H = ↑q² − ↑q⁻²`).  The sole hypothesis is the unit law `↑q · ↑q⁻¹ = 1` — no
+division, no field, no ordering — so these instantiate over the **non-field**
+`R = LaurentPolynomial ℤ` (`q = T`, the `TUnit` of `BorromeanChiPerRep`),
+witnessing that the catalogue's Laurent characters are genuine `ℤ[q, q⁻¹]`
+elements rather than rational functions over a field. -/
+
+section UnitForms
+
+variable {R : Type*} [CommRing R]
+
+open QOU.BraidsAndKnots
+
+/-- Hopf `(1,1)` diquark, division-free: the sign-rep monomial `(↑q⁻¹)²`. -/
+def hopfOneOneDiquarkChiUnit (q : Rˣ) : R := ((↑q⁻¹ : R)) ^ 2
+
+/-- Trefoil `(1,1)` electron, division-free: `−(↑q⁻¹)³`. -/
+def trefoilOneOneElectronChiUnit (q : Rˣ) : R := -((↑q⁻¹ : R)) ^ 3
+
+/-- Cinquefoil `(1,1)` muon, division-free: `−(↑q⁻¹)⁵`. -/
+def cinquefoilOneOneMuonChiUnit (q : Rˣ) : R := -((↑q⁻¹ : R)) ^ 5
+
+/-- Borromean `(2,1)` baryon, division-free Kauffman Laurent over a unit `q`:
+    `−q¹² + 3q⁸ − 3q⁴ + 4 − 3q⁻⁴ + 3q⁻⁸ − q⁻¹²`, division by `q^k` replaced by
+    `(↑q⁻¹)^k`. -/
+def borromeanTwoOneBaryonChiUnit (q : Rˣ) : R :=
+  -(↑q : R) ^ 12 + 3 * (↑q : R) ^ 8 - 3 * (↑q : R) ^ 4 + 4
+    - 3 * ((↑q⁻¹ : R)) ^ 4 + 3 * ((↑q⁻¹ : R)) ^ 8 - ((↑q⁻¹ : R)) ^ 12
+
+/-- **Borromean `(2,1)` reframed** equals the faithful `R[h]` character
+    `chi21_borromean` at `H = ↑q² − ↑q⁻²` (the Kauffman `t = q²`
+    substitution).  Division-free; sole input `↑q · ↑q⁻¹ = 1`.  Hence the
+    cell's `χ^{(2,1)}` is a genuine `ℤ[q, q⁻¹]` Laurent polynomial.
+    (The `linear_combination` coefficient is the exact quotient of
+    `qform − chi21_borromean(↑q²−↑q⁻²)` by `↑q·↑q⁻¹ − 1`, machine-derived.) -/
+theorem borromeanTwoOneBaryonChiUnit_eq_poly (q : Rˣ) :
+    borromeanTwoOneBaryonChiUnit q = chi21_borromean ((↑q : R) ^ 2 - (↑q⁻¹ : R) ^ 2) := by
+  have hab : (↑q : R) * ↑q⁻¹ = 1 := q.mul_inv
+  unfold borromeanTwoOneBaryonChiUnit chi21_borromean
+  set a : R := (↑q : R) with ha
+  set b : R := (↑q⁻¹ : R) with hb
+  linear_combination
+    (-6*a^9*b - 6*a^8 + 15*a^7*b^3 + 15*a^6*b^2 - 20*a^5*b^5 + 3*a^5*b
+      - 20*a^4*b^4 + 3*a^4 + 15*a^3*b^7 - 2*a^3*b^3 + 15*a^2*b^6 - 2*a^2*b^2
+      - 6*a*b^9 + 3*a*b^5 - 2*a*b - 6*b^8 + 3*b^4 - 2) * hab
+
+/-- Figure-eight `(2,1)` higgs, division-free palindromic Laurent over a unit:
+    `q⁴ − 2q² + 1 − 2q⁻² + q⁻⁴`, with `1/q^k` replaced by `(↑q⁻¹)^k`. -/
+def figureEightTwoOneHiggsChiUnit (q : Rˣ) : R :=
+  (↑q : R) ^ 4 - 2 * (↑q : R) ^ 2 + 1 - 2 * ((↑q⁻¹ : R)) ^ 2 + ((↑q⁻¹ : R)) ^ 4
+
+/-- **Figure-eight `(2,1)` reframed** equals the even `R[h]` polynomial
+    `h⁴ + 2h² − 1` at `h = ↑q − ↑q⁻¹`.  Division-free; sole input
+    `↑q · ↑q⁻¹ = 1`.  Hence the cell's `χ^{(2,1)}` is a genuine `ℤ[q, q⁻¹]`
+    Laurent polynomial. -/
+theorem figureEightTwoOneHiggsChiUnit_eq_poly (q : Rˣ) :
+    figureEightTwoOneHiggsChiUnit q
+      = ((↑q : R) - ↑q⁻¹) ^ 4 + 2 * ((↑q : R) - ↑q⁻¹) ^ 2 - 1 := by
+  have hab : (↑q : R) * ↑q⁻¹ = 1 := q.mul_inv
+  unfold figureEightTwoOneHiggsChiUnit
+  set a : R := (↑q : R) with ha
+  set b : R := (↑q⁻¹ : R) with hb
+  linear_combination (4*a^2 - 6*a*b + 4*b^2 - 2) * hab
+
+/-- Both reframed standard-irrep characters are **bar-invariant** (`q ↦ q⁻¹`
+    fixes them): the bridge polynomials are even in their argument, and `q ↦
+    q⁻¹` flips `H ↦ −H` / `h ↦ −h`. -/
+theorem borromeanTwoOneBaryonChiUnit_bar_invariant (q : Rˣ) :
+    borromeanTwoOneBaryonChiUnit q⁻¹ = borromeanTwoOneBaryonChiUnit q := by
+  rw [borromeanTwoOneBaryonChiUnit_eq_poly q⁻¹, borromeanTwoOneBaryonChiUnit_eq_poly q, inv_inv]
+  rw [show ((↑q⁻¹ : R) ^ 2 - (↑q : R) ^ 2) = -((↑q : R) ^ 2 - (↑q⁻¹ : R) ^ 2) by ring]
+  exact chi21_borromean_even _
+
+theorem figureEightTwoOneHiggsChiUnit_bar_invariant (q : Rˣ) :
+    figureEightTwoOneHiggsChiUnit q⁻¹ = figureEightTwoOneHiggsChiUnit q := by
+  rw [figureEightTwoOneHiggsChiUnit_eq_poly q⁻¹, figureEightTwoOneHiggsChiUnit_eq_poly q, inv_inv]
+  ring
+
+end UnitForms
+
+/-! ### Payoff — the catalogue's Laurent characters over the non-field `ℤ[q, q⁻¹]`
+
+`R = LaurentPolynomial ℤ`, `q = T` (the `TUnit` of `BorromeanChiPerRep`):
+each reframed character is a genuine Laurent polynomial, not a field
+rational. -/
+
+section LaurentWitness
+
+open QOU.BraidsAndKnots LaurentPolynomial
+
+/-- The Borromean `(2,1)` Kauffman character over the **non-field**
+    `ℤ[q, q⁻¹]` is the Laurent polynomial `chi21_borromean (T² − T⁻²)`. -/
+theorem borromeanTwoOneBaryonChiUnit_laurent :
+    borromeanTwoOneBaryonChiUnit (R := LaurentPolynomial ℤ) TUnit
+      = chi21_borromean ((T 1 : LaurentPolynomial ℤ) ^ 2 - (T (-1)) ^ 2) :=
+  borromeanTwoOneBaryonChiUnit_eq_poly TUnit
+
+/-- The Figure-eight `(2,1)` character over `ℤ[q, q⁻¹]` is the Laurent
+    polynomial `h⁴ + 2h² − 1`, `h = T − T⁻¹`. -/
+theorem figureEightTwoOneHiggsChiUnit_laurent :
+    figureEightTwoOneHiggsChiUnit (R := LaurentPolynomial ℤ) TUnit
+      = ((T 1 : LaurentPolynomial ℤ) - T (-1)) ^ 4
+        + 2 * ((T 1 : LaurentPolynomial ℤ) - T (-1)) ^ 2 - 1 :=
+  figureEightTwoOneHiggsChiUnit_eq_poly TUnit
+
+end LaurentWitness
+
 end Phase2
 
 end QOU.Machinery
