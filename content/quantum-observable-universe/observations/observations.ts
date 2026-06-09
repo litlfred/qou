@@ -310,6 +310,7 @@ export default chapter({
         "cfl-neutron-star-observables",
         "strangelet-merger-signature",
         "strangelet-double-beta",
+        "metallic-cascade-collapse",
       ],
     }),
 

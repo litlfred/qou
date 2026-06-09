@@ -2214,6 +2214,52 @@ export const references: CSLData[] = [
     DOI: "10.1016/S0550-3213(98)00668-3",
   }),
 
+  // ── Sagert et al. 2009 — QCD phase transition in core-collapse SNe ──
+  ref({
+    id: "sagert2009",
+    type: "article-journal",
+    title: "Signals of the QCD phase transition in core-collapse supernovae",
+    author: [
+      { family: "Sagert", given: "Irina" },
+      { family: "Fischer", given: "Tobias" },
+      { family: "Hempel", given: "Matthias" },
+      { family: "Pagliara", given: "Giuseppe" },
+      { family: "Schaffner-Bielich", given: "Jürgen" },
+      { family: "Mezzacappa", given: "Anthony" },
+      { family: "Thielemann", given: "Friedrich-Karl" },
+      { family: "Liebendörfer", given: "Matthias" },
+    ],
+    "container-title": "Physical Review Letters",
+    issued: { "date-parts": [[2009]] },
+    volume: "102",
+    issue: "8",
+    page: "081101",
+    DOI: "10.1103/PhysRevLett.102.081101",
+  }),
+
+  // ── Dasgupta et al. 2010 — detecting the transition in the ν burst ──
+  ref({
+    id: "dasgupta2010",
+    type: "article-journal",
+    title:
+      "Detecting the QCD phase transition in the next Galactic supernova neutrino burst",
+    author: [
+      { family: "Dasgupta", given: "Basudeb" },
+      { family: "Fischer", given: "Tobias" },
+      { family: "Horiuchi", given: "Shunsaku" },
+      { family: "Liebendörfer", given: "Matthias" },
+      { family: "Mirizzi", given: "Alessandro" },
+      { family: "Sagert", given: "Irina" },
+      { family: "Schaffner-Bielich", given: "Jürgen" },
+    ],
+    "container-title": "Physical Review D",
+    issued: { "date-parts": [[2010]] },
+    volume: "81",
+    issue: "10",
+    page: "103005",
+    DOI: "10.1103/PhysRevD.81.103005",
+  }),
+
   // ── Thurston 1978 ──────────────────────────────────────────────
   ref({
     id: "thurston1978",
