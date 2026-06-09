@@ -169,17 +169,19 @@ def analytic_residual_structure(q: mp.mpf) -> dict:
         "h_to_5": float(h ** 5),
         "cosh_h": float(cosh_h),
         "cosh_log_q": float(cosh_log_q),
-        # Keep substrate precision in the witness via mp.nstr (flagged
-        # by compute_no_mpf_to_float_cast — direct float() of mpmath
-        # value was the L1 leak).
-        "exp_h": mp.nstr(mp.exp(h), 20),
-        "two_q_minus_1": mp.nstr(2 * q - 1, 20),
+        # Keep substrate precision via mp.mpf (numeric, NOT mp.nstr
+        # strings — callers use :.10f / :+.4e formatters that work on
+        # mp.mpf but NOT on str, per Copilot #2050). WitnessBuilder
+        # serializes mp.mpf via default=str so JSON precision is
+        # preserved at emission time.
+        "exp_h": mp.exp(h),
+        "two_q_minus_1": 2 * q - 1,
         # Decomposition: 2q - 1 vs exp(h) at q_0
-        "exp_h_minus_2q_plus_1": mp.nstr(mp.exp(h) - 2 * q + 1, 20),
+        "exp_h_minus_2q_plus_1": mp.exp(h) - 2 * q + 1,
         # The bar-symmetric component:
-        "cosh_h_at_q0": mp.nstr(cosh_h, 20),
+        "cosh_h_at_q0": cosh_h,
         # The bar-antisymmetric component:
-        "sinh_h_at_q0": mp.nstr(mp.sinh(h), 20),
+        "sinh_h_at_q0": mp.sinh(h),
     }
 
 

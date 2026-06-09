@@ -58,6 +58,7 @@ import sys
 from pathlib import Path
 from datetime import datetime, timezone
 
+import mpmath as mp
 import sympy as sp
 
 # P2.5 migration: helper available; per-witness expose_polynomial call is a follow-up
@@ -380,7 +381,10 @@ if __name__ == "__main__":
         per_lambda = {}
         for lam in partitions_of(3):
             chi = q_character_on_braid_word(lam, crossings, q)
-            chi_at_q0 = float(chi.subs(q, q0).evalf(30))
+            # Keep substrate precision via mp.mpf (numeric — supports
+            # :+.6e format AND WitnessBuilder default=str serialization,
+            # per compute_no_mpf_to_float_cast + Copilot #2050 pattern).
+            chi_at_q0 = mp.mpf(str(chi.subs(q, q0).evalf(50)))
             chi_at_q0_polynomial_q = expose_polynomial(chi, q)
             per_lambda[str(lam)] = {
                 "symbolic": str(sp.nsimplify(chi)),
@@ -417,7 +421,7 @@ if __name__ == "__main__":
             )
             total += w * chi
         total = sp.simplify(total)
-        total_q0 = float(total.subs(q, q0).evalf(30))
+        total_q0 = mp.mpf(str(total.subs(q, q0).evalf(50)))
         total_q0_polynomial_q = expose_polynomial(total, q)
         print(f"  |tr_M({label})| @ q_0 = {abs(total_q0):+.6e}")
         results[f"{label}_total"] = {
