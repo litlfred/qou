@@ -98,6 +98,50 @@ and the conjectured-general statement sharpens to: *for every n,
 `t_pl(γ) − t_pl(σ₁)` vanishes on `q > 1` exactly at `q = δ_silver`* —
 an n-indexed family of identities, prime Lean target.
 
+### 1.7 Silver family — closed forms derived (owner follow-up 1)
+
+[`metallic_silver_family_closed_forms.py`](../../folio-assistant/computations/metallic_silver_family_closed_forms.py)
+derives `Δ_n(q) = t_pl(γ) − t_pl(σ₁)` exactly for n = 2, 3, 4, 5:
+
+```
+Δ_n(q) = (q² − 2q − 1) · C_n(q),   C_n sign-definite on q > 0
+```
+
+with every cofactor a (negated) product of polynomials positive on
+`q > 0` — e.g. `Δ₃ = −(q²−2q−1)(q²−q+1)(q²+q+1)(q⁴+3q²+1)/(q⁴(q²+1))`.
+Notably every cofactor is **palindromic** (bar-invariant): the silver
+quadratic carries ALL the bar-breaking of the difference.  So
+`t_pl(γ) = t_pl(σ₁) ⟺ q = δ_silver` is now PROVED in closed form at
+each n ≤ 5, not just mpfr-verified.  Lean formalization:
+`QOU.AlgebraicSubstrate.MetallicSilverFamily` (n = 3, 4, 5;
+n = 2 is the existing `silver_lp_coincidence`) +
+`QOU.AlgebraicSubstrate.MetallicCanonicalSqrtQ` (the q = 4 identities,
+§1.5) — sorry-free source authored this session; build verification
+recorded in the PR thread.
+
+### 1.8 √q-ladder census — REFUTED as a family (owner follow-up 2)
+
+Classifying every irreducible factor of the 36 exact canonical
+pairwise numerators (from the §1.5 witness — no new scans) into
+arithmetic families:
+
+| family | count |
+|---|---|
+| s-rational (`s ∈ ℚ`) | **2** (both `s − 2`, the proven q = 4 point) |
+| `s − s⁻¹ ∈ ℚ` quadratics | **0** |
+| `s + s⁻¹ ∈ ℚ` (z-rational) quadratics | **0** |
+| q-metallic (`q² − nq − 1`) | **0** |
+| irreducible deg 4/8/10 | 10 |
+
+The deg-4/8/10 factors are non-palindromic monic units of `ℤ[s]`
+(constant term ±1) — generic algebraic numbers with no z-structure.
+**Verdict: `s − s⁻¹ ∈ ℚ` is NOT the canonical analogue of the metallic
+equation.  The canonical convention has exactly ONE arithmetic point
+in the physical region at n = 4: `s = 2` (q = 4, z = 2/5).**  The
+parallel "two conventions, two ladders" picture from §1.5 sharpens to
+"two conventions: a metallic LADDER (plancherel) vs a single rational
+POINT (canonical, at n = 4)".
+
 ## 2. q↔ρ calibration — three corpus-anchored maps
 
 Script: [`metallic_q_rho_calibration.py`](../../folio-assistant/computations/metallic_q_rho_calibration.py);

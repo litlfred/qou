@@ -1,0 +1,279 @@
+{
+  "description": "Closed-form silver family \u0394_n(q) = (q\u00b2\u22122q\u22121)\u00b7C_n(q) for n=2..5 (plancherel convention) + exact factor census of all pairwise cost-difference numerators at n=4 in both conventions, classified into arithmetic families (s-rational / z-rational / s-metallic-like / q-metallic). All exact sympy; no numerical scanning.",
+  "computed_at": "2026-06-09T23:21:58.035668+00:00",
+  "script": "metallic_silver_family_closed_forms.py",
+  "silver_family": [
+    {
+      "n": 2,
+      "delta_factored": "-(q**2 + 1)*(q**2 - 2*q - 1)  /  q**2",
+      "cofactor": "-q**2 - 1",
+      "cofactor_positive_roots": [],
+      "cofactor_at_q1": "-2",
+      "cofactor_sign_definite_on_q_pos": true,
+      "cofactor_sign": "negative"
+    },
+    {
+      "n": 3,
+      "delta_factored": "-(q**2 - 2*q - 1)*(q**2 - q + 1)*(q**2 + q + 1)*(q**4 + 3*q**2 + 1)  /  q**4*(q**2 + 1)",
+      "cofactor": "-(q**2 - q + 1)*(q**2 + q + 1)*(q**4 + 3*q**2 + 1)",
+      "cofactor_positive_roots": [],
+      "cofactor_at_q1": "-15",
+      "cofactor_sign_definite_on_q_pos": true,
+      "cofactor_sign": "negative"
+    },
+    {
+      "n": 4,
+      "delta_factored": "-(q**2 + 1)**2*(q**2 - 2*q - 1)*(q**16 + 2*q**14 + 9*q**12 + 8*q**10 + 17*q**8 + 8*q**6 + 9*q**4 + 2*q**2 + 1)  /  q**7*(q**4 + 1)*(q**2 - q + 1)*(q**2 + q + 1)",
+      "cofactor": "-(q**2 + 1)**2*(q**16 + 2*q**14 + 9*q**12 + 8*q**10 + 17*q**8 + 8*q**6 + 9*q**4 + 2*q**2 + 1)",
+      "cofactor_positive_roots": [],
+      "cofactor_at_q1": "-228",
+      "cofactor_sign_definite_on_q_pos": true,
+      "cofactor_sign": "negative"
+    },
+    {
+      "n": 5,
+      "delta_factored": "-(q**2 - 2*q - 1)*(q**36 + 6*q**34 + 21*q**32 + 58*q**30 + 136*q**28 + 268*q**26 + 443*q**24 + 630*q**22 + 778*q**20 + 838*q**18 + 778*q**16 + 630*q**14 + 443*q**12 + 268*q**10 + 136*q**8 + 58*q**6 + 21*q**4 + 6*q**2 + 1)  /  q**11*(q**4 + 1)*(q**2 - q + 1)*(q**2 + q + 1)*(q**4 - q**3 + q**2 - q + 1)*(q**4 + q**3 + q**2 + q + 1)",
+      "cofactor": "-q**36 - 6*q**34 - 21*q**32 - 58*q**30 - 136*q**28 - 268*q**26 - 443*q**24 - 630*q**22 - 778*q**20 - 838*q**18 - 778*q**16 - 630*q**14 - 443*q**12 - 268*q**10 - 136*q**8 - 58*q**6 - 21*q**4 - 6*q**2 - 1",
+      "cofactor_positive_roots": [],
+      "cofactor_at_q1": "-5520",
+      "cofactor_sign_definite_on_q_pos": true,
+      "cofactor_sign": "negative"
+    }
+  ],
+  "census_n4": {
+    "canonical": {
+      "source_witness": "metallic-q4-canonical-coincidence-proof.witness.json",
+      "n_pairs_with_physical_roots": 12,
+      "family_counts": {
+        "s-rational": 2,
+        "other-deg8": 5,
+        "other-deg4": 1,
+        "other-deg10": 4
+      },
+      "pairs": [
+        {
+          "pair": [
+            "\u03b3",
+            "\u03c31\u00b7\u03c32\u00b7\u03c31"
+          ],
+          "factors": [
+            {
+              "factor": "s - 2",
+              "family": "s-rational",
+              "roots_s_gt1": [
+                "2.000000000"
+              ],
+              "roots_q": [
+                "4.000000000"
+              ]
+            }
+          ]
+        },
+        {
+          "pair": [
+            "\u03b3",
+            "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32"
+          ],
+          "factors": [
+            {
+              "factor": "s**8 - 2*s**5 - s**4 - 4*s**3 - 2*s + 1",
+              "family": "other-deg8",
+              "roots_s_gt1": [
+                "1.628557096"
+              ],
+              "roots_q": [
+                "2.652198214"
+              ]
+            }
+          ]
+        },
+        {
+          "pair": [
+            "\u03b3",
+            "\u03c31\u00b7\u03c32\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+          ],
+          "factors": [
+            {
+              "factor": "s**4 + s**3 - s**2 - 3*s + 1",
+              "family": "other-deg4",
+              "roots_s_gt1": [
+                "1.238034728"
+              ],
+              "roots_q": [
+                "1.532729989"
+              ]
+            }
+          ]
+        },
+        {
+          "pair": [
+            "\u03b3",
+            "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+          ],
+          "factors": [
+            {
+              "factor": "s**10 + s**9 - s**8 - s**7 - 3*s**5 - s**3 + s**2 + s - 1",
+              "family": "other-deg10",
+              "roots_s_gt1": [
+                "1.323541162"
+              ],
+              "roots_q": [
+                "1.751761206"
+              ]
+            }
+          ]
+        },
+        {
+          "pair": [
+            "\u03c31",
+            "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33"
+          ],
+          "factors": [
+            {
+              "factor": "s - 2",
+              "family": "s-rational",
+              "roots_s_gt1": [
+                "2.000000000"
+              ],
+              "roots_q": [
+                "4.000000000"
+              ]
+            }
+          ]
+        },
+        {
+          "pair": [
+            "\u03c31",
+            "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32"
+          ],
+          "factors": [
+            {
+              "factor": "s**8 + s**7 - s**6 + s**5 - 3*s**4 - s**3 - s**2 - s + 1",
+              "family": "other-deg8",
+              "roots_s_gt1": [
+                "1.285463708"
+              ],
+              "roots_q": [
+                "1.652416946"
+              ]
+            }
+          ]
+        },
+        {
+          "pair": [
+            "\u03c31",
+            "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+          ],
+          "factors": [
+            {
+              "factor": "s**10 + s**9 - s**8 - s**6 - s**5 - s**4 + s**2 + s - 1",
+              "family": "other-deg10",
+              "roots_s_gt1": [
+                "1.155225034"
+              ],
+              "roots_q": [
+                "1.334544880"
+              ]
+            }
+          ]
+        },
+        {
+          "pair": [
+            "\u03c31\u00b7\u03c32",
+            "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32"
+          ],
+          "factors": [
+            {
+              "factor": "s**8 + s**7 - s**4 - 2*s**3 - s + 1",
+              "family": "other-deg8",
+              "roots_s_gt1": [
+                "1.108897988"
+              ],
+              "roots_q": [
+                "1.229654748"
+              ]
+            }
+          ]
+        },
+        {
+          "pair": [
+            "\u03c31\u00b7\u03c32\u00b7\u03c31",
+            "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32"
+          ],
+          "factors": [
+            {
+              "factor": "s**8 - s**6 - 3*s**4 - s**2 + 1",
+              "family": "other-deg8",
+              "roots_s_gt1": [
+                "1.539222338"
+              ],
+              "roots_q": [
+                "2.369205407"
+              ]
+            }
+          ]
+        },
+        {
+          "pair": [
+            "\u03c31\u00b7\u03c32\u00b7\u03c31",
+            "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+          ],
+          "factors": [
+            {
+              "factor": "s**10 + s**9 - s**8 - s**7 - s**6 - s**5 - s**4 + s**3 + s**2 + s - 1",
+              "family": "other-deg10",
+              "roots_s_gt1": [
+                "1.233507830"
+              ],
+              "roots_q": [
+                "1.521541566"
+              ]
+            }
+          ]
+        },
+        {
+          "pair": [
+            "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33",
+            "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32"
+          ],
+          "factors": [
+            {
+              "factor": "s**8 + s**7 - s**6 - s**4 - 2*s**3 + s**2 - s + 1",
+              "family": "other-deg8",
+              "roots_s_gt1": [
+                "1.165436604"
+              ],
+              "roots_q": [
+                "1.358242478"
+              ]
+            }
+          ]
+        },
+        {
+          "pair": [
+            "\u03c31\u00b7\u03c32\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31",
+            "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+          ],
+          "factors": [
+            {
+              "factor": "s**10 + s**9 - 2*s**8 - 2*s**7 - s**5 + 2*s**3 + s - 1",
+              "family": "other-deg10",
+              "roots_s_gt1": [
+                "1.408096525"
+              ],
+              "roots_q": [
+                "1.982735823"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "verdict": {
+    "silver_family": "PROVED in closed form for n = 2,3,4,5: \u0394_n(q) = (q\u00b2 \u2212 2q \u2212 1)\u00b7C_n(q) with C_n(q) sign-definite on q > 0 \u2014 so t_pl(\u03b3) = t_pl(\u03c3\u2081) \u27fa q = \u03b4_silver at every tested strand count.  Lean: MetallicSilverFamily.lean.",
+    "sqrtq_ladder": "From the canonical census (family_counts): the arithmetic families that actually occur among physical-region factors decide whether s \u2212 s\u207b\u00b9 \u2208 \u211a / s + s\u207b\u00b9 \u2208 \u211a (z-rational) generate ladders beyond the proven s-rational point q = 4.  See audit doc \u00a7\u221aq-ladder for the reading.",
+    "plancherel_other_roots": "The non-silver plancherel roots (q* \u2208 (1.2, 1.6), probe data) are NOT classified here \u2014 deferred; the proved content is that the silver quadratic is the unique metallic factor (\u0394_n closed forms) at n \u2264 5."
+  },
+  "runtime_seconds": 1.0
+}
