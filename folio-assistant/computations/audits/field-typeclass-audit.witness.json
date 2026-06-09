@@ -1,0 +1,1032 @@
+{
+  "audit": "field-typeclass-over-strength",
+  "scanned_root": "content/quantum-observable-universe/lean/QOU",
+  "total": 102,
+  "counts": {
+    "phantom": 0,
+    "over-strong": 64,
+    "genuine": 38
+  },
+  "findings": [
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/SurrealRateCalculus.lean",
+      "line": 49,
+      "decl_kw": "class",
+      "decl_name": "SurrealRateCalculus",
+      "type_var": "F",
+      "field_class": "Field",
+      "classification": "over-strong",
+      "evidence": "`F` used but no division/inverse found"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/SurrealRateCalculus.lean",
+      "line": 83,
+      "decl_kw": "instance",
+      "decl_name": "surrealRateCalculus_classicalLimit",
+      "type_var": "F",
+      "field_class": "Field",
+      "classification": "over-strong",
+      "evidence": "`F` used but no division/inverse found"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/SurrealRateCalculus.lean",
+      "line": 103,
+      "decl_kw": "theorem",
+      "decl_name": "surreal_rate_calculus_conditional",
+      "type_var": "F",
+      "field_class": "Field",
+      "classification": "over-strong",
+      "evidence": "`F` used but no division/inverse found"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/SurrealSqueeze.lean",
+      "line": 56,
+      "decl_kw": "theorem",
+      "decl_name": "surreal_squeeze",
+      "type_var": "F",
+      "field_class": "Field",
+      "classification": "genuine",
+      "evidence": "uses `⁻¹` (inverse)"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/SurrealSqueeze.lean",
+      "line": 68,
+      "decl_kw": "theorem",
+      "decl_name": "surreal_squeeze_of_pow_lt",
+      "type_var": "F",
+      "field_class": "Field",
+      "classification": "genuine",
+      "evidence": "uses `⁻¹` (inverse)"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/BlockMultiplicativityVFree.lean",
+      "line": 181,
+      "decl_kw": "theorem",
+      "decl_name": "t1_free_mirror_nuclei",
+      "type_var": "R",
+      "field_class": "Field",
+      "classification": "genuine",
+      "evidence": "uses field-only token `field_simp`"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/BraidGroupNStrand.lean",
+      "line": 200,
+      "decl_kw": "def",
+      "decl_name": "markovZN",
+      "type_var": "R",
+      "field_class": "Field",
+      "classification": "genuine",
+      "evidence": "uses `/` (division)"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/GradedMarkovTraceFromGSFiltration.lean",
+      "line": 45,
+      "decl_kw": "class",
+      "decl_name": "GradedMarkovTraceFromGSFiltration",
+      "type_var": "R",
+      "field_class": "Field",
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/GradedMarkovTraceFromGSFiltration.lean",
+      "line": 63,
+      "decl_kw": "theorem",
+      "decl_name": "graded_markov_trace_from_gs_filtration",
+      "type_var": "R",
+      "field_class": "Field",
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/GradedTraceResidueSplit.lean",
+      "line": 34,
+      "decl_kw": "def",
+      "decl_name": "GradedTraceResidueSplit.symbolMap",
+      "type_var": "_R",
+      "field_class": "Field",
+      "classification": "over-strong",
+      "evidence": "`_R` used but no division/inverse found"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/GradedTraceResidueSplit.lean",
+      "line": 39,
+      "decl_kw": "def",
+      "decl_name": "GradedTraceResidueSplit.gradedTrace",
+      "type_var": "R",
+      "field_class": "Field",
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/GradedTraceResidueSplit.lean",
+      "line": 43,
+      "decl_kw": "def",
+      "decl_name": "GradedTraceResidueSplit.gbResidue",
+      "type_var": "R",
+      "field_class": "Field",
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/GradedTraceResidueSplit.lean",
+      "line": 47,
+      "decl_kw": "def",
+      "decl_name": "GradedTraceResidueSplit.markovTrace",
+      "type_var": "R",
+      "field_class": "Field",
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/GradedTraceResidueSplit.lean",
+      "line": 55,
+      "decl_kw": "class",
+      "decl_name": "GradedTraceResidueSplit",
+      "type_var": "R",
+      "field_class": "Field",
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/GradedTraceResidueSplit.lean",
+      "line": 72,
+      "decl_kw": "theorem",
+      "decl_name": "GradedTraceResidueSplit.level_zero_pure_descended",
+      "type_var": "R",
+      "field_class": "Field",
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/GradedTraceResidueSplit.lean",
+      "line": 82,
+      "decl_kw": "theorem",
+      "decl_name": "GradedTraceResidueSplit.strutinsky_analogue",
+      "type_var": "R",
+      "field_class": "Field",
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/GradedTraceResidueSplit.lean",
+      "line": 91,
+      "decl_kw": "theorem",
+      "decl_name": "graded_trace_residue_split",
+      "type_var": "R",
+      "field_class": "Field",
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/HoefsmitV21CosSymmetrization.lean",
+      "line": 55,
+      "decl_kw": "def",
+      "decl_name": "hoefsmit_sigma1_gen",
+      "type_var": "R",
+      "field_class": "Field",
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/HoefsmitV21CosSymmetrization.lean",
+      "line": 186,
+      "decl_kw": "def",
+      "decl_name": "markovZ",
+      "type_var": "R",
+      "field_class": "Field",
+      "classification": "genuine",
+      "evidence": "uses `/` (division)"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/IwahoriHeckeAPI.lean",
+      "line": 74,
+      "decl_kw": "instance",
+      "decl_name": "providing",
+      "type_var": "R",
+      "field_class": "Field",
+      "classification": "genuine",
+      "evidence": "uses `⁻¹` (inverse)"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/IwahoriHeckeAPI.lean",
+      "line": 88,
+      "decl_kw": "class",
+      "decl_name": "HeckeRingHom",
+      "type_var": "R",
+      "field_class": "Field",
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/IwahoriHeckeAPI.lean",
+      "line": 96,
+      "decl_kw": "class",
+      "decl_name": "HeckeQuadratic",
+      "type_var": "R",
+      "field_class": "Field",
+      "classification": "genuine",
+      "evidence": "uses `⁻¹` (inverse)"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/IwahoriHeckeAPI.lean",
+      "line": 171,
+      "decl_kw": "theorem",
+      "decl_name": "wedderburn_decomposition_generic",
+      "type_var": "R",
+      "field_class": "Field",
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/IwahoriHeckeAPI.lean",
+      "line": 292,
+      "decl_kw": "def",
+      "decl_name": "failureLocus",
+      "type_var": "R",
+      "field_class": "Field",
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/IwahoriHeckeAPI.lean",
+      "line": 296,
+      "decl_kw": "theorem",
+      "decl_name": "not_in_failure_locus_iff_generic",
+      "type_var": "R",
+      "field_class": "Field",
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/MarkovAxiomsPrimitive.lean",
+      "line": 60,
+      "decl_kw": "def",
+      "decl_name": "markovZax",
+      "type_var": "R",
+      "field_class": "Field",
+      "classification": "genuine",
+      "evidence": "uses `/` (division)"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/MarkovAxiomsPrimitive.lean",
+      "line": 111,
+      "decl_kw": "class",
+      "decl_name": "MarkovTraceAxioms",
+      "type_var": "R",
+      "field_class": "Field",
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/MarkovAxiomsPrimitive.lean",
+      "line": 136,
+      "decl_kw": "theorem",
+      "decl_name": "markov_iterated_stab_gen",
+      "type_var": "R",
+      "field_class": "Field",
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/MarkovAxiomsPrimitive.lean",
+      "line": 143,
+      "decl_kw": "theorem",
+      "decl_name": "markov_iterated_stab",
+      "type_var": "R",
+      "field_class": "Field",
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/MarkovAxiomsPrimitive.lean",
+      "line": 170,
+      "decl_kw": "theorem",
+      "decl_name": "disjoint_product_factorisation_gen",
+      "type_var": "R",
+      "field_class": "Field",
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/MarkovAxiomsPrimitive.lean",
+      "line": 177,
+      "decl_kw": "theorem",
+      "decl_name": "disjoint_product_factorisation",
+      "type_var": "R",
+      "field_class": "Field",
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/MarkovAxiomsPrimitive.lean",
+      "line": 197,
+      "decl_kw": "theorem",
+      "decl_name": "MarkovTraceAxioms_implies_disjoint_stabilisation",
+      "type_var": "R",
+      "field_class": "Field",
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/QuaternionFromHecke.lean",
+      "line": 67,
+      "decl_kw": "structure",
+      "decl_name": "HeckeEigenvalues",
+      "type_var": "R",
+      "field_class": "Field",
+      "classification": "genuine",
+      "evidence": "uses `⁻¹` (inverse)"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/QuaternionFromHecke.lean",
+      "line": 85,
+      "decl_kw": "class",
+      "decl_name": "QuaternionFromHecke",
+      "type_var": "R",
+      "field_class": "Field",
+      "classification": "genuine",
+      "evidence": "uses `⁻¹` (inverse)"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/QuaternionFromHecke.lean",
+      "line": 108,
+      "decl_kw": "theorem",
+      "decl_name": "hecke_eigenvalues_forced",
+      "type_var": "R",
+      "field_class": "Field",
+      "classification": "genuine",
+      "evidence": "uses `⁻¹` (inverse)"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/StructuralRank.lean",
+      "line": 216,
+      "decl_kw": "class",
+      "decl_name": "PanelImageStructure",
+      "type_var": "K",
+      "field_class": "Field",
+      "classification": "genuine",
+      "evidence": "uses field-requiring construct `FiniteDimensional` (dimension/semisimplicity)"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/StructuralRank.lean",
+      "line": 236,
+      "decl_kw": "theorem",
+      "decl_name": "iSup_eq_",
+      "type_var": "K",
+      "field_class": "Field",
+      "classification": "genuine",
+      "evidence": "uses field-requiring construct `FiniteDimensional` (dimension/semisimplicity)"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/StructuralRank.lean",
+      "line": 250,
+      "decl_kw": "theorem",
+      "decl_name": "finrank_iSup_eq_",
+      "type_var": "K",
+      "field_class": "Field",
+      "classification": "genuine",
+      "evidence": "uses field-requiring construct `FiniteDimensional` (dimension/semisimplicity)"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/StructuralRank.lean",
+      "line": 266,
+      "decl_kw": "theorem",
+      "decl_name": "finrank_blockRank_le",
+      "type_var": "K",
+      "field_class": "Field",
+      "classification": "genuine",
+      "evidence": "uses field-requiring construct `FiniteDimensional` (dimension/semisimplicity)"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/StructuralRank.lean",
+      "line": 282,
+      "decl_kw": "theorem",
+      "decl_name": "finrank_iSup_eq_finset_sup",
+      "type_var": "K",
+      "field_class": "Field",
+      "classification": "genuine",
+      "evidence": "uses field-requiring construct `FiniteDimensional` (dimension/semisimplicity)"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/StructuralRank.lean",
+      "line": 313,
+      "decl_kw": "theorem",
+      "decl_name": "finrank_iSup_eq_sum_of_iSupIndep",
+      "type_var": "K",
+      "field_class": "DivisionRing",
+      "classification": "genuine",
+      "evidence": "uses field-requiring construct `FiniteDimensional` (dimension/semisimplicity)"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/StructuralRank.lean",
+      "line": 347,
+      "decl_kw": "def",
+      "decl_name": "toRankDecomposition",
+      "type_var": "K",
+      "field_class": "Field",
+      "classification": "genuine",
+      "evidence": "uses field-requiring construct `FiniteDimensional` (dimension/semisimplicity)"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/BorromeanChiPerRep.lean",
+      "line": 136,
+      "decl_kw": "def",
+      "decl_name": "chi21_borromean_qform",
+      "type_var": "R",
+      "field_class": "Field",
+      "classification": "genuine",
+      "evidence": "uses `/` (division)"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/BorromeanChiPerRep.lean",
+      "line": 141,
+      "decl_kw": "def",
+      "decl_name": "chi21_borromean_hform",
+      "type_var": "R",
+      "field_class": "Field",
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/BorromeanChiPerRep.lean",
+      "line": 146,
+      "decl_kw": "theorem",
+      "decl_name": "chi21_borromean_qform_eq_hform",
+      "type_var": "R",
+      "field_class": "Field",
+      "classification": "genuine",
+      "evidence": "uses field-only token `field_simp`"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/BorromeanChiPerRep.lean",
+      "line": 163,
+      "decl_kw": "theorem",
+      "decl_name": "chi21_borromean_hform_bar_invariant",
+      "type_var": "R",
+      "field_class": "Field",
+      "classification": "genuine",
+      "evidence": "uses field-only token `field_simp`"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/ClassicalLimitObstruction.lean",
+      "line": 37,
+      "decl_kw": "structure",
+      "decl_name": "ClassicalLimitObstruction",
+      "type_var": "k",
+      "field_class": "Field",
+      "classification": "over-strong",
+      "evidence": "`k` used but no division/inverse found"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/ClassicalLimitObstruction.lean",
+      "line": 55,
+      "decl_kw": "def",
+      "decl_name": "ClassicalLimitObstruction.ofQOU",
+      "type_var": "k",
+      "field_class": "Field",
+      "classification": "over-strong",
+      "evidence": "`k` used but no division/inverse found"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/ClassicalLimitObstruction.lean",
+      "line": 64,
+      "decl_kw": "theorem",
+      "decl_name": "qou_obstruction_one_dimensional",
+      "type_var": "k",
+      "field_class": "Field",
+      "classification": "over-strong",
+      "evidence": "`k` used but no division/inverse found"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/FlavorDressing/FlavorMassSplittingBound.lean",
+      "line": 46,
+      "decl_kw": "theorem",
+      "decl_name": "substrate_to_bound_ratio",
+      "type_var": "R",
+      "field_class": "Field",
+      "classification": "genuine",
+      "evidence": "uses `⁻¹` (inverse)"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/IwahoriHecke/Hoefsmit.lean",
+      "line": 114,
+      "decl_kw": "class",
+      "decl_name": "HoefsmitSeminormalBasis",
+      "type_var": "R",
+      "field_class": "Field",
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/IwahoriHecke/Hoefsmit.lean",
+      "line": 125,
+      "decl_kw": "instance",
+      "decl_name": "instHoefsmit_default",
+      "type_var": "R",
+      "field_class": "Field",
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/IwahoriHecke/Hoefsmit.lean",
+      "line": 135,
+      "decl_kw": "theorem",
+      "decl_name": "hoefsmit_ew_cell_content_existence",
+      "type_var": "R",
+      "field_class": "Field",
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/IwahoriHecke/Hoefsmit.lean",
+      "line": 155,
+      "decl_kw": "def",
+      "decl_name": "branchCoefficientType",
+      "type_var": "R",
+      "field_class": "Field",
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/IwahoriHecke/Hoefsmit.lean",
+      "line": 186,
+      "decl_kw": "def",
+      "decl_name": "qBracket",
+      "type_var": "R",
+      "field_class": "Field",
+      "classification": "genuine",
+      "evidence": "uses `⁻¹` (inverse)"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/IwahoriHecke/Hoefsmit.lean",
+      "line": 193,
+      "decl_kw": "theorem",
+      "decl_name": "qBracket_at_one",
+      "type_var": "R",
+      "field_class": "Field",
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/IwahoriHecke/Hoefsmit.lean",
+      "line": 204,
+      "decl_kw": "def",
+      "decl_name": "alphaCoefficient",
+      "type_var": "R",
+      "field_class": "Field",
+      "classification": "genuine",
+      "evidence": "uses `/` (division)"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/IwahoriHecke/Hoefsmit.lean",
+      "line": 214,
+      "decl_kw": "theorem",
+      "decl_name": "alphaCoefficient_zero_at_zero_diff",
+      "type_var": "R",
+      "field_class": "Field",
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/IwahoriHecke/TypeA.lean",
+      "line": 106,
+      "decl_kw": "theorem",
+      "decl_name": "bar_image_hecke_quadratic",
+      "type_var": "R",
+      "field_class": "Field",
+      "classification": "genuine",
+      "evidence": "uses `⁻¹` (inverse)"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/IwahoriHecke/TypeA.lean",
+      "line": 122,
+      "decl_kw": "theorem",
+      "decl_name": "reverse_limit_q_to_infinity_structural",
+      "type_var": "R",
+      "field_class": "Field",
+      "classification": "genuine",
+      "evidence": "uses `⁻¹` (inverse)"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/Machinery/DerivedCharacterCatalogue.lean",
+      "line": 144,
+      "decl_kw": "class",
+      "decl_name": "IsRMatrixDerived",
+      "type_var": "R",
+      "field_class": "Field",
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/Machinery/DerivedCharacterCatalogue.lean",
+      "line": 209,
+      "decl_kw": "def",
+      "decl_name": "borromeanTwoOneBaryonChi",
+      "type_var": "R",
+      "field_class": "Field",
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/Machinery/DerivedCharacterCatalogue.lean",
+      "line": 217,
+      "decl_kw": "theorem",
+      "decl_name": "borromeanTwoOneBaryonChi_eq_t17",
+      "type_var": "R",
+      "field_class": "Field",
+      "classification": "genuine",
+      "evidence": "uses field-only token `field_simp`"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/Machinery/DerivedCharacterCatalogue.lean",
+      "line": 232,
+      "decl_kw": "?",
+      "decl_name": "?",
+      "type_var": "R",
+      "field_class": "Field",
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/Machinery/DerivedCharacterCatalogue.lean",
+      "line": 289,
+      "decl_kw": "def",
+      "decl_name": "hopfTwoDiquarkChi",
+      "type_var": "R",
+      "field_class": "Field",
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/Machinery/DerivedCharacterCatalogue.lean",
+      "line": 291,
+      "decl_kw": "?",
+      "decl_name": "?",
+      "type_var": "R",
+      "field_class": "Field",
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/Machinery/DerivedCharacterCatalogue.lean",
+      "line": 309,
+      "decl_kw": "def",
+      "decl_name": "hopfOneOneDiquarkChi",
+      "type_var": "R",
+      "field_class": "Field",
+      "classification": "genuine",
+      "evidence": "uses `/` (division)"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/Machinery/DerivedCharacterCatalogue.lean",
+      "line": 311,
+      "decl_kw": "?",
+      "decl_name": "?",
+      "type_var": "R",
+      "field_class": "Field",
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/Machinery/DerivedCharacterCatalogue.lean",
+      "line": 331,
+      "decl_kw": "def",
+      "decl_name": "trefoilTwoElectronChi",
+      "type_var": "R",
+      "field_class": "Field",
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/Machinery/DerivedCharacterCatalogue.lean",
+      "line": 333,
+      "decl_kw": "?",
+      "decl_name": "?",
+      "type_var": "R",
+      "field_class": "Field",
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/Machinery/DerivedCharacterCatalogue.lean",
+      "line": 351,
+      "decl_kw": "def",
+      "decl_name": "trefoilOneOneElectronChi",
+      "type_var": "R",
+      "field_class": "Field",
+      "classification": "genuine",
+      "evidence": "uses `/` (division)"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/Machinery/DerivedCharacterCatalogue.lean",
+      "line": 353,
+      "decl_kw": "?",
+      "decl_name": "?",
+      "type_var": "R",
+      "field_class": "Field",
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/Machinery/DerivedCharacterCatalogue.lean",
+      "line": 373,
+      "decl_kw": "def",
+      "decl_name": "cinquefoilTwoMuonChi",
+      "type_var": "R",
+      "field_class": "Field",
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/Machinery/DerivedCharacterCatalogue.lean",
+      "line": 375,
+      "decl_kw": "?",
+      "decl_name": "?",
+      "type_var": "R",
+      "field_class": "Field",
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/Machinery/DerivedCharacterCatalogue.lean",
+      "line": 393,
+      "decl_kw": "def",
+      "decl_name": "cinquefoilOneOneMuonChi",
+      "type_var": "R",
+      "field_class": "Field",
+      "classification": "genuine",
+      "evidence": "uses `/` (division)"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/Machinery/DerivedCharacterCatalogue.lean",
+      "line": 395,
+      "decl_kw": "?",
+      "decl_name": "?",
+      "type_var": "R",
+      "field_class": "Field",
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/Machinery/DerivedCharacterCatalogue.lean",
+      "line": 420,
+      "decl_kw": "def",
+      "decl_name": "figureEightThreeHiggsChi",
+      "type_var": "R",
+      "field_class": "Field",
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/Machinery/DerivedCharacterCatalogue.lean",
+      "line": 422,
+      "decl_kw": "?",
+      "decl_name": "?",
+      "type_var": "R",
+      "field_class": "Field",
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/Machinery/DerivedCharacterCatalogue.lean",
+      "line": 440,
+      "decl_kw": "def",
+      "decl_name": "figureEightOneOneOneHiggsChi",
+      "type_var": "R",
+      "field_class": "Field",
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/Machinery/DerivedCharacterCatalogue.lean",
+      "line": 442,
+      "decl_kw": "?",
+      "decl_name": "?",
+      "type_var": "R",
+      "field_class": "Field",
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/Machinery/DerivedCharacterCatalogue.lean",
+      "line": 462,
+      "decl_kw": "def",
+      "decl_name": "figureEightTwoOneHiggsChi",
+      "type_var": "R",
+      "field_class": "Field",
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/Machinery/DerivedCharacterCatalogue.lean",
+      "line": 465,
+      "decl_kw": "?",
+      "decl_name": "?",
+      "type_var": "R",
+      "field_class": "Field",
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/Mathlib/HeckeAlgebra.lean",
+      "line": 242,
+      "decl_kw": "def",
+      "decl_name": "H2.mul",
+      "type_var": "R",
+      "field_class": "Field",
+      "classification": "genuine",
+      "evidence": "uses `⁻¹` (inverse)"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/Mathlib/HeckeAlgebra.lean",
+      "line": 248,
+      "decl_kw": "theorem",
+      "decl_name": "H2.one_mul_sigma",
+      "type_var": "R",
+      "field_class": "Field",
+      "classification": "genuine",
+      "evidence": "uses `⁻¹` (inverse)"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/Mathlib/HeckeAlgebra.lean",
+      "line": 254,
+      "decl_kw": "theorem",
+      "decl_name": "H2.sigma_mul_one",
+      "type_var": "R",
+      "field_class": "Field",
+      "classification": "genuine",
+      "evidence": "uses `⁻¹` (inverse)"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/Mathlib/HeckeAlgebra.lean",
+      "line": 263,
+      "decl_kw": "theorem",
+      "decl_name": "H2.sigma_sq_eq",
+      "type_var": "R",
+      "field_class": "Field",
+      "classification": "genuine",
+      "evidence": "uses `⁻¹` (inverse)"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/Mathlib/HeckeAlgebra.lean",
+      "line": 441,
+      "decl_kw": "def",
+      "decl_name": "H3.mulSigma1",
+      "type_var": "R",
+      "field_class": "Field",
+      "classification": "genuine",
+      "evidence": "uses `⁻¹` (inverse)"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/Mathlib/HeckeAlgebra.lean",
+      "line": 460,
+      "decl_kw": "def",
+      "decl_name": "H3.mulSigma2",
+      "type_var": "R",
+      "field_class": "Field",
+      "classification": "genuine",
+      "evidence": "uses `⁻¹` (inverse)"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/Mathlib/HeckeAlgebra.lean",
+      "line": 498,
+      "decl_kw": "def",
+      "decl_name": "H3.mul",
+      "type_var": "R",
+      "field_class": "Field",
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/Mathlib/HeckeAlgebra.lean",
+      "line": 513,
+      "decl_kw": "theorem",
+      "decl_name": "H3.one_mul",
+      "type_var": "R",
+      "field_class": "Field",
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/MathlibExt/QPlancherel.lean",
+      "line": 66,
+      "decl_kw": "class",
+      "decl_name": "HasPartitionFunction",
+      "type_var": "R",
+      "field_class": "Field",
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/MathlibExt/QPlancherel.lean",
+      "line": 66,
+      "decl_kw": "class",
+      "decl_name": "HasPartitionFunction",
+      "type_var": "R",
+      "field_class": "Field",
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/MathlibExt/QPlancherel.lean",
+      "line": 123,
+      "decl_kw": "class",
+      "decl_name": "HasQPlancherelCLT",
+      "type_var": "R",
+      "field_class": "Field",
+      "classification": "genuine",
+      "evidence": "uses `/` (division)"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/MathlibExt/SDP.lean",
+      "line": 54,
+      "decl_kw": "structure",
+      "decl_name": "SDPPrimal",
+      "type_var": "R",
+      "field_class": "Field",
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/MathlibExt/SDP.lean",
+      "line": 276,
+      "decl_kw": "axiom",
+      "decl_name": "strict_complementarity_unique_axiom",
+      "type_var": "R",
+      "field_class": "Field",
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/Observations/QCltNonCommutative.lean",
+      "line": 56,
+      "decl_kw": "class",
+      "decl_name": "QCltNonCommutative",
+      "type_var": "R",
+      "field_class": "LinearOrderedField",
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/Observations/TraceLocalityMeetsGsNonLocality.lean",
+      "line": 34,
+      "decl_kw": "class",
+      "decl_name": "HasReconciliation",
+      "type_var": "R",
+      "field_class": "LinearOrderedField",
+      "classification": "over-strong",
+      "evidence": "`R` used but no division/inverse found"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/QBeta/RationalCoeffRecurrence.lean",
+      "line": 43,
+      "decl_kw": "theorem",
+      "decl_name": "pole_reciprocal_is_char_root",
+      "type_var": "K",
+      "field_class": "Field",
+      "classification": "genuine",
+      "evidence": "uses `⁻¹` (inverse)"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/QBirchSwinnertonDyer.lean",
+      "line": 82,
+      "decl_kw": "theorem",
+      "decl_name": "descartes_rank_zero",
+      "type_var": "k",
+      "field_class": "Field",
+      "classification": "over-strong",
+      "evidence": "`k` used but no division/inverse found"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/CategoricalFoundations.lean",
+      "line": 102,
+      "decl_kw": "structure",
+      "decl_name": "QuantumUniverse",
+      "type_var": "k",
+      "field_class": "Field",
+      "classification": "over-strong",
+      "evidence": "`k` used but no division/inverse found"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/CategoricalFoundations.lean",
+      "line": 131,
+      "decl_kw": "structure",
+      "decl_name": "QuantumObservableUniverse",
+      "type_var": "k",
+      "field_class": "Field",
+      "classification": "over-strong",
+      "evidence": "`k` used but no division/inverse found"
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/CategoricalFoundations.lean",
+      "line": 158,
+      "decl_kw": "def",
+      "decl_name": "QuantumUniverse.gaugeGroup",
+      "type_var": "k",
+      "field_class": "Field",
+      "classification": "over-strong",
+      "evidence": "`k` used but no division/inverse found"
+    }
+  ]
+}
