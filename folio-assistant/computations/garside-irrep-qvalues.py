@@ -143,10 +143,13 @@ def seminormal_generator_matrix(tableaux, tab_to_idx, gen_idx, q_val):
                 if key in tab_to_idx:
                     j = tab_to_idx[key]
                     off_diag_sq = 1.0 - diag**2
+                    # Keep mp.mpf precision in the matrix entries —
+                    # numpy/scipy downstream accepts mp.mpf elements.
+                    # Was flagged by compute_no_mpf_to_float_cast.
                     if off_diag_sq > 0:
-                        mat[i, j] = float(mp.sqrt(off_diag_sq))
+                        mat[i, j] = mp.sqrt(off_diag_sq)
                     else:
-                        mat[i, j] = float(-mp.sqrt(-off_diag_sq))
+                        mat[i, j] = -mp.sqrt(-off_diag_sq)
 
     return mat
 
