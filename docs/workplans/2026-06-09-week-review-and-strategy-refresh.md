@@ -130,7 +130,7 @@ Tiered by L2 impact + tractability:
 
 ### Tier 1 — biggest L2 gap closure
 
-1. **m_μ 100× gap** (209.8 ppb, the next-largest L2 open problem after the 2026-05-28 re-pin). Independent μ–p floor, not the Q_β chain. Per `fe6cfcd0 coord: open m_μ thread`, a coord thread was opened but I haven't read it. **First action**: read [`docs/coordination/`](../coordination/) for `m_mu` ledger if it exists, otherwise check the coord commit's full message.
+1. **m_μ 100× gap** (209.8 ppb, the next-largest L2 open problem after the 2026-05-28 re-pin). Independent μ–p floor, not the Q_β chain. Coord ledger: [`docs/coordination/2026-05-30-mu-thread-pivot.md`](../coordination/2026-05-30-mu-thread-pivot.md) (opened by `fe6cfcd0`). **First action**: read that ledger — it lists 4 candidate next steps (chain audit to localise the 210 ppb residual, Geom_full refinement, 4_1 Habiro element, cross-thread leverage from α/(4π) Habiro Taylor framework) plus anti-patterns to avoid (4th-calibration trap, ratio-anchor hiding).
 
 ### Tier 2 — Lean migration cleanup
 
