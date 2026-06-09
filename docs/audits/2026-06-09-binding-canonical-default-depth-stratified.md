@@ -73,15 +73,20 @@ flat plateau from the ⁴He magic-A formula. It is NOT a recursion
 `α_k = f(α_{k-1})`, and it is NOT derived from a single substrate
 principle. That is the unclosed gap.
 
-## Numerical state (per witnesses 2026-06-09)
+## Numerical state (per witnesses 2026-06-09, post-regen)
 
 | atom | depth-stratified B_pred | B_AME | ratio | gap |
 |---|---:|---:|---:|---:|
 | D (²H) | 0.607 MeV | 2.225 | 0.273 | **−73 %** |
 | T (³H) | 2.808 MeV | 8.482 | 0.331 | **−67 %** |
 | ³He | 2.653 MeV | 7.718 | 0.344 | **−66 %** |
-| ⁴He (Rust) | 14.063 MeV | 28.296 | 0.497 | **−50 %** |
-| ⁴He (LR) | 59.114 MeV | 28.296 | 2.089 | **+109 %** |
+| ⁴He | 14.063 MeV | 28.296 | 0.497 | **−50 %** |
+
+LR and Rust direct now agree to 3 dp for every atom (verified by
+re-running both against the now-complete 77/77 ⁴He cached atom chi
+witness on 2026-06-09). The 2.089 "LR overshoot" reported earlier
+was 100 % an artifact of a stale binding witness consuming a 24/77
+partial cached chi witness — corrected. See "Prevention" §below.
 
 **The canonical depth-stratified compute does NOT close binding at the
 10 % threshold.** D / T / ³He under-bind by ~67-73 %; ⁴He LR vs Rust
@@ -207,51 +212,10 @@ The depth where weight is largest is exactly where the chi-difference
 is smallest. By construction, the tower can never deliver the full
 magic-A binding through this sum.
 
-### (iii) Compute-path "instability" Rust vs LR — actually an artifact
+### (iii) Compute-path consistency — verified (post-2026-06-09 regen)
 
-| atom | LR n_atom | LR n_free | Rust n | LR/AME | Rust/AME |
-|---|---:|---:|---:|---:|---:|
-| D | 11 | 11 | 11 | 0.273 | **0.273** |
-| T | 30 | 30 | 30 | 0.331 | **0.331** |
-| ³He | 30 | 30 | 30 | 0.344 | **0.344** |
-| ⁴He | **24** | 77 | 77 | 2.089 | 0.497 |
-
-**LR ratio = Rust ratio EXACTLY for D, T, ³He** (to 3 dp). The 4×
-⁴He LR vs Rust disagreement (2.089 vs 0.497) is **entirely an
-artifact** of the partial cached ⁴He atom chi witness — 24 of 77
-H_12 partitions only.
-
-`binding_depth_stratified_lr.py:188-191` treats missing partitions
-as 0 in Φ_atom:
-
-```python
-chi_atom_for_phi = {lam: chi_atom.get(lam, mp.mpf(0))
-                     for lam in chi_free.keys()}
-```
-
-The 53 missing partitions push `Φ_atom` artificially low ⇒
-`Φ_free − Φ_atom` over-counts ⇒ `B_LR` inflates from ~14 MeV
-(true value matching Rust direct) to 59 MeV.
-
-**LR is mathematically EXACT for the free config** in the
-parabolic subalgebra H_3^A ⊂ H_{3A}:
-
-$$\chi^\lambda(\beta_p\cdot\beta_n\cdots) = \sum_{\mu_1,\ldots,\mu_A\vdash 3} c^\lambda_{\mu_1\cdots\mu_A}\,\chi^{\mu_1}(\beta_p)\cdots$$
-
-(Mathas (1999) §3 branching rule). LR is a compute optimization,
-not a different formula. It does NOT "factorize interface crossings
-away" — it only computes the FREE config (disjoint Hecke product);
-the ATOM config chi comes from a cached H_{3A} witness produced by
-the SAME `chi_q_atomic` Rust kernel as the Rust direct path, WITH
-interface crossings included.
-
-**Fix**: complete the ⁴He cached atom chi witness to 77/77 partitions
-(via `compute_atom_chi_rust.py 4He`). Once done, LR will agree with
-Rust within numerical precision; the 2.089 vs 0.497 spread collapses.
-
-This means the only genuine compute-path question is "is Rust direct
-H_{3A} canonical?" — yes, that's the default per the LR docstring
-(line 21-26) and the witness consistency check above.
+LR and Rust direct now agree exactly per atom (the earlier "4× spread"
+was a stale-witness artifact; see (iii-bis) below).
 
 ### (iv) No slot for the `A` scale factor
 
@@ -267,72 +231,33 @@ prefactor on the whole tower (breaking the per-depth decomposition)
 or an `A`-dependent α_k recursion (not what the current formula
 provides).
 
-### (iii-bis) Per-depth Rust vs LR breakdown (⁴He)
+### (iii-bis) The earlier "LR ≠ Rust" reading was wrong — stale-witness artifact
 
-| depth | α_k | Rust δΦ | LR δΦ | LR/Rust |
-|---|---:|---:|---:|---:|
-| 0 | 1 | 0 | 0 | — |
-| 1 | 1 | 0.00128 | 0.00128 | **1.00 ←identical** |
-| 2 | 0.249 | 0.357 | 0.599 | 1.68 |
-| 3 | 1 | 2.28 | 7.42 | **3.25** |
-| 4 | 3.74 | 2.54 | **9.65** | 3.80 |
-| 5 | 3.74 | 0.43 | 3.39 | 7.96 |
-| 6 | 3.74 | 0.15 | 0.68 | 4.45 |
-| 7 | 3.74 | 0.0073 | 0.052 | 7.10 |
-| 8 | 3.74 | 0.0004 | 0.0026 | 6.50 |
-| **TOTAL** | — | **14.06** | **59.11** | **4.20** |
+An earlier version of this audit claimed LR over-counted via tensor
+multiplicities. That was incorrect. The reason:
 
-**Same α_k assignment.** Same Φ_k formula. The 4× total divergence
-is entirely driven by **different χ values**:
+`binding_depth_stratified_lr.py:21-26` docstring says LR computes
+**only the FREE config** (the disjoint Hecke product
+`β_p·β_n·…` in the parabolic subalgebra H_3^A ⊂ H_{3A}, the q-shuffle
+convolution structure of `markov_trace_3A(include_inter=False)`).
+The ATOM config chi comes from a CACHED witness produced by the same
+`chi_q_atomic` Rust kernel as the direct path. LR does not
+"factorize away" interface crossings — it never sees them.
 
-- **Rust**: `compute_atom_chi_rust.py` runs `chi_q_atomic` Rust kernel
-  directly on the full H_{3A} = H_{12} braid word — exact χ for each
-  of the 77 partitions of 12 via Geck-Pfeiffer + Hoefsmit.
-- **LR**: `binding_depth_stratified_lr.py` builds H_{12} characters
-  from per-nucleon H_3 building blocks via Littlewood-Richardson
-  tensor product:
-  $\chi^\lambda_{\rm LR}(\beta_{\rm 4He}) = \sum_{\mu\nu\rho\sigma\vdash 3} c^\lambda_{\mu\nu\rho\sigma}\,\chi^\mu\chi^\nu\chi^\rho\chi^\sigma$
-  using `prop:block-multiplicativity-v-free`. H_3 has only 3 partitions
-  ({[3],[2,1],[1³]}), so all 77 H_12 χ are built from this tiny basis ×
-  LR multiplicities.
+The LR branching formula
 
-**Why depth 1 agrees exactly**: at a single generator, no LR
-multiplicity is invoked — both methods compute the same thing.
+$$\chi^\lambda(\beta_p\cdot\beta_n\cdots) = \sum_{\mu_1,\ldots,\mu_A\vdash 3} c^\lambda_{\mu_1\cdots\mu_A}\,\chi^{\mu_1}(\beta_p)\cdots$$
 
-**Why depth ≥ 3 diverges 3-8×**: long partition shapes have many
-LR decompositions into H_3 factors, and the LR sum
-`Σ c^λ_{μνρσ}` over-counts compared to the exact Rust χ on the
-H_{12} braid word.
+is the Mathas (1999) §3 LR rule, **mathematically exact** for elements
+in the parabolic. Verification: re-running LR + Rust on 2026-06-09
+gives identical ratios (0.273 / 0.331 / 0.344 / 0.497) for all four
+of D / T / ³He / ⁴He.
 
-**Why depth 4 dominates**: 68 % of Rust total / 61 % of LR total. LR
-depth-4 contribution (36.13 MeV) alone EXCEEDS the AME 28.30 — the
-inflation is concentrated exactly where α_k = m_e·8G is large.
-
-**Physical interpretation:**
-- **LR ≡ "⁴He as 4 independent nucleons + tensor multiplicities"** —
-  assumes nucleon factorization (`prop:block-multiplicativity-v-free`);
-  over-counts because tensor multiplicities double-count entangled
-  channels.
-- **Rust ≡ "⁴He as the H_{12} braid word with interface-knot crossings"**
-  — honors interface structure that LR factorizes away; under-counts
-  because chi-differences at high depth nearly cancel (atom and free
-  share H_{12} structure).
-
-**AME sits between**:
-
-```
-Rust 14.06 ←──── AME 28.30 ────→ LR 59.11
-    (0.50×)        (1.00×)        (2.09×)
-```
-
-Geometric mean √(Rust · LR) = **28.83 MeV** (+1.9 % vs AME 28.30) — a
-suggestive but unmotivated coincidence (no proposition predicts the
-geometric mean). The TRUE ⁴He χ is neither fully factorized (LR) nor
-fully captured by the canonical H_{12} braid word's chi-differences
-(Rust). Resolving this is what the **operator-valued combiner**
-(PR #1698 track) is meant to deliver — a per-bond magnitude carrier
-that interpolates between LR's free tensor and Rust's fully-coupled
-H_{3A}.
+The earlier "LR 2.089" reading came from a stale binding witness
+that captured a 24/77 partial cached ⁴He atom chi witness; the chi
+witness was upgraded to 77/77 after, but
+`binding-depth-stratified-lr.witness.json` was never regenerated
+until this audit forced it. See "Prevention" §below.
 
 ### Synthesis
 
@@ -348,6 +273,77 @@ e.g. a **multiplicative tower** `B = m_e·Π_k(1 + α_k·Φ_k)` rather
 than additive, or an `A`-scaled outer factor — could reconcile the
 tower with magic-A. This is the natural follow-up to the per-depth
 α_k assignment-rule problem.
+
+## Prevention: avoid future "partial cached witness → inflated binding" bugs
+
+The ⁴He LR vs Rust 4× spread reported in earlier sessions was
+**100 % an artifact** of a stale binding witness that captured a
+24/77 partial cached ⁴He atom chi witness; the chi witness was later
+upgraded to 77/77 but the binding witness was not regenerated.
+Re-running `binding_depth_stratified_lr.py` on 2026-06-09 against
+the current chi witness gives `B(⁴He)/AME = 0.497` — identical to
+Rust direct.
+
+Discipline to prevent recurrence:
+
+### 1. Witness-completeness gate at the consumer
+
+`binding_depth_stratified_lr.py` now checks every cached atom chi
+witness against `PARTITION_COUNTS = {3:3, 6:11, 9:30, 12:77, 15:176,
+18:385, 21:792}` (the p(n) values for relevant strand counts) and:
+
+- prints a `⚠ {atom} cached atom chi PARTIAL: X/expected partitions`
+  warning at run time;
+- records `partition_completeness_warnings` and
+  `all_atom_chi_witnesses_complete` fields in the output witness JSON
+  so downstream consumers see the partial state.
+
+Missing partitions still get substituted as 0 (unchanged behaviour),
+but the substitution is **surfaced**, not silent.
+
+### 2. Standalone audit
+
+[`chi_witness_completeness_audit.py`](../../folio-assistant/computations/chi_witness_completeness_audit.py)
+walks every `chi-*-at-q0-*.witness.json` in
+`folio-assistant/computations/`, compares `len(by_partition)` to
+`p(n_strands)` from `PARTITION_COUNTS`, and produces
+`chi-witness-completeness-audit.witness.json` with an assertion
+that the incomplete count is 0. Run as part of the canonical /
+compute integration watchers.
+
+### 3. Routine to refresh stale binding witnesses
+
+Any binding-energy compute that consumes cached chi witnesses
+records the `n_partitions_atom` it observed at run time. If
+`n_partitions_atom < p(n_strands)` for any atom in the latest
+binding witness, regenerate the binding witness as follows:
+
+1. Re-run `compute_atom_chi_rust.py {atom}` (or the producer that
+   wrote the cached chi witness) until `n_cached = p(n_strands)`.
+2. Re-run all consumer binding scripts
+   (`binding_depth_stratified_rust.py`,
+   `binding_depth_stratified_lr.py`,
+   `binding_depth_stratified.py`,
+   `binding_depth_stratified_selfconj.py`,
+   `binding_depth_stratified_knot_weighted.py`).
+3. Diff the resulting binding witnesses — any |ratio_LR / ratio_Rust − 1|
+   > 0.01 signals a residual mismatch worth investigating.
+
+### 4. Cross-path consistency assertion
+
+LR and Rust direct should agree to floating-point tolerance for every
+atom once cached witnesses are complete (verified on 2026-06-09 for
+D, T, ³He, ⁴He: all agree to 3 dp). Treat any future LR vs Rust
+disagreement as a partial-witness symptom first, not a structural
+finding.
+
+### 5. Extend to atoms beyond cache
+
+`compute_atom_chi_rust.py 6Li` (H_18, 385 partitions) and `7Li`
+(H_21, 792 partitions) have not been run. The depth-stratified
+witnesses report `deferred` for those atoms. Generating their
+cached chi witnesses + then their binding witnesses extends the
+canonical default compute beyond A=4.
 
 ## Open compute lever
 

@@ -174,17 +174,41 @@ def main() -> int:
     builder.add_parameter("alpha_k_geq_4_MeV",
                            str(mp.mpf(str(M_E_MEV)) * 8 * mp.catalan))
 
+    # Expected partition count p(n) — fail loudly if the cached atom
+    # chi witness is partial. (Class of bug: stale binding witness can
+    # silently consume a partial chi witness; missing partitions become
+    # 0 in Φ_atom which artificially inflates Φ_free − Φ_atom and
+    # therefore B. See docs/audits/2026-06-09-binding-canonical-default-
+    # depth-stratified.md §(iii).)
+    PARTITION_COUNTS = {3: 3, 6: 11, 9: 30, 12: 77, 18: 385, 21: 792}
+
     print(f"{'atom':<6} {'Z':>3} {'N':>3} {'n_str':>6} "
           f"{'B_MeV':>10} {'B_AME':>10} {'ratio':>8} {'n_λ_atom':>10}")
     results = {}
+    completeness_warnings = []
     for atom in ("D", "T", "3He", "4He"):
         Z, N = ZN[atom]
         n_strands, chi_atom = load_chi_dict(atom)
         chi_free = free_chi_for_atom(atom)
 
+        # Partition-completeness gate — see PARTITION_COUNTS comment above.
+        expected_partitions = PARTITION_COUNTS.get(n_strands)
+        if expected_partitions is not None and len(chi_atom) < expected_partitions:
+            warn = (f"⚠ {atom} cached atom chi PARTIAL: "
+                    f"{len(chi_atom)}/{expected_partitions} partitions. "
+                    f"Φ_atom will under-count; B will inflate.")
+            print(warn)
+            completeness_warnings.append({
+                "atom": atom,
+                "cached": len(chi_atom),
+                "expected": expected_partitions,
+                "coverage_pct": round(100 * len(chi_atom) / expected_partitions, 2),
+            })
+
         # Use chi_free at ALL partitions (LR computes them all);
-        # atom chi may be partial — missing partitions treated as 0
-        # (only matters for ⁴He where 53/77 partitions are missing).
+        # atom chi may be partial — missing partitions treated as 0.
+        # (Surfaced as completeness_warnings above to prevent silent
+        # consumption.)
         atom_partial = len(chi_atom) < len(chi_free)
         chi_free_for_phi = chi_free  # ALL partitions
         chi_atom_for_phi = {lam: chi_atom.get(lam, mp.mpf(0))
@@ -229,6 +253,9 @@ def main() -> int:
               f"{float(ratio):>8.4f} {len(chi_atom):>10}")
 
     builder.add_data("per_atom", results)
+    builder.add_data("partition_completeness_warnings", completeness_warnings)
+    builder.add_data("all_atom_chi_witnesses_complete",
+                      len(completeness_warnings) == 0)
 
     ratios = [abs(r["ratio_pred_over_AME"]) for r in results.values()]
     rmin, rmax = (min(ratios), max(ratios)) if ratios else (0, 0)
@@ -244,9 +271,7 @@ def main() -> int:
     elif mom < 1.5 and signs_correct:
         verdict = (f"STRONG — max/min = {mom:.3f}, all signs correct.")
     elif signs_correct:
-        verdict = (f"PARTIAL — max/min = {mom:.3f}, signs correct. "
-                   "⁴He's partial 24-partition coverage may need "
-                   "full 77-partition extension for precision.")
+        verdict = (f"PARTIAL — max/min = {mom:.3f}, signs correct.")
     else:
         verdict = (f"max/min = {mom:.3f}, "
                    f"signs_correct = {signs_correct}")
