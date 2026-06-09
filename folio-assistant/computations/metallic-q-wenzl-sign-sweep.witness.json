@@ -1,0 +1,1327 @@
+{
+  "description": "Wenzl y_\u03bb positive-block count N(q,n) sweep across the first three metallic-ladder intervals plus bar-mirrors. Tests the owner's piecewise-on-q conjecture: if N(q,n) jumps at \u03c6 / \u03b4_silver / \u03b4_bronze and is constant within each interval, the metallic-piecewise structure is empirically confirmed at the Wenzl-weight level (necessary condition for SDP feasibility).",
+  "computed_at": "2026-06-09T04:04:36.145514+00:00",
+  "precision_dps": 50,
+  "anchors": {
+    "q_0_substrate": "1.1099785955541805",
+    "golden_phi": "1.61803398874989484820458683437",
+    "silver_delta_2": "2.41421356237309504880168872421",
+    "bronze_delta_3": "3.30277563773199464655961063374"
+  },
+  "strand_counts": [
+    3,
+    6,
+    9
+  ],
+  "sweep": {
+    "interval_q0_to_phi": [
+      {
+        "q": "1.1149785955541805",
+        "q_minus_qinv": "0.218100391804477494619087092316",
+        "hecke_scalar_integer_part": 0,
+        "per_strand": {
+          "n_3": {
+            "n_positive": 3,
+            "n_total": 3,
+            "n_negative": 0
+          },
+          "n_6": {
+            "n_positive": 11,
+            "n_total": 11,
+            "n_negative": 0
+          },
+          "n_9": {
+            "n_positive": 30,
+            "n_total": 30,
+            "n_negative": 0
+          }
+        }
+      },
+      {
+        "q": "1.16025635857197271347314425767",
+        "q_minus_qinv": "0.298377867140315313693832034386",
+        "hecke_scalar_integer_part": 0,
+        "per_strand": {
+          "n_3": {
+            "n_positive": 3,
+            "n_total": 3,
+            "n_negative": 0
+          },
+          "n_6": {
+            "n_positive": 11,
+            "n_total": 11,
+            "n_negative": 0
+          },
+          "n_9": {
+            "n_positive": 30,
+            "n_total": 30,
+            "n_negative": 0
+          }
+        }
+      },
+      {
+        "q": "1.20553412158976492694628851534",
+        "q_minus_qinv": "0.376026285941548237517922195487",
+        "hecke_scalar_integer_part": 0,
+        "per_strand": {
+          "n_3": {
+            "n_positive": 3,
+            "n_total": 3,
+            "n_negative": 0
+          },
+          "n_6": {
+            "n_positive": 11,
+            "n_total": 11,
+            "n_negative": 0
+          },
+          "n_9": {
+            "n_positive": 30,
+            "n_total": 30,
+            "n_negative": 0
+          }
+        }
+      },
+      {
+        "q": "1.25081188460755714041943277301",
+        "q_minus_qinv": "0.451331153487265215546645089982",
+        "hecke_scalar_integer_part": 0,
+        "per_strand": {
+          "n_3": {
+            "n_positive": 3,
+            "n_total": 3,
+            "n_negative": 0
+          },
+          "n_6": {
+            "n_positive": 11,
+            "n_total": 11,
+            "n_negative": 0
+          },
+          "n_9": {
+            "n_positive": 30,
+            "n_total": 30,
+            "n_negative": 0
+          }
+        }
+      },
+      {
+        "q": "1.29608964762534935389257703068",
+        "q_minus_qinv": "0.524538079543492184791058884989",
+        "hecke_scalar_integer_part": 0,
+        "per_strand": {
+          "n_3": {
+            "n_positive": 3,
+            "n_total": 3,
+            "n_negative": 0
+          },
+          "n_6": {
+            "n_positive": 11,
+            "n_total": 11,
+            "n_negative": 0
+          },
+          "n_9": {
+            "n_positive": 30,
+            "n_total": 30,
+            "n_negative": 0
+          }
+        }
+      },
+      {
+        "q": "1.34136741064314156736572128835",
+        "q_minus_qinv": "0.59585951171444098010494254782",
+        "hecke_scalar_integer_part": 0,
+        "per_strand": {
+          "n_3": {
+            "n_positive": 3,
+            "n_total": 3,
+            "n_negative": 0
+          },
+          "n_6": {
+            "n_positive": 11,
+            "n_total": 11,
+            "n_negative": 0
+          },
+          "n_9": {
+            "n_positive": 30,
+            "n_total": 30,
+            "n_negative": 0
+          }
+        }
+      },
+      {
+        "q": "1.38664517366093378083886554602",
+        "q_minus_qinv": "0.665480149619590455835560184736",
+        "hecke_scalar_integer_part": 0,
+        "per_strand": {
+          "n_3": {
+            "n_positive": 3,
+            "n_total": 3,
+            "n_negative": 0
+          },
+          "n_6": {
+            "n_positive": 11,
+            "n_total": 11,
+            "n_negative": 0
+          },
+          "n_9": {
+            "n_positive": 30,
+            "n_total": 30,
+            "n_negative": 0
+          }
+        }
+      },
+      {
+        "q": "1.43192293667872599431200980369",
+        "q_minus_qinv": "0.733561331884930146211284863033",
+        "hecke_scalar_integer_part": 0,
+        "per_strand": {
+          "n_3": {
+            "n_positive": 3,
+            "n_total": 3,
+            "n_negative": 0
+          },
+          "n_6": {
+            "n_positive": 11,
+            "n_total": 11,
+            "n_negative": 0
+          },
+          "n_9": {
+            "n_positive": 30,
+            "n_total": 30,
+            "n_negative": 0
+          }
+        }
+      },
+      {
+        "q": "1.47720069969651820778515406136",
+        "q_minus_qinv": "0.800244616338688871914830760515",
+        "hecke_scalar_integer_part": 0,
+        "per_strand": {
+          "n_3": {
+            "n_positive": 3,
+            "n_total": 3,
+            "n_negative": 0
+          },
+          "n_6": {
+            "n_positive": 11,
+            "n_total": 11,
+            "n_negative": 0
+          },
+          "n_9": {
+            "n_positive": 30,
+            "n_total": 30,
+            "n_negative": 0
+          }
+        }
+      },
+      {
+        "q": "1.52247846271431042125829831903",
+        "q_minus_qinv": "0.865654721367469643010174511819",
+        "hecke_scalar_integer_part": 0,
+        "per_strand": {
+          "n_3": {
+            "n_positive": 3,
+            "n_total": 3,
+            "n_negative": 0
+          },
+          "n_6": {
+            "n_positive": 11,
+            "n_total": 11,
+            "n_negative": 0
+          },
+          "n_9": {
+            "n_positive": 30,
+            "n_total": 30,
+            "n_negative": 0
+          }
+        }
+      },
+      {
+        "q": "1.5677562257321026347314425767",
+        "q_minus_qinv": "0.929901957583350611939377075027",
+        "hecke_scalar_integer_part": 0,
+        "per_strand": {
+          "n_3": {
+            "n_positive": 3,
+            "n_total": 3,
+            "n_negative": 0
+          },
+          "n_6": {
+            "n_positive": 11,
+            "n_total": 11,
+            "n_negative": 0
+          },
+          "n_9": {
+            "n_positive": 30,
+            "n_total": 30,
+            "n_negative": 0
+          }
+        }
+      },
+      {
+        "q": "1.61303398874989484820458683437",
+        "q_minus_qinv": "0.993084249950526855762399880097",
+        "hecke_scalar_integer_part": 0,
+        "per_strand": {
+          "n_3": {
+            "n_positive": 3,
+            "n_total": 3,
+            "n_negative": 0
+          },
+          "n_6": {
+            "n_positive": 11,
+            "n_total": 11,
+            "n_negative": 0
+          },
+          "n_9": {
+            "n_positive": 30,
+            "n_total": 30,
+            "n_negative": 0
+          }
+        }
+      }
+    ],
+    "interval_phi_to_silver": [
+      {
+        "q": "1.62303398874989484820458683437",
+        "q_minus_qinv": "1.00690394653788464874772929084",
+        "hecke_scalar_integer_part": 1,
+        "per_strand": {
+          "n_3": {
+            "n_positive": 3,
+            "n_total": 3,
+            "n_negative": 0
+          },
+          "n_6": {
+            "n_positive": 11,
+            "n_total": 11,
+            "n_negative": 0
+          },
+          "n_9": {
+            "n_positive": 30,
+            "n_total": 30,
+            "n_negative": 0
+          }
+        }
+      },
+      {
+        "q": "1.69450485907927668462250518799",
+        "q_minus_qinv": "1.10436196592560445429858874856",
+        "hecke_scalar_integer_part": 1,
+        "per_strand": {
+          "n_3": {
+            "n_positive": 3,
+            "n_total": 3,
+            "n_negative": 0
+          },
+          "n_6": {
+            "n_positive": 11,
+            "n_total": 11,
+            "n_negative": 0
+          },
+          "n_9": {
+            "n_positive": 30,
+            "n_total": 30,
+            "n_negative": 0
+          }
+        }
+      },
+      {
+        "q": "1.76597572940865852104042354161",
+        "q_minus_qinv": "1.19971653153460135517817898067",
+        "hecke_scalar_integer_part": 1,
+        "per_strand": {
+          "n_3": {
+            "n_positive": 3,
+            "n_total": 3,
+            "n_negative": 0
+          },
+          "n_6": {
+            "n_positive": 11,
+            "n_total": 11,
+            "n_negative": 0
+          },
+          "n_9": {
+            "n_positive": 30,
+            "n_total": 30,
+            "n_negative": 0
+          }
+        }
+      },
+      {
+        "q": "1.83744659973804035745834189523",
+        "q_minus_qinv": "1.29321309649361017158567204028",
+        "hecke_scalar_integer_part": 1,
+        "per_strand": {
+          "n_3": {
+            "n_positive": 3,
+            "n_total": 3,
+            "n_negative": 0
+          },
+          "n_6": {
+            "n_positive": 11,
+            "n_total": 11,
+            "n_negative": 0
+          },
+          "n_9": {
+            "n_positive": 30,
+            "n_total": 30,
+            "n_negative": 0
+          }
+        }
+      },
+      {
+        "q": "1.90891747006742219387626024885",
+        "q_minus_qinv": "1.38506035435634831283463015786",
+        "hecke_scalar_integer_part": 1,
+        "per_strand": {
+          "n_3": {
+            "n_positive": 3,
+            "n_total": 3,
+            "n_negative": 0
+          },
+          "n_6": {
+            "n_positive": 11,
+            "n_total": 11,
+            "n_negative": 0
+          },
+          "n_9": {
+            "n_positive": 30,
+            "n_total": 30,
+            "n_negative": 0
+          }
+        }
+      },
+      {
+        "q": "1.98038834039680403029417860248",
+        "q_minus_qinv": "1.47543687224201110602700402064",
+        "hecke_scalar_integer_part": 1,
+        "per_strand": {
+          "n_3": {
+            "n_positive": 3,
+            "n_total": 3,
+            "n_negative": 0
+          },
+          "n_6": {
+            "n_positive": 11,
+            "n_total": 11,
+            "n_negative": 0
+          },
+          "n_9": {
+            "n_positive": 30,
+            "n_total": 30,
+            "n_negative": 0
+          }
+        }
+      },
+      {
+        "q": "2.0518592107261858667120969561",
+        "q_minus_qinv": "1.56449633769257067552030632302",
+        "hecke_scalar_integer_part": 1,
+        "per_strand": {
+          "n_3": {
+            "n_positive": 3,
+            "n_total": 3,
+            "n_negative": 0
+          },
+          "n_6": {
+            "n_positive": 11,
+            "n_total": 11,
+            "n_negative": 0
+          },
+          "n_9": {
+            "n_positive": 30,
+            "n_total": 30,
+            "n_negative": 0
+          }
+        }
+      },
+      {
+        "q": "2.12333008105556770313001530972",
+        "q_minus_qinv": "1.65237174588100473933973609205",
+        "hecke_scalar_integer_part": 1,
+        "per_strand": {
+          "n_3": {
+            "n_positive": 3,
+            "n_total": 3,
+            "n_negative": 0
+          },
+          "n_6": {
+            "n_positive": 11,
+            "n_total": 11,
+            "n_negative": 0
+          },
+          "n_9": {
+            "n_positive": 30,
+            "n_total": 30,
+            "n_negative": 0
+          }
+        }
+      },
+      {
+        "q": "2.19480095138494953954793366334",
+        "q_minus_qinv": "1.73917876871321966449891694519",
+        "hecke_scalar_integer_part": 1,
+        "per_strand": {
+          "n_3": {
+            "n_positive": 3,
+            "n_total": 3,
+            "n_negative": 0
+          },
+          "n_6": {
+            "n_positive": 11,
+            "n_total": 11,
+            "n_negative": 0
+          },
+          "n_9": {
+            "n_positive": 30,
+            "n_total": 30,
+            "n_negative": 0
+          }
+        }
+      },
+      {
+        "q": "2.26627182171433137596585201697",
+        "q_minus_qinv": "1.8250184864266227891968116227",
+        "hecke_scalar_integer_part": 1,
+        "per_strand": {
+          "n_3": {
+            "n_positive": 3,
+            "n_total": 3,
+            "n_negative": 0
+          },
+          "n_6": {
+            "n_positive": 11,
+            "n_total": 11,
+            "n_negative": 0
+          },
+          "n_9": {
+            "n_positive": 30,
+            "n_total": 30,
+            "n_negative": 0
+          }
+        }
+      },
+      {
+        "q": "2.33774269204371321238377037059",
+        "q_minus_qinv": "1.90997961811628497431509764285",
+        "hecke_scalar_integer_part": 1,
+        "per_strand": {
+          "n_3": {
+            "n_positive": 3,
+            "n_total": 3,
+            "n_negative": 0
+          },
+          "n_6": {
+            "n_positive": 11,
+            "n_total": 11,
+            "n_negative": 0
+          },
+          "n_9": {
+            "n_positive": 30,
+            "n_total": 30,
+            "n_negative": 0
+          }
+        }
+      },
+      {
+        "q": "2.40921356237309504880168872421",
+        "q_minus_qinv": "1.99414035524114123925027534842",
+        "hecke_scalar_integer_part": 1,
+        "per_strand": {
+          "n_3": {
+            "n_positive": 3,
+            "n_total": 3,
+            "n_negative": 0
+          },
+          "n_6": {
+            "n_positive": 11,
+            "n_total": 11,
+            "n_negative": 0
+          },
+          "n_9": {
+            "n_positive": 30,
+            "n_total": 30,
+            "n_negative": 0
+          }
+        }
+      }
+    ],
+    "interval_silver_to_bronze": [
+      {
+        "q": "2.41921356237309504880168872421",
+        "q_minus_qinv": "2.00585609135302378558626538098",
+        "hecke_scalar_integer_part": 2,
+        "per_strand": {
+          "n_3": {
+            "n_positive": 3,
+            "n_total": 3,
+            "n_negative": 0
+          },
+          "n_6": {
+            "n_positive": 11,
+            "n_total": 11,
+            "n_negative": 0
+          },
+          "n_9": {
+            "n_positive": 30,
+            "n_total": 30,
+            "n_negative": 0
+          }
+        }
+      },
+      {
+        "q": "2.51683157074630611521923560305",
+        "q_minus_qinv": "2.11950661200722213529133317319",
+        "hecke_scalar_integer_part": 2,
+        "per_strand": {
+          "n_3": {
+            "n_positive": 3,
+            "n_total": 3,
+            "n_negative": 0
+          },
+          "n_6": {
+            "n_positive": 11,
+            "n_total": 11,
+            "n_negative": 0
+          },
+          "n_9": {
+            "n_positive": 30,
+            "n_total": 30,
+            "n_negative": 0
+          }
+        }
+      },
+      {
+        "q": "2.61444957911951718163678248188",
+        "q_minus_qinv": "2.23195989257647985245551858444",
+        "hecke_scalar_integer_part": 2,
+        "per_strand": {
+          "n_3": {
+            "n_positive": 3,
+            "n_total": 3,
+            "n_negative": 0
+          },
+          "n_6": {
+            "n_positive": 11,
+            "n_total": 11,
+            "n_negative": 0
+          },
+          "n_9": {
+            "n_positive": 30,
+            "n_total": 30,
+            "n_negative": 0
+          }
+        }
+      },
+      {
+        "q": "2.71206758749272824805432936072",
+        "q_minus_qinv": "2.34334521323785682234639605542",
+        "hecke_scalar_integer_part": 2,
+        "per_strand": {
+          "n_3": {
+            "n_positive": 3,
+            "n_total": 3,
+            "n_negative": 0
+          },
+          "n_6": {
+            "n_positive": 11,
+            "n_total": 11,
+            "n_negative": 0
+          },
+          "n_9": {
+            "n_positive": 30,
+            "n_total": 30,
+            "n_negative": 0
+          }
+        }
+      },
+      {
+        "q": "2.80968559586593931447187623955",
+        "q_minus_qinv": "2.45377388764087648164375169118",
+        "hecke_scalar_integer_part": 2,
+        "per_strand": {
+          "n_3": {
+            "n_positive": 3,
+            "n_total": 3,
+            "n_negative": 0
+          },
+          "n_6": {
+            "n_positive": 11,
+            "n_total": 11,
+            "n_negative": 0
+          },
+          "n_9": {
+            "n_positive": 30,
+            "n_total": 30,
+            "n_negative": 0
+          }
+        }
+      },
+      {
+        "q": "2.90730360423915038088942311839",
+        "q_minus_qinv": "2.56334227920178716297278343678",
+        "hecke_scalar_integer_part": 2,
+        "per_strand": {
+          "n_3": {
+            "n_positive": 3,
+            "n_total": 3,
+            "n_negative": 0
+          },
+          "n_6": {
+            "n_positive": 11,
+            "n_total": 11,
+            "n_negative": 0
+          },
+          "n_9": {
+            "n_positive": 30,
+            "n_total": 30,
+            "n_negative": 0
+          }
+        }
+      },
+      {
+        "q": "3.00492161261236144730696999723",
+        "q_minus_qinv": "2.67213422947305916443087422325",
+        "hecke_scalar_integer_part": 2,
+        "per_strand": {
+          "n_3": {
+            "n_positive": 3,
+            "n_total": 3,
+            "n_negative": 0
+          },
+          "n_6": {
+            "n_positive": 11,
+            "n_total": 11,
+            "n_negative": 0
+          },
+          "n_9": {
+            "n_positive": 30,
+            "n_total": 30,
+            "n_negative": 0
+          }
+        }
+      },
+      {
+        "q": "3.10253962098557251372451687606",
+        "q_minus_qinv": "2.78022302807697538666769877838",
+        "hecke_scalar_integer_part": 2,
+        "per_strand": {
+          "n_3": {
+            "n_positive": 3,
+            "n_total": 3,
+            "n_negative": 0
+          },
+          "n_6": {
+            "n_positive": 11,
+            "n_total": 11,
+            "n_negative": 0
+          },
+          "n_9": {
+            "n_positive": 30,
+            "n_total": 30,
+            "n_negative": 0
+          }
+        }
+      },
+      {
+        "q": "3.2001576293587835801420637549",
+        "q_minus_qinv": "2.88767302209261892526788390068",
+        "hecke_scalar_integer_part": 2,
+        "per_strand": {
+          "n_3": {
+            "n_positive": 3,
+            "n_total": 3,
+            "n_negative": 0
+          },
+          "n_6": {
+            "n_positive": 11,
+            "n_total": 11,
+            "n_negative": 0
+          },
+          "n_9": {
+            "n_positive": 30,
+            "n_total": 30,
+            "n_negative": 0
+          }
+        }
+      },
+      {
+        "q": "3.29777563773199464655961063374",
+        "q_minus_qinv": "2.99454093960445983382076422497",
+        "hecke_scalar_integer_part": 2,
+        "per_strand": {
+          "n_3": {
+            "n_positive": 3,
+            "n_total": 3,
+            "n_negative": 0
+          },
+          "n_6": {
+            "n_positive": 11,
+            "n_total": 11,
+            "n_negative": 0
+          },
+          "n_9": {
+            "n_positive": 30,
+            "n_total": 30,
+            "n_negative": 0
+          }
+        }
+      }
+    ],
+    "metallic_boundaries": [
+      {
+        "q": "1.61803398874989484820458683437",
+        "q_minus_qinv": "1.0",
+        "hecke_scalar_integer_part": 1,
+        "per_strand": {
+          "n_3": {
+            "n_positive": 3,
+            "n_total": 3,
+            "n_negative": 0
+          },
+          "n_6": {
+            "n_positive": 11,
+            "n_total": 11,
+            "n_negative": 0
+          },
+          "n_9": {
+            "n_positive": 30,
+            "n_total": 30,
+            "n_negative": 0
+          }
+        }
+      },
+      {
+        "q": "2.41421356237309504880168872421",
+        "q_minus_qinv": "2.0",
+        "hecke_scalar_integer_part": 2,
+        "per_strand": {
+          "n_3": {
+            "n_positive": 3,
+            "n_total": 3,
+            "n_negative": 0
+          },
+          "n_6": {
+            "n_positive": 11,
+            "n_total": 11,
+            "n_negative": 0
+          },
+          "n_9": {
+            "n_positive": 30,
+            "n_total": 30,
+            "n_negative": 0
+          }
+        }
+      },
+      {
+        "q": "3.30277563773199464655961063374",
+        "q_minus_qinv": "3.0",
+        "hecke_scalar_integer_part": 2,
+        "per_strand": {
+          "n_3": {
+            "n_positive": 3,
+            "n_total": 3,
+            "n_negative": 0
+          },
+          "n_6": {
+            "n_positive": 11,
+            "n_total": 11,
+            "n_negative": 0
+          },
+          "n_9": {
+            "n_positive": 30,
+            "n_total": 30,
+            "n_negative": 0
+          }
+        }
+      }
+    ],
+    "mirror_silver_to_phi": [
+      {
+        "q": "0.41921356237309504880168872421",
+        "q_minus_qinv": "-1.96620544539748842980093879054",
+        "hecke_scalar_integer_part": -2,
+        "per_strand": {
+          "n_3": {
+            "n_positive": 3,
+            "n_total": 3,
+            "n_negative": 0
+          },
+          "n_6": {
+            "n_positive": 11,
+            "n_total": 11,
+            "n_negative": 0
+          },
+          "n_9": {
+            "n_positive": 30,
+            "n_total": 30,
+            "n_negative": 0
+          }
+        }
+      },
+      {
+        "q": "0.446902194712637877287817025661",
+        "q_minus_qinv": "-1.79072387164178890341689638751",
+        "hecke_scalar_integer_part": -2,
+        "per_strand": {
+          "n_3": {
+            "n_positive": 3,
+            "n_total": 3,
+            "n_negative": 0
+          },
+          "n_6": {
+            "n_positive": 11,
+            "n_total": 11,
+            "n_negative": 0
+          },
+          "n_9": {
+            "n_positive": 30,
+            "n_total": 30,
+            "n_negative": 0
+          }
+        }
+      },
+      {
+        "q": "0.474590827052180705773945327111",
+        "q_minus_qinv": "-1.63248740328633186480302597029",
+        "hecke_scalar_integer_part": -2,
+        "per_strand": {
+          "n_3": {
+            "n_positive": 3,
+            "n_total": 3,
+            "n_negative": 0
+          },
+          "n_6": {
+            "n_positive": 11,
+            "n_total": 11,
+            "n_negative": 0
+          },
+          "n_9": {
+            "n_positive": 30,
+            "n_total": 30,
+            "n_negative": 0
+          }
+        }
+      },
+      {
+        "q": "0.502279459391723534260073628562",
+        "q_minus_qinv": "-1.48864408187956782064207495432",
+        "hecke_scalar_integer_part": -2,
+        "per_strand": {
+          "n_3": {
+            "n_positive": 3,
+            "n_total": 3,
+            "n_negative": 0
+          },
+          "n_6": {
+            "n_positive": 11,
+            "n_total": 11,
+            "n_negative": 0
+          },
+          "n_9": {
+            "n_positive": 30,
+            "n_total": 30,
+            "n_negative": 0
+          }
+        }
+      },
+      {
+        "q": "0.529968091731266362746201930013",
+        "q_minus_qinv": "-1.35693796092043766981525090803",
+        "hecke_scalar_integer_part": -2,
+        "per_strand": {
+          "n_3": {
+            "n_positive": 3,
+            "n_total": 3,
+            "n_negative": 0
+          },
+          "n_6": {
+            "n_positive": 11,
+            "n_total": 11,
+            "n_negative": 0
+          },
+          "n_9": {
+            "n_positive": 30,
+            "n_total": 30,
+            "n_negative": 0
+          }
+        }
+      },
+      {
+        "q": "0.557656724070809191232330231464",
+        "q_minus_qinv": "-1.23556114067607709089901701113",
+        "hecke_scalar_integer_part": -2,
+        "per_strand": {
+          "n_3": {
+            "n_positive": 3,
+            "n_total": 3,
+            "n_negative": 0
+          },
+          "n_6": {
+            "n_positive": 11,
+            "n_total": 11,
+            "n_negative": 0
+          },
+          "n_9": {
+            "n_positive": 30,
+            "n_total": 30,
+            "n_negative": 0
+          }
+        }
+      },
+      {
+        "q": "0.585345356410352019718458532915",
+        "q_minus_qinv": "-1.12304779824373123316807850668",
+        "hecke_scalar_integer_part": -2,
+        "per_strand": {
+          "n_3": {
+            "n_positive": 3,
+            "n_total": 3,
+            "n_negative": 0
+          },
+          "n_6": {
+            "n_positive": 11,
+            "n_total": 11,
+            "n_negative": 0
+          },
+          "n_9": {
+            "n_positive": 30,
+            "n_total": 30,
+            "n_negative": 0
+          }
+        }
+      },
+      {
+        "q": "0.613033988749894848204586834366",
+        "q_minus_qinv": "-1.01819693539382217805696429442",
+        "hecke_scalar_integer_part": -2,
+        "per_strand": {
+          "n_3": {
+            "n_positive": 3,
+            "n_total": 3,
+            "n_negative": 0
+          },
+          "n_6": {
+            "n_positive": 11,
+            "n_total": 11,
+            "n_negative": 0
+          },
+          "n_9": {
+            "n_positive": 30,
+            "n_total": 30,
+            "n_negative": 0
+          }
+        }
+      }
+    ],
+    "mirror_bronze_to_silver": [
+      {
+        "q": "0.307775637731994646559610633735",
+        "q_minus_qinv": "-2.94134442703018633973030846155",
+        "hecke_scalar_integer_part": -3,
+        "per_strand": {
+          "n_3": {
+            "n_positive": 3,
+            "n_total": 3,
+            "n_negative": 0
+          },
+          "n_6": {
+            "n_positive": 11,
+            "n_total": 11,
+            "n_negative": 0
+          },
+          "n_9": {
+            "n_positive": 30,
+            "n_total": 30,
+            "n_negative": 0
+          }
+        }
+      },
+      {
+        "q": "0.32806322266021472700802625183",
+        "q_minus_qinv": "-2.7201297198194458812542391364",
+        "hecke_scalar_integer_part": -3,
+        "per_strand": {
+          "n_3": {
+            "n_positive": 3,
+            "n_total": 3,
+            "n_negative": 0
+          },
+          "n_6": {
+            "n_positive": 11,
+            "n_total": 11,
+            "n_negative": 0
+          },
+          "n_9": {
+            "n_positive": 30,
+            "n_total": 30,
+            "n_negative": 0
+          }
+        }
+      },
+      {
+        "q": "0.348350807588434807456441869925",
+        "q_minus_qinv": "-2.52231858147601541721250404586",
+        "hecke_scalar_integer_part": -3,
+        "per_strand": {
+          "n_3": {
+            "n_positive": 3,
+            "n_total": 3,
+            "n_negative": 0
+          },
+          "n_6": {
+            "n_positive": 11,
+            "n_total": 11,
+            "n_negative": 0
+          },
+          "n_9": {
+            "n_positive": 30,
+            "n_total": 30,
+            "n_negative": 0
+          }
+        }
+      },
+      {
+        "q": "0.36863839251665488790485748802",
+        "q_minus_qinv": "-2.34404704746995889941487734629",
+        "hecke_scalar_integer_part": -3,
+        "per_strand": {
+          "n_3": {
+            "n_positive": 3,
+            "n_total": 3,
+            "n_negative": 0
+          },
+          "n_6": {
+            "n_positive": 11,
+            "n_total": 11,
+            "n_negative": 0
+          },
+          "n_9": {
+            "n_positive": 30,
+            "n_total": 30,
+            "n_negative": 0
+          }
+        }
+      },
+      {
+        "q": "0.388925977444874968353273106115",
+        "q_minus_qinv": "-2.18225737875492159545442794501",
+        "hecke_scalar_integer_part": -3,
+        "per_strand": {
+          "n_3": {
+            "n_positive": 3,
+            "n_total": 3,
+            "n_negative": 0
+          },
+          "n_6": {
+            "n_positive": 11,
+            "n_total": 11,
+            "n_negative": 0
+          },
+          "n_9": {
+            "n_positive": 30,
+            "n_total": 30,
+            "n_negative": 0
+          }
+        }
+      },
+      {
+        "q": "0.40921356237309504880168872421",
+        "q_minus_qinv": "-2.0344982105232862222422151362",
+        "hecke_scalar_integer_part": -3,
+        "per_strand": {
+          "n_3": {
+            "n_positive": 3,
+            "n_total": 3,
+            "n_negative": 0
+          },
+          "n_6": {
+            "n_positive": 11,
+            "n_total": 11,
+            "n_negative": 0
+          },
+          "n_9": {
+            "n_positive": 30,
+            "n_total": 30,
+            "n_negative": 0
+          }
+        }
+      }
+    ]
+  },
+  "per_interval_summary": {
+    "interval_q0_to_phi": {
+      "n_3": {
+        "distinct_positive_counts_in_interval": [
+          3
+        ],
+        "interval_constant": true
+      },
+      "n_6": {
+        "distinct_positive_counts_in_interval": [
+          11
+        ],
+        "interval_constant": true
+      },
+      "n_9": {
+        "distinct_positive_counts_in_interval": [
+          30
+        ],
+        "interval_constant": true
+      }
+    },
+    "interval_phi_to_silver": {
+      "n_3": {
+        "distinct_positive_counts_in_interval": [
+          3
+        ],
+        "interval_constant": true
+      },
+      "n_6": {
+        "distinct_positive_counts_in_interval": [
+          11
+        ],
+        "interval_constant": true
+      },
+      "n_9": {
+        "distinct_positive_counts_in_interval": [
+          30
+        ],
+        "interval_constant": true
+      }
+    },
+    "interval_silver_to_bronze": {
+      "n_3": {
+        "distinct_positive_counts_in_interval": [
+          3
+        ],
+        "interval_constant": true
+      },
+      "n_6": {
+        "distinct_positive_counts_in_interval": [
+          11
+        ],
+        "interval_constant": true
+      },
+      "n_9": {
+        "distinct_positive_counts_in_interval": [
+          30
+        ],
+        "interval_constant": true
+      }
+    },
+    "metallic_boundaries": {
+      "n_3": {
+        "distinct_positive_counts_in_interval": [
+          3
+        ],
+        "interval_constant": true
+      },
+      "n_6": {
+        "distinct_positive_counts_in_interval": [
+          11
+        ],
+        "interval_constant": true
+      },
+      "n_9": {
+        "distinct_positive_counts_in_interval": [
+          30
+        ],
+        "interval_constant": true
+      }
+    },
+    "mirror_silver_to_phi": {
+      "n_3": {
+        "distinct_positive_counts_in_interval": [
+          3
+        ],
+        "interval_constant": true
+      },
+      "n_6": {
+        "distinct_positive_counts_in_interval": [
+          11
+        ],
+        "interval_constant": true
+      },
+      "n_9": {
+        "distinct_positive_counts_in_interval": [
+          30
+        ],
+        "interval_constant": true
+      }
+    },
+    "mirror_bronze_to_silver": {
+      "n_3": {
+        "distinct_positive_counts_in_interval": [
+          3
+        ],
+        "interval_constant": true
+      },
+      "n_6": {
+        "distinct_positive_counts_in_interval": [
+          11
+        ],
+        "interval_constant": true
+      },
+      "n_9": {
+        "distinct_positive_counts_in_interval": [
+          30
+        ],
+        "interval_constant": true
+      }
+    }
+  },
+  "boundary_jumps": {
+    "golden_phi": {
+      "n_3": {
+        "below": 3,
+        "at": 3,
+        "above": 3,
+        "jumps": false
+      },
+      "n_6": {
+        "below": 11,
+        "at": 11,
+        "above": 11,
+        "jumps": false
+      },
+      "n_9": {
+        "below": 30,
+        "at": 30,
+        "above": 30,
+        "jumps": false
+      }
+    },
+    "silver": {
+      "n_3": {
+        "below": 3,
+        "at": 3,
+        "above": 3,
+        "jumps": false
+      },
+      "n_6": {
+        "below": 11,
+        "at": 11,
+        "above": 11,
+        "jumps": false
+      },
+      "n_9": {
+        "below": 30,
+        "at": 30,
+        "above": 30,
+        "jumps": false
+      }
+    }
+  },
+  "verdict": {
+    "interpretation": "If `interval_constant: true` for all (interval, n) AND `jumps: true` at every metallic boundary, the conjecture is empirically confirmed at the Wenzl-weight level. If any interval has multiple counts (continuous variation) OR no jump occurs at a boundary, the conjecture is refuted at this n."
+  },
+  "limitations": [
+    "Wenzl positivity is a NECESSARY (not sufficient) condition for SDP feasibility. A true catalog-blind SDP test requires running the full nucleus_real_sdp.py at each q with regenerated character witnesses \u2014 out of scope for this probe.",
+    "Sampled n \u2208 {3, 6, 9}; higher n (the actual A=size of physical nuclei) requires more compute. Sample size chosen for tractable structural test."
+  ],
+  "follow_ups": [
+    "If Wenzl jumps confirm the conjecture: regenerate the chi-* character witnesses at counterfactual q and rerun nucleus_real_sdp.py for the same sweep \u2014 true SDP-feasibility test, not just Wenzl-positivity.",
+    "Connect to \u0394_\u03bb option-e v1-v7 regression: do the failing v8 fits gain a piecewise discontinuity at q = \u03c6 that the unitary v1-v7 ansatze cannot capture?"
+  ]
+}
