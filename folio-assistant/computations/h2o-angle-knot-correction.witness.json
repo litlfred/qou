@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-09T17:24:36.808985+00:00",
-  "commitSha": "f4e5fa6d8c91e2fbfa11fc512bc885e8b74606a9",
+  "computedAt": "2026-06-09T17:42:57.017676+00:00",
+  "commitSha": "f9cfa0cf8eccf383252e241175c9e47c5f01992b",
   "assertions": [
     {
       "name": "figure-eight knot operator is a Reeb rotation (unit-modulus eigs)",
@@ -20,11 +20,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 16,
   "computation": "h2o-angle-knot-correction",
   "scriptFile": "h2o_angle_knot_correction.py",
-  "scriptHash": "4370c2a2de04",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "d6836a8f1556",
+  "scriptCommitSha": "5e87619861807526768d28a056934d15231b1098",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
