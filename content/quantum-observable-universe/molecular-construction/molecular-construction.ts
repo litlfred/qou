@@ -139,6 +139,7 @@ export default chapter({
         "benzene-molecular-braid",
         "benzene-threading-emergence",
         "benzene-bond-equalization",
+        "benzene-assembly-spine",
         "outro-molecular-construction",
       ],
     }),

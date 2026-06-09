@@ -38,7 +38,7 @@ target — no precision measurement, no fitted constant. The aromatic ½ is
 forced by the D₆ symmetry of the assembly projector (bond-equalisation
 theorem, rem:benzene-bond-equalization), not fitted.
 
-Content block: prop:benzene-assembly-spine
+Content block: rem:benzene-assembly-spine
 """
 import _path_bridge  # noqa: F401  — substrate modules live in substrate/
 import sys
@@ -119,7 +119,7 @@ def main():
         "cyclohexane C–C order 1 (saturated control). Bond order vs observed "
         "structural orders; zero fitted parameters."
     )
-    w.set_content_block("prop:benzene-assembly-spine")
+    w.set_content_block("rem:benzene-assembly-spine")
 
     cap_C = bonding_capacity(6)        # 4
     cap_H = bonding_capacity(1)        # 1
