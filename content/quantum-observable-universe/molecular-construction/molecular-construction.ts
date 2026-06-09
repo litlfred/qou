@@ -127,6 +127,7 @@ export default chapter({
         "tetrahedral-hbond-directions",
         "h2o-bond-angle-shift",
         "symmetric-block-domain-weight",
+        "h2s-angle-s3-braid-holonomy",
         "ice-pauling-residual",
       ],
     }),
