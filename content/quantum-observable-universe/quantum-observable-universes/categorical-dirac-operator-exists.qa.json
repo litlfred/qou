@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "1ee32fd60067",
     "ts": "9468277ca030",
-    "lean": "7d7afeb2417a"
+    "lean": "f8a43f102671"
   },
   "criteria": {
     "voice-status-leak": [
@@ -388,6 +388,25 @@
         "reviewed_at": "2026-06-07T06:00:59.107Z",
         "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
         "notes": "INTEGRITY FAIL: lean.ref QOU.CategoricalDirac.exists proves Nonempty of a free-field struct by a trivial witness, not the md's Dirac formula; docstring self-admits the gap."
+      },
+      {
+        "field_hash": {
+          "md": "1ee32fd60067",
+          "ts": "9468277ca030",
+          "lean": "f8a43f102671"
+        },
+        "result": "pass",
+        "evidence": "∃ D, D.dirac = qinv • nablaEndo + (1 - qinv) • reeb (q⁻¹∇+(1-q⁻¹)ι_ξ∇ formula)",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-09",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-09T15:57:08.199Z",
+        "reviewed_sha": "22b58ea827369ef210aa0d1213da8bc308cf1158",
+        "notes": "Strengthened over [CommRing R][Preadditive C][Linear R C], restoring the k-linearity the (C,A,τ) triple declares; removed false axiom / vacuous witness; verified green via _Scratch bundle against fixed GaugeTheory (exit 0)."
       }
     ],
     "voice-unicode-crash": [
@@ -1216,5 +1235,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-09T14:26:34.579Z"
+  "updated_at": "2026-06-09T15:57:08.199Z"
 }
