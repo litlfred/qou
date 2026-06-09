@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-09T17:33:41.645564+00:00",
-  "commitSha": "3709aaf5133cc56aeb08db662ba38bc40be59860",
+  "computedAt": "2026-06-09T17:42:57.702393+00:00",
+  "commitSha": "f9cfa0cf8eccf383252e241175c9e47c5f01992b",
   "assertions": [
     {
       "name": "the GB/active-set levers BRACKET the observed angle",
@@ -20,11 +20,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 25,
+  "durationMs": 39,
   "computation": "h2o-angle-activeset-gb",
   "scriptFile": "h2o_angle_activeset_gb.py",
-  "scriptHash": "7e860df55972",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "126c6f8c4b2c",
+  "scriptCommitSha": "0ab771e7d494c832c0f609424cdc329520cee388",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
