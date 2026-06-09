@@ -1,0 +1,294 @@
+{
+  "description": "q \u2194 \u03c1 calibration for the metallic phase ladder: three corpus-anchored maps (A kinetic \u210f_q\u00b2 scaling, B energy-crossover gap closure, C coral-tube geometric overlap), each pinning \u03c1(\u03b4_silver) and predicting the densities of every rung (\u03c6, \u03b4_silver, \u03c6\u00b2, \u03b4_bronze, \u03b4_4).  Tiered alternative identifications \u2014 none wired as canonical.",
+  "computed_at": "2026-06-09T21:23:24.906388+00:00",
+  "script": "metallic_q_rho_calibration.py",
+  "constants": {
+    "q0": "1.1099785955541805",
+    "hbar_q0": "0.0990817264357",
+    "V_B": "7.32772",
+    "M_B_skein": "746.41737",
+    "skein_to_MeV": "1.2570341",
+    "rho0_fm3": "0.16",
+    "rho0_gcm3": "2.7e+14",
+    "crossover_gap_MeV": "934.48044"
+  },
+  "structural_identities": {
+    "hbar_q(\u03c6) = 1/\u03c6\u00b2 = q_gold": true,
+    "\u03c6\u00b2 + \u03c6\u207b\u00b2 = 3": true,
+    "note": "\u210f_q at the golden rung equals the corpus deconfinement boundary q_gold = 1/\u03c6\u00b2 exactly; the \u03c6\u00b2 rung's Hecke scalar sum is the integer 3 (Lucas L_2).  Both verified at 40+ dps."
+  },
+  "maps": {
+    "A_kinetic_hbar_q": {
+      "form": "hbar_q(rho) = hbar_q(q0)\u00b7(rho/rho0)^(1/3); q = 1/(1\u2212hbar_q)",
+      "anchor": "q(rho0) = q0 (saturation = substrate)",
+      "rungs": [
+        {
+          "rung": "\u03c6",
+          "q": "1.61803398875",
+          "rho_over_rho0": "57.291931",
+          "rho_gcm3": "1.54688e+16",
+          "reach": "BH-formation only"
+        },
+        {
+          "rung": "\u03b4_silver",
+          "q": "2.41421356237",
+          "rho_over_rho0": "206.65087",
+          "rho_gcm3": "5.57957e+16",
+          "reach": "BH-formation only"
+        },
+        {
+          "rung": "\u03c6\u00b2",
+          "q": "2.61803398875",
+          "rho_over_rho0": "242.69252",
+          "rho_gcm3": "6.5527e+16",
+          "reach": "BH-formation only"
+        },
+        {
+          "rung": "\u03b4_bronze",
+          "q": "3.30277563773",
+          "rho_over_rho0": "348.44719",
+          "rho_gcm3": "9.40807e+16",
+          "reach": "BH-formation only"
+        },
+        {
+          "rung": "\u03b4_4",
+          "q": "4.2360679775",
+          "rho_over_rho0": "458.33545",
+          "rho_gcm3": "1.23751e+17",
+          "reach": "BH-formation only"
+        }
+      ]
+    },
+    "B_energy_crossover_relativistic": {
+      "form": "q(rho) = q0\u00b7(rho/rho0)^alpha",
+      "anchor": "E_comp(rho_c) closes the Borromean\u2212Hopf gap (934.48 MeV/baryon); q(rho_c) = \u03b4_silver",
+      "rho_c_over_rho0": "116.96392",
+      "alpha": "0.16317825",
+      "rungs": [
+        {
+          "rung": "\u03c6",
+          "q": "1.61803398875",
+          "rho_over_rho0": "10.070063",
+          "rho_gcm3": "2.71892e+15",
+          "reach": "proto-NS (transient)"
+        },
+        {
+          "rung": "\u03b4_silver",
+          "q": "2.41421356237",
+          "rho_over_rho0": "116.96392",
+          "rho_gcm3": "3.15803e+16",
+          "reach": "BH-formation only"
+        },
+        {
+          "rung": "\u03c6\u00b2",
+          "q": "2.61803398875",
+          "rho_over_rho0": "192.2049",
+          "rho_gcm3": "5.18953e+16",
+          "reach": "BH-formation only"
+        },
+        {
+          "rung": "\u03b4_bronze",
+          "q": "3.30277563773",
+          "rho_over_rho0": "798.23344",
+          "rho_gcm3": "2.15523e+17",
+          "reach": "BH-formation only"
+        },
+        {
+          "rung": "\u03b4_4",
+          "q": "4.2360679775",
+          "rho_over_rho0": "3668.569",
+          "rho_gcm3": "9.90514e+17",
+          "reach": "BH-formation only"
+        }
+      ]
+    },
+    "B_energy_crossover_non_relativistic": {
+      "form": "q(rho) = q0\u00b7(rho/rho0)^alpha",
+      "anchor": "E_comp(rho_c) closes the Borromean\u2212Hopf gap (934.48 MeV/baryon); q(rho_c) = \u03b4_silver",
+      "rho_c_over_rho0": "63.795951",
+      "alpha": "0.18698048",
+      "rungs": [
+        {
+          "rung": "\u03c6",
+          "q": "1.61803398875",
+          "rho_over_rho0": "7.5049578",
+          "rho_gcm3": "2.02634e+15",
+          "reach": "NS core"
+        },
+        {
+          "rung": "\u03b4_silver",
+          "q": "2.41421356237",
+          "rho_over_rho0": "63.795951",
+          "rho_gcm3": "1.72249e+16",
+          "reach": "BH-formation only"
+        },
+        {
+          "rung": "\u03c6\u00b2",
+          "q": "2.61803398875",
+          "rho_over_rho0": "98.411511",
+          "rho_gcm3": "2.65711e+16",
+          "reach": "BH-formation only"
+        },
+        {
+          "rung": "\u03b4_bronze",
+          "q": "3.30277563773",
+          "rho_over_rho0": "340.95315",
+          "rho_gcm3": "9.20574e+16",
+          "reach": "BH-formation only"
+        },
+        {
+          "rung": "\u03b4_4",
+          "q": "4.2360679775",
+          "rho_over_rho0": "1290.457",
+          "rho_gcm3": "3.48423e+17",
+          "reach": "BH-formation only"
+        }
+      ]
+    },
+    "C_coral_tube_rp": {
+      "form": "q(rho) = q0\u00b7(rho/rho0)^alpha",
+      "anchor": "tube overlap: rho_c^(-1/3) = |c_r| = 0.8414 fm; q(rho_c) = \u03b4_silver",
+      "rho_c_over_rho0": "10.492343",
+      "alpha": "0.33056144",
+      "rungs": [
+        {
+          "rung": "\u03c6",
+          "q": "1.61803398875",
+          "rho_over_rho0": "3.1270621",
+          "rho_gcm3": "8.44307e+14",
+          "reach": "NS core"
+        },
+        {
+          "rung": "\u03b4_silver",
+          "q": "2.41421356237",
+          "rho_over_rho0": "10.492343",
+          "rho_gcm3": "2.83293e+15",
+          "reach": "proto-NS (transient)"
+        },
+        {
+          "rung": "\u03c6\u00b2",
+          "q": "2.61803398875",
+          "rho_over_rho0": "13.407777",
+          "rho_gcm3": "3.6201e+15",
+          "reach": "BH-formation only"
+        },
+        {
+          "rung": "\u03b4_bronze",
+          "q": "3.30277563773",
+          "rho_over_rho0": "27.077372",
+          "rho_gcm3": "7.31089e+15",
+          "reach": "BH-formation only"
+        },
+        {
+          "rung": "\u03b4_4",
+          "q": "4.2360679775",
+          "rho_over_rho0": "57.487978",
+          "rho_gcm3": "1.55218e+16",
+          "reach": "BH-formation only"
+        }
+      ]
+    },
+    "C_coral_tube_0p6fm": {
+      "form": "q(rho) = q0\u00b7(rho/rho0)^alpha",
+      "anchor": "tube overlap: rho_c^(-1/3) = |c_r| = 0.6 fm; q(rho_c) = \u03b4_silver",
+      "rho_c_over_rho0": "28.935185",
+      "alpha": "0.23091215",
+      "rungs": [
+        {
+          "rung": "\u03c6",
+          "q": "1.61803398875",
+          "rho_over_rho0": "5.1145902",
+          "rho_gcm3": "1.38094e+15",
+          "reach": "NS core"
+        },
+        {
+          "rung": "\u03b4_silver",
+          "q": "2.41421356237",
+          "rho_over_rho0": "28.935185",
+          "rho_gcm3": "7.8125e+15",
+          "reach": "BH-formation only"
+        },
+        {
+          "rung": "\u03c6\u00b2",
+          "q": "2.61803398875",
+          "rho_over_rho0": "41.102046",
+          "rho_gcm3": "1.10976e+16",
+          "reach": "BH-formation only"
+        },
+        {
+          "rung": "\u03b4_bronze",
+          "q": "3.30277563773",
+          "rho_over_rho0": "112.41974",
+          "rho_gcm3": "3.03533e+16",
+          "reach": "BH-formation only"
+        },
+        {
+          "rung": "\u03b4_4",
+          "q": "4.2360679775",
+          "rho_over_rho0": "330.30567",
+          "rho_gcm3": "8.91825e+16",
+          "reach": "BH-formation only"
+        }
+      ]
+    },
+    "C_coral_tube_1p0fm": {
+      "form": "q(rho) = q0\u00b7(rho/rho0)^alpha",
+      "anchor": "tube overlap: rho_c^(-1/3) = |c_r| = 1.0 fm; q(rho_c) = \u03b4_silver",
+      "rho_c_over_rho0": "6.25",
+      "alpha": "0.42400999",
+      "rungs": [
+        {
+          "rung": "\u03c6",
+          "q": "1.61803398875",
+          "rho_over_rho0": "2.4322724",
+          "rho_gcm3": "6.56714e+14",
+          "reach": "NS core"
+        },
+        {
+          "rung": "\u03b4_silver",
+          "q": "2.41421356237",
+          "rho_over_rho0": "6.25",
+          "rho_gcm3": "1.6875e+15",
+          "reach": "NS core"
+        },
+        {
+          "rung": "\u03c6\u00b2",
+          "q": "2.61803398875",
+          "rho_over_rho0": "7.5665163",
+          "rho_gcm3": "2.04296e+15",
+          "reach": "NS core"
+        },
+        {
+          "rung": "\u03b4_bronze",
+          "q": "3.30277563773",
+          "rho_over_rho0": "13.087931",
+          "rho_gcm3": "3.53374e+15",
+          "reach": "BH-formation only"
+        },
+        {
+          "rung": "\u03b4_4",
+          "q": "4.2360679775",
+          "rho_over_rho0": "23.538552",
+          "rho_gcm3": "6.35541e+15",
+          "reach": "BH-formation only"
+        }
+      ]
+    }
+  },
+  "summary": {
+    "silver_placement_rho0": {
+      "A_kinetic": "206.651",
+      "B_crossover_rel": "116.964",
+      "B_crossover_nonrel": "63.796",
+      "C_coral_tube_rp": "10.4923"
+    },
+    "deep_vs_shallow": "Maps A and B (independent routes: running-\u210f_q kinetic scale vs corpus gap-closure criterion) BOTH place silver deep, O(10\u00b2)\u00b7\u03c10 \u2014 beyond any neutron-star central density: no CFL core in stable NS, no NICER kink, cascade only inside BH-forming collapse.  Map C (the conjecture's own geometric trigger) places silver at ~10 \u03c10 \u2014 reachable in the heaviest proto-NS: NICER kink + delayed second neutrino burst become live predictions.  The two placements are observationally distinguishable; neither is wired as canonical.",
+    "map_c_golden_rung_note": "Under Map C the FIRST rung \u03c6 lands at 3.1271 \u03c10 \u2014 the density band where hyperons appear in standard NS physics and in the corpus's own layered table (conj:color-superconductivity-borromean \u00a7phase sequence: outer core \u03c10..2\u03c10 hyperonic).  Structural echo, not a fit."
+  },
+  "limitations": [
+    "Map A attributes ALL density dependence of the kinetic scale to a running \u210f_q \u2014 an identification, not a derivation; the EOS blocks treat \u210f_q as fixed at q0.",
+    "Map B inherits the corpus crossover criterion's Fermi-gas form; relativistic vs non-relativistic bracket spans ~\u00d71.8 in \u03c1_c.",
+    "Map C's |c_r| (coral-tube transverse scale) is bracketed 0.6\u20131.0 fm around r_p; the corpus does not pin it.",
+    "\u03c10 reach thresholds (8 \u03c10 stable NS, 12 \u03c10 proto-NS) are standard-literature round numbers, not corpus outputs."
+  ]
+}
