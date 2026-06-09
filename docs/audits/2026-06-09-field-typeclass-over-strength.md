@@ -25,9 +25,16 @@ class also catches **field-requiring constructs** (`finrank`, `FiniteDimensional
 need field strength without a literal division — the representation-theory core
 (Hoefsmit, Markov-trace, Wedderburn) legitimately stays over a field.
 
-## Result (2026-06-09 baseline)
+## Result
 
-102 field-strength binders → **0 phantom, 64 over-strong, 38 genuine**.
+Initial baseline (2026-06-09, before any relaxation or the subtype-safe regex
+fix): 102 field-strength binders → 0 phantom, 64 over-strong, 38 genuine.
+
+**The committed witness JSON is the live source of truth** (`counts` field) —
+it is regenerated from the current checkout, so the per-class numbers move as
+binders are relaxed and as the heuristic is refined (the subtype-safe `//`
+guard from the Gemini review re-surfaced 2 findings the old regex hid). Do not
+cite a frozen number from this prose; read `field-typeclass-audit.witness.json`.
 
 > **`over-strong` is a warn-level signal, not a proof.** The heuristic is
 > syntactic; some `over-strong` findings may still need `Field` via a Mathlib
@@ -46,10 +53,15 @@ per-declaration list.
 Build-testing the burn-down showed the `over-strong`/`genuine` split is too
 coarse. A `[Field V]` use falls into **three** kinds:
 
-1. **Division-free** — `V` carries no `/` or `⁻¹` anywhere in the module.
-   Relax to `[CommRing V]` directly. *(Fixed this pass: `ClassicalLimitObstruction`
-   structure, `GradedTraceResidueSplit` ×8, `HoefsmitV21CosSymmetrization`,
-   and `QCltNonCommutative` / `TraceLocalityMeetsGsNonLocality` → `LinearOrderedCommRing`.)*
+1. **Division-free** — the declaration carries no `/` or `⁻¹`. Relax to
+   `[CommRing V]` directly. **The witness JSON is the source of truth for what
+   is fixed**; do not trust prose. As of this branch: `SurrealRateCalculus`
+   (merged #2066), `ClassicalLimitObstruction` structure, and
+   `GradedTraceResidueSplit` ×8 are relaxed + `lake build`-verified.
+   *(`QCltNonCommutative` / `TraceLocalityMeetsGsNonLocality` were attempted as
+   `LinearOrderedCommRing` and reverted — that class is unavailable in the
+   pinned Mathlib; they use ordering and stay `LinearOrderedField`.
+   `HoefsmitV21CosSymmetrization` reverted — a downstream `unfold` failure.)*
 2. **`q`-power inverse (Laurent-reframable)** — the only "division" is `1/q^k`
    i.e. `q⁻ᵏ`, the inverse of the **unit** `q`. This needs **no field**: work
    over `ℤ[q, q⁻¹]` (`abbrev R_q := LaurentPolynomial ℤ`, already in the
@@ -70,11 +82,16 @@ coarse. A `[Field V]` use falls into **three** kinds:
    `[Field K] [Algebra (LaurentPolynomial ℤ) K]` / `FractionRing` rather than
    hardcoding `ℚ(q)`.
 
-The checker's module-level `genuine` (division/inverse anywhere ⟹ field-by-design)
-is the **conservative** lower bound — it keeps kinds 2 and 3 as `Field`. The
-kind-2 → CommRing reframe is a per-module *proof* refactor (rewrite formulas +
-re-prove the cleared-denominator identity), tracked separately from the
-mechanical kind-1 relaxations.
+**The checker classifies per declaration** (division/inverse/field-lemma/
+field-requiring token *in that decl's own signature+body*) — it does **not**
+do a module-level "field anywhere ⟹ genuine" sweep (an earlier attempt at that
+mis-read `import Mathlib.Algebra.Field.Basic` as field use and produced a
+misleadingly-empty burn-down; removed per Gemini/Copilot review on #2072). So
+an `over-strong` finding is a **per-decl candidate**: confirm the decl (and its
+module) really is division-free before relaxing — a kind-2 (Laurent) or kind-3
+(non-unit) module will have *other* decls flagged `genuine`, and relaxing the
+flagged signature there is a per-module *proof* refactor (rewrite formulas +
+re-prove the cleared-denominator identity), not a mechanical swap.
 
 ## Fixing discipline (the "fix all k-like issues" campaign)
 
