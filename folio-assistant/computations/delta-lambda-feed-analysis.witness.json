@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-09T20:32:28.021370+00:00",
-  "commitSha": "6be103dfafbbe861ca0d8616454976e1326226f3",
+  "computedAt": "2026-06-09T20:38:23.190097+00:00",
+  "commitSha": "4b13d5cf70dda2b59d0aaaae765a135804975728",
   "assertions": [
     {
       "name": "trM_log10_quadratic_fit_excellent",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 36,
+  "durationMs": 34,
   "computation": "delta-lambda-feed-analysis",
   "scriptFile": "delta_lambda_feed_analysis.py",
-  "scriptHash": "c68862d43d4e",
-  "scriptCommitSha": "6be103dfafbbe861ca0d8616454976e1326226f3",
+  "scriptHash": "fc3814288323",
+  "scriptCommitSha": "4b13d5cf70dda2b59d0aaaae765a135804975728",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -68,14 +68,14 @@
     "required_Delta_alt": {
       "is_constant": false,
       "log10_range": [
-        -444.1231793487939,
-        14.890434943082697
+        -444.1231793493803,
+        14.89043494249627
       ],
       "orders_of_magnitude_spread": 459.0,
       "quadratic_in_A_fit_aA2_bA_c": [
-        -0.006757745137750283,
-        0.5089012191437235,
-        -7.5736574784549795
+        -0.006757745137750286,
+        0.5089012191437239,
+        -7.573657479041408
       ],
       "R2_quadratic": 0.941749,
       "interpretation": "required Δ_alt(K) spans ~459 orders of magnitude and is quadratic in A (R²=0.9417) — a constant Δ_λ is refuted; Δ_λ must be a per-nucleus ~10^(−cA²) normalization (inverse crossing-count / hyperbolic-volume scale)."
