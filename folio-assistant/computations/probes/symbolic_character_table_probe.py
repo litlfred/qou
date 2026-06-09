@@ -111,21 +111,24 @@ def main() -> int:
                        [(0, +1), (1, +1)])
     chi_adj = _trace(M_adj, dim_311)
     chi_adj_expected = h * h  # h²
-    res_adj = float(mp.fabs(chi_adj - chi_adj_expected))
+    # Keep residue at mp.mpf precision (no float() — flagged by
+    # compute_no_mpf_to_float_cast). Downstream comparison works
+    # natively with mp.mpf.
+    res_adj = mp.fabs(chi_adj - chi_adj_expected)
 
     # Non-adjacent σ_i σ_j with |i-j| ≥ 2: pick (σ_1 σ_3).
     M_nonadj = _eval_word(sigmas_311, dim_311,
                           [(0, +1), (2, +1)])
     chi_nonadj = _trace(M_nonadj, dim_311)
     chi_nonadj_expected = h * h - mp.mpf(2)
-    res_nonadj = float(mp.fabs(chi_nonadj - chi_nonadj_expected))
+    res_nonadj = mp.fabs(chi_nonadj - chi_nonadj_expected)
 
     # Coxeter triple σ_i σ_{i+1} σ_{i+2}: σ_1 σ_2 σ_3.
     M_triple = _eval_word(sigmas_311, dim_311,
                           [(0, +1), (1, +1), (2, +1)])
     chi_triple = _trace(M_triple, dim_311)
     chi_triple_expected = -h
-    res_triple = float(mp.fabs(chi_triple - chi_triple_expected))
+    res_triple = mp.fabs(chi_triple - chi_triple_expected)
 
     pair_results = {
         "lambda": "(3, 1, 1)",
