@@ -1778,6 +1778,7 @@ theorem H3.blockSym3_blockAlt3_orthogonal_first (q : ℝ)
     correct (each idempotency / orthogonality identity is a
     polynomial identity in `q`). -/
 noncomputable instance H3WedderburnIdempotency_canonical (q : ℝ)
+    (hq : q ≠ 0)
     (h_zne : QOU.MathlibExt.QPartitionCombinatorics.qFactorial q 3 ≠ 0) :
     H3WedderburnIdempotency q where
   sym3_idempotent := by
