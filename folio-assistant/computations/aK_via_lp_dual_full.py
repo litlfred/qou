@@ -97,7 +97,9 @@ def solve_atom_lp(atom: str) -> dict:
     Z, N, n, fname = ATOM_CHI[atom]
     A = Z + N
     data = json.loads((HERE / fname).read_text())
-    tr_M_atom = float(mp.mpf(data["tr_M_at_q0"]))
+    # Keep substrate values at mpmath precision through the LP solve.
+    # Drop the outer float() — was flagged by compute_no_mpf_to_float_cast.
+    tr_M_atom = mp.mpf(data["tr_M_at_q0"])
 
     # Build LP arrays from chi-cache.
     partitions = []
@@ -107,9 +109,9 @@ def solve_atom_lp(atom: str) -> dict:
     for row in data["by_partition"]:
         lam = list(row["partition"])
         partitions.append(lam)
-        y_lams.append(float(mp.mpf(row["y_lambda"])))
-        chi_lams.append(float(mp.mpf(row["chi_lambda"])))
-        contribs.append(float(mp.mpf(row["contribution"])))
+        y_lams.append(mp.mpf(row["y_lambda"]))
+        chi_lams.append(mp.mpf(row["chi_lambda"]))
+        contribs.append(mp.mpf(row["contribution"]))
 
     d = len(partitions)
     # t_λ = y_λ · χ^λ (the Wedderburn block contribution to tr_M)

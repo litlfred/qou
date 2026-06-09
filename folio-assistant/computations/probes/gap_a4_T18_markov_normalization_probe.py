@@ -335,7 +335,10 @@ def main():
 
     w.add_assertion(
         "h4_coefficient_of_tr_M_equals_minus_three_quarters",
-        computed=float(mp.mpf(h4_extract["h4_coefficient"])),
+        # Drop mp.mpf() round-trip — the assertion API accepts a direct
+        # float from the json string. Flagged by
+        # compute_no_mpf_to_float_cast (mp.mpf -> float was a no-op).
+        computed=float(h4_extract["h4_coefficient"]),
         expected=-0.75,
         tolerance=TOL_FLOAT,
         source=(
@@ -347,7 +350,7 @@ def main():
     )
     w.add_assertion(
         "wenzl_weight_y_2_1_at_q_one_equals_quarter",
-        computed=float(mp.mpf(wenzl["derived_value"])),
+        computed=float(wenzl["derived_value"]),
         expected=0.25,
         tolerance=TOL_FLOAT,
         source=(
@@ -360,7 +363,7 @@ def main():
     )
     w.add_assertion(
         "wenzl_weight_equals_inverse_q_2_squared_at_q_one",
-        computed=float(mp.mpf(normalization["one_over_q_2_squared"])),
+        computed=float(normalization["one_over_q_2_squared"]),
         expected=0.25,
         tolerance=TOL_FLOAT,
         source=(
@@ -372,7 +375,7 @@ def main():
     )
     w.add_assertion(
         "universal_wenzl_markov_sum_equals_one",
-        computed=float(mp.mpf(universal["markov_sum_check"])),
+        computed=float(universal["markov_sum_check"]),
         expected=1.0,
         tolerance=TOL_FLOAT,
         source=(
