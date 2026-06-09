@@ -16,8 +16,13 @@ the cited commits / docs / queue files already establish.
 ## 1. Where the week's energy went (theme tally)
 
 Top buckets by commit count on `origin/main` since 2026-06-01
-(rounded; see `git log --since='8 days ago' --oneline | awk -F'[:(]'
-'{print $1}' | sort | uniq -c | sort -rn` for the full count):
+(rounded; for the full count run:
+
+```bash
+git log --since='8 days ago' --oneline \
+  | awk -F'[:(]' '{print $1}' | sort | uniq -c | sort -rn
+```
+):
 
 | Theme | Commits | What it was |
 |---|---:|---|
