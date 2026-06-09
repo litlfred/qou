@@ -207,14 +207,14 @@
       "category": "L-result-callback",
       "severity": "logical",
       "waived": true,
-      "reason": "LOGICAL forward ref to a later proposition \u2014 a proven result is established where it lives; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
+      "reason": "LOGICAL forward ref to a later proposition \u2014 a proposition is established where it lives; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
     },
     {
       "src_chapter": "quantum-observable-universes",
       "src_label": "rem:frobenius-simplification",
       "src_kind": "remark",
       "tgt_chapter": "models-of-qous",
-      "tgt_label": "ex:irreducible-connection",
+      "tgt_label": "ex:instanton",
       "tgt_kind": "example",
       "category": "S-framing",
       "severity": "structural",
@@ -226,7 +226,7 @@
       "src_label": "rem:frobenius-simplification",
       "src_kind": "remark",
       "tgt_chapter": "models-of-qous",
-      "tgt_label": "ex:instanton",
+      "tgt_label": "ex:irreducible-connection",
       "tgt_kind": "example",
       "category": "S-framing",
       "severity": "structural",
@@ -261,9 +261,9 @@
       "src_chapter": "quantum-observable-universes",
       "src_label": "ex:photon-wavefront",
       "src_kind": "example",
-      "tgt_chapter": "brings-surface",
-      "tgt_label": "rem:knot-basis-color-content",
-      "tgt_kind": "remark",
+      "tgt_chapter": "lifting-and-descent",
+      "tgt_label": "def:localized-knot",
+      "tgt_kind": "definition",
       "category": "T-narrative",
       "severity": "storytelling",
       "waived": true,
@@ -273,9 +273,9 @@
       "src_chapter": "quantum-observable-universes",
       "src_label": "ex:photon-wavefront",
       "src_kind": "example",
-      "tgt_chapter": "lifting-and-descent",
-      "tgt_label": "def:localized-knot",
-      "tgt_kind": "definition",
+      "tgt_chapter": "brings-surface",
+      "tgt_label": "rem:knot-basis-color-content",
+      "tgt_kind": "remark",
       "category": "T-narrative",
       "severity": "storytelling",
       "waived": true,
@@ -351,7 +351,7 @@
       "category": "L-result-callback",
       "severity": "logical",
       "waived": true,
-      "reason": "LOGICAL forward ref to a later proposition \u2014 a proven result is established where it lives; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
+      "reason": "LOGICAL forward ref to a later proposition \u2014 a proposition is established where it lives; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
     },
     {
       "src_chapter": "quantum-observable-universes",
@@ -360,18 +360,6 @@
       "tgt_chapter": "models-of-qous",
       "tgt_label": "ex:instanton",
       "tgt_kind": "example",
-      "category": "S-framing",
-      "severity": "structural",
-      "waived": true,
-      "reason": "framing chapter (models-of-qous / notation) \u2014 exists to preview the arc; forward refs are its purpose"
-    },
-    {
-      "src_chapter": "models-of-qous",
-      "src_label": "conj:yang-mills-mass-gap",
-      "src_kind": "conjecture",
-      "tgt_chapter": "lifting-and-descent",
-      "tgt_label": "rem:kummer-filtration-obstruction",
-      "tgt_kind": "remark",
       "category": "S-framing",
       "severity": "structural",
       "waived": true,
@@ -396,6 +384,18 @@
       "tgt_chapter": "lifting-and-descent",
       "tgt_label": "prop:vacuum-state",
       "tgt_kind": "proposition",
+      "category": "S-framing",
+      "severity": "structural",
+      "waived": true,
+      "reason": "framing chapter (models-of-qous / notation) \u2014 exists to preview the arc; forward refs are its purpose"
+    },
+    {
+      "src_chapter": "models-of-qous",
+      "src_label": "conj:yang-mills-mass-gap",
+      "src_kind": "conjecture",
+      "tgt_chapter": "lifting-and-descent",
+      "tgt_label": "rem:kummer-filtration-obstruction",
+      "tgt_kind": "remark",
       "category": "S-framing",
       "severity": "structural",
       "waived": true,
@@ -471,7 +471,7 @@
       "category": "L-result-callback",
       "severity": "logical",
       "waived": true,
-      "reason": "LOGICAL forward ref to a later theorem \u2014 a proven result is established where it lives; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
+      "reason": "LOGICAL forward ref to a later theorem \u2014 a theorem is established where it lives; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
     },
     {
       "src_chapter": "lifting-and-descent",
@@ -501,18 +501,6 @@
       "src_chapter": "lifting-and-descent",
       "src_label": "prop:blowup-yekutieli",
       "src_kind": "proposition",
-      "tgt_chapter": "fluid-dynamics",
-      "tgt_label": "rem:vortex-reconnection",
-      "tgt_kind": "remark",
-      "category": "T-cite",
-      "severity": "storytelling",
-      "waived": true,
-      "reason": "logical source cites a later remark (data table / diagram / example) \u2014 a pointer, not an argument dependency"
-    },
-    {
-      "src_chapter": "lifting-and-descent",
-      "src_label": "prop:blowup-yekutieli",
-      "src_kind": "proposition",
       "tgt_chapter": "brings-surface",
       "tgt_label": "def:local-cohomology-group",
       "tgt_kind": "definition",
@@ -520,6 +508,18 @@
       "severity": "logical",
       "waived": true,
       "reason": "LOGICAL forward ref to a later definition whose subject matches its home chapter (or whose placement is a considered prior decision) \u2014 the def belongs there; the earlier reference is a deliberate coupling, not a mis-home (triage Table A subject-vs-chapter waive)"
+    },
+    {
+      "src_chapter": "lifting-and-descent",
+      "src_label": "prop:blowup-yekutieli",
+      "src_kind": "proposition",
+      "tgt_chapter": "fluid-dynamics",
+      "tgt_label": "rem:vortex-reconnection",
+      "tgt_kind": "remark",
+      "category": "T-cite",
+      "severity": "storytelling",
+      "waived": true,
+      "reason": "logical source cites a later remark (data table / diagram / example) \u2014 a pointer, not an argument dependency"
     },
     {
       "src_chapter": "lifting-and-descent",
@@ -609,13 +609,13 @@
       "src_chapter": "braids-and-knots",
       "src_label": "def:skein-resolution-obstruction",
       "src_kind": "definition",
-      "tgt_chapter": "stochastic-mechanics",
-      "tgt_label": "thm:qou-obstruction-reduction",
-      "tgt_kind": "theorem",
+      "tgt_chapter": "fluid-dynamics",
+      "tgt_label": "prop:ns-obstruction-tower",
+      "tgt_kind": "proposition",
       "category": "L-result-callback",
       "severity": "logical",
       "waived": true,
-      "reason": "LOGICAL forward ref to a later theorem \u2014 a proven result is established where it lives; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
+      "reason": "LOGICAL forward ref to a later proposition \u2014 a proposition is established where it lives; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
     },
     {
       "src_chapter": "braids-and-knots",
@@ -633,25 +633,13 @@
       "src_chapter": "braids-and-knots",
       "src_label": "def:skein-resolution-obstruction",
       "src_kind": "definition",
-      "tgt_chapter": "fluid-dynamics",
-      "tgt_label": "prop:ns-obstruction-tower",
-      "tgt_kind": "proposition",
+      "tgt_chapter": "stochastic-mechanics",
+      "tgt_label": "thm:qou-obstruction-reduction",
+      "tgt_kind": "theorem",
       "category": "L-result-callback",
       "severity": "logical",
       "waived": true,
-      "reason": "LOGICAL forward ref to a later proposition \u2014 a proven result is established where it lives; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
-    },
-    {
-      "src_chapter": "braids-and-knots",
-      "src_label": "rem:markov-axioms-primitive",
-      "src_kind": "remark",
-      "tgt_chapter": "mass-theory",
-      "tgt_label": "prop:markov-trace-frobenius-selection",
-      "tgt_kind": "proposition",
-      "category": "T-narrative",
-      "severity": "storytelling",
-      "waived": true,
-      "reason": "source is a remark block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
+      "reason": "LOGICAL forward ref to a later theorem \u2014 a theorem is established where it lives; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
     },
     {
       "src_chapter": "braids-and-knots",
@@ -667,15 +655,15 @@
     },
     {
       "src_chapter": "braids-and-knots",
-      "src_label": "def:f-bor-borromean-observable",
-      "src_kind": "definition",
+      "src_label": "rem:markov-axioms-primitive",
+      "src_kind": "remark",
       "tgt_chapter": "mass-theory",
-      "tgt_label": "prop:borromean-markov-trace-closed-form",
+      "tgt_label": "prop:markov-trace-frobenius-selection",
       "tgt_kind": "proposition",
-      "category": "L-result-callback",
-      "severity": "logical",
+      "category": "T-narrative",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "LOGICAL forward ref to a later proposition \u2014 a proven result is established where it lives; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
+      "reason": "source is a remark block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
     },
     {
       "src_chapter": "braids-and-knots",
@@ -687,7 +675,19 @@
       "category": "L-result-callback",
       "severity": "logical",
       "waived": true,
-      "reason": "LOGICAL forward ref to a later proposition \u2014 a proven result is established where it lives; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
+      "reason": "LOGICAL forward ref to a later proposition \u2014 a proposition is established where it lives; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
+    },
+    {
+      "src_chapter": "braids-and-knots",
+      "src_label": "def:f-bor-borromean-observable",
+      "src_kind": "definition",
+      "tgt_chapter": "mass-theory",
+      "tgt_label": "prop:borromean-markov-trace-closed-form",
+      "tgt_kind": "proposition",
+      "category": "L-result-callback",
+      "severity": "logical",
+      "waived": true,
+      "reason": "LOGICAL forward ref to a later proposition \u2014 a proposition is established where it lives; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
     },
     {
       "src_chapter": "braids-and-knots",
@@ -723,7 +723,7 @@
       "category": "L-result-callback",
       "severity": "logical",
       "waived": true,
-      "reason": "LOGICAL forward ref to a later proposition \u2014 a proven result is established where it lives; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
+      "reason": "LOGICAL forward ref to a later proposition \u2014 a proposition is established where it lives; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
     },
     {
       "src_chapter": "braids-and-knots",
@@ -765,9 +765,9 @@
       "src_chapter": "braids-and-knots",
       "src_label": "rem:braid-group-n-strand",
       "src_kind": "remark",
-      "tgt_chapter": "mass-endomorphism",
-      "tgt_label": "prop:categorical-chain-convergence-mechanisms",
-      "tgt_kind": "proposition",
+      "tgt_chapter": "mass-theory",
+      "tgt_label": "rem:typed-b3-sub-braid-extraction",
+      "tgt_kind": "remark",
       "category": "T-narrative",
       "severity": "storytelling",
       "waived": true,
@@ -777,9 +777,9 @@
       "src_chapter": "braids-and-knots",
       "src_label": "rem:braid-group-n-strand",
       "src_kind": "remark",
-      "tgt_chapter": "mass-theory",
-      "tgt_label": "rem:typed-b3-sub-braid-extraction",
-      "tgt_kind": "remark",
+      "tgt_chapter": "mass-endomorphism",
+      "tgt_label": "prop:categorical-chain-convergence-mechanisms",
+      "tgt_kind": "proposition",
       "category": "T-narrative",
       "severity": "storytelling",
       "waived": true,
@@ -801,18 +801,6 @@
       "src_chapter": "braids-and-knots",
       "src_label": "prop:lagrange-resolvent-transform",
       "src_kind": "proposition",
-      "tgt_chapter": "brings-surface",
-      "tgt_label": "def:brings-surface",
-      "tgt_kind": "definition",
-      "category": "L-subject-matched",
-      "severity": "logical",
-      "waived": true,
-      "reason": "LOGICAL forward ref to a later definition whose subject matches its home chapter (or whose placement is a considered prior decision) \u2014 the def belongs there; the earlier reference is a deliberate coupling, not a mis-home (triage Table A subject-vs-chapter waive)"
-    },
-    {
-      "src_chapter": "braids-and-knots",
-      "src_label": "prop:lagrange-resolvent-transform",
-      "src_kind": "proposition",
       "tgt_chapter": "climax-volume-mass",
       "tgt_label": "rem:lagrange-resolvents",
       "tgt_kind": "remark",
@@ -820,6 +808,18 @@
       "severity": "storytelling",
       "waived": true,
       "reason": "logical source cites a later remark (data table / diagram / example) \u2014 a pointer, not an argument dependency"
+    },
+    {
+      "src_chapter": "braids-and-knots",
+      "src_label": "prop:lagrange-resolvent-transform",
+      "src_kind": "proposition",
+      "tgt_chapter": "brings-surface",
+      "tgt_label": "def:brings-surface",
+      "tgt_kind": "definition",
+      "category": "L-subject-matched",
+      "severity": "logical",
+      "waived": true,
+      "reason": "LOGICAL forward ref to a later definition whose subject matches its home chapter (or whose placement is a considered prior decision) \u2014 the def belongs there; the earlier reference is a deliberate coupling, not a mis-home (triage Table A subject-vs-chapter waive)"
     },
     {
       "src_chapter": "braids-and-knots",
@@ -855,7 +855,7 @@
       "category": "L-result-callback",
       "severity": "logical",
       "waived": true,
-      "reason": "LOGICAL forward ref to a later proposition \u2014 a proven result is established where it lives; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
+      "reason": "LOGICAL forward ref to a later proposition \u2014 a proposition is established where it lives; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
     },
     {
       "src_chapter": "braids-and-knots",
@@ -963,7 +963,7 @@
       "category": "L-result-callback",
       "severity": "logical",
       "waived": true,
-      "reason": "LOGICAL forward ref to a later proposition \u2014 a proven result is established where it lives; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
+      "reason": "LOGICAL forward ref to a later proposition \u2014 a proposition is established where it lives; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
     },
     {
       "src_chapter": "brings-surface",
@@ -994,8 +994,8 @@
       "src_label": "rem:fivefold-symmetry",
       "src_kind": "remark",
       "tgt_chapter": "predicted-spectra",
-      "tgt_label": "prop:skein-finiteness-bound",
-      "tgt_kind": "proposition",
+      "tgt_label": "rem:force-knot-identification",
+      "tgt_kind": "remark",
       "category": "T-narrative",
       "severity": "storytelling",
       "waived": true,
@@ -1006,36 +1006,12 @@
       "src_label": "rem:fivefold-symmetry",
       "src_kind": "remark",
       "tgt_chapter": "predicted-spectra",
-      "tgt_label": "rem:force-knot-identification",
-      "tgt_kind": "remark",
+      "tgt_label": "prop:skein-finiteness-bound",
+      "tgt_kind": "proposition",
       "category": "T-narrative",
       "severity": "storytelling",
       "waived": true,
       "reason": "source is a remark block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
-    },
-    {
-      "src_chapter": "brings-surface",
-      "src_label": "prop:torus-embeddable-complete",
-      "src_kind": "proposition",
-      "tgt_chapter": "predicted-spectra",
-      "tgt_label": "rem:unmapped-torus-knots",
-      "tgt_kind": "remark",
-      "category": "T-cite",
-      "severity": "storytelling",
-      "waived": true,
-      "reason": "logical source cites a later remark (data table / diagram / example) \u2014 a pointer, not an argument dependency"
-    },
-    {
-      "src_chapter": "brings-surface",
-      "src_label": "prop:torus-embeddable-complete",
-      "src_kind": "proposition",
-      "tgt_chapter": "predicted-spectra",
-      "tgt_label": "rem:chirality-trefoil-electron-positron",
-      "tgt_kind": "remark",
-      "category": "T-cite",
-      "severity": "storytelling",
-      "waived": true,
-      "reason": "logical source cites a later remark (data table / diagram / example) \u2014 a pointer, not an argument dependency"
     },
     {
       "src_chapter": "brings-surface",
@@ -1054,6 +1030,30 @@
       "src_label": "prop:torus-embeddable-complete",
       "src_kind": "proposition",
       "tgt_chapter": "predicted-spectra",
+      "tgt_label": "rem:diophantine-valley",
+      "tgt_kind": "remark",
+      "category": "T-cite",
+      "severity": "storytelling",
+      "waived": true,
+      "reason": "logical source cites a later remark (data table / diagram / example) \u2014 a pointer, not an argument dependency"
+    },
+    {
+      "src_chapter": "brings-surface",
+      "src_label": "prop:torus-embeddable-complete",
+      "src_kind": "proposition",
+      "tgt_chapter": "predicted-spectra",
+      "tgt_label": "rem:unmapped-torus-knots",
+      "tgt_kind": "remark",
+      "category": "T-cite",
+      "severity": "storytelling",
+      "waived": true,
+      "reason": "logical source cites a later remark (data table / diagram / example) \u2014 a pointer, not an argument dependency"
+    },
+    {
+      "src_chapter": "brings-surface",
+      "src_label": "prop:torus-embeddable-complete",
+      "src_kind": "proposition",
+      "tgt_chapter": "predicted-spectra",
       "tgt_label": "rem:force-knot-identification",
       "tgt_kind": "remark",
       "category": "T-cite",
@@ -1066,7 +1066,7 @@
       "src_label": "prop:torus-embeddable-complete",
       "src_kind": "proposition",
       "tgt_chapter": "predicted-spectra",
-      "tgt_label": "rem:diophantine-valley",
+      "tgt_label": "rem:chirality-trefoil-electron-positron",
       "tgt_kind": "remark",
       "category": "T-cite",
       "severity": "storytelling",
@@ -1119,7 +1119,7 @@
       "category": "L-result-callback",
       "severity": "logical",
       "waived": true,
-      "reason": "LOGICAL forward ref to a later conjecture \u2014 a proven result is established where it lives; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
+      "reason": "LOGICAL forward ref to a later conjecture \u2014 a conjecture is stated in its own chapter; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
     },
     {
       "src_chapter": "brings-surface",
@@ -1143,7 +1143,7 @@
       "category": "L-result-callback",
       "severity": "logical",
       "waived": true,
-      "reason": "LOGICAL forward ref to a later proposition \u2014 a proven result is established where it lives; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
+      "reason": "LOGICAL forward ref to a later proposition \u2014 a proposition is established where it lives; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
     },
     {
       "src_chapter": "brings-surface",
@@ -1155,7 +1155,7 @@
       "category": "L-result-callback",
       "severity": "logical",
       "waived": true,
-      "reason": "LOGICAL forward ref to a later conjecture \u2014 a proven result is established where it lives; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
+      "reason": "LOGICAL forward ref to a later conjecture \u2014 a conjecture is stated in its own chapter; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
     },
     {
       "src_chapter": "brings-surface",
@@ -1167,7 +1167,7 @@
       "category": "L-result-callback",
       "severity": "logical",
       "waived": true,
-      "reason": "LOGICAL forward ref to a later conjecture \u2014 a proven result is established where it lives; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
+      "reason": "LOGICAL forward ref to a later conjecture \u2014 a conjecture is stated in its own chapter; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
     },
     {
       "src_chapter": "brings-surface",
@@ -1203,7 +1203,7 @@
       "category": "L-result-callback",
       "severity": "logical",
       "waived": true,
-      "reason": "LOGICAL forward ref to a later proposition \u2014 a proven result is established where it lives; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
+      "reason": "LOGICAL forward ref to a later proposition \u2014 a proposition is established where it lives; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
     },
     {
       "src_chapter": "mass-endomorphism",
@@ -1234,8 +1234,8 @@
       "src_label": "rem:chi-v3-closed-form-proof",
       "src_kind": "remark",
       "tgt_chapter": "mass-theory",
-      "tgt_label": "prop:hecke-1d-irrep-closed-form-character",
-      "tgt_kind": "proposition",
+      "tgt_label": "rem:typed-b3-sub-braid-extraction",
+      "tgt_kind": "remark",
       "category": "T-narrative",
       "severity": "storytelling",
       "waived": true,
@@ -1246,8 +1246,8 @@
       "src_label": "rem:chi-v3-closed-form-proof",
       "src_kind": "remark",
       "tgt_chapter": "mass-theory",
-      "tgt_label": "rem:typed-b3-sub-braid-extraction",
-      "tgt_kind": "remark",
+      "tgt_label": "prop:hecke-1d-irrep-closed-form-character",
+      "tgt_kind": "proposition",
       "category": "T-narrative",
       "severity": "storytelling",
       "waived": true,
@@ -1263,7 +1263,7 @@
       "category": "L-result-callback",
       "severity": "logical",
       "waived": true,
-      "reason": "LOGICAL forward ref to a later proposition \u2014 a proven result is established where it lives; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
+      "reason": "LOGICAL forward ref to a later proposition \u2014 a proposition is established where it lives; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
     },
     {
       "src_chapter": "mass-endomorphism",
@@ -1275,7 +1275,7 @@
       "category": "L-result-callback",
       "severity": "logical",
       "waived": true,
-      "reason": "LOGICAL forward ref to a later proposition \u2014 a proven result is established where it lives; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
+      "reason": "LOGICAL forward ref to a later proposition \u2014 a proposition is established where it lives; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
     },
     {
       "src_chapter": "mass-endomorphism",
@@ -1287,19 +1287,7 @@
       "category": "L-result-callback",
       "severity": "logical",
       "waived": true,
-      "reason": "LOGICAL forward ref to a later proposition \u2014 a proven result is established where it lives; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
-    },
-    {
-      "src_chapter": "mass-endomorphism",
-      "src_label": "prop:hecke-branching-trace-decomposition",
-      "src_kind": "proposition",
-      "tgt_chapter": "mass-theory",
-      "tgt_label": "prop:hoefsmit-seminormal-form",
-      "tgt_kind": "proposition",
-      "category": "L-result-callback",
-      "severity": "logical",
-      "waived": true,
-      "reason": "LOGICAL forward ref to a later proposition \u2014 a proven result is established where it lives; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
+      "reason": "LOGICAL forward ref to a later proposition \u2014 a proposition is established where it lives; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
     },
     {
       "src_chapter": "mass-endomorphism",
@@ -1311,7 +1299,19 @@
       "category": "L-result-callback",
       "severity": "logical",
       "waived": true,
-      "reason": "LOGICAL forward ref to a later proposition \u2014 a proven result is established where it lives; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
+      "reason": "LOGICAL forward ref to a later proposition \u2014 a proposition is established where it lives; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
+    },
+    {
+      "src_chapter": "mass-endomorphism",
+      "src_label": "prop:hecke-branching-trace-decomposition",
+      "src_kind": "proposition",
+      "tgt_chapter": "mass-theory",
+      "tgt_label": "prop:hoefsmit-seminormal-form",
+      "tgt_kind": "proposition",
+      "category": "L-result-callback",
+      "severity": "logical",
+      "waived": true,
+      "reason": "LOGICAL forward ref to a later proposition \u2014 a proposition is established where it lives; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
     },
     {
       "src_chapter": "mass-endomorphism",
@@ -1335,7 +1335,7 @@
       "category": "L-result-callback",
       "severity": "logical",
       "waived": true,
-      "reason": "LOGICAL forward ref to a later proposition \u2014 a proven result is established where it lives; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
+      "reason": "LOGICAL forward ref to a later proposition \u2014 a proposition is established where it lives; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
     },
     {
       "src_chapter": "mass-endomorphism",
@@ -1359,7 +1359,7 @@
       "category": "L-result-callback",
       "severity": "logical",
       "waived": true,
-      "reason": "LOGICAL forward ref to a later proposition \u2014 a proven result is established where it lives; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
+      "reason": "LOGICAL forward ref to a later proposition \u2014 a proposition is established where it lives; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
     },
     {
       "src_chapter": "mass-endomorphism",
@@ -1371,14 +1371,14 @@
       "category": "L-result-callback",
       "severity": "logical",
       "waived": true,
-      "reason": "LOGICAL forward ref to a later proposition \u2014 a proven result is established where it lives; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
+      "reason": "LOGICAL forward ref to a later proposition \u2014 a proposition is established where it lives; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
     },
     {
       "src_chapter": "mass-endomorphism",
       "src_label": "conj:mass-endomorphism",
       "src_kind": "conjecture",
       "tgt_chapter": "mass-theory",
-      "tgt_label": "def:archimedean-realization-functor",
+      "tgt_label": "def:qz-bicompletion",
       "tgt_kind": "definition",
       "category": "L-foundational",
       "severity": "logical",
@@ -1390,7 +1390,7 @@
       "src_label": "conj:mass-endomorphism",
       "src_kind": "conjecture",
       "tgt_chapter": "mass-theory",
-      "tgt_label": "def:qz-bicompletion",
+      "tgt_label": "def:archimedean-realization-functor",
       "tgt_kind": "definition",
       "category": "L-foundational",
       "severity": "logical",
@@ -1467,7 +1467,7 @@
       "category": "L-result-callback",
       "severity": "logical",
       "waived": true,
-      "reason": "LOGICAL forward ref to a later conjecture \u2014 a proven result is established where it lives; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
+      "reason": "LOGICAL forward ref to a later conjecture \u2014 a conjecture is stated in its own chapter; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
     },
     {
       "src_chapter": "particle-interactions",
@@ -1498,8 +1498,8 @@
       "src_label": "rem:deuteron-first-principles",
       "src_kind": "remark",
       "tgt_chapter": "mass-theory",
-      "tgt_label": "prop:schur-weyl-mass-decomposition",
-      "tgt_kind": "proposition",
+      "tgt_label": "rem:q-character-closes-parity-gap",
+      "tgt_kind": "remark",
       "category": "T-narrative",
       "severity": "storytelling",
       "waived": true,
@@ -1510,8 +1510,8 @@
       "src_label": "rem:deuteron-first-principles",
       "src_kind": "remark",
       "tgt_chapter": "mass-theory",
-      "tgt_label": "rem:q-character-closes-parity-gap",
-      "tgt_kind": "remark",
+      "tgt_label": "prop:schur-weyl-mass-decomposition",
+      "tgt_kind": "proposition",
       "category": "T-narrative",
       "severity": "storytelling",
       "waived": true,
@@ -1563,7 +1563,7 @@
       "category": "L-result-callback",
       "severity": "logical",
       "waived": true,
-      "reason": "LOGICAL forward ref to a later proposition \u2014 a proven result is established where it lives; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
+      "reason": "LOGICAL forward ref to a later proposition \u2014 a proposition is established where it lives; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
     },
     {
       "src_chapter": "particle-interactions",
@@ -1581,18 +1581,6 @@
       "src_chapter": "particle-interactions",
       "src_label": "rem:beta-decay-interpretation",
       "src_kind": "remark",
-      "tgt_chapter": "predicted-spectra",
-      "tgt_label": "def:Q-value-transition",
-      "tgt_kind": "definition",
-      "category": "T-narrative",
-      "severity": "storytelling",
-      "waived": true,
-      "reason": "source is a remark block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
-    },
-    {
-      "src_chapter": "particle-interactions",
-      "src_label": "rem:beta-decay-interpretation",
-      "src_kind": "remark",
       "tgt_chapter": "mass-theory",
       "tgt_label": "prop:beta-decay-transfer-matrix",
       "tgt_kind": "proposition",
@@ -1603,10 +1591,22 @@
     },
     {
       "src_chapter": "particle-interactions",
+      "src_label": "rem:beta-decay-interpretation",
+      "src_kind": "remark",
+      "tgt_chapter": "predicted-spectra",
+      "tgt_label": "def:Q-value-transition",
+      "tgt_kind": "definition",
+      "category": "T-narrative",
+      "severity": "storytelling",
+      "waived": true,
+      "reason": "source is a remark block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
+    },
+    {
+      "src_chapter": "particle-interactions",
       "src_label": "prop:box-braid-irreducibility",
       "src_kind": "proposition",
       "tgt_chapter": "observations",
-      "tgt_label": "rem:electron-immortality",
+      "tgt_label": "rem:virtual-particles-exceptional-divisor",
       "tgt_kind": "remark",
       "category": "T-cite",
       "severity": "storytelling",
@@ -1618,7 +1618,7 @@
       "src_label": "prop:box-braid-irreducibility",
       "src_kind": "proposition",
       "tgt_chapter": "observations",
-      "tgt_label": "rem:virtual-particles-exceptional-divisor",
+      "tgt_label": "rem:electron-immortality",
       "tgt_kind": "remark",
       "category": "T-cite",
       "severity": "storytelling",
@@ -1707,7 +1707,7 @@
       "category": "L-result-callback",
       "severity": "logical",
       "waived": true,
-      "reason": "LOGICAL forward ref to a later conjecture \u2014 a proven result is established where it lives; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
+      "reason": "LOGICAL forward ref to a later conjecture \u2014 a conjecture is stated in its own chapter; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
     },
     {
       "src_chapter": "particle-interactions",
@@ -1731,7 +1731,7 @@
       "category": "L-result-callback",
       "severity": "logical",
       "waived": true,
-      "reason": "LOGICAL forward ref to a later proposition \u2014 a proven result is established where it lives; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
+      "reason": "LOGICAL forward ref to a later proposition \u2014 a proposition is established where it lives; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
     },
     {
       "src_chapter": "particle-interactions",
@@ -1743,7 +1743,7 @@
       "category": "L-result-callback",
       "severity": "logical",
       "waived": true,
-      "reason": "LOGICAL forward ref to a later proposition \u2014 a proven result is established where it lives; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
+      "reason": "LOGICAL forward ref to a later proposition \u2014 a proposition is established where it lives; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
     },
     {
       "src_chapter": "particle-interactions",
@@ -1779,15 +1779,15 @@
       "category": "L-result-callback",
       "severity": "logical",
       "waived": true,
-      "reason": "LOGICAL forward ref to a later conjecture \u2014 a proven result is established where it lives; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
+      "reason": "LOGICAL forward ref to a later conjecture \u2014 a conjecture is stated in its own chapter; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
     },
     {
       "src_chapter": "particle-interactions",
       "src_label": "rem:figure-8-muon-mass-cross-check",
       "src_kind": "remark",
       "tgt_chapter": "mass-theory",
-      "tgt_label": "conj:borromean-baryon-mass-formula",
-      "tgt_kind": "conjecture",
+      "tgt_label": "prop:three-calibration-inputs",
+      "tgt_kind": "proposition",
       "category": "T-narrative",
       "severity": "storytelling",
       "waived": true,
@@ -1810,8 +1810,8 @@
       "src_label": "rem:figure-8-muon-mass-cross-check",
       "src_kind": "remark",
       "tgt_chapter": "mass-theory",
-      "tgt_label": "prop:three-calibration-inputs",
-      "tgt_kind": "proposition",
+      "tgt_label": "conj:borromean-baryon-mass-formula",
+      "tgt_kind": "conjecture",
       "category": "T-narrative",
       "severity": "storytelling",
       "waived": true,
@@ -1863,7 +1863,7 @@
       "category": "L-result-callback",
       "severity": "logical",
       "waived": true,
-      "reason": "LOGICAL forward ref to a later conjecture \u2014 a proven result is established where it lives; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
+      "reason": "LOGICAL forward ref to a later conjecture \u2014 a conjecture is stated in its own chapter; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
     },
     {
       "src_chapter": "particle-interactions",
@@ -1887,7 +1887,7 @@
       "category": "L-result-callback",
       "severity": "logical",
       "waived": true,
-      "reason": "LOGICAL forward ref to a later conjecture \u2014 a proven result is established where it lives; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
+      "reason": "LOGICAL forward ref to a later conjecture \u2014 a conjecture is stated in its own chapter; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
     },
     {
       "src_chapter": "climax-volume-mass",
@@ -1935,7 +1935,7 @@
       "category": "L-result-callback",
       "severity": "logical",
       "waived": true,
-      "reason": "LOGICAL forward ref to a later proposition \u2014 a proven result is established where it lives; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
+      "reason": "LOGICAL forward ref to a later proposition \u2014 a proposition is established where it lives; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
     },
     {
       "src_chapter": "climax-volume-mass",
@@ -1989,6 +1989,18 @@
       "src_chapter": "mass-theory",
       "src_label": "def:categorical-transfer-matrix",
       "src_kind": "definition",
+      "tgt_chapter": "measurement-observation",
+      "tgt_label": "rem:observation-braid",
+      "tgt_kind": "remark",
+      "category": "T-cite",
+      "severity": "storytelling",
+      "waived": true,
+      "reason": "logical source cites a later remark (data table / diagram / example) \u2014 a pointer, not an argument dependency"
+    },
+    {
+      "src_chapter": "mass-theory",
+      "src_label": "def:categorical-transfer-matrix",
+      "src_kind": "definition",
       "tgt_chapter": "information-theory",
       "tgt_label": "rem:jet-planck-steps",
       "tgt_kind": "remark",
@@ -2011,18 +2023,6 @@
     },
     {
       "src_chapter": "mass-theory",
-      "src_label": "def:categorical-transfer-matrix",
-      "src_kind": "definition",
-      "tgt_chapter": "measurement-observation",
-      "tgt_label": "rem:observation-braid",
-      "tgt_kind": "remark",
-      "category": "T-cite",
-      "severity": "storytelling",
-      "waived": true,
-      "reason": "logical source cites a later remark (data table / diagram / example) \u2014 a pointer, not an argument dependency"
-    },
-    {
-      "src_chapter": "mass-theory",
       "src_label": "prop:magic-A-binding-formula",
       "src_kind": "proposition",
       "tgt_chapter": "observations",
@@ -2031,7 +2031,7 @@
       "category": "L-result-callback",
       "severity": "logical",
       "waived": true,
-      "reason": "LOGICAL forward ref to a later proposition \u2014 a proven result is established where it lives; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
+      "reason": "LOGICAL forward ref to a later proposition \u2014 a proposition is established where it lives; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
     },
     {
       "src_chapter": "mass-theory",
@@ -2061,18 +2061,6 @@
       "src_chapter": "mass-theory",
       "src_label": "conj:reidemeister-mass-invariance",
       "src_kind": "conjecture",
-      "tgt_chapter": "observations",
-      "tgt_label": "conj:borromean-quark",
-      "tgt_kind": "conjecture",
-      "category": "L-result-callback",
-      "severity": "logical",
-      "waived": true,
-      "reason": "LOGICAL forward ref to a later conjecture \u2014 a proven result is established where it lives; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
-    },
-    {
-      "src_chapter": "mass-theory",
-      "src_label": "conj:reidemeister-mass-invariance",
-      "src_kind": "conjecture",
       "tgt_chapter": "predicted-spectra",
       "tgt_label": "rem:hydrogen-orbitals",
       "tgt_kind": "remark",
@@ -2080,6 +2068,18 @@
       "severity": "storytelling",
       "waived": true,
       "reason": "logical source cites a later remark (data table / diagram / example) \u2014 a pointer, not an argument dependency"
+    },
+    {
+      "src_chapter": "mass-theory",
+      "src_label": "conj:reidemeister-mass-invariance",
+      "src_kind": "conjecture",
+      "tgt_chapter": "observations",
+      "tgt_label": "conj:borromean-quark",
+      "tgt_kind": "conjecture",
+      "category": "L-result-callback",
+      "severity": "logical",
+      "waived": true,
+      "reason": "LOGICAL forward ref to a later conjecture \u2014 a conjecture is stated in its own chapter; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
     },
     {
       "src_chapter": "mass-theory",
@@ -2110,8 +2110,8 @@
       "src_label": "rem:mass-tower-deeper-fillers",
       "src_kind": "remark",
       "tgt_chapter": "predicted-spectra",
-      "tgt_label": "rem:bloch-wigner-mathlib-filler",
-      "tgt_kind": "remark",
+      "tgt_label": "prop:type-b-folded-crystal-combinatorics",
+      "tgt_kind": "proposition",
       "category": "T-narrative",
       "severity": "storytelling",
       "waived": true,
@@ -2122,8 +2122,8 @@
       "src_label": "rem:mass-tower-deeper-fillers",
       "src_kind": "remark",
       "tgt_chapter": "predicted-spectra",
-      "tgt_label": "prop:type-b-folded-crystal-combinatorics",
-      "tgt_kind": "proposition",
+      "tgt_label": "rem:bloch-wigner-mathlib-filler",
+      "tgt_kind": "remark",
       "category": "T-narrative",
       "severity": "storytelling",
       "waived": true,
@@ -2151,7 +2151,7 @@
       "category": "L-result-callback",
       "severity": "logical",
       "waived": true,
-      "reason": "LOGICAL forward ref to a later conjecture \u2014 a proven result is established where it lives; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
+      "reason": "LOGICAL forward ref to a later conjecture \u2014 a conjecture is stated in its own chapter; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
     },
     {
       "src_chapter": "mass-theory",
@@ -2170,24 +2170,24 @@
       "src_label": "prop:terminal-resolution",
       "src_kind": "proposition",
       "tgt_chapter": "observations",
-      "tgt_label": "rem:skein-mass-relation",
-      "tgt_kind": "remark",
-      "category": "T-cite",
-      "severity": "storytelling",
+      "tgt_label": "prf:terminal-resolution",
+      "tgt_kind": "proof",
+      "category": "L-result-callback",
+      "severity": "logical",
       "waived": true,
-      "reason": "logical source cites a later remark (data table / diagram / example) \u2014 a pointer, not an argument dependency"
+      "reason": "LOGICAL forward ref to a later proof \u2014 a proof is established where it lives; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
     },
     {
       "src_chapter": "mass-theory",
       "src_label": "prop:terminal-resolution",
       "src_kind": "proposition",
       "tgt_chapter": "observations",
-      "tgt_label": "prf:terminal-resolution",
-      "tgt_kind": "proof",
-      "category": "L-result-callback",
-      "severity": "logical",
+      "tgt_label": "rem:skein-mass-relation",
+      "tgt_kind": "remark",
+      "category": "T-cite",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "LOGICAL forward ref to a later proof \u2014 a proven result is established where it lives; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
+      "reason": "logical source cites a later remark (data table / diagram / example) \u2014 a pointer, not an argument dependency"
     },
     {
       "src_chapter": "mass-theory",
@@ -2283,14 +2283,14 @@
       "category": "L-result-callback",
       "severity": "logical",
       "waived": true,
-      "reason": "LOGICAL forward ref to a later conjecture \u2014 a proven result is established where it lives; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
+      "reason": "LOGICAL forward ref to a later conjecture \u2014 a conjecture is stated in its own chapter; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
     },
     {
       "src_chapter": "mass-theory",
       "src_label": "rem:hopf-link-non-magic",
       "src_kind": "remark",
       "tgt_chapter": "predicted-spectra",
-      "tgt_label": "prop:torus-knot-shell-binding",
+      "tgt_label": "prop:knot-operator-selection",
       "tgt_kind": "proposition",
       "category": "T-narrative",
       "severity": "storytelling",
@@ -2302,7 +2302,7 @@
       "src_label": "rem:hopf-link-non-magic",
       "src_kind": "remark",
       "tgt_chapter": "predicted-spectra",
-      "tgt_label": "prop:knot-operator-selection",
+      "tgt_label": "prop:torus-knot-shell-binding",
       "tgt_kind": "proposition",
       "category": "T-narrative",
       "severity": "storytelling",
@@ -2319,7 +2319,7 @@
       "category": "L-result-callback",
       "severity": "logical",
       "waived": true,
-      "reason": "LOGICAL forward ref to a later proposition \u2014 a proven result is established where it lives; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
+      "reason": "LOGICAL forward ref to a later proposition \u2014 a proposition is established where it lives; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
     },
     {
       "src_chapter": "mass-theory",
@@ -2331,7 +2331,7 @@
       "category": "L-result-callback",
       "severity": "logical",
       "waived": true,
-      "reason": "LOGICAL forward ref to a later proposition \u2014 a proven result is established where it lives; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
+      "reason": "LOGICAL forward ref to a later proposition \u2014 a proposition is established where it lives; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
     },
     {
       "src_chapter": "mass-theory",
@@ -2355,7 +2355,7 @@
       "category": "L-result-callback",
       "severity": "logical",
       "waived": true,
-      "reason": "LOGICAL forward ref to a later conjecture \u2014 a proven result is established where it lives; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
+      "reason": "LOGICAL forward ref to a later conjecture \u2014 a conjecture is stated in its own chapter; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
     },
     {
       "src_chapter": "mass-theory",
@@ -2391,7 +2391,7 @@
       "category": "L-result-callback",
       "severity": "logical",
       "waived": true,
-      "reason": "LOGICAL forward ref to a later proposition \u2014 a proven result is established where it lives; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
+      "reason": "LOGICAL forward ref to a later proposition \u2014 a proposition is established where it lives; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
     },
     {
       "src_chapter": "mass-theory",
@@ -2458,8 +2458,8 @@
       "src_label": "rem:lqg-adm-ashtekar-comparison",
       "src_kind": "remark",
       "tgt_chapter": "appendix-surreals",
-      "tgt_label": "rem:yang-mills-surreal-bound",
-      "tgt_kind": "remark",
+      "tgt_label": "conj:os-reflection-positivity-from-reeb",
+      "tgt_kind": "conjecture",
       "category": "S-surreal",
       "severity": "structural",
       "waived": true,
@@ -2470,8 +2470,8 @@
       "src_label": "rem:lqg-adm-ashtekar-comparison",
       "src_kind": "remark",
       "tgt_chapter": "appendix-surreals",
-      "tgt_label": "conj:os-reflection-positivity-from-reeb",
-      "tgt_kind": "conjecture",
+      "tgt_label": "rem:yang-mills-surreal-bound",
+      "tgt_kind": "remark",
       "category": "S-surreal",
       "severity": "structural",
       "waived": true,
@@ -2506,24 +2506,24 @@
       "src_label": "conj:e-hartree-categorical-derivation",
       "src_kind": "conjecture",
       "tgt_chapter": "molecular-construction",
-      "tgt_label": "prop:h2-lp-dual-binding",
+      "tgt_label": "prop:ilp-covalent-bond",
       "tgt_kind": "proposition",
       "category": "L-result-callback",
       "severity": "logical",
       "waived": true,
-      "reason": "LOGICAL forward ref to a later proposition \u2014 a proven result is established where it lives; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
+      "reason": "LOGICAL forward ref to a later proposition \u2014 a proposition is established where it lives; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
     },
     {
       "src_chapter": "predicted-spectra",
       "src_label": "conj:e-hartree-categorical-derivation",
       "src_kind": "conjecture",
       "tgt_chapter": "molecular-construction",
-      "tgt_label": "prop:ilp-covalent-bond",
+      "tgt_label": "prop:h2-lp-dual-binding",
       "tgt_kind": "proposition",
       "category": "L-result-callback",
       "severity": "logical",
       "waived": true,
-      "reason": "LOGICAL forward ref to a later proposition \u2014 a proven result is established where it lives; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
+      "reason": "LOGICAL forward ref to a later proposition \u2014 a proposition is established where it lives; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
     },
     {
       "src_chapter": "predicted-spectra",
@@ -2607,7 +2607,7 @@
       "category": "L-result-callback",
       "severity": "logical",
       "waived": true,
-      "reason": "LOGICAL forward ref to a later proposition \u2014 a proven result is established where it lives; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
+      "reason": "LOGICAL forward ref to a later proposition \u2014 a proposition is established where it lives; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
     },
     {
       "src_chapter": "observations",
@@ -2619,7 +2619,7 @@
       "category": "L-result-callback",
       "severity": "logical",
       "waived": true,
-      "reason": "LOGICAL forward ref to a later proposition \u2014 a proven result is established where it lives; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
+      "reason": "LOGICAL forward ref to a later proposition \u2014 a proposition is established where it lives; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
     },
     {
       "src_chapter": "observations",
@@ -2674,8 +2674,8 @@
       "src_label": "rem:aromaticity-as-symmetric-projection",
       "src_kind": "remark",
       "tgt_chapter": "organic-chemistry",
-      "tgt_label": "prop:ring-closure-barrier",
-      "tgt_kind": "proposition",
+      "tgt_label": "def:threading-link",
+      "tgt_kind": "definition",
       "category": "T-narrative",
       "severity": "storytelling",
       "waived": true,
@@ -2686,8 +2686,8 @@
       "src_label": "rem:aromaticity-as-symmetric-projection",
       "src_kind": "remark",
       "tgt_chapter": "organic-chemistry",
-      "tgt_label": "def:threading-link",
-      "tgt_kind": "definition",
+      "tgt_label": "prop:ring-closure-barrier",
+      "tgt_kind": "proposition",
       "category": "T-narrative",
       "severity": "storytelling",
       "waived": true,
@@ -2751,7 +2751,7 @@
       "category": "L-result-callback",
       "severity": "logical",
       "waived": true,
-      "reason": "LOGICAL forward ref to a later conjecture \u2014 a proven result is established where it lives; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
+      "reason": "LOGICAL forward ref to a later conjecture \u2014 a conjecture is stated in its own chapter; the earlier citation is a deliberate forward callback / consumption coupling, not a misplacement (triage Table B)"
     },
     {
       "src_chapter": "stochastic-mechanics",

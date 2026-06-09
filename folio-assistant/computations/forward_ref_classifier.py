@@ -47,8 +47,11 @@ subject does NOT match its chapter remains an actionable
 surfaces. See `docs/audits/2026-06-09-cross-chapter-forward-ref-triage.md`
 for the per-edge triage that curated the two waive lists.
 
-Legacy A–F category labels are retained in `category` for continuity
-but the headline metric is now the **logical-defect count**.
+The legacy A–F category lettering is retained only in this taxonomy
+prose for continuity; the emitted `category` field uses the
+severity-prefixed labels `L-*` (logical), `T-*` (storytelling),
+`S-*` (structural). The headline metric is the **logical-defect
+count** (`L-dependency`).
 
 Every cross-chapter forward reference (a block in chapter N whose
 `uses[]` / `interprets` points at a block in chapter M > N) is
@@ -247,11 +250,14 @@ def classify(src_ch, src_kind, tgt_ch, tgt_kind, tgt_label):
         # callback (consumption coupling), not a placement error — there
         # is no "move the def earlier" remedy because there is no def.
         if tgt_kind != "definition":
+            established = ("stated in its own chapter"
+                          if tgt_kind == "conjecture"
+                          else "established where it lives")
             return ("L-result-callback", "logical", True,
-                    f"LOGICAL forward ref to a later {tgt_kind} — a proven "
-                    "result is established where it lives; the earlier "
-                    "citation is a deliberate forward callback / consumption "
-                    "coupling, not a misplacement (triage Table B)")
+                    f"LOGICAL forward ref to a later {tgt_kind} — a "
+                    f"{tgt_kind} is {established}; the earlier citation is a "
+                    "deliberate forward callback / consumption coupling, not "
+                    "a misplacement (triage Table B)")
         # Rule 2 (2026-06-09 triage Table A): the target is a definition
         # whose subject matches its (later) home chapter — the def belongs
         # there, so the earlier forward reference is a deliberate coupling.
