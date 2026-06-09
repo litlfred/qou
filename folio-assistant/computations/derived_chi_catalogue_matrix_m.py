@@ -79,7 +79,15 @@ import _path_bridge  # noqa: E402, F401
 
 import sympy as sp  # noqa: E402
 
-import pyhecke_native as ph  # noqa: E402
+# Guard the PyO3 wheel import: only `_shape_partitions_of` (which has a
+# pure-Python fallback) and the Rust reference `chi_rust_at_qval` use
+# it. Absent wheel ⇒ ph = None so the pure-Python paths still import
+# (e.g. the mpfr (μ_p, μ_n) cross-validation in
+# derived_chi_catalogue_matrix_m_mpfr.py runs without it).
+try:
+    import pyhecke_native as ph  # noqa: E402
+except ImportError:  # pragma: no cover - wheel absent in some sandboxes
+    ph = None
 
 from witness_base import WitnessBuilder  # noqa: E402
 
@@ -91,9 +99,22 @@ def _shape_partitions_of(n: int) -> list[tuple[int, ...]]:
     """All partitions of n, returned as sorted tuples (largest first).
 
     Wraps `pyhecke_native.partitions_of` so this module has one
-    canonical entry point for shape enumeration.
+    canonical entry point for shape enumeration. Falls back to a
+    pure-Python generator when the wheel is unavailable (the result is
+    identical — integer partitions are a fixed combinatorial set).
     """
-    return [tuple(p) for p in ph.partitions_of(n)]
+    if ph is not None:
+        return [tuple(p) for p in ph.partitions_of(n)]
+
+    def _gen(m: int, mx: int):
+        if m == 0:
+            yield ()
+            return
+        for k in range(min(m, mx), 0, -1):
+            for rest in _gen(m - k, k):
+                yield (k,) + rest
+
+    return list(_gen(n, n))
 
 
 def standard_young_tableaux(shape: tuple[int, ...]) -> list[tuple[tuple[int, int], ...]]:
@@ -496,6 +517,11 @@ def chi_rust_at_qval(
     per the half-exponent convention documented in
     `derived_chi_catalogue_bar_symmetry_audit.py`.
     """
+    if ph is None:
+        raise RuntimeError(
+            "pyhecke_native unavailable: the Rust reference chi_q_via_gp "
+            "cannot run in this environment."
+        )
     laurent = ph.chi_q_via_gp(list(shape), n_strands, list(word))
     total = sp.Integer(0)
     for (d_key, c_str) in laurent:
