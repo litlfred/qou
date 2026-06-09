@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "4cc7f33738da",
     "ts": "ba6b293f846b",
-    "lean": "fb6db4a866cb"
+    "lean": "82267127a6e8"
   },
   "criteria": {
     "voice-status-leak": [
@@ -670,7 +670,7 @@
         },
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
-        "notes": "Label 'prop:categorical-neutron-unique' \u2192 expected 'categorical_neutron_unique'; Lean declares: CategoricalNeutron.unique_up_to_isotopy_axiom, CategoricalNeutron.unique_up_to_isotopy. Structural match via content."
+        "notes": "Label 'prop:categorical-neutron-unique' → expected 'categorical_neutron_unique'; Lean declares: CategoricalNeutron.unique_up_to_isotopy_axiom, CategoricalNeutron.unique_up_to_isotopy. Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -880,7 +880,7 @@
         "reviewed_at": "2026-06-01T16:06:38.106Z",
         "reviewed_sha": "d4a8cf462aeef2262429b13571ddd385968bce63",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/predicted-spectra/categorical-neutron-unique.md:1 \u2014 detected regime [symbolic] is disjoint from chapter 'predicted-spectra' expected [fixed-q0, na, real-gt-1, real-positive]"
+        "evidence": "content/quantum-observable-universe/predicted-spectra/categorical-neutron-unique.md:1 — detected regime [symbolic] is disjoint from chapter 'predicted-spectra' expected [fixed-q0, na, real-gt-1, real-positive]"
       }
     ],
     "canonical-ck-tiered-not-binary": [
@@ -952,7 +952,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "prop:categorical-neutron-unique \u2014 uniqueness of neutron up to braid isotopy; Ch13 nucleon scope",
+        "evidence": "prop:categorical-neutron-unique — uniqueness of neutron up to braid isotopy; Ch13 nucleon scope",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -974,7 +974,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "prop:categorical-neutron-unique statement: uniqueness via Hecke NF and S_3-symmetry \u2014 purely algebraic; no Real.* or numeric q",
+        "evidence": "prop:categorical-neutron-unique statement: uniqueness via Hecke NF and S_3-symmetry — purely algebraic; no Real.* or numeric q",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -996,7 +996,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "prop:categorical-neutron-unique proof body (md): Hecke NF uniqueness + S_3-symmetry argument \u2014 algebraic; no linarith/Real.* constructs",
+        "evidence": "prop:categorical-neutron-unique proof body (md): Hecke NF uniqueness + S_3-symmetry argument — algebraic; no linarith/Real.* constructs",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -1194,8 +1194,28 @@
         "reviewed_at": "2026-06-07T05:59:42.718Z",
         "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
         "notes": "UNSOUND AXIOM: theorem CategoricalNeutron.unique_up_to_isotopy := CategoricalNeutron.unique_up_to_isotopy_axiom, and 'axiom ... : Subsingleton CategoricalNeutron'. But CategoricalNeutron is a structure with FREE real fields skein_ud, skein_dd (no constraints) - two distinct reals give two distinct neutrons, so Subsingleton CategoricalNeutron is FALSE. The proof is an axiom asserting a false proposition (derives anything). decl present but statement-as-proven is unsound."
+      },
+      {
+        "field_hash": {
+          "md": "4cc7f33738da",
+          "ts": "ba6b293f846b",
+          "lean": "82267127a6e8"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "categorical-neutron-unique.lean:62 — theorem CategoricalNeutron.unique_up_to_isotopy (P Q) [NeutronSameHeckeNF P Q] : P = Q",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-09",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-09T02:51:53.335Z",
+        "reviewed_sha": "9663de6f86bc94e6ef87192b18383e45d633655f",
+        "notes": "Replaced false 'axiom Subsingleton CategoricalNeutron' with genuine conditional uniqueness via a Hecke-NF coincidence context class. _Scratch build green."
       }
     ]
   },
-  "updated_at": "2026-06-07T05:59:42.831Z"
+  "updated_at": "2026-06-09T02:51:53.335Z"
 }

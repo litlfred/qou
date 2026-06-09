@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "0e45a91f4d0d",
     "ts": "a14b03082474",
-    "lean": "46dd44d0df68"
+    "lean": "871076a197b0"
   },
   "criteria": {
     "voice-status-leak": [
@@ -670,7 +670,7 @@
         },
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
-        "notes": "Label 'prop:antiparticle-crossing-reversal' \u2192 expected 'antiparticle_crossing_reversal'; Lean declares: R_q, q_param, q_inv_param, KnotComposite, KnotComposite.crossingEnergy.... Structural match via content."
+        "notes": "Label 'prop:antiparticle-crossing-reversal' → expected 'antiparticle_crossing_reversal'; Lean declares: R_q, q_param, q_inv_param, KnotComposite, KnotComposite.crossingEnergy.... Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1199,8 +1199,28 @@
         "reviewed_at": "2026-06-07T05:54:48.296Z",
         "reviewed_sha": "c47fda4d79ef12172fe90e0c9b670b761a3f4d95",
         "notes": "lean.ref qou:QOU.Torsion.antiparticle_crossing_reversal resolves to an ABSENT declaration: the .lean has only pair_crossing_energy, coulomb_reversal, bare_mass_invariance (all under QOU.Torsion); 'antiparticle_crossing_reversal' appears solely in the module docstring (line 7), not as a theorem/def. Also md part 2 boxes E(H^sigma) = -E(H)|_{q<->q^-1} (bar involution) but Lean .mirror only swaps pos/neg crossing counts and pair_crossing_energy proves a pair-SUM identity, not the sign+bar reversal. md<->Lean mismatch + missing ref decl."
+      },
+      {
+        "field_hash": {
+          "md": "0e45a91f4d0d",
+          "ts": "a14b03082474",
+          "lean": "871076a197b0"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "antiparticle-crossing-reversal.lean — theorem antiparticle_crossing_reversal bundles bar-reversal (mirror.crossingEnergy = -barCrossingEnergy), Coulomb reversal, bare-mass invariance",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-09",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-09T02:51:53.379Z",
+        "reviewed_sha": "9663de6f86bc94e6ef87192b18383e45d633655f",
+        "notes": "Added the previously-absent QOU.Torsion.antiparticle_crossing_reversal stating md claims 2-4 over a field R; each a proven lemma (ring/omega). _Scratch build green."
       }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-09T02:51:53.379Z"
 }

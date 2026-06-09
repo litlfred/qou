@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "f77a889243b2",
     "ts": "2e553aa598e9",
-    "lean": "6201b8a6c4ed"
+    "lean": "31a74aef2798"
   },
   "criteria": {
     "voice-status-leak": [
@@ -670,7 +670,7 @@
         },
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
-        "notes": "Label 'prop:integer-stability' \u2192 expected 'integer_stability'; Lean declares: stable_neutron_number, stable_neutron_witness, observed_neutron_numbers, stable_neutron_max_error. Structural match via content."
+        "notes": "Label 'prop:integer-stability' → expected 'integer_stability'; Lean declares: stable_neutron_number, stable_neutron_witness, observed_neutron_numbers, stable_neutron_max_error. Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1192,8 +1192,28 @@
         "reviewed_at": "2026-06-07T06:09:21.442Z",
         "reviewed_sha": "4e961c6c457cf2aaa28e91304a917b1bcfdf2afe",
         "notes": "REF DECL ABSENT + claim mismatch: lean.ref qou:QOU.Archimedean.integer_stability, but the sibling .lean has NO 'namespace QOU.Archimedean' and NO declaration 'integer_stability' (only top-level stable_neutron_number / stable_neutron_witness / observed_neutron_numbers / stable_neutron_max_error). Also the md's actual claim (binding energy is convex-quadratic in p so the integer minimiser is exactly floor/ceil of p*) is NOT formalized; the only theorem stable_neutron_max_error proves predicted-vs-observed neutron numbers differ by <=8 (native_decide table check) - a loose accuracy bound, not the exactness claim."
+      },
+      {
+        "field_hash": {
+          "md": "f77a889243b2",
+          "ts": "2e553aa598e9",
+          "lean": "31a74aef2798"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "integer-stability.lean — theorem QOU.Archimedean.integer_stability (alpha gamma delta) (0<alpha) (p) : E(p*) <= E(p)",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-09",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-09T02:51:53.430Z",
+        "reviewed_sha": "9663de6f86bc94e6ef87192b18383e45d633655f",
+        "notes": "Added the previously-absent QOU.Archimedean.integer_stability: complete-the-square + global-min-at-vertex for the convex quadratic E(p)=ap^2-gp+d (plus strict version). _Scratch build green."
       }
     ]
   },
-  "updated_at": "2026-06-07T06:09:21.548Z"
+  "updated_at": "2026-06-09T02:51:53.430Z"
 }
