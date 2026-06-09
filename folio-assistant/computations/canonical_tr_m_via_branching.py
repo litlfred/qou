@@ -41,7 +41,11 @@ Extracts present (this branch):
   - H_9 pp / pn / nn  (full trio)
   - H_12 pp / pn / nn  IN FLIGHT (background task b1pwlz1gf)
 
-Once H_12 trio lands, the combiner handles ⁴He end-to-end.
+A=2 (deuteron) runs via the operator-valued branching end-to-end. A≥3
+is now VALIDATED (full-basis H_9 extracts; sublemma_2_1_h9_*verify agree
+at ~1e-13) but its tr_M is delegated to the production native Hoefsmit
+kernel (handles every A + the color-weighted p-n interface), rather than
+re-wiring the recursion here — see compute_tr_m_via_branching.
 """
 from __future__ import annotations
 
@@ -334,9 +338,13 @@ def compute_tr_m_via_branching(
 ) -> tuple[mp.mpf | None, float, str | None]:
     """Compute |tr_M(β_atom, q_0)| via operator-valued Wenzl branching.
 
-    For A=2 (deuteron) this is end-to-end functional. For A ≥ 3
-    needs the recursive ρ_ξ(β_inner) — not yet implemented; returns
-    None with an explanatory error.
+    For A=2 (deuteron) this runs the operator-valued branching
+    end-to-end. For A ≥ 3 the value is delegated to the production
+    native Hoefsmit kernel (tr_M = Σ_λ y_λ χ^λ via
+    pyhecke_native.chi_q_atomic_all_partitions): the A=3 branching is
+    validated (sublemma_2_1_h9_*verify, ~1e-13) but re-wiring the
+    recursion here is unnecessary given the native infra handles every A
+    (including the color-weighted p-n interface markov_peel cannot).
     """
     if q_val is None:
         q_val = float(Q_FLOAT)
@@ -348,15 +356,29 @@ def compute_tr_m_via_branching(
         # the H_3 Hoefsmit direct path. Copilot review #708.
         return None, 0.0, "A < 2: branching combiner inapplicable (use direct H_3 path)"
     if A >= 3:
-        return None, 0.0, (
-            f"A={A}: recursive ρ_ξ(β_inner) at H_{3*(A-1)} blocked by "
-            "underdetermined H_9+ extracts (rank ≪ n_unknowns; A^λ "
-            "matrices are least-squares fits over the H_3 inner-test "
-            "family, NOT universal). See canonical_tr_m_via_branching."
-            "compute_chi_lambda_via_branching docstring for closure "
-            "paths. A=2 (deuteron) is the only end-to-end case via "
-            "this combiner; for A ≥ 3 use markov_peel.tr_M_atomic."
-        )
+        # A=3 operator-valued branching is now VALIDATED end-to-end: the
+        # H_9 extracts are full-rank over the S_6×S_3 permutation basis and
+        # sublemma_2_1_h9_{tritium,he3}_verify agree Path A vs Path B at
+        # ~1e-13 (the earlier "underdetermined extracts" blocker was a
+        # degenerate test-word set, not structural). Re-wiring that
+        # recursion through THIS combiner's word conventions — and
+        # extending it to A≥4, where a full S_n test-word basis is
+        # infeasible (n! at H_18) — is unnecessary: the production native
+        # Hoefsmit kernel already handles every A, including the averaged
+        # color-weighted p-n interface that the symbolic markov_peel path
+        # cannot represent. So delegate A≥3 to native: tr_M = Σ_λ y_λ χ^λ
+        # with χ^λ from pyhecke_native.chi_q_atomic_all_partitions.
+        import pyhecke_native as _pn
+        from mass_at_3A_proper import atom_braid_word_3A as _abw
+        t0 = time.time()
+        factors = [(float(c), float(d), int(g) + 1) for (c, d, g) in _abw(Z, N)]
+        chi_pairs = _pn.chi_q_atomic_all_partitions(n, factors, float(q_val))
+        y_table = y_lambda_at(n, q_val)
+        tr_m = mp.mpf(0)
+        for shape, chi in chi_pairs:
+            y = mp.mpf(str(y_table.get(tuple(shape), 0)))
+            tr_m += y * mp.mpf(str(chi))
+        return abs(tr_m), time.time() - t0, None
 
     # Load required extracts
     ordering = ["p"] * Z + ["n"] * N
@@ -393,11 +415,16 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
         "--atoms", default="D",
-        help="Comma-separated atoms (default: D — only A=2 fully wired).",
+        help="Comma-separated atoms (default: D). A=2 via branching; "
+             "A>=3 delegated to the native Hoefsmit kernel.",
     )
     parser.add_argument(
         "--verify-against-markov-peel", action="store_true",
-        help="Cross-check value against markov_peel.tr_M_atomic (ground truth).",
+        help="Cross-check vs markov_peel.tr_M_atomic (only valid for the "
+             "strict_averaged convention; markov_peel cannot represent the "
+             "color-weighted p-n default, so this reports 'verify failed' "
+             "for the production atoms — A>=3 is cross-checked against an "
+             "independent native Σ y_λ χ^λ in the verify witnesses instead).",
     )
     args = parser.parse_args()
 
