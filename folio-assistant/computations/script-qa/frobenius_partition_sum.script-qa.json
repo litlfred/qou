@@ -2,8 +2,8 @@
   "$schema": "script-qa/v1",
   "script_path": "folio-assistant/computations/frobenius_partition_sum.py",
   "language": "python",
-  "source_hash": "d0f7136b4ffb",
-  "updated_at": "2026-05-24T05:15:37.031Z",
+  "source_hash": "c4325717bf1d",
+  "updated_at": "2026-06-09T03:37:13.209Z",
   "criteria": {
     "does_not_default_to_float": [
       {
@@ -300,6 +300,25 @@
         "reviewed_sha": "b918c27dba807cf5d0bb65ef8b3e49d37d4ca55a",
         "severity": "major",
         "evidence": "folio-assistant/computations/frobenius_partition_sum.py:256: script writes `.witness.json` (\"frobenius-partition-sum.witness.json\") but does not import `WitnessBuilder` from `witness_base` — add `from witness_base import WitnessBuilder` and stamp the payload via `WitnessBuilder.stamp_staleness_metadata(...)` for provenance / staleness tracking"
+      }
+    ],
+    "compute_no_mpf_to_float_cast": [
+      {
+        "field_hash": {
+          "ts": "c4325717bf1d"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "0bbdf534427b",
+          "script_commit_sha": "76a167e10467a2b0f41dbbd968ea8245d5b4ba33"
+        },
+        "reviewed_at": "2026-06-09T03:37:13.209Z",
+        "reviewed_sha": "76a167e10467a2b0f41dbbd968ea8245d5b4ba33",
+        "severity": "critical",
+        "evidence": "folio-assistant/computations/frobenius_partition_sum.py:169: mpmath/sympy → float64 cast `float(inv.subs(q, q0).evalf(30))` — GUARANTEED precision loss; keep the value in mpmath (`mp.mpf(str(...))`) or sympy (`sp.N(..., dps)` without the outer `float()`). | folio-assistant/computations/frobenius_partition_sum.py:178: mpmath/sympy → float64 cast `float(total_simpl.subs(q, q0).evalf(30))` — GUARANTEED precision loss; keep the value in mpmath (`mp.mpf(str(...))`) or sympy (`sp.N(..., dps)` without the outer `float()`). | folio-assistant/computations/frobenius_partition_sum.py:190: mpmath/sympy → float64 cast `float(level_sum.subs(q, q0).evalf(30))` — GUARANTEED precision loss; keep the value in mpmath (`mp.mpf(str(...))`) or sympy (`sp.N(..., dps)` without the outer `float()`)."
       }
     ]
   }

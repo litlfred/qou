@@ -2,8 +2,8 @@
   "$schema": "script-qa/v1",
   "script_path": "folio-assistant/computations/probe_q_beta_operator_valued_N3.py",
   "language": "python",
-  "source_hash": "3a6962ad798e",
-  "updated_at": "2026-05-22T19:00:32.111Z",
+  "source_hash": "1d48a07d198c",
+  "updated_at": "2026-06-09T03:37:13.209Z",
   "criteria": {
     "does_not_default_to_float": [
       {
@@ -164,6 +164,25 @@
         },
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab"
+      }
+    ],
+    "compute_no_mpf_to_float_cast": [
+      {
+        "field_hash": {
+          "ts": "1d48a07d198c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "0bbdf534427b",
+          "script_commit_sha": "76a167e10467a2b0f41dbbd968ea8245d5b4ba33"
+        },
+        "reviewed_at": "2026-06-09T03:37:13.209Z",
+        "reviewed_sha": "76a167e10467a2b0f41dbbd968ea8245d5b4ba33",
+        "severity": "critical",
+        "evidence": "folio-assistant/computations/probe_q_beta_operator_valued_N3.py:190: mpmath/sympy → float64 cast `float(eps_N2_abs / mp.fabs(best_eps))` — GUARANTEED precision loss; keep the value in mpmath (`mp.mpf(str(...))`) or sympy (`sp.N(..., dps)` without the outer `float()`). | folio-assistant/computations/probe_q_beta_operator_valued_N3.py:230: mpmath/sympy → float64 cast `float(eps_N2_abs / mp.fabs(best_eps))` — GUARANTEED precision loss; keep the value in mpmath (`mp.mpf(str(...))`) or sympy (`sp.N(..., dps)` without the outer `float()`)."
       }
     ]
   }

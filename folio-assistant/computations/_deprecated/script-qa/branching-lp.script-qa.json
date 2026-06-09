@@ -3,7 +3,7 @@
   "script_path": "folio-assistant/computations/_deprecated/branching-lp.py",
   "language": "python",
   "source_hash": "1169a6a743a5",
-  "updated_at": "2026-05-22T19:00:32.111Z",
+  "updated_at": "2026-06-09T03:37:13.209Z",
   "criteria": {
     "does_not_default_to_float": [
       {
@@ -164,6 +164,23 @@
         },
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab"
+      }
+    ],
+    "compute_no_mpf_to_float_cast": [
+      {
+        "field_hash": {
+          "ts": "1169a6a743a5"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "0bbdf534427b",
+          "script_commit_sha": "76a167e10467a2b0f41dbbd968ea8245d5b4ba33"
+        },
+        "reviewed_at": "2026-06-09T03:37:13.209Z",
+        "reviewed_sha": "76a167e10467a2b0f41dbbd968ea8245d5b4ba33"
       }
     ]
   }
