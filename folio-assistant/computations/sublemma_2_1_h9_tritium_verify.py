@@ -351,9 +351,15 @@ def main() -> int:
           f"of which {n_overdet_pass} verified at rel res < 1e-10")
     print(f"    Max rel residual on over-determined subset: "
           f"{max_rel_overdet:.2e}")
-    print(f"    Under-determined λ: {n_underdet}/{len(parts_9)} "
-          f"(Phase 2 — needs K_6 × K_3 ≥ max(d_ξ²·d_ν²) per support pair; "
-          f"current K=12 → 144 eq < 1024 unknowns for d_ξ=16 blocks)")
+    if n_underdet:
+        print(f"    Under-determined λ: {n_underdet}/{len(parts_9)} "
+              f"(extract used a degenerate test-word set; regenerate the H_9 "
+              f"extract with `--full-basis --native` so K_6 × K_3 ≥ n_unknowns "
+              f"for every λ — see the 2026-06-09 binding audit)")
+    else:
+        print(f"    Under-determined λ: 0/{len(parts_9)} "
+              f"(extract is full-rank — H_9 closed via the S_6×S_3 "
+              f"permutation basis)")
 
     from witness_base import WitnessBuilder
     builder = (

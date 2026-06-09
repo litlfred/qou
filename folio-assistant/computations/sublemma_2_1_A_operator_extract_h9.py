@@ -190,6 +190,31 @@ def make_h3_perm_basis() -> list[list]:
             for perm in itertools.permutations(range(3))]
 
 
+def _to_braid_word(word: list, h_num: float) -> list[tuple[int, int]]:
+    """Convert a `(c, d, gen)` word to a native braid word `[(sign, gen_1based)]`.
+
+    Only PURE-braid crossings are representable: σ (c=1, d=0) → +1 and
+    σ⁻¹ (c=1, d=−h) → −1. The averaged p-n crossing (c=1, d=−h/2) is a
+    Hecke COMBINATION, not a braid generator, so `--native` supports only
+    the pp / nn interfaces (both pure braid). Raises on anything else so
+    convention drift fails loudly.
+    """
+    tol = 1e-7
+    bw: list[tuple[int, int]] = []
+    for c, d, g in word:
+        if abs(c - 1.0) < tol and abs(d) < tol:
+            bw.append((1, g + 1))
+        elif abs(c - 1.0) < tol and abs(d + h_num) < tol:
+            bw.append((-1, g + 1))
+        else:
+            raise ValueError(
+                f"--native needs pure-braid crossings (σ or σ⁻¹); got "
+                f"(c={c}, d={d}) at gen={g}. The averaged p-n crossing "
+                f"(d=−h/2) is not a braid generator — run pn without --native."
+            )
+    return bw
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--interface", choices=sorted(INTERFACE_COEFS),
@@ -202,10 +227,13 @@ def main() -> int:
     parser.add_argument("--full-basis", action="store_true",
                         help="use the full S_6 (720) × S_3 (6) permutation "
                              "basis as test words — spans End(V_ξ) exactly, "
-                             "making ALL λ ⊢ 9 over-determined and full-rank "
-                             "(Phase 2; ~15 min). Default uses the 12+12 "
-                             "hand-picked family (Phase 1, under-determined "
-                             "for high-dim λ).")
+                             "making ALL λ ⊢ 9 over-determined and full-rank. "
+                             "Default uses the 12+12 hand-picked family "
+                             "(Phase 1, under-determined for high-dim λ).")
+    parser.add_argument("--native", action="store_true",
+                        help="evaluate χ^λ via pyhecke_native.chi_lambdas_braid "
+                             "(~900× faster; pure-braid interfaces pp/nn only). "
+                             "Makes --full-basis tractable (~30s vs ~7h).")
     args = parser.parse_args()
 
     interface = args.interface
@@ -255,19 +283,38 @@ def main() -> int:
     # ── Compute χ^λ(W_6[i] · I_2 · W_3[j]) for each (i, j, λ)
     t0 = time.monotonic()
     n_chi = K_6 * K_3 * len(parts_9)
-    print(f"  [3/3] Computing χ^λ(β_K) at H_9 for {n_chi} (i, j, λ) triples...")
     chi_lam: dict[tuple[int, int, tuple], complex] = {}
     progress = 0
-    for i, w6 in enumerate(test_words_6):
-        for j, w3 in enumerate(test_words_3):
-            comb = with_interface_h9(w6, w3, interface)
-            for lam in parts_9:
-                chi_lam[(i, j, lam)] = chi_lambda_fast(lam, comb)
-            progress += len(parts_9)
-            if progress % 600 == 0 or progress == n_chi:
-                pct = 100 * progress / n_chi
-                print(f"      progress: {progress}/{n_chi} ({pct:.1f}%) "
-                      f"t={time.monotonic()-t0:.1f}s")
+    if args.native:
+        import pyhecke_native as _pn
+        q_native = float(Q0)
+        parts9_lists = [list(l) for l in parts_9]
+        print(f"  [3/3] Computing χ^λ(β_K) at H_9 for {n_chi} (i, j, λ) "
+              f"triples via pyhecke_native (batch over λ)...")
+        for i, w6 in enumerate(test_words_6):
+            for j, w3 in enumerate(test_words_3):
+                braid = _to_braid_word(
+                    with_interface_h9(w6, w3, interface), H)
+                vals = _pn.chi_lambdas_braid(parts9_lists, braid, q_native)
+                for lam, v in zip(parts_9, vals):
+                    chi_lam[(i, j, lam)] = complex(v)
+                progress += len(parts_9)
+                if progress % 6000 == 0 or progress == n_chi:
+                    pct = 100 * progress / n_chi
+                    print(f"      progress: {progress}/{n_chi} ({pct:.1f}%) "
+                          f"t={time.monotonic()-t0:.1f}s")
+    else:
+        print(f"  [3/3] Computing χ^λ(β_K) at H_9 for {n_chi} (i, j, λ) triples...")
+        for i, w6 in enumerate(test_words_6):
+            for j, w3 in enumerate(test_words_3):
+                comb = with_interface_h9(w6, w3, interface)
+                for lam in parts_9:
+                    chi_lam[(i, j, lam)] = chi_lambda_fast(lam, comb)
+                progress += len(parts_9)
+                if progress % 600 == 0 or progress == n_chi:
+                    pct = 100 * progress / n_chi
+                    print(f"      progress: {progress}/{n_chi} ({pct:.1f}%) "
+                          f"t={time.monotonic()-t0:.1f}s")
     chi_time = time.monotonic() - t0
     print(f"      done in {chi_time:.1f}s")
 
