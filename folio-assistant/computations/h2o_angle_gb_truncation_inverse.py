@@ -163,6 +163,25 @@ def main() -> None:
         print(f"    {label:<12} f={c:.6f} → θ = {th:8.3f}°  "
               f"(miss {th-THETA_OBS:+.3f}°)")
 
+    # 4. kernel-robustness scan — the tiering gate for the r* candidates
+    q2 = float(q0) ** 2
+    one_zhalf = 1 + float(z) / 2
+    print(f"\n  kernel-robustness of r* (tiering gate; n=1 Coulomb is the "
+          f"physical kernel):")
+    kern = {}
+    for n_k in (1.0, 2.0, 3.0, 6.0):
+        rs = _bisect(lambda r: vsepr_angle(1.0, r, THETA0, n_k),
+                     1.0, 4.0, THETA_OBS)
+        kern[f"n={n_k:g}"] = {
+            "r_star": rs,
+            "dev_q2_pct": float(100 * (q2 - rs) / rs),
+            "dev_1_plus_z_half_pct": float(100 * (one_zhalf - rs) / rs),
+        }
+        print(f"    n={n_k:<4g} r*={rs:.6f}  dev(q²)={100*(q2-rs)/rs:+.3f}%  "
+              f"dev(1+z/2)={100*(one_zhalf-rs)/rs:+.3f}%")
+    print("    → both candidates are near-matches ONLY at the Coulomb kernel "
+          "(n=1); kernel-conditional.")
+
     best_f = f_rows[0]
     w.set_description(
         "Inverse probe for the GB-truncation fraction in the H₂O angle "
@@ -185,6 +204,7 @@ def main() -> None:
     w.add_data("f_candidates_ranked", f_rows)
     w.add_data("r_candidates_ranked", r_rows)
     w.add_data("forward_checks", fwd)
+    w.add_data("kernel_robustness_scan", kern)
     w.add_data("best_f_candidate", best_f)
     w.add_assertion(
         "inverse solve reproduces the observed angle",
@@ -202,7 +222,11 @@ def main() -> None:
         f"{r_star:.6f}. Tiered comparison only — no wiring; promoting a "
         "candidate requires a structural derivation (e.g. sharing of the L₊ "
         "pair between domains, or a quantum-dimension normalisation) plus "
-        "stability checks.",
+        "stability checks. KERNEL SCAN (demotion): the q² and 1+z/2 "
+        "near-matches hold ONLY at the Coulomb kernel (n=1; at n=2/3/6 r* "
+        "drifts to ≈1.28/1.32/1.45) — kernel-conditional near-matches. "
+        "Coulomb is the physically canonical kernel for charged-domain "
+        "repulsion, but the identification inherits that assumption.",
     )
     w.save()
     print("\nDone. Witness saved (h2o-angle-gb-truncation-inverse).")
