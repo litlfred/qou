@@ -37,7 +37,7 @@ for _p in (str(_HERE),
         sys.path.insert(0, _p)
 import _path_bridge  # noqa: F401
 from witness_base import WitnessBuilder
-from pyhecke.gram import z, hm, nf_tr, nf_of_word, TR_M
+from pyhecke.gram import z, hm, nf_tr, nf_of_word
 from q_parameter import Q as q0, HA as h
 
 THETA0 = 109.4712
@@ -49,13 +49,14 @@ def trM_word(word):
     return float(nf_tr(nf_of_word(word)))
 
 
-def trM_inv_trefoil():
+def trM_inv_trefoil(h_val: float, identity_nf: list[float]) -> float:
     """tr_M(σ₀⁻¹σ₁⁻¹σ₀⁻¹) via σ⁻¹ = σ − h  (hm multiplies by c·σ_g + d·I)."""
-    nf = hm(hm(hm(list(_ID), 1.0, -h, 0), 1.0, -h, 1), 1.0, -h, 0)
+    nf = hm(hm(hm(list(identity_nf), 1.0, -h_val, 0), 1.0, -h_val, 1),
+            1.0, -h_val, 0)
     return float(nf_tr(nf))
 
 
-def vsepr_angle(wH, wL, n=1.0):
+def vsepr_angle(wH, wL, theta0: float, n: float = 1.0) -> float:
     def E(x):
         th, ph = x
         sH, cH = np.sin(th / 2), np.cos(th / 2)
@@ -65,19 +66,21 @@ def vsepr_angle(wH, wL, n=1.0):
         if min(dHH, dLL, dHL) < 1e-6:
             return 1e9
         return wH * wH / dHH ** n + wL * wL / dLL ** n + 4 * wH * wL / dHL ** n
-    r = minimize(E, [np.radians(THETA0), np.radians(THETA0)],
+    r = minimize(E, [np.radians(theta0), np.radians(theta0)],
                  method="Nelder-Mead", options={"xatol": 1e-7, "fatol": 1e-12})
     return float(np.degrees(r.x[0]))
 
 
 def main() -> None:
+    # Witness built up front so durationMs covers the compute (per review).
+    w = WitnessBuilder("h2o-angle-activeset-gb", engine="python")
     # leading NF weights
     w_sigma = trM_word((0,))            # z
     w_eminus = trM_word((0, 1, 0))      # h z² + z
     # quadratic GB element L₊ = σ₀σ₁  (order-2 on the GB filtration)
     w_Lplus = trM_word((0, 1))          # z²
     # LP-selected bonding operator: inverse trefoil (active-set choice)
-    w_invtref = trM_inv_trefoil()
+    w_invtref = trM_inv_trefoil(h, _ID)
 
     print("=" * 72)
     print("H₂O angle — higher-order GB + active-set weighting")
@@ -106,7 +109,7 @@ def main() -> None:
     print(f"  {'model':<34}{'w_L/w_H':>10}{'θ_HOH':>10}{'→104.5?':>12}")
     print("  " + "-" * 64)
     for name, (wH, wL) in models.items():
-        th = vsepr_angle(wH, wL)
+        th = vsepr_angle(wH, wL, THETA0)
         ratio = wL / wH
         rows[name] = {"wH": wH, "wL": wL, "ratio": ratio, "theta": th}
         mark = "closer" if abs(th - THETA_OBS) < abs(107.19 - THETA_OBS) else ""
@@ -115,7 +118,6 @@ def main() -> None:
     print(f"  observed = {THETA_OBS}°. NO tuning — every weight is a derived")
     print(f"  Markov trace; angles reported as computed.")
 
-    w = WitnessBuilder("h2o-angle-activeset-gb", engine="python")
     w.set_description(
         "H₂O angle under higher-order-GB and active-set weightings (owner "
         "levers, no fit). Recomputes the trace-weighted VSEPR minimiser with "

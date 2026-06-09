@@ -66,11 +66,13 @@ OBSERVED_DEG = 104.5
 def _phases(M):
     ev = np.linalg.eigvals(M)
     mod = np.abs(ev)
-    is_rot = bool(np.all(np.abs(mod - 1.0) < 1e-6))
+    is_rot = bool(np.all(np.abs(mod - 1.0) < UNIT_TOL))
     return ev, mod, is_rot
 
 
 def main() -> None:
+    # Witness built up front so durationMs covers the compute (per review).
+    w = WitnessBuilder("h2o-angle-knot-correction", engine="python")
     sigmas, dim, _ = _cached_seminormal((2, 1))   # V_(2,1), dim 2
     s1, s2 = sigmas[0], sigmas[1]
     I = np.eye(dim)
@@ -107,7 +109,6 @@ def main() -> None:
           f"{residual:.1f}° correction; correction = bond↔lone Reeb-phase Δ "
           f"at the alternating level (H₄⁺, Rust-kernel-blocked here).")
 
-    w = WitnessBuilder("h2o-angle-knot-correction", engine="python")
     w.set_description(
         "H₂O bond-angle knot-hierarchy correction probe (Reeb-rotation "
         "framework). Computes the figure-eight Reeb rotation θ_4₁ on V_(2,1) "
