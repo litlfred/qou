@@ -166,6 +166,7 @@ export default chapter({
       blocks: [
         "intro-hoefsmit-convergence-atomic",
         "operator-selection-lp",
+        "sdp-degeneracy-at-metallic-coincidence",
         "universal-braid-branching",
         "hoefsmit-scattering-pipeline",
         "hecke-convergence-bound",
