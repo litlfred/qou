@@ -42,6 +42,7 @@ import QOU.HadronicMass
 import QOU.AtomicMass
 import QOU.QuantumObservableUniverse
 import QOU.QuantumObservableUniverses.QAnalysis
+import QOU.QuantumObservableUniverses.QIntegralTransforms
 import QOU.Elaboration
 import QOU.PathIntegrals
 import QOU.MobiusEnergy
