@@ -1,0 +1,6040 @@
+{
+  "description": "S(5) exact metallic coincidence sweep on the 120-word T_w basis of H_5(q) with LP active-set checkpoints (exact Gram).  Design informed by the n\u22644 result: coincidence grid is the payload; LP constancy re-tested at ~25 checkpoints instead of a dense Gram sweep.  Conventions, validations, dual-emission and mpfr refinement inherited from metallic_q_s4_exact_lp_sweep.py.",
+  "computed_at": "2026-06-09T21:52:47.226408+00:00",
+  "script": "metallic_q_s5_coincidence_sweep.py",
+  "engine": "pyhecke_native 0.9.0",
+  "validations": {
+    "v1_n2_proved_closed_forms": true,
+    "v2_silver_residual": "-1.1313708e-39",
+    "v2_silver_exact": true,
+    "v3_canonical_markov_stable": true,
+    "v4_hecke_relation": true,
+    "v5_trace_symmetry": true
+  },
+  "n": 5,
+  "n_basis_words": 120,
+  "trace_class_counts": {
+    "plancherel": 28,
+    "canonical": 22
+  },
+  "trace_classes_labels": {
+    "plancherel": [
+      [
+        "\u03b3"
+      ],
+      [
+        "\u03c31",
+        "\u03c32",
+        "\u03c33",
+        "\u03c34"
+      ],
+      [
+        "\u03c31\u00b7\u03c32",
+        "\u03c32\u00b7\u03c31",
+        "\u03c32\u00b7\u03c33",
+        "\u03c33\u00b7\u03c32",
+        "\u03c33\u00b7\u03c34",
+        "\u03c34\u00b7\u03c33"
+      ],
+      [
+        "\u03c31\u00b7\u03c33",
+        "\u03c31\u00b7\u03c34",
+        "\u03c32\u00b7\u03c34"
+      ],
+      [
+        "\u03c31\u00b7\u03c32\u00b7\u03c31",
+        "\u03c32\u00b7\u03c33\u00b7\u03c32",
+        "\u03c33\u00b7\u03c34\u00b7\u03c33"
+      ],
+      [
+        "\u03c31\u00b7\u03c32\u00b7\u03c33",
+        "\u03c31\u00b7\u03c33\u00b7\u03c32",
+        "\u03c32\u00b7\u03c31\u00b7\u03c33",
+        "\u03c32\u00b7\u03c33\u00b7\u03c34",
+        "\u03c32\u00b7\u03c34\u00b7\u03c33",
+        "\u03c33\u00b7\u03c32\u00b7\u03c31",
+        "\u03c33\u00b7\u03c32\u00b7\u03c34",
+        "\u03c34\u00b7\u03c33\u00b7\u03c32"
+      ],
+      [
+        "\u03c31\u00b7\u03c32\u00b7\u03c34",
+        "\u03c31\u00b7\u03c33\u00b7\u03c34",
+        "\u03c31\u00b7\u03c34\u00b7\u03c33",
+        "\u03c32\u00b7\u03c31\u00b7\u03c34"
+      ],
+      [
+        "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33",
+        "\u03c31\u00b7\u03c32\u00b7\u03c33\u00b7\u03c32",
+        "\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31",
+        "\u03c32\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31",
+        "\u03c32\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34",
+        "\u03c32\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33",
+        "\u03c32\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32",
+        "\u03c33\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32"
+      ],
+      [
+        "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34",
+        "\u03c31\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33"
+      ],
+      [
+        "\u03c31\u00b7\u03c32\u00b7\u03c33\u00b7\u03c34",
+        "\u03c31\u00b7\u03c32\u00b7\u03c34\u00b7\u03c33",
+        "\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34",
+        "\u03c31\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32",
+        "\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c34",
+        "\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33",
+        "\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34",
+        "\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+      ],
+      [
+        "\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32",
+        "\u03c33\u00b7\u03c32\u00b7\u03c34\u00b7\u03c33"
+      ],
+      [
+        "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32",
+        "\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31",
+        "\u03c32\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34\u00b7\u03c33",
+        "\u03c33\u00b7\u03c32\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32"
+      ],
+      [
+        "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c34",
+        "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33",
+        "\u03c31\u00b7\u03c32\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34",
+        "\u03c31\u00b7\u03c32\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33",
+        "\u03c31\u00b7\u03c32\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32",
+        "\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34",
+        "\u03c31\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32",
+        "\u03c31\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31",
+        "\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33",
+        "\u03c32\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34",
+        "\u03c32\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31",
+        "\u03c33\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+      ],
+      [
+        "\u03c31\u00b7\u03c32\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31",
+        "\u03c32\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32"
+      ],
+      [
+        "\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34\u00b7\u03c33",
+        "\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34",
+        "\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32",
+        "\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33"
+      ],
+      [
+        "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31",
+        "\u03c32\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32"
+      ],
+      [
+        "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34",
+        "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32",
+        "\u03c31\u00b7\u03c32\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34\u00b7\u03c33",
+        "\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32",
+        "\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34",
+        "\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34\u00b7\u03c33",
+        "\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31",
+        "\u03c32\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33",
+        "\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32",
+        "\u03c33\u00b7\u03c32\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+      ],
+      [
+        "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33",
+        "\u03c31\u00b7\u03c32\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34",
+        "\u03c31\u00b7\u03c32\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32",
+        "\u03c31\u00b7\u03c32\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31",
+        "\u03c31\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31",
+        "\u03c32\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+      ],
+      [
+        "\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33",
+        "\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32"
+      ],
+      [
+        "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34",
+        "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34\u00b7\u03c33",
+        "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31",
+        "\u03c31\u00b7\u03c32\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32",
+        "\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32",
+        "\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33",
+        "\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32",
+        "\u03c32\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32",
+        "\u03c32\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31",
+        "\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+      ],
+      [
+        "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32",
+        "\u03c31\u00b7\u03c32\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33",
+        "\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31",
+        "\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+      ],
+      [
+        "\u03c31\u00b7\u03c32\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+      ],
+      [
+        "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33",
+        "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32",
+        "\u03c31\u00b7\u03c32\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32",
+        "\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31",
+        "\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31",
+        "\u03c32\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+      ],
+      [
+        "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31",
+        "\u03c31\u00b7\u03c32\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+      ],
+      [
+        "\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32"
+      ],
+      [
+        "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32",
+        "\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+      ],
+      [
+        "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31",
+        "\u03c31\u00b7\u03c32\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+      ],
+      [
+        "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+      ]
+    ],
+    "canonical": [
+      [
+        "\u03b3"
+      ],
+      [
+        "\u03c31",
+        "\u03c32",
+        "\u03c33",
+        "\u03c34"
+      ],
+      [
+        "\u03c31\u00b7\u03c32",
+        "\u03c31\u00b7\u03c33",
+        "\u03c31\u00b7\u03c34",
+        "\u03c32\u00b7\u03c31",
+        "\u03c32\u00b7\u03c33",
+        "\u03c32\u00b7\u03c34",
+        "\u03c33\u00b7\u03c32",
+        "\u03c33\u00b7\u03c34",
+        "\u03c34\u00b7\u03c33"
+      ],
+      [
+        "\u03c31\u00b7\u03c32\u00b7\u03c31",
+        "\u03c32\u00b7\u03c33\u00b7\u03c32",
+        "\u03c33\u00b7\u03c34\u00b7\u03c33"
+      ],
+      [
+        "\u03c31\u00b7\u03c32\u00b7\u03c33",
+        "\u03c31\u00b7\u03c32\u00b7\u03c34",
+        "\u03c31\u00b7\u03c33\u00b7\u03c32",
+        "\u03c31\u00b7\u03c33\u00b7\u03c34",
+        "\u03c31\u00b7\u03c34\u00b7\u03c33",
+        "\u03c32\u00b7\u03c31\u00b7\u03c33",
+        "\u03c32\u00b7\u03c31\u00b7\u03c34",
+        "\u03c32\u00b7\u03c33\u00b7\u03c34",
+        "\u03c32\u00b7\u03c34\u00b7\u03c33",
+        "\u03c33\u00b7\u03c32\u00b7\u03c31",
+        "\u03c33\u00b7\u03c32\u00b7\u03c34",
+        "\u03c34\u00b7\u03c33\u00b7\u03c32"
+      ],
+      [
+        "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33",
+        "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34",
+        "\u03c31\u00b7\u03c32\u00b7\u03c33\u00b7\u03c32",
+        "\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31",
+        "\u03c31\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33",
+        "\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32",
+        "\u03c32\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31",
+        "\u03c32\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34",
+        "\u03c32\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33",
+        "\u03c32\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32",
+        "\u03c33\u00b7\u03c32\u00b7\u03c34\u00b7\u03c33",
+        "\u03c33\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32"
+      ],
+      [
+        "\u03c31\u00b7\u03c32\u00b7\u03c33\u00b7\u03c34",
+        "\u03c31\u00b7\u03c32\u00b7\u03c34\u00b7\u03c33",
+        "\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34",
+        "\u03c31\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32",
+        "\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c34",
+        "\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33",
+        "\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34",
+        "\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+      ],
+      [
+        "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32",
+        "\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31",
+        "\u03c32\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34\u00b7\u03c33",
+        "\u03c33\u00b7\u03c32\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32"
+      ],
+      [
+        "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c34",
+        "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33",
+        "\u03c31\u00b7\u03c32\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34",
+        "\u03c31\u00b7\u03c32\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33",
+        "\u03c31\u00b7\u03c32\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32",
+        "\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34",
+        "\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34\u00b7\u03c33",
+        "\u03c31\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32",
+        "\u03c31\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31",
+        "\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34",
+        "\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33",
+        "\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32",
+        "\u03c32\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34",
+        "\u03c32\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31",
+        "\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33",
+        "\u03c33\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+      ],
+      [
+        "\u03c31\u00b7\u03c32\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31",
+        "\u03c32\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32"
+      ],
+      [
+        "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31",
+        "\u03c32\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32"
+      ],
+      [
+        "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34",
+        "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32",
+        "\u03c31\u00b7\u03c32\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34\u00b7\u03c33",
+        "\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32",
+        "\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34",
+        "\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34\u00b7\u03c33",
+        "\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31",
+        "\u03c32\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33",
+        "\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32",
+        "\u03c33\u00b7\u03c32\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+      ],
+      [
+        "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33",
+        "\u03c31\u00b7\u03c32\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34",
+        "\u03c31\u00b7\u03c32\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32",
+        "\u03c31\u00b7\u03c32\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31",
+        "\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33",
+        "\u03c31\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31",
+        "\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32",
+        "\u03c32\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+      ],
+      [
+        "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34",
+        "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34\u00b7\u03c33",
+        "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31",
+        "\u03c31\u00b7\u03c32\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32",
+        "\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32",
+        "\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33",
+        "\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32",
+        "\u03c32\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32",
+        "\u03c32\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31",
+        "\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+      ],
+      [
+        "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32",
+        "\u03c31\u00b7\u03c32\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33",
+        "\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31",
+        "\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+      ],
+      [
+        "\u03c31\u00b7\u03c32\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+      ],
+      [
+        "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33",
+        "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32",
+        "\u03c31\u00b7\u03c32\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32",
+        "\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31",
+        "\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31",
+        "\u03c32\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+      ],
+      [
+        "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31",
+        "\u03c31\u00b7\u03c32\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+      ],
+      [
+        "\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32"
+      ],
+      [
+        "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32",
+        "\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+      ],
+      [
+        "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31",
+        "\u03c31\u00b7\u03c32\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+      ],
+      [
+        "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+      ]
+    ]
+  },
+  "coincidences": {
+    "plancherel": [
+      {
+        "pair": [
+          "\u03b3",
+          "\u03c31"
+        ],
+        "class_sizes": [
+          1,
+          4
+        ],
+        "q_root": 2.414213562373095,
+        "residual_at_metallic": "-5.5824331e-36",
+        "metallic_exact": true,
+        "metallic": "\u03b4_silver"
+      },
+      {
+        "pair": [
+          "\u03b3",
+          "\u03c31\u00b7\u03c32"
+        ],
+        "class_sizes": [
+          1,
+          6
+        ],
+        "q_root": 1.3976444598026019,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03b3",
+          "\u03c31\u00b7\u03c33"
+        ],
+        "class_sizes": [
+          1,
+          3
+        ],
+        "q_root": 1.4016769315228048,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03b3",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31"
+        ],
+        "class_sizes": [
+          1,
+          3
+        ],
+        "q_root": 1.3903883122804928,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03b3",
+          "\u03c31\u00b7\u03c32\u00b7\u03c33"
+        ],
+        "class_sizes": [
+          1,
+          8
+        ],
+        "q_root": 1.415745499442687,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03b3",
+          "\u03c31\u00b7\u03c32\u00b7\u03c34"
+        ],
+        "class_sizes": [
+          1,
+          4
+        ],
+        "q_root": 1.4163473371610054,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03b3",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33"
+        ],
+        "class_sizes": [
+          1,
+          8
+        ],
+        "q_root": 1.2315712596896917,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03b3",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34"
+        ],
+        "class_sizes": [
+          1,
+          2
+        ],
+        "q_root": 1.2340909861295688,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03b3",
+          "\u03c31\u00b7\u03c32\u00b7\u03c33\u00b7\u03c34"
+        ],
+        "class_sizes": [
+          1,
+          8
+        ],
+        "q_root": 1.2527662355001148,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03b3",
+          "\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32"
+        ],
+        "class_sizes": [
+          1,
+          2
+        ],
+        "q_root": 1.2338846154176828,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03b3",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32"
+        ],
+        "class_sizes": [
+          1,
+          4
+        ],
+        "q_root": 1.2497527799414478,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03b3",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c34"
+        ],
+        "class_sizes": [
+          1,
+          12
+        ],
+        "q_root": 1.2548619957704434,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03b3",
+          "\u03c31\u00b7\u03c32\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+        ],
+        "class_sizes": [
+          1,
+          2
+        ],
+        "q_root": 1.2381300570984948,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03b3",
+          "\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34\u00b7\u03c33"
+        ],
+        "class_sizes": [
+          1,
+          4
+        ],
+        "q_root": 1.255130989992216,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03b3",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+        ],
+        "class_sizes": [
+          1,
+          2
+        ],
+        "q_root": 1.162066388828979,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03b3",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34"
+        ],
+        "class_sizes": [
+          1,
+          10
+        ],
+        "q_root": 1.174290042306724,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03b3",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33"
+        ],
+        "class_sizes": [
+          1,
+          6
+        ],
+        "q_root": 1.161645365864961,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03b3",
+          "\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33"
+        ],
+        "class_sizes": [
+          1,
+          2
+        ],
+        "q_root": 1.1633087054645115,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03b3",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34"
+        ],
+        "class_sizes": [
+          1,
+          10
+        ],
+        "q_root": 1.1832910832739358,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03b3",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32"
+        ],
+        "class_sizes": [
+          1,
+          4
+        ],
+        "q_root": 1.1807236018451106,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03b3",
+          "\u03c31\u00b7\u03c32\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+        ],
+        "class_sizes": [
+          1,
+          1
+        ],
+        "q_root": 1.17182787811177,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03b3",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33"
+        ],
+        "class_sizes": [
+          1,
+          6
+        ],
+        "q_root": 1.1323524253374666,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03b3",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+        ],
+        "class_sizes": [
+          1,
+          2
+        ],
+        "q_root": 1.1241074539330294,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03b3",
+          "\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32"
+        ],
+        "class_sizes": [
+          1,
+          1
+        ],
+        "q_root": 1.1246429040673553,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03b3",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32"
+        ],
+        "class_sizes": [
+          1,
+          2
+        ],
+        "q_root": 1.1411756608930785,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03b3",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+        ],
+        "class_sizes": [
+          1,
+          2
+        ],
+        "q_root": 1.1426665998716294,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03b3",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+        ],
+        "class_sizes": [
+          1,
+          1
+        ],
+        "q_root": 1.1001996797252342,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31"
+        ],
+        "class_sizes": [
+          6,
+          3
+        ],
+        "q_root": 1.3848042214526743,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32",
+          "\u03c31\u00b7\u03c32\u00b7\u03c33"
+        ],
+        "class_sizes": [
+          6,
+          8
+        ],
+        "q_root": 1.4294939258657813,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32",
+          "\u03c31\u00b7\u03c32\u00b7\u03c34"
+        ],
+        "class_sizes": [
+          6,
+          4
+        ],
+        "q_root": 1.4305459807106544,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34"
+        ],
+        "class_sizes": [
+          6,
+          2
+        ],
+        "q_root": 1.0417992228902135,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32",
+          "\u03c31\u00b7\u03c32\u00b7\u03c33\u00b7\u03c34"
+        ],
+        "class_sizes": [
+          6,
+          8
+        ],
+        "q_root": 1.1165036423628272,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32",
+          "\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32"
+        ],
+        "class_sizes": [
+          6,
+          2
+        ],
+        "q_root": 1.0417282420503904,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32"
+        ],
+        "class_sizes": [
+          6,
+          4
+        ],
+        "q_root": 1.2058652577460696,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c34"
+        ],
+        "class_sizes": [
+          6,
+          12
+        ],
+        "q_root": 1.2116382554029443,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32",
+          "\u03c31\u00b7\u03c32\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+        ],
+        "class_sizes": [
+          6,
+          2
+        ],
+        "q_root": 1.1915305891743144,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32",
+          "\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34\u00b7\u03c33"
+        ],
+        "class_sizes": [
+          6,
+          4
+        ],
+        "q_root": 1.2119725061406474,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+        ],
+        "class_sizes": [
+          6,
+          2
+        ],
+        "q_root": 1.0253718680919848,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34"
+        ],
+        "class_sizes": [
+          6,
+          10
+        ],
+        "q_root": 1.0692154453588527,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32",
+          "\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33"
+        ],
+        "class_sizes": [
+          6,
+          2
+        ],
+        "q_root": 1.0256149402880044,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34"
+        ],
+        "class_sizes": [
+          6,
+          10
+        ],
+        "q_root": 1.1436419672609377,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32"
+        ],
+        "class_sizes": [
+          6,
+          4
+        ],
+        "q_root": 1.141018740265669,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32",
+          "\u03c31\u00b7\u03c32\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+        ],
+        "class_sizes": [
+          6,
+          1
+        ],
+        "q_root": 1.1315591200617305,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33"
+        ],
+        "class_sizes": [
+          6,
+          6
+        ],
+        "q_root": 1.0501099778165366,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32"
+        ],
+        "class_sizes": [
+          6,
+          2
+        ],
+        "q_root": 1.1076934522290265,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+        ],
+        "class_sizes": [
+          6,
+          2
+        ],
+        "q_root": 1.1091612790576075,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c33",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31"
+        ],
+        "class_sizes": [
+          3,
+          3
+        ],
+        "q_root": 1.3815771797198244,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c33",
+          "\u03c31\u00b7\u03c32\u00b7\u03c33"
+        ],
+        "class_sizes": [
+          3,
+          8
+        ],
+        "q_root": 1.4265903042140948,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c33",
+          "\u03c31\u00b7\u03c32\u00b7\u03c34"
+        ],
+        "class_sizes": [
+          3,
+          4
+        ],
+        "q_root": 1.427650708734829,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c33",
+          "\u03c31\u00b7\u03c32\u00b7\u03c33\u00b7\u03c34"
+        ],
+        "class_sizes": [
+          3,
+          8
+        ],
+        "q_root": 1.1076996882537808,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c33",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32"
+        ],
+        "class_sizes": [
+          3,
+          4
+        ],
+        "q_root": 1.2041544089169367,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c33",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c34"
+        ],
+        "class_sizes": [
+          3,
+          12
+        ],
+        "q_root": 1.20990313843354,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c33",
+          "\u03c31\u00b7\u03c32\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+        ],
+        "class_sizes": [
+          3,
+          2
+        ],
+        "q_root": 1.1898325244557255,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c33",
+          "\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34\u00b7\u03c33"
+        ],
+        "class_sizes": [
+          3,
+          4
+        ],
+        "q_root": 1.2102371703173458,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c33",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34"
+        ],
+        "class_sizes": [
+          3,
+          10
+        ],
+        "q_root": 1.063969764715158,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c33",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34"
+        ],
+        "class_sizes": [
+          3,
+          10
+        ],
+        "q_root": 1.1424555024194123,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c33",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32"
+        ],
+        "class_sizes": [
+          3,
+          4
+        ],
+        "q_root": 1.1398429782334771,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c33",
+          "\u03c31\u00b7\u03c32\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+        ],
+        "class_sizes": [
+          3,
+          1
+        ],
+        "q_root": 1.130411688370316,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c33",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33"
+        ],
+        "class_sizes": [
+          3,
+          6
+        ],
+        "q_root": 1.0463238531464247,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c33",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32"
+        ],
+        "class_sizes": [
+          3,
+          2
+        ],
+        "q_root": 1.106801104439667,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c33",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+        ],
+        "class_sizes": [
+          3,
+          2
+        ],
+        "q_root": 1.1082633384040288,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32"
+        ],
+        "class_sizes": [
+          8,
+          4
+        ],
+        "q_root": 1.2702467552920198,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c34"
+        ],
+        "class_sizes": [
+          8,
+          12
+        ],
+        "q_root": 1.2823117336695598,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33",
+          "\u03c31\u00b7\u03c32\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+        ],
+        "class_sizes": [
+          8,
+          2
+        ],
+        "q_root": 1.2452003954482973,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33",
+          "\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34\u00b7\u03c33"
+        ],
+        "class_sizes": [
+          8,
+          4
+        ],
+        "q_root": 1.2829241887177627,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+        ],
+        "class_sizes": [
+          8,
+          2
+        ],
+        "q_root": 1.0321434289655613,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34"
+        ],
+        "class_sizes": [
+          8,
+          10
+        ],
+        "q_root": 1.0887056683837284,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33",
+          "\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33"
+        ],
+        "class_sizes": [
+          8,
+          2
+        ],
+        "q_root": 1.0326401880157974,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34"
+        ],
+        "class_sizes": [
+          8,
+          10
+        ],
+        "q_root": 1.1598105341034226,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32"
+        ],
+        "class_sizes": [
+          8,
+          4
+        ],
+        "q_root": 1.156402578997577,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33",
+          "\u03c31\u00b7\u03c32\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+        ],
+        "class_sizes": [
+          8,
+          1
+        ],
+        "q_root": 1.1444910642237942,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33"
+        ],
+        "class_sizes": [
+          8,
+          6
+        ],
+        "q_root": 1.0562966367407305,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+        ],
+        "class_sizes": [
+          8,
+          2
+        ],
+        "q_root": 1.0209108625842647,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33",
+          "\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32"
+        ],
+        "class_sizes": [
+          8,
+          1
+        ],
+        "q_root": 1.0210463612147849,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32"
+        ],
+        "class_sizes": [
+          8,
+          2
+        ],
+        "q_root": 1.114015740730236,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+        ],
+        "class_sizes": [
+          8,
+          2
+        ],
+        "q_root": 1.115704136810443,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32"
+        ],
+        "class_sizes": [
+          2,
+          4
+        ],
+        "q_root": 1.2675531136440994,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c34"
+        ],
+        "class_sizes": [
+          2,
+          12
+        ],
+        "q_root": 1.279556382999552,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34",
+          "\u03c31\u00b7\u03c32\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+        ],
+        "class_sizes": [
+          2,
+          2
+        ],
+        "q_root": 1.2425149491720986,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34",
+          "\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34\u00b7\u03c33"
+        ],
+        "class_sizes": [
+          2,
+          4
+        ],
+        "q_root": 1.2801697239827292,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34"
+        ],
+        "class_sizes": [
+          2,
+          10
+        ],
+        "q_root": 1.0819809534400737,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34"
+        ],
+        "class_sizes": [
+          2,
+          10
+        ],
+        "q_root": 1.1583863894984732,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32"
+        ],
+        "class_sizes": [
+          2,
+          4
+        ],
+        "q_root": 1.154994887266957,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34",
+          "\u03c31\u00b7\u03c32\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+        ],
+        "class_sizes": [
+          2,
+          1
+        ],
+        "q_root": 1.1431258061676912,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33"
+        ],
+        "class_sizes": [
+          2,
+          6
+        ],
+        "q_root": 1.0520386911147326,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32"
+        ],
+        "class_sizes": [
+          2,
+          2
+        ],
+        "q_root": 1.1130296159850457,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+        ],
+        "class_sizes": [
+          2,
+          2
+        ],
+        "q_root": 1.1147108697308092,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c33\u00b7\u03c34",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32"
+        ],
+        "class_sizes": [
+          8,
+          4
+        ],
+        "q_root": 1.2463354746226925,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c33\u00b7\u03c34",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c34"
+        ],
+        "class_sizes": [
+          8,
+          12
+        ],
+        "q_root": 1.2573532433601113,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c33\u00b7\u03c34",
+          "\u03c31\u00b7\u03c32\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+        ],
+        "class_sizes": [
+          8,
+          2
+        ],
+        "q_root": 1.2224035260198711,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c33\u00b7\u03c34",
+          "\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34\u00b7\u03c33"
+        ],
+        "class_sizes": [
+          8,
+          4
+        ],
+        "q_root": 1.2579453663477635,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c33\u00b7\u03c34",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34"
+        ],
+        "class_sizes": [
+          8,
+          10
+        ],
+        "q_root": 1.148759052201875,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c33\u00b7\u03c34",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32"
+        ],
+        "class_sizes": [
+          8,
+          4
+        ],
+        "q_root": 1.1455293099061743,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c33\u00b7\u03c34",
+          "\u03c31\u00b7\u03c32\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+        ],
+        "class_sizes": [
+          8,
+          1
+        ],
+        "q_root": 1.1341200576344113,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c33\u00b7\u03c34",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32"
+        ],
+        "class_sizes": [
+          8,
+          2
+        ],
+        "q_root": 1.1067044843397236,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c33\u00b7\u03c34",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+        ],
+        "class_sizes": [
+          8,
+          2
+        ],
+        "q_root": 1.1083248617441965,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32"
+        ],
+        "class_sizes": [
+          2,
+          4
+        ],
+        "q_root": 1.2678313100260734,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c34"
+        ],
+        "class_sizes": [
+          2,
+          12
+        ],
+        "q_root": 1.279862054435958,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32",
+          "\u03c31\u00b7\u03c32\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+        ],
+        "class_sizes": [
+          2,
+          2
+        ],
+        "q_root": 1.2427505510145287,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32",
+          "\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34\u00b7\u03c33"
+        ],
+        "class_sizes": [
+          2,
+          4
+        ],
+        "q_root": 1.280476384567283,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34"
+        ],
+        "class_sizes": [
+          2,
+          10
+        ],
+        "q_root": 1.0820671158321469,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34"
+        ],
+        "class_sizes": [
+          2,
+          10
+        ],
+        "q_root": 1.158446008149295,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32"
+        ],
+        "class_sizes": [
+          2,
+          4
+        ],
+        "q_root": 1.1550515599071023,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32",
+          "\u03c31\u00b7\u03c32\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+        ],
+        "class_sizes": [
+          2,
+          1
+        ],
+        "q_root": 1.143173363779555,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33"
+        ],
+        "class_sizes": [
+          2,
+          6
+        ],
+        "q_root": 1.0520614158462824,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32"
+        ],
+        "class_sizes": [
+          2,
+          2
+        ],
+        "q_root": 1.1130518682068926,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+        ],
+        "class_sizes": [
+          2,
+          2
+        ],
+        "q_root": 1.1147339090517958,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33"
+        ],
+        "class_sizes": [
+          2,
+          6
+        ],
+        "q_root": 1.1866188345318376,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34"
+        ],
+        "class_sizes": [
+          2,
+          10
+        ],
+        "q_root": 1.215797368671765,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32"
+        ],
+        "class_sizes": [
+          2,
+          4
+        ],
+        "q_root": 1.20829927233765,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31",
+          "\u03c31\u00b7\u03c32\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+        ],
+        "class_sizes": [
+          2,
+          1
+        ],
+        "q_root": 1.1849557637567179,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33"
+        ],
+        "class_sizes": [
+          2,
+          6
+        ],
+        "q_root": 1.0693632812296574,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32"
+        ],
+        "class_sizes": [
+          2,
+          2
+        ],
+        "q_root": 1.1275984585092043,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+        ],
+        "class_sizes": [
+          2,
+          2
+        ],
+        "q_root": 1.1298807792097811,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34"
+        ],
+        "class_sizes": [
+          10,
+          10
+        ],
+        "q_root": 1.1968240277414375,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32"
+        ],
+        "class_sizes": [
+          10,
+          4
+        ],
+        "q_root": 1.1900483288440435,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34",
+          "\u03c31\u00b7\u03c32\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+        ],
+        "class_sizes": [
+          10,
+          1
+        ],
+        "q_root": 1.168598169794958,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32"
+        ],
+        "class_sizes": [
+          10,
+          2
+        ],
+        "q_root": 1.1194512096556304,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+        ],
+        "class_sizes": [
+          10,
+          2
+        ],
+        "q_root": 1.121619464004822,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34"
+        ],
+        "class_sizes": [
+          6,
+          10
+        ],
+        "q_root": 1.215024816038102,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32"
+        ],
+        "class_sizes": [
+          6,
+          4
+        ],
+        "q_root": 1.2077463646788185,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33",
+          "\u03c31\u00b7\u03c32\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+        ],
+        "class_sizes": [
+          6,
+          1
+        ],
+        "q_root": 1.1849938565570115,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33"
+        ],
+        "class_sizes": [
+          6,
+          6
+        ],
+        "q_root": 1.0741125021588571,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+        ],
+        "class_sizes": [
+          6,
+          2
+        ],
+        "q_root": 1.0273719447820082,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33",
+          "\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32"
+        ],
+        "class_sizes": [
+          6,
+          1
+        ],
+        "q_root": 1.027676469886619,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32"
+        ],
+        "class_sizes": [
+          6,
+          2
+        ],
+        "q_root": 1.1282276710341113,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+        ],
+        "class_sizes": [
+          6,
+          2
+        ],
+        "q_root": 1.1304954336140582,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34"
+        ],
+        "class_sizes": [
+          2,
+          10
+        ],
+        "q_root": 1.212834287166149,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32"
+        ],
+        "class_sizes": [
+          2,
+          4
+        ],
+        "q_root": 1.2055900507539556,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33",
+          "\u03c31\u00b7\u03c32\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+        ],
+        "class_sizes": [
+          2,
+          1
+        ],
+        "q_root": 1.1829174233122473,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33"
+        ],
+        "class_sizes": [
+          2,
+          6
+        ],
+        "q_root": 1.0685797359020022,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32"
+        ],
+        "class_sizes": [
+          2,
+          2
+        ],
+        "q_root": 1.1270603924332518,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+        ],
+        "class_sizes": [
+          2,
+          2
+        ],
+        "q_root": 1.1293185266990093,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32"
+        ],
+        "class_sizes": [
+          6,
+          2
+        ],
+        "q_root": 1.1562531291147105,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+        ],
+        "class_sizes": [
+          6,
+          2
+        ],
+        "q_root": 1.1608260773459294,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32"
+        ],
+        "class_sizes": [
+          2,
+          2
+        ],
+        "q_root": 1.1702420678509302,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+        ],
+        "class_sizes": [
+          2,
+          2
+        ],
+        "q_root": 1.1751831374265214,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32"
+        ],
+        "class_sizes": [
+          1,
+          2
+        ],
+        "q_root": 1.168738857076725,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+        ],
+        "class_sizes": [
+          1,
+          2
+        ],
+        "q_root": 1.1735713716577325,
+        "metallic": null
+      }
+    ],
+    "canonical": [
+      {
+        "pair": [
+          "\u03b3",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31"
+        ],
+        "class_sizes": [
+          1,
+          3
+        ],
+        "q_root": 3.999999999999992,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03b3",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32"
+        ],
+        "class_sizes": [
+          1,
+          4
+        ],
+        "q_root": 2.652198213756866,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03b3",
+          "\u03c31\u00b7\u03c32\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+        ],
+        "class_sizes": [
+          1,
+          2
+        ],
+        "q_root": 1.5327299888307535,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03b3",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+        ],
+        "class_sizes": [
+          1,
+          2
+        ],
+        "q_root": 1.7517612063324854,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03b3",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33"
+        ],
+        "class_sizes": [
+          1,
+          8
+        ],
+        "q_root": 4.0,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03b3",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34"
+        ],
+        "class_sizes": [
+          1,
+          10
+        ],
+        "q_root": 2.4307269800859075,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03b3",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32"
+        ],
+        "class_sizes": [
+          1,
+          4
+        ],
+        "q_root": 1.879348640772542,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03b3",
+          "\u03c31\u00b7\u03c32\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+        ],
+        "class_sizes": [
+          1,
+          1
+        ],
+        "q_root": 1.3005461372231366,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03b3",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33"
+        ],
+        "class_sizes": [
+          1,
+          6
+        ],
+        "q_root": 1.850009387018409,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03b3",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+        ],
+        "class_sizes": [
+          1,
+          2
+        ],
+        "q_root": 1.5260134971437043,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03b3",
+          "\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32"
+        ],
+        "class_sizes": [
+          1,
+          1
+        ],
+        "q_root": 1.6705311123434368,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03b3",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32"
+        ],
+        "class_sizes": [
+          1,
+          2
+        ],
+        "q_root": 1.516766244282648,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03b3",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+        ],
+        "class_sizes": [
+          1,
+          2
+        ],
+        "q_root": 1.6112568227138975,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03b3",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+        ],
+        "class_sizes": [
+          1,
+          1
+        ],
+        "q_root": 1.3702865918469347,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33"
+        ],
+        "class_sizes": [
+          4,
+          12
+        ],
+        "q_root": 3.999999999999999,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32"
+        ],
+        "class_sizes": [
+          4,
+          4
+        ],
+        "q_root": 1.6524169457349132,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+        ],
+        "class_sizes": [
+          4,
+          2
+        ],
+        "q_root": 1.3345448801221411,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34"
+        ],
+        "class_sizes": [
+          4,
+          10
+        ],
+        "q_root": 2.6521982137568685,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33"
+        ],
+        "class_sizes": [
+          4,
+          8
+        ],
+        "q_root": 1.532729988830754,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34"
+        ],
+        "class_sizes": [
+          4,
+          10
+        ],
+        "q_root": 1.7517612063324854,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32"
+        ],
+        "class_sizes": [
+          4,
+          4
+        ],
+        "q_root": 1.4328328765557559,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33"
+        ],
+        "class_sizes": [
+          4,
+          6
+        ],
+        "q_root": 1.5165241540187369,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+        ],
+        "class_sizes": [
+          4,
+          2
+        ],
+        "q_root": 1.2389825514741442,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31",
+          "\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32"
+        ],
+        "class_sizes": [
+          4,
+          1
+        ],
+        "q_root": 1.282893450104027,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32"
+        ],
+        "class_sizes": [
+          4,
+          2
+        ],
+        "q_root": 1.2965841699087828,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+        ],
+        "class_sizes": [
+          4,
+          2
+        ],
+        "q_root": 1.383262452795484,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+        ],
+        "class_sizes": [
+          4,
+          1
+        ],
+        "q_root": 1.1783012558850507,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32"
+        ],
+        "class_sizes": [
+          9,
+          4
+        ],
+        "q_root": 1.2296547476836963,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c34"
+        ],
+        "class_sizes": [
+          9,
+          16
+        ],
+        "q_root": 3.999999999999992,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34"
+        ],
+        "class_sizes": [
+          9,
+          10
+        ],
+        "q_root": 1.6524169457349132,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34"
+        ],
+        "class_sizes": [
+          9,
+          10
+        ],
+        "q_root": 1.3345448801221411,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32"
+        ],
+        "class_sizes": [
+          9,
+          4
+        ],
+        "q_root": 1.1702984757748132,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33"
+        ],
+        "class_sizes": [
+          9,
+          6
+        ],
+        "q_root": 1.2795000268485284,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32"
+        ],
+        "class_sizes": [
+          9,
+          2
+        ],
+        "q_root": 1.129428246517271,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+        ],
+        "class_sizes": [
+          9,
+          2
+        ],
+        "q_root": 1.1920252088794974,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32"
+        ],
+        "class_sizes": [
+          3,
+          4
+        ],
+        "q_root": 2.3692054070924664,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+        ],
+        "class_sizes": [
+          3,
+          2
+        ],
+        "q_root": 1.5215415660722695,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33"
+        ],
+        "class_sizes": [
+          3,
+          8
+        ],
+        "q_root": 4.0,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34"
+        ],
+        "class_sizes": [
+          3,
+          10
+        ],
+        "q_root": 2.2444993155257187,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32"
+        ],
+        "class_sizes": [
+          3,
+          4
+        ],
+        "q_root": 1.6524169457349136,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33"
+        ],
+        "class_sizes": [
+          3,
+          6
+        ],
+        "q_root": 1.6984217817218479,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+        ],
+        "class_sizes": [
+          3,
+          2
+        ],
+        "q_root": 1.3345448801221411,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31",
+          "\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32"
+        ],
+        "class_sizes": [
+          3,
+          1
+        ],
+        "q_root": 1.439222982807339,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32"
+        ],
+        "class_sizes": [
+          3,
+          2
+        ],
+        "q_root": 1.3760280252385342,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+        ],
+        "class_sizes": [
+          3,
+          2
+        ],
+        "q_root": 1.4842469347860452,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+        ],
+        "class_sizes": [
+          3,
+          1
+        ],
+        "q_root": 1.227855417420047,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c33",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34"
+        ],
+        "class_sizes": [
+          12,
+          10
+        ],
+        "q_root": 1.2296547476836963,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c33",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33"
+        ],
+        "class_sizes": [
+          12,
+          6
+        ],
+        "q_root": 1.1113718202870797,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32"
+        ],
+        "class_sizes": [
+          12,
+          4
+        ],
+        "q_root": 1.3582424784382154,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34"
+        ],
+        "class_sizes": [
+          12,
+          10
+        ],
+        "q_root": 2.3692054070924655,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34"
+        ],
+        "class_sizes": [
+          12,
+          10
+        ],
+        "q_root": 1.5215415660722704,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32"
+        ],
+        "class_sizes": [
+          12,
+          4
+        ],
+        "q_root": 1.2296547476836959,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33"
+        ],
+        "class_sizes": [
+          12,
+          6
+        ],
+        "q_root": 1.3610688942967597,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32"
+        ],
+        "class_sizes": [
+          12,
+          2
+        ],
+        "q_root": 1.1590800250606264,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+        ],
+        "class_sizes": [
+          12,
+          2
+        ],
+        "q_root": 1.2439135193285265,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33"
+        ],
+        "class_sizes": [
+          4,
+          8
+        ],
+        "q_root": 1.8862147517277,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34"
+        ],
+        "class_sizes": [
+          4,
+          10
+        ],
+        "q_root": 2.081018996624537,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33"
+        ],
+        "class_sizes": [
+          4,
+          6
+        ],
+        "q_root": 1.3639968200055037,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+        ],
+        "class_sizes": [
+          4,
+          2
+        ],
+        "q_root": 1.107955034144207,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c34",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34"
+        ],
+        "class_sizes": [
+          16,
+          10
+        ],
+        "q_root": 1.3582424784382154,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c34",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33"
+        ],
+        "class_sizes": [
+          16,
+          6
+        ],
+        "q_root": 1.1360980697886718,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+        ],
+        "class_sizes": [
+          2,
+          2
+        ],
+        "q_root": 1.9827358232665433,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34"
+        ],
+        "class_sizes": [
+          2,
+          10
+        ],
+        "q_root": 3.9899014183480874,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32"
+        ],
+        "class_sizes": [
+          2,
+          4
+        ],
+        "q_root": 2.3692054070924655,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33"
+        ],
+        "class_sizes": [
+          2,
+          6
+        ],
+        "q_root": 2.04964825337989,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+        ],
+        "class_sizes": [
+          2,
+          2
+        ],
+        "q_root": 1.5215415660722704,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31",
+          "\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32"
+        ],
+        "class_sizes": [
+          2,
+          1
+        ],
+        "q_root": 1.7974579220674736,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32"
+        ],
+        "class_sizes": [
+          2,
+          2
+        ],
+        "q_root": 1.509621813857894,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+        ],
+        "class_sizes": [
+          2,
+          2
+        ],
+        "q_root": 1.643355902949878,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+        ],
+        "class_sizes": [
+          2,
+          1
+        ],
+        "q_root": 1.3056482079667742,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31",
+          "\u03c31\u00b7\u03c32\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+        ],
+        "class_sizes": [
+          2,
+          1
+        ],
+        "q_root": 3.987201365689458,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33"
+        ],
+        "class_sizes": [
+          2,
+          6
+        ],
+        "q_root": 2.1602117973826873,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32"
+        ],
+        "class_sizes": [
+          2,
+          2
+        ],
+        "q_root": 1.25271108436653,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+        ],
+        "class_sizes": [
+          2,
+          2
+        ],
+        "q_root": 1.4489514977882236,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34"
+        ],
+        "class_sizes": [
+          8,
+          10
+        ],
+        "q_root": 1.9827358232665429,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32"
+        ],
+        "class_sizes": [
+          8,
+          4
+        ],
+        "q_root": 1.3582424784382154,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33"
+        ],
+        "class_sizes": [
+          8,
+          6
+        ],
+        "q_root": 1.508164173221791,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32"
+        ],
+        "class_sizes": [
+          8,
+          2
+        ],
+        "q_root": 1.2063208763753122,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+        ],
+        "class_sizes": [
+          8,
+          2
+        ],
+        "q_root": 1.324480785764024,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33"
+        ],
+        "class_sizes": [
+          10,
+          6
+        ],
+        "q_root": 1.2118390429899484,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33"
+        ],
+        "class_sizes": [
+          4,
+          6
+        ],
+        "q_root": 1.7885844843853484,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+        ],
+        "class_sizes": [
+          4,
+          2
+        ],
+        "q_root": 1.2798162726719045,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33"
+        ],
+        "class_sizes": [
+          1,
+          6
+        ],
+        "q_root": 2.910627926011082,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+        ],
+        "class_sizes": [
+          1,
+          2
+        ],
+        "q_root": 1.9827358232665433,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31",
+          "\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32"
+        ],
+        "class_sizes": [
+          1,
+          1
+        ],
+        "q_root": 2.7255387907552464,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32"
+        ],
+        "class_sizes": [
+          1,
+          2
+        ],
+        "q_root": 1.765026177259997,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+        ],
+        "class_sizes": [
+          1,
+          2
+        ],
+        "q_root": 1.9206501199119579,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+        ],
+        "class_sizes": [
+          1,
+          1
+        ],
+        "q_root": 1.4346283939010505,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32"
+        ],
+        "class_sizes": [
+          2,
+          2
+        ],
+        "q_root": 1.4858178682482603,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+        ],
+        "class_sizes": [
+          2,
+          2
+        ],
+        "q_root": 1.8555536022040244,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32"
+        ],
+        "class_sizes": [
+          1,
+          2
+        ],
+        "q_root": 1.3149062872711963,
+        "metallic": null
+      },
+      {
+        "pair": [
+          "\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32",
+          "\u03c31\u00b7\u03c32\u00b7\u03c31\u00b7\u03c33\u00b7\u03c32\u00b7\u03c34\u00b7\u03c33\u00b7\u03c32\u00b7\u03c31"
+        ],
+        "class_sizes": [
+          1,
+          2
+        ],
+        "q_root": 1.531613301905506,
+        "metallic": null
+      }
+    ]
+  },
+  "lp_checkpoints": [
+    {
+      "q": "1.1299785955541805",
+      "plancherel": {
+        "active_set": [
+          0
+        ],
+        "status": "ok"
+      },
+      "canonical": {
+        "active_set": [
+          0
+        ],
+        "status": "ok"
+      }
+    },
+    {
+      "q": "1.3640062921520376741022934171828190588601545899029",
+      "plancherel": {
+        "active_set": [
+          0
+        ],
+        "status": "ok"
+      },
+      "canonical": {
+        "active_set": [
+          0
+        ],
+        "status": "ok"
+      }
+    },
+    {
+      "q": "1.5980339887498948482045868343656381177203091798058",
+      "plancherel": {
+        "active_set": [
+          0
+        ],
+        "status": "ok"
+      },
+      "canonical": {
+        "active_set": [
+          0
+        ],
+        "status": "ok"
+      }
+    },
+    {
+      "q": "1.6180339887498948482045868343656381177203091798058",
+      "plancherel": {
+        "active_set": [
+          0
+        ],
+        "status": "ok",
+        "lp_full": {
+          "x_star": [
+            -1000000.0,
+            92362639.55457243,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            25637361.445425566,
+            -1000000.0,
+            -1000000.0
+          ],
+          "y0_star": -0.0,
+          "y_star": [
+            0.9999999999999949,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "active_set": [
+            0
+          ],
+          "primal_obj": 2.3352913558483124e-07,
+          "dual_obj": -0.0,
+          "duality_gap": 2.3352913558483124e-07,
+          "status": "ok"
+        }
+      },
+      "canonical": {
+        "active_set": [
+          0
+        ],
+        "status": "ok",
+        "lp_full": {
+          "x_star": [
+            -1000000.0,
+            1199948.683416927,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            5360859.280840298,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            1635051.2336306465,
+            2529935.2946278034,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            1395397.7949218964,
+            -1000000.0,
+            2149713.3738724585,
+            3321286.9371449235,
+            -1000000.0,
+            -1000000.0,
+            2479861.68380112,
+            155445.28886510947,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            687622.1591066938,
+            -1000000.0,
+            125969.01355805276,
+            1144758.252779471,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            1609110.3762704919,
+            1314356.4357103358,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            6559664.060717493,
+            4720076.126408868,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -106039.73462273125,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            465733.43933906505,
+            -1000000.0,
+            -1000000.0,
+            8080493.855160682,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            20108272.47610218,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            3806047.6244573155,
+            164149.22521959565,
+            28092288.118671283,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0
+          ],
+          "y0_star": -0.0,
+          "y_star": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "active_set": [
+            0
+          ],
+          "primal_obj": 4.423782229423523e-09,
+          "dual_obj": -0.0,
+          "duality_gap": 4.423782229423523e-09,
+          "status": "ok"
+        }
+      }
+    },
+    {
+      "q": "1.6380339887498948482045868343656381177203091798058",
+      "plancherel": {
+        "active_set": [
+          0
+        ],
+        "status": "ok"
+      },
+      "canonical": {
+        "active_set": [
+          0
+        ],
+        "status": "ok"
+      }
+    },
+    {
+      "q": "2.0161237755614949485031377792876680981449905275914",
+      "plancherel": {
+        "active_set": [
+          0
+        ],
+        "status": "ok"
+      },
+      "canonical": {
+        "active_set": [
+          0
+        ],
+        "status": "ok"
+      }
+    },
+    {
+      "q": "2.3942135623730950488016887242096980785696718753769",
+      "plancherel": {
+        "active_set": [
+          0
+        ],
+        "status": "ok"
+      },
+      "canonical": {
+        "active_set": [
+          0
+        ],
+        "status": "ok"
+      }
+    },
+    {
+      "q": "2.4142135623730950488016887242096980785696718753769",
+      "plancherel": {
+        "active_set": [
+          0
+        ],
+        "status": "ok",
+        "lp_full": {
+          "x_star": [
+            -1000000.0,
+            103945555.04581924,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            14054445.95418004,
+            -1000000.0,
+            -1000000.0
+          ],
+          "y0_star": -0.0,
+          "y_star": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "active_set": [
+            0
+          ],
+          "primal_obj": -1.1641532182693481e-10,
+          "dual_obj": -0.0,
+          "duality_gap": 1.1641532182693481e-10,
+          "status": "ok"
+        }
+      },
+      "canonical": {
+        "active_set": [
+          0
+        ],
+        "status": "ok",
+        "lp_full": {
+          "x_star": [
+            9856377.913828367,
+            1380872.6431492823,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            7805994.6609018035,
+            2086619.0671657228,
+            40385539.45110269,
+            -1000000.0,
+            2128571.755906347,
+            1831369.034758515,
+            5029052.85164961,
+            -1000000.0,
+            10809728.529222813,
+            -1000000.0,
+            315268.14177501365,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            4624499.891762052,
+            -1000000.0,
+            -1000000.0,
+            3708296.904109463,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            831602.497382631,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            15206207.657285573,
+            -1000000.0,
+            -1000000.0
+          ],
+          "y0_star": -5.765641936932952e-15,
+          "y_star": [
+            0.9999999999990957,
+            2.996837879515158e-13,
+            0.0,
+            0.0,
+            -5.2993030163141314e-14,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.1987670787677122e-13,
+            0.0,
+            -9.441777159392841e-13,
+            -1.6360774737823338e-12,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.6441028169142369e-12,
+            0.0,
+            0.0,
+            0.0,
+            -8.84068550090245e-14,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "active_set": [
+            0
+          ],
+          "primal_obj": -1.1408701539039612e-08,
+          "dual_obj": -5.765641936932952e-15,
+          "duality_gap": 1.1408695773397675e-08,
+          "status": "ok"
+        }
+      }
+    },
+    {
+      "q": "2.4342135623730950488016887242096980785696718753769",
+      "plancherel": {
+        "active_set": [
+          0
+        ],
+        "status": "ok"
+      },
+      "canonical": {
+        "active_set": [
+          0
+        ],
+        "status": "ok"
+      }
+    },
+    {
+      "q": "2.8584946000525448476806496789724730258476600811498",
+      "plancherel": {
+        "active_set": [
+          0
+        ],
+        "status": "ok"
+      },
+      "canonical": {
+        "active_set": [
+          0
+        ],
+        "status": "ok"
+      }
+    },
+    {
+      "q": "3.2827756377319946465596106337352479731256482869226",
+      "plancherel": {
+        "active_set": [
+          0
+        ],
+        "status": "ok"
+      },
+      "canonical": {
+        "active_set": [
+          0
+        ],
+        "status": "ok"
+      }
+    },
+    {
+      "q": "3.3027756377319946465596106337352479731256482869226",
+      "plancherel": {
+        "active_set": [
+          0
+        ],
+        "status": "ok",
+        "lp_full": {
+          "x_star": [
+            -1000000.0,
+            -1000000.0,
+            106799002.25669573,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            11200998.743319,
+            -1000000.0,
+            -1000000.0
+          ],
+          "y0_star": -0.0,
+          "y_star": [
+            0.9999999999999998,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "active_set": [
+            0
+          ],
+          "primal_obj": 4.656612873077393e-10,
+          "dual_obj": -0.0,
+          "duality_gap": 4.656612873077393e-10,
+          "status": "ok"
+        }
+      },
+      "canonical": {
+        "active_set": [
+          0
+        ],
+        "status": "ok",
+        "lp_full": {
+          "x_star": [
+            2774090.5411981423,
+            18172270.1678438,
+            5265347.213591314,
+            4911291.221120905,
+            17828115.356596652,
+            1202501.721198111,
+            1423219.4492631808,
+            33610098.58796303,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            8855147.288897242,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            462106.7243261448,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            1399777.3676138378,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            12096035.360387143,
+            -1000000.0,
+            -1000000.0
+          ],
+          "y0_star": -0.0,
+          "y_star": [
+            0.9999999999999717,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "active_set": [
+            0
+          ],
+          "primal_obj": 1.280568540096283e-09,
+          "dual_obj": -0.0,
+          "duality_gap": 1.280568540096283e-09,
+          "status": "ok"
+        }
+      }
+    },
+    {
+      "q": "3.3227756377319946465596106337352479731256482869226",
+      "plancherel": {
+        "active_set": [
+          0
+        ],
+        "status": "ok"
+      },
+      "canonical": {
+        "active_set": [
+          0
+        ],
+        "status": "ok"
+      }
+    },
+    {
+      "q": "3.7694218076158921714843921512332621042831333232671",
+      "plancherel": {
+        "active_set": [
+          0
+        ],
+        "status": "ok"
+      },
+      "canonical": {
+        "active_set": [
+          0
+        ],
+        "status": "ok"
+      }
+    },
+    {
+      "q": "4.2160679774997896964091736687312762354406183596115",
+      "plancherel": {
+        "active_set": [
+          0
+        ],
+        "status": "ok"
+      },
+      "canonical": {
+        "active_set": [
+          0
+        ],
+        "status": "ok"
+      }
+    },
+    {
+      "q": "4.2360679774997896964091736687312762354406183596115",
+      "plancherel": {
+        "active_set": [
+          0
+        ],
+        "status": "ok",
+        "lp_full": {
+          "x_star": [
+            20672366.291925658,
+            -1000000.0,
+            -1000000.0,
+            85782804.51941967,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            10544830.188654678,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0
+          ],
+          "y0_star": -0.0,
+          "y_star": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "active_set": [
+            0
+          ],
+          "primal_obj": 3.4924596548080444e-10,
+          "dual_obj": -0.0,
+          "duality_gap": 3.4924596548080444e-10,
+          "status": "ok"
+        }
+      },
+      "canonical": {
+        "active_set": [
+          0
+        ],
+        "status": "ok",
+        "lp_full": {
+          "x_star": [
+            1337436.261166455,
+            141601.86320270304,
+            -1000000.0,
+            -1000000.0,
+            491193.45281237905,
+            -1000000.0,
+            18522582.70050771,
+            -1000000.0,
+            -1000000.0,
+            18264916.863224044,
+            14668180.356226938,
+            18443185.46973803,
+            6568464.508304101,
+            6746733.11481735,
+            6147857.405120142,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -546477.6592463754,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            13427170.236053834,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            40398.072673019145,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            1746758.3554001118
+          ],
+          "y0_star": -0.0,
+          "y_star": [
+            0.9999999999999849,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "active_set": [
+            0
+          ],
+          "primal_obj": 0.0,
+          "dual_obj": -0.0,
+          "duality_gap": 0.0,
+          "status": "ok"
+        }
+      }
+    },
+    {
+      "q": "4.2560679774997896964091736687312762354406183596115",
+      "plancherel": {
+        "active_set": [
+          0
+        ],
+        "status": "ok"
+      },
+      "canonical": {
+        "active_set": [
+          0
+        ],
+        "status": "ok"
+      }
+    },
+    {
+      "q": "4.714325190533520856017264457250720506794089220217",
+      "plancherel": {
+        "active_set": [
+          0
+        ],
+        "status": "ok"
+      },
+      "canonical": {
+        "active_set": [
+          0
+        ],
+        "status": "ok"
+      }
+    },
+    {
+      "q": "5.1725824035672520156253552457701647781475600808224",
+      "plancherel": {
+        "active_set": [
+          0
+        ],
+        "status": "ok"
+      },
+      "canonical": {
+        "active_set": [
+          0
+        ],
+        "status": "ok"
+      }
+    },
+    {
+      "q": "5.1925824035672520156253552457701647781475600808224",
+      "plancherel": {
+        "active_set": [
+          0
+        ],
+        "status": "ok",
+        "lp_full": {
+          "x_star": [
+            17745830.688580696,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            88592929.51273634,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            10661240.798682977,
+            -1000000.0,
+            -1000000.0
+          ],
+          "y0_star": -0.0,
+          "y_star": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "active_set": [
+            0
+          ],
+          "primal_obj": -2.3283064365386963e-10,
+          "dual_obj": -0.0,
+          "duality_gap": 2.3283064365386963e-10,
+          "status": "ok"
+        }
+      },
+      "canonical": {
+        "active_set": [
+          0
+        ],
+        "status": "ok",
+        "lp_full": {
+          "x_star": [
+            -1000000.0,
+            19825660.92820125,
+            3378659.517476884,
+            6705836.866354201,
+            23038236.392929446,
+            -1000000.0,
+            -1000000.0,
+            4891255.534670887,
+            -1000000.0,
+            -1000000.0,
+            7691126.833437696,
+            44803894.50727212,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -649302.8904055959,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            -1000000.0,
+            1314633.3100621612
+          ],
+          "y0_star": -0.0,
+          "y_star": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "active_set": [
+            0
+          ],
+          "primal_obj": -2.561137080192566e-09,
+          "dual_obj": -0.0,
+          "duality_gap": 2.561137080192566e-09,
+          "status": "ok"
+        }
+      }
+    },
+    {
+      "q": "5.2125824035672520156253552457701647781475600808224",
+      "plancherel": {
+        "active_set": [
+          0
+        ],
+        "status": "ok"
+      },
+      "canonical": {
+        "active_set": [
+          0
+        ],
+        "status": "ok"
+      }
+    },
+    {
+      "q": "5.4925824035672520156253552457701647781475600808224",
+      "plancherel": {
+        "active_set": [
+          0
+        ],
+        "status": "ok"
+      },
+      "canonical": {
+        "active_set": [
+          0
+        ],
+        "status": "ok"
+      }
+    }
+  ],
+  "lp_active_set_constant": {
+    "plancherel": true,
+    "canonical": true
+  },
+  "S_sets": {
+    "S(5)_plancherel": [
+      "\u03b4_silver"
+    ],
+    "S(5)_canonical": []
+  },
+  "metallic_ladder": {
+    "\u03c6": "1.61803398874989484820458683437",
+    "\u03b4_silver": "2.41421356237309504880168872421",
+    "\u03b4_bronze": "3.30277563773199464655961063374",
+    "\u03b4_4": "4.23606797749978969640917366873",
+    "\u03b4_5": "5.19258240356725201562535524577"
+  },
+  "limitations": [
+    "LP solved at checkpoints (metallic points \u00b1 0.02 and interval midpoints), not on a dense grid \u2014 justified by the n=3/n=4 exact-Gram constancy result this re-tests.",
+    "coincidence roots f64-bisected; metallic candidates re-verified at 40-dps mpfr (plancherel convention)."
+  ],
+  "runtime_seconds": 123.9
+}
