@@ -8,6 +8,29 @@ since 2026-06-01 (~150 commits, 8+ merged PRs).
 **Status of this doc.** Strategic — points at active ledgers, doesn't
 duplicate them.
 
+## Sibling coordination — overlapping strategic workplans (2026-06-09)
+
+This doc was authored in the same ~30-minute window as three other
+strategic workplans from sibling Claude sessions:
+
+- **#2034** — `claude/workplan-strategic-review-2026-06-09` — generic
+  strategic review post-prior-session; covers Lean v4.24.0 + Option-E
+  Phase 2 + α_EM Habiro + sidecar staleness.
+- **#2035** — `claude/week-status-workplan-2026-05-31` — cross-axis
+  status synthesizing 222 commits + 20 open PRs into 8 strategic axes.
+- **#2036** — `claude/qbeta-precision-thread-workplan-2026-06-09` — Q_β
+  precision-thread review with α_EM #1521 transferable-bridge findings.
+
+**This doc's distinct contribution:** the **Casimir-axis status
+reconciliation** — none of the sibling workplans address the
+`ξ_2 = 0` retraction (`2026-05-31-casimir-xi-2-reconciliation.md`) or
+explicitly park Casimir behind N_⊙ construction.
+
+**For cross-axis priorities**, defer to #2034 / #2035 / #2036; this
+doc's Tier-1..5 list is the **Casimir-axis-aware** view from one
+returning session. Where they disagree, the cross-axis PRs win on
+breadth; this PR wins on the Casimir specifics.
+
 ## TL;DR
 
 - Casimir conjecture (PR #1540) is **merged**, but `ξ_2 = 0` closure was
