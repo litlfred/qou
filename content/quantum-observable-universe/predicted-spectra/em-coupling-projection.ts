@@ -17,7 +17,7 @@ export default proposition({
     "descent-decomposition",
     "exceptional-divisor",
   ],
-  lean: { ref: "qou:QOU.Archimedean.em_coupling_projection",
+  lean: { ref: "qou:QOU.Archimedean.isEmCoupling_iff",
     validation: "not_checked",
   },
   uses: ["thm:em-spectral-completeness"],
