@@ -1,23 +1,23 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-09T21:18:28.327189+00:00",
-  "commitSha": "26ec5e49acf382a6c489fd37326bdb2d278ee574",
+  "computedAt": "2026-06-09T21:20:06.012709+00:00",
+  "commitSha": "dbcec3185f951a62029bd774f1b8240db630039d",
   "assertions": [
     {
       "name": "all second-row angles (sp/sp²/sp³, single+double bonds) within 1°",
-      "computed": false,
+      "computed": true,
       "expected": true,
-      "passed": false,
+      "passed": true,
       "source": "one q^ℓ rule + domain counts + hybridisation base, no fit"
     }
   ],
-  "allPassed": false,
-  "durationMs": 6622,
+  "allPassed": true,
+  "durationMs": 5586,
   "computation": "molecular-angle-master-table",
   "scriptFile": "molecular_angle_master_table.py",
-  "scriptHash": "054bb2104a67",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "f57a47f11b90",
+  "scriptCommitSha": "ed9f4834494266ae065f23654a2f0824c62e24dd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -56,9 +56,9 @@
         "lones": "1× e⁻(ℓ3,q³)",
         "active_set": "{s,p}",
         "base": "sp³ 109.47°",
-        "predicted_deg": 108.21927508729179,
+        "predicted_deg": 106.88023340839622,
         "observed_deg": 107.0,
-        "miss_deg": 1.2192750872917912,
+        "miss_deg": -0.11976659160377778,
         "angle": "X–A–X"
       },
       "H2O": {
@@ -68,9 +68,9 @@
         "lones": "2× e⁻(ℓ3,q³)",
         "active_set": "{s,p}",
         "base": "sp³ 109.47°",
-        "predicted_deg": 107.07457434139722,
+        "predicted_deg": 104.71945838553091,
         "observed_deg": 104.5,
-        "miss_deg": 2.5745743413972235,
+        "miss_deg": 0.21945838553091335,
         "angle": "X–A–X"
       },
       "C2H4": {
@@ -110,6 +110,6 @@
         "angle": "X–A–X"
       }
     },
-    "second_row_max_abs_miss_deg": 2.5745743413972235
+    "second_row_max_abs_miss_deg": 0.6321900090670738
   }
 }
