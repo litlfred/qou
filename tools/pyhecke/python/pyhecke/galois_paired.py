@@ -22,9 +22,12 @@ For the Markov trace assembly:
 So **only the self-conjugate partitions need explicit character
 computation**; everything else uses the closed-form short-circuit.
 
-For partitions of n=3, n=4, n=5, etc., self-conjugate partitions form
-roughly √(p(n)) of the lattice, so this is approximately a √(2)-fold
-speedup at small n and converges to ~2× speedup at larger n.
+Self-conjugate partitions (those fixed by transposition) are
+comparatively rare — their count is the number of partitions of n into
+distinct odd parts, which grows far more slowly than p(n).  The compute
+reduction is therefore p(n) / sc(n), which **grows with n** rather than
+converging to a constant: measured at 3× (n=3), 7× (n=5), 15× (n=7),
+21× (n=10), and 44× (n=15).  See `pair_shortcircuit_speedup`.
 
 This module provides:
   - `transpose_pairs(n)`: enumerate partitions of n grouped into
@@ -166,7 +169,25 @@ def markov_trace_sigma_pair_shortcircuit(
       y_λ · χ^λ + y_λ' · χ^λ'
       = y_λ · (χ^λ + χ^λ')         (since y_λ = y_λ' by hook symmetry)
       = y_λ · dim(λ) · (q − q⁻¹)
+
+    Raises:
+      ValueError if `n` is not an int ≥ 2.
+      TypeError  if `q_minus_qinv` is not int/float/MetallicNumber, or if
+                 either callback is not callable.
     """
+    if not isinstance(n, int) or n < 2:
+        raise ValueError(f"strand count n must be an int ≥ 2, got {n!r}")
+    if not isinstance(q_minus_qinv, (int, float, MetallicNumber)):
+        raise TypeError(
+            "q_minus_qinv must be int, float, or MetallicNumber, got "
+            f"{type(q_minus_qinv).__name__}"
+        )
+    if not callable(y_lambda):
+        raise TypeError("y_lambda must be callable: Partition -> Numeric")
+    if not callable(chi_lambda_sigma):
+        raise TypeError(
+            "chi_lambda_sigma must be callable: Partition -> Numeric"
+        )
     pairs, sc = transpose_pairs(n)
 
     # Initialize accumulator at zero of correct type
@@ -206,6 +227,8 @@ def pair_shortcircuit_speedup(n: int) -> dict:
     circuit avoids it for the paired partitions, computing it only for
     self-conjugate ones.
     """
+    if not isinstance(n, int) or n < 2:
+        raise ValueError(f"strand count n must be an int ≥ 2, got {n!r}")
     pairs, sc = transpose_pairs(n)
     total_partitions = 2 * len(pairs) + len(sc)
     expensive_calls_naive = total_partitions
