@@ -173,8 +173,9 @@ def main() -> int:
     #   sym(Δtr_M)(q_proton) ≈ -1.091e-2 (Re? Im?)
     #   antisym(Δtr_M)(q_proton) ≈ -1.312e-1 (Im? Re?)
     print("--- Candidate 3: c_3 = Re or Im of complex Habiro element ---")
-    sym_proton = -float(mp.mpf("0.01091170"))
-    antisym_proton = -float(mp.mpf("0.13116116"))
+    # Keep substrate precision — was flagged by compute_no_mpf_to_float_cast.
+    sym_proton = -mp.mpf("0.01091170")
+    antisym_proton = -mp.mpf("0.13116116")
     delta_tr_proton = sym_proton + antisym_proton
     print(f"  sym(Δtr_M) at q_proton:    {sym_proton:.6f}")
     print(f"  antisym(Δtr_M) at q_proton: {antisym_proton:.6f}")

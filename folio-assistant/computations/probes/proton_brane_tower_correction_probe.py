@@ -183,7 +183,7 @@ def main():
         for label, val in candidates:
             if val == 0:
                 continue
-            err = float(mp.fabs(d / val - 1))
+            err = mp.fabs(d / val - 1)
             if err < best_err:
                 best_err = err
                 best_match = f"d_{k} ≈ {label} ({err*100:.2f}%)"
@@ -216,7 +216,7 @@ def main():
 
     wb.add_assertion(
         "correction_is_small",
-        computed=float(mp.fabs(correction)),
+        computed=mp.fabs(correction),
         expected=0.0,
         tolerance=1e-4,
     )

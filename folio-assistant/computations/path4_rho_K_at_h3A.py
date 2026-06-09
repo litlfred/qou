@@ -129,7 +129,7 @@ def main() -> int:
         parts = partitions(n0)
         dims = [(p, dim_q_partition(p)) for p in parts]
         # Sort by magnitude
-        dims.sort(key=lambda x: float(mp.fabs(x[1])), reverse=True)
+        dims.sort(key=lambda x: mp.fabs(x[1]), reverse=True)
         max_p, max_d = dims[0]
         ratio = float(rho_k_codata / max_d) if max_d != 0 else float("inf")
         results.append({
@@ -148,7 +148,7 @@ def main() -> int:
         n0 = 3 * A
         parts = partitions(n0)
         dims = [(p, dim_q_partition(p)) for p in parts]
-        dims.sort(key=lambda x: float(mp.fabs(x[1])), reverse=True)
+        dims.sort(key=lambda x: mp.fabs(x[1]), reverse=True)
         print(f"\n    {atom} (n_0 = {n0}):")
         for p, d in dims[:5]:
             print(f"      λ = {p}, dim_q = {mp.nstr(d, 10)}")
