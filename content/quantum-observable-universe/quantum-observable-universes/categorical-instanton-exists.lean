@@ -1,11 +1,13 @@
-import QOU.Basic
+import QOU.QuantumObservableUniverse.Instanton
+import Mathlib.CategoryTheory.Preadditive.Basic
 
 
 /-!
 # QOU.CategoricalInstanton.exists — existence of categorical instantons
 
-Trivial witness: the zero connection has F = 0 (self-dual).
-Non-trivial witness: BPST descent on SU_q(2)-bundle.
+There exists a categorical connection whose curvature is `⋆_q`-self-dual:
+the **zero-instanton** `F_∇ = 0`.  In a preadditive category the zero
+curvature is self-dual for any Hodge involution, since `0 ≫ ⋆_q = 0`.
 
 LaTeX: `\label{prop:categorical-instanton-exists}`
 
@@ -15,32 +17,36 @@ LaTeX: `\label{prop:categorical-instanton-exists}`
 - [atiyah1978] https://doi.org/10.1098/rspa.1978.0143
 -/
 
+open scoped CategoryTheory CategoryTheory.MonoidalCategory
+
 namespace QOU
+
+universe u v
 
 /-- **Existence of categorical instantons.**
 
-    For any `FrobeniusHopfData C`, a `CategoricalInstanton fh` term
-    exists — the trivial connection F = 0 is self-dual, providing
-    the zero-instanton witness. -/
+    In a preadditive monoidal category `C`, for any Frobenius–Hopf object and
+    any `q`-Hodge involution `⋆_q` on `A`, there exists a
+    `CategoricalInstanton fh` whose curvature is the **zero** morphism — the
+    zero-instanton `F_∇ = 0`, which is `⋆_q`-self-dual because `0 ≫ ⋆_q = 0`.
+
+    This replaces the earlier `Nonempty (CategoricalInstanton fh)` proved by an
+    *identity*-curvature witness (whose self-duality reduced to the trivial
+    `𝟙 ≫ 𝟙 = 𝟙`): the existential now pins the witness to the genuine
+    `F_∇ = 0` zero-instanton named in [`prop:categorical-instanton-exists`],
+    so self-duality is the real `0 ≫ ⋆_q = 0`. -/
 -- Ref: [atiyah1978]
 theorem CategoricalInstanton.exists
     {C : Type u} [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C]
-    (fh : @FrobeniusHopfData C _ _) :
-    Nonempty (@CategoricalInstanton C _ _ fh) :=
-  -- Trivial witness: identity connection / curvature, identity Hodge
-  -- star (involutive: 𝟙 ≫ 𝟙 = 𝟙). Self-duality reduces to
-  -- 𝟙 ≫ 𝟙 = 𝟙 via Category.comp_id.
-  -- The intended BPST descent witness on SU_q(2) is sharper but
-  -- requires the gauge-bundle infrastructure not yet in Mathlib.
-  -- Ref: [atiyah1978]
-  ⟨{ connection := 𝟙 fh.obj
-     curvature := 𝟙 fh.obj
-     hodge :=
-       { star := 𝟙 fh.obj
-         star_sq := by simp }
+    [CategoryTheory.MonoidalCategory C] [CategoryTheory.Preadditive C]
+    (fh : FrobeniusHopfData C)
+    (hodge : CatHodgeInvolution fh.obj) :
+    ∃ I : CategoricalInstanton fh, I.curvature = 0 :=
+  ⟨{ connection := 0
+     curvature := 0
+     hodge := hodge
      self_dual := by
-       show 𝟙 fh.obj ≫ 𝟙 fh.obj = 𝟙 fh.obj
-       simp }⟩
+       -- `IsSelfDual 0` is `0 ≫ ⋆_q = 0`, which holds by `zero_comp`.
+       simp only [CatHodgeInvolution.IsSelfDual, CategoryTheory.Limits.zero_comp] }, rfl⟩
 
 end QOU
