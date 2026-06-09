@@ -52,8 +52,10 @@ theorem CategoricalDirac.unique
   obtain ⟨c₂, q₂, qi₂, _, n₂, r₂, d₂, hf₂⟩ := D₂
   simp only at hconn hq hqinv hnabla hreeb
   subst hconn hq hqinv hnabla hreeb
-  -- `dirac` is forced by the formula from the (now shared) data.
-  simp only [CategoricalDiracOperator.mk.injEq]
-  exact ⟨rfl, rfl, rfl, rfl, rfl, hf₁.trans hf₂.symm⟩
+  -- `dirac` is forced by the formula from the (now shared) data; the two
+  -- remaining fields (`q_unit`, `dirac_formula`) are proof-irrelevant.
+  have hd : d₁ = d₂ := hf₁.trans hf₂.symm
+  subst hd
+  rfl
 
 end QOU
