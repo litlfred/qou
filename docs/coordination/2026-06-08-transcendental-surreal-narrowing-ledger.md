@@ -90,9 +90,12 @@ rank-≥2 / `ε^ω` candidate. It is **settled** by the two-tower reading
 
 - **Mass / GS tower collapses at E₁** ([`prop:spectral-sequence-collapse`](../../content/quantum-observable-universe/mass-theory/spectral-sequence-collapse.md),
   Whitehead / semisimple) → finite-order in `ε` → rank-1 → surreal-free. Production
-  never needs surreals. **Now confirmed rigorous (2026-06-09): the Lean sibling is
-  sorry-free** (Whitehead in axiom form via `-- Ref: [cartan1956]`), so the
-  finite-page leg is *proved*, not merely asserted — see
+  never needs surreals. **Rigorous by a standard cited result (2026-06-09):** the
+  collapse is Whitehead's lemma (`HH^{≥1}=0` for semisimple `A`, Cartan–Eilenberg);
+  the Lean sibling is sorry-free and encodes the structure (`WhiteheadHH` as a
+  *cited axiom-class* via `-- Ref: [cartan1956]`, since Mathlib has no Hochschild
+  framework), so the finite-page leg is settled *by citation*, **not** a
+  from-scratch Lean proof — see
   [finite-page-vs-perpetual settle](../audits/2026-06-09-finite-page-vs-perpetual-settle.md).
 - **Volume / lifting tower is genuinely perpetual** (`motivic-perpetual-obstruction`,
   `cs-evaluation-faithfulness`: `κ_n≠0 ∀n`) — the real `ε^ω` structure — **but
