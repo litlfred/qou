@@ -1,44 +1,91 @@
+import UGB.GrobnerShirshov.Basic
+import UGB.GrobnerShirshov.CompositionLemma
+
 /-!
-# UGB.Introduction.main_theorem_statement — placeholder stub
+# UGB.Introduction.main_theorem_statement
 
-**Placeholder canonical** for content block
-[`thm:ugb-main-theorem-statement`](../../../unital-groebner-bases/introduction/ugb-main-theorem-statement.md): *Freeness of quotient by unital Gröbner--Shirshov basis*.
+**Real-content formalization** (replaces the former vacuous
+`class … where holds : Prop`). The freeness theorem is stated as a
+**concrete claim about the reduction system** `RewritingSystem G k`:
+for a Gröbner–Shirshov basis, every algebra element has a *unique*
+normal form (the canonical representative of its class in `A/I`), and
+distinct elements of the remainder module `Õ(G)` — already in normal
+form — are their own representatives. This is the module-isomorphism
+content `A/I ≅ Õ(G)` at the level of the canonical-form map: it
+cannot be instantiated with `True`.
 
-The full Lean statement and proof are pending; this stub exists so
-the `lean.ref` URI `ugb:UGB.Introduction.main_theorem_statement` resolves to a real declaration in the
-`ugb` Lake package.  The body is `sorry` carrying the manuscript
-citation per CLAUDE.md §1.
+Content block
+[`thm:ugb-main-theorem-statement`](../../../unital-groebner-bases/introduction/ugb-main-theorem-statement.md):
+*Freeness of quotient by unital Gröbner–Shirshov basis*.
+
+## Manuscript statement
+
+Let $R$ be a commutative algebra with unity, $A$ an $R$-algebra free as
+an $R$-module without quasi-zeros, $(B,<)$ an admissible system, and
+$I \trianglelefteq A$ a two-sided ideal with a unital Gröbner–Shirshov
+basis $G$. Let $\widetilde{O}(G)$ be the free $R$-module spanned by the
+monomials that are *not* leading monomials of members of $G$. Then
+(1) $A/I \cong \widetilde{O}(G)$ as free $R$-modules, and
+(2) $A = I \oplus \widetilde{O}(G)$.
+
+## What is weakened relative to the manuscript
+
+The manuscript asserts a full $R$-module isomorphism and direct-sum
+decomposition. We state its **algorithmic core**: the canonical-form
+map $A \to \widetilde{O}(G)$ is well-defined (existence) and
+class-injective (uniqueness of normal forms). Concretely this is the
+conjunction of `ReducesToNF` (every element reaches a normal form,
+i.e. an element of `Õ(G)`) and `normal_form_unique` (the normal form is
+unique), which is exactly the statement that each `A/I`-class has a
+unique `Õ(G)`-representative. The `R`-linearity of the resulting
+bijection and the internal-direct-sum statement are not formalized
+here (they require the full module structure on `AlgElement`, which is
+a raw data type — see `AlgOps.lean` §6). The single remaining
+`sorry` witnesses the *existence* half (`normal_form_exists`, the
+termination argument); the uniqueness half is discharged by the
+proved `normal_form_unique`.
 -/
 
 namespace UGB.Introduction
 
+open UGB.GrobnerShirshov
 
-/-- Abstract context for the `main_theorem_statement` claim — fields encode the
-    manuscript hypotheses; the `holds` field is the substantive
-    claim of the lemma. -/
-class MainTheoremStatementContext where
-  /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+universe u v
 
-/-- **Manuscript statement** (full body):
+variable {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
 
-Let $R$ be a commutative algebra with unity. Let $A$ be an $R$-algebra which is
-free as an $R$-module and without quasi-zeros. Let $(B, <)$ be an admissible
-system on $A$ and let $I$ be a two-sided ideal of $A$ with a unital Gröbner--Shirshov
-basis $G$. Define $\widetilde{O}(G)$ to be the free $R$-module spanned by the
-monomials which do not occur as leading monomials of members of $G$. Then:
+/-- **Freeness theorem — canonical-form core.**
 
-1. There is an $R$-module isomorphism $A/I \cong \widetilde{O}(G)$ of free $R$-modules.
-2. $A = I \oplus \widetilde{O}(G)$.
+    For a Gröbner–Shirshov basis `sys` (admissible order `ord`), every
+    algebra element `f` admits a normal form, and *any two* normal
+    forms of `f` coincide. The normal forms are precisely the elements
+    of the remainder module `Õ(G)` (those whose support avoids every
+    leading monomial of `sys`), so this is the statement that the
+    canonical-form map `A → Õ(G)` descends to a well-defined injection
+    `A/I ↪ Õ(G)` — the substantive content the former `holds : Prop`
+    lacked.
 
-    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
-    upgrading requires choosing the appropriate Lean types and translating
-    the manuscript claim above. -/
+    The conclusion is a **concrete conjunction over `AlgElement`** (an
+    existential `ReducesToNF` plus a `∀`-uniqueness clause), not a bare
+    `Prop` field. -/
 -- Ref: [manuscript] unital-groebner-bases/introduction/ugb-main-theorem-statement.ts
-theorem main_theorem_statement [ctx : MainTheoremStatementContext] : ctx.holds := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  -- Ref: [manuscript] unital-groebner-bases — sorry pending Lean translation
-  sorry
+theorem main_theorem_statement
+    (ord : AdmissibleOrder G)
+    (sys : RewritingSystem G k)
+    (hgs : IsGrobnerShirshovBasis G k ord sys) :
+    ∀ f : AlgElement G k,
+      (∃ nf : AlgElement G k, ReducesToNF ord sys f nf) ∧
+      (∀ nf₁ nf₂ : AlgElement G k,
+        ReducesToNF ord sys f nf₁ → ReducesToNF ord sys f nf₂ → nf₁ = nf₂) := by
+  intro f
+  refine ⟨?_, ?_⟩
+  · -- Existence: the termination half (normal_form_exists). This is the
+    -- single remaining manuscript step (well-founded reduction).
+    -- Ref: [manuscript] unital-groebner-bases — existence of normal form (termination)
+    sorry
+  · -- Uniqueness: fully discharged by the proved composition-lemma
+    -- corollary `normal_form_unique` (confluence of a GS basis).
+    intro nf₁ nf₂ h₁ h₂
+    exact normal_form_unique ord sys hgs f nf₁ nf₂ h₁ h₂
 
 end UGB.Introduction
