@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-09T17:25:47.786305+00:00",
-  "commitSha": "0999c5da8c1ec59ee6abac21c868ef3582c5641d",
+  "computedAt": "2026-06-09T17:35:53.401473+00:00",
+  "commitSha": "23f5e499ce0e09d71b8265913d7a8b787e93f43b",
   "assertions": [
     {
       "name": "nuclide_chart_fully_accounted",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 17,
+  "durationMs": -1781019027775,
   "computation": "all-nuclides-sdp-admissibility",
   "scriptFile": "all_nuclides_sdp_admissibility.py",
-  "scriptHash": "2c6d81e9eae9",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "fc5a47df90a4",
+  "scriptCommitSha": "23f5e499ce0e09d71b8265913d7a8b787e93f43b",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
