@@ -318,12 +318,35 @@ replaced by genuinely type-checked statements.
   `QuantumCharacteristicClass.zero` had a non-synthesising default,
   dropped as redundant).
 
+**Convergence with the `main` proof-integrity sweep (hybrid).** While
+this branch was in flight, a parallel sweep landed on `main`
+(`2864d683` dirac, `e0c6bb38` lagrangian, `a830e89b` fourier+laplace)
+that remediated 3 of the same files with a *stronger* template:
+strengthen the structure itself over an `R`-linear category and **pin
+the derived morphism with a `*_formula` law field**, so uniqueness is a
+genuine *determination*, not extensionality over free fields. Those
+files, however, still referenced content-only structures (auto-bound →
+unchecked). The two approaches were merged as a **hybrid**: `main`'s
+strengthened statements + this branch's library relocation, so the
+determination proofs genuinely type-check. Concretely: dirac and
+lagrangian keep `main`'s structures/proofs verbatim, relocated into
+`QDifferentialGeometry` and re-imported; `CategoricalQConnection` was
+upgraded to the same law-field template (`qinv` + `q_unit` +
+`nabla_q_formula`); laplace keeps `main`'s conditional-on-`transform`
+statement with this branch's import.
+
 **Outcome — axiom accounting for the 15:**
 
-- **13 now PROVED, zero axioms** (extensionality / determination /
-  degeneracy): hodge-star, instanton, connection, q-ext-deriv, dirac,
-  lagrangian, fourier, laplace, q-connection, char-classes, hadron,
-  q-resolvent, q-heat.
+- **13 now PROVED, zero axioms**:
+  - *law-field determinations* (morphism forced by a `*_formula` /
+    witness field): dirac, lagrangian, q-connection, laplace
+    (conditional on shared `transform`), q-resolvent (via
+    `inverse_witness` + surjectivity), q-heat (via `evolves`);
+  - *extensionality / degeneracy at the level the structure supports*
+    (the structures carry no law field yet — strengthening them is the
+    recorded open refactor): hodge-star, instanton, connection
+    (Leibniz determination under `Epi fh.mul`), q-ext-deriv, fourier
+    (+ `project_const` degeneracy lemma), char-classes, hadron.
 - **2 honest §3b-cond conditional axioms** (named, cited, *not*
   `Subsingleton`): `FrobeniusHopfData.frobeniusForm_unique_axiom`
   (up-to-invertible-scalar on a simple object, Schur, [kock2004]) and
@@ -331,10 +354,11 @@ replaced by genuinely type-checked statements.
   [kassel1995]).
 
 Every `*-unique.lean` was verified by compiling it directly with the
-toolchain `lean` binary against the built library oleans (all exit 0).
+toolchain `lean` binary against the built library oleans (all 15
+exit 0, re-run after the rebase onto the proof-integrity sweep).
 Declaration names are unchanged, so `.ts` `lean.ref`s did not churn.
-Class B §4a is closed by commit `4384c1eb` (terminal-resolution
-tautological CODATA bounds de-axiomatised).
+Class B §4a is closed by the terminal-resolution commit
+(tautological CODATA bounds de-axiomatised).
 
 ## 8. Method / reproduction
 
