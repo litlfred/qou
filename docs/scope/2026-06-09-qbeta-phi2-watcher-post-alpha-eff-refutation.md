@@ -1,8 +1,8 @@
-# Φ₂ watcher (post-α_eff-refutation) — what remains pinned, what doesn't
+# Φ₂ scope sync (post-α_eff-refutation) — what remains pinned, what doesn't
 
-**Status:** watcher, NOT a new attack. Tracks PRs #1871 / #1900 + on-main refutation `89616febbe` against the standing scope doc.
-**Owner direction:** 2026-06-09 session — user confirmed engagement with Φ₂ despite cluster sprawl. This is a scope-only follow-up (no probe code, no new constraints) per the cluster-sprawl anti-pattern guard.
-**Disciplines:** *corpus-grep* (refutation commit `89616febbe` localised), *coordinate* (no file overlap with active PRs — different filename, scope-only doc).
+**Status:** post-merge scope sync. All three cited PRs (#1887 / #1871 / #1900) merged to main 2026-06-05/06; this doc is the constraint-survival record for the next agent to read, NOT an active watch.
+**Owner direction:** 2026-06-09 session — engagement with Φ₂ work confirmed despite cluster-sprawl risk. This is a scope-only follow-up (no probe code, no new constraints).
+**Disciplines:** *corpus-grep* (refutation commit `89616febbe` localised), *coordinate* (no file overlap; new filename).
 
 ---
 
@@ -16,7 +16,7 @@ opens with a strong bridge claim (§1):
 > block is missing: `Φ₁ = √2` (exact), and the open `Φ₂` is the kernel's leading
 > coefficient up to `√2`.
 
-This claim was **REFUTED** by `89616febbe` (2026-06-06):
+This bridge was **REFUTED** by `89616febbe` (2026-06-06):
 
 > `cos(α-u/2)(1-u²)` gives `c_2 = −9/8` STRUCTURALLY (α-independent, both anchors),
 > vs the proved #1887 `c_2 = −1` (leading phase 3/2 vs √2). No single ladder
@@ -24,57 +24,65 @@ This claim was **REFUTED** by `89616febbe` (2026-06-06):
 > on-main `α = (z−1)h/2` is the single-wrap angle of the N=2 APPROXIMATION, NOT
 > the proved ladder phase; `Φ₂` does NOT follow from it by reparametrization.**
 
-A future agent reading the standing scope doc may re-derive constraint 4
-(`a_1 = √2·Φ₂`) on the now-stale bridge assumption. This watcher doc pins which
-constraints from the standing scope survive and which need re-derivation.
+A future agent reading the standing scope doc could re-derive constraint 4
+(`a_1 = √2·Φ₂`) on the now-stale bridge assumption. This doc pins which
+constraints survive verbatim, which survive with updated justification, and
+which (if any) need outright re-derivation.
 
-## Standing scope doc — constraint survival after `89616febbe`
+## Constraint survival after `89616febbe`
 
 | # | Constraint | Standing | Post-refutation | Why |
 |---|------------|----------|-----------------|-----|
 | 1 | Depth ≥ 2 unconditional | ✓ | ✓ holds | Independent of α_eff identification |
 | 2 | `a_2 = c_2 = −1` | ✓ | ✓ holds | Depends only on `f_2 = c_2`, not on the cos(Φ) ↔ cos(α_eff) bridge |
 | 3 | `a_1 = −c_3` | ✓ | ✓ holds | Same — bar-odd pinning from `f_3 = c_3` |
-| **4** | **`a_1 = √2·Φ₂`** | ✓ | **NEEDS RE-DERIVATION** | Used `Φ₁ = √2` from #1887 *and* `c_3 = −Φ₁·Φ₂` from cos(Φ) reframe. The reframe itself is intact (PR #1887); the bridge from α_eff is gone. `a_1 = √2·Φ₂` should still hold via the direct #1887 path (`c_3 = −Φ₁·Φ₂` is the cos(Φ) Taylor expansion, not the α_eff-via-bridge identity), but the **proof** routes through PR #1887 alone, not through α_eff. |
+| **4** | **`a_1 = √2·Φ₂`** | ✓ | **✓ holds (justification updated)** | Used `Φ₁ = √2` from #1887 *and* `c_3 = −Φ₁·Φ₂` from cos(Φ) reframe. The reframe itself is intact (PR #1887); the bridge from α_eff is gone. The conclusion `a_1 = √2·Φ₂` still holds via the direct #1887 path (`c_3 = −Φ₁·Φ₂` is the cos(Φ) Taylor expansion, not the α_eff-via-bridge identity), but the **proof** routes through PR #1887 alone, not through α_eff. |
 | 5 | `a_1` bar-odd | ✓ | ✓ holds | Inherits c_3's bar-odd parity (PR #1887 wall, NOT the bridge claim) |
 | 6 | Constant depth-2 REFUTED | ✓ | ✓ holds | Numerical refutation independent of bridge framing |
 
-**Read:** 5 of 6 constraints survive verbatim. Constraint 4's *conclusion* still
-holds; its *justification* is now PR #1887 alone (not PR #1887 + α_eff bridge).
+**Read:** all 6 constraints survive — 5 verbatim, constraint 4 with updated justification (PR #1887 alone, not PR #1887 + α_eff bridge). No conclusion is overturned.
 
-## What's actually open
+## Cited PR landing status
+
+All three cited PRs are merged. This is not an active "watch landing" task — the work landed, and this doc is the post-merge constraint-survival record.
+
+| PR | Title | Status | Merge date |
+|----|-------|--------|------------|
+| #1887 | cos(Φ(u)) reframe + Reeb-sinh parity | merged | 2026-06-05 |
+| #1871 | Step-9 SW-residue / jet-filtration / q-difference | merged | 2026-06-05 |
+| #1900 | Φ₂ formalize-first kernel constraints | merged | 2026-06-06 |
+
+## Open path — the single remaining keystone
 
 The Φ₂ value is pinned by the kernel coefficient `a_1`. Post-refutation, the
 direct path is:
 
 ```
-PR #1871's open frontier:
-  Hoefsmit-H₃(q) SW-residue kernel derivation
-    → R(q, ξ) closed form
-      → depth-d recursion coefficients (a_1, a_2, … a_d)
-        → a_1 = √2·Φ₂ (constraint 4)
-          → Φ₂ value
+PR #1871 (merged) — single open keystone:
+  conj:qdifference-kernel-prolongation-symbol
+    "R(q, ξ) is the jet-prolongation operator symbol"
+      → R(q, ξ) closed form (the open keystone)
+        → depth-d recursion coefficients (a_1, …, a_d)
+          → a_1 = √2·Φ₂ (constraint 4, justification per PR #1887)
+            → Φ₂ value
 ```
 
 The α_eff bridge was a hypothetical shortcut from PR #1887's leading symbolic
 data → kernel coefficients. Without it, the kernel SW-residue derivation is the
-unavoidable path.
+unavoidable path — and that derivation is exactly PR #1871's
+`conj:qdifference-kernel-prolongation-symbol` keystone (the single remaining
+(E)=(B) item on PR #1871's P1 scoreboard).
 
-## Watcher role
+## Re-engage criteria
 
-This session does NOT open a new probe. It tracks the in-flight work:
+This session does NOT open a new probe. The next concrete re-engagement is when
+the PR #1871 keystone (the jet-prolongation symbol that closes the kernel `R`)
+moves from §3b-cond conjecture to derived theorem. At that point:
 
-- **PR #1871** — canonical depth-`d` q-difference recursion home; the kernel
-  `R(q, ξ)` lives here. Watch for kernel closed-form landing.
-- **PR #1900** — kernel constraints PR (Lean-verified). Watch for constraint
-  set extension beyond the standing 6.
-- **PR #1887** — cos(Φ(u)) reframe (already lands `Φ₁ = √2` exact). The post-
-  refutation reading: PR #1887's leading-symbolic data is intact; its bridge to
-  α_eff was the over-claim.
-
-When the kernel `R(q, ξ)` lands (PR #1871 frontier), the standing scope doc's
-constraint 4 becomes actionable: `a_1` from the closed-form `R` directly pins
-`Φ₂`. Re-engage at that point with a fresh derivation branch, not before.
+- `R(q, ξ)` is in closed form
+- Constraints 2/3/4 from the standing scope mechanically produce `a_1`
+- Constraint 4 pins `Φ₂ = a_1 / √2`
+- A fresh derivation branch (NOT a probe) lands the value
 
 ## Anti-patterns guarded against
 
@@ -85,8 +93,9 @@ constraint 4 becomes actionable: `a_1` from the closed-form `R` directly pins
 - ❌ **Symbolic search for `Φ₂` without the SW-residue derivation.** The H₃(q)
   kernel is the *cause* — a numerical fit without the kernel is the 8th-ansatz
   trap (cf. CLAUDE.md "no 7th ansatz" + the `mu-thread-pivot` precedent).
-- ❌ **New sibling probe branches.** Opening claude/qbeta-phi2-* probe branches
-  while #1871/#1900 are open re-fights a moving target. Defer.
+- ❌ **New sibling `claude/qbeta-phi2-*` probe branches** before the keystone
+  derivation lands. Constraints 1–6 are already proved; another constraint PR
+  is redundant.
 
 ## Cross-references
 
