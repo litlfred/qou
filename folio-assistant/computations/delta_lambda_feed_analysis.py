@@ -64,9 +64,7 @@ def main() -> int:
     yw = src["data"]["markov_weights_y_lambda"]
     import mpmath as mp
     mp.mp.dps = 30
-    y_sym = float(mp.mpf(yw["(3)"]))
-    y_std = float(mp.mpf(yw["(2,1)"]))
-    y_alt = float(mp.mpf(yw["(1,1,1)"]))
+    # only the alt-channel weight enters the dominant-channel Δ scale.
     log_y_alt = float(mp.log10(abs(mp.mpf(yw["(1,1,1)"]))))
 
     r = [x for x in rows_in if x["A"] >= 2 and x["B_AME_MeV"] > 0]
@@ -75,7 +73,6 @@ def main() -> int:
     B = np.array([x["B_AME_MeV"] for x in r], float)
     trL = np.array([x["trM_log10"] for x in r], float)   # log10|tr_M(a)|
     altL = np.array([x["alt_log10"] for x in r], float)   # log10|χ_alt(a)|
-    symL = np.array([x["sym_log10"] for x in r], float)   # log10|χ_sym(a)|
 
     # ── (1) quadratic crossing-count law for log10|tr_M| ──────────────
     Xq = np.vstack([A * A, A, np.ones_like(A)]).T
@@ -104,9 +101,6 @@ def main() -> int:
 
     # ── (4) per-block FEED table (the Δ_λ-derivation input) ───────────
     # signed log10 contributions log10|y_λ χ_λ| with sign, per nucleus.
-    feed = []
-    for x in r[:0] + r:  # full list
-        pass
     feed_sample = []
     for x in [y for y in r if (y["Z"], y["N"]) in
               {(2, 2), (6, 6), (8, 8), (20, 20), (26, 30), (82, 126)}]:
