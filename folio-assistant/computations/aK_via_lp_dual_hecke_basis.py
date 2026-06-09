@@ -69,8 +69,12 @@ from _precision import set_compute_dps, fmt  # noqa: E402
 set_compute_dps()
 
 Q_PIN = _pb.witness_path("q-pinning-50-digit.witness.json", HERE)
-Q = float(mp.mpf(json.load(Q_PIN.open())["derived_50_digit"]["q"]))
-H = Q - 1.0 / Q
+# Keep Q and H at full mpmath precision. The previous
+# `float(mp.mpf(...))` cast was THE textbook L1 precision destroyer
+# flagged by the `compute_no_mpf_to_float_cast` critical QA criterion
+# (author 2026-06-09: "float64 is EVIL").
+Q = mp.mpf(json.load(Q_PIN.open())["derived_50_digit"]["q"])
+H = Q - mp.mpf(1) / Q
 
 # Add tools/pyhecke to sys.path
 TOOLS = HERE.parent.parent / "tools" / "pyhecke" / "python"
@@ -82,10 +86,15 @@ from pyhecke.gram import (  # noqa: E402
 
 
 # ── H_3 atom |tr_M| from chi cache ───────────────────────────
-def load_tr_M(atom: str, n: int) -> float:
+def load_tr_M(atom: str, n: int) -> mp.mpf:
+    """Return |tr_M(atom)| at q₀ as an mpmath value. The witness JSON
+    stores the 50-dps decimal string; we return it as `mp.mpf` directly
+    (no `float()` cast) to preserve precision through downstream LP/SDP
+    consumers. Was `-> float` until the 2026-06-09 cleanup; the
+    `compute_no_mpf_to_float_cast` QA criterion flagged the cast."""
     p = HERE / f"chi-{atom}-h{n}-at-q0-50dps.witness.json"
     d = json.loads(p.read_text())
-    return float(mp.mpf(d["tr_M_at_q0"]))
+    return mp.mpf(d["tr_M_at_q0"])
 
 
 # ── Wedderburn block of each NF_BASIS element ────────────────
