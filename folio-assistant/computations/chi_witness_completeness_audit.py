@@ -1,8 +1,13 @@
 """
 chi_witness_completeness_audit.py — audit chi-*.witness.json files
-for partition completeness, and audit downstream consumers
-(binding-*.witness.json) for staleness against the current chi
-witnesses.
+for partition completeness (p(n) coverage).
+
+Scope: currently scans only chi-*-at-q0-*.witness.json. Downstream
+consumer staleness (binding-*.witness.json against current chi
+witnesses) is documented in docs/audits/2026-06-09-binding-canonical-
+default-depth-stratified.md §Prevention #3 (manual refresh routine)
+but not yet automated by this script. Adding downstream-staleness
+auditing is tracked as a follow-up.
 
 Class of bug this catches (2026-06-09):
   A downstream compute (e.g. binding_depth_stratified_lr.py) consumes
@@ -103,11 +108,15 @@ def main() -> int:
     for a in audits:
         marker = ("YES" if a.get("complete") is True
                   else ("NO" if a.get("complete") is False else "?"))
+        expected_val = a.get("expected_partitions")
+        coverage_val = a.get("coverage_pct")
+        expected_str = str(expected_val) if expected_val is not None else "?"
+        coverage_str = str(coverage_val) if coverage_val is not None else "?"
         print(f"{a['path']:<60} "
               f"{a.get('n_strands', '?'):>6} "
               f"{a.get('n_cached_partitions', '?'):>7} "
-              f"{str(a.get('expected_partitions', '?')):>5} "
-              f"{str(a.get('coverage_pct', '?')):>6} "
+              f"{expected_str:>5} "
+              f"{coverage_str:>6} "
               f"{marker:>3}")
 
     print()

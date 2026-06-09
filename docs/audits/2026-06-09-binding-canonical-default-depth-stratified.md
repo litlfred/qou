@@ -89,19 +89,18 @@ was 100 % an artifact of a stale binding witness consuming a 24/77
 partial cached chi witness — corrected. See "Prevention" §below.
 
 **The canonical depth-stratified compute does NOT close binding at the
-10 % threshold.** D / T / ³He under-bind by ~67-73 %; ⁴He LR vs Rust
-disagree by a factor 4× on the sign of the deviation — signalling the
-per-depth α_k assignment rule is not yet substrate-derived (cf. cheat
-sheet "open Barrier-1").
+10 % threshold.** D / T / ³He under-bind by ~67-73 %; ⁴He under-binds by
+50 %. The per-depth α_k assignment rule is not yet substrate-derived
+(cf. cheat sheet "open Barrier-1"). LR and Rust direct now agree
+exactly across all four atoms (verified post-regen 2026-06-09).
 
 **Compare against the flat magic-A formula** `B(⁴He) = 2·m_e·A·Vol(L6a4)
 = 2·m_e·4·8G = 29.96 MeV` (+5.87 %, no per-depth structure): the flat
-formula BEATS the depth-stratified tower sum on ⁴He (50 % undershoot
-Rust, 109 % overshoot LR). This says the tower sum is over-/under-
-weighting depth bands rather than monotonically refining the magic-A
-result. The unclosed structural gap is **not** at low depth (where the
-magic-A flat result lives) but in the α_2 / α_3 / α_{k≥4} assignment
-choices.
+formula BEATS the depth-stratified tower sum on ⁴He (50 % undershoot).
+This says the tower sum is under-weighting some depth bands rather than
+monotonically refining the magic-A result. The unclosed structural gap
+is **not** at low depth (where the magic-A flat result lives) but in
+the α_2 / α_3 / α_{k≥4} assignment choices.
 
 ## Lean status
 
@@ -126,8 +125,10 @@ Lean-proved — that's the §3b-cond gap.
 1. **Use `binding_depth_stratified_rust.py`** (or LR variant for A ≥ 4)
    as the default binding-energy compute. Cite the witness JSON.
 2. **Cite the `canonical_status = canonical-with-empirical-assignment`
-   field** when reporting binding numbers — this flags that α_k is
-   empirical, not derived.
+   field** when reporting binding numbers — this flags that the
+   PER-DEPTH ASSIGNMENT RULE for α_k is empirical, not derived (the
+   individual α_k constants themselves are structural, see §Honest
+   status above).
 3. **Report the ratio `B_pred / B_AME`** alongside any binding number
    so the unclosed structural gap is visible.
 
@@ -173,8 +174,9 @@ for D / T / ³He) is the per-depth α_k assignment being empirical.
 ## Why the tower undershoots — structural diagnosis
 
 The depth-stratified tower under-performs the flat magic-A formula
-`2·m_e·A·8G` (+5.87 %) on ⁴He (-50 % Rust, +109 % LR). Four
-structural reasons:
+`2·m_e·A·8G` (+5.87 %) on ⁴He (-50 % undershoot, both Rust direct and
+LR variant after the 2026-06-09 partial-witness fix). Four structural
+reasons:
 
 ### (i) Dimensional mismatch within α_k
 

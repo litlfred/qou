@@ -174,13 +174,14 @@ def main() -> int:
     builder.add_parameter("alpha_k_geq_4_MeV",
                            str(mp.mpf(str(M_E_MEV)) * 8 * mp.catalan))
 
-    # Expected partition count p(n) — fail loudly if the cached atom
-    # chi witness is partial. (Class of bug: stale binding witness can
-    # silently consume a partial chi witness; missing partitions become
-    # 0 in Φ_atom which artificially inflates Φ_free − Φ_atom and
-    # therefore B. See docs/audits/2026-06-09-binding-canonical-default-
-    # depth-stratified.md §(iii).)
-    PARTITION_COUNTS = {3: 3, 6: 11, 9: 30, 12: 77, 18: 385, 21: 792}
+    # Expected partition count p(n) — surface a ⚠ warning when the
+    # cached atom chi witness is partial (missing partitions become 0
+    # in Φ_atom, which artificially inflates Φ_free − Φ_atom and
+    # therefore B). The script does NOT abort on partial witness; it
+    # records the partial state in partition_completeness_warnings so
+    # downstream consumers can see it. See docs/audits/2026-06-09-
+    # binding-canonical-default-depth-stratified.md §Prevention.
+    PARTITION_COUNTS = {3: 3, 6: 11, 9: 30, 12: 77, 15: 176, 18: 385, 21: 792}
 
     print(f"{'atom':<6} {'Z':>3} {'N':>3} {'n_str':>6} "
           f"{'B_MeV':>10} {'B_AME':>10} {'ratio':>8} {'n_λ_atom':>10}")
