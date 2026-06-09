@@ -816,10 +816,13 @@ fn chi_lambda_braid_mpfr(
 ///
 /// **NO f64 in compute path** — `rug::Float` throughout.
 ///
-/// Raises `ValueError` on invalid input (k_split out of range,
-/// generators outside the parabolic split, bridge_sign not ±1,
-/// or unparsable q_str) so a downstream Python caller does not
-/// crash the interpreter on a malformed call.
+/// Raises `ValueError` on structural invalid input (k_split out of
+/// range, generators outside the parabolic split, bridge_sign not
+/// ±1) so a downstream Python caller does not crash the interpreter
+/// on a malformed call. An unparsable `q_str` currently surfaces as
+/// `PanicException` (not `ValueError`) — a fallible `try_` variant
+/// in `matrix_m_mpfr.rs` is the planned follow-up; see the binding
+/// body comment for context.
 #[pyfunction]
 #[pyo3(signature = (shape, word_left, bridge_sign, word_right, k_split, q_str, dps=50))]
 fn chi_via_matrix_m_mpfr(
