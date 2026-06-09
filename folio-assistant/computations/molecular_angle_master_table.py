@@ -97,10 +97,11 @@ def main() -> None:
     rows = []
 
     # second-row AXₙEₘ singles (sp³ base) + H₂S (pure-p)
+    Q3 = Q ** 3
     h_ch4 = sphere_angle([Q] * 4, 4)
-    h_nh3 = sphere_angle([Q, Q, Q, Q2], 3)         # 3 bonds + 1 lone(q²)
-    h_h2o = sphere_angle([Q, Q, Q2, Q2], 2)        # 2 bonds + 2 lone
-    h_c2h4 = planar_angle([Q2, Q, Q])              # C=C(q²) + 2 C–H
+    h_nh3 = sphere_angle([Q, Q, Q, Q3], 3)         # 3 bonds(q) + 1 lone(q³) → ratio q²
+    h_h2o = sphere_angle([Q, Q, Q3, Q3], 2)        # 2 bonds(q) + 2 lone(q³) → ratio q²
+    h_c2h4 = planar_angle([Q2, Q, Q])              # C=C(q²) + 2 C–H(q) → ratio q
     rows = [
         ("CH4",  "C(2)", "AX4E0", "4× σ(ℓ1,q)",       "—",
          "{s,p}", "sp³ 109.47°", h_ch4, 109.5),
