@@ -149,8 +149,8 @@ Sequence:
 3. **A=6 catalogue extension** — re-run sweep with the new backend.
    Should finish in minutes. (Without Phase 1.3, takes ~hour.)
 
-4. **A=7 catalogue extension** — re-run. ~10s minutes with Phase 1.3,
-   hours without.
+4. **A=7 catalogue extension** — re-run. Tens of minutes with
+   Phase 1.3, hours without.
 
 5. **A=8, A=9 catalogue extension** — viable with Phase 1.3. Phase
    1.3 enables A=9 in ~minutes; Tier 2 brings it to seconds.
