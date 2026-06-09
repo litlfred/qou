@@ -461,6 +461,181 @@ def chi_via_mu_n_blocks_mpfr(
     }
 
 
+# ── Phase 1.4: reduced-block kernel (cross-sector bridge table) ─────
+#
+# The dense insertion in `chi_via_mu_n_blocks_mpfr` proves the
+# (μ_p, μ_n) decomposition is exact but still forms full size×size
+# products. This kernel evaluates χ on the *reduced* sub-blocks.
+#
+# IMPORTANT — the q-Young idempotents e_a (a = μ_n ⊢ 3) are OBLIQUE
+# projectors: idempotent (e_a² = e_a) but NOT self-adjoint, so
+# e_a ≠ Q_a Q_aᵀ for an orthonormal column basis Q_a, and an
+# orthonormal-projection reduction is WRONG (the cross-sector bases
+# Q_a, Q_b are not orthogonal to each other). The block instead
+# carries the DIRECT-SUM decomposition V = ⊕_a im(e_a); the right
+# change of basis is the adapted basis P = [Q_1 | Q_2 | Q_3] (columns
+# span each im e_a) together with its true inverse P⁻¹ — NOT Pᵀ.
+#
+# In the adapted basis every operator X becomes X̂ = P⁻¹ X P, with
+# sector blocks X̂_{a,b}. The left word B_p commutes with every e_a so
+# B̂_p is block-DIAGONAL (bp_a = B̂_p[a,a]); the bridge M and right
+# word B_n mix sectors (m_{a,b}, bn_{b,a} are the cross-sector "bridge
+# table"). The block character is the change-of-basis-invariant trace
+#
+#   χ_block = Tr[B̂_p · M̂ · B̂_n] = Σ_{a,b} Tr[ bp_a · m_{a,b} · bn_{b,a} ]
+#
+# r_a = rank(e_a) ≤ c_LR·dim_μ_p·dim_μ_n ≤ ~40, bounded independent of
+# dim V_λ.
+#
+# SPEEDUP CAVEAT (a real finding from this work): at SINGLE level the
+# P⁻¹ X P transforms are full size×size, so this kernel validates the
+# block structure but does NOT by itself beat the dense path on flops.
+# The wall-clock win requires building the generators *directly* in the
+# reduced/recursive representation (so the full matrices are never
+# formed) — that is the Tier-3 recursion + Rust port, not a post-hoc
+# projection of dense matrices. See
+# docs/audits/2026-06-09-matrix-m-reduced-block-and-recursion.md.
+
+
+def _orthonormal_image_basis_mpfr(e: object, tol: object) -> object:
+    """Orthonormal basis (S×r mpmath.matrix Q, QᵀQ = I_r) of the column
+    space of the idempotent `e`, via modified Gram-Schmidt on its
+    columns. r = rank(e) = round(Tr e). Used only as a numerically
+    well-conditioned BASIS of im(e) for the adapted basis P — NOT as an
+    orthogonal projector (e is oblique; see section header).
+    """
+    s = e.rows
+    cols: list[list[object]] = []
+    for j in range(s):
+        v = [e[i, j] for i in range(s)]
+        for qv in cols:
+            dot = mpmath.mpf(0)
+            for i in range(s):
+                dot = dot + qv[i] * v[i]
+            for i in range(s):
+                v[i] = v[i] - dot * qv[i]
+        nrm = mpmath.sqrt(sum(vi * vi for vi in v))
+        if nrm > tol:
+            inv = MPF_ONE / nrm
+            cols.append([vi * inv for vi in v])
+    Q = mpmath.zeros(s, len(cols))
+    for jj, qv in enumerate(cols):
+        for i in range(s):
+            Q[i, jj] = qv[i]
+    return Q
+
+
+def _adapted_basis_mpfr(
+    e_by_mu_n: dict, size: int, tol: object,
+) -> tuple:
+    """Adapted basis P = [Q_(3) | Q_(2,1) | Q_(1,1,1)] of the block,
+    its inverse P⁻¹, and the sector offset/length slices. The Q_a are
+    bases of each im(e_a); since V = ⊕_a im(e_a) the concatenation P is
+    invertible. Returns (Pinv, P, slices) with slices a list of
+    (mu_n, offset, r).
+    """
+    blocks = []
+    slices = []
+    off = 0
+    for mu_n in _H3_PARTITIONS:
+        Q = _orthonormal_image_basis_mpfr(e_by_mu_n[mu_n], tol)
+        r = Q.cols
+        if r > 0:
+            blocks.append(Q)
+            slices.append((mu_n, off, r))
+            off += r
+    P = mpmath.zeros(size, off)
+    col = 0
+    for Q in blocks:
+        for jj in range(Q.cols):
+            for i in range(size):
+                P[i, col] = Q[i, jj]
+            col += 1
+    Pinv = P ** -1   # off == size (sectors span the block), so square.
+    return Pinv, P, slices
+
+
+def _subblock_mpfr(X: object, r0: int, n0: int, c0: int, m0: int) -> object:
+    """X[r0:r0+n0, c0:c0+m0] as a fresh mpmath.matrix."""
+    out = mpmath.zeros(n0, m0)
+    for i in range(n0):
+        for j in range(m0):
+            out[i, j] = X[r0 + i, c0 + j]
+    return out
+
+
+def chi_via_reduced_blocks_mpfr(
+    shape: tuple[int, ...],
+    word_left: list[tuple[int, int]],
+    bridge_sign: int,
+    word_right: list[tuple[int, int]],
+    cache: dict,
+    k_split: int,
+) -> dict:
+    """Reduced-block kernel: χ via the adapted-basis cross-sector bridge
+    table `Σ_{a,b} Tr[bp_a · m_{a,b} · bn_{b,a}]` (see section header).
+
+    Correctness-validated against the dense two-level χ. Does not beat
+    dense on flops at single level (the P⁻¹·X·P transforms are full);
+    the speedup is the recursion/Rust port (caveat in header).
+    """
+    q = cache["q"]
+    h = q - MPF_ONE / q
+    tol = mpmath.mpf(10) ** (-(mpmath.mp.dps - 8))
+
+    chi = MPF_ZERO
+    max_sector_dim = 0
+    sector_dims: list[dict] = []
+
+    for mu_p, block in cache["blocks"].items():
+        size = block["size"]
+        eye_block = mpmath.eye(size)
+        sigmas_left = block["sigmas_left"]
+        sigmas_right = block["sigmas_right"]
+        M_pp_pos = block["M_pp"]
+        M = M_pp_pos if bridge_sign >= 0 else (M_pp_pos - h * eye_block)
+
+        B_p = eye_block
+        for (sign, g_1based) in word_left:
+            mat = sigmas_left[g_1based]
+            B_p = B_p * (mat if sign >= 0 else mat - h * eye_block)
+        B_n = eye_block
+        for (sign, g_1based) in word_right:
+            mat = sigmas_right[g_1based]
+            B_n = B_n * (mat if sign >= 0 else mat - h * eye_block)
+
+        sigma_g = sigmas_right[k_split + 1]
+        sigma_g_plus_1 = sigmas_right[k_split + 2]
+        e_by_mu_n = q_young_symmetrizers_mpfr(sigma_g, sigma_g_plus_1, q)
+
+        Pinv, P, slices = _adapted_basis_mpfr(e_by_mu_n, size, tol)
+        dims_here = {str(mu_n): r for (mu_n, _o, r) in slices}
+        for (_mu_n, _o, r) in slices:
+            if r > max_sector_dim:
+                max_sector_dim = r
+        sector_dims.append({"mu_p": list(mu_p), "dims": dims_here})
+
+        # Adapted-basis transforms (X̂ = P⁻¹ X P).
+        Bp_hat = Pinv * B_p * P
+        M_hat = Pinv * M * P
+        Bn_hat = Pinv * B_n * P
+
+        # χ_block = Σ_{a,b} Tr[ bp_a · m_{a,b} · bn_{b,a} ], bp from the
+        # DIAGONAL sector block of B̂_p (block-diagonal: B_p commutes e_a).
+        for (a_mu, off_a, ra) in slices:
+            bp_a = _subblock_mpfr(Bp_hat, off_a, ra, off_a, ra)
+            for (b_mu, off_b, rb) in slices:
+                m_ab = _subblock_mpfr(M_hat, off_a, ra, off_b, rb)
+                bn_ba = _subblock_mpfr(Bn_hat, off_b, rb, off_a, ra)
+                chi = chi + _trace_mpfr(bp_a * m_ab * bn_ba)
+
+    return {
+        "chi": chi,
+        "max_sector_dim": max_sector_dim,
+        "sector_dims": sector_dims,
+    }
+
+
 # ── Rust comparison ───────────────────────────────────────────────
 
 
