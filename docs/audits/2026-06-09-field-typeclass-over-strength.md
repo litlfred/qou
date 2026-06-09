@@ -122,6 +122,27 @@ module) really is division-free before relaxing — a kind-2 (Laurent) or kind-3
 flagged signature there is a per-module *proof* refactor (rewrite formulas +
 re-prove the cleared-denominator identity), not a mechanical swap.
 
+### kind-2 reframe status (2026-06-09)
+
+The kind-2 (q-power Laurent) reframe — provide a **division-free `…_unit (q : Rˣ)`
+companion over `[CommRing R]`** bridged to a polynomial in `h = ↑q − ↑q⁻¹`, then
+witness it over the non-field `LaurentPolynomial ℤ` — is **done** for the two
+character modules:
+
+- `BorromeanChiPerRep` (`chi21_borromean_qform_unit` + `…_eq_poly` + `TUnit`
+  witness) — merged on `main`.
+- `DerivedCharacterCatalogue` (PR #2075): `hopfOneOneDiquarkChiUnit` /
+  `trefoilOneOneElectronChiUnit` / `cinquefoilOneOneMuonChiUnit` (sign-rep
+  monomials), `borromeanTwoOneBaryonChiUnit` (= `chi21_borromean(↑q²−↑q⁻²)`),
+  `figureEightTwoOneHiggsChiUnit` (= `h⁴+2h²−1`), with bar-invariance + Laurent
+  witnesses. `linear_combination` certificates are machine-derived (sympy,
+  remainder 0). The `[Field]` `IsRMatrixDerived` instances stay as the
+  archimedean layer (`storedChi : R → R` cannot host `q⁻¹`), so this is purely
+  additive.
+
+Only **kind-3 non-unit division** (Hoefsmit `/[2]_q`, `markovZax = u/(u²+1)`)
+genuinely needs `Field` / `Frac(R)` and remains in the exceptions ledger.
+
 ## Fixing discipline (the "fix all k-like issues" campaign)
 
 Each relaxation is **`[Field V]` → `[CommRing V]`** (or the weakest class that
