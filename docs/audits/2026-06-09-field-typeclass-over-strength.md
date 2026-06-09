@@ -41,6 +41,41 @@ Top files by `over-strong` count: `DerivedCharacterCatalogue` (18),
 `Hoefsmit` (6), `IwahoriHeckeAPI` (4) — see the witness JSON for the full
 per-declaration list.
 
+## Refinement (2026-06-09): three kinds of `[Field]` use
+
+Build-testing the burn-down showed the `over-strong`/`genuine` split is too
+coarse. A `[Field V]` use falls into **three** kinds:
+
+1. **Division-free** — `V` carries no `/` or `⁻¹` anywhere in the module.
+   Relax to `[CommRing V]` directly. *(Fixed this pass: `ClassicalLimitObstruction`
+   structure, `GradedTraceResidueSplit` ×8, `HoefsmitV21CosSymmetrization`,
+   and `QCltNonCommutative` / `TraceLocalityMeetsGsNonLocality` → `LinearOrderedCommRing`.)*
+2. **`q`-power inverse (Laurent-reframable)** — the only "division" is `1/q^k`
+   i.e. `q⁻ᵏ`, the inverse of the **unit** `q`. This needs **no field**: work
+   over `ℤ[q, q⁻¹]` (`abbrev R_q := LaurentPolynomial ℤ`, already in the
+   Laplace/Fourier blocks) where `q⁻¹` is a Laurent unit, **or** keep
+   `[CommRing R]` + a unit witness `(qinv : R) (q * qinv = 1)` and rewrite
+   `1/q^k ↦ qinv^k`. Fraction *identities* clear of denominators (multiply
+   through by `q^N` ⟹ a polynomial identity provable by `ring`, dropping the
+   `field_simp`). *(Owner direction 2026-06-09. Example target:
+   `BorromeanChiPerRep`, `DerivedCharacterCatalogue` Laurent characters.)*
+3. **Non-unit division (truly field)** — division by something that is **not**
+   a unit of `ℤ[q,q⁻¹]`, e.g. Hoefsmit's seminormal `α_T = (q^c − q^{−c}) /
+   ([2]_q · c)` divides by `[2]_q = q + q⁻¹` (not invertible in the Laurent
+   ring) and by content differences `c`. These genuinely need a field — the
+   **fraction field** `Frac(R)` of the (domain) ground ring, *kept generic*:
+   a bare `[Field R]` already **is** the cleanest stand-in for
+   `Frac(of-the-Laurent-ring)`, so no change is needed (do **not** specialize
+   to a concrete `ℚ(q)`). If the Laurent embedding should be explicit, name it
+   `[Field K] [Algebra (LaurentPolynomial ℤ) K]` / `FractionRing` rather than
+   hardcoding `ℚ(q)`.
+
+The checker's module-level `genuine` (division/inverse anywhere ⟹ field-by-design)
+is the **conservative** lower bound — it keeps kinds 2 and 3 as `Field`. The
+kind-2 → CommRing reframe is a per-module *proof* refactor (rewrite formulas +
+re-prove the cleared-denominator identity), tracked separately from the
+mechanical kind-1 relaxations.
+
 ## Fixing discipline (the "fix all k-like issues" campaign)
 
 Each relaxation is **`[Field V]` → `[CommRing V]`** (or the weakest class that
