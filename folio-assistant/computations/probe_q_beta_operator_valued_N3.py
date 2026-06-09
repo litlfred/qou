@@ -187,8 +187,9 @@ def main() -> int:
     elif mp.fabs(best_eps) < mp.mpf("0.96"):
         print(f"    UNDER N=2 ceiling (0.96 ppm) but NOT N=3 ceiling.")
     elif mp.fabs(best_eps) < eps_N2_abs:
-        ratio = float(eps_N2_abs / mp.fabs(best_eps))
-        print(f"    {ratio:.2f}× tighter than N=2 but above N=2 ceiling.")
+        # Inline the float() into the f-string so the display-context
+        # exemption applies. Was flagged by compute_no_mpf_to_float_cast.
+        print(f"    {float(eps_N2_abs / mp.fabs(best_eps)):.2f}× tighter than N=2 but above N=2 ceiling.")
 
     from witness_base import WitnessBuilder
     builder = WitnessBuilder.wrap_legacy(
@@ -227,7 +228,7 @@ def main() -> int:
                 "under_N3_ceiling": bool(mp.fabs(best_eps) < mp.mpf("0.0094")),
                 "under_N2_ceiling": bool(mp.fabs(best_eps) < mp.mpf("0.96")),
                 "tightening_vs_N2": (
-                    float(eps_N2_abs / mp.fabs(best_eps))
+                    mp.nstr(eps_N2_abs / mp.fabs(best_eps), 12)
                     if best_eps != 0 else None
                 ),
             },
