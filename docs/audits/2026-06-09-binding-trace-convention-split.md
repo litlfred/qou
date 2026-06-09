@@ -57,6 +57,46 @@ native matrix-M bindings (`trace_weights_n(3A, q)` +
 q_str, dps)`), cross-checked to <1e-9. Reusable for whatever object the
 reconciliation lands on.
 
+## RESOLUTION (corpus-first, 2026-06-09)
+
+Corpus-grep settles it — the reconciliation is **already done in-repo**, and
+this session's binding objects were all **off-convention**:
+
+- **Canonical trace = C**: `folio-assistant/computations/markov/markov_trace_canonical.py::tr_M_element`
+  (the deprecation pointer was right — it's in `markov/`). Confirmed by the
+  canonical content block
+  [`markov-axioms-primitive.md`](../../content/quantum-observable-universe/braids-and-knots/markov-axioms-primitive.md)
+  (`prop:categorical-mass-markov`): the Jones–Markov trace `τ_M` with
+  `z = 1/(√q + 1/√q)`, forced by the four Jones/Wenzl axioms.
+- **Canonical binding is ALREADY implemented** in `binding_canonical.py`:
+
+      B(Z,N) = E_0 · ( tr_M(W_free) − tr_M(W_atom) )      [free−bound DIFFERENCE on C]
+
+  — **not** an abs-sum (#1742), **not** a bar product, **not** signed
+  `tr_M(atom)` alone (#2082). It already contrasts the Plancherel
+  `binding_3A`, the tower, and AME.
+- **It's run + witnessed** (`binding-canonical.witness.json`):
+
+  | atom | A | B_AME | B_pred (canonical C) | B_AME/B_pred |
+  |---|---|---|---|---|
+  | D | 2 | 2.225 | 0.466 | 4.8× |
+  | T | 3 | 8.482 | 0.629 | 13.5× |
+  | ³He | 3 | 7.718 | 0.658 | 11.7× |
+  | ⁴He | 4 | 28.296 | 0.714 | **39.7×** |
+
+  The canonical binding **under-predicts AME by a factor that GROWS with A**
+  (4.8×→39.7×). **That growing factor IS the per-nucleus Δ_λ(K)** on the
+  canonical convention — small mass error (<1%, since binding is ~1% of
+  mass) but large *binding* error.
+
+**Consequence for this session's PRs:** the abs-sum (#1742-aligned), the bar
+product (#2082's `atom_vhyp_bar_trace_test`), and the matrix-M signed-tr_M
+(`atom_vhyp_closure_matrix_m`) are **off-convention explorations** — they do
+not feed the canonical binding. #2082's *correction* of #2076 (scale gate is
+H₃-local) still stands; but the Δ̄ numbers there are matrix-M (A), not the
+canonical difference. The validated arbitrary-q `tr_M` machinery remains a
+useful byproduct.
+
 ## Recommendation (next session)
 
 1. **Pin the binding trace to convention C** (`markov_trace_canonical.tr_M_element`)
