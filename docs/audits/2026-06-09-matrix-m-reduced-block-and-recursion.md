@@ -191,3 +191,39 @@ not provide; they are spec'd here for a build-equipped agent.
 | Wall-clock speedup ≥ A=6 | ⏳ runnable — needs compute time |
 | Rust port | ⏳ toolchain present; check existing Rust matrix-M first |
 | A=8,9 sweep run | ⏳ runnable in principle — bounded by compute hours |
+
+## 8. Measured results (with the wheel, 2026-06-09)
+
+**Canonical correctness** — `chi_via_numerical_matrix_m_mpfr` (one-level)
+AND `chi_via_reduced_blocks_mpfr` (Phase 1.4) both match the canonical
+Rust `chi_q_via_gp` to abs tol 1e-40 at q₀:
+
+| A | isotope | partitions tested | match vs Rust | max sector dim |
+|---|---------|-------------------|---------------|----------------|
+| 4 | ⁴He | 18 (dim ≤ 11) | 18/18 | 7 |
+| 5 | ⁵Li | 4 (dim ≤ 60) | 4/4 | 10 |
+
+The (μ_p, μ_n) sector dim stays **bounded** (≤ 10 at A=5) while dim V_λ
+grows to 60 — the structural claim holds on measured data.
+
+**Wall-clock (A=5, low-dim partitions, dim ≤ 60):** mpfr one-level
+153 ms vs Rust `chi_q_via_gp` 408 ms = **2.66× faster** (mpfr wins on
+low-dim λ where the seminormal blocks are small). The high-dim λ (dim
+up to 1430 at A=5) are where one-level mpfr loses and the reduced/
+recursive path is needed — that is the open Tier-2/Tier-3 work.
+
+**Existing Rust:** `pyhecke_native.chi_via_matrix_m_mpfr` is the
+one-level μ_p port only (confirmed from its docstring — "μ_p block-
+restriction trace formula"); it does NOT implement the (μ_p, μ_n)
+reduced or recursive path. The Rust port of the reduced/recursive
+kernel is genuinely open.
+
+## 9. Braid-word structure confirms the recursion is well-founded
+
+The atom braid word `_word_for_braid_word_3a(Z, N)` has the exact
+nested-bridge form the recursion needs: for A=4 (n=12) the generators
+used are σ_1..σ_11 with **single** bridge occurrences at σ_3, σ_6, σ_9
+separating 3-strand nucleon groups, each group braided internally by
+σ_{3i+1}, σ_{3i+2}. So `β = β_0·σ_3·β_1·σ_6·β_2·σ_9·β_3` — exactly the
+`β = β_0 · σ_{k₁} · (β_1 · σ_{k₂} · (…))` shape §3 assumes. Tier-3 is
+implementable directly on this structure.
