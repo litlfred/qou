@@ -119,6 +119,9 @@ export default chapter({
       blocks: [
         "surreal-blowup-calculus",
         "surreal-blowup-calculus-table-data",
+        // Möbius energy renormalization as a difference of infinite surreals
+        // (the surreal-essential showcase; interprets prop:mobius-energy).
+        "mobius-surreal-renormalization",
         "bigbang-heatdeath",
         "cosmological-cone-visualization",
       ],
@@ -143,6 +146,9 @@ export default chapter({
         "local-infinitesimal-field",
         "spectral-normal-form",
         "kashaev-surreal",
+        // ε^ω = the perpetual obstruction as a single surreal grade
+        // (narrowing of conj:motivic-perpetual-obstruction).
+        "perpetual-obstruction-depth-omega",
       ],
     },
     {

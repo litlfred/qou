@@ -216,7 +216,7 @@ first principles.*
 
 ---
 
-### §6: Term 6 = higher-strata residues (PL-residue interpretation)
+### §6: Term 6 = higher-strata residues (algebraic-residue interpretation)
 
 *Term 6 (jet-level prefix corrections) is identified with
 $\sum_{\ell \geq 3} E_\infty^{\ell, *}$ pairings — contributions
@@ -232,27 +232,30 @@ higher-page pairings.*
 **Archimedean realisation under the fibre functor.**
 *Under the fibre functor $\tau \colon R \hookrightarrow \mathbb{C}$,
 the level-$\ell$ stratum maps to the geometric jet bundle
-$J^\ell\mathcal{S}$ on the Descartes elliptic curve via
-(jet-GB-PL correspondence).
-The pairing's $\mathbb{C}$-realisation is then the higher-order
-Picard–Lefschetz residue $\Pi^{(\ell)}$ of the prolonged SW
-differential $\lambda_{\mathrm{SW}}^{(\ell)}$ at the discriminant
-locus
-(Picard–Lefschetz thimble,
- SW-period thimble equivalence).
-This collapses Term 6 from "conjectural" on the analytic side to a
-straightforward PL computation using the same machinery that
-evaluates Terms 1–3 — provided the upstream A2.4 hypothesis
-(real-axis = thimble sum) of
-(SW-period thimble equivalence)
-is checked at order $\ell$. The $R$-side identification of Term 6
-with $E_\infty^{\ell, *}$ remains the same; the change is to provide
-a convergent archimedean evaluation route.*
+$J^\ell\mathcal{S}$ on the Descartes elliptic curve. Its
+$\mathbb{C}$-realisation is the **algebraic residue sum** of the
+prolonged Seiberg–Witten differential,*
 
-*Status remains conjectural pending A2.4 numerical verification at
-$\ell \geq 3$, but the formal identification of the integration tool
-is now fixed (PL thimbles on $\mathcal{E}_q$, not symbolic
-Cauchy-kernel residues at roots of unity).*
+$$
+  a_D^{(\ell)}
+  \;=\; \oint_{\mathcal{S}_c}\lambda_{\mathrm{SW}}^{(\ell)}
+  \;=\; 2\pi i \sum_{p} \operatorname{Res}_p \lambda_{\mathrm{SW}}^{(\ell)},
+$$
+
+*collected at the branch-point poles with no contour integration
+([SW period residue sum](#prop:sw-period-residue-sum), built on the
+[MI–SW abelianisation](#prop:mi-sw-abelianisation) of the non-abelian
+Stokes holonomy). This collapses Term 6 to a finite residue computation
+using the same machinery that underlies Terms 1–3; the residue family
+at level $\ell$ is indexed by the rank-$\ell$ weight data (body-order
+grading).*
+
+*Status: the integration tool is the **live algebraic residue sum** on
+the Descartes elliptic curve. The earlier Picard–Lefschetz / thimble
+route gives the same answer via $\tau$ but requires the Lefschetz
+real-axis $=$ thimble-sum hypothesis; the algebraic residue formulation
+removes it — which is why the thimble blocks are deprecated in favour of
+[`prop:sw-period-residue-sum`](#prop:sw-period-residue-sum).*
 
 ---
 

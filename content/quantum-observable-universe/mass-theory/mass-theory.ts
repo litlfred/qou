@@ -484,6 +484,8 @@ export default chapter({
           label: "sec:phi-q-markov-resummation",
           blocks: [
             "markov-trace-factorization",
+            // Algebraic shortcut of KS Thm 8 (multiplicative invariant) via the Markov property.
+            "ks-multiplicativity-via-markov",
             "markov-trace-ratio-exact",
             "vassiliev-filtration-mass-tower",
             "hecke-quandle",
@@ -614,6 +616,8 @@ export default chapter({
         "chirality-from-frobenius-self-pairing",
         "curvature-rank-gb-stratification",
         "curvature-rank-gb-stratification-table-data",
+        // Algebraic shortcut of KS ind-constructibility via the Diamond Lemma.
+        "ks-finiteness-via-diamond-lemma",
         "spectral-sequence-collapse",
         "delta-q-decoration",
         "force-carrier-intertwining-correspondence",
