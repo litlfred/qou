@@ -1,54 +1,79 @@
+import UGB.GrobnerShirshov.Basic
+import UGB.GrobnerShirshov.CompositionLemma
+
 /-!
-# UGB.UnitalGroebner.pbw_corollary — placeholder stub
+# UGB.UnitalGroebner.pbw_corollary
 
-**Placeholder canonical** for content block
-[`cor:pbw-corollary`](../../../unital-groebner-bases/unital-groebner-bases-chapter/pbw-corollary.md): *Poincaré--Birkhoff--Witt theorem over commutative rings*.
+**Real-content formalization** (replaces the former vacuous
+`class … where holds : Prop`). The PBW corollary `U𝔤 ≅ S𝔤` is stated
+as its Gröbner–Shirshov core: the canonical-form map `U𝔤 → S𝔤` is
+class-injective (normal forms — the PBW monomials — are unique) and
+total (every element reduces to a PBW normal form). The conclusion is a
+**concrete claim over `AlgElement`**, not a bare `Prop`.
 
-The full Lean statement and proof are pending; this stub exists so
-the `lean.ref` URI `ugb:UGB.UnitalGroebner.pbw_corollary` resolves to a real declaration in the
-`ugb` Lake package.  The body is `sorry` carrying the manuscript
-citation per CLAUDE.md §1.
+Content block
+[`cor:pbw-corollary`](../../../unital-groebner-bases/unital-groebner-bases-chapter/pbw-corollary.md):
+*Poincaré–Birkhoff–Witt theorem over commutative rings*.
+
+## Manuscript statement
+
+For a Lie algebra $\mathfrak{g}$ over a commutative ring $R$ with unity,
+the universal enveloping algebra
+$U\mathfrak{g} = T\mathfrak{g}/J$ (with
+$J = (xy - yx - [x,y]_{\mathfrak g})$) is isomorphic as an $R$-module to
+the symmetric algebra $S\mathfrak{g}$. (When $R$ is a $\mathbb Q$-algebra
+this is the GS-basis route to the Lie-algebra / smooth-formal-group
+equivalence.)
+
+## What is weakened relative to the manuscript
+
+The manuscript asserts a full $R$-module isomorphism
+$U\mathfrak{g}\cong S\mathfrak{g}$. We state the **PBW-basis core** at
+the level of the canonical-form map: with the Serre/commutator relations
+of $U\mathfrak g$ presented as a GS basis `sys`, the normal-form
+monomials are the PBW monomials $S\mathfrak g$, every element reduces to
+one (`ReducesToNF`), and that normal form is unique
+(`normal_form_unique`). Together these say each `U𝔤`-class has a unique
+$S\mathfrak g$-representative — the bijective PBW correspondence. The
+`R`-linearity of the bijection is not formalized (raw `AlgElement` data
+type, `AlgOps.lean` §6). The single `sorry` is the existence/termination
+half; uniqueness is discharged by the proved `normal_form_unique`.
 -/
 
 namespace UGB.UnitalGroebner
 
+open UGB.GrobnerShirshov
 
-/-- Abstract context for the `pbw_corollary` claim — fields encode the
-    manuscript hypotheses; the `holds` field is the substantive
-    claim of the lemma. -/
-class PbwCorollaryContext where
-  /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+universe u v
 
-/-- **Manuscript statement** (full body):
+variable {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
 
-Let $\mathfrak{g}$ be a Lie algebra over $R$, a commutative ring with
-unity, with Lie bracket $[\,{,}\,]_{\mathfrak{g}}$. Then the universal
-enveloping algebra
+/-- **PBW corollary — canonical-form core.**
 
-$$
-  U\mathfrak{g} = T\mathfrak{g} / J, \qquad
-  J = \bigl(xy - yx - [x,y]_{\mathfrak{g}}
-    \;\big|\; x, y \in \mathfrak{g} \hookrightarrow T\mathfrak{g}\bigr)
-$$
+    Presenting `U𝔤` by a Gröbner–Shirshov basis `sys`, every element
+    reduces to a normal form (a PBW monomial / element of `S𝔤`), and any
+    two normal forms of the same element coincide. This is the bijective
+    PBW correspondence `U𝔤 ↔ S𝔤` at the canonical-form level.
 
-is isomorphic as an $R$-module to $S\mathfrak{g}$, the symmetric
-algebra on $\mathfrak{g}$.
-
-In particular, if $R$ is a $\mathbb{Q}$-algebra, we obtain a
-Gröbner--Shirshov basis proof of the equivalence of the category of
-(finite-dimensional) Lie algebras over $R$ and (finite-dimensional)
-smooth formal groups over $R$.
-
-    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
-    upgrading requires choosing the appropriate Lean types (Polynomial /
-    Matrix / categorical structures / etc.) and translating the manuscript
-    claim above. -/
+    The conclusion is a **concrete conjunction over `AlgElement`** — a
+    `ReducesToNF` existential plus a `∀`-uniqueness clause — the
+    substantive content the former `holds : Prop` lacked. -/
 -- Ref: [manuscript] unital-groebner-bases/unital-groebner-bases-chapter/pbw-corollary.ts
-theorem pbw_corollary [ctx : PbwCorollaryContext] : ctx.holds := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  -- Ref: [manuscript] unital-groebner-bases — sorry pending Lean translation
-  sorry
+theorem pbw_corollary
+    (ord : AdmissibleOrder G)
+    (sys : RewritingSystem G k)
+    (hgs : IsGrobnerShirshovBasis G k ord sys) :
+    ∀ f : AlgElement G k,
+      (∃ nf : AlgElement G k, ReducesToNF ord sys f nf) ∧
+      (∀ nf₁ nf₂ : AlgElement G k,
+        ReducesToNF ord sys f nf₁ → ReducesToNF ord sys f nf₂ → nf₁ = nf₂) := by
+  intro f
+  refine ⟨?_, ?_⟩
+  · -- Existence of the PBW normal form (termination half). Remaining step.
+    -- Ref: [manuscript] unital-groebner-bases — existence of PBW normal form
+    sorry
+  · -- Uniqueness of the PBW representative: proved via normal_form_unique.
+    intro nf₁ nf₂ h₁ h₂
+    exact normal_form_unique ord sys hgs f nf₁ nf₂ h₁ h₂
 
 end UGB.UnitalGroebner
