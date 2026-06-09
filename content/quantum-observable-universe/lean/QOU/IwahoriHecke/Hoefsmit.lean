@@ -95,7 +95,7 @@ namespace QOU.IwahoriHecke.Hoefsmit
 
 universe v
 
-variable (R : Type v) [Field R] (q : R) (n : ℕ)
+variable (R : Type v) [CommRing R] (q : R) (n : ℕ)
 
 /-! ## Hoefsmit basis class (§3b-cond)
 
@@ -112,7 +112,7 @@ partitions can be supplied per-atom.
     Specht module `V_λ` has a seminormal basis indexed by
     standard Young tableaux of shape `λ`, with the cell-content
     recurrence governing the action of the generators `T_{s_i}`. -/
-class HoefsmitSeminormalBasis (R : Type v) [Field R] (q : R) (n : ℕ) where
+class HoefsmitSeminormalBasis (R : Type v) [CommRing R] (q : R) (n : ℕ) where
   /-- The dimension of the Hoefsmit basis at partition λ (= number
       of standard Young tableaux of shape λ). Abstractly: a non-zero
       `Nat`-valued function on partitions. -/
@@ -123,7 +123,7 @@ class HoefsmitSeminormalBasis (R : Type v) [Field R] (q : R) (n : ℕ) where
 
 /-- **Default instance** at `n = 1` (trivial partition):
     `dim_partition = 1` for `λ = 1` (single-cell tableau exists). -/
-instance instHoefsmit_default (R : Type v) [Field R] (q : R) (n : ℕ) :
+instance instHoefsmit_default (R : Type v) [CommRing R] (q : R) (n : ℕ) :
     HoefsmitSeminormalBasis R q n where
   dim_partition := fun _ => 1
   exists_nontrivial := ⟨1, Nat.one_pos⟩
@@ -134,7 +134,7 @@ instance instHoefsmit_default (R : Type v) [Field R] (q : R) (n : ℕ) :
     identifications are deferred to downstream per-partition
     instances. -/
 theorem hoefsmit_ew_cell_content_existence
-    (R : Type v) [Field R] (q : R) (n : ℕ) :
+    (R : Type v) [CommRing R] (q : R) (n : ℕ) :
     Nonempty (HoefsmitSeminormalBasis R q n) :=
   ⟨inferInstance⟩
 
@@ -154,7 +154,7 @@ edits the `hecke-branching-trace-decomposition.lean` file directly. -/
     The signature below abstracts the operator-valued type; the
     concrete construction lives in the follow-up. -/
 def branchCoefficientType
-    (R : Type v) [Field R] (q : R) (n : ℕ)
+    (R : Type v) [CommRing R] (q : R) (n : ℕ)
     [HoefsmitSeminormalBasis R q n] : Type :=
   -- Sprint 5 stub: opaque operator-valued type; concrete
   -- construction = direct sum over (μ, ν) with multiplicity c^λ_{μν}
