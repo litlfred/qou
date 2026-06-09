@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "17466e305272",
     "ts": "a09dbae8ac7c",
-    "lean": "c7d4a0c61b5e"
+    "lean": "32de9741b608"
   },
   "criteria": {
     "voice-status-leak": [
@@ -388,6 +388,25 @@
         "reviewed_at": "2026-06-07T06:00:59.853Z",
         "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
         "notes": "INTEGRITY FAIL: lean.ref QOU.CategoricalInstanton.exists proves a vacuous Nonempty via an identity witness, not a substantive self-dual instanton; docstring self-admits the gap."
+      },
+      {
+        "field_hash": {
+          "md": "17466e305272",
+          "ts": "a09dbae8ac7c",
+          "lean": "32de9741b608"
+        },
+        "result": "pass",
+        "evidence": "∃ I, I.curvature = 0 over [Preadditive C]; self_dual = 0 ≫ ⋆_q = 0 (genuine F=0 zero-instanton)",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-09",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-09T15:57:08.338Z",
+        "reviewed_sha": "22b58ea827369ef210aa0d1213da8bc308cf1158",
+        "notes": "Strengthened over [CommRing R][Preadditive C][Linear R C], restoring the k-linearity the (C,A,τ) triple declares; removed false axiom / vacuous witness; verified green via _Scratch bundle against fixed GaugeTheory (exit 0)."
       }
     ],
     "voice-unicode-crash": [
@@ -1216,5 +1235,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-09T14:26:34.579Z"
+  "updated_at": "2026-06-09T15:57:08.338Z"
 }
