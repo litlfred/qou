@@ -44,7 +44,7 @@ doc.
 | 7. GB filtration | `ℓ(w)`-graded, `E_2` collapse | 🟢 derived | — |
 | 8. Jet order | jet-prefix → `q→1` limit | 🟡 partial (Lean `sorry=4`) | proof-watcher: `SkewSYT` jet sorries |
 | 9a. Mass identity `m_p` | `m_e·VolDensity(K, q₀)` (knot-dependent) | 🟡 +2.89–3.73% gap (production uses uniform `Vol(𝓑₃)` for ALL atoms — the **lack of per-knot `VolDensity(K)` wire-up** is the bug: 64 of 65 atom-touching scripts use only `vol_density_borromean(q)`, so 63 of 65 isotopes (all A ≥ 2) get the wrong Vol(K); see [`vol-usage-audit`](audits/2026-06-02-vol-usage-audit-uniform-vs-per-knot.md)) | **per-knot `VolDensity(K)` wire-up** (NOT λ_scale); #1698 (m_avg combiner), `vol_density_per_block_wiring.py` testbed |
-| 9b. Per-isotope binding `B(K)` | `m_e·Σ_λ y_λ χ^λ Δ_λ` | 🔴 Δ_λ gate open | **Δ_λ closure**: Option E #1697/#1516 (crystal); #1709 (volume refuted); q-Reeb/isospin-mirror (`option_e_v9`) |
+| 9b. Per-isotope binding `B(K)` | **canonical default**: depth-stratified `Σ_k α_k Φ_k(K)` via `binding_depth_stratified_rust.py` — α_k structural (Markov z² at k=2, m_e·8G at k≥4); per-depth ASSIGNMENT empirical | 🟡 canonical-with-empirical-assignment ([audit](audits/2026-06-09-binding-canonical-default-depth-stratified.md)); D/T/³He undershoots 67-73%, ⁴He -50% Rust / +109% LR; flat magic-A `2·m_e·4·8G` BEATS tower on ⁴He (+5.87%) | substrate-derive per-depth α_k assignment rule; reconcile tower (§9.5) vs magic-A flat |
 | 10. Confinement SDP | canonical `T_w` | 🟢 derived | LP/SDP duals infra (`lp_dual_solver.py`) |
 | 11. β-decay `Q_β` | `\|Δ(net)\|·𝔈₀` | 🟢 derived; `c_k` truncation | `1ppq-qbeta.md` ledger (c_k tiered) |
 
@@ -512,6 +512,98 @@ canonical chain's standing Lean backlog; pick them up in a lake-enabled session
 (per CLAUDE.md §1, every resulting `sorry` carries a `-- Ref:` citation until
 discharged). Proof-watcher: route under the proof-integration-watcher queue.
 
+### 9.5 The 6-knot multiplicative closure (tower interpretation)
+
+Step 4 of the canonical chain establishes **6 H_3(q) basis elements**:
+
+```
+{ 1, σ_1, σ_2, σ_1σ_2, σ_2σ_1, σ_1σ_2σ_1 = σ_2σ_1σ_2 }   ← Bring χ = −6
+```
+
+A recurrent agent confusion is reading "6 basis elements" as **6 independent
+SM-equivalent operators** that each contribute one slot of binding. That is
+**wrong**: the 6 are **GENERATORS** of `H_3(q)` — the full binding spectrum is
+the **multiplicative closure** of these generators climbing the **GB filtration /
+jet tower** of Steps 7-8:
+
+| GB depth k | tower layer | element class | count |
+|---|---|---|---:|
+| 0 | identity | `1` | 1 |
+| 1 | length-1 | `σ_1, σ_2` | 2 |
+| 2 | length-2 | `σ_1σ_2, σ_2σ_1` | 2 |
+| 3 | length-3 (center) | `σ_1σ_2σ_1 = σ_2σ_1σ_2` | 1 |
+
+Total: **6** — same 6 H_3 basis elements, viewed as the tower closure.
+
+For atoms with `A ≥ 2`, the full braid lives in `H_{3A}` and the tower
+extends to depth `3A − 1`. Each **depth band** `J^k / J^{k+1}` contributes
+binding via the **depth-stratified canonical compute** (§9.5.1):
+
+$$B(K) \;=\; m_e \cdot \sum_{k\,\geq\,0} \alpha_k \cdot
+\sum_{w\,\in\,J^k/J^{k+1}}
+y_w \cdot \bigl(\chi^\lambda_{\text{free}}(w) - \chi^\lambda_{\text{atom}}(w)\bigr).$$
+
+So the binding spectrum is **NOT** 6 standalone contributions — it is the
+sum over the whole tower closure, of which the 6 basis elements are the
+generating set at depth ≤ 3.
+
+#### 9.5.1 Canonical default compute
+
+The default binding-energy compute IS the depth-stratified tower sum:
+
+- **Production**: [`binding_depth_stratified_rust.py`](../folio-assistant/computations/binding_depth_stratified_rust.py)
+  (full H_{3A} via Geck-Pfeiffer + Hoefsmit Rust kernel, n ≥ 9)
+- **LR variant** (per-nucleon H_3 → H_{3A} combiner for A ≥ 4):
+  [`binding_depth_stratified_lr.py`](../folio-assistant/computations/binding_depth_stratified_lr.py)
+- **Python fallback**: [`binding_depth_stratified.py`](../folio-assistant/computations/binding_depth_stratified.py)
+
+α_k coefficients (NOT empirical fits):
+- α_0 = α_1 = α_3 = 1 (trivial layers)
+- α_2 = z² = (1/(√q+1/√q))² ≈ 0.2493 (Markov braid-trace marker²)
+- α_{k≥4} = m_e · 8G ≈ 3.7445 (Vol(L6a4) Borromean plateau)
+
+Current state (per witnesses 2026-06-09 — full audit at
+[`docs/audits/2026-06-09-binding-canonical-default-depth-stratified.md`](audits/2026-06-09-binding-canonical-default-depth-stratified.md)):
+
+| atom | tower B_pred | B_AME | ratio |
+|---|---:|---:|---:|
+| D | 0.607 MeV | 2.225 | −73 % |
+| T | 2.808 MeV | 8.482 | −67 % |
+| ³He | 2.653 MeV | 7.718 | −66 % |
+| ⁴He (Rust) | 14.063 MeV | 28.296 | −50 % |
+| ⁴He (LR) | 59.114 MeV | 28.296 | +109 % (partial-witness artifact¹) |
+
+¹ LR ratio = Rust ratio EXACTLY for D, T, ³He (matched to 3 dp).
+The ⁴He LR vs Rust 4× spread is **entirely an artifact** of the
+partial cached ⁴He atom chi witness (24/77 partitions); LR is
+mathematically exact for the disjoint-product free config, and would
+agree with Rust direct once the cached ⁴He atom witness is completed
+to 77/77.
+
+**Tower sum does NOT close binding at the 10 % threshold.** The flat
+**magic-A** formula `B(⁴He) = 2·m_e·A·8G` (+5.87 %, §9.3) BEATS the
+depth-stratified tower on ⁴He (-50 % Rust direct). The unclosed gap
+is in the **per-depth α_k ASSIGNMENT RULE** (which structural
+constant goes to which k, why α_3 = 1 breaks the Markov-marker
+series, why α_{k≥4} plateaus at m_e·8G) — NOT in the LR-vs-Rust
+choice.
+
+**Agent guidance for binding compute:**
+
+1. ✅ DO use `binding_depth_stratified_rust.py` (or LR variant for A ≥ 4)
+   as the **default canonical compute** — cite the witness JSON.
+2. ✅ DO cite `canonical_status = canonical-with-empirical-assignment`
+   when reporting binding numbers — flags the unclosed assignment-rule gap.
+3. ✅ DO report `B_pred / B_AME` ratio alongside any number.
+4. ❌ DO NOT invent new closure formulas (Coulomb correction, cross-
+   isotope bar-symmetric, etc.) without first checking §9.3 + the
+   audit doc. The Δ_λ gate is mis-framed; CAL-4 numerology is forbidden
+   (cheat sheet §9.3 + isospin-mirror discipline assessment).
+5. ❌ DO NOT treat the +5.87 % magic-A formula as universal binding —
+   it applies only to ⁴He's doubly-magic shell.
+6. ❌ DO NOT chase the retracted Option E v9 cross-isotope `(1+q)/2`
+   0.11 % "closure" — see §9.3 retraction + audit doc.
+
 ---
 
 ## See also
@@ -520,6 +612,7 @@ discharged). Proof-watcher: route under the proof-integration-watcher queue.
 - [`DERIVATION-CHAIN-METHODOLOGY.md`](../folio-assistant/computations/DERIVATION-CHAIN-METHODOLOGY.md) — compute-side discipline
 - [`docs/precision-goals.md`](precision-goals.md) — L1 vs L2 precision targets
 - [`docs/duality-tracker.md`](duality-tracker.md) — coordinate-side classifier of every duality the framework uses or could use (D1-D24); status flags + closure paths; sibling-coordination index
+- [`docs/audits/2026-06-09-binding-canonical-default-depth-stratified.md`](audits/2026-06-09-binding-canonical-default-depth-stratified.md) — depth-stratified `Σ_k α_k Φ_k` is the canonical binding default; α_k structural (z² Markov + m_e·8G Borromean), per-depth assignment rule is the unclosed gap
 - [`docs/audits/2026-05-24-magic-shell-gs-filtration-exploitation.md`](audits/2026-05-24-magic-shell-gs-filtration-exploitation.md) — magic-shell + GS-NF wiring gap (L3 closure path)
 - [`docs/audits/2026-05-24-isospin-categorical-source.md`](audits/2026-05-24-isospin-categorical-source.md) — D9 isospin closure path (operator-valued bowtie extension)
 - [`.claude/skills/local/canonical-watcher.md`](../.claude/skills/local/canonical-watcher.md) §Slot J — probe follow-up discipline (GB filtration + jet order + bar-symmetry triple-check)
