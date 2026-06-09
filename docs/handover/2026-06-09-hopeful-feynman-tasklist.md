@@ -27,28 +27,37 @@ Targets (author, across messages): **#2043, #2054, #2030, #2055, #2039,
 Per PR: rebase onto main → resolve threads → re-check CI → **rebase-merge**
 (CLAUDE.md §8) if clean; else record blocker.
 
-**Sweep progress: 4 of 7 merged.**
+**Sweep result: 5 of 7 merged; 2 flagged for author (not safe to blind-merge).**
 
 | PR | branch | status | note |
 |---|---|---|---|
-| #2039 | workplan-refresh | ✅ **merged** (rebase) | docs-only |
-| #2034 | workplan-strategic-review | ✅ **merged** (rebase) | docs-only workplan |
-| #2055 | witness-isstale-hardening | ✅ **merged** (squash) | GitHub refused rebase → squash; single logical change |
-| #2054 | ci-code-quality-gates | ✅ **merged** (rebase) | CI gates (=#2028 item 2). 3 narrowed Lean imports NOT build-verified by CI (only the grep-gate ran) but low-risk (file2 no tactics, file3 broad `Mathlib.Tactic`, file1 author-exact) |
-| #2030 | quirky-mendel-7osmxc | ⏳ rebasing | conflicts; Python+witness only (no Lean) |
-| #2043 | serene-babbage-5xvgde | ⬜ dirty→rebase | adelic Lean (not_checked) + ohara1991 bib; 5 comments. **#2043 == serene-babbage** (one PR) |
-| #2059 | keen-feynman-SASjJ | ⬜ dirty→rebase | UGB Lean gap-close; verify build before merge |
+| #2039 | workplan-refresh | ✅ merged (rebase) | docs-only |
+| #2034 | workplan-strategic-review | ✅ merged (rebase) | docs-only workplan |
+| #2055 | witness-isstale-hardening | ✅ merged (squash) | GitHub refused rebase → squash; single logical change |
+| #2054 | ci-code-quality-gates | ✅ merged (rebase) | CI gates (=#2028 item 2); 3 narrowed Lean imports low-risk (CI grep-gate green) |
+| #2043 | serene-babbage-5xvgde | ✅ merged (rebase) | rebased (1 sidecar conflict), gemini `$`-nits already fixed, validate ✓. ohara1991 seed + adelic prop now on main. **#2043 == serene-babbage** |
+| #2030 | quirky-mendel-7osmxc | 🟥 FLAGGED | branch carries 3 merge commits + auto-moved Breit–Wheeler Ch13→Ch9 and "resolved 3 of 4 author-decision edges" — author-gated per detangler discipline (ledger C1). Needs author call. |
+| #2059 | keen-feynman-SASjJ | 🟥 FLAGGED | gemini: `proof:holds` w/ unconstrained `holds:Prop` makes the "sorry-free" theorems VACUOUS (instantiable with `True`) — violates §3b-cond; 10 copilot comments; Q_β probe scope-creep. |
 
-### 3. ⬜ H₂O angle compute — REDO with checked trace
-Prior agent's H₂O `a,b`-from-Φ₁ work was **never committed** (lost).
-**Author correction (key):** do **not** use `|v|` (loses structure). Use
-the (checked) **trace** `tr(v)` / `\check{tr}(v)` so the extra structure is
-retained. Re-derive angular `a,b`, emit a witness, report tiered honestly.
-_(Read-only research agent dispatched.)_
+### 3. ✅ H₂O angle compute — REDONE with checked trace
+Used the Markov trace `tr_M` (not `|v|`) per your correction. **Result
+(committed):** lone pair `e⁻=σ₀σ₁σ₀` → `tr_M=hz²+z`; bond `σ` → `tr_M=z`;
+so `Δtr=hz²>0` ⇒ `b>0` ⇒ angle **narrows** below tetrahedral — the
+q-exact CORRECT sign (prior `|v|` probe got bond>lone → opened to ~140°).
+Magnitude `hz≈10.4%` vs observed `4.5%` (same order); exact degrees need
+the geometric stiffness `a` — not fitted. Files: `h2o_bond_angle_shift_phi1.py`
++ witness + `ANGLE_H2O_*` in `experimental_constants.py`.
+`prop:h2o-bond-angle-shift` already exists on main; this supplies its
+missing derivation of the sign of `b`.
 
-### 4. ⬜ PR #2028 handover — do **item 4**, review rest for status
-**Item 4 (§3)** = WS-B de-hardcode molecular literals → `:val` witness-pin +
-migrate ~55 `not_started`→`not_checked`. Also record status of items 1/2/3/5/6.
+### 4. ⏳ PR #2028 item 4 — **D10 done, D4 remaining**
+- **D10 ✅** migrate 55 `not_started`→`not_checked` (committed; validate ✓).
+- **D4 ⬜** de-hardcode ~25 molecular `.md` literals → experimental-constants /
+  `:val` witness-pin (benzene `1.40/1.54/1.34 Å`; LP-dual + barrier tables).
+  Per-literal judgment (experimental vs derived) — **the main remaining
+  piece**; documented for next pass.
+Handover items: 1 (#2003) done · 2 (CI gates)=#2054 **merged** · 3 (=D4) ·
+4 (=D10 done) · 5/6 ops/sweep notes consumed.
 
 ### 5. ⏳ Review completion of `session-handover.md`
 - **§1 (merge #2024 + #2011): ✅ DONE** — both merged 2026-06-09.
