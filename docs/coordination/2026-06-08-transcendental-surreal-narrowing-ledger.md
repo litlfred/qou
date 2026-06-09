@@ -59,6 +59,29 @@ Each narrowing is tagged by whether surreals are **essential** or **language**:
 > link between two QOU transcendentals, surreal-graded but still **L** (the
 > bound's constants are finite reals).
 
+## The ledger (millennium-problem cluster — pass 2, 2026-06-09)
+
+Retires the speculative `*-surreal-bound` framing: each former "bound" block is
+re-indexed here as a narrowing row (narrowing + named residue + L/E? tag). The
+blocks themselves stay as the worked statements; this is the re-scoped index.
+
+| # | Conjecture (block) | Surreal-graded narrowing (the worthwhile part) | Open residue (named external input) | Surreal? |
+|---|---|---|---|---|
+| 11 | [`bsd-surreal-bound`](../../content/quantum-observable-universe/appendix-surreals/bsd-surreal-bound.md) → `conj:q-birch-swinnerton-dyer` | `ord_ω(L(𝓔_q,1+δ)) = r·ord_ω(δ)` — order-of-vanishing = Mordell–Weil rank `r` as a surreal `ω`-order identity; the squeeze forbids a hidden zero of order `> r` | the spectral `L`-value ↔ Reeb-period identification; BSD itself (rank = ord of vanishing) | L (single-`ε`, rank-1) |
+| 12 | [`rh-surreal-bound`](../../content/quantum-observable-universe/appendix-surreals/rh-surreal-bound.md) → `conj:classical-riemann-hypothesis` | a rogue zero at `Re=½+δ` costs `E(δ) ≍ δ²·ε⁻¹`, exceeding the mass-gap budget `ε³` by `ε⁻⁴` — off-critical-line zeros are surreal-order-forbidden | Hasse–Weil alignment at every prime fibre; RH itself | L (single-`ε`, rank-1) |
+| 13 | [`yang-mills-surreal-bound`](../../content/quantum-observable-universe/appendix-surreals/yang-mills-surreal-bound.md) → YM mass-gap | `Δ_q ≍ ε³ > 0` **is** the categorical mass gap (`ord_ω(Δ_q) = −3 > −∞ = ord_ω(0)`); definitional content of the substrate, not an auxiliary claim | identification of the categorical `Δ_q` with the physical `SU(N)` YM gap on `ℝ⁴`; massless-glueball exclusion | L (finite `ε`-order) |
+| 14 | [`p-vs-np-surreal-bound`](../../content/quantum-observable-universe/appendix-surreals/p-vs-np-surreal-bound.md) → `conj:p-vs-np-qou` | classical simulation `2ⁿ·δ²·ε⁻¹` exceeds the classical budget `2ⁿ·ε³` by a full `ω`-order (`ord_ω = 1 > −3`); `st_{ε→0}` collapses the transfinite speed-up ⇒ `P≠NP` propagates from the quantum separation | **conditional** on `P ⊊ BQP_q` at positive `ε` (non-compressibility, Freedman TQC); Cook–Levin preservation | **L — conditional** (the one conditional row) |
+| 15 | [`collatz-surreal-bound`](../../content/quantum-observable-universe/appendix-surreals/collatz-surreal-bound.md) → `conj:q-collatz` / `prop:collatz-no-cycles` | a rogue orbit's accumulated contact-volume `V(δ) ≍ δ²·ε⁻¹ > Δ_q ≍ ε³` (`ord_ω = 1 > −3`) ⇒ no rogue cycle / unbounded hailstone survives the squeeze | contact-boundary ↔ integer-orbit translation faithfulness (q-Collatz as skein resolution); Collatz itself | L (single-`ε`, rank-1) |
+
+> **Pass-2 note.** All five are **rank-1 (L)**: each lives in the `ε`-adic line
+> `ℝ(ε) ⊂ No` (a single valuation, finite `ε`-powers), so the surreal statement
+> re-describes an ordinary real asymptotic — surreals are the *convenient
+> language*, not load-bearing. P-vs-NP is additionally **conditional** (rides on
+> the `BQP_q` non-compressibility input). Combined with pass-1 and the resolved
+> essential candidate below, **every** ledger row is now **L** — the corpus
+> carries no surreal-*necessary* narrowing. (See the keep/purge reading: keep as
+> the narrowing language; nothing is load-bearing on surreals.)
+
 ## The essential candidate — RESOLVED to *language* (2026-06-08)
 
 The GS-tower compounding of the non-abelian-Stokes quadratic term was the one
