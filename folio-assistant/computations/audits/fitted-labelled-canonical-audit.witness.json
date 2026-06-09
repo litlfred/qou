@@ -1,12 +1,12 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-09T06:02:08.982745+00:00",
-  "commitSha": "407446299f24a411f7a87e70a5b341f222b86b36",
+  "computedAt": "2026-06-09T06:05:49.661753+00:00",
+  "commitSha": "c466438c511e3d921e0d98a355885fcf90ad33ca",
   "assertions": [
     {
       "name": "no_fitted_labelled_canonical",
-      "computed": 14,
+      "computed": 16,
       "expected": 0,
       "passed": false,
       "tolerance": 0
@@ -34,10 +34,34 @@
   "description": "Audits production scripts in folio-assistant/computations/ for the CAL-4-disguised-as-canonical pattern: a hardcoded numerical literal at module level combined with a 'substrate/canonical/derived' claim in the docstring, where neither the variable name nor the surrounding context tags the literal as validation/CODATA/acknowledged. Introduced 2026-05-22 after the LAMBDA_PROTON_DOC discovery in m_p_borromean_verification_50dps.py (see docs/canonical-derivation-cheat-sheet.md §5 fix #1).",
   "contentBlock": "prop:three-calibration-inputs",
   "data": {
-    "total_issues": 14,
-    "flagged_script_count": 2,
-    "scripts_scanned": 1145,
+    "total_issues": 16,
+    "flagged_script_count": 4,
+    "scripts_scanned": 1156,
     "rows": [
+      {
+        "path": "computations/metallic_q_n4_character_sweep.py",
+        "issue_count": 1,
+        "issues": [
+          {
+            "line": 59,
+            "var": "Q0",
+            "literal": "1.1099785955541805",
+            "context_snippet": "σ_1 σ_3        commuting pair, eigenvalue structure on (2,2)\n    σ_1 σ_2 σ_3    full cycle, sensitive to (3,1) vs (2,1,1)\n    Δ_4 := σ_1 σ_2 σ_1 σ_3 σ_2 σ_1   Garside half-twist on B_4\n\nFor each (β, λ) we compute the per"
+          }
+        ]
+      },
+      {
+        "path": "computations/metallic_q_wenzl_sign_sweep.py",
+        "issue_count": 1,
+        "issues": [
+          {
+            "line": 61,
+            "var": "Q0",
+            "literal": "1.1099785955541805",
+            "context_snippet": "ute it.\n\nEach interval is sampled at ≥10 q-values (denser than just midpoints).\nBar-mirror intervals (1/δ_n) are sampled symmetrically.  Output is a\nwitness JSON with the full sweep + a per-interval positive-block count\n"
+          }
+        ]
+      },
       {
         "path": "computations/probes/gap_a4_S_K_additive_probe.py",
         "issue_count": 7,
