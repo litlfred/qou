@@ -174,51 +174,92 @@ def _witness_path(script_name: str) -> Optional[Path]:
     return None
 
 
+_WITNESSES_BY_PRODUCER: "dict[str, list[Path]] | None" = None
+
+
+def _witnesses_by_producer() -> "dict[str, list[Path]]":
+    """Map producer script basename → every witness it emits (by ``scriptFile``).
+
+    Lets ``_is_stale`` q₀-check **multi-shard** producers — a producer that
+    emits many witnesses (e.g. ``canonical_isotope_witness.py`` → the per-Z
+    shards ``canonical-isotope-witness-Z00..Z118``) — not just the single
+    ``_witness_path`` primary. Built once and cached for the process.
+    """
+    global _WITNESSES_BY_PRODUCER
+    if _WITNESSES_BY_PRODUCER is None:
+        m: "dict[str, list[Path]]" = {}
+        for wf in COMP_DIR.glob("*.witness.json"):
+            try:
+                sf = json.loads(wf.read_text(encoding="utf-8")).get("scriptFile")
+            except (json.JSONDecodeError, OSError):
+                continue
+            if sf:
+                m.setdefault(Path(sf).name, []).append(wf)
+        _WITNESSES_BY_PRODUCER = m
+    return _WITNESSES_BY_PRODUCER
+
+
 def _is_stale(script_name: str) -> tuple[bool, str]:
-    """Check if a script's witness is stale or missing.
+    """Check whether a producer's witness(es) are stale or missing.
+
+    Covers **multi-shard** producers: gathers the ``_witness_path`` primary
+    AND every shard the producer emits (by ``scriptFile``), checks the
+    producer's ``scriptHash``, then q₀-staleness across all of them. A
+    multi-shard producer with no single primary (e.g. ``canonical_isotope``)
+    is evaluated on its shards rather than reported "no witness file".
 
     Returns (is_stale, reason).
     """
     script_path = COMP_DIR / script_name
-    witness_path = _witness_path(script_name)
+    primary = _witness_path(script_name)
+    witnesses = list(_witnesses_by_producer().get(script_name, ()))
+    if primary is not None and primary not in witnesses:
+        witnesses.insert(0, primary)
 
-    if witness_path is None:
+    if not witnesses:
         return True, "no witness file"
 
-    try:
-        witness = json.loads(witness_path.read_text(encoding="utf-8"))
-    except (json.JSONDecodeError, OSError):
-        return True, "malformed witness"
-
-    # Check scriptHash
-    recorded_hash = witness.get("scriptHash")
-    if recorded_hash and script_path.exists():
+    # scriptHash: the producer's recorded hash (from the primary, or any
+    # shard that records one) vs the current script content.
+    if script_path.exists():
         import hashlib
-        content = script_path.read_text(encoding="utf-8")
-        current_hash = hashlib.sha256(content.encode()).hexdigest()[:12]
-        if current_hash != recorded_hash:
-            return True, f"script changed ({recorded_hash} → {current_hash})"
+        current_hash = hashlib.sha256(
+            script_path.read_text(encoding="utf-8").encode()
+        ).hexdigest()[:12]
+        for wp in witnesses:
+            try:
+                recorded_hash = json.loads(
+                    wp.read_text(encoding="utf-8")
+                ).get("scriptHash")
+            except (json.JSONDecodeError, OSError):
+                return True, f"malformed witness ({wp.name})"
+            if recorded_hash:
+                if current_hash != recorded_hash:
+                    return True, f"script changed ({recorded_hash} → {current_hash})"
+                break  # one valid scriptHash match suffices
 
-    # q₀-awareness: the scriptHash gate above is blind to changes in
-    # IMPORTED constants (e.g. a substrate q₀ re-pin), which leave the
-    # producer script byte-identical — the systemic cause of stale-witness
-    # accumulation after the 2026-05-28 re-pin. Flag a witness whose
-    # embedded q₀-shaped value differs from the current substrate q₀ so the
-    # auto-refresh (witness-refresh.yml / publish.yml regen step) regenerates
-    # it. This is warn-and-heal — `_is_stale` only drives regeneration, never
-    # a hard CI failure. Audit / state-tracking witnesses are exempt (they may
-    # record an old q₀ on purpose). Reuses witness_constant_staleness.py
-    # (#1500), whose import also sets up the qou_substrate path — both are
-    # internal modules guaranteed available at runtime, so no fallback.
+    # q₀-awareness: the scriptHash gate above is blind to changes in IMPORTED
+    # constants (a substrate q₀ re-pin leaves the producer byte-identical —
+    # the systemic cause of stale-witness accumulation after 2026-05-28).
+    # Flag a witness — primary OR any shard — whose embedded q₀ differs from
+    # the current substrate q₀, so the auto-refresh (witness-refresh.yml /
+    # publish.yml regen) regenerates it. Warn-and-heal: `_is_stale` only drives
+    # regeneration, never a hard CI failure. Audit / state-tracking witnesses
+    # are exempt (they may record an old q₀ on purpose). Reuses
+    # witness_constant_staleness.py (#1500).
     from witness_constant_staleness import Q0_SHAPE, AUDIT_SUFFIXES
     from qou_substrate.constants import Q_50_DIGIT_STR
-    if not witness_path.name.endswith(AUDIT_SUFFIXES):
-        cur = Q_50_DIGIT_STR[:14]  # "1." + 12 significant digits
-        raw = witness_path.read_text(encoding="utf-8")
-        embedded = {m.group(0)[:14] for m in Q0_SHAPE.finditer(raw)}
-        drifted = embedded - {cur}
+    cur = Q_50_DIGIT_STR[:14]  # "1." + 12 significant digits
+    for wp in witnesses:
+        if wp.name.endswith(AUDIT_SUFFIXES):
+            continue
+        try:
+            raw = wp.read_text(encoding="utf-8")
+        except OSError:
+            continue
+        drifted = {m.group(0)[:14] for m in Q0_SHAPE.finditer(raw)} - {cur}
         if drifted:
-            return True, f"stale q₀ ({sorted(drifted)[0]} ≠ {cur})"
+            return True, f"stale q₀ in {wp.name} ({sorted(drifted)[0]} ≠ {cur})"
 
     return False, "current"
 
