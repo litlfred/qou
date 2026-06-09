@@ -368,16 +368,64 @@ def compute_tr_m_via_branching(
         # color-weighted p-n interface that the symbolic markov_peel path
         # cannot represent. So delegate A≥3 to native: tr_M = Σ_λ y_λ χ^λ
         # with χ^λ from pyhecke_native.chi_q_atomic_all_partitions.
+        # CANONICAL TIER — no f64 on this path. χ^λ at MPFR 50 dps via
+        # chi_lambda_all_partitions_mpfr (its docstring: "the production
+        # path ... the f64 variant exists for speed-only use cases").
+        # The (c, d) word maps to the signed-word API by linearity:
+        #   σ (d=0) → +1;  σ⁻¹ (d=−h) → −1;  averaged (d=−h/2) → 0;
+        #   color-weighted pn  σ − h(1/2 − δ/4)·1
+        #     = [σ − h/2·1] + (h·δ/4)·1  →  sign-0 term + identity term.
+        # The identity-term coefficient is rebuilt at 50 dps from
+        # flavor_split_subleading (the float d in the word builder
+        # carries only ~17 digits, which would cap the witness there).
         import pyhecke_native as _pn
         from mass_at_3A_proper import atom_braid_word_3A as _abw
+        from q_parameter import Q_50_DIGIT_STR as _QSTR
         t0 = time.time()
-        factors = [(float(c), float(d), int(g) + 1) for (c, d, g) in _abw(Z, N)]
-        chi_pairs = _pn.chi_q_atomic_all_partitions(n, factors, float(q_val))
+        h_f = float(q_val) - 1.0 / float(q_val)
+        tol = 1e-9
+        terms: list[tuple[mp.mpf, list[tuple[int, int]]]] = [(mp.mpf(1), [])]
+        for (c, d, g) in _abw(Z, N):
+            cf, df = float(c), float(d)
+            if abs(cf - 1.0) > tol:
+                return None, 0.0, (
+                    f"unsupported crossing c={c} at gen={g} "
+                    "(expected c=1 templates)"
+                )
+            if abs(df) < tol:
+                terms = [(co, w + [(1, g + 1)]) for co, w in terms]
+            elif abs(df + h_f) < tol:
+                terms = [(co, w + [(-1, g + 1)]) for co, w in terms]
+            elif abs(df + h_f / 2) < tol:
+                terms = [(co, w + [(0, g + 1)]) for co, w in terms]
+            else:
+                from _li_2_q_util import flavor_split_subleading
+                q_mp = mp.mpf(_QSTR)
+                h_mp = q_mp - 1 / q_mp
+                delta_mp = flavor_split_subleading(q_mp)
+                expected_d = -(h_mp * (mp.mpf("0.5") - delta_mp / 4))
+                if abs(df - float(expected_d)) > tol:
+                    return None, 0.0, (
+                        f"unrecognised crossing (c={c}, d={d}) at gen={g}; "
+                        "expected σ / σ⁻¹ / averaged / color-weighted pn"
+                    )
+                id_coeff = h_mp * delta_mp / 4
+                split: list[tuple[mp.mpf, list[tuple[int, int]]]] = []
+                for co, w in terms:
+                    split.append((co, w + [(0, g + 1)]))
+                    split.append((co * id_coeff, w))
+                terms = split
         y_table = y_lambda_at(n, q_val)
+        chi_acc: dict[tuple, mp.mpf] = {}
+        for co, w in terms:
+            for shape, chi_str in _pn.chi_lambda_all_partitions_mpfr(
+                n, w, _QSTR, mp.mp.dps
+            ):
+                key = tuple(shape)
+                chi_acc[key] = chi_acc.get(key, mp.mpf(0)) + co * mp.mpf(chi_str)
         tr_m = mp.mpf(0)
-        for shape, chi in chi_pairs:
-            y = mp.mpf(str(y_table.get(tuple(shape), 0)))
-            tr_m += y * mp.mpf(str(chi))
+        for key, chi in chi_acc.items():
+            tr_m += mp.mpf(str(y_table.get(key, 0))) * chi
         return abs(tr_m), time.time() - t0, None
 
     # Load required extracts
