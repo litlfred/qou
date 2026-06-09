@@ -61,6 +61,22 @@ $$
 
 where $[n]_q = (q^n - q^{-n})/(q - q^{-1})$ is the $q$-integer.
 
+Although written as a quotient, the projection is **division-free over
+the integral Laurent subring** $\mathbb{Z}[q, q^{-1}] \subset R$: since
+$[9]_q$ and $[10]_q$ are genuine Laurent polynomials, the content of the
+proposition is the cleared-denominator relation
+
+$$
+  [9]_q \cdot [10]_q \cdot \alpha_{\mathrm{EM}} \;=\; q^{-1},
+$$
+
+which already lives in $\mathbb{Z}[q, q^{-1}]$ — no localisation at
+$(q - q^{-1})$ is required to *state* the coupling, only to *solve* the
+relation for $\alpha_{\mathrm{EM}}$ (the product $[9]_q[10]_q$ is not a
+unit of $\mathbb{Z}[q, q^{-1}]$).  This is the form carried by the
+formalisation, mirroring the $2\,E_{\mathrm{cross}} = q - q^{-1}$
+convention used elsewhere to keep cross-section data in the ground ring.
+
 **Derivation from three layers.**
 
 The electromagnetic coupling between two charged localized knots
