@@ -32,5 +32,19 @@ export default remark({
         "`CSCSilverIsCFLTransition` make the higher-n generalisation " +
         "and the physical CFL identification explicit.",
     },
+    {
+      kind: "refined-framing",
+      date: "2026-06-09",
+      body:
+        "Exact-Gram re-run (PR #2081, " +
+        "`metallic_q_s4_exact_lp_sweep.py`): S(3) = S(4) = " +
+        "{δ_silver} EXACT at the cost-coincidence level (γ vs σ₁, " +
+        "mpfr residual < 1e-37), but the n≥3 LP active-set flip of " +
+        "the approximate probe was a Gram-approximation artifact — " +
+        "only the n=2 active-set transition stands.  Coincidences " +
+        "are q-Plancherel-convention-anchored (absent under " +
+        "canonical Markov weights).",
+      see: "docs/audits/2026-06-09-metallic-qrho-calibration-nova-cascade.md",
+    },
   ],
 });

@@ -88,6 +88,18 @@ The n=3 Borromean LP probe (with Gram approximation) found
 So the framework's binding mechanism **flips** at silver from
 identity-saturated (γ-channel) to crossing-saturated (σ_0/σ_1-channel).
 
+> **Correction (2026-06-09, PR #2081).** The exact-Gram re-run
+> (`metallic_q_s4_exact_lp_sweep.py`, witness
+> `metallic-q-s4-exact-lp-sweep.witness.json`) shows the n=3
+> active-set flip above was an artifact of the rank-1 Gram
+> approximation: with the exact word-basis Gram the LP active set is
+> CONSTANT at n ≥ 3.  What survives — exactly — is the
+> cost-coincidence mechanism: `S(2) = S(3) = S(4) = {δ_silver}`
+> (γ vs σ₁ crossing, mpfr residual < 1e-37, q-Plancherel convention).
+> §3's physical synthesis should be read against the coincidence
+> mechanism, not the active-set-flip framing.  Details:
+> [`2026-06-09-metallic-qrho-calibration-nova-cascade.md`](2026-06-09-metallic-qrho-calibration-nova-cascade.md).
+
 ## 3. The synthesis — silver IS the CFL transition
 
 The corpus identifies the CFL transition as Borromean → Hopf-diquark

@@ -44,6 +44,26 @@ above silver it was $\{1\}$ (row 2 tight).  The degeneracy at silver
 is the **first non-null result** in a series of five prior numerical
 probes that all returned smooth observables.
 
+**Exact-Gram refinement ($n = 3, 4$).**  Replacing the rank-1 Gram
+approximation with the exact word-basis Gram
+$G_{ij} = \mathrm{tr}_M(b_i b_j)$ on the canonical $T_w$ bases of
+$H_3(q)$ and $H_4(q)$ (native Hoefsmit characters; witness
+`metallic-q-s4-exact-lp-sweep.witness.json`) sharpens the picture in
+two directions.  The cost-coincidence mechanism survives exactly: the
+pair $t_\gamma(q) = t_{\sigma_1}(q)$ crosses at $q = \delta_{\rm silver}$
+at every strand count tested, with $40$-digit residuals below
+$10^{-37}$, and no other metallic ratio appears among the coincidence
+loci — so $S(2) = S(3) = S(4) = \{\delta_{\rm silver}\}$ at the
+coincidence level.  The active-set transition, however, does not
+survive: with the exact Gram the LP active set is constant across the
+entire sweep at $n \geq 3$, so the richer active-set flip reported by
+the approximate $n=3$ probe was an artifact of the Gram approximation;
+only the $n=2$ active-set transition (where the Gram is exact) stands.
+The coincidences are also convention-anchored: they appear in the
+$q$-Plancherel weight family $y_\lambda = H_q(\lambda)^2/[n]_q!$ of the
+proved $n=2$ statement, and disappear under the Markov-normalized
+canonical weights.
+
 **Why this matters structurally.**  The metallic-ratio ladder
 (see [`docs/audits/2026-06-08-metallic-q-hierarchy-proof.md`](../../../docs/audits/2026-06-08-metallic-q-hierarchy-proof.md)
 and Lean module `QOU.AlgebraicSubstrate.MetallicHierarchy`)
@@ -76,9 +96,10 @@ of $q$.  The pairwise coincidence equations $t_i(q) = t_j(q)$ have
 rational-function solutions; those solutions that lie on the metallic
 ladder constitute the set $S(n) \subseteq \{\delta_k : k \le n\}$ of
 LP-degeneracy points for n strands.  For n=2 we have proven $S(2) = \{2\}$
-(silver only).  For n=3 the empirical probe (with Gram approximation)
-also returned $\{\delta_{\rm silver}\}$; the full higher-strand
-characterisation is the content of the conditional class
+(silver only).  For n=3 and n=4 the exact-Gram probe returns
+$\{\delta_{\rm silver}\}$ at the coincidence level ($q$-Plancherel
+convention; see the exact-Gram refinement above); the full
+higher-strand characterisation is the content of the conditional class
 `SDPDegeneracyDetectsMetallic` in `MetallicLPIdentities.lean`.
 
 **Falsifiability handle.**  This remark predicts that running an
