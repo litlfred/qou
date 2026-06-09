@@ -884,6 +884,7 @@ def validate_mu_n_blocks(dps: int = 50) -> int:
     n_total = 0
     n_chi_match = 0
     n_complete = 0
+    n_reduced_match = 0
     global_max_block = 0
     global_max_subblock = 0
     for (label, Z, N, max_dim) in isotopes:
@@ -909,16 +910,22 @@ def validate_mu_n_blocks(dps: int = 50) -> int:
             res = chi_via_mu_n_blocks_mpfr(
                 shape, word_left, bridge_sign, word_right, cache, k_split,
             )
+            red = chi_via_reduced_blocks_mpfr(
+                shape, word_left, bridge_sign, word_right, cache, k_split,
+            )
             chi_match = bool(abs(chi1 - res["chi"]) < tol)
             complete = bool(res["completeness_resid"] < tol)
+            reduced_match = bool(abs(chi1 - red["chi"]) < tol)
             n_total += 1
             n_chi_match += 1 if chi_match else 0
             n_complete += 1 if complete else 0
+            n_reduced_match += 1 if reduced_match else 0
             global_max_block = max(global_max_block, res["max_block_size"])
             global_max_subblock = max(global_max_subblock, res["max_subblock_dim"])
-            status = "✓" if (chi_match and complete) else "✗"
+            status = "✓" if (chi_match and complete and reduced_match) else "✗"
             print(f"    {status} λ={str(list(shape)):<20s} dimVλ={dim:>3d}  "
                   f"blk≤{res['max_block_size']:>2d}  sub≤{res['max_subblock_dim']:>2d}  "
+                  f"red={'✓' if reduced_match else '✗'}  "
                   f"resid={mpmath.nstr(res['completeness_resid'], 2)}")
             cases.append({
                 "shape": list(shape),
@@ -928,6 +935,7 @@ def validate_mu_n_blocks(dps: int = 50) -> int:
                 "completeness_resid": mpmath.nstr(res["completeness_resid"], 6),
                 "chi_match": chi_match,
                 "completeness_ok": complete,
+                "reduced_match": reduced_match,
                 "mu_n_dims": res["mu_n_dims"],
             })
         isotope_results.append({
@@ -937,7 +945,8 @@ def validate_mu_n_blocks(dps: int = 50) -> int:
 
     print("\n" + "=" * 78)
     print(f"  Phase 1.3 summary: chi_match {n_chi_match}/{n_total}  "
-          f"completeness {n_complete}/{n_total}")
+          f"completeness {n_complete}/{n_total}  "
+          f"reduced_kernel {n_reduced_match}/{n_total}")
     print(f"  Max μ_p block size: {global_max_block}   "
           f"Max (μ_p,μ_n) sub-block dim: {global_max_subblock}  "
           f"(bounded ≤ c_LR·dim_μ_p·dim_μ_n)")
@@ -965,18 +974,34 @@ def validate_mu_n_blocks(dps: int = 50) -> int:
                "q-Young primitive idempotents are a complete orthogonal "
                "system, the precondition for the trace identity above.",
     )
+    wb.add_assertion(
+        "reduced_block_kernel_matches_dense_chi",
+        computed=(n_reduced_match == n_total and n_total > 0),
+        expected=True,
+        source=f"Whether the Phase 1.4 reduced-block kernel "
+               f"chi_via_reduced_blocks_mpfr — χ = Σ_{{a,b}} "
+               f"Tr[bp_a·m_{{a,b}}·bn_{{b,a}}] in the adapted basis "
+               f"P=[Q_(3)|Q_(2,1)|Q_(1,1,1)] with true inverse P⁻¹ "
+               f"(the q-Young idempotents are OBLIQUE, so Pᵀ is wrong) — "
+               f"reproduces the one-level χ to absolute tol 1e-{dps-10} on "
+               f"every tested partition of D/T/³He/⁴He. Validates the "
+               f"cross-sector block structure that the Tier-3 recursion / "
+               f"Rust port exploit for the A=8,9 speedup.",
+    )
     wb.add_data("dps", dps)
     wb.add_data("q_0_substrate_str", Q_50_DIGIT_STR)
     wb.add_data("n_partitions_tested", n_total)
     wb.add_data("n_chi_match", n_chi_match)
     wb.add_data("n_completeness_ok", n_complete)
+    wb.add_data("n_reduced_kernel_match", n_reduced_match)
     wb.add_data("max_mu_p_block_size", global_max_block)
     wb.add_data("max_mu_p_mu_n_subblock_dim", global_max_subblock)
     wb.add_data("isotopes", isotope_results)
 
     out = wb.save()
     print(f"\n  ✓ Witness: {out.name}")
-    return 0 if (n_chi_match == n_total and n_complete == n_total) else 1
+    return 0 if (n_chi_match == n_total and n_complete == n_total
+                 and n_reduced_match == n_total) else 1
 
 
 if __name__ == "__main__":

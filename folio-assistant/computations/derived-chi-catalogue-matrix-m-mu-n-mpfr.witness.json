@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-09T12:57:32.406522+00:00",
-  "commitSha": "3d1395f38568ca391ac43c195766922e9c7c54ae",
+  "computedAt": "2026-06-09T14:38:11.675951+00:00",
+  "commitSha": "719b728d25601ff78b4b4787c7fe98826a63d5ef",
   "assertions": [
     {
       "name": "two_level_mu_n_chi_matches_one_level_mu_p",
@@ -17,14 +17,21 @@
       "expected": true,
       "passed": true,
       "source": "Whether Σ_{μ_n ⊢ 3} e_{μ_n} = I (max abs deviation below 1e-40) on every μ_p block — i.e. the three mpfr q-Young primitive idempotents are a complete orthogonal system, the precondition for the trace identity above."
+    },
+    {
+      "name": "reduced_block_kernel_matches_dense_chi",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "Whether the Phase 1.4 reduced-block kernel chi_via_reduced_blocks_mpfr — χ = Σ_{a,b} Tr[bp_a·m_{a,b}·bn_{b,a}] in the adapted basis P=[Q_(3)|Q_(2,1)|Q_(1,1,1)] with true inverse P⁻¹ (the q-Young idempotents are OBLIQUE, so Pᵀ is wrong) — reproduces the one-level χ to absolute tol 1e-40 on every tested partition of D/T/³He/⁴He. Validates the cross-sector block structure that the Tier-3 recursion / Rust port exploit for the A=8,9 speedup."
     }
   ],
   "allPassed": true,
-  "durationMs": 738,
+  "durationMs": 955,
   "computation": "derived-chi-catalogue-matrix-m-mu-n-mpfr",
   "scriptFile": "derived_chi_catalogue_matrix_m_mpfr.py",
-  "scriptHash": "d208e3614591",
-  "scriptCommitSha": "de78ac9c6dad8b7904bb4c584ddaa19011d7f171",
+  "scriptHash": "69fa05a241af",
+  "scriptCommitSha": "719b728d25601ff78b4b4787c7fe98826a63d5ef",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -44,6 +51,7 @@
     "n_partitions_tested": 18,
     "n_chi_match": 18,
     "n_completeness_ok": 18,
+    "n_reduced_kernel_match": 18,
     "max_mu_p_block_size": 9,
     "max_mu_p_mu_n_subblock_dim": 7,
     "isotopes": [
@@ -65,6 +73,7 @@
             "completeness_resid": "0.0",
             "chi_match": true,
             "completeness_ok": true,
+            "reduced_match": true,
             "mu_n_dims": [
               {
                 "mu_p": [
@@ -89,6 +98,7 @@
             "completeness_resid": "1.49297e-52",
             "chi_match": true,
             "completeness_ok": true,
+            "reduced_match": true,
             "mu_n_dims": [
               {
                 "mu_p": [
@@ -124,6 +134,7 @@
             "completeness_resid": "1.33638e-51",
             "chi_match": true,
             "completeness_ok": true,
+            "reduced_match": true,
             "mu_n_dims": [
               {
                 "mu_p": [
@@ -160,6 +171,7 @@
             "completeness_resid": "1.33638e-51",
             "chi_match": true,
             "completeness_ok": true,
+            "reduced_match": true,
             "mu_n_dims": [
               {
                 "mu_p": [
@@ -200,6 +212,7 @@
             "completeness_resid": "0.0",
             "chi_match": true,
             "completeness_ok": true,
+            "reduced_match": true,
             "mu_n_dims": [
               {
                 "mu_p": [
@@ -241,6 +254,7 @@
             "completeness_resid": "0.0",
             "chi_match": true,
             "completeness_ok": true,
+            "reduced_match": true,
             "mu_n_dims": [
               {
                 "mu_p": [
@@ -276,6 +290,7 @@
             "completeness_resid": "0.0",
             "chi_match": true,
             "completeness_ok": true,
+            "reduced_match": true,
             "mu_n_dims": [
               {
                 "mu_p": [
@@ -300,6 +315,7 @@
             "completeness_resid": "1.49297e-52",
             "chi_match": true,
             "completeness_ok": true,
+            "reduced_match": true,
             "mu_n_dims": [
               {
                 "mu_p": [
@@ -341,6 +357,7 @@
             "completeness_resid": "0.0",
             "chi_match": true,
             "completeness_ok": true,
+            "reduced_match": true,
             "mu_n_dims": [
               {
                 "mu_p": [
@@ -385,6 +402,7 @@
             "completeness_resid": "0.0",
             "chi_match": true,
             "completeness_ok": true,
+            "reduced_match": true,
             "mu_n_dims": [
               {
                 "mu_p": [
@@ -420,6 +438,7 @@
             "completeness_resid": "0.0",
             "chi_match": true,
             "completeness_ok": true,
+            "reduced_match": true,
             "mu_n_dims": [
               {
                 "mu_p": [
@@ -444,6 +463,7 @@
             "completeness_resid": "1.49297e-52",
             "chi_match": true,
             "completeness_ok": true,
+            "reduced_match": true,
             "mu_n_dims": [
               {
                 "mu_p": [
@@ -485,6 +505,7 @@
             "completeness_resid": "0.0",
             "chi_match": true,
             "completeness_ok": true,
+            "reduced_match": true,
             "mu_n_dims": [
               {
                 "mu_p": [
@@ -529,6 +550,7 @@
             "completeness_resid": "0.0",
             "chi_match": true,
             "completeness_ok": true,
+            "reduced_match": true,
             "mu_n_dims": [
               {
                 "mu_p": [
@@ -564,6 +586,7 @@
             "completeness_resid": "0.0",
             "chi_match": true,
             "completeness_ok": true,
+            "reduced_match": true,
             "mu_n_dims": [
               {
                 "mu_p": [
@@ -588,6 +611,7 @@
             "completeness_resid": "1.49297e-52",
             "chi_match": true,
             "completeness_ok": true,
+            "reduced_match": true,
             "mu_n_dims": [
               {
                 "mu_p": [
@@ -632,6 +656,7 @@
             "completeness_resid": "0.0",
             "chi_match": true,
             "completeness_ok": true,
+            "reduced_match": true,
             "mu_n_dims": [
               {
                 "mu_p": [
@@ -679,6 +704,7 @@
             "completeness_resid": "0.0",
             "chi_match": true,
             "completeness_ok": true,
+            "reduced_match": true,
             "mu_n_dims": [
               {
                 "mu_p": [
