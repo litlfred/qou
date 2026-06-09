@@ -126,6 +126,7 @@ export default chapter({
         "h2o-bent-geometry",
         "tetrahedral-hbond-directions",
         "h2o-bond-angle-shift",
+        "symmetric-block-domain-weight",
         "ice-pauling-residual",
       ],
     }),
