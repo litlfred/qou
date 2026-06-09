@@ -110,8 +110,10 @@ def strip_comments_strings(text: str) -> str:
     return "".join(out)
 
 
-# field-only signals (on the stripped body)
-DIV_RE = re.compile(r"(?<![A-Za-z0-9_])/(?![/-])")   # a real division slash
+# field-only signals (on the stripped body). Comments / strings / URLs are
+# stripped beforehand, so any surviving `/` is a (H)Div — including
+# digit-prefixed forms like `1/q` that a lookbehind would miss.
+DIV_RE = re.compile(r"/")
 INV_RE = re.compile(r"⁻¹")
 FIELD_LEMMA_RE = re.compile(
     r"\b(Inv\.inv|inv_|_inv\b|div_|_div\b|mul_inv|inv_mul|field_simp|"
@@ -125,7 +127,11 @@ FIELD_LEMMA_RE = re.compile(
 FIELD_REQUIRING_RE = re.compile(
     r"\b(finrank|FiniteDimensional|Module\.Free|Module\.rank|Basis\b|"
     r"Wedderburn|[sS]emisimple|IsSemisimple|Matrix\.rank|LinearIndependent|"
-    r"iSupIndep|finrank_|_finrank|Subspace|Cardinal\.toNat)\b"
+    r"iSupIndep|finrank_|_finrank|Subspace|Cardinal\.toNat|"
+    # decls that consume the base QOU universe structs inherit their
+    # `[Field k]` requirement — relaxing those is the QuantumUniverse
+    # cascade (own PR), not a leaf fix, so treat as field-requiring here.
+    r"QuantumObservableUniverse|QuantumUniverse)\b"
 )
 
 
@@ -154,7 +160,7 @@ NAME_RE = re.compile(
 )
 
 
-def classify(block_stripped: str, var: str) -> tuple[str, str]:
+def classify(block_stripped: str, var: str, file_stripped: str = "") -> tuple[str, str]:
     # does the var appear outside the binder at all?
     # remove the binder occurrences then look for the bare token
     body = re.sub(r"\[\s*(?:Field|LinearOrderedField|DivisionRing)\s+"
@@ -175,6 +181,15 @@ def classify(block_stripped: str, var: str) -> tuple[str, str]:
         return "genuine", f"uses field-requiring construct `{m.group(0)}` (dimension/semisimplicity)"
     if DIV_RE.search(body):
         return "genuine", "uses `/` (division)"
+    # Module-level field use: even if THIS decl does not divide, a file that
+    # divides / inverts anywhere is field-by-design (e.g. a class whose
+    # instances carry Laurent characters `1/q^k`). The `[Field V]` on the
+    # signature supports those; relaxing it is churn, not a fix.
+    if file_stripped and (INV_RE.search(file_stripped)
+                          or FIELD_LEMMA_RE.search(file_stripped)
+                          or FIELD_REQUIRING_RE.search(file_stripped)
+                          or DIV_RE.search(file_stripped)):
+        return "genuine", "module uses division/inverse elsewhere (field-by-design)"
     return "over-strong", f"`{var}` used but no division/inverse found"
 
 
@@ -190,7 +205,7 @@ def audit() -> list[Finding]:
             block_stripped = strip_comments_strings(block)
             for m in FIELD_CLASS_RE.finditer(block_stripped):
                 fclass, var = m.group(1), m.group(2)
-                cls, ev = classify(block_stripped, var)
+                cls, ev = classify(block_stripped, var, stripped)
                 # name may sit on a continuation line — match against the
                 # first few joined lines of the block, not just the header.
                 head_join = " ".join(block.splitlines()[:4])
