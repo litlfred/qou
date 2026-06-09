@@ -46,10 +46,10 @@ sys.path.insert(0, str(Path(__file__).parent))
 sys.path.insert(0, str(Path(__file__).parent / "substrate"))
 
 from qou_substrate.witness import WitnessBuilder  # noqa: E402
+from codata_constants import M_E_MEV  # noqa: E402  canonical registry (P31), not a literal
 
 HERE = Path(__file__).parent
 V2 = HERE / "all-nuclides-wedderburn-spectral-v2.witness.json"
-M_E_MEV = 0.51099895000  # CODATA electron mass (only sets the Δ_λ scale)
 
 
 def r2(y, pred):

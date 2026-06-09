@@ -51,7 +51,9 @@ the required `Δ_alt(K)`:
 
 - is **NOT constant** — it spans **~459 orders of magnitude** across the
   chart, and
-- is **itself quadratic in A** (R² = 0.94, `log₁₀ Δ_alt ≈ −0.0124 A² …`).
+- is **itself quadratic in A** (R² = 0.94, `log₁₀ Δ_alt ≈ −0.0068 A² …` —
+  distinct from the `tr_M` coefficient 0.0124, since the alt block alone
+  grows slower than the std-dominated `tr_M`).
 
 So **no per-partition constant `Δ_λ` can close the formula** — this is
 the structural reason the six prior ansätze (Frobenius co-Casimir,
