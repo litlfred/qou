@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-09T00:16:39.566663+00:00",
-  "commitSha": "1f2abe696ba8ad67921f7fa7139f9a159a9d8bd6",
+  "computedAt": "2026-06-09T00:56:11.142663+00:00",
+  "commitSha": "5af5cc13345ad32d0738d36aece6a43d0e5b1179",
   "assertions": [
     {
       "name": "ab-initio covalent valence (cap=10-Z) -> active-set (O2,N2,CO) = (2,3,2)",
@@ -35,11 +35,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 24,
+  "durationMs": 25,
   "computation": "co-bond-order-active-set",
   "scriptFile": "co_bond_order_active_set.py",
-  "scriptHash": "6ec477d7bd9e",
-  "scriptCommitSha": "1f2abe696ba8ad67921f7fa7139f9a159a9d8bd6",
+  "scriptHash": "2c07eecb1738",
+  "scriptCommitSha": "5af5cc13345ad32d0738d36aece6a43d0e5b1179",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
