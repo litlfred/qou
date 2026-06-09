@@ -177,6 +177,9 @@ def _witness_path(script_name: str) -> Optional[Path]:
 _WITNESSES_BY_PRODUCER: "dict[str, list[Path]] | None" = None
 
 
+_SCRIPTFILE_RE = re.compile(r'"scriptFile"\s*:\s*"([^"]+)"')
+
+
 def _witnesses_by_producer() -> "dict[str, list[Path]]":
     """Map producer script basename → every witness it emits (by ``scriptFile``).
 
@@ -189,12 +192,18 @@ def _witnesses_by_producer() -> "dict[str, list[Path]]":
     if _WITNESSES_BY_PRODUCER is None:
         m: "dict[str, list[Path]]" = {}
         for wf in COMP_DIR.glob("*.witness.json"):
+            # Regex prefix-scan for `scriptFile` rather than a full json.loads —
+            # witness JSONs can be very large and the field sits near the top.
             try:
-                sf = json.loads(wf.read_text(encoding="utf-8")).get("scriptFile")
-            except (json.JSONDecodeError, OSError):
+                with wf.open(encoding="utf-8") as fh:
+                    head = fh.read(8192)
+                    mm = _SCRIPTFILE_RE.search(head)
+                    if mm is None and len(head) == 8192:
+                        mm = _SCRIPTFILE_RE.search(head + fh.read())
+            except OSError:
                 continue
-            if sf:
-                m.setdefault(Path(sf).name, []).append(wf)
+            if mm:
+                m.setdefault(Path(mm.group(1)).name, []).append(wf)
         _WITNESSES_BY_PRODUCER = m
     return _WITNESSES_BY_PRODUCER
 
@@ -226,17 +235,22 @@ def _is_stale(script_name: str) -> tuple[bool, str]:
         current_hash = hashlib.sha256(
             script_path.read_text(encoding="utf-8").encode()
         ).hexdigest()[:12]
+        recorded_hashes: set[str] = set()
         for wp in witnesses:
             try:
-                recorded_hash = json.loads(
+                rh = json.loads(
                     wp.read_text(encoding="utf-8")
                 ).get("scriptHash")
             except (json.JSONDecodeError, OSError):
                 return True, f"malformed witness ({wp.name})"
-            if recorded_hash:
-                if current_hash != recorded_hash:
-                    return True, f"script changed ({recorded_hash} → {current_hash})"
-                break  # one valid scriptHash match suffices
+            if rh:
+                recorded_hashes.add(rh)
+        # Any shard recording a different scriptHash means the producer changed
+        # since that shard was generated — catches mixed/partial regeneration
+        # (don't stop at the first matching hash).
+        drifted_hashes = recorded_hashes - {current_hash}
+        if drifted_hashes:
+            return True, f"script changed ({sorted(drifted_hashes)[0]} → {current_hash})"
 
     # q₀-awareness: the scriptHash gate above is blind to changes in IMPORTED
     # constants (a substrate q₀ re-pin leaves the producer byte-identical —
