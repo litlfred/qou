@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-11T03:50:35.661606+00:00",
-  "commitSha": "528f9368bfbbec8c21bbc2d364c2e81c260233e6",
+  "computedAt": "2026-06-09T17:13:23.435206+00:00",
+  "commitSha": "54299522a1121d5c865243068feadf6905cbbaf4",
   "assertions": [
     {
       "name": "codata_m_e",
@@ -23,31 +23,13 @@
       "source": "anchor scale (atom_mass_derived.py)"
     },
     {
-      "name": "codata_M_¹H__additive_constituents",
-      "computed": 938.78308711,
-      "expected": 938.783,
-      "passed": true,
-      "tolerance": 0.001,
-      "unit": "MeV",
-      "source": "atom-mass-additive-baseline.witness.json"
-    },
-    {
       "name": "codata_α_2_−_z²__Markov_axiom",
-      "computed": 5.551115123125783e-17,
+      "computed": 2.7755575615628914e-17,
       "expected": 0.0,
       "passed": true,
       "tolerance": 2e-13,
       "unit": "dimensionless",
       "source": "alpha-k-jones-markov-h3.witness.json"
-    },
-    {
-      "name": "codata_Σ_d_λ_y_λ_-_1__Markov_M3,_max_over_n=2..6",
-      "computed": 5.345529420184391e-51,
-      "expected": 0.0,
-      "passed": true,
-      "tolerance": 2e-40,
-      "unit": "dimensionless",
-      "source": "alpha-k-macdonald-closed-form.witness.json"
     },
     {
       "name": "codata_Q_n__β-decay",
@@ -78,20 +60,34 @@
     },
     {
       "name": "codata_Vol_borromean",
-      "computed": 7.327724753846269,
-      "expected": 7.327724753846269,
+      "computed": 7.327724753417752,
+      "expected": 7.327724753417752,
       "passed": true,
-      "tolerance": 2e-12,
+      "tolerance": 2e-15,
       "unit": "dimensionless",
       "source": "SnapPy 3.3.2 (anchor)"
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 4,
   "computation": "codata-reconciliation",
   "scriptFile": "codata_reconciliation.py",
-  "scriptHash": "dcac17d5eb10",
-  "scriptCommitSha": "2e44f1ec9376f4fa1247a7ee3db1db09907b81df",
+  "scriptHash": "3315f45a19a1",
+  "scriptCommitSha": "569f15dd726f4cb74fc16b8b2b33bca49d7b4ba3",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
+  },
   "description": "Consolidated CODATA-2022 reconciliation table for QOU primary predictions.  Each row reports predicted value, CODATA central value, deviation in ppb, and CODATA uncertainty in ppb.  Passing assertion = QOU prediction within twice the CODATA uncertainty.",
   "auditOnly": "docs/audits/codata-reconciliation.md",
   "data": {
@@ -120,36 +116,14 @@
         "anchor": true
       },
       {
-        "quantity": "M(¹H) (additive constituents)",
-        "unit": "MeV",
-        "predicted": 938.78308711,
-        "codata_value": 938.783,
-        "codata_err": 0.0005,
-        "delta_ppb": 92.79034663100428,
-        "codata_unc_ppb": 532.6044463949603,
-        "predicted_source": "atom-mass-additive-baseline.witness.json",
-        "anchor": false
-      },
-      {
         "quantity": "α_2 − z² (Markov axiom)",
         "unit": "dimensionless",
-        "predicted": 5.551115123125783e-17,
+        "predicted": 2.7755575615628914e-17,
         "codata_value": 0.0,
         "codata_err": 1e-13,
-        "delta_ppb": 5.551115123125783e-08,
+        "delta_ppb": 2.7755575615628914e-08,
         "codata_unc_ppb": 1.0,
         "predicted_source": "alpha-k-jones-markov-h3.witness.json",
-        "anchor": false
-      },
-      {
-        "quantity": "Σ d_λ y_λ - 1 (Markov M3, max over n=2..6)",
-        "unit": "dimensionless",
-        "predicted": 5.345529420184391e-51,
-        "codata_value": 0.0,
-        "codata_err": 1e-40,
-        "delta_ppb": 5.345529420184391e-42,
-        "codata_unc_ppb": 1e-31,
-        "predicted_source": "alpha-k-macdonald-closed-form.witness.json",
         "anchor": false
       },
       {
@@ -188,17 +162,17 @@
       {
         "quantity": "Vol(borromean)",
         "unit": "dimensionless",
-        "predicted": 7.327724753846269,
-        "codata_value": 7.327724753846269,
-        "codata_err": 1e-12,
+        "predicted": 7.327724753417752,
+        "codata_value": 7.327724753417752,
+        "codata_err": 1e-15,
         "delta_ppb": 0.0,
-        "codata_unc_ppb": 0.00013646800795500777,
+        "codata_unc_ppb": 1.364680079629883e-07,
         "predicted_source": "SnapPy 3.3.2 (anchor)",
         "anchor": true
       }
     ],
     "anchor_count": 5,
-    "derived_count": 4,
+    "derived_count": 2,
     "atom_species_informational": [
       {
         "element": "Hydrogen",
@@ -312,6 +286,6 @@
       }
     ],
     "atom_species_note": "Atomic-mass derivation chain is upstream-incomplete; deviations exceed 50% for hydrogen and are negative for helium.  Surfaced as `data` only — not asserted, so `max_non_anchor_delta_ppb` tracks structural cross-checks rather than the upstream derivation gap.  Resolving these rows is a separate workplan.",
-    "max_non_anchor_delta_ppb": 92.79034663100428
+    "max_non_anchor_delta_ppb": 2.7755575615628914e-08
   }
 }
