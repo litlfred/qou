@@ -32,8 +32,10 @@ state saturates.
 
 The right experimental comparison object (separate question) is
 the *additive* constituent sum
-    M_atom = Z·M_p + N·M_n + Z·M_e − E_binding(A, Z),
-implemented correctly in `atom_mass_additive_baseline.py`.
+    M_atom = Z·M_p + N·M_n + Z·M_e − E_binding(A, Z).
+(The additive baseline was purged 2026-06-09; the canonical derived
+mass is m_e·Vol(K)·ρ(K)/ℏ_q² in `mass_vol_density.py`, and experimental
+binding is in `ame-2020-binding-energies.witness.json`.)
 Whether the LP active set reproduces empirical Δ_binding via
 ρ_F · V_hyp is the interpretive question tracked in
 docs/audits/rho-f-volume-binding-gap.md (not a 1ppb gate).
@@ -48,8 +50,9 @@ This file is preserved for two reasons:
    records.  Removing it would break those audits.
 
 If you're authoring a new mass-formula path, do NOT extend this
-script — extend `atom_mass_additive_baseline.py` and hook its
-Δ_binding column to your derivation.
+script — use the canonical derived mass m_e·Vol(K)·ρ(K)/ℏ_q² in
+`mass_vol_density.py`, and source experimental binding from
+`ame-2020-binding-energies.witness.json`.
 
 Original (legacy) docstring:
 

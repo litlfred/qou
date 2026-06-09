@@ -32,8 +32,9 @@ Sources
   Markov-trace cross-check at 1ppb (passes for all 5 atoms).
 - `codata-reconciliation.witness.json` — Markov axioms, q-integer
   identities, anchor scales.
-- `atom-mass-additive-baseline.witness.json` — empirical AME
-  Δ_binding (informational; not a QOU prediction).
+- `ame-2020-binding-energies.witness.json` /
+  `rho-f-volume-binding-gap.witness.json` — empirical AME binding
+  (informational; not a QOU prediction).
 - `brundan-kleshchev-audit.witness.json` — BK structural battery.
 - `alpha-k-macdonald-closed-form.witness.json` — Plancherel
   completeness via Macdonald hook telescope.
@@ -67,8 +68,8 @@ def main() -> None:
             "across the QOU primary observables (CODATA reconciliation), "
             "structural audits (Brundan–Kleshchev, Macdonald-telescope "
             "Plancherel completeness), and the open atomic-binding "
-            "derivation gap (atom_mass_additive_baseline + "
-            "rho_f_volume_binding_gap)."
+            "derivation gap (rho_f_volume_binding_gap, sourcing AME "
+            "binding directly)."
         )
         .set_audit_only("docs/audits/onepb-status-dashboard.md")
     )
@@ -93,8 +94,6 @@ def main() -> None:
         "demazure_markov_trace":
             load("demazure-markov-trace.witness.json"),
         # Empirical AME data (informational; NOT a QOU prediction)
-        "atom_mass_additive_baseline":
-            load("atom-mass-additive-baseline.witness.json"),
         "rho_f_volume_binding_gap":
             load("rho-f-volume-binding-gap.witness.json"),
     }
@@ -182,13 +181,16 @@ def main() -> None:
     ]
 
     # ── Layer 4: empirical AME data (informational) ────────────────
-    add = sources.get("atom_mass_additive_baseline") or {}
-    binding_max = (add.get("data", {}) or {}).get(
-        "max_delta_binding_MeV", None
-    )
-    binding_avg = (add.get("data", {}) or {}).get(
-        "avg_binding_per_nucleon_MeV", None
-    )
+    # Binding metrics now derive from rho_f_volume_binding_gap, which
+    # reads AME2020 binding directly (the additive-constituent baseline
+    # was purged 2026-06-09).
+    rfb = sources.get("rho_f_volume_binding_gap") or {}
+    _brows = (rfb.get("data", {}) or {}).get("rows", []) or []
+    _bvals = [(r.get("delta_binding_MeV"), r.get("A")) for r in _brows
+              if isinstance(r.get("delta_binding_MeV"), (int, float))]
+    binding_max = max((b for b, _ in _bvals), default=None)
+    binding_avg = (sum(b / a for b, a in _bvals if a) / len(_bvals)
+                   if _bvals else None)
 
     summary = {
         "structural_lp_dual": lp_summary,
