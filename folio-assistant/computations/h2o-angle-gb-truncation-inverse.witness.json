@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-09T17:42:58.755864+00:00",
-  "commitSha": "f9cfa0cf8eccf383252e241175c9e47c5f01992b",
+  "computedAt": "2026-06-09T17:52:19.218519+00:00",
+  "commitSha": "39cd2eb774227b927d550bf4863c85e598d59d51",
   "assertions": [
     {
       "name": "inverse solve reproduces the observed angle",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 318,
+  "durationMs": 691,
   "computation": "h2o-angle-gb-truncation-inverse",
   "scriptFile": "h2o_angle_gb_truncation_inverse.py",
-  "scriptHash": "89fda44560c7",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "f457395e39e9",
+  "scriptCommitSha": "6d9e917cc00427d323951fd59ecfdfcc3919db6b",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -259,12 +259,34 @@
         "miss_deg": -1.8715711249971179
       }
     },
+    "kernel_robustness_scan": {
+      "n=1": {
+        "r_star": 1.2442182752785058,
+        "dev_q2_pct": -0.9777883313133877,
+        "dev_1_plus_z_half_pct": 0.43737436762237825
+      },
+      "n=2": {
+        "r_star": 1.283580482006073,
+        "dev_q2_pct": -4.014397894145083,
+        "dev_1_plus_z_half_pct": -2.6426324947861954
+      },
+      "n=3": {
+        "r_star": 1.3241878747940063,
+        "dev_q2_pct": -6.957881308313236,
+        "dev_1_plus_z_half_pct": -5.628182308628435
+      },
+      "n=6": {
+        "r_star": 1.4538819789886475,
+        "dev_q2_pct": -15.257739488331309,
+        "dev_1_plus_z_half_pct": -14.046656802147133
+      }
+    },
     "best_f_candidate": {
       "candidate": "z^2",
       "value": 0.24932079612931635,
       "deviation_pct": -10.969943160571582,
       "tier": "no"
     },
-    "finding": "f* = 0.280041 (fraction of the L₊ quadratic on the lone pair that lands exactly on 104.5°); best derived candidate: z^2 = 0.249321 (-10.970%, no). r* = 1.244218. Tiered comparison only — no wiring; promoting a candidate requires a structural derivation (e.g. sharing of the L₊ pair between domains, or a quantum-dimension normalisation) plus stability checks."
+    "finding": "f* = 0.280041 (fraction of the L₊ quadratic on the lone pair that lands exactly on 104.5°); best derived candidate: z^2 = 0.249321 (-10.970%, no). r* = 1.244218. Tiered comparison only — no wiring; promoting a candidate requires a structural derivation (e.g. sharing of the L₊ pair between domains, or a quantum-dimension normalisation) plus stability checks. KERNEL SCAN (demotion): the q² and 1+z/2 near-matches hold ONLY at the Coulomb kernel (n=1; at n=2/3/6 r* drifts to ≈1.28/1.32/1.45) — kernel-conditional near-matches. Coulomb is the physically canonical kernel for charged-domain repulsion, but the identification inherits that assumption."
   }
 }
