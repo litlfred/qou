@@ -181,13 +181,23 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--atom", choices=["tritium", "he3"], default="tritium",
                         help="which atom to verify (default: tritium)")
-    parser.add_argument("--h9-witness", type=str,
-                        default="sublemma-2-1-A-operator-extract-h9-nn.witness.json",
-                        help="H_9 extraction witness file (default: I_nn)")
+    parser.add_argument("--h9-witness", type=str, default=None,
+                        help="H_9 extraction witness file (default: auto — "
+                             "I_nn for tritium, I_pn for he3, matching the "
+                             "atom's OUTER interface)")
     parser.add_argument("--h6-witness", type=str,
                         default="sublemma-2-1-A-operator-extract.witness.json",
                         help="H_6 extraction witness file (default: I_pn for deuteron)")
     args = parser.parse_args()
+
+    # The OUTER interface I_2 is nn for tritium (p·n·n) and pn for he3
+    # (p·p·n); pick the matching H_9 extract unless overridden.
+    if args.h9_witness is None:
+        args.h9_witness = (
+            "sublemma-2-1-A-operator-extract-h9-pn.witness.json"
+            if args.atom == "he3" else
+            "sublemma-2-1-A-operator-extract-h9-nn.witness.json"
+        )
 
     print("=" * 96)
     print(f"  Sub-lemma 2.1 verification at H_9: Path A vs Path B for {args.atom}")
@@ -209,21 +219,20 @@ def main() -> int:
     print(f"  Loaded H_9 witness: I_2 = {h9_interface}")
     print(f"  Loaded H_6 witness: I_1 = pn (deuteron)")
 
-    # Build the atom braid
-    if args.atom == "tritium":
+    # Build the atom braid + its inner / third-nucleon decomposition.
+    # Path B reconstructs ρ_ξ(W_inner) by DIRECT matrix eval, so ³He's
+    # I_pp inner needs NO separate H_6 extract — the inner is a pure
+    # braid and is eval'd exactly like tritium's pn inner.
+    if args.atom == "tritium":               # p · n · n
         beta_full = tritium_braid()
-        # Inner W_6 = β_p · I_pn · β_n
-        w_p = _proton_body()
-        w_n = _neutron_body()
-        inner_interface = "pn"
-    else:  # he3
+        inner_first, inner_second = _proton_body(), _neutron_body()
+        inner_iface_cd = (1.0, -H / 2)       # I_pn (averaged)
+        third_body = _neutron_body()
+    else:                                     # he3: p · p · n
         beta_full = he3_braid()
-        w_p = _proton_body()
-        # ³He's inner block is β_p · I_pp · β_p — requires A(I_pp) at H_6
-        # which is NOT in the deuteron witness.  Phase 2.
-        print("  ⚠ ³He verification requires A^ξ_{μν'}(I_pp) at H_6 — "
-              "NOT YET extracted. Aborting.")
-        return 3
+        inner_first, inner_second = _proton_body(), _proton_body()
+        inner_iface_cd = (1.0, 0.0)          # I_pp (σ, pure braid)
+        third_body = _neutron_body()
 
     print(f"  β_{args.atom}: {len(beta_full)} generators")
     print()
@@ -254,13 +263,15 @@ def main() -> int:
     # via evaluate_word_matrix (faster than the extraction itself).
     # This sidesteps the issue that the H_6 A matrices live in
     # End(V_μ ⊗ V_{ν'}), not End(V_ξ).
-    w_inner = w_p + [(1.0, -H / 2, 2)] + [(c, d, g + 3) for (c, d, g) in w_n]
+    w_inner = (inner_first
+               + [(inner_iface_cd[0], inner_iface_cd[1], 2)]
+               + [(c, d, g + 3) for (c, d, g) in inner_second])
     print(f"    [B.1] computing ρ_ξ(W_inner) at H_6 for ξ ⊢ 6...")
     rho_xi_inner = {xi: evaluate_word_matrix(xi, w_inner) for xi in parts_6}
 
-    # Step 2: reconstruct ρ_ν(β_3) for ν ⊢ 3
-    print(f"    [B.2] computing ρ_ν(β_n) at H_3 for ν ⊢ 3...")
-    rho_nu_3 = {nu: evaluate_word_matrix(nu, _neutron_body()) for nu in parts_3}
+    # Step 2: reconstruct ρ_ν(β_3) for ν ⊢ 3 (third nucleon)
+    print(f"    [B.2] computing ρ_ν(β_3) at H_3 for ν ⊢ 3...")
+    rho_nu_3 = {nu: evaluate_word_matrix(nu, third_body) for nu in parts_3}
 
     # Step 3: apply outer A^λ_{ξν}(I_2) to compose ρ_ξ(W_inner) ⊗ ρ_ν(β_3)
     print(f"    [B.3] applying A^λ_{{ξν}}(I_2) for λ ⊢ 9...")
