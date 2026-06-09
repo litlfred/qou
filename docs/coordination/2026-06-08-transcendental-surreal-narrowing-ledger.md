@@ -82,13 +82,13 @@ blocks themselves stay as the worked statements; this is the re-scoped index.
 > carries no surreal-*necessary* narrowing. (See the keep/purge reading: keep as
 > the narrowing language; nothing is load-bearing on surreals.)
 
-## The ledger (Bring-trilog / ζ₅ depth-3 chain + volume faithfulness — pass 3, 2026-06-09)
+## The ledger (Bring-trilog / ζ₅ depth-3 chain — pass 3, 2026-06-09)
 
 Folds in the remaining `## Next passes` candidates. Rows 16–19 are the depth-3
 chain that narrows B1's `ℚ(ζ₅)` row to a single PSLQ-certified element
-(complements row 3, `qou-infra-discharges-goncharov-zeta5`); row 20 is the
-volume-tower faithfulness underlying the perpetual obstruction (row 8 / the
-RESOLVED section below).
+(complements row 3, `qou-infra-discharges-goncharov-zeta5`). The other named
+candidate, `cs-evaluation-faithfulness`, is **already row 8** (the volume-tower
+faithfulness / `ε^ω` row) — not re-indexed here.
 
 | # | Conjecture / proposition (block) | Surreal-graded narrowing (the worthwhile part) | Open residue (named external input) | Surreal? |
 |---|---|---|---|---|
@@ -96,14 +96,12 @@ RESOLVED section below).
 | 17 | [`cl3-zeta5-geometric-realization`](../../content/quantum-observable-universe/mass-theory/cl3-zeta5-geometric-realization.md) (**conj**) | identifies `Cl₃(2π/5) = Re Li₃(ζ₅)` as a depth-3 element of `𝒫₃/𝒫₂` (Goncharov filtration) at the `S₅`-Bring-natural input `ζ₅`; supplies a candidates list for its geometric realisation | **which** geometric/topological invariant realises it (open) | L (depth grading; `ζ₅` scales tie ⇒ rank-1, as rows 3/4) |
 | 18 | [`cl3-zeta5-orbit-sum-identity`](../../content/quantum-observable-universe/mass-theory/cl3-zeta5-orbit-sum-identity.md) (**prop**) | orbit-sum identity (PROVED) reduces the 4 grouplike `Li₃(ζ₅^k)` to a **1-dim antisymmetric generator** `X = Cl₃(2π/5) − Cl₃(4π/5)`; the real-part sum is `ζ(3)`-fixed | transcendence of the 1-dim generator `X` (row 19) | L |
 | 19 | [`cl3-zeta5-pslq-independence`](../../content/quantum-observable-universe/mass-theory/cl3-zeta5-pslq-independence.md) (**prop**) | PSLQ (50 dps, coefficient-norm `10⁸`) certifies `X` has **no `ℚ`-linear relation** with standard weight-3 periods — strong evidence `X` is genuinely-new depth-3 | the transcendence proper (PSLQ is bounded-norm *evidence*, not proof); the depth-3 Goncharov question (row 1) | L (numerical narrowing) |
-| 20 | [`cs-evaluation-faithfulness`](../../content/quantum-observable-universe/predicted-spectra/cs-evaluation-faithfulness.md) (**prop**) | Chern–Simons evaluation is **faithful** at each tower level: `κ_n ≠ 0 ⇒ Φ_n(K) ≠ 0` (PROVED conditional) — each volume grade is non-degenerate, so the perpetual sum `Vol = Σ_n Φ_n` has no vanishing term | whether `κ_n ≠ 0` for **all** `n` (= `conj:motivic-perpetual-obstruction`, the RESOLVED section's perpetual leg) | L (Mostow-convergent ⇒ `ℝ(ε)` tracks it) |
 
-> **Pass-3 note.** All five continue the all-L pattern: the depth-3 chain
-> (16–19) lives in the `ζ₅`-scaled depth filtration (rank-1, like row 3), and
-> the faithfulness prop (20) is the proved conditional underneath the
-> Mostow-convergent perpetual tower. The corpus's narrowing ledger now covers
-> the period/volume cluster (1–10), the millennium cluster (11–15), and the
-> Bring-trilog/ζ₅ + volume-faithfulness cluster (16–20) — **every row L.**
+> **Pass-3 note.** All four continue the all-L pattern: the depth-3 chain
+> (16–19) lives in the `ζ₅`-scaled depth filtration (rank-1, like row 3). The
+> corpus's narrowing ledger now covers the period/volume cluster (1–10), the
+> millennium cluster (11–15), and the Bring-trilog/ζ₅ depth-3 chain (16–19) —
+> **every row L.**
 
 ## The essential candidate — RESOLVED to *language* (2026-06-08)
 
@@ -145,10 +143,10 @@ obstruction (row 8), not a necessity.** Surreals are kept **as language**.
 
 All originally-named candidates are now folded into rows:
 `dilogarithm-archimedean-limit` (row 7), `observables-algebraic-independence`
-(row 9), `bring-trilog-imaginary-tate-rational` (row 16), `cl3-zeta5-*`
-(rows 17–19), `cs-evaluation-faithfulness` (row 20). The ledger now spans the
-period/volume (1–10), millennium (11–15), and Bring-trilog/ζ₅ + volume-faithful
-(16–20) clusters — **every row L**.
+(row 9), `cs-evaluation-faithfulness` (already **row 8**),
+`bring-trilog-imaginary-tate-rational` (row 16), `cl3-zeta5-*` (rows 17–19).
+The ledger now spans the period/volume (1–10), millennium (11–15), and
+Bring-trilog/ζ₅ depth-3 (16–19) clusters — **every row L**.
 
 **Standing rule (not a backlog item):** any *new* transcendental conjecture added
 to the corpus gets a ledger row (narrowing + named residue + L/E? tag). Do **not**
