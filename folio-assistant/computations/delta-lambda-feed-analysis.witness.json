@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-09T20:28:23.601845+00:00",
-  "commitSha": "d14418f8d96448a3dbc6e8e231a61ec09755163b",
+  "computedAt": "2026-06-09T20:32:28.021370+00:00",
+  "commitSha": "6be103dfafbbe861ca0d8616454976e1326226f3",
   "assertions": [
     {
       "name": "trM_log10_quadratic_fit_excellent",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 41,
+  "durationMs": 36,
   "computation": "delta-lambda-feed-analysis",
   "scriptFile": "delta_lambda_feed_analysis.py",
-  "scriptHash": "e8347b5ffe44",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "c68862d43d4e",
+  "scriptCommitSha": "6be103dfafbbe861ca0d8616454976e1326226f3",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
