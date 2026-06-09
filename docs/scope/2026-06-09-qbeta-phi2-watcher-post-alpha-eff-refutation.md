@@ -91,8 +91,14 @@ moves from §3b-cond conjecture to derived theorem. At that point:
 - ❌ **Constant depth-2 kernel attack.** Already refuted (standing constraint 6:
   predicts `c_4 ≈ −3.28`, observed `≈ −0.97`, sign-preserving factor-3 gap).
 - ❌ **Symbolic search for `Φ₂` without the SW-residue derivation.** The H₃(q)
-  kernel is the *cause* — a numerical fit without the kernel is the 8th-ansatz
-  trap (cf. CLAUDE.md "no 7th ansatz" + the `mu-thread-pivot` precedent).
+  kernel is the *cause*; a numerical fit without the kernel is the
+  fit-based-ansatz trap. CLAUDE.md applies the explicit *"do not
+  propose a seventh fit-based ansatz"* rule to the Δ_λ gate (six
+  closure ansätze refuted on the deuteron); the same discipline
+  applies here — symbolic-search fits without a structural derivation
+  are forbidden regardless of which ansatz number Φ₂ would be on. See
+  the `mu-thread-pivot` precedent for the structural-derivation
+  re-engagement pattern.
 - ❌ **New sibling `claude/qbeta-phi2-*` probe branches** before the keystone
   derivation lands. Constraints 1–6 are already proved; another constraint PR
   is redundant.
