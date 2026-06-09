@@ -282,7 +282,11 @@ def main():
     w.add_data("primal_obj", primal_obj)
     w.add_data("dual_obj", dual_obj)
     w.add_data("duality_gap", duality_gap)
-    w.add_data("predicted_bond_order", predicted_order)
+    # NOT the prediction: this is the FALSIFIED single-chain probe (only σ
+    # binds → active-set 1). The real prediction is the orthogonal-channel
+    # model below (orthogonal_channel_model.co_active_set). Renamed from
+    # predicted_bond_order per Copilot review so consumers aren't misled.
+    w.add_data("single_chain_active_set", predicted_order)
     w.add_data("observed_bond_order", observed_order)
     # Orthogonal-channel model: the genuine test (active-set = bond order)
     w.add_data("orthogonal_channel_model", {
