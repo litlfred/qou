@@ -28,10 +28,10 @@ export default chapter({
       label: "sec:fundamental-fermions",
       blocks: [
         "fundamental-particles-intro",
-        "up-quark",
-        "up-quark-properties",
-        "down-quark",
-        "down-quark-properties",
+        // Quark defs + properties re-homed to particle-interactions (Ch9)
+        // per the cross-chapter triage — the nucleons there depend on them,
+        // so the quark definitions are logically prior. This section is now
+        // the lepton sector.
         "electron-knot",
         "electron-knot-example",
         "positron-knot",
@@ -53,7 +53,6 @@ export default chapter({
         "q-value-transition",
         "breit-wheeler-pair-production",
         "breit-wheeler-pair-production-table-data",
-        "quark-antiquark-production",
         "knot-operator-selection",
         "frobenius-gram-matrix-table1-data",
         "frobenius-gram-matrix-table2-data",
