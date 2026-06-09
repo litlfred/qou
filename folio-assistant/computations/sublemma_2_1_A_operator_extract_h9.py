@@ -147,6 +147,49 @@ def make_h3_test_words() -> list[list]:
     ]
 
 
+def _reduced_word(perm: tuple) -> list[int]:
+    """Reduced expression of `perm` in adjacent transpositions s_0..s_{n-2}.
+
+    Bubble-sort `perm` to the identity, recording each adjacent swap
+    index; the recorded indices form a reduced word (length = Coxeter
+    length = #inversions).
+    """
+    p = list(perm)
+    n = len(p)
+    w: list[int] = []
+    changed = True
+    while changed:
+        changed = False
+        for i in range(n - 1):
+            if p[i] > p[i + 1]:
+                p[i], p[i + 1] = p[i + 1], p[i]
+                w.append(i)
+                changed = True
+    return w
+
+
+def make_h6_perm_basis() -> list[list]:
+    """Full S_6 permutation basis as H_6 test words (720 words).
+
+    By the double-centralizer theorem, ρ_ξ(H_6) = End(V_ξ) for every
+    irreducible V_ξ, so {ρ_ξ(T_w) : w ∈ S_6} spans End(V_ξ) EXACTLY
+    (verified: span rank = d_ξ² for all ξ ⊢ 6). The hand-picked
+    12-word `make_h6_test_words` family is a degenerate spanning set
+    (reaches only ~97/256 of End(V_{(3,2,1)})), which is why the
+    Phase-1 H_9 extracts were rank-deficient. This basis closes that.
+    """
+    import itertools
+    return [[(1.0, 0.0, g) for g in _reduced_word(perm)]
+            for perm in itertools.permutations(range(6))]
+
+
+def make_h3_perm_basis() -> list[list]:
+    """Full S_3 permutation basis as H_3 test words (6 words)."""
+    import itertools
+    return [[(1.0, 0.0, g) for g in _reduced_word(perm)]
+            for perm in itertools.permutations(range(3))]
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--interface", choices=sorted(INTERFACE_COEFS),
@@ -156,6 +199,13 @@ def main() -> int:
     parser.add_argument("--rank-tol", type=float, default=1e-8,
                         help="singular-value cutoff for under-determined "
                              "system detection (default: 1e-8)")
+    parser.add_argument("--full-basis", action="store_true",
+                        help="use the full S_6 (720) × S_3 (6) permutation "
+                             "basis as test words — spans End(V_ξ) exactly, "
+                             "making ALL λ ⊢ 9 over-determined and full-rank "
+                             "(Phase 2; ~15 min). Default uses the 12+12 "
+                             "hand-picked family (Phase 1, under-determined "
+                             "for high-dim λ).")
     args = parser.parse_args()
 
     interface = args.interface
@@ -164,8 +214,12 @@ def main() -> int:
     parts_9 = partitions_of(9)
     lr_table = get_lr_table(6, 3)
 
-    test_words_6 = make_h6_test_words()
-    test_words_3 = make_h3_test_words()
+    if args.full_basis:
+        test_words_6 = make_h6_perm_basis()
+        test_words_3 = make_h3_perm_basis()
+    else:
+        test_words_6 = make_h6_test_words()
+        test_words_3 = make_h3_test_words()
     K_6 = len(test_words_6)
     K_3 = len(test_words_3)
 
