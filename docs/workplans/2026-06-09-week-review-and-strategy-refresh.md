@@ -44,9 +44,11 @@ breadth; this PR wins on the Casimir specifics.
   projector (`e_{λ,μ}`), bibliography human-review pipeline, α-cluster
   wire-up (PR #1756 → 7 atoms moved B=0 → α-recursion, mass error 10×
   better).
-- **STATUS.md is stale** (last updated 2026-06-01). Two listed active
-  sessions completed; the L-goal table is broadly correct but the
-  "Active sessions" row needs clearing.
+- **STATUS.md refreshed** (PR #2052, 2026-06-09): the two completed
+  active-session rows were cleared, the mass-sweep line noted the
+  252-nuclide extension, a session-history entry was added, and the
+  "Last updated" stamp was bumped. The L-goal precision lines were
+  left to their owners (not verifiable from a triage view).
 
 ## Themes on main this week (7 clusters)
 
@@ -152,16 +154,19 @@ Tiered by L2 impact + tractability:
 
 9. **Casimir conjecture sub-problems 1 + 4 (ξ_2)**: parked behind N_⊙ construction. Not blocking any L-goal. Touch only if a tractable angle appears.
 
-## STATUS.md housekeeping recommendation
+## STATUS.md housekeeping — DONE (PR #2052)
 
-The "Active sessions" table needs a refresh:
+Completed in PR #2052 (2026-06-09):
 
-- `claude/coord-infra-1ppq-2026-05-31` (Claude, 2026-05-31) — should be **completed**.
-- `claude/brave-mendel-FPxFl` (PR #1579) (Claude, 2026-05-31) — check whether CAL-3 hunt resolved.
+- Cleared both stale "Active sessions" rows
+  (`claude/coord-infra-1ppq-2026-05-31`; `claude/brave-mendel-FPxFl`
+  / #1579 — CAL-3 hunt complete, no longer in the open-PR list).
+- Noted the mass-sweep 252-nuclide extension on the mass-sweep row.
+- Added a 2026-06-02→09 session-history entry.
+- Bumped the "Last updated" stamp to 2026-06-09.
 
-Also the "Last updated" stamp should bump from 2026-06-01 to 2026-06-09 once
-this workplan lands. (Doing that as a separate small edit is the right
-size.)
+The L-goal precision lines (L1/L2/1ppQ/Δ_λ/α_EM/Lean) were left
+untouched — owned by active threads, not verifiable from a triage view.
 
 ## Sibling branch cleanup recommendation
 

@@ -18,7 +18,7 @@
 | **α_EM canonical derivation** | RT Phase 3 + Schwinger; Habiro element `[2]_q·(1-h²α)` derived (PR #1511); Bring residue → resolvent | [`alpha-em.md`](docs/coordination/alpha-em.md) | #1505, #1521, #1549, #1552 |
 | **Q_β c_k flip-flop prevention** | enforcement live on main (PR #1577 merged: canonical-no-negative-result + ck-tiered-not-binary) | (lives in 1ppq-qbeta.md flip-flop history) | — |
 | **Lean uniqueness wiring** | ~18% witness coverage | (per-PR) | #1572 |
-| **Mass-sweep gap (A ≥ 4)** | α-cluster wire-up landed PR #1756 — 7 atoms (¹⁶O / ²⁰Ne / ²⁴Mg / ²⁸Si / ³²S / ³⁶Ar / ⁴⁰Ca) moved from B=0 to α-recursion B_pred, m_err ~+0.9% → ~−0.1% (10× better). **Extended to 252 stable nuclides (¹H..²⁰⁹Bi) via parameterised SDP uniqueness** (week of 2026-06-08, commit `24540f56`). non-α-cluster A > 12 still gated on H_{3A} kernel | (lives in option-e.md + [`docs/workplans/2026-06-03-per-knot-mass-table-wireup-workplan.md`](docs/workplans/2026-06-03-per-knot-mass-table-wireup-workplan.md)) | — |
+| **Mass-sweep gap (A ≥ 4)** | α-cluster wire-up landed PR #1756 — 7 atoms (¹⁶O / ²⁰Ne / ²⁴Mg / ²⁸Si / ³²S / ³⁶Ar / ⁴⁰Ca) moved from B=0 to α-recursion B_pred, m_err ~+0.9% → ~−0.1% (10× better). **Extended to 252 stable nuclides (¹H..²⁰⁹Bi) via parameterised SDP uniqueness** (week of 2026-06-08, commit `24540f56`). Non-α-cluster A > 12 still gated on the H_{3A} kernel. | (lives in option-e.md + [`docs/workplans/2026-06-03-per-knot-mass-table-wireup-workplan.md`](docs/workplans/2026-06-03-per-knot-mass-table-wireup-workplan.md)) | — |
 
 ## Cross-cutting queues
 
@@ -55,9 +55,9 @@
   extended to 252 nuclides; detangler quark-sector move Ch13→Ch9
   (#2021); Casimir conjecture leading-order **derived** (ξ₂=0 at 1/d⁴
   unconditional; first q-correction at 1/d⁶ via figure-8 `J_{4_1}=1+(3/4)h²`,
-  3/4 proved exact in Lean) — see `docs/audits/2026-06-01-casimir-first-qcorrection-figure8.md`.
+  3/4 proved exact in Lean) — see [`docs/audits/2026-06-01-casimir-first-qcorrection-figure8.md`](docs/audits/2026-06-01-casimir-first-qcorrection-figure8.md).
   Strategic workplans merged: #2038 (Casimir-axis). ⚠ Figure-8 Casimir
-  q-correction and the m_μ thread (`docs/coordination/2026-05-30-mu-thread-pivot.md`)
+  q-correction and the m_μ thread ([`docs/coordination/2026-05-30-mu-thread-pivot.md`](docs/coordination/2026-05-30-mu-thread-pivot.md))
   **share the 4_1 Habiro element** — joint-leverage opportunity.
 - **2026-05-31 / 2026-06-01** (Claude, ~10 PRs): Built coordination infrastructure (STATUS.md, master ledgers for 1ppq-qbeta + option-e + alpha-em, queue files, `/session-intent` + `/pending-show` skills, SessionStart hook), bumped precision defaults (compute 65 → 70 dps, output 50 → 60 dps), settled c_3 q_0-stability as NEAR-MATCH not Taylor-exact (5th-and-final settlement; flip-flop history catalogued), refuted Li_2^q × spectral combiner (mech #7), recorded Δtr_M bar-decomposition as structural observation (sym 7.7% + antisym 92.3% in t=q^(1/2) basis), made fibre/observable Im(q) distinction explicit in CLAUDE.md. PRs: #1580, #1585, #1587, #1594, #1599, #1603, #1609, #1615, plus this one.
 
