@@ -71,7 +71,10 @@ def build_nf(Z: int, N: int) -> list[float]:
 
 
 def main() -> int:
-    _t0 = time.time()
+    # WitnessBuilder interprets start_time as a time.monotonic() baseline
+    # (qou_substrate.witness:236) — time.time() here made durationMs a
+    # huge negative number (caught by Copilot on PR #2074).
+    _t0 = time.monotonic()
     entries = json.loads(AME.read_text())["entries"]
     t = np.asarray(gram.TR_M, dtype=float)
     G = np.asarray(gram.gram_matrix(), dtype=float)

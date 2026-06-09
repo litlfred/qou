@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-06-09T17:50:55.899200+00:00",
-  "commitSha": "f829b6a7f27ed9ccf6101494a6c086af64b6142f",
+  "computedAt": "2026-06-09T17:57:41.618788+00:00",
+  "commitSha": "8fa41bb06d1a305e3376438982859500ef045692",
   "assertions": [
     {
       "name": "hecke_relation_both_gens",
@@ -62,11 +62,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": -1781019010672,
+  "durationMs": 24926,
   "computation": "all-nuclides-wedderburn-spectral-v2",
   "scriptFile": "all_nuclides_wedderburn_spectral_v2.py",
-  "scriptHash": "cb77990ec7c7",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "1659f1531431",
+  "scriptCommitSha": "8fa41bb06d1a305e3376438982859500ef045692",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -83,6 +83,7 @@
   },
   "description": "v2 Wedderburn-spectral admissibility over the AME2020 chart at q_0 (EXPLORATORY). Per nucleus: the three Wedderburn block images of build_atom_nf's crossing sequence at 40-dps mpmath (no f64 overflow — closes v1's 38% gap). Tests: (F) Frobenius-cone membership tr_M(b_i a) >= 0 (prop:operator-selection-lp positivity); (P) spectral positivity of all blocks (the genuine SDP-strength per-nucleus criterion; the diagonal-lift solve_psd_operator_selection_sdp is LP-equivalent, so v1's suggestion would not have been a real upgrade). Includes the closed form sign(alt) = (-1)^T, T = 11A + A(A-1)/2 + Z.",
   "data": {
+    "q0_source": "qou_substrate.constants.q_at(40)",
     "markov_weights_y_lambda": {
       "(3)": "0.415395795360613401310437519725",
       "(2,1)": "0.280929631031019707778151306378",
@@ -104,6 +105,7 @@
       "spectrally_positive_P": 717,
       "std_block_positive": 1280,
       "alt_parity_closed_form_matches": 3558,
+      "disc_roundoff_boundary_cases": 0,
       "stable_nuclides_empirical": 251,
       "ame_chart": 3558
     },
