@@ -1,5 +1,7 @@
 import QOU.IwahoriHecke.Quotient
 import Mathlib.Data.Fintype.Basic
+import Mathlib.Tactic.FieldSimp
+import Mathlib.Tactic.Ring
 
 /-!
 # `QOU.IwahoriHecke.TypeA` — Type-A Iwahori-Hecke specialisation (Sprint 3)
@@ -108,7 +110,6 @@ theorem bar_image_hecke_quadratic
     (X^2 - (q⁻¹ - 1) * X - q⁻¹) =
     q⁻¹ * (q * X^2 - (1 - q) * X - 1) := by
   field_simp
-  ring
 
 /-- **Discharge of `conj:reverse-limit-q-to-infinity` (algebraic
     fragment).** The bar involution `q ↦ q⁻¹` exchanges the Hecke
