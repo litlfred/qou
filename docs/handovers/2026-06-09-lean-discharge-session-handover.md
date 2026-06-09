@@ -74,9 +74,26 @@ lake --version   # should say "Lean version 4.24.0"
 - First LSP query after toolchain install will TIMEOUT (60s) on cold start; second query works
 - LSP returns `{"success":false,"items":[]}` when its child lean is still compiling — wait + retry
 
-## CURRENT BLOCKER (handover)
+## CURRENT BLOCKER (handover) — DIAGNOSED
 
-**`lake build QOU` exits "error: build failed"** but the error grep returns 0 matches. Need to find the actual error:
+**`lake build QOU` exits "error: build failed"** because `QOU.HeckeAlgebra.Wedderburn` doesn't compile under Lean v4.24.0. **3 nested bugs**, all pre-existing in `main` (not from my discharges):
+
+1. **`λ` is a reserved token in Lean 4.24**. The file uses `λ` as a binder name (`(λ : Nat.Partition n)`, `fun λ =>`, `intro λ`). **Fix**: rename to `lam` throughout (23 occurrences).
+
+2. **`Matrix.PosSemidef` dot notation fails on `(x lam)`**. Lean parses `(x lam)` to its underlying function type (`Fin n → Fin n → ℝ`) because `Matrix` is a `def` not an `abbrev`. **Fix**: replace `(x lam).PosSemidef` with explicit `Matrix.PosSemidef (x lam)`; replace `(fun lam => …).PosSemidef` with `WedderburnDecomposition.PosSemidef (fun lam => …)`.
+
+3. **`Matrix.PosSemidef` requires additional imports**. After fixing #2, get "Unknown constant `Matrix.PosSemidef`" — need `import Mathlib.LinearAlgebra.Matrix.PosDef`. After THAT, get "failed to synthesize `StarOrderedRing ℝ`" — need a broader analysis import (tried `Mathlib.Analysis.Normed.Order.Lattice` but still fails on a deeper synthesize — likely needs more, or the `.smul` / `.add` projection on `Matrix.PosSemidef` has a different name in this Mathlib version).
+
+**Workaround that I tried + reverted**: rename `λ → lam` + add `Mathlib.LinearAlgebra.Matrix.PosDef` import + replace `(x lam).PosSemidef` with `Matrix.PosSemidef (x lam)`. Got from "5 parse errors" to "1 failed-to-synthesize error" — but the synthesize is deeper than a one-line fix and reverted for handover.
+
+**Suggested next-session path** for the build fix:
+1. Apply the rename + dot-notation fix from this handover's working notes (~10 min)
+2. Investigate the `StarOrderedRing ℝ` synthesize error with LSP — likely needs either:
+   - `import Mathlib.Analysis.RCLike.Basic` for the instance, OR
+   - The `.smul` / `.add` projections may need updating (e.g., `Matrix.PosSemidef.add` may have been renamed to `Matrix.PosSemidef.add'` or moved to a different namespace in Mathlib v4.24)
+3. Use `lean_local_search "Matrix.PosSemidef.smul"` and `lean_hover_info` to find the correct API
+
+**Original error capture** (for debugging):
 
 ```bash
 # Run from /home/user/qou with PATH set:
