@@ -5,7 +5,7 @@ import { proposition } from "../../schema/builders";
  */
 export default proposition({
   label: "prop:atomic-nf-witness",
-  lean: { ref: "qou:QOU.ParticleInteractions.atomic_nf_witness", validation: "not_started" },
+  lean: { ref: "qou:QOU.ParticleInteractions.atomic_nf_witness", validation: "not_checked" },
   title: "Atomic braid normal form witness",
   uses: ["def:atomic-braid"],
 });

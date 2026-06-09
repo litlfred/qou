@@ -2,7 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:three-parameters-wedderburn",
-  lean: { ref: "qou:QOU.BraidKnot.three_parameters_wedderburn", validation: "not_started" },
+  lean: { ref: "qou:QOU.BraidKnot.three_parameters_wedderburn", validation: "not_checked" },
   title: "Three calibration parameters from Wedderburn-Artin decomposition of $H_3(q)$",
   uses: ["rem:calibration-inputs"],
   tags: [

@@ -2,7 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:q-ns-nonlinear-uniqueness",
-  lean: { ref: "qou:QOU.FluidDynamics.p1_nonlinear_uniqueness", validation: "not_started" },
+  lean: { ref: "qou:QOU.FluidDynamics.p1_nonlinear_uniqueness", validation: "not_checked" },
   title:
     "Nonlinear estimates and uniqueness for the $q$-Navier--Stokes system",
   uses: [

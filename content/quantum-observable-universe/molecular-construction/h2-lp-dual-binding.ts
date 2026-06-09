@@ -5,7 +5,7 @@ import { proposition } from "../../schema/builders";
  */
 export default proposition({
   label: "prop:h2-lp-dual-binding",
-  lean: { ref: "qou:QOU.Molecular.h2_lp_dual_binding", validation: "not_started" },
+  lean: { ref: "qou:QOU.Molecular.h2_lp_dual_binding", validation: "not_checked" },
   title: "LP dual gives optimal $H_2$ binding",
   uses: [
     "def:h2-molecular-braid",

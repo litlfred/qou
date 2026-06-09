@@ -5,7 +5,7 @@ import { proposition } from "../../schema/builders";
  */
 export default proposition({
   label: "prop:atomic-lp-stability",
-  lean: { ref: "qou:QOU.ParticleInteractions.atomic_lp_stability", validation: "not_started" },
+  lean: { ref: "qou:QOU.ParticleInteractions.atomic_lp_stability", validation: "not_checked" },
   title: "LP stability of the atomic braid",
   uses: ["def:atomic-braid"],
 });
