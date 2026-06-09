@@ -86,10 +86,12 @@ jobs:
       # `|| true`) to make it a hard gate once the baseline is clean.
       - name: ruff F401,F403 (report)
         continue-on-error: true
+        # `continue-on-error` (above) keeps the job green; do NOT add `|| true`
+        # — that would mask the step's own failed status in the Actions UI.
         run: |
           ruff check --select F401,F403 --output-format=github \
             --exclude '**/_deprecated/**' \
-            folio-assistant/computations tools || true
+            folio-assistant/computations tools
 
   rust-wildcard:
     name: Rust wildcard imports (warn-only)
@@ -104,8 +106,10 @@ jobs:
         continue-on-error: true
         run: |
           set -uo pipefail
-          matches=$(grep -rnE '^[[:space:]]*use [A-Za-z_:]+::\*;' \
-            tools --include='*.rs' 2>/dev/null | grep -v 'use super::\*;' || true)
+          # Char class covers digits too (e.g. base64::prelude::*, sha2::*) and
+          # underscores (wasm_bindgen::prelude::*, extendr_api::prelude::*).
+          matches=$(grep -rnE '^[[:space:]]*use [A-Za-z0-9_:]+::\*;' \
+            tools --include='*.rs' 2>/dev/null | grep -vE 'use super::\*;' || true)
           if [ -n "$matches" ]; then
             echo "::warning::Non-test wildcard imports in tools/ (ratchet — narrow when touched):"
             echo "$matches" | while IFS= read -r line; do
