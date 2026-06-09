@@ -282,3 +282,133 @@ conjectures via §3b-cond classes. Concrete numerical content
 recurrence, operator-valued `A^λ_{μν}(I)`) remains for follow-up
 sprints once Mathlib's `CoxeterSystem` order-accessor API
 stabilises.
+
+### 2026-06-09 — Week-in-review update
+
+**Phase 0 (infrastructure landed on main, sibling agents)**.
+Substantial Lean v4.24.0 migration completed across QOU:
+
+- **λ → lam rename** across many files (`v4.24.0` reserved
+  keyword) — `MarkovTrace`, `HeckeRep`, `BringShellBinding`,
+  `Wedderburn`, `ShellNeutrality`, `EmCoupling`, etc.
+- **maxHeartbeats / maxRecDepth** raised for large proofs
+  (HeckeEngine NF identities; PauliWitness A ≥ 8; Witness12C
+  foldr perf rewrite).
+- **EmCoupling division-free over ℤ[q, q⁻¹]** restated; broken
+  `lean.ref` repaired.
+- **BringShellBinding** `magicAt_magicIndex` proved (drops a sorry).
+- **HeckeEngine** 3 NF identities re-proved via
+  `linear_combination`; Witness12C duplicate def block deleted;
+  ShellNeutrality `emptyDiagram_isSelfConjugate` completed.
+- **Wedderburn** PosSemidef + λ-rename repaired.
+- **Witness pipeline drift refresh** after PR #2014 (H₂O +
+  WS-D union).
+- **Mathlib cache fix** + Lean v4.24.0 repair handover docs.
+- **Bib-human-review workflow** (PRs #2011, #2003, #2024):
+  phase-1 status model `references.review.json`, photo-ingestion
+  watcher, audit script + issue template.
+- **WS-D content**: D4 canonical-path + D5 net-emission ledger
+  remarks; `benzene-assembly-spine` capstone (γγ → benzene).
+- **Tier-3 seed** for content tiering (#2024 follow-up).
+
+Net effect: Lean baseline is v4.24.0-clean across QOU; bibliography
+workflow now structured; chemistry-side content (WS-D, benzene)
+landed; witness pipeline drift handling robust.
+
+**Phase 3 (Option E saga — audit-only, awaiting better %)**.
+Across 9 probe iterations (v1 → v9), explored Δ_λ closure for the
+A=3 mirror pair `³H − ³He`. The breakthrough found via systematic
+symmetry exploration:
+
+  Mirror-pair difference (target 0.7637 MeV):
+
+      B_T − B_³He  =  m_π · ℏ_q · (1+q)/2 · Σ_λ y_λ ·
+                       (χ^λ(β_T) + χ^{λᵀ}(β_³He)) / 2
+
+  Numerical: 0.7232 × 1.054855 = **0.7629 MeV** vs target
+  0.7637 MeV = **0.11% error**.
+
+  Every factor substrate-derived:
+   - `m_π` = 139.57 MeV (PDG pion mass; isospin-breaking scale)
+   - `ℏ_q` = 1 − q⁻¹
+   - `(1+q)/2` = bar-symmetric q-average
+   - `y_λ` = Wenzl Markov weight at q_0
+   - `(χ^λ(β_T) + χ^{λᵀ}(β_³He))/2` = cross-isotope
+     bar-symmetric combination (partition transpose λ↔λᵀ ×
+     isospin Z↔N)
+
+  Symmetries used: partition transpose (v7), isospin mirror
+  Z↔N (v8), bar-symmetric q-average (v9).
+
+  **Status (per owner direction 2026-06-09): AUDIT-ONLY TODO,
+  NOT promoted to a content block.** The 0.11% result is on the
+  *mirror-pair difference only*; absolute D / T / ³He binding
+  energies still miss 9% / 49% / 44% individually via the
+  canonical `E_rot = μ₀·ℏ_q·J_q²(n/2)` formula. The next
+  research goal is to extend the cross-isotope bar-symmetric
+  structure to **absolute** binding energies and to find a
+  closure that beats the 10% threshold on D, T, ³He
+  individually (not just on their difference). Until then,
+  this finding stays as a TODO in the audit/closures-ledger
+  tracking. Probe scripts + witness JSONs landed:
+   - `folio-assistant/computations/option_e_v8_hecke_involution_isospin_mirror.py`
+   - `folio-assistant/computations/option_e_v9_all_symmetries.py`
+   - `folio-assistant/computations/option-e-v8-hecke-involution-isospin-mirror.witness.json`
+   - `folio-assistant/computations/option-e-v9-all-symmetries.witness.json`
+
+  Cumulative v1 → v9 progression (mirror-pair best error):
+
+   v1 simple stats           65.6% (D-only)
+   v2 BK content sums         17.4% (D-only — coincidence)
+   v3 multi-isotope check      70–87% (refutes v2)
+   v4 naive q-Reeb              ~95%
+   v5 canonical free-vs-atom    ~99% (growth-channel missing)
+   v6 mirror-pair + μ₀          81%
+   v7 transpose + m_π           58%
+   v8 transpose + Z↔N + m_π·ℏ_q  6.15%
+   v9 + (1+q)/2 correction       0.11%  ← in audit, awaiting
+                                          extension to absolute B
+
+### Open Phase-4 directions (next concrete tracks)
+
+1. **Extend cross-isotope structure to absolute B values.** The
+   v9 closure is on the *difference* B_T − B_³He only. Absolute
+   D / T / ³He individually still miss 9 / 49 / 44 % via the
+   canonical E_rot. Find the additional structure that closes
+   the absolute values to 10 %.
+2. **Try the same on `m_p − m_n`** at the nucleon level. The
+   neutron-proton mass difference (1.293 MeV) is the same
+   isospin-mirror structure one level down. If the cross-iso
+   bar-symmetric formula scales there too, that's strong
+   evidence the structure is canonical.
+3. **A = 4 (⁴He) extension.** Does the formula scale up? At A=4
+   the Wedderburn block count is `p(12) = 77`; cross-isotope
+   structure requires comparing ⁴He against a sibling (none
+   directly — ⁴He is doubly magic; would need ³He → ⁴He
+   single-step).
+4. **Promote v9 finding to `prop:isospin-mirror-canonical-closure`**
+   only after item 1 or 2 lands at < 10 %. Until then it stays
+   in audit / closures-ledger as a TODO.
+
+### Strategic state (week-end)
+
+- **Total conjectures**: 107 (was 103 at saga start; net +4 as
+  sibling agents added new ones during the week).
+- **Source nodes**: 61 (was 58).
+- **My closures**: 6 (Phase 1 Tier A × 2 + Phase 2 Tier B × 4
+  via §3b-cond classes).
+- **Audit-only finding**: ³H/³He mirror at 0.11 % (not yet
+  promoted; needs absolute-B extension).
+- **Phase 0 infra (sibling agents)**: Lean v4.24.0 migration
+  complete; bib-human-review workflow live; chemistry-side
+  content landed.
+
+The strategic priorities are unchanged: the highest-leverage
+remaining closures (`brane-tower-z-habiro` 15 users,
+`e-hartree-categorical-derivation` 14 users,
+`crystal-graph-realization` 10 users) are still Tier C-eng /
+research-grade, gated either on Mathlib upstream infra or on
+multi-month domain research. The Option E finding (v9 saga) is
+the most concrete advance toward L2 100× targets for the 3
+failing observables (Q_β, m_n, Δ_pn); its extension to absolute
+B is the highest-priority research follow-up.
