@@ -103,8 +103,8 @@ the same combination-law mistake:
         M_atom = Z·M_p + N·M_n + Z·M_e − E_binding(A, Z)
    not multiplicative.
 
-The corrected additive constituent baseline lives in
-`atom_mass_additive_baseline.py`; AME2020 hydrogen is reproduced
+Experimental per-isotope binding (AME2020) lives in
+`ame-2020-binding-energies.witness.json`; AME2020 hydrogen is reproduced
 to <100 ppb (publication-rounding-limited) and the per-isotope
 binding-energy residuals average 7.224 MeV/A — within 4% of
 empirical SEMF.
@@ -128,8 +128,8 @@ This re-frames the conclusions above:
     appropriate for a different regime, not generic q.
 
   · The right path: recast T2/T3 as **additive contributions to
-    E_binding(A, Z)**, matching the binding-energy column in
-    `atom-mass-additive-baseline.witness.json`.  Each Δ_binding
+    E_binding(A, Z)**, matching the AME2020 binding energies in
+    `ame-2020-binding-energies.witness.json`.  Each Δ_binding
     column entry (e.g. ⁴He ≈ 28.3 MeV, ⁷Li ≈ 39.2 MeV) is a
     target for an additive Σ tower formula, not a multiplicative
     one.

@@ -12,8 +12,8 @@ and V_hyp the Thurston volume of the atomic-link complement.
 This script does **not** compute V_hyp from QOU primitives — the
 atom→atomic-link mapping for general isotopes is paper-side
 content not yet wired through.  Instead, it inverts the law:
-given the empirical Δ_binding from
-`atom_mass_additive_baseline.py` and the SnapPy-known V_hyp of
+given the empirical binding from AME2020
+(`ame-2020-binding-energies.witness.json`) and the SnapPy-known V_hyp of
 the three currently-tabulated atomic-link primitives (figure-
 eight, three-twist, Borromean), it reports the **required ρ_F**
 that each candidate link would need to reproduce the observed
@@ -36,7 +36,7 @@ References
 - rem:frobenius-packing-density
 - prop:cpt-orbit-closure-density
 - def:topological-mass-formula
-- atom_mass_additive_baseline.py — empirical Δ_binding source
+- ame-2020-binding-energies.witness.json — empirical binding source
 - experimental_constants.VOL_* — SnapPy 3.3.2 volumes
 """
 
@@ -85,23 +85,40 @@ def main() -> None:
             "isotopes (²H–²⁰Ne).  QOU's prediction is ρ_F ∈ {m_e, "
             "2 m_e} from prop:cpt-orbit-closure-density; deviations "
             "from these two values quantify the atom-to-link mapping "
-            "gap.  Bridges atom_mass_additive_baseline.py to the "
+            "gap.  Bridges AME2020 binding to the "
             "Frobenius packing density law in "
             "rem:frobenius-packing-density."
         )
         .set_audit_only("docs/audits/rho-f-volume-binding-gap.md")
     )
 
-    # Load Δ_binding values from the additive baseline.
-    add_path = (
-        Path(__file__).parent / "atom-mass-additive-baseline.witness.json"
+    # Per-isotope experimental binding from AME2020 (canonical nuclear
+    # mass-defect tabulation).  Replaces the purged additive-constituent
+    # baseline — no Z·m_p + N·m_n shortcut; B is read straight from AME.
+    ame_path = (
+        Path(__file__).parent / "ame-2020-binding-energies.witness.json"
     )
-    if not add_path.exists():
+    if not ame_path.exists():
         raise SystemExit(
-            "atom-mass-additive-baseline.witness.json not found; "
-            "run atom_mass_additive_baseline.py first."
+            "ame-2020-binding-energies.witness.json not found; "
+            "run the AME binding-energy producer first."
         )
-    rows_in = json.loads(add_path.read_text()).get("data", {}).get("rows", [])
+    _ame = json.loads(ame_path.read_text()).get("data", {})
+    _AME_ISOTOPES = [  # (witness key, Z, N, isotope label)
+        ("B_deuteron_MeV", 1, 1, "2H"),
+        ("B_tritium_MeV", 1, 2, "3H"),
+        ("B_he3_MeV", 2, 1, "3He"),
+        ("B_he4_MeV", 2, 2, "4He"),
+        ("B_li5_MeV", 3, 2, "5Li"),
+        ("B_li6_MeV", 3, 3, "6Li"),
+        ("B_li7_MeV", 3, 4, "7Li"),
+    ]
+    rows_in = [
+        {"isotope": iso, "Z": Z, "N": N, "A": Z + N,
+         "delta_binding_MeV": float(_ame[key])}
+        for key, Z, N, iso in _AME_ISOTOPES
+        if key in _ame
+    ]
 
     # Per-isotope analysis.
     print(f"{'isotope':>8}  {'A':>3}  {'Δ_binding':>12}  "
@@ -164,7 +181,7 @@ def main() -> None:
         computed=len(rows_out),
         expected=len(rows_out),
         tolerance=0,
-        source="atom-mass-additive-baseline.witness.json rows ≥ ²H",
+        source="ame-2020-binding-energies.witness.json (B ≥ ²H)",
     )
     builder.add_data("rows", rows_out)
     builder.add_data("matches_within_10pct", matches)
