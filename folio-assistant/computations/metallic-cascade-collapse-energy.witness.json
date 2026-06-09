@@ -1,0 +1,182 @@
+{
+  "description": "Metallic-cascade collapse energetics: latent heat of the silver (Borromean\u2192CFL) crossing per baryon, cascade energy for collapsing cores, comparison with the observed SN 1987A budget, #2074 parity-class bookkeeping of the pre/post composition, and the delayed-second-burst discriminator between the shallow and deep q\u2194\u03c1 maps.",
+  "computed_at": "2026-06-09T21:29:50.225655+00:00",
+  "script": "metallic_cascade_collapse_energy.py",
+  "latent_heat_silver": {
+    "gap_skein": "17.1119",
+    "per_baryon_MeV": "21.510242",
+    "note": "branch gap of prop:borromean-hopf-energy-crossover evaluated AT q = \u03b4_silver; Skein\u2192MeV via the m_p anchor (1 Skein = 1.2570341 MeV)"
+  },
+  "cascade_energy_erg": {
+    "1.2 M_sun": "4.9176e+52",
+    "1.4 M_sun": "5.7372e+52",
+    "1.8 M_sun": "7.3765e+52",
+    "2.0 M_sun": "8.1961e+52"
+  },
+  "sn1987a_observed": {
+    "neutrino_burst_erg": "2e53\u20135e53 (\u22483e53 central; ~13 s; Kamiokande-II 11 + IMB 8 + Baksan 5 events)",
+    "kinetic_erg": "1e51\u20131.5e51",
+    "photons_erg": "~1e49",
+    "standard_attribution": "gravitational binding energy of the proto-neutron star (~3/5 GM\u00b2/R with relativistic corrections \u2248 3e53 erg), radiated as neutrinos of all flavors"
+  },
+  "budget_comparison": {
+    "full_core_cascade_vs_neutrino_burst": "5.737e+52 erg (1.4 M\u2609 cascade) vs ~3e53 erg observed \u2014 the cascade is ~20% of the standard gravitational-binding budget: an ADDITIVE QOU contribution currently hidden inside the factor-~2 uncertainty of the 25-event 1987A sample",
+    "discriminator": "a future galactic SN with O(10\u2074) detected neutrinos resolves a 20% excess; the sharper signature is the second-burst TIMING structure (below)"
+  },
+  "rung_placement_silver_rho0": {
+    "A_kinetic_rho0": "206.651",
+    "B_crossover_rel_rho0": "116.964",
+    "B_crossover_nonrel_rho0": "63.796",
+    "C_coral_tube_rp_rho0": "10.4923",
+    "C_coral_tube_1fm_rho0": "6.25"
+  },
+  "scenario_split": {
+    "shallow_maps_C": "heaviest proto-NS cross silver \u2192 delayed second \u03bd\u0304_e burst + ~6e52 erg/M\u2609 extra; ordinary SNe below the rung show NO excess",
+    "deep_maps_A_B": "no SN core ever crosses silver (\u03c1_c \u2265 64 \u03c10): cascade fires only inside BH-forming collapse, energy swallowed by the horizon \u2192 prediction: NO second burst in any SN; consistent with non-detection to date"
+  },
+  "second_burst": {
+    "mechanism": "under Map C the proto-NS central density crosses \u03c1(\u03b4_silver) a few hundred ms after bounce as the core deleptonizes and contracts; the crossing is FIRST-ORDER (Milnor \u03bc\u0304(123): 1\u21920, conj:color-superconductivity-borromean) \u21d2 a micro-collapse + second shock + second \u03bd\u0304_e-dominated burst \u2014 the same observable shape as the QCD-phase-transition mechanism of Sagert et al. 2009 (arXiv:0809.4225) / Dasgupta et al. 2009 (0912.2568)",
+    "inner_core_crossing_msun": "0.5\u20131.0",
+    "energy_erg": {
+      "0.5 M_sun": "2.049e+52",
+      "1.0 M_sun": "4.098e+52"
+    },
+    "detectability": "few \u00d710\u2075\u00b2 erg released on ~ms timescale, \u03bd\u0304_e-dominated: clearly resolvable by IceCube/Super-K/Hyper-K for a galactic event (the corpus's strangelet-merger block already cites ~50 Mpc reach for 2.4e51 erg bursts)"
+  },
+  "composition": {
+    "before_collapse": [
+      {
+        "layer": "envelope",
+        "species": "\u00b9H, \u2074He",
+        "classes": [
+          {
+            "A": 1,
+            "Z": 1,
+            "A_mod_4": 1,
+            "Z_parity": "odd",
+            "alt_block_positive": true
+          },
+          {
+            "A": 4,
+            "Z": 2,
+            "A_mod_4": 0,
+            "Z_parity": "even",
+            "alt_block_positive": true
+          }
+        ]
+      },
+      {
+        "layer": "shells",
+        "species": "\u00b9\u00b2C, \u00b9\u2076O, \u00b2\u2070Ne, \u00b2\u2078Si",
+        "classes": [
+          {
+            "A": 12,
+            "Z": 6,
+            "A_mod_4": 0,
+            "Z_parity": "even",
+            "alt_block_positive": true
+          },
+          {
+            "A": 16,
+            "Z": 8,
+            "A_mod_4": 0,
+            "Z_parity": "even",
+            "alt_block_positive": true
+          },
+          {
+            "A": 20,
+            "Z": 10,
+            "A_mod_4": 0,
+            "Z_parity": "even",
+            "alt_block_positive": true
+          },
+          {
+            "A": 28,
+            "Z": 14,
+            "A_mod_4": 0,
+            "Z_parity": "even",
+            "alt_block_positive": true
+          }
+        ]
+      },
+      {
+        "layer": "core (Chandrasekhar \u22481.4 M\u2609)",
+        "species": "\u2075\u2076Fe",
+        "classes": [
+          {
+            "A": 56,
+            "Z": 26,
+            "A_mod_4": 0,
+            "Z_parity": "even",
+            "alt_block_positive": true
+          }
+        ]
+      }
+    ],
+    "after_collapse": [
+      {
+        "layer": "remnant",
+        "species": "proto-neutron star: bulk neutron-rich matter (n + ~10% p,e); under the shallow q\u2194\u03c1 maps the inner core is past the silver rung: Hopf-diquark (CFL) condensate",
+        "classes": []
+      },
+      {
+        "layer": "ejecta (steady release)",
+        "species": "\u2075\u2076Ni \u2192 \u2075\u2076Co \u2192 \u2075\u2076Fe (radioactive light curve)",
+        "classes": [
+          {
+            "A": 56,
+            "Z": 28,
+            "A_mod_4": 0,
+            "Z_parity": "even",
+            "alt_block_positive": true
+          },
+          {
+            "A": 56,
+            "Z": 27,
+            "A_mod_4": 0,
+            "Z_parity": "odd",
+            "alt_block_positive": false
+          },
+          {
+            "A": 56,
+            "Z": 26,
+            "A_mod_4": 0,
+            "Z_parity": "even",
+            "alt_block_positive": true
+          }
+        ]
+      }
+    ],
+    "neutronization_step": {
+      "reaction": "e\u207b + p \u2192 n + \u03bd_e  (Z \u2192 Z\u22121 at fixed A)",
+      "parity_effect": "flips Z parity \u21d2 at A \u2261 0 (mod 4) it moves a nucleus OUT of the #2074 spectrally-positive class (e.g. \u2075\u2076Fe (0,even) allowed \u2192 \u2075\u2076Mn (0,odd) disallowed): in QOU terms the e-capture cascade forces the matter out of the nuclear admissible classes into bulk braid restructuring",
+      "examples": [
+        {
+          "A": 56,
+          "Z": 26,
+          "A_mod_4": 0,
+          "Z_parity": "even",
+          "alt_block_positive": true
+        },
+        {
+          "A": 56,
+          "Z": 25,
+          "A_mod_4": 0,
+          "Z_parity": "odd",
+          "alt_block_positive": false
+        }
+      ],
+      "caveat": "the parity class flags spectral positivity (structural admissibility), NOT a lifetime ordering \u2014 \u2075\u2076Ni (allowed) decays faster than \u2075\u2076Co (disallowed); exploratory cross-link only"
+    }
+  },
+  "steady_release": {
+    "observed": "light curve = \u2075\u2076Ni \u2192 \u2075\u2076Co \u2192 \u2075\u2076Fe radioactive chain (6.1 d / 77.2 d), NOT core physics; late-time NS cooling is core physics",
+    "qou_reading": "post-cascade CFL remnant cools with the gap \u0394_CFL \u2248 2.5 MeV suppressing \u03bd emission below T \u2248 2.9e10 K (prop:cfl-neutron-star-observables cooling plateau) \u2014 the 'strong steady release' phase"
+  },
+  "limitations": [
+    "only the silver rung has a corpus-defined latent heat (Borromean\u2212Hopf branch gap); \u03c6 and \u03c6\u00b2 crossings are not modeled (no corpus EOS for hyperonic/gCFL branch jumps)",
+    "cascade energy assumes EVERY baryon in M_core crosses; partial crossings scale linearly",
+    "SN 1987A numbers are standard-literature values, not corpus outputs",
+    "parity-class bookkeeping is an exploratory cross-link to the #2074 closed form, not a stability claim"
+  ]
+}
