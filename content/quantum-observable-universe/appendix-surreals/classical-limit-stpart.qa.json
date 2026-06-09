@@ -666,6 +666,24 @@
         "reviewed_at": "2026-06-09T14:26:34.579Z",
         "reviewed_sha": "33b99911b9b3edcd27ec5aece0f73322508d7a15",
         "notes": "stale: cached lean diagnostics have no lean_sha (legacy v1 cache); re-run content/pipeline/lean-compile-audit.ts to refresh"
+      },
+      {
+        "field_hash": {
+          "md": "9864dbd67f5a",
+          "ts": "1f6ebe9b81aa",
+          "lean": "e6f8534429a8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92",
+          "deps_hash": "6aeba1c295a5"
+        },
+        "reviewed_at": "2026-06-09T16:33:14.199Z",
+        "reviewed_sha": "eba14c412881a7fed67a25067b52c0925e38fd06"
       }
     ],
     "canonical-calibration-count": [
@@ -1071,5 +1089,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-09T14:26:34.579Z"
+  "updated_at": "2026-06-09T16:33:14.199Z"
 }
