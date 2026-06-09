@@ -1,59 +1,73 @@
+import UGB.GrobnerShirshov.AlgOps
+
 /-!
-# UGB.UnitalGroebner.s_polynomial_decomposition — placeholder stub
+# UGB.UnitalGroebner.s_polynomial_decomposition
 
-**Placeholder canonical** for content block
-[`prop:s-polynomial-decomposition`](../../../unital-groebner-bases/unital-groebner-bases-chapter/s-polynomial-decomposition.md): *$S$-polynomial decomposition of cancelling sums*.
+**Real-content formalization** (replaces the former vacuous
+`class … where holds : Prop`). The S-polynomial is built from the
+concrete `AlgElement` operations (`AlgOps.lean`: scalar-mul, subtraction),
+and the decomposition claim is a genuine **equation in `AlgElement G k`** —
+it cannot be instantiated with `True`. The manuscript proof of the base
+case is still pending (`sorry`, cited), but the *statement* is now
+substantive: this is the §3b-cond real-content template for the UGB
+placeholder theorems.
 
-The full Lean statement and proof are pending; this stub exists so
-the `lean.ref` URI `ugb:UGB.UnitalGroebner.s_polynomial_decomposition` resolves to a real declaration in the
-`ugb` Lake package.  The body is `sorry` carrying the manuscript
-citation per CLAUDE.md §1.
+Content block
+[`prop:s-polynomial-decomposition`](../../../unital-groebner-bases/unital-groebner-bases-chapter/s-polynomial-decomposition.md):
+*$S$-polynomial decomposition of cancelling sums*.
+
+## Manuscript statement
+
+Let $R$ be a commutative ring with unity, $A$ an $R$-algebra free as an
+$R$-module, $(B,<)$ an admissible system. Let $\alpha \in B$ and suppose
+$f_1,\dots,f_n \in A$ satisfy $\mathrm{LM}(f_i)=\alpha$ and
+$\mathrm{LC}(f_i)\in R^\times$. If $f := \sum_i c_i f_i$ (with $c_i\in R$)
+satisfies $\mathrm{LM}(f) < \alpha$, then $f = \sum_{i\neq j} d_{i,j}\,S_{i,j}$
+where $S_{i,j} := a_i^{-1} f_i - a_j^{-1} f_j$, $a_i := \mathrm{LC}(f_i)$.
 -/
 
 namespace UGB.UnitalGroebner
 
+open UGB.GrobnerShirshov
 
-/-- Abstract context for the `s_polynomial_decomposition` claim — fields encode the
-    manuscript hypotheses; the `holds` field is the substantive
-    claim of the lemma. -/
-class SPolynomialDecompositionContext where
-  /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+universe u v
 
-/-- **Manuscript statement** (full body):
+variable {G : Type u} {k : Type v} [Field k] [DecidableEq G]
 
-Let $R$ be a commutative ring with unity, $A$ an $R$-algebra which
-is free as an $R$-module, $(B, <)$ an
-[admissible system](#def:admissible-system). Let $\alpha \in B$ and
-suppose $f_1, \ldots, f_n \in A$ satisfy $\mathrm{LM}(f_i) = \alpha$
-and $\mathrm{LC}(f_i) \in R^\times$. If
+/-- The **S-polynomial** about two rules with unit leading coefficients
+    `a₁, a₂`:  `S(f₁,f₂) = a₁⁻¹ · f₁  −  a₂⁻¹ · f₂`, built from the
+    concrete `AlgElement` scalar-multiplication and subtraction
+    (`AlgOps.lean`). A real construction, not an axiom. -/
+def sPolynomial (a₁ a₂ : k) (f₁ f₂ : AlgElement G k) : AlgElement G k :=
+  AlgElement.sub (AlgElement.smul a₁⁻¹ f₁) (AlgElement.smul a₂⁻¹ f₂)
 
-$$
-  f := \sum_i c_i f_i, \qquad c_i \in R^*,
-$$
+/-- **S-polynomial decomposition — base (two-rule) case.**
 
-satisfies $\mathrm{LM}(f) < \alpha$, then we may write
+    The two rules `f₁, f₂` share a leading monomial `α` with unit leading
+    coefficients `a₁, a₂`; the combination `c₁f₁ + c₂f₂` cancels at `α`
+    (`c₁a₁ + c₂a₂ = 0`, i.e. its leading monomial drops strictly below
+    `α`). Then the combination is a scalar multiple of the S-polynomial.
 
-$$
-  f = \sum_{i \neq j} d_{i,j}\, S_{i,j}
-$$
-
-where the $S_{i,j}$ are the $S$-polynomials about $f_i$ and $f_j$:
-
-$$
-  S_{i,j} := \frac{1}{a_i} f_i - \frac{1}{a_j} f_j,
-  \qquad a_i := \mathrm{LC}(f_i),\; a_j := \mathrm{LC}(f_j) \in R^\times.
-$$
-
-    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
-    upgrading requires choosing the appropriate Lean types (Polynomial /
-    Matrix / categorical structures / etc.) and translating the manuscript
-    claim above. -/
+    The conclusion is a **concrete `AlgElement` equation** — the real
+    content the former `holds : Prop` lacked. The expected witness is
+    `d = c₁·a₁`. A complete proof needs coefficient extensionality for
+    `AlgElement` (which is a raw data structure, not a quotient — see the
+    `AlgOps.lean` §6 design note); supplying that ext principle is the
+    remaining manuscript step. -/
 -- Ref: [manuscript] unital-groebner-bases/unital-groebner-bases-chapter/s-polynomial-decomposition.ts
-theorem s_polynomial_decomposition [ctx : SPolynomialDecompositionContext] : ctx.holds := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  -- Ref: [manuscript] unital-groebner-bases — sorry pending Lean translation
+theorem s_polynomial_decomposition
+    (a₁ a₂ c₁ c₂ : k) (f₁ f₂ : AlgElement G k)
+    (ha₁ : a₁ ≠ 0) (ha₂ : a₂ ≠ 0)
+    (hcancel : c₁ * a₁ + c₂ * a₂ = 0) :
+    ∃ d : k,
+      AlgElement.add (AlgElement.smul c₁ f₁) (AlgElement.smul c₂ f₂)
+        = AlgElement.smul d (sPolynomial a₁ a₂ f₁ f₂) := by
+  -- Witness d = c₁·a₁: then d·a₁⁻¹ = c₁ and −d·a₂⁻¹ = c₂ (by hcancel,
+  -- c₂ = −c₁a₁a₂⁻¹), so the two sides agree coefficient-wise. The
+  -- coefficient-wise equality ⇒ AlgElement equality step is the pending
+  -- manuscript ext argument (AlgElement is not a quotient type).
+  -- Ref: [manuscript] unital-groebner-bases — s-polynomial-decomposition
+  refine ⟨c₁ * a₁, ?_⟩
   sorry
 
 end UGB.UnitalGroebner
