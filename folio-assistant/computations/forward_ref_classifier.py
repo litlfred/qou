@@ -25,14 +25,33 @@ Severity (the axis that matters):
   - structural   target is an appendix or a framing chapter
                  (models-of-qous / notation). Benign by construction.
 
-The ONLY sanctioned logical forward reference is into the
-surreal-number lift (`appendix-surreals`) — a deliberate terminal
-construction the main text may rely on by forward reference — plus the
-explicit `FOUNDATIONAL_LATE` allowlist (objects used early but formally
-developed late, each justified inline).
+A logical forward reference is WAIVED (reclassified out of the
+actionable defect count) in four cases:
 
-Legacy A–F category labels are retained in `category` for continuity
-but the headline metric is now the **logical-defect count**.
+  - target is the surreal-number lift (`appendix-surreals`) — a
+    deliberate terminal construction the main text may rely on;
+  - target is on the `FOUNDATIONAL_LATE` allowlist (objects used early
+    but formally developed late, each justified inline);
+  - **L-result-callback** (triage Table B): the target is a proven
+    *result* (prop / lemma / cor / thm / proof) or a conjecture, not a
+    definition — a result is established in its own chapter and an
+    earlier citation is a deliberate forward callback, not a mis-home
+    (there is no def to move);
+  - **L-subject-matched** (triage Table A): the target is a definition
+    whose subject matches its (later) home chapter, or whose placement
+    is a considered prior decision — listed in `SUBJECT_MATCHED_DEFS`.
+
+Everything else with a logical source AND a *definition* target whose
+subject does NOT match its chapter remains an actionable
+`L-dependency` defect — the small author-decision set the watcher
+surfaces. See `docs/audits/2026-06-09-cross-chapter-forward-ref-triage.md`
+for the per-edge triage that curated the two waive lists.
+
+The legacy A–F category lettering is retained only in this taxonomy
+prose for continuity; the emitted `category` field uses the
+severity-prefixed labels `L-*` (logical), `T-*` (storytelling),
+`S-*` (structural). The headline metric is the **logical-defect
+count** (`L-dependency`).
 
 Every cross-chapter forward reference (a block in chapter N whose
 `uses[]` / `interprets` points at a block in chapter M > N) is
@@ -89,6 +108,45 @@ FOUNDATIONAL_LATE = {
     "def:qz-bicompletion",
     "def:motivic-substrate",
     "def:archimedean-realization-functor",
+    "def:adelic-substrate",   # the ring of adeles 𝔸 — foundational substrate
+                              # object, peer of motivic-substrate +
+                              # archimedean-realization-functor above; used
+                              # early (lifting-and-descent motivic-Galois
+                              # character), formally developed in mass-theory
+                              # (2026-06-09 author decision, edge #2).
+}
+
+# Definition targets that genuinely BELONG in their (later) home
+# chapter: the def's SUBJECT matches the chapter, so an earlier block
+# that forward-references it is a deliberate coupling, not a mis-home.
+# Each entry is keyed "tgt_chapter::tgt_label". Curated from the
+# 2026-06-09 cross-chapter forward-ref triage (Table A, subject-vs-
+# chapter waive). A def→def or prop→def edge whose TARGET is on this
+# list reclassifies from ACTIONABLE (L-dependency) to WAIVED
+# (L-subject-matched). Do NOT add a label merely to lower the count —
+# the test is "does the definition's subject match its home chapter?"
+# (and, where relevant, "was its placement a considered prior
+# decision?"). The author-decision edges (skein→computational-horizon,
+# motivic-galois→adelic-substrate, adelic-substrate→classical-limit,
+# quark-antiquark→breit-wheeler) are deliberately EXCLUDED so the
+# watcher still surfaces them.
+SUBJECT_MATCHED_DEFS = {
+    "brings-surface::def:su2-generators",          # PR #823 prior relocation
+    "brings-surface::def:brings-surface",          # Bring's-surface def
+    "brings-surface::def:briggs-klein-chart",      # Bring's-surface chart
+    "brings-surface::def:local-cohomology-group",  # cohomological defect
+    "climax-volume-mass::def:knot-operator-energy",   # q-hyperbolic energy
+    "climax-volume-mass::def:local-shadow-ordering",  # shadow ordering
+    "information-theory::def:operational-entropy",    # entropy
+    "lifting-and-descent::def:yekutieli-lifting-condition",  # Yekutieli lift
+    "mass-endomorphism::def:mass-identity",           # mass identity
+    "measurement-observation::def:bundle-isotopy-equivalence",
+    "particle-interactions::def:knot-particle-generation",
+    # classical-limit functor 𝓛:𝐂_q→𝐂_1 — subject is the classical limit
+    # (7 consumers across stochastic-mechanics + appendix-surreals); the
+    # adelic-substrate forward reference is the archimedean-projection
+    # pointer, not a mis-home (2026-06-09 author decision, edge #3).
+    "stochastic-mechanics::def:classical-limit-functor",
 }
 
 # Chapters whose forward refs are waived wholesale.
@@ -196,6 +254,31 @@ def classify(src_ch, src_kind, tgt_ch, tgt_kind, tgt_label):
                     "LOGICAL forward ref, but target is on the "
                     "FOUNDATIONAL_LATE allowlist (an object intentionally "
                     "used early, formally developed late — author-sanctioned)")
+        # Rule 1 (2026-06-09 triage Table B): the target is a *proven
+        # result* (prop / lemma / cor / thm / proof) or a conjecture, not
+        # a definition. A result is established in its own chapter; an
+        # earlier block citing it forward is a deliberate narrative
+        # callback (consumption coupling), not a placement error — there
+        # is no "move the def earlier" remedy because there is no def.
+        if tgt_kind != "definition":
+            established = ("stated in its own chapter"
+                          if tgt_kind == "conjecture"
+                          else "established where it lives")
+            return ("L-result-callback", "logical", True,
+                    f"LOGICAL forward ref to a later {tgt_kind} — a "
+                    f"{tgt_kind} is {established}; the earlier citation is a "
+                    "deliberate forward callback / consumption coupling, not "
+                    "a misplacement (triage Table B)")
+        # Rule 2 (2026-06-09 triage Table A): the target is a definition
+        # whose subject matches its (later) home chapter — the def belongs
+        # there, so the earlier forward reference is a deliberate coupling.
+        if f"{tgt_ch}::{tgt_label}" in SUBJECT_MATCHED_DEFS:
+            return ("L-subject-matched", "logical", True,
+                    "LOGICAL forward ref to a later definition whose subject "
+                    "matches its home chapter (or whose placement is a "
+                    "considered prior decision) — the def belongs there; "
+                    "the earlier reference is a deliberate coupling, not a "
+                    "mis-home (triage Table A subject-vs-chapter waive)")
         return ("L-dependency", "logical", False,
                 f"LOGICAL forward ref: a {src_kind} relies on a later "
                 f"{tgt_kind} — the reader must know future content to "
