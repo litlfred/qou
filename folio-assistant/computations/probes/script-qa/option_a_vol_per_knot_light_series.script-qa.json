@@ -2,8 +2,8 @@
   "$schema": "script-qa/v1",
   "script_path": "folio-assistant/computations/probes/option_a_vol_per_knot_light_series.py",
   "language": "python",
-  "source_hash": "3ed39e0dfea4",
-  "updated_at": "2026-06-04T18:24:03.689Z",
+  "source_hash": "49a298a72406",
+  "updated_at": "2026-06-09T03:37:13.209Z",
   "criteria": {
     "does_not_default_to_float": [
       {
@@ -147,6 +147,23 @@
         },
         "reviewed_at": "2026-06-04T18:24:03.689Z",
         "reviewed_sha": "afce870d3c949d2018a034615c153abcca9000e6"
+      }
+    ],
+    "compute_no_mpf_to_float_cast": [
+      {
+        "field_hash": {
+          "ts": "49a298a72406"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "0bbdf534427b",
+          "script_commit_sha": "76a167e10467a2b0f41dbbd968ea8245d5b4ba33"
+        },
+        "reviewed_at": "2026-06-09T03:37:13.209Z",
+        "reviewed_sha": "76a167e10467a2b0f41dbbd968ea8245d5b4ba33"
       }
     ]
   }

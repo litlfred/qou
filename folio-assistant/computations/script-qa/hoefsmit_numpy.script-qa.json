@@ -2,8 +2,8 @@
   "$schema": "script-qa/v1",
   "script_path": "folio-assistant/computations/hoefsmit_numpy.py",
   "language": "python",
-  "source_hash": "0bd6334546bc",
-  "updated_at": "2026-05-24T05:15:37.031Z",
+  "source_hash": "5f83309f6d9b",
+  "updated_at": "2026-06-09T03:37:13.209Z",
   "criteria": {
     "does_not_default_to_float": [
       {
@@ -292,6 +292,25 @@
         },
         "reviewed_at": "2026-05-24T05:15:37.031Z",
         "reviewed_sha": "b918c27dba807cf5d0bb65ef8b3e49d37d4ca55a"
+      }
+    ],
+    "compute_no_mpf_to_float_cast": [
+      {
+        "field_hash": {
+          "ts": "5f83309f6d9b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "0bbdf534427b",
+          "script_commit_sha": "76a167e10467a2b0f41dbbd968ea8245d5b4ba33"
+        },
+        "reviewed_at": "2026-06-09T03:37:13.209Z",
+        "reviewed_sha": "76a167e10467a2b0f41dbbd968ea8245d5b4ba33",
+        "severity": "critical",
+        "evidence": "folio-assistant/computations/hoefsmit_numpy.py:222: mpmath/sympy → float64 cast `float(mp.mpf(Q_50_DIGIT_STR))` — GUARANTEED precision loss; keep the value in mpmath (`mp.mpf(str(...))`) or sympy (`sp.N(..., dps)` without the outer `float()`)."
       }
     ]
   }

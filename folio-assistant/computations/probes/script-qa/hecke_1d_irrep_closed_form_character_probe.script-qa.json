@@ -3,7 +3,7 @@
   "script_path": "folio-assistant/computations/probes/hecke_1d_irrep_closed_form_character_probe.py",
   "language": "python",
   "source_hash": "daffd5c24a8b",
-  "updated_at": "2026-06-04T18:24:03.689Z",
+  "updated_at": "2026-06-09T03:37:13.209Z",
   "criteria": {
     "does_not_default_to_float": [
       {
@@ -147,6 +147,25 @@
         },
         "reviewed_at": "2026-06-04T18:24:03.689Z",
         "reviewed_sha": "afce870d3c949d2018a034615c153abcca9000e6"
+      }
+    ],
+    "compute_no_mpf_to_float_cast": [
+      {
+        "field_hash": {
+          "ts": "daffd5c24a8b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "0bbdf534427b",
+          "script_commit_sha": "76a167e10467a2b0f41dbbd968ea8245d5b4ba33"
+        },
+        "reviewed_at": "2026-06-09T03:37:13.209Z",
+        "reviewed_sha": "76a167e10467a2b0f41dbbd968ea8245d5b4ba33",
+        "severity": "critical",
+        "evidence": "folio-assistant/computations/probes/hecke_1d_irrep_closed_form_character_probe.py:174: mpmath/sympy → float64 cast `float(mp.fabs(chi_triv_direct - chi_triv_closed))` — GUARANTEED precision loss; keep the value in mpmath (`mp.mpf(str(...))`) or sympy (`sp.N(..., dps)` without the outer `float()`). | folio-assistant/computations/probes/hecke_1d_irrep_closed_form_character_probe.py:175: mpmath/sympy → float64 cast `float(mp.fabs(chi_alt_direct - chi_alt_closed))` — GUARANTEED precision loss; keep the value in mpmath (`mp.mpf(str(...))`) or sympy (`sp.N(..., dps)` without the outer `float()`)."
       }
     ]
   }

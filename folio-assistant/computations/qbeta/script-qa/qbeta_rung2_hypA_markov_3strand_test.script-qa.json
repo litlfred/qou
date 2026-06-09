@@ -3,7 +3,7 @@
   "script_path": "folio-assistant/computations/qbeta/qbeta_rung2_hypA_markov_3strand_test.py",
   "language": "python",
   "source_hash": "1840ea1be93f",
-  "updated_at": "2026-06-04T18:24:03.689Z",
+  "updated_at": "2026-06-09T03:37:13.209Z",
   "criteria": {
     "does_not_default_to_float": [
       {
@@ -147,6 +147,25 @@
         },
         "reviewed_at": "2026-06-04T18:24:03.689Z",
         "reviewed_sha": "afce870d3c949d2018a034615c153abcca9000e6"
+      }
+    ],
+    "compute_no_mpf_to_float_cast": [
+      {
+        "field_hash": {
+          "ts": "1840ea1be93f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "0bbdf534427b",
+          "script_commit_sha": "76a167e10467a2b0f41dbbd968ea8245d5b4ba33"
+        },
+        "reviewed_at": "2026-06-09T03:37:13.209Z",
+        "reviewed_sha": "76a167e10467a2b0f41dbbd968ea8245d5b4ba33",
+        "severity": "critical",
+        "evidence": "folio-assistant/computations/qbeta/qbeta_rung2_hypA_markov_3strand_test.py:214: mpmath/sympy → float64 cast `float(mp.fabs(actual_q0 - hypA_q0) / actual_q0)` — GUARANTEED precision loss; keep the value in mpmath (`mp.mpf(str(...))`) or sympy (`sp.N(..., dps)` without the outer `float()`)."
       }
     ]
   }
