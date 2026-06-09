@@ -58,11 +58,16 @@ condition on the truncated coefficient matrix, hence decidable.
    *every* $N$ from the base order onward, rank being monotone in the
    column count.  Lean formalizes the **two endpoints** of this argument:
    the base minor is full-rank (`jetJacobianBase_rank`, proved via
-   invertibility) and the abstract monotonicity principle
+   invertibility) and the monotonicity principle
    (`jacobianRank_eq_three_of_base`: any monotone, row-bounded rank
    function equal to $3$ at the base order is $3$ for all $N \ge 3$).  The
-   column-extension linkage that discharges the principle's hypotheses for
-   the *concrete* order-$N$ Jacobian remains a structural input — per-order
+   principle is **wired to the structure's concrete `jacobianRank`** through
+   the constructor `JetOrderIndependence.ofMonotoneBase`, so `full_rank` is
+   that principle applied to the witnessed rank rather than a per-order
+   assertion.  What remains a structural input is the matrix-level
+   realization — that the actual order-$N$ Jacobian discharges the
+   principle's three hypotheses (monotone, row-bounded by $3$, base $= 3$)
+   via the column-submatrix containing `jetJacobianBase`; per-order
    independence reduces to it rather than to a separate determinant test at
    each truncation.
 3. **Surreal error bounds** supply the *bridge* to the limit, and the
