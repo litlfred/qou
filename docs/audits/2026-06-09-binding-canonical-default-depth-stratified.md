@@ -366,6 +366,54 @@ tuning ([`binding_ladder_catalog.py:63`](../../folio-assistant/computations/bind
 warning: α-ladder is fitted; per-isotope inconsistency was the
 falsification of the fitted route).
 
+## Option 4 (operator-valued combiner) status — already on main, blocked at A ≥ 3
+
+Per the synthesis recommendation, the structural fix for the per-depth
+α_k assignment problem is the operator-valued combiner, NOT α_k
+retuning. The infrastructure is already on main:
+
+| Component | File | State |
+|---|---|---|
+| Combiner | [`canonical_tr_m_via_branching.py`](../../folio-assistant/computations/canonical_tr_m_via_branching.py) | A=2 end-to-end; A ≥ 3 returns `None` with diagnostic |
+| A-operator extracts | `sublemma_2_1_A_operator_extract*.py` (H_6, H_9, H_12) | ✅ partial coverage; H_15 / H_18 missing |
+| Q-value chain | `branching-qvalue-chain.py` | ✅ |
+| Atom-level branching | `sublemma_2_1_deuteron_branching.py`, `sublemma_2_1_h12_he4_branching.py` | ✅ scripted |
+| Interface-knot binding | `binding_via_interface_knot.py` | T1+T2 finite; T3 divergent for A ≥ 2 |
+
+**Documented blocker (`canonical_tr_m_via_branching.py:218-252`):**
+the H_9+ A-operator extracts are **rank-deficient** (least-squares
+fits over the H_3 inner-test family, NOT universal). Empirically:
+- A=2 deuteron matches `markov_peel` at 7e-15 (H_6 extract IS full-rank)
+- A=3 tritium / ³He differ from `markov_peel` by 21-42 % (H_9 extracts under-fitted)
+- A ≥ 3 returns `None` rather than silently-wrong values
+
+**Three closure paths documented in code:**
+1. Regenerate H_9 / H_12 / H_15 / H_18 extracts with test-word set
+   large enough to make rank ≥ n_unknowns for every λ — explodes at H_18
+   (e.g. [4,3,1,1] needs ≥ 3390 test words).
+2. Build truly recursive ρ_ξ via matrix-form Wenzl branching identity
+   (requires operator-form A^λ reconstruction, not just trace form).
+3. Fall back to canonical `markov_peel.tr_M_atomic` for the inner — gives
+   the correct |tr_M| symbolically at any q, at the cost of bypassing
+   the combiner's speedup.
+
+**Recommended next concrete step**: rather than writing a new
+`binding_via_operator_combiner.py` from scratch (which would just
+re-cover the existing A=2 work), pick one of:
+
+- **path 3 follow-up**: write `binding_combiner_markov_peel_fallback.py`
+  that uses `markov_peel.tr_M_atomic` for ALL atoms (A=2,3,4,...) and
+  forms `B = E_0·(|tr_M^free| − |tr_M^atom|)`. Bypasses the
+  rank-deficiency blocker entirely; numerically equivalent to the
+  canonical compute path, no speedup.
+- **path 1 follow-up**: regenerate H_9 / H_12 extracts with a larger
+  test-word family (sympy generation of inner braid words exhaustively
+  over a basis). Time-bounded; might close A=3 first.
+
+Out of scope for this PR (whose deliverable is the canonical default
++ audit + completeness gate); flagged here so the next session has the
+infrastructure inventory ready.
+
 ## See also
 
 - [`docs/canonical-derivation-cheat-sheet.md`](../canonical-derivation-cheat-sheet.md)
