@@ -15,6 +15,7 @@ export default proposition({
     witness: [
       "folio-assistant/computations/molecular-angle-symmetric-block-general.witness.json",
       "folio-assistant/computations/h2o-angle-q2-symmetric-block.witness.json",
+      "folio-assistant/computations/molecular-braid-angle-table.witness.json",
     ],
   },
   uses: ["def:h2o-molecular-braid", "prop:h2o-bond-angle-shift"],
