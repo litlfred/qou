@@ -309,7 +309,6 @@ theorem precision_ladder_N3_compat
   -- Finset.range 2 = {0, 1}, prod is (factor at i=0) · (factor at i=1)
   -- which under (i+2) gives factors at k=2 and k=3.
   simp [Finset.prod_range_succ, Finset.prod_range_zero]
-  ring
 
 /-- The inductive ladder at N=5 (canonical instance) matches the
     explicit `Q_beta_categorical` defined above. This ties the
@@ -327,7 +326,7 @@ theorem precision_ladder_N5_canonical_compat (q m_e : ℝ) (hq : 0 < q) :
         qBetaPrecisionLadderCoeffsCanonical]
   ring
 
-/-- **Open conjecture (N≥4): inductive categorical closure of `c_k`.**
+/- **Open conjecture (N≥4): inductive categorical closure of `c_k`.**
 
 For every `k ≥ 4`, the categorical coefficient `c_k(q)` is conjectured
 to be expressible from substrate-only primitives — either Kashiwara
@@ -527,7 +526,6 @@ theorem q_beta_n4_structural_form
               * (hoefsmitB q)^4 * (hbarQ' q)^8) := by
   unfold Q_beta_n4_categorical
   rw [hC4.c4_is_jones_kashiwara q hq]
-  ring
 
 /-- Abstract true categorical N=5 coefficient `c_5(q)`. -/
 -- Ref: [manuscript] prop:q-beta-categorical-precision-ladder
@@ -604,7 +602,6 @@ theorem q_beta_n6_structural_form
               * (hoefsmitB q)^6 * (hbarQ' q)^12) := by
   unfold Q_beta_n6_categorical
   rw [hC6.c6_is_jones_sq_kashiwara q hq]
-  ring
 
 /-- Abstract true categorical N=7 coefficient `c_7(q)`. -/
 -- Ref: [manuscript] prop:q-beta-categorical-precision-ladder
