@@ -44,6 +44,7 @@ export default chapter({
         "motivic-mass-measure",
         "hecke-mass-element",
         "hecke-mass-trace",
+        "hecke-generator-poly-reduction",
         "hecke-charge-mass-duality",
         "skein-decomposition",
         "topological-field-ansatz",
