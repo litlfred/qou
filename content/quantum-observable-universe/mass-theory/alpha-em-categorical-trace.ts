@@ -2,19 +2,19 @@ import { remark } from "../../schema/builders";
 
 export default remark({
   label: "rem:alpha-em-categorical-trace",
-  title: "Legacy closed form $1/\\alpha_{EM} = 45 \\cdot [3]_q \\cdot (1 + \\delta_{CS} + 8q \\cdot \\delta_{CS}^2)$ as a consequence of the spectral-completeness program",
+  title: "Legacy empirical $\\alpha_{EM}$ forms (deprecated — superseded by the pre-archimedean trace-ratio)",
   interprets: "thm:em-spectral-completeness",
   uses: [
+    "prop:alpha-em-categorical-trace-ratio",
     "cor:gauge-coupling-uniqueness",
-    "prop:gram-determinant-plancherel-ratio",
-    "prop:exterior-square-borromean",
+    "prop:em-coupling-bring-zero-mode",
   ],
   authorNotes: [
     {
-      kind: "status",
-      date: "2026-05",
+      kind: "deprecated",
+      date: "2026-06-10",
       body:
-        "The bare formula $1/\\alpha_{EM} = q[9]_q[10]_q$ now has a clean structural derivation as a categorical trace ratio, [prop:alpha-em-categorical-trace-ratio](#prop:alpha-em-categorical-trace-ratio) ($\\alpha_{EM} = h^2/(q\\,\\delta_q(T_{2,9})\\,\\delta_q(T_{3,5}))$). The $1.55 \\times 10^{-3}$ residual gap to CODATA is the subject of [rem:alpha-em-derivation-open-problems](#rem:alpha-em-derivation-open-problems); the current preferred lead is the *additive* Bring zero-mode form [prop:em-coupling-bring-zero-mode](#prop:em-coupling-bring-zero-mode), not the multiplicative gluon-octet ansatz reproduced below. The 100-dps PSLQ scan over an extended 54-element basis ruled out the multiplicative $q$-rational family entirely. This remark is retained for historical context.",
+        "The obsolete empirical / PSLQ $\\alpha_{EM}$ closed forms ($45[3]_q(1+\\delta_{CS}+8q\\delta_{CS}^2)$, the gluon-octet conjecture) were moved OUT of this block into [docs/audits/2026-06-10-alpha-em-legacy-empirical-forms.md](../../../docs/audits/2026-06-10-alpha-em-legacy-empirical-forms.md) per the owner directive (keep the audit trail, but not in the paper). They were single-point PSLQ matches at $q_0$, not derivations — the multiplicative $q$-rational family was ruled out by the 100-dps 54-element scan. The canonical form is the pre-archimedean trace-ratio [prop:alpha-em-categorical-trace-ratio](#prop:alpha-em-categorical-trace-ratio) (no $\\pi$); the archimedean correction is [prop:em-coupling-bring-zero-mode](#prop:em-coupling-bring-zero-mode). Do not revive the empirical product forms.",
     },
   ],
 });
