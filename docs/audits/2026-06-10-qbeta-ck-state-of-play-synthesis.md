@@ -15,7 +15,7 @@ found during the 2026-06-10 review.
 
 ## 1. Per-rung state (unchanged since registry 2026-06-04)
 
-`Q_β = Q_base · ∏_{k≥2}(1 + c_k·u^k)`, `u = b·ℏ_q² ≈ 0.00852`, each rung buys
+`Q_β = Q_base · ∏_{k≥2} (1 + c_k·u^k)`, `u = b·ℏ_q² ≈ 0.00852`, each rung buys
 ~2.07 digits; 100× target needs N=3, 1 ppQ needs N=7.
 
 | rung | tier | note |
