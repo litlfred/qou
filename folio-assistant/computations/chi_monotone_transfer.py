@@ -59,11 +59,6 @@ _TOL = 1e-9
 
 # ── Young-lattice (fine Bratteli) primitives — partition = descending tuple ──
 @lru_cache(maxsize=4096)
-def _cells(shape: tuple[int, ...]) -> frozenset:
-    return frozenset((r, c) for r, row in enumerate(shape) for c in range(row))
-
-
-@lru_cache(maxsize=4096)
 def _addable(shape: tuple[int, ...]) -> tuple[tuple[int, int], ...]:
     """Addable corner boxes (r, c) — adding one yields a valid partition."""
     rows = shape
@@ -84,10 +79,6 @@ def _add(shape: tuple[int, ...], box: tuple[int, int]) -> tuple[int, ...]:
     else:
         rows[r] += 1
     return tuple(rows)
-
-
-def _content(box: tuple[int, int]) -> int:
-    return box[1] - box[0]
 
 
 # ── MPFR re-lift of the (float) atom word ──────────────────────────────────
@@ -127,48 +118,37 @@ def word_to_mpfr(word, q: "mp.mpf"):
     return out
 
 
-# ── local seminormal block: diagonal of O_g = Π(σ_g + d·1) ─────────────────
-def _local_diag(ds, s_lo, s_hi, q, qi):
-    """`{s_mid: [O_g]_{s_mid,s_mid}}` for O_g = Π_j(σ_g + ds[j]·1) in the
-    block s_lo ⊂ s_mid ⊂ s_hi (two boxes added). 1 or 2 intermediates.
+# ── Cayley–Hamilton reduction of O_g = Π(σ_g + d_j·1) ──────────────────────
+def _alpha_beta(ds, q, qi):
+    """O_g = Π_j(σ_g + d_j·1) = α·σ_g + β·I (Cayley–Hamilton).
 
-    The 2×2 product is hand-rolled in scalar mpf arithmetic — mpmath.matrix
-    object overhead dominates otherwise (n=18/21 has ~10⁵ block evals)."""
-    added = _cells(s_hi) - _cells(s_lo)                  # exactly 2 cells
-    inter = []                                            # (s_mid, box_first)
-    for box in _addable(s_lo):                            # only valid corners
-        if box in added:
-            smid = _add(s_lo, box)
-            if _cells(smid) <= _cells(s_hi):             # the other box completes
-                inter.append((smid, box))
-    if len(inter) == 1:                                  # dependent boxes → scalar
-        smid, box1 = inter[0]
-        (box2,) = added - {box1}
-        delta = _content(box2) - _content(box1)          # ±1
-        eig = q if delta == 1 else -qi
-        val = mp.mpf(1)
-        for d in ds:
-            val *= (eig + d)
-        return {smid: val}
-    # 2×2 block, basis order (X, Y); σ = [[diagX, 1], [off, diagY]]
-    (sX, bX), (sY, bY) = inter
-    dXY = _content(bY) - _content(bX)
-    diagX = (q - qi) / (1 - q ** (-2 * dXY))
-    diagY = (q - qi) - diagX
-    off = diagX * diagY + 1
-    # O = Π_j (σ + d_j·I); accumulate O = [[a,b],[c,d]] (hand-rolled mat-mul)
-    a, b, c, d_ = mp.mpf(1), mp.mpf(0), mp.mpf(0), mp.mpf(1)
-    for dj in ds:
-        p, s = diagX + dj, diagY + dj          # F = [[p, 1], [off, s]]
-        a, b, c, d_ = (a * p + b * off, a + b * s,
-                       c * p + d_ * off, c + d_ * s)
-    return {sX: a, sY: d_}                       # O[0,0], O[1,1]
+    σ_g has eigenvalues q and −q⁻¹ on every 2×2 (and is one of them on a
+    1×1), so O_g has eigenvalues E₁=Π(q+d_j), E₂=Π(−q⁻¹+d_j). Then any
+    DIAGONAL entry of O_g is α·(that diagonal of σ_g) + β — the off-diagonal
+    seminormal convention never enters the diagonal of a polynomial in σ_g.
+    This is the key that removes the 2×2 matmul + q-power from the per-edge
+    inner loop: the block diagonal becomes α·D(δ′) + β, a function of the
+    content gap δ′ alone. Empty ds → identity (α=0, β=1)."""
+    e1 = mp.mpf(1)
+    e2 = mp.mpf(1)
+    for d in ds:
+        e1 *= (q + d)
+        e2 *= (-qi + d)
+    denom = q + qi
+    return (e1 - e2) / denom, (q * e2 + qi * e1) / denom
 
 
 # ── the transfer-matrix sweep ──────────────────────────────────────────────
 def chi_all_lambda(word, n: int, *, dps: int = 50, q=None):
     """`{λ ⊢ n: χ^λ(word)}` (mpf) for a MONOTONE (c,d,gen0) braid `word`,
-    via the fine-Bratteli transfer matrix. NO d_λ materialisation."""
+    via the fine-Bratteli transfer matrix. NO d_λ materialisation.
+
+    State is `(shape s_{g+1}, c_this)` where c_this = content of the box
+    added s_g→s_{g+1} (a removable corner of s_{g+1} — so (shape, c_this)
+    is in bijection with the Bratteli edge s_g ⊂ s_{g+1}). Applying O_g
+    advances s_{g+1}→s_{g+2} by one box (content c_other); the block
+    diagonal is α_g·D(δ′)+β_g with δ′ = c_other − c_this. D(δ′) and (α,β)
+    are cached, so the inner loop is ~3 mpf ops per edge."""
     if mp.mp.dps < dps:
         mp.mp.dps = dps
     if q is None:
@@ -182,28 +162,32 @@ def chi_all_lambda(word, n: int, *, dps: int = 50, q=None):
             raise ValueError(f"non-monotone word: gen {g} after {last}")
         last = g
         gen_ds[g].append(d_mp)
+    ab = {g: _alpha_beta(ds, q, qi) for g, ds in gen_ds.items()}
+    _ident = (mp.mpf(0), mp.mpf(1))                       # skipped gen → O_g = I
+    hq = q - qi
+    Dc: dict[int, "mp.mpf"] = {1: q, -1: -qi}            # D(δ′): self-diagonal
 
-    # amp over fine-Bratteli edges (s_g, s_{g+1}); start at (∅, (1))
-    amp = {((), (1,)): mp.mpf(1)}
+    def D(delta: int):
+        v = Dc.get(delta)
+        if v is None:
+            v = hq / (1 - q ** (-2 * delta))
+            Dc[delta] = v
+        return v
+
+    # state (s_1=(1), c_this=0): the first box (0,0) has content 0
+    amp = {((1,), 0): mp.mpf(1)}
     for g in range(0, n - 1):                             # apply O_g, g=0..n-2
-        ds = gen_ds.get(g, [])                            # [] → identity factor
+        alpha, beta = ab.get(g, _ident)
         new = defaultdict(mp.mpf)
-        bc: dict = {}                                     # per-step block cache
-        for (s_lo, s_mid), a in amp.items():
-            for box in _addable(s_mid):
-                s_hi = _add(s_mid, box)
-                fmap = bc.get((s_lo, s_hi))
-                if fmap is None:
-                    fmap = _local_diag(ds, s_lo, s_hi, q, qi)
-                    bc[(s_lo, s_hi)] = fmap
-                f = fmap.get(s_mid)
-                if f is None:
-                    continue
-                new[(s_mid, s_hi)] += a * f
+        for (shape, c_this), a in amp.items():
+            for (r, c) in _addable(shape):
+                c_other = c - r
+                f = alpha * D(c_other - c_this) + beta
+                new[(_add(shape, (r, c)), c_other)] += a * f
         amp = dict(new)
 
     out: dict[tuple, mp.mpf] = defaultdict(mp.mpf)
-    for (s_lo, lam), a in amp.items():                    # s_{n-1} ⊂ s_n=λ
+    for (lam, _c), a in amp.items():                      # s_n = λ
         out[lam] += a
     return dict(out)
 
