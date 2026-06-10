@@ -108,3 +108,69 @@ supplies.
 - Cross-refs: `2026-06-10-binding-bond-graph-compute-audit-and-derivation.md`
   (the bond-graph / edge-set refutation — the static graph fails at exactly D
   and ⁴He, the two arrangements-symmetry extremes); Step 4 χ=−6 Bring.
+
+## 6. Lean — the symmetrization is PROVEN (build-verified in-tree)
+
+[`QOU/Hecke/IdenticalParticleSymmetrization.lean`](../../content/quantum-observable-universe/lean/QOU/Hecke/IdenticalParticleSymmetrization.lean)
+— Schur–Weyl decomposition `p₁^Z = Σ_{λ⊢Z} f^λ s_λ`, machine-checked (axioms
+`propext`/`Classical.choice`/`Quot.sound`; no `sorry`), **builds in-tree**
+(`lake build QOU.Hecke.IdenticalParticleSymmetrization`, 675 jobs rc=0 — it
+imports only `Mathlib.Tactic.Ring`, so it is independent of the currently-broken
+`QOU.Hecke.Generators`; left un-wired from the aggregator for that reason):
+
+- `schur_weyl_Z2` : `(a+b)² = (a²+ab+b²) + ab` — the ⁴He pp/nn split into
+  symmetric `h₂` + antisymmetric `e₂` (`f^(2)=1, f^(1,1)=1`). Plus `two_h2`,
+  `two_e2` (the `2h₂=p₁²+p₂`, `2e₂=p₁²−p₂` sector formulas).
+- `schur_weyl_Z3` : `(a+b+c)³ = s₍₃₎ + 2·s₍₂,₁₎ + s₍₁,₁,₁₎` — Li ppp/nnn,
+  multiplicities `1,2,1 = #SYT(S₃)`, `Σ(f^λ)²=6=|S₃|`.
+
+So the per-bond factor (`MarkovBondFactor.trace_bond_crossing`, verified earlier)
+and the identical-particle decomposition are both proven; the naive `τ^Z`
+mass-tower constituent is the FULL Schur–Weyl sum, and the physical sector is
+one `s_λ` — a theorem, not a fit.
+
+## 7. Compute-infra audit — where to apply (optimize + accuracy)
+
+The un-symmetrized `τ^Z` / fixed-ordering appears at:
+
+| locus | what | fix |
+|---|---|---|
+| `closed_form_tau_M.py:302-303` | `constit = tau_p**Z * tau_n**N` (the canonical source) | replace `^Z` by the `S_Z`-projected `h_Z`/`e_Z` (physical sector) |
+| `binding_canonical.py:236` | `tr_free = tau_p**Z * tau_n**N` | same |
+| `atom_braid_word_3A` (10 consumers) | single ordering `['p']*Z+['n']*N` | symmetrize over the `S_A/(S_Z×S_N)` arrangement orbit |
+| `_habiro_coefficient_extract.py:167`, `path_b_defect_binding_probe.py:129`, `canonical_a_k_magnitude_audit.py:199` | inline `tau_p**Z·tau_n**N` | inherit the `closed_form_tau_M` fix |
+
+**Accuracy** — biggest where identical pairs close shells: ⁴He (2p2n),
+¹⁶O (8p8n), ⁴⁰Ca (20p20n), and all A≥4; feeds the 65-isotope mass table
+(`derived_masses.py`). This is the candidate for the ⁴He doubly-magic excess
+(complete-graph binding under-shoots 1.20×; the `±p₂/2` `S₂` correction is the
+right size).
+
+**Optimize (lossless)** — the `S_Z`-block projection is a **provable selection
+rule**: partitions `λ⊢3A` outside the `S₃≀S_Z` branching image contribute
+**exactly 0** to the symmetrized trace. This *losslessly* prunes the `p(3A)`
+partition sum — the **provable-exact-0** truncation the precision discipline
+demands (owner: "truncate only if provable exact-0"). So the same fix buys
+accuracy (doubly-magic) AND a lossless speedup (drop symmetry-forbidden
+channels), reconciling the no-truncation rule with scaling.
+
+## 8. General theme — composite Z and the magic numbers
+
+The `S₂` is the `Z=2` case of a general `S_Z` identical-nucleon symmetry; the
+structure is richest at **composite Z** (non-trivial Young-subgroup lattice):
+
+| Z | group | sub-structure | nuclear reading |
+|---|---|---|---|
+| 2 | `S₂` | — | the pp/nn pair (⁴He doubly-magic) |
+| 3 | `S₃` | — | ppp/nnn; `Σ(f^λ)²=6=|S₃|=χ(Bring)` |
+| 4 | `S₄` | `⊃ S₂≀S₂ ⊃ V₄` (Klein) | first composite — sub-shell split |
+| **5** | `S₅` | `= Aut(Bring)`, `⊃ A₅` icosahedral | p⁵/n⁵ **directly realizes the Bring S₅** |
+| 6 | `S₆` | `⊃ S₂×S₃, S₃≀S₂` | composite; exceptional `S₆` outer aut |
+
+The **magic numbers** (2, 8, 20, 28, 50, 82, 126) are the `S_Z` shell closures;
+the composite-Z Young-subgroup chains are the sub-shell (j-subshell) structure.
+**Z=5 is special**: 5 identical nucleons carry `S₅ = Aut(Bring)` exactly — the
+icosahedral/ζ₅ fibre of the recent H₂S Bring work is the `p⁵`/`n⁵` symmetry. The
+`Z=2` Klein `V₄◁S₄` with `S₄/V≅S₃` (and Z=3's `S₃`) keep recovering the
+`6 = |S₃| = χ(Bring)` basis — the identical-particle symmetry IS the χ=−6 Bring
+`S₅`-structure (Step 4) restricted to nucleon block-permutations.
