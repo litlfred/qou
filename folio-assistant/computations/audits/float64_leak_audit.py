@@ -77,6 +77,28 @@ SUBSTRATE_BANNER_PATTERNS = (
     r"\bcanonical\b.*\b(?:probe|production)\b",
 )
 
+# Canonical compute scripts that MUST be audited regardless of whether
+# they carry a substrate-pure banner. Per the 2026-06-10 float64 deep-audit
+# (Axis A, findings C1-C6): the banner-only gate let banner-less canonical
+# scripts (hoefsmit_numpy, mass_at_3A_proper) leak f64 on the χ^λ / tr_M /
+# braid path. Paths are relative to the computations/ root.
+CANONICAL_SCRIPTS = (
+    "hoefsmit_numpy.py",                 # C1 — χ^λ engine
+    "mass_at_3A_proper.py",              # C4/C5 — braid (c,d) + numeric χ/tr_M
+    "wedderburn_jones_markov.py",        # C2 — Jones-Markov tr_M sum
+    "tr_m_q_hecke_seminormal.py",        # C3 — tr_M partition sum
+    "closed_form_tau_M.py",              # canonical tr_M
+    "canonical_tr_m_via_branching.py",   # canonical tr_M (A≥3 path)
+    "binding_canonical.py",
+    "binding_depth_stratified_rust.py",  # canonical binding default
+    "mass_table_comprehensive.py",       # 65-isotope sweep
+    "chi_monotone_transfer.py",          # transfer χ (merged)
+    "tr_m_atom_via_transfer.py",         # transfer tr_M (merged)
+    "compute_atom_chi_rust.py",          # f64 χ cache feeding binding
+    "hecke/hecke_characters.py",         # C6 — chi_lambda_braid dispatch
+    "markov/markov_peel.py",             # symbolic-tier oracle
+)
+
 # Antipattern shapes.  Each tuple: (label, regex, optional FP guard).
 # Regex matches the suspicious LINE (not entire file).
 ANTIPATTERN_RX = (
@@ -140,8 +162,13 @@ def _classify_line_context(lines: list[str], idx: int) -> str:
     return "violation"
 
 
-def _classify_script(path: Path) -> dict[str, Any] | None:
-    """Audit one Python script for I8 violations."""
+def _classify_script(path: Path, force_audit: bool = False) -> dict[str, Any] | None:
+    """Audit one Python script for I8 violations.
+
+    `force_audit=True` audits the script even without a substrate-pure
+    banner (used for the CANONICAL_SCRIPTS list, which must not leak f64
+    regardless of how the docstring is worded).
+    """
     try:
         text = path.read_text(encoding="utf-8")
     except (OSError, UnicodeDecodeError):
@@ -155,13 +182,14 @@ def _classify_script(path: Path) -> dict[str, Any] | None:
     has_banner = any(
         re.search(p, docstring, re.IGNORECASE) for p in SUBSTRATE_BANNER_PATTERNS
     )
-    if not has_banner:
-        return None  # only audit scripts claiming substrate purity
+    if not has_banner and not force_audit:
+        return None  # only audit banner scripts (unless forced canonical)
 
     rel = path.relative_to(REPO_ROOT)
     row: dict[str, Any] = {
         "path": str(rel),
-        "substrate_banner": True,
+        "substrate_banner": has_banner,
+        "canonical_forced": force_audit and not has_banner,
     }
 
     lines = text.splitlines()
@@ -208,9 +236,15 @@ def _classify_script(path: Path) -> dict[str, Any] | None:
 def main() -> int:
     strict = "--strict" in sys.argv
 
+    # Compute root is the parent of audits/ (post-2026-06-02 reorg). The
+    # earlier `HERE.glob` scanned only audits/ — a no-op regression fixed here.
+    compute_root = HERE.parent
     rows: list[dict[str, Any]] = []
+    seen: set[Path] = set()
     total_substrate_scripts = 0
-    for py in sorted(HERE.glob("*.py")):
+    total_canonical_forced = 0
+    # 1. Banner-bearing scripts in computations/ (flat).
+    for py in sorted(compute_root.glob("*.py")):
         if py.name.startswith("_"):
             continue
         if py.name == "float64_leak_audit.py":
@@ -218,8 +252,24 @@ def main() -> int:
         result = _classify_script(py)
         if result is None:
             continue
+        seen.add(py.resolve())
         rows.append(result)
         total_substrate_scripts += 1
+    # 2. Canonical-list scripts — force-audited even without a banner
+    #    (catches C1/C5-class leaks the banner gate missed).
+    for rel in CANONICAL_SCRIPTS:
+        p = compute_root / rel
+        if not p.exists() or p.resolve() in seen:
+            continue
+        result = _classify_script(p, force_audit=True)
+        if result is None:
+            continue
+        seen.add(p.resolve())
+        rows.append(result)
+        if result.get("canonical_forced"):
+            total_canonical_forced += 1
+        else:
+            total_substrate_scripts += 1
 
     buckets: dict[str, list[dict[str, Any]]] = {}
     for r in rows:
@@ -248,6 +298,7 @@ def main() -> int:
     print()
     print(f"Summary:")
     print(f"  substrate-pure-banner scripts: {total_substrate_scripts}")
+    print(f"  canonical-list (forced):       {total_canonical_forced}")
     print(f"  i8_violation:                  {len(buckets.get('i8_violation', []))}")
     print(f"  ok_with_display_or_fp:         {len(buckets.get('ok_with_display_or_fp', []))}")
     print(f"  ok_no_leaks:                   {len(buckets.get('ok_no_leaks', []))}")
@@ -270,6 +321,7 @@ def main() -> int:
             "I8 antipattern (compute-integration-watcher.md §antipatterns)"
         )
         .add_parameter("substrate_banner_scripts_total", total_substrate_scripts)
+        .add_parameter("canonical_forced_scripts_total", total_canonical_forced)
         .add_data("by_result", {k: len(v) for k, v in buckets.items()})
         .add_data("rows", rows)
         .add_assertion(
