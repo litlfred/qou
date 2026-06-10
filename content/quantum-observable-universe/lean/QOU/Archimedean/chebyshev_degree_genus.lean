@@ -1,4 +1,5 @@
 import Mathlib.Algebra.Polynomial.Basic
+import Mathlib.Algebra.Polynomial.Degree.Definitions
 import Mathlib.Data.Nat.Prime.Defs
 
 /-!

@@ -1,4 +1,7 @@
 import Mathlib.Algebra.Polynomial.Basic
+import Mathlib.RingTheory.Ideal.Span
+import Mathlib.RingTheory.Ideal.Maps
+import Mathlib.RingTheory.Ideal.Quotient.Operations
 import Mathlib.RingTheory.Ideal.Quotient.Defs
 
 /-!
