@@ -112,6 +112,31 @@ theorem delta_silver_hecke_scalar :
   rw [delta_silver_inv]
   ring
 
+/-- `δ_silver` is the `n = 2` rung of the metallic hierarchy
+    (`QOU.AlgebraicSubstrate.metallic`): both are the unique positive root
+    of `x² − 2x − 1`.  Bridge lemma for unifying downstream local
+    definitions (e.g. `MetallicSilverFamily.deltaSilver`). -/
+theorem delta_silver_eq_metallic_two : delta_silver = metallic 2 := by
+  have hm : (metallic 2) ^ 2 = 2 * metallic 2 + 1 := by
+    have h := metallic_sq 2
+    push_cast at h
+    linarith
+  have hmpos := metallic_pos 2
+  have h2 : Real.sqrt 2 ^ 2 = 2 := Real.sq_sqrt (by norm_num : (0:ℝ) ≤ 2)
+  have hs1 : (1 : ℝ) < Real.sqrt 2 := by
+    have h := Real.sqrt_lt_sqrt (by norm_num : (0:ℝ) ≤ 1) (by norm_num : (1:ℝ) < 2)
+    simpa using h
+  -- (m − (1+√2))(m − (1−√2)) = m² − 2m + 1 − (√2)² = 0 by `hm`, `h2`
+  have hfac :
+      (metallic 2 - (1 + Real.sqrt 2)) * (metallic 2 - (1 - Real.sqrt 2)) = 0 := by
+    linear_combination hm - h2
+  rcases mul_eq_zero.mp hfac with h0 | h0
+  · unfold delta_silver
+    linarith
+  · -- m = 1 − √2 < 0 contradicts `metallic_pos`
+    exfalso
+    linarith [hmpos, hs1]
+
 /-- The bar involution image of `δ_silver`: explicit form `√2 − 1 ≈ 0.414`. -/
 theorem delta_silver_inv_eq_bar :
     delta_silver⁻¹ = Real.sqrt 2 - 1 := by
@@ -139,9 +164,10 @@ theorem cost_coincidence_iff_hecke_scalar_two {q : ℝ} (hq : 0 < q) :
       field_simp
       ring
     rw [factored] at h
-    field_simp at h
-    have : q + q⁻¹ ≠ 0 := ne_of_gt hqq
-    nlinarith [h, hqq]
+    have hfac : (q + q⁻¹) * (q - q⁻¹ - 2) = 0 := by linear_combination -h
+    rcases mul_eq_zero.mp hfac with h0 | h0
+    · exact absurd h0 (ne_of_gt hqq)
+    · linarith
   · intro h
     have factored : q ^ 2 - q ^ (-2 : ℤ) = (q + q⁻¹) * (q - q⁻¹) := by
       field_simp
@@ -276,12 +302,12 @@ theorem phi_squared_between_silver_and_bronze :
     if and only if q is a metallic ratio `δ_n`.  This is the algebraic
     explanation for why the Mahler-height proxy drops sharply at metallic
     ratios — the value `q − q⁻¹` becomes a small integer with height
-    `log(n + 1)`. -/
+    `log(n + 1)`.  Discharged by `MetallicHierarchy.metallic_iff_hecke_scalar`
+    (PR #1999); the metallic ratio `δ_n` is `QOU.AlgebraicSubstrate.metallic n`. -/
 theorem hecke_scalar_integer_iff_metallic
     {q : ℝ} (hq : 0 < q) (n : ℕ) :
-    q - q⁻¹ = (n : ℝ) ↔ q = QOU.AlgebraicSubstrate.MetallicHierarchy.delta_n n := by
-  -- This is a re-statement of MetallicHierarchy Theorem 1; refer to it.
-  sorry  -- Ref: [PR #1999] QOU.AlgebraicSubstrate.MetallicHierarchy.delta_n_iff
+    q - q⁻¹ = (n : ℝ) ↔ q = metallic n :=
+  metallic_iff_hecke_scalar n q hq
 
 /-! ## §3b-cond conditional classes for physical predictions -/
 
@@ -347,14 +373,13 @@ the active set was a single row.  This IS the SDP-degeneracy signature.
     same cost.  In SDP language, the optimal face has dimension ≥ 1
     instead of being a vertex. -/
 theorem n2_lp_degenerate_at_silver (n_target : ℝ) :
-    let x_a := (n_target, 0 : ℝ)
-    let x_b := (0, n_target : ℝ)
+    let x_a : ℝ × ℝ := (n_target, 0)
+    let x_b : ℝ × ℝ := (0, n_target)
     t1_n2 delta_silver * x_a.1 + t2_n2 delta_silver * x_a.2 =
     t1_n2 delta_silver * x_b.1 + t2_n2 delta_silver * x_b.2 := by
-  simp only
-  have h := (silver_lp_coincidence delta_silver_pos).mpr rfl
-  ring_nf
-  rw [h]
+  show t1_n2 delta_silver * n_target + t2_n2 delta_silver * 0 =
+       t1_n2 delta_silver * 0 + t2_n2 delta_silver * n_target
+  rw [(silver_lp_coincidence delta_silver_pos).mpr rfl]
   ring
 
 /-- Conjectural witness: cost-coincidence points are EXACTLY the loci of
