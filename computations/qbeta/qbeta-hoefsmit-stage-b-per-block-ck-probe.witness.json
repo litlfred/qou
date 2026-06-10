@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-10T19:49:29.301757+00:00",
-  "commitSha": "9f8f3e5ab7535fe7cee214f43dcb66898d9046af",
+  "computedAt": "2026-06-10T19:56:24.886918+00:00",
+  "commitSha": "d98d21e1bd5391b2b3ae088e51f3ec670cc85e34",
   "assertions": [
     {
       "name": "nf_parse_matches_witness_numerics",
@@ -62,11 +62,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 117255,
+  "durationMs": 115439,
   "computation": "qbeta-hoefsmit-stage-b-per-block-ck-probe",
   "scriptFile": "qbeta_hoefsmit_stage_b_per_block_ck_probe.py",
-  "scriptHash": "c5cdecbafdc0",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "517783c03de7",
+  "scriptCommitSha": "d98d21e1bd5391b2b3ae088e51f3ec670cc85e34",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
