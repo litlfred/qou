@@ -93,9 +93,10 @@ opaque jonesAt : BraidWord → ℝ → ℝ
 class JonesPolynomialDef where
   /-- `jonesAt (unknot, q) = 1` for all q.  Normalisation convention. -/
   closed_form_unknot : ∀ q : ℝ, jonesAt unknot q = 1
-  /-- Trefoil 3_1 (right-handed). -/
+  /-- Trefoil 3_1 (right-handed): `QOU.KnotTheory.trefoil`, the closed
+      braid `σ_0^3` in `B_2`. -/
   closed_form_trefoil_right : ∀ q : ℝ,
-    jonesAt trefoilRight q = -(q ^ 4) + (q ^ 3) + q
+    jonesAt trefoil q = -(q ^ 4) + (q ^ 3) + q
   -- The figure-eight, 5_1 torus, and Hopf link entries are deferred to
   -- the closed-form constructors below; this class only fixes the
   -- two simplest non-trivial cases so the conjecture statement compiles.
