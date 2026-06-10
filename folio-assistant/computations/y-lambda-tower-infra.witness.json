@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-10T19:55:27.218672+00:00",
-  "commitSha": "6f42d9237d81c618d1c132e877f911a547a5b609",
+  "computedAt": "2026-06-10T20:17:21.651260+00:00",
+  "commitSha": "2426a7451db7ff52e5be06ae62de900e849d1267",
   "assertions": [
     {
       "name": "closed_form_matches_symbolic_source",
@@ -11,22 +11,14 @@
       "passed": true,
       "tolerance": 1e-40,
       "source": "max rel err of closed-form y_λ vs the symbolic-sourced canonical witness over all pre-existing n (≤12) — confirms the tower extension is the same object, just non-recursive/fast."
-    },
-    {
-      "name": "extended_tables_normalized",
-      "computed": 6.681911775230489e-50,
-      "expected": 0.0,
-      "passed": true,
-      "tolerance": 1e-45,
-      "source": "max |Σ_λ y_λ f^λ − 1| over the newly-added n — the Jones Markov trace normalization tr_M(1)=1 holds at true 50 dps."
     }
   ],
   "allPassed": true,
-  "durationMs": -1781118652273,
+  "durationMs": 2022,
   "computation": "y-lambda-tower-infra",
   "scriptFile": "y_lambda_tower_infra.py",
-  "scriptHash": "3e0f2d4ae74d",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "d9cac799c3f9",
+  "scriptCommitSha": "75d78f73e13765fdda6dbaea1f4f903f362b6381",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -38,7 +30,8 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Closed-form y_λ(q₀) tower for ANY n (all nuclides). y_λ = s_λ/Z via the hook-content principal specialization (Wenzl bridge) — NOT recursive, O(p(n)·n) mpf ops; supersedes the Rust kernel (timed out n=12) and sympy (~30 min n=13). Verified ≡ the symbolic-sourced canonical witness to ~1e-48 at n=6,9,12; non-destructively extends tables_by_n past n=12 to unblock matrix-M χ at ⁵Li(H₁₅)/⁶Li(H₁₈)/⁷Li(H₂₁)/⁸Be(H₂₄). The y_λ leg is free for any enumerable n; the wall for heavy nuclei is p(n) (full Wedderburn) — for A≳15–20 use the operator-selection LP active set + Frobenius symmetrization, both of which need only the active λ's y_λ.",
   "parameters": {
@@ -127,98 +120,86 @@
       {
         "n": 13,
         "num_partitions": 101,
-        "added": true,
-        "source": "closed-form",
-        "norm_residual": 5.345529420184391e-51,
-        "wall_sec": 0.0283
+        "added": false,
+        "source": "symbolic (pre-existing)",
+        "gate_rel_err": 3.692739078024393e-50
       },
       {
         "n": 14,
         "num_partitions": 135,
-        "added": true,
-        "source": "closed-form",
-        "norm_residual": 4.0091470651382935e-51,
-        "wall_sec": 0.0457
+        "added": false,
+        "source": "symbolic (pre-existing)",
+        "gate_rel_err": 3.8297542599468453e-50
       },
       {
         "n": 15,
         "num_partitions": 176,
-        "added": true,
-        "source": "closed-form",
-        "norm_residual": 1.3363823550460978e-50,
-        "wall_sec": 0.0639
+        "added": false,
+        "source": "symbolic (pre-existing)",
+        "gate_rel_err": 4.65098963789819e-50
       },
       {
         "n": 16,
         "num_partitions": 231,
-        "added": true,
-        "source": "closed-form",
-        "norm_residual": 2.6727647100921956e-51,
-        "wall_sec": 0.0453
+        "added": false,
+        "source": "symbolic (pre-existing)",
+        "gate_rel_err": 4.514165973526291e-50
       },
       {
         "n": 17,
         "num_partitions": 297,
-        "added": true,
-        "source": "closed-form",
-        "norm_residual": 2.6727647100921956e-51,
-        "wall_sec": 0.0612
+        "added": false,
+        "source": "symbolic (pre-existing)",
+        "gate_rel_err": 4.370887008694659e-50
       },
       {
         "n": 18,
         "num_partitions": 385,
-        "added": true,
-        "source": "closed-form",
-        "norm_residual": 8.018294130276587e-51,
-        "wall_sec": 0.0826
+        "added": false,
+        "source": "symbolic (pre-existing)",
+        "gate_rel_err": 4.0554425727161535e-50
       },
       {
         "n": 19,
         "num_partitions": 490,
-        "added": true,
-        "source": "closed-form",
-        "norm_residual": 5.345529420184391e-51,
-        "wall_sec": 0.1128
+        "added": false,
+        "source": "symbolic (pre-existing)",
+        "gate_rel_err": 4.766425723078493e-50
       },
       {
         "n": 20,
         "num_partitions": 627,
-        "added": true,
-        "source": "closed-form",
-        "norm_residual": 2.6727647100921956e-51,
-        "wall_sec": 0.1506
+        "added": false,
+        "source": "symbolic (pre-existing)",
+        "gate_rel_err": 5.042405153493092e-50
       },
       {
         "n": 21,
         "num_partitions": 792,
-        "added": true,
-        "source": "closed-form",
-        "norm_residual": 1.7372970615599272e-50,
-        "wall_sec": 0.204
+        "added": false,
+        "source": "symbolic (pre-existing)",
+        "gate_rel_err": 4.721700682884939e-50
       },
       {
         "n": 22,
         "num_partitions": 1002,
-        "added": true,
-        "source": "closed-form",
-        "norm_residual": 0.0,
-        "wall_sec": 0.2611
+        "added": false,
+        "source": "symbolic (pre-existing)",
+        "gate_rel_err": 4.804207997167275e-50
       },
       {
         "n": 23,
         "num_partitions": 1255,
-        "added": true,
-        "source": "closed-form",
-        "norm_residual": 1.6036588260553174e-50,
-        "wall_sec": 0.3578
+        "added": false,
+        "source": "symbolic (pre-existing)",
+        "gate_rel_err": 4.676584700721712e-50
       },
       {
         "n": 24,
         "num_partitions": 1575,
-        "added": true,
-        "source": "closed-form",
-        "norm_residual": 6.681911775230489e-50,
-        "wall_sec": 0.4506
+        "added": false,
+        "source": "symbolic (pre-existing)",
+        "gate_rel_err": 5.022157641868676e-50
       }
     ],
     "gate_closed_form_vs_symbolic": {
@@ -232,21 +213,20 @@
       "9": 9.840387541112489e-49,
       "10": 1.1097345235819294e-48,
       "11": 1.2425837676580156e-48,
-      "12": 1.3604995885579831e-48
+      "12": 1.3604995885579831e-48,
+      "13": 3.692739078024393e-50,
+      "14": 3.8297542599468453e-50,
+      "15": 4.65098963789819e-50,
+      "16": 4.514165973526291e-50,
+      "17": 4.370887008694659e-50,
+      "18": 4.0554425727161535e-50,
+      "19": 4.766425723078493e-50,
+      "20": 5.042405153493092e-50,
+      "21": 4.721700682884939e-50,
+      "22": 4.804207997167275e-50,
+      "23": 4.676584700721712e-50,
+      "24": 5.022157641868676e-50
     },
-    "added_n": [
-      13,
-      14,
-      15,
-      16,
-      17,
-      18,
-      19,
-      20,
-      21,
-      22,
-      23,
-      24
-    ]
+    "added_n": []
   }
 }

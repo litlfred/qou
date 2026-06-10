@@ -65,7 +65,7 @@ from witness_base import WitnessBuilder  # noqa: E402
 from binding_canonical import build_atom_symbolic  # noqa: E402
 from markov_trace_canonical import tr_M_element  # noqa: E402
 from hecke_symbolic import SymbolicHeckeDivision, q as q_sym  # noqa: E402
-from q_parameter import Q as Q0  # noqa: E402
+from q_parameter import Q as Q0, Q_50_DIGIT_STR  # noqa: E402
 
 mp.mp.dps = 40
 DIV = SymbolicHeckeDivision()
@@ -82,7 +82,9 @@ ISOTOPES = [
 def _trM(elem, n=3):
     """Markov trace of an H_n element, evaluated at q₀ (Im q₀ = 0 ⇒ real)."""
     s = tr_M_element(elem, n, simplify=False)
-    val = sp.N(s.subs(q_sym, sp.Float(str(Q0), 45)), 45)
+    # Substitute the TRUE 50-digit q₀ (not str(float Q0), which is only ~16
+    # sig digits — sp.Float(str(Q0),45) would pad the tail with float noise).
+    val = sp.N(s.subs(q_sym, sp.Float(Q_50_DIGIT_STR, 50)), 50)
     return mp.mpf(str(sp.re(val)))
 
 
