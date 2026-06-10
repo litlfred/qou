@@ -92,6 +92,7 @@ theorem jones41_taylor (q : ℝ) (hq : 0 < q) :
   have hpos := jones41_remainder_denom_pos q hq
   have hq0 : q ≠ 0 := ne_of_gt hq
   have hden : (q - q⁻¹) ^ 2 + 8 + 4 * (q + q⁻¹) ≠ 0 := ne_of_gt hpos
+  unfold jones41
   field_simp
   ring
 
