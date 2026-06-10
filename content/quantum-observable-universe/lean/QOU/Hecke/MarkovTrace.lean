@@ -37,7 +37,7 @@ traces and a coherence condition.
 -/
 class MarkovTrace
     {R : Type u} (n : ℕ) (q : R) (A : Type u)
-    [CommRing R] [Inv R] [Ring A] [Algebra R A] [HeckeAlgebra R n q A] where
+    [CommRing R] [Inv R] [Ring A] [Algebra R A] [HA : HeckeAlgebra R n q A] where
   /-- The trace as an R-linear map A → R. -/
   trace : A →ₗ[R] R
   /-- (M1) Normalisation: tr_M(1) = 1. -/
@@ -52,13 +52,13 @@ class MarkovTrace
   This is the key consequence of the full Markov axiom
   `tr_M^{H_n}(x · σ_{n-1}) = z · tr_M^{H_{n-1}}(x)` applied at
   level n with x = 1 ∈ H_{n-1}. -/
-  trace_gen : ∀ i : Generator n, trace (HeckeAlgebra.embed i) = z_param
+  trace_gen : ∀ i : Generator n, trace (HA.embed i) = z_param
   /-- (M3 / pair product) tr_M(σ_i · σ_j) = z² when i < j.
   Follows from two consecutive Markov peels: σ_j is top-indexed,
   one peel gives z · tr_{n-1}(σ_i); σ_i lives in H_{n-1} so the
   second peel gives z · z. -/
   trace_prod_gen : ∀ (i j : Generator n), i.idx.val < j.idx.val →
-      trace (HeckeAlgebra.embed i * HeckeAlgebra.embed j) = z_param * z_param
+      trace (HA.embed i * HA.embed j) = z_param * z_param
 
 namespace MarkovTrace
 
@@ -83,7 +83,7 @@ theorem trace_pair (i j : Generator n) (h : i.idx.val < j.idx.val) :
 
 end MarkovTrace
 
-/-- **Uniqueness of the Markov trace (target statement).**
+/- **Uniqueness of the Markov trace (target statement).**
 The mathematical claim is: any two `R`-linear functionals on
 `H_n(q)` satisfying the full Markov axioms (M1 normalisation,
 M2 cyclicity, M3 cross-level Markov property at every level
@@ -121,15 +121,6 @@ cross-level Markov field, and (b) a basis-of-reduced-words
 lemma for `H_n(q)` that has not yet been built up in
 `QOU.Hecke.*`.
 -/
-theorem markov_trace_unique
-    {R : Type u} {n : ℕ} {q : R} {A : Type u}
-    [CommRing R] [Inv R] [Ring A] [Algebra R A]
-    [HeckeAlgebra R n q A]
-    (MT₁ MT₂ : MarkovTrace n q A)
-    (hz : MT₁.z_param = MT₂.z_param) :
-    MT₁.trace = MT₂.trace :=
-  markov_trace_unique_axiom MT₁ MT₂ hz
-
 /-- **External axiom (Ocneanu 1985; Jones 1987; Wenzl 1988):
     uniqueness of the Markov trace on `H_n(q)`.**
 
@@ -150,5 +141,14 @@ axiom markov_trace_unique_axiom :
       (MT₁ MT₂ : MarkovTrace n q A)
       (_hz : MT₁.z_param = MT₂.z_param),
         MT₁.trace = MT₂.trace
+
+theorem markov_trace_unique
+    {R : Type u} {n : ℕ} {q : R} {A : Type u}
+    [CommRing R] [Inv R] [Ring A] [Algebra R A]
+    [HeckeAlgebra R n q A]
+    (MT₁ MT₂ : MarkovTrace n q A)
+    (hz : MT₁.z_param = MT₂.z_param) :
+    MT₁.trace = MT₂.trace :=
+  markov_trace_unique_axiom MT₁ MT₂ hz
 
 end QOU.Hecke
