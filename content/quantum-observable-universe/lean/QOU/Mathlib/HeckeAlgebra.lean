@@ -6,6 +6,7 @@ import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.NormNum
 import Mathlib.Tactic.Linarith
 import QOU.MathlibExt.QPartitionCombinatorics
+import QOU.Mathlib.PermutationEnumeration
 import Mathlib.Algebra.Group.Basic
 import Mathlib.Algebra.Field.Basic
 
@@ -693,22 +694,87 @@ theorem H4.poincare_pos (q : ℝ) : 0 < H4.poincare q := by
 theorem H4.poincare_ne_zero (q : ℝ) : H4.poincare q ≠ 0 :=
   ne_of_gt (H4.poincare_pos q)
 
-/-- Symmetric Wedderburn projector `e_[4]` for `H_4(q)` over
-    `ℝ`.  Schematic: caller-supplied coefficient function. -/
+/-- Symmetric Wedderburn projector `e_[4]` for `H_4(q)` over `ℝ`:
+    the **length-weighted** coefficient function
+    `i ↦ q^{ℓ(i)} / P₄(q)` with `ℓ = lengthFn 4` the Coxeter
+    length of the `i`-th basis permutation.  Per-index values
+    depend on the (noncomputable) basis enumeration; every
+    invariant statement (sums, traces, length fibers) is
+    enumeration-independent.  Normalizer forced by
+    `T_w e_[4] = q^{ℓ(w)} e_[4]` (cf. `H3.blockSym3`). -/
 noncomputable def H4.blockSym4 (q : ℝ) : H4Carrier ℝ :=
   fun i =>
-    -- Symmetric projector: e_[4] = (1/P₄(q)) Σ_{w ∈ S_4} q^{ℓ(w)} T_w
-    -- (S_4 Poincaré normalizer — forced by T_w e_[4] = q^{ℓ(w)} e_[4]).
-    -- Concrete coefficients via the Coxeter length of basis index i
-    -- under permutationEnumeration 4.  For now: identity-only weight.
-    if i.val = 0 then 1 / H4.poincare q else 0
+    q ^ (QOU.Mathlib.PermutationEnumeration.lengthFn 4 i) / H4.poincare q
 
-/-- Antisymmetric Wedderburn projector `e_[1^4]` for `H_4(q)`. -/
+/-- Antisymmetric Wedderburn projector `e_[1^4]` for `H_4(q)`:
+    `i ↦ (-q⁻¹)^{ℓ(i)} / P₄(q⁻¹)` — sign-block weights at the
+    `-q⁻¹` Hecke eigenvalue, normalized by the Poincaré
+    polynomial at `q⁻¹` (cf. `H3.blockAlt3`). -/
 noncomputable def H4.blockAlt4 (q : ℝ) : H4Carrier ℝ :=
   fun i =>
-    -- Antisymmetric: e_[1^4] = (1/P₄(q⁻¹)) Σ (-q⁻¹)^{ℓ(w)} T_w
-    -- (sign-block normalizer at q⁻¹, cf. H3.blockAlt3).
-    if i.val = 0 then 1 / H4.poincare q⁻¹ else 0
+    (-q⁻¹) ^ (QOU.Mathlib.PermutationEnumeration.lengthFn 4 i)
+      / H4.poincare q⁻¹
+
+/-- **`S_4` length distribution**: the number of permutations at
+    Coxeter length `0,…,6` is `1, 3, 5, 6, 5, 3, 1` (the
+    coefficient row of `P₄`; total `24 = 4!`).  Evaluated by
+    `decide` over the 24 permutations. -/
+theorem H4.s4_length_card :
+    (((Finset.univ : Finset (Equiv.Perm (Fin 4))).filter
+      (fun w => QOU.Mathlib.PermutationEnumeration.coxeterLength w = 0)).card = 1) ∧
+    (((Finset.univ : Finset (Equiv.Perm (Fin 4))).filter
+      (fun w => QOU.Mathlib.PermutationEnumeration.coxeterLength w = 1)).card = 3) ∧
+    (((Finset.univ : Finset (Equiv.Perm (Fin 4))).filter
+      (fun w => QOU.Mathlib.PermutationEnumeration.coxeterLength w = 2)).card = 5) ∧
+    (((Finset.univ : Finset (Equiv.Perm (Fin 4))).filter
+      (fun w => QOU.Mathlib.PermutationEnumeration.coxeterLength w = 3)).card = 6) ∧
+    (((Finset.univ : Finset (Equiv.Perm (Fin 4))).filter
+      (fun w => QOU.Mathlib.PermutationEnumeration.coxeterLength w = 4)).card = 5) ∧
+    (((Finset.univ : Finset (Equiv.Perm (Fin 4))).filter
+      (fun w => QOU.Mathlib.PermutationEnumeration.coxeterLength w = 5)).card = 3) ∧
+    (((Finset.univ : Finset (Equiv.Perm (Fin 4))).filter
+      (fun w => QOU.Mathlib.PermutationEnumeration.coxeterLength w = 6)).card = 1) := by
+  decide
+
+open QOU.Mathlib.PermutationEnumeration in
+/-- **Poincaré sum identity** for the `H_4` basis:
+    `Σ_{i} q^{2 ℓ(i)} = P₄(q)` — the squared-length weights over
+    the 24 basis indices sum to the `S_4` Poincaré polynomial.
+    This is the identity that forces the `e_[4]` normalizer
+    (squaring the symmetrizer multiplies it by exactly this sum).
+    Enumeration-independent: the sum transports along
+    `permutationEnumeration 4`, then evaluates fiberwise over the
+    `S_4` length distribution. -/
+theorem H4.sum_q_sq_length_eq_poincare (q : ℝ) :
+    ∑ i : Fin (Nat.factorial 4), q ^ (2 * lengthFn 4 i)
+      = H4.poincare q := by
+  have h1 : ∑ i : Fin (Nat.factorial 4), q ^ (2 * lengthFn 4 i)
+      = ∑ w : Equiv.Perm (Fin 4), q ^ (2 * coxeterLength w) :=
+    Fintype.sum_equiv (permutationEnumeration 4)
+      (fun i => q ^ (2 * lengthFn 4 i))
+      (fun w => q ^ (2 * coxeterLength w))
+      (fun i => rfl)
+  rw [h1]
+  have hmaps : ∀ w ∈ (Finset.univ : Finset (Equiv.Perm (Fin 4))),
+      coxeterLength w ∈ Finset.range 7 := by decide
+  rw [← Finset.sum_fiberwise_of_maps_to hmaps
+      (fun w => q ^ (2 * coxeterLength w))]
+  have hfib : ∀ k ∈ Finset.range 7,
+      (∑ w ∈ (Finset.univ : Finset (Equiv.Perm (Fin 4))).filter
+          (fun w => coxeterLength w = k), q ^ (2 * coxeterLength w))
+        = ((Finset.univ : Finset (Equiv.Perm (Fin 4))).filter
+            (fun w => coxeterLength w = k)).card * q ^ (2 * k) := by
+    intro k _
+    rw [Finset.sum_congr rfl
+        (fun w hw => by rw [(Finset.mem_filter.mp hw).2]),
+      Finset.sum_const, nsmul_eq_mul]
+  rw [Finset.sum_congr rfl hfib]
+  obtain ⟨c0, c1, c2, c3, c4, c5, c6⟩ := H4.s4_length_card
+  simp only [Finset.sum_range_succ, Finset.sum_range_zero,
+    c0, c1, c2, c3, c4, c5, c6]
+  unfold H4.poincare
+  push_cast
+  ring
 
 /-- Mixed Wedderburn projector `e_[2,2]` for `H_4(q)` (2-dim block). -/
 noncomputable def H4.blockMixed22 (q : ℝ) : H4Carrier ℝ :=
