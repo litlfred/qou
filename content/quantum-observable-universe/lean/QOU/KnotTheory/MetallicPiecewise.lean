@@ -1,6 +1,7 @@
 import QOU.KnotTheory
 import QOU.KnotTheory.JonesPolynomial
 import QOU.AlgebraicSubstrate.MetallicHierarchy
+import QOU.MassDerivation
 import Mathlib.Data.Real.Basic
 import Mathlib.Order.Interval.Set.Basic
 
@@ -51,7 +52,7 @@ results from the probes:
 
 namespace QOU.KnotTheory.MetallicPiecewise
 
-open QOU.AlgebraicSubstrate.MetallicHierarchy
+open QOU.AlgebraicSubstrate
 
 /-! ## (M1) Sharpened conjecture: higher-strand character bifurcation
 
@@ -92,13 +93,14 @@ opaque blindSDPCount : ℝ → ℕ
 class CatalogBlindSDPCount where
   /-- `blindSDPCount` is constant on each open metallic interval. -/
   piecewise_constant : ∀ n : ℕ, ∀ q₁ q₂ : ℝ,
-    delta_n n < q₁ → q₁ < q₂ → q₂ < delta_n (n + 1) →
+    metallic n < q₁ → q₁ < q₂ → q₂ < metallic (n + 1) →
     blindSDPCount q₁ = blindSDPCount q₂
   /-- `blindSDPCount` jumps at every metallic ratio. -/
   jumps_at_metallic : ∀ n : ℕ, ∃ ε > 0,
-    blindSDPCount (delta_n n - ε) ≠ blindSDPCount (delta_n n + ε)
-  /-- At the substrate substrate, the count equals 252. -/
-  count_at_substrate : blindSDPCount q₀ = 252
+    blindSDPCount (metallic n - ε) ≠ blindSDPCount (metallic n + ε)
+  /-- At the substrate value `q₀ ≈ 1.1097`
+      (`QOU.MassDerivation.substrate_q`), the count equals 252. -/
+  count_at_substrate : blindSDPCount QOU.MassDerivation.substrate_q = 252
 
 /-! ## (M3) Sharpened conjecture: Δ_λ closure is piecewise
 
