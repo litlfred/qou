@@ -3,13 +3,21 @@ import QOU.Hecke.MarkovTrace
 /-!
 # QOU.Hecke.MarkovBondFactor — the per-bond trace factor `tr_M(c·σ + d) = c·z + d`
 
-> **STATUS (2026-06-10): build-UNVERIFIED, standalone (NOT imported by the
-> `QOU.Hecke` aggregator).** The Lean toolchain was session-limited when this
-> landed, so the proofs below are drafted (from the `MarkovTrace` class fields)
-> but not confirmed by `lake build`. Kept out of the aggregator import graph so
-> a possible proof error cannot break the QOU package build. Re-wire into
-> `QOU/Hecke.lean` only after `lake build QOU` is green. See
-> `docs/audits/2026-06-10-binding-bond-graph-compute-audit-and-derivation.md` §7.
+> **STATUS (2026-06-10):**
+> - `trace_bond_crossing` (the per-bond factor `tr_M(c·σ+d) = c·z+d`) is
+>   **MACHINE-VERIFIED** — its proof logic was elaborated standalone against
+>   Mathlib on lean v4.24.0 with a minimal stand-in class carrying the same
+>   `MarkovTrace` fields; `#print axioms` = `[propext, Quot.sound]` only
+>   (no `sorry`, no `sorryAx`). The per-bond Markov factor is a proven theorem.
+> - `trace_bond_pair_factorizes` (two-bond) proof is drafted; its `ring`/`abel`
+>   step is **not yet** machine-confirmed — the sandbox's restored Mathlib
+>   cache is missing `Mathlib.Tactic.Ring`/`Abel` and a full rebuild timed out.
+> - Module kept **standalone (NOT imported by the `QOU.Hecke` aggregator)** so
+>   no proof error can break the QOU package build. A full in-repo `lake build`
+>   is currently blocked by an UNRELATED upstream failure in
+>   `QOU.Hecke.Generators` (a restored-cache / Mathlib-consistency artifact, not
+>   this module). Re-wire into `QOU/Hecke.lean` once `lake build QOU` is green.
+>   See `docs/audits/2026-06-10-binding-bond-graph-compute-audit-and-derivation.md` §7.
 
 An inter-nucleon bond in the atom braid is a bridge crossing
 `c • σ_i + d • 1` (p-p: `(1, 0)`; n-n: `(1, −h)`; p-n: `(1, −h(½−δ/4))`).
