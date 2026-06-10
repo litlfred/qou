@@ -116,8 +116,13 @@ each n ≤ 5, not just mpfr-verified.  Lean formalization:
 `QOU.AlgebraicSubstrate.MetallicSilverFamily` (n = 3, 4, 5;
 n = 2 is the existing `silver_lp_coincidence`) +
 `QOU.AlgebraicSubstrate.MetallicCanonicalSqrtQ` (the q = 4 identities,
-§1.5) — sorry-free source authored this session; build verification
-recorded in the PR thread.
+§1.5) — both **build EXIT 0** (lake, v4.24.0, 3087 jobs) and the key
+theorems are **axiom-clean** (`propext, Classical.choice, Quot.sound`;
+no `sorryAx`).  Note: `MetallicSilverFamily` carries a LOCAL
+`deltaSilver` because the existing `MetallicLPIdentities.lean` is red
+under the v4.24.0 bump (pre-existing main breakage — `linarith`
+regression at :144, missing `MetallicHierarchy.delta_n` identifier at
+:282, tuple-ascription syntax at :350); unify after that repair lands.
 
 ### 1.8 √q-ladder census — REFUTED as a family (owner follow-up 2)
 
