@@ -47,13 +47,11 @@ def coxeterLength {n : ℕ} (w : Equiv.Perm (Fin n)) : ℕ :=
 
 /-- The identity permutation has length 0. -/
 theorem coxeterLength_one {n : ℕ} : coxeterLength (1 : Equiv.Perm (Fin n)) = 0 := by
-  simp only [coxeterLength, Equiv.Perm.one_apply]
-  rw [Finset.card_eq_zero]
-  ext ⟨a, b⟩
-  simp only [Finset.mem_filter, Finset.mem_product, Finset.mem_univ, true_and, Finset.not_mem_empty,
-             iff_false, not_and]
-  intro hab
-  exact not_lt.mpr (le_of_lt hab)
+  simp only [coxeterLength]
+  rw [Finset.card_eq_zero, Finset.filter_eq_empty_iff]
+  rintro ⟨a, b⟩ -
+  simp only [Equiv.Perm.one_apply]
+  exact fun ⟨h1, h2⟩ => absurd (h1.trans h2) (lt_irrefl _)
 
 /-! ## §2  S₃ explicit enumeration -/
 
@@ -112,6 +110,8 @@ noncomputable def poincarePolynomial : ℕ → R_t
 
 /-! ## §4  Young symmetric idempotent (for representations) -/
 
+variable {d : ℕ}
+
 /-- The Young symmetric idempotent evaluated in a representation.
 
     For a representation ρ : H_n(q) → End(V), the image of the
@@ -140,7 +140,7 @@ noncomputable def youngSymIdempotent2 (ρ : HeckeRep 2 d) :
     Matrix (Fin d) (Fin d) R_t :=
   1 + q_from_t • ρ.gen 0
 
-/-- The Young symmetric idempotent satisfies the eigenvalue property:
+/-! The Young symmetric idempotent satisfies the eigenvalue property:
     `σ_i · e_{(n)} = q · e_{(n)}` in the Hecke algebra.
 
     In a representation:
