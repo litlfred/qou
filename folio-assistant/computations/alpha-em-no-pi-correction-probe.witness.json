@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-10T20:15:57.706710+00:00",
-  "commitSha": "04b09072dde3cee4c5df62f5ac4c2ca1fa956030",
+  "computedAt": "2026-06-10T23:42:07.123784+00:00",
+  "commitSha": "299739d4e2293ed5a7422a01cceb3bc0dd82480e",
   "assertions": [
     {
       "name": "additive corrections close bare residual: |resid_corrected| < 5e-5",
@@ -27,11 +27,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 13,
+  "durationMs": 11,
   "computation": "alpha-em-no-pi-correction-probe",
   "scriptFile": "alpha_em_no_pi_correction_probe.py",
-  "scriptHash": "a35f66d33e93",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "77e56f4b09dd",
+  "scriptCommitSha": "be8c9f5cba0384afc3fde4986e86fc4c5d756d89",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
