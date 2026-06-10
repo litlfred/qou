@@ -2,7 +2,7 @@
 
 **Proposition (writhe exponent of the torus-knot $\delta_q$ decoration).** *For the
 torus knot $T_{m,p}$ — the closure of the standard positive braid
-$(\sigma_1\cdots\sigma_{m-1})^p$, $\gcd(m,p)=1$ — the q-dimension decoration is the
+$(\sigma_1\cdots\sigma_{m-1})^p$, $\gcd(m,p)=1$ — the $q$-dimension decoration is the
 Hecke deformation $h$ times the quantum integer at the **writhe** $w = (m-1)p$:*
 
 $$

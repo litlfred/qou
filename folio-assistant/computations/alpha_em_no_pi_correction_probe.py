@@ -136,8 +136,8 @@ def main() -> None:
     # honest assertions
     closes = abs(resid_corr) < (mp.mpf("5e-5") if HAVE_MP else 5e-5)
     vertex_num_is_alpha = abs(num_vertex - alpha) < (mp.mpf(10) ** -20 if HAVE_MP else 1e-15)
-    vacpol_num_is_4_3 = abs(num_vacpol - mp.mpf(4) / 3 if HAVE_MP else
-                            abs(num_vacpol - 4 / 3)) < (mp.mpf(10) ** -20 if HAVE_MP else 1e-15)
+    expected_vacpol = mp.mpf(4) / 3 if HAVE_MP else 4 / 3
+    vacpol_num_is_4_3 = abs(num_vacpol - expected_vacpol) < (mp.mpf(10) ** -20 if HAVE_MP else 1e-15)
 
     w.set_description(
         "alpha_{basis-knot} step 6 (no-pi correction, research probe).  Makes the "
