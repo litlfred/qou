@@ -90,7 +90,10 @@ from markov_weights_symbolic import tr_M_canonical, solve_y_lambda  # noqa: E402
 from qbeta_utils import substrate_ladder_quantities, c3_target_at  # noqa: E402
 from experimental_constants import M_E_MEV, Q_NEUTRON_MEV  # noqa: E402
 
-_DPS = 65
+# Dynamic precision: follow the configured mpmath budget (65 via
+# QOU_COMPUTE_DPS above) rather than a second hardcoded constant
+# (per Gemini review on PR #2106).
+_DPS = mp.mp.dps
 
 # Substrate anchors (proton re-pin canonical; muon per 569bedda1 —
 # same provenance as qbeta_symbolic_tbeta_ck4_8_probe.py).
@@ -101,9 +104,17 @@ SHAPES = [(3,), (2, 1), (1, 1, 1)]
 
 
 def evalq(expr, qval):
-    """Evaluate a sympy expression in q at an mpmath anchor, full dps."""
-    return mp.mpf(str(sp.N(expr.subs(q_sym, sp.Float(mp.nstr(qval, _DPS), _DPS)),
-                           _DPS)))
+    """Evaluate a sympy expression in q at an mpmath anchor, full dps.
+
+    The level components contain half-integer powers (q^(41/2), …);
+    sp.N can emit tiny imaginary artifacts (~1e-65·I) on such inputs,
+    which mp.mpf(str(...)) cannot parse — take the real part
+    explicitly. sympify guards plain Python numerics (per Gemini
+    review on PR #2106).
+    """
+    expr = sp.sympify(expr)
+    val = sp.N(expr.subs(q_sym, sp.Float(mp.nstr(qval, _DPS), _DPS)), _DPS)
+    return mp.mpf(str(sp.re(val)))
 
 
 def safe_cancel(expr):
