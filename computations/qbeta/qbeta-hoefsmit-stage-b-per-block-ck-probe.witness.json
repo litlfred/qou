@@ -1,0 +1,340 @@
+{
+  "engine": "python+sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-10T19:49:29.301757+00:00",
+  "commitSha": "9f8f3e5ab7535fe7cee214f43dcb66898d9046af",
+  "assertions": [
+    {
+      "name": "nf_parse_matches_witness_numerics",
+      "computed": 12,
+      "expected": 12,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Exact symbolic NF coefficients sympify'd from free-neutron-decay.witness.json must reproduce the witness's own numeric snapshots at q_0 (float-level 1e-9, witness stores 16-digit floats). Guards against parse/convention drift before any per-block work."
+    },
+    {
+      "name": "per_block_recombination_identity_all_words",
+      "computed": 6,
+      "expected": 6,
+      "passed": true,
+      "tolerance": 0,
+      "source": "GATE 1 (the Stage-B entry gate): the Wenzl y_λ weights and the symbolic Hoefsmit characters must recombine to the canonical Markov trace, Σ_λ y_λ(q)·χ^λ(w) = tr_M(w), for every H_3 basis word — symbolically or < 1e-45 at q_0 (65-dps budget). Failure ⇒ convention drift; no downstream level reading would be trustworthy."
+    },
+    {
+      "name": "coefficient_sum_delta_matches_canonical_witness",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "The symbolic coefficient-sum Δ(net)(q) evaluated at q_0 must reproduce the canonical free-neutron-decay witness delta_net (float-level 1e-9) — the operator decomposition is built over the SAME normal forms."
+    },
+    {
+      "name": "c3_codata_target_reproduced",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "The probe's in-line N=2 ladder inversion must agree with the canonical qbeta_utils.c3_target_at at the proton anchor to < 1e-30 relative — same construction, shared substrate chain; guards the §5 saturation demo."
+    },
+    {
+      "name": "scalar_peel_saturates_after_first_free_rung",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "After ĉ_3 absorbs the N=2 residual, the remaining relative residual is 0 to 65 dps, so the sequential scalar peel yields ĉ_4..ĉ_8 ≡ 0 identically. This is the constructive demonstration that c_k≥4 CANNOT come from any scalar single-reference extraction (complements the §4 precision floor and the u-quadratic √u obstruction) — they are operator-level objects."
+    },
+    {
+      "name": "h3_level_structure_max_word_length",
+      "computed": 3,
+      "expected": 3,
+      "passed": true,
+      "tolerance": 0,
+      "source": "The H_3 decay normal forms contain no basis word longer than 3 (the trefoil σ₀σ₁σ₀ is the deepest level). With level N=k carrying u^k (keystone recipe), the H_3 per-block operator route supports rungs k ≤ 3 only — the unbiased c_4..c_8 live in H_{n≥4} towers or the kernel recursion. Localises Stage C."
+    },
+    {
+      "name": "heat_trace_gate_check_executed",
+      "computed": 3,
+      "expected": 3,
+      "passed": true,
+      "tolerance": 0,
+      "source": "The §3-bis heat-trace candidate family was gate-checked per Wedderburn block (bar-parity of the implied a₁ + magnitude vs √2·Φ₂). The verdict field records pass/fail per block; the family is wired NOWHERE regardless — this assertion only guarantees the check ran on all blocks."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 117255,
+  "computation": "qbeta-hoefsmit-stage-b-per-block-ck-probe",
+  "scriptFile": "qbeta_hoefsmit_stage_b_per_block_ck_probe.py",
+  "scriptHash": "c5cdecbafdc0",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 10,
+    "truncation_bound": "1e-50"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Hoefsmit Stage B (probe 6.d'): per-Wedderburn-block, per-level decomposition of the exact symbolic decay operator ΔT = T_n − T_p from the canonical free-neutron-decay normal forms; gate 1 = per-block recombination identity Σ_λ y_λ·χ^λ(w) = tr_M(w) for all 6 H_3 basis words (symbolic + q_0); bar-parity of each Markov level component (rung-3 bar-ODD prediction); scalar-peel saturation demo (ĉ_4..ĉ_8 ≡ 0 after ĉ_3 absorbs the residual — why c_k≥4 is operator-only); structural finding that H_3 levels stop at ℓ=3 (c_4..c_8 need H_{n≥4} towers / kernel recursion); heat-trace R_λ depth-1 kernel gate-check (bar-parity + √2·Φ₂ magnitude). No SDP, no fit; nothing wired.",
+  "contentBlock": "prop:q-beta-c-k-recursion-from-habiro-q-difference",
+  "data": {
+    "nf_parse": {
+      "basis_words": [
+        [],
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "numeric_snapshots_reproduced": "12/12",
+      "delta_net_witness_q0": -0.1882906200111204
+    },
+    "gate1_recombination_identity": [
+      {
+        "word": [],
+        "symbolic_zero": true,
+        "abs_diff_at_q0": "0.0",
+        "pass": true
+      },
+      {
+        "word": [
+          0
+        ],
+        "symbolic_zero": true,
+        "abs_diff_at_q0": "0.0",
+        "pass": true
+      },
+      {
+        "word": [
+          1
+        ],
+        "symbolic_zero": true,
+        "abs_diff_at_q0": "0.0",
+        "pass": true
+      },
+      {
+        "word": [
+          0,
+          1
+        ],
+        "symbolic_zero": true,
+        "abs_diff_at_q0": "0.0",
+        "pass": true
+      },
+      {
+        "word": [
+          1,
+          0
+        ],
+        "symbolic_zero": true,
+        "abs_diff_at_q0": "0.0",
+        "pass": true
+      },
+      {
+        "word": [
+          0,
+          1,
+          0
+        ],
+        "symbolic_zero": true,
+        "abs_diff_at_q0": "0.0",
+        "pass": true
+      }
+    ],
+    "per_block_per_level_at_q0": [
+      {
+        "lambda": [
+          3
+        ],
+        "level_0_at_q0": "-0.10204617496433330548",
+        "level_0_symbolic": "(2*q**10 - 9*q**8 + 15*q**6 - 15*q**4 + 9*q**2 - 2)/(4*q**5)",
+        "level_1_at_q0": "0.026446304996197955359",
+        "level_1_symbolic": "(3*q**12 - 14*q**10 + 31*q**8 - 40*q**6 + 31*q**4 - 14*q**2 + 3)/(4*q**5)",
+        "level_2_at_q0": "-0.1344100454033177909",
+        "level_2_symbolic": "(q**14 - 7*q**12 + 19*q**10 - 31*q**8 + 31*q**6 - 19*q**4 + 7*q**2 - 1)/(4*q**5)",
+        "level_3_at_q0": "-0.0013347156324838779008",
+        "level_3_symbolic": "(-q**12 + 4*q**10 - 7*q**8 + 8*q**6 - 7*q**4 + 4*q**2 - 1)/(4*q**3)"
+      },
+      {
+        "lambda": [
+          2,
+          1
+        ],
+        "level_0_at_q0": "-0.20409234992866661096",
+        "level_0_symbolic": "(2*q**10 - 9*q**8 + 15*q**6 - 15*q**4 + 9*q**2 - 2)/(2*q**5)",
+        "level_1_at_q0": "0.0049810627521040538726",
+        "level_1_symbolic": "(3*q**14 - 17*q**12 + 45*q**10 - 71*q**8 + 71*q**6 - 45*q**4 + 17*q**2 - 3)/(4*q**7)",
+        "level_2_at_q0": "0.10909441545942460407",
+        "level_2_symbolic": "(-q**14 + 7*q**12 - 19*q**10 + 31*q**8 - 31*q**6 + 19*q**4 - 7*q**2 + 1)/(4*q**7)",
+        "level_3_at_q0": "0.0",
+        "level_3_symbolic": "0"
+      },
+      {
+        "lambda": [
+          1,
+          1,
+          1
+        ],
+        "level_0_at_q0": "-0.10204617496433330548",
+        "level_0_symbolic": "(2*q**10 - 9*q**8 + 15*q**6 - 15*q**4 + 9*q**2 - 2)/(4*q**5)",
+        "level_1_at_q0": "-0.021465242244093901486",
+        "level_1_symbolic": "(-3*q**12 + 14*q**10 - 31*q**8 + 40*q**6 - 31*q**4 + 14*q**2 - 3)/(4*q**7)",
+        "level_2_at_q0": "-0.088546889845331173298",
+        "level_2_symbolic": "(q**14 - 7*q**12 + 19*q**10 - 31*q**8 + 31*q**6 - 19*q**4 + 7*q**2 - 1)/(4*q**9)",
+        "level_3_at_q0": "0.00071367604982136133785",
+        "level_3_symbolic": "(q**12 - 4*q**10 + 7*q**8 - 8*q**6 + 7*q**4 - 4*q**2 + 1)/(4*q**9)"
+      }
+    ],
+    "markov_level_components": {
+      "L_0": {
+        "symbolic": "(2*q**10 - 9*q**8 + 15*q**6 - 15*q**4 + 9*q**2 - 2)/(4*q**5)",
+        "at_q0": "-0.1020461749643333054805194"
+      },
+      "L_1": {
+        "symbolic": "(q**2*(3*q**12 - 14*q**10 + 31*q**8 - 40*q**6 + 31*q**4 - 14*q**2 + 3)*(q**9 + 3*q**8 + 5*q**7 + 7*q**6 + 8*q**5 + 8*q**4 + 7*q**3 + 5*q**2 + 3*q + 1)*(q**20 + 12*q**19 + 69*q**18 + 256*q**17 + 697*q**16 + 1500*q**15 + 2676*q**14 + 4084*q**13 + 5446*q**12 + 6436*q**11 + 6798*q**10 + 6436*q**9 + 5446*q**8 + 4084*q**7 + 2676*q**6 + 1500*q**5 + 697*q**4 + 256*q**3 + 69*q**2 + 12*q + 1)*(q**(41/2) + 15*q**(39/2) + 108*q**(37/2) + 500*q**(35/2) + 1682*q**(33/2) + 4398*q**(31/2) + 9310*q**(29/2) + 16354*q**(27/2) + 24180*q**(25/2) + 30316*q**(23/2) + 32318*q**(21/2) + 29250*q**(19/2) + 22334*q**(17/2) + 14210*q**(15/2) + 7386*q**(13/2) + 3046*q**(11/2) + 955*q**(9/2) + 213*q**(7/2) + 30*q**(5/2) + 2*q**(3/2) + q**21 + 14*q**20 + 93*q**19 + 393*q**18 + 1200*q**17 + 2865*q**16 + 5672*q**15 + 9740*q**14 + 14938*q**13 + 20696*q**12 + 25818*q**11 + 28678*q**10 + 27976*q**9 + 23622*q**8 + 16992*q**7 + 10220*q**6 + 5021*q**5 + 1954*q**4 + 577*q**3 + 121*q**2 + 16*q + 1) + (-3*q**12 + 14*q**10 - 31*q**8 + 40*q**6 - 31*q**4 + 14*q**2 - 3)*(-2*q**(15/2) - 4*q**(13/2) - 3*q**(11/2) - 2*q**(9/2) - q**(7/2) + q**9 + 3*q**8 + 3*q**7 + 2*q**6 + q**5 + q**4 + q**3)*(q**20 + 12*q**19 + 69*q**18 + 256*q**17 + 697*q**16 + 1500*q**15 + 2676*q**14 + 4084*q**13 + 5446*q**12 + 6436*q**11 + 6798*q**10 + 6436*q**9 + 5446*q**8 + 4084*q**7 + 2676*q**6 + 1500*q**5 + 697*q**4 + 256*q**3 + 69*q**2 + 12*q + 1)*(q**24 + 16*q**23 + 123*q**22 + 608*q**21 + 2184*q**20 + 6112*q**19 + 13951*q**18 + 26832*q**17 + 44535*q**16 + 64928*q**15 + 84230*q**14 + 98112*q**13 + 103168*q**12 + 98112*q**11 + 84230*q**10 + 64928*q**9 + 44535*q**8 + 26832*q**7 + 13951*q**6 + 6112*q**5 + 2184*q**4 + 608*q**3 + 123*q**2 + 16*q + 1) + (3*q**14 - 17*q**12 + 45*q**10 - 71*q**8 + 71*q**6 - 45*q**4 + 17*q**2 - 3)*(q**9 + 3*q**8 + 5*q**7 + 7*q**6 + 8*q**5 + 8*q**4 + 7*q**3 + 5*q**2 + 3*q + 1)*(q**24 + 16*q**23 + 123*q**22 + 608*q**21 + 2184*q**20 + 6112*q**19 + 13951*q**18 + 26832*q**17 + 44535*q**16 + 64928*q**15 + 84230*q**14 + 98112*q**13 + 103168*q**12 + 98112*q**11 + 84230*q**10 + 64928*q**9 + 44535*q**8 + 26832*q**7 + 13951*q**6 + 6112*q**5 + 2184*q**4 + 608*q**3 + 123*q**2 + 16*q + 1)*(q**(37/2) + 11*q**(35/2) + 56*q**(33/2) + 176*q**(31/2) + 384*q**(29/2) + 616*q**(27/2) + 736*q**(25/2) + 616*q**(23/2) + 242*q**(21/2) - 242*q**(19/2) - 616*q**(17/2) - 736*q**(15/2) - 616*q**(13/2) - 384*q**(11/2) - 176*q**(9/2) - 56*q**(7/2) - 11*q**(5/2) - q**(3/2) + q**18 + 11*q**17 + 58*q**16 + 197*q**15 + 488*q**14 + 943*q**13 + 1478*q**12 + 1921*q**11 + 2094*q**10 + 1921*q**9 + 1478*q**8 + 943*q**7 + 488*q**6 + 197*q**5 + 58*q**4 + 11*q**3 + q**2))/(4*q**7*(q**9 + 3*q**8 + 5*q**7 + 7*q**6 + 8*q**5 + 8*q**4 + 7*q**3 + 5*q**2 + 3*q + 1)*(q**20 + 12*q**19 + 69*q**18 + 256*q**17 + 697*q**16 + 1500*q**15 + 2676*q**14 + 4084*q**13 + 5446*q**12 + 6436*q**11 + 6798*q**10 + 6436*q**9 + 5446*q**8 + 4084*q**7 + 2676*q**6 + 1500*q**5 + 697*q**4 + 256*q**3 + 69*q**2 + 12*q + 1)*(q**24 + 16*q**23 + 123*q**22 + 608*q**21 + 2184*q**20 + 6112*q**19 + 13951*q**18 + 26832*q**17 + 44535*q**16 + 64928*q**15 + 84230*q**14 + 98112*q**13 + 103168*q**12 + 98112*q**11 + 84230*q**10 + 64928*q**9 + 44535*q**8 + 26832*q**7 + 13951*q**6 + 6112*q**5 + 2184*q**4 + 608*q**3 + 123*q**2 + 16*q + 1))",
+        "at_q0": "0.01189678602591702641115153"
+      },
+      "L_2": {
+        "symbolic": "(q**13 - q**12 - 6*q**11 + 6*q**10 + 13*q**9 - 13*q**8 - 18*q**7 + 18*q**6 + 13*q**5 - 13*q**4 - 6*q**3 + 6*q**2 + q - 1)/(4*q**7 + 4*q**6)",
+        "at_q0": "-0.027199506499253736103688"
+      },
+      "L_3": {
+        "symbolic": "(-q**(95/2) - 18*q**(93/2) - 154*q**(91/2) - 834*q**(89/2) - 3212*q**(87/2) - 9366*q**(85/2) - 21468*q**(83/2) - 39522*q**(81/2) - 58800*q**(79/2) - 69374*q**(77/2) - 59314*q**(75/2) - 20486*q**(73/2) + 46151*q**(71/2) + 128516*q**(69/2) + 205424*q**(67/2) + 251868*q**(65/2) + 246482*q**(63/2) + 179688*q**(61/2) + 59468*q**(59/2) - 88976*q**(57/2) - 230620*q**(55/2) - 331496*q**(53/2) - 367912*q**(51/2) - 331496*q**(49/2) - 230620*q**(47/2) - 88976*q**(45/2) + 59468*q**(43/2) + 179688*q**(41/2) + 246482*q**(39/2) + 251868*q**(37/2) + 205424*q**(35/2) + 128516*q**(33/2) + 46151*q**(31/2) - 20486*q**(29/2) - 59314*q**(27/2) - 69374*q**(25/2) - 58800*q**(23/2) - 39522*q**(21/2) - 21468*q**(19/2) - 9366*q**(17/2) - 3212*q**(15/2) - 834*q**(13/2) - 154*q**(11/2) - 18*q**(9/2) - q**(7/2) - q**48 - 17*q**47 - 136*q**46 - 680*q**45 - 2378*q**44 - 6154*q**43 - 12102*q**42 - 18054*q**41 - 19278*q**40 - 10574*q**39 + 10060*q**38 + 38828*q**37 + 66637*q**36 + 82365*q**35 + 76908*q**34 + 46444*q**33 - 5386*q**32 - 66794*q**31 - 120220*q**30 - 148444*q**29 - 141644*q**28 - 100876*q**27 - 36416*q**26 + 36416*q**25 + 100876*q**24 + 141644*q**23 + 148444*q**22 + 120220*q**21 + 66794*q**20 + 5386*q**19 - 46444*q**18 - 76908*q**17 - 82365*q**16 - 66637*q**15 - 38828*q**14 - 10060*q**13 + 10574*q**12 + 19278*q**11 + 18054*q**10 + 12102*q**9 + 6154*q**8 + 2378*q**7 + 680*q**6 + 136*q**5 + 17*q**4 + q**3)/(4*q**42 + 76*q**41 + 704*q**40 + 4256*q**39 + 18972*q**38 + 66804*q**37 + 194328*q**36 + 481992*q**35 + 1043400*q**34 + 2006552*q**33 + 3474920*q**32 + 5476408*q**31 + 7917852*q**30 + 10566356*q**29 + 13073296*q**28 + 15042832*q**27 + 16128720*q**26 + 16128720*q**25 + 15042832*q**24 + 13073296*q**23 + 10566356*q**22 + 7917852*q**21 + 5476408*q**20 + 3474920*q**19 + 2006552*q**18 + 1043400*q**17 + 481992*q**16 + 194328*q**15 + 66804*q**14 + 18972*q**13 + 4256*q**12 + 704*q**11 + 76*q**10 + 4*q**9)",
+        "at_q0": "-0.0005382027266840297921926247"
+      }
+    },
+    "delta_functionals_at_q0": {
+      "delta_trM_markov": "-0.1178870981643540449652485",
+      "delta_net_coefficient_sum": "-0.188290620011121686649268",
+      "delta_net_witness": -0.1882906200111204
+    },
+    "level_bar_parity": [
+      {
+        "level": 0,
+        "verdict": "bar-ODD",
+        "odd_fraction_at_q0": "1.0"
+      },
+      {
+        "level": 1,
+        "verdict": "bar-EVEN",
+        "odd_fraction_at_q0": "0.0"
+      },
+      {
+        "level": 2,
+        "verdict": "bar-ODD",
+        "odd_fraction_at_q0": "1.0"
+      },
+      {
+        "level": 3,
+        "verdict": "MIXED",
+        "odd_fraction_at_q0": "0.09452118568"
+      }
+    ],
+    "level_rung_diagnostics": {
+      "proton": {
+        "level_0": "-0.54597157974126976069",
+        "level_1": "7.4731601676712735765",
+        "level_2": "-2006.0285497350384521",
+        "level_3": "-4660.4003317690359037"
+      },
+      "muon": {
+        "level_0": "-0.54597158383256180559",
+        "level_1": "7.4731596655146461166",
+        "level_2": "-2006.0277509909572539",
+        "level_3": "-4660.3990767757146359"
+      }
+    },
+    "codata_c3_and_saturation": {
+      "proton": {
+        "c3_hat": "-2.067157122118077081222334",
+        "c3_target_at_ref": "-2.067157122118077081222334",
+        "rel_diff_vs_ref": "0.0",
+        "residual_after_c3": "0.0",
+        "sequential_peel_c4_to_c8": {
+          "c_4_hat": "0.0",
+          "c_5_hat": "0.0",
+          "c_6_hat": "0.0",
+          "c_7_hat": "0.0",
+          "c_8_hat": "0.0"
+        }
+      },
+      "muon": {
+        "c3_hat": "-2.018030828070088808419152",
+        "c3_target_at_ref": "-2.018030828070088808419152",
+        "rel_diff_vs_ref": "0.0",
+        "residual_after_c3": "0.0",
+        "sequential_peel_c4_to_c8": {
+          "c_4_hat": "0.0",
+          "c_5_hat": "0.0",
+          "c_6_hat": "0.0",
+          "c_7_hat": "0.0",
+          "c_8_hat": "0.0"
+        }
+      }
+    },
+    "heat_trace_r_lambda_gate_check": {
+      "per_block": [
+        {
+          "lambda": [
+            3
+          ],
+          "mu_lambda_symbolic": "(q**8 - 2*q**7 + 4*q**6 - 6*q**5 + 6*q**4 - 6*q**3 + 4*q**2 - 2*q + 1)/q**5",
+          "a1_candidate_symbolic": "(-q**9 + 3*q**8 - 6*q**7 + 10*q**6 - 12*q**5 + 12*q**4 - 10*q**3 + 6*q**2 - 3*q + 1)/q**5",
+          "a1_bar_parity": "MIXED",
+          "a1_at_q0": "-0.00877939711497662",
+          "abs_a1_over_sqrt2_phi2": "0.004242602077",
+          "passes_both_gates": false
+        },
+        {
+          "lambda": [
+            2,
+            1
+          ],
+          "mu_lambda_symbolic": "(q**4 - 2*q**3 + 2*q**2 - 2*q + 1)/q**3",
+          "a1_candidate_symbolic": "(-q**5 + 3*q**4 - 4*q**3 + 4*q**2 - 3*q + 1)/q**3",
+          "a1_bar_parity": "MIXED",
+          "a1_at_q0": "-0.00217112634824851",
+          "abs_a1_over_sqrt2_phi2": "0.001049186525",
+          "passes_both_gates": false
+        },
+        {
+          "lambda": [
+            1,
+            1,
+            1
+          ],
+          "mu_lambda_symbolic": "(q**4 - 2*q**3 + 2*q**2 - 2*q + 1)/q**3",
+          "a1_candidate_symbolic": "(-q**5 + 3*q**4 - 4*q**3 + 4*q**2 - 3*q + 1)/q**3",
+          "a1_bar_parity": "MIXED",
+          "a1_at_q0": "-0.00217112634824851",
+          "abs_a1_over_sqrt2_phi2": "0.001049186525",
+          "passes_both_gates": false
+        }
+      ],
+      "a1_target_sqrt2_phi2": "2.069342577115165955538902",
+      "phi2_proton": "1.46324616887618",
+      "depth2_note": "two-mode composition coefficients are t-dependent ⇒ outside the #1900 constant-depth-2 refuted class",
+      "any_candidate_passes": false
+    }
+  }
+}
