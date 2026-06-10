@@ -510,6 +510,14 @@ git -C "$WT" commit -qm "seed lean cache: qou+mathlib oleans @ lean v4.24.0 (chu
 git -C "$WT" push -u origin lake-cache/qou-v4-24-0
 git worktree remove --force "$WT"                      # main branch never left
 ```
+> **HTTP 413 on the seed push (2026-06-10).** The web-sandbox git
+> proxy caps a single push payload — an ~800 MB one-commit pack is
+> rejected with `RPC failed; HTTP 413`. Workaround (verified): commit
+> **each ~90 MB chunk as its own commit** inside the worktree and
+> `git push` after each one (`--force` on the first push to replace
+> the old cache history). Restorers are unaffected — the restore
+> recipe reads the tip tree, which contains all chunks.
+
 Keep ≤ 8 such branches (owner cap); the
 [`lake-cache-refresh.yml`](../../../.github/workflows/lake-cache-refresh.yml)
 workflow prunes/refreshes on `lean-toolchain`/`lakefile.toml` changes — if
