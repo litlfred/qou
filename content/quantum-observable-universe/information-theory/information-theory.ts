@@ -162,6 +162,7 @@ section({
         "phase-transition-interpretation",
         "crossing-parity-test",
         "crossing-parity-test-table-data",
+        "molecular-hbond-phase-transition",
       ],
     }),
     section({
