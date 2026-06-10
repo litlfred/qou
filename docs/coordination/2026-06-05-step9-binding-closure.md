@@ -62,3 +62,41 @@ The selection rule `λ(L) = (1/(c+1))·Σ_{λ⊢c+1} dim_q` reproduces the muon 
 **Caveat — link-volume not 100% derivable (#1789, #1790).** The 3-body residual (~13%) is **genuine many-body** (NOT joint-trace, refuted #1790), and the link-volume superposition interface can't be fully derived. Lemma **L4** must treat the n=3 SW period as an irreducible many-body term, not a missing weight.
 
 **Compatible/adjacent:** #1733 (r=15 q-Pochhammer ⁴He +1.79% — candidate n=4 refinement, "is r=15 structural?" open), #1808 (Markov stabilization = the body-order n:2→3 induction functor), #1811 (fibre infra + Hopf c₃ source).
+
+---
+
+## 4. Report-back from #2089 (2026-06-10) — per-bond kernel DERIVED (fibre-level), form bug identified
+
+Per §2 ask. Branch `claude/derive-10A-minus-5-2026-06-10`; audits
+`2026-06-10-binding-gs-filtration-multiplicative-suppression.md` +
+`2026-06-10-binding-bond-graph-compute-audit-and-derivation.md`.
+
+**Finding (positive instance of Sharpening 2).** The inter-nucleon bond's
+trace kernel is **fibre-derived, not data-extracted**: each bridge crossing
+`c·σ+d` contributes its Markov conditional expectation
+
+    f_bond(q) = c·z + d ,  z = √q/(q+1)
+    f_pp = z ,  f_nn = z − h ,  f_pn = z − h(½ − δ/4)
+
+(formal q; only archimedean step is q→q₀). Validated: `∏_chain f_bond` ==
+measured `tr_atom/tr_free` to 1.1e-15 on D/T/³He/⁴He. The GS NF is binomial
+over bonds (`C(A−1,k)` term counts; bridges far-commute).
+
+**Form bug (mechanism of the 5–40× undershoot).** `tr_atom = tr_free·∏f_bond`
+⇒ the linear `Δtr` SATURATES (B = Q_β·Δtr bounded by ~0.78 MeV, never
+extensive); the extensive invariant is `log(tr_free/tr_atom) = Σ_bonds
+log(1/f_bond)` — the §1/#1762 `log|tr_M|` scale-gate observable, now
+mechanistically derived. Log-ratio binding at E_0 lands 0.57–2.36× (chain) /
+0.57–1.20× (complete graph) vs 4.8–39.7× linear.
+
+**Caveat honored (§3 many-body).** Per-bond energies are substrate-fixed
+(pp 2.91 / pn 3.89 / nn 5.18 MeV); the open piece is the **edge set**
+(chain under-binds, complete over-binds light nuclei; D anomalously loose,
+⁴He doubly-magic) — consistent with §3's "genuine many-body" residual; NOT
+re-claimed as a closure, no 7th ansatz.
+
+**Infra delivered.** Lossless per-λ χ caches D/T/³He/⁴He (matrix-M `max_dim`
+cap purged — it was a silent ~1e-3 truncation; producer lossless by default),
+⁴He via Rust `chi_q_via_gp` (77/77, 3.1s); ⁵Li/⁶Li in flight. Cross-posted:
+#2062 (kernel handoff), #2078 (scale-gate corroboration + A=4 χ), #2090
+(depth-1 Z_q kernel sibling on the c_k axis).
