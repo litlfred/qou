@@ -162,6 +162,8 @@ section({
         "phase-transition-interpretation",
         "crossing-parity-test",
         "crossing-parity-test-table-data",
+        "van-der-waals-hopf-channel",
+        "hopf-link-symmetric-decomposition",
         "molecular-hbond-phase-transition",
       ],
     }),

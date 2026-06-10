@@ -59,4 +59,7 @@ the molecular knot.
 gate are derived from the substrate and the already-proved bond-angle flip; the
 covalent $E_{\mathrm{cov}}$ and the latent heat $L^{\mathrm{obs}}$ are
 experimental inputs; the dispersion latent heat of the non-hydrogen-bonding
-(pure-$p$) hydrides is separate physics not modelled here.*
+(pure-$p$) hydrides is the **van der Waals channel**
+([`def:van-der-waals-hopf-channel`](#def:van-der-waals-hopf-channel)) — the Hopf
+symmetric block, a separate interaction not captured by the directional H-bond
+model here.*
