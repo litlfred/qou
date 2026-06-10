@@ -57,6 +57,12 @@ theorem heckeAB_cons (h d : R) (ds : List R) :
       = ((heckeAB h ds).1 * (h + d) + (heckeAB h ds).2,
          (heckeAB h ds).1 + (heckeAB h ds).2 * d) := rfl
 
+@[simp] theorem heckeAB_cons_fst (h d : R) (ds : List R) :
+    (heckeAB h (d :: ds)).1 = (heckeAB h ds).1 * (h + d) + (heckeAB h ds).2 := rfl
+
+@[simp] theorem heckeAB_cons_snd (h d : R) (ds : List R) :
+    (heckeAB h (d :: ds)).2 = (heckeAB h ds).1 + (heckeAB h ds).2 * d := rfl
+
 /-- **Single-generator Hecke polynomial reduction** (Cayley–Hamilton).
 
 For `σ : A` satisfying the Hecke quadratic `σ * σ = h • σ + 1`, every
@@ -66,15 +72,15 @@ Proof: induction on `ds`, using only the quadratic relation (no division).
 This makes the per-generator block of the transfer-matrix χ a single
 `α·D(δ′) + β` evaluation; see the module docstring. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/hecke-generator-poly-reduction.md
-theorem hecke_gen_poly_reduction (σ : A) (h : R) (hq : σ * σ = h • σ + 1) :
-    ∀ ds : List R,
-      (ds.map (fun d => σ + d • (1 : A))).prod
-        = (heckeAB h ds).1 • σ + (heckeAB h ds).2 • (1 : A)
-  | [] => by simp
-  | d :: ds => by
-      rw [List.map_cons, List.prod_cons,
-          hecke_gen_poly_reduction σ h hq ds, heckeAB_cons]
+theorem hecke_gen_poly_reduction (σ : A) (h : R) (hq : σ * σ = h • σ + 1)
+    (ds : List R) :
+    (ds.map (fun d => σ + d • (1 : A))).prod
+      = (heckeAB h ds).1 • σ + (heckeAB h ds).2 • (1 : A) := by
+  induction ds with
+  | nil => simp
+  | cons d ds ih =>
       -- (σ + d•1)·(α•σ + β•1) with α,β = heckeAB h ds; expand, sub hq, collect
+      rw [List.map_cons, List.prod_cons, ih, heckeAB_cons_fst, heckeAB_cons_snd]
       simp only [add_mul, mul_add, mul_smul_comm, smul_mul_assoc,
                  one_mul, mul_one, smul_smul]
       rw [hq]
