@@ -44,10 +44,10 @@ instance (parts : List ℕ) : Decidable (IsTwoRow parts) :=
 theorem isTwoRow_nil : IsTwoRow ([] : List ℕ) := by decide
 
 /-- A singleton partition is two-row. -/
-theorem isTwoRow_singleton (a : ℕ) : IsTwoRow [a] := by decide
+theorem isTwoRow_singleton (a : ℕ) : IsTwoRow [a] := by simp [IsTwoRow]
 
 /-- A two-element partition is two-row. -/
-theorem isTwoRow_pair (a b : ℕ) : IsTwoRow [a, b] := by decide
+theorem isTwoRow_pair (a b : ℕ) : IsTwoRow [a, b] := by simp [IsTwoRow]
 
 /-- A three-or-more element list is NOT two-row. -/
 theorem not_isTwoRow_triple (a b c : ℕ) : ¬ IsTwoRow [a, b, c] := by
@@ -104,15 +104,15 @@ instance : HasTwoRowCardinality 0 := ⟨1, by decide⟩
 /-- Concrete instance for n = 12 (⁴He) — derived from the constructive
     `enumerateTwoRow_length` rather than axiomatised. -/
 instance : HasTwoRowCardinality 12 :=
-  ⟨7, by rw [enumerateTwoRow_length 12]⟩
+  ⟨(enumerateTwoRow 12).length, enumerateTwoRow_length 12⟩
 
 /-- Concrete instance for n = 6 (deuteron).  -/
 instance : HasTwoRowCardinality 6 :=
-  ⟨4, by rw [enumerateTwoRow_length 6]⟩
+  ⟨(enumerateTwoRow 6).length, enumerateTwoRow_length 6⟩
 
 /-- Concrete instance for n = 9 (T or ³He). -/
 instance : HasTwoRowCardinality 9 :=
-  ⟨5, by rw [enumerateTwoRow_length 9]⟩
+  ⟨(enumerateTwoRow 9).length, enumerateTwoRow_length 9⟩
 
 /-- Universal cardinality instance: for any n, take the constructive
     enumeration's length. -/

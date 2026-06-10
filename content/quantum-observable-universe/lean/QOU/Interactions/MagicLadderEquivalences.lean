@@ -73,8 +73,9 @@ theorem primality_iff_condensation_for_n_ge_2
   · intro h
     rcases h with h1 | h_rest
     · omega
-    · exact h_rest
+    · simpa using h_rest
   · intro h
-    right; exact h
+    right
+    simpa using h
 
 end QOU.Interactions.MagicLadderEquivalences

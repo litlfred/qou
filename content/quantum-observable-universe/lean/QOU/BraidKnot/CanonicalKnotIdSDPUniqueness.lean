@@ -83,7 +83,7 @@ theorem heckeAsMatrix_posSemidef {n : ℕ} (x : HeckeElement n) :
         (∑ i, v i * x i) * (∑ j, x j * v j) := by
       simp only [dotProduct, Matrix.mulVec, heckeAsMatrix,
                  star_trivial, dotProduct]
-      rw [← Finset.sum_mul_sum]
+      rw [Finset.sum_mul_sum]
       apply Finset.sum_congr rfl
       intro i _
       rw [Finset.mul_sum]
