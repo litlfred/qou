@@ -80,3 +80,14 @@ conjecture: the chiral residue is the $1/\sqrt5$ Bring curvature, inverse-square
 in central-atom size. *Tier:* a strong, Bring-grounded near-match constrained by
 two data points — reported as a tiered observation; the exact $\zeta_\ell$
 monodromy is still the formal target.
+
+The explicit geometry of this $\sqrt5$ is the provable scaffold
+[`prop:bring-trefoil-cinquefoil-channel`](../brings-surface/bring-trefoil-cinquefoil-channel.md):
+the chiral channel is the **trefoil** $T_{2,3}$ (Seifert genus $1$) and the
+$\zeta_5$ is the **cinquefoil** $T_{2,5}$ (genus $2$) — two distinct torus knots
+sharing Bring's $\Sigma_4$ (genus $4$) and linked by $\mathrm{Aut}(B) = S_5$, with
+the $\sqrt5$ supplied by the $\mathbb{Z}_5$-orbit quadratic Gauss sum
+$\bigl(\sum_k \zeta_5^{k^2}\bigr)^2 = 5$ carried by the first Lagrange resolvent
+$w_1$ that embeds the quintic. That scaffold is established; only the exact
+$\zeta_\ell$-residue normalisation returning precisely $1/\sqrt5$ remains the open
+content of this conjecture.
