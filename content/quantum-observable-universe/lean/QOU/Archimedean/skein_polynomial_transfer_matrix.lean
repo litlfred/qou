@@ -1,5 +1,7 @@
 import Mathlib.Algebra.BigOperators.Group.Finset.Defs
 import Mathlib.Data.Real.Basic
+import Mathlib.Data.Fintype.Fin
+import Mathlib.Data.Nat.Choose.Basic
 
 /-!
 # QOU.Archimedean.skein_polynomial_transfer_matrix — placeholder stub
