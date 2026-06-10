@@ -1,0 +1,65 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-06-10T01:22:34.701191+00:00",
+  "commitSha": "98b83e54e3acfc6edd6cc531edda1d0758159240",
+  "assertions": [
+    {
+      "name": "deuteron_full_equals_capped_control",
+      "computed": 7.148e-16,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-09,
+      "source": "deuteron had 0 skipped → full tr_M == cached tr_M"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 2707,
+  "computation": "cap-free-trm-prototype",
+  "scriptFile": "cap_free_trm_prototype.py",
+  "scriptHash": "94757646de73",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "Cap-free tr_M over ALL partitions via the matrix-M reduced-block kernel (no max_dim skip) — owner directive: no truncation. Quantifies the cache's max_dim-cap error (the skipped high-dim partitions) and shows the reduced-block computes every λ losslessly.",
+  "data": {
+    "rows": [
+      {
+        "atom": "deuteron",
+        "Z": 1,
+        "N": 1,
+        "A": 2,
+        "n_partitions": 11,
+        "n_skipped_in_cache": 0,
+        "tr_M_capped": "1.33178217929911251",
+        "tr_M_full_no_cap": "1.33178217929911155",
+        "cap_error_abs": "9.51907e-16",
+        "cap_error_rel": "7.148e-16"
+      },
+      {
+        "atom": "tritium",
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "n_partitions": 30,
+        "n_skipped_in_cache": 12,
+        "tr_M_capped": "1.0860463545992615",
+        "tr_M_full_no_cap": "1.08602400582184097",
+        "cap_error_abs": "2.23488e-5",
+        "cap_error_rel": "2.058e-5"
+      }
+    ],
+    "conclusion": "The max_dim cap drops ~1e-3 of tr_M (the skipped high-dim partitions) — not 1-ppQ. The reduced-block computes all partitions; the cap is unnecessary and must be removed for precise binding. No truncation."
+  }
+}
