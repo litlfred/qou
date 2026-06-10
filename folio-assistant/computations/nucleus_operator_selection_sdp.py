@@ -116,10 +116,12 @@ def main() -> int:
         if _HAVE_SDP:
             try:
                 sdp = solve_psd_operator_selection_sdp(t, G, ta).to_dict()
-                row["sdp_active_set_idx"] = sdp["active_set"]
-                row["sdp_active_ops"] = [NF_NAMES[i] for i in sdp["active_set"]]
-                row["sdp_duality_gap"] = float(f"{sdp['duality_gap']:.2e}")
-                row["sdp_primal_obj"] = round(sdp["primal_obj"], 6)
+                aset = sdp.get("active_set")
+                if aset is not None:
+                    row["sdp_active_set_idx"] = aset
+                    row["sdp_active_ops"] = [NF_NAMES[i] for i in aset]
+                row["sdp_duality_gap"] = float(f"{sdp.get('duality_gap', 0.0):.2e}")
+                row["sdp_primal_obj"] = round(sdp.get("primal_obj", 0.0), 6)
             except Exception as e:  # noqa: BLE001
                 row["sdp_error"] = f"{type(e).__name__}: {e}"
         rows.append(row)

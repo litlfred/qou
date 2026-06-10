@@ -33,7 +33,6 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 sys.path.insert(0, str(HERE / "substrate"))
 
-import pyhecke_native as ph  # noqa: E402  — requires the built wheel
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from tr_m_wenzl_bridge_mpfr import _load_y_lambda  # noqa: E402
 from per_irrep_pole_atom import parts_of  # noqa: E402
