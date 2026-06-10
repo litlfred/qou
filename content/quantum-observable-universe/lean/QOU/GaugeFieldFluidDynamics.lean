@@ -69,9 +69,7 @@ theorem qInteger_ne_zero (q : ℝ) (k : ℕ) (hq : q > 1) (hk : k ≥ 1) :
 theorem qInteger_two (q : ℝ) (hq : q - q⁻¹ ≠ 0) :
     qInteger q 2 = q + q⁻¹ := by
   unfold qInteger
-  have hne : q - q⁻¹ ≠ 0 := hq
-  rw [pow_two, pow_two]
-  field_simp
+  rw [pow_two, pow_two, div_eq_iff hq]
   ring
 
 /-- `[3]_q = q² + 1 + q⁻²` for `q ≠ q⁻¹`.  Closed form of the
@@ -79,10 +77,11 @@ theorem qInteger_two (q : ℝ) (hq : q - q⁻¹ ≠ 0) :
     (q - q⁻¹)(q² + 1 + q⁻²)`. -/
 theorem qInteger_three (q : ℝ) (hq : q - q⁻¹ ≠ 0) :
     qInteger q 3 = q ^ 2 + 1 + (q⁻¹) ^ 2 := by
+  have hq0 : q ≠ 0 := by rintro rfl; simp at hq
+  have hqq : q * q⁻¹ = 1 := mul_inv_cancel₀ hq0
   unfold qInteger
-  have hne : q - q⁻¹ ≠ 0 := hq
-  field_simp
-  ring
+  rw [div_eq_iff hq]
+  linear_combination (q - q⁻¹) * hqq
 
 /-- **Recursion for q-integers**: `[n+1]_q = q · [n]_q + q⁻ⁿ`
     for `q ≠ q⁻¹`.  Equivalently expanded as a sum of monomials,
@@ -95,10 +94,13 @@ theorem qInteger_three (q : ℝ) (hq : q - q⁻¹ ≠ 0) :
 theorem qInteger_succ (q : ℝ) (n : ℕ) (hq : q - q⁻¹ ≠ 0) (hq0 : q ≠ 0) :
     qInteger q (n + 1) = q * qInteger q n + q⁻¹ ^ n := by
   unfold qInteger
-  have hne : q - q⁻¹ ≠ 0 := hq
-  have hq_inv_ne : q⁻¹ ≠ 0 := inv_ne_zero hq0
-  field_simp
+  rw [div_eq_iff hq, add_mul, mul_assoc, div_mul_cancel₀ _ hq]
   ring
+
+/-- The q-factorial `[n]_q! = ∏_{k=1..n} [k]_q`.  Returns 1 for n = 0. -/
+noncomputable def qFactorial (q : ℝ) : ℕ → ℝ
+  | 0     => 1
+  | n + 1 => qInteger q (n + 1) * qFactorial q n
 
 /-- **q-binomial coefficient** `[n choose k]_q := [n]_q!
     / ([k]_q! · [n−k]_q!)`.  Note: this is the ratio definition;
@@ -110,23 +112,16 @@ noncomputable def qBinomial (q : ℝ) (n k : ℕ) : ℝ :=
 /-- `[n choose 0]_q = 1` whenever `[n]_q!` is non-zero. -/
 theorem qBinomial_zero (q : ℝ) (n : ℕ)
     (hfact : qFactorial q n ≠ 0) : qBinomial q n 0 = 1 := by
-  unfold qBinomial qFactorial
-  have hsub : n - 0 = n := Nat.sub_zero n
-  rw [hsub]
-  field_simp
+  have h0 : qFactorial q 0 = 1 := rfl
+  unfold qBinomial
+  rw [Nat.sub_zero, h0, one_mul, div_self hfact]
 
 /-- `[n choose n]_q = 1` whenever `[n]_q!` is non-zero. -/
 theorem qBinomial_self (q : ℝ) (n : ℕ)
     (hfact : qFactorial q n ≠ 0) : qBinomial q n n = 1 := by
-  unfold qBinomial qFactorial
-  have hsub : n - n = 0 := Nat.sub_self n
-  rw [hsub]
-  field_simp
-
-/-- The q-factorial `[n]_q! = ∏_{k=1..n} [k]_q`.  Returns 1 for n = 0. -/
-noncomputable def qFactorial (q : ℝ) : ℕ → ℝ
-  | 0     => 1
-  | n + 1 => qInteger q (n + 1) * qFactorial q n
+  have h0 : qFactorial q 0 = 1 := rfl
+  unfold qBinomial
+  rw [Nat.sub_self, h0, mul_one, div_self hfact]
 
 /-- `[0]_q! = 1` by convention. -/
 theorem qFactorial_zero (q : ℝ) : qFactorial q 0 = 1 := rfl
@@ -794,7 +789,7 @@ structure NSSingularityDescartes (C : Type*) where
 structure TruncatedLerayProfile where
   /-- Number of active spins (j = 0, 1/2, 1, 3/2, 2). -/
   num_spins : ℕ := 5
-  /-- Centrifugal eigenvalue λ_j = [j]_q[j+1]_q for each spin. -/
+  /-- Centrifugal eigenvalue lam_j = [j]_q[j+1]_q for each spin. -/
   centrifugal : Fin 5 → ℝ
   /-- Classical viscosity. -/
   ν : ℝ
@@ -812,7 +807,7 @@ theorem fusion_half_half :
     (2 * 2 : ℕ) = 1 + 3 := by norm_num
 
 /-- Regularity exponent at the origin: R_j(r) ~ r^{ℓ_j} where
-    ℓ_j is the smallest integer with ℓ(ℓ+1) ≥ λ_j.
+    ℓ_j is the smallest integer with ℓ(ℓ+1) ≥ lam_j.
     For the fundamental mode j = 1/2: ℓ = 1 (linear vanishing). -/
 noncomputable def regularity_exponent (lam : ℝ) : ℕ :=
   -- Smallest ℓ with ℓ(ℓ+1) ≥ lam

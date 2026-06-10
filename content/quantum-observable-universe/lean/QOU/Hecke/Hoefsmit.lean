@@ -215,9 +215,9 @@ body). -/
     `(sorry : Partition n)`) are replaced by explicit partition
     arguments at the call site. -/
 theorem hoefsmit_distinguishes_word_sensitivity
-    (λZ1N2 λZ2N1 : Partition n)
-    [_HR_Z1N2 : HoefsmitRepresentation n q A λZ1N2]
-    [_HR_Z2N1 : HoefsmitRepresentation n q A λZ2N1] :
+    (lamZ1N2 lamZ2N1 : Partition n)
+    [_HR_Z1N2 : HoefsmitRepresentation n q A lamZ1N2]
+    [_HR_Z2N1 : HoefsmitRepresentation n q A lamZ2N1] :
     True :=
   trivial
 

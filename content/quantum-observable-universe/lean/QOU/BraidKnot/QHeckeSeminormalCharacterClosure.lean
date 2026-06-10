@@ -9,7 +9,7 @@ Sibling docstub at
 `braids-and-knots/q-hecke-seminormal-character-closure.lean`.
 
 This proposition records the numerical agreement of two existing
-implementation paths (partition-sum via Wenzl y_λ + Hoefsmit χ^λ_q
+implementation paths (partition-sum via Wenzl y_λ + Hoefsmit χ^lam_q
 versus canonical Markov-axiom reducer).
 -/
 
@@ -18,7 +18,7 @@ namespace QOU.BraidKnot.QHeckeSeminormalCharacterClosure
 /-- Abstract context for `prop:q-hecke-seminormal-character-closure`. -/
 class QHeckeSeminormalCharacterClosureContext where
   /-- `tr_M(β)` computed via the partition-sum (Wenzl `y_λ` ·
-      Hoefsmit `χ^λ_q`) path. -/
+      Hoefsmit `χ^lam_q`) path. -/
   tr_M_partition_sum : ℝ
   /-- `tr_M(β)` computed via the canonical Markov-axiom recursive
       reducer path. -/

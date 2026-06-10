@@ -32,7 +32,7 @@ where:
 ## Categorical content
 
 The Wenzl closed form is one half of the q-Hecke / q-Plancherel
-duality; the other half (`χ^λ_q` from Hoefsmit) is in
+duality; the other half (`χ^lam_q` from Hoefsmit) is in
 `QOU.HeckeAlgebra.Hoefsmit`.  Together they implement the
 manuscript's `prop:wenzl-jones-markov-closure`.
 

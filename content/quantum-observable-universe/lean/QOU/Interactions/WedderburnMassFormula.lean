@@ -295,7 +295,7 @@ theorem wedderburnMass_succ_N (Z N : ℕ)
 /-- **Numerical sanity check.** All three rest masses are positive. -/
 -- Ref: [codata2022]
 theorem rest_masses_pos : 0 < m_p ∧ 0 < m_n ∧ 0 < m_e := by
-  refine ⟨?_, ?_, ?_⟩ <;> unfold m_p m_n m_e <;> norm_num
+  refine ⟨?_, ?_, ?_⟩ <;> norm_num [m_p, m_n, m_e]
 
 /-- **Numerical sanity check.** Catalan's constant is positive. -/
 -- Ref: [oeis-A006752]
