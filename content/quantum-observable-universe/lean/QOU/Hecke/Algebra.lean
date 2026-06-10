@@ -1,6 +1,7 @@
 import QOU.Hecke.Generators
 import Mathlib.Algebra.Algebra.Defs
 import Mathlib.Algebra.Algebra.Subalgebra.Basic
+import Mathlib.RingTheory.Adjoin.Basic
 
 /-!
 # Hecke algebra `H_n(q)` — class-based formulation
