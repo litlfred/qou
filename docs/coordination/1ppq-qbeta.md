@@ -70,9 +70,11 @@ Q_β = Q_base · Π_{k≥2} (1 + c_k · u^k)  where u = b · ℏ_q² ≈ 0.00852
 > [`docs/audits/2026-06-04-qbeta-ck-refuted-class-map-and-open-axis.md`](../audits/2026-06-04-qbeta-ck-refuted-class-map-and-open-axis.md):
 > it catalogues the eliminated hypothesis classes (real-q single/composite,
 > torus-knot, constant-kernel, Pell-Lucas-into-free-rungs, SDP-extraction,
-> algebra-tower box-adding) and pins the one open axis (**trace-level
-> Markov-stabilization** `Ind_{H₃}^{H₄}` under `tr_M`). Don't re-run a refuted
-> class.
+> algebra-tower box-adding, trace-level Markov-stabilization) and pins the one
+> open axis (**decay-side fibre-level Habiro element `F(q)`** — the
+> trace-level Markov-stabilization `Ind_{H₃}^{H₄}` axis was itself REFUTED by
+> PR #1850, refuted-class row C12; this blockquote previously named it as the
+> open axis, corrected 2026-06-10). Don't re-run a refuted class.
 
 - [x] **PROBE 1 — c_3 q_0-stability** (DONE this session, 2026-05-31): verdict NEAR-MATCH. The 2.98% cross-anchor swing exceeds 10⁻⁵⁰ compute precision by 48 orders of magnitude — c_3 = -2 is NOT Taylor-exact at the value level, and J_Hopf(q) − ℏ_q²(q) is not the right q-dependent function either. Audit: [`docs/audits/2026-05-31-qbeta-c3-q0-stability-verdict.md`](../audits/2026-05-31-qbeta-c3-q0-stability-verdict.md).
 - [ ] **PROBE NEW — Q_β Habiro element search** (the actual blocker — parallel α_EM PR #1511). High priority; this is the keystone for all c_k≥3.
