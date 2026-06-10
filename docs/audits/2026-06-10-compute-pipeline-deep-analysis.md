@@ -196,4 +196,30 @@ Lean/CI):**
 
 ## 6. Execution log
 
-_(commits referenced here as the plan is worked)_
+- `8507935c` Gemini criteria fold-in (CODATA registry, long-compute logging).
+- `78d4baa3` **C6 guard** — `float64_leak_audit.py` fixed (post-reorg glob
+  no-op) + widened to force-audit canonical scripts; now catches all 22 i8
+  violations (warn-only; `--strict` gates CI).
+- `7129d99e` coordination ledger + intent on #2103 / #2078.
+
+### Owner decisions (2026-06-10) — captured durably
+
+Owner green-lit **all four** next fixes, coordinate-first:
+
+1. **C4** exact `(c,d)` in `atom_braid_word_3A` — root of ~half the 22; makes
+   the merged transfer exact end-to-end. *Hardening, not a correctness bug:*
+   the transfer already tolerance-launders the f64 `(c,d)` back to exact mpf
+   (D=0.388 + 50-dps cross-checks pass); C4 removes the cosmetic f64 and fixes
+   the *numeric, non-laundering* consumers (C5 `chi_lambda_of_word`).
+2. **P1** wire transfer-χ → `canonical_tr_m_via_branching` (A≥3) + binding
+   (drop f64 χ from `compute_atom_chi_rust`). Use the **transfer**, not #2103's
+   matrix-M (coordination: don't duplicate the any-(Z,N) χ engine).
+3. **Per-knot vol_density — ✅ OWNER SIGN-OFF GRANTED** to migrate the
+   65-isotope sweep off uniform `vol_density_borromean` → per-knot
+   `vol_density_per_block` (headline-moving: +2.89 % m_p → +3.73 % ¹²C error
+   drops). Report before/after numbers; read `2026-06-02-vol-usage-audit`.
+4. **Coordinate first** — C2 (y_λ) stays deferred until #2103 answers whether
+   `y_lambda_tower_infra` is 50-dps/no-float64 (consume vs re-lift).
+
+Execution order: C4 → P1 → per-knot (each run-verify-commit-**push-immediately**
+given container instability; C2 after #2103).
