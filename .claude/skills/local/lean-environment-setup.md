@@ -492,6 +492,27 @@ else
 fi
 ```
 
+> **⚠ Post-restore hazard — verify mathlib's origin URL BEFORE running
+> lake (2026-06-10, found on PR #2094).** The tar carries
+> `.lake/packages/mathlib/.git` from the *seeding* container; if its
+> `origin` URL differs from the manifest URL (e.g. it recorded the
+> seeder's git proxy), the first `lake` invocation prints
+> `mathlib: URL has changed` and **deletes the restored package —
+> including its 2.8 GB of oleans — before re-cloning**. Check first:
+>
+> ```bash
+> git -C .lake/packages/mathlib remote get-url origin   # must match lake-manifest.json
+> # mismatch → fix it instead of letting lake delete the build:
+> git -C .lake/packages/mathlib remote set-url origin \
+>   https://github.com/leanprover-community/mathlib4
+> ```
+>
+> If lake already deleted it: after the re-clone completes (rev will
+> match the manifest pin), re-extract **only the build dir** from the
+> still-fetched cache objects — `tar xzf <tgz> -C "$ROOT"
+> ".lake/packages/mathlib/.lake/build"` — and the oleans replay
+> (trace hashes are content-based, so the fresh clone's sources match).
+
 **SEED after a successful build** (so the NEXT agent restores in ~2 min
 instead of rebuilding in ~30+) — worktree-based, tarball created in-repo:
 ```bash
