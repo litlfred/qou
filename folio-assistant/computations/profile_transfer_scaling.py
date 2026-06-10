@@ -29,6 +29,7 @@ from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 from wedderburn_jones_markov import y_lambda_at  # noqa: E402
 from q_parameter import Q as Q0  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from host_info import host_info, summary_line  # noqa: E402
 
 
 def representative_zn(A: int) -> tuple[int, int]:
@@ -40,6 +41,7 @@ def representative_zn(A: int) -> tuple[int, int]:
 def main() -> int:
     mp.mp.dps = 50
     cap = float(sys.argv[1]) if len(sys.argv) > 1 else 600.0
+    print(f"host: {summary_line()}", flush=True)
     A_list = [6, 7, 8, 9, 10, 11, 12, 14, 16, 18, 20, 24]
     rows = []
     bottleneck = None
@@ -81,6 +83,7 @@ def main() -> int:
     )
     w.add_data("rows", rows)
     w.add_data("wall_cap_sec", cap)
+    w.add_data("host", host_info())
     if bottleneck:
         w.add_data("bottleneck", bottleneck)
     w.save()
