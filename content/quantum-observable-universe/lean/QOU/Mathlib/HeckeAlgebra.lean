@@ -1799,7 +1799,6 @@ theorem H3.blockSym3_sq_first_component (q : ℝ) :
     ne_of_gt (by nlinarith [sq_nonneg q, sq_nonneg (q ^ 2), sq_nonneg (q ^ 3)])
   unfold H3.mul H3.smul H3.add H3.blockSym3 H3.poincare
          H3.mulSigma1 H3.mulSigma2
-  simp only [Prod.fst]
   field_simp
   ring
 
@@ -1818,7 +1817,6 @@ theorem H3.blockSym3_blockAlt3_orthogonal_first (q : ℝ) (hq : q ≠ 0) :
     ne_of_gt (by nlinarith [sq_nonneg q⁻¹, sq_nonneg (q⁻¹ ^ 2), sq_nonneg (q⁻¹ ^ 3)])
   unfold H3.mul H3.smul H3.add H3.blockSym3 H3.blockAlt3 H3.poincare
          H3.mulSigma1 H3.mulSigma2
-  simp only [Prod.fst]
   field_simp
   ring
 
@@ -1838,7 +1836,7 @@ theorem H3.blockSym3_sq (q : ℝ) (hq : q ≠ 0) :
          H3.mulSigma1 H3.mulSigma2
   refine Prod.ext ?_ (Prod.ext ?_ (Prod.ext ?_
     (Prod.ext ?_ (Prod.ext ?_ ?_))))
-  all_goals (simp only [Prod.fst, Prod.snd]; field_simp; ring)
+  all_goals (field_simp; ring)
 
 set_option maxHeartbeats 2000000 in
 /-- **Full idempotency of `e_[1,1,1]`** (all six carrier
@@ -1853,7 +1851,7 @@ theorem H3.blockAlt3_sq (q : ℝ) (hq : q ≠ 0) :
          H3.mulSigma1 H3.mulSigma2
   refine Prod.ext ?_ (Prod.ext ?_ (Prod.ext ?_
     (Prod.ext ?_ (Prod.ext ?_ ?_))))
-  all_goals (simp only [Prod.fst, Prod.snd]; field_simp; ring)
+  all_goals (field_simp; ring)
 
 set_option maxHeartbeats 4000000 in
 /-- **Full idempotency of `e_[2,1]`** (all six carrier components).
@@ -1874,7 +1872,7 @@ theorem H3.blockMixed21_sq (q : ℝ) (hq : q ≠ 0) :
              H3.blockAlt3, H3.poincare, H3.mulSigma1, H3.mulSigma2, H3.one]
   refine Prod.ext ?_ (Prod.ext ?_ (Prod.ext ?_
     (Prod.ext ?_ (Prod.ext ?_ ?_))))
-  all_goals (simp only [Prod.fst, Prod.snd]; field_simp; ring)
+  all_goals (field_simp; ring)
 
 set_option maxHeartbeats 2000000 in
 /-- **Full orthogonality `e_[3] · e_[1,1,1] = 0`** (all six carrier
@@ -1892,7 +1890,7 @@ theorem H3.blockSym3_blockAlt3_orthogonal (q : ℝ) (hq : q ≠ 0) :
          H3.mulSigma1 H3.mulSigma2
   refine Prod.ext ?_ (Prod.ext ?_ (Prod.ext ?_
     (Prod.ext ?_ (Prod.ext ?_ ?_))))
-  all_goals (simp only [Prod.fst, Prod.snd]; field_simp; ring)
+  all_goals (field_simp; ring)
 
 /-- **Canonical instance** for `H3WedderburnIdempotency`: the four
     fields are discharged by the standalone block theorems above
