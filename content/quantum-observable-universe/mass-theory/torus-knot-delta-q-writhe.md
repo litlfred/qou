@@ -28,7 +28,7 @@ crossings of the braid.
 The two-strand case $m = 2$ recovers the basis-knot decoration
 [`prop:alpha-basis-knot-delta-q`](#prop:alpha-basis-knot-delta-q),
 $\delta_q(T_{2,k}) = h\,[k]_q$ (writhe $w = k$). The three-strand force-carriers
-then have **derived** (no longer assumed) exponents
+then have **derived** (not assumed) exponents
 
 $$
   \delta_q(T_{3,4}) = h\,[8]_q, \qquad \delta_q(T_{3,5}) = h\,[10]_q,
@@ -41,3 +41,11 @@ writhe exponents are rigidly tied to the leading twist $-q^{2p}$ of the Jones
 polynomial of $T_{3,p}$ (cross-checked against the knot tables
 $8_{19} = T_{3,4}$, $10_{124} = T_{3,5}$). Symbolic cross-check:
 [`rosso_jones_three_strand_delta_q.py`](../../folio-assistant/computations/rosso_jones_three_strand_delta_q.py).
+
+The same writhe $w$ governs the chirality mass-factor $a_K = 1 + w\,h$ of
+[`prop:chirality-writhe-ribbon-derivation`](#prop:chirality-writhe-ribbon-derivation),
+but the two are distinct: that factor comes from the **ribbon full-twist**
+$\varTheta\,v_\lambda = q^{2c(\lambda)}v_\lambda$ acting on *every* Wedderburn
+block by its content $c(\lambda)$, whereas $\delta_q$ here is the **bar-odd part
+of the single trivial-channel twist** $q^{(m-1)p}$. They share the writhe but
+extract different data (a full-twist framing factor vs. an $e_-$ decoration).
