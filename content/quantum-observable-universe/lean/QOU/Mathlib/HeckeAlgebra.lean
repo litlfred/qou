@@ -1867,8 +1867,11 @@ theorem H3.blockMixed21_sq (q : ℝ) (hq : q ≠ 0) :
     ne_of_gt (by nlinarith [sq_nonneg q, sq_nonneg (q ^ 2), sq_nonneg (q ^ 3)])
   have hPi : ((1 : ℝ) + 2 * q⁻¹ ^ 2 + 2 * q⁻¹ ^ 4 + q⁻¹ ^ 6) ≠ 0 :=
     ne_of_gt (by nlinarith [sq_nonneg q⁻¹, sq_nonneg (q⁻¹ ^ 2), sq_nonneg (q⁻¹ ^ 3)])
-  unfold H3.mul H3.smul H3.add H3.blockMixed21 H3.blockSym3 H3.blockAlt3
-         H3.poincare H3.mulSigma1 H3.mulSigma2 H3.one
+  -- `simp only` (not `unfold`): the definitions unfold to fixpoint
+  -- regardless of nesting order — `blockMixed21`'s body re-exposes
+  -- `H3.add`/`H3.smul`, which a sequential `unfold` list misses.
+  simp only [H3.mul, H3.smul, H3.add, H3.blockMixed21, H3.blockSym3,
+             H3.blockAlt3, H3.poincare, H3.mulSigma1, H3.mulSigma2, H3.one]
   refine Prod.ext ?_ (Prod.ext ?_ (Prod.ext ?_
     (Prod.ext ?_ (Prod.ext ?_ ?_))))
   all_goals (simp only [Prod.fst, Prod.snd]; field_simp; ring)
