@@ -77,14 +77,14 @@ structure BBStratification (n : ℕ) where
       (= no obstruction to lifting the section across higher jets). -/
   is_complete_intersection : Index → Prop
   /-- Refinement is reflexive. -/
-  refines_refl : ∀ λ, refines λ λ
+  refines_refl : ∀ i, refines i i
   /-- Refinement is transitive. -/
-  refines_trans : ∀ λ μ ν, refines λ μ → refines μ ν → refines λ ν
+  refines_trans : ∀ i j k, refines i j → refines j k → refines i k
 
 /-- The set of complete-intersection strata in a BB-stratification. -/
 def BBStratification.completeIntersectionStrata
     {n : ℕ} (S : BBStratification n) : Set S.Index :=
-  { λ | S.is_complete_intersection λ }
+  { i | S.is_complete_intersection i }
 
 /-! ## §2  Abstract spectral sequence -/
 
@@ -137,7 +137,7 @@ structure BBSpectralSequence (n : ℕ) where
   /-- Collapse condition: if every stratum is a complete
       intersection, then `E_∞^{p, q > 0} = 0`. -/
   collapse_when_all_complete :
-    (∀ λ, stratification.is_complete_intersection λ) →
+    (∀ i, stratification.is_complete_intersection i) →
     spectralSequence.vanishesInPositiveQ
 
 /-! ## §4  Bridge to the framework conjecture -/
@@ -176,7 +176,7 @@ class BBSpectralSequenceProvider where
 -- Ref: [manuscript] conj:homological-shell-condensation
 theorem vanishes_when_all_complete
     {n : ℕ} (B : BBSpectralSequence n)
-    (h : ∀ λ, B.stratification.is_complete_intersection λ) :
+    (h : ∀ i, B.stratification.is_complete_intersection i) :
     B.spectralSequence.vanishesInPositiveQ :=
   B.collapse_when_all_complete h
 
@@ -187,15 +187,11 @@ theorem vanishes_when_all_complete
 theorem einf_eq_eventually_at
     (S : SpectralSequence) (p q : ℕ) :
     ∃ r₀, ∀ r, r₀ ≤ r → S.size r p q = S.einf p q := by
-  obtain ⟨r₀, hr⟩ := S.converges p q
-  refine ⟨r₀, ?_⟩
-  intro r hr_ge
-  rw [hr r hr_ge]
-  -- Goal: S.size r₀ p q = S.einf p q
+  refine ⟨(S.converges p q).choose, fun r hr => ?_⟩
+  -- `einf` is by definition the size at the chosen stabilization index,
+  -- so the choice specification closes the goal directly.
   unfold SpectralSequence.einf
-  -- Both sides equal size r₀ p q via the `converges` choice.
-  exact (hr (S.converges p q).choose (le_refl _) ).symm
-        |>.trans rfl
+  exact (S.converges p q).choose_spec r hr
 
 /-- The spectral sequence's positive-q vanishing implies, in
     particular, that the eventual `E_∞^{p, q}` is zero for q > 0. -/
@@ -218,7 +214,7 @@ theorem vanishesAt_of_vanishesInPositiveQ
 theorem framework_condensation_of_all_complete
     [P : BBSpectralSequenceProvider]
     {n : ℕ} {q : ℝ}
-    (h : ∀ λ, (P.bbSeq n q).stratification.is_complete_intersection λ) :
+    (h : ∀ i, (P.bbSeq n q).stratification.is_complete_intersection i) :
     QOU.LiftingDescent.HomologicalCondensation.InfinityVanishesAtPositiveQ n :=
   (P.bridge n q).mp ((P.bbSeq n q).collapse_when_all_complete h)
 
