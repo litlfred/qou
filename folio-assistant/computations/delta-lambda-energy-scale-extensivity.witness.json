@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-10T03:37:22.662090+00:00",
-  "commitSha": "9822908769faff243bede702efa54163b63a2c56",
+  "computedAt": "2026-06-10T03:49:48.618375+00:00",
+  "commitSha": "b5087bafe04cc843dba5a97875b54ba8f5ce38c7",
   "assertions": [
     {
       "name": "deuteron_residual_is_order_one_after_energy_scale",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": -1781060196754,
+  "durationMs": -1781060196753,
   "computation": "delta-lambda-energy-scale-extensivity",
   "scriptFile": "delta_lambda_energy_scale_extensivity_probe.py",
   "scriptHash": "09fc3dfd0126",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "6cb00083fa5eaeb99d9af435136cbde912b03e9b",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -154,34 +154,34 @@
         "B_AME_per_bond": 2.573,
         "Delta_tr_per_bond": 0.2804,
         "active_set": {
-          "n_partitions_total": 15,
+          "n_partitions_total": 30,
           "n_in_active_90pct": 4,
-          "tr_M_signonly": 1.124204,
-          "fewrow_frac_rows_le_4": 0.99986,
+          "tr_M_signonly": 1.124744,
+          "fewrow_frac_rows_le_4": 0.99974,
           "active_partitions": [
             {
               "partition": "[8, 1]",
               "dim": 8,
               "rows": 2,
-              "frac": 0.2783
+              "frac": 0.2782
             },
             {
               "partition": "[7, 2]",
               "dim": 27,
               "rows": 2,
-              "frac": 0.2468
+              "frac": 0.2467
             },
             {
               "partition": "[9]",
               "dim": 1,
               "rows": 1,
-              "frac": 0.2248
+              "frac": 0.2246
             },
             {
               "partition": "[6, 3]",
               "dim": 48,
               "rows": 2,
-              "frac": 0.1606
+              "frac": 0.1605
             }
           ]
         }
