@@ -667,22 +667,48 @@ theorem H4.basis_count : (Finset.univ : Finset (Fin 24)).card = 24 := by
     representation requires per-basis-position coefficients
     (24 entries each).  Schematic placeholders below — concrete
     coefficient tables follow from the Hoefsmit construction
-    once permutation enumeration is wired. -/
+    once permutation enumeration is wired.  The 1-dim block
+    normalizers are the `S_4` Poincaré polynomial `P₄(q)`
+    (trivial block) and `P₄(q⁻¹)` (sign block), by the same
+    `T_w`-eigenvalue argument as the `H_3` case (`H3.poincare`). -/
+
+/-- **Poincaré polynomial of `S_4`** in the Hecke parameter:
+    `P₄(q) = Σ_{w ∈ S_4} q^{2ℓ(w)}
+    = 1 + 3q² + 5q⁴ + 6q⁶ + 5q⁸ + 3q¹⁰ + q¹²
+    = (1+q²)(1+q²+q⁴)(1+q²+q⁴+q⁶)` (length distribution
+    `1,3,5,6,5,3,1` over `ℓ = 0..6`; coefficient sum `24 = 4!`).
+    Correct normalizer for the trivial idempotent `e_[4]`; the
+    sign idempotent `e_[1⁴]` uses `P₄(q⁻¹)`. -/
+noncomputable def H4.poincare (q : ℝ) : ℝ :=
+  1 + 3 * q ^ 2 + 5 * q ^ 4 + 6 * q ^ 6 + 5 * q ^ 8 + 3 * q ^ 10 + q ^ 12
+
+/-- `P₄(q) ≥ 1 > 0` for every real `q` (even powers, positive
+    coefficients) — unconditionally non-zero, like `H3.poincare_pos`. -/
+theorem H4.poincare_pos (q : ℝ) : 0 < H4.poincare q := by
+  unfold H4.poincare
+  nlinarith [sq_nonneg q, sq_nonneg (q ^ 2), sq_nonneg (q ^ 3),
+             sq_nonneg (q ^ 4), sq_nonneg (q ^ 5), sq_nonneg (q ^ 6)]
+
+/-- The `S_4` Poincaré normalizer never vanishes (any real `q`). -/
+theorem H4.poincare_ne_zero (q : ℝ) : H4.poincare q ≠ 0 :=
+  ne_of_gt (H4.poincare_pos q)
 
 /-- Symmetric Wedderburn projector `e_[4]` for `H_4(q)` over
     `ℝ`.  Schematic: caller-supplied coefficient function. -/
 noncomputable def H4.blockSym4 (q : ℝ) : H4Carrier ℝ :=
   fun i =>
-    -- Hoefsmit symmetric projector: e_[4] = (1/[4]_q!) Σ_{w ∈ S_4} q^{ℓ(w)} T_w
+    -- Symmetric projector: e_[4] = (1/P₄(q)) Σ_{w ∈ S_4} q^{ℓ(w)} T_w
+    -- (S_4 Poincaré normalizer — forced by T_w e_[4] = q^{ℓ(w)} e_[4]).
     -- Concrete coefficients via the Coxeter length of basis index i
     -- under permutationEnumeration 4.  For now: identity-only weight.
-    if i.val = 0 then 1 / QOU.MathlibExt.QPartitionCombinatorics.qFactorial q 4 else 0
+    if i.val = 0 then 1 / H4.poincare q else 0
 
 /-- Antisymmetric Wedderburn projector `e_[1^4]` for `H_4(q)`. -/
 noncomputable def H4.blockAlt4 (q : ℝ) : H4Carrier ℝ :=
   fun i =>
-    -- Hoefsmit antisymmetric: e_[1^4] = (1/[4]_q!) Σ (-q⁻¹)^{ℓ(w)} T_w
-    if i.val = 0 then 1 / QOU.MathlibExt.QPartitionCombinatorics.qFactorial q 4 else 0
+    -- Antisymmetric: e_[1^4] = (1/P₄(q⁻¹)) Σ (-q⁻¹)^{ℓ(w)} T_w
+    -- (sign-block normalizer at q⁻¹, cf. H3.blockAlt3).
+    if i.val = 0 then 1 / H4.poincare q⁻¹ else 0
 
 /-- Mixed Wedderburn projector `e_[2,2]` for `H_4(q)` (2-dim block). -/
 noncomputable def H4.blockMixed22 (q : ℝ) : H4Carrier ℝ :=
