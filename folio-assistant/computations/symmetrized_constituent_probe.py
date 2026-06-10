@@ -17,7 +17,11 @@ nucleon-block level). Confirms the effect is the right ORDER to matter; the
 clean closure needs the proper projector. Verified Schur-Weyl identity:
 QOU.Hecke.IdenticalParticleSymmetrization (Lean).
 """
-import sys; sys.path.insert(0,'.'); sys.path.insert(0,'substrate'); sys.path.insert(0,'hecke'); sys.path.insert(0,'markov')
+import sys
+sys.path.insert(0, '.')
+sys.path.insert(0, 'substrate')
+sys.path.insert(0, 'hecke')
+sys.path.insert(0, 'markov')
 from binding_canonical import build_atom_symbolic
 from markov_trace_canonical import tr_M_element
 from hecke_symbolic import SymbolicHeckeDivision, q as q_sym

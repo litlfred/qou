@@ -87,17 +87,9 @@ def _energy_scales() -> tuple[float, float, float]:
     """(m_e, Q_β, E_0) in MeV, E_0 = m_e/(q_0(q_0−1))."""
     from q_parameter import Q as q0
     from experimental_constants import Q_NEUTRON_MEV as Qb
-    try:
-        from codata_constants import M_E_MEV as me
-    except Exception:
-        me = 0.51099895
+    from codata_constants import M_E_MEV as me
     me, q0, Qb = float(me), float(q0), float(Qb)
     return me, Qb, me / (q0 * (q0 - 1.0))
-
-
-def _rows(part_str: str) -> int:
-    return len(json.loads(part_str)) if part_str.strip().startswith("[") \
-        else part_str.count(",") + 1
 
 
 def active_set(Z: int, N: int):
@@ -111,7 +103,7 @@ def active_set(Z: int, N: int):
     if any(e.get("chi_lambda") == "skipped-max-dim" for e in bp):
         return {"status": "TRUNCATED_CACHE — rerun lossless producer"}
     valid = [(str(e["partition"]), abs(float(e["contribution"])),
-              int(e.get("dim", 0)), _rows(str(e["partition"]))) for e in bp]
+              int(e.get("dim", 0)), len(e["partition"])) for e in bp]
     tot = sum(c for _, c, _, _ in valid)
     valid.sort(key=lambda x: -x[1])
     cum, top = 0.0, []

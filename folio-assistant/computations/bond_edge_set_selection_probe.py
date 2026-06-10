@@ -57,10 +57,7 @@ from witness_base import WitnessBuilder  # noqa: E402
 
 def _constants():
     from q_parameter import Q as q0, HA as h
-    try:
-        from codata_constants import M_E_MEV as me
-    except Exception:
-        me = 0.51099895
+    from codata_constants import M_E_MEV as me
     q0, h, me = float(q0), float(h), float(me)
     z = 1.0 / (q0 ** 0.5 + q0 ** (-0.5))
     try:

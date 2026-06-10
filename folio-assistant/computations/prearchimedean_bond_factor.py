@@ -89,10 +89,7 @@ def main() -> int:
 
     # Archimedean realization: substitute q → q₀ (single step at the end).
     from q_parameter import Q as Q0
-    try:
-        from codata_constants import M_E_MEV as me
-    except Exception:
-        me = 0.51099895
+    from codata_constants import M_E_MEV as me
     try:
         from canonical_braid_crossings import _avg_color_delta
         d0 = float(_avg_color_delta())

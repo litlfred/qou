@@ -36,11 +36,6 @@ CACHES = {
 }
 
 
-def _rows(part_str: str) -> int:
-    return len(json.loads(part_str)) if part_str.startswith("[") else \
-        part_str.count(",") + 1
-
-
 def main() -> int:
     t0 = time.monotonic()
     rows_out = []
@@ -51,7 +46,7 @@ def main() -> int:
         for e in bp:
             if e.get("chi_lambda") == "skipped-max-dim":
                 continue
-            contribs.append((_rows(str(e["partition"])),
+            contribs.append((len(e["partition"]),
                              int(e.get("dim", 0)),
                              float(e["contribution"])))
         full = sum(c for _, _, c in contribs)
