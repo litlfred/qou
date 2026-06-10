@@ -1,0 +1,167 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-09T23:56:11.021462+00:00",
+  "commitSha": "f232548a1c837d73eba6dde9e6d1ea9f6961fc15",
+  "assertions": [
+    {
+      "name": "chiral channel = trefoil T_(2,3) has Seifert genus 1",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "g=(m-1)(n-1)/2"
+    },
+    {
+      "name": "ζ₅ carrier = cinquefoil T_(2,5) has Seifert genus 2",
+      "computed": 2,
+      "expected": 2,
+      "passed": true,
+      "source": "g=(m-1)(n-1)/2"
+    },
+    {
+      "name": "both embed in Σ₄ (genus ≤ 4)",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "Seifert genus ≤ g(Σ₄)=4"
+    },
+    {
+      "name": "trefoil and cinquefoil are distinct (genera differ)",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "1 ≠ 2"
+    },
+    {
+      "name": "complete embeddable list = {(2,3),(2,5),(2,7),(2,9),(3,4),(3,5)}",
+      "computed": [
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          2,
+          7
+        ],
+        [
+          2,
+          9
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          5
+        ]
+      ],
+      "expected": [
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          2,
+          7
+        ],
+        [
+          2,
+          9
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          5
+        ]
+      ],
+      "passed": true,
+      "source": "coprime 1<m<n, (m-1)(n-1)≤8"
+    },
+    {
+      "name": "quadratic Gauss sum over ℤ₅-orbit squares to 5 (g²=5)",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "g=Σζ₅^(k²), p=5≡1 mod 4 ⇒ g²=5"
+    },
+    {
+      "name": "Gauss sum g = +√5 (archimedean projection)",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "g=√5 for p=5≡1 mod 4"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 6,
+  "computation": "bring-trefoil-cinquefoil-channel",
+  "scriptFile": "bring_trefoil_cinquefoil_channel.py",
+  "scriptHash": "860dfc6d5a71",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "mpmath": "1.4.1"
+  },
+  "description": "Ties the H₂S Bring 1/√5 geometry together: the chiral channel is the trefoil T_(2,3) (Seifert genus 1, the color-tube cubic's B₃↠H₃ monodromy) and the ζ₅ carrier is the cinquefoil T_(2,5) (genus 2, the hyperelliptic quintic 𝒳₅:y²=x⁵−1 embedded via the first Lagrange resolvent w₁ of ℤ₅⊂S₅). Both embed in Bring's Σ₄ (genus ≤ 4), they are distinct, and the ambient Aut(B)=S₅ links them — two torus knots in one Σ₄, NOT one fibre with two symmetries (corrects the earlier conflation). The quadratic Gauss sum over the cinquefoil's ℤ₅-orbit, g=Σζ₅^(k²), satisfies g²=5 (p=5≡1 mod 4 ⇒ g=√5) — the unique source of ζ₅'s irrationality, carried by w₁; so the H₂S chiral residue's irrational scale is √5 and its Bring constant is 1/√5. Exact ζ₅-residue normalisation = 1/√5 remains the conjecture's open monodromy step.",
+  "contentBlock": "prop:bring-trefoil-cinquefoil-channel",
+  "data": {
+    "g_trefoil_chiral_channel": 1,
+    "g_cinquefoil_zeta5": 2,
+    "brings_genus_sigma4": 4,
+    "embeddable_pairs": [
+      [
+        2,
+        3
+      ],
+      [
+        2,
+        5
+      ],
+      [
+        2,
+        7
+      ],
+      [
+        2,
+        9
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        3,
+        5
+      ]
+    ],
+    "color_tube_cubic_roots": 3,
+    "quintic_branch_points": 5,
+    "zeta5_re": 0.30901699437494745,
+    "zeta5_im": 0.9510565162951535,
+    "gauss_sum": 2.23606797749979,
+    "gauss_sum_sq": 5.000000000000001,
+    "sqrt5": 2.23606797749979,
+    "inv_sqrt5_bring": 0.4472135954999579,
+    "finding": "The H₂S Bring 1/√5 geometry: the chiral channel is the trefoil T_(2,3) (genus 1) and the ζ₅ carrier is the cinquefoil T_(2,5) (genus 2); both embed in Bring's Σ₄ (genus ≤ 4), they are distinct, and Aut(B)=S₅ links them — two torus knots in one Σ₄. The quintic embeds via the w₁ Lagrange resolvent of ℤ₅⊂S₅; the ℤ₅-orbit Gauss sum satisfies g²=5 (g=√5), the unique irrationality of ζ₅. So the chiral residue's irrational scale is √5 and the Bring constant is 1/√5. The exact ζ₅-residue normalisation (=1/√5) is the conjecture's open monodromy computation."
+  }
+}

@@ -297,6 +297,62 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
       units: "deg",
     }),
 
+    // ── Bring trefoil + cinquefoil channel (H₂S 1/√5 geometry) ─────────
+    bring_g_trefoil: Object.freeze({
+      name: "bring_g_trefoil",
+      description:
+        "Seifert genus of the trefoil T_{2,3} (the chiral channel) in Σ₄.",
+      symbol: "g(T_{2,3})",
+      witnessFile:
+        "folio-assistant/computations/bring-trefoil-cinquefoil-channel.witness.json",
+      witnessPath: "data.g_trefoil_chiral_channel",
+      defaultPrecision: 0,
+      units: null,
+    }),
+    bring_g_cinquefoil: Object.freeze({
+      name: "bring_g_cinquefoil",
+      description:
+        "Seifert genus of the cinquefoil T_{2,5} (the ζ₅ carrier) in Σ₄.",
+      symbol: "g(T_{2,5})",
+      witnessFile:
+        "folio-assistant/computations/bring-trefoil-cinquefoil-channel.witness.json",
+      witnessPath: "data.g_cinquefoil_zeta5",
+      defaultPrecision: 0,
+      units: null,
+    }),
+    bring_sigma4_genus: Object.freeze({
+      name: "bring_sigma4_genus",
+      description: "Genus of Bring's Seifert fibre Σ₄ (both knots embed: ≤ 4).",
+      symbol: "g(\\Sigma_4)",
+      witnessFile:
+        "folio-assistant/computations/bring-trefoil-cinquefoil-channel.witness.json",
+      witnessPath: "data.brings_genus_sigma4",
+      defaultPrecision: 0,
+      units: null,
+    }),
+    bring_gauss_sum_sqrt5: Object.freeze({
+      name: "bring_gauss_sum_sqrt5",
+      description:
+        "Quadratic Gauss sum over the cinquefoil's ℤ₅-orbit, g = Σ ζ₅^{k²} = √5.",
+      symbol: "\\textstyle\\sum_k \\zeta_5^{k^2}",
+      witnessFile:
+        "folio-assistant/computations/bring-trefoil-cinquefoil-channel.witness.json",
+      witnessPath: "data.gauss_sum",
+      defaultPrecision: 5,
+      units: null,
+    }),
+    bring_inv_sqrt5: Object.freeze({
+      name: "bring_inv_sqrt5",
+      description:
+        "The Bring constant 1/√5 — leading chiral coefficient of the H₂S residual.",
+      symbol: "1/\\sqrt5",
+      witnessFile:
+        "folio-assistant/computations/bring-trefoil-cinquefoil-channel.witness.json",
+      witnessPath: "data.inv_sqrt5_bring",
+      defaultPrecision: 5,
+      units: null,
+    }),
+
     H_A: Object.freeze({
       name: "H_A",
       description: "Planck constant ℏ_q = q - q^{-1} at the substrate.",

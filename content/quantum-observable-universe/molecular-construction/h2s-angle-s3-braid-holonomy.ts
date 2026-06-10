@@ -22,6 +22,7 @@ export default conjecture({
     "prop:symmetric-block-domain-weight",
     "prop:chirality-residue-mass-term",
     "def:bar-involution",
+    "prop:bring-trefoil-cinquefoil-channel",
   ],
   tags: [
     "H2S",
