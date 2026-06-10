@@ -110,7 +110,7 @@ lemma vol_figure_eight_approx :
 
 /-! ### Substrate-`q` `Real.sqrt` bracket
 
-The numerical witness `1.05341 < Real.sqrt substrate_q < 1.05342`
+The numerical witness `1.05341 < Real.sqrt substrate_q < 1.05343`
 discharges the half-denominator
 `Real.sqrt substrate_q + 1 / Real.sqrt substrate_q ≈ 2.00228`
 required by every QOU pair-skein bound. -/
@@ -124,10 +124,12 @@ lemma sqrt_substrate_q_gt :
   · unfold substrate_q
     norm_num
 
-/-- `Real.sqrt substrate_q < 1.05342`. Proof: `1.05342² ≈
-    1.10969 > 1.1097`, so by monotonicity of `Real.sqrt`. -/
+/-- `Real.sqrt substrate_q < 1.05343`. Proof: `1.05343² ≈
+    1.1097148 > 1.1097`, so by monotonicity of `Real.sqrt`.
+    (The previous bound `1.05342` was false: `1.05342² ≈ 1.1096937
+    < 1.1097`, i.e. `√substrate_q ≈ 1.0534228` exceeds it.) -/
 lemma sqrt_substrate_q_lt :
-    Real.sqrt substrate_q < 1.05342 := by
+    Real.sqrt substrate_q < 1.05343 := by
   apply QOU.MathlibExt.Real.sqrt_lt_of_lt_sq
   · norm_num
   · unfold substrate_q; norm_num
@@ -137,7 +139,7 @@ lemma sqrt_substrate_q_lt :
 /-- Two-sided bracket on `Real.sqrt substrate_q`. -/
 lemma sqrt_substrate_q_bracket :
     (1.05341 : ℝ) < Real.sqrt substrate_q ∧
-    Real.sqrt substrate_q < 1.05342 :=
+    Real.sqrt substrate_q < 1.05343 :=
   ⟨sqrt_substrate_q_gt, sqrt_substrate_q_lt⟩
 
 /-- The muon-electron mass ratio is approximately 206.7683. -/
