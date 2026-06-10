@@ -68,7 +68,7 @@ theorem m_e_MeV_codata_pos : 0 < m_e_MeV_codata := by
     in cat units.  At this abstraction level, `T_w : HeckeElement n`,
     `ρ : ℕ`, and `m_e : ℝ` (the cat-unit electron mass, distinct
     from the MeV-scale one). -/
-def categoricalMass {n : ℕ} (rho : ℕ) (m_e : ℝ) (T_w : HeckeElement n) : ℝ :=
+noncomputable def categoricalMass {n : ℕ} (rho : ℕ) (m_e : ℝ) (T_w : HeckeElement n) : ℝ :=
   rho * m_e * absMarkovTrace n T_w
 
 /-- **Mass is non-negative** (multiplicity, electron mass, and
@@ -99,7 +99,7 @@ theorem categoricalMass_pos {n : ℕ} {rho : ℕ} {m_e : ℝ}
 /-- **Mass conversion cat-units → MeV**: multiply by the CODATA
     electron-mass scale.  Implements
     `M(K)_MeV := M(K)_cat · M_E_MEV_CODATA`. -/
-def categoricalMassMeV {n : ℕ} (rho : ℕ) (m_e : ℝ) (T_w : HeckeElement n) : ℝ :=
+noncomputable def categoricalMassMeV {n : ℕ} (rho : ℕ) (m_e : ℝ) (T_w : HeckeElement n) : ℝ :=
   categoricalMass rho m_e T_w * m_e_MeV_codata
 
 /-- **MeV mass is non-negative**. -/

@@ -1,3 +1,5 @@
+import Mathlib.Data.Real.Basic
+
 /-!
 # QOU.dq_squared — archimedean specialisation of `d_q² α`
 

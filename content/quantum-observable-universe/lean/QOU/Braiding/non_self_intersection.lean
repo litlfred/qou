@@ -1,3 +1,5 @@
+import Mathlib.Data.Real.Basic
+
 /-!
 # QOU.Braiding.non_self_intersection — categorical Möbius energy diverges at self-intersection
 
