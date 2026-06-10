@@ -91,6 +91,7 @@ import QOU.MathlibExt.RpowAlgebra
 import QOU.Braiding.HnMarkovTrace
 import QOU.Braiding.TrMHopfSigma1SqClosedForm
 import QOU.Braiding.JonesMobiusDiagonal
+import QOU.Braiding.HeckeGenPolyReduction
 import QOU.Information.HeckeLogDecomposition
 import QOU.JetHorizon
 import QOU.MagicShell.DeltaCouplingSubstrateForm
