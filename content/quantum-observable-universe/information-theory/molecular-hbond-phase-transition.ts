@@ -21,6 +21,7 @@ export default remark({
     "prop:tetrahedral-hbond-directions",
     "prop:boltzmann-constant",
     "def:quantum-temperature",
+    "def:van-der-waals-hopf-channel",
   ],
   tags: [
     "phase-transition",

@@ -388,6 +388,30 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
       units: "%",
     }),
 
+    // ── van der Waals = Hopf symmetric block (operator-selection SDP) ──
+    vdw_sigma1sq_pct_symmetric: Object.freeze({
+      name: "vdw_sigma1sq_pct_symmetric",
+      description:
+        "Symmetric-block fraction q²/(q²+q⁻²) of the Hopf link σ₁² (vdW-dominated).",
+      symbol: "q^2/(q^2+q^{-2})",
+      witnessFile:
+        "folio-assistant/computations/hbond-vdw-sdp.witness.json",
+      witnessPath: "data.sigma1sq_pct_symmetric",
+      defaultPrecision: 1,
+      units: "%",
+    }),
+    vdw_e_plus_qdim: Object.freeze({
+      name: "vdw_e_plus_qdim",
+      description:
+        "Markov q-dimension of the symmetric block e₊ (the van der Waals channel).",
+      symbol: "\\mathrm{tr}_M(e_+)",
+      witnessFile:
+        "folio-assistant/computations/hbond-vdw-sdp.witness.json",
+      witnessPath: "data.tr_M_e_plus_symmetric_vdw",
+      defaultPrecision: 3,
+      units: null,
+    }),
+
     H_A: Object.freeze({
       name: "H_A",
       description: "Planck constant ℏ_q = q - q^{-1} at the substrate.",
