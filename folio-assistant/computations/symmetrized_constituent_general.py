@@ -69,7 +69,6 @@ from q_parameter import Q as Q0  # noqa: E402
 
 mp.mp.dps = 40
 DIV = SymbolicHeckeDivision()
-Q0_MP = mp.mpf(str(Q0))
 
 # Isotope set: light + a few doubly-magic. (Z, N). max(Z,N) sets the power-sum
 # order; ¹⁶O (8,8) caps kmax at 8 — p_1..p_8 per nucleon is the only Hecke cost.
@@ -134,7 +133,10 @@ def frobenius(p, Z, fermionic=False):
 
 
 def main() -> int:
-    t0 = time.time()
+    # WitnessBuilder computes durationMs = monotonic() − start_time, so the
+    # baseline must be a monotonic stamp (not epoch time.time(), which yields a
+    # spurious negative duration ≈ −epoch).
+    t0 = time.monotonic()
     kmax = max(max(Z, N) for _, Z, N in ISOTOPES)
 
     # Single-nucleon cores on H₃ (canonical proton / neutron braid words).
