@@ -35,7 +35,7 @@ class NsKummerSpecialisationContext extends QOU.Shared.SobolevHkRegularityContex
   /-- Manuscript sub-claim (iii) — Obstruction vanishes only at
       Kummer levels n ∣ χ(A), which form a finite set. -/
   claim_iii_obstruction_vanishes_finitely : ∀ n : ℕ, 1 ≤ n →
-    kappa_vanishes n ↔ (n : ℤ) ∣ chi_A
+    (kappa_vanishes n ↔ (n : ℤ) ∣ chi_A)
 /-- **Content statement** (from manuscript):
 
 Let $(\mathbf{C}, A, \tau)$ be a QOU with
