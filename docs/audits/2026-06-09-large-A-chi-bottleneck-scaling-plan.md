@@ -273,6 +273,53 @@ validated at 50-dps ε vs the chi-*-free witnesses):
 proven-feasible transfer-matrix path (~minutes at ⁶Li) whose only
 missing piece is the running-basis interface operator (F-matrix).
 
+## 8c. SUPERSEDED — the F-matrix was never needed (fine Bratteli + word monotonicity)
+
+> Implemented in `chi_monotone_transfer.py` (PR #2097). §8b's
+> coarse-multiplicity F-matrix is **not required**; the atom χ is
+> simpler and faster than projected.
+
+§8b reasoned over the **coarse** chain (fuse one 3-strand nucleon per
+step), where the junction σ couples blocks and forces the running
+multiplicity m_k[ξ] (the 90M / 7.2e9 state sizes). That framing missed a
+structural fact about the **word**, not the basis:
+
+- **The atom braid word is MONOTONE** in generator index (verified D…⁷Li):
+  nucleon k uses gens 3k, 3k+1, junction 3k+2, then k+1 starts at 3k+3 —
+  no generator is ever revisited. Every atom-word factor has c=1, so each
+  O_g = Π(σ_g + d_j·1) is a polynomial in σ_g **alone**.
+
+- In the **fine** Bratteli / GZ basis (add ONE box per step — which is
+  *multiplicity-free*), σ_g changes only level g+1, and closing the
+  character trace forces every O_g to contribute its diagonal block. So
+
+      χ^λ(W) = Σ_{chains ∅→…→λ} Π_g [O_g]_{s_{g+1},s_{g+1}}
+
+  a transfer matrix over fine-Bratteli **edges** (s_g ⊂ s_{g+1}) — a few
+  thousand at n=21, **never the coarse multiplicity** and never d_λ. The
+  interface σ is just one more O_g; no Hecke Clebsch–Gordan / F-matrix /
+  running-multiplicity tensor is needed.
+
+**Measured** (canonical color-weighted, q₀, 50 dps, hand-rolled 2×2):
+
+  | atom | n | χ wall | tr_M(atom) |
+  |---|---|---|---|
+  | ⁶Li | 18 | **0.62 s** | 0.00789 |
+  | ⁷Li | 21 | **1.68 s** | 0.00211 |
+  | ⁹Be | 27 | 10.2 s | — |
+  | ¹⁰B | 30 | 138 s→(opt) | — |
+
+so ⁶Li is **seconds, not minutes** — a further ~10²–10³× over §8b's
+estimate, and ~10¹¹× over the per-basis-vector wall (§7a). Validated to
+the 50-dps floor vs char_fast (color-weighted, n=6) and the cached native
+oracles D/T/³He/⁴He (strict_averaged, n≤12). Canonical tr_M(β_atom)/
+tr_M(β_free) for any A then assembles via `tr_m_atom_via_transfer.py`
+(Σ y_λ χ^λ), closing the A≥3 gap that needed Path-3/markov_peel.
+
+**Lesson**: prefer the finest multiplicity-free chain + exploit word
+structure (monotonicity) before reaching for category-level recoupling
+machinery — the §8b F-matrix was a correct-but-unnecessary detour.
+
 ## 9. See also
 
 - [`2026-06-08-matrix-m-optimization-A-8-9-path.md`](2026-06-08-matrix-m-optimization-A-8-9-path.md) — Tier-1/2/3 plan (dim table corrected here, recommendation confirmed)
