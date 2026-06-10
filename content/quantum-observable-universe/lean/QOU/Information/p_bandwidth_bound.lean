@@ -1,3 +1,6 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Tactic.Linarith
+
 /-!
 # QOU.Information.p_bandwidth_bound — P-time iff bandwidth-bounded Skein
 
@@ -57,7 +60,7 @@ theorem informationBandwidth_pos [ctx : PBandwidthContext] :
   have hq_pos : 0 < ctx.q := by linarith [ctx.q_gt_one]
   have hq_sub_one_sq_pos : 0 < (ctx.q - 1) ^ 2 := by
     have : ctx.q - 1 > 0 := by linarith [ctx.q_gt_one]
-    exact sq_pos_of_ne_zero _ (by linarith)
+    exact pow_pos this 2
   exact div_pos (mul_pos hq_pos ctx.η_q_pos) hq_sub_one_sq_pos
 
 /-- **P-time iff bandwidth-bounded Skein evaluation**

@@ -82,7 +82,9 @@ theorem empirical_deltaI_le_one :
 theorem empirical_deltaI_in_zero_one :
     ∀ iso ∈ empiricalDoubleMagicIsotopes, iso.deltaI ∈ ({0, 1} : Set ℤ) := by
   intro iso h
-  fin_cases h <;> (right; decide) <|> (left; decide)
+  fin_cases h <;>
+    simp only [Set.mem_insert_iff, Set.mem_singleton_iff] <;>
+    decide
 
 /-! ## §3  The Δi ≤ 1 conjecture -/
 
