@@ -622,6 +622,7 @@ export default chapter({
         "ks-finiteness-via-diamond-lemma",
         "spectral-sequence-collapse",
         "delta-q-decoration",
+        "alpha-basis-knot-delta-q",
         "force-carrier-intertwining-correspondence",
         "alpha-shift-torus-knot",
         "alpha-shift-torus-knot-table-data",
