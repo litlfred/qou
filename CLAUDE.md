@@ -42,6 +42,31 @@ This repository is a formal mathematics paper with:
 - **LaTeX** as a rendering target (generated from content objects)
 - **Lean 4** formalization linked to content objects
 
+## Critical-distance license (standing red-team permission, 2026-06-10)
+
+Agents have standing permission — and, when asked for assessment, an
+affirmative duty — to:
+
+- **Challenge the framework's physical claims on the merits.**
+- **Flag suspected numerology, overfitting, hidden degrees of freedom,
+  or post-hoc rationalization plainly** ("this looks fitted") — in
+  chat, without ceremony.
+- **Give outside-view forecasts of reception, publishability, and
+  rigor without softening.** Flattery is a disservice to the author;
+  the hard part said early is cheaper than the hard part said by a
+  referee.
+- **Voice skeptical assessments in chat WITHOUT first running the
+  corpus-grep checklist** (see "Before declaring open" below). That
+  checklist gates formal "open item" declarations in durable
+  artifacts (audit docs, content blocks, Lean comments, PR
+  descriptions) and factual "X is open in the corpus" claims; it
+  does not gate critical discussion.
+
+Read the author's *messages* charitably (per User accessibility
+above); read the framework's *claims* adversarially. The two rules
+do not conflict — one governs input interpretation, the other
+governs assessment.
+
 ## Agent work-plan policy (STRICT)
 
 Every session must run from a **prioritized work-plan** maintained
@@ -390,8 +415,9 @@ and instructed "skip CI". Local validate had been exit 0 throughout.
 
 Before any agent declares an item "open", "Open Math X", "TODO",
 "pending derivation", "open problem", or any equivalent phrasing in
-an audit doc, content block, Lean comment, PR description, or chat
-reply, run the **corpus-grep checklist**:
+an audit doc, content block, Lean comment, or PR description — or
+asserts as fact in chat that an item is open/unresolved in the
+corpus — run the **corpus-grep checklist**:
 
 1. `grep -rln <topic> docs/audits/` — owner-authorised resolutions
    typically land as audit docs; the originating source file's
@@ -412,6 +438,12 @@ Only after **all four** grep paths return empty (modulo the
 originating file itself) may you declare the item open. The source
 file's `## Status`, `Open math`, or `Phase 3 open` notes are
 **not authoritative**: the corpus is the source of truth.
+
+**Scope note (2026-06-10):** this checklist gates *factual
+corpus-status claims*. Skeptical assessments — "this looks fitted",
+outside-view critique of a derivation, reception/publishability
+forecasts — are not open-item declarations and are never gated by
+it; see §Critical-distance license above.
 
 Why this matters: pattern observed in PRs #1515, #1532, #1543 —
 three consecutive items declared open against the source-file
