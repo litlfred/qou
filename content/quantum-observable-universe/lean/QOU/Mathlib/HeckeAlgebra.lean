@@ -1796,7 +1796,7 @@ theorem H3.blockSym3_sq_first_component (q : ℝ) :
     (H3.mul q (H3.blockSym3 q) (H3.blockSym3 q)).1
       = (H3.blockSym3 q).1 := by
   have hP : ((1 : ℝ) + 2 * q ^ 2 + 2 * q ^ 4 + q ^ 6) ≠ 0 :=
-    ne_of_gt (by nlinarith [sq_nonneg q, sq_nonneg (q ^ 2), sq_nonneg (q ^ 3)])
+    H3.poincare_ne_zero q
   unfold H3.mul H3.smul H3.add H3.blockSym3 H3.poincare
          H3.mulSigma1 H3.mulSigma2
   field_simp
@@ -1810,11 +1810,11 @@ theorem H3.blockSym3_sq_first_component (q : ℝ) :
 theorem H3.blockSym3_blockAlt3_orthogonal_first (q : ℝ) (hq : q ≠ 0) :
     (H3.mul q (H3.blockSym3 q) (H3.blockAlt3 q)).1 = 0 := by
   have hP : ((1 : ℝ) + 2 * q ^ 2 + 2 * q ^ 4 + q ^ 6) ≠ 0 :=
-    ne_of_gt (by nlinarith [sq_nonneg q, sq_nonneg (q ^ 2), sq_nonneg (q ^ 3)])
-  have hPd : ((q : ℝ) ^ 6 + 2 * q ^ 4 + 2 * q ^ 2 + 1) ≠ 0 :=
-    ne_of_gt (by nlinarith [sq_nonneg q, sq_nonneg (q ^ 2), sq_nonneg (q ^ 3)])
+    H3.poincare_ne_zero q
+  have hPd : ((q : ℝ) ^ 6 + 2 * q ^ 4 + 2 * q ^ 2 + 1) ≠ 0 := fun h =>
+    H3.poincare_ne_zero q (by unfold H3.poincare; linarith)
   have hPi : ((1 : ℝ) + 2 * q⁻¹ ^ 2 + 2 * q⁻¹ ^ 4 + q⁻¹ ^ 6) ≠ 0 :=
-    ne_of_gt (by nlinarith [sq_nonneg q⁻¹, sq_nonneg (q⁻¹ ^ 2), sq_nonneg (q⁻¹ ^ 3)])
+    H3.poincare_ne_zero q⁻¹
   unfold H3.mul H3.smul H3.add H3.blockSym3 H3.blockAlt3 H3.poincare
          H3.mulSigma1 H3.mulSigma2
   field_simp
@@ -1829,9 +1829,9 @@ set_option maxHeartbeats 2000000 in
 theorem H3.blockSym3_sq (q : ℝ) (hq : q ≠ 0) :
     H3.mul q (H3.blockSym3 q) (H3.blockSym3 q) = H3.blockSym3 q := by
   have hP : ((1 : ℝ) + 2 * q ^ 2 + 2 * q ^ 4 + q ^ 6) ≠ 0 :=
-    ne_of_gt (by nlinarith [sq_nonneg q, sq_nonneg (q ^ 2), sq_nonneg (q ^ 3)])
-  have hPd : ((q : ℝ) ^ 6 + 2 * q ^ 4 + 2 * q ^ 2 + 1) ≠ 0 :=
-    ne_of_gt (by nlinarith [sq_nonneg q, sq_nonneg (q ^ 2), sq_nonneg (q ^ 3)])
+    H3.poincare_ne_zero q
+  have hPd : ((q : ℝ) ^ 6 + 2 * q ^ 4 + 2 * q ^ 2 + 1) ≠ 0 := fun h =>
+    H3.poincare_ne_zero q (by unfold H3.poincare; linarith)
   unfold H3.mul H3.smul H3.add H3.blockSym3 H3.poincare
          H3.mulSigma1 H3.mulSigma2
   refine Prod.ext ?_ (Prod.ext ?_ (Prod.ext ?_
@@ -1843,10 +1843,10 @@ set_option maxHeartbeats 2000000 in
     components), with the sign block's `P(q⁻¹)` normalizer. -/
 theorem H3.blockAlt3_sq (q : ℝ) (hq : q ≠ 0) :
     H3.mul q (H3.blockAlt3 q) (H3.blockAlt3 q) = H3.blockAlt3 q := by
-  have hPd : ((q : ℝ) ^ 6 + 2 * q ^ 4 + 2 * q ^ 2 + 1) ≠ 0 :=
-    ne_of_gt (by nlinarith [sq_nonneg q, sq_nonneg (q ^ 2), sq_nonneg (q ^ 3)])
+  have hPd : ((q : ℝ) ^ 6 + 2 * q ^ 4 + 2 * q ^ 2 + 1) ≠ 0 := fun h =>
+    H3.poincare_ne_zero q (by unfold H3.poincare; linarith)
   have hPi : ((1 : ℝ) + 2 * q⁻¹ ^ 2 + 2 * q⁻¹ ^ 4 + q⁻¹ ^ 6) ≠ 0 :=
-    ne_of_gt (by nlinarith [sq_nonneg q⁻¹, sq_nonneg (q⁻¹ ^ 2), sq_nonneg (q⁻¹ ^ 3)])
+    H3.poincare_ne_zero q⁻¹
   unfold H3.mul H3.smul H3.add H3.blockAlt3 H3.poincare
          H3.mulSigma1 H3.mulSigma2
   refine Prod.ext ?_ (Prod.ext ?_ (Prod.ext ?_
@@ -1860,11 +1860,11 @@ set_option maxHeartbeats 4000000 in
 theorem H3.blockMixed21_sq (q : ℝ) (hq : q ≠ 0) :
     H3.mul q (H3.blockMixed21 q) (H3.blockMixed21 q) = H3.blockMixed21 q := by
   have hP : ((1 : ℝ) + 2 * q ^ 2 + 2 * q ^ 4 + q ^ 6) ≠ 0 :=
-    ne_of_gt (by nlinarith [sq_nonneg q, sq_nonneg (q ^ 2), sq_nonneg (q ^ 3)])
-  have hPd : ((q : ℝ) ^ 6 + 2 * q ^ 4 + 2 * q ^ 2 + 1) ≠ 0 :=
-    ne_of_gt (by nlinarith [sq_nonneg q, sq_nonneg (q ^ 2), sq_nonneg (q ^ 3)])
+    H3.poincare_ne_zero q
+  have hPd : ((q : ℝ) ^ 6 + 2 * q ^ 4 + 2 * q ^ 2 + 1) ≠ 0 := fun h =>
+    H3.poincare_ne_zero q (by unfold H3.poincare; linarith)
   have hPi : ((1 : ℝ) + 2 * q⁻¹ ^ 2 + 2 * q⁻¹ ^ 4 + q⁻¹ ^ 6) ≠ 0 :=
-    ne_of_gt (by nlinarith [sq_nonneg q⁻¹, sq_nonneg (q⁻¹ ^ 2), sq_nonneg (q⁻¹ ^ 3)])
+    H3.poincare_ne_zero q⁻¹
   -- `simp only` (not `unfold`): the definitions unfold to fixpoint
   -- regardless of nesting order — `blockMixed21`'s body re-exposes
   -- `H3.add`/`H3.smul`, which a sequential `unfold` list misses.
@@ -1881,11 +1881,11 @@ set_option maxHeartbeats 2000000 in
 theorem H3.blockSym3_blockAlt3_orthogonal (q : ℝ) (hq : q ≠ 0) :
     H3.mul q (H3.blockSym3 q) (H3.blockAlt3 q) = (0, 0, 0, 0, 0, 0) := by
   have hP : ((1 : ℝ) + 2 * q ^ 2 + 2 * q ^ 4 + q ^ 6) ≠ 0 :=
-    ne_of_gt (by nlinarith [sq_nonneg q, sq_nonneg (q ^ 2), sq_nonneg (q ^ 3)])
-  have hPd : ((q : ℝ) ^ 6 + 2 * q ^ 4 + 2 * q ^ 2 + 1) ≠ 0 :=
-    ne_of_gt (by nlinarith [sq_nonneg q, sq_nonneg (q ^ 2), sq_nonneg (q ^ 3)])
+    H3.poincare_ne_zero q
+  have hPd : ((q : ℝ) ^ 6 + 2 * q ^ 4 + 2 * q ^ 2 + 1) ≠ 0 := fun h =>
+    H3.poincare_ne_zero q (by unfold H3.poincare; linarith)
   have hPi : ((1 : ℝ) + 2 * q⁻¹ ^ 2 + 2 * q⁻¹ ^ 4 + q⁻¹ ^ 6) ≠ 0 :=
-    ne_of_gt (by nlinarith [sq_nonneg q⁻¹, sq_nonneg (q⁻¹ ^ 2), sq_nonneg (q⁻¹ ^ 3)])
+    H3.poincare_ne_zero q⁻¹
   unfold H3.mul H3.smul H3.add H3.blockSym3 H3.blockAlt3 H3.poincare
          H3.mulSigma1 H3.mulSigma2
   refine Prod.ext ?_ (Prod.ext ?_ (Prod.ext ?_
