@@ -81,6 +81,43 @@ distinct objects; only the first two are proved:
 | Symbolic SDP strict complementarity (replace min-L2-at-q₀) | honest PARTIAL: Frobenius Gram is **indefinite** ⇒ LP objective degenerate; but the selector **direction is S-independent and q-rational** ⇒ the c_k ratios carry NO CODATA-Q_β; the single archimedean leak is the scalar `S = Q_β/E₀` which cancels in c_k | PR #1752 |
 | 6 NF coordinates of T_β | now q-rational closed forms × the single scalar S (`x_i = A_i(q)·S/‖A‖²`) — the archimedean input to the whole chain is **one number, not six** | PR #1739 step-1 closure |
 
+### 3-bis. Pre-archimedean depth-1 backbone — the q-heat route (2026-06-10, this branch)
+
+The corpus's q-exponential is the **abstract grouplike `exp_q ∈ G(ℋ_q)` over
+`ℤ[q,q⁻¹]`** (`def:q-exponential`); the familiar power series is explicitly its
+*archimedean realisation* (`prop:q-exponential-taylor` — "a theorem about the
+ℂ-fibre of the moduli of grouplikes"). Its defining Jackson equation
+`D_q exp_q = exp_q`, cleared of denominators, IS a depth-1 q-difference
+equation — the prototype cyclotomic kernel, exact at the fibre level:
+
+```
+exp_q(q·x) = (1 + (q-1)·x) · exp_q(x)
+```
+
+Consequences (Lean, sorry-free, generic `CommRing` per §7c —
+`QOU.BraidKnot.QBetaPreArchHeatDepthOneKernel`, this branch):
+
+- **Per-mode kernel.** Each Peter–Weyl heat mode `f_λ(t) = exp_q(−μ_λ·t)`
+  satisfies `f_λ(q·t) = (1 − (q−1)·μ_λ·t)·f_λ(t)`, with
+  `μ_λ(q) = ℏ_q²·Σ_cells [c]_q[c+1]_q` the content-Casimir spectrum
+  (`prop:q-heat-kernel-peter-weyl`) — q-rational, fibre-level, zeros located
+  by the spectrum (`[c]_q` factors degenerate at roots of unity → a natural
+  source for the proved ζ₄ structure).
+- **Division-free composition.** Sums of two depth-1 modes satisfy the explicit
+  depth-2 relation `(B−A)(t)·[S(q²t) − A(qt)·S(qt)] = (B−A)(qt)·B(t)·[S(qt) −
+  A(t)·S(t)]` — valid over any commutative ring (no Casoratian division). This
+  is the assembly step toward heat-trace kernels `Π_λ (1 − (q−1)·μ_λ·t)` for
+  truncations of the partition function `Z_q(t) = Σ_λ d_λ(q)·exp_q(−μ_λ·t)`.
+
+**Status: candidate FAMILY for the §2 kernel `R`, ungated.** Structural (which
+blocks are active is forced by the operator, not tuned — compatible with the
+June-9 anti-fit rule), but it must still produce a bar-odd `a₁ = −c₃ ≈ 2.07`
+and survive the constant-depth-2 `c₄` refutation (§2). The Stage-B probe on
+this branch evaluates the `R_λ` factors alongside the unbiased `c₄..c₈`
+extraction. This is the second exact pre-archimedean backbone, alongside the
+`z(q) = √q/(1+q)` 3-term recursion (PR #1739); the f-map question — how the
+ladder `F` is assembled from such atoms — is unchanged.
+
 ## 4. The unifying result — the extraction precision floor (read this first)
 
 [`2026-06-04-qbeta-ck-holonomic-c11-attempt-verdict.md`](2026-06-04-qbeta-ck-holonomic-c11-attempt-verdict.md)
