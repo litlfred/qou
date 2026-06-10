@@ -72,3 +72,34 @@ unverified idempotents.
 - `:1435` — an `H_4` Markov-trace `tr(β) = Σ …` identity (`mul_HnC4_tailored` /
   `embed_HnC3_to_HnC4`) that doesn't close; distinct from the idempotents.
 - two `No goals` (`:387`, `:1133`) — trailing tactics after a closing `simp`.
+
+## Resolution (2026-06-10, PR #2091)
+
+Implemented on `claude/awesome-sagan-br883o`; `lake build
+QOU.Mathlib.HeckeAlgebra` exit 0 (3088 jobs). All five errors above
+are cleared.
+
+- **Normalizer chosen: the S₃ Poincaré polynomial** `H3.poincare`,
+  `P(q) = Σ_{w∈S₃} q^{2ℓ(w)} = 1 + 2q² + 2q⁴ + q⁶ = (1+q²)(1+q²+q⁴)`
+  — equivalent to (and cleaner than) the "unbalanced Kauffman
+  factorial in t = q²" recommended above, and related to the balanced
+  factorial by `P(q) = q^{ℓ(w₀)}·[3]_q!` with `ℓ(w₀) = 3`. The
+  rescaling `P(q)/P(q⁻¹) = q⁶` is exactly the `q⁶·z` factor in the
+  alt3 goal. `blockSym3` divides by `P(q)`, `blockAlt3` by `P(q⁻¹)`.
+- `P(q) ≥ 1 > 0` for all real `q` (`H3.poincare_pos`), so `h_zne` is
+  dropped everywhere; only `q ≠ 0` survives (it clears the `q − q⁻¹`
+  structure constants in `mulSigma`).
+- Idempotency + orthogonality landed as four standalone theorems
+  (`H3.blockSym3_sq`, `H3.blockAlt3_sq`, `H3.blockMixed21_sq`,
+  `H3.blockSym3_blockAlt3_orthogonal`), each with its own heartbeat
+  budget; `H3WedderburnIdempotency_canonical` just references them.
+  (The original single `instance … where` shared one heartbeat budget
+  across all 24 component proofs, which is what timed out.)
+- The two `No goals` and the H₄ witness are also fixed — the latter
+  was `simp` normalising the index to the `Fin` literal `6` while
+  `h_six_one` was stated at `⟨6, ⋯⟩` (defeq bridge added).
+- Tactic gotcha recorded: sequential `unfold A B C` does **not**
+  revisit occurrences exposed by later entries in the list (this bit
+  both `blockSum_first_component` and `blockMixed21_sq`, whose bodies
+  re-expose `H3.add`/`H3.smul`); `simp only [defs]` unfolds to
+  fixpoint and is order-independent.
