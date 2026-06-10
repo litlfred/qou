@@ -1,4 +1,5 @@
 import Mathlib.Algebra.Group.Basic
+import Mathlib.Data.Real.Basic
 
 /-!
 # QOU.Mathlib.NonAbelianStokes — Yekutieli's non-abelian Stokes (axiomatised)
@@ -421,18 +422,16 @@ theorem piecewiseAffineLineIntegral_replicate {G : Type u} [Group G]
     (g : G) (n : ℕ) :
     piecewiseAffineLineIntegral (List.replicate n g) = g ^ n := by
   induction n with
-  | zero => exact piecewiseAffineLineIntegral_nil
+  | zero => simpa using piecewiseAffineLineIntegral_nil (G := G)
   | succ k ih =>
     show piecewiseAffineLineIntegral (List.replicate (k + 1) g) = g ^ (k + 1)
     rw [List.replicate_succ]
     -- replicate (k+1) g = g :: replicate k g
     -- piecewiseAffineLineIntegral (g :: rs) = g * piecewiseAffineLineIntegral rs
     show ((List.replicate k g).foldl (· * ·) (1 * g)) = g ^ (k + 1)
-    rw [foldl_mul_distributes, ih, one_mul, pow_succ]
-    -- Goal becomes `g * g^k = g^k * g`, the abelian-on-pow identity
-    -- via repeated commutation; for a general group we close via
-    -- `pow_succ` showing g^{k+1} = g^k * g, then commute.
-    rw [mul_comm g (g ^ k)]
+    -- cast the IH to the unfolded foldl form so the rewrite finds it
+    have ih' : (List.replicate k g).foldl (· * ·) 1 = g ^ k := ih
+    rw [foldl_mul_distributes, ih', one_mul, ← pow_succ']
 
 /-- **Reverse-and-invert closure**: integrating the reverse list of
     inverses yields the inverse of the original integral.
@@ -444,7 +443,7 @@ theorem piecewiseAffineLineIntegral_reverse_inverse_pair {G : Type u} [Group G]
     piecewiseAffineLineIntegral [g, h] *
       piecewiseAffineLineIntegral [h⁻¹, g⁻¹] = (1 : G) := by
   show (1 * g * h) * (1 * h⁻¹ * g⁻¹) = 1
-  rw [one_mul, one_mul, mul_assoc g h h⁻¹, mul_inv_cancel, mul_one,
+  rw [one_mul, one_mul, ← mul_assoc, mul_assoc g h h⁻¹, mul_inv_cancel, mul_one,
       mul_inv_cancel]
 
 /-- **Concatenation identity-left**: prepending an empty path
