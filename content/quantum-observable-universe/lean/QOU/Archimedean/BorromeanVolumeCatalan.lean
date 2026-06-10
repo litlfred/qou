@@ -2,7 +2,6 @@ import QOU.Archimedean.HyperbolicVolumeTranscendence
 import Mathlib.Data.Real.Basic
 import Mathlib.Tactic.NormNum
 import Mathlib.Analysis.SpecificLimits.Basic
-import Mathlib.Analysis.Series
 import Mathlib.MeasureTheory.Integral.IntervalIntegral
 
 /-!
@@ -197,7 +196,6 @@ theorem geom_leading_eq_8G_over_hbar_q_sq (q : ℝ) (hq : q > 1) :
     vol_B3 / ((q - 1) / q) ^ 2 = 8 * catalan_G * q ^ 2 / (q - 1) ^ 2 := by
   rw [vol_B3_eq_8_catalan]
   field_simp
-  ring
 
 /-- `vol_B3 > 0` via the Catalan identity (alternative proof using §1
     positivity of `catalan_G`). -/

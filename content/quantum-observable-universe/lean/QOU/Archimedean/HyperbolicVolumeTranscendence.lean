@@ -613,11 +613,12 @@ theorem HyperbolicVolumeIndependence.implies_borel_zagier
 Composing propositions 1–2 with the number-theoretic conjectures
 gives the Yekutieli bridge theorem. -/
 
-/-- **Yekutieli bridge.** Non-collapse of the brane tower implies
+/-! **Yekutieli bridge.** Non-collapse of the brane tower implies
     algebraic independence, via tower decomposition + CS faithfulness.
 
-    Proof status: `sorry` — requires quantum dilogarithm arithmetic
-    control (Nesterenko-type theorem for Li₂ at algebraic arguments).
+    Proof status: conjectural class below — requires quantum dilogarithm
+    arithmetic control (Nesterenko-type theorem for Li₂ at algebraic
+    arguments).
 
     LaTeX: `\label{rem:yekutieli-transcendence-shadow}` -/
 -- Per CLAUDE.md §3b: a conjecture in the YekutieliLiftingCondition
