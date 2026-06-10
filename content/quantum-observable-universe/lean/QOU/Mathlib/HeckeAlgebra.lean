@@ -702,38 +702,40 @@ theorem H4.poincare_ne_zero (q : ℝ) : H4.poincare q ≠ 0 :=
     invariant statement (sums, traces, length fibers) is
     enumeration-independent.  Normalizer forced by
     `T_w e_[4] = q^{ℓ(w)} e_[4]` (cf. `H3.blockSym3`). -/
+open QOU.Mathlib.PermutationEnumeration in
 noncomputable def H4.blockSym4 (q : ℝ) : H4Carrier ℝ :=
   fun i =>
-    q ^ (QOU.Mathlib.PermutationEnumeration.lengthFn 4 i) / H4.poincare q
+    q ^ (lengthFn 4 i) / H4.poincare q
 
 /-- Antisymmetric Wedderburn projector `e_[1^4]` for `H_4(q)`:
     `i ↦ (-q⁻¹)^{ℓ(i)} / P₄(q⁻¹)` — sign-block weights at the
     `-q⁻¹` Hecke eigenvalue, normalized by the Poincaré
     polynomial at `q⁻¹` (cf. `H3.blockAlt3`). -/
+open QOU.Mathlib.PermutationEnumeration in
 noncomputable def H4.blockAlt4 (q : ℝ) : H4Carrier ℝ :=
   fun i =>
-    (-q⁻¹) ^ (QOU.Mathlib.PermutationEnumeration.lengthFn 4 i)
-      / H4.poincare q⁻¹
+    (-q⁻¹) ^ (lengthFn 4 i) / H4.poincare q⁻¹
 
 /-- **`S_4` length distribution**: the number of permutations at
     Coxeter length `0,…,6` is `1, 3, 5, 6, 5, 3, 1` (the
     coefficient row of `P₄`; total `24 = 4!`).  Evaluated by
     `decide` over the 24 permutations. -/
+open QOU.Mathlib.PermutationEnumeration in
 theorem H4.s4_length_card :
     (((Finset.univ : Finset (Equiv.Perm (Fin 4))).filter
-      (fun w => QOU.Mathlib.PermutationEnumeration.coxeterLength w = 0)).card = 1) ∧
+      (fun w => coxeterLength w = 0)).card = 1) ∧
     (((Finset.univ : Finset (Equiv.Perm (Fin 4))).filter
-      (fun w => QOU.Mathlib.PermutationEnumeration.coxeterLength w = 1)).card = 3) ∧
+      (fun w => coxeterLength w = 1)).card = 3) ∧
     (((Finset.univ : Finset (Equiv.Perm (Fin 4))).filter
-      (fun w => QOU.Mathlib.PermutationEnumeration.coxeterLength w = 2)).card = 5) ∧
+      (fun w => coxeterLength w = 2)).card = 5) ∧
     (((Finset.univ : Finset (Equiv.Perm (Fin 4))).filter
-      (fun w => QOU.Mathlib.PermutationEnumeration.coxeterLength w = 3)).card = 6) ∧
+      (fun w => coxeterLength w = 3)).card = 6) ∧
     (((Finset.univ : Finset (Equiv.Perm (Fin 4))).filter
-      (fun w => QOU.Mathlib.PermutationEnumeration.coxeterLength w = 4)).card = 5) ∧
+      (fun w => coxeterLength w = 4)).card = 5) ∧
     (((Finset.univ : Finset (Equiv.Perm (Fin 4))).filter
-      (fun w => QOU.Mathlib.PermutationEnumeration.coxeterLength w = 5)).card = 3) ∧
+      (fun w => coxeterLength w = 5)).card = 3) ∧
     (((Finset.univ : Finset (Equiv.Perm (Fin 4))).filter
-      (fun w => QOU.Mathlib.PermutationEnumeration.coxeterLength w = 6)).card = 1) := by
+      (fun w => coxeterLength w = 6)).card = 1) := by
   decide
 
 open QOU.Mathlib.PermutationEnumeration in

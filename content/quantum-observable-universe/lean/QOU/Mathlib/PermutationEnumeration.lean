@@ -1,5 +1,10 @@
 import Mathlib.GroupTheory.Perm.Basic
 import Mathlib.Data.Fintype.Perm
+import Mathlib.Data.Fintype.Prod
+import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.BigOperators.Group.Finset.Defs
+import Mathlib.Data.Finset.Lattice.Fold
+import Mathlib.Tactic.FinCases
 
 /-!
 # QOU.Mathlib.PermutationEnumeration — `Fin n! ≃ Equiv.Perm (Fin n)`
@@ -431,38 +436,12 @@ theorem lengthFn3_table_max :
     Length distribution: total length = 0+3·1+5·2+6·3+5·4+3·5+1·6
     = 0+3+10+18+20+15+6 = 72.
     Maximum length: 6 (longest element of S_4). -/
-def lengthFn4_table : Fin 24 → ℕ
-  -- length 0
-  | ⟨0,  _⟩ => 0
-  -- length 1: σ_1, σ_2, σ_3
-  | ⟨1,  _⟩ => 1
-  | ⟨2,  _⟩ => 1
-  | ⟨3,  _⟩ => 1
-  -- length 2: σ_1σ_2, σ_2σ_1, σ_2σ_3, σ_3σ_2, σ_1σ_3
-  | ⟨4,  _⟩ => 2
-  | ⟨5,  _⟩ => 2
-  | ⟨6,  _⟩ => 2
-  | ⟨7,  _⟩ => 2
-  | ⟨8,  _⟩ => 2
-  -- length 3: 6 elements
-  | ⟨9,  _⟩ => 3
-  | ⟨10, _⟩ => 3
-  | ⟨11, _⟩ => 3
-  | ⟨12, _⟩ => 3
-  | ⟨13, _⟩ => 3
-  | ⟨14, _⟩ => 3
-  -- length 4: 5 elements
-  | ⟨15, _⟩ => 4
-  | ⟨16, _⟩ => 4
-  | ⟨17, _⟩ => 4
-  | ⟨18, _⟩ => 4
-  | ⟨19, _⟩ => 4
-  -- length 5: 3 elements
-  | ⟨20, _⟩ => 5
-  | ⟨21, _⟩ => 5
-  | ⟨22, _⟩ => 5
-  -- length 6: longest
-  | ⟨23, _⟩ => 6
+def lengthFn4_table (i : Fin 24) : ℕ :=
+  -- length-ordered: 1×0, 3×1, 5×2, 6×3, 5×4, 3×5, 1×6
+  -- (list-lookup form: a 24-case `Fin` literal match trips the
+  --  match compiler's exhaustiveness check at this size)
+  [0, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3,
+   4, 4, 4, 4, 4, 5, 5, 5, 6].getD i.val 0
 
 /-- Length distribution at S_4: total length = 72. -/
 theorem lengthFn4_table_sum :
@@ -657,16 +636,20 @@ theorem coxeterLength_longest_alt_in_S4 :
 /-! ### S_5 generators and length theorems -/
 
 /-- The first simple transposition `(0 1)` in S_5. -/
-def sigma1_in_S5 : Equiv.Perm (Fin 5) := simpleTransposition 5 0
+def sigma1_in_S5 : Equiv.Perm (Fin 5) :=
+  simpleTransposition (n := 5) ⟨0, by decide⟩ (by decide)
 
 /-- The second simple transposition `(1 2)` in S_5. -/
-def sigma2_in_S5 : Equiv.Perm (Fin 5) := simpleTransposition 5 1
+def sigma2_in_S5 : Equiv.Perm (Fin 5) :=
+  simpleTransposition (n := 5) ⟨1, by decide⟩ (by decide)
 
 /-- The third simple transposition `(2 3)` in S_5. -/
-def sigma3_in_S5 : Equiv.Perm (Fin 5) := simpleTransposition 5 2
+def sigma3_in_S5 : Equiv.Perm (Fin 5) :=
+  simpleTransposition (n := 5) ⟨2, by decide⟩ (by decide)
 
 /-- The fourth simple transposition `(3 4)` in S_5. -/
-def sigma4_in_S5 : Equiv.Perm (Fin 5) := simpleTransposition 5 3
+def sigma4_in_S5 : Equiv.Perm (Fin 5) :=
+  simpleTransposition (n := 5) ⟨3, by decide⟩ (by decide)
 
 /-- Each simple transposition has Coxeter length 1. -/
 theorem coxeterLength_sigma1_in_S5 :
