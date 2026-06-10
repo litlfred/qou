@@ -88,9 +88,19 @@ def main() -> int:
     )
     w.add_data("rows", rows_out)
     w.add_data("interpretation",
-               "rows≤3 recovers ≥99% of tr_M with max irrep dim ≪ the deep "
-               "partitions; the binding path can drop the high-row reps "
-               "(coordinate the production wire-in with #2062 reduced-block).")
+               "rows≤3 recovers ≥99.9% of tr_M, i.e. ~10^-3 TRUNCATION ERROR "
+               "(no exact-χ selection rule; dropped partitions are nonzero). "
+               "This is FAR above the 1-ppQ (10^-15) _precision requirement, "
+               "so truncation is INVALID for production; valid only with a "
+               "proven tail bound < 10^-15. The lossless scaling win is "
+               "per-nucleon block caching (keeps all partitions), not "
+               "truncation. This probe measures concentration only.")
+    w.add_data("precision_caveat", {
+        "exact_chi_zeros": 0,
+        "dropped_tail_relative": "~1e-3 (>> 1ppQ 1e-15)",
+        "verdict": "NOT a precision-valid truncation; see "
+                   "docs/audits/2026-06-10-binding-active-set-compute-optimization.md",
+    })
     # rows<=3 must recover >= 99% on the cached isotopes
     min_r3 = min(r["by_max_rows_R"][3]["frac_recovered"] for r in rows_out)
     w.add_assertion(
