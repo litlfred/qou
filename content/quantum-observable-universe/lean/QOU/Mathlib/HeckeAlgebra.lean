@@ -608,8 +608,12 @@ noncomputable def H3.blockMixed21 (q : ℝ) : H3Carrier ℝ :=
 theorem H3.blockSum_first_component (q : ℝ) :
     (H3.blockSym3 q).1 + (H3.blockAlt3 q).1 + (H3.blockMixed21 q).1
       = (H3.one ℝ).1 := by
-  unfold H3.blockSym3 H3.blockAlt3 H3.blockMixed21 H3.add H3.smul H3.one
-  simp
+  -- `e_[2,1]`'s first component is definitionally
+  -- `1 + ((-1)·a + (-1)·b)` with `a`, `b` the first components of
+  -- the two rank-1 projectors; the sum telescopes by `ring` with
+  -- `a`, `b` as atoms (no normalizer values needed).
+  show (H3.blockSym3 q).1 + (H3.blockAlt3 q).1
+      + (1 + ((-1) * (H3.blockSym3 q).1 + (-1) * (H3.blockAlt3 q).1)) = 1
   ring
 
 /-! ### H_4 carrier sketch (24-dimensional)
@@ -1464,8 +1468,11 @@ theorem markov_axiom_identity_witness (q z : ℝ)
   rw [Finset.sum_congr rfl (fun j _ => heq j)]
   -- Step 2: only the j = ⟨6, _⟩ term contributes
   rw [Finset.sum_eq_single (⟨6, by decide⟩ : Fin 24)]
-  · -- The value at j = ⟨6, _⟩
-    simp [h_six_one]
+  · -- The value at j = ⟨6, _⟩.  `simp` normalises the index to the
+    -- `Fin` literal `6`, so bridge `h_six_one` to that form first
+    -- (definitionally equal).
+    have h6 : lengthFn4 (6 : Fin 24) = 1 := h_six_one
+    simp [h6]
   · -- Other indices contribute 0
     intro j _ hne
     have : j.val ≠ 6 := by
@@ -1815,62 +1822,87 @@ theorem H3.blockSym3_blockAlt3_orthogonal_first (q : ℝ) (hq : q ≠ 0) :
   field_simp
   ring
 
-/-- **Concrete instance attempt** for `H3WedderburnIdempotency`.
-    Each field discharged via `unfold + Prod.ext chain + field_simp;
-    ring`.  The full proof expands to ~24 component identities
-    each closing by ring arithmetic modulo `q ≠ 0`.
+set_option maxHeartbeats 2000000 in
+/-- **Full idempotency of `e_[3]`** (all six carrier components).
+    Each component clears its `P(q)` denominators by `field_simp`
+    (the normalizer is unconditionally non-zero; `q ≠ 0` clears the
+    `q - q⁻¹` structure constants) and closes by `ring` against the
+    Poincaré identity `Σ_w q^{2ℓ(w)} = P(q)`. -/
+theorem H3.blockSym3_sq (q : ℝ) (hq : q ≠ 0) :
+    H3.mul q (H3.blockSym3 q) (H3.blockSym3 q) = H3.blockSym3 q := by
+  have hP : ((1 : ℝ) + 2 * q ^ 2 + 2 * q ^ 4 + q ^ 6) ≠ 0 :=
+    ne_of_gt (by nlinarith [sq_nonneg q, sq_nonneg (q ^ 2), sq_nonneg (q ^ 3)])
+  have hPd : ((q : ℝ) ^ 6 + 2 * q ^ 4 + 2 * q ^ 2 + 1) ≠ 0 :=
+    ne_of_gt (by nlinarith [sq_nonneg q, sq_nonneg (q ^ 2), sq_nonneg (q ^ 3)])
+  unfold H3.mul H3.smul H3.add H3.blockSym3 H3.poincare
+         H3.mulSigma1 H3.mulSigma2
+  refine Prod.ext ?_ (Prod.ext ?_ (Prod.ext ?_
+    (Prod.ext ?_ (Prod.ext ?_ ?_))))
+  all_goals (simp only [Prod.fst, Prod.snd]; field_simp; ring)
 
-    User note: this instance is the user's lake-build verification
-    target.  Iteration may be needed if `simp` / `Prod.ext` /
-    `ring` don't close cleanly inline; the structural shape is
-    correct (each idempotency / orthogonality identity is a
-    polynomial identity in `q`). -/
+set_option maxHeartbeats 2000000 in
+/-- **Full idempotency of `e_[1,1,1]`** (all six carrier
+    components), with the sign block's `P(q⁻¹)` normalizer. -/
+theorem H3.blockAlt3_sq (q : ℝ) (hq : q ≠ 0) :
+    H3.mul q (H3.blockAlt3 q) (H3.blockAlt3 q) = H3.blockAlt3 q := by
+  have hPd : ((q : ℝ) ^ 6 + 2 * q ^ 4 + 2 * q ^ 2 + 1) ≠ 0 :=
+    ne_of_gt (by nlinarith [sq_nonneg q, sq_nonneg (q ^ 2), sq_nonneg (q ^ 3)])
+  have hPi : ((1 : ℝ) + 2 * q⁻¹ ^ 2 + 2 * q⁻¹ ^ 4 + q⁻¹ ^ 6) ≠ 0 :=
+    ne_of_gt (by nlinarith [sq_nonneg q⁻¹, sq_nonneg (q⁻¹ ^ 2), sq_nonneg (q⁻¹ ^ 3)])
+  unfold H3.mul H3.smul H3.add H3.blockAlt3 H3.poincare
+         H3.mulSigma1 H3.mulSigma2
+  refine Prod.ext ?_ (Prod.ext ?_ (Prod.ext ?_
+    (Prod.ext ?_ (Prod.ext ?_ ?_))))
+  all_goals (simp only [Prod.fst, Prod.snd]; field_simp; ring)
+
+set_option maxHeartbeats 4000000 in
+/-- **Full idempotency of `e_[2,1]`** (all six carrier components).
+    The largest expansion of the four (three blocks plus the unit);
+    heartbeats raised accordingly. -/
+theorem H3.blockMixed21_sq (q : ℝ) (hq : q ≠ 0) :
+    H3.mul q (H3.blockMixed21 q) (H3.blockMixed21 q) = H3.blockMixed21 q := by
+  have hP : ((1 : ℝ) + 2 * q ^ 2 + 2 * q ^ 4 + q ^ 6) ≠ 0 :=
+    ne_of_gt (by nlinarith [sq_nonneg q, sq_nonneg (q ^ 2), sq_nonneg (q ^ 3)])
+  have hPd : ((q : ℝ) ^ 6 + 2 * q ^ 4 + 2 * q ^ 2 + 1) ≠ 0 :=
+    ne_of_gt (by nlinarith [sq_nonneg q, sq_nonneg (q ^ 2), sq_nonneg (q ^ 3)])
+  have hPi : ((1 : ℝ) + 2 * q⁻¹ ^ 2 + 2 * q⁻¹ ^ 4 + q⁻¹ ^ 6) ≠ 0 :=
+    ne_of_gt (by nlinarith [sq_nonneg q⁻¹, sq_nonneg (q⁻¹ ^ 2), sq_nonneg (q⁻¹ ^ 3)])
+  unfold H3.mul H3.smul H3.add H3.blockMixed21 H3.blockSym3 H3.blockAlt3
+         H3.poincare H3.mulSigma1 H3.mulSigma2 H3.one
+  refine Prod.ext ?_ (Prod.ext ?_ (Prod.ext ?_
+    (Prod.ext ?_ (Prod.ext ?_ ?_))))
+  all_goals (simp only [Prod.fst, Prod.snd]; field_simp; ring)
+
+set_option maxHeartbeats 2000000 in
+/-- **Full orthogonality `e_[3] · e_[1,1,1] = 0`** (all six carrier
+    components).  Componentwise, the alternating-sign cancellation
+    `Σ_w (-1)^{ℓ(w)} = 0` over `S_3` after `q · q⁻¹ = 1`. -/
+theorem H3.blockSym3_blockAlt3_orthogonal (q : ℝ) (hq : q ≠ 0) :
+    H3.mul q (H3.blockSym3 q) (H3.blockAlt3 q) = (0, 0, 0, 0, 0, 0) := by
+  have hP : ((1 : ℝ) + 2 * q ^ 2 + 2 * q ^ 4 + q ^ 6) ≠ 0 :=
+    ne_of_gt (by nlinarith [sq_nonneg q, sq_nonneg (q ^ 2), sq_nonneg (q ^ 3)])
+  have hPd : ((q : ℝ) ^ 6 + 2 * q ^ 4 + 2 * q ^ 2 + 1) ≠ 0 :=
+    ne_of_gt (by nlinarith [sq_nonneg q, sq_nonneg (q ^ 2), sq_nonneg (q ^ 3)])
+  have hPi : ((1 : ℝ) + 2 * q⁻¹ ^ 2 + 2 * q⁻¹ ^ 4 + q⁻¹ ^ 6) ≠ 0 :=
+    ne_of_gt (by nlinarith [sq_nonneg q⁻¹, sq_nonneg (q⁻¹ ^ 2), sq_nonneg (q⁻¹ ^ 3)])
+  unfold H3.mul H3.smul H3.add H3.blockSym3 H3.blockAlt3 H3.poincare
+         H3.mulSigma1 H3.mulSigma2
+  refine Prod.ext ?_ (Prod.ext ?_ (Prod.ext ?_
+    (Prod.ext ?_ (Prod.ext ?_ ?_))))
+  all_goals (simp only [Prod.fst, Prod.snd]; field_simp; ring)
+
+/-- **Canonical instance** for `H3WedderburnIdempotency`: the four
+    fields are discharged by the standalone block theorems above
+    (`H3.blockSym3_sq`, `H3.blockAlt3_sq`, `H3.blockMixed21_sq`,
+    `H3.blockSym3_blockAlt3_orthogonal`), each verified
+    component-by-component via `field_simp; ring` against the
+    Poincaré normalizers.  Only `q ≠ 0` is required. -/
 noncomputable instance H3WedderburnIdempotency_canonical (q : ℝ)
     (hq : q ≠ 0) :
     H3WedderburnIdempotency q where
-  sym3_idempotent := by
-    have hP : ((1 : ℝ) + 2 * q ^ 2 + 2 * q ^ 4 + q ^ 6) ≠ 0 :=
-      ne_of_gt (by nlinarith [sq_nonneg q, sq_nonneg (q ^ 2), sq_nonneg (q ^ 3)])
-    have hPd : ((q : ℝ) ^ 6 + 2 * q ^ 4 + 2 * q ^ 2 + 1) ≠ 0 :=
-      ne_of_gt (by nlinarith [sq_nonneg q, sq_nonneg (q ^ 2), sq_nonneg (q ^ 3)])
-    unfold H3.mul H3.smul H3.add H3.blockSym3 H3.poincare
-           H3.mulSigma1 H3.mulSigma2
-    refine Prod.ext ?_ (Prod.ext ?_ (Prod.ext ?_
-      (Prod.ext ?_ (Prod.ext ?_ ?_))))
-    all_goals (simp only [Prod.fst, Prod.snd]; field_simp; ring)
-  alt3_idempotent := by
-    have hPd : ((q : ℝ) ^ 6 + 2 * q ^ 4 + 2 * q ^ 2 + 1) ≠ 0 :=
-      ne_of_gt (by nlinarith [sq_nonneg q, sq_nonneg (q ^ 2), sq_nonneg (q ^ 3)])
-    have hPi : ((1 : ℝ) + 2 * q⁻¹ ^ 2 + 2 * q⁻¹ ^ 4 + q⁻¹ ^ 6) ≠ 0 :=
-      ne_of_gt (by nlinarith [sq_nonneg q⁻¹, sq_nonneg (q⁻¹ ^ 2), sq_nonneg (q⁻¹ ^ 3)])
-    unfold H3.mul H3.smul H3.add H3.blockAlt3 H3.poincare
-           H3.mulSigma1 H3.mulSigma2
-    refine Prod.ext ?_ (Prod.ext ?_ (Prod.ext ?_
-      (Prod.ext ?_ (Prod.ext ?_ ?_))))
-    all_goals (simp only [Prod.fst, Prod.snd]; field_simp; ring)
-  mixed21_idempotent := by
-    have hP : ((1 : ℝ) + 2 * q ^ 2 + 2 * q ^ 4 + q ^ 6) ≠ 0 :=
-      ne_of_gt (by nlinarith [sq_nonneg q, sq_nonneg (q ^ 2), sq_nonneg (q ^ 3)])
-    have hPd : ((q : ℝ) ^ 6 + 2 * q ^ 4 + 2 * q ^ 2 + 1) ≠ 0 :=
-      ne_of_gt (by nlinarith [sq_nonneg q, sq_nonneg (q ^ 2), sq_nonneg (q ^ 3)])
-    have hPi : ((1 : ℝ) + 2 * q⁻¹ ^ 2 + 2 * q⁻¹ ^ 4 + q⁻¹ ^ 6) ≠ 0 :=
-      ne_of_gt (by nlinarith [sq_nonneg q⁻¹, sq_nonneg (q⁻¹ ^ 2), sq_nonneg (q⁻¹ ^ 3)])
-    unfold H3.mul H3.smul H3.add H3.blockMixed21 H3.blockSym3 H3.blockAlt3
-           H3.poincare H3.mulSigma1 H3.mulSigma2 H3.one
-    refine Prod.ext ?_ (Prod.ext ?_ (Prod.ext ?_
-      (Prod.ext ?_ (Prod.ext ?_ ?_))))
-    all_goals (simp only [Prod.fst, Prod.snd]; field_simp; ring)
-  sym3_alt3_orthogonal := by
-    have hP : ((1 : ℝ) + 2 * q ^ 2 + 2 * q ^ 4 + q ^ 6) ≠ 0 :=
-      ne_of_gt (by nlinarith [sq_nonneg q, sq_nonneg (q ^ 2), sq_nonneg (q ^ 3)])
-    have hPd : ((q : ℝ) ^ 6 + 2 * q ^ 4 + 2 * q ^ 2 + 1) ≠ 0 :=
-      ne_of_gt (by nlinarith [sq_nonneg q, sq_nonneg (q ^ 2), sq_nonneg (q ^ 3)])
-    have hPi : ((1 : ℝ) + 2 * q⁻¹ ^ 2 + 2 * q⁻¹ ^ 4 + q⁻¹ ^ 6) ≠ 0 :=
-      ne_of_gt (by nlinarith [sq_nonneg q⁻¹, sq_nonneg (q⁻¹ ^ 2), sq_nonneg (q⁻¹ ^ 3)])
-    unfold H3.mul H3.smul H3.add H3.blockSym3 H3.blockAlt3 H3.poincare
-           H3.mulSigma1 H3.mulSigma2
-    refine Prod.ext ?_ (Prod.ext ?_ (Prod.ext ?_
-      (Prod.ext ?_ (Prod.ext ?_ ?_))))
-    all_goals (simp only [Prod.fst, Prod.snd]; field_simp; ring)
+  sym3_idempotent := H3.blockSym3_sq q hq
+  alt3_idempotent := H3.blockAlt3_sq q hq
+  mixed21_idempotent := H3.blockMixed21_sq q hq
+  sym3_alt3_orthogonal := H3.blockSym3_blockAlt3_orthogonal q hq
 
 end QOU.Mathlib.HeckeAlgebra
