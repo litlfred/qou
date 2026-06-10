@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-10T23:25:06.060119+00:00",
-  "commitSha": "705444bd4645a7d3c50203ddbaaab4b2eec399c7",
+  "computedAt": "2026-06-10T23:28:40.522043+00:00",
+  "commitSha": "1469098126076df4d55fb970470ac094f75fa458",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 38,
+  "durationMs": 33,
   "computation": "symmetrized-binding-probe",
   "scriptFile": "symmetrized_binding_probe.py",
-  "scriptHash": "d92204f817a7",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "405c587447a6",
+  "scriptCommitSha": "1469098126076df4d55fb970470ac094f75fa458",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -112,6 +112,7 @@
       "symmetrize_free_only": "WRONG — inconsistent; spurious O(1) shift = scale·(h_Z h_N − τ^Z τ^N) reflecting the un-cancelled free factor.",
       "log_ratio_cancellation": "B_log shift = scale·log(S_free/S_atom); if S_atom=S_free (same nucleon content) the binding is UNCHANGED.",
       "binding_signal": "the residual log(S_free/S_atom) = the exact block-swapped bound symmetrization (task-1, S_Z×S_N), the small-Z refinement.",
+      "orbit_identity_does_NOT_trivialize_symmetrization": "atom_orbit_reduction.py proves tr_M(β_{Z,N})=tr_M(representative) with NO |orbit| factor — but that is RELABELING (σ leaves the word p…pn…n unchanged ⇒ conjugation β_σ W β_σ⁻¹, trace-preserving by Markov M1). The Young SYMMETRIZER is a DIFFERENT operation: it COMPOSES the block-swap braid, tr_M(W_atom·β_σ) (not conjugation), which the bonds make nontrivial. So S_atom = |G|⁻¹Σ_σ tr_M(W_atom·β_σ) is NOT trivially tr_M(W_atom); the orbit identity must not be used to shortcut it.",
       "S_free_bosonic_4He": 2.4679380451344195
     }
   }
