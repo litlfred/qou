@@ -207,23 +207,24 @@ def _self_test() -> int:
     q = mp.mpf(Q_50_DIGIT_STR)
     ok_all = True
 
-    # (1) vs char_fast (full Hoefsmit) on deuteron (n=6) and ³He (n=9)
-    for atom, (Z, N) in (("D", (1, 1)), ("3He", (2, 1))):
-        n = 3 * (Z + N)
-        word = atom_braid_word_3A(Z, N)
-        chi = chi_all_lambda(word, n)
-        max_rel = mp.mpf(0)
-        for lam in partitions_of(n):
-            lam = tuple(lam)
-            cf = chi_lambda_fast_mp(lam, word, q).real
-            cv = chi.get(lam, mp.mpf(0))
-            max_rel = max(max_rel, abs(cv - cf) / (1 + abs(cf)))
-        ok = max_rel < mp.mpf(10) ** -12
-        ok_all &= ok
-        print(f"  transfer χ ≡ char_fast  {atom:<4} n={n:<3} "
-              f"max_rel={mp.nstr(max_rel, 4)}  {'OK' if ok else 'MISMATCH'}")
+    # (1) vs char_fast (full Hoefsmit) on the CANONICAL color-weighted
+    #     deuteron word (n=6; char_fast is O(d_λ) per basis vector, slow at n≥9).
+    word = atom_braid_word_3A(1, 1)                      # default: color-weighted
+    chi = chi_all_lambda(word, 6)
+    max_rel = mp.mpf(0)
+    for lam in partitions_of(6):
+        lam = tuple(lam)
+        cf = chi_lambda_fast_mp(lam, word, q).real
+        max_rel = max(max_rel, abs(chi.get(lam, mp.mpf(0)) - cf) / (1 + abs(cf)))
+    ok = max_rel < mp.mpf(10) ** -12
+    ok_all &= ok
+    print(f"  transfer ≡ char_fast (color-weighted, n=6): "
+          f"max_rel={mp.nstr(max_rel, 4)}  {'OK' if ok else 'MISMATCH'}")
 
-    # (2) vs cached atom oracles (the per-basis-vector witnesses)
+    # (2) vs cached atom oracles D/T/³He/⁴He (n=6..12). Those witnesses
+    #     (pyhecke_native, kernel PR #1748) used the strict_averaged pn
+    #     convention, so we compare on the MATCHING word — an exact (50-dps)
+    #     cross-check of the transfer vs the per-basis-vector kernel to n=12.
     import json
     oracle = {"D": "chi-deuteron-h6-at-q0-50dps.witness.json",
               "T": "chi-tritium-h9-at-q0-50dps.witness.json",
@@ -236,7 +237,8 @@ def _self_test() -> int:
             print(f"  oracle {atom}: witness missing, skip"); continue
         Z, N = zn[atom]
         n = 3 * (Z + N)
-        chi = chi_all_lambda(atom_braid_word_3A(Z, N), n)
+        word = atom_braid_word_3A(Z, N, pn_convention="strict_averaged")
+        chi = chi_all_lambda(word, n)
         d = json.loads(f.read_text())
         bp = d.get("by_partition") or d["data"]["by_partition"]
         ref = {tuple(p["partition"]): mp.mpf(str(p["chi_lambda"])) for p in bp}
@@ -246,8 +248,8 @@ def _self_test() -> int:
             max_rel = max(max_rel, abs(cv - rv) / (1 + abs(rv)))
         ok = max_rel < mp.mpf(10) ** -12
         ok_all &= ok
-        print(f"  transfer χ ≡ oracle     {atom:<4} n={n:<3} λ={len(ref):<4} "
-              f"max_rel={mp.nstr(max_rel, 4)}  {'OK' if ok else 'MISMATCH'}")
+        print(f"  transfer ≡ oracle (strict_averaged) {atom:<4} n={n:<3} "
+              f"λ={len(ref):<4} max_rel={mp.nstr(max_rel, 4)}  {'OK' if ok else 'MISMATCH'}")
     return 0 if ok_all else 1
 
 
