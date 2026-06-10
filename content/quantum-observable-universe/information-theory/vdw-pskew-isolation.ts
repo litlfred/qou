@@ -23,6 +23,9 @@ export default proposition({
     "def:bar-involution",
     "rem:im-q-vs-p-skew",
     "prop:alpha-em-habiro-bar-involution",
+    "thm:em-spectral-completeness",
+    "cor:gauge-coupling-uniqueness",
+    "prop:alpha-em-categorical-trace-ratio",
   ],
   tags: [
     "van-der-waals",
