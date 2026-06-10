@@ -71,16 +71,20 @@ from schur_principal_mpmath import (  # noqa: E402
 )
 
 CANONICAL = HERE / "y-lambda-mpfr-witness.json"
-GATE_TOL = mp.mpf(10) ** -40  # closed-form must match symbolic source this well
 SOURCE_TAG = ("schur_principal_mpmath closed-form principal specialization "
               "s_λ=Q^{n(λ)}∏(1−Q^r Q^{c})/(1−Q^{h}); verified ≡ symbolic to ~1e-48")
 
 
+def _gate_tol() -> mp.mpf:
+    """Gate / zero-threshold tied to the current precision (10 digits headroom)."""
+    return mp.mpf(10) ** (-(mp.mp.dps) + 10)
+
+
 def _table_entries(n: int, q_val: mp.mpf) -> tuple[list[dict], mp.mpf, float]:
     """Closed-form y_λ table for H_n: (weights list, |Σy·fλ−1| residual, wall)."""
-    t0 = time.time()
+    t0 = time.monotonic()
     y = y_lambda_at_q0_mpmath(n, q_val)
-    wall = time.time() - t0
+    wall = time.monotonic() - t0
     weights = [{"partition": list(lam), "y_lambda": mp.nstr(y[lam], 50)}
                for lam in partitions_of(n)]
     resid = abs(sum(y[lam] * _f_lambda(lam) for lam in y) - 1)
@@ -90,19 +94,26 @@ def _table_entries(n: int, q_val: mp.mpf) -> tuple[list[dict], mp.mpf, float]:
 def _gate_against_symbolic(W: dict, q_val: mp.mpf) -> dict:
     """Verify the closed form reproduces every EXISTING (symbolic) n to GATE_TOL."""
     report = {}
+    tol = _gate_tol()
     for n_str, tbl in sorted(W["tables_by_n"].items(), key=lambda kv: int(kv[0])):
         ref = {tuple(w["partition"]): mp.mpf(w["y_lambda"]) for w in tbl["weights"]}
         mine = y_lambda_at_q0_mpmath(int(n_str), q_val)
         maxerr = mp.mpf(0)
         for lam, rv in ref.items():
-            mv = mine.get(lam, mp.mpf("nan"))
-            e = abs(mv - rv) if abs(rv) < mp.mpf("1e-40") else abs(mv - rv) / abs(rv)
+            if lam not in mine:
+                # Explicit: a missing partition must HARD-FAIL, never silently
+                # pass via nan (max(0, nan) == 0 in Python — the bug Gemini caught).
+                raise AssertionError(
+                    f"partition {lam} missing from closed-form y_λ at n={n_str} — "
+                    f"the closed form must enumerate every λ⊢n.")
+            mv = mine[lam]
+            e = abs(mv - rv) if abs(rv) < tol else abs(mv - rv) / abs(rv)
             maxerr = max(maxerr, e)
         report[n_str] = float(maxerr)
-        if maxerr > GATE_TOL:
+        if maxerr > tol:
             raise AssertionError(
                 f"closed-form y_λ disagrees with symbolic source at n={n_str}: "
-                f"max_rel_err={float(maxerr):.2e} > gate {float(GATE_TOL):.0e}. "
+                f"max_rel_err={float(maxerr):.2e} > gate {float(tol):.0e}. "
                 f"Convention drift — refusing to extend the canonical witness.")
     return report
 
@@ -134,20 +145,25 @@ def extend_y_lambda_tower(up_to_n: int, witness_path: Path = CANONICAL,
         rows.append({"n": n, "num_partitions": len(weights), "added": True,
                      "source": "closed-form", "norm_residual": float(resid),
                      "wall_sec": round(wall, 4)})
-    # provenance breadcrumb on the canonical file
+    # provenance breadcrumb on the canonical file. owns_n is CUMULATIVE — a
+    # re-run that adds nothing (entries already present) must not erase the
+    # record of which n the closed form previously contributed.
     W.setdefault("extension", {})
+    prev = W["extension"].get("closed_form_tower", {}).get("owns_n", [])
+    newly = [r["n"] for r in rows if r["added"]]
     W["extension"]["closed_form_tower"] = {
         "producer": "y_lambda_tower_infra.py",
         "method": SOURCE_TAG,
-        "owns_n": sorted(int(r["n"]) for r in rows if r["added"]),
-        "up_to_n": up_to_n,
+        "owns_n": sorted(set(prev) | set(newly)),
+        "up_to_n": max(up_to_n, W["extension"].get("closed_form_tower", {}).get("up_to_n", 0)),
     }
     witness_path.write_text(json.dumps(W, indent=2) + "\n")
     return {"rows": rows, "gate": gate}
 
 
 def main() -> int:
-    t0 = time.time()
+    # monotonic: WitnessBuilder computes durationMs = monotonic() − start_time.
+    t0 = time.monotonic()
     up_to = int(sys.argv[1]) if len(sys.argv) > 1 else 24
     mp.mp.dps = 50
     print("=" * 84)

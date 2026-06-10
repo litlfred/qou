@@ -51,10 +51,27 @@ def compute_atom(atom: str, q: mp.mpf) -> dict:
     Z, N = ATOMS[atom]
     n_strands, word = _word_for_braid_word_3a(Z, N)
     n = n_strands
+    out = HERE / f"chi-{atom}-h{n}-at-q0-50dps-matrix-m.witness.json"
+
+    # Idempotent / resumable: a COMPLETE cache (lossless, all λ) is reused as-is
+    # so a batch re-run (e.g. to refresh the summary witness) never recomputes a
+    # finished nucleus.
+    if out.exists():
+        cached = json.loads(out.read_text())
+        if (not cached.get("tr_M_partial", True)
+                and cached.get("n_partitions") == cached.get("n_partitions_total")):
+            print(f"  {atom:>10} cached ({cached['n_partitions']} λ, complete) "
+                  f"— skip recompute", flush=True)
+            return {"atom": atom, "n_strands": n, "Z": Z, "N": N,
+                    "n_partitions": cached["n_partitions"],
+                    "tr_M_at_q0": cached["tr_M_at_q0"],
+                    "compute_time_sec": cached.get("compute_time_sec", 0.0),
+                    "cache_path": str(out), "reused": True}
+
     y_table = _load_y_lambda(n, None)   # closed-form tower covers n>12
     shapes = list(parts_of(n))
 
-    t0 = time.time()
+    t0 = time.monotonic()
     per_partition = []
     running = mp.mpf(0)
     print(f"  {atom:>10} H{n}: {len(shapes)} partitions via Rust chi_q_via_gp",
@@ -64,7 +81,7 @@ def compute_atom(atom: str, q: mp.mpf) -> dict:
         y_lam = y_table.get(shape_t)
         if y_lam is None:
             continue
-        t1 = time.time()
+        t1 = time.monotonic()
         chi = chi_rust_at_q_mpf(shape_t, n_strands, word, q)
         contrib = mp.mpf(str(y_lam)) * chi
         running += contrib
@@ -73,11 +90,11 @@ def compute_atom(atom: str, q: mp.mpf) -> dict:
             "y_lambda": str(y_lam),
             "chi_lambda": mp.nstr(chi, 50),
             "contribution": mp.nstr(contrib, 50),
-            "compute_time_sec": round(time.time() - t1, 4),
+            "compute_time_sec": round(time.monotonic() - t1, 4),
         })
         if (i + 1) % 40 == 0:
-            print(f"     [{i+1}/{len(shapes)}] {time.time()-t0:.1f}s", flush=True)
-    elapsed = time.time() - t0
+            print(f"     [{i+1}/{len(shapes)}] {time.monotonic()-t0:.1f}s", flush=True)
+    elapsed = time.monotonic() - t0
 
     payload = {
         "computation": f"chi-{atom}-h{n}-at-q0-50dps-matrix-m",
@@ -106,7 +123,6 @@ def compute_atom(atom: str, q: mp.mpf) -> dict:
         "tr_M_at_q0": str(running),
         "by_partition": per_partition,
     }
-    out = HERE / f"chi-{atom}-h{n}-at-q0-50dps-matrix-m.witness.json"
     out.write_text(json.dumps(payload, indent=2, ensure_ascii=False))
     print(f"  {atom:>10} LOSSLESS: {len(per_partition)} λ, "
           f"tr_M(q0)={mp.nstr(running,16)}, {elapsed:.1f}s  →  {out.name}",
@@ -121,7 +137,7 @@ def main() -> int:
     raw = sys.argv[1:] or ["5Li", "6Li"]
     atoms = [ATOM_ALIASES.get(a, a) for a in raw]
     q = mp.mpf(Q_50_DIGIT_STR)
-    t0 = time.time()
+    t0 = time.monotonic()   # WitnessBuilder durationMs = monotonic() − start_time
     print("=" * 84)
     print(" Lossless per-λ χ at q₀ via Rust chi_q_via_gp — general (any atom)")
     print(f"   q₀ = {Q_50_DIGIT_STR[:22]}…")
@@ -145,10 +161,10 @@ def main() -> int:
     )
     wb.add_data("atoms", [r["atom"] for r in results])
     wb.add_data("results", results)
-    wb.add_data("total_time_sec", round(time.time() - t0, 2))
+    wb.add_data("total_time_sec", round(time.monotonic() - t0, 2))
     out = wb.save()
     print("-" * 84)
-    print(f" done: {len(results)} nuclide(s) in {time.time()-t0:.1f}s")
+    print(f" done: {len(results)} nuclide(s) in {time.monotonic()-t0:.1f}s")
     print(f" Witness: {out}")
     return 0 if results else 1
 
