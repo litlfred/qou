@@ -20,6 +20,35 @@ High-dim deep partitions (`[3,2,1]` dim 16; `[6,3]` dim 48; `[5,4]` dim
 T are *exactly* these negligible high-dim ones — they were skipped
 because high-dim, and they carry essentially none of the trace.)
 
+## ⚠ PRECISION CAVEAT (correction 2026-06-10) — truncation is NOT free
+
+**The non-active partitions are NOT zero — there is no exact-χ selection
+rule** (`exact-χ-zeros: 0` on both D and T; every partition has nonzero
+χ^λ). Dropping the few-row tail is therefore **truncation error**, and the
+dropped mass is **~9.8×10⁻⁴ (≈10⁻³ relative)** — *far* above the
+framework's `_precision` requirement (L1 = 1 ppQ = 10⁻¹⁵, 50 dps). So:
+
+> **The active-set truncation as prototyped is INVALID for production
+> precision.** You may truncate *only* if you can **prove** the net tail
+> `|Σ_{rows(λ)>R} y_λ χ^λ| < ε` and that `ε < 10⁻¹⁵` — which is NOT
+> established (the tail decays slowly: rows-4 ~10⁻⁴, rows-9 ~10⁻⁹, never
+> reaching 10⁻¹⁵ for these light isotopes).
+
+**Consequence for the optimization:** the *lossless* part is the
+**per-nucleon block caching + partition inclusion** — it computes the
+**same** partitions (all of them, to 50 dps) and only reuses cached
+nucleon blocks, so it preserves precision exactly. The **truncation**
+(dropping partitions) is the precision-violating part and must NOT be
+shipped without a proven tail bound. The active-set measurement tells you
+*where the physics concentrates* (few-row), and is fine for **exploratory**
+work (0.1% tolerable) — but production keeps all partitions and gets its
+speedup from caching, not truncation.
+
+**Legitimate truncation path (formalize-first):** prove a bound
+`|y_λ χ^λ(β_atom)| ≤ C·q₀^{−c·rows(λ)}` (or similar), then truncate at the
+`R` where the geometric tail `< 10⁻¹⁵`. Until that's a theorem, no
+truncation.
+
 ## Scaling consequence
 
 `p(3A)` explodes: `p(6)=11, p(9)=30, p(12)=77, p(18)=385, p(24)=1575`.
@@ -71,11 +100,12 @@ not a law. (Recorded so it's not chased further as a closure.)
 1. **Prototype active-set-truncated binding** — sum `binding_canonical`
    over only the few-row λ; verify it reproduces full `tr_M` to ≥ 99%.
    ✅ **DONE** ([`active_set_truncation_prototype.py`](../../folio-assistant/computations/active_set_truncation_prototype.py)):
-   `rows(λ) ≤ 3` recovers **99.96% (D) / 99.91% (T)** of `tr_M`, with
-   max irrep dim 16 (D) / 84 (T) — vs the full deep partitions. `rows≤2`
-   even *overshoots* (~101%) since the dropped rows≥4 terms net negative
-   (sign cancellation), so `rows≤3` is the sweet spot. Confirms the
-   truncation is valid; the high-row reps are droppable.
+   `rows(λ) ≤ 3` recovers **99.96% (D) / 99.91% (T)** of `tr_M` — i.e. a
+   **~10⁻³ truncation error**, NOT exact. Per the precision caveat above
+   this is **invalid at 1 ppQ** and is NOT a shippable truncation; it only
+   confirms *where* the trace concentrates (few-row). The valid scaling
+   win is the lossless per-nucleon caching (step 2), which keeps all
+   partitions.
 2. **Per-nucleon block cache** keyed on the H₃ block (not (3A)-shape) +
    few-row branching composition — coordinate with #2062 (reduced-block
    kernel) and #2080 (A≥4 χ). This is what scales binding past ⁴He.
