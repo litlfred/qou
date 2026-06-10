@@ -387,7 +387,7 @@ theorem dressed_quark_mass_difference :
   unfold dressed_mass_down dressed_mass_up
   norm_num
 
-/-- The proton pair-Skein decomposition agrees with the CODATA proton
+/-! The proton pair-Skein decomposition agrees with the CODATA proton
     mass to within 0.5 MeV (limited by dressed-mass rounding).
 
     **Narrowing (Pattern 1)**: hoisted the √q witness as an explicit
@@ -424,7 +424,7 @@ theorem proton_pair_skein_approx
     |proton_from_pair_skein - proton_topological| < 0.5 :=
   hi.bound
 
-/-- The neutron pair-Skein decomposition agrees with the CODATA neutron
+/-! The neutron pair-Skein decomposition agrees with the CODATA neutron
     mass to within 0.5 MeV (limited by dressed-mass rounding).
 
     **Narrowing (Pattern 1)**: same witness as `proton_pair_skein_approx`.

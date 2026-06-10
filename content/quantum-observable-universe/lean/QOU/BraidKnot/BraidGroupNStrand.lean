@@ -1,4 +1,5 @@
 import Mathlib.Tactic
+import QOU.BraidKnot.BraidLinkTypes
 
 /-!
 # QOU.BraidKnot.braid_group_n_strand
@@ -42,12 +43,10 @@ LaTeX label: `rem:braid-group-n-strand`
 -- Sibling-chapter dependency: `Link`, `Braid2`, `closure2`,
 -- `BraidCrossing` (here) interoperate with `Link.unknot`,
 -- `Braid2.σ_sq`, etc. defined in `braid-link-types.lean`.
--- The chapter-block convention does not currently expose these
--- as a Lake module, so the import below is documentation of the
--- semantic dependency; it is also valid Lean once the chapter
--- sibling is wired into the Lake `QOU.BraidKnot.*` namespace.
+-- The dependency is imported at the top of this file (imports must
+-- precede all other commands in Lean 4); the sibling is wired into
+-- the Lake `QOU.BraidKnot.*` namespace as `BraidLinkTypes`.
 -- Ref: [manuscript] rem:braid-link-types
-import QOU.BraidKnot.BraidLinkTypes
 
 namespace QOU.BraidKnot
 
@@ -114,7 +113,6 @@ def borromeanBraidWord3 : BraidWord 3 :=
     borromeanBraidWord3.writhe = 0 := by
   simp [borromeanBraidWord3, BraidWord.writhe_cons,
         BraidWord.writhe_nil]
-  ring
 
 /-- **3-strand Markov closure** for the canonical Borromean word.
     Defined by direct equality check against the canonical word;
@@ -251,36 +249,38 @@ The 2-strand case is fully discharged by `Braid2 ≃ ℤ` (via
     Conventional: positive `n : ℤ` produces `n` positive crossings of
     the single generator σ_0 in `Fin (2 − 1) = Fin 1`. -/
 def Braid2.toBraidWord : Braid2 → BraidWord 2
-  | (Int.ofNat 0) => []
-  | (Int.ofNat (k+1)) =>
-      ⟨(0 : Fin 1), true⟩ :: Braid2.toBraidWord (Int.ofNat k)
-  | (Int.negSucc 0) => [⟨(0 : Fin 1), false⟩]
-  | (Int.negSucc (k+1)) =>
-      ⟨(0 : Fin 1), false⟩ :: Braid2.toBraidWord (Int.negSucc k)
+  | (Int.ofNat k) => List.replicate k ⟨(0 : Fin 1), true⟩
+  | (Int.negSucc k) => List.replicate (k + 1) ⟨(0 : Fin 1), false⟩
 
 -- Ref: [manuscript] rem:braid-group-n-strand §"specialisations"
 -- Ref: [jones1985] doi:10.2307/1971403 §"Markov braid closure"
-/-- Writhe of `Braid2.toBraidWord n` equals `n` itself.
+/-- Writhe of a constant replicate word: `k` positive crossings give
+    writhe `k`. -/
+theorem writhe_replicate_pos (k : ℕ) :
+    BraidWord.writhe (List.replicate k (⟨(0 : Fin 1), true⟩ : BraidCrossing 2)) = k := by
+  induction k with
+  | zero => simp
+  | succ k ih =>
+    simp [List.replicate_succ, ih]
+    omega
 
-    Proof by structural recursion on `n : ℤ`, mirroring the recursion
-    in `toBraidWord`. Each positive crossing contributes `+1` and
-    each negative contributes `−1` to the writhe sum. -/
+/-- Writhe of a constant replicate word: `k` negative crossings give
+    writhe `−k`. -/
+theorem writhe_replicate_neg (k : ℕ) :
+    BraidWord.writhe (List.replicate k (⟨(0 : Fin 1), false⟩ : BraidCrossing 2)) = -(k : ℤ) := by
+  induction k with
+  | zero => simp
+  | succ k ih =>
+    simp [List.replicate_succ, ih]
+
+/-- Writhe of `Braid2.toBraidWord n` equals `n` itself: each positive
+    crossing contributes `+1` and each negative `−1`. -/
 theorem Braid2_writhe_eq (n : Braid2) :
     (Braid2.toBraidWord n).writhe = n := by
-  induction n with
-  | ofNat k =>
-    induction k with
-    | zero => simp [Braid2.toBraidWord]
-    | succ k ih =>
-      simp [Braid2.toBraidWord, BraidWord.writhe_cons, ih]
-      ring
+  cases n with
+  | ofNat k => simpa [Braid2.toBraidWord] using writhe_replicate_pos k
   | negSucc k =>
-    induction k with
-    | zero =>
-      simp [Braid2.toBraidWord, BraidWord.writhe_cons, BraidWord.writhe_nil]
-    | succ k ih =>
-      simp [Braid2.toBraidWord, BraidWord.writhe_cons, ih]
-      ring
+    simpa [Braid2.toBraidWord, Int.negSucc_eq] using writhe_replicate_neg (k + 1)
 
 /-! ## n=2 ↔ closure2 identification (Markov closure)
 
@@ -304,37 +304,18 @@ theorem closureN_eq_closure2 (w : BraidWord 2) :
 theorem closureN_eq_closure3 (w : BraidWord 3) :
     closureN w = closure3 w := rfl
 
-/-! ## n=3 ↔ TypedBraidWord3 bridge
+/-! ## n=3 ↔ TypedBraidWord3 bridge — NOT WIRED
 
-Conversion from `BraidWord 3` (this module's generic n=3 type) into
-`TypedBraidWord3` (`typed-b3-sub-braid-extraction.lean`'s typed-B_3
-list). The conversion preserves generator index and maps the boolean
-sign onto the sibling file's `sigma`/`sigma_inv` constructors. The
-sibling's `averaged` crossing type has no counterpart in `BraidWord 3`
-(it is an extra Hecke-specific channel) so the conversion is into the
-sigma/sigma_inv subset. -/
+The intended conversion target `TypedBraidWord3`
+(`typed-b3-sub-braid-extraction.lean`, chapter sibling) is not part of
+the Lake module tree, so the `BraidCrossing.toTypedB3` /
+`BraidWord.toBraid3` bridge cannot be declared in this module yet.
+Re-add the bridge (generator index preserved; boolean sign onto the
+sibling's `sigma`/`sigma_inv` constructors, `averaged` excluded) when
+the sibling is wired into the Lake `QOU.BraidKnot.*` namespace.
 
-/-- A `BraidCrossing 3` (generator index in `Fin 2`, boolean sign)
-    maps into the typed-B_3 representation by:
-      `positive = true`  → `CrossingType3.sigma`
-      `positive = false` → `CrossingType3.sigma_inv`. -/
-def BraidCrossing.toTypedB3 (c : BraidCrossing 3) : TypedCrossing where
-  generator := c.gen
-  crossing_type := if c.positive then .sigma else .sigma_inv
-
--- Ref: [manuscript] rem:braid-group-n-strand §"specialisations"
 -- Ref: [manuscript] rem:typed-b3-sub-braid-extraction
-/-- **`BraidWord 3 → TypedBraidWord3` conversion.** Maps each
-    `BraidCrossing 3` to its `TypedCrossing` counterpart via
-    `BraidCrossing.toTypedB3`. -/
-def BraidWord.toBraid3 (w : BraidWord 3) : TypedBraidWord3 :=
-  w.map BraidCrossing.toTypedB3
-
-/-- Length is preserved by the conversion. -/
-@[simp] theorem BraidWord.toBraid3_length (w : BraidWord 3) :
-    (BraidWord.toBraid3 w).length = w.length := by
-  unfold BraidWord.toBraid3
-  exact List.length_map _ _
+-/
 
 /-! ## Open R&D
 
