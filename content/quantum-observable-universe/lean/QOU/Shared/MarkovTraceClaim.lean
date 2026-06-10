@@ -63,7 +63,7 @@ class MarkovTraceContext where
   /-- `R`-algebra structure on `A`. -/
   algebraA : @Algebra R A ringR.toCommSemiring ringA.toSemiring
   /-- The Hecke-algebra typeclass instance. -/
-  heckeInst : @QOU.Hecke.HeckeAlgebra R n q A ringR ringA algebraA
+  heckeInst : @QOU.Hecke.HeckeAlgebra R n q A ringR invR ringA algebraA
   /-- The Markov-trace instance on `A`. -/
   markovInst :
     @QOU.Hecke.MarkovTrace R n q A ringR invR ringA algebraA heckeInst
