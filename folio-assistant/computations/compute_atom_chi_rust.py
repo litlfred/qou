@@ -49,43 +49,63 @@ ZN = {
 }
 
 
-def compute_atom_chi(Z: int, N: int, *, include_inter: bool = True) -> dict:
-    """Compute χ^λ(β_K) for all λ ⊢ 3A via Rust kernel.
+def compute_atom_chi(Z: int, N: int, *, include_inter: bool = True,
+                     precision: str = "mpfr", dps: int = 50) -> dict:
+    """Compute χ^λ(β_K) for all λ ⊢ 3A.
+
+    precision="mpfr" (DEFAULT, canonical tier): χ^λ at `dps` decimal
+    digits via chi_cd_mpfr → pyhecke_native.chi_lambda_all_partitions_mpfr
+    (the color-weighted p-n crossing is handled by linearity at full
+    precision). precision="f64" is the PREVIEW tier only (owner ruling
+    2026-06-09: no f64 on the canonical path).
 
     Returns dict with keys:
       n_strands : 3A
       n_partitions : p(3A)
       by_partition : list of {partition, dim, chi_lambda}
-      compute_time_sec
+      compute_time_sec, precision, engine
     """
     A = Z + N
     n_strands = 3 * A
 
     word_triples = atom_braid_word_3A(Z, N, include_inter=include_inter)
-    # Rust kernel uses 1-indexed generators; Python's atom_braid_word_3A
-    # is 0-indexed. Bump by +1.
-    factors = [(float(c), float(d), int(g) + 1) for (c, d, g) in word_triples]
-
     partitions = pyhecke_native.partitions_of(n_strands)
     n_partitions = len(partitions)
 
     t0 = time.time()
-    # F-B fix of ffi-roundtrip-audit (pyhecke-native v0.7.0+): the
-    # `chi_q_atomic_all_partitions` batch entry-point evaluates every
-    # partition in one PyO3 crossing, rayon-parallel on the Rust side.
-    # Previously: `for shape in partitions: pyhecke_native.chi_q_atomic(...)`
-    # — p(n) FFI crossings + zero CPU-level parallelism.
-    chi_pairs = pyhecke_native.chi_q_atomic_all_partitions(
-        n_strands, factors, Q0_F64
-    )
-    by_partition = [
-        {
-            "partition": list(shape),
-            "dim": -1,  # not tracked by chi_q_atomic
-            "chi_lambda": chi,
-        }
-        for (shape, chi) in chi_pairs
-    ]
+    if precision == "mpfr":
+        import mpmath as mp
+        from chi_cd_mpfr import chi_all_partitions_cd_mpfr
+        if mp.mp.dps < dps:
+            mp.mp.dps = dps
+        chi_map = chi_all_partitions_cd_mpfr(n_strands, word_triples, dps=dps)
+        by_partition = [
+            {
+                "partition": list(shape),
+                "dim": -1,  # not tracked here
+                "chi_lambda": mp.nstr(
+                    chi_map[tuple(shape)], dps, strip_zeros=False
+                ),
+            }
+            for shape in partitions
+        ]
+        engine = (
+            f"chi_cd_mpfr → pyhecke_native.chi_lambda_all_partitions_mpfr "
+            f"(Rust + MPFR, {dps} dps) [canonical tier]"
+        )
+    elif precision == "f64":
+        # PREVIEW TIER ONLY — not for canonical consumers.
+        factors = [(float(c), float(d), int(g) + 1) for (c, d, g) in word_triples]
+        chi_pairs = pyhecke_native.chi_q_atomic_all_partitions(
+            n_strands, factors, Q0_F64
+        )
+        by_partition = [
+            {"partition": list(shape), "dim": -1, "chi_lambda": chi}
+            for (shape, chi) in chi_pairs
+        ]
+        engine = "pyhecke_native.chi_q_atomic (Rust, f64) — PREVIEW TIER"
+    else:
+        raise ValueError(f"unknown precision {precision!r} (mpfr | f64)")
     elapsed = time.time() - t0
 
     return {
@@ -95,25 +115,32 @@ def compute_atom_chi(Z: int, N: int, *, include_inter: bool = True) -> dict:
         "compute_time_sec": elapsed,
         "Z": Z, "N": N, "A": A,
         "include_inter": include_inter,
-        "q_0_f64": Q0_F64,
-        "engine": "pyhecke_native.chi_q_atomic (Rust, f64)",
+        "precision": precision,
+        "dps": dps if precision == "mpfr" else None,
+        "engine": engine,
     }
 
 
 def main() -> int:
-    if len(sys.argv) < 2:
-        print(f"USAGE: {sys.argv[0]} <atom>  e.g. 4He, 6Li, 7Li")
+    pos = [a for a in sys.argv[1:] if not a.startswith("--")]
+    # Canonical tier (MPFR) is the DEFAULT; --f64 opts into the preview
+    # tier (owner ruling 2026-06-09: no f64 on the canonical path).
+    precision = "f64" if "--f64" in sys.argv else "mpfr"
+    if not pos:
+        print(f"USAGE: {sys.argv[0]} <atom> [--f64]  e.g. 4He, 6Li, 7Li")
         print(f"Available atoms: {list(ZN.keys())}")
+        print("Default: MPFR 50-dps (canonical). --f64 = preview tier only.")
         return 1
-    atom = sys.argv[1]
+    atom = pos[0]
     if atom not in ZN:
         print(f"Unknown atom {atom!r}; available: {list(ZN.keys())}")
         return 1
     Z, N = ZN[atom]
 
-    print(f"Computing χ^λ for {atom} (Z={Z}, N={N}, H_{3*(Z+N)})...")
-    data_atom = compute_atom_chi(Z, N, include_inter=True)
-    data_free = compute_atom_chi(Z, N, include_inter=False)
+    print(f"Computing χ^λ for {atom} (Z={Z}, N={N}, H_{3*(Z+N)}) "
+          f"[{precision} tier]...")
+    data_atom = compute_atom_chi(Z, N, include_inter=True, precision=precision)
+    data_free = compute_atom_chi(Z, N, include_inter=False, precision=precision)
     print(f"  atom: {data_atom['n_partitions']} partitions in "
           f"{data_atom['compute_time_sec']:.2f}s")
     print(f"  free: {data_free['n_partitions']} partitions in "
@@ -121,15 +148,17 @@ def main() -> int:
 
     builder = WitnessBuilder(f"atom-chi-rust-{atom.lower()}")
     builder.set_description(
-        f"Full H_{3*(Z+N)} chi^λ(β_K) via Rust geck_pfeiffer + "
-        f"Hoefsmit seminormal kernel (cherry-picked from PR #761). "
-        f"Both atom (include_inter=True) and free (include_inter="
-        f"False) configs for {atom} (Z={Z}, N={N}). f64 precision; "
-        f"for MPFR upgrade extend pyhecke_native.chi_q_atomic to "
-        f"chi_q_atomic_mpfr."
+        f"Full H_{3*(Z+N)} chi^λ(β_K) for {atom} (Z={Z}, N={N}), both atom "
+        f"(include_inter=True) and free (include_inter=False) configs. "
+        f"precision={precision}: MPFR (default) routes through chi_cd_mpfr → "
+        f"pyhecke_native.chi_lambda_all_partitions_mpfr at 50 dps (canonical "
+        f"tier; the color-weighted p-n crossing is expanded by linearity); "
+        f"--f64 is the preview tier only (owner ruling 2026-06-09: no f64 on "
+        f"the canonical path). Consumed by binding_depth_stratified_rust.py."
     )
     builder.add_data("atom", data_atom)
     builder.add_data("free", data_free)
+    builder.add_data("precision", precision)
     builder.add_data("canonical_status", "canonical-with-empirical-assignment")
 
     builder.add_assertion(
