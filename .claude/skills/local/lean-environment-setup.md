@@ -512,6 +512,20 @@ fi
 > still-fetched cache objects — `tar xzf <tgz> -C "$ROOT"
 > ".lake/packages/mathlib/.lake/build"` — and the oleans replay
 > (trace hashes are content-based, so the fresh clone's sources match).
+>
+> **Variant: packages restored with NO `.git` at all (2026-06-10, PR
+> #2094 continuation).** If the seed tar carries package sources +
+> oleans but no `.git` dirs (check: `git -C .lake/packages/mathlib
+> remote get-url origin` falls through to the PARENT repo's origin —
+> a misleading proxy URL), do **not** let lake touch the tree (it
+> deletes and re-clones, losing the oleans). **Graft** valid git
+> state in place first — per `lake-manifest.json` entry: `git init` +
+> `git remote add origin <url>` + `git fetch --depth=1 origin <rev>`
+> (GitHub is allowlisted) + `git checkout -qf <rev>` inside each
+> package dir. Lake then accepts every package untouched and the
+> first build runs straight off the restored oleans (verified:
+> Qq probe build, 2947 mathlib oleans intact). A package dir missing
+> entirely (e.g. `Cli`) is fine — lake clones just that one.
 
 **SEED after a successful build** (so the NEXT agent restores in ~2 min
 instead of rebuilding in ~30+) — worktree-based, tarball created in-repo:
