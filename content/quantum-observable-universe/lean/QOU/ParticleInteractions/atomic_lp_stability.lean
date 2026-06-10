@@ -8,7 +8,7 @@ there exists a Markov-normalised operator
 `X* = α · 𝟙 + β · σ₀` that annihilates the traced volume `(V = 0)`.*
 
 *The 𝓑₃ dressing (proton internal structure) stabilises the atom.
-The annihilation ratio `λ_s / λ_a` changes from `0.537` (bare) to
+The annihilation ratio `lam_s / lam_a` changes from `0.537` (bare) to
 `q⁻¹⁰ = 0.352` (dressed), and the original annihilator `X*` cannot
 satisfy the dressed condition.*
 

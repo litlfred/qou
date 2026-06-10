@@ -175,15 +175,15 @@ theorem riemann_hurwitz_check :
     On each exceptional divisor `E_c ≅ CP¹`, the SU(2) bundle trivialises
     (since `π₁(SU(2)) = 0`), so the nonabelian MI integral of the
     connection–curvature pair abelianises.  The Cartan component of the
-    restricted connection equals the Seiberg–Witten differential `λ_SW = X dz`,
+    restricted connection equals the Seiberg–Witten differential `lam_SW = X dz`,
     and the MI integral at jet level `n` equals the `n`-th prolonged SW period.
 
-    `‖MI∫_{E_c} (∇_A q, L ∧ F⁺)‖_{Jⁿ} = |a_D^(n)| = |∮_{E_c} λ_SW^(n)|`
+    `‖MI∫_{E_c} (∇_A q, L ∧ F⁺)‖_{Jⁿ} = |a_D^(n)| = |∮_{E_c} lam_SW^(n)|`
 
     Proof outline:
     (1) SU(2) bundle over S² is trivial → connection abelianises to U(1)
     (2) Fake-flatness F_A = B forces 2-form datum into Cartan subalgebra on E_c
-    (3) MI integral reduces to classical contour integral of λ_SW^(n)
+    (3) MI integral reduces to classical contour integral of lam_SW^(n)
 
     LaTeX: `\label{prop:mi-sw-abelianisation}` -/
 -- Ref: [yekutieli2015] Amnon Yekutieli, *Nonabelian Multiplicative Integration on Surfaces*, 2015
