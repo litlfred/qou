@@ -31,7 +31,32 @@ every script under `folio-assistant/computations/` and `tools/**`:
 
 ## 1. Axis A — FLOAT64 violations (canonical path)
 
-_(pending — float64 audit pass)_
+**Verdict: production observable chain is MPFR-clean** — `closed_form_tau_M` →
+`hecke_characters.chi_lambda_braid(precision="mpfr_50dps")` → Rust `*_mpfr`
+kernels → `mass_formula_6term_mpfr_50dps` / `binding_canonical` /
+`markov_trace_canonical` → `mass_table_ppb` / dashboards. The `float()` there
+are tolerance-dispatch keys, witness-emit, or display. **6 canonical-path
+violations remain** (scripts computing χ^λ / tr_M / Gram in f64), plus a tier of
+benign tolerance-dispatch f64.
+
+| id | file | leak | fix | priority |
+|----|------|------|-----|----------|
+| **C6** | `tools/hecke-engine` (`gram.rs`, `seminormal.rs`, `geck_pfeiffer.rs`) + `pyhecke-native/src/lib.rs` f64 exports; dispatched by `hecke_characters.chi_lambda_braid` | two-tier design (f64 + mpfr); a producer that **omits `precision="mpfr_50dps"` silently gets f64** | **fail-closed**: default wrapper to mpfr_50dps (or raise for witness producers) + CI guard + rename f64 kernels `_f64` | **1 (highest leverage)** |
+| **C4** | `mass_at_3A_proper.py:285-304` `atom_braid_word_3A` | canonical braid constructor emits f64 `(c,d)` flavor-split; color-weight `-h·(0.5-δ/4)` flows un-re-lifted into numeric consumers | return `(c,d)` as `Rational`/`mpf`; compute `_avg_color_delta` + color-weight in mpf | **2 (spine + cascades)** |
+| **C2** | `wedderburn_jones_markov.py:327,382-389` | canonical Jones-Markov `tr_M=Σ y_λχ^λ` does `float(y)*float(chi)`, emits witness | route χ via `chi_lambda_braid(mpfr_50dps)`; accumulate mpf; serialize strings | 3 |
+| **C3** | `tr_m_q_hecke_seminormal.py:69,109-118` | canonical tr_M at **30 dps** + f64 χ; emits witness | 50-dps mpf q from `Q_50_DIGIT_STR`; mpfr χ; mpf accumulate | 3 |
+| **C1** | `hoefsmit_numpy.py:86-161` | entire χ^λ engine in numpy.float64 (`mp.mpf(float(np.trace))`); canonical-shaped, currently exploratory consumers | route consumers to `chi_lambda_braid(mpfr_50dps)` or `mpmath.matrix`; delete numpy engine | 4 |
+| **C5** | `mass_at_3A_proper.py:337-348,478-495` | numeric `chi_lambda_of_word`/`per_generator_V_hat_3A` in numpy.f64 (some `[DEPRECATED]`) | deprecate→`chi_lambda_braid(mpfr_50dps)`; seed `BlockCache` from `Q_50_DIGIT_STR`; `mp.log` | 4 |
+
+**Benign tolerance-dispatch f64** (markov_peel:109, closed_form_tau_M:352,
+canonical_braid_marshalling:96/141, binding_canonical:99) — match exact symbolic
+`HA` via tolerance; **C4's exact-(c,d) fix makes these disappear repo-wide.**
+
+**Leverage existing infra:** `audits/float64_leak_audit.py` is the repo's I8
+scanner but **banner-only** (misses C1/C5 which lack banners) — widen it to the
+canonical-script list (cheat-sheet §2/§7) and wire as the C6 CI guard.
+`cross_check_trM_1ppb.py` is the model for correctly demoting an f64 method to a
+"1e-12 check, not 1 ppQ-certifying" tier.
 
 ## 2. Axis B — FITTING / numerology leaks  ✅ clean on production
 
@@ -56,7 +81,51 @@ propagation implications — handle with care).
 
 ## 3. Axis C — Canonical-chain wiring map + orphans + gaps
 
-_(pending — compute-integration audit pass)_
+**Chain is well-mapped** (steps 1-11 have canonical scripts; tree reorganized
+into `markov/`, `hecke/`, `substrate/` — many cheat-sheet flat paths are stale).
+The problem is **the accuracy story is orphaned from the dashboards**.
+
+**ORPHANS (canonical content computed but consumed by no dashboard):**
+1. **`binding_depth_stratified_rust.py`** — the declared canonical binding
+   default (step 9b, appendix `alg:per-isotope-binding`). Witness has no
+   `consumers`; **no dashboard reads it**. Entire 9b output invisible to L1/L2.
+2. **`canonical-mass-table-242ppb.witness.json`** — named by the appendix; read
+   by nothing.
+3. **`mass_table_comprehensive.py`** (65-isotope sweep) — self-referential;
+   L2 predicts m_p/m_n from standalone borromean witnesses, **not** this table,
+   so full-table accuracy never reaches the headline.
+4. **`derived_chi_catalogue_sweep.py`** — exact q-Laurent χ^λ(β_K) catalogue,
+   demo-only. **Prime wire-in: the exact step-5 χ cache** per-knot mass/binding
+   needs (no float64, fast).
+
+**GAPS:**
+1. **9a per-knot VolDensity (wiring gap — biggest safe accuracy win).**
+   Production uses **uniform `vol_density_borromean(q)` for all atoms**
+   (`mass_table_comprehensive.py:208`); per-knot `vol_density_per_block` infra
+   **exists** but the 65-isotope sweep never migrated (12 scripts uniform / 7
+   per-knot). Error tracks the approximation: +2.89% (m_p) → +3.73% (¹²C). Not
+   a fit, not new code — a migration. See
+   `docs/audits/2026-06-02-vol-usage-audit-uniform-vs-per-knot.md` (read before
+   migrating — confirm why it was deferred).
+2. **9b Δ_λ closure — genuinely open gate** (the binding blocker;
+   `canonical-with-empirical-assignment`). NO FITTING ⇒ stays categorical-only
+   (GAP-A-3/4 / Option-E); do **not** wire the empirical α_k assignment as if
+   derived.
+3. **11 Q_β c_k near-match tier** — `qbeta-ck-cache` consumed at
+   `per_observable_100x_status.py:325` (labeled DERIVED-tier, not credited).
+
+**Dashboards** are read-only aggregators over a narrow witness set. L2 = 3/7
+pass (m_p, m_e, m_K/m_π); misses m_μ 963×, Q_β 164×, Δ_pn 163×, m_n 185×.
+
+**Generalized infra (`qou-mass`):** a vendored-shard **reader**, not a live
+`predict(Z,N)`. Lookup generalizes (120 Z-shards); **computation does not** —
+`compute_tr_M`/`canonical_braid` cover only 8 nuclides (p..⁶Li), `q≠q₀` raises,
+no Rust backend wired, dashboards don't call `qou_mass.predict`. For true live
+`predict(Z,N)`: PyO3-bind/vendor `markov_peel` + `atom_braid_word_3A` +
+`hecke_core` (or route through the **merged scalable transfer-χ** for any A),
+wire the Rust backend, implement `q≠q₀`, wire `derived_chi_catalogue` as the
+χ cache. Appendix `alg:` blocks point `computation.script` at `api.py` but the
+named witnesses are produced in-repo — contract is aspirational.
 
 ### 3a. Generalized-infra (`qou-mass`) state
 
