@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-10T19:49:06.761253+00:00",
-  "commitSha": "270801d6ed74a9ff237c812270725f800e199de7",
+  "computedAt": "2026-06-10T20:01:11.012147+00:00",
+  "commitSha": "6a203f28b283cef053d2675308547e228a19960b",
   "assertions": [
     {
       "name": "delta_q(T_{m,p}) = h*[(m-1)p]_q holds symbolically for all 6 force-knots",
@@ -34,11 +34,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 63,
+  "durationMs": 56,
   "computation": "rosso-jones-three-strand-delta-q",
   "scriptFile": "rosso_jones_three_strand_delta_q.py",
-  "scriptHash": "cd7320b40562",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "686ad9b4613a",
+  "scriptCommitSha": "6a203f28b283cef053d2675308547e228a19960b",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

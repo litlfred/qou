@@ -137,7 +137,7 @@ def main() -> None:
         Vp = sp.expand(jones_T3p(q, p))
         match = sp.simplify(Vp - expected[p]) == 0
         # leading twist exponent = degree of V = 2p = writhe w(3,p)
-        deg = sp.degree(sp.Poly(Vp, q))
+        deg = sp.degree(Vp, q)
         lead_ok = (deg == 2 * p)
         print(f"    T_3,{p} ({tbl[p]}): V = {Vp}   "
               f"[table match: {match}, leading deg {deg} == 2p={2*p}: {lead_ok}]")
