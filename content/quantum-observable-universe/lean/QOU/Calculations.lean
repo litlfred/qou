@@ -251,7 +251,7 @@ theorem full_derivation_chain :
 
 | Step | Formula | Value (uncertainty)                | Lean Declaration |
 |------|---------|-------------------------------------|------------------|
-| 1 | Vol(4₁) | 2.02988321281931 (OEIS A091518)    | `KnotRegistry.figureEightEntry.volume.value` |
+| 1 | Vol(4₁) | 2.029883212819307250042408 (OEIS A091518) | `KnotRegistry.figureEightEntry.volume.value` |
 | 2 | m_μ/m_e | 206.7682827(46) (NIST CODATA 2022) | `MassDerivation.experimental_mu_e_ratio` |
 | 3 | ℏ_q² = Vol/ratio | ≈ 0.009817               | `h_q_squared` |
 | 4 | ℏ_q = √(ℏ_q²) | ≈ 0.09908                   | `h_q_value` |
