@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-10T19:29:42.475741+00:00",
-  "commitSha": "9f8f3e5ab7535fe7cee214f43dcb66898d9046af",
+  "computedAt": "2026-06-10T19:36:34.553842+00:00",
+  "commitSha": "27adb893c4eafb1975318db8e5eb9932063491e9",
   "assertions": [
     {
       "name": "frobenius_Z2_matches_newton_h2",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": -1781118645294,
+  "durationMs": 9339,
   "computation": "symmetrized-constituent-general",
   "scriptFile": "symmetrized_constituent_general.py",
-  "scriptHash": "60e8ab3aa81d",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "a76befeb7653",
+  "scriptCommitSha": "27adb893c4eafb1975318db8e5eb9932063491e9",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
