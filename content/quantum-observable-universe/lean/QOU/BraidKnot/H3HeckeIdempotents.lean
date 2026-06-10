@@ -12,7 +12,7 @@ The Iwahori-Hecke algebra H_3(q) has three irreducible representations
 indexed by partitions of 3:
 
   - V_(3)        — symmetric (1-d):     σ_i acts as q on the 1-d space
-  - V_(2,1)      — Hoefsmit (2-d):       σ_0 diagonal q/-q⁻¹,
+  - V_(2,1)      — Hoefsmit (2-d):       σ_0 diagonal q, -q⁻¹,
                                           σ_1 off-diagonal with b coupling
   - V_(1,1,1)    — antisymmetric (1-d):  σ_i acts as -q⁻¹
 
