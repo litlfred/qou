@@ -125,3 +125,36 @@ pre-archimedean home of the binding; the Lean module
   graph. Likely the saturation/Pauli structure, possibly the same shell physics
   as the per-nucleus volume route (#2078).
 - Lossless χ extended to ⁵Li/⁶Li (Rust path) for the A=5,6 active sets.
+
+## 6. Update (same day) — edge-set selection REFUTED by exact enumeration
+
+[`bond_edge_set_selection_probe.py`](../../folio-assistant/computations/bond_edge_set_selection_probe.py)
+enumerates **every** static integer edge multiset per nucleus (the full class
+`0 ≤ n_pp ≤ C(Z,2)`, `0 ≤ n_pn ≤ Z·N`, `0 ≤ n_nn ≤ C(N,2)`) against the
+derived per-bond energies. **No static bond graph closes D/T/³He/⁴He
+jointly:**
+
+| nucleus | best integer set | miss | closable ±5% |
+|---------|-----------------|------|--------------|
+| D | (0,1,0) — its only bond | 0.57× | ✗ (needs occupancy ≈ 0.57 — halo) |
+| T | (0,1,1) = chain | 0.94× | ✗ (close) |
+| ³He | (0,2,0) | 0.99× | ✓ alone |
+| ⁴He | (1,4,1) = complete | 1.20× | ✗ (needs **more** than all pairs — magic) |
+
+The two joint blockers are exactly nature's two famous anomalies (halo
+deuteron, doubly-magic α). Verdict: the bond graph is **not a static integer
+graph** — the remaining structure is **fractional bond occupancy / shell
+weighting** (saturation, Pauli, magic), i.e. the per-nucleus volume route
+(#2078). Formalize-first refutation recorded so the static-graph direction is
+not re-chased.
+
+## 7. Lean formalization (fibre-level, sorry-free)
+
+[`QOU/Hecke/MarkovBondFactor.lean`](../../content/quantum-observable-universe/lean/QOU/Hecke/MarkovBondFactor.lean):
+`trace_bond_crossing` (`tr_M(c•σ_i + d•1) = c·z + d` — the per-bond factor)
+and `trace_bond_pair_factorizes` (`tr_M((c₁σ_i+d₁)(c₂σ_j+d₂)) =
+(c₁z+d₁)(c₂z+d₂)`, i<j — the two-bond factorization), both proved from the
+existing `MarkovTrace` class fields (generic `CommRing R`, no archimedean
+structure — per CLAUDE.md §7c). The general A-bond product needs the
+cross-level Markov axiom the class does not yet carry (same gap as
+`markov_trace_unique`); the compute witness covers it numerically to 1.1e-15.
