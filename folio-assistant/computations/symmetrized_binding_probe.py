@@ -182,6 +182,15 @@ def main() -> int:
             "S_atom=S_free (same nucleon content) the binding is UNCHANGED.",
         "binding_signal": "the residual log(S_free/S_atom) = the exact block-"
             "swapped bound symmetrization (task-1, S_Z×S_N), the small-Z refinement.",
+        "orbit_identity_does_NOT_trivialize_symmetrization": (
+            "atom_orbit_reduction.py proves tr_M(β_{Z,N})=tr_M(representative) "
+            "with NO |orbit| factor — but that is RELABELING (σ leaves the word "
+            "p…pn…n unchanged ⇒ conjugation β_σ W β_σ⁻¹, trace-preserving by "
+            "Markov M1). The Young SYMMETRIZER is a DIFFERENT operation: it "
+            "COMPOSES the block-swap braid, tr_M(W_atom·β_σ) (not conjugation), "
+            "which the bonds make nontrivial. So S_atom = |G|⁻¹Σ_σ "
+            "tr_M(W_atom·β_σ) is NOT trivially tr_M(W_atom); the orbit identity "
+            "must not be used to shortcut it."),
         "S_free_bosonic_4He": float(frob(pp, 2) * frob(pn, 2)
                                     / ((tau_p ** 2) * (tau_n ** 2))),
     })
