@@ -5,6 +5,31 @@ here — this is the *plan* + the measurement). Probe + witness:
 [`low_isotopes_binding_sweep.py`](../../folio-assistant/computations/low_isotopes_binding_sweep.py)
 / `low-isotopes-binding-sweep.witness.json`.
 
+## FINAL POSITION (owner directive 2026-06-10): NO truncation — only provable exact-0
+
+Truncating nonzero contributions is **rejected** regardless of how small
+the tail is — the precision discipline admits dropping a partition **only
+if `χ^λ(β_atom) = 0` is provable**. The exact-0 search came back **empty**:
+`exact-χ-zeros = 0` on both D and T — every partition has a nonzero
+character (the atom braid is a *generic* full-crossing word; no character
+selection rule). **Therefore no partitions are droppable, and the binding
+sum must run over all `p(3A)` partitions** for 1-ppQ precision.
+
+**Corollary — a current bug:** the matrix-M χ cache uses a `max_dim` cap
+that **skips** the high-dim partitions (12/30 for T). Those carry
+~10⁻³–10⁻⁹ each, so the cached `tr_M` is itself a **~10⁻³ truncation**,
+*not* 1-ppQ-precise. A 1-ppQ binding path must drop the `max_dim` cap and
+sum all partitions.
+
+**The only admissible optimization is therefore LOSSLESS:** per-nucleon
+H₃-block caching + partition inclusion (#2062 reduced-block) — it computes
+**all** `p(3A)` partitions to 50 dps and only reuses cached nucleon blocks,
+cutting the per-partition *constant* (no from-scratch seminormal builds,
+cross-isotope reuse). It does **not** reduce the partition count `p(3A)`
+(that's intrinsic to exact precision). The active-set measurement below is
+retained **only as a concentration diagnostic / exploratory tool**, never a
+production truncation.
+
 ## Measurement — the tr_M active set is 3–4 few-row partitions
 
 From the matrix-M χ caches, ranking partitions by |contribution| to `tr_M`:
