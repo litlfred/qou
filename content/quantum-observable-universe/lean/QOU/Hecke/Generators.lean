@@ -1,5 +1,6 @@
 import Mathlib.Algebra.Order.Ring.Defs
 import Mathlib.Data.Fintype.Basic
+import Mathlib.Algebra.Algebra.Defs
 
 /-!
 # Hecke generators and braid / Hecke relations
@@ -55,7 +56,7 @@ well-posedness additionally needs `q` to be a unit, which
 downstream `HeckeAlgebra` instances enforce by working over a
 field or by providing a unit witness. -/
 def HeckeQuadratic
-    {R : Type u} {n : ℕ} (q : R) [Ring R] [Inv R]
+    {R : Type u} {n : ℕ} (q : R) [CommRing R] [Inv R]
     {A : Type u} [Ring A] [Algebra R A]
     (embed : Generator n → A) : Prop :=
   ∀ i : Generator n,
