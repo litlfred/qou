@@ -85,7 +85,7 @@ theorem topological_mass_conjecture (tmf : TopologicalMassFormula) :
 /-- The Hyperbolic Volume of the Figure-Eight Knot (4₁).
     Exact: 3 · Cl₂(π/3) where Cl₂ is the Clausen function (OEIS A091518).
     Computed by SnapPy; value from Bloch-Wigner dilogarithm. -/
-noncomputable def vol_figure_eight : ℝ := 2.02988321281931
+noncomputable def vol_figure_eight : ℝ := 2.029883212819307250042408
 
 /-- CODATA 2022 Muon-Electron mass ratio.
     NIST: 206.768 2827(46), rel. uncertainty 2.2 × 10⁻⁸.
@@ -291,7 +291,7 @@ lemma mass_ratio_from_volume (q : ℝ) (_hq : q > 1) :
 
 | Parameter    | Narrative Origin           | NIST Value (uncertainty)       | Lean Representation   |
 |--------------|----------------------------|--------------------------------|-----------------------|
-| Vol(4₁)      | Hyperbolic Geometry        | 2.02988321281931 (OEIS A091518)| `vol_figure_eight`    |
+| Vol(4₁)      | Hyperbolic Geometry        | 2.029883212819307250042408 (OEIS A091518)| `vol_figure_eight`    |
 | m_μ / m_e    | CODATA 2022                | 206.7682827(46)                | `experimental_mu_e_ratio` |
 | ℏ_q          | Quantum Planck Field       | 0.09908                        | `quantum_planck q`    |
 | q            | Substrate Coupling         | 1.1097                         | `substrate_q`         |
