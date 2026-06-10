@@ -18,5 +18,6 @@ export default remark({
     "h3-wedderburn",
     "q-dimension",
     "eigenvalue-table",
+    "poincare-normalizer",
   ],
 });
