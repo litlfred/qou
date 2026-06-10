@@ -83,7 +83,7 @@ Refs:
 
 namespace QOU.IwahoriHecke
 
-universe u v
+universe u v w
 
 /-- **The Iwahori-Hecke algebra** `IwahoriHecke W q` of a Coxeter
     system `(W, S)` over a commutative ring `R` with parameter
