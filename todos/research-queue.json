@@ -241,5 +241,32 @@
       "antisym_pct_at_q_proton": 92.3,
       "anti_pattern_guard": "numerical-search-for-scaling-factor-S(q)-without-structural-justification"
     }
+  },
+  {
+    "id": "research-boiling-freezing-temps-from-braid-hbond",
+    "summary": "Review / derive boiling + freezing (melting) temperatures from the braid-weight + H-bond framework",
+    "comment": "QUEUED 2026-06-10 (user: 'queue to review boiling/freezing temps'). Extends the molecular-construction bond-angle program (prop:symmetric-block-domain-weight, q^ℓ domain weights; CH4/NH3/H2O/C2H4 angles within 0.6°, H2S/H2Se via Bring 1/√5) from single-molecule geometry to PHASE-TRANSITION observables. Boiling point ~ H-bond network cohesion energy per molecule; freezing/melting point ~ onset of the ordered (ice-like) H-bond lattice. Existing footholds: tetrahedral-hbond-directions (the 4 sp³ H-bond directions of water), ice-pauling-residual (Pauling residual entropy of ice), covalent-bond-shared-trefoil, h2o-bent-geometry. Open question: is the boiling/melting T a tr_M / binding-energy quantity (bar-symmetric Li_2^q sector) over the H-bond network braid, calibrated by the existing CAL inputs — i.e. derivable, not fitted? FIRST STEPS (formalize-first, no fitting): (1) corpus-grep boiling|freezing|melting|phase|latent|hydrogen-bond across content/ + folio-assistant/computations/ + docs/audits/ to see what exists; (2) identify whether T_boil/T_melt is an energy observable (MeV→K via k_B) traceable to the substrate, or a network-statistical quantity needing a new combiner; (3) state the hypothesis class + the invariant it must satisfy BEFORE any numerical scan (per CLAUDE.md formalize-first). ANTI-PATTERN GUARD: do NOT fit a scale factor to reproduce 373 K / 273 K — boiling/freezing must trace to CAL-1/2/3 or be reported tier=open. Cross-refs: prop:bring-trefoil-cinquefoil-channel (this branch), conj:h2s-angle-s3-braid-holonomy.",
+    "status": "open",
+    "priority": "medium",
+    "origin": "user-2026-06-10",
+    "createdAt": "2026-06-10",
+    "data": {
+      "goal": "molecular-construction",
+      "research_grade": true,
+      "target_observable": [
+        "T_boil (H2O and second-row hydrides)",
+        "T_melt / T_freeze (H2O / ice)"
+      ],
+      "existing_footholds": [
+        "tetrahedral-hbond-directions",
+        "ice-pauling-residual",
+        "h2o-bent-geometry",
+        "covalent-bond-shared-trefoil",
+        "prop:symmetric-block-domain-weight"
+      ],
+      "approach": "USER DIRECTION 2026-06-10: use a q-deformed equation of state q-PV = nRT. The phase-transition temperature is read off the q-deformed ideal-gas / van-der-Waals law where the q-deformation encodes the braid/H-bond network structure (the same q_0 substrate). Boiling: where q-PV=nRT crosses the H-bond cohesion; freezing: onset of the ordered lattice. Derive T from q-PV=nRT with the braid-weighted n (domain weights q^ℓ), NOT a fitted scale.",
+      "first_step": "corpus-grep boiling|freezing|melting|phase|latent|hydrogen-bond|nRT|equation.of.state|ideal.gas; classify T as energy-observable vs network-statistical; set up q-PV=nRT with the substrate q_0 and braid-weighted occupation BEFORE any scan",
+      "anti_pattern_guard": "do-not-fit-scale-to-373K-or-273K; trace to CAL inputs / q-PV=nRT or report tier=open"
+    }
   }
 ]
