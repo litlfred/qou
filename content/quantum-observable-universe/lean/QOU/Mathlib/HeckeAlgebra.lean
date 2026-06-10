@@ -384,7 +384,6 @@ theorem H3.basis_distinct (R : Type u) [CommRing R] [Nontrivial R] :
     · intro h
       simp [H3.one, H3.sigma1, H3.sigma2, H3.sigma1Sigma2,
             H3.sigma2Sigma1, H3.sigma1Sigma2Sigma1] at h
-      exact absurd h.1 one_ne_zero
 
 /-- Markov trace on `H_3(q)` over `ℝ`: `tr_M(a₁ · 1 + a₂ · σ_1
     + a₃ · σ_2 + a₄ · σ_1σ_2 + a₅ · σ_2σ_1 + a₆ · σ_1σ_2σ_1)
@@ -539,22 +538,56 @@ theorem H3.one_mul {R : Type u} [Field R] (q : R) (y : H3Carrier R) :
 
     Block dimensions: 1² + 2² + 1² = 6 = |S_3| ✓.
 
-    Standard projector formulas (Hoefsmit / Wenzl normalisation):
-    - `e_[3]     = (1 / [3]_q!) Σ_{w ∈ S_3} q^{ℓ(w)} T_w`.
-    - `e_[1,1,1] = (1 / [3]_q!) Σ_{w ∈ S_3} (-q⁻¹)^{ℓ(w)} T_w`.
-    - `e_[2,1]   = 1 - e_[3] - e_[1,1,1]`. -/
+    Standard projector formulas (Hoefsmit / Wenzl normalisation),
+    written with the S_3 Poincaré polynomial in the Hecke
+    parameter, `P(q) = Σ_{w ∈ S_3} q^{2ℓ(w)} = 1 + 2q² + 2q⁴ + q⁶
+    = (1+q²)(1+q²+q⁴)`:
+    - `e_[3]     = (1 / P(q))   Σ_{w ∈ S_3} q^{ℓ(w)} T_w`.
+    - `e_[1,1,1] = (1 / P(q⁻¹)) Σ_{w ∈ S_3} (-q⁻¹)^{ℓ(w)} T_w`.
+    - `e_[2,1]   = 1 - e_[3] - e_[1,1,1]`.
+
+    Why `P(q)` and not the balanced `[3]_q!`: the trivial block
+    satisfies `T_w e_[3] = q^{ℓ(w)} e_[3]`, so squaring the sum
+    multiplies it by `Σ_w q^{2ℓ(w)}` — idempotency forces the
+    normalizer `P(q)` exactly.  The sign block has
+    `T_w e_[1³] = (-q⁻¹)^{ℓ(w)} e_[1³]`, forcing `P(q⁻¹)`.
+    The earlier balanced-`[3]_q!` normalizer made both
+    projectors non-idempotent; see
+    `docs/audits/2026-06-09-heckealgebra-idempotency-diagnosis.md`. -/
+
+/-- **Poincaré polynomial of `S_3`** in the Hecke parameter:
+    `P(q) = Σ_{w ∈ S_3} q^{2ℓ(w)} = 1 + 2q² + 2q⁴ + q⁶
+    = (1+q²)(1+q²+q⁴)` (length multiset of `S_3` is
+    `{0, 1, 1, 2, 2, 3}`).  Correct normalizer for the
+    trivial-representation idempotent `e_[3]`; the sign
+    idempotent `e_[1,1,1]` uses `P(q⁻¹)`. -/
+noncomputable def H3.poincare (q : ℝ) : ℝ :=
+  1 + 2 * q ^ 2 + 2 * q ^ 4 + q ^ 6
+
+/-- `P(q) ≥ 1 > 0` for every real `q` (even powers, positive
+    coefficients): the Poincaré normalizer is unconditionally
+    non-zero — no genericity hypothesis needed. -/
+theorem H3.poincare_pos (q : ℝ) : 0 < H3.poincare q := by
+  unfold H3.poincare
+  nlinarith [sq_nonneg q, sq_nonneg (q ^ 2), sq_nonneg (q ^ 3)]
+
+/-- The Poincaré normalizer never vanishes (any real `q`). -/
+theorem H3.poincare_ne_zero (q : ℝ) : H3.poincare q ≠ 0 :=
+  ne_of_gt (H3.poincare_pos q)
 
 /-- The symmetric Wedderburn projector `e_[3]` for `H_3(q)`
-    over `ℝ`.  Coefficient list `(1, q, q, q², q², q³) / [3]_q!`. -/
+    over `ℝ`.  Coefficient list `(1, q, q, q², q², q³) / P(q)`
+    with `P = H3.poincare` the S_3 Poincaré polynomial. -/
 noncomputable def H3.blockSym3 (q : ℝ) : H3Carrier ℝ :=
-  let z := QOU.MathlibExt.QPartitionCombinatorics.qFactorial q 3
+  let z := H3.poincare q
   (1 / z, q / z, q / z, q ^ 2 / z, q ^ 2 / z, q ^ 3 / z)
 
 /-- The antisymmetric Wedderburn projector `e_[1,1,1]` for
     `H_3(q)` over `ℝ`.  Coefficient list `(1, -q⁻¹, -q⁻¹, q⁻²,
-    q⁻², -q⁻³) / [3]_q!`. -/
+    q⁻², -q⁻³) / P(q⁻¹)` — the sign block is normalized by the
+    Poincaré polynomial evaluated at `q⁻¹`. -/
 noncomputable def H3.blockAlt3 (q : ℝ) : H3Carrier ℝ :=
-  let z := QOU.MathlibExt.QPartitionCombinatorics.qFactorial q 3
+  let z := H3.poincare q⁻¹
   (1 / z, -q⁻¹ / z, -q⁻¹ / z, q⁻¹ ^ 2 / z, q⁻¹ ^ 2 / z, -q⁻¹ ^ 3 / z)
 
 /-- The mixed Wedderburn projector `e_[2,1] = 1 - e_[3] - e_[1,1,1]`
@@ -1130,7 +1163,6 @@ theorem H2Carrier_roundtrip {R : Type u} [CommRing R] (x : H2Carrier R) :
     HnCarrier_to_H2Carrier (H2Carrier_to_HnCarrier x) = x := by
   unfold HnCarrier_to_H2Carrier H2Carrier_to_HnCarrier
   simp
-  rfl
 
 /-- `HnCarrier_to_H2Carrier` of `Hn.one` is `H2.one`. -/
 theorem HnCarrier_to_H2Carrier_one {R : Type u} [CommRing R] :
@@ -1700,7 +1732,8 @@ theorem wedderburn_partition_count_le_factorial
     expanding the iterated generator action on the explicit
     coefficient lists `(1, q, q, q², q², q³)` etc., yielding
     a system of 6-tuple equalities that close by
-    `field_simp; ring` modulo `[3]_q! ≠ 0`.
+    `field_simp; ring` modulo `q ≠ 0` (the Poincaré
+    normalizers are non-zero for every real `q`).
 
     Stated here as a §3b-cond class hypothesis: concrete proof
     via the multiplication table.  The full proof is heavy
@@ -1712,10 +1745,12 @@ theorem wedderburn_partition_count_le_factorial
     H_3 multiplication.
 
     **Proof obligation** (per concrete-instance route): each
-    field expands to a 6-tuple equation in `q` with denominator
-    `[3]_q!`.  Component-by-component, the equation reduces to
-    `field_simp [qFactorial_ne_zero]; ring` once the q-arithmetic
-    primitives are unfolded.  The total proof is ~360 ring-
+    field expands to a 6-tuple equation in `q` with denominators
+    `P(q)` / `P(q⁻¹)` (the Poincaré normalizers, unconditionally
+    non-zero).  Component-by-component, the equation reduces to
+    `field_simp; ring` once the q-arithmetic primitives are
+    unfolded (`q ≠ 0` clears the `q⁻¹` structure constants).
+    The total proof is ~360 ring-
     manipulations (6 components × 4 fields × ~15 elementary
     symbol-arithmetic steps each); mechanical but voluminous,
     and best discharged via lake-build verification rather than
@@ -1737,7 +1772,8 @@ class H3WedderburnIdempotency (q : ℝ) where
 /-! ### H_3 idempotency — concrete proof attempts (lake-build verifiable)
 
     Each of the 4 class fields × 6 carrier components reduces
-    to a `field_simp; ring` identity modulo `qFactorial q 3 ≠ 0`.
+    to a `field_simp; ring` identity modulo `q ≠ 0`; the
+    Poincaré normalizers `P(q)`, `P(q⁻¹)` never vanish.
     The proofs below apply the unfold-then-`field_simp; ring`
     pattern to each carrier component via chained `Prod.ext`.
 
@@ -1745,23 +1781,35 @@ class H3WedderburnIdempotency (q : ℝ) where
     inline; iterate from there. -/
 
 /-- **First-component idempotency** for `e_[3]`: the structurally
-    simplest case of the full `H3WedderburnIdempotency` instance. -/
-theorem H3.blockSym3_sq_first_component (q : ℝ)
-    (h_zne : QOU.MathlibExt.QPartitionCombinatorics.qFactorial q 3 ≠ 0) :
+    simplest case of the full `H3WedderburnIdempotency` instance.
+    Hypothesis-free: the Poincaré normalizer `P(q)` is
+    unconditionally non-zero, and the first-component identity
+    `P(q)/P(q)² = 1/P(q)` involves no `q⁻¹` structure constants. -/
+theorem H3.blockSym3_sq_first_component (q : ℝ) :
     (H3.mul q (H3.blockSym3 q) (H3.blockSym3 q)).1
       = (H3.blockSym3 q).1 := by
-  unfold H3.mul H3.smul H3.add H3.blockSym3 H3.mulSigma1 H3.mulSigma2
+  have hP : ((1 : ℝ) + 2 * q ^ 2 + 2 * q ^ 4 + q ^ 6) ≠ 0 :=
+    ne_of_gt (by nlinarith [sq_nonneg q, sq_nonneg (q ^ 2), sq_nonneg (q ^ 3)])
+  unfold H3.mul H3.smul H3.add H3.blockSym3 H3.poincare
+         H3.mulSigma1 H3.mulSigma2
   simp only [Prod.fst]
   field_simp
   ring
 
 /-- **First-component orthogonality** for `e_[3] · e_[1,1,1]`:
     the symmetric and antisymmetric blocks are orthogonal at the
-    first carrier component. -/
-theorem H3.blockSym3_blockAlt3_orthogonal_first (q : ℝ)
-    (h_zne : QOU.MathlibExt.QPartitionCombinatorics.qFactorial q 3 ≠ 0) :
+    first carrier component.  Needs `q ≠ 0`: the cancellation
+    `Σ_w (-1)^{ℓ(w)} = 1 - 2(q·q⁻¹) + 2(q·q⁻¹)² - (q·q⁻¹)³ = 0`
+    uses `q · q⁻¹ = 1`. -/
+theorem H3.blockSym3_blockAlt3_orthogonal_first (q : ℝ) (hq : q ≠ 0) :
     (H3.mul q (H3.blockSym3 q) (H3.blockAlt3 q)).1 = 0 := by
-  unfold H3.mul H3.smul H3.add H3.blockSym3 H3.blockAlt3
+  have hP : ((1 : ℝ) + 2 * q ^ 2 + 2 * q ^ 4 + q ^ 6) ≠ 0 :=
+    ne_of_gt (by nlinarith [sq_nonneg q, sq_nonneg (q ^ 2), sq_nonneg (q ^ 3)])
+  have hPd : ((q : ℝ) ^ 6 + 2 * q ^ 4 + 2 * q ^ 2 + 1) ≠ 0 :=
+    ne_of_gt (by nlinarith [sq_nonneg q, sq_nonneg (q ^ 2), sq_nonneg (q ^ 3)])
+  have hPi : ((1 : ℝ) + 2 * q⁻¹ ^ 2 + 2 * q⁻¹ ^ 4 + q⁻¹ ^ 6) ≠ 0 :=
+    ne_of_gt (by nlinarith [sq_nonneg q⁻¹, sq_nonneg (q⁻¹ ^ 2), sq_nonneg (q⁻¹ ^ 3)])
+  unfold H3.mul H3.smul H3.add H3.blockSym3 H3.blockAlt3 H3.poincare
          H3.mulSigma1 H3.mulSigma2
   simp only [Prod.fst]
   field_simp
@@ -1770,7 +1818,7 @@ theorem H3.blockSym3_blockAlt3_orthogonal_first (q : ℝ)
 /-- **Concrete instance attempt** for `H3WedderburnIdempotency`.
     Each field discharged via `unfold + Prod.ext chain + field_simp;
     ring`.  The full proof expands to ~24 component identities
-    each closing by ring arithmetic modulo `qFactorial q 3 ≠ 0`.
+    each closing by ring arithmetic modulo `q ≠ 0`.
 
     User note: this instance is the user's lake-build verification
     target.  Iteration may be needed if `simp` / `Prod.ext` /
@@ -1778,27 +1826,48 @@ theorem H3.blockSym3_blockAlt3_orthogonal_first (q : ℝ)
     correct (each idempotency / orthogonality identity is a
     polynomial identity in `q`). -/
 noncomputable instance H3WedderburnIdempotency_canonical (q : ℝ)
-    (hq : q ≠ 0)
-    (h_zne : QOU.MathlibExt.QPartitionCombinatorics.qFactorial q 3 ≠ 0) :
+    (hq : q ≠ 0) :
     H3WedderburnIdempotency q where
   sym3_idempotent := by
-    unfold H3.mul H3.smul H3.add H3.blockSym3 H3.mulSigma1 H3.mulSigma2
+    have hP : ((1 : ℝ) + 2 * q ^ 2 + 2 * q ^ 4 + q ^ 6) ≠ 0 :=
+      ne_of_gt (by nlinarith [sq_nonneg q, sq_nonneg (q ^ 2), sq_nonneg (q ^ 3)])
+    have hPd : ((q : ℝ) ^ 6 + 2 * q ^ 4 + 2 * q ^ 2 + 1) ≠ 0 :=
+      ne_of_gt (by nlinarith [sq_nonneg q, sq_nonneg (q ^ 2), sq_nonneg (q ^ 3)])
+    unfold H3.mul H3.smul H3.add H3.blockSym3 H3.poincare
+           H3.mulSigma1 H3.mulSigma2
     refine Prod.ext ?_ (Prod.ext ?_ (Prod.ext ?_
       (Prod.ext ?_ (Prod.ext ?_ ?_))))
     all_goals (simp only [Prod.fst, Prod.snd]; field_simp; ring)
   alt3_idempotent := by
-    unfold H3.mul H3.smul H3.add H3.blockAlt3 H3.mulSigma1 H3.mulSigma2
+    have hPd : ((q : ℝ) ^ 6 + 2 * q ^ 4 + 2 * q ^ 2 + 1) ≠ 0 :=
+      ne_of_gt (by nlinarith [sq_nonneg q, sq_nonneg (q ^ 2), sq_nonneg (q ^ 3)])
+    have hPi : ((1 : ℝ) + 2 * q⁻¹ ^ 2 + 2 * q⁻¹ ^ 4 + q⁻¹ ^ 6) ≠ 0 :=
+      ne_of_gt (by nlinarith [sq_nonneg q⁻¹, sq_nonneg (q⁻¹ ^ 2), sq_nonneg (q⁻¹ ^ 3)])
+    unfold H3.mul H3.smul H3.add H3.blockAlt3 H3.poincare
+           H3.mulSigma1 H3.mulSigma2
     refine Prod.ext ?_ (Prod.ext ?_ (Prod.ext ?_
       (Prod.ext ?_ (Prod.ext ?_ ?_))))
     all_goals (simp only [Prod.fst, Prod.snd]; field_simp; ring)
   mixed21_idempotent := by
+    have hP : ((1 : ℝ) + 2 * q ^ 2 + 2 * q ^ 4 + q ^ 6) ≠ 0 :=
+      ne_of_gt (by nlinarith [sq_nonneg q, sq_nonneg (q ^ 2), sq_nonneg (q ^ 3)])
+    have hPd : ((q : ℝ) ^ 6 + 2 * q ^ 4 + 2 * q ^ 2 + 1) ≠ 0 :=
+      ne_of_gt (by nlinarith [sq_nonneg q, sq_nonneg (q ^ 2), sq_nonneg (q ^ 3)])
+    have hPi : ((1 : ℝ) + 2 * q⁻¹ ^ 2 + 2 * q⁻¹ ^ 4 + q⁻¹ ^ 6) ≠ 0 :=
+      ne_of_gt (by nlinarith [sq_nonneg q⁻¹, sq_nonneg (q⁻¹ ^ 2), sq_nonneg (q⁻¹ ^ 3)])
     unfold H3.mul H3.smul H3.add H3.blockMixed21 H3.blockSym3 H3.blockAlt3
-           H3.mulSigma1 H3.mulSigma2 H3.one
+           H3.poincare H3.mulSigma1 H3.mulSigma2 H3.one
     refine Prod.ext ?_ (Prod.ext ?_ (Prod.ext ?_
       (Prod.ext ?_ (Prod.ext ?_ ?_))))
     all_goals (simp only [Prod.fst, Prod.snd]; field_simp; ring)
   sym3_alt3_orthogonal := by
-    unfold H3.mul H3.smul H3.add H3.blockSym3 H3.blockAlt3
+    have hP : ((1 : ℝ) + 2 * q ^ 2 + 2 * q ^ 4 + q ^ 6) ≠ 0 :=
+      ne_of_gt (by nlinarith [sq_nonneg q, sq_nonneg (q ^ 2), sq_nonneg (q ^ 3)])
+    have hPd : ((q : ℝ) ^ 6 + 2 * q ^ 4 + 2 * q ^ 2 + 1) ≠ 0 :=
+      ne_of_gt (by nlinarith [sq_nonneg q, sq_nonneg (q ^ 2), sq_nonneg (q ^ 3)])
+    have hPi : ((1 : ℝ) + 2 * q⁻¹ ^ 2 + 2 * q⁻¹ ^ 4 + q⁻¹ ^ 6) ≠ 0 :=
+      ne_of_gt (by nlinarith [sq_nonneg q⁻¹, sq_nonneg (q⁻¹ ^ 2), sq_nonneg (q⁻¹ ^ 3)])
+    unfold H3.mul H3.smul H3.add H3.blockSym3 H3.blockAlt3 H3.poincare
            H3.mulSigma1 H3.mulSigma2
     refine Prod.ext ?_ (Prod.ext ?_ (Prod.ext ?_
       (Prod.ext ?_ (Prod.ext ?_ ?_))))
