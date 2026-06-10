@@ -46,7 +46,7 @@ open QOU.BraidKnot.ShellNeutrality
     by extracting the multiset of contents `c.2 - c.1`. The data field
     `n` is the cardinality of the Mathlib cell set. -/
 -- Ref: [manuscript] conj:categorical-neutrality-saturated-shells
-def fromMathlib (Y : YoungDiagram) :
+def fromMathlib (Y : _root_.YoungDiagram) :
     QOU.BraidKnot.ShellNeutrality.YoungDiagram where
   n := Y.cells.card
   contents := Y.cells.val.map (fun c => (c.2 : ℤ) - c.1)
@@ -56,12 +56,12 @@ def fromMathlib (Y : YoungDiagram) :
     simp [Multiset.card_map]
 
 /-- Cardinality of the bridged diagram equals the Mathlib cell count. -/
-@[simp] theorem fromMathlib_n (Y : YoungDiagram) :
+@[simp] theorem fromMathlib_n (Y : _root_.YoungDiagram) :
     (fromMathlib Y).n = Y.cells.card := rfl
 
 /-- The bridged contents multiset is the cells multiset under the
     content map. -/
-@[simp] theorem fromMathlib_contents (Y : YoungDiagram) :
+@[simp] theorem fromMathlib_contents (Y : _root_.YoungDiagram) :
     (fromMathlib Y).contents
       = Y.cells.val.map (fun c => (c.2 : ℤ) - c.1) := rfl
 
@@ -79,7 +79,7 @@ def fromMathlib (Y : YoungDiagram) :
     construction. -/
 class TransposeBridge where
   fromMathlib_self_conj_of_transpose_eq :
-    ∀ (Y : YoungDiagram),
+    ∀ (Y : _root_.YoungDiagram),
       Y.transpose = Y → isSelfConjugate (fromMathlib Y)
 
 /-- **Forward direction (proved, conditional on the bridge axiom).**
@@ -89,7 +89,7 @@ class TransposeBridge where
 -- Ref: [manuscript] conj:categorical-neutrality-saturated-shells
 theorem fromMathlib_kappa_zero_of_transpose_eq
     [B : TransposeBridge]
-    (Y : YoungDiagram) (h : Y.transpose = Y) :
+    (Y : _root_.YoungDiagram) (h : Y.transpose = Y) :
     kappa (fromMathlib Y) = 0 := by
   apply kappa_zero_of_self_conjugate
   exact B.fromMathlib_self_conj_of_transpose_eq Y h
@@ -115,14 +115,14 @@ deliverable referenced in the workplan.
 
 class ReverseBridge where
   transpose_eq_of_fromMathlib_kappa_zero :
-    ∀ (Y : YoungDiagram),
+    ∀ (Y : _root_.YoungDiagram),
       kappa (fromMathlib Y) = 0 → Y.transpose = Y
 
 /-- **Full iff via the bridge axioms.** -/
 -- Ref: [manuscript] conj:categorical-neutrality-saturated-shells
 theorem fromMathlib_kappa_zero_iff_transpose_eq
     [TransposeBridge] [ReverseBridge]
-    (Y : YoungDiagram) :
+    (Y : _root_.YoungDiagram) :
     kappa (fromMathlib Y) = 0 ↔ Y.transpose = Y := by
   refine ⟨ReverseBridge.transpose_eq_of_fromMathlib_kappa_zero Y, ?_⟩
   intro h
