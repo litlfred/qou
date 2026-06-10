@@ -172,12 +172,12 @@ theorem chirality_writhe_ribbon
       (List.zipWith (fun ch cv => ch.weight * cv.val)
         channels chars).sum ≠ 0) :
     ∃ (c_avg R : ℝ),
-      chiralityFactor channels chars writhe h_len
+      chiralityFactor (q := q) channels chars writhe h_len
         = 1 + (writhe : ℝ) * (q - q⁻¹) * c_avg
             + R * (q - q⁻¹) ^ 2 := by
   -- We exhibit c_avg = 0, taking R either as 0 (when q = 1) or the
   -- algebraic residual (chiralityFactor − 1) / h² (when h ≠ 0).
-  set a := chiralityFactor channels chars writhe h_len with ha_def
+  set a := chiralityFactor (q := q) channels chars writhe h_len with ha_def
   by_cases hh : q - q⁻¹ = 0
   · -- ── Case q = 1 ──────────────────────────────────────────────────
     -- Deduce q = 1 from q > 0 and q - q⁻¹ = 0.
@@ -205,7 +205,7 @@ theorem chirality_writhe_ribbon
   · -- ── General case: h ≠ 0, choose c_avg = 0, R = (a - 1) / h² ────
     refine ⟨0, (a - 1) / (q - q⁻¹) ^ 2, ?_⟩
     have h2 : (q - q⁻¹) ^ 2 ≠ 0 := pow_ne_zero _ hh
-    field_simp [h2]
+    rw [mul_zero, add_zero, div_mul_cancel₀ _ h2]
     ring
 
 /-! ## §5  Amphichiral case (sanity check) -/
@@ -225,7 +225,7 @@ theorem chirality_writhe_zero
       (List.zipWith (fun ch cv => ch.weight * cv.val)
         channels chars).sum ≠ 0) :
     ∃ (R : ℝ),
-      chiralityFactor channels chars 0 h_len
+      chiralityFactor (q := q) channels chars 0 h_len
         = 1 + R * (q - q⁻¹) ^ 2 := by
   obtain ⟨c_avg, R, h⟩ :=
     chirality_writhe_ribbon q 0 channels chars h_len h_denom
