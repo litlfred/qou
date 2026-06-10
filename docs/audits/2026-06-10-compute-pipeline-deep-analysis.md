@@ -153,12 +153,46 @@ the spine of the whole tranche.
 
 ## 4. Axis D — Performance hotspots + FFI roundtrips
 
-_(pending — compute-audit / ffi-roundtrip pass)_
+FFI roundtrip catalogue (2026-05-29) re-confirmed RESOLVED on the mass/binding
+path. The new wins:
+
+| P | item | cost now → after | NO-float64 |
+|---|------|------------------|-----------|
+| **P1** | **wire transfer-χ → canonical tr_M (`canonical_tr_m_via_branching.py:421`, currently O(L·d_λ²) MPFR = 3.6 yr @⁶Li) + binding (`binding_depth_stratified_lr/_rust` ingests f64 χ from `compute_atom_chi_rust.py`)** | **years → seconds; any-A** | ✅ removes f64 χ |
+| P2 | Rust port of transfer kernel (`chi_all_lambda` α/β + edge sweep → `hecke-engine` + PyO3, rayon) | ⁹Be 10s→sub-s; ¹⁰B 138s→s | ✅ MPFR |
+| P3a | 1-line `py.allow_threads` on 6 PyO3 funcs (`chi_lambda_braid`/`chi_q_via_gp`/`chi_q_atomic`/`*_all_partitions_mpfr`/`tr_m_atomic_mpfr`/`mn_chi_q`) | threaded callers 0×→N× | ✅ orthogonal |
+| P3b | rayon `par_iter` over partition loop in MPFR batches | ~N-core | ✅ |
+| P4 | flip `binding_canonical.py:139` default `use_closed_form=True` | A=4 minutes→sub-s | ✅ |
+| P5 | wire `derived_chi_catalogue` lookup into `closed_form_tau_M.py` (demo-certified ≡) | GP-reduce→dict lookup | ✅ exact q-Laurent |
+| P6 | delete/guard `canonical_tr_m_via_branching.py:104` np.complex-f64 A=2 path (dead after P1) | — | ✅ removes f64 |
 
 ## 5. Synthesis — prioritized work-plan
 
-_(filled after the four axes land — ordered by accuracy impact, then wall-time
-saved, with NO-FLOAT64 / NO-FITTING gates on every item)_
+NO-FITTING is **already clean** (Axis B) → no numeric work, 3 label fixes only.
+The action is NO-FLOAT64 (Axis A) + wiring-for-accuracy (Axis C) + optimize
+(Axis D), and **they converge**: P1 is simultaneously the top float64 fix
+(removes f64 χ ingestion — A's C-consumers), the top wiring fix (un-orphans the
+transfer + binding — C's orphan #1/#4), the top perf fix (D's P1), and the
+generalized-infra engine (any-A χ for `predict(Z,N)` — §3a).
+
+**Execution order (safety × value; sandbox runs Python + `bun validate`, not
+Lean/CI):**
+
+| # | task | axes | risk |
+|---|------|------|------|
+| 1 | **C6 CI guard** — widen `audits/float64_leak_audit.py` to canonical-script list + flag witness-producers calling `chi_lambda_braid`/`gram`/`nf_tr` without `mpfr` tag | A | low (audit tool, additive) |
+| 2 | **R2/R3 label fixes** (c_3=-2 tiering) | B | low (doc) |
+| 3 | **P4** flip `use_closed_form` default | D | low (1 caller, diag-only) |
+| 4 | **P1** wire transfer-χ → canonical tr_M + binding (verify ≡ old within precision, run scripts) | A·C·D | med (math-affecting; equiv pre-certified) |
+| 5 | **C2/C3** re-lift canonical tr_M producers to mpf | A | med (witness values f64→exact) |
+| 6 | **C4** exact `(c,d)` in `atom_braid_word_3A` (cascades to dispatchers) | A | med |
+| 7 | **C1/C5** route/deprecate numpy χ engines | A | med |
+| 8 | **generalized `predict(Z,N)`** — wire transfer as live `compute_tr_M`/`canonical_braid` for any nuclide | C·§3a | med-high |
+| 9 | **P3a** allow_threads (Rust rebuild) | D | low logic / needs maturin |
+| 10 | **GAP#1 per-knot VolDensity** migration (headline-moving — read 2026-06-02 audit, report Δ, owner-surface) | C | high (moves numbers) |
+| 11 | **R1** term6 proposition→conjecture (content-kind propagation) | B | med |
+
+Δ_λ closure (GAP#2) stays out — NO FITTING; categorical route only.
 
 ## 6. Execution log
 
