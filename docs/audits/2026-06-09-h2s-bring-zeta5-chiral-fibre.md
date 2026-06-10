@@ -95,11 +95,12 @@ which the H₂S conjecture now `uses`:
   (witness `bring-trefoil-cinquefoil-channel.witness.json`, 7 assertions): genera
   `g(T_{2,3})=1`, `g(T_{2,5})=2`, both `≤ g(Σ₄)=4`, distinct; the complete
   embeddable list; and the ℤ₅-orbit Gauss sum `g²=5`, `g=√5`.
-- **Lean** — `QOU.BringChiralCinquefoil`: `bring_trefoil_cinquefoil_channel`
-  (genera + embedding + distinctness, sorry-free `decide`); `zeta5_pow_five`
-  (`ζ₅⁵=1`, sorry-free); `quintic_gauss_sum_sq_eq_five` (`g²=5`, one cited
-  `sorry` marking the archimedean-sign / normalisation step — the conjecture's
-  open content).
+- **Lean** — `QOU.BringChiralCinquefoil`, **sorry-free** (verified Lean 4.24.0 +
+  Mathlib): `bring_trefoil_cinquefoil_channel` (genera + embedding + distinctness,
+  `decide`); `zeta5_pow_five` (`ζ₅⁵=1`); `quintic_gauss_sum_sq_eq_five` (`g²=5`,
+  proved from `Complex.isPrimitiveRoot_exp` + the cyclotomic relation via
+  `linear_combination`). The archimedean *sign* `g=+√5` — not the value `g²=5` —
+  is the only deferred step, and it is the conjecture's open normalisation content.
 - **Paper** — the proposition states the established scaffold and isolates the
   single open item (exact `ζ₅`-residue normalisation `=1/√5`), which stays the
   content of [`conj:h2s-angle-s3-braid-holonomy`](../../content/quantum-observable-universe/molecular-construction/h2s-angle-s3-braid-holonomy.md).

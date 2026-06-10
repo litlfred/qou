@@ -1,5 +1,6 @@
 import Mathlib.Data.Complex.Basic
 import Mathlib.Analysis.SpecialFunctions.Complex.Circle
+import Mathlib.RingTheory.RootsOfUnity.Complex
 
 
 /-!
@@ -27,8 +28,10 @@ LaTeX label: `prop:bring-trefoil-cinquefoil-channel`
 **Ground ring**: `ℕ` (genus combinatorics) and `ℂ` (`ζ₅`, Gauss sum).
 
 Self-contained per the block-level convention (`x5-z5-automorphism.lean`): the
-genus formula and `ζ₅` are re-defined locally. The discrete scaffold is proved
-sorry-free; only the classical `g² = 5` Gauss-sum value is cited.
+genus formula and `ζ₅` are re-defined locally. **All three theorems are proved
+sorry-free** — the genus/embedding/distinctness combinatorics by `decide`,
+`ζ₅⁵ = 1` and the Gauss-sum `g² = 5` from `Complex.isPrimitiveRoot_exp` plus the
+cyclotomic relation. Verified under Lean 4.24.0 + Mathlib.
 -/
 
 namespace QOU.BringChiralCinquefoil
@@ -73,20 +76,41 @@ theorem zeta5_pow_five : zeta5 ^ 5 = 1 := by
   rw [h5]
   exact Complex.exp_two_pi_mul_I
 
-/-- **The quintic √5 (classical analytic input).** The quadratic Gauss sum over
-    the cinquefoil's `ℤ₅`-orbit, `g = Σ_{k=0}^{4} ζ₅^{k²}` (written out as the
-    five powers `0,1,4,9,16`), squares to `5`: `g² = 5`. Since `p = 5 ≡ 1
-    (mod 4)` the archimedean root is `g = +√5`. This is the unique source of
-    `ζ₅`'s irrationality over `ℚ` and the √5 the H₂S Bring constant `1/√5` is
-    built from; the first Lagrange resolvent `w₁` of `ℤ₅ ⊂ S₅` carries it.
+/-- **The quintic √5 — `g² = 5` (proved).** The quadratic Gauss sum over the
+    cinquefoil's `ℤ₅`-orbit, `g = Σ_{k=0}^{4} ζ₅^{k²}` (written out as the five
+    powers `0,1,4,9,16`), squares to `5`. This is the unique source of `ζ₅`'s
+    irrationality over `ℚ` and the √5 the H₂S Bring constant `1/√5` is built
+    from; the first Lagrange resolvent `w₁` of `ℤ₅ ⊂ S₅` carries it.
 
-    Stated with a single cited `sorry`: the value of the quadratic Gauss sum is
-    classical (Washington), and pinning the **archimedean sign** `g = +√5` is
-    exactly the open monodromy/normalisation content of the H₂S conjecture. -/
+    Proof: `ζ₅` is a primitive 5th root (`Complex.isPrimitiveRoot_exp`), so
+    `1 + ζ₅ + ζ₅² + ζ₅³ + ζ₅⁴ = 0` (`geom_sum_eq_zero`) and `ζ₅⁵ = 1`. Reducing
+    `ζ₅⁹ = ζ₅⁴`, `ζ₅¹⁶ = ζ₅` gives `g = 1 + 2ζ₅ + 2ζ₅⁴`, and
+    `g² − 5 = (4ζ₅³+8)(ζ₅⁵−1) + 4(1+ζ₅+ζ₅²+ζ₅³+ζ₅⁴)` — a polynomial identity
+    closed by `linear_combination`. The archimedean root `g = +√5`
+    (`p = 5 ≡ 1 mod 4`) is the sign refinement; `g² = 5` is the field-theoretic
+    core that fixes the irrational scale. -/
 -- Ref: [washington1997] Washington, *Introduction to Cyclotomic Fields* (GTM 83),
 --   quadratic Gauss sum g_p² = (−1)^{(p−1)/2}·p; p = 5 ≡ 1 (mod 4) ⇒ g² = 5.
 theorem quintic_gauss_sum_sq_eq_five :
     (1 + zeta5 ^ 1 + zeta5 ^ 4 + zeta5 ^ 9 + zeta5 ^ 16) ^ 2 = 5 := by
-  sorry
+  have hprim : IsPrimitiveRoot zeta5 5 := by
+    have key : zeta5 = Complex.exp (2 * (Real.pi : ℂ) * Complex.I / (↑(5 : ℕ))) := by
+      unfold zeta5; norm_num
+    rw [key]
+    exact Complex.isPrimitiveRoot_exp 5 (by norm_num)
+  have h5 : zeta5 ^ 5 = 1 := zeta5_pow_five
+  have hsum : 1 + zeta5 + zeta5 ^ 2 + zeta5 ^ 3 + zeta5 ^ 4 = 0 := by
+    have hg := hprim.geom_sum_eq_zero (by norm_num)
+    rw [Finset.sum_range_succ, Finset.sum_range_succ, Finset.sum_range_succ,
+        Finset.sum_range_succ, Finset.sum_range_succ, Finset.sum_range_zero] at hg
+    linear_combination hg
+  have e9 : zeta5 ^ 9 = zeta5 ^ 4 := by
+    have h : zeta5 ^ 9 = zeta5 ^ 5 * zeta5 ^ 4 := by ring
+    rw [h, h5, one_mul]
+  have e16 : zeta5 ^ 16 = zeta5 := by
+    have h : zeta5 ^ 16 = (zeta5 ^ 5) ^ 3 * zeta5 := by ring
+    rw [h, h5, one_pow, one_mul]
+  rw [e9, e16]
+  linear_combination (4 * zeta5 ^ 3 + 8) * h5 + 4 * hsum
 
 end QOU.BringChiralCinquefoil

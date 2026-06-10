@@ -81,7 +81,12 @@ conjecture's open content; the discrete scaffold here is established.
   knots in $\Sigma_4$). **Sorry-free** (`decide`).
 - `zeta5_pow_five` — $\zeta_5^5 = 1$, the $5$-fold symmetry. **Sorry-free**
   (matching [`prop:x5-z5-automorphism`](#prop:x5-z5-automorphism)).
-- `quintic_gauss_sum_sq_eq_five` — $\bigl(\sum_k \zeta_5^{k^2}\bigr)^2 = 5$. The
-  quadratic Gauss-sum *value* is classical (cited, \cite{washington1997}); the
-  one `sorry` marks exactly the archimedean-sign / normalisation step that is the
-  conjecture's open content.
+- `quintic_gauss_sum_sq_eq_five` — $\bigl(\sum_k \zeta_5^{k^2}\bigr)^2 = 5$.
+  **Sorry-free** — proved from $\zeta_5$ primitivity
+  (`Complex.isPrimitiveRoot_exp`) and the cyclotomic relation
+  $1+\zeta_5+\zeta_5^2+\zeta_5^3+\zeta_5^4 = 0$ (`geom_sum_eq_zero`), reducing
+  $\zeta_5^9 \mapsto \zeta_5^4$, $\zeta_5^{16} \mapsto \zeta_5$ and closing
+  $g^2 - 5 = (4\zeta_5^3+8)(\zeta_5^5-1) + 4(1+\zeta_5+\zeta_5^2+\zeta_5^3+\zeta_5^4)$
+  by `linear_combination` (\cite{washington1997} is the classical reference for
+  the value). The archimedean *sign* $g = +\sqrt5$ — not the value $g^2 = 5$ — is
+  the only deferred part, and it is the conjecture's open normalisation content.
