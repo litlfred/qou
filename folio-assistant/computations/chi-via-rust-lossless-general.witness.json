@@ -1,14 +1,14 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-10T20:32:38.382057+00:00",
-  "commitSha": "ca89934b68d03737f3fc426d54d57fd6c2f73245",
+  "computedAt": "2026-06-10T23:21:02.137383+00:00",
+  "commitSha": "705444bd4645a7d3c50203ddbaaab4b2eec399c7",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 37,
+  "durationMs": 67,
   "computation": "chi-via-rust-lossless-general",
   "scriptFile": "chi_via_rust_lossless.py",
-  "scriptHash": "4f770172ef5d",
+  "scriptHash": "41bef34739aa",
   "scriptCommitSha": "ca89934b68d03737f3fc426d54d57fd6c2f73245",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -54,6 +54,6 @@
         "reused": true
       }
     ],
-    "total_time_sec": 0.04
+    "total_time_sec": 0.07
   }
 }
