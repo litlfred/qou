@@ -142,7 +142,44 @@ Poincaré-polynomial normalizers) is precisely the trivial⊕standard decomposit
 tooling, and is the natural instrument for expressing $a$ and $|\vec s|$ inside
 $H_3$/$H_4$. The $\tau$-forcing computation (§4) should be built on top of it.
 
-## 6. Lean formalisation
+## 6. The $\xi_m$ tower finding (background probe, 2026-06-10) and the joint-vs-individual pivot
+
+A conjectural lepton closure factor *does* exist
+(`mass-theory/conj-lepton-tower-h-n-plus-1-branching.md`):
+$$
+\xi_m = \frac{[2m-1]_q\,[m]_q}{[2m]_q}\cdot\frac{1}{\hbar_q^2},
+\qquad
+\mathcal F_\ell(q)\ \stackrel{\text{conj}}{=}\ \xi_\ell(q)\cdot\mathrm{Vol}_q^{\text{tower}}(K_\ell),
+$$
+with the triple $(2m-1,\,m,\,2m)$ reading as (bar-anti-symmetric, middle,
+bar-symmetric) at lepton level $m$. **Muon ($m=2$) is the first member of the
+pattern; tau ($m=3$, $\xi_3=[5]_q[3]_q/[6]_q$) already misses by $0.79\%$** — the
+per-lepton closed form is not yet right at tau, and the form of $\xi_\ell$ is open
+(Path A derivation / Path B fit / Path C Kashaev postulate — all open).
+
+**Strategic consequence — prove the joint Koide relation, not the per-lepton
+masses.** Koide ($|\vec s| = a$) is a *single* equation on the three masses; the
+$\xi\times\mathrm{Vol}$ tower is *three* equations (one exact mass each) and
+already fails the third at $0.79\%$ — about $10^3\times$ worse than Koide's
+experimental $10^{-5}$. Therefore:
+
+- Koide is the **better-supported, cleaner invariant** (1 equation, $10^{-5}$)
+  than the per-lepton tower (3 equations, tau $0.79\%$ off).
+- A proof of $|\vec s| = a$ would **predict $m_\tau$** from $m_e, m_\mu$ — turning
+  the tower's failing tau into an *output* and making the $0.79\%$ per-lepton miss
+  irrelevant.
+- **Recommended attack:** derive $|\vec s| = a$ as a structural identity using the
+  Wedderburn trivial/standard projectors (§5) **directly**, without first nailing
+  each $\mathcal F_\ell$. The joint relation may hold even where the individual
+  closed forms do not.
+
+**Caveat (formalize-first).** The q-integer structure is suggestive — e.g.
+$[2]_q=\sqrt2$ at a primitive 8th root of unity, and $[3]$-type factors carry
+3-fold structure — but the balance must be shown at the *real* substrate
+$q_0\approx1.1097$ (or as a $q$-independent identity), **not** by hunting a
+root-of-unity where $\sqrt2$ happens to appear. That hunt is the numerology trap.
+
+## 7. Lean formalisation
 
 The reduction (§1) is elementary real algebra over $\mathbb{R}$:
 
