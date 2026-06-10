@@ -164,6 +164,7 @@ section({
         "crossing-parity-test-table-data",
         "van-der-waals-hopf-channel",
         "hopf-link-symmetric-decomposition",
+        "vdw-pskew-isolation",
         "molecular-hbond-phase-transition",
       ],
     }),

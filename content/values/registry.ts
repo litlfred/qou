@@ -412,6 +412,29 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
       units: null,
     }),
 
+    vdw_cosh_2lambda: Object.freeze({
+      name: "vdw_cosh_2lambda",
+      description:
+        "cosh(2λ)=(q²+q⁻²)/2 — the retained bar-even carrier of the Hopf link.",
+      symbol: "\cosh 2\lambda",
+      witnessFile:
+        "folio-assistant/computations/vdw-pskew-sinh-probe.witness.json",
+      witnessPath: "data.cosh_2lambda",
+      defaultPrecision: 5,
+      units: null,
+    }),
+    vdw_bar_odd_residual: Object.freeze({
+      name: "vdw_bar_odd_residual",
+      description:
+        "The van der Waals bar-odd residual sinh(2λ)·(e₊−e₋) (P_skew channel, exact).",
+      symbol: "\sinh(2\lambda)(e_+-e_-)",
+      witnessFile:
+        "folio-assistant/computations/vdw-pskew-sinh-probe.witness.json",
+      witnessPath: "data.vdw_bar_odd_residual",
+      defaultPrecision: 5,
+      units: null,
+    }),
+
     H_A: Object.freeze({
       name: "H_A",
       description: "Planck constant ℏ_q = q - q^{-1} at the substrate.",
