@@ -136,7 +136,7 @@ def _split_atom_braid(Z: int, N: int) -> tuple[
 
 def build_chi_cache_at_q0_matrix_m(
     atom_name: str, Z: int, N: int, q_str: str, *, dps: int = 50,
-    max_dim: int = 100,
+    max_dim: int | None = None,
 ) -> dict:
     """Per-λ χ^λ(β_atomic(Z, N); q_0) via the matrix-M mpfr backend.
 
@@ -144,14 +144,29 @@ def build_chi_cache_at_q0_matrix_m(
     tables per shape, saves incrementally. Format mirrors the
     hoefsmit producer so downstream consumers swap in transparently.
 
-    `max_dim` caps the partitions we attempt. The pure-Python mpmath
-    matrix arithmetic at 50 dps takes ~0.1 s / dim²·word_length per
-    partition; for tritium n=9 at dim=216 a single partition is ~60 s
-    and at dim=300+ the wall is minutes. The matrix-M architecture is
-    block-bounded, but the pure-Python LEAF arithmetic is not — the
-    Rust port (Phase 1.4 follow-up) lifts this cap. Partitions over
-    the cap are SKIPPED with a placeholder entry so the cache file
-    remains a valid Phase 2 artefact while waiting on the Rust port.
+    LOSSLESS BY DEFAULT (`max_dim=None`): EVERY partition λ ⊢ n is
+    computed, so `tr_M_at_q0 = Σ_λ y_λ χ^λ` is the COMPLETE trace at
+    1-ppQ precision. Required by the precision discipline — there is
+    NO exact-χ selection rule (every λ has a nonzero character at the
+    generic full-crossing atom braid), so dropping any partition is a
+    truncation of unknown size, NOT a free omission (owner directive
+    2026-06-10; see
+    `docs/audits/2026-06-10-binding-active-set-compute-optimization.md`).
+
+    `max_dim` (opt-in, EXPLORATORY only): when set to an int, partitions
+    with dim V_λ > max_dim are SKIPPED with a placeholder entry. This
+    makes `tr_M_at_q0` a TRUNCATED value — the payload is then flagged
+    `tr_M_partial: true` with `n_skipped_max_dim`, so no consumer
+    mistakes it for the complete 1-ppQ trace. Use only for fast smoke
+    tests where ~1e-3 error is acceptable; never for production binding
+    / Δ_λ.
+
+    Wall-clock note: the cost is the full dim×dim seminormal build in
+    `precompute_block_tables_mpfr` (pure-Python mpmath, ~0.1 s/dim²·
+    word_length); the block-restricted CALL is cheap (≤~40 indep. of
+    dim V_λ). The lossless O(reduced-block) path that never forms the
+    dim×dim matrices is the #2062 Tier-3 follow-up; until it lands the
+    lossless default eats the dim×dim build cost (minutes for n≥9).
     """
     n = 3 * (Z + N)
     if Z + N < 2:
@@ -189,21 +204,28 @@ def build_chi_cache_at_q0_matrix_m(
         shape_t = tuple(shape)
         if shape_t in already:
             entry = already[shape_t]
-            # Reuse the cached entry UNLESS it was a max-dim placeholder
-            # AND the current max_dim is now high enough to recompute.
             was_skipped = entry.get("chi_lambda") == "skipped-max-dim"
-            if (not was_skipped) or entry.get("dim", 0) > max_dim:
+            if not was_skipped:
+                # Real cached value — always reuse (lossless).
                 per_partition.append(entry)
                 running_total += mp.mpf(entry["contribution"])
                 continue
-        # Cheap O(n) hook-length dim check up-front to avoid building
-        # the seminormal matrices when the partition is over the cap.
-        dim_estimate = dim_specht(shape_t)
-        if dim_estimate > max_dim:
+            # Cached entry is a skip placeholder. Reuse it ONLY if this
+            # run would also skip it (explicit cap still exceeded);
+            # otherwise fall through and (re)compute it losslessly.
+            if max_dim is not None and entry.get("dim", 0) > max_dim:
+                n_skipped += 1
+                per_partition.append(entry)
+                continue
+        # Lossless default (max_dim=None): never skip — compute every λ.
+        # Explicit cap (exploratory): skip high-dim λ with a placeholder
+        # and flag the trace partial. Cheap O(n) hook-length dim check
+        # up-front avoids building the seminormal matrices when skipping.
+        if max_dim is not None and dim_specht(shape_t) > max_dim:
             n_skipped += 1
             per_partition.append({
                 "partition": list(shape_t),
-                "dim": dim_estimate,
+                "dim": dim_specht(shape_t),
                 "y_lambda": "skipped-max-dim",
                 "chi_lambda": "skipped-max-dim",
                 "contribution": "0",
@@ -235,42 +257,87 @@ def build_chi_cache_at_q0_matrix_m(
             "compute_time_sec": round(time.time() - t_part, 3),
         }
         per_partition.append(entry)
-        payload = {
-            "computation": f"chi-{atom_name}-h{n}-at-q0-{dps}dps-matrix-m",
-            "description": (
-                f"Numerical χ^λ_q(β_atomic({Z}, {N})) = {atom_name} per "
-                f"partition λ ⊢ {n}, evaluated at q = q_0 at {dps} dps "
-                f"via the matrix-M block-restricted mpfr backend (PR "
-                f"#1993). Convention: sign-only crossings — matches "
-                f"`chi_q_via_gp` and the derived_chi_catalogue cells. "
-                f"NOT a drop-in for the hoefsmit averaged-crossing "
-                f"producer (different physics). Built incrementally."
-            ),
-            "producer": "matrix-m-chi-q-via-gp",
-            "convention": "sign-only-crossings",
-            f"q_0_{dps}dps": str(q),
-            "dps": dps,
-            "n_strands": n,
-            "atom": atom_name,
-            "Z": Z, "N": N,
-            "n_partitions": len(per_partition),
-            "n_partitions_total": len(shapes),
-            "partial": len(per_partition) < len(shapes),
-            "compute_time_sec_so_far": round(time.time() - t0, 2),
-            "tr_M_at_q0": str(running_total),
-            "by_partition": per_partition,
-        }
-        _save_partial(out_path, payload)
+
+        def _payload(*, resume_partial: bool) -> dict:
+            """Build the cache payload from the current running state.
+            `resume_partial` flags an in-progress incremental save (not
+            all shapes visited yet); `tr_M_partial` flags the DISTINCT
+            condition that the trace omits skipped high-dim λ (explicit
+            `max_dim` cap → truncated, NOT 1-ppQ)."""
+            return {
+                "computation": f"chi-{atom_name}-h{n}-at-q0-{dps}dps-matrix-m",
+                "description": (
+                    f"Numerical χ^λ_q(β_atomic({Z}, {N})) = {atom_name} per "
+                    f"partition λ ⊢ {n}, evaluated at q = q_0 at {dps} dps "
+                    f"via the matrix-M block-restricted mpfr backend (PR "
+                    f"#1993). Convention: sign-only crossings — matches "
+                    f"`chi_q_via_gp` and the derived_chi_catalogue cells. "
+                    f"NOT a drop-in for the hoefsmit averaged-crossing "
+                    f"producer (different physics). Built incrementally. "
+                    f"Lossless (every λ) unless max_dim is set."
+                ),
+                "producer": "matrix-m-chi-q-via-gp",
+                "convention": "sign-only-crossings",
+                f"q_0_{dps}dps": str(q),
+                "dps": dps,
+                "n_strands": n,
+                "atom": atom_name,
+                "Z": Z, "N": N,
+                "n_partitions": len(per_partition),
+                "n_partitions_total": len(shapes),
+                "max_dim": max_dim,
+                "n_skipped_max_dim": n_skipped,
+                "tr_M_partial": n_skipped > 0,
+                "partial": resume_partial,
+                "compute_time_sec_so_far": round(time.time() - t0, 2),
+                "tr_M_at_q0": str(running_total),
+                "by_partition": per_partition,
+            }
+
+        _save_partial(out_path,
+                      _payload(resume_partial=len(per_partition) < len(shapes)))
         print(f"    λ={shape_t!s:25} dim={dim:>3}  "
               f"+{entry['compute_time_sec']:>6.3f}s  "
               f"({len(per_partition)}/{len(shapes)})", flush=True)
 
     elapsed = time.time() - t0
+    # Final save: guarantees trailing skip placeholders + the final
+    # n_skipped / tr_M_partial flags land in the cache even when the last
+    # partition was skipped (no per-compute save fired). Lossless default
+    # ⇒ no skips ⇒ this persists the complete trace.
+    final = {
+        "computation": f"chi-{atom_name}-h{n}-at-q0-{dps}dps-matrix-m",
+        "description": (
+            f"Numerical χ^λ_q(β_atomic({Z}, {N})) = {atom_name} per "
+            f"partition λ ⊢ {n} at q_0, {dps} dps, matrix-M mpfr backend. "
+            f"Lossless (every λ) unless max_dim is set."
+        ),
+        "producer": "matrix-m-chi-q-via-gp",
+        "convention": "sign-only-crossings",
+        f"q_0_{dps}dps": str(q),
+        "dps": dps,
+        "n_strands": n,
+        "atom": atom_name,
+        "Z": Z, "N": N,
+        "n_partitions": len(per_partition),
+        "n_partitions_total": len(shapes),
+        "max_dim": max_dim,
+        "n_skipped_max_dim": n_skipped,
+        "tr_M_partial": n_skipped > 0,
+        "partial": False,
+        "compute_time_sec": round(elapsed, 2),
+        "tr_M_at_q0": str(running_total),
+        "by_partition": per_partition,
+    }
+    _save_partial(out_path, final)
     return {
         "atom": atom_name,
         "Z": Z, "N": N,
         "n_strands": n,
         "n_partitions": len(per_partition),
+        "n_partitions_total": len(shapes),
+        "n_skipped_max_dim": n_skipped,
+        "tr_M_partial": n_skipped > 0,
         "tr_M_at_q0": str(running_total),
         "compute_time_sec": round(elapsed, 2),
         "out_path": str(out_path),
@@ -322,11 +389,13 @@ def main() -> int:
              "10^-45 at dps=50; lower would not be safe).",
     )
     parser.add_argument(
-        "--max-dim", type=int, default=100,
-        help="Skip partitions with dim V_λ > this. Default 100 keeps "
-             "wall time per partition under ~5 s in pure-Python mpmath; "
-             "raise once the Rust port lands or at the cost of long "
-             "compute. Skipped partitions get placeholder cache entries.",
+        "--max-dim", type=int, default=None,
+        help="EXPLORATORY truncation: skip partitions with dim V_λ > this. "
+             "DEFAULT None = LOSSLESS (compute every λ — the complete "
+             "1-ppQ trace; required for production binding / Δ_λ). Set an "
+             "int ONLY for fast smoke tests; the resulting tr_M is then "
+             "TRUNCATED (flagged tr_M_partial in the cache) because there "
+             "is no exact-χ selection rule — every λ contributes.",
     )
     args = parser.parse_args()
     if args.dps < 50:
@@ -400,9 +469,11 @@ def main() -> int:
             n_total += 1
             if abs(chi_mpf - chi_rust) < tol:
                 n_match += 1
+        cap_note = (f"dim > {args.max_dim}" if args.max_dim is not None
+                    else "lossless: none")
         print(f"  {'':>10}     cross-check vs chi_q_via_gp at q_0: "
               f"{n_match}/{n_total} match (tol 1e-{args.dps-5}), "
-              f"{n_skipped} skipped (dim > {args.max_dim})")
+              f"{n_skipped} skipped ({cap_note})")
 
     return 0 if last_record is not None else 1
 
