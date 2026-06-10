@@ -99,3 +99,28 @@ downstream mass identity (step 9a).*
 $\mathrm{tr}_M(1) = 1$; closure of any braid containing a full
 twist $\Delta_n^2$ in the centre acquires a factor
 $(q^{n(n-1)})$ from the central character (Schur–Weyl).*
+
+*Large-$A$ scaling (atom braids of step 9b): the multi-nucleon
+braid word has a **monotone** non-decreasing generator sequence —
+nucleon $k$ uses $\sigma_{3k},\sigma_{3k+1}$ and one interface
+crossing $\sigma_{3k+2}$, never revisiting a generator — so each
+$O_g$ is a polynomial in a single $\sigma_g$. In the
+multiplicity-free seminormal (Gelfand–Zetlin) basis $\sigma_g$
+moves only one level of the chain
+$\varnothing \subset s_1 \subset \cdots \subset s_n = \lambda$, and
+trace closure forces each $O_g$ to its diagonal block, collapsing
+step 3–4 to a transfer matrix over fine-Bratteli edges
+$s_g \subset s_{g+1}$. This yields every $\chi^\lambda(\beta)$ in a
+single sweep without materialising the $d_\lambda$-dimensional
+Hoefsmit representation: the cost is the fine-Bratteli edge count
+(a few thousand at $n = 21$) rather than $n!$, extending the
+numerical $\mathrm{tr}_M$ at $q_0$ to $A \geq 6$ ($^6$Li, $^7$Li,
+and beyond) in seconds. Implemented in
+[`chi_monotone_transfer.py`](../../../folio-assistant/computations/chi_monotone_transfer.py)
+with the per-atom trace assembly in
+[`tr_m_atom_via_transfer.py`](../../../folio-assistant/computations/tr_m_atom_via_transfer.py)
+(witness
+[`tr-m-atom-via-transfer.witness.json`](../../../folio-assistant/computations/tr-m-atom-via-transfer.witness.json)),
+validated to the 50-dps floor against the Hoefsmit characters
+($n \leq 6$) and the cached per-basis-vector trace witnesses
+($n \leq 12$).*
