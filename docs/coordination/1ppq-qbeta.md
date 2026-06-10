@@ -207,6 +207,49 @@ A categorical residue ID for Q_β's `A` (if found) does **not** automatically tr
   restorers must re-apply the redirect or the seed must normalize package
   remotes to canonical GitHub URLs before chunking.
 
+## 2026-06-10 — c_k synthesis (PR #2090) + pre-archimedean q-heat depth-1 backbone (Lean) + coordination sweep
+
+- **Synthesis doc + 2 currency fixes landed** on PR #2090
+  (`docs/audits/2026-06-10-qbeta-ck-state-of-play-synthesis.md`). Owner
+  declined the registry CAL-anchor note for c₃ (registry untouched,
+  "leave as is") and deferred `/prepare-merge` ("not yet").
+- **Pre-archimedean backbone #2 identified + formalized.** The `exp_q`
+  grouplike defining equation (Jackson `D_q exp_q = exp_q`,
+  `def:q-exponential`) rearranges to the depth-1 q-difference kernel
+  `exp_q(qx) = (1+(q−1)x)·exp_q(x)`; per-Peter–Weyl-mode q-heat kernels
+  `1−(q−1)·μ_λ·t` with `μ_λ(q) = ℏ_q²·Σ[c]_q[c+1]_q` (content-Casimir,
+  q-rational); division-free two-mode depth-2 composition (any CommRing,
+  no Casoratian). Lean sorry-free generic-`R`:
+  `QOU.BraidKnot.QBetaPreArchHeatDepthOneKernel` (4 thms, commit
+  `50d2e5ad`). Narrative: synthesis doc §3-bis. Status: **candidate
+  FAMILY for the kernel `R` — UNGATED** (must produce bar-odd
+  `a₁ ≈ 2.07` and survive the constant-depth-2 `c₄` refutation);
+  heat-trace `R_λ` gate-check folded into the Stage-B probe scope
+  (owner-approved "1 2" + "do all lean").
+- **Latent closure gap fixed in same touch**:
+  `QBetaCKRecursionKernelConstraints` (#1900 constraint lemmas) was
+  imported by no module ⇒ likely never inside the `lake build QOU`
+  closure; now aggregated in `BraidKnot.lean`. Cone-build verification
+  in flight (background); if the orphan is red, the import line is
+  reverted and the finding handed to #2095 (in-closure repair owner).
+- **Coordination sweep (this entry's run):** intent comments →
+  [#2095](https://github.com/litlfred/qou/pull/2095#issuecomment-4666539578)
+  (closure addition heads-up),
+  [#2094](https://github.com/litlfred/qou/pull/2094#issuecomment-4666549352)
+  (post-merge inventory deltas),
+  [#2093](https://github.com/litlfred/qou/pull/2093#issuecomment-4666549792)
+  (`Z_q` q-shift structure is upstream of their `F_q = −T_q ln Z_q`
+  crossing). Main drift vs PR base `dd7612c2`: 10 commits, no
+  aggregator conflict (clean rebase expected). PR #2090 review state:
+  0 threads; Gemini at daily-quota limit. CI: billing signature
+  re-confirmed on `50d2e5ad` (3 jobs complete in 4 s, logs HTTP 404;
+  identical pattern reported by #2095/#2094/#2091/#2089 today) — no
+  retrigger per policy.
+- **In progress (foreground):** Stage-B probe — unbiased `c₄..c₈`
+  (Hoefsmit per-block symbolic) + heat-trace `R_λ` gates. Gates:
+  `Σ_λ y_λ·Δ(net)_λ == scalar Δ(net)` at q₀; `c₂ = −1` exact; `c₃ ≈ −2`
+  both anchors before any higher rung is trusted.
+
 ## Cross-refs
 
 - CLAUDE.md §Precision goals (L1 / L2 / Subgoal-1 / Subgoal-2)
