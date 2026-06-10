@@ -56,7 +56,8 @@ affirmative duty — to:
   the hard part said early is cheaper than the hard part said by a
   referee.
 - **Voice skeptical assessments in chat WITHOUT first running the
-  corpus-grep checklist** (see "Before declaring open" below). That
+  corpus-grep checklist** (defined under §Before declaring "open"
+  math / questions / gaps (STRICT) below). That
   checklist gates formal "open item" declarations in durable
   artifacts (audit docs, content blocks, Lean comments, PR
   descriptions) and factual "X is open in the corpus" claims; it
