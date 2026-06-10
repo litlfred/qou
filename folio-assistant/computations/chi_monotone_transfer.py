@@ -130,7 +130,10 @@ def word_to_mpfr(word, q: "mp.mpf"):
 # ── local seminormal block: diagonal of O_g = Π(σ_g + d·1) ─────────────────
 def _local_diag(ds, s_lo, s_hi, q, qi):
     """`{s_mid: [O_g]_{s_mid,s_mid}}` for O_g = Π_j(σ_g + ds[j]·1) in the
-    block s_lo ⊂ s_mid ⊂ s_hi (two boxes added). 1 or 2 intermediates."""
+    block s_lo ⊂ s_mid ⊂ s_hi (two boxes added). 1 or 2 intermediates.
+
+    The 2×2 product is hand-rolled in scalar mpf arithmetic — mpmath.matrix
+    object overhead dominates otherwise (n=18/21 has ~10⁵ block evals)."""
     added = _cells(s_hi) - _cells(s_lo)                  # exactly 2 cells
     inter = []                                            # (s_mid, box_first)
     for box in _addable(s_lo):                            # only valid corners
@@ -147,16 +150,19 @@ def _local_diag(ds, s_lo, s_hi, q, qi):
         for d in ds:
             val *= (eig + d)
         return {smid: val}
-    # 2×2 block, basis order (X, Y)
+    # 2×2 block, basis order (X, Y); σ = [[diagX, 1], [off, diagY]]
     (sX, bX), (sY, bY) = inter
     dXY = _content(bY) - _content(bX)
     diagX = (q - qi) / (1 - q ** (-2 * dXY))
     diagY = (q - qi) - diagX
-    sig = mp.matrix([[diagX, mp.mpf(1)], [diagX * diagY + 1, diagY]])
-    O = mp.eye(2)
-    for d in ds:
-        O = O * (sig + d * mp.eye(2))
-    return {sX: O[0, 0], sY: O[1, 1]}
+    off = diagX * diagY + 1
+    # O = Π_j (σ + d_j·I); accumulate O = [[a,b],[c,d]] (hand-rolled mat-mul)
+    a, b, c, d_ = mp.mpf(1), mp.mpf(0), mp.mpf(0), mp.mpf(1)
+    for dj in ds:
+        p, s = diagX + dj, diagY + dj          # F = [[p, 1], [off, s]]
+        a, b, c, d_ = (a * p + b * off, a + b * s,
+                       c * p + d_ * off, c + d_ * s)
+    return {sX: a, sY: d_}                       # O[0,0], O[1,1]
 
 
 # ── the transfer-matrix sweep ──────────────────────────────────────────────
@@ -182,10 +188,14 @@ def chi_all_lambda(word, n: int, *, dps: int = 50, q=None):
     for g in range(0, n - 1):                             # apply O_g, g=0..n-2
         ds = gen_ds.get(g, [])                            # [] → identity factor
         new = defaultdict(mp.mpf)
+        bc: dict = {}                                     # per-step block cache
         for (s_lo, s_mid), a in amp.items():
             for box in _addable(s_mid):
                 s_hi = _add(s_mid, box)
-                fmap = _local_diag(ds, s_lo, s_hi, q, qi)
+                fmap = bc.get((s_lo, s_hi))
+                if fmap is None:
+                    fmap = _local_diag(ds, s_lo, s_hi, q, qi)
+                    bc[(s_lo, s_hi)] = fmap
                 f = fmap.get(s_mid)
                 if f is None:
                     continue
