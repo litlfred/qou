@@ -174,3 +174,40 @@ icosahedral/ζ₅ fibre of the recent H₂S Bring work is the `p⁵`/`n⁵` symm
 `Z=2` Klein `V₄◁S₄` with `S₄/V≅S₃` (and Z=3's `S₃`) keep recovering the
 `6 = |S₃| = χ(Bring)` basis — the identical-particle symmetry IS the χ=−6 Bring
 `S₅`-structure (Step 4) restricted to nucleon block-permutations.
+
+## 9. Follow-through (tasks 1/2/3, 2026-06-10)
+
+**Task 1 — wire+measure (honest partial).**
+[`symmetrized_constituent_probe.py`]: the scalar `h₂/e₂` symmetrization of the
+⁴He constituent is a LARGE O(1) effect — bosonic `h₂(p)h₂(n)=2.39` (2.47×),
+fermionic `e₂(p)e₂(n)=0.31` (0.32×) — but **neither matches the 1.20× gap**.
+Caveats: only `tr_free` symmetrized (not `tr_atom`); `p₂=tr_M(B_p²)` carries the
+Markov `y_λ` weights, so the scalar form *approximates* the true block q-Young
+projection. Verdict: right ORDER, not a clean scalar closure — the exact
+computation inserts the **block q-Young symmetrizer** into the H₆/H₁₂ Markov
+trace (next step).
+
+**Task 2 — lossless selection rule (computed).**
+[`s_z_block_selection_rule.py`] (Murnaghan–Nakayama): the `S_Z`-block projection
+forbids λ with the wrong symmetry. **Z=2 (block-swap 2³): only `[1⁶]` forbidden
+in the symmetric sector, only `[6]` in the antisymmetric — 1/11 each.** Weak for
+a single `S₂`; the exact-0 prune **grows with Z** (the `S_Z` average over more
+block-permutations cancels more channels). So the lossless optimize is
+negligible at ⁴He but significant for heavy magic nuclei. The exact-0 channels
+ARE provable (rep-theoretic), satisfying the precision discipline's
+"truncate only if provable exact-0".
+
+**Task 3 — Lean (Z=2, Z=3 proven; general stated).**
+`QOU.Hecke.IdenticalParticleSymmetrization` proves `p₁^Z = Σ_{λ⊢Z} f^λ s_λ`
+for Z=2 (⁴He, mult `1,1`) and Z=3 (Li, mult `1,2,1`), build-verified in-tree.
+General Z: `Σ_λ (f^λ)² = Z!` (RSK); Z=4 (Be) multiplicities `f^(4),f^(3,1),
+f^(2,2),f^(2,1,1),f^(1⁴) = 1,3,2,3,1` (`Σ²=24=4!`). The general proof is the
+standard Schur–Weyl duality; a Mathlib symmetric-function (`psum`/`esymm`,
+Newton's identities) formalization is the clean follow-up (the Z=2,3 `ring`
+proofs are the worked base cases).
+
+**Net:** the missing symmetrization is LOCATED (closed_form_tau_M.py:302),
+PROVEN as an identity (Lean Z=2,3), and its two consequences measured — accuracy
+(large but needs the exact q-Young projector, not the scalar form) and optimize
+(provable exact-0 prune, grows with Z). Not a closure of ⁴He yet; the exact
+block q-Young insertion is the remaining compute.
