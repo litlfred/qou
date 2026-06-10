@@ -72,7 +72,7 @@ noncomputable def crossingEnergy {M : Type*} (sp : SubstrateParameter M)
     (p : M) (hp : HeckeParams) (β : BraidWord) : ℝ :=
   let q := sp.field p
   let skeinWeight := |q - q⁻¹|
-  heckeCost (augmentedBraidElement hp β.generators) * skeinWeight
+  heckeCost (augmentedBraidElement (n := β.nStrands) hp β.generators) * skeinWeight
 
 /-- **Categorical mass** via photon threading.
     `m_H = (q - 1)² · E_H = E_H / c_q²`
@@ -93,13 +93,17 @@ theorem crossing_energy_gauge_invariant {M : Type*}
     crossingEnergy sp p hp β = crossingEnergy sp p hp β :=
   rfl
 
-/-- **Mass gauge invariance**: same hadron → same mass. -/
+/-- **Mass gauge invariance**: same hadron → same mass.  Same hadron
+    means the same braid word: equal generator lists on the same
+    number of strands (the strand count enters via the `B_{n+1}`
+    photon-augmentation embedding). -/
 theorem mass_gauge_invariant {M : Type*}
     (sp : SubstrateParameter M) (p : M) (hp : HeckeParams)
-    (β₁ β₂ : BraidWord) (h : β₁.generators = β₂.generators) :
+    (β₁ β₂ : BraidWord) (h : β₁.generators = β₂.generators)
+    (hn : β₁.nStrands = β₂.nStrands) :
     categoricalMass sp p hp β₁ = categoricalMass sp p hp β₂ := by
   unfold categoricalMass crossingEnergy
-  rw [h]
+  rw [h, hn]
 
 /-! ## Key properties -/
 
@@ -127,12 +131,11 @@ theorem mass_eq_energy_div_cq_sq {M : Type*} (sp : SubstrateParameter M)
   unfold categoricalMass
   have hne : sp.field p - 1 ≠ 0 := by linarith
   field_simp
-  ring
 
 /-- The photon (empty braid) has zero Hecke cost and hence zero mass. -/
 theorem photon_heckeCost_zero (hp : HeckeParams) :
-    heckeCost (augmentedBraidElement hp ([] : List ℤ)) =
-    heckeCost (augmentedBraidElement hp []) :=
+    heckeCost (augmentedBraidElement (n := 0) hp ([] : List ℤ)) =
+    heckeCost (augmentedBraidElement (n := 0) hp []) :=
   rfl
 
 /-! ## Non-trivial braid has positive crossing energy -/
@@ -141,7 +144,7 @@ theorem photon_heckeCost_zero (hp : HeckeParams) :
 theorem BraidWord.nontrivial_has_generators (β : BraidWord)
     (h : β.generators ≠ []) : 0 < β.crossings := by
   unfold crossings
-  exact List.length_pos.mpr h
+  exact List.length_pos_iff.mpr h
 
 /-- **Key lemma**: a non-trivial braid has strictly positive crossing
     energy when `q > 1` and the Hecke cost of its augmented braid
@@ -158,14 +161,14 @@ theorem BraidWord.nontrivial_has_generators (β : BraidWord)
 theorem crossingEnergy_pos_of_nontrivial {M : Type*}
     (sp : SubstrateParameter M) (p : M) (hp : HeckeParams)
     (β : BraidWord) (hq : sp.field p > 1)
-    (hcost : 0 < heckeCost (augmentedBraidElement hp β.generators)) :
+    (hcost : 0 < heckeCost (augmentedBraidElement (n := β.nStrands) hp β.generators)) :
     0 < crossingEnergy sp p hp β := by
   unfold crossingEnergy
   apply mul_pos hcost
   rw [abs_pos]
   have hq_pos : 0 < sp.field p := by linarith
   have hq_inv_lt : (sp.field p)⁻¹ < sp.field p := by
-    calc (sp.field p)⁻¹ < 1 := by rwa [inv_lt_one_iff_of_pos hq_pos]
+    calc (sp.field p)⁻¹ < 1 := inv_lt_one_of_one_lt₀ hq
     _ < sp.field p := hq
   linarith
 
@@ -173,11 +176,11 @@ theorem crossingEnergy_pos_of_nontrivial {M : Type*}
 theorem categoricalMass_pos_of_nontrivial {M : Type*}
     (sp : SubstrateParameter M) (p : M) (hp : HeckeParams)
     (β : BraidWord) (hq : sp.field p > 1)
-    (hcost : 0 < heckeCost (augmentedBraidElement hp β.generators)) :
+    (hcost : 0 < heckeCost (augmentedBraidElement (n := β.nStrands) hp β.generators)) :
     0 < categoricalMass sp p hp β := by
   unfold categoricalMass
   apply mul_pos
-  · positivity
+  · exact pow_pos (by linarith) 2
   · exact crossingEnergy_pos_of_nontrivial sp p hp β hq hcost
 
 /-! ## Threading witness (for display, not for energy definition) -/
