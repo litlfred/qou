@@ -353,6 +353,41 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
       units: null,
     }),
 
+    // ── Hydrogen-bond cohesion / phase transitions (q-PV=nRT temperature) ──
+    hbond_h_squared: Object.freeze({
+      name: "hbond_h_squared",
+      description:
+        "h² = (q₀−q₀⁻¹)² — the predicted H-bond/covalent energy ratio (~0.044).",
+      symbol: "h^2",
+      witnessFile:
+        "folio-assistant/computations/hbond-categorical-action.witness.json",
+      witnessPath: "data.h_squared_hbond_ratio",
+      defaultPrecision: 4,
+      units: null,
+    }),
+    hbond_h2o_L_pred: Object.freeze({
+      name: "hbond_h2o_L_pred",
+      description:
+        "Predicted H₂O latent heat = 2·h²·E_OH (no fit), kJ/mol.",
+      symbol: "L_{\\mathrm{H_2O}}^{\\mathrm{pred}}",
+      witnessFile:
+        "folio-assistant/computations/hbond-categorical-action.witness.json",
+      witnessPath: "data.H2O_L_pred_kJmol",
+      defaultPrecision: 1,
+      units: "kJ/mol",
+    }),
+    hbond_h2o_err_pct: Object.freeze({
+      name: "hbond_h2o_err_pct",
+      description:
+        "H₂O latent-heat prediction error vs measured 40.66 kJ/mol (no fit), %.",
+      symbol: "\\varepsilon_{\\mathrm{H_2O}}",
+      witnessFile:
+        "folio-assistant/computations/hbond-categorical-action.witness.json",
+      witnessPath: "data.H2O_err_pct",
+      defaultPrecision: 1,
+      units: "%",
+    }),
+
     H_A: Object.freeze({
       name: "H_A",
       description: "Planck constant ℏ_q = q - q^{-1} at the substrate.",
