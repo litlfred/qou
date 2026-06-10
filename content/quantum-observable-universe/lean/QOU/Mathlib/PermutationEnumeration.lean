@@ -3,6 +3,7 @@ import Mathlib.Data.Fintype.Perm
 import Mathlib.Data.Fintype.Prod
 import Mathlib.Data.Real.Basic
 import Mathlib.Algebra.BigOperators.Group.Finset.Defs
+import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Data.Finset.Lattice.Fold
 import Mathlib.Tactic.FinCases
 
@@ -131,11 +132,11 @@ def coxeterLength {n : ℕ} (perm : Equiv.Perm (Fin n)) : ℕ :=
 theorem coxeterLength_one (n : ℕ) :
     coxeterLength (1 : Equiv.Perm (Fin n)) = 0 := by
   unfold coxeterLength
-  simp
+  rw [Finset.card_eq_zero, Finset.filter_eq_empty_iff]
   -- 1 i = i, so 1 i > 1 j iff i > j; with i < j, this is false
-  apply Finset.filter_false_of_mem
-  intro p _ ⟨h1, h2⟩
-  simp at h2
+  intro p _
+  rintro ⟨h1, h2⟩
+  simp only [Equiv.Perm.one_apply] at h2
   exact absurd h1 (not_lt.mpr (le_of_lt h2))
 
 /-- **Length function on `Fin n.factorial` via permutation
@@ -453,12 +454,13 @@ theorem lengthFn4_table_max :
     (Finset.univ : Finset (Fin 24)).sup lengthFn4_table = 6 := by
   decide
 
-/-- The lengthFn3 table is shift-compatible with lengthFn4
-    on the first 6 entries: `lengthFn4 i = lengthFn3 i` for
-    all `i ∈ Fin 6`. -/
-theorem lengthFn4_extends_lengthFn3 (i : Fin 6) :
-    lengthFn4_table ⟨i.val, by omega⟩ = lengthFn3_table i := by
-  fin_cases i <;> rfl
+/- NOTE: the length-ordered `lengthFn4_table` does NOT restrict to
+   `lengthFn3_table` on indices 0..5 (a previously uncompiled claim
+   here asserted it did; `decide` disproves it — index 3 is the
+   third simple transposition σ_3 (length 1) in the length-ordered
+   S_4 table, but σ_1σ_2 (length 2) in the S_3 table).  The TRUE
+   extension property lives on the tailored function below:
+   `lengthFn4_for_h3_to_h4_extends_lengthFn3`. -/
 
 /-! ### Tailored length function for the H_3 → H_4 Markov axiom
 
