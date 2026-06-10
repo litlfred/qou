@@ -46,6 +46,22 @@ from derived_chi_catalogue_matrix_m_mpfr import chi_rust_at_q_mpf  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 
+def _ensure_y_lambda(n: int) -> None:
+    """Guarantee the canonical y_λ witness has a table for H_n — extend if not.
+
+    ARBITRARY n: y_λ is the closed-form principal specialization (O(p(n)·n) mpf
+    ops, no recursion), so there is no cap — any nucleus's H_n is covered
+    on-demand. The only wall for the FULL Wedderburn χ below is p(n) (partition
+    count), not y_λ.
+    """
+    W = json.loads((HERE / "y-lambda-mpfr-witness.json").read_text())
+    if str(n) not in W.get("tables_by_n", {}):
+        from y_lambda_tower_infra import extend_y_lambda_tower
+        print(f"     (y_λ tower has no H{n}; extending closed-form, gated)",
+              flush=True)
+        extend_y_lambda_tower(n)   # closed-form, gated, non-destructive merge
+
+
 def compute_atom(atom: str, q: mp.mpf) -> dict:
     """Lossless χ cache for one atom via Rust chi_q_via_gp. Writes the witness."""
     Z, N = ATOMS[atom]
@@ -68,7 +84,8 @@ def compute_atom(atom: str, q: mp.mpf) -> dict:
                     "compute_time_sec": cached.get("compute_time_sec", 0.0),
                     "cache_path": str(out), "reused": True}
 
-    y_table = _load_y_lambda(n, None)   # closed-form tower covers n>12
+    _ensure_y_lambda(n)                 # arbitrary n: extend the y_λ tower on-demand
+    y_table = _load_y_lambda(n, None)   # closed-form tower covers any n
     shapes = list(parts_of(n))
 
     t0 = time.monotonic()
