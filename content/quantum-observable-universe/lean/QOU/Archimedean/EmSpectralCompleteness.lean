@@ -39,8 +39,7 @@ structure SpectralRing where
   q : Rˣ                              -- q is a unit
   qHalf : Rˣ                          -- q^{1/2} is a unit
   qHalf_sq : (qHalf : R) * qHalf = q  -- (q^{1/2})² = q
-  qDiff : (q - q⁻¹ : R)               -- the element q - q⁻¹
-  qDiff_unit : IsUnit qDiff           -- q - q⁻¹ is invertible
+  qDiff_unit : IsUnit ((q : R) - ((q⁻¹ : Rˣ) : R))  -- q - q⁻¹ is invertible
 
 namespace SpectralRing
 
@@ -50,7 +49,7 @@ instance : CommRing S.R := S.comm
 
 /-- The two eigenvalues of the braiding on `A ⊗ A`. -/
 def lambdaPlus : S.R := S.qHalf
-def lambdaMinus : S.R := -(S.qHalf : S.R)⁻¹
+def lambdaMinus : S.R := -((S.qHalf⁻¹ : S.Rˣ) : S.R)
 
 /-- **External axiom (Jones 1987): λ₊ − λ₋ = [2]_q · q^{−1/2} is a
     unit in R** (the Hecke deformation is invertible by SpectralRing
@@ -80,7 +79,7 @@ theorem hecke_minimal_polynomial_splits :
 
 end SpectralRing
 
-/-- **Theorem (two-strand spectral completeness)**.
+/-! **Theorem (two-strand spectral completeness)**.
 
     There exist exactly two non-zero central idempotents `p₊, p₋`
     in `End(A ⊗ A)` with `p₊ + p₋ = id` and `p₊ · p₋ = 0`.  The
