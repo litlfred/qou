@@ -106,7 +106,7 @@ noncomputable def heckeMultiply (a b c d : R_t) : StateVec :=
 theorem hecke_eq_transfer (a b c d : R_t) :
     heckeMultiply a b c d =
     (transferMatrix c d).mulVec (mkState a b) := by
-  ext i
+  funext i
   fin_cases i <;> simp [heckeMultiply, mkState, transferMatrix,
     mulVec, dotProduct, HA_t, Fin.sum_univ_two] <;> ring
 
@@ -148,8 +148,7 @@ theorem chain_correspondence (seq : CrossingSeq) (init : StateVec) :
     (matrixChain seq).mulVec init := by
   induction seq generalizing init with
   | nil =>
-    simp [heckeChain, matrixChain, mulVec, dotProduct, Fin.sum_univ_two]
-    ext i; fin_cases i <;> simp
+    simp [heckeChain, matrixChain, Fin.sum_univ_two]
   | cons hd tl ih =>
     obtain ⟨c, d⟩ := hd
     simp only [heckeChain, matrixChain]
@@ -190,8 +189,8 @@ theorem chain_correspondence (seq : CrossingSeq) (init : StateVec) :
 theorem markov_trace_eq_traced_vol (a b : R_t) :
     a + markov_denom * b =
     tracedVolCleared (Matrix.of ![![a, 0], ![b, 0]]) := by
-  simp [tracedVolCleared, markov_denom, Matrix.of]
-  ring
+  simp [tracedVolCleared, markov_denom, Matrix.of_apply, Matrix.cons_val_zero,
+    Matrix.cons_val_one]
 
 /-- The traced volume of a chain matrix, applied to initial state `(1, 0)ᵀ`,
     extracts the Markov trace of the corresponding Hecke element.
@@ -209,7 +208,6 @@ theorem traced_vol_from_state (M : TMatrix) :
     markov_denom * identCoeff (M.mulVec initialState) := by
   simp [tracedVolCleared, sigmaCoeff, identCoeff, initialState, mkState,
     mulVec, dotProduct, Fin.sum_univ_two, markov_denom]
-  ring
 
 -- ════════════════════════════════════════════════════════════════
 -- §6  The main theorem: optimal NF coefficient = traced volume
@@ -337,7 +335,8 @@ theorem matrixChain_eq_buildChains_axiom (config : NuclearConfig) (j : ℕ)
     (`transferMatrix_comm` from HeckeRep.lean), the products are equal. -/
 -- Ref: [leitner2026] https://doi.org/10.xxxx/qou
 theorem matrixChain_eq_buildChains (config : NuclearConfig) (j : ℕ)
-    (hj : j + 1 < config.length) :
+    (hj : j + 1 < config.length)
+    [MatrixChainEqBuildChains config j hj] :
     matrixChain (chainCrossings config j) =
     (buildChains config).get! j := by
   -- Both compute ∏_{k > j} crossingMatrix(config[j], config[k]).
