@@ -1,7 +1,6 @@
 import QOU.Hecke.Generators
 import QOU.Hecke.Algebra
 import QOU.Hecke.MarkovTrace
-import QOU.Hecke.MarkovBondFactor
 import QOU.Hecke.MarkovTraceProduct
 import QOU.Hecke.MarkovPairZ2
 import QOU.Hecke.Wedderburn

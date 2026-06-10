@@ -3,6 +3,14 @@ import QOU.Hecke.MarkovTrace
 /-!
 # QOU.Hecke.MarkovBondFactor — the per-bond trace factor `tr_M(c·σ + d) = c·z + d`
 
+> **STATUS (2026-06-10): build-UNVERIFIED, standalone (NOT imported by the
+> `QOU.Hecke` aggregator).** The Lean toolchain was session-limited when this
+> landed, so the proofs below are drafted (from the `MarkovTrace` class fields)
+> but not confirmed by `lake build`. Kept out of the aggregator import graph so
+> a possible proof error cannot break the QOU package build. Re-wire into
+> `QOU/Hecke.lean` only after `lake build QOU` is green. See
+> `docs/audits/2026-06-10-binding-bond-graph-compute-audit-and-derivation.md` §7.
+
 An inter-nucleon bond in the atom braid is a bridge crossing
 `c • σ_i + d • 1` (p-p: `(1, 0)`; n-n: `(1, −h)`; p-n: `(1, −h(½−δ/4))`).
 Its Markov-trace value is the *conditional expectation* of the crossing:
