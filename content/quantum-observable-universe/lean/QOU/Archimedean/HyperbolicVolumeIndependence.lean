@@ -1,43 +1,44 @@
-import Mathlib.Data.Real.Basic
+import QOU.Archimedean.HyperbolicVolumeTranscendence
 
 /-!
-# QOU.Archimedean.HyperbolicVolumeIndependence — conjectural class (placeholder)
+# QOU.Archimedean.HyperbolicVolumeIndependence — conjectural witness (§3b)
 
-**§3b-cond class axiomatisation** for content block
+**§3b conjectural-witness instance** for content block
 [`conj:hyperbolic-volume-transcendence`](../../../quantum-observable-universe/archimedean-universe/hyperbolic-volume-transcendence.md): *Algebraic independence of QOU hyperbolic volumes*.
 
-This is a **conjecture**: the class `HyperbolicVolumeIndependence` carries a placeholder
-field; the `noncomputable instance` is the conjectural witness whose
-`sorry` represents the open conjecture itself (per CLAUDE.md §3b),
-NOT a missing proof.  Downstream theorems may take
-`[HyperbolicVolumeIndependence]` as an explicit `[Instance]` hypothesis to derive
-unconditional Lean theorems modulo this single conjectural input
-(per §3b-cond).
+The class `HyperbolicVolumeIndependence` itself (field `no_relation`)
+is declared in `QOU.Archimedean.HyperbolicVolumeTranscendence` §7,
+where the volumes `vol_4_1`, `vol_5_2`, `vol_B3` live.  This file
+holds only the **global conjectural witness**: per CLAUDE.md §3b the
+`sorry` in the instance below *is* the open conjecture, not a missing
+proof.  Downstream theorems that want the conditional form bind
+`[HyperbolicVolumeIndependence]` explicitly per §3b-cond.
 
-The field schema below is a structural placeholder; refine the
-fields to match the conjecture's actual content as the
-formalisation matures.
+**History (2026-06-10).** This file previously declared a *duplicate*
+`HyperbolicVolumeIndependence` class with a placeholder shape
+(`residual : ℝ` / `residual_eq_zero`) and a **vacuous** global
+instance `{ residual := 0, rfl }`.  That was unsound as a conjecture
+encoding: the trivial instance silently discharged every
+`[HyperbolicVolumeIndependence]` hypothesis with no mathematical
+content, and the duplicate declaration collided with the real class
+when both files were imported (e.g. via `QOU.Archimedean`).  The
+placeholder shape was replaced by the real class's witness per the
+original intent recorded in this file's own docstring ("the
+`noncomputable instance` is the conjectural witness whose `sorry`
+represents the open conjecture itself").
 -/
 
 namespace QOU.Archimedean
 
-/-- Algebraic independence of QOU hyperbolic volumes
-
-    Conjectural class — see [`conj:hyperbolic-volume-transcendence`](../../../quantum-observable-universe/archimedean-universe/hyperbolic-volume-transcendence.md). -/
-class HyperbolicVolumeIndependence where
-  -- Witness: folio-assistant/computations/none
-  /-- Scalar residual encoding the conjecture's content (placeholder
-      shape: refine to match the actual claim). -/
-  residual : ℝ
-  /-- The residual vanishes (the conjecture is the assertion that
-      this holds). -/
-  residual_eq_zero : residual = 0
-
--- The conjecture itself.  The witness represents the **open
--- conjecture** per §3b — the `residual = 0` assertion is the
--- conjectural content, not a proved fact.
+-- The conjecture itself.  The `sorry` represents the **open
+-- conjecture** per §3b — algebraic independence over ℚ of the three
+-- hyperbolic volumes Vol(4₁), Vol(5₂), Vol(𝓑₃) — not a missing proof.
+-- Ref: [zagier1986] Zagier, "Hyperbolic manifolds and special values
+--        of Dedekind zeta-functions" — Borel–Zagier circle of conjectures.
 -- Ref: [manuscript] quantum-observable-universe/predicted-spectra/hyperbolic-volume-transcendence.md
-noncomputable instance : HyperbolicVolumeIndependence :=
-  { residual := 0, residual_eq_zero := rfl }
+noncomputable instance : HyperbolicVolumeIndependence where
+  no_relation := by
+    -- Ref: [zagier1986] https://doi.org/10.1007/BFb0084581
+    sorry
 
 end QOU.Archimedean

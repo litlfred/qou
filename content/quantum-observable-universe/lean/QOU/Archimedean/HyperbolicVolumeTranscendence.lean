@@ -353,7 +353,52 @@ theorem CSEvaluationFaithful.infinitely_many_nonzero
     ∀ n, csf.vtd.levelContribution n ≠ 0 :=
   fun n => csf.faithful n (h_tower n)
 
-/-! ## §7  Number-theoretic conjectures (chain of implications)
+/-! ## §7  Algebraic independence conjecture
+
+The conjecture is stated as a class following the conjectural propagation
+convention: the `sorry` on any instance IS the conjecture itself.  A
+polynomial relation P(Vol(4₁), Vol(5₂), Vol(𝓑₃)) = 0 with P ≠ 0
+would contradict the conjecture.
+
+We state this without importing `MvPolynomial` to keep the build light.
+The predicate is expressed directly: no non-trivial integer-coefficient
+polynomial relation holds among the three volumes.
+
+(Declared before §8's implication chain because the conditional theorems
+there consume it; the class previously sat after its first use, which
+broke the file under top-to-bottom elaboration.) -/
+
+/-- **Conjecture (Algebraic independence of QOU hyperbolic volumes).**
+
+    The three hyperbolic volumes Vol(4₁), Vol(5₂), Vol(𝓑₃) are
+    algebraically independent over ℚ.  Equivalently, for any finitely
+    supported function `f : ℕ × ℕ × ℕ → ℚ`, if the sum
+    `Σ f(i,j,k) · Vol(4₁)^i · Vol(5₂)^j · Vol(𝓑₃)^k = 0`
+    then `f = 0`.
+
+    Since the ground ring ℚ[q, q⁻¹] is a polynomial ring over ℚ,
+    algebraic independence over ℚ implies algebraic independence
+    over ℚ[q, q⁻¹] (the volumes are real constants, independent of q).
+
+    Note: we use non-negative exponents (ℕ) since the volumes are
+    non-zero reals — any Laurent-style relation `v^{-k}` can be
+    cleared by multiplying through by `v^k`.
+
+    LaTeX: `\label{conj:hyperbolic-volume-transcendence}` -/
+class HyperbolicVolumeIndependence where
+  /-- No non-trivial monomial relation holds. Given any finitely
+      supported function assigning rational coefficients to triples
+      of non-negative exponents, if the weighted sum of powers of
+      the three volumes vanishes, the function is identically zero. -/
+  no_relation :
+    ∀ (S : Finset (ℕ × ℕ × ℕ))
+      (f : ℕ × ℕ × ℕ → ℚ),
+      (∀ ijk, ijk ∉ S → f ijk = 0) →
+      (S.sum fun ijk =>
+        (f ijk : ℝ) * vol_4_1 ^ ijk.1 * vol_5_2 ^ ijk.2.1 * vol_B3 ^ ijk.2.2) = 0 →
+      ∀ ijk, f ijk = 0
+
+/-! ## §8  Number-theoretic conjectures (chain of implications)
 
   irrationality ⟸ ℚ-linear independence ⟸ algebraic independence -/
 
@@ -491,47 +536,6 @@ theorem HyperbolicVolumeIndependence.implies_single_irrational
     have h1 := hall ((0 : ℕ), 0, 1)
     simp only [f, if_pos rfl] at h1
     exact absurd h1 one_ne_zero
-
-/-! ## §8  Algebraic independence conjecture
-
-The conjecture is stated as a class following the conjectural propagation
-convention: the `sorry` on any instance IS the conjecture itself.  A
-polynomial relation P(Vol(4₁), Vol(5₂), Vol(𝓑₃)) = 0 with P ≠ 0
-would contradict the conjecture.
-
-We state this without importing `MvPolynomial` to keep the build light.
-The predicate is expressed directly: no non-trivial integer-coefficient
-polynomial relation holds among the three volumes. -/
-
-/-- **Conjecture (Algebraic independence of QOU hyperbolic volumes).**
-
-    The three hyperbolic volumes Vol(4₁), Vol(5₂), Vol(𝓑₃) are
-    algebraically independent over ℚ.  Equivalently, for any finitely
-    supported function `f : ℕ × ℕ × ℕ → ℚ`, if the sum
-    `Σ f(i,j,k) · Vol(4₁)^i · Vol(5₂)^j · Vol(𝓑₃)^k = 0`
-    then `f = 0`.
-
-    Since the ground ring ℚ[q, q⁻¹] is a polynomial ring over ℚ,
-    algebraic independence over ℚ implies algebraic independence
-    over ℚ[q, q⁻¹] (the volumes are real constants, independent of q).
-
-    Note: we use non-negative exponents (ℕ) since the volumes are
-    non-zero reals — any Laurent-style relation `v^{-k}` can be
-    cleared by multiplying through by `v^k`.
-
-    LaTeX: `\label{conj:hyperbolic-volume-transcendence}` -/
-class HyperbolicVolumeIndependence where
-  /-- No non-trivial monomial relation holds. Given any finitely
-      supported function assigning rational coefficients to triples
-      of non-negative exponents, if the weighted sum of powers of
-      the three volumes vanishes, the function is identically zero. -/
-  no_relation :
-    ∀ (S : Finset (ℕ × ℕ × ℕ))
-      (f : ℕ × ℕ × ℕ → ℚ),
-      (∀ ijk, ijk ∉ S → f ijk = 0) →
-      (S.sum fun ijk =>
-        (f ijk : ℝ) * vol_4_1 ^ ijk.1 * vol_5_2 ^ ijk.2.1 * vol_B3 ^ ijk.2.2) = 0 →
-      ∀ ijk, f ijk = 0
 
 /-- Algebraic independence implies ℚ-linear independence.
 

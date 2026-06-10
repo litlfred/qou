@@ -27,10 +27,12 @@ algebraic-independence conjecture
    shadow, uniformly in the jet order.
 
 The reduction `hyperbolicVolumeIndependence_of_reduction` derives
-`HyperbolicVolumeIndependence` from these two — fully Lean-verified
-modulo the two conjectural class instances (per §3b-cond). It does NOT
-prove the deep conjecture; it converts a Grothendieck-period dead end
-into two internal QOU targets.
+`HyperbolicVolumeIndependence` from these two *plus the bridge step*
+`JetTransportImpliesIndependence` (the Nesterenko-type transfer from
+finite jet data to the infinite-order polynomial statement), each
+conjectural per §3b-cond. It does NOT prove the deep conjecture; it
+converts a Grothendieck-period dead end into named internal QOU
+targets whose conditional structure is visible at every call site.
 
 ## The surreal parallel-transport bound — geometric content + open issues
 
@@ -145,26 +147,43 @@ theorem transport_uniform_bound [SurrealParallelTransportBound] :
 
 end SurrealParallelTransportBound
 
-/-- **Gap-closing reduction (§3b-cond conditional theorem).**
+/-- **Gap-closing reduction — the bridge step (§3b conjectural class).**
+
+    The Nesterenko-type transfer: *given* finite jet-order independence
+    and the surreal parallel-transport bound, the full algebraic
+    independence `no_relation` follows.  The transfer from the finite
+    jet data + vanishing fibre shadow to the infinite-order polynomial
+    statement is the bridge's mathematical content; it is recorded as a
+    conjectural class so the conditional structure is visible at every
+    call site (per §3b-cond).
+
+    **History (2026-06-10).**  An earlier version "derived"
+    `HyperbolicVolumeIndependence` here as a 5-line `def` — but only
+    against a vacuous placeholder shape of that class
+    (`residual = 0`), which made the reduction appear Lean-verified
+    while carrying no mathematical content.  With the real class
+    (`no_relation`, declared in `HyperbolicVolumeTranscendence` §7)
+    the bridge step is honestly conjectural. -/
+class JetTransportImpliesIndependence
+    [JetOrderIndependence] [SurrealParallelTransportBound] : Prop where
+  /-- The independence witness produced by the bridge. -/
+  nonempty_independence : Nonempty HyperbolicVolumeIndependence
+
+/-- **Gap-closing reduction (§3b-cond conditional form).**
 
     The deep algebraic-independence conjecture `HyperbolicVolumeIndependence`
-    follows from the two QOU-native inputs: finite jet-order independence
-    (`full_rank`) and the surreal parallel-transport bound (now reduced to
-    its two named physical inputs (I2)+(I3), with (I1) + composition
-    proved as `transport_shadow_vanishes`).  The conjecture's residual is
-    realised as `transportShadow 3 + (jacobianRank 3 − 3)` — the surreal
-    transport shadow plus the Jacobian co-rank — which vanishes *exactly*
-    when both inputs hold.  It is a `def` (not an `instance`) to avoid
-    competing with the standalone conjectural witness in
+    follows from the two QOU-native inputs — finite jet-order independence
+    (`full_rank`) and the surreal parallel-transport bound (reduced to its
+    two named physical inputs (I2)+(I3), with (I1) + composition proved as
+    `transport_shadow_vanishes`) — *modulo the bridge step*
+    `JetTransportImpliesIndependence`.  It is a `def` (not an `instance`)
+    to avoid competing with the standalone conjectural witness in
     `HyperbolicVolumeIndependence`. -/
 noncomputable def hyperbolicVolumeIndependence_of_reduction
-    [JI : JetOrderIndependence] [PT : SurrealParallelTransportBound] :
+    [JetOrderIndependence] [SurrealParallelTransportBound]
+    [R : JetTransportImpliesIndependence] :
     HyperbolicVolumeIndependence :=
-  { residual := PT.transportShadow 3 + ((JI.jacobianRank 3 : ℝ) - 3),
-    residual_eq_zero := by
-      rw [SurrealParallelTransportBound.transport_shadow_vanishes 3,
-          JI.full_rank 3 (le_refl 3)]
-      norm_num }
+  R.nonempty_independence.some
 
 /-! ### GB-elimination certificate (discharging `JetOrderIndependence`)
 
