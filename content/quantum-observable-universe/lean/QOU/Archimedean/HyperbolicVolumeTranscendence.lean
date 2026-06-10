@@ -7,6 +7,8 @@ import Mathlib.Tactic.NormNum
 import Mathlib.Tactic.Linarith
 import Mathlib.Topology.Algebra.InfiniteSum.Basic
 import Mathlib.RingTheory.Real.Irrational
+import Mathlib.Analysis.PSeries
+import Mathlib.Analysis.SpecificLimits.Normed
 
 /-!
 # Hyperbolic Volume Transcendence: Conjectures and Propositions
@@ -53,12 +55,11 @@ namespace QOU.Archimedean
 expression `8 · catalan_G` rather than a 15-digit SnapPy decimal
 approximation.  This discharges the former `vol_B3_eq_8_catalan`
 axiom (now a `theorem … := rfl`) and gives `vol_B3` infinite
-mathematical precision: the only remaining numerical input is the
-`catalan_G_numerical_bounds` axiom, which records a *coarse*
-two-sided interval `0.915 < G < 0.916` from the literature value
-(OEIS A006752 / Lewin 1981 §1.7.8 list 24 digits, of which only
-the first three are needed for this interval). It is a 1-line
-numerical assertion, not a per-knot measurement. -/
+mathematical precision.  The two-sided interval
+`0.915 < G < 0.916` is now also a **theorem**
+(`catalan_G_numerical_bounds`, discharged 2026-06-10 via the
+alternating-series partial-sum bracket — no numerical axiom
+remains on the Catalan side). -/
 
 /-- Catalan's constant `G = Σ_{k=0}^∞ (-1)^k / (2k+1)²`.
 
@@ -75,19 +76,68 @@ numerical assertion, not a per-knot measurement. -/
 noncomputable def catalan_G : ℝ :=
   ∑' (k : ℕ), ((-1 : ℝ) ^ k) / ((2 * k + 1 : ℝ) ^ 2)
 
-/-- Numerical value of Catalan's constant to 24 decimal places.
+set_option maxHeartbeats 4000000 in
+/-- Numerical bounds on Catalan's constant: `0.915 < G < 0.916`.
 
-    Computed via mpmath `mp.catalan` at 50 dps:
-    0.915965594177219015054603514...
+    **Theorem** (was an axiom until 2026-06-10; discharged via the
+    alternating-series partial-sum bracket — queue item
+    `lean-catalan-G-numerical-bound`).
 
-    Established literature fact (OEIS A006752 / Lewin 1981 §1.7.8):
-    the 24-digit value `G ≈ 0.915965594177219015054603514…` immediately
-    places `G ∈ (0.915, 0.916)`. -/
+    Method: `G = Σ (-1)^k·f k` with `f k = 1/(2k+1)²` antitone → 0, so
+    even partial sums bound `G` from below and odd ones from above
+    (`Antitone.alternating_series_le_tendsto` /
+    `Antitone.tendsto_le_alternating_series`).  The margins force the
+    truncation orders: `0.916 − G ≈ 3.44e-5`, so the upper bracket
+    needs the odd sum `S₉₃` (error ≤ 1/187² ≈ 2.86e-5); the lower needs
+    only `S₂₀` (error ≤ 1/41² ≈ 5.9e-4 against a 9.66e-4 margin).
+    Exact rational pre-check: `S₂₀ = 0.91565…`, `S₉₃ = 0.91598…`.
+
+    Literature value (mpmath `mp.catalan` at 50 dps, OEIS A006752):
+    `G ≈ 0.915965594177219015054603514…`. -/
 -- Ref: [lewin1981] Lewin, "Polylogarithms and Associated Functions",
 --        North-Holland (1981), §1.7.8.
 -- Ref: OEIS A006752 — Catalan's constant decimal expansion.
-axiom catalan_G_numerical_bounds :
-    catalan_G > (0.915 : ℝ) ∧ catalan_G < (0.916 : ℝ)
+theorem catalan_G_numerical_bounds :
+    catalan_G > (0.915 : ℝ) ∧ catalan_G < (0.916 : ℝ) := by
+  set f : ℕ → ℝ := fun k => ((2 * (k : ℝ) + 1) ^ 2)⁻¹ with hf_def
+  have hbase : Summable (fun n : ℕ => 1 / ((n + 1 : ℕ) : ℝ) ^ 2) :=
+    (summable_nat_add_iff 1).mpr (Real.summable_one_div_nat_pow.mpr one_lt_two)
+  have hfs : Summable f := by
+    refine Summable.of_nonneg_of_le (fun k => by positivity) (fun k => ?_) hbase
+    have hk : (0 : ℝ) ≤ (k : ℝ) := k.cast_nonneg
+    simp only [hf_def]
+    push_cast
+    rw [one_div]
+    gcongr
+    all_goals first | positivity | nlinarith [hk]
+  have hfl := hfs.tendsto_alternating_series_tsum
+  have hGeq : (∑' k : ℕ, (-1 : ℝ) ^ k * f k) = catalan_G := by
+    unfold catalan_G
+    congr 1
+  rw [hGeq] at hfl
+  have hf_anti : Antitone f := by
+    intro a b hab
+    have hab' : (a : ℝ) ≤ (b : ℝ) := Nat.cast_le.mpr hab
+    have ha : (0 : ℝ) ≤ (a : ℝ) := a.cast_nonneg
+    simp only [hf_def]
+    gcongr
+  constructor
+  · -- lower: S₂₀ ≤ G (even partial sum) and 0.915 < S₂₀
+    have hlow := hf_anti.alternating_series_le_tendsto hfl 10
+    have h20 : ∑ i ∈ Finset.range (2 * 10), (-1 : ℝ) ^ i * f i =
+        ∑ i ∈ Finset.range 20, (-1 : ℝ) ^ i * f i := by norm_num
+    rw [h20] at hlow
+    have hnum : (0.915 : ℝ) < ∑ i ∈ Finset.range 20, (-1 : ℝ) ^ i * f i := by
+      norm_num [hf_def, Finset.sum_range_succ]
+    linarith
+  · -- upper: G ≤ S₉₃ (odd partial sum) and S₉₃ < 0.916
+    have hup := hf_anti.tendsto_le_alternating_series hfl 46
+    have h93 : ∑ i ∈ Finset.range (2 * 46 + 1), (-1 : ℝ) ^ i * f i =
+        ∑ i ∈ Finset.range 93, (-1 : ℝ) ^ i * f i := by norm_num
+    rw [h93] at hup
+    have hnum : (∑ i ∈ Finset.range 93, (-1 : ℝ) ^ i * f i) < 0.916 := by
+      norm_num [hf_def, Finset.sum_range_succ]
+    linarith
 
 /-- Catalan's constant is positive. -/
 theorem catalan_G_pos : catalan_G > 0 := by

@@ -30,8 +30,9 @@ bibliographic citations. The full proof requires:
    `QOU.Archimedean.HyperbolicVolumeTranscendence` (lifted
    2026-06-07 so that `vol_B3 := 8 · catalan_G` can be the symbolic
    exact volume rather than a 15-dps SnapPy decimal). The
-   `catalan_G_numerical_bounds` axiom (24-digit literature value)
-   also lives upstream.
+   `catalan_G_numerical_bounds` interval also lives upstream — a
+   theorem since 2026-06-10 (alternating-series bracket), formerly
+   an axiom citing the 24-digit literature value.
 2. **Lobachevsky function** `Λ : ℝ → ℝ` defined as
    `Λ(θ) := -∫_0^θ ln|2 sin t| dt`. Not in Mathlib; declared here.
 3. **Lobachevsky-Catalan identity** `Λ(π/4) = G/2`. Standard
@@ -215,12 +216,12 @@ Status 2026-06-07: the former axiom `vol_B3_eq_8_catalan` is now a
 adopted upstream).  The remaining Catalan-side axioms in this
 development:
 
-  1. `catalan_G_numerical_bounds` — lives in
-     `QOU.Archimedean.HyperbolicVolumeTranscendence` (lifted 2026-06-07
-     from this file); a coarse `0.915 < G < 0.916` interval.
-     Closure: norm_num + Mathlib's `Real.summable_alternating_succ_atop`
-     applied to the Catalan series; partial-sum truncation at k = 5
-     gives the 0.915 < G < 0.916 bound.
+  1. `catalan_G_numerical_bounds` — **DISCHARGED 2026-06-10** (now a
+     theorem in `QOU.Archimedean.HyperbolicVolumeTranscendence`):
+     alternating-series partial-sum bracket, even sum `S₂₀` below /
+     odd sum `S₉₃` above.  (The closure sketch previously recorded
+     here — "truncation at k = 5" — was insufficient: the upper
+     margin `0.916 − G ≈ 3.44e-5` forces ~93 terms.)
   2. `lobachevsky` definition — lives here.
      Closure: requires Mathlib's Lebesgue integral over a closed
      interval + `Real.log_abs` of `2 * Real.sin t`. Likely needs
