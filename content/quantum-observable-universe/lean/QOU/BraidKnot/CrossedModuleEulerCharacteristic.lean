@@ -1,3 +1,6 @@
+import Mathlib.Data.Matrix.Basic
+import Mathlib.Data.Complex.Basic
+
 /-!
 # Hecke crossed module h² trace = dim(V) · χ(Bring)
 
@@ -11,9 +14,6 @@ of 6 quaternion matrices, sum, trace.
 -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
 -- Ref: [yekutieli2015] https://doi.org/10.1142/9537
 -/
-
-import Mathlib.Data.Matrix.Basic
-import Mathlib.Data.Complex.Basic
 
 open Matrix Complex
 

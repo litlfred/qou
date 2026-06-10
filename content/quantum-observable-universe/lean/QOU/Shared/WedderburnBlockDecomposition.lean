@@ -1,3 +1,5 @@
+import Mathlib.Data.Real.Basic
+
 /-!
 # QOU.Shared.WedderburnBlockDecomposition — shared context for Wedderburn-block claims
 
@@ -22,8 +24,6 @@ class MyWedderburnClaim extends QOU.Shared.WedderburnBlockDecompositionContext w
 
 -- Ref: [manuscript] braids-and-knots/wedderburn-weight-canonical.md (shared)
 -/
-
-import Mathlib.Data.Real.Basic
 
 namespace QOU.Shared
 

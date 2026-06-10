@@ -1,3 +1,5 @@
+import QOU.Shared.MarkovTraceClaim
+
 /-!
 # QOU.BraidsKnots.tmli_constituent_composite_agreement — placeholder stub
 
@@ -9,8 +11,6 @@ the `lean.ref` URI `qou:QOU.BraidsKnots.tmli_constituent_composite_agreement` re
 the `qou` Lake package.  The body is `sorry` carrying the
 manuscript citation per CLAUDE.md §1.
 -/
-
-import QOU.Shared.MarkovTraceClaim
 
 namespace QOU.BraidsKnots
 

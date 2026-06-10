@@ -1,3 +1,6 @@
+import Mathlib.Algebra.BigOperators.Group.Finset.Defs
+import Mathlib.Data.Real.Basic
+
 /-!
 # QOU.BraidKnot.SixTermPerDerivationWeights.binding_assembly — placeholder stub
 
@@ -9,9 +12,6 @@ the `lean.ref` URI `qou:QOU.BraidKnot.SixTermPerDerivationWeights.binding_assemb
 the `qou` Lake package.  The body is `sorry` carrying the
 manuscript citation per CLAUDE.md §1.
 -/
-
-import Mathlib.Algebra.BigOperators.Group.Finset.Defs
-import Mathlib.Data.Real.Basic
 
 namespace QOU.BraidKnot.SixTermPerDerivationWeights
 

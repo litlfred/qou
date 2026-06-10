@@ -1,3 +1,6 @@
+import Mathlib.Tactic
+import Mathlib.Data.Real.Basic
+
 /-!
 # QOU.BraidKnot.HopfBindingLinkEigenvalueIdentity
 
@@ -49,9 +52,6 @@ The downstream **uniqueness** statement (`CanonicalKnotIdSDP_deuterium`
 instance is unique modulo conjugation) remains a §3b-cond conditional
 theorem proved elsewhere modulo a strict-complementarity sorry.
 -/
-
-import Mathlib.Tactic
-import Mathlib.Data.Real.Basic
 
 namespace QOU.BraidKnot
 

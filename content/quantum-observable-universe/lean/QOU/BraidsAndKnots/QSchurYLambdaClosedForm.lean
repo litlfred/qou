@@ -1,3 +1,7 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Tactic.FieldSimp
+import Mathlib.Tactic.Ring
+
 /-!
 # QOU.BraidsAndKnots.QSchurYLambdaClosedForm
 
@@ -78,10 +82,6 @@ confirms this numerically against `pn.trace_weights_n_q_schur(2, q)`.
 -- Ref: [jones1987] Jones, "Hecke algebra representations of braid groups and link polynomials", Ann. Math. 126 (1987)
 -- Ref: [lusztig1990] Lusztig, "Canonical bases arising from quantized enveloping algebras", J. Amer. Math. Soc. 3 (1990)
 -/
-
-import Mathlib.Data.Real.Basic
-import Mathlib.Tactic.FieldSimp
-import Mathlib.Tactic.Ring
 
 namespace QOU.BraidsAndKnots
 

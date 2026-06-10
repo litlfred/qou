@@ -1,3 +1,5 @@
+import QOU.Shared.MarkovTraceClaim
+
 /-!
 # QOU.Observations.brane_tower_q_laplacian_decay — placeholder stub
 
@@ -9,8 +11,6 @@ the `lean.ref` URI `qou:QOU.Observations.brane_tower_q_laplacian_decay` resolves
 `qou` Lake package.  The body is `sorry` carrying the manuscript
 citation per CLAUDE.md §1.
 -/
-
-import QOU.Shared.MarkovTraceClaim
 
 namespace QOU.Observations
 

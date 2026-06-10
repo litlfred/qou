@@ -1,3 +1,5 @@
+import QOU.Shared.SobolevHkRegularity
+
 /-!
 # QOU.FluidDynamics.acoustic_horizon_conditions — placeholder stub
 
@@ -9,8 +11,6 @@ the `lean.ref` URI `qou:QOU.FluidDynamics.acoustic_horizon_conditions` resolves 
 the `qou` Lake package.  The body is `sorry` carrying the
 manuscript citation per CLAUDE.md §1.
 -/
-
-import QOU.Shared.SobolevHkRegularity
 
 namespace QOU.FluidDynamics
 

@@ -1,3 +1,6 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Tactic
+
 /-!
 # QOU.Substrate.ColorAntisymmetric
 
@@ -40,9 +43,6 @@ formalized now without the full categorical machinery:
   (canonical 6-PR campaign reference)
 - merged PRs #1581, #1617, #1629, #1645, #1650, #1654, #1671
 -/
-
-import Mathlib.Data.Real.Basic
-import Mathlib.Tactic
 
 namespace QOU
 namespace Substrate

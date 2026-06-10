@@ -1,3 +1,6 @@
+import QOU.OptionE.CrystalGraph
+import Mathlib.Data.Nat.Basic
+
 /-!
 # `QOU.OptionE.RungSelection` — Canonical rung-selection at k ≥ 3
 
@@ -35,9 +38,6 @@ Refs:
 - [manuscript] docs/audits/2026-05-18-delta-lambda-gating-context.md
 - [kashiwara1991] DOI 10.1215/S0012-7094-91-06321-0
 -/
-
-import QOU.OptionE.CrystalGraph
-import Mathlib.Data.Nat.Basic
 
 namespace QOU.OptionE.RungSelection
 

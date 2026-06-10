@@ -1,3 +1,6 @@
+import Mathlib.Algebra.Ring.Basic
+import Mathlib.Tactic.NormNum
+
 /-!
 # QOU.ParticleInteractions — why fold/unfold works for binding: the delta is PRE-archimedean
 
@@ -35,9 +38,6 @@ order-of-operations discipline behind `prop:neutron-qvalue-symbolic`
 -- Ref: [manuscript] prop:neutron-qvalue-symbolic
 -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
 -/
-
-import Mathlib.Algebra.Ring.Basic
-import Mathlib.Tactic.NormNum
 
 namespace QOU.ParticleInteractions
 

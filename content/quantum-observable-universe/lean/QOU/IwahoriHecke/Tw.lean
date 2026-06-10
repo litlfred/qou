@@ -1,3 +1,5 @@
+import QOU.IwahoriHecke.Quotient
+
 /-!
 # `QOU.IwahoriHecke.Tw` — Reduced-expression basis (Sprint 2 follow-up)
 
@@ -68,8 +70,6 @@ Refs:
 - [nayak2008] DOI 10.1103/RevModPhys.80.1083 (non-Abelian anyons)
 - [manuscript] docs/workplans/2026-05-30-iwahori-hecke-mathlib-infra-plan.md
 -/
-
-import QOU.IwahoriHecke.Quotient
 
 namespace QOU.IwahoriHecke.Tw
 

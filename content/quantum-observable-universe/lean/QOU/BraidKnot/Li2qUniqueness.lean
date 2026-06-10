@@ -1,3 +1,8 @@
+import Mathlib.Tactic
+import Mathlib.Algebra.BigOperators.Group.Finset
+import Mathlib.Analysis.SpecialFunctions.Log.Basic
+import Mathlib.MeasureTheory.Integral.IntervalIntegral
+
 /-!
 # QOU.BraidKnot.Li2qUniqueness
 
@@ -11,11 +16,6 @@ with Li₂^q(0) = 0.
 Ref: [kirillov1995] Kirillov, "Dilogarithm identities"
 Ref: [manuscript] prop:mass-endomorphism-tower — Li₂^q subproof
 -/
-
-import Mathlib.Tactic
-import Mathlib.Algebra.BigOperators.Group.Finset
-import Mathlib.Analysis.SpecialFunctions.Log.Basic
-import Mathlib.MeasureTheory.Integral.IntervalIntegral
 
 namespace QOU.BraidKnot
 

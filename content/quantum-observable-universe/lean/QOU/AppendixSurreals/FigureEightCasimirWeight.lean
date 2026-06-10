@@ -1,3 +1,6 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Tactic
+
 /-!
 # QOU.AppendixSurreals.FigureEightCasimirWeight — the 3/4 is exact algebra
 
@@ -29,9 +32,6 @@ from that weight is the elementary algebra proved here.
 Ref: [lickorish1997] An Introduction to Knot Theory, Springer GTM 175
 (Jones polynomial of the figure-eight knot).
 -/
-
-import Mathlib.Data.Real.Basic
-import Mathlib.Tactic
 
 namespace QOU.AppendixSurreals
 

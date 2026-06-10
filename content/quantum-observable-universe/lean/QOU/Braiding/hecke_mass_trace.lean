@@ -1,3 +1,6 @@
+import QOU.Hecke.Algebra
+import QOU.Hecke.MarkovTrace
+
 /-!
 # QOU.Braiding.hecke_mass_trace — `𝔪(ϱ_β) = |tr_M(Φ_mass(β))|`
 
@@ -24,9 +27,6 @@ Hecke mass element and the topological decomposition components.
 
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/hecke-mass-trace.md
 -/
-
-import QOU.Hecke.Algebra
-import QOU.Hecke.MarkovTrace
 
 namespace QOU.Braiding
 

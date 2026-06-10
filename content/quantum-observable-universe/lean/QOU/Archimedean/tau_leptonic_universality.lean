@@ -1,3 +1,5 @@
+import Mathlib.Analysis.SpecialFunctions.Log.Basic
+
 /-!
 # QOU.Archimedean.tau_leptonic_universality — tau leptonic universality
 
@@ -25,8 +27,6 @@ universality claim as an equality of branching-ratio quotients.
 
 -- Ref: [manuscript] quantum-observable-universe/archimedean-universe/tau-leptonic-universality.md
 -/
-
-import Mathlib.Analysis.SpecialFunctions.Log.Basic
 
 namespace QOU.Archimedean
 

@@ -1,3 +1,6 @@
+import Mathlib.Data.List.Basic
+import Mathlib.Tactic
+
 /-!
 # `QOU.OptionE.CrystalGraph` — Kashiwara crystal graph structure
 
@@ -23,9 +26,6 @@ Refs:
 - [kashiwara1991] DOI 10.1215/S0012-7094-91-06321-0
 - [lecouvey2007] DOI 10.1016/j.jalgebra.2007.07.002
 -/
-
-import Mathlib.Data.List.Basic
-import Mathlib.Tactic
 
 namespace QOU.OptionE.CrystalGraph
 

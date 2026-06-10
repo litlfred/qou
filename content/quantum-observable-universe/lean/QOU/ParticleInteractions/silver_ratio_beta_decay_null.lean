@@ -1,3 +1,6 @@
+import Mathlib.Tactic
+import Mathlib.Analysis.SpecialFunctions.Pow.Real
+
 /-!
 # QOU.ParticleInteractions.SilverRatioBetaDecayNull
 
@@ -22,9 +25,6 @@ The key algebraic identity at $q = 1 + \sqrt 2$:
 
 This file provides the kernel-verified proof.
 -/
-
-import Mathlib.Tactic
-import Mathlib.Analysis.SpecialFunctions.Pow.Real
 
 -- Ref: [manuscript] prop:neutron-qvalue-symbolic
 -- Ref: [wenzl1988] doi:10.1007/BF01404457 (Hecke Markov trace)

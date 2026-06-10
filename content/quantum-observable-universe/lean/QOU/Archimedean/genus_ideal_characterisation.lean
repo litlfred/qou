@@ -1,3 +1,6 @@
+import Mathlib.Algebra.Polynomial.Basic
+import Mathlib.RingTheory.Ideal.Quotient.Defs
+
 /-!
 # QOU.Archimedean.genus_ideal_characterisation — genus-filtration ideal as `(u⁵)`
 
@@ -19,9 +22,6 @@ which is downstream of this lemma).
 
 -- Ref: [manuscript] quantum-observable-universe/archimedean-universe/genus-ideal-characterisation.md
 -/
-
-import Mathlib.Algebra.Polynomial.Basic
-import Mathlib.RingTheory.Ideal.Quotient.Defs
 
 namespace QOU.Archimedean
 

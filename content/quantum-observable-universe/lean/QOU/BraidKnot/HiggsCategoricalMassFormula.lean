@@ -1,3 +1,5 @@
+import QOU.BraidKnot.SubstrateEWHypotheses
+
 /-!
 # QOU.BraidKnot.HiggsCategoricalMassFormula — Lean encoding of the constructed Higgs mass formula
 
@@ -37,8 +39,6 @@ formula for a torus-knot particle in the framework's RT-route chain.
 Empirical validation lives in the witness JSON; this file makes the
 structure type-level.
 -/
-
-import QOU.BraidKnot.SubstrateEWHypotheses
 
 namespace QOU.BraidKnot
 

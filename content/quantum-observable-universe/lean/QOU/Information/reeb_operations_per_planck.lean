@@ -1,3 +1,5 @@
+import QOU.Shared.MarkovTraceClaim
+
 /-!
 # QOU.Information.reeb_operations_per_planck — placeholder stub
 
@@ -9,8 +11,6 @@ the `lean.ref` URI `qou:QOU.Information.reeb_operations_per_planck` resolves to 
 the `qou` Lake package.  The body is `sorry` carrying the
 manuscript citation per CLAUDE.md §1.
 -/
-
-import QOU.Shared.MarkovTraceClaim
 
 namespace QOU.Information
 

@@ -1,3 +1,6 @@
+import Mathlib.Tactic
+import Mathlib.Data.Rat.Defs
+
 /-!
 # QOU.BraidKnot.MarkovParameterRecursion
 
@@ -42,9 +45,6 @@ from `τ_M` via the `Q_A·cos` reparametrisation in the variable
 full bridge to `QbetaHabiroTaylorBridgeClass`
 (`habiro-precision-ladder-equivalence.lean`) remains conditional.
 -/
-
-import Mathlib.Tactic
-import Mathlib.Data.Rat.Defs
 
 namespace QOU.BraidKnot
 

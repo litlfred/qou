@@ -1,3 +1,8 @@
+import QOU.Shared.MarkovTraceClaim
+import QOU.Shared.OperatorSelectionLP
+import QOU.Shared.WedderburnBlockDecomposition
+import QOU.Shared.SobolevHkRegularity
+
 /-!
 # QOU.Shared — index of shared typeclass roots
 
@@ -18,8 +23,3 @@ specify the substantive claim.
 See `.claude/skills/local/lean-substantive-pass.md` for usage
 patterns.
 -/
-
-import QOU.Shared.MarkovTraceClaim
-import QOU.Shared.OperatorSelectionLP
-import QOU.Shared.WedderburnBlockDecomposition
-import QOU.Shared.SobolevHkRegularity

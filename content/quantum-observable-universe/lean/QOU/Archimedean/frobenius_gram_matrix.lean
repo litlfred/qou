@@ -1,3 +1,6 @@
+import Mathlib.LinearAlgebra.Matrix.Symmetric
+import Mathlib.Data.Matrix.Notation
+
 /-!
 # QOU.Archimedean.frobenius_gram_matrix — explicit Markov-Frobenius Gram matrix
 
@@ -41,9 +44,6 @@ the matrix entries.
 
 -- Ref: [manuscript] quantum-observable-universe/archimedean-universe/frobenius-gram-matrix.md
 -/
-
-import Mathlib.LinearAlgebra.Matrix.Symmetric
-import Mathlib.Data.Matrix.Notation
 
 namespace QOU.Archimedean
 

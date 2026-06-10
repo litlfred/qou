@@ -1,3 +1,5 @@
+import QOU.MathlibExt.QPartitionCombinatorics
+
 /-!
 # Dimension of the Standard Representation V_{(2,1)} of S₃
 
@@ -29,8 +31,6 @@ Wedderburn T1 trustable trace.
 -- Ref: [manuscript] Frame–Robinson–Thrall hook-length formula (1954)
 -- Ref: [manuscript] James–Kerber, The Representation Theory of the Symmetric Group (1981)
 -/
-
-import QOU.MathlibExt.QPartitionCombinatorics
 
 namespace QOU.BraidsAndKnots
 

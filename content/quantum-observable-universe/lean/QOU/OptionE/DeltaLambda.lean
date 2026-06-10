@@ -1,3 +1,7 @@
+import QOU.OptionE.CrystalGraph
+import QOU.OptionE.RungSelection
+import Mathlib.Data.Real.Basic
+
 /-!
 # `QOU.OptionE.DeltaLambda` — Δ_λ derivation framework
 
@@ -46,10 +50,6 @@ Refs:
 - [manuscript] docs/audits/2026-05-18-delta-lambda-gating-context.md
 - [manuscript] CLAUDE.md §Precision goals (L2)
 -/
-
-import QOU.OptionE.CrystalGraph
-import QOU.OptionE.RungSelection
-import Mathlib.Data.Real.Basic
 
 namespace QOU.OptionE.DeltaLambda
 

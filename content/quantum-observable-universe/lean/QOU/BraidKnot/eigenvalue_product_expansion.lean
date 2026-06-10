@@ -1,3 +1,5 @@
+import Mathlib.Analysis.SpecialFunctions.Pow.Real
+
 /-!
 # QOU.BraidKnot.eigenvalue_product_expansion — `Λ_sym(Z, N) = q^{(Z−N)(A−1)/2} · ([2]_q/2)^{ZN}`
 
@@ -16,8 +18,6 @@ function of `(Z, N, q)`.
 
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/eigenvalue-product-expansion.md
 -/
-
-import Mathlib.Analysis.SpecialFunctions.Pow.Real
 
 namespace QOU.BraidKnot
 

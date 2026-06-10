@@ -1,3 +1,7 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Tactic.FieldSimp
+import Mathlib.Tactic.Ring
+
 /-!
 # QOU.BraidsAndKnots.YLambdaQSchur
 
@@ -65,10 +69,6 @@ The transpose-pair identity is structurally informative:
   Algebras", arXiv:math/9806163.
 - [chlouveraki2016] Chlouveraki HDR thesis Theorem 6.20.
 -/
-
-import Mathlib.Data.Real.Basic
-import Mathlib.Tactic.FieldSimp
-import Mathlib.Tactic.Ring
 
 namespace QOU.BraidsAndKnots
 

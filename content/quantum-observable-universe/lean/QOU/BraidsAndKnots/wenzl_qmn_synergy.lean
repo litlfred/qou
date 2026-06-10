@@ -1,3 +1,5 @@
+import QOU.Shared.MarkovTraceClaim
+
 /-!
 # QOU.BraidsAndKnots.wenzl_qmn_synergy — placeholder stub
 
@@ -12,8 +14,6 @@ Note: the chapter-dir uses singular `QOU.BraidKnot` for most blocks;
 this plural `QOU.BraidsAndKnots` namespace was inherited from existing
 `.ts` lean.ref URIs (a pre-existing convention drift).
 -/
-
-import QOU.Shared.MarkovTraceClaim
 
 namespace QOU.BraidsAndKnots
 

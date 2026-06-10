@@ -1,3 +1,5 @@
+import QOU.Shared.SobolevHkRegularity
+
 /-!
 # QOU.FluidDynamics.core_levi_form — placeholder stub
 
@@ -9,8 +11,6 @@ the `lean.ref` URI resolves to a real declaration in the `qou` Lake
 package. The body is `sorry` carrying the manuscript citation per
 CLAUDE.md §1.
 -/
-
-import QOU.Shared.SobolevHkRegularity
 
 namespace QOU.FluidDynamics
 
