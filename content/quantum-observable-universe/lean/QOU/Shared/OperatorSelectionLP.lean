@@ -1,5 +1,6 @@
 import Mathlib.Algebra.BigOperators.Group.Finset.Defs
 import Mathlib.Data.Real.Basic
+import Mathlib.Data.Fintype.Fin
 
 /-!
 # QOU.Shared.OperatorSelectionLP — shared context for LP-dual claims
