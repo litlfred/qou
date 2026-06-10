@@ -81,8 +81,7 @@ theorem hecke_gen_poly_reduction (σ : A) (h : R) (hq : σ * σ = h • σ + 1)
   | cons d ds ih =>
       -- (σ + d•1)·(α•σ + β•1) with α,β = heckeAB h ds; expand, sub hq, collect
       rw [List.map_cons, List.prod_cons, ih, heckeAB_cons_fst, heckeAB_cons_snd]
-      simp only [add_mul, mul_add, mul_smul_comm, smul_mul_assoc,
-                 one_mul, mul_one, smul_smul]
+      simp only [add_mul, mul_add, mul_smul_comm, smul_mul_assoc, one_mul, mul_one]
       rw [hq]
       module
 
