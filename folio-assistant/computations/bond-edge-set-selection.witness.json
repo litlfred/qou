@@ -1,0 +1,411 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-10T04:58:57.880036+00:00",
+  "commitSha": "5dafb337a304a5ab2bb23111833a938ee0d5abbf",
+  "assertions": [
+    {
+      "name": "deuteron_not_closable_by_integer_edge_set",
+      "computed": false,
+      "expected": false,
+      "passed": true,
+      "tolerance": 0.0,
+      "source": "exact enumeration of {0,1}-pn edge sets for D: none within 5%."
+    },
+    {
+      "name": "he4_requires_more_than_complete_graph",
+      "computed": 1.197,
+      "expected": 1.2,
+      "passed": true,
+      "tolerance": 0.05,
+      "source": "L_required/L_complete for ⁴He ≈ 1.20 > 1: even the complete graph under-binds; pairwise-additive closure impossible."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": -1781060196754,
+  "computation": "bond-edge-set-selection",
+  "scriptFile": "bond_edge_set_selection_probe.py",
+  "scriptHash": "81d5376dd3de",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "Edge-set selection refutation: with the DERIVED per-bond energies (f_bond = c·z+d; pp 2.907 / pn 3.890 / nn 5.178 MeV), EXACT enumeration of every static integer edge multiset per nucleus shows NO static bond graph closes D/T/³He/⁴He jointly — D needs a sub-unit bond (0.57 of its only pn bond; halo-loose), ⁴He needs MORE than the complete graph (1.20× over 1pp+4pn+1nn; doubly-magic many-body). The physical structure is fractional occupancy / shell weighting, not an edge-set choice — pointing at the per-nucleus volume route (#2078). T (chain 0.94×) and ³He (~1.1×) are individually close; the JOINT static closure is what fails. Formalize-first refutation of the static-graph class; no fit attempted.",
+  "parameters": {
+    "E_0_MeV": 4.186
+  },
+  "data": {
+    "per_bond_log": {
+      "pp": 0.6945,
+      "nn": 1.237,
+      "pn": 0.9292
+    },
+    "per_bond_energy_MeV": {
+      "pp": 2.9072,
+      "nn": 5.178,
+      "pn": 3.8897
+    },
+    "rows": [
+      {
+        "atom": "D",
+        "Z": 1,
+        "N": 1,
+        "A": 2,
+        "B_AME_MeV": 2.2246,
+        "L_required": 0.5314,
+        "edge_box": {
+          "pp": 0,
+          "pn": 1,
+          "nn": 0
+        },
+        "L_complete_graph": 0.9292,
+        "complete_vs_required": 0.572,
+        "n_integer_edge_sets": 2,
+        "best_integer_edge_set": {
+          "pp": 0,
+          "pn": 1,
+          "nn": 0,
+          "L": 0.9292,
+          "miss_x": 0.572
+        },
+        "closable_within_5pct": false
+      },
+      {
+        "atom": "T",
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "B_AME_MeV": 8.4818,
+        "L_required": 2.0262,
+        "edge_box": {
+          "pp": 0,
+          "pn": 2,
+          "nn": 1
+        },
+        "L_complete_graph": 3.0954,
+        "complete_vs_required": 0.655,
+        "n_integer_edge_sets": 6,
+        "best_integer_edge_set": {
+          "pp": 0,
+          "pn": 1,
+          "nn": 1,
+          "L": 2.1662,
+          "miss_x": 0.935
+        },
+        "closable_within_5pct": false
+      },
+      {
+        "atom": "3He",
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "B_AME_MeV": 7.718,
+        "L_required": 1.8438,
+        "edge_box": {
+          "pp": 1,
+          "pn": 2,
+          "nn": 0
+        },
+        "L_complete_graph": 2.5529,
+        "complete_vs_required": 0.722,
+        "n_integer_edge_sets": 6,
+        "best_integer_edge_set": {
+          "pp": 0,
+          "pn": 2,
+          "nn": 0,
+          "L": 1.8584,
+          "miss_x": 0.992
+        },
+        "closable_within_5pct": true
+      },
+      {
+        "atom": "4He",
+        "Z": 2,
+        "N": 2,
+        "A": 4,
+        "B_AME_MeV": 28.2957,
+        "L_required": 6.7596,
+        "edge_box": {
+          "pp": 1,
+          "pn": 4,
+          "nn": 1
+        },
+        "L_complete_graph": 5.6484,
+        "complete_vs_required": 1.197,
+        "n_integer_edge_sets": 20,
+        "best_integer_edge_set": {
+          "pp": 1,
+          "pn": 4,
+          "nn": 1,
+          "L": 5.6484,
+          "miss_x": 1.197
+        },
+        "closable_within_5pct": false
+      }
+    ],
+    "full_enumeration": {
+      "D": [
+        {
+          "pp": 0,
+          "pn": 0,
+          "nn": 0,
+          "L": 0.0,
+          "miss_x": null
+        },
+        {
+          "pp": 0,
+          "pn": 1,
+          "nn": 0,
+          "L": 0.9292,
+          "miss_x": 0.572
+        }
+      ],
+      "T": [
+        {
+          "pp": 0,
+          "pn": 0,
+          "nn": 0,
+          "L": 0.0,
+          "miss_x": null
+        },
+        {
+          "pp": 0,
+          "pn": 0,
+          "nn": 1,
+          "L": 1.237,
+          "miss_x": 1.638
+        },
+        {
+          "pp": 0,
+          "pn": 1,
+          "nn": 0,
+          "L": 0.9292,
+          "miss_x": 2.181
+        },
+        {
+          "pp": 0,
+          "pn": 1,
+          "nn": 1,
+          "L": 2.1662,
+          "miss_x": 0.935
+        },
+        {
+          "pp": 0,
+          "pn": 2,
+          "nn": 0,
+          "L": 1.8584,
+          "miss_x": 1.09
+        },
+        {
+          "pp": 0,
+          "pn": 2,
+          "nn": 1,
+          "L": 3.0954,
+          "miss_x": 0.655
+        }
+      ],
+      "3He": [
+        {
+          "pp": 0,
+          "pn": 0,
+          "nn": 0,
+          "L": 0.0,
+          "miss_x": null
+        },
+        {
+          "pp": 0,
+          "pn": 1,
+          "nn": 0,
+          "L": 0.9292,
+          "miss_x": 1.984
+        },
+        {
+          "pp": 0,
+          "pn": 2,
+          "nn": 0,
+          "L": 1.8584,
+          "miss_x": 0.992
+        },
+        {
+          "pp": 1,
+          "pn": 0,
+          "nn": 0,
+          "L": 0.6945,
+          "miss_x": 2.655
+        },
+        {
+          "pp": 1,
+          "pn": 1,
+          "nn": 0,
+          "L": 1.6237,
+          "miss_x": 1.136
+        },
+        {
+          "pp": 1,
+          "pn": 2,
+          "nn": 0,
+          "L": 2.5529,
+          "miss_x": 0.722
+        }
+      ],
+      "4He": [
+        {
+          "pp": 0,
+          "pn": 0,
+          "nn": 0,
+          "L": 0.0,
+          "miss_x": null
+        },
+        {
+          "pp": 0,
+          "pn": 0,
+          "nn": 1,
+          "L": 1.237,
+          "miss_x": 5.465
+        },
+        {
+          "pp": 0,
+          "pn": 1,
+          "nn": 0,
+          "L": 0.9292,
+          "miss_x": 7.275
+        },
+        {
+          "pp": 0,
+          "pn": 1,
+          "nn": 1,
+          "L": 2.1662,
+          "miss_x": 3.121
+        },
+        {
+          "pp": 0,
+          "pn": 2,
+          "nn": 0,
+          "L": 1.8584,
+          "miss_x": 3.637
+        },
+        {
+          "pp": 0,
+          "pn": 2,
+          "nn": 1,
+          "L": 3.0954,
+          "miss_x": 2.184
+        },
+        {
+          "pp": 0,
+          "pn": 3,
+          "nn": 0,
+          "L": 2.7877,
+          "miss_x": 2.425
+        },
+        {
+          "pp": 0,
+          "pn": 3,
+          "nn": 1,
+          "L": 4.0246,
+          "miss_x": 1.68
+        },
+        {
+          "pp": 0,
+          "pn": 4,
+          "nn": 0,
+          "L": 3.7169,
+          "miss_x": 1.819
+        },
+        {
+          "pp": 0,
+          "pn": 4,
+          "nn": 1,
+          "L": 4.9539,
+          "miss_x": 1.365
+        },
+        {
+          "pp": 1,
+          "pn": 0,
+          "nn": 0,
+          "L": 0.6945,
+          "miss_x": 9.733
+        },
+        {
+          "pp": 1,
+          "pn": 0,
+          "nn": 1,
+          "L": 1.9315,
+          "miss_x": 3.5
+        },
+        {
+          "pp": 1,
+          "pn": 1,
+          "nn": 0,
+          "L": 1.6237,
+          "miss_x": 4.163
+        },
+        {
+          "pp": 1,
+          "pn": 1,
+          "nn": 1,
+          "L": 2.8607,
+          "miss_x": 2.363
+        },
+        {
+          "pp": 1,
+          "pn": 2,
+          "nn": 0,
+          "L": 2.5529,
+          "miss_x": 2.648
+        },
+        {
+          "pp": 1,
+          "pn": 2,
+          "nn": 1,
+          "L": 3.7899,
+          "miss_x": 1.784
+        },
+        {
+          "pp": 1,
+          "pn": 3,
+          "nn": 0,
+          "L": 3.4822,
+          "miss_x": 1.941
+        },
+        {
+          "pp": 1,
+          "pn": 3,
+          "nn": 1,
+          "L": 4.7191,
+          "miss_x": 1.432
+        },
+        {
+          "pp": 1,
+          "pn": 4,
+          "nn": 0,
+          "L": 4.4114,
+          "miss_x": 1.532
+        },
+        {
+          "pp": 1,
+          "pn": 4,
+          "nn": 1,
+          "L": 5.6484,
+          "miss_x": 1.197
+        }
+      ]
+    },
+    "verdict": {
+      "joint_static_closure": false,
+      "D_blocker": "single pn bond overshoots 1.75×; only smaller integer option is 0 bonds — needs occupancy ≈ 0.57 (halo).",
+      "He4_blocker": "complete graph (1pp+4pn+1nn) under-binds 1.20× — needs a positive many-body/doubly-magic term beyond all pairwise bonds.",
+      "conclusion": "The bond graph is NOT a static integer graph. The remaining structure is fractional bond occupancy / shell weighting (saturation, Pauli, magic) — i.e. the per-nucleus volume / shell route (#2078), not edge choice. Refutation recorded so the static-graph direction is not re-chased."
+    }
+  }
+}
