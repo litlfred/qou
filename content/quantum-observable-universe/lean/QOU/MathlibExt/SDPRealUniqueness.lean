@@ -115,7 +115,7 @@ theorem RealStrongDualityPair.dualSlack_mul_feasible_eq_zero
     rs.dualSlack_psd h_feas.1
     (rs.trace_dualSlack_eq_zero h_feas h_obj)
 
-/-- **Real strict-complementarity uniqueness theorem.**
+/- **Real strict-complementarity uniqueness theorem.**
 
     Given a `RealStrictComplementarityPair sc` for an SDP, the
     primal optimum `sc.Φstar` is unique among primal-feasible
@@ -170,7 +170,7 @@ theorem RealStrongDualityPair.dualSlack_mul_feasible_eq_zero
 --      of KKT", which doesn't cover this.)
 class SlaterStrictComplementarityKernel : Prop where
   kernel_uniqueness :
-    ∀ {n : ℕ} {ι : Type*} {sdp : SDPPrimal n ℝ ι}
+    ∀ {n : ℕ} {ι : Type*} [Fintype ι] {sdp : SDPPrimal n ℝ ι}
       (sc : RealStrictComplementarityPair sdp)
       {Φ' : Matrix (Fin n) (Fin n) ℝ}
       (_h_feas : sdp.IsFeasible Φ')
@@ -185,7 +185,7 @@ class SlaterStrictComplementarityKernel : Prop where
     via Boyd-Vandenberghe / Alizadeh-Haeberly-Overton.  Closing this
     axiom in Mathlib is the Phase-3 SDP uniqueness follow-up. -/
 axiom slater_strict_complementarity_kernel_axiom :
-    ∀ {n : ℕ} {ι : Type*} {sdp : SDPPrimal n ℝ ι}
+    ∀ {n : ℕ} {ι : Type*} [Fintype ι] {sdp : SDPPrimal n ℝ ι}
       (sc : RealStrictComplementarityPair sdp)
       {Φ' : Matrix (Fin n) (Fin n) ℝ}
       (_h_feas : sdp.IsFeasible Φ')
@@ -274,8 +274,8 @@ theorem real_strict_complementarity_optimum_subsingleton
       sdp.IsFeasible Φ ∧ sdp.objAt Φ = sdp.objAt sc.Φstar} := by
   refine ⟨fun ⟨Φ₁, h₁_feas, h₁_obj⟩ ⟨Φ₂, h₂_feas, h₂_obj⟩ => ?_⟩
   ext1
-  rw [real_strict_complementarity_unique sc h₁_feas h₁_obj,
-      real_strict_complementarity_unique sc h₂_feas h₂_obj]
+  exact (real_strict_complementarity_unique sc h₁_feas h₁_obj).trans
+    (real_strict_complementarity_unique sc h₂_feas h₂_obj).symm
 
 /-! ## §3.1  Interior-optimum closure (active set empty)
 
@@ -487,8 +487,8 @@ theorem real_strict_complementarity_optimum_subsingleton_via_class
       sdp.IsFeasible Φ ∧ sdp.objAt Φ = sdp.objAt sc.Φstar} := by
   refine ⟨fun ⟨Φ₁, h₁_feas, h₁_obj⟩ ⟨Φ₂, h₂_feas, h₂_obj⟩ => ?_⟩
   ext1
-  rw [real_strict_complementarity_unique_via_class sc h₁_feas h₁_obj,
-      real_strict_complementarity_unique_via_class sc h₂_feas h₂_obj]
+  exact (real_strict_complementarity_unique_via_class sc h₁_feas h₁_obj).trans
+    (real_strict_complementarity_unique_via_class sc h₂_feas h₂_obj).symm
 
 /-! ## §3.07  Multiplication-commutativity for PSD pairs at zero
 

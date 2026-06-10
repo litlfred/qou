@@ -42,6 +42,7 @@ universe u
 variable {n : ℕ} {R : Type u}
 
 variable [Field R] [LinearOrder R] [IsStrictOrderedRing R] [StarRing R]
+variable [StarOrderedRing R]
 
 /-- For any `SDPPrimal n R Empty`, the zero matrix is feasible
     (vacuously satisfies all constraints). -/
