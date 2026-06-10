@@ -296,7 +296,32 @@
       "newest_pr": 1495,
       "merged_canonical_result": "alpha-em-habiro-bar-involution ([2]_q(1-h2a) Habiro element) on main",
       "first_step": "list_pull_requests state=open; for each alpha-em PR check mergeable + whether superseded by the merged Habiro element; build a triage table before acting",
-      "anti_pattern_guard": "do-not-re-run-the-12-refuted-candidates (alpha-em-4pi-derived-form refutation log)"
+      "anti_pattern_guard": "do-not-re-run-the-12-refuted-candidates (alpha-em-4pi-derived-form refutation log)",
+      "triage_2026_06_10": {
+        "verdict": "NOT a crashed agent — a stalled exploration of an OPEN problem. The canonical alpha_EM (alpha^-1=q[9]_q[10]_q + Bring zero-mode 2/(3pi) at g=4 = 137.03543, -4.18 ppm) is ALREADY ON MAIN, as is the Habiro element [2]_q(1-h^2a). The 12 open PRs are the UNFINISHED a/(4pi) last-57-ppb extension (ledger 2026-05-30-alpha-em-fsc-closure.md flags a/(4pi) derived form as open research) PLUS superseded duplicates. So owner is right: not complete (the 57ppb piece is genuinely open).",
+        "recommend_close_superseded": {
+          "1521": "Habiro [2]_q(1-h2a) content is on main (alpha-em-habiro-bar-involution) — check for unique content else close",
+          "1523": "categorical identification content — check vs main, likely superseded",
+          "1538": "RT Phase 2 EmFermionLoop — part of the stalled open-research RT chain"
+        },
+        "recommend_review_open_research": {
+          "1527": "RT shadow Phase 1",
+          "1549": "RT Phase 3 Schwinger",
+          "1552": "RT Phase 4 1/(8pi)=1/(pi dimH3)",
+          "1503": "closure subgoal-1 CAL-2 + O(a2)",
+          "1508": "lean conditional theorem",
+          "1491": "H refinement"
+        },
+        "recommend_docs_lowrisk_merge": {
+          "1495": "coord thread ledger + RT plan",
+          "1505": "walkthrough alpha_EM canonical chain"
+        },
+        "different_topic": {
+          "1733": "alpha_r r=15 single-rank 4He binding — NOT alpha_EM; triage separately under mass/binding"
+        },
+        "merge_close_needs_owner_decision": true,
+        "do_not_re_run": "the 12 refuted candidates (alpha-em-4pi-derived-form AGENT WARNING): gap-i/ii/iii, B4 PSLQ, q-vertex, h3-matter, Bring-integration -67%, combined"
+      }
     }
   }
 ]
