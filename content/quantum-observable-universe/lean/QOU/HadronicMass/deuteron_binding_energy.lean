@@ -1,3 +1,5 @@
+import QOU.Shared.MarkovTraceClaim
+
 /-!
 # QOU.HadronicMass.deuteron_binding_energy — placeholder stub
 
@@ -9,8 +11,6 @@ the `lean.ref` URI `qou:QOU.HadronicMass.deuteron_binding_energy` resolves to a 
 the `qou` Lake package.  The body is `sorry` carrying the
 manuscript citation per CLAUDE.md §1.
 -/
-
-import QOU.Shared.MarkovTraceClaim
 
 namespace QOU.HadronicMass
 

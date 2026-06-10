@@ -1,3 +1,7 @@
+import Mathlib.Algebra.BigOperators.Group.Finset
+import Mathlib.Data.Int.Basic
+import QOU.MathlibExt.QPartitionCombinatorics
+
 /-!
 # QOU.BraidKnot.QSchurWeightsGeneral
 
@@ -13,10 +17,6 @@ Ref: [wenzl1988] Wenzl, "Hecke algebras of type A_n and subfactors"
 Ref: [ram1991] Ram, "A Frobenius formula for the characters"
 Ref: [manuscript] prop:q-schur-y-lambda-closed-form
 -/
-
-import Mathlib.Algebra.BigOperators.Group.Finset
-import Mathlib.Data.Int.Basic
-import QOU.MathlibExt.QPartitionCombinatorics
 
 namespace QOU.BraidKnot
 

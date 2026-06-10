@@ -1,3 +1,6 @@
+import Mathlib.Algebra.Polynomial.Basic
+import Mathlib.Data.Nat.Prime.Defs
+
 /-!
 # QOU.Archimedean.chebyshev_degree_genus — Chebyshev degree equals Seifert genus
 
@@ -22,9 +25,6 @@ argument on the recurrence depth (see manuscript).
 
 -- Ref: [manuscript] quantum-observable-universe/archimedean-universe/chebyshev-degree-genus.md
 -/
-
-import Mathlib.Algebra.Polynomial.Basic
-import Mathlib.Data.Nat.Prime.Defs
 
 namespace QOU.Archimedean
 

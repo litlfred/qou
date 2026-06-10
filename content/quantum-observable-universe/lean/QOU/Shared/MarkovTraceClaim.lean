@@ -1,3 +1,6 @@
+import QOU.Hecke.Algebra
+import QOU.Hecke.MarkovTrace
+
 /-!
 # QOU.Shared.MarkovTraceClaim — shared context for Markov-trace claims
 
@@ -32,9 +35,6 @@ theorem my_block [ctx : MyBlockClaim] :
 
 -- Ref: [manuscript] braids-and-knots/markov-trace.md (shared)
 -/
-
-import QOU.Hecke.Algebra
-import QOU.Hecke.MarkovTrace
 
 namespace QOU.Shared
 

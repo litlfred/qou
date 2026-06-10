@@ -1,3 +1,6 @@
+import Mathlib.Data.Nat.Basic
+import Mathlib.Tactic
+
 /-!
 # `QOU.Observations.L2_100x_SharedRoot` — L2 dashboard structural finding
 
@@ -43,9 +46,6 @@ Refs:
 - [manuscript] docs/audits/2026-05-18-delta-lambda-gating-context.md
 - [manuscript] CLAUDE.md §Precision goals
 -/
-
-import Mathlib.Data.Nat.Basic
-import Mathlib.Tactic
 
 namespace QOU.Observations.L2_100x
 

@@ -1,3 +1,6 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Tactic
+
 /-!
 # Unit-modulus eigenvalues on V_{(2,1)} and Borromean fixed point
 
@@ -24,9 +27,6 @@ char poly (λ+1)² = 0 → λ = −1.
 
 -- Ref: [manuscript] Hecke algebra Wedderburn decomposition
 -/
-
-import Mathlib.Data.Real.Basic
-import Mathlib.Tactic
 
 namespace QOU.BraidsAndKnots
 

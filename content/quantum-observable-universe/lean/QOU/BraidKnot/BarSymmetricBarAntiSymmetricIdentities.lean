@@ -1,3 +1,7 @@
+import Mathlib.Analysis.SpecialFunctions.Hyperbolic.Basic
+import Mathlib.Analysis.SpecialFunctions.Exp
+import Mathlib.Analysis.SpecialFunctions.Log.Basic
+
 /-!
 # QOU.BraidKnot.BarSymmetricBarAntiSymmetricIdentities — P_m, Q_m + Pythagorean
 
@@ -46,10 +50,6 @@ each identity follows by direct algebra:
 
 The proofs are mechanical via Mathlib's hyperbolic-function lemmas.
 -/
-
-import Mathlib.Analysis.SpecialFunctions.Hyperbolic.Basic
-import Mathlib.Analysis.SpecialFunctions.Exp
-import Mathlib.Analysis.SpecialFunctions.Log.Basic
 
 namespace QOU.BraidKnot
 

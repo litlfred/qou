@@ -1,3 +1,7 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Analysis.SpecialFunctions.Pi
+import Mathlib.Tactic
+
 /-!
 # QOU.Substrate.ProtonMassEMSignBlock
 
@@ -40,10 +44,6 @@ as an explicit hypothesis until the structural derivation lands.
   - `mp_yekutieli_sign_block_discrimination.py` (Fermi-stat argument)
   - `QOU.Substrate.MuOverDetermination` (related substrate structure)
 -/
-
-import Mathlib.Data.Real.Basic
-import Mathlib.Analysis.SpecialFunctions.Pi
-import Mathlib.Tactic
 
 namespace QOU
 namespace Substrate

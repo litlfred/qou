@@ -1,3 +1,6 @@
+import QOU.BraidKnot.TorusKnotMass
+import QOU.QuantumObservableUniverses.CategoricalHiggsIdempotent
+
 /-!
 # QOU.BraidKnot.SubstrateEWHypotheses — three substrate→EW hypothesis scaffolds
 
@@ -43,9 +46,6 @@ meanings in the existing framework:
 
 These are concrete cardinalities the Lean scaffolds can reference.
 -/
-
-import QOU.BraidKnot.TorusKnotMass
-import QOU.QuantumObservableUniverses.CategoricalHiggsIdempotent
 
 namespace QOU.BraidKnot
 

@@ -1,3 +1,5 @@
+import QOU.MathlibExt.QPartitionCombinatorics
+
 /-!
 # QOU.MathlibExt.WenzlSchurElement
   — Wenzl Schur element and Jones-Markov closed form
@@ -27,8 +29,6 @@ Refs:
 - [macdonald1995] Symmetric Functions and Hall Polynomials, I.3.
 - [stanley1999] Enumerative Combinatorics II, Cor. 7.12.5.
 -/
-
-import QOU.MathlibExt.QPartitionCombinatorics
 
 namespace QOU.MathlibExt.WenzlSchurElement
 

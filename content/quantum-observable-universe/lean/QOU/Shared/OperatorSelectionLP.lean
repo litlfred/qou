@@ -1,3 +1,6 @@
+import Mathlib.Algebra.BigOperators.Group.Finset.Defs
+import Mathlib.Data.Real.Basic
+
 /-!
 # QOU.Shared.OperatorSelectionLP — shared context for LP-dual claims
 
@@ -25,9 +28,6 @@ class MyLPClaim extends QOU.Shared.OperatorSelectionLPContext where
 
 -- Ref: [manuscript] particle-interactions/operator-selection-lp.md (shared)
 -/
-
-import Mathlib.Algebra.BigOperators.Group.Finset.Defs
-import Mathlib.Data.Real.Basic
 
 namespace QOU.Shared
 

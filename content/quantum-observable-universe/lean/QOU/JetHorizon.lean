@@ -1,3 +1,6 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Data.List.Basic
+
 /-!
 # QOU.JetHorizon — Jet horizon, aeons, and CCC
 
@@ -25,9 +28,6 @@ LaTeX labels: `def:jet-horizon`, `def:big-bang-state`, `def:aeon`,
 - [penrose2010] R. Penrose, "Cycles of Time", Bodley Head 2010.
 - [manuscript] §9
 -/
-
-import Mathlib.Data.Real.Basic
-import Mathlib.Data.List.Basic
 
 namespace QOU
 

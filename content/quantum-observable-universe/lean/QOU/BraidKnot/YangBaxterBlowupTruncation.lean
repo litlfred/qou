@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.BraidKnot.YangBaxterBlowupTruncation
 
@@ -13,8 +15,6 @@ per-generator spectral coordinates (descended + single + pair).
 Ref: [kassel1995] Kassel, "Quantum Groups" (Springer GTM 155)
 Ref: [manuscript] prop:mass-endomorphism-tower — |S| ≤ 2 truncation
 -/
-
-import Mathlib.Tactic
 
 namespace QOU.BraidKnot
 

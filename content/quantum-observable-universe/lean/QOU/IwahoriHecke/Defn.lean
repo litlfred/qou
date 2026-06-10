@@ -1,3 +1,8 @@
+import Mathlib.GroupTheory.Coxeter.Basic
+import Mathlib.Algebra.Algebra.Defs
+import Mathlib.Algebra.Algebra.Basic
+import QOU.IwahoriHecke.Quotient
+
 /-!
 # `QOU.IwahoriHecke.Defn` — Iwahori-Hecke algebra of a Coxeter group
 
@@ -75,11 +80,6 @@ Refs:
   groups and Iwahori–Hecke algebras"
 - [manuscript] docs/workplans/2026-05-30-iwahori-hecke-mathlib-infra-plan.md
 -/
-
-import Mathlib.GroupTheory.Coxeter.Basic
-import Mathlib.Algebra.Algebra.Defs
-import Mathlib.Algebra.Algebra.Basic
-import QOU.IwahoriHecke.Quotient
 
 namespace QOU.IwahoriHecke
 

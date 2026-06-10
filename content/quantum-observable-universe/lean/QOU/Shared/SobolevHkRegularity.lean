@@ -1,3 +1,5 @@
+import Mathlib.Data.Real.Basic
+
 /-!
 # QOU.Shared.SobolevHkRegularity — shared context for FluidDynamics Sobolev claims
 
@@ -20,8 +22,6 @@ class MyFluidClaim extends QOU.Shared.SobolevHkRegularityContext where
 
 -- Ref: [manuscript] fluid-dynamics/q-ns-wellposedness.md (shared)
 -/
-
-import Mathlib.Data.Real.Basic
 
 namespace QOU.Shared
 

@@ -1,3 +1,6 @@
+import Mathlib.Data.Complex.Basic
+import Mathlib.Analysis.SpecialFunctions.Pow.Real
+
 /-!
 # QOU.BringsSurface.lagrange_resolvent_transform — discrete Fourier on `C_n`
 
@@ -28,9 +31,6 @@ item (ii) is recorded abstractly.
 
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/lagrange-resolvent-transform.md
 -/
-
-import Mathlib.Data.Complex.Basic
-import Mathlib.Analysis.SpecialFunctions.Pow.Real
 
 namespace QOU.BringsSurface
 

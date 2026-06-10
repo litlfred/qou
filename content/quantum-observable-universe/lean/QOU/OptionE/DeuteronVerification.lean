@@ -1,3 +1,7 @@
+import QOU.OptionE.DeltaLambda
+import Mathlib.Data.Real.Basic
+import Mathlib.Tactic
+
 /-!
 # `QOU.OptionE.DeuteronVerification` — A=2 specific verification harness
 
@@ -36,10 +40,6 @@ Refs:
 - [manuscript] CLAUDE.md §Precision goals (L2)
 - AME binding energies from `B-ame-codata.witness.json`
 -/
-
-import QOU.OptionE.DeltaLambda
-import Mathlib.Data.Real.Basic
-import Mathlib.Tactic
 
 namespace QOU.OptionE.DeuteronVerification
 

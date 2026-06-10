@@ -1,3 +1,6 @@
+import Mathlib.Algebra.BigOperators.Group.Finset.Defs
+import Mathlib.Data.Real.Basic
+
 /-!
 # QOU.Archimedean.gram_weighted_qvalue — placeholder stub
 
@@ -8,9 +11,6 @@ The full Lean statement is pending; this stub exists so the
 `lean.ref` URI `qou:QOU.Archimedean.gram_weighted_qvalue` resolves to a real declaration in the `qou`
 Lake package.
 -/
-
-import Mathlib.Algebra.BigOperators.Group.Finset.Defs
-import Mathlib.Data.Real.Basic
 
 namespace QOU.Archimedean
 

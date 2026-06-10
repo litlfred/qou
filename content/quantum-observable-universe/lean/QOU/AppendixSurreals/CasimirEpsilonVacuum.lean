@@ -1,3 +1,11 @@
+import QOU.AppendixSurreals.VacuumEpsilon
+import QOU.AppendixSurreals.StandardPart
+import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
+import Mathlib.Analysis.Calculus.Deriv.Basic
+import Mathlib.Analysis.Calculus.Deriv.Pow
+import Mathlib.Analysis.Calculus.Deriv.Inv
+import Mathlib.Analysis.Calculus.Deriv.Mul
+
 /-!
 # QOU.AppendixSurreals.CasimirEpsilonVacuum — conditional class (§3b-cond)
 
@@ -22,14 +30,6 @@ The conditional theorem `energyPerArea_deriv` below is elementary
 calculus on a polynomial in `1/d`; the proof is given via
 `HasDerivAt` composition (no `sorry`).
 -/
-
-import QOU.AppendixSurreals.VacuumEpsilon
-import QOU.AppendixSurreals.StandardPart
-import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
-import Mathlib.Analysis.Calculus.Deriv.Basic
-import Mathlib.Analysis.Calculus.Deriv.Pow
-import Mathlib.Analysis.Calculus.Deriv.Inv
-import Mathlib.Analysis.Calculus.Deriv.Mul
 
 namespace QOU.AppendixSurreals
 

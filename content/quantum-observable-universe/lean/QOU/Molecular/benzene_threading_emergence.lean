@@ -1,3 +1,5 @@
+import QOU.Shared.MarkovTraceClaim
+
 /-!
 # QOU.Molecular.benzene_threading_emergence — placeholder stub
 
@@ -9,8 +11,6 @@ the `lean.ref` URI `qou:QOU.Molecular.benzene_threading_emergence` resolves to a
 the `qou` Lake package.  The body is `sorry` carrying the
 manuscript citation per CLAUDE.md §1.
 -/
-
-import QOU.Shared.MarkovTraceClaim
 
 namespace QOU.Molecular
 

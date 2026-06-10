@@ -1,3 +1,9 @@
+import Mathlib.Analysis.Calculus.Deriv.Basic
+import Mathlib.Analysis.Calculus.MeanValue
+import Mathlib.Order.Monotone.Basic
+import Mathlib.Tactic.Linarith
+import Mathlib.Tactic.Positivity
+
 /-!
 # QOU.Substrate.MuOverDetermination
 
@@ -37,12 +43,6 @@ over-determined when one fixes q₀ from a single physical mass.
 - PR #1422 (q_0 re-pin from m_p)
 - `figure-8-muon-mass-cross-check.lean` (the muon Vol-form identity)
 -/
-
-import Mathlib.Analysis.Calculus.Deriv.Basic
-import Mathlib.Analysis.Calculus.MeanValue
-import Mathlib.Order.Monotone.Basic
-import Mathlib.Tactic.Linarith
-import Mathlib.Tactic.Positivity
 
 namespace QOU
 namespace Substrate

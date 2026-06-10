@@ -1,3 +1,5 @@
+import Mathlib.Algebra.Polynomial.Basic
+
 /-!
 # QOU.Archimedean.lepton_continuant_recurrence — Morgan–Voyce continuant NF
 
@@ -27,8 +29,6 @@ recurrence itself; downstream specialisation to specific
 
 -- Ref: [manuscript] quantum-observable-universe/archimedean-universe/lepton-continuant-recurrence.md
 -/
-
-import Mathlib.Algebra.Polynomial.Basic
 
 namespace QOU.Archimedean
 

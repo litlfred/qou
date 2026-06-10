@@ -1,3 +1,5 @@
+import QOU.Shared.MarkovTraceClaim
+
 /-!
 # QOU.QuantumBloch.pentagon_uv_commutation — placeholder stub
 
@@ -9,8 +11,6 @@ the `lean.ref` URI `qou:QOU.QuantumBloch.pentagon_uv_commutation` resolves to a 
 the `qou` Lake package.  The body is `sorry` carrying the
 manuscript citation per CLAUDE.md §1.
 -/
-
-import QOU.Shared.MarkovTraceClaim
 
 namespace QOU.QuantumBloch
 

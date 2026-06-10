@@ -1,3 +1,10 @@
+import Mathlib.Data.Nat.Basic
+import Mathlib.Tactic
+import QOU.OptionE.CrystalGraph
+import QOU.OptionE.RungSelection
+import QOU.OptionE.DeltaLambda
+import QOU.OptionE.DeuteronVerification
+
 /-!
 # `QOU.OptionE.CrystalDeltaLambdaScaffold` — Option E exploration scaffold
 
@@ -78,13 +85,6 @@ Refs:
 - [lusztig1990] DOI 10.2307/2152736
 - [brundankleshchev2009] DOI 10.1007/s00222-009-0204-8
 -/
-
-import Mathlib.Data.Nat.Basic
-import Mathlib.Tactic
-import QOU.OptionE.CrystalGraph
-import QOU.OptionE.RungSelection
-import QOU.OptionE.DeltaLambda
-import QOU.OptionE.DeuteronVerification
 
 namespace QOU.OptionE
 

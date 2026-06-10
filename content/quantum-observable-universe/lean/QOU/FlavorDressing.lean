@@ -1,3 +1,7 @@
+import QOU.FlavorDressing.FlavorDressingFunctor
+import QOU.FlavorDressing.DressedMassFromSubstrateSplit
+import QOU.FlavorDressing.FlavorMassSplittingBound
+
 /-!
 # QOU.FlavorDressing — Flavor-dressed quark mass functor
 
@@ -23,7 +27,3 @@ substrate bound theorem is included.
 - [prop:flavor-dressed-mass-from-substrate-split]
 - [thm:flavor-mass-splitting-bound]
 -/
-
-import QOU.FlavorDressing.FlavorDressingFunctor
-import QOU.FlavorDressing.DressedMassFromSubstrateSplit
-import QOU.FlavorDressing.FlavorMassSplittingBound
