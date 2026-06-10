@@ -56,7 +56,7 @@ def ameDeuteronMeV : ℝ := 2.224566
 def m_e_MeV : ℝ := 0.51099895069
 
 /-- Path-D target for the deuteron: `target = -B_D / m_e`. -/
-def deuteron_path_d_target : ℝ := -ameDeuteronMeV / m_e_MeV
+noncomputable def deuteron_path_d_target : ℝ := -ameDeuteronMeV / m_e_MeV
 
 /-- The 10% AME closure threshold for the deuteron. -/
 def closure_threshold_MeV : ℝ := 0.10 * ameDeuteronMeV
