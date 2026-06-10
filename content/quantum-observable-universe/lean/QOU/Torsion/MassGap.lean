@@ -240,8 +240,8 @@ class HasYangMillsMassGap (q : ℝ) (tm : CategoricalTransferMatrix) where
 -- Ref: [manuscript] Chapter 5, §1
 theorem yangMillsMassGap_construction (q : ℝ) (_ : 1 < q)
     (tm : CategoricalTransferMatrix) [h : HasYangMillsMassGap q tm] :
-    Nonempty YangMillsMassGap :=
-  ⟨h.witness⟩
+    ∃ ymg : YangMillsMassGap, ymg.q = q ∧ ymg.transferMatrix = tm :=
+  ⟨h.witness, h.q_eq, h.tm_eq⟩
 
 /-! ## Confinement corollary -/
 

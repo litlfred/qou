@@ -74,12 +74,6 @@ theorem yekutieli_obstruction_exists
     Nonempty (ylc.obstructionClass n) :=
   ylc.obstruction_exists n
 
-/-- **Global gluing proposition**.
-    LaTeX: `\label{prop:global-gluing}` -/
-theorem global_gluing (ylc : YekutieliLiftingCondition) :
-    ∀ n, Nonempty (ylc.obstructionClass n) := by
-  exact ylc.obstruction_exists
-
 /-- **Cosimplicial crossed groupoid data**.
     LaTeX: `\label{prop:cosimplicial-crossed-groupoid}` -/
 structure CosimplicialCrossedGroupoid where
