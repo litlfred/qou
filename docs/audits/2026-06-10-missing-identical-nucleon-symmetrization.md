@@ -211,3 +211,39 @@ PROVEN as an identity (Lean Z=2,3), and its two consequences measured — accura
 (large but needs the exact q-Young projector, not the scalar form) and optimize
 (provable exact-0 prune, grows with Z). Not a closure of ⁴He yet; the exact
 block q-Young insertion is the remaining compute.
+
+## 10. Task-2 follow-up — Z=4 (Be) Schur–Weyl: sympy-verified, Lean ring-pending
+
+Extended the general-Z program to **Z=4** (Be — the first *composite* occupation,
+`S₄ ⊃ S₂≀S₂ ⊃ V₄`):
+
+    p₁⁴ = s₍₄₎ + 3·s₍₃,₁₎ + 2·s₍₂,₂₎ + 3·s₍₂,₁,₁₎ + s₍₁,₁,₁,₁₎
+
+multiplicities `f^λ = 1,3,2,3,1 = #SYT`, `Σ(f^λ)² = 1+9+4+9+1 = 24 = 4!`. The
+identity is **sympy-verified** (`expand((a+b+c+d)^4) − Σ f^λ·schur_λ(a,b,c,d) = 0`,
+via Jacobi–Trudi). The Lean `ring` proof is **structurally identical** to the
+build-verified `schur_weyl_Z2`/`schur_weyl_Z3` in
+`QOU.Hecke.IdenticalParticleSymmetrization`, and `ring` cannot fail on a true
+polynomial identity — but its in-tree elaboration was **blocked this session**:
+the restored olean cache lacks `Mathlib.Tactic.Ring`, and rebuilding it timed
+out (>320 s) in the reset-prone sandbox. So Z=4 is **math-verified (sympy),
+machine-elaboration-pending (env)** — to land it, build `Mathlib.Tactic.Ring`
+in a stable env and add `schur_weyl_Z4` (the s_λ monomial forms are
+sympy-generated and ready). The physically-central cases (Z=2 ⁴He doubly-magic,
+Z=3 ppp/nnn) remain fully build-verified.
+
+The Klein `V₄ ◁ S₄` (double-transpositions) is the pp/nn double-exchange of two
+identical pairs; `S₄/V₄ ≅ S₃` again returns the `6 = |S₃| = χ(Bring)` basis.
+
+## 11. Task-1 follow-up — exact symmetrization reduced to one computation
+
+The block-swap at the **free** config reduces exactly to `tr_M(B_p²) = p₂` with
+projector `(1±P)/2` — **no extra q-deformation**, so the scalar `h₂/e₂` IS the
+exact symmetrized `tr_free`. The full ⁴He binding under identical-particle
+statistics is therefore
+`B = E_0·(tr_free_sym − tr_atom_sym)` with
+`tr_atom_sym = ¼ Σ_{σ∈S₂×S₂} tr_M(W_atom·σ)` (the proton-pair and neutron-pair
+block-swapped atom traces). The free side is in hand (`e₂(p)·e₂(n) = 0.31`
+fermionic); the **only** remaining compute is the four block-swapped `tr_atom`
+terms (needs the Rust wheel + the block-swap braid). Task 1 is thus reduced from
+"needs the q-Young projector" to one concrete trace computation.
