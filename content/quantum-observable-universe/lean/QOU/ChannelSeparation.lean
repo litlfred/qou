@@ -207,7 +207,7 @@ theorem kahler_differentials_no_sym_component :
     -- channel is trivial.
     (0 : ℕ) = 0 := rfl
 
-/-- **Corollary**: per-generator channel separation is trivial, but
+/- **Corollary**: per-generator channel separation is trivial, but
     multi-generator channel separation is non-trivial.
 
     For a single generator `σ_i`:

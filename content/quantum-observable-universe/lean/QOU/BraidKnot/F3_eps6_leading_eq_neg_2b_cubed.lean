@@ -45,7 +45,6 @@ theorem b_at_one_cubed : b_at_one^3 = 3 * Real.sqrt 3 / 8 := by
     rw [sq, Real.mul_self_sqrt]; norm_num
   rw [show (Real.sqrt 3)^3 = (Real.sqrt 3)^2 * Real.sqrt 3 from by ring]
   rw [h_sqrt3_sq]
-  ring
 
 /-- **The exact symbolic-match lemma.**
     `-2 · b(1)³ = -2 · (3·√3 / 8) = -(3·√3) / 4`. -/
