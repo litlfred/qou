@@ -158,7 +158,81 @@ now de-risked by this PR's A=3 machine-ε validation; **(3)** Tier-2
 Rust port. Do **not** re-run `compute_atom_chi_rust.py` for A ≥ 6
 on the current algorithm at any precision.
 
-## 7. See also
+## 7a. Why ≥6 cannot go MPFR on the current algorithm (it's d_λ, not precision)
+
+A recurring question: "just run ⁶Li/⁷Li at MPFR." It does not help —
+**MPFR is strictly worse than f64 here**, because the wall is the irrep
+dimension d_λ, not the precision per number:
+
+- `chi_q_atomic` / `chi_lambda_all_partitions_mpfr` are the SAME
+  algorithm at different precision: a per-basis-vector trace,
+  **O(L·d_λ²) per λ** (loop d_λ basis vectors × apply L factors on the
+  d_λ-dim space). MPFR changes only the cost-per-op (50–150× heavier
+  bignum vs hardware float); it does nothing to d_λ².
+- d_λ explodes: n=18 d_max = 16,336,320 ⇒ ~9e17 f64 ops/atom ≈ 3.6 yr;
+  at MPFR that becomes **centuries**. n=21 d_max = 1.1e9 ⇒ one working
+  *vector* is 9 GB (f64) / ~70 GB (MPFR) — unallocatable.
+
+So "≥6 at MPFR" on the current algorithm is a non-starter. The fix is
+**algorithmic** (§8): the active-set LR rewrite removes d_λ from the
+cost entirely (bounded 2^A blocks), and *because the blocks are tiny it
+runs at MPFR cheaply* — i.e. the scaling fix and the canonical-tier
+(no-f64) fix for ≥6 are the SAME change.
+
+## 8. Active-set / nucleon-cache profile — the scaling fix, quantified
+
+χ^λ(β_atom), λ⊢3A, restricted to the Young subgroup (H_3)^A:
+
+    χ^λ(β_atom) = Σ_{(μ_1,…,μ_A): μ_i ⊢ 3}
+                    c^λ_{μ_1…μ_A} · A_op(I_1,…,I_{A-1}) · Π_i χ^{μ_i}(β_{nuc_i})
+
+Two structural facts collapse the cost (multi-LR enumerated this session
+via iterated `lr_coefficients.get_lr_table`):
+
+- **Nucleon cache** — χ^{μ}(β_nuc) is needed only for μ ⊢ 3 (3 shapes,
+  dims {1,2,1}) and nuc ∈ {p,n}: **6 base numbers, computed ONCE**,
+  reused across every λ and every atom. "Don't recalc each time."
+- **Active set** — for each λ only the (μ_1,…,μ_A) tuples with
+  c^λ_{μ_1…μ_A} > 0 contribute; the rest are exact structural zeros.
+  Per-tuple block work is bounded by `(Π dim V_{μ_i})² ≤ (2^A)²` — the
+  d_λ² in the per-basis-vector path is **gone**.
+
+| A | n | p(n) | 3^A | Σ\|active\| | max block (2^A) | LR cost Σ(Πdim)² | f64 cost n! | **speedup** |
+|---|---|---|---|---|---|---|---|---|
+| 2 | 6 | 11 | 9 | 35 | 4 | 188 | 7.2e2 | 3.8× |
+| 3 | 9 | 30 | 27 | 406 | 8 | 4,132 | 3.6e5 | 88× |
+| 4 | 12 | 77 | 81 | 3,997 | 16 | 74,338 | 4.8e8 | 6.4e3× |
+| 5 | 15 | 176 | 243 | 32,070 | 32 | 1.1e6 | 1.3e12 | 1.2e6× |
+| 6 | 18 | 385 | 729 | 229,497 | 64 | 1.55e7 | 6.4e15 | **4.1e8×** |
+| 7 | 21 | 792 | 2187 | 1.5e6 | 128 | 2.0e8 | 5.1e19 | **2.6e11×** |
+
+Read: **⁶Li LR cost ≈ 1.55e7 ops ⇒ milliseconds** (vs the 3.6-year f64
+wall); **⁷Li ≈ 2e8 ⇒ sub-second**. The LR cost grows ~13× per A unit
+(extrapolating: A=8 ~2e9, A=9 ~3e10 — still seconds at MPFR). The block
+sizes (≤ 2^A) are tiny, so the whole thing runs **at MPFR (canonical
+tier) cheaply** — the d_λ² wall never appears.
+
+This is the June-8 (μ_p,μ_n)-block plan generalised to all A nucleons,
+now with concrete active-set counts. Its A-operator layer is the same
+one validated at machine ε in this PR's A=3 closure (the H_9 extracts +
+tritium/³He verifies) — so the structural correctness is already
+demonstrated; what remains is the multi-level (A≥4) implementation.
+
+### 8a. Recommended implementation (the actual scaling PR)
+
+1. `nucleon_chi_cache`: the 6 base χ^{μ⊢3}(β_{p,n}) at MPFR (trivial).
+2. `active_lr_tuples(λ)`: iterated-LR enumeration of nonzero
+   c^λ_{μ_1…μ_A} (this session's profiler — fast integer math, cache
+   per (A, λ)).
+3. `A_op` per (λ, μ-tuple, interface-pattern): the multi-interface
+   operator on the (Π dim μ_i)-dim block — generalise the validated
+   single-interface H_9 extract to the A−1 nested interfaces (the
+   "multiplicity-space / intertwiner" parametrisation). MPFR.
+4. Assemble χ^λ = Σ_active A_op·Π χ^{μ_i}; emit at 50 dps. Drop-in
+   replacement for `compute_atom_chi_rust`'s per-λ output, valid for
+   all A, canonical tier — unblocking ⁶Li/⁷Li/⁸Be/⁹Be.
+
+## 9. See also
 
 - [`2026-06-08-matrix-m-optimization-A-8-9-path.md`](2026-06-08-matrix-m-optimization-A-8-9-path.md) — Tier-1/2/3 plan (dim table corrected here, recommendation confirmed)
 - [`2026-06-09-binding-canonical-default-depth-stratified.md`](2026-06-09-binding-canonical-default-depth-stratified.md) — §"Path 1 CLOSED at A=3" (the validation that de-risks Tier 1)
