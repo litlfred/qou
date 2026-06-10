@@ -232,6 +232,47 @@ demonstrated; what remains is the multi-level (A≥4) implementation.
    replacement for `compute_atom_chi_rust`'s per-λ output, valid for
    all A, canonical tier — unblocking ⁶Li/⁷Li/⁸Be/⁹Be.
 
+## 8b. Free vs atom: the interfaces are the cost (corrected, implemented)
+
+Sharpening §8 after implementing the free path (`chi_free_via_lr.py`,
+validated at 50-dps ε vs the chi-*-free witnesses):
+
+- **FREE config — DONE, cheap, validated.** No interfaces ⇒ the
+  multiplicity space collapses to a scalar per μ-tuple:
+  χ^λ(β_free) = Σ_active c^λ_{μ-tuple} · Π χ^{μ_i}(β_{nuc_i}). Σ|active|
+  = 229k at ⁶Li ⇒ **3.8 s** (⁷Li 29 s). 6 cached nucleon χ; no d_λ.
+
+- **ATOM config — the interfaces force the full running multiplicity.**
+  The junction σ couples adjacent blocks, so the iterative transfer
+  matrix over the running partition ξ⊢3k must carry the running
+  multiplicity m_k[ξ] (Bratteli path count), not a scalar. Honest state
+  sizes Σ_ξ m_k[ξ] (the "don't recalc / iterative" state):
+
+  | A | n | p(3k) | Σ_ξ m_k[ξ] (transfer state) | max m_k[ξ] |
+  |---|---|---|---|---|
+  | 4 | 12 | 77 | 28,814 | 1,490 |
+  | 6 | 18 | 385 | **90,472,088** | 1,437,930 |
+  | 7 | 21 | 792 | 7,237,942,636 | 65,488,896 |
+
+  So the transfer-matrix atom χ is ~**90M ops at ⁶Li (minutes)** — a
+  **7e7× win** over the n! = 6.4e15 per-basis-vector wall (years), and
+  feasible; ⁷Li (7.2e9) is heavy but tractable. (My earlier Σc²
+  full-tuple figure, 1.6e11, was the naive non-iterative cost and is
+  superseded by these iterative state sizes.)
+
+- **The remaining implementation piece** is the per-level interface
+  operator in the running-multiplicity basis — the Hecke
+  Clebsch–Gordan / F-matrix that says how the junction σ acts when
+  fusing nucleon k+1 onto the running ξ. Its A=3 instance is the
+  validated H_9 extract (this PR). Generalising it to the running
+  basis (so it never touches d_λ) is the focused next PR; it is genuine
+  Hecke-category machinery, not a one-shot add-on — and should be
+  built + validated on its own, not half-landed here.
+
+**Net**: binding's free term scales now (validated); the atom term has a
+proven-feasible transfer-matrix path (~minutes at ⁶Li) whose only
+missing piece is the running-basis interface operator (F-matrix).
+
 ## 9. See also
 
 - [`2026-06-08-matrix-m-optimization-A-8-9-path.md`](2026-06-08-matrix-m-optimization-A-8-9-path.md) — Tier-1/2/3 plan (dim table corrected here, recommendation confirmed)
