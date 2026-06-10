@@ -32,11 +32,16 @@ machine-checked (axioms `propext`/`Classical.choice`/`Quot.sound` only — no
   `S₂`-sector projection the plain power omits.
 * **Z = 3** (Li: ppp / nnn). `p₁³ = s₍₃₎ + 2·s₍₂,₁₎ + s₍₁,₁,₁₎`, multiplicities
   `f^(3)=1, f^(2,1)=2, f^(1,1,1)=1` — the standard rep enters with multiplicity 2.
+* **Z = 4** (⁸Be / first composite Z: the pp-pp, nn-nn double shells).
+  `p₁⁴ = s₍₄₎ + 3·s₍₃,₁₎ + 2·s₍₂,₂₎ + 3·s₍₂,₁,₁₎ + s₍₁,₁,₁,₁₎`, multiplicities
+  `f^(4)=1, f^(3,1)=3, f^(2,2)=2, f^(2,1,1)=3, f^(1,1,1,1)=1`
+  (`Σ (f^λ)² = 1+9+4+9+1 = 24 = 4!`). The `(2,2)` sector (multiplicity 2) and the
+  Klein `V₄ ◁ S₄` with `S₄/V₄ ≅ S₃` carry the double-pair (pp × nn) exchange and
+  recover the `6 = |S₃| = χ(Bring)` Bring symmetry (Step 4).
 
-General theme (Z ≥ 4, composite Z): `S_Z` then has a non-trivial Young-subgroup
-lattice (`S_4 ⊃ S₂≀S₂ ⊃ V₄`; `S_6 ⊃ S₂×S₃` …), giving the sub-shell structure
-whose closures are the nuclear magic numbers. The `Z=2` Klein `V₄ ◁ S₄` with
-`S₄/V ≅ S₃` recovers the `6 = |S₃| = χ(Bring)` Bring symmetry (Step 4).
+General theme (composite Z ≥ 6): `S_Z` has a non-trivial Young-subgroup lattice
+(`S_6 ⊃ S₂×S₃`; `S_8 ⊃ S₂≀S₄` …), giving the sub-shell structure whose closures
+are the nuclear magic numbers.
 
 Self-contained (`CommRing` identities, `import Mathlib.Tactic.Ring` only) — does
 NOT depend on the rest of `QOU.Hecke`, so it builds independently.
@@ -80,5 +85,51 @@ theorem schur_weyl_Z3 (a b c : R) :
         + 2 * ((a ^ 2 * b + a ^ 2 * c + b ^ 2 * a + b ^ 2 * c + c ^ 2 * a
                 + c ^ 2 * b) + 2 * (a * b * c))
         + a * b * c := by ring
+
+/-- **Z = 4 Schur–Weyl** (⁸Be / first composite Z: pp-pp, nn-nn double shells).
+The naive distinguishable `p₁⁴` decomposes over the five `S₄` irreps with
+multiplicities `f^λ = #SYT(λ)`: `f^(4)=1, f^(3,1)=3, f^(2,2)=2, f^(2,1,1)=3,
+f^(1,1,1,1)=1`, so `Σ (f^λ)² = 1+9+4+9+1 = 24 = 4! = |S₄|`. The `(2,2)` sector
+enters with **multiplicity 2** and the Klein `V₄ ◁ S₄` (`S₄/V₄ ≅ S₃`) carries the
+double-pair (pp × nn) exchange — recovering the `6 = |S₃| = χ(Bring)` Bring
+symmetry of Step 4. Each `s_λ` is in the monomial-symmetric basis
+`s_λ = Σ_μ K_{λμ} m_μ` (Kostka numbers `K`); the five groups below are
+`s₍₄₎`, `3·s₍₃,₁₎`, `2·s₍₂,₂₎`, `3·s₍₂,₁,₁₎`, `s₍₁,₁,₁,₁₎`. Sympy- and
+bialternant-verified; `ring`-closed. -/
+theorem schur_weyl_Z4 (a b c d : R) :
+    (a + b + c + d) ^ 4
+      = -- s₍₄₎ = h₄ = m₄ + m₃₁ + m₂₂ + m₂₁₁ + m₁₁₁₁   (f^(4) = 1)
+        ((a ^ 4 + b ^ 4 + c ^ 4 + d ^ 4)
+          + (a ^ 3 * b + a ^ 3 * c + a ^ 3 * d + b ^ 3 * a + b ^ 3 * c + b ^ 3 * d
+             + c ^ 3 * a + c ^ 3 * b + c ^ 3 * d + d ^ 3 * a + d ^ 3 * b + d ^ 3 * c)
+          + (a ^ 2 * b ^ 2 + a ^ 2 * c ^ 2 + a ^ 2 * d ^ 2 + b ^ 2 * c ^ 2
+             + b ^ 2 * d ^ 2 + c ^ 2 * d ^ 2)
+          + (a ^ 2 * b * c + a ^ 2 * b * d + a ^ 2 * c * d + b ^ 2 * a * c
+             + b ^ 2 * a * d + b ^ 2 * c * d + c ^ 2 * a * b + c ^ 2 * a * d
+             + c ^ 2 * b * d + d ^ 2 * a * b + d ^ 2 * a * c + d ^ 2 * b * c)
+          + a * b * c * d)
+        -- 3 · s₍₃,₁₎ = 3·(m₃₁ + m₂₂ + 2·m₂₁₁ + 3·m₁₁₁₁)   (f^(3,1) = 3)
+        + 3 * ((a ^ 3 * b + a ^ 3 * c + a ^ 3 * d + b ^ 3 * a + b ^ 3 * c + b ^ 3 * d
+                 + c ^ 3 * a + c ^ 3 * b + c ^ 3 * d + d ^ 3 * a + d ^ 3 * b + d ^ 3 * c)
+               + (a ^ 2 * b ^ 2 + a ^ 2 * c ^ 2 + a ^ 2 * d ^ 2 + b ^ 2 * c ^ 2
+                  + b ^ 2 * d ^ 2 + c ^ 2 * d ^ 2)
+               + 2 * (a ^ 2 * b * c + a ^ 2 * b * d + a ^ 2 * c * d + b ^ 2 * a * c
+                      + b ^ 2 * a * d + b ^ 2 * c * d + c ^ 2 * a * b + c ^ 2 * a * d
+                      + c ^ 2 * b * d + d ^ 2 * a * b + d ^ 2 * a * c + d ^ 2 * b * c)
+               + 3 * (a * b * c * d))
+        -- 2 · s₍₂,₂₎ = 2·(m₂₂ + m₂₁₁ + 2·m₁₁₁₁)   (f^(2,2) = 2)
+        + 2 * ((a ^ 2 * b ^ 2 + a ^ 2 * c ^ 2 + a ^ 2 * d ^ 2 + b ^ 2 * c ^ 2
+                 + b ^ 2 * d ^ 2 + c ^ 2 * d ^ 2)
+               + (a ^ 2 * b * c + a ^ 2 * b * d + a ^ 2 * c * d + b ^ 2 * a * c
+                  + b ^ 2 * a * d + b ^ 2 * c * d + c ^ 2 * a * b + c ^ 2 * a * d
+                  + c ^ 2 * b * d + d ^ 2 * a * b + d ^ 2 * a * c + d ^ 2 * b * c)
+               + 2 * (a * b * c * d))
+        -- 3 · s₍₂,₁,₁₎ = 3·(m₂₁₁ + 3·m₁₁₁₁)   (f^(2,1,1) = 3)
+        + 3 * ((a ^ 2 * b * c + a ^ 2 * b * d + a ^ 2 * c * d + b ^ 2 * a * c
+                 + b ^ 2 * a * d + b ^ 2 * c * d + c ^ 2 * a * b + c ^ 2 * a * d
+                 + c ^ 2 * b * d + d ^ 2 * a * b + d ^ 2 * a * c + d ^ 2 * b * c)
+               + 3 * (a * b * c * d))
+        -- s₍₁,₁,₁,₁₎ = e₄ = m₁₁₁₁ = abcd   (f^(1,1,1,1) = 1)
+        + a * b * c * d := by ring
 
 end QOU.Hecke.IdenticalParticle
