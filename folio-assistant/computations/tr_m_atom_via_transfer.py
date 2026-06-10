@@ -52,6 +52,7 @@ from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 from wedderburn_jones_markov import y_lambda_at  # noqa: E402
 from q_parameter import Q as Q0  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from host_info import host_info  # noqa: E402
 
 ZN = {"D": (1, 1), "T": (1, 2), "3He": (2, 1), "4He": (2, 2),
       "6Li": (3, 3), "7Li": (3, 4), "9Be": (4, 5), "10B": (5, 5)}
@@ -126,6 +127,7 @@ def main() -> int:
     w.add_data("rows", rows)
     w.add_data("convention", "bring_color_weighted")
     w.add_data("q_str", str(Q0))
+    w.add_data("host", host_info())
     if by_partition:
         w.add_data("by_partition", by_partition)
     if d_check is not None:
