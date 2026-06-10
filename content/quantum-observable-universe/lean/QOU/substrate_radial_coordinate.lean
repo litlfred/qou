@@ -1,3 +1,5 @@
+import Mathlib.Data.Real.Basic
+
 /-!
 # QOU.substrate_radial_coordinate — Reeb rotation `𝓛_ξ Z = J·ℏ_q·Z`
 
