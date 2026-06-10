@@ -1,6 +1,6 @@
 {
   "computation": "chi-tritium-h9-at-q0-50dps-matrix-m",
-  "description": "Numerical χ^λ_q(β_atomic(1, 2)) = tritium per partition λ ⊢ 9, evaluated at q = q_0 at 50 dps via the matrix-M block-restricted mpfr backend (PR #1993). Convention: sign-only crossings — matches `chi_q_via_gp` and the derived_chi_catalogue cells. NOT a drop-in for the hoefsmit averaged-crossing producer (different physics). Built incrementally.",
+  "description": "Numerical χ^λ_q(β_atomic(1, 2)) = tritium per partition λ ⊢ 9 at q_0, 50 dps, matrix-M mpfr backend. Lossless (every λ) unless max_dim is set.",
   "producer": "matrix-m-chi-q-via-gp",
   "convention": "sign-only-crossings",
   "q_0_50dps": "1.1099785827513808075916690956107688798744991218736",
@@ -11,9 +11,12 @@
   "N": 2,
   "n_partitions": 30,
   "n_partitions_total": 30,
+  "max_dim": null,
+  "n_skipped_max_dim": 0,
+  "tr_M_partial": false,
   "partial": false,
-  "compute_time_sec_so_far": 14.99,
-  "tr_M_at_q0": "1.0860463545992615032388774912288800811388820114837",
+  "compute_time_sec": 367.63,
+  "tr_M_at_q0": "1.0860240058218428921913699499413612355786846551455",
   "by_partition": [
     {
       "partition": [
@@ -77,10 +80,10 @@
         1
       ],
       "dim": 105,
-      "y_lambda": "skipped-max-dim",
-      "chi_lambda": "skipped-max-dim",
-      "contribution": "0",
-      "compute_time_sec": 0.0
+      "y_lambda": "0.0015797910173972352129752234922064984499487798981469",
+      "chi_lambda": "-6.2430145955630828914662385166019063497039237105902",
+      "contribution": "-0.0098626583795503916412406795548534315050149908531922",
+      "compute_time_sec": 5.872
     },
     {
       "partition": [
@@ -113,10 +116,10 @@
         1
       ],
       "dim": 162,
-      "y_lambda": "skipped-max-dim",
-      "chi_lambda": "skipped-max-dim",
-      "contribution": "0",
-      "compute_time_sec": 0.0
+      "y_lambda": "0.0011123786054456339405865703333266584899407250728209",
+      "chi_lambda": "5.692830961864051479350056403906722217355557021031",
+      "contribution": "0.0063325833663960604788763148092275890272214870314858",
+      "compute_time_sec": 26.23
     },
     {
       "partition": [
@@ -125,10 +128,10 @@
         2
       ],
       "dim": 120,
-      "y_lambda": "skipped-max-dim",
-      "chi_lambda": "skipped-max-dim",
-      "contribution": "0",
-      "compute_time_sec": 0.0
+      "y_lambda": "0.00035942351733200723178727220224033851581637042886204",
+      "chi_lambda": "-4.7311328400959472495654006580710099102013199787401",
+      "contribution": "-0.0017004804063522542953433836168021951709180922907038",
+      "compute_time_sec": 11.23
     },
     {
       "partition": [
@@ -138,10 +141,10 @@
         1
       ],
       "dim": 189,
-      "y_lambda": "skipped-max-dim",
-      "chi_lambda": "skipped-max-dim",
-      "contribution": "0",
-      "compute_time_sec": 0.0
+      "y_lambda": "-0.00013919036190503077171857021679423496661386307209838",
+      "chi_lambda": "-13.771944297711260254969696530730863029244524286486",
+      "contribution": "0.0019169219109343551644769685077942657582719516648873",
+      "compute_time_sec": 36.225
     },
     {
       "partition": [
@@ -176,10 +179,10 @@
         2
       ],
       "dim": 168,
-      "y_lambda": "skipped-max-dim",
-      "chi_lambda": "skipped-max-dim",
-      "contribution": "0",
-      "compute_time_sec": 0.0
+      "y_lambda": "0.00026682697659349132676671158377104213567216598783277",
+      "chi_lambda": "9.3402811004615830389868372014428628932161104643971",
+      "contribution": "0.0024922389665694922291527337195343422997957358926974",
+      "compute_time_sec": 36.324
     },
     {
       "partition": [
@@ -189,10 +192,10 @@
         1
       ],
       "dim": 216,
-      "y_lambda": "skipped-max-dim",
-      "chi_lambda": "skipped-max-dim",
-      "contribution": "0",
-      "compute_time_sec": 0.0
+      "y_lambda": "-0.000084345801341972135046291395215952253902727076215668",
+      "chi_lambda": "-5.032418202482699784290693103602880482976483293368",
+      "contribution": "0.0004244633459763302990973545323695674113010362299001",
+      "compute_time_sec": 67.308
     },
     {
       "partition": [
@@ -202,10 +205,10 @@
         1
       ],
       "dim": 216,
-      "y_lambda": "skipped-max-dim",
-      "chi_lambda": "skipped-max-dim",
-      "contribution": "0",
-      "compute_time_sec": 0.0
+      "y_lambda": "-0.000036784058555652329137958502472814503408988889503858",
+      "chi_lambda": "-7.2496180171530974917562670193543888899275952742464",
+      "contribution": "0.00026667037364907166960804406390822321043955897816843",
+      "compute_time_sec": 68.367
     },
     {
       "partition": [
@@ -216,10 +219,10 @@
         1
       ],
       "dim": 189,
-      "y_lambda": "skipped-max-dim",
-      "chi_lambda": "skipped-max-dim",
-      "contribution": "0",
-      "compute_time_sec": 0.0
+      "y_lambda": "0.000027423647379024882794624366712456541853773680412364",
+      "chi_lambda": "4.243509867212600823927279729192520616190078734939",
+      "contribution": "0.00011637251824785106900537891003764473859775450270271",
+      "compute_time_sec": 36.077
     },
     {
       "partition": [
@@ -256,10 +259,10 @@
         1
       ],
       "dim": 168,
-      "y_lambda": "skipped-max-dim",
-      "chi_lambda": "skipped-max-dim",
-      "contribution": "0",
-      "compute_time_sec": 0.0
+      "y_lambda": "-0.000018045059122362285898698538661475021626166725579256",
+      "chi_lambda": "0.5305696240607424267988071247089716344545332313583",
+      "contribution": "-0.0000095741602347056287038732236360984217351549435215632",
+      "compute_time_sec": 37.001
     },
     {
       "partition": [
@@ -270,10 +273,10 @@
         1
       ],
       "dim": 120,
-      "y_lambda": "skipped-max-dim",
-      "chi_lambda": "skipped-max-dim",
-      "contribution": "0",
-      "compute_time_sec": 0.0
+      "y_lambda": "0.000010981329913541540881305754801925286149476123604067",
+      "chi_lambda": "0.17262342750911025150107663731807755178694302469903",
+      "contribution": "0.000001895634808283862127891029672096193726897560248584",
+      "compute_time_sec": 11.087
     },
     {
       "partition": [
@@ -297,10 +300,10 @@
         1
       ],
       "dim": 162,
-      "y_lambda": "skipped-max-dim",
-      "chi_lambda": "skipped-max-dim",
-      "contribution": "0",
-      "compute_time_sec": 0.0
+      "y_lambda": "0.0000064638821540111445457530613896019323174279703425337",
+      "chi_lambda": "0.77485862398552391808375750557075907539539336705571",
+      "contribution": "0.0000050085948314616598558289188802996257258312760969989",
+      "compute_time_sec": 26.191
     },
     {
       "partition": [
@@ -312,10 +315,10 @@
         1
       ],
       "dim": 105,
-      "y_lambda": "skipped-max-dim",
-      "chi_lambda": "skipped-max-dim",
-      "contribution": "0",
-      "compute_time_sec": 0.0
+      "y_lambda": "-0.0000060631111262677849137936500303708156553779532971162",
+      "chi_lambda": "0.95504479030229270999497257561452218871726652617777",
+      "contribution": "-0.0000057905426941659144201193836511487276093713870201506",
+      "compute_time_sec": 5.705
     },
     {
       "partition": [
