@@ -694,6 +694,7 @@ theorem H4.poincare_pos (q : ℝ) : 0 < H4.poincare q := by
 theorem H4.poincare_ne_zero (q : ℝ) : H4.poincare q ≠ 0 :=
   ne_of_gt (H4.poincare_pos q)
 
+open QOU.Mathlib.PermutationEnumeration in
 /-- Symmetric Wedderburn projector `e_[4]` for `H_4(q)` over `ℝ`:
     the **length-weighted** coefficient function
     `i ↦ q^{ℓ(i)} / P₄(q)` with `ℓ = lengthFn 4` the Coxeter
@@ -702,25 +703,24 @@ theorem H4.poincare_ne_zero (q : ℝ) : H4.poincare q ≠ 0 :=
     invariant statement (sums, traces, length fibers) is
     enumeration-independent.  Normalizer forced by
     `T_w e_[4] = q^{ℓ(w)} e_[4]` (cf. `H3.blockSym3`). -/
-open QOU.Mathlib.PermutationEnumeration in
 noncomputable def H4.blockSym4 (q : ℝ) : H4Carrier ℝ :=
   fun i =>
     q ^ (lengthFn 4 i) / H4.poincare q
 
+open QOU.Mathlib.PermutationEnumeration in
 /-- Antisymmetric Wedderburn projector `e_[1^4]` for `H_4(q)`:
     `i ↦ (-q⁻¹)^{ℓ(i)} / P₄(q⁻¹)` — sign-block weights at the
     `-q⁻¹` Hecke eigenvalue, normalized by the Poincaré
     polynomial at `q⁻¹` (cf. `H3.blockAlt3`). -/
-open QOU.Mathlib.PermutationEnumeration in
 noncomputable def H4.blockAlt4 (q : ℝ) : H4Carrier ℝ :=
   fun i =>
     (-q⁻¹) ^ (lengthFn 4 i) / H4.poincare q⁻¹
 
+open QOU.Mathlib.PermutationEnumeration in
 /-- **`S_4` length distribution**: the number of permutations at
     Coxeter length `0,…,6` is `1, 3, 5, 6, 5, 3, 1` (the
     coefficient row of `P₄`; total `24 = 4!`).  Evaluated by
     `decide` over the 24 permutations. -/
-open QOU.Mathlib.PermutationEnumeration in
 theorem H4.s4_length_card :
     (((Finset.univ : Finset (Equiv.Perm (Fin 4))).filter
       (fun w => coxeterLength w = 0)).card = 1) ∧
