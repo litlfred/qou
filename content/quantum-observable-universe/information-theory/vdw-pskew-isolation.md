@@ -31,12 +31,21 @@ $P_{\mathrm{skew}}$ (sinh) content is **real** at real $q$ — kept then discard
 van der Waals residual is a real observable living in the discarded sector;
 $\mathrm{Im}(q)\neq 0$ would be a distinct, later refinement, not this channel.
 
-**α_EM sibling.** The α_EM Habiro element
-[`prop:alpha-em-habiro-bar-involution`](#prop:alpha-em-habiro-bar-involution),
-$H = [2]_q(1-h^2\alpha) = 2\cosh\lambda\,(1-h^2\alpha)$, is **bar-even** (a $\cosh$
-carrier times a $\sinh^2$ correction); van der Waals is **bar-odd**
-($\sinh\cdot\cosh$). Same hyperbolic machinery, opposite bar sector — α_EM is the
-retained coupling correction, van der Waals the discarded residual.
+**α_EM is the same Hopf channel.** The fine-structure constant is itself a
+2-strand Hopf-operation coupling: by [`thm:em-spectral-completeness`](#thm:em-spectral-completeness)
+the 2-strand braiding has exactly the two idempotents $e_+, e_-$, and
+[`cor:gauge-coupling-uniqueness`](#cor:gauge-coupling-uniqueness) /
+[`prop:alpha-em-categorical-trace-ratio`](#prop:alpha-em-categorical-trace-ratio)
+make $\alpha_{EM}$ the unique multiple of the **antisymmetric $e_-$** coupling,
+$\alpha_{EM} = h^2/(q\,\delta_q(T_{2,9})\delta_q(T_{3,5}))$ with
+$\delta_q(T_{2,k}) = q^k - q^{-k} = h\,[k]_q$ — the $\sinh$/$e_-$ trace. So
+$\alpha_{EM}$ (the $e_-$ coupling) and van der Waals (the bar-odd
+$\sinh(2\lambda)(e_+-e_-)$ residual) are the **same antisymmetric / sinh / EM
+channel** of the Hopf $H_2(q)$ operation — the fine-structure constant and the
+dispersion force are two faces of one Hopf knot operation. The α_EM Habiro
+element [`prop:alpha-em-habiro-bar-involution`](#prop:alpha-em-habiro-bar-involution),
+$H = [2]_q(1-h^2\alpha) = 2\cosh\lambda\,(1-h^2\alpha)$, is the **bar-even** next-order
+correction (a $\cosh$ carrier × $\sinh^2$ correction), opposite the bar-odd vdW.
 
 At $q_0$: $\cosh(2\lambda) \approx :val[vdw_cosh_2lambda]{precision=5, witness=folio-assistant/computations/vdw-pskew-sinh-probe.witness.json}$,
 and the bar-odd residual $\sinh(2\lambda)(e_+-e_-) \approx :val[vdw_bar_odd_residual]{precision=5, witness=folio-assistant/computations/vdw-pskew-sinh-probe.witness.json}$ (exact, no fit).
