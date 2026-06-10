@@ -1,5 +1,6 @@
 import QOU.Interactions.DerivedAtom
 import QOU.Archimedean.GroundRing
+import Mathlib.Tactic.Module
 
 /-!
 # Demand stability: the demand profile determines nuclear stability
@@ -20,12 +21,12 @@ open QOU.Archimedean
 
 /-! ## §1  Demand magnitude -/
 
-/-- The demand magnitude: sum of absolute values of negative
+/-! The demand magnitude: sum of absolute values of negative
     NF coefficients, over ℤ[q, q⁻¹].
 
     For formal proofs we work with the negative part directly
     since absolute value requires an ordering on R_q. -/
-/-- The negative part of a coefficient requires an ordering on R_q.
+/-! The negative part of a coefficient requires an ordering on R_q.
     Since R_q = ℤ[q,q⁻¹] has no canonical total order, the demand
     profile is defined over ℝ-valued evaluations (at specific q₀),
     not over R_q directly.
@@ -35,7 +36,7 @@ open QOU.Archimedean
 
 /-! ## §2  Beta stability criterion -/
 
-/-- A configuration (Z, N) is beta-stable at fixed A = Z + N
+/-! A configuration (Z, N) is beta-stable at fixed A = Z + N
     if no single nucleon exchange p ↔ n reduces the demand.
 
     Formally: (Z, N) is beta-stable iff for Z' = Z ± 1, N' = A - Z':
@@ -58,7 +59,7 @@ open QOU.Archimedean
 
 /-! ## §3  The e⁻ coefficient as beta decay receptivity -/
 
-/-- **Beta decay receptivity.**
+/-! **Beta decay receptivity.**
 
     The e⁻ coefficient (index 5 in the NF basis) of a nucleon
     is the trefoil demand. If c₅ < 0, the nucleon is receptive
@@ -79,7 +80,7 @@ open QOU.Archimedean
 
 /-! ## §4  Magic numbers from demand closure -/
 
-/-- A magic number is a value of Z (or N) at which the nucleus
+/-! A magic number is a value of Z (or N) at which the nucleus
     achieves demand closure (all NF coefficients nonneg) for at
     least one value of the complementary quantum number.
 
@@ -112,7 +113,7 @@ theorem typed_crossing_square_pp (ρ : HeckeRep 3 2) (i : Fin 2) :
     ρ.gen i * ρ.gen i = HA_t • ρ.gen i + 1 :=
   ρ.hecke_rel i
 
-/-- The mixed crossing square identity.
+/-! The mixed crossing square identity.
     C_pn² = HA · C_pn + 1 − ¼HA²
 
     (In ℤ[q, q⁻¹], we state: 4·C_pn² = 4·HA·C_pn + 4 − HA².)
@@ -143,22 +144,8 @@ theorem mixed_crossing_square_identity (ρ : HeckeRep 3 2) (i : Fin 2) :
   --
   -- Discharge via mul_add / add_mul / mul_smul_comm / smul_mul_assoc /
   -- smul_mul_smul_comm, then `hecke` substitution, then abel.
-  rw [add_mul, mul_add, mul_add, sub_mul, mul_sub, mul_sub, mul_sub, mul_sub,
-      mul_smul_comm, mul_smul_comm, smul_mul_assoc, smul_mul_assoc,
-      smul_mul_smul_comm, Matrix.one_mul, Matrix.mul_one, Matrix.one_mul,
-      Matrix.mul_one, hecke]
-  -- After rewrites, LHS expands as a sum of σσ, HA•σ, and (HA·HA)•1
-  -- terms with arithmetic on ℤ-coefficients of TMatrix as additive group.
-  -- RHS: (4 + HA*HA) • 1. Convert (4 : R_t) • 1 to integer-multiple form
-  -- via `add_smul` (so that `4 • 1 = 1 + 1 + 1 + 1`).
-  rw [show ((4 : R_t) + HA_t * HA_t) • (1 : TMatrix)
-        = (4 : R_t) • (1 : TMatrix) + (HA_t * HA_t) • (1 : TMatrix)
-        from add_smul _ _ _]
-  rw [show ((4 : R_t) • (1 : TMatrix)) = (1 : TMatrix) + 1 + 1 + 1 from by
-    rw [show (4 : R_t) = 1 + 1 + 1 + 1 from by norm_num,
-        add_smul, add_smul, add_smul, one_smul]]
-  -- Now both sides are sums of identity-matrix terms + HA•σ + (HA·HA)•1
-  -- modulo addition. Close by abel.
-  abel
+  simp only [sub_mul, mul_sub, add_mul, mul_add, smul_mul_assoc, mul_smul_comm,
+             smul_smul, one_mul, mul_one, hecke]
+  module
 
 end QOU.Interactions
