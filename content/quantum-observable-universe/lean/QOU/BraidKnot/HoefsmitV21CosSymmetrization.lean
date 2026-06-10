@@ -95,7 +95,8 @@ theorem hoefsmit_sigma0_hecke_quadratic (q : ℝ) (hq : q ≠ 0) :
   fin_cases i <;> fin_cases j <;>
     simp [Matrix.mul_apply, Matrix.smul_apply, Matrix.add_apply, Matrix.one_apply,
           Fin.sum_univ_succ, Fin.sum_univ_zero] <;>
-    field_simp
+    field_simp <;>
+    ring
 
 /-! ## Hecke quadratic identity on σ_1 (off-diagonal Hoefsmit matrix)
 
@@ -128,8 +129,8 @@ lemma hoefsmit_b_sq_nonneg (q : ℝ) (hq : q ≠ 0) :
 -- Ref: [manuscript] prop:hoefsmit-V21-cos-symmetrization §"σ_1 trace"
 -- Ref: [hoefsmit1974] (Hoefsmit's PhD thesis, seminormal form)
 theorem hoefsmit_sigma1_trace_eq (q : ℝ) (hq : q ≠ 0) :
-    Matrix.trace (hoefsmit_sigma1 q) = q - q⁻¹ := by
-  unfold hoefsmit_sigma1 hoefsmit_d1 hoefsmit_d2
+    Matrix.trace (hoefsmit_sigma1_legacy q) = q - q⁻¹ := by
+  unfold hoefsmit_sigma1_legacy hoefsmit_d1 hoefsmit_d2
   have hq2 : (q^2 + 1 : ℝ) ≠ 0 := by positivity
   simp [Matrix.trace, Fin.sum_univ_succ, Fin.sum_univ_zero]
   field_simp
@@ -139,14 +140,12 @@ theorem hoefsmit_sigma1_trace_eq (q : ℝ) (hq : q ≠ 0) :
 -- Ref: [manuscript] prop:hoefsmit-V21-cos-symmetrization §"σ_1 determinant"
 -- Ref: [hoefsmit1974] (Hoefsmit's PhD thesis, seminormal form)
 theorem hoefsmit_sigma1_det_eq (q : ℝ) (hq : q ≠ 0) :
-    Matrix.det (hoefsmit_sigma1 q) = -1 := by
-  unfold hoefsmit_sigma1
+    Matrix.det (hoefsmit_sigma1_legacy q) = -1 := by
+  unfold hoefsmit_sigma1_legacy
   -- det of 2x2: a·d − b·c.  For !![d_1, sqrt b²; sqrt b², d_2]:
   --   det = d_1·d_2 − (sqrt b²)² = d_1·d_2 − b²   (b² ≥ 0)
   -- Using b² = d_1·d_2 + 1:   det = d_1·d_2 − (d_1·d_2 + 1) = −1.
-  rw [Matrix.det_fin_two]
-  simp only [Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.head_cons,
-             Matrix.head_fin_const]
+  rw [Matrix.det_fin_two_of]
   rw [Real.mul_self_sqrt (hoefsmit_b_sq_nonneg q hq)]
   unfold hoefsmit_b_sq
   ring
@@ -156,22 +155,22 @@ theorem hoefsmit_sigma1_det_eq (q : ℝ) (hq : q ≠ 0) :
 -- Ref: [manuscript] prop:hoefsmit-V21-cos-symmetrization §"σ_1 Hecke quadratic"
 -- Ref: [hoefsmit1974] (Hoefsmit's PhD thesis, seminormal form)
 theorem hoefsmit_sigma1_hecke_quadratic (q : ℝ) (hq : q ≠ 0) :
-    hoefsmit_sigma1 q * hoefsmit_sigma1 q
-      = (q - q⁻¹) • hoefsmit_sigma1 q + (1 : Matrix (Fin 2) (Fin 2) ℝ) := by
+    hoefsmit_sigma1_legacy q * hoefsmit_sigma1_legacy q
+      = (q - q⁻¹) • hoefsmit_sigma1_legacy q + (1 : Matrix (Fin 2) (Fin 2) ℝ) := by
   -- Compute both sides entry-wise. The off-diagonal `b = sqrt(b²)`
   -- squared becomes `b²` via `Real.mul_self_sqrt` (using `b² ≥ 0`).
   -- All four entry equalities then reduce to rational identities in `q`.
-  unfold hoefsmit_sigma1 hoefsmit_d1 hoefsmit_d2
+  unfold hoefsmit_sigma1_legacy
   have hq2 : (q^2 + 1 : ℝ) ≠ 0 := by positivity
   have hb_sq_nn : 0 ≤ hoefsmit_b_sq q := hoefsmit_b_sq_nonneg q hq
-  have hb_sq_eq : hoefsmit_b_sq q = (q^4 + q^2 + 1) / (q^2 + 1)^2 :=
-    hoefsmit_b_sq_closed_form q hq
   ext i j
+  -- keep `hoefsmit_b_sq q` folded through the first simp so the
+  -- √-elimination lemmas can fire on the atom, then expand and clear
   fin_cases i <;> fin_cases j <;>
     simp [Matrix.mul_apply, Matrix.smul_apply, Matrix.add_apply,
           Matrix.one_apply, Fin.sum_univ_succ, Fin.sum_univ_zero,
-          Real.mul_self_sqrt hb_sq_nn, hb_sq_eq, hoefsmit_d1,
-          hoefsmit_d2, hoefsmit_b_sq] <;>
+          Real.mul_self_sqrt hb_sq_nn, Real.sq_sqrt hb_sq_nn] <;>
+    simp only [hoefsmit_b_sq, hoefsmit_d1, hoefsmit_d2] <;>
     field_simp <;>
     ring
 
@@ -268,14 +267,14 @@ theorem hoefsmit_V21_cos_symmetrization (q : ℝ) (hq : q ≠ 0) [V21Eigenphase 
        = (q - q⁻¹) • hoefsmit_sigma0 q + (1 : Matrix (Fin 2) (Fin 2) ℝ))
     ∧
     -- σ_1 satisfies the Hecke quadratic
-    (hoefsmit_sigma1 q * hoefsmit_sigma1 q
-       = (q - q⁻¹) • hoefsmit_sigma1 q + (1 : Matrix (Fin 2) (Fin 2) ℝ))
+    (hoefsmit_sigma1_legacy q * hoefsmit_sigma1_legacy q
+       = (q - q⁻¹) • hoefsmit_sigma1_legacy q + (1 : Matrix (Fin 2) (Fin 2) ℝ))
     ∧
     -- σ_1 trace = q − q⁻¹
-    (Matrix.trace (hoefsmit_sigma1 q) = q - q⁻¹)
+    (Matrix.trace (hoefsmit_sigma1_legacy q) = q - q⁻¹)
     ∧
     -- σ_1 determinant = −1
-    (Matrix.det (hoefsmit_sigma1 q) = -1)
+    (Matrix.det (hoefsmit_sigma1_legacy q) = -1)
     ∧
     -- Markov-symmetrized character is the unsymmetrized trace times cos α
     (∀ trace_unsym : ℝ,
