@@ -24,9 +24,9 @@ class TwoFiltrationBridgeSmallCasesContext where
   /-- Size `|λ|` of a partition. -/
   size : PartitionIdx → ℕ
   /-- Small-case claim — restricted to partitions of size ≤ 4. -/
-  claim_small_cases : ∀ λ : PartitionIdx, size λ ≤ 4 →
-    ((conj λ = λ → depth λ = 2) ∧
-     (conj λ ≠ λ → depth λ = 3))
+  claim_small_cases : ∀ lam : PartitionIdx, size lam ≤ 4 →
+    ((conj lam = λ → depth lam = 2) ∧
+     (conj lam ≠ λ → depth lam = 3))
 
 /-- **Proposition (`prop:two-filtration-bridge-small-cases`).**
     The bridge map sends self-conjugate cells to depth 2 and
@@ -34,9 +34,9 @@ class TwoFiltrationBridgeSmallCasesContext where
     `n ≤ 4`. -/
 -- Ref: [manuscript] quantum-observable-universe/algebraic-substrate/two-filtration-bridge-small-cases.md
 theorem bridge_small_cases [ctx : TwoFiltrationBridgeSmallCasesContext] :
-    ∀ λ : ctx.PartitionIdx, ctx.size λ ≤ 4 →
-      ((ctx.conj λ = λ → ctx.depth λ = 2) ∧
-       (ctx.conj λ ≠ λ → ctx.depth λ = 3)) :=
+    ∀ lam : ctx.PartitionIdx, ctx.size lam ≤ 4 →
+      ((ctx.conj lam = λ → ctx.depth lam = 2) ∧
+       (ctx.conj lam ≠ λ → ctx.depth lam = 3)) :=
   ctx.claim_small_cases
 
 end QOU.AlgebraicSubstrate.TwoFiltrationBridgeSmallCases

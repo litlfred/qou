@@ -21,13 +21,13 @@ class TwoFiltrationBridgeContext where
       iterated-integral depth filtration). -/
   depth : PartitionIdx → ℕ
   /-- Manuscript claim — self-conjugate cells land at depth 2:
-      whenever `λ = conj λ`, the bridge places `λ` at depth 2. -/
-  claim_self_conjugate_depth_two : ∀ λ : PartitionIdx,
-    conj λ = λ → depth λ = 2
+      whenever `λ = conj lam`, the bridge places `λ` at depth 2. -/
+  claim_self_conjugate_depth_two : ∀ lam : PartitionIdx,
+    conj lam = λ → depth lam = 2
   /-- Manuscript claim — chiral pairs land at depth 3: whenever
-      `λ ≠ conj λ`, the bridge places `λ` at depth 3. -/
-  claim_chiral_pair_depth_three : ∀ λ : PartitionIdx,
-    conj λ ≠ λ → depth λ = 3
+      `λ ≠ conj lam`, the bridge places `λ` at depth 3. -/
+  claim_chiral_pair_depth_three : ∀ lam : PartitionIdx,
+    conj lam ≠ λ → depth lam = 3
 
 /-- **Theorem (`prop:two-filtration-bridge-general`).**
     The bar-class → iterated-integral-depth bridge map: self-
@@ -35,8 +35,8 @@ class TwoFiltrationBridgeContext where
     at every partition. -/
 -- Ref: [manuscript] quantum-observable-universe/algebraic-substrate/two-filtration-bridge-general.md
 theorem bridge_map_general [ctx : TwoFiltrationBridgeContext] :
-    (∀ λ : ctx.PartitionIdx, ctx.conj λ = λ → ctx.depth λ = 2) ∧
-    (∀ λ : ctx.PartitionIdx, ctx.conj λ ≠ λ → ctx.depth λ = 3) :=
+    (∀ lam : ctx.PartitionIdx, ctx.conj lam = λ → ctx.depth lam = 2) ∧
+    (∀ lam : ctx.PartitionIdx, ctx.conj lam ≠ λ → ctx.depth lam = 3) :=
   ⟨ctx.claim_self_conjugate_depth_two, ctx.claim_chiral_pair_depth_three⟩
 
 end QOU.AlgebraicSubstrate.TwoFiltrationBridgeGeneral
