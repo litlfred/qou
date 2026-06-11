@@ -34,6 +34,11 @@ from pathlib import Path
 
 import mpmath as mp
 
+# Standalone high-precision compute script: enforce the 50-dps floor at module
+# load so compute_atom / _ensure_y_lambda are correct when imported as a library,
+# not only under main().
+mp.mp.dps = 50
+
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 sys.path.insert(0, str(HERE / "substrate"))
@@ -54,7 +59,7 @@ def _ensure_y_lambda(n: int) -> None:
     on-demand. The only wall for the FULL Wedderburn χ below is p(n) (partition
     count), not y_λ.
     """
-    W = json.loads((HERE / "y-lambda-mpfr-witness.json").read_text())
+    W = json.loads((HERE / "y-lambda-mpfr-witness.json").read_text(encoding="utf-8"))
     if str(n) not in W.get("tables_by_n", {}):
         from y_lambda_tower_infra import extend_y_lambda_tower
         print(f"     (y_λ tower has no H{n}; extending closed-form, gated)",
@@ -73,7 +78,7 @@ def compute_atom(atom: str, q: mp.mpf) -> dict:
     # so a batch re-run (e.g. to refresh the summary witness) never recomputes a
     # finished nucleus.
     if out.exists():
-        cached = json.loads(out.read_text())
+        cached = json.loads(out.read_text(encoding="utf-8"))
         if (not cached.get("tr_M_partial", True)
                 and cached.get("n_partitions") == cached.get("n_partitions_total")):
             print(f"  {atom:>10} cached ({cached['n_partitions']} λ, complete) "
@@ -140,7 +145,7 @@ def compute_atom(atom: str, q: mp.mpf) -> dict:
         "tr_M_at_q0": str(running),
         "by_partition": per_partition,
     }
-    out.write_text(json.dumps(payload, indent=2, ensure_ascii=False))
+    out.write_text(json.dumps(payload, indent=2, ensure_ascii=False), encoding="utf-8")
     print(f"  {atom:>10} LOSSLESS: {len(per_partition)} λ, "
           f"tr_M(q0)={mp.nstr(running,16)}, {elapsed:.1f}s  →  {out.name}",
           flush=True)

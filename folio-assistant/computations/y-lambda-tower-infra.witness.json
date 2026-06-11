@@ -1,12 +1,12 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-10T20:17:21.651260+00:00",
-  "commitSha": "2426a7451db7ff52e5be06ae62de900e849d1267",
+  "computedAt": "2026-06-11T00:02:39.390981+00:00",
+  "commitSha": "e8b82252faaa2e39b972c4e095ee6c13d23c33e9",
   "assertions": [
     {
       "name": "closed_form_matches_symbolic_source",
-      "computed": 1.3604995885579831e-48,
+      "computed": 3.173962373193022e-48,
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-40,
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2022,
+  "durationMs": 2583,
   "computation": "y-lambda-tower-infra",
   "scriptFile": "y_lambda_tower_infra.py",
-  "scriptHash": "d9cac799c3f9",
-  "scriptCommitSha": "75d78f73e13765fdda6dbaea1f4f903f362b6381",
+  "scriptHash": "bb7a1798dc26",
+  "scriptCommitSha": "bd45cb1f9e46e97dae3730e5caa2a1d2a3fee6c8",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -45,187 +45,187 @@
         "num_partitions": 2,
         "added": false,
         "source": "symbolic (pre-existing)",
-        "gate_rel_err": 3.74059964353198e-50
+        "gate_rel_err": 2.2003527314894e-51
       },
       {
         "n": 3,
         "num_partitions": 3,
         "added": false,
         "source": "symbolic (pre-existing)",
-        "gate_rel_err": 2.3134837580265875e-49
+        "gate_rel_err": 7.344392882624087e-51
       },
       {
         "n": 4,
         "num_partitions": 5,
         "added": false,
         "source": "symbolic (pre-existing)",
-        "gate_rel_err": 2.1423220625986138e-49
+        "gate_rel_err": 3.0979658490994116e-50
       },
       {
         "n": 5,
         "num_partitions": 7,
         "added": false,
         "source": "symbolic (pre-existing)",
-        "gate_rel_err": 4.1825180770219875e-49
+        "gate_rel_err": 2.838813174449313e-50
       },
       {
         "n": 6,
         "num_partitions": 11,
         "added": false,
         "source": "symbolic (pre-existing)",
-        "gate_rel_err": 5.8200792737689994e-49
+        "gate_rel_err": 2.670772532540358e-50
       },
       {
         "n": 7,
         "num_partitions": 15,
         "added": false,
         "source": "symbolic (pre-existing)",
-        "gate_rel_err": 7.200504397262783e-49
+        "gate_rel_err": 2.842304367340572e-50
       },
       {
         "n": 8,
         "num_partitions": 22,
         "added": false,
         "source": "symbolic (pre-existing)",
-        "gate_rel_err": 8.412520691618135e-49
+        "gate_rel_err": 4.076010043694571e-50
       },
       {
         "n": 9,
         "num_partitions": 30,
         "added": false,
         "source": "symbolic (pre-existing)",
-        "gate_rel_err": 9.840387541112489e-49
+        "gate_rel_err": 3.489355398834325e-50
       },
       {
         "n": 10,
         "num_partitions": 42,
         "added": false,
         "source": "symbolic (pre-existing)",
-        "gate_rel_err": 1.1097345235819294e-48
+        "gate_rel_err": 5.877463367491513e-50
       },
       {
         "n": 11,
         "num_partitions": 56,
         "added": false,
         "source": "symbolic (pre-existing)",
-        "gate_rel_err": 1.2425837676580156e-48
+        "gate_rel_err": 6.044684774401141e-50
       },
       {
         "n": 12,
         "num_partitions": 77,
         "added": false,
         "source": "symbolic (pre-existing)",
-        "gate_rel_err": 1.3604995885579831e-48
+        "gate_rel_err": 6.407748066082373e-50
       },
       {
         "n": 13,
         "num_partitions": 101,
         "added": false,
         "source": "symbolic (pre-existing)",
-        "gate_rel_err": 3.692739078024393e-50
+        "gate_rel_err": 1.5410799754911316e-48
       },
       {
         "n": 14,
         "num_partitions": 135,
         "added": false,
         "source": "symbolic (pre-existing)",
-        "gate_rel_err": 3.8297542599468453e-50
+        "gate_rel_err": 1.67607415296671e-48
       },
       {
         "n": 15,
         "num_partitions": 176,
         "added": false,
         "source": "symbolic (pre-existing)",
-        "gate_rel_err": 4.65098963789819e-50
+        "gate_rel_err": 1.817878205508489e-48
       },
       {
         "n": 16,
         "num_partitions": 231,
         "added": false,
         "source": "symbolic (pre-existing)",
-        "gate_rel_err": 4.514165973526291e-50
+        "gate_rel_err": 1.9541655823691524e-48
       },
       {
         "n": 17,
         "num_partitions": 297,
         "added": false,
         "source": "symbolic (pre-existing)",
-        "gate_rel_err": 4.370887008694659e-50
+        "gate_rel_err": 2.095294969552103e-48
       },
       {
         "n": 18,
         "num_partitions": 385,
         "added": false,
         "source": "symbolic (pre-existing)",
-        "gate_rel_err": 4.0554425727161535e-50
+        "gate_rel_err": 2.2158436591884732e-48
       },
       {
         "n": 19,
         "num_partitions": 490,
         "added": false,
         "source": "symbolic (pre-existing)",
-        "gate_rel_err": 4.766425723078493e-50
+        "gate_rel_err": 2.3852078856546797e-48
       },
       {
         "n": 20,
         "num_partitions": 627,
         "added": false,
         "source": "symbolic (pre-existing)",
-        "gate_rel_err": 5.042405153493092e-50
+        "gate_rel_err": 2.511176478967281e-48
       },
       {
         "n": 21,
         "num_partitions": 792,
         "added": false,
         "source": "symbolic (pre-existing)",
-        "gate_rel_err": 4.721700682884939e-50
+        "gate_rel_err": 2.6635380174196242e-48
       },
       {
         "n": 22,
         "num_partitions": 1002,
         "added": false,
         "source": "symbolic (pre-existing)",
-        "gate_rel_err": 4.804207997167275e-50
+        "gate_rel_err": 2.8614182643544044e-48
       },
       {
         "n": 23,
         "num_partitions": 1255,
         "added": false,
         "source": "symbolic (pre-existing)",
-        "gate_rel_err": 4.676584700721712e-50
+        "gate_rel_err": 2.976450465215936e-48
       },
       {
         "n": 24,
         "num_partitions": 1575,
         "added": false,
         "source": "symbolic (pre-existing)",
-        "gate_rel_err": 5.022157641868676e-50
+        "gate_rel_err": 3.173962373193022e-48
       }
     ],
     "gate_closed_form_vs_symbolic": {
-      "2": 3.74059964353198e-50,
-      "3": 2.3134837580265875e-49,
-      "4": 2.1423220625986138e-49,
-      "5": 4.1825180770219875e-49,
-      "6": 5.8200792737689994e-49,
-      "7": 7.200504397262783e-49,
-      "8": 8.412520691618135e-49,
-      "9": 9.840387541112489e-49,
-      "10": 1.1097345235819294e-48,
-      "11": 1.2425837676580156e-48,
-      "12": 1.3604995885579831e-48,
-      "13": 3.692739078024393e-50,
-      "14": 3.8297542599468453e-50,
-      "15": 4.65098963789819e-50,
-      "16": 4.514165973526291e-50,
-      "17": 4.370887008694659e-50,
-      "18": 4.0554425727161535e-50,
-      "19": 4.766425723078493e-50,
-      "20": 5.042405153493092e-50,
-      "21": 4.721700682884939e-50,
-      "22": 4.804207997167275e-50,
-      "23": 4.676584700721712e-50,
-      "24": 5.022157641868676e-50
+      "2": 2.2003527314894e-51,
+      "3": 7.344392882624087e-51,
+      "4": 3.0979658490994116e-50,
+      "5": 2.838813174449313e-50,
+      "6": 2.670772532540358e-50,
+      "7": 2.842304367340572e-50,
+      "8": 4.076010043694571e-50,
+      "9": 3.489355398834325e-50,
+      "10": 5.877463367491513e-50,
+      "11": 6.044684774401141e-50,
+      "12": 6.407748066082373e-50,
+      "13": 1.5410799754911316e-48,
+      "14": 1.67607415296671e-48,
+      "15": 1.817878205508489e-48,
+      "16": 1.9541655823691524e-48,
+      "17": 2.095294969552103e-48,
+      "18": 2.2158436591884732e-48,
+      "19": 2.3852078856546797e-48,
+      "20": 2.511176478967281e-48,
+      "21": 2.6635380174196242e-48,
+      "22": 2.8614182643544044e-48,
+      "23": 2.976450465215936e-48,
+      "24": 3.173962373193022e-48
     },
     "added_n": []
   }

@@ -102,12 +102,12 @@ def frob(p, Z, fermionic=False):
 
 def main() -> int:
     t0 = time.monotonic()
-    sym = json.loads((HERE / "symmetrized-constituent-general.witness.json").read_text())
+    sym = json.loads((HERE / "symmetrized-constituent-general.witness.json").read_text(encoding="utf-8"))
     pp = {int(k): mp.mpf(v) for k, v in sym["data"]["proton_power_sums"].items()}
     pn = {int(k): mp.mpf(v) for k, v in sym["data"]["neutron_power_sums"].items()}
     tau_p, tau_n = pp[1], pn[1]
 
-    bc = json.loads((HERE / "binding-canonical.witness.json").read_text())
+    bc = json.loads((HERE / "binding-canonical.witness.json").read_text(encoding="utf-8"))
     tr = {(r["Z"], r["N"]): r for r in bc["data"]["results"]}
 
     from b_over_a_v5_unified import AME_BA_MEV  # canonical AME 2020 dict
