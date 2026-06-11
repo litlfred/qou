@@ -1,4 +1,4 @@
-import Mathlib.Algebra.BigOperators.Basic
+import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Combinatorics.Young.YoungDiagram
 import Mathlib.Data.Int.Basic
 

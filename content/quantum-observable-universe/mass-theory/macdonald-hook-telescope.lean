@@ -36,7 +36,7 @@
 -/
 
 import Mathlib.Data.Real.Basic
-import Mathlib.Algebra.BigOperators.Basic
+import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 
 namespace QOU.BraidsAndKnots
 

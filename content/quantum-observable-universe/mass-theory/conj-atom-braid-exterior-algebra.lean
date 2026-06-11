@@ -1,6 +1,6 @@
 import Mathlib.Data.Nat.Choose.Basic
 import Mathlib.Tactic.NormNum
-import Mathlib.Algebra.BigOperators.Basic
+import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 
 
 /-!

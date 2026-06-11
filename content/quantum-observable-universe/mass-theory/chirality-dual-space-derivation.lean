@@ -1,5 +1,5 @@
 import Mathlib.Algebra.Algebra.Basic
-import Mathlib.Algebra.BigOperators.Basic
+import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 
 /-!
 # Chirality from symmetric-channel trace duality (Term 5)

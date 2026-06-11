@@ -1,4 +1,4 @@
-import Mathlib.Algebra.BigOperators.Basic
+import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 
 /-!
 # QOU.LiftingDescent.tm_transient_localisation — placeholder stub

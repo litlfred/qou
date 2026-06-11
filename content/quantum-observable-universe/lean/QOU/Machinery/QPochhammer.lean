@@ -31,7 +31,7 @@ Habiro-element promotion of the Q_β residue A and m_μ closure
 - Audit: [`docs/scope/2026-06-03-qbeta-residue-a-klr-crystal-infra-scope.md`](../../../../../docs/scope/2026-06-03-qbeta-residue-a-klr-crystal-infra-scope.md)
 -/
 
-import Mathlib.Algebra.BigOperators.Basic
+import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Algebra.GeomSum
 import Mathlib.Algebra.Order.Ring.Lemmas
 import Mathlib.Analysis.SpecialFunctions.Pow.Real

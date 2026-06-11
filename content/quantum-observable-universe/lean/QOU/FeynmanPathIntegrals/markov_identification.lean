@@ -1,4 +1,4 @@
-import Mathlib.Algebra.BigOperators.Basic
+import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 
 /-!
 # QOU.FeynmanPathIntegrals.markov_identification — placeholder stub

@@ -1,4 +1,4 @@
-import Mathlib.Algebra.BigOperators.Basic
+import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 
 /-!
 # QOU.Information.photon_threading_mass — placeholder stub

@@ -1,4 +1,4 @@
-import Mathlib.Algebra.BigOperators.Basic
+import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 
 /-!
 # QOU.WedderburnMass.chirality_residue_mass_term — placeholder stub
