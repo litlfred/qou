@@ -2,7 +2,7 @@ import Mathlib.Analysis.SpecificLimits.Basic
 import Mathlib.Analysis.SpecificLimits.Normed
 import Mathlib.Topology.Algebra.InfiniteSum.Basic
 import Mathlib.Topology.Algebra.InfiniteSum.Ring
-import Mathlib.Algebra.Order.AbsoluteValue
+import Mathlib.Algebra.Order.AbsoluteValue.Basic
 import Mathlib.Analysis.Normed.Group.Basic
 import Mathlib.Tactic
 

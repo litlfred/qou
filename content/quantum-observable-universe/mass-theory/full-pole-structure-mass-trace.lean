@@ -1,5 +1,5 @@
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
-import Mathlib.Algebra.Order.AbsoluteValue
+import Mathlib.Algebra.Order.AbsoluteValue.Basic
 import Mathlib.Algebra.GroupPower.Order
 import Mathlib.Algebra.Polynomial.Basic
 import Mathlib.Tactic.Linarith
