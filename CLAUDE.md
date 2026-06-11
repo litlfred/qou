@@ -1627,6 +1627,47 @@ without ever mentioning `ℝ`.
 See `notation/notation-collisions.md §Base ring convention` for the
 notation-table entry and the §7c row in this rule's table.
 
+### 7d. Universe conventions (STRICT) — pinning universe-carrying structures
+
+A structure/class with a `Type*`-valued **field** (e.g. `fibreAt : M →
+Type*`, `carrier : Type*`) is *universe-carrying*: every occurrence in a
+signature elaborates with a fresh universe metavariable, and a theorem
+header is generalized **before** its body elaborates. Two binders
+mentioning the same universe-carrying type therefore get *distinct
+rigid* universes, and the body fails with
+`QLocalSystem.{u_1,u_4} ≠ QLocalSystem.{u_1,u_2}`-style mismatches.
+(Incidents: `Torsion/MassGap` repaired in PR #2094;
+`QGeometricLanglands` repaired in PR #2125, where these rules were
+surveyed and drafted.)
+
+- **U1 — default stays `Type*`.** Leaf declarations whose types appear
+  in only one binder keep `Type*`; no churn.
+- **U2 — universe-carrying structures get named universes at authoring
+  time.** Any structure/class with a `Type*`-valued field that is
+  consumed by another structure, a class field, or a multi-binder
+  theorem declares `universe u v …` and pins the field
+  (`fibreAt : M → Type v`). Glossary (Ch 8) wrappers exempt.
+- **U3 — tie at use sites.** A signature mentioning a universe-carrying
+  type in ≥ 2 binders (instance + argument, or two arguments) whose
+  body relates them must tie the universes explicitly
+  (`[FibreFunctorRigidity.{u, v} M]` +
+  `(es es' : QHeckeEigensheaf.{u, v} M)`).
+- **U4 — ∃-repackaging as the lighter alternative.** When the relation
+  is existential anyway, restate à la `MassGap`
+  (`∃ ymg, ymg.q = q ∧ ymg.transferMatrix = tm`) so unification happens
+  inside one binder; record which pattern was used in the docstring.
+- **U5 — never positional-apply `.{…}` to an unpinned declaration.**
+  Auto-bound universe order is an elaboration artifact; pin the
+  declaration first, then apply.
+- **U6 — naming.** `u` = base/manifold type, then `v, w, x` in order of
+  first appearance for fibre/carrier families (matches
+  `CategoricalFoundations`' `QuantumUniverse.{u, v} k` idiom and
+  `QGeometricLanglands`).
+
+Recorded 2026-06-11 per owner instruction on PR #2125; pending
+refinements from the Gemini discussion round there land as edits to
+this section.
+
 ### 8. File hygiene
 
 - Never commit `.lake/`, `lake-packages/`, or `build/`.
