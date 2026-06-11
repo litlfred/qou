@@ -1,3 +1,6 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Tactic.NormNum
+
 /-!
 # QOU.ParticleInteractions.atomic_lp_stability — bare H is LP-unstable, dressed H is stable
 
