@@ -41,7 +41,7 @@ import unicodedata
 from datetime import datetime, timezone
 from pathlib import Path
 
-VERSION = "1.0.0"
+VERSION = "1.1.0"
 REPO_SLUG = "litlfred/qou"
 GITHUB_URL = "https://github.com/" + REPO_SLUG
 
@@ -608,7 +608,7 @@ def detect_engine(pref):
     return ("builtin",)
 
 
-def render_pdf(md_path, pdf_path, md_text, title, engine):
+def render_pdf(md_path, pdf_path, md_text, title, engine, fonts=None):
     """Render PDF; returns the engine label actually used (or None)."""
     if engine is None:
         return None
@@ -620,6 +620,12 @@ def render_pdf(md_path, pdf_path, md_text, title, engine):
             "-V", "geometry:margin=2.2cm", "-V", "fontsize=10pt",
             "-V", "colorlinks=true", "--highlight-style=tango",
         ]
+        if fonts:
+            mainfont, monofont = fonts
+            if mainfont:
+                cmd += ["-V", "mainfont=" + mainfont]
+            if monofont:
+                cmd += ["-V", "monofont=" + monofont]
         rc, _, err = run(cmd, timeout=300)
         if rc == 0 and pdf_path.exists():
             return "pandoc+" + engine[1]
@@ -745,6 +751,51 @@ def builtin_pdf(md_text, pdf_path, title):
     pdf_path.write_bytes(bytes(out))
 
 
+def rerender_pdfs(root, args):
+    """Re-render committed session PDFs with pandoc (CI / post-hoc upgrade).
+
+    Targets sessions whose metadata records a non-pandoc engine (or whose
+    PDF is missing); --force re-renders everything. No-op without pandoc.
+    """
+    engine = detect_engine(args.pdf_engine)
+    if not engine or engine[0] != "pandoc":
+        log("No pandoc+engine available — nothing to re-render "
+            "(existing PDFs left as-is).")
+        return 0
+    fonts = (args.pdf_mainfont, args.pdf_monofont)
+    n_done = n_skip = n_fallback = 0
+    for md_path in sorted(root.glob("*/*/session.md")):
+        sdir = md_path.parent
+        meta_path = sdir / "metadata.json"
+        pdf_path = sdir / "session.pdf"
+        meta = {}
+        if meta_path.exists():
+            try:
+                meta = json.loads(meta_path.read_text(encoding="utf-8"))
+            except (OSError, json.JSONDecodeError):
+                meta = {}
+        current = meta.get("pdf_engine") or ""
+        if pdf_path.exists() and current.startswith("pandoc") and not args.force:
+            n_skip += 1
+            continue
+        md_text = md_path.read_text(encoding="utf-8")
+        used = render_pdf(md_path, pdf_path, md_text,
+                          meta.get("title") or sdir.name, engine, fonts=fonts)
+        if used and used.startswith("pandoc"):
+            n_done += 1
+        else:
+            n_fallback += 1
+        if meta and meta.get("pdf_engine") != used:
+            meta["pdf_engine"] = used
+            meta_path.write_text(
+                json.dumps(meta, indent=2, ensure_ascii=False) + "\n",
+                encoding="utf-8")
+        print("  %s: %s" % (sdir.relative_to(root), used))
+    print("Re-render: %d upgraded, %d already pandoc, %d fell back to builtin."
+          % (n_done, n_skip, n_fallback))
+    return 0
+
+
 # ----------------------------------------------------------------- indexing
 
 def load_existing(root):
@@ -839,7 +890,8 @@ def archive_one(conv, hits, root, repo, trailers, engine, opts, existing):
     md_path = out_dir / "session.md"
     pdf_path = out_dir / "session.pdf"
     md_path.write_text(md_text, encoding="utf-8")
-    engine_used = render_pdf(md_path, pdf_path, md_text, conv["title"], engine)
+    engine_used = render_pdf(md_path, pdf_path, md_text, conv["title"], engine,
+                             fonts=(opts.pdf_mainfont, opts.pdf_monofont))
 
     meta = {
         "schema": "human-agent-discussions/metadata@1",
@@ -964,6 +1016,13 @@ def main(argv=None):
                     help="include up to N chars of each attachment (default 0: name only)")
     ap.add_argument("--pdf-engine", choices=["auto", "pandoc", "builtin", "none"],
                     default="auto")
+    ap.add_argument("--pdf-mainfont", metavar="FONT", default=None,
+                    help="mainfont for pandoc+xelatex (e.g. 'DejaVu Serif')")
+    ap.add_argument("--pdf-monofont", metavar="FONT", default=None,
+                    help="monofont for pandoc+xelatex (e.g. 'DejaVu Sans Mono')")
+    ap.add_argument("--rerender-pdfs", action="store_true",
+                    help="re-render archived PDFs with pandoc (with --force: all) "
+                         "and exit; used by CI to upgrade builtin-engine PDFs")
     ap.add_argument("--root", type=Path, default=default_root,
                     help="archive root (default: %s)" % default_root)
     ap.add_argument("--repo", type=Path, default=None,
@@ -990,6 +1049,9 @@ def main(argv=None):
         n = regenerate_index(root)
         log("INDEX.md regenerated (%d sessions)." % n)
         return 0
+
+    if args.rerender_pdfs:
+        return rerender_pdfs(root, args)
 
     pairs = discover_inputs(args, root)
     if not pairs:
