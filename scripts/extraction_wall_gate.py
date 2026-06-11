@@ -14,6 +14,7 @@ Ledger:   docs/coordination/tooling-extraction.md
 from __future__ import annotations
 
 import json
+import os
 import sys
 from pathlib import Path
 
@@ -40,17 +41,17 @@ def count_package(pkg: str) -> int:
     if not root.is_dir():
         return -1
     n = 0
-    for f in root.rglob("*"):
-        if not f.is_file():
-            continue
-        if any(part in SKIP_DIRS for part in f.parts):
-            continue
-        try:
-            text = f.read_text(errors="ignore")
-        except OSError:
-            continue
-        if "qou" in text.lower():
-            n += 1
+    for r, dirs, files in os.walk(root):
+        # prune in place so os.walk never descends into artifact dirs
+        dirs[:] = [d for d in dirs if d not in SKIP_DIRS]
+        for name in files:
+            f = Path(r) / name
+            try:
+                text = f.read_text(errors="ignore")
+            except OSError:
+                continue
+            if "qou" in text.lower():
+                n += 1
     return n
 
 
