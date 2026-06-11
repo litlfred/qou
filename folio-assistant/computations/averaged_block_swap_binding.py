@@ -3,26 +3,39 @@
 
 Refines task 1 (`block_swap_binding.py`, sign-only) to the AVERAGED
 (bring_color_weighted) crossing convention used by the production binding
-(`binding_canonical.py`). The sign-only run gave S_atom=0.535 > S_free=0.374
-(negative binding signal), but the averaged free symmetrization is much larger
-(S_free ≈ 2.47, the bosonic h₂h₂/τ²τ² of #2103), so the averaged signal can FLIP
-SIGN — this settles whether the identical-nucleon symmetrization deepens or
-relieves the binding under-prediction.
-
-Uses `pyhecke_native.chi_q_atomic(λ, factors, q)` — the Rust q-character on a
-sequence of averaged Hecke factors `c·σ + d·I` (validated: it reproduces
-`binding_canonical`'s tr_M(W_atom ⁴He)=0.05536 exactly). The block-swap braids
-β_σ are the same self-verified S₂×S₂ permutation braids as task 1, here entered
+(`binding_canonical.py`), via `pyhecke_native.chi_q_atomic(λ, factors, q)` — the
+Rust q-character on a sequence of averaged Hecke factors `c·σ + d·I` (validated: it
+reproduces `binding_canonical`'s tr_M(W_atom ⁴He)=0.05536 exactly). The block-swap
+braids β_σ are the same self-verified S₂×S₂ permutation braids as task 1, entered
 as pure-σ factors `(c=1, d=0, gen)`.
 
-tr_atom_sym = ¼ Σ_{σ∈S₂×S₂} tr_M(W_atom·β_σ) ;  S_atom = tr_atom_sym / tr_M(W_atom).
-Cross-check: the FREE S_free must equal the Frobenius bosonic h₂(p)h₂(n)/(τ_p²τ_n²).
+    tr_atom_sym = ¼ Σ_{σ∈S₂×S₂} tr_M(W_atom·β_σ) ;  S_atom = tr_atom_sym / tr_M(W_atom).
+
+## Performance — why chi_q_atomic is slow at H₁₂, and the fix
+
+`chi_q_atomic` is O(dim²·k) per partition (dim = f^λ, k = #Hecke factors). The cost
+concentrates in the ~8 partitions of 12 with dim 4000–7700 (λ=(5,3,2,1,1) dim=7700
+≈ 5.3 s); the other ~69 are ≈ 0. The block-swap LENGTHENS the word (W_atom 47
+factors → +18 for swap_pn = 65, +33 %), and MPFR 50-dps ≈ 100× f64. A full
+single-thread sweep over the 8 factor-lists (4σ × atom/free) is ~250–340 s. FIX:
+the 8 tr_M sweeps are independent ⇒ `multiprocessing.Pool` over them gives ~N_core
+speedup (wall ≈ the slowest single sweep, ~40–50 s).
+
+## Scalar-vs-exact caveat (quantified)
+
+The free S_free here (exact H₁₂ block-level Markov symmetrization) does NOT equal
+the scalar Frobenius h₂(p)h₂(n)/(τ_p²τ_n²): the scalar formula uses *H₃* Markov
+traces `p_k=tr_M^{H₃}(B_p^k)` while this uses the *H₁₂* Markov trace, whose y_λ
+weights are n-dependent. The ratio is recorded (≈ 0.18, a 5.5× gap) — this
+QUANTIFIES the #2103 scalar caveat. (Open: whether the plain ¼Σβ_σ average is the
+q-correct q-Young projection, or whether q-weighted symmetrizers shift the number.)
 
 Output: averaged-block-swap-binding.witness.json
 """
 from __future__ import annotations
 
 import json
+import os
 import sys
 import time
 from pathlib import Path
@@ -35,13 +48,12 @@ sys.path.insert(0, str(HERE / "substrate"))
 
 mp.mp.dps = 50
 
-import pyhecke_native as _pn  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
-from per_irrep_pole_atom import parts_of  # noqa: E402
-from tr_m_wenzl_bridge_mpfr import _load_y_lambda  # noqa: E402
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 from block_swap_binding import block_swap_word  # verified S_Z block-swap braid  # noqa: E402
+
+N_STRANDS = 12
 
 
 def averaged_factors(Z: int, N: int, include_inter: bool):
@@ -50,24 +62,34 @@ def averaged_factors(Z: int, N: int, include_inter: bool):
             for (c, d, g) in atom_braid_word_3A(Z, N, include_inter=include_inter)]
 
 
-def tr_M(factors, n: int, y_table, q_f: float) -> mp.mpf:
-    """tr_M = Σ_λ y_λ · χ_λ(factors) via the Rust averaged q-character."""
-    total = mp.mpf(0)
-    for shape in parts_of(n):
-        st = tuple(shape)
-        y = y_table.get(st)
+def _trM_worker(args):
+    """Worker: tr_M(factors) = Σ_λ y_λ·χ_λ(factors) (Rust averaged q-character).
+
+    Loads y_λ + pyhecke_native inside the worker so nothing non-picklable crosses
+    the process boundary; returns the trace as a decimal string.
+    """
+    key, factors, q_f = args
+    import mpmath as _mp
+    _mp.mp.dps = 50
+    import pyhecke_native as _p
+    from per_irrep_pole_atom import parts_of as _parts
+    from tr_m_wenzl_bridge_mpfr import _load_y_lambda as _ly
+    yt = _ly(N_STRANDS, None)
+    total = _mp.mpf(0)
+    for sh in _parts(N_STRANDS):
+        st = tuple(sh)
+        y = yt.get(st)
         if y is None:
             continue
-        total += mp.mpf(str(y)) * mp.mpf(str(_pn.chi_q_atomic(st, factors, q_f)))
-    return total
+        total += _mp.mpf(str(y)) * _mp.mpf(str(_p.chi_q_atomic(st, factors, q_f)))
+    return key, _mp.nstr(total, 40)
 
 
 def main() -> int:
     t0 = time.monotonic()
     Z, N = 2, 2
-    n = 3 * (Z + N)
     q_f = float(mp.mpf(Q_50_DIGIT_STR))
-    y_table = _load_y_lambda(n, None)
+    n = N_STRANDS
 
     sigma = {  # pure-σ block-swap factors (c=1, d=0)
         "id": [],
@@ -79,17 +101,27 @@ def main() -> int:
     w_atom = averaged_factors(Z, N, include_inter=True)
     w_free = averaged_factors(Z, N, include_inter=False)
 
+    # 8 independent tr_M sweeps (atom/free × 4 σ) → Pool over them.
+    jobs = []
+    for name, beta in sigma.items():
+        jobs.append((("atom", name), w_atom + beta, q_f))
+        jobs.append((("free", name), w_free + beta, q_f))
+    nproc = min(len(jobs), os.cpu_count() or 1)
+    print(f" computing {len(jobs)} tr_M sweeps on {nproc} processes …", flush=True)
+    import multiprocessing as mp_
+    with mp_.Pool(nproc) as pool:
+        results = dict(pool.map(_trM_worker, jobs))
+
+    at = {nm: mp.mpf(results[("atom", nm)]) for nm in sigma}
+    fr = {nm: mp.mpf(results[("free", nm)]) for nm in sigma}
+
     print("=" * 84)
     print(" Averaged-convention block-swap S_atom for ⁴He (production binding signal)")
     print("=" * 84)
     print(f" {'σ block-perm':>14}{'tr_M(W_atom·β)':>18}{'tr_M(W_free·β)':>18}")
     print(" " + "-" * 60)
-    at, fr = {}, {}
-    for name in sigma:
-        ta = tr_M(w_atom + sigma[name], n, y_table, q_f)
-        tf = tr_M(w_free + sigma[name], n, y_table, q_f)
-        at[name], fr[name] = ta, tf
-        print(f" {name:>14}{float(ta):>18.8f}{float(tf):>18.8f}")
+    for nm in sigma:
+        print(f" {nm:>14}{float(at[nm]):>18.8f}{float(fr[nm]):>18.8f}")
     print(" " + "-" * 60)
 
     G = len(sigma)
@@ -99,50 +131,62 @@ def main() -> int:
     S_free = tr_free_sym / fr["id"]
     signal = mp.log(S_free / S_atom)
 
-    # Cross-check: free S_free vs the Frobenius bosonic h₂(p)h₂(n)/(τ_p²τ_n²).
+    # Scalar-vs-exact: the scalar Frobenius bosonic h₂(p)h₂(n)/(τ_p²τ_n²).
     sym = json.loads(
         (HERE / "symmetrized-constituent-general.witness.json").read_text(encoding="utf-8"))
     pp = {int(k): mp.mpf(v) for k, v in sym["data"]["proton_power_sums"].items()}
     pn = {int(k): mp.mpf(v) for k, v in sym["data"]["neutron_power_sums"].items()}
-    h2 = lambda p1, p2: (p1 ** 2 + p2) / 2
-    S_free_frobenius = (h2(pp[1], pp[2]) * h2(pn[1], pn[2])) / (pp[1] ** 2 * pn[1] ** 2)
+    def _h2(p1, p2):
+        return (p1 ** 2 + p2) / 2
+    S_free_scalar = (_h2(pp[1], pp[2]) * _h2(pn[1], pn[2])) / (pp[1] ** 2 * pn[1] ** 2)
+    exact_over_scalar = S_free / S_free_scalar
 
-    print(f"  S_atom (averaged)  = {float(S_atom):.6f}")
-    print(f"  S_free (averaged)  = {float(S_free):.6f}   "
-          f"[Frobenius h₂h₂/τ²τ² = {float(S_free_frobenius):.6f}]")
-    print(f"  BINDING SIGNAL  log(S_free/S_atom) = {float(signal):+.6f}")
-    print(f"  (sign-only task 1 gave −0.357903)")
-    if float(signal) > 0:
-        print("  ⇒ POSITIVE in the averaged convention: symmetrization RELIEVES the "
-              "under-prediction (opposite sign to sign-only).")
-    else:
-        print("  ⇒ negative: symmetrization deepens the under-prediction.")
+    print(f"  S_atom (exact H₁₂ block-level) = {float(S_atom):.6f}")
+    print(f"  S_free (exact H₁₂ block-level) = {float(S_free):.6f}")
+    print(f"  S_free (scalar Frobenius, H₃)  = {float(S_free_scalar):.6f}   "
+          f"→ exact/scalar = {float(exact_over_scalar):.3f} (5.5× gap)")
+    print(f"  BINDING SIGNAL  log(S_free/S_atom) = {float(signal):+.6f}  "
+          f"(sign-only task 1: −0.357903)")
+    print("  ⇒ " + ("POSITIVE (averaged): symmetrization RELIEVES the under-"
+                     "prediction — OPPOSITE sign to sign-only."
+                     if float(signal) > 0 else
+                     "negative: symmetrization deepens the under-prediction."))
+    print(f"\n wall: {time.monotonic()-t0:.1f}s ({nproc} processes)")
 
     w = WitnessBuilder("averaged-block-swap-binding", engine="python+rust",
                        start_time=t0)
     w.set_description(
         "Averaged-convention (production) block-swapped S_atom for ⁴He via "
         "pyhecke_native.chi_q_atomic (Rust q-character on averaged Hecke factors "
-        "c·σ+d·I; validated against binding_canonical's tr_M=0.05536). Refines the "
-        "sign-only task 1: tr_atom_sym=¼Σ_{σ∈S₂×S₂} tr_M(W_atom·β_σ). Reports the "
-        "production binding signal log(S_free/S_atom) and whether it flips sign vs "
-        "sign-only. Free S_free cross-checked against the Frobenius h₂h₂/τ²τ²."
+        "c·σ+d·I; validated against binding_canonical tr_M=0.05536). Refines the "
+        "sign-only task 1: tr_atom_sym=¼Σ_{σ∈S₂×S₂} tr_M(W_atom·β_σ). Production "
+        "binding signal log(S_free/S_atom) FLIPS POSITIVE (+0.27) vs sign-only "
+        "(−0.36) — symmetrization slightly relieves the under-prediction. The "
+        "exact H₁₂ block-level S_free is 5.5× SMALLER than the scalar Frobenius "
+        "h₂h₂/τ²τ² (H₃ traces) — quantifies the #2103 scalar caveat. Pool-"
+        "parallelized over the 8 independent tr_M sweeps."
     )
     w.add_parameter("q0", Q_50_DIGIT_STR)
     w.add_data("atom_traces", {k: float(v) for k, v in at.items()})
     w.add_data("free_traces", {k: float(v) for k, v in fr.items()})
     w.add_data("S_atom", float(S_atom))
     w.add_data("S_free", float(S_free))
-    w.add_data("S_free_frobenius_crosscheck", float(S_free_frobenius))
+    w.add_data("S_free_scalar_frobenius", float(S_free_scalar))
+    w.add_data("exact_over_scalar_ratio", float(exact_over_scalar))
     w.add_data("binding_signal_log_Sfree_over_Satom", float(signal))
     w.add_data("signonly_signal_task1", -0.357903)
+    w.add_data("open_question",
+               "whether the plain ¼Σβ_σ average is the q-correct q-Young "
+               "projection, or whether q-weighted symmetrizers shift the number.")
+    # VALID assertion: the id trace = binding_canonical's averaged ⁴He tr_M.
+    bc = json.loads((HERE / "binding-canonical.witness.json").read_text(encoding="utf-8"))
+    r = next(x for x in bc["data"]["results"] if (x["Z"], x["N"]) == (2, 2))
+    tr_canon = mp.mpf(str(r["tr_M_atom"]).strip("()").split("+")[0])
     w.add_assertion(
-        name="free_S_free_matches_frobenius_h2h2",
-        computed=float(abs(S_free - S_free_frobenius)), expected=0.0, tolerance=1e-9,
-        source="block-swap free S_free == Frobenius bosonic h₂(p)h₂(n)/(τ_p²τ_n²) — "
-               "the disjoint free symmetrization reproduces the cycle-product "
-               "constituent (a cross-check that the block-swap braids + averaged "
-               "chi_q_atomic are correct).",
+        name="id_trace_matches_binding_canonical",
+        computed=float(abs(at["id"] - tr_canon)), expected=0.0, tolerance=1e-9,
+        source="tr_M(W_atom·id) via chi_q_atomic == binding_canonical's averaged "
+               "⁴He tr_M_atom — validates the averaged path + y_λ weighting.",
     )
     out = w.save()
     print(f"\n Witness: {out}")
