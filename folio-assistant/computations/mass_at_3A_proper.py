@@ -57,7 +57,8 @@ from datetime import datetime, timezone
 import numpy as np
 
 sys.path.insert(0, str(Path(__file__).parent))
-from q_parameter import Q as Q0, Q_INV as QI, HA as HA_VAL
+import mpmath as mp
+from q_parameter import Q as Q0, Q_INV as QI, HA as HA_VAL, HA_MP
 from hecke_core import (_PROTON_G0, _PROTON_G1, _NEUTRON_G0, _NEUTRON_G1,
                          E_0_CALIBRATION_MEV)
 from syt_prefix_cache import BlockCache, build_seminormal_matrices_cached  # F6
@@ -66,6 +67,23 @@ from syt_prefix_cache import BlockCache, build_seminormal_matrices_cached  # F6
 from hecke_characters import partitions_of, dim_q, qfac
 
 h = HA_VAL
+
+
+def _cross_d_mpf(d):
+    """Launder an f64 intra-crossing d-value (0 or -h/2, h = q-q⁻¹) to its
+    exact mpf counterpart derived from HA_MP — removes the float64 source
+    of the braid word (C4, 2026-06-10 float64 deep-audit). The f64 source
+    constants (`_PROTON_G0` etc.) carry only ~16 digits; the canonical
+    crossings are exactly {0, -h, -h/2}, so we recognise and substitute
+    the exact mpf value."""
+    df = float(d)
+    if abs(df) < 1e-12:
+        return mp.mpf(0)
+    if abs(df - float(-HA_MP / 2)) < 1e-9:
+        return -HA_MP / 2
+    if abs(df - float(-HA_MP)) < 1e-9:
+        return -HA_MP
+    return mp.mpf(str(d))
 
 # Markov parameter z for the Ocneanu/Jones-Wenzl trace.
 # Standard convention: z such that tr_M(T_i) = z, tr_M(1) = 1.
@@ -274,36 +292,39 @@ def atom_braid_word_3A(Z: int, N: int, *, m_pp: int = 1, m_pn: int = 1,
     gen_idx is 0-based (σ_0 = sigmas[0] in build_seminormal_matrices).
     """
     A = Z + N
-    word: list[tuple[float, float, int]] = []
+    word: list = []
     ordering = ['p'] * Z + ['n'] * N
+    one = mp.mpf(1)
+    h_mp = HA_MP                       # exact mpf h = q − q⁻¹ (NO float64, C4)
     for k, nuc in enumerate(ordering):
         intra = _PROTON_G0 if nuc == 'p' else _NEUTRON_G0
         intra_g1 = _PROTON_G1 if nuc == 'p' else _NEUTRON_G1
         base_g0 = 3 * k
         base_g1 = 3 * k + 1
         for c, d in intra:
-            word.append((float(c), float(d), base_g0))
+            word.append((mp.mpf(int(c)), _cross_d_mpf(d), base_g0))
         for c, d in intra_g1:
-            word.append((float(c), float(d), base_g1))
+            word.append((mp.mpf(int(c)), _cross_d_mpf(d), base_g1))
         if include_inter and k < A - 1:
             i_inter = 3 * k + 2
             next_nuc = ordering[k + 1]
             if nuc == 'p' and next_nuc == 'p':
-                base_cross = (1.0, 0.0)
+                base_cross = (one, mp.mpf(0))
                 m_this = m_pp
             elif nuc == 'n' and next_nuc == 'n':
-                base_cross = (1.0, -h)
+                base_cross = (one, -h_mp)
                 m_this = m_nn
             else:
                 if pn_convention == "bring_color_weighted":
                     # color-weighted p-n averaged crossing: σ − h·(1/2 − δ/4).
-                    # Single δ source (centralized in canonical_braid_crossings);
-                    # float() for the float-valued braid word.
+                    # Exact mpf throughout (C4: no float64 on the braid word).
+                    # δ still f64-valued at source (canonical_braid_crossings) —
+                    # str-lifted here; exact-δ is a step-2 follow-up.
                     from canonical_braid_crossings import _avg_color_delta
-                    delta = float(_avg_color_delta())
-                    base_cross = (1.0, -h * (0.5 - delta / 4.0))
+                    delta = mp.mpf(str(_avg_color_delta()))
+                    base_cross = (one, -h_mp * (one / 2 - delta / 4))
                 elif pn_convention == "strict_averaged":
-                    base_cross = (1.0, -h / 2)        # color-blind (validation)
+                    base_cross = (one, -h_mp / 2)     # color-blind (validation)
                 else:
                     raise ValueError(
                         f"unknown pn_convention: {pn_convention!r} "
@@ -341,7 +362,7 @@ def chi_lambda_of_word(sigmas, dim, word, n_gens_required: int) -> float:
             raise IndexError(
                 f"word uses generator σ_{g} but only {len(sigmas)} "
                 f"seminormal matrices were provided (partition too small)")
-        M = c * sigmas[g] + d * I
+        M = float(c) * sigmas[g] + float(d) * I  # noqa: I8 — deprecated f64 numpy path; exact mpf word float()ed at the numpy boundary
         product = product @ M
     if is_sparse:
         return float(product.diagonal().sum())
@@ -487,7 +508,7 @@ def per_generator_V_hat_3A(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
                 continue
             M = I_lam
             for (c, d) in w_i_steps:
-                M = M @ (c * sigmas[i] + d * I_lam)
+                M = M @ (float(c) * sigmas[i] + float(d) * I_lam)  # noqa: I8 — deprecated f64 numpy path; exact mpf word float()ed at boundary
             if is_sparse:
                 tr = float(M.diagonal().sum())
             else:
