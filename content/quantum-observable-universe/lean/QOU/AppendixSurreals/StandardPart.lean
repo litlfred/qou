@@ -1,5 +1,5 @@
 import QOU.AppendixSurreals.Basic
-import Mathlib.RingTheory.Subring.Basic
+import Mathlib.Algebra.Ring.Subring.Basic
 
 /-!
 # QOU.AppendixSurreals.StandardPart — Robinson's standard-part map
