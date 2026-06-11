@@ -1,0 +1,26 @@
+*Lean sibling: `QOU.Archimedean.PhotonIRZeroMode`. The topological/geometric core is unconditional; the heat-kernel zero-mode is a cited standard result; the $\tau_{\mathrm{arch}}$ uniqueness is the upstream conditional input.*
+
+**Proposition (photon IR zero-mode on Bring's surface — the from-the-Lagrangian source of $2/(3\pi)$).** *Let $M_g$ be a closed orientable genus-$g$ hyperbolic surface (constant curvature $-1$). The photon IR zero-mode contribution to $1/\alpha_{EM}$ at zero external momentum is the harmonic $1$-form sector $H^1(M_g)$ — the gauge field's flat-connection moduli — normalised by the surface area:*
+
+$$
+  \delta\!\left(\tfrac{1}{\alpha_{EM}}\right)_{\mathrm{IR}}
+  \;=\; \frac{\dim H^1(M_g)}{\operatorname{Area}(M_g)}
+  \;=\; \frac{b_1(M_g)}{4\pi(g-1)}
+  \;=\; \frac{2g}{4\pi(g-1)},
+  \qquad
+  b_1 = 2g,\quad \operatorname{Area} = -2\pi\chi = 4\pi(g-1).
+$$
+
+*At the Bring genus $g=4$ ($\chi=-6$) this is $\tfrac{8}{12\pi} = \tfrac{2}{3\pi}$ — the additive correction of [`prop:em-coupling-bring-zero-mode`](#prop:em-coupling-bring-zero-mode). The "$/3$" is the Gauss–Bonnet factor $(g-1)=3$, not a ball-volume dimension.*
+
+## Mechanism (the derivation)
+
+The Maxwell sector of the categorical Lagrangian, restricted to the UV-completing surface $M_g$ — the genus-$4$ Bring surface carrying the force-carrier pair $\{T_{2,9}, T_{3,5}\}$ ([`prop:force-carrier-bring-uniqueness`](#prop:force-carrier-bring-uniqueness)) — has its zero-momentum two-point function governed by the kernel of the $1$-form Laplacian $\Delta_1$. By Hodge theory $\dim\ker\Delta_1 = b_1(M_g) = 2g$; the heat-kernel zero-mode of a Laplacian contributes one constant mode $1/\operatorname{Vol}$ per harmonic generator, so the infrared shift is $b_1/\operatorname{Area}$. Gauss–Bonnet fixes $\operatorname{Area} = -2\pi\chi = 4\pi(g-1)$ at curvature $-1$ (Lean `area_eq_neg_two_pi_chi`), giving $2g/(4\pi(g-1))$ (Lean `photonZeroModeShift_eq`), $= 2/(3\pi)$ at $g=4$ (Lean `photonZeroModeShift_at_g4`).
+
+**Why the naive attempt failed.** The first-pass attempt recorded in the Status section of [`prop:em-coupling-bring-zero-mode`](#prop:em-coupling-bring-zero-mode) placed the zero-mode on the $3$-manifold $M_g\times S^1$, where $b_1 = 2g+1$ and $\operatorname{Vol} = \operatorname{Area}\cdot 2\pi$, giving $(2g+1)/(8\pi^2(g-1)) = 9/(24\pi^2) \approx 0.038$ — strictly smaller, by $\approx 5.6\times$. Crossing with $S^1$ adds a spurious harmonic generator and a factor $2\pi$ of volume; the photon zero-mode lives on the $2$-surface itself. The surface-minus-naive difference $(16\pi-9)/(24\pi^2) > 0$ is Lean `surface_minus_naive_g4`.
+
+**Jet-order placement.** In the jet-graded decomposition of the Archimedean functor ([`prop:jet-sw-tau-decomposition`](#prop:jet-sw-tau-decomposition)), $\tau = \sum_{n\ge 0} a_D^{(n)}$, the $n=0$ term is the electron period; this photon zero-mode is the $n=1$ infrared term, the first prolongation period beyond the tree coupling $q[9]_q[10]_q$. The next-order self-energy $\alpha/(4\pi)$ is the $n=2$ term.
+
+## Status
+
+The topological/geometric core — Betti number $b_1=2g$, Gauss–Bonnet area, the ratio $2g/(4\pi(g-1))$, and the strict surface-over-naive dominance — is **proven sorry-free** in Lean (`QOU.Archimedean.PhotonIRZeroMode`). The single cited input is the standard heat-kernel identity (zero-mode contribution $= b_1/\operatorname{Vol}$). The upstream archimedean uniqueness — that $\tau_{\mathrm{arch}}$ lands the substrate state-sum on this Hodge datum ([`prop:archimedean-functor-uniqueness`](#prop:archimedean-functor-uniqueness)) — remains the named conditional input. This proposition resolves the **mechanism** (which manifold, which operator) that [`prop:em-coupling-bring-zero-mode`](#prop:em-coupling-bring-zero-mode) left open, replacing the failed $M\times S^1$ guess with the surface harmonic zero-mode. Witness: [`photon_ir_zero_mode_bring.py`](../../folio-assistant/computations/photon_ir_zero_mode_bring.py).
