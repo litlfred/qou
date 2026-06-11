@@ -19,7 +19,13 @@ The Maxwell sector of the categorical Lagrangian, restricted to the UV-completin
 
 **Why the naive attempt failed.** The first-pass attempt recorded in the Status section of [`prop:em-coupling-bring-zero-mode`](#prop:em-coupling-bring-zero-mode) placed the zero-mode on the $3$-manifold $M_g\times S^1$, where $b_1 = 2g+1$ and $\operatorname{Vol} = \operatorname{Area}\cdot 2\pi$, giving $(2g+1)/(8\pi^2(g-1)) = 9/(24\pi^2) \approx 0.038$ — strictly smaller, by $\approx 5.6\times$. Crossing with $S^1$ adds a spurious harmonic generator and a factor $2\pi$ of volume; the photon zero-mode lives on the $2$-surface itself. The surface-minus-naive difference $(16\pi-9)/(24\pi^2) > 0$ is Lean `surface_minus_naive_g4`.
 
-**Jet-order placement.** In the jet-graded decomposition of the Archimedean functor ([`prop:jet-sw-tau-decomposition`](#prop:jet-sw-tau-decomposition)), $\tau = \sum_{n\ge 0} a_D^{(n)}$, the $n=0$ term is the electron period; this photon zero-mode is the $n=1$ infrared term, the first prolongation period beyond the tree coupling $q[9]_q[10]_q$. The next-order self-energy $\alpha/(4\pi)$ is the $n=2$ term.
+**Jet-order placement and the $n=2$ self-energy.** In the jet-graded decomposition of the Archimedean functor ([`prop:jet-sw-tau-decomposition`](#prop:jet-sw-tau-decomposition)), $\tau = \sum_{n\ge 0} a_D^{(n)}$, the $n=0$ term is the electron period and this photon zero-mode is the $n=1$ infrared term, the first prolongation beyond the tree coupling $q[9]_q[10]_q$. The $n=2$ self-energy has the established form $\alpha\,[2]_q/(8\pi)\,(1-h^2\alpha)$ (the $\alpha/(4\pi)$ thread, PR #1495), and its denominator is **the same Hodge datum**:
+
+$$
+  8\pi \;=\; \pi\cdot\dim H^1(M_{\text{Bring}}) \;=\; \pi\,b_1, \qquad b_1 = 2g = 8
+$$
+
+(Lean `selfEnergyDenominator_at_g4`). So the single Betti number $b_1 = 8$ controls **both** infrared corrections — the $n=1$ zero-mode carries it in the numerator ($b_1/\operatorname{Area}$), the $n=2$ self-energy in the denominator ($\pi\,b_1$); their $b_1$-placements multiply to the $\pi$-free $b_1^2/(4(g-1))$ (Lean `photon_selfEnergy_betti_product`, the archimedean $\pi$ cancelling). **Boundary discipline**: in both terms $b_1$ is topological, $\pi$ is archimedean, and the $[2]_q$ numerator is the substrate Hecke integer ($\tau_{\mathrm{arch}}$-evaluated, *not* an object of the archimedean Hodge computation). The remaining $n=2$ content — the $[2]_q$ numerator and the $-h^2\alpha$ fermion-loop (Identity 2) — is the RT 2-loop derivation track of PR #1495.
 
 ## Status
 
