@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-11T01:30:28.258371+00:00",
-  "commitSha": "54d8ff7d6812763ba3c894aa84192a802b56b1ee",
+  "computedAt": "2026-06-11T02:00:45.396051+00:00",
+  "commitSha": "717857f60379890f63f42b19b55f67b2f8a38069",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 12,
   "computation": "symmetrized-binding-closure",
   "scriptFile": "symmetrized_binding_closure.py",
-  "scriptHash": "517f113ab126",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "8fc3d4f6160e",
+  "scriptCommitSha": "7e06dd586c68959b5f77dcbe3de1725f3a834c85",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -31,13 +31,13 @@
     "rows": [
       {
         "scale": "Q_beta",
-        "scale_MeV": 0.78233341,
-        "B_log_naive_MeV": 1.63000911419242,
-        "B_log_sym_MeV": 1.350009651951937,
-        "symmetrization_shift_MeV": -0.27999946224048317,
-        "gap_to_AME_naive_MeV": 26.66566488580758,
-        "gap_to_AME_sym_MeV": 26.945664348048062,
-        "shift_over_gap": 0.010500374299292604
+        "scale_MeV": 0.78233340931,
+        "B_log_naive_MeV": 1.6300091127547895,
+        "B_log_sym_MeV": 1.3500096507612596,
+        "symmetrization_shift_MeV": -0.2799994619935301,
+        "gap_to_AME_naive_MeV": 26.665664887245214,
+        "gap_to_AME_sym_MeV": 26.945664349238744,
+        "shift_over_gap": 0.010500374289465408
       },
       {
         "scale": "E_0",
