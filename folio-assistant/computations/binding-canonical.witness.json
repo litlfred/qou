@@ -1,14 +1,14 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-11T01:29:18.015877+00:00",
-  "commitSha": "c4b3a7960bed57318413b0a6293f412cc8260ae3",
+  "computedAt": "2026-06-11T01:55:56.630147+00:00",
+  "commitSha": "285348c286461463517c2da6cfd55e0ae402ac26",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 22,
+  "durationMs": 19,
   "computation": "binding-canonical",
   "scriptFile": "binding_canonical.py",
-  "scriptHash": "57acf7245ab1",
+  "scriptHash": "fceb03ac5310",
   "scriptCommitSha": "c4b3a7960bed57318413b0a6293f412cc8260ae3",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -83,6 +83,23 @@
       },
       {
         "status": "solved",
+        "Z": 1,
+        "N": 3,
+        "A": 4,
+        "tr_M_atom": "0.0278887285654204543853985173391",
+        "tr_M_free": "0.838317852435673559405270815123",
+        "Q_beta_n_MeV": 0.7823334100000222,
+        "B_MeV": 0.6340257800407455,
+        "n_atom_terms": -1,
+        "n_free_terms": -1,
+        "use_closed_form": false,
+        "use_transfer": true,
+        "atom": "Z1N3",
+        "B_AME_MeV": null,
+        "delta_m_over_m_pct": null
+      },
+      {
+        "status": "solved",
         "Z": 2,
         "N": 2,
         "A": 4,
@@ -97,6 +114,23 @@
         "atom": "4He",
         "B_AME_MeV": 28.295673,
         "delta_m_over_m_pct": 0.734920409428728
+      },
+      {
+        "status": "solved",
+        "Z": 3,
+        "N": 1,
+        "A": 4,
+        "tr_M_atom": "0.109885083144722024413911352462",
+        "tr_M_free": "1.11618125108212439683614923742",
+        "Q_beta_n_MeV": 0.7823334100000222,
+        "B_MeV": 0.787259112532423,
+        "n_atom_terms": -1,
+        "n_free_terms": -1,
+        "use_closed_form": false,
+        "use_transfer": true,
+        "atom": "Z3N1",
+        "B_AME_MeV": null,
+        "delta_m_over_m_pct": null
       }
     ]
   }

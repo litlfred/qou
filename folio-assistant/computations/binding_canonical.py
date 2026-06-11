@@ -375,15 +375,57 @@ if __name__ == "__main__":
     # the tritium value was a typo (correct AME 2020 = 8.481798). Now
     # loaded from `ame-2020-binding-energies.witness.json` via the
     # AME_B_*_MEV_VALIDATION constants (PR #1105).
-    ATOMS = [
-        ("D",    1, 1, float(AME_B_DEUTERON_MEV_VALIDATION)),
-        ("T",    1, 2, float(AME_B_TRITIUM_MEV_VALIDATION)),
-        ("3He",  2, 1, float(AME_B_HE3_MEV_VALIDATION)),
-        ("4He",  2, 2, float(AME_B_HE4_MEV_VALIDATION)),
-    ]
+    import argparse
+
+    # Known AME 2020 binding energies (validation-only; only these few are
+    # wired into codata_constants). Arbitrary (Z, N) compute is fully
+    # supported — AME comparison is shown only where a value is known.
+    _KNOWN_AME = {
+        (1, 1): float(AME_B_DEUTERON_MEV_VALIDATION),
+        (1, 2): float(AME_B_TRITIUM_MEV_VALIDATION),
+        (2, 1): float(AME_B_HE3_MEV_VALIDATION),
+        (2, 2): float(AME_B_HE4_MEV_VALIDATION),
+    }
+    _NAMES = {
+        (1, 1): "D", (1, 2): "T", (2, 1): "3He", (2, 2): "4He",
+        (2, 3): "5He", (3, 2): "5Li", (3, 3): "6Li", (3, 4): "7Li",
+        (4, 3): "7Be", (2, 4): "6He",
+    }
+
+    def _atom_name(Z, N):
+        return _NAMES.get((Z, N), f"Z{Z}N{N}")
+
+    ap = argparse.ArgumentParser(
+        description="Categorical binding via the canonical Jones-Markov "
+                    "trace — general any-(Z,N) facility (P1 transfer path)."
+    )
+    ap.add_argument("--Z", type=int, default=None,
+                    help="proton count (single-atom mode; requires --N)")
+    ap.add_argument("--N", type=int, default=None,
+                    help="neutron count (single-atom mode; requires --Z)")
+    ap.add_argument("--sweep-max-a", type=int, default=0, metavar="A",
+                    help="sweep every (Z>=1, N>=1) with mass number Z+N <= A "
+                         "(cost grows with A: n=3A strands, partitions of n)")
+    ap.add_argument("--symbolic", action="store_true",
+                    help="use the slow symbolic cross-check path "
+                         "(use_transfer=False) instead of the fast transfer")
+    args, _ = ap.parse_known_args()
+
+    if args.Z is not None and args.N is not None:
+        atoms = [(args.Z, args.N)]                        # single any-atom
+    elif args.sweep_max_a:
+        atoms = [(Z, A - Z)                               # full sweep to A
+                 for A in range(2, args.sweep_max_a + 1)
+                 for Z in range(1, A)]
+    else:
+        atoms = [(1, 1), (1, 2), (2, 1), (2, 2),          # demo set, now
+                 (3, 3), (3, 4)]                          # incl. 6Li, 7Li
+
+    use_transfer = not args.symbolic
     print("=" * 100)
     print("BINDING via CANONICAL Jones-Markov trace "
-          "(prop:categorical-mass-markov)")
+          "(prop:categorical-mass-markov) — "
+          f"{'symbolic cross-check' if args.symbolic else 'transfer (P1)'} path")
     print(f"q₀ = {q0}, Q_β(n) = {float(_Q_BETA_N)} MeV (β-decay Q-value, CAL-3)")
     print("=" * 100)
     results = []
@@ -391,9 +433,13 @@ if __name__ == "__main__":
           f"{'|tr_atom|':>12} {'|tr_free|':>12} "
           f"{'B_pred':>10} {'|Δm/m|%':>9} {'time':>8}")
     print("  " + "-" * 96)
-    for name, Z, N, B_AME in ATOMS:
+    for Z, N in atoms:
+        name = _atom_name(Z, N)
+        B_AME = _KNOWN_AME.get((Z, N))
         A = Z + N
-        r = binding_canonical(Z, N, verbose=False)
+        t0 = time.time()
+        r = binding_canonical(Z, N, verbose=False, use_transfer=use_transfer)
+        dt = time.time() - t0
         if r.get("status") != "solved":
             print(f"  {name:>6} {A:>3} {3*A:>3}  "
                   f"STATUS: {r.get('status')}: "
@@ -402,13 +448,17 @@ if __name__ == "__main__":
             continue
         tr_a = complex(r["tr_M_atom"].replace("(", "").replace(")", ""))
         tr_f = complex(r["tr_M_free"].replace("(", "").replace(")", ""))
-        # Proton mass from codata_constants registry (CODATA 2022, full
-        # precision); was hardcoded inline as 938.272.
-        M_total = A * float(M_P_MEV_VALIDATION)
-        dm = abs(r["B_MeV"] - B_AME) / M_total * 100
-        print(f"  {name:>6} {A:>3} {3*A:>3} {B_AME:>8.3f} "
+        if B_AME is not None:
+            # Proton mass from codata_constants registry (CODATA 2022).
+            M_total = A * float(M_P_MEV_VALIDATION)
+            dm = abs(r["B_MeV"] - B_AME) / M_total * 100
+            ame_s, dm_s = f"{B_AME:>8.3f}", f"{dm:>7.4f}%"
+        else:
+            dm = None
+            ame_s, dm_s = f"{'n/a':>8}", f"{'n/a':>8}"
+        print(f"  {name:>6} {A:>3} {3*A:>3} {ame_s} "
               f"{abs(tr_a):>12.6e} {abs(tr_f):>12.6e} "
-              f"{r['B_MeV']:>+10.4f} {dm:>8.4f}%")
+              f"{r['B_MeV']:>+10.4f} {dm_s} {dt:>7.3f}s")
         results.append({**r, "atom": name, "B_AME_MeV": B_AME,
                          "delta_m_over_m_pct": dm})
 
