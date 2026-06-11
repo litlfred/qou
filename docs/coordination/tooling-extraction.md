@@ -16,3 +16,19 @@ Master workplan: [`docs/workplans/2026-06-11-tooling-extraction-skills-migration
   (per-isotope stack — pyhecke consumer, API-stability notice).
 - Owner decisions pending: new repo name/org; license (MIT/Apache-2.0 dual
   recommended); witness-schema split; provenance wording.
+
+### 2026-06-11 — census appendix landed (same session)
+
+- Verdicts: pyhecke / pyhecke-native / witness-schema **mechanical**;
+  **hecke-engine needs-refactor** (83 physics-coupled files; hardcoded
+  `Q_0`, `_proton_g0`/`_neutron_g0` in `src/gram.rs`); bindings trivial;
+  qou-substrate **stays** (census's "generic-q-solver" alternative recorded
+  as an owner option).
+- Clarabel confirmed: fork `litlfred/Clarabel.rs` rev `9673209`
+  (bigrational/MpfrFloat backend, BlockDiagPSDConeT), `[patch.crates-io]`
+  in hecke-engine + pyhecke-native; 71/71 tests green with `clarabel-sdp`.
+- Consumer set: 221/778 compute scripts, choked through
+  `folio-assistant/computations/hecke_core.py` → Phase 4 repoints the shim.
+- Skills/MCP: 80 .md + 24 .ts in `.claude/skills/local/`; design doc is the
+  ARCHIVED `docs/_archive/orphan-top-level/FOLIO_MIGRATION_PLAN.md`
+  (~5 generic skills move; domain skills stay) — Phase 5 revives it.
