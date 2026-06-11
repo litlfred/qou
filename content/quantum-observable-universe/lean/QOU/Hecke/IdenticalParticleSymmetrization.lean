@@ -1,4 +1,5 @@
 import Mathlib.Tactic.Ring
+import Mathlib.Algebra.Group.Basic
 
 /-!
 # QOU.Hecke.IdenticalParticleSymmetrization — Schur–Weyl decomposition of the
@@ -131,5 +132,81 @@ theorem schur_weyl_Z4 (a b c d : R) :
                + 3 * (a * b * c * d))
         -- s₍₁,₁,₁,₁₎ = e₄ = m₁₁₁₁ = abcd   (f^(1,1,1,1) = 1)
         + a * b * c * d := by ring
+
+/-! ## Newton–Frobenius power-sum form (the bosonic/fermionic constituents)
+
+The symmetrized constituent of `symmetrized_constituent_general.py` is computed
+by the Frobenius formula `h_Z = Σ_{μ⊢Z} p_μ/z_μ`, `e_Z = Σ_{μ⊢Z} ε_μ p_μ/z_μ`,
+with power sums `p_k = tr_M(B_p^k)` and centralizer orders `z_μ`. The lemmas below
+are that formula in closed `ring`-verified form for Z = 2, 3, 4: the complete-
+homogeneous `h_Z` (bosonic sector) and elementary `e_Z` (fermionic / Pauli sector)
+written against the power sums `p_k = Σ xᵢ^k`. Multiplying through by `Z!` clears
+the `1/z_μ` denominators so the statement holds over any `CommRing` (no division).
+For Z = 2 this is `two_h2` / `two_e2` above. -/
+
+/-- **Newton–Frobenius Z=3, bosonic.** `6·h₃ = p₁³ + 3p₁p₂ + 2p₃`
+(`z₍₁,₁,₁₎=6, z₍₂,₁₎=2, z₍₃₎=3`; coefficients `3! / z_μ = 1,3,2`). `h₃` is the
+complete-homogeneous degree-3 symmetric function in `a,b,c`. -/
+theorem newton_h3 (a b c : R) :
+    6 * (a ^ 3 + a ^ 2 * b + a ^ 2 * c + a * b ^ 2 + a * b * c + a * c ^ 2
+         + b ^ 3 + b ^ 2 * c + b * c ^ 2 + c ^ 3)
+      = (a + b + c) ^ 3 + 3 * (a + b + c) * (a ^ 2 + b ^ 2 + c ^ 2)
+        + 2 * (a ^ 3 + b ^ 3 + c ^ 3) := by ring
+
+/-- **Newton–Frobenius Z=3, fermionic.** `6·e₃ = p₁³ − 3p₁p₂ + 2p₃`, `e₃ = abc`
+(signs `ε_μ = (−1)^{3−ℓ(μ)}`). -/
+theorem newton_e3 (a b c : R) :
+    6 * (a * b * c)
+      = (a + b + c) ^ 3 - 3 * (a + b + c) * (a ^ 2 + b ^ 2 + c ^ 2)
+        + 2 * (a ^ 3 + b ^ 3 + c ^ 3) := by ring
+
+/-- **Newton–Frobenius Z=4, bosonic.** `24·h₄ = p₁⁴ + 6p₁²p₂ + 3p₂² + 8p₁p₃ + 6p₄`
+(`4!/z_μ = 1,6,3,8,6` over `μ = (1⁴),(2,1,1),(2,2),(3,1),(4)`). -/
+theorem newton_h4 (a b c d : R) :
+    24 * (a ^ 4 + a ^ 3 * b + a ^ 3 * c + a ^ 3 * d + a ^ 2 * b ^ 2 + a ^ 2 * b * c
+          + a ^ 2 * b * d + a ^ 2 * c ^ 2 + a ^ 2 * c * d + a ^ 2 * d ^ 2 + a * b ^ 3
+          + a * b ^ 2 * c + a * b ^ 2 * d + a * b * c ^ 2 + a * b * c * d + a * b * d ^ 2
+          + a * c ^ 3 + a * c ^ 2 * d + a * c * d ^ 2 + a * d ^ 3 + b ^ 4 + b ^ 3 * c
+          + b ^ 3 * d + b ^ 2 * c ^ 2 + b ^ 2 * c * d + b ^ 2 * d ^ 2 + b * c ^ 3
+          + b * c ^ 2 * d + b * c * d ^ 2 + b * d ^ 3 + c ^ 4 + c ^ 3 * d + c ^ 2 * d ^ 2
+          + c * d ^ 3 + d ^ 4)
+      = (a + b + c + d) ^ 4
+        + 6 * (a + b + c + d) ^ 2 * (a ^ 2 + b ^ 2 + c ^ 2 + d ^ 2)
+        + 3 * (a ^ 2 + b ^ 2 + c ^ 2 + d ^ 2) ^ 2
+        + 8 * (a + b + c + d) * (a ^ 3 + b ^ 3 + c ^ 3 + d ^ 3)
+        + 6 * (a ^ 4 + b ^ 4 + c ^ 4 + d ^ 4) := by ring
+
+/-- **Newton–Frobenius Z=4, fermionic.** `24·e₄ = p₁⁴ − 6p₁²p₂ + 3p₂² + 8p₁p₃ − 6p₄`,
+`e₄ = abcd` (signs `ε_μ`). -/
+theorem newton_e4 (a b c d : R) :
+    24 * (a * b * c * d)
+      = (a + b + c + d) ^ 4
+        - 6 * (a + b + c + d) ^ 2 * (a ^ 2 + b ^ 2 + c ^ 2 + d ^ 2)
+        + 3 * (a ^ 2 + b ^ 2 + c ^ 2 + d ^ 2) ^ 2
+        + 8 * (a + b + c + d) * (a ^ 3 + b ^ 3 + c ^ 3 + d ^ 3)
+        - 6 * (a ^ 4 + b ^ 4 + c ^ 4 + d ^ 4) := by ring
+
+/-! ## Orbit identity ≠ Young symmetrizer (relabeling vs. composition)
+
+A recurring confusion (`block_swap_binding.py`, `symmetrized_binding_probe.py`):
+the **orbit identity** `tr_M(β_{Z,N}) = tr_M(rep)` (`atom_orbit_reduction.py`)
+is **relabeling** — a same-species permutation leaves the canonical word
+`p…pn…n` fixed, so it acts by CONJUGATION `β_σ W β_σ⁻¹`, and any cyclic trace is
+conjugation-invariant (Markov M1). The identical-particle **Young symmetrizer** is
+a DIFFERENT object: the COMPOSITION average `|G|⁻¹ Σ_σ tr_M(W·β_σ)` (not
+conjugation), which the inter-nucleon bonds make `≠ tr_M(W)` — measured as
+`S_atom ≠ S_free` in `block_swap_binding.py`. The lemma isolates exactly the part
+the orbit identity proves (conjugation), so the gap to the symmetrizer is explicit. -/
+
+/-- **Relabeling = conjugation is trace-invariant (the orbit identity).** For any
+cyclic trace `τ` (`τ(xy)=τ(yx)`) on a group, conjugation by `g` preserves it:
+`τ(g a g⁻¹) = τ a`. This is `atom_orbit_reduction`'s `tr_M(β_σ W β_σ⁻¹)=tr_M(W)`.
+It does **not** give `τ(a g) = τ(a)` — the Young symmetrizer composes `β_σ` rather
+than conjugating, so that (generally false) equality is exactly the binding signal
+`log(S_free/S_atom)`. -/
+theorem orbit_relabel_invariant {G : Type*} [Group G] (τ : G → R)
+    (hcyc : ∀ x y : G, τ (x * y) = τ (y * x)) (g a : G) :
+    τ (g * a * g⁻¹) = τ a := by
+  rw [hcyc (g * a) g⁻¹, inv_mul_cancel_left]
 
 end QOU.Hecke.IdenticalParticle
