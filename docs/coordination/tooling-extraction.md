@@ -32,3 +32,15 @@ Master workplan: [`docs/workplans/2026-06-11-tooling-extraction-skills-migration
 - Skills/MCP: 80 .md + 24 .ts in `.claude/skills/local/`; design doc is the
   ARCHIVED `docs/_archive/orphan-top-level/FOLIO_MIGRATION_PLAN.md`
   (~5 generic skills move; domain skills stay) — Phase 5 revives it.
+
+### 2026-06-11 — Phase 0 started (session claude/modest-einstein-oytxmq)
+
+- Wall gate live: `scripts/extraction_wall_gate.py` (warn-only ratchet;
+  `--strict` flips hard after Phase 2) + committed baseline
+  `tools/extraction-wall-baseline.json` (94 qou-referencing source files
+  across the nine extraction-bound packages; hecke-engine 49 — the
+  earlier 186 census count included build artifacts, now skipped).
+- Intent comments posted: #2104 (scope reconciliation before tools/
+  restructure), #2103 (pyhecke API-stability notice).
+- Still pending from owner: new repo name/org, license, witness-schema
+  split, provenance wording.
