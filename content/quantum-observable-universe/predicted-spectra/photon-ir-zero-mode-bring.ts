@@ -20,6 +20,7 @@ export default proposition({
     "prop:em-coupling-bring-zero-mode",
     "prop:force-carrier-bring-uniqueness",
     "prop:jet-sw-tau-decomposition",
+    "prop:alpha-em-habiro-bar-involution",
   ],
   tags: [
     "alpha-em",
