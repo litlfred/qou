@@ -34,13 +34,36 @@ binding-constituent infra). Owner directive: "1 2 3 4 5 / see skills on Lean".
 
 ## Status
 
-- [ ] 1 — block-swap S_atom (⁴He)
-- [ ] 2 — production binding wiring
-- [ ] 3 — ⁷Li/⁸Be χ
-- [ ] 4 — lake-cache restore diagnosis
-- [ ] 5 — Lean formalization
+- [x] **1 — block-swap S_atom (⁴He).** `block_swap_binding.py`: S_atom=0.535 ≠
+  S_free=0.374 (sign-only), so the binding signal `log(S_free/S_atom)=−0.358 ≠ 0`
+  — the bonds break block symmetry; the symmetrization does NOT cancel. Bound
+  traces split swap_p=0.401 vs swap_n=0.419 (bonds break p↔n). Block-swap braids
+  self-verified.
+- [x] **2 — binding wiring (honest negative).** `symmetrized_binding_closure.py`:
+  the shift `scale·log(S_free/S_atom)` = −0.28 MeV (Q_β) / −1.50 MeV (E_0) is only
+  1.1%/7.7% of the 20–27 MeV AME gap and points the wrong way. The symmetrization
+  is a real but SUB-DOMINANT correction; the binding form/convention is the
+  dominant gate. Rules out symmetrization as the gap-closer.
+- [~] **3 — ⁷Li/⁸Be χ.** Registered ⁷Li/⁸Be/⁹Be in `per_irrep_pole_atom.ATOMS`.
+  ⁷Li (H₂₁, 792 λ) running; ⁸Be (H₂₄, 1575 λ) is a multi-hour compute (deferred).
+- [x] **4 — lake-cache diagnosis (root cause found).** The 811M
+  `lake-cache/qou-v4-24-0` (built ~2026-06-04) is STALE: main migrated to the
+  root Lake workspace + re-pinned Mathlib on 2026-06-10 (commit `4eb95ac1`;
+  current rev `f897ebcf…`), so the cached oleans don't validate and `lake`
+  correctly rebuilds from source. The cache did NOT auto-refresh because
+  `lake-cache-refresh.yml` is blocked by the **GitHub Actions billing** outage.
+  FIX: clear CI billing → the designed auto-refresh reseeds against the current
+  rev. A manual agent reseed is a discouraged ad-hoc multi-GB stopgap (skill
+  §PRESERVE THE BUILD) and is NOT a partial-cone reseed (would regress Mass
+  coverage). Workaround used this session: build-to-completion once (oleans then
+  valid locally for the session).
+- [x] **5 — Lean formalization.** `IdenticalParticleSymmetrization.lean`
+  (675-job build green): `newton_h3/e3/h4/e4` (Frobenius `Z!·h_Z/e_Z` vs power
+  sums — the content of `frobenius()`) + `orbit_relabel_invariant` (cyclic-trace
+  conjugation-invariance = the orbit identity, isolating the gap to the Young
+  symmetrizer).
 
 ## Notes
 
 - Branch off `main` post-#2103-merge (2104a31a).
-- Wheel rebuilt; Lean env restored from `lake-cache/qou-v4-24-0` (task 4 in flight).
+- Wheel rebuilt; Lean env built to completion (cache stale, see task 4).
