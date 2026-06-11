@@ -54,7 +54,8 @@ actual mathematical witnesses, not by any pair of propositions.
   the convergence: `tr_M(exp_q(i ξ S_n))` converges to
   `exp_q(-ξ²/2 · κ₂)`. -/
 class QCltNonCommutative
-    (R : Type u) [LinearOrderedField R] [TopologicalSpace R] where
+    (R : Type u) [Field R] [LinearOrder R] [IsStrictOrderedRing R]
+    [TopologicalSpace R] where
   /-- Limit variance (second free q-cumulant). -/
   secondCumulant : R
   /-- Positivity of the limit variance. -/
