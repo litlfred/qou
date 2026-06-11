@@ -1,13 +1,16 @@
 """Public API for qou_mass — thin orchestration over the
 canonical-derivation pipeline.
 
-P2 (this revision): the predict() / predict_nucleon() / compute_tr_M()
-functions are now LIVE. They read from vendored per-Z shards
+P2 (Lookup): The predict() and predict_nucleon() functions are currently
+data-facades. They read from vendored per-Z shards
 (canonical-isotope-witness-Z<NN>.witness.json) shipped with the
 package — so external researchers can `pip install qou-mass` and
 immediately query the canonical pipeline's outputs for any AME 2020
-nuclide. `compute_tr_M()` calls the vendored `markov_peel` chain for
-on-demand recomputation.
+nuclide.
+
+P3 (Live Compute): The compute_tr_M() function performs live computation
+by calling the vendored `markov_peel` chain for on-demand recomputation.
+Future revisions will migrate the full `predict()` stack to live compute.
 
 For a given atom request:
   - "binding_energy" — return B_pred from L1/L2/L3 cascade (per-Z
@@ -179,6 +182,7 @@ def predict(
             units="MeV",
             ppm_vs_codata=(Decimal(str(ppm)) if ppm is not None else None),
             method=row.get("layer", "?"),
+            method_status="experimental" if row.get("layer") == "experimental" else None,
             precision_dps=precision_dps,
         )
     if observable == "binding_energy":
@@ -207,6 +211,7 @@ def predict(
                 if err_pct is not None else None
             ),
             method=row.get("layer", "?"),
+            method_status="experimental" if row.get("layer") == "experimental" else None,
             precision_dps=precision_dps,
         )
     if observable == "mass_excess":
@@ -220,6 +225,7 @@ def predict(
             value=Decimal(str(m_pred_pred)) - Decimal(A) * Decimal("931.49410242"),
             units="MeV",
             method=row.get("layer", "?"),
+            method_status="experimental" if row.get("layer") == "experimental" else None,
             precision_dps=precision_dps,
         )
     raise ValueError(f"unknown observable: {observable!r}")
