@@ -147,13 +147,48 @@ long way unattended *safely*, and they are the precise **inverse** of an
 autonomous searcher's reward signal — fences that forbid, not markers that
 reward exploration.
 
+### Context engineering — the author's primary lever
+
+The single most load-bearing human contribution is not any individual
+decision but the **context architecture** the agent works inside. The
+corpus is deliberately factored into typed, atomic knowledge objects
+(manifest + narrative + formalization) and a library of task-scoped
+*skills*, so that the slice of corpus an agent needs for a given task —
+together with its constraints and conventions — fits inside a model
+context window and arrives already typed, current, and
+provenance-carrying. Setting context is not preamble to the
+methodology; it **is** the methodology's human half. The standing
+constraints of the table above are one face of it; the
+retrieval-sized factoring of content and skills is the other. An
+autonomous solve-and-return loop has no analogue of this lever,
+because its unit of work (one goal) never outlives one context.
+
+### Socratic steering — known-answer questions as a root-finding scheme
+
+A second pattern the session transcripts show: the author frequently
+asks questions whose answers he knows or nearly knows — not to obtain
+the answer, but to steer the agent's search toward the intended
+target. The dynamic is that of a damped root-finding iteration: the
+agent proposes, the author's question supplies a correction *near the
+truth*, and convergence is fast precisely because the initial
+corrections are good. Crucially, the same channel carries the
+opposite case with an honest marker — the author flags genuine
+knowledge gaps as such ("I don't recall…", "is X true?") so the agent
+can distinguish steering from sincere inquiry and raise its evidence
+threshold accordingly. The discussion-corpus meta-analysis (a planned
+companion artifact over the archived sessions) can classify these
+question types and measure their effect on convergence — turning an
+anecdotal methodology claim into a measurable one.
+
 ### Interaction types seen in practice
 
 A short taxonomy, drawn from the pull-request activity of real sessions:
 
 - **Author → agent.** Milestone-setting (terse); fork decisions (picking among
   surfaced options); authorization (explicit "merge it" / skip a failing
-  external check / send outward); mid-flight redirection ("do this one first").
+  external check / send outward); mid-flight redirection ("do this one first");
+  Socratic steering (known/nearly-known-answer questions as course
+  corrections, with genuine knowledge gaps flagged as such).
 - **Reviewer (automated) → agent.** Bot reviewers comment on landed commits; the
   agent dispositions each as **fix** (valid), **decline with rationale** (e.g. a
   relative-link suggestion that conflicts with the repo's stable-URL convention),
