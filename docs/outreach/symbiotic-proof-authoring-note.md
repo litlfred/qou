@@ -28,7 +28,7 @@ read, trust, cite, and extend.
 The two are not rivals. Autonomous search is a superb way to *close goals*;
 symbiotic authoring is about *keeping a living, legible, trustworthy body of
 mathematics around them*. The most interesting design space is where they
-compose (§8).
+compose (§9).
 
 | Dimension | Autonomous proof search (AlphaProof Nexus) | Symbiotic authoring (QOU / Folio) |
 |---|---|---|
@@ -375,7 +375,85 @@ provenance answers the second.
 
 ---
 
-## 8. How the two paradigms compose
+## 8. Many agents, one adjudicator
+
+In practice the loop of §3 is rarely a single agent. The working method that
+emerged over months of daily use is **deliberately redundant**: several agent
+sessions are pointed at the *same* problem from *different* perspectives — a
+different framing of the question, a different skill profile, a different
+branch — while the human author holds the three roles no agent holds:
+**adjudicator** (which answer survives), **priority-setter** (which line gets
+the next session), and **source of intuition** (which approach is worth
+pursuing, and which two distant-looking things are secretly the same thing).
+
+The obvious reading of this — parallelism as speedup — is the wrong one.
+Running one iterative scheme on more workers makes the same answer arrive
+sooner; that is Newton's method with a larger budget. The value of redundant
+*perspectives* is **evidential, not computational**:
+
+- **Agreement amplifies.** When approaches with genuinely different failure
+  modes — a structural derivation, an independent high-precision numerical
+  probe, a formalization attempt — converge on the same answer, the
+  convergence is evidence of a kind that no single method's internal
+  confidence can supply. (Internal cross-method agreement is a standing
+  target of the framework's compute discipline for exactly this reason.)
+- **Disagreement localizes.** When two approaches diverge, the divergence is
+  a pointer: the error lives in an assumption they do not share. In one
+  episode, six independently conceived closure ansätze for the same
+  per-partition quantity all failed on the simplest test nucleus — which
+  condemned the framing they shared, not the six implementations.
+- **Hallucination decorrelates.** A single session can confabulate fluently
+  and consistently *with itself*. It is much harder for several sessions,
+  primed differently, to confabulate the *same* fabrication. This is
+  independent-witness logic, and it is the cheapest hedge against model
+  hallucination we have found.
+
+The machine-learning literature reaches nearby conclusions from inside a
+single model: sampling diverse reasoning paths and keeping the consensus
+answer (self-consistency; Wang et al. 2023), letting several model instances
+debate (Du et al. 2023), and reading divergence across stochastic samples as
+a hallucination signal (Manakul et al. 2023). Our practice differs in two
+ways. The diversity is **engineered at the level of method and framing**, not
+sampled from one prompt — different skills, different starting documents,
+different branches. And the aggregation is **not a vote**: the author
+adjudicates, because the witnesses are not exchangeable — a one-line
+structural refutation outweighs three numerical probes that agree, and
+knowing which is which is precisely the intuition the human contributes. The
+division of labor that machine-assisted mathematics keeps arriving at —
+machine breadth, human judgment (Tao 2025) — is, in our experience, not a
+transitional arrangement but the design.
+
+Mechanically, the redundancy is cheap because the infrastructure assumes it:
+
+| Mechanism | Role in the independent-witness scheme |
+|---|---|
+| Several sessions on one problem, differently framed | the witnesses themselves |
+| Sibling-PR coordination (a standing skill: intent comments posted on branches with overlapping scope) | witnesses *know of each other*; overlap surfaces at the first commit, not at merge time |
+| Coordination ledgers (one shared markdown ledger per theme, under `docs/coordination/`) | adjudication memory — what was decided, by whom, on what evidence |
+| Standing integration watchers | auditors that re-examine everyone's landed work on every QA axis of §5 |
+| Cross-model review on every pull request | each PR is reviewed by automated reviewers from *different model families* (currently Gemini Code Assist and GitHub Copilot) in addition to the authoring agent — heterogeneous models as decorrelated error channels |
+
+The ledger row deserves emphasis, because redundancy has a failure mode of
+its own: **oscillation**. Independent sessions that share no memory can each
+re-derive a defensible-looking but opposite conclusion. Our canonical example
+is a precision-affecting coefficient that was wired into the production
+formula and un-wired again four times by different sessions over five days —
+each flip locally well argued. The oscillation itself was the diagnostic: two
+true facts ("truncating the series at this order beats the experimental bar"
+and "the coefficient equals this exact constant") had been conflated into one
+claim. The repair was **adjudication memory**: a ledger that records every
+flip with its commit, its argument, and its error mode, and that any new
+session must read before re-litigating; the question was then settled once,
+with a tiered verdict (proved / near-match / fitted) rather than a binary
+one. The flip-flop table for that coefficient holds six entries and has
+stopped growing.
+
+Human adjudication is what makes redundancy converge instead of oscillate;
+the ledgers are what make the adjudication durable.
+
+---
+
+## 9. How the two paradigms compose
 
 We see autonomous search and symbiotic authoring as **layers, not competitors.**
 
