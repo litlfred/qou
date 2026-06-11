@@ -48,7 +48,9 @@ One background extraction agent per session, emitting a typed sidecar
 | `corpus-grep-save` | "already resolved" catches | proof-gap-audit §K precedents |
 | `generalization-move` | special case → parametrized statement lifts | lean-generation / category-theory skills |
 | `prompt-pattern` | phrasings/decompositions that reliably worked | skill authoring guidance |
-| `socratic-steering` | known/nearly-known-answer questions used as course corrections, vs flagged genuine-gap questions; convergence effect per arc | methodology paper (the root-finding claim); outreach-note §Socratic steering |
+| `prompt-lexicon` | categorized author phrasings per register (steer / gap / seed) with usage counts and outcomes | the "related language" lists carried by `symbiotic-interaction` and sibling skills |
+| `socratic-steering` | known/nearly-known-answer questions used as course corrections, vs flagged genuine-gap questions; per-arc α̂ (coactive correction quality) and turns-to-convergence T per the formal adoption in the outreach note | methodology paper (the root-finding claim); outreach-note §Socratic steering |
+| `intuition-seed` | tenuous cross-domain identifications volunteered by the author (e.g. the Reeb-flow ↔ Julia-set linkage), with literature-absence check, validation latency, and verdict (validated→rigorized / refuted / undecidable-cheaply) | novelty attribution (auditable author-origin credit); methodology paper; `symbiotic-interaction` lexicon |
 | `failure-mode` | agent errors, misreadings, wasted passes | watcher checklists |
 
 Aggregation pass: cross-session frequency tables, exemplar selection
