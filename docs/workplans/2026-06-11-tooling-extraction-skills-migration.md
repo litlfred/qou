@@ -7,7 +7,15 @@ cherry-pick; soft outreach to the math OSS community; (b) finish the
 started-not-finished move of agent skills/MCP into `folio-assistant`;
 (c) endpoint: the qou repo becomes content-centric.
 
-**Status:** workplan; census appendix pending (background inventory agent).
+**Status:** workplan; census appendix:
+[`2026-06-11-tooling-extraction-census-appendix.md`](2026-06-11-tooling-extraction-census-appendix.md)
+(per-package verdicts: pyhecke/pyhecke-native/witness-schema mechanical;
+**hecke-engine needs-refactor** — 83 physics-coupled files, hardcoded Q_0 +
+nucleon-named functions in `src/gram.rs`; bindings trivial; Clarabel
+confirmed as the `litlfred/Clarabel.rs` fork @ `9673209` patched in two
+Cargo.tomls; 221/778 compute scripts consume the tools via the
+`hecke_core.py` choke point; skills migration = revive the archived
+`FOLIO_MIGRATION_PLAN.md` §Skills Audit).
 
 ## Confirmed structural facts (2026-06-11 spot-checks)
 
