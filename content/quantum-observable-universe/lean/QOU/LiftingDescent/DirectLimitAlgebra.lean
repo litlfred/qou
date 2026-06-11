@@ -1,4 +1,5 @@
 import Mathlib.Algebra.Module.Basic
+import Mathlib.Algebra.Module.LinearMap.Defs
 
 /-!
 # QOU.LiftingDescent.DirectLimitAlgebra — Direct limit of the endomorphism algebras
