@@ -607,6 +607,64 @@ A `theorem`/`lemma`/`proposition`/`corollary` whose dependency cone touches a
 `conjecture` cannot stay a provable kind: it is demoted, or made conditional on
 the conjecture as an explicit hypothesis (typed conjectural propagation, §4).
 
+The manifest face of the triple (§2) is a TypeScript **discriminated union**:
+`kind` is the discriminant, and the type system is what turns editorial policy
+into compile-time obligations — a `definition` without a Lean reference does
+not validate. Abridged from the production schema:
+
+```ts
+/** Fields shared by every block kind. */
+interface BlockBase {
+  label: string;        // kind-prefixed, stable, unique ("def:quantum-universe")
+  title?: string;
+  uses?: string[];      // IMMEDIATE dependencies only — the DAG edges; bare
+                        //   label, "paper-dir:label", or cross-folio URL
+  cites?: string[];     // bibliography keys (auto-extracted from \cite{})
+  tags?: string[];
+  authorNotes?: AuthorNote[]; // status / caveat / deprecation metadata, kept
+                              //   out of the scholarly prose and skipped by
+                              //   the default render (one-voice discipline)
+}
+
+/** A definition MUST be formalized — enforced by the type. */
+interface DefinitionBlock extends BlockBase {
+  kind: "definition";
+  lean: LeanRef;        // package-qualified: "qou:QOU.Torsion.lifting_exists"
+  examples?: string[];
+}
+
+/** Provable kinds: Lean expected but may be in flight. */
+interface ProvableBase extends BlockBase {
+  lean?: LeanRef;       // missing ⇒ pipeline warning, not error
+  proofs?: string[];    // labels of proof blocks
+  examples?: string[];
+}
+
+/** A remark must name the formal object it glosses. */
+interface RemarkBlock extends BlockBase {
+  kind: "remark";
+  interprets?: string;  // the provable block this remark explains — a remark
+                        //   with claims but no interprets is "dangling"
+  computation?: Computation; // optional computational witness backing
+}
+
+type Block =
+  | DefinitionBlock | TheoremBlock | LemmaBlock | PropositionBlock
+  | CorollaryBlock | AlgorithmBlock | ConjectureBlock | ExampleBlock
+  | RemarkBlock | ProofBlock | SimulatorBlock | ProseBlock
+  | EquationBlock | DiagramBlock | TableBlock;
+```
+
+Three fields do the structural work. `kind` is the policy discriminant:
+validation, label prefix, and formal obligation all dispatch on it (the table
+above). `uses` declares *immediate* dependencies only, so the corpus-wide
+dependency DAG is the transitive closure of locally asserted edges — this,
+together with `interprets`, is the typed graph that conjectural propagation
+(§4), the watchers (§5), and the implicit knowledge graph of §9 traverse. And
+`lean` is a package-qualified reference into the Lake workspace, which is what
+lets a hash-pinned QA verdict (below) assert not merely that *a* proof exists,
+but that *this* proof, of *this* statement, at *this* content hash, compiles.
+
 ### B. The QA sidecar (`<block>.qa.json`)
 
 One sidecar per object. Under each criterion id sits an append-only array of
