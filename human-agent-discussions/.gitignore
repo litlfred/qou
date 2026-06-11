@@ -1,3 +1,7 @@
 # Raw Claude data exports are dropped here for processing — never committed.
 _incoming/
 *.zip
+# Safety net: raw export files anywhere under this tree (archived sessions
+# are committed as session.md / session.pdf / metadata.json, never raw).
+conversations.json
+*.jsonl
