@@ -114,6 +114,25 @@ def main() -> None:
     print(f"    + 2/(3pi)               -> {s(inv_alpha_2term)}  resid {s(resid_2,4)}")
     print(f"    + 2/(3pi) + alpha/(4pi) -> {s(inv_alpha_3term)}  resid {s(resid_3,4)}")
 
+    # --- n=2 self-energy denominator grounded in b_1 (PR #1495 coordination) ---
+    h = q - 1 / q
+    bracket2 = q + 1 / q                       # [2]_q (substrate; tau_arch-evaluated)
+    denom_8pi = pi * b1                         # 8pi = pi*dim H^1 = pi*b_1 (b_1 topological, pi archimedean)
+    F1 = bracket2 / denom_8pi                   # [2]_q/(8pi) = [2]_q/(pi*b_1)  (Identity 1, PR #1495)
+    n2_term = alpha * F1 * (1 - h ** 2 * alpha) # alpha*[2]_q/(8pi)*(1-h^2 alpha)  (#1495 n=2 form)
+    inv_alpha_n2 = tree + photon_shift + n2_term
+    resid_n2 = (inv_alpha_n2 - codata) / codata
+    unif_product = photon_shift * denom_8pi     # n=1 * n=2-denom: pi cancels -> b_1^2/(4(g-1))
+    unif_target = mp.mpf(b1) ** 2 / (4 * (g - 1))
+    print()
+    print("  n=2 self-energy (PR #1495 form); denominator grounded in b_1:")
+    print(f"    [2]_q = {s(bracket2)}   8pi = pi*b_1 = pi*{b1} = {s(denom_8pi)}")
+    print(f"    F_1 = [2]_q/(8pi) = [2]_q/(pi*b_1) = {s(F1)}   (Identity 1)")
+    print(f"    n=2 term = alpha*[2]_q/(8pi)*(1-h^2 alpha) = {s(n2_term)}")
+    print(f"    tree + 2/(3pi) + n=2 -> {s(inv_alpha_n2)}  resid {s(resid_n2,4)}")
+    print(f"    unification: photon_shift*(pi*b_1) = {s(unif_product)} = "
+          f"b_1^2/(4(g-1)) = {s(unif_target)}  (pi-free)")
+
     w.set_description(
         "From-the-Lagrangian derivation of the alpha_EM correction 2/(3pi) "
         "(prop:em-coupling-bring-zero-mode open Status item).  The photon IR "
@@ -140,6 +159,23 @@ def main() -> None:
     w.add_data("inv_alpha_tree", str(tree))
     w.add_data("inv_alpha_resid_2term", str(resid_2))
     w.add_data("inv_alpha_resid_3term", str(resid_3))
+    w.add_data("bracket2_q", str(bracket2))
+    w.add_data("n2_denominator_8pi", str(denom_8pi))
+    w.add_data("F1_bracket2_over_pi_b1", str(F1))
+    w.add_data("n2_term_1495_form", str(n2_term))
+    w.add_data("inv_alpha_resid_n2_refined", str(resid_n2))
+    w.add_data("unification_product_pi_free", str(unif_product))
+    w.add_assertion(
+        "n=2 denominator 8pi = pi*b_1 (same b_1=8 Hodge datum as n=1; Lean selfEnergyDenominator_at_g4)",
+        computed=bool(abs(denom_8pi - 8 * pi) < mp.mpf(10) ** -25
+                      and abs(denom_8pi - pi * b1) < mp.mpf(10) ** -25),
+        expected=True, source="8pi = pi*dim H^1(M_Bring) = pi*b_1, b_1=2g=8",
+    )
+    w.add_assertion(
+        "n=1 x n=2 b_1-placements multiply pi-free to b_1^2/(4(g-1)) (Lean photon_selfEnergy_betti_product)",
+        computed=bool(abs(unif_product - unif_target) < mp.mpf(10) ** -25),
+        expected=True, source="(b_1/Area)*(pi*b_1) = b_1^2/(4(g-1)); pi cancels",
+    )
     w.add_assertion(
         "photon IR zero-mode b_1/Area = 2/(3pi) at g=4 (Lean photonZeroModeShift_at_g4)",
         computed=bool(abs(photon_shift - target) < mp.mpf(10) ** -30),
