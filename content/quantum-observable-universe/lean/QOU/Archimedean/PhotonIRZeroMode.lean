@@ -91,4 +91,36 @@ theorem surface_minus_naive_g4 :
   field_simp
   ring
 
+/-- The **n=2 self-energy denominator** is `π · b₁(M_g)` — the *same* harmonic
+    1-form count `b₁ = 2g` as the n=1 zero-mode, now in the denominator. This
+    grounds the empirical n=2 form `α·[2]_q/(8π)·(1−h²α)` of the α/(4π) thread
+    (PR #1495 RT-plan Identity 1: `[2]_q/(8π) = [2]_q/(π·dim H¹(M_Bring))`).
+
+    Boundary discipline: `b₁` is topological (`ℕ`), `π` is archimedean (`ℝ`);
+    the `[2]_q` numerator is the substrate Hecke integer, `τ_arch`-evaluated
+    separately (it is *not* an object of this archimedean computation). -/
+noncomputable def selfEnergyDenominator (g : ℕ) : ℝ := Real.pi * (betti1 g : ℝ)
+
+/-- At `g = 4` the self-energy denominator is `8π` (since `b₁ = 2g = 8`),
+    so the n=2 term's `8π` is `π·dim H¹(M_Bring)` — the same Betti number that
+    gives the n=1 zero-mode `2/(3π) = b₁/Area`. -/
+theorem selfEnergyDenominator_at_g4 : selfEnergyDenominator 4 = 8 * Real.pi := by
+  unfold selfEnergyDenominator betti1
+  push_cast
+  ring
+
+/-- **n=1 ↔ n=2 unification on the genus-4 Hodge data.** Both IR corrections are
+    built from the single Betti number `b₁(M_g) = 2g`: the n=1 zero-mode carries
+    it in the numerator (`photonZeroModeShift = b₁/Area`), the n=2 self-energy in
+    the denominator (`selfEnergyDenominator = π·b₁`). Their product is `π`-free,
+    `b₁²/(4(g-1))` — the archimedean `π` cancels, leaving a topological ratio. -/
+theorem photon_selfEnergy_betti_product (g : ℕ) (hg : (g : ℝ) ≠ 1) :
+    photonZeroModeShift g * selfEnergyDenominator g
+      = (betti1 g : ℝ) ^ 2 / (4 * ((g : ℝ) - 1)) := by
+  unfold photonZeroModeShift selfEnergyDenominator area betti1
+  have hπne : Real.pi ≠ 0 := Real.pi_ne_zero
+  have hg1 : (g : ℝ) - 1 ≠ 0 := sub_ne_zero.mpr hg
+  push_cast
+  field_simp
+
 end QOU.Archimedean.PhotonIRZeroMode
