@@ -41,7 +41,7 @@ import unicodedata
 from datetime import datetime, timezone
 from pathlib import Path
 
-VERSION = "1.2.0"
+VERSION = "1.3.0"
 REPO_SLUG = "litlfred/qou"
 GITHUB_URL = "https://github.com/" + REPO_SLUG
 
@@ -386,7 +386,24 @@ EVIDENCE_RANK = {"session-trailer": 0, "uuid-trailer": 1, "mentioned": 2}
 
 
 def build_related(conv, repo, trailers, use_github):
+    """→ (related dict, refs_raw dict). refs_raw is the extracted-refs record
+    persisted in metadata so --retag can recompute tags post-merge without
+    the original conversation."""
     prs, branches, shas, sess_mentioned = extract_refs(conv)
+    refs_raw = {"prs": prs, "branches": branches, "shas": shas,
+                "session_ids_mentioned": sess_mentioned}
+    related = build_related_from_refs(refs_raw, str(conv["id"]), repo,
+                                      trailers, use_github)
+    return related, refs_raw
+
+
+def build_related_from_refs(refs_raw, conv_id, repo, trailers, use_github):
+    """Pure-ish tag builder: (extracted refs + current git/GitHub state) →
+    related dict. Re-runnable post-merge to attach newly-landed PRs/commits."""
+    prs = refs_raw.get("prs", [])
+    branches = refs_raw.get("branches", [])
+    shas = refs_raw.get("shas", [])
+    sess_mentioned = refs_raw.get("session_ids_mentioned", [])
     commits = []  # (rank, {sha, subject, evidence}); sha kept full (40-char)
 
     def add_commit(sha, subject, evidence):
@@ -395,13 +412,13 @@ def build_related(conv, repo, trailers, use_github):
         }))
 
     sids = set(sess_mentioned)
-    if str(conv["id"]).startswith("session_"):
-        sids.add(str(conv["id"]))
+    if str(conv_id).startswith("session_"):
+        sids.add(str(conv_id))
     for sid in sorted(sids):
         for c in trailers.get(sid, []):
             add_commit(c["sha"], c["subject"], "session-trailer")
 
-    cid = str(conv["id"])
+    cid = str(conv_id)
     if cid and len(cid) >= 8 and not cid.startswith("session_"):
         for c in repo.grep_commits(cid):
             add_commit(c["sha"], c["subject"], "uuid-trailer")
@@ -476,9 +493,146 @@ def _gh_enrich(pr_map, branch_list, commit_list):
                              "evidence": "via-commit:" + c["sha"]}
 
 
+# ------------------------------------------------------- sensitive-info screen
+
+# High-confidence secrets: auto-redacted by default (must never reach a public
+# repo). Each pattern → label. Ordered most-specific first.
+SECRET_PATTERNS = [
+    ("anthropic-key", re.compile(r"sk-ant-[A-Za-z0-9_-]{16,}")),
+    ("github-token", re.compile(r"\b(?:gh[pousr]_[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]{20,})\b")),
+    ("aws-access-key", re.compile(r"\b(?:AKIA|ASIA)[0-9A-Z]{16}\b")),
+    ("google-api-key", re.compile(r"\bAIza[0-9A-Za-z_-]{35}\b")),
+    ("slack-token", re.compile(r"\bxox[baprs]-[A-Za-z0-9-]{10,}\b")),
+    ("openai-key", re.compile(r"\bsk-(?:proj-)?[A-Za-z0-9]{20,}\b")),
+    ("private-key-block", re.compile(r"-----BEGIN (?:[A-Z ]+ )?PRIVATE KEY-----")),
+    ("jwt", re.compile(r"\beyJ[A-Za-z0-9_-]{8,}\.[A-Za-z0-9_-]{8,}\.[A-Za-z0-9_-]{8,}\b")),
+    ("bearer-token", re.compile(r"[Bb]earer\s+[A-Za-z0-9._\-]{20,}")),
+    ("generic-secret-assign", re.compile(
+        r"(?i)\b(?:api[_-]?key|secret|password|passwd|token)\b\s*[:=]\s*"
+        r"['\"]?([A-Za-z0-9/+_\-]{12,})['\"]?")),
+]
+
+# Lower-confidence PII: flagged for human review, redacted only with
+# --redact-pii (expect false positives, e.g. version strings as IPv4).
+PII_PATTERNS = [
+    ("email", re.compile(r"\b[A-Za-z0-9._%+\-]+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,}\b")),
+    ("phone", re.compile(
+        r"(?<![\w.])(?:\+?\d{1,3}[ .\-]?)?\(?\d{3}\)?[ .\-]\d{3}[ .\-]\d{4}(?!\d)")),
+    ("ipv4", re.compile(r"(?<![\w.])(?:\d{1,3}\.){3}\d{1,3}(?![\w.])")),
+]
+
+
+def _redact_text(text, redact_pii):
+    """→ (redacted_text, counts). Secrets always masked; PII only if asked."""
+    counts = {}
+    if not text:
+        return text, counts
+    groups = list(SECRET_PATTERNS) + (list(PII_PATTERNS) if redact_pii else [])
+    for label, pat in groups:
+        def _sub(m, _label=label):
+            counts[_label] = counts.get(_label, 0) + 1
+            return "[REDACTED-%s]" % _label
+        text = pat.sub(_sub, text)
+    return text, counts
+
+
+def scan_text(text):
+    """→ {label: count} of secret + PII matches (no mutation; for reporting)."""
+    counts = {}
+    if not text:
+        return counts
+    for label, pat in SECRET_PATTERNS + PII_PATTERNS:
+        n = len(pat.findall(text))
+        if n:
+            counts[label] = counts.get(label, 0) + n
+    return counts
+
+
+def conv_blob(conv):
+    """All free text in a conversation (title + messages + attachments)."""
+    parts = [conv.get("title", "")]
+    for m in conv["messages"]:
+        parts.append(m.get("text", ""))
+        for a in m.get("attachments", []):
+            parts.append(a.get("content", ""))
+    return "\n".join(p for p in parts if p)
+
+
+def screen_conv(conv, redact=True, redact_pii=False):
+    """Scan a conversation; if redact, mutate its text to mask secrets
+    (always) and PII (only when redact_pii). → {"redacted": {label: n},
+    "flagged": {label: n}}; `flagged` = matches left in place for the user
+    to review (PII when redact_pii is off, everything when redact is off)."""
+    total = scan_text(conv_blob(conv))
+    redacted = {}
+    if redact:
+        def _apply(s):
+            new, c = _redact_text(s, redact_pii)
+            for k, v in c.items():
+                redacted[k] = redacted.get(k, 0) + v
+            return new
+        conv["title"] = _apply(conv.get("title", ""))
+        for m in conv["messages"]:
+            m["text"] = _apply(m.get("text", ""))
+            for a in m.get("attachments", []):
+                a["content"] = _apply(a.get("content", ""))
+    flagged = {k: v for k, v in total.items() if v > redacted.get(k, 0)}
+    return {"redacted": redacted, "flagged": flagged}
+
+
+def screen_severity(summary):
+    """High if any secret label present (redacted or flagged); else pii/clean."""
+    secret_labels = {lbl for lbl, _ in SECRET_PATTERNS}
+    hit = set(summary.get("redacted", {})) | set(summary.get("flagged", {}))
+    if hit & secret_labels:
+        return "SECRET"
+    if hit:
+        return "pii"
+    return "clean"
+
+
 # ------------------------------------------------------------- md rendering
 
 SOURCE_LABEL = {"claude-export": "claude.ai export", "claude-code": "Claude Code session log"}
+
+# Sentinels delimiting the auto-maintained "Related work" section in
+# session.md, so --retag can splice it in place without touching the
+# transcript below.
+RELATED_BEGIN = "<!-- related-work:begin (auto-maintained by archive_sessions.py) -->"
+RELATED_END = "<!-- related-work:end -->"
+
+
+def related_md_lines(related):
+    """Markdown lines for the Related-work section, wrapped in splice
+    sentinels. Used at archive time and re-spliced by --retag."""
+    L = [RELATED_BEGIN, "## Related work", ""]
+    any_rel = False
+    for pr in related.get("prs", []):
+        any_rel = True
+        bits = "**PR [#%d](%s)**" % (pr["number"], pr["url"])
+        if pr.get("title"):
+            bits += " — " + md_cell(pr["title"])
+        if pr.get("state"):
+            bits += " (%s)" % pr["state"].lower()
+        bits += " — *%s*" % pr.get("evidence", "")
+        L.append("- " + bits)
+    for c in related.get("commits", []):
+        any_rel = True
+        L.append("- **Commit `%s`** — %s — *%s*"
+                 % (c["sha"][:12], md_cell(c["subject"] or ""), c["evidence"]))
+    for b in related.get("branches", []):
+        any_rel = True
+        exists = b["exists_on_origin"]
+        note = ("on origin" if exists else
+                ("not found on origin" if exists is False else "origin unchecked"))
+        L.append("- **Branch `%s`** (%s)" % (b["name"], note))
+    for mtag in related.get("manual", []):
+        any_rel = True
+        L.append("- %s — *manual*" % md_cell(str(mtag)))
+    if not any_rel:
+        L.append("*No related PRs / commits / branches detected automatically.*")
+    L.append(RELATED_END)
+    return L
 
 
 def render_markdown(conv, related, hits, opts):
@@ -511,29 +665,7 @@ def render_markdown(conv, related, hits, opts):
     L.append("| Filter hits | %s |" % md_cell(", ".join(hits) or "—"))
     L.append("")
 
-    L.append("## Related work")
-    L.append("")
-    any_rel = False
-    for pr in related["prs"]:
-        any_rel = True
-        bits = "**PR [#%d](%s)**" % (pr["number"], pr["url"])
-        if pr.get("title"):
-            bits += " — " + md_cell(pr["title"])
-        if pr.get("state"):
-            bits += " (%s)" % pr["state"].lower()
-        bits += " — *%s*" % pr.get("evidence", "")
-        L.append("- " + bits)
-    for c in related["commits"]:
-        any_rel = True
-        L.append("- **Commit `%s`** — %s — *%s*"
-                 % (c["sha"][:12], md_cell(c["subject"] or ""), c["evidence"]))
-    for b in related["branches"]:
-        any_rel = True
-        exists = b["exists_on_origin"]
-        note = "on origin" if exists else ("not found on origin" if exists is False else "origin unchecked")
-        L.append("- **Branch `%s`** (%s)" % (b["name"], note))
-    if not any_rel:
-        L.append("*No related PRs / commits / branches detected automatically.*")
+    L.extend(related_md_lines(related))
     L.append("")
     L.append("---")
     L.append("")
@@ -807,6 +939,105 @@ def rerender_pdfs(root, args):
     return 0
 
 
+def extract_refs_from_md(md_text):
+    """Fallback ref extraction from an archived session.md (for sessions
+    predating the stored refs_raw field)."""
+    faux = {"title": "", "messages": [{"text": md_text, "tools": []}]}
+    prs, branches, shas, sess = extract_refs(faux)
+    return {"prs": prs, "branches": branches, "shas": shas,
+            "session_ids_mentioned": sess}
+
+
+def splice_related(md_text, related):
+    """Replace the sentinel-delimited Related-work section. → new md, or None
+    if the sentinels are absent (older archive predating them)."""
+    if RELATED_BEGIN not in md_text or RELATED_END not in md_text:
+        return None
+    pre = md_text.split(RELATED_BEGIN, 1)[0]
+    post = md_text.split(RELATED_END, 1)[1]
+    return pre + "\n".join(related_md_lines(related)) + post
+
+
+def retag(root, repo, args):
+    """Recompute related-work tags for every archived session against the
+    CURRENT git/GitHub state (no conversation input needed). Run post-merge
+    so a newly-landed PR/commit attaches to the discussion it came from.
+    Manual tags are preserved; INDEX.md + each session.md are refreshed."""
+    trailers = repo.trailer_map() if repo.ok() else {}
+    changed = 0
+    for meta_path in sorted(root.glob("*/*/metadata.json")):
+        try:
+            meta = json.loads(meta_path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            continue
+        md_path = meta_path.parent / "session.md"
+        refs_raw = meta.get("refs_raw")
+        if refs_raw is None and md_path.exists():
+            refs_raw = extract_refs_from_md(md_path.read_text(encoding="utf-8"))
+        if refs_raw is None:
+            continue
+        manual = meta.get("related", {}).get("manual", [])
+        new_related = build_related_from_refs(refs_raw, meta.get("id", ""),
+                                              repo, trailers, args.github)
+        new_related["manual"] = manual
+        meta_changed = (new_related != meta.get("related")
+                        or meta.get("refs_raw") != refs_raw)
+        # Re-splice session.md when its Related section is out of sync with
+        # the (recomputed + manual-preserved) tags — covers both newly-landed
+        # commits and hand-edited related.manual.
+        spliced = None
+        md_changed = False
+        if md_path.exists():
+            cur_md = md_path.read_text(encoding="utf-8")
+            spliced = splice_related(cur_md, new_related)
+            md_changed = spliced is not None and spliced != cur_md
+        if not meta_changed and not md_changed:
+            continue
+        if md_changed:
+            md_path.write_text(spliced, encoding="utf-8")
+            # Refresh the PDF from the re-spliced markdown so its Related
+            # section stays consistent (renderer works straight from md).
+            pdf_path = meta_path.parent / "session.pdf"
+            engine = detect_engine(getattr(args, "pdf_engine", "auto"))
+            used = render_pdf(md_path, pdf_path, spliced, meta.get("title") or "",
+                              engine, fonts=(args.pdf_mainfont, args.pdf_monofont))
+            if used and meta.get("pdf_engine") != used:
+                meta["pdf_engine"] = used
+                meta_changed = True
+        if meta_changed:
+            meta["related"] = new_related
+            meta["refs_raw"] = refs_raw
+            meta_path.write_text(
+                json.dumps(meta, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+        changed += 1
+        print("  retagged %s" % meta_path.parent.relative_to(root))
+    n = regenerate_index(root)
+    print("Retag: %d session(s) updated; INDEX.md lists %d." % (changed, n))
+    return 0
+
+
+def screen_report(matched):
+    """Print the sensitive-info screen for matched conversations; write
+    nothing. Lets the user eyeball findings before archiving."""
+    print("Sensitive-info screen (no files written):\n")
+    any_secret = False
+    for i, (conv, _hits) in enumerate(matched, 1):
+        summary = screen_conv(conv, redact=False)  # scan only
+        sev = screen_severity(summary)
+        any_secret = any_secret or sev == "SECRET"
+        findings = summary["flagged"]
+        desc = ", ".join("%s x%d" % (k, v) for k, v in sorted(findings.items())) or "clean"
+        print("  [%2d] %-7s %-8s %s" % (i, sev, conv["account"], conv["title"][:54]))
+        print("        %s" % desc)
+    if any_secret:
+        print("\nWARNING: SECRET-class matches found. These are auto-redacted on "
+              "archive (disable with --no-redact — NOT recommended for a public repo).")
+    else:
+        print("\nNo secret-class matches. PII (email/phone/ipv4) is flagged only; "
+              "pass --redact-pii to mask it on archive.")
+    return 0
+
+
 # ----------------------------------------------------------------- indexing
 
 def load_existing(root):
@@ -893,8 +1124,16 @@ def archive_one(conv, hits, root, repo, trailers, engine, opts, existing):
         manual = []
         status = "archived"
 
-    related = build_related(conv, repo, trailers, opts.github)
+    related, refs_raw = build_related(conv, repo, trailers, opts.github)
     related["manual"] = manual
+
+    # Sensitive-info screen: redact secrets (always) + PII (opt-in) BEFORE
+    # rendering, so neither md nor PDF can carry them into the public repo.
+    screen = screen_conv(conv, redact=not opts.no_redact, redact_pii=opts.redact_pii)
+    if screen["redacted"]:
+        log("    screen: redacted %s" % screen["redacted"])
+    if screen["flagged"]:
+        log("    screen: FLAGGED (left in place, review) %s" % screen["flagged"])
 
     md_text = render_markdown(conv, related, hits, opts)
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -916,6 +1155,8 @@ def archive_one(conv, hits, root, repo, trailers, engine, opts, existing):
         "message_count": len(conv["messages"]),
         "keyword_hits": hits,
         "related": related,
+        "refs_raw": refs_raw,
+        "screen": screen,
         "pdf_engine": engine_used,
         "archived_at": datetime.now(timezone.utc).isoformat(),
         "archiver": "archive_sessions.py@" + VERSION,
@@ -1040,8 +1281,20 @@ def main(argv=None):
                     help="git repo for tagging (default: auto-detect)")
     ap.add_argument("--github", action="store_true",
                     help="enrich tags via the gh CLI (PR titles, branch→PR, commit→PR)")
+    ap.add_argument("--no-redact", action="store_true",
+                    help="do NOT auto-redact detected secrets (not recommended "
+                         "for a public repo)")
+    ap.add_argument("--redact-pii", action="store_true",
+                    help="also redact PII (email / phone / ipv4), not just secrets")
+    ap.add_argument("--screen", action="store_true",
+                    help="report the sensitive-info screen for matches and exit "
+                         "(writes nothing)")
     ap.add_argument("--reindex", action="store_true",
                     help="only regenerate INDEX.md and exit")
+    ap.add_argument("--retag", action="store_true",
+                    help="recompute related-work tags for already-archived sessions "
+                         "against current git/GitHub state and exit (post-merge); "
+                         "no conversation input needed")
     ap.add_argument("--self-test", action="store_true",
                     help="run the end-to-end fixture self-test and exit")
     ap.add_argument("--version", action="version", version="%(prog)s " + VERSION)
@@ -1063,6 +1316,9 @@ def main(argv=None):
 
     if args.rerender_pdfs:
         return rerender_pdfs(root, args)
+
+    if args.retag:
+        return retag(root, repo, args)
 
     pairs = discover_inputs(args, root)
     if not pairs:
@@ -1089,10 +1345,14 @@ def main(argv=None):
             matched.append((conv, hits))
     matched.sort(key=lambda ch: (ch[0]["created_at"] or datetime.min.replace(tzinfo=timezone.utc)))
 
+    if args.screen:
+        return screen_report(matched)
+
     existing = load_existing(root)
 
     print("QOU-related conversations: %d matched of %d scanned.\n"
           % (len(matched), len(convs)))
+    any_secret = False
     for i, (conv, hits) in enumerate(matched, 1):
         key = (conv["account"], conv["id"])
         if key not in existing:
@@ -1101,16 +1361,23 @@ def main(argv=None):
             prior_updated = parse_ts(existing[key][1].get("updated_at"))
             status = ("UPDATED" if prior_updated and conv["updated_at"]
                       and conv["updated_at"] > prior_updated else "archived")
-        print("  [%2d] %s  %-12s %4d msgs  %-8s  %s" % (
+        sev = screen_severity(screen_conv(conv, redact=False))  # scan only
+        any_secret = any_secret or sev == "SECRET"
+        print("  [%2d] %s  %-12s %4d msgs  %-8s  %-6s  %s" % (
             i, (conv["created_at"] or conv["updated_at"]).strftime("%Y-%m-%d")
             if (conv["created_at"] or conv["updated_at"]) else "????-??-??",
-            conv["account"], len(conv["messages"]), status,
-            conv["title"][:70]))
+            conv["account"], len(conv["messages"]), status, sev,
+            conv["title"][:64]))
         print("        hits: %s" % ", ".join(hits))
+
+    if any_secret:
+        print("\nWARNING: SECRET-class matches present; auto-redacted on archive "
+              "(see --screen for detail, --no-redact to disable).")
 
     if args.list or not args.select:
         if not args.list:
-            print("\nNothing written. Re-run with --select all (or --select 1,3-5).")
+            print("\nNothing written. Re-run with --select all (or --select 1,3-5). "
+                  "Use --screen first to review sensitive-info findings.")
         return 0
 
     sel = parse_select(args.select, len(matched))
@@ -1154,7 +1421,9 @@ def self_test():
     qou_text = (
         "Let's revisit the Q_beta c_3 truncation order in litlfred/qou. "
         "PR #1821 settled the real-q family; commit %s is the latest probe. "
-        "Branch claude/qbeta-ck-audit-2026-05-31 had the audit doc." % head[:10]
+        "Branch claude/qbeta-ck-audit-2026-05-31 had the audit doc. "
+        "My key is sk-ant-api03-AAAABBBBCCCCDDDDEEEE1111 and token "
+        "ghp_AAAABBBBCCCCDDDDEEEE1111; reach me at alice@example.com." % head[:10]
     )
     if sid0:
         qou_text += " The Code session was https://claude.ai/code/%s." % sid0
@@ -1236,6 +1505,21 @@ def self_test():
         cmeta = by_title["fix lean build for hecke module"]
         assert "cwd:qou" in cmeta["keyword_hits"], "claude-code cwd match missing"
 
+        # refs_raw persisted for post-merge retag
+        assert 1821 in qmeta.get("refs_raw", {}).get("prs", []), "refs_raw missing PRs"
+
+        # sensitive-info screen: secrets redacted, PII flagged-not-redacted
+        qdir = next(p.parent for p in metas
+                    if json.loads(p.read_text())["title"].startswith("QOU:"))
+        qmd = (qdir / "session.md").read_text(encoding="utf-8")
+        assert "sk-ant-api03-AAAABBBB" not in qmd, "anthropic key not redacted"
+        assert "ghp_AAAABBBB" not in qmd, "github token not redacted"
+        assert "[REDACTED-anthropic-key]" in qmd, "redaction marker missing"
+        assert "alice@example.com" in qmd, "email should be flagged, not redacted by default"
+        assert qmeta["screen"]["redacted"].get("anthropic-key", 0) >= 1
+        assert qmeta["screen"]["flagged"].get("email", 0) >= 1, "email not flagged"
+        assert RELATED_BEGIN in qmd, "related-work splice sentinels missing"
+
         index = (archive_root / "INDEX.md").read_text(encoding="utf-8")
         assert "Q_beta c_3" in index and "Pasta" not in index
 
@@ -1245,8 +1529,25 @@ def self_test():
         metas2 = list(archive_root.glob("testacct/*/metadata.json"))
         assert len(metas2) == 2, "idempotent re-run created extra dirs"
 
-        print("SELF-TEST PASS (2 sessions archived, tagging + PDF + index OK; "
-              "engine=%s)" % (by_title[qmeta["title"]]["pdf_engine"]))
+        # retag: inject a manual tag, recompute against current state, confirm
+        # auto-tags survive, manual tag is preserved + spliced into session.md
+        qmp = qdir / "metadata.json"
+        qm = json.loads(qmp.read_text(encoding="utf-8"))
+        qm["related"]["manual"] = ["PR #9999 (hand-added)"]
+        qmp.write_text(json.dumps(qm, indent=2) + "\n", encoding="utf-8")
+        rc = main(["--retag", "--root", str(archive_root), "--repo", str(repo_root)])
+        assert rc == 0, "retag failed"
+        qm2 = json.loads(qmp.read_text(encoding="utf-8"))
+        assert any(p["number"] == 1821 for p in qm2["related"]["prs"]), "retag lost auto tag"
+        assert "PR #9999 (hand-added)" in qm2["related"]["manual"], "retag dropped manual tag"
+        qmd2 = (qdir / "session.md").read_text(encoding="utf-8")
+        assert "PR #9999 (hand-added)" in qmd2, "manual tag not spliced into session.md"
+        # retag again = no-op (idempotent)
+        rc = main(["--retag", "--root", str(archive_root), "--repo", str(repo_root)])
+        assert rc == 0
+
+        print("SELF-TEST PASS (2 sessions archived; tagging + PDF + index + "
+              "screen-redaction + retag OK; engine=%s)" % qmeta["pdf_engine"])
         shutil.rmtree(tmp, ignore_errors=True)
         return 0
     except AssertionError as e:
