@@ -25,13 +25,28 @@ human-agent-discussions/
 (e.g. `ofri`, `ofri-work`, `ofri-alt`) — lowercase letters, digits,
 hyphens.
 
+## Getting the `conversations.json` (pick one route per account)
+
+There is **no official API** for claude.ai chat history (the developer
+API at `api.anthropic.com` does not expose your conversations), so the
+input is always a `conversations.json`. Three ways to produce one:
+
+| Route | How | Pros / cons |
+|---|---|---|
+| **A. Official export** | claude.ai → Settings → Privacy → Export data → unzip | Sanctioned, robust; arrives by email (minutes–hours of delay) |
+| **B. Browser snippet** | paste [`tools/browser-export-snippet.js`](tools/browser-export-snippet.js) into the claude.ai DevTools console | Instant, no credentials leave the browser; unofficial endpoints (may break) |
+| **C. Scripted fetch** | `CLAUDE_SESSION_KEY=… python3 tools/fetch_claude_export.py --out …` | Fully scriptable; needs your `sessionKey` cookie (full account access — never commit/paste it), Cloudflare may block |
+
+Routes B and C hit claude.ai's **internal, undocumented** endpoints and
+may break without notice; A is the fallback. For C, set the cookie in the
+environment only (never on the command line / in chat); see the script
+header for how to obtain it.
+
 ## Quick start (repeat once per Claude account)
 
-1. On claude.ai (logged into that account): **Settings → Privacy →
-   Export data**. Download the zip from the email, unzip it.
-2. Drop its `conversations.json` into
-   `human-agent-discussions/_incoming/<account>/` (gitignored — raw
-   exports never get committed), or just note its path.
+1. Produce `conversations.json` via route A, B, or C above.
+2. Drop it into `human-agent-discussions/_incoming/<account>/`
+   (gitignored — raw exports never get committed), or just note its path.
 3. From the repo root:
 
    ```bash
