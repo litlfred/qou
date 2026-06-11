@@ -66,9 +66,12 @@ Items that would belong in such a queue:
 | Date | Agent / branch | Intent | Results |
 |------|----------------|--------|---------|
 | 2026-05-31 (cont. 3) | Claude / `claude/coord-ledgers-option-e-followup-2026-05-31` | backfill this ledger to track α_EM threads | landed; active PRs catalogued; anti-patterns cross-linked from refuted commits |
+| 2026-06-11 | Claude / `claude/hopeful-feynman-y0zsyy` (PR #2114) | prove from-the-Lagrangian `2/(3π)` (n=1) + coordinate n=2 with #1495 | Lean `PhotonIRZeroMode` sorry-free: `b₁(M_Bring)=2g=8`, Gauss–Bonnet `Area=4π(g-1)`, `2/(3π)=b₁/Area` (surface harmonic zero-mode, **not** the failed `M×S¹`); same `b₁=8` grounds #1495 RT-plan **Identity 1** `[2]_q/(8π)=[2]_q/(π·dim H¹)` → **n=1 & n=2 unified on genus-4 Hodge data**; `em-coupling-bring-zero-mode.md` + `alpha-em-derivation-open-problems.md` Status corrected (3-manifold guess → proven surface). Boundary: `b₁` topological, `π` archimedean, `[2]_q` substrate (τ_arch-evaluated). |
 
 ## Cross-refs
 
+- PR #2114 — α_EM **n=1** photon IR zero-mode `= b₁/Area` on Bring's surface (sorry-free Lean `PhotonIRZeroMode`); `b₁=2g=8` grounds #1495 Identity 1 (`8π = π·dim H¹`)
+- PR #1495 — α/(4π) thread ledger + RT 2-loop plan; the **n=2** self-energy `α·[2]_q/(8π)·(1−h²α)` track (Identity 1 `[2]_q/(8π)`, Identity 2 `−h²α` fermion loop)
 - PR #1511 (merged) — α_EM Habiro element `[2]_q · (1-h²α)` (the structural template)
 - `docs/audits/2026-05-30-qbeta-habiro-derivation-gap-plan.md` — Q_β analog plan
 - `docs/coordination/1ppq-qbeta.md` — sibling c_k saga
