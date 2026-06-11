@@ -362,7 +362,8 @@ for nucleon_name, quark_types in [("PROTON (u,u,d)", ['u', 'u', 'd']),
         print_nf(f"    {r['name'][:25]}", r['nf'])
 
     # ── Ranking by multiple criteria ──────────────────────────────
-    target_net = 0.999 if 'u' == quark_types[0] and quark_types.count('u') == 2 else 0.811
+    from derived_masses import TARGET_NET_PROTON, TARGET_NET_NEUTRON
+    target_net = TARGET_NET_PROTON if 'u' == quark_types[0] and quark_types.count('u') == 2 else TARGET_NET_NEUTRON
 
     print(f"\n  RANKING 1 — Naive (fewer demand channels, lower E_×):")
     ranked1 = sorted(results_table, key=lambda r: (r['n_demand'], r['E_x']))

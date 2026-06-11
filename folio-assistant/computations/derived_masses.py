@@ -65,7 +65,10 @@ with Δ(net) = net(n) - net(p) the difference of GS-NF coefficient
 sums between the canonical neutron and proton braids
 (`free-neutron-decay.witness.json` typed crossings):
 
-    net(n) = +0.81083, net(p) = +0.99913  →  Δ(net) = -0.18829
+#     net(n) = +0.81083, net(p) = +0.99913  →  Δ(net) = -0.18829
+
+TARGET_NET_NEUTRON = 0.81083
+TARGET_NET_PROTON = 0.99913
 
 ══════════════════════════════════════════════════════════════════
  OBSERVABLE vs VIRTUAL DECOMPOSITION
