@@ -24,15 +24,16 @@ Outputs `b-over-m-order-probe.witness.json`.
 """
 from __future__ import annotations
 
-import _path_bridge as _pb  # noqa: F401, E402 — substrate module bridge
-import json
 import sys
 from pathlib import Path
 
-import mpmath as mp
-
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
+
+import _path_bridge as _pb  # noqa: F401, E402 — substrate module bridge
+import json  # noqa: E402
+
+import mpmath as mp  # noqa: E402
 
 from _precision import set_compute_dps  # noqa: E402
 from q1_mass_gap_probe import plancherel_weight  # noqa: E402
@@ -49,7 +50,7 @@ EMPIRICAL = {
 
 
 def main() -> int:
-    with (_pb.witness_path("q-pinning-50-digit.witness.json", HERE)).open() as fh:
+    with (_pb.witness_path("q-pinning-50-digit.witness.json", HERE)).open(encoding="utf-8") as fh:
         q0 = mp.mpf(json.load(fh)["derived_50_digit"]["q"])
     h = q0 - 1
 
