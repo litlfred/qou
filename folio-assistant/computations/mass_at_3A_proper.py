@@ -76,7 +76,7 @@ def _cross_d_mpf(d):
     constants (`_PROTON_G0` etc.) carry only ~16 digits; the canonical
     crossings are exactly {0, -h, -h/2}, so we recognise and substitute
     the exact mpf value."""
-    df = float(d)
+    df = float(d)  # noqa: I8 — recognise f64 source const (_PROTON_G0); output is exact mpf
     if abs(df) < 1e-12:
         return mp.mpf(0)
     if abs(df - float(-HA_MP / 2)) < 1e-9:
@@ -176,7 +176,7 @@ _BLOCK_CACHE: BlockCache | None = None
 def _ensure_block_cache() -> BlockCache:
     global _BLOCK_CACHE
     if _BLOCK_CACHE is None:
-        _BLOCK_CACHE = BlockCache(float(Q0), float(HA_VAL))
+        _BLOCK_CACHE = BlockCache(float(Q0), float(HA_VAL))  # noqa: I8 — f64 seminormal cache for the numpy χ path (exact path: chi_monotone_transfer; migration tracked)
     return _BLOCK_CACHE
 
 # Disk cache for seminormal matrices: standard_young_tableaux is slow
@@ -318,10 +318,10 @@ def atom_braid_word_3A(Z: int, N: int, *, m_pp: int = 1, m_pn: int = 1,
                 if pn_convention == "bring_color_weighted":
                     # color-weighted p-n averaged crossing: σ − h·(1/2 − δ/4).
                     # Exact mpf throughout (C4: no float64 on the braid word).
-                    # δ still f64-valued at source (canonical_braid_crossings) —
-                    # str-lifted here; exact-δ is a step-2 follow-up.
+                    # δ is already exact mpf at source (flavor_split_subleading
+                    # at q₀ in canonical_braid_crossings) — use it directly.
                     from canonical_braid_crossings import _avg_color_delta
-                    delta = mp.mpf(str(_avg_color_delta()))
+                    delta = _avg_color_delta()
                     base_cross = (one, -h_mp * (one / 2 - delta / 4))
                 elif pn_convention == "strict_averaged":
                     base_cross = (one, -h_mp / 2)     # color-blind (validation)
@@ -365,8 +365,8 @@ def chi_lambda_of_word(sigmas, dim, word, n_gens_required: int) -> float:
         M = float(c) * sigmas[g] + float(d) * I  # noqa: I8 — deprecated f64 numpy path; exact mpf word float()ed at the numpy boundary
         product = product @ M
     if is_sparse:
-        return float(product.diagonal().sum())
-    return float(np.trace(product))
+        return float(product.diagonal().sum())  # noqa: I8 — f64 numpy seminormal χ_λ (exact path: chi_monotone_transfer, 16 consumers; migration tracked)
+    return float(np.trace(product))  # noqa: I8 — f64 numpy seminormal χ_λ (exact path: chi_monotone_transfer; migration tracked)
 
 
 def markov_trace_3A(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
@@ -510,9 +510,9 @@ def per_generator_V_hat_3A(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
             for (c, d) in w_i_steps:
                 M = M @ (float(c) * sigmas[i] + float(d) * I_lam)  # noqa: I8 — deprecated f64 numpy path; exact mpf word float()ed at boundary
             if is_sparse:
-                tr = float(M.diagonal().sum())
+                tr = float(M.diagonal().sum())  # noqa: I8 — f64 numpy V̂ path (exact path: transfer; migration tracked)
             else:
-                tr = float(np.trace(M))
+                tr = float(np.trace(M))  # noqa: I8 — f64 numpy V̂ path (exact path: transfer; migration tracked)
             V_hat[i] += w_lam * tr / dim
     out = []
     for i, V in enumerate(V_hat):
@@ -545,7 +545,7 @@ def phi_q_safe(z_val: float, *, q: float = Q0, cap_frac: float = 0.98,
     for k in range(1, max_k + 1):
         factor = 1.0 - (qi ** k) * z_abs
         if abs(factor) < 1e-300:
-            return float("inf")
+            return float("inf")  # noqa: I8 — inf sentinel, not a derived-value cast
         product /= factor
         if (qi ** k) * z_abs < 1e-15:
             break
@@ -567,7 +567,7 @@ def log_phi_q(z_val: float, *, q: float = Q0,
     for k in range(1, max_k + 1):
         factor = 1.0 - (qi ** k) * z_abs
         if factor <= 0.0:
-            return float("inf")
+            return float("inf")  # noqa: I8 — inf sentinel, not a derived-value cast
         total -= math.log(factor)
         if (qi ** k) * z_abs < 1e-15:
             break

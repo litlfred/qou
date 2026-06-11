@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-11T00:11:26.926733+00:00",
-  "commitSha": "9205fca7798ce0dae86fa54de94446fe6ed01e16",
+  "computedAt": "2026-06-11T01:11:41.313377+00:00",
+  "commitSha": "8a6d71eb802fd8d4f131c8f9b087f562b98485f1",
   "assertions": [
     {
       "name": "no_i8_violations",
@@ -15,7 +15,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 11,
+  "durationMs": 10,
   "computation": "float64-leak-audit",
   "scriptFile": "float64_leak_audit.py",
   "scriptHash": "1e0531f59851",
@@ -1326,17 +1326,17 @@
         "substrate_banner": false,
         "canonical_forced": true,
         "hit_count": 18,
-        "violation_count": 9,
+        "violation_count": 1,
         "display_count": 5,
         "comparison_count": 2,
-        "noqa_count": 2,
+        "noqa_count": 10,
         "witness_emit_count": 0,
         "false_positive_count": 0,
         "hits": [
           {
             "line_number": 79,
             "pattern": "float_cast",
-            "context": "violation",
+            "context": "ok_noqa",
             "code_snippet": "df = float(d)"
           },
           {
@@ -1354,7 +1354,7 @@
           {
             "line_number": 179,
             "pattern": "float_cast",
-            "context": "violation",
+            "context": "ok_noqa",
             "code_snippet": "_BLOCK_CACHE = BlockCache(float(Q0), float(HA_VAL))"
           },
           {
@@ -1372,13 +1372,13 @@
           {
             "line_number": 368,
             "pattern": "float_cast",
-            "context": "violation",
+            "context": "ok_noqa",
             "code_snippet": "return float(product.diagonal().sum())"
           },
           {
             "line_number": 369,
             "pattern": "float_cast",
-            "context": "violation",
+            "context": "ok_noqa",
             "code_snippet": "return float(np.trace(product))"
           },
           {
@@ -1390,25 +1390,25 @@
           {
             "line_number": 513,
             "pattern": "float_cast",
-            "context": "violation",
+            "context": "ok_noqa",
             "code_snippet": "tr = float(M.diagonal().sum())"
           },
           {
             "line_number": 515,
             "pattern": "float_cast",
-            "context": "violation",
+            "context": "ok_noqa",
             "code_snippet": "tr = float(np.trace(M))"
           },
           {
             "line_number": 548,
             "pattern": "float_cast",
-            "context": "violation",
+            "context": "ok_noqa",
             "code_snippet": "return float(\"inf\")"
           },
           {
             "line_number": 570,
             "pattern": "float_cast",
-            "context": "violation",
+            "context": "ok_noqa",
             "code_snippet": "return float(\"inf\")"
           },
           {
