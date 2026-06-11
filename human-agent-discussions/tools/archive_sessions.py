@@ -41,7 +41,7 @@ import unicodedata
 from datetime import datetime, timezone
 from pathlib import Path
 
-VERSION = "1.1.0"
+VERSION = "1.2.0"
 REPO_SLUG = "litlfred/qou"
 GITHUB_URL = "https://github.com/" + REPO_SLUG
 
@@ -333,8 +333,14 @@ class Repo:
                 found.append({"sha": sha, "subject": subj})
         return found
 
-    def branch_on_origin(self, name):
-        """True/False if determinable, None on network failure."""
+    def branch_on_origin(self, name, fast=False):
+        """True/False if determinable, None when unknown.
+
+        Checks local remote-tracking refs first; with fast=False falls back
+        to a `git ls-remote` network probe. With fast=True the network probe
+        is skipped (returns None for branches absent from local refs) so the
+        default offline path makes no network calls.
+        """
         if name in self._branch_cache:
             return self._branch_cache[name]
         result = None
@@ -344,7 +350,7 @@ class Repo:
         )
         if rc == 0:
             result = True
-        else:
+        elif not fast:
             rc, out, _ = run(
                 ["git", "ls-remote", "--heads", "origin", name],
                 cwd=self.path, timeout=20,
@@ -381,11 +387,11 @@ EVIDENCE_RANK = {"session-trailer": 0, "uuid-trailer": 1, "mentioned": 2}
 
 def build_related(conv, repo, trailers, use_github):
     prs, branches, shas, sess_mentioned = extract_refs(conv)
-    commits = []  # (rank, {sha12, subject, evidence})
+    commits = []  # (rank, {sha, subject, evidence}); sha kept full (40-char)
 
     def add_commit(sha, subject, evidence):
         commits.append((EVIDENCE_RANK.get(evidence, 9), {
-            "sha": sha[:12], "subject": subject, "evidence": evidence,
+            "sha": sha, "subject": subject, "evidence": evidence,
         }))
 
     sids = set(sess_mentioned)
@@ -417,7 +423,7 @@ def build_related(conv, repo, trailers, use_github):
         pr_map[n] = {"number": n, "url": "%s/pull/%d" % (GITHUB_URL, n),
                      "evidence": "mentioned"}
 
-    branch_list = [{"name": b, "exists_on_origin": repo.branch_on_origin(b)}
+    branch_list = [{"name": b, "exists_on_origin": repo.branch_on_origin(b, fast=not use_github)}
                    for b in branches]
 
     if use_github and shutil.which("gh"):
@@ -520,7 +526,7 @@ def render_markdown(conv, related, hits, opts):
     for c in related["commits"]:
         any_rel = True
         L.append("- **Commit `%s`** — %s — *%s*"
-                 % (c["sha"], md_cell(c["subject"] or ""), c["evidence"]))
+                 % (c["sha"][:12], md_cell(c["subject"] or ""), c["evidence"]))
     for b in related["branches"]:
         any_rel = True
         exists = b["exists_on_origin"]
@@ -669,8 +675,13 @@ def _md_to_styled_lines(md_text, width=100):
             lines.append(("code", ""))
             continue
         if in_fence:
-            for seg in textwrap.wrap(raw, width=width) or [""]:
-                lines.append(("code", seg))
+            # Preserve exact indentation/spacing (code is whitespace-
+            # sensitive); only hard-chunk lines wider than the page.
+            if len(raw) <= width:
+                lines.append(("code", raw))
+            else:
+                for i in range(0, len(raw), width):
+                    lines.append(("code", raw[i:i + width]))
             continue
         if stripped.startswith("# "):
             lines.append(("h1", stripped[2:]))
