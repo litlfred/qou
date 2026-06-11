@@ -76,27 +76,48 @@ noncomputable def stdRep3_genInv0 : TMatrix :=
 noncomputable def stdRep3_genInv1 : TMatrix :=
   stdRep3_gen1 - HA_t • 1
 
+/-! ## §1a  Laurent-`T` arithmetic closers
+
+  The per-entry goals below live in `R_t = ℤ[t, t⁻¹] = AddMonoidAlgebra ℤ ℤ`,
+  where `t · t⁻¹ = 1` is `T 1 * T (-1) = T 0` — an `AddMonoidAlgebra`
+  fact, **not** a `ring` fact (`ring` treats `T 1` and `T (-1)` as
+  independent atoms and cannot use the relation).  The closers below
+  therefore unfold all scalars to `T`-monomials, distribute, fold every
+  product with `← LaurentPolynomial.T_add` (so `T m * T n` becomes
+  `T (m + n)` with a *literal* exponent), and let `norm_num` evaluate
+  the exponent arithmetic; the surviving goal is ℤ-linear in distinct
+  `T k` atoms, which the ring-normalising core of `norm_num` closes. -/
+
+/-- `q − HA = q⁻¹` in `R_t` (pure ring identity, no `t·t⁻¹` relation). -/
+lemma q_from_t_sub_HA_t : q_from_t - HA_t = q_inv_from_t := by
+  unfold HA_t
+  ring
+
 /-! ## §2  Hecke relation verification -/
 
 /-- σ₀ satisfies the Hecke relation in the standard representation. -/
 -- Ref: [jones1987]
 theorem stdRep3_hecke0 :
     stdRep3_gen0 * stdRep3_gen0 = HA_t • stdRep3_gen0 + 1 := by
-  ext i j
+  ext i j : 1
   fin_cases i <;> fin_cases j <;>
-    simp [stdRep3_gen0, HA_t, q_from_t, q_inv_from_t,
-          Matrix.mul_apply, Fin.sum_univ_two, Matrix.of] <;>
-    ring
+    simp [stdRep3_gen0, Matrix.mul_apply, Fin.sum_univ_two, Matrix.of_apply] <;>
+    simp only [HA_t, q_from_t, q_inv_from_t, t, t_inv, sub_mul,
+               ← LaurentPolynomial.T_add, Int.reduceAdd, Int.reduceNeg,
+               LaurentPolynomial.T_zero] <;>
+    ring1
 
 /-- σ₁ satisfies the Hecke relation in the standard representation. -/
 -- Ref: [jones1987]
 theorem stdRep3_hecke1 :
     stdRep3_gen1 * stdRep3_gen1 = HA_t • stdRep3_gen1 + 1 := by
-  ext i j
+  ext i j : 1
   fin_cases i <;> fin_cases j <;>
-    simp [stdRep3_gen1, HA_t, q_from_t, q_inv_from_t,
-          Matrix.mul_apply, Fin.sum_univ_two, Matrix.of] <;>
-    ring
+    simp [stdRep3_gen1, Matrix.mul_apply, Fin.sum_univ_two, Matrix.of_apply] <;>
+    simp only [HA_t, q_from_t, q_inv_from_t, t, t_inv, sub_mul,
+               ← LaurentPolynomial.T_add, Int.reduceAdd, Int.reduceNeg,
+               LaurentPolynomial.T_zero] <;>
+    ring1
 
 /-! ## §3  Braid relation verification -/
 
@@ -105,11 +126,14 @@ theorem stdRep3_hecke1 :
 theorem stdRep3_braid :
     stdRep3_gen0 * stdRep3_gen1 * stdRep3_gen0 =
     stdRep3_gen1 * stdRep3_gen0 * stdRep3_gen1 := by
-  ext i j
+  ext i j : 1
   fin_cases i <;> fin_cases j <;>
-    simp [stdRep3_gen0, stdRep3_gen1, q_from_t, q_inv_from_t,
-          Matrix.mul_apply, Fin.sum_univ_two, Matrix.of] <;>
-    ring
+    simp [stdRep3_gen0, stdRep3_gen1, Matrix.mul_apply, Fin.sum_univ_two,
+          Matrix.of_apply] <;>
+    simp only [q_from_t, q_inv_from_t, t, t_inv, add_mul, neg_mul, one_mul,
+               ← LaurentPolynomial.T_add, Int.reduceAdd, Int.reduceNeg,
+               LaurentPolynomial.T_zero] <;>
+    ring1
 
 /-! ## §3a  T(3, n) center: (σ₀ σ₁)^3 = I in (2,1) — q-independent -/
 
@@ -143,11 +167,14 @@ theorem stdRep3_M_cubed_eq_one :
   -- Unfold M^3 into an explicit triple product so `simp` can chew it
   -- with `Matrix.mul_apply` + `Fin.sum_univ_two`.
   rw [show (3 : ℕ) = 2 + 1 from rfl, pow_succ, sq]
-  ext i j
+  ext i j : 1
   fin_cases i <;> fin_cases j <;>
-    simp [stdRep3_gen0, stdRep3_gen1, q_from_t, q_inv_from_t,
-          Matrix.mul_apply, Fin.sum_univ_two, Matrix.of] <;>
-    ring
+    simp [stdRep3_gen0, stdRep3_gen1, Matrix.mul_apply, Fin.sum_univ_two,
+          Matrix.of_apply] <;>
+    simp only [q_from_t, q_inv_from_t, t, t_inv, mul_add, add_mul, neg_mul,
+               mul_neg, mul_one, one_mul, ← LaurentPolynomial.T_add,
+               Int.reduceAdd, Int.reduceNeg, LaurentPolynomial.T_zero] <;>
+    ring1
 
 /-! ## §3b  Borromean (2,1) character — named definition + structural properties
 
@@ -257,13 +284,18 @@ noncomputable def borromeanColorSum : TMatrix :=
 -- Ref: [leitner2026] https://doi.org/10.xxxx/qou
 theorem halfBorromean_trivial_eval (n : ℕ) (i j : Fin (n - 1)) :
     (trivRep n).halfBorromeanMat i j = 1 := by
-  simp [HeckeRep.halfBorromeanMat, HeckeRep.genInv, trivRep]
-  -- After unfolding: (q•1 - HA•1) * (q•1) * (q•1) * (q•1 - HA•1) = 1
-  simp [smul_mul_assoc, mul_smul_comm]
-  rw [show (q_from_t - HA_t) * q_from_t * q_from_t * (q_from_t - HA_t) = (1 : R_t) from by
-    unfold HA_t q_from_t q_inv_from_t t t_inv
-    ring]
-  simp
+  -- Scalar identity first: (q − HA)·q·q·(q − HA) = q⁻¹·q·q·q⁻¹ = 1,
+  -- closed by `linear_combination` against `q·q⁻¹ = 1` (NOT by `ring`:
+  -- the relation `t·t⁻¹ = 1` is an `AddMonoidAlgebra` fact, see §1a).
+  have hscalar : (q_from_t - HA_t) * (q_from_t * (q_from_t * (q_from_t - HA_t)))
+      = (1 : R_t) := by
+    rw [q_from_t_sub_HA_t]
+    linear_combination (q_from_t * q_inv_from_t + 1) * q_from_t_mul_q_inv_from_t
+  simp [HeckeRep.halfBorromeanMat, HeckeRep.genInv, trivRep, ← sub_smul]
+  -- Goal: (q − HA) • q • q • (q − HA) • 1 = 1.  Fold the smul chain
+  -- into one scalar, then discharge it with `hscalar`.
+  simp only [smul_smul]
+  rw [hscalar, one_smul]
 
 /-- Every conjugated half-Borromean also evaluates to the identity
     in the trivial representation (same reasoning: commutator in
@@ -271,12 +303,16 @@ theorem halfBorromean_trivial_eval (n : ℕ) (i j : Fin (n - 1)) :
 -- Ref: [leitner2026] https://doi.org/10.xxxx/qou
 theorem halfBorromeanConj_trivial_eval (n : ℕ) (i j : Fin (n - 1)) :
     (trivRep n).halfBorromeanConjMat i j = 1 := by
-  simp [HeckeRep.halfBorromeanConjMat, HeckeRep.genInv, trivRep]
-  simp [smul_mul_assoc, mul_smul_comm]
-  rw [show (q_from_t - HA_t) * (q_from_t - HA_t) * q_from_t * q_from_t = (1 : R_t) from by
-    unfold HA_t q_from_t q_inv_from_t t t_inv
-    ring]
-  simp
+  -- Scalar identity: q·q·(q − HA)·(q − HA) = q·q·q⁻¹·q⁻¹ = 1 (see §1a);
+  -- stated in the operand order simp produces in the smul chain below.
+  have hscalar : q_from_t * (q_from_t * ((q_from_t - HA_t) * (q_from_t - HA_t)))
+      = (1 : R_t) := by
+    rw [q_from_t_sub_HA_t]
+    linear_combination (q_from_t * q_inv_from_t + 1) * q_from_t_mul_q_inv_from_t
+  simp [HeckeRep.halfBorromeanConjMat, HeckeRep.genInv, trivRep, ← sub_smul]
+  -- Goal: q • q • (q − HA) • (q − HA) • 1 = 1.
+  simp only [smul_smul]
+  rw [hscalar, one_smul]
 
 /-! ## §7  Axial coupling ratio (symbolic) -/
 
