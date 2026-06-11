@@ -1,0 +1,65 @@
+{
+  "version": "v1-partial",
+  "date": "2026-06-11",
+  "frozen_note": "Pre-commitment artifact: the rules and ledgers below are fixed BEFORE computing the information credit. Any change requires a new dated version of this file; git history is the timestamp (owner directive 2026-06-11: the repo is the audit log). Consumed by mdl_bit_count.py.",
+  "prior_range_convention": {
+    "rule": "uniform relative prior of 4 decades (factor 1e4) per dimensionless observable",
+    "rationale": "one conservative uniform prior for every observable; deliberately forgoes per-observable tuning so the convention itself carries no fitted freedom",
+    "sensitivity_note": "±1 decade on the prior shifts every observable's credit by ±3.32 bits uniformly; report this band alongside totals"
+  },
+  "credit_rule": "bits_i = log2(prior_rel / max(err_rel_i, sigma_exp_rel_i)); achieved agreement is credited even where the (stricter) 100x L2 target is missed — MDL compression and L2 targets are different games",
+  "anchor_exclusion_rule": "dashboard rows whose role mentions 'anchor' or 'CAL' are excluded from credit and charged under L_calibrations at the precision actually consumed",
+  "L_calibrations": [
+    {
+      "name": "m_e scale fixing",
+      "bits_rule": "0",
+      "note": "unit choice: all observables are dimensionless in m_e units; a unit convention carries no information"
+    },
+    {
+      "name": "q0 via m_p/m_e proton anchor (2026-05-28 re-pin)",
+      "rel_precision_used": 6.0e-11,
+      "note": "CODATA 2022 m_p/m_e at 0.06 ppb; charge log2(prior_rel / rel_precision_used)"
+    },
+    {
+      "name": "Q_beta / tau_n width (CAL-2 measurement leg)",
+      "rel_precision_used": 7.8e-7,
+      "note": "~780 ppb CAL floor per docs/precision-goals.md"
+    },
+    {
+      "name": "m_pi via tau_pi (CAL-3)",
+      "rel_precision_used": 2.4e-6,
+      "note": "PLACEHOLDER precision (PDG m_pi± class); refine from the CAL-3 witness in v2"
+    }
+  ],
+  "L_structural_choices": [
+    {
+      "name": "muon knot assignment K = 4_1",
+      "alternatives_considered": 36,
+      "status": "PLACEHOLDER count",
+      "evidence": "census-size to be pinned from m_tau_knot_prediction.py's exhaustive SnapPy sweep in v2; the tau-search script documents the searched space honestly (it reported failure)"
+    },
+    {
+      "name": "c_3 wire/unwire decision history (Q_beta chain)",
+      "alternatives_considered": 7,
+      "status": "counted",
+      "evidence": "docs/coordination/1ppq-qbeta.md flip-flop table (6 recorded reversals => 7 hypotheses searched)"
+    },
+    {
+      "name": "Delta_lambda closure-ansatz survivor pre-charge",
+      "alternatives_considered": 7,
+      "status": "pending",
+      "evidence": "docs/audits/2026-05-18-delta-lambda-gating-context.md (six failed ansatze A-F); the log2(7) charge applies to whichever ansatz eventually closes; listed now so the charge is pre-committed, excluded from totals until the gate closes"
+    }
+  ],
+  "L_framework_core": {
+    "bits": null,
+    "status": "NOT YET COUNTED (v1 limitation)",
+    "rule": "the shared machinery (Hecke algebra, Markov trace, Vol/rho formula) is charged as one fixed program iff it is applied identically across observables; every per-observable tweak discovered during the v2 audit bills to L_structural_choices instead",
+    "consequence": "until counted, the compression ratio C = I / L_known is an UPPER bound and must be reported as such"
+  },
+  "caveats": [
+    "v1 covers the 7-observable 100x dashboard only; the full mass/binding table extends I substantially in v2",
+    "MDL accounting itself has researcher degrees of freedom (the prior convention); it is pre-committed here precisely so it cannot drift after results are seen",
+    "independence: m_n and Q_beta are not independent given m_p and m_e (Q_beta = m_n - m_p - m_e); the script must not double-credit — m_n is credited, Q_beta is anchor-excluded, which resolves v1; revisit for the full table"
+  ]
+}
