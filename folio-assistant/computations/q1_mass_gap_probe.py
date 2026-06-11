@@ -45,6 +45,7 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
 from _precision import set_compute_dps  # noqa: E402
+from partition_utils import hook_lengths  # noqa: E402 — centralized hook-length util
 
 set_compute_dps()
 
@@ -52,11 +53,10 @@ set_compute_dps()
 # ── q-combinatorics (balanced convention, matches qou_substrate.q_int) ──
 
 def q_int(k: int, q: mp.mpf) -> mp.mpf:
-    """Balanced quantum integer [k]_q = (q^k − q^{−k})/(q − q^{−1});
-    [k]_1 = k (limit, taken exactly at q = 1)."""
-    if q == 1:
-        return mp.mpf(k)
-    return (q ** k - q ** -k) / (q - 1 / q)
+    """Balanced quantum integer [k]_q = Σ_{j=0}^{k-1} q^{k-1-2j}
+    (equals (q^k − q^{−k})/(q − q^{−1}); the summation form is exact at
+    q = 1 and avoids cancellation as q → 1 — Gemini review, PR #2113)."""
+    return mp.fsum(q ** (k - 1 - 2 * j) for j in range(k))
 
 
 def q_factorial(n: int, q: mp.mpf) -> mp.mpf:
@@ -80,20 +80,6 @@ def partitions_of(n: int):
                 yield (k,) + r
 
     yield from gen(n, n)
-
-
-def hook_lengths(lam: tuple) -> list[int]:
-    """Hook lengths h_x = arm + leg + 1 (same loop as pyhecke.wedderburn)."""
-    lam_l = list(lam)
-    if not lam_l:
-        return []
-    width = lam_l[0]
-    conj = [sum(1 for p in lam_l if p > j) for j in range(width)]
-    hooks = []
-    for i, li in enumerate(lam_l):
-        for j in range(li):
-            hooks.append((li - j - 1) + (conj[j] - i - 1) + 1)
-    return hooks
 
 
 def q_hook_product(lam: tuple, q: mp.mpf) -> mp.mpf:

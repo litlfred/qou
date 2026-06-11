@@ -132,10 +132,11 @@ theorem gapBound_at_one : gapBound 1 = 0 := by
   sorry
 
 /-- Uniform-in-n gap, conditional form (§3b-cond conditional-class
-    pattern): the transfer-matrix gap statement to be developed in S1b/S1c. -/
-class SubstrateGap (q : ℝ) : Prop where
+    pattern), parametrized by the level-n excitation spectrum; S1b pins
+    `spectrum` to the transfer-matrix `𝒯_q` excitation energies. -/
+class SubstrateGap (q : ℝ) (spectrum : ℕ → Set ℝ) : Prop where
   one_lt : 1 < q
-  gap_uniform : True  -- placeholder; refined by the S1b operator definition
+  gap_uniform : ∀ n : ℕ, ∀ E ∈ spectrum n, E ≠ 0 → gapBound q ≤ E
 
 end QOU.BraidKnot
 ```
