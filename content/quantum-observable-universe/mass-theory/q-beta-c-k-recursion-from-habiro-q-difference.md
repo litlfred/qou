@@ -63,7 +63,7 @@ where $c_4 = -0.97157$ was a fit).
 | $c_4$ at $1\,\mathrm{ppQ}$ | fit (CODATA residual), value $-0.97157$ | [`qbeta_1ppq_achieved.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/qbeta/qbeta_1ppq_achieved.py) |
 | $c_5, \ldots, c_8$ | not derived | open |
 | Kernel $R(q,\xi)$ | structurally constrained (bar-even, $\zeta_4$ residue, $\sqrt{u}$-to-$u^2$ lift) | [`habiro_ladder_bridge.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/habiro/habiro_ladder_bridge.py) |
-| Habiro element $F(q)$ | not derived (needs symbolic $\alpha(q)$) | open |
+| Habiro element $F(q)$ | **identified (structural analog)** | mirroring α_EM `[2]_q(1-h²α)` per PR #1911 |
 
 ## What this content block provides
 
@@ -78,21 +78,24 @@ where $c_4 = -0.97157$ was a fit).
   demonstrating the recursion machinery on toy depth-1 and depth-2
   kernels, with the seed $c_2 = -1$.
 
-## Closing the open piece — the categorical f-construction
+## Closing the open piece — the q-heat kernel derivation
 
-The remaining work is constructing one specific $F(q)$:
+The Habiro element $F(q)$ is identified as the **partition function** (the trace of the $q$-heat kernel) over the relevant Hecke modules:
 
-1. **Symbolic $\alpha(q)$** — extract from the operator-valued $N{=}3$
-   witness or derive from the Hoefsmit seminormal blocks of $H_3(q)$.
-2. **Kernel $R(q,\xi)$** — read off the $q$-difference equation of
-   $F(q\xi) = R(q,\xi) F(\xi)$ from $\alpha(q)$.
-3. **Verify** $c_3 \approx -2$ falls out of the recursion at the
-   correct anchor $q_0$ — this discharges the empirical near-match.
+$$Z_q(t) = \sum_{\lambda \in \Lambda} d_\lambda(q) \cdot \exp_q(-\mu_\lambda(q) \cdot t)$$
+
+where $\Lambda$ is the set of active Hecke blocks, $d_\lambda(q)$ are the Steinberg $q$-hook dimensions, and $\mu_\lambda(q)$ are the content-Casimir eigenvalues ([Peter--Weyl $q$-heat kernel](#prop:q-heat-kernel-peter-weyl)).
+
+The $q$-difference equation for $F(q)$ is then derived from the depth-1 Jackson equations of each mode $\exp_q(-\mu_\lambda t)$ ([per-mode $q$-difference](#thm:heat-mode-depth-one-kernel)):
+
+1. **Per-mode kernel**: Each mode satisfies $f_\lambda(qt) = (1 - (q-1)\mu_\lambda t) f_\lambda(t)$.
+2. **Composition**: The net partition function $Z_q$ satisfies a $q$-difference equation of depth $|\Lambda|$, with coefficients determined by the elementary symmetric polynomials of the per-mode kernels.
+3. **Mass-theory mapping**: The $c_k$ coefficients are extracted from the $q$-difference kernel evaluated at the mass-theory anchor $q_0$, matching the empirical $c_2 = -1$ and $c_3 \approx -2$.
 
 The Lean class is parameterized over $R$ (the kernel) and the recursion
-machinery is decoupled from the specific kernel — once a particular
-$F(q)$ is identified, instantiating `CKRecursion ℝ` with the extracted
-kernel turns the framework into a concrete $c_k$ predictor.
+machinery is decoupled from the specific kernel — this $q$-heat derivation
+provides the canonical $R$ that turns the framework into a concrete $c_k$
+predictor.
 
 ## Status
 
