@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-10T23:32:23.677737+00:00",
-  "commitSha": "faf47bbaaebe238d7a55ce2920902466fef54395",
+  "computedAt": "2026-06-11T00:04:07.009643+00:00",
+  "commitSha": "39b919853dcfdf3500797944ba37b1d47c5fadbc",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2053,8 +2053,11 @@
         "alpha-basis-knot-couplings.witness.json",
         "alpha-em-4pi-fixed-point-solve.witness.json",
         "alpha-em-4pi-q0-sensitivity.witness.json",
+        "alpha-em-no-pi-4-3-source.witness.json",
+        "alpha-em-no-pi-correction-probe.witness.json",
         "alpha-k-jones-markov-h3.witness.json",
         "alpha-k-jones-markov-h4.witness.json",
+        "alpha-k-per-force-assembly.witness.json",
         "ame-2020-binding-energies.witness.json",
         "applied-uniqueness-mass-table.witness.json",
         "atom-braid-active-partitions.witness.json",
@@ -2798,6 +2801,7 @@
         "rho-k-leading-order-verification.witness.json",
         "rho-prefactor-structural-verifier.witness.json",
         "rho-w-crystal-vertex-trace.witness.json",
+        "rosso-jones-three-strand-delta-q.witness.json",
         "rt-binomial-trace-evaluation-probe.witness.json",
         "rt-habiro-borromean-cross-validation.witness.json",
         "rt-route-cross-particle-ratio-quantum-dim.witness.json",
