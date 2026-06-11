@@ -460,8 +460,8 @@ search does not, and it deserves to be stated plainly.
 
 The corpus long ago exceeded every available context window. The content tree
 alone is roughly nine megabytes of narrative markdown across some three
-thousand files, beside roughly four thousand typed manifests and a dependency
-graph of several thousand edges. Even the dependency DAG *by itself* — every
+thousand files, alongside roughly four thousand typed manifests and a
+dependency graph of several thousand edges. Even the dependency DAG *by itself* — every
 object's label, kind, and edges, with no bodies at all — no longer fits in a
 single window. No session, however long, sees the whole corpus; every agent
 works from a window-sized slice of it.
