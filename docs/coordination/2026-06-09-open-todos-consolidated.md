@@ -96,6 +96,14 @@ merge commit; needs cherry-pick not rebase).
 | H1 | `Σm=0 ⟺ 𝒪(ℙ(V))=A^{coT}` proposition — needs Lean weight-grading on `ℙ(V)=G_q/T_q` | session-handover §3 | medium |
 | H2 | Conjecture-consumer triage on 13 newly-tagged `conj:*` blocks (commit `a54f1f8b`) — which open conjectures unblock most downstream | #2039 §6-1 | ≤1 session, high-leverage |
 
+## J. QA Integration Audit & Code Review
+| # | Todo | Source | Size |
+|---|------|--------|------|
+| J1 | Full agent-review drain (7780 gaps) — prioritized by `proof-narrative-lean-equiv` axis | GEMINI-2026-06-11 | ongoing |
+| J2 | Fix CCR-1: hardcoded muon uncertainty in `q_pinning_50_digit.py` | todos/CCR-1 | trivial |
+| J3 | Fix CCR-2: native float downcast in `rho_k_markov_multiplicativity_probe.py` | todos/CCR-2 | small |
+| J4 | Complete `compute-code-review` backlog for remaining technical assets | GEMINI-2026-06-11 | ongoing |
+
 ## I. Research-grade parked probes
 I1 Δ_λ step-9b SW-residue/q-difference (preflight done) · I2 ζ₅ Goncharov depth-3 via Markov-trace (scaffold) · I3 Mass=Vol×Density+δ from non-abelian Stokes · I4 Mass-sweep A>12 (gated on H_{3A}) · I5 Yekutieli substrate m_p (Bring-zero-mode; 54 ppb residual) · I6 Flavor-split m_n/Δ_pn Habiro X(q) · I7 Casimir ξ_{even≥2} (parked, gated on N_⊙) · I8 Optical-fibre 1D QOU · I9 QA-backlog proof-braids.
 
