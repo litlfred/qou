@@ -593,7 +593,13 @@ jobs:
   # published site)
   deploy:
     name: Deploy to gh-pages (gated)
-    needs: assemble
+    # `content-pipeline` must be a direct need: job outputs only
+    # propagate from jobs listed in `needs[]`, so without it the
+    # `needs.content-pipeline.outputs.filename-base` below evaluates
+    # to the empty string and the download step looks for an artifact
+    # literally named `site-` (every dispatch since the gating change
+    # failed this way — see run 27085072799, 2026-06-07).
+    needs: [assemble, content-pipeline]
     if: github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     permissions:
