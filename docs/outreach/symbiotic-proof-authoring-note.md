@@ -553,8 +553,37 @@ A one-line summary:
 > legible, trustworthy body of mathematics around them.**
 
 We would genuinely enjoy comparing notes — on the gap taxonomy, on integrity
-checking, on where a search core could plug into an authoring loop, and on what
-each paradigm has learned about keeping large language models honest.
+checking, on where a search core could plug into an authoring loop, on memory
+and retrieval over corpora that no longer fit a context window (§9), and on
+what each paradigm has learned about keeping large language models honest.
+
+---
+
+## References
+
+- Chandak, P., Huang, K., and Zitnik, M. *Building a knowledge graph to
+  enable precision medicine.* Scientific Data **10**, 67 (2023).
+  doi:10.1038/s41597-023-01960-3.
+- Du, Y., Li, S., Torralba, A., Tenenbaum, J. B., and Mordatch, I. *Improving
+  Factuality and Reasoning in Language Models through Multiagent Debate.*
+  arXiv:2305.14325 (2023); ICML 2024.
+- Gao, S., et al. *TxAgent: An AI Agent for Therapeutic Reasoning Across a
+  Universe of Tools.* arXiv:2503.10970 (2025).
+- Google DeepMind (AlphaProof Nexus). *Advancing Mathematics Research with
+  AI-Driven Formal Proof Search.* arXiv:2605.22763 (2026).
+- Lewis, P., Perez, E., Piktus, A., Petroni, F., Karpukhin, V., Goyal, N.,
+  Küttler, H., Lewis, M., Yih, W., Rocktäschel, T., Riedel, S., and Kiela, D.
+  *Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks.*
+  Advances in Neural Information Processing Systems 33 (NeurIPS 2020).
+  arXiv:2005.11401.
+- Manakul, P., Liusie, A., and Gales, M. J. F. *SelfCheckGPT: Zero-Resource
+  Black-Box Hallucination Detection for Generative Large Language Models.*
+  EMNLP 2023. arXiv:2303.08896.
+- Tao, T. *Machine-Assisted Proof.* Notices of the American Mathematical
+  Society **72**(1) (2025).
+- Wang, X., Wei, J., Schuurmans, D., Le, Q., Chi, E., Narang, S., Chowdhery,
+  A., and Zhou, D. *Self-Consistency Improves Chain of Thought Reasoning in
+  Language Models.* ICLR 2023. arXiv:2203.11171.
 
 ---
 
