@@ -132,6 +132,14 @@ def main() -> None:
     print(f"    tree + 2/(3pi) + n=2 -> {s(inv_alpha_n2)}  resid {s(resid_n2,4)}")
     print(f"    unification: photon_shift*(pi*b_1) = {s(unif_product)} = "
           f"b_1^2/(4(g-1)) = {s(unif_target)}  (pi-free)")
+    # --- Identity 2 = the alpha_EM Habiro deformation (1-h^2 alpha) ---
+    habiro_H = bracket2 * (1 - h ** 2 * alpha)      # H(q) = [2]_q(1-h^2 alpha)
+    n2_via_habiro = alpha * habiro_H / denom_8pi    # = alpha*H(q)/(pi*b_1)
+    habiro_match = abs(n2_via_habiro - n2_term) < mp.mpf(10) ** -30
+    print(f"    Identity 2 = (1-h^2 alpha): the alpha_EM Habiro deformation "
+          f"(prop:alpha-em-habiro-bar-involution)")
+    print(f"    H(q) = [2]_q(1-h^2 alpha) = {s(habiro_H)}   n=2 = alpha*H(q)/(pi*b_1) "
+          f"= {s(n2_via_habiro)} (match: {habiro_match})")
 
     w.set_description(
         "From-the-Lagrangian derivation of the alpha_EM correction 2/(3pi) "
@@ -175,6 +183,13 @@ def main() -> None:
         "n=1 x n=2 b_1-placements multiply pi-free to b_1^2/(4(g-1)) (Lean photon_selfEnergy_betti_product)",
         computed=bool(abs(unif_product - unif_target) < mp.mpf(10) ** -25),
         expected=True, source="(b_1/Area)*(pi*b_1) = b_1^2/(4(g-1)); pi cancels",
+    )
+    w.add_data("habiro_H_q", str(habiro_H))
+    w.add_data("n2_via_habiro_alpha_H_over_pi_b1", str(n2_via_habiro))
+    w.add_assertion(
+        "Identity 2: n=2 = alpha*H(q)/(pi*b_1), H=[2]_q(1-h^2 alpha) the alpha_EM Habiro element",
+        computed=bool(habiro_match), expected=True,
+        source="prop:alpha-em-habiro-bar-involution; (1-h^2 alpha) is the Habiro deformation",
     )
     w.add_assertion(
         "photon IR zero-mode b_1/Area = 2/(3pi) at g=4 (Lean photonZeroModeShift_at_g4)",
