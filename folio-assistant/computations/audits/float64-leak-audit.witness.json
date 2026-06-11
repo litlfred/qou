@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-10T19:53:53.920440+00:00",
-  "commitSha": "166099eb275fd7b580e053d68f5ff0bc3f2b17aa",
+  "computedAt": "2026-06-11T00:11:26.926733+00:00",
+  "commitSha": "9205fca7798ce0dae86fa54de94446fe6ed01e16",
   "assertions": [
     {
       "name": "no_i8_violations",
@@ -15,11 +15,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 12,
+  "durationMs": 11,
   "computation": "float64-leak-audit",
   "scriptFile": "float64_leak_audit.py",
   "scriptHash": "1e0531f59851",
-  "scriptCommitSha": "e13a68f98b0431ccfa5b467dfcddc0cb3e07c233",
+  "scriptCommitSha": "78d4baa3342f5ea93724e7401ccb5bacdf22a8cc",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -1325,106 +1325,118 @@
         "path": "computations/mass_at_3A_proper.py",
         "substrate_banner": false,
         "canonical_forced": true,
-        "hit_count": 16,
-        "violation_count": 11,
+        "hit_count": 18,
+        "violation_count": 9,
         "display_count": 5,
-        "comparison_count": 0,
-        "noqa_count": 0,
+        "comparison_count": 2,
+        "noqa_count": 2,
         "witness_emit_count": 0,
         "false_positive_count": 0,
         "hits": [
           {
-            "line_number": 161,
+            "line_number": 79,
+            "pattern": "float_cast",
+            "context": "violation",
+            "code_snippet": "df = float(d)"
+          },
+          {
+            "line_number": 82,
+            "pattern": "float_cast",
+            "context": "ok_comparison",
+            "code_snippet": "if abs(df - float(-HA_MP / 2)) < 1e-9:"
+          },
+          {
+            "line_number": 84,
+            "pattern": "float_cast",
+            "context": "ok_comparison",
+            "code_snippet": "if abs(df - float(-HA_MP)) < 1e-9:"
+          },
+          {
+            "line_number": 179,
             "pattern": "float_cast",
             "context": "violation",
             "code_snippet": "_BLOCK_CACHE = BlockCache(float(Q0), float(HA_VAL))"
           },
           {
-            "line_number": 187,
+            "line_number": 205,
             "pattern": "fstring_precision_f",
             "context": "violation",
             "code_snippet": "stem_name = f\"n{n}_q{Q0:.10f}_shape{'-'.join(map(str, shape))}\""
           },
           {
-            "line_number": 285,
+            "line_number": 365,
             "pattern": "float_cast",
-            "context": "violation",
-            "code_snippet": "word.append((float(c), float(d), base_g0))"
+            "context": "ok_noqa",
+            "code_snippet": "M = float(c) * sigmas[g] + float(d) * I"
           },
           {
-            "line_number": 287,
-            "pattern": "float_cast",
-            "context": "violation",
-            "code_snippet": "word.append((float(c), float(d), base_g1))"
-          },
-          {
-            "line_number": 303,
-            "pattern": "float_cast",
-            "context": "violation",
-            "code_snippet": "delta = float(_avg_color_delta())"
-          },
-          {
-            "line_number": 347,
+            "line_number": 368,
             "pattern": "float_cast",
             "context": "violation",
             "code_snippet": "return float(product.diagonal().sum())"
           },
           {
-            "line_number": 348,
+            "line_number": 369,
             "pattern": "float_cast",
             "context": "violation",
             "code_snippet": "return float(np.trace(product))"
           },
           {
-            "line_number": 492,
+            "line_number": 511,
+            "pattern": "float_cast",
+            "context": "ok_noqa",
+            "code_snippet": "M = M @ (float(c) * sigmas[i] + float(d) * I_lam)"
+          },
+          {
+            "line_number": 513,
             "pattern": "float_cast",
             "context": "violation",
             "code_snippet": "tr = float(M.diagonal().sum())"
           },
           {
-            "line_number": 494,
+            "line_number": 515,
             "pattern": "float_cast",
             "context": "violation",
             "code_snippet": "tr = float(np.trace(M))"
           },
           {
-            "line_number": 527,
+            "line_number": 548,
             "pattern": "float_cast",
             "context": "violation",
             "code_snippet": "return float(\"inf\")"
           },
           {
-            "line_number": 549,
+            "line_number": 570,
             "pattern": "float_cast",
             "context": "violation",
             "code_snippet": "return float(\"inf\")"
           },
           {
-            "line_number": 729,
+            "line_number": 750,
             "pattern": "fstring_precision_f",
             "context": "ok_display",
             "code_snippet": "print(f\"E_0 = {args.E0:.4f} MeV  (free-neutron β-decay Q, \""
           },
           {
-            "line_number": 791,
+            "line_number": 812,
             "pattern": "fstring_precision_f",
             "context": "ok_display",
             "code_snippet": "print(f\"\\nMarkov   |Δm/m|% summary:  min={min(dms):.4f}%, \""
           },
           {
-            "line_number": 792,
+            "line_number": 813,
             "pattern": "fstring_precision_f",
             "context": "ok_display",
             "code_snippet": "f\"max={max(dms):.4f}%, mean={sum(dms)/len(dms):.4f}%\")"
           },
           {
-            "line_number": 795,
+            "line_number": 816,
             "pattern": "fstring_precision_f",
             "context": "ok_display",
             "code_snippet": "print(f\"Tower    |Δm/m|% summary:  min={min(dms_t):.4f}%, \""
           },
           {
-            "line_number": 796,
+            "line_number": 817,
             "pattern": "fstring_precision_f",
             "context": "ok_display",
             "code_snippet": "f\"max={max(dms_t):.4f}%, mean={sum(dms_t)/len(dms_t):.4f}%\")"

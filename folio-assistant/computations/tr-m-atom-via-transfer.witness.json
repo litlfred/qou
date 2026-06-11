@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-10T13:09:33.299011+00:00",
-  "commitSha": "7466f7a7baf2eb2ab4b05d7cc9b895e986336b12",
+  "computedAt": "2026-06-11T00:14:39.615358+00:00",
+  "commitSha": "ee8f08a49fbf5730948712f5f5ea7ddcdecee4d2",
   "assertions": [
     {
       "name": "trM_atom_deuteron_matches_canonical_branching",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 27,
+  "durationMs": 21,
   "computation": "tr-m-atom-via-transfer",
   "scriptFile": "tr_m_atom_via_transfer.py",
   "scriptHash": "a4ca8399cf66",
-  "scriptCommitSha": "7466f7a7baf2eb2ab4b05d7cc9b895e986336b12",
+  "scriptCommitSha": "eee9a1359fc62b1a2f94b96726e6e45afaf164cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -58,7 +58,7 @@
         "tr_M_atom": "0.104071075788061376840309362011",
         "tr_M_free": "0.908023915599213337520468969164",
         "delta_tr_M_abs": "0.803952839811151960680159607154",
-        "wall_sec": 0.006
+        "wall_sec": 0.005
       },
       {
         "atom": "3He",
@@ -67,7 +67,7 @@
         "tr_M_atom": "0.206578470100370555262972038968",
         "tr_M_free": "1.04775632535497967178251196526",
         "delta_tr_M_abs": "0.841177855254609116519539926291",
-        "wall_sec": 0.006
+        "wall_sec": 0.005
       },
       {
         "atom": "4He",
@@ -76,7 +76,7 @@
         "tr_M_atom": "0.0553584253498219620046953186771",
         "tr_M_free": "0.967323456417826073256242335901",
         "delta_tr_M_abs": "0.911965031068004111251547017224",
-        "wall_sec": 0.02
+        "wall_sec": 0.017
       },
       {
         "atom": "6Li",
@@ -85,7 +85,7 @@
         "tr_M_atom": "0.0078910734200952748242326878973",
         "tr_M_free": "0.951387801142672000566129766491",
         "delta_tr_M_abs": "0.943496727722576725741897078593",
-        "wall_sec": 0.21
+        "wall_sec": 0.173
       },
       {
         "atom": "7Li",
@@ -94,19 +94,19 @@
         "tr_M_atom": "0.00211463178444521250082303262508",
         "tr_M_free": "0.878352832547479455451161225264",
         "delta_tr_M_abs": "0.876238200763034242950338192639",
-        "wall_sec": 0.579
+        "wall_sec": 0.437
       }
     ],
     "convention": "bring_color_weighted",
     "q_str": "1.1099785827513808",
     "host": {
       "cpu": {
-        "model": "Intel(R) Xeon(R) Processor @ 2.80GHz",
-        "mhz": 2800.21,
+        "model": "Intel(R) Xeon(R) Processor @ 2.10GHz",
+        "mhz": 2100.0,
         "logical_cores": 4,
         "physical_cores": 4
       },
-      "memory_total_kb": 16466560,
+      "memory_total_kb": 16461176,
       "os": {
         "pretty_name": "Ubuntu 24.04.4 LTS",
         "kernel": "6.18.5",
