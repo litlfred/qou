@@ -28,7 +28,7 @@ read, trust, cite, and extend.
 The two are not rivals. Autonomous search is a superb way to *close goals*;
 symbiotic authoring is about *keeping a living, legible, trustworthy body of
 mathematics around them*. The most interesting design space is where they
-compose (§9).
+compose (§10).
 
 | Dimension | Autonomous proof search (AlphaProof Nexus) | Symbiotic authoring (QOU / Folio) |
 |---|---|---|
@@ -453,7 +453,85 @@ the ledgers are what make the adjudication durable.
 
 ---
 
-## 9. How the two paradigms compose
+## 9. An honest limitation: the corpus no longer fits in the window
+
+Symbiotic authoring has a structural weakness that autonomous, per-problem
+search does not, and it deserves to be stated plainly.
+
+The corpus long ago exceeded every available context window. The content tree
+alone is roughly nine megabytes of narrative markdown across some three
+thousand files, beside roughly four thousand typed manifests and a dependency
+graph of several thousand edges. Even the dependency DAG *by itself* — every
+object's label, kind, and edges, with no bodies at all — no longer fits in a
+single window. No session, however long, sees the whole corpus; every agent
+works from a window-sized slice of it.
+
+The recurrent symptom is **failure to recall that a result already exists.**
+The author's most common intervention, across months of sessions, is some
+variant of *"didn't we prove that already?"* — and it resolves in two
+distinct modes that are worth separating, because only one of them is even
+partially a solved problem.
+
+**Mode 1 — retrieval failure.** The result exists, verbatim or nearly; the
+agent simply did not look where it lives. A representative exchange:
+
+> **Author:** Why are you deriving the selection rules from scratch? We
+> proved that already — the partition shapes give the rules. See the
+> molecular-angles analysis.
+>
+> **Agent:** I don't have that in context — searching the corpus for it now.
+> […] Found it: the symmetric-block analysis derives the bond-angle table
+> from the partition data, and the rule I was about to re-derive is a special
+> case of its master table. Citing that instead.
+
+The agent's "memory" of the corpus is whatever it greps during the session;
+the pointer had to come from the author. In the worst observed run of this
+failure, three consecutive audit items were declared "open" against a single
+source file's stale status note, each later found to be already resolved
+elsewhere in the corpus; the post-mortem traced all three to the same scoping
+error — trusting one file's self-description instead of searching the whole
+tree.
+
+**Mode 2 — the analogy the system could not surface.** Sometimes *"didn't we
+prove that already?"* is not about a missed search hit but about the author's
+intuition that two superficially different concepts are the same concept — a
+connection no string search would return, because the two passages share no
+vocabulary (one phrased in knot diagrams, say, the other in representation
+data). These are the productive ones: once stated, the connection often
+collapses a planned derivation into a citation plus a translation lemma. The
+system has no mechanism that produces these. The author does.
+
+Our current mitigations are **search discipline, not learned retrieval**: a
+mandatory backward corpus-grep before any agent may declare an item "open"
+(four search paths — the audit record, the whole content tree, the
+computation scripts, the coordination ledgers — must all come back empty);
+the content-hash-pinned QA sidecars of §5, which at least keep what *has*
+been audited from silently drifting; the standing watchers, which re-walk the
+corpus continuously; and, candidly, the author's episodic memory, which
+functions as the de-facto retrieval index of the project. These measures have
+substantially reduced mode-1 failures. They do nothing for mode 2.
+
+The honest gap, then: the project uses **no retrieval-augmented generation
+and no knowledge-graph memory layer.** Retrieval-augmented architectures are
+well established (Lewis et al. 2020), and the strongest current practice for
+grounding language-model agents in a large structured corpus comes from
+biomedicine — e.g. PrimeKG, a multimodal precision-medicine knowledge graph
+(Chandak, Huang & Zitnik 2023), and the knowledge-grounded agents built over
+such resources by the same group (Gao et al. 2025). We have nothing
+comparable, and we feel the absence weekly. The irony is that a typed
+knowledge graph already implicitly exists here: the `uses` / `interprets`
+dependency DAG over typed content objects *is* one — typed nodes (definition
+/ theorem / conjecture / …), typed edges (dependency, interpretation,
+citation), each node carrying a narrative face well suited to embedding.
+Grounding agent retrieval in that graph, rather than in the author's memory
+plus a grep, is the most obvious next step this project has not taken. The
+constraint any such layer must respect is the one this note keeps returning
+to: retrieval may *propose*, but provenance still *disposes* — a recalled
+claim enters the text only with its citation, hash, and typed status intact.
+
+---
+
+## 10. How the two paradigms compose
 
 We see autonomous search and symbiotic authoring as **layers, not competitors.**
 
