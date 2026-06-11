@@ -100,7 +100,7 @@ noncomputable def axialCouplingRatio : FractionRing R_t :=
 
 /-! ## §4  Key properties -/
 
-/-- The symmetric trace of ANY element in `H₃(q)` is independent
+/-! The symmetric trace of ANY element in `H₃(q)` is independent
     of the braid word — it depends only on the total linking number.
 
     This is because `e_{(3)}` is a 1-dimensional idempotent:
@@ -133,7 +133,7 @@ noncomputable def axialCouplingRatio : FractionRing R_t :=
 abbrev InSymmetricIdempotent (x : TMatrix) : Prop :=
   QOU.Mathlib.InSymmetricIdempotent x
 
-/-- **Symmetric trace ordering-independence — proved theorem.**
+/-! **Symmetric trace ordering-independence — proved theorem.**
 
     With the `InSymmetricIdempotent` hypotheses on `x` and `y` and
     equal σ-exponent sums, the symmetric character is identical, so
