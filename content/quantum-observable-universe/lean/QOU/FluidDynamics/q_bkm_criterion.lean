@@ -1,3 +1,5 @@
+import Mathlib.Data.Real.Basic
+
 /-!
 # QOU.FluidDynamics.q_bkm_criterion — `q`-Beale–Kato–Majda criterion
 

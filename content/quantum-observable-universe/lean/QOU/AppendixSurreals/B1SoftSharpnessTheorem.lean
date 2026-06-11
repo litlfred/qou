@@ -1,3 +1,5 @@
+import Mathlib.Data.Nat.Notation
+
 /-!
 # Soft sharpness of B1 is theorem-level
 

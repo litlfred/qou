@@ -1,3 +1,5 @@
+import Mathlib.Data.Nat.Notation
+
 /-!
 # QOU.volume_from_rigidity — `rank(V) = 2` from symplectic self-duality
 

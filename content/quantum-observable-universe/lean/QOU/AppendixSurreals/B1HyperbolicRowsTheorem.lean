@@ -1,3 +1,5 @@
+import Mathlib.Data.Nat.Notation
+
 /-!
 # B1 at additional hyperbolic-knot rows
 
