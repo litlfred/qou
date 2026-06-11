@@ -26,6 +26,7 @@ primitives.
 from __future__ import annotations
 
 import math
+import mpmath as mp
 
 # Substrate q from q_parameter (no hecke_core dependency — this module
 # is a SOURCE, not a re-exporter). q_parameter is part of the
@@ -53,10 +54,10 @@ def q_hook_product(partition):
     """
     lam = list(partition)
     if not lam:
-        return 1.0
+        return mp.mpf("1.0")
     width = lam[0]
     conj = [sum(1 for p in lam if p > j) for j in range(width)]
-    H = 1.0
+    H = mp.mpf("1.0")
     for i, li in enumerate(lam):
         for j in range(li):
             arm = li - j - 1
@@ -67,7 +68,7 @@ def q_hook_product(partition):
 
 def q_factorial(n):
     """[n]_q! = [1]_q · [2]_q · ... · [n]_q (symbolic in q)."""
-    f = 1.0
+    f = mp.mpf("1.0")
     for i in range(1, n + 1):
         f *= q_int(i)
     return f
@@ -128,7 +129,7 @@ def q_dimension(partition):
     """Quantum dimension d_q(λ) = [n]_q! / H_q(λ) (symbolic in q)."""
     n = sum(partition)
     if n == 0:
-        return 1.0
+        return mp.mpf("1.0")
     return q_factorial(n) / q_hook_product(partition)
 
 
@@ -136,7 +137,7 @@ def wedderburn_weight(partition):
     """Wedderburn-Artin weight w_λ = d_q(λ)² / [n]_q! (symbolic in q)."""
     n = sum(partition)
     if n == 0:
-        return 1.0
+        return mp.mpf("1.0")
     return q_dimension(partition)**2 / q_factorial(n)
 
 

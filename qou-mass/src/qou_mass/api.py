@@ -101,7 +101,7 @@ def _load_shard(Z: int) -> dict:
         data = resources.files("qou_mass.data.isotopes").joinpath(filename).read_text()
     except (FileNotFoundError, ModuleNotFoundError):
         raise ValueError(f"no vendored shard for Z={Z}")
-    shard = json.loads(data)
+    shard = json.loads(data, parse_float=Decimal)
     _SHARD_CACHE[Z] = shard
     return shard
 
@@ -245,7 +245,7 @@ def predict_nucleon(
         from importlib.resources import files
         b = json.loads(files("qou_mass.data").joinpath(
             "m-p-borromean-verification-50dps.witness.json"
-        ).read_text())
+        ).read_text(), parse_float=Decimal)
         d = b.get("data", b).get("muon_check", {})
         return Prediction(
             atom="mu",
@@ -294,7 +294,8 @@ def compute_tr_M(
     cmte = json.loads(
         resources.files("qou_mass.data").joinpath(
             "canonical-mass-table-extended.witness.json"
-        ).read_text()
+        ).read_text(),
+        parse_float=Decimal
     )
     for r in cmte.get("data", {}).get("rows", []):
         if r.get("Z") == Z and r.get("N") == N:
@@ -323,7 +324,8 @@ def canonical_braid(Z: int, N: int) -> BraidWord:
         cmte = json.loads(
             resources.files("qou_mass.data").joinpath(
                 "canonical-mass-table-extended.witness.json"
-            ).read_text()
+            ).read_text(),
+            parse_float=Decimal
         )
         for r in cmte.get("data", {}).get("rows", []):
             if r.get("Z") == Z and r.get("N") == N:
