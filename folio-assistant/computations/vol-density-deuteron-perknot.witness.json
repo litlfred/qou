@@ -1,0 +1,16 @@
+{
+  "computation": "vol_density_deuteron_perknot",
+  "description": "Thread 2: deuteron per-knot VolDensity (Vol(6₂)) vs uniform (Vol(𝓑₃)=8G), raw vs AME",
+  "discipline": "no fit; raw report per the per-block wiring discipline gate; nothing wired to production",
+  "q0": "1.1099785827513808075916690956107688798744991218736",
+  "tr_M_D": "0.38828642407478887671",
+  "tr_M_source": "canonical_tr_m['abs_tr_M_q0']",
+  "vol_6_2": "4.40083298054544839393",
+  "vol_b3_8G": "7.3277247534177521204",
+  "m_D_perknot_MeV": "88.9446972448",
+  "err_perknot": "-0.952578330408141",
+  "m_D_uniform_MeV": "148.099748972",
+  "err_uniform": "-0.921039279688003",
+  "m_D_AME_MeV": "1875.61294257",
+  "per_knot_improves": false
+}

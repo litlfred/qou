@@ -45,7 +45,7 @@ try:
     from canonical_tr_m_via_chi_cache import canonical_tr_m
     res = canonical_tr_m("D", 1, 1)
     # locate the scalar trace in the returned dict
-    for k in ("tr_M", "trace", "tr_m", "total", "tr_M_canonical", "value"):
+    for k in ("abs_tr_M_q0", "tr_M_q0", "tr_M", "trace", "tr_m", "total", "tr_M_canonical", "value"):
         if isinstance(res, dict) and k in res:
             tr_M_D = mp.mpf(str(res[k])); src = f"canonical_tr_m['{k}']"; break
     if tr_M_D is None and isinstance(res, dict):
