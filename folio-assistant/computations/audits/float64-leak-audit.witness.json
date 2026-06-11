@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-11T01:11:41.313377+00:00",
-  "commitSha": "8a6d71eb802fd8d4f131c8f9b087f562b98485f1",
+  "computedAt": "2026-06-11T02:45:29.121053+00:00",
+  "commitSha": "3c4818d1bce831605ebf0d9ee9858e1b7bb49059",
   "assertions": [
     {
       "name": "no_i8_violations",
@@ -15,7 +15,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 10,
+  "durationMs": 11,
   "computation": "float64-leak-audit",
   "scriptFile": "float64_leak_audit.py",
   "scriptHash": "1e0531f59851",
@@ -41,8 +41,8 @@
   "data": {
     "by_result": {
       "ok_with_display_or_fp": 4,
-      "i8_violation": 22,
-      "ok_no_leaks": 23
+      "i8_violation": 21,
+      "ok_no_leaks": 24
     },
     "rows": [
       {
@@ -1449,45 +1449,45 @@
         "substrate_banner": false,
         "canonical_forced": true,
         "hit_count": 5,
-        "violation_count": 4,
+        "violation_count": 0,
         "display_count": 0,
-        "comparison_count": 1,
-        "noqa_count": 0,
+        "comparison_count": 0,
+        "noqa_count": 5,
         "witness_emit_count": 0,
         "false_positive_count": 0,
         "hits": [
           {
             "line_number": 146,
             "pattern": "float_cast",
-            "context": "ok_comparison",
+            "context": "ok_noqa",
             "code_snippet": "if abs(float(q_val) - float(Q_0_FLOAT)) < 1e-12:"
           },
           {
-            "line_number": 382,
+            "line_number": 386,
             "pattern": "float_cast",
-            "context": "violation",
+            "context": "ok_noqa",
             "code_snippet": "contrib = float(y) * float(chi)"
           },
           {
-            "line_number": 387,
+            "line_number": 391,
             "pattern": "float_cast",
-            "context": "violation",
+            "context": "ok_noqa",
             "code_snippet": "\"y_at_q0\": float(y),"
           },
           {
-            "line_number": 388,
+            "line_number": 392,
             "pattern": "float_cast",
-            "context": "violation",
+            "context": "ok_noqa",
             "code_snippet": "\"chi_q_at_q0\": float(chi),"
           },
           {
-            "line_number": 389,
+            "line_number": 393,
             "pattern": "float_cast",
-            "context": "violation",
+            "context": "ok_noqa",
             "code_snippet": "\"contribution\": float(contrib),"
           }
         ],
-        "result": "i8_violation"
+        "result": "ok_no_leaks"
       },
       {
         "path": "computations/tr_m_q_hecke_seminormal.py",
@@ -1703,88 +1703,100 @@
         "path": "computations/binding_canonical.py",
         "substrate_banner": false,
         "canonical_forced": true,
-        "hit_count": 13,
-        "violation_count": 8,
-        "display_count": 4,
+        "hit_count": 15,
+        "violation_count": 4,
+        "display_count": 2,
         "comparison_count": 0,
-        "noqa_count": 0,
+        "noqa_count": 8,
         "witness_emit_count": 1,
         "false_positive_count": 0,
         "hits": [
           {
             "line_number": 137,
             "pattern": "float_cast",
-            "context": "violation",
+            "context": "ok_noqa",
             "code_snippet": "Q_beta_n_mev: float = float(_Q_BETA_N),"
-          },
-          {
-            "line_number": 238,
-            "pattern": "float_cast",
-            "context": "violation",
-            "code_snippet": "tr_atom = complex(float(tr_atom_mp), 0.0)"
           },
           {
             "line_number": 239,
             "pattern": "float_cast",
-            "context": "violation",
+            "context": "ok_noqa",
+            "code_snippet": "tr_atom = complex(float(tr_atom_mp), 0.0)"
+          },
+          {
+            "line_number": 240,
+            "pattern": "float_cast",
+            "context": "ok_noqa",
             "code_snippet": "tr_free = complex(float(tr_free_mp), 0.0)"
           },
           {
-            "line_number": 314,
+            "line_number": 284,
+            "pattern": "fstring_precision_f",
+            "context": "ok_display",
+            "code_snippet": "f\"free={mp.nstr(_re(tr_free_mp),12)}  ({dt:.3f}s)\")"
+          },
+          {
+            "line_number": 291,
+            "pattern": "float_cast",
+            "context": "ok_noqa",
+            "code_snippet": "\"B_MeV\": float(B),"
+          },
+          {
+            "line_number": 364,
             "pattern": "float_cast",
             "context": "violation",
             "code_snippet": "\"B_MeV\": float(B),"
           },
           {
-            "line_number": 329,
+            "line_number": 384,
             "pattern": "float_cast",
-            "context": "violation",
-            "code_snippet": "(\"D\",    1, 1, float(AME_B_DEUTERON_MEV_VALIDATION)),"
+            "context": "ok_noqa",
+            "code_snippet": "(1, 1): float(AME_B_DEUTERON_MEV_VALIDATION),"
           },
           {
-            "line_number": 330,
+            "line_number": 385,
             "pattern": "float_cast",
-            "context": "violation",
-            "code_snippet": "(\"T\",    1, 2, float(AME_B_TRITIUM_MEV_VALIDATION)),"
+            "context": "ok_noqa",
+            "code_snippet": "(1, 2): float(AME_B_TRITIUM_MEV_VALIDATION),"
           },
           {
-            "line_number": 331,
+            "line_number": 386,
             "pattern": "float_cast",
-            "context": "ok_display",
-            "code_snippet": "(\"3He\",  2, 1, float(AME_B_HE3_MEV_VALIDATION)),"
+            "context": "ok_noqa",
+            "code_snippet": "(2, 1): float(AME_B_HE3_MEV_VALIDATION),"
           },
           {
-            "line_number": 332,
+            "line_number": 387,
             "pattern": "float_cast",
-            "context": "ok_display",
-            "code_snippet": "(\"4He\",  2, 2, float(AME_B_HE4_MEV_VALIDATION)),"
+            "context": "ok_noqa",
+            "code_snippet": "(2, 2): float(AME_B_HE4_MEV_VALIDATION),"
           },
           {
-            "line_number": 337,
+            "line_number": 429,
             "pattern": "float_cast",
             "context": "ok_display",
             "code_snippet": "print(f\"q₀ = {q0}, Q_β(n) = {float(_Q_BETA_N)} MeV (β-decay Q-value, CAL-3)\")"
           },
           {
-            "line_number": 357,
+            "line_number": 453,
             "pattern": "float_cast",
-            "context": "ok_display",
+            "context": "violation",
             "code_snippet": "M_total = A * float(M_P_MEV_VALIDATION)"
           },
           {
-            "line_number": 379,
+            "line_number": 479,
             "pattern": "float_cast",
             "context": "violation",
             "code_snippet": "f\"Q_β(n) = {float(_Q_BETA_N):.8f} MeV (free-\""
           },
           {
-            "line_number": 379,
+            "line_number": 479,
             "pattern": "fstring_precision_f",
             "context": "violation",
             "code_snippet": "f\"Q_β(n) = {float(_Q_BETA_N):.8f} MeV (free-\""
           },
           {
-            "line_number": 391,
+            "line_number": 491,
             "pattern": "float_cast",
             "context": "ok_witness_emit",
             "code_snippet": ".add_parameter(\"Q_beta_n_MeV\", float(_Q_BETA_N))"
