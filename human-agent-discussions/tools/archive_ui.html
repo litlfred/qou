@@ -1,0 +1,397 @@
+<!doctype html>
+<!-- archive_ui.html — served by archive_ui.py on localhost. No external
+     assets; works offline. Big targets + minimal typing by design. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>QOU session archiver</title>
+<style>
+  :root {
+    --bg: #f6f7f9; --card: #ffffff; --ink: #1c2330; --muted: #5b6575;
+    --accent: #2456c4; --accent-ink: #ffffff; --line: #dde2ea;
+    --ok: #1a7f37; --warn: #b08800; --bad: #c1341b; --chipbg: #e8edf7;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 16px/1.45 system-ui, -apple-system, "Segoe UI",
+         Roboto, sans-serif; background: var(--bg); color: var(--ink); }
+  header { padding: 14px 22px; background: var(--card);
+           border-bottom: 1px solid var(--line); display: flex;
+           flex-wrap: wrap; gap: 8px 18px; align-items: baseline; }
+  header h1 { font-size: 19px; margin: 0; }
+  header .meta { color: var(--muted); font-size: 13px; }
+  main { max-width: 1080px; margin: 18px auto 60px; padding: 0 16px;
+         display: grid; gap: 16px; }
+  section.card { background: var(--card); border: 1px solid var(--line);
+                 border-radius: 10px; padding: 16px 18px; }
+  h2 { font-size: 15px; margin: 0 0 10px; text-transform: uppercase;
+       letter-spacing: .04em; color: var(--muted); }
+  button { font: inherit; border: 1px solid var(--line); background: var(--card);
+           border-radius: 8px; padding: 10px 16px; cursor: pointer; }
+  button.primary { background: var(--accent); color: var(--accent-ink);
+                   border-color: var(--accent); font-weight: 600; }
+  button:disabled { opacity: .45; cursor: default; }
+  button:focus-visible { outline: 3px solid #9db8ee; outline-offset: 1px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip { padding: 10px 16px; border-radius: 999px; background: var(--chipbg);
+          border: 2px solid transparent; cursor: pointer; font-weight: 600; }
+  .chip[aria-pressed="true"] { border-color: var(--accent);
+          background: var(--accent); color: var(--accent-ink); }
+  .chip small { font-weight: 400; opacity: .8; }
+  .newacct { display: flex; gap: 8px; margin-top: 10px; }
+  .newacct input { font: inherit; padding: 9px 12px; border: 1px solid var(--line);
+                   border-radius: 8px; min-width: 200px; }
+  #drop { border: 2px dashed var(--line); border-radius: 10px; padding: 26px;
+          text-align: center; color: var(--muted); cursor: pointer;
+          transition: background .15s, border-color .15s; }
+  #drop.armed { border-color: var(--accent); background: #eef3fd;
+                color: var(--ink); }
+  table { border-collapse: collapse; width: 100%; font-size: 14px; }
+  th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line);
+           vertical-align: top; }
+  th { color: var(--muted); font-weight: 600; font-size: 12.5px;
+       text-transform: uppercase; letter-spacing: .03em; }
+  tr.selectable { cursor: pointer; }
+  tr.selectable:hover { background: #f2f5fb; }
+  td.sev-SECRET { color: var(--bad); font-weight: 700; }
+  td.sev-pii { color: var(--warn); font-weight: 600; }
+  td.sev-clean { color: var(--ok); }
+  .status-NEW { color: var(--accent); font-weight: 700; }
+  .status-UPDATED { color: var(--warn); font-weight: 700; }
+  .status-archived { color: var(--muted); }
+  .row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+         margin-top: 12px; }
+  label.opt { display: inline-flex; align-items: center; gap: 6px;
+              color: var(--muted); }
+  input[type=checkbox] { width: 19px; height: 19px; }
+  pre.log { background: #10151d; color: #cfe3c8; padding: 12px 14px;
+            border-radius: 8px; font-size: 12.5px; overflow-x: auto;
+            white-space: pre-wrap; max-height: 280px; overflow-y: auto; }
+  .pill { display: inline-block; padding: 2px 9px; border-radius: 999px;
+          font-size: 12px; background: var(--chipbg); margin: 1px 2px; }
+  .git-files { font: 13px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace; }
+  .git-files .st { display: inline-block; width: 84px; color: var(--muted); }
+  #toast { position: fixed; bottom: 18px; left: 50%; transform: translateX(-50%);
+           background: var(--ink); color: #fff; padding: 11px 20px;
+           border-radius: 9px; opacity: 0; transition: opacity .25s;
+           pointer-events: none; max-width: 80vw; }
+  #toast.show { opacity: .96; }
+  textarea { width: 100%; font: inherit; border: 1px solid var(--line);
+             border-radius: 8px; padding: 10px 12px; min-height: 64px; }
+  a { color: var(--accent); }
+  .muted { color: var(--muted); }
+  .gitbadge { font-size: 13px; color: var(--muted); }
+  .gitbadge b { color: var(--ink); }
+</style>
+</head>
+<body>
+<header>
+  <h1>QOU session archiver</h1>
+  <span class="meta" id="meta">connecting…</span>
+</header>
+<main>
+
+  <section class="card" id="accounts-card">
+    <h2>1 · Account</h2>
+    <div class="chips" id="chips" role="group" aria-label="accounts"></div>
+    <div class="newacct">
+      <input id="newacct" placeholder="new account alias (e.g. fred-work)"
+             pattern="[a-z0-9][a-z0-9-]*" autocomplete="off">
+      <button id="addacct">Add</button>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>2 · Add export</h2>
+    <div id="drop" tabindex="0" role="button"
+         aria-label="upload conversations.json or export zip">
+      Drop <b>conversations.json</b> / export <b>.zip</b> here — or click to pick
+      <div class="muted" id="drop-account"></div>
+    </div>
+    <input type="file" id="file" accept=".json,.jsonl,.zip" hidden>
+  </section>
+
+  <section class="card">
+    <h2>3 · Matched conversations</h2>
+    <div class="row" style="margin-top:0">
+      <button class="primary" id="scan">Scan</button>
+      <button id="select-new">Select all NEW</button>
+      <label class="opt"><input type="checkbox" id="redact-pii"> redact PII too</label>
+      <label class="opt"><input type="checkbox" id="force"> force re-archive</label>
+      <span class="muted" id="scan-note"></span>
+    </div>
+    <div id="matches"></div>
+    <div class="row">
+      <button class="primary" id="archive" disabled>Archive selected</button>
+      <span class="muted" id="archive-note"></span>
+    </div>
+    <div id="archive-results"></div>
+  </section>
+
+  <section class="card">
+    <h2>4 · Git — staging &amp; submission</h2>
+    <div class="gitbadge" id="git-head"></div>
+    <div class="git-files" id="git-files"></div>
+    <textarea id="commit-msg" placeholder="commit message"></textarea>
+    <div class="row">
+      <button id="commit">Commit</button>
+      <button class="primary" id="commit-push">Commit &amp; push</button>
+      <button id="git-refresh">Refresh</button>
+    </div>
+    <div id="git-result"></div>
+  </section>
+
+  <section class="card">
+    <h2>Archived sessions</h2>
+    <div id="sessions"></div>
+  </section>
+
+</main>
+<div id="toast" role="status"></div>
+
+<script>
+"use strict";
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? "").replace(/[&<>"]/g,
+  c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+let STATE = null, MATCHES = [], ACCOUNT = localStorage.getItem("had-account") || "";
+
+function toast(msg, ms = 3200) {
+  const t = $("toast"); t.textContent = msg; t.classList.add("show");
+  clearTimeout(t._h); t._h = setTimeout(() => t.classList.remove("show"), ms);
+}
+async function api(path, opts) {
+  const r = await fetch(path, opts);
+  const ct = r.headers.get("content-type") || "";
+  const body = ct.includes("json") ? await r.json() : await r.blob();
+  if (!r.ok) throw new Error(body.error || r.statusText);
+  return body;
+}
+const jpost = (path, data) => api(path, { method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify(data) });
+
+/* ---------------- accounts ---------------- */
+function renderAccounts() {
+  const box = $("chips"); box.innerHTML = "";
+  const known = new Map((STATE?.accounts || []).map(a => [a.name, a]));
+  for (const extra of JSON.parse(localStorage.getItem("had-extra-accounts") || "[]"))
+    if (!known.has(extra)) known.set(extra, { name: extra, archived: 0, incoming: 0 });
+  if (!known.size) {
+    box.innerHTML = '<span class="muted">no accounts yet — add one below</span>';
+  }
+  for (const a of known.values()) {
+    const b = document.createElement("button");
+    b.className = "chip"; b.type = "button";
+    b.setAttribute("aria-pressed", String(a.name === ACCOUNT));
+    b.innerHTML = `${esc(a.name)} <small>${a.archived}⧉ ${a.incoming}⇣</small>`;
+    b.title = `${a.archived} archived · ${a.incoming} incoming file(s)`;
+    b.onclick = () => { ACCOUNT = a.name;
+      localStorage.setItem("had-account", ACCOUNT);
+      renderAccounts(); renderDropHint(); };
+    box.appendChild(b);
+  }
+  renderDropHint();
+}
+function renderDropHint() {
+  $("drop-account").textContent = ACCOUNT
+    ? `→ uploads to _incoming/${ACCOUNT}/` : "select or add an account first";
+}
+$("addacct").onclick = () => {
+  const v = $("newacct").value.trim().toLowerCase();
+  if (!/^[a-z0-9][a-z0-9-]*$/.test(v)) return toast("alias: lowercase letters / digits / hyphens");
+  const extras = new Set(JSON.parse(localStorage.getItem("had-extra-accounts") || "[]"));
+  extras.add(v);
+  localStorage.setItem("had-extra-accounts", JSON.stringify([...extras]));
+  ACCOUNT = v; localStorage.setItem("had-account", v);
+  $("newacct").value = ""; renderAccounts();
+};
+
+/* ---------------- upload ---------------- */
+const drop = $("drop");
+drop.onclick = () => $("file").click();
+drop.onkeydown = e => { if (e.key === "Enter" || e.key === " ") $("file").click(); };
+["dragover", "dragenter"].forEach(ev =>
+  drop.addEventListener(ev, e => { e.preventDefault(); drop.classList.add("armed"); }));
+["dragleave", "drop"].forEach(ev =>
+  drop.addEventListener(ev, e => { e.preventDefault(); drop.classList.remove("armed"); }));
+drop.addEventListener("drop", e => uploadFiles(e.dataTransfer.files));
+$("file").onchange = e => uploadFiles(e.target.files);
+
+async function uploadFiles(files) {
+  if (!ACCOUNT) return toast("pick an account first");
+  for (const f of files) {
+    try {
+      toast(`uploading ${f.name}…`, 60000);
+      const res = await api(`/api/upload?account=${encodeURIComponent(ACCOUNT)}` +
+        `&filename=${encodeURIComponent(f.name)}`,
+        { method: "POST", body: f });
+      toast(`saved ${res.saved.join(", ")} → ${res.incoming_dir}`);
+    } catch (err) { toast("upload failed: " + err.message, 6000); }
+  }
+  await refreshState(false);
+  scan();
+}
+
+/* ---------------- scan + archive ---------------- */
+$("scan").onclick = () => scan();
+async function scan() {
+  $("scan-note").textContent = "scanning…";
+  try {
+    const q = ACCOUNT ? `?account=${encodeURIComponent(ACCOUNT)}` : "";
+    const res = await api("/api/scan" + q);
+    MATCHES = res.matched;
+    $("scan-note").textContent =
+      `${res.matched.length} matched of ${res.scanned} scanned` +
+      (ACCOUNT ? ` (account: ${ACCOUNT})` : " (all accounts)");
+    renderMatches();
+  } catch (err) { $("scan-note").textContent = ""; toast("scan failed: " + err.message, 6000); }
+}
+function renderMatches() {
+  const box = $("matches");
+  if (!MATCHES.length) { box.innerHTML = '<p class="muted">no matches — upload an export, then Scan.</p>'; updateArchiveBtn(); return; }
+  let h = `<table><thead><tr><th></th><th>Date</th><th>Account</th>
+    <th>Msgs</th><th>Status</th><th>Screen</th><th>Title · hits</th></tr></thead><tbody>`;
+  MATCHES.forEach((m, i) => {
+    const sev = m.severity === "SECRET" ? "SECRET" : (m.severity === "clean" ? "clean" : "pii");
+    const findings = Object.entries(m.findings || {})
+      .map(([k, v]) => `${k}×${v}`).join(", ");
+    h += `<tr class="selectable" data-i="${i}">
+      <td><input type="checkbox" data-i="${i}" aria-label="select ${esc(m.title)}"></td>
+      <td>${esc((m.date || "").slice(0, 10))}</td>
+      <td>${esc(m.account)}</td><td>${m.messages}</td>
+      <td class="status-${esc(m.status)}">${esc(m.status)}</td>
+      <td class="sev-${sev}" title="${esc(findings)}">${esc(m.severity)}</td>
+      <td>${esc(m.title)}<br><span class="muted">${m.hits.map(x => `<span class="pill">${esc(x)}</span>`).join("")}</span></td>
+    </tr>`;
+  });
+  box.innerHTML = h + "</tbody></table>";
+  box.querySelectorAll("tr.selectable").forEach(tr => {
+    tr.onclick = e => {
+      if (e.target.tagName === "INPUT") return updateArchiveBtn();
+      const cb = tr.querySelector("input"); cb.checked = !cb.checked; updateArchiveBtn();
+    };
+  });
+  box.querySelectorAll("input[type=checkbox]").forEach(cb => cb.onchange = updateArchiveBtn);
+  updateArchiveBtn();
+}
+$("select-new").onclick = () => {
+  document.querySelectorAll("#matches input[type=checkbox]").forEach(cb => {
+    cb.checked = MATCHES[+cb.dataset.i].status !== "archived";
+  });
+  updateArchiveBtn();
+};
+function selectedMatches() {
+  return [...document.querySelectorAll("#matches input[type=checkbox]:checked")]
+    .map(cb => MATCHES[+cb.dataset.i]);
+}
+function updateArchiveBtn() {
+  const n = selectedMatches().length;
+  $("archive").disabled = !n;
+  $("archive-note").textContent = n ? `${n} selected` : "";
+}
+$("archive").onclick = async () => {
+  const sel = selectedMatches();
+  const secret = sel.filter(m => m.severity === "SECRET").length;
+  if (secret) toast(`${secret} SECRET-class session(s): secrets auto-redact on archive`, 5000);
+  $("archive").disabled = true;
+  try {
+    const res = await jpost("/api/archive", {
+      selections: sel.map(m => ({ account: m.account, id: m.id })),
+      redact_pii: $("redact-pii").checked,
+      force: $("force").checked,
+    });
+    let h = "<ul>";
+    for (const r of res.results)
+      h += `<li><b>${esc(r.status)}</b> — ${esc(r.title)}
+        &nbsp;<a href="/files/${esc(r.md)}" target="_blank">md</a> ·
+        <a href="/files/${esc(r.pdf)}" target="_blank">pdf</a></li>`;
+    h += `</ul><p class="muted">INDEX.md lists ${res.indexed} session(s).</p>`;
+    $("archive-results").innerHTML = h;
+    toast(`archived ${res.results.length} session(s)`);
+    await refreshState(false); scan(); refreshGit();
+  } catch (err) { toast("archive failed: " + err.message, 6000); }
+  updateArchiveBtn();
+};
+
+/* ---------------- git panel ---------------- */
+function defaultMsg() {
+  const n = document.querySelectorAll("#archive-results li").length;
+  return `archive: ${n || "update"} session(s)` + (ACCOUNT ? ` (${ACCOUNT})` : "");
+}
+async function refreshGit() {
+  try {
+    const g = await api("/api/git/status");
+    const ab = (g.ahead != null) ? ` · ↑${g.ahead}/↓${g.behind} vs upstream` : "";
+    $("git-head").innerHTML =
+      `branch <b>${esc(g.branch)}</b> @ <b>${esc(g.head)}</b>${ab}` +
+      (g.origin ? ` · <a href="${esc(g.origin)}" target="_blank">origin</a>` : "");
+    const rows = [];
+    for (const f of g.staged) rows.push(`<div><span class="st">staged·${esc(f.state)}</span>${esc(f.path)}</div>`);
+    for (const f of g.unstaged) rows.push(`<div><span class="st">${esc(f.state)}</span>${esc(f.path)}</div>`);
+    $("git-files").innerHTML = rows.join("") ||
+      '<div class="muted">working tree clean under ' + esc(g.scope) + "</div>";
+    if (!$("commit-msg").value) $("commit-msg").value = defaultMsg();
+  } catch (err) { $("git-head").textContent = "git unavailable: " + err.message; }
+}
+async function doCommit(push) {
+  $("commit").disabled = $("commit-push").disabled = true;
+  try {
+    const res = await jpost("/api/git/commit",
+      { message: $("commit-msg").value, push });
+    if (!res.ok) { toast(res.error, 6000); }
+    else {
+      const link = res.commit_url
+        ? ` — <a href="${esc(res.commit_url)}" target="_blank">${esc(res.sha_short)}</a>`
+        : ` — ${esc(res.sha_short)}`;
+      $("git-result").innerHTML =
+        `<p><b>committed</b>${link}${res.pushed ? " · <b>pushed ✓</b>" : ""}</p>` +
+        `<pre class="log">${esc(res.log)}${res.push_output ? "\n" + esc(res.push_output) : ""}</pre>`;
+      toast(push ? (res.pushed ? "committed + pushed" : "committed; push FAILED — see log")
+                 : "committed");
+      $("commit-msg").value = "";
+    }
+  } catch (err) { toast("commit failed: " + err.message, 6000); }
+  $("commit").disabled = $("commit-push").disabled = false;
+  refreshGit(); refreshState(false);
+}
+$("commit").onclick = () => doCommit(false);
+$("commit-push").onclick = () => doCommit(true);
+$("git-refresh").onclick = refreshGit;
+
+/* ---------------- archived sessions ---------------- */
+function renderSessions() {
+  const box = $("sessions");
+  const ss = STATE?.sessions || [];
+  if (!ss.length) { box.innerHTML = '<p class="muted">nothing archived yet.</p>'; return; }
+  let h = `<table><thead><tr><th>Date</th><th>Account</th><th>Title</th>
+    <th>Related</th><th></th></tr></thead><tbody>`;
+  for (const s of ss) {
+    const rel = [
+      ...s.prs.map(p => `<span class="pill">#${p}</span>`),
+      ...s.commits.slice(0, 4).map(c => `<span class="pill">${esc(c.slice(0, 8))}</span>`),
+      ...s.branches.slice(0, 2).map(b => `<span class="pill">${esc(b)}</span>`),
+    ].join("") || '<span class="muted">—</span>';
+    h += `<tr><td>${esc(s.date)}</td><td>${esc(s.account)}</td>
+      <td>${esc(s.title)}</td><td>${rel}</td>
+      <td><a href="/files/${esc(s.md)}" target="_blank">md</a> ·
+          <a href="/files/${esc(s.pdf)}" target="_blank">pdf</a></td></tr>`;
+  }
+  box.innerHTML = h + "</tbody></table>";
+}
+
+/* ---------------- boot ---------------- */
+async function refreshState(withGit = true) {
+  STATE = await api("/api/state");
+  $("meta").textContent =
+    `root ${STATE.root} · archiver ${STATE.archiver_version} · pdf ${STATE.engine}`;
+  if (!ACCOUNT && STATE.accounts.length) ACCOUNT = STATE.accounts[0].name;
+  renderAccounts(); renderSessions();
+  if (withGit) refreshGit();
+}
+refreshState().then(() => scan()).catch(e => {
+  $("meta").textContent = "server error: " + e.message;
+});
+</script>
+</body>
+</html>
