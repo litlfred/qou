@@ -1,7 +1,7 @@
 import QOU.AppendixSurreals.Basic
 import QOU.AppendixSurreals.StandardPart
 import Mathlib.Algebra.Polynomial.Eval.Defs
-import Mathlib.Algebra.Polynomial.Induction
+import Mathlib.Algebra.Polynomial.Basic
 import Mathlib.Algebra.MvPolynomial.CommRing
 
 /-!
