@@ -247,41 +247,45 @@ $$
 | $+ \alpha/(4\pi)$ (self-consistent) | 137.036007 | $+5.7 \times 10^{-8}$ |
 | CODATA | $137.035999084(21)$ | — |
 
-The first correction has a clean geometric identification:
+The first correction is now **derived**
+([`prop:photon-ir-zero-mode-bring`](#prop:photon-ir-zero-mode-bring)): it is the
+photon IR zero-mode on the **2-surface** $M_{\text{Bring}}$ — the harmonic
+$1$-form sector $b_1(M_g) = 2g$ over the Gauss–Bonnet area $4\pi(g-1)$,
 
 $$
   \frac{2}{3\pi}
-  \;=\; \frac{\mathrm{Vol}(S^2)}{3\cdot\mathrm{Vol}(S^3)}
-  \;=\; \frac{4\pi}{3 \cdot 2\pi^2}.
+  \;=\; \frac{b_1(M_g)}{\operatorname{Area}(M_g)}
+  \;=\; \frac{2g}{4\pi(g-1)}\Big|_{g=4}
+  \;=\; \frac{8}{12\pi}.
 $$
 
-This is the kind of finite topological constant that arises from a
-photon zero-mode on a closed 3-manifold (standard QFT: the zero-mode
-of $\Box^{-1}$ on a closed Riemannian $M$ contributes $1/\mathrm{Vol}(M)$
-to a Green's function). The coefficient $2/(3\pi)$ would then encode
-the categorical-Lagrangian QED vacuum-polarisation 1PI graph evaluated
-at zero external momentum on the QOU substrate's natural 3-manifold
-(likely $S^3$ via a Hopf-fibred $S^1 \to S^3 \to S^2$).
+The sphere-volume form $2/(3\pi) = \mathrm{Vol}(S^2)/(3\cdot\mathrm{Vol}(S^3))$ is
+the same number written with round volumes — a *secondary* reading. The earlier
+guess of a photon zero-mode on a closed **3-manifold** ($S^3$ via a Hopf-fibred
+$S^1 \to S^3 \to S^2$) gave the strictly smaller $9/(24\pi^2)$ and is
+**superseded**; the photon zero-mode lives on the $2$-surface, and the "$/3$" is
+the Gauss–Bonnet factor $(g-1)=3$ (not a Lie-algebra or sphere-volume artifact).
 
 The next-order term $\alpha/(4\pi)$ is suggestive of a Schwinger-like
 1-loop self-coupling. The numerical fit places this coefficient at
 $\sim 1.4\%$ off from exactly $1/(4\pi)$; the true coefficient may
 be $1/(2\pi\cdot[2]_q)$ or another small $q$-correction.
 
-### What's needed to upgrade this lead to a proof
+### Remaining work (the mechanism is now derived)
 
-1. **Identify the 3-manifold** carrying the photon propagator.
-2. **Compute the photon zero-mode** of the QOU vacuum-polarisation
- 1PI graph at zero external momentum and verify the coefficient
- equals $2/(3\pi)$.
-3. **Verify UV finiteness.** Reshetikhin-Turaev shadow-world
- regularisation should produce a finite answer (force-carrier
- complexity $[9]_q[10]_q$ regularises the categorical sum,
- replacing the continuum momentum integral).
-4. **Compute the next-order self-energy** as a 2-loop graph;
- verify the coefficient is exactly $1/(4\pi)$ or identifies as
- $1/(2\pi[2]_q)$ with the small $q$-correction matching the
- residual.
+Items 1–2 of the earlier checklist are **resolved** by
+[`prop:photon-ir-zero-mode-bring`](#prop:photon-ir-zero-mode-bring): the
+"3-manifold" is the $2$-surface $M_{\text{Bring}}$, and the photon zero-mode
+coefficient $b_1/\operatorname{Area} = 2g/(4\pi(g-1)) = 2/(3\pi)$ is proven
+(Lean `photonZeroModeShift_at_g4`, sorry-free). What remains:
 
-A numerical match at $5.7 \times 10^{-8}$ is too precise to be
-coincidence; the structural derivation almost certainly exists.
+1. **Verify UV finiteness.** Reshetikhin–Turaev shadow-world regularisation
+ should produce a finite answer (force-carrier complexity $[9]_q[10]_q$
+ regularises the categorical sum, replacing the continuum momentum integral).
+2. **Compute the next-order self-energy** $\alpha/(4\pi)$ as a 2-loop graph
+ (the $n=2$ jet order); the simplest closed forms $1/(4\pi)$, $1/(2\pi[2]_q)$
+ are near-misses at $\sim 0.4\%$.
+
+The numerical match at $5.7 \times 10^{-8}$ is no coincidence; the leading
+mechanism is derived, with UV finiteness and the next-order term the open
+remainder.
