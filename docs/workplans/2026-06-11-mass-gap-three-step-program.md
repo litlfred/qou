@@ -61,6 +61,34 @@ empirical nuclear binding fractions ~0.009 — same order). Whether the
 framework's binding formula realizes this is checkable against the
 Δ_λ / closed-form-τ_M machinery.
 
+**Probe result (2026-06-11,
+`b-over-m-order-probe.witness.json`):** empirical B/m for d / ³He /
+⁴He = 0.00119 / 0.00275 / 0.00759 — ratios to h² of 0.098 / 0.227 /
+0.628, one to two decades below the h-stratum. Order check passes; the
+A-dependence rising toward h²-saturation at ⁴He is exactly the
+structure Δ_λ must supply.
+
+**Lean-provability of the B/m hypothesis (owner question,
+2026-06-11).** Three-quarters of it is formalizable; one quarter is
+witness-territory by nature:
+
+1. **Unconditional, provable now-ish:** the splitting lemma
+   `w₍₃,₃₎(1+ε) − w₍₅,₁₎(1+ε) = (5/18)ε² + O(ε³)` — the weights are
+   explicit rational functions of q (products of balanced q-integers),
+   so the statement is finite polynomial arithmetic over ℚ(q); the
+   zero-linear-term half follows elegantly from bar-invariance
+   `w(q) = w(q⁻¹)`. Medium effort, one focused LSP session.
+2. **Unconditional, easy:** the gap-order identities (already
+   skeletoned: `physical_units_gap_linear`, `gap_bound_vanishes_at_one`).
+3. **Conditional-class theorem (§3b-cond pattern):** define the class
+   of "binding functionals supported on the inter-family splitting
+   stratum"; THEOREM: every functional in the class is O(h²). The Δ_λ
+   closure, when it lands, instantiates the class — at which point
+   B/m = O(h²) becomes a corollary rather than a hypothesis.
+4. **Not a theorem, ever:** the empirical comparison itself (AME
+   values are measurements) — that stays a witness, which is the
+   correct epistemic type for it.
+
 ## 1. Step 1 — substrate gap theorem (the shared keystone)
 
 > **Target.** At fixed q > 1 (later |q| ≠ 1), every non-vacuum excitation
