@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-11T01:54:36.226107+00:00",
-  "commitSha": "f4753bb32e2b6a243f58a298613745b16c4842aa",
+  "computedAt": "2026-06-11T02:37:24.995861+00:00",
+  "commitSha": "774bee2f1f8240b68f608a99d9f2d026a5a98551",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2078,6 +2078,7 @@
         "atomic-tr-m-helium4.witness.json",
         "atomic-tr-m-mpfr-50dps.witness.json",
         "audit-lean-uniqueness-ref-wiring.witness.json",
+        "averaged-block-swap-binding.witness.json",
         "b-over-a-v5-unified.witness.json",
         "b-over-a.witness.json",
         "bar-pairing-binding-observable-extension.witness.json",
@@ -2726,6 +2727,7 @@
         "per-nucleon-shift-derivation.witness.json",
         "per-observable-100x-status.witness.json",
         "per-pair-wedderburn-enumeration.witness.json",
+        "photon-ir-zero-mode-bring.witness.json",
         "photon-operator-table.witness.json",
         "pn-alpha-lp-dual.witness.json",
         "prearchimedean-bond-factor.witness.json",
@@ -2772,6 +2774,7 @@
         "q-pochhammer-seed.witness.json",
         "q-spectral-truncation-tower.witness.json",
         "q-values-derived.witness.json",
+        "q-weighted-block-swap.witness.json",
         "q0-consistency-audit.witness.json",
         "q0-figure-eight-phase-derivation.witness.json",
         "q1-mass-gap-probe.witness.json",
