@@ -115,7 +115,7 @@ axiom wenzlClosedForm : ∀ {n : ℕ}, Nat.Partition n → ℝ → ℝ
     Lemma 3.2; this axiomatisation lets downstream code use
     either form interchangeably. -/
 axiom JonesMarkovCoefficient_eq_wenzl :
-    ∀ {n : ℕ} (λ : Nat.Partition n) (q : ℝ),
-    JonesMarkovCoefficient λ q = wenzlClosedForm λ q
+    ∀ {n : ℕ} (lam : Nat.Partition n) (q : ℝ),
+    JonesMarkovCoefficient lam q = wenzlClosedForm lam q
 
 end QOU.HeckeAlgebra.JonesMarkovWenzl
