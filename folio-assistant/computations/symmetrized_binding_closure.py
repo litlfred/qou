@@ -36,11 +36,19 @@ mp.mp.dps = 50
 
 from witness_base import WitnessBuilder  # noqa: E402
 from q_parameter import Q_MP  # noqa: E402
-from codata_constants import M_E_MEV  # noqa: E402
+from codata_constants import (  # noqa: E402
+    M_E_MEV, M_N_MEV_VALIDATION, M_P_MEV_VALIDATION,
+)
+from b_over_a_v5_unified import AME_BA_MEV  # noqa: E402
 
-Q_BETA_MEV = mp.mpf("0.78233341")
+# Q_β(n) = m_n − m_p − m_e (substrate identity) — imported from the canonical
+# registry, NOT hard-coded. VALIDATION aliases: this is a binding-ANALYSIS probe
+# comparing to AME (not a production prediction), so the neutron/proton validation
+# masses are the appropriate canonical source per the three-calibration discipline.
+Q_BETA_MEV = (mp.mpf(M_N_MEV_VALIDATION) - mp.mpf(M_P_MEV_VALIDATION)
+              - mp.mpf(M_E_MEV))
 E0_MEV = M_E_MEV / (Q_MP * (Q_MP - 1))
-AME_4HE = mp.mpf("28.295674")     # ⁴He total binding, AME 2020 (MeV)
+AME_4HE = mp.mpf(AME_BA_MEV[(2, 2)])     # ⁴He total binding, AME 2020 (canonical dict)
 
 
 def main() -> int:

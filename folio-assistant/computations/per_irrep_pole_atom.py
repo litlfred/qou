@@ -84,9 +84,9 @@ ATOMS = {
     "helium-4": (2, 2),
     "lithium-5":(3, 2),
     "lithium-6":(3, 3),
-    "lithium-7":(3, 4),
-    "beryllium-8":(4, 4),
-    "beryllium-9":(4, 5),
+    "lithium-7": (3, 4),
+    "beryllium-8": (4, 4),
+    "beryllium-9": (4, 5),
 }
 
 ATOM_ALIASES = {

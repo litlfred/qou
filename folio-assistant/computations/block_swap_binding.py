@@ -123,7 +123,6 @@ def main() -> int:
     w_atom = signonly_word(Z, N, include_inter=True)    # bound (with bonds)
     w_free = signonly_word(Z, N, include_inter=False)   # free (no bonds)
 
-    rows = {}
     print("=" * 84)
     print(" Block-swapped symmetrization S_atom for ⁴He (S₂×S₂, sign-only)")
     print(f"   q₀ = {Q_50_DIGIT_STR[:20]}…   n = {n}")
