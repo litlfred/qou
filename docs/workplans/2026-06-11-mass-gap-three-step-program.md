@@ -42,6 +42,25 @@ Verdict: at q = 1 the mass tower End(Aₙ) is structurally intact but
 limit in either normalization. This is the computational shadow of the
 μ₂-vanishing statement and pins the program to the obstruction branch.
 
+**ε-stratification (probe extension, 2026-06-11).** At q = 1 + ε the
+surviving structure is stratified by infinitesimal order — this is the
+refined target for Step 2 (which is thereby an ε-stratification lemma,
+not just the ε³ rate):
+
+| order | what lives there |
+|---|---|
+| ε⁰ (standard) | semisimple tower; classical Plancherel weights; vacuum level (standard part 1/720 at n = 6) |
+| ε¹ | physical-units mass gap ½q(q−1)(q+1); also the categorical Dirac operator's Reeb coupling coefficient (1 − q⁻¹) |
+| ε² | degeneracy resolution: w₍₃,₃₎ − w₍₅,₁₎ = (5/18)ε² + O(ε³), linear term excluded by bar-invariance — the n = 6 two-nucleon (color-tube) channel becoming spectrally real |
+| ε³ | categorical gap bound ½(q − q⁻¹)(q − 1)² |
+
+The ε² row carries a physical hypothesis worth its own probe: if
+inter-nucleon channel resolution enters at h² while mass enters at h,
+binding-to-mass ratios should be O(h²)-suppressed (h² ≈ 0.0121 at q₀ vs
+empirical nuclear binding fractions ~0.009 — same order). Whether the
+framework's binding formula realizes this is checkable against the
+Δ_λ / closed-form-τ_M machinery.
+
 ## 1. Step 1 — substrate gap theorem (the shared keystone)
 
 > **Target.** At fixed q > 1 (later |q| ≠ 1), every non-vacuum excitation
