@@ -82,6 +82,41 @@ supported: point `--export <account>=~/.claude/projects/<project>/`
 at the directory (or a single `.jsonl` file). Sessions whose working
 directory contains `qou` match automatically.
 
+## Web UI (recommended — minimal typing)
+
+A local web interface wraps the whole flow — no flags, no paths, no
+retyping account names:
+
+```bash
+python3 human-agent-discussions/tools/archive_ui.py --open
+# → http://127.0.0.1:8123/ (localhost only; runs against this clone)
+```
+
+1. **Account** — one click on a remembered chip. Accounts are derived
+   from the directories already on disk (`<account>/` archives +
+   `_incoming/<account>/` inboxes), so every account used once is
+   remembered forever; "Add" registers a new alias.
+2. **Add export** — drag-drop `conversations.json` *or the official
+   export `.zip`* (the relevant files are extracted server-side) onto
+   the drop zone; it lands in the gitignored `_incoming/<account>/`.
+3. **Matched conversations** — Scan lists QOU matches with status
+   (NEW / UPDATED / archived), sensitive-info severity
+   (SECRET / pii / clean) and keyword hits; tick checkboxes (or
+   "Select all NEW") and Archive. Results link straight to the
+   rendered `session.md` / `session.pdf`.
+4. **Git — staging & submission** — shows the branch, head, and every
+   staged / unstaged file under `human-agent-discussions/`; Commit or
+   Commit & push with an editable pre-filled message, then see the
+   submission result (commit SHA linked to origin, full command log,
+   push output) right in the page.
+
+The server binds `127.0.0.1` only, accepts only `.json` / `.jsonl` /
+`.zip` uploads into `_incoming/`, serves files only from inside the
+archive root, and reuses the exact same archiver core (same screen,
+same tagging, same idempotency). `python3 tools/archive_ui.py
+--self-test` exercises upload → scan → archive → serve → commit
+against a throwaway git repo.
+
 ## How tagging works
 
 Each archived session gets a `related` block in `metadata.json`,
