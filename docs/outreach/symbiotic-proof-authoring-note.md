@@ -180,6 +180,46 @@ companion artifact over the archived sessions) can classify these
 question types and measure their effect on convergence — turning an
 anecdotal methodology claim into a measurable one.
 
+We adopt this leg formally from **coactive learning** [2, 3]: the
+author's question is α-informative feedback — an improvement toward
+the target, deliberately not the gold standard — and the regret bounds
+scale with correction quality α, which is exactly the "good initial
+corrections" clause. A recent line applies the same model to LLMs
+directly [4]. The surrounding field runs the *dual* direction (agents
+strategically questioning humans to converge on intent [5, 6]), which
+leaves the human-as-Socrates direction, with measured convergence,
+unoccupied. The gap-marker leg sits in the sycophancy and pragmatics
+literature: user-stated beliefs act as injected evidence that shifts
+model confidence [7, 8, 10], and models systematically under-challenge
+user presuppositions [9] — the honest-gap convention is a deliberate
+de-weighting of that presupposition channel. The classical antecedents
+are the classroom-discourse literature's display questions and
+scaffolding [13, 14, 16], and the ur-text is the slave-boy episode of
+the *Meno* [15]. The planned measurement: per-arc α̂ and
+turns-to-convergence T, estimated from the archived transcripts.
+
+### Intuition seeding — tenuous identifications, rapidly rigorized
+
+A third register completes the picture, and it is the inverse of
+steering. Some of the author's inputs are **cross-domain
+identifications that exist in neither the literature nor the model's
+usable priors** — offered *flagged as tenuous* ("could the Reeb flow
+be linked to the Julia-set dynamics here?"). For these the agent's job
+is not convergence toward a known target but **cheap decisive
+(in)validation followed by rigorization of survivors**: a corpus check
+(is it already resolved here?), then the least expensive structural
+argument or probe that can kill or confirm the identification, then —
+only for survivors — formal development. The division of labor is the
+point: the human generates low-probability, high-value hypotheses that
+no retrieval process would surface; the machine validates in minutes
+what would once have cost the author weeks, which is precisely what
+makes tenuous identifications *rational to voice*. The meta-analysis
+inventories these events with a literature-absence check, so novelty
+attribution (which identifications originated as author intuition) is
+auditable rather than anecdotal. The three registers — steer, honest
+gap, seed — and the corresponding agent protocols are codified as a
+platform skill (`symbiotic-interaction`).
+
 ### Interaction types seen in practice
 
 A short taxonomy, drawn from the pull-request activity of real sessions:
@@ -443,3 +483,50 @@ The proof axis's `statement-integrity` and `rater` criteria are the direct
 AlphaProof-Nexus adoption (their SafeVerify gate + good-gap/bad-gap rater),
 generalised from a per-episode check into a standing, corpus-wide, hash-tracked
 audit.
+
+---
+
+## References
+
+Web-verified entries carry links; entries marked **[from memory]** are
+confidence-labeled per house sourcing discipline and must be verified
+against primary editions before any formal submission.
+
+1. *Advancing Mathematics Research with AI-Driven Formal Proof Search*
+   (AlphaProof Nexus), Google DeepMind, arXiv:2605.22763.
+2. P. Shivaswamy, T. Joachims, *Online Structured Prediction via
+   Coactive Learning*, ICML 2012.
+   <https://icml.cc/2012/papers/717.pdf>
+3. P. Shivaswamy, T. Joachims, *Coactive Learning*, JMLR 16 (2015).
+   <https://www.cs.cornell.edu/people/tj/publications/shivaswamy_joachims_15a.pdf>
+4. *Coactive Learning for Large Language Models using Implicit User
+   Feedback*. <https://openreview.net/pdf?id=Q7cwVnRWAs>
+5. *Closing the Expression Gap in LLM Instructions via Socratic
+   Questioning*, arXiv:2510.27410.
+6. *The Art of Socratic Questioning: Recursive Thinking with Large
+   Language Models*, arXiv:2305.14999.
+7. *BASIL: Bayesian Assessment of Sycophancy in LLMs*,
+   arXiv:2508.16846.
+8. *Social Sycophancy: A Broader Understanding of LLM Sycophancy*,
+   arXiv:2505.13995.
+9. *Accommodation and Epistemic Vigilance: A Pragmatic Account of Why
+   LLMs Fail to Challenge Harmful Beliefs*, arXiv:2601.04435.
+10. *Can LLMs Use Linguistic Uncertainty Markers to Reliably Reflect
+    Intrinsic Confidence?*, arXiv:2605.28778.
+11. S. Ross, G. Gordon, D. Bagnell, *A Reduction of Imitation Learning
+    and Structured Prediction to No-Regret Online Learning* (DAgger),
+    AISTATS 2011. **[from memory]**
+12. R. Dembo, S. Eisenstat, T. Steihaug, *Inexact Newton Methods*,
+    SIAM J. Numer. Anal. 19 (1982). **[from memory]**
+13. H. Mehan, *Learning Lessons: Social Organization in the
+    Classroom*, Harvard UP, 1979 (display / known-answer questions,
+    IRE sequences). **[from memory]**
+14. D. Wood, J. Bruner, G. Ross, *The Role of Tutoring in Problem
+    Solving*, J. Child Psychol. Psychiatry 17 (1976) (scaffolding).
+    **[from memory]**
+15. Plato, *Meno* 82b–85b (the slave-boy episode — the original
+    known-answer-question convergence demonstration). **[primary;
+    edition to be fixed]**
+16. H. Lightman et al., *Let's Verify Step by Step*, arXiv:2305.20050
+    (process supervision: step-level feedback beats outcome-level).
+    **[from memory]**

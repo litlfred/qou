@@ -108,7 +108,9 @@ the in-repo importers; delete `tools/{pyhecke,hecke-engine*}` from qou.
 Finish the started migration: skills under folio-assistant's registry
 (served via `skill_list`/`skill_fetch`), `.claude/skills/local/` reduced to
 thin pointers/shims so Claude Code sessions still resolve; `.mcp.json` /
-`folio.config.json` / `skills-config.json` rewiring. Census appendix will
+`folio.config.json` / `skills-config.json` rewiring. Generic skills
+authored since the census (e.g. `symbiotic-interaction`, the
+three-register author-input protocol) join the move list. Census appendix will
 record what already moved and the intended finished state. (Horizon note,
 out of scope here: folio-assistant itself is the *second* extraction
 candidate — the symbiotic-authoring product.)
