@@ -84,12 +84,16 @@ ATOMS = {
     "helium-4": (2, 2),
     "lithium-5":(3, 2),
     "lithium-6":(3, 3),
+    "lithium-7":(3, 4),
+    "beryllium-8":(4, 4),
+    "beryllium-9":(4, 5),
 }
 
 ATOM_ALIASES = {
     "p": "proton", "n": "neutron", "D": "deuteron", "T": "tritium",
     "3He": "helium-3", "4He": "helium-4", "5Li": "lithium-5",
-    "6Li": "lithium-6",
+    "6Li": "lithium-6", "7Li": "lithium-7", "8Be": "beryllium-8",
+    "9Be": "beryllium-9",
 }
 
 
