@@ -44,8 +44,13 @@ binding-constituent infra). Owner directive: "1 2 3 4 5 / see skills on Lean".
   1.1%/7.7% of the 20–27 MeV AME gap and points the wrong way. The symmetrization
   is a real but SUB-DOMINANT correction; the binding form/convention is the
   dominant gate. Rules out symmetrization as the gap-closer.
-- [~] **3 — ⁷Li/⁸Be χ.** Registered ⁷Li/⁸Be/⁹Be in `per_irrep_pole_atom.ATOMS`.
-  ⁷Li (H₂₁, 792 λ) running; ⁸Be (H₂₄, 1575 λ) is a multi-hour compute (deferred).
+- [~] **3 — ⁷Li/⁸Be χ (infra ready; compute wall at A≥7).** Registered
+  ⁷Li/⁸Be/⁹Be in `per_irrep_pole_atom.ATOMS`; the arbitrary-n χ runs on them. But
+  the per-λ `chi_q_via_gp` cost grows steeply with n: ⁶Li ~3s/λ (H₁₈) → ⁷Li ~17s/λ
+  (H₂₁) ⇒ ~3.7 h for ⁷Li's 792 λ, and ⁸Be (H₂₄, 1575 λ) is multi-day. So
+  FULL-lossless χ is impractical at A≥7 — confirming #2103's all-nuclides verdict:
+  heavy A needs the operator-selection ACTIVE SET (a few saturating λ), not the
+  full Wedderburn enumeration. ⁵Li/⁶Li (the A=5,6 gap) landed in #2103.
 - [x] **4 — lake-cache diagnosis (root cause found).** The 811M
   `lake-cache/qou-v4-24-0` (built ~2026-06-04) is STALE: main migrated to the
   root Lake workspace + re-pinned Mathlib on 2026-06-10 (commit `4eb95ac1`;
