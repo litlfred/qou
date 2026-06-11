@@ -1,4 +1,4 @@
-import Mathlib.CategoryTheory.Monoidal.Basic
+import Mathlib.CategoryTheory.Monoidal.Category
 import Mathlib.CategoryTheory.Equivalence
 import Mathlib.CategoryTheory.Functor.Basic
 

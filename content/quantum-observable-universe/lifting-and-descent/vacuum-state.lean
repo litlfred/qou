@@ -1,5 +1,5 @@
 import Mathlib.Algebra.Module.Basic
-import Mathlib.CategoryTheory.Monoidal.Basic
+import Mathlib.CategoryTheory.Monoidal.Category
 
 
 /-!

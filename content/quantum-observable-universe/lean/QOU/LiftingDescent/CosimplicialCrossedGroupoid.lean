@@ -1,4 +1,4 @@
-import Mathlib.CategoryTheory.Monoidal.Basic
+import Mathlib.CategoryTheory.Monoidal.Category
 import Mathlib.Algebra.Polynomial.Laurent
 import Mathlib.Data.Int.Basic
 import Mathlib.Algebra.Group.Basic

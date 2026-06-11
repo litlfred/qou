@@ -1,6 +1,6 @@
 import Mathlib.Algebra.Module.Basic
 import Mathlib.Algebra.Ring.Basic
-import Mathlib.CategoryTheory.Monoidal.Basic
+import Mathlib.CategoryTheory.Monoidal.Category
 
 
 /-!

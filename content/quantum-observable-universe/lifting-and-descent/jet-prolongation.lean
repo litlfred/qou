@@ -1,6 +1,6 @@
 import QOU.Basic
 import QOU.Glossary
-import Mathlib.CategoryTheory.Monoidal.Basic
+import Mathlib.CategoryTheory.Monoidal.Category
 import Mathlib.CategoryTheory.Functor.Basic
 import Mathlib.Algebra.Module.Basic
 

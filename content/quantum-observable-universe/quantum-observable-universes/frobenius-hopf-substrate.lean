@@ -9,7 +9,7 @@ LaTeX label: `def:frobenius-hopf-substrate`
 
 set_option autoImplicit false
 
-import Mathlib.CategoryTheory.Monoidal.Basic
+import Mathlib.CategoryTheory.Monoidal.Category
 import Mathlib.CategoryTheory.Category.Basic
 
 open CategoryTheory MonoidalCategory
