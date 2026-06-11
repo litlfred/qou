@@ -34,7 +34,7 @@ expansion. This file provides the symbolic primitives.
 - CLAUDE.md §"Critical framing — Q_β c_3 truncation order"
 -/
 
-import Mathlib.Algebra.BigOperators.Basic
+import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 
 open BigOperators

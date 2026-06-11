@@ -1,4 +1,4 @@
-import Mathlib.Algebra.BigOperators.Basic
+import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Algebra.Order.AbsoluteValue
 import Mathlib.Algebra.GroupPower.Order
 import Mathlib.Algebra.Polynomial.Basic
