@@ -48,6 +48,7 @@ One background extraction agent per session, emitting a typed sidecar
 | `corpus-grep-save` | "already resolved" catches | proof-gap-audit §K precedents |
 | `generalization-move` | special case → parametrized statement lifts | lean-generation / category-theory skills |
 | `prompt-pattern` | phrasings/decompositions that reliably worked | skill authoring guidance |
+| `socratic-steering` | known/nearly-known-answer questions used as course corrections, vs flagged genuine-gap questions; convergence effect per arc | methodology paper (the root-finding claim); outreach-note §Socratic steering |
 | `failure-mode` | agent errors, misreadings, wasted passes | watcher checklists |
 
 Aggregation pass: cross-session frequency tables, exemplar selection
