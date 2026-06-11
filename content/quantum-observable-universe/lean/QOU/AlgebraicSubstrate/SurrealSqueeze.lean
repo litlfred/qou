@@ -39,26 +39,6 @@ namespace QOU.AlgebraicSubstrate
 
 universe u
 
-/-- **surreal_squeeze** (DEPRECATED): alias for `surreal_squeeze_of_pow_lt`.
-
-    The original axiom had a loose hypothesis `ε ≤ δ` that was false on
-    standard reals (counterexample: `ε = 2, δ = 3`). The intended content
-    was that `ε` is archimedean-infinitesimal relative to `δ`, which is
-    captured precisely by `ε^4 < δ^2`.
-
-    **Narrowing (Pattern 1)**: hoisted the substantive hypothesis from
-    the implicit surreal-model requirement to an explicit hypothesis.
-    Callers should migrate to `surreal_squeeze_of_pow_lt` directly.
-
-    Ref: [conway1976] https://doi.org/10.1201/9781439864159
-    Ref: [gonshor1986] https://doi.org/10.1017/CBO9780511629143 -/
-@[deprecated surreal_squeeze_of_pow_lt (since := "2025-01-26")]
-theorem surreal_squeeze
-    {F : Type u} [Field F] [LinearOrder F] [IsStrictOrderedRing F]
-    (ε δ : F) (hε : 0 < ε) (_hδ : 0 < δ) (hsq : ε^4 < δ^2) :
-    δ^2 * ε⁻¹ > ε^3 :=
-  surreal_squeeze_of_pow_lt ε δ hε hsq
-
 /-- **surreal_squeeze (provable form)**: with the sharper hypothesis
     `ε^4 < δ^2` (which captures the substantive size separation
     between standard δ and infinitesimal ε), the conclusion holds in
