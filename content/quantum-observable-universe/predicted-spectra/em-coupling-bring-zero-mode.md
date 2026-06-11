@@ -152,13 +152,21 @@ uniqueness rather than structural anomaly):
    at $n \geq 3$ is open (Goncharov 1995); the QOU framework can
    take it as input where needed.
 
-## Status: conjectural — naive interpretations fail
+## Status: mechanism resolved (surface harmonic zero-mode); upstream uniqueness conditional
 
-The structural identification $2/(3\pi) = 2g/(4\pi(g-1)) = \mathrm{Vol}(S^2)/(3\cdot\mathrm{Vol}(S^3))$
-at $g = 4$ is an **exact algebraic identity** (in $\mathbb{R}$, not in
-$R$), but the *physical origin*
-in the QOU framework is **not yet established**. A first-pass derivation
-attempt (May 2026 audit) ruled out the simplest mechanism:
+The structural identification $2/(3\pi) = 2g/(4\pi(g-1))$ at $g = 4$ is an
+**exact algebraic identity** (Lean `hodgeRatio_at_g4`). Its
+**from-the-Lagrangian mechanism** is now derived in
+[`prop:photon-ir-zero-mode-bring`](#prop:photon-ir-zero-mode-bring): the photon
+IR zero-mode is the harmonic $1$-form sector $b_1(M_g) = 2g$ on the
+**2-surface** $M_{\text{Bring}}$ itself, normalised by the Gauss–Bonnet area
+$\operatorname{Area} = -2\pi\chi = 4\pi(g-1)$. The topological/geometric core is
+proven sorry-free; only the standard heat-kernel identity (zero-mode
+$= b_1/\operatorname{Vol}$) is cited, and the upstream $\tau_{\mathrm{arch}}$
+uniqueness remains the named conditional input.
+
+A first-pass attempt (May 2026 audit) had used the *wrong manifold*; its failure
+pinpoints the fix.
 
 **Failed: harmonic 1-form zero-mode on $M_{\text{Bring}} \times S^1$.**
 For $M^3 = M_{\text{Bring}} \times S^1$ (unit $S^1$):
@@ -169,50 +177,42 @@ $$
   \approx 0.038,
 $$
 which is $\sim 5.6\times$ smaller than the required $2/(3\pi) \approx 0.212$.
-The naive 3-manifold zero-mode picture does not directly yield the
-constant.
+Crossing with $S^1$ adds a spurious harmonic generator ($b_1 \to 2g+1$) and a
+factor $2\pi$ of volume — the recorded failure.
 
-**The exact form $\mathrm{Vol}(S^2)/(3\cdot\mathrm{Vol}(S^3)) = 4\pi/(3\cdot 2\pi^2)$
-suggests** a different mechanism — perhaps:
+**Resolved: harmonic 1-form zero-mode on the 2-surface $M_{\text{Bring}}$.**
+The photon zero-mode lives on the surface itself, giving
+$b_1(M_g)/\operatorname{Area}(M_g) = 2g/(4\pi(g-1)) = 2/(3\pi)$ at $g=4$ —
+exactly the required constant, dominating the naive value by
+$(16\pi-9)/(24\pi^2) > 0$ (Lean `surface_minus_naive_g4`,
+[`prop:photon-ir-zero-mode-bring`](#prop:photon-ir-zero-mode-bring)). The "$/3$"
+is the Gauss–Bonnet factor $(g-1)=3$.
 
-1. A Hopf-fibration $S^1 \to S^3 \to S^2$ in which the photon flux is
-   a 2-form on $S^2$ (the base) and the gauge connection lives on $S^3$
-   (the total space), with the factor $1/3$ reflecting Lie-algebra
-   trace normalisation $\mathrm{Tr}(T_a T_b) = \delta_{ab}/2$ combined
-   with a 3-fold gauge-sector copy.
-2. A Chern-Simons partition-function ratio at level $k$ where the
-   quantum dimension formula gives
-   $\dim_q V \cdot Z(S^3)^{-1}$-type expressions reducing to
-   $\mathrm{Vol}(S^2)/\mathrm{Vol}(S^3)$ in the classical limit.
-3. A BV-BRST cohomological mechanism where the $(2-form, 3-form)$
-   pair represents a global anomaly cancelled by the categorical
-   Wess-Zumino term.
+The earlier speculative mechanisms (a Hopf-fibration $S^1 \to S^3 \to S^2$
+sphere-volume ratio, a Chern–Simons partition-function ratio, a BV–BRST anomaly)
+are **superseded** by the surface harmonic zero-mode above. The secondary
+identity $2/(3\pi) = \mathrm{Vol}(S^2)/(3\cdot\mathrm{Vol}(S^3))$ is the same
+number written with sphere volumes, but the *primary* derivation is the
+Hodge/Gauss–Bonnet ratio $b_1/\operatorname{Area}$ on the surface — the "$/3$" is
+$(g-1)$, not a sphere-volume coincidence.
 
-To upgrade this conjecture to a proof, the following are required:
+**Remaining open items** (the mechanism itself is now derived):
 
-1. **Identify the precise 3-manifold** $M^3$ and gauge structure
-   (Hopf-fibration $S^3$ vs $T^*M_{\text{Bring}}$ vs other) that
-   produces $1/(3 \cdot \mathrm{Vol}(M^3))$ as the photon zero-mode
-   contribution at zero external momentum, with a $1/3$ factor
-   from Lie-algebra normalisation or geometric multiplicity.
-2. **Compute the photon zero-mode coefficient** end-to-end from
-   the categorical Lagrangian, verifying it equals exactly
-   $2g/(4\pi(g-1)) = 2/(3\pi)$ at $g = 4$.
-3. **Verify UV finiteness.** Reshetikhin-Turaev shadow-world
-   regularisation should produce a finite answer — force-carrier
-   complexity $[9]_q[10]_q$ regularises the categorical sum,
-   replacing continuum momentum integration. This is plausible but
+1. **UV finiteness.** Reshetikhin–Turaev shadow-world regularisation should
+   produce a finite answer — force-carrier complexity $[9]_q[10]_q$ regularises
+   the categorical sum, replacing continuum momentum integration. Plausible but
    not proved.
-4. **Compute the next-order self-energy** as a 2-loop graph;
-   verify the coefficient is exactly $1/(4\pi)$ or identifies as
-   $1/(2\pi[2]_q)$ or $1/(4\pi)\cdot(1-\hbar_q^2)$ (best fits at
-   $\sim 0.4\%$). The simplest fits are all near-misses; an exact
-   form requires the explicit 2-loop calculation.
+2. **Next-order self-energy** $\alpha/(4\pi)$ (the $n=2$ jet order of
+   [`prop:jet-sw-tau-decomposition`](#prop:jet-sw-tau-decomposition)): an
+   explicit 2-loop calculation. The simplest closed forms ($1/(4\pi)$,
+   $1/(2\pi[2]_q)$, $1/(4\pi)(1-\hbar_q^2)$) are near-misses at $\sim 0.4\%$.
 
 The numerical match at $4.2 \times 10^{-6}$ with one term and
-$5.7 \times 10^{-8}$ with two is far too precise to be coincidence;
-the structural derivation almost certainly exists, but it is
-**non-trivial** — the naive geometric mechanisms fail.
+$5.7 \times 10^{-8}$ with two is far too precise to be coincidence; the
+structural mechanism is now derived
+([`prop:photon-ir-zero-mode-bring`](#prop:photon-ir-zero-mode-bring)) — the
+surface harmonic zero-mode $b_1/\operatorname{Area}$, with the naive
+$M\times S^1$ guess explained and superseded.
 
 ## Comparison with prior conjectures
 
