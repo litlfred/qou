@@ -223,3 +223,48 @@ Owner green-lit **all four** next fixes, coordinate-first:
 
 Execution order: C4 → P1 → per-knot (each run-verify-commit-**push-immediately**
 given container instability; C2 after #2103).
+
+## Execution results (2026-06-11, PR #2104)
+
+**C4 — atom_braid_word_3A exact mpf (DONE, verified).** Substrate already
+exposes mpf `HA_MP`/`Q_MP` (50 dps from the exact `q_at()` findroot) — no
+substrate edit needed. Wired the braid constructor to it (`HA_MP` + a
+`_cross_d_mpf` laundering helper; inter-crossings exact mpf; δ via
+`_avg_color_delta()` directly — already exact). Deprecated/parallel f64 numpy
+paths (`chi_lambda_of_word` 16 consumers, `per_generator_V_hat_3A` 6 consumers —
+NOT deprecated, verified) carry honest `noqa: I8` "migration tracked" markers.
+**`mass_at_3A_proper` i8 violations 9 → 0**; transfer D..⁷Li equivalence-preserving
+(free χ ≡ parabolic-LR 2.6e-41). Commits `ee8f08a4`, `87d175c5`.
+
+**P1 — binding_canonical fast EXACT transfer (DONE, verified).** Added
+`use_transfer=True` default computing tr_M via `chi_all_lambda · y_λ` (exact mpf,
+pure-Python, no Rust kernel). Verified vs the symbolic path:
+
+| Atom | B match (rel) | Speedup |
+|---|---|---|
+| D | 2.8e-16 | 52× |
+| T | 3.2e-16 | 1575× (12.6 s → 0.008 s) |
+| ³He | 3.0e-16 | 690× |
+| ⁴He | 1.5e-15 | 2712× (71 s → 0.026 s) |
+| ⁶Li (A=6) | — | now feasible, 0.39 s (was intractable) |
+
+Machine-precision exact (vs the closed-form path's ~1e-5 convention gap, too coarse
+for the L2 binding target). Symbolic retained as `use_transfer=False` cross-check.
+Commits `c4b3a796` (code), `ece04027` (witness).
+
+**Per-knot vol_density — GATED on #2078 (read-only Δ reported, coordinated).**
+The blocker the 2026-06-02 audit named (no per-atom Vol(β_K)) is partially lifted
+(SnapPy-census Vol data exists for ~6 atoms), but running the deuteron probe raw
+shows the SnapPy-census per-knot Vol **does not work**: m_D per-knot Vol(6₂) =
+88.9 MeV (−95.3 %) vs uniform 148.1 MeV (−92.1 %), both ~12–21× too small. So the
+per-atom **V_hyp definition is unsettled** — sibling **#2078** is resolving it
+(depth-2 Li_2^q image of matrix-M χ, *not* SnapPy census). Migrating
+`mass_table_comprehensive` now would corrupt headline masses on an unsettled input
+and duplicate #2078. **Decision: do not migrate production; deliver the read-only
+Δ + coordinate.** Un-gated `vol_density_deuteron_perknot_probe.py` (cache-key drift
+fix) so it reports the Δ; offered the P1 transfer to #2078 as its exact tr_M_K
+stage-① side. Commit `4d358f1c`; coordination `#2078` comment.
+
+**Note (Gemini #2104 review):** both medium-priority comments (central CODATA
+registry under NO-FITTING; long-compute logging under optimization) were already
+folded into the checklist above (items 3 + 5) — `is_outdated`, no action.
