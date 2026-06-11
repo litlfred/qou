@@ -82,21 +82,31 @@ noncomputable def stdRep3_genInv1 : TMatrix :=
 -- Ref: [jones1987]
 theorem stdRep3_hecke0 :
     stdRep3_gen0 * stdRep3_gen0 = HA_t • stdRep3_gen0 + 1 := by
-  ext i j
+  refine Matrix.ext fun i j => ?_
   fin_cases i <;> fin_cases j <;>
-    simp [stdRep3_gen0, HA_t, q_from_t, q_inv_from_t,
-          Matrix.mul_apply, Fin.sum_univ_two, Matrix.of] <;>
-    ring
+    simp [stdRep3_gen0, HA_t, Matrix.mul_apply, Fin.sum_univ_two, Matrix.of_apply, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.head_cons,
+          Matrix.one_apply, Matrix.smul_apply, Matrix.add_apply] <;>
+    first
+      | ring
+      | linear_combination q_from_t_mul_q_inv_from_t
+      | (rw [q_from_t_mul_q_inv_from_t]; ring)
+      | (rw [mul_comm q_inv_from_t q_from_t, q_from_t_mul_q_inv_from_t]; ring)
+      | (rw [mul_comm q_from_t q_inv_from_t, q_from_t_mul_q_inv_from_t]; ring)
 
 /-- σ₁ satisfies the Hecke relation in the standard representation. -/
 -- Ref: [jones1987]
 theorem stdRep3_hecke1 :
     stdRep3_gen1 * stdRep3_gen1 = HA_t • stdRep3_gen1 + 1 := by
-  ext i j
+  refine Matrix.ext fun i j => ?_
   fin_cases i <;> fin_cases j <;>
-    simp [stdRep3_gen1, HA_t, q_from_t, q_inv_from_t,
-          Matrix.mul_apply, Fin.sum_univ_two, Matrix.of] <;>
-    ring
+    simp [stdRep3_gen1, HA_t, Matrix.mul_apply, Fin.sum_univ_two, Matrix.of_apply, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.head_cons,
+          Matrix.one_apply, Matrix.smul_apply, Matrix.add_apply] <;>
+    first
+      | ring
+      | linear_combination q_from_t_mul_q_inv_from_t
+      | (rw [q_from_t_mul_q_inv_from_t]; ring)
+      | (rw [mul_comm q_inv_from_t q_from_t, q_from_t_mul_q_inv_from_t]; ring)
+      | (rw [mul_comm q_from_t q_inv_from_t, q_from_t_mul_q_inv_from_t]; ring)
 
 /-! ## §3  Braid relation verification -/
 
@@ -105,11 +115,16 @@ theorem stdRep3_hecke1 :
 theorem stdRep3_braid :
     stdRep3_gen0 * stdRep3_gen1 * stdRep3_gen0 =
     stdRep3_gen1 * stdRep3_gen0 * stdRep3_gen1 := by
-  ext i j
+  refine Matrix.ext fun i j => ?_
   fin_cases i <;> fin_cases j <;>
-    simp [stdRep3_gen0, stdRep3_gen1, q_from_t, q_inv_from_t,
-          Matrix.mul_apply, Fin.sum_univ_two, Matrix.of] <;>
-    ring
+    simp [stdRep3_gen0, stdRep3_gen1, Matrix.mul_apply, Fin.sum_univ_two, Matrix.of_apply, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.head_cons,
+          Matrix.one_apply] <;>
+    first
+      | ring
+      | linear_combination q_from_t_mul_q_inv_from_t
+      | (rw [q_from_t_mul_q_inv_from_t]; ring)
+      | (rw [mul_comm q_inv_from_t q_from_t, q_from_t_mul_q_inv_from_t]; ring)
+      | (rw [mul_comm q_from_t q_inv_from_t, q_from_t_mul_q_inv_from_t]; ring)
 
 /-! ## §3a  T(3, n) center: (σ₀ σ₁)^3 = I in (2,1) — q-independent -/
 
@@ -143,11 +158,16 @@ theorem stdRep3_M_cubed_eq_one :
   -- Unfold M^3 into an explicit triple product so `simp` can chew it
   -- with `Matrix.mul_apply` + `Fin.sum_univ_two`.
   rw [show (3 : ℕ) = 2 + 1 from rfl, pow_succ, sq]
-  ext i j
+  refine Matrix.ext fun i j => ?_
   fin_cases i <;> fin_cases j <;>
-    simp [stdRep3_gen0, stdRep3_gen1, q_from_t, q_inv_from_t,
-          Matrix.mul_apply, Fin.sum_univ_two, Matrix.of] <;>
-    ring
+    simp [stdRep3_gen0, stdRep3_gen1, Matrix.mul_apply, Fin.sum_univ_two, Matrix.of_apply, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.head_cons,
+          Matrix.one_apply] <;>
+    first
+      | ring
+      | linear_combination q_from_t_mul_q_inv_from_t
+      | (rw [q_from_t_mul_q_inv_from_t]; ring)
+      | (rw [mul_comm q_inv_from_t q_from_t, q_from_t_mul_q_inv_from_t]; ring)
+      | (rw [mul_comm q_from_t q_inv_from_t, q_from_t_mul_q_inv_from_t]; ring)
 
 /-! ## §3b  Borromean (2,1) character — named definition + structural properties
 
