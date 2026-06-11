@@ -74,6 +74,24 @@ export default chapter({
       ],
     }),
 
+    // ── The symmetric point q = 1 (2026-06-11) ──────────────────────
+    // Centralises the q = 1 degeneration findings adjacent to the
+    // mass-gap conjecture they interpret: channel collapse (prop),
+    // linear vanishing of the physically normalised gap (prop), the
+    // resolution-loss / ε-stratification reading (remark), and the
+    // unit-circle photonic split (remark).
+    section({
+      title: "The symmetric point $q = 1$",
+      label: "sec:symmetric-point",
+      blocks: [
+        "symmetric-point-intro",
+        "symmetric-point-channel-collapse",
+        "physical-units-gap-linear",
+        "symmetric-point-resolution-loss",
+        "unit-circle-photonic-sector",
+      ],
+    }),
+
     // ── Archimedean witnesses (R1: split from the former Archimedean specialisations section) ───
     // The catalogue of archimedean realisations — explicit examples,
     // not bridge/wall material.  After Rec 2 (4 Descartes-coded blocks
