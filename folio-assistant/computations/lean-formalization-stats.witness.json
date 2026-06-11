@@ -1,0 +1,31 @@
+{
+  "computation": "lean-formalization-stats",
+  "description": "Paper-level Lean formalization statistics derived from content block manifests, .lean sources (comment-stripped sorry scan), and .qa.json sidecars (proof-lean-compiles aggregate). Consumed by content/values/registry.ts lean_* entries via :val[…] prose directives. Regenerate: bun run pipeline/lean-stats-witness.ts --write",
+  "paper": "quantum-observable-universe",
+  "scriptFile": "content/pipeline/lean-stats-witness.ts",
+  "scriptHash": "a079cedec7db",
+  "scriptCommitSha": "310d3a58b06ef4f5b725ceb620d59fd916cddb62",
+  "computedAt": "2026-06-11T02:12:49.822Z",
+  "commitSha": "310d3a58b06ef4f5b725ceb620d59fd916cddb62",
+  "data": {
+    "blocks_total": 2124,
+    "blocks_with_lean": 1071,
+    "theorem_total": 42,
+    "lemma_total": 45,
+    "proposition_total": 534,
+    "corollary_total": 15,
+    "definition_total": 221,
+    "provable_total": 636,
+    "provable_with_lean": 626,
+    "provable_sorry_free": 620,
+    "provable_sorry_free_pct": "97.4843",
+    "conjecture_total": 139,
+    "conjecture_class_axiomatised": 126,
+    "conjecture_class_axiomatised_pct": "90.6475",
+    "qa_lean_compiles_pass": 0,
+    "qa_lean_compiles_fail": 0,
+    "qa_lean_compiles_warn": 0,
+    "qa_lean_compiles_na": 629,
+    "qa_lean_compiles_missing": 7
+  }
+}

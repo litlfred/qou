@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "bun run check-witnesses && bun run render-atlas:write && bun run pipeline/build.ts",
+    "build": "bun run check-witnesses && bun run lean-stats:write && bun run render-atlas:write && bun run pipeline/build.ts",
     "check-witnesses": "cd .. && python3 folio-assistant/computations/witness_staleness_tracker.py check || (echo '[build] NOTE: stale witnesses detected — see folio-assistant/computations/witness-shas.json'; true)",
     "render-atlas": "cd .. && python3 folio-assistant/computations/recursive_atom_knot_atlas_render.py 2>/dev/null || (echo '[build] NOTE: atlas render skipped (recursive_atom_knot_atlas_render.py moved to _deprecated/ in 191bd9f54; committed recursive-atom-knot-atlas.rendered.md remains the source of truth)' && true)",
     "render-atlas:write": "cd .. && (python3 folio-assistant/computations/recursive_atom_knot_atlas_render.py > folio-assistant/computations/recursive-atom-knot-atlas.rendered.md 2>/dev/null || echo '[build] NOTE: atlas render-write skipped (script in _deprecated/); using committed rendered file')",
@@ -28,7 +28,10 @@
     "qa-sweep": "bun run pipeline/qa-sweep.ts",
     "qa-sweep:ci": "bun run pipeline/qa-sweep.ts quantum-observable-universe --ci",
     "qa-staleness": "bun run pipeline/qa-staleness.ts",
-    "qa-staleness:ci": "bun run pipeline/qa-staleness.ts quantum-observable-universe --ci"
+    "qa-staleness:ci": "bun run pipeline/qa-staleness.ts quantum-observable-universe --ci",
+    "lean-stats": "bun run pipeline/lean-stats-witness.ts",
+    "lean-stats:write": "bun run pipeline/lean-stats-witness.ts --write",
+    "lean-stats:check": "bun run pipeline/lean-stats-witness.ts --check"
   },
   "dependencies": {
     "@unified-latex/unified-latex-util-arguments": "^1.8.0",
