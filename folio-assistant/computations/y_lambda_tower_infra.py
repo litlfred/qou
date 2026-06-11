@@ -60,12 +60,18 @@ from pathlib import Path
 
 import mpmath as mp
 
+# Standalone high-precision compute script: enforce the 50-dps floor at module
+# load so extend_y_lambda_tower / _table_entries are correct when this module is
+# IMPORTED as a library (e.g. chi_via_rust_lossless._ensure_y_lambda), not only
+# when run via main().
+mp.mp.dps = 50
+
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 sys.path.insert(0, str(HERE / "substrate"))
 
 from witness_base import WitnessBuilder  # noqa: E402
-from q_parameter import Q_MP, Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from schur_principal_mpmath import (  # noqa: E402
     y_lambda_at_q0_mpmath, _f_lambda, partitions_of,
 )
@@ -118,15 +124,21 @@ def _gate_against_symbolic(W: dict, q_val: mp.mpf) -> dict:
     return report
 
 
-def extend_y_lambda_tower(up_to_n: int, witness_path: Path = CANONICAL,
-                          q_val: mp.mpf = Q_MP) -> dict:
+def extend_y_lambda_tower(up_to_n: int, witness_path: Path | str = CANONICAL,
+                          q_val: mp.mpf | None = None) -> dict:
     """Extend the canonical y_λ witness's tables_by_n to n ≤ up_to_n (closed form).
 
     Non-destructive: preserves existing n entries; adds missing n only. Gates on
     closed-form ≡ existing (symbolic) agreement before writing. Returns a build
     report (per-n parts / residual / wall / source / added?).
     """
-    W = json.loads(witness_path.read_text())
+    witness_path = Path(witness_path)
+    # Bind q₀ at CALL time, not as a default arg: default args evaluate at import
+    # (when mp.dps may still be the 15-dps default → silent precision loss).
+    # Q_50_DIGIT_STR is a string, so mp.mpf reads it at the current (50) dps.
+    if q_val is None:
+        q_val = mp.mpf(Q_50_DIGIT_STR)
+    W = json.loads(witness_path.read_text(encoding="utf-8"))
     gate = _gate_against_symbolic(W, q_val)
     existing = set(W["tables_by_n"].keys())
     rows = []
@@ -157,7 +169,7 @@ def extend_y_lambda_tower(up_to_n: int, witness_path: Path = CANONICAL,
         "owns_n": sorted(set(prev) | set(newly)),
         "up_to_n": max(up_to_n, W["extension"].get("closed_form_tower", {}).get("up_to_n", 0)),
     }
-    witness_path.write_text(json.dumps(W, indent=2) + "\n")
+    witness_path.write_text(json.dumps(W, indent=2) + "\n", encoding="utf-8")
     return {"rows": rows, "gate": gate}
 
 
