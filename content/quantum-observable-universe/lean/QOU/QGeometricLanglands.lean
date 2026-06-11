@@ -43,6 +43,17 @@ open scoped CategoryTheory CategoryTheory.MonoidalCategory
 
 namespace QOU.QGeometricLanglands
 
+/-!  Universe pinning (repair 2026-06-11): the structures below carry
+     `Type*` fields (`fibreAt`, `groupAt`, `dualGroupAt`), so each
+     occurrence of `QLocalSystem M` / `QHeckeEigensheaf M` / `QOper M`
+     in a *different* binder of the same theorem header auto-bound a
+     *fresh* rigid universe — and the proof bodies then failed with
+     `QLocalSystem.{u_1, u_4} ≠ QLocalSystem.{u_1, u_2}` mismatches.
+     We pin the universes once and tie every use site explicitly:
+     `u` = base type `M`, `v` = local-system fibres, `w` = quantum
+     gauge group carrier, `x` = Langlands-dual group carrier. -/
+universe u v w x
+
 /-! ## §1  q-Local Systems -/
 
 /-- **q-Local system**: a functor from the fundamental groupoid of the
@@ -62,11 +73,11 @@ namespace QOU.QGeometricLanglands
           `def:q-flat-connection`, `prop:categorical-dq-squared`,
           `prop:kummer-filtration-obstruction` -/
 -- Ref: [frenkel2007] Frenkel, "Lectures on the Langlands Program and Conformal Field Theory," arXiv:hep-th/0512172
-structure QLocalSystem (M : Type*) where
+structure QLocalSystem (M : Type u) where
   /-- The underlying substrate parameter family. -/
   sp : SubstrateParameter M
   /-- The representation type at each point (fibre of the local system). -/
-  fibreAt : M → Type*
+  fibreAt : M → Type v
   /-- The monodromy endomorphism acting on the fibre at each point. -/
   monodromy : ∀ (p : M), fibreAt p → fibreAt p
   /-- q-monodromy residue: the `Ω_q(ρ)` term. -/
@@ -94,7 +105,7 @@ structure QLocalSystem (M : Type*) where
     uses: `def:q-local-system`, `def:categorical-q-connection`,
           `prop:categorical-dq-squared` -/
 -- Ref: [frenkel2007] Frenkel, "Lectures on the Langlands Program and Conformal Field Theory," arXiv:hep-th/0512172
-structure QFlatConnection (M : Type*) where
+structure QFlatConnection (M : Type u) where
   /-- The substrate parameter. -/
   sp : SubstrateParameter M
   /-- The intrinsic q-curvature `F_q` at each point, determined by the
@@ -129,7 +140,7 @@ structure QFlatConnection (M : Type*) where
     LaTeX: `\label{def:q-hecke-operator}`
     uses: `prop:braid-action-tensor`, `def:q-local-system` -/
 -- Ref: [aganagic2018] Aganagic, Frenkel, Okounkov, "Quantum q-Langlands Correspondence," arXiv:1701.03146
-structure QHeckeOperator (M : Type*) where
+structure QHeckeOperator (M : Type u) where
   /-- The substrate parameter. -/
   sp : SubstrateParameter M
   /-- The Hecke algebra governing the operators. -/
@@ -154,11 +165,11 @@ structure QHeckeOperator (M : Type*) where
     LaTeX: `\label{def:q-hecke-eigensheaf}`
     uses: `def:q-hecke-operator`, `def:q-local-system` -/
 -- Ref: [frenkel2007] Frenkel, "Lectures on the Langlands Program and Conformal Field Theory," arXiv:hep-th/0512172
-structure QHeckeEigensheaf (M : Type*) where
+structure QHeckeEigensheaf (M : Type u) where
   /-- The q-Hecke operator data. -/
   heckeOp : QHeckeOperator M
   /-- The eigenvalue q-local system. -/
-  eigenvalue : QLocalSystem M
+  eigenvalue : QLocalSystem.{u, v} M
   /-- Tensor compatibility: isomorphisms compose under tensor product.
       (Encoded as a consistency condition on eigenvalue data.) -/
   tensor_compatible : True
@@ -181,16 +192,16 @@ structure QHeckeEigensheaf (M : Type*) where
     LaTeX: `\label{def:q-langlands-dual}`
     uses: `def:quantum-gauge-group`, `def:quantum-su2` -/
 -- Ref: [aganagic2018] Aganagic, Frenkel, Okounkov, "Quantum q-Langlands Correspondence," arXiv:1701.03146
-structure QLanglandsDual (M : Type*) where
+structure QLanglandsDual (M : Type u) where
   /-- The original quantum gauge group. -/
-  gaugeGroup : QuantumGaugeGroup M
+  gaugeGroup : QuantumGaugeGroup.{u, w} M
   /-- The dual substrate: `q ↦ q⁻¹`. -/
   dualSubstrate : SubstrateParameter M
   /-- The substrate inversion: dual parameter is `q⁻¹`. -/
   substrate_inverted : ∀ (p : M),
     dualSubstrate.field p = (gaugeGroup.field p)⁻¹
   /-- The dual group at each point. -/
-  dualGroupAt : M → Type*
+  dualGroupAt : M → Type x
 
 /-- The Langlands involution preserves positivity: `q > 0 → q⁻¹ > 0`. -/
 theorem langlands_dual_pos {M : Type*} (ld : QLanglandsDual M)
@@ -217,11 +228,11 @@ theorem langlands_eigenvalue_swap {M : Type*} (ld : QLanglandsDual M)
     LaTeX: `\label{def:q-oper}`
     uses: `def:q-flat-connection`, `def:q-langlands-dual` -/
 -- Ref: [frenkel2007] Frenkel, "Lectures on the Langlands Program and Conformal Field Theory," arXiv:hep-th/0512172
-structure QOper (M : Type*) where
+structure QOper (M : Type u) where
   /-- The underlying q-flat connection. -/
   connection : QFlatConnection M
   /-- The Langlands dual data. -/
-  langlandsDual : QLanglandsDual M
+  langlandsDual : QLanglandsDual.{u, w, x} M
   /-- Transversality: the connection is transverse to the Borel reduction.
       For each simple root `αᵢ`, the component along `g_{−αᵢ}` is non-zero.
       Encoded as: the connection curvature has a non-zero component
@@ -242,10 +253,10 @@ structure QOper (M : Type*) where
 
     LaTeX: `\label{rem:fibre-functor-rigidity}` -/
 -- Ref: [deligne1990] Cat00e9gories tannakiennes — see content/schema/references.ts
-class FibreFunctorRigidity (M : Type*) where
+class FibreFunctorRigidity (M : Type u) where
   /-- Two q-local systems with the same substrate and the same
       holonomy residues at every point are equal. -/
-  eigenvalue_unique : ∀ (ls ls' : QLocalSystem M),
+  eigenvalue_unique : ∀ (ls ls' : QLocalSystem.{u, v} M),
     ls.sp = ls'.sp →
     (∀ p, ls.holonomyResidue p = ls'.holonomyResidue p) →
     ls = ls'
@@ -261,8 +272,8 @@ class FibreFunctorRigidity (M : Type*) where
     uses: `def:q-hecke-eigensheaf`, `def:q-hecke-operator`,
           `rem:fibre-functor-rigidity` -/
 -- Ref: [frenkel2007] Frenkel, "Lectures on the Langlands Program and Conformal Field Theory," arXiv:hep-th/0512172
-theorem q_hecke_eigenvalue {M : Type*} [inst : FibreFunctorRigidity M]
-    (es : QHeckeEigensheaf M) (es' : QHeckeEigensheaf M)
+theorem q_hecke_eigenvalue {M : Type u} [inst : FibreFunctorRigidity.{u, v} M]
+    (es : QHeckeEigensheaf.{u, v} M) (es' : QHeckeEigensheaf.{u, v} M)
     (_h_op : es.heckeOp = es'.heckeOp)
     (h_sp : es.eigenvalue.sp = es'.eigenvalue.sp)
     (h_res : ∀ p, es.eigenvalue.holonomyResidue p =
@@ -282,11 +293,10 @@ theorem q_hecke_eigenvalue {M : Type*} [inst : FibreFunctorRigidity M]
 theorem obstruction_finite_divisors (χ : ℤ) (hχ : χ ≠ 0) :
     Set.Finite {n : ℕ | n ≥ 1 ∧ (↑n : ℤ) ∣ χ} := by
   apply Set.Finite.subset (Int.natAbs χ).divisors.finite_toSet
-  intro n ⟨hn, hdvd⟩
+  rintro n ⟨hn, hdvd⟩
   simp only [Finset.mem_coe, Nat.mem_divisors]
-  constructor
-  · exact Int.natCast_dvd_natCast.mp (Int.dvd_natAbs.mpr hdvd)
-  · exact fun h => hχ (Int.natAbs_eq_zero.mp h)
+  exact ⟨Int.natCast_dvd_natCast.mp (Int.dvd_natAbs.mpr hdvd),
+         fun h => hχ (Int.natAbs_eq_zero.mp h)⟩
 
 /-- **Perpetual obstruction — cofinite persistence**: for any nonzero
     `χ`, the set of positive integers that do NOT divide `χ` is
@@ -298,14 +308,17 @@ theorem obstruction_finite_divisors (χ : ℤ) (hχ : χ ≠ 0) :
 -- Ref: [manuscript] Chapter 3, §Kummer-filtration-obstruction
 theorem obstruction_cofinite_persistence (χ : ℤ) (hχ : χ ≠ 0) :
     Set.Infinite {n : ℕ | n ≥ 1 ∧ ¬ (↑n : ℤ) ∣ χ} := by
-  -- Strategy: {n ≥ 1} is infinite, {n ≥ 1 ∧ n ∣ χ} is finite,
-  -- so {n ≥ 1 ∧ ¬ n ∣ χ} = {n ≥ 1} \ {n ≥ 1 ∧ n ∣ χ} is infinite
-  apply Set.Infinite.mono _ (Set.Infinite.diff
-    ((Set.infinite_range_of_injective (fun (a b : ℕ) (h : a + 1 = b + 1) => by omega) :
-        (Set.range (fun n : ℕ => n + 1)).Infinite).mono
-      (fun n hn => let ⟨k, hk⟩ := hn; hk ▸ by simp; omega))
-    (obstruction_finite_divisors χ hχ))
-  intro n ⟨hn, hndvd⟩
+  -- Strategy: {n ≥ 1} is infinite (complement of the finite {0}),
+  -- {n ≥ 1 ∧ n ∣ χ} is finite, so the difference
+  -- {n ≥ 1} \ {n ≥ 1 ∧ n ∣ χ} ⊆ {n ≥ 1 ∧ ¬ n ∣ χ} is infinite.
+  have h₁ : Set.Infinite {n : ℕ | n ≥ 1} := by
+    have hc : {n : ℕ | n ≥ 1} = ({0} : Set ℕ)ᶜ := by
+      ext n
+      simp [Nat.one_le_iff_ne_zero]
+    rw [hc]
+    exact (Set.finite_singleton 0).infinite_compl
+  refine (h₁.diff (obstruction_finite_divisors χ hχ)).mono ?_
+  rintro n ⟨hn, hndvd⟩
   exact ⟨hn, fun hdvd => hndvd ⟨hn, hdvd⟩⟩
 
 /-- **Kummer divisibility criterion**: `κ₀ mod n = 0` iff `n ∣ χ(A)`.
@@ -324,9 +337,9 @@ theorem kummer_divisibility_criterion (χ : ℤ) (n : ℕ) (hn : n ≥ 1) :
     -- The Kummer reduction vanishes iff n divides χ
     (↑n : ℤ) ∣ χ ↔ χ % ↑n = 0 := by
   constructor
-  · intro ⟨k, hk⟩
+  · rintro ⟨k, hk⟩
     rw [hk]
-    exact Int.mul_emod_right k ↑n
+    exact Int.mul_emod_right (↑n) k
   · intro h
     exact Int.dvd_of_emod_eq_zero h
 
@@ -336,10 +349,11 @@ theorem kummer_divisibility_criterion (χ : ℤ) (n : ℕ) (hn : n ≥ 1) :
 theorem kummer_no_universal_lift :
     ∀ (n : ℕ), n ≥ 2 → ∃ (χ : ℤ), χ ≠ 0 ∧ ¬ (↑n : ℤ) ∣ χ := by
   intro n hn
-  exact ⟨1, one_ne_zero, by
-    intro ⟨k, hk⟩
-    have : (↑n : ℤ) ≥ 2 := by exact_mod_cast hn
-    omega⟩
+  refine ⟨1, one_ne_zero, fun hdvd => ?_⟩
+  -- A divisor of 1 is at most 1, contradicting n ≥ 2.
+  have h₁ : (↑n : ℤ) ≤ 1 := Int.le_of_dvd one_pos hdvd
+  have h₂ : (2 : ℤ) ≤ ↑n := by exact_mod_cast hn
+  omega
 
 /-- **q-GL Kummer filtration**: at every level `n ≥ 1`, the
     Kummer divisibility criterion (`n ∣ χ` iff `χ % n = 0`) controls
@@ -391,9 +405,9 @@ theorem q_gl_kummer_filtration (χ : ℤ) (hχ : χ ≠ 0) :
     uses: `def:q-local-system`, `def:q-hecke-eigensheaf`,
           `def:q-langlands-dual`, `def:q-flat-connection` -/
 -- Ref: [aganagic2018] Aganagic, Frenkel, Okounkov, "Quantum q-Langlands Correspondence," arXiv:1701.03146
-class QGeometricLanglandsConjecture (M : Type*) where
+class QGeometricLanglandsConjecture (M : Type u) where
   /-- The Langlands functor: eigensheaves ↦ local systems. -/
-  langlandsFunctor : QHeckeEigensheaf M → QLocalSystem M
+  langlandsFunctor : QHeckeEigensheaf.{u, v} M → QLocalSystem.{u, v} M
   /-- Hecke compatibility: the functor intertwines Hecke operators
       with the local system action. -/
   hecke_compatible : ∀ (es : QHeckeEigensheaf M),
@@ -403,8 +417,8 @@ class QGeometricLanglandsConjecture (M : Type*) where
     langlandsFunctor es = es.eigenvalue
   /-- Injectivity on q-opers: distinct q-opers produce distinct
       eigensheaves. -/
-  oper_injective : ∀ (_op _op' : QOper M)
-    (es es' : QHeckeEigensheaf M),
+  oper_injective : ∀ (_op _op' : QOper.{u, w, x} M)
+    (es es' : QHeckeEigensheaf.{u, v} M),
     langlandsFunctor es = langlandsFunctor es' →
     es.eigenvalue = es'.eigenvalue
 
@@ -416,9 +430,9 @@ class QGeometricLanglandsConjecture (M : Type*) where
     uses: `conj:q-geometric-langlands`, `rem:fibre-functor-rigidity`,
           `def:q-hecke-eigensheaf`, `def:q-langlands-dual` -/
 -- Ref: [frenkel2007] Frenkel, "Lectures on the Langlands Program and Conformal Field Theory," arXiv:hep-th/0512172
-theorem q_gl_fiber_functor {M : Type*}
-    [QGeometricLanglandsConjecture M] [FibreFunctorRigidity M]
-    (es : QHeckeEigensheaf M) :
+theorem q_gl_fiber_functor {M : Type u}
+    [QGeometricLanglandsConjecture.{u, v, w, x} M] [FibreFunctorRigidity.{u, v} M]
+    (es : QHeckeEigensheaf.{u, v} M) :
     QGeometricLanglandsConjecture.langlandsFunctor es = es.eigenvalue :=
   QGeometricLanglandsConjecture.recovers_eigenvalue es
 
@@ -430,9 +444,9 @@ theorem q_gl_fiber_functor {M : Type*}
     uses: `def:q-oper`, `def:q-hecke-eigensheaf`,
           `conj:q-geometric-langlands` -/
 -- Ref: [frenkel2007] Frenkel, "Lectures on the Langlands Program and Conformal Field Theory," arXiv:hep-th/0512172
-theorem q_oper_hecke {M : Type*}
-    [QGeometricLanglandsConjecture M]
-    (op op' : QOper M) (es es' : QHeckeEigensheaf M)
+theorem q_oper_hecke {M : Type u}
+    [QGeometricLanglandsConjecture.{u, v, w, x} M]
+    (op op' : QOper.{u, w, x} M) (es es' : QHeckeEigensheaf.{u, v} M)
     (h : QGeometricLanglandsConjecture.langlandsFunctor es =
          QGeometricLanglandsConjecture.langlandsFunctor es') :
     es.eigenvalue = es'.eigenvalue :=
