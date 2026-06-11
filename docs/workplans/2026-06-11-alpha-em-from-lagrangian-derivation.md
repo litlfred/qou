@@ -56,8 +56,11 @@ Crossing with `S¹` adds a spurious generator (`b₁ → 2g+1`) and a spurious
    the secondary `V(B³)/Vol(S³)` reading as primary and called the derived "/3"
    open).
 3. **Jet rewrite.** Place the terms in the SW-period jet tower
-   (`jet-sw-tau-decomposition`): `q[9][10]` tree, `2/(3π)` the n=1 IR zero-mode,
-   `α/(4π)` the n=2 self-energy.
+   (`jet-sw-tau-decomposition`): `q[9]_q[10]_q` tree, `2/(3π)` the n=1 IR
+   zero-mode, and the n=2 self-energy — whose established form (PR #1495 thread)
+   is `α·[2]_q/(8π)·(1−h²α)`, with denominator `8π = π·dim H¹(M_Bring) = π·b₁`
+   grounded in the same proven `b₁=2g=8` (boundary: `b₁` topological, `π`
+   archimedean, `[2]_q` substrate).
 
 Tiered honesty: the topological/geometric core is rigorous (Lean); the
 heat-kernel zero-mode = b₁/Vol is a cited standard result; the upstream
