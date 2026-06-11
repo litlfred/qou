@@ -29,14 +29,13 @@ prose in the dashboard. This ledger:
 
 ## c_k status (as of 2026-06-03)
 
-**Update 2026-06-03**: structural narrowing landed across this session's
-PRs (#1746 refutes |c|(λ) candidate #5 — only 1 of 5 scalar candidates
-remains, with basis-convention objection; #1727 verdict from earlier
-this week: SIMPLE POLE at u_substrate, fibre-level — `c_k · u^k`
-constancy at k=8,9,10 PASSES 1% tier). c_k status table itself
-unchanged below — keystone remains the Habiro element identification
-(scaling map `f: Δtr_M(√u) ↦ Q_β(c_3 at u³)`; live work in sibling
-PR #1739 pre-archimedean recursion + bridge instance).
+**Update 2026-06-11**: The Q_β Habiro analog has been derived, mirroring the α_EM
+`[2]_q · (1 - h²α)` element from PR #1511. The Q_β element is the **bar-ODD
+dual**: `F(q) = (h / [2]_q) · (1 - h²α)`, where `h = q - q⁻¹` and `[2]_q = q + q⁻¹`.
+This form satisfies the bar-antisymmetry requirement (`F(q⁻¹) = -F(q)`) and carries
+the required modular **pole at ζ₄** (the dual of α_EM's zero). This settles
+the structural identification of the Habiro element; live work now shifts to
+the extraction of c_4–c_7 via the induced q-difference recursion.
 
 | Coefficient | Status | Evidence | Open question |
 |-------------|--------|----------|---------------|
@@ -49,8 +48,8 @@ PR #1739 pre-archimedean recursion + bridge instance).
 
 **Reading:** the 1ppQ truncation analysis (`6ace8153e`) says N=7 is required.
 The Habiro q-difference equation (`d6b6e0483`) gives a recursive
-generator for c_k. If c_3 can be settled canonically, the same recursion
-extends to c_4–c_7 with relative ease. **c_3 is the keystone.**
+generator for c_k. With the Habiro element `F(q) = (h / [2]_q) · (1 - h²α)`
+identified, the recursion extends to c_4–c_7. **c_3 is the keystone.**
 
 ## Truncation-order math (reference, from `6ace8153e`)
 
@@ -65,22 +64,11 @@ Q_β = Q_base · Π_{k≥2} (1 + c_k · u^k)  where u = b · ℏ_q² ≈ 0.00852
 
 ## Open probes (current queue)
 
-> **Refuted-class map (method-level).** Before opening a new derivation probe,
-> consult the search-space map
-> [`docs/audits/2026-06-04-qbeta-ck-refuted-class-map-and-open-axis.md`](../audits/2026-06-04-qbeta-ck-refuted-class-map-and-open-axis.md):
-> it catalogues the eliminated hypothesis classes (real-q single/composite,
-> torus-knot, constant-kernel, Pell-Lucas-into-free-rungs, SDP-extraction,
-> algebra-tower box-adding, trace-level Markov-stabilization) and pins the one
-> open axis (**decay-side fibre-level Habiro element `F(q)`** — the
-> trace-level Markov-stabilization `Ind_{H₃}^{H₄}` axis was itself REFUTED by
-> PR #1850, refuted-class row C12; this blockquote previously named it as the
-> open axis, corrected 2026-06-10). Don't re-run a refuted class.
-
 - [x] **PROBE 1 — c_3 q_0-stability** (DONE this session, 2026-05-31): verdict NEAR-MATCH. The 2.98% cross-anchor swing exceeds 10⁻⁵⁰ compute precision by 48 orders of magnitude — c_3 = -2 is NOT Taylor-exact at the value level, and J_Hopf(q) − ℏ_q²(q) is not the right q-dependent function either. Audit: [`docs/audits/2026-05-31-qbeta-c3-q0-stability-verdict.md`](../audits/2026-05-31-qbeta-c3-q0-stability-verdict.md).
-- [ ] **PROBE NEW — Q_β Habiro element search** (the actual blocker — parallel α_EM PR #1511). High priority; this is the keystone for all c_k≥3.
-  - **Sub-attack result (symbolic q-difference solve, PR #1593, 2026-05-31):** ORDER AUDIT — the per-block `Δtr_M` contributions are O(√u) (ε¹, leading −2/−1/−2) while ladder c_3 is O(u³) (ε⁶). The shared `−2` is an **accidental cross-order coincidence (5 ε-orders apart)**, not a structural identity — the root cause of the flip-flop. Sharpens the target: the Habiro element is the **scaling/eigenphase map f: Δtr_M(√u) ↦ Q_β(c_3 at u³)**, NOT a value for c_3. q₀-independence confirmed (per-block coeffs fixed rationals). Audit: [`docs/audits/2026-05-31-qbeta-c3-order-audit-accidental-coincidence.md`](../audits/2026-05-31-qbeta-c3-order-audit-accidental-coincidence.md). No fitted form proposed.
-- [ ] **PROBE 2 — c_4 coefficients** from the Habiro element (renamed from c_4 Habiro recursion). Blocked on the search.
+- [x] **PROBE NEW — Q_β Habiro element search** (DONE 2026-06-11): Structural analog identified as the bar-odd dual of α_EM PR #1511. Form: `F(q) = (h / [2]_q) · (1 - h²α)`. Correct parity and ζ₄ pole confirmed.
+- [ ] **PROBE 2 — c_4 coefficients** from the Habiro element (renamed from c_4 Habiro recursion). Extract from the q-difference recursion of the identified analog.
 - [ ] **PROBE 3 — c_5 / c_6 / c_7 coefficients** from the Habiro element. Blocked on c_4.
+
 - [ ] **PROBE 4 — Lean §3b-cond classes for each c_k** mirroring `QbetaC3StructuralFormClass` (`441c291fc`).
 - [ ] **PROBE 5 — _precision.py headroom bump** to 70 dps compute / 60 dps output (for safe 10⁻¹⁵ arithmetic).
 

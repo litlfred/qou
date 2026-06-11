@@ -13,209 +13,6 @@
     "lean": "e45f31393b92"
   },
   "criteria": {
-    "proof-rater-strategy-clarity": [
-      {
-        "field_hash": {
-          "md": "e627d564b059",
-          "ts": "c75199ce08f1",
-          "lean": "e45f31393b92"
-        },
-        "result": "pass",
-        "score": {
-          "value": 1,
-          "max": 1
-        },
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/proof-integration-watcher",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "local/proof-integration-watcher"
-        },
-        "reviewed_at": "2026-06-07T01:36:17.363Z",
-        "reviewed_sha": "5b22f37e27e74b674fb6b50fae73e0792e7212e2",
-        "notes": "Clear: 2 numbered claims (n-cluster sub-braid sits at jet degree n; gr_n = n-body term) => body-order series = jet-graded total; obligation (C) of the many-body conjecture."
-      }
-    ],
-    "proof-rater-goal-plausibility": [
-      {
-        "field_hash": {
-          "md": "e627d564b059",
-          "ts": "c75199ce08f1",
-          "lean": "e45f31393b92"
-        },
-        "result": "pass",
-        "score": {
-          "value": 1,
-          "max": 1
-        },
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/proof-integration-watcher",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "local/proof-integration-watcher"
-        },
-        "reviewed_at": "2026-06-07T01:36:17.394Z",
-        "reviewed_sha": "5b22f37e27e74b674fb6b50fae73e0792e7212e2",
-        "notes": "Sorry-free: bodyorder_eq_jet_total via rw[total_eq]+sum_congr. Caveat: substantive grading-match (Steps 1-2) packaged as structure fields body_eq_graded/total_eq (assumed), extracted as series identity. Gap named."
-      }
-    ],
-    "proof-rater-novelty": [
-      {
-        "field_hash": {
-          "md": "e627d564b059",
-          "ts": "c75199ce08f1",
-          "lean": "e45f31393b92"
-        },
-        "result": "warn",
-        "severity": "minor",
-        "score": {
-          "value": 0.6,
-          "max": 1
-        },
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/proof-integration-watcher",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "local/proof-integration-watcher"
-        },
-        "reviewed_at": "2026-06-07T01:39:41.470Z",
-        "reviewed_sha": "5b22f37e27e74b674fb6b50fae73e0792e7212e2",
-        "notes": "standard jet-degree argument; structure-hypothesis projection (theorem extracts S field)"
-      }
-    ],
-    "proof-statement-integrity": [
-      {
-        "field_hash": {
-          "md": "e627d564b059",
-          "ts": "c75199ce08f1",
-          "lean": "e45f31393b92"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/proof-integration-watcher",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "local/proof-integration-watcher"
-        },
-        "reviewed_at": "2026-06-07T01:36:17.456Z",
-        "reviewed_sha": "5b22f37e27e74b674fb6b50fae73e0792e7212e2",
-        "notes": "Sorry-free; BodyOrderJetGrading honestly packages the grading match + exhaustiveness as hypotheses; no suspect axiom, no True-stub. md ties (C) to gb-spectral-sequence/jet-prefix steps."
-      }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "e627d564b059",
-          "ts": "c75199ce08f1",
-          "lean": "e45f31393b92"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "mass-theory.ts:182 -- bond-order-eq-jet-degree in sec:hoefsmit-convergence-magic-shells",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-08T09:26:04.262Z",
-        "reviewed_sha": "80b79c363e3e0be747ca702faf3290714b4f028b",
-        "notes": "Lemma about body-order=jet-degree for nucleon clusters; fits mass-theory algebraic/archimedean face."
-      }
-    ],
-    "wall-side-statement": [
-      {
-        "field_hash": {
-          "md": "e627d564b059",
-          "ts": "c75199ce08f1",
-          "lean": "e45f31393b92"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "bond-order-eq-jet-degree.lean:24 -- Ground ring: R (binding energies); structure uses ℝ appropriately",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-08T09:26:04.295Z",
-        "reviewed_sha": "80b79c363e3e0be747ca702faf3290714b4f028b",
-        "notes": "Lean uses R (ℝ) for binding energies; archimedean use is correct and expected for binding energy claims."
-      }
-    ],
-    "wall-side-proof": [
-      {
-        "field_hash": {
-          "md": "e627d564b059",
-          "ts": "c75199ce08f1",
-          "lean": "e45f31393b92"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "bond-order-eq-jet-degree.lean:53-55 -- rw [S.total_eq]; exact Finset.sum_congr rfl ...",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-08T09:26:04.327Z",
-        "reviewed_sha": "80b79c363e3e0be747ca702faf3290714b4f028b",
-        "notes": "Proof uses algebraic sum_congr; matches archimedean-R statement; no regime mismatch."
-      }
-    ],
-    "voice-statement-no-interpretation": [
-      {
-        "field_hash": {
-          "md": "e627d564b059",
-          "ts": "c75199ce08f1",
-          "lean": "e45f31393b92"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "bond-order-eq-jet-degree.md:1 -- statement + two numbered items + equation; no interpretive H2 sections",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-08T09:26:04.361Z",
-        "reviewed_sha": "80b79c363e3e0be747ca702faf3290714b4f028b",
-        "notes": "Lemma kind; body is statement only; no substantive interpretive prose present."
-      }
-    ],
-    "proof-narrative-lean-equiv": [
-      {
-        "field_hash": {
-          "md": "e627d564b059",
-          "ts": "c75199ce08f1",
-          "lean": "e45f31393b92"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "bond-order-eq-jet-degree.lean:52 -- theorem bodyorder_eq_jet_total; ts ref QOU.Mass.bodyorder_eq_jet_total",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-08T09:26:04.396Z",
-        "reviewed_sha": "80b79c363e3e0be747ca702faf3290714b4f028b",
-        "notes": "Narrative n-body term = gr_n; Lean total = sum bodyTerm n via body_eq_graded. Claim equivalent. Ref matches."
-      }
-    ],
     "voice-status-leak": [
       {
         "field_hash": {
@@ -231,8 +28,8 @@
           "script_hash": "f849b704ab06",
           "script_commit_sha": "d7f3e4a9aa8fef7efbe6f8878aa26d691371c34e"
         },
-        "reviewed_at": "2026-06-09T14:26:34.579Z",
-        "reviewed_sha": "33b99911b9b3edcd27ec5aece0f73322508d7a15"
+        "reviewed_at": "2026-06-11T19:13:16.527Z",
+        "reviewed_sha": "bcff0773585869931b0b587765ca6ad94a03fdab"
       }
     ],
     "voice-emoji-content": [
@@ -250,8 +47,8 @@
           "script_hash": "f849b704ab06",
           "script_commit_sha": "d7f3e4a9aa8fef7efbe6f8878aa26d691371c34e"
         },
-        "reviewed_at": "2026-06-09T14:26:34.579Z",
-        "reviewed_sha": "33b99911b9b3edcd27ec5aece0f73322508d7a15"
+        "reviewed_at": "2026-06-11T19:13:16.527Z",
+        "reviewed_sha": "bcff0773585869931b0b587765ca6ad94a03fdab"
       }
     ],
     "voice-first-person-work": [
@@ -269,8 +66,8 @@
           "script_hash": "f849b704ab06",
           "script_commit_sha": "d7f3e4a9aa8fef7efbe6f8878aa26d691371c34e"
         },
-        "reviewed_at": "2026-06-09T14:26:34.579Z",
-        "reviewed_sha": "33b99911b9b3edcd27ec5aece0f73322508d7a15"
+        "reviewed_at": "2026-06-11T19:13:16.527Z",
+        "reviewed_sha": "bcff0773585869931b0b587765ca6ad94a03fdab"
       }
     ],
     "voice-time-stamped-notes": [
@@ -288,8 +85,8 @@
           "script_hash": "f849b704ab06",
           "script_commit_sha": "d7f3e4a9aa8fef7efbe6f8878aa26d691371c34e"
         },
-        "reviewed_at": "2026-06-09T14:26:34.579Z",
-        "reviewed_sha": "33b99911b9b3edcd27ec5aece0f73322508d7a15"
+        "reviewed_at": "2026-06-11T19:13:16.527Z",
+        "reviewed_sha": "bcff0773585869931b0b587765ca6ad94a03fdab"
       }
     ],
     "voice-unicode-crash": [
@@ -307,8 +104,8 @@
           "script_hash": "f849b704ab06",
           "script_commit_sha": "d7f3e4a9aa8fef7efbe6f8878aa26d691371c34e"
         },
-        "reviewed_at": "2026-06-09T14:26:34.579Z",
-        "reviewed_sha": "33b99911b9b3edcd27ec5aece0f73322508d7a15"
+        "reviewed_at": "2026-06-11T19:13:16.527Z",
+        "reviewed_sha": "bcff0773585869931b0b587765ca6ad94a03fdab"
       }
     ],
     "voice-editorializing": [
@@ -326,8 +123,8 @@
           "script_hash": "f849b704ab06",
           "script_commit_sha": "d7f3e4a9aa8fef7efbe6f8878aa26d691371c34e"
         },
-        "reviewed_at": "2026-06-09T14:26:34.579Z",
-        "reviewed_sha": "33b99911b9b3edcd27ec5aece0f73322508d7a15"
+        "reviewed_at": "2026-06-11T19:13:16.527Z",
+        "reviewed_sha": "bcff0773585869931b0b587765ca6ad94a03fdab"
       }
     ],
     "voice-scholarly-default": [
@@ -345,8 +142,8 @@
           "script_hash": "f849b704ab06",
           "script_commit_sha": "d7f3e4a9aa8fef7efbe6f8878aa26d691371c34e"
         },
-        "reviewed_at": "2026-06-09T14:26:34.579Z",
-        "reviewed_sha": "33b99911b9b3edcd27ec5aece0f73322508d7a15"
+        "reviewed_at": "2026-06-11T19:13:16.527Z",
+        "reviewed_sha": "bcff0773585869931b0b587765ca6ad94a03fdab"
       }
     ],
     "voice-title-scholarly": [
@@ -364,8 +161,8 @@
           "script_hash": "6a0f3410ed24",
           "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92"
         },
-        "reviewed_at": "2026-06-09T14:26:34.579Z",
-        "reviewed_sha": "33b99911b9b3edcd27ec5aece0f73322508d7a15"
+        "reviewed_at": "2026-06-11T19:13:16.527Z",
+        "reviewed_sha": "bcff0773585869931b0b587765ca6ad94a03fdab"
       }
     ],
     "voice-ai-slop": [
@@ -383,8 +180,8 @@
           "script_hash": "f849b704ab06",
           "script_commit_sha": "d7f3e4a9aa8fef7efbe6f8878aa26d691371c34e"
         },
-        "reviewed_at": "2026-06-09T14:26:34.579Z",
-        "reviewed_sha": "33b99911b9b3edcd27ec5aece0f73322508d7a15"
+        "reviewed_at": "2026-06-11T19:13:16.527Z",
+        "reviewed_sha": "bcff0773585869931b0b587765ca6ad94a03fdab"
       }
     ],
     "voice-author-notes-pollution": [
@@ -402,8 +199,8 @@
           "script_hash": "6a0f3410ed24",
           "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92"
         },
-        "reviewed_at": "2026-06-09T14:26:34.579Z",
-        "reviewed_sha": "33b99911b9b3edcd27ec5aece0f73322508d7a15"
+        "reviewed_at": "2026-06-11T19:13:16.527Z",
+        "reviewed_sha": "bcff0773585869931b0b587765ca6ad94a03fdab"
       }
     ],
     "framework-canonical": [
@@ -421,8 +218,8 @@
           "script_hash": "f849b704ab06",
           "script_commit_sha": "d7f3e4a9aa8fef7efbe6f8878aa26d691371c34e"
         },
-        "reviewed_at": "2026-06-09T14:26:34.579Z",
-        "reviewed_sha": "33b99911b9b3edcd27ec5aece0f73322508d7a15"
+        "reviewed_at": "2026-06-11T19:13:16.527Z",
+        "reviewed_sha": "bcff0773585869931b0b587765ca6ad94a03fdab"
       }
     ],
     "wall-side-correct": [
@@ -440,8 +237,8 @@
           "script_hash": "f849b704ab06",
           "script_commit_sha": "d7f3e4a9aa8fef7efbe6f8878aa26d691371c34e"
         },
-        "reviewed_at": "2026-06-09T14:26:34.579Z",
-        "reviewed_sha": "33b99911b9b3edcd27ec5aece0f73322508d7a15"
+        "reviewed_at": "2026-06-11T19:13:16.527Z",
+        "reviewed_sha": "bcff0773585869931b0b587765ca6ad94a03fdab"
       }
     ],
     "wall-base-ring-minimal": [
@@ -459,8 +256,8 @@
           "script_hash": "6a0f3410ed24",
           "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92"
         },
-        "reviewed_at": "2026-06-09T14:26:34.579Z",
-        "reviewed_sha": "33b99911b9b3edcd27ec5aece0f73322508d7a15"
+        "reviewed_at": "2026-06-11T19:13:16.527Z",
+        "reviewed_sha": "bcff0773585869931b0b587765ca6ad94a03fdab"
       }
     ],
     "q-usage-regime-detected": [
@@ -478,8 +275,8 @@
           "script_hash": "93cae3264dc7",
           "script_commit_sha": "6dd2b7268367e45f3c78a93d8cf81ded4a5efaaf"
         },
-        "reviewed_at": "2026-06-09T14:26:34.579Z",
-        "reviewed_sha": "33b99911b9b3edcd27ec5aece0f73322508d7a15"
+        "reviewed_at": "2026-06-11T19:13:16.527Z",
+        "reviewed_sha": "bcff0773585869931b0b587765ca6ad94a03fdab"
       }
     ],
     "q-usage-fixed-q0-leak": [
@@ -497,8 +294,8 @@
           "script_hash": "93cae3264dc7",
           "script_commit_sha": "6dd2b7268367e45f3c78a93d8cf81ded4a5efaaf"
         },
-        "reviewed_at": "2026-06-09T14:26:34.579Z",
-        "reviewed_sha": "33b99911b9b3edcd27ec5aece0f73322508d7a15"
+        "reviewed_at": "2026-06-11T19:13:16.527Z",
+        "reviewed_sha": "bcff0773585869931b0b587765ca6ad94a03fdab"
       }
     ],
     "q-usage-archimedean-in-categorical-chapter": [
@@ -516,8 +313,8 @@
           "script_hash": "93cae3264dc7",
           "script_commit_sha": "6dd2b7268367e45f3c78a93d8cf81ded4a5efaaf"
         },
-        "reviewed_at": "2026-06-09T14:26:34.579Z",
-        "reviewed_sha": "33b99911b9b3edcd27ec5aece0f73322508d7a15"
+        "reviewed_at": "2026-06-11T19:13:16.527Z",
+        "reviewed_sha": "bcff0773585869931b0b587765ca6ad94a03fdab"
       }
     ],
     "q-usage-positivity-implicit": [
@@ -535,8 +332,8 @@
           "script_hash": "93cae3264dc7",
           "script_commit_sha": "6dd2b7268367e45f3c78a93d8cf81ded4a5efaaf"
         },
-        "reviewed_at": "2026-06-09T14:26:34.579Z",
-        "reviewed_sha": "33b99911b9b3edcd27ec5aece0f73322508d7a15"
+        "reviewed_at": "2026-06-11T19:13:16.527Z",
+        "reviewed_sha": "bcff0773585869931b0b587765ca6ad94a03fdab"
       }
     ],
     "q-usage-modulus-vs-real-mismatch": [
@@ -554,8 +351,8 @@
           "script_hash": "93cae3264dc7",
           "script_commit_sha": "6dd2b7268367e45f3c78a93d8cf81ded4a5efaaf"
         },
-        "reviewed_at": "2026-06-09T14:26:34.579Z",
-        "reviewed_sha": "33b99911b9b3edcd27ec5aece0f73322508d7a15"
+        "reviewed_at": "2026-06-11T19:13:16.527Z",
+        "reviewed_sha": "bcff0773585869931b0b587765ca6ad94a03fdab"
       }
     ],
     "q-usage-root-of-unity-undeclared": [
@@ -573,8 +370,8 @@
           "script_hash": "93cae3264dc7",
           "script_commit_sha": "6dd2b7268367e45f3c78a93d8cf81ded4a5efaaf"
         },
-        "reviewed_at": "2026-06-09T14:26:34.579Z",
-        "reviewed_sha": "33b99911b9b3edcd27ec5aece0f73322508d7a15"
+        "reviewed_at": "2026-06-11T19:13:16.527Z",
+        "reviewed_sha": "bcff0773585869931b0b587765ca6ad94a03fdab"
       }
     ],
     "q-usage-narrative-chapter-mismatch": [
@@ -592,8 +389,8 @@
           "script_hash": "93cae3264dc7",
           "script_commit_sha": "6dd2b7268367e45f3c78a93d8cf81ded4a5efaaf"
         },
-        "reviewed_at": "2026-06-09T14:26:34.579Z",
-        "reviewed_sha": "33b99911b9b3edcd27ec5aece0f73322508d7a15"
+        "reviewed_at": "2026-06-11T19:13:16.527Z",
+        "reviewed_sha": "bcff0773585869931b0b587765ca6ad94a03fdab"
       }
     ],
     "proof-no-bare-sorries": [
@@ -611,8 +408,8 @@
           "script_hash": "6a0f3410ed24",
           "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92"
         },
-        "reviewed_at": "2026-06-09T14:26:34.579Z",
-        "reviewed_sha": "33b99911b9b3edcd27ec5aece0f73322508d7a15"
+        "reviewed_at": "2026-06-11T19:13:16.527Z",
+        "reviewed_sha": "bcff0773585869931b0b587765ca6ad94a03fdab"
       }
     ],
     "proof-no-axiom-growth": [
@@ -630,8 +427,8 @@
           "script_hash": "6a0f3410ed24",
           "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92"
         },
-        "reviewed_at": "2026-06-09T14:26:34.579Z",
-        "reviewed_sha": "33b99911b9b3edcd27ec5aece0f73322508d7a15"
+        "reviewed_at": "2026-06-11T19:13:16.527Z",
+        "reviewed_sha": "bcff0773585869931b0b587765ca6ad94a03fdab"
       }
     ],
     "proof-build-green": [
@@ -649,8 +446,8 @@
           "script_hash": "6a0f3410ed24",
           "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92"
         },
-        "reviewed_at": "2026-06-09T14:26:34.579Z",
-        "reviewed_sha": "33b99911b9b3edcd27ec5aece0f73322508d7a15"
+        "reviewed_at": "2026-06-11T19:13:16.527Z",
+        "reviewed_sha": "bcff0773585869931b0b587765ca6ad94a03fdab"
       }
     ],
     "proof-substantive": [
@@ -668,8 +465,8 @@
           "script_hash": "6a0f3410ed24",
           "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92"
         },
-        "reviewed_at": "2026-06-09T14:26:34.579Z",
-        "reviewed_sha": "33b99911b9b3edcd27ec5aece0f73322508d7a15"
+        "reviewed_at": "2026-06-11T19:13:16.527Z",
+        "reviewed_sha": "bcff0773585869931b0b587765ca6ad94a03fdab"
       }
     ],
     "proof-no-conj-propagation-violation": [
@@ -688,8 +485,8 @@
           "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92",
           "deps_hash": "1fd427be423e"
         },
-        "reviewed_at": "2026-06-09T14:26:34.579Z",
-        "reviewed_sha": "33b99911b9b3edcd27ec5aece0f73322508d7a15"
+        "reviewed_at": "2026-06-11T19:13:16.527Z",
+        "reviewed_sha": "bcff0773585869931b0b587765ca6ad94a03fdab"
       }
     ],
     "proof-no-trivial-skeleton": [
@@ -708,8 +505,8 @@
           "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92",
           "deps_hash": "e3ba8c3fe5e7"
         },
-        "reviewed_at": "2026-06-09T14:26:34.579Z",
-        "reviewed_sha": "33b99911b9b3edcd27ec5aece0f73322508d7a15"
+        "reviewed_at": "2026-06-11T19:13:16.527Z",
+        "reviewed_sha": "bcff0773585869931b0b587765ca6ad94a03fdab"
       }
     ],
     "proof-conditional-class-banner": [
@@ -728,8 +525,8 @@
           "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92",
           "deps_hash": "c2590a9b4187"
         },
-        "reviewed_at": "2026-06-09T14:26:34.579Z",
-        "reviewed_sha": "33b99911b9b3edcd27ec5aece0f73322508d7a15"
+        "reviewed_at": "2026-06-11T19:13:16.527Z",
+        "reviewed_sha": "bcff0773585869931b0b587765ca6ad94a03fdab"
       }
     ],
     "proof-lean-compiles": [
@@ -748,8 +545,8 @@
           "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92",
           "deps_hash": "4b9cd43e52e5"
         },
-        "reviewed_at": "2026-06-09T14:26:34.579Z",
-        "reviewed_sha": "33b99911b9b3edcd27ec5aece0f73322508d7a15"
+        "reviewed_at": "2026-06-11T19:13:16.527Z",
+        "reviewed_sha": "bcff0773585869931b0b587765ca6ad94a03fdab"
       }
     ],
     "canonical-calibration-count": [
@@ -767,8 +564,8 @@
           "script_hash": "6a0f3410ed24",
           "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92"
         },
-        "reviewed_at": "2026-06-09T14:26:34.579Z",
-        "reviewed_sha": "33b99911b9b3edcd27ec5aece0f73322508d7a15"
+        "reviewed_at": "2026-06-11T19:13:16.527Z",
+        "reviewed_sha": "bcff0773585869931b0b587765ca6ad94a03fdab"
       }
     ],
     "canonical-no-numerology": [
@@ -786,8 +583,8 @@
           "script_hash": "6a0f3410ed24",
           "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92"
         },
-        "reviewed_at": "2026-06-09T14:26:34.579Z",
-        "reviewed_sha": "33b99911b9b3edcd27ec5aece0f73322508d7a15"
+        "reviewed_at": "2026-06-11T19:13:16.527Z",
+        "reviewed_sha": "bcff0773585869931b0b587765ca6ad94a03fdab"
       }
     ],
     "canonical-witness-pinned": [
@@ -805,8 +602,8 @@
           "script_hash": "6a0f3410ed24",
           "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92"
         },
-        "reviewed_at": "2026-06-09T14:26:34.579Z",
-        "reviewed_sha": "33b99911b9b3edcd27ec5aece0f73322508d7a15"
+        "reviewed_at": "2026-06-11T19:13:16.527Z",
+        "reviewed_sha": "bcff0773585869931b0b587765ca6ad94a03fdab"
       }
     ],
     "canonical-script-not-deprecated": [
@@ -824,8 +621,8 @@
           "script_hash": "6a0f3410ed24",
           "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92"
         },
-        "reviewed_at": "2026-06-09T14:26:34.579Z",
-        "reviewed_sha": "33b99911b9b3edcd27ec5aece0f73322508d7a15"
+        "reviewed_at": "2026-06-11T19:13:16.527Z",
+        "reviewed_sha": "bcff0773585869931b0b587765ca6ad94a03fdab"
       }
     ],
     "canonical-dilogarithm-context": [
@@ -843,8 +640,8 @@
           "script_hash": "6a0f3410ed24",
           "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92"
         },
-        "reviewed_at": "2026-06-09T14:26:34.579Z",
-        "reviewed_sha": "33b99911b9b3edcd27ec5aece0f73322508d7a15"
+        "reviewed_at": "2026-06-11T19:13:16.527Z",
+        "reviewed_sha": "bcff0773585869931b0b587765ca6ad94a03fdab"
       }
     ],
     "canonical-no-hardcoded-observable": [
@@ -862,8 +659,8 @@
           "script_hash": "6a0f3410ed24",
           "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92"
         },
-        "reviewed_at": "2026-06-09T14:26:34.579Z",
-        "reviewed_sha": "33b99911b9b3edcd27ec5aece0f73322508d7a15"
+        "reviewed_at": "2026-06-11T19:13:16.527Z",
+        "reviewed_sha": "bcff0773585869931b0b587765ca6ad94a03fdab"
       }
     ],
     "canonical-cal4-acknowledged": [
@@ -881,8 +678,8 @@
           "script_hash": "6a0f3410ed24",
           "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92"
         },
-        "reviewed_at": "2026-06-09T14:26:34.579Z",
-        "reviewed_sha": "33b99911b9b3edcd27ec5aece0f73322508d7a15"
+        "reviewed_at": "2026-06-11T19:13:16.527Z",
+        "reviewed_sha": "bcff0773585869931b0b587765ca6ad94a03fdab"
       }
     ],
     "canonical-ck-tiered-not-binary": [
@@ -900,8 +697,8 @@
           "script_hash": "6a0f3410ed24",
           "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92"
         },
-        "reviewed_at": "2026-06-09T14:26:34.579Z",
-        "reviewed_sha": "33b99911b9b3edcd27ec5aece0f73322508d7a15"
+        "reviewed_at": "2026-06-11T19:13:16.527Z",
+        "reviewed_sha": "bcff0773585869931b0b587765ca6ad94a03fdab"
       }
     ],
     "canonical-no-negative-result-in-paper": [
@@ -919,8 +716,8 @@
           "script_hash": "6a0f3410ed24",
           "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92"
         },
-        "reviewed_at": "2026-06-09T14:26:34.579Z",
-        "reviewed_sha": "33b99911b9b3edcd27ec5aece0f73322508d7a15"
+        "reviewed_at": "2026-06-11T19:13:16.527Z",
+        "reviewed_sha": "bcff0773585869931b0b587765ca6ad94a03fdab"
       }
     ],
     "compute-prop-has-probe": [
@@ -938,8 +735,8 @@
           "script_hash": "6a0f3410ed24",
           "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92"
         },
-        "reviewed_at": "2026-06-09T14:26:34.579Z",
-        "reviewed_sha": "33b99911b9b3edcd27ec5aece0f73322508d7a15"
+        "reviewed_at": "2026-06-11T19:13:16.527Z",
+        "reviewed_sha": "bcff0773585869931b0b587765ca6ad94a03fdab"
       }
     ],
     "compute-prop-has-consumer": [
@@ -957,8 +754,8 @@
           "script_hash": "6a0f3410ed24",
           "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92"
         },
-        "reviewed_at": "2026-06-09T14:26:34.579Z",
-        "reviewed_sha": "33b99911b9b3edcd27ec5aece0f73322508d7a15"
+        "reviewed_at": "2026-06-11T19:13:16.527Z",
+        "reviewed_sha": "bcff0773585869931b0b587765ca6ad94a03fdab"
       }
     ],
     "compute-witness-exists": [
@@ -976,8 +773,8 @@
           "script_hash": "6a0f3410ed24",
           "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92"
         },
-        "reviewed_at": "2026-06-09T14:26:34.579Z",
-        "reviewed_sha": "33b99911b9b3edcd27ec5aece0f73322508d7a15"
+        "reviewed_at": "2026-06-11T19:13:16.527Z",
+        "reviewed_sha": "bcff0773585869931b0b587765ca6ad94a03fdab"
       }
     ],
     "compute-lp-dual-present": [
@@ -995,8 +792,8 @@
           "script_hash": "6a0f3410ed24",
           "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92"
         },
-        "reviewed_at": "2026-06-09T14:26:34.579Z",
-        "reviewed_sha": "33b99911b9b3edcd27ec5aece0f73322508d7a15"
+        "reviewed_at": "2026-06-11T19:13:16.527Z",
+        "reviewed_sha": "bcff0773585869931b0b587765ca6ad94a03fdab"
       }
     ],
     "detangler-no-forward-ref": [
@@ -1014,10 +811,10 @@
           "script_hash": "6a0f3410ed24",
           "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92"
         },
-        "reviewed_at": "2026-06-09T14:26:34.579Z",
-        "reviewed_sha": "33b99911b9b3edcd27ec5aece0f73322508d7a15",
+        "reviewed_at": "2026-06-11T19:13:16.527Z",
+        "reviewed_sha": "bcff0773585869931b0b587765ca6ad94a03fdab",
         "severity": "major",
-        "evidence": "quantum-observable-universe/mass-theory/bond-order-eq-jet-degree.ts:0: forward ref: uses prop:jet-prefix-gb-filtration (manifest pos 329) which appears after this block (pos 107) in the chapter"
+        "evidence": "content/quantum-observable-universe/mass-theory/bond-order-eq-jet-degree.ts:0: forward ref: uses prop:jet-prefix-gb-filtration (manifest pos 330) which appears after this block (pos 108) in the chapter"
       }
     ],
     "detangler-section-band": [
@@ -1035,8 +832,8 @@
           "script_hash": "6a0f3410ed24",
           "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92"
         },
-        "reviewed_at": "2026-06-09T14:26:34.579Z",
-        "reviewed_sha": "33b99911b9b3edcd27ec5aece0f73322508d7a15"
+        "reviewed_at": "2026-06-11T19:13:16.527Z",
+        "reviewed_sha": "bcff0773585869931b0b587765ca6ad94a03fdab"
       }
     ],
     "detangler-no-xchapter-fwd": [
@@ -1054,8 +851,8 @@
           "script_hash": "6a0f3410ed24",
           "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92"
         },
-        "reviewed_at": "2026-06-09T14:26:34.579Z",
-        "reviewed_sha": "33b99911b9b3edcd27ec5aece0f73322508d7a15"
+        "reviewed_at": "2026-06-11T19:13:16.527Z",
+        "reviewed_sha": "bcff0773585869931b0b587765ca6ad94a03fdab"
       }
     ],
     "detangler-archimedean-wall": [
@@ -1073,8 +870,8 @@
           "script_hash": "6a0f3410ed24",
           "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92"
         },
-        "reviewed_at": "2026-06-09T14:26:34.579Z",
-        "reviewed_sha": "33b99911b9b3edcd27ec5aece0f73322508d7a15"
+        "reviewed_at": "2026-06-11T19:13:16.527Z",
+        "reviewed_sha": "bcff0773585869931b0b587765ca6ad94a03fdab"
       }
     ],
     "detangler-block-tanglement": [
@@ -1092,8 +889,8 @@
           "script_hash": "6a0f3410ed24",
           "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92"
         },
-        "reviewed_at": "2026-06-09T14:26:34.579Z",
-        "reviewed_sha": "33b99911b9b3edcd27ec5aece0f73322508d7a15",
+        "reviewed_at": "2026-06-11T19:13:16.527Z",
+        "reviewed_sha": "bcff0773585869931b0b587765ca6ad94a03fdab",
         "metrics": {
           "fwd_emitted": 0,
           "fwd_received": 0,
@@ -1102,7 +899,7 @@
           "in_degree": 4,
           "cone_size": 217,
           "depth": 46,
-          "pagerank": 0.00029,
+          "pagerank": 0.000289,
           "edge_span_max": 222,
           "edge_span_mean": 222,
           "worst_target": ""
@@ -1124,8 +921,8 @@
           "script_hash": "6a0f3410ed24",
           "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92"
         },
-        "reviewed_at": "2026-06-09T14:26:34.579Z",
-        "reviewed_sha": "33b99911b9b3edcd27ec5aece0f73322508d7a15",
+        "reviewed_at": "2026-06-11T19:13:16.527Z",
+        "reviewed_sha": "bcff0773585869931b0b587765ca6ad94a03fdab",
         "metrics": {
           "graph_energy": 0,
           "fwd_edge_count": 0,
@@ -1148,8 +945,8 @@
           "script_hash": "6a0f3410ed24",
           "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92"
         },
-        "reviewed_at": "2026-06-09T14:26:34.579Z",
-        "reviewed_sha": "33b99911b9b3edcd27ec5aece0f73322508d7a15"
+        "reviewed_at": "2026-06-11T19:13:16.527Z",
+        "reviewed_sha": "bcff0773585869931b0b587765ca6ad94a03fdab"
       }
     ],
     "detangler-no-dependency-cycle": [
@@ -1167,8 +964,8 @@
           "script_hash": "6a0f3410ed24",
           "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92"
         },
-        "reviewed_at": "2026-06-09T14:26:34.579Z",
-        "reviewed_sha": "33b99911b9b3edcd27ec5aece0f73322508d7a15"
+        "reviewed_at": "2026-06-11T19:13:16.527Z",
+        "reviewed_sha": "bcff0773585869931b0b587765ca6ad94a03fdab"
       }
     ],
     "bib-cite-resolves": [
@@ -1187,8 +984,8 @@
           "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92",
           "deps_hash": "639d6de1e5cc"
         },
-        "reviewed_at": "2026-06-09T14:26:34.579Z",
-        "reviewed_sha": "33b99911b9b3edcd27ec5aece0f73322508d7a15"
+        "reviewed_at": "2026-06-11T19:13:16.527Z",
+        "reviewed_sha": "bcff0773585869931b0b587765ca6ad94a03fdab"
       }
     ],
     "bib-cited-ref-has-url": [
@@ -1207,8 +1004,8 @@
           "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92",
           "deps_hash": "639d6de1e5cc"
         },
-        "reviewed_at": "2026-06-09T14:26:34.579Z",
-        "reviewed_sha": "33b99911b9b3edcd27ec5aece0f73322508d7a15"
+        "reviewed_at": "2026-06-11T19:13:16.527Z",
+        "reviewed_sha": "bcff0773585869931b0b587765ca6ad94a03fdab"
       }
     ],
     "bib-cited-ref-metadata-ok": [
@@ -1227,8 +1024,8 @@
           "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92",
           "deps_hash": "639d6de1e5cc"
         },
-        "reviewed_at": "2026-06-09T14:26:34.579Z",
-        "reviewed_sha": "33b99911b9b3edcd27ec5aece0f73322508d7a15"
+        "reviewed_at": "2026-06-11T19:13:16.527Z",
+        "reviewed_sha": "bcff0773585869931b0b587765ca6ad94a03fdab"
       }
     ],
     "bib-cited-ref-has-screenshot": [
@@ -1247,10 +1044,10 @@
           "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92",
           "deps_hash": "639d6de1e5cc"
         },
-        "reviewed_at": "2026-06-09T14:26:34.579Z",
-        "reviewed_sha": "33b99911b9b3edcd27ec5aece0f73322508d7a15"
+        "reviewed_at": "2026-06-11T19:13:16.527Z",
+        "reviewed_sha": "bcff0773585869931b0b587765ca6ad94a03fdab"
       }
     ]
   },
-  "updated_at": "2026-06-09T14:26:34.579Z"
+  "updated_at": "2026-06-11T19:13:16.527Z"
 }

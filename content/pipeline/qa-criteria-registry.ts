@@ -921,6 +921,18 @@ const COMPUTE: QaCriterionDefinition[] = [
     depends_on: ["ts"],
     automated: true,
   },
+  {
+    id: "compute-code-review",
+    domain: "compute",
+    description:
+      "Thorough code-review of the asset (Lean, Python, Rust, etc.) " +
+      "referenced by or part of this block. Findings are logged as " +
+      "GitHub issues and linked here by issue number. " +
+      "Includes agent model and human reviewer attribution.",
+    default_severity: "major",
+    depends_on: ["ts"],
+    automated: false,
+  },
 ];
 
 // ── Domain: detangler ───────────────────────────────────────────
