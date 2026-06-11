@@ -134,7 +134,7 @@ def build_atom_symbolic(Z: int, N: int, *, include_inter: bool = True,
 
 
 def binding_canonical(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
-                        Q_beta_n_mev: float = float(_Q_BETA_N),
+                        Q_beta_n_mev: float = float(_Q_BETA_N),  # noqa: I8 — CAL-3 experimental input (β-decay Q-value, ~ppb; f64 exceeds it)
                         reduce_before_trace: bool = True,
                         use_closed_form: bool = False,
                         use_transfer: bool = True,
@@ -236,8 +236,8 @@ def binding_canonical(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
             # Free config = no interface factors → just the constit part.
             tr_free_mp = (mp.mpf(tau_p) ** Z) * (mp.mpf(tau_n) ** N)
             dt = time.time() - t0
-            tr_atom = complex(float(tr_atom_mp), 0.0)
-            tr_free = complex(float(tr_free_mp), 0.0)
+            tr_atom = complex(float(tr_atom_mp), 0.0)  # noqa: I8 — closed-form approx path (~1e-5; exact path is use_transfer)
+            tr_free = complex(float(tr_free_mp), 0.0)  # noqa: I8 — closed-form approx path (~1e-5; exact path is use_transfer)
             atom_n_terms = -1  # not computed in closed-form path
             free_n_terms = -1
             tr_atom_sym = None
@@ -288,7 +288,7 @@ def binding_canonical(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
             "tr_M_atom": mp.nstr(_re(tr_atom_mp), 30),
             "tr_M_free": mp.nstr(_re(tr_free_mp), 30),
             "Q_beta_n_MeV": Q_beta_n_mev,
-            "B_MeV": float(B),
+            "B_MeV": float(B),  # noqa: I8 — final MeV result (Δtr exact mpf; floated at boundary, Q_β-limited)
             "n_atom_terms": -1,
             "n_free_terms": -1,
             "use_closed_form": False,
@@ -381,10 +381,10 @@ if __name__ == "__main__":
     # wired into codata_constants). Arbitrary (Z, N) compute is fully
     # supported — AME comparison is shown only where a value is known.
     _KNOWN_AME = {
-        (1, 1): float(AME_B_DEUTERON_MEV_VALIDATION),
-        (1, 2): float(AME_B_TRITIUM_MEV_VALIDATION),
-        (2, 1): float(AME_B_HE3_MEV_VALIDATION),
-        (2, 2): float(AME_B_HE4_MEV_VALIDATION),
+        (1, 1): float(AME_B_DEUTERON_MEV_VALIDATION),  # noqa: I8 — AME experimental validation target (f64 exceeds measurement precision)
+        (1, 2): float(AME_B_TRITIUM_MEV_VALIDATION),  # noqa: I8 — AME experimental validation target
+        (2, 1): float(AME_B_HE3_MEV_VALIDATION),  # noqa: I8 — AME experimental validation target
+        (2, 2): float(AME_B_HE4_MEV_VALIDATION),  # noqa: I8 — AME experimental validation target
     }
     _NAMES = {
         (1, 1): "D", (1, 2): "T", (2, 1): "3He", (2, 2): "4He",
