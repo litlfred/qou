@@ -1,0 +1,58 @@
+name: Render discussion PDFs
+
+# Upgrades human-agent-discussions session PDFs that were rendered with the
+# builtin fallback engine (no pandoc on the archiving machine) to proper
+# pandoc + XeLaTeX output, and commits the result back to the branch.
+# Pushes made with GITHUB_TOKEN don't retrigger workflows, and the commit
+# message carries [skip ci] as a second guard against loops.
+
+on:
+  push:
+    paths:
+      - "human-agent-discussions/**/session.md"
+      - "human-agent-discussions/**/metadata.json"
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Re-render every session PDF (not just builtin-engine ones)"
+        type: boolean
+        default: false
+
+concurrency:
+  group: render-discussions-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install pandoc + XeLaTeX + DejaVu fonts
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            pandoc texlive-xetex texlive-fonts-recommended \
+            texlive-latex-recommended lmodern fonts-dejavu
+
+      - name: Re-render session PDFs
+        run: |
+          python3 human-agent-discussions/tools/archive_sessions.py \
+            --rerender-pdfs ${{ inputs.force == true && '--force' || '' }} \
+            --pdf-engine pandoc \
+            --pdf-mainfont "DejaVu Serif" --pdf-monofont "DejaVu Sans Mono"
+
+      - name: Commit upgraded PDFs
+        run: |
+          if [ -z "$(git status --porcelain human-agent-discussions)" ]; then
+            echo "No PDFs changed."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add human-agent-discussions
+          git commit -m "chore(discussions): re-render session PDFs with pandoc+xelatex [skip ci]"
+          git push

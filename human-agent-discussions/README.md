@@ -92,6 +92,21 @@ Best available engine is auto-detected:
 `session.md` is always written, so PDFs can be (re)generated later with
 a better engine via `--force --pdf-engine pandoc`.
 
+### CI re-rendering
+
+You don't need pandoc locally: the
+[`render-discussions.yml`](../.github/workflows/render-discussions.yml)
+workflow re-renders any committed `session.pdf` whose `metadata.json`
+records a non-pandoc engine (e.g. `builtin`) using pandoc + XeLaTeX +
+DejaVu fonts, and commits the upgraded PDFs back to the branch. It
+triggers on any push touching `human-agent-discussions/**/session.md`,
+or manually from the Actions tab (the `force` input re-renders
+everything). The same operation locally:
+
+```bash
+python3 human-agent-discussions/tools/archive_sessions.py --rerender-pdfs
+```
+
 ## Privacy
 
 This repository is public. The archiver:
