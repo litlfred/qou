@@ -135,6 +135,37 @@ def tower_summary(n: int, q: mp.mpf) -> dict:
     }
 
 
+def epsilon_stratification() -> dict:
+    """ε-stratification at q = 1 + ε (2026-06-11 extension): the
+    (3,3)/(5,1) degeneracy-resolution splitting opens at ε² with
+    coefficient 5/18 (linear term excluded by bar-invariance
+    w(q) = w(1/q)); the vacuum level survives with standard part
+    1/720.  Orders: ε⁰ structure, ε¹ physical gap, ε² resolution,
+    ε³ categorical bound."""
+    rows = []
+    for e in ("1e-2", "1e-3", "1e-4", "1e-5"):
+        eps = mp.mpf(e)
+        q = 1 + eps
+        D = plancherel_weight((3, 3), q) - plancherel_weight((5, 1), q)
+        rows.append({"eps": e, "D": str(D), "D_over_eps2": str(D / eps ** 2)})
+    # leading coefficient check: D/ε² → 5/18 = 0.2777…
+    eps = mp.mpf("1e-5")
+    D = plancherel_weight((3, 3), 1 + eps) - plancherel_weight((5, 1), 1 + eps)
+    assert abs(D / eps ** 2 - mp.mpf(5) / 18) < mp.mpf("1e-3"), \
+        "(3,3)/(5,1) splitting coefficient should converge to 5/18"
+    return {
+        "splitting_rows": rows,
+        "leading_coefficient": "5/18 (linear term excluded by bar-invariance)",
+        "vacuum_standard_part_n6": str(plancherel_weight((6,), 1 + mp.mpf("1e-5"))),
+        "stratification": {
+            "eps^0": "semisimple tower + classical Plancherel weights (standard parts)",
+            "eps^1": "physical-units mass gap (1/2)q(q-1)(q+1)",
+            "eps^2": "degeneracy resolution w_(3,3) - w_(5,1) = (5/18)eps^2 + O(eps^3)",
+            "eps^3": "categorical gap bound (1/2)(q-q^{-1})(q-1)^2",
+        },
+    }
+
+
 def main() -> int:
     # q₀ from the canonical pinning witness (proton anchor)
     with (_pb.witness_path("q-pinning-50-digit.witness.json", HERE)).open() as fh:
@@ -236,6 +267,13 @@ def main() -> int:
         ),
     }
 
+    strat = epsilon_stratification()
+    print("\n  ε-stratification at q = 1 + ε:")
+    for row in strat["splitting_rows"]:
+        print(f"    eps={row['eps']:>5}  D=w(3,3)−w(5,1)={mp.nstr(mp.mpf(row['D']), 6):>12}"
+              f"  D/eps²={mp.nstr(mp.mpf(row['D_over_eps2']), 6)}")
+    print("    leading coefficient → 5/18; vacuum standard part → 1/720.")
+
     print("\n  VERDICT: tower survives structurally; the GAP does not survive q→1.")
     print("    categorical bound ~ h³;  physical-units bound = ½q(q−1)(q+1) ~ h.")
 
@@ -259,6 +297,7 @@ def main() -> int:
                 "gap_quantities_by_q": gap_rows,
                 "plancherel_towers": towers,
                 "h3_wedderburn_family": {"q0": w_h3(q0), "q_1": w_h3(one)},
+                "epsilon_stratification": strat,
                 "exact_identities": {
                     "physical_units_gap": "Δ_q/ℏ_q² = ½·q·(q−1)·(q+1)  [exact]",
                     "categorical_gap_leading_order": "Δ_q ~ h³ + O(h⁴), h = q−1",
