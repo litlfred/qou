@@ -1,6 +1,6 @@
 import QOU.Basic
 import QOU.Glossary
-import Mathlib.CategoryTheory.Monoidal.Basic
+import Mathlib.CategoryTheory.Monoidal.Category
 import Mathlib.CategoryTheory.Monoidal.Braided.Basic
 import Mathlib.CategoryTheory.Preadditive.Basic
 import Mathlib.CategoryTheory.Functor.Basic
