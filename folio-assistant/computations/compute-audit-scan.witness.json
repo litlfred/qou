@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-11T00:04:06.415028+00:00",
-  "commitSha": "39b919853dcfdf3500797944ba37b1d47c5fadbc",
+  "computedAt": "2026-06-11T01:54:35.758586+00:00",
+  "commitSha": "f4753bb32e2b6a243f58a298613745b16c4842aa",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 10,
   "computation": "compute-audit-scan",
   "scriptFile": "compute_audit_scan.py",
   "scriptHash": "2a7ebe632641",
-  "scriptCommitSha": "93fd74514e67f7146aee171f322d08b93357c890",
+  "scriptCommitSha": "4eb95ac1068f3824772843937cdffabb7aaf5b24",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,7 +27,7 @@
   "description": "Static scan of folio-assistant/computations/ for the performance patterns P11/P14/P15/P16/P21/P30/P31 from .claude/skills/local/compute-audit.md.",
   "auditOnly": "docs/audits/2026-05-08-compute-audit-workplan.md",
   "parameters": {
-    "files_scanned": 781,
+    "files_scanned": 786,
     "patterns": [
       "P15",
       "P16",
@@ -42,7 +42,7 @@
       "P16": 169,
       "P21": 23,
       "P30": 133,
-      "P31": 52
+      "P31": 53
     },
     "top_files": [
       {
@@ -787,6 +787,13 @@
         "line": 289,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P31",
+        "file": "derive_m_baryon_volume_form.py",
+        "line": 36,
+        "snippet": "CODATA literal \"206.7682830\"",
+        "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
       },
       {
         "pattern": "P16",
