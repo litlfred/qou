@@ -12,29 +12,38 @@ Per [`borromean-baryon-interpretation.md`](../../content/quantum-observable-univ
       m(K) = m_e · Vol(K) / ℏ_q²
 
   Baryons (Borromean linking ℬ_3):
-      m(B) = m_e · [ Vol(ℬ_3) / ℏ_q² · λ_scale  +  S(B) ]
+      m(B) = m_e · [ Vol(ℬ_3) / ℏ_q² · linking_weight  +  S(B) ]
+
+  (the linking_weight is the per-knot VolDensity component of the
+  canonical m(K) = m_e · Vol(K) · ρ(K) / ℏ_q² framing; PROVED via
+  Family A post-PR #1080 — see linking_weight_family_a in
+  _li_2_q_util.py)
 
 where:
-  * Vol(ℬ_3) = 7.32772475... (8 · Cl_2(π/3); hyperbolic volume of the
-    Borromean-link complement) — substrate constant
+  * Vol(ℬ_3) = 7.32772475... (8 · G, Catalan's constant; hyperbolic
+    volume of the Borromean-link complement) — substrate constant
   * ℏ_q = (q − 1)/q (CAL-2) — substrate-derived from q_0
-  * λ_scale — common Borromean-baryon scale; substrate-derivable in
-    principle (open; closure target ≈ 2.460 from empirical m_p/m_e)
+  * linking_weight — per-knot VolDensity component; proved Family A
+    identity (3q² + 4 + 3q⁻²)/4 = 5/2 + (3/4)h²; the empirical
+    closure target ≈ 2.460 is retained as a diagnostic only
   * S(B) = Skein correction from orientation partition (p, n)
     (Borromean baryons with (k positive, 3−k negative) components)
 
 This script:
 
   (a) Computes Vol(K)/ℏ_q² at 50 dps for the cross-check K = 4_1
-      (figure-8, the muon Higgs-coupling knot) — should reproduce
-      m_μ/m_e ≈ 206.7682830 (CODATA, CAL-2 anchor) to all digits.  # noqa: P31 — docstring narrative; CAL-2 anchor lives in q_parameter.MASS_RATIO_MU_E_STR
+      (figure-8, the muon Higgs-coupling knot) — a PREDICTION of
+      m_μ/m_e ≈ 206.7682830 (CODATA) expected to agree at the ~2e-7
+      level (9.5σ cross-check): q_0 is proton-anchored per the
+      2026-05-28 re-pin (q-pinning-50-digit.witness.json).  # noqa: P31 — docstring narrative; cross-check value lives in q_parameter.MASS_RATIO_MU_E_STR
 
   (b) Computes Vol(ℬ_3)/ℏ_q² at 50 dps — the "common Borromean factor"
       ≈ 746.42 (dimensionless).
 
-  (c) Derives the empirical closure targets for λ_scale (proton) and
-      λ_scale (neutron) from CODATA m_p, m_n (validation-only — NOT
-      injected as substrate input).
+  (c) Derives the empirical closure targets for the linking_weight
+      (proton, neutron) from CODATA m_p, m_n (validation-only — NOT
+      injected as substrate input; diagnostic against the proved
+      Family A value).
 
   (d) Records the SUBSTRATE-DERIVABLE Skein difference:
       ΔS(n − p) = (Q_β + m_e) / m_e · ℏ_q² / Vol(ℬ_3)
@@ -154,9 +163,11 @@ def derive_m_baryon_volume_form() -> dict:
             "m_mu_over_m_e_via_volume_50dps": str(m_mu_over_m_e_via_volume),
             "m_mu_over_m_e_codata": str(m_mu_codata_over_m_e),
             "agreement_assertion": (
-                "Vol(4_1)/ℏ_q² should reproduce CODATA m_μ/m_e exactly "
-                "(this IS the CAL-2 q_0 calibration); checks the "
-                "topological-mass formula's correctness."
+                "Vol(4_1)/ℏ_q² PREDICTS CODATA m_μ/m_e at the ~2e-7 "
+                "level (9.5σ cross-check, NOT the anchor): q_0 is "
+                "proton-anchored per the 2026-05-28 re-pin "
+                "(q-pinning-50-digit.witness.json).  Exact agreement "
+                "held only under the pre-re-pin muon anchor."
             ),
         },
         "borromean_common_factor": {
@@ -165,7 +176,8 @@ def derive_m_baryon_volume_form() -> dict:
             "interpretation": (
                 "Dimensionless 'common Borromean factor' shared by all "
                 "Borromean baryons; physical baryon mass ratio is this "
-                "value times the substrate λ_scale plus Skein correction."
+                "value times the linking_weight (proved Family A "
+                "VolDensity component) plus Skein correction."
             ),
         },
         "linking_weight_closure_targets": {
@@ -268,27 +280,35 @@ def main() -> int:
         "m-baryon-volume-form",
         {
             "description": (
-                "Topological mass formula (Vol(K)/ℏ_q² · λ_scale + Skein) "
-                "evaluated at 50 dps for the Borromean baryon channel + "
-                "the muon Vol(4_1)/ℏ_q² cross-check.  Substrate-only "
-                "inputs: CAL-1 (m_e), CAL-2 (q_0), topological constants "
-                "Vol(4_1), Vol(ℬ_3).  Reports the open λ_scale closure "
-                "target empirically and verifies that the Skein-correction "
-                "DIFFERENCE ΔS(n − p) is substrate-derivable from CAL-1 + "
-                "CAL-2 alone (via Q_β closed form)."
+                "Topological mass formula (canonical Vol(K)·ρ(K)/ℏ_q² "
+                "framing; Borromean channel Vol(ℬ_3)/ℏ_q² · "
+                "linking_weight + Skein) evaluated at 50 dps + the muon "
+                "Vol(4_1)/ℏ_q² cross-check prediction under the "
+                "proton-pinned q_0.  Substrate-only inputs: CAL-1 (m_e), "
+                "CAL-2 (q_0), topological constants Vol(4_1), Vol(ℬ_3).  "
+                "Reports the linking_weight empirical closure targets as "
+                "diagnostics (the linking_weight itself is PROVED via "
+                "Family A, PR #1080) and verifies that the "
+                "Skein-correction DIFFERENCE ΔS(n − p) is "
+                "substrate-derivable from CAL-1 + CAL-2 alone (via Q_β "
+                "closed form)."
             ),
             "auditOnly": (
                 "docs/audits/2026-05-11-why-individual-mass-residuals-fit-not-derive.md "
                 "(motivates this Vol-form chain as Option B per the "
                 "user's 'can we use m_e as mass scaling factor' question); "
                 "PR #487 (introduced the Borromean-baryon-interpretation "
-                "block with the formula and undefined λ_scale)."
+                "block with the formula and the then-undefined scale "
+                "factor, since proved as the linking_weight via Family A)."
             ),
-            "owner_directive_2026_05_11": (
-                "Re-implement using m_e as scaling factor + Vol(K)/ℏ_q² "
-                "as dimensionless multiplier per the canonical "
-                "topological-mass formula; expose λ_scale as the single "
-                "open derivation needed for 1ppb on individual hadron masses."
+            "provenance_directives": (
+                "2026-05-11: introduce this script (m_e scaling factor × "
+                "Vol(K)/ℏ_q² dimensionless multiplier; expose the scale "
+                "factor as the open derivation).  Superseded in steps: "
+                "2026-05-24 rename to linking_weight (no legacy "
+                "scale-factor symbol anywhere); PR #1080 proves the "
+                "linking_weight via Family A; 2026-06-06 owner purge "
+                "fixes the canonical framing as Vol(K)·ρ(K)/ℏ_q²."
             ),
             "data": d,
         },
