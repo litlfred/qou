@@ -1,10 +1,13 @@
 Every proof in this paper has a corresponding Lean 4 formalisation,
 except where external references are cited for large prior results.
-**574 of 583 (98.5%) provable claims** (theorems, lemmas,
+**:val[lean_provable_sorry_free] of :val[lean_provable_total]
+(:val[lean_provable_sorry_free_pct]%) provable claims** (theorems, lemmas,
 propositions, corollaries) carry **full Lean proofs** (sorry-free);
-the remainder are marked by `sorry` against an explicit bibliographic
-reference.  The paper contains
-**135 open conjectures**, of which **125 (92.6%) are class-axiomatised in Lean**
+the remainder either await a Lean sibling or are marked by `sorry`
+against an explicit bibliographic reference.  The paper contains
+**:val[lean_conjecture_total] open conjectures**, of which
+**:val[lean_conjecture_class_axiomatised]
+(:val[lean_conjecture_class_axiomatised_pct]%) are class-axiomatised in Lean**
 following the conditional-class convention (CLAUDE.md §3b) so that
 downstream results can be stated as fully verified conditional
 theorems.  Computations — braid-word reductions, Gröbner–Shirshov

@@ -964,6 +964,151 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
       units: null,
     }),
 
+    // ── Lean formalization statistics (introduction author's note) ──
+    // Derived by content/pipeline/lean-stats-witness.ts from block
+    // manifests + .lean sources + .qa.json sidecars.  Counts are
+    // integers (defaultPrecision 6 passes them through unrounded);
+    // percentages are stored at 6 significant digits and rendered at
+    // 3 (e.g. 97.4843 → 97.5).  Regenerate after adding/removing
+    // provable blocks: `bun run lean-stats:write` (CI gate:
+    // `bun run lean-stats:check` in witness-pipeline.yml).
+
+    lean_provable_total: Object.freeze({
+      name: "lean_provable_total",
+      description:
+        "Provable claims in the paper (theorem + lemma + proposition + corollary blocks).",
+      symbol: "N_{\\mathrm{provable}}",
+      witnessFile:
+        "folio-assistant/computations/lean-formalization-stats.witness.json",
+      witnessPath: "data.provable_total",
+      defaultPrecision: 6,
+      units: null,
+    }),
+
+    lean_provable_sorry_free: Object.freeze({
+      name: "lean_provable_sorry_free",
+      description:
+        "Provable claims whose Lean sibling exists and carries no code-level sorry.",
+      symbol: "N_{\\mathrm{sorry-free}}",
+      witnessFile:
+        "folio-assistant/computations/lean-formalization-stats.witness.json",
+      witnessPath: "data.provable_sorry_free",
+      defaultPrecision: 6,
+      units: null,
+    }),
+
+    lean_provable_sorry_free_pct: Object.freeze({
+      name: "lean_provable_sorry_free_pct",
+      description:
+        "Percentage of provable claims with sorry-free Lean proofs.",
+      symbol: "N_{\\mathrm{sorry-free}}/N_{\\mathrm{provable}}",
+      witnessFile:
+        "folio-assistant/computations/lean-formalization-stats.witness.json",
+      witnessPath: "data.provable_sorry_free_pct",
+      defaultPrecision: 3,
+      units: null,
+    }),
+
+    lean_conjecture_total: Object.freeze({
+      name: "lean_conjecture_total",
+      description: "Open conjecture blocks in the paper.",
+      symbol: "N_{\\mathrm{conj}}",
+      witnessFile:
+        "folio-assistant/computations/lean-formalization-stats.witness.json",
+      witnessPath: "data.conjecture_total",
+      defaultPrecision: 6,
+      units: null,
+    }),
+
+    lean_conjecture_class_axiomatised: Object.freeze({
+      name: "lean_conjecture_class_axiomatised",
+      description:
+        "Conjectures class-axiomatised in Lean (CLAUDE.md §3b conditional-class convention).",
+      symbol: "N_{\\mathrm{conj\\text{-}class}}",
+      witnessFile:
+        "folio-assistant/computations/lean-formalization-stats.witness.json",
+      witnessPath: "data.conjecture_class_axiomatised",
+      defaultPrecision: 6,
+      units: null,
+    }),
+
+    lean_conjecture_class_axiomatised_pct: Object.freeze({
+      name: "lean_conjecture_class_axiomatised_pct",
+      description: "Percentage of conjectures class-axiomatised in Lean.",
+      symbol: "N_{\\mathrm{conj\\text{-}class}}/N_{\\mathrm{conj}}",
+      witnessFile:
+        "folio-assistant/computations/lean-formalization-stats.witness.json",
+      witnessPath: "data.conjecture_class_axiomatised_pct",
+      defaultPrecision: 3,
+      units: null,
+    }),
+
+    lean_theorem_total: Object.freeze({
+      name: "lean_theorem_total",
+      description: "Theorem blocks in the paper.",
+      symbol: "N_{\\mathrm{thm}}",
+      witnessFile:
+        "folio-assistant/computations/lean-formalization-stats.witness.json",
+      witnessPath: "data.theorem_total",
+      defaultPrecision: 6,
+      units: null,
+    }),
+
+    lean_lemma_total: Object.freeze({
+      name: "lean_lemma_total",
+      description: "Lemma blocks in the paper.",
+      symbol: "N_{\\mathrm{lem}}",
+      witnessFile:
+        "folio-assistant/computations/lean-formalization-stats.witness.json",
+      witnessPath: "data.lemma_total",
+      defaultPrecision: 6,
+      units: null,
+    }),
+
+    lean_proposition_total: Object.freeze({
+      name: "lean_proposition_total",
+      description: "Proposition blocks in the paper.",
+      symbol: "N_{\\mathrm{prop}}",
+      witnessFile:
+        "folio-assistant/computations/lean-formalization-stats.witness.json",
+      witnessPath: "data.proposition_total",
+      defaultPrecision: 6,
+      units: null,
+    }),
+
+    lean_corollary_total: Object.freeze({
+      name: "lean_corollary_total",
+      description: "Corollary blocks in the paper.",
+      symbol: "N_{\\mathrm{cor}}",
+      witnessFile:
+        "folio-assistant/computations/lean-formalization-stats.witness.json",
+      witnessPath: "data.corollary_total",
+      defaultPrecision: 6,
+      units: null,
+    }),
+
+    lean_definition_total: Object.freeze({
+      name: "lean_definition_total",
+      description: "Definition blocks in the paper.",
+      symbol: "N_{\\mathrm{def}}",
+      witnessFile:
+        "folio-assistant/computations/lean-formalization-stats.witness.json",
+      witnessPath: "data.definition_total",
+      defaultPrecision: 6,
+      units: null,
+    }),
+
+    lean_blocks_with_lean: Object.freeze({
+      name: "lean_blocks_with_lean",
+      description: "Content blocks with a resolvable Lean sibling.",
+      symbol: "N_{\\mathrm{lean}}",
+      witnessFile:
+        "folio-assistant/computations/lean-formalization-stats.witness.json",
+      witnessPath: "data.blocks_with_lean",
+      defaultPrecision: 6,
+      units: null,
+    }),
+
     // ── Molecular Frobenius LP (covalent bond derivation) ───────
 
     E_mol_eV: Object.freeze({

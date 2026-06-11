@@ -220,7 +220,10 @@ export type ComputationEngine =
   | "scipy"
   | "closed-form"
   | "python+mpmath"
-  | "python+numpy+cvxpy";
+  | "python+numpy+cvxpy"
+  | "rust"
+  | "python+rust"
+  | "typescript";
 
 /**
  * Status of a computational verification.

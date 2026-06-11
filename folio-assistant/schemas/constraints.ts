@@ -261,7 +261,7 @@ export const RemarkSchema = BlockBaseSchema.extend({
 const ComputationEngineSchema = z.enum([
   "snappea", "sympy", "mpmath", "sage", "python", "numpy", "scipy",
   "closed-form", "python+mpmath", "python+numpy+cvxpy",
-  "rust", "python+rust",
+  "rust", "python+rust", "typescript",
 ]);
 
 const ComputationStatusSchema = z.enum([

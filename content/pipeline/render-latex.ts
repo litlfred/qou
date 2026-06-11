@@ -527,7 +527,13 @@ function renderMdastNode(node: any): string {
       const name: string = node.name ?? "";
       if (name === "val") {
         // :val[<registry-name>]{key=value ...}
-        const valName = renderChildren(node).join("").trim();
+        // Read the registry name from the raw mdast text children —
+        // renderChildren() LaTeX-escapes (`q_0` → `q\_0`), which would
+        // break the lookup for every snake_case registry name.
+        const valName = (node.children ?? [])
+          .map((c: { value?: string }) => c.value ?? "")
+          .join("")
+          .trim();
         const attrs = parseValAttrs(node.attributes);
         return renderValue(valName, attrs, "text");
       }
