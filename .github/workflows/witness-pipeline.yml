@@ -485,6 +485,17 @@ jobs:
           export PATH="$HOME/.bun/bin:$PATH"
           bun run content/pipeline/codemod-leanval.ts --check
 
+      - name: Lean formalization stats drift gate
+        # The introduction author's note quotes Lean proved-count
+        # statistics via :val[lean_*] directives backed by
+        # lean-formalization-stats.witness.json.  Recounts from the
+        # current tree (block manifests + .lean sources + sidecars)
+        # and fails if the committed witness disagrees; the fix is
+        # `cd content && bun run lean-stats:write`.
+        run: |
+          export PATH="$HOME/.bun/bin:$PATH"
+          bun run content/pipeline/lean-stats-witness.ts --check
+
       - name: Detect drift in committed witnesses
         run: |
           # The validators rewrite their output witnesses on every run.
