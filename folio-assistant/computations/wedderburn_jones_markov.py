@@ -62,7 +62,7 @@ def _schur_principal_at_q(args):
     sh, q_str = args
     return sh, m.schur_principal_symbolic(list(sh)).subs(
         Q_SYM, sp.sympify(q_str)
-    ).evalf(30)
+    ).evalf(50)
 
 
 _Y_LAMBDA_AT_Q0_WITNESS_CACHE: dict[int, dict[tuple, sp.Expr]] | None = None
@@ -143,7 +143,7 @@ def y_lambda_at(
     # Fast path 1: numeric q matches q_0 — load from witness.
     try:
         from q_parameter import Q as Q_0_FLOAT
-        if abs(float(q_val) - float(Q_0_FLOAT)) < 1e-12:
+        if abs(float(q_val) - float(Q_0_FLOAT)) < 1e-12:  # noqa: I8 — f64 tolerance compare (q0-cache dispatch)
             witness_by_n = _load_y_lambda_at_q0_witness()
             cached = witness_by_n.get(n)
             if cached is not None and len(cached) == len(shapes):
@@ -161,8 +161,12 @@ def y_lambda_at(
         from schur_principal_mpmath import y_lambda_at_q0_mpmath
         q_mp = _mp_inner.mpf(str(q_val))
         y_mp = y_lambda_at_q0_mpmath(n, q_mp)
-        # Convert mpmath → sympy for consumer compatibility.
-        return {sh: sp.Float(_mp_inner.nstr(y, 30), 30)
+        # Convert mpmath → sympy for consumer compatibility, at the full
+        # 50-dps serialization target (C2, 2026-06-11 float64 audit): the
+        # exact mpf y_λ from schur_principal_mpmath was being degraded to
+        # 30 dps here, capping any cache-miss (large-A) consumer at 30
+        # digits. Consumers re-lift via mp.mpf(str(·)) → now 50 dps.
+        return {sh: sp.Float(_mp_inner.nstr(y, 50), 50)
                 for sh, y in y_mp.items()}
     except (ImportError, Exception):
         # Fall through to the legacy sympy path on any failure.
@@ -182,7 +186,7 @@ def y_lambda_at(
     else:
         for sh in shapes:
             s_vals[sh] = (
-                m.schur_principal_symbolic(list(sh)).subs(Q_SYM, q_eval).evalf(30)
+                m.schur_principal_symbolic(list(sh)).subs(Q_SYM, q_eval).evalf(50)
             )
     Z = sp.Integer(0)
     for sh in shapes:
@@ -379,14 +383,14 @@ def global_wedderburn_sum_q_hecke_seminormal(
             continue
         # IndexError now propagates with context (no silent skip).
         chi = chi_lambda_of_word(sigmas, dim, word, n_gens_required)
-        contrib = float(y) * float(chi)
+        contrib = float(y) * float(chi)  # noqa: I8 — f64 numpy seminormal path (chi_lambda_of_word; exact path: chi_monotone_transfer)
         total += contrib
         rows.append({
             "partition": list(shape),
             "dim": int(dim),
-            "y_at_q0": float(y),
-            "chi_q_at_q0": float(chi),
-            "contribution": float(contrib),
+            "y_at_q0": float(y),  # noqa: I8 — f64 witness-emit (numpy seminormal diagnostic path)
+            "chi_q_at_q0": float(chi),  # noqa: I8 — f64 witness-emit (chi from numpy seminormal path)
+            "contribution": float(contrib),  # noqa: I8 — f64 witness-emit
         })
     return total, rows
 
