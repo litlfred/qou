@@ -333,7 +333,7 @@ theorem obstruction_cofinite_persistence (χ : ℤ) (hχ : χ ≠ 0) :
     uses: `prop:q-gl-obstruction-calc`, `conj:q-geometric-langlands`,
           `def:q-local-system` -/
 -- Ref: [yekutieli2010] Yekutieli, "Central Extensions of Gerbes," Adv. Math. 225 (2010), arXiv:0801.0083
-theorem kummer_divisibility_criterion (χ : ℤ) (n : ℕ) (hn : n ≥ 1) :
+theorem kummer_divisibility_criterion (χ : ℤ) (n : ℕ) (_hn : n ≥ 1) :
     -- The Kummer reduction vanishes iff n divides χ
     (↑n : ℤ) ∣ χ ↔ χ % ↑n = 0 := by
   constructor
