@@ -1,5 +1,5 @@
 import Mathlib.Algebra.Order.Field.Basic
-import Mathlib.Algebra.Order.AbsoluteValue
+import Mathlib.Algebra.Order.AbsoluteValue.Basic
 import Mathlib.Tactic.Linarith
 import QOU.BraidKnot.JetTowerUniformDeltaMax
 
