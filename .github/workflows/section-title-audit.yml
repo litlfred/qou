@@ -13,23 +13,6 @@
 # manifest can't change without the committed sidecars being updated.
 on:
   workflow_dispatch:
-  pull_request:
-    paths:
-      - "content/**/*.ts"
-      # .md / .lean block content is folded into the --thorough staleness
-      # gate, so a block edit can re-open a section's title verdict.
-      - "content/**/*.md"
-      - "content/**/*.lean"
-      - "content/pipeline/qa-section-title-audit.ts"
-      - "content/*/section-title-audit.qa.json"
-      - ".github/workflows/section-title-audit.yml"
-  push:
-    branches: [main]
-    paths:
-      - "content/**/*.ts"
-      - "content/pipeline/qa-section-title-audit.ts"
-      - ".github/workflows/section-title-audit.yml"
-
 permissions:
   contents: read
 

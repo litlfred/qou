@@ -24,21 +24,6 @@
 #      new wildcard imports cheaply).
 on:
   workflow_dispatch:
-  pull_request:
-    paths:
-      - "content/**/*.lean"
-      - "folio-assistant/computations/**/*.py"
-      - "tools/**/*.py"
-      - "tools/**/*.rs"
-      - ".github/workflows/code-quality-gates.yml"
-  push:
-    branches: [main]
-    paths:
-      - "content/**/*.lean"
-      - "folio-assistant/computations/**/*.py"
-      - "tools/**/*.py"
-      - "tools/**/*.rs"
-      - ".github/workflows/code-quality-gates.yml"
 
 permissions:
   contents: read

@@ -17,10 +17,6 @@ name: Maintain discussion archive
 # [skip ci] as a second loop guard.
 
 on:
-  push:
-    branches: [main]
-    paths-ignore:
-      - "human-agent-discussions/INDEX.md"  # our own commit-back; avoid churn
   workflow_dispatch:
     inputs:
       force_rerender:
