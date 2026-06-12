@@ -283,6 +283,10 @@ and the [free-field/disjoint grounding audit](../../../docs/audits/2026-06-01-ca
   standard-part arithmetic used in the conditional derivation.
 - [`def:standard-part-functor`](#def:standard-part-functor) — the
   $\mathrm{st}$ map from finite surreals to $\mathbb{R}$.
+- Terminology: the Casimir *effect* treated here shares only its
+  eponym with the [$q$-Casimir element](#def:q-casimir) of
+  $\mathcal{U}_q(\mathfrak{su}(2))$, the central invariant encoding
+  $q$-angular momentum.
 - [`prop:bohr-radius-categorical`](#prop:bohr-radius-categorical) —
   precedent for the "scaling correct, prefactor open" status
   pattern.

@@ -52,3 +52,11 @@ component at each simple object $V_j$ is
 $[j]_q[j+1]_q \cdot \mathrm{id}_{V_j}$.  In the rigid monoidal setting
 this is the categorical counterpart of the angular-momentum-squared
 operator.
+
+**Terminology.** The $q$-Casimir *element* — the quantum analogue of
+Casimir's invariant for $\mathfrak{su}(2)$ — is unrelated to the
+Casimir *effect*, the attractive vacuum force between closely spaced
+conducting boundaries; the two share only their eponym. The QOU
+treatment of the Casimir effect is the $\varepsilon$-vacuum
+conjecture
+[conj:casimir-epsilon-vacuum](#conj:casimir-epsilon-vacuum).
