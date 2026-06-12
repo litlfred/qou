@@ -311,7 +311,10 @@ thing.
     axiom growth, the Lean builds);
   - **structural / detangler** — dependency-graph heuristics: forward-reference
     and dependency-cycle detection, cross-chapter reference limits, section
-    banding, and correct placement relative to the formal-vs-numerical wall;
+    banding, per-chapter topic coherence, a within-section graph-energy measure
+    of reading order, and correct placement relative to the formal-vs-numerical
+    wall — each verdict carrying a snapshot of the block's graph position
+    (degree, dependency-cone size, edge span, PageRank);
   - **canonical-discipline** — no numerology, no undisclosed fitted constants,
     calibration-count and tiered-reporting checks;
   - **compute** — every computational claim has a witness; optimisation solves
@@ -559,34 +562,6 @@ what each paradigm has learned about keeping large language models honest.
 
 ---
 
-## References
-
-- Chandak, P., Huang, K., and Zitnik, M. *Building a knowledge graph to
-  enable precision medicine.* Scientific Data **10**, 67 (2023).
-  doi:10.1038/s41597-023-01960-3.
-- Du, Y., Li, S., Torralba, A., Tenenbaum, J. B., and Mordatch, I. *Improving
-  Factuality and Reasoning in Language Models through Multiagent Debate.*
-  arXiv:2305.14325 (2023); ICML 2024.
-- Gao, S., et al. *TxAgent: An AI Agent for Therapeutic Reasoning Across a
-  Universe of Tools.* arXiv:2503.10970 (2025).
-- Google DeepMind (AlphaProof Nexus). *Advancing Mathematics Research with
-  AI-Driven Formal Proof Search.* arXiv:2605.22763 (2026).
-- Lewis, P., Perez, E., Piktus, A., Petroni, F., Karpukhin, V., Goyal, N.,
-  Küttler, H., Lewis, M., Yih, W., Rocktäschel, T., Riedel, S., and Kiela, D.
-  *Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks.*
-  Advances in Neural Information Processing Systems 33 (NeurIPS 2020).
-  arXiv:2005.11401.
-- Manakul, P., Liusie, A., and Gales, M. J. F. *SelfCheckGPT: Zero-Resource
-  Black-Box Hallucination Detection for Generative Large Language Models.*
-  EMNLP 2023. arXiv:2303.08896.
-- Tao, T. *Machine-Assisted Proof.* Notices of the American Mathematical
-  Society **72**(1) (2025).
-- Wang, X., Wei, J., Schuurmans, D., Le, Q., Chi, E., Narang, S., Chowdhery,
-  A., and Zhou, D. *Self-Consistency Improves Chain of Thought Reasoning in
-  Language Models.* ICLR 2023. arXiv:2203.11171.
-
----
-
 ## Appendix: content blocks, sidecars, and the full QA dimensions
 
 A concrete look at the data structures the workflow above operates on.
@@ -694,28 +669,61 @@ judged so it auto-stales on edit:
       "reviewed_at":  "2026-06-07T...Z",
       "reviewed_sha": "<commit>",
       "evidence":     "core gap: the key step is an axiom"
+    } ],
+    "detangler-block-tanglement": [ {
+      "field_hash":   { "md": "<sha12>", "ts": "<sha12>" },
+      "result":       "pass",
+      "reviewer":     { "kind": "script", "id": "content/pipeline/qa-checkers-extended.ts",
+                        "script_hash": "<sha12>" },   // the checker's own hash — a
+                                                      //   checker bug fix auto-stales
+                                                      //   every verdict it ever wrote
+      "reviewed_at":  "2026-06-12T...Z",
+      "reviewed_sha": "<commit>",
+      "metrics":      { "tanglement_score": 0, "out_degree": 1, "in_degree": 0,
+                        "cone_size": 1, "edge_span_max": 16, "pagerank": 0.0001 }
     } ]
   }
 }
 ```
 
-A sibling `<block>.script.json` records the deterministic (script-reviewer)
-verdicts in the same shape. The `field_hash` / `source_hashes` are what make a
-verdict falsifiable: when the source's hash no longer matches, the verdict is
-stale and re-run.
+Three details carry the staleness and trust semantics. *Content staleness:*
+the `field_hash` / `source_hashes` make a verdict falsifiable — when the
+judged source's hash no longer matches, the verdict is stale and re-run.
+*Checker staleness:* a script reviewer's entry also pins the checker's own
+source hash (plus a hash of any extra inputs it consulted, e.g. the reference
+database), and a per-criterion sidecar (`<criterion-id>.script.json`) records
+the same triple globally — so a bug fix to a checker auto-invalidates every
+verdict that checker ever wrote, corpus-wide, and the next sweep re-runs them.
+*Reviewer provenance:* agent verdicts record the model id, session, and
+dispatching skill, so heterogeneous models can audit one another's verdicts —
+the same decorrelation logic as the cross-model pull-request review of §8.
+Structural checkers additionally persist a descriptive `metrics` snapshot (the
+detangler entry above), so the sidecar corpus doubles as a longitudinal record
+of the dependency graph's health, not just a pass/fail ledger.
+
+These schemas are deliberately small and language-agnostic. The witness
+counterpart already ships as a dual npm + PyPI interchange package
+(`witness-schema`) so that non-TypeScript producers emit identical records;
+the QA-sidecar schema is the same kind of artifact and could be published the
+same way. We would gladly share it as a concrete basis for comparing
+QA-and-provenance notes across systems.
 
 ### C. The full QA dimensions
 
-Every object is continuously audited on **nine axes** (~67 criteria today). A
-finding on any axis is a typed, located artifact that drains into a fix-PR
-(`/integration-backlog <axis>`):
+Every object is continuously audited on **nine axes**. Measured 2026-06-12:
+the corpus holds 2,255 sidecars carrying 62 block-level criteria and 109,815
+recorded verdicts — 84,837 script, 24,975 agent, and 3 human (human
+adjudication is the reserve tier, spent only on genuine forks); the ninth
+axis (compute-script code quality) is audited on the scripts themselves
+rather than in block sidecars. A finding on any axis is a typed, located
+artifact that drains into a fix-PR (`/integration-backlog <axis>`):
 
 | Axis | Representative criteria | What it enforces |
 |---|---|---|
 | **Proof (formal)** | `proof-statement-integrity`, `proof-rater-{strategy-clarity, goal-plausibility, novelty}`, `proof-no-bare-sorries`, `proof-no-axiom-growth`, `proof-build-green`, `proof-lean-compiles`, `proof-narrative-lean-equiv`, `proof-no-conj-propagation-violation`, `proof-no-trivial-skeleton`, `proof-conditional-class-banner` | the Lean faithfully proves the narrative claim (no vacuous / `= True` / restates-target proofs), builds, every `sorry` is cited, no axiom growth; the rater scores strategy / plausibility / novelty |
 | **Canonical-discipline** | `canonical-{calibration-count, no-numerology, witness-pinned, no-hardcoded-observable, cal4-acknowledged, ck-tiered-not-binary, dilogarithm-context, script-not-deprecated, no-negative-result-in-paper}` | no post-hoc fits or numerology; calibration inputs counted; observables pinned to a witness; near-results reported tiered, not binary |
 | **Compute** | `compute-{prop-has-probe, prop-has-consumer, witness-exists, lp-dual-present}` | every computational claim is wired to a probe + a consumer + a witness; optimisation solves emit their dual |
-| **Detangler (structural)** | `detangler-{no-forward-ref, no-xchapter-fwd, no-dependency-cycle, section-band, block-tanglement, archimedean-wall}` | dependency-graph health: no forward / cross-chapter references, no cycles, correct section banding and wall placement |
+| **Detangler (structural)** | `detangler-{no-forward-ref, no-xchapter-fwd, no-dependency-cycle, section-band, block-tanglement, topic-coherence, graph-energy, archimedean-wall}` | dependency-graph health: no forward / cross-chapter references, no cycles, correct section banding and wall placement, per-chapter topic coherence, and a within-section graph-energy measure of reading order |
 | **Voice / exposition** | `voice-{status-leak, ai-slop, emoji-content, first-person-work, time-stamped-notes, unicode-crash, editorializing, scholarly-default, title-scholarly, statement-no-interpretation, author-notes-pollution}` | one consistent scholarly voice; no status / work-tracking leak, emoji, AI-tells, or unicode that breaks rendering |
 | **q-regime** | `q-usage-{regime-detected, fixed-q0-leak, archimedean-in-categorical-chapter, positivity-implicit, modulus-vs-real-mismatch, root-of-unity-undeclared, narrative-chapter-mismatch}` | the deformation parameter is used in the regime its chapter declares (categorical/formal vs archimedean/numerical) |
 | **Bibliography** | `bib-{cite-resolves, cited-ref-has-url, cited-ref-metadata-ok, cited-ref-has-screenshot}` | every citation resolves to a real, URL-backed, metadata-complete reference |
@@ -727,6 +735,38 @@ AlphaProof-Nexus adoption (their SafeVerify gate + good-gap/bad-gap rater),
 generalised from a per-episode check into a standing, corpus-wide, hash-tracked
 audit.
 
+### D. Heuristics in practice — a detangler vignette
+
+How a heuristic axis, author adjudication, and the checkers themselves
+co-evolve, in one episode:
+
+- **Heuristics emit measures, not just verdicts.** Each block's detangler
+  entries record its dependency-graph position — forward references emitted
+  and received (computed from declared `uses` edges only, never inferred from
+  prose), in/out-degree, dependency-cone size, edge span in reading order,
+  PageRank, and a per-section graph-energy aggregate (the `metrics` of
+  Appendix B).
+- **Findings triage into mechanical fixes vs. judgment calls.** For a flagged
+  block, relocation to just after its latest dependency is provably safe iff
+  its earliest dependent sits later still; that calculus split one chapter's
+  45 graph-energy findings into 12 provably-safe single-block moves, 20
+  genuine tangles (a block both used early and using late — only the author
+  can split it, drop an edge, or accept it), and the rest incomputable.
+- **Adjudication refines the criterion, not just the corpus.** On review, the
+  author ruled the flagged cross-section forward edges *intentional* — the
+  chapter's deliberate face ordering (algebraic → geometric → archimedean →
+  physical → open). The ruling was committed back into the checker, which now
+  counts within-section edges only; the entire false-positive class vanished
+  (45 → 0) for every future sweep, and no blocks were moved. A parallel
+  topic-coherence triage taught the checker that cross-cutting chapters
+  legitimately host other chapters' constructions: of 23 flags, 4 were real
+  relocations.
+
+This is the §3 loop applied to the QA layer itself: the agent proposes a
+heuristic, sweeps the corpus, and surfaces the borderline class; the author
+adjudicates it once; the adjudication lands as checker logic — and the next
+hundred-thousand verdicts inherit the judgment.
+
 ---
 
 ## References
@@ -734,6 +774,8 @@ audit.
 Web-verified entries carry links; entries marked **[from memory]** are
 confidence-labeled per house sourcing discipline and must be verified
 against primary editions before any formal submission.
+
+### Cited by number (§3)
 
 1. *Advancing Mathematics Research with AI-Driven Formal Proof Search*
    (AlphaProof Nexus), Google DeepMind, arXiv:2605.22763.
@@ -773,3 +815,27 @@ against primary editions before any formal submission.
 16. H. Lightman et al., *Let's Verify Step by Step*, arXiv:2305.20050
     (process supervision: step-level feedback beats outcome-level).
     **[from memory]**
+
+### Cited by author–year (§8–§9)
+
+- Chandak, P., Huang, K., and Zitnik, M. *Building a knowledge graph to
+  enable precision medicine.* Scientific Data **10**, 67 (2023).
+  doi:10.1038/s41597-023-01960-3.
+- Du, Y., Li, S., Torralba, A., Tenenbaum, J. B., and Mordatch, I. *Improving
+  Factuality and Reasoning in Language Models through Multiagent Debate.*
+  arXiv:2305.14325 (2023); ICML 2024.
+- Gao, S., et al. *TxAgent: An AI Agent for Therapeutic Reasoning Across a
+  Universe of Tools.* arXiv:2503.10970 (2025).
+- Lewis, P., Perez, E., Piktus, A., Petroni, F., Karpukhin, V., Goyal, N.,
+  Küttler, H., Lewis, M., Yih, W., Rocktäschel, T., Riedel, S., and Kiela, D.
+  *Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks.*
+  Advances in Neural Information Processing Systems 33 (NeurIPS 2020).
+  arXiv:2005.11401.
+- Manakul, P., Liusie, A., and Gales, M. J. F. *SelfCheckGPT: Zero-Resource
+  Black-Box Hallucination Detection for Generative Large Language Models.*
+  EMNLP 2023. arXiv:2303.08896.
+- Tao, T. *Machine-Assisted Proof.* Notices of the American Mathematical
+  Society **72**(1) (2025).
+- Wang, X., Wei, J., Schuurmans, D., Le, Q., Chi, E., Narang, S., Chowdhery,
+  A., and Zhou, D. *Self-Consistency Improves Chain of Thought Reasoning in
+  Language Models.* ICLR 2023. arXiv:2203.11171.
