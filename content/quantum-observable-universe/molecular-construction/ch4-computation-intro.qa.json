@@ -762,7 +762,28 @@
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "b23f87436a24",
+          "ts": "62440f225061"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "ch4-computation-intro.md:1 — 'Methane CH_4 as a molecular braid ... joins a central carbon to four hydrogens by four shared trefoils'; previews §6 blocks",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:29:20.543Z",
+        "reviewed_sha": "1e31c41ef629ba214a263bf82e766633273889a3",
+        "notes": "section intro (prose) for §6 'Methane: tetrahedral bonding'; previews the three §6 blocks, no new provable claim; well-placed"
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-12T19:29:20.543Z"
 }
