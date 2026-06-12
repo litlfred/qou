@@ -59,4 +59,4 @@ Casimir *effect*, the attractive vacuum force between closely spaced
 conducting boundaries; the two share only their eponym. The QOU
 treatment of the Casimir effect is the $\varepsilon$-vacuum
 conjecture
-[conj:casimir-epsilon-vacuum](#conj:casimir-epsilon-vacuum).
+[`conj:casimir-epsilon-vacuum`](#conj:casimir-epsilon-vacuum).
