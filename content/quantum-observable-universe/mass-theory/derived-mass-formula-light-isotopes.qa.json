@@ -1292,7 +1292,104 @@
         "reviewed_at": "2026-06-11T18:06:24.673Z",
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7"
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "7b570a096cb0",
+          "ts": "3bca650a9df1",
+          "lean": "702a0d81e3e7"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.8,
+          "max": 1
+        },
+        "evidence": "derived-mass-formula-light-isotopes.md:50-73 — proof states the plan up front: constituent CODATA baseline + Wedderburn 3-term (thm:wedderburn-mass-formula, alpha from prop:binding-scale-catalan) + Wigner Delta_W (prop:wigner-np-pairing) + named T=1 extension, with numerical step pinned to derived_only_formula.py witness",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T20:12:12.359Z",
+        "reviewed_sha": "495bc5d086eb5749cf439fe13e0461fb8bf1b94d",
+        "notes": "Plan explicit with cited lemmas per component; only the T=1 extension rationale is compressed (same partition + same 1/A normalisation asserted as natural)."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "7b570a096cb0",
+          "ts": "3bca650a9df1",
+          "lean": "702a0d81e3e7"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.85,
+          "max": 1
+        },
+        "evidence": "derived-mass-formula-light-isotopes.lean:59-106 — sorry-free, axiom-free; free_proton_exact / free_neutron_exact / np_splitting_exact fully proved",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T20:12:12.395Z",
+        "reviewed_sha": "495bc5d086eb5749cf439fe13e0461fb8bf1b94d",
+        "notes": "No sorry remains (rubric ~1.0); docked slightly because Lean covers only the formula def + free-nucleon edge cases, the sub-percent scorecard gap is witness-backed numerics, not formalizable routine."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "7b570a096cb0",
+          "ts": "3bca650a9df1",
+          "lean": "702a0d81e3e7"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.6,
+          "max": 1
+        },
+        "evidence": "derived-mass-formula-light-isotopes.md:50-68 — proof assembles existing corpus results (thm:wedderburn-mass-formula, prop:wigner-np-pairing, prop:binding-scale-catalan); new content is the Delta_T1 same-flavor extension and the predictive A=6,7 scorecard",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T20:12:12.433Z",
+        "reviewed_sha": "495bc5d086eb5749cf439fe13e0461fb8bf1b94d",
+        "notes": "Mostly assembly of sibling results; Delta_T1 extension + unfitted Li-6/Li-7 prediction are the non-redundant increments."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "7b570a096cb0",
+          "ts": "3bca650a9df1",
+          "lean": "702a0d81e3e7"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "derived-mass-formula-light-isotopes.lean:59 'noncomputable def derivedLightIsotopeFormula' resolves lean.ref qou:QOU.WedderburnMass.derivedLightIsotopeFormula; no axiom/sorry in file; .md:39-48 loudly documents the 30-76% binding under-prediction",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T20:12:12.471Z",
+        "reviewed_sha": "495bc5d086eb5749cf439fe13e0461fb8bf1b94d",
+        "notes": "Statement intact, no signature drift on this branch, no injected axioms; the binding-gap limitation is loudly stated in-block, not silently weakened."
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-12T20:12:12.471Z"
 }
