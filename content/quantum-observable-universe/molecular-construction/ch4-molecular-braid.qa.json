@@ -858,7 +858,51 @@
         "reviewed_at": "2026-06-11T18:06:24.673Z",
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "db968cd4d31d",
+          "ts": "d4538d0872ab",
+          "lean": "e4a30d9e88d4"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "molecular-construction.ts:110-116 — block listed in sec:ch4-computation 'Methane: tetrahedral bonding from braid optimization'; ch4-molecular-braid.md:3-6 defines methane as molecular braid",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:46:50.304Z",
+        "reviewed_sha": "8530726aedf30e120fbecb0c281bec50f1d5e241",
+        "notes": "Definition names a new construction (CH4 molecular braid in H_26(q)) squarely within its section scope; no same-section sibling carries the claim (siblings cover intro, LP dual, symmetry)"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "db968cd4d31d",
+          "ts": "d4538d0872ab",
+          "lean": "e4a30d9e88d4"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "ch4-molecular-braid.md:1 — 'Lean sibling: archimedean specialisation over R (CLAUDE.md 7c). Underlying combinatorial content stays generic to any commutative ring'",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:46:50.340Z",
+        "reviewed_sha": "8530726aedf30e120fbecb0c281bec50f1d5e241",
+        "notes": "Explicit 7c banner on line 1; the only archimedean tokens are observed eV reference values stated with approx (md:55-57); Hecke/braid content is generic-ring"
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-12T19:46:50.340Z"
 }
