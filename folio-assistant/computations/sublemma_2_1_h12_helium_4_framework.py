@@ -69,6 +69,7 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
 from witness_base import WitnessBuilder  # noqa: E402
+from lean_uniqueness_refs import lean_uniqueness_ref  # noqa: E402
 
 
 PREREQUISITE_WITNESSES = [
@@ -240,7 +241,7 @@ def main() -> int:
     )
     out = w.set_audit_only(
         "docs/coordination/2026-05-20-lambda-p-followons-ledger.md"
-    ).save()
+    ).add_data("lean_uniqueness_ref", lean_uniqueness_ref("helium-4")).save()
     print(f"\n→ wrote {out}")
     print(f"  Framework documented; H_{{12}} extract deferred.")
     return 0

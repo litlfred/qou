@@ -36,6 +36,7 @@ from scipy.sparse.linalg import LinearOperator, eigsh
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from witness_base import WitnessBuilder
+from lean_uniqueness_refs import lean_uniqueness_ref  # noqa: E402
 from hecke_characters import standard_young_tableaux
 from mass_at_3A_proper import atom_braid_word_3A
 
@@ -243,6 +244,8 @@ def main() -> int:
         "materialised; this is the only way to get to (6,6,6) at the "
         "current Rust solver's compute budget."
     )
+
+    out.add_data("lean_uniqueness_ref", lean_uniqueness_ref("⁶Li"))
 
     out_path = out.save()
     print(f"\nWitness: {out_path}")

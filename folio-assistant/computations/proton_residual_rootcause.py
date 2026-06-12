@@ -82,6 +82,7 @@ from per_block_phi_q import mass_per_block, particle_braids
 from q_parameter import Q as Q0_FLOAT
 from experimental_constants import M_E_MEV, M_P_MEV
 from witness_base import WitnessBuilder
+from lean_uniqueness_refs import lean_uniqueness_ref  # noqa: E402
 
 
 DPS = 50
@@ -431,6 +432,7 @@ def main() -> int:
         "rel_D_A": rel_DA,
     })
     w.set_content_block("prop:mass-endomorphism-tower")
+    w.add_data("lean_uniqueness_ref", lean_uniqueness_ref("proton"))
     w.save()
     return 0
 

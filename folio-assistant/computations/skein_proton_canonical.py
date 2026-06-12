@@ -64,6 +64,7 @@ if str(HERE) not in sys.path:
 import mpmath as mp  # noqa: E402
 
 from witness_base import WitnessBuilder  # noqa: E402
+from lean_uniqueness_refs import lean_uniqueness_ref  # noqa: E402
 
 
 def jones_borromean(q: mp.mpf, convention: str = "t_eq_q_squared") -> mp.mpf:
@@ -307,6 +308,8 @@ def main() -> int:
             "(open R&D)."
         ),
     )
+
+    w.add_data("lean_uniqueness_ref", lean_uniqueness_ref("proton"))
 
     out = w.set_content_block("conj:borromean-baryon-mass-formula").save()
     print(f"\n→ wrote {out}")

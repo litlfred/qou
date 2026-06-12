@@ -67,6 +67,7 @@ from canonical_braid_crossings import atom_canonical_crossings  # noqa: E402
 from per_irrep_pole_proton_h3 import negative_q_pole_order  # noqa: E402
 from q_parameter import Q as Q0_FLOAT  # noqa: E402  authoritative q_0
 from witness_base import WitnessBuilder  # noqa: E402
+from lean_uniqueness_refs import lean_uniqueness_ref  # noqa: E402
 
 Y_LAMBDA_CACHE = HERE / "y-lambda-wenzl-bridge-symbolic-witness.json"
 
@@ -470,6 +471,7 @@ def run_atom(Z: int, N: int, *, workers: int | None = None) -> int:
         ),
     })
 
+    builder.add_data("lean_uniqueness_ref", lean_uniqueness_ref("per-nucleus (H_6 deuteron / per-atom)"))
     out_path = builder.save()
     print(f"\n  Witness emitted: {out_path}")
     return 0 if success else 1

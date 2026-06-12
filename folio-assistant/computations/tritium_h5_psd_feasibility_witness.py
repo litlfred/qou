@@ -53,6 +53,7 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
 from witness_base import WitnessBuilder  # noqa: E402
+from lean_uniqueness_refs import lean_uniqueness_ref  # noqa: E402
 
 REPO_ROOT = HERE.parent.parent
 BINARY = REPO_ROOT / "tools" / "hecke-engine" / "target" / "release" / "dump-block-matrices"
@@ -114,6 +115,7 @@ def main() -> int:
         tolerance=0,
         source=f"{n_fail} of 7 H_5 Wedderburn blocks have negative min eigenvalue",
     )
+    w.add_data("lean_uniqueness_ref", lean_uniqueness_ref("tritium (³H)"))
     out_w = w.save()
     print(f"\n  blocks failing: {n_fail}/7   ALL PSD: {'YES' if all_psd else 'NO'}")
     print(f"  Witness: {out_w.name}")
