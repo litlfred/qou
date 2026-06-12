@@ -818,7 +818,28 @@
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "c94d4f23f7f2",
+          "ts": "96ee42a54151"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "molecular-construction.ts:122-132 — listed in sec:h2o-computation right after h2o-molecular-braid; h2o-c2v-from-projector.ts:4 interprets: 'def:h2o-molecular-braid'",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T20:14:24.589Z",
+        "reviewed_sha": "931a1ee85a074bbdbc1c80de5e13096b546a78a3",
+        "notes": "Interpretive remark of the H2O braid definition, placed adjacent to it in the H2O section; carries interprets + uses backing; states no proved claim of its own (the stabiliser-principle generalisation is interpretation), so remark kind is correct."
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-12T20:14:24.589Z"
 }
