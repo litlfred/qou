@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-10T20:11:20.489162+00:00",
-  "commitSha": "24995e6a82b147b41ba036a164301ad41250c099",
+  "computedAt": "2026-06-12T19:54:48.482371+00:00",
+  "commitSha": "d39ac22a90e17a28eb1eb78b1350c20d3f6f18e0",
   "assertions": [
     {
       "name": "EM trace-ratio identity h^2/(q dq9 dq10) = 1/(q[9]_q[10]_q)",
@@ -34,11 +34,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 15,
+  "durationMs": 10,
   "computation": "alpha-k-per-force-assembly",
   "scriptFile": "alpha_k_per_force_assembly.py",
-  "scriptHash": "b9ec4675b077",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "e335767d7ed3",
+  "scriptCommitSha": "2613d88dae559f322697ecd3aa659633a281d935",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -53,7 +53,7 @@
   "description": "alpha_{basis-knot} step 3: per-force assembly.  Wires the step-2 writhe decoration delta_q(T_{m,k}) = h[(m-1)k]_q into the established force-carrier intertwining correspondence (prop:force-carrier-intertwining-correspondence): each carrier T_{m,k} carries an intertwining partition lambda=(m,1^{n-m}) [first index m] and a writhe decoration h[(m-1)k]_q [writhe (m-1)k].  The two genus-4 carriers are T_{2,9} (strong; (2,1,1), h[9]_q) and T_{3,5} (weak/beta; (3,1), h[10]_q), transpose partitions (Frobenius self-dual).  The established EM trace-ratio 1/alpha_EM = h^2/(q delta_q(T_{2,9}) delta_q(T_{3,5})) = q[9]_q[10]_q is assembled end-to-end from the derived writhe decorations (residual vs CODATA reported).  The per-force SELECTION rule (which carrier pair mediates the other forces) stays conditional on conj:e-hartree-categorical-derivation; NO carrier-pair-vs-coupling enumeration is done (anti-fishing).  Pre-archimedean decorations, no pi.",
   "contentBlock": "prop:force-carrier-intertwining-correspondence",
   "data": {
-    "q0": "1.1099785827513808075916690956107688798744991218736",
+    "q0": "1.109978582751380807591669095610768879874499121873578736072814240181799",
     "n_reference_strands": 4,
     "force_knots": {
       "T_2_3": {
@@ -66,7 +66,7 @@
           1
         ],
         "delta_q_h_qbracket": "h*[3]_q",
-        "delta_q_value_at_q0": "0.6363181294019515139253712488142545739471077114434",
+        "delta_q_value_at_q0": "0.6363181294019515139253712488142545739471077114432856525408475083536772",
         "role": "electromagnetic (alpha_EM particle, trefoil)"
       },
       "T_2_5": {
@@ -79,7 +79,7 @@
           1
         ],
         "delta_q_h_qbracket": "h*[5]_q",
-        "delta_q_value_at_q0": "1.0913870128649297170551322491154806202713029123852",
+        "delta_q_value_at_q0": "1.091387012864929717055132249115480620271302912384958173558037893635092",
         "role": "2nd generation"
       },
       "T_2_7": {
@@ -92,7 +92,7 @@
           1
         ],
         "delta_q_h_qbracket": "h*[7]_q",
-        "delta_q_value_at_q0": "1.594156284701868797602245650114350220181861076835",
+        "delta_q_value_at_q0": "1.594156284701868797602245650114350220181861076834695654333573384122148",
         "role": "charm / 3rd generation"
       },
       "T_2_9": {
@@ -105,7 +105,7 @@
           1
         ],
         "delta_q_h_qbracket": "h*[9]_q",
-        "delta_q_value_at_q0": "2.1666000835514182499532437954221779175359042942104",
+        "delta_q_value_at_q0": "2.166600083551418249953243795422177917535904294209919408659280265148226",
         "role": "strong binding (force-carrier)"
       },
       "T_3_4": {
@@ -117,7 +117,7 @@
           1
         ],
         "delta_q_h_qbracket": "h*[8]_q",
-        "delta_q_value_at_q0": "1.8701885862558378433871405112990670749480945924433",
+        "delta_q_value_at_q0": "1.870188586255837843387140511299067074948094592442937993907717428676152",
         "role": "Hopf-squared / top"
       },
       "T_3_5": {
@@ -129,15 +129,15 @@
           1
         ],
         "delta_q_h_qbracket": "h*[10]_q",
-        "delta_q_value_at_q0": "2.4866207331650984990238622236724320096391903086749",
+        "delta_q_value_at_q0": "2.486620733165098499023862223672432009639190308674340629266773293231987",
         "role": "weak / beta-decay (force-carrier)"
       }
     },
-    "delta_q_T2_9_h9": "2.1666000835514182499532437954221779175359042942104",
-    "delta_q_T3_5_h10": "2.4866207331650984990238622236724320096391903086749",
-    "inv_alpha_em_traceratio": "136.82320885358258430804610540444147849492999517976",
+    "delta_q_T2_9_h9": "2.166600083551418249953243795422177917535904294209919408659280265148226",
+    "delta_q_T3_5_h10": "2.486620733165098499023862223672432009639190308674340629266773293231987",
+    "inv_alpha_em_traceratio": "136.8232088535825843080461054044414784949299951797473600635303837071519",
     "codata_inv_alpha": "137.035999177",
-    "inv_alpha_residual_rel": "-0.0015528060122549916813082164487812227620256805028137",
+    "inv_alpha_residual_rel": "-0.001552806012254991681308216448781222762025680502931893738744306896250931",
     "finding": "Per-force assembly: each torus-knot carrier T_{m,k} carries a derived intertwining partition (m,1^{n-m}) [index m] AND a derived writhe decoration h[(m-1)k]_q [writhe (m-1)k].  T_{2,9}=strong ((2,1,1),h[9]_q) and T_{3,5}=weak ((3,1),h[10]_q) are transpose partitions; their e_- Hopf trace-ratio assembles 1/alpha_EM = q[9]_q[10]_q end-to-end (residual -1.55e-3 vs CODATA).  The per-force selection rule for the OTHER forces stays conditional on conj:e-hartree-categorical-derivation; not fitted.  Next: step 6, the pre-archimedean (no-pi) source of the 2/(3pi)+alpha/(4pi) corrections via the Hopf S^1->S^3->S^2 / e_- channel."
   }
 }

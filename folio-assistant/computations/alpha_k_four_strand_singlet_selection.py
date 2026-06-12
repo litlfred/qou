@@ -70,7 +70,7 @@ from witness_base import WitnessBuilder
 
 try:
     import mpmath as mp
-    mp.mp.dps = 50
+    mp.mp.dps = 70
     HAVE_MP = True
 except Exception:
     HAVE_MP = False
@@ -79,7 +79,7 @@ try:
     from qou_substrate.constants import q_at
     Q0 = str(q_at())
 except Exception:
-    Q0 = "1.1099780333553254"
+    Q0 = "1.1099785827513808075916690956107688798744991218736"
 
 
 def trivial_multiplicity(n: int) -> int:
@@ -90,6 +90,8 @@ def trivial_multiplicity(n: int) -> int:
     q (substrate regime: real q > 1, no root of unity) keeps the classical
     fusion multiplicities.  Pre-archimedean: pure integers.
     """
+    if n == 0:
+        return 1  # A^{(x)0} = 1, dim Hom(1, 1) = 1
     # spins stored as multiples of 1/2: index s means j = s/2
     mult = {1: 1}  # A^{(x)1} = V_{1/2}
     for _ in range(n - 1):
