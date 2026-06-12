@@ -1312,7 +1312,104 @@
         "reviewed_at": "2026-06-11T18:06:24.673Z",
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7"
       }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "366341cb3d1c",
+          "ts": "37f725a05628",
+          "lean": "4d041bbc115f"
+        },
+        "result": "fail",
+        "severity": "critical",
+        "evidence": ".lean:238-241 and :324-336 — TWO 'instance canonical' declarations (redeclaration); first has malformed field '.lean:241 convention_factorisation _ _' (no := body); second carries the sorry. Class is uninhabitable for nonempty alpha: convention_factorisation forces c.markov_trace = categorical_trace for ALL OperatorVolumeConvention (.lean:92-98), but two conventions with markov_trace 0 and 1 force 0 = 1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:40:22.870Z",
+        "reviewed_sha": "c12becf80da2c14af71fb69c1d25c58b88a792b4",
+        "notes": "Undocumented file duplication (theorems structural_gap_convention_independent_axiom/:157 and structural_gap_convention_independent/:243 duplicate; doc blocks duplicated) breaks compilation; the global sorry'd instance with categorical_trace = 0 injects an unsound axiom that auto-discharges every downstream [R : ...] hypothesis, while .md:115 closes the proof sketch with a QED box. The skeleton-instance degeneracy IS loudly documented (TAUTOLOGICAL banner), but the duplication/malformed instance and the class's unsatisfiability are silent."
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "366341cb3d1c",
+          "ts": "37f725a05628",
+          "lean": "4d041bbc115f"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.6,
+          "max": 1
+        },
+        "evidence": ".md:90-115 — explicit 3-step plan (Markov-trace uniqueness, conventions respect tau, gap invariance) with Jones 1985 / Wenzl 1988 citations; .lean:175-210 staged Layer 1-3 discharge plan — but duplicated verbatim at :261-296",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:40:22.906Z",
+        "reviewed_sha": "c12becf80da2c14af71fb69c1d25c58b88a792b4",
+        "notes": "Narrative strategy is stated up front with named steps and citations (would be ~0.8); the Lean file's wholesale duplication of doc blocks, theorems, and the canonical instance makes the formal plan illegible. Mid band."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "366341cb3d1c",
+          "ts": "37f725a05628",
+          "lean": "4d041bbc115f"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0.05,
+          "max": 1
+        },
+        "evidence": ".lean:327-336 sorry in 'instance canonical' asserting convention_factorisation with categorical_trace = 0; class field .lean:96-98 quantifies over ALL OperatorVolumeConvention alpha (arbitrary pairs of functions alpha -> R)",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:40:22.943Z",
+        "reviewed_sha": "c12becf80da2c14af71fb69c1d25c58b88a792b4",
+        "notes": "The remaining sorry is not closable as stated: for any inhabited alpha, conventions with markov_trace = 0 and = 1 make convention_factorisation contradictory, so the goal is unprovable (worse than restates-target). Closing requires restating the class (constrain conventions to M1-M3 Markov axioms via the proposed MarkovTraceAxiomatic), not a proof."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "366341cb3d1c",
+          "ts": "37f725a05628",
+          "lean": "4d041bbc115f"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "evidence": ".md:80-87 unification table of findings (1)-(3); .lean:56-98 OperatorVolumeConvention is a bare pair of functions alpha -> R with one-line rewrite theorems (:112-117, :157-163)",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:40:22.980Z",
+        "reviewed_sha": "c12becf80da2c14af71fb69c1d25c58b88a792b4",
+        "notes": "The unification framing (three PR #638 findings as one categorical fact) is organizationally non-redundant in the corpus; the Lean content itself is thin generic algebra (rfl/rewrite lemmas) with no new argument. Standard-but-not-duplicated band."
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-12T19:40:22.980Z"
 }
