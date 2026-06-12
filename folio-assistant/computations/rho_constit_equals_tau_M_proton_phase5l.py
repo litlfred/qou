@@ -35,6 +35,7 @@ import mpmath as mp  # noqa: E402
 
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from lean_uniqueness_refs import lean_uniqueness_ref  # noqa: E402
 from q_parameter import Q as Q0, Q_50_DIGIT_STR  # noqa: E402
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 from hecke_characters import chi_lambda_braid, partitions_of  # noqa: E402
@@ -196,12 +197,7 @@ def main() -> int:
             f"max rel.err. < 1e-12."
         ),
     )
-    builder.add_data("lean_uniqueness_ref", {
-        "nucleus": "proton",
-        "theorem": "qou:QOU.BraidKnot.NucleusEmptySDPUniqueness.nucleus_uniqueness_closed (parameterised by crossing count n)",
-        "framework_doc": "content/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
-        "note": "T_w uniqueness at the abstract empty-constraint SDP level (PR #1537/#1542 parameterised module). Workplan: docs/workplans/2026-05-31-witness-lean-uniqueness-ref-wiring.md.",
-    })
+    builder.add_data("lean_uniqueness_ref", lean_uniqueness_ref("proton"))
 
     builder.save()
     print(f"\nWitness written: rho-constit-equals-tau-M-proton-phase5l.witness.json")

@@ -59,6 +59,7 @@ sys.path.insert(0, str(HERE))
 import sympy as sp  # noqa: E402
 
 from witness_base import WitnessBuilder  # noqa: E402
+from lean_uniqueness_refs import lean_uniqueness_ref  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 from hecke_character_symbolic import q_character_on_braid_word  # noqa: E402
@@ -254,12 +255,7 @@ def main() -> int:
                      "y_λ).  Differs from canonical tr_M^3(𝓑_p, q) "
                      "[Phase 5l witness] by a q-independent constant.  "
                      "Phase 5l.2 reconciles the normalization.")
-    builder.add_data("lean_uniqueness_ref", {
-        "nucleus": "proton",
-        "theorem": "qou:QOU.BraidKnot.NucleusEmptySDPUniqueness.nucleus_uniqueness_closed (parameterised by crossing count n)",
-        "framework_doc": "content/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
-        "note": "T_w uniqueness at the abstract empty-constraint SDP level (PR #1537/#1542 parameterised module). Workplan: docs/workplans/2026-05-31-witness-lean-uniqueness-ref-wiring.md.",
-    })
+    builder.add_data("lean_uniqueness_ref", lean_uniqueness_ref("proton"))
 
     builder.save()
     print(f"\nWitness written: tau-M-proton-closed-form-phase5l1.witness.json")

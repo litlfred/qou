@@ -66,6 +66,7 @@ sys.path.insert(0, str(HERE))
 
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from lean_uniqueness_refs import lean_uniqueness_ref  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from experimental_constants import M_E_MEV  # noqa: E402
 from codata_constants import (  # noqa: E402
@@ -201,13 +202,7 @@ def main():
         source="m_p substrate identity gap",
     )
 
-    wb.add_data("lean_uniqueness_ref", {
-        "nucleus": "proton",
-        "theorem": "qou:QOU.BraidKnot.NucleusEmptySDPUniqueness.nucleus_uniqueness_closed (parameterised by crossing count n)",
-        "framework_doc": "content/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
-        "note": "T_w uniqueness at the abstract empty-constraint SDP level (PR #1537/#1542 parameterised module). Workplan: docs/workplans/2026-05-31-witness-lean-uniqueness-ref-wiring.md.",
-    })
-
+    wb.add_data("lean_uniqueness_ref", lean_uniqueness_ref("proton"))
 
     wb.save()
 
