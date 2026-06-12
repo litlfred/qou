@@ -74,6 +74,39 @@ paper to keep them disambiguated:
   ($\tilde w_\lambda$). The Wenzl-bridge identity
   $y_\lambda = w_\lambda$ holds on the **self-conjugate stratum
   only** (where $\kappa_\lambda = \sum_{x} c(x) = 0$).
+
+  **Plus a fourth scalar that does NOT belong to the weight family**
+  but is easy to misread as one because of the symbol $\mu_\lambda$:
+
+    - $\mu_\lambda(q)$ = $q$-Laplacian eigenvalue on $V_\lambda$ from
+      [`prop:q-heat-kernel-peter-weyl`](../information-theory/q-heat-kernel-peter-weyl.md)
+      — the **heat-flow decay rate** $\hbar_q^2 \sum_{x \in \lambda}
+      [c(x)]_q [c(x)+1]_q$, NOT a Markov-trace ingredient. It does
+      not multiply $\chi^\lambda$, does not sum to anything
+      normalised, and does not appear in the Frobenius expansion.
+      Symbol-similarity to $w_\lambda$ / $\tilde w_\lambda$ makes
+      conflation tempting; avoid.
+
+  **Concrete $H_3$ values at $q = 1$** (Jones-normalised
+  $V / [2]_q^{c-1}$ convention of
+  [`prop:borromean-markov-trace-closed-form`](../mass-theory/borromean-markov-trace-closed-form.md)
+  and [`prop:h3-markov-wenzl-weights`](../mass-theory/h3-markov-wenzl-weights.md)):
+
+  | $\lambda$ | $d_\lambda$ | $y_\lambda(1)$ | $w_\lambda(1)$ | $\mu_\lambda(1)$ |
+  |---|---|---|---|---|
+  | $(3)$ | $1$ | $1/2$ | $1/6$ | $0$ |
+  | $(2,1)$ | $2$ | $1/4$ | $2/3$ | $2 \hbar_q^2$ |
+  | $(1^3)$ | $1$ | $0$ | $1/6$ | $0$ |
+  | sum identity | — | $\sum y_\lambda d_\lambda = 1$ | $\sum w_\lambda = 1$ | (no sum) |
+
+  Note the $y_\lambda$ vector $(1/2, 1/4, 0)$ is *not* uniform and
+  $y_{(1^3)} = 0$ identically (Temperley–Lieb quotient — Jones
+  factors through TL); the Wenzl-bridge $y_\lambda = w_\lambda$
+  fails at $\lambda = (2,1)$ here ($1/4 \neq 2/3$) because the
+  bridge identity uses a *different* (non-Jones, Schur-element)
+  normalisation of $y_\lambda$ — they coincide on the
+  self-conjugate stratum **after** matching normalisation
+  conventions. When in doubt, cite the source proposition.
 - **$\check{q}$** (q-háček, meaning "little hook" in Czech)
   = spinor information rate, $\check{q} = q^{1/2}$, $\check{q}^2 = q$.
   Eigenvalue of the elementary half-twist on the spin-½ fundamental
