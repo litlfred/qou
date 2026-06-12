@@ -146,11 +146,19 @@ QOU-type structure"), which does not exist. Until then every statement is
 framework-conditional. Publication, if any, is per-problem and
 conditional — never as a unified multi-problem claim.
 
-## 4. Lean keystone skeleton (S1a)
+## 4. Lean keystone skeleton (S1a) — **LANDED 2026-06-12, sorry-free**
 
-Lands under `qou:QOU.BraidKnot.*` once an LSP session is available; kept
-here (not as a `.lean` file) so CI stays green meanwhile. Generic-R per
-CLAUDE.md §7c is not available — ordering (`1 < q`) forces ℝ.
+Landed as
+[`QOU.BraidKnot.MassGapKeystone`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/MassGapKeystone.lean)
+(all three skeleton `sorry`s discharged; `lake build
+QOU.BraidKnot.MassGapKeystone` green on v4.24.0 via the lake-cache
+restore). The same module also delivers **Step 2** (the ε³ lemma) in
+exact form: `Δ_{1+ε} = ε³(2+ε)/(2(1+ε))` (categorical),
+`Δ/ℏ_q² = ε + (3/2)ε² + (1/2)ε³` (physical-units, exact cubic — the
+workplan's `O(ε³)` tail pinned to exactly `ε³/2`), plus the two-sided
+pinch `ε³/2 ≤ Δ_{1+ε} ≤ ε³` for `ε > 0`. Generic-R per CLAUDE.md §7c is
+not available — ordering (`1 < q`) forces ℝ. The original skeleton is
+retained below for provenance.
 
 ```lean
 namespace QOU.BraidKnot
@@ -192,8 +200,8 @@ end QOU.BraidKnot
 
 | # | item | size | depends on | priority |
 |---|---|---|---|---|
-| 1 | S1a Lean skeleton lands + compiles | S | LSP session | **P1** |
-| 2 | Step 2 ε³ lemma in SurrealRateCalculus | S | S1a | **P1** |
+| 1 | S1a Lean skeleton lands + compiles | S | LSP session | **DONE 2026-06-12** (`QOU.BraidKnot.MassGapKeystone`, sorry-free) |
+| 2 | Step 2 ε³ lemma in SurrealRateCalculus | S | S1a | **DONE 2026-06-12** (exact forms in `MassGapKeystone`; the abstract `SurrealRateCalculus.massGap_order` rate is realised concretely with the `(2+ε)/(2(1+ε))` scalar displayed) |
 | 3 | S1b transfer-matrix definition block | M | — | **P2** |
 | 4 | Step 3 obstruction-reduction theorem | L | S1b | **P2** |
 | 5 | S1c uniformity in n | XL (research) | S1b | **P3** |
