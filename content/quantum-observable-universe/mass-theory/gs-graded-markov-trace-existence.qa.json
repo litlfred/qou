@@ -1056,7 +1056,32 @@
         "reviewed_at": "2026-06-11T18:06:24.673Z",
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7"
       }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "a72ec99596c2",
+          "ts": "a34fbafab34e",
+          "lean": "23c5650968ae"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.6,
+          "max": 1
+        },
+        "evidence": "gs-graded-markov-trace-existence.md:48-62 lists 3 concrete promotion steps (formalise J^bullet filtration, associated graded, filtration-preserving descent of tr_M); sibling .lean:19-20 is the weakest 'holds : Prop' class placeholder",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T14:57:57.447Z",
+        "reviewed_sha": "ac6f9f84390f58fb6fb52c040d339e266728b341",
+        "notes": "Math is routine (descent of a filtration-preserving trace, valid over any CommRing per md:49-51; empirical witness agrees to 1e-9 md:64-70), but closure needs missing Mathlib filtered-algebra infra and the current Lean carries no content — routine-but-infra-heavy ~0.6."
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-12T14:57:57.447Z"
 }
