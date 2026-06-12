@@ -1,24 +1,29 @@
-From f317dec7247f649022eea6cae31d4a4f3826c8d2 Mon Sep 17 00:00:00 2001
+From 97ce46449eb28f1f3c5f3a4b41e80bef6295a444 Mon Sep 17 00:00:00 2001
 From: Claude <noreply@anthropic.com>
-Date: Fri, 12 Jun 2026 19:29:40 +0000
+Date: Fri, 12 Jun 2026 19:34:13 +0000
 Subject: [PATCH 1/2] schemas(block-qa): producing types for the QA-sidecar
  formats (ported from litlfred/qou)
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
 
 Port of folio-assistant/schemas/block-qa.ts at qou main (evidence
-field already widened to string | {line,text}[] per live-corpus
-shapes). Barrel-exported from schemas/index.ts.
+widened to string | {line,text}[] per live-corpus shapes;
+reviewed_sha optional per the 19,414 legacy agent entries that omit
+it — consistent with the interchange schema). Barrel-exported from
+schemas/index.ts.
 ---
- schemas/block-qa.ts | 277 ++++++++++++++++++++++++++++++++++++++++++++
+ schemas/block-qa.ts | 282 ++++++++++++++++++++++++++++++++++++++++++++
  schemas/index.ts    |   1 +
- 2 files changed, 278 insertions(+)
+ 2 files changed, 283 insertions(+)
  create mode 100644 schemas/block-qa.ts
 
 diff --git a/schemas/block-qa.ts b/schemas/block-qa.ts
 new file mode 100644
-index 0000000..5def67f
+index 0000000..4b50d8b
 --- /dev/null
 +++ b/schemas/block-qa.ts
-@@ -0,0 +1,277 @@
+@@ -0,0 +1,282 @@
 +/**
 + * Per-content-block QA report schema.
 + *
@@ -166,8 +171,13 @@ index 0000000..5def67f
 +  reviewer: QaReviewer;
 +  /** When the audit ran (ISO-8601 UTC). */
 +  reviewed_at: string;
-+  /** Repo HEAD at audit time (full git SHA). */
-+  reviewed_sha: string;
++  /**
++   * Repo HEAD at audit time (full git SHA). Producers must set this on
++   * every new entry; optional in the type only because legacy agent
++   * entries (pre-2026-06) omit it — matching the interchange schema,
++   * where it is likewise optional.
++   */
++  reviewed_sha?: string;
 +  /** Free-form notes. */
 +  notes?: string;
 +}
