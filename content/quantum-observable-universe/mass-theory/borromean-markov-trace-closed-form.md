@@ -88,36 +88,73 @@ $\mathcal{B}_3$ from the trivial 3-component unlink.
 ## Per-representation decomposition and exact $h^2$ budget
 
 The three irreps of $S_3$ / $H_3(q)$ contribute distinctly to the
-Frobenius expansion $\mathrm{tr}_M = \sum_\lambda y_\lambda \chi^\lambda$:
+Frobenius expansion $\mathrm{tr}_M = \sum_\lambda y_\lambda \chi^\lambda$.
+
+> **Convention note (corrected 2026-06-12).** Two distinct
+> Markov-trace normalisations appear in the corpus for $H_3(q)$, and
+> they have **different** Wenzl weights and different per-partition
+> budgets:
+>
+> 1. the **Jones-closure** normalisation
+>    $\mathrm{tr}_M = V_{\mathrm{Jones}} / [2]_q^{\,c-1}$ — the
+>    convention of *this block's closed form above* — with weights
+>    $y_{(3)} = [4]_q/[2]_q^3$, $y_{(2,1)} = 1/[2]_q^2$,
+>    $y_{(1^3)} = 0$ identically
+>    ([`prop:h3-markov-wenzl-weights`](h3-markov-wenzl-weights.md));
+> 2. the **Wenzl-bridge / Ocneanu** normalisation (producer
+>    `y-lambda-wenzl-bridge-symbolic-witness.json`, used by
+>    `phase5/phase1c_proton_h3_symbolic_decomposition.py`), whose
+>    weights are all non-zero and whose trace value on
+>    $\beta_{\mathrm{Bor}}$ **differs** from the closed form above
+>    (e.g. $0.91926$ vs $0.93917$ at $q = 1.3$; the phase1c witness
+>    records `lean_form_matches: false`).
+>
+> An earlier revision of this section tabulated the bridge-convention
+> budget $(5/128, -20/128, 15/128)$ without labelling the convention —
+> those numbers decompose the *bridge* trace, **not** the closed form
+> above. Both budgets sum to zero (each trace separately has
+> $h^2 = 0$), which masked the mismatch.
+
+In the **Jones-closure convention of this block**, the per-partition
+decomposition is:
 
 - **$\lambda = (3)$ [trivial, dim 1]:** $\chi^{(3)}(\beta_{\mathrm{Bor}}) = 1$
-  exactly for all $q$ (writhe-zero braid, trivial eigenvalue $q^0 = 1$).
-  Per-partition $h^2$ coefficient of $y_{(3)} \cdot \chi^{(3)}$: $\;5/128$.
+  exactly for all $q$ (writhe-zero braid, trivial eigenvalue $q^0 = 1$);
+  weight $y_{(3)} = [4]_q/[2]_q^3$.
+  Per-partition $h^2$ coefficient of $y_{(3)} \cdot \chi^{(3)}$: $\;+1/8$.
 
 - **$\lambda = (1^3)$ [sign, dim 1]:** $\chi^{(1^3)}(\beta_{\mathrm{Bor}}) = 1$
-  exactly (writhe-zero, sign eigenvalue $(-q^{-1})^0 = 1$).
-  Per-partition $h^2$ coefficient of $y_{(1^3)} \cdot \chi^{(1^3)}$: $\;15/128$.
+  exactly (writhe-zero, sign eigenvalue $(-q^{-1})^0 = 1$); weight
+  $y_{(1^3)} = 0$ **identically** — the Jones polynomial factors
+  through Temperley–Lieb, which annihilates the 3-row partition.
+  Per-partition $h^2$ coefficient: $\;0$.
 
 - **$\lambda = (2,1)$ [standard, dim 2]:** The **only non-abelian
   irrep**, with exact rational character
 
   $$
     \chi^{(2,1)}(\beta_{\mathrm{Bor}})
-    = \frac{-q^{12} + 3q^{10} - 3q^8 + 4q^6 - 3q^4 + 3q^2 - 1}{q^6}.
+    = \frac{-q^{12} + 3q^{10} - 3q^8 + 4q^6 - 3q^4 + 3q^2 - 1}{q^6}
+    \;=\; 2 - 3h^4 - h^6;
   $$
 
-  ALL correction terms ($h^4, h^6, \ldots$) originate from
-  this partition alone.
-  Per-partition $h^2$ coefficient of $y_{(2,1)} \cdot \chi^{(2,1)}$: $\;-5/32 = -20/128$.
+  weight $y_{(2,1)} = 1/[2]_q^2$. ALL correction terms
+  ($h^4, h^6, \ldots$) of $\mathrm{tr}_M$ originate from this
+  partition alone.
+  Per-partition $h^2$ coefficient of $y_{(2,1)} \cdot \chi^{(2,1)}$: $\;-1/8$.
 
 The $h^2$ budget is exact:
 
 $$
-  \underbrace{\frac{5}{128}}_{(3)}
-  \;+\; \underbrace{\left(-\frac{20}{128}\right)}_{(2,1)}
-  \;+\; \underbrace{\frac{15}{128}}_{(1^3)}
+  \underbrace{\frac{1}{8}}_{(3)}
+  \;+\; \underbrace{\left(-\frac{1}{8}\right)}_{(2,1)}
+  \;+\; \underbrace{0}_{(1^3)}
   \;=\; 0.
 $$
+
+(For the record, the bridge-convention budget is
+$(5/128, -20/128, 15/128)$, also summing to zero — but it decomposes
+the bridge-normalised trace, a different functional.)
 
 ## Why $h^2 = 0$: universal identity + Borromean symmetry
 
