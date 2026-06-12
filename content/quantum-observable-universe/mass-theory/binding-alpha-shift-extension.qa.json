@@ -164,6 +164,29 @@
         "reviewed_at": "2026-06-07T01:35:00.961Z",
         "reviewed_sha": "5b22f37e27e74b674fb6b50fae73e0792e7212e2",
         "notes": "Clear: binding B(A)=m_e.rho_0.alpha_shift(T(p_A,k_A)) routed through proved alpha_shift=k(p-1); §3b-cond class structure (BindingPerRepReebPhase + BindingForceCarrierKnot) listed up front."
+      },
+      {
+        "field_hash": {
+          "md": "1d5376d18a38",
+          "ts": "452c4d3b4759",
+          "lean": "a2268765afda"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.85,
+          "max": 1
+        },
+        "evidence": "binding-alpha-shift-extension.md:85-98 — '## Lean structure (§3b-cond)' enumerates the two classes + conditional theorems up front; binding-alpha-shift-extension.lean:127-137 proof is a named rewrite chain via factors + matches_alpha_shift",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:48:53.311Z",
+        "reviewed_sha": "a76fb84a46e479c2d1d7e5115f6d154b0471466e",
+        "notes": "Plan stated before steps: two-class §3b-cond gating, explicit theorem inventory, per-branch rfl sanity checks; near-1.0 but the local mirror of alphaShift slightly obscures provenance"
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -188,6 +211,29 @@
         "reviewed_at": "2026-06-07T01:35:01.001Z",
         "reviewed_sha": "5b22f37e27e74b674fb6b50fae73e0792e7212e2",
         "notes": "Sorry-free conditional thm binding_unique_via_alpha_shift + binding_subsingleton (funext/rw). But the substantive (p_A,k_A) identification is explicitly 'Phase 3 open math'; instance hardcodes candidate if A=2..4 values, not derived."
+      },
+      {
+        "field_hash": {
+          "md": "1d5376d18a38",
+          "ts": "452c4d3b4759",
+          "lean": "a2268765afda"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.45,
+          "max": 1
+        },
+        "evidence": "binding-alpha-shift-extension.md:127-147 'Phase 3 ... requires the per-nucleus minimisation argument on H_{3A}(q)'; .lean:119 'Phase 3 ... is research-grade and deferred'; .lean:192-198 'These are CANDIDATE identifications, not derived uniqueness theorems'",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:48:53.349Z",
+        "reviewed_sha": "a76fb84a46e479c2d1d7e5115f6d154b0471466e",
+        "notes": "Lean is sorry-free conditional, but the remaining gap (substrate (p_A,k_A) identification) is core-level open math per the gap-criticality rubric (~0.3-0.5); candidate table is hypothesised, not derived"
       }
     ],
     "proof-rater-novelty": [
@@ -212,6 +258,29 @@
         "reviewed_at": "2026-06-07T01:35:01.034Z",
         "reviewed_sha": "5b22f37e27e74b674fb6b50fae73e0792e7212e2",
         "notes": "Novel unification: per-rep q-Reeb rotation phase = alpha_shift pole order = Yekutieli boundary holonomy; A>=3 analogue of meson/lepton alpha_shift specialisations."
+      },
+      {
+        "field_hash": {
+          "md": "1d5376d18a38",
+          "ts": "452c4d3b4759",
+          "lean": "a2268765afda"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.45,
+          "max": 1
+        },
+        "evidence": "binding-alpha-shift-extension.md:77-83 'This is the A≥3 analogue of: meson-color-tube-uniqueness ... em-coupling-bring-zero-mode ... the T(2,k) tower'; .lean:127-137 uniqueness proof is the same funext+rw template as the sibling alpha-shift specialisations",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:48:53.387Z",
+        "reviewed_sha": "a76fb84a46e479c2d1d7e5115f6d154b0471466e",
+        "notes": "Standard sibling template (conditional two-class + rewrite uniqueness) applied to a new domain (A>=3 binding); the consolidation of 4 nuclei into one instance is the main non-duplicated contribution"
       }
     ],
     "proof-statement-integrity": [
@@ -232,6 +301,26 @@
         "reviewed_at": "2026-06-07T01:35:01.068Z",
         "reviewed_sha": "5b22f37e27e74b674fb6b50fae73e0792e7212e2",
         "notes": "Sorry-free §3b-cond; classes honestly axiomatise the open force-carrier-knot input (candidates, not suspect axioms); md/Lean both flag Phase-3 openness. No stub."
+      },
+      {
+        "field_hash": {
+          "md": "1d5376d18a38",
+          "ts": "452c4d3b4759",
+          "lean": "a2268765afda"
+        },
+        "result": "warn",
+        "severity": "major",
+        "evidence": "binding-alpha-shift-extension.md:149-155 Status loudly documents the conditional weakening ('proved conditional on the ... class instances'); .lean:58-61 'local mirror of mass-theory/alpha-shift-torus-knot.alphaShift' = duplicated declaration (documented); classes satisfiable (B := fun A => m_e*rho_0*(alphaShiftAt A) discharges BindingPerRepReebPhase)",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:48:53.424Z",
+        "reviewed_sha": "a76fb84a46e479c2d1d7e5115f6d154b0471466e",
+        "notes": "No silent weakening: conditionality is banner-level and the candidate status is stated in both .md and .lean; residual warn for the duplicated bindingAlphaShift mirror decl and the 'uniquely determined' headline resting on classes that presuppose the factorisation"
       }
     ],
     "proof-no-bare-sorries": [
@@ -1249,5 +1338,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-12T19:48:53.424Z"
 }
