@@ -53,6 +53,7 @@ if str(HERE) not in sys.path:
 
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from lean_uniqueness_refs import lean_uniqueness_ref  # noqa: E402
 from partition_utils import hook_lengths  # noqa: E402
 from q_parameter import Q as Q_0_FLOAT  # noqa: E402
 from wedderburn_jones_markov import y_lambda_at  # noqa: E402
@@ -299,6 +300,8 @@ def main() -> int:
                     f"{cited}% of |tr_M|"
                 ),
             )
+
+    w.add_data("lean_uniqueness_ref", lean_uniqueness_ref("helium-4"))
 
     out = w.save()
     print(f"\n  Witness: {out}")

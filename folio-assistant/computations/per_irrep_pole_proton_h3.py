@@ -31,6 +31,7 @@ Audit doc: docs/audits/2026-05-08-per-irrep-pole-18-21-research-note.md
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+from lean_uniqueness_refs import lean_uniqueness_ref  # noqa: E402
 import sys
 from pathlib import Path
 
@@ -202,6 +203,7 @@ def main() -> int:
         computed=int(shift_u),
         expected=expected_shift,
     )
+    builder.add_data("lean_uniqueness_ref", lean_uniqueness_ref("proton"))
     out_path = builder.save()
     print(f"\n  Witness emitted: {out_path}")
     return 0 if success else 1

@@ -68,6 +68,7 @@ sys.path.insert(0, str(HERE))
 
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from lean_uniqueness_refs import lean_uniqueness_ref  # noqa: E402
 from q_parameter import Q as q0  # noqa: E402
 
 
@@ -232,6 +233,7 @@ def main():
         ),
     )
 
+    w.add_data("lean_uniqueness_ref", lean_uniqueness_ref("proton"))
     out = w.save()
     print(f"\n  Witness: {out}")
 

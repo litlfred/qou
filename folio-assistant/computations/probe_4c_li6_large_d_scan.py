@@ -31,6 +31,7 @@ from scipy.sparse.linalg import LinearOperator, eigsh
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from witness_base import WitnessBuilder
+from lean_uniqueness_refs import lean_uniqueness_ref  # noqa: E402
 from mass_at_3A_proper import atom_braid_word_3A
 from q_parameter import Q as q0
 from probe_4_li6_rectangular_python import build_seminormal_fast, apply_T_w, apply_T_w_T
@@ -103,6 +104,7 @@ def main():
         source=f"Scanned {len(results)} large-d non-rect; {sum(r['beats_rectangular'] for r in results)} falsify.",
     )
 
+    out.add_data("lean_uniqueness_ref", lean_uniqueness_ref("⁶Li"))
     out_path = out.save()
     print(f"\nWitness: {out_path}")
 

@@ -37,6 +37,7 @@ from atom_orbit_reduction import (  # noqa: E402
     interface_multiset, tr_M_via_orbit_representative,
 )
 from witness_base import WitnessBuilder  # noqa: E402
+from lean_uniqueness_refs import lean_uniqueness_ref  # noqa: E402
 
 
 def min_pn_over_orderings(Z: int, N: int) -> int:
@@ -128,6 +129,7 @@ def main() -> int:
         "identity": "tr_M(beta) = tr_M(rep)  [no |orbit| factor]",
         "canonical_interface_minimal": True,
     })
+    w.add_data("lean_uniqueness_ref", lean_uniqueness_ref("proton"))
     w.save()
 
     print("\n" + "=" * 60)
