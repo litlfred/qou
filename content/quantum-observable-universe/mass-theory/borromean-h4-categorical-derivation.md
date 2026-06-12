@@ -174,6 +174,45 @@ $$
   -\tfrac{3}{4}. \qquad \square
 $$
 
+## Connection to the wider framework on `main`
+
+The two ingredients each have a categorical home that landed on `main`
+after the initial derivation:
+
+- **Step 1 (the polynomial form `χ^{(2,1)}(β_Bor) = 2 − 3h⁴ − h⁶`)**
+  is a consequence of the [q-heat-kernel Peter–Weyl
+  decomposition](../information-theory/q-heat-kernel-peter-weyl.md)
+  + [Habiro residue-sum equivalence](habiro-residue-sum-equivalence.md)
+  (PR #2131).  The h⁴ coefficient `−3` reads off as the contribution
+  of the standard channel to the q-heat-kernel partition function.
+  The categorical projector onto the (2,1) channel is the
+  $\mathbf{e}_-$ minus-eigenspace idempotent of the Hecke quadratic
+  relation $q\sigma^2 = (q^2 − 1)\sigma + q$, formalised sorry-free
+  in `QOU.Hecke.SpectralProjector` (`eminus_idem`,
+  `eplus_eminus_orthogonal`, `eplus_add_eminus = 1`).
+  Closed-form trace computation on $V^{\otimes 3}$ can be done via
+  the Cayley–Hamilton block reduction
+  `QOU.Braiding.HeckeGenPolyReduction.hecke_gen_poly_reduction`.
+
+- **Step 2 (the Markov normalisation `y_{(2,1)}(q=1) = 1/4`)**
+  is the leading symmetric-point invariant per
+  [resolution-loss at the symmetric point](../models-of-qous/symmetric-point-resolution-loss.md):
+  the Wenzl measure collapses to a uniform value at $q = 1$, with
+  the symmetric-point Wenzl weight on $\mathrm{H}_n$ equal to
+  $1/[2]_q^{n-1}|_{q=1} = 1/2^{n-1}$ (here $1/4$ for $n = 3$
+  strands, $c = 3$ components on closure).  The resolution-loss
+  narrative records exactly this: channel distinctions carrying
+  chirality and pairing data become invisible at $q = 1$, while
+  the *measure* survives.
+
+Concretely, the R-matrix derivation in **Step 1** of this proof can
+be reformulated equivalently as: extract the $\mathbf{e}_-$ component
+of $\sigma_1^{-1}\sigma_2$ on $V_{1/2}^{\otimes 3}$, take the h⁴
+coefficient of its trace.  The $\mathbf{e}_-$ idempotent is the
+categorical replacement for the explicit $8 \times 8$ R-matrix
+computation; both are now valid Lean entry points to the same
+`χ^{(2,1)}(β_Bor) = 2 − 3h⁴ − h⁶` identity.
+
 ## Significance
 
 The Borromean $h^4 = -3/4$ — the *first topological invariant* of the
