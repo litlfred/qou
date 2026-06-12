@@ -1,0 +1,775 @@
+{
+  "dataset": "UNCOVER DR4 LRDs",
+  "count": 128,
+  "q_variance": 0.05803977076690948,
+  "sources": [
+    {
+      "id": 3686,
+      "z_spec": 9.318165,
+      "q_local_inferred": 1.0569056331432476,
+      "H_alpha_flux": 0.0
+    },
+    {
+      "id": 4286,
+      "z_spec": 5.836704,
+      "q_local_inferred": 1.127221289406469,
+      "H_alpha_flux": 2471.552058
+    },
+    {
+      "id": 7309,
+      "z_spec": 6.346668,
+      "q_local_inferred": 1.0599108573075673,
+      "H_alpha_flux": 5.035451
+    },
+    {
+      "id": 8613,
+      "z_spec": 6.380238,
+      "q_local_inferred": 1.109010032515634,
+      "H_alpha_flux": 127.554096
+    },
+    {
+      "id": 8936,
+      "z_spec": 6.645962,
+      "q_local_inferred": 1.1738924931378425,
+      "H_alpha_flux": 21.549171
+    },
+    {
+      "id": 8943,
+      "z_spec": 6.325826,
+      "q_local_inferred": 1.14005707285027,
+      "H_alpha_flux": 852.887916
+    },
+    {
+      "id": 10137,
+      "z_spec": 4.503619,
+      "q_local_inferred": 1.0625860472742812,
+      "H_alpha_flux": 153.458788
+    },
+    {
+      "id": 10155,
+      "z_spec": 5.659243,
+      "q_local_inferred": 1.1177751494391057,
+      "H_alpha_flux": 144.409828
+    },
+    {
+      "id": 10646,
+      "z_spec": 8.51059,
+      "q_local_inferred": 1.1412487871246686,
+      "H_alpha_flux": 0.0
+    },
+    {
+      "id": 10740,
+      "z_spec": 6.141379,
+      "q_local_inferred": 1.1193506285215562,
+      "H_alpha_flux": 86.268979
+    },
+    {
+      "id": 11045,
+      "z_spec": 6.331689,
+      "q_local_inferred": 1.0917403477451533,
+      "H_alpha_flux": 558.310608
+    },
+    {
+      "id": 11254,
+      "z_spec": 6.87195,
+      "q_local_inferred": 1.150105026905069,
+      "H_alpha_flux": 645.196049
+    },
+    {
+      "id": 12065,
+      "z_spec": 5.544374,
+      "q_local_inferred": 1.1383916118515682,
+      "H_alpha_flux": 171.209988
+    },
+    {
+      "id": 12899,
+      "z_spec": 6.873525,
+      "q_local_inferred": 1.156077038763568,
+      "H_alpha_flux": 64.19148
+    },
+    {
+      "id": 13077,
+      "z_spec": 13.163633,
+      "q_local_inferred": 1.0857584421585076,
+      "H_alpha_flux": 0.0
+    },
+    {
+      "id": 13123,
+      "z_spec": 7.039813,
+      "q_local_inferred": 1.141550063170629,
+      "H_alpha_flux": 1063.119376
+    },
+    {
+      "id": 13151,
+      "z_spec": 9.798486,
+      "q_local_inferred": 1.158105717591045,
+      "H_alpha_flux": 0.0
+    },
+    {
+      "id": 14409,
+      "z_spec": 5.135588,
+      "q_local_inferred": 1.1195526931556545,
+      "H_alpha_flux": 62.973416
+    },
+    {
+      "id": 15161,
+      "z_spec": 4.965578,
+      "q_local_inferred": 1.0021016253593538,
+      "H_alpha_flux": 46.774255
+    },
+    {
+      "id": 15383,
+      "z_spec": 7.042226,
+      "q_local_inferred": 1.0508113024754508,
+      "H_alpha_flux": 1322.11424
+    },
+    {
+      "id": 15719,
+      "z_spec": 5.047264,
+      "q_local_inferred": 1.1481258166420965,
+      "H_alpha_flux": 139.062895
+    },
+    {
+      "id": 16155,
+      "z_spec": 6.87195,
+      "q_local_inferred": 1.155082204085762,
+      "H_alpha_flux": 207.767445
+    },
+    {
+      "id": 16560,
+      "z_spec": 4.181041,
+      "q_local_inferred": 1.0884253098841192,
+      "H_alpha_flux": 226.581275
+    },
+    {
+      "id": 16594,
+      "z_spec": 7.041422,
+      "q_local_inferred": 1.0945261043137426,
+      "H_alpha_flux": 548.229544
+    },
+    {
+      "id": 16863,
+      "z_spec": 5.133747,
+      "q_local_inferred": 1.1164420967330557,
+      "H_alpha_flux": 1021.596299
+    },
+    {
+      "id": 17201,
+      "z_spec": 4.281478,
+      "q_local_inferred": 1.0513879436842082,
+      "H_alpha_flux": 260.909424
+    },
+    {
+      "id": 17475,
+      "z_spec": 4.022892,
+      "q_local_inferred": 1.2610270862315462,
+      "H_alpha_flux": 166.600451
+    },
+    {
+      "id": 18113,
+      "z_spec": 5.150331,
+      "q_local_inferred": 1.0713854793286082,
+      "H_alpha_flux": 52.843302
+    },
+    {
+      "id": 18391,
+      "z_spec": 4.024902,
+      "q_local_inferred": 1.138400105225894,
+      "H_alpha_flux": 189.914942
+    },
+    {
+      "id": 18840,
+      "z_spec": 5.299724,
+      "q_local_inferred": 1.1523987026392943,
+      "H_alpha_flux": 200.927888
+    },
+    {
+      "id": 18924,
+      "z_spec": 7.68681,
+      "q_local_inferred": 1.2008563375820427,
+      "H_alpha_flux": 0.0
+    },
+    {
+      "id": 19025,
+      "z_spec": 7.55577,
+      "q_local_inferred": 0.9912436252263676,
+      "H_alpha_flux": 0.0
+    },
+    {
+      "id": 19365,
+      "z_spec": 4.299465,
+      "q_local_inferred": 1.0852781384350563,
+      "H_alpha_flux": 920.062472
+    },
+    {
+      "id": 19436,
+      "z_spec": 4.311137,
+      "q_local_inferred": 1.0746955733071093,
+      "H_alpha_flux": 2090.233901
+    },
+    {
+      "id": 19563,
+      "z_spec": 4.161504,
+      "q_local_inferred": 1.1884854636699471,
+      "H_alpha_flux": 11.769111
+    },
+    {
+      "id": 20071,
+      "z_spec": 5.135588,
+      "q_local_inferred": 1.0389290517756244,
+      "H_alpha_flux": 160.003496
+    },
+    {
+      "id": 20466,
+      "z_spec": 8.503934,
+      "q_local_inferred": 1.096010968134493,
+      "H_alpha_flux": 0.0
+    },
+    {
+      "id": 20972,
+      "z_spec": 5.610808,
+      "q_local_inferred": 1.0641384881478706,
+      "H_alpha_flux": 82.161362
+    },
+    {
+      "id": 21164,
+      "z_spec": 4.44069,
+      "q_local_inferred": 1.1699021611555982,
+      "H_alpha_flux": 253.982972
+    },
+    {
+      "id": 21527,
+      "z_spec": 5.053919,
+      "q_local_inferred": 1.0141415283792796,
+      "H_alpha_flux": 63.158255
+    },
+    {
+      "id": 22223,
+      "z_spec": 9.569852,
+      "q_local_inferred": 1.1841774797549314,
+      "H_alpha_flux": 0.0
+    },
+    {
+      "id": 22977,
+      "z_spec": 5.667906,
+      "q_local_inferred": 1.1133751594495376,
+      "H_alpha_flux": 160.307148
+    },
+    {
+      "id": 23456,
+      "z_spec": 4.949492,
+      "q_local_inferred": 1.158789094559746,
+      "H_alpha_flux": 75.237308
+    },
+    {
+      "id": 23604,
+      "z_spec": 7.882703,
+      "q_local_inferred": 1.1478722843676357,
+      "H_alpha_flux": 0.0
+    },
+    {
+      "id": 23608,
+      "z_spec": 5.794448,
+      "q_local_inferred": 1.2335500969383628,
+      "H_alpha_flux": 2094.122985
+    },
+    {
+      "id": 23619,
+      "z_spec": 6.716076,
+      "q_local_inferred": 1.0805057360976817,
+      "H_alpha_flux": 56.398643
+    },
+    {
+      "id": 23920,
+      "z_spec": 5.990177,
+      "q_local_inferred": 1.1091614126719085,
+      "H_alpha_flux": 138.299544
+    },
+    {
+      "id": 24012,
+      "z_spec": 5.729534,
+      "q_local_inferred": 1.1027740220605258,
+      "H_alpha_flux": 105.65713
+    },
+    {
+      "id": 24131,
+      "z_spec": 4.029426,
+      "q_local_inferred": 1.0998125070485674,
+      "H_alpha_flux": 122.686829
+    },
+    {
+      "id": 24531,
+      "z_spec": 7.89159,
+      "q_local_inferred": 1.1066849575020072,
+      "H_alpha_flux": 0.0
+    },
+    {
+      "id": 24714,
+      "z_spec": 6.352246,
+      "q_local_inferred": 1.0704016641017984,
+      "H_alpha_flux": 361.983135
+    },
+    {
+      "id": 24817,
+      "z_spec": 5.662414,
+      "q_local_inferred": 1.0310659588824809,
+      "H_alpha_flux": 31.435956
+    },
+    {
+      "id": 24996,
+      "z_spec": 4.575633,
+      "q_local_inferred": 1.0519171142784924,
+      "H_alpha_flux": 162.583933
+    },
+    {
+      "id": 25149,
+      "z_spec": 4.01988,
+      "q_local_inferred": 1.1250373916631253,
+      "H_alpha_flux": 80.830143
+    },
+    {
+      "id": 25447,
+      "z_spec": 6.247132,
+      "q_local_inferred": 1.079937158095169,
+      "H_alpha_flux": 105.358365
+    },
+    {
+      "id": 25614,
+      "z_spec": 4.915085,
+      "q_local_inferred": 0.966191016191872,
+      "H_alpha_flux": 170.506738
+    },
+    {
+      "id": 25931,
+      "z_spec": 4.288877,
+      "q_local_inferred": 1.153317745956793,
+      "H_alpha_flux": 1050.034504
+    },
+    {
+      "id": 26185,
+      "z_spec": 10.060783,
+      "q_local_inferred": 1.0982834878619836,
+      "H_alpha_flux": 0.0
+    },
+    {
+      "id": 27148,
+      "z_spec": 4.345237,
+      "q_local_inferred": 1.1122823965918656,
+      "H_alpha_flux": 259.652895
+    },
+    {
+      "id": 27335,
+      "z_spec": 6.753977,
+      "q_local_inferred": 1.0833517605614527,
+      "H_alpha_flux": 50.407612
+    },
+    {
+      "id": 27506,
+      "z_spec": 6.132101,
+      "q_local_inferred": 1.1376462514296957,
+      "H_alpha_flux": 160.522997
+    },
+    {
+      "id": 27773,
+      "z_spec": 4.987093,
+      "q_local_inferred": 1.1268169106167294,
+      "H_alpha_flux": 241.194858
+    },
+    {
+      "id": 28110,
+      "z_spec": 5.62603,
+      "q_local_inferred": 1.0545593776123656,
+      "H_alpha_flux": 867.994285
+    },
+    {
+      "id": 28284,
+      "z_spec": 4.329758,
+      "q_local_inferred": 1.0266370707457484,
+      "H_alpha_flux": 1590.684119
+    },
+    {
+      "id": 28308,
+      "z_spec": 6.363283,
+      "q_local_inferred": 1.14303005660944,
+      "H_alpha_flux": 264.079714
+    },
+    {
+      "id": 28876,
+      "z_spec": 7.042225,
+      "q_local_inferred": 1.1314647193271352,
+      "H_alpha_flux": 738.367966
+    },
+    {
+      "id": 30249,
+      "z_spec": 5.784264,
+      "q_local_inferred": 1.150721518573177,
+      "H_alpha_flux": 199.884989
+    },
+    {
+      "id": 30390,
+      "z_spec": 6.372124,
+      "q_local_inferred": 1.1102094328902794,
+      "H_alpha_flux": 268.677281
+    },
+    {
+      "id": 30649,
+      "z_spec": 5.199111,
+      "q_local_inferred": 1.0580908235508937,
+      "H_alpha_flux": 65.282325
+    },
+    {
+      "id": 31083,
+      "z_spec": 4.751185,
+      "q_local_inferred": 1.1929831707675516,
+      "H_alpha_flux": 26.584947
+    },
+    {
+      "id": 31808,
+      "z_spec": 4.751185,
+      "q_local_inferred": 1.0305204463304585,
+      "H_alpha_flux": 226.488813
+    },
+    {
+      "id": 31809,
+      "z_spec": 4.755212,
+      "q_local_inferred": 1.099850712651652,
+      "H_alpha_flux": 118.777924
+    },
+    {
+      "id": 32065,
+      "z_spec": 6.30023,
+      "q_local_inferred": 1.1509205184130982,
+      "H_alpha_flux": 36.851137
+    },
+    {
+      "id": 32310,
+      "z_spec": 5.080616,
+      "q_local_inferred": 1.1112744754428352,
+      "H_alpha_flux": 70.921999
+    },
+    {
+      "id": 33586,
+      "z_spec": 5.728861,
+      "q_local_inferred": 1.0859951303343163,
+      "H_alpha_flux": 133.293562
+    },
+    {
+      "id": 33673,
+      "z_spec": 6.774164,
+      "q_local_inferred": 1.1361839557528899,
+      "H_alpha_flux": 94.955659
+    },
+    {
+      "id": 34265,
+      "z_spec": 6.351511,
+      "q_local_inferred": 0.9732145685458855,
+      "H_alpha_flux": 223.868184
+    },
+    {
+      "id": 34495,
+      "z_spec": 5.667906,
+      "q_local_inferred": 1.1179791007294946,
+      "H_alpha_flux": 212.628734
+    },
+    {
+      "id": 34878,
+      "z_spec": 5.774095,
+      "q_local_inferred": 1.123852473506478,
+      "H_alpha_flux": 96.809244
+    },
+    {
+      "id": 35076,
+      "z_spec": 4.798539,
+      "q_local_inferred": 1.1005043556145795,
+      "H_alpha_flux": 70.1305
+    },
+    {
+      "id": 35123,
+      "z_spec": 6.254383,
+      "q_local_inferred": 1.136038945284356,
+      "H_alpha_flux": 140.363792
+    },
+    {
+      "id": 35492,
+      "z_spec": 5.670385,
+      "q_local_inferred": 1.053091620367428,
+      "H_alpha_flux": 23.208708
+    },
+    {
+      "id": 35585,
+      "z_spec": 4.281477,
+      "q_local_inferred": 1.0649402289282863,
+      "H_alpha_flux": 308.975634
+    },
+    {
+      "id": 35738,
+      "z_spec": 5.842176,
+      "q_local_inferred": 1.0509626835833408,
+      "H_alpha_flux": 97.399927
+    },
+    {
+      "id": 36755,
+      "z_spec": 6.252933,
+      "q_local_inferred": 1.2133783243465974,
+      "H_alpha_flux": 172.192971
+    },
+    {
+      "id": 36857,
+      "z_spec": 6.764063,
+      "q_local_inferred": 1.2634488290959884,
+      "H_alpha_flux": 129.354184
+    },
+    {
+      "id": 37056,
+      "z_spec": 5.033975,
+      "q_local_inferred": 1.0172419108290183,
+      "H_alpha_flux": 48.74609
+    },
+    {
+      "id": 37126,
+      "z_spec": 10.119248,
+      "q_local_inferred": 1.170784915925171,
+      "H_alpha_flux": 0.0
+    },
+    {
+      "id": 37504,
+      "z_spec": 6.561018,
+      "q_local_inferred": 1.1405394877334973,
+      "H_alpha_flux": 111.09906
+    },
+    {
+      "id": 37753,
+      "z_spec": 4.699656,
+      "q_local_inferred": 1.1147980752922773,
+      "H_alpha_flux": 356.677132
+    },
+    {
+      "id": 38059,
+      "z_spec": 7.589203,
+      "q_local_inferred": 1.027850811803798,
+      "H_alpha_flux": 0.0
+    },
+    {
+      "id": 38108,
+      "z_spec": 4.961999,
+      "q_local_inferred": 1.080210815398526,
+      "H_alpha_flux": 1781.478447
+    },
+    {
+      "id": 38248,
+      "z_spec": 6.554216,
+      "q_local_inferred": 0.9245511830968342,
+      "H_alpha_flux": 50.209331
+    },
+    {
+      "id": 38335,
+      "z_spec": 6.231206,
+      "q_local_inferred": 1.00126002280932,
+      "H_alpha_flux": 105.943994
+    },
+    {
+      "id": 38669,
+      "z_spec": 5.207796,
+      "q_local_inferred": 1.115841134632282,
+      "H_alpha_flux": 185.85951
+    },
+    {
+      "id": 38766,
+      "z_spec": 12.190246,
+      "q_local_inferred": 1.1717804766507274,
+      "H_alpha_flux": 0.0
+    },
+    {
+      "id": 40074,
+      "z_spec": 5.021919,
+      "q_local_inferred": 1.189664659669734,
+      "H_alpha_flux": 102.199026
+    },
+    {
+      "id": 40362,
+      "z_spec": 5.666572,
+      "q_local_inferred": 1.0974999257462486,
+      "H_alpha_flux": 92.545837
+    },
+    {
+      "id": 41225,
+      "z_spec": 6.768724,
+      "q_local_inferred": 1.0572286000153657,
+      "H_alpha_flux": 713.366491
+    },
+    {
+      "id": 41274,
+      "z_spec": 5.620732,
+      "q_local_inferred": 1.1125143221834257,
+      "H_alpha_flux": 72.137996
+    },
+    {
+      "id": 41916,
+      "z_spec": 5.021316,
+      "q_local_inferred": 1.1675196269047396,
+      "H_alpha_flux": 163.866703
+    },
+    {
+      "id": 42328,
+      "z_spec": 5.666573,
+      "q_local_inferred": 1.034489113697843,
+      "H_alpha_flux": 199.212733
+    },
+    {
+      "id": 42644,
+      "z_spec": 5.013494,
+      "q_local_inferred": 1.1603985464555133,
+      "H_alpha_flux": 203.583346
+    },
+    {
+      "id": 43709,
+      "z_spec": 6.726886,
+      "q_local_inferred": 1.2035579364772009,
+      "H_alpha_flux": 70.002477
+    },
+    {
+      "id": 43842,
+      "z_spec": 4.312199,
+      "q_local_inferred": 1.0927639658936876,
+      "H_alpha_flux": 410.660564
+    },
+    {
+      "id": 44493,
+      "z_spec": 5.681066,
+      "q_local_inferred": 1.0740622800564987,
+      "H_alpha_flux": 36.253468
+    },
+    {
+      "id": 44984,
+      "z_spec": 4.466321,
+      "q_local_inferred": 1.1129699603006873,
+      "H_alpha_flux": 101.351606
+    },
+    {
+      "id": 45576,
+      "z_spec": 4.305297,
+      "q_local_inferred": 1.192239243913424,
+      "H_alpha_flux": 84.466758
+    },
+    {
+      "id": 45924,
+      "z_spec": 4.466714,
+      "q_local_inferred": 1.1347446984718819,
+      "H_alpha_flux": 48746.858549
+    },
+    {
+      "id": 46523,
+      "z_spec": 4.003842,
+      "q_local_inferred": 1.1269291156628194,
+      "H_alpha_flux": 188.514823
+    },
+    {
+      "id": 46702,
+      "z_spec": 4.292051,
+      "q_local_inferred": 1.0632387827702332,
+      "H_alpha_flux": 1441.586072
+    },
+    {
+      "id": 46937,
+      "z_spec": 4.466322,
+      "q_local_inferred": 1.0511024524583301,
+      "H_alpha_flux": 2529.84656
+    },
+    {
+      "id": 46972,
+      "z_spec": 4.471791,
+      "q_local_inferred": 1.1082944581539012,
+      "H_alpha_flux": 128.812436
+    },
+    {
+      "id": 47025,
+      "z_spec": 4.531759,
+      "q_local_inferred": 1.1560822889728497,
+      "H_alpha_flux": 54.661045
+    },
+    {
+      "id": 47040,
+      "z_spec": 4.457583,
+      "q_local_inferred": 1.1741187761071947,
+      "H_alpha_flux": 2211.123489
+    },
+    {
+      "id": 47584,
+      "z_spec": 4.473979,
+      "q_local_inferred": 1.2135213109212548,
+      "H_alpha_flux": 2665.225878
+    },
+    {
+      "id": 47653,
+      "z_spec": 4.416262,
+      "q_local_inferred": 1.0701260313478411,
+      "H_alpha_flux": 187.556861
+    },
+    {
+      "id": 48510,
+      "z_spec": 5.633987,
+      "q_local_inferred": 1.097042887010668,
+      "H_alpha_flux": 64.103269
+    },
+    {
+      "id": 48512,
+      "z_spec": 5.795127,
+      "q_local_inferred": 1.1223624852878882,
+      "H_alpha_flux": 26.900096
+    },
+    {
+      "id": 49236,
+      "z_spec": 4.409225,
+      "q_local_inferred": 1.109448389717171,
+      "H_alpha_flux": 354.598946
+    },
+    {
+      "id": 49702,
+      "z_spec": 4.874412,
+      "q_local_inferred": 1.0772530514162824,
+      "H_alpha_flux": 488.10935
+    },
+    {
+      "id": 50802,
+      "z_spec": 5.162643,
+      "q_local_inferred": 1.106559884138787,
+      "H_alpha_flux": 60.888905
+    },
+    {
+      "id": 51076,
+      "z_spec": 5.929627,
+      "q_local_inferred": 1.1241036792769332,
+      "H_alpha_flux": 73.215662
+    },
+    {
+      "id": 51660,
+      "z_spec": 4.437427,
+      "q_local_inferred": 1.139740391272831,
+      "H_alpha_flux": 47.785442
+    },
+    {
+      "id": 52621,
+      "z_spec": 6.189387,
+      "q_local_inferred": 1.1824760006423838,
+      "H_alpha_flux": 221.86638
+    },
+    {
+      "id": 53845,
+      "z_spec": 5.280225,
+      "q_local_inferred": 1.1397830540059601,
+      "H_alpha_flux": 134.853894
+    },
+    {
+      "id": 60141,
+      "z_spec": 7.127927,
+      "q_local_inferred": 1.0513500466282926,
+      "H_alpha_flux": 0.0
+    },
+    {
+      "id": 60157,
+      "z_spec": 7.880038,
+      "q_local_inferred": 1.1790243907557163,
+      "H_alpha_flux": 0.0
+    }
+  ]
+}
