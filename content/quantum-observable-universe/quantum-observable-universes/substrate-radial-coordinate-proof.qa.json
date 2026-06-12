@@ -744,7 +744,28 @@
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "2dbb08fba92f",
+          "ts": "4059498537ce"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "quantum-observable-universes.ts:152-153 — proof block sits immediately after its proposition (prop:substrate-radial-coordinate) in sec:differential-structures-fiber-adjoint; substrate-radial-coordinate-proof.md:5-15 elaborates the two limits with the vertical/horizontal mechanism (alpha_H -> 0, iota_xi alpha -> 0) not spelled out in the prop",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T15:31:03.711Z",
+        "reviewed_sha": "652101e9d5f3455a998d46fd34cbdaa6d2864b38",
+        "notes": "By-design prop+proof adjacency; recap of the prop's limits is deliberate proof structure, not redundancy"
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-12T15:31:03.711Z"
 }
