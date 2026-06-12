@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-11T02:37:53.982426+00:00",
-  "commitSha": "af782f625991d1a658612ec94bf11bd1b5d44047",
+  "engineVersion": "python 3.11.2",
+  "computedAt": "2026-06-12T03:48:06.525396+00:00",
+  "commitSha": "418ba8e35cecb2f931f9b83e4870c65fb3217be3",
   "assertions": [
     {
       "name": "no_fitted_labelled_canonical",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 11,
+  "durationMs": 543,
   "computation": "fitted-labelled-canonical-audit",
   "scriptFile": "fitted_labelled_canonical_audit.py",
   "scriptHash": "aaff0df25751",
-  "scriptCommitSha": "4eb95ac1068f3824772843937cdffabb7aaf5b24",
+  "scriptCommitSha": "a394b8e33e34e7b10bb07d989e54a7197b312201",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -25,19 +25,20 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.2",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
-    "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "sympy": "1.11.1",
+    "mpmath": "0.0.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
   },
   "description": "Audits production scripts in folio-assistant/computations/ for the CAL-4-disguised-as-canonical pattern: a hardcoded numerical literal at module level combined with a 'substrate/canonical/derived' claim in the docstring, where neither the variable name nor the surrounding context tags the literal as validation/CODATA/acknowledged. Introduced 2026-05-22 after the LAMBDA_PROTON_DOC discovery in m_p_borromean_verification_50dps.py (see docs/canonical-derivation-cheat-sheet.md §5 fix #1).",
   "contentBlock": "prop:three-calibration-inputs",
   "data": {
     "total_issues": 16,
     "flagged_script_count": 4,
-    "scripts_scanned": 1230,
+    "scripts_scanned": 1234,
     "rows": [
       {
         "path": "computations/metallic_q_n4_character_sweep.py",
