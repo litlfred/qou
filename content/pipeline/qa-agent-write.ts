@@ -30,7 +30,7 @@
  *
  * @module content/pipeline/qa-agent-write
  */
-import { existsSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { resolve, relative } from "node:path";
 import {
   hashBlockFiles,
@@ -38,6 +38,7 @@ import {
   loadQaReport,
   saveQaReport,
   readBlockManifest,
+  resolveCanonicalLean,
 } from "./qa-utils";
 import type {
   BlockQaReport,
@@ -146,7 +147,19 @@ const base = blockArg!.replace(/\.(ts|md|lean|qa\.json)$/, "");
 const tsPath = `${base}.ts`;
 if (!existsSync(tsPath)) fail(`block manifest not found: ${tsPath}`);
 const mdPath = existsSync(`${base}.md`) ? `${base}.md` : undefined;
-const leanPath = existsSync(`${base}.lean`) ? `${base}.lean` : undefined;
+// Prefer the sibling `<root>.lean`; if absent, resolve the canonical
+// compiled declaration named by the block's `lean.ref` so QA scores the
+// real statement rather than a missing/stub sibling (CLAUDE.md §3b-cond;
+// mirrors walkBlocks' read-path fallback in qa-utils).
+let leanPath: string | undefined = existsSync(`${base}.lean`)
+  ? `${base}.lean`
+  : undefined;
+if (!leanPath) {
+  const refMatch = readFileSync(tsPath, "utf-8").match(
+    /ref:\s*["']([^"']+)["']/,
+  );
+  leanPath = resolveCanonicalLean(refMatch?.[1], REPO_ROOT);
+}
 const qaPath = `${base}.qa.json`;
 
 const paths = { ts: tsPath, md: mdPath, lean: leanPath };

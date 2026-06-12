@@ -206,6 +206,66 @@ export function computeCriterionScriptHashes(
   };
 }
 
+// ── Canonical lean.ref resolution ───────────────────────────────
+
+/**
+ * Resolve a content block's package-qualified `lean.ref` URI (e.g.
+ * `qou:QOU.FluidDynamics.q_bkm_criterion`) to the **canonical compiled
+ * declaration file** under the package's Lake tree, e.g.
+ * `<repo>/content/quantum-observable-universe/lean/QOU/FluidDynamics/q_bkm_criterion.lean`.
+ *
+ * Tries (a) the direct module-path file, then (b) a basename search
+ * under the package Lake root. Returns `undefined` if the ref is absent,
+ * malformed, the package is unknown, or no file is found.
+ *
+ * QA tooling uses this so it scores the canonical (package-compiled)
+ * declaration rather than an uncompiled sibling stub: a content block's
+ * `<root>.lean` may be a `True := by trivial` placeholder while the real
+ * statement lives in the library module named by `lean.ref` (CLAUDE.md
+ * §3b-cond — the sibling stub is not the integrity gate). `walkBlocks`
+ * applies the same fallback (with a per-package basename cache) on the
+ * read path; this standalone form serves single-block callers such as
+ * `qa-agent-write`.
+ */
+export function resolveCanonicalLean(
+  ref: string | undefined,
+  repoRoot: string,
+): string | undefined {
+  if (!ref) return undefined;
+  let parsed: ReturnType<typeof parseLeanRef>;
+  try {
+    parsed = parseLeanRef(ref);
+  } catch {
+    return undefined;
+  }
+  const pkg = leanPackageByName(parsed.package);
+  if (!pkg) return undefined;
+  // (a) Direct module-path resolution.
+  const direct = resolve(
+    repoRoot,
+    pkg.lakeRoot,
+    `${parsed.module.replace(/\./g, "/")}.lean`,
+  );
+  if (existsSync(direct)) return direct;
+  // (b) Basename fallback under the Lake tree (uncached — single-use).
+  const target = `${parsed.name}.lean`;
+  const lakeRootAbs = resolve(repoRoot, pkg.lakeRoot);
+  const stack: string[] = [lakeRootAbs];
+  try {
+    while (stack.length) {
+      const dir = stack.pop()!;
+      for (const e of readdirSync(dir, { withFileTypes: true })) {
+        const full = join(dir, e.name);
+        if (e.isDirectory()) stack.push(full);
+        else if (e.isFile() && e.name === target) return full;
+      }
+    }
+  } catch {
+    /* Lake root missing */
+  }
+  return undefined;
+}
+
 // ── Block discovery ─────────────────────────────────────────────
 
 export interface BlockPaths {
