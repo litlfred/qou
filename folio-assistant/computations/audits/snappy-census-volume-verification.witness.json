@@ -1,8 +1,8 @@
 {
   "engine": "snappea",
   "engineVersion": "snappy 3.3.2",
-  "computedAt": "2026-06-12T15:19:19.181676+00:00",
-  "commitSha": "4d33c46411251a1f89862650e037fd5ac212a912",
+  "computedAt": "2026-06-12T19:30:06.610690+00:00",
+  "commitSha": "7af29f260fb7d9cf51ad3e2e229abbcd73bb5f09",
   "assertions": [
     {
       "name": "s1_VOL_4_1_matches_census",
@@ -25,8 +25,8 @@
       "computed": true,
       "expected": true,
       "passed": true,
-      "tolerance": 1e-11,
-      "source": "substrate/knot_volumes.py VOL_5_2 vs ManifoldHP('5_2') — literature-precision constant (~12 dps), upgradeable to 50 dps now that SnapPy runs in-sandbox"
+      "tolerance": 1e-12,
+      "source": "substrate/knot_volumes.py VOL_5_2 vs ManifoldHP('5_2') — upgraded to SnapPy HP 50 dps 2026-06-12 (former AHW-1991 literature anchor had a digit-13-15 transcription error)"
     },
     {
       "name": "s1_VOL_6_2_matches_census",
@@ -134,11 +134,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 1074,
+  "durationMs": 3370,
   "computation": "snappy-census-volume-verification",
   "scriptFile": "snappy_census_volume_verification.py",
-  "scriptHash": "7f9f5a9900d5",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "fa70da0631ff",
+  "scriptCommitSha": "37992c729192e2f43c533afee690bb3b3621a9b8",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -159,7 +159,7 @@
     "s1_VOL_BORROMEAN_absdiff": "2.5896e-65",
     "s1_VOL_BORROMEAN_solution_type": "all tetrahedra positively oriented",
     "s1_VOL_5_2_census": "2.8281220883307831627638988092766349427709813173006",
-    "s1_VOL_5_2_absdiff": "3.3168e-12",
+    "s1_VOL_5_2_absdiff": "4.9477e-50",
     "s1_VOL_5_2_solution_type": "all tetrahedra positively oriented",
     "s1_VOL_6_2_census": "4.4008325161230461014412038656409280339834854185165",
     "s1_VOL_6_2_absdiff": "3.4541e-50",

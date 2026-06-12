@@ -112,7 +112,10 @@ witness `snappy-census-volume-verification.witness.json` (16/16 assertions), PR 
    6³₁↔6³₂ = L6a4), and the three table values are internally consistent with a
    single 𝔈₀ ≈ 4.150 MeV — the signature of an earlier {6₁, 8₁, 6³₁}
    volume-matching assignment that a later renaming to {6₂, 8₁₁, L6a4} never
-   reconciled. The 6₁ value also leaked into `MostowRigidity.lean:264`.
+   reconciled. (`MostowRigidity.lean`'s `Vol(6_1) ≈ 3.16396` mention is a
+   *legitimate* volume-spectrum statement — the next distinct value above
+   Vol(5₂) — not a deuteron-table leak; an earlier draft of this note
+   overstated that.)
 
 2. **Production verifies clean against the names.**
    `per-atom-hyperbolic-volume.witness.json` matches the named knots' census
