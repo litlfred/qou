@@ -243,6 +243,26 @@
         "reviewed_at": "2026-05-28T18:29:30.189Z",
         "reviewed_sha": "48e52133aae5e86dcc7bb79865fcd7c50fca77f9",
         "notes": "Lean sibling has only stub declarations (`: True := trivial`); canonical formalisation lives elsewhere and is audited by lean-compile-audit."
+      },
+      {
+        "field_hash": {
+          "md": "6f51103fb73c",
+          "ts": "454864a682e7",
+          "lean": "d1df219927a1"
+        },
+        "result": "fail",
+        "severity": "major",
+        "evidence": "h2-lp-dual-binding.lean:18-20 'theorem h2_lp_dual_binding : True := by trivial' vs .md:40-41 'Strong duality: the optimal y_cov* equals the binding energy per shared electron'",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:58:06.495Z",
+        "reviewed_sha": "d4eb633646f0a74be40721a52a9d1c2f237525d0",
+        "notes": "Lean concludes True (trivial placeholder) while the narrative asserts a real LP strong-duality + binding result — registry fail condition 'Lean is a True-placeholder while the narrative asserts a real result'."
       }
     ],
     "voice-author-notes-pollution": [
@@ -1066,7 +1086,192 @@
         "reviewed_at": "2026-06-11T18:06:24.673Z",
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "6f51103fb73c",
+          "ts": "454864a682e7",
+          "lean": "d1df219927a1"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "h2-binding-energy.ts:9 'interprets: \"prop:h2-lp-dual-binding\"' — companion remark holds the physical reading; .md body is primal/dual formulation + numeric evaluation",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:57:25.362Z",
+        "reviewed_sha": "d4eb633646f0a74be40721a52a9d1c2f237525d0",
+        "notes": "Interpretation lives in the linked remark h2-binding-energy; the closing 'molecule is bound whenever...' sentence (.md:89-90) is a scope clarification of the claim, not editorializing."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "6f51103fb73c",
+          "ts": "454864a682e7",
+          "lean": "d1df219927a1"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "molecular-construction.ts:76 — listed in sec:h2-computation ('Hydrogen molecule H_2: the covalent bond prototype')",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:57:25.399Z",
+        "reviewed_sha": "d4eb633646f0a74be40721a52a9d1c2f237525d0",
+        "notes": "LP-dual binding of H2 is the centerpiece of its section; no sibling restates it (h2-molecular-braid is the definition, h2-binding-energy the interpreting remark)."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "6f51103fb73c",
+          "ts": "454864a682e7",
+          "lean": "d1df219927a1"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "h2-lp-dual-binding.md:52 'At q_0 = 1.109978595554181... (50 dps)' + numeric evaluation .md:54-56 embedded in the proposition; no wall:/§7c banner (contrast sibling shell-closure-nf-term-count.md:1 which carries one)",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:57:25.433Z",
+        "reviewed_sha": "d4eb633646f0a74be40721a52a9d1c2f237525d0",
+        "notes": "Statement mixes the generic LP/Markov-trace formulation with an in-block numeric archimedean evaluation; evaluation point IS flagged ('At q_0') so warn not fail, but the chapter siblings' §7c banner convention is not followed and the 50-dps q_0 literal sits in the statement block."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "6f51103fb73c",
+          "ts": "454864a682e7",
+          "lean": "d1df219927a1"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": ".md:43-87 'Numerical evaluation' — supports an archimedean claim (binding at q_0) by numeric evaluation at q_0; eigenvalue data cited from def:h2-molecular-braid (transfer matrices, .md:60-66)",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:57:25.470Z",
+        "reviewed_sha": "d4eb633646f0a74be40721a52a9d1c2f237525d0",
+        "notes": "Proof-side machinery (numeric evaluation, ln, ordering y_cov > 0) matches the archimedean side of the statement; the algebraic inputs are cited from the upstream braid definition rather than silently assumed."
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "6f51103fb73c",
+          "ts": "454864a682e7",
+          "lean": "d1df219927a1"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.55,
+          "max": 1
+        },
+        "evidence": ".md:10-41 — primal program, dual program, strong-duality plan stated up front; but .md:41 'At q_0:' dangles and Phi_1^H2 is never actually computed in-block (key result asserted, .md:79-82)",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:58:06.534Z",
+        "reviewed_sha": "d4eb633646f0a74be40721a52a9d1c2f237525d0",
+        "notes": "Plan is explicit (primal/dual/strong duality), so well above opaque; docked because the numeric evaluation trails off before delivering the claimed y_cov* value — the decisive step is asserted, not shown."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "6f51103fb73c",
+          "ts": "454864a682e7",
+          "lean": "d1df219927a1"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.35,
+          "max": 1
+        },
+        "evidence": ".lean:18-20 True stub (whole formalization open); verified compute support exists: h2-integer-lp.witness.json + h2-molecular-binding.witness.json (.ts:15-23, status 'verified')",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:58:06.571Z",
+        "reviewed_sha": "d4eb633646f0a74be40721a52a9d1c2f237525d0",
+        "notes": "Gap is the full Lean statement — core-level (finite LP over S_4 orderings is formalizable in principle, and verified witnesses pin the numbers), but no partial Lean content exists; core ~0.3-0.35."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "6f51103fb73c",
+          "ts": "454864a682e7",
+          "lean": "d1df219927a1"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.6,
+          "max": 1
+        },
+        "evidence": "Prototype instance of the LP-dual binding pattern; sibling ch4-lp-dual-binding replicates the same primal/dual structure for CH4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:58:06.609Z",
+        "reviewed_sha": "d4eb633646f0a74be40721a52a9d1c2f237525d0",
+        "notes": "H2 is the original instance of the covalent LP-dual argument (the section title calls it 'the covalent bond prototype'); machinery is standard within the corpus, not duplicated FROM elsewhere — siblings duplicate it."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "6f51103fb73c",
+          "ts": "454864a682e7",
+          "lean": "d1df219927a1"
+        },
+        "result": "warn",
+        "severity": "major",
+        "evidence": ".md:1 banner 'conditional on conj:q-integer-mass-formula' but .ts:10-13 uses[] omits the conjecture (§3b-cond item 4 violated — grep for it in .ts returns nothing); .lean:18-20 True stub, loudly documented (.lean:9-10); .md:41 'At q_0:*' truncated sentence",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:58:06.648Z",
+        "reviewed_sha": "d4eb633646f0a74be40721a52a9d1c2f237525d0",
+        "notes": "No silent signature weakening vs prior commit, and the True-stub weakening is loudly documented => warn; flagged: conditional dependency not auditable from manifest (missing conj in uses[]) and a truncated statement sentence at .md:41."
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-12T19:58:06.648Z"
 }
