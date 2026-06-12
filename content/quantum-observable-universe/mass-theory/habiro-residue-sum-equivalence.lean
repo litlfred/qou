@@ -124,7 +124,7 @@ noncomputable opaque protonHabiroTrace : Polynomial ℤ
 /-- Substrate parameter `q_0 = 1.10997...` used throughout the
     physical-prediction chapters.  Real-valued; `Real.sqrt q_0`
     gives `u_0`. -/
-noncomputable def q_0_proton : ℝ := 1.1099785955541805  -- :leanval[q_0]{precision=17}
+noncomputable def q_0_proton : ℝ := 1.1099785827513808  -- :leanval[q_0]{precision=17}
 
 /-- The empirically observed value `tr_M(p, q_0) ≈ 2.1225825095`
     (see `markov-substrate-realization.witness.json`).  Identical
