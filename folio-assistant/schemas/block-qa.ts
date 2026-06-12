@@ -142,8 +142,13 @@ export interface QaCriterionEntry {
   reviewer: QaReviewer;
   /** When the audit ran (ISO-8601 UTC). */
   reviewed_at: string;
-  /** Repo HEAD at audit time (full git SHA). */
-  reviewed_sha: string;
+  /**
+   * Repo HEAD at audit time (full git SHA). Producers must set this on
+   * every new entry; optional in the type only because legacy agent
+   * entries (pre-2026-06) omit it — matching the interchange schema
+   * (`tools/block-qa-schema/`), where it is likewise optional.
+   */
+  reviewed_sha?: string;
   /** Free-form notes. */
   notes?: string;
 }

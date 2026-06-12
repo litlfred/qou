@@ -1,19 +1,18 @@
-From a302b289899217e39c404fe92a96b289c40b3fc3 Mon Sep 17 00:00:00 2001
+From 45c40b5e9fe6be9b3ae081f6e6640d5f9d9e1021 Mon Sep 17 00:00:00 2001
 From: Claude <noreply@anthropic.com>
-Date: Fri, 12 Jun 2026 19:29:40 +0000
+Date: Fri, 12 Jun 2026 19:34:13 +0000
 Subject: [PATCH 2/2] pkg(block-qa-schema): cross-language QA-sidecar
  interchange package (ported from litlfred/qou)
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
 
-Canonical JSON Schemas (block-qa/v1 + qa-script/v1) + Zod mirror
-(npm @litlfred/block-qa-schema) + Pydantic mirror (PyPI
-block-qa-schema) + tests. Corpus-validated against the QOU corpus
-(2,250/2,250 block sidecars + 62/62 script sidecars; pytest 8/8 —
-re-run in this tree at port time). Repo URLs/links rewritten from
-litlfred/qou to litlfred/folio-assistant; the qa-sweep producer
-pipeline remains in litlfred/qou until its own migration.
+Canonical JSON Schemas (block-qa/v1 + qa-script/v1, $id rewritten to
+this repo) + Zod mirror (npm @litlfred/block-qa-schema) + Pydantic
+mirror (PyPI block-qa-schema) + tests. Corpus-validated against the
+QOU corpus (2,250/2,250 + 62/62; pytest 8/8 re-run at port time).
+Repo URLs/links rewritten qou → folio-assistant; the qa-sweep
+producer pipeline remains in litlfred/qou until its own migration.
 ---
  tools/block-qa-schema/README.md               | 106 ++++++++
  tools/block-qa-schema/js/index.ts             | 137 +++++++++++
@@ -705,13 +704,13 @@ HcmV?d00001
 
 diff --git a/tools/block-qa-schema/schema/block-qa.schema.json b/tools/block-qa-schema/schema/block-qa.schema.json
 new file mode 100644
-index 0000000..8cfad17
+index 0000000..cee2852
 --- /dev/null
 +++ b/tools/block-qa-schema/schema/block-qa.schema.json
 @@ -0,0 +1,166 @@
 +{
 +  "$schema": "https://json-schema.org/draft/2020-12/schema",
-+  "$id": "https://github.com/litlfred/qou/tools/block-qa-schema/schema/block-qa.schema.json",
++  "$id": "https://github.com/litlfred/folio-assistant/tools/block-qa-schema/schema/block-qa.schema.json",
 +  "title": "BlockQaReport",
 +  "description": "JSON shape of a per-content-block `<block>.qa.json` QA sidecar. Each content block (a .ts + .md + optional .lean triple) may carry one sidecar recording, per QA criterion, an append-only array of reviewer verdicts pinned to the content hashes they judged. Canonical interchange reference for the QOU block-QA format — readable from any language.",
 +  "type": "object",
@@ -877,13 +876,13 @@ index 0000000..8cfad17
 +}
 diff --git a/tools/block-qa-schema/schema/qa-script.schema.json b/tools/block-qa-schema/schema/qa-script.schema.json
 new file mode 100644
-index 0000000..4e847bd
+index 0000000..d2532de
 --- /dev/null
 +++ b/tools/block-qa-schema/schema/qa-script.schema.json
 @@ -0,0 +1,52 @@
 +{
 +  "$schema": "https://json-schema.org/draft/2020-12/schema",
-+  "$id": "https://github.com/litlfred/qou/tools/block-qa-schema/schema/qa-script.schema.json",
++  "$id": "https://github.com/litlfred/folio-assistant/tools/block-qa-schema/schema/qa-script.schema.json",
 +  "title": "QaScriptSidecar",
 +  "description": "JSON shape of a per-criterion `<criterion-id>.script.json` sidecar recording the canonical (script_hash, script_commit_sha, deps_hash) triple captured at the most recent qa-sweep run. Block-level criterion entries snapshot the same triple inline; this sidecar is the single-source-of-truth view of 'is checker X currently stale globally?'. A checker bug fix changes script_hash, which invalidates every verdict that checker ever wrote, corpus-wide.",
 +  "type": "object",
