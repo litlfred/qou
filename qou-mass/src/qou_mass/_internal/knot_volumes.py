@@ -22,7 +22,7 @@ Public API:
     VOL_4_1_MPF       Vol(4_1) = figure-eight knot = 2·Cl_2(π/3)
     VOL_BORROMEAN_MPF Vol(L6a4) = Borromean rings = 8·G  (Catalan)
     VOL_7_SQ_1_MPF    Vol(7²_1) = Whitehead-like 2-link  (SnapPy HP)
-    VOL_5_2_MPF       Vol(5_2)                            (literature 15-dps)
+    VOL_5_2_MPF       Vol(5_2)                            (SnapPy HP 50-dps)
     VOL_6_2_MPF       Vol(6_2) = K_2H closure              (SnapPy)
     VOL_8_11_MPF      Vol(8_11) = K_3H closure             (SnapPy)
     CATALAN_G_MPF     Catalan's constant G = Σ (-1)^k / (2k+1)²
@@ -146,14 +146,18 @@ def _vol_8_11(dps: int) -> mpf:
 
 
 def _vol_5_2(dps: int) -> mpf:
-    """Vol(5_2) — second-smallest hyperbolic 3-manifold volume.
+    """Vol(5_2) — second-smallest hyperbolic knot-complement volume.
 
-    Literature 15-dps anchor (Adams–Hildebrand–Weeks 1991; SnapPy
-    verified). Pad with zeros below digit 15 until SnapPy in CI.
+    SnapPy HP 50-dps (ManifoldHP 3.3.2, in-sandbox 2026-06-12; verified
+    positively-oriented solution, cross-checked in
+    audits/snappy-census-volume-verification.witness.json). Replaces
+    the former 15-dps literature anchor "2.82812208833410"
+    (Adams–Hildebrand–Weeks 1991), whose digits 13–15 were a
+    transcription error (true continuation ...330783...).
     """
-    _LIT_15 = "2.82812208833410"
+    _SNAPPY_HP_50 = "2.8281220883307831627638988092766349427709813173006"
     with _with_dps(dps):
-        return +mpf(_LIT_15)
+        return +mpf(_SNAPPY_HP_50)
 
 
 # ── Module-level constants ───────────────────────────────────────
@@ -236,8 +240,9 @@ def iter_provenance() -> Iterator[dict]:
         "name": "5_2",
         "value_mpf_50dps": str(VOL_5_2_MPF),
         "value_f64": VOL_5_2_F64,
-        "source": "literature 15-dps anchor",
-        "reference": "Adams–Hildebrand–Weeks 1991; SnapPy verified",
+        "source": "SnapPy HP 50-dps (ManifoldHP 3.3.2, in-sandbox 2026-06-12)",
+        "reference": "Adams–Hildebrand–Weeks 1991; "
+                     "snappy-census-volume-verification witness",
     }
     yield {
         "name": "6_2",

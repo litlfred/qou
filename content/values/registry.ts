@@ -835,10 +835,10 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
       name: "vol_5_2",
       description:
         "Hyperbolic volume of the 5_2 knot complement " +
-        "Vol(5_2) ≈ 2.82812 (literature constant; " +
-        "Adams-Hildebrand-Weeks 1991, SnapPy verified). " +
+        "Vol(5_2) ≈ 2.82812 (SnapPy ManifoldHP 3.3.2, 50 dps, " +
+        "2026-06-12; Adams-Hildebrand-Weeks 1991). " +
         "Second-smallest known orientable cusped hyperbolic " +
-        "3-manifold volume.",
+        "knot-complement volume.",
       symbol: "\\mathrm{Vol}(5_2)",
       witnessFile:
         "folio-assistant/computations/hyperbolic-volumes.witness.json",
@@ -853,7 +853,8 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
         "Conservative lower bound on the volume gap " +
         "Vol(5_2) - Vol(4_1) ≈ 0.798; consumed by " +
         "MostowRigidity.figureEight.mostow_gap. " +
-        "Replace with SnapPy-computed value once SnapPy is in CI.",
+        "Deliberately coarse (0.5); the precise gap is " +
+        "gap_5_2_minus_4_1_15 in the same witness.",
       symbol: "\\Delta_{\\mathrm{Mostow}}(4_1)",
       witnessFile:
         "folio-assistant/computations/hyperbolic-volumes.witness.json",
