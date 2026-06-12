@@ -24,6 +24,7 @@ const LABEL_PREFIXES: Record<string, string> = {
   corollary: "cor:",
   algorithm: "alg:",
   conjecture: "conj:",
+  speculation: "spec:",
   example: "ex:",
   remark: "rem:",
   proof: "prf:",
@@ -244,6 +245,12 @@ export const ConjectureSchema = BlockBaseSchema.extend({
   lean: LeanRefSchema.optional(),
 });
 
+export const SpeculationSchema = BlockBaseSchema.extend({
+  kind: z.literal("speculation"),
+  label: labelForKind("speculation"),
+  lean: LeanRefSchema.optional(),
+});
+
 export const ExampleSchema = BlockBaseSchema.extend({
   kind: z.literal("example"),
   label: labelForKind("example"),
@@ -349,6 +356,7 @@ export const BlockSchema = z
     CorollarySchema,
     AlgorithmSchema,
     ConjectureSchema,
+    SpeculationSchema,
     ExampleSchema,
     RemarkSchema,
     ProofSchema,
@@ -488,7 +496,7 @@ export const CONSTRAINT_RULES: ConstraintRule[] = [
     description: "Every block must have a companion .md file",
     appliesTo: [
       "definition", "theorem", "lemma", "proposition", "corollary",
-      "conjecture", "example", "remark", "simulator", "prose",
+      "conjecture", "speculation", "example", "remark", "simulator", "prose",
     ],
     check: (block, ctx) => {
       const mdPath = `${ctx.dir}/${ctx.rootName}.md`;
@@ -549,7 +557,7 @@ export const CONSTRAINT_RULES: ConstraintRule[] = [
     description: "Blocks with simulator refs must reference an existing simulator label",
     appliesTo: [
       "definition", "theorem", "lemma", "proposition", "corollary",
-      "conjecture", "example", "remark",
+      "conjecture", "speculation", "example", "remark",
     ],
     check: (block, ctx) => {
       if (!("simulator" in block) || !block.simulator) return null;
@@ -565,7 +573,7 @@ export const CONSTRAINT_RULES: ConstraintRule[] = [
     description: "All labels in uses[] must exist in the document (or be qualified cross-paper refs)",
     appliesTo: [
       "definition", "theorem", "lemma", "proposition", "corollary",
-      "conjecture", "example", "remark", "simulator",
+      "conjecture", "speculation", "example", "remark", "simulator",
     ],
     check: (block, ctx) => {
       if (!("uses" in block) || !block.uses) return null;
@@ -600,7 +608,7 @@ export const CONSTRAINT_RULES: ConstraintRule[] = [
     description: "All citation keys in cites[] must exist in references.ts",
     appliesTo: [
       "definition", "theorem", "lemma", "proposition", "corollary",
-      "conjecture", "example", "remark", "prose",
+      "conjecture", "speculation", "example", "remark", "prose",
     ],
     check: (block, ctx) => {
       if (!("cites" in block) || !block.cites || !ctx.allRefIds) return null;
@@ -645,7 +653,7 @@ export const CONSTRAINT_RULES: ConstraintRule[] = [
     description: "All [text](#label) cross-references in .md content must resolve to existing labels",
     appliesTo: [
       "definition", "theorem", "lemma", "proposition", "corollary",
-      "conjecture", "example", "remark", "simulator", "prose",
+      "conjecture", "speculation", "example", "remark", "simulator", "prose",
     ],
     check: (_block, ctx) => {
       if (!ctx.mdContent) return null;

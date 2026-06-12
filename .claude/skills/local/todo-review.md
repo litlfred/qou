@@ -13,7 +13,7 @@ allowed-tools: Read Edit Bash Grep Glob WebFetch AskUserQuestion Agent
 
 > **Disambiguation:**
 > - `todo-review` (this file) = triage of **content feedback** stored
->   in `todos/content-todos.ts` (paper-scope; persistent across
+>   in `.beans/content-todos.ts` (paper-scope; persistent across
 >   sessions; surfaced via `/todos` dashboard).
 > - `todo-manager` = the agent's **session work-plan** via TodoWrite
 >   (in-memory; per-session).

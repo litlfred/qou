@@ -24,6 +24,7 @@ import type {
   CorollaryBlock,
   AlgorithmBlock,
   ConjectureBlock,
+  SpeculationBlock,
   ExampleBlock,
   RemarkBlock,
   ProofBlock,
@@ -51,6 +52,7 @@ import {
   CorollarySchema,
   AlgorithmSchema,
   ConjectureSchema,
+  SpeculationSchema,
   ExampleSchema,
   RemarkSchema,
   ProofSchema,
@@ -123,6 +125,10 @@ export function algorithm(data: Omit<AlgorithmBlock, "kind">): AlgorithmBlock {
 
 export function conjecture(data: Omit<ConjectureBlock, "kind">): ConjectureBlock {
   return validated(ConjectureSchema, { kind: "conjecture" as const, ...data });
+}
+
+export function speculation(data: Omit<SpeculationBlock, "kind">): SpeculationBlock {
+  return validated(SpeculationSchema, { kind: "speculation" as const, ...data });
 }
 
 export function example(data: Omit<ExampleBlock, "kind">): ExampleBlock {

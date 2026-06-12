@@ -342,6 +342,13 @@ export default chapter({
       ],
     }),
     section({
+      title: "Astrophysical Applications and Speculations",
+      label: "sec:astrophysical-applications",
+      blocks: [
+        "jwst-little-red-dots",
+      ],
+    }),
+    section({
       title: "Topological mass: PL-SW algebraic-geometric duality",
       label: "sec:topological-mass-pl-sw-duality",
       blocks: [

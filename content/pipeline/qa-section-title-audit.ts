@@ -26,7 +26,7 @@
  *  2. **Voice / story coherence** (needs an agent): does each title,
  *     read against its responsible parent, follow the narrative and
  *     stand on its own? Emitted as a per-chapter worklist
- *     (`todos/section-title-audit.json`, gitignored) carrying the
+ *     (`.beans/section-title-audit.json`, gitignored) carrying the
  *     parent chain so an agent can adjudicate. Criterion id:
  *     `voice-section-title-coherence` (chapter-scoped; see the note in
  *     `qa-criteria-registry.ts`). This audit is NOT a per-block sweep
@@ -603,9 +603,9 @@ async function main(): Promise<void> {
       flags: flags.filter((f) => f.node === n).map((f) => f.kind),
     })),
   }));
-  writeFileSync("todos/section-title-audit.json", JSON.stringify(
+  writeFileSync(".beans/section-title-audit.json", JSON.stringify(
     { generated: new Date().toISOString(), max_len: MAX_LEN, total_titles: allNodes.length, hard_defects: hard.length, soft_warnings: soft.length, structure_findings: structureFlags, chapters: worklist }, null, 2));
-  console.log(`\n  worklist → todos/section-title-audit.json (review each title for conciseness + coherence against its parent)`);
+  console.log(`\n  worklist → .beans/section-title-audit.json (review each title for conciseness + coherence against its parent)`);
 
   if (writeSidecar) {
     writeSidecars(allNodes, flags, structureFlags, rawSectionsByChapter, thorough);

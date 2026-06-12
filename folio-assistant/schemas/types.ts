@@ -404,6 +404,7 @@ export type ObjectKind =
   | "proposition"
   | "corollary"
   | "conjecture"
+  | "speculation"
   | "example"
   | "remark"
   | "proof"
@@ -631,6 +632,13 @@ export interface AlgorithmBlock extends ProvableBase {
 export interface ConjectureBlock extends BlockBase {
   kind: "conjecture";
   /** Optional Lean stub for the conjecture statement. */
+  lean?: LeanRef;
+}
+
+/** Speculation — an untested narrative claim or hypothesis. Lean stub optional. */
+export interface SpeculationBlock extends BlockBase {
+  kind: "speculation";
+  /** Optional Lean stub for the speculation. */
   lean?: LeanRef;
 }
 

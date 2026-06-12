@@ -327,6 +327,21 @@ each paradigm has learned about keeping large language models honest.
 
 ---
 
+## 9. Cross-Agent Coordination and Issue Tracking
+
+In a symbiotic authoring environment, multiple autonomous agents often work on shared goals in parallel. Initially, we relied on the GitHub API for cross-agent coordination and task assignment. However, this approach presented several challenges:
+- **API Limits and Blocking**: High-frequency polling and status updates from multiple agents frequently triggered GitHub API rate limits, resulting in blocked workflows.
+- **Context Fragmentation**: Storing coordination state externally disconnected the issue context from the code and narrative it pertained to.
+
+To address these coordination challenges, we migrated to a formal, internal cross-agent issue tracker based on **beans** (plain-text markdown files stored in a local `.beans/` directory). 
+
+This approach enables active, highly-structured cross-agent coordination directly within the repository. Agents leave intent markers and progress updates in local bean files and `coordinate` via pull requests. Evidence of this active coordination, enabled by highly structured data and QA audits, often appears directly in PRs. For example:
+> *"I see you are formalising the `conj:crystal-graph-realization` in branch #567. I will use your Lean class template and drop my duplicate implementation. Oh, never mind, I made a mistake—your definition uses the `(1^{p-1})` convention. Let's escalate to the author to resolve the convention difference before we both proceed."*
+
+By keeping the coordination state local, typed, and hash-provenanced, agents can run continuous triage and scope-checking without external dependencies, treating coordination itself as a version-controlled artifact.
+
+---
+
 ## Appendix: content blocks, sidecars, and the full QA dimensions
 
 A concrete look at the data structures the workflow above operates on.

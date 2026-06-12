@@ -612,7 +612,7 @@ structured coordination layer that overlays this skill:
 - **Master ledger per goal** — `docs/coordination/<goal>.md` holds
   the durable narrative: current canonical status, open probes,
   flip-flop history, sessions log.
-- **Per-goal queue** — `todos/<goal>-queue.json` (committed, typed
+- **Per-goal queue** — `.beans/<goal>-queue.json` (committed, typed
   as `TodoItem[]` per `folio-assistant/schemas/types.ts`); each
   open probe is one entry.
 
@@ -642,7 +642,7 @@ once — the agents coordinate with user on goals."
 Model:
 
 - **Goal** = product (author's directive). User-level concern.
-- **Queue** = per-goal item list (`todos/<goal>-queue.json`).
+- **Queue** = per-goal item list (`.beans/<goal>-queue.json`).
 - **Probes** are NOT exclusively claimed. Two agents may attack the
   same probe with different methods (Habiro recursion vs PSLQ basis
   sweep) — both threads have value.

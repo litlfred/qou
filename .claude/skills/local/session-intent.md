@@ -24,7 +24,7 @@ where the previous one left off.
 |---|---|
 | [`STATUS.md`](../../../STATUS.md) | Always-current root dashboard: goals → master ledgers → active PRs |
 | `docs/coordination/<goal>.md` | Per-goal **master ledger**: status table, open probes, flip-flop history, session log |
-| `todos/<goal>-queue.json` | Machine-readable **queue** of probes (typed `TodoItem[]`); committed so other agents see it |
+| `.beans/<goal>-queue.json` | Machine-readable **queue** of probes (typed `TodoItem[]`); committed so other agents see it |
 | Per-PR body | Session intent at branch-open; EOS results appended |
 
 ## Session-start protocol (5 steps)
@@ -52,7 +52,7 @@ Open `docs/coordination/<goal>.md`. Read:
 
 ### 3. Read the queue
 
-Open `todos/<goal>-queue.json`. Find:
+Open `.beans/<goal>-queue.json`. Find:
 
 - **`status: "open"`** items not yet picked up.
 - **`status: "blocked"`** items waiting on dependencies — check if

@@ -51,7 +51,7 @@ const VOICE: QaCriterionDefinition[] = [
     domain: "voice",
     description:
       "No status markers in body prose (✅ Done, (TODO), (TBD), **Pending.**). " +
-      "Work-tracker speech belongs in todos/, not in the paper.",
+      "Work-tracker speech belongs in .beans/, not in the paper.",
     default_severity: "critical",
     depends_on: ["md"],
     automated: true,
