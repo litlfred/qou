@@ -62,6 +62,39 @@ match (2 slots ↔ 2 forces) is forced, not fitted; the **identification**
 (which slot = which force, and the resulting α_s/α_W values via the
 archimedean trace-ratio on the slot space) is open and gated.
 
+## 3b. The conditional selection rule (owner-directed continuation, same day)
+
+Probe [`alpha_k_selection_rule_conditional.py`](../../folio-assistant/computations/alpha_k_selection_rule_conditional.py)
+(witness 6/6) derives the rule exactly, conditional on
+`conj:e-hartree-categorical-derivation`:
+
+| force | block | mediator | decoration | coupling |
+|---|---|---|---|---|
+| EM (universal) | **(2,2)** — the unique self-transpose (scalar, antipode-closed) partition of 4; Schur–Weyl dual of the 2-dim slot space; dim_q = [4]_q/[2]_q = q²+q⁻² | the transpose **pair** (T_{2,9}, T_{3,5}) — the minimal insertion reaching the self-dual block | h[9]_q · h[10]_q | 1/α_EM = q[9]_q[10]_q (established) |
+| strong (short-range) | (2,1,1) | T_{2,9} alone | h[9]_q | q^{1/2}[9]_q (split = convention) |
+| weak (short-range) | (3,1) | T_{3,5} alone | h[10]_q | q^{1/2}[10]_q (split = convention) |
+
+Exact spine (all symbolic, witness-asserted): (2,2) is the **unique**
+self-transpose partition of 4; ((3,1), (2,1,1)) is the **unique**
+transpose-dual pair among intertwining channels; both carrier channels
+have equal dim_q = [3]_q (Frobenius self-duality of the pair);
+single-carrier insertions cannot reach the self-dual block (the
+round-17 exact (2,2)-zero is the computational shadow). Short-range =
+non-self-dual channel (structural reading of confinement/massive
+mediation, conditional).
+
+**Invariant product identity (exact in R, derived not fitted):**
+
+$$\bigl(q^{1/2}[9]_q\bigr)\bigl(q^{1/2}[10]_q\bigr) = q\,[9]_q\,[10]_q \quad\Longrightarrow\quad \alpha_s \cdot \alpha_W = \alpha_{EM}.$$
+
+The product is the invariant; the symmetric q^{1/2} split per channel is
+**convention** pending the pole-order derivation
+(`prop:alpha-em-shift-multiplicative-chain` primitive). Critical-distance
+note: the identity is the established α_EM formula re-bracketed — its new
+falsifiable content arrives only with an independent archimedean
+derivation for non-scalar channels; until then no comparison to measured
+running couplings (scheme dependence makes any match-claim fishing).
+
 ## 4. Anti-fishing boundary (what was deliberately NOT done)
 
 - No per-knot or per-pair coupling formulas were enumerated against
