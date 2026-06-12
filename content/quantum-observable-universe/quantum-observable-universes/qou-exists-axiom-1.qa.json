@@ -1032,7 +1032,192 @@
         "reviewed_at": "2026-06-11T18:06:24.673Z",
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "059f7603e41c",
+          "ts": "2569152e2b22",
+          "lean": "88df195234d3"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "qou-exists-axiom-1.md:1-5 — five-line bare lemma statement (Haar state faithful ⇒ non-degenerate pairing ⇒ A ≅ A^∨); no interpretive prose",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T20:09:43.220Z",
+        "reviewed_sha": "e870ac50efa022a800e892de98cd3d4af40b06e4",
+        "notes": "Statement-only block; proof lives in prf:qou-exists-axiom-1"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "059f7603e41c",
+          "ts": "2569152e2b22",
+          "lean": "88df195234d3"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "quantum-observable-universes.ts:20-28 — listed in section 'The Quantum Observable Universe' beside qou-exists-axiom-1-proof; verifies axiom (1) of def:quantum-observable-universe stated in the same section",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T20:09:43.255Z",
+        "reviewed_sha": "e870ac50efa022a800e892de98cd3d4af40b06e4",
+        "notes": "Axiom-verification lemma sits directly under the definition it verifies; correct kind and placement"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "059f7603e41c",
+          "ts": "2569152e2b22",
+          "lean": "88df195234d3"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "qou-exists-axiom-1.md:2-5 — statement is algebraic/categorical (faithfulness of h, non-degeneracy, A ≅ A^∨); no numeric q0, MeV, Real.* or order hypotheses; .lean:43 generic [Field k]",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T20:09:43.290Z",
+        "reviewed_sha": "e870ac50efa022a800e892de98cd3d4af40b06e4",
+        "notes": "Generic-ring statement matching the substrate-chapter regime"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "059f7603e41c",
+          "ts": "2569152e2b22",
+          "lean": "88df195234d3"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "qou-exists-axiom-1-proof.md:2-4 — faithfulness justified by 'Woronowicz's reconstruction theorem' [woronowicz1987], a C*-algebraic (archimedean-analytic) result, invoked for a categorical statement without naming a specialisation step",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T20:09:43.325Z",
+        "reviewed_sha": "e870ac50efa022a800e892de98cd3d4af40b06e4",
+        "notes": "Proof correct but mixes regimes: analytic C*-machinery cited for generic categorical claim; an algebraic route (cosemisimplicity of O_q(G)) or an explicit specialisation note would resolve"
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "059f7603e41c",
+          "ts": "2569152e2b22",
+          "lean": "88df195234d3"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.8,
+          "max": 1
+        },
+        "evidence": "qou-exists-axiom-1-proof.md:1-7 — three-step plan visible at a glance: faithfulness (cited Woronowicz) ⇒ non-degeneracy ⇒ iso A ≅ A^∨; .lean docstring (lines 12-22) states what is recorded",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T20:10:35.770Z",
+        "reviewed_sha": "e870ac50efa022a800e892de98cd3d4af40b06e4",
+        "notes": "Plan explicit and cited; short proof, no opaque steps"
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "059f7603e41c",
+          "ts": "2569152e2b22",
+          "lean": "88df195234d3"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.4,
+          "max": 1
+        },
+        "evidence": ".lean:42-45 — exists_axiom_1_frobenius is a def returning the structure field Q.frobHopf; sorry-free, but the narrative's concrete claim (faithfulness of the Haar state on O_q(G), proof.md:2-4) is assumed via the FrobeniusHopfData field rather than proved",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T20:10:35.806Z",
+        "reviewed_sha": "e870ac50efa022a800e892de98cd3d4af40b06e4",
+        "notes": "No sorry, but the substantive gap (formalizing Woronowicz faithfulness for the concrete O_q(G) instance) is core-level and lives outside this decl as an assumed structure field"
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "059f7603e41c",
+          "ts": "2569152e2b22",
+          "lean": "88df195234d3"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "evidence": "qou-exists-axiom-1-proof.md:2-4 — argument is a direct citation of Woronowicz 1987 plus the standard faithfulness ⇔ non-degeneracy equivalence; no sibling block duplicates it (axioms 2-4 are separate lemmas)",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T20:10:35.841Z",
+        "reviewed_sha": "e870ac50efa022a800e892de98cd3d4af40b06e4",
+        "notes": "Standard textbook argument, correctly cited, not duplicated in the corpus"
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "059f7603e41c",
+          "ts": "2569152e2b22",
+          "lean": "88df195234d3"
+        },
+        "result": "warn",
+        "severity": "major",
+        "evidence": ".lean:40-45 — Lean decl is a field projection (Q.frobHopf) over any QuantumObservableUniverse, while md:2-5 claims faithfulness for the concrete A = O_q(G); the restatement is documented (.lean:12-22 + NOTE re PR #794) but the concrete-instance content is not formalized; no sorryAx (def, no proof term gaps)",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T20:10:35.875Z",
+        "reviewed_sha": "e870ac50efa022a800e892de98cd3d4af40b06e4",
+        "notes": "Loudly-documented weakening: generic structure-field extraction substituted for the concrete Haar-faithfulness claim; signature stable (shallow history, 1 commit)"
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-12T20:10:35.875Z"
 }
