@@ -39,12 +39,30 @@ residual without writing π.
 
 | # | step | status |
 |---|---|---|
-| 1 | **Compute foundation** — 6 δ_q + bare α_EM, no π | ✅ `alpha_basis_knot_couplings.py` |
-| 2 | **3-strand δ_q** — `T_{3,4}` (and `T_{3,5}` check) via Rosso–Jones | open |
-| 3 | **Per-force α_K assembly** — which carriers mediate which force (EM uses `T_{2,9},T_{3,5}`; strong/weak/gen need their carrier sets) | open (research) |
-| 4 | **Lean** — `δ_q(T_{2,k}) = h[k]_q` and the per-knot α_K = trace, sorry-free (generic ring, no π) | open |
-| 5 | **Paper** — `def:alpha-basis-knot-coupling` (the family) + `prop` (α_EM = α_{T_{2,3}}), pre-archimedean | open |
-| 6 | **Optimize (no π)** — the pre-archimedean sinh/q source of `2/(3π)`+`α/(4π)` (the Hopf S¹→S³→S² / e₋ channel); reduce the residual to ≤ CODATA σ without π | open (the prize) |
+| 1 | **Compute foundation** — 6 δ_q + bare α_EM, no π | ✅ `alpha_basis_knot_couplings.py` (PR #2100) |
+| 2 | **3-strand δ_q** — `T_{3,4}` (and `T_{3,5}` check) via Rosso–Jones | ✅ `rosso_jones_three_strand_delta_q.py` (PR #2107) — writhe rule `δ_q(T_{m,p}) = h[(m-1)p]_q`; `T_{3,4} → h[8]_q` resolved, `T_{3,5} → h[10]_q` derived |
+| 3 | **Per-force α_K assembly** — which carriers mediate which force (EM uses `T_{2,9},T_{3,5}`; strong/weak/gen need their carrier sets) | ✅ carrier-role table, `alpha_k_per_force_assembly.py` (PR #2107); per-force *selection* stays conditional on `conj:e-hartree-categorical-derivation` (anti-fishing — no pair-vs-coupling enumeration) |
+| 4 | **Lean** — `δ_q(T_{2,k}) = h[k]_q` and the per-knot α_K = trace, sorry-free (generic ring, no π) | ✅ `alpha-basis-knot-delta-q.lean` (PR #2100) + `torus_deltaQ_eq_h_qbracket` (PR #2107), sorry-free |
+| 5 | **Paper** — `def:alpha-basis-knot-coupling` (the family) + `prop` (α_EM = α_{T_{2,3}}), pre-archimedean | ✅ `prop:alpha-basis-knot-delta-q` (PR #2100) + `prop:torus-knot-delta-q-writhe` (PR #2107) |
+| 6 | **Optimize (no π)** — the pre-archimedean sinh/q source of `2/(3π)`+`α/(4π)` (the Hopf S¹→S³→S² / e₋ channel); reduce the residual to ≤ CODATA σ without π | **partial** — π = archimedean image of Hopf periods, corrected `1/α` resid −2.2e-8 (`alpha_em_no_pi_correction_probe.py`, PR #2107); n=1 `2/(3π) = b₁/Area` **proven** sorry-free (`PhotonIRZeroMode`, PR #2114); n=2 regrouped `α·H(q)/(π·b₁)`, resid −3.65e-10 (PR #2114). Open remainder: Habiro↔Bloch `τ_arch` bridge + `−h²α` fermion loop (PR #1495 RT 2-loop track) |
+
+## Status addendum (2026-06-12) — where the work lives
+
+The roadmap above was executed across three merged PRs by one session
+(2026-06-10 → 06-11): **#2100** (foundation + step-4 Lean),
+**#2107** (steps 2/3/5 + step-6 probe), **#2114** (step-6 n=1 proof
+`b₁/Area` + n=2 Habiro regroup). The **carrier-role table for the 6
+cohomological force-knots** (the "α_EM is the trefoil — what are the
+other 5?" question) is in
+`folio-assistant/computations/alpha_k_per_force_assembly.py` +
+witness: `T_{2,3}` EM (trefoil) · `T_{2,5}` 2nd generation ·
+`T_{2,7}` charm/3rd generation · `T_{2,9}` strong (force-carrier,
+`(2,1,1)`, `h[9]_q`) · `T_{3,4}` Hopf-squared/top · `T_{3,5}`
+weak/β-decay (force-carrier, `(3,1)`, `h[10]_q`). Open continuation
+threads: PR #1495 (n=2 RT 2-loop; fermion loop `−h²α`), PR #1523
+(`[2]_q(1−h²α)` = `J_2(unknot)`·Hecke 2-vertex categorical ID), and
+the step-3 per-force coupling *values* (α_s, α_W) gated on
+`conj:e-hartree-categorical-derivation`.
 
 ## Discipline
 
