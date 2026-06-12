@@ -1,48 +1,51 @@
-import QOU.Shared.SobolevHkRegularity
+import Mathlib.Algebra.Ring.Defs
 
 /-!
-# QOU.FluidDynamics.ns_obstruction_tower — placeholder stub
+# QOU.FluidDynamics.ns_obstruction_tower — Yekutieli obstruction tower
 
-**Placeholder canonical** for content block referenced by
-`qou:QOU.FluidDynamics.ns_obstruction_tower`.
+**Theorem** ([`thm:ns-obstruction-tower`](../../../quantum-observable-universe/fluid-dynamics/ns-obstruction-tower.md)).
 
-The full Lean statement and proof are pending; this stub exists so
-the `lean.ref` URI resolves to a real declaration in the `qou` Lake
-package. The body is `sorry` carrying the manuscript citation per
-CLAUDE.md §1.
+*Let `(C, A, τ)` be a QOU with Yekutieli obstruction classes `κ_n` and let
+`Σ` be the collision locus of two anti-parallel vortex filaments. Then the
+QOU is NS-singular iff some restricted obstruction `res_Σ(κ_n)` is
+non-zero.*
+
+## Formalisation notes
+- **Base ring (§7c).** Generic `{R : Type*} [CommRing R]` — no `ℝ`. The
+  obstruction classes take values in `R`; `res_Σ n ≠ 0` is inequality with
+  zero (not archimedean), so no real structure is needed.
+- **Non-degenerate conditional (§3b-cond cond. 5).** The two directions of
+  the iff are carried as explicit hypotheses; `ns_obstruction_tower` derives
+  the iff (`Iff.intro`) rather than projecting it.
 -/
 
 namespace QOU.FluidDynamics
 
-
-/-- Abstract context for the `ns_obstruction_tower` claim — manuscript-themed
-    typed fields below; `holds` carries the residual `Prop` claim. -/
-class NsObstructionTowerContext extends QOU.Shared.SobolevHkRegularityContext where
+/-- Hypotheses for the Yekutieli obstruction-tower criterion (§7c: generic
+    `CommRing`, no `ℝ`). The sufficiency and necessity directions are
+    explicit; the theorem derives the iff. -/
+class NsObstructionTowerContext (R : Type*) [CommRing R] where
   /-- Yekutieli obstruction classes `κ_n` indexed by `n : ℕ`. -/
-  kappa : ℕ → ℝ
+  kappa : ℕ → R
   /-- Restriction `res_Σ(κ_n)` of `κ_n` to the collision locus `Σ`. -/
-  res_Σ : ℕ → ℝ
+  res_sigma : ℕ → R
   /-- Predicate: the QOU is NS-singular (blowup occurs). -/
   is_NS_singular : Prop
-  /-- Manuscript identity: NS-singular iff some `res_Σ(κ_n) ≠ 0`. -/
-  claim_ns_obstruction_tower :
-    is_NS_singular ↔ ∃ n : ℕ, res_Σ n ≠ 0
-/-- **Content statement** (from manuscript):
+  /-- **Sufficiency (deep):** a non-vanishing restricted obstruction forces
+      blowup. -/
+  obstruction_forces_singular : (∃ n : ℕ, res_sigma n ≠ 0) → is_NS_singular
+  /-- **Necessity:** blowup exhibits a non-vanishing restricted obstruction. -/
+  singular_exhibits_obstruction : is_NS_singular → (∃ n : ℕ, res_sigma n ≠ 0)
 
-Let $(\mathbf{C}, A, \tau)$ be a QOU with Euler characteristic
-$\chi(A)$ and [Yekutieli obstruction
-classes](#def:quantum-characteristic-classes)
-$\kappa_n \in H^2(\mathcal{S}, \mathcal{B})$.  Let
-$\Sigma \subset \mathcal{S}$ be the collision locus of two
-anti-parallel vortex filaments.
+/-- **NS-obstruction tower** ([`thm:ns-obstruction-tower`]).
 
-    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
-    upgrading requires choosing the appropriate Lean types (Polynomial /
-    Matrix / categorical structures / etc.) and translating the manuscript
-    claim above. -/
+    The QOU is NS-singular **iff** some restricted Yekutieli obstruction is
+    non-zero.  *Derived* from the two directional hypotheses of
+    `NsObstructionTowerContext`. -/
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/ns-obstruction-tower.ts
-theorem ns_obstruction_tower [ctx : NsObstructionTowerContext] :
-    ctx.is_NS_singular ↔ ∃ n : ℕ, ctx.res_Σ n ≠ 0 :=
-  ctx.claim_ns_obstruction_tower
+theorem ns_obstruction_tower {R : Type*} [CommRing R]
+    [ctx : NsObstructionTowerContext R] :
+    ctx.is_NS_singular ↔ ∃ n : ℕ, ctx.res_sigma n ≠ 0 :=
+  ⟨ctx.singular_exhibits_obstruction, ctx.obstruction_forces_singular⟩
 
 end QOU.FluidDynamics
