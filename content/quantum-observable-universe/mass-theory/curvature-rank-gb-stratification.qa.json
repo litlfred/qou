@@ -1135,7 +1135,104 @@
         "reviewed_at": "2026-06-11T18:06:24.673Z",
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7"
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "eeccfbfafccd",
+          "ts": "eeb18ead4051",
+          "lean": "b887bfb05e70"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.75,
+          "max": 1
+        },
+        "evidence": "curvature-rank-gb-stratification.md:80-123 — proof is an explicit 4-step plan (F generates rewrite ideal; J = powers of I; F^r measures rewrite depth; pages stratify), each step named and cross-referenced to def:hecke-normal-form / prop:gb-spectral-sequence",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T20:13:00.117Z",
+        "reviewed_sha": "aed0a09cf5f85e138f62f3d716ed77441607bda8",
+        "notes": "Plan stated up front and legible; Step 3 (the crux: F^r in I^r iff exactly r reductions) is asserted rather than argued, costing the top band."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "eeccfbfafccd",
+          "ts": "eeb18ead4051",
+          "lean": "b887bfb05e70"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0.15,
+          "max": 1
+        },
+        "evidence": "lean/QOU/WedderburnMass/curvature_rank_gb_stratification.lean:27-60 — canonical decl returns class field claim_curvature_rank_gb_stratification, which restates the boxed target verbatim (quotient_set r = {T_w | rank_T_w T_w = r})",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T20:13:00.154Z",
+        "reviewed_sha": "aed0a09cf5f85e138f62f3d716ed77441607bda8",
+        "notes": "Residual gap restates the target (rubric ~0.0); the Hochschild 2-cocycle F and iterated-Leibniz depth are unformalized, sibling .lean proves only generic FilteredAlgebra lemmas. Slight credit for inStratum_unique / J_strict_chain being real."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "eeccfbfafccd",
+          "ts": "eeb18ead4051",
+          "lean": "b887bfb05e70"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.55,
+          "max": 1
+        },
+        "evidence": "curvature-rank-gb-stratification.md:10-29,136-153 — curvature-2-cocycle reading of GB rewriting + non-abelian Stokes stratification is a new framing over prop:gb-spectral-sequence; the proof itself is standard associated-graded reasoning (J^l = image of I^l)",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T20:13:00.192Z",
+        "reviewed_sha": "aed0a09cf5f85e138f62f3d716ed77441607bda8",
+        "notes": "Framing (F_A curvature analogy, Seifert-stratum reading) is non-redundant in corpus; underlying argument is standard filtration bookkeeping."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "eeccfbfafccd",
+          "ts": "eeb18ead4051",
+          "lean": "b887bfb05e70"
+        },
+        "result": "warn",
+        "severity": "major",
+        "evidence": "lean/QOU/WedderburnMass/curvature_rank_gb_stratification.lean:6-12 loudly marks the canonical decl a placeholder stub; sibling curvature-rank-gb-stratification.lean:146-158 mass_formula_stratification_existence uses degenerate witness (tr_strat := fun _ => tr, proof rfl), a vacuous existence claim; stub Ref line 57 cites stale path braids-and-knots/ (block lives in mass-theory/)",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T20:13:00.228Z",
+        "reviewed_sha": "aed0a09cf5f85e138f62f3d716ed77441607bda8",
+        "notes": "lean.ref resolves and the class-hypothesis weakening is loudly documented (warn not fail); the rfl-degenerate existence theorem and stale manuscript path need cleanup."
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-12T20:13:00.228Z"
 }
