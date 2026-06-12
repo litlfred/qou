@@ -101,21 +101,54 @@ mass-theory 1) showed the same family (weakened proxies, unsound
 `Subsingleton` axioms over free reals, missing decls) and are triaged in a
 follow-up pass.
 
-## Disposition plan (this PR)
+## Finding 4 — the integrity fail is the *degenerate* sub-case of an otherwise-blessed pattern
 
-1. **Tractable, low-cascade first.** `observability-q-independent`: replace
-   the degenerate `hom_rank : ℕ` proxy with a faithful statement of
-   q-independence of `Hom(1, Ad A)`; verify it builds.
-2. **Kind-mismatch reconciliation.** Demote the 3 conjectural propositions
-   to `conjecture`, updating the §3b cascade (`vorticity-lower-bound`,
-   `p4-universality`) and all `prop:`→`conj:` cross-references; re-validate.
-3. **Honest relabel + caveat** for the 9 projection-pattern NS theorems:
-   document the abstract-predicate limitation in the block, ensure the
-   classification is honest, and re-rate integrity with written rationale.
-   **No vacuous "faithful" Lean is manufactured.**
-4. **Real formalization (research-grade, tracked):** faithful Sobolev/L^∞
-   encodings for the NS theorems are a separate, multi-session effort;
-   start with the most tractable as an exemplar.
+Running the repo's own `conjectural-propagation-audit.ts` on current main is
+decisive: **140 provable-kind blocks are reported "Conditional-on-class
+(eligible under §3b-cond)"** — i.e. the conjecture-class pattern is the
+*accepted* honest form for open-problem content, **not** a violation. A
+blanket `proposition → conjecture` demotion would therefore fight the
+framework and trigger a needless chapter-wide cascade.
+
+The two criteria encode different standards, and both can hold at once:
+
+| criterion | what it checks | verdict on these blocks |
+|---|---|---|
+| `conjectural-propagation` | is the conjectural cone *class-axiomatised*? | **OK** (conditional-on-class) |
+| `proof-statement-integrity` | does the Lean *derive* the `.md` claim (vs assume it)? | **FAIL** (degenerate projection) |
+
+A valid §3b-cond block axiomatises the conjecture's **hypotheses** and
+*derives* the result; the integrity fail is the **degenerate** sub-case where
+the class field **is** the conclusion (`claim_bkm_iff`, `obs.observable`), so
+the theorem derives nothing. The fix is therefore **per-block formalization
+judgment, not mechanical demotion.**
+
+## Disposition plan (this PR) — revised after Finding 4
+
+1. **Do NOT blanket-demote.** The conjecture-class pattern is blessed; only
+   genuine kind-mismatches (`.ts` provable kind with **no** Lean theorem at
+   all, only a bare conjecture-class — `q-aubin-lions`, `p2-critical-exponent`,
+   `p5-counterexample`) are demotion/§3b-cond candidates, and each needs the
+   owner's call on demote-to-`conjecture` vs add-a-conditional-theorem
+   (both have cascade/▢propagation cost).
+2. **Tractable faithful fix, no cascade:** `observability-q-independent` —
+   its `.md` proof is real (the Hom space is computed in `C`, independent of
+   `q`). Replace the `hom_rank : ℕ` proxy with a statement that the Hom
+   object is the *same* across `q₁, q₂` and prove it; kind stays `theorem`.
+   Lean-gated (verify with `lake build QOU`).
+3. **Make conditional-class theorems non-degenerate where feasible:** move the
+   conclusion out of the class field; have the class carry genuine hypotheses
+   and the theorem derive the `.md` claim. Research-grade for the NS-PDE
+   blocks (Sobolev/L^∞ infra) — tracked as a separate effort; attempt the
+   most tractable as an exemplar.
+4. **Honest re-rating** of blocks where (2)/(3) land: re-run the rater so
+   `proof-statement-integrity` reflects the improved Lean, with written
+   rationale. No vacuous "faithful" Lean is manufactured to game the score.
+
+**Note (audit-script bug, out of scope):** `conjectural-propagation-audit.ts`
+crashes while printing the *Violators* section on current main (Bun trace from
+the violator `console.log`/witness-write). The conditional-on-class tally
+(140) prints fine. Filed for a separate fix; does not affect this disposition.
 
 ## Coordination
 
