@@ -1041,7 +1041,192 @@
         "reviewed_at": "2026-06-11T18:06:24.673Z",
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "a08a7adf3c65",
+          "ts": "1f84ecfc2633",
+          "lean": "cb3e0980427a"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "spectral-chart-correspondence.md:26-45 — 'Two readings of the same equality' are both mathematical (Hecke determinant on Λ²V; q=1 degeneration); closing sentence is a mathematical summary, and the worked interpretation lives in rem:affine-chart-origin-of-i-and-q (md:45)",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T20:07:47.980Z",
+        "reviewed_sha": "d497bcf10c4bff647700b190c6503e4ed9b65742",
+        "notes": "Statement + two mathematical readings; no physical-meaning editorializing in-block; companion remark holds the coordinate working"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "a08a7adf3c65",
+          "ts": "1f84ecfc2633",
+          "lean": "cb3e0980427a"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "quantum-observable-universes.ts:164-171 — listed under section 'Substrate parameter and deformation'; md:40-42 'spectral and geometric extractions of q are the same datum'",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T20:07:48.016Z",
+        "reviewed_sha": "d497bcf10c4bff647700b190c6503e4ed9b65742",
+        "notes": "Squarely in scope: how the substrate parameter q is extracted (spectrally vs chart-glue); no sibling carries the same claim"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "a08a7adf3c65",
+          "ts": "1f84ecfc2633",
+          "lean": "cb3e0980427a"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "spectral-chart-correspondence.md:1 §7c banner; md:7-24 statement uses formal eigenvalues q, -q^{-1} and kappa = q^{-1} — no numeric q0, no MeV, no Real.*, no order hypotheses; .lean:50 generic [Field K]",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T20:07:48.055Z",
+        "reviewed_sha": "d497bcf10c4bff647700b190c6503e4ed9b65742",
+        "notes": "Generic-ring statement matching the substrate-chapter regime; §7c banner present at md:1"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "a08a7adf3c65",
+          "ts": "1f84ecfc2633",
+          "lean": "cb3e0980427a"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "spectral-chart-correspondence.md:28-38 — argument is the algebraic identity λ+λ- = -1 on Λ²V ≅ 1 plus formal substitution q = 1 (no limit/continuity/linarith/Real.* machinery)",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T20:07:48.098Z",
+        "reviewed_sha": "d497bcf10c4bff647700b190c6503e4ed9b65742",
+        "notes": "Proof method is purely algebraic; the q=1 degeneration is formal substitution, not an archimedean limit"
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "a08a7adf3c65",
+          "ts": "1f84ecfc2633",
+          "lean": "cb3e0980427a"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.85,
+          "max": 1
+        },
+        "evidence": "spectral-chart-correspondence.md:26 'Two readings of the same equality' enumerates the plan; .lean:16-21 'What is proven here' lists glue_eq_inv_sym + glue_classical_limit up front",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T20:08:23.210Z",
+        "reviewed_sha": "d497bcf10c4bff647700b190c6503e4ed9b65742",
+        "notes": "Plan stated before the steps in both .md and .lean docstring; cited lemmas named"
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "a08a7adf3c65",
+          "ts": "1f84ecfc2633",
+          "lean": "cb3e0980427a"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.35,
+          "max": 1
+        },
+        "evidence": ".lean:90-92 axiom chart_glue_from_spectrum : ∃ κ : K, κ = bed.λ_sym⁻¹ — the remaining gap (κ IS the chart-glue of P_q(V)) is the proposition's core geometric claim; the axiom's existential is degenerate (⟨λ_sym⁻¹, rfl⟩)",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T20:08:23.245Z",
+        "reviewed_sha": "d497bcf10c4bff647700b190c6503e4ed9b65742",
+        "notes": "Sorry-free but core gap (categorical O_q(P¹) chart model, .lean:23-29) is the goal itself; closing requires infrastructure not in Mathlib"
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "a08a7adf3c65",
+          "ts": "1f84ecfc2633",
+          "lean": "cb3e0980427a"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.55,
+          "max": 1
+        },
+        "evidence": "md:40-45 — identification of Hecke eigenvalue data with chart-glue is a corpus-specific synthesis, but the algebraic content (λ_sym⁻¹ = -λ_anti from λ+λ- = -1) is a one-line rearrangement also present in braiding-eigenvalue-extraction",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T20:08:23.281Z",
+        "reviewed_sha": "d497bcf10c4bff647700b190c6503e4ed9b65742",
+        "notes": "Standard algebra repackaged; the spectral=geometric framing is the only non-redundant content vs prop:braiding-eigenvalue-extraction"
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "a08a7adf3c65",
+          "ts": "1f84ecfc2633",
+          "lean": "cb3e0980427a"
+        },
+        "result": "warn",
+        "severity": "major",
+        "evidence": ".lean:99-101 theorem spectral_chart_correspondence : ∃ κ, κ = λ_sym⁻¹ ∧ κ = -λ_anti — omits the narrative's chart-structure binding of κ (md:17-24); weakening loudly documented at .lean:23-29 'Where we hit the wall' + Ref'd axiom; git history shallow (1 commit), no silent signature churn detectable",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T20:08:23.316Z",
+        "reviewed_sha": "d497bcf10c4bff647700b190c6503e4ed9b65742",
+        "notes": "Loudly-documented weakening: Lean existential does not tie κ to contact_affine_chart; axiom chart_glue_from_spectrum is trivially satisfiable so the formal theorem is weaker than stated prose"
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-12T20:08:23.316Z"
 }
