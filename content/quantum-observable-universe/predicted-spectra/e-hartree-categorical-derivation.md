@@ -881,6 +881,78 @@ with concrete next-step. After 13 rounds, no further candidate
 mechanisms tractable in a single investigation remain to be
 tried.
 
+### Round 19 — bare support is the classical hook theorem; the dressed scalar block activates (exact)
+
+Witness:
+[`e-hartree-round19-dressed-scalar-block.witness.json`](folio-assistant/computations/e-hartree-round19-dressed-scalar-block.witness.json)
+(producer
+[`e_hartree_round19_dressed_scalar_block.py`](folio-assistant/computations/e_hartree_round19_dressed_scalar_block.py),
+6/6; exact tables cross-checked against the seminormal builder at
+$q_0$ to $9 \times 10^{-16}$). Two outstanding round-17/18 steps
+closed exactly:
+
+**(i) The round-17 table is the classical Hecke–Coxeter
+hook-support theorem.** For the bare Coxeter word
+$c = \sigma_1\sigma_2\sigma_3 \in H_4(q)$,
+
+$$
+  \chi_{(a,1^{4-a})}(c) = (-1)^{4-a}\,q^{2a-5},
+  \qquad \chi_{(2,2)}(c) = 0,
+$$
+
+(q-Murnaghan–Nakayama; Ram 1991) — i.e. $(4)\!: q^3$,
+$(3,1)\!: -q$, $(2,1,1)\!: q^{-1}$, $(1^4)\!: -q^{-3}$, reproducing
+round-17's numbers exactly at $q_0$ and proving the $(2,2)$ zero
+structurally (the unique non-hook). The round-18 magnitude hope is
+**refuted at the bare level**: the product
+$\chi_{(3,1)}\,\chi_{(2,1,1)} = -1$ exactly (a $q$-independent
+unit), so the bare characters carry the carriers' channel
+*support* but not the $\delta_q$ magnitudes; the magnitude must
+enter through dressing or the q-dimension decoration layer
+(consistent with rounds 11 and 13).
+
+**(ii) Round-17 refinement 1 answered positively — the dressed
+scalar block activates, with a closed form.** Dressing $\sigma_2$
+with eigenvalues $(q^m, -q^{-m})$ is affine,
+$\sigma_2^{(m)} = A_m + B_m\sigma_2$ with
+$A_m = h\,[m-1]_q/[2]_q$, so by character linearity
+
+$$
+  \chi_{(2,2)}\bigl(\sigma_1\,\sigma_2^{(m)}\,\sigma_3\bigr)
+  = \frac{h\,[m-1]_q\,[4]_q}{[2]_q^{2}}
+  \;\neq\; 0 \quad (m \geq 2),
+$$
+
+and at the K-shell power $m = 5$ ($= 2k+1$, $k = 2$) it
+specialises to
+
+$$
+  \chi_{(2,2)} = h\left(\frac{[4]_q}{[2]_q}\right)^{2}
+  = h\,\bigl(\dim_q V_{(2,2)}\bigr)^{2}
+$$
+
+— $h$ times the Plancherel square of the scalar block's
+q-dimension, a q-dimension-layer quantity surfacing in the Markov
+layer exactly at $m - 1 = n = 4$. (The restriction values
+$\chi_\lambda(\sigma_1\sigma_3)$ used by the linearity argument
+come from the Littlewood–Richardson decomposition over
+$H_2 \times H_2$; their $q \to 1$ limits recover the $S_4$
+character column of $(12)(34)$.)
+
+**Round-19 net status.** The $(2,2)$ scalar block — the unique
+self-transpose (antipode-closed) partition of $4$, identified in
+the per-force selection-rule probe
+([`alpha-k-selection-rule-conditional.witness.json`](folio-assistant/computations/alpha-k-selection-rule-conditional.witness.json))
+as the Schur–Weyl dual of the 2-dimensional scalar-coupling slot
+space — is invisible to the bare braid for a classical reason and
+**becomes visible under atomic (K-shell) dressing** with an exact,
+derived magnitude. The conjecture remains **open**: the dressed
+activation carries $h^{1} \times (\dim_q)^2$, not the
+$\alpha_{EM}^{2} = h^{4}/(q^{2}\delta_q(T_{2,9})^{2}\delta_q(T_{3,5})^{2})$
+chain, so the remaining gap is the archimedean trace-ratio on the
+activated scalar block — plus the two standing transports
+($m_e c^{2}$ unit; LP-kink smoothness) below.
+
 ### What is still missing for closure
 
 A genuinely categorical derivation of the $\alpha_{EM}^{2}$ scaling
