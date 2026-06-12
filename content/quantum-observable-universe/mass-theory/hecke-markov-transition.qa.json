@@ -1137,7 +1137,104 @@
         "reviewed_at": "2026-06-11T18:06:24.673Z",
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7"
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "c2c6deeb18c9",
+          "ts": "17acfb603c0c",
+          "lean": "c0667808783a"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.85,
+          "max": 1
+        },
+        "evidence": "hecke-markov-transition.md:80-115 — proof mirrors the (i)-(iv) statement structure: spectral projectors from quadratic with distinct roots, Diaconis-Ram cite for the Mallows/Metropolis construction, Markov property = memorylessness, induction peeling right-to-left",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T20:13:56.021Z",
+        "reviewed_sha": "f5aa2fd72dbf204d350ecea27d800a4571417757",
+        "notes": "Plan is explicit per part with literature anchors (diaconis-ram2000, jones1987); reader knows the route before the steps."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "c2c6deeb18c9",
+          "ts": "17acfb603c0c",
+          "lean": "c0667808783a"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0.15,
+          "max": 1
+        },
+        "evidence": "hecke-markov-transition.lean:250-255 — axiom markov_chain_factorization_axiom restates part (iv)'s conclusion (totalTrace = prod of vertexVolumes) and is over-quantified: it holds for ARBITRARY totalTrace : Real, so instantiating two values forces prod = totalTrace for every real, an inconsistent axiom",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T20:13:56.058Z",
+        "reviewed_sha": "f5aa2fd72dbf204d350ecea27d800a4571417757",
+        "notes": "Remaining gap restates the target (rubric ~0.0) and is unsound as encoded; credit for (i)-(ii): prob_sum_one, boltzmann_ratio, eigenvalue_expectation are genuinely proved."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "c2c6deeb18c9",
+          "ts": "17acfb603c0c",
+          "lean": "c0667808783a"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "evidence": "hecke-markov-transition.md:98-102 — '(ii) ... This is precisely the Diaconis-Ram construction \\cite{diaconis-ram2000}'; the block imports a known probabilistic construction and links it to thm:markov-trace-product",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T20:13:56.094Z",
+        "reviewed_sha": "f5aa2fd72dbf204d350ecea27d800a4571417757",
+        "notes": "Standard (explicitly attributed Diaconis-Ram) but not duplicated elsewhere in the corpus; the bridge to the vertex-volume factorization is the local contribution."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "c2c6deeb18c9",
+          "ts": "17acfb603c0c",
+          "lean": "c0667808783a"
+        },
+        "result": "fail",
+        "severity": "critical",
+        "evidence": "hecke-markov-transition.lean:250-255 'axiom markov_chain_factorization_axiom : forall ... (totalTrace : Real) ..., totalTrace = Finset.univ.prod ...' — injected custom axiom; theorem markov_chain_factorization_exists (lines 262-269) is claimed proved but is a direct application of it. Axiom quantifies over arbitrary totalTrace with no link to a trace, so it proves 0 = 1 (instantiate totalTrace twice); lean_verify on the decl would surface the axiom",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T20:13:56.132Z",
+        "reviewed_sha": "f5aa2fd72dbf204d350ecea27d800a4571417757",
+        "notes": "Axiom presence is loudly documented (external Jones 1987 port pending) but its over-quantification is a SILENT unsoundness, not a faithful conditional statement — fail per the injected-axiom guard. Fix: replace with a class hypothesis tying totalTrace to tr_M, or constrain the axiom to the trace value."
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-12T20:13:56.132Z"
 }
