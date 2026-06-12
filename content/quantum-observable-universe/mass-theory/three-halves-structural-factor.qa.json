@@ -1308,7 +1308,104 @@
         "reviewed_at": "2026-06-11T18:06:24.673Z",
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7"
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "e50f285a687e",
+          "ts": "b418b683ea7c",
+          "lean": "0793655e58f4"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.9,
+          "max": 1
+        },
+        "evidence": "three-halves-structural-factor.lean:105-108 — proof-plan comment names the two lemmas combined; .md:29-38 names the canonical tactic (field_simp; ring) and witness assertions up front",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T15:32:50.242Z",
+        "reviewed_sha": "fea8541e163b142209abdad9d1ac7d9516c464b3",
+        "notes": "Plan stated up front: 5 identities enumerated in .md, per-theorem docstrings, intermediate lemmas named before the main theorem"
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "e50f285a687e",
+          "ts": "b418b683ea7c",
+          "lean": "0793655e58f4"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "evidence": "three-halves-structural-factor.lean — grep sorry = 0; all 5 theorems closed by field_simp; ring (lines 82-148)",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T15:32:50.280Z",
+        "reviewed_sha": "fea8541e163b142209abdad9d1ac7d9516c464b3",
+        "notes": "Sorry-free proof => 1.0 per rubric; no remaining gaps"
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "e50f285a687e",
+          "ts": "b418b683ea7c",
+          "lean": "0793655e58f4"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "evidence": "three-halves-structural-factor.lean:131-136 — [6]_q = [2]_q·[3]_q·(1+h²) is elementary symmetric-q-integer algebra; framework-specific organization into the ξ_m lepton-closure family is the only non-textbook content",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T15:32:50.317Z",
+        "reviewed_sha": "fea8541e163b142209abdad9d1ac7d9516c464b3",
+        "notes": "Standard q-bracket identities, not duplicated by a sibling proof in mass-theory; 0.5 = standard-but-not-duplicated per rubric"
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "e50f285a687e",
+          "ts": "b418b683ea7c",
+          "lean": "0793655e58f4"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "three-halves-structural-factor.md:1-25 states 5 identities over field R with q≠0; .lean theorems (lines 82, 90, 101, 131, 140) carry exactly [Field R] (q : R) (hq : q ≠ 0); 0 sorries; single-commit history (bdc9fbe49f), no signature drift",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T15:32:50.356Z",
+        "reviewed_sha": "fea8541e163b142209abdad9d1ac7d9516c464b3",
+        "notes": "Narrative hypotheses match Lean binders; no axiom injection, no weakening"
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-12T15:32:50.356Z"
 }
