@@ -744,7 +744,28 @@
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "e5108ada58bd",
+          "ts": "efbef55830d7"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "quantum-observable-universes.ts:298-302 — block listed in sec:variational-equations directly after prop:variational-equations, which it proves (ts uses: [\"prop:variational-equations\"])",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:46:18.315Z",
+        "reviewed_sha": "aa87b93476f92cd895cad944fa80175bdf056a07",
+        "notes": "Proof block placed adjacent to its proposition in the variational-equations section; kind matches content (derivation of the three Euler-Lagrange items); no misplacement or redundancy."
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-12T19:46:18.315Z"
 }
