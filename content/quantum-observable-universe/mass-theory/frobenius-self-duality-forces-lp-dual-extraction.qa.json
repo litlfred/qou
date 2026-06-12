@@ -1308,7 +1308,104 @@
         "reviewed_at": "2026-06-11T18:06:24.673Z",
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7"
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "e1dbc91b6d24",
+          "ts": "221545be3a9d",
+          "lean": "10859d9beab0"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.85,
+          "max": 1
+        },
+        "evidence": "frobenius-self-duality-forces-lp-dual-extraction.md:13-88 — five labeled steps ('Step 1: Frobenius pairing' ... 'Step 5: τ-extraction is the dual map'); plan announced in statement before steps",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T15:24:11.778Z",
+        "reviewed_sha": "85d6a4e8737983465bb627cd196b50f0dc76c2af",
+        "notes": "Plan stated up front with named steps and cited lemmas (wedderburn-trace-identity, operator-selection-lp); reader knows the route before the details."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "e1dbc91b6d24",
+          "ts": "221545be3a9d",
+          "lean": "10859d9beab0"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.9,
+          "max": 1
+        },
+        "evidence": "frobenius-self-duality-forces-lp-dual-extraction.lean:108-116 — theorem proved sorry-free via rfl + frobenius_self_duality_map_injective",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T15:24:11.814Z",
+        "reviewed_sha": "85d6a4e8737983465bb627cd196b50f0dc76c2af",
+        "notes": "Sorry-free Lean for the stated fragment; residual gap (Hecke-as-Frobenius Mathlib instance, lean:104-107) is documented and routine-class."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "e1dbc91b6d24",
+          "ts": "221545be3a9d",
+          "lean": "10859d9beab0"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.6,
+          "max": 1
+        },
+        "evidence": "frobenius-self-duality-forces-lp-dual-extraction.md:23-26 cites Frobenius (1903)/Nakayama (1939); md:101-108 corollary leans on prop:mass-coefficient-shadow-price",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T15:24:11.850Z",
+        "reviewed_sha": "85d6a4e8737983465bb627cd196b50f0dc76c2af",
+        "notes": "Math is classical Frobenius self-duality; the Obs_tau = Phi_tau shadow-price framing is corpus-specific but overlaps the mass-coefficient-shadow-price sibling."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "e1dbc91b6d24",
+          "ts": "221545be3a9d",
+          "lean": "10859d9beab0"
+        },
+        "result": "warn",
+        "severity": "major",
+        "evidence": "frobenius-self-duality-forces-lp-dual-extraction.lean:110-111 concludes 'observationFrame FA = frobeniusSelfDualityMap FA ∧ Function.Injective ...' vs md:2-9 full Frobenius/LP-dual claim; weakening loudly documented at lean:104-107",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T15:24:11.888Z",
+        "reviewed_sha": "85d6a4e8737983465bb627cd196b50f0dc76c2af",
+        "notes": "Lean proves an honest fragment (definitional identity + injectivity), weaker than the narrative LP-dual claim; the scope cut is loudly documented in the docstring, no sorry/axiom injection, signature stable in recent history (last touch bdc9fbe49f)."
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-12T15:24:11.888Z"
 }
