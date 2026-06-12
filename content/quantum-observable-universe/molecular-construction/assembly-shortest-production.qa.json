@@ -816,7 +816,28 @@
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "6a35d9520af2",
+          "ts": "3f3446014173"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "molecular-construction.ts:137-145 — section 'Benzene: delocalization from threading links' lists 'assembly-shortest-production'; assembly-shortest-production.ts:11 interprets: 'prop:confinement-lp', .md:3-13 discusses the benzene gamma-gamma spine and D_6 orbit",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T15:33:30.679Z",
+        "reviewed_sha": "61893fc6d99a940bc87455103a5f29940da1573d",
+        "notes": "Interpretive remark on the canonical assembly path of the benzene spine; topic squarely within the benzene section, distinct from the spine remark it builds on."
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-12T15:33:30.679Z"
 }
