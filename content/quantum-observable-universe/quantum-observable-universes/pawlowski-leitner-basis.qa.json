@@ -1125,7 +1125,107 @@
         "reviewed_at": "2026-06-11T18:06:24.673Z",
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7"
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "c477c1ad1f02",
+          "ts": "c85dbce06e4d",
+          "lean": "9a1caabe7da5"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "score": {
+          "value": 0.8,
+          "max": 1
+        },
+        "evidence": "pawlowski-leitner-basis.md:23-27 — 'The construction rests on the PBW theorem... unital Groebner-Shirshov basis... from which the intertwiner basis is derived by contraction with the volume form'",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:57:57.138Z",
+        "reviewed_sha": "b592fb074f0b3202af5a037873f2a7e28e1a252e",
+        "notes": "construction plan (PBW -> contraction operators -> tableau-indexed contractions -> symmetrise) stated up front with diagram and cited PBW corollary"
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "c477c1ad1f02",
+          "ts": "c85dbce06e4d",
+          "lean": "9a1caabe7da5"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "score": {
+          "value": 0.35,
+          "max": 1
+        },
+        "evidence": "pawlowski-leitner-basis.lean:28-34 — only pawLeiDim (dimension count) + data structure formalised; canonical-basis existence itself not encoded",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:57:57.177Z",
+        "reviewed_sha": "b592fb074f0b3202af5a037873f2a7e28e1a252e",
+        "notes": "no sorry, but the actual basis-existence content remains unformalised; closing needs SU(2) intertwiner-space machinery absent from Mathlib (near-core gap)"
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "c477c1ad1f02",
+          "ts": "c85dbce06e4d",
+          "lean": "9a1caabe7da5"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "evidence": "pawlowski-leitner-basis.md:58-59 — 'established via unital Groebner-Shirshov bases in \\cite{leitnerpawloski2004}'",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:57:57.215Z",
+        "reviewed_sha": "b592fb074f0b3202af5a037873f2a7e28e1a252e",
+        "notes": "standard literature construction (Leitner-Pawlowski 2004), not duplicated by a corpus sibling; cross-paper PBW reuse is the only non-routine element"
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "c477c1ad1f02",
+          "ts": "c85dbce06e4d",
+          "lean": "9a1caabe7da5"
+        },
+        "result": "warn",
+        "severity": "major",
+        "evidence": "pawlowski-leitner-basis.ts:6 — lean ref 'qou:QOU.PawLeiBasis' resolves to a structure + pawLeiDim def, not a theorem proving the canonical-basis claim",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:57:57.255Z",
+        "reviewed_sha": "b592fb074f0b3202af5a037873f2a7e28e1a252e",
+        "notes": "Lean encodes only dimension/bookkeeping data, substantially weaker than the narrative basis claim; weakening visible in docstrings (no silent axiom/sorry injection); signature stable vs prior commit"
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-12T19:57:57.255Z"
 }
