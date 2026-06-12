@@ -206,6 +206,26 @@
         "reviewed_at": "2026-05-28T18:29:30.189Z",
         "reviewed_sha": "48e52133aae5e86dcc7bb79865fcd7c50fca77f9",
         "notes": "Lean sibling has only stub declarations (`: True := trivial`); canonical formalisation lives elsewhere and is audited by lean-compile-audit."
+      },
+      {
+        "field_hash": {
+          "md": "2c79f88dd993",
+          "ts": "b009ff77e56e",
+          "lean": "95baed5bf9b5"
+        },
+        "result": "fail",
+        "severity": "major",
+        "evidence": "ch4-lp-dual-binding.lean:18-20 — 'theorem ch4_lp_dual_binding : True := by trivial' while ch4-lp-dual-binding.md:2-4 asserts the S_4-symmetric ordering is the LP-dual ground state in H_26(q)",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T20:06:07.334Z",
+        "reviewed_sha": "d497bcf10c4bff647700b190c6503e4ed9b65742",
+        "notes": "Lean is a True-placeholder stub; narrative asserts a substantive optimisation result — fail per rubric"
       }
     ],
     "voice-author-notes-pollution": [
@@ -1048,7 +1068,192 @@
         "reviewed_at": "2026-06-11T18:06:24.673Z",
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "2c79f88dd993",
+          "ts": "b009ff77e56e",
+          "lean": "95baed5bf9b5"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "molecular-construction.ts:108-111 — section 'Methane: tetrahedral bonding from braid optimization' hosts this block; primary subject (CH4 LP dual, S4 ground state) matches section scope exactly",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T20:05:33.130Z",
+        "reviewed_sha": "d497bcf10c4bff647700b190c6503e4ed9b65742",
+        "notes": "Well-placed; no sibling duplicates the LP-dual claim for CH4"
+      }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "2c79f88dd993",
+          "ts": "b009ff77e56e",
+          "lean": "95baed5bf9b5"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "ch4-lp-dual-binding.md:24-27 — 'The symmetry premium ... is the braid-theoretic origin of the regular tetrahedron' is interpretive prose inside the proposition",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T20:05:33.170Z",
+        "reviewed_sha": "d497bcf10c4bff647700b190c6503e4ed9b65742",
+        "notes": "Companion rem:ch4-tetrahedral-symmetry (interprets: prop:ch4-lp-dual-binding) exists; closing paragraph duplicates interpretation in-block — warn per rubric"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "2c79f88dd993",
+          "ts": "b009ff77e56e",
+          "lean": "95baed5bf9b5"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "ch4-lp-dual-binding.md:8-10 — statement is an LP minimisation of Phi_1 over S_26 orderings; no numeric q0, no MeV, no Real.* construct in the statement",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T20:05:33.217Z",
+        "reviewed_sha": "d497bcf10c4bff647700b190c6503e4ed9b65742",
+        "notes": "molecular-construction is an LP/binding (archimedean-evaluative) chapter; statement matches chapter regime; no hard-coded archimedean literal needing a banner"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "2c79f88dd993",
+          "ts": "b009ff77e56e",
+          "lean": "95baed5bf9b5"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "ch4-lp-dual-binding.md:1-27 — no narrative **Proof.** body present; only the statement and dual-variable structure",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T20:05:33.257Z",
+        "reviewed_sha": "d497bcf10c4bff647700b190c6503e4ed9b65742",
+        "notes": "No proof body to adjudicate; no archimedean-only machinery invoked. Missing proof is covered by proof-narrative-lean-equiv/goal-plausibility"
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "2c79f88dd993",
+          "ts": "b009ff77e56e",
+          "lean": "95baed5bf9b5"
+        },
+        "result": "warn",
+        "severity": "major",
+        "evidence": "ch4-lp-dual-binding.md:1 banner 'conditional on conj:q-integer-mass-formula' vs ch4-lp-dual-binding.ts:7-10 uses[] = [def:ch4-molecular-braid, prop:h2-lp-dual-binding] — conjecture absent",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T20:06:07.371Z",
+        "reviewed_sha": "d497bcf10c4bff647700b190c6503e4ed9b65742",
+        "notes": "S3b-cond rule 4 violated: bannered conjecture not in uses[], so conditionality is not manifest-auditable; banner itself is loud (warn not fail). Lean decl is a True stub, no axiom injection"
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "2c79f88dd993",
+          "ts": "b009ff77e56e",
+          "lean": "95baed5bf9b5"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.4,
+          "max": 1
+        },
+        "evidence": "ch4-lp-dual-binding.md:12-22 — strategy sketched (S_4 symmetry + shadow-price decomposition y_CH/y_HH/y_sym) but no proof steps; lean:18-20 is a trivial stub",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T20:06:37.722Z",
+        "reviewed_sha": "d497bcf10c4bff647700b190c6503e4ed9b65742",
+        "notes": "Plan recoverable from the dual-variable listing but never executed; implicit strategy => mid score"
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "2c79f88dd993",
+          "ts": "b009ff77e56e",
+          "lean": "95baed5bf9b5"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0.2,
+          "max": 1
+        },
+        "evidence": "ch4-lp-dual-binding.lean:18-20 — entire claim unformalised (True stub); closing requires LP-dual optimality over S_26 in H_26(q), conditional on conj:q-integer-mass-formula",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T20:06:37.760Z",
+        "reviewed_sha": "d497bcf10c4bff647700b190c6503e4ed9b65742",
+        "notes": "Gap is the whole target (core/restates-target class per gap-criticality rubric) => low plausibility"
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "2c79f88dd993",
+          "ts": "b009ff77e56e",
+          "lean": "95baed5bf9b5"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.4,
+          "max": 1
+        },
+        "evidence": "ch4-lp-dual-binding.ts:9 — uses prop:h2-lp-dual-binding; same LP-dual-symmetry template as the H2 sibling, instantiated at S_4/26 strands",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T20:06:37.795Z",
+        "reviewed_sha": "d497bcf10c4bff647700b190c6503e4ed9b65742",
+        "notes": "Template reuse from H2 prototype; S_4 symmetry-premium reading of the tetrahedron is the only new element"
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-12T20:06:37.795Z"
 }
