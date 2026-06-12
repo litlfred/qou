@@ -1119,7 +1119,104 @@
         "reviewed_at": "2026-06-11T18:06:24.673Z",
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7"
       }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "b82af748579c",
+          "ts": "1c620fc833e4",
+          "lean": "543fc815d0e6"
+        },
+        "result": "fail",
+        "severity": "major",
+        "evidence": "q-exponential-exists.lean:39-55 — theorem QExponential.exists_in_shuffle_hopf (H : Type*) [Nonempty H] : Nonempty (QExponential H) proved by a constant trivial witness (e_q := Classical.arbitrary H, D_q := id); .md requires [n]_q invertible and D_q exp_q = exp_q",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T14:50:30.516Z",
+        "reviewed_sha": "af16a01539d89dc754f339ad4bafc7328a5a0035",
+        "notes": "Statement weakened to pass: narrative existence of the Σ x^n/[n]_q! grouplike under Jackson-integer invertibility is replaced by a degenerate-witness Nonempty whose Lean signature drops the invertibility hypothesis. Self-admitted at lean:42-46 ('Trivial witness ... The intended Kassel construction is sharper')."
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "b82af748579c",
+          "ts": "1c620fc833e4",
+          "lean": "543fc815d0e6"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0.3,
+          "max": 1
+        },
+        "evidence": "q-exponential-exists.lean:42-55 — trivial-witness construction clearly commented but is a degenerate skeleton, not the stated Σ x^n/[n]_q! plan",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T14:50:54.983Z",
+        "reviewed_sha": "af16a01539d89dc754f339ad4bafc7328a5a0035",
+        "notes": "The trivial-witness plan is legible, but it does not realise the .md strategy (q-binomial coproduct / Jackson factorials); as a proof of the intended claim it is a non-strategy => 0.3."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "b82af748579c",
+          "ts": "1c620fc833e4",
+          "lean": "543fc815d0e6"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0.3,
+          "max": 1
+        },
+        "evidence": "q-exponential-exists.lean:32-37 — 'not a theorem of Mathlib: requires the q-binomial identity ... built from the q-shuffle Hopf-algebra structure'",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T14:50:55.024Z",
+        "reviewed_sha": "af16a01539d89dc754f339ad4bafc7328a5a0035",
+        "notes": "Real construction (q-shuffle Hopf infra + q-binomial coproduct) is a core gap; the trivial witness sidesteps it rather than closing it => ~0.3."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "b82af748579c",
+          "ts": "1c620fc833e4",
+          "lean": "543fc815d0e6"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0.2,
+          "max": 1
+        },
+        "evidence": "q-exponential-exists.lean:48-55 — Classical.arbitrary witness with coprod (h,h), counit 1, D_q id, axioms by rfl",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T14:50:55.062Z",
+        "reviewed_sha": "af16a01539d89dc754f339ad4bafc7328a5a0035",
+        "notes": "Degenerate trivial-witness adds nothing non-redundant; standard Nonempty-by-arbitrary pattern => 0.2."
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-12T14:50:55.062Z"
 }
