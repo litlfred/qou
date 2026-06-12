@@ -98,44 +98,90 @@ These are **different measures**:
 | Object | Definition | Value at $q = 1$ for $\mathrm{H}_3$ | Sum identity |
 |---|---|---|---|
 | Plancherel $w_\lambda$ | $[n]_q! / H_q(\lambda)^2$ | $1/6,\ 2/3,\ 1/6$ | $\sum_\lambda w_\lambda = 1$ |
-| Wenzl/Markov $y_\lambda$ | trace-class coefficients of $\mathrm{tr}_M$ | $1/4,\ 1/4,\ 1/4$ | $\sum_\lambda y_\lambda d_\lambda = 1$ |
+| Wenzl/Markov $y_\lambda$ | trace-class coefficients of $\mathrm{tr}_M$ | $1/2,\ 1/4,\ 0$ | $\sum_\lambda y_\lambda d_\lambda = 1$ |
 
-The relationship is conceptual (both express q=1 symmetric-point behaviour of partition-indexed measures) but not equational.
+The relationship is conceptual (both express q=1 symmetric-point behaviour of partition-indexed measures) but not equational — and the two q=1 value vectors are different non-uniform patterns.
 
-**Fix:** the `prop:borromean-h4-categorical-derivation` markdown narrates "the symmetric-point Wenzl collapse" as if it inherits from `rem:symmetric-point-resolution-loss`. It does not — the resolution-loss remark covers Plancherel. The fix is to **codify the uniform Wenzl-at-q=1 fact** as a new proposition (Finding 3 below) and re-aim the cross-reference there.
+**Fix:** the `prop:borromean-h4-categorical-derivation` markdown narrates "the symmetric-point Wenzl collapse" as if it inherits from `rem:symmetric-point-resolution-loss`. It does not — the resolution-loss remark covers Plancherel. The fix is to **codify the closed-form Wenzl weights** as a new proposition (Finding 3 below) and re-aim the cross-reference there.
 
-## Finding 3 — `prop:symmetric-point-wenzl-markov-uniform` is implicit but not codified
+## Finding 3 — the closed-form H_3 Wenzl weights are implicit but not codified
 
-The fact
+> **Correction (review round, this PR).** The first draft of this
+> finding claimed the q=1 Wenzl weights were *uniform*
+> ($y_\lambda(1) = 1/2^{n-1}$ for all $\lambda$), via a bar-involution
+> argument. **That claim was wrong** — caught by review. The
+> bar/transpose symmetry $\lambda \leftrightarrow \lambda^T$ is induced
+> by the sign-twist automorphism $\sigma \mapsto -q\,\sigma^{-1}$, and
+> the Jones-normalised Markov trace is **not invariant** under it (it
+> is chiral). The corrected statement below is *stronger*: exact
+> closed forms valid at every $q$, not only at $q = 1$.
+
+The correct facts, codified in this PR as `prop:h3-markov-wenzl-weights`:
 
 $$
   \boxed{\;\;
-  y_\lambda(q=1) \;=\; \frac{1}{[2]_q^{\,n-1}}\bigg|_{q=1} \;=\; \frac{1}{2^{\,n-1}}
-  \quad\text{for every } \lambda \vdash n,
+  y_{(3)}(q) = \frac{[4]_q}{[2]_q^{3}},
+  \qquad
+  y_{(2,1)}(q) = \frac{1}{[2]_q^{2}},
+  \qquad
+  y_{(1^3)}(q) = 0 \ \text{(identically)},
   \;\;}
 $$
 
-is the **uniform symmetric-point limit of the Wenzl/Markov measure on $\mathrm{H}_n(q)$**. It is the structural reason the Borromean h⁴ factor *separates as* $(−3) \cdot (1/4)$.
+evaluating at $q = 1$ to $(1/2,\ 1/4,\ 0)$ — **not uniform**. Proof
+structure: (i) the Jones polynomial factors through Temperley–Lieb,
+killing the 3-row partition identically — equivalently the algebraic
+identity $[2]_q^3 - 2[2]_q = [4]_q$; (ii) Markov normalisation
+$\sum y_\lambda d_\lambda = 1$; (iii) the Borromean closed form pins
+$y_{(2,1)}(q) = 1/(h^2+4) = 1/[2]_q^2$ uniquely.
 
-A short proof:
-- Markov normalisation: $\sum_\lambda y_\lambda(q) \cdot d_\lambda = 1$ for every $q$ (including $q = 1$).
-- Bar-involution symmetry at $q = 1$: the involution $q \leftrightarrow q^{-1}$ acts trivially at the fixed point $q = 1$, but exchanges Specht modules and their sign twists ($\lambda \leftrightarrow \lambda^T$). Combined with the symmetric-point channel collapse, all irreps land at a common Wenzl value.
-- For $\mathrm{H}_n$ embedded in the c-component link-closure picture, the Markov trace prefactor is $[2]_q^{c-1}$ where $c = $ component count; at $q = 1$ this becomes $2^{c-1}$ and (for the standard $c = n$ closure of $\mathbf{1}_n$) gives the uniform $1/2^{n-1}$.
+Three independent verifications: Schur orthogonality on the q=1
+cycle-counting trace $\mathrm{tr}_M(w) = 2^{c(w)-n}$; the exact
+$q$-dependent forms reproduce the Borromean closed form to 30 digits;
+and the load-bearing $y_{(2,1)}(1) = 1/4$ matches the T18 h⁴
+extraction.
 
-A `proposition` block + `.lean` stub formalising this fact, together with cross-references from `prop:borromean-h4-categorical-derivation` and `prop:borromean-markov-trace-closed-form`, would close the gap.
+**Impact on the Borromean derivation:** the $(-3) \cdot (1/4) = -3/4$
+factorisation is **unchanged and strengthened** — the $1/4$ is now the
+exact identity $y_{(2,1)}(q) = 1/[2]_q^2$ evaluated at $q = 1$, and
+the $(h^2 + 4)$ denominator of the closed form is recognised as
+$1/y_{(2,1)}(q)$ exactly. What is retracted is only the claim that the
+*other two* weights share the value $1/4$.
 
-This proposition is the **right structural home** for the $1/4$ factor in the Borromean derivation.
+## Finding 4 — per-partition h² budget in `prop:borromean-markov-trace-closed-form` uses a different weight convention (open question)
+
+The merged `prop:borromean-markov-trace-closed-form` `.md` assigns
+per-partition h² coefficients $(5/128, -20/128, 15/128)$ to
+$y_\lambda \cdot \chi^\lambda$ for $\lambda = (3), (2,1), (1^3)$. Under
+the closed-form weights of Finding 3, the corresponding h² split is
+$(+16/128, -16/128, 0)$ — both sum to zero (consistent with
+$h^2(\mathrm{tr}_M) = 0$) but the per-partition attribution differs.
+The merged block therefore uses one of the repo's *other* partition-
+weight families ($w_\lambda$ or $\tilde w_\lambda$ per the CLAUDE.md
+notation-collision register: "three partition-weight families are
+distinct at $q \neq 1$ — never conflate"). **Open question** for a
+follow-up: identify which family the h²-budget table uses and label it
+explicitly in that block.
 
 ## Recommended follow-up commits
 
-| # | Artefact | Action |
-|---|---|---|
-| 1 | `prop:symmetric-point-wenzl-markov-uniform` (`.ts` + `.md` + `.lean`) | **Codify** the uniform-Wenzl-at-q=1 fact; cite from `prop:borromean-h4-categorical-derivation` |
-| 2 | `prop:borromean-h4-categorical-derivation` (small patch) | Soften `prop:q-heat-kernel-peter-weyl` cross-reference; replace `rem:symmetric-point-resolution-loss` reference with the new uniform-Wenzl prop |
-| 3 | `cor:habiro-expansion-atomic` and `markov_pipeline_cross_validator.py` (optional) | Extend the cross-validator to cover $\beta_{\mathrm{Bor}}$ as a non-atomic benchmark |
+| # | Artefact | Action | Status |
+|---|---|---|---|
+| 1 | `prop:h3-markov-wenzl-weights` (`.ts` + `.md` + `.lean`) | **Codify** the closed-form (non-uniform) Wenzl weights | done in this PR |
+| 2 | `prop:borromean-h4-categorical-derivation` (small patch) | Correct the "universal q=1 Wenzl weights" paragraph (false uniformity claim is on `main`); soften `prop:q-heat-kernel-peter-weyl` cross-reference; replace `rem:symmetric-point-resolution-loss` reference with `prop:h3-markov-wenzl-weights` | done in this PR |
+| 3 | `gap_a4_T18_markov_normalization_probe.py` | Correct the `check_universal_wenzl_at_q_one` framing to the non-uniform weights + regenerate witness | done in this PR |
+| 4 | `prop:borromean-markov-trace-closed-form` | Identify + label the weight family used in the h²-budget table (Finding 4) | open follow-up |
+| 5 | `cor:habiro-expansion-atomic` / `markov_pipeline_cross_validator.py` (optional) | Extend the cross-validator to cover $\beta_{\mathrm{Bor}}$ as a non-atomic benchmark | open follow-up |
 
 ## Status
 
-This audit does **not** invalidate any merged content. The Borromean $h^4 = -3/4$ derivation remains correct; the inconsistencies are in the **cross-reference framing**, not the mathematical content. The recommended commits (1) and (2) are small targeted patches.
+The Borromean $h^4 = -3/4$ factorisation $(-3) \cdot (1/4)$ remains
+correct — the $1/4$ leg is in fact strengthened to an exact all-$q$
+identity. What this audit's review round retracted is the *uniformity*
+claim ($y_{(3)} = y_{(1^3)} = 1/4$), which was wrong and briefly
+present both in this PR's first draft and in one paragraph of the
+merged `prop:borromean-h4-categorical-derivation` (corrected by this
+PR). Credit: the error was caught by automated review (Gemini) on this
+PR and confirmed by three independent computations before correcting.
 
 The cross-algebra h⁴ obstruction — the original GAP-A-4 question — remains untouched and stays open per the T4–T14 retrospective.

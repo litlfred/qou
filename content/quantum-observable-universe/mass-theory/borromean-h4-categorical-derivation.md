@@ -156,11 +156,16 @@ Borromean rings ($c = 3$), $[2]_q^2 = h^2 + 4$ is **exactly** the
 denominator in the closed form
 $\mathrm{tr}_M(\beta_{\mathrm{Bor}}) = (\cdots)/(h^2 + 4)$.
 
-By the bar-involution symmetry $q \leftrightarrow q^{-1}$ exchanging
-$\chi^{(3)}$ and $\chi^{(1^3)}$ at $q = 1$, plus the Markov sum
-$\sum_\lambda y_\lambda(0) \cdot d_\lambda = 1$, all three $\mathrm{H}_3$
-Wenzl weights satisfy $y_\lambda(q=1) = 1/4 = 1/[2]_q^{n-1}|_{q=1}$
-(universal for $n = 3$ strands).
+The identity $y_{(2,1)}(q) = 1/[2]_q^2$ in fact holds **exactly for
+all $q$**, not only at $q = 1$: the full closed-form weight vector on
+$\mathrm{H}_3(q)$ is $y_{(3)} = [4]_q/[2]_q^3$, $y_{(2,1)} = 1/[2]_q^2$,
+$y_{(1^3)} = 0$ (identically — the Temperley–Lieb quotient kills the
+3-row partition), evaluating at $q = 1$ to the **non-uniform** vector
+$(\tfrac12, \tfrac14, 0)$. See
+[`prop:h3-markov-wenzl-weights`](h3-markov-wenzl-weights.md) for the
+derivation and for why a bar-involution uniformity argument fails (the
+Jones-normalised trace is chiral — not invariant under the sign-twist
+automorphism $\sigma \mapsto -q\,\sigma^{-1}$).
 
 ### Combining Steps 1 and 2.
 
@@ -180,11 +185,15 @@ The two ingredients each have a categorical home that landed on `main`
 after the initial derivation:
 
 - **Step 1 (the polynomial form `χ^{(2,1)}(β_Bor) = 2 − 3h⁴ − h⁶`)**
-  is a consequence of the [q-heat-kernel Peter–Weyl
+  shares its Wedderburn partition-indexed framework with the
+  [q-heat-kernel Peter–Weyl
   decomposition](../information-theory/q-heat-kernel-peter-weyl.md)
-  + [Habiro residue-sum equivalence](habiro-residue-sum-equivalence.md)
-  (PR #2131).  The h⁴ coefficient `−3` reads off as the contribution
-  of the standard channel to the q-heat-kernel partition function.
+  and the [Habiro residue-sum equivalence](habiro-residue-sum-equivalence.md)
+  (PR #2131).  Note the q-heat-kernel proposition supplies the
+  $q$-Laplacian eigenvalues $\mu_\lambda(q)$ — heat-flow decay rates,
+  *not* the braid-character values $\chi^\lambda(\beta)$; the
+  polynomial form itself comes from the projector route below or
+  from direct substitution on the closed-form trace.
   The categorical projector onto the (2,1) channel is the
   $\mathbf{e}_-$ minus-eigenspace idempotent of the Hecke quadratic
   relation $q\sigma^2 = (q^2 − 1)\sigma + q$, formalised sorry-free
@@ -195,15 +204,15 @@ after the initial derivation:
   `QOU.Braiding.HeckeGenPolyReduction.hecke_gen_poly_reduction`.
 
 - **Step 2 (the Markov normalisation `y_{(2,1)}(q=1) = 1/4`)**
-  is the leading symmetric-point invariant per
-  [resolution-loss at the symmetric point](../models-of-qous/symmetric-point-resolution-loss.md):
-  the Wenzl measure collapses to a uniform value at $q = 1$, with
-  the symmetric-point Wenzl weight on $\mathrm{H}_n$ equal to
-  $1/[2]_q^{n-1}|_{q=1} = 1/2^{n-1}$ (here $1/4$ for $n = 3$
-  strands, $c = 3$ components on closure).  The resolution-loss
-  narrative records exactly this: channel distinctions carrying
-  chirality and pairing data become invisible at $q = 1$, while
-  the *measure* survives.
+  is the $q = 1$ evaluation of the exact closed-form Wenzl weight
+  $y_{(2,1)}(q) = 1/[2]_q^2$ established in
+  [`prop:h3-markov-wenzl-weights`](h3-markov-wenzl-weights.md).
+  The full $\mathrm{H}_3$ weight vector is
+  $\bigl([4]_q/[2]_q^3,\ 1/[2]_q^2,\ 0\bigr)$, evaluating at $q = 1$
+  to the non-uniform $(\tfrac12, \tfrac14, 0)$ — the sign channel
+  carries zero weight identically (Temperley–Lieb quotient), and the
+  Jones-normalised trace is chiral, so no bar-involution uniformity
+  applies.
 
 Concretely, the R-matrix derivation in **Step 1** of this proof can
 be reformulated equivalently as: extract the $\mathbf{e}_-$ component
