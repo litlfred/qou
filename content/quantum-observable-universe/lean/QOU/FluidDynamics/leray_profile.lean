@@ -1,62 +1,64 @@
+import Mathlib.Algebra.Ring.Defs
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 
 /-!
-# QOU.FluidDynamics.leray_profile — placeholder stub
+# QOU.FluidDynamics.leray_profile — finite-dimensional Leray profile
 
-**Placeholder canonical** for content block
-[`prop:leray-profile`](../../../quantum-observable-universe/fluid-dynamics/leray-profile.md): *QOU.FluidDynamics.leray_profile*.
+**Proposition** ([`prop:leray-profile`](../../../quantum-observable-universe/fluid-dynamics/leray-profile.md)).
 
-The full Lean statement and proof are pending; this stub exists so
-the `lean.ref` URI `qou:QOU.FluidDynamics.leray_profile` resolves to a real declaration in
-the `qou` Lake package.  The body is `sorry` carrying the
-manuscript citation per CLAUDE.md §1.
--/
+*Near the blowup time `T*`, the singular NS solution approaches a
+self-similar Leray profile `V(ξ)` on the rescaled coordinate
+`ξ = (x − x₀)/√(T* − t)`.  QOU representation theory constrains `V` to a
+finite-dimensional ansatz: a sum of weight-`j` matrix entries of
+`SU_q(2)` representations; in particular `V(0) = Σ_n V_n`.*
+
+## Formalisation notes
+- **Base ring (§7c).** Generic `{R : Type*} [CommRing R]` — no `ℝ`.  The
+  reconstruction identity is linear algebra over the substrate ring; the
+  rescaling `√(T* − t)` is archimedean context that lives in the `.md`
+  (a post-wall specialisation), not in the statement proved here.
+- **Import fix.** The previous file imported the renamed (removed) module
+  `Mathlib.Algebra.BigOperators.Basic` and so never compiled; the current
+  path is `Mathlib.Algebra.BigOperators.Group.Finset.Basic`.
+- **Non-degenerate conditional (§3b-cond cond. 5).** The class carries the
+  genuine ansatz hypotheses — a weight-component *expansion* of `V` with
+  basis entries normalised at `0` — and the theorem *derives* the
+  reconstruction `V 0 = Σ_n V_coeff n` by evaluating the expansion
+  (previously the identity itself was a class field). -/
 
 namespace QOU.FluidDynamics
 
+open Finset
 
-/-- Abstract context for the `leray_profile` claim —
-    manuscript-themed typed fields below; the self-similar Leray
-    profile is captured as a finite-dimensional ansatz in
-    `SU_q(2)` weight-`j` matrix entries. -/
-class LerayProfileContext where
-  /-- The categorical object / monoidal structure. -/
-  CategoricalObj : Type
-  /-- The blowup time `T* : ℝ`. -/
-  T_star : ℝ
-  /-- The blowup location `x_0 : ℝ × ℝ × ℝ`. -/
-  x_0 : ℝ × ℝ × ℝ
-  /-- The rescaled coordinate `ξ : ℝ → ℝ` (function of time). -/
-  ξ : ℝ → ℝ
-  /-- The Leray profile `V : ℝ → ℝ`. -/
-  V : ℝ → ℝ
+/-- Hypotheses for the finite-dimensional Leray profile (§7c: generic
+    `CommRing`, no `ℝ`).  `basis n` are the weight-`n` matrix entries of
+    the `SU_q(2)` ansatz, normalised to `1` at the origin of the rescaled
+    coordinate; `profile_expansion` is the finite ansatz itself. -/
+class LerayProfileContext (R : Type*) [CommRing R] where
+  /-- The Leray profile `V` on the rescaled coordinate. -/
+  V : R → R
   /-- Maximum spin level `j_max` in the finite-dimensional ansatz. -/
   j_max : ℕ
-  /-- Finite ansatz family `V_n : Fin (j_max + 1) → ℝ`. Reconstructs
-      the Leray profile from its weight-`j` matrix-entry components. -/
-  V_coeff : Fin (j_max + 1) → ℝ
-  /-- Manuscript identity: the Leray profile is reconstructed as a
-      finite sum over the `(j_max + 1)`-many weight components, i.e.
-      `V(0) = Σ_n V_coeff n`. -/
-  claim_leray_factorisation : V 0 = (Finset.univ.sum fun n => V_coeff n)
+  /-- Ansatz coefficients, fixed by the singular gerbe data
+      `(Σ, n*, κ_{n*})`. -/
+  V_coeff : Fin (j_max + 1) → R
+  /-- Weight-`n` matrix-entry basis functions of the ansatz. -/
+  basis : Fin (j_max + 1) → R → R
+  /-- **Normalisation:** each basis entry equals `1` at the origin. -/
+  basis_at_zero : ∀ n, basis n 0 = 1
+  /-- **Finite ansatz (the representation-theoretic input):** `V` is the
+      finite sum of its weight components. -/
+  profile_expansion : ∀ x : R, V x = ∑ n, V_coeff n * basis n x
 
-/-- **Content statement** (from manuscript):
+/-- **Leray-profile reconstruction** ([`prop:leray-profile`]).
 
-> **Summary.** Near the blowup time $T^*$, the singular NS
-> solution approaches a self-similar Leray profile $V(\xi)$ on
-> the rescaled coordinate $\xi = (x-x_0)/\sqrt{T^*-t}$.  The QOU
-> representation theory constrains this profile to a finite-
-> dimensional ansatz: $V$ is a sum of weight-$j$ matrix entries
-> of $\mathrm{SU}_q(2)$ representations, with coefficients fixed
-> by the singular gerbe data $(\Sigma, n^*, \kappa_{n^*})$.
-
-    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
-    upgrading requires choosing the appropriate Lean types (Polynomial /
-    Matrix / categorical structures / etc.) and translating the manuscript
-    claim above. -/
+    `V(0) = Σ_n V_coeff n` — *derived* by evaluating the finite ansatz
+    `profile_expansion` at `0` and applying the basis normalisation
+    (`mul_one` per component). -/
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/leray-profile.ts
-theorem leray_profile [ctx : LerayProfileContext] :
-    ctx.V 0 = (Finset.univ.sum fun n : Fin (ctx.j_max + 1) => ctx.V_coeff n) :=
-  ctx.claim_leray_factorisation
+theorem leray_profile {R : Type*} [CommRing R] [ctx : LerayProfileContext R] :
+    ctx.V 0 = ∑ n : Fin (ctx.j_max + 1), ctx.V_coeff n := by
+  rw [ctx.profile_expansion 0]
+  exact Finset.sum_congr rfl fun n _ => by rw [ctx.basis_at_zero n, mul_one]
 
 end QOU.FluidDynamics

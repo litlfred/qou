@@ -723,26 +723,41 @@ theorem topological_obstruction_nonzero (κ : ℕ) (hκ : κ ≥ 4) :
 -- ════════════════════════════════════════════════════════════════
 
 /-- **Observability data** for a QOU: the vanishing of Hom(1, Ad(A)).
-    This structure records that observability holds, independently of
-    any substrate section.
+
+    The Hom space is computed in the underlying monoidal category `C`;
+    the substrate parameter enters only through the differential `d_q`,
+    never through the objects, morphisms, or Hom spaces.  This is
+    captured *structurally*: the rank is a single `ℕ` with **no**
+    substrate-section argument — q-independence is then provable by
+    `rfl` rather than assumed (md: "the morphism space in the underlying
+    monoidal category is the same for all q").
 
     LaTeX: `\label{thm:observability-q-independent}` -/
 structure ObservabilityData (C : Type*) where
-  /-- The Hom space is trivial (encoded as rank 0). -/
+  /-- The rank of Hom(1, Ad(A)), computed in `C` (no substrate-section
+      argument — `q` cannot enter). -/
   hom_rank : ℕ
   /-- Observability: rank = 0. -/
   observable : hom_rank = 0
 
-/-- Observability does not depend on the substrate parameter q.
-    Proof: Hom(1, Ad(A)) is computed in C, which is defined
-    independently of q. The substrate parameter only affects d_q,
-    not the objects or morphisms of C. -/
+/-- The Hom-rank "as seen at substrate section `q`".  By construction the
+    section is **not consumed**: `Hom(1, Ad(A))` involves no differential,
+    so the assignment is the constant function of `q`.  Generic section
+    type `R` per §7c — no `ℝ`, no ordering. -/
+def ObservabilityData.homRankAt {C R : Type*}
+    (obs : ObservabilityData C) (_q : R) : ℕ :=
+  obs.hom_rank
+
+/-- Observability is a base property, independent of the substrate
+    section ([`thm:observability-q-independent`]): for any two sections
+    `q₁ q₂` the Hom-rank agrees — *derived* by `rfl`, formalising the
+    md's proof that `q` does not appear in the construction — and the
+    observability axiom holds at every section. -/
 -- Ref: [manuscript] Ch 5 §8 Observability is q-independent
-theorem observability_q_independent (C : Type*)
-    (obs : ObservabilityData C) (q₁ q₂ : ℝ)
-    (_hq₁ : q₁ > 0) (_hq₂ : q₂ > 0) :
-    obs.hom_rank = 0 :=
-  obs.observable  -- Same value for any q — it doesn't appear in the type.
+theorem observability_q_independent (C : Type*) {R : Type*}
+    (obs : ObservabilityData C) (q₁ q₂ : R) :
+    obs.homRankAt q₁ = obs.homRankAt q₂ ∧ obs.homRankAt q₁ = 0 :=
+  ⟨rfl, obs.observable⟩
 
 -- ════════════════════════════════════════════════════════════════
 -- §16  NS-singularity of the Descartes universe (main theorem)

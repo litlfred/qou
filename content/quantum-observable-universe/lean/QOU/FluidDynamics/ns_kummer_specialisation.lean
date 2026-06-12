@@ -1,58 +1,67 @@
-import QOU.Shared.SobolevHkRegularity
+import Mathlib.Algebra.Order.Group.Int
+import Mathlib.Algebra.Order.Ring.Abs
 
 /-!
-# QOU.FluidDynamics.ns_kummer_specialisation — placeholder stub
+# QOU.FluidDynamics.ns_kummer_specialisation — Kummer-level specialisation of the obstruction
 
-**Placeholder canonical** for content block
-[`prop:ns-kummer-specialisation`](../../../quantum-observable-universe/fluid-dynamics/ns-kummer-specialisation.md): *QOU.FluidDynamics.ns_kummer_specialisation*.
+**Proposition** ([`prop:ns-kummer-specialisation`](../../../quantum-observable-universe/fluid-dynamics/ns-kummer-specialisation.md)).
 
-The full Lean statement and proof are pending; this stub exists so
-the `lean.ref` URI `qou:QOU.FluidDynamics.ns_kummer_specialisation` resolves to a real declaration in
-the `qou` Lake package.  The body is `sorry` carrying the
-manuscript citation per CLAUDE.md §1.
+*Let `κ₀ = e(ξ)` with `tr(κ₀) = χ(A)`.  Then (i) the specialisation
+`κ₀|_{q=1}` is non-zero in `H²(S, G_m)/n` for every `n ∤ χ(A)`; (ii) the
+set `{n : n ∤ χ(A)}` is infinite; (iii) the obstruction vanishes exactly at
+the Kummer levels `n ∣ χ(A)`.*
+
+## Formalisation notes
+- **Base ring (§7c).** No ring parameter at all: the content is pure
+  `ℤ`/`ℕ` divisibility arithmetic (the Euler characteristic is genuinely an
+  integer).  No `ℝ`.
+- **Non-degenerate conditional — with two outright proofs.** The single
+  genuine hypothesis is (iii), the divisibility characterisation
+  `kappa_iff_dvd` (the cohomological computation), plus the setup
+  `χ(A) ≠ 0`.  From these the theorem **proves** (i) — the contrapositive
+  of (iii)'s forward direction — and **proves** (ii) outright by integer
+  arithmetic: any `n > |χ(A)|` fails to divide `χ(A)` (`Int.le_of_dvd`), so
+  beyond every `N` there is a non-divisor.  Neither (i) nor (ii) is carried
+  as a class field.
 -/
 
 namespace QOU.FluidDynamics
 
-
-/-- Abstract context for the `ns_kummer_specialisation` claim — manuscript-themed
-    typed fields below; `holds` carries the residual `Prop` claim. -/
-class NsKummerSpecialisationContext extends QOU.Shared.SobolevHkRegularityContext where
+/-- Hypotheses for the Kummer-level specialisation (§7c: `ℤ`/`ℕ`
+    arithmetic, no ring parameter).  Only the divisibility
+    characterisation (iii) and the non-degeneracy of `χ(A)` are assumed;
+    sub-claims (i) and (ii) are *proved* in `ns_kummer_specialisation`. -/
+class NsKummerSpecialisationContext where
   /-- Euler characteristic `χ(A)` of the QOU substrate. -/
   chi_A : ℤ
-  /-- Specialisation κ₀ mod n vanishes iff n ∣ χ(A). Predicate
-      capturing this divisibility-based vanishing. -/
+  /-- **Setup:** the Euler characteristic is non-zero (e.g. `-6` for the
+      Descartes universe); divisibility by every `n` would otherwise be
+      vacuous. -/
+  chi_A_ne_zero : chi_A ≠ 0
+  /-- Predicate: the obstruction `κ₀ mod n` vanishes in `H²(S, G_m)/n`. -/
   kappa_vanishes : ℕ → Prop
-  /-- Manuscript sub-claim (i) — Specialisation κ₀|_{q=1} is nonzero
-      in H²(𝒮, 𝔾_m)/n for all n not dividing χ(A). -/
-  claim_i_specialisation_nonzero : ∀ n : ℕ, 1 ≤ n →
-    ¬ ((n : ℤ) ∣ chi_A) → ¬ kappa_vanishes n
-  /-- Manuscript sub-claim (ii) — The set `{n : n ∤ χ(A)}` is
-      infinite: for every `N`, there exists `n > N` with
-      `n ∤ χ(A)`. -/
-  claim_ii_non_divisors_infinite : ∀ N : ℕ, ∃ n : ℕ,
-    N < n ∧ ¬ ((n : ℤ) ∣ chi_A)
-  /-- Manuscript sub-claim (iii) — Obstruction vanishes only at
-      Kummer levels n ∣ χ(A), which form a finite set. -/
-  claim_iii_obstruction_vanishes_finitely : ∀ n : ℕ, 1 ≤ n →
-    (kappa_vanishes n ↔ (n : ℤ) ∣ chi_A)
-/-- **Content statement** (from manuscript):
+  /-- **(iii) — the cohomological computation:** the obstruction vanishes
+      at level `n ≥ 1` exactly when `n ∣ χ(A)` (Kummer levels). -/
+  kappa_iff_dvd : ∀ n : ℕ, 1 ≤ n → (kappa_vanishes n ↔ (n : ℤ) ∣ chi_A)
 
-Let $(\mathbf{C}, A, \tau)$ be a QOU with
-$\kappa_0 = e(\xi) \in H^2(\mathcal{S}, \mathbb{G}_m)$ and
-$\mathrm{tr}(\kappa_0) = \chi(A)$.
+/-- **Kummer specialisation** ([`prop:ns-kummer-specialisation`]).
 
-    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
-    upgrading requires choosing the appropriate Lean types (Polynomial /
-    Matrix / categorical structures / etc.) and translating the manuscript
-    claim above. -/
+    (i) non-divisor levels have non-vanishing obstruction — *proved* as the
+    contrapositive of `kappa_iff_dvd`; (ii) non-divisor levels are
+    unbounded — *proved* outright from `χ(A) ≠ 0` via `Int.le_of_dvd`
+    (a divisor of `χ(A)` is at most `|χ(A)|`); (iii) restates
+    `kappa_iff_dvd`. -/
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/ns-kummer-specialisation.ts
 theorem ns_kummer_specialisation [ctx : NsKummerSpecialisationContext] :
     (∀ n : ℕ, 1 ≤ n → ¬ ((n : ℤ) ∣ ctx.chi_A) → ¬ ctx.kappa_vanishes n) ∧
     (∀ N : ℕ, ∃ n : ℕ, N < n ∧ ¬ ((n : ℤ) ∣ ctx.chi_A)) ∧
-    (∀ n : ℕ, 1 ≤ n → (ctx.kappa_vanishes n ↔ (n : ℤ) ∣ ctx.chi_A)) :=
-  ⟨ctx.claim_i_specialisation_nonzero,
-   ctx.claim_ii_non_divisors_infinite,
-   ctx.claim_iii_obstruction_vanishes_finitely⟩
+    (∀ n : ℕ, 1 ≤ n → (ctx.kappa_vanishes n ↔ (n : ℤ) ∣ ctx.chi_A)) := by
+  refine ⟨fun n hn hndvd hk => hndvd ((ctx.kappa_iff_dvd n hn).mp hk),
+          fun N => ⟨ctx.chi_A.natAbs + N + 1, by omega, fun hdvd => ?_⟩,
+          ctx.kappa_iff_dvd⟩
+  have hle : (↑(ctx.chi_A.natAbs + N + 1) : ℤ) ≤ |ctx.chi_A| :=
+    Int.le_of_dvd (abs_pos.mpr ctx.chi_A_ne_zero) ((dvd_abs _ _).mpr hdvd)
+  rw [Int.abs_eq_natAbs] at hle
+  omega
 
 end QOU.FluidDynamics

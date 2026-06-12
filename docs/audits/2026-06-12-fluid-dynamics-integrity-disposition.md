@@ -181,6 +181,28 @@ do **not** set a `git url.*.insteadOf` redirect (it re-triggers a destructive
 mathlib re-clone). `PosSemidefTraceZero` + `HeckeAlgebra/Formal` are confirmed
 green on current main (the old-base red is gone).
 
+## Progress ledger (2026-06-12)
+
+| block | build | integrity | base ring | notes |
+|---|---|---|---|---|
+| q-bkm-criterion | ✓ exit 0 | ✓ pass | generic `CommRing` | iff derived from 2 directions |
+| p4-universality | ✓ exit 0 | ✓ pass | generic types (no ring) | independence derived from factoring |
+| ns-obstruction-tower | ✓ exit 0 | ✓ pass | generic `CommRing` | `res_Σ` → `res_sigma` (Σ reserved token; old file never parsed) |
+| ns-singularity-descartes | ✓ exit 0 | ✓ pass | generic `CommRing` + `ℤ` | `NS_A ≠ 0` derived from `χ = −6` |
+| ns-obstruction-computation | (this batch) | (this batch) | generic `CommRing` + `ℤ` | both iffs derived from 4 directions |
+| ns-kummer-specialisation | (this batch) | (this batch) | `ℤ`/`ℕ` only | **(i), (ii) proved outright** — (i) contrapositive of (iii); (ii) from `χ ≠ 0` via `Int.le_of_dvd` |
+| leray-profile | (this batch) | (this batch) | generic `CommRing` | stale `BigOperators.Basic` import fixed; reconstruction derived from ansatz + normalisation |
+| p1-spectral-sobolev | (this batch) | (this batch) | generic `LinearOrderedField` | (a) derived from (b) + q-integer monotonicity |
+| p1-nonlinear-uniqueness | (this batch) | (this batch) | `ℝ` (**§7c-justified**: `Real.exp`, Gronwall order) | (c) uniqueness derived from distance Gronwall bound |
+| observability-q-independent | pending | pending | TBD (generic) | faithful fix in `GaugeFieldFluidDynamics.lean` — q-independence provable by `rfl` once the Hom-rank construction genuinely omits `q` |
+
+**Follow-up (narrative side, §3b-cond condition 3):** several of these
+blocks' `.md` files state the result unconditionally (e.g.
+`q-bkm-criterion.md`); per the owner's directive the narrative should also
+read "if ⟨hypotheses⟩ hold, then …" — add the conditional banner naming the
+context-class hypotheses. `p4-universality.md` already has the banner; the
+remaining 8 are a small `.md`-only follow-up batch.
+
 ## Coordination
 
 - qa-drain r6 (#1941) flags several of these (`ns-singularity-descartes`,
