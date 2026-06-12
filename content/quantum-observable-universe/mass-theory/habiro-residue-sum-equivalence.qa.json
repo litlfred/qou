@@ -1325,7 +1325,104 @@
         "reviewed_at": "2026-06-11T18:06:24.673Z",
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7"
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "1134c06d6fc4",
+          "ts": "f2d51803bc6f",
+          "lean": "101b4be110ca"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.8,
+          "max": 1
+        },
+        "evidence": "habiro-residue-sum-equivalence.md:1-25 — statement enumerates the two constructions (polynomial-ring Habiro vs residue spectral sum) and the commuting archimedean diagram; lean:10-37 module docstring restates the same two-path plan",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T15:17:55.161Z",
+        "reviewed_sha": "e0c323232d188ffaf894c855d6489154b0840538",
+        "notes": "Plan explicit and legible before any detail: two named constructions, the equivalence claim, the open analytic step, the empirical certification path."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "1134c06d6fc4",
+          "ts": "f2d51803bc6f",
+          "lean": "101b4be110ca"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.35,
+          "max": 1
+        },
+        "evidence": "habiro-residue-sum-equivalence.lean:94-96 — 'The Lean proof is open at the level of gb-residue-spectral-sum.lean's noncomputable opaque declarations'; md:33-36 declares the analytic identification open",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T15:17:55.196Z",
+        "reviewed_sha": "e0c323232d188ffaf894c855d6489154b0840538",
+        "notes": "Core gap: the gap is the proposition's own analytic identity (core ~0.3), partially offset by machine-precision empirical agreement on 3 atoms (rel_diff <= 2.79e-16, md:44-48)."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "1134c06d6fc4",
+          "ts": "f2d51803bc6f",
+          "lean": "101b4be110ca"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.6,
+          "max": 1
+        },
+        "evidence": "habiro-residue-sum-equivalence.md:57-64 — equivalence of the constructive Habiro path with the analytic residue path is framework-specific; no sibling block states this cross-pipeline identity",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T15:17:55.237Z",
+        "reviewed_sha": "e0c323232d188ffaf894c855d6489154b0840538",
+        "notes": "Non-duplicated, framework-specific bridge statement; the class-axiomatization + cross-validator technique itself is the corpus-standard pattern, so above 0.5 but not a novel argument."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "1134c06d6fc4",
+          "ts": "f2d51803bc6f",
+          "lean": "101b4be110ca"
+        },
+        "result": "warn",
+        "severity": "major",
+        "evidence": "habiro-residue-sum-equivalence.lean:151-153 — 'axiom protonExample_archimedean_agreement_axiom : (protonHabiroTrace.map ...).eval (Real.sqrt q_0_proton) = proton_gb_mass' asserts exact equality where the witness certifies only rel_diff <= 1e-9; lean:170-172 admits 'no integer polynomial has eval at Real.sqrt q_0_proton ... equal to the witness value 2.1225825095'; lean:177-186 trivialZero degenerate instance",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T15:17:55.287Z",
+        "reviewed_sha": "e0c323232d188ffaf894c855d6489154b0840538",
+        "notes": "Axiom injection on a provable-kind block plus exact-= overstating an approximate witness, plus a degenerate zero instance; all loudly documented in .md Status and .lean docstrings -> warn (major), not fail."
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-12T15:17:55.287Z"
 }
