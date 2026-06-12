@@ -53,6 +53,10 @@ if str(HERE) not in sys.path:
 
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from partition_utils import hook_lengths  # noqa: E402
+from q_parameter import Q as Q_0_FLOAT  # noqa: E402
+from wedderburn_jones_markov import y_lambda_at  # noqa: E402
+import math  # noqa: E402
 
 UPSTREAM = "chi-helium-4-h12-at-q0-50dps.witness.json"
 
@@ -103,15 +107,28 @@ def main() -> int:
               f"complete it before producing this witness.")
         return 2
 
+    # The chi-cache upstream was slimmed to {partition, chi_lambda} per
+    # entry (the dim / y_lambda / contribution fields were derivable and
+    # dropped in a schema slim-down). Recompute them here:
+    #   dim          = f^λ via the hook-length formula (exact integer)
+    #   y_lambda     = Wenzl weight at q_0 (50-dps precomputed hot path
+    #                  in wedderburn_jones_markov.y_lambda_at)
+    #   contribution = y_λ(q_0) · χ^λ_q(β_⁴He)   (Frobenius pairing)
+    y_at_q0 = y_lambda_at(12, Q_0_FLOAT)
+
     with mp.workdps(50):
         by_part = {}
         for entry in body["by_partition"]:
             part = tuple(entry["partition"])
+            hooks = hook_lengths(part)
+            dim = math.factorial(12) // math.prod(hooks)
+            y_lam = mp.mpf(str(y_at_q0[part]))
+            chi_lam = mp.mpf(entry["chi_lambda"])
             by_part[part] = {
-                "dim": int(entry["dim"]),
-                "y_lambda": mp.mpf(entry["y_lambda"]),
-                "chi_lambda": mp.mpf(entry["chi_lambda"]),
-                "contribution": mp.mpf(entry["contribution"]),
+                "dim": dim,
+                "y_lambda": y_lam,
+                "chi_lambda": chi_lam,
+                "contribution": y_lam * chi_lam,
             }
 
         n_parts = len(by_part)
