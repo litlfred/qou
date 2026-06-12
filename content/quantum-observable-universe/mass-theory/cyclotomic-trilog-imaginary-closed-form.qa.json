@@ -1152,7 +1152,104 @@
         "reviewed_at": "2026-06-11T18:06:24.673Z",
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7"
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "26fba26c6a06",
+          "ts": "dd93d7e06255",
+          "lean": "e8101dc2ac01"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.9,
+          "max": 1
+        },
+        "evidence": "cyclotomic-trilog-imaginary-closed-form.md:24-31 — Step 1 (Kummer reflection) cites Lewin 1991 Eq 6.10 up front; proof is 4 named steps with explicit branch bookkeeping",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T20:01:13.714Z",
+        "reviewed_sha": "8222ee87de81f6b312267f85d28cbe2feaa8f923",
+        "notes": "Plan stated before the steps: Kummer reflection + principal-branch log + conjugate symmetry; cited lemma named at the top"
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "26fba26c6a06",
+          "ts": "dd93d7e06255",
+          "lean": "e8101dc2ac01"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.4,
+          "max": 1
+        },
+        "evidence": "lean/QOU/BraidKnot/CyclotomicTrilogImaginary.lean:27-30 — closed_form_holds proves imLi3ZetaPredicted n = imLi3ZetaPredicted n by rfl; substantive identification deferred to class TheoremA (Infra/Polylogarithm.lean:88) whose instance covers n=4 arithmetic only",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T20:01:13.753Z",
+        "reviewed_sha": "8222ee87de81f6b312267f85d28cbe2feaa8f923",
+        "notes": "Sorry-free but tautological; the real gap (Im Li_3 at zeta_n analytically, absent from Mathlib) is core-level though the paper math is routine — between routine 0.9 and core 0.3"
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "26fba26c6a06",
+          "ts": "dd93d7e06255",
+          "lean": "e8101dc2ac01"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "evidence": "cyclotomic-trilog-imaginary-closed-form.md:4-7 — generalises prop:bring-trilog-imaginary-tate-rational (n=5) to all n; argument is the classical Kummer/Jonquiere reflection",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T20:01:13.790Z",
+        "reviewed_sha": "8222ee87de81f6b312267f85d28cbe2feaa8f923",
+        "notes": "Standard classical derivation, not duplicated in corpus beyond the n=5 special case it strictly generalises; no new technique"
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "26fba26c6a06",
+          "ts": "dd93d7e06255",
+          "lean": "e8101dc2ac01"
+        },
+        "result": "warn",
+        "severity": "major",
+        "evidence": "lean/QOU/BraidKnot/CyclotomicTrilogImaginary.lean:22-30 — lean.ref decl closed_form_holds states a tautology (x = x), drastically weaker than the .md boxed claim; weakening is loudly documented in the docstring (deferred to conditional-class TheoremA) but .md:102 closes with an unconditional square and no conditional banner",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T20:01:13.826Z",
+        "reviewed_sha": "8222ee87de81f6b312267f85d28cbe2feaa8f923",
+        "notes": "Documented (not silent) weakening: lean.ref resolves but to a tautological stand-in; ts validation not_checked; no dangling conditional hypotheses found"
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-12T20:01:13.826Z"
 }
