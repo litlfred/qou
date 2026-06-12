@@ -903,7 +903,32 @@
         "reviewed_at": "2026-06-11T18:06:24.673Z",
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7"
       }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "35c38d768b98",
+          "ts": "7551023a2ff5",
+          "lean": "bf6a4c41f6ec"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0.3,
+          "max": 1
+        },
+        "evidence": "pachner-pentagon-borromean.lean:26-28 — class PachnerPentagonBorromean where holds : Prop (placeholder); .md:66-83 conjectured h^4 identity carries ?-equality and the proposed 40/30/10 cancellation is unverified (Open R&D items 1-2)",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T20:00:07.358Z",
+        "reviewed_sha": "7a6e67e1cb48c293afc48b9e5549e73f7fc15a29",
+        "notes": "Core-level gap: the class field borromean_h4_pachner_eq_markov_trace = -3/4 restates the target; no compute prototype exists yet (md Open R&D), so closure plausibility is core (~0.3) per rubric despite established Pachner-Pentagon TV machinery"
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-12T20:00:07.358Z"
 }
