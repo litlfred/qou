@@ -60,7 +60,7 @@ from witness_base import WitnessBuilder
 
 try:
     import mpmath as mp
-    mp.mp.dps = 50
+    mp.mp.dps = 70
     HAVE_MP = True
 except Exception:
     HAVE_MP = False
@@ -69,7 +69,7 @@ try:
     from qou_substrate.constants import q_at
     Q0 = str(q_at())
 except Exception:
-    Q0 = "1.1099780333553254"
+    Q0 = "1.1099785827513808075916690956107688798744991218736"
 
 CODATA_INV_ALPHA = "137.035999177"   # CODATA 2022 1/alpha_EM
 
