@@ -11,6 +11,7 @@ import QOU.AppendixSurreals.Blowup
 import QOU.AppendixSurreals.BirthdayGrading
 import QOU.AppendixSurreals.HoefsmitBridge
 import QOU.AppendixSurreals.FigureEightCasimirWeight
+import QOU.AppendixSurreals.CasimirNStability
 import QOU.AppendixSurreals.KComplex
 import QOU.AppendixSurreals.PolynomialEval
 import QOU.AppendixSurreals.Conjectures

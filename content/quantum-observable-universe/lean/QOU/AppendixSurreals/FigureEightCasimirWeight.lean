@@ -104,4 +104,70 @@ theorem jones41_taylor_remainder_nonneg (q : ℝ) (hq : 0 < q) :
   have hden : (0 : ℝ) ≤ 4 * ((q - q⁻¹) ^ 2 + 8 + 4 * (q + q⁻¹)) := by linarith
   exact div_nonneg (by positivity) hden
 
+/-- Bar symmetry: the figure-eight weight is invariant under the bar
+involution `q ↦ q⁻¹` — it is a function of `h² = (q − q⁻¹)²` alone, as
+the Taylor form makes explicit. Holds unconditionally (at `q = 0` both
+sides are `1` with the `0⁻¹ = 0` convention). -/
+theorem jones41_bar_symmetric (q : ℝ) : jones41 q⁻¹ = jones41 q := by
+  unfold jones41
+  simp only [inv_inv]
+  ring
+
+/-- The weight is bounded below by `1` on `q > 0`: the substrate
+correction carried by `4₁` is an enhancement, never a suppression. -/
+theorem jones41_one_le (q : ℝ) (hq : 0 < q) : 1 ≤ jones41 q := by
+  rw [jones41_taylor q hq]
+  have h2 := sq_nonneg (q - q⁻¹)
+  have hr := jones41_taylor_remainder_nonneg q hq
+  linarith
+
+/-- **Conjectural input** (`conj:casimir-first-q-correction`, §3b-cond
+pattern). The conjecture: the first substrate-dependent correction to
+the plate-bounded vacuum mode-sum enters with the Markov-trace weight
+of the minimal hyperbolic braided mode — the figure-eight knot `4₁`.
+This class axiomatises that identification; the theorems below are
+fully verified consequences, conditional on an instance. No instance
+is provided: constructing one (the interacting-mode mode-sum) is the
+open content of the conjecture. -/
+class FirstInteractingCasimirCorrection where
+  /-- relative weight of the first substrate correction, per mode -/
+  weight : ℝ → ℝ
+  /-- the carrier identification: the weight is the Jones polynomial
+  (Markov trace) of the figure-eight knot -/
+  weight_eq_jones41 : ∀ q : ℝ, weight q = jones41 q
+
+namespace FirstInteractingCasimirCorrection
+
+variable [FirstInteractingCasimirCorrection]
+
+/-- Conditional Taylor form: the first-correction weight is
+`1 + (3/4)h²` plus an explicit positive `O(h⁴)` remainder. -/
+theorem weight_taylor (q : ℝ) (hq : 0 < q) :
+    weight q
+      = 1 + (3 / 4) * (q - q⁻¹) ^ 2
+          + (q - q⁻¹) ^ 4 / (4 * ((q - q⁻¹) ^ 2 + 8 + 4 * (q + q⁻¹))) := by
+  rw [weight_eq_jones41]
+  exact jones41_taylor q hq
+
+/-- Conditional classical limit: the correction degenerates to weight
+`1` at `q = 1` (no substrate deformation). -/
+theorem weight_classical : weight 1 = 1 := by
+  rw [weight_eq_jones41]
+  exact jones41_one
+
+/-- Conditional enhancement bound: the weight never falls below `1`
+on `q > 0`. -/
+theorem weight_one_le (q : ℝ) (hq : 0 < q) : 1 ≤ weight q := by
+  rw [weight_eq_jones41]
+  exact jones41_one_le q hq
+
+/-- Conditional bar symmetry: the first-correction weight is invariant
+under the bar involution `q ↦ q⁻¹`, consistent with it being a
+function of the skein square `h²`. -/
+theorem weight_bar_symmetric (q : ℝ) : weight q⁻¹ = weight q := by
+  rw [weight_eq_jones41, weight_eq_jones41]
+  exact jones41_bar_symmetric q
+
+end FirstInteractingCasimirCorrection
+
 end QOU.AppendixSurreals
