@@ -42,6 +42,16 @@ from hecke_core import (  # noqa: E402
     _PROTON_G0, _PROTON_G1, _NEUTRON_G0, _NEUTRON_G1,
 )
 
+# LP-dual emission deps (witness __main__ path). Imported at module
+# level right after the sys.path setup per repo import convention —
+# hecke_core's own bootstrap has already put pyhecke on sys.path.
+import numpy as np  # noqa: E402
+from lp_dual_solver import solve_operator_selection_lp  # noqa: E402
+from pyhecke.gram import (  # noqa: E402
+    TR_M as _TR_M, gram_matrix as _gram_matrix,
+    nf_of_word as _nf_of_word, nf_net as _nf_net,
+)
+
 
 def atom_per_generator_full_matrices(
     Z: int, N: int, *, include_inter: bool = True,
@@ -285,12 +295,7 @@ if __name__ == "__main__":
     # proton braid word (s0 s1)^3. Solved through the mandated
     # entry point lp_dual_solver.solve_operator_selection_lp (auto
     # backend: clarabel MPFR ~50 dps when available, else scipy).
-    import numpy as np  # noqa: E402
-    from lp_dual_solver import solve_operator_selection_lp  # noqa: E402
-    from pyhecke.gram import (  # noqa: E402
-        TR_M as _TR_M, gram_matrix as _gram_matrix,
-        nf_of_word as _nf_of_word, nf_net as _nf_net,
-    )
+    # (imports live at module level, after the sys.path setup)
 
     _t = np.asarray(_TR_M, dtype=float)
     _G = _gram_matrix()
