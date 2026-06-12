@@ -1054,12 +1054,37 @@ cone transitively touches a `conj:C` may keep its provable kind
    hypothesis where used.
 4. **`uses[]` includes the conjecture explicitly.** The
    conditional dependency is auditable from the manifest.
+5. **Non-degenerate — the class axiomatises *hypotheses*, not the
+   conclusion.** The class fields must encode the conjecture's
+   *inputs*; the theorem must **derive** its conclusion from them. A
+   class that carries the block's own conclusion as a field, with a
+   "theorem" that merely projects it (`:= ctx.claim_foo`), is a vacuous
+   self-assuming projection — it satisfies the propagation audit (the
+   cone *is* class-axiomatised) yet **fails `proof-statement-integrity`**
+   (the Lean does not *derive* the `.md` claim). Restructure so the
+   class carries the genuine sub-hypotheses / proof-chain steps and the
+   theorem composes them (e.g. carry the two directions of an iff as
+   hypotheses, derive it by `Iff.intro`). Verified exemplar:
+   [`QOU/FluidDynamics/q_bkm_criterion.lean`](content/quantum-observable-universe/lean/QOU/FluidDynamics/q_bkm_criterion.lean).
 
-When all four hold, the block represents a *rigorous conditional
+When all five hold, the block represents a *rigorous conditional
 result* — fully verified by Lean modulo a single, named,
 class-axiomatised conjectural input. This pattern preserves the
 distinction between rigorous-conditional and unproved-conjecture
 content.
+
+**Base ring (§7c) for conditional-class fixes.** Keep the class and
+theorem over a generic `{R : Type*} [CommRing R]` — never `ℝ` unless an
+archimedean construct (ordering `0 < q`, `Real.sqrt`, `Real.log`, …) is
+genuinely required, and place that specialisation *after* the
+substrate→archimedean wall. In particular do **not** import a chapter
+`Shared` module that transitively pulls in `Mathlib.Data.Real.Basic`
+(e.g. `QOU.Shared.SobolevHkRegularity`) when `Mathlib.Algebra.Ring.Defs`
+suffices. Archimedean setup hypotheses that the statement does not use
+(e.g. `0 < T`, `1 < q`) are **dropped** from the generic class, not
+coerced into `ℝ`. Verify per-module with `lake build -R <Module>` (the
+whole-library `lake build QOU` is red on pre-existing failures and is not
+the gate).
 
 **Audit treatment.** The `conjectural-propagation` audit
 (`content/pipeline/conjectural-propagation-audit.ts`) reports such

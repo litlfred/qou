@@ -150,6 +150,37 @@ crashes while printing the *Violators* section on current main (Bun trace from
 the violator `console.log`/witness-write). The conditional-on-class tally
 (140) prints fine. Filed for a separate fix; does not affect this disposition.
 
+## Fix recipe (verified on `q-bkm-criterion`, 2026-06-12)
+
+Each NS block has up to two defects; both are mechanical once seen
+(`q_bkm_criterion` done end-to-end, `lake build -R … q_bkm_criterion` exit 0):
+
+1. **Build.** The module has no imports → `ℝ`/`ℕ` unknown → it never
+   compiled (and reds `QOU.lean`, which imports it). Add the **generic**
+   `import Mathlib.Algebra.Ring.Defs` (provides `CommRing`). Do **not** use
+   `QOU.Shared.SobolevHkRegularity` — it transitively imports
+   `Mathlib.Data.Real.Basic` (`ℝ`), violating §7c.
+2. **Integrity.** The class carries the conclusion as a field
+   (`claim_… : A ↔ B`) and the theorem projects it (`:= ctx.claim_…`) —
+   self-assuming. Restructure: the class carries the genuine sub-hypotheses
+   (e.g. the two iff directions); the theorem **derives** the headline
+   (`⟨ctx.dir₁, ctx.dir₂⟩`). This is §3b-cond **condition 5** (non-degenerate).
+3. **Base ring (§7c).** Generic `{R : Type*} [CommRing R]`, never `ℝ`. Drop
+   archimedean setup hypotheses the statement does not use (`0 < T`, `1 < q`);
+   they belong to a post-wall `ℝ`-specialisation.
+4. **Verify + re-rate.** `lake build -R QOU.FluidDynamics.<module>` exit 0
+   (per-module — `lake build QOU` is red on ~50 pre-existing failures and is
+   not the gate), then re-rate `proof-statement-integrity` via `qa-agent-write`.
+
+Agent guidance updated to match: CLAUDE.md §3b-cond (condition 5 + base-ring
+note) and `local/lean-proof-review.md` Review Type 4.
+
+**Env (durable this container):**
+`export PATH="$HOME/.elan/toolchains/leanprover--lean4---v4.24.0/bin:$PATH"`;
+do **not** set a `git url.*.insteadOf` redirect (it re-triggers a destructive
+mathlib re-clone). `PosSemidefTraceZero` + `HeckeAlgebra/Formal` are confirmed
+green on current main (the old-base red is gone).
+
 ## Coordination
 
 - qa-drain r6 (#1941) flags several of these (`ns-singularity-descartes`,
