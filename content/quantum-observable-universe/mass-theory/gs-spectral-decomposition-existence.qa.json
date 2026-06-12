@@ -1056,7 +1056,32 @@
         "reviewed_at": "2026-06-11T18:06:24.673Z",
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7"
       }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "dca8b5f765b8",
+          "ts": "e08cbdf1f4a6",
+          "lean": "ace037548045"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0.3,
+          "max": 1
+        },
+        "evidence": "gs-spectral-decomposition-existence.md:43-58 — proof requires conj:gs-graded-markov-trace-existence + conj:gs-residue-at-root-existence + Habiro-Mittag-Leffler bridge; effort 'very large' per AUDIT-gb-residue-opaque-declarations.md; lean:19-21 class field is untyped 'holds : Prop'",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T15:25:23.448Z",
+        "reviewed_sha": "751b690dc4205e9f6effdbe69e0318ed88003ee7",
+        "notes": "Core-class gap: closure needs two upstream conjectures plus an analytic bridge identification; empirical 1e-9 witness supports but does not shorten the path. ~0.3 per rubric core tag."
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-12T15:25:23.448Z"
 }
