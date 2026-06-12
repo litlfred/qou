@@ -122,9 +122,16 @@ witness `snappy-census-volume-verification.witness.json` (16/16 assertions), PR 
    runs in-sandbox).
 
 3. **Thread-4 decision sharpened.** The volume-matching evidence stream
-   supports {6₁, 8₁, 6³₁}; the SDP partial closure + production wiring use
-   {6₂, 8₁₁, L6a4}. The two evidence streams point at **different knot sets**;
-   adjudication remains owner-gated `conj:canonical-knot-id-sdp` scope.
+   *appeared* to support {6₁, 8₁, 6³₁}; the SDP partial closure + production
+   wiring use {6₂, 8₁₁, L6a4}.
+   **Adjudicated same day:** recomputing the match under the
+   zero-free-parameter law `B_AME ≈ ρ·m_e·Vol(K)` shows the NAMED set
+   reproduces the historical quality pattern (+1.09 %/−0.16 %/−2.97 %)
+   while the orphan set fails (27–59 %; deuteron fails at every integer
+   ρ ≤ 4) — the names are right, the digits are stale, production needs
+   no change. See
+   [`2026-06-12-knot-id-volume-match-adjudication.md`](2026-06-12-knot-id-volume-match-adjudication.md);
+   the mechanical digit fixes stay owner-confirmed.
 
 4. **Infra bug found en route:** `qou_substrate.witness.WitnessBuilder` passes
    the bare script *name* to `git log` (cwd = repo root), so every producer in
