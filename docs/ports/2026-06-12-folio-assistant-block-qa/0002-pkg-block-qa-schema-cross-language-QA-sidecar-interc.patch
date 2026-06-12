@@ -1,0 +1,1350 @@
+From a302b289899217e39c404fe92a96b289c40b3fc3 Mon Sep 17 00:00:00 2001
+From: Claude <noreply@anthropic.com>
+Date: Fri, 12 Jun 2026 19:29:40 +0000
+Subject: [PATCH 2/2] pkg(block-qa-schema): cross-language QA-sidecar
+ interchange package (ported from litlfred/qou)
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+Canonical JSON Schemas (block-qa/v1 + qa-script/v1) + Zod mirror
+(npm @litlfred/block-qa-schema) + Pydantic mirror (PyPI
+block-qa-schema) + tests. Corpus-validated against the QOU corpus
+(2,250/2,250 block sidecars + 62/62 script sidecars; pytest 8/8 —
+re-run in this tree at port time). Repo URLs/links rewritten from
+litlfred/qou to litlfred/folio-assistant; the qa-sweep producer
+pipeline remains in litlfred/qou until its own migration.
+---
+ tools/block-qa-schema/README.md               | 106 ++++++++
+ tools/block-qa-schema/js/index.ts             | 137 +++++++++++
+ tools/block-qa-schema/package.json            |  45 ++++
+ tools/block-qa-schema/pyproject.toml          |  61 +++++
+ .../python/block_qa_schema/__init__.py        | 199 +++++++++++++++
+ .../__pycache__/__init__.cpython-311.pyc      | Bin 0 -> 8603 bytes
+ .../schema/block-qa.schema.json               | 166 +++++++++++++
+ .../schema/qa-script.schema.json              |  52 ++++
+ .../test_python.cpython-311-pytest-9.0.3.pyc  | Bin 0 -> 25131 bytes
+ tools/block-qa-schema/tests/test_python.py    | 232 ++++++++++++++++++
+ 10 files changed, 998 insertions(+)
+ create mode 100644 tools/block-qa-schema/README.md
+ create mode 100644 tools/block-qa-schema/js/index.ts
+ create mode 100644 tools/block-qa-schema/package.json
+ create mode 100644 tools/block-qa-schema/pyproject.toml
+ create mode 100644 tools/block-qa-schema/python/block_qa_schema/__init__.py
+ create mode 100644 tools/block-qa-schema/python/block_qa_schema/__pycache__/__init__.cpython-311.pyc
+ create mode 100644 tools/block-qa-schema/schema/block-qa.schema.json
+ create mode 100644 tools/block-qa-schema/schema/qa-script.schema.json
+ create mode 100644 tools/block-qa-schema/tests/__pycache__/test_python.cpython-311-pytest-9.0.3.pyc
+ create mode 100644 tools/block-qa-schema/tests/test_python.py
+
+diff --git a/tools/block-qa-schema/README.md b/tools/block-qa-schema/README.md
+new file mode 100644
+index 0000000..cf10857
+--- /dev/null
++++ b/tools/block-qa-schema/README.md
+@@ -0,0 +1,106 @@
++# block-qa-schema
++
++> *Part of the folio-assistant platform. Sibling of [`witness-schema`](https://github.com/litlfred/qou/tree/main/tools/witness-schema) (currently in litlfred/qou), which plays the same role for the compute-witness format.*
++
++Cross-language schema for the QOU **block-QA sidecar** format. Three artefacts in one package:
++
++| Target | Where | Install |
++|---|---|---|
++| **JSON Schema** (canonical) | `schema/block-qa.schema.json` + `schema/qa-script.schema.json` | any language with a JSON Schema validator |
++| **Pydantic models** (Python) | `python/block_qa_schema/` | `pip install block-qa-schema` |
++| **Zod schemas** (TypeScript) | `js/index.ts` | `npm install @litlfred/block-qa-schema` |
++
++All three describe the same two sidecar shapes emitted by the QOU QA pipeline (`content/pipeline/qa-sweep.ts`):
++
++- **`<block>.qa.json`** (`$schema: "block-qa/v1"`) — one per content block. Under each QA criterion sits an append-only array of reviewer verdicts (script / agent / human), each pinned to the content hashes it judged so it auto-stales on edit.
++- **`<criterion-id>.script.json`** (`$schema: "qa-script/v1"`) — one per automated criterion, recording the checker's own source hash so a checker bug fix invalidates every verdict it ever wrote, corpus-wide.
++
++The JSON Schema is the authoritative interchange spec; the Pydantic and Zod schemas are hand-maintained mirrors kept in sync with it. The producing TypeScript interfaces live in-repo at [`schemas/block-qa.ts`](../../schemas/block-qa.ts); the qa-sweep pipeline that emits the sidecars currently lives in [litlfred/qou](https://github.com/litlfred/qou) (`content/pipeline/qa-sweep.ts`).
++
++## Why a standalone package?
++
++The QOU corpus carries 2,250+ block sidecars holding 100k+ recorded verdicts across ~60 criteria on nine audit axes (proof integrity, structural/detangler, canonical-discipline, compute, voice, parameter-regime, bibliography, …). Downstream consumers — dashboards, external QA tooling, other corpora adopting the same multi-reviewer audit pattern — can read or emit those files without porting any of the pipeline; they just need the schema. The format and its role in a human–machine co-authoring loop are described in the [symbiotic proof-authoring note](https://github.com/litlfred/qou/blob/main/docs/outreach/symbiotic-proof-authoring-note.md) (Appendix B–D).
++
++Both models were validated against the full live corpus (2,250 block sidecars + 62 script sidecars, in [litlfred/qou](https://github.com/litlfred/qou)) at packaging time.
++
++## Python (Pydantic)
++
++```python
++from block_qa_schema import BlockQaReport
++
++with open("carbon-valence.qa.json") as f:
++    report = BlockQaReport.model_validate_json(f.read())
++
++for criterion, entries in report.criteria.items():
++    latest = entries[-1]
++    print(criterion, "→", latest.result, f"({latest.reviewer.kind}:{latest.reviewer.id})")
++    if latest.metrics:
++        print("   metrics:", latest.metrics)
++```
++
++## TypeScript / Node.js (Zod)
++
++```ts
++import { BlockQaReport } from "@litlfred/block-qa-schema";
++import { readFileSync } from "fs";
++
++const raw = JSON.parse(readFileSync("carbon-valence.qa.json", "utf-8"));
++const report = BlockQaReport.parse(raw);
++
++for (const [criterion, entries] of Object.entries(report.criteria)) {
++  const latest = entries[entries.length - 1];
++  console.log(criterion, "→", latest.result, latest.reviewer.kind);
++}
++```
++
++## Other languages
++
++Use the JSON Schemas directly — they are served from the npm package root (`@litlfred/block-qa-schema/schema` and `@litlfred/block-qa-schema/schema/qa-script`) and bundled into the Python wheel as package data (`importlib.resources.files("block_qa_schema")`).
++
++## Field reference — `<block>.qa.json` (`block-qa/v1`)
++
++| Field | Type | Required | Meaning |
++|---|---|---|---|
++| `$schema` | `"block-qa/v1"` | yes | schema marker |
++| `label` | string | yes | block label (e.g. `prop:jet-tower-convergence`) |
++| `kind` | string | yes | block kind (mirror of the manifest discriminator) |
++| `paths` | object | yes | repo-relative source paths; `ts` required, `md`/`lean` optional |
++| `source_hashes` | field-hash | yes | 12-char SHA-256 prefixes of present sources, refreshed on write |
++| `criteria` | map → entry[] | yes | per-criterion append-only reviewer entries |
++| `updated_at` | string | yes | ISO-8601 UTC last-update timestamp |
++
++Per criterion entry:
++
++| Field | Type | Required | Meaning |
++|---|---|---|---|
++| `field_hash` | field-hash | yes | source hashes at audit time — mismatch ⇒ stale, re-run |
++| `result` | enum | yes | `pass` / `fail` / `warn` / `n/a` |
++| `severity` | enum | no | `critical` / `major` / `minor` (for fail/warn) |
++| `score` | object | no | rater rubric: `value`/`max` + per-dimension `rubric` |
++| `evidence` | string \| {line, text}[] | no | verbatim-quote string, or the structured location list some agent reviewers emit |
++| `metrics` | map | no | descriptive checker measures (e.g. detangler `tanglement_score`, `cone_size`, `pagerank`, `graph_energy`) |
++| `reviewer` | object | yes | `kind` (`script`/`agent`/`human`) + `id`, with script-hash or agent model/session/skill provenance |
++| `reviewed_at` | string | yes | ISO-8601 UTC datetime (legacy agent entries: bare date) |
++| `reviewed_sha` | string | no | repo HEAD at audit time — recommended; legacy agent entries omit it |
++| `notes` | string | no | free-form |
++
++Both schemas set `additionalProperties: true` — the format is intentionally extensible.
++
++## Field reference — `<criterion-id>.script.json` (`qa-script/v1`)
++
++| Field | Type | Required | Meaning |
++|---|---|---|---|
++| `$schema` | `"qa-script/v1"` | yes | schema marker |
++| `criterion_id` | string | yes | criterion this sidecar tracks |
++| `source_file` | string | yes | repo-relative checker source path |
++| `script_hash` | string | yes | 12-char SHA-256 prefix of the checker content |
++| `script_commit_sha` | string | yes | last commit touching the checker |
++| `extra_inputs` | string[] | no | extra files the checker consults |
++| `deps_hash` | string | no | hash of concatenated extra inputs |
++| `last_run_at` | string | yes | ISO-8601 UTC of the most recent sweep |
++| `last_run_sha` | string | yes | repo HEAD at the most recent sweep |
++| `engine_version` | string | no | e.g. `bun-1.3.11+node-22` |
++
++## License
++
++MIT. See [LICENSE](../../LICENSE) in the repository root.
+diff --git a/tools/block-qa-schema/js/index.ts b/tools/block-qa-schema/js/index.ts
+new file mode 100644
+index 0000000..3c1ced8
+--- /dev/null
++++ b/tools/block-qa-schema/js/index.ts
+@@ -0,0 +1,137 @@
++/**
++ * @litlfred/block-qa-schema — Zod schemas for the QOU block-QA sidecar format.
++ *
++ * The canonical schemas are `tools/block-qa-schema/schema/block-qa.schema.json`
++ * (the per-block `<block>.qa.json` report) and
++ * `tools/block-qa-schema/schema/qa-script.schema.json` (the per-criterion
++ * `<criterion-id>.script.json` checker-staleness sidecar). This file ships Zod
++ * schemas that validate against the same shapes, so any TypeScript / JavaScript
++ * consumer can parse + type-check the QA sidecars emitted by the QOU
++ * qa-sweep pipeline (litlfred/qou `content/pipeline/qa-sweep.ts`; producing
++ * types in `schemas/block-qa.ts` in this repo).
++ *
++ * @example
++ * ```ts
++ * import { BlockQaReport } from "@litlfred/block-qa-schema";
++ * import { readFileSync } from "fs";
++ *
++ * const raw = JSON.parse(readFileSync("carbon-valence.qa.json", "utf-8"));
++ * const report = BlockQaReport.parse(raw);
++ *
++ * for (const [criterion, entries] of Object.entries(report.criteria)) {
++ *   const latest = entries[entries.length - 1];
++ *   console.log(criterion, "→", latest.result, latest.reviewer.kind);
++ * }
++ * ```
++ */
++
++import { z } from "zod";
++
++export const QaReviewerKind = z.enum(["script", "agent", "human"]);
++export type QaReviewerKind = z.infer<typeof QaReviewerKind>;
++
++export const QaReviewer = z
++  .object({
++    kind: QaReviewerKind,
++    id: z.string(),
++    version: z.string().optional(),
++    // kind: "script" provenance — staleness drivers
++    script_hash: z.string().optional(),
++    script_commit_sha: z.string().optional(),
++    deps_hash: z.string().optional(),
++    // kind: "agent" provenance — model-level audit trail
++    agent_model: z.string().optional(),
++    agent_session: z.string().optional(),
++    agent_date: z.string().optional(),
++    agent_skill: z.string().optional(),
++  })
++  .passthrough();
++export type QaReviewer = z.infer<typeof QaReviewer>;
++
++export const QaFieldHash = z
++  .object({
++    md: z.string().optional(),
++    ts: z.string().optional(),
++    lean: z.string().optional(),
++  })
++  .passthrough();
++export type QaFieldHash = z.infer<typeof QaFieldHash>;
++
++export const QaScore = z
++  .object({
++    value: z.number(),
++    max: z.number(),
++    rubric: z.record(z.string(), z.number()).optional(),
++  })
++  .passthrough();
++export type QaScore = z.infer<typeof QaScore>;
++
++// Some agent reviewers (voice axis especially) emit structured evidence
++// as a list of {line, text} locations rather than a single string; the
++// live corpus carries both shapes.
++export const QaEvidenceItem = z
++  .object({
++    line: z.number().int().optional(),
++    text: z.string().optional(),
++  })
++  .passthrough();
++export type QaEvidenceItem = z.infer<typeof QaEvidenceItem>;
++
++export const QaCriterionEntry = z
++  .object({
++    field_hash: QaFieldHash,
++    result: z.enum(["pass", "fail", "warn", "n/a"]),
++    severity: z.enum(["critical", "major", "minor"]).optional(),
++    score: QaScore.optional(),
++    evidence: z.union([z.string(), z.array(QaEvidenceItem)]).optional(),
++    // Descriptive structural measures a checker emits alongside its verdict
++    // (e.g. the detangler axis's tanglement_score / cone_size / pagerank /
++    // graph_energy snapshot) — not a quality score.
++    metrics: z.record(z.string(), z.union([z.number(), z.string()])).optional(),
++    reviewer: QaReviewer,
++    // ISO-8601 UTC datetime; legacy agent entries may carry a bare ISO date.
++    reviewed_at: z.string(),
++    // Repo HEAD at audit time. Recommended; legacy agent entries
++    // (pre-2026-06) omit it, so it is optional here.
++    reviewed_sha: z.string().optional(),
++    notes: z.string().optional(),
++  })
++  .passthrough();
++export type QaCriterionEntry = z.infer<typeof QaCriterionEntry>;
++
++export const BlockQaReport = z
++  .object({
++    $schema: z.literal("block-qa/v1"),
++    label: z.string(),
++    kind: z.string(),
++    paths: z
++      .object({
++        ts: z.string(),
++        md: z.string().optional(),
++        lean: z.string().optional(),
++      })
++      .passthrough(),
++    source_hashes: QaFieldHash,
++    criteria: z.record(z.string(), z.array(QaCriterionEntry)),
++    updated_at: z.string(),
++  })
++  .passthrough();
++export type BlockQaReport = z.infer<typeof BlockQaReport>;
++
++export const QaScriptSidecar = z
++  .object({
++    $schema: z.literal("qa-script/v1"),
++    criterion_id: z.string(),
++    source_file: z.string(),
++    script_hash: z.string(),
++    script_commit_sha: z.string(),
++    extra_inputs: z.array(z.string()).optional(),
++    deps_hash: z.string().optional(),
++    last_run_at: z.string(),
++    last_run_sha: z.string(),
++    engine_version: z.string().optional(),
++  })
++  .passthrough();
++export type QaScriptSidecar = z.infer<typeof QaScriptSidecar>;
++
++export const VERSION = "0.1.0";
+diff --git a/tools/block-qa-schema/package.json b/tools/block-qa-schema/package.json
+new file mode 100644
+index 0000000..7c332c4
+--- /dev/null
++++ b/tools/block-qa-schema/package.json
+@@ -0,0 +1,45 @@
++{
++  "name": "@litlfred/block-qa-schema",
++  "version": "0.1.0",
++  "description": "Zod schemas + JSON Schema for the QOU block-QA sidecar format. Cross-language interchange schema for <block>.qa.json multi-reviewer audit reports and <criterion-id>.script.json checker-staleness sidecars.",
++  "license": "MIT",
++  "repository": {
++    "type": "git",
++    "url": "git+https://github.com/litlfred/folio-assistant.git",
++    "directory": "tools/block-qa-schema"
++  },
++  "homepage": "https://github.com/litlfred/folio-assistant/tree/main/tools/block-qa-schema",
++  "bugs": "https://github.com/litlfred/folio-assistant/issues",
++  "keywords": ["qa", "audit", "json-schema", "zod", "qou", "provenance", "staleness"],
++  "main": "dist/index.js",
++  "module": "dist/index.mjs",
++  "types": "dist/index.d.ts",
++  "files": [
++    "dist/",
++    "schema/block-qa.schema.json",
++    "schema/qa-script.schema.json",
++    "README.md"
++  ],
++  "exports": {
++    ".": {
++      "types": "./dist/index.d.ts",
++      "import": "./dist/index.mjs",
++      "require": "./dist/index.js"
++    },
++    "./schema": "./schema/block-qa.schema.json",
++    "./schema/qa-script": "./schema/qa-script.schema.json"
++  },
++  "scripts": {
++    "build": "tsup js/index.ts --format cjs,esm --dts --out-dir dist",
++    "test": "vitest run"
++  },
++  "peerDependencies": {
++    "zod": "^3.22.0 || ^4.0.0"
++  },
++  "devDependencies": {
++    "tsup": "^8",
++    "typescript": "^5",
++    "vitest": "^1",
++    "zod": "^3.22.0"
++  }
++}
+diff --git a/tools/block-qa-schema/pyproject.toml b/tools/block-qa-schema/pyproject.toml
+new file mode 100644
+index 0000000..ef66e65
+--- /dev/null
++++ b/tools/block-qa-schema/pyproject.toml
+@@ -0,0 +1,61 @@
++[build-system]
++requires = ["hatchling>=1.18"]
++build-backend = "hatchling.build"
++
++[project]
++name = "block-qa-schema"
++version = "0.1.0"
++description = "Pydantic models for the QOU block-QA sidecar format. Cross-language interchange schema for <block>.qa.json multi-reviewer audit reports and <criterion-id>.script.json checker-staleness sidecars."
++readme = "README.md"
++requires-python = ">=3.10"
++license = { text = "MIT" }
++authors = [{ name = "Quantum Observable Universe contributors" }]
++keywords = ["qa", "audit", "json-schema", "pydantic", "qou", "provenance", "staleness"]
++classifiers = [
++  "Development Status :: 3 - Alpha",
++  "Intended Audience :: Science/Research",
++  "License :: OSI Approved :: MIT License",
++  "Programming Language :: Python :: 3 :: Only",
++  "Programming Language :: Python :: 3.10",
++  "Programming Language :: Python :: 3.11",
++  "Programming Language :: Python :: 3.12",
++  "Programming Language :: Python :: 3.13",
++  "Topic :: Scientific/Engineering",
++  "Topic :: File Formats :: JSON :: JSON Schema",
++]
++dependencies = [
++  "pydantic>=2.0",
++]
++
++[project.optional-dependencies]
++test = ["pytest>=7", "jsonschema>=4"]
++
++[project.urls]
++Homepage = "https://github.com/litlfred/folio-assistant"
++Source = "https://github.com/litlfred/folio-assistant/tree/main/tools/block-qa-schema"
++Issues = "https://github.com/litlfred/folio-assistant/issues"
++"JSON Schema" = "https://github.com/litlfred/folio-assistant/blob/main/tools/block-qa-schema/schema/block-qa.schema.json"
++
++[tool.hatch.build.targets.wheel]
++packages = ["python/block_qa_schema"]
++
++# Include the canonical JSON schemas in the wheel as package data so
++# `pip install block-qa-schema` users can locate them at runtime via
++# `importlib.resources.files("block_qa_schema") / "block-qa.schema.json"`.
++[tool.hatch.build.targets.wheel.force-include]
++"schema/block-qa.schema.json" = "block_qa_schema/block-qa.schema.json"
++"schema/qa-script.schema.json" = "block_qa_schema/qa-script.schema.json"
++
++[tool.hatch.build.targets.sdist]
++include = [
++  "python/block_qa_schema",
++  "schema/block-qa.schema.json",
++  "schema/qa-script.schema.json",
++  "tests",
++  "README.md",
++  "pyproject.toml",
++]
++
++[tool.pytest.ini_options]
++pythonpath = ["python"]
++testpaths = ["tests"]
+diff --git a/tools/block-qa-schema/python/block_qa_schema/__init__.py b/tools/block-qa-schema/python/block_qa_schema/__init__.py
+new file mode 100644
+index 0000000..7b5723f
+--- /dev/null
++++ b/tools/block-qa-schema/python/block_qa_schema/__init__.py
+@@ -0,0 +1,199 @@
++"""block-qa-schema — Pydantic models for the QOU block-QA sidecar format.
++
++The canonical schemas are ``tools/block-qa-schema/schema/block-qa.schema.json``
++(the per-block ``<block>.qa.json`` report) and
++``tools/block-qa-schema/schema/qa-script.schema.json`` (the per-criterion
++``<criterion-id>.script.json`` checker-staleness sidecar). This module ships
++Pydantic v2 models that validate against the same shapes. Used by any Python
++consumer that reads the QA sidecars emitted by the QOU qa-sweep pipeline
++(litlfred/qou ``content/pipeline/qa-sweep.ts``; producing types in
++``schemas/block-qa.ts`` in this repo).
++
++Example::
++
++    from block_qa_schema import BlockQaReport
++
++    with open("carbon-valence.qa.json") as f:
++        report = BlockQaReport.model_validate_json(f.read())
++
++    for criterion, entries in report.criteria.items():
++        latest = entries[-1]
++        print(criterion, "→", latest.result, latest.reviewer.kind)
++"""
++
++from __future__ import annotations
++
++from typing import Literal, Optional, Union
++
++from pydantic import BaseModel, ConfigDict, Field
++
++__version__ = "0.1.0"
++
++QaReviewerKind = Literal["script", "agent", "human"]
++
++QaResult = Literal["pass", "fail", "warn", "n/a"]
++
++QaSeverity = Literal["critical", "major", "minor"]
++
++
++class QaReviewer(BaseModel):
++    """Identity + provenance of the reviewer that produced an entry.
++
++    ``kind: "script"`` entries carry the checker's own ``script_hash`` (plus
++    ``deps_hash`` for extra inputs) so a checker bug fix auto-stales every
++    verdict it ever wrote. ``kind: "agent"`` entries carry the model id,
++    session, and dispatching skill so heterogeneous models can audit one
++    another's verdicts. ``kind: "human"`` is the final-authority tier.
++    """
++
++    model_config = ConfigDict(extra="allow")
++
++    kind: QaReviewerKind
++    id: str
++    version: Optional[str] = None
++    # kind: "script" provenance — staleness drivers
++    script_hash: Optional[str] = None
++    script_commit_sha: Optional[str] = None
++    deps_hash: Optional[str] = None
++    # kind: "agent" provenance — model-level audit trail
++    agent_model: Optional[str] = None
++    agent_session: Optional[str] = None
++    agent_date: Optional[str] = None
++    agent_skill: Optional[str] = None
++
++
++class QaFieldHash(BaseModel):
++    """12-char SHA-256 prefixes of each source file's UTF-8 bytes.
++
++    Absent fields mean the audit did not depend on that file (or it did
++    not exist at audit time).
++    """
++
++    model_config = ConfigDict(extra="allow")
++
++    md: Optional[str] = None
++    ts: Optional[str] = None
++    lean: Optional[str] = None
++
++
++class QaScore(BaseModel):
++    """Rubric score for rater-style quality criteria (``proof-rater-*``).
++
++    A quality measure to improve over time, not a pass/fail gate.
++    Convention: value/max >= 0.66 maps to result "pass", 0.33-0.66 to
++    "warn", < 0.33 to "fail".
++    """
++
++    model_config = ConfigDict(extra="allow")
++
++    value: float
++    max: float
++    rubric: Optional[dict[str, float]] = None
++
++
++class QaEvidenceItem(BaseModel):
++    """One structured evidence location.
++
++    Some agent reviewers (voice axis especially) emit evidence as a list
++    of ``{line, text}`` locations rather than a single string; the live
++    corpus carries both shapes.
++    """
++
++    model_config = ConfigDict(extra="allow")
++
++    line: Optional[int] = None
++    text: Optional[str] = None
++
++
++class QaCriterionEntry(BaseModel):
++    """The outcome of one reviewer evaluating one criterion on one block.
++
++    A verdict whose ``field_hash`` no longer matches the present source
++    files is stale and must be re-run. ``reviewed_sha`` is recommended but
++    optional — legacy agent entries (pre-2026-06) omit it.
++    """
++
++    model_config = ConfigDict(extra="allow")
++
++    field_hash: QaFieldHash
++    result: QaResult
++    severity: Optional[QaSeverity] = None
++    score: Optional[QaScore] = None
++    evidence: Optional[Union[str, list[QaEvidenceItem]]] = None
++    # Descriptive structural measures a checker emits alongside its verdict
++    # (e.g. the detangler axis's tanglement_score / cone_size / pagerank /
++    # graph_energy snapshot) — not a quality score.
++    metrics: Optional[dict[str, Union[int, float, str]]] = None
++    reviewer: QaReviewer
++    # ISO-8601 UTC datetime; legacy agent entries may carry a bare ISO date.
++    reviewed_at: str
++    reviewed_sha: Optional[str] = None
++    notes: Optional[str] = None
++
++
++class QaPaths(BaseModel):
++    """Paths to the block's source files, relative to repo root."""
++
++    model_config = ConfigDict(extra="allow")
++
++    ts: str
++    md: Optional[str] = None
++    lean: Optional[str] = None
++
++
++class BlockQaReport(BaseModel):
++    """Top-level shape of a ``<block>.qa.json`` sidecar.
++
++    ``criteria`` maps each criterion id to an append-only array of reviewer
++    entries; multiple reviewers (script + agent + human) may co-exist and
++    are NOT deduplicated. The criterion's current verdict is the most
++    recent entry whose ``field_hash`` matches the present source files.
++    """
++
++    model_config = ConfigDict(extra="allow", populate_by_name=True)
++
++    schema_marker: Literal["block-qa/v1"] = Field(alias="$schema")
++    label: str
++    kind: str
++    paths: QaPaths
++    source_hashes: QaFieldHash
++    criteria: dict[str, list[QaCriterionEntry]]
++    updated_at: str
++
++
++class QaScriptSidecar(BaseModel):
++    """Per-criterion ``<criterion-id>.script.json`` checker-staleness sidecar.
++
++    Records the canonical (script_hash, script_commit_sha, deps_hash)
++    triple at the most recent qa-sweep run — the single-source-of-truth
++    view of "is checker X currently stale globally?".
++    """
++
++    model_config = ConfigDict(extra="allow", populate_by_name=True)
++
++    schema_marker: Literal["qa-script/v1"] = Field(alias="$schema")
++    criterion_id: str
++    source_file: str
++    script_hash: str
++    script_commit_sha: str
++    extra_inputs: Optional[list[str]] = None
++    deps_hash: Optional[str] = None
++    last_run_at: str
++    last_run_sha: str
++    engine_version: Optional[str] = None
++
++
++__all__ = [
++    "__version__",
++    "QaReviewerKind",
++    "QaResult",
++    "QaSeverity",
++    "QaReviewer",
++    "QaFieldHash",
++    "QaScore",
++    "QaEvidenceItem",
++    "QaCriterionEntry",
++    "QaPaths",
++    "BlockQaReport",
++    "QaScriptSidecar",
++]
+diff --git a/tools/block-qa-schema/python/block_qa_schema/__pycache__/__init__.cpython-311.pyc b/tools/block-qa-schema/python/block_qa_schema/__pycache__/__init__.cpython-311.pyc
+new file mode 100644
+index 0000000000000000000000000000000000000000..2b98597edb629bab9924a94084c03d796b0c1a22
+GIT binary patch
+literal 8603
+zcmcIp&2JmW6<<nAks?LevLst}9D6K(kugbGPHLpK<HS}RTaF{!u^qHDRBFXtiJL5U
+z>Di@hsVG1LMNt$z7)60xgQCa>l0y$gk$<5mP>_HR#GZt-m-bM|h)+57_hxoUN>r*O
+zK&jcMosXTFoq6x~e)IN|R4Sq1_s{w4`|nLC%0DO*{-W|G@^vAiC?6`iQc(1W-e*NB
+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
+AOaK4?
+
+literal 0
+HcmV?d00001
+
+diff --git a/tools/block-qa-schema/schema/block-qa.schema.json b/tools/block-qa-schema/schema/block-qa.schema.json
+new file mode 100644
+index 0000000..8cfad17
+--- /dev/null
++++ b/tools/block-qa-schema/schema/block-qa.schema.json
+@@ -0,0 +1,166 @@
++{
++  "$schema": "https://json-schema.org/draft/2020-12/schema",
++  "$id": "https://github.com/litlfred/qou/tools/block-qa-schema/schema/block-qa.schema.json",
++  "title": "BlockQaReport",
++  "description": "JSON shape of a per-content-block `<block>.qa.json` QA sidecar. Each content block (a .ts + .md + optional .lean triple) may carry one sidecar recording, per QA criterion, an append-only array of reviewer verdicts pinned to the content hashes they judged. Canonical interchange reference for the QOU block-QA format — readable from any language.",
++  "type": "object",
++  "required": ["$schema", "label", "kind", "paths", "source_hashes", "criteria", "updated_at"],
++  "additionalProperties": true,
++  "properties": {
++    "$schema": {
++      "const": "block-qa/v1",
++      "description": "Schema marker for this sidecar format."
++    },
++    "label": {
++      "type": "string",
++      "description": "Block label, kind-prefixed and stable (e.g. 'def:carbon-valence', 'prop:jet-tower-convergence')."
++    },
++    "kind": {
++      "type": "string",
++      "description": "Block kind — mirror of the .ts manifest's discriminator (definition / theorem / lemma / proposition / corollary / conjecture / example / remark / proof / simulator / prose / equation / diagram / table / algorithm)."
++    },
++    "paths": {
++      "type": "object",
++      "required": ["ts"],
++      "additionalProperties": true,
++      "properties": {
++        "ts": { "type": "string", "description": "Manifest path, relative to repo root." },
++        "md": { "type": "string", "description": "Narrative path, if present." },
++        "lean": { "type": "string", "description": "Formalization path, if present." }
++      },
++      "description": "Paths to the block's source files, relative to repo root."
++    },
++    "source_hashes": {
++      "$ref": "#/$defs/fieldHash",
++      "description": "Hashes of the present source files, refreshed on every write."
++    },
++    "criteria": {
++      "type": "object",
++      "additionalProperties": {
++        "type": "array",
++        "items": { "$ref": "#/$defs/criterionEntry" }
++      },
++      "description": "Per-criterion reviewer entries, keyed by criterion id (e.g. 'voice-status-leak', 'detangler-block-tanglement'). Multiple reviewers (script + agent + human) may co-exist; entries are NOT deduplicated. The criterion's current verdict is the most recent entry whose field_hash matches the present source files; if none matches, the criterion is stale and requires re-audit."
++    },
++    "updated_at": {
++      "type": "string",
++      "description": "Report creation / last-update timestamp (ISO-8601 UTC)."
++    }
++  },
++  "$defs": {
++    "fieldHash": {
++      "type": "object",
++      "additionalProperties": true,
++      "properties": {
++        "md": { "type": "string" },
++        "ts": { "type": "string" },
++        "lean": { "type": "string" }
++      },
++      "description": "12-char SHA-256 prefixes of each source file's UTF-8 bytes. Absent fields mean the audit did not depend on that file (or it did not exist at audit time)."
++    },
++    "reviewer": {
++      "type": "object",
++      "required": ["kind", "id"],
++      "additionalProperties": true,
++      "properties": {
++        "kind": {
++          "type": "string",
++          "enum": ["script", "agent", "human"],
++          "description": "script = deterministic CLI checker (reproducible); agent = LLM-driven reviewer (not deterministic); human = repo owner / collaborator adjudication (final authority)."
++        },
++        "id": {
++          "type": "string",
++          "description": "Stable identifier — script path, agent/skill name, or GitHub login."
++        },
++        "version": { "type": "string", "description": "Optional version pin (script revision, model id)." },
++        "script_hash": {
++          "type": "string",
++          "description": "12-char SHA-256 prefix of the checker's own source file at audit time (kind: script). Mismatch with the current file means the checker logic changed and the entry is stale."
++        },
++        "script_commit_sha": {
++          "type": "string",
++          "description": "Full git SHA of the most recent commit touching the checker's source file at audit time. Audit trail only — staleness is driven by script_hash."
++        },
++        "deps_hash": {
++          "type": "string",
++          "description": "12-char SHA-256 prefix of the concatenated extra inputs the checker consulted beyond the block under audit (e.g. the bibliography database). Mismatch means an input changed and the entry is stale."
++        },
++        "agent_model": { "type": "string", "description": "LLM model identifier (kind: agent), e.g. 'claude-opus-4-7'." },
++        "agent_session": { "type": "string", "description": "Reviewing agent's session id, if available." },
++        "agent_date": { "type": "string", "description": "ISO date of the agent review." },
++        "agent_skill": { "type": "string", "description": "Skill that dispatched the review, e.g. 'local/one-voice-audit'." }
++      },
++      "description": "Identity + provenance of the reviewer that produced an entry."
++    },
++    "score": {
++      "type": "object",
++      "required": ["value", "max"],
++      "additionalProperties": true,
++      "properties": {
++        "value": { "type": "number" },
++        "max": { "type": "number" },
++        "rubric": {
++          "type": "object",
++          "additionalProperties": { "type": "number" },
++          "description": "Optional per-dimension sub-scores."
++        }
++      },
++      "description": "Rubric score for rater-style quality criteria (e.g. proof-rater-*). A quality measure to improve over time, not a pass/fail gate. Convention: value/max >= 0.66 maps to result 'pass', 0.33-0.66 to 'warn', < 0.33 to 'fail'."
++    },
++    "criterionEntry": {
++      "type": "object",
++      "required": ["field_hash", "result", "reviewer", "reviewed_at"],
++      "additionalProperties": true,
++      "properties": {
++        "field_hash": {
++          "$ref": "#/$defs/fieldHash",
++          "description": "Source-file hashes captured at audit time. A verdict whose field_hash no longer matches the present sources is stale and must be re-run."
++        },
++        "result": {
++          "type": "string",
++          "enum": ["pass", "fail", "warn", "n/a"],
++          "description": "pass = satisfied; fail = violated (evidence must cite file:line + verbatim quote); warn = borderline, flagged but not blocking; n/a = criterion does not apply to this block kind."
++        },
++        "severity": {
++          "type": "string",
++          "enum": ["critical", "major", "minor"],
++          "description": "Severity when result is 'fail' or 'warn'."
++        },
++        "score": { "$ref": "#/$defs/score" },
++        "evidence": {
++          "oneOf": [
++            { "type": "string" },
++            {
++              "type": "array",
++              "items": {
++                "type": "object",
++                "additionalProperties": true,
++                "properties": {
++                  "line": { "type": "integer" },
++                  "text": { "type": "string" }
++                }
++              }
++            }
++          ],
++          "description": "Evidence for fail/warn verdicts: either a free-form 'file:line + verbatim quote' string, or a structured list of {line, text} locations (the shape some agent reviewers emit, e.g. on the voice axis)."
++        },
++        "metrics": {
++          "type": "object",
++          "additionalProperties": { "type": ["number", "string"] },
++          "description": "Optional structured numeric/heuristic measures the checker emits alongside its verdict — e.g. the detangler axis records per-block dependency-graph measures (fwd_emitted, tanglement_score, out_degree, in_degree, cone_size, depth, pagerank, edge_span_max, edge_span_mean, graph_energy, worst_target). Descriptive snapshots, not quality scores."
++        },
++        "reviewer": { "$ref": "#/$defs/reviewer" },
++        "reviewed_at": {
++          "type": "string",
++          "description": "When the audit ran. ISO-8601 UTC datetime; legacy agent entries may carry a bare ISO date."
++        },
++        "reviewed_sha": {
++          "type": "string",
++          "description": "Repo HEAD at audit time (full git SHA). Recommended; legacy agent entries (pre-2026-06) may omit it."
++        },
++        "notes": { "type": "string", "description": "Free-form notes." }
++      },
++      "description": "The outcome of one reviewer evaluating one criterion on one block."
++    }
++  }
++}
+diff --git a/tools/block-qa-schema/schema/qa-script.schema.json b/tools/block-qa-schema/schema/qa-script.schema.json
+new file mode 100644
+index 0000000..4e847bd
+--- /dev/null
++++ b/tools/block-qa-schema/schema/qa-script.schema.json
+@@ -0,0 +1,52 @@
++{
++  "$schema": "https://json-schema.org/draft/2020-12/schema",
++  "$id": "https://github.com/litlfred/qou/tools/block-qa-schema/schema/qa-script.schema.json",
++  "title": "QaScriptSidecar",
++  "description": "JSON shape of a per-criterion `<criterion-id>.script.json` sidecar recording the canonical (script_hash, script_commit_sha, deps_hash) triple captured at the most recent qa-sweep run. Block-level criterion entries snapshot the same triple inline; this sidecar is the single-source-of-truth view of 'is checker X currently stale globally?'. A checker bug fix changes script_hash, which invalidates every verdict that checker ever wrote, corpus-wide.",
++  "type": "object",
++  "required": ["$schema", "criterion_id", "source_file", "script_hash", "script_commit_sha", "last_run_at", "last_run_sha"],
++  "additionalProperties": true,
++  "properties": {
++    "$schema": {
++      "const": "qa-script/v1",
++      "description": "Schema marker for this sidecar format."
++    },
++    "criterion_id": {
++      "type": "string",
++      "description": "Criterion id this sidecar tracks (e.g. 'proof-no-bare-sorries')."
++    },
++    "source_file": {
++      "type": "string",
++      "description": "Path (repo-relative) to the checker's source file."
++    },
++    "script_hash": {
++      "type": "string",
++      "description": "12-char SHA-256 prefix of the checker source file's content."
++    },
++    "script_commit_sha": {
++      "type": "string",
++      "description": "Full git SHA of the most recent commit touching source_file."
++    },
++    "extra_inputs": {
++      "type": "array",
++      "items": { "type": "string" },
++      "description": "Optional repo-relative paths to extra-input files the checker consults (e.g. cached audit witnesses, the bibliography database)."
++    },
++    "deps_hash": {
++      "type": "string",
++      "description": "12-char SHA-256 prefix of the concatenated extra_inputs content (omitted if none)."
++    },
++    "last_run_at": {
++      "type": "string",
++      "description": "ISO-8601 UTC timestamp of the most recent qa-sweep run."
++    },
++    "last_run_sha": {
++      "type": "string",
++      "description": "Repo HEAD at the most recent sweep (full git SHA)."
++    },
++    "engine_version": {
++      "type": "string",
++      "description": "Engine fingerprint, e.g. 'bun-1.3.11+node-22'."
++    }
++  }
++}
+diff --git a/tools/block-qa-schema/tests/__pycache__/test_python.cpython-311-pytest-9.0.3.pyc b/tools/block-qa-schema/tests/__pycache__/test_python.cpython-311-pytest-9.0.3.pyc
+new file mode 100644
+index 0000000000000000000000000000000000000000..4f0b938581d99e920f9f0b4e0f833c952f682188
+GIT binary patch
+literal 25131
+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
+MVoiEi$Se2%0=@bYF#rGn
+
+literal 0
+HcmV?d00001
+
+diff --git a/tools/block-qa-schema/tests/test_python.py b/tools/block-qa-schema/tests/test_python.py
+new file mode 100644
+index 0000000..0cecf36
+--- /dev/null
++++ b/tools/block-qa-schema/tests/test_python.py
+@@ -0,0 +1,232 @@
++"""Smoke tests — Pydantic models validate real block-QA sidecar shapes."""
++
++import json
++import pathlib
++
++import pytest
++
++from block_qa_schema import (
++    BlockQaReport,
++    QaCriterionEntry,
++    QaScriptSidecar,
++    __version__,
++)
++
++
++def test_version():
++    # Bump in lockstep with pyproject.toml + package.json + js/index.ts VERSION
++    assert __version__ == "0.1.0"
++
++
++def test_minimal_report():
++    """A report with only the required fields validates."""
++    r = BlockQaReport.model_validate(
++        {
++            "$schema": "block-qa/v1",
++            "label": "def:carbon-valence",
++            "kind": "definition",
++            "paths": {"ts": "content/x/carbon-valence.ts"},
++            "source_hashes": {"ts": "a1b2c3d4e5f6"},
++            "criteria": {},
++            "updated_at": "2026-06-12T00:00:00Z",
++        }
++    )
++    assert r.label == "def:carbon-valence"
++    assert r.criteria == {}
++    assert r.paths.md is None
++
++
++def test_full_report_validates():
++    """A maximal report — script verdict with metrics, scored agent rater
++    entry, and a legacy agent entry without reviewed_sha — parses."""
++    raw = {
++        "$schema": "block-qa/v1",
++        "label": "prop:jet-tower-convergence",
++        "kind": "proposition",
++        "paths": {
++            "ts": "content/x/jet-tower-convergence.ts",
++            "md": "content/x/jet-tower-convergence.md",
++            "lean": "content/x/jet-tower-convergence.lean",
++        },
++        "source_hashes": {"ts": "a1b2c3d4e5f6", "md": "0f1e2d3c4b5a", "lean": "f6e5d4c3b2a1"},
++        "criteria": {
++            "detangler-block-tanglement": [
++                {
++                    "field_hash": {"md": "0f1e2d3c4b5a", "ts": "a1b2c3d4e5f6"},
++                    "result": "pass",
++                    "reviewer": {
++                        "kind": "script",
++                        "id": "content/pipeline/qa-checkers-extended.ts",
++                        "script_hash": "9a8b7c6d5e4f",
++                        "script_commit_sha": "610a6aa2bde5fabec35796ead6bbb0adb76f6533",
++                    },
++                    "reviewed_at": "2026-06-12T05:00:00+00:00",
++                    "reviewed_sha": "e3c959e9fd65b56aa37db507564357629f32f1c9",
++                    "metrics": {
++                        "fwd_emitted": 0,
++                        "tanglement_score": 0,
++                        "out_degree": 1,
++                        "in_degree": 0,
++                        "cone_size": 1,
++                        "pagerank": 0.000101,
++                        "edge_span_max": 16,
++                        "worst_target": "",
++                    },
++                }
++            ],
++            "proof-rater-goal-plausibility": [
++                {
++                    "field_hash": {"md": "0f1e2d3c4b5a", "ts": "a1b2c3d4e5f6", "lean": "f6e5d4c3b2a1"},
++                    "result": "fail",
++                    "severity": "minor",
++                    "score": {"value": 0.3, "max": 1, "rubric": {"gap_quality": 0.2, "route": 0.4}},
++                    "evidence": "core gap: the key step is an axiom",
++                    "reviewer": {
++                        "kind": "agent",
++                        "id": "local/proof-integration-watcher",
++                        "agent_model": "claude-opus-4-7",
++                        "agent_skill": "local/proof-integration-watcher",
++                    },
++                    "reviewed_at": "2026-06-07T12:00:00+00:00",
++                    "reviewed_sha": "c86793f7c0566a4a849e6e9a4c855697a437a785",
++                }
++            ],
++            # Legacy agent entry shape observed in the live corpus:
++            # bare-date reviewed_at, no reviewed_sha.
++            "voice-status-leak": [
++                {
++                    "field_hash": {"md": "9fb618864a10"},
++                    "result": "pass",
++                    "reviewer": {
++                        "kind": "agent",
++                        "id": "voice-status-leak-audit",
++                        "agent_model": "claude-opus-4-7",
++                        "agent_date": "2026-05-27",
++                        "agent_skill": "local/one-voice-audit",
++                    },
++                    "reviewed_at": "2026-05-27",
++                }
++            ],
++            # Structured-evidence shape observed in the live corpus
++            # (voice axis): evidence as a list of {line, text} locations.
++            "voice-editorializing": [
++                {
++                    "field_hash": {"md": "9fb618864a10"},
++                    "result": "warn",
++                    "severity": "minor",
++                    "evidence": [
++                        {"line": 112, "text": "Curiously, the detector magnetic field"},
++                        {"line": 130, "text": "remarkably, the excitation's"},
++                    ],
++                    "reviewer": {
++                        "kind": "agent",
++                        "id": "voice-editorializing-audit",
++                        "agent_model": "claude-opus-4-7",
++                        "agent_skill": "local/one-voice-audit",
++                    },
++                    "reviewed_at": "2026-05-27",
++                }
++            ],
++        },
++        "updated_at": "2026-06-12T05:00:00+00:00",
++    }
++    r = BlockQaReport.model_validate(raw)
++    assert r.schema_marker == "block-qa/v1"
++    tangle = r.criteria["detangler-block-tanglement"][0]
++    assert tangle.metrics is not None
++    assert tangle.metrics["edge_span_max"] == 16
++    assert tangle.metrics["worst_target"] == ""
++    rater = r.criteria["proof-rater-goal-plausibility"][0]
++    assert rater.score is not None and rater.score.value == 0.3
++    assert rater.score.rubric == {"gap_quality": 0.2, "route": 0.4}
++    legacy = r.criteria["voice-status-leak"][0]
++    assert legacy.reviewed_sha is None
++    assert legacy.reviewer.agent_date == "2026-05-27"
++    structured = r.criteria["voice-editorializing"][0]
++    assert isinstance(structured.evidence, list)
++    assert structured.evidence[0].line == 112
++    assert "magnetic field" in structured.evidence[0].text
++    # Round-trip is semantic (object-equal), not byte-identical; the
++    # $schema alias must survive a by-alias dump.
++    dumped = r.model_dump(mode="json", by_alias=True)
++    assert dumped["$schema"] == "block-qa/v1"
++    again = BlockQaReport.model_validate(dumped)
++    assert again.label == r.label
++
++
++def test_invalid_result_rejected():
++    """The result enum is closed."""
++    with pytest.raises(Exception):
++        QaCriterionEntry.model_validate(
++            {
++                "field_hash": {"md": "9fb618864a10"},
++                "result": "maybe",  # not in the enum
++                "reviewer": {"kind": "script", "id": "x.ts"},
++                "reviewed_at": "2026-06-12T00:00:00Z",
++            }
++        )
++
++
++def test_wrong_schema_marker_rejected():
++    """A sidecar claiming a different $schema is not a BlockQaReport."""
++    with pytest.raises(Exception):
++        BlockQaReport.model_validate(
++            {
++                "$schema": "qa-script/v1",
++                "label": "def:x",
++                "kind": "definition",
++                "paths": {"ts": "x.ts"},
++                "source_hashes": {},
++                "criteria": {},
++                "updated_at": "2026-06-12T00:00:00Z",
++            }
++        )
++
++
++def test_extra_fields_allowed():
++    """The sidecar format is extensible — extra fields don't fail validation."""
++    r = BlockQaReport.model_validate(
++        {
++            "$schema": "block-qa/v1",
++            "label": "rem:x",
++            "kind": "remark",
++            "paths": {"ts": "x.ts"},
++            "source_hashes": {},
++            "criteria": {},
++            "updated_at": "2026-06-12T00:00:00Z",
++            "my_custom_field": {"foo": "bar"},
++        }
++    )
++    assert r.kind == "remark"
++
++
++def test_script_sidecar():
++    """The per-criterion checker-staleness sidecar validates."""
++    s = QaScriptSidecar.model_validate(
++        {
++            "$schema": "qa-script/v1",
++            "criterion_id": "proof-no-bare-sorries",
++            "source_file": "content/pipeline/qa-checkers.ts",
++            "script_hash": "9a8b7c6d5e4f",
++            "script_commit_sha": "610a6aa2bde5fabec35796ead6bbb0adb76f6533",
++            "extra_inputs": ["content/schema/references.ts"],
++            "deps_hash": "1a2b3c4d5e6f",
++            "last_run_at": "2026-06-12T05:00:00+00:00",
++            "last_run_sha": "e3c959e9fd65b56aa37db507564357629f32f1c9",
++            "engine_version": "bun-1.3.11+node-22",
++        }
++    )
++    assert s.criterion_id == "proof-no-bare-sorries"
++    assert s.deps_hash == "1a2b3c4d5e6f"
++
++
++def test_json_schema_files_present():
++    """The shipped JSON schema files are at the documented paths."""
++    schema_dir = pathlib.Path(__file__).resolve().parent.parent / "schema"
++    block = json.loads((schema_dir / "block-qa.schema.json").read_text())
++    assert block["title"] == "BlockQaReport"
++    assert block["properties"]["$schema"]["const"] == "block-qa/v1"
++    assert "criterionEntry" in block["$defs"]
++    script = json.loads((schema_dir / "qa-script.schema.json").read_text())
++    assert script["title"] == "QaScriptSidecar"
++    assert script["properties"]["$schema"]["const"] == "qa-script/v1"
+-- 
+2.43.0
+
