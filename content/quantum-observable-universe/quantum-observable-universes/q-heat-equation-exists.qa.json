@@ -1031,7 +1031,195 @@
         "reviewed_at": "2026-06-11T18:06:24.673Z",
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "fa82fe43b7aa",
+          "ts": "14b187002874",
+          "lean": "1997089e0e63"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "q-heat-equation-exists.md:1-6 — 'Then there exists a formal solution u(t) of the q-heat equation' (bare statement only)",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:56:43.924Z",
+        "reviewed_sha": "818fe40a57161fb51fc25c9a4c36aa97eeb39f26",
+        "notes": "6-line statement-only block; no interpretive prose, no physical-meaning discussion"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "fa82fe43b7aa",
+          "ts": "14b187002874",
+          "lean": "1997089e0e63"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "quantum-observable-universes.ts:419 — listed in sec:q-linear-transforms ('Linear q-transforms: heat, Laplace, Fourier') beside q-heat-equation def + proof",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:56:43.959Z",
+        "reviewed_sha": "818fe40a57161fb51fc25c9a4c36aa97eeb39f26",
+        "notes": "existence prop for the section's headline transform; no sibling duplicates the claim"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "fa82fe43b7aa",
+          "ts": "14b187002874",
+          "lean": "1997089e0e63"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "q-heat-equation-exists.md:1-6 — formal solution over (C,Theta,G,S); no Real.*, no numeric q, no units, no order hypothesis",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:56:43.994Z",
+        "reviewed_sha": "818fe40a57161fb51fc25c9a4c36aa97eeb39f26",
+        "notes": "generic categorical statement matches substrate-chapter regime"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "fa82fe43b7aa",
+          "ts": "14b187002874",
+          "lean": "1997089e0e63"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "q-heat-equation-exists-proof.md — 'exists categorically without convergence hypotheses... Over C the sum converges' (specialisation point named)",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:56:44.028Z",
+        "reviewed_sha": "818fe40a57161fb51fc25c9a4c36aa97eeb39f26",
+        "notes": "formal-power-series/Peter-Weyl argument is algebraic; archimedean convergence explicitly fenced off"
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "fa82fe43b7aa",
+          "ts": "14b187002874",
+          "lean": "1997089e0e63"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "score": {
+          "value": 0.85,
+          "max": 1
+        },
+        "evidence": "q-heat-equation-exists-proof.md:1-3 — 'Formal solution: u(t) = exp(-t Delta_q) u_0 ... eigenfunction expansion' (plan stated up front, cites prop:q-heat-kernel-peter-weyl)",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:57:13.485Z",
+        "reviewed_sha": "818fe40a57161fb51fc25c9a4c36aa97eeb39f26",
+        "notes": "plan (semigroup exponential + Peter-Weyl expansion) is explicit before the steps; cited kernel lemma"
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "fa82fe43b7aa",
+          "ts": "14b187002874",
+          "lean": "1997089e0e63"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "evidence": "q-heat-equation-exists.lean:30-32 — 'intended Peter-Weyl semigroup witness is sharper but requires the q-heat semigroup infrastructure not yet in Mathlib'",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:57:13.522Z",
+        "reviewed_sha": "818fe40a57161fb51fc25c9a4c36aa97eeb39f26",
+        "notes": "sorry-free but via degenerate zero witness; closing the documented real gap needs missing Mathlib infra (between routine and core)"
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "fa82fe43b7aa",
+          "ts": "14b187002874",
+          "lean": "1997089e0e63"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "score": {
+          "value": 0.4,
+          "max": 1
+        },
+        "evidence": "quantum-observable-universes.ts:419-433 — same existence-proof template repeated for categorical-laplace-transform-exists / categorical-fourier-transform-exists siblings",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:57:13.558Z",
+        "reviewed_sha": "818fe40a57161fb51fc25c9a4c36aa97eeb39f26",
+        "notes": "standard heat-semigroup existence argument; template shared with Laplace/Fourier siblings, partial redundancy"
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "fa82fe43b7aa",
+          "ts": "14b187002874",
+          "lean": "1997089e0e63"
+        },
+        "result": "warn",
+        "severity": "major",
+        "evidence": "q-heat-equation-exists.lean:33-36 — 'u := fun _ _ => 0' zero witness; narrative requires u(0) = u_0 which the Lean Nonempty statement drops",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:57:13.597Z",
+        "reviewed_sha": "818fe40a57161fb51fc25c9a4c36aa97eeb39f26",
+        "notes": "weakening (initial condition u(0)=u_0 absent from Lean signature, trivial witness) is loudly documented in-file; no sorryAx/axiom injection"
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-12T19:57:13.597Z"
 }
