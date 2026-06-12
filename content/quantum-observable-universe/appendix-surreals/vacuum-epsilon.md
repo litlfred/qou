@@ -48,6 +48,18 @@ If the conjecture holds, several existing results lift:
  for some standard-real $c_{\mathfrak{H}}$. Standard-part of
  this shift is zero, so archimedean predictions are unchanged.
 
+4. **Boundary-conditioned vacuum sums become finite**: when the
+ multiplier of $\varepsilon$ is not a standard real but a
+ surreal-infinite mode count, the product can have *nonzero*
+ standard part, since $\omega \cdot \varepsilon = 1$. The
+ parallel-plate geometry realises exactly this case: the
+ [Casimir force](#conj:casimir-epsilon-vacuum) is the
+ $\mathrm{st}$-image of the plate-constrained unknot-count
+ gradient times $\varepsilon$. Consequences 3 and 4 are the two
+ regimes of the same axiom — a finite multiplier leaves
+ archimedean predictions unchanged, while a surreal-infinite
+ multiplier returns a finite force.
+
 ## Why this matters
 
 Two reasons:
