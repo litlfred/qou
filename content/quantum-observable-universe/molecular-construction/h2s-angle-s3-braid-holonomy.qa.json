@@ -895,7 +895,54 @@
         "reviewed_at": "2026-06-11T18:06:24.673Z",
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "b2d489e59946",
+          "ts": "2d17ea954c13",
+          "lean": "c45ede97cd13"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "molecular-construction.ts:130 — listed in sec:h2o-computation immediately after symmetric-block-domain-weight (ts:129), whose md:54-68 sets up the H2S +2.1deg residual this conjecture addresses",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T15:15:10.099Z",
+        "reviewed_sha": "87c42439a7864fd901796348ccd812a14a2d44d2",
+        "notes": "H2S residual is the section's H2O contrast case (explains why H2O's q^2 angle is clean, md:17-22); no better existing section; no sibling carries the holonomy identification"
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "b2d489e59946",
+          "ts": "2d17ea954c13",
+          "lean": "c45ede97cd13"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.35,
+          "max": 1
+        },
+        "evidence": "h2s-angle-s3-braid-holonomy.md:45-55 caveat — naive P_skew of the chiral word on V_(2,1) vanishes, exact involution/normalisation open; lean:33-35 class axiomatisation, instance = the conjecture",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T15:15:10.134Z",
+        "reviewed_sha": "87c42439a7864fd901796348ccd812a14a2d44d2",
+        "notes": "Core gap (~0.3 per rubric): identification itself is the goal; nudged to 0.35 by the Bring 1/sqrt5 realisation matching H2S/H2Se within 0.1deg (md:68-74)"
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-12T15:15:10.134Z"
 }
