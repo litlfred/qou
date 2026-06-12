@@ -67,11 +67,13 @@ NUCLEUS_PATTERNS = [
     r"\bargon",
     r"\bpotassium",
     r"\bcalcium",
-    # generic isotope tags
+    # generic isotope tags (each requires at least one digit — a fully
+    # optional digit prefix made the old Be tag match the English word
+    # "be" in descriptions)
     r"\b[1-9]\d*H\b",
     r"\bHe[1-9]\d*",
     r"\bLi[1-9]\d*",
-    r"\b[1-9]?\d*Be\b",
+    r"\b[1-9]\d*Be\b",
     r"\b[1-9]\d*B\b",
     r"\b[1-9]\d*C\b",
 ]
@@ -87,23 +89,23 @@ EXCLUDE_NAME_RE = re.compile(
 
 
 def is_per_nucleus_witness(witness_path: Path) -> bool:
-    """Heuristic: does this witness pertain to a specific nucleus?"""
+    """Heuristic: does this witness pertain to a specific nucleus?
+
+    Filename-only on purpose (2026-06-12). The previous description
+    fallback matched nuclei *mentioned in passing* — "m_p/m_e =",
+    "cross-validate proton trace", "validated at the 2-factor level
+    (deuteron…)" — flagging coefficient probes and convention
+    reconciliations as per-nucleus and inflating the audit
+    denominator (PR #2193 batch-2 findings: every reverted
+    false-positive fired on the description, never the name).
+    Per-nucleus producers put the nucleus in the witness filename
+    (the per-atom loop slug convention), so the name is the reliable
+    signal.
+    """
     name = witness_path.name
     if EXCLUDE_NAME_RE.search(name):
         return False
-    if NUCLEUS_RE.search(name):
-        return True
-    # Also check the description field
-    try:
-        doc = json.loads(witness_path.read_text())
-    except (json.JSONDecodeError, OSError):
-        return False
-    desc = doc.get("description", "")
-    if isinstance(desc, str) and NUCLEUS_RE.search(desc):
-        # but exclude meta-audit witnesses
-        if not EXCLUDE_NAME_RE.search(desc):
-            return True
-    return False
+    return bool(NUCLEUS_RE.search(name))
 
 
 def has_lean_uniqueness_ref(witness_path: Path) -> bool:
