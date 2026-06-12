@@ -762,7 +762,28 @@
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "04fef1ad0f0d",
+          "ts": "3c40d2311494"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "molecular-construction.ts:44 — listed in sec:molecular-assembly-projector; benzene-symmetric-projector.md:1-5 — 'Benzene is the special case $\\lambda = (2,2,2)$ of the assembly projector'; ts uses[] cites def:molecular-assembly-projector + def:threading-link (both same-section/chapter)",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T14:56:57.012Z",
+        "reviewed_sha": "4b67a0f018cd04e0334bb94e9cadb555fb8a82d3",
+        "notes": "Worked example of the section's central construction e_{(2,2,2),(6)}; distinct from sibling aromaticity-as-symmetric-projection (that block carries the aromaticity claim, this one the projector instance); example kind matches content."
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-12T14:56:57.012Z"
 }
