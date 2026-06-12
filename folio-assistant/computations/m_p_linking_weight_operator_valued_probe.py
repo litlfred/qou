@@ -66,6 +66,7 @@ import mpmath as mp  # noqa: E402
 
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from lean_uniqueness_refs import lean_uniqueness_ref  # noqa: E402
 from q_parameter import Q as Q_CANONICAL  # noqa: E402
 from murnaghan_nakayama import dim_q_lambda  # noqa: E402
 from partition_utils import hook_lengths  # noqa: E402 — centralized hook-length util
@@ -243,6 +244,7 @@ def main() -> int:
         tolerance=0,
         source="If a single canonical weight passes 1 ppm, that's the m_p closure",
     )
+    w_out.add_data("lean_uniqueness_ref", lean_uniqueness_ref("proton"))
     out = w_out.save()
     print(f"\n  Witness: {out.name}")
     return 0

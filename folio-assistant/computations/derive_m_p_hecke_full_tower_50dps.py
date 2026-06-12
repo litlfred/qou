@@ -142,6 +142,7 @@ from codata_constants import (  # noqa: E402
 from witness_base import (  # noqa: E402
     WitnessBuilder, load_and_hash_upstream,
 )
+from lean_uniqueness_refs import lean_uniqueness_ref  # noqa: E402
 from mass_formula_6term_mpfr_50dps import (  # noqa: E402
     term_4_frobenius_mp, term_6_habiro_residue_mp, f_Zdep_scale,
 )
@@ -468,6 +469,7 @@ def main() -> int:
         "rel_diff_p_ppm":  str(rel_diff_p * mp.mpf("1e6")),
     })
     builder.set_content_block("prop:mass-endomorphism-tower")
+    builder.add_data("lean_uniqueness_ref", lean_uniqueness_ref("proton"))
     builder.save()
     print(f"\n  Wrote {OUT_PATH.name}")
     return 0

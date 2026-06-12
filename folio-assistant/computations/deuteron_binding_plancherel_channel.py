@@ -40,6 +40,7 @@ from _precision import set_compute_dps  # noqa: E402
 import experimental_constants as _ec  # noqa: E402
 from q_parameter import q_at, q_str  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from lean_uniqueness_refs import lean_uniqueness_ref  # noqa: E402
 
 
 def main() -> int:
@@ -162,6 +163,7 @@ def main() -> int:
         tolerance=0,
         source=f"Scanned {len(candidates)} candidates at 80 dps.",
     )
+    w.add_data("lean_uniqueness_ref", lean_uniqueness_ref("deuteron (²H)"))
     out = w.save()
     print(f"\n  Witness: {out.name}")
     return 0

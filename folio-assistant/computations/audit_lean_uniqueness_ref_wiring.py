@@ -71,8 +71,8 @@ NUCLEUS_PATTERNS = [
     # optional digit prefix made the old Be tag match the English word
     # "be" in descriptions)
     r"\b[1-9]\d*H\b",
-    r"\bHe[1-9]\d*",
-    r"\bLi[1-9]\d*",
+    r"\bHe[1-9]\d*\b",
+    r"\bLi[1-9]\d*\b",
     r"\b[1-9]\d*Be\b",
     r"\b[1-9]\d*B\b",
     r"\b[1-9]\d*C\b",
@@ -83,7 +83,7 @@ NUCLEUS_RE = re.compile("|".join(NUCLEUS_PATTERNS), re.IGNORECASE)
 # cross-checks, generic inventories that aren't per-nucleus).
 EXCLUDE_NAME_RE = re.compile(
     r"audit|cross[_-]check|inventory|registry|table|"
-    r"index|sweep|drift|status|summary",
+    r"index|sweep|drift|status|summary|phase\d",
     re.IGNORECASE,
 )
 

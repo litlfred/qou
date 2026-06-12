@@ -66,6 +66,7 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
 from witness_base import WitnessBuilder  # noqa: E402
+from lean_uniqueness_refs import lean_uniqueness_ref  # noqa: E402
 from hecke_characters import standard_young_tableaux, partitions_of  # noqa: E402
 
 
@@ -147,6 +148,7 @@ def main() -> int:
             engine="python",
             output_dir=HERE,
         )
+        .add_data("lean_uniqueness_ref", lean_uniqueness_ref("helium-4"))
         .save()
     )
     print(f"\n  Wrote {out.name}")

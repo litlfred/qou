@@ -88,6 +88,7 @@ sys.path.insert(0, str(HERE))
 from _precision import set_compute_dps, fmt  # noqa: E402
 from codata_constants import M_E_MEV  # noqa: E402  (CAL-1)
 from witness_base import WitnessBuilder  # noqa: E402
+from lean_uniqueness_refs import lean_uniqueness_ref  # noqa: E402
 
 set_compute_dps()
 
@@ -262,7 +263,7 @@ def main() -> int:
     saved = WitnessBuilder.wrap_legacy(
         "proton-m_e-derivation", out,
         script_path=__file__, engine="mpmath",
-    ).save()
+    ).add_data("lean_uniqueness_ref", lean_uniqueness_ref("proton")).save()
     print(f"\n  Wrote {saved.name}")
     return 0
 

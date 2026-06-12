@@ -62,6 +62,7 @@ import mpmath as mp  # noqa: E402
 
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from lean_uniqueness_refs import lean_uniqueness_ref  # noqa: E402
 from q_parameter import Q as Q_CANONICAL  # noqa: E402
 from codata_constants import M_E_MEV, AME_B_DEUTERON_MEV_VALIDATION  # noqa: E402
 
@@ -132,6 +133,7 @@ def main() -> int:
         tolerance=0,
         source="6_2 cost floor 0.89 > winner max 0.25, independent of binding formula",
     )
+    w.add_data("lean_uniqueness_ref", lean_uniqueness_ref("deuteron (²H)"))
     out = w.save()
     print(f"\n  Witness: {out.name}")
     return 0
