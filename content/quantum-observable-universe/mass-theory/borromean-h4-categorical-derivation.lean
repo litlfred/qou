@@ -19,13 +19,13 @@ The h⁴ coefficient of the Borromean Markov trace
   `QOU.Hecke.SpectralProjector` (`eminus_idem`,
   `eplus_eminus_orthogonal`, `eplus_add_eminus = 1`).
 
-- The factor `1/4 = 1/[2]_q²|_{q=1}` is the symmetric-point limit of
-  the Wenzl normalisation: at q = 1 the Wenzl weights collapse to a
-  uniform value (cf. `rem:symmetric-point-resolution-loss`'s
-  resolution-loss narrative — Plancherel weights survive q = 1 but
-  channel distinctions collapse).  For H_3 the uniform Wenzl value
-  at q = 1 is `1/[2]_q^{n-1}|_{q=1} = 1/4` (n = 3 strands, c = 3
-  components on closure).
+- The factor `1/4 = 1/[2]_q²|_{q=1}` is the q = 1 evaluation of the
+  exact closed-form Wenzl weight `y_(2,1)(q) = 1/[2]_q²` established
+  in `prop:h3-markov-wenzl-weights`.  The full H_3 weight vector is
+  `([4]_q/[2]_q³, 1/[2]_q², 0)` — NOT uniform at q = 1 (it evaluates
+  to (1/2, 1/4, 0); the sign channel carries zero weight identically
+  by the Temperley-Lieb quotient, and the Jones-normalised trace is
+  chiral, so no bar-involution uniformity applies).
 
 This file states the numeric factorisation lemma `(-3) · (1/4) = -3/4`
 and proves it by `norm_num`.  Each ingredient now has a categorical
@@ -63,8 +63,9 @@ Each factor has its categorical home on `main`:
   `χ^{(2,1)}(β_Bor) = 2 - 3h⁴ - h⁶` supplied by the q-heat-kernel
   Peter-Weyl decomposition (`prop:q-heat-kernel-peter-weyl`,
   `prop:habiro-residue-sum-equivalence`).
-- `1/4 = 1/[2]_q²|_{q=1}` is the symmetric-point limit of the Wenzl
-  normalisation (cf. `rem:symmetric-point-resolution-loss`).
+- `1/4 = 1/[2]_q²|_{q=1}` is the q = 1 evaluation of the exact
+  closed-form weight `y_(2,1)(q) = 1/[2]_q²`
+  (cf. `prop:h3-markov-wenzl-weights`).
 
 The composition theorem connecting these to `tr_M(β_Bor)` (q-Schur
 duality + Markov-trace existence) is deferred to a follow-up Lean
@@ -85,8 +86,9 @@ theorem borromean_h4_numeric_factorisation :
 --   • prop:q-heat-kernel-peter-weyl + prop:habiro-residue-sum-equivalence
 --     (PR #2131) — supply the polynomial form
 --     χ^{(2,1)}(β_Bor) = 2 − 3h⁴ − h⁶ as a q-heat-kernel consequence.
---   • rem:symmetric-point-resolution-loss — supplies the Wenzl-measure
---     collapse to the uniform 1/[2]_q^{n-1}|_{q=1} value at q = 1.
+--   • prop:h3-markov-wenzl-weights — exact closed-form weights
+--     ([4]_q/[2]_q³, 1/[2]_q², 0); the 1/4 is y_(2,1)(q) = 1/[2]_q²
+--     at q = 1 (weights NOT uniform; sign channel is TL-quotient zero).
 -- Full categorical Lean derivation (deferred — needs q-Schur duality
 -- + Markov-trace existence theorems that compose the above):
 --

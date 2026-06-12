@@ -91,7 +91,7 @@ from _precision import set_compute_dps  # noqa: E402
 set_compute_dps()
 
 from witness_base import WitnessBuilder  # noqa: E402
-from _gap_a4_qsafe import Q_0_50DPS  # noqa: E402
+from _gap_a4_qsafe import Q_0_50DPS, q_number  # noqa: E402
 
 # Realistic tolerance for float-precision assertions: WitnessBuilder
 # coerces computed/expected to binary64 floats, so tolerances tighter
@@ -264,38 +264,70 @@ def check_q_2_squared_identification() -> dict:
     }
 
 
-def check_universal_wenzl_at_q_one() -> dict:
-    """Verify that all H_3 irreps have the SAME Wenzl weight at q=1,
-    namely y_λ(0) = 1/[2]_q^{n−1}|_{q=1} = 1/4 for n=3 strands."""
+def check_wenzl_weights_at_q_one() -> dict:
+    """Verify the CLOSED-FORM (non-uniform) H_3 Wenzl weight vector at
+    q=1: (y_(3), y_(2,1), y_(1³))|_{q=1} = (1/2, 1/4, 0).
+
+    CORRECTION (2026-06-12, review round on PR #2191): the original
+    T18d claimed all three weights were uniformly 1/4 via a
+    bar-involution argument.  That was WRONG — the Jones-normalised
+    Markov trace is chiral (not invariant under the sign-twist
+    automorphism σ ↦ −q·σ⁻¹), so y_(3) ≠ y_(1³).  The correct
+    closed forms (prop:h3-markov-wenzl-weights):
+
+        y_(3)(q)   = [4]_q / [2]_q³
+        y_(2,1)(q) = 1 / [2]_q²
+        y_(1³)(q)  = 0   (identically — Temperley-Lieb quotient)
+
+    This check verifies (a) the q=1 evaluation (1/2, 1/4, 0)
+    satisfies the Markov normalisation, (b) the TL-quotient algebraic
+    identity [2]³ − 2[2] = [4] holds at a sample q, and (c) the
+    closed-form weights reproduce the Borromean trace exactly.
+    """
     print()
     print("=" * 78)
-    print("T18d — All H_3 Wenzl weights equal 1/4 at q=1")
+    print("T18d — Closed-form H_3 Wenzl weights at q=1: (1/2, 1/4, 0)")
     print("=" * 78)
-    print("  Claim: y_{(3)}(0) = y_{(2,1)}(0) = y_{(1³)}(0) = 1/4 = 1/2^{n−1}|_{n=3}")
+    print("  y_(3)(q) = [4]_q/[2]_q³,  y_(2,1)(q) = 1/[2]_q²,  y_(1³)(q) = 0")
+    print("  At q=1: (1/2, 1/4, 0) — NOT uniform (Jones trace is chiral;")
+    print("  the sign channel is killed identically by the TL quotient).")
     print()
-    print("  Proof sketch:")
-    print("    (i)  y_{(2,1)}(0) = 1/4 (T18b above).")
-    print("    (ii) Bar-involution symmetry q ↔ q⁻¹ exchanges (3) and (1³),")
-    print("         so y_{(3)}(0) = y_{(1³)}(0).")
-    print("    (iii) Markov normalization Σ_λ y_λ(0)·d_λ = tr_M(1_3) = 1:")
-    print("         y_{(3)}(0) + y_{(2,1)}(0)·2 + y_{(1³)}(0) = 1")
-    print("         y_{(3)}(0) + 1/2 + y_{(1³)}(0) = 1")
-    print("         y_{(3)}(0) + y_{(1³)}(0) = 1/2")
-    print("         By (ii): 2·y_{(3)}(0) = 1/2  ⟹  y_{(3)}(0) = 1/4. ✓")
-    print()
-    # Verify the Markov sum.
-    y_3 = mp.mpf("0.25")
+    # (a) Markov sum at q=1 with the CORRECT weights.
+    y_3 = mp.mpf("0.5")
     y_21 = mp.mpf("0.25")
-    y_111 = mp.mpf("0.25")
+    y_111 = mp.mpf("0")
     markov_sum = y_3 * 1 + y_21 * 2 + y_111 * 1
-    print(f"  Verify Markov sum: 1·(1/4) + 2·(1/4) + 1·(1/4) = "
+    print(f"  (a) Markov sum: 1·(1/2) + 2·(1/4) + 1·0 = "
           f"{mp.nstr(markov_sum, 14)}  (expected: 1)")
+    # (b) TL-quotient identity [2]³ − 2[2] − [4] = 0 at a sample q.
+    q_s = mp.mpf("1.3")
+    two = q_number(2, q_s)
+    four = q_number(4, q_s)
+    tl_residual = two ** 3 - 2 * two - four
+    print(f"  (b) TL identity at q=1.3: [2]³ − 2[2] − [4] = "
+          f"{mp.nstr(tl_residual, 6)}  (expected: 0)")
+    # (c) Closed-form weights reproduce the Borromean trace at sample q.
+    h_s = q_s - 1 / q_s
+    chi21 = 2 - 3 * h_s ** 4 - h_s ** 6
+    tr_via_weights = (four / two ** 3) * 1 + (1 / two ** 2) * chi21
+    tr_closed = tr_M_borromean_closed_form(h_s)
+    borr_diff = abs(tr_via_weights - tr_closed)
+    print(f"  (c) Borromean reproduction at q=1.3: |weights − closed| = "
+          f"{mp.nstr(borr_diff, 6)}  (expected: 0)")
     return {
-        "y_3_at_zero": str(y_3),
-        "y_2_1_at_zero": str(y_21),
-        "y_1_1_1_at_zero": str(y_111),
+        "y_3_at_q_one": str(y_3),
+        "y_2_1_at_q_one": str(y_21),
+        "y_1_1_1_at_q_one": str(y_111),
         "markov_sum_check": str(markov_sum),
         "markov_sum_equals_one": abs(markov_sum - 1) < TOL_NEAR_ZERO,
+        "tl_quotient_identity_residual": str(tl_residual),
+        "borromean_reproduction_diff": str(borr_diff),
+        "correction_note": (
+            "Original T18d claimed uniform weights (1/4, 1/4, 1/4) via "
+            "bar-involution; WRONG — Jones trace is chiral. Corrected to "
+            "(1/2, 1/4, 0) per prop:h3-markov-wenzl-weights. Caught by "
+            "review on PR #2191."
+        ),
     }
 
 
@@ -326,12 +358,12 @@ def main():
     h4_extract = check_h4_coefficient_extraction()
     wenzl = check_wenzl_weight_derivation()
     normalization = check_q_2_squared_identification()
-    universal = check_universal_wenzl_at_q_one()
+    weights_q1 = check_wenzl_weights_at_q_one()
 
     w.add_data("h4_extraction", h4_extract)
     w.add_data("wenzl_weight_derivation", wenzl)
     w.add_data("markov_normalization", normalization)
-    w.add_data("universal_wenzl_at_q_one", universal)
+    w.add_data("wenzl_weights_at_q_one", weights_q1)
 
     w.add_assertion(
         "h4_coefficient_of_tr_M_equals_minus_three_quarters",
@@ -374,14 +406,30 @@ def main():
         ),
     )
     w.add_assertion(
-        "universal_wenzl_markov_sum_equals_one",
-        computed=float(universal["markov_sum_check"]),
+        "closed_form_wenzl_markov_sum_equals_one",
+        computed=float(weights_q1["markov_sum_check"]),
         expected=1.0,
         tolerance=TOL_FLOAT,
         source=(
-            "Σ_λ y_λ(0)·d_λ = tr_M(1_3) = 1 (Markov normalization for "
-            "the identity braid).  With y_{(3)}=y_{(2,1)}=y_{(1³)}=1/4 "
-            "and d_λ = (1, 2, 1): 1·1/4 + 2·1/4 + 1·1/4 = 1."
+            "Σ_λ y_λ(1)·d_λ = tr_M(1_3) = 1 (Markov normalization for "
+            "the identity braid) with the CLOSED-FORM weight vector "
+            "(y_(3), y_(2,1), y_(1³))|_{q=1} = (1/2, 1/4, 0) and "
+            "d_λ = (1, 2, 1): 1·(1/2) + 2·(1/4) + 1·0 = 1. "
+            "CORRECTED from the original uniform (1/4,1/4,1/4) claim — "
+            "the Jones trace is chiral; see prop:h3-markov-wenzl-weights."
+        ),
+    )
+    w.add_assertion(
+        "borromean_reproduction_from_closed_form_weights",
+        computed=float(weights_q1["borromean_reproduction_diff"]),
+        expected=0.0,
+        tolerance=TOL_FLOAT,
+        source=(
+            "The closed-form weights y_(3) = [4]_q/[2]_q³, "
+            "y_(2,1) = 1/[2]_q², y_(1³) = 0 reproduce "
+            "tr_M(β_Bor) = (4 + h² − 3h⁴ − h⁶)/(h² + 4) exactly at "
+            "sample q = 1.3 (independent verification of "
+            "prop:h3-markov-wenzl-weights)."
         ),
     )
 
@@ -394,8 +442,8 @@ def main():
         "factor 1/4 is structurally the Markov-trace normalization for "
         "c=3-component link closure: tr_M = V_{Jones} / [2]_q^{c−1}, "
         "and (h² + 4) = [2]_q² is exactly the denominator in the closed "
-        "form tr_M(β_Bor) = (4 + h² − 3h⁴ − h⁶) / (h² + 4).  All four "
-        "assertions pass to 50 dps.  IMPORTANT SCOPE: this closes the "
+        "form tr_M(β_Bor) = (4 + h² − 3h⁴ − h⁶) / (h² + 4).  All five "
+        "assertions pass.  IMPORTANT SCOPE: this closes the "
         "WITHIN-H_3 categorical chain (3-strand side of the Borromean "
         "story); it does NOT resolve the CROSS-ALGEBRA h⁴ obstruction "
         "linking 5-strand A_5 fiber action to 3-strand H_3 — that was "
