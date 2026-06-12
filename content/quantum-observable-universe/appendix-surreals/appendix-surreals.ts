@@ -136,6 +136,10 @@ export default chapter({
         // Casimir force is the st-image of the ε·(unknot-mode-count)
         // product, with surreal-infinite mode-count gradient.
         "casimir-epsilon-vacuum",
+        // First substrate correction to the Casimir force: carried by
+        // the figure-eight knot 4_1 (the minimal hyperbolic mode);
+        // weight J_{4_1} = 1 + (3/4)h² + O(h⁴), the 3/4 Lean-proved.
+        "casimir-first-q-correction",
       ],
     },
     {
