@@ -65,6 +65,7 @@ import mpmath as mp  # noqa: E402
 import sympy as sp  # noqa: E402
 
 from witness_base import WitnessBuilder  # noqa: E402
+from lean_uniqueness_refs import lean_uniqueness_ref  # noqa: E402
 from habiro_coefficients_atomic import (  # noqa: E402
     to_u_polynomial,
     cyclotomic_expansion,
@@ -299,6 +300,7 @@ def _write_witness(path: Path, slug: str, body: dict, q0_float: float,
         engine="sympy Poly + sequential cyclotomic division (via closed_form_tau_M closed form)",
         output_dir=path.parent,
     )
+    wb.add_data("lean_uniqueness_ref", lean_uniqueness_ref(slug))
     wb.save()
     print(f"  → wrote {path.name}")
 

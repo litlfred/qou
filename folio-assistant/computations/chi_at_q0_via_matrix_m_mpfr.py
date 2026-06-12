@@ -82,6 +82,7 @@ from per_irrep_pole_atom import ATOMS, ATOM_ALIASES, parts_of  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from tr_m_wenzl_bridge_mpfr import _load_y_lambda  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from lean_uniqueness_refs import lean_uniqueness_ref  # noqa: E402
 
 from derived_chi_catalogue_matrix_m_mpfr import (  # noqa: E402
     precompute_block_tables_mpfr,
@@ -362,6 +363,7 @@ def save_witness(record: dict, start_time: float) -> Path:
         f"consumers swap transparently. NO f64 in compute path."
     )
     wb.add_data("atom", record["atom"])
+    wb.add_data("lean_uniqueness_ref", lean_uniqueness_ref(record["atom"]))
     wb.add_data("Z", record["Z"])
     wb.add_data("N", record["N"])
     wb.add_data("n_strands", record["n_strands"])
