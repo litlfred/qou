@@ -1125,7 +1125,104 @@
         "reviewed_at": "2026-06-11T18:06:24.673Z",
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7"
       }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "050574d828a0",
+          "ts": "ea81fb46ccc9",
+          "lean": "5def2eb9e06e"
+        },
+        "result": "fail",
+        "severity": "major",
+        "evidence": "pawlowski-leitner-inner-product.lean:48-50 — theorem pawLei_pos_def ... : ip.normSq i > 0 := ip.normSq_pos i, but the normSq_pos field is COMMENTED OUT at lean:43 (-- normSq_pos : ... -- (archimedean; not meaningful over R_q))",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T14:48:47.679Z",
+        "reviewed_sha": "a92be7696ed6f56c18f5d40d4faaef10ec44ec22",
+        "notes": "Proof body references a structure field that no longer exists; the positivity claim rests on a removed hypothesis. Decl as claimed-proved is broken/self-inconsistent (ordering > 0 over Laurent ring R_q is not even well-defined)."
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "050574d828a0",
+          "ts": "ea81fb46ccc9",
+          "lean": "5def2eb9e06e"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0.2,
+          "max": 1
+        },
+        "evidence": "pawlowski-leitner-inner-product.lean:48-50 — proof is 'ip.normSq_pos i' but that field is removed",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T14:49:21.676Z",
+        "reviewed_sha": "a92be7696ed6f56c18f5d40d4faaef10ec44ec22",
+        "notes": "Stated plan ('follows from normSq_pos') dangles on a deleted field; effectively opaque/broken => 0.2."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "050574d828a0",
+          "ts": "ea81fb46ccc9",
+          "lean": "5def2eb9e06e"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.45,
+          "max": 1
+        },
+        "evidence": "pawlowski-leitner-inner-product.md — orthogonality of PawLei basis w.r.t. adjoint-trace pairing",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T14:49:21.714Z",
+        "reviewed_sha": "a92be7696ed6f56c18f5d40d4faaef10ec44ec22",
+        "notes": "Standard intertwiner inner-product / orthogonal-basis argument; not duplicated in corpus but conventional => 0.45."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "050574d828a0",
+          "ts": "ea81fb46ccc9",
+          "lean": "5def2eb9e06e"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0.3,
+          "max": 1
+        },
+        "evidence": "pawlowski-leitner-inner-product.lean:43 — normSq_pos commented out: '(archimedean; not meaningful over R_q)'",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T14:49:49.257Z",
+        "reviewed_sha": "a92be7696ed6f56c18f5d40d4faaef10ec44ec22",
+        "notes": "Core gap: positivity is archimedean, cannot be stated over R_q=ℤ[q,q⁻¹] as written; needs ι:R_q→ℝ specialisation. Core => ~0.3 (fail band)."
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-12T14:49:49.257Z"
 }
