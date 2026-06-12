@@ -1118,7 +1118,104 @@
         "reviewed_at": "2026-06-11T18:06:24.673Z",
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7"
       }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "72b143aa4e84",
+          "ts": "48339defe7d8",
+          "lean": "9a535e920808"
+        },
+        "result": "fail",
+        "severity": "major",
+        "evidence": ".md:16-18 — 'the number of summands is floor(n/2)+1' (equality) + full iso claim; canonical Lean lean/QOU/FeynmanPathIntegrals.lean:116-121 proves only 'decomp.partitions.length <= decomp.n / 2 + 1' by extracting structure field decomp.partitions_length; sibling .lean:20-22 is 'theorem eigenbasis_decomposition : True := trivial'",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:41:09.165Z",
+        "reviewed_sha": "3bbca7e4dce81e46653e96dae7e0cba3d73e39bd",
+        "notes": "Silent weakening: the narrative lemma asserts the Schur-Weyl iso and an exact summand count; the Lean conclusion is an inequality extracted from a hypothesized SchurWeylDecomposition structure (the bound restates the partitions_length field), and the iso existence is hypothesis, not theorem. Neither the = vs <= gap nor the hypothesis-extraction pattern is flagged in .md/.ts; the same-name sibling stub concluding True compounds the mismatch."
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "72b143aa4e84",
+          "ts": "48339defe7d8",
+          "lean": "9a535e920808"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.8,
+          "max": 1
+        },
+        "evidence": "feynman-eigenbasis-decomposition-proof.md:2-4 — 'By the q-analogue of Schur--Weyl duality ... (prop:knot-eigenbasis-complete)(1)'; :20-22 explicit spin enumeration j = n/2, n/2-1, ...",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:41:09.203Z",
+        "reviewed_sha": "3bbca7e4dce81e46653e96dae7e0cba3d73e39bd",
+        "notes": "Plan stated up front: single cited duality plus an explicit enumeration giving the count; a competent reader knows the argument before the steps."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "72b143aa4e84",
+          "ts": "48339defe7d8",
+          "lean": "9a535e920808"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.75,
+          "max": 1
+        },
+        "evidence": "lean/QOU/FeynmanPathIntegrals.lean:116-121 sorry-free; real content (q-Schur-Weyl iso) lives as SchurWeylDecomposition structure hypothesis (:363-388 fields complete/partitions_length)",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:41:09.239Z",
+        "reviewed_sha": "3bbca7e4dce81e46653e96dae7e0cba3d73e39bd",
+        "notes": "No sorry anywhere, but the de-facto gap is constructing a concrete SchurWeylDecomposition instance: a classical published result (Chari-Pressley Ch.10 cited) so closing is mathematically certain, though Mathlib lacks quantum-group Schur-Weyl — engineering-heavy, not conceptually blocked."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "72b143aa4e84",
+          "ts": "48339defe7d8",
+          "lean": "9a535e920808"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "evidence": ".md:7-18 restates the standard q-Schur-Weyl decomposition for SU_q(2) restricted to length<=2 partitions; proof block cites prop:knot-eigenbasis-complete which already carries the iso",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:41:09.276Z",
+        "reviewed_sha": "3bbca7e4dce81e46653e96dae7e0cba3d73e39bd",
+        "notes": "Standard textbook decomposition applied as the corpus's eigenbasis lemma; not duplicated elsewhere in mass-theory but no novel argument — the content is one citation deep into prop:knot-eigenbasis-complete."
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-12T19:41:09.276Z"
 }
