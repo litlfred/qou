@@ -272,4 +272,56 @@ if __name__ == "__main__":
         tolerance=0.0,
         source="prop:knot-operator-lp-selection",
     )
+
+    # ── Canonical LP-dual record ─────────────────────────────────
+    # Per CLAUDE.md §"LP / SDP duals — first-class infra": every
+    # operator-selection witness MUST emit primal AND dual variables
+    # (y0_star, y_star, active_set, primal_obj, dual_obj,
+    # duality_gap). The canonical H_3 knot-operator-selection LP
+    # instance: d=6 NF-basis operators {1, s0, s1, s0s1, s1s0,
+    # s0s1s0}, objective t_i = tr_M(b_i) (post-2026-05-19-fix
+    # TR_M[5] = h z^2 + z), Frobenius constraints G_ij = tr_M(b_i
+    # b_j), net target = net(NF(B3)) for the canonical 3-strand
+    # proton braid word (s0 s1)^3. Solved through the mandated
+    # entry point lp_dual_solver.solve_operator_selection_lp (auto
+    # backend: clarabel MPFR ~50 dps when available, else scipy).
+    import numpy as np  # noqa: E402
+    from lp_dual_solver import solve_operator_selection_lp  # noqa: E402
+    from pyhecke.gram import (  # noqa: E402
+        TR_M as _TR_M, gram_matrix as _gram_matrix,
+        nf_of_word as _nf_of_word, nf_net as _nf_net,
+    )
+
+    _t = np.asarray(_TR_M, dtype=float)
+    _G = _gram_matrix()
+    _b3_nf = _nf_of_word([0, 1, 0, 1, 0, 1])
+    _n_target = float(_nf_net(_b3_nf))
+    _lp = solve_operator_selection_lp(_t, _G, _n_target)
+    _lp_rec = _lp.to_dict()
+    # Merge the validator-required dual fields at top level (the
+    # lp_dual_witness_validator scans for them there).
+    for _k, _v in _lp_rec.items():
+        w.add_data(_k, _v)
+    w.add_data(
+        "lp_instance",
+        {
+            "basis": ["1", "s0", "s1", "s0*s1", "s1*s0", "s0*s1*s0"],
+            "t_source": "pyhecke.gram.TR_M (post-be773569 fix)",
+            "G_source": "pyhecke.gram.gram_matrix()",
+            "n_target_source": "net(NF((s0*s1)^3)) — canonical B3 word",
+            "n_target": _n_target,
+        },
+    )
+    _gap = abs(float(_lp_rec.get("duality_gap", float("nan"))))
+    w.add_assertion(
+        "lp_strong_duality_gap_small",
+        computed=1.0 if _gap < 1e-6 else 0.0,
+        expected=1.0,
+        tolerance=0.0,
+        source=("Strong duality on the canonical H_3 operator-"
+                "selection LP: |primal_obj - dual_obj| < 1e-6 "
+                "(prop:operator-selection-lp dual program; solver "
+                "lp_dual_solver.solve_operator_selection_lp)."),
+    )
+
     w.save()
