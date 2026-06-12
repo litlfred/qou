@@ -1056,7 +1056,32 @@
         "reviewed_at": "2026-06-11T18:06:24.673Z",
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7"
       }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "6ed38ffa15b0",
+          "ts": "59d832f9391e",
+          "lean": "13ff87785e73"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0.2,
+          "max": 1
+        },
+        "evidence": "staircase-ew-residual.md:32-35 — k=3 closes only to 0.13%; md:46-47 — k=4 'e[254]/e[188] = 1.01357 ≈ q^{1/7} = 1.01502 (relative error 0.14%)' for an EXACT-ratio claim; lean/QOU/StaircaseCornerHook/StaircaseEWResidual.lean:25-32 class is a placeholder 'residual = 0' not matching the stated spectral content",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T15:18:10.922Z",
+        "reviewed_sha": "6531332d261aa0fd83ba857384f0ae7918f69349",
+        "notes": "Gap is the conjecture itself (restates-target ~0.0); persistent 0.13-0.14% deviation in an exact eigenvalue-ratio claim plus the k=4 pairwise reinterpretation and untestable k=2 make closure as stated implausible; modest empirical near-support lifts it to 0.2."
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-12T15:18:10.922Z"
 }
