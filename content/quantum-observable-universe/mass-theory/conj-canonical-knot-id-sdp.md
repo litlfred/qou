@@ -50,11 +50,27 @@ convention.)
 The knot assignments above were originally found by matching
 hyperbolic volumes to AME binding energies:
 
-| Nucleus | Knot/link | Vol (SnapPy) | Vol $/ \mathfrak{E}_0$ (approx) | Match quality |
-|---------|-----------|-------------|-------------------------------|---------------|
-| $^2$H | $6_2$ | $3.16396$ | $\approx 0.762$ | $< 1\%$ after multiplicity |
-| $^3$H | $8_{11}$ | $3.42721$ | $\approx 0.826$ | $< 0.5\%$ after $\rho = 2$ |
-| $^3$He | $L_{6a4}$ | $5.33349$ | $\approx 1.285$ | $< 2\%$ after correction |
+| Nucleus | Knot/link | Vol (SnapPy) | $\rho \cdot m_e \cdot \mathrm{Vol}$ (MeV) | vs $B_{\mathrm{AME}}$ |
+|---------|-----------|-------------|-------------------------------------------|------------------------|
+| $^2$H | $6_2$ | $4.40083$ | $\approx 2.2488$ | $+1.09\%$ |
+| $^3$H | $8_{11}$ | $8.28632$ | $\approx 8.4686$ | $-0.16\%$ |
+| $^3$He | $L_{6a4}$ | $7.32772$ | $\approx 7.4889$ | $-2.97\%$ |
+
+Here $\rho \in \{1, 2, 2\}$ is the multiplicity from the table above and
+$m_e$ is the electron mass (CAL-1); the matching law
+$B_{\mathrm{AME}}(\mathfrak{H}) \approx \rho \cdot m_e \cdot \mathrm{Vol}(K)$
+carries no free parameter.
+
+(Earlier revisions of this table printed the volumes $3.16396$, $3.42721$,
+$5.33349$ — the census volumes of $6_1$, $8_1$, $6^3_1$, subscript-neighbours
+of the named knots, surviving from a superseded draft normalised by
+$\mathfrak{E}_0 \approx 4.150$ MeV.  Live-census verification and the
+two-knot-set adjudication confirm the named assignment: the named set
+reproduces the match pattern above, while the orphan volume set misses by
+$27$–$59\%$ under the same law — see
+[`docs/audits/2026-06-12-knot-id-volume-match-adjudication.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-06-12-knot-id-volume-match-adjudication.md)
+and the witnesses `snappy-census-volume-verification.witness.json`,
+`knot-id-volume-match-adjudication.witness.json`.)
 
 The volume-matching identification is empirically strong, but it does not
 constitute a categorical derivation.  The conjecture asserts that the SDP

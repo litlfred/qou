@@ -123,9 +123,14 @@ def identify_orphans(orphans: list[mp.mpf]) -> dict[str, list[str]]:
     """
     import snappy
 
-    targets = [float(v) for v in orphans]
-    hi = max(targets) + 10 * ORPHAN_MATCH_TOL
-    out: dict[str, list[str]] = {str(v): [] for v in orphans}
+    if not orphans:
+        return {}
+    # Pair each float target with its dict key explicitly — zip-ing a
+    # parallel list against dict keys silently misaligns when orphans
+    # contain duplicate values (dict keys dedupe). Gemini review #2192.
+    targets = [(float(v), str(v)) for v in orphans]
+    hi = max(t for t, _ in targets) + 10 * ORPHAN_MATCH_TOL
+    out: dict[str, list[str]] = {key: [] for _, key in targets}
     t0 = time.monotonic()
 
     n = 0
@@ -134,7 +139,7 @@ def identify_orphans(orphans: list[mp.mpf]) -> dict[str, list[str]]:
         v = float(m.volume())
         if v > hi:
             break
-        for t, key in zip(targets, out):
+        for t, key in targets:
             if abs(v - t) < ORPHAN_MATCH_TOL:
                 ids = m.identify()
                 tail = f" = {ids[0]}" if ids else ""
@@ -152,7 +157,7 @@ def identify_orphans(orphans: list[mp.mpf]) -> dict[str, list[str]]:
             v = float(m.volume())
         except Exception:  # noqa: BLE001 — non-hyperbolic entries
             continue
-        for t, key in zip(targets, out):
+        for t, key in targets:
             if abs(v - t) < ORPHAN_MATCH_TOL:
                 out[key].append(f"{m.name()}({v:.6f})")
         if n % SCAN_PROGRESS_EVERY == 0:
