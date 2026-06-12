@@ -57,8 +57,9 @@ multiplicity convention rescues the orphan set.
   the thread-2 update is dissolved.
 - **The printed volume DIGITS are stale** — survivors of an earlier draft
   (internally consistent with 𝔈₀ ≈ 4.1505 ≈ 8.122·m_e, recorded here only
-  as provenance of the stale column, not endorsed). The 6₁ value also
-  leaked into `MostowRigidity.lean:264`.
+  as provenance of the stale column, not endorsed). `MostowRigidity.lean`'s
+  `Vol(6_1) ≈ 3.16396` is a legitimate volume-spectrum statement (next
+  distinct value above Vol(5₂)), **not** part of this fork.
 - **Production needs no change** (it was already on the named set's true
   census volumes).
 
@@ -68,9 +69,10 @@ multiplicity convention rescues the orphan set.
    volume digits with the named knots' census values (4.40083, 8.28632,
    7.32772) and recompute or drop the "Vol/𝔈₀" column (its 𝔈₀ ≈ 4.1505
    normalisation belongs to the stale draft).
-2. `lean/QOU/Encounter/MostowRigidity.lean:264`: the comment citing
-   "Vol(6_1) ≈ 3.16396" — re-point at the adjudicated assignment (or
-   rephrase as an explicit 6₁ example without deuteron context).
+2. ~~`MostowRigidity.lean:264`~~ — withdrawn on closer reading: that
+   comment's `Vol(6_1) ≈ 3.16396` is a correct volume-spectrum statement
+   (next distinct value above Vol(5₂)), unrelated to the deuteron table.
+   No change needed.
 3. The 6₁-vs-6₂ *identity* question raised in the thread-2 doc is answered
    by this adjudication at the volume-matching level; the SDP-uniqueness
    claim of `conj:canonical-knot-id-sdp` itself remains open (unchanged).

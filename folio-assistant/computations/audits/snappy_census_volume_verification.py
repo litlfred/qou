@@ -66,14 +66,15 @@ from witness_base import WitnessBuilder  # noqa: E402
 HERE = Path(__file__).resolve().parent
 COMPUTATIONS = HERE.parent
 
-# S1 — substrate constants → (census name, tolerance). VOL_5_2 is the
-# one literature-sourced constant (knot_volumes.py: "literature 15-dps",
-# measured ~12 effective dps — live |diff| = 3.3e-12); all others are
-# Clausen-form or SnapPy-HP derived and verify to ≤ 1e-20.
+# S1 — substrate constants → (census name, tolerance). All constants
+# are Clausen-form or SnapPy-HP derived and verify to ≤ 1e-20.
+# (VOL_5_2 was the one literature-sourced constant — ~12 effective dps,
+# AHW-1991 digits 13–15 transcribed wrong — until the 2026-06-12
+# in-sandbox ManifoldHP upgrade landed in this same PR.)
 S1_ROWS = [
     ("VOL_4_1", VOL_4_1_MPF, "4_1", "1e-12"),
     ("VOL_BORROMEAN", VOL_BORROMEAN_MPF, "L6a4", "1e-12"),
-    ("VOL_5_2", VOL_5_2_MPF, "5_2", "1e-11"),
+    ("VOL_5_2", VOL_5_2_MPF, "5_2", "1e-12"),
     ("VOL_6_2", VOL_6_2_MPF, "6_2", "1e-12"),
     ("VOL_8_11", VOL_8_11_MPF, "8_11", "1e-12"),
     ("VOL_7_SQ_1", VOL_7_SQ_1_MPF, "7^2_1", "1e-12"),
@@ -192,8 +193,9 @@ def main() -> int:
             tolerance=float(tol_str),
             source=f"substrate/knot_volumes.py {const_name} vs "
                    f"ManifoldHP('{census_name}')"
-                   + (" — literature-precision constant (~12 dps), "
-                      "upgradeable to 50 dps now that SnapPy runs in-sandbox"
+                   + (" — upgraded to SnapPy HP 50 dps 2026-06-12 "
+                      "(former AHW-1991 literature anchor had a "
+                      "digit-13-15 transcription error)"
                       if const_name == "VOL_5_2" else ""),
         )
 
