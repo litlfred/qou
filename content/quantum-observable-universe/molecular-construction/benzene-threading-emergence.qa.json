@@ -1201,7 +1201,192 @@
         "reviewed_at": "2026-06-11T18:06:24.673Z",
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "2b13c7cb0d2f",
+          "ts": "37c79650caf1",
+          "lean": "299c3371da20"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "molecular-construction.ts:135-144 — block listed in sec:benzene-computation ('C6H6: benzene and delocalization'); benzene-threading-emergence.md:2-4 states the T(2,6) threading-link claim",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:38:48.139Z",
+        "reviewed_sha": "b7ac47e4fcf1a65595f95240e28a4cf6a419273c",
+        "notes": "Proposition is the centrepiece of the benzene section; benzene-bond-equalization (remark) interprets it. Distinct from aromaticity-as-symmetric-projection (projector mechanism, different section). Well placed."
+      }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "2b13c7cb0d2f",
+          "ts": "37c79650caf1",
+          "lean": "299c3371da20"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "benzene-threading-emergence.md:40-50 — 'The LP dual shadow price for the threading link is the **resonance stabilisation energy** of benzene' + observed ~1.56 eV comparison, inside the proposition block",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:38:48.176Z",
+        "reviewed_sha": "b7ac47e4fcf1a65595f95240e28a4cf6a419273c",
+        "notes": "Physical identification E_res = resonance energy + experimental comparison is interpretive prose in the statement block; companion remark rem:benzene-bond-equalization (interprets: prop:benzene-threading-emergence) exists and is the natural home, so warn not fail."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "2b13c7cb0d2f",
+          "ts": "37c79650caf1",
+          "lean": "299c3371da20"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "benzene-threading-emergence.md:36-38 — Phi_1^{T(2,6)} < Phi_1^{Kekule} < Phi_1^{Dewar} (archimedean ordering) and md:49 observed ~1.56 eV; no §7c banner (unlike sibling definitions, e.g. co2-molecular-braid.md:1)",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:39:19.280Z",
+        "reviewed_sha": "b7ac47e4fcf1a65595f95240e28a4cf6a419273c",
+        "notes": "Statement mixes generic-q algebra (Alexander identity [3]_{q^2}) with archimedean Phi_1 ordering + eV without flagging the evaluation side; chapter siblings carry the §7c banner, this block omits it. Warn, not fail — chapter regime is computational/archimedean overall."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "2b13c7cb0d2f",
+          "ts": "37c79650caf1",
+          "lean": "299c3371da20"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "benzene-threading-emergence.md:18-33 — proof argues via crossing counts and the generic-q identity Delta_{T(2,6)}(q)=[3]_{q^2}, then concludes the archimedean inequality Phi_1^{T(2,6)} < Phi_1^{Kekule} (md:36-38)",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:39:19.320Z",
+        "reviewed_sha": "b7ac47e4fcf1a65595f95240e28a4cf6a419273c",
+        "notes": "Proof feeds generic-q algebraic inputs into an archimedean Phi_1 ordering without naming the specialisation point (no q0 evaluation or LP-solve witness cited for the inequality). Regimes mixed but not wrongly sided — warn."
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "2b13c7cb0d2f",
+          "ts": "37c79650caf1",
+          "lean": "299c3371da20"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.6,
+          "max": 1
+        },
+        "evidence": "benzene-threading-emergence.md:10-16 candidate-configuration table; md:18-33 three named reasons (shared crossings, D6 symmetry, Alexander weight)",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:39:57.939Z",
+        "reviewed_sha": "b7ac47e4fcf1a65595f95240e28a4cf6a419273c",
+        "notes": "Plan is stated up front (enumerate 3 candidates, compare Phi_1) but the decisive Phi_1 comparison is asserted, not derived — recoverable yet partly implicit."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "2b13c7cb0d2f",
+          "ts": "37c79650caf1",
+          "lean": "299c3371da20"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0.3,
+          "max": 1
+        },
+        "evidence": "benzene-threading-emergence.lean:18-20 — 'theorem benzene_threading_emergence : True := by trivial' (stub; header says 'sorry placeholder; full formalisation pending')",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:39:57.977Z",
+        "reviewed_sha": "b7ac47e4fcf1a65595f95240e28a4cf6a419273c",
+        "notes": "Entire LP-optimality statement over H_120(q) is the gap (core-tier: needs Lean LP infrastructure + conditional class for conj:q-integer-mass-formula) — rubric core ~0.3."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "2b13c7cb0d2f",
+          "ts": "37c79650caf1",
+          "lean": "299c3371da20"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.7,
+          "max": 1
+        },
+        "evidence": "benzene-threading-emergence.md:18-33 — threading-link T(2,6) vs Kekule argument via shared-crossing count + Alexander weight [3]_{q^2}",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:39:58.013Z",
+        "reviewed_sha": "b7ac47e4fcf1a65595f95240e28a4cf6a419273c",
+        "notes": "T(2,6) delocalization claim is not duplicated by siblings (aromaticity-as-symmetric-projection uses a projector mechanism); crossing-count style is shared with the *-lp-dual-binding family but the result is distinct."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "2b13c7cb0d2f",
+          "ts": "37c79650caf1",
+          "lean": "299c3371da20"
+        },
+        "result": "warn",
+        "severity": "major",
+        "evidence": "benzene-threading-emergence.lean:18 concludes 'True' (loudly-documented stub, header lines 9-10); .md:1 carries conditional banner on conj:q-integer-mass-formula but .ts uses[] (lines 10-13) omits the conjecture (§3b-cond rule 4)",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:40:32.745Z",
+        "reviewed_sha": "b7ac47e4fcf1a65595f95240e28a4cf6a419273c",
+        "notes": "No silent weakening: Lean stub is loudly flagged and validation:'not_checked' (nothing claimed proved); narrative statement well-formed with explicit conditional banner. Gap: conjecture missing from uses[] manifest, so the conditional dependency is not auditable — warn."
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-12T19:40:32.745Z"
 }
