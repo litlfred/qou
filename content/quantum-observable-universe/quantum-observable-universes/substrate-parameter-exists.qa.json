@@ -1037,7 +1037,192 @@
         "reviewed_at": "2026-06-11T18:06:24.673Z",
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "4acb3523c862",
+          "ts": "8134ca0753dc",
+          "lean": "8e77ddc4b64b"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "substrate-parameter-exists.md:1 — 'there exists a substrate parameter $q \\in \\mathrm{End}(\\mathbf{1}) \\cong k$ ... d_q interpolates between d and pi_V circ d'",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:32:06.099Z",
+        "reviewed_sha": "706cab9f4668075bdbdf44afbc6b216664d69b79",
+        "notes": "Existence of the substrate parameter is core to the quantum-observable-universes chapter; uses def:substrate-parameter, weight decomposition, Reeb derivation."
+      }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "4acb3523c862",
+          "ts": "8134ca0753dc",
+          "lean": "8e77ddc4b64b"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "substrate-parameter-exists.md:9 — 'd_q = q^{-1} d + (1 - q^{-1}) pi_V circ d interpolates between the full differential d (at q=1) and the vertical projection (as q to infinity)'",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:32:06.137Z",
+        "reviewed_sha": "706cab9f4668075bdbdf44afbc6b216664d69b79",
+        "notes": "The interpolation clause characterizes the constructed object (part of the existence claim), not physical-meaning editorializing."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "4acb3523c862",
+          "ts": "8134ca0753dc",
+          "lean": "8e77ddc4b64b"
+        },
+        "result": "warn",
+        "severity": "major",
+        "evidence": "substrate-parameter-exists.md:6 — 'In the archimedean realisation this specialises to a substrate field $q \\colon M \\to \\mathbb{R}_{>0}$ with $q(p) \\ge 1$'",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:32:56.715Z",
+        "reviewed_sha": "706cab9f4668075bdbdf44afbc6b216664d69b79",
+        "notes": "Generic-ring statement (q in End(1) cong k) but inlines an archimedean order construct (q:M->R_{>0}, q(p)>=1). Regime split is flagged narratively ('In the archimedean realisation...') but there is no wall: field / §7c banner — mixes regimes in one statement."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "4acb3523c862",
+          "ts": "8134ca0753dc",
+          "lean": "8e77ddc4b64b"
+        },
+        "result": "warn",
+        "severity": "major",
+        "evidence": "substrate-parameter-exists.lean:62,73 — active 'InterpolatedDifferential.quantum_regime (q0) (hq : 1 < q0) ... have : q0^{-1} < 1 := inv_lt_one_of_one_lt0 hq; linarith' over abbrev R_q := LaurentPolynomial Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:32:56.753Z",
+        "reviewed_sha": "706cab9f4668075bdbdf44afbc6b216664d69b79",
+        "notes": "Lean proof body uses order/archimedean machinery (1 < q0, inv_lt_one_of_one_lt0, linarith) on a file declaring the ground ring as Laurent R_q; the archimedean params are commented out, so the specialisation point is not cleanly declared — regimes mixed."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "4acb3523c862",
+          "ts": "8134ca0753dc",
+          "lean": "8e77ddc4b64b"
+        },
+        "result": "warn",
+        "severity": "major",
+        "evidence": "substrate-parameter-exists.lean:95 — 'ofReebDecomposition ... (hq_root : ...) (wd_reeb_compat : ...) := let _interp := InterpolatedDifferential.mk' q0 hq_pos ... { field := fun _ => q0 ... }' with q0/hq_pos params commented out above",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:33:30.536Z",
+        "reviewed_sha": "706cab9f4668075bdbdf44afbc6b216664d69b79",
+        "notes": "Not a silent weakening: hypotheses (q0,hq_pos,hq_ge) are commented out with documented 'archimedean; not meaningful over R_q' rationale, leaving the body referencing undefined q0/hq_pos — a loudly-documented half-migration, not an axiom restating the target."
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "4acb3523c862",
+          "ts": "8134ca0753dc",
+          "lean": "8e77ddc4b64b"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.8,
+          "max": 1
+        },
+        "evidence": "substrate-parameter-exists.lean:84 — docstring 'The construction: 1. Builds the interpolated differential d_q ... 2. Validates ... wd_reeb_compat ... 3. Returns the substrate parameter field q(p)=q0'",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:33:30.581Z",
+        "reviewed_sha": "706cab9f4668075bdbdf44afbc6b216664d69b79",
+        "notes": "Plan stated up front: 3 numbered construction steps tying Reeb data to d_q to the SubstrateParameter field."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "4acb3523c862",
+          "ts": "8134ca0753dc",
+          "lean": "8e77ddc4b64b"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.4,
+          "max": 1
+        },
+        "evidence": "substrate-parameter-exists.lean:95 — ofReebDecomposition body references undefined q0/hq_pos (params commented out); construction incomplete pending R_q-vs-archimedean migration",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:33:49.450Z",
+        "reviewed_sha": "706cab9f4668075bdbdf44afbc6b216664d69b79",
+        "notes": "Categorical skeleton (InterpolatedDifferential, classical_limit) exists, but the main decl is broken/half-migrated; closing requires re-deciding the ground-ring/archimedean split — a core, non-routine gap."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "4acb3523c862",
+          "ts": "8134ca0753dc",
+          "lean": "8e77ddc4b64b"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.6,
+          "max": 1
+        },
+        "evidence": "substrate-parameter-exists.md:9 — 'd_q = q^{-1} d + (1 - q^{-1}) pi_V circ d' interpolation between d and pi_V circ d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:33:49.488Z",
+        "reviewed_sha": "706cab9f4668075bdbdf44afbc6b216664d69b79",
+        "notes": "Framework-specific q-interpolated-differential construction (convex coeff_full/coeff_vert with classical/quantum limits); not a corpus duplicate, modestly novel."
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-12T19:33:49.488Z"
 }
