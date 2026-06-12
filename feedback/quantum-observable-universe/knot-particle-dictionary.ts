@@ -1,0 +1,14 @@
+import type { FeedbackItem } from "../../schemas/types";
+
+export default [
+  {
+    "id": "todo-mn15rbjz",
+    "summary": "table does not display well",
+    "comment": "table does not display well",
+    "status": "open",
+    "priority": "medium",
+    "origin": "human",
+    "assignee": "editor-agent",
+    "createdAt": "2026-03-22T02:49:02.783Z"
+  }
+] satisfies FeedbackItem[];
