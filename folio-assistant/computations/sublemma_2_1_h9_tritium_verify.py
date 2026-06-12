@@ -44,6 +44,7 @@ if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
 from char_fast import _compiled_sigmas, chi_lambda_fast  # noqa: E402
+from lean_uniqueness_refs import lean_uniqueness_ref  # noqa: E402
 from lr_coefficients import get_lr_table, partitions_of  # noqa: E402
 from q_parameter import Q as Q0  # noqa: E402
 from sublemma_2_1_A_operator_extract_h9 import (  # noqa: E402
@@ -399,6 +400,7 @@ def main() -> int:
             "docs/audits/2026-05-15-sublemma-2-1-h9-multi-interface-extension.md"
         )
         .add_data("atom", args.atom)
+        .add_data("lean_uniqueness_ref", lean_uniqueness_ref(args.atom))
         .add_data("interface_outer", h9_interface)
         .add_data("interface_inner", "pn")
         .add_data("n_generators_h9_braid", len(beta_full))

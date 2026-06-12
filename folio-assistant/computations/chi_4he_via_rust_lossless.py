@@ -39,6 +39,7 @@ from per_irrep_pole_atom import parts_of  # noqa: E402
 from derived_chi_catalogue_matrix_m import _word_for_braid_word_3a  # noqa: E402
 from derived_chi_catalogue_matrix_m_mpfr import chi_rust_at_q_mpf  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from lean_uniqueness_refs import lean_uniqueness_ref  # noqa: E402
 
 
 def main() -> int:
@@ -119,6 +120,7 @@ def main() -> int:
     wb.add_data("n_partitions", len(per_partition))
     wb.add_data("tr_M_at_q0", str(running))
     wb.add_data("cache_path", str(out))
+    wb.add_data("lean_uniqueness_ref", lean_uniqueness_ref("helium-4"))
     wb.save()
 
     print(f"\n⁴He LOSSLESS: {len(per_partition)} partitions, "
