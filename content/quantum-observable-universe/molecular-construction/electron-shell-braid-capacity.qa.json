@@ -858,7 +858,51 @@
         "reviewed_at": "2026-06-11T18:06:24.673Z",
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "f6f6de7f672b",
+          "ts": "fb125052fa17",
+          "lean": "1c54a2c2764f"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "molecular-construction.ts:50-65 — block listed in sec:electron-shells ('Electron shells and bonding capacity'); electron-shell-braid-capacity.md:4-12 defines shell capacity 2n^2 from Hecke representation dimension",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:38:27.058Z",
+        "reviewed_sha": "24d1ed87004777531b4edb958a8be22611b8e707",
+        "notes": "Definition is the anchor of its section; valence-from-braid explicitly interprets it (valence-from-braid.ts:10). New construction (bonding sites / valence v(Z)); no misfiling or sibling duplication."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "f6f6de7f672b",
+          "ts": "fb125052fa17",
+          "lean": "1c54a2c2764f"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "electron-shell-braid-capacity.md:1 — 'Lean sibling: archimedean specialisation over R (CLAUDE.md §7c)…'; md:24-26 valence formula v(Z)=min(...) over integers",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:38:27.097Z",
+        "reviewed_sha": "24d1ed87004777531b4edb958a8be22611b8e707",
+        "notes": "Content is integer combinatorics (2n^2 capacities, min over Nat); Phi_1 minimisation references are framed against the LP dual, and the block opens with the explicit §7c banner. No unbanner'd archimedean construct."
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-12T19:38:27.097Z"
 }
