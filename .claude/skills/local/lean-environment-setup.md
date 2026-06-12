@@ -492,41 +492,6 @@ else
 fi
 ```
 
-> **⚠ Post-restore hazard — verify mathlib's origin URL BEFORE running
-> lake (2026-06-10, found on PR #2094).** The tar carries
-> `.lake/packages/mathlib/.git` from the *seeding* container; if its
-> `origin` URL differs from the manifest URL (e.g. it recorded the
-> seeder's git proxy), the first `lake` invocation prints
-> `mathlib: URL has changed` and **deletes the restored package —
-> including its 2.8 GB of oleans — before re-cloning**. Check first:
->
-> ```bash
-> git -C .lake/packages/mathlib remote get-url origin   # must match lake-manifest.json
-> # mismatch → fix it instead of letting lake delete the build:
-> git -C .lake/packages/mathlib remote set-url origin \
->   https://github.com/leanprover-community/mathlib4
-> ```
->
-> If lake already deleted it: after the re-clone completes (rev will
-> match the manifest pin), re-extract **only the build dir** from the
-> still-fetched cache objects — `tar xzf <tgz> -C "$ROOT"
-> ".lake/packages/mathlib/.lake/build"` — and the oleans replay
-> (trace hashes are content-based, so the fresh clone's sources match).
->
-> **Variant: packages restored with NO `.git` at all (2026-06-10, PR
-> #2094 continuation).** If the seed tar carries package sources +
-> oleans but no `.git` dirs (check: `git -C .lake/packages/mathlib
-> remote get-url origin` falls through to the PARENT repo's origin —
-> a misleading proxy URL), do **not** let lake touch the tree (it
-> deletes and re-clones, losing the oleans). **Graft** valid git
-> state in place first — per `lake-manifest.json` entry: `git init` +
-> `git remote add origin <url>` + `git fetch --depth=1 origin <rev>`
-> (GitHub is allowlisted) + `git checkout -qf <rev>` inside each
-> package dir. Lake then accepts every package untouched and the
-> first build runs straight off the restored oleans (verified:
-> Qq probe build, 2947 mathlib oleans intact). A package dir missing
-> entirely (e.g. `Cli`) is fine — lake clones just that one.
-
 **SEED after a successful build** (so the NEXT agent restores in ~2 min
 instead of rebuilding in ~30+) — worktree-based, tarball created in-repo:
 ```bash
@@ -545,14 +510,6 @@ git -C "$WT" commit -qm "seed lean cache: qou+mathlib oleans @ lean v4.24.0 (chu
 git -C "$WT" push -u origin lake-cache/qou-v4-24-0
 git worktree remove --force "$WT"                      # main branch never left
 ```
-> **HTTP 413 on the seed push (2026-06-10).** The web-sandbox git
-> proxy caps a single push payload — an ~800 MB one-commit pack is
-> rejected with `RPC failed; HTTP 413`. Workaround (verified): commit
-> **each ~90 MB chunk as its own commit** inside the worktree and
-> `git push` after each one (`--force` on the first push to replace
-> the old cache history). Restorers are unaffected — the restore
-> recipe reads the tip tree, which contains all chunks.
-
 Keep ≤ 8 such branches (owner cap); the
 [`lake-cache-refresh.yml`](../../../.github/workflows/lake-cache-refresh.yml)
 workflow prunes/refreshes on `lean-toolchain`/`lakefile.toml` changes — if

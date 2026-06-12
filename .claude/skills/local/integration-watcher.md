@@ -190,7 +190,7 @@ waiting for the user to prompt. Walk the priority order:
    `mcp__github__pull_request_read get_review_comments` and
    `get` for the body).
 3. **Integration-watcher queue items** — this watcher's own
-   `todos/<name>-queue.json` first, then sibling watchers'.
+   `.beans/<name>-queue.json` first, then sibling watchers'.
    Prefer items whose `block_or_script` overlaps the current
    PR's scope (same chapter / same Python or Lean file).
 4. **Refresh stale sidecars + witnesses** (added 2026-06-03).
@@ -288,12 +288,12 @@ queue item", not "TICK heartbeats forever".
 OWNER=litlfred
 REPO=qou
 
-# Bootstrap the queue + ledger (gitignored under todos/)
+# Bootstrap the queue + ledger (gitignored under .beans/)
 mkdir -p todos
 NAME="<your-watcher-name>"
-[ -f "todos/${NAME}-queue.json" ] || \
-  echo '{"items":[],"audited":{},"reviewed_up_to":{}}' > "todos/${NAME}-queue.json"
-[ -f "todos/${NAME}-ledger.md" ] || cat > "todos/${NAME}-ledger.md" <<EOF
+[ -f ".beans/${NAME}-queue.json" ] || \
+  echo '{"items":[],"audited":{},"reviewed_up_to":{}}' > ".beans/${NAME}-queue.json"
+[ -f ".beans/${NAME}-ledger.md" ] || cat > ".beans/${NAME}-ledger.md" <<EOF
 # ${NAME} — session ledger
 
 | ts (UTC) | event | scope | findings | action |
@@ -638,7 +638,7 @@ For each new skill file:
    - `Defer to follow-up branch` — record + skip
    - `Not relevant` — record so re-prompt is suppressed
 4. **Record the decision in the watcher's ledger**
-   (`todos/${NAME}-ledger.md`) under a `### New skills` subsection
+   (`.beans/${NAME}-ledger.md`) under a `### New skills` subsection
    so future sessions don't re-prompt for the same skill.
 
 This rule applies to skill files only (`.claude/skills/local/*.md`
@@ -800,10 +800,10 @@ After each event:
 ```bash
 ts=$(date -u +%Y-%m-%dT%H:%M:%SZ)
 echo "| $ts | <event> | <scope> | <N critical / N major / N minor> | <N auto / N asked / N deferred> |" \
-  >> "todos/${NAME}-ledger.md"
+  >> ".beans/${NAME}-ledger.md"
 ```
 
-Update `todos/${NAME}-queue.json` with new items + status changes
+Update `.beans/${NAME}-queue.json` with new items + status changes
 via `Edit`.
 
 ### 4g. Refresh spawned PRs against main *(superseded by §2c)*
@@ -867,7 +867,7 @@ when multiple items are independent; items sharing state serialise.
 1. No incoming event has arrived during this TICK window
 2. The count of items currently in `status: in-progress` is below
    the parallelism cap (per §5m, default 4)
-3. `todos/${NAME}-queue.json` contains at least one item with
+3. `.beans/${NAME}-queue.json` contains at least one item with
    `status: queued` (or `status: needs-author` whose author ask
    has been outstanding ≥ 7 days — the §5e re-ask cadence)
 
@@ -1107,7 +1107,7 @@ Per prepared PR:
    # `^### ` — `/^### Watching/,/^### /` collapses to one line
    # (the opening line itself matches the closer).
    pr_branches=$(awk '/^### Watching/,/^## /' \
-       "todos/${NAME}-ledger.md" \
+       ".beans/${NAME}-ledger.md" \
        | grep -oE 'claude/iw-[a-z0-9-]+' | sort -u)
 
    for pr_branch in $pr_branches; do
@@ -1410,7 +1410,7 @@ state and surface a structured suggestion to the user.
 
 **Procedure:**
 
-1. **Load persisted state.** If `todos/${NAME}-queue.json`
+1. **Load persisted state.** If `.beans/${NAME}-queue.json`
    exists, parse it. Read:
    - `reviewed_up_to[<criterion>]` per Slot D criterion → the
      per-criterion last-fully-audited SHA
@@ -1548,7 +1548,7 @@ minutes), it must:
 
 **Anti-parallel cases** (always sequential even with consent):
 
-- Anything touching the same `todos/${NAME}-queue.json` write (race condition).
+- Anything touching the same `.beans/${NAME}-queue.json` write (race condition).
 - Anything touching the same Lean build (`lake build` is exclusive).
 - Anything that depends on a prior step's output (rebase → validate, format → lint).
 - Tasks where the user is mid-asking — never dispatch in parallel until the author-ask is resolved.
@@ -1602,8 +1602,8 @@ queues the violation as `critical`, and asks the author.
 - **Built on**: `local/watch` (Monitor scaffolding),
   `local/coordinate` (PR triage helpers).
 - **Dispatches**: see each child's Slot C.
-- **Produces**: `todos/${NAME}-queue.json` (live state) +
-  `todos/${NAME}-ledger.md` (event log).
+- **Produces**: `.beans/${NAME}-queue.json` (live state) +
+  `.beans/${NAME}-ledger.md` (event log).
 - **Complements** other watchers — each owns one axis (proof /
   canonical / wiring / …); coordinate via `/coordinate` if the
   user is running more than one.
@@ -1635,7 +1635,7 @@ Children add their own domain-specific anti-patterns.
 
 ## Checklist (shared across all children)
 
-- [ ] Queue + ledger initialised under `todos/`
+- [ ] Queue + ledger initialised under `.beans/`
 - [ ] Main baseline SHA stashed
 - [ ] Monitor armed on `origin/main` with TICK heartbeat
 - [ ] Subscribed to own PR + every sibling PR active in 7 days

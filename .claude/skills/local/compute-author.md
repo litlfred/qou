@@ -119,47 +119,6 @@ For the algorithmic side:
 | `tools/hecke-engine/src/tr_m_word_lq.rs` | Phase-2 Rust port style + PyO3 pattern (PR #859) |
 | `tools/pyhecke-native/src/lib.rs` | 20+ PyO3 bindings as reference patterns |
 
-### §0.1 Sandbox / fresh-container bootstrap (deps + native wheel)
-
-A fresh cloud container often ships **neither** the Python deps **nor**
-the compiled native wheel. Do **not** declare a compute "blocked (no
-`pyhecke_native`)" — it is almost always buildable in-place. Bootstrap
-order:
-
-```bash
-# 1. Core scientific deps (base python3 may lack them).
-python3 -m pip install numpy mpmath sympy
-
-# 2. In-repo pure-Python packages (Layer 2a/2b), editable.
-python3 -m pip install -e tools/qou-substrate -e tools/pyhecke -e tools/witness-schema
-
-# 3. pyhecke_native — NOT on PyPI yet (alpha), and the prebuilt wheel
-#    is usually NOT shipped. BUT the container ships the Rust toolchain
-#    (`cargo`, `rustc`) and the crate source (tools/pyhecke-native +
-#    tools/hecke-engine), so build it from source via maturin (~1 min):
-python3 -m pip install maturin
-python3 -m pip install ./tools/pyhecke-native    # compiles + installs pyhecke_native
-python3 -c "import pyhecke_native; print('native OK')"
-```
-
-Key facts (so agents stop mis-reporting the blocker):
-
-- **The Rust toolchain ships in the web/cloud sandbox** (unlike the Lean
-  `elan` host, which is firewalled — see
-  [`lean-environment-setup.md`](lean-environment-setup.md)). `cargo build`
-  works; only crates.io fetches need network (usually allowed).
-- **The pure-sympy compute paths do NOT need native.** `markov_peel`,
-  `markov_trace_canonical`, `char_fast`, and the symbolic `tr_M_atomic`
-  (`use_fast=False`) run on numpy/sympy alone — D/T/³He/⁴He are all
-  tractable without the wheel. Native is only needed for (a) speed and
-  (b) large-A chi (H_18 ⁶Li / H_21 ⁷Li) where the sympy GS reducer
-  scales ~10×/A unit and becomes infeasible.
-- So "no `pyhecke_native`" blocks **only** the large-A Rust-kernel
-  producers (e.g. `compute_atom_chi_rust.py 6Li 7Li`) *until you build
-  the wheel* — after the `pip install ./tools/pyhecke-native` above, even
-  those are unblocked. Corpus-grep / formalize-first discipline: build
-  it before reporting a capability as unavailable.
-
 ## §1. Precision discipline (STRICT, no f64 in production)
 
 **L1 floor: 50-dps compute / 40-dps output**, configurable via

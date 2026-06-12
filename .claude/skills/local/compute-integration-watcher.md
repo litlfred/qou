@@ -94,7 +94,7 @@ task is blocked, this skill maintains a queue of *author questions*
 and pulls one off when idle to ask via the `AskUserQuestion` tool.
 
 The queue lives in `docs/audits/compute-integration-question-queue.md`
-(gitignored — survives branch switches per the `todos/` convention).
+(gitignored — survives branch switches per the `.beans/` convention).
 Each entry carries:
 
 - **trigger context** (commit / PR / sweep that surfaced the question)

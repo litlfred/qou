@@ -14,7 +14,7 @@ allowed-tools: Read Grep Glob TodoWrite AskUserQuestion
 > - `todo-manager` (this file) = the agent's **session work-plan**.
 >   In-memory TodoWrite list of the current session's tasks.
 > - `todo-review` = triage of **content feedback** stored in
->   `todos/content-todos.ts` and surfaced via the MCP `/todos`
+>   `.beans/content-todos.ts` and surfaced via the MCP `/todos`
 >   dashboard. That is paper-content scope, not session scope.
 >
 > See also CLAUDE.md §"agent work-plan policy" — the agent must

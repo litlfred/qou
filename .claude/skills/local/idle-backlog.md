@@ -29,7 +29,7 @@ Walk the queue top-down; take the first item that is **applicable** (see below):
 1. **Current session todos** (the TodoWrite list / the chat's stated queue).
 2. **Current PR todos** — the open PR's body checklist + unresolved review-comment
    threads (`mcp__github__pull_request_read get_review_comments`).
-3. **Integration-watcher queues** — `todos/*-watcher-queue.json`; prefer items
+3. **Integration-watcher queues** — `.beans/*-watcher-queue.json`; prefer items
    whose scope overlaps the current PR.
 4. **Stale sidecars / witnesses** — refresh `*.qa.json` /
    `*.witness.json` that have drifted (caps per CLAUDE.md).

@@ -27,8 +27,8 @@ nine domain-specific slots A-I.
 
 **Setup:** use `NAME=canonical-watcher` everywhere the parent's
 §1 references `${NAME}`. Files at
-`todos/canonical-watcher-queue.json` and
-`todos/canonical-watcher-ledger.md`.
+`.beans/canonical-watcher-queue.json` and
+`.beans/canonical-watcher-ledger.md`.
 
 **Authoritative reference:** the three-calibration discipline is
 fixed by:

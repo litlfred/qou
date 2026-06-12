@@ -19,7 +19,7 @@ violation. Common breakages:
 1. **Status markers** in body prose — `✅ Done`, `(TODO)`, `(TBD)`,
    `**Pending.**`, etc. These are work-tracker speech
    (`CLAUDE.md` §4a *TodoItem lifecycle rules*: content TODOs live
-   in `todos/`, not in the paper).
+   in `.beans/`, not in the paper).
 2. **Emoji used as content** — `✅`, `❌`, `⚠`, `🔧`, `🚧` outside of
    tables. Even in tables, these belong only when used as compact
    comparison markers (✓ matches / ✗ diverges); never as work status.
@@ -150,7 +150,7 @@ bun run content/pipeline/qa-section-title-audit.ts
 
 | Category | Examples | Fix pattern |
 |----------|----------|-------------|
-| **A. Status leak** | `✅ Done`, `(TODO)`, `(TBD)` (with no follow-up content) | **Delete.** If the work item is still relevant, file as a `TodoItem` in `todos/`. |
+| **A. Status leak** | `✅ Done`, `(TODO)`, `(TBD)` (with no follow-up content) | **Delete.** If the work item is still relevant, file as a `TodoItem` in `.beans/`. |
 | **B. Comparison-table marker** | `✓` / `✗` in a results table (one cell wide, replaces redundant prose) | **Keep — but only in tables.** ✓/✗ in body prose → replace with words ("matches", "diverges"). |
 | **C. Warning callout** | `⚠ *…*`, `**⚠ WARNING:**` | **Replace** with `**Caveat.**` or `**Warning.**` (no symbol). |
 | **D. Star marker** `★` | "best fit", "magic-receptive", "shell closure" | **Keep in tables when meaning is column-scoped.** In body prose → replace with explicit word. |
@@ -191,7 +191,7 @@ These are safe to do without author approval:
   "It remains to verify…") that look like work tracking but are
   actually proof structure — author judgement on tone.
 
-For each kickback, post a TodoItem (`todos/content-todos.ts`) with:
+For each kickback, post a TodoItem (`.beans/content-todos.ts`) with:
 - `targetLabel` of the affected block
 - A short description of the violation
 - Suggested fix or "needs author rewrite"
@@ -286,4 +286,4 @@ outrank agent entries; agent entries outrank script entries — but
 - `proof-conciseness` — for trimming proofs that contain work-tracker
   language disguised as expository structure.
 - `CLAUDE.md` §4a *TodoItem lifecycle rules* — content TODOs are
-  external to paper; live in `todos/`, never in `.md` content.
+  external to paper; live in `.beans/`, never in `.md` content.

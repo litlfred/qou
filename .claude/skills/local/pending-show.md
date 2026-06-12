@@ -21,7 +21,7 @@ In order:
    touches.
 4. **Master ledger intent.** The "INTENT" cell of the current
    session-log row in `docs/coordination/<goal>.md`.
-5. **Queue assignments.** Items in `todos/<goal>-queue.json` where
+5. **Queue assignments.** Items in `.beans/<goal>-queue.json` where
    `assignee == current branch` or `co_assignees` contains it.
 6. **Active sibling PRs on the same goal.** From the ledger's
    "Active PRs" table.
@@ -50,7 +50,7 @@ Ledger intent (docs/coordination/1ppq-qbeta.md):
   (3) ask user about queue-schema formalization,
   (4) probe c_3 q_0-stability if scope permits
 
-Queue (todos/1ppq-qbeta-queue.json):
+Queue (.beans/1ppq-qbeta-queue.json):
   probe-c3-q0-stability     in_progress  high   you
   probe-c4-habiro           blocked      high   waiting on c3
   probe-c5-c7-habiro        blocked      med    waiting on c4
@@ -75,14 +75,14 @@ This is a thin reader. No writes. Sources (read order):
 3. In-session TodoWrite state
 4. `STATUS.md` — find row where "Active PRs" contains current PR
 5. `docs/coordination/<goal>.md` — find session-log row for current branch
-6. `todos/<goal>-queue.json` — filter `assignee == branch`
+6. `.beans/<goal>-queue.json` — filter `assignee == branch`
 7. Subscribed PR activity (session state)
 
 When ANY of these sources is missing or stale, surface it as a
 warning rather than silently omitting:
 
 ```
-⚠ todos/1ppq-qbeta-queue.json: not found — run /session-intent to initialize
+⚠ .beans/1ppq-qbeta-queue.json: not found — run /session-intent to initialize
 ⚠ STATUS.md: current PR not in any goal row — please assign goal
 ```
 
