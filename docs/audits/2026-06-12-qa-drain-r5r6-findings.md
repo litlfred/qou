@@ -68,8 +68,11 @@ very likely **does not compile**. Recommended fix: delete the duplicated second 
 All three use the §3b-cond conditional-class pattern (classes as `[Instance]`
 hypotheses), which is sanctioned — **but the theorem *conclusion* is vacuous** (`True`
 or a tautological repackaging), so the Lean does not encode the narrated result. The
-fix is to make the conclusion state the actual identity/inequality (still conditional
-on the classes), not `True`.
+fix is to replace the vacuous `True` proposition with a concrete mathematical statement
+that captures the intended property — e.g. defining a target type and a surjective map
+to represent convergence, or adding an explicit field for the quantity that should
+vanish plus a proposition field asserting it equals zero — rather than a vacuous `True`
+type (still conditional on the classes).
 
 ### 2.3 — Superseded by `main` (do NOT re-file)
 
