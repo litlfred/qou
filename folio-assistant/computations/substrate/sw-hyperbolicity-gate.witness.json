@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-05T19:19:26.068017+00:00",
-  "commitSha": "91a2a2c1db5107e281fa60b66a6ed5af71fe533a",
+  "computedAt": "2026-06-12T19:26:53.581696+00:00",
+  "commitSha": "7af29f260fb7d9cf51ad3e2e229abbcd73bb5f09",
   "assertions": [
     {
       "name": "L6a4_hyperbolic_vol_eq_8G",
@@ -34,11 +34,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 30,
+  "durationMs": 35,
   "computation": "sw-hyperbolicity-gate",
   "scriptFile": "sw_hyperbolicity_gate.py",
-  "scriptHash": "31954d239f82",
-  "scriptCommitSha": "7f7a19771cbfaedc751cb4643ffa6ecb8abf00ff",
+  "scriptHash": "de1ca13e4494",
+  "scriptCommitSha": "91ec507378a633aa41664fb1ba12f71fec15e6fb",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -47,12 +47,8 @@
   },
   "environment": {
     "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "mpmath": "1.3.0"
   },
   "auditOnly": "docs/workplans/2026-06-05-delta-lambda-sw-residue-qdifference-attack.md",
   "data": {
@@ -75,7 +71,7 @@
       },
       "5_2": {
         "hyperbolic": true,
-        "vol_component": "2.8281220883341"
+        "vol_component": "2.828122088330783"
       },
       "6_2": {
         "hyperbolic": true,

@@ -251,11 +251,12 @@ theorem unknot_volume_lt_figureEight_volume :
     orientable cusped hyperbolic 3-manifold (after `S^3 \ 4_1`),
     with hyperbolic volume
 
-    `Vol(5_2) ≈ 2.82812208833410`
+    `Vol(5_2) ≈ 2.82812208833078`
 
-    (Adams-Hildebrand-Weeks 1991; SnapPy verified to 15+ digits).
-    A SnapPy-computed mpf at 50 dps will replace this 15-dps
-    literal once SnapPy is added to the witness-pipeline image.
+    (SnapPy ManifoldHP 50 dps, 2026-06-12; witness field
+    `vol_5_2_decimal_50`. The former Adams-Hildebrand-Weeks 1991
+    15-dps anchor `2.82812208833410` carried a digit-13–15
+    transcription error.)
 
     The Mostow gap is bounded below by `0.5` — well under the
     nearest-neighbour gaps `Vol(5_2) - Vol(4_1) ≈ 0.798` and
@@ -269,7 +270,7 @@ instance knot5_2 : MostowRigidity Knot5_2 where
   -- Both numeric literals below are kept in sync with the
   -- canonical witness `hyperbolic-volumes.witness.json` by
   -- `content/pipeline/codemod-leanval.ts`.
-  volume := 2.82812208833410  -- :leanval[vol_5_2]
+  volume := 2.82812208833078  -- :leanval[vol_5_2]
   volume_nonneg := by norm_num
   mostow_gap := 0.5
   mostow_gap_pos := by norm_num
@@ -292,7 +293,7 @@ theorem figureEight_volume_lt_knot5_2_volume :
   -- so the codemod (single-literal-per-line) can sync each one
   -- independently.
   have h41 : volumeInvariant FigureEight = 2.02988321281930 := rfl  -- :leanval[Vol_4_1]{precision=15}
-  have h52 : volumeInvariant Knot5_2 = 2.82812208833410 := rfl  -- :leanval[vol_5_2]{precision=15}
+  have h52 : volumeInvariant Knot5_2 = 2.82812208833078 := rfl  -- :leanval[vol_5_2]{precision=15}
   rw [h41, h52]
   norm_num
 

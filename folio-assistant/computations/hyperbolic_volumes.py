@@ -12,14 +12,15 @@ at 50 decimal digits via the Clausen-function identity (mpmath
 `clsin`), and rounds to a 15-digit decimal string for use as a Lean
 literal under the `:leanval[vol_4_1]` tag.
 
-Records `Vol(5_2)` as a **literature constant** at 15 decimal digits
-(Adams–Hildebrand–Weeks 1991; matches SnapPy's verified hyperbolic
-structure to that precision).  A SnapPy-derived high-precision
-recomputation is the natural follow-up once SnapPy is added to the
-witness-pipeline image; until then the value is anchored against
-multiple independent sources (Hildebrand–Weeks census, Adams *The
-Knot Book* §10, KnotInfo) and used by the `:leanval[vol_5_2]` tag
-in `MostowRigidity.knot5_2`.
+Records `Vol(5_2)` at 50 decimal digits from SnapPy high precision
+(ManifoldHP 3.3.2, in-sandbox 2026-06-12; positively-oriented
+solution, cross-checked against the live census in
+`audits/snappy-census-volume-verification.witness.json`).  This
+replaces the former 15-dps literature anchor `2.82812208833410`
+(Adams–Hildebrand–Weeks 1991), whose digits 13–15 were a
+transcription error (true continuation `...330783...`).  The
+15-digit rounding feeds the `:leanval[vol_5_2]` tag in
+`MostowRigidity.knot5_2`.
 
 The volume gap `mostow_gap = Vol(5_2) − Vol(4_1)` is computed from
 both quantities and exported as `gap_5_2_minus_4_1_15`; the older
@@ -49,12 +50,14 @@ from mpmath import mp, mpf  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from q_parameter import vol_4_1_at  # noqa: E402
 
-# ── Literature constants ─────────────────────────────────────────
+# ── Census constants ─────────────────────────────────────────────
 # Vol(5_2) is the second-smallest known orientable cusped hyperbolic
-# 3-manifold volume (Adams–Hildebrand–Weeks 1991; SnapPy verified).
-# 15-dps anchor; replace with SnapPy-computed mpf when SnapPy is
-# in the pipeline image.
-VOL_5_2_LITERATURE_15 = "2.82812208833410"
+# knot-complement volume (Adams–Hildebrand–Weeks 1991). 50-dps value
+# from SnapPy ManifoldHP 3.3.2 (in-sandbox 2026-06-12), cross-checked
+# in audits/snappy-census-volume-verification.witness.json. The old
+# 15-dps literature anchor "2.82812208833410" had a digit-13–15
+# transcription error.
+VOL_5_2_SNAPPY_HP_50 = "2.8281220883307831627638988092766349427709813173006"
 
 
 def main() -> int:
@@ -64,7 +67,8 @@ def main() -> int:
     vol_4_1_50 = mp.nstr(vol_4_1, 50, strip_zeros=False)
     vol_4_1_15 = mp.nstr(vol_4_1, 15, strip_zeros=False)
 
-    vol_5_2 = mpf(VOL_5_2_LITERATURE_15)
+    vol_5_2 = mpf(VOL_5_2_SNAPPY_HP_50)
+    vol_5_2_50 = mp.nstr(vol_5_2, 50, strip_zeros=False)
     vol_5_2_15 = mp.nstr(vol_5_2, 15, strip_zeros=False)
 
     # Computed gap from both literals.  Matches Vol(5_2) - Vol(4_1)
@@ -86,8 +90,9 @@ def main() -> int:
         "Hyperbolic volumes used by the MostowRigidity class instances "
         "in the encounter chapter.  Vol(4_1) computed via the Clausen-"
         "function identity at 50 decimal digits "
-        "(Vol(4_1) = 2 · Cl_2(pi/3)); Vol(5_2) is a 15-dps literature "
-        "constant (Adams–Hildebrand–Weeks 1991, SnapPy verified).  "
+        "(Vol(4_1) = 2 · Cl_2(pi/3)); Vol(5_2) at 50 dps from SnapPy "
+        "ManifoldHP 3.3.2 (replaces the 15-dps AHW-1991 anchor whose "
+        "digits 13-15 were a transcription error).  "
         "Source of truth for the Lean literals "
         "MostowRigidity.figureEight.volume / .mostow_gap and "
         "MostowRigidity.knot5_2.volume via the :leanval[vol_4_1], "
@@ -126,18 +131,22 @@ def main() -> int:
 
     w.add_data("vol_4_1_decimal_50", vol_4_1_50)
     w.add_data("vol_4_1_decimal_15", vol_4_1_15)
+    w.add_data("vol_5_2_decimal_50", vol_5_2_50)
     w.add_data("vol_5_2_decimal_15", vol_5_2_15)
-    w.add_data("vol_5_2_source", "Adams-Hildebrand-Weeks 1991; SnapPy verified")
+    w.add_data(
+        "vol_5_2_source",
+        "SnapPy ManifoldHP 3.3.2 (in-sandbox 2026-06-12); "
+        "Adams-Hildebrand-Weeks 1991; cross-check: "
+        "snappy-census-volume-verification witness",
+    )
     w.add_data("gap_5_2_minus_4_1_15", gap_5_2_minus_4_1_15)
     w.add_data("gap_lower_bound", str(gap_lower_bound))
     w.add_data(
         "gap_note",
         "gap_lower_bound is a conservative under-approximation of "
         "Vol(5_2) - Vol(4_1); see gap_5_2_minus_4_1_15 for the "
-        "computed value at 15 dps.  Once SnapPy is in CI, both "
-        "vol_5_2_decimal_15 and gap_5_2_minus_4_1_15 should be "
-        "regenerated at 50 dps with a SnapPy-verified "
-        "hyperbolic structure.",
+        "computed value at 15 dps.  Both volumes are now 50-dps "
+        "(Clausen identity / SnapPy ManifoldHP).",
     )
     w.save()
 

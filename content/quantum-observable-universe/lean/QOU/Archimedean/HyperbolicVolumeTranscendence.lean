@@ -167,10 +167,15 @@ noncomputable def vol_4_1 : ℝ := figureEightEntry.volume.value
     — NOT the down quark, which is an unknot with negative crossing
     orientation per `QOU.Archimedean.DownQuark`).
 
-    Numerical: `2.82812208833410` (15 dps, from
+    Numerical: `2.82812208833078` (15 dps, from
     `folio-assistant/computations/hyperbolic-volumes.witness.json`
     field `vol_5_2_decimal_15`, cross-checked against
     `QOU.Encounter.MostowRigidity` which uses the identical value).
+
+    **Precision upgrade 2026-06-12**: witness now carries 50 dps from
+    SnapPy ManifoldHP 3.3.2 (`vol_5_2_decimal_50`); the former AHW-1991
+    15-dps anchor `2.82812208833410` had a digit-13–15 transcription
+    error.
 
     **Drift fix 2026-06-08**: previous literal `2.82812208832975`
     differed from the witness at digits 11+ (4.35e-12 absolute drift).
@@ -183,9 +188,8 @@ noncomputable def vol_4_1 : ℝ := figureEightEntry.volume.value
     knot-volumes witness.
 
     Pending: add threeTwistEntry to KnotRegistry and extract from
-    there for full provenance; precision beyond 15 dps requires
-    SnapPy / Lobachevsky integration at higher mp.dps. -/
-noncomputable def vol_5_2 : ℝ := 2.82812208833410
+    there for full provenance. -/
+noncomputable def vol_5_2 : ℝ := 2.82812208833078
 
 /-- Hyperbolic volume of the Borromean rings 𝓑₃ (nucleon).
 
