@@ -1142,7 +1142,107 @@
         "reviewed_at": "2026-06-11T18:06:24.673Z",
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7"
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "416ed5ce1ce0",
+          "ts": "1be9ce23b091",
+          "lean": "d6c8b80100c5"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "score": {
+          "value": 0.6,
+          "max": 1
+        },
+        "evidence": "observation-energy-proof.md:1-5 — '(1) hbar_q = 1 - q^{-1} is strictly increasing in q ... (2) Direct Taylor expansion of S_{q'} about q.'",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T14:59:34.344Z",
+        "reviewed_sha": "4b67a0f018cd04e0334bb94e9cadb555fb8a82d3",
+        "notes": "Per-claim plan stated up front for (1)-(2); part (3) is discursive ('sign ... unconstrained --- depends on the observer's choice') — recoverable but implicit, not an explicit deductive plan."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "416ed5ce1ce0",
+          "ts": "1be9ce23b091",
+          "lean": "d6c8b80100c5"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "score": {
+          "value": 0.4,
+          "max": 1
+        },
+        "evidence": "observation-energy.lean:18 — 'theorem observation_energy : True := by trivial' (docstring lines 9-10: 'sorry placeholder; full formalisation pending')",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T14:59:34.382Z",
+        "reviewed_sha": "4b67a0f018cd04e0334bb94e9cadb555fb8a82d3",
+        "notes": "No sorry markers, but the entire statement is an unformalized True stub: claim (1) is routine calculus (~0.9 plausible), claims (2)-(3) require formalizing the categorical action S_q (core); blended ~0.4."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "416ed5ce1ce0",
+          "ts": "1be9ce23b091",
+          "lean": "d6c8b80100c5"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "evidence": "observation-energy-proof.md:1-3 — 'Its derivative d hbar_q/dq = q^{-2} > 0. Hence delta q > 0 implies delta hbar_q > 0.'",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T14:59:34.422Z",
+        "reviewed_sha": "4b67a0f018cd04e0334bb94e9cadb555fb8a82d3",
+        "notes": "Standard derivative-monotonicity + Taylor argument; not duplicated verbatim by a sibling (hbar_q_pos in substrate-radial-coordinate.lean proves a related but distinct positivity claim)."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "416ed5ce1ce0",
+          "ts": "1be9ce23b091",
+          "lean": "d6c8b80100c5"
+        },
+        "result": "warn",
+        "severity": "major",
+        "evidence": "observation-energy.lean:18 — 'theorem observation_energy : True := by trivial' vs observation-energy.md:11-14 claiming 'hbar_{q+dq} - hbar_q = dq/(q(q+dq)) > 0'",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T14:59:34.460Z",
+        "reviewed_sha": "4b67a0f018cd04e0334bb94e9cadb555fb8a82d3",
+        "notes": "Narrative statement is well-formed and algebraically correct; Lean sibling is an OPENLY-declared placeholder (weakening declared, not silent), no sorryAx/axiom injection, decl not claimed proved, signature stable vs prior commit. Warn: formal statement carries no content."
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-12T14:59:34.460Z"
 }
