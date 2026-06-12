@@ -189,6 +189,26 @@
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
         "notes": "Label 'prop:feynman-classical-limit' → expected 'feynman_classical_limit'; Lean declares: ClassicalLimitStpart, feynman_classical_limit_g3_conditional. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "61a3ce289ae5",
+          "ts": "196db8906b33",
+          "lean": "40d560274e88"
+        },
+        "result": "fail",
+        "severity": "major",
+        "evidence": "feynman-classical-limit.md:31 'The Jones polynomial J_K(1) = 1 for every knot' + md:13-19 (Markov trace -> augmentation) + md:39-43 (braiding -> symmetric) vs lean/QOU/FeynmanPathIntegrals.lean:289-310 ClassicalLimitDegeneration (only 3 fields: T^2=1 at q=1, planck_limit, qdim_limit); sibling feynman-classical-limit.lean:39 conditional theorem concludes ': True := trivial'",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T14:57:00.409Z",
+        "reviewed_sha": "4b67a0f018cd04e0334bb94e9cadb555fb8a82d3",
+        "notes": "Narrative asserts 5 degenerations; Lean structure encodes only items 1/3-partial (T^2=1, hbar_q->0, [m]_q->m). Items 2 (tr_M -> augmentation), 4 (J_K(1)=1 for all K; jones_trace_generator_at_one only rewrites tr(T^2)=tr(1) from hypothesis), 5 (symmetric braiding) absent — theorem-changing divergence."
       }
     ],
     "voice-author-notes-pollution": [
@@ -1118,7 +1138,104 @@
         "reviewed_at": "2026-06-11T18:06:24.673Z",
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7"
       }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "61a3ce289ae5",
+          "ts": "196db8906b33",
+          "lean": "40d560274e88"
+        },
+        "result": "warn",
+        "severity": "major",
+        "evidence": "feynman-classical-limit.lean:36-37 'class ClassicalLimitStpart : Prop where holds : True'",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T14:57:00.446Z",
+        "reviewed_sha": "4b67a0f018cd04e0334bb94e9cadb555fb8a82d3",
+        "notes": "Statement is coherent textbook Hecke degeneration and unchanged in recent history; but the 3b-cond class hypothesis is vacuous (holds : True carries no conjectural content), so the conditional theorem at lean:39 is satisfied by weakening rather than by axiomatising conj:classical-limit-stpart."
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "61a3ce289ae5",
+          "ts": "196db8906b33",
+          "lean": "40d560274e88"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.85,
+          "max": 1
+        },
+        "evidence": "feynman-classical-limit.md:6-43 — five named degeneration items (Hecke->S_n, trace->augmentation, action, eigenbasis, braiding) each with explicit mechanism + cross-refs",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T14:57:00.482Z",
+        "reviewed_sha": "4b67a0f018cd04e0334bb94e9cadb555fb8a82d3",
+        "notes": "Plan stated up front as a numbered 5-part degeneration list with cited siblings; reader knows the strategy before the steps."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "61a3ce289ae5",
+          "ts": "196db8906b33",
+          "lean": "40d560274e88"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.6,
+          "max": 1
+        },
+        "evidence": "FeynmanPathIntegrals.lean:289-310 covers 3 of 5 claims; missing: tr_M->augmentation, J_K(1)=1, symmetric braiding (md:13-43)",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T14:57:15.410Z",
+        "reviewed_sha": "4b67a0f018cd04e0334bb94e9cadb555fb8a82d3",
+        "notes": "Remaining gaps are routine literature math (Jones 1987 s.3-4, Chari-Pressley) but need substantial Hecke/Markov Mathlib infra; routine-but-infra-heavy ~0.6."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "61a3ce289ae5",
+          "ts": "196db8906b33",
+          "lean": "40d560274e88"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "evidence": "feynman-classical-limit.md:1-50 — textbook q->1 Hecke degeneration (Chari-Pressley ref at lean:4)",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T14:57:15.445Z",
+        "reviewed_sha": "4b67a0f018cd04e0334bb94e9cadb555fb8a82d3",
+        "notes": "Standard classical-limit content, not duplicated by a corpus sibling; role is contextual recovery of QM within the QOU trace framework. Rubric 0.5 = standard, non-duplicated."
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-12T14:57:15.445Z"
 }
