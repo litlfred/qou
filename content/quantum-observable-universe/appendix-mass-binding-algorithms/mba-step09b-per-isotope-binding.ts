@@ -8,9 +8,9 @@ export default algorithm({
     "thm:knot-mass-formula-unified",
   ],
   computation: {
-    engine: "python+mpmath",
-    script: "qou-mass/src/qou_mass/api.py",
-    witness: "folio-assistant/computations/canonical-mass-table-242ppb.witness.json",
+    engine: "python",
+    script: "qou-mass/src/qou_mass/prediction.py",
+    witness: "qou-mass/src/qou_mass/data/isotopes/canonical-isotope-witness-Z*.witness.json",
     status: "experimental",
   },
   tags: [

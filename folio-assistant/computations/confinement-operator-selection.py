@@ -15,6 +15,7 @@ Usage:
     cd folio-assistant/computations && python3 confinement-operator-selection.py
 """
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+import cvxpy as cp
 import json
 import numpy as np
 import subprocess
@@ -534,6 +535,98 @@ for name, data in known.items():
     else:
         print(f"  ✗ MISMATCH — investigate")
 
+# ══════════════════════════════════════════════════════════════
+#  PHASE 2: CVXPY / CLARABEL KNOT OPERATOR SELECTION LP
+# ══════════════════════════════════════════════════════════════
+
+print("\n" + "=" * 80)
+print("PHASE 2: CVXPY / CLARABEL KNOT OPERATOR SELECTION LP")
+print("=" * 80)
+print("\nSolving the operator-selection LP for proton and neutron targets.")
+print("This identifies the minimum-action operator and extracts the shadow prices (dual variables).\n")
+
+lp_results = {}
+
+for nucleon_name, quark_types in [("proton", ['u', 'u', 'd']),
+                                   ("neutron", ['u', 'd', 'd'])]:
+    print(f"\n{'─' * 70}")
+    print(f"  {nucleon_name}")
+    print(f"{'─' * 70}")
+
+    target_net = known[nucleon_name]['known_net']
+    
+    # Primal variables
+    x = cp.Variable(6)
+    
+    # Markov traces of basis elements
+    t = np.array(TR_M_BASIS, dtype=np.float64)
+    
+    # Constraints
+    M = 1e6
+    constraints = [
+        cp.sum(x) == target_net,       # Net constraint
+        G @ x >= 0,                    # Frobenius positivity (demand-supply)
+        x >= -M                        # Boundedness
+    ]
+    
+    # Objective: minimize sum(t_i * x_i) = tr_M(Phi)
+    objective = cp.Minimize(t @ x)
+    
+    # Problem definition
+    prob = cp.Problem(objective, constraints)
+    
+    # Solve using Clarabel
+    try:
+        prob.solve(solver=cp.CLARABEL)
+    except Exception as e:
+        print(f"  ✗ Clarabel solve failed: {e}")
+        continue
+        
+    print(f"  Status: {prob.status}")
+    print(f"  Optimal value (primal action): {prob.value:.6f}")
+    
+    x_opt = x.value
+    y0_opt = constraints[0].dual_value
+    y_opt = constraints[1].dual_value
+    
+    # Reconstruct dual value manually to check gap
+    # Max n_target * y0 - M * sum(slack) 
+    # Let's just use cp output
+    
+    print("\n  Optimal Operator x* (NF):")
+    print_nf("    x*", list(x_opt))
+    
+    print("\n  Dual Variables:")
+    print(f"    y0* (net shadow price): {float(y0_opt):+.6f}")
+    for i, yi in enumerate(y_opt):
+        if yi > 1e-6:
+            print(f"    y*_{i} (channel {NF_NAMES[i]} demand price): {yi:+.6e}  [ACTIVE]")
+        else:
+            print(f"    y*_{i} (channel {NF_NAMES[i]} demand price): {yi:+.6e}")
+            
+    # Compute duality gap: primal obj - (n_target * y0)
+    # Note: bounded slacks might contribute if active, but M is large so x >= -M is inactive.
+    dual_obj = target_net * float(y0_opt)
+    gap = prob.value - dual_obj
+    print(f"\n  Dual Objective: {dual_obj:.6f}")
+    print(f"  Duality Gap:    {gap:.2e}")
+    
+    # Check match with B3 or Known NF
+    b3_vec = np.array(to_vec(b3_nf))
+    # Wait, the LP is on the bare operator, not multiplied by crossings.
+    # Ah, the general LP in operator-selection-lp.md just selects an operator Phi.
+    # B3 is the optimal operator for confinement. Let's compare with B3.
+    # Actually, B3 is just b3_vec.
+    
+    lp_results[nucleon_name] = {
+        "status": prob.status,
+        "primal_value": float(prob.value),
+        "x_opt": [float(v) for v in x_opt],
+        "y0_opt": float(y0_opt),
+        "y_opt": [float(v) for v in y_opt],
+        "duality_gap": float(gap),
+    }
+
 
 # ══════════════════════════════════════════════════════════════
 #  WITNESS OUTPUT
@@ -581,6 +674,8 @@ for nucleon_name, quark_types in [("proton", ['u', 'u', 'd']),
         }
 
     witness["candidates"][nucleon_name] = nuc_results
+
+witness["lp_optimization"] = lp_results
 
 out_path = Path(__file__).parent / "confinement-operator-selection.witness.json"
 with open(out_path, 'w') as f:
