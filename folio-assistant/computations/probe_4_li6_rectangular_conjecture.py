@@ -34,6 +34,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from witness_base import WitnessBuilder
+from lean_uniqueness_refs import lean_uniqueness_ref
 
 
 def alpha_star_from_min_eig(min_eig: float) -> float:
@@ -189,6 +190,7 @@ def main() -> int:
         f"falsification."
     )
 
+    out.add_data("lean_uniqueness_ref", lean_uniqueness_ref("⁶Li"))
     out_path = out.save()
     print(f"Witness: {out_path}")
     return 0
