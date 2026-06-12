@@ -239,9 +239,11 @@ def main() -> int:
             "p-followons-ledger.md §Next-direction recommendations."
         ),
     )
-    out = w.set_audit_only(
+    w.set_audit_only(
         "docs/coordination/2026-05-20-lambda-p-followons-ledger.md"
-    ).add_data("lean_uniqueness_ref", lean_uniqueness_ref("helium-4")).save()
+    )
+    w.add_data("lean_uniqueness_ref", lean_uniqueness_ref("helium-4"))
+    out = w.save()
     print(f"\n→ wrote {out}")
     print(f"  Framework documented; H_{{12}} extract deferred.")
     return 0
