@@ -1048,7 +1048,192 @@
         "reviewed_at": "2026-06-11T18:06:24.673Z",
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "29a6aae81269",
+          "ts": "910053cb3da7",
+          "lean": "62de90678018"
+        },
+        "result": "fail",
+        "severity": "minor",
+        "evidence": "shell-filling-rule.md:30-32 'The dual variable y_0 gives the marginal Phi_1 cost ... this is the electronegativity in the braid framework'; .md:44-47 'The generator alternation is the Hecke algebra manifestation of Hund's rule'",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:56:00.886Z",
+        "reviewed_sha": "32790b043e60a7e18331ddbb5b824d164ea5cff7",
+        "notes": "Substantive physical interpretation (electronegativity identification, Hund's-rule reading) sits inside the proposition statement; no remark interprets prop:shell-filling-rule (only valence-from-braid -> def:electron-shell-braid-capacity nearby). Genuinely mislocated per rubric."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "29a6aae81269",
+          "ts": "910053cb3da7",
+          "lean": "62de90678018"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "molecular-construction.ts:56 — listed in sec:electron-shells ('Electron shells and bonding capacity')",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:56:00.922Z",
+        "reviewed_sha": "32790b043e60a7e18331ddbb5b824d164ea5cff7",
+        "notes": "Aufbau/shell-filling claim is the core topic of its section; distinct from sibling shell-closure-nf-term-count (NF growth) and electron-shell-braid-capacity (definition)."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "29a6aae81269",
+          "ts": "910053cb3da7",
+          "lean": "62de90678018"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "shell-filling-rule.md:19-28 — LP dual over Phi_1 site costs; no numeric q ~ value, no MeV, no Real.* construct in the statement",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:56:00.959Z",
+        "reviewed_sha": "32790b043e60a7e18331ddbb5b824d164ea5cff7",
+        "notes": "Statement is an optimisation formulation in the chapter's applied (archimedean-leaning) regime; Phi_1 is real-log-volume but no hard-coded substrate value or ordering hypothesis appears. Matches chapter regime."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "29a6aae81269",
+          "ts": "910053cb3da7",
+          "lean": "62de90678018"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "shell-filling-rule.md:34-47 — no '**Proof.**' body; only an ILP procedure description; shell-filling-rule.lean:18-20 is a True stub",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:56:00.995Z",
+        "reviewed_sha": "32790b043e60a7e18331ddbb5b824d164ea5cff7",
+        "notes": "No narrative proof body exists, so no wall-violating proof machinery to adjudicate; absence of proof is covered under proof-narrative-lean-equiv/proof-statement-integrity, not a wall-side defect."
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "29a6aae81269",
+          "ts": "910053cb3da7",
+          "lean": "62de90678018"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.35,
+          "max": 1
+        },
+        "evidence": "shell-filling-rule.md:34-41 — ILP procedure ('add electrons one at a time, selecting the operator minimising |tr_M| subject to G.x >= 0') is the only stated plan; no proof strategy for claims 1-2 (aufbau/Hund); .lean:18-20 True stub",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:56:35.009Z",
+        "reviewed_sha": "32790b043e60a7e18331ddbb5b824d164ea5cff7",
+        "notes": "Computational plan is recoverable but implicit; no argument sketch connecting Phi_1 minimisation to the aufbau/Hund claims. Mid-low band."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "29a6aae81269",
+          "ts": "910053cb3da7",
+          "lean": "62de90678018"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0.25,
+          "max": 1
+        },
+        "evidence": "shell-filling-rule.lean:18-20 'theorem shell_filling_rule : True := by trivial' — entire claim unformalized",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:56:35.050Z",
+        "reviewed_sha": "32790b043e60a7e18331ddbb5b824d164ea5cff7",
+        "notes": "The gap is the whole target: deriving aufbau + Hund from Phi_1 minimisation is core-level with no partial Lean content; only ILP table evidence in .md. Between core (~0.3) and restates-target (0.0)."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "29a6aae81269",
+          "ts": "910053cb3da7",
+          "lean": "62de90678018"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.55,
+          "max": 1
+        },
+        "evidence": "Same LP-dual machinery as prop:h2-lp-dual-binding / ch4-lp-dual-binding siblings, applied to electron configuration; electronegativity-as-shadow-price reading is distinct (.md:30-32)",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:56:35.088Z",
+        "reviewed_sha": "32790b043e60a7e18331ddbb5b824d164ea5cff7",
+        "notes": "Standard within-corpus LP-dual pattern, but the application (aufbau/electronegativity) is not duplicated by any sibling — not a consolidation candidate."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "29a6aae81269",
+          "ts": "910053cb3da7",
+          "lean": "62de90678018"
+        },
+        "result": "warn",
+        "severity": "major",
+        "evidence": "shell-filling-rule.lean:9-10 'currently a sorry placeholder; full formalisation pending'; .lean:18 concludes True while the .ts kind is proposition (prop:shell-filling-rule)",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:56:35.126Z",
+        "reviewed_sha": "32790b043e60a7e18331ddbb5b824d164ea5cff7",
+        "notes": "Statement not silently altered (no signature drift vs prior commit), but the Lean decl proves True — a loudly-documented weakening per the stub docstring => warn, not fail. Proposition kind currently rests on narrative + ILP table only."
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-12T19:56:35.126Z"
 }
