@@ -101,7 +101,7 @@ class QaEvidenceItem(BaseModel):
 
     model_config = ConfigDict(extra="allow")
 
-    line: Optional[float] = None
+    line: Optional[int] = None
     text: Optional[str] = None
 
 
@@ -123,7 +123,7 @@ class QaCriterionEntry(BaseModel):
     # Descriptive structural measures a checker emits alongside its verdict
     # (e.g. the detangler axis's tanglement_score / cone_size / pagerank /
     # graph_energy snapshot) — not a quality score.
-    metrics: Optional[dict[str, Union[float, str]]] = None
+    metrics: Optional[dict[str, Union[int, float, str]]] = None
     reviewer: QaReviewer
     # ISO-8601 UTC datetime; legacy agent entries may carry a bare ISO date.
     reviewed_at: str

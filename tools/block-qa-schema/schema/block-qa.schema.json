@@ -136,7 +136,7 @@
                 "type": "object",
                 "additionalProperties": true,
                 "properties": {
-                  "line": { "type": "number" },
+                  "line": { "type": "integer" },
                   "text": { "type": "string" }
                 }
               }

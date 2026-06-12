@@ -71,7 +71,7 @@ export type QaScore = z.infer<typeof QaScore>;
 // live corpus carries both shapes.
 export const QaEvidenceItem = z
   .object({
-    line: z.number().optional(),
+    line: z.number().int().optional(),
     text: z.string().optional(),
   })
   .passthrough();
