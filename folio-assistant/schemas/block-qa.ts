@@ -119,8 +119,13 @@ export interface QaCriterionEntry {
    * `kind: "agent"` reviewers; absent for binary criteria.
    */
   score?: { value: number; max: number; rubric?: Record<string, number> };
-  /** Evidence: file:line + verbatim quote (for fail/warn). */
-  evidence?: string;
+  /**
+   * Evidence for fail/warn verdicts: either a free-form "file:line +
+   * verbatim quote" string, or a structured list of { line, text }
+   * locations. Some agent reviewers (voice axis especially) emit the
+   * structured shape; the live corpus carries both.
+   */
+  evidence?: string | Array<{ line?: number; text?: string }>;
   /**
    * Optional structured numeric/heuristic measures a checker emits
    * alongside its verdict — e.g. the detangler axis records per-block
