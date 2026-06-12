@@ -1053,7 +1053,214 @@
         "reviewed_at": "2026-06-11T18:06:24.673Z",
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "118e85df6362",
+          "ts": "1dd21cd5f424",
+          "lean": "3ce457aa3c74"
+        },
+        "result": "fail",
+        "severity": "minor",
+        "evidence": "reeb-u1-chart-swap.md:85-124 — \"## Consequences (five roles, one U(1))\" table + Wick-rotation / knot-operator-Wilson-loop / OS-reflection physical readings",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:42:39.724Z",
+        "reviewed_sha": "7d9606159d451ac34592e68d7eb723ad8bdcd9e1",
+        "notes": "Substantive interpretive prose (physical roles, BHW forward-tube reading, OS positivity) follows the proof in the SAME block; no remark with interprets: prop:reeb-u1-chart-swap exists (grep empty). Extract to a companion remark."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "118e85df6362",
+          "ts": "1dd21cd5f424",
+          "lean": "3ce457aa3c74"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "quantum-observable-universes.ts:503 — block sits in sec:braiding-conventions immediately after affine-chart-origin-of-i-and-q",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:42:39.759Z",
+        "reviewed_sha": "7d9606159d451ac34592e68d7eb723ad8bdcd9e1",
+        "notes": "Formalizes the chart-swap U(1) of the adjacent rem:affine-chart-origin-of-i-and-q; topic squarely in section scope; no sibling carries the same claim."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "118e85df6362",
+          "ts": "1dd21cd5f424",
+          "lean": "3ce457aa3c74"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "reeb-u1-chart-swap.md:10-18 — equality of subgroups of Aut_C(P(V)); reeb-u1-chart-swap.lean:70 — generic [Group G]",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:42:39.796Z",
+        "reviewed_sha": "7d9606159d451ac34592e68d7eb723ad8bdcd9e1",
+        "notes": "Statement is Lie/categorical (subgroup equality); no numeric q0, MeV, Real.*, or order hypothesis; Lean is over an abstract group. Matches substrate-chapter regime."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "118e85df6362",
+          "ts": "1dd21cd5f424",
+          "lean": "3ce457aa3c74"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "reeb-u1-chart-swap.md:34-67 — Steps 1-4 argue via T_q-action on G_q/T_q and weight grading; no linarith/IVT/numeric q evaluation",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:43:12.331Z",
+        "reviewed_sha": "7d9606159d451ac34592e68d7eb723ad8bdcd9e1",
+        "notes": "Proof is structural (quotient action, weight -1 grading, transitivity). The Wick-rotation corollary (md:69-83) is parameter bookkeeping, not archimedean machinery. Matches statement side."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "118e85df6362",
+          "ts": "1dd21cd5f424",
+          "lean": "3ce457aa3c74"
+        },
+        "result": "fail",
+        "severity": "major",
+        "evidence": "reeb-u1-chart-swap.lean:59,63 — structure fields chartSwap_eq_torus / reebFlow_eq_torus assume Steps 2-3; lean:70-72 theorem is a one-line rw",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:43:12.367Z",
+        "reviewed_sha": "7d9606159d451ac34592e68d7eb723ad8bdcd9e1",
+        "notes": "Narrative states an unconditional proposition and claims Steps 2-3 are proved; Lean takes both as hypotheses of ChartSwapReebData, which jointly restate the target (only transitivity is formalized). Theorem-changing divergence per rubric, though loudly documented in lean:25-35."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "118e85df6362",
+          "ts": "1dd21cd5f424",
+          "lean": "3ce457aa3c74"
+        },
+        "result": "warn",
+        "severity": "major",
+        "evidence": "reeb-u1-chart-swap.lean:25-28 — \"Each of these inclusions is recorded as a hypothesis (rather than derived)\"; no sorry/sorryAx in file",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:43:12.403Z",
+        "reviewed_sha": "7d9606159d451ac34592e68d7eb723ad8bdcd9e1",
+        "notes": "Statement weakened to a conditional-on-data form, but the weakening is loudly documented in the .lean docstring and mirrored in the .md proof structure; no axiom injection, proof is rw-only. Loud weakening -> warn."
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "118e85df6362",
+          "ts": "1dd21cd5f424",
+          "lean": "3ce457aa3c74"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.9,
+          "max": 1
+        },
+        "evidence": "reeb-u1-chart-swap.md:31-32 — plan stated up front (\"routine identification: T_q-orbits...\"); 4 named steps; lean:13-23 has an explicit ## Strategy section",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:43:45.161Z",
+        "reviewed_sha": "7d9606159d451ac34592e68d7eb723ad8bdcd9e1",
+        "notes": "Plan explicit before the steps in both .md and .lean; cited constructions named per step."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "118e85df6362",
+          "ts": "1dd21cd5f424",
+          "lean": "3ce457aa3c74"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.6,
+          "max": 1
+        },
+        "evidence": "reeb-u1-chart-swap.lean:30-33 — \"requires the SU_q(2) representation theory ... absent from Mathlib today\"; file is sorry-free but conditional",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:43:45.200Z",
+        "reviewed_sha": "7d9606159d451ac34592e68d7eb723ad8bdcd9e1",
+        "notes": "No sorry, but the instantiation gap (a ChartSwapReebData for the actual Aut(P(V))) needs quantum-group + projective-quotient infra absent from Mathlib; mathematically plausible, infra-heavy — between routine and core."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "118e85df6362",
+          "ts": "1dd21cd5f424",
+          "lean": "3ce457aa3c74"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "evidence": "reeb-u1-chart-swap.md:31-32 — argument is the standard \"T_q-orbits unique up to reparameterisation\" transitivity; no sibling block proves the same identity",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:43:45.238Z",
+        "reviewed_sha": "7d9606159d451ac34592e68d7eb723ad8bdcd9e1",
+        "notes": "Framework-specific identification, but the proof technique is standard transitivity-through-the-torus; not duplicated in the corpus."
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-12T19:43:45.238Z"
 }
