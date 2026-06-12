@@ -34,6 +34,7 @@ if str(HERE) not in sys.path:
 import mpmath as mp  # noqa: E402
 
 from witness_base import WitnessBuilder  # noqa: E402
+from lean_uniqueness_refs import lean_uniqueness_ref  # noqa: E402
 
 
 def main() -> int:
@@ -173,6 +174,7 @@ def main() -> int:
     print(f"  m_p_pred (8·G)      = {mp.nstr(m_p_8G, 12)}  Δ={mp.nstr(delta_8G, 4)}  ({mp.nstr(delta_8G / M_P_CODATA * mp.mpf('1e6'), 4)} ppm)")
     print(f"  m_p_codata          = {mp.nstr(M_P_CODATA, 12)}")
 
+    w.add_data("lean_uniqueness_ref", lean_uniqueness_ref("proton"))
     out = w.set_audit_only(
         "docs/audits/2026-05-18-lambda-scale-derivation-search.md"
     ).save()

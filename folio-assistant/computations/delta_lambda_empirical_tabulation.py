@@ -86,6 +86,7 @@ if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
 from _precision import set_compute_dps, fmt  # noqa: E402
+from lean_uniqueness_refs import lean_uniqueness_ref  # noqa: E402
 
 set_compute_dps()
 
@@ -736,6 +737,7 @@ def main() -> int:
         "prop:categorical-mass-markov",
         "conj:categorical-neutrality-saturated-shells",
     ])
+    w.add_data("lean_uniqueness_ref", lean_uniqueness_ref("multi-atom tabulation (p, n, ²H, ³H, ³He, ⁴He)"))
     out = w.save()
     print(f"\n  Witness: {out}")
     return 0

@@ -101,6 +101,7 @@ HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE))
 
 from _precision import set_compute_dps, fmt  # noqa: E402
+from lean_uniqueness_refs import lean_uniqueness_ref  # noqa: E402
 
 set_compute_dps()
 
@@ -382,6 +383,7 @@ def main() -> int:
             engine="mpmath",
             output_dir=HERE,
         )
+        .add_data("lean_uniqueness_ref", lean_uniqueness_ref("helium-4"))
         .save()
     )
     print(f"\n  Wrote {out.name}  (method = {method})")

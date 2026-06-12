@@ -183,6 +183,7 @@ def main() -> int:
     # consumed by `run_pipeline.py`.  Preserves the on-disk shape
     # (description, auditOnly, data) bit-for-bit.
     from witness_base import WitnessBuilder
+    from lean_uniqueness_refs import lean_uniqueness_ref
     payload = {
         "description": (
             "Workplan 2 Phase 2 — partial Path A derivation of "
@@ -213,6 +214,7 @@ def main() -> int:
         script_path=__file__,
         engine="mpmath",
     )
+    builder.add_data("lean_uniqueness_ref", lean_uniqueness_ref("neutron"))
     out_path = builder.save()
     print(f"\n  Wrote {Path(out_path).name}")
     return 0
