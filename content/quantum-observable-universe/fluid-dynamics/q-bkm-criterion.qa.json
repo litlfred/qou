@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "b67063f87d56",
     "ts": "949aea0a9766",
-    "lean": "e6d444bc9d4e"
+    "lean": "fbfc0454994a"
   },
   "criteria": {
     "voice-status-leak": [
@@ -316,6 +316,25 @@
         "reviewed_at": "2026-06-07T02:30:21.423Z",
         "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
         "notes": "Sibling stub 'theorem q_bkm_criterion : True := by trivial' — True-placeholder for a THEOREM. Does not state the md BKM iff. Integrity FAIL."
+      },
+      {
+        "field_hash": {
+          "md": "b67063f87d56",
+          "ts": "949aea0a9766",
+          "lean": "fbfc0454994a"
+        },
+        "result": "pass",
+        "evidence": "lean/QOU/FluidDynamics/q_bkm_criterion.lean — derives extendsSmoothly ↔ vorticityIntegralFinite via Iff.intro from the class's two directional hypotheses; no longer := ctx.claim_bkm_iff",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/lean-proof-review",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "local/lean-proof-review"
+        },
+        "reviewed_at": "2026-06-12T15:33:55.576Z",
+        "reviewed_sha": "fcb1152f5616e324ed4de829859d39d62e0476c1",
+        "notes": "§3b-cond non-degenerate conditional (class axiomatises the two BKM directions; theorem derives the iff). Generic [CommRing R], no ℝ (§7c). Predicates remain abstract Props (deep PDE content deferred). Builds: lake build -R exit 0. Canonical decl resolved via lean.ref; sibling stub dropped."
       }
     ],
     "fit-section-chapter": [

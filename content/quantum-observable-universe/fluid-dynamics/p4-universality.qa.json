@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "a5400051cdb5",
     "ts": "2742d361afd0",
-    "lean": "ed5f2a2ad375"
+    "lean": "ed8d208dc74a"
   },
   "criteria": {
     "voice-status-leak": [
@@ -487,6 +487,25 @@
         "reviewed_at": "2026-06-07T02:30:21.117Z",
         "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
         "notes": "Lean conclusion is 'True := trivial' (with 3 class hyps); does not state the md universality claim (alpha independent of initial data). Integrity FAIL."
+      },
+      {
+        "field_hash": {
+          "md": "a5400051cdb5",
+          "ts": "2742d361afd0",
+          "lean": "ed8d208dc74a"
+        },
+        "result": "pass",
+        "evidence": "lean/QOU/FluidDynamics/p4_universality.lean — derives ∀ v₀ v₀', α v₀ = α v₀' from alpha_factors_through_invariants; not a value projection",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/lean-proof-review",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "local/lean-proof-review"
+        },
+        "reviewed_at": "2026-06-12T15:33:55.627Z",
+        "reviewed_sha": "fcb1152f5616e324ed4de829859d39d62e0476c1",
+        "notes": "§3b-cond non-degenerate: universality (initial-data independence) derived from the factoring hypothesis. Fully generic types, no ℝ (§7c). Builds exit 0. Canonical decl via lean.ref; sibling stub dropped."
       }
     ],
     "fit-section-chapter": [
