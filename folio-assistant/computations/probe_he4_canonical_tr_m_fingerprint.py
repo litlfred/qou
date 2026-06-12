@@ -114,14 +114,16 @@ def main() -> int:
     #   y_lambda     = Wenzl weight at q_0 (50-dps precomputed hot path
     #                  in wedderburn_jones_markov.y_lambda_at)
     #   contribution = y_λ(q_0) · χ^λ_q(β_⁴He)   (Frobenius pairing)
-    y_at_q0 = y_lambda_at(12, Q_0_FLOAT)
+    n_strands = 12
+    y_at_q0 = y_lambda_at(n_strands, Q_0_FLOAT)
+    fact_n = math.factorial(n_strands)
 
     with mp.workdps(50):
         by_part = {}
         for entry in body["by_partition"]:
             part = tuple(entry["partition"])
             hooks = hook_lengths(part)
-            dim = math.factorial(12) // math.prod(hooks)
+            dim = fact_n // math.prod(hooks)
             y_lam = mp.mpf(str(y_at_q0[part]))
             chi_lam = mp.mpf(entry["chi_lambda"])
             by_part[part] = {

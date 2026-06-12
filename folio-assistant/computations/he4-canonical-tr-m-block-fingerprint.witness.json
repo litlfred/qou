@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-12T15:00:56.926800+00:00",
-  "commitSha": "6f008b6d575a739c6e769a6f3d3ab2bc737b2b59",
+  "computedAt": "2026-06-12T15:19:46.020862+00:00",
+  "commitSha": "5ad92720a36a6a62cb206d1fe19cc9dea6d7ccb0",
   "assertions": [
     {
       "name": "tr_M_at_q0",
@@ -102,11 +102,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 30,
+  "durationMs": 26,
   "computation": "he4-canonical-tr-m-block-fingerprint",
   "scriptFile": "probe_he4_canonical_tr_m_fingerprint.py",
-  "scriptHash": "7046d8578738",
-  "scriptCommitSha": "af3316bf9d3479939510555d41340c30033866ba",
+  "scriptHash": "d7a740cf6a4a",
+  "scriptCommitSha": "28ad792e50a4d6e3775d07cfc25afcf3ab2a6f47",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
