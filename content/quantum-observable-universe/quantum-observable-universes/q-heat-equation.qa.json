@@ -864,7 +864,51 @@
         "reviewed_at": "2026-06-11T18:06:24.673Z",
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "8d178e42f258",
+          "ts": "c50d12b2c47f",
+          "lean": "f2e050968e34"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "quantum-observable-universes.ts:414-421 — section 'Linear $q$-transforms: heat, Laplace, Fourier' (sec:q-linear-transforms) lists q-heat-equation as first content block; q-heat-equation.md:4 defines 'The *$q$-heat equation*'",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T15:36:48.356Z",
+        "reviewed_sha": "edeafd189498c3b339731d67eee6997dc5acbd88",
+        "notes": "Definition squarely in scope of its section; siblings (exists/unique) build on it, no redundancy"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "8d178e42f258",
+          "ts": "c50d12b2c47f",
+          "lean": "f2e050968e34"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "q-heat-equation.md:31-32 — 'purely categorical condition — no choice of base field is required'; md:75-83 'Base-ring independence' paragraph confines convergent/archimedean phenomena explicitly",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T15:36:48.392Z",
+        "reviewed_sha": "edeafd189498c3b339731d67eee6997dc5acbd88",
+        "notes": "Generic-ring chapter; statement is algebraic over Z[q,q^-1,(q-1)^-1], no numeric q0/MeV/Real.* tokens"
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-12T15:36:48.392Z"
 }
