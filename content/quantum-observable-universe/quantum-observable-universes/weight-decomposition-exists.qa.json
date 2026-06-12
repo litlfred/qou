@@ -1031,7 +1031,192 @@
         "reviewed_at": "2026-06-11T18:06:24.673Z",
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "a5b26f674d7a",
+          "ts": "84aa43c272e3",
+          "lean": "2eb4e4c501f3"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "weight-decomposition-exists.md:1 — 'Let $(\\mathbf{C}, A, \\tau)$ be a (quantum observable universe) ... there exists a weight decomposition' ",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:28:43.760Z",
+        "reviewed_sha": "d91ff40e34207010f6ec8784b1f96fe2238945fc",
+        "notes": "Weight-decomposition existence sits squarely in the quantum-observable-universes chapter scope; no sibling carries the same claim."
+      }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "a5b26f674d7a",
+          "ts": "84aa43c272e3",
+          "lean": "2eb4e4c501f3"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "weight-decomposition-exists.md:7 — '1. Complementarity: $\\pi_H + \\pi_V = \\mathrm{id}$. 2. Idempotency: ...'",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:28:43.798Z",
+        "reviewed_sha": "d91ff40e34207010f6ec8784b1f96fe2238945fc",
+        "notes": "Bare statement: hypotheses, existence claim, two listed properties, commuting diagram. No physical-meaning/motivation prose."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "a5b26f674d7a",
+          "ts": "84aa43c272e3",
+          "lean": "2eb4e4c501f3"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "weight-decomposition-exists.md:7 — '$\\pi_H^2 = \\pi_H$ and $\\pi_V^2 = \\pi_V$' (idempotent projections, no numerics)",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:29:07.945Z",
+        "reviewed_sha": "d91ff40e34207010f6ec8784b1f96fe2238945fc",
+        "notes": "Purely categorical statement over generic C/preadditive; no Real.*, no numeric q, no MeV/order hypotheses. Matches generic-ring chapter regime."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "a5b26f674d7a",
+          "ts": "84aa43c272e3",
+          "lean": "2eb4e4c501f3"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "weight-decomposition-exists.lean:21 — comp_idem_of_sum_id proved by 'simp [Preadditive.comp_sub, ...]'; no linarith/Real/IVT",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:29:07.982Z",
+        "reviewed_sha": "d91ff40e34207010f6ec8784b1f96fe2238945fc",
+        "notes": "Algebraic proof via Preadditive simp lemmas; no archimedean machinery."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "a5b26f674d7a",
+          "ts": "84aa43c272e3",
+          "lean": "2eb4e4c501f3"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "weight-decomposition-exists.lean:40 — 'WeightDecomposition.ofMaximalTorus ... : WeightDecomposition C := { ... proj_V_idem := comp_idem_of_sum_id avg_idem }'",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:29:08.018Z",
+        "reviewed_sha": "d91ff40e34207010f6ec8784b1f96fe2238945fc",
+        "notes": "Constructs full WeightDecomposition with both idempotency fields proved; no sorry, no axiom restating target, statement not weakened."
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "a5b26f674d7a",
+          "ts": "84aa43c272e3",
+          "lean": "2eb4e4c501f3"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.85,
+          "max": 1
+        },
+        "evidence": "weight-decomposition-exists.lean:32 — docstring 'The construction: 1. averaging operator e0 ... 2. Set pi_H:=e0 ... 4. Idempotency of pi_V follows from comp_idem_of_sum_id'",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:29:40.609Z",
+        "reviewed_sha": "d91ff40e34207010f6ec8784b1f96fe2238945fc",
+        "notes": "Plan stated up front: numbered 4-step construction, named auxiliary lemma. Slightly implicit on Schur-orthogonality step."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "a5b26f674d7a",
+          "ts": "84aa43c272e3",
+          "lean": "2eb4e4c501f3"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "evidence": "weight-decomposition-exists.lean:40 — ofMaximalTorus returns WeightDecomposition with proj_V_idem := comp_idem_of_sum_id avg_idem (no sorry)",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:29:40.647Z",
+        "reviewed_sha": "d91ff40e34207010f6ec8784b1f96fe2238945fc",
+        "notes": "Sorry-free construction; no remaining gap to close."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "a5b26f674d7a",
+          "ts": "84aa43c272e3",
+          "lean": "2eb4e4c501f3"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "evidence": "weight-decomposition-exists.lean:21 — '(id - p) >> (id - p) = id - p' complementary-idempotent argument",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:29:40.683Z",
+        "reviewed_sha": "d91ff40e34207010f6ec8784b1f96fe2238945fc",
+        "notes": "Standard idempotent-complement / averaging argument; correct and not duplicated in corpus, but not a novel technique."
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-12T19:29:40.683Z"
 }
