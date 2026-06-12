@@ -254,6 +254,13 @@ def main() -> int:
                      "y_λ).  Differs from canonical tr_M^3(𝓑_p, q) "
                      "[Phase 5l witness] by a q-independent constant.  "
                      "Phase 5l.2 reconciles the normalization.")
+    builder.add_data("lean_uniqueness_ref", {
+        "nucleus": "proton",
+        "theorem": "qou:QOU.BraidKnot.NucleusEmptySDPUniqueness.nucleus_uniqueness_closed (parameterised by crossing count n)",
+        "framework_doc": "content/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
+        "note": "T_w uniqueness at the abstract empty-constraint SDP level (PR #1537/#1542 parameterised module). Workplan: docs/workplans/2026-05-31-witness-lean-uniqueness-ref-wiring.md.",
+    })
+
     builder.save()
     print(f"\nWitness written: tau-M-proton-closed-form-phase5l1.witness.json")
     return 0

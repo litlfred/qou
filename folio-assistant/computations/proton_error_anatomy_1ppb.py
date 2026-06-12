@@ -201,6 +201,14 @@ def main():
         source="m_p substrate identity gap",
     )
 
+    wb.add_data("lean_uniqueness_ref", {
+        "nucleus": "proton",
+        "theorem": "qou:QOU.BraidKnot.NucleusEmptySDPUniqueness.nucleus_uniqueness_closed (parameterised by crossing count n)",
+        "framework_doc": "content/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
+        "note": "T_w uniqueness at the abstract empty-constraint SDP level (PR #1537/#1542 parameterised module). Workplan: docs/workplans/2026-05-31-witness-lean-uniqueness-ref-wiring.md.",
+    })
+
+
     wb.save()
 
     print("=== PROTON ERROR ANATOMY (1 ppb target) ===")
