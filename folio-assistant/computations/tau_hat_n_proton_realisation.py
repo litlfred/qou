@@ -25,6 +25,7 @@ Phase A.3 of issue #522.
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+from lean_uniqueness_refs import lean_uniqueness_ref  # noqa: E402
 import json
 import sys
 from datetime import datetime, timezone
@@ -497,6 +498,7 @@ def main():
         "timestamp": datetime.now(timezone.utc).isoformat(),
     }
     out = Path(__file__).parent / "tau-hat-n-proton-realisation.witness.json"
+    witness["lean_uniqueness_ref"] = lean_uniqueness_ref("proton")
     out.write_text(json.dumps(witness, indent=2))
     print(f"\n[witness] -> {out}")
 

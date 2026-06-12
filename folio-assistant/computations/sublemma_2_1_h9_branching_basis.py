@@ -478,6 +478,7 @@ def main() -> int:
 
     # Witness
     from witness_base import WitnessBuilder
+    from lean_uniqueness_refs import lean_uniqueness_ref
     builder = (
         WitnessBuilder(f"sublemma-2-1-h9-{args.atom}-branching-verify",
                        engine="numpy")
@@ -495,6 +496,7 @@ def main() -> int:
             "docs/audits/2026-05-16-sublemma-2-1-h9-phase-1.md"
         )
         .add_data("atom", args.atom)
+        .add_data("lean_uniqueness_ref", lean_uniqueness_ref(args.atom))
         .add_data("interface_outer", "nn")
         .add_data("interface_inner", "pn")
         .add_data("approach", "branching_basis_no_test_words")

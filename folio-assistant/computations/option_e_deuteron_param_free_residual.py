@@ -24,6 +24,7 @@ import math
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
+from lean_uniqueness_refs import lean_uniqueness_ref  # noqa: E402
 from mpmath import mpf, mp
 
 
@@ -174,6 +175,7 @@ def main() -> int:
     out = (repo_root / "folio-assistant" / "computations"
            / "option-e-deuteron-param-free-residual.witness.json")
     with out.open("w") as f:
+        witness["lean_uniqueness_ref"] = lean_uniqueness_ref("deuteron (²H)")
         json.dump(witness, f, indent=2)
     print(f"\nWrote {out}")
     print("\nclosure_status: does_not_close (parameter-free margin −82.9%)")
