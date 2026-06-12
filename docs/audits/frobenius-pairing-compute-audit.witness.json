@@ -1,14 +1,32 @@
 {
   "scan_dir": "folio-assistant/computations",
-  "n_scripts_scanned": 730,
+  "n_scripts_scanned": 793,
   "counts": {
-    "A": 302,
+    "A": 314,
     "B": 0,
     "C": 0,
-    "skip": 423
+    "skip": 475
   },
   "buckets": {
     "A": [
+      {
+        "bucket": "A",
+        "reason": "raw tr_M / markov_trace (no operator-on-state)",
+        "witnesses": [],
+        "script": "folio-assistant/computations/_h4_substrate.py"
+      },
+      {
+        "bucket": "A",
+        "reason": "raw tr_M / markov_trace (no operator-on-state)",
+        "witnesses": [],
+        "script": "folio-assistant/computations/_habiro_coefficient_extract.py"
+      },
+      {
+        "bucket": "A",
+        "reason": "raw tr_M / markov_trace (no operator-on-state)",
+        "witnesses": [],
+        "script": "folio-assistant/computations/_helium_habiro_coefficient_extract.py"
+      },
       {
         "bucket": "A",
         "reason": "raw tr_M / markov_trace (no operator-on-state)",
@@ -50,7 +68,7 @@
         "reason": "raw tr_M / markov_trace (no operator-on-state)",
         "witnesses": [
           {
-            "witness": "folio-assistant/computations/adjacent-vs-full-probe.witness.json",
+            "witness": "folio-assistant/computations/active-set-truncation-prototype.witness.json",
             "ok": false,
             "missing_fields": [
               "gram_matrix",
@@ -61,14 +79,14 @@
             "opted_out_raw_trace": false
           }
         ],
-        "script": "folio-assistant/computations/adjacent_vs_full_probe.py"
+        "script": "folio-assistant/computations/active_set_truncation_prototype.py"
       },
       {
         "bucket": "A",
         "reason": "raw tr_M / markov_trace (no operator-on-state)",
         "witnesses": [
           {
-            "witness": "folio-assistant/computations/alpha-5-jucys-murphy-central.witness.json",
+            "witness": "folio-assistant/computations/all-nuclides-sdp-admissibility.witness.json",
             "ok": false,
             "missing_fields": [
               "gram_matrix",
@@ -79,14 +97,14 @@
             "opted_out_raw_trace": false
           }
         ],
-        "script": "folio-assistant/computations/alpha_5_jucys_murphy_central.py"
+        "script": "folio-assistant/computations/all_nuclides_sdp_admissibility.py"
       },
       {
         "bucket": "A",
         "reason": "raw tr_M / markov_trace (no operator-on-state)",
         "witnesses": [
           {
-            "witness": "folio-assistant/computations/alpha-5-lp-dual-crystal.witness.json",
+            "witness": "folio-assistant/computations/all-nuclides-wedderburn-spectral-v2.witness.json",
             "ok": false,
             "missing_fields": [
               "gram_matrix",
@@ -97,85 +115,7 @@
             "opted_out_raw_trace": false
           }
         ],
-        "script": "folio-assistant/computations/alpha_5_lp_dual_crystal.py"
-      },
-      {
-        "bucket": "A",
-        "reason": "raw tr_M / markov_trace (no operator-on-state)",
-        "witnesses": [
-          {
-            "witness": "folio-assistant/computations/alpha-cluster-recursion.witness.json",
-            "ok": false,
-            "missing_fields": [
-              "gram_matrix",
-              "gram_inverse",
-              "lp_active_set",
-              "shadow_prices"
-            ],
-            "opted_out_raw_trace": false
-          }
-        ],
-        "script": "folio-assistant/computations/alpha_cluster_recursion.py"
-      },
-      {
-        "bucket": "A",
-        "reason": "raw tr_M / markov_trace (no operator-on-state)",
-        "witnesses": [],
-        "script": "folio-assistant/computations/alpha_k_jones_markov_h12.py"
-      },
-      {
-        "bucket": "A",
-        "reason": "raw tr_M / markov_trace (no operator-on-state)",
-        "witnesses": [
-          {
-            "witness": "folio-assistant/computations/alpha-k-jones-markov-h3.witness.json",
-            "ok": false,
-            "missing_fields": [
-              "gram_matrix",
-              "gram_inverse",
-              "lp_active_set",
-              "shadow_prices"
-            ],
-            "opted_out_raw_trace": false
-          }
-        ],
-        "script": "folio-assistant/computations/alpha_k_jones_markov_h3.py"
-      },
-      {
-        "bucket": "A",
-        "reason": "raw tr_M / markov_trace (no operator-on-state)",
-        "witnesses": [
-          {
-            "witness": "folio-assistant/computations/alpha-k-jones-markov-h4.witness.json",
-            "ok": false,
-            "missing_fields": [
-              "gram_matrix",
-              "gram_inverse",
-              "lp_active_set",
-              "shadow_prices"
-            ],
-            "opted_out_raw_trace": false
-          }
-        ],
-        "script": "folio-assistant/computations/alpha_k_jones_markov_h4.py"
-      },
-      {
-        "bucket": "A",
-        "reason": "raw tr_M / markov_trace (no operator-on-state)",
-        "witnesses": [
-          {
-            "witness": "folio-assistant/computations/alpha-k-macdonald-closed-form.witness.json",
-            "ok": false,
-            "missing_fields": [
-              "gram_matrix",
-              "gram_inverse",
-              "lp_active_set",
-              "shadow_prices"
-            ],
-            "opted_out_raw_trace": false
-          }
-        ],
-        "script": "folio-assistant/computations/alpha_k_macdonald_closed_form.py"
+        "script": "folio-assistant/computations/all_nuclides_wedderburn_spectral_v2.py"
       },
       {
         "bucket": "A",
@@ -230,24 +170,6 @@
         "reason": "raw tr_M / markov_trace (no operator-on-state)",
         "witnesses": [
           {
-            "witness": "folio-assistant/computations/atom-mass-additive-baseline.witness.json",
-            "ok": false,
-            "missing_fields": [
-              "gram_matrix",
-              "gram_inverse",
-              "lp_active_set",
-              "shadow_prices"
-            ],
-            "opted_out_raw_trace": false
-          }
-        ],
-        "script": "folio-assistant/computations/atom_mass_additive_baseline.py"
-      },
-      {
-        "bucket": "A",
-        "reason": "raw tr_M / markov_trace (no operator-on-state)",
-        "witnesses": [
-          {
             "witness": "folio-assistant/computations/atom-mass-derived.witness.json",
             "ok": false,
             "missing_fields": [
@@ -284,6 +206,48 @@
           }
         ],
         "script": "folio-assistant/computations/atom_nf_symbolic_D.py"
+      },
+      {
+        "bucket": "A",
+        "reason": "raw tr_M / markov_trace (no operator-on-state)",
+        "witnesses": [],
+        "script": "folio-assistant/computations/atom_orbit_reduction.py"
+      },
+      {
+        "bucket": "A",
+        "reason": "raw tr_M / markov_trace (no operator-on-state)",
+        "witnesses": [
+          {
+            "witness": "folio-assistant/computations/atom-vhyp-bar-trace-test.witness.json",
+            "ok": false,
+            "missing_fields": [
+              "gram_matrix",
+              "gram_inverse",
+              "lp_active_set",
+              "shadow_prices"
+            ],
+            "opted_out_raw_trace": false
+          }
+        ],
+        "script": "folio-assistant/computations/atom_vhyp_bar_trace_test.py"
+      },
+      {
+        "bucket": "A",
+        "reason": "raw tr_M / markov_trace (no operator-on-state)",
+        "witnesses": [
+          {
+            "witness": "folio-assistant/computations/atom-vhyp-closure-matrix-m.witness.json",
+            "ok": false,
+            "missing_fields": [
+              "gram_matrix",
+              "gram_inverse",
+              "lp_active_set",
+              "shadow_prices"
+            ],
+            "opted_out_raw_trace": false
+          }
+        ],
+        "script": "folio-assistant/computations/atom_vhyp_closure_matrix_m.py"
       },
       {
         "bucket": "A",
@@ -356,6 +320,24 @@
           }
         ],
         "script": "folio-assistant/computations/atomic_tr_m_mpfr_50dps.py"
+      },
+      {
+        "bucket": "A",
+        "reason": "raw tr_M / markov_trace (no operator-on-state)",
+        "witnesses": [
+          {
+            "witness": "folio-assistant/computations/averaged-block-swap-binding.witness.json",
+            "ok": false,
+            "missing_fields": [
+              "gram_matrix",
+              "gram_inverse",
+              "lp_active_set",
+              "shadow_prices"
+            ],
+            "opted_out_raw_trace": false
+          }
+        ],
+        "script": "folio-assistant/computations/averaged_block_swap_binding.py"
       },
       {
         "bucket": "A",
@@ -494,6 +476,24 @@
         "reason": "raw tr_M / markov_trace (no operator-on-state)",
         "witnesses": [
           {
+            "witness": "folio-assistant/computations/binding-bring-enhancement-compare.witness.json",
+            "ok": false,
+            "missing_fields": [
+              "gram_matrix",
+              "gram_inverse",
+              "lp_active_set",
+              "shadow_prices"
+            ],
+            "opted_out_raw_trace": false
+          }
+        ],
+        "script": "folio-assistant/computations/binding_bring_enhancement_compare.py"
+      },
+      {
+        "bucket": "A",
+        "reason": "raw tr_M / markov_trace (no operator-on-state)",
+        "witnesses": [
+          {
             "witness": "folio-assistant/computations/binding-canonical.witness.json",
             "ok": false,
             "missing_fields": [
@@ -506,6 +506,24 @@
           }
         ],
         "script": "folio-assistant/computations/binding_canonical.py"
+      },
+      {
+        "bucket": "A",
+        "reason": "raw tr_M / markov_trace (no operator-on-state)",
+        "witnesses": [
+          {
+            "witness": "folio-assistant/computations/binding-combiner-markov-peel-fallback.witness.json",
+            "ok": false,
+            "missing_fields": [
+              "gram_matrix",
+              "gram_inverse",
+              "lp_active_set",
+              "shadow_prices"
+            ],
+            "opted_out_raw_trace": false
+          }
+        ],
+        "script": "folio-assistant/computations/binding_combiner_markov_peel_fallback.py"
       },
       {
         "bucket": "A",
@@ -530,6 +548,42 @@
         "reason": "raw tr_M / markov_trace (no operator-on-state)",
         "witnesses": [
           {
+            "witness": "folio-assistant/computations/binding-factor-f-decomposition.witness.json",
+            "ok": false,
+            "missing_fields": [
+              "gram_matrix",
+              "gram_inverse",
+              "lp_active_set",
+              "shadow_prices"
+            ],
+            "opted_out_raw_trace": false
+          }
+        ],
+        "script": "folio-assistant/computations/binding_factor_f_decomposition.py"
+      },
+      {
+        "bucket": "A",
+        "reason": "raw tr_M / markov_trace (no operator-on-state)",
+        "witnesses": [
+          {
+            "witness": "folio-assistant/computations/binding-factor-f-sequence.witness.json",
+            "ok": false,
+            "missing_fields": [
+              "gram_matrix",
+              "gram_inverse",
+              "lp_active_set",
+              "shadow_prices"
+            ],
+            "opted_out_raw_trace": false
+          }
+        ],
+        "script": "folio-assistant/computations/binding_factor_f_sequence.py"
+      },
+      {
+        "bucket": "A",
+        "reason": "raw tr_M / markov_trace (no operator-on-state)",
+        "witnesses": [
+          {
             "witness": "folio-assistant/computations/binding-k-enumerator.witness.json",
             "ok": false,
             "missing_fields": [
@@ -546,9 +600,15 @@
       {
         "bucket": "A",
         "reason": "raw tr_M / markov_trace (no operator-on-state)",
+        "witnesses": [],
+        "script": "folio-assistant/computations/binding_per_block_magnitude_a3_probe.py"
+      },
+      {
+        "bucket": "A",
+        "reason": "raw tr_M / markov_trace (no operator-on-state)",
         "witnesses": [
           {
-            "witness": "folio-assistant/computations/binding-q-target-sweep.witness.json",
+            "witness": "folio-assistant/computations/binding-perblock-bond-type-a3.witness.json",
             "ok": false,
             "missing_fields": [
               "gram_matrix",
@@ -559,7 +619,61 @@
             "opted_out_raw_trace": false
           }
         ],
-        "script": "folio-assistant/computations/binding_q_target_sweep.py"
+        "script": "folio-assistant/computations/binding_perblock_bond_type_a3.py"
+      },
+      {
+        "bucket": "A",
+        "reason": "raw tr_M / markov_trace (no operator-on-state)",
+        "witnesses": [
+          {
+            "witness": "folio-assistant/computations/binding-reeb-phase-decomposition.witness.json",
+            "ok": false,
+            "missing_fields": [
+              "gram_matrix",
+              "gram_inverse",
+              "lp_active_set",
+              "shadow_prices"
+            ],
+            "opted_out_raw_trace": false
+          }
+        ],
+        "script": "folio-assistant/computations/binding_reeb_phase_decomposition.py"
+      },
+      {
+        "bucket": "A",
+        "reason": "raw tr_M / markov_trace (no operator-on-state)",
+        "witnesses": [
+          {
+            "witness": "folio-assistant/computations/binding-rotation-phase-lead.witness.json",
+            "ok": false,
+            "missing_fields": [
+              "gram_matrix",
+              "gram_inverse",
+              "lp_active_set",
+              "shadow_prices"
+            ],
+            "opted_out_raw_trace": false
+          }
+        ],
+        "script": "folio-assistant/computations/binding_rotation_phase_lead.py"
+      },
+      {
+        "bucket": "A",
+        "reason": "raw tr_M / markov_trace (no operator-on-state)",
+        "witnesses": [
+          {
+            "witness": "folio-assistant/computations/binding-shell-enhancement-derivation.witness.json",
+            "ok": false,
+            "missing_fields": [
+              "gram_matrix",
+              "gram_inverse",
+              "lp_active_set",
+              "shadow_prices"
+            ],
+            "opted_out_raw_trace": false
+          }
+        ],
+        "script": "folio-assistant/computations/binding_shell_enhancement_derivation.py"
       },
       {
         "bucket": "A",
@@ -584,6 +698,24 @@
         "reason": "raw tr_M / markov_trace (no operator-on-state)",
         "witnesses": [
           {
+            "witness": "folio-assistant/computations/block-swap-binding.witness.json",
+            "ok": false,
+            "missing_fields": [
+              "gram_matrix",
+              "gram_inverse",
+              "lp_active_set",
+              "shadow_prices"
+            ],
+            "opted_out_raw_trace": false
+          }
+        ],
+        "script": "folio-assistant/computations/block_swap_binding.py"
+      },
+      {
+        "bucket": "A",
+        "reason": "raw tr_M / markov_trace (no operator-on-state)",
+        "witnesses": [
+          {
             "witness": "folio-assistant/computations/borromean-axial-coupling.witness.json",
             "ok": true,
             "missing_fields": [],
@@ -591,6 +723,24 @@
           }
         ],
         "script": "folio-assistant/computations/borromean-axial-coupling.py"
+      },
+      {
+        "bucket": "A",
+        "reason": "raw tr_M / markov_trace (no operator-on-state)",
+        "witnesses": [
+          {
+            "witness": "folio-assistant/computations/borromean-chi-independent-crosscheck.witness.json",
+            "ok": false,
+            "missing_fields": [
+              "gram_matrix",
+              "gram_inverse",
+              "lp_active_set",
+              "shadow_prices"
+            ],
+            "opted_out_raw_trace": false
+          }
+        ],
+        "script": "folio-assistant/computations/borromean_chi_independent_crosscheck.py"
       },
       {
         "bucket": "A",
@@ -633,24 +783,6 @@
         "reason": "raw tr_M / markov_trace (no operator-on-state)",
         "witnesses": [
           {
-            "witness": "folio-assistant/computations/braid-encoding-audit.witness.json",
-            "ok": false,
-            "missing_fields": [
-              "gram_matrix",
-              "gram_inverse",
-              "lp_active_set",
-              "shadow_prices"
-            ],
-            "opted_out_raw_trace": false
-          }
-        ],
-        "script": "folio-assistant/computations/braid_encoding_audit.py"
-      },
-      {
-        "bucket": "A",
-        "reason": "raw tr_M / markov_trace (no operator-on-state)",
-        "witnesses": [
-          {
             "witness": "folio-assistant/computations/brane-tower-isospin-diagnosis.witness.json",
             "ok": false,
             "missing_fields": [
@@ -663,24 +795,6 @@
           }
         ],
         "script": "folio-assistant/computations/brane_tower_isospin_diagnosis.py"
-      },
-      {
-        "bucket": "A",
-        "reason": "raw tr_M / markov_trace (no operator-on-state)",
-        "witnesses": [
-          {
-            "witness": "folio-assistant/computations/brane-tower-two-avenues-probe.witness.json",
-            "ok": false,
-            "missing_fields": [
-              "gram_matrix",
-              "gram_inverse",
-              "lp_active_set",
-              "shadow_prices"
-            ],
-            "opted_out_raw_trace": false
-          }
-        ],
-        "script": "folio-assistant/computations/brane_tower_two_avenues_probe.py"
       },
       {
         "bucket": "A",
@@ -723,6 +837,24 @@
         "reason": "raw tr_M / markov_trace (no operator-on-state)",
         "witnesses": [
           {
+            "witness": "folio-assistant/computations/c-3-categorical-derivation-attempt.witness.json",
+            "ok": false,
+            "missing_fields": [
+              "gram_matrix",
+              "gram_inverse",
+              "lp_active_set",
+              "shadow_prices"
+            ],
+            "opted_out_raw_trace": false
+          }
+        ],
+        "script": "folio-assistant/computations/c_3_categorical_derivation_attempt.py"
+      },
+      {
+        "bucket": "A",
+        "reason": "raw tr_M / markov_trace (no operator-on-state)",
+        "witnesses": [
+          {
             "witness": "folio-assistant/computations/c-alpha-alpha-categorical-via-jones-markov.witness.json",
             "ok": false,
             "missing_fields": [
@@ -735,24 +867,6 @@
           }
         ],
         "script": "folio-assistant/computations/c_alpha_alpha_categorical_via_jones_markov.py"
-      },
-      {
-        "bucket": "A",
-        "reason": "raw tr_M / markov_trace (no operator-on-state)",
-        "witnesses": [
-          {
-            "witness": "folio-assistant/computations/canonical-a-k-magnitude-audit.witness.json",
-            "ok": false,
-            "missing_fields": [
-              "gram_matrix",
-              "gram_inverse",
-              "lp_active_set",
-              "shadow_prices"
-            ],
-            "opted_out_raw_trace": false
-          }
-        ],
-        "script": "folio-assistant/computations/canonical_a_k_magnitude_audit.py"
       },
       {
         "bucket": "A",
@@ -915,6 +1029,42 @@
         "reason": "raw tr_M / markov_trace (no operator-on-state)",
         "witnesses": [
           {
+            "witness": "folio-assistant/computations/cap-free-trm-prototype.witness.json",
+            "ok": false,
+            "missing_fields": [
+              "gram_matrix",
+              "gram_inverse",
+              "lp_active_set",
+              "shadow_prices"
+            ],
+            "opted_out_raw_trace": false
+          }
+        ],
+        "script": "folio-assistant/computations/cap_free_trm_prototype.py"
+      },
+      {
+        "bucket": "A",
+        "reason": "raw tr_M / markov_trace (no operator-on-state)",
+        "witnesses": [
+          {
+            "witness": "folio-assistant/computations/casimir-xi-2-dig-deeper.witness.json",
+            "ok": false,
+            "missing_fields": [
+              "gram_matrix",
+              "gram_inverse",
+              "lp_active_set",
+              "shadow_prices"
+            ],
+            "opted_out_raw_trace": false
+          }
+        ],
+        "script": "folio-assistant/computations/casimir_xi_2_dig_deeper.py"
+      },
+      {
+        "bucket": "A",
+        "reason": "raw tr_M / markov_trace (no operator-on-state)",
+        "witnesses": [
+          {
             "witness": "folio-assistant/computations/categorical-bypass-volmatch-demo.witness.json",
             "ok": false,
             "missing_fields": [
@@ -950,7 +1100,25 @@
         "bucket": "A",
         "reason": "raw tr_M / markov_trace (no operator-on-state)",
         "witnesses": [],
+        "script": "folio-assistant/computations/chi_4he_via_rust_lossless.py"
+      },
+      {
+        "bucket": "A",
+        "reason": "raw tr_M / markov_trace (no operator-on-state)",
+        "witnesses": [],
         "script": "folio-assistant/computations/chi_at_q0_via_hoefsmit_mpfr.py"
+      },
+      {
+        "bucket": "A",
+        "reason": "raw tr_M / markov_trace (no operator-on-state)",
+        "witnesses": [],
+        "script": "folio-assistant/computations/chi_at_q0_via_matrix_m_mpfr.py"
+      },
+      {
+        "bucket": "A",
+        "reason": "raw tr_M / markov_trace (no operator-on-state)",
+        "witnesses": [],
+        "script": "folio-assistant/computations/chi_via_rust_lossless.py"
       },
       {
         "bucket": "A",
@@ -997,12 +1165,6 @@
       {
         "bucket": "A",
         "reason": "raw tr_M / markov_trace (no operator-on-state)",
-        "witnesses": [],
-        "script": "folio-assistant/computations/codata_constants.py"
-      },
-      {
-        "bucket": "A",
-        "reason": "raw tr_M / markov_trace (no operator-on-state)",
         "witnesses": [
           {
             "witness": "folio-assistant/computations/codata-reconciliation.witness.json",
@@ -1017,6 +1179,24 @@
           }
         ],
         "script": "folio-assistant/computations/codata_reconciliation.py"
+      },
+      {
+        "bucket": "A",
+        "reason": "raw tr_M / markov_trace (no operator-on-state)",
+        "witnesses": [
+          {
+            "witness": "folio-assistant/computations/complex-fibre-cross-ratio.witness.json",
+            "ok": false,
+            "missing_fields": [
+              "gram_matrix",
+              "gram_inverse",
+              "lp_active_set",
+              "shadow_prices"
+            ],
+            "opted_out_raw_trace": false
+          }
+        ],
+        "script": "folio-assistant/computations/complex_fibre_cross_ratio.py"
       },
       {
         "bucket": "A",
@@ -1093,6 +1273,24 @@
         "reason": "raw tr_M / markov_trace (no operator-on-state)",
         "witnesses": [
           {
+            "witness": "folio-assistant/computations/convergence-safe-vhat-tower.witness.json",
+            "ok": false,
+            "missing_fields": [
+              "gram_matrix",
+              "gram_inverse",
+              "lp_active_set",
+              "shadow_prices"
+            ],
+            "opted_out_raw_trace": false
+          }
+        ],
+        "script": "folio-assistant/computations/convergence_safe_vhat_tower.py"
+      },
+      {
+        "bucket": "A",
+        "reason": "raw tr_M / markov_trace (no operator-on-state)",
+        "witnesses": [
+          {
             "witness": "folio-assistant/computations/cross-check-trM-1ppb.witness.json",
             "ok": false,
             "missing_fields": [
@@ -1129,24 +1327,6 @@
         "reason": "raw tr_M / markov_trace (no operator-on-state)",
         "witnesses": [],
         "script": "folio-assistant/computations/crt_markov.py"
-      },
-      {
-        "bucket": "A",
-        "reason": "raw tr_M / markov_trace (no operator-on-state)",
-        "witnesses": [
-          {
-            "witness": "folio-assistant/computations/crystal-limit-transport-probe.witness.json",
-            "ok": false,
-            "missing_fields": [
-              "gram_matrix",
-              "gram_inverse",
-              "lp_active_set",
-              "shadow_prices"
-            ],
-            "opted_out_raw_trace": false
-          }
-        ],
-        "script": "folio-assistant/computations/crystal_limit_transport_probe.py"
       },
       {
         "bucket": "A",
@@ -1235,8 +1415,20 @@
       {
         "bucket": "A",
         "reason": "raw tr_M / markov_trace (no operator-on-state)",
-        "witnesses": [],
-        "script": "folio-assistant/computations/delta_lambda_bar_involution_probe.py"
+        "witnesses": [
+          {
+            "witness": "folio-assistant/computations/delta-lambda-canonical-residual.witness.json",
+            "ok": false,
+            "missing_fields": [
+              "gram_matrix",
+              "gram_inverse",
+              "lp_active_set",
+              "shadow_prices"
+            ],
+            "opted_out_raw_trace": false
+          }
+        ],
+        "script": "folio-assistant/computations/delta_lambda_canonical_residual.py"
       },
       {
         "bucket": "A",
@@ -1273,6 +1465,30 @@
           }
         ],
         "script": "folio-assistant/computations/delta_lambda_empirical_tabulation.py"
+      },
+      {
+        "bucket": "A",
+        "reason": "raw tr_M / markov_trace (no operator-on-state)",
+        "witnesses": [],
+        "script": "folio-assistant/computations/delta_lambda_energy_scale_extensivity_probe.py"
+      },
+      {
+        "bucket": "A",
+        "reason": "raw tr_M / markov_trace (no operator-on-state)",
+        "witnesses": [
+          {
+            "witness": "folio-assistant/computations/delta-lambda-feed-analysis.witness.json",
+            "ok": false,
+            "missing_fields": [
+              "gram_matrix",
+              "gram_inverse",
+              "lp_active_set",
+              "shadow_prices"
+            ],
+            "opted_out_raw_trace": false
+          }
+        ],
+        "script": "folio-assistant/computations/delta_lambda_feed_analysis.py"
       },
       {
         "bucket": "A",
@@ -1375,24 +1591,6 @@
         "reason": "raw tr_M / markov_trace (no operator-on-state)",
         "witnesses": [
           {
-            "witness": "folio-assistant/computations/delta-n2-placeholder-audit.witness.json",
-            "ok": false,
-            "missing_fields": [
-              "gram_matrix",
-              "gram_inverse",
-              "lp_active_set",
-              "shadow_prices"
-            ],
-            "opted_out_raw_trace": false
-          }
-        ],
-        "script": "folio-assistant/computations/delta_n2_placeholder_audit.py"
-      },
-      {
-        "bucket": "A",
-        "reason": "raw tr_M / markov_trace (no operator-on-state)",
-        "witnesses": [
-          {
             "witness": "folio-assistant/computations/delta-q-decoration.witness.json",
             "ok": false,
             "missing_fields": [
@@ -1411,6 +1609,42 @@
         "reason": "raw tr_M / markov_trace (no operator-on-state)",
         "witnesses": [],
         "script": "folio-assistant/computations/derivation_chain.py"
+      },
+      {
+        "bucket": "A",
+        "reason": "raw tr_M / markov_trace (no operator-on-state)",
+        "witnesses": [
+          {
+            "witness": "folio-assistant/computations/derive-binding-bond-type.witness.json",
+            "ok": false,
+            "missing_fields": [
+              "gram_matrix",
+              "gram_inverse",
+              "lp_active_set",
+              "shadow_prices"
+            ],
+            "opted_out_raw_trace": false
+          }
+        ],
+        "script": "folio-assistant/computations/derive_binding_bond_type.py"
+      },
+      {
+        "bucket": "A",
+        "reason": "raw tr_M / markov_trace (no operator-on-state)",
+        "witnesses": [
+          {
+            "witness": "folio-assistant/computations/derive-binding-per-block-archimedean.witness.json",
+            "ok": false,
+            "missing_fields": [
+              "gram_matrix",
+              "gram_inverse",
+              "lp_active_set",
+              "shadow_prices"
+            ],
+            "opted_out_raw_trace": false
+          }
+        ],
+        "script": "folio-assistant/computations/derive_binding_per_block_archimedean.py"
       },
       {
         "bucket": "A",
@@ -1434,7 +1668,85 @@
         "bucket": "A",
         "reason": "raw tr_M / markov_trace (no operator-on-state)",
         "witnesses": [],
+        "script": "folio-assistant/computations/derive_m_p_hecke_full_tower_50dps.py"
+      },
+      {
+        "bucket": "A",
+        "reason": "raw tr_M / markov_trace (no operator-on-state)",
+        "witnesses": [],
         "script": "folio-assistant/computations/derive_m_p_hecke_path_a.py"
+      },
+      {
+        "bucket": "A",
+        "reason": "raw tr_M / markov_trace (no operator-on-state)",
+        "witnesses": [
+          {
+            "witness": "folio-assistant/computations/derive-ms-md-torus-knot.witness.json",
+            "ok": false,
+            "missing_fields": [
+              "gram_matrix",
+              "gram_inverse",
+              "lp_active_set",
+              "shadow_prices"
+            ],
+            "opted_out_raw_trace": false
+          }
+        ],
+        "script": "folio-assistant/computations/derive_ms_md_torus_knot.py"
+      },
+      {
+        "bucket": "A",
+        "reason": "raw tr_M / markov_trace (no operator-on-state)",
+        "witnesses": [
+          {
+            "witness": "folio-assistant/computations/derived-bond-graph-binding.witness.json",
+            "ok": false,
+            "missing_fields": [
+              "gram_matrix",
+              "gram_inverse",
+              "lp_active_set",
+              "shadow_prices"
+            ],
+            "opted_out_raw_trace": false
+          }
+        ],
+        "script": "folio-assistant/computations/derived_bond_graph_binding.py"
+      },
+      {
+        "bucket": "A",
+        "reason": "raw tr_M / markov_trace (no operator-on-state)",
+        "witnesses": [
+          {
+            "witness": "folio-assistant/computations/derived-chi-catalogue-consumer-demo.witness.json",
+            "ok": false,
+            "missing_fields": [
+              "gram_matrix",
+              "gram_inverse",
+              "lp_active_set",
+              "shadow_prices"
+            ],
+            "opted_out_raw_trace": false
+          }
+        ],
+        "script": "folio-assistant/computations/derived_chi_catalogue_consumer_demo.py"
+      },
+      {
+        "bucket": "A",
+        "reason": "raw tr_M / markov_trace (no operator-on-state)",
+        "witnesses": [
+          {
+            "witness": "folio-assistant/computations/derived-chi-catalogue-consumer-q0.witness.json",
+            "ok": false,
+            "missing_fields": [
+              "gram_matrix",
+              "gram_inverse",
+              "lp_active_set",
+              "shadow_prices"
+            ],
+            "opted_out_raw_trace": false
+          }
+        ],
+        "script": "folio-assistant/computations/derived_chi_catalogue_consumer_q0.py"
       },
       {
         "bucket": "A",
@@ -1447,7 +1759,7 @@
         "reason": "raw tr_M / markov_trace (no operator-on-state)",
         "witnesses": [
           {
-            "witness": "folio-assistant/computations/deuteron-delta-i-audit.witness.json",
+            "witness": "folio-assistant/computations/deuteron-real-sdp.witness.json",
             "ok": false,
             "missing_fields": [
               "gram_matrix",
@@ -1458,7 +1770,7 @@
             "opted_out_raw_trace": false
           }
         ],
-        "script": "folio-assistant/computations/deuteron_delta_i_audit.py"
+        "script": "folio-assistant/computations/deuteron_real_sdp.py"
       },
       {
         "bucket": "A",
@@ -1477,6 +1789,60 @@
           }
         ],
         "script": "folio-assistant/computations/deuteron_tr_M_symbolic.py"
+      },
+      {
+        "bucket": "A",
+        "reason": "raw tr_M / markov_trace (no operator-on-state)",
+        "witnesses": [
+          {
+            "witness": "folio-assistant/computations/e0-lambda-composite.witness.json",
+            "ok": false,
+            "missing_fields": [
+              "gram_matrix",
+              "gram_inverse",
+              "lp_active_set",
+              "shadow_prices"
+            ],
+            "opted_out_raw_trace": false
+          }
+        ],
+        "script": "folio-assistant/computations/e0_lambda_composite.py"
+      },
+      {
+        "bucket": "A",
+        "reason": "raw tr_M / markov_trace (no operator-on-state)",
+        "witnesses": [
+          {
+            "witness": "folio-assistant/computations/e0-lambda-tryall.witness.json",
+            "ok": false,
+            "missing_fields": [
+              "gram_matrix",
+              "gram_inverse",
+              "lp_active_set",
+              "shadow_prices"
+            ],
+            "opted_out_raw_trace": false
+          }
+        ],
+        "script": "folio-assistant/computations/e0_lambda_tryall.py"
+      },
+      {
+        "bucket": "A",
+        "reason": "raw tr_M / markov_trace (no operator-on-state)",
+        "witnesses": [
+          {
+            "witness": "folio-assistant/computations/em-linking-invariant-probe.witness.json",
+            "ok": false,
+            "missing_fields": [
+              "gram_matrix",
+              "gram_inverse",
+              "lp_active_set",
+              "shadow_prices"
+            ],
+            "opted_out_raw_trace": false
+          }
+        ],
+        "script": "folio-assistant/computations/em_linking_invariant_probe.py"
       },
       {
         "bucket": "A",
@@ -1501,24 +1867,6 @@
           }
         ],
         "script": "folio-assistant/computations/family_a_per_partition_h_decomposition_50dps.py"
-      },
-      {
-        "bucket": "A",
-        "reason": "raw tr_M / markov_trace (no operator-on-state)",
-        "witnesses": [
-          {
-            "witness": "folio-assistant/computations/frobenius-gram-matrix-probe.witness.json",
-            "ok": false,
-            "missing_fields": [
-              "gram_matrix",
-              "gram_inverse",
-              "lp_active_set",
-              "shadow_prices"
-            ],
-            "opted_out_raw_trace": false
-          }
-        ],
-        "script": "folio-assistant/computations/frobenius_gram_matrix_probe.py"
       },
       {
         "bucket": "A",
@@ -1549,7 +1897,7 @@
         "reason": "raw tr_M / markov_trace (no operator-on-state)",
         "witnesses": [
           {
-            "witness": "folio-assistant/computations/gauge-coupling-uniqueness-probe.witness.json",
+            "witness": "folio-assistant/computations/gap-a1-binding-k-sdp-feasibility.witness.json",
             "ok": false,
             "missing_fields": [
               "gram_matrix",
@@ -1560,49 +1908,13 @@
             "opted_out_raw_trace": false
           }
         ],
-        "script": "folio-assistant/computations/gauge_coupling_uniqueness_probe.py"
+        "script": "folio-assistant/computations/gap_a1_binding_k_sdp_feasibility.py"
       },
       {
         "bucket": "A",
         "reason": "raw tr_M / markov_trace (no operator-on-state)",
         "witnesses": [],
         "script": "folio-assistant/computations/gb_residue_tower.py"
-      },
-      {
-        "bucket": "A",
-        "reason": "raw tr_M / markov_trace (no operator-on-state)",
-        "witnesses": [
-          {
-            "witness": "folio-assistant/computations/vol-density-borromean-h4-probe.witness.json",
-            "ok": false,
-            "missing_fields": [
-              "gram_matrix",
-              "gram_inverse",
-              "lp_active_set",
-              "shadow_prices"
-            ],
-            "opted_out_raw_trace": false
-          }
-        ],
-        "script": "folio-assistant/computations/vol_density_borromean_h4_probe.py"
-      },
-      {
-        "bucket": "A",
-        "reason": "raw tr_M / markov_trace (no operator-on-state)",
-        "witnesses": [
-          {
-            "witness": "folio-assistant/computations/graded-hecke-energy-probe.witness.json",
-            "ok": false,
-            "missing_fields": [
-              "gram_matrix",
-              "gram_inverse",
-              "lp_active_set",
-              "shadow_prices"
-            ],
-            "opted_out_raw_trace": false
-          }
-        ],
-        "script": "folio-assistant/computations/graded_hecke_energy_probe.py"
       },
       {
         "bucket": "A",
@@ -1619,6 +1931,30 @@
           }
         ],
         "script": "folio-assistant/computations/gram-matrix-dual.py"
+      },
+      {
+        "bucket": "A",
+        "reason": "raw tr_M / markov_trace (no operator-on-state)",
+        "witnesses": [],
+        "script": "folio-assistant/computations/gram_matrix_seminormal_n.py"
+      },
+      {
+        "bucket": "A",
+        "reason": "raw tr_M / markov_trace (no operator-on-state)",
+        "witnesses": [
+          {
+            "witness": "folio-assistant/computations/gs-filtration-binding-components.witness.json",
+            "ok": false,
+            "missing_fields": [
+              "gram_matrix",
+              "gram_inverse",
+              "lp_active_set",
+              "shadow_prices"
+            ],
+            "opted_out_raw_trace": false
+          }
+        ],
+        "script": "folio-assistant/computations/gs_filtration_binding_components.py"
       },
       {
         "bucket": "A",
@@ -1643,7 +1979,7 @@
         "reason": "raw tr_M / markov_trace (no operator-on-state)",
         "witnesses": [
           {
-            "witness": "folio-assistant/computations/habiro-coefficients-atomic.witness.json",
+            "witness": "folio-assistant/computations/h2o-angle-activeset-gb.witness.json",
             "ok": false,
             "missing_fields": [
               "gram_matrix",
@@ -1654,14 +1990,14 @@
             "opted_out_raw_trace": false
           }
         ],
-        "script": "folio-assistant/computations/habiro_coefficients_atomic.py"
+        "script": "folio-assistant/computations/h2o_angle_activeset_gb.py"
       },
       {
         "bucket": "A",
         "reason": "raw tr_M / markov_trace (no operator-on-state)",
         "witnesses": [
           {
-            "witness": "folio-assistant/computations/habiro-coefficients-extended.witness.json",
+            "witness": "folio-assistant/computations/h2o-angle-gb-truncation-inverse.witness.json",
             "ok": false,
             "missing_fields": [
               "gram_matrix",
@@ -1672,20 +2008,14 @@
             "opted_out_raw_trace": false
           }
         ],
-        "script": "folio-assistant/computations/habiro_coefficients_extended.py"
-      },
-      {
-        "bucket": "A",
-        "reason": "raw tr_M / markov_trace (no operator-on-state)",
-        "witnesses": [],
-        "script": "folio-assistant/computations/habiro_coefficients_extended_parallel.py"
+        "script": "folio-assistant/computations/h2o_angle_gb_truncation_inverse.py"
       },
       {
         "bucket": "A",
         "reason": "raw tr_M / markov_trace (no operator-on-state)",
         "witnesses": [
           {
-            "witness": "folio-assistant/computations/habiro-coefficients-interpolate.witness.json",
+            "witness": "folio-assistant/computations/h2o-bond-angle-magnitude-vsepr.witness.json",
             "ok": false,
             "missing_fields": [
               "gram_matrix",
@@ -1696,20 +2026,14 @@
             "opted_out_raw_trace": false
           }
         ],
-        "script": "folio-assistant/computations/habiro_coefficients_interpolate.py"
-      },
-      {
-        "bucket": "A",
-        "reason": "raw tr_M / markov_trace (no operator-on-state)",
-        "witnesses": [],
-        "script": "folio-assistant/computations/habiro_correction_product_verify.py"
+        "script": "folio-assistant/computations/h2o_bond_angle_magnitude_vsepr.py"
       },
       {
         "bucket": "A",
         "reason": "raw tr_M / markov_trace (no operator-on-state)",
         "witnesses": [
           {
-            "witness": "folio-assistant/computations/habiro-correction-shadow-price-test.witness.json",
+            "witness": "folio-assistant/computations/h2o-bond-angle-shift-phi1.witness.json",
             "ok": false,
             "missing_fields": [
               "gram_matrix",
@@ -1720,20 +2044,14 @@
             "opted_out_raw_trace": false
           }
         ],
-        "script": "folio-assistant/computations/habiro_correction_shadow_price_test.py"
-      },
-      {
-        "bucket": "A",
-        "reason": "raw tr_M / markov_trace (no operator-on-state)",
-        "witnesses": [],
-        "script": "folio-assistant/computations/habiro_derivation_vs_fit.py"
+        "script": "folio-assistant/computations/h2o_bond_angle_shift_phi1.py"
       },
       {
         "bucket": "A",
         "reason": "raw tr_M / markov_trace (no operator-on-state)",
         "witnesses": [
           {
-            "witness": "folio-assistant/computations/habiro-exact-qbeta.witness.json",
+            "witness": "folio-assistant/computations/h2s-chirality-residue-s3-holonomy.witness.json",
             "ok": false,
             "missing_fields": [
               "gram_matrix",
@@ -1744,20 +2062,14 @@
             "opted_out_raw_trace": false
           }
         ],
-        "script": "folio-assistant/computations/habiro_exact_qbeta.py"
-      },
-      {
-        "bucket": "A",
-        "reason": "raw tr_M / markov_trace (no operator-on-state)",
-        "witnesses": [],
-        "script": "folio-assistant/computations/habiro_exact_taylor_extraction.py"
+        "script": "folio-assistant/computations/h2s_chirality_residue_s3_holonomy.py"
       },
       {
         "bucket": "A",
         "reason": "raw tr_M / markov_trace (no operator-on-state)",
         "witnesses": [
           {
-            "witness": "folio-assistant/computations/habiro-frobenius-probe.witness.json",
+            "witness": "folio-assistant/computations/h5-h3-functor-keystone.witness.json",
             "ok": false,
             "missing_fields": [
               "gram_matrix",
@@ -1768,169 +2080,7 @@
             "opted_out_raw_trace": false
           }
         ],
-        "script": "folio-assistant/computations/habiro_frobenius_probe.py"
-      },
-      {
-        "bucket": "A",
-        "reason": "raw tr_M / markov_trace (no operator-on-state)",
-        "witnesses": [],
-        "script": "folio-assistant/computations/habiro_h9_correction_series.py"
-      },
-      {
-        "bucket": "A",
-        "reason": "raw tr_M / markov_trace (no operator-on-state)",
-        "witnesses": [
-          {
-            "witness": "folio-assistant/computations/habiro-h9-spectral-decomposition.witness.json",
-            "ok": false,
-            "missing_fields": [
-              "gram_matrix",
-              "gram_inverse",
-              "lp_active_set",
-              "shadow_prices"
-            ],
-            "opted_out_raw_trace": false
-          }
-        ],
-        "script": "folio-assistant/computations/habiro_h9_spectral_decomposition.py"
-      },
-      {
-        "bucket": "A",
-        "reason": "raw tr_M / markov_trace (no operator-on-state)",
-        "witnesses": [],
-        "script": "folio-assistant/computations/habiro_interpolate_cross_validator.py"
-      },
-      {
-        "bucket": "A",
-        "reason": "raw tr_M / markov_trace (no operator-on-state)",
-        "witnesses": [
-          {
-            "witness": "folio-assistant/computations/habiro-neutron-cross-check.witness.json",
-            "ok": false,
-            "missing_fields": [
-              "gram_matrix",
-              "gram_inverse",
-              "lp_active_set",
-              "shadow_prices"
-            ],
-            "opted_out_raw_trace": false
-          }
-        ],
-        "script": "folio-assistant/computations/habiro_neutron_cross_check.py"
-      },
-      {
-        "bucket": "A",
-        "reason": "raw tr_M / markov_trace (no operator-on-state)",
-        "witnesses": [
-          {
-            "witness": "folio-assistant/computations/habiro-normalization-bridge.witness.json",
-            "ok": false,
-            "missing_fields": [
-              "gram_matrix",
-              "gram_inverse",
-              "lp_active_set",
-              "shadow_prices"
-            ],
-            "opted_out_raw_trace": false
-          }
-        ],
-        "script": "folio-assistant/computations/habiro_normalization_bridge.py"
-      },
-      {
-        "bucket": "A",
-        "reason": "raw tr_M / markov_trace (no operator-on-state)",
-        "witnesses": [
-          {
-            "witness": "folio-assistant/computations/habiro-pochhammer-bridge.witness.json",
-            "ok": false,
-            "missing_fields": [
-              "gram_matrix",
-              "gram_inverse",
-              "lp_active_set",
-              "shadow_prices"
-            ],
-            "opted_out_raw_trace": false
-          }
-        ],
-        "script": "folio-assistant/computations/habiro_pochhammer_bridge.py"
-      },
-      {
-        "bucket": "A",
-        "reason": "raw tr_M / markov_trace (no operator-on-state)",
-        "witnesses": [
-          {
-            "witness": "folio-assistant/computations/habiro-product-taylor-algebraic.witness.json",
-            "ok": false,
-            "missing_fields": [
-              "gram_matrix",
-              "gram_inverse",
-              "lp_active_set",
-              "shadow_prices"
-            ],
-            "opted_out_raw_trace": false
-          }
-        ],
-        "script": "folio-assistant/computations/habiro_product_taylor_algebraic.py"
-      },
-      {
-        "bucket": "A",
-        "reason": "raw tr_M / markov_trace (no operator-on-state)",
-        "witnesses": [],
-        "script": "folio-assistant/computations/habiro_residue_symbolic.py"
-      },
-      {
-        "bucket": "A",
-        "reason": "raw tr_M / markov_trace (no operator-on-state)",
-        "witnesses": [
-          {
-            "witness": "folio-assistant/computations/habiro-sub-ppm-third-factor.witness.json",
-            "ok": false,
-            "missing_fields": [
-              "gram_matrix",
-              "gram_inverse",
-              "lp_active_set",
-              "shadow_prices"
-            ],
-            "opted_out_raw_trace": false
-          }
-        ],
-        "script": "folio-assistant/computations/habiro_sub_ppm_third_factor.py"
-      },
-      {
-        "bucket": "A",
-        "reason": "raw tr_M / markov_trace (no operator-on-state)",
-        "witnesses": [
-          {
-            "witness": "folio-assistant/computations/habiro-to-1ppq-chain.witness.json",
-            "ok": false,
-            "missing_fields": [
-              "gram_matrix",
-              "gram_inverse",
-              "lp_active_set",
-              "shadow_prices"
-            ],
-            "opted_out_raw_trace": false
-          }
-        ],
-        "script": "folio-assistant/computations/habiro_to_1ppq_chain.py"
-      },
-      {
-        "bucket": "A",
-        "reason": "raw tr_M / markov_trace (no operator-on-state)",
-        "witnesses": [
-          {
-            "witness": "folio-assistant/computations/habiro-to-precision-ladder-verification.witness.json",
-            "ok": false,
-            "missing_fields": [
-              "gram_matrix",
-              "gram_inverse",
-              "lp_active_set",
-              "shadow_prices"
-            ],
-            "opted_out_raw_trace": false
-          }
-        ],
-        "script": "folio-assistant/computations/habiro_to_precision_ladder_verification.py"
+        "script": "folio-assistant/computations/h5_h3_functor_keystone.py"
       },
       {
         "bucket": "A",
@@ -1953,33 +2103,9 @@
       {
         "bucket": "A",
         "reason": "raw tr_M / markov_trace (no operator-on-state)",
-        "witnesses": [],
-        "script": "folio-assistant/computations/hecke_3a_weights.py"
-      },
-      {
-        "bucket": "A",
-        "reason": "raw tr_M / markov_trace (no operator-on-state)",
-        "witnesses": [],
-        "script": "folio-assistant/computations/hecke_character_symbolic.py"
-      },
-      {
-        "bucket": "A",
-        "reason": "raw tr_M / markov_trace (no operator-on-state)",
-        "witnesses": [],
-        "script": "folio-assistant/computations/hecke_core.py"
-      },
-      {
-        "bucket": "A",
-        "reason": "raw tr_M / markov_trace (no operator-on-state)",
-        "witnesses": [],
-        "script": "folio-assistant/computations/hecke_core_symbolic.py"
-      },
-      {
-        "bucket": "A",
-        "reason": "raw tr_M / markov_trace (no operator-on-state)",
         "witnesses": [
           {
-            "witness": "folio-assistant/computations/hecke-crossed-module-q8.witness.json",
+            "witness": "folio-assistant/computations/hbond-vdw-sdp.witness.json",
             "ok": false,
             "missing_fields": [
               "gram_matrix",
@@ -1990,37 +2116,13 @@
             "opted_out_raw_trace": false
           }
         ],
-        "script": "folio-assistant/computations/hecke_crossed_module_q8.py"
+        "script": "folio-assistant/computations/hbond_vdw_sdp.py"
       },
       {
         "bucket": "A",
         "reason": "raw tr_M / markov_trace (no operator-on-state)",
         "witnesses": [],
-        "script": "folio-assistant/computations/hecke_division.py"
-      },
-      {
-        "bucket": "A",
-        "reason": "raw tr_M / markov_trace (no operator-on-state)",
-        "witnesses": [],
-        "script": "folio-assistant/computations/hecke_engine.py"
-      },
-      {
-        "bucket": "A",
-        "reason": "raw tr_M / markov_trace (no operator-on-state)",
-        "witnesses": [],
-        "script": "folio-assistant/computations/hecke_rust_bridge.py"
-      },
-      {
-        "bucket": "A",
-        "reason": "raw tr_M / markov_trace (no operator-on-state)",
-        "witnesses": [],
-        "script": "folio-assistant/computations/hecke_symbolic.py"
-      },
-      {
-        "bucket": "A",
-        "reason": "raw tr_M / markov_trace (no operator-on-state)",
-        "witnesses": [],
-        "script": "folio-assistant/computations/hecke_wedderburn.py"
+        "script": "folio-assistant/computations/hecke_core_legacy.py"
       },
       {
         "bucket": "A",
@@ -2075,7 +2177,7 @@
         "reason": "raw tr_M / markov_trace (no operator-on-state)",
         "witnesses": [
           {
-            "witness": "folio-assistant/computations/homflypt-operator-valued-probe.witness.json",
+            "witness": "folio-assistant/computations/homflypt-reference-qa.witness.json",
             "ok": false,
             "missing_fields": [
               "gram_matrix",
@@ -2086,7 +2188,25 @@
             "opted_out_raw_trace": false
           }
         ],
-        "script": "folio-assistant/computations/homflypt_operator_valued_probe.py"
+        "script": "folio-assistant/computations/homflypt_reference_qa.py"
+      },
+      {
+        "bucket": "A",
+        "reason": "raw tr_M / markov_trace (no operator-on-state)",
+        "witnesses": [
+          {
+            "witness": "folio-assistant/computations/inter-nucleon-linked-channel.witness.json",
+            "ok": false,
+            "missing_fields": [
+              "gram_matrix",
+              "gram_inverse",
+              "lp_active_set",
+              "shadow_prices"
+            ],
+            "opted_out_raw_trace": false
+          }
+        ],
+        "script": "folio-assistant/computations/inter_nucleon_linked_channel.py"
       },
       {
         "bucket": "A",
@@ -2205,6 +2325,24 @@
       {
         "bucket": "A",
         "reason": "raw tr_M / markov_trace (no operator-on-state)",
+        "witnesses": [
+          {
+            "witness": "folio-assistant/computations/jet-order-pivots.witness.json",
+            "ok": false,
+            "missing_fields": [
+              "gram_matrix",
+              "gram_inverse",
+              "lp_active_set",
+              "shadow_prices"
+            ],
+            "opted_out_raw_trace": false
+          }
+        ],
+        "script": "folio-assistant/computations/jet_order_pivots.py"
+      },
+      {
+        "bucket": "A",
+        "reason": "raw tr_M / markov_trace (no operator-on-state)",
         "witnesses": [],
         "script": "folio-assistant/computations/kahler_lift.py"
       },
@@ -2242,7 +2380,7 @@
         "reason": "raw tr_M / markov_trace (no operator-on-state)",
         "witnesses": [
           {
-            "witness": "folio-assistant/computations/lambda-scale-homflypt-skein-recursion-probe.witness.json",
+            "witness": "folio-assistant/computations/knot-operator-census-group-actions.witness.json",
             "ok": false,
             "missing_fields": [
               "gram_matrix",
@@ -2253,13 +2391,31 @@
             "opted_out_raw_trace": false
           }
         ],
-        "script": "folio-assistant/computations/lambda_scale_homflypt_skein_recursion_probe.py"
+        "script": "folio-assistant/computations/knot_operator_census_group_actions.py"
       },
       {
         "bucket": "A",
         "reason": "raw tr_M / markov_trace (no operator-on-state)",
         "witnesses": [],
         "script": "folio-assistant/computations/laurent_q_trace.py"
+      },
+      {
+        "bucket": "A",
+        "reason": "raw tr_M / markov_trace (no operator-on-state)",
+        "witnesses": [
+          {
+            "witness": "folio-assistant/computations/lepton-t2n-torus-tower.witness.json",
+            "ok": false,
+            "missing_fields": [
+              "gram_matrix",
+              "gram_inverse",
+              "lp_active_set",
+              "shadow_prices"
+            ],
+            "opted_out_raw_trace": false
+          }
+        ],
+        "script": "folio-assistant/computations/lepton_t2n_torus_tower.py"
       },
       {
         "bucket": "A",
@@ -2284,7 +2440,7 @@
         "reason": "raw tr_M / markov_trace (no operator-on-state)",
         "witnesses": [
           {
-            "witness": "folio-assistant/computations/light-isotope-sweep.witness.json",
+            "witness": "folio-assistant/computations/linking-weight-canonical-object-lwfix.witness.json",
             "ok": false,
             "missing_fields": [
               "gram_matrix",
@@ -2295,7 +2451,25 @@
             "opted_out_raw_trace": false
           }
         ],
-        "script": "folio-assistant/computations/light_isotope_sweep.py"
+        "script": "folio-assistant/computations/linking_weight_canonical_object_lwfix.py"
+      },
+      {
+        "bucket": "A",
+        "reason": "raw tr_M / markov_trace (no operator-on-state)",
+        "witnesses": [
+          {
+            "witness": "folio-assistant/computations/log-ratio-binding-prototype.witness.json",
+            "ok": false,
+            "missing_fields": [
+              "gram_matrix",
+              "gram_inverse",
+              "lp_active_set",
+              "shadow_prices"
+            ],
+            "opted_out_raw_trace": false
+          }
+        ],
+        "script": "folio-assistant/computations/log_ratio_binding_prototype.py"
       },
       {
         "bucket": "A",
@@ -2336,14 +2510,26 @@
       {
         "bucket": "A",
         "reason": "raw tr_M / markov_trace (no operator-on-state)",
-        "witnesses": [],
-        "script": "folio-assistant/computations/lp-duality-check.py"
+        "witnesses": [
+          {
+            "witness": "folio-assistant/computations/low-isotopes-binding-sweep.witness.json",
+            "ok": false,
+            "missing_fields": [
+              "gram_matrix",
+              "gram_inverse",
+              "lp_active_set",
+              "shadow_prices"
+            ],
+            "opted_out_raw_trace": false
+          }
+        ],
+        "script": "folio-assistant/computations/low_isotopes_binding_sweep.py"
       },
       {
         "bucket": "A",
         "reason": "raw tr_M / markov_trace (no operator-on-state)",
         "witnesses": [],
-        "script": "folio-assistant/computations/lr_hecke_character_probe.py"
+        "script": "folio-assistant/computations/lp-duality-check.py"
       },
       {
         "bucket": "A",
@@ -2386,144 +2572,6 @@
           }
         ],
         "script": "folio-assistant/computations/markov-free-energy-qvalues.py"
-      },
-      {
-        "bucket": "A",
-        "reason": "raw tr_M / markov_trace (no operator-on-state)",
-        "witnesses": [],
-        "script": "folio-assistant/computations/markov_peel.py"
-      },
-      {
-        "bucket": "A",
-        "reason": "raw tr_M / markov_trace (no operator-on-state)",
-        "witnesses": [],
-        "script": "folio-assistant/computations/markov_peel_atomic_witness.py"
-      },
-      {
-        "bucket": "A",
-        "reason": "raw tr_M / markov_trace (no operator-on-state)",
-        "witnesses": [],
-        "script": "folio-assistant/computations/markov_peel_rust_bridge.py"
-      },
-      {
-        "bucket": "A",
-        "reason": "raw tr_M / markov_trace (no operator-on-state)",
-        "witnesses": [],
-        "script": "folio-assistant/computations/markov_pipeline_cross_validator.py"
-      },
-      {
-        "bucket": "A",
-        "reason": "raw tr_M / markov_trace (no operator-on-state)",
-        "witnesses": [],
-        "script": "folio-assistant/computations/markov_substrate_realizer.py"
-      },
-      {
-        "bucket": "A",
-        "reason": "raw tr_M / markov_trace (no operator-on-state)",
-        "witnesses": [
-          {
-            "witness": "folio-assistant/computations/markov-trace-atomic-proton-full.witness.json",
-            "ok": false,
-            "missing_fields": [
-              "gram_matrix",
-              "gram_inverse",
-              "lp_active_set",
-              "shadow_prices"
-            ],
-            "opted_out_raw_trace": false
-          }
-        ],
-        "script": "folio-assistant/computations/markov_trace_atomic_proton_full.py"
-      },
-      {
-        "bucket": "A",
-        "reason": "raw tr_M / markov_trace (no operator-on-state)",
-        "witnesses": [
-          {
-            "witness": "folio-assistant/computations/markov-trace-axiomatic-multi-atom.witness.json",
-            "ok": false,
-            "missing_fields": [
-              "gram_matrix",
-              "gram_inverse",
-              "lp_active_set",
-              "shadow_prices"
-            ],
-            "opted_out_raw_trace": false
-          }
-        ],
-        "script": "folio-assistant/computations/markov_trace_axiomatic_multi_atom.py"
-      },
-      {
-        "bucket": "A",
-        "reason": "raw tr_M / markov_trace (no operator-on-state)",
-        "witnesses": [
-          {
-            "witness": "folio-assistant/computations/markov-trace-axiomatic-proton.witness.json",
-            "ok": false,
-            "missing_fields": [
-              "gram_matrix",
-              "gram_inverse",
-              "lp_active_set",
-              "shadow_prices"
-            ],
-            "opted_out_raw_trace": false
-          }
-        ],
-        "script": "folio-assistant/computations/markov_trace_axiomatic_proton.py"
-      },
-      {
-        "bucket": "A",
-        "reason": "raw tr_M / markov_trace (no operator-on-state)",
-        "witnesses": [],
-        "script": "folio-assistant/computations/markov_trace_canonical.py"
-      },
-      {
-        "bucket": "A",
-        "reason": "raw tr_M / markov_trace (no operator-on-state)",
-        "witnesses": [],
-        "script": "folio-assistant/computations/markov_trace_for_knot.py"
-      },
-      {
-        "bucket": "A",
-        "reason": "raw tr_M / markov_trace (no operator-on-state)",
-        "witnesses": [],
-        "script": "folio-assistant/computations/markov_trace_h4_natural_elements_prescreen.py"
-      },
-      {
-        "bucket": "A",
-        "reason": "raw tr_M / markov_trace (no operator-on-state)",
-        "witnesses": [
-          {
-            "witness": "folio-assistant/computations/markov-trace-recursive.witness.json",
-            "ok": false,
-            "missing_fields": [
-              "gram_matrix",
-              "gram_inverse",
-              "lp_active_set",
-              "shadow_prices"
-            ],
-            "opted_out_raw_trace": false
-          }
-        ],
-        "script": "folio-assistant/computations/markov_trace_recursive.py"
-      },
-      {
-        "bucket": "A",
-        "reason": "raw tr_M / markov_trace (no operator-on-state)",
-        "witnesses": [
-          {
-            "witness": "folio-assistant/computations/markov_weights_symbolic.witness.json",
-            "ok": false,
-            "missing_fields": [
-              "gram_matrix",
-              "gram_inverse",
-              "lp_active_set",
-              "shadow_prices"
-            ],
-            "opted_out_raw_trace": false
-          }
-        ],
-        "script": "folio-assistant/computations/markov_weights_symbolic.py"
       },
       {
         "bucket": "A",
@@ -2608,6 +2656,42 @@
         "reason": "raw tr_M / markov_trace (no operator-on-state)",
         "witnesses": [
           {
+            "witness": "folio-assistant/computations/mass-theory-formalize-first-invariants-probe.witness.json",
+            "ok": false,
+            "missing_fields": [
+              "gram_matrix",
+              "gram_inverse",
+              "lp_active_set",
+              "shadow_prices"
+            ],
+            "opted_out_raw_trace": false
+          }
+        ],
+        "script": "folio-assistant/computations/mass_theory_formalize_first_invariants_probe.py"
+      },
+      {
+        "bucket": "A",
+        "reason": "raw tr_M / markov_trace (no operator-on-state)",
+        "witnesses": [
+          {
+            "witness": "folio-assistant/computations/mass-vol-density.witness.json",
+            "ok": false,
+            "missing_fields": [
+              "gram_matrix",
+              "gram_inverse",
+              "lp_active_set",
+              "shadow_prices"
+            ],
+            "opted_out_raw_trace": false
+          }
+        ],
+        "script": "folio-assistant/computations/mass_vol_density.py"
+      },
+      {
+        "bucket": "A",
+        "reason": "raw tr_M / markov_trace (no operator-on-state)",
+        "witnesses": [
+          {
             "witness": "folio-assistant/computations/meson-character-shortcut-l1.witness.json",
             "ok": false,
             "missing_fields": [
@@ -2680,24 +2764,6 @@
         "reason": "raw tr_M / markov_trace (no operator-on-state)",
         "witnesses": [
           {
-            "witness": "folio-assistant/computations/meson-lepton-knot-dictionary-probe.witness.json",
-            "ok": false,
-            "missing_fields": [
-              "gram_matrix",
-              "gram_inverse",
-              "lp_active_set",
-              "shadow_prices"
-            ],
-            "opted_out_raw_trace": false
-          }
-        ],
-        "script": "folio-assistant/computations/meson_lepton_knot_dictionary_probe.py"
-      },
-      {
-        "bucket": "A",
-        "reason": "raw tr_M / markov_trace (no operator-on-state)",
-        "witnesses": [
-          {
             "witness": "folio-assistant/computations/meson-mass-from-hecke.witness.json",
             "ok": false,
             "missing_fields": [
@@ -2758,7 +2824,7 @@
         "reason": "raw tr_M / markov_trace (no operator-on-state)",
         "witnesses": [
           {
-            "witness": "folio-assistant/computations/meson-typed-crossing-probe.witness.json",
+            "witness": "folio-assistant/computations/metallic-q-quark-bifurcation.witness.json",
             "ok": false,
             "missing_fields": [
               "gram_matrix",
@@ -2769,7 +2835,7 @@
             "opted_out_raw_trace": false
           }
         ],
-        "script": "folio-assistant/computations/meson_typed_crossing_probe.py"
+        "script": "folio-assistant/computations/metallic_q_quark_bifurcation.py"
       },
       {
         "bucket": "A",
@@ -2794,6 +2860,24 @@
         "reason": "raw tr_M / markov_trace (no operator-on-state)",
         "witnesses": [
           {
+            "witness": "folio-assistant/computations/mp-dk-decisive-test.witness.json",
+            "ok": false,
+            "missing_fields": [
+              "gram_matrix",
+              "gram_inverse",
+              "lp_active_set",
+              "shadow_prices"
+            ],
+            "opted_out_raw_trace": false
+          }
+        ],
+        "script": "folio-assistant/computations/mp_dk_decisive_test.py"
+      },
+      {
+        "bucket": "A",
+        "reason": "raw tr_M / markov_trace (no operator-on-state)",
+        "witnesses": [
+          {
             "witness": "folio-assistant/computations/multi-layer-gap-decomposition.witness.json",
             "ok": false,
             "missing_fields": [
@@ -2806,6 +2890,30 @@
           }
         ],
         "script": "folio-assistant/computations/multi_layer_gap_decomposition.py"
+      },
+      {
+        "bucket": "A",
+        "reason": "raw tr_M / markov_trace (no operator-on-state)",
+        "witnesses": [],
+        "script": "folio-assistant/computations/multiterm_cost_deuteron_psd_gate_probe.py"
+      },
+      {
+        "bucket": "A",
+        "reason": "raw tr_M / markov_trace (no operator-on-state)",
+        "witnesses": [
+          {
+            "witness": "folio-assistant/computations/native-5-strand-baryon.witness.json",
+            "ok": false,
+            "missing_fields": [
+              "gram_matrix",
+              "gram_inverse",
+              "lp_active_set",
+              "shadow_prices"
+            ],
+            "opted_out_raw_trace": false
+          }
+        ],
+        "script": "folio-assistant/computations/native_5_strand_baryon.py"
       },
       {
         "bucket": "A",
@@ -2842,6 +2950,90 @@
           }
         ],
         "script": "folio-assistant/computations/normalization_reconciliation_phase5l2.py"
+      },
+      {
+        "bucket": "A",
+        "reason": "raw tr_M / markov_trace (no operator-on-state)",
+        "witnesses": [
+          {
+            "witness": "folio-assistant/computations/nucleus-operator-selection-sdp.witness.json",
+            "ok": false,
+            "missing_fields": [
+              "gram_matrix",
+              "gram_inverse",
+              "lp_active_set",
+              "shadow_prices"
+            ],
+            "opted_out_raw_trace": false
+          }
+        ],
+        "script": "folio-assistant/computations/nucleus_operator_selection_sdp.py"
+      },
+      {
+        "bucket": "A",
+        "reason": "raw tr_M / markov_trace (no operator-on-state)",
+        "witnesses": [],
+        "script": "folio-assistant/computations/nucleus_real_sdp.py"
+      },
+      {
+        "bucket": "A",
+        "reason": "raw tr_M / markov_trace (no operator-on-state)",
+        "witnesses": [],
+        "script": "folio-assistant/computations/nuclide_braid_pipeline.py"
+      },
+      {
+        "bucket": "A",
+        "reason": "raw tr_M / markov_trace (no operator-on-state)",
+        "witnesses": [
+          {
+            "witness": "folio-assistant/computations/ocneanu-12-alt-knot-geometries.witness.json",
+            "ok": false,
+            "missing_fields": [
+              "gram_matrix",
+              "gram_inverse",
+              "lp_active_set",
+              "shadow_prices"
+            ],
+            "opted_out_raw_trace": false
+          }
+        ],
+        "script": "folio-assistant/computations/ocneanu_12_alt_knot_geometries.py"
+      },
+      {
+        "bucket": "A",
+        "reason": "raw tr_M / markov_trace (no operator-on-state)",
+        "witnesses": [
+          {
+            "witness": "folio-assistant/computations/ocneanu-12-qdeformation-discriminator.witness.json",
+            "ok": false,
+            "missing_fields": [
+              "gram_matrix",
+              "gram_inverse",
+              "lp_active_set",
+              "shadow_prices"
+            ],
+            "opted_out_raw_trace": false
+          }
+        ],
+        "script": "folio-assistant/computations/ocneanu_12_qdeformation_discriminator.py"
+      },
+      {
+        "bucket": "A",
+        "reason": "raw tr_M / markov_trace (no operator-on-state)",
+        "witnesses": [
+          {
+            "witness": "folio-assistant/computations/ocneanu-12-route-reexam.witness.json",
+            "ok": false,
+            "missing_fields": [
+              "gram_matrix",
+              "gram_inverse",
+              "lp_active_set",
+              "shadow_prices"
+            ],
+            "opted_out_raw_trace": false
+          }
+        ],
+        "script": "folio-assistant/computations/ocneanu_12_route_reexam.py"
       },
       {
         "bucket": "A",
@@ -2890,7 +3082,7 @@
         "reason": "raw tr_M / markov_trace (no operator-on-state)",
         "witnesses": [
           {
-            "witness": "folio-assistant/computations/paper-six-term-isotope-sweep.witness.json",
+            "witness": "folio-assistant/computations/option-e-multi-isotope-delta-lambda-probe-v3.witness.json",
             "ok": false,
             "missing_fields": [
               "gram_matrix",
@@ -2901,14 +3093,14 @@
             "opted_out_raw_trace": false
           }
         ],
-        "script": "folio-assistant/computations/paper_six_term_isotope_sweep.py"
+        "script": "folio-assistant/computations/option_e_multi_isotope_delta_lambda_probe_v3.py"
       },
       {
         "bucket": "A",
         "reason": "raw tr_M / markov_trace (no operator-on-state)",
         "witnesses": [
           {
-            "witness": "folio-assistant/computations/path-b-defect-binding-probe.witness.json",
+            "witness": "folio-assistant/computations/option-e-phase1-h3-cross-check.witness.json",
             "ok": false,
             "missing_fields": [
               "gram_matrix",
@@ -2919,14 +3111,14 @@
             "opted_out_raw_trace": false
           }
         ],
-        "script": "folio-assistant/computations/path_b_defect_binding_probe.py"
+        "script": "folio-assistant/computations/option_e_phase1_h3_cross_check.py"
       },
       {
         "bucket": "A",
         "reason": "raw tr_M / markov_trace (no operator-on-state)",
         "witnesses": [
           {
-            "witness": "folio-assistant/computations/path-b-habiro-mass-probe.witness.json",
+            "witness": "folio-assistant/computations/option-e-v6-combined-canonical.witness.json",
             "ok": false,
             "missing_fields": [
               "gram_matrix",
@@ -2937,7 +3129,37 @@
             "opted_out_raw_trace": false
           }
         ],
-        "script": "folio-assistant/computations/path_b_habiro_mass_probe.py"
+        "script": "folio-assistant/computations/option_e_v6_combined_canonical.py"
+      },
+      {
+        "bucket": "A",
+        "reason": "raw tr_M / markov_trace (no operator-on-state)",
+        "witnesses": [],
+        "script": "folio-assistant/computations/orbit_reduction_crosscheck.py"
+      },
+      {
+        "bucket": "A",
+        "reason": "raw tr_M / markov_trace (no operator-on-state)",
+        "witnesses": [],
+        "script": "folio-assistant/computations/orbit_trace_identity_proof.py"
+      },
+      {
+        "bucket": "A",
+        "reason": "raw tr_M / markov_trace (no operator-on-state)",
+        "witnesses": [
+          {
+            "witness": "folio-assistant/computations/paper-modulus-audit-nonarchimedean.witness.json",
+            "ok": false,
+            "missing_fields": [
+              "gram_matrix",
+              "gram_inverse",
+              "lp_active_set",
+              "shadow_prices"
+            ],
+            "opted_out_raw_trace": false
+          }
+        ],
+        "script": "folio-assistant/computations/paper_modulus_audit_nonarchimedean.py"
       },
       {
         "bucket": "A",
@@ -3022,6 +3244,24 @@
         "reason": "raw tr_M / markov_trace (no operator-on-state)",
         "witnesses": [
           {
+            "witness": "folio-assistant/computations/per-knot-mass-table-demonstration.witness.json",
+            "ok": false,
+            "missing_fields": [
+              "gram_matrix",
+              "gram_inverse",
+              "lp_active_set",
+              "shadow_prices"
+            ],
+            "opted_out_raw_trace": false
+          }
+        ],
+        "script": "folio-assistant/computations/per_knot_mass_table_demonstration.py"
+      },
+      {
+        "bucket": "A",
+        "reason": "raw tr_M / markov_trace (no operator-on-state)",
+        "witnesses": [
+          {
             "witness": "folio-assistant/computations/per-observable-100x-status.witness.json",
             "ok": false,
             "missing_fields": [
@@ -3034,120 +3274,6 @@
           }
         ],
         "script": "folio-assistant/computations/per_observable_100x_status.py"
-      },
-      {
-        "bucket": "A",
-        "reason": "raw tr_M / markov_trace (no operator-on-state)",
-        "witnesses": [
-          {
-            "witness": "folio-assistant/computations/phase1c-proton-h3-symbolic-decomposition.witness.json",
-            "ok": false,
-            "missing_fields": [
-              "gram_matrix",
-              "gram_inverse",
-              "lp_active_set",
-              "shadow_prices"
-            ],
-            "opted_out_raw_trace": false
-          }
-        ],
-        "script": "folio-assistant/computations/phase1c_proton_h3_symbolic_decomposition.py"
-      },
-      {
-        "bucket": "A",
-        "reason": "raw tr_M / markov_trace (no operator-on-state)",
-        "witnesses": [
-          {
-            "witness": "folio-assistant/computations/phase1d-f-bor-exact-h-expansion.witness.json",
-            "ok": false,
-            "missing_fields": [
-              "gram_matrix",
-              "gram_inverse",
-              "lp_active_set",
-              "shadow_prices"
-            ],
-            "opted_out_raw_trace": false
-          }
-        ],
-        "script": "folio-assistant/computations/phase1d_f_bor_exact_h_expansion.py"
-      },
-      {
-        "bucket": "A",
-        "reason": "raw tr_M / markov_trace (no operator-on-state)",
-        "witnesses": [],
-        "script": "folio-assistant/computations/phase1e_neutron_and_cross_isotope_h_expansion.py"
-      },
-      {
-        "bucket": "A",
-        "reason": "raw tr_M / markov_trace (no operator-on-state)",
-        "witnesses": [],
-        "script": "folio-assistant/computations/phase2_proton_m_e_hecke_diagnostic.py"
-      },
-      {
-        "bucket": "A",
-        "reason": "raw tr_M / markov_trace (no operator-on-state)",
-        "witnesses": [
-          {
-            "witness": "folio-assistant/computations/phase2b2-dim-v21-categorical-bridge.witness.json",
-            "ok": false,
-            "missing_fields": [
-              "gram_matrix",
-              "gram_inverse",
-              "lp_active_set",
-              "shadow_prices"
-            ],
-            "opted_out_raw_trace": false
-          }
-        ],
-        "script": "folio-assistant/computations/phase2b2_dim_v21_categorical_bridge.py"
-      },
-      {
-        "bucket": "A",
-        "reason": "raw tr_M / markov_trace (no operator-on-state)",
-        "witnesses": [],
-        "script": "folio-assistant/computations/phase2b_dim_v21_bridge_derivation.py"
-      },
-      {
-        "bucket": "A",
-        "reason": "raw tr_M / markov_trace (no operator-on-state)",
-        "witnesses": [
-          {
-            "witness": "folio-assistant/computations/phase2c-derive-correction-tower.witness.json",
-            "ok": false,
-            "missing_fields": [
-              "gram_matrix",
-              "gram_inverse",
-              "lp_active_set",
-              "shadow_prices"
-            ],
-            "opted_out_raw_trace": false
-          }
-        ],
-        "script": "folio-assistant/computations/phase2c_derive_correction_tower.py"
-      },
-      {
-        "bucket": "A",
-        "reason": "raw tr_M / markov_trace (no operator-on-state)",
-        "witnesses": [
-          {
-            "witness": "folio-assistant/computations/phase3-triton-binding-convention-b.witness.json",
-            "ok": false,
-            "missing_fields": [
-              "gram_matrix",
-              "gram_inverse",
-              "lp_active_set",
-              "shadow_prices"
-            ],
-            "opted_out_raw_trace": false
-          }
-        ],
-        "script": "folio-assistant/computations/phase3_triton_binding_convention_b.py"
-      },
-      {
-        "bucket": "A",
-        "reason": "raw tr_M / markov_trace (no operator-on-state)",
-        "witnesses": [],
-        "script": "folio-assistant/computations/phase3b_universal_vs_knot_specific_decomposition.py"
       },
       {
         "bucket": "A",
@@ -3196,6 +3322,24 @@
         "reason": "raw tr_M / markov_trace (no operator-on-state)",
         "witnesses": [
           {
+            "witness": "folio-assistant/computations/prearchimedean-bond-factor.witness.json",
+            "ok": false,
+            "missing_fields": [
+              "gram_matrix",
+              "gram_inverse",
+              "lp_active_set",
+              "shadow_prices"
+            ],
+            "opted_out_raw_trace": false
+          }
+        ],
+        "script": "folio-assistant/computations/prearchimedean_bond_factor.py"
+      },
+      {
+        "bucket": "A",
+        "reason": "raw tr_M / markov_trace (no operator-on-state)",
+        "witnesses": [
+          {
             "witness": "folio-assistant/computations/probe-1-project-4he-on-dominant.witness.json",
             "ok": false,
             "missing_fields": [
@@ -3230,9 +3374,15 @@
       {
         "bucket": "A",
         "reason": "raw tr_M / markov_trace (no operator-on-state)",
+        "witnesses": [],
+        "script": "folio-assistant/computations/probe_he4_canonical_tr_m_fingerprint.py"
+      },
+      {
+        "bucket": "A",
+        "reason": "raw tr_M / markov_trace (no operator-on-state)",
         "witnesses": [
           {
-            "witness": "folio-assistant/computations/proton-brane-tower-correction-probe.witness.json",
+            "witness": "folio-assistant/computations/probe-option-e-phase2-crystal-vertex-candidates.witness.json",
             "ok": false,
             "missing_fields": [
               "gram_matrix",
@@ -3243,7 +3393,31 @@
             "opted_out_raw_trace": false
           }
         ],
-        "script": "folio-assistant/computations/proton_brane_tower_correction_probe.py"
+        "script": "folio-assistant/computations/probe_option_e_phase2_crystal_vertex_candidates.py"
+      },
+      {
+        "bucket": "A",
+        "reason": "raw tr_M / markov_trace (no operator-on-state)",
+        "witnesses": [
+          {
+            "witness": "folio-assistant/computations/probe-theta-carry-binding.witness.json",
+            "ok": false,
+            "missing_fields": [
+              "gram_matrix",
+              "gram_inverse",
+              "lp_active_set",
+              "shadow_prices"
+            ],
+            "opted_out_raw_trace": false
+          }
+        ],
+        "script": "folio-assistant/computations/probe_theta_carry_binding.py"
+      },
+      {
+        "bucket": "A",
+        "reason": "raw tr_M / markov_trace (no operator-on-state)",
+        "witnesses": [],
+        "script": "folio-assistant/computations/profile_transfer_scaling.py"
       },
       {
         "bucket": "A",
@@ -3262,24 +3436,6 @@
           }
         ],
         "script": "folio-assistant/computations/proton_error_anatomy_1ppb.py"
-      },
-      {
-        "bucket": "A",
-        "reason": "raw tr_M / markov_trace (no operator-on-state)",
-        "witnesses": [
-          {
-            "witness": "folio-assistant/computations/proton-identity-extension-audit.witness.json",
-            "ok": false,
-            "missing_fields": [
-              "gram_matrix",
-              "gram_inverse",
-              "lp_active_set",
-              "shadow_prices"
-            ],
-            "opted_out_raw_trace": false
-          }
-        ],
-        "script": "folio-assistant/computations/proton_identity_extension_audit.py"
       },
       {
         "bucket": "A",
@@ -3352,7 +3508,7 @@
         "reason": "raw tr_M / markov_trace (no operator-on-state)",
         "witnesses": [
           {
-            "witness": "folio-assistant/computations/q-hecke-seminormal-character-closure-probe.witness.json",
+            "witness": "folio-assistant/computations/q-block-rmatrix-spectrum.witness.json",
             "ok": false,
             "missing_fields": [
               "gram_matrix",
@@ -3363,26 +3519,14 @@
             "opted_out_raw_trace": false
           }
         ],
-        "script": "folio-assistant/computations/q_hecke_seminormal_character_closure_probe.py"
-      },
-      {
-        "bucket": "A",
-        "reason": "raw tr_M / markov_trace (no operator-on-state)",
-        "witnesses": [],
-        "script": "folio-assistant/computations/qbeta_decay_sdp_solver.py"
-      },
-      {
-        "bucket": "A",
-        "reason": "raw tr_M / markov_trace (no operator-on-state)",
-        "witnesses": [],
-        "script": "folio-assistant/computations/qbeta_per_block_symbolic.py"
+        "script": "folio-assistant/computations/q_block_rmatrix_spectrum.py"
       },
       {
         "bucket": "A",
         "reason": "raw tr_M / markov_trace (no operator-on-state)",
         "witnesses": [
           {
-            "witness": "folio-assistant/computations/qbeta-transfer-eigenvalue-proof.witness.json",
+            "witness": "folio-assistant/computations/q-pinning-50-digit.witness.json",
             "ok": false,
             "missing_fields": [
               "gram_matrix",
@@ -3393,7 +3537,7 @@
             "opted_out_raw_trace": false
           }
         ],
-        "script": "folio-assistant/computations/qbeta_transfer_eigenvalue_proof.py"
+        "script": "folio-assistant/computations/q_pinning_50_digit.py"
       },
       {
         "bucket": "A",
@@ -3453,6 +3597,12 @@
         "bucket": "A",
         "reason": "raw tr_M / markov_trace (no operator-on-state)",
         "witnesses": [],
+        "script": "folio-assistant/computations/reeb_rotation_pn_test.py"
+      },
+      {
+        "bucket": "A",
+        "reason": "raw tr_M / markov_trace (no operator-on-state)",
+        "witnesses": [],
         "script": "folio-assistant/computations/regenerate_y_lambda_mpfr.py"
       },
       {
@@ -3472,24 +3622,6 @@
           }
         ],
         "script": "folio-assistant/computations/rho_constit_equals_tau_M_proton_phase5l.py"
-      },
-      {
-        "bucket": "A",
-        "reason": "raw tr_M / markov_trace (no operator-on-state)",
-        "witnesses": [
-          {
-            "witness": "folio-assistant/computations/rho-f-categorical-probe.witness.json",
-            "ok": false,
-            "missing_fields": [
-              "gram_matrix",
-              "gram_inverse",
-              "lp_active_set",
-              "shadow_prices"
-            ],
-            "opted_out_raw_trace": false
-          }
-        ],
-        "script": "folio-assistant/computations/rho_f_categorical_probe.py"
       },
       {
         "bucket": "A",
@@ -3658,42 +3790,6 @@
         "reason": "raw tr_M / markov_trace (no operator-on-state)",
         "witnesses": [
           {
-            "witness": "folio-assistant/computations/rho-k-proton-substrate-audit.witness.json",
-            "ok": false,
-            "missing_fields": [
-              "gram_matrix",
-              "gram_inverse",
-              "lp_active_set",
-              "shadow_prices"
-            ],
-            "opted_out_raw_trace": false
-          }
-        ],
-        "script": "folio-assistant/computations/rho_k_proton_substrate_audit.py"
-      },
-      {
-        "bucket": "A",
-        "reason": "raw tr_M / markov_trace (no operator-on-state)",
-        "witnesses": [
-          {
-            "witness": "folio-assistant/computations/rt-binomial-trace-evaluation-probe.witness.json",
-            "ok": false,
-            "missing_fields": [
-              "gram_matrix",
-              "gram_inverse",
-              "lp_active_set",
-              "shadow_prices"
-            ],
-            "opted_out_raw_trace": false
-          }
-        ],
-        "script": "folio-assistant/computations/rt_binomial_trace_evaluation_probe.py"
-      },
-      {
-        "bucket": "A",
-        "reason": "raw tr_M / markov_trace (no operator-on-state)",
-        "witnesses": [
-          {
             "witness": "folio-assistant/computations/rt-habiro-borromean-cross-validation.witness.json",
             "ok": false,
             "missing_fields": [
@@ -3712,6 +3808,24 @@
         "reason": "raw tr_M / markov_trace (no operator-on-state)",
         "witnesses": [],
         "script": "folio-assistant/computations/run_jones_markov_atlas_all_atoms.py"
+      },
+      {
+        "bucket": "A",
+        "reason": "raw tr_M / markov_trace (no operator-on-state)",
+        "witnesses": [
+          {
+            "witness": "folio-assistant/computations/s5-so3-su2-u1-fiber-action.witness.json",
+            "ok": false,
+            "missing_fields": [
+              "gram_matrix",
+              "gram_inverse",
+              "lp_active_set",
+              "shadow_prices"
+            ],
+            "opted_out_raw_trace": false
+          }
+        ],
+        "script": "folio-assistant/computations/s5_so3_su2_u1_fiber_action.py"
       },
       {
         "bucket": "A",
@@ -3868,6 +3982,48 @@
         "reason": "raw tr_M / markov_trace (no operator-on-state)",
         "witnesses": [
           {
+            "witness": "folio-assistant/computations/spectral-selector-validate.witness.json",
+            "ok": false,
+            "missing_fields": [
+              "gram_matrix",
+              "gram_inverse",
+              "lp_active_set",
+              "shadow_prices"
+            ],
+            "opted_out_raw_trace": false
+          }
+        ],
+        "script": "folio-assistant/computations/spectral_selector_validate.py"
+      },
+      {
+        "bucket": "A",
+        "reason": "raw tr_M / markov_trace (no operator-on-state)",
+        "witnesses": [
+          {
+            "witness": "folio-assistant/computations/subgoal-1-frobenius-co-casimir-validation.witness.json",
+            "ok": false,
+            "missing_fields": [
+              "gram_matrix",
+              "gram_inverse",
+              "lp_active_set",
+              "shadow_prices"
+            ],
+            "opted_out_raw_trace": false
+          }
+        ],
+        "script": "folio-assistant/computations/subgoal_1_frobenius_co_casimir_validation.py"
+      },
+      {
+        "bucket": "A",
+        "reason": "raw tr_M / markov_trace (no operator-on-state)",
+        "witnesses": [],
+        "script": "folio-assistant/computations/subgoal_1_per_knot_mass_table_probe.py"
+      },
+      {
+        "bucket": "A",
+        "reason": "raw tr_M / markov_trace (no operator-on-state)",
+        "witnesses": [
+          {
             "witness": "folio-assistant/computations/sublemma-2-1-h12-helium-4-framework.witness.json",
             "ok": false,
             "missing_fields": [
@@ -3880,6 +4036,48 @@
           }
         ],
         "script": "folio-assistant/computations/sublemma_2_1_h12_helium_4_framework.py"
+      },
+      {
+        "bucket": "A",
+        "reason": "raw tr_M / markov_trace (no operator-on-state)",
+        "witnesses": [
+          {
+            "witness": "folio-assistant/computations/symmetrized-binding-probe.witness.json",
+            "ok": false,
+            "missing_fields": [
+              "gram_matrix",
+              "gram_inverse",
+              "lp_active_set",
+              "shadow_prices"
+            ],
+            "opted_out_raw_trace": false
+          }
+        ],
+        "script": "folio-assistant/computations/symmetrized_binding_probe.py"
+      },
+      {
+        "bucket": "A",
+        "reason": "raw tr_M / markov_trace (no operator-on-state)",
+        "witnesses": [
+          {
+            "witness": "folio-assistant/computations/symmetrized-constituent-general.witness.json",
+            "ok": false,
+            "missing_fields": [
+              "gram_matrix",
+              "gram_inverse",
+              "lp_active_set",
+              "shadow_prices"
+            ],
+            "opted_out_raw_trace": false
+          }
+        ],
+        "script": "folio-assistant/computations/symmetrized_constituent_general.py"
+      },
+      {
+        "bucket": "A",
+        "reason": "raw tr_M / markov_trace (no operator-on-state)",
+        "witnesses": [],
+        "script": "folio-assistant/computations/symmetrized_constituent_probe.py"
       },
       {
         "bucket": "A",
@@ -3904,24 +4102,6 @@
         "reason": "raw tr_M / markov_trace (no operator-on-state)",
         "witnesses": [
           {
-            "witness": "folio-assistant/computations/t3n-binomial-pattern-probe.witness.json",
-            "ok": false,
-            "missing_fields": [
-              "gram_matrix",
-              "gram_inverse",
-              "lp_active_set",
-              "shadow_prices"
-            ],
-            "opted_out_raw_trace": false
-          }
-        ],
-        "script": "folio-assistant/computations/t3n_binomial_pattern_probe.py"
-      },
-      {
-        "bucket": "A",
-        "reason": "raw tr_M / markov_trace (no operator-on-state)",
-        "witnesses": [
-          {
             "witness": "folio-assistant/computations/tau-M-proton-closed-form-phase5l1.witness.json",
             "ok": false,
             "missing_fields": [
@@ -3934,24 +4114,6 @@
           }
         ],
         "script": "folio-assistant/computations/tau_M_proton_closed_form_phase5l1.py"
-      },
-      {
-        "bucket": "A",
-        "reason": "raw tr_M / markov_trace (no operator-on-state)",
-        "witnesses": [
-          {
-            "witness": "folio-assistant/computations/term5-aK-audit.witness.json",
-            "ok": false,
-            "missing_fields": [
-              "gram_matrix",
-              "gram_inverse",
-              "lp_active_set",
-              "shadow_prices"
-            ],
-            "opted_out_raw_trace": false
-          }
-        ],
-        "script": "folio-assistant/computations/term5_aK_audit.py"
       },
       {
         "bucket": "A",
@@ -3994,6 +4156,24 @@
           }
         ],
         "script": "folio-assistant/computations/term6_residues_at_roots.py"
+      },
+      {
+        "bucket": "A",
+        "reason": "raw tr_M / markov_trace (no operator-on-state)",
+        "witnesses": [
+          {
+            "witness": "folio-assistant/computations/three-quark-borromean-lp-sweep.witness.json",
+            "ok": false,
+            "missing_fields": [
+              "gram_matrix",
+              "gram_inverse",
+              "lp_active_set",
+              "shadow_prices"
+            ],
+            "opted_out_raw_trace": false
+          }
+        ],
+        "script": "folio-assistant/computations/three_quark_borromean_lp_sweep.py"
       },
       {
         "bucket": "A",
@@ -4072,6 +4252,24 @@
         "reason": "raw tr_M / markov_trace (no operator-on-state)",
         "witnesses": [
           {
+            "witness": "folio-assistant/computations/tr-m-atom-via-transfer.witness.json",
+            "ok": false,
+            "missing_fields": [
+              "gram_matrix",
+              "gram_inverse",
+              "lp_active_set",
+              "shadow_prices"
+            ],
+            "opted_out_raw_trace": false
+          }
+        ],
+        "script": "folio-assistant/computations/tr_m_atom_via_transfer.py"
+      },
+      {
+        "bucket": "A",
+        "reason": "raw tr_M / markov_trace (no operator-on-state)",
+        "witnesses": [
+          {
             "witness": "folio-assistant/computations/tr-m-jones-markov-cross-check.witness.json",
             "ok": false,
             "missing_fields": [
@@ -4114,7 +4312,7 @@
         "reason": "raw tr_M / markov_trace (no operator-on-state)",
         "witnesses": [
           {
-            "witness": "folio-assistant/computations/tritium-8-11-jones-markov-probe.witness.json",
+            "witness": "folio-assistant/computations/two-quark-active-set-mahler-sweep.witness.json",
             "ok": false,
             "missing_fields": [
               "gram_matrix",
@@ -4125,7 +4323,31 @@
             "opted_out_raw_trace": false
           }
         ],
-        "script": "folio-assistant/computations/tritium_8_11_jones_markov_probe.py"
+        "script": "folio-assistant/computations/two_quark_active_set_mahler_sweep.py"
+      },
+      {
+        "bucket": "A",
+        "reason": "raw tr_M / markov_trace (no operator-on-state)",
+        "witnesses": [
+          {
+            "witness": "folio-assistant/computations/two-quark-hopf-vs-borromean-sdp.witness.json",
+            "ok": false,
+            "missing_fields": [
+              "gram_matrix",
+              "gram_inverse",
+              "lp_active_set",
+              "shadow_prices"
+            ],
+            "opted_out_raw_trace": false
+          }
+        ],
+        "script": "folio-assistant/computations/two_quark_hopf_vs_borromean_sdp.py"
+      },
+      {
+        "bucket": "A",
+        "reason": "raw tr_M / markov_trace (no operator-on-state)",
+        "witnesses": [],
+        "script": "folio-assistant/computations/two_quark_volume_weighted_clean.py"
       },
       {
         "bucket": "A",
@@ -4186,6 +4408,102 @@
           }
         ],
         "script": "folio-assistant/computations/v_hat_to_delta_lambda_bridge.py"
+      },
+      {
+        "bucket": "A",
+        "reason": "raw tr_M / markov_trace (no operator-on-state)",
+        "witnesses": [
+          {
+            "witness": "folio-assistant/computations/vhat-per-crossing-chain.witness.json",
+            "ok": false,
+            "missing_fields": [
+              "gram_matrix",
+              "gram_inverse",
+              "lp_active_set",
+              "shadow_prices"
+            ],
+            "opted_out_raw_trace": false
+          }
+        ],
+        "script": "folio-assistant/computations/vhat_per_crossing_chain.py"
+      },
+      {
+        "bucket": "A",
+        "reason": "raw tr_M / markov_trace (no operator-on-state)",
+        "witnesses": [
+          {
+            "witness": "folio-assistant/computations/vhat-std-vs-full-tower-compare.witness.json",
+            "ok": false,
+            "missing_fields": [
+              "gram_matrix",
+              "gram_inverse",
+              "lp_active_set",
+              "shadow_prices"
+            ],
+            "opted_out_raw_trace": false
+          }
+        ],
+        "script": "folio-assistant/computations/vhat_std_vs_full_tower_compare.py"
+      },
+      {
+        "bucket": "A",
+        "reason": "raw tr_M / markov_trace (no operator-on-state)",
+        "witnesses": [
+          {
+            "witness": "folio-assistant/computations/vhat-tower-im-cancellation.witness.json",
+            "ok": false,
+            "missing_fields": [
+              "gram_matrix",
+              "gram_inverse",
+              "lp_active_set",
+              "shadow_prices"
+            ],
+            "opted_out_raw_trace": false
+          }
+        ],
+        "script": "folio-assistant/computations/vhat_tower_im_cancellation.py"
+      },
+      {
+        "bucket": "A",
+        "reason": "raw tr_M / markov_trace (no operator-on-state)",
+        "witnesses": [],
+        "script": "folio-assistant/computations/vol_density_deuteron_perknot_probe.py"
+      },
+      {
+        "bucket": "A",
+        "reason": "raw tr_M / markov_trace (no operator-on-state)",
+        "witnesses": [
+          {
+            "witness": "folio-assistant/computations/vol-density-per-block-wiring.witness.json",
+            "ok": false,
+            "missing_fields": [
+              "gram_matrix",
+              "gram_inverse",
+              "lp_active_set",
+              "shadow_prices"
+            ],
+            "opted_out_raw_trace": false
+          }
+        ],
+        "script": "folio-assistant/computations/vol_density_per_block_wiring.py"
+      },
+      {
+        "bucket": "A",
+        "reason": "raw tr_M / markov_trace (no operator-on-state)",
+        "witnesses": [
+          {
+            "witness": "folio-assistant/computations/volume-def-reconcile.witness.json",
+            "ok": false,
+            "missing_fields": [
+              "gram_matrix",
+              "gram_inverse",
+              "lp_active_set",
+              "shadow_prices"
+            ],
+            "opted_out_raw_trace": false
+          }
+        ],
+        "script": "folio-assistant/computations/volume_def_reconcile.py"
       },
       {
         "bucket": "A",
@@ -4256,6 +4574,24 @@
       {
         "bucket": "A",
         "reason": "raw tr_M / markov_trace (no operator-on-state)",
+        "witnesses": [
+          {
+            "witness": "folio-assistant/computations/y-lambda-tower-infra.witness.json",
+            "ok": false,
+            "missing_fields": [
+              "gram_matrix",
+              "gram_inverse",
+              "lp_active_set",
+              "shadow_prices"
+            ],
+            "opted_out_raw_trace": false
+          }
+        ],
+        "script": "folio-assistant/computations/y_lambda_tower_infra.py"
+      },
+      {
+        "bucket": "A",
+        "reason": "raw tr_M / markov_trace (no operator-on-state)",
         "witnesses": [],
         "script": "folio-assistant/computations/y_lambda_wenzl_bridge.py"
       },
@@ -4298,12 +4634,6 @@
       {
         "bucket": "A",
         "reason": "raw tr_M / markov_trace (no operator-on-state)",
-        "witnesses": [],
-        "script": "folio-assistant/computations/yekutieli_mi_k3_cbh_probe.py"
-      },
-      {
-        "bucket": "A",
-        "reason": "raw tr_M / markov_trace (no operator-on-state)",
         "witnesses": [
           {
             "witness": "folio-assistant/computations/yekutieli-mi-k3-h6-scaffold.witness.json",
@@ -4318,6 +4648,24 @@
           }
         ],
         "script": "folio-assistant/computations/yekutieli_mi_k3_h6_scaffold.py"
+      },
+      {
+        "bucket": "A",
+        "reason": "raw tr_M / markov_trace (no operator-on-state)",
+        "witnesses": [
+          {
+            "witness": "folio-assistant/computations/yekutieli-volume-join.witness.json",
+            "ok": false,
+            "missing_fields": [
+              "gram_matrix",
+              "gram_inverse",
+              "lp_active_set",
+              "shadow_prices"
+            ],
+            "opted_out_raw_trace": false
+          }
+        ],
+        "script": "folio-assistant/computations/yekutieli_volume_join.py"
       }
     ],
     "B": [],
@@ -4326,32 +4674,12 @@
       {
         "bucket": "skip",
         "reason": "no trace token",
-        "script": "folio-assistant/computations/A_operator_extract_at_level.py"
+        "script": "folio-assistant/computations/__init__.py"
       },
       {
         "bucket": "skip",
         "reason": "no trace token",
-        "script": "folio-assistant/computations/A_operator_extract_general.py"
-      },
-      {
-        "bucket": "skip",
-        "reason": "no trace token",
-        "script": "folio-assistant/computations/A_operator_extract_kron.py"
-      },
-      {
-        "bucket": "skip",
-        "reason": "no trace token",
-        "script": "folio-assistant/computations/A_operator_extract_reduced.py"
-      },
-      {
-        "bucket": "skip",
-        "reason": "no trace token",
-        "script": "folio-assistant/computations/A_operator_per_interface_probe.py"
-      },
-      {
-        "bucket": "skip",
-        "reason": "no trace token",
-        "script": "folio-assistant/computations/A_operator_rank_probe.py"
+        "script": "folio-assistant/computations/_path_bridge.py"
       },
       {
         "bucket": "skip",
@@ -4361,12 +4689,12 @@
       {
         "bucket": "skip",
         "reason": "no trace token",
-        "script": "folio-assistant/computations/_precision.py"
+        "script": "folio-assistant/computations/ab_methodology_metrics.py"
       },
       {
         "bucket": "skip",
         "reason": "no trace token",
-        "script": "folio-assistant/computations/additive_composition_categorical_probe.py"
+        "script": "folio-assistant/computations/active_set_lr_profile.py"
       },
       {
         "bucket": "skip",
@@ -4376,42 +4704,32 @@
       {
         "bucket": "skip",
         "reason": "no trace token",
-        "script": "folio-assistant/computations/alpha_blend_tower.py"
+        "script": "folio-assistant/computations/alpha_basis_knot_couplings.py"
       },
       {
         "bucket": "skip",
         "reason": "no trace token",
-        "script": "folio-assistant/computations/alpha_em_pslq_uniqueness.py"
+        "script": "folio-assistant/computations/alpha_em_4pi_fixed_point_solve.py"
       },
       {
         "bucket": "skip",
         "reason": "no trace token",
-        "script": "folio-assistant/computations/alpha_em_shift_chain.py"
+        "script": "folio-assistant/computations/alpha_em_4pi_q0_sensitivity.py"
       },
       {
         "bucket": "skip",
         "reason": "no trace token",
-        "script": "folio-assistant/computations/alpha_high_precision.py"
+        "script": "folio-assistant/computations/alpha_em_no_pi_4_3_source.py"
       },
       {
         "bucket": "skip",
         "reason": "no trace token",
-        "script": "folio-assistant/computations/alpha_shift_torus.py"
+        "script": "folio-assistant/computations/alpha_em_no_pi_correction_probe.py"
       },
       {
         "bucket": "skip",
         "reason": "no trace token",
-        "script": "folio-assistant/computations/alpha_star_dominant_partitions.py"
-      },
-      {
-        "bucket": "skip",
-        "reason": "no trace token",
-        "script": "folio-assistant/computations/alpha_star_vs_binding_gap.py"
-      },
-      {
-        "bucket": "skip",
-        "reason": "no trace token",
-        "script": "folio-assistant/computations/archimedean_knot_eigenbasis_probe.py"
+        "script": "folio-assistant/computations/alpha_k_per_force_assembly.py"
       },
       {
         "bucket": "skip",
@@ -4441,12 +4759,32 @@
       {
         "bucket": "skip",
         "reason": "no trace token",
+        "script": "folio-assistant/computations/audit_lean_uniqueness_ref_wiring.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
         "script": "folio-assistant/computations/b_over_a_evaluator.py"
       },
       {
         "bucket": "skip",
         "reason": "no trace token",
+        "script": "folio-assistant/computations/b_over_m_order_probe.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
         "script": "folio-assistant/computations/bar_involution.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/bar_pairing_binding_observable.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/benzene_assembly_spine.py"
       },
       {
         "bucket": "skip",
@@ -4471,7 +4809,27 @@
       {
         "bucket": "skip",
         "reason": "no trace token",
+        "script": "folio-assistant/computations/binding_a3plus_arccosh_growth_split.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/binding_a3plus_full_theta_assembly.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/binding_alpha_shift_witness.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
         "script": "folio-assistant/computations/binding_block_multiplicative.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/binding_color_vs_charge_tn3he.py"
       },
       {
         "bucket": "skip",
@@ -4506,12 +4864,12 @@
       {
         "bucket": "skip",
         "reason": "no trace token",
-        "script": "folio-assistant/computations/binding_energy_scale_probe.py"
+        "script": "folio-assistant/computations/binding_error_source.py"
       },
       {
         "bucket": "skip",
         "reason": "no trace token",
-        "script": "folio-assistant/computations/binding_error_source.py"
+        "script": "folio-assistant/computations/binding_factor_f_pair_count.py"
       },
       {
         "bucket": "skip",
@@ -4526,7 +4884,17 @@
       {
         "bucket": "skip",
         "reason": "no trace token",
+        "script": "folio-assistant/computations/binding_link_psd_feasibility_probe.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
         "script": "folio-assistant/computations/binding_link_volumes.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/binding_log_scale_investigation.py"
       },
       {
         "bucket": "skip",
@@ -4541,6 +4909,11 @@
       {
         "bucket": "skip",
         "reason": "no trace token",
+        "script": "folio-assistant/computations/binding_qhamiltonian_rotational_scale.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
         "script": "folio-assistant/computations/binding_threebody_joint_trace.py"
       },
       {
@@ -4551,17 +4924,22 @@
       {
         "bucket": "skip",
         "reason": "no trace token",
+        "script": "folio-assistant/computations/block_swap_spectrum.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/bond_edge_set_selection_probe.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
         "script": "folio-assistant/computations/borromean_volume_100dps.py"
       },
       {
         "bucket": "skip",
         "reason": "no trace token",
         "script": "folio-assistant/computations/borromean_volume_propagation_to_m_p.py"
-      },
-      {
-        "bucket": "skip",
-        "reason": "no trace token",
-        "script": "folio-assistant/computations/bowtie_q_channel_projection_probe.py"
       },
       {
         "bucket": "skip",
@@ -4581,6 +4959,11 @@
       {
         "bucket": "skip",
         "reason": "no trace token",
+        "script": "folio-assistant/computations/bring_trefoil_cinquefoil_channel.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
         "script": "folio-assistant/computations/bring_trilog_zeta5_depth_3.py"
       },
       {
@@ -4591,7 +4974,7 @@
       {
         "bucket": "skip",
         "reason": "no trace token",
-        "script": "folio-assistant/computations/brundan_kleshchev_audit.py"
+        "script": "folio-assistant/computations/bring_zero_mode_per_block_scaffold.py"
       },
       {
         "bucket": "skip",
@@ -4646,11 +5029,6 @@
       {
         "bucket": "skip",
         "reason": "no trace token",
-        "script": "folio-assistant/computations/c5_decomposition_probe.py"
-      },
-      {
-        "bucket": "skip",
-        "reason": "no trace token",
         "script": "folio-assistant/computations/c_alpha_from_Q_beta_trace.py"
       },
       {
@@ -4691,7 +5069,27 @@
       {
         "bucket": "skip",
         "reason": "no trace token",
-        "script": "folio-assistant/computations/canonical_script_input_audit.py"
+        "script": "folio-assistant/computations/casimir_beta_2_derivation.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/casimir_d6_qcorrection_structure.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/casimir_jet_order_derivation.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/casimir_mode_indexed_derivation.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/casimir_n_unknot_construction.py"
       },
       {
         "bucket": "skip",
@@ -4711,7 +5109,37 @@
       {
         "bucket": "skip",
         "reason": "no trace token",
-        "script": "folio-assistant/computations/char_fast.py"
+        "script": "folio-assistant/computations/charge_coulomb_tn3he_derived.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/chebyshev_pairing_engine_witness.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/chi_at_q_inv_via_native_mpfr.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/chi_atom_fmatrix_recoupling.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/chi_atom_transfer.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/chi_cd_mpfr.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/chi_free_via_lr.py"
       },
       {
         "bucket": "skip",
@@ -4731,7 +5159,17 @@
       {
         "bucket": "skip",
         "reason": "no trace token",
+        "script": "folio-assistant/computations/chi_monotone_transfer.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
         "script": "folio-assistant/computations/chi_sym_alt_closed_form.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/chi_witness_completeness_audit.py"
       },
       {
         "bucket": "skip",
@@ -4776,7 +5214,17 @@
       {
         "bucket": "skip",
         "reason": "no trace token",
+        "script": "folio-assistant/computations/clarabel_lp_crosscheck.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
         "script": "folio-assistant/computations/cleanup_legacy_witnesses.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/co_bond_order_active_set.py"
       },
       {
         "bucket": "skip",
@@ -4787,11 +5235,6 @@
         "bucket": "skip",
         "reason": "no trace token",
         "script": "folio-assistant/computations/codata_masses.py"
-      },
-      {
-        "bucket": "skip",
-        "reason": "no trace token",
-        "script": "folio-assistant/computations/commutative_chirality_vanishes_probe.py"
       },
       {
         "bucket": "skip",
@@ -4826,17 +5269,22 @@
       {
         "bucket": "skip",
         "reason": "no trace token",
-        "script": "folio-assistant/computations/content_block_label_audit.py"
-      },
-      {
-        "bucket": "skip",
-        "reason": "no trace token",
         "script": "folio-assistant/computations/crystal_alpha_shift_pole_orders.py"
       },
       {
         "bucket": "skip",
         "reason": "no trace token",
         "script": "folio-assistant/computations/crystal_basis.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/crystal_keystone_selector.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/crystal_lattice_geometry.py"
       },
       {
         "bucket": "skip",
@@ -4851,22 +5299,7 @@
       {
         "bucket": "skip",
         "reason": "no trace token",
-        "script": "folio-assistant/computations/cyclotomic_cl3_orbit_sum_general_probe.py"
-      },
-      {
-        "bucket": "skip",
-        "reason": "no trace token",
         "script": "folio-assistant/computations/cyclotomic_depth3_dimension_pslq.py"
-      },
-      {
-        "bucket": "skip",
-        "reason": "no trace token",
-        "script": "folio-assistant/computations/cyclotomic_depth3_dimension_synthesis_probe.py"
-      },
-      {
-        "bucket": "skip",
-        "reason": "no trace token",
-        "script": "folio-assistant/computations/cyclotomic_orbit_sum_all_depths_probe.py"
       },
       {
         "bucket": "skip",
@@ -4876,27 +5309,12 @@
       {
         "bucket": "skip",
         "reason": "no trace token",
-        "script": "folio-assistant/computations/cyclotomic_trilog_imaginary_closed_form_probe.py"
-      },
-      {
-        "bucket": "skip",
-        "reason": "no trace token",
         "script": "folio-assistant/computations/d_density_derivation.py"
       },
       {
         "bucket": "skip",
         "reason": "no trace token",
-        "script": "folio-assistant/computations/delta_coupling_closed_form_probe.py"
-      },
-      {
-        "bucket": "skip",
-        "reason": "no trace token",
         "script": "folio-assistant/computations/delta_lambda_alexander_phase4.py"
-      },
-      {
-        "bucket": "skip",
-        "reason": "no trace token",
-        "script": "folio-assistant/computations/delta_lambda_bar_invariance_probe.py"
       },
       {
         "bucket": "skip",
@@ -4907,11 +5325,6 @@
         "bucket": "skip",
         "reason": "no trace token",
         "script": "folio-assistant/computations/delta_lambda_dim_weight_proof.py"
-      },
-      {
-        "bucket": "skip",
-        "reason": "no trace token",
-        "script": "folio-assistant/computations/delta_lambda_h6_branching_probe.py"
       },
       {
         "bucket": "skip",
@@ -4931,11 +5344,6 @@
       {
         "bucket": "skip",
         "reason": "no trace token",
-        "script": "folio-assistant/computations/delta_lambda_m_pi_constraint_probe.py"
-      },
-      {
-        "bucket": "skip",
-        "reason": "no trace token",
         "script": "folio-assistant/computations/delta_lambda_sign_rule_proof.py"
       },
       {
@@ -4947,6 +5355,11 @@
         "bucket": "skip",
         "reason": "no trace token",
         "script": "folio-assistant/computations/delta_lambda_z4N_phase4.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/delta_q_h_bracket_identity.py"
       },
       {
         "bucket": "skip",
@@ -4966,12 +5379,17 @@
       {
         "bucket": "skip",
         "reason": "no trace token",
-        "script": "folio-assistant/computations/derive_m_baryon_volume_form.py"
+        "script": "folio-assistant/computations/derive_binding_bond_sum.py"
       },
       {
         "bucket": "skip",
         "reason": "no trace token",
-        "script": "folio-assistant/computations/derive_m_p_hecke_full_tower_50dps.py"
+        "script": "folio-assistant/computations/derive_binding_chain_cooperative.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/derive_m_baryon_volume_form.py"
       },
       {
         "bucket": "skip",
@@ -4981,7 +5399,92 @@
       {
         "bucket": "skip",
         "reason": "no trace token",
+        "script": "folio-assistant/computations/derived_chi_catalogue.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/derived_chi_catalogue_bar_symmetry_audit.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/derived_chi_catalogue_bridge_factor_deuteron.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/derived_chi_catalogue_build.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/derived_chi_catalogue_lr_scaffold.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/derived_chi_catalogue_matrix_m.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/derived_chi_catalogue_matrix_m_mpfr.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/derived_chi_catalogue_matrix_m_mu_n.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/derived_chi_catalogue_matrix_m_multi_a_benchmark.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/derived_chi_catalogue_matrix_m_numerical.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/derived_chi_catalogue_memoize.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/derived_chi_catalogue_mn_disk_cache.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/derived_chi_catalogue_parallel.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/derived_chi_catalogue_production_wire_demo.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/derived_chi_catalogue_sweep.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
         "script": "folio-assistant/computations/det_pair_law.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/deuteron_binding_plancherel_channel.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/dilog_archimedean_partA_witness.py"
       },
       {
         "bucket": "skip",
@@ -4991,12 +5494,12 @@
       {
         "bucket": "skip",
         "reason": "no trace token",
-        "script": "folio-assistant/computations/e0_calibration_audit.py"
+        "script": "folio-assistant/computations/eigenvalue_reeb_extension_h4_h5.py"
       },
       {
         "bucket": "skip",
         "reason": "no trace token",
-        "script": "folio-assistant/computations/eigenvalue_reeb_extension_h4_h5.py"
+        "script": "folio-assistant/computations/embeddable_knot_operator.py"
       },
       {
         "bucket": "skip",
@@ -5011,27 +5514,12 @@
       {
         "bucket": "skip",
         "reason": "no trace token",
-        "script": "folio-assistant/computations/ew_couplings_substrate_derivation_probe.py"
+        "script": "folio-assistant/computations/escape1_geometric_holonomy_section.py"
       },
       {
         "bucket": "skip",
         "reason": "no trace token",
-        "script": "folio-assistant/computations/ew_higgs_sdp_probe.py"
-      },
-      {
-        "bucket": "skip",
-        "reason": "no trace token",
-        "script": "folio-assistant/computations/ew_interface_knot_probe.py"
-      },
-      {
-        "bucket": "skip",
-        "reason": "no trace token",
-        "script": "folio-assistant/computations/experimental_constants.py"
-      },
-      {
-        "bucket": "skip",
-        "reason": "no trace token",
-        "script": "folio-assistant/computations/explicit_central_idempotent_probe.py"
+        "script": "folio-assistant/computations/extend_even_a_mirror_pair_test.py"
       },
       {
         "bucket": "skip",
@@ -5046,17 +5534,17 @@
       {
         "bucket": "skip",
         "reason": "no trace token",
-        "script": "folio-assistant/computations/finite_q_volume_conjecture_probe.py"
+        "script": "folio-assistant/computations/flavor_dependent_cusp_shape.py"
       },
       {
         "bucket": "skip",
         "reason": "no trace token",
-        "script": "folio-assistant/computations/fitted_labelled_canonical_audit.py"
+        "script": "folio-assistant/computations/flavor_split_xq_refinement.py"
       },
       {
         "bucket": "skip",
         "reason": "no trace token",
-        "script": "folio-assistant/computations/float64_leak_audit.py"
+        "script": "folio-assistant/computations/forward_ref_classifier.py"
       },
       {
         "bucket": "skip",
@@ -5091,11 +5579,6 @@
       {
         "bucket": "skip",
         "reason": "no trace token",
-        "script": "folio-assistant/computations/full_twist_root_of_unity_probe.py"
-      },
-      {
-        "bucket": "skip",
-        "reason": "no trace token",
         "script": "folio-assistant/computations/garside-irrep-qvalues.py"
       },
       {
@@ -5116,16 +5599,6 @@
       {
         "bucket": "skip",
         "reason": "no trace token",
-        "script": "folio-assistant/computations/vol_density_borromean_q_locality_probe.py"
-      },
-      {
-        "bucket": "skip",
-        "reason": "no trace token",
-        "script": "folio-assistant/computations/geom_leading_alt_q_locality_probe.py"
-      },
-      {
-        "bucket": "skip",
-        "reason": "no trace token",
         "script": "folio-assistant/computations/gram_h3_det_factorization.py"
       },
       {
@@ -5135,13 +5608,8 @@
       },
       {
         "bucket": "skip",
-        "reason": "no trace pattern",
-        "script": "folio-assistant/computations/gt_matrix_pslq_probe.py"
-      },
-      {
-        "bucket": "skip",
         "reason": "no trace token",
-        "script": "folio-assistant/computations/guarded_off_audit.py"
+        "script": "folio-assistant/computations/gram_matrix_seminormal_h6.py"
       },
       {
         "bucket": "skip",
@@ -5151,12 +5619,42 @@
       {
         "bucket": "skip",
         "reason": "no trace token",
-        "script": "folio-assistant/computations/h4_categorical_drivers_probe.py"
+        "script": "folio-assistant/computations/h2o_angle_knot_correction.py"
       },
       {
         "bucket": "skip",
         "reason": "no trace token",
-        "script": "folio-assistant/computations/h4_h2_cross_algebra_bridge_probe.py"
+        "script": "folio-assistant/computations/h2o_angle_q2_symmetric_block.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/h2s_bring_residual_mixing.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/h2s_bring_zeta5_chiral_residue.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/h2s_chiral_residue_bar_antisymmetric.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/h2s_lone_pair_asymmetry.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/h4_form_AB_cross_anchor_stability.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/h4_residual_higher_precision_pslq.py"
       },
       {
         "bucket": "skip",
@@ -5171,72 +5669,17 @@
       {
         "bucket": "skip",
         "reason": "no trace token",
-        "script": "folio-assistant/computations/habiro_exact_mass_endomorphism.py"
+        "script": "folio-assistant/computations/hbond_categorical_action.py"
       },
       {
         "bucket": "skip",
         "reason": "no trace token",
-        "script": "folio-assistant/computations/habiro_expansion_atomic_probe.py"
-      },
-      {
-        "bucket": "skip",
-        "reason": "no trace token",
-        "script": "folio-assistant/computations/habiro_types.py"
-      },
-      {
-        "bucket": "skip",
-        "reason": "no trace token",
-        "script": "folio-assistant/computations/habiro_witness_validator.py"
-      },
-      {
-        "bucket": "skip",
-        "reason": "no trace token",
-        "script": "folio-assistant/computations/hardcoded_literal_audit.py"
-      },
-      {
-        "bucket": "skip",
-        "reason": "no trace token",
-        "script": "folio-assistant/computations/hecke_1d_irrep_closed_form_character_probe.py"
-      },
-      {
-        "bucket": "skip",
-        "reason": "no trace token",
-        "script": "folio-assistant/computations/hecke_branching_trace_decomposition_probe.py"
-      },
-      {
-        "bucket": "skip",
-        "reason": "no trace token",
-        "script": "folio-assistant/computations/hecke_characters.py"
-      },
-      {
-        "bucket": "skip",
-        "reason": "no trace token",
-        "script": "folio-assistant/computations/hecke_laurent_fast.py"
-      },
-      {
-        "bucket": "skip",
-        "reason": "no trace token",
-        "script": "folio-assistant/computations/hecke_log_decomposition_probe.py"
-      },
-      {
-        "bucket": "skip",
-        "reason": "no trace token",
-        "script": "folio-assistant/computations/hecke_markov_transition_probe.py"
+        "script": "folio-assistant/computations/hbond_vdw_energy_ladder.py"
       },
       {
         "bucket": "skip",
         "reason": "no trace token",
         "script": "folio-assistant/computations/higgs_categorical_mass_formula_attempt.py"
-      },
-      {
-        "bucket": "skip",
-        "reason": "no trace token",
-        "script": "folio-assistant/computations/higgs_h6_correction_probe.py"
-      },
-      {
-        "bucket": "skip",
-        "reason": "no trace token",
-        "script": "folio-assistant/computations/higher_n_wedderburn_h2_drift_probe.py"
       },
       {
         "bucket": "skip",
@@ -5251,12 +5694,22 @@
       {
         "bucket": "skip",
         "reason": "no trace token",
-        "script": "folio-assistant/computations/hoefsmit_seminormal_form_probe.py"
+        "script": "folio-assistant/computations/homfly_ocneanu_trace.py"
       },
       {
         "bucket": "skip",
         "reason": "no trace token",
         "script": "folio-assistant/computations/homflypt_su_n_mass_tower.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/host_info.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/hybridization_sp_gap_braid.py"
       },
       {
         "bucket": "skip",
@@ -5276,27 +5729,12 @@
       {
         "bucket": "skip",
         "reason": "no trace token",
-        "script": "folio-assistant/computations/i1_no_probe_audit.py"
-      },
-      {
-        "bucket": "skip",
-        "reason": "no trace token",
-        "script": "folio-assistant/computations/i2_probe_only_audit.py"
-      },
-      {
-        "bucket": "skip",
-        "reason": "no trace token",
         "script": "folio-assistant/computations/implied_c2_closed_form_search_50dps.py"
       },
       {
         "bucket": "skip",
         "reason": "no trace token",
         "script": "folio-assistant/computations/implied_h2_coefficient_audit_50dps.py"
-      },
-      {
-        "bucket": "skip",
-        "reason": "no trace token",
-        "script": "folio-assistant/computations/incomplete_coverage_audit.py"
       },
       {
         "bucket": "skip",
@@ -5336,32 +5774,7 @@
       {
         "bucket": "skip",
         "reason": "no trace token",
-        "script": "folio-assistant/computations/jonquiere_cyclotomic_tate_rationality_probe.py"
-      },
-      {
-        "bucket": "skip",
-        "reason": "no trace token",
-        "script": "folio-assistant/computations/jucys_murphy_central_elements_qou_probe.py"
-      },
-      {
-        "bucket": "skip",
-        "reason": "no trace token",
-        "script": "folio-assistant/computations/kaon_pion_ratio_7_8_probe.py"
-      },
-      {
-        "bucket": "skip",
-        "reason": "no trace token",
         "script": "folio-assistant/computations/kazhdan_lusztig.py"
-      },
-      {
-        "bucket": "skip",
-        "reason": "no trace token",
-        "script": "folio-assistant/computations/khovanov_at_q0_probe.py"
-      },
-      {
-        "bucket": "skip",
-        "reason": "no trace token",
-        "script": "folio-assistant/computations/khovanov_klr_rank_cohomology_probe.py"
       },
       {
         "bucket": "skip",
@@ -5386,27 +5799,12 @@
       {
         "bucket": "skip",
         "reason": "no trace token",
-        "script": "folio-assistant/computations/knot_factor_amphicheiral_BD_probe.py"
-      },
-      {
-        "bucket": "skip",
-        "reason": "no trace token",
-        "script": "folio-assistant/computations/knot_factor_amphicheiral_probe.py"
-      },
-      {
-        "bucket": "skip",
-        "reason": "no trace token",
-        "script": "folio-assistant/computations/knot_factor_borromean_composite_probe.py"
+        "script": "folio-assistant/computations/knot_factor_skein_verification.py"
       },
       {
         "bucket": "skip",
         "reason": "no trace token",
         "script": "folio-assistant/computations/knot_operator_sdp_4_1.py"
-      },
-      {
-        "bucket": "skip",
-        "reason": "no trace token",
-        "script": "folio-assistant/computations/knot_volumes.py"
       },
       {
         "bucket": "skip",
@@ -5496,27 +5894,12 @@
       {
         "bucket": "skip",
         "reason": "no trace token",
-        "script": "folio-assistant/computations/lambda_scale_substrate_probe.py"
-      },
-      {
-        "bucket": "skip",
-        "reason": "no trace token",
         "script": "folio-assistant/computations/laurent_q.py"
       },
       {
         "bucket": "skip",
         "reason": "no trace token",
         "script": "folio-assistant/computations/laurentq_a5_ceiling_measure.py"
-      },
-      {
-        "bucket": "skip",
-        "reason": "no trace token",
-        "script": "folio-assistant/computations/lean_ref_resolution_audit.py"
-      },
-      {
-        "bucket": "skip",
-        "reason": "no trace token",
-        "script": "folio-assistant/computations/legacy_formula_audit.py"
       },
       {
         "bucket": "skip",
@@ -5546,22 +5929,12 @@
       {
         "bucket": "skip",
         "reason": "no trace token",
-        "script": "folio-assistant/computations/low_isotope_binding_sweep.py"
-      },
-      {
-        "bucket": "skip",
-        "reason": "no trace token",
         "script": "folio-assistant/computations/lp_confinement_nf_forcing.py"
       },
       {
         "bucket": "skip",
         "reason": "no trace token",
         "script": "folio-assistant/computations/lp_dual_cache.py"
-      },
-      {
-        "bucket": "skip",
-        "reason": "no trace token",
-        "script": "folio-assistant/computations/lr_coefficients.py"
       },
       {
         "bucket": "skip",
@@ -5576,7 +5949,7 @@
       {
         "bucket": "skip",
         "reason": "no trace token",
-        "script": "folio-assistant/computations/m_p_bring_plus_faddeev_h4_probe.py"
+        "script": "folio-assistant/computations/m_p_linking_weight_operator_valued_probe.py"
       },
       {
         "bucket": "skip",
@@ -5586,12 +5959,12 @@
       {
         "bucket": "skip",
         "reason": "no trace token",
-        "script": "folio-assistant/computations/m_tau_knot_prediction.py"
+        "script": "folio-assistant/computations/m_p_spectral_corrected_50dps.py"
       },
       {
         "bucket": "skip",
         "reason": "no trace token",
-        "script": "folio-assistant/computations/markov_trace_via_wenzl_lr.py"
+        "script": "folio-assistant/computations/m_tau_knot_prediction.py"
       },
       {
         "bucket": "skip",
@@ -5602,11 +5975,6 @@
         "bucket": "skip",
         "reason": "no trace token",
         "script": "folio-assistant/computations/mass_sweep_bar_sym_h2_coefficient_hunt.py"
-      },
-      {
-        "bucket": "skip",
-        "reason": "no trace token",
-        "script": "folio-assistant/computations/mass_table_bring_faddeev_h4_sweep.py"
       },
       {
         "bucket": "skip",
@@ -5636,7 +6004,52 @@
       {
         "bucket": "skip",
         "reason": "no trace token",
-        "script": "folio-assistant/computations/meson_vol_density.py"
+        "script": "folio-assistant/computations/mdl_bit_count.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/meson_3x4_structural_origin.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/meson_em_residual_alpha_em.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/meson_em_sinh_closed_form.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/meson_eta_phi_gmor.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/meson_fusion_why34_em_residual.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/meson_habiro_c2_off_integer_pivot.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/meson_habiro_c3_categorical_search.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/meson_habiro_c3_pslq_search.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/meson_habiro_c4_truncation_reexam.py"
       },
       {
         "bucket": "skip",
@@ -5646,12 +6059,152 @@
       {
         "bucket": "skip",
         "reason": "no trace token",
-        "script": "folio-assistant/computations/meson_tower_correction_probe.py"
+        "script": "folio-assistant/computations/meson_vol_density.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/metallic_q_illustration.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/metallic_q_jones_sign_sweep.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/metallic_q_n4_character_sweep.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/metallic_q_symbolic_galois_proofs.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/metallic_q_wenzl_sign_sweep.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/mmu_categorical_correction_first_probe.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/mmu_categorical_correction_k_crossing_probe.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/mmu_categorical_correction_refined_probe.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/mmu_kashiwara_cos_factor_probe.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/mmu_lepton_torus_tower_feasibility_probe.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/mmu_r9_consistency_check.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/mmu_r9_two_rung_extension_probe.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/mmu_r9_two_rung_v2_probe.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/mmu_simpler_form_search_probe.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/mn_delta_pn_qbeta_habiro_cascade_probe.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/mn_flavor_split_h3_plancherel.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/mn_flavor_split_h4_plancherel.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/mn_flavor_split_plancherel_channel.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/mn_standard_channel_correction.py"
       },
       {
         "bucket": "skip",
         "reason": "no trace token",
         "script": "folio-assistant/computations/molecular-trefoil-scan.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/molecular_angle_derive_related.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/molecular_angle_master_table.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/molecular_angle_symmetric_block_general.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/molecular_braid_angle_table.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/molecular_experimental_refs.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/mp_residual_exotic_basis_pslq.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/mp_yekutieli_plancherel_scaffold.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/mp_yekutieli_sign_block_discrimination.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/mu_substrate_tension_audit_100dps.py"
       },
       {
         "bucket": "skip",
@@ -5686,12 +6239,12 @@
       {
         "bucket": "skip",
         "reason": "no trace token",
-        "script": "folio-assistant/computations/nv1_candidate_a_doubleprime.py"
+        "script": "folio-assistant/computations/nicer_mass_radius_qou_silver_kink.py"
       },
       {
         "bucket": "skip",
         "reason": "no trace token",
-        "script": "folio-assistant/computations/nv_categorical_derivation_probe.py"
+        "script": "folio-assistant/computations/nv1_candidate_a_doubleprime.py"
       },
       {
         "bucket": "skip",
@@ -5706,6 +6259,21 @@
       {
         "bucket": "skip",
         "reason": "no trace token",
+        "script": "folio-assistant/computations/ocneanu_12_bring_zero_mode_variants.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/ocneanu_12_em_correction_candidate.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/ocneanu_54ppb_residual_exploration.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
         "script": "folio-assistant/computations/onepb_status_dashboard.py"
       },
       {
@@ -5716,22 +6284,47 @@
       {
         "bucket": "skip",
         "reason": "no trace token",
-        "script": "folio-assistant/computations/option_e_isospin_probe.py"
+        "script": "folio-assistant/computations/option_e_canonical_reeb_v5.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/option_e_deuteron_delta_lambda_probe_v2.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/option_e_deuteron_param_free_residual.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/option_e_probe1_derive_1plusq_over_2.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/option_e_q_reeb_phase_probe_v4.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/option_e_v7_involution_aware.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/option_e_v8_hecke_involution_isospin_mirror.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/option_e_v9_all_symmetries.py"
       },
       {
         "bucket": "skip",
         "reason": "no trace token",
         "script": "folio-assistant/computations/ordering_cache.py"
-      },
-      {
-        "bucket": "skip",
-        "reason": "no trace token",
-        "script": "folio-assistant/computations/p2_5_symbolic_q_audit.py"
-      },
-      {
-        "bucket": "skip",
-        "reason": "no trace token",
-        "script": "folio-assistant/computations/paper_six_term_shadow_price_sweep.py"
       },
       {
         "bucket": "skip",
@@ -5761,32 +6354,27 @@
       {
         "bucket": "skip",
         "reason": "no trace token",
-        "script": "folio-assistant/computations/pauli_factor_wedderburn_probe.py"
-      },
-      {
-        "bucket": "skip",
-        "reason": "no trace token",
-        "script": "folio-assistant/computations/pentagon_multipair_borromean_h4_probe.py"
-      },
-      {
-        "bucket": "skip",
-        "reason": "no trace token",
         "script": "folio-assistant/computations/pentagon_reduction_li2q.py"
       },
       {
         "bucket": "skip",
         "reason": "no trace token",
-        "script": "folio-assistant/computations/pentagon_rt_torus_knot_higgs_probe.py"
-      },
-      {
-        "bucket": "skip",
-        "reason": "no trace token",
-        "script": "folio-assistant/computations/pentagon_to_borromean_h4_probe.py"
+        "script": "folio-assistant/computations/per_atom_hyperbolic_volume_witness.py"
       },
       {
         "bucket": "skip",
         "reason": "no trace token",
         "script": "folio-assistant/computations/per_atom_rho_deviation.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/per_basis_row_invariants_probe.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/per_bond_growth_a3.py"
       },
       {
         "bucket": "skip",
@@ -5801,47 +6389,12 @@
       {
         "bucket": "skip",
         "reason": "no trace token",
-        "script": "folio-assistant/computations/phase1a_symbolic_trace_dominant_h_expansion.py"
+        "script": "folio-assistant/computations/per_pair_wedderburn_enumeration.py"
       },
       {
         "bucket": "skip",
         "reason": "no trace token",
-        "script": "folio-assistant/computations/phase1b_two_row_closed_form_character.py"
-      },
-      {
-        "bucket": "skip",
-        "reason": "no trace token",
-        "script": "folio-assistant/computations/phase2a2_flavor_split_exact_correction.py"
-      },
-      {
-        "bucket": "skip",
-        "reason": "no trace token",
-        "script": "folio-assistant/computations/phase2a_flavor_split_higher_order_probe.py"
-      },
-      {
-        "bucket": "skip",
-        "reason": "no trace token",
-        "script": "folio-assistant/computations/phase3_deuteron_tritium_h_expansion.py"
-      },
-      {
-        "bucket": "skip",
-        "reason": "no trace token",
-        "script": "folio-assistant/computations/phase3c_a5_a7_knot_volume_targets.py"
-      },
-      {
-        "bucket": "skip",
-        "reason": "no trace token",
-        "script": "folio-assistant/computations/phase5_n8_dim_q_table.py"
-      },
-      {
-        "bucket": "skip",
-        "reason": "no trace token",
-        "script": "folio-assistant/computations/phi_q_regularization_probe.py"
-      },
-      {
-        "bucket": "skip",
-        "reason": "no trace token",
-        "script": "folio-assistant/computations/plancherel_weight_boundedness_probe.py"
+        "script": "folio-assistant/computations/photon_ir_zero_mode_bring.py"
       },
       {
         "bucket": "skip",
@@ -5886,7 +6439,77 @@
       {
         "bucket": "skip",
         "reason": "no trace token",
-        "script": "folio-assistant/computations/proton_m_e_anomaly_audit.py"
+        "script": "folio-assistant/computations/probe_binding_measure_search.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/probe_bring_residue_resolvent.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/probe_canonical_braid_interface_composition.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/probe_content_energy_signed_phase.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/probe_flavor_dressed_mass_from_substrate_split.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/probe_full_theta_binding.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/probe_isospin_mirror_v9_generalization.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/probe_k_ud_bring_color_tube_empirical_baseline.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/probe_k_ud_fractional_and_alt_ansatz.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/probe_operator_valued_ansatze_from_mass_endo.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/probe_option_e_h3_entry_point.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/probe_option_e_h6_entry_point.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/probe_q6j_jm_spectral_delta_lambda.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/probe_q_beta_operator_valued_N3.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/probe_volume_wedderburn_delta_lambda.py"
       },
       {
         "bucket": "skip",
@@ -5907,6 +6530,16 @@
         "bucket": "skip",
         "reason": "no trace token",
         "script": "folio-assistant/computations/q0_figure_eight_phase_derivation.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/q0_repin_regen_batch.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/q1_mass_gap_probe.py"
       },
       {
         "bucket": "skip",
@@ -5966,87 +6599,42 @@
       {
         "bucket": "skip",
         "reason": "no trace token",
-        "script": "folio-assistant/computations/q_parameter.py"
-      },
-      {
-        "bucket": "skip",
-        "reason": "no trace token",
-        "script": "folio-assistant/computations/q_pinning_50_digit.py"
-      },
-      {
-        "bucket": "skip",
-        "reason": "no trace token",
         "script": "folio-assistant/computations/q_pochhammer_seed.py"
       },
       {
         "bucket": "skip",
         "reason": "no trace token",
-        "script": "folio-assistant/computations/qbeta_1ppq_achieved.py"
+        "script": "folio-assistant/computations/q_spectral_truncation_tower.py"
       },
       {
         "bucket": "skip",
         "reason": "no trace token",
-        "script": "folio-assistant/computations/qbeta_decay_sdp_extended_ck.py"
+        "script": "folio-assistant/computations/q_weighted_block_swap.py"
       },
       {
         "bucket": "skip",
         "reason": "no trace token",
-        "script": "folio-assistant/computations/qbeta_decay_sdp_full_ck.py"
+        "script": "folio-assistant/computations/qbeta_c3_three_rung_probe.py"
       },
       {
         "bucket": "skip",
         "reason": "no trace token",
-        "script": "folio-assistant/computations/qbeta_fsc_g_pattern_comparison.py"
+        "script": "folio-assistant/computations/qbeta_c3_v9_style_probe.py"
       },
       {
         "bucket": "skip",
         "reason": "no trace token",
-        "script": "folio-assistant/computations/qbeta_golden_ratio_fibonacci_probe.py"
+        "script": "folio-assistant/computations/qbeta_multi_block_eigenphase_full_eps_probe.py"
       },
       {
         "bucket": "skip",
         "reason": "no trace token",
-        "script": "folio-assistant/computations/qbeta_habiro_tower_1ppq.py"
+        "script": "folio-assistant/computations/qbeta_multi_block_eigenphase_probe.py"
       },
       {
         "bucket": "skip",
         "reason": "no trace token",
-        "script": "folio-assistant/computations/qbeta_half_fill_probe.py"
-      },
-      {
-        "bucket": "skip",
-        "reason": "no trace token",
-        "script": "folio-assistant/computations/qbeta_ladder_verification_1ppq.py"
-      },
-      {
-        "bucket": "skip",
-        "reason": "no trace token",
-        "script": "folio-assistant/computations/qbeta_operator_identification_probe.py"
-      },
-      {
-        "bucket": "skip",
-        "reason": "no trace token",
-        "script": "folio-assistant/computations/qbeta_per_block_paper_closed_forms.py"
-      },
-      {
-        "bucket": "skip",
-        "reason": "no trace token",
-        "script": "folio-assistant/computations/qbeta_per_block_uniform_rule_verify.py"
-      },
-      {
-        "bucket": "skip",
-        "reason": "no trace token",
-        "script": "folio-assistant/computations/qbeta_physics.py"
-      },
-      {
-        "bucket": "skip",
-        "reason": "no trace token",
-        "script": "folio-assistant/computations/qbeta_silver_ratio_pell_lucas_ck.py"
-      },
-      {
-        "bucket": "skip",
-        "reason": "no trace token",
-        "script": "folio-assistant/computations/qm_channel_contribution_probe.py"
+        "script": "folio-assistant/computations/qou_mass_canonical_wiring_example.py"
       },
       {
         "bucket": "skip",
@@ -6071,6 +6659,16 @@
       {
         "bucket": "skip",
         "reason": "no trace token",
+        "script": "folio-assistant/computations/rho_w_crystal_vertex_trace.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/rosso_jones_three_strand_delta_q.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
         "script": "folio-assistant/computations/rt_route_cross_particle_ratio_quantum_dim.py"
       },
       {
@@ -6081,22 +6679,17 @@
       {
         "bucket": "skip",
         "reason": "no trace token",
-        "script": "folio-assistant/computations/rt_route_w_specific_correction_probe.py"
-      },
-      {
-        "bucket": "skip",
-        "reason": "no trace token",
         "script": "folio-assistant/computations/rt_w_sqrt2_jet_order_validation.py"
       },
       {
         "bucket": "skip",
         "reason": "no trace token",
-        "script": "folio-assistant/computations/rt_w_sqrt_quantum_two_probe.py"
+        "script": "folio-assistant/computations/run_pipeline.py"
       },
       {
         "bucket": "skip",
         "reason": "no trace token",
-        "script": "folio-assistant/computations/run_pipeline.py"
+        "script": "folio-assistant/computations/s_z_block_selection_rule.py"
       },
       {
         "bucket": "skip",
@@ -6107,6 +6700,11 @@
         "bucket": "skip",
         "reason": "no trace token",
         "script": "folio-assistant/computations/shadow_price_c_321_q0.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/shell_closure_phi8_correlation_test.py"
       },
       {
         "bucket": "skip",
@@ -6136,7 +6734,12 @@
       {
         "bucket": "skip",
         "reason": "no trace token",
-        "script": "folio-assistant/computations/six_fifths_deviation_h4_correction_probe.py"
+        "script": "folio-assistant/computations/snappy_borromean_volume.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/snappy_borromean_volume_catalan_cross_check.py"
       },
       {
         "bucket": "skip",
@@ -6166,7 +6769,7 @@
       {
         "bucket": "skip",
         "reason": "no trace token",
-        "script": "folio-assistant/computations/stale_probe_audit.py"
+        "script": "folio-assistant/computations/su2_spinor_multiplicity_resolution.py"
       },
       {
         "bucket": "skip",
@@ -6221,7 +6824,12 @@
       {
         "bucket": "skip",
         "reason": "no trace token",
-        "script": "folio-assistant/computations/symbolic_character_table_probe.py"
+        "script": "folio-assistant/computations/symmetrized_binding_closure.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/symmetrizer_eigenvalue_verification_50dps.py"
       },
       {
         "bucket": "skip",
@@ -6236,22 +6844,12 @@
       {
         "bucket": "skip",
         "reason": "no trace token",
-        "script": "folio-assistant/computations/t6_tau_h5_embedding_probe.py"
-      },
-      {
-        "bucket": "skip",
-        "reason": "no trace token",
         "script": "folio-assistant/computations/t6_three_halves_factor_probes.py"
       },
       {
         "bucket": "skip",
         "reason": "no trace token",
         "script": "folio-assistant/computations/tau-lepton-nf.py"
-      },
-      {
-        "bucket": "skip",
-        "reason": "no trace token",
-        "script": "folio-assistant/computations/tau_amphichiral_sdp_probe.py"
       },
       {
         "bucket": "skip",
@@ -6306,7 +6904,7 @@
       {
         "bucket": "skip",
         "reason": "no trace token",
-        "script": "folio-assistant/computations/three_parameters_wedderburn_probe.py"
+        "script": "folio-assistant/computations/three_body_joint_trace_a3.py"
       },
       {
         "bucket": "skip",
@@ -6331,12 +6929,32 @@
       {
         "bucket": "skip",
         "reason": "no trace token",
+        "script": "folio-assistant/computations/topic2_mirror_pair_phi8_boundary_scan.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
         "script": "folio-assistant/computations/tower_isotope_absolute.py"
       },
       {
         "bucket": "skip",
         "reason": "no trace token",
+        "script": "folio-assistant/computations/tower_psd_marginality_vs_A.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
         "script": "folio-assistant/computations/trace_convention_reconciliation.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/tritium_h5_psd_feasibility_witness.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/u1_hypercharge_assignment.py"
       },
       {
         "bucket": "skip",
@@ -6356,7 +6974,7 @@
       {
         "bucket": "skip",
         "reason": "no trace token",
-        "script": "folio-assistant/computations/validation_as_input_audit.py"
+        "script": "folio-assistant/computations/vdw_pskew_sinh_probe.py"
       },
       {
         "bucket": "skip",
@@ -6371,22 +6989,7 @@
       {
         "bucket": "skip",
         "reason": "no trace token",
-        "script": "folio-assistant/computations/wall_violations_sweep.py"
-      },
-      {
-        "bucket": "skip",
-        "reason": "no trace token",
         "script": "folio-assistant/computations/wedderburn_pair_volumes.py"
-      },
-      {
-        "bucket": "skip",
-        "reason": "no trace token",
-        "script": "folio-assistant/computations/wedderburn_weight_canonical_probe.py"
-      },
-      {
-        "bucket": "skip",
-        "reason": "no trace token",
-        "script": "folio-assistant/computations/weight_factor_audit.py"
       },
       {
         "bucket": "skip",
@@ -6406,11 +7009,6 @@
       {
         "bucket": "skip",
         "reason": "no trace token",
-        "script": "folio-assistant/computations/witness_provenance_audit.py"
-      },
-      {
-        "bucket": "skip",
-        "reason": "no trace token",
         "script": "folio-assistant/computations/witness_reproducibility_check.py"
       },
       {
@@ -6426,17 +7024,27 @@
       {
         "bucket": "skip",
         "reason": "no trace token",
-        "script": "folio-assistant/computations/y_lambda_cyclotomic_factorization_probe.py"
-      },
-      {
-        "bucket": "skip",
-        "reason": "no trace token",
         "script": "folio-assistant/computations/y_lambda_macdonald_telescope.py"
       },
       {
         "bucket": "skip",
         "reason": "no trace token",
         "script": "folio-assistant/computations/y_lambda_pole_order_cache.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/yekutieli_half_h2_observable_hunt.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/yekutieli_natural_reading_precision_floor_check.py"
+      },
+      {
+        "bucket": "skip",
+        "reason": "no trace token",
+        "script": "folio-assistant/computations/young_seminormal.py"
       }
     ]
   },

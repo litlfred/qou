@@ -1,15 +1,30 @@
 {
   "engine": "sympy",
-  "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-05-09T04:06:12.099599+00:00",
-  "commitSha": "11ca9159cd8cdb3ad62234953af86b4bd4f59f7e",
+  "engineVersion": "sympy 1.11.1",
+  "computedAt": "2026-06-12T03:42:35.538191+00:00",
+  "commitSha": "c86793f7c0566a4a849e6e9a4c855697a437a785",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 0,
+  "durationMs": 193,
   "computation": "gb-filtration-jet-order",
   "scriptFile": "gb_filtration_jet_tracker.py",
-  "scriptHash": "ebd1d03a46b5",
-  "scriptCommitSha": "11ca9159cd8cdb3ad62234953af86b4bd4f59f7e",
+  "scriptHash": "bd7e931b0329",
+  "scriptCommitSha": "5a44813463430491fdc8cd8cd5a97a404b5e7e9d",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.2",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.11.1",
+    "mpmath": "0.0.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
+  },
   "description": "Proof-of-concept GB-filtration + jet-order tracker for the Iwahori-Hecke algebra H_n(q).  Provides the data model that the joint-tower SDP confinement solver will need: every reduction step records (filtration grade, jet-order index, Coxeter relation fired).  Verified on σ_1^3 (electron) and (σ_1 σ_2^{-1})^3 (proton/neutron body).",
   "symbolic_q_form": {
     "engine": "sympy",
@@ -1859,7 +1874,7 @@
               2,
               3
             ],
-            "coefficient_in_q": "(q**2 - 1)**3/q**3"
+            "coefficient_in_q": "q**3 - 3*q + 3/q - 1/q**3"
           },
           {
             "perm": [
@@ -1872,7 +1887,7 @@
               3,
               1
             ],
-            "coefficient_in_q": "(-q**2 - (q**2 - 1)**2)*(q**2 - 1)**3/q**5"
+            "coefficient_in_q": "-q**5 + 4*q**3 - 7*q + 7/q - 4/q**3 + q**(-5)"
           }
         ],
         "1": [
@@ -1886,7 +1901,7 @@
             "canonical_word": [
               3
             ],
-            "coefficient_in_q": "1 - (q**2 - 1)**4/q**4"
+            "coefficient_in_q": "-q**4 + 4*q**2 - 5 + 4/q**2 - 1/q**4"
           }
         ],
         "3": [
@@ -1902,7 +1917,7 @@
               3,
               1
             ],
-            "coefficient_in_q": "-(q**2 - 1)**2/q**2"
+            "coefficient_in_q": "-q**2 + 2 - 1/q**2"
           },
           {
             "perm": [
@@ -1916,7 +1931,7 @@
               2,
               3
             ],
-            "coefficient_in_q": "(q**2 - 1)**2*(q**2 + (q**2 - 1)**2)/q**4"
+            "coefficient_in_q": "q**4 - 3*q**2 + 4 - 3/q**2 + q**(-4)"
           }
         ]
       },
@@ -2487,7 +2502,7 @@
               4,
               5
             ],
-            "coefficient_in_q": "(q**2 - 1)**3/q**3"
+            "coefficient_in_q": "q**3 - 3*q + 3/q - 1/q**3"
           },
           {
             "perm": [
@@ -2504,7 +2519,7 @@
               5,
               1
             ],
-            "coefficient_in_q": "(-q**2 - (q**2 - 1)**2)*(q**2 - 1)**3/q**5"
+            "coefficient_in_q": "-q**5 + 4*q**3 - 7*q + 7/q - 4/q**3 + q**(-5)"
           }
         ],
         "3": [
@@ -2522,7 +2537,7 @@
               4,
               5
             ],
-            "coefficient_in_q": "1 - (q**2 - 1)**4/q**4"
+            "coefficient_in_q": "-q**4 + 4*q**2 - 5 + 4/q**2 - 1/q**4"
           }
         ],
         "5": [
@@ -2542,7 +2557,7 @@
               5,
               1
             ],
-            "coefficient_in_q": "-(q**2 - 1)**2/q**2"
+            "coefficient_in_q": "-q**2 + 2 - 1/q**2"
           },
           {
             "perm": [
@@ -2560,7 +2575,7 @@
               4,
               5
             ],
-            "coefficient_in_q": "(q**2 - 1)**2*(q**2 + (q**2 - 1)**2)/q**4"
+            "coefficient_in_q": "q**4 - 3*q**2 + 4 - 3/q**2 + q**(-4)"
           }
         ]
       },
