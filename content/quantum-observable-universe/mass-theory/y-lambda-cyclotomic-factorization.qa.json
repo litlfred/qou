@@ -1425,7 +1425,104 @@
         "reviewed_at": "2026-06-11T18:06:24.673Z",
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7"
       }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "8bd321b326ce",
+          "ts": "24abbd8d399a",
+          "lean": "051be5aed972"
+        },
+        "result": "fail",
+        "severity": "critical",
+        "evidence": "y-lambda-cyclotomic-factorization.lean:48 — 'def cyclotomicDenominator (_n) (_t) : ℝ := 1'; main thm:71-83 proves only '∃ P, P = numerator ∧ cyclotomicDenominator ≠ 0' i.e. 'show (1:ℝ) ≠ 0; norm_num'",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T14:45:45.880Z",
+        "reviewed_sha": "c86793f7c0566a4a849e6e9a4c855697a437a785",
+        "notes": "Lean statement is silently weakened vs the .md claim: narrative asserts y_λ = P_λ/D_n with D_n a pure cyclotomic product; Lean proves neither the equality nor the cyclotomic form — denominator hardcoded to 1, conclusion is trivial 1≠0. SafeVerify weaken-the-statement failure."
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "8bd321b326ce",
+          "ts": "24abbd8d399a",
+          "lean": "051be5aed972"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.8,
+          "max": 1
+        },
+        "evidence": "y-lambda-cyclotomic-factorization.md:65-104 — proof states plan up front: Wenzl bridge → q=q̌² substitution → Schur principal-specialisation → 1-q̌^{4h}=∏Φ_d factorisation → closure under mult/div",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T14:46:23.250Z",
+        "reviewed_sha": "c86793f7c0566a4a849e6e9a4c855697a437a785",
+        "notes": "Narrative strategy explicit and legible: named lemma (Wenzl bridge), explicit substitution, cyclotomic-factorisation closure argument; reader knows the plan before the steps. Slight deduction: Lean encoding is a stub so the formal strategy is not mirrored."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "8bd321b326ce",
+          "ts": "24abbd8d399a",
+          "lean": "051be5aed972"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.4,
+          "max": 1
+        },
+        "evidence": "y-lambda-cyclotomic-factorization.lean:48,71-83 — core claim (y_λ=P/D with cyclotomic D) is NOT proved; cyclotomicDenominator≡1, theorem reduces to 1≠0. The real gap = the goal (restates-target).",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T14:47:12.310Z",
+        "reviewed_sha": "c86793f7c0566a4a849e6e9a4c855697a437a785",
+        "notes": "Narrative is numerically witnessed (n=2,3,4) so the MATH is plausible, but per rubric the Lean gap IS the goal: the cyclotomic-product denominator is stubbed to 1, so closing the actual claim is a full re-derivation, not routine. Scored 0.4 (between core~0.3 and routine) given strong numeric support."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "8bd321b326ce",
+          "ts": "24abbd8d399a",
+          "lean": "051be5aed972"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.7,
+          "max": 1
+        },
+        "evidence": "y-lambda-cyclotomic-factorization.md:106-124 — explicit cyclotomic closed form for y_λ via hook-length data; distinct from sibling prop:y-lambda-closed-form-wenzl-bridge (general bridge, not the cyclotomic factorisation).",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T14:47:12.362Z",
+        "reviewed_sha": "c86793f7c0566a4a849e6e9a4c855697a437a785",
+        "notes": "Non-redundant: derives the specific cyclotomic-denominator structure (D_n=∏Φ_d^{e}) from hook data, a sharper statement than the upstream Wenzl bridge it uses; not a duplicate of a sibling proof."
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-12T14:47:12.362Z"
 }
