@@ -1259,7 +1259,104 @@
         "reviewed_at": "2026-06-11T18:06:24.673Z",
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7"
       }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "e1566fe05f7b",
+          "ts": "2704de932b44",
+          "lean": "31f157f54b06"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "pn-averaging-uniqueness.lean:152-160 — pn_averaging_unique_via_weight proves σ=σ' from hw:weight=weight' via factors rewrite (no sorry, no axiom); .md:1-10 statement matches the conditional-class signature.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T14:47:54.573Z",
+        "reviewed_sha": "02056d4027e31bc72831f0dd84c4de0ea9f2dece",
+        "notes": "No weakening or axiom injection: uniqueness theorems are real (funext + factors/norm rewrite), the only unproved input is the named ColorFlavorCompatible.weight class field per §3b-cond. Signature well-formed and matches narrative."
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "e1566fe05f7b",
+          "ts": "2704de932b44",
+          "lean": "31f157f54b06"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.8,
+          "max": 1
+        },
+        "evidence": "pn-averaging-uniqueness.md:60-79 'Lean structure' lists 3 classes (BarInvariant/ColorFlavorCompatible/StandardNorm); .lean:142-160 proof is funext+rw of the factorisation.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T14:47:54.612Z",
+        "reviewed_sha": "02056d4027e31bc72831f0dd84c4de0ea9f2dece",
+        "notes": "Plan stated up front: §3b-cond conditional-class staging with three named hypotheses; the uniqueness reduces to a one-line factors-rewrite. Reader knows the strategy before the steps."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "e1566fe05f7b",
+          "ts": "2704de932b44",
+          "lean": "31f157f54b06"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.7,
+          "max": 1
+        },
+        "evidence": "pn-averaging-uniqueness.lean:142-160 — pn_averaging_unique_via_weight establishes uniqueness from the 9-pair quark decomposition ALONE, independent of StandardNorm (distinct from the original pn_averaging_unique).",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T14:47:54.685Z",
+        "reviewed_sha": "02056d4027e31bc72831f0dd84c4de0ea9f2dece",
+        "notes": "Novel refinement: shifts uniqueness from pointwise normalisation to the structural 2+4+1+2 color-pair factorisation; not a duplicate of a sibling — adds a distinct proof route."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "e1566fe05f7b",
+          "ts": "2704de932b44",
+          "lean": "31f157f54b06"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "evidence": "pn-averaging-uniqueness.lean:129-140 — ColorFlavorCompatible.weight is the open field; uniqueness theorems themselves are sorry-free (lines 152-191).",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T14:48:24.520Z",
+        "reviewed_sha": "02056d4027e31bc72831f0dd84c4de0ea9f2dece",
+        "notes": "Uniqueness fully proved conditional on the class; residual gap = pinning the canonical Bring weight function (core, ~0.3) but the q^10 exponent is already derived (alphaShift T(3,5)=10, md:30-48), raising plausibility to ~0.5 (warn band)."
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-12T14:48:24.520Z"
 }
