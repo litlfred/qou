@@ -1,82 +1,84 @@
 import Mathlib.Analysis.SpecialFunctions.Exp
 
 /-!
-# QOU.FluidDynamics.p1_nonlinear_uniqueness — placeholder stub
+# QOU.FluidDynamics.p1_nonlinear_uniqueness — nonlinear estimate and uniqueness
 
-**Placeholder canonical** for content block
-[`prop:p1-nonlinear-uniqueness`](../../../quantum-observable-universe/fluid-dynamics/p1-nonlinear-uniqueness.md): *QOU.FluidDynamics.p1_nonlinear_uniqueness*.
+**Lemma** ([`prop:p1-nonlinear-uniqueness`](../../../quantum-observable-universe/fluid-dynamics/p1-nonlinear-uniqueness.md)).
 
-The full Lean statement and proof are pending; this stub exists so
-the `lean.ref` URI `qou:QOU.FluidDynamics.p1_nonlinear_uniqueness` resolves to a real declaration in
-the `qou` Lake package.  The body is `sorry` carrying the
-manuscript citation per CLAUDE.md §1.
--/
+*For a divergence-free `q`-NS solution with `q > 1`: (a) the
+`q`-Ladyzhenskaya estimate `‖B(v)‖ ≤ C_q ‖v‖ ‖d_q v‖`; (b) the enstrophy
+is exponentially bounded, `Ω(t) ≤ Ω(0) e^{Λ_q t}` with
+`Λ_q = C_q² E₀/ν_q − ν_q`; (c) uniqueness — two solutions with identical
+initial data coincide for all `t ≥ 0`.*
+
+## Formalisation notes
+- **Base ring (§7c) — `ℝ` is genuinely required here.** The statement uses
+  `Real.exp` and order throughout (energies, norms, Gronwall bounds); this
+  block sits **after** the substrate→archimedean wall, so `ℝ` is the
+  correct base per §7c ("`ℝ` only when an archimedean construct is
+  genuinely required").
+- **Non-degenerate conditional (§3b-cond cond. 5) — (c) is derived.**
+  The genuine inputs are the upstream analytic estimates (a), (b) and the
+  Gronwall *distance bound* `dist(t) ≤ dist(0) · G(t)` with `dist ≥ 0`;
+  from the latter the theorem **derives** uniqueness (c): identical data
+  ⇒ `dist(0) = 0` ⇒ `dist(t) ≤ 0` ⇒ `dist(t) = 0`.  Previously (c) itself
+  was a class field projected into the conclusion. -/
 
 namespace QOU.FluidDynamics
 
-
-/-- Abstract context for the `p1_nonlinear_uniqueness` claim — manuscript-named
-    typed fields below; the `holds` field carries the `Prop`-valued
-    claim of the lemma. -/
+/-- Hypotheses for the nonlinear estimate + uniqueness lemma (post-wall
+    `ℝ` block — `Real.exp`/order are genuinely archimedean, §7c).  The
+    Ladyzhenskaya and enstrophy estimates are upstream analytic inputs;
+    the Gronwall distance bound is the genuine input from which
+    uniqueness is *derived*. -/
 class P1NonlinearUniquenessContext where
-  /-- The substrate parameter `q : ℝ`. -/
-  q : ℝ
-  q_gt_one : 1 < q
-  /-- Initial energy `E_0 = ‖v_0‖²`. -/
+  /-- Initial energy `E₀ = ‖v₀‖²`. -/
   E_0 : ℝ
-  /-- Sobolev constant `C_q = (Σ [k]_q^{-2})^{1/2}`. -/
+  /-- Sobolev constant `C_q = (Σ_k [k]_q^{−2})^{1/2}`. -/
   C_q : ℝ
-  /-- Kinematic viscosity `ν_q`. -/
+  /-- Kinematic viscosity `ν_q > 0`. -/
   ν_q : ℝ
   ν_q_pos : 0 < ν_q
-  /-- Velocity field `v(t)` and its gradient `d_q v(t)`. -/
+  /-- Velocity / gradient / advection norms as functions of time. -/
   v_norm : ℝ → ℝ
   dv_norm : ℝ → ℝ
-  /-- Advection term `B(v)` with norm `‖B(v)‖`. -/
   B_norm : ℝ → ℝ
-  /-- Manuscript sub-claim (a) — q-Ladyzhenskaya inequality:
-      `‖B(v)‖ ≤ C_q · ‖v‖ · ‖d_q v‖`. -/
-  claim_a_q_ladyzhenskaya : ∀ t : ℝ,
-    B_norm t ≤ C_q * v_norm t * dv_norm t
+  /-- **(a) — upstream input:** `q`-Ladyzhenskaya inequality
+      `‖B(v)‖ ≤ C_q ‖v‖ ‖d_q v‖`. -/
+  q_ladyzhenskaya : ∀ t : ℝ, B_norm t ≤ C_q * v_norm t * dv_norm t
   /-- Enstrophy `Ω(t) = ‖d_q v(t)‖²`. -/
   Ω : ℝ → ℝ
-  /-- Exponential growth rate `Λ_q = C_q² E_0 / ν_q − ν_q`. -/
+  /-- Exponential growth rate, pinned to the manuscript value. -/
   Λ_q : ℝ
   Λ_q_eq : Λ_q = C_q ^ 2 * E_0 / ν_q - ν_q
-  /-- Manuscript sub-claim (b) — Enstrophy is exponentially
-      bounded: `Ω(t) ≤ Ω(0) · exp(Λ_q t)`. -/
-  claim_b_enstrophy_bound : ∀ t : ℝ, 0 ≤ t →
-    Ω t ≤ Ω 0 * Real.exp (Λ_q * t)
-  /-- Two divergence-free solutions `v₁` and `v₂` with identical
-      initial data and their `L²` distance at time `t`. -/
+  /-- **(b) — upstream input (Gronwall on the enstrophy):**
+      `Ω(t) ≤ Ω(0) e^{Λ_q t}` for `t ≥ 0`. -/
+  enstrophy_bound : ∀ t : ℝ, 0 ≤ t → Ω t ≤ Ω 0 * Real.exp (Λ_q * t)
+  /-- `L²` distance of two divergence-free solutions with common data. -/
   distance_v1_v2 : ℝ → ℝ
-  /-- Manuscript sub-claim (c) — Uniqueness: identical initial
-      data implies `v₁(t) = v₂(t)` (encoded as zero distance) for
-      all `t ≥ 0`. -/
-  claim_c_uniqueness : distance_v1_v2 0 = 0 →
-    ∀ t : ℝ, 0 ≤ t → distance_v1_v2 t = 0
+  /-- Distances are non-negative. -/
+  distance_nonneg : ∀ t : ℝ, 0 ≤ distance_v1_v2 t
+  /-- Gronwall growth factor for the solution distance. -/
+  growth : ℝ → ℝ
+  /-- **Gronwall distance bound (the genuine input for uniqueness):**
+      `dist(t) ≤ dist(0) · G(t)` for `t ≥ 0`. -/
+  distance_bound : ∀ t : ℝ, 0 ≤ t →
+    distance_v1_v2 t ≤ distance_v1_v2 0 * growth t
 
-/-- **Content statement** (from manuscript):
+/-- **Nonlinear estimate + uniqueness** ([`prop:p1-nonlinear-uniqueness`]).
 
-Let $(\mathbf{C}, A, \tau)$ be a
-[QOU](#def:quantum-observable-universe) with substrate parameter
-$q > 1$.  Let $v$ be a divergence-free solution of the
-[q-NS system](#def:q-navier-stokes) with initial energy
-$E_0 = \lVert v_0 \rVert_A^2$ and let
-$C_q = (\sum_k [k]_q^{-2})^{1/2}$ be the
-[Sobolev constant](#prop:q-spectral-sobolev).
-
-    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
-    upgrading requires choosing the appropriate Lean types (Polynomial /
-    Matrix / categorical structures / etc.) and translating the manuscript
-    claim above. -/
+    (a), (b) surface the upstream analytic inputs; (c) uniqueness is
+    *derived* from the Gronwall distance bound: `dist(0) = 0` forces
+    `dist(t) ≤ 0 · G(t) = 0`, and non-negativity gives equality. -/
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/p1-nonlinear-uniqueness.ts
 theorem p1_nonlinear_uniqueness [ctx : P1NonlinearUniquenessContext] :
     (∀ t : ℝ, ctx.B_norm t ≤ ctx.C_q * ctx.v_norm t * ctx.dv_norm t) ∧
     (∀ t : ℝ, 0 ≤ t → ctx.Ω t ≤ ctx.Ω 0 * Real.exp (ctx.Λ_q * t)) ∧
     (ctx.distance_v1_v2 0 = 0 →
-      ∀ t : ℝ, 0 ≤ t → ctx.distance_v1_v2 t = 0) :=
-  ⟨ctx.claim_a_q_ladyzhenskaya, ctx.claim_b_enstrophy_bound,
-   ctx.claim_c_uniqueness⟩
+      ∀ t : ℝ, 0 ≤ t → ctx.distance_v1_v2 t = 0) := by
+  refine ⟨ctx.q_ladyzhenskaya, ctx.enstrophy_bound, fun h0 t ht => ?_⟩
+  have hb := ctx.distance_bound t ht
+  rw [h0, zero_mul] at hb
+  exact le_antisymm hb (ctx.distance_nonneg t)
 
 end QOU.FluidDynamics
