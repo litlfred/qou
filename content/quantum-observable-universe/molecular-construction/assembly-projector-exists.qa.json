@@ -1045,7 +1045,214 @@
         "reviewed_at": "2026-06-11T18:06:24.673Z",
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "4e986e162482",
+          "ts": "4039595b2a38",
+          "lean": "e3e24835fe2a"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "molecular-construction.ts:43 — block listed in sec:molecular-assembly-projector ('Assembly projectors from symmetry') directly after def molecular-assembly-projector it instantiates",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T15:05:15.764Z",
+        "reviewed_sha": "88f3f9a4c3f6c8d9819f1908f449b4e4081bf85c",
+        "notes": "Existence proposition for the section's central object; correctly placed, no sibling duplicates the claim"
+      }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "4e986e162482",
+          "ts": "4039595b2a38",
+          "lean": "e3e24835fe2a"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "assembly-projector-exists.md:13-26 — 'What this proposition does not assert' paragraph discusses LP/SDP stability selection and aromatic-ring stability",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T15:05:15.801Z",
+        "reviewed_sha": "88f3f9a4c3f6c8d9819f1908f449b4e4081bf85c",
+        "notes": "Mostly legitimate scope-clarification, but the aromaticity/stability discussion edges into physical interpretation; companion remark aromaticity-as-symmetric-projection exists in same section (molecular-construction.ts:45) to hold it"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "4e986e162482",
+          "ts": "4039595b2a38",
+          "lean": "e3e24835fe2a"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "assembly-projector-exists.md:2-7 — statement is the q-Young symmetriser idempotent in H_N(q) 'for generic q'; no numeric q0, MeV, Real.* or order hypotheses",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T15:05:15.838Z",
+        "reviewed_sha": "88f3f9a4c3f6c8d9819f1908f449b4e4081bf85c",
+        "notes": "Purely algebraic generic-q statement; no wall constructs to banner"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "4e986e162482",
+          "ts": "4039595b2a38",
+          "lean": "e3e24835fe2a"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "assembly-projector-exists.md:9-11 — proof is by citation (Wenzl projector, \\cite{wenzl1988,kassel1995}); no linarith/IVT/continuity/Real.* machinery",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T15:05:15.874Z",
+        "reviewed_sha": "88f3f9a4c3f6c8d9819f1908f449b4e4081bf85c",
+        "notes": "Algebraic statement proved by algebraic literature citation; proof method matches statement side"
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "4e986e162482",
+          "ts": "4039595b2a38",
+          "lean": "e3e24835fe2a"
+        },
+        "result": "fail",
+        "severity": "major",
+        "evidence": "assembly-projector-exists.lean:36-38 vs .md:4-7 — narrative asserts existence of an idempotent e^2=e (q-Young symmetriser) in H_N(q); Lean theorem only asserts existence of AssemblyProjectorData (parts, block=[parts.sum]) and is closed by <., rfl, rfl> — idempotency is never formalized",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T15:05:54.456Z",
+        "reviewed_sha": "88f3f9a4c3f6c8d9819f1908f449b4e4081bf85c",
+        "notes": "Lean repackages combinatorial data while the narrative claims the substantive algebraic result; the scoping is documented (lean docstring lines 12-15) but conclusions still diverge in a theorem-changing way"
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "4e986e162482",
+          "ts": "4039595b2a38",
+          "lean": "e3e24835fe2a"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "assembly-projector-exists.lean:36-38 — theorem conclusion restates its own constructed witness (proof rfl,rfl; block_total by simp); single-commit history 9bea726f3e, no signature drift, no sorry/sorryAx",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T15:05:54.493Z",
+        "reviewed_sha": "88f3f9a4c3f6c8d9819f1908f449b4e4081bf85c",
+        "notes": "No silent weakening: the weaker Lean encoding is openly declared in .md:13-26 and the lean docstring; trivial self-witnessing encoding noted, divergence majored under proof-narrative-lean-equiv"
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "4e986e162482",
+          "ts": "4039595b2a38",
+          "lean": "e3e24835fe2a"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.8,
+          "max": 1
+        },
+        "evidence": "assembly-projector-exists.md:9-11 — plan stated up front: identify e as Wenzl's projector, cite wenzl1988/kassel1995",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T15:05:54.531Z",
+        "reviewed_sha": "88f3f9a4c3f6c8d9819f1908f449b4e4081bf85c",
+        "notes": "Strategy fully explicit (named projector + citations); short of 1.0 because the generic-q hypothesis's role is not spelled out"
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "4e986e162482",
+          "ts": "4039595b2a38",
+          "lean": "e3e24835fe2a"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "evidence": "assembly-projector-exists.lean:36-38 — sorry-free but the substantive goal (idempotency in H_N(q)) is unformalized; closing requires Hecke-algebra/Wenzl-projector infrastructure absent from Mathlib",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T15:05:54.568Z",
+        "reviewed_sha": "88f3f9a4c3f6c8d9819f1908f449b4e4081bf85c",
+        "notes": "Rubric midpoint: no literal sorry, yet the real gap is core-level formalization effort; mathematically certain (Wenzl 1988) so closable in principle"
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "4e986e162482",
+          "ts": "4039595b2a38",
+          "lean": "e3e24835fe2a"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "evidence": "assembly-projector-exists.md:9-11 — existence/idempotency is the classical Wenzl/q-Young symmetriser result, proved by citation",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T15:05:54.605Z",
+        "reviewed_sha": "88f3f9a4c3f6c8d9819f1908f449b4e4081bf85c",
+        "notes": "0.5 per rubric: standard textbook argument, not duplicated by a sibling proof; novelty lies only in the molecular-assembly framing"
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-12T15:05:54.605Z"
 }
