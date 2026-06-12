@@ -1031,7 +1031,192 @@
         "reviewed_at": "2026-06-11T18:06:24.673Z",
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "e5e555fd2487",
+          "ts": "231a79d4d266",
+          "lean": "575613533ba9"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "su2-emergence-volume-determinant.md:1 — 'Under the QOU hypotheses of emergence of the gauge group ... $G \\subseteq \\mathrm{SL}(2)$'",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:30:26.020Z",
+        "reviewed_sha": "f3e54d40315c37461c016b5d1f974d57c8847aab",
+        "notes": "SU(2)-emergence determinant constraint belongs to the gauge-emergence material of this chapter; complements thm:su2-emergence which it uses."
+      }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "e5e555fd2487",
+          "ts": "231a79d4d266",
+          "lean": "575613533ba9"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "su2-emergence-volume-determinant.md:2 — 'every tensor automorphism $g \\in G$ ... satisfies $\\det(g_V)=1$; equivalently, $G \\subseteq \\mathrm{SL}(2)$'",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:30:26.056Z",
+        "reviewed_sha": "f3e54d40315c37461c016b5d1f974d57c8847aab",
+        "notes": "Bare lemma statement; the equivalence is a restatement of the same claim, not interpretive prose. Proof lives in separate prf block."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "e5e555fd2487",
+          "ts": "231a79d4d266",
+          "lean": "575613533ba9"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "su2-emergence-volume-determinant.md:2 — '$\\det(g_V)=1$ ... $G \\subseteq \\mathrm{SL}(2)$'",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:30:26.091Z",
+        "reviewed_sha": "f3e54d40315c37461c016b5d1f974d57c8847aab",
+        "notes": "Algebraic determinant/SL(2) statement; no Real.*, numeric q, or order hypotheses. Matches generic-ring chapter regime."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "e5e555fd2487",
+          "ts": "231a79d4d266",
+          "lean": "575613533ba9"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "su2-emergence-volume-determinant-proof.md:24 — 'the induced operator $\\Lambda^2 g_V$ acts on this rank-1 module as scalar multiplication by $\\det(g_V)$'",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:30:52.472Z",
+        "reviewed_sha": "f3e54d40315c37461c016b5d1f974d57c8847aab",
+        "notes": "Exterior-power/determinant/rank argument; fully algebraic, no linarith/IVT/continuity/Real.*."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "e5e555fd2487",
+          "ts": "231a79d4d266",
+          "lean": "575613533ba9"
+        },
+        "result": "fail",
+        "severity": "critical",
+        "evidence": "su2-emergence-volume-determinant.lean:18 — 'theorem su2_emergence_volume_determinant : True := by ... trivial'",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:30:52.508Z",
+        "reviewed_sha": "f3e54d40315c37461c016b5d1f974d57c8847aab",
+        "notes": "Lean decl concludes True, a degenerate witness that does not state det(g_V)=1 / SL(2) at all. Sibling stub, full statement unformalized — the claimed-proved decl restates nothing of the target."
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "e5e555fd2487",
+          "ts": "231a79d4d266",
+          "lean": "575613533ba9"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.8,
+          "max": 1
+        },
+        "evidence": "su2-emergence-volume-determinant-proof.md:6 — 'Because $g$ is a natural transformation, it commutes with all morphisms ... including the volume constraint' then commuting square → det",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:31:19.620Z",
+        "reviewed_sha": "f3e54d40315c37461c016b5d1f974d57c8847aab",
+        "notes": "Narrative plan explicit: naturality gives commuting square, rank-2 forces Lambda^2 rank-1, det(g_V) scalar = 1. Legible up front."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "e5e555fd2487",
+          "ts": "231a79d4d266",
+          "lean": "575613533ba9"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0.3,
+          "max": 1
+        },
+        "evidence": "su2-emergence-volume-determinant.lean:18 — 'theorem ... : True := by trivial' (sibling stub, full formalisation pending)",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:31:19.654Z",
+        "reviewed_sha": "f3e54d40315c37461c016b5d1f974d57c8847aab",
+        "notes": "Core gap: entire lemma unformalized (Lean is a True placeholder). Closing requires Tannaka + exterior-power infrastructure not yet present."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "e5e555fd2487",
+          "ts": "231a79d4d266",
+          "lean": "575613533ba9"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "evidence": "su2-emergence-volume-determinant-proof.md:18 — 'restricting the natural automorphisms from $\\mathrm{GL}(2)$ to the special subgroup $\\mathrm{SL}(2)$'",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:31:19.689Z",
+        "reviewed_sha": "f3e54d40315c37461c016b5d1f974d57c8847aab",
+        "notes": "Standard Tannaka-Krein volume-form/SL(2)-emergence argument; correct, not duplicated, but a textbook technique."
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-12T19:31:19.689Z"
 }
