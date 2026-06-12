@@ -1255,7 +1255,104 @@
         "reviewed_at": "2026-06-11T18:06:24.673Z",
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7"
       }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "979832b38831",
+          "ts": "ac9c0ac75141",
+          "lean": "08a3ccb842a7"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "magic-A-binding-formula.lean:111-118 theorem magic_A_binding_formula ... : B Z N = hMA.rho_F Z N * m_e * ((Z+N:ℕ):R) * vol_borromean; .md:5-6 'Theorem (conditional on conj:magic-numbers-bring and prop:gravity-spectral-prefactor)'",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:29:24.356Z",
+        "reviewed_sha": "49db7a0bb28986bfedd72fdf2ca7614f6d8c1809",
+        "notes": "Conditional §3b-cond theorem; class hypothesis loudly documented in .md banner + uses[]; Lean conclusion matches narrative formula, no silent weakening."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "979832b38831",
+          "ts": "ac9c0ac75141",
+          "lean": "08a3ccb842a7"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.85,
+          "max": 1
+        },
+        "evidence": "magic-A-binding-formula.lean:115-118 proof = hMA.formula Z N hZN (sorry-free conditional); .md:90-102 only open item is numerical ν_SDP(⁴He)=2 check, structural ρ_F derivation closed per audit 2026-05-31",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:29:24.393Z",
+        "reviewed_sha": "49db7a0bb28986bfedd72fdf2ca7614f6d8c1809",
+        "notes": "Conditional theorem fully closed; residual is class-instance derivation, structurally answered (kashaev-density-equals-sdp-multiplicity) => high plausibility."
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "979832b38831",
+          "ts": "ac9c0ac75141",
+          "lean": "08a3ccb842a7"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.85,
+          "max": 1
+        },
+        "evidence": "magic-A-binding-formula.md:42-56 regime table (hyperbolic vs doubly-magic) + dispatch via prop:diagrammatic-double-magic-lr-fusion collapsing to single self-conjugate Specht module",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:29:24.432Z",
+        "reviewed_sha": "49db7a0bb28986bfedd72fdf2ca7614f6d8c1809",
+        "notes": "Strategy explicit up front: regime split with named dispatching lemma; reader knows the plan before the steps."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "979832b38831",
+          "ts": "ac9c0ac75141",
+          "lean": "08a3ccb842a7"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.8,
+          "max": 1
+        },
+        "evidence": "magic-A-binding-formula.md:31-35 — distinct from alpha-shift formula (which misses ⁴He by -79%); separate categorical regime, Borromean residue 8G·A path",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:29:24.473Z",
+        "reviewed_sha": "49db7a0bb28986bfedd72fdf2ca7614f6d8c1809",
+        "notes": "Non-redundant: introduces the doubly-magic regime path distinct from the sibling alpha-shift proposition."
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-12T19:29:24.473Z"
 }
