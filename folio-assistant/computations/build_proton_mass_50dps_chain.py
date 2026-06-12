@@ -60,6 +60,7 @@ OUTPUT_CHAIN = _pb.witness_path("proton-mass-50dps.derivation.json", HERE)
 # precision-lift roadmap).
 import mpmath as mp  # 50-dps arithmetic per the no-float64 directive
 from _precision import set_compute_dps, fmt  # noqa: E402
+from lean_uniqueness_refs import lean_uniqueness_ref  # noqa: E402
 set_compute_dps()
 
 # CAL-1: m_e from codata_constants registry (P31-triage Phase A).
@@ -429,12 +430,7 @@ def emit_codata_witness(chain: DerivationChain) -> None:
         "prop:full-pole-structure-mass-trace",
         "prop:markov-trace-axiomatic-closed-form",
     ])
-    w.add_data("lean_uniqueness_ref", {
-        "nucleus": "proton",
-        "theorem": "qou:QOU.BraidKnot.NucleusEmptySDPUniqueness.nucleus_uniqueness_closed (parameterised by crossing count n)",
-        "framework_doc": "content/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
-        "note": "T_w uniqueness at the abstract empty-constraint SDP level (PR #1537/#1542 parameterised module). Workplan: docs/workplans/2026-05-31-witness-lean-uniqueness-ref-wiring.md.",
-    })
+    w.add_data("lean_uniqueness_ref", lean_uniqueness_ref("proton"))
 
     w.save()
 

@@ -100,6 +100,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 
 from witness_base import WitnessBuilder
+from lean_uniqueness_refs import lean_uniqueness_ref  # noqa: E402
 from q_parameter import Q as Q0_FLOAT
 # CODATA anchors via the canonical mp.mpf-string source
 # (per Copilot review on PR #621 — single source of truth).
@@ -318,12 +319,7 @@ def main() -> int:
         computed=bool(abs(err_A) - abs(err_B) < 1.0),  # Hyp B should not improve by >1%
         expected=True,
     )
-    w.add_data("lean_uniqueness_ref", {
-        "nucleus": "neutron",
-        "theorem": "qou:QOU.BraidKnot.NucleusEmptySDPUniqueness.nucleus_uniqueness_closed (parameterised by crossing count n)",
-        "framework_doc": "content/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
-        "note": "T_w uniqueness at the abstract empty-constraint SDP level (PR #1537/#1542 parameterised module). Workplan: docs/workplans/2026-05-31-witness-lean-uniqueness-ref-wiring.md.",
-    })
+    w.add_data("lean_uniqueness_ref", lean_uniqueness_ref("neutron"))
 
     w.save()
     print(f"\n✓ Witness: {Path('folio-assistant/computations/neutron-error-diagnostic.witness.json')}")
