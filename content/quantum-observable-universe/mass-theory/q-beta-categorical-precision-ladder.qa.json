@@ -9,8 +9,7 @@
   },
   "source_hashes": {
     "md": "535cf747d901",
-    "ts": "6d713c68b433",
-    "lean": "616f1be92b3b"
+    "ts": "6d713c68b433"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1320,7 +1319,100 @@
         "reviewed_at": "2026-06-11T18:06:24.673Z",
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7"
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "535cf747d901",
+          "ts": "6d713c68b433"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.6,
+          "max": 1
+        },
+        "evidence": "q-beta-categorical-precision-ladder.md:1-11 SUPERSEDED banner + md:44-66 per-rung sources; but c_4/c_5 attribution history (md:60, lean:84-109 'misattributed by one rung') and the historical layering obscure the plan",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T15:09:27.959Z",
+        "reviewed_sha": "87ab7ecbefd88ba7718b8a0253284edabc627f5f",
+        "notes": "Per-rung derivation route is recoverable (Kashiwara b + Hopf Jones primitives stated up front), but the superseded/historical layering, rung re-attributions, and tier caveats make the reader reconstruct which argument is current."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "535cf747d901",
+          "ts": "6d713c68b433"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0.3,
+          "max": 1
+        },
+        "evidence": "QBetaCategoricalPrecisionLadder.lean:405,490,532,568,608 — abstract axioms qBetaC[3-7]Categorical with NO instances; md:152-179 'Open' section: c_4, c_5 closed forms 'no derived categorical proof yet', k>=6 'no closed forms proposed'",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T15:09:27.998Z",
+        "reviewed_sha": "87ab7ecbefd88ba7718b8a0253284edabc627f5f",
+        "notes": "Remaining gap (deriving c_k>=3 from a categorical source / Habiro element) is core-tier: it IS the open research target (lean:403 'open research target'); rubric core => ~0.3. Routine bar-invariance axiom (lean:148) is closable but minor."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "535cf747d901",
+          "ts": "6d713c68b433"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.4,
+          "max": 1
+        },
+        "evidence": "md:1-8 — 'SUPERSEDED by Habiro-ring identification... production uses the exact evaluation'; content retained 'for HISTORICAL reference'",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T15:09:28.037Z",
+        "reviewed_sha": "87ab7ecbefd88ba7718b8a0253284edabc627f5f",
+        "notes": "Ladder approach was corpus-novel at discovery but is now superseded by prop:habiro-precision-ladder-equivalence (the c_k are that element's Taylor coefficients); retained as discovery narrative, partially redundant with the Habiro block."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "535cf747d901",
+          "ts": "6d713c68b433"
+        },
+        "result": "warn",
+        "severity": "major",
+        "evidence": "q-beta-categorical-precision-ladder.ts:10 title still claims '-0.0066 ppm against CODATA at N=3' while lean:163-175 marks that figure 'a STALE-q0 ARTIFACT... honest production status is Q_N2 = 1279 ppb'; lean:148-156 theorem hoefsmitB_bar_invariant is discharged by same-statement axiom; lean:360-362 theorem concludes True",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T15:09:28.074Z",
+        "reviewed_sha": "87ab7ecbefd88ba7718b8a0253284edabc627f5f",
+        "notes": "No SILENT weakening (axiom and True-discharge are loudly documented, §3b-cond classes carry the open content with no instances), but the .ts title and md:13-17 retain the stale -0.0066 ppm claim the Lean itself disavows — statement vs formalization integrity drift. Headline lean decl is only the product-unfolding identity, far weaker than the narrative ppm claim."
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-12T15:09:28.074Z"
 }
