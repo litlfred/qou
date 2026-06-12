@@ -70,7 +70,11 @@ def _compiled_sigmas(shape: tuple, precision: str = "double"):
     for S in sigmas:
         S_arr = S.toarray() if hasattr(S, "toarray") else np.asarray(S)
         # Convert to sympy Matrix (symbolic)
-        S_sym = sp.Matrix(dim, dim, lambda i, j: sp.sympify(S_arr[i, j]))
+        def _to_sym(val):
+            if hasattr(val, 'item') and not isinstance(val, sp.Basic):
+                val = val.item()
+            return sp.sympify(val)
+        S_sym = sp.Matrix(dim, dim, lambda i, j: _to_sym(S_arr[i, j]))
 
         # Compile to numeric function
         if precision == "mpmath50":

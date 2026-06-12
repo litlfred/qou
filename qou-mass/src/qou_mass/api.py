@@ -122,7 +122,7 @@ def predict(
     observable: Observable = "binding_energy",
     *,
     q: Decimal | float | None = None,
-    precision_dps: int = 50,
+    precision_dps: int = 65,
     method: Method = "auto",
     emit_witness: bool = False,
     witness_path: str | None = None,
@@ -179,6 +179,7 @@ def predict(
             units="MeV",
             ppm_vs_codata=(Decimal(str(ppm)) if ppm is not None else None),
             method=row.get("layer", "?"),
+            method_status="experimental (Open Gate)" if "Open Gate" in str(row.get("layer", "")) or "experimental" in str(row.get("layer", "")) or "L5" in str(row.get("layer", "")) else "canonical",
             precision_dps=precision_dps,
         )
     if observable == "binding_energy":
@@ -207,6 +208,7 @@ def predict(
                 if err_pct is not None else None
             ),
             method=row.get("layer", "?"),
+            method_status="experimental (Open Gate)" if "Open Gate" in str(row.get("layer", "")) or "experimental" in str(row.get("layer", "")) or "L5" in str(row.get("layer", "")) else "canonical",
             precision_dps=precision_dps,
         )
     if observable == "mass_excess":
@@ -220,6 +222,7 @@ def predict(
             value=Decimal(str(m_pred_pred)) - Decimal(A) * Decimal("931.49410242"),
             units="MeV",
             method=row.get("layer", "?"),
+            method_status="experimental (Open Gate)" if "Open Gate" in str(row.get("layer", "")) or "experimental" in str(row.get("layer", "")) or "L5" in str(row.get("layer", "")) else "canonical",
             precision_dps=precision_dps,
         )
     raise ValueError(f"unknown observable: {observable!r}")
@@ -228,7 +231,7 @@ def predict(
 def predict_nucleon(
     particle: Particle,
     *,
-    precision_dps: int = 50,
+    precision_dps: int = 65,
     emit_witness: bool = False,
     witness_path: str | None = None,
 ) -> Prediction:
@@ -249,6 +252,7 @@ def predict_nucleon(
             units="MeV",
             ppm_vs_codata=Decimal(str(d.get("rel_diff_ppm", "0"))),
             method="borromean-tower",
+            method_status="canonical",
             precision_dps=precision_dps,
         )
     if particle == "p":
@@ -271,7 +275,7 @@ def compute_tr_M(
     N: int,
     *,
     q: Decimal | None = None,
-    precision_dps: int = 50,
+    precision_dps: int = 65,
     backend: Literal["python_mpmath", "rust"] = "python_mpmath",
     cache: bool = True,
 ) -> Decimal:

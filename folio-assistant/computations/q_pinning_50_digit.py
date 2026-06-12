@@ -75,7 +75,8 @@ R_P = mpf(MASS_RATIO_P_E_STR)
 
 # CODATA 2022 muon-electron mass ratio (now a 9.5σ PREDICTION, kept for
 # the cross-check print; q₀ is no longer pinned from it — see below).
-M_MU_OVER_E_STR = "206.7682830"
+from q_parameter import MASS_RATIO_MU_E_STR, MASS_RATIO_MU_E_ERR  # noqa: E402
+M_MU_OVER_E_STR = MASS_RATIO_MU_E_STR
 M_MU_OVER_E = mpf(M_MU_OVER_E_STR)
 
 # ── Substrate parameter q₀ — canonical single source ─────────
@@ -85,28 +86,28 @@ M_MU_OVER_E = mpf(M_MU_OVER_E_STR)
 # The old muon derivation (ℏ_q² = Vol/(m_μ/m_e)) is q_parameter.q_muon_at.
 from q_parameter import q_at  # noqa: E402
 Q         = q_at(mp.dps)
-Q_INV     = mpf(1) / Q
-HBAR_Q    = mpf(1) - Q_INV
+Q_INV     = mpf('1') / Q
+HBAR_Q    = mpf('1') - Q_INV
 HBAR_Q_SQ = HBAR_Q ** 2
 H_A       = Q - Q_INV
 TWO_Q     = Q + Q_INV       # [2]_q
 # Markov / Skein parameters
-Z_MARKOV  = mpf(1) / (sqrt(Q) + sqrt(Q_INV))
+Z_MARKOV  = mpf('1') / (sqrt(Q) + sqrt(Q_INV))
 S_SKEIN   = sqrt(Q) - sqrt(Q_INV)
 
 
 def q_int(n: int) -> mpf:
     """[n]_q = (q^n - q^{-n}) / (q - q^{-1}) at high precision."""
     if n == 0:
-        return mpf(0)
+        return mpf('0')
     return (Q ** n - Q_INV ** n) / H_A
 
 
 def q_factorial(n: int) -> mpf:
     """[n]_q! = ∏_{k=1}^n [k]_q."""
     if n <= 1:
-        return mpf(1)
-    out = mpf(1)
+        return mpf('1')
+    out = mpf('1')
     for k in range(1, n + 1):
         out *= q_int(k)
     return out
@@ -125,11 +126,11 @@ def plancherel_weight(partition: tuple) -> mpf:
             arm = r - j - 1
             leg = sum(1 for k in range(i + 1, len(rows)) if rows[k] > j)
             hooks.append(arm + leg + 1)
-    hook_prod_q = mpf(1)
+    hook_prod_q = mpf('1')
     for h in hooks:
         hook_prod_q *= q_int(h)
     if hook_prod_q == 0:
-        return mpf(0)
+        return mpf('0')
     d_q = nfact / hook_prod_q
     return d_q ** 2 / nfact
 
@@ -138,9 +139,9 @@ def plancherel_weight(partition: tuple) -> mpf:
 def bloch_wigner(z: mpc) -> mpf:
     """D(z) = Im Li_2(z) + arg(1 - z) · log|z|."""
     if z == 0 or z == 1:
-        return mpf(0)
+        return mpf('0')
     li2 = polylog(2, z)
-    return im(li2) + arg(mpf(1) - z) * log(abs(z))
+    return im(li2) + arg(mpf('1') - z) * log(abs(z))
 
 
 # ── Bring elliptic curve λ-invariant at q₀ ────────────
@@ -229,15 +230,16 @@ if __name__ == "__main__":
     # in this mpmath context dps-scaling is correct and avoids
     # subtractive-cancellation loss (contrast the fixed f64 step in the
     # import-time solver of qou_substrate.constants).
+    # Ref: prop:proton-mass-substrate-identity
     def _proton_identity(qv: mpf) -> mpf:
-        h = qv - mpf(1) / qv
-        hbar2 = (mpf(1) - mpf(1) / qv) ** 2
+        h = qv - mpf('1') / qv
+        hbar2 = (mpf('1') - mpf('1') / qv) ** 2
         trM = abs((4 + h**2 - 3 * h**4 - h**6) / (h**2 + 4))
-        qf3 = (qv**2 + 1 + qv**(-2)) * (qv + mpf(1) / qv)
+        qf3 = (qv**2 + 1 + qv**(-2)) * (qv + mpf('1') / qv)
         return 2 * VOL_4_1 / hbar2 * (trM * qf3 / qv**3) - 12
-    DQ = Q * mpf(10) ** -(mp.dps // 2)
+    DQ = Q * mpf('10') ** -(mp.dps // 2)
     G_PRIME = (_proton_identity(Q + DQ) - _proton_identity(Q - DQ)) / (2 * DQ)
-    DQ_DR = mpf(1) / G_PRIME                       # dq/dR = 1/G'(q)
+    DQ_DR = mpf('1') / G_PRIME                       # dq/dR = 1/G'(q)
     R_P_ERR = mpf(str(MASS_RATIO_P_E_ERR))
     Q_ERR = abs(DQ_DR) * R_P_ERR
     S_PROTON = (Q / R_P) * G_PRIME                 # dln(R)/dln(q) ≈ 21
@@ -250,8 +252,8 @@ if __name__ == "__main__":
     ppq = rel_prec / 1e-15
     print(f"  → CODATA-bounded relative precision: ~{rel_prec:.2e} ({ppq:.0f} ppQ)")
     # muon cross-check (now a 9.5σ prediction, not the anchor)
-    DQ_DR_MU = Q ** 2 * HBAR_Q / (mpf(2) * M_MU_OVER_E)
-    Q_ERR_MU = DQ_DR_MU * mpf("0.0000046")
+    DQ_DR_MU = Q ** 2 * HBAR_Q / (mpf('2') * M_MU_OVER_E)
+    Q_ERR_MU = DQ_DR_MU * mpf(str(MASS_RATIO_MU_E_ERR))
     print(f"  (muon-anchor cross-check would give σ(q₀)/q₀ ≈ "
           f"{float(Q_ERR_MU / Q):.2e} — {float(Q_ERR_MU / Q_ERR):.0f}× looser)")
 

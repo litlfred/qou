@@ -79,7 +79,8 @@ class Prediction:
     uncertainty: Optional[Decimal] = None
     ppm_vs_codata: Optional[Decimal] = None
     method: str = "auto"
-    precision_dps: int = 50
+    method_status: str = "canonical"
+    precision_dps: int = 65
     q_value: Optional[Decimal] = None
     witness: Optional[Witness] = None
     intermediates: Mapping[str, Decimal] = field(default_factory=dict)

@@ -60,7 +60,7 @@ HERE = Path(__file__).resolve().parent
 if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
-from char_fast import chi_lambda_fast  # noqa: E402
+from char_fast import chi_lambda_fast_mp  # noqa: E402
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 from q_parameter import Q as Q0  # noqa: E402
 from sublemma_2_1_deuteron_branching import (  # noqa: E402
@@ -89,7 +89,7 @@ def main() -> int:
     )
     w.set_content_block("prop:rho-k-graded-expansion")
 
-    q_val = float(Q0)
+    q_val = Q0
 
     # Per-nucleon H_3 words (no interface).
     beta_p = atom_braid_word_3A(1, 0, include_inter=False)
@@ -101,12 +101,12 @@ def main() -> int:
     parts_6 = partitions_of(6)
 
     # H_3 characters.
-    chi_p = {mu: chi_lambda_fast(mu, beta_p, q_val=q_val) for mu in parts_3}
-    chi_n = {mu: chi_lambda_fast(mu, beta_n, q_val=q_val) for mu in parts_3}
+    chi_p = {mu: chi_lambda_fast_mp(mu, beta_p, q_val=q_val) for mu in parts_3}
+    chi_n = {mu: chi_lambda_fast_mp(mu, beta_n, q_val=q_val) for mu in parts_3}
 
     # H_6 direct characters of the disjoint product.
     chi_disjoint = {
-        lam: chi_lambda_fast(lam, beta_pn, q_val=q_val) for lam in parts_6
+        lam: chi_lambda_fast_mp(lam, beta_pn, q_val=q_val) for lam in parts_6
     }
 
     # LR prediction Σ c^λ_{μν} χ^μ(β_p) χ^ν(β_n).
@@ -121,24 +121,24 @@ def main() -> int:
                     continue
                 s += c * chi_p[mu] * chi_n[nu]
         direct = chi_disjoint[lam]
-        if abs(direct) < 1e-12:
+        if abs(direct) < 1e-45:
             rel = abs(direct - s)
         else:
             rel = abs(direct - s) / abs(direct)
         rel_diffs.append(rel)
         per_lambda.append({
             "lambda": list(lam),
-            "chi_direct_re": direct.real,
-            "chi_direct_im": direct.imag,
-            "chi_lr_pred_re": s.real,
-            "chi_lr_pred_im": s.imag,
-            "rel_diff": rel,
+            "chi_direct_re": float(direct.real),
+            "chi_direct_im": float(direct.imag),
+            "chi_lr_pred_re": float(s.real),
+            "chi_lr_pred_im": float(s.imag),
+            "rel_diff": float(rel),
         })
-        print(f"  λ={str(lam):<14} direct={direct.real:+.8e}  "
-              f"LR={s.real:+.8e}  rel_diff={rel:.2e}")
+        print(f"  λ={str(lam):<14} direct={float(direct.real):+.8e}  "
+              f"LR={float(s.real):+.8e}  rel_diff={float(rel):.2e}")
 
     max_rel = max(rel_diffs)
-    print(f"\n  max relative deviation (branching identity) = {max_rel:.3e}")
+    print(f"\n  max relative deviation (branching identity) = {float(max_rel):.3e}")
 
     w.add_parameter("q_0", q_val)
     w.add_parameter("n_strands", 6)
@@ -146,15 +146,15 @@ def main() -> int:
     w.add_parameter("case", "deuteron β_p ⊗ β_n (no interface)")
     w.add_data("partitions_of_6", [list(p) for p in parts_6])
     w.add_data("per_lambda", per_lambda)
-    w.add_data("max_relative_deviation", max_rel)
+    w.add_data("max_relative_deviation", float(max_rel))
     w.add_data(
         "chi_proton_h3",
-        {str(mu): {"re": chi_p[mu].real, "im": chi_p[mu].imag}
+        {str(mu): {"re": float(chi_p[mu].real), "im": float(chi_p[mu].imag)}
          for mu in parts_3},
     )
     w.add_data(
         "chi_neutron_h3",
-        {str(mu): {"re": chi_n[mu].real, "im": chi_n[mu].imag}
+        {str(mu): {"re": float(chi_n[mu].real), "im": float(chi_n[mu].imag)}
          for mu in parts_3},
     )
 
@@ -164,19 +164,18 @@ def main() -> int:
     # rounding run-to-run.
     w.add_assertion(
         name="wenzl_branching_identity_machine_precision",
-        computed=max_rel,
+        computed=float(max_rel),
         expected=0.0,
-        tolerance=1e-12,
+        tolerance=1e-45,
         source=(
             "prop:rho-k-graded-expansion cites the Wenzl 1988 branching "
             "identity χ^λ(β_p ⊗ β_n) = Σ c^λ_{μν} χ^μ χ^ν verified to "
-            "3.2e-14 (machine precision) for all λ ⊢ 6 in the deuteron "
-            "case; this run gives max rel.dev. at machine precision"
+            "high precision for all λ ⊢ 6 in the deuteron case."
         ),
     )
     w.add_assertion(
         name="branching_verified_all_lambda_6",
-        computed=1 if max_rel < 1e-6 else 0,
+        computed=1 if max_rel < 1e-40 else 0,
         expected=1,
         tolerance=0,
         source="branching identity holds for all 11 partitions λ ⊢ 6",
