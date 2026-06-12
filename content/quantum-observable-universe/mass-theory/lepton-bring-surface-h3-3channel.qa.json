@@ -1314,7 +1314,104 @@
         "reviewed_at": "2026-06-11T18:06:24.673Z",
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7"
       }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "dcbc57e8df40",
+          "ts": "9331fd6f2e80",
+          "lean": "07fa854bfc76"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "lepton-bring-surface-h3-3channel.md:33-40 — 'T6 status — gap (a) RESOLVED; gap (c) IMPLICATED ... mass ratios off CODATA by 99%'; .ts:6 lean.ref 'lepton_v_hat_h3_3channel' vs actual decl 'lepton_V_hat_h3_3channel' (.lean:72, case mismatch)",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:39:22.064Z",
+        "reviewed_sha": "81b60704448e3a6500f9835a8b4eca3493ee81fa",
+        "notes": "Statement well-formed; Lean proves the algebraic expansion sorry-free (hecke_ab_correct, lepton_V_hat_electron_formula). Weakenings (1.3% numerical rounding gap, 99% mass-ratio shortfall) are LOUDLY documented in the T6 banner + authorNotes caveat. Residual nits: lean.ref case mismatch; the 'equals paper 0.594 convention' leg is numeric verification, not Lean-proved; hh_def hypothesis unused in lepton_V_hat_electron_formula."
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "dcbc57e8df40",
+          "ts": "9331fd6f2e80",
+          "lean": "07fa854bfc76"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.85,
+          "max": 1
+        },
+        "evidence": "lepton-bring-surface-h3-3channel.md:9-31 — boxed formula + per-symbol definitions (Plancherel weights, Hecke recursion (a,b), Markov z); .lean:49-68 commented induction",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:39:22.103Z",
+        "reviewed_sha": "81b60704448e3a6500f9835a8b4eca3493ee81fa",
+        "notes": "Plan stated up front: closed-form boxed identity, each ingredient defined, recursion cited to named theorem torus_knot_odd_reduction_exists; Lean proof is a clean commented induction."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "dcbc57e8df40",
+          "ts": "9331fd6f2e80",
+          "lean": "07fa854bfc76"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "evidence": "lepton-bring-surface-h3-3channel.lean — no sorry; theorems hecke_ab_correct (:49) and lepton_V_hat_electron_formula (:87) fully proved",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:39:22.143Z",
+        "reviewed_sha": "81b60704448e3a6500f9835a8b4eca3493ee81fa",
+        "notes": "Sorry-free proof => 1.0 per rubric; both Lean theorems close by induction/ring."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "dcbc57e8df40",
+          "ts": "9331fd6f2e80",
+          "lean": "07fa854bfc76"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.6,
+          "max": 1
+        },
+        "evidence": ".lean:40-68 re-defines/re-proves the Hecke recursion already proved as torus_knot_odd_reduction_exists in lepton-mass-tower-canonical.lean:94; .md:33 closes T6 gap (a) convention ambiguity",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:39:22.185Z",
+        "reviewed_sha": "81b60704448e3a6500f9835a8b4eca3493ee81fa",
+        "notes": "Documents the H_3 3-channel V-hat convention (non-redundant corpus contribution, closes T6 gap a), but the Lean recursion duplicates a sibling proof it explicitly cites as reusable."
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-12T19:39:22.185Z"
 }
