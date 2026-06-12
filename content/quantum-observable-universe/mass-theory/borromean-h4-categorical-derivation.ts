@@ -7,6 +7,9 @@ export default proposition({
   lean: { ref: "qou:QOU.BraidsAndKnots.borromean_h4_numeric_factorisation" },
   uses: [
     "prop:borromean-markov-trace-closed-form",
+    "rem:symmetric-point-resolution-loss",
+    "prop:q-heat-kernel-peter-weyl",
+    "prop:habiro-residue-sum-equivalence",
   ],
   cites: [
     "jones1987",
