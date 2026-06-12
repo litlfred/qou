@@ -342,6 +342,26 @@
         "reviewed_at": "2026-05-28T18:29:30.189Z",
         "reviewed_sha": "48e52133aae5e86dcc7bb79865fcd7c50fca77f9",
         "notes": "Lean sibling has only stub declarations (`: True := trivial`); canonical formalisation lives elsewhere and is audited by lean-compile-audit."
+      },
+      {
+        "field_hash": {
+          "md": "8434abc0ca62",
+          "ts": "2f7d98c61f07",
+          "lean": "23d1f2028d70"
+        },
+        "result": "fail",
+        "severity": "major",
+        "evidence": "co-lp-dual-binding.lean:16 'theorem co_lp_dual_binding : True := by trivial' vs md:2 'the covalent-bond-selection LP selects an active set of cardinality 2 ...'",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T14:49:27.177Z",
+        "reviewed_sha": "d8899b92de44f18688ac52647aa78403bf806f0f",
+        "notes": "Lean is a True-placeholder stub while the narrative asserts a substantive LP active-set result. Divergent — major fail."
       }
     ],
     "voice-author-notes-pollution": [
@@ -1201,7 +1221,192 @@
         "reviewed_at": "2026-06-11T18:06:24.673Z",
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "8434abc0ca62",
+          "ts": "2f7d98c61f07",
+          "lean": "23d1f2028d70"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "co-lp-dual-binding.ts:label prop:co-lp-dual-binding; chapter.ts progression 'H₂ → CO → CO₂ ...'",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T14:49:27.024Z",
+        "reviewed_sha": "d8899b92de44f18688ac52647aa78403bf806f0f",
+        "notes": "CO LP-dual binding is part of the chapter's stated diatomic progression; no sibling carries the same claim."
+      }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "8434abc0ca62",
+          "ts": "2f7d98c61f07",
+          "lean": "23d1f2028d70"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "co-lp-dual-binding.md:9 '## Orthogonal channels, not one chain', :17 '## Why a single chain fails', and 'Two honest limitations remain' — substantive interpretive prose follows the statement",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T14:49:27.065Z",
+        "reviewed_sha": "d8899b92de44f18688ac52647aa78403bf806f0f",
+        "notes": "Heavy interpretive sections in-block, but companion remark co-triple-bond-energy.ts (interprets: prop:co-lp-dual-binding) exists to hold interpretation; borderline -> warn not fail."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "8434abc0ca62",
+          "ts": "2f7d98c61f07",
+          "lean": "23d1f2028d70"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "co-lp-dual-binding.md:1 conditional-on-conj banner; valence budget derived ab initio; :val eV values are derived archimedean observables, no raw q_0 leak",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T14:49:27.102Z",
+        "reviewed_sha": "d8899b92de44f18688ac52647aa78403bf806f0f",
+        "notes": "Applied chapter; statement uses witnessed eV observables (derived), not a hard-coded q≈value or Real.* construct. Matches chapter regime."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "8434abc0ca62",
+          "ts": "2f7d98c61f07",
+          "lean": "23d1f2028d70"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "co-lp-dual-binding.md — no narrative '**Proof.**' body; result is computational (witness co-bond-order-active-set)",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T14:49:27.139Z",
+        "reviewed_sha": "d8899b92de44f18688ac52647aa78403bf806f0f",
+        "notes": "No algebraic statement proved by archimedean-only machinery; proof is deferred to the LP compute witness. No wall violation."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "8434abc0ca62",
+          "ts": "2f7d98c61f07",
+          "lean": "23d1f2028d70"
+        },
+        "result": "fail",
+        "severity": "critical",
+        "evidence": "co-lp-dual-binding.lean:16 conclusion is 'True', not the proposition's claim; the statement is replaced by a tautology",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T14:49:27.214Z",
+        "reviewed_sha": "d8899b92de44f18688ac52647aa78403bf806f0f",
+        "notes": "Provable-kind signature concludes True (weakened to a tautology) rather than encoding the LP active-set claim. SafeVerify integrity fail."
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "8434abc0ca62",
+          "ts": "2f7d98c61f07",
+          "lean": "23d1f2028d70"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.8,
+          "max": 1
+        },
+        "evidence": "co-lp-dual-binding.md:31 'The bond-selection LP ranges over the orthogonal channels: max_x Σ b_i x_i s.t. Σ x_i ≤ V'; plan + objective + constraints stated up front",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T14:50:12.602Z",
+        "reviewed_sha": "d8899b92de44f18688ac52647aa78403bf806f0f",
+        "notes": "Strategy explicit: orthogonal-channel LP, active-set cardinality = bond order, with the objective and constraints written before the case analysis. Plan legible up front -> 0.8."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "8434abc0ca62",
+          "ts": "2f7d98c61f07",
+          "lean": "23d1f2028d70"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.7,
+          "max": 1
+        },
+        "evidence": "co-lp-dual-binding.md:35 'bond order = LP active-set cardinality' with ab-initio octet valence V_A=10-Z_A and the dative-channel distinction (CO vs N_2)",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T14:50:12.667Z",
+        "reviewed_sha": "d8899b92de44f18688ac52647aa78403bf806f0f",
+        "notes": "Non-redundant argument: LP-active-set = bond order specialised to the diatomic series with derived octet valence and a named dative channel; not a sibling duplicate -> 0.7."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "8434abc0ca62",
+          "ts": "2f7d98c61f07",
+          "lean": "23d1f2028d70"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0.1,
+          "max": 1
+        },
+        "evidence": "co-lp-dual-binding.lean:16 'theorem co_lp_dual_binding : True := trivial' — the Lean gap restates-target (proves nothing of the claim)",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T14:50:40.448Z",
+        "reviewed_sha": "d8899b92de44f18688ac52647aa78403bf806f0f",
+        "notes": "Lean is a True stub, so the remaining gap IS the goal (restates-target ⇒ ~0.0); narrative result is computationally witnessed, lifting slightly to 0.1. Band fail (score<0.5)."
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-12T14:50:40.448Z"
 }
