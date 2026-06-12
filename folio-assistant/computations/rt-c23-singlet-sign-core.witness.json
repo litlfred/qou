@@ -1,0 +1,81 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-12T19:54:49.033012+00:00",
+  "commitSha": "d39ac22a90e17a28eb1eb78b1350c20d3f6f18e0",
+  "assertions": [
+    {
+      "name": "e_- is idempotent in H_2(q) (exact, generic q)",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "Bezout split of the Hecke quadratic (thm:em-spectral-completeness)"
+    },
+    {
+      "name": "sigma e_- = -q^{-1} e_- — singlet channel carries the unique negative root",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "section 7a eigenvalues (q, -q^{-1})"
+    },
+    {
+      "name": "Skein sigma - sigma^{-1} = h (one h per vertex-pair; C2.1 bookkeeping)",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "Hecke quadratic, exact"
+    },
+    {
+      "name": "C2.3 sign core: (sigma^2 - 1) e_- = -(h/q) e_- (exact)",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "reduction mod sigma^2 = h sigma + 1"
+    },
+    {
+      "name": "symmetric contrast: (sigma^2 - 1) e_+ = +(h q) e_+ (exact)",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "reduction mod sigma^2 = h sigma + 1"
+    },
+    {
+      "name": "archimedean leg: -(h/q) < 0 at substrate q_0",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "q_0 > 1 real"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 117,
+  "computation": "rt-c23-singlet-sign-core",
+  "scriptFile": "rt_c23_singlet_sign_core.py",
+  "scriptHash": "945ca6a9289c",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "RT 2-loop derivation plan (PR #1495) sub-claim C2.3: the minus sign of the Schwinger term -h^2 alpha is FORCED by the Hecke quadratic in the antisymmetric/singlet channel.  Exact identities in H_2(q) = R[sigma]/(sigma^2 - h sigma - 1) (section 7a convention, eigenvalues q and -q^{-1}): the Bezout singlet projector e_- = (q - sigma)/(q + q^{-1}) is idempotent with sigma e_- = -q^{-1} e_- (the unique NEGATIVE braiding root, thm:em-spectral-completeness); Skein sigma - sigma^{-1} = h gives one h per vertex-pair (C2.1 bookkeeping); the connected double-crossing insertion acts as (sigma^2 - 1) e_- = -(h/q) e_- (negative for real q > 1) vs +(h q) on e_+.  The sign asymmetry IS the e_+/e_- split; no choice is made.  The full -h^2 alpha [2]_q/(8 pi) normalisation (RT zero-mode measure C1.3 + two charge insertions) remains open on PR #1495's track.",
+  "contentBlock": "thm:em-spectral-completeness",
+  "data": {
+    "q0": "1.109978582751380807591669095610768879874499121873578736072814240181799",
+    "singlet_double_crossing_coeff_at_q0": "-0.1883462456342419418677851778582478750814674622034936924473361293119938",
+    "symbolic": {
+      "e_minus": "(q - sigma)/(q + q^{-1})",
+      "singlet_eigenvalue": "-q^{-1}",
+      "double_crossing_on_e_minus": "-(h/q)",
+      "double_crossing_on_e_plus": "+(h q)",
+      "skein": "sigma - sigma^{-1} = h"
+    },
+    "finding": "C2.3 closed at the channel-algebra level: the Schwinger minus sign is the singlet channel's negative braiding root -q^{-1}; the connected 2-vertex insertion is -(h/q) on e_- vs +(h q) on e_+, and Skein gives the h-per-vertex-pair bookkeeping of C2.1.  Remaining for Identity 2: the RT zero-mode measure (C1.3) and the two alpha charge insertions."
+  }
+}
