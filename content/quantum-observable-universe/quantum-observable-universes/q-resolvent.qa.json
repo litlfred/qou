@@ -866,7 +866,51 @@
         "reviewed_at": "2026-06-11T18:06:24.673Z",
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "1b36f1f037ec",
+          "ts": "c40772a2380c",
+          "lean": "01868bc3c7a3"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "quantum-observable-universes.ts:437-439 — block listed under section '$q$-Resolvent and categorical Wick rotation' (sec:q-resolvent-wick); the definition names the section's titular construction",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T20:08:58.277Z",
+        "reviewed_sha": "bdf0e7244f0a77e01df19b8bcca2ae674bec9f85",
+        "notes": "Eponymous block of its section; names a new construction (R_q(s)) so kind=definition is correct; no sibling duplicates it"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "1b36f1f037ec",
+          "ts": "c40772a2380c",
+          "lean": "01868bc3c7a3"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "q-resolvent.md:7-15 — definition is categorical (morphism in End_C(A), invertibility in H_q); md:66-80 'Base-ring behaviour' explicitly sorts F_p / Q_p / C regimes, labelling C as 'archimedean'; no numeric q0, MeV, Real.* or order hypotheses",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T20:08:58.318Z",
+        "reviewed_sha": "bdf0e7244f0a77e01df19b8bcca2ae674bec9f85",
+        "notes": "Generic/substrate statement matching chapter regime; the archimedean case is explicitly flagged as a base-ring instance, not hard-coded"
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-12T20:08:58.318Z"
 }
