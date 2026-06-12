@@ -32,6 +32,7 @@ import json
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
+from lean_uniqueness_refs import lean_uniqueness_ref  # noqa: E402
 from mpmath import mpf, mp
 
 
@@ -231,6 +232,7 @@ def main() -> int:
         / "option-e-deuteron-delta-lambda-probe-v2.witness.json"
     )
     with out_path.open("w") as f:
+        witness["lean_uniqueness_ref"] = lean_uniqueness_ref("deuteron (²H)")
         json.dump(witness, f, indent=2)
 
     print(f"Wrote {out_path}")

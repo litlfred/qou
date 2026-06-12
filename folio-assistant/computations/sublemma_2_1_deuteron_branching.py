@@ -33,6 +33,7 @@ Output: sublemma-2-1-deuteron-branching.witness.json
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+from lean_uniqueness_refs import lean_uniqueness_ref  # noqa: E402
 import json
 import sys
 from datetime import datetime, timezone
@@ -310,6 +311,7 @@ def main() -> int:
         ),
     }
     out = HERE / "sublemma-2-1-deuteron-branching.witness.json"
+    witness["lean_uniqueness_ref"] = lean_uniqueness_ref("deuteron (²H)")
     out.write_text(json.dumps(witness, indent=2, default=str))
     print(f"\n  Witness: {out}")
     return 0
