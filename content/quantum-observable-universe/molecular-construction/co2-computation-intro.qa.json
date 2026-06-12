@@ -762,7 +762,28 @@
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "c0e6b8289b53",
+          "ts": "3f0ef2eedd97"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "molecular-construction.ts:96-105 — sec:co2-computation lists co2-computation-intro first; co2-computation-intro.md:1 previews exactly the section's def/prop/rem blocks",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T20:13:47.905Z",
+        "reviewed_sha": "d8d36555b2dfa3041846572c11a5ec8da9cd10a1",
+        "notes": "Prose section-intro correctly placed at head of the CO2 section; pure exposition (no new provable claim), kind matches. Residual _[draft]_ markers are a voice matter, not placement."
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-12T20:13:47.905Z"
 }
