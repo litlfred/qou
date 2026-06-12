@@ -754,7 +754,7 @@ co-evolve, in one episode:
   can split it, drop an edge, or accept it), and the rest incomputable.
 - **Adjudication refines the criterion, not just the corpus.** On review, the
   author ruled the flagged cross-section forward edges *intentional* — the
-  chapter's deliberate face ordering (algebraic → geometric → archimedean →
+  chapter's deliberate thematic ordering (algebraic → geometric → archimedean →
   physical → open). The ruling was committed back into the checker, which now
   counts within-section edges only; the entire false-positive class vanished
   (45 → 0) for every future sweep, and no blocks were moved. A parallel
