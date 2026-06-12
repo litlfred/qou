@@ -339,6 +339,16 @@ ephemeral.
    Skill authors updating skill docs should refer to this rule
    rather than restating the policy in their own words.
 
+9. **Never delete closed/merged feature branches** (owner
+   directive, 2026-06-12). Do not run `git push origin --delete
+   <branch>`, do not enable auto-delete-on-merge, and do not offer
+   branch deletion as a "cleanup" option in end-of-session menus.
+   Closed branches are part of the historical record: PR head SHAs
+   stay resolvable, session links and coordination-ledger
+   references stay live, and `lake-cache/*` orphan branches are
+   load-bearing infrastructure. This applies to every `claude/*`
+   work branch after its PR is merged or closed.
+
 ### Exception: batch audit-job runs
 
 When an integration-watcher (`compute-integration-watcher`,
