@@ -189,6 +189,26 @@
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
         "notes": "Label 'prop:q-logarithm-exists' → expected 'q_logarithm_exists'; Lean declares: QLogarithm.exists_in_shuffle_hopf. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "5fd3b9718c50",
+          "ts": "05523a58b670",
+          "lean": "036b78778aa9"
+        },
+        "result": "fail",
+        "severity": "major",
+        "evidence": "q-logarithm-exists.lean:36 — '∃ (ℓ : QLogarithm H), True' closed at :44-51 by a degenerate rfl witness (log_q := Classical.arbitrary H, coprod := fun _ => (h, h), counit := fun _ => 0) vs q-logarithm-exists.md:8-10 — 'D_q exp_q(log_q) = exp_q(log_q), log_q ∘ exp_q = id'",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T15:17:10.600Z",
+        "reviewed_sha": "7e6875352ba2d33fef067b07ff9279a27a629364",
+        "notes": "Lean proves only data-existence of a QLogarithm record with trivial fields over any Nonempty type and a vacuous trailing True; the narrative claims a primitive element of the q-shuffle Hopf algebra inverse to exp_q. Conclusions diverge theorem-changingly."
       }
     ],
     "voice-author-notes-pollution": [
@@ -1031,7 +1051,192 @@
         "reviewed_at": "2026-06-11T18:06:24.673Z",
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "5fd3b9718c50",
+          "ts": "05523a58b670",
+          "lean": "036b78778aa9"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "q-logarithm-exists.md:1-13 — bare existence statement ending 'Uniqueness is ([uniqueness of $\\log_q$](#prop:q-logarithm-unique)).'",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T15:16:33.702Z",
+        "reviewed_sha": "7e6875352ba2d33fef067b07ff9279a27a629364",
+        "notes": "Statement-only block: hypotheses + two defining identities + forward pointer to uniqueness; no interpretive/motivational prose present."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "5fd3b9718c50",
+          "ts": "05523a58b670",
+          "lean": "036b78778aa9"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "quantum-observable-universes.ts:455-472 — sec:q-special-functions-exp-log lists q-logarithm, q-logarithm-exists, q-logarithm-exists-proof, q-logarithm-unique in order",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T15:16:33.755Z",
+        "reviewed_sha": "7e6875352ba2d33fef067b07ff9279a27a629364",
+        "notes": "Existence proposition sits in the q-Exponential/q-logarithm section directly after def:q-logarithm, mirroring the q-exponential-exists sibling pattern; no redundancy (uniqueness is a separate block)."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "5fd3b9718c50",
+          "ts": "05523a58b670",
+          "lean": "036b78778aa9"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "q-logarithm-exists.md:2-3 — 'the $q$-shuffle Hopf algebra over a base ring $R$ with invertible Jackson factorials'",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T15:16:33.811Z",
+        "reviewed_sha": "7e6875352ba2d33fef067b07ff9279a27a629364",
+        "notes": "Generic-ring statement matching the substrate-chapter regime: no Real.*, no numeric q-pin, no MeV, no order hypotheses; invertibility of [n]_q is the only (algebraic) hypothesis."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "5fd3b9718c50",
+          "ts": "05523a58b670",
+          "lean": "036b78778aa9"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "q-logarithm-exists-proof.md:4-16 — series over R = Z[q,q^{-1}][1/[n]_q]; 'Over $\\mathbb{C}$ this recovers the convergent series'",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T15:16:33.849Z",
+        "reviewed_sha": "7e6875352ba2d33fef067b07ff9279a27a629364",
+        "notes": "Proof is algebraic (Milnor–Moore + q-binomial inversion over a Laurent-type ring); the C/F_p/Q_p evaluations are explicitly named specialisations, not load-bearing archimedean machinery. Matches statement's side of the wall."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "5fd3b9718c50",
+          "ts": "05523a58b670",
+          "lean": "036b78778aa9"
+        },
+        "result": "warn",
+        "severity": "major",
+        "evidence": "q-logarithm-exists.lean:35-36 — hypotheses '(H : Type*) [Nonempty H]' with conclusion '∃ (ℓ : QLogarithm H), True'; weakening documented at :37-42 'Trivial witness… The intended Milnor–Moore witness… requires that Hopf-algebraic infrastructure not yet in Mathlib.'",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T15:17:10.639Z",
+        "reviewed_sha": "7e6875352ba2d33fef067b07ff9279a27a629364",
+        "notes": "Statement is silently weak relative to the docstring (:26-28 claims an adjoint pair with exp_q): Hopf-algebra hypotheses dropped, witness degenerate, vacuous True conjunct. The weakening IS loudly documented in the proof body comment → warn, not fail; no axiom/sorryAx injection."
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "5fd3b9718c50",
+          "ts": "05523a58b670",
+          "lean": "036b78778aa9"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.85,
+          "max": 1
+        },
+        "evidence": "q-logarithm-exists-proof.md:1-4 — 'By Milnor–Moore, Prim(H_q) is the Lie algebra of the grouplike group G(H_q), so the formal inverse of exp_q exists…'",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T15:17:40.239Z",
+        "reviewed_sha": "7e6875352ba2d33fef067b07ff9279a27a629364",
+        "notes": "Plan stated up front (Milnor–Moore + explicit series + named verifications: Delta_q cancellation, q-binomial inversion); slightly compressed but a competent reader knows the plan before the steps."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "5fd3b9718c50",
+          "ts": "05523a58b670",
+          "lean": "036b78778aa9"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0.3,
+          "max": 1
+        },
+        "evidence": "q-logarithm-exists.lean:40-42 — 'The intended Milnor–Moore witness via the q-shuffle Hopf algebra is sharper but requires that Hopf-algebraic infrastructure not yet in Mathlib.'",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T15:17:40.277Z",
+        "reviewed_sha": "7e6875352ba2d33fef067b07ff9279a27a629364",
+        "notes": "No literal sorry, but the substantive goal is entirely unformalized behind a trivial witness; closing it needs core missing infrastructure (q-shuffle Hopf algebra + Milnor–Moore in Mathlib) ⇒ core-tier ≈ 0.3."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "5fd3b9718c50",
+          "ts": "05523a58b670",
+          "lean": "036b78778aa9"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.45,
+          "max": 1
+        },
+        "evidence": "q-logarithm-exists-proof.md:12-16 — 'inverse to exp_q (verified by the q-binomial inversion)… existence follows from the corresponding exp_q existence via the Milnor–Moore adjunction.'",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T15:17:40.315Z",
+        "reviewed_sha": "7e6875352ba2d33fef067b07ff9279a27a629364",
+        "notes": "Standard Milnor–Moore inversion argument; largely mirrors the sibling q-exponential-exists proof (existence delegated to the exp_q adjunction), so partially redundant with it but not a flat duplicate."
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-12T15:17:40.315Z"
 }
