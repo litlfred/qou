@@ -1308,7 +1308,104 @@
         "reviewed_at": "2026-06-11T18:06:24.673Z",
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7"
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "612019c59901",
+          "ts": "b1c67f03f2bc",
+          "lean": "6423506b0c64"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.6,
+          "max": 1
+        },
+        "evidence": "deuterium-derived-binding.md:33-56 ('Derivation' section: volume-integral expansion, T_pn crossing operator) and md:57-85 ('QED correction')",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T15:25:04.387Z",
+        "reviewed_sha": "699c334de0506e797b7956d3adbb125398e1f169",
+        "notes": "Overall route is announced (pair-sum trace + single crossing site), but key steps are asserted not argued: the H3->H6 factorization (md:15-23) and the 'residual is exactly alpha_EM/2' identification (md:61-63) lack derivations."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "612019c59901",
+          "ts": "b1c67f03f2bc",
+          "lean": "6423506b0c64"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0.15,
+          "max": 1
+        },
+        "evidence": "deuterium-derived-binding.lean:18-20 — 'theorem deuterium_derived_binding : True := by ... trivial'",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T15:25:04.427Z",
+        "reviewed_sha": "699c334de0506e797b7956d3adbb125398e1f169",
+        "notes": "Lean concludes True; the entire quantitative claim (B(d) formula) remains as the gap — restates-target class; only the numerical witness substitutes."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "612019c59901",
+          "ts": "b1c67f03f2bc",
+          "lean": "6423506b0c64"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.6,
+          "max": 1
+        },
+        "evidence": "deuterium-derived-binding.md:125-147 'Mass-binding endomorphism analogy' restates B(K) = m_e·Vol·Δtr also covered by the binding-endomorphism audit and sibling binding blocks (magic-A-binding-formula)",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T15:25:04.465Z",
+        "reviewed_sha": "699c334de0506e797b7956d3adbb125398e1f169",
+        "notes": "Deuteron-specific T_pn pair-sum construction is corpus-distinctive, but the endomorphism-analogy half duplicates sibling binding-formula material."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "612019c59901",
+          "ts": "b1c67f03f2bc",
+          "lean": "6423506b0c64"
+        },
+        "result": "warn",
+        "severity": "major",
+        "evidence": "deuterium-derived-binding.lean:9-10 — 'The Lean statement is currently a sorry placeholder; full formalisation pending' vs md:25-31 quantitative B(d) statement",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T15:25:04.503Z",
+        "reviewed_sha": "699c334de0506e797b7956d3adbb125398e1f169",
+        "notes": "Lean sibling is a True-stub, loudly self-documented as a placeholder (not silently claimed proved); narrative statement itself unweakened vs prior commit (last touch bdc9fbe49f). Loud weakening => warn per registry."
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-12T15:25:04.503Z"
 }
