@@ -88,3 +88,46 @@ not a compute bug. Flagged for owner reconciliation.
 so the "+2.86 %→AME" binding delta is not directly emittable from it. Computing the binding
 delta needs the binding pipeline (couples to thread 4's binding-K). With `tr_M(D)` now
 available, that is the clean next step.
+
+---
+
+## Update 2026-06-12 — live SnapPy census verification: the fork is systematic (all 3 rows), orphan volumes identified
+
+First in-sandbox SnapPy run (3.3.2 — every earlier audit was sandbox-blocked and relied
+on literature/witness values). Script:
+[`audits/snappy_census_volume_verification.py`](../../folio-assistant/computations/audits/snappy_census_volume_verification.py),
+witness `snappy-census-volume-verification.witness.json` (16/16 assertions), PR #2192.
+
+1. **The historical-table mismatch is NOT deuteron-only.** All three rows of
+   `conj:canonical-knot-id-sdp` §"Historical evidence" carry volumes of *other*
+   census manifolds than the knots they name:
+
+   | row | named knot | table Vol | census(named) | table Vol identifies as |
+   |---|---|---|---|---|
+   | ²H | 6₂ | 3.16396 | 4.40083 | **6₁** (m032/m033) |
+   | ³H | 8₁₁ | 3.42721 | 8.28632 | **8₁** (m073/m074) |
+   | ³He | L6a4 | 5.33349 | 7.32772 | **6³₁ family** (s772–s789; also 6²₃, 8³₈, …) |
+
+   Every orphan is a subscript-neighbour of its named knot (6₁↔6₂, 8₁↔8₁₁,
+   6³₁↔6³₂ = L6a4), and the three table values are internally consistent with a
+   single 𝔈₀ ≈ 4.150 MeV — the signature of an earlier {6₁, 8₁, 6³₁}
+   volume-matching assignment that a later renaming to {6₂, 8₁₁, L6a4} never
+   reconciled. The 6₁ value also leaked into `MostowRigidity.lean:264`.
+
+2. **Production verifies clean against the names.**
+   `per-atom-hyperbolic-volume.witness.json` matches the named knots' census
+   volumes at the f64 floor (≤ 2.1e-15); `substrate/knot_volumes.py` constants
+   verify to ≤ 1e-20 — except the literature-sourced `VOL_5_2` at 3.3e-12
+   (~12 effective dps; upgradeable to 50 dps via ManifoldHP now that SnapPy
+   runs in-sandbox).
+
+3. **Thread-4 decision sharpened.** The volume-matching evidence stream
+   supports {6₁, 8₁, 6³₁}; the SDP partial closure + production wiring use
+   {6₂, 8₁₁, L6a4}. The two evidence streams point at **different knot sets**;
+   adjudication remains owner-gated `conj:canonical-knot-id-sdp` scope.
+
+4. **Infra bug found en route:** `qou_substrate.witness.WitnessBuilder` passes
+   the bare script *name* to `git log` (cwd = repo root), so every producer in
+   a cluster subdirectory (`audits/`, `probes/`, …) serialises
+   `scriptCommitSha: "unknown"`. Content provenance via `scriptHash` is
+   unaffected. Package fix is a follow-up (PyPI version bump required).
