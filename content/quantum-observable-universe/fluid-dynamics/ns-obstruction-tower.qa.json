@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "b45451a87d92",
     "ts": "b7e562226f04",
-    "lean": "9f2ceb24a8b8"
+    "lean": "76013347d865"
   },
   "criteria": {
     "voice-status-leak": [
@@ -489,6 +489,25 @@
         "reviewed_at": "2026-06-07T02:27:44.635Z",
         "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
         "notes": "Lean conclusion is 'True := trivial' (with 5 class hyps); does not state the md obstruction-tower / boundary-observability claim. Integrity FAIL."
+      },
+      {
+        "field_hash": {
+          "md": "b45451a87d92",
+          "ts": "b7e562226f04",
+          "lean": "76013347d865"
+        },
+        "result": "pass",
+        "evidence": "lean/QOU/FluidDynamics/ns_obstruction_tower.lean — derives is_NS_singular ↔ ∃ n, res_sigma n ≠ 0 via Iff.intro from the class's two directional hypotheses; no longer := ctx.claim_ns_obstruction_tower",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/lean-proof-review",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "local/lean-proof-review"
+        },
+        "reviewed_at": "2026-06-12T19:15:26.636Z",
+        "reviewed_sha": "a703fbb161562601cfe639e2abaa427f72510c66",
+        "notes": "§3b-cond non-degenerate conditional (class axiomatises sufficiency + necessity directions; theorem derives the iff). Generic [CommRing R], no ℝ (§7c) — dropped the SobolevHkRegularity (ℝ) import; res_Σ renamed res_sigma (Σ is a reserved Lean token; old file never parsed). Builds: lake build exit 0. Canonical decl resolved via lean.ref; sibling stub dropped."
       }
     ],
     "fit-section-chapter": [

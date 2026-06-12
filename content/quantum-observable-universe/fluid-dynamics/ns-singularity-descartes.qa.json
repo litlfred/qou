@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "3478b2895129",
     "ts": "310ed1172277",
-    "lean": "1e5a043d67fe"
+    "lean": "b70bd86e38ec"
   },
   "criteria": {
     "voice-status-leak": [
@@ -334,6 +334,25 @@
         "reviewed_at": "2026-06-07T02:27:44.789Z",
         "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
         "notes": "Sibling stub 'theorem ns_singularity_descartes : True := by trivial' — True-placeholder for a THEOREM claiming NS finite-time blowup. Does not state the md claim. Integrity FAIL."
+      },
+      {
+        "field_hash": {
+          "md": "3478b2895129",
+          "ts": "310ed1172277",
+          "lean": "b70bd86e38ec"
+        },
+        "result": "pass",
+        "evidence": "lean/QOU/FluidDynamics/ns_singularity_descartes.lean — derives NS_A ≠ 0 from chi_A = -6 via obstruction_from_chi; the singularity conclusion is no longer a bare class field",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/lean-proof-review",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "local/lean-proof-review"
+        },
+        "reviewed_at": "2026-06-12T19:15:26.677Z",
+        "reviewed_sha": "a703fbb161562601cfe639e2abaa427f72510c66",
+        "notes": "§3b-cond non-degenerate conditional (setup χ(A)=-6 + obstruction-survival hypothesis; theorem derives chi_A = -6 ∧ NS_A ≠ 0). Generic [CommRing R] for NS_A, ℤ for χ — no ℝ (§7c). Builds: lake build exit 0. Canonical decl resolved via lean.ref; sibling stub dropped."
       }
     ],
     "fit-section-chapter": [
