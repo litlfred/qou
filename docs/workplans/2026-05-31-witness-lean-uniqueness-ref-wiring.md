@@ -81,15 +81,32 @@ granularity available:
   imports the per-isotope wrappers and provides per-atlas-entry
   named theorems (`atlas_deuteron_uniqueness`, etc.).
 
-## Status accounting
+## Status accounting (closing — 2026-06-12)
 
-| Layer | Wired | Total | Coverage |
-|---|---:|---:|---:|
-| Lean modules → atlas | 1 / 1 | 1 | 100% (this PR) |
-| Atlas .ts manifest | 1 / 1 | 1 | 100% (this PR) |
-| Per-nucleus witnesses | 1 / ~15 | 15 | ~7% (Phase 1+2 in flight) |
-| Per-atom witnesses | 0 / ~20 | 20 | 0% (Phase 3 queued) |
-| Compute-integration-watcher | 0 / 1 | 1 | 0% (separate PR queued) |
+The campaign ran as batches 1–5 (#2190, #2193, #2196, plus the
+batch-4/5 commits) and closes here. Two **distinct** completion
+measures must not be conflated:
 
-Total infrastructure wiring: ~10% complete. The wiring pattern is
-established by this PR; subsequent PRs apply it systematically.
+| Measure | State | Notes |
+|---|---|---|
+| **Producer-side wiring** (code) | **exhausted** | 75 producers call `lean_uniqueness_ref(...)`. An authoritative scan (every witness-*writing* producer whose constructed witness name matches the per-nucleus heuristic) reports **0** remaining unwired. The final 3 near-miss siblings (`probe_4_li6_rectangular_conjecture.py`, `probe_4d_li6_aggressive_scan.py`, `sublemma_2_1_h12_he4_branching.py` — basename-suffix variants the batch-5 codemod skipped) are wired in this PR. |
+| **On-disk witness coverage** (audit) | 12 / 114 (10.5%) | This lags producer-side because the field is written **at producer runtime**; the on-disk `*.witness.json` files only gain the field when CI regenerates them. CI witness regeneration is currently billing-blocked, so this number will rise on the next green witness-pipeline run — **no further code change is required** for it to climb. |
+
+### Genuine remainder (NOT code-wirable)
+
+- **~28 orphaned-legacy witnesses** carry no `scriptFile` (pre-`WitnessBuilder`
+  era) or name a deleted producer (e.g. `chi-helium-4-h12-at-q0-50dps`,
+  `tau-hat-n-proton-level-1-empty`). These cannot be wired by editing a
+  producer — they need migration triage (regenerate via a current producer,
+  or accept as frozen legacy). Tracked as a follow-up, not part of this
+  wiring campaign.
+- **χ-evaluation / cache witnesses** (`chi-*`, `y_lambda-*`, `vol-density-*`)
+  whose producers *do* write per-nucleus names are already wired where the
+  producer is live (`delta_lambda_empirical_tabulation.py`,
+  `chi_4he_via_rust_lossless.py`). No separate scope decision was needed:
+  the SDP-uniqueness ref rides the producer, and a live producer either
+  already carries it or was caught by the authoritative scan above.
+
+**Bottom line:** the producer-side pool is exhausted; the wiring pattern
+is fully propagated. Remaining audit "misses" are CI-regeneration lag
+(self-clearing) plus orphaned-legacy witnesses (migration triage).
