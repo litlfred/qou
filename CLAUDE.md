@@ -1942,6 +1942,7 @@ tool rather than silently failing.
 | `tools/pyhecke/` | `pyhecke` PyPI package — Layer 2b (Hecke / Gram / Markov trace). 19 in-repo direct importers. |
 | `tools/pyhecke-native/` | `pyhecke-native` PyPI wheel — PyO3 bindings into `hecke-engine`. 15 in-repo direct importers. |
 | `tools/witness-schema/` | `witness-schema` PyPI + `@litlfred/witness-schema` npm — cross-language `*.witness.json` interchange schemas. 1 in-repo importer (same canonical wiring example). |
+| `tools/block-qa-schema/` | Cross-language QA-sidecar interchange schemas (`<block>.qa.json` block-qa/v1 + `<criterion-id>.script.json` qa-script/v1): canonical JSON Schema + Zod + Pydantic mirrors, corpus-validated. Packaged for npm (`@litlfred/block-qa-schema`) + PyPI (`block-qa-schema`); not yet published to registries. Producing types: `folio-assistant/schemas/block-qa.ts`. |
 | `tools/hecke-engine/` | `hecke-engine` Rust crate — Layer 1 canonical compute core (Gröbner-Shirshov reducer, Hoefsmit, Markov trace, Clarabel SDP backend). |
 | `tools/hecke-engine-{wasm,node,r,jvm,c}/` | Multi-language bindings of `hecke-engine` (WASM, Node napi-rs, R/JVM/C — last three Tier-3). |
 | `folio.config.json` | Adapter config (content type, adapter module, feedback dir) |
