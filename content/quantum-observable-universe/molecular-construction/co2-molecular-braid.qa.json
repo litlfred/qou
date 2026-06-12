@@ -1011,7 +1011,51 @@
         "reviewed_at": "2026-06-11T18:06:24.673Z",
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "830408144bf6",
+          "ts": "d160ef738c22",
+          "lean": "dff8287d516b"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "molecular-construction.ts:96-104 — block listed in sec:co2-computation ('Carbon dioxide: linear triatomic molecule'); co2-molecular-braid.md:3-6 defines the CO2 molecular braid construction",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:37:57.446Z",
+        "reviewed_sha": "81b60704448e3a6500f9835a8b4eca3493ee81fa",
+        "notes": "Definition squarely in its dedicated CO2 section; names a new construction (66-strand CO2 braid); no sibling restates it (co2-lp-dual-binding/co2-double-bond-symmetry are downstream)."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "830408144bf6",
+          "ts": "d160ef738c22",
+          "lean": "dff8287d516b"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "co2-molecular-braid.md:1 — 'Lean sibling: archimedean specialisation over R (CLAUDE.md §7c). Underlying combinatorial content stays generic…'; md:59-61 eV value pinned to :val witness",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:37:57.481Z",
+        "reviewed_sha": "81b60704448e3a6500f9835a8b4eca3493ee81fa",
+        "notes": "Statement is combinatorial (strand counts, valence allocation); the experimental D0 eV value is witness-pinned and the block opens with an explicit §7c archimedean-specialisation banner. Matches chapter regime."
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-12T19:37:57.481Z"
 }
