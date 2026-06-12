@@ -230,6 +230,7 @@ def main() -> int:
     print()
 
     from witness_base import WitnessBuilder
+    from lean_uniqueness_refs import lean_uniqueness_ref
     builder = (
         WitnessBuilder("sublemma-2-1-h12-he4-branching-verify",
                        engine="numpy")
@@ -276,6 +277,7 @@ def main() -> int:
             f"Full coverage requires --all flag (~15-30 min compute)."
         )
     )
+    builder.add_data("lean_uniqueness_ref", lean_uniqueness_ref("helium-4"))
     out = builder.save()
     print(f"  Witness: {out}")
     return 0 if n_pass == n_total else 1
