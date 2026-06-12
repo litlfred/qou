@@ -1136,7 +1136,107 @@
         "reviewed_at": "2026-06-11T18:06:24.673Z",
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7"
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "cc16be183ae9",
+          "ts": "d201c6c66c52",
+          "lean": "8ffd53a701b6"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "score": {
+          "value": 0.6,
+          "max": 1
+        },
+        "evidence": "q-dilogarithm-unique-proof.md:1-4 — 'solution space of the level-2 shuffle recursion is one-dimensional modulo lower-level primitives. The pentagon identity fixes the normalisation scalar.'",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:58:47.818Z",
+        "reviewed_sha": "5acaa9d44320351a7e7ebed48bb57d7a6792301b",
+        "notes": "plan is stated but compressed to two assertions with no cited lemma for the one-dimensionality step; recoverable yet implicit"
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "cc16be183ae9",
+          "ts": "d201c6c66c52",
+          "lean": "8ffd53a701b6"
+        },
+        "result": "fail",
+        "severity": "minor",
+        "score": {
+          "value": 0.15,
+          "max": 1
+        },
+        "evidence": "q-dilogarithm-unique.lean:46-53 — 'axiom QDilogarithm.unique_axiom' has the identical signature as the wrapper theorem QDilogarithm.unique",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:58:47.853Z",
+        "reviewed_sha": "5acaa9d44320351a7e7ebed48bb57d7a6792301b",
+        "notes": "remaining gap (the axiom) restates the target; rubric restates-target ~0.0; retained pending Mathlib pentagon universal property per in-file audit note"
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "cc16be183ae9",
+          "ts": "d201c6c66c52",
+          "lean": "8ffd53a701b6"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "score": {
+          "value": 0.4,
+          "max": 1
+        },
+        "evidence": "quantum-observable-universes.ts:419-434 — q-logarithm-unique sibling uses the same level-n-primitive-unique-mod-level-(n-1) template",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:58:47.887Z",
+        "reviewed_sha": "5acaa9d44320351a7e7ebed48bb57d7a6792301b",
+        "notes": "standard uniqueness-up-to-shift argument; template shared with q-logarithm-unique, partially redundant"
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "cc16be183ae9",
+          "ts": "d201c6c66c52",
+          "lean": "8ffd53a701b6"
+        },
+        "result": "warn",
+        "severity": "major",
+        "evidence": "q-dilogarithm-unique.lean:14-27 — 'Honest statement (2026-06-09 axiom audit)... retained as a named axiom pending a Mathlib formalisation of the pentagon universal property'",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:58:47.922Z",
+        "reviewed_sha": "5acaa9d44320351a7e7ebed48bb57d7a6792301b",
+        "notes": "theorem discharged by injected named axiom restating it; weakening is loudly documented in-file and deliberately replaces a falsely-strong Subsingleton reading; narrative restatement (unique up to scalar vs Li2.1 equality given equal level-1 data) acknowledged"
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-12T19:58:47.922Z"
 }
