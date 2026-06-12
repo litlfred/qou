@@ -1136,7 +1136,104 @@
         "reviewed_at": "2026-06-11T18:06:24.673Z",
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7"
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "97b1170b575b",
+          "ts": "23d5af277a60",
+          "lean": "1398f79e4e5b"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.35,
+          "max": 1
+        },
+        "evidence": "knot-operator-transition.md:5-18 — proposition is a 5-row operator/NF/knot-type table plus a closing square; no derivation of the dominant normal forms is given",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T20:01:59.051Z",
+        "reviewed_sha": "5d14f81797b41b7095e61453a3c0a067b1eebf08",
+        "notes": "Strategy (compute dominant NF of each Hecke operator word, classify closure) is only implicitly recoverable from table headers; no plan or steps stated"
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "97b1170b575b",
+          "ts": "23d5af277a60",
+          "lean": "1398f79e4e5b"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.7,
+          "max": 1
+        },
+        "evidence": "lean/QOU/BraidKnot/knot_operator_transition.lean:44-61 — knot_operator_transition_hierarchy and knot_operator_transition are sorry-free (rfl/match)",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T20:01:59.091Z",
+        "reviewed_sha": "5d14f81797b41b7095e61453a3c0a067b1eebf08",
+        "notes": "Sorry-free formally, but the decls verify a self-defined lookup table; the substantive NF-classification derivation lives outside Lean — docked from 1.0 accordingly"
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "97b1170b575b",
+          "ts": "23d5af277a60",
+          "lean": "1398f79e4e5b"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "evidence": "knot-operator-transition.md:13-18 — unknot/sigma/Hopf/trefoil nucleon-addition hierarchy; no sibling block states this table",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T20:01:59.129Z",
+        "reviewed_sha": "5d14f81797b41b7095e61453a3c0a067b1eebf08",
+        "notes": "Claim is framework-specific and not duplicated in corpus, but the proof content is a bare table assertion adding no argumentative technique"
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "97b1170b575b",
+          "ts": "23d5af277a60",
+          "lean": "1398f79e4e5b"
+        },
+        "result": "warn",
+        "severity": "major",
+        "evidence": "knot-operator-transition.ts:5 lean.ref qou:QOU.BraidKnot.knot_operator_transition resolves to lean/QOU/BraidKnot/knot_operator_transition.lean:56; but nucleonAdditionKnot (line 32-37) encodes the conclusion by definition, so the formal statement is materially weaker than the .md claim about Hecke operator words sigma_0 - h/2 etc.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T20:01:59.168Z",
+        "reviewed_sha": "5d14f81797b41b7095e61453a3c0a067b1eebf08",
+        "notes": "lean.ref resolves; weakening is structurally visible (conclusion-encoded def), not silent tampering; no dangling conditional hypotheses; sibling .lean docstub holds only the AdditionKnotType inductive"
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-12T20:01:59.168Z"
 }
