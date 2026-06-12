@@ -880,7 +880,54 @@
         "reviewed_at": "2026-06-11T18:06:24.673Z",
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "beb11bb24ad8",
+          "ts": "3b07c600d482",
+          "lean": "03731008cba8"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "palindromicity-orbital-type.md:2 — 'word-length histogram of the quotient atom NF is palindromic iff all occupied sub-shells have angular momentum ell=0 (s-type)'",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:29:42.294Z",
+        "reviewed_sha": "e63881dc4ca2d4a704aa4847871c902def8d7d08",
+        "notes": "conjecture on shell/orbital structure (s vs p); squarely in §2 'Electron shells and bonding capacity'; well-placed"
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "beb11bb24ad8",
+          "ts": "3b07c600d482",
+          "lean": "03731008cba8"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0.3,
+          "max": 1
+        },
+        "evidence": "palindromicity-orbital-type.lean:74-79 — class PalindromicityOrbitalType field palindromic_iff_s_type: IsPalindromic histogram <-> Z<=4; only Z=2 instance proved (line 86)",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T19:30:37.599Z",
+        "reviewed_sha": "e63881dc4ca2d4a704aa4847871c902def8d7d08",
+        "notes": "core gap: the general palindromic-iff-s-type equivalence (Bruhat Poincare self-duality) IS the conjecture goal, unproved beyond Z=2 base case; ~0.3 per core-gap band"
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-12T19:30:37.599Z"
 }
