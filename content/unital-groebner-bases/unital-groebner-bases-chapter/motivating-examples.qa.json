@@ -798,7 +798,26 @@
         "reviewed_at": "2026-06-02T19:35:58.523Z",
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
       }
+    ],
+    "compute-code-review": [
+      {
+        "field_hash": {
+          "md": "09fd62454d06",
+          "ts": "f89bd0423235"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/compute-code-review",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-12",
+          "agent_skill": "local/compute-code-review"
+        },
+        "reviewed_at": "2026-06-12T17:58:09.026Z",
+        "reviewed_sha": "91962f2af03d55f0bb812fa1499965e000cf92fd",
+        "notes": "Model: gemini-3.1-pro; Checked."
+      }
     ]
   },
-  "updated_at": "2026-06-03T13:06:09.584Z"
+  "updated_at": "2026-06-12T17:58:09.026Z"
 }

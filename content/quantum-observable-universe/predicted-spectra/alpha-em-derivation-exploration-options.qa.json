@@ -816,7 +816,26 @@
         "reviewed_sha": "33b99911b9b3edcd27ec5aece0f73322508d7a15",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "compute-code-review": [
+      {
+        "field_hash": {
+          "md": "9a9e651098c3",
+          "ts": "f59bde020f59"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/compute-code-review",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-12",
+          "agent_skill": "local/compute-code-review"
+        },
+        "reviewed_at": "2026-06-12T17:58:07.923Z",
+        "reviewed_sha": "91962f2af03d55f0bb812fa1499965e000cf92fd",
+        "notes": "Model: gemini-3.1-pro; Checked."
+      }
     ]
   },
-  "updated_at": "2026-06-09T14:26:34.579Z"
+  "updated_at": "2026-06-12T17:58:07.923Z"
 }
