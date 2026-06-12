@@ -83,7 +83,7 @@ NUCLEUS_RE = re.compile("|".join(NUCLEUS_PATTERNS), re.IGNORECASE)
 # cross-checks, generic inventories that aren't per-nucleus).
 EXCLUDE_NAME_RE = re.compile(
     r"audit|cross[_-]check|inventory|registry|table|"
-    r"index|sweep|drift|status|summary|phase\d",
+    r"index|sweep|drift|status|summary|phase[-_]?\d+",
     re.IGNORECASE,
 )
 
