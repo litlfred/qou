@@ -1121,7 +1121,107 @@
         "reviewed_at": "2026-06-11T18:06:24.673Z",
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7"
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "40b474a40cb3",
+          "ts": "cf7113d6a47d",
+          "lean": "6b36e06e35e6"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "score": {
+          "value": 0.7,
+          "max": 1
+        },
+        "evidence": "substrate-radial-coordinate-proof.md:6-15 — numbered case split '1. Deep-quantum origin (Z -> 0) ... 2. Classical boundary (Z -> infty)' then the Reeb-flow rate",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T15:00:02.725Z",
+        "reviewed_sha": "74dcf342898a69426fb8083b2cb64a7860f8e9c7",
+        "notes": "Plan explicit up front (two-limit case split + Reeb flow); individual steps are descriptive rather than deductive but the strategy is legible before reading the steps."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "40b474a40cb3",
+          "ts": "cf7113d6a47d",
+          "lean": "6b36e06e35e6"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "evidence": "substrate-radial-coordinate.lean:49-69 — hbar_q_pos / deep_quantum_limit_hbar / classical_limit_hbar all closed; no sorry in file",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T15:00:02.767Z",
+        "reviewed_sha": "74dcf342898a69426fb8083b2cb64a7860f8e9c7",
+        "notes": "Sorry-free Lean sibling => 1.0 per rubric (no remaining formal gaps to close)."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "40b474a40cb3",
+          "ts": "cf7113d6a47d",
+          "lean": "6b36e06e35e6"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "score": {
+          "value": 0.55,
+          "max": 1
+        },
+        "evidence": "substrate-radial-coordinate-proof.md:29-31 — 'This unifies bosons and fermions geometrically: q controls the radial position in P(V)'",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T15:00:02.805Z",
+        "reviewed_sha": "74dcf342898a69426fb8083b2cb64a7860f8e9c7",
+        "notes": "Standard asymptotic-limit argument specialized to the contact affine chart; not duplicated by a sibling proof but employs no novel technique."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "40b474a40cb3",
+          "ts": "cf7113d6a47d",
+          "lean": "6b36e06e35e6"
+        },
+        "result": "warn",
+        "severity": "major",
+        "evidence": "substrate-radial-coordinate.lean:45 — 'reeb_flow_rate : ℝ := J * hbar_q * Z' (defaulted structure field, holds by construction); lean:57-58 — 'deep_quantum_limit_hbar (hq : 100 < q) : |1 - (1 - q⁻¹)| < 0.01' (concrete epsilon-instance surrogate for q -> infty limit)",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T15:00:02.843Z",
+        "reviewed_sha": "74dcf342898a69426fb8083b2cb64a7860f8e9c7",
+        "notes": "No sorry/axiom injection, signature stable vs prior commit; but the Lean proves weakened fragments: the central Reeb-flow law is encoded as a definitional default (true by construction), and limits are replaced by fixed-bound instances. Narrative statement itself coherent."
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-12T15:00:02.843Z"
 }
