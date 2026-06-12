@@ -1,8 +1,8 @@
 {
   "engine": "snappea",
   "engineVersion": "snappy 3.3.2",
-  "computedAt": "2026-06-12T19:30:06.610690+00:00",
-  "commitSha": "7af29f260fb7d9cf51ad3e2e229abbcd73bb5f09",
+  "computedAt": "2026-06-12T19:58:54.612909+00:00",
+  "commitSha": "4ac777487309ee914e553ef9f93c2904d9669362",
   "assertions": [
     {
       "name": "s1_VOL_4_1_matches_census",
@@ -134,11 +134,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3370,
+  "durationMs": 973,
   "computation": "snappy-census-volume-verification",
   "scriptFile": "snappy_census_volume_verification.py",
-  "scriptHash": "fa70da0631ff",
-  "scriptCommitSha": "37992c729192e2f43c533afee690bb3b3621a9b8",
+  "scriptHash": "31e021d72e55",
+  "scriptCommitSha": "005cc7220b7eada481eb8601a33e5f56c021e2a2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -147,8 +147,11 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Live SnapPy (ManifoldHP) verification of every hyperbolic-volume constant the mass pipeline consumes: substrate/knot_volumes.py constants (S1), the per-atom-hyperbolic-volume production atlas (S2), and the conj:canonical-knot-id-sdp historical volume-matching table (S3 — documents the thread-4 fork: all three claimed volumes belong to OTHER census manifolds than the knots they name; orphan numbers census-identified by volume scan). Diagnostic only; fork resolution is owner-gated.",
   "data": {
