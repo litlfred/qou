@@ -858,7 +858,51 @@
         "reviewed_at": "2026-06-11T18:06:24.673Z",
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "425e6f3fff2d",
+          "ts": "4afe0160cfaa",
+          "lean": "7d40dc21f4d7"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "molecular-construction.ts:22-31 — 'molecular-braid' listed in sec:molecular-hecke-algebra; molecular-braid.md:4 'The molecular braid is the element'",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T15:24:39.074Z",
+        "reviewed_sha": "85d6a4e8737983465bb627cd196b50f0dc76c2af",
+        "notes": "Anchor definition of §1; names a genuinely new construction (iterative multi-atom braid in H_N(q)); no sibling duplicates it."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "425e6f3fff2d",
+          "ts": "4afe0160cfaa",
+          "lean": "7d40dc21f4d7"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "molecular-braid.md:53-60 — binding-energy clause 'alpha = m_e x 8G is the same binding scale as in the atomic mass formula' cites thm:wedderburn-mass-formula",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-12",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-12T15:24:39.112Z",
+        "reviewed_sha": "85d6a4e8737983465bb627cd196b50f0dc76c2af",
+        "notes": "Chapter 12 is an archimedean application chapter (MeV binding energies throughout); the construction steps are generic H_N(q) and the MeV clause names its archimedean source explicitly — matches chapter regime."
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-12T15:24:39.112Z"
 }
