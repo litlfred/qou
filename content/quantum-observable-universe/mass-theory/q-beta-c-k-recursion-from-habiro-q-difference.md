@@ -73,6 +73,16 @@ where $c_4 = -0.97157$ was a fit).
 - A method `applyRecursion : (Fin depth → R) → R` that performs one
   step of the recursion given the last $d$ values of the $c_k$
   sequence.
+- The **parity-alternation theorem** `esymm_bar_parity` (sorry-free):
+  writing the recursion coefficients as elementary symmetric polynomials
+  $a_j = e_j(\{r_\lambda\})$ of the per-mode rates
+  $r_\lambda = (q-1)\mu_\lambda$, then for any involutive ring
+  homomorphism (the bar $q \mapsto q^{-1}$) under which the rates are
+  bar-odd, $\overline{e_j} = (-1)^j e_j$ — so $a_j$ alternates bar-parity
+  (bar-ODD for odd $j$, bar-EVEN for even $j$), *independent of which
+  modes are active*. This is the structural law behind the ladder's
+  parity bookkeeping (bar-even seed $c_2 = -1$ driven by a bar-odd
+  $a_1 = -c_3$). Proof: $e_j(-x) = (-1)^j e_j(x)$ (`esymm_neg`).
 - A companion compute scaffold
   ([`qbeta_c_k_recursion_scaffold.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/qbeta/qbeta_c_k_recursion_scaffold.py))
   demonstrating the recursion machinery on toy depth-1 and depth-2
