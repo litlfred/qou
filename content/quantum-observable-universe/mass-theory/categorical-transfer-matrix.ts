@@ -2,7 +2,7 @@ import { definition } from "../../schema/builders";
 
 export default definition({
   label: "def:categorical-transfer-matrix",
-  lean: { ref: "qou:QOU.CategoricalTransferMatrix", validation: "not_checked" },
+  lean: { ref: "qou:QOU.Torsion.CategoricalTransferMatrix", validation: "not_checked" },
   title: "Categorical transfer matrix",
   tags: [
     "transfer-matrix", "hadron", "vertex-operator",

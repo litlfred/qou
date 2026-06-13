@@ -202,7 +202,7 @@ end QOU.BraidKnot
 |---|---|---|---|---|
 | 1 | S1a Lean skeleton lands + compiles | S | LSP session | **DONE 2026-06-12** (`QOU.BraidKnot.MassGapKeystone`, sorry-free) |
 | 2 | Step 2 ε³ lemma in SurrealRateCalculus | S | S1a | **DONE 2026-06-12** (exact forms in `MassGapKeystone`; the abstract `SurrealRateCalculus.massGap_order` rate is realised concretely with the `(2+ε)/(2(1+ε))` scalar displayed) |
-| 3 | S1b transfer-matrix definition block | M | — | **P2** |
+| 3 | S1b transfer-matrix definition block | M | — | **DONE 2026-06-12**: `def:categorical-transfer-matrix` already carried the spectral interface (`QOU.Torsion.CategoricalTransferMatrix` — corpus-grep find); S1b landed as the *bridge* in `MassGapKeystone`: `towerSpectrum` pins `SubstrateGap`'s spectrum to that interface, `substrateGap_of_uniform_gapValue` instantiates it from per-level `gapValue` bounds, and `CrossingFiltration` + `substrateGap_of_crossingFiltration` reduce S1c strategy (iii) to a single named hypothesis (valid on the substrate window `1 < q ≤ 2`). Dedup note: the first MassGapKeystone revision duplicated `minCrossingEnergy`/`massGapBound` + 2 theorems from `QOU.Torsion.MassGap`; the S1b revision deletes the duplicates and states everything over the `QOU.Torsion` originals. |
 | 4 | Step 3 obstruction-reduction theorem | L | S1b | **P2** |
 | 5 | S1c uniformity in n | XL (research) | S1b | **P3** |
 
