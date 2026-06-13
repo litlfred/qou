@@ -206,7 +206,7 @@ high-precision mass and decay measurements. See the
 A *weaker* partial test: if the $1/d^{4}$ scaling is recovered
 but the prefactor differs, the conjecture is refined rather than
 killed — analogous to the "Round-8" partial results in
-[`prop:bohr-radius-categorical`](#prop:bohr-radius-categorical),
+[`conj:bohr-radius-categorical`](#conj:bohr-radius-categorical),
 where shell-spacing ratios match but the absolute scale is
 transported.
 
@@ -302,7 +302,7 @@ and the [free-field/disjoint grounding audit](../../../docs/audits/2026-06-01-ca
   eponym with the [$q$-Casimir element](#def:q-casimir) of
   $\mathcal{U}_q(\mathfrak{su}(2))$, the central invariant encoding
   $q$-angular momentum.
-- [`prop:bohr-radius-categorical`](#prop:bohr-radius-categorical) —
+- [`conj:bohr-radius-categorical`](#conj:bohr-radius-categorical) —
   precedent for the "scaling correct, prefactor open" status
   pattern.
 - Observational test target:

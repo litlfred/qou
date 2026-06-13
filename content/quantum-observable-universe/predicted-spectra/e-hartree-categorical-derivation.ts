@@ -43,7 +43,7 @@ export default conjecture({
     "prop:lp-dual-stability",
     "prop:spectral-sequence-collapse",
     "cor:commutative-chirality-vanishes",
-    "prop:bohr-radius-categorical",
+    "conj:bohr-radius-categorical",
     "prop:force-carrier-bring-uniqueness",
     "prop:phi-q-tower-algebraic-stratification",
   ],

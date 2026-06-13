@@ -288,7 +288,7 @@ electron-EM coupling. So the "rank = number of EM exchanges"
 interpretation correctly predicts covalent $\alpha^2$ but
 doesn't explain *atomic* $\alpha^2$ — that requires the
 virial-balance argument from
-[`prop:bohr-radius-categorical`](#prop:bohr-radius-categorical),
+[`conj:bohr-radius-categorical`](#conj:bohr-radius-categorical),
 which remains transported.
 
 #### Net status after round 8

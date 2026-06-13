@@ -8,8 +8,8 @@
     "lean": "content/quantum-observable-universe/predicted-spectra/bohr-radius-categorical.lean"
   },
   "source_hashes": {
-    "md": "22760a960031",
-    "ts": "f8ce71fa54de",
+    "md": "631251dc4319",
+    "ts": "18c97dbc70e9",
     "lean": "d0a836478d3d"
   },
   "criteria": {
@@ -655,6 +655,24 @@
         "reviewed_at": "2026-06-07T05:58:13.071Z",
         "reviewed_sha": "c47fda4d79ef12172fe90e0c9b670b761a3f4d95",
         "notes": "lean.ref qou:QOU.Archimedean.bohr_radius_categorical is a sibling STUB: 'theorem bohr_radius_categorical : True := by trivial'. Vacuous =True, does not state the md claim a_0^cat = hbar/(m_e c alpha_EM). md itself declares 'NOT yet derived', 'tautological' match, 'not as a closed theorem'. validation:not_started in ts."
+      },
+      {
+        "field_hash": {
+          "md": "631251dc4319",
+          "ts": "18c97dbc70e9",
+          "lean": "d0a836478d3d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T16:04:38.196Z",
+        "reviewed_sha": "f01a00902cda19d6fc285404b912bb9d69f4613a",
+        "notes": "Demoted proposition→conjecture: the .md itself states 'not yet derived from QOU/Hecke structure', 'tautological', 'transport sketch, not a closed theorem', 'open conjecture'. Honest kind = conjecture; integrity n/a."
       }
     ],
     "voice-unicode-crash": [
@@ -1482,5 +1500,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-13T13:55:33.060Z"
+  "updated_at": "2026-06-13T16:04:38.196Z"
 }

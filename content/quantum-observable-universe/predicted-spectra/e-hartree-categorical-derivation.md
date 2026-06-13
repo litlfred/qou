@@ -19,7 +19,7 @@ The Mechanism D candidate has been recorded as two **transport
 sketches** (not closed theorems) with explicit derivation-status
 caveats:
 
-- [`prop:bohr-radius-categorical`](#prop:bohr-radius-categorical)
+- [`conj:bohr-radius-categorical`](#conj:bohr-radius-categorical)
  — categorical Bohr radius transported from QED virial-balance.
 - `prop:archimedean-hartree-derivation`
  — archimedean energy unit per $\Phi_1$ asserted as
