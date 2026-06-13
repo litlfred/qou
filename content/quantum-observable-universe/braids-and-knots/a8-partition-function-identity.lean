@@ -1,3 +1,8 @@
+import Mathlib.Algebra.Polynomial.Basic
+import Mathlib.Algebra.Polynomial.Eval.Defs
+import Mathlib.Algebra.BigOperators.Group.Finset.Basic
+import Mathlib.Tactic
+
 /-!
 # a_8 partition-function identity
 
@@ -53,11 +58,6 @@ since the `Nat.Partition` enumeration is decidable for small `n`).
 -- Ref: [manuscript] docs/audits/2026-06-01-qbeta-habiro-a8-partition-function-match.md
 -/
 
-import Mathlib.Algebra.Polynomial.Basic
-import Mathlib.Algebra.Polynomial.Eval
-import Mathlib.Algebra.BigOperators.Group.Finset.Basic
-import Mathlib.Tactic
-
 namespace QOU.BraidKnot.A8Partition
 
 open Polynomial
@@ -81,7 +81,7 @@ def partitionCount : ℕ → ℕ
     proton and neutron in the canonical Habiro-witness convention):
 
       `a_8(X) = X^4 + 2·X^3 + 3·X^2 + 5·X + 7`. -/
-def a_8_poly : ℤ[X] := X ^ 4 + C 2 * X ^ 3 + C 3 * X ^ 2 + C 5 * X + C 7
+noncomputable def a_8_poly : ℤ[X] := X ^ 4 + C 2 * X ^ 3 + C 3 * X ^ 2 + C 5 * X + C 7
 
 /-- Concrete values of the partition function for `n = 1..5`. -/
 theorem partitionCount_values :
