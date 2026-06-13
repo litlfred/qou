@@ -37,15 +37,26 @@ from __future__ import annotations
 import sympy as sp
 
 # shared symbolic helpers (single source of truth, #2240)
-from qbeta_symbolic_utils import q, kappa, bar, parity, contents
+from qbeta_symbolic_utils import q, kappa, parity, contents
 
-# ── published anchors / targets (NOT re-derived here) ──
-# Proton-anchored substrate q_0 (heat_fmap probe; sp.Rational form).
-Q0 = sp.Rational(110997858275, 100000000000)            # ≈ 1.10997858275
+# ── published anchors / targets (reused verbatim; NOT re-derived, NOT CODATA) ──
+# These are prior-PROBE outputs reused so this reconciliation reproduces #2240's
+# S = 908/887 EXACTLY (the whole point of a reconciliation is byte-matching the
+# numbers it reconciles). They are NOT CODATA constants and have no entry in
+# substrate/codata_constants.py — that registry holds physical measurements
+# (masses, widths), whereas PHI2_* below are the published −c_3 = √2·Φ₂ targets.
+#
+# Proton-anchored substrate q_0 — the SAME 11-digit truncation #2240's
+# qbeta_heat_fmap_symbolic_explore.py used (matching it is required for the
+# exact S reproduction). The higher-precision canonical form used by the
+# from_scratch/ scripts is sp.Rational(11099785827513808, 10**16); switching to
+# it would perturb S in the ~6th digit and break the exact #2240 match.
+Q0 = sp.Rational(110997858275, 100000000000)            # ≈ 1.10997858275  (= #2240 heat_fmap q_0)
 SQRT2 = sp.sqrt(2)
-# −c_3 targets = √2 · Φ₂ at each anchor (#2106 PHI2_TARGET; #2240 a1_p/a1_mu).
-PHI2_PROTON = sp.Rational(146324616887618, 100000000000000)   # 1.46324616887618
-PHI2_MUON = sp.Rational(142849728553818, 100000000000000)     # 1.42849728553818
+# −c_3 targets = √2 · Φ₂ at each anchor. Φ₂ values from #2106 PHI2_TARGET
+# (proton) and #2240 heat_fmap a1_p/a1_mu (muon) — prior-probe outputs, reused.
+PHI2_PROTON = sp.Rational(146324616887618, 100000000000000)   # 1.46324616887618 (#2106 §2.4)
+PHI2_MUON = sp.Rational(142849728553818, 100000000000000)     # 1.42849728553818 (#2240 a1_mu/√2)
 A1_PROTON = SQRT2 * PHI2_PROTON                          # √2·Φ₂ ≈ 2.0694
 A1_MUON = SQRT2 * PHI2_MUON                              # ≈ 2.0202
 
