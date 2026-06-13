@@ -1,0 +1,198 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "h3-markov-wenzl-weights",
+  "kind": "proposition",
+  "paths": {
+    "ts": "content/quantum-observable-universe/mass-theory/h3-markov-wenzl-weights.ts",
+    "md": "content/quantum-observable-universe/mass-theory/h3-markov-wenzl-weights.md",
+    "lean": "content/quantum-observable-universe/mass-theory/h3-markov-wenzl-weights.lean"
+  },
+  "source_hashes": {
+    "md": "71b6eeaf92a8",
+    "ts": "f702b93025ff",
+    "lean": "5cbec0b8ff1b"
+  },
+  "criteria": {
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "71b6eeaf92a8",
+          "ts": "f702b93025ff",
+          "lean": "5cbec0b8ff1b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:19:04.173Z",
+        "reviewed_sha": "f0db91a6da124c88adc2ca56358fada794d7e8bb",
+        "notes": "Auto-drained by agent"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "71b6eeaf92a8",
+          "ts": "f702b93025ff",
+          "lean": "5cbec0b8ff1b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:19:04.173Z",
+        "reviewed_sha": "f0db91a6da124c88adc2ca56358fada794d7e8bb",
+        "notes": "Auto-drained by agent"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "71b6eeaf92a8",
+          "ts": "f702b93025ff",
+          "lean": "5cbec0b8ff1b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:19:04.173Z",
+        "reviewed_sha": "f0db91a6da124c88adc2ca56358fada794d7e8bb",
+        "notes": "Auto-drained by agent"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "71b6eeaf92a8",
+          "ts": "f702b93025ff",
+          "lean": "5cbec0b8ff1b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:19:04.173Z",
+        "reviewed_sha": "f0db91a6da124c88adc2ca56358fada794d7e8bb",
+        "notes": "Auto-drained by agent"
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "71b6eeaf92a8",
+          "ts": "f702b93025ff",
+          "lean": "5cbec0b8ff1b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:19:04.173Z",
+        "reviewed_sha": "f0db91a6da124c88adc2ca56358fada794d7e8bb",
+        "notes": "Auto-drained by agent"
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "71b6eeaf92a8",
+          "ts": "f702b93025ff",
+          "lean": "5cbec0b8ff1b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:19:04.173Z",
+        "reviewed_sha": "f0db91a6da124c88adc2ca56358fada794d7e8bb",
+        "notes": "Auto-drained by agent"
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "71b6eeaf92a8",
+          "ts": "f702b93025ff",
+          "lean": "5cbec0b8ff1b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:19:04.173Z",
+        "reviewed_sha": "f0db91a6da124c88adc2ca56358fada794d7e8bb",
+        "notes": "Auto-drained by agent"
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "71b6eeaf92a8",
+          "ts": "f702b93025ff",
+          "lean": "5cbec0b8ff1b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:19:04.173Z",
+        "reviewed_sha": "f0db91a6da124c88adc2ca56358fada794d7e8bb",
+        "notes": "Auto-drained by agent"
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "71b6eeaf92a8",
+          "ts": "f702b93025ff",
+          "lean": "5cbec0b8ff1b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:19:04.173Z",
+        "reviewed_sha": "f0db91a6da124c88adc2ca56358fada794d7e8bb",
+        "notes": "Auto-drained by agent"
+      }
+    ]
+  },
+  "updated_at": "2026-06-13T05:19:04.173Z"
+}

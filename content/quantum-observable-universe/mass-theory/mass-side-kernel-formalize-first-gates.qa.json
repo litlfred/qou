@@ -8,9 +8,9 @@
     "lean": "content/quantum-observable-universe/mass-theory/mass-side-kernel-formalize-first-gates.lean"
   },
   "source_hashes": {
-    "md": "0d6b30fc46b6",
-    "ts": "a143553f2c02",
-    "lean": "3c40491fb9b4"
+    "md": "f117200c6e26",
+    "ts": "45d06e2aebf6",
+    "lean": "96fa19fb1585"
   },
   "criteria": {
     "proof-no-bare-sorries": [
@@ -1046,7 +1046,187 @@
         "reviewed_at": "2026-06-11T18:06:24.673Z",
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "f117200c6e26",
+          "ts": "45d06e2aebf6",
+          "lean": "96fa19fb1585"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:19:04.173Z",
+        "reviewed_sha": "f0db91a6da124c88adc2ca56358fada794d7e8bb",
+        "notes": "Auto-drained by agent"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "f117200c6e26",
+          "ts": "45d06e2aebf6",
+          "lean": "96fa19fb1585"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:19:04.173Z",
+        "reviewed_sha": "f0db91a6da124c88adc2ca56358fada794d7e8bb",
+        "notes": "Auto-drained by agent"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "f117200c6e26",
+          "ts": "45d06e2aebf6",
+          "lean": "96fa19fb1585"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:19:04.173Z",
+        "reviewed_sha": "f0db91a6da124c88adc2ca56358fada794d7e8bb",
+        "notes": "Auto-drained by agent"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "f117200c6e26",
+          "ts": "45d06e2aebf6",
+          "lean": "96fa19fb1585"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:19:04.173Z",
+        "reviewed_sha": "f0db91a6da124c88adc2ca56358fada794d7e8bb",
+        "notes": "Auto-drained by agent"
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "f117200c6e26",
+          "ts": "45d06e2aebf6",
+          "lean": "96fa19fb1585"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:19:04.173Z",
+        "reviewed_sha": "f0db91a6da124c88adc2ca56358fada794d7e8bb",
+        "notes": "Auto-drained by agent"
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "f117200c6e26",
+          "ts": "45d06e2aebf6",
+          "lean": "96fa19fb1585"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:19:04.173Z",
+        "reviewed_sha": "f0db91a6da124c88adc2ca56358fada794d7e8bb",
+        "notes": "Auto-drained by agent"
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "f117200c6e26",
+          "ts": "45d06e2aebf6",
+          "lean": "96fa19fb1585"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:19:04.173Z",
+        "reviewed_sha": "f0db91a6da124c88adc2ca56358fada794d7e8bb",
+        "notes": "Auto-drained by agent"
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "f117200c6e26",
+          "ts": "45d06e2aebf6",
+          "lean": "96fa19fb1585"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:19:04.173Z",
+        "reviewed_sha": "f0db91a6da124c88adc2ca56358fada794d7e8bb",
+        "notes": "Auto-drained by agent"
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "f117200c6e26",
+          "ts": "45d06e2aebf6",
+          "lean": "96fa19fb1585"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:19:04.173Z",
+        "reviewed_sha": "f0db91a6da124c88adc2ca56358fada794d7e8bb",
+        "notes": "Auto-drained by agent"
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-13T05:19:04.173Z"
 }
