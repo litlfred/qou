@@ -30,4 +30,17 @@ export default proposition({
     "no-fit",
     "formalize-first",
   ],
+  authorNotes: [
+    {
+      kind: "status",
+      body:
+        "**Theorem (this proposition).** Sorry-free Lean proof " +
+        "(`q-beta-bar-even-kernel-invariant.lean`) — one-line `ring` identity " +
+        "over `CommRing R` plus a symbolic substitution check on the N=2 " +
+        "factor. **Compute (sympy):** verified in " +
+        "`qbeta_bar_even_kernel_invariant_probe.py` (witness " +
+        "`qbeta-bar-even-kernel-invariant-probe.witness.json`), assertion " +
+        "`bar_even_invariant_holds_for_N2_factor` (passing).",
+    },
+  ],
 });

@@ -60,20 +60,3 @@ A candidate $F(q)$ must clear (in order):
 ```
 
 With all four §4 invariants formalized, the formalize-first gate chain is complete; any future $F(q)$ candidate is evaluable as a Lean class-instance attempt rather than as a numerical fit.
-
-## Status
-
-**Theorem (this proposition).** Sorry-free Lean proof
-([`q-beta-q-eq-one-shadow-gate.lean`](q-beta-q-eq-one-shadow-gate.lean))
-— §3b-cond conditional class `QOneShadowGateClass` with two field
-hypotheses encoding the $c_2$ and $c_3$ classical-limit anchors,
-plus a rejection lemma showing that any candidate failing either
-anchor is structurally REFUTED.
-
-**Compute (sympy + mpmath).** Verified in
-[`qbeta_q_eq_one_shadow_gate_probe.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/qbeta/qbeta_q_eq_one_shadow_gate_probe.py),
-witness `qbeta-q-eq-one-shadow-gate-probe.witness.json`. The probe
-verifies the canonical anchors ($c_2 \to -1$, $c_3 \to -2$), demonstrates
-the gate on a synthetic-passing candidate (rational $F(q)$ with correct
-shadows) and a synthetic-failing candidate (rational $F(q)$ whose
-$q = 1$ shadow gives $c_2 = -1/2$ instead of $-1$).
