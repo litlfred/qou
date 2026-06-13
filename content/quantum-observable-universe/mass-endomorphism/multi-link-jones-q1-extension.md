@@ -76,12 +76,3 @@ dimensions $\dim_q(V_\lambda)$. This requires extending the
 Wenzl-bridge $y_\lambda$ infrastructure to $\varepsilon^{10},
 \varepsilon^{12}$ evaluations of the $\tau_M$ expansion on
 $V_{(2,1)}, V_{(3)}, V_{(1,1,1)}$ separately.
-
-## Status
-
-**Open R&D recorded.** The Lean class `MultiLinkJonesAtOne` is the
-hook — once an empirical or theoretical match is found, a new
-instance plugs in the right $(c_5, c_6)$ values and the
-precision-ladder extension auto-picks-up. Until then the default
-instance carries the probe's exploratory placeholders with the
-mismatch explicitly documented.

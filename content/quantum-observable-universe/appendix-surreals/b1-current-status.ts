@@ -26,4 +26,10 @@ export default remark({
     "graded-mikusinski",
     "exposition",
   ],
+  authorNotes: [
+    {
+      kind: "status",
+      body: "See [Table 1](#tbl:b1-current-status-table1-data).",
+    },
+  ],
 });

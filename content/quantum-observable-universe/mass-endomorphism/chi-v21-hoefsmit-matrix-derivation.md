@@ -107,16 +107,3 @@ verification recorded in `per-wedderburn-block-ck.witness.json`.
 A full Lean proof would unfold the 11-matrix product on
 `(Fin 2) × (Fin 2) → ℝ` matrices with `Real.sqrt` entries; tractable
 but length-substantial.
-
-## Status
-
-**Closed at the rational-identity level** (5 theorems sorry-free):
-factored $\leftrightarrow$ polynomial, Laurent decomposition, numerical checks
-at q=1, q=2.
-
-**Matrix-product trace identity STATED** with explicit matrices
-and word; proof marked sorry with `-- Ref:` to the sympy
-verification per CLAUDE.md §1.
-
-This honestly captures both what's formally proved and what's
-empirically backed.

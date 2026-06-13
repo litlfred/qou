@@ -19,4 +19,10 @@ export default remark({
     script: "folio-assistant/computations/probe_q_beta_cat_per_factor_decomposition.py",
     status: "experimental",
   },
+  authorNotes: [
+    {
+      kind: "status",
+      body: "Lean stub: **closed**, no `sorry`s. Provable by Mathlib `Real.sqrt_sq` +\n`ring`. Companion to `rem:markov-axioms-primitive` in the categorical-chain\nLean infrastructure.",
+    },
+  ],
 });

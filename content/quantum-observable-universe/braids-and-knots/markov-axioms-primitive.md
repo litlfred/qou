@@ -39,20 +39,3 @@ used in [`prop:categorical-chain-convergence-mechanisms`](#prop:categorical-chai
 (Mechanism 2 — linking-number locality). The conditional-class
 inter-knot-decoupling theorem now follows from the primitive Markov axioms,
 not from a separate axiomatic input.
-
-## Status
-
-The Lean stub [`markov-axioms-primitive.lean`](markov-axioms-primitive.lean):
-
-- Defines `class MarkovTraceAxioms` with fields for M1 and M3 (the two
-  needed for the factorisation; M2 is implicit in the cyclic-trace
-  construction; M4 follows from M3 via the Hecke quadratic).
-- Proves `markov_iterated_stab`: k applications of M3 give $\tau \cdot z^k$.
-- Proves `disjoint_product_factorisation`: from M3 alone, the disjoint
-  factorisation holds.
-- Discharges `MarkovDisjointStabilisation` from `MarkovTraceAxioms`.
-
-Status: **closed**, no `sorry`s. The two class fields (`tau_one`,
-`tau_stab`) carry the unavoidable axiomatic content (M1 and M3 are
-Jones-1985 axioms, not derivable from more primitive Lean content
-in this scope).

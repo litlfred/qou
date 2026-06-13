@@ -42,12 +42,3 @@ identity provable by `field_simp + ring`.
   `dimQ_V21_sq_in_u`.
 - `prop:hoefsmit-V21-cos-symmetrization` — Hoefsmit $b^2$ closed
   form has a no-sqrt counterpart via `hoefsmit_b_sq_in_u`.
-
-## Status
-
-**All theorems sorry-free.** Six concrete scalar identities backed
-by `field_simp + ring` proofs. This addresses the reviewer's repeated
-"vacuous True / concrete mathematical statement" critiques at the
-**scalar-invariant** level. The full matrix-level proofs (Yang-Baxter
-cubic on the V_(2,1) Hoefsmit matrices, etc.) remain open R&D, but
-the scalar discharges are now substantive.

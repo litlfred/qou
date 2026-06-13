@@ -40,15 +40,3 @@ Total: $1 + 4 + 2 = 7$.  The catalogue table above is
 exhaustive: any $\Sigma_4$-admissible single-crossing change
 reduces to one of these seven, possibly composed with itself or
 with $\Delta_\beta$ at multiple positions for $n$-fold processes.
-
-## Status
-
-The single-crossing local enumeration above is rigorous from the
-matrix algebra of [tm-interactions](#tm-interactions).  The global
-**closure-under-composition** claim (every multi-crossing
-$\Sigma_4$-admissible interaction is a finite product of these
-seven) is the content of *interaction completeness*; the explicit
-proof tracks the embeddability bound on $\Sigma_4$ from
-[Chapter](#chap:brings-surface) §[force-knot-identification](#rem:force-knot-identification)
-and is left to the formalisation pass.  The seven operators are
-the alphabet; closure is the grammar.

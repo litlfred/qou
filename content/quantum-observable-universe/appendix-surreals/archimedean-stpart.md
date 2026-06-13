@@ -89,23 +89,6 @@ generalisation of the main paper:
 3. Future work can investigate whether these corrections are
  physically meaningful (e.g., explain corrections to the QOU
  mass formula's $4\%$ MAE on $\mathcal{Q}$-values).
-
-## Status
-
-**Open.** Even formulating the precise statement requires:
-
-- defining the category $\mathbf{QOU}_{\mathbf{No}}^{\varepsilon}$
- with the relaxed axioms (the appendix's conjectures
- [infinitesimal-frobenius](#conj:infinitesimal-frobenius),
- [infinitesimal-observability](#conj:infinitesimal-observability),
- [vacuum-epsilon](#conj:vacuum-epsilon) make a start);
-- showing that $\mathrm{St}$ extends from
- $\mathbf{No}_{\mathrm{fin}}$ to morphisms in this category in a
- functorial way.
-
-Both steps require the surreal-categorical machinery that does
-not yet exist in mathlib.
-
 ## Proof strategy
 
 The conjecture is the *category-level* counterpart of

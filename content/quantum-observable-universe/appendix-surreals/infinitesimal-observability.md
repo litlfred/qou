@@ -73,14 +73,6 @@ at archimedean scale but restored at infinitesimal scale. The
 analog in particle physics is approximate isospin or chiral
 symmetry, which are exact in some idealised limit and broken at
 the physical scale by small parameters.
-
-## Status
-
-**Open** — the same construction-vs-tautology question as for
-[infinitesimal Frobenius](#conj:infinitesimal-frobenius). A
-worked example would resolve it; a Hochschild-cohomology
-obstruction theorem would refute it.
-
 ## Proof strategy
 
 Same architecture as

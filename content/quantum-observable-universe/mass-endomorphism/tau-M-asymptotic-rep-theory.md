@@ -130,20 +130,3 @@ Empirical verification per probe sequence:
 2. [`probe_q_beta_three_irrep_closed_form.py`](../../folio-assistant/computations/probe_q_beta_three_irrep_closed_form.py) — 1-d closed forms (rep-theory triviality).
 3. [`probe_q_beta_operator_valued_N1.py`](../../folio-assistant/computations/probe_q_beta_operator_valued_N1.py) — Kashiwara $\tilde f_1$ at N=1.
 4. [`probe_q_beta_operator_valued_N2.py`](../../folio-assistant/computations/probe_q_beta_operator_valued_N2.py) — geometric-tail N=2 (Macdonald-like).
-
-## Status
-
-The exponential-asymptotic form above is a **rep-theoretic
-prediction**, validated at $k = 0, 1, 2$ at $q_0$ to ${\leq} 25$ ppm
-precision. The $c_k^{(\lambda)}(b_\lambda)$ coefficients beyond $k = 2$
-are open R&D — pinning them down requires either:
-
-- Full Kashiwara crystal-graph matrix-exponential machinery
- (per-irrep $\exp(\tilde f_1)$ computation);
-- JM symmetric-function expansion with explicit $c_T(k)$ tabulation;
-- Macdonald $(q, q^2)$ specialisation evaluations;
-- Habiro-residue Borel resummation at chosen $\zeta_N$.
-
-'s N=1 result + N=2 partial result together establish that
-the structural form is correct; refining the $c_k$ coefficients to
-1 ppb requires per-anchor follow-up probes.

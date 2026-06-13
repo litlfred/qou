@@ -109,37 +109,6 @@ empirical closed form $-(b^2 + 1/2)$ may not be the categorically
 correct form — the framework's true $c_5$ likely has a Pell-Lucas-clean
 silver-ratio value waiting to be identified.
 
-## Implications for the $c_4..c_7$ derivation roadmap
-
-The silver-ratio observation:
-
-1. **Identifies the algebraic landscape of $Q_\beta$**: silver-ratio
-   (Pell-Lucas), NOT cyclotomic (as in FSC = $q \cdot [9]_q \cdot [10]_q$)
-   or simple q-rational (as in $G_q = q^2/(q-1)^4$).
-2. **Provides a clean test point** for $c_k$ closed forms:
-   evaluating at $q = 1 + \sqrt{2}$ should give Pell-Lucas-clean
-   rationals if the form is categorically correct.
-3. **Flags $c_5$ as the loose rung**: 4/5 c_k pass the silver-ratio
-   Pell-Lucas test; $c_5$ fails. This is consistent with the
-   2.4% residual gap for $c_5$ at $q_0$ noted in
-   [`docs/audits/-c-k-comprehensive-reference.md`](../../../docs/audits/-c-k-comprehensive-reference.md).
-4. **Hints at categorical source**: the Hecke quadratic's
-   self-referential fixed point structure at silver ratio
-   ($\sigma$-eigenvalues = $q^{\pm 1}$) suggests $c_k$ derivations
-   should pass through the Pell recursion $a_{n+1} = 2a_n + a_{n-1}$
-   acting on the V_(2,1) seminormal basis.
-
-## Status
-
-This is a **structural identification**, not a derivation of $c_k$
-from first principles. The silver-ratio limit gives a clean test
-point and identifies the relevant algebraic landscape (Pell-Lucas
-extension of $\mathbb{Q}$), but the actual closed forms for
-$c_4..c_7$ remain empirical conjectures (see
-[`prop:qbeta-c-k-closed-forms`](#prop:qbeta-c-k-closed-forms)).
-
-## Open
-
 Is there a categorical theorem in the framework's Hecke /
 Wedderburn-block content that uses the Pell recursion?
 The Pell recursion at $q = 1 + \sqrt{2}$ matches the Hecke quadratic

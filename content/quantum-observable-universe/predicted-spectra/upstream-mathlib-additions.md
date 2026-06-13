@@ -32,14 +32,6 @@ directly from `Real.sin_neg` and `tsum_neg`. This is the simplest
 Cl_2 functional equation; the proof technique extends to other
 identities (`Cl_2(θ + 2π) = Cl_2(θ)` periodicity, etc.) by
 analogous `tsum` rearrangements.
-
-## What's still upstream-Mathlib-pending
-
-See [Table 2](#tbl:upstream-mathlib-additions-table2-data).
-
-The first three are tractable Mathlib PRs; the fourth requires
-substantial Tauberian-theorem infrastructure.
-
 ## Significance
 
 The §3b-cond chain now has **two unconditional functional

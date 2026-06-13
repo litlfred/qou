@@ -82,21 +82,6 @@ Three uses:
  Frobenius algebras, parallel to the classical
  Hochschild-cohomology obstruction theory but valued in
  $\mathbf{No}$ rather than $\mathbb{R}$.
-
-## Status
-
-**Open.** Constructing a non-trivial example in
-$\mathrm{Rep}_{\mathbf{No}}(\mathrm{SU}_q(2))$ would establish (2);
-absence of such examples (i.e. every $\varepsilon$-Frobenius
-algebra is gauge-equivalent to a strict one) would refute it.
-
-The matter is delicate because the $\mathrm{Rep}(\mathrm{SU}_q(2))$
-category has rigid Frobenius structure
-([fibre functor rigidity](#rem:fibre-functor-rigidity)) — every
-small deformation is trivial. So the candidate examples must lie
-*outside* this rigid regime, in larger or non-rigid Frobenius
-algebras.
-
 ## Proof strategy
 
 The conjecture has two halves: standard-part recovery (easy)

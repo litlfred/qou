@@ -35,4 +35,10 @@ export default proposition({
     script: "folio-assistant/computations/probe_q_beta_operator_valued_N2.py",
     status: "experimental",
   },
+  authorNotes: [
+    {
+      kind: "status",
+      body: "The exponential-asymptotic form above is a **rep-theoretic\nprediction**, validated at $k = 0, 1, 2$ at $q_0$ to ${\\leq} 25$ ppm\nprecision. The $c_k^{(\\lambda)}(b_\\lambda)$ coefficients beyond $k = 2$\nare open R&D — pinning them down requires either:\n\n- Full Kashiwara crystal-graph matrix-exponential machinery\n (per-irrep $\\exp(\\tilde f_1)$ computation);\n- JM symmetric-function expansion with explicit $c_T(k)$ tabulation;\n- Macdonald $(q, q^2)$ specialisation evaluations;\n- Habiro-residue Borel resummation at chosen $\\zeta_N$.\n\n's N=1 result + N=2 partial result together establish that\nthe structural form is correct; refining the $c_k$ coefficients to\n1 ppb requires per-anchor follow-up probes.",
+    },
+  ],
 });

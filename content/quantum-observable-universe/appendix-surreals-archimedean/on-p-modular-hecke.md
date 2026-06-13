@@ -145,23 +145,6 @@ Possible physical readings (highly speculative):
 These are conjectural. The mathematical content — that modular
 Hecke at $\zeta_p$ corresponds to $\mathbf{On}_p$ surreals — is
 the actual claim.
-
-## Status
-
-**Open**. The conjecture is harder than its char-0 counterpart
-because:
-
-1. Mathlib's nimber-arithmetic library is even less developed
- than its surreal library.
-2. Modular Hecke combinatorics requires Kazhdan--Lusztig cell
- theory, also under-developed in formalisation.
-3. The $p$-ary sign-sequence-to-nimber map is not as 
- recursive as Conway's binary case.
-
-A first goal would be to verify the conjecture for $H_3(\zeta_2)$
-(the simplest non-trivial case) by hand: KL cells of $H_3$ at $q
-= -1$ should match the first few elements of $\mathbf{On}_2$.
-
 ## Note on QOU's main paper
 
 This conjecture is **not** load-bearing for QOU's main results;

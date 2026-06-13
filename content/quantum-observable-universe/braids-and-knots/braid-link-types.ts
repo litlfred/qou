@@ -16,4 +16,10 @@ export default remark({
     "hopf-link-explicit",
     "class-discharge",
   ],
+  authorNotes: [
+    {
+      kind: "status",
+      body: "Lean stub: **no `sorry`s**. The 2-strand case is fully closed.\nThe n-strand generalisation is enumerated as concrete combinatorial\ntheorems to be added in follow-up files.",
+    },
+  ],
 });

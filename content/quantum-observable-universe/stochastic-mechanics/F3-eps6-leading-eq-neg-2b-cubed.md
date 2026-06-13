@@ -57,9 +57,3 @@ The substantive open content of `ThreeFoldMarkovHopfExtraction` reduces to
 the **categorical identification** that the perturbative $\hbar_q^6$ piece
 of the τ_M-expansion factors through Hopf-link Jones values — that's now the
 only remaining axiomatic input.
-
-## Status
-
-Lean stub: **closed**, no `sorry`s. Provable by Mathlib `Real.sqrt_sq` +
-`ring`. Companion to `rem:markov-axioms-primitive` in the categorical-chain
-Lean infrastructure.

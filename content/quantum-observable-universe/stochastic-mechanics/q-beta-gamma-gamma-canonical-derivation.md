@@ -122,18 +122,6 @@ substrate-only data via the categorical chain, not fitted.
 the categorical-chain interpretation (Story B) is canonical
 because it traces back to substrate principles, while the
 empirical-fit interpretation (Story A) has free parameters.
-
-## Status
-
-This is a **derivation summary**, documenting the conclusion of the
-γγ chain trace. The chain itself is per-step formalised by:
-
-- [`prop:hoefsmit-V21-cos-symmetrization`](#prop:hoefsmit-V21-cos-symmetrization) (Step 1)
-- [`prop:markov-trace-frobenius-selection`](#prop:markov-trace-frobenius-selection) (Step 2)
-- [`prop:hecke-1d-irrep-closed-form-character`](#prop:hecke-1d-irrep-closed-form-character) (Steps 3-4)
-- [`prop:tau-M-asymptotic-rep-theory`](#prop:tau-M-asymptotic-rep-theory) (Steps 7-9)
-- [`prop:q-beta-categorical-precision-ladder`](#prop:q-beta-categorical-precision-ladder) (full ladder)
-
 ## Track-C open question
 
 The remaining open question (Track C per  plan): **can the

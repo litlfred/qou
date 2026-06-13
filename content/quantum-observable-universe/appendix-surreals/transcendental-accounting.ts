@@ -28,4 +28,10 @@ export default remark({
     "S5-galois-orbit",
     "ledger",
   ],
+  authorNotes: [
+    {
+      kind: "status",
+      body: "**Tabulation block.** Aggregates existing paper content under a\nsingle Goncharov-depth ledger. Adds two new structural observations:\n(1) the Jones-faithfulness $\\Rightarrow$ Vol-injectivity implication,\n(2) the $S_5$-equivariant 4-dim depth-3 period space at $\\zeta_5$.\nNeither is a new theorem; both are open structural claims awaiting\na sharp formulation.",
+    },
+  ],
 });

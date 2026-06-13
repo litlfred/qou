@@ -49,17 +49,6 @@ $(2 + q + q^{-1})/3 = (q^2 + 2q + 1)/(3q) = (q+1)^2/(3q)$.
 
 This is a pure polynomial-ring identity once $q^{-1}$ denominators are
 cleared.  Closed by `field_simp; ring` over $\mathbb{R}_{>0}$.
-
-## Status
-
-- **c=1 anchor** ($\mathrm{lw}(1) = 1$): proved in
-  [`prop:selection-rule-anchors-c1-c3`](#prop:selection-rule-anchors-c1-c3) (this branch).
-- **c=3 anchor** ($\mathrm{lw}(3) = 5/2 + (3/4)h^2$): proved in
-  [`prop:selection-rule-anchors-c1-c3`](#prop:selection-rule-anchors-c1-c3) (this branch).
-- **c=2 prediction** ($\mathrm{lw}(2) = (q+1)^2/(3q)$): proved here.
-- **General $c \geq 4$ prediction**: requires a q-deformed hook-length
-  identity in Lean; out of scope for this proposition.
-
 ## q-usage discipline
 
 Stated over real $q > 0$ (substrate-anchor regime).  The closed form

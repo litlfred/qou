@@ -146,13 +146,3 @@ information is physical.
 `QOU.AppendixSurreals.ValuationRing` is developed (currently
 pending). Physical layer speculative — depends on
 interpretation.
-
-## Status
-
-**Open and speculative.** This is the most strongly
-conjectural of the appendix's conjectures: it assumes a
-geometric-scheme picture of $X$ that the main paper does not
-require, and interprets the substrate parameter in a way that
-goes beyond the main-paper physics. Included here to record the
-natural connection between the paper's points-and-topology
-framework and the surreal lift.

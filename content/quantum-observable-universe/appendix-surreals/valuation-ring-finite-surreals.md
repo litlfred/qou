@@ -63,21 +63,3 @@ specialises that framework to the surreal setting:
 No new framework is introduced here; this remark records that
 the Robinson standard-part construction fits the same
 categorical framework already in use.
-
-## Lean status
-
-The Lean infrastructure lives in
-`QOU.AppendixSurreals.Basic`:
-
-- `IsFinite` (= membership in $\mathcal{O}$)
-- `IsInfinitesimal` (= membership in $\mathfrak{m}$)
-- `standardPart` (the quotient projection $\mathrm{st}$)
-- `isFinite_decomposition` (proves $\mathcal{O} = \mathbb{R}
-  \oplus \mathfrak{m}$ as $\mathbb{R}$-vector spaces via
-  Dedekind-sSup construction)
-- `standardPart_add`, `standardPart_mul` (proves the ring-hom
-  property)
-
-The valuation-ring and maximal-ideal as `Subring`/`Ideal`
-objects are not yet formalised — this would be a
-straightforward follow-up given the existing predicates.

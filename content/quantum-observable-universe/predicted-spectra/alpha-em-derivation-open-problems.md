@@ -46,71 +46,6 @@ start.
 Form A and Form B agree only at $q = q_0$; at every other $q$ they give
 different values for $1/\alpha$, confirming that they are not the same
 function of $q$ and that Form B's match is single-point fit.
-
-## Roadmap for an honest derivation
-
-The $1.55 \times 10^{-3}$ gap is approximately the size of an
-$O(\hbar_q^2)$ correction ($\hbar_q^2 \approx 9.8 \times 10^{-3}$ at
-$q_0$). Three plausible structural origins:
-
-1. **Carry out the Plancherel-character product explicitly.** The
- formula in [prop:gram-determinant-plancherel-ratio](#prop:gram-determinant-plancherel-ratio)
- is genuinely structural. Compute character coefficients
- $c_\lambda^{(s)} = \chi_\lambda(T_{2,9})$ and $c_\lambda^{(w)} = \chi_\lambda(T_{3,5})$
- in a fixed ambient algebra (e.g. $H_5$ or $H_{10}$ via Markov
- stabilization) and evaluate
- $\kappa = \prod_\lambda [\dim V_\lambda / \dim_q V_\lambda \cdot [n]_q!/n!]^{c^{(s)}_\lambda c^{(w)}_\lambda}$
- end-to-end (see [prop:gram-determinant-plancherel-ratio](#prop:gram-determinant-plancherel-ratio) for the structural source).
-
- **Result of first attempt (this audit, $n=3$).** Stabilising
- $T_{2,9}$ as $\sigma_1^9 \in B_3$ and using $T_{3,5} = (\sigma_1\sigma_2)^5 \in B_3$,
- with characters $\chi_{(3)}(\sigma_1^9) = q^9$, $\chi_{(2,1)}(\sigma_1^9) = q^9 - q^{-9}$,
- $\chi_{(1,1,1)}(\sigma_1^9) = -q^{-9}$ and $\chi_{(3)}((\sigma_1\sigma_2)^5) = q^{10}$,
- $\chi_{(2,1)}((\sigma_1\sigma_2)^5) = -1$ (cube-root structure on $V_{(2,1)}$ since
- $(\sigma_1\sigma_2)^3$ is central with content sum $0$), $\chi_{(1,1,1)}((\sigma_1\sigma_2)^5) = q^{-10}$,
- the Plancherel-character product evaluates at $q_0$ to
- $\kappa \approx 7 \times 10^{-6}$ — **not** the $\sim 1.888$
- required to match CODATA.
-
- This rules out $n=3$ as the correct ambient. Next steps: try
- $n = 5$ (where $T_{3,5}$ lives more accordingly) and $n = 10$
- (matching the $\binom{10}{2} = 45$ narrative). Both require
- explicit Hecke character tables in higher dimension and are
- non-trivial computations.
-
-2. **Recognise the correction as $q$-Plancherel measure on Wedderburn
- blocks.** The bare formula uses force-carrier complexity
- $[9]_q[10]_q$; the correction may come from re-weighting by the
- Plancherel measure of the Hecke ambient algebra.
-
- **Result of first attempt (this audit, $n=5$).** Set
- $T_{2,9} \boxtimes T_{3,5} \in B_5$ as the disjoint-union 5-strand
- braid. Plancherel measure $P(\lambda) = (\dim_q V_\lambda)^2 / [5]_q!$
- on partitions of $5$ is computable; common natural sums tested:
-
- - $\sum_\lambda P(\lambda) \cdot \dim V_\lambda / \dim_q V_\lambda$
- gives $\sim 6.83$ (not the required $1 + 1.55 \times 10^{-3}$).
- - $\prod_\lambda (\dim V_\lambda / \dim_q V_\lambda)^{P(\lambda)}$
- gives $\sim 0$ (because $P(\lambda)$ values reach $131$ on
- $\lambda = (5)$ and $(1^5)$, blowing up the product).
- - $\sum_\lambda P(\lambda)^2$ gives $\sim 3.5 \times 10^4$.
-
- None matches the target correction.
-
-3. **Direct $q$-rational scan of the multiplicative correction.**
- Required factor: $1 + \hbar_q^2 \cdot X$ with
- $X(q_0) \approx 0.15841$. Scan over
- $X = \hbar_q^k \cdot [a]_q \cdot [b]_q / ([c]_q \cdot [d]_q)$ for
- integers $1 \leq a,b,c,d \leq 12$ at tolerance $10^{-4}$:
- **zero matches.** Closest single-ratio form is $\hbar_q^2 / [6]_q$
- at $\sim 1.2\%$ off, which is well outside the precision required
- for a structural identity.
-
-4. **Examine the role of the $\mathbb{CP}^1$-fibration on the state
- bundle.** The bare derivation uses scalar trace; a vector-valued
- refinement on the $\mathbb{CP}^1$ fibre could produce a corrective
- factor of order $\hbar_q^2$. Not yet attempted.
-
 ## Status of derivation effort (this audit)
 
 Four computational paths to close the $1.55 \times 10^{-3}$ correction
@@ -270,22 +205,3 @@ The next-order term $\alpha/(4\pi)$ is suggestive of a Schwinger-like
 1-loop self-coupling. The numerical fit places this coefficient at
 $\sim 1.4\%$ off from exactly $1/(4\pi)$; the true coefficient may
 be $1/(2\pi\cdot[2]_q)$ or another small $q$-correction.
-
-### Remaining work (the mechanism is now derived)
-
-Items 1–2 of the earlier checklist are **resolved** by
-[`prop:photon-ir-zero-mode-bring`](#prop:photon-ir-zero-mode-bring): the
-"3-manifold" is the $2$-surface $M_{\text{Bring}}$, and the photon zero-mode
-coefficient $b_1/\operatorname{Area} = 2g/(4\pi(g-1)) = 2/(3\pi)$ is proven
-(Lean `photonZeroModeShift_at_g4`, sorry-free). What remains:
-
-1. **Verify UV finiteness.** Reshetikhin–Turaev shadow-world regularisation
- should produce a finite answer (force-carrier complexity $[9]_q[10]_q$
- regularises the categorical sum, replacing the continuum momentum integral).
-2. **Compute the next-order self-energy** $\alpha/(4\pi)$ as a 2-loop graph
- (the $n=2$ jet order); the simplest closed forms $1/(4\pi)$, $1/(2\pi[2]_q)$
- are near-misses at $\sim 0.4\%$.
-
-The numerical match at $5.7 \times 10^{-8}$ is no coincidence; the leading
-mechanism is derived, with UV finiteness and the next-order term the open
-remainder.

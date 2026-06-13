@@ -124,15 +124,3 @@ Three uses specific to the main paper:
 For the appendix, use $\preceq, \prec, \asymp, \simeq$ uniformly.
 The main paper can adopt this as a *macro-level* convention in a
 future revision, reserving $O, o, \Theta, \sim$ for legacy citations.
-
-## Lean status
-
-A full formalisation of Conway normal form requires Hahn series
-with surreal-valued exponents — partially present in mathlib
-(`Mathlib.RingTheory.HahnSeries`) but not yet integrated with
-the `SurrealField` axiomatic class. The $\ordw$ function
-as a group homomorphism can be stated once that integration
-lands; meanwhile the valuation-ring structure
-([valuation ring](#rem:valuation-ring-finite-surreals)) gives
-enough infrastructure to support the asymptotic dictionary at
-the level of the standard-part map.

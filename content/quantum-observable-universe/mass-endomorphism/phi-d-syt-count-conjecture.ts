@@ -20,4 +20,10 @@ export default remark({
     "per-wedderburn-block",
     "generalization",
   ],
+  authorNotes: [
+    {
+      kind: "status",
+      body: "**n = 3 fully verified** in Lean. **n $\\ge$ 4 open** — concrete next\nprobe is the B_4 typed-braid character difference at each of the\nfive irreps, testing whether the predicted $\\Phi_4, \\Phi_{12}, \\Phi_8$\nfactors appear.",
+    },
+  ],
 });
