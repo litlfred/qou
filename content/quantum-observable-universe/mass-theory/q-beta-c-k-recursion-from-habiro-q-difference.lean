@@ -12,11 +12,16 @@
   a concrete c_k predictor.  The proved seed c_2 = -1 (PR #1602,
   bar-even constraint) is an input to `applyRecursion`.
 
-  Sorry-free.  Two ingredients:
+  Sorry-free.  Ingredients:
 
   * `structure CKRecursion R` — depth + kernel-vector data.
   * `def applyRecursion` — one step of the recursion (inner product
     of the kernel with the last `depth` c_k values).
+  * `def esymm` + `esymm_neg` + `esymm_bar_parity` — the
+    **parity-alternation theorem**: the recursion coefficients
+    `a_j = e_j({rates})` alternate bar-parity (`bar(e_j) = (-1)^j e_j`)
+    when the f-map feeds bar-odd per-mode rates.  Mode-set-independent;
+    the structural law behind the ladder's parity bookkeeping.
 
   Ref: [pr1602] https://github.com/litlfred/qou/pull/1602
        [pr1750] https://github.com/litlfred/qou/pull/1750
@@ -27,10 +32,12 @@
        [wenzl1988] https://doi.org/10.1007/BF02101492
        docs/audits/2026-06-03-qbeta-markov-trace-shape-collapse.md
        docs/audits/2026-06-03-qbeta-sdp-strict-complementarity-partial.md
+       docs/audits/2026-06-13-qbeta-root-of-unity-residue-program.md
 -/
 
 import Mathlib.Algebra.Field.Basic
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
+import Mathlib.Data.Finset.Powerset
 import Mathlib.Data.Fin.Basic
 import Mathlib.Tactic.Ring
 
@@ -94,5 +101,61 @@ theorem applyRecursion_linear {R : Type u} [Field R] (rec : CKRecursion R)
   ring
 
 end CKRecursion
+
+/-! ## Parity-alternation of the recursion coefficients
+
+  In the heat-route product picture the depth-$d$ recursion coefficients
+  $a_j$ are the **elementary symmetric polynomials** $e_j$ of the
+  per-mode rates $r_\lambda = (q-1)\,\mu_\lambda$.  When the $f$-map feeds
+  *bar-odd* rates (the bar-odd projections, which still carry each mode's
+  root-of-unity content by the cyclotomic bar-stability lemma), the
+  coefficients alternate bar-parity:
+  $\overline{e_j} = (-1)^j e_j$.  So $a_j$ is bar-EVEN for even $j$ and
+  bar-ODD for odd $j$ — the structural law behind the ladder's parity
+  bookkeeping (bar-even seed $c_2 = -1$ driven by a bar-odd $a_1 = -c_3$,
+  a bar-even $a_2$, a bar-odd $a_3$, …).  It is a one-line consequence of
+  $e_j(-x) = (-1)^j e_j(x)$, and is independent of which modes are active. -/
+
+open Finset in
+/-- **Elementary symmetric polynomial** $e_j(r)$ of a finite family
+    `r : Fin n → R`: the sum, over $j$-element subsets, of the product of
+    the chosen rates.  The depth-$d$ recursion coefficient $a_j$ is
+    $e_j$ of the active per-mode rates $r_\lambda = (q-1)\mu_\lambda$. -/
+def esymm {R : Type u} [CommRing R] {n : ℕ} (r : Fin n → R) (j : ℕ) : R :=
+  ∑ S ∈ powersetCard j (univ : Finset (Fin n)), ∏ i ∈ S, r i
+
+/-- **Negating the rates scales $e_j$ by $(-1)^j$.**  Each $j$-subset
+    product picks up one sign per chosen element, i.e. $(-1)^j$, which
+    factors out of the sum. -/
+theorem esymm_neg {R : Type u} [CommRing R] {n : ℕ} (r : Fin n → R) (j : ℕ) :
+    esymm (fun i => - r i) j = (-1 : R) ^ j * esymm r j := by
+  unfold esymm
+  rw [Finset.mul_sum]
+  refine Finset.sum_congr rfl fun S hS => ?_
+  rw [Finset.mem_powersetCard] at hS
+  calc ∏ i ∈ S, -(r i)
+      = ∏ i ∈ S, ((-1 : R) * r i) := by
+        refine Finset.prod_congr rfl fun i _ => ?_
+        ring
+    _ = (∏ i ∈ S, (-1 : R)) * ∏ i ∈ S, r i := Finset.prod_mul_distrib
+    _ = (-1 : R) ^ S.card * ∏ i ∈ S, r i := by rw [Finset.prod_const]
+    _ = (-1 : R) ^ j * ∏ i ∈ S, r i := by rw [hS.2]
+
+/-- **Parity-alternation theorem.**  For an involutive ring homomorphism
+    `bar` under which every rate is **bar-odd** (`bar (r i) = - r i`), the
+    elementary symmetric polynomials satisfy $\overline{e_j} = (-1)^j e_j$.
+    Hence the recursion coefficient $a_j = e_j$ is bar-EVEN for even $j$ and
+    bar-ODD for odd $j$ — they alternate bar-parity, independent of which
+    modes are active.  (The bar `q ↦ q⁻¹` of the fibre ring instantiates
+    `bar`.) -/
+theorem esymm_bar_parity {R : Type u} [CommRing R] {n : ℕ} (bar : R →+* R)
+    (r : Fin n → R) (j : ℕ) (hodd : ∀ i, bar (r i) = - r i) :
+    bar (esymm r j) = (-1 : R) ^ j * esymm r j := by
+  have hmap : bar (esymm r j) = esymm (fun i => bar (r i)) j := by
+    unfold esymm
+    rw [map_sum]
+    refine Finset.sum_congr rfl fun S _ => ?_
+    rw [map_prod]
+  rw [hmap, show (fun i => bar (r i)) = (fun i => - r i) from funext hodd, esymm_neg]
 
 end QOU.QBeta.CKRecursion
