@@ -847,6 +847,41 @@ export function checkAuthorNotesPollution(mdPath: string): CheckerResult {
   return { result: hits.length > 0 ? "fail" : "pass", hits };
 }
 
+// ── voice-status-section ──────────────────────────────────────────
+// Work-tracking SECTION HEADERS do not belong in scholarly .md prose.
+// Flags markdown headers whose text carries a status / todo / roadmap
+// keyword: `## Status`, `### Status (2026-…)`, `## Formalization status`,
+// `## TODO`, `## Pending`, `## Roadmap`, `## Next steps`, `## Work
+// remaining`. Status / roadmap content migrates to the `.ts` `authorNotes`
+// field (CLAUDE.md §4d); todos move to `.beans/` (owner directive
+// 2026-06-13) — never the paper. Complements voice-status-leak (inline
+// markers) and voice-author-notes-pollution (banners / PR# / dates).
+// Legitimate scholarly sections ("Open problems", "Discussion",
+// "Limitations", "Outlook") are NOT flagged. Skips fenced code blocks.
+const STATUS_SECTION_HEADER_RE =
+  /^#{1,6}\s+(?=.*\b(?:status|todo|to-?do|pending|roadmap|punch\s*list|next\s+steps?|(?:work\s+remaining|remaining\s+work|outstanding\s+work)|implementation\s+plan)\b).*/i;
+
+export function checkStatusSectionHeader(mdPath: string): CheckerResult {
+  const { lines } = readSource(mdPath);
+  const hits: CheckerHit[] = [];
+  let inFence = false;
+  for (let i = 0; i < lines.length; i++) {
+    const l = lines[i];
+    if (/^```/.test(l.trim())) {
+      inFence = !inFence;
+      continue;
+    }
+    if (inFence) continue;
+    if (STATUS_SECTION_HEADER_RE.test(l))
+      hits.push({
+        file: mdPath,
+        line: i + 1,
+        text: `status-section-header: ${l.trim().slice(0, 200)}`,
+      });
+  }
+  return { result: hits.length > 0 ? "fail" : "pass", hits };
+}
+
 // ── Dispatch table ──────────────────────────────────────────────
 
 export const AUTOMATED_CHECKERS: Record<
@@ -867,6 +902,8 @@ export const AUTOMATED_CHECKERS: Record<
     p.md ? checkEditorializing(p.md) : { result: "pass", hits: [] },
   "voice-author-notes-pollution": (p) =>
     p.md ? checkAuthorNotesPollution(p.md) : { result: "pass", hits: [] },
+  "voice-status-section": (p) =>
+    p.md ? checkStatusSectionHeader(p.md) : { result: "pass", hits: [] },
   "voice-ai-slop": (p) =>
     p.md ? checkAiSlop(p.md) : { result: "pass", hits: [] },
   "voice-scholarly-default": (p) =>
