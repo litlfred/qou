@@ -80,6 +80,7 @@ import QOU.BraidKnot.GramSeminormalBlock
 import QOU.BraidKnot.GSReductionOrder
 import QOU.BraidKnot.MassGapKeystone
 import QOU.BraidKnot.MassGapObstruction
+import QOU.BraidKnot.CrossingGradedModel
 
 /-!
 # BraidKnot — Module Index
