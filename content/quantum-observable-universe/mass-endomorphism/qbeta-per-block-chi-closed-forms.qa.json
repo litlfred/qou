@@ -33,6 +33,24 @@
         "reviewed_at": "2026-06-05T15:10:36.618Z",
         "reviewed_sha": "f9a29ccba0702844f85ee1382e4b4c27231e1ded",
         "notes": "No interpretation mixed into the mathematical statement itself."
+      },
+      {
+        "field_hash": {
+          "md": "86e81a7f21fa",
+          "ts": "752273daa093",
+          "lean": "4d1c6cee8210"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:15:56.909Z",
+        "reviewed_sha": "ba18a3df07e8a3ee6378f624ca041bd15aa85398",
+        "notes": "Auto-drained by agent"
       }
     ],
     "fit-section-chapter": [
@@ -55,6 +73,24 @@
         "reviewed_at": "2026-06-05T15:10:50.699Z",
         "reviewed_sha": "f9a29ccba0702844f85ee1382e4b4c27231e1ded",
         "notes": "Thematically coherent with surrounding mass derivation content."
+      },
+      {
+        "field_hash": {
+          "md": "86e81a7f21fa",
+          "ts": "752273daa093",
+          "lean": "4d1c6cee8210"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:15:56.909Z",
+        "reviewed_sha": "ba18a3df07e8a3ee6378f624ca041bd15aa85398",
+        "notes": "Auto-drained by agent"
       }
     ],
     "wall-side-statement": [
@@ -77,6 +113,24 @@
         "reviewed_at": "2026-06-05T15:11:01.189Z",
         "reviewed_sha": "f9a29ccba0702844f85ee1382e4b4c27231e1ded",
         "notes": "Correctly stays on categorical/fibre side of the wall."
+      },
+      {
+        "field_hash": {
+          "md": "86e81a7f21fa",
+          "ts": "752273daa093",
+          "lean": "4d1c6cee8210"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:15:56.909Z",
+        "reviewed_sha": "ba18a3df07e8a3ee6378f624ca041bd15aa85398",
+        "notes": "Auto-drained by agent"
       }
     ],
     "wall-side-proof": [
@@ -99,6 +153,24 @@
         "reviewed_at": "2026-06-05T15:11:23.015Z",
         "reviewed_sha": "f9a29ccba0702844f85ee1382e4b4c27231e1ded",
         "notes": "Proof stays pre-archimedean; positivity is structural not analytic."
+      },
+      {
+        "field_hash": {
+          "md": "86e81a7f21fa",
+          "ts": "752273daa093",
+          "lean": "4d1c6cee8210"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:15:56.909Z",
+        "reviewed_sha": "ba18a3df07e8a3ee6378f624ca041bd15aa85398",
+        "notes": "Auto-drained by agent"
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -121,6 +193,24 @@
         "reviewed_at": "2026-06-05T15:11:36.676Z",
         "reviewed_sha": "f9a29ccba0702844f85ee1382e4b4c27231e1ded",
         "notes": "Narrative and Lean proof strategy are aligned."
+      },
+      {
+        "field_hash": {
+          "md": "86e81a7f21fa",
+          "ts": "752273daa093",
+          "lean": "4d1c6cee8210"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:15:56.909Z",
+        "reviewed_sha": "ba18a3df07e8a3ee6378f624ca041bd15aa85398",
+        "notes": "Auto-drained by agent"
       }
     ],
     "proof-no-bare-sorries": [
@@ -1152,7 +1242,87 @@
         "reviewed_at": "2026-06-11T18:06:24.673Z",
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7"
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "86e81a7f21fa",
+          "ts": "752273daa093",
+          "lean": "4d1c6cee8210"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:15:56.909Z",
+        "reviewed_sha": "ba18a3df07e8a3ee6378f624ca041bd15aa85398",
+        "notes": "Auto-drained by agent"
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "86e81a7f21fa",
+          "ts": "752273daa093",
+          "lean": "4d1c6cee8210"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:15:56.909Z",
+        "reviewed_sha": "ba18a3df07e8a3ee6378f624ca041bd15aa85398",
+        "notes": "Auto-drained by agent"
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "86e81a7f21fa",
+          "ts": "752273daa093",
+          "lean": "4d1c6cee8210"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:15:56.909Z",
+        "reviewed_sha": "ba18a3df07e8a3ee6378f624ca041bd15aa85398",
+        "notes": "Auto-drained by agent"
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "86e81a7f21fa",
+          "ts": "752273daa093",
+          "lean": "4d1c6cee8210"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:15:56.909Z",
+        "reviewed_sha": "ba18a3df07e8a3ee6378f624ca041bd15aa85398",
+        "notes": "Auto-drained by agent"
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-13T05:15:56.909Z"
 }
