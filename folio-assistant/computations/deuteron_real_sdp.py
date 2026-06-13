@@ -65,7 +65,7 @@ from pyhecke.lp_dual_solver import (  # noqa: E402
     solve_psd_operator_selection_sdp,
 )
 from murnaghan_nakayama import dim_specht  # noqa: E402  shared hook-length dim
-from nucleus_sdp_assembly import build_cost_gram, tr_M_from_cache  # noqa: E402
+from nucleus_sdp_assembly import build_cost_gram, tr_M_from_cache, solve_real_sdp  # noqa: E402
 
 COST_WITNESS = _pb.witness_path("iterative-lp-dual-h6-deuteron.witness.json", HERE)
 BRANCHING_WITNESS = _pb.witness_path("sublemma-2-1-deuteron-branching.witness.json", HERE)
@@ -191,11 +191,10 @@ def main() -> int:
     # result: a real per-nucleus SDP is ill-posed without Phase B's
     # color-flavor constraints — the empty-SDP layer cannot be trivially
     # upgraded by attaching a cost alone.
-    G = np.diag(frob_diag)
-    lp = solve_operator_selection_lp(t, G, n_target)
-    sdp = solve_psd_operator_selection_sdp(t, G, n_target)
-    lp_d = lp.to_dict()
-    sdp_d = sdp.to_dict()
+    # paired LP+SDP operator-selection solve (always emits both duals) via the
+    # shared dual-emitting wrapper.
+    _r = solve_real_sdp(_cg, n_target)
+    lp_d, sdp_d = _r["lp"], _r["sdp"]
     _gap_full = lp_d.get("duality_gap")
     bounded = (_gap_full is not None and abs(float(_gap_full)) < 1e-6
                and bool(lp_d.get("feasible", True)))
