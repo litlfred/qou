@@ -19,7 +19,7 @@ import {
   leanPackageByName,
 } from "../../folio-assistant/schemas/lean-packages";
 import { mkdirSync } from "fs";
-import { dirname, join } from "path";
+import { dirname } from "path";
 import type {
   BlockQaReport,
   QaFieldHash,
