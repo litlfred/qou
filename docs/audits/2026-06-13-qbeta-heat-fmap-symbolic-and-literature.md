@@ -133,6 +133,60 @@ quantum modularity predicts (the odd part under the S-transform).
      constrain the single scalar `S` (the open keystone) — periods are
      computable invariants, not fits.
 
+## 2-ter. The Lagrangian structure makes F q-holonomic (resolves the ratio-obstruction)
+
+"Is ours *provably* the same q-holonomic/AJ recurrence?" — not as a bare claim:
+the recursion engine is proved *conditional on F being q-holonomic*, and `F =
+Q_β/(Q_A·cos α_eff)` is a **ratio** — and q-holonomic functions are **not closed
+under division** (PR #1844 indeed found **no low-order holonomic recurrence** on
+`c_2..c_10`, data-floor-limited). So the conditional's hypothesis is exactly the
+crux.
+
+**The heat-kernel / Lagrangian realisation supplies it.** Realising `F` as the
+q-heat **partition function** `Z_q(t) = Σ_λ d_λ exp_q(−μ_λ t)` — the trace of the
+q-heat-flow Lagrangian `∂_t u = −Δ_q u` — makes it a **finite sum of depth-1
+q-holonomic modes** (`exp_q` is depth-1; `QBetaPreArchHeatDepthOneKernel`).
+Finite sums of q-holonomic functions are q-holonomic (closure under `+`), depth
+`≤ |Λ|` — **provable**, with the depth-1 and depth-2 cases already sorry-free
+Lean. This is the **same mechanism** that makes the colored Jones q-holonomic
+(Garoufalidis–Lê 2005): it is a TQFT state-sum / action partition function. So
+the variational origin upgrades the recursion from *conditional-on-holonomicity*
+to **holonomic-by-construction**, and tightens the AJ analogy (both are action
+partition functions). Open piece narrows to the **identification** `F = Z_q`
+(which `Λ`, which weights) + the `t↔u` f-map.
+
+## 2-quater. Zagier is archimedean — pull it back to the fibre (provable handles)
+
+Quantum modularity (`zagier2010`) is an **archimedean** phenomenon (`ℏ→0`
+asymptotics near roots of unity; the analytic S-transform) — *after* the QOU
+fibre↔archimedean wall. The `c_k` live in the **fibre** (formal q / the Habiro
+ring), so we do **not** need the (hard, conjectural) archimedean theorem; we
+need its **fibre shadow**, which is algebraic and provable in the QOU setting:
+
+- **The Habiro ring `Ẑ[q]` *is* the pull-back** — the fibre/algebraic object
+  whose root-of-unity evaluation *produces* quantum modularity. The `c_k`
+  already live here.
+- **S-transform → bar-involution.** The analytic `q↦q̃` pulls back to the
+  **bar-involution `q↦q⁻¹`** — a ring automorphism of `ℤ[q,q⁻¹]` / the Habiro
+  ring, purely algebraic. The bar-ODD `a_1` requirement is then an **eigenspace
+  condition** (`a_1` in the `(−1)`-eigenspace), provable once `R` is built.
+- **Ohtsuki periods → root-of-unity residues.** The archimedean period series
+  pulls back to the Habiro ring's defining structure (an element is fixed by its
+  residues at roots of unity). The kernel constraints **already carry two such
+  fibre data** — the **ζ₄ residue** and the **period-3 (ζ₃/ζ₆) resonance** (the
+  `d=3≡6` q-difference Fourier mode). These are exactly the algebraic shadows of
+  quantum-modular evaluations, provable in formal q (no asymptotics). Pulling
+  back *systematically* would give the full root-of-unity residue structure that
+  pins `R`.
+- **Net.** Every structural ingredient — `F` q-holonomic (Lagrangian), `a_1`
+  bar-odd (S-shadow), `R`'s root-of-unity residues (period shadow) — is
+  **fibre-level and algebraically provable**. The single irreducibly-archimedean
+  input remains the scalar `S = Q_β/E₀` (CAL-3). Cleanest keystone statement:
+  *prove the fibre kernel `R` from its root-of-unity residues + bar-parity +
+  pole; leave `S` to CAL-3.*
+- **Caveat (critical):** finitely many root-of-unity residues **constrain** `R`
+  but need not **determine** it — this is a provable *handle*, not a closure.
+
 ## 3. Status + recommended follow-ups
 
 - **No `c_3` value; registry tiers untouched.** This pins the *fibre* half of
