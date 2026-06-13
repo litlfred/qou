@@ -158,7 +158,7 @@ theorem gramMatrix_top_left (u : ℝ) : gramMatrix u 0 0 = 1 := by
   unfold gramMatrix gramEntry
   simp [Matrix.of_apply]
 
-/-- **THEOREM (DEFERRED — Phase 1b-2).** The Gram matrix is invertible
+/-! **THEOREM (DEFERRED — Phase 1b-2).** The Gram matrix is invertible
     when `u > 1` (equivalently `q > 1`).
 
     **Why `u > 1` rather than `u ≠ 1`** (correctness fix, 2026-05-25):
