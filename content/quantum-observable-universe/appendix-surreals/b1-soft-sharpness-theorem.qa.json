@@ -206,6 +206,23 @@
         "reviewed_at": "2026-05-28T18:29:30.189Z",
         "reviewed_sha": "48e52133aae5e86dcc7bb79865fcd7c50fca77f9",
         "notes": "Lean sibling has only stub declarations (`: True := trivial`); canonical formalisation lives elsewhere and is audited by lean-compile-audit."
+      },
+      {
+        "field_hash": {
+          "md": "429f471be927",
+          "ts": "469b6420a8e3",
+          "lean": "1e139a26927b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T03:56:09.631Z",
+        "reviewed_sha": "54c3d2b33e9cb4b3ec331294d81e4f4f27eb842f"
       }
     ],
     "voice-author-notes-pollution": [
@@ -1129,7 +1146,83 @@
         "reviewed_at": "2026-06-11T18:06:24.673Z",
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7"
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "429f471be927",
+          "ts": "469b6420a8e3",
+          "lean": "1e139a26927b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T03:56:09.631Z",
+        "reviewed_sha": "54c3d2b33e9cb4b3ec331294d81e4f4f27eb842f"
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "429f471be927",
+          "ts": "469b6420a8e3",
+          "lean": "1e139a26927b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T03:56:09.631Z",
+        "reviewed_sha": "54c3d2b33e9cb4b3ec331294d81e4f4f27eb842f"
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "429f471be927",
+          "ts": "469b6420a8e3",
+          "lean": "1e139a26927b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T03:56:09.631Z",
+        "reviewed_sha": "54c3d2b33e9cb4b3ec331294d81e4f4f27eb842f"
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "429f471be927",
+          "ts": "469b6420a8e3",
+          "lean": "1e139a26927b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T03:56:09.631Z",
+        "reviewed_sha": "54c3d2b33e9cb4b3ec331294d81e4f4f27eb842f"
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-13T03:56:09.631Z"
 }
