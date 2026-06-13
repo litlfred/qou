@@ -24,7 +24,7 @@ class CemeteryGroupRigidity (R : Type) [CommRing R] (q : R) [C : CrystalGraphRea
       cemetery group `ker τ`. This is the structural content "tilting modules
       restrict the kernel of `G(q)`": being a cemetery module is exactly carrying
       a normal form whose node is τ-annihilated. -/
-  cemeteryModule_inCemetery : ∀ T, IsCemeteryModule T → E.inCemetery (C.nodeOf T)
+  cemeteryModule_inCemetery : ∀ T : C.NormalForm, IsCemeteryModule T → E.inCemetery (C.nodeOf T)
   module_forces_words : (∀ T, IsCemeteryModule T → E.tauImage T = 0) → RestrictsKernel → GeneratesWords
 
 lemma tilting_module_rigidity (R : Type) [CommRing R] (q : R)
