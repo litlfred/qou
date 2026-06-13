@@ -260,7 +260,14 @@ order. The selection argument itself is machine-verified in
 mode-counting functional under the Hoefsmit single-mode
 normalisation, the $n$-unlink Jones value fails $n$-stability for
 every $q > 0$, $q \neq 1$, and the normalised trace is
-content-free. The free-field $\leftrightarrow$ disjoint-unknot
+content-free. The prefactor's arithmetic core is likewise
+machine-verified in `CasimirZetaPrefactor.lean`: $\zeta(-3) = 1/120$
+(from Mathlib's negative-integer Bernoulli formula, with
+$B'_4 = -1/30$) and $(\pi^{2}/6)\cdot(1/120) = \pi^{2}/720$; the
+value $1/120$ is recovered regulator-independently from a physical
+exponential cutoff (the $S(\varepsilon) - 6/\varepsilon^{4} \to 1/120$
+witness), via the *same* Bernoulli number $B_4$ — so the prefactor
+is not an artefact of $\zeta$-continuation. The free-field $\leftrightarrow$ disjoint-unknot
 identification this rests on is **not a fresh assumption**: QOU
 already represents a free photon mode as the identity braid
 ([`rem:trivial-knot-photon-interpretation`](#rem:trivial-knot-photon-interpretation)),
