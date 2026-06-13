@@ -337,6 +337,29 @@ both occur with **no** `insteadOf` redirect set (so they are additive to
    sibling scope map:
    [`docs/coordination/2026-06-08-lean-cache-architecture.md`](../../../docs/coordination/2026-06-08-lean-cache-architecture.md).
 
+> **🟥 VERIFY a single file with `lean`-direct — NEVER `lake build`
+> (2026-06-13, cost a session ~40 min).** To *verify* a PR's one or two
+> changed `.lean` files, run `lean`-direct (the gotcha-#2 recipe above).
+> Do **not** reach for `lake build <Module>`: even for a single module it
+> re-resolves the dependency graph and **rebuilds Mathlib from source**
+> — the `import Mathlib.Tactic` closure alone is ~3000 modules / 40+ min —
+> *and* it wipes the restored oleans (gotcha #2). The Mathlib oleans **are
+> reachable**: they ship on the `lake-cache/qou-<toolchain-slug>` branch
+> (e.g. `lake-cache/qou-v4-24-0`, ~2919 oleans incl. the `Mathlib.Tactic`
+> aggregator) — `git fetch --depth=1` + extract is ~2 min. Do not conclude
+> "Mathlib is unreachable / Lean uncompilable" until the cache restore +
+> `lean`-direct path has been tried.
+>
+> **Recovery if you already ran `lake build` and it started rebuilding:**
+> the wipe is partial-to-total — check
+> `find .lake/packages/mathlib -name '*.olean' | wc -l`; if it is well
+> below ~2919 (observed `2919 → 2204`, taking out `Mathlib/Tactic.olean`),
+> **kill lake and RE-RESTORE the cache branch** (the Step-0 fetch+extract)
+> *before* `lean`-direct — otherwise it fails with
+> `object file '…/Mathlib/Tactic.olean' … does not exist`. (To kill lake
+> without the `pkill -f` pattern matching its own argv, use a bracket
+> escape: `pkill -f 'lake buil[d]'`.)
+
 **When to use which:**
 
 - LSP iteration on one or two files → cache 403 fallback above (warm
