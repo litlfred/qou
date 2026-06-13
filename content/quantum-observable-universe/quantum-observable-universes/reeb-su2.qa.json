@@ -802,7 +802,29 @@
         "reviewed_at": "2026-06-11T18:06:24.673Z",
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "43ba6984b17e",
+          "ts": "4920941480fb",
+          "lean": "5722cd7378c0"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "quantum-observable-universes.ts:139 — 'reeb-su2' listed in sec:differential-structures-reeb directly after categorical-reeb-unique-proof; reeb-su2.md:1 'Continuing [maximal torus of SU(2)]... the categorical Reeb derivation' — SU(2) worked example of def:categorical-reeb (same section, line 134)",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:35:44.786Z",
+        "reviewed_sha": "84737110e8c6a4f077f1af53c3b046e9969dd466",
+        "notes": "Example interprets def:categorical-reeb in its home section; continues ex:maximal-torus-su2 thread; no sibling carries the same instance"
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-13T01:35:44.786Z"
 }
