@@ -1049,7 +1049,214 @@
         "reviewed_at": "2026-06-11T18:06:24.673Z",
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "45e841e0abb3",
+          "ts": "1f46e793f619",
+          "lean": "0746cc69c717"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "molecular-construction.ts:131 — ice-pauling-residual under sec:h2o-computation; ice I_h H-bonding extends the water braid",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T00:29:10.749Z",
+        "reviewed_sha": "b53556a27c586d54f0c61eb2fdae0ea5ecf901f6",
+        "notes": "Ice hydrogen-bond combinatorics fits the water-computation section"
+      }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "45e841e0abb3",
+          "ts": "1f46e793f619",
+          "lean": "0746cc69c717"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "ice-pauling-residual.md:5 — statement+proof only; 'close agreement with measured ice calorimetry' is a scope note",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T00:29:10.787Z",
+        "reviewed_sha": "b53556a27c586d54f0c61eb2fdae0ea5ecf901f6",
+        "notes": "No substantive interpretive prose; brief calorimetry comparison only"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "45e841e0abb3",
+          "ts": "1f46e793f619",
+          "lean": "0746cc69c717"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "ice-pauling-residual.md:1 — 'the entropy S=R ln W1 step is archimedean'; combinatorial core exact over Q",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T00:29:10.823Z",
+        "reviewed_sha": "b53556a27c586d54f0c61eb2fdae0ea5ecf901f6",
+        "notes": "Archimedean entropy step explicitly banner'd; combinatorial claim is generic"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "45e841e0abb3",
+          "ts": "1f46e793f619",
+          "lean": "0746cc69c717"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "ice-pauling-residual.md:9 — 'S = R ln(3/2) is the archimedean evaluation'; W1 proved exactly over Q",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T00:29:10.859Z",
+        "reviewed_sha": "b53556a27c586d54f0c61eb2fdae0ea5ecf901f6",
+        "notes": "Specialisation point named; combinatorial core stays algebraic"
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "45e841e0abb3",
+          "ts": "1f46e793f619",
+          "lean": "0746cc69c717"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "ice-pauling-residual.lean:34 — pauling_multiplicity: (Nat.choose 4 2 : Q)*(1/2)^2 = 3/2 matches W1=C(4,2)(1/2)^2=3/2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T00:29:34.969Z",
+        "reviewed_sha": "b53556a27c586d54f0c61eb2fdae0ea5ecf901f6",
+        "notes": "Lean encodes combinatorial core exactly; entropy step declared archimedean, outside Lean scope"
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "45e841e0abb3",
+          "ts": "1f46e793f619",
+          "lean": "0746cc69c717"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "ice-pauling-residual.lean:34 — proved by rw+norm_num, no sorry/axiom; signature matches prop statement W1=3/2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T00:29:35.004Z",
+        "reviewed_sha": "b53556a27c586d54f0c61eb2fdae0ea5ecf901f6",
+        "notes": "Sorry-free, decide/norm_num; no statement weakening"
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "45e841e0abb3",
+          "ts": "1f46e793f619",
+          "lean": "0746cc69c717"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.85,
+          "max": 1
+        },
+        "evidence": "ice-pauling-residual.md:7 — plan stated up front: binom(4,2) orientations x independent 1/2 per shared bond",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T00:29:35.046Z",
+        "reviewed_sha": "b53556a27c586d54f0c61eb2fdae0ea5ecf901f6",
+        "notes": "Strategy explicit: combinatorial count then independent-estimate factor"
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "45e841e0abb3",
+          "ts": "1f46e793f619",
+          "lean": "0746cc69c717"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "evidence": "ice-pauling-residual.lean:34 — sorry-free (decide, norm_num)",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T00:29:35.085Z",
+        "reviewed_sha": "b53556a27c586d54f0c61eb2fdae0ea5ecf901f6",
+        "notes": "Sorry-free proof => 1.0"
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "45e841e0abb3",
+          "ts": "1f46e793f619",
+          "lean": "0746cc69c717"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.4,
+          "max": 1
+        },
+        "evidence": "ice-pauling-residual.md:5 — classic Pauling (1935) residual-entropy estimate, faithfully reproduced",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T00:29:35.122Z",
+        "reviewed_sha": "b53556a27c586d54f0c61eb2fdae0ea5ecf901f6",
+        "notes": "Standard textbook result, not novel argument; faithful re-derivation"
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-13T00:29:35.122Z"
 }
