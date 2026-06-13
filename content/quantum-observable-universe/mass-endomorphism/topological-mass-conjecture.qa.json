@@ -1121,7 +1121,107 @@
         "reviewed_at": "2026-06-11T18:06:24.673Z",
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7"
       }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "a4d6401cc757",
+          "ts": "edaf44fd8f7a",
+          "lean": "e438d7744ca0"
+        },
+        "result": "fail",
+        "severity": "critical",
+        "evidence": "topological-mass-conjecture.ts:1-5 — kind=proposition, label prop:topological-decomposition-mass, title 'Conjectural...'; .lean:68-82 class TopologicalDecompositionMass whose field 'decomp : mass = holonomy + sum dilog' restates the block's own conclusion (.md:7-14) verbatim as an axiom; .lean:178-186 global instance trivialVortex (holonomy=0, N=0, mass=0) discharges the class hypothesis with a degenerate witness for ANY vortex type",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:50:33.193Z",
+        "reviewed_sha": "30b3e49fa04bc532c0d643ba82ae312f14bab075",
+        "notes": "Provable kind (proposition) whose entire content is the conjecture axiomatized as its own conclusion (sec3b-cond class axiomatizing the prop's conclusion => fail/critical); the trivialVortex instance additionally lets downstream [TopologicalDecompositionMass R vortex] hypotheses resolve to the vacuous model, silently de-conditionalising downstream results. Block should be kind conjecture (file/docstring already say conj:) and the instance removed or namespaced out of resolution."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "a4d6401cc757",
+          "ts": "edaf44fd8f7a",
+          "lean": "e438d7744ca0"
+        },
+        "result": "fail",
+        "severity": "minor",
+        "score": {
+          "value": 0.15,
+          "max": 1
+        },
+        "evidence": ".lean:81-82 — the only unproved content is the 'decomp' class field, which IS the target statement; .md:55-60 Status names the holonomy-trace bridge as 'the core proof obligation'",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:50:33.228Z",
+        "reviewed_sha": "30b3e49fa04bc532c0d643ba82ae312f14bab075",
+        "notes": "Remaining gap restates the target (restates-target => ~0.0 per rubric), lifted slightly because the .md decomposes it into 3 named obligations of which 2 (finite blow-up locus, dilog evaluation) look tractable; the core holonomy=descent-trace identification is open."
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "a4d6401cc757",
+          "ts": "edaf44fd8f7a",
+          "lean": "e438d7744ca0"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "score": {
+          "value": 0.6,
+          "max": 1
+        },
+        "evidence": ".md:37-53 — three numbered proof obligations (holonomy-trace identification, finite blow-up locus, quantum-dilogarithm evaluation) + .md:55-60 explicit gap statement; .lean:84-168 downstream lemmas have clear per-lemma docstrings",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:50:33.262Z",
+        "reviewed_sha": "30b3e49fa04bc532c0d643ba82ae312f14bab075",
+        "notes": "Attack plan is stated up front and the main gap is named, but no step of the core argument exists yet — clarity of plan without an executed proof; recoverable-but-incomplete => mid score."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "a4d6401cc757",
+          "ts": "edaf44fd8f7a",
+          "lean": "e438d7744ca0"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "evidence": ".md:20-35 — explicitly positions itself as the vortex/gauge-holonomy variant of the proved thm:topological-mass (descent-trace form); .lean:88-168 downstream lemmas (mass_unique, mass_nonneg, flat case, monotonicity) are generic consequences of any nonneg decomposition",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:50:33.297Z",
+        "reviewed_sha": "30b3e49fa04bc532c0d643ba82ae312f14bab075",
+        "notes": "Conjectural extension to closed cycles not factoring through the brane tower is a distinct claim vs the proved theorem (not duplicated), but the formalized content is boilerplate decomposition arithmetic — standard, not novel."
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-13T01:50:33.297Z"
 }
