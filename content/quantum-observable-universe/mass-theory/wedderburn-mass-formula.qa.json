@@ -1136,7 +1136,104 @@
         "reviewed_at": "2026-06-11T18:06:24.673Z",
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7"
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "7d86060a24dc",
+          "ts": "130ddaa49744",
+          "lean": "762d28a3e833"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.6,
+          "max": 1
+        },
+        "evidence": "wedderburn-mass-formula.md:69-94 — 'Proof sketch' states the plan (Wedderburn-Artin 3-block decomposition, cites prop:three-parameters-wedderburn, maps trace/det/ratio to Phi_1..3), but the beta_2 weight derivation is asserted ('factor 2 from the pn crossing doubling convention') and beta_3 = H_A^2 is not derived",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:40:11.577Z",
+        "reviewed_sha": "13628f478daf9ddf33a55ae2c8756f6bcbceab86",
+        "notes": "Plan stated up front with cited lemmas, yet coefficient-derivation steps are opaque assertions — recoverable-but-partial, 0.6"
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "7d86060a24dc",
+          "ts": "130ddaa49744",
+          "lean": "762d28a3e833"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0.25,
+          "max": 1
+        },
+        "evidence": "wedderburn-mass-formula.lean:55-98 — only defs (atomicMass, quantumInt, beta2) plus extremal_irreps_count, a vacuous existence; the mass-formula theorem itself has no Lean statement; md:96 rests on witness atom-mass-complete-wedderburn.witness.json",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:40:11.613Z",
+        "reviewed_sha": "13628f478daf9ddf33a55ae2c8756f6bcbceab86",
+        "notes": "Remaining gap is the whole mass-formula derivation (core, central open framework claim; backed by numerical witness only) ~0.25"
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "7d86060a24dc",
+          "ts": "130ddaa49744",
+          "lean": "762d28a3e833"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.75,
+          "max": 1
+        },
+        "evidence": "wedderburn-mass-formula.md:39-57 — three-extremal-Wedderburn-block invariant decomposition (Phi_1 trace / Phi_2 det / Phi_3 chirality ratio) of the atomic mass; distinct from sibling schur-weyl-mass-decomposition (partition-sum view)",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:40:11.652Z",
+        "reviewed_sha": "13628f478daf9ddf33a55ae2c8756f6bcbceab86",
+        "notes": "Novel framework argument tying the three extremal H_n(q) irreps to mass invariants; overlaps siblings in subject but not in proof route"
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "7d86060a24dc",
+          "ts": "130ddaa49744",
+          "lean": "762d28a3e833"
+        },
+        "result": "fail",
+        "severity": "critical",
+        "evidence": "wedderburn-mass-formula.lean:89-98 — 'theorem extremal_irreps_count : forall n >= 3, exists d_sym d_alt d_std, d_sym = 1 /\\ d_alt = 1 /\\ d_std = n - 1 := ... exact <1,1,n-1,rfl,rfl,rfl>' — vacuous exists-witness (any triple satisfies it by rfl); the .md Theorem (mass formula, md:9-20) is never stated in Lean",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:40:11.689Z",
+        "reviewed_sha": "13628f478daf9ddf33a55ae2c8756f6bcbceab86",
+        "notes": "Vacuous-existence pattern + silent weakening: docstring claims 'exactly 3 extremal irreps / no fourth invariant' but the Prop pins nothing; narrative theorem unstated in Lean"
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-13T01:40:11.689Z"
 }
