@@ -1119,7 +1119,107 @@
         "reviewed_at": "2026-06-11T18:06:24.673Z",
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7"
       }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "893e102246fe",
+          "ts": "c3d7b49f78f1",
+          "lean": "f1cbc59a20ae"
+        },
+        "result": "warn",
+        "severity": "major",
+        "evidence": "heisenberg-commutator-prop.lean:53-56 — lean.ref target 'heisenberg_commutator' is commented out; only hbar_q + trivial hbar_q_classical_limit (line 38) compile; the commented theorem 'hbar_q q = 1 - q⁻¹' restates the definition of hbar_q, not the commutator claim [X,P]_q = J·ℏ_q (no X, P, J in Lean); heisenberg-commutator-prop.ts:8 — validation: not_checked",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:19:12.729Z",
+        "reviewed_sha": "030d5b0370d8cd831f3be89cd0b73311d676b870",
+        "notes": "Statement in .md is well-formed and unweakened, but the claimed Lean decl does not exist and would be a definition-restating tautology if uncommented. Weakening is loudly documented (.lean docstring lines 49-51 + validation not_checked), so warn not fail."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "893e102246fe",
+          "ts": "c3d7b49f78f1",
+          "lean": "f1cbc59a20ae"
+        },
+        "result": "fail",
+        "severity": "minor",
+        "score": {
+          "value": 0.3,
+          "max": 1
+        },
+        "evidence": "heisenberg-commutator-prop.lean:49-51 — docstring: 'The full proof requires the q-deformed operator algebra on the state bundle, which depends on the categorical connection and the Levi distribution structure'; main decl commented out (lines 53-56)",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:19:24.455Z",
+        "reviewed_sha": "030d5b0370d8cd831f3be89cd0b73311d676b870",
+        "notes": "Gap is core per the gap-criticality scale (~0.3): closing it needs operator algebra on P¹(ℂ), J/Levi structure, none formalized; only the trivial classical-limit lemma exists."
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "893e102246fe",
+          "ts": "c3d7b49f78f1",
+          "lean": "f1cbc59a20ae"
+        },
+        "result": "fail",
+        "severity": "minor",
+        "score": {
+          "value": 0.3,
+          "max": 1
+        },
+        "evidence": "heisenberg-commutator-prop.md:1-20 — statement only, no proof steps or cited lemmas in-block; section sec:heisenberg-commutator (quantum-observable-universes.ts:206-210) has no proof block; .lean docstring (lines 48-51) names required ingredients but states no plan",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:19:46.047Z",
+        "reviewed_sha": "030d5b0370d8cd831f3be89cd0b73311d676b870",
+        "notes": "No explicit proof strategy; the needed machinery is named (operator algebra, Levi/J structure) so partially recoverable, but no plan or case structure is stated — 0.3."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "893e102246fe",
+          "ts": "c3d7b49f78f1",
+          "lean": "f1cbc59a20ae"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "evidence": "heisenberg-commutator-prop.md:8-12 — [X,P]_q = J·ℏ_q with ℏ_q = 1 - q⁻¹ ties the commutator to def:quantum-planck-constant; sibling rem:heisenberg-commutator (heisenberg-commutator.ts:4) interprets, does not duplicate, the claim",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:19:46.082Z",
+        "reviewed_sha": "030d5b0370d8cd831f3be89cd0b73311d676b870",
+        "notes": "Statement is framework-original and not duplicated by a sibling, but the existing proof content (definition-restating lemma) adds no novel argument — 0.5 standard-not-duplicated."
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-13T01:19:46.082Z"
 }
