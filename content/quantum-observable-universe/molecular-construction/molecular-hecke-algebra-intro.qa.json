@@ -912,7 +912,28 @@
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "d5785b8a5815",
+          "ts": "fbb339683caa"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "molecular-hecke-algebra-intro.md:1 — 'We extend the atomic constructor of Chapter 11 to multi-atom systems. The molecular braid H_{N_mol}(q)...'",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T00:49:13.489Z",
+        "reviewed_sha": "49d9628a5b5bb56ae5840b388c8060320ceb8978",
+        "notes": "prose intro for §1 'The molecular Hecke algebra'; topic squarely in section scope, no new provable claim, no sibling redundancy"
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-13T00:49:13.489Z"
 }
