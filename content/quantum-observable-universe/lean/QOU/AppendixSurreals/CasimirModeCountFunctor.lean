@@ -1,4 +1,5 @@
 import QOU.AppendixSurreals.CasimirEpsilonVacuum
+import QOU.AppendixSurreals.CasimirZetaPrefactor
 import Mathlib.Tactic
 
 /-!
@@ -99,5 +100,31 @@ theorem force_per_area_of_functor [VacuumEpsilon] [PlateModeCountFunctor]
     (d : ℝ) (hd : 0 < d) :
     deriv CasimirEpsilonVacuum.energyPerArea d = Real.pi ^ 2 / (240 * d ^ 4) :=
   energyPerArea_deriv d hd
+
+/-- **Stage-C reduction — the two external inputs, made explicit.** A
+`PlateModeCountFunctor` is fully determined by (1) an area-extensive
+count function and (2) the analytic fact that its per-area part has the
+regularized cubic-tower scaling `−π²/(720 d³)`. Input (2) packages the
+transported physics — the free-field `n³` mode degeneracy and the
+ζ-regularization of the divergent tower (classical Casimir 1948) — which
+is exactly what the open Yekutieli lift must supply. This constructor
+exhibits the reduction: closing Stage C means producing `f` together
+with these two proofs (no further data). -/
+def PlateModeCountFunctor.ofData
+    (f : ℝ → ℝ → ℝ)
+    (hext : ∀ A d : ℝ, f A d = A * f 1 d)
+    (hscale : ∀ d : ℝ, 0 < d → f 1 d = -(Real.pi ^ 2) / (720 * d ^ 3)) :
+    PlateModeCountFunctor :=
+  { modeCountDiff := f, extensive_in_area := hext, per_area_scaling := hscale }
+
+/-- **Bridge to the Stage-B prefactor.** The `d⁻³` coefficient `π²/720`
+of the per-area scaling is exactly the transverse geometric factor
+`π²/6` times `ζ(−3) = 1/120` — i.e. the mode-count's leading coefficient
+*is* the `CasimirZetaPrefactor` value. This ties the Stage-C interface to
+the machine-checked Stage-B arithmetic (`riemannZeta_neg_three_re`), so
+the one numerical constant the construction rests on is no longer free. -/
+theorem casimir_coefficient_eq_zeta_prefactor :
+    Real.pi ^ 2 / 720 = (Real.pi ^ 2 / 6) * (riemannZeta (-3 : ℂ)).re := by
+  rw [riemannZeta_neg_three_re]; ring
 
 end QOU.AppendixSurreals
