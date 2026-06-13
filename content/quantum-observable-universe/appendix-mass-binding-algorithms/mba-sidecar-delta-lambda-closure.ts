@@ -4,7 +4,7 @@ export default algorithm({
   label: "alg:delta-lambda-closure",
   title: "$\\Delta_\\lambda$ closure ansätze (Track-A blocker — open gate)",
   uses: [
-    "prop:term6-binding-density",
+    "rem:term6-binding-density",
     "conj:crystal-graph-realization",
   ],
   computation: {

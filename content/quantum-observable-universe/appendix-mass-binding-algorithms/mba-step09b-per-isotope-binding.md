@@ -32,7 +32,7 @@ $\Delta_\lambda$.*
 
 ### Correctness conditions
 
-1. *[`prop:term6-binding-density`](#prop:term6-binding-density)
+1. *[`rem:term6-binding-density`](#rem:term6-binding-density)
    gives the binding-density formula at $q = q_0$.*
 2. *[`thm:knot-mass-formula-unified`](#thm:knot-mass-formula-unified)
    ties the partition sum to the archimedean MeV observable.*
