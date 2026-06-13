@@ -744,7 +744,28 @@
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "631949679ce2",
+          "ts": "3a835a98c15f"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "organic-chemistry.ts:49-65 — sec:carbon-chains-benzene lists 'benzene-ring' between carbon-chain-c6 and chain-ring-energy; benzene-ring.md:1-3 'Benzene (C6H6) is the prototypical threaded molecular ring'",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:16:16.660Z",
+        "reviewed_sha": "6172a90c2d8c7eafa63abc76f6d49357075543e1",
+        "notes": "Example squarely in §3 scope (carbon chains + benzene); concrete instance of def:molecular-hopf-ring complementing the carbon-chain-c6 chain example, no sibling carries the same content; kind=example matches interprets+worked-instance content."
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-13T01:16:16.660Z"
 }
