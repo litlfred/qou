@@ -133,7 +133,7 @@ regulates archimedeanly to the volume of the matched JSJ piece, with
 the regulator's domain of definition pinned by the shared-denominator
 locus.
 
-## Status
+## Discussion
 
 Stated conditional on
 ([algebraic-geometric dilog equivalence](#conj:algebraic-geometric-dilog-equivalence))

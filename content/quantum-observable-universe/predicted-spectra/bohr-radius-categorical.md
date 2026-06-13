@@ -261,7 +261,7 @@ virial-balance argument from
 [`conj:bohr-radius-categorical`](#conj:bohr-radius-categorical),
 which remains transported.
 
-#### Net status after round 8
+#### Shell-spacing and kinetic/Coulomb decomposition
 
 The combination 4a + 4b establishes that **the Hecke-algebraic
 structure encodes the relative shell spacing and the additive

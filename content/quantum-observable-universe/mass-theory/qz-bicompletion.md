@@ -73,7 +73,7 @@ A single ambient ring carrying **both** cyclotomic structures is
 required to express the relation as an algebraic identity rather
 than a coincidence of two independent specialisations.
 
-## Conjectural status
+## Conjectural utility
 
 The bicompletion is **defined**; the **conjectural utility** is that
 the mass element

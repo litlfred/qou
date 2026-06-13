@@ -133,7 +133,7 @@ Both paths require infrastructure beyond the scope of this block;
 the conjecture is stated to make the dependency explicit and the
 empirical motivation citable.
 
-## Status
+## Discussion
 
 **Status: conjectural** under CLAUDE.md §3b, with strong empirical
 support at $n = 1, 2, 3$ for D, T, ${}^{3}$He via `jet_tower_delta_max.py`.

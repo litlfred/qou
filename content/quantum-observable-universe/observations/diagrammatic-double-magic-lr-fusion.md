@@ -126,7 +126,7 @@ finds the dominant $\nu$ is non-self-conjugate at every tested
 $(Z, N)$. The criterion is **content additivity** on the LR-fusion,
 not self-conjugacy of the dominant component.*
 
-## Status
+## Discussion
 
 **Conjectural** under CLAUDE.md §3b. The conjecture is
 *conditional* on

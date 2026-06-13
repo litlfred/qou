@@ -43,7 +43,7 @@ The framework's [`canonical-derivation-cheat-sheet.md`](../../../docs/canonical-
 
 Both theorems are **fully verified by Lean** modulo the three class instances. The classes encode literature statements (AJ conjecture, dilog identities); the framework's contribution is the IDENTIFICATION at the algebraic-over-$\mathbb{Z}[q^{\pm 1}]$ level.
 
-## Honest status
+## Conditional dependencies
 
 **Conditional on [`conj:quantum-langlands-dual`](quantum-langlands-dual.md) + [`conj:dim-master-pentagon`](dim-master-pentagon.md)** because the full identification requires:
 

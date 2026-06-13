@@ -307,7 +307,7 @@ with methodology tag and high-precision certificate.
 \end{algorithm}
 ```
 
-## Pipeline status
+## Categorical pipeline implementation
 
 The categorical pipeline is now implemented in two parallel
 implementations:

@@ -55,7 +55,7 @@ so downstream blocks that previously used it as a §3b-cond
 hypothesis continue to compile. New downstream code should cite
 `pontryagin_dual_coxeter_character_structural` directly.
 
-## Status
+## Discussion
 
 This block was previously labelled
 [`thm:pontryagin-dual-coxeter-character`](#) and was carried in

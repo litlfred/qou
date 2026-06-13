@@ -169,7 +169,7 @@ fraction $\leftrightarrow$ birthday bijection is formalised. The deep content
 (distinguishing algebraic from transcendental) depends on Roth's
 theorem, which is deep but classical.
 
-## Status
+## Discussion
 
 **Open**, but the reduction to continued fractions is
 classical. The conjecture restates Roth / Liouville in
