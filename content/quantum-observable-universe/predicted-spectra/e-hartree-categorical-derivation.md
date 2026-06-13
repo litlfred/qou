@@ -1163,6 +1163,72 @@ conditional theorem's mathematical content is complete modulo (a) the
 molecular-reuse assumption and (b) the $m_e c^2$ CAL-1 unit. Both are
 explicitly named; neither is a hidden gap.
 
+### Round 24 — the molecular-reuse residual is not a free, separable input
+
+Witness:
+[`e-hartree-round24-molecular-reuse.witness.json`](folio-assistant/computations/e-hartree-round24-molecular-reuse.witness.json)
+(producer
+[`e_hartree_round24_molecular_reuse.py`](folio-assistant/computations/e_hartree_round24_molecular_reuse.py),
+3/3; stdlib-only, exact integer enumeration). Round 23 named *"the molecular
+EM exchange reuses the bare EM complexity $\mathrm{cplx} = q[9]_q[10]_q$"* as
+**one isolated natural assumption**. Examined against the upstream
+[`prop:em-coupling-projection`](#prop:em-coupling-projection) — which
+`conj:e-hartree` already `uses`, so there is no circularity — it decomposes
+into two legs, and **neither is a free, separable assumption**.
+
+**Leg 1 — "the molecule uses the bare complexity $\mathrm{cplx}$" is
+discharged by Bring uniqueness.** `prop:em-coupling-projection` fixes
+$[9]_q[10]_q$ as the categorical complexity of the *unique* genus-$4$ torus
+pair $\{T_{2,9}, T_{3,5}\}$, forced by the Diophantine fact $(m-1)(n-1)=8$,
+$\gcd(m,n)=1$, $2 \le m < n \Rightarrow \{(2,9),(3,5)\}$ only, and states the
+resulting coupling is *"a ring-theoretic invariant of the Descartes universe …
+surviving any ring map $\iota\colon R \to k$."* There is therefore **no
+molecular-vs-free distinction available**: the theory contains exactly *one*
+force-carrier sector and *one* force-carrier complexity. "Reuse the bare
+complexity" is not an assumption — it is the only option Bring uniqueness
+permits. This leg is now **formalised sorry-free** in Lean: reusing the proven
+`QOU.Archimedean.torus_knot_genus_four_unique`, the round-24 theorems
+`forceCarrier_crossings_forced` and `forceCarrier_complexity_unique`
+(in `QOU.Archimedean.EHartreeTraceRatio`) prove that any two *distinct*
+genus-$4$ coprime torus knots have crossing numbers $\{9,10\}$, so
+$q\,[9]_q[10]_q$ is independent of the (forced) pair. At $q_0$,
+$\mathrm{cplx} \approx 136.82 = 1/\alpha_{EM}^{\mathrm{bare}}$ (the $-0.155\%$
+bare value), confirming $\mathrm{cplx}$ is genuinely the EM complexity.
+
+**Leg 2 — "the molecular $(2,2)$-block dressed exchange *is* an EM
+force-carrier exchange (so it costs $\mathrm{cplx}$), and the covalent pair
+contributes $\mathrm{cplx}^2$" is not a separate assumption.** It is the
+conjecture's own $(2,2) = \mathrm{EM}$ identification: that the $4$-strand
+self-transpose $(2,2)$ scalar block carries the EM coupling does **not** appear
+in `prop:em-coupling-projection` (which is purely $2$-strand,
+$\mathrm{End}_{\mathbf{C}}(A \otimes A)$ of $R$-rank $2$) — it is the e-hartree
+program's central conditional content. The exponent $2$ is the covalent Pauli
+count (a singlet single bond shares exactly two electrons — the *definition* of
+a covalent bond, not a fit). So Leg 2 adds nothing beyond the
+$(2,2) = \mathrm{EM}$ conditional already at the heart of the conjecture.
+
+**Circularity caveat.**
+[`prop:force-carrier-intertwining-correspondence`](#prop:force-carrier-intertwining-correspondence)
+(which routes $T_{2,9} \to (2,1,1)$, $T_{3,5} \to (3,1)$ on the $n=4$ molecular
+braid) is itself *conditional on* `conj:e-hartree`. It therefore **cannot** be
+used to *prove* the $(2,2) = \mathrm{EM}$ identification — that would be
+circular. Leg 2 stays a hypothesis of the conjecture, not a discharged lemma;
+the Lean formalisation deliberately formalises only Leg 1.
+
+**Net after 24 rounds (honest residual re-accounting).** The molecular-reuse is
+**not a third independent gap**. The conjecture's residual is exactly the two
+items it has carried since the mechanism questions closed:
+
+1. the $(2,2) = \mathrm{EM}$-block dressed identification — the **core
+   conditional content** (the conjecture *is* this claim), and
+2. the $m_e c^2$ CAL-1 unit (not provable by design; owner-declined Subgoal-2).
+
+Round 23's "molecular-reuse assumption" dissolves into these: one leg is
+upstream-proven (complexity universality, Bring uniqueness — now in Lean), the
+other is absorbed into item 1. This **tightens** the round-23 accounting —
+there is no extra "physically-natural unproved input" beyond the conjecture's
+own $(2,2) = \mathrm{EM}$ hypothesis.
+
 ### What is still missing for closure
 
 A genuinely categorical derivation of the $\alpha_{EM}^{2}$ scaling
