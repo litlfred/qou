@@ -291,11 +291,21 @@ kernel-status row. Audit:
   0 review threads; 1 Gemini daily-quota notice (not actionable). CI =
   standing billing block; `send_later` unavailable (no hourly
   self-check-in — webhook events only).
-- **Next task (non-overlapping):** period-3/ζ₆ **cancellation probe** —
-  bar-odd modes `{(2),(2,1),(2,2)}` and ζ₆-carriers
-  `{(2,1,1),(2,2,1),(2,2,2)}` are disjoint, so close the 2nd live
-  constraint by finding the content-spanning `Λ` whose bar-neither even
-  parts cancel to a bar-odd ζ₆-carrying remainder.
+- **Period-3/ζ₆ CLOSED** `qbeta_period3_zeta6_cancellation_probe.py`:
+  **cyclotomic bar-stability lemma** — `Φ_d` (d>1) self-reciprocal,
+  `bar(Φ_d)=q^{-φ(d)}Φ_d` (verified d=2,3,4,6) ⇒ `Φ_d ∣ X ⟺ Φ_d ∣
+  (X)_odd`. So the bar-ODD projection of a *single* ζ₆-carrier
+  `(κ_(2,1,1))_odd` is a nonzero bar-odd Φ₆-carrier — **refutes** the
+  "content-spanning Λ with cancellation required" caveat above; the
+  mode-selective f-map + odd projection suffices. Same lemma sharpens
+  ζ₄: bar-parity was never the obstruction (odd projection preserves
+  any carried Φ_d); ζ₄ is unreachable because **no full κ_λ carries
+  Φ₄** (mode-unavailability, Σ_□ wash-out), re-confirmed n≤6. Both live
+  fibre constraints (bar-odd a_1=κ_(2,1), period-3/ζ₆) now realisable.
+- **Next task (the keystone frontier):** derive the single archimedean
+  scalar `S = Q_β/E₀` categorically (anchor-dependent 908/887;
+  precision-floor-protected, CAL-3-anchored). The fibre half of `c_3`
+  (carrier κ_(2,1)) is pinned; `S` is the remaining open piece.
 
 ## Cross-refs
 

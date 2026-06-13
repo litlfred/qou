@@ -76,12 +76,13 @@ but it does **not** supply the **ζ₄ residue**. So the four constraints do not
 collapse the active-mode set `Λ` to a unique answer from the summed content-
 Casimir alone. Two structural facts make this sharper:
 
-1. **The bar-odd modes and the ζ₆-carriers are disjoint.** The bar-odd modes
-   `{(2),(2,1),(2,2)}` carry **only ζ₂**; the ζ₆-carriers `{(2,1,1),(2,2,1),
-   (2,2,2)}` are bar-**neither**. So no single mode supplies both the bar-odd
-   leading structure *and* the period-3 resonance — a **content-spanning `Λ`
-   with cancellation** is still required (a bar-neither mode's even part must
-   cancel against another's to leave a bar-odd remainder carrying ζ₆).
+1. **The bar-odd modes and the ζ₆-carriers are disjoint** (at the level of
+   *full* `κ_λ` parity). The bar-odd modes `{(2),(2,1),(2,2)}` carry **only
+   ζ₂**; the ζ₆-carriers `{(2,1,1),(2,2,1),(2,2,2)}` are bar-**neither**. This
+   first suggested a content-spanning `Λ` with cancellation would be required —
+   **but that inference is refuted below** (*Period-3/ζ₆ — CLOSED*): the bar-odd
+   **projection** of a single ζ₆-carrier already carries ζ₆ (cyclotomic
+   bar-stability lemma), so no cross-mode cancellation is needed.
 
 2. **ζ₄ must come from per-cell data or from outside the content-Casimir.**
    Because `Φ_4` is washed out by the mode-sum, a kernel built from summed
@@ -174,9 +175,46 @@ to the fibre at all.
 | Constraint | Status | Realisable in fibre? |
 |---|---|---|
 | bar-ODD `a_1 = -c_3` | live | ✓ — carrier `κ_(2,1) = (q-1)³(q+1)/q²` (#2240) |
-| period-3 / ζ₆ | live | ✓ — modes `(2,1,1),(2,2,1),(2,2,2)` (option 0) **and** `α_eff`'s `Φ₆(√q)` (option 2) |
+| period-3 / ζ₆ | **CLOSED (realisable)** | ✓ — bar-odd projection of `κ_(2,1,1)` carries ζ₆ (bar-stability lemma, *Period-3/ζ₆* below); also `α_eff`'s `Φ₆(√q)` (option 2) |
 | simple pole at `u_substrate` | live (archimedean) | n/a — evaluation feature |
-| **ζ₄ residue** | **relaxed** | ✗ in fibre — √q double cover (ζ₂) or post-wrap archimedean |
+| **ζ₄ residue** | **relaxed** | ✗ in fibre — not mode-available (no `κ_λ` carries Φ₄); √q double cover (ζ₂) or post-wrap archimedean |
+
+## Period-3/ζ₆ — CLOSED (the cyclotomic bar-stability lemma)
+
+The mode-sum verdict above worried that, since the bar-odd modes and the
+ζ₆-carriers are disjoint *as full `κ_λ`*, a cross-mode cancellation would be
+needed to get a bar-odd object carrying ζ₆. The period-3/ζ₆ probe
+([`qbeta_period3_zeta6_cancellation_probe.py`](https://github.com/litlfred/qou/blob/claude/qbeta-heat-fmap-symbolic-explore-2026-06-13/folio-assistant/computations/qbeta/qbeta_period3_zeta6_cancellation_probe.py))
+shows that worry is unfounded.
+
+**Lemma (cyclotomic bar-stability).** For `d > 1`, `Φ_d(q)` is self-reciprocal:
+`bar(Φ_d) = Φ_d(1/q) = q^{-φ(d)}·Φ_d(q)` (a unit multiple). *Verified
+symbolically for `d = 2,3,4,6`.*
+
+**Corollary.** `Φ_d ∣ X ⟺ Φ_d ∣ bar(X) ⟺ Φ_d ∣ (X)_odd` (and `(X)_even`),
+whenever the part is nonzero. So **the bar-odd projection of any `Φ_d`-carrier
+still carries `Φ_d`.**
+
+**Application — ζ₆ is realisable by a single mode.** Each ζ₆-carrier
+`κ_λ ∈ {(2,1,1),(2,2,1),(2,2,2)}` is bar-neither, so its odd part
+`(κ_λ)_odd = (κ_λ − bar κ_λ)/2` is **nonzero**, is **bar-odd** by construction,
+and **carries Φ₆** by the corollary (verified: all three modes give
+`Φ₆ ∣ (κ_λ)_odd = True`). The mode-selective f-map (proved by the symbolic
+f-map probe) projecting *one* ζ₆-carrier onto its bar-odd part therefore yields
+a bar-odd, ζ₆-carrying object — **no content-spanning cancellation needed.**
+Period-3/ζ₆ joins bar-odd `a_1 = κ_(2,1)` as a *realisable* fibre constraint.
+
+**Same lemma sharpens the ζ₄ relaxation.** Bar-parity was never the ζ₄
+obstruction — by the corollary, odd projection preserves any carried `Φ_d`. The
+real reason ζ₄ is unreachable is **mode-availability**: the probe re-confirms
+**no full `κ_λ` (n ≤ 6) is divisible by `Φ₄`** (the `Σ_□` wash-out). So ζ₄ would
+require finer *per-cell* selection than the established mode-level f-map — or it
+is the √q double-cover / post-`cos`-wrap archimedean feature of option 2. Either
+way it is not a mode-level fibre constraint.
+
+**Net.** Both live fibre constraints — bar-odd `a_1 = κ_(2,1)` and period-3/ζ₆ —
+are now realisable by the mode-selective f-map + bar-odd projection. The
+keystone's remaining open piece is the single archimedean scalar `S = Q_β/E₀`.
 
 ## Method notes / honesty caveats
 
