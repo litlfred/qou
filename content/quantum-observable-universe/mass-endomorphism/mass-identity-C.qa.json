@@ -1114,7 +1114,104 @@
         "reviewed_at": "2026-06-11T18:06:24.673Z",
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7"
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "24072c0f8b25",
+          "ts": "b2a2095094eb",
+          "lean": "0e68c60f859f"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.8,
+          "max": 1
+        },
+        "evidence": "mass-identity-C-proof.md:1-27 — plan stated: realise mass as Yekutieli MI integral, then 'By the nonabelian Stokes theorem [yekutieli2015], this reduces to the holonomy'; mass-identity-C.lean:71-79 mirrors it as two named steps",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:41:56.170Z",
+        "reviewed_sha": "98a72f4019691d6078a6e87882c9d1810e8deb6d",
+        "notes": "Strategy is explicit and legible (two named cited steps), even though the formal content is thin; clarity rubric scores the plan, not the soundness => 0.8"
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "24072c0f8b25",
+          "ts": "b2a2095094eb",
+          "lean": "0e68c60f859f"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0.1,
+          "max": 1
+        },
+        "evidence": "mass-identity-C.lean:56-69 — axiom nonabelian_stokes + axiom categorical_equals_multiplicative_integral jointly ARE the corollary; theorem mass_is_holonomy (76-79) is two rw steps of transitivity",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:41:56.210Z",
+        "reviewed_sha": "98a72f4019691d6078a6e87882c9d1810e8deb6d",
+        "notes": "The gaps (two axioms) restate the target's two halves — gap-criticality 'restates-target' => ~0.0; small credit since nonabelian_stokes is a genuinely published external result (Yekutieli 2015) => 0.1"
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "24072c0f8b25",
+          "ts": "b2a2095094eb",
+          "lean": "0e68c60f859f"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0.3,
+          "max": 1
+        },
+        "evidence": "mass-identity-C.lean:76-79 — proof body is 'rw [axiom1, axiom2]'; all mathematical content delegated to the Yekutieli citation",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:41:56.250Z",
+        "reviewed_sha": "98a72f4019691d6078a6e87882c9d1810e8deb6d",
+        "notes": "No non-redundant argument added: the proof is axiom transitivity over a literature citation; standard cite-and-chain pattern with near-zero proof content => 0.3"
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "24072c0f8b25",
+          "ts": "b2a2095094eb",
+          "lean": "0e68c60f859f"
+        },
+        "result": "fail",
+        "severity": "critical",
+        "evidence": "mass-identity-C.lean:38-69 — ArchimedeanMassData fields holonomy_norm/mult_integral_norm/categorical_mass_norm are UNCONSTRAINED independent reals, yet axiom nonabelian_stokes asserts data.mult_integral_norm = data.holonomy_norm for ALL data; instantiating ⟨1, 0, 0, zero_le_one⟩ yields (0 : ℝ) = 1, deriving False",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:41:56.285Z",
+        "reviewed_sha": "98a72f4019691d6078a6e87882c9d1810e8deb6d",
+        "notes": "Unsound axioms: both axioms equate arbitrary structure fields, so the ambient theory is inconsistent and mass_is_holonomy is vacuously provable; also the axiom pair restates the corollary verbatim in two halves. Loudly documented as axioms, but unsoundness is silent => fail/critical per registry; route to lean-proof-review (Type 4): constrain the structure or state the axioms over a genuine geometric model"
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-13T01:41:56.285Z"
 }
