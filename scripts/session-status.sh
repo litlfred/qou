@@ -19,7 +19,8 @@ CONFIG="$REPO_ROOT/lean-mcp.config.json"
 # scriptCommitSha="unknown" (2026-06-13 diagnosis — environmental, not
 # a WitnessBuilder path bug). Mark the repo safe once per session;
 # idempotent, no-op when already configured.
-git config --global --add safe.directory "$REPO_ROOT" 2>/dev/null || true
+git config --global --get-all safe.directory 2>/dev/null | grep -Fqx "$REPO_ROOT" \
+  || git config --global --add safe.directory "$REPO_ROOT" 2>/dev/null || true
 
 # ── 1. Core tools ───────────────────────────────────────────────
 BUN_OK=false;    BUN_VER=""
