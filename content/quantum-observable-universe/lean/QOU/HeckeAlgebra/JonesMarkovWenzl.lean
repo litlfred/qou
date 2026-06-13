@@ -76,13 +76,10 @@ theorem qInteger_one (q : ℝ)
     (h_denom : q ^ ((1 : ℝ) / 2) - q ^ (-(1 : ℝ) / 2) ≠ 0) :
     qInteger 1 q = 1 := by
   unfold qInteger
-  split_ifs with h
-  · exact absurd h Nat.one_ne_zero
-  · -- Numerator and denominator both equal `q^{1/2} - q^{-1/2}` when k = 1.
-    -- (1 : ℕ) cast to ℝ is 1; the `((1 : ℕ) : ℝ) / 2` simplifies.
-    have h1 : ((1 : ℕ) : ℝ) = 1 := by norm_cast
-    rw [h1]
-    exact div_self h_denom
+  rw [if_neg Nat.one_ne_zero]
+  -- (1 : ℕ) cast to ℝ is 1, so numerator = denominator = q^{1/2} - q^{-1/2}.
+  simp only [Nat.cast_one]
+  exact div_self h_denom
 
 /-- The q-integer `[0]_q = 0` (by convention; consistent with
     `[k]_q = (q^{k/2} - q^{-k/2}) / (q^{1/2} - q^{-1/2})` having
