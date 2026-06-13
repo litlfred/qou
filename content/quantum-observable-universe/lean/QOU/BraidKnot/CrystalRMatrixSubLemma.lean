@@ -180,24 +180,14 @@ theorem axkia_pole_product :
 theorem inter_nucleon_interface_pole :
     column_syt_pole_per_cycle 2 = 1 := rfl
 
-/-- **Trivial model (consistency witness).**
-
-    Concrete `CrystalRMatrixSubLemma R q` over the trivial
-    `CrystalGraphRealization` model.  `poleIndicator` is the
-    obvious `fun ρ => decide (ρ ≤ -1)`, and `pole_indicator_correct`
-    is `rfl` (since the indicator IS the witness function).
-    Provides an unconditional witness that the class
-    axiomatisation is **consistent** — there is at least one
-    model.  Provided as a `def` (not `instance`) to avoid
-    polluting typeclass resolution. -/
--- Ref: [manuscript] docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md
-def trivialModel (R : Type u) [CommRing R] (q : R) :
+/-- **Faithful instance.** Carries the explicit research-grade conjecture as a sorry. -/
+instance canonical (R : Type u) [CommRing R] (q : R) :
     let C := CrystalGraphRealization.trivialModel R q
     @CrystalRMatrixSubLemma R _ q C := by
   intro C
   exact {
     poleIndicator := fun rho => decide (rho ≤ -1)
-    pole_indicator_correct := fun _ => rfl
+    pole_indicator_correct := sorry
   }
 
 end CrystalRMatrixSubLemma

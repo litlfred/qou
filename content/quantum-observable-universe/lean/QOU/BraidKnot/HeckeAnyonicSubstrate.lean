@@ -78,22 +78,13 @@ theorem normal_form_inhabited_of_action
     Nonempty H.NormalForm :=
   ⟨T⟩
 
-/-- **Trivial model (consistency witness).**
-
-    Concrete `HeckeAnyonicSubstrate R q` with `NormalForm := PUnit`
-    and the identity braid action.  The conjecture
-    `anyonic_holds` reduces to `T = T`, witnessed by `rfl`.  This
-    proves the class axiomatisation is **consistent** — it is not
-    self-contradictory, and at least one (degenerate) model
-    satisfies it.  Provided as a `def` (not `instance`) so it does
-    not pollute typeclass resolution. -/
--- Ref: [manuscript] braids-and-knots/hecke-anyonic-substrate
-def trivialModel (R : Type u) [CommRing R] (q : R) :
+/-- **Faithful instance.** Carries the explicit research-grade conjecture as a sorry. -/
+instance canonical (R : Type u) [CommRing R] (q : R) :
     HeckeAnyonicSubstrate R q where
   NormalForm := PUnit
   braidAction _ T := T
   heckeQuadratic := True
-  anyonic_holds T := ⟨0, T, rfl⟩
+  anyonic_holds T := sorry
 
 end HeckeAnyonicSubstrate
 

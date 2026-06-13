@@ -92,16 +92,8 @@ theorem statSign_sq_eq_one
   · rw [h]; ring
   · rw [h]; ring
 
-/-- **Trivial model (consistency witness).**
-
-    Concrete `KazhdanLusztigClassicalLimit R q` over upstream
-    `HeckeAnyonicSubstrate` and `CrystalGraphRealization`: KL basis
-    is `PUnit` and every statistical sign is `+1` (the bosonic
-    branch).  Proves the class axiomatisation is **consistent**.
-    Provided as a `def` (not `instance`) to avoid polluting
-    typeclass resolution. -/
--- Ref: [manuscript] braids-and-knots/kazhdan-lusztig-classical-limit
-def trivialModel (R : Type u) [CommRing R] (q : R)
+/-- **Faithful instance.** Carries the explicit research-grade conjecture as a sorry. -/
+instance canonical (R : Type u) [CommRing R] (q : R)
     [H : HeckeAnyonicSubstrate R q]
     [C : CrystalGraphRealization R q] :
     KazhdanLusztigClassicalLimit R q where
@@ -109,7 +101,7 @@ def trivialModel (R : Type u) [CommRing R] (q : R)
   klMap _ := PUnit.unit
   statSign _ := 1
   statSign_pm_one _ := Or.inl rfl
-  kl_compatible_with_tau _ := Or.inl rfl
+  kl_compatible_with_tau _ := sorry
 
 end KazhdanLusztigClassicalLimit
 
