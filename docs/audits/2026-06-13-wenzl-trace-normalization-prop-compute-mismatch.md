@@ -99,19 +99,30 @@ For a 1-dimensional rep, `σ_i` acts by a scalar: `χ^{(3)}(β) = q^{w}` (trivia
 ## 4. Other compute carrying a stale y_λ understanding
 
 Two **exploratory probes** (not production; both pre-date the c2df3870 fix)
-encode their own q=1 weight assumptions that are inconsistent with both the
-corrected prop and the compute:
+encode q=1 weight assumptions that are **wrong in both conventions** — i.e.
+they match neither the Jones/TL prop nor the full-Hecke compute, so they are
+fixable independently of the §5 adjudication:
 
 - [`borromean_h3_2_1_irrep_derivation.py`](../../folio-assistant/computations/borromean_h3_2_1_irrep_derivation.py)
-  (lines 17, 226, 230–231): comments assert
-  `y_(3) = y_(2,1) = y_(1,1,1) = 1/6` at q=1 (a Plancherel-squared reading),
-  and elsewhere "`y_(3) + y_(1,1,1)` both give 1."
+  (lines 226, 230–232): comments assert
+  `y_(3) = y_(2,1) = y_(1,1,1) = 1/6` at q=1. This is a **w_λ ↔ y_λ
+  conflation** (the exact notation hazard PR #2191 Finding 1 warned about):
+  `1/6` is (part of) the *Plancherel* measure `w_λ = d_λ²/Σ d_μ²` —
+  `(1/6, 2/3, 1/6)`, not uniform — and is **not** the Markov `y_λ`, which is
+  `(1/2, 1/4, 0)` at q=1. (The comment is also internally inconsistent: all
+  three `= 1/6` gives `Σ y_λ d_λ = 4/6 ≠ 1`.)
 - [`crystal_yekutieli_probes_abcd.py`](../../folio-assistant/computations/crystal_yekutieli_probes_abcd.py)
-  (lines 157–169): uses `y_(1,1,1) = 1/(q + 1/q + 2)` (nonzero, → 1/4 at q=1),
-  i.e. the full-Hecke reading — **consistent with the compute, not the prop**.
+  (lines 166, 169): assigns `1/(q + 1/q + 2)` to **both** `y_(3)` and
+  `y_(1,1,1)`. But `1/(q + 1/q + 2) = 1/(q^{1/2} + q^{-1/2})^2` is the
+  **`y_(2,1)` closed form** in the spinor `[2]` convention — it evaluates to
+  `1/4` at q=1 and `0.24932` at q₀. So this is a **partition-label/formula
+  mismatch** (the `y_(2,1)` formula mis-assigned to `y_(3)` and `y_(1³)`),
+  inconsistent with both the compute (`y_(1³) = 0.0227` at q₀, `0` at q=1;
+  `y_(3) = 0.4154`) and the prop (`y_(1³) = 0`). It is *not* a "full-Hecke
+  reading."
 
-These are truth-tracking probes; they should be reconciled to whichever
-convention the author declares canonical (§5), but they do not feed production.
+These are truth-tracking probes that do not feed production; the §7 sweep
+lists them alongside the convention-dependent files.
 
 ## 5. Adjudication required (author's call)
 
@@ -158,6 +169,27 @@ PY
 
 Compare to the prop's `[4]_q/[2]_q³ = 0.50531`, `1/[2]_q² = 0.24731`, `0` at
 `q₀ = 1.1097`.
+
+## 7. Convention-reconciliation sweep (pre-drafted; gated on §5)
+
+Files touching H_n Markov weights, grouped by what they currently encode. The
+**Action under option 1** (compute = Ocneanu canonical, *recommended*) column is
+the concrete edit; option 2 (Jones canonical) would instead re-derive the whole
+`y_lambda_wenzl_bridge` / `closed_form_tau_M` pipeline in the TL normalisation
+(high blast radius — not drafted here).
+
+| File | Currently encodes | Action under option 1 |
+|---|---|---|
+| `content/.../mass-theory/h3-markov-wenzl-weights.md` (`.ts`,`.lean`) | Jones/TL closed forms (`[4]/[2]³, 1/[2]², 0`) | Scope/rename to the **Borromean Jones polynomial**, or replace closed forms with the Wenzl-Schur ones; stop framing them as the general `tr_M` `y_λ`. |
+| `probes/gap_a4_T18_markov_normalization_probe.py` | Jones/TL (mirrors the prop) | Same scope note; cross-link the audit. |
+| `probes/borromean_trace_cross_validator.py` (new, eb887b8c) | prop's Jones forms as the cross-check target | **Verify it isn't asserting Jones forms against the full-Hecke compute** (would be a false RED/GREEN). |
+| `torus_knot_markov_trace_closed_form.py`, `torus_knot_markov_trace_generalized.py`, `pyhecke_jones_markov_atlas.py` | own `y_λ` for **writhe≠0** knots | Confirm they use the full-Hecke (Wenzl-Schur) `y_λ`; these are where the split produces different numbers. |
+| `borromean_h3_2_1_irrep_derivation.py`, `probes/gap_a4_T7_bratteli_stabilization_probe.py` | `1/6` = `w_λ` Plancherel mislabelled as `y_λ` (**wrong in both conventions**) | Relabel to `w_λ` + note the Markov `y_λ` = `(1/2,1/4,0)`; fixable now (§4). |
+| `crystal_yekutieli_probes_abcd.py` | `y_(2,1)` formula mis-assigned to `y_(3)`,`y_(1³)` (**wrong in both**) | Correct the assignment; fixable now (§4). |
+| `hoefsmit_symbolic.py`, `closed_form_tau_M.py`, `y_lambda_wenzl_bridge.py`, `markov/markov_weights_symbolic.py` | full-Hecke Ocneanu (canonical) | **No change** — these are the reference. |
+
+Only the last row is load-bearing for masses; everything above it is
+prop/probe/doc hygiene that does not move a physical prediction.
 
 ## Files referenced
 
