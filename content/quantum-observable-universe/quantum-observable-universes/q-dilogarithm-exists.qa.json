@@ -1119,7 +1119,104 @@
         "reviewed_at": "2026-06-11T18:06:24.673Z",
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7"
       }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "92f0dc4a02b4",
+          "ts": "658ee71e829d",
+          "lean": "695a2fc78494"
+        },
+        "result": "fail",
+        "severity": "critical",
+        "evidence": "q-dilogarithm-exists.lean:26-37 — 'axiom QDilogarithm.exists_axiom : ∀ (H : Type*) [Nonempty H], Nonempty (QDilogarithm H)' then 'theorem QDilogarithm.exists ... := QDilogarithm.exists_axiom H'",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:01:53.540Z",
+        "reviewed_sha": "0feb3a771363564f2fad6737bdbf7761a2b94bcf",
+        "notes": "Axiom restates the theorem target verbatim; the 'proved' decl is a one-line appeal to it. Loudly documented as external axiom (Kassel 1995 §IV) pending shuffle-recursion construction, but per registry verbatim-restating axioms are fail/critical. Also over-broad: quantifies over EVERY nonempty type H."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "92f0dc4a02b4",
+          "ts": "658ee71e829d",
+          "lean": "695a2fc78494"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0.1,
+          "max": 1
+        },
+        "evidence": "q-dilogarithm-exists.lean:26-27 — the only gap is exists_axiom, identical to the goal",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:02:27.941Z",
+        "reviewed_sha": "0feb3a771363564f2fad6737bdbf7761a2b94bcf",
+        "notes": "Restates-target gap class (rubric ~0.0); narrative sketches a shuffle-recursion route (q-dilogarithm-exists-proof.md) but no Lean construction started."
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "92f0dc4a02b4",
+          "ts": "658ee71e829d",
+          "lean": "695a2fc78494"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.6,
+          "max": 1
+        },
+        "evidence": "q-dilogarithm-exists-proof.md:1-6 — 'The shuffle recursion Δ_q(p_k)=... has a one-dimensional solution space at each level... normalisation fixed by the pentagon identity'",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:02:27.977Z",
+        "reviewed_sha": "0feb3a771363564f2fad6737bdbf7761a2b94bcf",
+        "notes": "Narrative plan explicit up front (shuffle recursion + pentagon normalisation); Lean side carries zero strategy (single axiom appeal), so mid score."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "92f0dc4a02b4",
+          "ts": "658ee71e829d",
+          "lean": "695a2fc78494"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "evidence": "q-dilogarithm-exists.lean:25 — '-- Ref: [kassel1995] Quantum Groups (Springer GTM 155), §IV'",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:02:28.012Z",
+        "reviewed_sha": "0feb3a771363564f2fad6737bdbf7761a2b94bcf",
+        "notes": "Standard iterated-primitive existence per Kassel §IV with framework-specific pentagon normalisation; not duplicated by siblings (uniqueness is prop:q-dilogarithm-unique)."
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-13T01:02:28.012Z"
 }
