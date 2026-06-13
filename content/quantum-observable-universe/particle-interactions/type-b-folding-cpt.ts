@@ -5,7 +5,7 @@ export default conjecture({
   title:
     "Type-B Cartan folding realises CPT via symmetric-crystal $\\mathbb{Z}/2$ fixed points",
   lean: {
-    ref: "qou:QOU.BraidsAndKnots.TypeBFoldingCPT",
+    ref: "qou:QOU.BraidsAndKnots.TypeBFoldingCpt",
     validation: "not_checked",
   },
   uses: [
