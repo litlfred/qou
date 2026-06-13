@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-31T04:40:27.450443+00:00",
-  "commitSha": "061d47ead2d5eb87e68656f67a4e50b354ebb5ed",
+  "engineVersion": "python 3.11.2",
+  "computedAt": "2026-06-13T05:52:00.357614+00:00",
+  "commitSha": "85e378c518561a1129cb45e28d19312b2d2ad264",
   "assertions": [
     {
       "name": "next_order_norm_equals_one_over_pi_dim_H1",
@@ -14,23 +14,25 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 22,
+  "durationMs": 1805,
   "computation": "alpha-em-rt-phase4-bring-measure",
   "scriptFile": "alpha_em_rt_phase4_bring_measure.py",
-  "scriptHash": "23dfd076a569",
+  "scriptHash": "527e3f8f06fb",
   "scriptCommitSha": "unknown",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.2",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
-    "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "sympy": "1.11.1",
+    "mpmath": "0.0.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
   },
   "description": "Phase 4 of the RT 2-loop derivation plan (#1495): identify 1/(8π) = 1/(π · dim H¹(M_Bring)) structurally from the Bring shadow-world measure parallel to the leading 2/(3π) = dim H¹/Area = 8/(12π) (PROVED #1444). Tests natural Bring/sphere-volume candidates and confirms the 1/(π · dim H¹) form as the canonical identification.",
   "contentBlock": "prop:em-coupling-bring-zero-mode",

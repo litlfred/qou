@@ -43,6 +43,7 @@ from mpmath import mpf, pi, polyroots
 HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE))
 
+import _path_bridge  # noqa: F401
 from _precision import set_compute_dps  # noqa: E402
 set_compute_dps()
 

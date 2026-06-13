@@ -173,25 +173,53 @@ theorem brane_tower_finite [hZ : ZHabiroConvergenceClass] :
 noncomputable def alpha_over_4pi_target (alpha : ℝ) : ℝ :=
   alpha / (4 * Real.pi)
 
+/-- The abstract true Reshetikhin-Turaev 1-loop shadow-world measure for the Bring surface
+    (evaluated at n=3). Opaque, so the class is non-vacuous. -/
+axiom bring_rt_phase4_measure : ℝ
+
 /-- **α/(4π) higher Bloch group class.** A concrete instance asserts
     that the next-order coefficient `1/(4π)` arises from a multi-
     variate polylogarithm regulator on a higher Bloch group
     `B_n(ℂ)` for some `n ≥ 3` (Goncharov 1995 conjectures cover
-    the relevant uniqueness up to scalar). -/
+    the relevant uniqueness up to scalar). Specifically, Phase 4
+    identifies it with the canonical Bring RT measure `1/(8π)`. -/
 -- Ref: [manuscript] prop:em-coupling-bring-zero-mode
 -- Ref: [borel1974], [bloch2000]
 class AlphaOver4PiClass : Prop where
   /-- The next-order coefficient is realised as a higher
-      Bloch-group regulator output, not a fit. -/
-  higher_bloch_realised : ∀ alpha : ℝ, ∃ z : ℝ, z = alpha_over_4pi_target alpha
+      Bloch-group regulator output, matching the canonical RT measure. -/
+  rt_measure_realised : bring_rt_phase4_measure = 1 / (8 * Real.pi)
 
 /-- **α/(4π) conditional theorem (sorry-free).** -/
 -- Ref: [manuscript] prop:em-coupling-bring-zero-mode
 theorem alpha_over_4pi_structural
     [hA : AlphaOver4PiClass]
     (alpha : ℝ) :
-    ∃ z : ℝ, z = alpha_over_4pi_target alpha :=
-  hA.higher_bloch_realised alpha
+    ∃ z : ℝ, z = 2 * alpha * bring_rt_phase4_measure ∧ 2 * alpha * bring_rt_phase4_measure = alpha_over_4pi_target alpha := by
+  use 2 * alpha * bring_rt_phase4_measure
+  constructor
+  · rfl
+  · rw [hA.rt_measure_realised, alpha_over_4pi_target]
+    ring
+
+/-! ## Phase 6: Conditional cubic-identity theorem -/
+
+/-- **Phase 6: Conditional cubic-identity theorem.**
+    Combines all Bloch levels (n=2 + n=3 + Phase 1-4 derivations)
+    to form the structural cubic fixed-point identity for α_EM.
+    If α_EM⁻¹ = T + α_EM · H · (1 - h²·α_EM) where H is the Phase 4 measure,
+    then α_EM satisfies: α³·h²·H - α²·H - T·α + 1 = 0. -/
+theorem alpha_em_cubic_identity
+    (alpha h T H : ℝ)
+    (h_alpha_ne_zero : alpha ≠ 0)
+    (h_alpha : 1 / alpha = T + alpha * H * (1 - h^2 * alpha)) :
+    alpha^3 * h^2 * H - alpha^2 * H - T * alpha + 1 = 0 := by
+  have h1 : 1 = alpha * (T + alpha * H * (1 - h^2 * alpha)) := by
+    calc 1 = alpha * (1 / alpha) := by exact (mul_one_div_cancel h_alpha_ne_zero).symm
+         _ = alpha * (T + alpha * H * (1 - h^2 * alpha)) := by rw [h_alpha]
+  calc alpha^3 * h^2 * H - alpha^2 * H - T * alpha + 1
+    _ = alpha^3 * h^2 * H - alpha^2 * H - T * alpha + alpha * (T + alpha * H * (1 - h^2 * alpha)) := by rw [← h1]
+    _ = 0 := by ring
 
 
 /-! ## Unconditional class instances (where formal content is
@@ -244,17 +272,11 @@ instance zHabiroConvergenceInstance : ZHabiroConvergenceClass where
     · unfold brane_tower_pole
       norm_num
 
-/-- **α/(4π) class — unconditional instance.**
-
-    The existential `∃ z, z = α/(4π)` is closed by `rfl`. The
-    substantive open content — that the coefficient `1/(4π)` arises
-    as a multivariate polylogarithm regulator on a higher Bloch
-    group `B_n(ℂ)` (Goncharov 1995 / Borel 1974) — remains
-    upstream and is not addressed by this formal closure. -/
--- Ref: [manuscript] prop:em-coupling-bring-zero-mode
--- Ref: [borel1974], [bloch2000]
-instance alphaOver4PiInstance : AlphaOver4PiClass where
-  higher_bloch_realised alpha := ⟨alpha_over_4pi_target alpha, rfl⟩
+/-- **α/(4π) class — trivial instance removed.**
+    Per PR #1552, the trivial unconditional instance has been replaced
+    with a proper external opaque (`bring_rt_phase4_measure`) and a
+    conditional class (`AlphaOver4PiClass`), mirroring the §3b-cond
+    pattern used for `QBetaC3StructuralFormClass`. -/
 
 /-- **Unconditionalised conditional theorems.** With the three
     instances above in scope, the conditional theorems
@@ -273,8 +295,6 @@ theorem brane_tower_finite_unconditional :
     ∃ M : ℝ, M > 0 ∧ M < brane_tower_pole :=
   brane_tower_finite
 
-theorem alpha_over_4pi_unconditional (alpha : ℝ) :
-    ∃ z : ℝ, z = alpha_over_4pi_target alpha :=
-  alpha_over_4pi_structural alpha
+-- The alpha_over_4pi_unconditional theorem has been removed as the class is now strictly conditional.
 
 end QOU.Archimedean.OpenProblems

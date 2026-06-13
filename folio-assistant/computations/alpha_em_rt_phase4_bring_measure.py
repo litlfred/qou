@@ -59,7 +59,11 @@ propagator on the genus-4 hyperbolic surface — multi-week subgoal-2
 work. This phase establishes the symbolic identification and shows
 algebraic consistency with the leading-shift template.
 """
-from __future__ import annotations
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+del _sys, _Path, _bridge
 
 import sys
 import time
@@ -69,11 +73,13 @@ import sympy as sp
 import mpmath as mp
 from mpmath import mpf, pi
 
-HERE = Path(__file__).parent
-sys.path.insert(0, str(HERE))
+HERE = Path(__file__).resolve().parent
+sys.path.insert(0, str(HERE.parent))
 
 from _precision import set_compute_dps  # noqa: E402
 set_compute_dps()
+
+from witness_base import WitnessBuilder  # noqa: E402
 
 from witness_base import WitnessBuilder  # noqa: E402
 
