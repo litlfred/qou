@@ -4,8 +4,8 @@
 closed form** for the half-symmetric Wedderburn sum at $H_4(q)$, which is the
 current production value of `linking_weight(𝓑_3, q)` inside `VolDensity(𝓑_3, q)`.
 The earlier $\lambda_{\mathrm{scale}}$ conjecture ($5/2 - h^2 G$) was
-**structurally falsified** (2026-05-18) and the CAL-4 framing **purged**
-(2026-05-24); $\lambda_{\mathrm{scale}}$ is no longer a separate object — it was
+**structurally falsified** and the CAL-4 framing **purged**;
+$\lambda_{\mathrm{scale}}$ is no longer a separate object — it was
 **absorbed into `VolDensity`**. The full falsification history (eight independent
 structural searches, the Yekutieli/Bring–Bloch dead-ends) is kept in the audit
 trail, **not in the paper**:
