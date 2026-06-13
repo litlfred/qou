@@ -211,4 +211,41 @@ theorem forceCarrier_complexity_unique
   · rw [e1, e2]
   · rw [e1, e2]; ring
 
+/-- Conjugate (transpose) of a partition `λ` given as a weakly-decreasing list:
+`λᵀ_i = #{ parts ≥ i }`.  Computable, so the channel-selection facts below close
+by `decide`. -/
+def conjPart (l : List ℕ) : List ℕ :=
+  (List.range (l.headD 0)).map (fun i => (l.filter (fun x => decide (i < x))).length)
+
+/-- **Round 25 (the EM channel is forced to `(2,2)`).**
+
+The 2-strand EM coupling is the sign rep of `S₂` (the singlet `e₋ = Λ²A`,
+`prop:em-coupling-projection`); a covalent bond is two such singlets (Pauli-2),
+so the pair sits in `sgn ⊠ sgn` on `S₂ × S₂`.  Inducing to the 4-strand
+molecular braid gives — witnessed (multiplicity 1 each, Frobenius reciprocity) in
+`e-hartree-round25-em-channel-induction.witness.json` —
+
+`Ind_{S₂×S₂}^{S₄}(sgn ⊠ sgn) = (2,2) ⊕ (2,1,1) ⊕ (1,1,1,1)`.
+
+A parity-symmetric covalent bound state is closed under the Hopf antipode
+`S : V_λ ↦ V_{λᵀ}`, so its channel must be **self-transpose**.  Among the three
+induced summands `(2,2)` is the unique self-conjugate one (proved here), so the
+EM bound-state channel is **forced** to `(2,2)`; `(2,1,1)` is the force-carrier
+channel and `(1,1,1,1)` the decoupled channel.
+
+This *grounds* the `(2,2)=EM` identification in the covalent-pair structure; it
+does **not** close the conjecture — the `sgn ⊠ sgn` physical input and the
+round-20 `α²` algebra remain (and `prop:force-carrier-intertwining-correspondence`
+is e-hartree-conditional, so the `(2,1,1)` coincidence is corroboration only). -/
+theorem em_channel_forced_to_two_two :
+    ([[2, 2], [2, 1, 1], [1, 1, 1, 1]] : List (List ℕ)).filter
+      (fun l => decide (conjPart l = l)) = [[2, 2]] := by decide
+
+/-- `(2,2)` is the **unique** self-conjugate partition of `4` (the fact the
+corpus cites for the EM block — `(2,2)ᵀ = (2,2)`, while `(4)↔(1,1,1,1)` and
+`(3,1)↔(2,1,1)` swap), re-derived here by `decide`. -/
+theorem unique_self_conjugate_partition_of_four :
+    ([[4], [3, 1], [2, 2], [2, 1, 1], [1, 1, 1, 1]] : List (List ℕ)).filter
+      (fun l => decide (conjPart l = l)) = [[2, 2]] := by decide
+
 end QOU.Archimedean.EHartreeTraceRatio
