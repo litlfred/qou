@@ -1,4 +1,4 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
+*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data. The $n = 2$ case is formalised faithfully — both partitions factor through the genuine cyclotomic denominator $D_2 = \Phi_4\Phi_8 = (t^2+1)(t^4+1) \neq 0$; the $n = 3, 4$ denominators are numerically verified for all 18 partitions in the witness and tracked for formalisation.*
 
 **Proposition (cyclotomic factorisation of $y_\lambda$ at small $n$).**
 *Let $\sigma_i$ be the symmetric Hecke generators of $H_n(R, q)$ with
