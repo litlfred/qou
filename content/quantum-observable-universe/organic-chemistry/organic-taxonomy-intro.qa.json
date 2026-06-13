@@ -762,7 +762,28 @@
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "2f3b3e5d3f18",
+          "ts": "473f8c8b07a8"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "organic-taxonomy-intro.md:1 — 'we sort the standard organic classes by two parameters of the Hopf-chain framework' introduces rem:organic-chain-taxonomy, its immediate successor in sec:carbon-chains-benzene (organic-chemistry.ts:49-65); taxonomy is named in the section title per the P11 fold (organic-chemistry.ts:43-48)",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:04:53.231Z",
+        "reviewed_sha": "95ef32e400bb307f1d7f041cb72d19a083bd9092",
+        "notes": "Mid-section transition prose after the P11 section fold; topic in section scope, no sibling redundancy, no new provable claim."
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-13T01:04:53.231Z"
 }
