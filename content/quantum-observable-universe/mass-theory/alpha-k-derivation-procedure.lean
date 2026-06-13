@@ -1,3 +1,6 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Data.Fintype.Basic
+import Mathlib.Data.Matrix.Mul
 import Mathlib.LinearAlgebra.Matrix.NonsingularInverse
 
 /-!

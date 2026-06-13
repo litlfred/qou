@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "d104e08da377",
     "ts": "e61aeab1bc5e",
-    "lean": "8b86372e2b18"
+    "lean": "f87ac8c15093"
   },
   "criteria": {
     "voice-status-leak": [
@@ -580,6 +580,26 @@
         "reviewed_at": "2026-06-07T01:32:52.192Z",
         "reviewed_sha": "5b22f37e27e74b674fb6b50fae73e0792e7212e2",
         "notes": "Lean 'alpha_k_derivation_procedure' is ∃y,y=solveJonesMarkov:=⟨_,rfl⟩ — a vacuous existence tautology asserting nothing of the md's invertibility/uniqueness result; effectively a placeholder."
+      },
+      {
+        "field_hash": {
+          "md": "d104e08da377",
+          "ts": "e61aeab1bc5e",
+          "lean": "f87ac8c15093"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "alpha-k-derivation-procedure.lean — ∃! y, A *ᵥ y = b proved: existence (A⁻¹ *ᵥ b) + uniqueness (mulVec_injective_of_invertible). Faithful to md's invertibility/uniqueness claim.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T15:32:16.199Z",
+        "reviewed_sha": "edebb8f0723220c406756f110dc281186da6b303",
+        "notes": "Statement was already faithful (∃!), but never compiled (validation:not_checked) — missing Mathlib.Data.Real.Basic for the Matrix Mul ℝ-instance. Import fixed; builds green (direct lean, exit 0). Not the old vacuous ∃y,y=solveJonesMarkov."
       }
     ],
     "voice-unicode-crash": [
@@ -1388,5 +1408,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-13T13:55:33.060Z"
+  "updated_at": "2026-06-13T15:32:16.199Z"
 }
