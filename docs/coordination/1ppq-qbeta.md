@@ -250,6 +250,53 @@ A categorical residue ID for Q_β's `A` (if found) does **not** automatically tr
   `Σ_λ y_λ·Δ(net)_λ == scalar Δ(net)` at q₀; `c₂ = −1` exact; `c₃ ≈ −2`
   both anchors before any higher rung is trusted.
 
+## 2026-06-13 — root-of-unity residue program → ζ₄ RELAXED (PR #2240)
+
+Heat-route follow-up to the `a_1` gate (#2231). Pulled Zagier-2010's
+Ohtsuki-period / root-of-unity structure back to the fibre and asked
+whether bar-parity + ζ₄ + period-3 **over-determine** the active-mode
+set `Λ`. Three sympy probes (all structural, no `c_3` value):
+
+- **Option 0 (mode-sum)** `qbeta_root_of_unity_residue_program.py`:
+  summed `μ_λ = ℏ_q²·Σ[c][c+1]` carries **only ζ₂ + ζ₆** (n≤6). ζ₆ ↔
+  `(2,1,1),(2,2,1),(2,2,2)` matches the period-3 resonance ✓. **ζ₄
+  washed out** by Σ_□.
+- **Option 1 (per-cell)** `qbeta_per_cell_zeta4_subprobe.py`: ζ₄ *is*
+  carried per-cell by content c∈{−5,−4,3,4} (`[4]_q=[2]_q·Φ₄`), but
+  every ζ₄-carrying `κ_c` is bar-neither; only bar-ODD content c=1
+  carries ζ₂ only. No mode is bar-odd ∧ ζ₄ at cell or mode level.
+- **Option 2 (framing)** `qbeta_framing_zeta4_subprobe.py`:
+  `α_eff=(z−1)h/2`, `z=√q/(q+1)`. In `s=√q`, framing carries
+  `Φ_d(√q)` for d∈{2,4,6} → q-orders {1,2,3}; **no `Φ₈(√q)` ⇒ no
+  genuine ζ₄(q)**. The `q+1=Φ₂(q)` reads as `Φ₄(√q)` but is the same
+  locus `q=−1` (bar-fixed). Bonus: `α_eff` carries `Φ₆(√q)→ζ₃`.
+
+**Verdict — ζ₄ is NOT a fibre constraint (RELAXED).** Neither `μ_λ`
+nor `cos α_eff` supplies a bar-odd-compatible genuine ζ₄(q); it is a
+√q double-cover reading of ζ₂ or a post-`cos`-wrap archimedean
+(Kashaev/Ohtsuki) feature. Structural prune (formalize-first) — drops
+ζ₄ from the fibre pre-flight. **Live fibre constraints:** bar-odd
+`a_1=κ_(2,1)=(q−1)³(q+1)/q²` + period-3/ζ₆ (both realisable).
+Checkpointed in `q-beta-c-k-recursion-from-habiro-q-difference.md`
+kernel-status row. Audit:
+[`docs/audits/2026-06-13-qbeta-root-of-unity-residue-program.md`](../audits/2026-06-13-qbeta-root-of-unity-residue-program.md).
+
+- **Coordination sweep (this run):** scope map = #2240 (mine, qbeta
+  c_3 fibre) vs open siblings. **No coordination comments posted** —
+  no sibling has a genuine file overlap or actionable cross-finding:
+  #2245/#1495 (α_EM) and #1765 (Habiro per-knot λ) are domain-adjacent
+  but touch different files/observables; #2202 (bib) is tooling only
+  (does NOT touch `references.ts`, confirmed via get_files); #2104
+  (compute-pipeline) is binding/Δ_λ infra, not Q_β c_k. Own-PR triage:
+  0 review threads; 1 Gemini daily-quota notice (not actionable). CI =
+  standing billing block; `send_later` unavailable (no hourly
+  self-check-in — webhook events only).
+- **Next task (non-overlapping):** period-3/ζ₆ **cancellation probe** —
+  bar-odd modes `{(2),(2,1),(2,2)}` and ζ₆-carriers
+  `{(2,1,1),(2,2,1),(2,2,2)}` are disjoint, so close the 2nd live
+  constraint by finding the content-spanning `Λ` whose bar-neither even
+  parts cancel to a bar-odd ζ₆-carrying remainder.
+
 ## Cross-refs
 
 - CLAUDE.md §Precision goals (L1 / L2 / Subgoal-1 / Subgoal-2)
