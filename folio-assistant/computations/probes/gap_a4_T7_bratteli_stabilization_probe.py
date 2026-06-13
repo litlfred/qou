@@ -118,7 +118,11 @@ def test_bratteli_structural_ratio() -> dict:
     y_21 = wenzl_weight_at_q1((2, 1))
     y_111 = wenzl_weight_at_q1((1, 1, 1))
 
-    print(f"  Wenzl weights at q=1 (Plancherel measure):")
+    # NB: these are the Plancherel measure w_λ = d_λ²/Σ d_μ², NOT the Markov
+    # weights y_λ (which are (1/2, 1/4, 0) at q=1, not (1/6, 2/3, 1/6)). The
+    # function name `wenzl_weight_at_q1` is a misnomer — see docs/audits/
+    # 2026-06-13-wenzl-trace-normalization-prop-compute-mismatch.md §4.
+    print(f"  Plancherel measure w_λ at q=1 (NOT the Markov y_λ):")
     print(f"    y_(3,2)   = 5²/120 = 25/120 = 5/24  = {mp.nstr(y_32, 10)}")
     print(f"    y_(2,2,1) = 5²/120 = 25/120 = 5/24  = {mp.nstr(y_221, 10)}")
     print(f"    y_(3)     = 1/6                     = {mp.nstr(y_3, 10)}")

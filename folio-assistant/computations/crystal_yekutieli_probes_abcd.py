@@ -163,10 +163,17 @@ def main():
     # Algebraic compose: tr_M(β_Bor) = y_(3) · 1 + y_(2,1) · chi_std + y_(1,1,1) · 1
     #                                = (y_(3) + y_(1,1,1)) + y_(2,1) · chi_std
     # At substrate, this should match the closed form value.
-    # The Jones-Markov weights are q-dependent; from PR #1081 / alpha_k probe:
-    #   y_(3)     = 1/(q + 1/q + 2)  (after Jones normalization)
-    #   y_(2,1)   = ...
-    #   y_(1,1,1) = 1/(q + 1/q + 2)
+    # CORRECTED 2026-06-13 (see docs/audits/2026-06-13-wenzl-trace-
+    # normalization-prop-compute-mismatch.md §4): the lines below mis-assigned
+    # 1/(q + 1/q + 2) — which is the y_(2,1) closed form 1/[2]^2 in the spinor
+    # convention [2] = q^{1/2}+q^{-1/2} (= 1/4 at q=1) — to BOTH y_(3) and
+    # y_(1,1,1). The canonical Markov weights (Wenzl-Schur, y-lambda-at-q0
+    # witness) are y_(3)=0.4154, y_(2,1)=0.2809, y_(1,1,1)=0.0227 at q_0
+    # (and (1/2, 1/4, 0) at q=1). Do NOT use the placeholder below; pull the
+    # weights from y_lambda_wenzl_bridge_numeric.
+    #   [stale placeholder, retained for context]
+    #   y_(3)     = 1/(q + 1/q + 2)   <-- WRONG (this is the y_(2,1) form)
+    #   y_(1,1,1) = 1/(q + 1/q + 2)   <-- WRONG (this is the y_(2,1) form)
     # This is the formula in the framework; let me just import + compute.
     # FOR THIS PROBE, key claim: chi_std(β_Bor) when combined with appropriate
     # y_(2,1) at q_0 should give the right value.
