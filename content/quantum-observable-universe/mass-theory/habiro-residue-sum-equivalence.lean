@@ -1,6 +1,6 @@
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Algebra.Polynomial.Basic
-import Mathlib.Algebra.Polynomial.Eval
+import Mathlib.Algebra.Polynomial.Eval.Defs
 import Mathlib.Data.Real.Basic
 import Mathlib.Data.Real.Sqrt
 
@@ -133,7 +133,10 @@ noncomputable def q_0_proton : ℝ := 1.1099785827513808  -- :leanval[q_0]{preci
     on `claude/continue-pr-442-DJRWm`. -/
 noncomputable def proton_gb_mass : ℝ := 2.1225825095
 
-/-- Proton instance of `HabiroResidueSumEquivalence`.
+/- Proton instance of `HabiroResidueSumEquivalence` (narrative for the
+    `protonExample` instance below; plain comment rather than a
+    docstring because the axiom + its docstring sit between — Lean
+    v4.24 rejects orphaned docstrings).
 
     The `archimedean_agreement` field is supplied as `sorry` per
     CLAUDE.md §3b: a substrate axiom backed by the empirical
@@ -174,7 +177,7 @@ the witness value `2.1225825095`).
 
 /-- Trivial-zero skeleton: every numerical field is `0`. -/
 -- Ref: [manuscript] habiro-residue-sum-equivalence §"Skeleton"
-instance trivialZero : HabiroResidueSumEquivalence where
+noncomputable instance trivialZero : HabiroResidueSumEquivalence where
   q_0 := 0
   q_0_nonneg := le_refl 0
   habiro_trace := 0
