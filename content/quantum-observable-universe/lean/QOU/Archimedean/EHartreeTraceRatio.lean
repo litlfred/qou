@@ -124,4 +124,35 @@ theorem hartree_token_from_trace_ratio
     E_h = ((q - q⁻¹) * (q ^ 2 + (q⁻¹) ^ 2) ^ 2) * m_e * c_q ^ 2 * alpha ^ 2 := by
   rw [hid, hc2]
 
+/-- **Round-19 dressed scalar-block character — abstract context (§3b-cond).**
+
+The repo convention records a concrete seminormal (Hoefsmit) character as
+*data verified numerically*, rather than re-proving it from representation
+matrices — see `QOU.BraidKnot.QHeckeSeminormalCharacterClosure`.  Here the
+round-19 values are witnessed in
+`e-hartree-round19-dressed-scalar-block.witness.json` (cross-checked to
+`9·10⁻¹⁶` against the seminormal builder `hecke_characters.py`):
+
+* `chi_bare = χ_(2,2)(σ₁σ₂σ₃) = 0` — the bare hook-support vanishing (`(2,2)`
+  is the unique non-hook of `4`; q-Murnaghan–Nakayama, Ram 1991);
+* `chi_dressed = χ_(2,2)(σ₁σ₂^{(5)}σ₃) = h·(q²+q⁻²)²` — the K-shell `m = 5`
+  dressed value (`= h·(dim_q V_(2,2))²`). -/
+structure DressedScalarCharacter (q : ℝ) where
+  /-- the bare Coxeter-word character on the `(2,2)` block. -/
+  chi_bare : ℝ
+  /-- it vanishes (hook-support; `(2,2)` is the unique non-hook). -/
+  chi_bare_eq_zero : chi_bare = 0
+  /-- the K-shell-dressed character on the `(2,2)` block. -/
+  chi_dressed : ℝ
+  /-- its closed form `h·(q²+q⁻²)²`. -/
+  chi_dressed_eq : chi_dressed = (q - q⁻¹) * (q ^ 2 + (q⁻¹) ^ 2) ^ 2
+
+/-- Under a dressed-scalar-character context, the round-20 trace-ratio is the
+`C(q)·α²` form — combining the granted (witnessed) character with the proven
+algebraic factorisation.  `cplx = q·[9]_q·[10]_q`, `α = 1/cplx`. -/
+theorem traceRatio_of_dressedChar (q cplx : ℝ) (dc : DressedScalarCharacter q) :
+    dc.chi_dressed / cplx ^ 2
+      = ((q - q⁻¹) * (q ^ 2 + (q⁻¹) ^ 2) ^ 2) * (1 / cplx) ^ 2 :=
+  trace_ratio_eq_C_mul_alpha_sq q cplx dc.chi_dressed dc.chi_dressed_eq
+
 end QOU.Archimedean.EHartreeTraceRatio
