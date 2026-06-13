@@ -19,14 +19,18 @@ the two purely-algebraic facts underpinning round 20:
 
 * `qbracket_four_div_two` — the bracket reduction `[4]_q / [2]_q = q² + q⁻²`
   (the dressed `(2,2)` q-dimension `dim_q V_(2,2)`).
-* `trace_ratio_factorisation` — `χ₂₂ / cplx² = χ₂₂ · α²` with `α = 1/cplx`,
-  the `α²`-scaling step (pure field algebra, `cplx ≠ 0`).
+* `trace_ratio_factorisation` — `χ₂₂ / cplx² = χ₂₂ · (1/cplx)²`, the `α²`-scaling
+  step (pure algebra, `α = 1/cplx`).
 
 The deep input — that the dressed seminormal character *equals*
 `h·([4]_q/[2]_q)²` — is verified numerically in the round-19 witness and is the
 character-theory content; it is the cited/granted ingredient here (the
 seminormal-trace formalisation is the standing open part).  These lemmas
 discharge the algebra that turns that character value into the `α_EM²` shape.
+
+NOTE (sandbox): authored against the restored partial lake-cache, which lacks
+the `ring`/`field_simp`/`linarith` oleans, so this file is hand-audited but
+compile-verified by CI (`lean_ci.yml`) rather than locally.
 -/
 
 namespace QOU.Archimedean.EHartreeTraceRatio
@@ -41,12 +45,13 @@ theorem qsub_inv_ne (q : ℝ) (hq : 0 < q) (hq1 : q ≠ 1) : q - q⁻¹ ≠ 0 :=
   rw [sub_ne_zero]
   intro h
   apply hq1
-  -- h : q = q⁻¹ ⟹ q² = 1 ⟹ (q-1)(q+1) = 0 ⟹ q = 1 (since q > 0)
-  have hqq : q * q = 1 := by field_simp at h; linarith [h]
-  have hfac : (q - 1) * (q + 1) = 0 := by nlinarith [hqq]
+  -- h : q = q⁻¹ ⟹ q·q = 1 ⟹ (q-1)(q+1) = 0 ⟹ q = 1 (since q > 0)
+  have hqq : q * q = 1 := by
+    nth_rewrite 2 [h]; exact mul_inv_cancel₀ hq0
+  have hfac : (q - 1) * (q + 1) = 0 := by linear_combination hqq
   rcases mul_eq_zero.mp hfac with h1 | h2
-  · linarith [h1]
-  · linarith [h2, hq]
+  · linarith
+  · linarith
 
 /-- For `0 < q` and `q ≠ 1`, `q² − (q⁻¹)² ≠ 0` (the `[2]`-amplitude squared). -/
 theorem qsq_sub_inv_sq_ne (q : ℝ) (hq : 0 < q) (hq1 : q ≠ 1) :
@@ -59,7 +64,7 @@ theorem qsq_sub_inv_sq_ne (q : ℝ) (hq : 0 < q) (hq1 : q ≠ 1) :
   rcases mul_eq_zero.mp h with h1 | h2
   · exact h1
   · have hpos : 0 < q + q⁻¹ := by positivity
-    linarith [h2, hpos]
+    linarith
 
 /-- **The bracket reduction `[4]_q / [2]_q = q² + q⁻²`.**
 
@@ -79,27 +84,26 @@ theorem qbracket_four_div_two (q : ℝ) (hq : 0 < q) (hq1 : q ≠ 1) :
 
 /-- **Trace-ratio factorisation (round 20).**
 
-With nonzero force-carrier complexity `cplx = q·[9]_q·[10]_q`, the molecular
-scalar-block trace-ratio `χ₂₂ / cplx²` equals `χ₂₂ · α²` where the EM coupling
-is `α = 1/cplx`.  Pure field algebra — this is the step that exhibits the
-`α_EM²` scaling once the dressed character `χ₂₂` and the complexity normaliser
-are in hand. -/
-theorem trace_ratio_factorisation (chi22 cplx : ℝ) (hc : cplx ≠ 0) :
+The molecular scalar-block trace-ratio `χ₂₂ / cplx²` equals `χ₂₂ · (1/cplx)²`
+where the EM coupling is `α = 1/cplx`, `cplx = q·[9]_q·[10]_q`.  Pure algebra —
+the step that exhibits the `α_EM²` scaling once the dressed character `χ₂₂` and
+the complexity normaliser are in hand. -/
+theorem trace_ratio_factorisation (chi22 cplx : ℝ) :
     chi22 / cplx ^ 2 = chi22 * (1 / cplx) ^ 2 := by
-  field_simp
+  rw [one_div, inv_pow, ← div_eq_mul_inv]
 
 /-- **Round-20 trace-ratio, assembled.**
 
 Given the round-19 dressed character `chi22 = h·(q²+q⁻²)²` and the complexity
-`cplx = q·[9]_q·[10]_q ≠ 0`, the trace-ratio equals `C(q)·α²` with the *derived*
+`cplx = q·[9]_q·[10]_q`, the trace-ratio equals `C(q)·α²` with the *derived*
 `O(1)` coefficient `C(q) = h·(q²+q⁻²)²` and `α = 1/cplx`.  Sorry-free; the
-content is exactly `trace_ratio_factorisation` with `C(q)` named. -/
+content is `trace_ratio_factorisation` with `C(q)` named. -/
 theorem trace_ratio_eq_C_mul_alpha_sq
-    (q cplx : ℝ) (hc : cplx ≠ 0)
+    (q cplx : ℝ)
     (chi22 : ℝ) (hchi : chi22 = (q - q⁻¹) * (q ^ 2 + (q⁻¹) ^ 2) ^ 2) :
     chi22 / cplx ^ 2
       = ((q - q⁻¹) * (q ^ 2 + (q⁻¹) ^ 2) ^ 2) * (1 / cplx) ^ 2 := by
   rw [hchi]
-  exact trace_ratio_factorisation _ cplx hc
+  exact trace_ratio_factorisation _ cplx
 
 end QOU.Archimedean.EHartreeTraceRatio
