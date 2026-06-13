@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "569f57339786",
     "ts": "7643e78d1441",
-    "lean": "616081475856"
+    "lean": "b22dd80a8177"
   },
   "criteria": {
     "voice-status-leak": [
@@ -342,6 +342,24 @@
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
         "notes": "Label 'thm:knot-mass-formula-unified' → expected 'knot_mass_formula_unified'; Lean declares: descendedMarkov, braneTower, electronMass, frobeniusCoCasimirTraceFallback, frobeniusCoCasimirTrace.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "569f57339786",
+          "ts": "7643e78d1441",
+          "lean": "b22dd80a8177"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:17:05.761Z",
+        "reviewed_sha": "152839167b09decb27a612490cd07a55fb825071",
+        "notes": "Auto-drained by agent"
       }
     ],
     "voice-author-notes-pollution": [
@@ -397,6 +415,24 @@
         "reviewed_at": "2026-06-06T00:41:25.333Z",
         "reviewed_sha": "91f9b8324fe995ea8f97420025ce1e1d62e2e0d2",
         "notes": "Move brane-tower note and implications to a linked remark block."
+      },
+      {
+        "field_hash": {
+          "md": "569f57339786",
+          "ts": "7643e78d1441",
+          "lean": "b22dd80a8177"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:17:05.761Z",
+        "reviewed_sha": "152839167b09decb27a612490cd07a55fb825071",
+        "notes": "Auto-drained by agent"
       }
     ],
     "fit-section-chapter": [
@@ -419,6 +455,24 @@
         "reviewed_at": "2026-06-06T00:41:48.514Z",
         "reviewed_sha": "91f9b8324fe995ea8f97420025ce1e1d62e2e0d2",
         "notes": "Good fit."
+      },
+      {
+        "field_hash": {
+          "md": "569f57339786",
+          "ts": "7643e78d1441",
+          "lean": "b22dd80a8177"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:17:05.761Z",
+        "reviewed_sha": "152839167b09decb27a612490cd07a55fb825071",
+        "notes": "Auto-drained by agent"
       }
     ],
     "wall-side-statement": [
@@ -441,6 +495,24 @@
         "reviewed_at": "2026-06-06T00:41:48.559Z",
         "reviewed_sha": "91f9b8324fe995ea8f97420025ce1e1d62e2e0d2",
         "notes": "Add wall: field or §7c banner to the numeric/archimedean note."
+      },
+      {
+        "field_hash": {
+          "md": "569f57339786",
+          "ts": "7643e78d1441",
+          "lean": "b22dd80a8177"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:17:05.761Z",
+        "reviewed_sha": "152839167b09decb27a612490cd07a55fb825071",
+        "notes": "Auto-drained by agent"
       }
     ],
     "wall-side-proof": [
@@ -463,6 +535,24 @@
         "reviewed_at": "2026-06-06T00:41:48.597Z",
         "reviewed_sha": "91f9b8324fe995ea8f97420025ce1e1d62e2e0d2",
         "notes": "Add banner or wall: field to separate archimedean evaluation from algebraic claim."
+      },
+      {
+        "field_hash": {
+          "md": "569f57339786",
+          "ts": "7643e78d1441",
+          "lean": "b22dd80a8177"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:17:05.761Z",
+        "reviewed_sha": "152839167b09decb27a612490cd07a55fb825071",
+        "notes": "Auto-drained by agent"
       }
     ],
     "proof-no-axiom-growth": [
@@ -1291,7 +1381,87 @@
         "reviewed_at": "2026-06-11T18:06:24.673Z",
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7"
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "569f57339786",
+          "ts": "7643e78d1441",
+          "lean": "b22dd80a8177"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:17:05.761Z",
+        "reviewed_sha": "152839167b09decb27a612490cd07a55fb825071",
+        "notes": "Auto-drained by agent"
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "569f57339786",
+          "ts": "7643e78d1441",
+          "lean": "b22dd80a8177"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:17:05.761Z",
+        "reviewed_sha": "152839167b09decb27a612490cd07a55fb825071",
+        "notes": "Auto-drained by agent"
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "569f57339786",
+          "ts": "7643e78d1441",
+          "lean": "b22dd80a8177"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:17:05.761Z",
+        "reviewed_sha": "152839167b09decb27a612490cd07a55fb825071",
+        "notes": "Auto-drained by agent"
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "569f57339786",
+          "ts": "7643e78d1441",
+          "lean": "b22dd80a8177"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:17:05.761Z",
+        "reviewed_sha": "152839167b09decb27a612490cd07a55fb825071",
+        "notes": "Auto-drained by agent"
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-13T05:17:05.761Z"
 }
