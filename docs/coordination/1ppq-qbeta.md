@@ -302,10 +302,24 @@ kernel-status row. Audit:
   any carried Φ_d); ζ₄ is unreachable because **no full κ_λ carries
   Φ₄** (mode-unavailability, Σ_□ wash-out), re-confirmed n≤6. Both live
   fibre constraints (bar-odd a_1=κ_(2,1), period-3/ζ₆) now realisable.
-- **Next task (the keystone frontier):** derive the single archimedean
-  scalar `S = Q_β/E₀` categorically (anchor-dependent 908/887;
-  precision-floor-protected, CAL-3-anchored). The fibre half of `c_3`
-  (carrier κ_(2,1)) is pinned; `S` is the remaining open piece.
+- **Higher a_2,a_3 carriers** `qbeta_higher_aj_carrier_probe.py`:
+  recursion coefficients are `a_j = e_j({r_λ})`, elementary symmetric
+  polynomials of the per-mode rates `r_λ = (q−1)μ_λ = κ_λ`.
+  **PARITY-ALTERNATION THEOREM** (verified abstractly j=1..4): bar-odd
+  rates ⇒ `bar(e_j)=(−1)^j e_j` ⇒ a_j alternate ODD,EVEN,ODD,EVEN —
+  mode-set-INDEPENDENT (one-line `e_j(−x)=(−1)^j e_j`; Mathlib-provable,
+  formalization follow-up, sandbox elan firewalled). Concrete depth-3
+  set {(2,1),(2,2),(2,1,1)}: a_1 odd/ζ₂, a_2 even/ζ₂, a_3 odd/ζ₂+ζ₆ —
+  ζ₆ enters at a_3 (the top product; active-set-specific, only the
+  alternation law is universal). Fibre structure now mapped through a_3.
+- **Scalar `S = Q_β/E₀` — OWNER-DECLINED (2026-06-13).** Attempting a
+  categorical derivation of `S` means explaining the anchor-dependence
+  (908 proton / 887 muon), which is the `q_0`-substrate-derivation the
+  ledger declined 2026-05-08 (Subgoal-2, research-grade, out of scope).
+  Owner declined the attempt this session ("2 decline"). The fibre
+  STRUCTURE (carriers κ_(2,1), parity-alternation, ζ-content through
+  a_3) is complete; turning it into `c_k` VALUES needs `S` + the active
+  set `Λ`, both deferred. Do not attempt `S` without owner reversal.
 
 ## Cross-refs
 
