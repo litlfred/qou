@@ -1,0 +1,92 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.2.1",
+  "computedAt": "2026-06-13T07:53:37.083802+00:00",
+  "commitSha": "eeda1a22ffc44e51847dfaea6529b1adc1e809b8",
+  "assertions": [
+    {
+      "name": "exploration_complete",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "Probe executed and logged residuals for flavor-split Habiro element candidates."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 3329,
+  "computation": "mn-dpn-xq-refinement-probe",
+  "scriptFile": "mn_dpn_xq_refinement_probe.py",
+  "scriptHash": "e0952d7f53b6",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.2",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.11.1",
+    "mpmath": "0.0.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
+  },
+  "data": {
+    "q_proton": "1.10997858275138080759166909561",
+    "q_muon": "1.10997859555418057528159407961",
+    "proton_anchor_results": {
+      "Base (no refinement)": {
+        "pred_delta": "1.29168067726596",
+        "err_ppm": 1277.075239997008
+      },
+      "C1: 1 + ℏ_q^3": {
+        "pred_delta": "1.29293709981491",
+        "err_ppm": 305.613775167353
+      },
+      "C2: 1 + ℏ_q^4 [3]_q": {
+        "pred_delta": "1.29205958369308",
+        "err_ppm": 984.1061325663459
+      },
+      "C3: 1 + h_q^2 / 25": {
+        "pred_delta": "1.29393885586748",
+        "err_ppm": 468.9404566338302
+      },
+      "C4: 1 + ℏ_q^2 / [2]_q": {
+        "pred_delta": "1.29798665459281",
+        "err_ppm": 3598.6840944850055
+      },
+      "C5: 1 + ℏ_q^3 [2]_q": {
+        "pred_delta": "1.29420721343292",
+        "err_ppm": 676.4335757556566
+      }
+    },
+    "muon_anchor_results": {
+      "Base (no refinement)": {
+        "pred_delta": "1.29168109305713",
+        "err_ppm": 1276.7537517355086
+      },
+      "C1: 1 + ℏ_q^3": {
+        "pred_delta": "1.29293751640584",
+        "err_ppm": 305.29166853962596
+      },
+      "C2: 1 + ℏ_q^4 [3]_q": {
+        "pred_delta": "1.29205999976638",
+        "err_ppm": 983.784426161307
+      },
+      "C3: 1 + h_q^2 / 25": {
+        "pred_delta": "1.29393927288662",
+        "err_ppm": 469.2628943609754
+      },
+      "C4: 1 + ℏ_q^2 / [2]_q": {
+        "pred_delta": "1.29798707372903",
+        "err_ppm": 3599.008169118576
+      },
+      "C5: 1 + ℏ_q^3 [2]_q": {
+        "pred_delta": "1.29420763083534",
+        "err_ppm": 676.7563098304098
+      }
+    }
+  }
+}
