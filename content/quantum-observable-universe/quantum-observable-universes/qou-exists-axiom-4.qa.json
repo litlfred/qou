@@ -1032,7 +1032,192 @@
         "reviewed_at": "2026-06-11T18:06:24.673Z",
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "8eafb7130c75",
+          "ts": "0c988be86345",
+          "lean": "44c3c32ff792"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "quantum-observable-universes.ts:33 — sits in sec:qou-definition beside sibling axiom-verification lemmas qou-exists-axiom-1..3; qou-exists-axiom-4.md:11-12 explicitly verifies axiom (4) of def:quantum-observable-universe defined in the same section",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:27:58.051Z",
+        "reviewed_sha": "99721f2d61805377e1e331d15c38cecf34401717",
+        "notes": "Axiom-4 verification lemma squarely in the QOU-definition section; no sibling carries the same claim"
+      }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "8eafb7130c75",
+          "ts": "0c988be86345",
+          "lean": "44c3c32ff792"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "qou-exists-axiom-4.md:1-12 — bare lemma statement plus one-line scope note 'This verifies axiom (4) of [def:quantum-observable-universe]'; no Interpretation/Motivation heading, no physical-meaning prose",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:27:58.087Z",
+        "reviewed_sha": "99721f2d61805377e1e331d15c38cecf34401717",
+        "notes": "Statement-only block; the scope note is a clarifying cross-reference, not interpretation"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "8eafb7130c75",
+          "ts": "0c988be86345",
+          "lean": "44c3c32ff792"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "qou-exists-axiom-4.md:6-9 — statement is the purely categorical identity ε ∘ Λⁿ(g_V) = ε over Aut⊗(τ); qou-exists-axiom-4.lean:40 states it over a generic Field k; no Real.*, no numeric q≈, no MeV, no order hypotheses",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:28:23.684Z",
+        "reviewed_sha": "99721f2d61805377e1e331d15c38cecf34401717",
+        "notes": "Generic-ring/categorical statement matching the quantum-observable-universes chapter regime"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "8eafb7130c75",
+          "ts": "0c988be86345",
+          "lean": "44c3c32ff792"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "qou-exists-axiom-4-proof.md:1-17 — proof uses ΛⁿV ≅ 𝟙 via the q-determinant and naturality of g at the unit (g_𝟙 ∘ ε = ε); no linarith/IVT/continuity/Real.* or numeric evaluation",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:28:23.721Z",
+        "reviewed_sha": "99721f2d61805377e1e331d15c38cecf34401717",
+        "notes": "Categorical naturality argument; proof method matches the substrate side of the wall"
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "8eafb7130c75",
+          "ts": "0c988be86345",
+          "lean": "44c3c32ff792"
+        },
+        "result": "warn",
+        "severity": "major",
+        "evidence": "qou-exists-axiom-4.lean:39-42 — 'def exists_axiom_4_volume ... : Q.exteriorSquare ⟶ (𝟙_ Q.C) := Q.volumeForm' only extracts the structure field (existence of ε); the narrative invariance equation ε ∘ Λⁿ(g_V) = ε for all g ∈ Aut⊗(τ) (qou-exists-axiom-4.md:6-9) is not formalized",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:28:48.664Z",
+        "reviewed_sha": "99721f2d61805377e1e331d15c38cecf34401717",
+        "notes": "Lean carries only the volume-form existence, not the invariance claim; weakening is documented in the .lean header (lines 14-18, 'extracts that field') and PR #794 note, but not flagged in the .md — warn, not fail; ref resolves, not True-gutted, sorry-free"
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "8eafb7130c75",
+          "ts": "0c988be86345",
+          "lean": "44c3c32ff792"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.75,
+          "max": 1
+        },
+        "evidence": "qou-exists-axiom-4-proof.md:2-7 — plan stated up front: identify ΛⁿV ≅ 𝟙 via the q-determinant (cited \\cite{kassel1995}), then conclude by naturality at the unit object",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:29:11.319Z",
+        "reviewed_sha": "99721f2d61805377e1e331d15c38cecf34401717",
+        "notes": "Two-step strategy explicit and cited; slightly terse at 'by G-invariance' (really naturality of g plus g_1 = id) but fully recoverable"
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "8eafb7130c75",
+          "ts": "0c988be86345",
+          "lean": "44c3c32ff792"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "evidence": "qou-exists-axiom-4.lean:39-42 — decl is sorry-free but the invariance goal ε ∘ Λⁿ(g_V) = ε is unformalized; closing it needs Aut⊗(τ) and exterior-power functoriality in Lean (core machinery, not yet present in CategoricalFoundations)",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:29:11.355Z",
+        "reviewed_sha": "99721f2d61805377e1e331d15c38cecf34401717",
+        "notes": "Math argument is routine naturality, but the Lean gap requires core Tannakian machinery — mid plausibility per gap-criticality rubric"
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "8eafb7130c75",
+          "ts": "0c988be86345",
+          "lean": "44c3c32ff792"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "evidence": "qou-exists-axiom-4-proof.md:6-7 — standard quantum-determinant invariance argument cited to kassel1995; siblings qou-exists-axiom-1..3 use distinct arguments, so not duplicated in-corpus",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:29:11.391Z",
+        "reviewed_sha": "99721f2d61805377e1e331d15c38cecf34401717",
+        "notes": "Standard textbook Tannakian argument, applied (not novel) — 0.5 per rubric 'standard but not duplicated'"
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-13T01:29:11.391Z"
 }
