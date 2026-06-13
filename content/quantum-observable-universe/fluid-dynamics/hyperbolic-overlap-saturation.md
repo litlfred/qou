@@ -201,4 +201,4 @@ viscous Navier–Stokes system as the expected outcome.
    $\kappa^2 = \pi\nu/(2\Gamma + \pi\nu)$; lifting this to NS
    blowup requires the
    [Levi degeneracy](#conj:levi-degeneracy) and
-   [counter-example](#prop:ns-counterexample) conjectures.
+   [counter-example](#conj:ns-counterexample) conjectures.

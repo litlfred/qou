@@ -347,8 +347,8 @@
 | [prop:core-levi-form](#prop:core-levi-form) | Core aspect ratio equals Levi form condition number on the normal plane | Ch 16 | `qou:QOU.FluidDynamics.core_levi_form` |
 | [prop:cosimplicial-crossed-groupoid](#prop:cosimplicial-crossed-groupoid) | Cosimplicial crossed groupoid | Ch 4 | `qou:QOU.LiftingDescent.cosimplicial_crossed_groupoid_exists` |
 | [prop:skein-coulomb-enhancement](#prop:skein-coulomb-enhancement) | Coulomb enhancement from electron-proton Skein crossings | Ch 12 | `qou:QOU.Archimedean.skein_coulomb_enhancement` |
-| [prop:ns-counterexample](#prop:ns-counterexample) | Counter-example to Navier--Stokes regularity via $q \to 1$ degeneration | Ch 16 | `qou:QOU.FluidDynamics.NSCounterexample` |
-| [prop:critical-exponent](#prop:critical-exponent) | Critical exponent of the enstrophy divergence at $q = 1$ | Ch 16 | `qou:QOU.FluidDynamics.CriticalExponent` |
+| [conj:ns-counterexample](#conj:ns-counterexample) | Counter-example to Navier--Stokes regularity via $q \to 1$ degeneration | Ch 16 | `qou:QOU.FluidDynamics.NSCounterexample` |
+| [conj:critical-exponent](#conj:critical-exponent) | Critical exponent of the enstrophy divergence at $q = 1$ | Ch 16 | `qou:QOU.FluidDynamics.CriticalExponent` |
 | [prop:skein-crossing-asymmetry](#prop:skein-crossing-asymmetry) | Crossing asymmetry and per-crossing Coulomb correction | Ch 9 | `qou:QOU.Braiding.skein_crossing_asymmetry` |
 | [prop:crossing-energy-decomposition](#prop:crossing-energy-decomposition) | Crossing energy decomposes into strong and Coulomb channels | Ch 13 | `qou:QOU.Braiding.q_decomposition` |
 | [prop:strangelet-crossing-energy](#prop:strangelet-crossing-energy) | Crossing energy of strange quark matter is purely strong | Ch 13 | `qou:QOU.Observations.strangelet_crossing_energy` |
@@ -546,7 +546,7 @@
 | [prop:partition-sum-proton-residual](#prop:partition-sum-proton-residual) | Proton tower residual = $m_e \cdot \mathrm{tr}_M(C_{\mathrm{Frob}}) = m_e(2 + 1/[2]_q)$ | Ch 10 | `qou:QOU.BraidKnot.proton_tower_residual_frobenius` |
 | [prop:mass-endomorphism-tower](#prop:mass-endomorphism-tower) | Proton--electron mass ratio from the $\Phi_q$ tower | Ch 10 | `qou:QOU.MassEndomorphism.proton_electron_ratio` |
 | [prop:cl3-zeta5-pslq-independence](#prop:cl3-zeta5-pslq-independence) | PSLQ certifies Cl$_3$(2$\pi$/5) $-$ Cl$_3$(4$\pi$/5) is independent of standard depth-3 periods up to coefficient norm 10$^8$ | Ch 10 | `qou:QOU.BraidKnot.Cl3Zeta5PslqIndependence.pslq_independence` |
-| [prop:q-aubin-lions](#prop:q-aubin-lions) | q-deformed Aubin--Lions lemma: compactness of the solution family as $q \to 1$ | Ch 16 | `qou:QOU.FluidDynamics.QAubinLions` |
+| [conj:q-aubin-lions](#conj:q-aubin-lions) | q-deformed Aubin--Lions lemma: compactness of the solution family as $q \to 1$ | Ch 16 | `qou:QOU.FluidDynamics.QAubinLions` |
 | [prop:mass-categorical-descent](#prop:mass-categorical-descent) | QOU mass formula as descent decomposition of the mass endomorphism | Ch 10 | `qou:QOU.ParticleInteractions.mass_categorical_descent` |
 | [prop:vertex-algebra-relations](#prop:vertex-algebra-relations) | QU and QUO axioms as relations on Hecke generators | Ch 9 | `qou:QOU.VertexAlgebra.descartes_genus` |
 | [prop:vertex-algebra-jet-relations](#prop:vertex-algebra-jet-relations) | QU/QUO and cohomological relations on the jet bundle | Ch 9 | `qou:QOU.VertexAlgebra.JetRelations.euler_level_stable` |

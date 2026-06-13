@@ -34,9 +34,9 @@ prefactor", so the **order** of each quantity in $\varepsilon$ is an
 invariant of the substrate, independent of normalization conventions.
 
 **Proposition (conditional on
-[`prop:q-aubin-lions`](#prop:q-aubin-lions),
-[`prop:ns-counterexample`](#prop:ns-counterexample),
-[`prop:critical-exponent`](#prop:critical-exponent),
+[`conj:q-aubin-lions`](#conj:q-aubin-lions),
+[`conj:ns-counterexample`](#conj:ns-counterexample),
+[`conj:critical-exponent`](#conj:critical-exponent),
 [`prop:blowup-yekutieli`](#prop:blowup-yekutieli),
 and
 [`conj:regularity-breakdown`](#conj:regularity-breakdown);

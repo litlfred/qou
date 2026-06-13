@@ -15,7 +15,7 @@ $$
 If the Levi form **stays non-degenerate** ($\kappa = O(1)$):
 vorticity concentrates in tubular cores, the lower bound
 $\|\omega\|_\infty \geq c/(T^*-t)$ holds, BKM diverges, and
-NS loses regularity.  The [counter-example](#prop:ns-counterexample)
+NS loses regularity.  The [counter-example](#conj:ns-counterexample)
 is established.  Physically: the contact structure resists
 integrability, the vortex remains a topological defect, and the
 collision produces a genuine singularity.

@@ -1,4 +1,4 @@
-**Proposition (conditional on [`conj:regularity-breakdown`](#conj:regularity-breakdown)).**
+**Conjecture (assuming [`conj:regularity-breakdown`](#conj:regularity-breakdown)).**
 
 The [regularity breakdown conjecture](#conj:regularity-breakdown)
 predicts that the maximum enstrophy diverges as

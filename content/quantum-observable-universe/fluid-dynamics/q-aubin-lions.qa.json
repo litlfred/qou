@@ -1,6 +1,6 @@
 {
   "$schema": "block-qa/v1",
-  "label": "prop:q-aubin-lions",
+  "label": "conj:q-aubin-lions",
   "kind": "proposition",
   "paths": {
     "ts": "content/quantum-observable-universe/fluid-dynamics/q-aubin-lions.ts",
@@ -308,7 +308,7 @@
         },
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
-        "notes": "Label 'prop:q-aubin-lions' → expected 'q_aubin_lions'; Lean declares: QAubinLions. Structural match via content."
+        "notes": "Label 'conj:q-aubin-lions' → expected 'q_aubin_lions'; Lean declares: QAubinLions. Structural match via content."
       }
     ],
     "voice-author-notes-pollution": [
@@ -390,7 +390,7 @@
         },
         "reviewed_at": "2026-06-07T02:30:21.194Z",
         "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
-        "notes": "The md self-labels its conclusion 'Conjecture (q-Aubin-Lions, conditional on prop:ns-counterexample)' — the full compactness is not closed (Steps 5-7 give only truncated/Euler or NS-with-extra-viscosity limits). Lean ref -> conjecture class QOU.FluidDynamics.QAubinLions (axiomatised). Core gap."
+        "notes": "The md self-labels its conclusion 'Conjecture (q-Aubin-Lions, conditional on conj:ns-counterexample)' — the full compactness is not closed (Steps 5-7 give only truncated/Euler or NS-with-extra-viscosity limits). Lean ref -> conjecture class QOU.FluidDynamics.QAubinLions (axiomatised). Core gap."
       }
     ],
     "proof-rater-novelty": [
