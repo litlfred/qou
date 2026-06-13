@@ -14,22 +14,22 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "e7bd0ca65b4a",
+          "md": "c1e48bfcbed4",
           "ts": "0cff7563b021"
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "Prose intro for sec:mass-endomorphism-opener, explicitly listed as first block; introduces mass endomorphism scope for the section.",
+        "evidence": "mass-endomorphism-opener-intro.md:1-33 — prose opener stating the chapter's spine (Hecke mass element, Markov trace, VolDensity) and roadmapping mass identity, thm:topological-mass, archimedean corollary; .ts:3 kind=prose, label sec:mass-endomorphism-opener-intro",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-05",
+          "agent_date": "2026-06-13",
           "agent_skill": "qa-agent-drain"
         },
-        "reviewed_at": "2026-06-05T14:16:45.694Z",
-        "reviewed_sha": "0482f6a2800d576526ea7923465ec74662f1102f",
-        "notes": "Section opener, no redundancy."
+        "reviewed_at": "2026-06-13T01:49:55.131Z",
+        "reviewed_sha": "e4f0b632cb25fea57cc958cf0835432d0731394d",
+        "notes": "Section opener squarely in chapter scope; pure exposition (no new provable claim with proof), no sibling restates it. Side observation (not a fit issue): .md:19 lists m_mu/m_e among the three calibrations, which predates the 2026-05-28 proton-anchor re-pin."
       }
     ],
     "proof-no-trivial-skeleton": [
@@ -803,5 +803,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-13T01:49:55.131Z"
 }
