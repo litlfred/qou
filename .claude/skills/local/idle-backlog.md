@@ -26,15 +26,13 @@ should pull the next applicable backlog item and advance it.
 
 Walk the queue top-down; take the first item that is **applicable** (see below):
 
-1. **Current session todos** (the TodoWrite list / the chat's stated queue).
-2. **Current PR todos** — the open PR's body checklist + unresolved review-comment
+1. **Right-scoped Beans** — run `beans list` to find pending beans (issues) whose scope overlaps with your current work or branch. The `beans` CLI natively supports hierarchies (epics, milestones, parents, dependencies).
+2. **QA backlog for the 6 audit axes** — if no beans are found, systematically work through the QA backlog (e.g. `bib`, `canonical`, `compute`, `detangler`, `proof`, `script-quality`). You must:
+   - Run a stale refresh
+   - Populate unpopulated items
+   - Resolve existing issues
+3. **Current PR todos** — the open PR's body checklist + unresolved review-comment
    threads (`mcp__github__pull_request_read get_review_comments`).
-3. **Integration-watcher queues** — `todos/*-watcher-queue.json`; prefer items
-   whose scope overlaps the current PR.
-4. **Stale sidecars / witnesses** — refresh `*.qa.json` /
-   `*.witness.json` that have drifted (caps per CLAUDE.md).
-5. **Cross-cutting cleanups** — bare-URL `-- Ref:` upgrades, glossary backfills,
-   doc currency.
 
 ## "Applicable" = non-conflicting with the in-flight task
 

@@ -24,7 +24,7 @@ where the previous one left off.
 |---|---|
 | [`STATUS.md`](../../../STATUS.md) | Always-current root dashboard: goals → master ledgers → active PRs |
 | `docs/coordination/<goal>.md` | Per-goal **master ledger**: status table, open probes, flip-flop history, session log |
-| `todos/<goal>-queue.json` | Machine-readable **queue** of probes (typed `TodoItem[]`); committed so other agents see it |
+| `.beans/` (via `beans` CLI) | Machine-readable **queue** of probes, managed as hierarchical issues (Beans). |
 | Per-PR body | Session intent at branch-open; EOS results appended |
 
 ## Session-start protocol (5 steps)
@@ -52,15 +52,11 @@ Open `docs/coordination/<goal>.md`. Read:
 
 ### 3. Read the queue
 
-Open `todos/<goal>-queue.json`. Find:
+Use the `beans` CLI to list current tasks. Run `beans list` to find:
 
-- **`status: "open"`** items not yet picked up.
-- **`status: "blocked"`** items waiting on dependencies — check if
-  any of their `blocked_by` items have moved to "done" since the
-  queue was last edited.
-- **`assignee`** — agent branch currently working it (if any).
-  Per "no explicit claim" process, multiple agents MAY pick the
-  same item; coordinate with the user if you see this happen.
+- **`todo` or `draft`** beans not yet picked up.
+- **`blocked`** beans waiting on dependencies.
+- Assignee: Check the bean body/comments to see if another agent is working on it. Multiple agents MAY pick the same item; coordinate with the user if you see this happen.
 
 ### 4. Declare intent (write)
 
@@ -72,10 +68,13 @@ Three places, all required:
 | 2026-05-31 | Claude / `<branch>` | INTENT: <which probe IDs from queue + what user asked> | (filled at EOS) |
 ```
 
-**b. Queue file** — set `assignee: "<branch>"` and `status: "in_progress"`
-on each probe you're picking up. If a probe was already `assignee`-d
-to a different branch, **leave that field alone**; just add your branch
-to a `co_assignees` array (signal to coordinate with user).
+**b. Beans CLI** — Create a parent session bean and child tasks.
+- Create a session-level milestone/epic: `beans create "Session: <Branch/Goal>" --type milestone`
+- For each probe/task you pick up, create a child task and link it to the session bean:
+  `beans create "<Probe/Task>" --type task`
+  `beans update <child-id> --parent <session-id>`
+  `beans update <child-id> --status in-progress`
+If working on an existing bean, just run `beans update <id> --status in-progress --body-append "Claimed by <branch>"`
 
 **c. PR body** — at branch-open, the PR body must include:
 
@@ -101,18 +100,12 @@ After step 4, run `/coordinate` to post intent on relevant sibling PRs
 
 ### 1. Update the queue
 
-For each probe you worked:
+For each probe you worked, use the `beans` CLI:
 
-- If completed: `status: "done"`, append `completedAt: <date>` and
-  `completedBy: <branch>` to `data`. Add `summary_of_finding` text.
-- If partial: leave `status: "in_progress"`, update `comment` field
-  with: what you tried, what worked, what's left, next-step
-  suggestion for the picking-up agent.
-- If you discovered a NEW probe: append a new TodoItem to the queue
-  with `origin: "<your-branch>"`. Mark `status: "open"`.
-- If you retract a previous "derivation" claim: do NOT just edit the
-  status field. Append the retraction to the ledger's flip-flop
-  history (Stop Repeating Yourself).
+- If completed: `beans update <id> --status completed`. You should also add a summary comment using `beans update <id> --body-append "Completed with finding: ..."`.
+- If partial: leave `status: in-progress`, but append a comment: `beans update <id> --body-append "Partial result: ..."`.
+- If you discovered a NEW probe: create a new bean via `beans create`.
+- If you retract a previous "derivation" claim: append the retraction to the ledger's flip-flop history (Stop Repeating Yourself).
 
 ### 2. Append results to the master ledger
 
@@ -173,15 +166,14 @@ commit touching the same scope):
 
 ## Hand-off pickup protocol
 
-If you're the picking-up agent (someone else's `in_progress` probe
+If you're the picking-up agent (someone else's `in-progress` probe
 or partial result):
 
 1. Read the previous session log row in the ledger — that's the
    handoff letter.
-2. Read the queue `comment` field — that's the technical state.
+2. Read the bean discussion/comments (`beans show <id>`) — that's the technical state.
 3. Read the partial PR (if open) — that's the code state.
-4. Declare your intent normally; the queue entry now lists you as
-   `assignee`. The previous owner is recorded in `data.history`.
+4. Declare your intent normally (create your session bean and append a comment to the existing bean).
 
 ## Anti-patterns
 
