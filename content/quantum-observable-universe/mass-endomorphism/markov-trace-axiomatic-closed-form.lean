@@ -1,6 +1,6 @@
 import Mathlib.Algebra.Polynomial.Basic
-import Mathlib.Algebra.Polynomial.Eval
-import Mathlib.Data.Polynomial.RingDivision
+import Mathlib.Algebra.Polynomial.Eval.Defs
+import Mathlib.Algebra.Polynomial.RingDivision
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Ring
 
