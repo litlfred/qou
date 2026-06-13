@@ -14,20 +14,19 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "605a057db320",
+          "md": "7c557c593cb2",
           "ts": "a4d0cbf170e3"
         },
         "result": "pass",
-        "evidence": "mba-intro.md:1-8 — prose block titled 'Scope and conventions' in sec:mba-scope; describes purpose, layered stack, conventions, and maintenance contract; exactly what an appendix intro section needs; on-topic, correct register, non-redundant with siblings",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-04",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-04T14:04:33.693Z",
-        "reviewed_sha": "c014067cdd67ac2ee17119c9500173c36af98215"
+        "reviewed_at": "2026-06-13T03:34:19.467Z",
+        "reviewed_sha": "86b9a6e86d2e1b89bb1a54d4a84173ce00aa09b8"
       }
     ],
     "detangler-no-forward-ref": [
@@ -802,5 +801,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-13T03:34:19.467Z"
 }

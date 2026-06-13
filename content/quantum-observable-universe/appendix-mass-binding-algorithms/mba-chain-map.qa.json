@@ -14,20 +14,19 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "7569785ec81b",
+          "md": "c90e0f60ceeb",
           "ts": "e0e6981bcb42"
         },
         "result": "pass",
-        "evidence": "mba-chain-map.md:1-53 — titled 'From propositions to compute — the chain map'; presents the 11-step chain-map table mapping steps to propositions and Python API; exactly on-topic for sec:mba-chain-map; correct register, no redundancy with intro",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-04",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-04T14:05:12.994Z",
-        "reviewed_sha": "c014067cdd67ac2ee17119c9500173c36af98215"
+        "reviewed_at": "2026-06-13T03:34:19.467Z",
+        "reviewed_sha": "86b9a6e86d2e1b89bb1a54d4a84173ce00aa09b8"
       }
     ],
     "detangler-no-forward-ref": [
@@ -804,5 +803,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-13T03:34:19.467Z"
 }
