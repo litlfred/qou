@@ -145,13 +145,30 @@ feasible set, not a numerical certificate), the historical
 $L_{6a4}$ assignment for $^3\mathrm{He}$ is *the* unique R5-full
 canonical $T_w$.
 
-The Lean theorem currently carries a `sorry` for the convex-
-optimization step (Boyd–Vandenberghe-style strict-complementarity
-$\Rightarrow$ uniqueness in SDP).  Closing the `sorry` requires either
-upstream Mathlib convex-optimization infrastructure or a
-self-contained constructive argument from the active-set + dual
-variables recorded in
-[`r5-full-canonical-knot-solver.witness.json`](../../../folio-assistant/computations/r5-full-canonical-knot-solver.witness.json).
+The genuine *uniqueness* leg — Boyd–Vandenberghe §5.5
+strict-complementarity $\Rightarrow$ unique primal optimum — is closed
+for $^3\mathrm{He}$ **without any axiom**.  The R5-full witness places
+$^3\mathrm{He}$ in the interior regime (all three Wedderburn-block
+minimum eigenvalues strictly positive: trivial $1.87$, standard $0.53$,
+sign $0.53$, so the active set is empty), where the §5.5 argument is
+fully constructive.  The closure is
+`nucleus_uniqueness_closed_via_active_empty` at the $^3\mathrm{He}$
+strand count $n_0 = 9$ (specialised as
+`helium3_uniqueness_closed_via_active_empty` in
+[`AppliedHelium3Uniqueness.lean`](../../../content/quantum-observable-universe/lean/QOU/BraidKnot/AppliedHelium3Uniqueness.lean)),
+discharged through
+`real_strict_complementarity_unique_of_active_empty_and_cost_posDef`
+([`SDPRealUniqueness.lean`](../../../content/quantum-observable-universe/lean/QOU/MathlibExt/SDPRealUniqueness.lean))
+with no dependency on the general SDP rank-deficiency axiom.
+
+The general (non-empty active set) case — needed at the degenerate /
+metallic-coincidence loci where strict complementarity fails — remains
+gated on the `SDPRankUniqueness` Mathlib gap (SDP optimal-face
+rank-deficiency).  See
+[`docs/audits/2026-06-13-strict-complementarity-sdp-uniqueness-attempt.md`](../../../docs/audits/2026-06-13-strict-complementarity-sdp-uniqueness-attempt.md)
+for the closeable/irreducible split and the
+[`r5-full-canonical-knot-solver.witness.json`](../../../folio-assistant/computations/r5-full-canonical-knot-solver.witness.json)
+active-set data.
 
 ## Proof obligations
 
