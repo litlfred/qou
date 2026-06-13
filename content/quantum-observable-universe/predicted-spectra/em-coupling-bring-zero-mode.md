@@ -139,12 +139,8 @@ uniqueness.
 Two open computational sub-problems remain (both are now framed by
 uniqueness rather than structural anomaly):
 
-1. **Identify the precise Bloch-group class on Bring's surface.**
-   The conjecture predicts $2/(3\pi) = 2g/(4\pi(g-1))$ at $g=4$ is
-   the $\tau_{\text{arch}}$-image of a specific class in
-   $B(\mathbb{C})$ assembled from the cosimplicial data of the
-   genus-$4$ pair $\{T_{2,9}, T_{3,5}\}$. Making this class
-   explicit closes the Lean stub.
+1. **Identify the continuous cohomology pairing on Bring's surface.**
+   The conjecture originally predicted that $2/(3\pi) = 2g/(4\pi(g-1))$ at $g=4$ is the $\tau_{\text{arch}}$-image of a specific point-class $[Z] \in B(\mathbb{C})$ such that $D([Z]) = 2/(3\pi)$. However, this hits a **transcendence obstruction**: if $Z$ is assembled from the algebraic trace fields of $\{T_{2,9}, T_{3,5}\}$, then $D([Z])$ evaluates to a combination of $L$-values. Setting $D([Z]) = 2/(3\pi)$ implies $\pi \cdot D([Z]) \in \mathbb{Q}$, which contradicts standard transcendence expectations (e.g., Zagier's conjecture). Therefore, $\tau_{\text{arch}}$ cannot act by pointwise Bloch-Wigner evaluation. Instead, the focus shifts to **group homology**: the Yekutieli cosimplicial data must define a fundamental 2-cycle $[\Sigma] \in H_2(PSL(2,\mathbb{R}); \mathbb{Z})$ for the Bring surface, and $\tau_{\text{arch}}$ acts by pairing this class with the continuous volume/Euler class. The integration natively produces the Gauss-Bonnet area $4\pi(g-1)$ with $\pi$ in the denominator. Explicitly constructing this homology pairing closes the Lean stub.
 2. **Compute the next-order self-energy.** The $\alpha/(4\pi)$
    term that brings the residual to $+5.7 \times 10^{-8}$ should
    factor through a higher Bloch group $B_n(\mathbb{C})$ with the

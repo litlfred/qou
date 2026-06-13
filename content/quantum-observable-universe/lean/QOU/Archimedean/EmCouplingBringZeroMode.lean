@@ -103,14 +103,17 @@ axiom BlochWigner_unit_circle : ℝ → ℝ
     3. ⏳ **Phase 3 (witness identification, research-grade):**
        identify the explicit `[Z] ∈ B(ℂ)` (equivalently, the
        specific angle `θ`) from the Yekutieli triple on
-       `{T(2,9), T(3,5)}`.  Per PR #952 the cheapest canonical
-       hypothesis (unit-circle basis at S_5-symmetric angles
-       `kπ/n, n ≤ 30`) is REFUTED by PSLQ at maxcoeff ≤ 50;
-       single-point inversion gives `θ_*/π ≈ 0.9019897…` (not a
-       simple rational).  The witness `[Z]` therefore lives
-       off-canonical-angle or off-unit-circle, or requires a
-       non-standard relative Bloch group.  Estimated 2–4 weeks
-       research per the PR #952 trail.
+       `{T(2,9), T(3,5)}`. However, this hits a **transcendence obstruction**:
+       for algebraic inputs, `D(z)` yields combinations of `L`-values,
+       so `D(z) = 2/(3π)` implies `π·D(z) ∈ ℚ`, violating Zagier's
+       conjectures. PSLQ at `maxcoeff ≤ 50` correctly refutes
+       canonical unit-circle bases. The true resolution requires
+       upgrading `τ_arch` from point-evaluation to a **group homology pairing**:
+       pairing the continuous Euler/Volume class with the fundamental
+       2-cycle `[Σ] ∈ H_2` of the Bring surface, naturally producing the
+       Gauss-Bonnet area `4π(g-1)` with `π` in the denominator.
+       Until this infrastructure is built, the point-evaluation signature
+       remains as a structural surrogate.
 
     See `em-coupling-bring-zero-mode.md` §"open computational
     sub-problem" for the 3-phase roadmap.
