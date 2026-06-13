@@ -37,10 +37,21 @@ The open statement: *every non-vacuum excitation of the physical
    thereby replaced by two strictly smaller named ones.
 
 3. **What remains** is constructing `FiltrationBase` + `TowerTransport`
-   for the physical tower: the base case is a fixed finite-rank
-   spectral computation (H₂ or H₃ — candidate for a compute-witness
-   + native_decide route); the transport step is where the Wenzl
-   conditional-expectation positivity argument lives.
+   for the physical tower.  **Honest scope note (the base case is NOT a
+   near-term `native_decide` win):** the per-crossing Hecke spectrum is
+   the *signed* pair `{q, −q⁻¹}`, and for `1 < q` the antisymmetric
+   eigenvalue is negative — `−q⁻¹ ∈ (−1, 0) < 0 < E_×(q)`.  The Lean
+   `CategoricalTransferMatrix.eigenvalues`, by contrast, is a
+   *non-negative, monotone, vacuum-0 energy* spectrum (its structure
+   axioms), so the physical energy spectrum is **not** the raw signed
+   Hecke spectrum: an energy functional
+   `E : (signed Hecke / vertex-volume) → ℝ≥0` sits in between, and
+   `FiltrationBase` is a claim about *that* spectrum.  The finite-rank
+   check (H₂/H₃) is well-posed only after that functional is fixed —
+   and fixing it is itself open content (the crossing-graded model in
+   `CrossingGradedModel` sidesteps it by *postulating* `energy = k·E_×`).
+   The transport step is where the Wenzl conditional-expectation
+   positivity argument lives.
 
 ## Gap 2 — Step-3 universality, narrowed to an interface class
 
