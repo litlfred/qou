@@ -342,6 +342,24 @@
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
         "notes": "Label 'prop:universality' → expected 'universality'; Lean declares: CriticalExponent, BlowupYekutieli, RegularityBreakdown, universality_conditional. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "a5400051cdb5",
+          "ts": "2742d361afd0",
+          "lean": "ed5f2a2ad375"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:14:22.585Z",
+        "reviewed_sha": "fe96cf2a63b8bd5a9f864257db079ea50566f731",
+        "notes": "Auto-drained by agent"
       }
     ],
     "voice-author-notes-pollution": [
@@ -1383,5 +1401,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-13T05:14:22.585Z"
 }

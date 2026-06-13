@@ -309,6 +309,24 @@
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
         "notes": "Label 'prop:critical-exponent' → expected 'critical_exponent'; Lean declares: CriticalExponent, CriticalExponent. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "6746bac42a19",
+          "ts": "db732b697344",
+          "lean": "0b8e28917fb9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:14:22.585Z",
+        "reviewed_sha": "fe96cf2a63b8bd5a9f864257db079ea50566f731",
+        "notes": "Auto-drained by agent"
       }
     ],
     "voice-author-notes-pollution": [
@@ -366,6 +384,24 @@
         "reviewed_at": "2026-06-07T02:29:28.023Z",
         "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
         "notes": "md lays out: Gronwall bound (then flagged 'too crude') -> Lambda_q asymptotics ~ (q-1)^{-1} -> refined cascade-depth estimate N_eff^{4/3} -> boxed result alpha=4/3 with log correction. Clear path, openly distinguishes crude vs refined."
+      },
+      {
+        "field_hash": {
+          "md": "6746bac42a19",
+          "ts": "db732b697344",
+          "lean": "0b8e28917fb9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:14:22.585Z",
+        "reviewed_sha": "fe96cf2a63b8bd5a9f864257db079ea50566f731",
+        "notes": "Auto-drained by agent"
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -391,6 +427,24 @@
         "reviewed_at": "2026-06-07T02:29:28.064Z",
         "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
         "notes": "Core gap: alpha=4/3 is a heuristic '<~' estimate from a Kolmogorov cascade-depth argument, not a proof (the rigorous Gronwall bound is admitted too crude). Lean ref points at conjecture class QOU.FluidDynamics.CriticalExponent, which is class-axiomatised (conjecture), so no proof exists."
+      },
+      {
+        "field_hash": {
+          "md": "6746bac42a19",
+          "ts": "db732b697344",
+          "lean": "0b8e28917fb9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:14:22.585Z",
+        "reviewed_sha": "fe96cf2a63b8bd5a9f864257db079ea50566f731",
+        "notes": "Auto-drained by agent"
       }
     ],
     "proof-rater-novelty": [
@@ -415,6 +469,24 @@
         "reviewed_at": "2026-06-07T02:29:28.106Z",
         "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
         "notes": "Deriving a specific critical exponent alpha=4/3 (with log correction) for enstrophy divergence as q->1 from cascade depth N_eff is a non-trivial prediction, though built on heuristic turbulence scaling."
+      },
+      {
+        "field_hash": {
+          "md": "6746bac42a19",
+          "ts": "db732b697344",
+          "lean": "0b8e28917fb9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:14:22.585Z",
+        "reviewed_sha": "fe96cf2a63b8bd5a9f864257db079ea50566f731",
+        "notes": "Auto-drained by agent"
       }
     ],
     "proof-statement-integrity": [
@@ -436,6 +508,24 @@
         "reviewed_at": "2026-06-07T02:29:28.146Z",
         "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
         "notes": "BUG: .lean is NOT a theorem stating prop:critical-exponent (alpha=4/3) — it is a conjecture-class axiomatisation, and it is MALFORMED: two duplicate 'class CriticalExponent' declarations (lines ~42 and ~62) with stray 'Ref: ... -/' text between them (line 61) — will not compile. lean.ref -> the class, not the proposition. Integrity FAIL."
+      },
+      {
+        "field_hash": {
+          "md": "6746bac42a19",
+          "ts": "db732b697344",
+          "lean": "0b8e28917fb9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:14:22.585Z",
+        "reviewed_sha": "fe96cf2a63b8bd5a9f864257db079ea50566f731",
+        "notes": "Auto-drained by agent"
       }
     ],
     "fit-section-chapter": [
@@ -456,6 +546,24 @@
         },
         "reviewed_at": "2026-06-08T09:59:02.106Z",
         "reviewed_sha": "c2b296b787f282526008689a95749a04773bbed7"
+      },
+      {
+        "field_hash": {
+          "md": "6746bac42a19",
+          "ts": "db732b697344",
+          "lean": "0b8e28917fb9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:14:22.585Z",
+        "reviewed_sha": "fe96cf2a63b8bd5a9f864257db079ea50566f731",
+        "notes": "Auto-drained by agent"
       }
     ],
     "wall-side-statement": [
@@ -478,6 +586,24 @@
         "reviewed_at": "2026-06-08T09:59:02.137Z",
         "reviewed_sha": "c2b296b787f282526008689a95749a04773bbed7",
         "notes": "intentional classical-limit analysis; archimedean but unlabelled"
+      },
+      {
+        "field_hash": {
+          "md": "6746bac42a19",
+          "ts": "db732b697344",
+          "lean": "0b8e28917fb9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:14:22.585Z",
+        "reviewed_sha": "fe96cf2a63b8bd5a9f864257db079ea50566f731",
+        "notes": "Auto-drained by agent"
       }
     ],
     "wall-side-proof": [
@@ -499,6 +625,24 @@
         },
         "reviewed_at": "2026-06-08T09:59:02.169Z",
         "reviewed_sha": "c2b296b787f282526008689a95749a04773bbed7"
+      },
+      {
+        "field_hash": {
+          "md": "6746bac42a19",
+          "ts": "db732b697344",
+          "lean": "0b8e28917fb9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:14:22.585Z",
+        "reviewed_sha": "fe96cf2a63b8bd5a9f864257db079ea50566f731",
+        "notes": "Auto-drained by agent"
       }
     ],
     "voice-statement-no-interpretation": [
@@ -519,6 +663,24 @@
         },
         "reviewed_at": "2026-06-08T09:59:02.202Z",
         "reviewed_sha": "c2b296b787f282526008689a95749a04773bbed7"
+      },
+      {
+        "field_hash": {
+          "md": "6746bac42a19",
+          "ts": "db732b697344",
+          "lean": "0b8e28917fb9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:14:22.585Z",
+        "reviewed_sha": "fe96cf2a63b8bd5a9f864257db079ea50566f731",
+        "notes": "Auto-drained by agent"
       }
     ],
     "proof-no-axiom-growth": [
@@ -1372,5 +1534,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-13T05:14:22.585Z"
 }
