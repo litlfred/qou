@@ -60,7 +60,7 @@ $\mathrm{H_2O}$ lacks: with the $s$-channel inert the two lone pairs are
 $\ell{=}0$) and the chiral $3p_z$ (non-palindromic, defect $2\ell{=}2$) — and
 the chiral pair's directional bias opens the orbital-locked $90^\circ$.
 $\mathrm{H_2O}$'s two lone pairs are *equal* self-dual $e^-$ (defects $0,0$), so
-it has no such tilt. The sp$^{3}\leftrightarrow$pure-$p$ flip itself is derived
+it has no such tilt. The sp$^3 \leftrightarrow$ pure-$p$ flip itself is derived
 from the shell braid — the self-dual-$s$ / chiral-$p$ split plus the $ns$
 penetration of the $(n{-}1)$ inner shells, $\Delta(n)\propto(n{-}1)=$
 central-atom size, a *discrete* flip at $n{=}2{\to}3$ (group-16

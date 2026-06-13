@@ -2,7 +2,7 @@ The critical temperatures of [`prop:phase-transition-boundary`](#prop:phase-tran
 are fixed by the $S^3$-boundary action $S_q^{(\partial)}$. For a **molecular
 liquid** this boundary action has an explicit braid realization: it is the
 **hydrogen-bond network cohesion**, and it is gated by the same
-sp$^{3}\leftrightarrow$pure-$p$ flip that sets the bond angle.
+sp$^3 \leftrightarrow$ pure-$p$ flip that sets the bond angle.
 
 **The hydrogen bond is the $h^2$-suppressed crossing.** A covalent $X$–$H$ bond
 is a $\sigma$-crossing (the shared trefoil,
@@ -30,7 +30,7 @@ lone-pair structure ([`tetrahedral-hbond-directions`](#prop:tetrahedral-hbond-di
 
 **The sp$^3$ gate (one flip, two observables).** A directional hydrogen bond
 requires a directional (sp$^3$) acceptor lone pair. So $S_q^{(\partial)}$ is gated
-by the *same* discrete sp$^{3}\leftrightarrow$pure-$p$ flip that sets the bond-angle base
+by the *same* discrete sp$^3 \leftrightarrow$ pure-$p$ flip that sets the bond-angle base
 ([`prop:symmetric-block-domain-weight`](#prop:symmetric-block-domain-weight);
 penetration gap $\Delta(n)\propto(n-1)$, flip at $n=2\to3$): period-2 atoms are
 sp$^3$ and hydrogen-bond; period-3+ are pure-$p$ and do **not** (their latent heat
