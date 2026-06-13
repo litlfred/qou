@@ -2,7 +2,7 @@
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
   "computedAt": "2026-06-13T13:50:54.733441+00:00",
-  "commitSha": "a7217279ff3d40758e3e8933eec4de55a629562a",
+  "commitSha": "68c9043153b508db2ca3cb3d014084e421480e91",
   "assertions": [
     {
       "name": "hecke_relation_holds_on_V_tensor_V",
@@ -34,7 +34,7 @@
   "computation": "gap-a4-T17-schur-weyl-rmatrix-probe",
   "scriptFile": "gap_a4_T17_schur_weyl_rmatrix_probe.py",
   "scriptHash": "afd50ea9dda1",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "68c9043153b508db2ca3cb3d014084e421480e91",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
