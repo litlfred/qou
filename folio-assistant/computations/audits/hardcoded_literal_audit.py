@@ -36,7 +36,7 @@ Limitations:
 Emits `hardcoded-literal-audit.witness.json`.
 
 Usage:
-    python3 folio-assistant/computations/hardcoded_literal_audit.py [--strict]
+    python3 folio-assistant/computations/audits/hardcoded_literal_audit.py [--strict]
 """
 
 
@@ -133,7 +133,14 @@ def _classify_script(path: Path,
 
     # Check the module docstring for a CLASS-A acknowledged-anchor
     # banner (mirror of the I11 audit's banner detection per PR #765).
-    doc_match = re.search(r'^"""(.*?)"""', text, re.DOTALL)
+    # NB: do NOT anchor with `^"""` — the module docstring is preceded
+    # by a `#!/usr/bin/env python3` shebang in ~120 of these scripts,
+    # and `^` (no re.MULTILINE) only matches start-of-string, so the
+    # banner went undetected and ~45 already-acknowledged scripts were
+    # mis-flagged as I9 violations. The first triple-quoted block in a
+    # Python file is the module docstring (shebang/comments contain no
+    # `"""`), so a non-anchored search finds it correctly.
+    doc_match = re.search(r'"""(.*?)"""', text, re.DOTALL)
     docstring = doc_match.group(1) if doc_match else ""
     has_banner = any(
         re.search(p, docstring, re.IGNORECASE) for p in ANCHOR_BANNER_PATTERNS
@@ -235,13 +242,22 @@ def main() -> int:
     registry = _load_registry()
     print(f"  {len(registry)} scalar constants in scope")
 
+    # Post-reorg (subdirectory refactor, 2026-06-02) the computation
+    # scripts moved into cluster subdirectories (probes/, qbeta/,
+    # alpha/, substrate/, …). Recurse the whole computations/ tree —
+    # the prior `HERE.glob("*.py")` only saw this `audits/` subdir
+    # (~6 scripts) and silently dropped the rest of the corpus.
+    # Exclude deprecated scripts, QA sidecars, and bytecode caches.
+    COMPUTATIONS_ROOT = HERE.parent
+    EXCLUDE_DIRS = {"_deprecated", "script-qa", "__pycache__"}
+    SKIP_NAMES = {"codata_constants.py", "hardcoded_literal_audit.py"}
     rows: list[dict[str, Any]] = []
-    for py in sorted(HERE.glob("*.py")):
+    for py in sorted(COMPUTATIONS_ROOT.rglob("*.py")):
         if py.name.startswith("_"):
             continue
-        if py.name == "codata_constants.py":
+        if py.name in SKIP_NAMES:
             continue
-        if py.name == "hardcoded_literal_audit.py":
+        if EXCLUDE_DIRS & set(py.relative_to(COMPUTATIONS_ROOT).parts):
             continue
         result = _classify_script(py, registry)
         if result is None:
