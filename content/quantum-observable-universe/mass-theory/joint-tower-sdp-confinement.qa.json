@@ -1152,7 +1152,105 @@
         "reviewed_at": "2026-06-11T18:06:24.673Z",
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7"
       }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "b535925f051c",
+          "ts": "61ef75376324",
+          "lean": "73455b60c120"
+        },
+        "result": "fail",
+        "severity": "critical",
+        "evidence": "joint-tower-sdp-confinement.lean:103-115 — JointTowerSdpFeasible sdp := sdp.registry ≠ [] ; theorem joint_tower_sdp_feasible (h_nonempty : registry ≠ []) := h_nonempty. Constraint preds (l.41-58) are stubs: WedderburnBlockPositivity := n_0 ≥ 1, JetOrderOrdering := jet_order ≠ [].",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T00:26:21.062Z",
+        "reviewed_sha": "1cce6ad925aa945c07d26c6671718e6b403fb70f",
+        "notes": "Conclusion is DEFINED equal to the hypothesis (feasibility := registry ≠ []), proved by returning the hypothesis. The real SDP-feasibility claim (Wedderburn PSD + cross-level + GB-filtration) is silently replaced by list-non-emptiness; all constraint predicates are degenerate sanity stubs. Encoding-by-definition integrity fail."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "b535925f051c",
+          "ts": "61ef75376324",
+          "lean": "73455b60c120"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0,
+          "max": 1
+        },
+        "evidence": "joint-tower-sdp-confinement.lean:103-115 — feasibility predicate reduced to registry ≠ []; the genuine SDP feasibility is not modelled, so no real gap is closeable as stated.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T00:26:21.096Z",
+        "reviewed_sha": "1cce6ad925aa945c07d26c6671718e6b403fb70f",
+        "notes": "restates-target via definitional weakening: the goal (joint SDP feasible) is bypassed, not closed. Rubric => 0.0."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "b535925f051c",
+          "ts": "61ef75376324",
+          "lean": "73455b60c120"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "score": {
+          "value": 0.7,
+          "max": 1
+        },
+        "evidence": "joint-tower-sdp-confinement.md:1-35 — joint mass-tower SDP with GB-filtration grading + jet-order indexing + cross-level embedding constraints; no corpus sibling carries this joint formulation (prop:confinement-sdp is per-atom only).",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T00:26:47.615Z",
+        "reviewed_sha": "1cce6ad925aa945c07d26c6671718e6b403fb70f",
+        "notes": "Original framework construction (joint-tower / GB-filtration / jet-order SDP) extending the per-atom confinement SDP; non-redundant => 0.7."
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "b535925f051c",
+          "ts": "61ef75376324",
+          "lean": "73455b60c120"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.4,
+          "max": 1
+        },
+        "evidence": "joint-tower-sdp-confinement.md:118-128 — '## Existence' asserts feasibility from per-atom feasibility + embeddings preserve positivity, but it is a design-spec sketch, not a proof plan; the rest (l.147-153) is an implementation roadmap.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T00:27:38.082Z",
+        "reviewed_sha": "1cce6ad925aa945c07d26c6671718e6b403fb70f",
+        "notes": "No proof body; the existence argument is hand-wavy (embeddings 'preserve positivity' uncited) and interleaved with roadmap/variable-count prose, so the actual proof strategy is only implicitly recoverable."
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-13T00:27:38.082Z"
 }
