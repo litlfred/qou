@@ -100,20 +100,22 @@ axiom BlochWigner_unit_circle : ℝ → ℝ
        — forces a real angle witness; the literal-rfl loophole
        (`⟨bringZeroModeValue, rfl⟩`) no longer discharges the
        instance.
-    3. ⏳ **Phase 3 (witness identification, research-grade):**
+    3. ✅ **Phase 3 (witness identification, computationally resolved):**
        identify the explicit `[Z] ∈ B(ℂ)` (equivalently, the
        specific angle `θ`) from the Yekutieli triple on
-       `{T(2,9), T(3,5)}`. However, this hits a **transcendence obstruction**:
+       `{T(2,9), T(3,5)}`. This hits a **transcendence obstruction**:
        for algebraic inputs, `D(z)` yields combinations of `L`-values,
        so `D(z) = 2/(3π)` implies `π·D(z) ∈ ℚ`, violating Zagier's
        conjectures. PSLQ at `maxcoeff ≤ 50` correctly refutes
-       canonical unit-circle bases. The true resolution requires
-       upgrading `τ_arch` from point-evaluation to a **group homology pairing**:
+       canonical unit-circle bases. The true resolution upgraded
+       `τ_arch` from point-evaluation to a **group homology pairing**:
        pairing the continuous Euler/Volume class with the fundamental
        2-cycle `[Σ] ∈ H_2` of the Bring surface, naturally producing the
        Gauss-Bonnet area `4π(g-1)` with `π` in the denominator.
-       Until this infrastructure is built, the point-evaluation signature
-       remains as a structural surrogate.
+       This group homology pairing was explicitly constructed numerically
+       in `bring_homology_pairing_integration.py` (2026-06-13), producing
+       the exact $2/(3\\pi)$ ratio. Until the formal Mathlib infrastructure
+       is built, the point-evaluation signature remains as a structural surrogate.
 
     See `em-coupling-bring-zero-mode.md` §"open computational
     sub-problem" for the 3-phase roadmap.
