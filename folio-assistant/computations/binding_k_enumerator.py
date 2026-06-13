@@ -707,4 +707,34 @@ def main(
 
 
 if __name__ == "__main__":
-    main()
+    import argparse
+
+    ap = argparse.ArgumentParser(
+        description=(
+            "Binding-K inter-nucleon enumerator (issue #604 deliverable 3). "
+            "Bare defaults reproduce the L=2 minimal-search run; pass "
+            "--tritium-L / --he3-L > 2 for the extended-generator L>2 search "
+            "(σ_3..σ_8) that targets the 8_11-class / L_6a4 bindings.  Canonical "
+            "L>2 invocation:  python3 binding_k_enumerator.py --tritium-L 3 --he3-L 3"
+        )
+    )
+    ap.add_argument("--deuteron-L", type=int, default=4,
+                    help="max binding-word length for deuteron (minimal gens σ_3); default 4")
+    ap.add_argument("--tritium-L", type=int, default=3,
+                    help="max binding-word length for tritium (extended gens σ_3..σ_8); default 3")
+    ap.add_argument("--he3-L", type=int, default=3,
+                    help="max binding-word length for ³He (extended gens σ_3..σ_8); default 3")
+    args = ap.parse_args()
+
+    main(
+        L_K_max_per_atom={
+            "deuteron": args.deuteron_L,
+            "tritium": args.tritium_L,
+            "he3": args.he3_L,
+        },
+        use_extended_per_atom={
+            "deuteron": False,
+            "tritium": True,
+            "he3": True,
+        },
+    )
