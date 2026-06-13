@@ -1308,7 +1308,104 @@
         "reviewed_at": "2026-06-11T18:06:24.673Z",
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7"
       }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "02adeb652a4b",
+          "ts": "ade2ff4089f1",
+          "lean": "7c7f5768efaa"
+        },
+        "result": "fail",
+        "severity": "critical",
+        "evidence": "mass-tower-coefficient-stratification.lean:48-51 — theorem mass_tower_coefficient_stratification (term : MassTowerTerm) : ∃ depth : ℕ, depth = stratumDepth term := ⟨stratumDepth term, rfl⟩",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:04:05.786Z",
+        "reviewed_sha": "0feb3a771363564f2fad6737bdbf7761a2b94bcf",
+        "notes": "Vacuous existential: '∃ d, d = f(term)' holds for ANY function by rfl — encodes none of the narrative claim that BW prefactors are Plancherel-weighted stratum projections (forced, not fit). Statement silently weakened to a tautology while block kind is proposition."
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "02adeb652a4b",
+          "ts": "ade2ff4089f1",
+          "lean": "7c7f5768efaa"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.75,
+          "max": 1
+        },
+        "evidence": "mass-tower-coefficient-stratification.md:24-37 — Proof cites spectral-sequence collapse -> centre factorisation -> Wedderburn enumeration -> unified mass formula -> Plancherel boundedness",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:04:05.823Z",
+        "reviewed_sha": "0feb3a771363564f2fad6737bdbf7761a2b94bcf",
+        "notes": "Plan stated up front as a named-lemma citation chain; reader knows the strategy before the steps. Short of 1.0 since the per-coefficient forcing step is asserted, not unpacked."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "02adeb652a4b",
+          "ts": "ade2ff4089f1",
+          "lean": "7c7f5768efaa"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0.25,
+          "max": 1
+        },
+        "evidence": "mass-tower-coefficient-stratification.lean:48-51 — sorry-free but the proved statement is a rfl-tautology; the substantive forcing claim (md:2-10) is entirely unformalized",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:04:05.859Z",
+        "reviewed_sha": "0feb3a771363564f2fad6737bdbf7761a2b94bcf",
+        "notes": "No sorry token, but the real goal (alpha_k = Plancherel projection forced) remains 100% unformalized — closing it requires formalizing Plancherel weights + strata, a core gap (~0.3-class), and the current decl restates nothing of the target."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "02adeb652a4b",
+          "ts": "ade2ff4089f1",
+          "lean": "7c7f5768efaa"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "evidence": "mass-tower-coefficient-stratification.md:12-22 — coefficient-to-stratum mapping table; proof md:24-37 is a citation chain over sibling props",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:04:05.896Z",
+        "reviewed_sha": "0feb3a771363564f2fad6737bdbf7761a2b94bcf",
+        "notes": "Organizing identification of Bethe-Weizsacker coefficients with curvature-rank strata is non-redundant vs siblings, but the argument itself is standard citation-chaining of prop:spectral-sequence-collapse + prop:plancherel-weight-boundedness."
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-13T01:04:05.896Z"
 }
