@@ -1120,7 +1120,104 @@
         "reviewed_at": "2026-06-11T18:06:24.673Z",
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7"
       }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "11c18950757e",
+          "ts": "70d4d25dcf06",
+          "lean": "3a51b2970052"
+        },
+        "result": "fail",
+        "severity": "critical",
+        "evidence": "lean/QOU/BraidKnot/schur_weyl_mass_decomposition.lean:48-62 — class field 'claim_schur_weyl_sum' restates the proposition's conclusion verbatim; theorem schur_weyl_mass_decomposition is the bare field projection 'ctx.claim_schur_weyl_sum' (claim encoded by definition). Sibling schur-weyl-mass-decomposition.lean:87-105 — axiom a_eq_one_three_channels_axiom is UNSOUND: an instance with partitions := [] satisfies the class (decomposition: 0 = empty sum, spechtCharacter ≡ 0 at line 41-42 forces markovTrace = 0), yet the axiom asserts length = 3, deriving False",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:48:03.678Z",
+        "reviewed_sha": "d76a620e60ede076c5e637e397e5b54fd839aeff",
+        "notes": "Class-field axiomatizes the prop's own conclusion; sibling carries 2 target-restating axioms, one inconsistent with constructible degenerate instances"
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "11c18950757e",
+          "ts": "70d4d25dcf06",
+          "lean": "3a51b2970052"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0.1,
+          "max": 1
+        },
+        "evidence": "schur-weyl-mass-decomposition.lean:33-42 — qHookProduct := n!, schurAtQ := n, spechtCharacter := 0 are stubs; the whole decomposition is a class field, both theorems are axiom applications (lines 87-105)",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:48:03.713Z",
+        "reviewed_sha": "d76a620e60ede076c5e637e397e5b54fd839aeff",
+        "notes": "Gap restates target (rubric: restates-target ~0.0); closing needs genuine Hecke/Specht infra absent from Mathlib, and one axiom is false as stated"
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "11c18950757e",
+          "ts": "70d4d25dcf06",
+          "lean": "3a51b2970052"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.35,
+          "max": 1
+        },
+        "evidence": "schur-weyl-mass-decomposition.md:9-36 — statement plus channel taxonomy; no proof section; justification implicit via cited prop:hook-weight-derivation and prop:three-parameters-wedderburn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:48:03.748Z",
+        "reviewed_sha": "d76a620e60ede076c5e637e397e5b54fd839aeff",
+        "notes": "No explicit proof plan in .md or Lean; route recoverable but implicit from cross-references"
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "11c18950757e",
+          "ts": "70d4d25dcf06",
+          "lean": "3a51b2970052"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.6,
+          "max": 1
+        },
+        "evidence": "schur-weyl-mass-decomposition.md:57-107 — names the additive-Wedderburn failure mode and the A>1 partition strata (base/boundary/pair/shell channels); A=1 case duplicates prop:three-parameters-wedderburn (md:38-55)",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:48:03.782Z",
+        "reviewed_sha": "d76a620e60ede076c5e637e397e5b54fd839aeff",
+        "notes": "Non-duplicated A>1 strata taxonomy and approximation-error analysis; A=1 content overlaps existing Wedderburn siblings"
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-13T01:48:03.782Z"
 }
