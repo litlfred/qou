@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/mass-theory/q-beta-c-k-recursion-from-habiro-q-difference.lean"
   },
   "source_hashes": {
-    "md": "e4f345ebb2e8",
+    "md": "59f6fefbf80f",
     "ts": "2207caf48830",
     "lean": "707c30eb7bc2"
   },
@@ -33,6 +33,26 @@
         "reviewed_at": "2026-06-07T13:46:07.062Z",
         "reviewed_sha": "af638213a478dd151bf02a1c7949162067f278fa",
         "notes": "Why section and What the recursion buys section are interpretive; no companion remark"
+      },
+      {
+        "field_hash": {
+          "md": "59f6fefbf80f",
+          "ts": "2207caf48830",
+          "lean": "707c30eb7bc2"
+        },
+        "result": "fail",
+        "severity": "minor",
+        "evidence": "q-beta-c-k-recursion-from-habiro-q-difference.md:24-67,100-106 — sections '## Why this is the right structure', '## What the recursion buys', status table with PR refs, '## Status'",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:05:00.329Z",
+        "reviewed_sha": "15ac7bfb19df0963962226aa7f1c0ffd204db78b",
+        "notes": "Substantial interpretive/motivational prose (what the recursion buys, status ledger, PR history) lives in the proposition block itself; no companion interprets: remark holds it. Mislocated per the statement-only convention."
       }
     ],
     "fit-section-chapter": [
@@ -55,6 +75,26 @@
         "reviewed_at": "2026-06-07T13:46:07.097Z",
         "reviewed_sha": "af638213a478dd151bf02a1c7949162067f278fa",
         "notes": "c_k recursion from Habiro q-difference fits mass-theory Q_beta section"
+      },
+      {
+        "field_hash": {
+          "md": "59f6fefbf80f",
+          "ts": "2207caf48830",
+          "lean": "707c30eb7bc2"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "mass-theory.ts — block absent from every section blocks[] list (grep 'q-beta-c-k-recursion' in mass-theory.ts: 0 hits); topic matches sec:mass-algebraic-qbeta-ladder (mass-theory.ts:139)",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:05:00.364Z",
+        "reviewed_sha": "15ac7bfb19df0963962226aa7f1c0ffd204db78b",
+        "notes": "Topic squarely belongs to the Q_beta precision-ladder section of mass-theory, but the block is not wired into any section of the chapter manifest (orphan; only consumed cross-chapter by mass-endomorphism/qbeta-z-recursion-to-ck-recursion-bridge.ts)."
       }
     ],
     "wall-side-statement": [
@@ -77,6 +117,26 @@
         "reviewed_at": "2026-06-07T13:46:07.130Z",
         "reviewed_sha": "af638213a478dd151bf02a1c7949162067f278fa",
         "notes": "Statement is at fibre level with formal q; archimedean a_j(q_0) only appear in consequence; appropriate"
+      },
+      {
+        "field_hash": {
+          "md": "59f6fefbf80f",
+          "ts": "2207caf48830",
+          "lean": "707c30eb7bc2"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "q-beta-c-k-recursion-from-habiro-q-difference.md:1-22 — statement over Habiro ring Z[q,q^-1]^wedge with kernel a_j(q_0) in Q(q_0)",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:05:00.400Z",
+        "reviewed_sha": "15ac7bfb19df0963962226aa7f1c0ffd204db78b",
+        "notes": "Fibre-level algebraic statement (q-difference equation, rational kernel); q_0 appears only as evaluation point of rational functions, no Real.* / MeV / order hypotheses; mass-theory chapter regime admits fixed-q0."
       }
     ],
     "wall-side-proof": [
@@ -99,6 +159,26 @@
         "reviewed_at": "2026-06-07T13:46:07.164Z",
         "reviewed_sha": "af638213a478dd151bf02a1c7949162067f278fa",
         "notes": "Lean uses CKRecursion class over R; proof is algebraic recursion; appropriate"
+      },
+      {
+        "field_hash": {
+          "md": "59f6fefbf80f",
+          "ts": "2207caf48830",
+          "lean": "707c30eb7bc2"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "q-beta-c-k-recursion-from-habiro-q-difference.md — no '**Proof.**' body; supporting prose md:81-98 derives via Jackson q-difference equations (algebraic)",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:05:00.435Z",
+        "reviewed_sha": "15ac7bfb19df0963962226aa7f1c0ffd204db78b",
+        "notes": "No archimedean-only machinery invoked anywhere (no linarith/IVT/continuity/Real.*); the q-heat-kernel derivation sketch stays on the fibre side, matching the statement's side. Absence of a proof body is adjudicated under proof-narrative-lean-equiv."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -121,6 +201,26 @@
         "reviewed_at": "2026-06-07T13:46:07.198Z",
         "reviewed_sha": "af638213a478dd151bf02a1c7949162067f278fa",
         "notes": "Lean recursion scaffold matches narrative description; same claim"
+      },
+      {
+        "field_hash": {
+          "md": "59f6fefbf80f",
+          "ts": "2207caf48830",
+          "lean": "707c30eb7bc2"
+        },
+        "result": "fail",
+        "severity": "major",
+        "evidence": "q-beta-c-k-recursion-from-habiro-q-difference.lean:59-94 — only structure CKRecursion (depth, kernel), def applyRecursion, and theorem applyRecursion_linear",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:05:00.472Z",
+        "reviewed_sha": "15ac7bfb19df0963962226aa7f1c0ffd204db78b",
+        "notes": "Narrative proposition (q-difference depth d => depth-d linear recursion on c_k, md:1-22) is never stated or proved in Lean; the .lean provides recursion machinery plus a trivial linearity lemma. Lean is a scaffold while the block kind asserts a provable result."
       }
     ],
     "proof-no-bare-sorries": [
@@ -1150,7 +1250,104 @@
         "reviewed_at": "2026-06-11T18:06:24.673Z",
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7"
       }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "59f6fefbf80f",
+          "ts": "2207caf48830",
+          "lean": "707c30eb7bc2"
+        },
+        "result": "warn",
+        "severity": "major",
+        "evidence": "q-beta-c-k-recursion-from-habiro-q-difference.md:1 '**Proposition (scaffolding).**', md:100-106 '## Status Scaffolding', .ts computation.status: 'scaffolding', lean:9-15 docstring",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:05:00.507Z",
+        "reviewed_sha": "15ac7bfb19df0963962226aa7f1c0ffd204db78b",
+        "notes": "The weakening (no proof of the stated implication; Lean = structure-only) is LOUDLY documented in title, Status section, manifest and lean header — not a silent weakening, no axiom injection, no True-stub claimed proved. Loud weakening => warn; consider demotion to conjecture or remark."
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "59f6fefbf80f",
+          "ts": "2207caf48830",
+          "lean": "707c30eb7bc2"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.8,
+          "max": 1
+        },
+        "evidence": "md:40-48 seed+kernel+recursion plan; md:81-93 numbered 3-step q-heat-kernel derivation path",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:05:00.540Z",
+        "reviewed_sha": "15ac7bfb19df0963962226aa7f1c0ffd204db78b",
+        "notes": "Strategy is explicit and legible up front: one seed c_2=-1, one bounded-degree kernel R, recursion generates c_3..c_8; derivation route via per-mode Jackson equations is enumerated. Not 1.0 since the keystone construction is deferred."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "59f6fefbf80f",
+          "ts": "2207caf48830",
+          "lean": "707c30eb7bc2"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0.3,
+          "max": 1
+        },
+        "evidence": "md:57-66 kernel table: c_5..c_8 'not derived', kernel R 'structurally constrained' only; md:104-106 'categorical F(q) construction remains the open keystone'",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:05:00.574Z",
+        "reviewed_sha": "15ac7bfb19df0963962226aa7f1c0ffd204db78b",
+        "notes": "Remaining gap is the core categorical F(q) identification + proof of the recursion — core-class gap (~0.3 per rubric); prior c_3/c_4 history (near-match/fit) shows the kernel is genuinely hard, not routine."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "59f6fefbf80f",
+          "ts": "2207caf48830",
+          "lean": "707c30eb7bc2"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.7,
+          "max": 1
+        },
+        "evidence": "md:40-55 — collapses seven per-c_k derivations (four-session c_3 flip-flop, fitted c_4) into seed+kernel recursion; mirrors alpha_EM Habiro element pattern",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:05:00.608Z",
+        "reviewed_sha": "15ac7bfb19df0963962226aa7f1c0ffd204db78b",
+        "notes": "Non-redundant organizing approach vs the corpus's per-coefficient derivations; recursion-from-q-difference framing is new in mass-theory, though the mathematical mechanism mirrors the existing alpha_EM Habiro precedent."
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-13T01:05:00.608Z"
 }
