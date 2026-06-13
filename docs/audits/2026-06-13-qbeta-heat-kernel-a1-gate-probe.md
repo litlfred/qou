@@ -80,6 +80,28 @@ change-of-basis that bridges the magnitude gap and (b) the multi-mode assembly
 (the unweighted sum is only `≈ −1.006`). The q-dilog route is the trap, now with
 a compute-backed gate failure. **No `c_3` value derived or wired.**
 
+## Finding 4 — the ε-order: heat-kernel structure is at ε³, NOT the ε¹ trap
+
+Numerically (log-log slope as `q→1`), `(q−1)μ_λ` enters at **`ℏ_q³ = u^{3/2} = ε³`**
+(ε ≡ √u) for every mode — its leading term is the `c=1` cell
+`ℏ_q²·[1]_q[2]_q·(q−1) ≈ 2(q−1)³`. Placing the three objects on the ε-ladder:
+
+| object | ε-order | u-order |
+|---|---|---|
+| Δtr_M block (`−2 = J_Hopf`) | **ε¹** | √u |
+| **heat-kernel `(q−1)μ_λ`** | **ε³** | u^{3/2} |
+| target `c_3` (`a_1`) | **ε⁶** | u³ |
+
+This matters: the catalogued **accidental coincidence** (PR #1593) is that the
+**ε¹** Δtr_M block `≈ −2` numerically matches `c_3` (at **ε⁶**) across a 5-order
+gap. The heat-kernel bar-odd structure enters at **ε³** — a *different, higher*
+order than that trap — so it is **not** the same accidental mechanism. The f-map
+obligation becomes an **ε³ → ε⁶ structural lift** (factor `~ε³ = u^{3/2}`), to be
+supplied by the Habiro `(u;u)_m→u^k` change-of-basis composed with the heat-time
+↔ ladder `t ↔ u` identification — and it must be **bar-equivariant** so the
+proved ε³ bar-oddness survives to `a_1`. That is the precise, bounded proof
+obligation this probe isolates (it does not discharge it).
+
 ## Cross-references
 - Synthesis §3-bis (heat route): [`2026-06-10-qbeta-ck-state-of-play-synthesis.md`](2026-06-10-qbeta-ck-state-of-play-synthesis.md)
 - Recursion engine: [`prop:q-beta-c-k-recursion-from-habiro-q-difference`](../../content/quantum-observable-universe/mass-theory/q-beta-c-k-recursion-from-habiro-q-difference.md)
