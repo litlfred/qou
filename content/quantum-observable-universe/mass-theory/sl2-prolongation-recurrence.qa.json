@@ -1159,7 +1159,104 @@
         "reviewed_at": "2026-06-11T18:06:24.673Z",
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7"
       }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "84041b8e6b6c",
+          "ts": "29b7acbbed51",
+          "lean": "318393fd269b"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "sl2-prolongation-recurrence.lean:32-35 — theorem takes the Cayley-Hamilton relation hCH : B^2 = tau . B - 1 as an EXPLICIT hypothesis and proves B^(n+2) = tau . B^(n+1) - B^n sorry-free (rw chain verified: pow_add, hCH, mul_sub, mul_one, mul_smul_comm, pow_succ); .md:34-37 accurately states 'proves the recurrence form from the det B = 1 Cayley-Hamilton relation, sorry-free'",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:29:33.063Z",
+        "reviewed_sha": "ed5a6db8200bf8bcea3d4bfd68e5c49e006ff6d4",
+        "notes": "Honest conditional statement; geometric input (Gauss-Manin preserves polarisation => B in SL2) is openly left as the hypothesis, not smuggled"
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "84041b8e6b6c",
+          "ts": "29b7acbbed51",
+          "lean": "318393fd269b"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.85,
+          "max": 1
+        },
+        "evidence": "sl2-prolongation-recurrence.md:1-24 — plan stated up front: depth-2 kernel -> polarisation preserved -> B in Sp(2)=SL2 -> det B = 1 -> Cayley-Hamilton -> Lucas/Chebyshev recurrence",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:29:33.098Z",
+        "reviewed_sha": "ed5a6db8200bf8bcea3d4bfd68e5c49e006ff6d4",
+        "notes": "Reader knows the full plan before any step; each implication named with its source"
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "84041b8e6b6c",
+          "ts": "29b7acbbed51",
+          "lean": "318393fd269b"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "evidence": "sl2-prolongation-recurrence.lean:32-35 — sorry-free one-line rw proof; .ts validation: 'validated'",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:29:33.134Z",
+        "reviewed_sha": "ed5a6db8200bf8bcea3d4bfd68e5c49e006ff6d4",
+        "notes": "Sorry-free => 1.0 per rubric"
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "84041b8e6b6c",
+          "ts": "29b7acbbed51",
+          "lean": "318393fd269b"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "evidence": "sl2-prolongation-recurrence.lean:32-35 — Cayley-Hamilton => second-order linear recurrence on powers is a textbook argument; the block's contribution is the application (symplectic constraint collapses kernel R to single parameter tau)",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:29:33.169Z",
+        "reviewed_sha": "ed5a6db8200bf8bcea3d4bfd68e5c49e006ff6d4",
+        "notes": "Standard algebra, not duplicated in corpus; the novelty is in the framing, not the proof"
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-13T01:29:33.169Z"
 }
