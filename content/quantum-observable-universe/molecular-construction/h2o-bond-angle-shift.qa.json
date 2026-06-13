@@ -1045,7 +1045,214 @@
         "reviewed_at": "2026-06-11T18:06:24.673Z",
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "616a10edaab5",
+          "ts": "2ab14ac046e2",
+          "lean": "d7bdaf1b6fbc"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "h2o-bond-angle-shift.md:3-7 — Statement defines the quadratic well + lone-pair term and Proof gives the perfect-square minimiser; the 109.5->104.5 reading is scope of the claim, not a separable 'why this matters' section",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T00:44:06.621Z",
+        "reviewed_sha": "18b8c0e7360dd0875a750efb7830979c91dd587f",
+        "notes": "Statement+proof only; physical reading is a clarifying scope note on the result, not mislocated interpretation. Pass."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "616a10edaab5",
+          "ts": "2ab14ac046e2",
+          "lean": "d7bdaf1b6fbc"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "molecular-construction.ts §6b H2O section; h2o-bond-angle-shift.md:3 uses def:h2o-molecular-braid — bent-angle result for water",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T00:44:06.656Z",
+        "reviewed_sha": "18b8c0e7360dd0875a750efb7830979c91dd587f",
+        "notes": "Water bond-angle proposition placed in the H2O section; correctly filed."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "616a10edaab5",
+          "ts": "2ab14ac046e2",
+          "lean": "d7bdaf1b6fbc"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "h2o-bond-angle-shift.md:1 — 'Lean sibling: structural, over ℝ (the bending energy is archimedean)'; molecular-construction is an archimedean chapter (qa-checkers-q-usage.ts:221-234)",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T00:44:06.692Z",
+        "reviewed_sha": "18b8c0e7360dd0875a750efb7830979c91dd587f",
+        "notes": "Archimedean statement in an archimedean chapter with an explicit over-ℝ banner; correctly placed."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "616a10edaab5",
+          "ts": "2ab14ac046e2",
+          "lean": "d7bdaf1b6fbc"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "h2o-bond-angle-shift.md:7 / .lean:33-37 — perfect-square argument proved over ℝ via nlinarith with 0<a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T00:44:06.728Z",
+        "reviewed_sha": "18b8c0e7360dd0875a750efb7830979c91dd587f",
+        "notes": "Proof method (real perfect-square / nlinarith) matches the archimedean statement; no wall mismatch."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "616a10edaab5",
+          "ts": "2ab14ac046e2",
+          "lean": "d7bdaf1b6fbc"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "h2o-bond-angle-shift.lean:33-37 theorem bond_angle_shift (a θ₀ s θ:ℝ)(ha:0<a) proves a((θ₀-s)-θ₀)²+(2as)(θ₀-s) ≤ a(θ-θ₀)²+(2as)θ — exactly the narrative minimiser inequality (md:7, b=2as)",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T00:44:35.910Z",
+        "reviewed_sha": "18b8c0e7360dd0875a750efb7830979c91dd587f",
+        "notes": "Quantifiers (∀ θ), hypothesis 0<a, and conclusion (θ₀-s is the global minimiser) match between md and lean. Faithful encoding."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "616a10edaab5",
+          "ts": "2ab14ac046e2",
+          "lean": "d7bdaf1b6fbc"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "h2o-bond-angle-shift.lean:20-21,28-32 — the b=2as division-free reparametrization is loudly documented in both .md:7 and .lean docstring; no silent weakening, no sorryAx",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T00:44:35.946Z",
+        "reviewed_sha": "18b8c0e7360dd0875a750efb7830979c91dd587f",
+        "notes": "Statement well-formed; the b=2as restatement is explicitly stated in narrative + Lean. No injected axioms. Pass."
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "616a10edaab5",
+          "ts": "2ab14ac046e2",
+          "lean": "d7bdaf1b6fbc"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.9,
+          "max": 1
+        },
+        "evidence": "h2o-bond-angle-shift.md:7 — 'Writing b=2as, the energy minus its value at θ₀-s is the perfect square a(θ-(θ₀-s))²≥0' states the whole plan up front; lean:36 nlinarith hint mirrors it",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T00:44:35.981Z",
+        "reviewed_sha": "18b8c0e7360dd0875a750efb7830979c91dd587f",
+        "notes": "Plan (complete-the-square at the shifted minimiser) stated explicitly before the steps; reader knows the argument up front."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "616a10edaab5",
+          "ts": "2ab14ac046e2",
+          "lean": "d7bdaf1b6fbc"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "evidence": "h2o-bond-angle-shift.lean:33-37 — sorry-free; nlinarith closes the goal with no remaining gap or axiom",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T00:44:36.016Z",
+        "reviewed_sha": "18b8c0e7360dd0875a750efb7830979c91dd587f",
+        "notes": "Sorry-free proof, no remaining goal to close -> 1.0."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "616a10edaab5",
+          "ts": "2ab14ac046e2",
+          "lean": "d7bdaf1b6fbc"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "evidence": "h2o-bond-angle-shift.md:7 — standard harmonic/quadratic-well perfect-square linear-response argument; framed as the bent-angle application",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T00:44:36.050Z",
+        "reviewed_sha": "18b8c0e7360dd0875a750efb7830979c91dd587f",
+        "notes": "Standard complete-the-square / quadratic-minimum-shift argument, correctly applied; not duplicated elsewhere but not a novel proof technique."
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-13T00:44:36.050Z"
 }
