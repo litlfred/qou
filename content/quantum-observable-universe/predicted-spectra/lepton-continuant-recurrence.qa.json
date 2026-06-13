@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "9e847f86cc3c",
     "ts": "4806465ab264",
-    "lean": "d6fc6b6c94b6"
+    "lean": "e566f073ce57"
   },
   "criteria": {
     "voice-status-leak": [
@@ -386,6 +386,26 @@
         "reviewed_at": "2026-06-07T06:10:30.422Z",
         "reviewed_sha": "4e961c6c457cf2aaa28e91304a917b1bcfdf2afe",
         "notes": "lean.ref qou:QOU.Archimedean.lepton_continuant_recurrence is a sibling STUB: 'theorem lepton_continuant_recurrence : True := by trivial'. Vacuous =True; does not state the NF(sigma_0^n)=a_n*1+b_n*sigma_0 recurrence (a_{n+1}=b_n, b_{n+1}=h b_n+b_{n-1}). NOTE the md proof is COMPLETE and correct (elementary induction from sigma_0^2=h sigma_0+1) - this is formalization debt, not a math gap."
+      },
+      {
+        "field_hash": {
+          "md": "9e847f86cc3c",
+          "ts": "4806465ab264",
+          "lean": "e566f073ce57"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "lepton-continuant-recurrence.lean — theorem lepton_continuant_recurrence (hs : s^2 = h*s+1) : s^n = mvA h n + mvB h n * s, derived by induction (Morgan-Voyce mvB/mvA defs); replaces the True-stub",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T15:49:39.709Z",
+        "reviewed_sha": "dafeef4bda59a60e1fd45968c8921857917ed925",
+        "notes": "Faithful formalization of NF(σ₀ⁿ)=a_n·1+b_n·σ₀ with a_{n+1}=b_n, b_{n+1}=h·b_n+b_{n-1}, over generic CommRing (§7c). Builds green (direct lean, exit 0)."
       }
     ],
     "voice-unicode-crash": [
@@ -1213,5 +1233,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-13T13:55:33.060Z"
+  "updated_at": "2026-06-13T15:49:39.709Z"
 }
