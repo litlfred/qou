@@ -802,7 +802,29 @@
         "reviewed_at": "2026-06-11T18:06:24.673Z",
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "a0b75b01a8c0",
+          "ts": "176e528535e5",
+          "lean": "2ba6631c1522"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "quantum-observable-universes.ts:397 — 'q-lie-bracket' in sec:q-deformed-operators between q-ext-deriv and q-connection; q-lie-bracket.md:1-10 gives the archimedean q-deformed Lie bracket [V,W]_q on vector fields",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:36:14.603Z",
+        "reviewed_sha": "edd9f44995d9f561a051c232cb80f004b42864cb",
+        "notes": "Archimedean q-operator example belongs in the q-deformed-operators section; distinct from def:categorical-q-lie-bracket (sec:dq-squared categorical counterpart, cited via uses[]) — realisation, not restatement"
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-13T01:36:14.603Z"
 }
