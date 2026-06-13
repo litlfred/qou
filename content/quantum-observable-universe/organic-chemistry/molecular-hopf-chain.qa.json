@@ -864,7 +864,51 @@
         "reviewed_at": "2026-06-11T18:06:24.673Z",
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "a9ab2f1eac1e",
+          "ts": "ae028093b703",
+          "lean": "8e1d1df4c058"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "organic-chemistry.ts:34 — first definition of sec:molecular-chains-rings (section title names 'Molecular Hopf chains'); molecular-hopf-chain.md:5-33 names a new construction (chain composite + tridiagonal linking matrix)",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:24:51.461Z",
+        "reviewed_sha": "923460d0cb1aa295633a2a6ef1fedaa2b82df6d4",
+        "notes": "Definition names the section's eponymous construction; correct kind; downstream blocks (threading-link, ring-closure-barrier) build on it; no sibling overlap."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "a9ab2f1eac1e",
+          "ts": "ae028093b703",
+          "lean": "8e1d1df4c058"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "molecular-hopf-chain.md:10-33,50-54 — composite, linking matrix, and crossing-energy sum are purely symbolic; no numeric q, no MeV, no Real.* or order hypothesis anywhere in the statement",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:24:51.496Z",
+        "reviewed_sha": "923460d0cb1aa295633a2a6ef1fedaa2b82df6d4",
+        "notes": "Statement is regime-neutral symbolic combinatorics (tridiagonal linking matrix, symbolic energy sum); no archimedean construct hard-coded, no banner needed."
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-13T01:24:51.496Z"
 }
