@@ -1,24 +1,24 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-31T04:40:27.450443+00:00",
-  "commitSha": "061d47ead2d5eb87e68656f67a4e50b354ebb5ed",
+  "computedAt": "2026-06-13T18:33:17.621402+00:00",
+  "commitSha": "353ad1d7840e7ae67639856f25a4e5085efb1bd8",
   "assertions": [
     {
       "name": "next_order_norm_equals_one_over_pi_dim_H1",
-      "computed": 1,
-      "expected": 1,
+      "computed": "0.039788735772973833942220940843128590508614911435114",
+      "expected": "0.039788735772973833942220940843128590508614911435114",
       "passed": true,
-      "tolerance": 0,
-      "source": "1/(8π) = 1/(π · dim H¹(M_Bring)) at g=4 since dim H¹(M_Bring) = 2g = 8 — same Bring cohomology object used in the n=2 leading shift dim H¹/Area = 2/(3π)."
+      "tolerance": 1e-40,
+      "source": "1/(π · dim H¹(M_Bring)) = 1/(8π) at g=4 since dim H¹(M_Bring) = 2g = 8 — same Bring cohomology object used in the n=2 leading shift dim H¹/Area = 2/(3π). Tolerance matches the candidate-loop check (1e-40)."
     }
   ],
   "allPassed": true,
-  "durationMs": 22,
+  "durationMs": 25,
   "computation": "alpha-em-rt-phase4-bring-measure",
   "scriptFile": "alpha_em_rt_phase4_bring_measure.py",
-  "scriptHash": "23dfd076a569",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "c2d23bee7f0a",
+  "scriptCommitSha": "353ad1d7840e7ae67639856f25a4e5085efb1bd8",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
@@ -27,8 +27,6 @@
   },
   "environment": {
     "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },

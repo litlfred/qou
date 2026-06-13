@@ -33,7 +33,7 @@ The relation between these two normalizations:
   leading × next-order  =  (2g/(4π(g-1))) × (1/(2gπ))
                         =  1/(4π²(g-1))
 
-At g=4:  1/(36π²) ≈ 0.00282
+At g=4:  1/(12π²) ≈ 0.00844
 
 Cross-checked geometric identifications:
 
@@ -243,14 +243,19 @@ def main() -> int:
                      "STRUCTURAL FORM identified; rigorous RT shadow-world "
                      "derivation deferred to subgoal-2 multi-week work")
 
+    # Assert the numerical identity directly on the computed values
+    # (not via the human-readable candidate label, which a harmless
+    # label edit or an added matching candidate could otherwise flip).
+    one_over_pi_dim_H1 = mpf(1) / (pi * dim_H1)
     builder.add_assertion(
         "next_order_norm_equals_one_over_pi_dim_H1",
-        computed=1 if best == "1 / (π · dim H¹)" else 0,
-        expected=1,
-        tolerance=0,
-        source="1/(8π) = 1/(π · dim H¹(M_Bring)) at g=4 since "
+        computed=mp.nstr(one_over_pi_dim_H1, 50),
+        expected=mp.nstr(target, 50),
+        tolerance=1e-40,
+        source="1/(π · dim H¹(M_Bring)) = 1/(8π) at g=4 since "
                "dim H¹(M_Bring) = 2g = 8 — same Bring cohomology object "
-               "used in the n=2 leading shift dim H¹/Area = 2/(3π).",
+               "used in the n=2 leading shift dim H¹/Area = 2/(3π). "
+               "Tolerance matches the candidate-loop check (1e-40).",
     )
     builder.save()
     return 0
