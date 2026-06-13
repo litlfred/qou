@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-01T05:15:00.228660+00:00",
-  "commitSha": "25d4e2a0a0060d10a4d6e0df31af95539bd38168",
+  "computedAt": "2026-06-13T21:40:50.434499+00:00",
+  "commitSha": "bc7ea5187f7cc98444dae5cf6f5b548fe30f7072",
   "assertions": [
     {
       "name": "observable_hunt_completed",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 11,
   "computation": "yekutieli-half-h2-observable-hunt",
   "scriptFile": "yekutieli_half_h2_observable_hunt.py",
-  "scriptHash": "d5a6ca4739e9",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "edf8a7bc0b01",
+  "scriptCommitSha": "f81c49550790e8b1da4fdf3f4ba82c797800a24f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

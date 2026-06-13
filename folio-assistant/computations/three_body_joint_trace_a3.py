@@ -27,6 +27,7 @@ for _d in ("hecke", "habiro", "substrate"):
     if _p not in _sys.path:
         _sys.path.insert(0, _p)
 import _path_bridge  # noqa: E402, F401
+from codata_constants import AME_B_TRITIUM_MEV_VALIDATION  # noqa: E402
 
 import mpmath as mp  # noqa: E402
 import pyhecke_native  # noqa: E402
@@ -60,7 +61,7 @@ def _word_with(full, free, iface_gens):
 
 def main() -> int:
     print(f"E_0 = {float(E0):.4f} MeV   q₀ = {float(q0):.6f}\n")
-    AME = {"T": mp.mpf("8.4818"), "3He": mp.mpf("7.7180")}
+    AME = {"T": AME_B_TRITIUM_MEV_VALIDATION, "3He": mp.mpf("7.7180")}
     results = {}
     for name, (Z, N) in {"T": (1, 2), "3He": (2, 1)}.items():
         full = atom_braid_word_3A(Z, N, include_inter=True)

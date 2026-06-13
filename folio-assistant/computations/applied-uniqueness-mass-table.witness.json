@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-05T19:25:17.509624+00:00",
-  "commitSha": "5ea24b6edb5715657922748534983a0b8e447ca0",
+  "computedAt": "2026-06-13T21:38:19.480912+00:00",
+  "commitSha": "bc7ea5187f7cc98444dae5cf6f5b548fe30f7072",
   "assertions": [
     {
       "name": "all_predictions_finite",
@@ -18,11 +18,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 9,
   "computation": "applied-uniqueness-mass-table",
   "scriptFile": "applied_uniqueness_mass_table.py",
-  "scriptHash": "5ea76a116a0b",
-  "scriptCommitSha": "af3316bf9d3479939510555d41340c30033866ba",
+  "scriptHash": "8800ffda7117",
+  "scriptCommitSha": "f81c49550790e8b1da4fdf3f4ba82c797800a24f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,15 +34,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Phase 1 of the 1 ppb workplan — wires AppliedDeuteron/Tritium/Helium3Uniqueness theorems into mass-table predictions by applying the categorical mass formula M(K) = ρ · m_e · |tr_M| from QOU.BraidKnot.MassFormulaCategorical to the canonical |tr_M(β_K, q_0)| values from derivation_chain.TR_M_AT_Q0.  Currently uses placeholder m_e_Hecke literal (DEPRECATED in derivation_chain.py); Phase 2 of the workplan replaces it with the Path A 50-dps derivation, expected to tighten predictions by ~5 orders of magnitude.  AUDIT-ONLY scaffolding.",
   "contentBlock": "prop:atom-knot-mass-derivation",
   "auditOnly": "docs/audits/2026-05-10-1ppb-workplan-update.md",
   "parameters": {
-    "M_E_MEV_CODATA": "0.51099895069",
-    "M_P_MEV_CODATA": "938.27208816",
-    "M_N_MEV_CODATA": "939.56542052",
+    "M_E_MEV_CODATA": "0.5109989506900000000000000000000000000000000000000005654434719000544678",
+    "M_P_MEV_CODATA": "938.2720881599999999999999999999999999999999999999996847323682500418433",
+    "M_N_MEV_CODATA": "939.5654205199999999999999999999999999999999999999997179151158852535116",
     "rho_table": {
       "proton": 1,
       "neutron": 1,
@@ -85,8 +86,8 @@
         "N": 0,
         "rho": 1,
         "tr_M_q0": "1.06530622859238930000000000000000000000000000000000000000000",
-        "m_K_predicted_MeV": "0.271815192558633343606143220635739568414901803973602400758464",
-        "m_K_reference_MeV": "938.272088160000000000000000000000000000000000000000000000000",
+        "m_K_predicted_MeV": "0.271815192558633343606143220635739568414901803973602701534280",
+        "m_K_reference_MeV": "938.272088159999999999999999999999999999999999999999684732368",
         "reference_label": "CODATA m_p",
         "err_ppb": -999710302.3781815,
         "formula": "ρ_p · |tr_M(β_p)| / m_e_Hecke_placeholder · M_E_MEV",
@@ -98,8 +99,8 @@
         "N": 1,
         "rho": 1,
         "tr_M_q0": "0.923233229911637100000000000000000000000000000000000000000000",
-        "m_K_predicted_MeV": "0.235564959097765160441929244211476689844167748958643101714286",
-        "m_K_reference_MeV": "939.565420520000000000000000000000000000000000000000000000000",
+        "m_K_predicted_MeV": "0.235564959097765160441929244211476689844167748958643362377577",
+        "m_K_reference_MeV": "939.565420519999999999999999999999999999999999999999717915116",
         "reference_label": "CODATA m_n",
         "err_ppb": -999749283.0685836,
         "formula": "ρ_n · |tr_M(β_n)| / m_e_Hecke_placeholder · M_E_MEV",
@@ -111,10 +112,10 @@
         "N": 1,
         "rho": 1,
         "tr_M_q0": "0.388286424074788800000000000000000000000000000000000000000000",
-        "m_K_predicted_MeV": "0.0990721224518201334691471646865194025965797891399555311175502",
-        "m_K_reference_MeV": "1875.61294256000000000000000000000000000000000000000000000000",
+        "m_K_predicted_MeV": "0.0990721224518201334691471646865194025965797891399556407453387",
+        "m_K_reference_MeV": "1875.61294267999999999999999999999999999999999999999940477099",
         "reference_label": "AME m_D",
-        "err_ppb": -999947178.8020846,
+        "err_ppb": -999947178.8020879,
         "formula": "ρ_d · |tr_M(β_d)| / m_e_Hecke_placeholder · M_E_MEV",
         "status": "categorical_via_placeholder_m_e_Hecke"
       },
@@ -142,9 +143,9 @@
       },
       {
         "atom": "deuteron-binding",
-        "B_predicted_MeV": "0.408308029204578370578925300160696855662489763792289971355200",
-        "B_AME_MeV": "2.22456612000000000000000000000000000000000000000000000000000",
-        "err_ppb": -816454981.7001716,
+        "B_predicted_MeV": "0.408308029204578370578925300160696855662489763792290423166518",
+        "B_AME_MeV": "2.22456599999999999999999999999999999999999999999999787649913",
+        "err_ppb": -816454971.7991831,
         "formula": "m_p_pred + m_n_pred - m_D_pred",
         "status": "categorical_via_placeholder_m_e_Hecke"
       }

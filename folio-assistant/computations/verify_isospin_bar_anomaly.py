@@ -36,6 +36,7 @@ Promotes D9 closure path from "scaffold + audit" (PR #1162) to
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+from codata_constants import M_N_MEV_VALIDATION, M_P_MEV_VALIDATION  # noqa: E402
 import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import json
 import sys
@@ -139,8 +140,8 @@ def main() -> int:
     )
 
     # CODATA cross-check: Δm/M_N ≈ 305 ppm
-    M_p_mev = mp.mpf("938.27208816")
-    M_n_mev = mp.mpf("939.56542052")
+    M_p_mev = M_P_MEV_VALIDATION
+    M_n_mev = M_N_MEV_VALIDATION
     M_avg = (M_p_mev + M_n_mev) / 2
     delta_m_over_M_N_codata = (M_n_mev - M_p_mev) / M_avg
     delta_m_over_M_N_codata_ppm = delta_m_over_M_N_codata * mp.mpf("1e6")

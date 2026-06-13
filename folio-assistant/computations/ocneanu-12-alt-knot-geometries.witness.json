@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-01T05:08:01.203635+00:00",
-  "commitSha": "77593c4b6f984a525e170eb7fafbf884f66a8418",
+  "computedAt": "2026-06-13T21:40:08.747121+00:00",
+  "commitSha": "bc7ea5187f7cc98444dae5cf6f5b548fe30f7072",
   "assertions": [
     {
       "name": "alt_geometry_scan_completed",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 10,
   "computation": "ocneanu-12-alt-knot-geometries",
   "scriptFile": "ocneanu_12_alt_knot_geometries.py",
-  "scriptHash": "f4be94ba6a18",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "487e8d3fa3ef",
+  "scriptCommitSha": "f81c49550790e8b1da4fdf3f4ba82c797800a24f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -38,10 +38,10 @@
     "q_60dps": "1.1099785827513808075916690956107688798744991218736"
   },
   "data": {
-    "baseline_dim_H_3_ppb": "54.0225235058",
+    "baseline_dim_H_3_ppb": "54.0225157342",
     "best_name": "|S_3| = 6 (baseline)",
     "best_denominator": "6.0",
-    "best_ppb": "54.0225235058",
+    "best_ppb": "54.0225157342",
     "verdict": "BASELINE STANDS: dim H_3 = 6 remains the tightest denominator (54 ppb). No alternative knot-operator geometry on Bring's surface improves the fit."
   }
 }

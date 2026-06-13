@@ -18,6 +18,12 @@ Two open pieces of the #1396 result m_K²/m_π² = [3]_q·[4]_q (203 ppm):
 """
 from __future__ import annotations
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+from codata_constants import (  # noqa: E402
+    M_K_0_MEV_VALIDATION,
+    M_K_PM_MEV_VALIDATION,
+    M_PI_0_MEV_VALIDATION,
+    M_PI_PM_MEV_VALIDATION,
+)
 import sys
 import time
 from pathlib import Path
@@ -40,10 +46,10 @@ def main():
     q = mp.mpf(Q_50_DIGIT_STR)
 
     # Charged-meson masses (PDG, MeV) — comparison targets, not inputs.
-    m_pi_pm = mp.mpf("139.57039")
-    m_pi_0  = mp.mpf("134.9768")
-    m_K_pm  = mp.mpf("493.677")
-    m_K_0   = mp.mpf("497.611")
+    m_pi_pm = M_PI_PM_MEV_VALIDATION
+    m_pi_0  = M_PI_0_MEV_VALIDATION
+    m_K_pm  = M_K_PM_MEV_VALIDATION
+    m_K_0   = M_K_0_MEV_VALIDATION
 
     prod_34 = q_int(3, q) * q_int(4, q)
     ratio_sq_charged = (m_K_pm / m_pi_pm)**2

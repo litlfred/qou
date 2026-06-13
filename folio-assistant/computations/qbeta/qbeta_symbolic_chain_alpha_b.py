@@ -47,6 +47,7 @@ import sys as _sys  # noqa: E402
 from pathlib import Path as _Path  # noqa: E402
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
+from codata_constants import M_E_MEV  # noqa: E402
 del _sys, _Path, _bridge
 
 import time
@@ -73,7 +74,7 @@ from witness_base import WitnessBuilder  # noqa: E402
 
 Q0_MP_PIN = "1.1099785827513808075916690956107688798744991218736"
 Q_BETA_CODATA_MEV = mp.mpf("0.78233")  # CODATA Q_β = m_n - m_p - m_e
-M_E_MEV = mp.mpf("0.51099895069")  # CODATA m_e
+M_E_MEV = M_E_MEV  # CODATA m_e
 
 
 def main() -> int:

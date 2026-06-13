@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-29T19:58:37.394348+00:00",
-  "commitSha": "e250add7cfc3ab350b865379b6815d6060a772c4",
+  "computedAt": "2026-06-13T21:40:07.653522+00:00",
+  "commitSha": "bc7ea5187f7cc98444dae5cf6f5b548fe30f7072",
   "assertions": [
     {
       "name": "fusion_cg_identity",
@@ -22,25 +22,33 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 19,
+  "durationMs": 10,
   "computation": "meson-fusion-why34-em-residual",
   "scriptFile": "meson_fusion_why34_em_residual.py",
-  "scriptHash": "42085d36d4d2",
-  "scriptCommitSha": "e250add7cfc3ab350b865379b6815d6060a772c4",
+  "scriptHash": "8e68473085a9",
+  "scriptCommitSha": "f81c49550790e8b1da4fdf3f4ba82c797800a24f",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Two open pieces of m_K²/m_π² = [3]_q[4]_q. #2: the squared ratio is structurally required (meson = 2-body qq̄ → mass² on the fusion product H⊗H; this is why the 1-body character ratio missed 71%); 'why 3,4' reduces to m_s/m_d = 2[3]_q[4]_q−1. #3: the 203 ppm residual (50 MeV²) sits at the EM scale (~4% of the π± EM splitting), supporting the EM-correction lead.",
   "auditOnly": "docs/audits/2026-05-28-meson-mass-ratio-derived-vs-fitted.md",
   "data": {
-    "ms_md_from_fusion": 24.017331968606424,
-    "residual_charged_ppm": 203.12852206809472,
-    "residual_MeV2": 49.505870017128686,
-    "em_pi_splitting_MeV2": 1261.1572265121,
-    "residual_over_em_scale": 0.03925432053705455,
-    "residual_strong_dashen_ppm": 63906.2684834784
+    "ms_md_from_fusion": 24.01733174018103,
+    "residual_charged_ppm": 203.13765460850806,
+    "residual_MeV2": 49.50809577230096,
+    "em_pi_splitting_MeV2": 1261.1572265121017,
+    "residual_over_em_scale": 0.03925608538851432,
+    "residual_strong_dashen_ppm": 63906.27819767225
   }
 }

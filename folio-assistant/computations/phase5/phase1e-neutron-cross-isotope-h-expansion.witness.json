@@ -1,12 +1,12 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-26T13:54:40.659270+00:00",
-  "commitSha": "5a05156dd7472b8baf9d017fb0ff27def8d11714",
+  "computedAt": "2026-06-13T21:40:12.396374+00:00",
+  "commitSha": "bc7ea5187f7cc98444dae5cf6f5b548fe30f7072",
   "assertions": [
     {
       "name": "m_n_residual_within_5ppm",
-      "computed": 2.000933403653135,
+      "computed": 1.9703258861853932,
       "expected": 0.0,
       "passed": true,
       "tolerance": 5.0,
@@ -15,16 +15,24 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 22,
+  "durationMs": 16,
   "computation": "phase1e-neutron-cross-isotope-h-expansion",
   "scriptFile": "phase1e_neutron_and_cross_isotope_h_expansion.py",
-  "scriptHash": "87c38e08ef75",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "a1f531c5183f",
+  "scriptCommitSha": "f81c49550790e8b1da4fdf3f4ba82c797800a24f",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
+    "compute_dps": 70,
+    "output_dps": 60,
     "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Extend Phase 1 h-expansion to neutron, Q_β, and cross-isotope map. Derives exact h-series for the flavor-split X = (q−1)²(1−q⁻⁴)/3 and the neutron ratio R = 1 + X/(1−X/2). Identifies that the m_n 2.0 ppm residual decomposes as 0.24 ppm (F_Bor) + 1.76 ppm (X), and Q_β's 2113 ppm is dominated by X.",
   "contentBlock": "prop:proton-mass-substrate-identity",
@@ -47,12 +55,12 @@
       "8": "43/4608"
     },
     "predictions_at_q0": {
-      "m_p_MeV": "938.271860868625648",
-      "m_n_MeV": "939.563540512165164",
-      "Q_beta_MeV": "0.78068069353952",
-      "Delta_pn_MeV": "1.2916796435395",
-      "m_p_residual_ppm": "-0.24224463",
-      "m_n_residual_ppm": "-2.0009334"
+      "m_p_MeV": "938.271890002360394",
+      "m_n_MeV": "939.563569269930185",
+      "Q_beta_MeV": "0.78068031687979",
+      "Delta_pn_MeV": "1.2916792675698",
+      "m_p_residual_ppm": "-0.21119422",
+      "m_n_residual_ppm": "-1.9703259"
     },
     "residual_decomposition": {
       "m_n_from_F_Bor_ppm": "0.24",

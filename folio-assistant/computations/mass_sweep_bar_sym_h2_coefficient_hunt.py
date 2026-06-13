@@ -60,6 +60,7 @@ and tabulate.
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+from codata_constants import AME_B_HE4_MEV_VALIDATION, M_E_MEV  # noqa: E402
 import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import json
 import sys
@@ -80,7 +81,7 @@ h2 = h ** 2
 h4 = h ** 4
 
 # Constants (canonical, from knot_volumes.py + experimental_constants.py)
-M_E_MEV = mp.mpf("0.51099895")
+M_E_MEV = M_E_MEV
 VOL_BORROMEAN = 8 * mp.catalan  # = 8G, Thurston 1979
 VOL_7_SQ_1 = mp.mpf("4.7494999818964") # Vol(7^2_1) from SnapPy
 C_ALPHA_DERIVED = M_E_MEV * VOL_7_SQ_1  # = m_e · Vol(7^2_1)
@@ -88,7 +89,7 @@ C_ALPHA_DERIVED = M_E_MEV * VOL_7_SQ_1  # = m_e · Vol(7^2_1)
 # KLR-violating atoms with production formula (magic/α-cluster).
 # Each row: (sym, A, n_alpha, n_pairs, rule, B_AME_MeV)
 ATOMS = [
-    ("4He",    4,  1,   0, "magic",          mp.mpf("28.2956912")),
+    ("4He",    4,  1,   0, "magic",          AME_B_HE4_MEV_VALIDATION),
     ("8Be",    8,  2,   1, "alpha",          mp.mpf("56.49951")),
     ("12C",   12,  3,   3, "alpha",          mp.mpf("92.16175")),
     ("16O",   16,  4,   6, "alpha",          mp.mpf("127.61929")),

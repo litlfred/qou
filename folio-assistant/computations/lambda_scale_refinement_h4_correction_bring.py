@@ -75,6 +75,7 @@ This probe:
 """
 from __future__ import annotations
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+from codata_constants import M_N_MEV_VALIDATION, M_P_MEV_VALIDATION  # noqa: E402
 import sys
 from pathlib import Path
 
@@ -103,8 +104,8 @@ def main() -> int:
 
     # CODATA (Layer-2 substrate flavor-split per PR #942):
     M_E = M_E_MEV  # from codata_constants
-    M_P_CODATA = mp.mpf("938.27208816")
-    M_N_CODATA = mp.mpf("939.56542052")
+    M_P_CODATA = M_P_MEV_VALIDATION
+    M_N_CODATA = M_N_MEV_VALIDATION
     M_AVG_CODATA = (M_P_CODATA + M_N_CODATA) / 2
 
     bracket_2_q = Q0 + 1 / Q0

@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-01T01:21:58.971304+00:00",
-  "commitSha": "05a642f98b1293126d8066ab04875df87a0e1487",
+  "computedAt": "2026-06-13T21:40:09.232375+00:00",
+  "commitSha": "bc7ea5187f7cc98444dae5cf6f5b548fe30f7072",
   "assertions": [
     {
       "name": "qdeformation_scan_completed",
@@ -14,16 +14,16 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 11,
   "computation": "ocneanu-12-qdeformation-discriminator",
   "scriptFile": "ocneanu_12_qdeformation_discriminator.py",
-  "scriptHash": "6beb6d4b9a1e",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "d53b219e27fc",
+  "scriptCommitSha": "f81c49550790e8b1da4fdf3f4ba82c797800a24f",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.11.15",
@@ -38,7 +38,7 @@
     "q_50dps": "1.1099785827513808075916690956107688798744991218736"
   },
   "data": {
-    "k_required": "11.99961221517308362635959",
+    "k_required": "11.99961221517317688300982",
     "integer_12_ppm_off": "32.316447",
     "best_candidates_within_100ppm": [
       [

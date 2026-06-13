@@ -27,6 +27,7 @@ Test various forms via the Plancherel structure.
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+from codata_constants import M_D_MEV_VALIDATION  # noqa: E402
 import sys
 from pathlib import Path
 
@@ -55,7 +56,7 @@ def main() -> int:
 
     M_N_MEV = M_P_MEV + M_E_MEV + mp.mpf(repr(_ec.Q_NEUTRON_MEV))
     # Deuteron CODATA
-    M_D_MEV = mp.mpf("1875.61294257")
+    M_D_MEV = M_D_MEV_VALIDATION
     B_d = M_P_MEV + M_N_MEV - M_D_MEV
     print(f"[CODATA]")
     print(f"  B(d) = {mp.nstr(B_d, 12)} MeV (= 2.22... )")

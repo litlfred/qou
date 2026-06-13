@@ -34,6 +34,7 @@ to see if a structurally natural combination yields Reading-A's
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+from codata_constants import M_E_MEV, M_P_MEV_VALIDATION  # noqa: E402
 import sys
 from pathlib import Path
 
@@ -254,8 +255,8 @@ def main():
     qi = 1 / q0
     h2_q0 = (q0 - qi) ** 2
     hbar_q = 1 - qi
-    m_e = mp.mpf("0.51099895069")
-    m_p_codata = mp.mpf("938.27208816")
+    m_e = M_E_MEV
+    m_p_codata = M_P_MEV_VALIDATION
     vol_b3 = 8 * G
     geom_leading = vol_b3 / hbar_q ** 2
 

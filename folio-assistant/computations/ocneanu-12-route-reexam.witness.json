@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-31T22:45:30.238813+00:00",
-  "commitSha": "10505063993e8e0da29145743d2a3e07a252e60f",
+  "computedAt": "2026-06-13T21:40:09.393100+00:00",
+  "commitSha": "bc7ea5187f7cc98444dae5cf6f5b548fe30f7072",
   "assertions": [
     {
       "name": "reexam_completed",
@@ -17,13 +17,13 @@
   "durationMs": 10,
   "computation": "ocneanu-12-route-reexam",
   "scriptFile": "ocneanu_12_route_reexam.py",
-  "scriptHash": "920ac70dd17d",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "66d5612c8524",
+  "scriptCommitSha": "f81c49550790e8b1da4fdf3f4ba82c797800a24f",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.11.15",
@@ -38,9 +38,9 @@
     "q_50dps": "1.1099785827513808075916690956107688798744991218736"
   },
   "data": {
-    "k_required": "11.99961221517308362635959",
-    "delta_k_minus_12": "-0.0003877848269163736404079804",
-    "relative_pct": "-0.0032315402243",
+    "k_required": "11.99961221517317688300982",
+    "delta_k_minus_12": "-0.0003877848268231169901796051",
+    "relative_pct": "-0.00323154022353",
     "F_Bor_at_q0": "4.469138735767522529389075",
     "verdict": "AUDIT VERDICT STANDS but with NUANCE: the empirical k ≈ 12 is extraordinarily close to integer 12 (~10⁻⁴ relative). The correction commit was right that the Borromean's pole structure doesn't give -1/12 — but the integer 12 itself is so tight (10⁻⁴) that it deserves a NEW structural explanation, not just 'empirical near-match.' Several natural candidates (4·3 = #edge cells × #strands; Σd_λ²·2 = 6·2; 3!·[2]_q at q=1 = 12) hit exactly 12 — deserves categorical investigation."
   }

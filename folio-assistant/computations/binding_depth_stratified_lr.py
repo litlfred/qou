@@ -32,6 +32,12 @@ Ref: lr_coefficients.py (LR tables for 3⊗3→6, 3⊗6→9, 6⊗6→12)
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+from codata_constants import (  # noqa: E402
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+)
 import ast
 import json
 import sys
@@ -51,10 +57,10 @@ from lr_coefficients import get_lr_table
 
 
 B_AME = {
-    "D":   mp.mpf("2.22456607"),
-    "T":   mp.mpf("8.481798"),
-    "3He": mp.mpf("7.7180428"),
-    "4He": mp.mpf("28.295674"),
+    "D":   AME_B_DEUTERON_MEV_VALIDATION,
+    "T":   AME_B_TRITIUM_MEV_VALIDATION,
+    "3He": AME_B_HE3_MEV_VALIDATION,
+    "4He": AME_B_HE4_MEV_VALIDATION,
 }
 
 ZN = {"D": (1, 1), "T": (1, 2), "3He": (2, 1), "4He": (2, 2)}

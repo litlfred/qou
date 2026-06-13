@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-01T05:45:29.770849+00:00",
-  "commitSha": "df083cf1456a9c00ce760abed3d28f3bffa1d917",
+  "computedAt": "2026-06-13T21:40:09.559094+00:00",
+  "commitSha": "bc7ea5187f7cc98444dae5cf6f5b548fe30f7072",
   "assertions": [
     {
       "name": "exploration_completed",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 11,
   "computation": "ocneanu-54ppb-residual-exploration",
   "scriptFile": "ocneanu_54ppb_residual_exploration.py",
-  "scriptHash": "7342f69c0e26",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "93065f352597",
+  "scriptCommitSha": "f81c49550790e8b1da4fdf3f4ba82c797800a24f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -38,10 +38,10 @@
     "q_70dps": "1.1099785827513808075916690956107688798744991218736"
   },
   "data": {
-    "f_target": "1.001674471931847507603573",
-    "f_minus_1": "0.001674471931847507603572823",
+    "f_target": "1.001674471690959263949353",
+    "f_minus_1": "0.001674471690959263949353113",
     "pslq_hits": 0,
-    "best_special_function_ppb": "-349813.79",
+    "best_special_function_ppb": "-349813.55",
     "verdict": "BEST candidate: '1 + ln(2)·h⁴' at -349814.0 ppb — not below 10 ppb threshold."
   }
 }

@@ -31,6 +31,7 @@ import sys as _sys  # noqa: E402
 from pathlib import Path as _Path  # noqa: E402
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
+from codata_constants import M_MU_MEV_VALIDATION  # noqa: E402
 del _sys, _Path, _bridge
 
 import sys
@@ -55,7 +56,7 @@ def m_p_pred_at_q(q_val):
     trM = abs((4 + h**2 - 3*h**4 - h**6) / (h**2 + 4))
     qf3 = (q_val**2 + 1 + q_val**(-2)) * (q_val + q_val**(-1))
     F = trM * qf3 / q_val**3
-    m_mu = mp.mpf("105.6583755")
+    m_mu = M_MU_MEV_VALIDATION
     m_e = mp.mpf(M_E_MEV)
     return 2 * m_mu * F - 12 * m_e
 

@@ -48,6 +48,7 @@ Output: `sigma-shell-from-beta-chain.witness.json`.
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION  # noqa: E402
 import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import json
 import sys
@@ -75,7 +76,7 @@ set_compute_dps()
 # (avoids duplicating CODATA literals across compute scripts).
 from codata_constants import M_E_MEV, M_P_MEV  # noqa: E402
 from codata_constants import M_N_MEV  # noqa: E402
-B_D_MEV = mp.mpf("2.224566110")  # AME 2020 deuteron binding energy (benchmark only)
+B_D_MEV = AME_B_DEUTERON_MEV_VALIDATION  # AME 2020 deuteron binding energy (benchmark only)
 
 
 def evaluate_y_lambda(partition: list[int]) -> mp.mpf:

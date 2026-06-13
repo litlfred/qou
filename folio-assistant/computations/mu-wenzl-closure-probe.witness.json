@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.2",
-  "computedAt": "2026-06-13T18:40:20.944924+00:00",
-  "commitSha": "f9079f74ea382222eba75d26dd15e620ba369dac",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-13T21:40:49.499373+00:00",
+  "commitSha": "bc7ea5187f7cc98444dae5cf6f5b548fe30f7072",
   "assertions": [
     {
       "name": "improves_prediction",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 1038,
+  "durationMs": 10,
   "computation": "mu-wenzl-closure-probe",
   "scriptFile": "test_muon_wenzl_closure.py",
-  "scriptHash": "26555370d444",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "c949870c2fe5",
+  "scriptCommitSha": "c8a095c9c8615716898a44751192b45ab77b2541",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -25,17 +25,16 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.2",
+    "python": "3.11.15",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
-    "sympy": "1.11.1",
-    "mpmath": "0.0.0",
-    "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Tests if 5/2 / [8]_q! closes the muon mass tension",
   "data": {
-    "base_residual_ppb": "211.1649144",
-    "new_residual_ppb": "-0.1373373691"
+    "base_residual_ppb": "211.1649143",
+    "new_residual_ppb": "-0.1373374196"
   }
 }

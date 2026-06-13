@@ -23,6 +23,7 @@ undershoots by -83%. See docs/audits/2026-05-18-delta-lambda-gating-context.md
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION  # noqa: E402
 import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import sys
 import json
@@ -64,7 +65,7 @@ def main():
         print(f"  Interface flip: {sum_with / sum_no:.4f}×")
         print()
 
-        B_D_AME = mp.mpf("2.224566")  # AME 2020 deuteron binding (MeV)
+        B_D_AME = AME_B_DEUTERON_MEV_VALIDATION  # AME 2020 deuteron binding (MeV)
         B_D_pred = m_e * abs(mp.mpf(str(sum_with)))
         err_pct = float((B_D_pred - B_D_AME) / B_D_AME * 100)
 

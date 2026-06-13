@@ -29,6 +29,7 @@ the 54 ppb baseline.
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+from codata_constants import M_E_MEV, M_MU_MEV_VALIDATION, M_P_MEV_VALIDATION  # noqa: E402
 import sys
 from pathlib import Path
 
@@ -72,9 +73,9 @@ def main() -> int:
     qfact_3 = qfact(3, q)
     trM = abs(trM_borromean_closed(q))
     F_Bor = trM * qfact_3 / q ** 3
-    m_e = mp.mpf("0.51099895069")
-    m_mu = mp.mpf("105.6583755")
-    m_p = mp.mpf("938.27208816")
+    m_e = M_E_MEV
+    m_mu = M_MU_MEV_VALIDATION
+    m_p = M_P_MEV_VALIDATION
     k_required = (2 * m_mu * F_Bor - m_p) / m_e
     residual_target = 12 - k_required
 

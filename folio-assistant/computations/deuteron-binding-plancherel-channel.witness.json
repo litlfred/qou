@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-01T16:57:25.845119+00:00",
-  "commitSha": "32e2edb8e940de14e9b665866967cb295d870852",
+  "computedAt": "2026-06-13T21:38:45.671950+00:00",
+  "commitSha": "bc7ea5187f7cc98444dae5cf6f5b548fe30f7072",
   "assertions": [
     {
       "name": "deuteron_scan_completed",
@@ -17,8 +17,8 @@
   "durationMs": 16,
   "computation": "deuteron-binding-plancherel-channel",
   "scriptFile": "deuteron_binding_plancherel_channel.py",
-  "scriptHash": "30fabd7f181a",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "139b2f3f4bf2",
+  "scriptCommitSha": "f81c49550790e8b1da4fdf3f4ba82c797800a24f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -42,6 +42,12 @@
     "target_Bd_over_Md": "0.001186047536887797345969665",
     "best_candidate": "(h) ℏ_q · (q-1)² · 1/2",
     "best_rel_pct": "-49.4783337258",
-    "verdict": "NULL — Plancherel-channel template at H_2 does NOT close the deuteron binding ratio. Confirms (yet again) that the Δ_λ binding closure requires deeper structure than H_2 classical Plancherel — multi-session open work."
+    "verdict": "NULL — Plancherel-channel template at H_2 does NOT close the deuteron binding ratio. Confirms (yet again) that the Δ_λ binding closure requires deeper structure than H_2 classical Plancherel — multi-session open work.",
+    "lean_uniqueness_ref": {
+      "nucleus": "deuteron (²H)",
+      "theorem": "qou:QOU.BraidKnot.NucleusEmptySDPUniqueness.nucleus_uniqueness_closed (parameterised by crossing count n)",
+      "framework_doc": "content/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
+      "note": "T_w uniqueness at the abstract empty-constraint SDP level (PR #1537/#1542 parameterised module). Workplan: docs/workplans/2026-05-31-witness-lean-uniqueness-ref-wiring.md."
+    }
   }
 }

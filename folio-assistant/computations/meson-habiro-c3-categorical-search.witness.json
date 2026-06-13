@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-01T01:17:59.938971+00:00",
-  "commitSha": "aabe5dad71dcdb6dcf905791912aa3e5cd30aff0",
+  "computedAt": "2026-06-13T21:40:07.972668+00:00",
+  "commitSha": "bc7ea5187f7cc98444dae5cf6f5b548fe30f7072",
   "assertions": [
     {
       "name": "candidate_search_completed",
@@ -17,13 +17,13 @@
   "durationMs": 10,
   "computation": "meson-habiro-c3-categorical-search",
   "scriptFile": "meson_habiro_c3_categorical_search.py",
-  "scriptHash": "221621b240ba",
-  "scriptCommitSha": "aabe5dad71dcdb6dcf905791912aa3e5cd30aff0",
+  "scriptHash": "ed45dbe67de5",
+  "scriptCommitSha": "f81c49550790e8b1da4fdf3f4ba82c797800a24f",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.11.15",
@@ -38,39 +38,39 @@
     "q_50dps": "1.1099785827513808075916690956107688798744991218736"
   },
   "data": {
-    "c_3_target": "-0.7150196297869717581779597",
+    "c_3_target": "-0.7150196297564573145185236",
     "best_candidates_within_05pct": [
       [
         "−5/7",
         "-0.714285714285714",
-        "-0.10264271"
+        "-0.1026427"
       ],
       [
         "−10/14 = −5/7",
         "-0.714285714285714",
-        "-0.10264271"
+        "-0.1026427"
       ],
       [
         "−15/21 = −5/7",
         "-0.714285714285714",
-        "-0.10264271"
+        "-0.1026427"
       ]
     ],
     "best_candidates_within_5pct": [
       [
         "−5/7",
         "-0.714285714285714",
-        "-0.10264271"
+        "-0.1026427"
       ],
       [
         "−10/14 = −5/7",
         "-0.714285714285714",
-        "-0.10264271"
+        "-0.1026427"
       ],
       [
         "−15/21 = −5/7",
         "-0.714285714285714",
-        "-0.10264271"
+        "-0.1026427"
       ],
       [
         "−(1−h²)·b²",
@@ -90,7 +90,7 @@
       [
         "−7/10",
         "-0.7",
-        "-2.1005899"
+        "-2.1005898"
       ],
       [
         "−11/15",

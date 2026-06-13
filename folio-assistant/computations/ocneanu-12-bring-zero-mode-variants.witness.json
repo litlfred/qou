@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-01T05:05:06.385536+00:00",
-  "commitSha": "77593c4b6f984a525e170eb7fafbf884f66a8418",
+  "computedAt": "2026-06-13T21:40:08.904656+00:00",
+  "commitSha": "bc7ea5187f7cc98444dae5cf6f5b548fe30f7072",
   "assertions": [
     {
       "name": "bring_variant_search_completed",
@@ -17,8 +17,8 @@
   "durationMs": 10,
   "computation": "ocneanu-12-bring-zero-mode-variants",
   "scriptFile": "ocneanu_12_bring_zero_mode_variants.py",
-  "scriptHash": "6bef5bed2d69",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "038f0c1b4b66",
+  "scriptCommitSha": "f81c49550790e8b1da4fdf3f4ba82c797800a24f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -38,11 +38,11 @@
     "q_60dps": "1.1099785827513808075916690956107688798744991218736"
   },
   "data": {
-    "k_required": "11.99961221517308362635959",
-    "residual_target": "0.0003877848269163736404079804",
-    "baseline_A_ppb": "54.0225235058",
+    "k_required": "11.99961221517317688300982",
+    "residual_target": "0.0003877848268231169901796051",
+    "baseline_A_ppb": "54.0225157342",
     "best_variant_name": "(A) bare (α_em/π)/dim H_3",
-    "best_variant_ppb": "54.0225235058",
+    "best_variant_ppb": "54.0225157342",
     "verdict": "NO IMPROVEMENT — bare (A) at 54.0225 ppb remains the tightest tested form. The Bring zero-mode template's (3q²−1)/(2q²) sinh-truncation does NOT transfer to the proton term; the structural mechanism appears to be different."
   }
 }

@@ -33,6 +33,13 @@ import sys as _sys  # noqa: E402
 from pathlib import Path as _Path  # noqa: E402
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
+from codata_constants import (  # noqa: E402
+    M_E_MEV,
+    M_MU_MEV_VALIDATION,
+    M_N_MEV_VALIDATION,
+    M_P_MEV_VALIDATION,
+    Q_BETA_MEV,
+)
 del _sys, _Path, _bridge
 
 import sys
@@ -87,10 +94,10 @@ def main():
     mp.mp.dps = 50
     q0 = mp.mpf(Q_50_DIGIT_STR)
     h0 = q0 - 1/q0
-    m_mu = mp.mpf("105.6583755")
-    m_e = mp.mpf("0.51099895")
-    m_p_codata = mp.mpf("938.27208816")
-    m_n_codata = mp.mpf("939.56542052")
+    m_mu = M_MU_MEV_VALIDATION
+    m_e = M_E_MEV
+    m_p_codata = M_P_MEV_VALIDATION
+    m_n_codata = M_N_MEV_VALIDATION
 
     # ── 1. Flavor-split X ──────────────────────────────────────
     print("  1. Flavor-split X = (q−1)²(1−q⁻⁴)/3")
@@ -144,7 +151,7 @@ def main():
     print(f"    m_p_pred  = {mp.nstr(m_p_pred, 15)} MeV  (Δ = {mp.nstr((m_p_pred - m_p_codata)/m_p_codata * 1e6, 8)} ppm)")
     print(f"    m_n_pred  = {mp.nstr(m_n_pred, 15)} MeV  (Δ = {mp.nstr((m_n_pred - m_n_codata)/m_n_codata * 1e6, 8)} ppm)")
     print(f"    Δ_pn      = {mp.nstr(Delta_pred, 12)} MeV")
-    print(f"    Q_β       = {mp.nstr(Q_beta_pred, 12)} MeV  (Δ = {mp.nstr((Q_beta_pred - mp.mpf('0.78233341'))/mp.mpf('0.78233341') * 1e6, 8)} ppm)")
+    print(f"    Q_β       = {mp.nstr(Q_beta_pred, 12)} MeV  (Δ = {mp.nstr((Q_beta_pred - Q_BETA_MEV)/Q_BETA_MEV * 1e6, 8)} ppm)")
     print()
 
     # ── 4. Per-h-order MeV contribution to m_n ─────────────────

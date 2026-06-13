@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-06-01T13:34:31.776097+00:00",
-  "commitSha": "417e511ad96a7416b3b52d2f93704cd0eee0d8f7",
+  "computedAt": "2026-06-13T21:40:10.522695+00:00",
+  "commitSha": "bc7ea5187f7cc98444dae5cf6f5b548fe30f7072",
   "assertions": [
     {
       "name": "tr_M_h2_is_zero",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 23,
+  "durationMs": 17,
   "computation": "phase1d-f-bor-exact-h-expansion",
   "scriptFile": "phase1d_f_bor_exact_h_expansion.py",
-  "scriptHash": "e648bb8d965a",
-  "scriptCommitSha": "4906a99a3699d3a2f59cb77746220461a6564257",
+  "scriptHash": "8455d3725ff6",
+  "scriptCommitSha": "f81c49550790e8b1da4fdf3f4ba82c797800a24f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,11 +34,12 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.12.3",
+    "python": "3.11.15",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Exact h-expansion of F_Bor(q) = |tr_M(β_Bor)|·[3]_q!/q³ — the categorical observable in the proton substrate identity m_p = 2·m_μ·F_Bor − 12·m_e. All coefficients are exact rationals. Phase 1c proved h²(tr_M) = 0; this shows F_Bor's h² = 19/2 comes entirely from [3]_q! (11/4) and q³ (9/8) via division.",
   "contentBlock": "prop:proton-mass-substrate-identity",

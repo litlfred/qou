@@ -68,6 +68,13 @@ Ref: _precision.py (COMPUTE_DPS / OUTPUT_DPS / PRECISION_GUARD)
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+from codata_constants import (  # noqa: E402
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+    AME_B_LI6_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+)
 import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import json
 import sys
@@ -87,11 +94,11 @@ from _li_2_q_util import load_q_50dps, li_2_q
 
 
 B_AME = {
-    "D":   mp.mpf("2.22456607"),
-    "T":   mp.mpf("8.481798"),
-    "3He": mp.mpf("7.7180428"),
-    "4He": mp.mpf("28.295674"),
-    "6Li": mp.mpf("31.99405"),
+    "D":   AME_B_DEUTERON_MEV_VALIDATION,
+    "T":   AME_B_TRITIUM_MEV_VALIDATION,
+    "3He": AME_B_HE3_MEV_VALIDATION,
+    "4He": AME_B_HE4_MEV_VALIDATION,
+    "6Li": AME_B_LI6_MEV_VALIDATION,
     "7Li": mp.mpf("39.2453"),
     "9Be": mp.mpf("58.165"),
     "10B": mp.mpf("64.7508"),

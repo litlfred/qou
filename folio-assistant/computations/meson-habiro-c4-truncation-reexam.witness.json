@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-31T22:29:16.157950+00:00",
-  "commitSha": "27ec6cac66c0742bbc8a059aa6427dd54d475bd3",
+  "computedAt": "2026-06-13T21:40:08.582633+00:00",
+  "commitSha": "bc7ea5187f7cc98444dae5cf6f5b548fe30f7072",
   "assertions": [
     {
       "name": "reexam_completed",
@@ -14,16 +14,16 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 13,
+  "durationMs": 11,
   "computation": "meson-habiro-c4-truncation-reexam",
   "scriptFile": "meson_habiro_c4_truncation_reexam.py",
-  "scriptHash": "a71312b78691",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "76bc741c3335",
+  "scriptCommitSha": "f81c49550790e8b1da4fdf3f4ba82c797800a24f",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.11.15",
@@ -38,13 +38,13 @@
     "q_50dps": "1.1099785827513808075916690956107688798744991218736"
   },
   "data": {
-    "C_correction": "0.0002897313496606652921420646",
-    "u_habiro": "0.008517234550156142189255574",
-    "C_over_u_squared": "3.993910010105138550271017",
+    "C_correction": "0.0002897313496606841460454698",
+    "u_ladder": "0.008517234550156142189255574",
+    "C_over_u_squared": "3.993910010105398448944832",
     "c2_assumed": "4",
-    "c3_required_to_absorb_residual": "-0.7150196297869717581779597",
+    "c3_required_to_absorb_residual": "-0.7150196297564573145185236",
     "c2_contribution_pct_to_C": "100.152481901",
-    "c3_contribution_pct_to_C": "0.15248190068",
+    "c3_contribution_pct_to_C": "0.152481900674",
     "verdict": "**REOPENED**: the 0.77% residual on C/u² = 4.03 is consistent with a BOUNDED c_3·u³ truncation error (analog of Q_β c_3 wired at tier=near-match). The audit's binary 'ruled out' may have made the same framing error the Q_β deep audit made: treating an unmatched residual as evidence the leading c_2 = 4 is wrong, rather than as bounded higher-rung contribution."
   }
 }

@@ -41,6 +41,7 @@ Audit doc: docs/audits/2026-06-01-inter-nucleon-linked-channel.md
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+from codata_constants import M_P_MEV_VALIDATION  # noqa: E402
 import sys
 import time
 from pathlib import Path
@@ -60,7 +61,7 @@ Q0 = mp.mpf(Q0_STR)
 
 # PDG / CODATA falsification references (NOT fit targets).
 M_N_MINUS_M_P_MEV = mp.mpf("1.29333236")   # m_n - m_p, PDG 2024 (MeV)
-M_P_MEV = mp.mpf("938.27208816")            # proton mass, CODATA (MeV)
+M_P_MEV = M_P_MEV_VALIDATION            # proton mass, CODATA (MeV)
 
 
 # ---------------------------------------------------------------------------

@@ -1,25 +1,25 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-03T20:27:00.356119+00:00",
-  "commitSha": "285c228058a7a2f8d5f7568086af4aabc5ddcd0b",
+  "computedAt": "2026-06-13T21:38:36.923309+00:00",
+  "commitSha": "bc7ea5187f7cc98444dae5cf6f5b548fe30f7072",
   "assertions": [
     {
       "name": "data_loaded",
-      "computed": 2.22456607,
+      "computed": 2.224566,
       "expected": 2.22456607,
-      "passed": true,
+      "passed": false,
       "tolerance": 1e-10,
       "unit": "B(D) MeV",
       "source": "AME 2020 deuteron binding"
     }
   ],
-  "allPassed": true,
-  "durationMs": 6545,
+  "allPassed": false,
+  "durationMs": 4773,
   "computation": "binding-via-interface-knot",
   "scriptFile": "binding_via_interface_knot.py",
-  "scriptHash": "1b396e549da4",
-  "scriptCommitSha": "5a44813463430491fdc8cd8cd5a97a404b5e7e9d",
+  "scriptHash": "173a423bc9a5",
+  "scriptCommitSha": "f81c49550790e8b1da4fdf3f4ba82c797800a24f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -32,8 +32,7 @@
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "pyhecke_native": "0.9.0"
   },
   "description": "Categorical binding energy via interface-knot Δ_I^K + Hecke-product constituent vacuum (both in same H_{3A}(q)). First-order (T1+T2) computation with Li_2^q tower; T3 convergence diagnosed but deferred (pair products exceed q_0 ≈ 1.1097 for some H_{3A>3} pairs).",
   "parameters": {
@@ -89,15 +88,15 @@
         },
         "B_dim_first_order": "1.2482669706260158092386145422954906755003731291422",
         "B_MeV_first_order": "0.9765609557202484942823027161005855450302493262872",
-        "ratio_pred_over_AME": 0.43898941411088255,
+        "ratio_pred_over_AME": 0.43898942792447987,
         "B_dim_with_t3": "1.9509187082836450524010045829675776191694680693831",
         "B_MeV_with_t3": "1.5262688856843825914698304997388162205462732028297",
-        "ratio_with_t3_over_AME": 0.686097350070786,
+        "ratio_with_t3_over_AME": 0.6860973716600822,
         "T3_atom_contribution": "0.8847379493300279292140744525225486631498713768773",
         "T3_free_contribution": "1.5873896869876571723764644931946356068189663171182",
         "T3_imag_residue_atom": "-0.00080400392335046390835081202494840042067867821081629",
         "T3_imag_residue_free": "-0.00080400392335046390835081202494840042067867821081629",
-        "B_AME_MeV": "2.22456607",
+        "B_AME_MeV": "2.224566",
         "B_pred_sign": "+",
         "canonical_status": "canonical-with-empirical-assignment",
         "T3_deferred": false,
@@ -215,15 +214,15 @@
         },
         "B_dim_first_order": "1.8453863429540741969238492857516085694188316507549",
         "B_MeV_first_order": "1.4437073904507313074492601024952920545527999692613",
-        "ratio_pred_over_AME": 0.18705615242904994,
+        "ratio_pred_over_AME": 0.18705614758180686,
         "B_dim_with_t3": "4.0465752086603724149418355716725304339610926713822",
         "B_MeV_with_t3": "3.1657709818128205172210134347134818464792525671041",
-        "ratio_with_t3_over_AME": 0.4101779510490432,
+        "ratio_with_t3_over_AME": 0.410177940419977,
         "T3_atom_contribution": "2.398757048565742699555337588808024571241281199247",
         "T3_free_contribution": "4.5999459142720409175733238747289464357835422198742",
         "T3_imag_residue_atom": "-0.0023877789716899996820597428827213765011675709438589",
         "T3_imag_residue_free": "-0.0023877789716899996820597428827213765011675709438589",
-        "B_AME_MeV": "7.7180428",
+        "B_AME_MeV": "7.718043",
         "B_pred_sign": "+",
         "canonical_status": "canonical-with-empirical-assignment",
         "T3_deferred": false,
@@ -240,7 +239,7 @@
       "4He"
     ],
     "deferral_note": "4He H_12 character sum requires > 12 GB RAM. Run with INCLUDE_4HE=1 on a larger host, or cherry-pick the geck_pfeiffer Rust kernel from PR #761 for a faster path.",
-    "max_over_min_abs_first_order": 2.3692971888180514,
+    "max_over_min_abs_first_order": 2.3692972633722804,
     "all_signs_correct_first_order": true,
     "compared_to_tensor_product_baseline": {
       "tensor_product_max_over_min": 3.96,
@@ -250,7 +249,7 @@
         "Wrong Hecke algebra (independent H_3 instead of common H_{3A})",
         "No interface knot in baseline (tensor → no inter-block crossing)"
       ],
-      "this_first_order_max_over_min": 2.3692971888180514,
+      "this_first_order_max_over_min": 2.3692972633722804,
       "this_first_order_sign_correct": true
     },
     "verdict": "IMPROVES — max/min^(1) = 2.369, signs correct. T3 now computed via pentagon-reduction (`pentagon_reduction_li2q.li_2_q_pentagon`); higher-order tower terms beyond T3 still pending."

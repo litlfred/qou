@@ -1,8 +1,8 @@
 {
   "engine": "mpmath+sympy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-01T21:22:10.727531+00:00",
-  "commitSha": "a51539da9dd7367824b25154f4f56da782624013",
+  "computedAt": "2026-06-13T21:40:06.329928+00:00",
+  "commitSha": "bc7ea5187f7cc98444dae5cf6f5b548fe30f7072",
   "assertions": [
     {
       "name": "writhe_pp_eq_+2",
@@ -71,11 +71,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 663,
+  "durationMs": 584,
   "computation": "inter-nucleon-linked-channel",
   "scriptFile": "inter_nucleon_linked_channel.py",
-  "scriptHash": "8c72b15d0503",
-  "scriptCommitSha": "da3357e915af4e6c961f767810b71f2786edfd3c",
+  "scriptHash": "a6ac499dc270",
+  "scriptCommitSha": "f81c49550790e8b1da4fdf3f4ba82c797800a24f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -88,7 +88,7 @@
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
-    "clarabel": "0.11.1"
+    "pyhecke_native": "0.9.0"
   },
   "description": "EXPLORATORY test of the knot-operator census DERIVED lead (PR #1677): the inter-nucleon LINKED channel = Hopf link T(2,+-2). Braid word (provenance: fermion-boson-knot-link.md 2-component link sector + inter-nucleon-channel-color-tube.md), Markov trace (symbolic + 60 dps, Wedderburn blocks), writhe (pp=+2/nn=-2) + linking number (+-1), Markov destabilizability of the 5<->3 bridge, U(1)_framing q^{w.c}. RAW; no fit.",
   "auditOnly": "docs/audits/2026-06-01-inter-nucleon-linked-channel.md",
@@ -223,7 +223,7 @@
     },
     "framing_factor_pp_over_nn_at_q0": "1.51795332016970715331010167221893812343267339310615578385457",
     "framing_factor_pp_minus_nn_at_q0": "0.420398747160010744823781077260265137551526018893624303745404",
-    "PDG_m_n_minus_m_p_over_m_p_falsification_ref": "0.00137841930535980402215954158966143448322867564902283642925158"
+    "PDG_m_n_minus_m_p_over_m_p_falsification_ref": "0.00137841930535980402215954158966143448322867564902283689241253"
   },
   "caveats": [
     "U(1)_framing -> hypercharge is NOT derived. q^{w.c} is a real framing FACTOR (Im(q0)=0 at observable level). A framing factor EXISTING is not a hypercharge assignment: writhe w is an integer braid invariant, Y is a continuous charge, and NO canonical map writhe->Y is supplied. The per-crossing coupling c is SET to 1 (not fitted); choosing c to make (f_pp - f_nn) reproduce m_n-m_p would be exactly the fit the discipline review catches. The PDG m_n-m_p is reported ONLY as a falsification reference. The framing U(1) is LIVE on the linked channel (writhe +-2 != 0), unlike the writhe-0 Borromean baryon -- so the channel DOES carry a nontrivial U(1), but its identification with hypercharge remains UNDEFINED.",

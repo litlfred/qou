@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
-  "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T13:37:10.578044+00:00",
-  "commitSha": "417e511ad96a7416b3b52d2f93704cd0eee0d8f7",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-13T21:40:14.951557+00:00",
+  "commitSha": "bc7ea5187f7cc98444dae5cf6f5b548fe30f7072",
   "assertions": [
     {
       "name": "geometric_li2q_towers_wrong_direction",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 40,
+  "durationMs": 22,
   "computation": "qbeta-scaling-bridge-investigation",
   "scriptFile": "qbeta_scaling_bridge_investigation.py",
-  "scriptHash": "433df4e52bcf",
-  "scriptCommitSha": "07ca66e720e742fc58ac0664b9726decf5d0d96a",
+  "scriptHash": "731261c5fde0",
+  "scriptCommitSha": "f81c49550790e8b1da4fdf3f4ba82c797800a24f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,11 +26,12 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.12.3",
+    "python": "3.11.15",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Tests whether the Q_β c_k ladder is a 'wrong scaling' artifact: does a closed-form scaling (cos eigenphase, geometric E_0 tower, Li_2^q tower) close Q_β to compute precision at canonical q₀ with NO q₀-dependent c_k? Attributes the residual ladder and checks direction. Answers the user's 'all c_k wired / right scaling' question. Zero free parameters.",
   "contentBlock": "prop:q-beta-categorical-precision-ladder",

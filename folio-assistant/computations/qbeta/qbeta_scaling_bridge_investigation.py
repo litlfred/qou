@@ -45,6 +45,7 @@ import sys as _sys  # noqa: E402
 from pathlib import Path as _Path  # noqa: E402
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
+from codata_constants import Q_BETA_MEV  # noqa: E402
 del _sys, _Path, _bridge
 
 import sys
@@ -89,7 +90,7 @@ def main() -> int:
 
     q = mp.mpf(Q_50_DIGIT_STR)
     m_e = mp.mpf(M_E_MEV)
-    Q_codata = mp.mpf("0.78233341")
+    Q_codata = Q_BETA_MEV
 
     # substrate quantities
     h = q - 1 / q

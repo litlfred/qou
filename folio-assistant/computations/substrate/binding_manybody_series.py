@@ -24,6 +24,7 @@ _HERE = _Path(__file__).resolve().parent
 _sys.path.insert(0, str(_HERE.parent))  # computations/
 _sys.path.insert(0, str(_HERE))         # substrate/
 import _path_bridge as _bridge  # noqa: E402, F401
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION  # noqa: E402
 
 import mpmath as mp  # noqa: E402
 
@@ -32,8 +33,8 @@ from experimental_constants import M_E_MEV  # noqa: E402
 from _precision import COMPUTE_DPS  # noqa: E402
 
 # AME binding energies (MeV) — comparison anchors, NOT inputs.
-B_DEUTERON_AME = mp.mpf("2.224566")
-B_HE4_AME = mp.mpf("28.295673")
+B_DEUTERON_AME = AME_B_DEUTERON_MEV_VALIDATION
+B_HE4_AME = AME_B_HE4_MEV_VALIDATION
 
 
 def body_term(n: int) -> mp.mpf:
