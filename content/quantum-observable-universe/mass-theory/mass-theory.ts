@@ -64,6 +64,7 @@ export default chapter({
         "three-parameters-wedderburn",
         "wedderburn-trace-identity",
         "binding-scale-catalan",
+        "binding-error-amplification",
         "wedderburn-mass-formula",
         "frobenius-s-classification",
         "frobenius-s-classification-table3-data",
