@@ -14,106 +14,106 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "1d96e1ccad88",
-          "ts": "2819832c2920"
+          "md": "fe6db1856fb8",
+          "ts": "a0530a224419"
         },
-        "result": "pass",
+        "result": "warn",
         "severity": "minor",
-        "evidence": "Proposition header is formal; 'Honest scope' and 'Numerical sanity check' are separate subsections not interleaved with the statement.",
+        "evidence": "qbeta-canonical-markov-weights-explicit-instance.md:21-74 — '## Honest scope — what this instance does and does NOT establish' + '## Numerical sanity check' ('close to 1/2 by accident', 'see 1ppQ-Q_beta ledger', 'PR #1798')",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-05",
+          "agent_date": "2026-06-13",
           "agent_skill": "qa-agent-drain"
         },
-        "reviewed_at": "2026-06-05T15:03:19.292Z",
-        "reviewed_sha": "b50027bc8a362a84acd0a9b49c92c279f5e507cf",
-        "notes": "Structure acceptable."
+        "reviewed_at": "2026-06-13T01:40:09.965Z",
+        "reviewed_sha": "84737110e8c6a4f077f1af53c3b046e9969dd466",
+        "notes": "Substantial scope/interpretation sections in the statement block; no companion interprets: remark exists; content is borderline scholarly scoping rather than physical-meaning editorializing, so warn not fail"
       }
     ],
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "1d96e1ccad88",
-          "ts": "2819832c2920"
+          "md": "fe6db1856fb8",
+          "ts": "a0530a224419"
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "Markov weights explicit instance for H3 supports Q_β analysis in mass-endomorphism chapter.",
+        "evidence": "qbeta-canonical-markov-weights-explicit-instance.ts:4-19 — prop:qbeta-* among the chapter's qbeta sibling family (qbeta-per-block-chi-closed-forms, qbeta-delta-tau-canonical-conditional-q2-minus-1-factor)",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-05",
+          "agent_date": "2026-06-13",
           "agent_skill": "qa-agent-drain"
         },
-        "reviewed_at": "2026-06-05T15:03:19.329Z",
-        "reviewed_sha": "b50027bc8a362a84acd0a9b49c92c279f5e507cf",
-        "notes": "On topic."
+        "reviewed_at": "2026-06-13T01:40:10.000Z",
+        "reviewed_sha": "84737110e8c6a4f077f1af53c3b046e9969dd466",
+        "notes": "Q_beta Markov-weight instance belongs squarely with its mass-endomorphism qbeta siblings; proposition kind matches the provable inhabitation claim"
       }
     ],
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "1d96e1ccad88",
-          "ts": "2819832c2920"
+          "md": "fe6db1856fb8",
+          "ts": "a0530a224419"
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "Statement is algebraic class-inhabitation claim with explicit sqrt-q formula, not an archimedean numerical claim.",
+        "evidence": "qbeta-canonical-markov-weights-explicit-instance.md:13,18 — 'z(q) = sqrt(q)/(1+q)', 'valid for every q > 0'; QBetaCanonicalMarkovWeightsInstance.lean:1 imports Mathlib.Data.Real.Basic",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-05",
+          "agent_date": "2026-06-13",
           "agent_skill": "qa-agent-drain"
         },
-        "reviewed_at": "2026-06-05T15:03:19.364Z",
-        "reviewed_sha": "b50027bc8a362a84acd0a9b49c92c279f5e507cf",
-        "notes": "Wall side appropriate."
+        "reviewed_at": "2026-06-13T01:40:10.035Z",
+        "reviewed_sha": "84737110e8c6a4f077f1af53c3b046e9969dd466",
+        "notes": "Statement is openly archimedean (sqrt q over R, q > 0); mass-endomorphism is not a generic-ring chapter per the registry list, and the sqrt-q archimedean framing is explicit in the statement itself"
       }
     ],
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "1d96e1ccad88",
-          "ts": "2819832c2920"
+          "md": "fe6db1856fb8",
+          "ts": "a0530a224419"
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "Normalization axiom proof is a ring identity dischargeable by 'ring'; numerical sanity check provided separately.",
+        "evidence": "qbeta-canonical-markov-weights-explicit-instance.md:16-19 — normalisation z + 2(1/2 - z) + z = 1 'The Lean discharge is ring'; QBetaCanonicalMarkovWeightsInstance.lean:48-53",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-05",
+          "agent_date": "2026-06-13",
           "agent_skill": "qa-agent-drain"
         },
-        "reviewed_at": "2026-06-05T15:03:19.398Z",
-        "reviewed_sha": "b50027bc8a362a84acd0a9b49c92c279f5e507cf",
-        "notes": "Proof is correct and wall-appropriate."
+        "reviewed_at": "2026-06-13T01:40:10.072Z",
+        "reviewed_sha": "84737110e8c6a4f077f1af53c3b046e9969dd466",
+        "notes": "Proof method matches the statement's side: the normalisation is a generic algebraic identity discharged by ring; no archimedean machinery smuggled into an algebraic claim"
       }
     ],
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "1d96e1ccad88",
-          "ts": "2819832c2920"
+          "md": "fe6db1856fb8",
+          "ts": "a0530a224419"
         },
-        "result": "fail",
-        "severity": "major",
-        "evidence": "No sibling .lean file present; lean.ref points to QOU.BraidKnot.CanonicalMarkovWeightsH3.explicitInstance but file is missing locally.",
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "QBetaCanonicalMarkovWeightsInstance.lean:43-61 — noncomputable instance CanonicalMarkovWeightsH3.explicitInstance with y3/y21/y111 = z, 1/2-z, z; sum_dim_normalised by ring; theorem is_inhabited; file is sorry-free",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-05",
+          "agent_date": "2026-06-13",
           "agent_skill": "qa-agent-drain"
         },
-        "reviewed_at": "2026-06-05T15:03:19.431Z",
-        "reviewed_sha": "b50027bc8a362a84acd0a9b49c92c279f5e507cf",
-        "notes": "Lean formalization absent."
+        "reviewed_at": "2026-06-13T01:40:40.031Z",
+        "reviewed_sha": "84737110e8c6a4f077f1af53c3b046e9969dd466",
+        "notes": "Narrative claims class inhabitation via the explicit sqrt-q instance with ring-discharged normalisation; Lean proves exactly that (same weights, same identity), plus bonus evaluation lemmas; genuine sorry-free proof matching the narrative"
       }
     ],
     "proof-no-bare-sorries": [
@@ -1113,7 +1113,100 @@
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "fe6db1856fb8",
+          "ts": "a0530a224419"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "QBetaCanonicalMarkovWeightsInstance.lean:43-117 — concrete instance, no axiom/sorry in file; inhabitation proved constructively, not axiomatized; .md:36-50 loudly scopes what is NOT established",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:40:40.067Z",
+        "reviewed_sha": "84737110e8c6a4f077f1af53c3b046e9969dd466",
+        "notes": "No statement weakening: the claim is 'class is inhabited' and the Lean constructs the inhabitant; non-canonicity of the instance is loudly documented in both .md and Lean docstring, not silently elided"
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "fe6db1856fb8",
+          "ts": "a0530a224419"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.9,
+          "max": 1
+        },
+        "evidence": "qbeta-canonical-markov-weights-explicit-instance.md:16-19 — proof states the whole plan: 'z + 2(1/2 - z) + z = 1 ... The Lean discharge is ring'",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:40:40.104Z",
+        "reviewed_sha": "84737110e8c6a4f077f1af53c3b046e9969dd466",
+        "notes": "Plan fully stated up front (explicit weight assignment + one-line algebra + named tactic); reader knows the strategy before any step"
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "fe6db1856fb8",
+          "ts": "a0530a224419"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "evidence": "QBetaCanonicalMarkovWeightsInstance.lean:1-118 — no sorry anywhere in the file; instance + is_inhabited + 3 evaluation lemmas all closed",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:40:40.139Z",
+        "reviewed_sha": "84737110e8c6a4f077f1af53c3b046e9969dd466",
+        "notes": "Sorry-free proof => 1.0 per rubric; no remaining goals"
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "fe6db1856fb8",
+          "ts": "a0530a224419"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "evidence": "QBetaCanonicalMarkovWeightsInstance.lean:48-53 — standard inhabitation-witness pattern (pick simple weights, discharge normalisation by ring)",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:40:40.175Z",
+        "reviewed_sha": "84737110e8c6a4f077f1af53c3b046e9969dd466",
+        "notes": "Standard non-vacuity witness, not duplicated by a sibling proof; the sqrt-q-bearing choice is mildly purposeful but the argument itself is routine => 0.5"
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-13T01:40:40.175Z"
 }
