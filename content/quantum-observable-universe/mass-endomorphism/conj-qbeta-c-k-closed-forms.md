@@ -84,18 +84,3 @@ The "empirical c_k from `binding_q_target_sweep`" are NOT arbitrary
 fits — they're TAUTOLOGICALLY determined by the precision-ladder
 structure applied to CODATA $Q_\beta$. The conjectures here are
 the **closed-form pattern interpretations** of those extracted values.
-
-## Status of the conjectural propagation
-
-Per CLAUDE.md §3b-cond conditional-class exception, the existing
-[`prop:q-beta-categorical-precision-ladder`](#prop:q-beta-categorical-precision-ladder)
-Lean class `QBetaPrecisionLadderCoefficients` (which axiomatises
-the c_k values as class fields) is the correct integration point.
-Downstream provable claims taking
-`[QBetaPrecisionLadderCoefficients q]` as a hypothesis are
-**rigorous conditional results** modulo this conjecture.
-
-The current canonical instance `qBetaPrecisionLadderCoeffsCanonical`
-on main provides the empirical closed forms; this conjecture block
-states the conditions under which those instance values are
-**proved** rather than **fit**.

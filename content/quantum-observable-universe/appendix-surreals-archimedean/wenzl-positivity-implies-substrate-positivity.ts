@@ -30,4 +30,10 @@ export default conjecture({
     "derivation-of-axiom",
     "open-problem",
   ],
+  authorNotes: [
+    {
+      kind: "status",
+      body: "Three ingredients separate the conjecture from a theorem:\n\n1. **Müger–BKLR Frobenius framework, transcribed to the QOU\n   substrate.** Müger's theory of $C^*$-Frobenius algebras (2003)\n   and Bischoff–Kawahigashi–Longo–Rehren's framework for unitary\n   tensor categories (2015) establish the implication\n   \"unitary $C^*$-tensor category $\\Rightarrow$ every Frobenius\n   algebra has positive antipode-twisted pairing\" in full\n   generality. Transcribing this to the QOU\n   [Frobenius–Hopf substrate](#def:frobenius-hopf-substrate)\n   is largely a formal exercise — the substrate is a *standard*\n   Frobenius algebra in the categorical setting, not an exotic one.\n\n2. **Wenzl's positivity at the specific value $q = q_0 \\approx\n   1.10998$.** The criterion is stated for $q \\in \\mathbb{R}_{>0}$\n   uniformly; specialising at $q_0$ is immediate.\n\n3. **Mathlib infrastructure.** Neither Müger / BKLR nor Wenzl's\n   positivity is in Mathlib; a complete Lean proof requires\n   transcribing the relevant tensor-category positivity machinery.\n   The conjecture is packaged as the typeclass\n   `QOU.AppendixSurreals.WenzlPositivityImpliesSubstratePositivity`,\n   bridging the existing `OSReflectionPositivity` typeclass on the\n   downstream side and a future\n   `WenzlPositivityAt(q₀)` typeclass on the upstream side.",
+    },
+  ],
 });

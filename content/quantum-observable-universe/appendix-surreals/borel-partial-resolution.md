@@ -87,11 +87,6 @@ $\mathbb{Q}$-rank is exactly **2** — matching Borel's prediction.
 of dimension 2.** Whether the entire $\mathcal{P}_3 / \mathcal{P}_2$
 over $\mathbb{Q}(\zeta_5)$ is generated is **Beilinson's conjecture**
 (open).
-
-### Status of B1 by row
-
-See [Table 2](#tbl:borel-partial-resolution-table2-data).
-
 ### Honest summary
 
 **Borel's theorem partially discharges the keystone**: it gives

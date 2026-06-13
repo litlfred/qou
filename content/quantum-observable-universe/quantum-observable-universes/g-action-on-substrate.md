@@ -149,26 +149,6 @@ should be avoided. The discrimination requires either (a) a
 sharper version of the four axioms above or (b) an independent
 categorical computation of $\mathcal{N}_{\rm sym}$ that directly
 extracts the leading + correction.
-
-### Status
-
-**Open at the closure level.** The four axioms above are a
-**concrete framework extension** that takes the QOU substrate
-from "$\mathbf{Rep}(\mathrm{SU}_q(2))$-equivariant" to
-"$G \times \mathbf{Rep}(\mathrm{SU}_q(2))$-equivariant", entailing
-the closed form $\mathcal{N}_{\rm sym}(q) = [2]_q \cdot [4]_q^2 \cdot
-[6]_q$ that matches CODATA-derived target to 1.81%. Each factor is
-**categorically derived**, not fitted.
-
-The remaining 1.81% is a SINGLE missing categorical input (one of
-the three sources above); identifying it would close the audit
-flag NV-1 entirely.
-
-**To promote to `proposition`:**
-1. Resolve the 1.81% residual via one of the three open routes
-2. Provide the unique-existence argument for the four axioms
-3. Author the Lean formalization
-
 ### Audit-flag impact
 
 If discharged:

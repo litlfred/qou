@@ -51,18 +51,3 @@ representing a recorded knot-theoretic result:
 | `jones_at_one 2 = -2` | Jones 1985 | proved (`unfold + norm_num`) |
 
 The eventual full Track-A formalisation (defining $\text{Braid}_n \to \text{Link}$ explicitly in Lean and constructing the closure map) targets ONLY the first atom — the second is already closed.
-
-## Status
-
-Lean stub: **no `sorry`s**, but the substantive content is in **2
-class fields** that encode the atomic axioms. Each field corresponds
-to a specific, named, published knot-theoretic result; the eventual
-Lean discharge requires:
-
-- Atom 1 (`closure 2 = Hopf link`): a Lean definition of braid groups
-  + Markov closure + the Hopf link, plus the theorem identifying them.
-- Atom 2 (`jones_at_one 2 = -2`): already closed.
-
-This is the **Step B** completion of the Track-C plan; **Step A**
-(full braid/link Lean infrastructure) discharges Atom 1 from
-first principles.

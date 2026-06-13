@@ -17,4 +17,10 @@ export default remark({
   interprets: "def:birthday-grading",
   uses: ["def:surreal-blowup-calculus"],
   cites: ["conway1976", "gonshor1986", "ehrlich2012"],
+  authorNotes: [
+    {
+      kind: "status",
+      body: "A full formalisation of Conway normal form requires Hahn series\nwith surreal-valued exponents — partially present in mathlib\n(`Mathlib.RingTheory.HahnSeries`) but not yet integrated with\nthe `SurrealField` axiomatic class. The $\\ordw$ function\nas a group homomorphism can be stated once that integration\nlands; meanwhile the valuation-ring structure\n([valuation ring](#rem:valuation-ring-finite-surreals)) gives\nenough infrastructure to support the asymptotic dictionary at\nthe level of the standard-part map.",
+    },
+  ],
 });

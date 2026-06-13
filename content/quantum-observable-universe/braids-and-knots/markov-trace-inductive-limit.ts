@@ -18,4 +18,10 @@ export default remark({
     "consolidation",
     "scaffolding",
   ],
+  authorNotes: [
+    {
+      kind: "status",
+      body: "**Scaffolding only.** The substantive content (von Neumann inductive\nlimit on the infinite-dim affine Hecke algebra, plus the bicommutant\nclosure constructing the global trace) is open R&D. The scaffold\nsuffices to consolidate the per-$n$ class discharges into a single\nglobal hypothesis with a clear API.\n\nThe default instance discharges by definition via the explicit-residual\npattern; a future Mathlib-tier construction would supply a\nsubstantive witness without changing the surrounding API.",
+    },
+  ],
 });

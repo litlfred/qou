@@ -74,10 +74,3 @@ falsify B1. The figure-8 row is verified
 ([`conj:bring-figure-eight-depth-2-witness`](#conj:bring-figure-eight-depth-2-witness)).
 Verifying $5_2$, $6_2$, $6_3$ would multiply the falsifiability
 surface significantly with modest implementation cost.
-
-### Status
-
-**Tabulation block.** Aggregates the existing knot atlas data
-(`../appendix-knot-periodic-table/recursive-atom-knot-atlas.md`)
-under the graded-Mikusiński prediction. No new mathematical
-content; provides the *list of falsifiability targets* for B1.

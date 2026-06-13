@@ -16,4 +16,10 @@ export default remark({
     "def:standard-part-functor",
   ],
   cites: ["conway1976", "robinson1966", "ehrlich2012"],
+  authorNotes: [
+    {
+      kind: "status",
+      body: "The Lean infrastructure lives in\n`QOU.AppendixSurreals.Basic`:\n\n- `IsFinite` (= membership in $\\mathcal{O}$)\n- `IsInfinitesimal` (= membership in $\\mathfrak{m}$)\n- `standardPart` (the quotient projection $\\mathrm{st}$)\n- `isFinite_decomposition` (proves $\\mathcal{O} = \\mathbb{R}\n  \\oplus \\mathfrak{m}$ as $\\mathbb{R}$-vector spaces via\n  Dedekind-sSup construction)\n- `standardPart_add`, `standardPart_mul` (proves the ring-hom\n  property)\n\nThe valuation-ring and maximal-ideal as `Subring`/`Ideal`\nobjects are not yet formalised — this would be a\nstraightforward follow-up given the existing predicates.",
+    },
+  ],
 });

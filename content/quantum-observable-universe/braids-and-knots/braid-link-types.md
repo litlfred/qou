@@ -81,9 +81,3 @@ Mathlib has `BraidGroup`; building on it requires:
 
 This is substantial Lean-engineering work but no longer "research-level"
 — each step is a concrete combinatorial theorem given the foundations.
-
-## Status
-
-Lean stub: **no `sorry`s**. The 2-strand case is fully closed.
-The n-strand generalisation is enumerated as concrete combinatorial
-theorems to be added in follow-up files.

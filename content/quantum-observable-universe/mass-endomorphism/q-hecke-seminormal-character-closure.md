@@ -89,16 +89,3 @@ $1.4 \times 10^{-16}$ on the deuteron (commit
 
 All three agree at the precision floor of their respective layers.
 The cross-check witness gates this on every CI run.
-
-## Status
-
-The proposition is a numerical-equality claim between three
-implemented paths, all of which agree to their precision floors.
-Mathematical proof: the partition-sum form is the spectral
-expansion of $\mathrm{tr}_M$ in the Wedderburn–Artin basis. The
-canonical Hecke character $\chi^\lambda_q$ is the diagonal of
-$\rho_\lambda^q$ in the seminormal basis (Hoefsmit 1974, Mathas
-1999 §3.4); $y_\lambda(q)$ is the unique Jones-Markov weight given
-the Markov axioms (Wenzl 1988). Combining: the partition-sum form
-identically equals the recursive Markov ascent. Numerical
-verification confirms.

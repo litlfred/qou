@@ -89,35 +89,6 @@ positivity notions:
 that (a) implies (b) via the categorical Frobenius–algebra theory
 of Müger / BKLR — making the OS reflection-positivity axiom *not
 free-standing* but *derived* from Wenzl's classical result.
-
-## Status
-
-Three ingredients separate the conjecture from a theorem:
-
-1. **Müger–BKLR Frobenius framework, transcribed to the QOU
-   substrate.** Müger's theory of $C^*$-Frobenius algebras (2003)
-   and Bischoff–Kawahigashi–Longo–Rehren's framework for unitary
-   tensor categories (2015) establish the implication
-   "unitary $C^*$-tensor category $\Rightarrow$ every Frobenius
-   algebra has positive antipode-twisted pairing" in full
-   generality. Transcribing this to the QOU
-   [Frobenius–Hopf substrate](#def:frobenius-hopf-substrate)
-   is largely a formal exercise — the substrate is a *standard*
-   Frobenius algebra in the categorical setting, not an exotic one.
-
-2. **Wenzl's positivity at the specific value $q = q_0 \approx
-   1.10998$.** The criterion is stated for $q \in \mathbb{R}_{>0}$
-   uniformly; specialising at $q_0$ is immediate.
-
-3. **Mathlib infrastructure.** Neither Müger / BKLR nor Wenzl's
-   positivity is in Mathlib; a complete Lean proof requires
-   transcribing the relevant tensor-category positivity machinery.
-   The conjecture is packaged as the typeclass
-   `QOU.AppendixSurreals.WenzlPositivityImpliesSubstratePositivity`,
-   bridging the existing `OSReflectionPositivity` typeclass on the
-   downstream side and a future
-   `WenzlPositivityAt(q₀)` typeclass on the upstream side.
-
 ## Strategic significance
 
 If this conjecture is proved, the entire Yang–Mills millennium

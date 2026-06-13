@@ -19,4 +19,10 @@ export default proposition({
     "graded-mikusinski",
     "explicit-dimensions",
   ],
+  authorNotes: [
+    {
+      kind: "status",
+      body: "See [Table 2](#tbl:borel-partial-resolution-table2-data).",
+    },
+  ],
 });

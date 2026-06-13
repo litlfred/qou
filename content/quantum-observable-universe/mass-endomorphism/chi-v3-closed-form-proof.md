@@ -85,14 +85,3 @@ See [Table: Lean theorems for $\chi_{V_3}$](#tbl:chi-v3-closed-form-proof-table-
 
 All theorems are **sorry-free**, closed by `field_simp + ring` after
 unfolding.
-
-## Next steps
-
-V_(2,1) and V_(1,1,1) await analogous formal closed forms:
-
-- **V_(1,1,1)** is the **q $\leftrightarrow$ $-q^{-1}$ mirror** of V_(3) (antisymmetric irrep where each $\sigma_i$ acts as $-q^{-1}$). The proof should mirror this module's structure exactly with $q \mapsto -q^{-1}$.
-- **V_(2,1)** requires the 2$\times$2 Hoefsmit matrix expansion (more involved — needs the $\sigma_0$, $\sigma_1$ matrix products).
-
-Following the user direction "first prove formally V", this block
-closes V_(3) and provides the template for V_(1,1,1). V_(2,1) is
-the next concrete follow-up.

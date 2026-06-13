@@ -36,15 +36,3 @@ Without the bridge: every $n \in \{2, 3, 6, 12, \ldots\}$ requires
 its own `instance : MarkovTraceN n q` discharge. With the bridge: a
 single global witness `MarkovTraceInductiveLimit q` automatically
 elaborates every per-$n$ instance, eliminating per-$n$ duplication.
-
-## Status
-
-**Scaffolding only.** The substantive content (von Neumann inductive
-limit on the infinite-dim affine Hecke algebra, plus the bicommutant
-closure constructing the global trace) is open R&D. The scaffold
-suffices to consolidate the per-$n$ class discharges into a single
-global hypothesis with a clear API.
-
-The default instance discharges by definition via the explicit-residual
-pattern; a future Mathlib-tier construction would supply a
-substantive witness without changing the surrounding API.

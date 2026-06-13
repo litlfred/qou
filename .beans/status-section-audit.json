@@ -3,100 +3,33 @@
   "directive": "no ## Status / ### Status / TODO / Pending section headers in paper content (owner 2026-06-13)",
   "criterion": "voice-status-section",
   "paper": "quantum-observable-universe",
-  "total_blocks": 95,
-  "total_sections": 115,
+  "total_blocks": 43,
+  "total_sections": 52,
   "by_classification": {
-    "todo": 5,
+    "todo": 0,
     "substantive": 43,
-    "authorNotes": 67
+    "authorNotes": 9
   },
   "extraction_targets": {
     "todo": ".beans/ (this directory)",
     "authorNotes": "block .ts `authorNotes` field (CLAUDE.md §4d)",
     "substantive": "re-head to a scholarly section title; keep the math"
   },
-  "total_batches": 14,
+  "total_batches": 10,
   "batches": [
     {
       "batch_id": 1,
-      "chapter": "appendix-mass-binding-algorithms",
-      "status": "open",
-      "block_count": 1,
-      "blocks": [
-        {
-          "block": "content/quantum-observable-universe/appendix-mass-binding-algorithms/mba-sidecar-witness-json-pipeline",
-          "kind": "unknown",
-          "sections": [
-            {
-              "header": "### Migration status",
-              "line": 102,
-              "classification": "authorNotes",
-              "body_lines": 9,
-              "preview": "Not every `*.witness.json` currently under ⏎ `folio-assistant/computations/` conforms to the `WitnessBuilder` ⏎ shape above — legacy scripts emitted hand-shaped JSON"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "batch_id": 2,
       "chapter": "appendix-surreals",
       "status": "open",
-      "block_count": 16,
+      "block_count": 6,
       "blocks": [
-        {
-          "block": "content/quantum-observable-universe/appendix-surreals/archimedean-stpart",
-          "kind": "conjecture",
-          "sections": [
-            {
-              "header": "## Status",
-              "line": 93,
-              "classification": "authorNotes",
-              "body_lines": 11,
-              "preview": "**Open.** Even formulating the precise statement requires: ⏎ - defining the category $\\mathbf{QOU}_{\\mathbf{No}}^{\\varepsilon}$ ⏎ with the relaxed axioms (the appendix's conjectures"
-            }
-          ]
-        },
-        {
-          "block": "content/quantum-observable-universe/appendix-surreals/b1-current-status",
-          "kind": "remark",
-          "sections": [
-            {
-              "header": "### Status table",
-              "line": 18,
-              "classification": "authorNotes",
-              "body_lines": 1,
-              "preview": "See [Table 1](#tbl:b1-current-status-table1-data)."
-            }
-          ]
-        },
-        {
-          "block": "content/quantum-observable-universe/appendix-surreals/bigbang-heatdeath",
-          "kind": "conjecture",
-          "sections": [
-            {
-              "header": "## Status",
-              "line": 99,
-              "classification": "todo",
-              "body_lines": 13,
-              "preview": "**Highly speculative** and outside the appendix's main thrust. ⏎ It is included to record an evident application of named-surreal ⏎ calculus (Big Bang $\\sim$ $1 + \\varepsilon^\\omega$;"
-            }
-          ]
-        },
         {
           "block": "content/quantum-observable-universe/appendix-surreals/borel-partial-resolution",
           "kind": "proposition",
           "sections": [
             {
-              "header": "### Status of B1 by row",
-              "line": 91,
-              "classification": "authorNotes",
-              "body_lines": 1,
-              "preview": "See [Table 2](#tbl:borel-partial-resolution-table2-data)."
-            },
-            {
               "header": "### Significance for B1's status",
-              "line": 110,
+              "line": 105,
               "classification": "substantive",
               "body_lines": 13,
               "preview": "- **Depth 2** is a theorem (Borel + Bloch–Suslin injectivity). ⏎ The keystone is *no longer conjectural at depth 2 for every ⏎ individual Bring-embeddable knot* — only the unification"
@@ -117,19 +50,6 @@
           ]
         },
         {
-          "block": "content/quantum-observable-universe/appendix-surreals/casimir-first-q-correction",
-          "kind": "conjecture",
-          "sections": [
-            {
-              "header": "## Status",
-              "line": 93,
-              "classification": "authorNotes",
-              "body_lines": 21,
-              "preview": "**Open.** The weight expansion is proved (sorry-free supporting ⏎ lemmas in `FigureEightCasimirWeight.lean`); the carrier ⏎ identification is additionally class-axiomatised in the same file"
-            }
-          ]
-        },
-        {
           "block": "content/quantum-observable-universe/appendix-surreals/classical-limit-stpart",
           "kind": "conjecture",
           "sections": [
@@ -139,19 +59,6 @@
               "classification": "substantive",
               "body_lines": 12,
               "preview": "**Open.** The conjecture is partly motivated by Berarducci-- ⏎ Mantova's derivation construction ⏎ \\[@berarducci-mantova2018]: their derivation $D : \\mathbf{No} \\to"
-            }
-          ]
-        },
-        {
-          "block": "content/quantum-observable-universe/appendix-surreals/conway-normal-form",
-          "kind": "remark",
-          "sections": [
-            {
-              "header": "## Lean status",
-              "line": 128,
-              "classification": "authorNotes",
-              "body_lines": 9,
-              "preview": "A full formalisation of Conway normal form requires Hahn series ⏎ with surreal-valued exponents — partially present in mathlib ⏎ (`Mathlib.RingTheory.HahnSeries`) but not yet integrated with"
             }
           ]
         },
@@ -169,19 +76,6 @@
           ]
         },
         {
-          "block": "content/quantum-observable-universe/appendix-surreals/infinitesimal-observability",
-          "kind": "conjecture",
-          "sections": [
-            {
-              "header": "## Status",
-              "line": 77,
-              "classification": "authorNotes",
-              "body_lines": 4,
-              "preview": "**Open** — the same construction-vs-tautology question as for ⏎ [infinitesimal Frobenius](#conj:infinitesimal-frobenius). A ⏎ worked example would resolve it; a Hochschild-cohomology"
-            }
-          ]
-        },
-        {
           "block": "content/quantum-observable-universe/appendix-surreals/kashaev-surreal",
           "kind": "conjecture",
           "sections": [
@@ -191,45 +85,6 @@
               "classification": "substantive",
               "body_lines": 6,
               "preview": "**Open** — the conjecture is a reformulation, not a proof. Its ⏎ value is in *separating* the algebraic content (which is ⏎ computable) from the geometric content (which is the actual"
-            }
-          ]
-        },
-        {
-          "block": "content/quantum-observable-universe/appendix-surreals/local-infinitesimal-field",
-          "kind": "conjecture",
-          "sections": [
-            {
-              "header": "## Status",
-              "line": 150,
-              "classification": "authorNotes",
-              "body_lines": 7,
-              "preview": "**Open and speculative.** This is the most strongly ⏎ conjectural of the appendix's conjectures: it assumes a ⏎ geometric-scheme picture of $X$ that the main paper does not"
-            }
-          ]
-        },
-        {
-          "block": "content/quantum-observable-universe/appendix-surreals/qou-infra-discharges-goncharov-zeta5",
-          "kind": "conjecture",
-          "sections": [
-            {
-              "header": "### Status and roadmap",
-              "line": 99,
-              "classification": "authorNotes",
-              "body_lines": 14,
-              "preview": "**Open.** Both avenues require non-trivial new computation: ⏎ - Avenue A: need to enumerate Jones-coincident pairs in the ⏎ Bring-embeddable class. The recursive atom-knot atlas already"
-            }
-          ]
-        },
-        {
-          "block": "content/quantum-observable-universe/appendix-surreals/transcendental-accounting",
-          "kind": "remark",
-          "sections": [
-            {
-              "header": "### Status",
-              "line": 124,
-              "classification": "authorNotes",
-              "body_lines": 6,
-              "preview": "**Tabulation block.** Aggregates existing paper content under a ⏎ single Goncharov-depth ledger. Adds two new structural observations: ⏎ (1) the Jones-faithfulness $\\Rightarrow$ Vol-injectivity implication,"
             }
           ]
         },
@@ -245,27 +100,14 @@
               "preview": "**Open**. The conjecture is the most directly testable of the ⏎ appendix's relaxation conjectures: pick an ⏎ $\\varepsilon \\in \\mathbf{No}$, recompute the QOU mass spectrum,"
             }
           ]
-        },
-        {
-          "block": "content/quantum-observable-universe/appendix-surreals/valuation-ring-finite-surreals",
-          "kind": "remark",
-          "sections": [
-            {
-              "header": "## Lean status",
-              "line": 67,
-              "classification": "authorNotes",
-              "body_lines": 13,
-              "preview": "The Lean infrastructure lives in ⏎ `QOU.AppendixSurreals.Basic`: ⏎ - `IsFinite` (= membership in $\\mathcal{O}$)"
-            }
-          ]
         }
       ]
     },
     {
-      "batch_id": 3,
+      "batch_id": 2,
       "chapter": "appendix-surreals-archimedean",
       "status": "open",
-      "block_count": 4,
+      "block_count": 1,
       "blocks": [
         {
           "block": "content/quantum-observable-universe/appendix-surreals-archimedean/diophantine-birthday",
@@ -279,88 +121,15 @@
               "preview": "**Open**, but the reduction to continued fractions is ⏎ classical. The conjecture restates Roth / Liouville in ⏎ surreal-combinatorial language."
             }
           ]
-        },
-        {
-          "block": "content/quantum-observable-universe/appendix-surreals-archimedean/infinitesimal-frobenius",
-          "kind": "conjecture",
-          "sections": [
-            {
-              "header": "## Status",
-              "line": 86,
-              "classification": "authorNotes",
-              "body_lines": 10,
-              "preview": "**Open.** Constructing a non-trivial example in ⏎ $\\mathrm{Rep}_{\\mathbf{No}}(\\mathrm{SU}_q(2))$ would establish (2); ⏎ absence of such examples (i.e. every $\\varepsilon$-Frobenius"
-            }
-          ]
-        },
-        {
-          "block": "content/quantum-observable-universe/appendix-surreals-archimedean/on-p-modular-hecke",
-          "kind": "conjecture",
-          "sections": [
-            {
-              "header": "## Status",
-              "line": 149,
-              "classification": "authorNotes",
-              "body_lines": 11,
-              "preview": "**Open**. The conjecture is harder than its char-0 counterpart ⏎ because: ⏎ 1. Mathlib's nimber-arithmetic library is even less developed"
-            }
-          ]
-        },
-        {
-          "block": "content/quantum-observable-universe/appendix-surreals-archimedean/wenzl-positivity-implies-substrate-positivity",
-          "kind": "conjecture",
-          "sections": [
-            {
-              "header": "## Status",
-              "line": 93,
-              "classification": "authorNotes",
-              "body_lines": 22,
-              "preview": "Three ingredients separate the conjecture from a theorem: ⏎ 1. **Müger–BKLR Frobenius framework, transcribed to the QOU ⏎ substrate.** Müger's theory of $C^*$-Frobenius algebras (2003)"
-            }
-          ]
         }
       ]
     },
     {
-      "batch_id": 4,
-      "chapter": "appendix-transfer-matrices",
-      "status": "open",
-      "block_count": 1,
-      "blocks": [
-        {
-          "block": "content/quantum-observable-universe/appendix-transfer-matrices/tm-interaction-completeness",
-          "kind": "prose",
-          "sections": [
-            {
-              "header": "## Status",
-              "line": 44,
-              "classification": "authorNotes",
-              "body_lines": 9,
-              "preview": "The single-crossing local enumeration above is rigorous from the ⏎ matrix algebra of [tm-interactions](#tm-interactions).  The global ⏎ **closure-under-composition** claim (every multi-crossing"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "batch_id": 5,
+      "batch_id": 3,
       "chapter": "braids-and-knots",
       "status": "open",
-      "block_count": 6,
+      "block_count": 3,
       "blocks": [
-        {
-          "block": "content/quantum-observable-universe/braids-and-knots/braid-group-n-strand",
-          "kind": "remark",
-          "sections": [
-            {
-              "header": "## Status",
-              "line": 54,
-              "classification": "authorNotes",
-              "body_lines": 5,
-              "preview": "**Scaffolding only.** This block defines the n-strand types and ⏎ classes; substantive theorems (specific closures, sub-braid ⏎ extractions at higher $n$) plug in as separate per-$n$ blocks."
-            }
-          ]
-        },
         {
           "block": "content/quantum-observable-universe/braids-and-knots/braid-link-types",
           "kind": "remark",
@@ -371,39 +140,6 @@
               "classification": "substantive",
               "body_lines": 7,
               "preview": "| Track-C atom | Lean status | ⏎ |---|---| ⏎ | Atom 1: closure of $\\sigma^2$ = Hopf link (Alexander-Markov 1923/1936) | proved via `closure2_at_two_crossings_eq_hopf` |"
-            },
-            {
-              "header": "## Status",
-              "line": 85,
-              "classification": "authorNotes",
-              "body_lines": 3,
-              "preview": "Lean stub: **no `sorry`s**. The 2-strand case is fully closed. ⏎ The n-strand generalisation is enumerated as concrete combinatorial ⏎ theorems to be added in follow-up files."
-            }
-          ]
-        },
-        {
-          "block": "content/quantum-observable-universe/braids-and-knots/markov-axioms-primitive",
-          "kind": "remark",
-          "sections": [
-            {
-              "header": "## Status",
-              "line": 43,
-              "classification": "authorNotes",
-              "body_lines": 12,
-              "preview": "The Lean stub [`markov-axioms-primitive.lean`](markov-axioms-primitive.lean): ⏎ - Defines `class MarkovTraceAxioms` with fields for M1 and M3 (the two ⏎ needed for the factorisation; M2 is implicit in the cyclic-trace"
-            }
-          ]
-        },
-        {
-          "block": "content/quantum-observable-universe/braids-and-knots/markov-trace-inductive-limit",
-          "kind": "remark",
-          "sections": [
-            {
-              "header": "## Status",
-              "line": 40,
-              "classification": "authorNotes",
-              "body_lines": 8,
-              "preview": "**Scaffolding only.** The substantive content (von Neumann inductive ⏎ limit on the infinite-dim affine Hecke algebra, plus the bicommutant ⏎ closure constructing the global trace) is open R&D. The scaffold"
             }
           ]
         },
@@ -436,58 +172,11 @@
       ]
     },
     {
-      "batch_id": 6,
-      "chapter": "climax-volume-mass",
-      "status": "open",
-      "block_count": 1,
-      "blocks": [
-        {
-          "block": "content/quantum-observable-universe/climax-volume-mass/selection-rule-c2-prediction",
-          "kind": "proposition",
-          "sections": [
-            {
-              "header": "## Status",
-              "line": 53,
-              "classification": "authorNotes",
-              "body_lines": 7,
-              "preview": "- **c=1 anchor** ($\\mathrm{lw}(1) = 1$): proved in ⏎ [`prop:selection-rule-anchors-c1-c3`](#prop:selection-rule-anchors-c1-c3) (this branch). ⏎ - **c=3 anchor** ($\\mathrm{lw}(3) = 5/2 + (3/4)h^2$): proved in"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "batch_id": 7,
+      "batch_id": 4,
       "chapter": "mass-endomorphism",
       "status": "open",
-      "block_count": 16,
+      "block_count": 2,
       "blocks": [
-        {
-          "block": "content/quantum-observable-universe/mass-endomorphism/bring-embeddable-knots",
-          "kind": "remark",
-          "sections": [
-            {
-              "header": "### Status",
-              "line": 78,
-              "classification": "authorNotes",
-              "body_lines": 4,
-              "preview": "**Tabulation block.** Aggregates the existing knot atlas data ⏎ (`../appendix-knot-periodic-table/recursive-atom-knot-atlas.md`) ⏎ under the graded-Mikusiński prediction. No new mathematical"
-            }
-          ]
-        },
-        {
-          "block": "content/quantum-observable-universe/mass-endomorphism/categorical-chain-convergence-mechanisms",
-          "kind": "proposition",
-          "sections": [
-            {
-              "header": "## Status",
-              "line": 113,
-              "classification": "todo",
-              "body_lines": 5,
-              "preview": "This is a **structural-interpretation proposition** capturing the ⏎ two convergence mechanisms behind $Q_\\beta^{\\text{cat}}$'s finite ⏎ predictiveness. The formal Habiro-ring identification is sketched"
-            }
-          ]
-        },
         {
           "block": "content/quantum-observable-universe/mass-endomorphism/categorical-neutrality-saturated-shells",
           "kind": "proposition",
@@ -498,71 +187,6 @@
               "classification": "substantive",
               "body_lines": 13,
               "preview": "**Status: conjectural** under CLAUDE.md §3b. Numerical witnesses at ⏎ $k = 3, \\dots, 10$ are supportive but not a proof; the conjecture ⏎ asserts the saturation condition for all $n \\in \\mathfrak{M}$"
-            }
-          ]
-        },
-        {
-          "block": "content/quantum-observable-universe/mass-endomorphism/chi-per-irrep-cyclotomic-closed-forms",
-          "kind": "remark",
-          "sections": [
-            {
-              "header": "## Status",
-              "line": 109,
-              "classification": "authorNotes",
-              "body_lines": 6,
-              "preview": "**All three V_λ formally closed**, cyclotomic pattern documented, ⏎ compute wired, lit pointers in place. The substantive next R&D step ⏎ is to derive the Hoefsmit-matrix-expansion formula for V_(2,1)"
-            }
-          ]
-        },
-        {
-          "block": "content/quantum-observable-universe/mass-endomorphism/chi-v111-via-sign-substitution",
-          "kind": "remark",
-          "sections": [
-            {
-              "header": "## Status",
-              "line": 56,
-              "classification": "authorNotes",
-              "body_lines": 9,
-              "preview": "**V_(1,1,1) FULLY DERIVED IN LEAN** (item 2 of  closure). ⏎ The derivation proceeds purely from the scalar sign-rep arithmetic, ⏎ mirroring V_(3)'s template. Combined with V_(3) (`rem:chi-v3-closed-form-proof`),"
-            }
-          ]
-        },
-        {
-          "block": "content/quantum-observable-universe/mass-endomorphism/chi-v21-hoefsmit-matrix-derivation",
-          "kind": "remark",
-          "sections": [
-            {
-              "header": "## Status",
-              "line": 111,
-              "classification": "authorNotes",
-              "body_lines": 8,
-              "preview": "**Closed at the rational-identity level** (5 theorems sorry-free): ⏎ factored $\\leftrightarrow$ polynomial, Laurent decomposition, numerical checks ⏎ at q=1, q=2."
-            }
-          ]
-        },
-        {
-          "block": "content/quantum-observable-universe/mass-endomorphism/chi-v3-closed-form-proof",
-          "kind": "remark",
-          "sections": [
-            {
-              "header": "## Next steps",
-              "line": 89,
-              "classification": "authorNotes",
-              "body_lines": 6,
-              "preview": "V_(2,1) and V_(1,1,1) await analogous formal closed forms: ⏎ - **V_(1,1,1)** is the **q $\\leftrightarrow$ $-q^{-1}$ mirror** of V_(3) (antisymmetric irrep where each $\\sigma_i$ acts as $-q^{-1}$). The proof should mirror"
-            }
-          ]
-        },
-        {
-          "block": "content/quantum-observable-universe/mass-endomorphism/conj-qbeta-c-k-closed-forms",
-          "kind": "proposition",
-          "sections": [
-            {
-              "header": "## Status of the conjectural propagation",
-              "line": 88,
-              "classification": "authorNotes",
-              "body_lines": 11,
-              "preview": "Per CLAUDE.md §3b-cond conditional-class exception, the existing ⏎ [`prop:q-beta-categorical-precision-ladder`](#prop:q-beta-categorical-precision-ladder) ⏎ Lean class `QBetaPrecisionLadderCoefficients` (which axiomatise"
             }
           ]
         },
@@ -578,102 +202,11 @@
               "preview": "**Conjectural** under CLAUDE.md §3b. The supporting evidence is: ⏎ 1. Numerical verification at $n \\in \\{2, 8, 20\\}$ via the ⏎ matrix-evaluation programme."
             }
           ]
-        },
-        {
-          "block": "content/quantum-observable-universe/mass-endomorphism/multi-link-jones-q1-extension",
-          "kind": "remark",
-          "sections": [
-            {
-              "header": "## Status",
-              "line": 80,
-              "classification": "authorNotes",
-              "body_lines": 6,
-              "preview": "**Open R&D recorded.** The Lean class `MultiLinkJonesAtOne` is the ⏎ hook — once an empirical or theoretical match is found, a new ⏎ instance plugs in the right $(c_5, c_6)$ values and the"
-            }
-          ]
-        },
-        {
-          "block": "content/quantum-observable-universe/mass-endomorphism/phi-d-syt-count-conjecture",
-          "kind": "remark",
-          "sections": [
-            {
-              "header": "## Status",
-              "line": 93,
-              "classification": "authorNotes",
-              "body_lines": 4,
-              "preview": "**n = 3 fully verified** in Lean. **n $\\ge$ 4 open** — concrete next ⏎ probe is the B_4 typed-braid character difference at each of the ⏎ five irreps, testing whether the predicted $\\Phi_4, \\Phi_{12}, \\Phi_8$"
-            }
-          ]
-        },
-        {
-          "block": "content/quantum-observable-universe/mass-endomorphism/q-hecke-seminormal-character-closure",
-          "kind": "proposition",
-          "sections": [
-            {
-              "header": "## Status",
-              "line": 93,
-              "classification": "authorNotes",
-              "body_lines": 10,
-              "preview": "The proposition is a numerical-equality claim between three ⏎ implemented paths, all of which agree to their precision floors. ⏎ Mathematical proof: the partition-sum form is the spectral"
-            }
-          ]
-        },
-        {
-          "block": "content/quantum-observable-universe/mass-endomorphism/qbeta-delta-tau-canonical-conditional-q2-minus-1-factor",
-          "kind": "proposition",
-          "sections": [
-            {
-              "header": "## §3b-cond status — conditional rigour modulo conjectural class",
-              "line": 40,
-              "classification": "authorNotes",
-              "body_lines": 16,
-              "preview": "This block is a CLAUDE.md §3b-cond conditional theorem: ⏎ - **Class axiomatisation.** The Lean ⏎ `class CanonicalMarkovWeightsH3` ([`qbeta-per-block-chi-closed-forms.lean`](qbeta-per-block-chi-closed-forms.lean))"
-            }
-          ]
-        },
-        {
-          "block": "content/quantum-observable-universe/mass-endomorphism/tau-M-asymptotic-rep-theory",
-          "kind": "proposition",
-          "sections": [
-            {
-              "header": "## Status",
-              "line": 134,
-              "classification": "authorNotes",
-              "body_lines": 12,
-              "preview": "The exponential-asymptotic form above is a **rep-theoretic ⏎ prediction**, validated at $k = 0, 1, 2$ at $q_0$ to ${\\leq} 25$ ppm ⏎ precision. The $c_k^{(\\lambda)}(b_\\lambda)$ coefficients beyond $k = 2$"
-            }
-          ]
-        },
-        {
-          "block": "content/quantum-observable-universe/mass-endomorphism/topological-mass-conjecture",
-          "kind": "proposition",
-          "sections": [
-            {
-              "header": "## Status",
-              "line": 55,
-              "classification": "authorNotes",
-              "body_lines": 4,
-              "preview": "The holonomy form of the :refterm[descent]{#descent} piece is the main gap: ⏎ [thm:topological-mass](#thm\\:topological-mass) identifies the :refterm[descent]{#descent} ⏎ trace categorically but does not express it as a g"
-            }
-          ]
-        },
-        {
-          "block": "content/quantum-observable-universe/mass-endomorphism/u-coordinate-discharges",
-          "kind": "remark",
-          "sections": [
-            {
-              "header": "## Status",
-              "line": 46,
-              "classification": "authorNotes",
-              "body_lines": 6,
-              "preview": "**All theorems sorry-free.** Six concrete scalar identities backed ⏎ by `field_simp + ring` proofs. This addresses the reviewer's repeated ⏎ \"vacuous True / concrete mathematical statement\" critiques at the"
-            }
-          ]
         }
       ]
     },
     {
-      "batch_id": 8,
+      "batch_id": 5,
       "chapter": "mass-theory",
       "status": "open",
       "block_count": 21,
@@ -961,31 +494,10 @@
       ]
     },
     {
-      "batch_id": 9,
-      "chapter": "molecular-construction",
-      "status": "open",
-      "block_count": 1,
-      "blocks": [
-        {
-          "block": "content/quantum-observable-universe/molecular-construction/h2s-angle-s3-braid-holonomy",
-          "kind": "conjecture",
-          "sections": [
-            {
-              "header": "## Status of the pieces",
-              "line": 24,
-              "classification": "authorNotes",
-              "body_lines": 27,
-              "preview": "What is **established** (not conjectural): ⏎ - The chiral channel is exactly the $c_\\lambda=0$ block $V_{(2,1)}$ ⏎ ([`prop:chirality-residue-mass-term`](#prop:chirality-residue-mass-term):"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "batch_id": 10,
+      "batch_id": 6,
       "chapter": "observations",
       "status": "open",
-      "block_count": 5,
+      "block_count": 3,
       "blocks": [
         {
           "block": "content/quantum-observable-universe/observations/diagrammatic-double-magic-lr-fusion",
@@ -1014,19 +526,6 @@
           ]
         },
         {
-          "block": "content/quantum-observable-universe/observations/n-v-bring-action",
-          "kind": "conjecture",
-          "sections": [
-            {
-              "header": "## Status",
-              "line": 27,
-              "classification": "authorNotes",
-              "body_lines": 10,
-              "preview": "**Conjectural.**  This is a substrate axiom in the precise sense ⏎ of [`CLAUDE.md` §3b](../../../CLAUDE.md#3b-conjectural-propagation): ⏎ the categorical $S_5$-action on $H_n(R, q)$ at the EW slice is"
-            }
-          ]
-        },
-        {
           "block": "content/quantum-observable-universe/observations/n-v-leading-order-derivation",
           "kind": "conjecture",
           "sections": [
@@ -1038,100 +537,15 @@
               "preview": "**Conditional conjecture.**  Conditional on the two substrate axioms ⏎ [`conj:n-v-bring-action`](#conj:n-v-bring-action) and ⏎ [`conj:n-v-tower-depth-ninety`](#conj:n-v-tower-depth-ninety),"
             }
           ]
-        },
-        {
-          "block": "content/quantum-observable-universe/observations/n-v-tower-depth-ninety",
-          "kind": "conjecture",
-          "sections": [
-            {
-              "header": "## Status",
-              "line": 16,
-              "classification": "authorNotes",
-              "body_lines": 6,
-              "preview": "**Conjectural.**  This is the **second** of the two substrate ⏎ axioms in the ⏎ [N_v derivation](#conj:n-v-leading-order-derivation) chain."
-            }
-          ]
         }
       ]
     },
     {
-      "batch_id": 11,
+      "batch_id": 7,
       "chapter": "particle-interactions",
       "status": "open",
-      "block_count": 8,
+      "block_count": 1,
       "blocks": [
-        {
-          "block": "content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence-conditional",
-          "kind": "theorem",
-          "sections": [
-            {
-              "header": "## Status under CLAUDE.md §3b-cond",
-              "line": 25,
-              "classification": "authorNotes",
-              "body_lines": 27,
-              "preview": "Per CLAUDE.md §3b, an unconditional theorem about a downstream ⏎ consequence of an open conjecture would constitute a propagation ⏎ violation. This block invokes the **conditional-class exception**"
-            }
-          ]
-        },
-        {
-          "block": "content/quantum-observable-universe/particle-interactions/gram-matrix-h3-symbolic",
-          "kind": "proposition",
-          "sections": [
-            {
-              "header": "## Proof status",
-              "line": 25,
-              "classification": "todo",
-              "body_lines": 5,
-              "preview": "| Property | Status | Proof | ⏎ |---|---|---| ⏎ | **(1) Symmetry** | proved | [`gramMatrix_isSymm`](gram-matrix-h3-symbolic.lean) — 15-cell case analysis by `rfl` (entries encoded symmetrically by construction) |"
-            }
-          ]
-        },
-        {
-          "block": "content/quantum-observable-universe/particle-interactions/negative-debt-confinement",
-          "kind": "remark",
-          "sections": [
-            {
-              "header": "## Status: the nine-strand direction",
-              "line": 48,
-              "classification": "todo",
-              "body_lines": 20,
-              "preview": "The current computation uses $H_3(q)$ (3 strands = 3 quarks). ⏎ This respects confinement (color-singlet closure via the ⏎ Borromean braid $B_3$), is fully computable today, and produces"
-            }
-          ]
-        },
-        {
-          "block": "content/quantum-observable-universe/particle-interactions/q-beta-cos-resummation",
-          "kind": "proposition",
-          "sections": [
-            {
-              "header": "## Implication for 1 ppb roadmap",
-              "line": 76,
-              "classification": "authorNotes",
-              "body_lines": 18,
-              "preview": "Per [`audit_delta_S_chain.py`](../../folio-assistant/computations/audit_delta_S_chain.py), ⏎ the n-p mass-split residual $\\varepsilon_{\\Delta S}$ inherits ⏎ $Q_\\beta$'s residual through the algebraic chain identity"
-            },
-            {
-              "header": "## Status",
-              "line": 99,
-              "classification": "authorNotes",
-              "body_lines": 11,
-              "preview": "This proposition is **conditional** on ⏎ [`prop:beta-decay-transfer-matrix`](#prop:beta-decay-transfer-matrix)'s ⏎ identification of $\\alpha = (z-1)h/2$ as the single-wrap eigenphase"
-            }
-          ]
-        },
-        {
-          "block": "content/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge",
-          "kind": "proposition",
-          "sections": [
-            {
-              "header": "## Status",
-              "line": 157,
-              "classification": "authorNotes",
-              "body_lines": 10,
-              "preview": "* Form A is the canonical predictor used in ⏎ [prop:neutron-qvalue-symbolic](#prop:neutron-qvalue-symbolic) ⏎ ($+0.168\\%$ residual vs CODATA at $N = 0$)."
-            }
-          ]
-        },
         {
           "block": "content/quantum-observable-universe/particle-interactions/q-zero-stokes-region-identification",
           "kind": "conjecture",
@@ -1144,72 +558,25 @@
               "preview": "**What's NEW in this conjecture (vs prior content blocks):** ⏎ - Explicit identification of the structural gap (Option A from §11 of the audit) ⏎ - Universal-base framing over $\\mathbb{Z}[q, q^{\\pm 1}]$"
             }
           ]
-        },
-        {
-          "block": "content/quantum-observable-universe/particle-interactions/silver-ratio-beta-decay-null",
-          "kind": "proposition",
-          "sections": [
-            {
-              "header": "## Implications for the $c_4..c_7$ derivation roadmap",
-              "line": 112,
-              "classification": "authorNotes",
-              "body_lines": 16,
-              "preview": "The silver-ratio observation: ⏎ 1. **Identifies the algebraic landscape of $Q_\\beta$**: silver-ratio ⏎ (Pell-Lucas), NOT cyclotomic (as in FSC = $q \\cdot [9]_q \\cdot [10]_q$)"
-            },
-            {
-              "header": "## Status",
-              "line": 132,
-              "classification": "authorNotes",
-              "body_lines": 6,
-              "preview": "This is a **structural identification**, not a derivation of $c_k$ ⏎ from first principles. The silver-ratio limit gives a clean test ⏎ point and identifies the relevant algebraic landscape (Pell-Lucas"
-            }
-          ]
-        },
-        {
-          "block": "content/quantum-observable-universe/particle-interactions/weinberg-angle-categorical",
-          "kind": "conjecture",
-          "sections": [
-            {
-              "header": "### Status",
-              "line": 119,
-              "classification": "authorNotes",
-              "body_lines": 13,
-              "preview": "**Open.** The statement is currently a structural proposal; ⏎ the simple-multiplicity reading numerically fails. To promote ⏎ to a `proposition`, the authoring sequence is:"
-            }
-          ]
         }
       ]
     },
     {
-      "batch_id": 12,
+      "batch_id": 8,
       "chapter": "predicted-spectra",
       "status": "open",
-      "block_count": 6,
+      "block_count": 3,
       "blocks": [
         {
           "block": "content/quantum-observable-universe/predicted-spectra/alpha-em-derivation-open-problems",
           "kind": "remark",
           "sections": [
             {
-              "header": "## Roadmap for an honest derivation",
-              "line": 50,
-              "classification": "todo",
-              "body_lines": 52,
-              "preview": "The $1.55 \\times 10^{-3}$ gap is approximately the size of an ⏎ $O(\\hbar_q^2)$ correction ($\\hbar_q^2 \\approx 9.8 \\times 10^{-3}$ at ⏎ $q_0$). Three plausible structural origins:"
-            },
-            {
               "header": "## Status of derivation effort (this audit)",
-              "line": 114,
+              "line": 49,
               "classification": "substantive",
               "body_lines": 17,
               "preview": "Four computational paths to close the $1.55 \\times 10^{-3}$ correction ⏎ have been tried and **ruled out** (or shown not to be expressible as ⏎ clean low-degree $q$-rationals):"
-            },
-            {
-              "header": "### Remaining work (the mechanism is now derived)",
-              "line": 274,
-              "classification": "authorNotes",
-              "body_lines": 14,
-              "preview": "Items 1–2 of the earlier checklist are **resolved** by ⏎ [`prop:photon-ir-zero-mode-bring`](#prop:photon-ir-zero-mode-bring): the ⏎ \"3-manifold\" is the $2$-surface $M_{\\text{Bring}}$, and the photon zero-mode"
             }
           ]
         },
@@ -1218,25 +585,11 @@
           "kind": "conjecture",
           "sections": [
             {
-              "header": "### Derivation status",
-              "line": 25,
-              "classification": "authorNotes",
-              "body_lines": 24,
-              "preview": "This proposition is **not yet derived from QOU/Hecke structure**. ⏎ The formula $a_0 = \\hbar/(m_e c \\alpha)$ is *transported* from ⏎ the standard QED virial-balance argument by analogy. The"
-            },
-            {
               "header": "#### Net status after round 8",
-              "line": 294,
+              "line": 264,
               "classification": "substantive",
               "body_lines": 12,
               "preview": "The combination 4a + 4b establishes that **the Hecke-algebraic ⏎ structure encodes the relative shell spacing and the additive ⏎ kinetic/Coulomb decomposition correctly**. What remains"
-            },
-            {
-              "header": "### Status",
-              "line": 310,
-              "classification": "authorNotes",
-              "body_lines": 12,
-              "preview": "**Proposition with explicit caveat.** The formula ⏎ $a_{0}^{\\mathrm{cat}} = \\hbar/(m_e c \\alpha_{EM})$ is asserted as ⏎ the structural mapping between QOU and the standard QED Bohr"
             }
           ]
         },
@@ -1301,95 +654,22 @@
               "preview": "**Open.** The desired result (the bare physics scaling ⏎ $E_h \\propto \\alpha^{2}$) is rigorously known in non-relativistic ⏎ QED (Bohr radius / virial theorem). What is conjectural here is"
             },
             {
-              "header": "### Recommended next step — operator-parity, not coupling-parity",
-              "line": 1568,
-              "classification": "authorNotes",
-              "body_lines": 37,
-              "preview": "The standard physics linear-Stark vanishing is ⏎ $\\langle \\psi_0 \\,|\\, \\hat r \\,|\\, \\psi_0 \\rangle = 0$, where the ⏎ parity-odd object is the *operator* $\\hat r$ (the dipole), not the"
-            },
-            {
-              "header": "#### Updated recommended next step",
-              "line": 1673,
-              "classification": "authorNotes",
-              "body_lines": 24,
-              "preview": "Pursue the **combined $\\sigma \\cdot \\varepsilon$ parity** for the ⏎ $H_2$ molecular braid: ⏎ 1. Make $\\varepsilon$ explicit as conjugation by a specific braid"
-            },
-            {
               "header": "#### Closure status (after 5 rounds)",
-              "line": 1953,
+              "line": 1877,
               "classification": "substantive",
               "body_lines": 22,
               "preview": "The conjecture, in its corrected reformulation, becomes: ⏎ > *The archimedean realization functor's restriction to ⏎ > molecular-binding $\\Phi_1$ outputs picks up exactly two factors"
-            }
-          ]
-        },
-        {
-          "block": "content/quantum-observable-universe/predicted-spectra/em-coupling-bring-zero-mode",
-          "kind": "proposition",
-          "sections": [
-            {
-              "header": "## Pre-archimedean status — resolved by uniqueness of $\\tau_{\\text{arch}}$",
-              "line": 95,
-              "classification": "authorNotes",
-              "body_lines": 47,
-              "preview": "The bare formula $1/\\alpha_{\\text{bare}} = q[9]_q[10]_q$ and its ⏎ trace-ratio refactoring ⏎ [`prop:alpha-em-categorical-trace-ratio`](#prop:alpha-em-categorical-trace-ratio)"
-            },
-            {
-              "header": "## Status: mechanism resolved (surface harmonic zero-mode); upstream uniqueness conditional",
-              "line": 151,
-              "classification": "authorNotes",
-              "body_lines": 52,
-              "preview": "The structural identification $2/(3\\pi) = 2g/(4\\pi(g-1))$ at $g = 4$ is an ⏎ **exact algebraic identity** (Lean `hodgeRatio_at_g4`). Its ⏎ **from-the-Lagrangian mechanism** is now derived in"
-            }
-          ]
-        },
-        {
-          "block": "content/quantum-observable-universe/predicted-spectra/photon-ir-zero-mode-bring",
-          "kind": "proposition",
-          "sections": [
-            {
-              "header": "## Status",
-              "line": 32,
-              "classification": "authorNotes",
-              "body_lines": 1,
-              "preview": "The topological/geometric core — Betti number $b_1=2g$, Gauss–Bonnet area, the ratio $2g/(4\\pi(g-1))$, and the strict surface-over-naive dominance — is **proven sorry-free** in Lean (`QOU.Archimedean.PhotonIRZeroMode`). "
-            }
-          ]
-        },
-        {
-          "block": "content/quantum-observable-universe/predicted-spectra/upstream-mathlib-additions",
-          "kind": "proposition",
-          "sections": [
-            {
-              "header": "## What's still upstream-Mathlib-pending",
-              "line": 36,
-              "classification": "authorNotes",
-              "body_lines": 3,
-              "preview": "See [Table 2](#tbl:upstream-mathlib-additions-table2-data). ⏎ The first three are tractable Mathlib PRs; the fourth requires ⏎ substantial Tauberian-theorem infrastructure."
             }
           ]
         }
       ]
     },
     {
-      "batch_id": 13,
+      "batch_id": 9,
       "chapter": "quantum-observable-universes",
       "status": "open",
-      "block_count": 2,
+      "block_count": 1,
       "blocks": [
-        {
-          "block": "content/quantum-observable-universe/quantum-observable-universes/g-action-on-substrate",
-          "kind": "conjecture",
-          "sections": [
-            {
-              "header": "### Status",
-              "line": 153,
-              "classification": "authorNotes",
-              "body_lines": 14,
-              "preview": "**Open at the closure level.** The four axioms above are a ⏎ **concrete framework extension** that takes the QOU substrate ⏎ from \"$\\mathbf{Rep}(\\mathrm{SU}_q(2))$-equivariant\" to"
-            }
-          ]
-        },
         {
           "block": "content/quantum-observable-universe/quantum-observable-universes/magic-numbers-bring",
           "kind": "conjecture",
@@ -1406,24 +686,11 @@
       ]
     },
     {
-      "batch_id": 14,
+      "batch_id": 10,
       "chapter": "stochastic-mechanics",
       "status": "open",
-      "block_count": 7,
+      "block_count": 2,
       "blocks": [
-        {
-          "block": "content/quantum-observable-universe/stochastic-mechanics/F3-eps6-leading-eq-neg-2b-cubed",
-          "kind": "remark",
-          "sections": [
-            {
-              "header": "## Status",
-              "line": 61,
-              "classification": "authorNotes",
-              "body_lines": 3,
-              "preview": "Lean stub: **closed**, no `sorry`s. Provable by Mathlib `Real.sqrt_sq` + ⏎ `ring`. Companion to `rem:markov-axioms-primitive` in the categorical-chain ⏎ Lean infrastructure."
-            }
-          ]
-        },
         {
           "block": "content/quantum-observable-universe/stochastic-mechanics/c5-involution-leibniz-decomposition",
           "kind": "proposition",
@@ -1438,32 +705,6 @@
           ]
         },
         {
-          "block": "content/quantum-observable-universe/stochastic-mechanics/graded-baer-star-Hq",
-          "kind": "conjecture",
-          "sections": [
-            {
-              "header": "### Status",
-              "line": 74,
-              "classification": "authorNotes",
-              "body_lines": 10,
-              "preview": "**Open at depth $\\geq 3$**, conditional on ⏎ [`conj:gb-depth-period-correspondence`](#conj:gb-depth-period-correspondence). ⏎ The depth-2 case follows from"
-            }
-          ]
-        },
-        {
-          "block": "content/quantum-observable-universe/stochastic-mechanics/markov-closure-map-axiomatic",
-          "kind": "remark",
-          "sections": [
-            {
-              "header": "## Status",
-              "line": 55,
-              "classification": "authorNotes",
-              "body_lines": 10,
-              "preview": "Lean stub: **no `sorry`s**, but the substantive content is in **2 ⏎ class fields** that encode the atomic axioms. Each field corresponds ⏎ to a specific, named, published knot-theoretic result; the eventual"
-            }
-          ]
-        },
-        {
           "block": "content/quantum-observable-universe/stochastic-mechanics/phi-q-aj-machinery-identification",
           "kind": "proposition",
           "sections": [
@@ -1473,32 +714,6 @@
               "classification": "substantive",
               "body_lines": 5,
               "preview": "**Conditional on [`conj:quantum-langlands-dual`](quantum-langlands-dual.md) + [`conj:dim-master-pentagon`](dim-master-pentagon.md)** because the full identification requires: ⏎ 1. AJ conjecture proved for $K$ (proved for"
-            }
-          ]
-        },
-        {
-          "block": "content/quantum-observable-universe/stochastic-mechanics/polynomial-bar-involution",
-          "kind": "proposition",
-          "sections": [
-            {
-              "header": "## Status",
-              "line": 73,
-              "classification": "authorNotes",
-              "body_lines": 5,
-              "preview": "Type-level infrastructure complete. Future work: instantiate ⏎ specific `BarHeckeFunctor R[X]` examples corresponding to ⏎ truncated $\\cos$ / $\\cosh$ / Li_2^q expansions in $X$, and"
-            }
-          ]
-        },
-        {
-          "block": "content/quantum-observable-universe/stochastic-mechanics/q-beta-gamma-gamma-canonical-derivation",
-          "kind": "remark",
-          "sections": [
-            {
-              "header": "## Status",
-              "line": 126,
-              "classification": "authorNotes",
-              "body_lines": 7,
-              "preview": "This is a **derivation summary**, documenting the conclusion of the ⏎ γγ chain trace. The chain itself is per-step formalised by: ⏎ - [`prop:hoefsmit-V21-cos-symmetrization`](#prop:hoefsmit-V21-cos-symmetrization) (Step "
             }
           ]
         }

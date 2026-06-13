@@ -89,31 +89,6 @@ coefficients. If the first non-vanishing substrate correction is
 *not* weighted by $J_{4_1}$ — for example, if a torus-sector
 contribution survives with nonzero weight, or a different
 hyperbolic closure dominates — the conjecture is refuted.
-
-## Status
-
-**Open.** The weight expansion is proved (sorry-free supporting
-lemmas in `FigureEightCasimirWeight.lean`); the carrier
-identification is additionally class-axiomatised in the same file
-(`FirstInteractingCasimirCorrection`, the §3b-cond pattern), with
-the Taylor form, the classical limit, the enhancement bound
-$1 \leq \mathrm{weight}$, and the bar symmetry
-$\mathrm{weight}(q^{-1}) = \mathrm{weight}(q)$ machine-verified
-conditional on an instance — and constructing the instance is
-exactly the open mode-sum. The $n$-stability selection underlying
-the parent block's mode-count functional is formalised in
-`CasimirNStability.lean`. The exclusion of torus
-closures and the identification of $4_1$ as the minimal hyperbolic
-carrier follow from cited content; the mode-sum itself — and with it
-the $1/d$ power and the magnitude — is the open construction. The
-structural identification and the supporting computation are
-recorded in the
-[first-q-correction audit](../../../docs/audits/2026-06-01-casimir-first-qcorrection-figure8.md)
-and
-[`casimir-d6-qcorrection-structure.witness.json`](../../../folio-assistant/computations/casimir-d6-qcorrection-structure.witness.json).
-A staged construction plan for the mode-sum is maintained in the
-[N\_⊙ scoping workplan](../../../docs/workplans/2026-06-12-n-odot-construction-scoping.md).
-
 ## See also
 
 - [`conj:casimir-epsilon-vacuum`](#conj:casimir-epsilon-vacuum) —

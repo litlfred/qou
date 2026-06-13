@@ -19,4 +19,10 @@ export default algorithm({
     "interchange",
     "precision-discipline",
   ],
+  authorNotes: [
+    {
+      kind: "status",
+      body: "Not every `*.witness.json` currently under\n`folio-assistant/computations/` conforms to the `WitnessBuilder`\nshape above — legacy scripts emitted hand-shaped JSON\n(e.g. `name` / `timestamp` / `git_sha`) before `WitnessBuilder`\nexisted. The migration is tracked under the \"P30 wrap-legacy\"\ndiscipline noted in [`compute-audit.md`](../../../.claude/skills/local/compute-audit.md);\nthe contract above applies in full to **WitnessBuilder-backed\nwitnesses** and is the target shape for the migration of legacy\nwitnesses.",
+    },
+  ],
 });

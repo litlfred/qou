@@ -51,10 +51,3 @@ the brane boundary $\partial A$.
  contribution at $D_i$ equals $\bigl\lVert\Phi_q(z_i)\bigr\rVert$,
  where $z_i = |\hat{V}_i(q)|$ is the algebraic-volume magnitude of
  the generator at the $i$-th blow-up centre.
-
-## Status
-
-The holonomy form of the :refterm[descent]{#descent} piece is the main gap:
-[thm:topological-mass](#thm\:topological-mass) identifies the :refterm[descent]{#descent}
-trace categorically but does not express it as a gauge holonomy.
-Bridging these two formulations is the core proof obligation.

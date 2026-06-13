@@ -21,15 +21,6 @@ $$\{1, \sigma_0, \sigma_1, \sigma_0\sigma_1, \sigma_1\sigma_0, \sigma_0\sigma_1\
 1. *$G(q)$ is symmetric: $G[i,j] = G[j,i]$ for all $i, j$.*
 2. *$G[0,0] = 1$.*
 3. *$\det G(q) \neq 0$ for $q > 0,\ q \neq 1$.*
-
-## Proof status
-
-| Property | Status | Proof |
-|---|---|---|
-| **(1) Symmetry** | proved | [`gramMatrix_isSymm`](gram-matrix-h3-symbolic.lean) — 15-cell case analysis by `rfl` (entries encoded symmetrically by construction) |
-| **(2) Top-left = 1** | proved | [`gramMatrix_top_left`](gram-matrix-h3-symbolic.lean) — by definition |
-| **(3) Determinant $\neq 0$** | deferred | [`gramMatrix_det_ne_zero`](gram-matrix-h3-symbolic.lean) — proof strategy documented; routine symbolic-determinant factorisation pending |
-
 ## Numerical evaluation at the substrate
 
 Sympy-computed symbolic entries match `folio-assistant/computations/gram-matrix-dual.witness.json` at $q_0 \approx 1.110$ to max absolute difference $\approx 2.1 \times 10^{-16}$ across all 36 entries (see `gram-h3-symbolic-regression.witness.json` for the live value). The determinant at $u_0 = \sqrt{q_0}$ is $\det G(u_0) \approx -0.189205253071$ (one negative eigenvalue $\approx -0.855$ — Frobenius positivity is a genuine constraint, not an automatic property).

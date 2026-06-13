@@ -21,39 +21,6 @@ $$
   \;\iff\;
   (\mathfrak{M}_K)_d = 0 \;\;\text{for}\;\; d > \ell.
 $$
-
-## Status under CLAUDE.md §3b-cond
-
-Per CLAUDE.md §3b, an unconditional theorem about a downstream
-consequence of an open conjecture would constitute a propagation
-violation. This block invokes the **conditional-class exception**
-(§3b-cond):
-
-1. **Class axiomatisation.** The upstream conjecture
-   [`conj:crystal-graph-realization`](#conj:crystal-graph-realization)
-   is axiomatised in
-   [`confinement-grading-correspondence-conditional.lean`](confinement-grading-correspondence-conditional.lean)
-   as the Lean class `CrystalGraphRealization n`.  Its single field
-   `crystal_klr_iso` carries the Brundan–Kleshchev intertwining;
-   any `sorry` lives inside the class instance, not in the proof
-   that follows from it.
-2. **Explicit hypothesis on the Lean side.** The theorem's
-   declaration carries the class as an explicit `[Instance]`
-   argument:
-   `theorem confinement_grading_correspondence_conditional [CrystalGraphRealization n] : ... := ...`
-   with no `sorry` inside the proof body.
-3. **Conditional banner.** The proposition statement above is
-   prefixed with "**Theorem (conditional on
-   [`conj:crystal-graph-realization`](#conj:crystal-graph-realization))**".
-4. **`uses[]` includes the conjecture.** The block's manifest
-   lists both `conj:crystal-graph-realization` and the original
-   unconditional [`conj:confinement-grading-correspondence`](#conj:confinement-grading-correspondence).
-
-By §3b-cond this block represents a *rigorous conditional result*:
-fully verified by Lean modulo a single, named, class-axiomatised
-conjectural input. The `conjectural-propagation` audit will
-classify it as `conditional-on-class` rather than as a violation.
-
 ## Why the upstream class is a single conjecture
 
 The Brundan–Kleshchev cyclotomic-Hecke / KLR isomorphism is proved

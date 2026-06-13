@@ -19,4 +19,10 @@ export default proposition({
     validation: "not_checked",
   },
   uses: ["prop:selection-rule-anchors-c1-c3"],
+  authorNotes: [
+    {
+      kind: "status",
+      body: "- **c=1 anchor** ($\\mathrm{lw}(1) = 1$): proved in\n  [`prop:selection-rule-anchors-c1-c3`](#prop:selection-rule-anchors-c1-c3) (this branch).\n- **c=3 anchor** ($\\mathrm{lw}(3) = 5/2 + (3/4)h^2$): proved in\n  [`prop:selection-rule-anchors-c1-c3`](#prop:selection-rule-anchors-c1-c3) (this branch).\n- **c=2 prediction** ($\\mathrm{lw}(2) = (q+1)^2/(3q)$): proved here.\n- **General $c \\geq 4$ prediction**: requires a q-deformed hook-length\n  identity in Lean; out of scope for this proposition.",
+    },
+  ],
 });

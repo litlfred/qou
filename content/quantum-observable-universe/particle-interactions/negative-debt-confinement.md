@@ -44,31 +44,3 @@ computable, algebraic manifestation of color confinement --- the
 energy cost of holding three quarks in a color-singlet braid is
 larger for the neutron because the $d$--$d$ interaction is more
 confining than $u$--$u$.
-
-## Status: the nine-strand direction
-
-The current computation uses $H_3(q)$ (3 strands = 3 quarks).
-This respects confinement (color-singlet closure via the
-Borromean braid $B_3$), is fully computable today, and produces
-the correct $Q_\beta$ by construction.  However, the energy scale
-$\mathfrak{E}_0 \approx 4.155$ MeV is calibrated, not predicted.
-
-The natural next step is **nine-strand** Gröbner--Shirshov normal
-forms in $H_9(q)$, treating each quark as a 3-strand sub-braid
-(one strand per color).  The $9$-strand computation:
-
-1. **Respects confinement**: the full braid closure is a
-   $9$-strand Borromean link, with each 3-strand sub-braid
-   representing a color triplet.
-
-2. **Is computable today**: the Gröbner--Shirshov basis for
-   $H_9(q)$ has $9! = 362{,}880$ terms, but the nucleon element
-   is sparse (structured as $B_9 \cdot \text{crossings}$) and
-   our reduction engine is already optimized for this pattern.
-
-3. **Could predict $\mathfrak{E}_0$**: with color-resolved strands,
-   the coefficient differences may carry enough structure to fix
-   the energy scale from the algebra alone, without calibration
-   against $Q_\beta$.
-
-Witness: `beta-decay-energy-scale.witness.json`.

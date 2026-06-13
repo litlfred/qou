@@ -16,4 +16,10 @@ export default conjecture({
   ],
   uses: ["conj:archimedean-stpart"],
   cites: ["robinson1966"],
+  authorNotes: [
+    {
+      kind: "status",
+      body: "**Open** — the same construction-vs-tautology question as for\n[infinitesimal Frobenius](#conj:infinitesimal-frobenius). A\nworked example would resolve it; a Hochschild-cohomology\nobstruction theorem would refute it.",
+    },
+  ],
 });
