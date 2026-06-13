@@ -37,8 +37,10 @@
 
 import Mathlib.Algebra.Field.Basic
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
+import Mathlib.Algebra.BigOperators.Ring.Finset
 import Mathlib.Data.Finset.Powerset
 import Mathlib.Data.Fin.Basic
+import Mathlib.Data.Fintype.Basic
 import Mathlib.Tactic.Ring
 
 namespace QOU.QBeta.CKRecursion
