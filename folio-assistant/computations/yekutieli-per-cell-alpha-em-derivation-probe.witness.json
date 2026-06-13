@@ -1,0 +1,50 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.2.1",
+  "computedAt": "2026-06-13T13:25:02.608709+00:00",
+  "commitSha": "90727459676ce04618330cc102e795ad226cb817",
+  "assertions": [
+    {
+      "name": "per_cell_weight_matches_alpha_em",
+      "computed": 0.0,
+      "expected": 1.0,
+      "passed": false,
+      "tolerance": 0.0,
+      "source": "Checks if the geometric per-cell coupling weight under τ_q matches the hypothesized α_em/π factor. If false, it hits the pre-stated failure signature."
+    }
+  ],
+  "allPassed": false,
+  "durationMs": 38,
+  "computation": "yekutieli-per-cell-alpha-em-derivation-probe",
+  "scriptFile": "yekutieli_per_cell_alpha_em_derivation_probe.py",
+  "scriptHash": "17402bb2c4fd",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.2",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.11.1",
+    "mpmath": "0.0.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
+  },
+  "description": "Session A probe: applies τ_q action to ONE ideal octahedron at h² order under the Reading-A geometrised scaffold (PR #1628). Checks if the resulting per-cell coupling weight matches the hypothesized α_em/π factor (the Bring-zero-mode analog). Pre-stated failure signature: weight is a rational times G (Catalan's constant) without an α_em factor.",
+  "contentBlock": "prop:yekutieli-non-abelian-stokes",
+  "data": {
+    "q_0": "1.10997858275138080759166909561",
+    "alpha_em": "0.00729735256928380099728510547238",
+    "G_catalan": "0.915965594177219015054603514932",
+    "target_factor_alpha_em_over_pi": "0.0023228194657717191262490312501",
+    "computed_per_cell_weight": "0.915965594177219015054603514932",
+    "ratio_weight_to_target": "394.333527712582815641916860671"
+  },
+  "caveats": [
+    "The probe hits the pre-stated failure signature: the per-cell weight from the non-abelian Stokes integration comes out as exactly G (Catalan's constant), not α_em/π. This means α_em is NOT the per-cell coupling and requires a different categorical input (e.g. the Bring-zero-mode analog is not directly injected via the standard τ_q connection). Session A result is NEGATIVE. Will proceed to reconsider the Bring-zero-mode analog assumption or defer to the co-simplicial crossed-groupoid structure."
+  ]
+}
