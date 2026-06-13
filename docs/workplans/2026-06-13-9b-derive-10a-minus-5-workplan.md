@@ -57,7 +57,12 @@ symmetry-breaking ingredient already in the canonical words).
 2. **Lean:** if H1 survives, state the combinatorial lemma (word-length /
    crossing-count of `atom_braid_word_3A` vs free) in Lean — provable
    from the construction — and the conditional bridge to the exponent as
-   a §3b-cond class if the analytic step resists.
+   a §3b-cond class if the analytic step resists. The class must carry
+   **concrete fields, never vacuous `True` props** (the
+   proof-statement-integrity anti-pattern): e.g. an explicit
+   exponent-valued field plus a proposition asserting the residual
+   identity for it, so the downstream theorem is non-trivially
+   conditional.
 3. **Numerics (only after 1):** extend `binding_canonical.py` to ⁶Li/⁷Li
    (slope test at A ≥ 5 discriminates `10A−5` from same-small-A
    lookalikes); mirror pairs beyond T/³He for the Z-term.
