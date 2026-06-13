@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/predicted-spectra/e-hartree-categorical-derivation.lean"
   },
   "source_hashes": {
-    "md": "4af374f67af0",
+    "md": "bc85150142b9",
     "ts": "ec54fa37d284",
     "lean": "16317b916710"
   },
@@ -464,6 +464,23 @@
         "reviewed_sha": "a7217279ff3d40758e3e8933eec4de55a629562a",
         "severity": "critical",
         "evidence": "quantum-observable-universe/predicted-spectra/e-hartree-categorical-derivation.md:1008: ### Round 21 — Mechanism B refuted (kink, not smooth facet); the α² is a q-dimension-layer effect | quantum-observable-universe/predicted-spectra/e-hartree-categorical-derivation.md:1017: This probe answers it on the actual H₂ binding functional | quantum-observable-universe/predicted-spectra/e-hartree-categorical-derivation.md:1053: — set the physical energy?* That is the **q-dimension-decoration → | quantum-observable-universe/predicted-spectra/e-hartree-categorical-derivation.md:1059: ### Round 22 — the bridge is q₀-evaluation, not new infrastructure; a single derived O(1) coefficient remains | quantum-observable-universe/predicted-spectra/e-hartree-categorical-derivation.md:1065: 2/2). Round 11 feared the δ_q → archimedean bridge was a whole missing"
+      },
+      {
+        "field_hash": {
+          "md": "bc85150142b9",
+          "ts": "ec54fa37d284",
+          "lean": "16317b916710"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "f849b704ab06",
+          "script_commit_sha": "07b55b2b407ff515c1ce4c9d1e8bca52ad655287"
+        },
+        "reviewed_at": "2026-06-13T14:21:48.585Z",
+        "reviewed_sha": "ac2abfcb9eba2474f2f49d3e0846da5e403ddda7"
       }
     ],
     "voice-title-scholarly": [
@@ -1120,5 +1137,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-13T13:55:33.060Z"
+  "updated_at": "2026-06-13T14:21:48.585Z"
 }

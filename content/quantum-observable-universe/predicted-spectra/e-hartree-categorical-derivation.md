@@ -1005,7 +1005,7 @@ does not establish it. The $m_e c^2$ unit transport is the only other
 open input. No comparison of $C(q_0)$ to an experimental Hartree
 $O(1)$ coefficient is made — that comparison is the gated step.
 
-### Round 21 — Mechanism B refuted (kink, not smooth facet); the α² is a q-dimension-layer effect
+### Round 21 — Mechanism B refuted (kink, not smooth facet); the α$^2$ is a q-dimension-layer effect
 
 Witness:
 [`e-hartree-mechanism-b-probe.witness.json`](folio-assistant/computations/e-hartree-mechanism-b-probe.witness.json)
@@ -1014,7 +1014,7 @@ Witness:
 3/3). Round 20 reduced the conjecture to one question: is the
 separated-atom point a **smooth facet** of the binding LP (so
 $y_{\mathrm{cov}} \sim \varepsilon^2$, Mechanism B) or a **kink**?
-This probe answers it on the actual H₂ binding functional
+This probe answers it on the actual H$_2$ binding functional
 ([`prop:h2-lp-dual-binding`](#prop:h2-lp-dual-binding),
 [`h2-molecular-binding.py`](folio-assistant/computations/h2-molecular-binding.py)):
 interpolate every inter-atomic (covalent-channel) crossing toward the
@@ -1050,19 +1050,19 @@ parity) refuted (the $S(\alpha) = q^2\alpha$ scaling, this block).
 **Re-sharpened remaining gap.** Not "is the LP point smooth" (no, it
 is a kink) but: *why does the q-dimension-layer trace-ratio
 $\rho_{(2,2)}$ — rather than the Markov-layer binding $y_{\mathrm{cov}}$
-— set the physical energy?* That is the **q-dimension-decoration →
+— set the physical energy?* That is the **q-dimension-decoration $\to$
 archimedean functor** ($\delta_q$, round 11), plus the standing
 $m_e c^2$ unit transport. The closure is no longer gated on an LP-
 smoothness fact that is now known false; it is gated on the
 q-dim-layer-to-archimedean bridge.
 
-### Round 22 — the bridge is q₀-evaluation, not new infrastructure; a single derived O(1) coefficient remains
+### Round 22 — the bridge is q$_0$-evaluation, not new infrastructure; a single derived O(1) coefficient remains
 
 Witness:
 [`e-hartree-round22-arch-bridge.witness.json`](folio-assistant/computations/e-hartree-round22-arch-bridge.witness.json)
 (producer
 [`e_hartree_round22_arch_bridge.py`](folio-assistant/computations/e_hartree_round22_arch_bridge.py),
-2/2). Round 11 feared the δ_q → archimedean bridge was a whole missing
+2/2). Round 11 feared the δ_q $\to$ archimedean bridge was a whole missing
 functor layer. It is not. The archimedean functor τ_arch is already
 pinned: its transcendental action is the **Bloch–Suslin regulator**
 $K_3^{\mathrm{ind}}(F)\otimes\mathbb{Q}\to\mathbb{R}/\pi^2\mathbb{Q}$,
@@ -1113,7 +1113,7 @@ $E_{\mathrm{Hartree}} = C(q)\,m_e c^2\,\alpha_{EM}^2$ with the $\alpha^2$ scalin
 derived and $C(q) = h(\dim_q V_{(2,2)})^2$ a fixed categorical coefficient,
 conditional on the CAL-1 unit and the named archimedean-landing input. Every
 *mechanism* question is resolved: α lives in the q-dimension layer (11), the
-Markov-layer routes are refuted (A/10, B/21, C/antipode), the α² shape is exact
+Markov-layer routes are refuted (A/10, B/21, C/antipode), the α$^2$ shape is exact
 (20), the archimedean functor is the known $q_0$-evaluation / Bloch–Suslin
 pairing (22), and $C(q_0)$ is the determined Plancherel-square (22, red-team).
 The residual is calibration ($m_e c^2$), not mathematics.

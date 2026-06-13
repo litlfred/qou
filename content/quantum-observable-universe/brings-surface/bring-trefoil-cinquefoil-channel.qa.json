@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/brings-surface/bring-trefoil-cinquefoil-channel.lean"
   },
   "source_hashes": {
-    "md": "df120cf250e6",
+    "md": "511a36b5b714",
     "ts": "5acbce5e0534",
     "lean": "286f106d6c96"
   },
@@ -288,6 +288,23 @@
         "reviewed_sha": "a7217279ff3d40758e3e8933eec4de55a629562a",
         "severity": "critical",
         "evidence": "quantum-observable-universe/brings-surface/bring-trefoil-cinquefoil-channel.md:61: ## Relation to the H₂S residual | quantum-observable-universe/brings-surface/bring-trefoil-cinquefoil-channel.md:63: This proposition is the **provable geometric scaffold** beneath the H₂S"
+      },
+      {
+        "field_hash": {
+          "md": "511a36b5b714",
+          "ts": "5acbce5e0534",
+          "lean": "286f106d6c96"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "f849b704ab06",
+          "script_commit_sha": "07b55b2b407ff515c1ce4c9d1e8bca52ad655287"
+        },
+        "reviewed_at": "2026-06-13T14:21:48.585Z",
+        "reviewed_sha": "ac2abfcb9eba2474f2f49d3e0846da5e403ddda7"
       }
     ],
     "voice-editorializing": [
@@ -1229,5 +1246,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-13T13:55:33.060Z"
+  "updated_at": "2026-06-13T14:21:48.585Z"
 }

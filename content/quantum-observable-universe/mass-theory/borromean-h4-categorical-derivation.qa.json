@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/mass-theory/borromean-h4-categorical-derivation.lean"
   },
   "source_hashes": {
-    "md": "f877fdf371a8",
+    "md": "e0ab8861aec2",
     "ts": "9d1f9795a154",
     "lean": "b8b8e9a17483"
   },
@@ -290,6 +290,23 @@
         "reviewed_sha": "a7217279ff3d40758e3e8933eec4de55a629562a",
         "severity": "critical",
         "evidence": "quantum-observable-universe/mass-theory/borromean-h4-categorical-derivation.md:219: of $\\sigma_1^{-1}\\sigma_2$ on $V_{1/2}^{\\otimes 3}$, take the h⁴"
+      },
+      {
+        "field_hash": {
+          "md": "e0ab8861aec2",
+          "ts": "9d1f9795a154",
+          "lean": "b8b8e9a17483"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "f849b704ab06",
+          "script_commit_sha": "07b55b2b407ff515c1ce4c9d1e8bca52ad655287"
+        },
+        "reviewed_at": "2026-06-13T14:21:48.585Z",
+        "reviewed_sha": "ac2abfcb9eba2474f2f49d3e0846da5e403ddda7"
       }
     ],
     "voice-editorializing": [
@@ -1230,5 +1247,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-13T13:55:33.060Z"
+  "updated_at": "2026-06-13T14:21:48.585Z"
 }

@@ -58,9 +58,9 @@ Both rows sit inside the single genus-$4$ fibre $\Sigma_4$; the third
 column is exactly the descending chain
 $g(T_{2,3}) = 1 < g(T_{2,5}) = 2 < g(\Sigma_4) = 4$.
 
-## Relation to the H₂S residual
+## Relation to the H$_2$S residual
 
-This proposition is the **provable geometric scaffold** beneath the H₂S
+This proposition is the **provable geometric scaffold** beneath the H$_2$S
 bond-angle conjecture ([`conj:h2s-angle-s3-braid-holonomy`](../molecular-construction/h2s-angle-s3-braid-holonomy.md)),
 which observes the residual opening $\Delta\theta_{\mathrm{H_2S}}$ takes the Bring
 $1/\sqrt5$ residual-mixing form. The scaffold fixes *which* $\sqrt5$ is available

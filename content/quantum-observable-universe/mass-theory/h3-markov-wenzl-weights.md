@@ -37,7 +37,7 @@ Temperley–Lieb quotient annihilates the three-row partition.
 The framework's **mass and binding computations** use a *different* trace: the
 **full-Hecke Ocneanu** Markov trace, with parameter $z = 1/(q^{1/2}+q^{-1/2})$
 and Wedderburn weights given by the Wenzl Schur-principal specialisation
-(`y_lambda_wenzl_bridge_numeric` → `closed_form_tau_M`). That trace is proven
+(`y_lambda_wenzl_bridge_numeric` $\to$ `closed_form_tau_M`). That trace is proven
 canonical — Path A (ladder linear system) $=$ Path B (Wenzl Schur) as a
 $\mathbb{Z}$-Laurent identity — in the $y_\lambda$–$\mathrm{tr}_M$ equivalence
 proof (`docs/audits/2026-05-05-y-lambda-tr-m-equivalence-proof.md`), and its

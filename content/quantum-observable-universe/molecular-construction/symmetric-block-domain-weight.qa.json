@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/molecular-construction/symmetric-block-domain-weight.lean"
   },
   "source_hashes": {
-    "md": "508fb22e5a89",
+    "md": "7bd6401d5bb8",
     "ts": "bfc79ad176f3",
     "lean": "6509d84003b8"
   },
@@ -288,6 +288,23 @@
         "reviewed_sha": "a7217279ff3d40758e3e8933eec4de55a629562a",
         "severity": "critical",
         "evidence": "quantum-observable-universe/molecular-construction/symmetric-block-domain-weight.md:40: | $\\mathrm{CH_4}$ | C $(2)$ | $AX_4E_0$ | $4\\,\\sigma\\,(q)$ | — | sp³ $109.47^\\circ$ | $:val[predicted_ch4_deg]{precision=5, witness=folio-assistant/computations/molecular-angle-master-table.witness.js | quantum-observable-universe/molecular-construction/symmetric-block-domain-weight.md:41: | $\\mathrm{NH_3}$ | N $(2)$ | $AX_3E_1$ | $3\\,\\sigma\\,(q)$ | $e^-\\,(q^3)$ | sp³ $109.47^\\circ$ | $:val[predicted_nh3_deg]{precision=5, witness=folio-assistant/computations/molecular-angle-master-table | quantum-observable-universe/molecular-construction/symmetric-block-domain-weight.md:42: | $\\mathrm{H_2O}$ | O $(2)$ | $AX_2E_2$ | $2\\,\\sigma\\,(q)$ | $2\\,e^-\\,(q^3)$ | sp³ $109.47^\\circ$ | $:val[predicted_h2o_deg]{precision=5, witness=folio-assistant/computations/molecular-angle-master-ta | quantum-observable-universe/molecular-construction/symmetric-block-domain-weight.md:43: | $\\mathrm{C_2H_4}$ | C $(2)$ | $AX_3$ | $\\sigma^2\\,(q^2){+}2\\,\\sigma\\,(q)$ | — | sp² $120^\\circ$ | $:val[predicted_c2h4_deg]{precision=5, witness=folio-assistant/computations/molecular-angle-master-t | quantum-observable-universe/molecular-construction/symmetric-block-domain-weight.md:48: $s$-channel is active and the domains take the **sp/sp²/sp³ base** by steric"
+      },
+      {
+        "field_hash": {
+          "md": "7bd6401d5bb8",
+          "ts": "bfc79ad176f3",
+          "lean": "6509d84003b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "f849b704ab06",
+          "script_commit_sha": "07b55b2b407ff515c1ce4c9d1e8bca52ad655287"
+        },
+        "reviewed_at": "2026-06-13T14:21:48.585Z",
+        "reviewed_sha": "ac2abfcb9eba2474f2f49d3e0846da5e403ddda7"
       }
     ],
     "voice-editorializing": [
@@ -1229,5 +1246,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-13T13:55:33.060Z"
+  "updated_at": "2026-06-13T14:21:48.585Z"
 }

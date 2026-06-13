@@ -216,7 +216,7 @@ after the initial derivation:
 
 Concretely, the R-matrix derivation in **Step 1** of this proof can
 be reformulated equivalently as: extract the $\mathbf{e}_-$ component
-of $\sigma_1^{-1}\sigma_2$ on $V_{1/2}^{\otimes 3}$, take the h⁴
+of $\sigma_1^{-1}\sigma_2$ on $V_{1/2}^{\otimes 3}$, take the $h^4$
 coefficient of its trace.  The $\mathbf{e}_-$ idempotent is the
 categorical replacement for the explicit $8 \times 8$ R-matrix
 computation; both are now valid Lean entry points to the same

@@ -17,5 +17,5 @@ foreknowledge.  For three acetylene units (each contributing its two
 carbons) the carbon strand-partition is $\lambda = (2,2,2)$, with
 $N = 6$ and $k = 3$.  It is an ordered composition rather than an
 unordered partition because the sub-units are individuated (sub-unit $1$,
-sub-unit $2$, …); reordering them is a separate symmetry, discussed with
+sub-unit $2$, $\ldots$); reordering them is a separate symmetry, discussed with
 the [assembly projector](#def:molecular-assembly-projector).
