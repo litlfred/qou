@@ -46,6 +46,7 @@ sys.path.insert(0, str(HERE.parent.parent / "tools" / "pyhecke" / "python"))
 
 from pyhecke.lp_dual_solver import solve_operator_selection_lp  # noqa: E402
 from murnaghan_nakayama import dim_specht  # noqa: E402
+from nucleus_sdp_assembly import cost_gram_from_arrays  # noqa: E402
 
 # ── Nucleus registry ────────────────────────────────────────────────────
 # A nucleus is (Z, N); strand count n = 3·A = 3·(Z+N). The cost has two
@@ -222,9 +223,9 @@ def main() -> int:
     keys = [str(tuple(p)) for p in parts]
     n_blocks = len(parts)
 
-    t = y * chi                       # cost t_λ = tr_M(P_λ · β)
-    frob_diag = y * np.array(dims)    # g_λ = tr_M(P_λ) = y_λ · dim S^λ
-    tr_M = float(t.sum())
+    # cost t_λ = y_λ·χ^λ + Frobenius Gram g_λ = y_λ·dim via the shared core.
+    _cg = cost_gram_from_arrays(keys, parts, dims, y, chi)
+    t, frob_diag, tr_M = _cg.t, _cg.frob_diag, _cg.tr_M
 
     # ── bar-fold symmetry analysis ──────────────────────────────────────
     idx_of = {p: i for i, p in enumerate(parts)}

@@ -103,6 +103,43 @@ class CostGram:
         return bool((self.frob_diag < 0).any())
 
 
+def cost_gram_from_arrays(
+    keys,
+    parts,
+    dims,
+    y,
+    chi,
+    *,
+    n: Optional[int] = None,
+    tr_M_check: Optional[float] = None,
+) -> CostGram:
+    """Array-based core of the cost/Gram assembly.
+
+    Builds a `CostGram` from already-resolved `keys`/`parts`/`dims` and the
+    `y_λ`, `χ^λ` arrays — the form produced by schema-agnostic loaders such as
+    `nucleus_real_sdp.load_cost`. `build_cost_gram` is the dict-based front
+    that delegates here.
+    """
+    y = np.asarray(y, dtype=float)
+    chi_v = np.asarray(chi, dtype=float)
+    dims_list = [int(d) for d in dims]
+    if n is not None:
+        assert sum(d * d for d in dims_list) == math.factorial(n), (
+            f"irrep dims do not close to {n}!"
+        )
+    t = y * chi_v
+    frob_diag = y * np.array(dims_list, dtype=float)
+    tr_M = float(t.sum())
+    if tr_M_check is not None:
+        rel = abs(tr_M - tr_M_check) / abs(tr_M_check)
+        assert rel < 1e-9, f"tr_M mismatch vs witness: {rel:.2e}"
+    keys_list = list(keys)
+    forbidden = [keys_list[i] for i, g in enumerate(frob_diag) if g < 0.0]
+    return CostGram(
+        keys_list, list(parts), dims_list, y, chi_v, t, frob_diag, tr_M, forbidden
+    )
+
+
 def build_cost_gram(
     y_lambda: dict[str, float],
     chi: dict[str, float],
@@ -110,32 +147,20 @@ def build_cost_gram(
     n: Optional[int] = None,
     tr_M_check: Optional[float] = None,
 ) -> CostGram:
-    """Assemble the real per-nucleus SDP cost + Frobenius Gram.
+    """Assemble the real per-nucleus SDP cost + Frobenius Gram from `y_λ` and
+    `χ^λ` dicts (keyed by partition string).
 
-    Centralises the pattern duplicated across ~67 scripts:
-        t_λ = y_λ · χ^λ,   G_λλ = y_λ · dim S^λ,   tr_M = Σ_λ t_λ.
-
-    `n` (= number of strands) enables the Burnside dimension check
-    `Σ_λ (dim S^λ)² = n!`; `tr_M_check` cross-checks the assembled trace
-    against a recorded value (rel-err < 1e-9).
+    Dict-based front for `cost_gram_from_arrays`; centralises the pattern
+    duplicated across ~67 scripts: `t_λ = y_λ·χ^λ`, `G_λλ = y_λ·dim S^λ`,
+    `tr_M = Σ_λ t_λ`. `n` enables the Burnside check `Σ_λ (dim S^λ)² = n!`;
+    `tr_M_check` cross-checks the assembled trace (rel-err < 1e-9).
     """
     keys = list(y_lambda.keys())
     parts = [parse_partition(k) for k in keys]
     dims = [dim_specht(p) for p in parts]
-    if n is not None:
-        assert sum(d * d for d in dims) == math.factorial(n), (
-            f"irrep dims do not close to {n}!"
-        )
     y = np.array([y_lambda[k] for k in keys], dtype=float)
     chi_v = np.array([chi[k] for k in keys], dtype=float)
-    t = y * chi_v
-    frob_diag = y * np.array(dims, dtype=float)
-    tr_M = float(t.sum())
-    if tr_M_check is not None:
-        rel = abs(tr_M - tr_M_check) / abs(tr_M_check)
-        assert rel < 1e-9, f"tr_M mismatch vs witness: {rel:.2e}"
-    forbidden = [keys[i] for i, g in enumerate(frob_diag) if g < 0.0]
-    return CostGram(keys, parts, dims, y, chi_v, t, frob_diag, tr_M, forbidden)
+    return cost_gram_from_arrays(keys, parts, dims, y, chi_v, n=n, tr_M_check=tr_M_check)
 
 
 def solve_real_sdp(cg: CostGram, n_target: float) -> dict:
