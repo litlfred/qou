@@ -70,7 +70,13 @@ def _compiled_sigmas(shape: tuple, precision: str = "double"):
     for S in sigmas:
         S_arr = S.toarray() if hasattr(S, "toarray") else np.asarray(S)
         # Convert to sympy Matrix (symbolic)
-        S_sym = sp.Matrix(dim, dim, lambda i, j: sp.sympify(S_arr[i, j]))
+        def _safe_sympify(val):
+            if type(val).__name__.startswith("float") or isinstance(val, float):
+                return sp.Float(float(val))
+            if type(val).__name__.startswith("int") or isinstance(val, int):
+                return sp.sympify(int(val))
+            return sp.sympify(val)
+        S_sym = sp.Matrix(dim, dim, lambda i, j: _safe_sympify(S_arr[i, j]))
 
         # Compile to numeric function
         if precision == "mpmath50":

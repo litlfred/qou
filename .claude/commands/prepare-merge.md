@@ -2,8 +2,9 @@
 description: Full pre-merge workflow — rebase onto upstream, integrate new content, one-voice review, 100% Lean, then request Gemini + Copilot reviews
 ---
 
-Prepare the current branch's PR for merge. Execute the steps **in order** —
-do not request external reviews until every earlier step has succeeded.
+Prepare the current branch's PR for merge. Execute the steps **in order**,
+with the exception of requesting external reviews (Step 6), which may be
+started in parallel with the Lean build (Step 4) to save time.
 
 **Workflow precondition** (per CLAUDE.md §Branch + PR workflow,
 STRICT, supersedes default "no auto-PR" guidance for this repo):
@@ -245,7 +246,7 @@ cycle.
   tip must fast-forward onto `origin/main`.
 - Push with `git push --force-with-lease -u origin <branch>`.
 
-## 6. Request external reviews (only after 1–5 succeed)
+## 6. Request external reviews (can run in parallel with 4)
 
 - Find the open PR for the current branch in `litlfred/qou` using
   `mcp__github__list_pull_requests`. If none exists, tell the user
@@ -256,6 +257,9 @@ cycle.
 - Subscribe to PR activity with `mcp__github__subscribe_pr_activity`
   so CI failures and review comments are delivered to this session.
 - Report the PR URL and confirm both review requests posted.
+
+Note: You do not need to wait for `lake build` (Step 4) to finish before
+doing this step. You can fire off the review requests while the build runs.
 
 ## 7. Merging
 
@@ -278,6 +282,7 @@ cycle.
 ## Failure handling
 
 If any step 1–5 fails and cannot be resolved automatically, **stop**
-and report the blocker to the user. Do not request Gemini or Copilot
-review on a branch that does not rebase cleanly, fails Lean build,
-or has voice inconsistencies — it wastes reviewer attention.
+and report the blocker to the user. If you already requested Gemini or
+Copilot reviews in parallel, warn the user that those reviewers might be
+looking at a broken branch, and proceed to fix the issues so you can push
+a green build as quickly as possible.

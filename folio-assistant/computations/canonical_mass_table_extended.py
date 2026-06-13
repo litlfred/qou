@@ -219,6 +219,18 @@ def compute_tr_m_canonical(
         except Exception as e:  # noqa: BLE001
             return None, 0.0, f"markov_peel: {type(e).__name__}: {e}", "markov_peel"
 
+    if method == "branching":
+        try:
+            from canonical_tr_m_via_branching import compute_tr_m_via_branching
+            from q_parameter import Q_FLOAT
+            t0 = time.time()
+            tr_mp, wall, err = compute_tr_m_via_branching(Z, N, q_val=float(Q_FLOAT))
+            if err:
+                return None, wall, err, "branching"
+            return abs(tr_mp) if tr_mp is not None else None, wall, None, "branching"
+        except Exception as e:
+            return None, 0.0, f"branching: {type(e).__name__}: {e}", "branching"
+
     # Rust paths (f64 or MPFR)
     bin_path = find_binary()
     if bin_path is None:
@@ -357,18 +369,11 @@ def main() -> int:
     )
     parser.add_argument(
         "--method",
-        choices=["laurent_q_rust", "markov_peel", "laurent_q", "rust_f64", "rust_mpfr"],
-        default="laurent_q_rust",
+        choices=["laurent_q_rust", "markov_peel", "laurent_q", "rust_f64", "rust_mpfr", "branching"],
+        default="branching",
         help=(
-            "Computation method. `laurent_q_rust` (Tier 1.A, **default**) "
-            "is the fastest production path: full reduce + trace + MPFR in "
-            "Rust via pyhecke_native.tr_m_atomic_mpfr (v0.6.0+). "
-            "`laurent_q` (PR #859) is the prior fast path: Python "
-            "LaurentQ-direct Markov-axiom recursive ascent with "
-            "MPFR-50dps output, ~3-5× over `markov_peel` at A ≥ 5. "
-            "`markov_peel` is the original sympy fast path "
-            "(sympy-heavy trace assembly). `rust_f64`/`rust_mpfr` "
-            "use the legacy direct-Hoefsmit path (don't scale past H_15)."
+            "Computation method. `branching` (operator-valued Wenzl combiner) "
+            "is the canonical pipeline per user directive, replacing empirical fits."
         ),
     )
     parser.add_argument(
