@@ -1,7 +1,7 @@
 {
   "audit": "conjectural-propagation (CLAUDE.md §3b + §3b-cond)",
-  "generated": "2026-06-08T11:27:08.167Z",
-  "total_blocks": 1919,
+  "generated": "2026-06-13T01:33:37.827Z",
+  "total_blocks": 1968,
   "class_axiomatised_conjectures": [
     "conj:algebraic-geometric-dilog-equivalence",
     "conj:alpha-k-categorical-closure",
@@ -52,6 +52,7 @@
     "conj:gs-residue-at-root-existence",
     "conj:gs-spectral-decomposition-existence",
     "conj:gs-spectral-sum-finite",
+    "conj:h2s-angle-s3-braid-holonomy",
     "conj:hecke-anyonic-substrate",
     "conj:higgs-t28",
     "conj:hoefsmit-scattering-pipeline",
@@ -133,7 +134,7 @@
     "conj:yang-mills-mass-gap",
     "conj:z-eq-n-rho-correction"
   ],
-  "provable_blocks_touching_conjecture": 139,
+  "provable_blocks_touching_conjecture": 140,
   "violators": [],
   "conditional_on_class": [
     {
@@ -1404,6 +1405,20 @@
         "conj:inter-nucleon-channel-color-tube"
       ],
       "file": "content/quantum-observable-universe/stochastic-mechanics/phi-q-aj-machinery-identification.ts"
+    },
+    {
+      "label": "prop:photon-ir-zero-mode-bring",
+      "kind": "proposition",
+      "conj": [
+        "conj:bring-hyperbolic-knot-bloch-decomposition",
+        "conj:dilogarithm-archimedean-limit",
+        "conj:mass-endomorphism",
+        "conj:hoefsmit-scattering-pipeline",
+        "conj:classical-limit-stpart",
+        "conj:geom-yekutieli-alignment",
+        "conj:hyperbolic-volume-transcendence"
+      ],
+      "file": "content/quantum-observable-universe/predicted-spectra/photon-ir-zero-mode-bring.ts"
     },
     {
       "label": "prop:prolonged-periods-fixed-depth",
