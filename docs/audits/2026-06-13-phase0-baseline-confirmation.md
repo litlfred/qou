@@ -13,7 +13,7 @@ regressions.**
 | **L2 — per-observable 100×** | **3 / 7** | 3 / 7 | m_p, m_e, m_K/m_π ✓; numbers **byte-identical** to committed (Q_β truncation-order reframing did **not** move them) |
 | **conjectural-propagation** | 1968 blocks | 1919 | +49 blocks; on the strategy's "~1,900+" track |
 | **lean_uniqueness on-disk** | 114 witnesses, 12 wired (10.5%) | 163 / 6 (stale heuristic) | producer-pool **exhausted** (#2203); the on-disk lag is CI witness-regen (billing-blocked), self-clearing |
-| **raw `sorry` occurrences** | 1171 | "50" (pre-#1566) | **not** a regression — dominated by the 12,804 generated isotope-uniqueness stubs (#1566) + conjecture-class axioms; a real-gap count needs the classifying audit, not a raw grep |
+| **actual `sorry` count** | **181** (across 1856 `.lean` files) | "50" (pre-#1566) | a raw `grep` gives 1171 but **over-counts** by ~6× — ≥331 are docstring/comment *mentions* ("sorry-free", "= conjecture", "the sorry is…") inside `/- -/` blocks. The 181 figure counts only real `sorry` tactic/term lines (`:= sorry`, `by sorry`, standalone `sorry`). The 12,804 isotopes (#1566) are covered by **parameterised** theorems (one module), **not** 12,804 separate stubs, so they do not dominate. A conjecture-class-vs-real-gap split still needs the classifying audit (this raw count does not distinguish §3b-cond axioms from genuine proof gaps). |
 
 ### L2 detail (per-observable 100× status)
 
