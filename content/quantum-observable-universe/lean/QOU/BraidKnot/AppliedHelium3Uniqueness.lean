@@ -56,6 +56,12 @@ abbrev helium3_dualSlack_posDef := nucleus_dualSlack_posDef 9
 /-- **Sorry-free uniqueness for ³He's empty SDP.** -/
 abbrev helium3_uniqueness_closed := @nucleus_uniqueness_closed 9
 
+/-- **Sorry-free ³He uniqueness via the active-empty route** — the
+    argument whose hypotheses match the R5-full witness's `active = ∅`
+    finding (all three Wedderburn-block min-eigs > 0). -/
+abbrev helium3_uniqueness_closed_via_active_empty :=
+  @nucleus_uniqueness_closed_via_active_empty 9
+
 /-- ³He optimum is the zero matrix. -/
 abbrev helium3_optimum_is_zero := nucleus_optimum_is_zero 9
 
