@@ -65,6 +65,7 @@ from pyhecke.lp_dual_solver import (  # noqa: E402
     solve_psd_operator_selection_sdp,
 )
 from murnaghan_nakayama import dim_specht  # noqa: E402  shared hook-length dim
+from nucleus_sdp_assembly import build_cost_gram, tr_M_from_cache  # noqa: E402
 
 COST_WITNESS = _pb.witness_path("iterative-lp-dual-h6-deuteron.witness.json", HERE)
 BRANCHING_WITNESS = _pb.witness_path("sublemma-2-1-deuteron-branching.witness.json", HERE)
@@ -158,26 +159,19 @@ def main() -> int:
     y_lambda = data["y_lambda_at_q0"]
     chi_beta_D = data["chi_lambda_beta_D_at_q0"]
 
-    keys = list(y_lambda.keys())
-    parts = [parse_partition(k) for k in keys]
-    dims = [dim_specht(p) for p in parts]
-
-    # sanity: Σ (dim S^λ)² = n!  (Burnside)
-    assert sum(d * d for d in dims) == math.factorial(6), "irrep dims do not close to 6!"
-
-    y = np.array([y_lambda[k] for k in keys], dtype=float)
-    chi = np.array([chi_beta_D[k] for k in keys], dtype=float)
-
-    # Phase A — real cost and Frobenius Gram
-    t = y * chi                       # t_λ = tr_M(P_λ · β_D)
-    frob_diag = y * np.array(dims)    # G_λλ = tr_M(P_λ) = y_λ · dim S^λ
-    tr_M_beta_D = float(t.sum())      # = Σ_λ y_λ χ^λ(β_D)
+    # Cost + Frobenius Gram via the shared assembly module (centralises the
+    # t_λ=y_λ·χ^λ / G_λλ=y_λ·dim pattern duplicated across ~67 scripts; the
+    # Burnside dim check + tr_M cross-check run inside build_cost_gram).
+    _cg = build_cost_gram(
+        y_lambda, chi_beta_D, n=6, tr_M_check=float(data["tr_M_check_at_q0"]),
+    )
+    keys, parts, dims = _cg.keys, _cg.parts, _cg.dims
+    y, chi = _cg.y, _cg.chi
+    t, frob_diag = _cg.t, _cg.frob_diag
+    tr_M_beta_D = _cg.tr_M
     n_target = tr_M_beta_D            # net constraint
-
-    # cross-check against the recorded Markov trace
     tr_M_recorded = float(data["tr_M_check_at_q0"])
     tr_M_rel_err = abs(tr_M_beta_D - tr_M_recorded) / abs(tr_M_recorded)
-    assert tr_M_rel_err < 1e-9, f"tr_M mismatch vs witness: {tr_M_rel_err:.2e}"
 
     # Phase A diagnostic — the q_0 Frobenius Gram is INDEFINITE.  At q_0 ≠ 1
     # the Wenzl/Markov q-trace is not positive-definite, so some blocks carry
@@ -350,28 +344,11 @@ def main() -> int:
     def pkey(lst):  # [3] -> "(3,)" ; [2,1] -> "(2, 1)"
         return "(" + ", ".join(str(x) for x in lst) + ("," if len(lst) == 1 else "") + ")"
 
-    # tr_M_neutron = Σ_ν y_ν χ^ν(n) — the canonical H_3 neutron Markov trace,
-    # read from the y-lambda-at-q0 cache (full-Hecke y_ν; no Rust needed).
-    # CORRECTION (2026-06-13): earlier code used the UNWEIGHTED proxy
-    # Σ_ν χ^ν(n) AND divided the RHS by len(parts3)=3 — both deviated from
-    # the stated identity Σ_λ[Σ_ν c^λ_{μν} χ^ν(n)] x_λ = χ^μ(p)·tr_M_neutron.
-    # Implemented verbatim here (no fit / no tuning); this is the canonical,
-    # production-default encoding.
-    _yl = json.loads((HERE / "y-lambda-at-q0.witness.json").read_text())
-    _ynu_h3: dict = {}
-
-    def _collect_ynu(o):
-        if isinstance(o, dict):
-            if o.get("partition") and "y_at_q0_50dps" in o and sum(o["partition"]) == 3:
-                _ynu_h3[pkey(o["partition"])] = float(o["y_at_q0_50dps"])
-            for v in o.values():
-                _collect_ynu(v)
-        elif isinstance(o, list):
-            for v in o:
-                _collect_ynu(v)
-
-    _collect_ynu(_yl)
-    tr_M_neutron = sum(_ynu_h3[k] * chi_n[k] for k in parts3)
+    # tr_M_neutron = Σ_ν y_ν χ^ν(n), the canonical H_3 neutron Markov trace
+    # (full-Hecke y_ν from the y-lambda-at-q0 cache; no Rust). Centralised in
+    # nucleus_sdp_assembly.tr_M_from_cache (the PR #2219 correctness fix —
+    # never the unweighted proxy Σ_ν χ^ν, never /len(parts3)).
+    tr_M_neutron = tr_M_from_cache(chi_n, n=3)
     lr_rows, lr_rhs = [], []
     for mu in parts3:
         row = np.zeros(n_blocks)
