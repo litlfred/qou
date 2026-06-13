@@ -362,6 +362,24 @@
         "reviewed_at": "2026-06-07T13:46:07.526Z",
         "reviewed_sha": "af638213a478dd151bf02a1c7949162067f278fa",
         "notes": "Lean and narrative both describe rho_K via Wedderburn-Schur decomposition; same claim"
+      },
+      {
+        "field_hash": {
+          "md": "93a86d745101",
+          "ts": "91bd607d932b",
+          "lean": "6c4ce7c0dd44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:17:37.823Z",
+        "reviewed_sha": "aae6fba2bcf952cea19934d4b7f4f4ae4b82e4d7",
+        "notes": "Auto-drained by agent"
       }
     ],
     "voice-author-notes-pollution": [
@@ -417,6 +435,24 @@
         "reviewed_at": "2026-06-07T13:46:07.380Z",
         "reviewed_sha": "af638213a478dd151bf02a1c7949162067f278fa",
         "notes": "Extended numerical discussion at q_0 follows the proposition; interpretive; no companion remark"
+      },
+      {
+        "field_hash": {
+          "md": "93a86d745101",
+          "ts": "91bd607d932b",
+          "lean": "6c4ce7c0dd44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:17:37.823Z",
+        "reviewed_sha": "aae6fba2bcf952cea19934d4b7f4f4ae4b82e4d7",
+        "notes": "Auto-drained by agent"
       }
     ],
     "fit-section-chapter": [
@@ -439,6 +475,24 @@
         "reviewed_at": "2026-06-07T13:46:07.417Z",
         "reviewed_sha": "af638213a478dd151bf02a1c7949162067f278fa",
         "notes": "H_{3A} Wedderburn refinement of rho_K fits mass-theory archimedean face"
+      },
+      {
+        "field_hash": {
+          "md": "93a86d745101",
+          "ts": "91bd607d932b",
+          "lean": "6c4ce7c0dd44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:17:37.823Z",
+        "reviewed_sha": "aae6fba2bcf952cea19934d4b7f4f4ae4b82e4d7",
+        "notes": "Auto-drained by agent"
       }
     ],
     "wall-side-statement": [
@@ -461,6 +515,24 @@
         "reviewed_at": "2026-06-07T13:46:07.453Z",
         "reviewed_sha": "af638213a478dd151bf02a1c7949162067f278fa",
         "notes": "Statement is archimedean (MeV density at q_0); mass-theory is archimedean chapter; pass"
+      },
+      {
+        "field_hash": {
+          "md": "93a86d745101",
+          "ts": "91bd607d932b",
+          "lean": "6c4ce7c0dd44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:17:37.823Z",
+        "reviewed_sha": "aae6fba2bcf952cea19934d4b7f4f4ae4b82e4d7",
+        "notes": "Auto-drained by agent"
       }
     ],
     "wall-side-proof": [
@@ -483,6 +555,24 @@
         "reviewed_at": "2026-06-07T13:46:07.488Z",
         "reviewed_sha": "af638213a478dd151bf02a1c7949162067f278fa",
         "notes": "Proof is Wedderburn decomposition of trace; algebraic then archimedean evaluation; appropriate"
+      },
+      {
+        "field_hash": {
+          "md": "93a86d745101",
+          "ts": "91bd607d932b",
+          "lean": "6c4ce7c0dd44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:17:37.823Z",
+        "reviewed_sha": "aae6fba2bcf952cea19934d4b7f4f4ae4b82e4d7",
+        "notes": "Auto-drained by agent"
       }
     ],
     "proof-no-axiom-growth": [
@@ -1309,7 +1399,87 @@
         "reviewed_at": "2026-06-11T18:06:24.673Z",
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7"
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "93a86d745101",
+          "ts": "91bd607d932b",
+          "lean": "6c4ce7c0dd44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:17:37.823Z",
+        "reviewed_sha": "aae6fba2bcf952cea19934d4b7f4f4ae4b82e4d7",
+        "notes": "Auto-drained by agent"
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "93a86d745101",
+          "ts": "91bd607d932b",
+          "lean": "6c4ce7c0dd44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:17:37.823Z",
+        "reviewed_sha": "aae6fba2bcf952cea19934d4b7f4f4ae4b82e4d7",
+        "notes": "Auto-drained by agent"
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "93a86d745101",
+          "ts": "91bd607d932b",
+          "lean": "6c4ce7c0dd44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:17:37.823Z",
+        "reviewed_sha": "aae6fba2bcf952cea19934d4b7f4f4ae4b82e4d7",
+        "notes": "Auto-drained by agent"
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "93a86d745101",
+          "ts": "91bd607d932b",
+          "lean": "6c4ce7c0dd44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:17:37.823Z",
+        "reviewed_sha": "aae6fba2bcf952cea19934d4b7f4f4ae4b82e4d7",
+        "notes": "Auto-drained by agent"
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-13T05:17:37.823Z"
 }
