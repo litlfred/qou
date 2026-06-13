@@ -2,16 +2,20 @@
 """alpha_em_rt_shadow_world_symbolic_phase1.py — Phase 1 of the RT
 shadow-world symbolic derivation of α_EM next-order.
 
-Per PR #1495's RT 2-loop derivation plan, Phase 1 is "Define
-EmFermionLoop + verify against H_3 matter probes (#1466)". This
-script implements that with the SHARP categorical identification
-from PR #1521:
+Per PR #1495's RT 2-loop derivation plan, Phase 1 is the SYMBOLIC
+IDENTITY SANITY CHECK: confirm that the SHARP categorical
+identification from PR #1521 is algebraically consistent with the
+empirical α_EM next-order form (PR #1511, merged). The EmFermionLoop
+categorical primitive and its verification against the H_3 matter
+probes (#1466) are Phase 2 — NOT implemented in this script.
+
+PR #1521 categorical identification:
 
   Categorical 1-loop self-energy = closed fundamental SU_q(2)
   fermion loop (unknot) with 2 photon-matter vertex insertions
   on M_Bring.
 
-PHASE 1 SYMBOLIC DERIVATION:
+PHASE 1 SYMBOLIC FORM:
 
 The categorical 1-loop self-energy contribution to α_EM⁻¹ is
 
@@ -19,31 +23,30 @@ The categorical 1-loop self-energy contribution to α_EM⁻¹ is
 
 where:
   matter q-dim    = J_2(unknot)(q) = [2]_q                  (PR #1521)
-  vertex factor   = ⟨σ_i² insertion⟩ from Hecke quadratic   (Yekutieli step 2)
+  vertex factor   = (1 - h²α) heuristic from Hecke quadratic (Yekutieli step 2)
   Bring norm      = π · dim H¹(M_Bring) = 8π at g=4         (PR #1521)
 
-The vertex factor: each photon-matter coupling inserts σ_i (matter
-crosses photon). Two vertices give σ_i² which by Hecke quadratic
-equals h·σ_i + 1. The σ_i term has trace ~h (from #1466 H_3
-analysis), giving:
+The vertex factor is motivated heuristically (it is NOT a derived
+trace — that is Phase 3): each photon-matter coupling inserts σ_i
+(matter crosses photon). Two vertices give σ_i² which by the Hecke
+quadratic equals h·σ_i + 1; the antisymmetric (singlet) channel
+projection supplies the minus sign, producing the observed (1 - h²α)
+factor for the 1-loop correction (α scales each vertex coupling).
 
-  ⟨σ_i² in singlet⟩ = h·⟨σ_i⟩ + 1 = h·h + 1 = 1 + h²
-                                                  ↑
-                                                  WRONG SIGN
+THIS PROBE DOES:
+  (a) Constructs the predicted coefficient α · [2]_q/(8π) · (1-h²α)
+      from the PR #1521 categorical pieces above — an assumed form;
+      NO Markov trace is computed here (that is Phase 2/3 work)
+  (b) Checks, via sympy.simplify, that this predicted form is
+      symbolically equal to the empirical α_EM next-order form
+  (c) Cross-checks the equality numerically at q_0 with α_CODATA
 
-But the antisymmetric (singlet) channel projection gives a MINUS,
-producing the observed (1 - h²α) factor for the 1-loop CORRECTION
-(α scales each vertex coupling).
-
-THIS PROBE COMPUTES:
-  (a) Symbolic Markov trace of the categorical 1-loop diagram in H_3
-      with the matter strand carrying fundamental SU_q(2) rep
-  (b) Compares to the predicted α · [2]_q/(8π) · (1-h²α) coefficient
-  (c) Honest verdict: does the H_3 Markov trace (specialized to
-      fundamental rep matter loop) reproduce the empirical form?
-
-If yes: structural derivation complete at Phase 1 level.
-If no: identifies the specific gap to the full RT shadow-world step.
+This is a SANITY CHECK that the PR #1521 identification is
+algebraically consistent with the empirical form — NOT a derivation.
+The genuine derivation (an actual H_n Markov-trace computation plus
+the rigorous 8π and Schwinger factors) is the multi-week Phase 2-6
+work per docs/coordination/2026-05-30-alpha-em-4pi-rt-2loop-
+derivation-plan.md.
 """
 from __future__ import annotations
 
@@ -63,6 +66,7 @@ set_compute_dps()
 
 from witness_base import WitnessBuilder  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from experimental_constants import ALPHA_EM_INV  # noqa: E402
 
 
 def main() -> int:
@@ -77,9 +81,11 @@ def main() -> int:
         "next-order. Implements the SHARP categorical identification "
         "from PR #1521: 1-loop self-energy = closed fundamental "
         "SU_q(2) fermion loop (unknot) with 2 photon-matter vertices "
-        "on M_Bring. Computes the symbolic Markov trace and compares "
-        "to the predicted α·[2]_q/(8π)·(1-h²α) coefficient. Honest "
-        "phase-1 result; full multi-week RT calculation per "
+        "on M_Bring. Constructs the predicted α·[2]_q/(8π)·(1-h²α) "
+        "coefficient from that identification and checks, via "
+        "sympy.simplify, that it is symbolically equal to the empirical "
+        "next-order form — a sanity check, NOT a Markov-trace "
+        "computation. Full multi-week RT calculation per "
         "docs/coordination/2026-05-30-alpha-em-4pi-rt-2loop-"
         "derivation-plan.md."
     )
@@ -157,7 +163,7 @@ def main() -> int:
     q_val = mpf(Q_50_DIGIT_STR)
     bra2_val = q_val + 1/q_val
     h_val = q_val - 1/q_val
-    alpha_val = mpf("1") / mpf("137.035999084")
+    alpha_val = mpf("1") / mpf(str(ALPHA_EM_INV))
     predicted_val = (alpha_val * bra2_val / (8 * pi)) * (1 - h_val**2 * alpha_val)
 
     print(f"  NUMERICAL VERIFICATION at q_0 = {float(q_val):.14f}:")

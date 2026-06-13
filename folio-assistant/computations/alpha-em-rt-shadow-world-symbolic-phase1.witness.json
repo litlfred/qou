@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-31T03:01:30.056636+00:00",
-  "commitSha": "b62a152d0280b9378a2bb12001a3ad8bdff1787d",
+  "computedAt": "2026-06-13T18:37:56.567637+00:00",
+  "commitSha": "90e64d48eee2b6e74993ca2df1f4355ec4965e9c",
   "assertions": [
     {
       "name": "phase_1_symbolic_identity_confirmed",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 445,
+  "durationMs": 363,
   "computation": "alpha-em-rt-shadow-world-symbolic-phase1",
   "scriptFile": "alpha_em_rt_shadow_world_symbolic_phase1.py",
-  "scriptHash": "c4411c747c0e",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "bf1837708941",
+  "scriptCommitSha": "0e2bed0a765c3ef6da1e022f4cf45188262b5ce9",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
@@ -27,12 +27,10 @@
   },
   "environment": {
     "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
-  "description": "Phase 1 of the RT shadow-world symbolic derivation of α_EM next-order. Implements the SHARP categorical identification from PR #1521: 1-loop self-energy = closed fundamental SU_q(2) fermion loop (unknot) with 2 photon-matter vertices on M_Bring. Computes the symbolic Markov trace and compares to the predicted α·[2]_q/(8π)·(1-h²α) coefficient. Honest phase-1 result; full multi-week RT calculation per docs/coordination/2026-05-30-alpha-em-4pi-rt-2loop-derivation-plan.md.",
+  "description": "Phase 1 of the RT shadow-world symbolic derivation of α_EM next-order. Implements the SHARP categorical identification from PR #1521: 1-loop self-energy = closed fundamental SU_q(2) fermion loop (unknot) with 2 photon-matter vertices on M_Bring. Constructs the predicted α·[2]_q/(8π)·(1-h²α) coefficient from that identification and checks, via sympy.simplify, that it is symbolically equal to the empirical next-order form — a sanity check, NOT a Markov-trace computation. Full multi-week RT calculation per docs/coordination/2026-05-30-alpha-em-4pi-rt-2loop-derivation-plan.md.",
   "contentBlock": "prop:em-coupling-bring-zero-mode",
   "data": {
     "symbolic_identity": {

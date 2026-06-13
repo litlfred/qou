@@ -36,8 +36,8 @@ the same pre-existing main-level cluster on `validate` and
 failures, not actionable from any feature branch.  Skipping per
 established pattern.
 
-Copilot reviewed #1511 (3 comments, all addressed pre-merge) and
-#1527 (completed with success conclusion).  Gemini hit its daily
+Copilot reviewed #1511 (3 comments, all addressed pre-merge).
+Review of this PR (#1527) is pending.  Gemini hit its daily
 quota on #1511 (won't review additional PRs today).
 
 ## Main-branch watch (skill §8)
