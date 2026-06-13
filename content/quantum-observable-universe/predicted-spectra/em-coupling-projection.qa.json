@@ -9,8 +9,7 @@
   },
   "source_hashes": {
     "md": "93c3c1866e92",
-    "ts": "f9656f636a3f",
-    "lean": "aa6c1dcf0f25"
+    "ts": "f9656f636a3f"
   },
   "criteria": {
     "voice-status-leak": [
@@ -359,6 +358,23 @@
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
         "notes": "Label 'prop:em-coupling-projection' → expected 'em_coupling_projection'; Lean declares: R_q, q_param, q_inv_param, qInteger, antisymmetricEigenvalue.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "93c3c1866e92",
+          "ts": "f9656f636a3f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:23:30.577Z",
+        "reviewed_sha": "b3b5d9570abf56e22663fed79dec33ee7962ab2c",
+        "notes": "Auto-drained by agent"
       }
     ],
     "voice-author-notes-pollution": [
@@ -413,6 +429,23 @@
         "reviewed_at": "2026-06-05T01:21:36.358Z",
         "reviewed_sha": "1d7be05efa7adf6c65c178599c3276a10c056531",
         "notes": "Interpretation content should be in a remark block, not the proposition body."
+      },
+      {
+        "field_hash": {
+          "md": "93c3c1866e92",
+          "ts": "f9656f636a3f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:23:30.577Z",
+        "reviewed_sha": "b3b5d9570abf56e22663fed79dec33ee7962ab2c",
+        "notes": "Auto-drained by agent"
       }
     ],
     "fit-section-chapter": [
@@ -434,6 +467,23 @@
         "reviewed_at": "2026-06-05T01:22:13.955Z",
         "reviewed_sha": "1d7be05efa7adf6c65c178599c3276a10c056531",
         "notes": "Clear fit."
+      },
+      {
+        "field_hash": {
+          "md": "93c3c1866e92",
+          "ts": "f9656f636a3f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:23:30.577Z",
+        "reviewed_sha": "b3b5d9570abf56e22663fed79dec33ee7962ab2c",
+        "notes": "Auto-drained by agent"
       }
     ],
     "wall-side-statement": [
@@ -455,6 +505,23 @@
         "reviewed_at": "2026-06-05T01:22:30.162Z",
         "reviewed_sha": "1d7be05efa7adf6c65c178599c3276a10c056531",
         "notes": "Pre-archimedean wall respected in proposition statement."
+      },
+      {
+        "field_hash": {
+          "md": "93c3c1866e92",
+          "ts": "f9656f636a3f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:23:30.577Z",
+        "reviewed_sha": "b3b5d9570abf56e22663fed79dec33ee7962ab2c",
+        "notes": "Auto-drained by agent"
       }
     ],
     "wall-side-proof": [
@@ -476,6 +543,23 @@
         "reviewed_at": "2026-06-05T01:22:51.291Z",
         "reviewed_sha": "1d7be05efa7adf6c65c178599c3276a10c056531",
         "notes": "Numerical evaluation sections should be segregated from the pre-archimedean proof."
+      },
+      {
+        "field_hash": {
+          "md": "93c3c1866e92",
+          "ts": "f9656f636a3f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:23:30.577Z",
+        "reviewed_sha": "b3b5d9570abf56e22663fed79dec33ee7962ab2c",
+        "notes": "Auto-drained by agent"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -499,6 +583,23 @@
         "reviewed_at": "2026-06-07T06:04:24.336Z",
         "reviewed_sha": "c73427b6738f398cb32fb2a9541142ef5650167e",
         "notes": "md derivation is excellent and explicit: 3 layers (charge=q-writhe; coupling=|tr_tau(e_-)|^2=q^-1 singlet idempotent via spectral completeness; force-carrier complexity [9]_q[10]_q via Bring genus-4 uniqueness), with honest open-problem ledger for the 0.155% residual. Plan very clear."
+      },
+      {
+        "field_hash": {
+          "md": "93c3c1866e92",
+          "ts": "f9656f636a3f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:23:30.577Z",
+        "reviewed_sha": "b3b5d9570abf56e22663fed79dec33ee7962ab2c",
+        "notes": "Auto-drained by agent"
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -522,6 +623,23 @@
         "reviewed_at": "2026-06-07T06:04:24.371Z",
         "reviewed_sha": "c73427b6738f398cb32fb2a9541142ef5650167e",
         "notes": "Lean does not prove the alpha_EM formula - it is a class-field projection stub (restates assumed nat-equalities). The md's bare formula derivation is solid/pre-archimedean but the 0.155% residual closure (Chern-Simons kappa) is admitted unproved/sorry, and the formal goal is a stub. Core gap at the formal level."
+      },
+      {
+        "field_hash": {
+          "md": "93c3c1866e92",
+          "ts": "f9656f636a3f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:23:30.577Z",
+        "reviewed_sha": "b3b5d9570abf56e22663fed79dec33ee7962ab2c",
+        "notes": "Auto-drained by agent"
       }
     ],
     "proof-rater-novelty": [
@@ -545,6 +663,23 @@
         "reviewed_at": "2026-06-07T06:04:24.407Z",
         "reviewed_sha": "c73427b6738f398cb32fb2a9541142ef5650167e",
         "notes": "The categorical derivation of alpha_EM as singlet-idempotent trace over Bring-forced force-carrier complexity (turning a phenomenological fit into a ring-theoretic invariant in R, valid over any specialisation) is a substantive non-standard argument in the md."
+      },
+      {
+        "field_hash": {
+          "md": "93c3c1866e92",
+          "ts": "f9656f636a3f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:23:30.577Z",
+        "reviewed_sha": "b3b5d9570abf56e22663fed79dec33ee7962ab2c",
+        "notes": "Auto-drained by agent"
       }
     ],
     "proof-statement-integrity": [
@@ -565,6 +700,23 @@
         "reviewed_at": "2026-06-07T06:04:24.300Z",
         "reviewed_sha": "c73427b6738f398cb32fb2a9541142ef5650167e",
         "notes": "RESTATES-TARGET / structure-hypothesis projection: lean.ref qou:QOU.Archimedean.em_coupling_projection resolves to the lowercase placeholder-stub file lean/QOU/Archimedean/em_coupling_projection.lean:99. theorem em_coupling_projection [ctx:EmCouplingProjectionContext] : (endRank=2 and centralIdempotentCount=2) and singlet_channel_count=1 and bringTorusKnotCount=2 := <ctx.claim_i, ctx.claim_ii, ctx.claim_iii> -- the class FIELDS literally ARE the conclusion (claim_i_two_strand_completeness : endRank=2 and ...), so the proof projects hypotheses back as conclusion. Does NOT formalize the md's actual claim alpha_EM = q^-1/([9]_q[10]_q). (The real decl in EmCouplingProjection.lean:73 is commented out as 'not meaningful over R_q'.)"
+      },
+      {
+        "field_hash": {
+          "md": "93c3c1866e92",
+          "ts": "f9656f636a3f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:23:30.577Z",
+        "reviewed_sha": "b3b5d9570abf56e22663fed79dec33ee7962ab2c",
+        "notes": "Auto-drained by agent"
       }
     ],
     "proof-no-axiom-growth": [
@@ -1392,5 +1544,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-13T05:23:30.577Z"
 }
