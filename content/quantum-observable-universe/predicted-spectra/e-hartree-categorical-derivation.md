@@ -1229,6 +1229,67 @@ other is absorbed into item 1. This **tightens** the round-23 accounting —
 there is no extra "physically-natural unproved input" beyond the conjecture's
 own $(2,2) = \mathrm{EM}$ hypothesis.
 
+### Round 25 — why the EM channel is $(2,2)$: the doubled-singlet induction
+
+Witness:
+[`e-hartree-round25-em-channel-induction.witness.json`](folio-assistant/computations/e-hartree-round25-em-channel-induction.witness.json)
+(producer
+[`e_hartree_round25_em_channel_induction.py`](folio-assistant/computations/e_hartree_round25_em_channel_induction.py),
+3/3; stdlib, exact $S_4$ character theory). Round 24 left the
+$(2,2) = \mathrm{EM}$ identification as the conjecture's core conditional. This
+round **grounds** that choice — it derives $(2,2)$ from the covalent-pair
+structure by standard induction, *without* closing the conjecture.
+
+**The 2-strand EM coupling is the sign rep of $S_2$.** By
+[`prop:em-coupling-projection`](#prop:em-coupling-projection) the electromagnetic
+exchange is the singlet idempotent $e_- = \Lambda^2 A$ — the antisymmetric
+channel of the two strands, $\mathrm{sgn}$ of $S_2$. A covalent single bond shares
+exactly two electrons (Pauli-2), each carrying one such EM singlet, so the pair
+occupies $\mathrm{sgn} \boxtimes \mathrm{sgn}$ on $S_2 \times S_2$.
+
+**Inducing to the 4-strand molecular braid.** Standard induction (Frobenius
+reciprocity against the $S_4$ character table, verified in the witness) gives,
+each with multiplicity $1$,
+
+$$
+  \mathrm{Ind}_{S_2 \times S_2}^{S_4}(\mathrm{sgn} \boxtimes \mathrm{sgn})
+  \;=\; (2,2) \,\oplus\, (2,1,1) \,\oplus\, (1,1,1,1)
+$$
+
+— equivalently $s_{(1,1)} \cdot s_{(1,1)} = s_{(2,2)} + s_{(2,1,1)} + s_{(1^4)}$.
+The three summands read off physically:
+
+| summand | $\lambda^{T}$ | channel |
+|---|---|---|
+| $(2,2)$ | $(2,2)$ (self) | parity-symmetric **bound state** $=$ EM |
+| $(2,1,1)$ | $(3,1)$ | **force-carrier** ($T_{2,9}$ on $B_4$, [`prop:force-carrier-intertwining-correspondence`](#prop:force-carrier-intertwining-correspondence)) |
+| $(1,1,1,1)$ | $(4)$ | fully antisymmetric $=$ **decoupled** / separated-atom |
+
+**The bound-state channel is forced to $(2,2)$.** A covalent bound state has
+definite (symmetric) parity, hence is closed under the Hopf antipode
+$S : V_\lambda \mapsto V_{\lambda^{T}}$; its channel must therefore be
+self-transpose. Among the induced summands $(2,2)$ is the **unique**
+self-conjugate one ($(2,2)^{T} = (2,2)$, while $(2,1,1)^{T} = (3,1)$ and
+$(1^4)^{T} = (4)$ leave the set). This is proved **sorry-free** in Lean —
+`em_channel_forced_to_two_two` and `unique_self_conjugate_partition_of_four`
+(in `QOU.Archimedean.EHartreeTraceRatio`, by `decide` on the partition
+conjugate). So the EM exchange between the covalent pair lands in $(2,2)$ not by
+assignment but as the self-dual summand of the doubled EM singlet.
+
+**What this grounds vs. what remains (honest).** This *advances* the
+$(2,2) = \mathrm{EM}$ identification from "the unique self-transpose partition of
+$4$" to "the self-dual summand of $\mathrm{Ind}(\mathrm{sgn} \boxtimes
+\mathrm{sgn})$" — tying it to the 2-strand EM singlet of
+`prop:em-coupling-projection` and the covalent Pauli-2 pairing, with the other
+two summands matching the force-carrier and decoupled channels. It does **not**
+close the conjecture: it still rests on the physical input *"covalent bond $=$ two
+EM singlets"* and on the separate round-20 $\alpha^2$ algebra that lands the
+*magnitude* on $(2,2)$. (The $(2,1,1)$ force-carrier coincidence is corroboration
+only — `prop:force-carrier-intertwining-correspondence` is itself conditional on
+this conjecture, so it cannot be used to close it.) The residual remains exactly
+**(a) the $(2,2) = \mathrm{EM}$ identification — now grounded, not eliminated —
+and (b) the $m_e c^2$ CAL-1 unit.**
+
 ### What is still missing for closure
 
 A genuinely categorical derivation of the $\alpha_{EM}^{2}$ scaling
