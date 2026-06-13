@@ -1,0 +1,198 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "symmetric-point-channel-collapse",
+  "kind": "proposition",
+  "paths": {
+    "ts": "content/quantum-observable-universe/models-of-qous/symmetric-point-channel-collapse.ts",
+    "md": "content/quantum-observable-universe/models-of-qous/symmetric-point-channel-collapse.md",
+    "lean": "content/quantum-observable-universe/models-of-qous/symmetric-point-channel-collapse.lean"
+  },
+  "source_hashes": {
+    "md": "aa4cd3b420d9",
+    "ts": "97c9d450c125",
+    "lean": "e6305c2c9a94"
+  },
+  "criteria": {
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "aa4cd3b420d9",
+          "ts": "97c9d450c125",
+          "lean": "e6305c2c9a94"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:19:55.642Z",
+        "reviewed_sha": "593efefbd468d987b81dc99c1e1adca716c7829d",
+        "notes": "Auto-drained by agent"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "aa4cd3b420d9",
+          "ts": "97c9d450c125",
+          "lean": "e6305c2c9a94"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:19:55.642Z",
+        "reviewed_sha": "593efefbd468d987b81dc99c1e1adca716c7829d",
+        "notes": "Auto-drained by agent"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "aa4cd3b420d9",
+          "ts": "97c9d450c125",
+          "lean": "e6305c2c9a94"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:19:55.642Z",
+        "reviewed_sha": "593efefbd468d987b81dc99c1e1adca716c7829d",
+        "notes": "Auto-drained by agent"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "aa4cd3b420d9",
+          "ts": "97c9d450c125",
+          "lean": "e6305c2c9a94"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:19:55.642Z",
+        "reviewed_sha": "593efefbd468d987b81dc99c1e1adca716c7829d",
+        "notes": "Auto-drained by agent"
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "aa4cd3b420d9",
+          "ts": "97c9d450c125",
+          "lean": "e6305c2c9a94"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:19:55.642Z",
+        "reviewed_sha": "593efefbd468d987b81dc99c1e1adca716c7829d",
+        "notes": "Auto-drained by agent"
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "aa4cd3b420d9",
+          "ts": "97c9d450c125",
+          "lean": "e6305c2c9a94"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:19:55.642Z",
+        "reviewed_sha": "593efefbd468d987b81dc99c1e1adca716c7829d",
+        "notes": "Auto-drained by agent"
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "aa4cd3b420d9",
+          "ts": "97c9d450c125",
+          "lean": "e6305c2c9a94"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:19:55.642Z",
+        "reviewed_sha": "593efefbd468d987b81dc99c1e1adca716c7829d",
+        "notes": "Auto-drained by agent"
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "aa4cd3b420d9",
+          "ts": "97c9d450c125",
+          "lean": "e6305c2c9a94"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:19:55.642Z",
+        "reviewed_sha": "593efefbd468d987b81dc99c1e1adca716c7829d",
+        "notes": "Auto-drained by agent"
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "aa4cd3b420d9",
+          "ts": "97c9d450c125",
+          "lean": "e6305c2c9a94"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:19:55.642Z",
+        "reviewed_sha": "593efefbd468d987b81dc99c1e1adca716c7829d",
+        "notes": "Auto-drained by agent"
+      }
+    ]
+  },
+  "updated_at": "2026-06-13T05:19:55.642Z"
+}

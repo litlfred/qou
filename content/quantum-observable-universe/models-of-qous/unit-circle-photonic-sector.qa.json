@@ -1,0 +1,35 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "unit-circle-photonic-sector",
+  "kind": "remark",
+  "paths": {
+    "ts": "content/quantum-observable-universe/models-of-qous/unit-circle-photonic-sector.ts",
+    "md": "content/quantum-observable-universe/models-of-qous/unit-circle-photonic-sector.md"
+  },
+  "source_hashes": {
+    "md": "f75c27ac6ffd",
+    "ts": "02fcffe374d4"
+  },
+  "criteria": {
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "f75c27ac6ffd",
+          "ts": "02fcffe374d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:19:55.642Z",
+        "reviewed_sha": "593efefbd468d987b81dc99c1e1adca716c7829d",
+        "notes": "Auto-drained by agent"
+      }
+    ]
+  },
+  "updated_at": "2026-06-13T05:19:55.642Z"
+}
