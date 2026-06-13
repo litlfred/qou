@@ -32,7 +32,7 @@ listed in §6.
   **empirical**. That is the fit "get rid of fitting" targets.
 - **The replacement is already-derived**: the q-heat-kernel eigenvalue
   `μ_λ(q) = ℏ_q² Σ_□ [c(□)]_q [c(□)+1]_q`
-  ([`prop:q-heat-kernel-peter-weyl`](../../content/quantum-observable-universe/)),
+  ([`prop:q-heat-kernel-peter-weyl`](../../content/quantum-observable-universe/information-theory/q-heat-kernel-peter-weyl.md)),
   a per-partition weight that grades by depth structurally. It is the
   one candidate weight the existing measure-search never tested (§4).
 
@@ -117,6 +117,31 @@ test on D/T/³He/⁴He at full p(3A) (no truncation); t substrate-fixed
 (zero-fit) with a 1-param-t variant reported separately and tiered;
 assert the refutation if it does not close (a zero-fit refutation is
 still a result and prunes the class).
+
+## 4a. Probe result (this PR) — derived heat-kernel weight REFUTED (zero-fit)
+
+[`binding_heat_kernel_weight_probe.py`](../../folio-assistant/computations/binding_heat_kernel_weight_probe.py)
+→ `binding-heat-kernel-weight-probe.witness.json`. Tests the derived
+μ_λ eigenvalue weight `C_λ(q)=Σ_□[c]_q[c+1]_q` in `B=E·Σ_λ w_λ|Δθ_λ|`
+at one global scale over D/T/³He/⁴He (full p(3A) sum, no truncation):
+
+| weight | worst \|err\| | S(⁴He)/S(D) vs 12.72 | verdict |
+|---|---|---|---|
+| **heat μ_λ eigenvalue** (derived, zero-fit) | 61.3% | **34.15** (over) | **refuted** — over-weights growth channels |
+| heat kernel e^{−μ_λτ} (1-param τ) | 100–381% | ~0 (suppresses) | refuted — same failure mode as y_λ |
+| abs_content Σ\|c\| (classical baseline) | 19.9% | 13.40 ≈ target | closest A-growth, still no closure |
+| y_λ (baseline) | 198.8% | 0.04 | anti-correlates (known) |
+
+**Reading:** the derived weight *brackets* the right A-growth — the
+μ_λ eigenvalue overshoots (Σ[c]_q[c+1]_q ~ q-quadratic in content),
+the heat kernel e^{−μτ} suppresses (like y_λ). The classical Σ\|c\|
+(≈ linear in content) lands closest on A-growth but still misses at
+19.9%. **No per-block weight on |Δθ_λ| closes A≥3 to 5%** — direct
+corroboration of the many-body ceiling (§3): a per-block measure
+cannot carry 4-body cooperativity. The heat-kernel de-fit lever is
+**closed as a closure mechanism** (zero-fit refutation); the open
+lever stays the substrate-derivation of the per-depth assignment
+rule (or the operator-valued combiner, §7).
 
 ## 5. Discipline guardrails (STRICT)
 
