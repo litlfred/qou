@@ -84,11 +84,11 @@ variable {W : Type u} (R : Type v) [CommRing R] (q : R)
     the constant-term identity `4q + (q − 1)² = (q + 1)²` is
     `ring`-true. -/
 theorem T_avg_squares_to_scalar (s : S) :
-    (2 * QOU.IwahoriHecke.Quotient.T R q S s -
+    (2 * Quotient.T R q S s -
       (algebraMap R _ q - 1))^2 = (algebraMap R _ q + 1)^2 := by
   -- The Hecke quadratic relation:
   --   (T_s - algebraMap R _ q) * (T_s + 1) = 0
-  have h := QOU.IwahoriHecke.Quotient.T_hecke_quadratic_relation R q S s
+  have h := Quotient.T_hecke_quadratic_relation R q S s
   -- Reduce LHS − RHS to 4 · (Hecke quadratic), which is `4 · 0 = 0`.
   linear_combination 4 * h
 
@@ -98,7 +98,7 @@ theorem T_avg_squares_to_scalar (s : S) :
 
       `(2 · T_s − (q − 1))² − (q + 1)² = 0`. -/
 theorem T_avg_centered_squared_eq_zero (s : S) :
-    (2 * QOU.IwahoriHecke.Quotient.T R q S s -
+    (2 * Quotient.T R q S s -
       (algebraMap R _ q - 1))^2 - (algebraMap R _ q + 1)^2 = 0 := by
   rw [T_avg_squares_to_scalar R q S s, sub_self]
 
