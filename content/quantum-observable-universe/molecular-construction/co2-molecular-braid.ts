@@ -17,5 +17,12 @@ export default definition({
     "linear",
     "triatomic",
     "molecular-braid",
-  ],
+  ],,
+  computation: {
+    engine: "python",
+    witness: [
+      "folio-assistant/computations/molecular-experimental-refs.witness.json"
+    ],
+    status: "experimental",
+  },
 });

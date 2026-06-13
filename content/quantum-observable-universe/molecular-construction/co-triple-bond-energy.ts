@@ -8,5 +8,12 @@ export default remark({
   title: "$CO$ triple bond energy from the Wedderburn invariants",
   interprets: "prop:co-lp-dual-binding",
   uses: ["def:co-molecular-braid"],
-  tags: ["CO", "triple-bond", "binding-energy", "prediction"],
+  tags: ["CO", "triple-bond", "binding-energy", "prediction"],,
+  computation: {
+    engine: "python",
+    witness: [
+      "folio-assistant/computations/co-bond-order-active-set.witness.json"
+    ],
+    status: "experimental",
+  },
 });

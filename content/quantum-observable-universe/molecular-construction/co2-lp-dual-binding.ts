@@ -11,5 +11,13 @@ export default proposition({
     "def:co2-molecular-braid",
     "prop:co-lp-dual-binding",
   ],
-  tags: ["CO2", "LP-dual", "linear", "geometry", "double-bond"],
+  tags: ["CO2", "LP-dual", "linear", "geometry", "double-bond"],,
+  computation: {
+    engine: "python",
+    witness: [
+      "folio-assistant/computations/co-bond-order-active-set.witness.json",
+      "folio-assistant/computations/molecular-experimental-refs.witness.json"
+    ],
+    status: "experimental",
+  },
 });
