@@ -1,8 +1,101 @@
 {
   "audit": "trivial-skeleton-audit",
-  "generated": "2026-05-25T14:28:14.991Z",
-  "total_flagged": 0,
-  "files_flagged": 0,
-  "patterns": {},
-  "flagged": {}
+  "generated": "2026-06-13T15:36:47.032Z",
+  "total_flagged": 13,
+  "files_flagged": 12,
+  "patterns": {
+    "trivial_model": 9,
+    "one_def": 4
+  },
+  "flagged": {
+    "lean/QOU/AppendixSurreals/CasimirNStability.lean": [
+      {
+        "line": 61,
+        "pattern": "one_def",
+        "snippet": "def normalizedTrace (_n : ℕ) (_q : ℝ) : ℝ := 1"
+      }
+    ],
+    "lean/QOU/BraidKnot/CemeteryGroupEmergence.lean": [
+      {
+        "line": 85,
+        "pattern": "trivial_model",
+        "snippet": "def trivialModel (R : Type u) [CommRing R] (q : R)"
+      }
+    ],
+    "lean/QOU/BraidKnot/ConfinementGradingCorrespondence.lean": [
+      {
+        "line": 82,
+        "pattern": "trivial_model",
+        "snippet": "def trivialModel (R : Type u) [CommRing R] (q : R)"
+      }
+    ],
+    "lean/QOU/BraidKnot/CrystalGraphRealization.lean": [
+      {
+        "line": 103,
+        "pattern": "trivial_model",
+        "snippet": "def trivialModel (R : Type u) [CommRing R] (q : R) :"
+      }
+    ],
+    "lean/QOU/BraidKnot/CrystalRMatrixSubLemma.lean": [
+      {
+        "line": 194,
+        "pattern": "trivial_model",
+        "snippet": "def trivialModel (R : Type u) [CommRing R] (q : R) :"
+      }
+    ],
+    "lean/QOU/BraidKnot/GSReductionOrder.lean": [
+      {
+        "line": 128,
+        "pattern": "trivial_model",
+        "snippet": "def trivialModel (R : Type u) [CommRing R] (q : R) : GSOrderMatch R q where"
+      }
+    ],
+    "lean/QOU/BraidKnot/HeckeAnyonicSubstrate.lean": [
+      {
+        "line": 91,
+        "pattern": "trivial_model",
+        "snippet": "def trivialModel (R : Type u) [CommRing R] (q : R) :"
+      }
+    ],
+    "lean/QOU/BraidKnot/KazhdanLusztigClassicalLimit.lean": [
+      {
+        "line": 104,
+        "pattern": "trivial_model",
+        "snippet": "def trivialModel (R : Type u) [CommRing R] (q : R)"
+      }
+    ],
+    "lean/QOU/BraidKnot/RootOfUnityMTCTruncation.lean": [
+      {
+        "line": 111,
+        "pattern": "trivial_model",
+        "snippet": "def trivialModel (R : Type u) [CommRing R] (q : R)"
+      }
+    ],
+    "lean/QOU/BraidKnot/SymmetricCrystalPairProduction.lean": [
+      {
+        "line": 101,
+        "pattern": "trivial_model",
+        "snippet": "def trivialModel (R : Type u) [CommRing R] (q : R)"
+      }
+    ],
+    "lean/QOU/Machinery/DerivedCharacterCatalogue.lean": [
+      {
+        "line": 420,
+        "pattern": "one_def",
+        "snippet": "def figureEightThreeHiggsChi {R : Type*} [CommRing R] (_q : R) : R := 1"
+      },
+      {
+        "line": 440,
+        "pattern": "one_def",
+        "snippet": "def figureEightOneOneOneHiggsChi {R : Type*} [CommRing R] (_q : R) : R := 1"
+      }
+    ],
+    "mass-theory/lem-crystal-demazure-w0-refuted-deuteron.lean": [
+      {
+        "line": 50,
+        "pattern": "one_def",
+        "snippet": "def deuteronTol : ℚ := 1"
+      }
+    ]
+  }
 }
