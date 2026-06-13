@@ -76,7 +76,7 @@ def LightNucleus.n₀ : LightNucleus → ℕ
 def LightNucleus.numConstituents : LightNucleus → ℕ
   | n => n.A
 
-/-- **CanonicalKnotIdSDP** — the conjectural class.
+/-! ### **CanonicalKnotIdSDP** — the conjectural class.
 
     An instance for nucleus `n` asserts that the joint mass-tower
     confinement SDP at the atomic strand count `n.n₀ = 3·n.A` uniquely
@@ -270,13 +270,18 @@ verified explicit braid word from the inter-nucleon enumerator search
     is similarly verified: no length-1 PSD-feasible inter-nucleon
     word exists in {σ_3, σ_3^{-1}}.
 
-  * **³H, ³He (placeholder, pending L > 2 enumeration)** — the L=2
-    minimum-length PSD-feasible search yields 12 candidates per atom
-    (all single-Hopf-style σ_i² for i ∈ {3,..,8}).  The historical
-    L_{6a4} (³He) and 8_{11}-class (³H) bindings are 3-component
-    links involving more crossings; an L > 2 search with extended
-    Markov-class matching is needed to identify the canonical K
-    uniquely.  bindingKWord is set to `[3, 3]` as a placeholder.
+  * **³H, ³He (L = 3 enumeration RUN — honest negative)** — the
+    extended-generator (σ_3..σ_8) search at L_K_max = 3 enumerated 1596
+    candidates per atom, 12 PSD-feasible.  The min-length AND the
+    best-Markov-residual winner both remain the length-2 Hopf σ_3² =
+    `[3, 3]` (best residual ≈ 0.93, still far from the ≈ 0 target).  The
+    historical 3-component L_{6a4} (³He) / 8_{11}-class (³H) links are
+    NOT enumeration-selected at L = 3: every top candidate is a single
+    σ_i² Hopf, and no length-3 word matches the target better.  Closing
+    this needs L > 3, a different generator basis, or a corrected
+    Markov-stabilization target (the naive z^{n_0 − n_braid} target is
+    over-simplified — binding-k-enumerator.witness.json open item).
+    `bindingKWord` stays `[3, 3]`: the L=3-confirmed winner.
 
 The Props are still `True` at the Lean level (placeholder witnesses
 `trivial`), but their *statements* are now structurally specific:
@@ -318,12 +323,13 @@ instance instCanonicalKnotIdSDP_deuterium : CanonicalKnotIdSDP .deuterium where
 
 -- Ref: [manuscript] conj:canonical-knot-id-sdp § "Structural decomposition"
 -- Ref: [manuscript] binding-k-enumerator.witness.json (issue #604 deliverable 3)
--- The bindingKWord is a placeholder pending L > 2 enumeration of the
--- 8_11-class binding link in B_9; see witness `next_session_extensions`.
+-- L=3 enumeration RUN (witness binding-k-enumerator): the 8_11-class
+-- 3-component link is NOT min-length-selected at L=3; bindingKWord [3,3]
+-- is the L=3-confirmed min-length winner (σ_3² Hopf).
 instance instCanonicalKnotIdSDP_tritium : CanonicalKnotIdSDP .tritium where
   canonicalKnotId := "8_11"
   bindingLinkName := "8_11-class link in B_9"
-  bindingKWord := [3, 3]                       -- placeholder; needs L > 2
+  bindingKWord := [3, 3]                       -- L=3-confirmed min-length winner (σ_3² Hopf)
   rho := 2
   rho_pos := by decide
   -- Placeholder semantic Props as decidable structural proxies — see
@@ -343,12 +349,13 @@ instance instCanonicalKnotIdSDP_tritium : CanonicalKnotIdSDP .tritium where
 
 -- Ref: [manuscript] conj:canonical-knot-id-sdp § "Structural decomposition"
 -- Ref: [manuscript] binding-k-enumerator.witness.json (issue #604 deliverable 3)
--- The bindingKWord is a placeholder pending L > 2 enumeration of the
--- L_{6a4} 3-component-link binding in B_9; see witness `next_session_extensions`.
+-- L=3 enumeration RUN (witness binding-k-enumerator): the L_{6a4}
+-- 3-component link is NOT min-length-selected at L=3; bindingKWord [3,3]
+-- is the L=3-confirmed min-length winner (σ_3² Hopf).
 instance instCanonicalKnotIdSDP_helium3 : CanonicalKnotIdSDP .helium3 where
   canonicalKnotId := "L6a4"
   bindingLinkName := "L_{6a4} 3-component link in B_9"
-  bindingKWord := [3, 3]                       -- placeholder; needs L > 2
+  bindingKWord := [3, 3]                       -- L=3-confirmed min-length winner (σ_3² Hopf)
   rho := 2
   rho_pos := by decide
   -- Placeholder semantic Props as decidable structural proxies — see
@@ -432,7 +439,7 @@ class R5FullWitness (n : LightNucleus) where
   /-- Witness records strong duality at the recorded primal/dual. -/
   primal_obj : ℝ
   dual_obj : ℝ
-  duality_gap_le : |primal_obj - dual_obj| ≤ (10⁻⁶ : ℝ)
+  duality_gap_le : |primal_obj - dual_obj| ≤ (1e-6 : ℝ)
   /-- The chosen multiplicity ρ at the search winner. -/
   rho_star : ℕ
   rho_star_pos : 0 < rho_star
@@ -542,7 +549,7 @@ theorem helium3_canonical_uniqueness_via_strict_complementarity
           _active_dual_pos_or_empty, _inactive_dual_zero⟩ := sc
   exact {
     canonicalKnotId := "L6a4 (canonical-id name; bindingKWord = [3,3] placeholder)"
-    bindingLinkName := "L_{6a4} 3-component link in B_9 — placeholder pending L > 2 enumeration"
+    bindingLinkName := "L_{6a4} 3-component link in B_9 — L=3 enum: σ_3² Hopf [3,3] is the min-length winner"
     bindingKWord := ([3, 3] : BraidWord)
     rho := w.rho_star
     rho_pos := w.rho_star_pos
@@ -592,7 +599,7 @@ theorem deuterium_canonical_uniqueness_pending_multiterm_cost
           _active_dual_pos_or_empty, _inactive_dual_zero⟩ := sc
   exact {
     canonicalKnotId := "6_2 (canonical-id name; bindingKWord = [3,3] placeholder)"
-    bindingLinkName := "L_H (Hopf, σ_3² in B_6) — placeholder pending L > 2 enumeration"
+    bindingLinkName := "L_H (Hopf, σ_3² in B_6) — L=3 enum: σ_3² Hopf [3,3] is the min-length winner"
     bindingKWord := ([3, 3] : BraidWord)
     rho := w.rho_star
     rho_pos := w.rho_star_pos
@@ -636,7 +643,7 @@ theorem tritium_canonical_uniqueness_pending_hoefsmit_h5
           _active_dual_pos_or_empty, _inactive_dual_zero⟩ := sc
   exact {
     canonicalKnotId := "8_11 (canonical-id name; bindingKWord = [3,3] placeholder)"
-    bindingLinkName := "8_11-class link in B_9 — placeholder pending L > 2 enumeration"
+    bindingLinkName := "8_11-class link in B_9 — L=3 enum: σ_3² Hopf [3,3] is the min-length winner"
     bindingKWord := ([3, 3] : BraidWord)
     rho := w.rho_star
     rho_pos := w.rho_star_pos
@@ -705,7 +712,7 @@ theorem helium3_existence_with_witness_rho
       inst.rho = w.rho_star := by
   refine ⟨{
     canonicalKnotId := "L6a4 (canonical-id name; bindingKWord = [3,3] placeholder)"
-    bindingLinkName := "L_{6a4} 3-component link in B_9 — placeholder pending L > 2 enumeration"
+    bindingLinkName := "L_{6a4} 3-component link in B_9 — L=3 enum: σ_3² Hopf [3,3] is the min-length winner"
     bindingKWord := ([3, 3] : BraidWord)
     rho := w.rho_star
     rho_pos := w.rho_star_pos
