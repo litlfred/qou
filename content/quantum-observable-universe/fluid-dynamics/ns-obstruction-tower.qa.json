@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/fluid-dynamics/ns-obstruction-tower.lean"
   },
   "source_hashes": {
-    "md": "b45451a87d92",
+    "md": "1759c7c70cc6",
     "ts": "b7e562226f04",
     "lean": "76013347d865"
   },
@@ -573,21 +573,22 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "b45451a87d92",
-          "ts": "965ea23de38c",
-          "lean": "9f2ceb24a8b8"
+          "md": "1759c7c70cc6",
+          "ts": "b7e562226f04",
+          "lean": "76013347d865"
         },
-        "result": "pass",
-        "evidence": "proposition with detailed mathematical parts (a)-(e); Summary is mathematical",
+        "result": "fail",
+        "severity": "minor",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
+          "agent_date": "2026-06-13",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T10:00:00.661Z",
-        "reviewed_sha": "c2b296b787f282526008689a95749a04773bbed7"
+        "reviewed_at": "2026-06-13T19:06:02.165Z",
+        "reviewed_sha": "782b75d8a21015413016c4b28f9467f12449ccf5",
+        "notes": "The statement contains extensive derivations and explanatory sections (a)-(e) and a Summary, which belong in a **Proof.** section or a separate remark."
       }
     ],
     "voice-unicode-crash": [
@@ -1421,5 +1422,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-13T13:55:33.060Z"
+  "updated_at": "2026-06-13T19:06:02.165Z"
 }

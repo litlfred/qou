@@ -7,7 +7,7 @@
     "md": "content/quantum-observable-universe/fluid-dynamics/core-levi-interpretation.md"
   },
   "source_hashes": {
-    "md": "a1ccc3d60f33",
+    "md": "a1d60c8fd5c9",
     "ts": "09d776c42cc1"
   },
   "criteria": {
@@ -302,20 +302,19 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "a1ccc3d60f33",
+          "md": "a1d60c8fd5c9",
           "ts": "09d776c42cc1"
         },
         "result": "pass",
-        "evidence": "remark",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
+          "agent_date": "2026-06-13",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T10:12:54.692Z",
-        "reviewed_sha": "b9d92344e258d5bcb202e00e98ef195dda20d8f4"
+        "reviewed_at": "2026-06-13T19:04:59.672Z",
+        "reviewed_sha": "782b75d8a21015413016c4b28f9467f12449ccf5"
       }
     ],
     "wall-side-statement": [
@@ -1041,5 +1040,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-13T13:55:33.060Z"
+  "updated_at": "2026-06-13T19:04:59.672Z"
 }

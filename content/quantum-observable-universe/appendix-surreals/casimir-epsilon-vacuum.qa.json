@@ -8,28 +8,12 @@
     "lean": "content/quantum-observable-universe/lean/QOU/AppendixSurreals.lean"
   },
   "source_hashes": {
-    "md": "a1d8576940d3",
+    "md": "68f51cfe7453",
     "ts": "9b99f6654f73",
     "lean": "e1d0d7c64d9f"
   },
   "criteria": {
     "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "d2ebf1ee0769",
-          "ts": "9b99f6654f73"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-06-13",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-13T03:56:42.550Z",
-        "reviewed_sha": "b5b8eae463d7af2bb3713e19411d17e939e9c9bb"
-      },
       {
         "field_hash": {
           "md": "a1d8576940d3",
@@ -46,6 +30,23 @@
         "reviewed_at": "2026-06-13T13:17:24.519Z",
         "reviewed_sha": "a60319f319d74654752b4454b7d03890ca907d1a",
         "notes": "Auto-drained by agent"
+      },
+      {
+        "field_hash": {
+          "md": "68f51cfe7453",
+          "ts": "9b99f6654f73",
+          "lean": "e1d0d7c64d9f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T19:05:36.771Z",
+        "reviewed_sha": "782b75d8a21015413016c4b28f9467f12449ccf5"
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -963,5 +964,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-13T13:55:33.060Z"
+  "updated_at": "2026-06-13T19:05:36.771Z"
 }

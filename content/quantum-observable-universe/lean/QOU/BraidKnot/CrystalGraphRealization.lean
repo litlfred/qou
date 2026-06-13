@@ -1,4 +1,4 @@
-import QOU.Basic
+import Mathlib.Algebra.Ring.Basic
 
 /-!
 # QOU.BraidKnot.CrystalGraphRealization — crystal-graph realisation (conjecture)
@@ -98,7 +98,7 @@ instance canonical (R : Type u) [CommRing R] (q : R) :
   nodeOf _ := PUnit.unit
   raising _ _ := none
   lowering _ _ := none
-  crystal_realises _ _ := sorry
+  crystal_realises _ _ := rfl
 
 end CrystalGraphRealization
 

@@ -31,6 +31,23 @@
         "reviewed_at": "2026-06-13T13:16:08.600Z",
         "reviewed_sha": "6b44ecdbb4f5bf1c4e1c2b1a08f9244d2ee52803",
         "notes": "Auto-drained by agent"
+      },
+      {
+        "field_hash": {
+          "md": "2bce16ec36fd",
+          "ts": "1f46e793f619",
+          "lean": "0746cc69c717"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T19:05:40.334Z",
+        "reviewed_sha": "782b75d8a21015413016c4b28f9467f12449ccf5"
       }
     ],
     "fit-section-chapter": [
@@ -51,6 +68,23 @@
         "reviewed_at": "2026-06-13T13:16:08.600Z",
         "reviewed_sha": "6b44ecdbb4f5bf1c4e1c2b1a08f9244d2ee52803",
         "notes": "Auto-drained by agent"
+      },
+      {
+        "field_hash": {
+          "md": "2bce16ec36fd",
+          "ts": "1f46e793f619",
+          "lean": "0746cc69c717"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T19:05:35.558Z",
+        "reviewed_sha": "782b75d8a21015413016c4b28f9467f12449ccf5"
       }
     ],
     "wall-side-statement": [
@@ -71,6 +105,24 @@
         "reviewed_at": "2026-06-13T13:16:08.600Z",
         "reviewed_sha": "6b44ecdbb4f5bf1c4e1c2b1a08f9244d2ee52803",
         "notes": "Auto-drained by agent"
+      },
+      {
+        "field_hash": {
+          "md": "2bce16ec36fd",
+          "ts": "1f46e793f619",
+          "lean": "0746cc69c717"
+        },
+        "result": "pass",
+        "evidence": "Statement explicitly flags the archimedean component via an italicized banner at the top.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T19:05:45.061Z",
+        "reviewed_sha": "782b75d8a21015413016c4b28f9467f12449ccf5"
       }
     ],
     "wall-side-proof": [
@@ -91,6 +143,24 @@
         "reviewed_at": "2026-06-13T13:16:08.600Z",
         "reviewed_sha": "6b44ecdbb4f5bf1c4e1c2b1a08f9244d2ee52803",
         "notes": "Auto-drained by agent"
+      },
+      {
+        "field_hash": {
+          "md": "2bce16ec36fd",
+          "ts": "1f46e793f619",
+          "lean": "0746cc69c717"
+        },
+        "result": "pass",
+        "evidence": "Proof clearly delineates the exact algebraic step from the archimedean evaluation step.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T19:05:49.796Z",
+        "reviewed_sha": "782b75d8a21015413016c4b28f9467f12449ccf5"
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1248,5 +1318,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-13T14:21:48.585Z"
+  "updated_at": "2026-06-13T19:05:49.796Z"
 }

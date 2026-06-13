@@ -31,6 +31,25 @@
         "reviewed_at": "2026-06-13T13:13:46.044Z",
         "reviewed_sha": "88066c71350a12686bed316f1c0074602038420a",
         "notes": "Auto-drained by agent"
+      },
+      {
+        "field_hash": {
+          "md": "511a36b5b714",
+          "ts": "5acbce5e0534",
+          "lean": "286f106d6c96"
+        },
+        "result": "fail",
+        "severity": "minor",
+        "evidence": "The block contains two sections of substantive interpretative prose ('Two torus knots, not one fibre' and 'Relation to the H residual') in the same block as the proposition statement, without using a separate linked remark.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T19:04:50.120Z",
+        "reviewed_sha": "782b75d8a21015413016c4b28f9467f12449ccf5"
       }
     ],
     "fit-section-chapter": [
@@ -51,6 +70,24 @@
         "reviewed_at": "2026-06-13T13:13:46.044Z",
         "reviewed_sha": "88066c71350a12686bed316f1c0074602038420a",
         "notes": "Auto-drained by agent"
+      },
+      {
+        "field_hash": {
+          "md": "511a36b5b714",
+          "ts": "5acbce5e0534",
+          "lean": "286f106d6c96"
+        },
+        "result": "pass",
+        "evidence": "The block directly addresses Bring's genus-4 Seifert fibre and the relevant knots, which fits cleanly into the brings-surface chapter scope.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T19:04:54.433Z",
+        "reviewed_sha": "782b75d8a21015413016c4b28f9467f12449ccf5"
       }
     ],
     "wall-side-statement": [
@@ -71,6 +108,24 @@
         "reviewed_at": "2026-06-13T13:13:46.044Z",
         "reviewed_sha": "88066c71350a12686bed316f1c0074602038420a",
         "notes": "Auto-drained by agent"
+      },
+      {
+        "field_hash": {
+          "md": "511a36b5b714",
+          "ts": "5acbce5e0534",
+          "lean": "286f106d6c96"
+        },
+        "result": "pass",
+        "evidence": "The statement includes numeric/archimedean evaluation, but it explicitly flags the archimedean specialisation at the top with a §7c conditional banner.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T19:04:59.674Z",
+        "reviewed_sha": "782b75d8a21015413016c4b28f9467f12449ccf5"
       }
     ],
     "wall-side-proof": [
@@ -91,6 +146,24 @@
         "reviewed_at": "2026-06-13T13:13:46.044Z",
         "reviewed_sha": "88066c71350a12686bed316f1c0074602038420a",
         "notes": "Auto-drained by agent"
+      },
+      {
+        "field_hash": {
+          "md": "511a36b5b714",
+          "ts": "5acbce5e0534",
+          "lean": "286f106d6c96"
+        },
+        "result": "pass",
+        "evidence": "There is no formal 'Proof.' block that violates the wall; the Lean structure section accurately explains the separation between the algebraic cyclotomic relations and the deferred archimedean sign evaluation.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T19:05:04.537Z",
+        "reviewed_sha": "782b75d8a21015413016c4b28f9467f12449ccf5"
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1246,5 +1319,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-13T14:21:48.585Z"
+  "updated_at": "2026-06-13T19:05:04.537Z"
 }

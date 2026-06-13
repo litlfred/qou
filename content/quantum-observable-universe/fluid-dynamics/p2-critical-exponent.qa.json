@@ -8,8 +8,8 @@
     "lean": "content/quantum-observable-universe/fluid-dynamics/p2-critical-exponent.lean"
   },
   "source_hashes": {
-    "md": "6746bac42a19",
-    "ts": "db732b697344",
+    "md": "9d4a37adcb5e",
+    "ts": "0daf69178cd9",
     "lean": "0b8e28917fb9"
   },
   "criteria": {
@@ -531,24 +531,6 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "0740669181e9",
-          "ts": "db732b697344",
-          "lean": "0b8e28917fb9"
-        },
-        "result": "pass",
-        "evidence": "proposition in NS regularity section; enstrophy divergence exponent alpha=4/3 at q->1",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-08T09:59:02.106Z",
-        "reviewed_sha": "c2b296b787f282526008689a95749a04773bbed7"
-      },
-      {
-        "field_hash": {
           "md": "6746bac42a19",
           "ts": "db732b697344",
           "lean": "0b8e28917fb9"
@@ -564,6 +546,23 @@
         "reviewed_at": "2026-06-13T13:16:06.219Z",
         "reviewed_sha": "6b44ecdbb4f5bf1c4e1c2b1a08f9244d2ee52803",
         "notes": "Auto-drained by agent"
+      },
+      {
+        "field_hash": {
+          "md": "9d4a37adcb5e",
+          "ts": "0daf69178cd9",
+          "lean": "0b8e28917fb9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T19:06:14.947Z",
+        "reviewed_sha": "782b75d8a21015413016c4b28f9467f12449ccf5"
       }
     ],
     "wall-side-statement": [
@@ -1533,5 +1532,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-13T13:55:33.060Z"
+  "updated_at": "2026-06-13T19:06:14.947Z"
 }

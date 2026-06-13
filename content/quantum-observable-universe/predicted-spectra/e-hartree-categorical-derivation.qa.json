@@ -8,9 +8,9 @@
     "lean": "content/quantum-observable-universe/predicted-spectra/e-hartree-categorical-derivation.lean"
   },
   "source_hashes": {
-    "md": "f17fd511b889",
-    "ts": "ec54fa37d284",
-    "lean": "16317b916710"
+    "md": "bc18680dee91",
+    "ts": "e70ae1f20a2e",
+    "lean": "333fa44aba55"
   },
   "criteria": {
     "compute-lp-dual-present": [
@@ -423,6 +423,23 @@
         "reviewed_at": "2026-06-13T13:17:25.918Z",
         "reviewed_sha": "a60319f319d74654752b4454b7d03890ca907d1a",
         "notes": "Auto-drained by agent"
+      },
+      {
+        "field_hash": {
+          "md": "bc18680dee91",
+          "ts": "e70ae1f20a2e",
+          "lean": "333fa44aba55"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T19:06:30.180Z",
+        "reviewed_sha": "782b75d8a21015413016c4b28f9467f12449ccf5"
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1154,5 +1171,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-13T14:31:59.507Z"
+  "updated_at": "2026-06-13T19:06:30.180Z"
 }

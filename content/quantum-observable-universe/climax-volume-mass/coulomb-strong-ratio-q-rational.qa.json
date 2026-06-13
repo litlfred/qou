@@ -1045,7 +1045,88 @@
         "reviewed_at": "2026-06-13T18:16:12.747Z",
         "reviewed_sha": "76e2730f8df5fc3e234a2dce8bf6dde7aa16b581"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "f5e85d1ac6e3",
+          "ts": "c16a00d596b7",
+          "lean": "73a22c430d3b"
+        },
+        "result": "fail",
+        "severity": "minor",
+        "evidence": "Block contains a 'Why this matters' section with substantive interpretive prose right below the statement.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T19:05:56.647Z",
+        "reviewed_sha": "782b75d8a21015413016c4b28f9467f12449ccf5"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "f5e85d1ac6e3",
+          "ts": "c16a00d596b7",
+          "lean": "73a22c430d3b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T19:05:56.924Z",
+        "reviewed_sha": "782b75d8a21015413016c4b28f9467f12449ccf5"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "f5e85d1ac6e3",
+          "ts": "c16a00d596b7",
+          "lean": "73a22c430d3b"
+        },
+        "result": "fail",
+        "severity": "major",
+        "evidence": "Statement hard-codes archimedean constructs (tanh, ln) in a substrate chapter without a separate algebraic specialisation step.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T19:05:57.135Z",
+        "reviewed_sha": "782b75d8a21015413016c4b28f9467f12449ccf5"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "f5e85d1ac6e3",
+          "ts": "c16a00d596b7",
+          "lean": "73a22c430d3b"
+        },
+        "result": "warn",
+        "evidence": "Proves the algebraic identity directly over Reals instead of specialising a substrate result, mixing regimes.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T19:05:57.338Z",
+        "reviewed_sha": "782b75d8a21015413016c4b28f9467f12449ccf5"
+      }
     ]
   },
-  "updated_at": "2026-06-13T18:16:12.747Z"
+  "updated_at": "2026-06-13T19:05:57.338Z"
 }

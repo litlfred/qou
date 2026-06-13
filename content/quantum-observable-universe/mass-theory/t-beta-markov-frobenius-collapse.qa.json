@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/mass-theory/t-beta-markov-frobenius-collapse.lean"
   },
   "source_hashes": {
-    "md": "349cd578e03b",
+    "md": "e71375eceef2",
     "ts": "871441eb683c",
     "lean": "08ddab0ffdef"
   },
@@ -31,6 +31,25 @@
         "reviewed_at": "2026-06-13T13:16:08.120Z",
         "reviewed_sha": "6b44ecdbb4f5bf1c4e1c2b1a08f9244d2ee52803",
         "notes": "Auto-drained by agent"
+      },
+      {
+        "field_hash": {
+          "md": "e71375eceef2",
+          "ts": "871441eb683c",
+          "lean": "08ddab0ffdef"
+        },
+        "result": "fail",
+        "severity": "minor",
+        "evidence": "Interpretive prose included in proposition.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T19:07:45.756Z",
+        "reviewed_sha": "782b75d8a21015413016c4b28f9467f12449ccf5"
       }
     ],
     "fit-section-chapter": [
@@ -51,6 +70,25 @@
         "reviewed_at": "2026-06-13T13:16:08.120Z",
         "reviewed_sha": "6b44ecdbb4f5bf1c4e1c2b1a08f9244d2ee52803",
         "notes": "Auto-drained by agent"
+      },
+      {
+        "field_hash": {
+          "md": "e71375eceef2",
+          "ts": "871441eb683c",
+          "lean": "08ddab0ffdef"
+        },
+        "result": "fail",
+        "severity": "major",
+        "evidence": "Orphan block: not listed in mass-theory.ts chapter manifest.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T19:07:46.011Z",
+        "reviewed_sha": "782b75d8a21015413016c4b28f9467f12449ccf5"
       }
     ],
     "wall-side-statement": [
@@ -71,6 +109,24 @@
         "reviewed_at": "2026-06-13T13:16:08.120Z",
         "reviewed_sha": "6b44ecdbb4f5bf1c4e1c2b1a08f9244d2ee52803",
         "notes": "Auto-drained by agent"
+      },
+      {
+        "field_hash": {
+          "md": "e71375eceef2",
+          "ts": "871441eb683c",
+          "lean": "08ddab0ffdef"
+        },
+        "result": "pass",
+        "evidence": "Algebraic framework.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T19:07:46.286Z",
+        "reviewed_sha": "782b75d8a21015413016c4b28f9467f12449ccf5"
       }
     ],
     "wall-side-proof": [
@@ -91,6 +147,24 @@
         "reviewed_at": "2026-06-13T13:16:08.120Z",
         "reviewed_sha": "6b44ecdbb4f5bf1c4e1c2b1a08f9244d2ee52803",
         "notes": "Auto-drained by agent"
+      },
+      {
+        "field_hash": {
+          "md": "e71375eceef2",
+          "ts": "871441eb683c",
+          "lean": "08ddab0ffdef"
+        },
+        "result": "pass",
+        "evidence": "Algebraic.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T19:07:46.584Z",
+        "reviewed_sha": "782b75d8a21015413016c4b28f9467f12449ccf5"
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1226,5 +1300,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-13T13:55:33.060Z"
+  "updated_at": "2026-06-13T19:07:46.584Z"
 }

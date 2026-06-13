@@ -174,7 +174,7 @@ ISOTOPES = [
 
 
 def borromean_mass_prediction(
-    q: mp.mpf, Z: int, N: int,
+    q: mp.mpf, Z: int, N: int, atom_name: str = None,
 ) -> dict:
     """Predict absolute mass of nucleus (Z, N) via the Borromean
     baryon mass formula (Family A + substrate-pure flavor-split).
@@ -184,8 +184,11 @@ def borromean_mass_prediction(
     m_n_pred = m_avg · (1 + Δm/(2·M_N))
     m_nucleus = Z · m_p_pred + N · m_n_pred − B(K)
 
-    Returns dict with prediction details.
+    If Vol(K) is available for the atom, uses the truth-tracking
+    per-knot formula: m(K) = m_e · VolDensity(K, q₀)
     """
+    m_e = mp.mpf(str(M_E_MEV))
+
     # Load substrate identity predictions (sub-ppb accuracy)
     # from the canonical witness, falling back to Family A if unavailable.
     sub_witness = _pb.witness_path("m-p-substrate-identity-50dps.witness.json", HERE)
@@ -204,7 +207,6 @@ def borromean_mass_prediction(
         m_n_pred = m_n_pred * habiro_ratio
         _source = "substrate-identity + Habiro brane-tower"
     else:
-        m_e = mp.mpf(str(M_E_MEV))
         vol_density = vol_density_borromean(q)
         delta_m_over_M = flavor_split_subleading(q)
         m_avg = m_e * vol_density
@@ -216,14 +218,46 @@ def borromean_mass_prediction(
     # Nucleus mass (before binding): Z protons + N neutrons
     m_nucleus_unbound = Z * m_p_pred + N * m_n_pred
 
+    # TRUTH-TRACKING OVERRIDE (per-knot VolDensity)
+    m_pb = None
+    vol_K_used = None
+    if atom_name is not None:
+        try:
+            import json as _json
+            vol_witness = HERE / "per-atom-hyperbolic-volume.witness.json"
+            if vol_witness.exists():
+                vol_data = _json.load(vol_witness.open())["data"]
+                vol_key = f"Vol_{atom_name}"
+                if vol_key in vol_data:
+                    from closed_form_tau_M import compute_tau_M_nucleon_H3, closed_form_tau_M
+                    from _li_2_q_util import vol_density_per_block
+                    tau_p_H3 = compute_tau_M_nucleon_H3("p", q)
+                    tau_n_H3 = compute_tau_M_nucleon_H3("n", q)
+                    tr_M_K = closed_form_tau_M(Z, N, q, tau_p_H3, tau_n_H3)
+                    vol_K_used = mp.mpf(str(vol_data[vol_key]))
+                    m_pb = m_e * vol_density_per_block(vol_K_used, tr_M_K, q)
+                    m_nucleus_unbound = m_pb
+                    _source += " [OVERRIDE: per-knot VolDensity]"
+                else:
+                    m_nucleus_unbound = None
+                    _source += " [ERROR: missing Vol(K)]"
+            else:
+                m_nucleus_unbound = None
+                _source += " [ERROR: missing per-atom-hyperbolic-volume.witness.json]"
+        except Exception as e:
+            m_nucleus_unbound = None
+            _source += f" [ERROR: {e}]"
+
     m_avg = (m_p_pred + m_n_pred) / 2
     return {
         "linking_weight_family_a": float(linking_weight),
-        "source": _source if '_source' in dir() else "Family A",
+        "source": _source,
         "m_avg_MeV": float(m_avg),
         "m_p_pred_MeV": float(m_p_pred),
         "m_n_pred_MeV": float(m_n_pred),
-        "m_nucleus_unbound_MeV": float(m_nucleus_unbound),
+        "m_nucleus_unbound_MeV": float(m_nucleus_unbound) if m_nucleus_unbound is not None else None,
+        "vol_K": float(vol_K_used) if vol_K_used else None,
+        "is_per_knot": m_pb is not None,
     }
 
 
@@ -352,7 +386,7 @@ def main() -> int:
         t0 = time.monotonic()
 
         # Absolute mass prediction
-        m_nucleus_unbound = Z * m_p_pred + N * m_n_pred
+        m_nucleus_unbound = borromean_mass_prediction(q, Z, N, name)["m_nucleus_unbound_MeV"]
 
         # Binding energy
         binding = try_binding_canonical(Z, N, Q_50_DIGIT_STR)
@@ -363,7 +397,7 @@ def main() -> int:
             B_pred = binding.get("B_pred_MeV") or 0.0
             B_method = binding.get("method", "?")
 
-        m_pred = m_nucleus_unbound - B_pred
+        m_pred = (m_nucleus_unbound - B_pred) if m_nucleus_unbound is not None else None
         B_AME = AME_BINDING.get(name, 0.0)
 
         # CODATA/AME mass for comparison
@@ -377,7 +411,7 @@ def main() -> int:
             )
 
         # Errors
-        m_err_pct = ((m_pred - m_codata) / m_codata * 100) if m_codata else None
+        m_err_pct = ((m_pred - m_codata) / m_codata * 100) if (m_codata and m_pred is not None) else None
         B_err_pct = ((B_pred - B_AME) / B_AME * 100) if B_AME > 0 else None
 
         # Caveats

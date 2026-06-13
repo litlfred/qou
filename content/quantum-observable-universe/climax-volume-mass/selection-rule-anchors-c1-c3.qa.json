@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/climax-volume-mass/selection-rule-anchors-c1-c3.lean"
   },
   "source_hashes": {
-    "md": "b0ad141bbbbd",
+    "md": "256f0b7546c1",
     "ts": "3a169738c514",
     "lean": "1b5aa4c1bf28"
   },
@@ -16,89 +16,79 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "b0ad141bbbbd",
+          "md": "256f0b7546c1",
           "ts": "3a169738c514",
           "lean": "1b5aa4c1bf28"
         },
-        "result": "pass",
+        "result": "fail",
         "severity": "minor",
-        "evidence": "selection-rule-anchors-c1-c3.md:1 - statement + Why this matters + Lean proof structure sections",
+        "evidence": "Block contains a 'Why this matters' section with substantive interpretive prose right below the statement.",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
+          "agent_date": "2026-06-13",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-07T13:45:08.305Z",
-        "reviewed_sha": "6c9527e2d7274b26960b77a5211e434216472711",
-        "notes": "Why this matters and Lean proof sections are mathematical derivation rationale; no physical interpretation prose"
+        "reviewed_at": "2026-06-13T19:05:25.586Z",
+        "reviewed_sha": "782b75d8a21015413016c4b28f9467f12449ccf5"
       }
     ],
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "b0ad141bbbbd",
+          "md": "256f0b7546c1",
           "ts": "3a169738c514",
           "lean": "1b5aa4c1bf28"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "selection-rule-anchors-c1-c3.ts: label prop:selection-rule-anchors-c1-c3",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
+          "agent_date": "2026-06-13",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-07T13:45:08.340Z",
-        "reviewed_sha": "6c9527e2d7274b26960b77a5211e434216472711",
-        "notes": "selection rule anchors for per-component linking weight; fits braiding/spectral-filter content in climax-volume-mass"
+        "reviewed_at": "2026-06-13T19:05:30.406Z",
+        "reviewed_sha": "782b75d8a21015413016c4b28f9467f12449ccf5"
       }
     ],
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "b0ad141bbbbd",
+          "md": "256f0b7546c1",
           "ts": "3a169738c514",
           "lean": "1b5aa4c1bf28"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "selection-rule-anchors-c1-c3.md: q in R_{>0}; lw values are Laurent polynomials; CLAUDE.md 7c compliant",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
+          "agent_date": "2026-06-13",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-07T13:45:08.375Z",
-        "reviewed_sha": "6c9527e2d7274b26960b77a5211e434216472711",
-        "notes": "explicitly CLAUDE.md 7c compliant; real q>0 is substrate-anchor regime; Laurent polynomial identities are fibre-level"
+        "reviewed_at": "2026-06-13T19:05:35.457Z",
+        "reviewed_sha": "782b75d8a21015413016c4b28f9467f12449ccf5"
       }
     ],
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "b0ad141bbbbd",
+          "md": "256f0b7546c1",
           "ts": "3a169738c514",
           "lean": "1b5aa4c1bf28"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "selection-rule-anchors-c1-c3.lean:25 - (q : R) (hq : 0 < q); field_simp; ring",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
+          "agent_date": "2026-06-13",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-07T13:45:08.411Z",
-        "reviewed_sha": "6c9527e2d7274b26960b77a5211e434216472711",
-        "notes": "proof over R with 0<q; polynomial identity proof by ring; matches archimedean statement"
+        "reviewed_at": "2026-06-13T19:05:41.000Z",
+        "reviewed_sha": "782b75d8a21015413016c4b28f9467f12449ccf5"
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1236,5 +1226,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-13T13:55:33.060Z"
+  "updated_at": "2026-06-13T19:05:41.000Z"
 }
