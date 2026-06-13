@@ -48,39 +48,6 @@ give `Q_sym = 0.01943` (identical to 10 decimal places).
 
 namespace QOU.Archimedean
 
-/-- **Skein-multiset invariance — typeclass (Pattern 4).**
-
-    Per-pair witness that the symmetric Skein polynomial agrees on
-    two configurations sharing the same nucleon multiset. The
-    universal claim depends on the `List.Perm.prod_eq`
-    + multiset-of-pairs argument not yet in Mathlib; until then,
-    callers supply the witness for the specific configurations they
-    use (typically a fixed nucleus where computational verification
-    is available, e.g. tritium with 9 ordering checks). -/
-class SkeinMultisetInvariant
-    (config₁ config₂ : NuclearConfig)
-    (_h_same : config₁.length = config₂.length)
-    (_h_perm : ∀ t : NucleonType, config₁.count t = config₂.count t) : Prop where
-  /-- Polynomials agree on configurations with the same nucleon multiset. -/
-  invariance : skeinPolynomialSym config₁ = skeinPolynomialSym config₂
-
-/-- Reflexivity instance: when both configs are the same, the
-    polynomials are trivially equal. -/
-instance skeinMultisetInvariant_refl (config : NuclearConfig)
-    (h_same : config.length = config.length)
-    (h_perm : ∀ t : NucleonType, config.count t = config.count t) :
-    SkeinMultisetInvariant config config h_same h_perm :=
-  ⟨rfl⟩
-
-/-- Per-instance form: the deprecated free-function alias. -/
-theorem skein_multiset_invariance_axiom
-    (config₁ config₂ : NuclearConfig)
-    (h_same : config₁.length = config₂.length)
-    (h_perm : ∀ t : NucleonType, config₁.count t = config₂.count t)
-    [hi : SkeinMultisetInvariant config₁ config₂ h_same h_perm] :
-    skeinPolynomialSym config₁ = skeinPolynomialSym config₂ :=
-  hi.invariance
-
 /-! ## §1  The Young-symmetrized Skein polynomial -/
 
 /-- The Young-symmetrized Skein polynomial is defined as
@@ -117,6 +84,39 @@ noncomputable def skeinPolynomialSym (config : NuclearConfig) : R_t :=
         acc * (w_plus_t v * q_from_t + w_zero_t v)
       ) 1
     factors.foldl (· * ·) 1
+
+/-- **Skein-multiset invariance — typeclass (Pattern 4).**
+
+    Per-pair witness that the symmetric Skein polynomial agrees on
+    two configurations sharing the same nucleon multiset. The
+    universal claim depends on the `List.Perm.prod_eq`
+    + multiset-of-pairs argument not yet in Mathlib; until then,
+    callers supply the witness for the specific configurations they
+    use (typically a fixed nucleus where computational verification
+    is available, e.g. tritium with 9 ordering checks). -/
+class SkeinMultisetInvariant
+    (config₁ config₂ : NuclearConfig)
+    (_h_same : config₁.length = config₂.length)
+    (_h_perm : ∀ t : NucleonType, config₁.count t = config₂.count t) : Prop where
+  /-- Polynomials agree on configurations with the same nucleon multiset. -/
+  invariance : skeinPolynomialSym config₁ = skeinPolynomialSym config₂
+
+/-- Reflexivity instance: when both configs are the same, the
+    polynomials are trivially equal. -/
+instance skeinMultisetInvariant_refl (config : NuclearConfig)
+    (h_same : config.length = config.length)
+    (h_perm : ∀ t : NucleonType, config.count t = config.count t) :
+    SkeinMultisetInvariant config config h_same h_perm :=
+  ⟨rfl⟩
+
+/-- Per-instance form: the deprecated free-function alias. -/
+theorem skein_multiset_invariance_axiom
+    (config₁ config₂ : NuclearConfig)
+    (h_same : config₁.length = config₂.length)
+    (h_perm : ∀ t : NucleonType, config₁.count t = config₂.count t)
+    [hi : SkeinMultisetInvariant config₁ config₂ h_same h_perm] :
+    skeinPolynomialSym config₁ = skeinPolynomialSym config₂ :=
+  hi.invariance
 
 /-! ## §2  Ordering independence theorem -/
 
