@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-12T20:12:25.935699+00:00",
-  "commitSha": "8c088c128ae752d2f1b81fd04b544a701c7f24ab",
+  "computedAt": "2026-06-13T01:54:10.433275+00:00",
+  "commitSha": "476249624b38116deaf72d7a33992258c8a7c009",
   "assertions": [
     {
       "name": "q->1 limit of chi(sigma_1 sigma_3) table = S_4 character column (12)(34)",
@@ -48,11 +48,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 624,
+  "durationMs": 3586,
   "computation": "e-hartree-round19-dressed-scalar-block",
   "scriptFile": "e_hartree_round19_dressed_scalar_block.py",
-  "scriptHash": "cd71a2dcb52c",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "e70da885944d",
+  "scriptCommitSha": "476249624b38116deaf72d7a33992258c8a7c009",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

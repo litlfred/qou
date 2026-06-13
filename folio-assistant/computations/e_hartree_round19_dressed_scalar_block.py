@@ -112,8 +112,8 @@ S4_CLASS_2_2 = {(4,): 1, (3, 1): -1, (2, 2): 2, (2, 1, 1): -1,
                 (1, 1, 1, 1): 1}      # S_4 character column of (12)(34)
 
 
-def qint(k):
-    return (q ** k - q ** (-k)) / (q - 1 / q)
+def qint(k, q_sym=q, h_sym=h):
+    return (q_sym ** k - q_sym ** (-k)) / h_sym
 
 
 def main() -> None:
@@ -155,8 +155,7 @@ def main() -> None:
     m = sp.symbols("m", positive=True, integer=True)
     B_m = (q ** m + q ** (-m)) / (q + 1 / q)
     A_m = sp.simplify(q ** m - B_m * q)
-    A_closed = sp.simplify(h * (q ** (m - 1) - q ** (1 - m)) / (q - 1 / q)
-                           / (q + 1 / q))  # h [m-1]_q / [2]_q
+    A_closed = sp.simplify(h * qint(m - 1) / (q + 1 / q))  # h [m-1]_q / [2]_q
     A_ok = sp.simplify(A_m - A_closed) == 0
     # eigenvalue sanity: A_m + B_m*q = q^m, A_m - B_m/q = -q^{-m}
     eig_ok = (sp.simplify(A_m + B_m * q - q ** m) == 0 and
