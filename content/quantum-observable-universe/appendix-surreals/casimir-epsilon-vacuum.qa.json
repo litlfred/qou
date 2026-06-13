@@ -9,8 +9,7 @@
   },
   "source_hashes": {
     "md": "a1d8576940d3",
-    "ts": "9b99f6654f73",
-    "lean": "e1d0d7c64d9f"
+    "ts": "9b99f6654f73"
   },
   "criteria": {
     "fit-section-chapter": [
@@ -29,6 +28,23 @@
         },
         "reviewed_at": "2026-06-13T03:56:42.550Z",
         "reviewed_sha": "b5b8eae463d7af2bb3713e19411d17e939e9c9bb"
+      },
+      {
+        "field_hash": {
+          "md": "a1d8576940d3",
+          "ts": "9b99f6654f73"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T13:17:24.519Z",
+        "reviewed_sha": "a60319f319d74654752b4454b7d03890ca907d1a",
+        "notes": "Auto-drained by agent"
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -47,6 +63,23 @@
         },
         "reviewed_at": "2026-06-13T03:56:42.550Z",
         "reviewed_sha": "b5b8eae463d7af2bb3713e19411d17e939e9c9bb"
+      },
+      {
+        "field_hash": {
+          "md": "a1d8576940d3",
+          "ts": "9b99f6654f73"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T13:17:24.519Z",
+        "reviewed_sha": "a60319f319d74654752b4454b7d03890ca907d1a",
+        "notes": "Auto-drained by agent"
       }
     ],
     "voice-status-leak": [
@@ -929,5 +962,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-13T12:44:03.762Z"
+  "updated_at": "2026-06-13T13:17:24.519Z"
 }

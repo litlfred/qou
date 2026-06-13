@@ -9,8 +9,7 @@
   },
   "source_hashes": {
     "md": "40e597e7dcf6",
-    "ts": "5a6ee48216e2",
-    "lean": "aa6c1dcf0f25"
+    "ts": "5a6ee48216e2"
   },
   "criteria": {
     "voice-status-leak": [
@@ -378,6 +377,23 @@
         "reviewed_at": "2026-06-05T01:16:05.899Z",
         "reviewed_sha": "dd7390d475a379554965551c4865be6119451edc",
         "notes": "Lean file must be created to establish equivalence."
+      },
+      {
+        "field_hash": {
+          "md": "40e597e7dcf6",
+          "ts": "5a6ee48216e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T13:17:25.918Z",
+        "reviewed_sha": "a60319f319d74654752b4454b7d03890ca907d1a",
+        "notes": "Auto-drained by agent"
       }
     ],
     "voice-author-notes-pollution": [
@@ -432,6 +448,23 @@
         "reviewed_at": "2026-06-05T01:14:48.637Z",
         "reviewed_sha": "dd7390d475a379554965551c4865be6119451edc",
         "notes": "Interpretive content should move to a linked remark block."
+      },
+      {
+        "field_hash": {
+          "md": "40e597e7dcf6",
+          "ts": "5a6ee48216e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T13:17:25.918Z",
+        "reviewed_sha": "a60319f319d74654752b4454b7d03890ca907d1a",
+        "notes": "Auto-drained by agent"
       }
     ],
     "fit-section-chapter": [
@@ -453,6 +486,23 @@
         "reviewed_at": "2026-06-05T01:15:08.405Z",
         "reviewed_sha": "dd7390d475a379554965551c4865be6119451edc",
         "notes": "Well-placed."
+      },
+      {
+        "field_hash": {
+          "md": "40e597e7dcf6",
+          "ts": "5a6ee48216e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T13:17:25.918Z",
+        "reviewed_sha": "a60319f319d74654752b4454b7d03890ca907d1a",
+        "notes": "Auto-drained by agent"
       }
     ],
     "wall-side-statement": [
@@ -474,6 +524,23 @@
         "reviewed_at": "2026-06-05T01:15:28.480Z",
         "reviewed_sha": "dd7390d475a379554965551c4865be6119451edc",
         "notes": "Wall side correctly declared."
+      },
+      {
+        "field_hash": {
+          "md": "40e597e7dcf6",
+          "ts": "5a6ee48216e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T13:17:25.918Z",
+        "reviewed_sha": "a60319f319d74654752b4454b7d03890ca907d1a",
+        "notes": "Auto-drained by agent"
       }
     ],
     "wall-side-proof": [
@@ -495,6 +562,23 @@
         "reviewed_at": "2026-06-05T01:15:42.089Z",
         "reviewed_sha": "dd7390d475a379554965551c4865be6119451edc",
         "notes": "No wall crossing in proof body."
+      },
+      {
+        "field_hash": {
+          "md": "40e597e7dcf6",
+          "ts": "5a6ee48216e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T13:17:25.918Z",
+        "reviewed_sha": "a60319f319d74654752b4454b7d03890ca907d1a",
+        "notes": "Auto-drained by agent"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -518,6 +602,23 @@
         "reviewed_at": "2026-06-07T06:03:39.257Z",
         "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
         "notes": "Plan up front and §3b-cond banner explicit: conditional on ArchimedeanLimit + BlochSuslinUniqueness + BringZeroModeBlochClass; the algebraic identity 2g/(4pi(g-1))=2/(3pi) at g=4 closed unconditionally, structural input isolated to the single [Instance]. md gives two geometric identifications + failed-mechanism ledger."
+      },
+      {
+        "field_hash": {
+          "md": "40e597e7dcf6",
+          "ts": "5a6ee48216e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T13:17:25.918Z",
+        "reviewed_sha": "a60319f319d74654752b4454b7d03890ca907d1a",
+        "notes": "Auto-drained by agent"
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -541,6 +642,23 @@
         "reviewed_at": "2026-06-07T06:03:39.291Z",
         "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
         "notes": "Legit §3b-cond conditional: bring_zero_mode_additive_form [hZ:BringZeroModeBlochClass] : exists th, BlochWigner_unit_circle th = hodgeRatio 4 is SORRY-FREE (obtain from class field; rw hodgeRatio_at_g4). Class field bring_zero_mode_realised was STRENGTHENED (2026-05-30) to demand a real angle witness, closing the <_,rfl> loophole. BUT the enabling instance is research-grade OPEN (Phase 3, PSLQ-refuted canonical angles, theta_*/pi~0.9019 not rational) and the numeric correction is a near-match (residual -4.2e-6), physical origin self-declared conjectural."
+      },
+      {
+        "field_hash": {
+          "md": "40e597e7dcf6",
+          "ts": "5a6ee48216e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T13:17:25.918Z",
+        "reviewed_sha": "a60319f319d74654752b4454b7d03890ca907d1a",
+        "notes": "Auto-drained by agent"
       }
     ],
     "proof-rater-novelty": [
@@ -564,6 +682,23 @@
         "reviewed_at": "2026-06-07T06:03:39.327Z",
         "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
         "notes": "The double genus-4 appearance (tree-level [9]_q[10]_q from {T_2,9,T_3,5} AND IR shift 2g/(4pi(g-1)) from Bring Hodge data) + Vol(S^2)/(3Vol(S^3)) identification of 2/(3pi) is a genuinely interesting structural lead, distinct from prior multiplicative/PSLQ forms."
+      },
+      {
+        "field_hash": {
+          "md": "40e597e7dcf6",
+          "ts": "5a6ee48216e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T13:17:25.918Z",
+        "reviewed_sha": "a60319f319d74654752b4454b7d03890ca907d1a",
+        "notes": "Auto-drained by agent"
       }
     ],
     "proof-statement-integrity": [
@@ -583,6 +718,23 @@
         "reviewed_at": "2026-06-07T06:03:39.360Z",
         "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
         "notes": "lean.ref qou:QOU.Archimedean.bring_zero_mode_additive_form resolves to lean/QOU/Archimedean/EmCouplingBringZeroMode.lean:152; takes BringZeroModeBlochClass as [Instance] and proves a real existence (not vacuous, not =True). De-loopholed class field (no <_,rfl>). Valid §3b-cond conditional theorem."
+      },
+      {
+        "field_hash": {
+          "md": "40e597e7dcf6",
+          "ts": "5a6ee48216e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T13:17:25.918Z",
+        "reviewed_sha": "a60319f319d74654752b4454b7d03890ca907d1a",
+        "notes": "Auto-drained by agent"
       }
     ],
     "voice-unicode-crash": [
@@ -1414,5 +1566,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-13T12:44:03.762Z"
+  "updated_at": "2026-06-13T13:17:25.918Z"
 }

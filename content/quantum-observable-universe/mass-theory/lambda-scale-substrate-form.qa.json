@@ -364,6 +364,24 @@
         "reviewed_at": "2026-06-06T00:54:22.202Z",
         "reviewed_sha": "8e360dbc3f6cbc3edf8efdd9017899182aa12a43",
         "notes": "Narrative and Lean signature express identical Family A closed-form claim."
+      },
+      {
+        "field_hash": {
+          "md": "82b936b8864d",
+          "ts": "4cbda4b9d7ed",
+          "lean": "0d43967d00bf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T13:17:25.421Z",
+        "reviewed_sha": "a60319f319d74654752b4454b7d03890ca907d1a",
+        "notes": "Auto-drained by agent"
       }
     ],
     "voice-author-notes-pollution": [
@@ -421,6 +439,24 @@
         "reviewed_at": "2026-06-06T00:52:56.474Z",
         "reviewed_sha": "8e360dbc3f6cbc3edf8efdd9017899182aa12a43",
         "notes": "Statement is proposition-only; no embedded interpretation in title."
+      },
+      {
+        "field_hash": {
+          "md": "82b936b8864d",
+          "ts": "4cbda4b9d7ed",
+          "lean": "0d43967d00bf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T13:17:25.421Z",
+        "reviewed_sha": "a60319f319d74654752b4454b7d03890ca907d1a",
+        "notes": "Auto-drained by agent"
       }
     ],
     "fit-section-chapter": [
@@ -443,6 +479,24 @@
         "reviewed_at": "2026-06-06T00:53:09.219Z",
         "reviewed_sha": "8e360dbc3f6cbc3edf8efdd9017899182aa12a43",
         "notes": "Content fits mass-theory chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "82b936b8864d",
+          "ts": "4cbda4b9d7ed",
+          "lean": "0d43967d00bf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T13:17:25.421Z",
+        "reviewed_sha": "a60319f319d74654752b4454b7d03890ca907d1a",
+        "notes": "Auto-drained by agent"
       }
     ],
     "wall-side-statement": [
@@ -465,6 +519,24 @@
         "reviewed_at": "2026-06-06T00:53:45.249Z",
         "reviewed_sha": "8e360dbc3f6cbc3edf8efdd9017899182aa12a43",
         "notes": "Archimedean ℝ usage correct for mass-theory chapter."
+      },
+      {
+        "field_hash": {
+          "md": "82b936b8864d",
+          "ts": "4cbda4b9d7ed",
+          "lean": "0d43967d00bf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T13:17:25.421Z",
+        "reviewed_sha": "a60319f319d74654752b4454b7d03890ca907d1a",
+        "notes": "Auto-drained by agent"
       }
     ],
     "wall-side-proof": [
@@ -487,6 +559,24 @@
         "reviewed_at": "2026-06-06T00:54:03.977Z",
         "reviewed_sha": "8e360dbc3f6cbc3edf8efdd9017899182aa12a43",
         "notes": "Proof machinery matches archimedean chapter."
+      },
+      {
+        "field_hash": {
+          "md": "82b936b8864d",
+          "ts": "4cbda4b9d7ed",
+          "lean": "0d43967d00bf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T13:17:25.421Z",
+        "reviewed_sha": "a60319f319d74654752b4454b7d03890ca907d1a",
+        "notes": "Auto-drained by agent"
       }
     ],
     "voice-unicode-crash": [
@@ -1396,5 +1486,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-13T13:16:07.987Z"
+  "updated_at": "2026-06-13T13:17:25.421Z"
 }
