@@ -22,7 +22,6 @@
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
 import Mathlib.Analysis.SpecialFunctions.Exp
-import Mathlib.Analysis.SpecialFunctions.Hyperbolic
 
 namespace QOU.Braiding
 
@@ -40,11 +39,9 @@ theorem qDiffOverSum_eq_qSqDiff_over_qSqSum (q : ℝ) (hq : q ≠ 0) :
     intro h
     have : q * (q + q⁻¹) = q^2 + 1 := by
       field_simp
-      ring
     rw [h, mul_zero] at this
     exact h2_ne this.symm
   field_simp
-  ring
 
 /-- **Transcendental bridge** — Real `tanh ∘ log` equals the q-rational.
 
@@ -64,12 +61,11 @@ theorem tanh_log_eq_qDiffOverSum (q : ℝ) (hq : 0 < q) :
   have h_sum_ne : q + q⁻¹ ≠ 0 := by
     have hsq : (q^2 + 1 : ℝ) > 0 := by positivity
     intro h
-    have hmul : q * (q + q⁻¹) = q^2 + 1 := by field_simp; ring
+    have hmul : q * (q + q⁻¹) = q^2 + 1 := by field_simp
     rw [h, mul_zero] at hmul
     linarith
   -- Close the algebraic goal after field_simp clears denominators (Copilot review PR #1765).
   field_simp
-  ring
 
 /-- **Composite proposition** (`prop:coulomb-strong-ratio-q-rational`).
 
