@@ -1,1787 +1,1788 @@
 {
- "items": [
-  {
-   "id": "76b05912d7d5",
-   "block_or_script": "folio-assistant/computations/derivation_chain.py",
-   "paths": {
-    "py": "folio-assistant/computations/derivation_chain.py"
-   },
-   "finding": "I-conflict-two-canonical-values",
-   "severity": "critical",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "derivation_chain.py:68-93 \u2014 Registry TR_M_AT_Q0 (Wenzl-bridge y_\u03bb assembly) disagrees with Frobenius-selected \u03c4_M (from_scratch/ chain @25a204efa). Two distinct canonical values for the same nominal quantity tr_M(q_0). Blocks P2.1 schur-weyl-weight-*\u2192tau-sw-weight-* rename. Source: canonical-derivation-pipeline-compliance.witness.json known_open_conflicts[0]; audit doc 2026-05-11-why-individual-mass-residuals-fit-not-derive.md.",
-   "attempts": [],
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "9f1d737395ce",
-   "block_or_script": "cor:knot-factor-borromean-composite",
-   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/knot-factor-borromean-composite.ts",
-    "md": "content/quantum-observable-universe/mass-theory/knot-factor-borromean-composite.md",
-    "lean": "content/quantum-observable-universe/mass-theory/knot-factor-borromean-composite.lean"
-   },
-   "finding": "I1-proven-no-probe",
-   "severity": "major",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "cor:knot-factor-borromean-composite (corollary): .lean sibling has 0 sorrys (proven) but NO probe script / witness references it via contentBlock. Chain-relevant (mass/binding/q-beta/nucleon). Per I1: write a probe exercising the claim at q_0 emitting a witness whose contentBlock points at this label. Verified against witness contentBlock+reference_blocks index (153 labels) at 565be78e866d.",
-   "attempts": [],
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "bc3f9f5fb198",
-   "block_or_script": "cor:mass-identity-C",
-   "paths": {
-    "ts": "content/quantum-observable-universe/mass-endomorphism/mass-identity-C.ts",
-    "md": "content/quantum-observable-universe/mass-endomorphism/mass-identity-C.md",
-    "lean": "content/quantum-observable-universe/mass-endomorphism/mass-identity-C.lean"
-   },
-   "finding": "I1-proven-no-probe",
-   "severity": "major",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "cor:mass-identity-C (corollary): .lean sibling has 0 sorrys (proven) but NO probe script / witness references it via contentBlock. Chain-relevant (mass/binding/q-beta/nucleon). Per I1: write a probe exercising the claim at q_0 emitting a witness whose contentBlock points at this label. Verified against witness contentBlock+reference_blocks index (153 labels) at 565be78e866d.",
-   "attempts": [],
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "ba0601c7255c",
-   "block_or_script": "lem:deuteron-binding-energy",
-   "paths": {
-    "ts": "content/quantum-observable-universe/observations/deuteron-binding-energy.ts",
-    "md": "content/quantum-observable-universe/observations/deuteron-binding-energy.md",
-    "lean": "content/quantum-observable-universe/observations/deuteron-binding-energy.lean"
-   },
-   "finding": "I1-proven-no-probe",
-   "severity": "major",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "lem:deuteron-binding-energy (lemma): .lean sibling has 0 sorrys (proven) but NO probe script / witness references it via contentBlock. Chain-relevant (mass/binding/q-beta/nucleon). Per I1: write a probe exercising the claim at q_0 emitting a witness whose contentBlock points at this label. Verified against witness contentBlock+reference_blocks index (153 labels) at 565be78e866d.",
-   "attempts": [],
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "df911bc76351",
-   "block_or_script": "lem:nucleon-borromean-topology",
-   "paths": {
-    "ts": "content/quantum-observable-universe/observations/nucleon-borromean-topology.ts",
-    "md": "content/quantum-observable-universe/observations/nucleon-borromean-topology.md",
-    "lean": "content/quantum-observable-universe/observations/nucleon-borromean-topology.lean"
-   },
-   "finding": "I1-proven-no-probe",
-   "severity": "major",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "lem:nucleon-borromean-topology (lemma): .lean sibling has 0 sorrys (proven) but NO probe script / witness references it via contentBlock. Chain-relevant (mass/binding/q-beta/nucleon). Per I1: write a probe exercising the claim at q_0 emitting a witness whose contentBlock points at this label. Verified against witness contentBlock+reference_blocks index (153 labels) at 565be78e866d.",
-   "attempts": [],
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "bc709a79ae74",
-   "block_or_script": "lem:topological-mass-eigenspace-decomp",
-   "paths": {
-    "ts": "content/quantum-observable-universe/mass-endomorphism/topological-mass-eigenspace-decomp.ts",
-    "md": "content/quantum-observable-universe/mass-endomorphism/topological-mass-eigenspace-decomp.md",
-    "lean": "content/quantum-observable-universe/mass-endomorphism/topological-mass-eigenspace-decomp.lean"
-   },
-   "finding": "I1-proven-no-probe",
-   "severity": "major",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "lem:topological-mass-eigenspace-decomp (lemma): .lean sibling has 0 sorrys (proven) but NO probe script / witness references it via contentBlock. Chain-relevant (mass/binding/q-beta/nucleon). Per I1: write a probe exercising the claim at q_0 emitting a witness whose contentBlock points at this label. Verified against witness contentBlock+reference_blocks index (153 labels) at 565be78e866d.",
-   "attempts": [],
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "78c2821116ea",
-   "block_or_script": "prop:borromean-hopf-energy-crossover",
-   "paths": {
-    "ts": "content/quantum-observable-universe/observations/borromean-hopf-energy-crossover.ts",
-    "md": "content/quantum-observable-universe/observations/borromean-hopf-energy-crossover.md",
-    "lean": "content/quantum-observable-universe/observations/borromean-hopf-energy-crossover.lean"
-   },
-   "finding": "I1-proven-no-probe",
-   "severity": "major",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "prop:borromean-hopf-energy-crossover (proposition): .lean sibling has 0 sorrys (proven) but NO probe script / witness references it via contentBlock. Chain-relevant (mass/binding/q-beta/nucleon). Per I1: write a probe exercising the claim at q_0 emitting a witness whose contentBlock points at this label. Verified against witness contentBlock+reference_blocks index (153 labels) at 565be78e866d.",
-   "attempts": [],
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "2b14bb1894f6",
-   "block_or_script": "prop:categorical-neutron-exists",
-   "paths": {
-    "ts": "content/quantum-observable-universe/predicted-spectra/categorical-neutron-exists.ts",
-    "md": "content/quantum-observable-universe/predicted-spectra/categorical-neutron-exists.md",
-    "lean": "content/quantum-observable-universe/predicted-spectra/categorical-neutron-exists.lean"
-   },
-   "finding": "I1-proven-no-probe",
-   "severity": "major",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "prop:categorical-neutron-exists (proposition): .lean sibling has 0 sorrys (proven) but NO probe script / witness references it via contentBlock. Chain-relevant (mass/binding/q-beta/nucleon). Per I1: write a probe exercising the claim at q_0 emitting a witness whose contentBlock points at this label. Verified against witness contentBlock+reference_blocks index (153 labels) at 565be78e866d.",
-   "attempts": [],
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "8453e278f063",
-   "block_or_script": "prop:categorical-neutron-unique",
-   "paths": {
-    "ts": "content/quantum-observable-universe/predicted-spectra/categorical-neutron-unique.ts",
-    "md": "content/quantum-observable-universe/predicted-spectra/categorical-neutron-unique.md",
-    "lean": "content/quantum-observable-universe/predicted-spectra/categorical-neutron-unique.lean"
-   },
-   "finding": "I1-proven-no-probe",
-   "severity": "major",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "prop:categorical-neutron-unique (proposition): .lean sibling has 0 sorrys (proven) but NO probe script / witness references it via contentBlock. Chain-relevant (mass/binding/q-beta/nucleon). Per I1: write a probe exercising the claim at q_0 emitting a witness whose contentBlock points at this label. Verified against witness contentBlock+reference_blocks index (153 labels) at 565be78e866d.",
-   "attempts": [],
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "86d7f9278a8f",
-   "block_or_script": "prop:categorical-proton-exists",
-   "paths": {
-    "ts": "content/quantum-observable-universe/predicted-spectra/categorical-proton-exists.ts",
-    "md": "content/quantum-observable-universe/predicted-spectra/categorical-proton-exists.md",
-    "lean": "content/quantum-observable-universe/predicted-spectra/categorical-proton-exists.lean"
-   },
-   "finding": "I1-proven-no-probe",
-   "severity": "major",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "prop:categorical-proton-exists (proposition): .lean sibling has 0 sorrys (proven) but NO probe script / witness references it via contentBlock. Chain-relevant (mass/binding/q-beta/nucleon). Per I1: write a probe exercising the claim at q_0 emitting a witness whose contentBlock points at this label. Verified against witness contentBlock+reference_blocks index (153 labels) at 565be78e866d.",
-   "attempts": [],
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "5c807f8b83ff",
-   "block_or_script": "prop:categorical-proton-unique",
-   "paths": {
-    "ts": "content/quantum-observable-universe/predicted-spectra/categorical-proton-unique.ts",
-    "md": "content/quantum-observable-universe/predicted-spectra/categorical-proton-unique.md",
-    "lean": "content/quantum-observable-universe/predicted-spectra/categorical-proton-unique.lean"
-   },
-   "finding": "I1-proven-no-probe",
-   "severity": "major",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "prop:categorical-proton-unique (proposition): .lean sibling has 0 sorrys (proven) but NO probe script / witness references it via contentBlock. Chain-relevant (mass/binding/q-beta/nucleon). Per I1: write a probe exercising the claim at q_0 emitting a witness whose contentBlock points at this label. Verified against witness contentBlock+reference_blocks index (153 labels) at 565be78e866d.",
-   "attempts": [],
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "3a14f9cd0392",
-   "block_or_script": "prop:derived-mass-formula-light-isotopes",
-   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/derived-mass-formula-light-isotopes.ts",
-    "md": "content/quantum-observable-universe/mass-theory/derived-mass-formula-light-isotopes.md",
-    "lean": "content/quantum-observable-universe/mass-theory/derived-mass-formula-light-isotopes.lean"
-   },
-   "finding": "I1-proven-no-probe",
-   "severity": "major",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "prop:derived-mass-formula-light-isotopes (proposition): .lean sibling has 0 sorrys (proven) but NO probe script / witness references it via contentBlock. Chain-relevant (mass/binding/q-beta/nucleon). Per I1: write a probe exercising the claim at q_0 emitting a witness whose contentBlock points at this label. Verified against witness contentBlock+reference_blocks index (153 labels) at 565be78e866d.",
-   "attempts": [],
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "d3a649d0acdc",
-   "block_or_script": "prop:deuteron-binding-frobenius-codim",
-   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/deuteron-binding-frobenius-codim.ts",
-    "md": "content/quantum-observable-universe/mass-theory/deuteron-binding-frobenius-codim.md",
-    "lean": "content/quantum-observable-universe/mass-theory/deuteron-binding-frobenius-codim.lean"
-   },
-   "finding": "I1-proven-no-probe",
-   "severity": "major",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "prop:deuteron-binding-frobenius-codim (proposition): .lean sibling has 0 sorrys (proven) but NO probe script / witness references it via contentBlock. Chain-relevant (mass/binding/q-beta/nucleon). Per I1: write a probe exercising the claim at q_0 emitting a witness whose contentBlock points at this label. Verified against witness contentBlock+reference_blocks index (153 labels) at 565be78e866d.",
-   "attempts": [],
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "d8fba14e9417",
-   "block_or_script": "prop:eos-borromean-cfl",
-   "paths": {
-    "ts": "content/quantum-observable-universe/observations/eos-borromean-cfl.ts",
-    "md": "content/quantum-observable-universe/observations/eos-borromean-cfl.md",
-    "lean": "content/quantum-observable-universe/observations/eos-borromean-cfl.lean"
-   },
-   "finding": "I1-proven-no-probe",
-   "severity": "major",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "prop:eos-borromean-cfl (proposition): .lean sibling has 0 sorrys (proven) but NO probe script / witness references it via contentBlock. Chain-relevant (mass/binding/q-beta/nucleon). Per I1: write a probe exercising the claim at q_0 emitting a witness whose contentBlock points at this label. Verified against witness contentBlock+reference_blocks index (153 labels) at 565be78e866d.",
-   "attempts": [],
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "42fdce795855",
-   "block_or_script": "prop:exterior-square-borromean",
-   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/exterior-square-borromean.ts",
-    "md": "content/quantum-observable-universe/mass-theory/exterior-square-borromean.md",
-    "lean": "content/quantum-observable-universe/mass-theory/exterior-square-borromean.lean"
-   },
-   "finding": "I1-proven-no-probe",
-   "severity": "major",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "prop:exterior-square-borromean (proposition): .lean sibling has 0 sorrys (proven) but NO probe script / witness references it via contentBlock. Chain-relevant (mass/binding/q-beta/nucleon). Per I1: write a probe exercising the claim at q_0 emitting a witness whose contentBlock points at this label. Verified against witness contentBlock+reference_blocks index (153 labels) at 565be78e866d.",
-   "attempts": [],
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "acddd2335434",
-   "block_or_script": "prop:frobenius-pairing-unique",
-   "paths": {
-    "ts": "content/quantum-observable-universe/quantum-universes/frobenius-pairing-unique.ts",
-    "md": "content/quantum-observable-universe/quantum-universes/frobenius-pairing-unique.md",
-    "lean": "content/quantum-observable-universe/quantum-universes/frobenius-pairing-unique.lean"
-   },
-   "finding": "I1-proven-no-probe",
-   "severity": "major",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "prop:frobenius-pairing-unique (proposition): .lean sibling has 0 sorrys (proven) but NO probe script / witness references it via contentBlock. Chain-relevant (mass/binding/q-beta/nucleon). Per I1: write a probe exercising the claim at q_0 emitting a witness whose contentBlock points at this label. Verified against witness contentBlock+reference_blocks index (153 labels) at 565be78e866d.",
-   "attempts": [],
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "590e8bf58bc1",
-   "block_or_script": "prop:hecke-mass-trace",
-   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/hecke-mass-trace.ts",
-    "md": "content/quantum-observable-universe/mass-theory/hecke-mass-trace.md",
-    "lean": "content/quantum-observable-universe/mass-theory/hecke-mass-trace.lean"
-   },
-   "finding": "I1-proven-no-probe",
-   "severity": "major",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "prop:hecke-mass-trace (proposition): .lean sibling has 0 sorrys (proven) but NO probe script / witness references it via contentBlock. Chain-relevant (mass/binding/q-beta/nucleon). Per I1: write a probe exercising the claim at q_0 emitting a witness whose contentBlock points at this label. Verified against witness contentBlock+reference_blocks index (153 labels) at 565be78e866d.",
-   "attempts": [],
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "820ecc1fb487",
-   "block_or_script": "prop:mass-formula-regime-switching",
-   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/mass-formula-regime-switching.ts",
-    "md": "content/quantum-observable-universe/mass-theory/mass-formula-regime-switching.md",
-    "lean": "content/quantum-observable-universe/mass-theory/mass-formula-regime-switching.lean"
-   },
-   "finding": "I1-proven-no-probe",
-   "severity": "major",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "prop:mass-formula-regime-switching (proposition): .lean sibling has 0 sorrys (proven) but NO probe script / witness references it via contentBlock. Chain-relevant (mass/binding/q-beta/nucleon). Per I1: write a probe exercising the claim at q_0 emitting a witness whose contentBlock points at this label. Verified against witness contentBlock+reference_blocks index (153 labels) at 565be78e866d.",
-   "attempts": [],
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "b2fdb176f7ae",
-   "block_or_script": "prop:mass-identity-exists",
-   "paths": {
-    "ts": "content/quantum-observable-universe/mass-endomorphism/mass-identity-exists.ts",
-    "md": "content/quantum-observable-universe/mass-endomorphism/mass-identity-exists.md",
-    "lean": "content/quantum-observable-universe/mass-endomorphism/mass-identity-exists.lean"
-   },
-   "finding": "I1-proven-no-probe",
-   "severity": "major",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "prop:mass-identity-exists (proposition): .lean sibling has 0 sorrys (proven) but NO probe script / witness references it via contentBlock. Chain-relevant (mass/binding/q-beta/nucleon). Per I1: write a probe exercising the claim at q_0 emitting a witness whose contentBlock points at this label. Verified against witness contentBlock+reference_blocks index (153 labels) at 565be78e866d.",
-   "attempts": [],
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "593948b89ab6",
-   "block_or_script": "prop:mass-identity-unique",
-   "paths": {
-    "ts": "content/quantum-observable-universe/mass-endomorphism/mass-identity-unique.ts",
-    "md": "content/quantum-observable-universe/mass-endomorphism/mass-identity-unique.md",
-    "lean": "content/quantum-observable-universe/mass-endomorphism/mass-identity-unique.lean"
-   },
-   "finding": "I1-proven-no-probe",
-   "severity": "major",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "prop:mass-identity-unique (proposition): .lean sibling has 0 sorrys (proven) but NO probe script / witness references it via contentBlock. Chain-relevant (mass/binding/q-beta/nucleon). Per I1: write a probe exercising the claim at q_0 emitting a witness whose contentBlock points at this label. Verified against witness contentBlock+reference_blocks index (153 labels) at 565be78e866d.",
-   "attempts": [],
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "51b5c53a767e",
-   "block_or_script": "prop:neutron-prediction-comparison",
-   "paths": {
-    "ts": "content/quantum-observable-universe/observations/neutron-prediction-comparison.ts",
-    "md": "content/quantum-observable-universe/observations/neutron-prediction-comparison.md",
-    "lean": "content/quantum-observable-universe/observations/neutron-prediction-comparison.lean"
-   },
-   "finding": "I1-proven-no-probe",
-   "severity": "major",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "prop:neutron-prediction-comparison (proposition): .lean sibling has 0 sorrys (proven) but NO probe script / witness references it via contentBlock. Chain-relevant (mass/binding/q-beta/nucleon). Per I1: write a probe exercising the claim at q_0 emitting a witness whose contentBlock points at this label. Verified against witness contentBlock+reference_blocks index (153 labels) at 565be78e866d.",
-   "attempts": [],
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "c1935b2ab8ec",
-   "block_or_script": "prop:neutron-proton-mass-splitting",
-   "paths": {
-    "ts": "content/quantum-observable-universe/observations/neutron-proton-mass-splitting.ts",
-    "md": "content/quantum-observable-universe/observations/neutron-proton-mass-splitting.md",
-    "lean": "content/quantum-observable-universe/observations/neutron-proton-mass-splitting.lean"
-   },
-   "finding": "I1-proven-no-probe",
-   "severity": "major",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "prop:neutron-proton-mass-splitting (proposition): .lean sibling has 0 sorrys (proven) but NO probe script / witness references it via contentBlock. Chain-relevant (mass/binding/q-beta/nucleon). Per I1: write a probe exercising the claim at q_0 emitting a witness whose contentBlock points at this label. Verified against witness contentBlock+reference_blocks index (153 labels) at 565be78e866d.",
-   "attempts": [],
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "9ba1f7aa9c41",
-   "block_or_script": "prop:q-beta-c-2-eq-neg-one-structural",
-   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/q-beta-c-2-eq-neg-one-structural.ts",
-    "md": "content/quantum-observable-universe/mass-theory/q-beta-c-2-eq-neg-one-structural.md",
-    "lean": "content/quantum-observable-universe/mass-theory/q-beta-c-2-eq-neg-one-structural.lean"
-   },
-   "finding": "I1-proven-no-probe",
-   "severity": "major",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "prop:q-beta-c-2-eq-neg-one-structural (proposition): .lean sibling has 0 sorrys (proven) but NO probe script / witness references it via contentBlock. Chain-relevant (mass/binding/q-beta/nucleon). Per I1: write a probe exercising the claim at q_0 emitting a witness whose contentBlock points at this label. Verified against witness contentBlock+reference_blocks index (153 labels) at 565be78e866d.",
-   "attempts": [],
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "b043315fbf1b",
-   "block_or_script": "prop:q-beta-c-k-leading-bias-correction-identity",
-   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/q-beta-c-k-leading-bias-correction-identity.ts",
-    "md": "content/quantum-observable-universe/mass-theory/q-beta-c-k-leading-bias-correction-identity.md",
-    "lean": "content/quantum-observable-universe/mass-theory/q-beta-c-k-leading-bias-correction-identity.lean"
-   },
-   "finding": "I1-proven-no-probe",
-   "severity": "major",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "prop:q-beta-c-k-leading-bias-correction-identity (proposition): .lean sibling has 0 sorrys (proven) but NO probe script / witness references it via contentBlock. Chain-relevant (mass/binding/q-beta/nucleon). Per I1: write a probe exercising the claim at q_0 emitting a witness whose contentBlock points at this label. Verified against witness contentBlock+reference_blocks index (153 labels) at 565be78e866d.",
-   "attempts": [],
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "97ad28228940",
-   "block_or_script": "prop:q-beta-c-k-recursion-from-habiro-q-difference",
-   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/q-beta-c-k-recursion-from-habiro-q-difference.ts",
-    "md": "content/quantum-observable-universe/mass-theory/q-beta-c-k-recursion-from-habiro-q-difference.md",
-    "lean": "content/quantum-observable-universe/mass-theory/q-beta-c-k-recursion-from-habiro-q-difference.lean"
-   },
-   "finding": "I1-proven-no-probe",
-   "severity": "major",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "prop:q-beta-c-k-recursion-from-habiro-q-difference (proposition): .lean sibling has 0 sorrys (proven) but NO probe script / witness references it via contentBlock. Chain-relevant (mass/binding/q-beta/nucleon). Per I1: write a probe exercising the claim at q_0 emitting a witness whose contentBlock points at this label. Verified against witness contentBlock+reference_blocks index (153 labels) at 565be78e866d.",
-   "attempts": [],
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "3c58c569fd9a",
-   "block_or_script": "prop:q-beta-c3-hopf-three-fold-markov",
-   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/q-beta-c3-hopf-three-fold-markov.ts",
-    "md": "content/quantum-observable-universe/mass-theory/q-beta-c3-hopf-three-fold-markov.md",
-    "lean": "content/quantum-observable-universe/mass-theory/q-beta-c3-hopf-three-fold-markov.lean"
-   },
-   "finding": "I1-proven-no-probe",
-   "severity": "major",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "prop:q-beta-c3-hopf-three-fold-markov (proposition): .lean sibling has 0 sorrys (proven) but NO probe script / witness references it via contentBlock. Chain-relevant (mass/binding/q-beta/nucleon). Per I1: write a probe exercising the claim at q_0 emitting a witness whose contentBlock points at this label. Verified against witness contentBlock+reference_blocks index (153 labels) at 565be78e866d.",
-   "attempts": [],
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "78a0391356bd",
-   "block_or_script": "prop:q-beta-cos-resummation",
-   "paths": {
-    "ts": "content/quantum-observable-universe/particle-interactions/q-beta-cos-resummation.ts",
-    "md": "content/quantum-observable-universe/particle-interactions/q-beta-cos-resummation.md",
-    "lean": "content/quantum-observable-universe/particle-interactions/q-beta-cos-resummation.lean"
-   },
-   "finding": "I1-proven-no-probe",
-   "severity": "major",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "prop:q-beta-cos-resummation (proposition): .lean sibling has 0 sorrys (proven) but NO probe script / witness references it via contentBlock. Chain-relevant (mass/binding/q-beta/nucleon). Per I1: write a probe exercising the claim at q_0 emitting a witness whose contentBlock points at this label. Verified against witness contentBlock+reference_blocks index (153 labels) at 565be78e866d.",
-   "attempts": [],
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "452691bdfa40",
-   "block_or_script": "prop:qbeta-c4-from-c3-c8-product-identity",
-   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/qbeta-c4-from-c3-c8-product-identity.ts",
-    "md": "content/quantum-observable-universe/mass-theory/qbeta-c4-from-c3-c8-product-identity.md",
-    "lean": "content/quantum-observable-universe/mass-theory/qbeta-c4-from-c3-c8-product-identity.lean"
-   },
-   "finding": "I1-proven-no-probe",
-   "severity": "major",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "prop:qbeta-c4-from-c3-c8-product-identity (proposition): .lean sibling has 0 sorrys (proven) but NO probe script / witness references it via contentBlock. Chain-relevant (mass/binding/q-beta/nucleon). Per I1: write a probe exercising the claim at q_0 emitting a witness whose contentBlock points at this label. Verified against witness contentBlock+reference_blocks index (153 labels) at 565be78e866d.",
-   "attempts": [],
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "5bf749b002e3",
-   "block_or_script": "prop:qbeta-c8-c10-silver-rationals",
-   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/qbeta-c8-c10-silver-rationals.ts",
-    "md": "content/quantum-observable-universe/mass-theory/qbeta-c8-c10-silver-rationals.md",
-    "lean": "content/quantum-observable-universe/mass-theory/qbeta-c8-c10-silver-rationals.lean"
-   },
-   "finding": "I1-proven-no-probe",
-   "severity": "major",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "prop:qbeta-c8-c10-silver-rationals (proposition): .lean sibling has 0 sorrys (proven) but NO probe script / witness references it via contentBlock. Chain-relevant (mass/binding/q-beta/nucleon). Per I1: write a probe exercising the claim at q_0 emitting a witness whose contentBlock points at this label. Verified against witness contentBlock+reference_blocks index (153 labels) at 565be78e866d.",
-   "attempts": [],
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "a87f696c729b",
-   "block_or_script": "prop:topological-mass-formula",
-   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/topological-mass-formula.ts",
-    "md": "content/quantum-observable-universe/mass-theory/topological-mass-formula.md",
-    "lean": "content/quantum-observable-universe/mass-theory/topological-mass-formula.lean"
-   },
-   "finding": "I1-proven-no-probe",
-   "severity": "major",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "prop:topological-mass-formula (proposition): .lean sibling has 0 sorrys (proven) but NO probe script / witness references it via contentBlock. Chain-relevant (mass/binding/q-beta/nucleon). Per I1: write a probe exercising the claim at q_0 emitting a witness whose contentBlock points at this label. Verified against witness contentBlock+reference_blocks index (153 labels) at 565be78e866d.",
-   "attempts": [],
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "79c487afd138",
-   "block_or_script": "prop:topological-mass-formula-algebraic",
-   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/topological-mass-formula-algebraic.ts",
-    "md": "content/quantum-observable-universe/mass-theory/topological-mass-formula-algebraic.md",
-    "lean": "content/quantum-observable-universe/mass-theory/topological-mass-formula-algebraic.lean"
-   },
-   "finding": "I1-proven-no-probe",
-   "severity": "major",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "prop:topological-mass-formula-algebraic (proposition): .lean sibling has 0 sorrys (proven) but NO probe script / witness references it via contentBlock. Chain-relevant (mass/binding/q-beta/nucleon). Per I1: write a probe exercising the claim at q_0 emitting a witness whose contentBlock points at this label. Verified against witness contentBlock+reference_blocks index (153 labels) at 565be78e866d.",
-   "attempts": [],
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "d53f7c2a9912",
-   "block_or_script": "folio-assistant/computations/atomic_mass_via_rho_k.py",
-   "paths": {
-    "py": "folio-assistant/computations/atomic_mass_via_rho_k.py"
-   },
-   "finding": "I9-hardcoded-codata-production",
-   "severity": "major",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "atomic_mass_via_rho_k.py:215 \u2014 hardcoded CODATA literal in a PRODUCTION/prediction script (P31). Should import from codata_constants.py (_VALIDATION aliases) / experimental_constants.py, not inline. Source: compute-audit-scan.witness.json (regenerated 2026-06-13).",
-   "attempts": [],
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "1f9df47e14f2",
-   "block_or_script": "folio-assistant/computations/binding_K_direct.py",
-   "paths": {
-    "py": "folio-assistant/computations/binding_K_direct.py"
-   },
-   "finding": "I9-hardcoded-codata-production",
-   "severity": "major",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "binding_K_direct.py:81 \u2014 hardcoded CODATA literal in a PRODUCTION/prediction script (P31). Should import from codata_constants.py (_VALIDATION aliases) / experimental_constants.py, not inline. Source: compute-audit-scan.witness.json (regenerated 2026-06-13).",
-   "attempts": [],
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "23db5cbf19d2",
-   "block_or_script": "folio-assistant/computations/build_six_term_substrate_model_b.py",
-   "paths": {
-    "py": "folio-assistant/computations/build_six_term_substrate_model_b.py"
-   },
-   "finding": "I9-hardcoded-codata-production",
-   "severity": "major",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "build_six_term_substrate_model_b.py:114 \u2014 hardcoded CODATA literal in a PRODUCTION/prediction script (P31). Should import from codata_constants.py (_VALIDATION aliases) / experimental_constants.py, not inline. Source: compute-audit-scan.witness.json (regenerated 2026-06-13).",
-   "attempts": [],
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "401f39200784",
-   "block_or_script": "folio-assistant/computations/compound_binding_via_differences.py",
-   "paths": {
-    "py": "folio-assistant/computations/compound_binding_via_differences.py"
-   },
-   "finding": "I9-hardcoded-codata-production",
-   "severity": "major",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "compound_binding_via_differences.py:81 \u2014 hardcoded CODATA literal in a PRODUCTION/prediction script (P31). Should import from codata_constants.py (_VALIDATION aliases) / experimental_constants.py, not inline. Source: compute-audit-scan.witness.json (regenerated 2026-06-13).",
-   "attempts": [],
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "fa4610f2db74",
-   "block_or_script": "folio-assistant/computations/derive_m_baryon_volume_form.py",
-   "paths": {
-    "py": "folio-assistant/computations/derive_m_baryon_volume_form.py"
-   },
-   "finding": "I9-hardcoded-codata-production",
-   "severity": "major",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "derive_m_baryon_volume_form.py:36 \u2014 hardcoded CODATA literal in a PRODUCTION/prediction script (P31). Should import from codata_constants.py (_VALIDATION aliases) / experimental_constants.py, not inline. Source: compute-audit-scan.witness.json (regenerated 2026-06-13).",
-   "attempts": [],
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "f6173e841039",
-   "block_or_script": "folio-assistant/computations/inter_nucleon_linked_channel.py",
-   "paths": {
-    "py": "folio-assistant/computations/inter_nucleon_linked_channel.py"
-   },
-   "finding": "I9-hardcoded-codata-production",
-   "severity": "major",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "inter_nucleon_linked_channel.py:63 \u2014 hardcoded CODATA literal in a PRODUCTION/prediction script (P31). Should import from codata_constants.py (_VALIDATION aliases) / experimental_constants.py, not inline. Source: compute-audit-scan.witness.json (regenerated 2026-06-13).",
-   "attempts": [],
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "66d6e35f7bd1",
-   "block_or_script": "folio-assistant/computations/m_p_substrate_identity_50dps.py",
-   "paths": {
-    "py": "folio-assistant/computations/m_p_substrate_identity_50dps.py"
-   },
-   "finding": "I9-hardcoded-codata-production",
-   "severity": "major",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "m_p_substrate_identity_50dps.py:56 (+57) \u2014 hardcoded CODATA literal in a PRODUCTION/prediction script (P31). Should import from codata_constants.py (_VALIDATION aliases) / experimental_constants.py, not inline. Source: compute-audit-scan.witness.json (regenerated 2026-06-13).",
-   "attempts": [],
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "28d8564c3dec",
-   "block_or_script": "folio-assistant/computations/mass_formula_6term_mpfr_50dps.py",
-   "paths": {
-    "py": "folio-assistant/computations/mass_formula_6term_mpfr_50dps.py"
-   },
-   "finding": "I9-hardcoded-codata-production",
-   "severity": "major",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "mass_formula_6term_mpfr_50dps.py:542 \u2014 hardcoded CODATA literal in a PRODUCTION/prediction script (P31). Should import from codata_constants.py (_VALIDATION aliases) / experimental_constants.py, not inline. Source: compute-audit-scan.witness.json (regenerated 2026-06-13).",
-   "attempts": [],
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "aca22173f91a",
-   "block_or_script": "folio-assistant/computations/mass_table_l1_full_crosscheck.py",
-   "paths": {
-    "py": "folio-assistant/computations/mass_table_l1_full_crosscheck.py"
-   },
-   "finding": "I9-hardcoded-codata-production",
-   "severity": "major",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "mass_table_l1_full_crosscheck.py:29 \u2014 hardcoded CODATA literal in a PRODUCTION/prediction script (P31). Should import from codata_constants.py (_VALIDATION aliases) / experimental_constants.py, not inline. Source: compute-audit-scan.witness.json (regenerated 2026-06-13).",
-   "attempts": [],
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "29d7569c2ad4",
-   "block_or_script": "folio-assistant/computations/mass_table_ppb.py",
-   "paths": {
-    "py": "folio-assistant/computations/mass_table_ppb.py"
-   },
-   "finding": "I9-hardcoded-codata-production",
-   "severity": "major",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "mass_table_ppb.py:122 \u2014 hardcoded CODATA literal in a PRODUCTION/prediction script (P31). Should import from codata_constants.py (_VALIDATION aliases) / experimental_constants.py, not inline. Source: compute-audit-scan.witness.json (regenerated 2026-06-13).",
-   "attempts": [],
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "4b9aa11b2400",
-   "block_or_script": "folio-assistant/computations/meson_mass_from_hecke.py",
-   "paths": {
-    "py": "folio-assistant/computations/meson_mass_from_hecke.py"
-   },
-   "finding": "I9-hardcoded-codata-production",
-   "severity": "major",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "meson_mass_from_hecke.py:85 (+68) \u2014 hardcoded CODATA literal in a PRODUCTION/prediction script (P31). Should import from codata_constants.py (_VALIDATION aliases) / experimental_constants.py, not inline. Source: compute-audit-scan.witness.json (regenerated 2026-06-13).",
-   "attempts": [],
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "437b3941d743",
-   "block_or_script": "folio-assistant/computations/meson_vol_density.py",
-   "paths": {
-    "py": "folio-assistant/computations/meson_vol_density.py"
-   },
-   "finding": "I9-hardcoded-codata-production",
-   "severity": "major",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "meson_vol_density.py:52 \u2014 hardcoded CODATA literal in a PRODUCTION/prediction script (P31). Should import from codata_constants.py (_VALIDATION aliases) / experimental_constants.py, not inline. Source: compute-audit-scan.witness.json (regenerated 2026-06-13).",
-   "attempts": [],
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "b6635069b6a5",
-   "block_or_script": "folio-assistant/computations/tower_isotope_absolute.py",
-   "paths": {
-    "py": "folio-assistant/computations/tower_isotope_absolute.py"
-   },
-   "finding": "I9-hardcoded-codata-production",
-   "severity": "major",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "tower_isotope_absolute.py:72 \u2014 hardcoded CODATA literal in a PRODUCTION/prediction script (P31). Should import from codata_constants.py (_VALIDATION aliases) / experimental_constants.py, not inline. Source: compute-audit-scan.witness.json (regenerated 2026-06-13).",
-   "attempts": [],
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "54aabc03fbfd",
-   "block_or_script": "folio-assistant/computations/canonical_lepton_braid_words.py",
-   "paths": {
-    "py": "folio-assistant/computations/canonical_lepton_braid_words.py"
-   },
-   "finding": "I9-hardcoded-codata",
-   "severity": "minor",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "canonical_lepton_braid_words.py:193 \u2014 hardcoded CODATA literal (P31), non-production script. Either import from registry or tag `# noqa: P31` with audit-only justification. Source: compute-audit-scan.witness.json.",
-   "attempts": [],
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "38e6ec02d26e",
-   "block_or_script": "folio-assistant/computations/f_ell_derivation_via_per_braid_mass_tower.py",
-   "paths": {
-    "py": "folio-assistant/computations/f_ell_derivation_via_per_braid_mass_tower.py"
-   },
-   "finding": "I9-hardcoded-codata",
-   "severity": "minor",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "f_ell_derivation_via_per_braid_mass_tower.py:59 \u2014 hardcoded CODATA literal (P31), non-production script. Either import from registry or tag `# noqa: P31` with audit-only justification. Source: compute-audit-scan.witness.json.",
-   "attempts": [],
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "7a4917b4e649",
-   "block_or_script": "folio-assistant/computations/h4_residual_vs_fine_structure_50dps.py",
-   "paths": {
-    "py": "folio-assistant/computations/h4_residual_vs_fine_structure_50dps.py"
-   },
-   "finding": "I9-hardcoded-codata",
-   "severity": "minor",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "h4_residual_vs_fine_structure_50dps.py:58 \u2014 hardcoded CODATA literal (P31), non-production script. Either import from registry or tag `# noqa: P31` with audit-only justification. Source: compute-audit-scan.witness.json.",
-   "attempts": [],
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "a6cd69bb52d1",
-   "block_or_script": "folio-assistant/computations/knot_operator_sdp_4_1.py",
-   "paths": {
-    "py": "folio-assistant/computations/knot_operator_sdp_4_1.py"
-   },
-   "finding": "I9-hardcoded-codata",
-   "severity": "minor",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "knot_operator_sdp_4_1.py:115 \u2014 hardcoded CODATA literal (P31), non-production script. Either import from registry or tag `# noqa: P31` with audit-only justification. Source: compute-audit-scan.witness.json.",
-   "attempts": [],
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "37a8faa017e4",
-   "block_or_script": "folio-assistant/computations/lambda_scale_refinement_h4_correction_bring.py",
-   "paths": {
-    "py": "folio-assistant/computations/lambda_scale_refinement_h4_correction_bring.py"
-   },
-   "finding": "I9-hardcoded-codata",
-   "severity": "minor",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "lambda_scale_refinement_h4_correction_bring.py:106 \u2014 hardcoded CODATA literal (P31), non-production script. Either import from registry or tag `# noqa: P31` with audit-only justification. Source: compute-audit-scan.witness.json.",
-   "attempts": [],
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "296d8c70c729",
-   "block_or_script": "folio-assistant/computations/lambda_scale_refinements_composed_predictions.py",
-   "paths": {
-    "py": "folio-assistant/computations/lambda_scale_refinements_composed_predictions.py"
-   },
-   "finding": "I9-hardcoded-codata",
-   "severity": "minor",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "lambda_scale_refinements_composed_predictions.py:83 \u2014 hardcoded CODATA literal (P31), non-production script. Either import from registry or tag `# noqa: P31` with audit-only justification. Source: compute-audit-scan.witness.json.",
-   "attempts": [],
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "3b12829a0d7c",
-   "block_or_script": "folio-assistant/computations/m_tau_knot_prediction.py",
-   "paths": {
-    "py": "folio-assistant/computations/m_tau_knot_prediction.py"
-   },
-   "finding": "I9-hardcoded-codata",
-   "severity": "minor",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "m_tau_knot_prediction.py:68 \u2014 hardcoded CODATA literal (P31), non-production script. Either import from registry or tag `# noqa: P31` with audit-only justification. Source: compute-audit-scan.witness.json.",
-   "attempts": [],
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "711cac4c6169",
-   "block_or_script": "folio-assistant/computations/per_generator_V_hat_general.py",
-   "paths": {
-    "py": "folio-assistant/computations/per_generator_V_hat_general.py"
-   },
-   "finding": "I9-hardcoded-codata",
-   "severity": "minor",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "per_generator_V_hat_general.py:162 \u2014 hardcoded CODATA literal (P31), non-production script. Either import from registry or tag `# noqa: P31` with audit-only justification. Source: compute-audit-scan.witness.json.",
-   "attempts": [],
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "2eb609f034f2",
-   "block_or_script": "folio-assistant/computations/q_dirac_linking_weight_extended_50dps.py",
-   "paths": {
-    "py": "folio-assistant/computations/q_dirac_linking_weight_extended_50dps.py"
-   },
-   "finding": "I9-hardcoded-codata",
-   "severity": "minor",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "q_dirac_linking_weight_extended_50dps.py:28 \u2014 hardcoded CODATA literal (P31), non-production script. Either import from registry or tag `# noqa: P31` with audit-only justification. Source: compute-audit-scan.witness.json.",
-   "attempts": [],
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "960cd85db999",
-   "block_or_script": "folio-assistant/computations/t6_lepton_h3_3channel_convention.py",
-   "paths": {
-    "py": "folio-assistant/computations/t6_lepton_h3_3channel_convention.py"
-   },
-   "finding": "I9-hardcoded-codata",
-   "severity": "minor",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "t6_lepton_h3_3channel_convention.py:41 \u2014 hardcoded CODATA literal (P31), non-production script. Either import from registry or tag `# noqa: P31` with audit-only justification. Source: compute-audit-scan.witness.json.",
-   "attempts": [],
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "b8d4c3567519",
-   "block_or_script": "folio-assistant/computations/verify_isospin_bar_anomaly.py",
-   "paths": {
-    "py": "folio-assistant/computations/verify_isospin_bar_anomaly.py"
-   },
-   "finding": "I9-hardcoded-codata",
-   "severity": "minor",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "verify_isospin_bar_anomaly.py:142 \u2014 hardcoded CODATA literal (P31), non-production script. Either import from registry or tag `# noqa: P31` with audit-only justification. Source: compute-audit-scan.witness.json.",
-   "attempts": [],
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "f0a17276535d",
-   "block_or_script": "folio-assistant/computations/per-pair-wedderburn-enumeration.witness.json",
-   "paths": {
-    "py": "folio-assistant/computations/per-pair-wedderburn-enumeration.witness.json"
-   },
-   "finding": "I6-list-typed-data-schema-drift",
-   "severity": "major",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "per-pair-wedderburn-enumeration.witness.json \u2014 top-level `data` is a list (len 10) not a dict; breaks witness_dependency_drift.py (AttributeError: 'list' has no attribute 'get') and any consumer expecting data.{...}. Schema drift (I6). Fix: wrap rows under data.{rows:[...]} or migrate to WitnessBuilder.",
-   "attempts": [],
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "cef47fdce772",
-   "block_or_script": "folio-assistant/computations/topic2-mirror-pair-phi8-boundary-scan.witness.json",
-   "paths": {
-    "py": "folio-assistant/computations/topic2-mirror-pair-phi8-boundary-scan.witness.json"
-   },
-   "finding": "I6-list-typed-data-schema-drift",
-   "severity": "major",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "topic2-mirror-pair-phi8-boundary-scan.witness.json \u2014 top-level `data` is a list (len 10) not a dict; breaks witness_dependency_drift.py (AttributeError: 'list' has no attribute 'get') and any consumer expecting data.{...}. Schema drift (I6). Fix: wrap rows under data.{rows:[...]} or migrate to WitnessBuilder.",
-   "attempts": [],
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "78fb2f73615a",
-   "block_or_script": "mass-table-sweep:exploratory",
-   "paths": {
-    "py": "folio-assistant/computations/mass_table_ppb.py",
-    "ts": "n/a"
-   },
-   "finding": "I2-mass-table-not-canonically-wired",
-   "severity": "minor",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "Mass-table sweep: 3 atom(s) status='exploratory' \u2014 2H, 3H, 3He. 0 atoms fully-canonically-wired. 'exploratory' needs: R5-full SDP solver + Rule-14 census audit (census-assigned knot, \u03bd_SDP guessed). Source: mass-sweep-wiring-status.witness.json (computedAt 2026-05-27).",
-   "attempts": [],
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "dd63070e288b",
-   "block_or_script": "mass-table-sweep:extrapolated",
-   "paths": {
-    "py": "folio-assistant/computations/mass_table_ppb.py",
-    "ts": "n/a"
-   },
-   "finding": "I2-mass-table-not-canonically-wired",
-   "severity": "minor",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "Mass-table sweep: 1 atom(s) status='extrapolated' \u2014 4He. 0 atoms fully-canonically-wired. 'extrapolated' needs: R5-full SDP solver landing (knot framework-derived, \u03bd_SDP extrapolated). Source: mass-sweep-wiring-status.witness.json (computedAt 2026-05-27).",
-   "attempts": [],
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "ef50351c2ecb",
-   "block_or_script": "mass-table-sweep:gap",
-   "paths": {
-    "py": "folio-assistant/computations/mass_table_ppb.py",
-    "ts": "n/a"
-   },
-   "finding": "I2-mass-table-not-canonically-wired",
-   "severity": "major",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "Mass-table sweep: 7 atom(s) status='gap' \u2014 5Li, 6Li, 7Li, 9Be, 11B, 14N, 19F. 0 atoms fully-canonically-wired. 'gap' needs: Rule-14 atom-knot census expansion (A\u22085,6,7). Source: mass-sweep-wiring-status.witness.json (computedAt 2026-05-27).",
-   "attempts": [],
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "fb83faba85d4",
-   "block_or_script": "mass-table-sweep:alpha-cluster",
-   "paths": {
-    "py": "folio-assistant/computations/mass_table_ppb.py",
-    "ts": "n/a"
-   },
-   "finding": "I2-mass-table-not-canonically-wired",
-   "severity": "major",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "Mass-table sweep: 6 atom(s) status='alpha-cluster' \u2014 8Be, 12C, 16O, 20Ne, 24Mg, 40Ca. 0 atoms fully-canonically-wired. 'alpha-cluster' needs: \u2074He canonical first (built on n\u00d7\u2074He extrapolation). Source: mass-sweep-wiring-status.witness.json (computedAt 2026-05-27).",
-   "attempts": [],
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "5e1594d29b41",
-   "block_or_script": "mass-table-sweep:klr-positivity",
-   "paths": {
-    "py": "folio-assistant/computations/mass_sweep_wiring_status.py"
-   },
-   "finding": "I2-klr-positivity-violation",
-   "severity": "major",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "8 atoms violate KLR positivity (B_pred > B_AME over-prediction \u2192 wrong knot / wrong \u03bd_SDP / missing structural restriction). Predicted should be a LOWER bound on observed. Source: mass-sweep-wiring-status.witness.json klr_violations_count=8.",
-   "attempts": [],
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "153e1a484b43",
-   "block_or_script": "AGGREGATE:witness-builder-p30",
-   "paths": {
-    "py": "folio-assistant/computations/compute_audit_scan.py"
-   },
-   "finding": "I-infra-no-witnessbuilder-P30",
-   "severity": "minor",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "142 of 730 files write .witness.json WITHOUT witness_base.WitnessBuilder (P30 contract FAIL). 133 P30 findings in compute-audit-scan. Batch-port hand-written writers. Source: canonical-derivation-pipeline-compliance contract 'WitnessBuilder usage (P30)'.",
-   "attempts": [],
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "63a90056cb57",
-   "block_or_script": "AGGREGATE:witness-provenance-i14",
-   "paths": {
-    "py": "folio-assistant/computations/audits/witness_provenance_audit.py"
-   },
-   "finding": "I14-witness-provenance-incomplete",
-   "severity": "minor",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "26 of 707 witnesses missing engine/scriptFile/commitSha (completeness ratio 0.963, WARN). Dashboard-reported aggregate (707-scope run not on disk; local audits/ run is 29-file exempt scope). Re-run full provenance audit to enumerate. Source: canonical-derivation-pipeline-compliance contract 'Witness provenance completeness (I14)'.",
-   "attempts": [],
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "dc74da9b9293",
-   "block_or_script": "AGGREGATE:cal-overcount",
-   "paths": {
-    "py": "folio-assistant/computations/audits/canonical_script_input_audit.py"
-   },
-   "finding": "I-cal-input-overcount",
-   "severity": "minor",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "3-input canonical scheme WARN: 31 canonical / 49 over-count / 676 classified. 49 scripts declare more calibration inputs than the permitted CAL-1/2/3. Source: canonical-derivation-pipeline-compliance contract '3-input canonical scheme'. Overlaps canonical-watcher domain.",
-   "attempts": [],
-   "status": "queued",
-   "asked_author_at": null
+  "items": [
+    {
+      "id": "76b05912d7d5",
+      "block_or_script": "folio-assistant/computations/derivation_chain.py",
+      "paths": {
+        "py": "folio-assistant/computations/derivation_chain.py"
+      },
+      "finding": "I-conflict-two-canonical-values",
+      "severity": "critical",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "derivation_chain.py:68-93 — Registry TR_M_AT_Q0 (Wenzl-bridge y_λ assembly) disagrees with Frobenius-selected τ_M (from_scratch/ chain @25a204efa). Two distinct canonical values for the same nominal quantity tr_M(q_0). Blocks P2.1 schur-weyl-weight-*→tau-sw-weight-* rename. Source: canonical-derivation-pipeline-compliance.witness.json known_open_conflicts[0]; audit doc 2026-05-11-why-individual-mass-residuals-fit-not-derive.md.",
+      "attempts": [],
+      "status": "wontfix",
+      "asked_author_at": null,
+      "reason": "FALSE POSITIVE (verified 2026-06-13) - resolved 2026-05-29 #1422. TR_M_AT_Q0 Wenzl-bridge == Frobenius-selected tau_M = 1.0653061442544499 (proton); single consistent value across ~14 production files (skein_proton_canonical, habiro/*, probes/*, markov/*); 1.7339 lives only in _deprecated/probe_wenzl_bridge_witness_audit.py (different braid). Root cause: stale known_open_conflicts[0] in canonical-derivation-pipeline-compliance.witness.json."
+    },
+    {
+      "id": "9f1d737395ce",
+      "block_or_script": "cor:knot-factor-borromean-composite",
+      "paths": {
+        "ts": "content/quantum-observable-universe/mass-theory/knot-factor-borromean-composite.ts",
+        "md": "content/quantum-observable-universe/mass-theory/knot-factor-borromean-composite.md",
+        "lean": "content/quantum-observable-universe/mass-theory/knot-factor-borromean-composite.lean"
+      },
+      "finding": "I1-proven-no-probe",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "cor:knot-factor-borromean-composite (corollary): .lean sibling has 0 sorrys (proven) but NO probe script / witness references it via contentBlock. Chain-relevant (mass/binding/q-beta/nucleon). Per I1: write a probe exercising the claim at q_0 emitting a witness whose contentBlock points at this label. Verified against witness contentBlock+reference_blocks index (153 labels) at 565be78e866d.",
+      "attempts": [],
+      "status": "queued",
+      "asked_author_at": null
+    },
+    {
+      "id": "bc3f9f5fb198",
+      "block_or_script": "cor:mass-identity-C",
+      "paths": {
+        "ts": "content/quantum-observable-universe/mass-endomorphism/mass-identity-C.ts",
+        "md": "content/quantum-observable-universe/mass-endomorphism/mass-identity-C.md",
+        "lean": "content/quantum-observable-universe/mass-endomorphism/mass-identity-C.lean"
+      },
+      "finding": "I1-proven-no-probe",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "cor:mass-identity-C (corollary): .lean sibling has 0 sorrys (proven) but NO probe script / witness references it via contentBlock. Chain-relevant (mass/binding/q-beta/nucleon). Per I1: write a probe exercising the claim at q_0 emitting a witness whose contentBlock points at this label. Verified against witness contentBlock+reference_blocks index (153 labels) at 565be78e866d.",
+      "attempts": [],
+      "status": "queued",
+      "asked_author_at": null
+    },
+    {
+      "id": "ba0601c7255c",
+      "block_or_script": "lem:deuteron-binding-energy",
+      "paths": {
+        "ts": "content/quantum-observable-universe/observations/deuteron-binding-energy.ts",
+        "md": "content/quantum-observable-universe/observations/deuteron-binding-energy.md",
+        "lean": "content/quantum-observable-universe/observations/deuteron-binding-energy.lean"
+      },
+      "finding": "I1-proven-no-probe",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "lem:deuteron-binding-energy (lemma): .lean sibling has 0 sorrys (proven) but NO probe script / witness references it via contentBlock. Chain-relevant (mass/binding/q-beta/nucleon). Per I1: write a probe exercising the claim at q_0 emitting a witness whose contentBlock points at this label. Verified against witness contentBlock+reference_blocks index (153 labels) at 565be78e866d.",
+      "attempts": [],
+      "status": "queued",
+      "asked_author_at": null
+    },
+    {
+      "id": "df911bc76351",
+      "block_or_script": "lem:nucleon-borromean-topology",
+      "paths": {
+        "ts": "content/quantum-observable-universe/observations/nucleon-borromean-topology.ts",
+        "md": "content/quantum-observable-universe/observations/nucleon-borromean-topology.md",
+        "lean": "content/quantum-observable-universe/observations/nucleon-borromean-topology.lean"
+      },
+      "finding": "I1-proven-no-probe",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "lem:nucleon-borromean-topology (lemma): .lean sibling has 0 sorrys (proven) but NO probe script / witness references it via contentBlock. Chain-relevant (mass/binding/q-beta/nucleon). Per I1: write a probe exercising the claim at q_0 emitting a witness whose contentBlock points at this label. Verified against witness contentBlock+reference_blocks index (153 labels) at 565be78e866d.",
+      "attempts": [],
+      "status": "queued",
+      "asked_author_at": null
+    },
+    {
+      "id": "bc709a79ae74",
+      "block_or_script": "lem:topological-mass-eigenspace-decomp",
+      "paths": {
+        "ts": "content/quantum-observable-universe/mass-endomorphism/topological-mass-eigenspace-decomp.ts",
+        "md": "content/quantum-observable-universe/mass-endomorphism/topological-mass-eigenspace-decomp.md",
+        "lean": "content/quantum-observable-universe/mass-endomorphism/topological-mass-eigenspace-decomp.lean"
+      },
+      "finding": "I1-proven-no-probe",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "lem:topological-mass-eigenspace-decomp (lemma): .lean sibling has 0 sorrys (proven) but NO probe script / witness references it via contentBlock. Chain-relevant (mass/binding/q-beta/nucleon). Per I1: write a probe exercising the claim at q_0 emitting a witness whose contentBlock points at this label. Verified against witness contentBlock+reference_blocks index (153 labels) at 565be78e866d.",
+      "attempts": [],
+      "status": "queued",
+      "asked_author_at": null
+    },
+    {
+      "id": "78c2821116ea",
+      "block_or_script": "prop:borromean-hopf-energy-crossover",
+      "paths": {
+        "ts": "content/quantum-observable-universe/observations/borromean-hopf-energy-crossover.ts",
+        "md": "content/quantum-observable-universe/observations/borromean-hopf-energy-crossover.md",
+        "lean": "content/quantum-observable-universe/observations/borromean-hopf-energy-crossover.lean"
+      },
+      "finding": "I1-proven-no-probe",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "prop:borromean-hopf-energy-crossover (proposition): .lean sibling has 0 sorrys (proven) but NO probe script / witness references it via contentBlock. Chain-relevant (mass/binding/q-beta/nucleon). Per I1: write a probe exercising the claim at q_0 emitting a witness whose contentBlock points at this label. Verified against witness contentBlock+reference_blocks index (153 labels) at 565be78e866d.",
+      "attempts": [],
+      "status": "queued",
+      "asked_author_at": null
+    },
+    {
+      "id": "2b14bb1894f6",
+      "block_or_script": "prop:categorical-neutron-exists",
+      "paths": {
+        "ts": "content/quantum-observable-universe/predicted-spectra/categorical-neutron-exists.ts",
+        "md": "content/quantum-observable-universe/predicted-spectra/categorical-neutron-exists.md",
+        "lean": "content/quantum-observable-universe/predicted-spectra/categorical-neutron-exists.lean"
+      },
+      "finding": "I1-proven-no-probe",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "prop:categorical-neutron-exists (proposition): .lean sibling has 0 sorrys (proven) but NO probe script / witness references it via contentBlock. Chain-relevant (mass/binding/q-beta/nucleon). Per I1: write a probe exercising the claim at q_0 emitting a witness whose contentBlock points at this label. Verified against witness contentBlock+reference_blocks index (153 labels) at 565be78e866d.",
+      "attempts": [],
+      "status": "queued",
+      "asked_author_at": null
+    },
+    {
+      "id": "8453e278f063",
+      "block_or_script": "prop:categorical-neutron-unique",
+      "paths": {
+        "ts": "content/quantum-observable-universe/predicted-spectra/categorical-neutron-unique.ts",
+        "md": "content/quantum-observable-universe/predicted-spectra/categorical-neutron-unique.md",
+        "lean": "content/quantum-observable-universe/predicted-spectra/categorical-neutron-unique.lean"
+      },
+      "finding": "I1-proven-no-probe",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "prop:categorical-neutron-unique (proposition): .lean sibling has 0 sorrys (proven) but NO probe script / witness references it via contentBlock. Chain-relevant (mass/binding/q-beta/nucleon). Per I1: write a probe exercising the claim at q_0 emitting a witness whose contentBlock points at this label. Verified against witness contentBlock+reference_blocks index (153 labels) at 565be78e866d.",
+      "attempts": [],
+      "status": "queued",
+      "asked_author_at": null
+    },
+    {
+      "id": "86d7f9278a8f",
+      "block_or_script": "prop:categorical-proton-exists",
+      "paths": {
+        "ts": "content/quantum-observable-universe/predicted-spectra/categorical-proton-exists.ts",
+        "md": "content/quantum-observable-universe/predicted-spectra/categorical-proton-exists.md",
+        "lean": "content/quantum-observable-universe/predicted-spectra/categorical-proton-exists.lean"
+      },
+      "finding": "I1-proven-no-probe",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "prop:categorical-proton-exists (proposition): .lean sibling has 0 sorrys (proven) but NO probe script / witness references it via contentBlock. Chain-relevant (mass/binding/q-beta/nucleon). Per I1: write a probe exercising the claim at q_0 emitting a witness whose contentBlock points at this label. Verified against witness contentBlock+reference_blocks index (153 labels) at 565be78e866d.",
+      "attempts": [],
+      "status": "queued",
+      "asked_author_at": null
+    },
+    {
+      "id": "5c807f8b83ff",
+      "block_or_script": "prop:categorical-proton-unique",
+      "paths": {
+        "ts": "content/quantum-observable-universe/predicted-spectra/categorical-proton-unique.ts",
+        "md": "content/quantum-observable-universe/predicted-spectra/categorical-proton-unique.md",
+        "lean": "content/quantum-observable-universe/predicted-spectra/categorical-proton-unique.lean"
+      },
+      "finding": "I1-proven-no-probe",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "prop:categorical-proton-unique (proposition): .lean sibling has 0 sorrys (proven) but NO probe script / witness references it via contentBlock. Chain-relevant (mass/binding/q-beta/nucleon). Per I1: write a probe exercising the claim at q_0 emitting a witness whose contentBlock points at this label. Verified against witness contentBlock+reference_blocks index (153 labels) at 565be78e866d.",
+      "attempts": [],
+      "status": "queued",
+      "asked_author_at": null
+    },
+    {
+      "id": "3a14f9cd0392",
+      "block_or_script": "prop:derived-mass-formula-light-isotopes",
+      "paths": {
+        "ts": "content/quantum-observable-universe/mass-theory/derived-mass-formula-light-isotopes.ts",
+        "md": "content/quantum-observable-universe/mass-theory/derived-mass-formula-light-isotopes.md",
+        "lean": "content/quantum-observable-universe/mass-theory/derived-mass-formula-light-isotopes.lean"
+      },
+      "finding": "I1-proven-no-probe",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "prop:derived-mass-formula-light-isotopes (proposition): .lean sibling has 0 sorrys (proven) but NO probe script / witness references it via contentBlock. Chain-relevant (mass/binding/q-beta/nucleon). Per I1: write a probe exercising the claim at q_0 emitting a witness whose contentBlock points at this label. Verified against witness contentBlock+reference_blocks index (153 labels) at 565be78e866d.",
+      "attempts": [],
+      "status": "queued",
+      "asked_author_at": null
+    },
+    {
+      "id": "d3a649d0acdc",
+      "block_or_script": "prop:deuteron-binding-frobenius-codim",
+      "paths": {
+        "ts": "content/quantum-observable-universe/mass-theory/deuteron-binding-frobenius-codim.ts",
+        "md": "content/quantum-observable-universe/mass-theory/deuteron-binding-frobenius-codim.md",
+        "lean": "content/quantum-observable-universe/mass-theory/deuteron-binding-frobenius-codim.lean"
+      },
+      "finding": "I1-proven-no-probe",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "prop:deuteron-binding-frobenius-codim (proposition): .lean sibling has 0 sorrys (proven) but NO probe script / witness references it via contentBlock. Chain-relevant (mass/binding/q-beta/nucleon). Per I1: write a probe exercising the claim at q_0 emitting a witness whose contentBlock points at this label. Verified against witness contentBlock+reference_blocks index (153 labels) at 565be78e866d.",
+      "attempts": [],
+      "status": "queued",
+      "asked_author_at": null
+    },
+    {
+      "id": "d8fba14e9417",
+      "block_or_script": "prop:eos-borromean-cfl",
+      "paths": {
+        "ts": "content/quantum-observable-universe/observations/eos-borromean-cfl.ts",
+        "md": "content/quantum-observable-universe/observations/eos-borromean-cfl.md",
+        "lean": "content/quantum-observable-universe/observations/eos-borromean-cfl.lean"
+      },
+      "finding": "I1-proven-no-probe",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "prop:eos-borromean-cfl (proposition): .lean sibling has 0 sorrys (proven) but NO probe script / witness references it via contentBlock. Chain-relevant (mass/binding/q-beta/nucleon). Per I1: write a probe exercising the claim at q_0 emitting a witness whose contentBlock points at this label. Verified against witness contentBlock+reference_blocks index (153 labels) at 565be78e866d.",
+      "attempts": [],
+      "status": "queued",
+      "asked_author_at": null
+    },
+    {
+      "id": "42fdce795855",
+      "block_or_script": "prop:exterior-square-borromean",
+      "paths": {
+        "ts": "content/quantum-observable-universe/mass-theory/exterior-square-borromean.ts",
+        "md": "content/quantum-observable-universe/mass-theory/exterior-square-borromean.md",
+        "lean": "content/quantum-observable-universe/mass-theory/exterior-square-borromean.lean"
+      },
+      "finding": "I1-proven-no-probe",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "prop:exterior-square-borromean (proposition): .lean sibling has 0 sorrys (proven) but NO probe script / witness references it via contentBlock. Chain-relevant (mass/binding/q-beta/nucleon). Per I1: write a probe exercising the claim at q_0 emitting a witness whose contentBlock points at this label. Verified against witness contentBlock+reference_blocks index (153 labels) at 565be78e866d.",
+      "attempts": [],
+      "status": "queued",
+      "asked_author_at": null
+    },
+    {
+      "id": "acddd2335434",
+      "block_or_script": "prop:frobenius-pairing-unique",
+      "paths": {
+        "ts": "content/quantum-observable-universe/quantum-universes/frobenius-pairing-unique.ts",
+        "md": "content/quantum-observable-universe/quantum-universes/frobenius-pairing-unique.md",
+        "lean": "content/quantum-observable-universe/quantum-universes/frobenius-pairing-unique.lean"
+      },
+      "finding": "I1-proven-no-probe",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "prop:frobenius-pairing-unique (proposition): .lean sibling has 0 sorrys (proven) but NO probe script / witness references it via contentBlock. Chain-relevant (mass/binding/q-beta/nucleon). Per I1: write a probe exercising the claim at q_0 emitting a witness whose contentBlock points at this label. Verified against witness contentBlock+reference_blocks index (153 labels) at 565be78e866d.",
+      "attempts": [],
+      "status": "queued",
+      "asked_author_at": null
+    },
+    {
+      "id": "590e8bf58bc1",
+      "block_or_script": "prop:hecke-mass-trace",
+      "paths": {
+        "ts": "content/quantum-observable-universe/mass-theory/hecke-mass-trace.ts",
+        "md": "content/quantum-observable-universe/mass-theory/hecke-mass-trace.md",
+        "lean": "content/quantum-observable-universe/mass-theory/hecke-mass-trace.lean"
+      },
+      "finding": "I1-proven-no-probe",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "prop:hecke-mass-trace (proposition): .lean sibling has 0 sorrys (proven) but NO probe script / witness references it via contentBlock. Chain-relevant (mass/binding/q-beta/nucleon). Per I1: write a probe exercising the claim at q_0 emitting a witness whose contentBlock points at this label. Verified against witness contentBlock+reference_blocks index (153 labels) at 565be78e866d.",
+      "attempts": [],
+      "status": "queued",
+      "asked_author_at": null
+    },
+    {
+      "id": "820ecc1fb487",
+      "block_or_script": "prop:mass-formula-regime-switching",
+      "paths": {
+        "ts": "content/quantum-observable-universe/mass-theory/mass-formula-regime-switching.ts",
+        "md": "content/quantum-observable-universe/mass-theory/mass-formula-regime-switching.md",
+        "lean": "content/quantum-observable-universe/mass-theory/mass-formula-regime-switching.lean"
+      },
+      "finding": "I1-proven-no-probe",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "prop:mass-formula-regime-switching (proposition): .lean sibling has 0 sorrys (proven) but NO probe script / witness references it via contentBlock. Chain-relevant (mass/binding/q-beta/nucleon). Per I1: write a probe exercising the claim at q_0 emitting a witness whose contentBlock points at this label. Verified against witness contentBlock+reference_blocks index (153 labels) at 565be78e866d.",
+      "attempts": [],
+      "status": "queued",
+      "asked_author_at": null
+    },
+    {
+      "id": "b2fdb176f7ae",
+      "block_or_script": "prop:mass-identity-exists",
+      "paths": {
+        "ts": "content/quantum-observable-universe/mass-endomorphism/mass-identity-exists.ts",
+        "md": "content/quantum-observable-universe/mass-endomorphism/mass-identity-exists.md",
+        "lean": "content/quantum-observable-universe/mass-endomorphism/mass-identity-exists.lean"
+      },
+      "finding": "I1-proven-no-probe",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "prop:mass-identity-exists (proposition): .lean sibling has 0 sorrys (proven) but NO probe script / witness references it via contentBlock. Chain-relevant (mass/binding/q-beta/nucleon). Per I1: write a probe exercising the claim at q_0 emitting a witness whose contentBlock points at this label. Verified against witness contentBlock+reference_blocks index (153 labels) at 565be78e866d.",
+      "attempts": [],
+      "status": "queued",
+      "asked_author_at": null
+    },
+    {
+      "id": "593948b89ab6",
+      "block_or_script": "prop:mass-identity-unique",
+      "paths": {
+        "ts": "content/quantum-observable-universe/mass-endomorphism/mass-identity-unique.ts",
+        "md": "content/quantum-observable-universe/mass-endomorphism/mass-identity-unique.md",
+        "lean": "content/quantum-observable-universe/mass-endomorphism/mass-identity-unique.lean"
+      },
+      "finding": "I1-proven-no-probe",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "prop:mass-identity-unique (proposition): .lean sibling has 0 sorrys (proven) but NO probe script / witness references it via contentBlock. Chain-relevant (mass/binding/q-beta/nucleon). Per I1: write a probe exercising the claim at q_0 emitting a witness whose contentBlock points at this label. Verified against witness contentBlock+reference_blocks index (153 labels) at 565be78e866d.",
+      "attempts": [],
+      "status": "queued",
+      "asked_author_at": null
+    },
+    {
+      "id": "51b5c53a767e",
+      "block_or_script": "prop:neutron-prediction-comparison",
+      "paths": {
+        "ts": "content/quantum-observable-universe/observations/neutron-prediction-comparison.ts",
+        "md": "content/quantum-observable-universe/observations/neutron-prediction-comparison.md",
+        "lean": "content/quantum-observable-universe/observations/neutron-prediction-comparison.lean"
+      },
+      "finding": "I1-proven-no-probe",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "prop:neutron-prediction-comparison (proposition): .lean sibling has 0 sorrys (proven) but NO probe script / witness references it via contentBlock. Chain-relevant (mass/binding/q-beta/nucleon). Per I1: write a probe exercising the claim at q_0 emitting a witness whose contentBlock points at this label. Verified against witness contentBlock+reference_blocks index (153 labels) at 565be78e866d.",
+      "attempts": [],
+      "status": "queued",
+      "asked_author_at": null
+    },
+    {
+      "id": "c1935b2ab8ec",
+      "block_or_script": "prop:neutron-proton-mass-splitting",
+      "paths": {
+        "ts": "content/quantum-observable-universe/observations/neutron-proton-mass-splitting.ts",
+        "md": "content/quantum-observable-universe/observations/neutron-proton-mass-splitting.md",
+        "lean": "content/quantum-observable-universe/observations/neutron-proton-mass-splitting.lean"
+      },
+      "finding": "I1-proven-no-probe",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "prop:neutron-proton-mass-splitting (proposition): .lean sibling has 0 sorrys (proven) but NO probe script / witness references it via contentBlock. Chain-relevant (mass/binding/q-beta/nucleon). Per I1: write a probe exercising the claim at q_0 emitting a witness whose contentBlock points at this label. Verified against witness contentBlock+reference_blocks index (153 labels) at 565be78e866d.",
+      "attempts": [],
+      "status": "queued",
+      "asked_author_at": null
+    },
+    {
+      "id": "9ba1f7aa9c41",
+      "block_or_script": "prop:q-beta-c-2-eq-neg-one-structural",
+      "paths": {
+        "ts": "content/quantum-observable-universe/mass-theory/q-beta-c-2-eq-neg-one-structural.ts",
+        "md": "content/quantum-observable-universe/mass-theory/q-beta-c-2-eq-neg-one-structural.md",
+        "lean": "content/quantum-observable-universe/mass-theory/q-beta-c-2-eq-neg-one-structural.lean"
+      },
+      "finding": "I1-proven-no-probe",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "prop:q-beta-c-2-eq-neg-one-structural (proposition): .lean sibling has 0 sorrys (proven) but NO probe script / witness references it via contentBlock. Chain-relevant (mass/binding/q-beta/nucleon). Per I1: write a probe exercising the claim at q_0 emitting a witness whose contentBlock points at this label. Verified against witness contentBlock+reference_blocks index (153 labels) at 565be78e866d.",
+      "attempts": [],
+      "status": "queued",
+      "asked_author_at": null
+    },
+    {
+      "id": "b043315fbf1b",
+      "block_or_script": "prop:q-beta-c-k-leading-bias-correction-identity",
+      "paths": {
+        "ts": "content/quantum-observable-universe/mass-theory/q-beta-c-k-leading-bias-correction-identity.ts",
+        "md": "content/quantum-observable-universe/mass-theory/q-beta-c-k-leading-bias-correction-identity.md",
+        "lean": "content/quantum-observable-universe/mass-theory/q-beta-c-k-leading-bias-correction-identity.lean"
+      },
+      "finding": "I1-proven-no-probe",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "prop:q-beta-c-k-leading-bias-correction-identity (proposition): .lean sibling has 0 sorrys (proven) but NO probe script / witness references it via contentBlock. Chain-relevant (mass/binding/q-beta/nucleon). Per I1: write a probe exercising the claim at q_0 emitting a witness whose contentBlock points at this label. Verified against witness contentBlock+reference_blocks index (153 labels) at 565be78e866d.",
+      "attempts": [],
+      "status": "queued",
+      "asked_author_at": null
+    },
+    {
+      "id": "97ad28228940",
+      "block_or_script": "prop:q-beta-c-k-recursion-from-habiro-q-difference",
+      "paths": {
+        "ts": "content/quantum-observable-universe/mass-theory/q-beta-c-k-recursion-from-habiro-q-difference.ts",
+        "md": "content/quantum-observable-universe/mass-theory/q-beta-c-k-recursion-from-habiro-q-difference.md",
+        "lean": "content/quantum-observable-universe/mass-theory/q-beta-c-k-recursion-from-habiro-q-difference.lean"
+      },
+      "finding": "I1-proven-no-probe",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "prop:q-beta-c-k-recursion-from-habiro-q-difference (proposition): .lean sibling has 0 sorrys (proven) but NO probe script / witness references it via contentBlock. Chain-relevant (mass/binding/q-beta/nucleon). Per I1: write a probe exercising the claim at q_0 emitting a witness whose contentBlock points at this label. Verified against witness contentBlock+reference_blocks index (153 labels) at 565be78e866d.",
+      "attempts": [],
+      "status": "queued",
+      "asked_author_at": null
+    },
+    {
+      "id": "3c58c569fd9a",
+      "block_or_script": "prop:q-beta-c3-hopf-three-fold-markov",
+      "paths": {
+        "ts": "content/quantum-observable-universe/mass-theory/q-beta-c3-hopf-three-fold-markov.ts",
+        "md": "content/quantum-observable-universe/mass-theory/q-beta-c3-hopf-three-fold-markov.md",
+        "lean": "content/quantum-observable-universe/mass-theory/q-beta-c3-hopf-three-fold-markov.lean"
+      },
+      "finding": "I1-proven-no-probe",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "prop:q-beta-c3-hopf-three-fold-markov (proposition): .lean sibling has 0 sorrys (proven) but NO probe script / witness references it via contentBlock. Chain-relevant (mass/binding/q-beta/nucleon). Per I1: write a probe exercising the claim at q_0 emitting a witness whose contentBlock points at this label. Verified against witness contentBlock+reference_blocks index (153 labels) at 565be78e866d.",
+      "attempts": [],
+      "status": "queued",
+      "asked_author_at": null
+    },
+    {
+      "id": "78a0391356bd",
+      "block_or_script": "prop:q-beta-cos-resummation",
+      "paths": {
+        "ts": "content/quantum-observable-universe/particle-interactions/q-beta-cos-resummation.ts",
+        "md": "content/quantum-observable-universe/particle-interactions/q-beta-cos-resummation.md",
+        "lean": "content/quantum-observable-universe/particle-interactions/q-beta-cos-resummation.lean"
+      },
+      "finding": "I1-proven-no-probe",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "prop:q-beta-cos-resummation (proposition): .lean sibling has 0 sorrys (proven) but NO probe script / witness references it via contentBlock. Chain-relevant (mass/binding/q-beta/nucleon). Per I1: write a probe exercising the claim at q_0 emitting a witness whose contentBlock points at this label. Verified against witness contentBlock+reference_blocks index (153 labels) at 565be78e866d.",
+      "attempts": [],
+      "status": "queued",
+      "asked_author_at": null
+    },
+    {
+      "id": "452691bdfa40",
+      "block_or_script": "prop:qbeta-c4-from-c3-c8-product-identity",
+      "paths": {
+        "ts": "content/quantum-observable-universe/mass-theory/qbeta-c4-from-c3-c8-product-identity.ts",
+        "md": "content/quantum-observable-universe/mass-theory/qbeta-c4-from-c3-c8-product-identity.md",
+        "lean": "content/quantum-observable-universe/mass-theory/qbeta-c4-from-c3-c8-product-identity.lean"
+      },
+      "finding": "I1-proven-no-probe",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "prop:qbeta-c4-from-c3-c8-product-identity (proposition): .lean sibling has 0 sorrys (proven) but NO probe script / witness references it via contentBlock. Chain-relevant (mass/binding/q-beta/nucleon). Per I1: write a probe exercising the claim at q_0 emitting a witness whose contentBlock points at this label. Verified against witness contentBlock+reference_blocks index (153 labels) at 565be78e866d.",
+      "attempts": [],
+      "status": "queued",
+      "asked_author_at": null
+    },
+    {
+      "id": "5bf749b002e3",
+      "block_or_script": "prop:qbeta-c8-c10-silver-rationals",
+      "paths": {
+        "ts": "content/quantum-observable-universe/mass-theory/qbeta-c8-c10-silver-rationals.ts",
+        "md": "content/quantum-observable-universe/mass-theory/qbeta-c8-c10-silver-rationals.md",
+        "lean": "content/quantum-observable-universe/mass-theory/qbeta-c8-c10-silver-rationals.lean"
+      },
+      "finding": "I1-proven-no-probe",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "prop:qbeta-c8-c10-silver-rationals (proposition): .lean sibling has 0 sorrys (proven) but NO probe script / witness references it via contentBlock. Chain-relevant (mass/binding/q-beta/nucleon). Per I1: write a probe exercising the claim at q_0 emitting a witness whose contentBlock points at this label. Verified against witness contentBlock+reference_blocks index (153 labels) at 565be78e866d.",
+      "attempts": [],
+      "status": "queued",
+      "asked_author_at": null
+    },
+    {
+      "id": "a87f696c729b",
+      "block_or_script": "prop:topological-mass-formula",
+      "paths": {
+        "ts": "content/quantum-observable-universe/mass-theory/topological-mass-formula.ts",
+        "md": "content/quantum-observable-universe/mass-theory/topological-mass-formula.md",
+        "lean": "content/quantum-observable-universe/mass-theory/topological-mass-formula.lean"
+      },
+      "finding": "I1-proven-no-probe",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "prop:topological-mass-formula (proposition): .lean sibling has 0 sorrys (proven) but NO probe script / witness references it via contentBlock. Chain-relevant (mass/binding/q-beta/nucleon). Per I1: write a probe exercising the claim at q_0 emitting a witness whose contentBlock points at this label. Verified against witness contentBlock+reference_blocks index (153 labels) at 565be78e866d.",
+      "attempts": [],
+      "status": "queued",
+      "asked_author_at": null
+    },
+    {
+      "id": "79c487afd138",
+      "block_or_script": "prop:topological-mass-formula-algebraic",
+      "paths": {
+        "ts": "content/quantum-observable-universe/mass-theory/topological-mass-formula-algebraic.ts",
+        "md": "content/quantum-observable-universe/mass-theory/topological-mass-formula-algebraic.md",
+        "lean": "content/quantum-observable-universe/mass-theory/topological-mass-formula-algebraic.lean"
+      },
+      "finding": "I1-proven-no-probe",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "prop:topological-mass-formula-algebraic (proposition): .lean sibling has 0 sorrys (proven) but NO probe script / witness references it via contentBlock. Chain-relevant (mass/binding/q-beta/nucleon). Per I1: write a probe exercising the claim at q_0 emitting a witness whose contentBlock points at this label. Verified against witness contentBlock+reference_blocks index (153 labels) at 565be78e866d.",
+      "attempts": [],
+      "status": "queued",
+      "asked_author_at": null
+    },
+    {
+      "id": "d53f7c2a9912",
+      "block_or_script": "folio-assistant/computations/atomic_mass_via_rho_k.py",
+      "paths": {
+        "py": "folio-assistant/computations/atomic_mass_via_rho_k.py"
+      },
+      "finding": "I9-hardcoded-codata-production",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "atomic_mass_via_rho_k.py:215 — hardcoded CODATA literal in a PRODUCTION/prediction script (P31). Should import from codata_constants.py (_VALIDATION aliases) / experimental_constants.py, not inline. Source: compute-audit-scan.witness.json (regenerated 2026-06-13).",
+      "attempts": [],
+      "status": "queued",
+      "asked_author_at": null
+    },
+    {
+      "id": "1f9df47e14f2",
+      "block_or_script": "folio-assistant/computations/binding_K_direct.py",
+      "paths": {
+        "py": "folio-assistant/computations/binding_K_direct.py"
+      },
+      "finding": "I9-hardcoded-codata-production",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "binding_K_direct.py:81 — hardcoded CODATA literal in a PRODUCTION/prediction script (P31). Should import from codata_constants.py (_VALIDATION aliases) / experimental_constants.py, not inline. Source: compute-audit-scan.witness.json (regenerated 2026-06-13).",
+      "attempts": [],
+      "status": "queued",
+      "asked_author_at": null
+    },
+    {
+      "id": "23db5cbf19d2",
+      "block_or_script": "folio-assistant/computations/build_six_term_substrate_model_b.py",
+      "paths": {
+        "py": "folio-assistant/computations/build_six_term_substrate_model_b.py"
+      },
+      "finding": "I9-hardcoded-codata-production",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "build_six_term_substrate_model_b.py:114 — hardcoded CODATA literal in a PRODUCTION/prediction script (P31). Should import from codata_constants.py (_VALIDATION aliases) / experimental_constants.py, not inline. Source: compute-audit-scan.witness.json (regenerated 2026-06-13).",
+      "attempts": [],
+      "status": "queued",
+      "asked_author_at": null
+    },
+    {
+      "id": "401f39200784",
+      "block_or_script": "folio-assistant/computations/compound_binding_via_differences.py",
+      "paths": {
+        "py": "folio-assistant/computations/compound_binding_via_differences.py"
+      },
+      "finding": "I9-hardcoded-codata-production",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "compound_binding_via_differences.py:81 — hardcoded CODATA literal in a PRODUCTION/prediction script (P31). Should import from codata_constants.py (_VALIDATION aliases) / experimental_constants.py, not inline. Source: compute-audit-scan.witness.json (regenerated 2026-06-13).",
+      "attempts": [],
+      "status": "queued",
+      "asked_author_at": null
+    },
+    {
+      "id": "fa4610f2db74",
+      "block_or_script": "folio-assistant/computations/derive_m_baryon_volume_form.py",
+      "paths": {
+        "py": "folio-assistant/computations/derive_m_baryon_volume_form.py"
+      },
+      "finding": "I9-hardcoded-codata-production",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "derive_m_baryon_volume_form.py:36 — hardcoded CODATA literal in a PRODUCTION/prediction script (P31). Should import from codata_constants.py (_VALIDATION aliases) / experimental_constants.py, not inline. Source: compute-audit-scan.witness.json (regenerated 2026-06-13).",
+      "attempts": [],
+      "status": "queued",
+      "asked_author_at": null
+    },
+    {
+      "id": "f6173e841039",
+      "block_or_script": "folio-assistant/computations/inter_nucleon_linked_channel.py",
+      "paths": {
+        "py": "folio-assistant/computations/inter_nucleon_linked_channel.py"
+      },
+      "finding": "I9-hardcoded-codata-production",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "inter_nucleon_linked_channel.py:63 — hardcoded CODATA literal in a PRODUCTION/prediction script (P31). Should import from codata_constants.py (_VALIDATION aliases) / experimental_constants.py, not inline. Source: compute-audit-scan.witness.json (regenerated 2026-06-13).",
+      "attempts": [],
+      "status": "queued",
+      "asked_author_at": null
+    },
+    {
+      "id": "66d6e35f7bd1",
+      "block_or_script": "folio-assistant/computations/m_p_substrate_identity_50dps.py",
+      "paths": {
+        "py": "folio-assistant/computations/m_p_substrate_identity_50dps.py"
+      },
+      "finding": "I9-hardcoded-codata-production",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "m_p_substrate_identity_50dps.py:56 (+57) — hardcoded CODATA literal in a PRODUCTION/prediction script (P31). Should import from codata_constants.py (_VALIDATION aliases) / experimental_constants.py, not inline. Source: compute-audit-scan.witness.json (regenerated 2026-06-13).",
+      "attempts": [],
+      "status": "queued",
+      "asked_author_at": null
+    },
+    {
+      "id": "28d8564c3dec",
+      "block_or_script": "folio-assistant/computations/mass_formula_6term_mpfr_50dps.py",
+      "paths": {
+        "py": "folio-assistant/computations/mass_formula_6term_mpfr_50dps.py"
+      },
+      "finding": "I9-hardcoded-codata-production",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "mass_formula_6term_mpfr_50dps.py:542 — hardcoded CODATA literal in a PRODUCTION/prediction script (P31). Should import from codata_constants.py (_VALIDATION aliases) / experimental_constants.py, not inline. Source: compute-audit-scan.witness.json (regenerated 2026-06-13).",
+      "attempts": [],
+      "status": "queued",
+      "asked_author_at": null
+    },
+    {
+      "id": "aca22173f91a",
+      "block_or_script": "folio-assistant/computations/mass_table_l1_full_crosscheck.py",
+      "paths": {
+        "py": "folio-assistant/computations/mass_table_l1_full_crosscheck.py"
+      },
+      "finding": "I9-hardcoded-codata-production",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "mass_table_l1_full_crosscheck.py:29 — hardcoded CODATA literal in a PRODUCTION/prediction script (P31). Should import from codata_constants.py (_VALIDATION aliases) / experimental_constants.py, not inline. Source: compute-audit-scan.witness.json (regenerated 2026-06-13).",
+      "attempts": [],
+      "status": "queued",
+      "asked_author_at": null
+    },
+    {
+      "id": "29d7569c2ad4",
+      "block_or_script": "folio-assistant/computations/mass_table_ppb.py",
+      "paths": {
+        "py": "folio-assistant/computations/mass_table_ppb.py"
+      },
+      "finding": "I9-hardcoded-codata-production",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "mass_table_ppb.py:122 — hardcoded CODATA literal in a PRODUCTION/prediction script (P31). Should import from codata_constants.py (_VALIDATION aliases) / experimental_constants.py, not inline. Source: compute-audit-scan.witness.json (regenerated 2026-06-13).",
+      "attempts": [],
+      "status": "queued",
+      "asked_author_at": null
+    },
+    {
+      "id": "4b9aa11b2400",
+      "block_or_script": "folio-assistant/computations/meson_mass_from_hecke.py",
+      "paths": {
+        "py": "folio-assistant/computations/meson_mass_from_hecke.py"
+      },
+      "finding": "I9-hardcoded-codata-production",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "meson_mass_from_hecke.py:85 (+68) — hardcoded CODATA literal in a PRODUCTION/prediction script (P31). Should import from codata_constants.py (_VALIDATION aliases) / experimental_constants.py, not inline. Source: compute-audit-scan.witness.json (regenerated 2026-06-13).",
+      "attempts": [],
+      "status": "queued",
+      "asked_author_at": null
+    },
+    {
+      "id": "437b3941d743",
+      "block_or_script": "folio-assistant/computations/meson_vol_density.py",
+      "paths": {
+        "py": "folio-assistant/computations/meson_vol_density.py"
+      },
+      "finding": "I9-hardcoded-codata-production",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "meson_vol_density.py:52 — hardcoded CODATA literal in a PRODUCTION/prediction script (P31). Should import from codata_constants.py (_VALIDATION aliases) / experimental_constants.py, not inline. Source: compute-audit-scan.witness.json (regenerated 2026-06-13).",
+      "attempts": [],
+      "status": "queued",
+      "asked_author_at": null
+    },
+    {
+      "id": "b6635069b6a5",
+      "block_or_script": "folio-assistant/computations/tower_isotope_absolute.py",
+      "paths": {
+        "py": "folio-assistant/computations/tower_isotope_absolute.py"
+      },
+      "finding": "I9-hardcoded-codata-production",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "tower_isotope_absolute.py:72 — hardcoded CODATA literal in a PRODUCTION/prediction script (P31). Should import from codata_constants.py (_VALIDATION aliases) / experimental_constants.py, not inline. Source: compute-audit-scan.witness.json (regenerated 2026-06-13).",
+      "attempts": [],
+      "status": "queued",
+      "asked_author_at": null
+    },
+    {
+      "id": "54aabc03fbfd",
+      "block_or_script": "folio-assistant/computations/canonical_lepton_braid_words.py",
+      "paths": {
+        "py": "folio-assistant/computations/canonical_lepton_braid_words.py"
+      },
+      "finding": "I9-hardcoded-codata",
+      "severity": "minor",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "canonical_lepton_braid_words.py:193 — hardcoded CODATA literal (P31), non-production script. Either import from registry or tag `# noqa: P31` with audit-only justification. Source: compute-audit-scan.witness.json.",
+      "attempts": [],
+      "status": "queued",
+      "asked_author_at": null
+    },
+    {
+      "id": "38e6ec02d26e",
+      "block_or_script": "folio-assistant/computations/f_ell_derivation_via_per_braid_mass_tower.py",
+      "paths": {
+        "py": "folio-assistant/computations/f_ell_derivation_via_per_braid_mass_tower.py"
+      },
+      "finding": "I9-hardcoded-codata",
+      "severity": "minor",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "f_ell_derivation_via_per_braid_mass_tower.py:59 — hardcoded CODATA literal (P31), non-production script. Either import from registry or tag `# noqa: P31` with audit-only justification. Source: compute-audit-scan.witness.json.",
+      "attempts": [],
+      "status": "queued",
+      "asked_author_at": null
+    },
+    {
+      "id": "7a4917b4e649",
+      "block_or_script": "folio-assistant/computations/h4_residual_vs_fine_structure_50dps.py",
+      "paths": {
+        "py": "folio-assistant/computations/h4_residual_vs_fine_structure_50dps.py"
+      },
+      "finding": "I9-hardcoded-codata",
+      "severity": "minor",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "h4_residual_vs_fine_structure_50dps.py:58 — hardcoded CODATA literal (P31), non-production script. Either import from registry or tag `# noqa: P31` with audit-only justification. Source: compute-audit-scan.witness.json.",
+      "attempts": [],
+      "status": "queued",
+      "asked_author_at": null
+    },
+    {
+      "id": "a6cd69bb52d1",
+      "block_or_script": "folio-assistant/computations/knot_operator_sdp_4_1.py",
+      "paths": {
+        "py": "folio-assistant/computations/knot_operator_sdp_4_1.py"
+      },
+      "finding": "I9-hardcoded-codata",
+      "severity": "minor",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "knot_operator_sdp_4_1.py:115 — hardcoded CODATA literal (P31), non-production script. Either import from registry or tag `# noqa: P31` with audit-only justification. Source: compute-audit-scan.witness.json.",
+      "attempts": [],
+      "status": "queued",
+      "asked_author_at": null
+    },
+    {
+      "id": "37a8faa017e4",
+      "block_or_script": "folio-assistant/computations/lambda_scale_refinement_h4_correction_bring.py",
+      "paths": {
+        "py": "folio-assistant/computations/lambda_scale_refinement_h4_correction_bring.py"
+      },
+      "finding": "I9-hardcoded-codata",
+      "severity": "minor",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "lambda_scale_refinement_h4_correction_bring.py:106 — hardcoded CODATA literal (P31), non-production script. Either import from registry or tag `# noqa: P31` with audit-only justification. Source: compute-audit-scan.witness.json.",
+      "attempts": [],
+      "status": "queued",
+      "asked_author_at": null
+    },
+    {
+      "id": "296d8c70c729",
+      "block_or_script": "folio-assistant/computations/lambda_scale_refinements_composed_predictions.py",
+      "paths": {
+        "py": "folio-assistant/computations/lambda_scale_refinements_composed_predictions.py"
+      },
+      "finding": "I9-hardcoded-codata",
+      "severity": "minor",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "lambda_scale_refinements_composed_predictions.py:83 — hardcoded CODATA literal (P31), non-production script. Either import from registry or tag `# noqa: P31` with audit-only justification. Source: compute-audit-scan.witness.json.",
+      "attempts": [],
+      "status": "queued",
+      "asked_author_at": null
+    },
+    {
+      "id": "3b12829a0d7c",
+      "block_or_script": "folio-assistant/computations/m_tau_knot_prediction.py",
+      "paths": {
+        "py": "folio-assistant/computations/m_tau_knot_prediction.py"
+      },
+      "finding": "I9-hardcoded-codata",
+      "severity": "minor",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "m_tau_knot_prediction.py:68 — hardcoded CODATA literal (P31), non-production script. Either import from registry or tag `# noqa: P31` with audit-only justification. Source: compute-audit-scan.witness.json.",
+      "attempts": [],
+      "status": "queued",
+      "asked_author_at": null
+    },
+    {
+      "id": "711cac4c6169",
+      "block_or_script": "folio-assistant/computations/per_generator_V_hat_general.py",
+      "paths": {
+        "py": "folio-assistant/computations/per_generator_V_hat_general.py"
+      },
+      "finding": "I9-hardcoded-codata",
+      "severity": "minor",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "per_generator_V_hat_general.py:162 — hardcoded CODATA literal (P31), non-production script. Either import from registry or tag `# noqa: P31` with audit-only justification. Source: compute-audit-scan.witness.json.",
+      "attempts": [],
+      "status": "queued",
+      "asked_author_at": null
+    },
+    {
+      "id": "2eb609f034f2",
+      "block_or_script": "folio-assistant/computations/q_dirac_linking_weight_extended_50dps.py",
+      "paths": {
+        "py": "folio-assistant/computations/q_dirac_linking_weight_extended_50dps.py"
+      },
+      "finding": "I9-hardcoded-codata",
+      "severity": "minor",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "q_dirac_linking_weight_extended_50dps.py:28 — hardcoded CODATA literal (P31), non-production script. Either import from registry or tag `# noqa: P31` with audit-only justification. Source: compute-audit-scan.witness.json.",
+      "attempts": [],
+      "status": "queued",
+      "asked_author_at": null
+    },
+    {
+      "id": "960cd85db999",
+      "block_or_script": "folio-assistant/computations/t6_lepton_h3_3channel_convention.py",
+      "paths": {
+        "py": "folio-assistant/computations/t6_lepton_h3_3channel_convention.py"
+      },
+      "finding": "I9-hardcoded-codata",
+      "severity": "minor",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "t6_lepton_h3_3channel_convention.py:41 — hardcoded CODATA literal (P31), non-production script. Either import from registry or tag `# noqa: P31` with audit-only justification. Source: compute-audit-scan.witness.json.",
+      "attempts": [],
+      "status": "queued",
+      "asked_author_at": null
+    },
+    {
+      "id": "b8d4c3567519",
+      "block_or_script": "folio-assistant/computations/verify_isospin_bar_anomaly.py",
+      "paths": {
+        "py": "folio-assistant/computations/verify_isospin_bar_anomaly.py"
+      },
+      "finding": "I9-hardcoded-codata",
+      "severity": "minor",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "verify_isospin_bar_anomaly.py:142 — hardcoded CODATA literal (P31), non-production script. Either import from registry or tag `# noqa: P31` with audit-only justification. Source: compute-audit-scan.witness.json.",
+      "attempts": [],
+      "status": "queued",
+      "asked_author_at": null
+    },
+    {
+      "id": "f0a17276535d",
+      "block_or_script": "folio-assistant/computations/per-pair-wedderburn-enumeration.witness.json",
+      "paths": {
+        "py": "folio-assistant/computations/per-pair-wedderburn-enumeration.witness.json"
+      },
+      "finding": "I6-list-typed-data-schema-drift",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "per-pair-wedderburn-enumeration.witness.json — top-level `data` is a list (len 10) not a dict; breaks witness_dependency_drift.py (AttributeError: 'list' has no attribute 'get') and any consumer expecting data.{...}. Schema drift (I6). Fix: wrap rows under data.{rows:[...]} or migrate to WitnessBuilder.",
+      "attempts": [],
+      "status": "queued",
+      "asked_author_at": null
+    },
+    {
+      "id": "cef47fdce772",
+      "block_or_script": "folio-assistant/computations/topic2-mirror-pair-phi8-boundary-scan.witness.json",
+      "paths": {
+        "py": "folio-assistant/computations/topic2-mirror-pair-phi8-boundary-scan.witness.json"
+      },
+      "finding": "I6-list-typed-data-schema-drift",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "topic2-mirror-pair-phi8-boundary-scan.witness.json — top-level `data` is a list (len 10) not a dict; breaks witness_dependency_drift.py (AttributeError: 'list' has no attribute 'get') and any consumer expecting data.{...}. Schema drift (I6). Fix: wrap rows under data.{rows:[...]} or migrate to WitnessBuilder.",
+      "attempts": [],
+      "status": "queued",
+      "asked_author_at": null
+    },
+    {
+      "id": "78fb2f73615a",
+      "block_or_script": "mass-table-sweep:exploratory",
+      "paths": {
+        "py": "folio-assistant/computations/mass_table_ppb.py",
+        "ts": "n/a"
+      },
+      "finding": "I2-mass-table-not-canonically-wired",
+      "severity": "minor",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "Mass-table sweep: 3 atom(s) status='exploratory' — 2H, 3H, 3He. 0 atoms fully-canonically-wired. 'exploratory' needs: R5-full SDP solver + Rule-14 census audit (census-assigned knot, ν_SDP guessed). Source: mass-sweep-wiring-status.witness.json (computedAt 2026-05-27).",
+      "attempts": [],
+      "status": "queued",
+      "asked_author_at": null
+    },
+    {
+      "id": "dd63070e288b",
+      "block_or_script": "mass-table-sweep:extrapolated",
+      "paths": {
+        "py": "folio-assistant/computations/mass_table_ppb.py",
+        "ts": "n/a"
+      },
+      "finding": "I2-mass-table-not-canonically-wired",
+      "severity": "minor",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "Mass-table sweep: 1 atom(s) status='extrapolated' — 4He. 0 atoms fully-canonically-wired. 'extrapolated' needs: R5-full SDP solver landing (knot framework-derived, ν_SDP extrapolated). Source: mass-sweep-wiring-status.witness.json (computedAt 2026-05-27).",
+      "attempts": [],
+      "status": "queued",
+      "asked_author_at": null
+    },
+    {
+      "id": "ef50351c2ecb",
+      "block_or_script": "mass-table-sweep:gap",
+      "paths": {
+        "py": "folio-assistant/computations/mass_table_ppb.py",
+        "ts": "n/a"
+      },
+      "finding": "I2-mass-table-not-canonically-wired",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "Mass-table sweep: 7 atom(s) status='gap' — 5Li, 6Li, 7Li, 9Be, 11B, 14N, 19F. 0 atoms fully-canonically-wired. 'gap' needs: Rule-14 atom-knot census expansion (A∈5,6,7). Source: mass-sweep-wiring-status.witness.json (computedAt 2026-05-27).",
+      "attempts": [],
+      "status": "queued",
+      "asked_author_at": null
+    },
+    {
+      "id": "fb83faba85d4",
+      "block_or_script": "mass-table-sweep:alpha-cluster",
+      "paths": {
+        "py": "folio-assistant/computations/mass_table_ppb.py",
+        "ts": "n/a"
+      },
+      "finding": "I2-mass-table-not-canonically-wired",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "Mass-table sweep: 6 atom(s) status='alpha-cluster' — 8Be, 12C, 16O, 20Ne, 24Mg, 40Ca. 0 atoms fully-canonically-wired. 'alpha-cluster' needs: ⁴He canonical first (built on n×⁴He extrapolation). Source: mass-sweep-wiring-status.witness.json (computedAt 2026-05-27).",
+      "attempts": [],
+      "status": "queued",
+      "asked_author_at": null
+    },
+    {
+      "id": "5e1594d29b41",
+      "block_or_script": "mass-table-sweep:klr-positivity",
+      "paths": {
+        "py": "folio-assistant/computations/mass_sweep_wiring_status.py"
+      },
+      "finding": "I2-klr-positivity-violation",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "8 atoms violate KLR positivity (B_pred > B_AME over-prediction → wrong knot / wrong ν_SDP / missing structural restriction). Predicted should be a LOWER bound on observed. Source: mass-sweep-wiring-status.witness.json klr_violations_count=8.",
+      "attempts": [],
+      "status": "queued",
+      "asked_author_at": null
+    },
+    {
+      "id": "153e1a484b43",
+      "block_or_script": "AGGREGATE:witness-builder-p30",
+      "paths": {
+        "py": "folio-assistant/computations/compute_audit_scan.py"
+      },
+      "finding": "I-infra-no-witnessbuilder-P30",
+      "severity": "minor",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "142 of 730 files write .witness.json WITHOUT witness_base.WitnessBuilder (P30 contract FAIL). 133 P30 findings in compute-audit-scan. Batch-port hand-written writers. Source: canonical-derivation-pipeline-compliance contract 'WitnessBuilder usage (P30)'.",
+      "attempts": [],
+      "status": "queued",
+      "asked_author_at": null
+    },
+    {
+      "id": "63a90056cb57",
+      "block_or_script": "AGGREGATE:witness-provenance-i14",
+      "paths": {
+        "py": "folio-assistant/computations/audits/witness_provenance_audit.py"
+      },
+      "finding": "I14-witness-provenance-incomplete",
+      "severity": "minor",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "26 of 707 witnesses missing engine/scriptFile/commitSha (completeness ratio 0.963, WARN). Dashboard-reported aggregate (707-scope run not on disk; local audits/ run is 29-file exempt scope). Re-run full provenance audit to enumerate. Source: canonical-derivation-pipeline-compliance contract 'Witness provenance completeness (I14)'.",
+      "attempts": [],
+      "status": "queued",
+      "asked_author_at": null
+    },
+    {
+      "id": "dc74da9b9293",
+      "block_or_script": "AGGREGATE:cal-overcount",
+      "paths": {
+        "py": "folio-assistant/computations/audits/canonical_script_input_audit.py"
+      },
+      "finding": "I-cal-input-overcount",
+      "severity": "minor",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "3-input canonical scheme WARN: 31 canonical / 49 over-count / 676 classified. 49 scripts declare more calibration inputs than the permitted CAL-1/2/3. Source: canonical-derivation-pipeline-compliance contract '3-input canonical scheme'. Overlaps canonical-watcher domain.",
+      "attempts": [],
+      "status": "queued",
+      "asked_author_at": null
+    }
+  ],
+  "audited": {
+    "folio-assistant/computations/derivation_chain.py": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I-conflict-two-canonical-values"
+      ]
+    },
+    "cor:knot-factor-borromean-composite": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I1-proven-no-probe"
+      ]
+    },
+    "cor:mass-identity-C": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I1-proven-no-probe"
+      ]
+    },
+    "lem:deuteron-binding-energy": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I1-proven-no-probe"
+      ]
+    },
+    "lem:nucleon-borromean-topology": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I1-proven-no-probe"
+      ]
+    },
+    "lem:topological-mass-eigenspace-decomp": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I1-proven-no-probe"
+      ]
+    },
+    "prop:borromean-hopf-energy-crossover": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I1-proven-no-probe"
+      ]
+    },
+    "prop:categorical-neutron-exists": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I1-proven-no-probe"
+      ]
+    },
+    "prop:categorical-neutron-unique": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I1-proven-no-probe"
+      ]
+    },
+    "prop:categorical-proton-exists": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I1-proven-no-probe"
+      ]
+    },
+    "prop:categorical-proton-unique": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I1-proven-no-probe"
+      ]
+    },
+    "prop:derived-mass-formula-light-isotopes": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I1-proven-no-probe"
+      ]
+    },
+    "prop:deuteron-binding-frobenius-codim": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I1-proven-no-probe"
+      ]
+    },
+    "prop:eos-borromean-cfl": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I1-proven-no-probe"
+      ]
+    },
+    "prop:exterior-square-borromean": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I1-proven-no-probe"
+      ]
+    },
+    "prop:frobenius-pairing-unique": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I1-proven-no-probe"
+      ]
+    },
+    "prop:hecke-mass-trace": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I1-proven-no-probe"
+      ]
+    },
+    "prop:mass-formula-regime-switching": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I1-proven-no-probe"
+      ]
+    },
+    "prop:mass-identity-exists": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I1-proven-no-probe"
+      ]
+    },
+    "prop:mass-identity-unique": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I1-proven-no-probe"
+      ]
+    },
+    "prop:neutron-prediction-comparison": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I1-proven-no-probe"
+      ]
+    },
+    "prop:neutron-proton-mass-splitting": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I1-proven-no-probe"
+      ]
+    },
+    "prop:q-beta-c-2-eq-neg-one-structural": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I1-proven-no-probe"
+      ]
+    },
+    "prop:q-beta-c-k-leading-bias-correction-identity": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I1-proven-no-probe"
+      ]
+    },
+    "prop:q-beta-c-k-recursion-from-habiro-q-difference": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I1-proven-no-probe"
+      ]
+    },
+    "prop:q-beta-c3-hopf-three-fold-markov": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I1-proven-no-probe"
+      ]
+    },
+    "prop:q-beta-cos-resummation": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I1-proven-no-probe"
+      ]
+    },
+    "prop:qbeta-c4-from-c3-c8-product-identity": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I1-proven-no-probe"
+      ]
+    },
+    "prop:qbeta-c8-c10-silver-rationals": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I1-proven-no-probe"
+      ]
+    },
+    "prop:topological-mass-formula": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I1-proven-no-probe"
+      ]
+    },
+    "prop:topological-mass-formula-algebraic": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I1-proven-no-probe"
+      ]
+    },
+    "folio-assistant/computations/atomic_mass_via_rho_k.py": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I9-hardcoded-codata-production"
+      ]
+    },
+    "folio-assistant/computations/binding_K_direct.py": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I9-hardcoded-codata-production"
+      ]
+    },
+    "folio-assistant/computations/build_six_term_substrate_model_b.py": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I9-hardcoded-codata-production"
+      ]
+    },
+    "folio-assistant/computations/compound_binding_via_differences.py": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I9-hardcoded-codata-production"
+      ]
+    },
+    "folio-assistant/computations/derive_m_baryon_volume_form.py": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I9-hardcoded-codata-production"
+      ]
+    },
+    "folio-assistant/computations/inter_nucleon_linked_channel.py": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I9-hardcoded-codata-production"
+      ]
+    },
+    "folio-assistant/computations/m_p_substrate_identity_50dps.py": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I9-hardcoded-codata-production"
+      ]
+    },
+    "folio-assistant/computations/mass_formula_6term_mpfr_50dps.py": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I9-hardcoded-codata-production"
+      ]
+    },
+    "folio-assistant/computations/mass_table_l1_full_crosscheck.py": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I9-hardcoded-codata-production"
+      ]
+    },
+    "folio-assistant/computations/mass_table_ppb.py": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I9-hardcoded-codata-production"
+      ]
+    },
+    "folio-assistant/computations/meson_mass_from_hecke.py": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I9-hardcoded-codata-production"
+      ]
+    },
+    "folio-assistant/computations/meson_vol_density.py": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I9-hardcoded-codata-production"
+      ]
+    },
+    "folio-assistant/computations/tower_isotope_absolute.py": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I9-hardcoded-codata-production"
+      ]
+    },
+    "folio-assistant/computations/canonical_lepton_braid_words.py": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I9-hardcoded-codata"
+      ]
+    },
+    "folio-assistant/computations/f_ell_derivation_via_per_braid_mass_tower.py": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I9-hardcoded-codata"
+      ]
+    },
+    "folio-assistant/computations/h4_residual_vs_fine_structure_50dps.py": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I9-hardcoded-codata"
+      ]
+    },
+    "folio-assistant/computations/knot_operator_sdp_4_1.py": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I9-hardcoded-codata"
+      ]
+    },
+    "folio-assistant/computations/lambda_scale_refinement_h4_correction_bring.py": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I9-hardcoded-codata"
+      ]
+    },
+    "folio-assistant/computations/lambda_scale_refinements_composed_predictions.py": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I9-hardcoded-codata"
+      ]
+    },
+    "folio-assistant/computations/m_tau_knot_prediction.py": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I9-hardcoded-codata"
+      ]
+    },
+    "folio-assistant/computations/per_generator_V_hat_general.py": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I9-hardcoded-codata"
+      ]
+    },
+    "folio-assistant/computations/q_dirac_linking_weight_extended_50dps.py": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I9-hardcoded-codata"
+      ]
+    },
+    "folio-assistant/computations/t6_lepton_h3_3channel_convention.py": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I9-hardcoded-codata"
+      ]
+    },
+    "folio-assistant/computations/verify_isospin_bar_anomaly.py": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I9-hardcoded-codata"
+      ]
+    },
+    "folio-assistant/computations/per-pair-wedderburn-enumeration.witness.json": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I6-list-typed-data-schema-drift"
+      ]
+    },
+    "folio-assistant/computations/topic2-mirror-pair-phi8-boundary-scan.witness.json": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I6-list-typed-data-schema-drift"
+      ]
+    },
+    "mass-table-sweep:exploratory": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I2-mass-table-not-canonically-wired"
+      ]
+    },
+    "mass-table-sweep:extrapolated": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I2-mass-table-not-canonically-wired"
+      ]
+    },
+    "mass-table-sweep:gap": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I2-mass-table-not-canonically-wired"
+      ]
+    },
+    "mass-table-sweep:alpha-cluster": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I2-mass-table-not-canonically-wired"
+      ]
+    },
+    "mass-table-sweep:klr-positivity": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I2-klr-positivity-violation"
+      ]
+    },
+    "AGGREGATE:witness-builder-p30": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I-infra-no-witnessbuilder-P30"
+      ]
+    },
+    "AGGREGATE:witness-provenance-i14": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I14-witness-provenance-incomplete"
+      ]
+    },
+    "AGGREGATE:cal-overcount": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I-cal-input-overcount"
+      ]
+    },
+    "prop:r-matrix-braiding-structure": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I1-proven-no-probe"
+      ]
+    },
+    "prop:braid-action-tensor": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I1-proven-no-probe"
+      ]
+    },
+    "prop:q-casimir-exists": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I1-proven-no-probe"
+      ]
+    },
+    "prop:lagrange-resolvent-transform": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I1-proven-no-probe"
+      ]
+    },
+    "prop:q-casimir-unique": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I1-proven-no-probe"
+      ]
+    },
+    "prop:knot-eigenbasis-complete": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I1-proven-no-probe"
+      ]
+    },
+    "prop:coral-elliptic": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I1-proven-no-probe"
+      ]
+    },
+    "thm:descartes": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I1-proven-no-probe"
+      ]
+    },
+    "prop:genus-maximal-descent": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I1-proven-no-probe"
+      ]
+    },
+    "prop:genus-filtration-ideal": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I1-proven-no-probe"
+      ]
+    },
+    "prop:defect-legendrian-knot": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I1-proven-no-probe"
+      ]
+    },
+    "prop:descartes-elliptic-curve": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I1-proven-no-probe"
+      ]
+    },
+    "prop:torus-knot-generators": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I1-proven-no-probe"
+      ]
+    },
+    "thm:embeddability-closure": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I1-proven-no-probe"
+      ]
+    },
+    "cor:descartes-braid-structure": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I1-proven-no-probe"
+      ]
+    },
+    "prop:sw-period-residue-sum": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I1-proven-no-probe"
+      ]
+    },
+    "thm:topological-charge-quantization": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I1-proven-no-probe"
+      ]
+    },
+    "prop:x5-bring-weight-identification": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I1-proven-no-probe"
+      ]
+    },
+    "thm:generation-completeness": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I1-proven-no-probe"
+      ]
+    },
+    "prop:torus-embeddable-complete": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I1-proven-no-probe"
+      ]
+    },
+    "prop:cohomological-embedding": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I1-proven-no-probe"
+      ]
+    },
+    "prop:brings-smoothness-resolution": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I1-proven-no-probe"
+      ]
+    },
+    "prop:s5-equivariant-torus-knots": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I1-proven-no-probe"
+      ]
+    },
+    "prop:b1-torus-knot-rows-theorem": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I1-proven-no-probe"
+      ]
+    },
+    "prop:joint-galois-braid-figure-8-verified": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I1-proven-no-probe"
+      ]
+    },
+    "prop:joint-galois-braid-discharged": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I1-proven-no-probe"
+      ]
+    },
+    "prop:braiding-induced-ordering": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I1-proven-no-probe"
+      ]
+    },
+    "lem:feynman-eigenbasis-decomposition": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I1-proven-no-probe"
+      ]
+    },
+    "prop:crystal-r-matrix-sub-lemma": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I1-proven-no-probe"
+      ]
+    },
+    "prop:calibration-cohomology-alignment": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I1-proven-no-probe"
+      ]
+    },
+    "lem:degree-one-braid-trivial-volume": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I1-proven-no-probe"
+      ]
+    },
+    "cor:lr-tensor-character-bridge": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I1-proven-no-probe"
+      ]
+    },
+    "prop:beta-decay-transfer-matrix": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I1-proven-no-probe"
+      ]
+    },
+    "prop:universal-braid-branching": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I1-proven-no-probe"
+      ]
+    },
+    "prop:transfer-matrix-level-independence": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I1-proven-no-probe"
+      ]
+    },
+    "prop:torus-hopf-stability": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I1-proven-no-probe"
+      ]
+    },
+    "prop:box-braid-irreducibility": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I1-proven-no-probe"
+      ]
+    },
+    "thm:hyperelliptic-z5-classification": {
+      "ts": "2026-06-13T00:00:00Z",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "I1-proven-no-probe"
+      ]
+    }
+  },
+  "reviewed_up_to": {
+    "I1-proven-no-probe": "565be78e866d733c6a9db086f66715be0c0fd17e",
+    "I2-mass-table-not-canonically-wired": "565be78e866d733c6a9db086f66715be0c0fd17e",
+    "I2-klr-positivity-violation": "565be78e866d733c6a9db086f66715be0c0fd17e",
+    "I3-wired-guarded-off": "565be78e866d733c6a9db086f66715be0c0fd17e",
+    "I4-witness-hash-drift": "565be78e866d733c6a9db086f66715be0c0fd17e",
+    "I5-contentblock-missing-label": "565be78e866d733c6a9db086f66715be0c0fd17e",
+    "I6-list-typed-data-schema-drift": "565be78e866d733c6a9db086f66715be0c0fd17e",
+    "I7-probe-stale": "565be78e866d733c6a9db086f66715be0c0fd17e",
+    "I8-float64-precision-erosion": "565be78e866d733c6a9db086f66715be0c0fd17e",
+    "I9-hardcoded-codata-production": "565be78e866d733c6a9db086f66715be0c0fd17e",
+    "I9-hardcoded-codata": "565be78e866d733c6a9db086f66715be0c0fd17e",
+    "I10-legacy-mass-formula": "565be78e866d733c6a9db086f66715be0c0fd17e",
+    "I11-crosspaper-uses-not-consumed": "565be78e866d733c6a9db086f66715be0c0fd17e",
+    "I12-leanref-mismatch": "565be78e866d733c6a9db086f66715be0c0fd17e",
+    "I13-fitted-labelled-canonical": "565be78e866d733c6a9db086f66715be0c0fd17e",
+    "I14-witness-provenance-incomplete": "565be78e866d733c6a9db086f66715be0c0fd17e",
+    "I-conflict-two-canonical-values": "565be78e866d733c6a9db086f66715be0c0fd17e",
+    "I-infra-no-witnessbuilder-P30": "565be78e866d733c6a9db086f66715be0c0fd17e",
+    "I-cal-input-overcount": "565be78e866d733c6a9db086f66715be0c0fd17e"
   }
- ],
- "audited": {
-  "folio-assistant/computations/derivation_chain.py": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I-conflict-two-canonical-values"
-   ]
-  },
-  "cor:knot-factor-borromean-composite": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I1-proven-no-probe"
-   ]
-  },
-  "cor:mass-identity-C": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I1-proven-no-probe"
-   ]
-  },
-  "lem:deuteron-binding-energy": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I1-proven-no-probe"
-   ]
-  },
-  "lem:nucleon-borromean-topology": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I1-proven-no-probe"
-   ]
-  },
-  "lem:topological-mass-eigenspace-decomp": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I1-proven-no-probe"
-   ]
-  },
-  "prop:borromean-hopf-energy-crossover": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I1-proven-no-probe"
-   ]
-  },
-  "prop:categorical-neutron-exists": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I1-proven-no-probe"
-   ]
-  },
-  "prop:categorical-neutron-unique": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I1-proven-no-probe"
-   ]
-  },
-  "prop:categorical-proton-exists": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I1-proven-no-probe"
-   ]
-  },
-  "prop:categorical-proton-unique": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I1-proven-no-probe"
-   ]
-  },
-  "prop:derived-mass-formula-light-isotopes": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I1-proven-no-probe"
-   ]
-  },
-  "prop:deuteron-binding-frobenius-codim": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I1-proven-no-probe"
-   ]
-  },
-  "prop:eos-borromean-cfl": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I1-proven-no-probe"
-   ]
-  },
-  "prop:exterior-square-borromean": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I1-proven-no-probe"
-   ]
-  },
-  "prop:frobenius-pairing-unique": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I1-proven-no-probe"
-   ]
-  },
-  "prop:hecke-mass-trace": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I1-proven-no-probe"
-   ]
-  },
-  "prop:mass-formula-regime-switching": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I1-proven-no-probe"
-   ]
-  },
-  "prop:mass-identity-exists": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I1-proven-no-probe"
-   ]
-  },
-  "prop:mass-identity-unique": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I1-proven-no-probe"
-   ]
-  },
-  "prop:neutron-prediction-comparison": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I1-proven-no-probe"
-   ]
-  },
-  "prop:neutron-proton-mass-splitting": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I1-proven-no-probe"
-   ]
-  },
-  "prop:q-beta-c-2-eq-neg-one-structural": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I1-proven-no-probe"
-   ]
-  },
-  "prop:q-beta-c-k-leading-bias-correction-identity": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I1-proven-no-probe"
-   ]
-  },
-  "prop:q-beta-c-k-recursion-from-habiro-q-difference": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I1-proven-no-probe"
-   ]
-  },
-  "prop:q-beta-c3-hopf-three-fold-markov": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I1-proven-no-probe"
-   ]
-  },
-  "prop:q-beta-cos-resummation": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I1-proven-no-probe"
-   ]
-  },
-  "prop:qbeta-c4-from-c3-c8-product-identity": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I1-proven-no-probe"
-   ]
-  },
-  "prop:qbeta-c8-c10-silver-rationals": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I1-proven-no-probe"
-   ]
-  },
-  "prop:topological-mass-formula": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I1-proven-no-probe"
-   ]
-  },
-  "prop:topological-mass-formula-algebraic": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I1-proven-no-probe"
-   ]
-  },
-  "folio-assistant/computations/atomic_mass_via_rho_k.py": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I9-hardcoded-codata-production"
-   ]
-  },
-  "folio-assistant/computations/binding_K_direct.py": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I9-hardcoded-codata-production"
-   ]
-  },
-  "folio-assistant/computations/build_six_term_substrate_model_b.py": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I9-hardcoded-codata-production"
-   ]
-  },
-  "folio-assistant/computations/compound_binding_via_differences.py": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I9-hardcoded-codata-production"
-   ]
-  },
-  "folio-assistant/computations/derive_m_baryon_volume_form.py": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I9-hardcoded-codata-production"
-   ]
-  },
-  "folio-assistant/computations/inter_nucleon_linked_channel.py": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I9-hardcoded-codata-production"
-   ]
-  },
-  "folio-assistant/computations/m_p_substrate_identity_50dps.py": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I9-hardcoded-codata-production"
-   ]
-  },
-  "folio-assistant/computations/mass_formula_6term_mpfr_50dps.py": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I9-hardcoded-codata-production"
-   ]
-  },
-  "folio-assistant/computations/mass_table_l1_full_crosscheck.py": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I9-hardcoded-codata-production"
-   ]
-  },
-  "folio-assistant/computations/mass_table_ppb.py": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I9-hardcoded-codata-production"
-   ]
-  },
-  "folio-assistant/computations/meson_mass_from_hecke.py": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I9-hardcoded-codata-production"
-   ]
-  },
-  "folio-assistant/computations/meson_vol_density.py": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I9-hardcoded-codata-production"
-   ]
-  },
-  "folio-assistant/computations/tower_isotope_absolute.py": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I9-hardcoded-codata-production"
-   ]
-  },
-  "folio-assistant/computations/canonical_lepton_braid_words.py": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I9-hardcoded-codata"
-   ]
-  },
-  "folio-assistant/computations/f_ell_derivation_via_per_braid_mass_tower.py": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I9-hardcoded-codata"
-   ]
-  },
-  "folio-assistant/computations/h4_residual_vs_fine_structure_50dps.py": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I9-hardcoded-codata"
-   ]
-  },
-  "folio-assistant/computations/knot_operator_sdp_4_1.py": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I9-hardcoded-codata"
-   ]
-  },
-  "folio-assistant/computations/lambda_scale_refinement_h4_correction_bring.py": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I9-hardcoded-codata"
-   ]
-  },
-  "folio-assistant/computations/lambda_scale_refinements_composed_predictions.py": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I9-hardcoded-codata"
-   ]
-  },
-  "folio-assistant/computations/m_tau_knot_prediction.py": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I9-hardcoded-codata"
-   ]
-  },
-  "folio-assistant/computations/per_generator_V_hat_general.py": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I9-hardcoded-codata"
-   ]
-  },
-  "folio-assistant/computations/q_dirac_linking_weight_extended_50dps.py": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I9-hardcoded-codata"
-   ]
-  },
-  "folio-assistant/computations/t6_lepton_h3_3channel_convention.py": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I9-hardcoded-codata"
-   ]
-  },
-  "folio-assistant/computations/verify_isospin_bar_anomaly.py": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I9-hardcoded-codata"
-   ]
-  },
-  "folio-assistant/computations/per-pair-wedderburn-enumeration.witness.json": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I6-list-typed-data-schema-drift"
-   ]
-  },
-  "folio-assistant/computations/topic2-mirror-pair-phi8-boundary-scan.witness.json": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I6-list-typed-data-schema-drift"
-   ]
-  },
-  "mass-table-sweep:exploratory": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I2-mass-table-not-canonically-wired"
-   ]
-  },
-  "mass-table-sweep:extrapolated": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I2-mass-table-not-canonically-wired"
-   ]
-  },
-  "mass-table-sweep:gap": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I2-mass-table-not-canonically-wired"
-   ]
-  },
-  "mass-table-sweep:alpha-cluster": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I2-mass-table-not-canonically-wired"
-   ]
-  },
-  "mass-table-sweep:klr-positivity": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I2-klr-positivity-violation"
-   ]
-  },
-  "AGGREGATE:witness-builder-p30": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I-infra-no-witnessbuilder-P30"
-   ]
-  },
-  "AGGREGATE:witness-provenance-i14": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I14-witness-provenance-incomplete"
-   ]
-  },
-  "AGGREGATE:cal-overcount": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I-cal-input-overcount"
-   ]
-  },
-  "prop:r-matrix-braiding-structure": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I1-proven-no-probe"
-   ]
-  },
-  "prop:braid-action-tensor": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I1-proven-no-probe"
-   ]
-  },
-  "prop:q-casimir-exists": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I1-proven-no-probe"
-   ]
-  },
-  "prop:lagrange-resolvent-transform": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I1-proven-no-probe"
-   ]
-  },
-  "prop:q-casimir-unique": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I1-proven-no-probe"
-   ]
-  },
-  "prop:knot-eigenbasis-complete": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I1-proven-no-probe"
-   ]
-  },
-  "prop:coral-elliptic": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I1-proven-no-probe"
-   ]
-  },
-  "thm:descartes": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I1-proven-no-probe"
-   ]
-  },
-  "prop:genus-maximal-descent": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I1-proven-no-probe"
-   ]
-  },
-  "prop:genus-filtration-ideal": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I1-proven-no-probe"
-   ]
-  },
-  "prop:defect-legendrian-knot": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I1-proven-no-probe"
-   ]
-  },
-  "prop:descartes-elliptic-curve": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I1-proven-no-probe"
-   ]
-  },
-  "prop:torus-knot-generators": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I1-proven-no-probe"
-   ]
-  },
-  "thm:embeddability-closure": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I1-proven-no-probe"
-   ]
-  },
-  "cor:descartes-braid-structure": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I1-proven-no-probe"
-   ]
-  },
-  "prop:sw-period-residue-sum": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I1-proven-no-probe"
-   ]
-  },
-  "thm:topological-charge-quantization": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I1-proven-no-probe"
-   ]
-  },
-  "prop:x5-bring-weight-identification": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I1-proven-no-probe"
-   ]
-  },
-  "thm:generation-completeness": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I1-proven-no-probe"
-   ]
-  },
-  "prop:torus-embeddable-complete": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I1-proven-no-probe"
-   ]
-  },
-  "prop:cohomological-embedding": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I1-proven-no-probe"
-   ]
-  },
-  "prop:brings-smoothness-resolution": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I1-proven-no-probe"
-   ]
-  },
-  "prop:s5-equivariant-torus-knots": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I1-proven-no-probe"
-   ]
-  },
-  "prop:b1-torus-knot-rows-theorem": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I1-proven-no-probe"
-   ]
-  },
-  "prop:joint-galois-braid-figure-8-verified": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I1-proven-no-probe"
-   ]
-  },
-  "prop:joint-galois-braid-discharged": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I1-proven-no-probe"
-   ]
-  },
-  "prop:braiding-induced-ordering": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I1-proven-no-probe"
-   ]
-  },
-  "lem:feynman-eigenbasis-decomposition": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I1-proven-no-probe"
-   ]
-  },
-  "prop:crystal-r-matrix-sub-lemma": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I1-proven-no-probe"
-   ]
-  },
-  "prop:calibration-cohomology-alignment": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I1-proven-no-probe"
-   ]
-  },
-  "lem:degree-one-braid-trivial-volume": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I1-proven-no-probe"
-   ]
-  },
-  "cor:lr-tensor-character-bridge": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I1-proven-no-probe"
-   ]
-  },
-  "prop:beta-decay-transfer-matrix": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I1-proven-no-probe"
-   ]
-  },
-  "prop:universal-braid-branching": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I1-proven-no-probe"
-   ]
-  },
-  "prop:transfer-matrix-level-independence": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I1-proven-no-probe"
-   ]
-  },
-  "prop:torus-hopf-stability": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I1-proven-no-probe"
-   ]
-  },
-  "prop:box-braid-irreducibility": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I1-proven-no-probe"
-   ]
-  },
-  "thm:hyperelliptic-z5-classification": {
-   "ts": "2026-06-13T00:00:00Z",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "I1-proven-no-probe"
-   ]
-  }
- },
- "reviewed_up_to": {
-  "I1-proven-no-probe": "565be78e866d733c6a9db086f66715be0c0fd17e",
-  "I2-mass-table-not-canonically-wired": "565be78e866d733c6a9db086f66715be0c0fd17e",
-  "I2-klr-positivity-violation": "565be78e866d733c6a9db086f66715be0c0fd17e",
-  "I3-wired-guarded-off": "565be78e866d733c6a9db086f66715be0c0fd17e",
-  "I4-witness-hash-drift": "565be78e866d733c6a9db086f66715be0c0fd17e",
-  "I5-contentblock-missing-label": "565be78e866d733c6a9db086f66715be0c0fd17e",
-  "I6-list-typed-data-schema-drift": "565be78e866d733c6a9db086f66715be0c0fd17e",
-  "I7-probe-stale": "565be78e866d733c6a9db086f66715be0c0fd17e",
-  "I8-float64-precision-erosion": "565be78e866d733c6a9db086f66715be0c0fd17e",
-  "I9-hardcoded-codata-production": "565be78e866d733c6a9db086f66715be0c0fd17e",
-  "I9-hardcoded-codata": "565be78e866d733c6a9db086f66715be0c0fd17e",
-  "I10-legacy-mass-formula": "565be78e866d733c6a9db086f66715be0c0fd17e",
-  "I11-crosspaper-uses-not-consumed": "565be78e866d733c6a9db086f66715be0c0fd17e",
-  "I12-leanref-mismatch": "565be78e866d733c6a9db086f66715be0c0fd17e",
-  "I13-fitted-labelled-canonical": "565be78e866d733c6a9db086f66715be0c0fd17e",
-  "I14-witness-provenance-incomplete": "565be78e866d733c6a9db086f66715be0c0fd17e",
-  "I-conflict-two-canonical-values": "565be78e866d733c6a9db086f66715be0c0fd17e",
-  "I-infra-no-witnessbuilder-P30": "565be78e866d733c6a9db086f66715be0c0fd17e",
-  "I-cal-input-overcount": "565be78e866d733c6a9db086f66715be0c0fd17e"
- }
 }
