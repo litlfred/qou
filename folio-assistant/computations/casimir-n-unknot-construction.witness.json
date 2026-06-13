@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-02T17:07:36.486519+00:00",
-  "commitSha": "77f2b68af2c9d52ae3d55c1cea746e8e9977db80",
+  "computedAt": "2026-06-13T04:47:05.720040+00:00",
+  "commitSha": "2af51fca2b2bab85bd1f95727f7d785c030f612f",
   "assertions": [
     {
       "name": "prefactor_pi2_over_720_from_disjoint_count",
@@ -19,14 +19,22 @@
       "passed": true,
       "tolerance": 1e-40,
       "source": "disjoint unknot count is q-independent"
+    },
+    {
+      "name": "prefactor_n_sum_regulator_independent",
+      "computed": "0.0083333333134920635094",
+      "expected": "0.0083333333333333333333",
+      "passed": true,
+      "tolerance": 1e-07,
+      "source": "S(ε) - 6/ε⁴ → ζ(-3) = 1/120 via exponential cutoff (physical regulator), independent of ζ-continuation"
     }
   ],
   "allPassed": true,
-  "durationMs": 56,
+  "durationMs": 81,
   "computation": "casimir-n-unknot-construction",
   "scriptFile": "casimir_n_unknot_construction.py",
-  "scriptHash": "55269430d4f0",
-  "scriptCommitSha": "5a44813463430491fdc8cd8cd5a97a404b5e7e9d",
+  "scriptHash": "dd1a706c7297",
+  "scriptCommitSha": "2613d88dae559f322697ecd3aa659633a281d935",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,9 +42,7 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.12.3",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.11.15",
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
@@ -127,9 +133,54 @@
       "residual_assumption": "the free-field ↔ disjoint identification itself.",
       "where_q_corrections_live": "braided modes = field interactions = QED loops = subleading 1/d⁶ order; a DIFFERENT coefficient, not ξ_2 of the leading term.",
       "relation_to_retracted_closure": "Refines (does not restore) the 'Casimir isn't Hecke' closure: Casimir IS in the knot framework, as disjoint unknots whose trace functional is the trivial count."
+    },
+    "regulator_independence": {
+      "purpose": "show the cubic-mode-sum value 1/120 = ζ(-3) is regulator-independent (physical), not a ζ-continuation artefact.",
+      "exact_closed_form": "S(ε)=Σ n³ e^{-nε}=e^{-ε}(1+4e^{-ε}+e^{-2ε})/(1-e^{-ε})⁴",
+      "subtraction": "S(ε) - 6/ε⁴  (6/ε⁴ = Γ(4)/ε⁴ = divergent free-space 'out' term)",
+      "limit": "→ 1/120 = ζ(-3) as ε → 0⁺",
+      "per_epsilon": [
+        {
+          "epsilon": "0.1",
+          "S_minus_6_over_eps4": "0.008313509414086518134008146",
+          "residual_vs_zeta_neg3": "-1.9824e-5"
+        },
+        {
+          "epsilon": "0.01",
+          "S_minus_6_over_eps4": "0.008333134922371021224198537",
+          "residual_vs_zeta_neg3": "-1.9841e-7"
+        },
+        {
+          "epsilon": "0.001",
+          "S_minus_6_over_eps4": "0.008333331349206522817449796",
+          "residual_vs_zeta_neg3": "-1.9841e-9"
+        },
+        {
+          "epsilon": "0.0001",
+          "S_minus_6_over_eps4": "0.008333333313492063509424603",
+          "residual_vs_zeta_neg3": "-1.9841e-11"
+        },
+        {
+          "epsilon": "1.0e-5",
+          "S_minus_6_over_eps4": "0.008333333333134920634922247",
+          "residual_vs_zeta_neg3": "-1.9841e-13"
+        }
+      ],
+      "converged_at_eps_1e-4": "0.008333333313492063509424603",
+      "zeta_neg3": "0.008333333333333333333333333",
+      "bernoulli_bridge": "1/(e^ε-1)=Σ B_k ε^{k-1}/k!; the -ε³/720=B₄ε³/4! term gives (-d/dε)³ → +1/120. Same B₄=-1/30 as ζ(-3)=-B₄/4 in CasimirZetaPrefactor.lean. Regulator route ≡ Bernoulli/ζ route."
+    },
+    "leading_scaling": {
+      "energy_per_area": "E(d)/A = -(π²ℏc/720)·d⁻³",
+      "force_per_area": "F(d)/A = -∂_d[E/A] = -(π²ℏc/240)·d⁻⁴",
+      "d_exponent_energy": -3,
+      "d_exponent_force": -4,
+      "prefactor_energy_pi2_over_720": "0.013707783890401886971",
+      "prefactor_force_pi2_over_240": "0.041123351671205660912",
+      "note": "archimedean (q-free) leading term; q re-enters only at the interacting 1/d⁶ order via the figure-eight weight J_{4₁}(q) (conj:casimir-first-q-correction)."
     }
   },
   "caveats": [
-    "Conditional construction. Identifies the trace functional (bare count) and the selection principle (n-stability); does NOT build the full Yekutieli-homotopy lift. ξ_k=0 holds conditional on the free-field ↔ disjoint-unknot identification, which is a modeling statement."
+    "Conditional construction. Identifies the trace functional (bare count) and the selection principle (n-stability); does NOT build the full Yekutieli-homotopy lift. ξ_k=0 holds conditional on the free-field ↔ disjoint-unknot identification, which is a modeling statement. The per-level n³ degeneracy and the π²/6 k_⊥ factor are transported from standard free-field mode counting, not derived from the substrate."
   ]
 }

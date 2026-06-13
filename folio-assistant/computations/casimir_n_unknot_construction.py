@@ -87,6 +87,50 @@ from witness_base import WitnessBuilder  # noqa: E402
 mp.mp.dps = 50
 
 
+def regulator_independence_check():
+    """Regulator-independence of the cubic-mode-sum value 1/120 = ζ(-3).
+
+    The π²/720 prefactor's n-sum is the divergent Σ_{n≥1} n³, assigned the
+    value ζ(-3) by analytic continuation. To show this is PHYSICAL (not a
+    ζ-continuation artefact), use the exact closed form
+
+        S(ε) = Σ_{n≥1} n³ e^{-nε}
+             = e^{-ε}(1 + 4 e^{-ε} + e^{-2ε}) / (1 - e^{-ε})⁴,
+
+    and subtract the divergent free-space ('out') contribution
+    Γ(4)/ε⁴ = 6/ε⁴ (the n → ∞ continuum, independent of the plate gap):
+
+        S(ε) - 6/ε⁴  →  1/120   as ε → 0⁺.
+
+    Derivation of the constant: 1/(e^ε - 1) = Σ_k B_k ε^{k-1}/k!
+    = 1/ε - 1/2 + ε/12 - ε³/720 + …, and S(ε) = (-d/dε)³[1/(e^ε - 1)];
+    the only surviving constant term comes from -ε³/720 = B₄ ε³/4!,
+    giving (-d/dε)³(-ε³/720) = +1/120. This is the SAME B₄ = -1/30 that
+    Stage-B Lean (CasimirZetaPrefactor.lean) uses via ζ(-3) = -B₄/4 —
+    the physical-regulator route and the Bernoulli/ζ route agree, so the
+    prefactor is not a ζ-continuation artefact.
+    """
+    zeta_m3 = mp.zeta(-3)
+    rows = []
+    for k in range(1, 6):
+        eps = mp.mpf(10) ** (-k)
+        x = mp.e ** (-eps)
+        s_eps = x * (1 + 4 * x + x * x) / (1 - x) ** 4
+        subtracted = s_eps - 6 / eps ** 4
+        rows.append(
+            {
+                "epsilon": mp.nstr(eps, 5),
+                "S_minus_6_over_eps4": mp.nstr(subtracted, 25),
+                "residual_vs_zeta_neg3": mp.nstr(subtracted - zeta_m3, 5),
+            }
+        )
+    # value at the smallest ε (O(ε²) = -ε²/504 ≈ -2e-11 there)
+    eps_fine = mp.mpf(10) ** (-4)
+    xf = mp.e ** (-eps_fine)
+    converged = xf * (1 + 4 * xf + xf * xf) / (1 - xf) ** 4 - 6 / eps_fine ** 4
+    return rows, converged, zeta_m3
+
+
 def main() -> int:
     builder = WitnessBuilder(
         "casimir-n-unknot-construction",
@@ -223,11 +267,57 @@ def main() -> int:
         source="disjoint unknot count is q-independent",
     )
 
+    # ─── Regulator-independence of the 1/120 = ζ(-3) prefactor n-sum ───
+    reg_rows, reg_converged, zeta_m3_reg = regulator_independence_check()
+    reg_residual = abs(reg_converged - zeta_m3_reg)
+    builder.add_data(
+        "regulator_independence",
+        {
+            "purpose": "show the cubic-mode-sum value 1/120 = ζ(-3) is "
+            "regulator-independent (physical), not a ζ-continuation artefact.",
+            "exact_closed_form": "S(ε)=Σ n³ e^{-nε}=e^{-ε}(1+4e^{-ε}+e^{-2ε})/(1-e^{-ε})⁴",
+            "subtraction": "S(ε) - 6/ε⁴  (6/ε⁴ = Γ(4)/ε⁴ = divergent free-space 'out' term)",
+            "limit": "→ 1/120 = ζ(-3) as ε → 0⁺",
+            "per_epsilon": reg_rows,
+            "converged_at_eps_1e-4": mp.nstr(reg_converged, 25),
+            "zeta_neg3": mp.nstr(zeta_m3_reg, 25),
+            "bernoulli_bridge": "1/(e^ε-1)=Σ B_k ε^{k-1}/k!; the -ε³/720=B₄ε³/4! "
+            "term gives (-d/dε)³ → +1/120. Same B₄=-1/30 as ζ(-3)=-B₄/4 in "
+            "CasimirZetaPrefactor.lean. Regulator route ≡ Bernoulli/ζ route.",
+        },
+    )
+    builder.add_assertion(
+        "prefactor_n_sum_regulator_independent",
+        computed=mp.nstr(reg_converged, 20),
+        expected=mp.nstr(zeta_m3_reg, 20),
+        tolerance=1e-7,
+        source="S(ε) - 6/ε⁴ → ζ(-3) = 1/120 via exponential cutoff (physical "
+        "regulator), independent of ζ-continuation",
+    )
+
+    # ─── Explicit leading-term A/d³ scaling (the d-power the term must carry) ───
+    builder.add_data(
+        "leading_scaling",
+        {
+            "energy_per_area": "E(d)/A = -(π²ℏc/720)·d⁻³",
+            "force_per_area": "F(d)/A = -∂_d[E/A] = -(π²ℏc/240)·d⁻⁴",
+            "d_exponent_energy": -3,
+            "d_exponent_force": -4,
+            "prefactor_energy_pi2_over_720": mp.nstr(mp.pi ** 2 / 720, 20),
+            "prefactor_force_pi2_over_240": mp.nstr(mp.pi ** 2 / 240, 20),
+            "note": "archimedean (q-free) leading term; q re-enters only at the "
+            "interacting 1/d⁶ order via the figure-eight weight J_{4₁}(q) "
+            "(conj:casimir-first-q-correction).",
+        },
+    )
+
     builder.add_caveat(
         "Conditional construction. Identifies the trace functional (bare count) "
         "and the selection principle (n-stability); does NOT build the full "
         "Yekutieli-homotopy lift. ξ_k=0 holds conditional on the free-field ↔ "
-        "disjoint-unknot identification, which is a modeling statement."
+        "disjoint-unknot identification, which is a modeling statement. The "
+        "per-level n³ degeneracy and the π²/6 k_⊥ factor are transported from "
+        "standard free-field mode counting, not derived from the substrate."
     )
 
     out = builder.save()
