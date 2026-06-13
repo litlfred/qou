@@ -255,7 +255,12 @@ $(\pi^{2}/6)\cdot|\zeta(-3)|$ with no substrate dependence. The
 substrate-correction series is then trivial at leading order
 ($\xi_{0}=1$, $\xi_{k}=0$ for $k\ge 1$ on the $1/d^{4}$ term),
 with q-corrections relocated to the $1/d^{6}$ (interacting-mode)
-order. The free-field $\leftrightarrow$ disjoint-unknot
+order. The selection argument itself is machine-verified in
+`CasimirNStability.lean`: the bare count is the unique $n$-stable
+mode-counting functional under the Hoefsmit single-mode
+normalisation, the $n$-unlink Jones value fails $n$-stability for
+every $q > 0$, $q \neq 1$, and the normalised trace is
+content-free. The free-field $\leftrightarrow$ disjoint-unknot
 identification this rests on is **not a fresh assumption**: QOU
 already represents a free photon mode as the identity braid
 ([`rem:trivial-knot-photon-interpretation`](#rem:trivial-knot-photon-interpretation)),
@@ -279,6 +284,9 @@ and the [free-field/disjoint grounding audit](../../../docs/audits/2026-06-01-ca
 
 - [`conj:vacuum-epsilon`](#conj:vacuum-epsilon) — upstream
   conjecture: $\mathrm{Geom}(\unicode{9737}) = \varepsilon$.
+- [`conj:casimir-first-q-correction`](#conj:casimir-first-q-correction) —
+  the interacting-sector sequel: the first substrate correction is
+  carried by the figure-eight knot $4_1$.
 - [`conj:archimedean-stpart`](#conj:archimedean-stpart) —
   standard-part arithmetic used in the conditional derivation.
 - [`def:standard-part-functor`](#def:standard-part-functor) — the
