@@ -188,8 +188,8 @@ after the initial derivation:
   shares its Wedderburn partition-indexed framework with the
   [q-heat-kernel Peter–Weyl
   decomposition](../information-theory/q-heat-kernel-peter-weyl.md)
-  and the [Habiro residue-sum equivalence](habiro-residue-sum-equivalence.md)
-  (PR #2131).  Note the q-heat-kernel proposition supplies the
+  and the [Habiro residue-sum equivalence](habiro-residue-sum-equivalence.md).
+  Note the q-heat-kernel proposition supplies the
   $q$-Laplacian eigenvalues $\mu_\lambda(q)$ — heat-flow decay rates,
   *not* the braid-character values $\chi^\lambda(\beta)$; the
   polynomial form itself comes from the projector route below or

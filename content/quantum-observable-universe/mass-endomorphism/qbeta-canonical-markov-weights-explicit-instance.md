@@ -79,7 +79,6 @@ and we are identifying ONE.
   [`prop:qbeta-per-block-chi-closed-forms`](qbeta-per-block-chi-closed-forms.md)
   §Extension #4.
 - Conditional theorems consuming this class:
-  [`prop:qbeta-delta-tau-canonical-conditional-q2-minus-1-factor`](qbeta-delta-tau-canonical-conditional-q2-minus-1-factor.md)
-  (PR #1798).
+  [`prop:qbeta-delta-tau-canonical-conditional-q2-minus-1-factor`](qbeta-delta-tau-canonical-conditional-q2-minus-1-factor.md).
 - 1ppQ-Q$_\beta$ coordination ledger:
   [`docs/coordination/1ppq-qbeta.md`](../../../docs/coordination/1ppq-qbeta.md).
