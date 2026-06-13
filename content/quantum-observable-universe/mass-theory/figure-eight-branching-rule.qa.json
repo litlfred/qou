@@ -1119,7 +1119,104 @@
         "reviewed_at": "2026-06-11T18:06:24.673Z",
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7"
       }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "960ef29bc002",
+          "ts": "ff6f70be63c8",
+          "lean": "1cdc10d1104b"
+        },
+        "result": "fail",
+        "severity": "major",
+        "evidence": "figure-eight-branching-rule.lean:30-43 — theorem figure_eight_branching_rule has hyp (h_chi : chi_actual = chi_actual) and concludes 'X = X' proved by rfl; the actual character identity chi(4_1,lambda)=... is never stated, real content offloaded to axiom skewSYTCount + SymPy",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T00:48:21.203Z",
+        "reviewed_sha": "b2919724dbe18fedf7e845dda69e7579f469bb36",
+        "notes": "tautological reflexive conclusion (LHS=RHS verbatim) + vacuous hyp; statement silently weakened to a triviality, not the proposition"
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "960ef29bc002",
+          "ts": "ff6f70be63c8",
+          "lean": "1cdc10d1104b"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.7,
+          "max": 1
+        },
+        "evidence": "figure-eight-branching-rule.md proof — plan stated up front: 4_1 in H_3, branching H_k↓H_3, sum over mu⊢3 with f^{lambda/mu}, Pieri reassembly, collect const+h^2 terms",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T00:48:21.250Z",
+        "reviewed_sha": "b2919724dbe18fedf7e845dda69e7579f469bb36",
+        "notes": "plan legible before steps: named restriction + 3-partition table; recoverable strategy"
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "960ef29bc002",
+          "ts": "ff6f70be63c8",
+          "lean": "1cdc10d1104b"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.4,
+          "max": 1
+        },
+        "evidence": "figure-eight-branching-rule.lean:18,46 — axiom skewSYTCount + axiom figure_eight_b_zero_iff...; main thm is rfl tautology, real claim rests on un-formalized SYT enumeration verified only via SymPy",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T00:48:21.285Z",
+        "reviewed_sha": "b2919724dbe18fedf7e845dda69e7579f469bb36",
+        "notes": "core gap: Mathlib SYT enumeration pending; offset by 1e-12 match on 191 partitions k=3..11 -> ~0.4"
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "960ef29bc002",
+          "ts": "ff6f70be63c8",
+          "lean": "1cdc10d1104b"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.7,
+          "max": 1
+        },
+        "evidence": "figure-eight-branching-rule.md — decomposition chi(4_1,lambda)=a_lambda+b_lambda·h^2 with b_lambda=-f^{lambda/[2,1]}, BW-scaling content-sum/self-conj/hook structure",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T00:48:21.326Z",
+        "reviewed_sha": "b2919724dbe18fedf7e845dda69e7579f469bb36",
+        "notes": "non-redundant combinatorial branching argument tying q-correction to skew-SYT count; not a sibling duplicate"
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-13T00:48:21.326Z"
 }
