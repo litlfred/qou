@@ -20,6 +20,11 @@ class CemeteryGroupRigidity (R : Type) [CommRing R] (q : R) [C : CrystalGraphRea
   IsCemeteryModule : C.NormalForm → Prop
   RestrictsKernel : Prop
   GeneratesWords : Prop
+  /-- **Bridge.** A cemetery (tilting) module's Gröbner–Shirshov node lies in the
+      cemetery group `ker τ`. This is the structural content "tilting modules
+      restrict the kernel of `G(q)`": being a cemetery module is exactly carrying
+      a normal form whose node is τ-annihilated. -/
+  cemeteryModule_inCemetery : ∀ T, IsCemeteryModule T → E.inCemetery (C.nodeOf T)
   module_forces_words : (∀ T, IsCemeteryModule T → E.tauImage T = 0) → RestrictsKernel → GeneratesWords
 
 lemma tilting_module_rigidity (R : Type) [CommRing R] (q : R)
@@ -29,9 +34,12 @@ lemma tilting_module_rigidity (R : Type) [CommRing R] (q : R)
     Rigid.GeneratesWords := by
   have h_tau : ∀ T, E.inCemetery (C.nodeOf T) → E.tauImage T = 0 :=
     fun T h => CemeteryGroupEmergence.tauImage_eq_zero_of_inCemetery T h
-  -- We assume IsCemeteryModule implies membership in the cemetery group
-  -- Ref: [manuscript] §tilting-module-rigidity (close via `Rigid.module_forces_words` given a
-  -- bridge `IsCemeteryModule T → E.inCemetery (C.nodeOf T)`; pending an LSP/Mathlib-cache session)
-  sorry
+  -- A cemetery module's node lies in the cemetery group (the `cemeteryModule_inCemetery`
+  -- bridge field), so its τ-image vanishes by `tauImage_eq_zero_of_inCemetery`; then the
+  -- structural `module_forces_words` closes the goal from `RestrictsKernel`.
+  -- Ref: [manuscript] §tilting-module-rigidity
+  have h_mod : ∀ T, Rigid.IsCemeteryModule T → E.tauImage T = 0 :=
+    fun T hT => h_tau T (Rigid.cemeteryModule_inCemetery T hT)
+  exact Rigid.module_forces_words h_mod h_ker
 
 end QOU.Archimedean
