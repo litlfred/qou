@@ -12,3 +12,12 @@ per CLAUDE.md §3b), not a missing proof; downstream theorems take
 
 -- Ref: [manuscript] quantum-observable-universe/models-of-qous/yang-mills-mass-gap.ts
 -/
+
+namespace QOU.Torsion
+
+/-- **CONJECTURE.** Yang--Mills Existence and Mass Gap -/
+class YangMillsMassGap where
+  holds : Prop
+  -- Ref: [manuscript] conj:yang-mills-mass-gap
+
+end QOU.Torsion

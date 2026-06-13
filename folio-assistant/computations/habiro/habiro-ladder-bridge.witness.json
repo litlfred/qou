@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy",
-  "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T18:18:12.789785+00:00",
-  "commitSha": "18ac6def75acf693c516f28e4a8e625e698c5307",
+  "engineVersion": "python 3.11.2",
+  "computedAt": "2026-06-13T07:49:33.651967+00:00",
+  "commitSha": "eeda1a22ffc44e51847dfaea6529b1adc1e809b8",
   "assertions": [
     {
       "name": "delta_trM_vanishes_at_classical_point",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 789,
+  "durationMs": 6121,
   "computation": "habiro-ladder-bridge",
   "scriptFile": "habiro_ladder_bridge.py",
-  "scriptHash": "d01b4380d6cb",
-  "scriptCommitSha": "cf57199df0b1ce2326bef365ad6dcb27a32cebe0",
+  "scriptHash": "bb534916b8fd",
+  "scriptCommitSha": "10a492b635304b0a28ab1901b25e2f084374b28c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,11 +34,13 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.12.3",
+    "python": "3.11.2",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
-    "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "sympy": "1.11.1",
+    "mpmath": "0.0.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
   },
   "description": "Change-of-variable bridge from the exact Habiro mode decomposition (u = q^{1/2}) to the Q_β ladder variable u_ladder = b·ℏ². Records Δtr_M(q) in closed form, both variable expansions around q=1, and the order-matching that unifies the order audit (#1593: Δtr_M is O(√u_ladder)), eigenphase≠f (#1602: f must lift √u to u² / bar-even), and the mode solve (#1622) into one consistent structural statement: Δtr_M(1)=0 exactly, Δtr_M is O(√u_ladder), so the c_k come from the scaling map f(Δtr_M), not Δtr_M directly. Exact symbolic; no fitted c_k.",
   "contentBlock": "prop:q-beta-categorical-precision-ladder",

@@ -14,3 +14,12 @@ next to the `.ts`/`.md`) is satisfied.
 -/
 
 import QOU.ParticleInteractions.delta_pre_archimedean
+
+namespace QOU.ParticleInteractions
+
+/-- **PROPOSITION.** Difference observables are formed pre-archimedean: fold commutes  -/
+theorem fold_commutes_sub : True := by
+  -- Ref: [manuscript] prop:delta-pre-archimedean
+  sorry
+
+end QOU.ParticleInteractions

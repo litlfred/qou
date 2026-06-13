@@ -11,3 +11,12 @@ the `.ts`/`.md`) is satisfied.
 -/
 
 import QOU.BraidKnot.TwoRowStratum
+
+namespace QOU.BraidKnot
+
+/-- Two-row Wedderburn stratum $\\Lambda^2(n) := \\{\\lambda \\vdash n : \\ell(\\lambda) \\le 2\\}$ -/
+def TwoRowStratum :=
+  -- Ref: [manuscript] def:two-row-stratum
+  sorry
+
+end QOU.BraidKnot

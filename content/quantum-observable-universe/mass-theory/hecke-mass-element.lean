@@ -11,3 +11,12 @@ the `.ts`/`.md`) is satisfied.
 -/
 
 import QOU.Torsion.HeckeMassElement
+
+namespace QOU.Torsion
+
+/-- Hecke mass element -/
+def HeckeMassElement :=
+  -- Ref: [manuscript] def:hecke-mass-element
+  sorry
+
+end QOU.Torsion
