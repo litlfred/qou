@@ -56,13 +56,15 @@ def _git_head_sha() -> str:
             stderr=subprocess.DEVNULL,
         ).decode().strip()
     except Exception as exc:  # noqa: BLE001
-        print(
-            f"[qou_substrate.witness] git rev-parse failed ({exc!r}); "
-            "commitSha will serialise as 'unknown'. Common cause in "
-            "fresh sandboxes: dubious-ownership refusal — run "
-            "`git config --global --add safe.directory <repo-root>`.",
-            file=sys.stderr,
-        )
+        if not getattr(_git_head_sha, "_warned", False):
+            print(
+                f"[qou_substrate.witness] git rev-parse failed ({exc!r}); "
+                "commitSha will serialise as 'unknown'. Common cause in "
+                "fresh sandboxes: dubious-ownership refusal — run "
+                "`git config --global --add safe.directory <repo-root>`.",
+                file=sys.stderr,
+            )
+            _git_head_sha._warned = True  # type: ignore[attr-defined]
         return "unknown"
 
 
@@ -89,14 +91,17 @@ def _git_file_sha(path: str) -> str:
         ).decode().strip()
         return sha if sha else "unknown"
     except Exception as exc:  # noqa: BLE001
-        print(
-            f"[qou_substrate.witness] git log failed for {path!r} "
-            f"({exc!r}); scriptCommitSha will serialise as 'unknown'. "
-            "Common cause in fresh sandboxes: dubious-ownership refusal "
-            "— run `git config --global --add safe.directory "
-            "<repo-root>`.",
-            file=sys.stderr,
-        )
+        if not getattr(_git_file_sha, "_warned", False):
+            print(
+                f"[qou_substrate.witness] git log failed for {path!r} "
+                f"({exc!r}); scriptCommitSha will serialise as 'unknown'. "
+                "Common cause in fresh sandboxes: dubious-ownership "
+                "refusal — run `git config --global --add safe.directory "
+                "<repo-root>`. (Warned once; further failures are "
+                "silent.)",
+                file=sys.stderr,
+            )
+            _git_file_sha._warned = True  # type: ignore[attr-defined]
         return "unknown"
 
 
