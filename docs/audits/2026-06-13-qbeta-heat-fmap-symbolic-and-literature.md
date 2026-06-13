@@ -80,6 +80,59 @@ four well-developed programs — the first three already in the bibliography:
   Hopf-volume route. I.e. the dilog route fails for a *principled* reason the
   Nahm criterion predicts.
 
+## 2-bis. Their recurrence (AJ) vs ours; the quantum-modular ↔ bar-involution remark
+
+**Theirs — the AJ / quantum A-polynomial recurrence.** The colored Jones
+`J_N(K;q)` (`N` = color = rep dimension) is **q-holonomic**: with operators
+`M̂` (`M̂ J_N = q^N J_N`) and `L̂` (`L̂ J_N = J_{N+1}`) obeying `L̂M̂ = q M̂L̂`,
+there is a **quantum A-polynomial** `Â(M̂, L̂; q)` with `Â·J_N = 0` — i.e. a
+finite recurrence `Σ_j b_j(q^N, q)·J_{N+j} = 0` **in the color `N`**. As `q→1`
+it degenerates to the **classical A-polynomial** `A(M,L)` cutting out the
+SL₂(ℂ) character variety of the knot complement (the (M,L) holonomy-eigenvalue
+relation).
+
+**Ours.** `c_{k+1} = Σ_j a_j(q₀)·c_{k+1−j}` — a recurrence **in the truncation
+order `k`** (the `u`-powers of the `Q_β` precision series), from the heat-kernel
+q-difference `F(qξ) = R(q,ξ)·F(ξ)`. Two differences: (i) the index is `k`
+(cyclotomic order), not `N` (color); (ii) the element `F` is **modelled** by the
+q-heat partition function `Z_q = Σ_λ d_λ exp_q(−μ_λ t)` — a physical ansatz —
+whereas for AJ, `J_N` *is* the knot's own invariant.
+
+**The bridge (why "same shape").** Habiro's cyclotomic expansion re-bases `J_N`
+(N-indexed) onto the cyclotomic coefficients `C_n` (n-indexed); the `C_n`
+inherit a recurrence **induced** from the AJ one by the `N ↔ n` re-basing — and
+that re-basing **is our `(u;u)_m → u^k` change-of-basis**. So ours is the
+AJ recurrence *pushed into the cyclotomic basis* and `Q_β`-specialised: same
+q-holonomic machinery, different index, plus a heat-kernel **model** for `F`.
+
+**Quantum-modularity ↔ bar-involution — REMARK (conjectural, NOT proven).**
+[Zagier 2010, `zagier2010`]: the Kashaev/colored-Jones asymptotics near roots of
+unity are **quantum-modular** — controlled under SL₂(ℤ), especially the
+S-transform `q ↦ q̃` (the "modular partner"), with a `√(2π/ℏ)` radial prefactor
+and an `ℏ`-series of **periods** (the Ohtsuki series). The QOU **bar-involution
+`q↦q⁻¹`** is the natural fibre-level avatar of that modular partner, and the
+**√u/ε prefactor** + the **bar-ODD requirement on `a_1`** are exactly what
+quantum modularity predicts (the odd part under the S-transform).
+
+- **Can we prove the link?** **No, not at present.** Quantum modularity is
+  itself conjectural/hard for general knots (proved case-by-case — e.g. `4_1`,
+  Garoufalidis–Zagier). Establishing "QOU bar-involution = the quantum-modular
+  S-partner" needs `F(q)` exhibited as a quantum modular form (or `R(q,ξ)`
+  transforming under SL₂(ℤ)) — out of reach now. It stands as a **motivated
+  remark**, not a theorem.
+- **What we can use from it (four concrete handles):**
+  1. It **explains the `√u/ε` prefactor** structurally (the radial `√(2π/ℏ)`).
+  2. It makes the **bar-ODD `a_1` natural** — the odd part under the S-transform
+     — turning §1's *imposed* mode-selectivity into something a modular argument
+     might **derive** ((2,1)-projection from the transform).
+  3. It **explains the dilog gate-failure**: the modular cocycle's leading
+     (volume/Bloch–Wigner) term vanishes for the **non-hyperbolic Hopf**
+     (`D(z)=0`), so the `c_k` content lives in the **sub-leading Ohtsuki
+     periods** — exactly where the `k≥3` ladder sits.
+  4. The **Ohtsuki-series / period structure** is a *categorical* route to
+     constrain the single scalar `S` (the open keystone) — periods are
+     computable invariants, not fits.
+
 ## 3. Status + recommended follow-ups
 
 - **No `c_3` value; registry tiers untouched.** This pins the *fibre* half of

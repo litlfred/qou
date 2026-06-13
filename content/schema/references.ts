@@ -138,6 +138,22 @@ export const references: CSLData[] = [
     URL: "https://doi.org/10.4310/JDG/1090425531",
   }),
 
+  // ── Zagier 2010 — Quantum modular forms ───────────────────────
+  ref({
+    id: "zagier2010",
+    type: "chapter",
+    title: "Quantum Modular Forms",
+    author: [{ family: "Zagier", given: "Don" }],
+    "container-title": "Quanta of Maths",
+    publisher: "American Mathematical Society",
+    "publisher-place": "Providence, RI",
+    issued: { "date-parts": [[2010]] },
+    page: "659-675",
+    "collection-title": "Clay Mathematics Proceedings",
+    "collection-number": 11,
+    note: "Foundational definition of quantum modular forms — functions on ℚ whose obstruction to modularity under SL₂(ℤ) (esp. x↦−1/x) extends analytically; for knots the Kashaev / colored-Jones asymptotics near roots of unity are quantum-modular. The q↦q̃ modular-partner transformation + the √(2π/ℏ) radial-asymptotic prefactor are the conjectural frame for the QOU Q_β c_k √u/ε bar-involution (the bar-odd a_1 as the odd part under the modular S-transform). See docs/audits/2026-06-13-qbeta-heat-fmap-symbolic-and-literature.md.",
+  }),
+
   // ── PRX: Chenier et al. 2026 ──────────────────────────────────
   ref({
     id: "chenier2026",
