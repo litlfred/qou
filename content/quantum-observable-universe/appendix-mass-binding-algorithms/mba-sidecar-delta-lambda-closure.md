@@ -33,7 +33,7 @@ approach on PR #1726.
 
 ### Correctness conditions
 
-*[`prop:term6-binding-density`](#prop:term6-binding-density)
+*[`rem:term6-binding-density`](#rem:term6-binding-density)
 fixes the binding sum's algebraic shape; the open piece is
 identifying the categorical realisation of $\Delta_\lambda$.*
 

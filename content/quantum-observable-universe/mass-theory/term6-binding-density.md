@@ -1,4 +1,4 @@
-**Proposition (calibrated; shape derived).**
+**Remark (calibrated; shape derived).**
 *The per-nucleon binding energy of an atomic nucleus $(Z, N)$
 admits the structural decomposition*
 
@@ -133,8 +133,8 @@ calibration parameters $(\alpha, \beta)$ improve on the
 five-parameter Bethe–Weizsäcker SEMF, with $R^2 = 0.84$ across
 $A = 2$–$58$. A genuine categorical derivation of $\alpha$ and
 $\beta$ from the framework's first-principles structures
-remains the open work needed to make this proposition
-**unconditional**.
+remains the open work needed to promote this result to an
+**unconditional** proposition.
 
 The 16-atom panel demonstrates the formula's reach; extension
 to medium-heavy nuclei ($A = 100$–$200$) will further constrain
