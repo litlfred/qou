@@ -7,6 +7,12 @@ chain by deriving the Markov-trace normalization factor 1/4 that
 converts the character coefficient −3 to the full Markov coefficient
 −3/4.
 
+SCOPE: the 1/4 = y_(2,1)(q=1) here is in the JONES / Temperley-Lieb
+normalization (the Borromean Jones polynomial; y_(1³)≡0). The mass
+pipeline uses the full-Hecke Ocneanu trace (y_(1³)≠0 for q≠1); the two
+agree at q=1 and on β_Bor but diverge at q≠1. See docs/audits/
+2026-06-13-wenzl-trace-normalization-prop-compute-mismatch.md.
+
 THE CATEGORICAL CHAIN (now complete after T18):
 
   Step 1 (T17): R-matrix on V_{1/2}^⊗3  ⟹  Schur-Weyl decomposition  ⟹

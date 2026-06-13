@@ -8,6 +8,14 @@ which targets atomic mass-derivation braids (proton/neutron/deuteron).
 The Borromean braid is structurally different (a 3-component link, not
 a nucleon mass formula), so it warranted its own validator.
 
+SCOPE: both paths here are the JONES / Temperley-Lieb trace (y_(1³)≡0)
+— i.e. the Borromean rings' Jones polynomial — which is the correct
+object for THIS link. It is NOT the full-Hecke Ocneanu trace that the
+mass/binding pipeline uses (y_lambda_wenzl_bridge_numeric, y_(1³)≠0 for
+q≠1). The two agree on β_Bor (writhe 0, χ^(1³)=0) but differ on writhe≠0
+braids. See docs/audits/2026-06-13-wenzl-trace-normalization-prop-
+compute-mismatch.md.
+
 Two independent paths to tr_M(β_Bor)(q):
 
   PATH 1 — Closed form (Murasugi 1996 + the Jones→Markov reduction in
