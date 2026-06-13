@@ -5563,6 +5563,42 @@ export const references: CSLData[] = [
 
   // ── Rolfsen 1976 — already covered by rolfsen (re-keyed) ──────
 
+  // ── Zagier 2010 ───────────────────────────────────────────────
+  ref({
+    id: "zagier2010",
+    type: "article-journal",
+    title: "Quantum modular forms",
+    author: [
+      { family: "Zagier", given: "Don" },
+    ],
+    "container-title": "Quanta of Maths",
+    "collection-title": "Clay Mathematics Proceedings",
+    volume: "11",
+    issued: { "date-parts": [[2010]] },
+    page: "659-675",
+    publisher: "American Mathematical Society",
+    note: "Introduces quantum modular forms, which the QOU synthesis leverages to explain the root-of-unity asymptotics and the bar-odd requirement of the f-map.",
+  }),
+
+  // ── Calegari, Garoufalidis, Zagier 2019 ───────────────────────
+  ref({
+    id: "calegari2019",
+    type: "article-journal",
+    title: "Bloch groups, algebraic K-theory, units, and Nahm's Conjecture",
+    author: [
+      { family: "Calegari", given: "Frank" },
+      { family: "Garoufalidis", given: "Stavros" },
+      { family: "Zagier", given: "Don" },
+    ],
+    "container-title": "Advances in Mathematics",
+    issued: { "date-parts": [[2019]] },
+    volume: "347",
+    page: "323-392",
+    DOI: "10.1016/j.aim.2019.02.016",
+    URL: "https://arxiv.org/abs/1712.04887",
+    note: "Proves one direction of Nahm's conjecture linking q-hypergeometric series modularity to K-theory / Bloch group vanishing, forming the structural context for the QOU Habiro element.",
+  }),
+
 ];
 
 // ── Lookup helpers ──────────────────────────────────────────────

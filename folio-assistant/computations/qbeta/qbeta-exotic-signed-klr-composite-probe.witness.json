@@ -1,0 +1,43 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.2.1",
+  "computedAt": "2026-06-13T12:43:44.389384+00:00",
+  "commitSha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+  "assertions": [
+    {
+      "name": "targets_are_negative_and_large",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 23,
+  "computation": "qbeta-exotic-signed-klr-composite-probe",
+  "scriptFile": "qbeta_exotic_signed_klr_composite_probe.py",
+  "scriptHash": "5e10de453d36",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.2",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.11.1",
+    "mpmath": "0.0.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
+  },
+  "description": "Tests cross-anchor rigidity for exotic-signed KLR composite operators. The target sum of characters at l(w)=2 must equal -1 / (q;q)_2 at both anchors. This target function has a pole at q=1 and steep slope, which is fundamentally incompatible with being exactly matched by a bounded Laurent polynomial (character) across the two distinct anchors q_proton and q_muon without fine-tuning.",
+  "data": {
+    "q_proton": "1.10997858275138080759166909561076887987449912187357873607281",
+    "q_muon": "1.10997859555418057528159407960950937799328227995868622546675",
+    "target_sum_proton": "-39.1837245970939546086388104103046097961674677618328450857634",
+    "target_sum_muon": "-39.1837152364467316877962982517275866158116564997944171865582",
+    "target_slope": "731.140640545207264384579047133616091777249608301075255043373"
+  }
+}
