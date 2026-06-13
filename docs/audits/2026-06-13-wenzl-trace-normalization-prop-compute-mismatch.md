@@ -124,7 +124,19 @@ fixable independently of the §5 adjudication:
 These are truth-tracking probes that do not feed production; the §7 sweep
 lists them alongside the convention-dependent files.
 
-## 5. Adjudication required (author's call)
+## 5. Adjudication — RESOLVED 2026-06-13: full-Hecke canonical, prop scoped
+
+> **Owner decision (2026-06-13):** option 1 — **full-Hecke (Ocneanu) is
+> canonical**; **scope the prop** to the Borromean Jones polynomial; do **not**
+> re-normalize the pipeline. Applied: `prop:h3-markov-wenzl-weights`
+> (`.md`/`.ts`/`.lean`) now states it gives the **Jones/TL** weights (the
+> Borromean rings' Jones polynomial) and carries a *Scope* section
+> distinguishing it from the full-Hecke pipeline trace; scope notes were added
+> to the two Jones-convention probes (`borromean_trace_cross_validator.py`,
+> `gap_a4_T18_markov_normalization_probe.py`); the wrong-in-both probes were
+> corrected (§4). The writhe≠0 consumers (`torus_knot_markov_trace_*`,
+> `pyhecke_jones_markov_atlas`) were verified to **already** use the full-Hecke
+> weights — no change. No compute or mass numbers changed.
 
 The mismatch is a genuine fork that the framework's own naming does not
 settle — CLAUDE.md §7a calls the trace "the Jones polynomial" (suggesting TL,
