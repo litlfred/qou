@@ -206,6 +206,26 @@
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
         "notes": "Label 'prop:topological-mass-formula-algebraic' → expected 'topological_mass_formula_algebraic'; Lean declares: AlgebraicMassData, AlgebraicMassFormula. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "d6fb6599a171",
+          "ts": "42cfc007f8b8",
+          "lean": "ef9bebbc24ac"
+        },
+        "result": "fail",
+        "severity": "major",
+        "evidence": "topological-mass-formula-algebraic.lean:51-57 proves 'mass_alg = phi1 / hbar_sq' from hypothesis 'phi1 = mass_alg * hbar_sq' (h_phi1) via rw+field_simp — i.e. x=(x*y)/y.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T00:35:03.262Z",
+        "reviewed_sha": "0e23166ac25dcd8536f8d3215dd75f7bad4e0208",
+        "notes": "Lean proves a trivial field rearrangement where the hypothesis IS the conclusion; abstract AlgebraicMassData fields (lean:36-40) carry no braid/Markov-trace/Vol_q content. The substantive .md proof (Φ1=τ_arch(Vol_q), brane-tower decomp, ℚ(q)-membership, md:110-142) is absent from Lean. Not equivalent."
       }
     ],
     "voice-author-notes-pollution": [
@@ -1135,7 +1155,104 @@
         "reviewed_at": "2026-06-11T18:06:24.673Z",
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7"
       }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "d6fb6599a171",
+          "ts": "42cfc007f8b8",
+          "lean": "ef9bebbc24ac"
+        },
+        "result": "warn",
+        "severity": "major",
+        "evidence": "topological-mass-formula-algebraic.lean:53 hypothesis 'h_phi1 : D.phi1 = D.mass_alg * D.hbar_sq' is the conclusion (line 55) algebraically rearranged; .md:148-151 calls it a 'Lean stub'.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T00:35:03.300Z",
+        "reviewed_sha": "0e23166ac25dcd8536f8d3215dd75f7bad4e0208",
+        "notes": "Conclusion defined equal to (rearrangement of) the hypothesis — weakened vs the proposition's ℚ(q) mass identity. Documented as a stub in .md (loud), so warn not fail."
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "d6fb6599a171",
+          "ts": "42cfc007f8b8",
+          "lean": "ef9bebbc24ac"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.85,
+          "max": 1
+        },
+        "evidence": "topological-mass-formula-algebraic.md:112-142 — proof states it follows from thm:knot-mass-formula-unified 'with three observations' (descended/singleton/pair), each tied to a named upstream lemma; pre-τ vs post-τ split made explicit (md:104-108).",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T00:35:31.641Z",
+        "reviewed_sha": "0e23166ac25dcd8536f8d3215dd75f7bad4e0208",
+        "notes": "Plan stated up front (3 named observations + ℚ(q)-membership argument); reader knows the route before the steps. ~0.85."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "d6fb6599a171",
+          "ts": "42cfc007f8b8",
+          "lean": "ef9bebbc24ac"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.6,
+          "max": 1
+        },
+        "evidence": "topological-mass-formula-algebraic.lean:51-57 is a trivial-rearrangement stub; the real gap is wiring AlgebraicMassData to actual Vol_q/Markov-trace and proving phi1=mass_alg*hbar_sq for the braid (md:117-133 rests on upstream lemmas).",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T00:35:31.691Z",
+        "reviewed_sha": "0e23166ac25dcd8536f8d3215dd75f7bad4e0208",
+        "notes": "Core gap: the substantive content sits in upstream lemmas + an unwired Lean structure; closeable but non-routine (must instantiate data + discharge the multiplicative identity). ~0.6."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "d6fb6599a171",
+          "ts": "42cfc007f8b8",
+          "lean": "ef9bebbc24ac"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.45,
+          "max": 1
+        },
+        "evidence": "topological-mass-formula-algebraic.md:1-16,67-86 — pre-τ ℚ(q) restatement of the existing archimedean prop:topological-mass-formula, closing audit §4.B wall risk.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T00:35:31.729Z",
+        "reviewed_sha": "0e23166ac25dcd8536f8d3215dd75f7bad4e0208",
+        "notes": "An algebraic-side restatement of an existing proposition (audit-closure framing); useful pre-τ/post-τ separation but not a novel argument, not a corpus duplicate. ~0.45."
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-13T00:35:31.729Z"
 }
