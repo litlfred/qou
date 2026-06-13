@@ -798,7 +798,28 @@
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "ea5263aa81d1",
+          "ts": "9cbb52c60c1d"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "quantum-observable-universes.ts:512-517 — block listed in section 'Elaboration: categorical context' (sec:elaboration-intro); quantum-gauge-group-category.md:4-9 gives the Tannaka–Krein / Rep-category view of def:quantum-gauge-group, squarely categorical-context elaboration; .ts sets interprets: def:quantum-gauge-group",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:51:18.137Z",
+        "reviewed_sha": "4626c4c4c1fef2341baad39a52dbdfe2f05493c7",
+        "notes": "Categorical-perspective remark sits in the categorical-context elaboration section; no sibling (hopf-structure-diagrams, self-dual-2group) duplicates the Tannaka-Krein square; kind=remark with interprets is correct (no new provable claim)."
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-13T01:51:18.137Z"
 }
