@@ -87,7 +87,7 @@ def num_corners(lam: tuple) -> int:
     return count
 
 
-def num_SYT(lam: tuple) -> int:
+def num_syt(lam: tuple) -> int:
     """Standard Young Tableaux count = n! / Π hook lengths (hook-length
     formula, Frame-Robinson-Thrall 1954).  Equivalent to d_lambda from
     the murnaghan_nakayama family but kept local since no canonical
@@ -113,10 +113,10 @@ def check_h0_candidates() -> dict:
     print("=" * 78)
     print("T16a — h⁰ candidates (target +2)")
     print("=" * 78)
-    d_lam = num_SYT(TWO_ONE)  # also equals dim_(2,1) = 2
+    d_lam = num_syt(TWO_ONE)  # also equals dim_(2,1) = 2
     n_corners = num_corners(TWO_ONE)
     candidates = {
-        "d_(2,1) / num_SYT": d_lam,
+        "d_(2,1) / num_syt": d_lam,
         "num_corners": n_corners,
         "num_removable_corners (= num_corners)": n_corners,
     }
@@ -260,8 +260,8 @@ def main():
 
     # Sanity assertions
     w.add_assertion(
-        "num_SYT_of_2_1_equals_dim",
-        computed=float(num_SYT(TWO_ONE)),
+        "num_syt_of_2_1_equals_dim",
+        computed=float(num_syt(TWO_ONE)),
         expected=2.0,
         tolerance=0.0,
         source=(
