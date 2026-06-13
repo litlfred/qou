@@ -4,7 +4,7 @@
 % Key convention:  <firstauthorlastname><year>  (all lower-case)
 % Source of truth: content/schema/references.ts (CSL-JSON)
 % Generator:       content/pipeline/export-bibtex.ts
-% Generated:       2026-06-07T05:19:32.411Z
+% Generated:       2026-06-13T22:44:44.112Z
 @article{garoufalidis2004,
   author  = {Garoufalidis, Stavros},
   title   = {{On the characteristic and deformation varieties of a knot}},
@@ -14,6 +14,81 @@
   pages   = {291--309},
   doi     = {10.4310/JDG/1090425531},
   url     = {https://doi.org/10.4310/JDG/1090425531},
+}
+
+@incollection{zagier2010,
+  author    = {Zagier, Don},
+  title     = {{Quantum Modular Forms}},
+  booktitle = {Quanta of Maths},
+  year      = {2010},
+  pages     = {659--675},
+  publisher = {American Mathematical Society},
+  series    = {Clay Mathematics Proceedings},
+  number    = {11},
+  note      = {Foundational definition of quantum modular forms — functions on ℚ whose obstruction to modularity under SL₂(ℤ) (esp. x↦−1/x) extends analytically; for knots the Kashaev / colored-Jones asymptotics near roots of unity are quantum-modular. The q↦q̃ modular-partner transformation + the √(2π/ℏ) radial-asymptotic prefactor are the conjectural frame for the QOU Q_β c_k √u/ε bar-involution (the bar-odd a_1 as the odd part under the modular S-transform). See docs/audits/2026-06-13-qbeta-heat-fmap-symbolic-and-literature.md.},
+}
+
+@article{vaksman-korogodsky-1989,
+  author  = {Vaksman, L. L. and Korogodsky, L. I.},
+  title   = {{An algebra of bounded functions on the quantum group of the motions of the plane, and q-analogues of Bessel functions}},
+  journal = {Soviet Mathematics - Doklady},
+  year    = {1989},
+  volume  = {39},
+  number  = {1},
+  pages   = {173--177},
+  note    = {Origin of the q-Bessel = quantum-group-matrix-coefficient identification: the Hahn–Exton q-Bessel functions arise as matrix coefficients of the irreducible unitary representations of E_q(2), the quantum group of plane motions — the q-analogue of Vilenkin's classical J_ν = matrix-coefficient-of-E(2). Underpins the QOU claim that the Reeb-phase brane-tower object is the SU_q(2)→E_q(2) contraction limit. See docs/audits/2026-06-13-reeb-phase-qbessel-identification.md.},
+}
+
+@article{koelink1994,
+  author  = {Koelink, H. T.},
+  title   = {{The quantum group of plane motions and the Hahn-Exton q-Bessel function}},
+  journal = {Duke Mathematical Journal},
+  year    = {1994},
+  volume  = {76},
+  number  = {2},
+  pages   = {483--508},
+  doi     = {10.1215/S0012-7094-94-07617-0},
+  url     = {https://doi.org/10.1215/S0012-7094-94-07617-0},
+  note    = {Theorem: matrix coefficients of E_q(2) are Hahn–Exton q-Bessel functions J_ν^(3)(x;q); the q-Bessel satisfies a second-order q-difference equation and the q-analogue of Bessel's three-term contiguity. Canonical reference for the QOU c_k q-difference kernel = q-Bessel operator identification (#1839/#1880).},
+}
+
+@article{koelink-swarttouw-1994,
+  author  = {Koelink, H. T. and Swarttouw, R. F.},
+  title   = {{On the zeros of the Hahn-Exton q-Bessel function and associated q-Lommel polynomials}},
+  journal = {Journal of Mathematical Analysis and Applications},
+  year    = {1994},
+  volume  = {186},
+  number  = {3},
+  pages   = {690--710},
+  doi     = {10.1006/jmaa.1994.1330},
+  url     = {https://doi.org/10.1006/jmaa.1994.1330},
+  note    = {q-Hankel (q-Fourier–Bessel) transform built from the orthogonality of the Hahn–Exton q-Bessel zeros; the q-Lommel three-term recurrence. Reference for the q-Bessel contiguity ⟹ coefficient-recurrence derivation (QBesselContiguityRecurrence.lean).},
+}
+
+@incollection{koornwinder1990,
+  author    = {Koornwinder, T. H.},
+  editor    = {Nevai, Paul},
+  title     = {{Orthogonal polynomials in connection with quantum groups}},
+  booktitle = {Orthogonal Polynomials: Theory and Practice},
+  year      = {1990},
+  pages     = {257--292},
+  publisher = {Kluwer Academic Publishers},
+  series    = {NATO ASI Series C},
+  number    = {294},
+  note      = {Survey of the SU_q(2) ↔ little-q-Jacobi-polynomial matrix-coefficient dictionary and the SU_q(2)→E_q(2) contraction sending little-q-Jacobi → q-Bessel (the quantum Mehler–Heine limit). Grounds the QOU home-grown-object ↔ q-special-function dictionary.},
+}
+
+@book{gasper-rahman-2004,
+  author    = {Gasper, George and Rahman, Mizan},
+  title     = {{Basic Hypergeometric Series}},
+  year      = {2004},
+  publisher = {Cambridge University Press},
+  series    = {Encyclopedia of Mathematics and its Applications},
+  number    = {96},
+  edition   = {2nd},
+  doi       = {10.1017/CBO9780511526251},
+  url       = {https://doi.org/10.1017/CBO9780511526251},
+  note      = {Standard reference for basic (q-)hypergeometric series, q-Pochhammer (q;q)_k, the q-Bessel functions, and their q-difference equations. Normalisation used for the Hahn–Exton q-Bessel J_ν(x;q) = x^ν (q^{ν+1};q)_∞/(q;q)_∞ · ₁φ₁(0;q^{ν+1};q,qx²) in the QOU compute.},
 }
 
 @article{chenier2026,
@@ -1803,6 +1878,44 @@
   doi       = {10.1017/CBO9780511755804},
 }
 
+@article{ashtekar-baez-corichi-krasnov-1998,
+  author  = {Ashtekar, Abhay and Baez, John and Corichi, Alejandro and Krasnov, Kirill},
+  title   = {{Quantum geometry and black hole entropy}},
+  journal = {Physical Review Letters},
+  year    = {1998},
+  volume  = {80},
+  pages   = {904--907},
+  doi     = {10.1103/PhysRevLett.80.904},
+  url     = {https://arxiv.org/abs/gr-qc/9710007},
+  note    = {arXiv:gr-qc/9710007. The isolated-horizon U(1) Chern-Simons + puncture state-counting framework. Added 2026-06-08; cited by the QOU<->LQG dictionary (gravity-spacetime/lqg-adm-ashtekar-comparison). HUMAN-REVIEW: unreviewed (DOI/page best-effort; see docs/workplans/2026-06-08-bib-human-review-workflow-design.md).},
+}
+
+@article{domagala-lewandowski-2004,
+  author  = {Domaga{\l}a, Marcin and Lewandowski, Jerzy},
+  title   = {{Black hole entropy from quantum geometry}},
+  journal = {Classical and Quantum Gravity},
+  year    = {2004},
+  volume  = {21},
+  number  = {22},
+  pages   = {5233--5243},
+  doi     = {10.1088/0264-9381/21/22/014},
+  url     = {https://arxiv.org/abs/gr-qc/0407051},
+  note    = {arXiv:gr-qc/0407051. Horizon state-count + projection-constraint combinatorics. Added 2026-06-08 from uploads/0407051v2.pdf; used by docs/audits/2026-06-08-spin-network-count-q-dimension-partition-function.md. HUMAN-REVIEW: unreviewed (DOI/page best-effort).},
+}
+
+@article{meissner2004,
+  author  = {Meissner, Krzysztof A.},
+  title   = {{Black hole entropy in loop quantum gravity}},
+  journal = {Classical and Quantum Gravity},
+  year    = {2004},
+  volume  = {21},
+  number  = {22},
+  pages   = {5245--5251},
+  doi     = {10.1088/0264-9381/21/22/015},
+  url     = {https://arxiv.org/abs/gr-qc/0407052},
+  note    = {arXiv:gr-qc/0407052. The Immirzi-fixing criticality equation. Added 2026-06-08 from uploads/0407052v1.pdf; used by docs/audits/2026-06-08-spin-network-count-q-dimension-partition-function.md. HUMAN-REVIEW: unreviewed (DOI/page best-effort).},
+}
+
 @book{thiemann2007,
   author    = {Thiemann, Thomas},
   title     = {{Modern Canonical Quantum General Relativity}},
@@ -2088,6 +2201,7 @@
   pages   = {241--247},
   doi     = {10.1016/0040-9383(91)90010-2},
   url     = {https://doi.org/10.1016/0040-9383(91)90010-2},
+  note    = {The original knot-energy functional. Also used by appendix-surreals/mobius-surreal-renormalization (M{\"o}bius-energy surreal recasting). HUMAN-REVIEW: unreviewed — DOI needs verification; an alternate candidate DOI 10.1016/0040-9383(91)90030-7 was seen during 2026-06-08 ingestion.},
 }
 
 @article{diaconis-ram2000,
@@ -2240,6 +2354,17 @@
   volume  = {4},
   pages   = {165--192},
   note    = {Introduces the q-deformed hook walk: a Markov chain on Young diagrams whose stationary measure is the q-Plancherel measure. The transition kernel projects step-by-step onto each partition, with branching weights determined by q-hook products.},
+}
+
+@article{bozejko-speicher1991,
+  author  = {Bożejko, Marek and Speicher, Roland},
+  title   = {{An example of a generalized Brownian motion}},
+  journal = {Communications in Mathematical Physics},
+  year    = {1991},
+  volume  = {137},
+  pages   = {519--531},
+  doi     = {10.1007/BF02100489},
+  note    = {The q-deformed commutation relations admit a positive (Fock-space) representation iff -1 ≤ q ≤ 1; basis for the q-Gaussian obstruction at the substrate q_0 > 1 (prop:q-gaussian-obstruction-at-q0).},
 }
 
 @article{feray-meliot2012,

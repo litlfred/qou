@@ -154,6 +154,98 @@ export const references: CSLData[] = [
     note: "Foundational definition of quantum modular forms — functions on ℚ whose obstruction to modularity under SL₂(ℤ) (esp. x↦−1/x) extends analytically; for knots the Kashaev / colored-Jones asymptotics near roots of unity are quantum-modular. The q↦q̃ modular-partner transformation + the √(2π/ℏ) radial-asymptotic prefactor are the conjectural frame for the QOU Q_β c_k √u/ε bar-involution (the bar-odd a_1 as the odd part under the modular S-transform). See docs/audits/2026-06-13-qbeta-heat-fmap-symbolic-and-literature.md.",
   }),
 
+  // ── Vaksman–Korogodsky 1989 — q-Bessel = E_q(2) matrix coefficients ──
+  ref({
+    id: "vaksman-korogodsky-1989",
+    type: "article-journal",
+    title:
+      "An algebra of bounded functions on the quantum group of the motions of the plane, and q-analogues of Bessel functions",
+    author: [
+      { family: "Vaksman", given: "L. L." },
+      { family: "Korogodsky", given: "L. I." },
+    ],
+    "container-title": "Soviet Mathematics - Doklady",
+    issued: { "date-parts": [[1989]] },
+    volume: "39",
+    issue: "1",
+    page: "173-177",
+    note: "Origin of the q-Bessel = quantum-group-matrix-coefficient identification: the Hahn–Exton q-Bessel functions arise as matrix coefficients of the irreducible unitary representations of E_q(2), the quantum group of plane motions — the q-analogue of Vilenkin's classical J_ν = matrix-coefficient-of-E(2). Underpins the QOU claim that the Reeb-phase brane-tower object is the SU_q(2)→E_q(2) contraction limit. See docs/audits/2026-06-13-reeb-phase-qbessel-identification.md.",
+  }),
+
+  // ── Koelink 1994 — E_q(2) and the Hahn–Exton q-Bessel function ──
+  ref({
+    id: "koelink1994",
+    type: "article-journal",
+    title:
+      "The quantum group of plane motions and the Hahn-Exton q-Bessel function",
+    author: [{ family: "Koelink", given: "H. T." }],
+    "container-title": "Duke Mathematical Journal",
+    issued: { "date-parts": [[1994]] },
+    volume: "76",
+    issue: "2",
+    page: "483-508",
+    DOI: "10.1215/S0012-7094-94-07617-0",
+    URL: "https://doi.org/10.1215/S0012-7094-94-07617-0",
+    note: "Theorem: matrix coefficients of E_q(2) are Hahn–Exton q-Bessel functions J_ν^(3)(x;q); the q-Bessel satisfies a second-order q-difference equation and the q-analogue of Bessel's three-term contiguity. Canonical reference for the QOU c_k q-difference kernel = q-Bessel operator identification (#1839/#1880).",
+  }),
+
+  // ── Koelink–Swarttouw 1994 — q-Bessel zeros, q-Hankel transform ──
+  ref({
+    id: "koelink-swarttouw-1994",
+    type: "article-journal",
+    title:
+      "On the zeros of the Hahn-Exton q-Bessel function and associated q-Lommel polynomials",
+    author: [
+      { family: "Koelink", given: "H. T." },
+      { family: "Swarttouw", given: "R. F." },
+    ],
+    "container-title": "Journal of Mathematical Analysis and Applications",
+    issued: { "date-parts": [[1994]] },
+    volume: "186",
+    issue: "3",
+    page: "690-710",
+    DOI: "10.1006/jmaa.1994.1330",
+    URL: "https://doi.org/10.1006/jmaa.1994.1330",
+    note: "q-Hankel (q-Fourier–Bessel) transform built from the orthogonality of the Hahn–Exton q-Bessel zeros; the q-Lommel three-term recurrence. Reference for the q-Bessel contiguity ⟹ coefficient-recurrence derivation (QBesselContiguityRecurrence.lean).",
+  }),
+
+  // ── Koornwinder 1990 — orthogonal polynomials & quantum groups ──
+  ref({
+    id: "koornwinder1990",
+    type: "chapter",
+    title: "Orthogonal polynomials in connection with quantum groups",
+    author: [{ family: "Koornwinder", given: "T. H." }],
+    "container-title": "Orthogonal Polynomials: Theory and Practice",
+    editor: [{ family: "Nevai", given: "Paul" }],
+    publisher: "Kluwer Academic Publishers",
+    "publisher-place": "Dordrecht",
+    issued: { "date-parts": [[1990]] },
+    page: "257-292",
+    "collection-title": "NATO ASI Series C",
+    "collection-number": 294,
+    note: "Survey of the SU_q(2) ↔ little-q-Jacobi-polynomial matrix-coefficient dictionary and the SU_q(2)→E_q(2) contraction sending little-q-Jacobi → q-Bessel (the quantum Mehler–Heine limit). Grounds the QOU home-grown-object ↔ q-special-function dictionary.",
+  }),
+
+  // ── Gasper–Rahman 2004 — Basic Hypergeometric Series (q-special fns) ──
+  ref({
+    id: "gasper-rahman-2004",
+    type: "book",
+    title: "Basic Hypergeometric Series",
+    author: [
+      { family: "Gasper", given: "George" },
+      { family: "Rahman", given: "Mizan" },
+    ],
+    edition: "2",
+    publisher: "Cambridge University Press",
+    "publisher-place": "Cambridge",
+    issued: { "date-parts": [[2004]] },
+    "collection-title": "Encyclopedia of Mathematics and its Applications",
+    "collection-number": 96,
+    DOI: "10.1017/CBO9780511526251",
+    URL: "https://doi.org/10.1017/CBO9780511526251",
+    note: "Standard reference for basic (q-)hypergeometric series, q-Pochhammer (q;q)_k, the q-Bessel functions, and their q-difference equations. Normalisation used for the Hahn–Exton q-Bessel J_ν(x;q) = x^ν (q^{ν+1};q)_∞/(q;q)_∞ · ₁φ₁(0;q^{ν+1};q,qx²) in the QOU compute.",
+  }),
+
   // ── PRX: Chenier et al. 2026 ──────────────────────────────────
   ref({
     id: "chenier2026",
