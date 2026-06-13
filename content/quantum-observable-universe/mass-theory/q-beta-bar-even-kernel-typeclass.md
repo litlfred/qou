@@ -10,14 +10,14 @@ candidate clearing all four §4 gates simultaneously.*
 
 The four §4 formalize-first invariants from the
 [refuted-class map](../../../docs/audits/2026-06-04-qbeta-ck-refuted-class-map-and-open-axis.md)
-were formalized separately in PRs #1875, #1889, and #1890 (Tracks A + B):
+were formalized separately as four parametric gate classes:
 
 | invariant | gate class | parametric? |
 |---|---|---|
-| (a) Anchor-stable (simple pole at $u_{\text{substrate}}$) | `RadiusOfConvergenceGateClass` (PR #1889) | no (global axiom) |
-| (b) Bar-even under $q \mapsto q^{-1}$ | structural identity (PR #1875) | n/a (CommRing R lemma) |
-| (c) $q = 1$ classical-limit shadow | `QOneShadowGateClass (c2 c3 : ℝ → ℝ)` (PR #1890 Track A) | **yes** |
-| (d) Direction sanity at $q_0$ | `DirectionSanityGateClass (m : ℝ)` (PR #1890 Track B) | **yes** |
+| (a) Anchor-stable (simple pole at $u_{\text{substrate}}$) | `RadiusOfConvergenceGateClass` | no (global axiom) |
+| (b) Bar-even under $q \mapsto q^{-1}$ | structural identity | n/a (CommRing R lemma) |
+| (c) $q = 1$ classical-limit shadow | `QOneShadowGateClass (c2 c3 : ℝ → ℝ)` | **yes** |
+| (d) Direction sanity at $q_0$ | `DirectionSanityGateClass (m : ℝ)` | **yes** |
 
 A future probe author evaluating a candidate $F(q)$ currently has to
 instantiate four classes by hand. **`BarEvenKernel` is the single
@@ -43,16 +43,15 @@ class BarEvenKernel
   -- §4(d) direction sanity at q_0
   direction_match :
     |magnitude - directionTarget| ≤ directionThreshold * directionTarget
-  -- §4(b) bar-evenness (the structural identity from PR #1875 holds for
+  -- §4(b) bar-evenness (the structural identity holds for
   --       any candidate in CommRing R, so the typeclass instance does
   --       not need to re-state it; included as a corollary lemma)
 ```
 
-The bar-even invariant (PR #1875) is a CommRing R-level structural
+The bar-even invariant is a CommRing R-level structural
 identity that holds automatically for any kernel candidate built from
 the substrate primitives ($b$, $\hbar_q$); the typeclass therefore
-does not duplicate it as a field. The bar-even rejection lemma from
-PR #1875 remains available as the standalone gate when a candidate
+does not duplicate it as a field. The bar-even rejection lemma remains available as the standalone gate when a candidate
 does NOT come from the substrate (e.g., a freely-constructed test
 kernel during exploratory work).
 
@@ -63,9 +62,8 @@ specific `(pole, c2, c3, magnitude)`, then:
 
 1. `RadiusOfConvergenceGateClass`-equivalent holds at the parametric
    level (pole within tolerance of $u_{\text{substrate}}$).
-2. `QOneShadowGateClass c2 c3` is instantiable (PR #1890 Track A).
-3. `DirectionSanityGateClass magnitude` is instantiable
-   (PR #1890 Track B).
+2. `QOneShadowGateClass c2 c3` is instantiable.
+3. `DirectionSanityGateClass magnitude` is instantiable.
 
 The Lean proof of each lifting is a one-line extraction of the
 corresponding field — `BarEvenKernel.pole_at_u_substrate`,
@@ -97,8 +95,8 @@ with each field hypothesis discharged by the corresponding probe.
 - The typeclass codifies the *gate-chain composition*; the actual
   kernel search proceeds independently.
 - Subclasses of `BarEvenKernel` (e.g. extending to include the
-  PR #1839 `CFinite.recurrence_step` engine for kernel-driven $c_k$
-  generation) are natural follow-ups when PR #1839 merges.
+  `CFinite.recurrence_step` engine for kernel-driven $c_k$
+  generation) are natural follow-ups.
 
 ## Status
 
