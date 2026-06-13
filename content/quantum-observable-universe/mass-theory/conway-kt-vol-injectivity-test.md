@@ -61,28 +61,9 @@ Even though the equality is forced by Ruberman (not by B1), the
 All three give the same answer for CKT. **The B1 framework would
 distinguish itself only on a Jones-coincident pair where Ruberman
 does not apply** — i.e. non-mutant pairs.
-
-### Numerical verification status
-
-The volumes above are quoted from SnapPy 3.3.2 (Conway:
-$11.31951569027316\ldots$, KT: $11.31951569027316\ldots$). High-
-precision computation at 50 dps would require porting SnapPy's
-hyperbolic-structure routines to mpmath; deferred. The 14-digit
-agreement here is already at machine precision and confirms
-Ruberman's theorem.
-
 ### Cross-references
 
 - B1 prediction: [`rem:transcendental-accounting`](#rem:transcendental-accounting) Fact 2
 - Open Jones-faithfulness question: [`rem:knot-exhaustiveness`](#rem:knot-exhaustiveness) Q3
 - Bring-embeddable class: [`rem:bring-embeddable-knots`](#rem:bring-embeddable-knots)
 - Bi-filtration placement: [`prop:knot-indexed-convolution-grid`](#prop:knot-indexed-convolution-grid)
-
-### Status
-
-**Sanity-check passed; falsification deferred.** The CKT case is
-consistent with B1 but not a discriminating test. Future work:
-locate a non-mutant Jones-coincident pair (Anstee–Przytycki–Rolfsen
-1989 has explicit examples; volumes via SnapPy are computable).
-A Bring-embeddable Jones-coincident pair would be the strongest
-test, but existence is open.

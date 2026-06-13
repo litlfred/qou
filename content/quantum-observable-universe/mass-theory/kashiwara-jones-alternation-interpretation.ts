@@ -24,4 +24,10 @@ export default remark({
     "hyperbolic-torus",
     "1ppb-roadmap",
   ],
+  authorNotes: [
+    {
+      kind: "status",
+      body: "This is a **structural interpretation remark**, not a new theorem. It\ncaptures the rep-theoretic picture motivating the empirical alternation\nobserved in [`prop:q-beta-categorical-precision-ladder`](#prop:q-beta-categorical-precision-ladder).\nThe remark interprets but does not introduce new logical content.",
+    },
+  ],
 });

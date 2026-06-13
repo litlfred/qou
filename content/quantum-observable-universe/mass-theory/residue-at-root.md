@@ -150,22 +150,3 @@ $\widehat{\mathbb{Z}[q]}$ that converges as a complex function on
 $|q| > 1$. The algebraic projection, however, is well-defined
 *regardless* of analytic convergence — which is the point: the
 algebraic-side derivation does not need analytic continuation.
-
-## Status
-
-**Status: provable** in pure Habiro-ring algebra, conditional on
-[`prop:graded-markov-trace-from-gs-filtration`](#prop:graded-markov-trace-from-gs-filtration)
-and the Habiro-completion theorem \cite{habiro2002}. The downstream
-effect is that the Lean `noncomputable opaque residueAtRoot` can
-be **replaced** by a `def` returning an element of an appropriate
-cyclotomic ring; this refactor is part of the Lean-side action
-item for P2.6.
-
-Together with
-[`prop:graded-markov-trace-from-gs-filtration`](#prop:graded-markov-trace-from-gs-filtration),
-this block closes the narrative-side surface of the GB-residue
-opaque axioms documented in
-[`folio-assistant/computations/AUDIT-gb-residue-opaque-declarations.md`](../../../folio-assistant/computations/AUDIT-gb-residue-opaque-declarations.md).
-The Lean refactor (replacing the two opaque declarations with
-constructive `def`s) remains pending — see workplan task **P2.6**
-"Lean-side action item".

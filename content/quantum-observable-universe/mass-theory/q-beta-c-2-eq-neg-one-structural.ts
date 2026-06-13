@@ -30,4 +30,10 @@ export default proposition({
     "categorical-derivation",
     "no-fit",
   ],
+  authorNotes: [
+    {
+      kind: "status",
+      body: "**Theorem (this proposition).** Sorry-free Lean proof\n([`q-beta-c-2-eq-neg-one-structural.lean`](q-beta-c-2-eq-neg-one-structural.lean))\n— one-line `ring` identity in `CommRing R`.\n\n**Compute (sympy).** Verified in\n[`qbeta_symbolic_chain_alpha_b.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/qbeta/qbeta_symbolic_chain_alpha_b.py)\nwitness `qbeta-symbolic-chain-alpha-b.witness.json`, assertion\n`N2_factor_equals_one_minus_u_squared` (passing, tolerance $10^{-20}$).",
+    },
+  ],
 });

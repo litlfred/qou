@@ -121,11 +121,3 @@ The functional-equation cross-validation provides genuine 50-digit
 agreement (depth-2 witness only had ~13-digit cross-validation via
 Clausen partial sum); the depth-3 instance is therefore the
 *numerically tightest* graded-Mikusiński instance recorded.
-
-### Status
-
-**Numerically discharged at 50 digits via functional-equation
-cross-validation.** Depth correspondence verified by construction
-(single $\mathrm{Li}_3$ factor $\Rightarrow$ depth 3 on both sides).
-Geometric realisation as a hyperbolic-4-manifold or Chern–Simons
-invariant is **open**.

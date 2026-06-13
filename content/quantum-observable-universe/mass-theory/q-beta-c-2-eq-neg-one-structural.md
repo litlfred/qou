@@ -85,14 +85,3 @@ identity.
 This proposition is the $k = 2$ instance of that programme. Higher-$k$
 instances are the remaining open work toward CODATA-free $Q_\beta$ at
 $1\,\text{ppQ}$.
-
-## Status
-
-**Theorem (this proposition).** Sorry-free Lean proof
-([`q-beta-c-2-eq-neg-one-structural.lean`](q-beta-c-2-eq-neg-one-structural.lean))
-— one-line `ring` identity in `CommRing R`.
-
-**Compute (sympy).** Verified in
-[`qbeta_symbolic_chain_alpha_b.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/qbeta/qbeta_symbolic_chain_alpha_b.py)
-witness `qbeta-symbolic-chain-alpha-b.witness.json`, assertion
-`N2_factor_equals_one_minus_u_squared` (passing, tolerance $10^{-20}$).

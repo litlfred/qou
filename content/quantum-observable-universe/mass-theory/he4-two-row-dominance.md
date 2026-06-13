@@ -68,15 +68,3 @@ $\Delta_\lambda$ empirical-tabulation route. The two derivations
 are independent: $\Delta_\lambda$ from per-partition mass-anchor
 residuals, this proposition from the canonical
 $\Sigma_\lambda y_\lambda \cdot \chi^\lambda_q$ Wedderburn sum.
-
-## Conditional status
-
-The proposition is verified at 50-dps numerical precision in the
-companion witness. The Lean formalisation follows the conditional-
-class pattern (CLAUDE.md §3b-cond): the witness-verified
-$86.6\,\%$ figure is encoded as a class
-`HasHe4TwoRowDominance` whose only `sorry` is the empirical
-instance, and downstream propositions such as
-`rem:he4-magic-shell-fingerprint`
-take this class as a `[HasHe4TwoRowDominance]` typeclass
-hypothesis.

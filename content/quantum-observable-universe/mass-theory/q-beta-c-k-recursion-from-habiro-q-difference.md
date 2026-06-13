@@ -159,11 +159,3 @@ vanishing of the modular cocycle's Bloch–Wigner (volume) term on the
 **non-hyperbolic** Hopf link. This is a motivated analogy, **not a theorem** —
 establishing it would require exhibiting $F(q)$ as a quantum modular form.
 Full discussion: [`docs/audits/2026-06-13-qbeta-heat-fmap-symbolic-and-literature.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-06-13-qbeta-heat-fmap-symbolic-and-literature.md).
-
-## Status
-
-**Scaffolding.** The Lean structure + applyRecursion method form a
-working recursion engine; the compute scaffold demonstrates two toy
-kernels (depth-1 geometric, depth-2 underdetermined-from-seeds-alone).
-The categorical $F(q)$ construction remains the open keystone for the
-$1\,\mathrm{ppQ}$ target.

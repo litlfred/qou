@@ -130,21 +130,3 @@ underlying Hecke arithmetic.  A direct symbolic verification at
 $A = 1$, $N = 1$ would settle the question; this is well within
 the budget of `per_irrep_pole_proton_h3.py` adapted to neutron
 inputs and is left as an open follow-up.
-
-## Status
-
-(B) ${}^{4}$He Path A consistency check **CLOSED**:
-$\mathrm{ord}_{u=0}(\mathrm{tr}_M(\beta_{{}^4\mathrm{He}})) = 79$
-verified via crystal-bases Path A in $13.7$ s, matching the
-closed-form prediction $18 \cdot 2 + 21 \cdot 2 + 1 = 79$.
-
-The naive symbolic attempt with
-[`hecke_laurent_fast.tr_M_atomic_fast(2, 2)`](../../../folio-assistant/computations/hecke/hecke_laurent_fast.py)
-did not return in $600$ s; the crystal-bases route at $H_{12}$
-with the $y_\lambda$ pole-order cache pre-built is **40000$\times$
-faster end-to-end** than even the projected symbolic completion.
-
-Phase 3 (Schensted-incremental + Bratteli-recursive amortisation)
-remains as future work to push past $H_{18}$ (${}^6\mathrm{Li}$),
-where even the $y_\lambda$ cache build at $n = 18$ would take
-hours.  At $H_{12}$ the current Phase 1+2 is sufficient.

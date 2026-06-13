@@ -147,24 +147,3 @@ identity is a feature of the **operator lift** (between adjacent
 jet levels), not of the scalar $\hat V_i$'s within a single jet
 level. The level-internal pair commutation is trivial; the
 inter-level pentagon governs the ascension.
-
-## Status
-
-**Status: provable** — the lemma's content is just commutativity of
-a Laurent polynomial ring, and the trace identity follows by
-linearity from
-[`prop:markov-pair-z2`](#prop\:markov-pair-z2). The corresponding
-Lean stub
-([qou:QOU.BraidKnot.VhatPairCommutationTrace](vhat-pair-commutation-trace.lean))
-states the lemma in $\mathbb{Z}[q^{\pm 1/2}, z]$ and proves it
-by `mul_comm` on the underlying commutative ring.
-
-This block closes audit GAP 17a
-([line 113 of `derivation-audit-.md`](../../../docs/audits/derivation-audit-.md))
-and the corresponding "Pentagon $\to$ uv-commutation" subconjecture
-in
-[`rem:mass-endomorphism-jet-tower`](#rem\:mass-endomorphism-jet-tower)
-§"Remaining open subconjectures" (item 2): the question is
-resolved by recognising that the V-hats commute as scalars and
-the pentagon ascension's rigorous content is Markov-trace
-factorization plus brane-tower jet ascension.

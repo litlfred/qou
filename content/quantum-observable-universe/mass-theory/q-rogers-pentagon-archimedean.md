@@ -153,10 +153,3 @@ high-precision computation at this point disagreeing by more than
 $O((q-1)^3 \cdot u v)$ refutes the proposed q-correction; tracked
 as the open paper-track derivation in
 [`docs/audits/-pentagon-reduction-li2q.md`](https://github.com/litlfred/qou/blob/main/docs/audits/-pentagon-reduction-li2q.md).
-
-### Status
-
-**Classical case ($q = 1$): proven** (Rogers 1907, Lewin 1981).
-**q-deformation: numerical evidence at $q_0$** to 1-5% (improving on
-classical by 1.5–5$\times$). Formal q-deformed proof tracked as open
-research; Lean skeleton in place.

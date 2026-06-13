@@ -158,34 +158,6 @@ $\{[2]_q, [4]_q, [6]_q, [8]_q, q^k, h^k,
 brute-force monomial basis of the impasse audit. The earlier
 Plancherel-weight basis $\{[2k]_q^2/[2]_q, \mathcal{N}_{\rm sym}\}$
 is **superseded**.
-
-### Status
-
-**Open.** Requires two prerequisite conjectures (U2 + U4)
-plus authoring of $\mathcal{N}_{\rm sym}(q)$; see
-`docs/audits/-path-alpha-bring-refinement.md` for the
-prioritization plan.
-
-**To promote to `proposition`:**
-1. Discharge U2
-   (conj:force-carrier-knot-vs-link-dichotomy)
-   — categorical knot-vs-link distinction in $\mathbf{Rep}$.
-   Note: this is now purely categorical, since the host-surface
-   distinctness assumption has been **dropped** (all carriers
-   live on Bring per
-   [prop:torus-embeddable-complete](#prop:torus-embeddable-complete)).
-2. Discharge U4
-   (conj:electroweak-mass-eigenstate-count)
-   — categorical broken-Wedderburn split.
-3. Author `prop:weak-symmetric-normalization` —
-   $\mathcal{N}_{\rm sym}(q) \in R$ as the symmetric-channel
-   Plancherel weight, analog of
-   [`prop:gram-determinant-plancherel-ratio`](#prop:gram-determinant-plancherel-ratio).
-4. Run PSLQ at 1000 dps on the **structurally constrained**
-   extended basis $\{[4]_q, [6]_q, [8]_q, [2]_q, q^k, h^k,
-   \mathcal{N}_{\rm sym}(q)\}$ to verify the closed-form
-   prediction for $N_v$.
-
 ### Audit-flag impact
 
 If this conjecture closes:

@@ -20,4 +20,10 @@ export default definition({
     "graded-mikusinski",
     "framework-definition",
   ],
+  authorNotes: [
+    {
+      kind: "status",
+      body: "**Definition block.** Provides the framework symbol; downstream\nblocks make claims about its structure. No proof obligations here\nbeyond well-definedness, which follows from the\nexistence of the depth filtration ([keystone](#conj:gb-depth-period-correspondence))\nand the explicit central idempotents\n([`prop:explicit-central-idempotent`](#prop:explicit-central-idempotent)).",
+    },
+  ],
 });

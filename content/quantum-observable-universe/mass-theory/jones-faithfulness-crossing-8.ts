@@ -16,4 +16,10 @@ export default remark({
     "tightening",
     "graded-mikusinski",
   ],
+  authorNotes: [
+    {
+      kind: "status",
+      body: "**Theorem-level at crossing $\\leq 10$. Conway-KT mutant pair (crossing\n11) is the unique known Jones-coincident pair satisfying Vol-equality\nvia Ruberman. Crossing $\\geq 12$ open.**",
+    },
+  ],
 });
