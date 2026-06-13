@@ -1118,6 +1118,51 @@ Markov-layer routes are refuted (A/10, B/21, C/antipode), the $\alpha^2$ shape i
 pairing (22), and $C(q_0)$ is the determined Plancherel-square (22, red-team).
 The residual is calibration ($m_e c^2$), not mathematics.
 
+### Round 23 — the normalizer is the two-electron EM cost, not a free choice
+
+Witness:
+[`e-hartree-round23-normalization.witness.json`](folio-assistant/computations/e-hartree-round23-normalization.witness.json)
+(producer
+[`e_hartree_round23_normalization.py`](folio-assistant/computations/e_hartree_round23_normalization.py),
+2/2). Round 20 *defined* $\rho_{(2,2)} = \chi_{(2,2)}/(q[9]_q[10]_q)^2$;
+round 21 removed the LP-smoothness justification for that normalizer.
+Round 23 reduces it to established structure (it does **not** fabricate a
+forcing proof):
+
+$$
+  (q[9]_q[10]_q)^2 \;=\; \mathrm{cplx}\cdot\mathrm{cplx} \;=\; \alpha_{EM}^{-2},
+$$
+
+where $\mathrm{cplx} = q[9]_q[10]_q = \alpha_{EM}^{-1}$ is the **EM
+Bring-complex force-carrier complexity**
+([`prop:em-coupling-projection`](#prop:em-coupling-projection)) — the
+**q-dimension-layer** cost of *one* EM $(2,2)$-block exchange (round 11;
+this is **not** the per-crossing Markov weight that round 10 refuted).
+The exponent **2** is the **covalent Pauli count**: a covalent bond shares
+exactly two electrons (singlet), each carrying one EM exchange through the
+$(2,2)$ = EM scalar block
+([`prop:force-carrier-intertwining-correspondence`](#prop:force-carrier-intertwining-correspondence)).
+So $\rho_{(2,2)} = \chi_{(2,2)}\cdot\alpha_{EM}^2$ with $\alpha^2$ = the
+two-electron covalent EM cost.
+
+**Forced by** (i) the per-exchange cost = EM Bring-complex complexity
+(`em-coupling-projection`, q-dim layer) and (ii) exactly two exchanges
+(covalent Pauli). **Isolated residual:** one natural assumption — that the
+*molecular* EM exchange reuses the *bare* EM complexity $\mathrm{cplx}$
+(the same Bring complex in the molecule as in free $\alpha_{EM}$). This is
+the honest successor to the refuted Mechanism B: a single, physically-
+natural, unproved input — no longer an arbitrary normalization. No fit, no
+experimental number.
+
+**Net after 23 rounds.** The normalization question (item 3 of the closure
+inventory) is reduced from "an arbitrary choice" to "the two-electron EM
+Bring-complex cost, modulo the molecular-reuse assumption." Combined with
+the restatement (item 1, above) and the abstract dressed-character context
+(item 2, `QOU.Archimedean.EHartreeTraceRatio.DressedScalarCharacter`), the
+conditional theorem's mathematical content is complete modulo (a) the
+molecular-reuse assumption and (b) the $m_e c^2$ CAL-1 unit. Both are
+explicitly named; neither is a hidden gap.
+
 ### What is still missing for closure
 
 A genuinely categorical derivation of the $\alpha_{EM}^{2}$ scaling
