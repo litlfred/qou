@@ -744,7 +744,28 @@
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "1ef4f68db080",
+          "ts": "266442932022"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "quantum-observable-universes.ts:418-421 — block listed in section 'Linear q-transforms: heat, Laplace, Fourier' (sec:q-linear-transforms) immediately after its statement q-heat-equation-exists; q-heat-equation-exists-proof.md:1-9 proves existence of the q-heat solution via Peter–Weyl eigenfunction expansion",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:51:40.297Z",
+        "reviewed_sha": "0f149bf2356ce94e31156b95f8191c27c2d213ae",
+        "notes": "Proof block adjacent to its statement in the heat/Laplace/Fourier transform section; topic (q-heat equation existence) is the section's stated scope; no sibling carries the same proof (unique-proof is the distinct uniqueness claim)."
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-13T01:51:40.297Z"
 }
