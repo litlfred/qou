@@ -11,6 +11,16 @@ uniformity via a bar-involution argument; that was wrong — the
 Jones-normalised Markov trace is chiral, not invariant under the
 sign-twist automorphism σ ↦ −q·σ⁻¹.  Caught in review.)
 
+SCOPE: these are the JONES / Temperley-Lieb weights (the Borromean
+rings' Jones polynomial), NOT the general tr_M y_λ used by the mass
+pipeline.  The pipeline uses the full-Hecke Ocneanu Markov trace
+(z = 1/(q^{1/2}+q^{-1/2}), Wenzl Schur-principal), whose y_(1^3)(q) ≠ 0
+for q ≠ 1 — proved canonical (Path A = Path B) in
+docs/audits/2026-05-05-y-lambda-tr-m-equivalence-proof.md.  The two
+traces agree at q = 1 and on writhe-0 observables (so physical masses
+are insensitive) but diverge at q ≠ 1.  See
+docs/audits/2026-06-13-wenzl-trace-normalization-prop-compute-mismatch.md.
+
 This file proves two structural kernels of the proposition:
 
 1. `h3_tl_quotient_identity` — the algebraic identity
