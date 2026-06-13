@@ -106,4 +106,22 @@ theorem trace_ratio_eq_C_mul_alpha_sq
   rw [hchi]
   exact trace_ratio_factorisation _ cplx
 
+/-- **Round-20 ↔ Hartree-class wiring (conditional on the q-dimension bridge).**
+
+The `EHartreeCategoricalDerivation` class (sibling block
+`conj:e-hartree-categorical-derivation`) posits
+`E_h = c₂ · m_e · c_q² · α²`.  Round 20 identifies the candidate
+coefficient `c₂ = C(q) = h·(q²+q⁻²)²` (the dressed `(2,2)` trace-ratio
+coefficient).  The identification `c₂ = C(q)` is **the open q-dimension-layer
+bridge** — Mechanism B (the LP-dual-smoothness route) was *refuted* in round 21
+(the separated-atom point is a kink, not a smooth facet), so this hypothesis is
+explicitly carried, not derived.  Under it, the Hartree token takes the
+round-20 form.  Pure rewriting; the content is the named hypothesis `hc2`. -/
+theorem hartree_token_from_trace_ratio
+    (q m_e c_q alpha E_h c_2 : ℝ)
+    (hc2 : c_2 = (q - q⁻¹) * (q ^ 2 + (q⁻¹) ^ 2) ^ 2)
+    (hid : E_h = c_2 * m_e * c_q ^ 2 * alpha ^ 2) :
+    E_h = ((q - q⁻¹) * (q ^ 2 + (q⁻¹) ^ 2) ^ 2) * m_e * c_q ^ 2 * alpha ^ 2 := by
+  rw [hid, hc2]
+
 end QOU.Archimedean.EHartreeTraceRatio
