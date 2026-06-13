@@ -169,9 +169,14 @@ theorem Matrix.PosSemidef.eigenvalues_pos_filter_eq_ne_zero_filter
     Ref: [boyd-vandenberghe-2004] *Convex Optimization* §A.5.5
     (rank of a Hermitian matrix equals the number of non-zero
     eigenvalues; immediate from the spectral theorem). -/
-axiom Matrix.PosSemidef.rank_via_eigenvalues
+theorem Matrix.PosSemidef.rank_via_eigenvalues
     {n : ℕ} {M : Matrix (Fin n) (Fin n) ℝ} (hM : M.PosSemidef) :
-    M.rank = (Finset.univ.filter (fun i => 0 < hM.1.eigenvalues i)).card
+    M.rank = (Finset.univ.filter (fun i => 0 < hM.1.eigenvalues i)).card := by
+  rw [eigenvalues_pos_filter_eq_ne_zero_filter hM]
+  have h_rank := hM.1.rank_eq_card_non_zero_eigs
+  rw [h_rank]
+  have h_card := Fintype.card_of_subtype (Finset.univ.filter (fun i => hM.1.eigenvalues i ≠ 0)) (by simp)
+  exact h_card.symm
 
 /-! ## §2  Strict-complementarity kernel disjointness
 
