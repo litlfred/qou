@@ -222,7 +222,6 @@ def compute_tr_m_canonical(
     if method == "branching":
         try:
             from canonical_tr_m_via_branching import compute_tr_m_via_branching
-            t0 = time.time()
             tr_mp, wall, err = compute_tr_m_via_branching(Z, N, q_val=float(Q_FLOAT))
             if err:
                 return None, wall, err, "branching"
