@@ -249,7 +249,17 @@ def main() -> int:
     # (~6 scripts) and silently dropped the rest of the corpus.
     # Exclude deprecated scripts, QA sidecars, and bytecode caches.
     COMPUTATIONS_ROOT = HERE.parent
-    EXCLUDE_DIRS = {"_deprecated", "script-qa", "__pycache__"}
+    # Per owner decision (PR #2277, 2026-06-13): exploratory probes are
+    # OUT of I9 scope. Probes are float-tolerant scratch exploration;
+    # only PRODUCTION scripts must route their literals through
+    # codata_constants — and a probe promoted to production must be
+    # de-floated to mpf registry symbols first ("if a probe goes to
+    # production, it must not be float"). The `probes/` cluster dir and
+    # any script whose name contains "probe" or "audit" (exploration /
+    # QA tooling — either prefix `probe_…` or suffix `…_probe`) are
+    # therefore excluded from the violation scan.
+    EXCLUDE_DIRS = {"_deprecated", "script-qa", "__pycache__", "probes"}
+    EXPLORATORY_MARKERS = ("probe", "audit")
     SKIP_NAMES = {"codata_constants.py", "hardcoded_literal_audit.py"}
     rows: list[dict[str, Any]] = []
     for py in sorted(COMPUTATIONS_ROOT.rglob("*.py")):
@@ -258,6 +268,8 @@ def main() -> int:
         if py.name in SKIP_NAMES:
             continue
         if EXCLUDE_DIRS & set(py.relative_to(COMPUTATIONS_ROOT).parts):
+            continue
+        if any(mark in py.stem for mark in EXPLORATORY_MARKERS):
             continue
         result = _classify_script(py, registry)
         if result is None:
@@ -307,6 +319,8 @@ def main() -> int:
         .add_parameter("registry_constants_in_scope", len(registry))
         .add_parameter("relative_error_tolerance", "1e-6")
         .add_parameter("magnitude_window_MeV", "[0.0001, 1e6]")
+        .add_parameter("excludes_exploratory_probes",
+                       "probes/ + *_probe.py + *_audit.py (owner decision, PR #2277)")
         .add_parameter("total_scripts_with_hits", len(rows))
         .add_parameter("i9_violation_count",
                        len(buckets.get("i9_violation", [])))
