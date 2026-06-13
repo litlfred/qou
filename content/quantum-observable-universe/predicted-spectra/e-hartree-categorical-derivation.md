@@ -1086,22 +1086,37 @@ the rational q-dimension ratio. The $\alpha_{EM}^2$ scaling is
 structural (rounds 20–21); the archimedean image is $C(q_0)\,\alpha^2$
 with $C(q_0)$ **explicit and derived**.
 
-**What remains.** A single, sharply-posed item — *not* infrastructure:
-is the derived $O(1)$ coefficient $C(q_0)\approx 0.873$ the **physical**
-molecular-to-Hartree ratio? That is a gated comparison against the
-measured H₂ binding / Hartree unit, deliberately **not** taken here
-(multiple-comparison / fishing gate, production-vs-exploratory
-discipline). Together with the standing $m_e c^2$ CAL-1 unit, this is
-the entire residual.
+**Red-team check — $C(q_0)$ is not a free coefficient (and not a force-knot
+sibling).** A natural rabbit hole is to treat $C(q_0)\approx 0.873$ as a
+mysterious $O(1)$ "molecular-to-Hartree coefficient" to be matched against
+experiment. It is not mysterious and the match must not be chased.
+$C(q) = h\,(q^2+q^{-2})^2 = h\,(\dim_q V_{(2,2)})^2$ is a **Plancherel-square**
+of the scalar block's q-dimension — **fully determined** by the categorical
+structure, with no free parameter. It is explicitly **not** one of the five
+$\alpha_{EM}$-sibling force-knot quantities: the six $\delta_q(T_{m,k}) =
+q^{w}-q^{-w}$ are $0.636,1.091,1.594,1.870,2.167,2.487$ (for $w = 3,5,7,8,9,10$)
+and the $[w]_q$ are $3.04,\dots,11.9$ — **none equals $0.873$** (checked,
+`e-hartree-round22b`). So $C(q_0)$ is the dressed-$(2,2)$ Plancherel-square,
+nothing more. **The disciplined endpoint:** the conjecture's content is the
+$\alpha_{EM}^2$ *scaling* (proven, round 20) with the accompanying *derived*
+coefficient $C(q) = h(\dim_q V_{(2,2)})^2$ — full stop. Whether the number
+$0.873$ coincides with a measured molecular/Hartree ratio is a **falsification
+question the framework does not pursue** (multiple-comparison / fishing gate);
+it is *not* a blocker, because the coefficient is categorically fixed, not
+fitted.
 
-**Net after 22 rounds.** The conjecture is **not yet a theorem**, but the
-open part has collapsed from "a missing categorical mechanism" to **one
-explicit O(1) coefficient $C(q_0)=h(q^2+q^{-2})^2|_{q_0}$ and its
-physical interpretation** (a gated check) plus the $m_e c^2$ unit. Every
-*mechanism* question is resolved: α lives in the q-dimension layer
-(11), the Markov-layer routes are refuted (A/10, B/21, C/antipode), the
-α² shape is exact (20), and the archimedean functor is the known
-$q_0$-evaluation / Bloch–Suslin pairing (22).
+**Net after 22 rounds.** The conjecture is **not a theorem**, and — by the
+framework's own three-calibration design — *cannot* be an unconditional
+substrate proof, because the energy unit $m_e c^2$ is **CAL-1** (deriving it is
+the owner-declined Subgoal-2). What it *can* be is a **conditional theorem**:
+$E_{\mathrm{Hartree}} = C(q)\,m_e c^2\,\alpha_{EM}^2$ with the $\alpha^2$ scaling
+derived and $C(q) = h(\dim_q V_{(2,2)})^2$ a fixed categorical coefficient,
+conditional on the CAL-1 unit and the named archimedean-landing input. Every
+*mechanism* question is resolved: α lives in the q-dimension layer (11), the
+Markov-layer routes are refuted (A/10, B/21, C/antipode), the α² shape is exact
+(20), the archimedean functor is the known $q_0$-evaluation / Bloch–Suslin
+pairing (22), and $C(q_0)$ is the determined Plancherel-square (22, red-team).
+The residual is calibration ($m_e c^2$), not mathematics.
 
 ### What is still missing for closure
 
