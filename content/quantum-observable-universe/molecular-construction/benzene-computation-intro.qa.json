@@ -762,7 +762,28 @@
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "1bbc8aaf31d0",
+          "ts": "39b38e420627"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "benzene-computation-intro.md:1 — 'Benzene closes the chapter with a genuinely new structural feature... Threading link T(2,6) emerges as the LP-optimal pi configuration'",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T00:22:17.181Z",
+        "reviewed_sha": "0c69d34abfde06d4936fe8827a024afa97fe660f",
+        "notes": "Section-opening prose for the Benzene section; previews threading-link/aromaticity content squarely in-scope; no in-block provable claim, correct prose kind."
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-13T00:22:17.181Z"
 }
