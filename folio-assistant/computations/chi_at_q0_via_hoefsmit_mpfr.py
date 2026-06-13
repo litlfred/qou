@@ -123,17 +123,117 @@ def build_chi_cache_at_q0(
         per_partition: list[dict] = []
         running_total = mp.mpf(0)
 
-        for shape in shapes:
-            shape_t = tuple(shape)
+        # FAST PATH (gap-1 fix, PR-wire-native-chi-incremental):
+        # before grinding O(d³) per-partition mpmath matmuls, ask Rust
+        # for χ_λ over ALL uncached partitions in one batch call.
+        # Falls through to the legacy per-partition loop below if the
+        # native path is unavailable or rejects the word.  Pre-FFI
+        # validation (gap-3) keeps a panic from aborting the process;
+        # a warning on fallback (gap-2) surfaces the bypass instead of
+        # silently grinding the slow path.
+        rust_chi: dict[tuple, mp.mpf] = {}
+        _part_dim = None  # pre-imported partition_dimension when fast path fires
+        # Precompute shape tuples once (avoid building tuple(s) twice per shape).
+        shape_tuples = [tuple(s) for s in shapes]
+        uncached_shapes = [s for s in shape_tuples if s not in already]
+        if uncached_shapes:
+            try:
+                from pyhecke_native import (
+                    chi_lambda_all_partitions_mpfr as _rust_chi_all,
+                )
+                # Translate Python `(c, d, g0)` Hecke-factor word to
+                # Rust's `(sign, g1)` enum, matching tr_m_wenzl_bridge.
+                # `d_` and h are float64; the three expected values
+                # 0, -h ≈ -0.20, -h/2 ≈ -0.10 are gap-separated by
+                # ~0.1 at substrate q_0, so a 1e-12 tolerance is
+                # comfortably above float64 ulp noise (~1e-15) and
+                # well below the inter-class gap.  Replaces the prior
+                # `round(_, 9)`-as-dict-key pattern, which would have
+                # collided in the q → 1 limit where h → 0.
+                h_f64 = float(q - mp.mpf(1) / q)
+                tol = 1e-12
+                word_signed: list[tuple[int, int]] = []
+                for c_, d_, g_ in word:
+                    if abs(float(c_) - 1.0) > tol:
+                        raise ValueError(
+                            f"native chi path requires c==1.0, got c={c_}")
+                    d_val = float(d_)
+                    if abs(d_val) < tol:
+                        sgn = 1
+                    elif abs(d_val + h_f64) < tol:
+                        sgn = -1
+                    elif abs(d_val + h_f64 / 2) < tol:
+                        sgn = 0
+                    else:
+                        raise ValueError(
+                            f"unrecognised d={d_} (expected 0, -h, or -h/2)")
+                    g1 = int(g_) + 1
+                    # Pre-FFI validation — Rust panics on out-of-range gen,
+                    # and pyo3 PanicException is BaseException (not catchable
+                    # by `except Exception`).  Reject in Python first.
+                    if not (1 <= g1 <= n - 1):
+                        raise ValueError(
+                            f"gen σ_{g1} out of range 1..{n-1} for H_{n}")
+                    word_signed.append((sgn, g1))
+                _t0 = time.time()
+                rust_out = _rust_chi_all(n, word_signed, q_str, dps)
+                rust_chi = {tuple(lam): mp.mpf(chi_s)
+                            for lam, chi_s in rust_out}
+                # Pre-import partition_dimension once for the per-partition
+                # loop below — avoids the hot-path re-import overhead.
+                try:
+                    from pyhecke.wedderburn import partition_dimension as _pd
+                    _part_dim = _pd
+                except ImportError:
+                    _part_dim = None
+                print(f"    native batch: {len(rust_chi)} χ_λ via "
+                      f"chi_lambda_all_partitions_mpfr in "
+                      f"{time.time() - _t0:.1f}s")
+            except BaseException as e:
+                # Catch BaseException so pyo3's PanicException (subclass of
+                # BaseException, not Exception) falls through to the
+                # warning + slow-path fallback instead of aborting the
+                # process.  KeyboardInterrupt / SystemExit must still
+                # propagate (otherwise Ctrl-C and `sys.exit()` would be
+                # silently absorbed).
+                if isinstance(e, (KeyboardInterrupt, SystemExit)):
+                    raise
+                import warnings
+                warnings.warn(
+                    f"native chi path bypassed "
+                    f"({type(e).__name__}: {e}); falling back to O(d^3) "
+                    f"pure-mpmath per-partition loop — n={n} will be "
+                    f"SLOW.  Build the pyhecke-native wheel or check "
+                    f"the word encoding.",
+                    RuntimeWarning,
+                    stacklevel=2,
+                )
+                rust_chi = {}
+
+        for shape_t in shape_tuples:
             if shape_t in already:
                 per_partition.append(already[shape_t])
                 running_total += mp.mpf(already[shape_t]["contribution"])
                 continue
             t_part = time.time()
-            sigmas, dim = _build_seminormal_matrices_mpf(shape_t, q)
-            if dim == 0:
-                continue
-            chi = _chi_lambda_of_word_mpf(sigmas, dim, word, q=q)
+            chi: mp.mpf | None = rust_chi.get(shape_t)
+            if chi is None:
+                sigmas, dim_built = _build_seminormal_matrices_mpf(shape_t, q)
+                if dim_built == 0:
+                    continue
+                chi = _chi_lambda_of_word_mpf(sigmas, dim_built, word, q=q)
+                dim = dim_built
+            else:
+                # Need dim_λ for the entry payload; use pre-imported
+                # partition_dimension (hook-length formula) when the fast
+                # path was active.  Falls through to Hoefsmit build only
+                # if the import was unavailable.
+                if _part_dim is not None:
+                    dim = int(_part_dim(shape_t))
+                else:
+                    sigmas, dim = _build_seminormal_matrices_mpf(shape_t, q)
+                    if dim == 0:
+                        continue
             y_lam = y_table.get(shape_t)
             if y_lam is None:
                 continue
