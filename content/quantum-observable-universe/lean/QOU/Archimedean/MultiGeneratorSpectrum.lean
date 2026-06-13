@@ -39,6 +39,24 @@ open Matrix
 
 /-! ## §1  Multi-generator eigenvalue products -/
 
+/-- The **symmetric-channel eigenvalue** of a single crossing `(c, d)`:
+    `λ_sym = c·q + d` (the 1-dimensional symmetric representation
+    evaluates `σ ↦ q`). -/
+noncomputable def symEigenvalue (c d : R_t) : R_t := c * q_from_t + d
+
+/-- The **alternating-channel eigenvalue** of a single crossing
+    `(c, d)`: `λ_alt = d − c·q⁻¹` (the sign representation evaluates
+    `σ ↦ −q⁻¹`). -/
+noncomputable def altEigenvalue (c d : R_t) : R_t := d - c * q_inv_from_t
+
+/-- For the pp crossing `(c, d) = (1, 0)`: `λ_sym = q`. -/
+theorem symEigenvalue_pp : symEigenvalue 1 0 = q_from_t := by
+  unfold symEigenvalue; ring
+
+/-- For the pp crossing `(c, d) = (1, 0)`: `λ_alt = −q⁻¹`. -/
+theorem altEigenvalue_pp : altEigenvalue 1 0 = -q_inv_from_t := by
+  unfold altEigenvalue; ring
+
 /-- The **multi-generator symmetric eigenvalue**: the product of
     symmetric eigenvalues over a crossing sequence.
 
@@ -182,7 +200,7 @@ theorem multi_pp_alt_eigenvalue (k : ℕ) :
 
 /-! ## §5  Connection to axial coupling -/
 
-/-- **Remark (Axial coupling as channel ratio).**
+/-! ### Remark — axial coupling as channel ratio
 
     The axial-vector coupling `g_A` is the ratio of the standard trace
     to the symmetric trace of the color-averaged Borromean element:
