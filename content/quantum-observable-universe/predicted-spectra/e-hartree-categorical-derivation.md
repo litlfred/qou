@@ -953,6 +953,58 @@ chain, so the remaining gap is the archimedean trace-ratio on the
 activated scalar block — plus the two standing transports
 ($m_e c^{2}$ unit; LP-kink smoothness) below.
 
+### Round 20 — the trace-ratio closes the algebraic side; $\alpha_{EM}^2$ scaling emerges exactly
+
+Witness:
+[`e-hartree-round20-trace-ratio.witness.json`](folio-assistant/computations/e-hartree-round20-trace-ratio.witness.json)
+(producer
+[`e_hartree_round20_trace_ratio.py`](folio-assistant/computations/e_hartree_round20_trace_ratio.py),
+4/4). Round 19 left a single algebraic gap — the magnitude. In the
+established EM derivation
+([`prop:em-coupling-projection`](#prop:em-coupling-projection)) the
+coupling is **not** the bare projector trace $\mathrm{tr}_\tau(e_-)$;
+it is that trace **divided by the force-carrier complexity**
+$q[9]_q[10]_q = 1/\alpha_{EM}$. The molecular bound state shares
+**two** electrons through the **same** transpose-pair carriers
+(round 18), so the structurally-parallel normaliser is the
+complexity *squared*. Define the trace-ratio on the activated scalar
+block (K-shell dressing $m = 5$):
+
+$$
+  \rho_{(2,2)}
+  := \frac{\chi_{(2,2)}\bigl(\sigma_1\sigma_2^{(5)}\sigma_3\bigr)}{\bigl(q[9]_q[10]_q\bigr)^{2}}.
+$$
+
+Substituting the round-19 value
+$\chi_{(2,2)} = h([4]_q/[2]_q)^2$ gives, **exactly in $R$**,
+
+$$
+  \boxed{\;\rho_{(2,2)} = C(q)\,\alpha_{EM}^{2}, \qquad
+  C(q) = h\left(\tfrac{[4]_q}{[2]_q}\right)^{2} = h\,(q^2+q^{-2})^2\;}
+$$
+
+— the $\alpha_{EM}^{2}$ scaling **emerges**, with a *derived* (not
+fitted) $O(1)$ coefficient $C(q) \in R$ (this is precisely the
+"combinatorial $O(1)$ coefficient from the
+$\chi_{(3,1)}\chi_{(2,1,1)}$ structure" anticipated in round 18). At
+$q_0$: $C \approx 0.87$ (order $1$), $\alpha_{EM}^2 \approx 5.3\times
+10^{-5}$, $\rho_{(2,2)} \approx 4.7\times 10^{-5}$ — $\alpha^2$-scale,
+where the bare round-19 character was $O(1)$. The magnitude is now
+carried by the ratio.
+
+**Net status after 20 rounds.** The *algebraic / character side* of
+the closure path is **closed exactly**: the molecular scalar-block
+trace-ratio has the form $C(q)\,\alpha_{EM}^2$ with $C(q)$ an
+explicit $O(1)$ element of $R$. The conjecture remains **open**, but
+the open part is now a **single structural question**: does the
+LP/SDP dual $y_{\mathrm{cov}}$ actually normalise by the squared
+force-carrier complexity — i.e. is $\rho_{(2,2)} = y_{\mathrm{cov}}$?
+That is **Mechanism B** (the bare separated-atom point must be a
+smooth interior facet so the dual is quadratic, not a kink); round 20
+does not establish it. The $m_e c^2$ unit transport is the only other
+open input. No comparison of $C(q_0)$ to an experimental Hartree
+$O(1)$ coefficient is made — that comparison is the gated step.
+
 ### What is still missing for closure
 
 A genuinely categorical derivation of the $\alpha_{EM}^{2}$ scaling
