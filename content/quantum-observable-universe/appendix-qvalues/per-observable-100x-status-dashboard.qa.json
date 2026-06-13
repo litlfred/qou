@@ -14,19 +14,19 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "2e615f77f26f",
-          "ts": "c7ec80fec675"
+          "md": "9919f71e5c2e",
+          "ts": "35e93230aa8f"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-04",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-04T13:48:37.524Z",
-        "reviewed_sha": "70fc3f056ae012683d21bf711e8c15547e5a165d"
+        "reviewed_at": "2026-06-13T03:55:42.614Z",
+        "reviewed_sha": "2a4931f381c73e07501ac35d6ce73bb94f58c54b"
       }
     ],
     "detangler-no-forward-ref": [
@@ -852,5 +852,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-13T03:55:42.614Z"
 }
