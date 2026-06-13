@@ -1056,6 +1056,53 @@ $m_e c^2$ unit transport. The closure is no longer gated on an LP-
 smoothness fact that is now known false; it is gated on the
 q-dim-layer-to-archimedean bridge.
 
+### Round 22 — the bridge is q₀-evaluation, not new infrastructure; a single derived O(1) coefficient remains
+
+Witness:
+[`e-hartree-round22-arch-bridge.witness.json`](folio-assistant/computations/e-hartree-round22-arch-bridge.witness.json)
+(producer
+[`e_hartree_round22_arch_bridge.py`](folio-assistant/computations/e_hartree_round22_arch_bridge.py),
+2/2). Round 11 feared the δ_q → archimedean bridge was a whole missing
+functor layer. It is not. The archimedean functor τ_arch is already
+pinned: its transcendental action is the **Bloch–Suslin regulator**
+$K_3^{\mathrm{ind}}(F)\otimes\mathbb{Q}\to\mathbb{R}/\pi^2\mathbb{Q}$,
+which governs the **depth-2 (dilogarithmic)** sector
+([`prop:depth-2-identification-bloch-suslin`](../appendix-surreals/depth-2-identification-bloch-suslin.md)).
+The round-20 coefficient $C(q) = h(q^2+q^{-2})^2$ is **depth-0** — a
+rational function of $q$ in $R$, no dilog — so τ_arch on it is plain
+evaluation at the substrate $q_0$ (no regulator):
+
+$$
+  \tau_{\mathrm{arch}}\bigl(\rho_{(2,2)}\bigr)
+  = \tau_{\mathrm{arch}}\bigl(C(q)\bigr)\cdot\alpha_{EM}^2
+  = C(q_0)\,\alpha_{EM}^2,
+  \qquad C(q_0) \approx 0.873 \;(\neq 1).
+$$
+
+**What this settles.** The bridge is **not new infrastructure**: on the
+relevant depth-0 object it is $q_0$-evaluation, and the Bloch–Suslin
+regulator (which lands the *hyperbolic-volume* masses) does not enter
+the rational q-dimension ratio. The $\alpha_{EM}^2$ scaling is
+structural (rounds 20–21); the archimedean image is $C(q_0)\,\alpha^2$
+with $C(q_0)$ **explicit and derived**.
+
+**What remains.** A single, sharply-posed item — *not* infrastructure:
+is the derived $O(1)$ coefficient $C(q_0)\approx 0.873$ the **physical**
+molecular-to-Hartree ratio? That is a gated comparison against the
+measured H₂ binding / Hartree unit, deliberately **not** taken here
+(multiple-comparison / fishing gate, production-vs-exploratory
+discipline). Together with the standing $m_e c^2$ CAL-1 unit, this is
+the entire residual.
+
+**Net after 22 rounds.** The conjecture is **not yet a theorem**, but the
+open part has collapsed from "a missing categorical mechanism" to **one
+explicit O(1) coefficient $C(q_0)=h(q^2+q^{-2})^2|_{q_0}$ and its
+physical interpretation** (a gated check) plus the $m_e c^2$ unit. Every
+*mechanism* question is resolved: α lives in the q-dimension layer
+(11), the Markov-layer routes are refuted (A/10, B/21, C/antipode), the
+α² shape is exact (20), and the archimedean functor is the known
+$q_0$-evaluation / Bloch–Suslin pairing (22).
+
 ### What is still missing for closure
 
 A genuinely categorical derivation of the $\alpha_{EM}^{2}$ scaling
