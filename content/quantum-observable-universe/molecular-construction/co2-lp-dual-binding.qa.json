@@ -342,6 +342,26 @@
         "reviewed_at": "2026-05-28T18:29:30.189Z",
         "reviewed_sha": "48e52133aae5e86dcc7bb79865fcd7c50fca77f9",
         "notes": "Lean sibling has only stub declarations (`: True := trivial`); canonical formalisation lives elsewhere and is audited by lean-compile-audit."
+      },
+      {
+        "field_hash": {
+          "md": "c6f7b85b15a1",
+          "ts": "9be3b534ce8f",
+          "lean": "5c67749e9e8f"
+        },
+        "result": "fail",
+        "severity": "major",
+        "evidence": "co2-lp-dual-binding.lean:16 'co2_lp_dual_binding : True := by trivial' vs .md:1-3 'LP dual ... selects the symmetric linear arrangement O=C=O ... minimising Phi_1'",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T00:55:32.102Z",
+        "reviewed_sha": "d885878197a4a2988f4e10463255f717dbf6d371",
+        "notes": "Lean is a True-placeholder; narrative asserts a real LP-dual selection result — divergent."
       }
     ],
     "voice-author-notes-pollution": [
@@ -1201,7 +1221,192 @@
         "reviewed_at": "2026-06-11T18:06:24.673Z",
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "c6f7b85b15a1",
+          "ts": "9be3b534ce8f",
+          "lean": "5c67749e9e8f"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "co2-lp-dual-binding.md:1-3 — 'LP dual of the CO_2 molecular braid selects the symmetric linear arrangement O=C=O'",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T00:54:17.893Z",
+        "reviewed_sha": "d885878197a4a2988f4e10463255f717dbf6d371",
+        "notes": "CO2 molecular-braid LP-dual geometry squarely in molecular-construction scope; no sibling duplicate."
+      }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "c6f7b85b15a1",
+          "ts": "9be3b534ce8f",
+          "lean": "5c67749e9e8f"
+        },
+        "result": "fail",
+        "severity": "minor",
+        "evidence": "co2-lp-dual-binding.md:29-32 — 'This is the braid-theoretic origin of VSEPR geometry: electron-pair repulsion minimisation is literally Phi_1 minimisation'",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T00:55:10.704Z",
+        "reviewed_sha": "d885878197a4a2988f4e10463255f717dbf6d371",
+        "notes": "Substantive physical-meaning interpretation (VSEPR origin, why symmetric wins) in-block with no companion interprets: remark to hold it."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "c6f7b85b15a1",
+          "ts": "9be3b534ce8f",
+          "lean": "5c67749e9e8f"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "molecular-construction.ts — chapter 'Molecular Construction from Nucleon Braids'; statement co2-lp-dual-binding.md:1-32 states geometry-selection, eV only in comparison notes",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T00:55:10.738Z",
+        "reviewed_sha": "d885878197a4a2988f4e10463255f717dbf6d371",
+        "notes": "Molecular/archimedean chapter; statement carries no generic-ring wall violation (no Real.*, no numeric q-pin)."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "c6f7b85b15a1",
+          "ts": "9be3b534ce8f",
+          "lean": "5c67749e9e8f"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "co2-lp-dual-binding.md — no narrative **Proof.** body; LP-dual selection argument, eV comparison consistent with molecular regime",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T00:55:10.774Z",
+        "reviewed_sha": "d885878197a4a2988f4e10463255f717dbf6d371",
+        "notes": "No archimedean machinery proving an algebraic identity; method matches molecular-chapter regime."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "c6f7b85b15a1",
+          "ts": "9be3b534ce8f",
+          "lean": "5c67749e9e8f"
+        },
+        "result": "fail",
+        "severity": "critical",
+        "evidence": "co2-lp-dual-binding.lean:16 — 'theorem co2_lp_dual_binding : True := by trivial'; .md:1 conditional banner cites conj:q-integer-mass-formula but .ts uses[]=[def:co2-molecular-braid, prop:co-lp-dual-binding] omits it",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T00:55:32.067Z",
+        "reviewed_sha": "d885878197a4a2988f4e10463255f717dbf6d371",
+        "notes": "Real claim axiomatized away (Lean proves True); §3b-cond rule 4 violated — conditional banner conjecture absent from uses[]."
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "c6f7b85b15a1",
+          "ts": "9be3b534ce8f",
+          "lean": "5c67749e9e8f"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.7,
+          "max": 1
+        },
+        "evidence": "co2-lp-dual-binding.md:12-27 — three shadow prices named (y_sigma, y_pi, y_sym) then explicit (2,2) vs (3,1) case comparison",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T00:56:08.043Z",
+        "reviewed_sha": "d885878197a4a2988f4e10463255f717dbf6d371",
+        "notes": "Plan stated up front: name LP-dual shadow prices, then symmetric-vs-asymmetric case split."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "c6f7b85b15a1",
+          "ts": "9be3b534ce8f",
+          "lean": "5c67749e9e8f"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0.1,
+          "max": 1
+        },
+        "evidence": "co2-lp-dual-binding.lean:16 'co2_lp_dual_binding : True := by trivial' — entire LP-dual selection claim unformalized",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T00:56:08.079Z",
+        "reviewed_sha": "d885878197a4a2988f4e10463255f717dbf6d371",
+        "notes": "Core gap restates the target: Lean proves nothing; the real proposition is the open goal (~core/restates-target)."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "c6f7b85b15a1",
+          "ts": "9be3b534ce8f",
+          "lean": "5c67749e9e8f"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.7,
+          "max": 1
+        },
+        "evidence": "co2-lp-dual-binding.md:29-32 — braid-theoretic origin of VSEPR as Phi_1 minimisation via LP dual",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T00:56:08.114Z",
+        "reviewed_sha": "d885878197a4a2988f4e10463255f717dbf6d371",
+        "notes": "Non-redundant argument: VSEPR geometry recast as LP-dual repulsion minimisation; not a sibling duplicate."
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-13T00:56:08.114Z"
 }
