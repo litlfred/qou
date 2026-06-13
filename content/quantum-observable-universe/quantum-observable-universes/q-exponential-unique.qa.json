@@ -1119,7 +1119,104 @@
         "reviewed_at": "2026-06-11T18:06:24.673Z",
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7"
       }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "ebe21891b15c",
+          "ts": "b3b9164b3f23",
+          "lean": "a2b53dd0d70f"
+        },
+        "result": "fail",
+        "severity": "critical",
+        "evidence": "q-exponential-unique.lean:24 — 'axiom QExponential.unique_axiom : ∀ {H} (e₁ e₂ : QExponential H), …e₁.e_q = e₂.e_q' restates the theorem target verbatim; theorem unique just applies it",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T00:45:07.718Z",
+        "reviewed_sha": "e6f92f04f44db3921a4a70cf7bc5c01e02ce9019",
+        "notes": "External axiom signature equals the theorem conclusion — proof is the axiom; restates-target"
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "ebe21891b15c",
+          "ts": "b3b9164b3f23",
+          "lean": "a2b53dd0d70f"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0,
+          "max": 1
+        },
+        "evidence": "q-exponential-unique.lean:24 axiom unique_axiom IS the goal — theorem body = QExponential.unique_axiom …",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T00:45:07.754Z",
+        "reviewed_sha": "e6f92f04f44db3921a4a70cf7bc5c01e02ce9019",
+        "notes": "Gap = restates-target ⇒ 0.0 per rubric"
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "ebe21891b15c",
+          "ts": "b3b9164b3f23",
+          "lean": "a2b53dd0d70f"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.8,
+          "max": 1
+        },
+        "evidence": "q-exponential-unique-proof.md:1 — 'difference e₁-e₂ is primitive … flow equation on primitives has only trivial solution … counit kills constant term'",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T00:45:07.788Z",
+        "reviewed_sha": "e6f92f04f44db3921a4a70cf7bc5c01e02ce9019",
+        "notes": "Plan stated up front: primitive difference + flow-equation triviality + counit"
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "ebe21891b15c",
+          "ts": "b3b9164b3f23",
+          "lean": "a2b53dd0d70f"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "evidence": "q-exponential-unique-proof.md:5 — standard Milnor–Moore grouplike-uniqueness argument; not duplicated by a sibling",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T00:45:07.823Z",
+        "reviewed_sha": "e6f92f04f44db3921a4a70cf7bc5c01e02ce9019",
+        "notes": "Standard primitive/grouplike argument, not redundant"
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-13T00:45:07.823Z"
 }
