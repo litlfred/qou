@@ -919,7 +919,32 @@
         "reviewed_at": "2026-06-11T18:06:24.673Z",
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7"
       }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "c7e326443fb1",
+          "ts": "fb6a987d2b94",
+          "lean": "55e9c14c29aa"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.6,
+          "max": 1
+        },
+        "evidence": "tau-all-orders-bridge.md:92-138 + tau-all-orders-bridge.lean:77-129 — banded-kernel refinement makes the dichotomy non-vacuous after the #1837 trivial-inhabitation fix; probe data (alpha supported only at h^2,h^4; kappa_6,kappa_8 nonzero) means any finite-band kernel forces kappa_k = 0 beyond band+2, so hypothesis (2) looks closable by a short support argument",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:49:24.317Z",
+        "reviewed_sha": "4adf7263fb35903fc4ca3a73c3d779ea7b3a12e9",
+        "notes": "Sharp, finitely-testable open dichotomy with strong empirical lean toward (2); formal closing still needs the categorical alpha/kappa sequences defined in Lean (classes deliberately uninhabited)"
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-13T01:49:24.317Z"
 }
