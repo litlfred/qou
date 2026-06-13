@@ -254,11 +254,9 @@ theorem substrateGap_of_crossingFiltration
     -- In the window 1 < q ≤ 2 we have (q − 1)² ≤ 1, hence
     -- Δ_q = E_×(q)·(q−1)² ≤ E_×(q).
     have hsq : (q - 1) ^ 2 ≤ 1 := by nlinarith
-    have key : 0 ≤ minCrossingEnergy q * (1 - (q - 1) ^ 2) :=
-      mul_nonneg (le_of_lt hE0) (by linarith)
     have hbound : massGapBound q ≤ minCrossingEnergy q := by
       unfold massGapBound
-      nlinarith [key]
+      nlinarith
     linarith
 
 end QOU.BraidKnot

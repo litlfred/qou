@@ -1,3 +1,8 @@
+-- Repair note (2026-06-13): this stub was a never-compiled leaf — it
+-- had no imports, so ℕ/ℤ/ℝ were unresolved.  Surfaced when
+-- QOU.BraidKnot.MassGapObstruction became its first importer.
+import Mathlib.Data.Real.Basic
+
 /-!
 # QOU.AlgebraicSubstrate.qou_obstruction_reduction — placeholder stub
 

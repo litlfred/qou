@@ -79,6 +79,7 @@ import QOU.BraidKnot.AlphaShiftTorus.AlphaShiftTorusKnot
 import QOU.BraidKnot.GramSeminormalBlock
 import QOU.BraidKnot.GSReductionOrder
 import QOU.BraidKnot.MassGapKeystone
+import QOU.BraidKnot.MassGapObstruction
 
 /-!
 # BraidKnot — Module Index
