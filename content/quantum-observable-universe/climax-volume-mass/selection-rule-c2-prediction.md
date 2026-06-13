@@ -16,7 +16,7 @@ $\mathbb{Z}[q, q^{-1}]$ — like the c=1 and c=3 anchors, derivation-tight
 
 ## Why this matters
 
-PR #1765's main result is the per-component rule
+The per-component rule is
 $\mathrm{lw}(c) = (1/(c+1)) \sum_{\lambda \vdash (c+1)} \dim_q V_\lambda$,
 anchored at c=1 (muon, $\mathrm{lw}=1$ exactly $\forall q$) and c=3
 (proton, $\mathrm{lw} = 5/2 + (3/4)h^2$ via Family-A).  The c=2 case is the
@@ -72,5 +72,5 @@ CLAUDE.md §7c-compliant.
 
 - [`prop:selection-rule-anchors-c1-c3`](#prop:selection-rule-anchors-c1-c3) — the two
   known anchors that the rule's existence is established on.
-- PR #1765 audit:
+- Derivation audit:
   [`docs/audits/2026-06-03-habiro-per-knot-lambda-derivation.md`](../../../docs/audits/2026-06-03-habiro-per-knot-lambda-derivation.md).

@@ -14,7 +14,7 @@ for an isotope knot $K$, consumed by Step 9b
 
 ### Status (2026-06-02)
 
-**🔴 Open gate.** Six closure ansätze have been refuted on the
+**Open gate.** Six closure ansätze have been refuted on the
 deuteron:
 
 | Ansatz | Source | Refuted on |
