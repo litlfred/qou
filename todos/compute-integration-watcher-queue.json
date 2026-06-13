@@ -10,7 +10,7 @@
       "severity": "critical",
       "source": "backlog",
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-      "evidence": "derivation_chain.py:68-93 \u2014 Registry TR_M_AT_Q0 (Wenzl-bridge y_\u03bb assembly) disagrees with Frobenius-selected \u03c4_M (from_scratch/ chain @25a204efa). Two distinct canonical values for the same nominal quantity tr_M(q_0). Blocks P2.1 schur-weyl-weight-*\u2192tau-sw-weight-* rename. Source: canonical-derivation-pipeline-compliance.witness.json known_open_conflicts[0]; audit doc 2026-05-11-why-individual-mass-residuals-fit-not-derive.md.",
+      "evidence": "derivation_chain.py:68-93 — Registry TR_M_AT_Q0 (Wenzl-bridge y_λ assembly) disagrees with Frobenius-selected τ_M (from_scratch/ chain @25a204efa). Two distinct canonical values for the same nominal quantity tr_M(q_0). Blocks P2.1 schur-weyl-weight-*→tau-sw-weight-* rename. Source: canonical-derivation-pipeline-compliance.witness.json known_open_conflicts[0]; audit doc 2026-05-11-why-individual-mass-residuals-fit-not-derive.md.",
       "attempts": [],
       "status": "wontfix",
       "asked_author_at": null,
@@ -117,7 +117,7 @@
       "severity": "major",
       "source": "backlog",
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-      "evidence": "prop:borromean-hopf-energy-crossover (proposition): .lean sibling has 0 sorrys (proven) but NO probe script / witness references it via contentBlock. Chain-relevant (mass/binding/q-beta/nucleon). Per I1: write a probe exercising the claim at q_0 emitting a witness whose contentBlock points at this label. Verified against witness contentBlock+reference_blocks index (153 labels) at 565be78e866d. [VERIFIED 2026-06-13: corpus-grep - no live probe sets this contentBlock; core content is a symbolic crossover inequality (3/2)(q+q^-1) vs V_B/hbar_q^2 whose q0-evaluation (749.2 vs 3.016, ~250x) IS a concrete probe-able number but currently unprobed. UNSURE: borderline between confirmed-real-gap and not-worth-probing (largely analytic). Kept queued - author to decide if a probe is warranted.]",
+      "evidence": "prop:borromean-hopf-energy-crossover (proposition): .lean sibling has 0 sorrys (proven) but NO probe script / witness references it via contentBlock. Chain-relevant (mass/binding/q-beta/nucleon). Per I1: write a probe exercising the claim at q_0 emitting a witness whose contentBlock points at this label. Verified against witness contentBlock+reference_blocks index (153 labels) at 565be78e866d. [VERIFIED 2026-06-13: corpus-grep - no live probe sets this contentBlock; core content is a symbolic crossover inequality (3/2)(q+q^-1) vs V_B/hbar_q^2 whose q0-evaluation (749.2 vs 3.016, ~250x) IS a concrete probe-able number but currently unprobed. UNSURE: borderline between confirmed-real-gap and not-worth-probing (largely analytic). Kept queued - author to decide if a probe is warranted.] [VERIFIED 2026-06-13: no numerical probe; analytic-vs-probe is an AUTHOR judgment — surfaced.]",
       "attempts": [],
       "status": "queued",
       "asked_author_at": null
@@ -240,7 +240,7 @@
       "severity": "major",
       "source": "backlog",
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-      "evidence": "prop:eos-borromean-cfl (proposition): .lean sibling has 0 sorrys (proven) but NO probe script / witness references it via contentBlock. Chain-relevant (mass/binding/q-beta/nucleon). Per I1: write a probe exercising the claim at q_0 emitting a witness whose contentBlock points at this label. Verified against witness contentBlock+reference_blocks index (153 labels) at 565be78e866d. [VERIFIED 2026-06-13: corpus-grep - no live eos_borromean producer; .md cites a data table (tbl:eos-borromean-cfl-table-data). Numerical EOS outputs (stiffness ~7000x, c_s^2->1/3) are probe-able but the block is largely an analytic EOS derivation; docs/audits/2026-06-09-metallic-q-csc-phase-synthesis.md may bear on status. UNSURE - author glance recommended.]",
+      "evidence": "prop:eos-borromean-cfl (proposition): .lean sibling has 0 sorrys (proven) but NO probe script / witness references it via contentBlock. Chain-relevant (mass/binding/q-beta/nucleon). Per I1: write a probe exercising the claim at q_0 emitting a witness whose contentBlock points at this label. Verified against witness contentBlock+reference_blocks index (153 labels) at 565be78e866d. [VERIFIED 2026-06-13: corpus-grep - no live eos_borromean producer; .md cites a data table (tbl:eos-borromean-cfl-table-data). Numerical EOS outputs (stiffness ~7000x, c_s^2->1/3) are probe-able but the block is largely an analytic EOS derivation; docs/audits/2026-06-09-metallic-q-csc-phase-synthesis.md may bear on status. UNSURE - author glance recommended.] [VERIFIED 2026-06-13: no numerical probe; analytic-vs-probe is an AUTHOR judgment — surfaced.]",
       "attempts": [],
       "status": "queued",
       "asked_author_at": null
@@ -310,7 +310,7 @@
       "severity": "major",
       "source": "backlog",
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-      "evidence": "prop:mass-formula-regime-switching (proposition): .lean sibling has 0 sorrys (proven) but NO probe script / witness references it via contentBlock. Chain-relevant (mass/binding/q-beta/nucleon). Per I1: write a probe exercising the claim at q_0 emitting a witness whose contentBlock points at this label. Verified against witness contentBlock+reference_blocks index (153 labels) at 565be78e866d. [VERIFIED 2026-06-13: corpus-grep - the closely-related mass_formula_6term.py is live and computes 6-term binding (tags thm:knot-mass-formula-unified / prop:six-term-mass-formula-complete, NOT this label), but THIS regime-switching block's own cited probe d_chirality_probe.py is in _deprecated/. Block is self-labeled empirical/open ('categorical derivation of w_A is open'). UNSURE: content wired under sibling labels, own probe dead. Kept queued.]",
+      "evidence": "prop:mass-formula-regime-switching (proposition): .lean sibling has 0 sorrys (proven) but NO probe script / witness references it via contentBlock. Chain-relevant (mass/binding/q-beta/nucleon). Per I1: write a probe exercising the claim at q_0 emitting a witness whose contentBlock points at this label. Verified against witness contentBlock+reference_blocks index (153 labels) at 565be78e866d. [VERIFIED 2026-06-13: corpus-grep - the closely-related mass_formula_6term.py is live and computes 6-term binding (tags thm:knot-mass-formula-unified / prop:six-term-mass-formula-complete, NOT this label), but THIS regime-switching block's own cited probe d_chirality_probe.py is in _deprecated/. Block is self-labeled empirical/open ('categorical derivation of w_A is open'). UNSURE: content wired under sibling labels, own probe dead. Kept queued.] [VERIFIED 2026-06-13: no numerical probe in computations/*.py; sibling-label wiring NOT confirmed. I1 stands.]",
       "attempts": [],
       "status": "queued",
       "asked_author_at": null
@@ -363,7 +363,7 @@
       "severity": "major",
       "source": "backlog",
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-      "evidence": "prop:neutron-prediction-comparison (proposition): .lean sibling has 0 sorrys (proven) but NO probe script / witness references it via contentBlock. Chain-relevant (mass/binding/q-beta/nucleon). Per I1: write a probe exercising the claim at q_0 emitting a witness whose contentBlock points at this label. Verified against witness contentBlock+reference_blocks index (153 labels) at 565be78e866d. [VERIFIED 2026-06-13: corpus-grep - no *.witness.json sets this contentBlock, BUT the validation data is deliberately embedded in Lean (integer-stability.lean, theorem stable_neutron_max_error, |dn|<=8 over 103 elements). So it IS wired to its Lean sibling, just not to a compute witness the audit indexes. UNSURE: leans false-positive under a charitable 'consumed' reading; kept queued in case a *.witness.json mirror is wanted.]",
+      "evidence": "prop:neutron-prediction-comparison (proposition): .lean sibling has 0 sorrys (proven) but NO probe script / witness references it via contentBlock. Chain-relevant (mass/binding/q-beta/nucleon). Per I1: write a probe exercising the claim at q_0 emitting a witness whose contentBlock points at this label. Verified against witness contentBlock+reference_blocks index (153 labels) at 565be78e866d. [VERIFIED 2026-06-13: corpus-grep - no *.witness.json sets this contentBlock, BUT the validation data is deliberately embedded in Lean (integer-stability.lean, theorem stable_neutron_max_error, |dn|<=8 over 103 elements). So it IS wired to its Lean sibling, just not to a compute witness the audit indexes. UNSURE: leans false-positive under a charitable 'consumed' reading; kept queued in case a *.witness.json mirror is wanted.] [VERIFIED 2026-06-13: NOT a false positive. The .lean validation is TRIVIAL — stable_neutron_max_error closes the existential with n_obs:=n_pred (discrepancy 0); its own docstring admits the intended AME2020 comparison needs a real observation table. I1 stands + trivial-Lean-skeleton (proof concern). Fix: real Python witness vs AME2020/NUBASE2020 + non-trivial theorem.]",
       "attempts": [],
       "status": "queued",
       "asked_author_at": null
@@ -557,7 +557,7 @@
       "severity": "major",
       "source": "backlog",
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-      "evidence": "atomic_mass_via_rho_k.py:215 \u2014 hardcoded CODATA literal in a PRODUCTION/prediction script (P31). Should import from codata_constants.py (_VALIDATION aliases) / experimental_constants.py, not inline. Source: compute-audit-scan.witness.json (regenerated 2026-06-13). [VERIFIED 2026-06-13: source - ATOMS_CODATA dict (L214-215, '938.27208816') is iterated at L405. Script DOES import M_E_MEV/M_P_MEV/M_N_MEV from codata_constants (L93) for inputs; ATOMS_CODATA is a back-compat 'CODATA tautology mode' reference table. Borderline (validation-reference) but the dict is a live hardcoded literal not sourced from the registry -> genuine P31. scheme=4-input-mp-and-mn per canonical-script-input-audit.]",
+      "evidence": "atomic_mass_via_rho_k.py:215 — hardcoded CODATA literal in a PRODUCTION/prediction script (P31). Should import from codata_constants.py (_VALIDATION aliases) / experimental_constants.py, not inline. Source: compute-audit-scan.witness.json (regenerated 2026-06-13). [VERIFIED 2026-06-13: source - ATOMS_CODATA dict (L214-215, '938.27208816') is iterated at L405. Script DOES import M_E_MEV/M_P_MEV/M_N_MEV from codata_constants (L93) for inputs; ATOMS_CODATA is a back-compat 'CODATA tautology mode' reference table. Borderline (validation-reference) but the dict is a live hardcoded literal not sourced from the registry -> genuine P31. scheme=4-input-mp-and-mn per canonical-script-input-audit.]",
       "attempts": [],
       "status": "queued",
       "asked_author_at": null
@@ -572,7 +572,7 @@
       "severity": "major",
       "source": "backlog",
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-      "evidence": "binding_K_direct.py:81 \u2014 hardcoded CODATA literal in a PRODUCTION/prediction script (P31). Should import from codata_constants.py (_VALIDATION aliases) / experimental_constants.py, not inline. Source: compute-audit-scan.witness.json (regenerated 2026-06-13). [VERIFIED 2026-06-13: source - ATOMS dict (L80-81, '938.27208816') iterated at L218 as the experimental anchor. Script imports M_P_MEV_VALIDATION (L76) but the ATOMS dict hardcodes the masses inline rather than from the registry. Genuine P31.]",
+      "evidence": "binding_K_direct.py:81 — hardcoded CODATA literal in a PRODUCTION/prediction script (P31). Should import from codata_constants.py (_VALIDATION aliases) / experimental_constants.py, not inline. Source: compute-audit-scan.witness.json (regenerated 2026-06-13). [VERIFIED 2026-06-13: source - ATOMS dict (L80-81, '938.27208816') iterated at L218 as the experimental anchor. Script imports M_P_MEV_VALIDATION (L76) but the ATOMS dict hardcodes the masses inline rather than from the registry. Genuine P31.]",
       "attempts": [],
       "status": "queued",
       "asked_author_at": null
@@ -587,7 +587,7 @@
       "severity": "major",
       "source": "backlog",
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-      "evidence": "build_six_term_substrate_model_b.py:114 \u2014 hardcoded CODATA literal in a PRODUCTION/prediction script (P31). Should import from codata_constants.py (_VALIDATION aliases) / experimental_constants.py, not inline. Source: compute-audit-scan.witness.json (regenerated 2026-06-13). [VERIFIED 2026-06-13: source - _CODATA dict (L113-114) consumed at L209 as 'codata = _CODATA[(Z,N)]' (computational comparison input). consts-src=False per canonical-script-input-audit (does NOT use the registry). Genuine hardcode.]",
+      "evidence": "build_six_term_substrate_model_b.py:114 — hardcoded CODATA literal in a PRODUCTION/prediction script (P31). Should import from codata_constants.py (_VALIDATION aliases) / experimental_constants.py, not inline. Source: compute-audit-scan.witness.json (regenerated 2026-06-13). [VERIFIED 2026-06-13: source - _CODATA dict (L113-114) consumed at L209 as 'codata = _CODATA[(Z,N)]' (computational comparison input). consts-src=False per canonical-script-input-audit (does NOT use the registry). Genuine hardcode.]",
       "attempts": [],
       "status": "queued",
       "asked_author_at": null
@@ -602,7 +602,7 @@
       "severity": "major",
       "source": "backlog",
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-      "evidence": "compound_binding_via_differences.py:81 \u2014 hardcoded CODATA literal in a PRODUCTION/prediction script (P31). Should import from codata_constants.py (_VALIDATION aliases) / experimental_constants.py, not inline. Source: compute-audit-scan.witness.json (regenerated 2026-06-13). [VERIFIED 2026-06-13: source - M_CODATA dict (L80-81) used as a computational input at L238 ('Z*M_CODATA[p] + N*M_CODATA[n] - m_atom'). Genuine hardcode used in the binding arithmetic. scheme=4-input-mp-and-mn.]",
+      "evidence": "compound_binding_via_differences.py:81 — hardcoded CODATA literal in a PRODUCTION/prediction script (P31). Should import from codata_constants.py (_VALIDATION aliases) / experimental_constants.py, not inline. Source: compute-audit-scan.witness.json (regenerated 2026-06-13). [VERIFIED 2026-06-13: source - M_CODATA dict (L80-81) used as a computational input at L238 ('Z*M_CODATA[p] + N*M_CODATA[n] - m_atom'). Genuine hardcode used in the binding arithmetic. scheme=4-input-mp-and-mn.]",
       "attempts": [],
       "status": "queued",
       "asked_author_at": null
@@ -617,7 +617,7 @@
       "severity": "major",
       "source": "backlog",
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-      "evidence": "derive_m_baryon_volume_form.py:36 \u2014 hardcoded CODATA literal in a PRODUCTION/prediction script (P31). Should import from codata_constants.py (_VALIDATION aliases) / experimental_constants.py, not inline. Source: compute-audit-scan.witness.json (regenerated 2026-06-13).",
+      "evidence": "derive_m_baryon_volume_form.py:36 — hardcoded CODATA literal in a PRODUCTION/prediction script (P31). Should import from codata_constants.py (_VALIDATION aliases) / experimental_constants.py, not inline. Source: compute-audit-scan.witness.json (regenerated 2026-06-13).",
       "attempts": [],
       "status": "wontfix",
       "asked_author_at": null,
@@ -633,7 +633,7 @@
       "severity": "major",
       "source": "backlog",
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-      "evidence": "inter_nucleon_linked_channel.py:63 \u2014 hardcoded CODATA literal in a PRODUCTION/prediction script (P31). Should import from codata_constants.py (_VALIDATION aliases) / experimental_constants.py, not inline. Source: compute-audit-scan.witness.json (regenerated 2026-06-13). [VERIFIED 2026-06-13: source - M_P_MEV = mp.mpf('938.27208816') is a module-level constant (L63), not imported; consts-src=False. Used as a falsification reference (w.add_parameter, L133). Genuine inline CODATA literal.]",
+      "evidence": "inter_nucleon_linked_channel.py:63 — hardcoded CODATA literal in a PRODUCTION/prediction script (P31). Should import from codata_constants.py (_VALIDATION aliases) / experimental_constants.py, not inline. Source: compute-audit-scan.witness.json (regenerated 2026-06-13). [VERIFIED 2026-06-13: source - M_P_MEV = mp.mpf('938.27208816') is a module-level constant (L63), not imported; consts-src=False. Used as a falsification reference (w.add_parameter, L133). Genuine inline CODATA literal.]",
       "attempts": [],
       "status": "queued",
       "asked_author_at": null
@@ -648,7 +648,7 @@
       "severity": "major",
       "source": "backlog",
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-      "evidence": "m_p_substrate_identity_50dps.py:56 (+57) \u2014 hardcoded CODATA literal in a PRODUCTION/prediction script (P31). Should import from codata_constants.py (_VALIDATION aliases) / experimental_constants.py, not inline. Source: compute-audit-scan.witness.json (regenerated 2026-06-13).",
+      "evidence": "m_p_substrate_identity_50dps.py:56 (+57) — hardcoded CODATA literal in a PRODUCTION/prediction script (P31). Should import from codata_constants.py (_VALIDATION aliases) / experimental_constants.py, not inline. Source: compute-audit-scan.witness.json (regenerated 2026-06-13).",
       "attempts": [],
       "status": "wontfix",
       "asked_author_at": null,
@@ -664,7 +664,7 @@
       "severity": "major",
       "source": "backlog",
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-      "evidence": "mass_formula_6term_mpfr_50dps.py:542 \u2014 hardcoded CODATA literal in a PRODUCTION/prediction script (P31). Should import from codata_constants.py (_VALIDATION aliases) / experimental_constants.py, not inline. Source: compute-audit-scan.witness.json (regenerated 2026-06-13). [VERIFIED 2026-06-13: source - CODATA_MASS dict (L541-542). NOTE: used only at L616 in w.add_data('codata_reference', ...) i.e. emitted as a validation-reference to the witness, NOT a computational input (m_e IS imported from experimental_constants, L65). Leans validation-reference; kept QUEUED as a genuine P31 literal but the fix is low-priority (reference table, not an input). UNSURE whether to exempt - flag for author.]",
+      "evidence": "mass_formula_6term_mpfr_50dps.py:542 — hardcoded CODATA literal in a PRODUCTION/prediction script (P31). Should import from codata_constants.py (_VALIDATION aliases) / experimental_constants.py, not inline. Source: compute-audit-scan.witness.json (regenerated 2026-06-13). [VERIFIED 2026-06-13: source - CODATA_MASS dict (L541-542). NOTE: used only at L616 in w.add_data('codata_reference', ...) i.e. emitted as a validation-reference to the witness, NOT a computational input (m_e IS imported from experimental_constants, L65). Leans validation-reference; kept QUEUED as a genuine P31 literal but the fix is low-priority (reference table, not an input). UNSURE whether to exempt - flag for author.]",
       "attempts": [],
       "status": "queued",
       "asked_author_at": null
@@ -679,7 +679,7 @@
       "severity": "major",
       "source": "backlog",
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-      "evidence": "mass_table_l1_full_crosscheck.py:29 \u2014 hardcoded CODATA literal in a PRODUCTION/prediction script (P31). Should import from codata_constants.py (_VALIDATION aliases) / experimental_constants.py, not inline. Source: compute-audit-scan.witness.json (regenerated 2026-06-13). [VERIFIED 2026-06-13: source - m_e = mp.mpf('0.51099895') inline at L29 (electron mass), used as a substrate-scale input. scheme=vol-hyp-fitted, consts-src=False. Genuine hardcode; should import M_E_MEV.]",
+      "evidence": "mass_table_l1_full_crosscheck.py:29 — hardcoded CODATA literal in a PRODUCTION/prediction script (P31). Should import from codata_constants.py (_VALIDATION aliases) / experimental_constants.py, not inline. Source: compute-audit-scan.witness.json (regenerated 2026-06-13). [VERIFIED 2026-06-13: source - m_e = mp.mpf('0.51099895') inline at L29 (electron mass), used as a substrate-scale input. scheme=vol-hyp-fitted, consts-src=False. Genuine hardcode; should import M_E_MEV.]",
       "attempts": [],
       "status": "queued",
       "asked_author_at": null
@@ -694,7 +694,7 @@
       "severity": "major",
       "source": "backlog",
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-      "evidence": "mass_table_ppb.py:122 \u2014 hardcoded CODATA literal in a PRODUCTION/prediction script (P31). Should import from codata_constants.py (_VALIDATION aliases) / experimental_constants.py, not inline. Source: compute-audit-scan.witness.json (regenerated 2026-06-13). [VERIFIED 2026-06-13: source - inline divisor '26.328 / 0.51099895' (m_e) at L122 inside the atom-target dict. Genuine inline m_e literal used to convert to m_e units. scheme=vol-hyp-fitted.]",
+      "evidence": "mass_table_ppb.py:122 — hardcoded CODATA literal in a PRODUCTION/prediction script (P31). Should import from codata_constants.py (_VALIDATION aliases) / experimental_constants.py, not inline. Source: compute-audit-scan.witness.json (regenerated 2026-06-13). [VERIFIED 2026-06-13: source - inline divisor '26.328 / 0.51099895' (m_e) at L122 inside the atom-target dict. Genuine inline m_e literal used to convert to m_e units. scheme=vol-hyp-fitted.]",
       "attempts": [],
       "status": "queued",
       "asked_author_at": null
@@ -709,7 +709,7 @@
       "severity": "major",
       "source": "backlog",
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-      "evidence": "meson_mass_from_hecke.py:85 (+68) \u2014 hardcoded CODATA literal in a PRODUCTION/prediction script (P31). Should import from codata_constants.py (_VALIDATION aliases) / experimental_constants.py, not inline. Source: compute-audit-scan.witness.json (regenerated 2026-06-13). [VERIFIED 2026-06-13: source - PDG_P = mpf('938.27208816') (L85, beside PDG_MU at L84) as module-level experimental anchors. consts-src=False. Genuine inline CODATA literals.]",
+      "evidence": "meson_mass_from_hecke.py:85 (+68) — hardcoded CODATA literal in a PRODUCTION/prediction script (P31). Should import from codata_constants.py (_VALIDATION aliases) / experimental_constants.py, not inline. Source: compute-audit-scan.witness.json (regenerated 2026-06-13). [VERIFIED 2026-06-13: source - PDG_P = mpf('938.27208816') (L85, beside PDG_MU at L84) as module-level experimental anchors. consts-src=False. Genuine inline CODATA literals.]",
       "attempts": [],
       "status": "queued",
       "asked_author_at": null
@@ -724,7 +724,7 @@
       "severity": "major",
       "source": "backlog",
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-      "evidence": "meson_vol_density.py:52 \u2014 hardcoded CODATA literal in a PRODUCTION/prediction script (P31). Should import from codata_constants.py (_VALIDATION aliases) / experimental_constants.py, not inline. Source: compute-audit-scan.witness.json (regenerated 2026-06-13). [VERIFIED 2026-06-13: source - M_P = mpf('938.27208816') (L52, beside M_K at L51) module-level anchors. scheme=vol-hyp-fitted, consts-src=False. Genuine inline CODATA literals.]",
+      "evidence": "meson_vol_density.py:52 — hardcoded CODATA literal in a PRODUCTION/prediction script (P31). Should import from codata_constants.py (_VALIDATION aliases) / experimental_constants.py, not inline. Source: compute-audit-scan.witness.json (regenerated 2026-06-13). [VERIFIED 2026-06-13: source - M_P = mpf('938.27208816') (L52, beside M_K at L51) module-level anchors. scheme=vol-hyp-fitted, consts-src=False. Genuine inline CODATA literals.]",
       "attempts": [],
       "status": "queued",
       "asked_author_at": null
@@ -739,7 +739,7 @@
       "severity": "major",
       "source": "backlog",
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-      "evidence": "tower_isotope_absolute.py:72 \u2014 hardcoded CODATA literal in a PRODUCTION/prediction script (P31). Should import from codata_constants.py (_VALIDATION aliases) / experimental_constants.py, not inline. Source: compute-audit-scan.witness.json (regenerated 2026-06-13). [VERIFIED 2026-06-13: source - CODATA_ATOMIC dict (L71-72) fed as computational inputs at L218-221 (CODATA_ATOMIC['D']/['T']/['3He']/['4He']). m_e imported but the atomic masses are hardcoded. Genuine hardcode used as input.]",
+      "evidence": "tower_isotope_absolute.py:72 — hardcoded CODATA literal in a PRODUCTION/prediction script (P31). Should import from codata_constants.py (_VALIDATION aliases) / experimental_constants.py, not inline. Source: compute-audit-scan.witness.json (regenerated 2026-06-13). [VERIFIED 2026-06-13: source - CODATA_ATOMIC dict (L71-72) fed as computational inputs at L218-221 (CODATA_ATOMIC['D']/['T']/['3He']/['4He']). m_e imported but the atomic masses are hardcoded. Genuine hardcode used as input.]",
       "attempts": [],
       "status": "queued",
       "asked_author_at": null
@@ -754,7 +754,7 @@
       "severity": "minor",
       "source": "backlog",
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-      "evidence": "canonical_lepton_braid_words.py:193 \u2014 hardcoded CODATA literal (P31), non-production script. Either import from registry or tag `# noqa: P31` with audit-only justification. Source: compute-audit-scan.witness.json. [VERIFIED 2026-06-13: source - cal2_target = mp.mpf('206.7682830') inline at L193; the registry exposes qou_substrate.constants.MASS_RATIO_MU_E_STR / experimental_constants.MU_OVER_E with this exact value. Genuine P31 (non-production); fix=import or # noqa: P31.]",
+      "evidence": "canonical_lepton_braid_words.py:193 — hardcoded CODATA literal (P31), non-production script. Either import from registry or tag `# noqa: P31` with audit-only justification. Source: compute-audit-scan.witness.json. [VERIFIED 2026-06-13: source - cal2_target = mp.mpf('206.7682830') inline at L193; the registry exposes qou_substrate.constants.MASS_RATIO_MU_E_STR / experimental_constants.MU_OVER_E with this exact value. Genuine P31 (non-production); fix=import or # noqa: P31.]",
       "attempts": [],
       "status": "queued",
       "asked_author_at": null
@@ -769,7 +769,7 @@
       "severity": "minor",
       "source": "backlog",
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-      "evidence": "f_ell_derivation_via_per_braid_mass_tower.py:59 \u2014 hardcoded CODATA literal (P31), non-production script. Either import from registry or tag `# noqa: P31` with audit-only justification. Source: compute-audit-scan.witness.json. [VERIFIED 2026-06-13: source - cal2_target = mp.mpf('206.7682830') inline at L59 (same pattern); registry symbol MASS_RATIO_MU_E_STR exists. Genuine P31 (non-production).]",
+      "evidence": "f_ell_derivation_via_per_braid_mass_tower.py:59 — hardcoded CODATA literal (P31), non-production script. Either import from registry or tag `# noqa: P31` with audit-only justification. Source: compute-audit-scan.witness.json. [VERIFIED 2026-06-13: source - cal2_target = mp.mpf('206.7682830') inline at L59 (same pattern); registry symbol MASS_RATIO_MU_E_STR exists. Genuine P31 (non-production).]",
       "attempts": [],
       "status": "queued",
       "asked_author_at": null
@@ -784,7 +784,7 @@
       "severity": "minor",
       "source": "backlog",
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-      "evidence": "h4_residual_vs_fine_structure_50dps.py:58 \u2014 hardcoded CODATA literal (P31), non-production script. Either import from registry or tag `# noqa: P31` with audit-only justification. Source: compute-audit-scan.witness.json. [VERIFIED 2026-06-13: source - M_E_MEV/M_P_MEV string literals at L57-58 ('0.51099895069','938.27208816') as module constants used in the residual computation; also INVERSE_ALPHA_CODATA inline. Genuine P31 (non-production).]",
+      "evidence": "h4_residual_vs_fine_structure_50dps.py:58 — hardcoded CODATA literal (P31), non-production script. Either import from registry or tag `# noqa: P31` with audit-only justification. Source: compute-audit-scan.witness.json. [VERIFIED 2026-06-13: source - M_E_MEV/M_P_MEV string literals at L57-58 ('0.51099895069','938.27208816') as module constants used in the residual computation; also INVERSE_ALPHA_CODATA inline. Genuine P31 (non-production).]",
       "attempts": [],
       "status": "queued",
       "asked_author_at": null
@@ -799,7 +799,7 @@
       "severity": "minor",
       "source": "backlog",
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-      "evidence": "knot_operator_sdp_4_1.py:115 \u2014 hardcoded CODATA literal (P31), non-production script. Either import from registry or tag `# noqa: P31` with audit-only justification. Source: compute-audit-scan.witness.json. [VERIFIED 2026-06-13: source - m_mu_me = 206.768283 inline at L115 fed into an eigenvalue-ratio comparison; registry symbol MASS_RATIO_MU_E_STR exists. Genuine P31 (non-production).]",
+      "evidence": "knot_operator_sdp_4_1.py:115 — hardcoded CODATA literal (P31), non-production script. Either import from registry or tag `# noqa: P31` with audit-only justification. Source: compute-audit-scan.witness.json. [VERIFIED 2026-06-13: source - m_mu_me = 206.768283 inline at L115 fed into an eigenvalue-ratio comparison; registry symbol MASS_RATIO_MU_E_STR exists. Genuine P31 (non-production).]",
       "attempts": [],
       "status": "queued",
       "asked_author_at": null
@@ -814,7 +814,7 @@
       "severity": "minor",
       "source": "backlog",
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-      "evidence": "lambda_scale_refinement_h4_correction_bring.py:106 \u2014 hardcoded CODATA literal (P31), non-production script. Either import from registry or tag `# noqa: P31` with audit-only justification. Source: compute-audit-scan.witness.json. [VERIFIED 2026-06-13: source - M_P_CODATA/M_N_CODATA = mp.mpf(...) inline at L106-107 fed into M_AVG_CODATA, while M_E is imported (L105). Genuine extra hardcoded nucleon-mass literals (non-production).]",
+      "evidence": "lambda_scale_refinement_h4_correction_bring.py:106 — hardcoded CODATA literal (P31), non-production script. Either import from registry or tag `# noqa: P31` with audit-only justification. Source: compute-audit-scan.witness.json. [VERIFIED 2026-06-13: source - M_P_CODATA/M_N_CODATA = mp.mpf(...) inline at L106-107 fed into M_AVG_CODATA, while M_E is imported (L105). Genuine extra hardcoded nucleon-mass literals (non-production).]",
       "attempts": [],
       "status": "queued",
       "asked_author_at": null
@@ -829,7 +829,7 @@
       "severity": "minor",
       "source": "backlog",
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-      "evidence": "lambda_scale_refinements_composed_predictions.py:83 \u2014 hardcoded CODATA literal (P31), non-production script. Either import from registry or tag `# noqa: P31` with audit-only justification. Source: compute-audit-scan.witness.json. [VERIFIED 2026-06-13: source - L82 comment says 'M_E_CODATA = M_E_MEV ... only true calibration input here', then L83 hardcodes M_P_CODATA = mp.mpf('938.27208816') -> a genuine EXTRA hardcoded input beyond the declared single calibration. Genuine P31 (non-production).]",
+      "evidence": "lambda_scale_refinements_composed_predictions.py:83 — hardcoded CODATA literal (P31), non-production script. Either import from registry or tag `# noqa: P31` with audit-only justification. Source: compute-audit-scan.witness.json. [VERIFIED 2026-06-13: source - L82 comment says 'M_E_CODATA = M_E_MEV ... only true calibration input here', then L83 hardcodes M_P_CODATA = mp.mpf('938.27208816') -> a genuine EXTRA hardcoded input beyond the declared single calibration. Genuine P31 (non-production).]",
       "attempts": [],
       "status": "queued",
       "asked_author_at": null
@@ -844,7 +844,7 @@
       "severity": "minor",
       "source": "backlog",
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-      "evidence": "m_tau_knot_prediction.py:68 \u2014 hardcoded CODATA literal (P31), non-production script. Either import from registry or tag `# noqa: P31` with audit-only justification. Source: compute-audit-scan.witness.json. [VERIFIED 2026-06-13: source - TARGET_MU_OVER_E = mp.mpf(MASS_RATIO_MU_E_STR) at L68 - NOTE this one ALREADY uses the registry symbol; the comment '# CODATA: 206.7682830' is what the P31 scanner matched. Borderline: the literal is only in the trailing comment. Kept QUEUED (literal present in comment) but the actual value IS registry-sourced -> low priority / arguably exempt. UNSURE - flag for author.]",
+      "evidence": "m_tau_knot_prediction.py:68 — hardcoded CODATA literal (P31), non-production script. Either import from registry or tag `# noqa: P31` with audit-only justification. Source: compute-audit-scan.witness.json. [VERIFIED 2026-06-13: source - TARGET_MU_OVER_E = mp.mpf(MASS_RATIO_MU_E_STR) at L68 - NOTE this one ALREADY uses the registry symbol; the comment '# CODATA: 206.7682830' is what the P31 scanner matched. Borderline: the literal is only in the trailing comment. Kept QUEUED (literal present in comment) but the actual value IS registry-sourced -> low priority / arguably exempt. UNSURE - flag for author.]",
       "attempts": [],
       "status": "queued",
       "asked_author_at": null
@@ -859,7 +859,7 @@
       "severity": "minor",
       "source": "backlog",
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-      "evidence": "per_generator_V_hat_general.py:162 \u2014 hardcoded CODATA literal (P31), non-production script. Either import from registry or tag `# noqa: P31` with audit-only justification. Source: compute-audit-scan.witness.json. [VERIFIED 2026-06-13: source - cal2_target = mp.mpf('206.7682830') inline at L162 (same Vol_4_1+cal2_target pattern); registry symbol exists. Genuine P31 (non-production).]",
+      "evidence": "per_generator_V_hat_general.py:162 — hardcoded CODATA literal (P31), non-production script. Either import from registry or tag `# noqa: P31` with audit-only justification. Source: compute-audit-scan.witness.json. [VERIFIED 2026-06-13: source - cal2_target = mp.mpf('206.7682830') inline at L162 (same Vol_4_1+cal2_target pattern); registry symbol exists. Genuine P31 (non-production).]",
       "attempts": [],
       "status": "queued",
       "asked_author_at": null
@@ -874,7 +874,7 @@
       "severity": "minor",
       "source": "backlog",
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-      "evidence": "q_dirac_linking_weight_extended_50dps.py:28 \u2014 hardcoded CODATA literal (P31), non-production script. Either import from registry or tag `# noqa: P31` with audit-only justification. Source: compute-audit-scan.witness.json.",
+      "evidence": "q_dirac_linking_weight_extended_50dps.py:28 — hardcoded CODATA literal (P31), non-production script. Either import from registry or tag `# noqa: P31` with audit-only justification. Source: compute-audit-scan.witness.json.",
       "attempts": [],
       "status": "wontfix",
       "asked_author_at": null,
@@ -890,7 +890,7 @@
       "severity": "minor",
       "source": "backlog",
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-      "evidence": "t6_lepton_h3_3channel_convention.py:41 \u2014 hardcoded CODATA literal (P31), non-production script. Either import from registry or tag `# noqa: P31` with audit-only justification. Source: compute-audit-scan.witness.json. [VERIFIED 2026-06-13: source - cal2_target = mp.mpf('206.7682830') inline at L41 (same pattern); registry symbol exists. Genuine P31 (non-production).]",
+      "evidence": "t6_lepton_h3_3channel_convention.py:41 — hardcoded CODATA literal (P31), non-production script. Either import from registry or tag `# noqa: P31` with audit-only justification. Source: compute-audit-scan.witness.json. [VERIFIED 2026-06-13: source - cal2_target = mp.mpf('206.7682830') inline at L41 (same pattern); registry symbol exists. Genuine P31 (non-production).]",
       "attempts": [],
       "status": "queued",
       "asked_author_at": null
@@ -905,7 +905,7 @@
       "severity": "minor",
       "source": "backlog",
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-      "evidence": "verify_isospin_bar_anomaly.py:142 \u2014 hardcoded CODATA literal (P31), non-production script. Either import from registry or tag `# noqa: P31` with audit-only justification. Source: compute-audit-scan.witness.json. [VERIFIED 2026-06-13: source - M_p_mev/M_n_mev = mp.mpf(...) inline at L142-143 fed into the Delta m/M_N CODATA cross-check computation (labeled '# CODATA cross-check'). Genuine inline CODATA literals (non-production).]",
+      "evidence": "verify_isospin_bar_anomaly.py:142 — hardcoded CODATA literal (P31), non-production script. Either import from registry or tag `# noqa: P31` with audit-only justification. Source: compute-audit-scan.witness.json. [VERIFIED 2026-06-13: source - M_p_mev/M_n_mev = mp.mpf(...) inline at L142-143 fed into the Delta m/M_N CODATA cross-check computation (labeled '# CODATA cross-check'). Genuine inline CODATA literals (non-production).]",
       "attempts": [],
       "status": "queued",
       "asked_author_at": null
@@ -920,7 +920,7 @@
       "severity": "major",
       "source": "backlog",
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-      "evidence": "per-pair-wedderburn-enumeration.witness.json \u2014 top-level `data` is a list (len 10) not a dict; breaks witness_dependency_drift.py (AttributeError: 'list' has no attribute 'get') and any consumer expecting data.{...}. Schema drift (I6). Fix: wrap rows under data.{rows:[...]} or migrate to WitnessBuilder. [VERIFIED 2026-06-13: data is a list (len 10) - REPRODUCED the crash live: witness_dependency_drift.py raises AttributeError 'list' object has no attribute 'get' at line 95. Genuine schema drift.]",
+      "evidence": "per-pair-wedderburn-enumeration.witness.json — top-level `data` is a list (len 10) not a dict; breaks witness_dependency_drift.py (AttributeError: 'list' has no attribute 'get') and any consumer expecting data.{...}. Schema drift (I6). Fix: wrap rows under data.{rows:[...]} or migrate to WitnessBuilder. [VERIFIED 2026-06-13: data is a list (len 10) - REPRODUCED the crash live: witness_dependency_drift.py raises AttributeError 'list' object has no attribute 'get' at line 95. Genuine schema drift.]",
       "attempts": [],
       "status": "queued",
       "asked_author_at": null
@@ -935,7 +935,7 @@
       "severity": "major",
       "source": "backlog",
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-      "evidence": "topic2-mirror-pair-phi8-boundary-scan.witness.json \u2014 top-level `data` is a list (len 10) not a dict; breaks witness_dependency_drift.py (AttributeError: 'list' has no attribute 'get') and any consumer expecting data.{...}. Schema drift (I6). Fix: wrap rows under data.{rows:[...]} or migrate to WitnessBuilder. [VERIFIED 2026-06-13: data is a list (len 10); same root cause - witness_dependency_drift.py crashes on list-typed data at line 95 (reproduced live). Genuine schema drift.]",
+      "evidence": "topic2-mirror-pair-phi8-boundary-scan.witness.json — top-level `data` is a list (len 10) not a dict; breaks witness_dependency_drift.py (AttributeError: 'list' has no attribute 'get') and any consumer expecting data.{...}. Schema drift (I6). Fix: wrap rows under data.{rows:[...]} or migrate to WitnessBuilder. [VERIFIED 2026-06-13: data is a list (len 10); same root cause - witness_dependency_drift.py crashes on list-typed data at line 95 (reproduced live). Genuine schema drift.]",
       "attempts": [],
       "status": "queued",
       "asked_author_at": null
@@ -951,7 +951,7 @@
       "severity": "minor",
       "source": "backlog",
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-      "evidence": "Mass-table sweep: 3 atom(s) status='exploratory' \u2014 2H, 3H, 3He. 0 atoms fully-canonically-wired. 'exploratory' needs: R5-full SDP solver + Rule-14 census audit (census-assigned knot, \u03bd_SDP guessed). Source: mass-sweep-wiring-status.witness.json (computedAt 2026-05-27). [VERIFIED 2026-06-13: mass-sweep-wiring-status.witness.json current; 2H/3H/3He status='exploratory' (census-assigned knot, nu_SDP guessed). Real open work-item, R5-full SDP + Rule-14 census audit pending.]",
+      "evidence": "Mass-table sweep: 3 atom(s) status='exploratory' — 2H, 3H, 3He. 0 atoms fully-canonically-wired. 'exploratory' needs: R5-full SDP solver + Rule-14 census audit (census-assigned knot, ν_SDP guessed). Source: mass-sweep-wiring-status.witness.json (computedAt 2026-05-27). [VERIFIED 2026-06-13: mass-sweep-wiring-status.witness.json current; 2H/3H/3He status='exploratory' (census-assigned knot, nu_SDP guessed). Real open work-item, R5-full SDP + Rule-14 census audit pending.]",
       "attempts": [],
       "status": "queued",
       "asked_author_at": null
@@ -967,7 +967,7 @@
       "severity": "minor",
       "source": "backlog",
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-      "evidence": "Mass-table sweep: 1 atom(s) status='extrapolated' \u2014 4He. 0 atoms fully-canonically-wired. 'extrapolated' needs: R5-full SDP solver landing (knot framework-derived, \u03bd_SDP extrapolated). Source: mass-sweep-wiring-status.witness.json (computedAt 2026-05-27). [VERIFIED 2026-06-13: mass-sweep-wiring-status.witness.json current; 4He status='extrapolated' (knot framework-derived, nu_SDP extrapolated). Real open work-item awaiting R5-full SDP solver.]",
+      "evidence": "Mass-table sweep: 1 atom(s) status='extrapolated' — 4He. 0 atoms fully-canonically-wired. 'extrapolated' needs: R5-full SDP solver landing (knot framework-derived, ν_SDP extrapolated). Source: mass-sweep-wiring-status.witness.json (computedAt 2026-05-27). [VERIFIED 2026-06-13: mass-sweep-wiring-status.witness.json current; 4He status='extrapolated' (knot framework-derived, nu_SDP extrapolated). Real open work-item awaiting R5-full SDP solver.]",
       "attempts": [],
       "status": "queued",
       "asked_author_at": null
@@ -983,7 +983,7 @@
       "severity": "major",
       "source": "backlog",
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-      "evidence": "Mass-table sweep: 7 atom(s) status='gap' \u2014 5Li, 6Li, 7Li, 9Be, 11B, 14N, 19F. 0 atoms fully-canonically-wired. 'gap' needs: Rule-14 atom-knot census expansion (A\u22085,6,7). Source: mass-sweep-wiring-status.witness.json (computedAt 2026-05-27). [VERIFIED 2026-06-13: mass-sweep-wiring-status.witness.json current; 5Li/6Li/7Li/9Be/11B/14N/19F status='gap' (Rule-14 census not yet expanded for A in 5,6,7). Real open work-item.]",
+      "evidence": "Mass-table sweep: 7 atom(s) status='gap' — 5Li, 6Li, 7Li, 9Be, 11B, 14N, 19F. 0 atoms fully-canonically-wired. 'gap' needs: Rule-14 atom-knot census expansion (A∈5,6,7). Source: mass-sweep-wiring-status.witness.json (computedAt 2026-05-27). [VERIFIED 2026-06-13: mass-sweep-wiring-status.witness.json current; 5Li/6Li/7Li/9Be/11B/14N/19F status='gap' (Rule-14 census not yet expanded for A in 5,6,7). Real open work-item.]",
       "attempts": [],
       "status": "queued",
       "asked_author_at": null
@@ -999,7 +999,7 @@
       "severity": "major",
       "source": "backlog",
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-      "evidence": "Mass-table sweep: 6 atom(s) status='alpha-cluster' \u2014 8Be, 12C, 16O, 20Ne, 24Mg, 40Ca. 0 atoms fully-canonically-wired. 'alpha-cluster' needs: \u2074He canonical first (built on n\u00d7\u2074He extrapolation). Source: mass-sweep-wiring-status.witness.json (computedAt 2026-05-27). [VERIFIED 2026-06-13: mass-sweep-wiring-status.witness.json (computedAt 2026-05-27) still current; alpha-cluster atoms need 4He canonical first. Real open work-item gated on the Delta_lambda / Rule-14 census state documented in CLAUDE.md (Track A blocker).]",
+      "evidence": "Mass-table sweep: 6 atom(s) status='alpha-cluster' — 8Be, 12C, 16O, 20Ne, 24Mg, 40Ca. 0 atoms fully-canonically-wired. 'alpha-cluster' needs: ⁴He canonical first (built on n×⁴He extrapolation). Source: mass-sweep-wiring-status.witness.json (computedAt 2026-05-27). [VERIFIED 2026-06-13: mass-sweep-wiring-status.witness.json (computedAt 2026-05-27) still current; alpha-cluster atoms need 4He canonical first. Real open work-item gated on the Delta_lambda / Rule-14 census state documented in CLAUDE.md (Track A blocker).]",
       "attempts": [],
       "status": "queued",
       "asked_author_at": null
@@ -1014,7 +1014,7 @@
       "severity": "major",
       "source": "backlog",
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-      "evidence": "8 atoms violate KLR positivity (B_pred > B_AME over-prediction \u2192 wrong knot / wrong \u03bd_SDP / missing structural restriction). Predicted should be a LOWER bound on observed. Source: mass-sweep-wiring-status.witness.json klr_violations_count=8. [VERIFIED 2026-06-13: mass-sweep-wiring-status.witness.json (computedAt 2026-05-27) records klr_violations_count==8 (still current). Genuine structural-correctness signal (B_pred > B_AME over-prediction = wrong knot/nu_SDP). Real open work-item.]",
+      "evidence": "8 atoms violate KLR positivity (B_pred > B_AME over-prediction → wrong knot / wrong ν_SDP / missing structural restriction). Predicted should be a LOWER bound on observed. Source: mass-sweep-wiring-status.witness.json klr_violations_count=8. [VERIFIED 2026-06-13: mass-sweep-wiring-status.witness.json (computedAt 2026-05-27) records klr_violations_count==8 (still current). Genuine structural-correctness signal (B_pred > B_AME over-prediction = wrong knot/nu_SDP). Real open work-item.]",
       "attempts": [],
       "status": "queued",
       "asked_author_at": null
@@ -1044,7 +1044,7 @@
       "severity": "minor",
       "source": "backlog",
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-      "evidence": "26 of 707 witnesses missing engine/scriptFile/commitSha (completeness ratio 0.963, WARN). Dashboard-reported aggregate (707-scope run not on disk; local audits/ run is 29-file exempt scope). Re-run full provenance audit to enumerate. Source: canonical-derivation-pipeline-compliance contract 'Witness provenance completeness (I14)'. [VERIFIED 2026-06-13: SCOPE-MISMATCH - the local audits/witness_provenance_audit.py scans only 32 files (PROV_MISSING=0, completeness 1.000); it CANNOT reproduce the dashboard's '26 of 707 missing' figure (the 707-scope run is not on disk; local run is an exempt subset). The 26-missing claim is unverifiable from the local tool and the local run shows 0 missing. UNSURE/STALE - needs the full-corpus provenance run to confirm scope. Kept queued pending re-scope.]",
+      "evidence": "26 of 707 witnesses missing engine/scriptFile/commitSha (completeness ratio 0.963, WARN). Dashboard-reported aggregate (707-scope run not on disk; local audits/ run is 29-file exempt scope). Re-run full provenance audit to enumerate. Source: canonical-derivation-pipeline-compliance contract 'Witness provenance completeness (I14)'. [VERIFIED 2026-06-13: SCOPE-MISMATCH - the local audits/witness_provenance_audit.py scans only 32 files (PROV_MISSING=0, completeness 1.000); it CANNOT reproduce the dashboard's '26 of 707 missing' figure (the 707-scope run is not on disk; local run is an exempt subset). The 26-missing claim is unverifiable from the local tool and the local run shows 0 missing. UNSURE/STALE - needs the full-corpus provenance run to confirm scope. Kept queued pending re-scope.] [VERIFIED 2026-06-13: real provenance concern (P30-class); number scope-stale (26/707 dashboard vs narrow). Needs full-corpus re-run.]",
       "attempts": [],
       "status": "queued",
       "asked_author_at": null
@@ -1059,7 +1059,7 @@
       "severity": "minor",
       "source": "backlog",
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-      "evidence": "3-input canonical scheme WARN: 31 canonical / 49 over-count / 676 classified. 49 scripts declare more calibration inputs than the permitted CAL-1/2/3. Source: canonical-derivation-pipeline-compliance contract '3-input canonical scheme'. Overlaps canonical-watcher domain. [VERIFIED 2026-06-13: SCOPE-MISMATCH - fresh canonical_script_input_audit.py run (scoped to its own 35-script consumer set) shows 2 canonical / 3 over-count / 35 classified, NOT the queue's '31/49/676'. The 49/676 figures are the dashboard's full-corpus scan; the local audit runs a 35-file scope. Underlying over-count issue is real but ~3 (not 49) in the canonical scope. UNSURE/scope-stale - overlaps canonical-watcher; kept queued pending scope reconciliation.]",
+      "evidence": "3-input canonical scheme WARN: 31 canonical / 49 over-count / 676 classified. 49 scripts declare more calibration inputs than the permitted CAL-1/2/3. Source: canonical-derivation-pipeline-compliance contract '3-input canonical scheme'. Overlaps canonical-watcher domain. [VERIFIED 2026-06-13: SCOPE-MISMATCH - fresh canonical_script_input_audit.py run (scoped to its own 35-script consumer set) shows 2 canonical / 3 over-count / 35 classified, NOT the queue's '31/49/676'. The 49/676 figures are the dashboard's full-corpus scan; the local audit runs a 35-file scope. Underlying over-count issue is real but ~3 (not 49) in the canonical scope. UNSURE/scope-stale - overlaps canonical-watcher; kept queued pending scope reconciliation.] [VERIFIED 2026-06-13: real canonical over-count concern (overlaps canonical-watcher); number scope-stale (49 dashboard vs narrow on-disk). Needs full-corpus re-run for current count.]",
       "attempts": [],
       "status": "queued",
       "asked_author_at": null
@@ -1814,6 +1814,7 @@
     "method": "corpus-grep (4-path: docs/audits, content, folio-assistant/computations, docs/coordination) + source inspection + live aggregator re-runs (pyhecke installed OK from tools/pyhecke; ran compute_audit_scan.py [P30=133,P31=53], witness_dependency_drift.py [reproduced I6 crash], canonical_script_input_audit.py, witness_provenance_audit.py; built full 251-label witness index vs the initial 153-label index)",
     "demoted_false_positives": 24,
     "confirmed": 40,
-    "notes": "I1 over-flagging root cause: initial audit used a 153-label exact-contentBlock index over the top-level computations/ dir only, missing (a) the fuller 251-label index, (b) subdir witnesses (probes/, qbeta/), (c) umbrella-regression consumers (four_unwired_theorems_regression.py), (d) production formulas tagged under sibling labels, and (e) probes lacking set_content_block. It also flagged pure existence/uniqueness props that have no numerical content to probe, and conjecture-class blocks (skill says skip). 6 items kept queued are UNSURE and flagged for author (borromean-hopf-energy-crossover, eos-borromean-cfl, neutron-prediction-comparison, mass-formula-regime-switching, AGGREGATE:cal-overcount [scope-stale], AGGREGATE:witness-provenance-i14 [scope-stale])."
+    "notes": "I1 over-flagging root cause: initial audit used a 153-label exact-contentBlock index over the top-level computations/ dir only, missing (a) the fuller 251-label index, (b) subdir witnesses (probes/, qbeta/), (c) umbrella-regression consumers (four_unwired_theorems_regression.py), (d) production formulas tagged under sibling labels, and (e) probes lacking set_content_block. It also flagged pure existence/uniqueness props that have no numerical content to probe, and conjecture-class blocks (skill says skip). 6 items kept queued are UNSURE and flagged for author (borromean-hopf-energy-crossover, eos-borromean-cfl, neutron-prediction-comparison, mass-formula-regime-switching, AGGREGATE:cal-overcount [scope-stale], AGGREGATE:witness-provenance-i14 [scope-stale]).",
+    "unsure_reviewed": "2026-06-13: 6 UNSURE reviewed — 0 demoted (none false positives); 2 borromean + neutron trivial-Lean surfaced for author; 2 aggregates scope-stale"
   }
 }
