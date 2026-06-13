@@ -32,4 +32,10 @@ export default proposition({
     ],
     status: "experimental",
   },
+  authorNotes: [
+    {
+      kind: "status",
+      body: "The classical-limit Jones evaluation $J_{\\text{Hopf}}(1) = -2$ is\nelementary; the 2-strand sub-braid extraction at order 3 is the\nsubstantive open step. Empirical observation (112$\\times$ tightening),\nMarkov cyclicity, and KL decategorification give strong support, but a\nfully-formalised proof requires:\n\n- Per-crossing Hecke-quadratic expansion in $\\hbar_q$ (mechanizable\n  via existing symbolic-computation infrastructure).\n- Sub-braid combinatorial extraction at order 3 (combinatorial\n  formalisation of \"choose 2 strands from $\\beta$ and Markov-close\").\n- Cross-Wedderburn-block coupling identification (categorical proof\n  that the Hopf-link factor survives the $V_{(3)} \\oplus V_{(2,1)}\n  \\oplus V_{(1,1,1)}$ decomposition at the third order).\n\nThese three steps form a concrete path to closing the open Track-C\nformalisation gap, beyond the present empirical-observation status.",
+    },
+  ],
 });

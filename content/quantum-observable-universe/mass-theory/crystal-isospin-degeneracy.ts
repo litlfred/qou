@@ -24,4 +24,10 @@ export default proposition({
     "shell-correction",
   ],
   cites: ["kashiwara1991", "lecouvey2007"],
+  authorNotes: [
+    {
+      kind: "status",
+      body: "This proposition is **conditional on**\n[`conj:crystal-graph-realization`](#conj:crystal-graph-realization)\n(the conjectural identification of the $q \\to 0$ limit of\n$\\chi^\\lambda$ with the signed-permutation action on\n$\\mathrm{SYT}(\\lambda)$ used by\n[`term7_alpha5_crystal_derivation.py`](../../../folio-assistant/computations/term7_alpha5_crystal_derivation.py)).\nThe Lean formalisation extracts only the per-eigenline content of\nthis conjecture into a smaller class\n$[\\mathrm{CrystalEigenlineSignBlind}\\;R]$ (`crystal-isospin-degeneracy.lean`),\nwhich axiomatises the *single* fact required for this proposition\n— that on every SYT eigenline, the $q = 0$ actions of $\\sigma_i$\nand $\\sigma_i^{-1}$ agree.  The class\n$[\\mathrm{CrystalGraphRealization}\\;R\\;q]$ (Lake-tracked in\n`QOU.BraidKnot.CrystalGraphRealization`) implies\n$[\\mathrm{CrystalEigenlineSignBlind}\\;R]$, so this proposition is\na *downstream consequence* of `conj:crystal-graph-realization`\nunder CLAUDE.md §3b-cond conditional-class semantics.  Modulo the\nupstream conjecture, the equality\n$S_{\\mathrm{crystal}}(T) = S_{\\mathrm{crystal}}({}^3\\mathrm{He})$\nis **exact** under the legacy disjoint-product convention, and\nthe proposition itself is a fully verified Lean theorem.",
+    },
+  ],
 });

@@ -28,4 +28,10 @@ export default proposition({
     "q-logarithm",
     "log-squared-correction",
   ],
+  authorNotes: [
+    {
+      kind: "status",
+      body: "**Classical case ($q = 1$): proven** (Rogers 1907, Lewin 1981).\n**q-deformation: numerical evidence at $q_0$** to 1-5% (improving on\nclassical by 1.5–5$\\times$). Formal q-deformed proof tracked as open\nresearch; Lean skeleton in place.",
+    },
+  ],
 });

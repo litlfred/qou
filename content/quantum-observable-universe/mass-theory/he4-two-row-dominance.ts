@@ -84,4 +84,10 @@ export default proposition({
     "f1-fingerprint",
     "verified-empirically",
   ],
+  authorNotes: [
+    {
+      kind: "status",
+      body: "The proposition is verified at 50-dps numerical precision in the\ncompanion witness. The Lean formalisation follows the conditional-\nclass pattern (CLAUDE.md §3b-cond): the witness-verified\n$86.6\\,\\%$ figure is encoded as a class\n`HasHe4TwoRowDominance` whose only `sorry` is the empirical\ninstance, and downstream propositions such as\n`rem:he4-magic-shell-fingerprint`\ntake this class as a `[HasHe4TwoRowDominance]` typeclass\nhypothesis.",
+    },
+  ],
 });

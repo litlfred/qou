@@ -199,11 +199,3 @@ Candidate refinements:
 
 These extensions are flagged for follow-up under the
 `conj:alpha-k-categorical-closure` proposal.
-
-## Status
-
-**Sign-character weighting formalized as a proposition** (this
-block) — the qualitative pattern (1, 0, −1) is now a theorem
-backed by the per-irrep closed forms from  and the
-explicit $S_3$ character values. **Magnitude closure remains
-open** and is the natural next research question.

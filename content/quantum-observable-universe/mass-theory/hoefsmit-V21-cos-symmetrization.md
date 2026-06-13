@@ -113,16 +113,3 @@ and the existing `hecke_characters.build_seminormal_matrices` infrastructure):
 After symmetrization the V_(2,1) contribution combines with the 1-d
 contributions to give $Q_\beta = Q_\beta^A \cdot \cos((z-1)h/2)$ at
 the cos-resummation level (305 ppm residual against CODATA).
-
-## Status
-
-- **The Hoefsmit V_(2,1) matrices are explicit closed forms in $q$**:
-  $d_1 = q^3/(q^2+1), d_2 = -q^{-1}/(q^2+1), b^2 = d_1 d_2 + 1$.
-  These are *substrate-derivable* — no empirical inputs.
-- **The cos-symmetrized character is conditional** on
-  [`prop:q-beta-cos-resummation`](#prop:q-beta-cos-resummation)'s
-  eigenphase identification.
-- **The full decomposition is verified bit-exact at 50 dps** via
-  [`probe_q_beta_three_irrep_closed_form.py`](../../folio-assistant/computations/probe_q_beta_three_irrep_closed_form.py)
-  and
-  [`probe_q_beta_1d_irrep_universal.py`](../../folio-assistant/computations/probe_q_beta_1d_irrep_universal.py).

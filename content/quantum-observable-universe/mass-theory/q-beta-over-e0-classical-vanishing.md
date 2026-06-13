@@ -71,17 +71,3 @@ Both routes converge on the same structural conclusion: the bare
 substrate scale $Q_A$ predicts $Q_\beta$ to $0.168\%$ CODATA-free, and
 the remaining sub-ppb correction is the $c_k$ ladder whose
 normalization is *not* the SDP-constraint scalar $S = Q_\beta/E_0$.
-
-## Status
-
-**Theorem (this proposition).** Sorry-free Lean proof in
-[`q-beta-over-e0-classical-vanishing.lean`](q-beta-over-e0-classical-vanishing.lean)
-— one-line `ring` proof of the numerator vanishing, plus an `S(q=1) = 0`
-corollary in `Field R`.
-
-**Open downstream.** The $c_k$ recursion from the operator-valued
-$N{=}3$ witness's symbolic $Q_A(q) \cdot \cos(\alpha_{\text{eff}}(q))$
-form is the remaining 1 ppQ keystone. The categorical f-construction
-of [`rem:markov-trace-inductive-limit`](../braids-and-knots/markov-trace-inductive-limit.md)
-provides the framework; the missing piece is the symbolic
-$\alpha(q)$ closed form.

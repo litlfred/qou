@@ -104,14 +104,3 @@ residual that lives at level $n+1$. Iterating gives the jet
 ascension; the geometric tail bound from
 [`prop:jet-tower-convergence`](#prop\:jet-tower-convergence)
 controls $R_N$.
-
-## Status
-
-**Provable.** The level-internal half (scalars commute) is
-[`lem:vhat-pair-commutation-trace`](#lem\:vhat-pair-commutation-trace).
-The inter-level half (operator lift, $\widehat U \widehat V =
-q\,\widehat V \widehat U$) is the operator content of the
-brane-tower :refterm[descent]{#descent} involution; explicit Lean formalization
-deferred to the :refterm[descent]{#descent} involution's quantization, where
-$\hat\tau_n$ is realized as a level-shift operator on
-$A_{n+1} = A_n \otimes \Omega^1(A_n)$.

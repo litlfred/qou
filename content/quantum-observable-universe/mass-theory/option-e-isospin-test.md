@@ -156,25 +156,3 @@ W_{c^{\mathrm{sym}}}({}^3\mathrm{He})$ at $\sim 10^{-10}$,
 Option E^sym is the structurally-correct per-block weight that
 respects both the EM-localisation theorem and the Hopf-antipode
 invariance.  Tracked here as future work.
-
-## Status
-
-**Empirical falsification, expected outcome.**  The probe was
-designed to *test* whether Option E preserves the Hopf-antipode
-invariance under canonical $\bowtie_K$-coupled words, and the
-result is a clean **no** (relative split $\sim 19$).  The
-explanation is structural (transpose-asymmetric $c_\lambda$), not
-numerical, so the result is robust under precision changes.
-
-The witness assertion
-`option_e_breaks_S_invariance_as_structurally_expected` in
-[`option-e-isospin-probe.witness.json`](../../../folio-assistant/computations/probes/option-e-isospin-probe.witness.json)
-is **true** when $\Delta W_c > 10^{-3}$ — i.e., it *passes* when
-the falsification fires.  CI therefore sees a clean 1/1 PASS even
-though the underlying mathematical claim is the *opposite* of
-isospin-invariance.  Downstream audits should treat this as a
-**structural finding** (Option E is not σ-/$S$-invariant) and
-route any binding-energy claim through the symmetrised variant
-suggested above or through the Markov-trace observable (which IS
-invariant per
-[Hopf-antipode invariance](#prop:spin-involution-lp-dual-invariance)).

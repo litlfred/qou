@@ -34,4 +34,10 @@ export default conjecture({
     "numerical-witness",
     "50-digit-precision",
   ],
+  authorNotes: [
+    {
+      kind: "status",
+      body: "**Numerically discharged at 50 digits via mpmath** (witness above).\n**Conjectural** as a structural identification of *the* depth-2\ngrouplike value with Vol(4_1), conditional on\n[`conj:gb-depth-period-correspondence`](#conj:gb-depth-period-correspondence).\nThe witness rules out coarse numerical drift to relative precision\n$\\sim 10^{-37}$.\n\nA future cross-validation at full 50-digit precision would compute\n$\\mathrm{Cl}_2(\\pi/3)$ via Lobachevsky integral\n$-\\int_0^{\\pi/3} \\log|2\\sin t|\\,dt$ using `mpmath.quad`, independent\nof the polylog series machinery — currently deferred.",
+    },
+  ],
 });

@@ -93,19 +93,3 @@ seminormal form
 and the explicit $e_\lambda$ formula
 ([`prop:explicit-central-idempotent`](#prop:explicit-central-idempotent))
 allow the bridge to be computed cell-by-cell.
-
-### Status
-
-**Open.** The bridge map $d_{\mathrm{II}}$ is conjectural; the
-self-conjugate $\to$ depth-$2$ assignment is verified on the
-figure-8 row
-([`conj:bring-figure-eight-depth-2-witness`](#conj:bring-figure-eight-depth-2-witness));
-chiral $\to$ depth-$3$ requires the trilog witness
-([`conj:bring-trilog-depth-3-witness`](#conj:bring-trilog-depth-3-witness))
-or a Chern–Simons computation on $3_1$ or $5_2$.
-
-**Discharge target.** Verify three rows of the prediction table at
-$n = 4$: $(2,2)$, $(3,1) + (2,1,1)$ pair, $(4) + (1,1,1,1)$ pair.
-The first is in hand; the second requires depth-3 trilog matching;
-the third is *the hadron orientation pair* in the QOU registry
-(proton/anti-proton bar pairing).

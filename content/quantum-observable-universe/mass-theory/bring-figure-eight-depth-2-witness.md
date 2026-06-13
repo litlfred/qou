@@ -66,21 +66,6 @@ the paper are consistent with the depth-2 reading:
   [`rem:figure-8-archimedean-illustration`](#rem:figure-8-archimedean-illustration)).
 - Both factor through the Bloch–Wigner dilogarithm at a Bring shape
   parameter — exactly the depth-2 grouplike of $\mathcal{H}_q$.
-
-### Status and falsifiability
-
-**Numerically discharged at 50 digits via mpmath** (witness above).
-**Conjectural** as a structural identification of *the* depth-2
-grouplike value with Vol(4_1), conditional on
-[`conj:gb-depth-period-correspondence`](#conj:gb-depth-period-correspondence).
-The witness rules out coarse numerical drift to relative precision
-$\sim 10^{-37}$.
-
-A future cross-validation at full 50-digit precision would compute
-$\mathrm{Cl}_2(\pi/3)$ via Lobachevsky integral
-$-\int_0^{\pi/3} \log|2\sin t|\,dt$ using `mpmath.quad`, independent
-of the polylog series machinery — currently deferred.
-
 ### Cross-reference: deeper-depth Bring instances (open)
 
 The keystone predicts analogous numerical witnesses at every depth:

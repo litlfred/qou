@@ -114,26 +114,3 @@ the formula yields
 $$\mathrm{shift}_{\mathrm{NF}}(\beta_{\mathrm{atomic}}(Z, N)) = 18Z + 21N + 1,$$
 
 matching the empirical W-3 closed form $D(u) = 2^{2A+1} \cdot u^{18Z + 21N + 1} \cdot (1+u^2)^{3A-1}$ exactly.
-
-## Status of remaining work
-
-- **Sub-lemma 2.1** is established categorically in [`docs/audits/-sub-lemma-2-1-categorical-proof.md`](../../../docs/audits/-sub-lemma-2-1-categorical-proof.md). The block decomposition of $\rho_\lambda(I)$ uses standard branching (Macdonald §I.5) + Hoefsmit seminormal form, with off-diagonal Case-B contributions shown to vanish in the trace.
-- **Lean formalisation of $T_1$ and $T_3$**: see [`confinement-nf-partial-proof.lean`](#) — currently `sorry`-stubs against an LP-duality library; routine integration with Mathlib's LP infrastructure once it lands.
-- The atomic n-context shifts $\mathrm{shift}_{\mathrm{NF}}(\mathcal{B}_p) = 18$ and $\mathrm{shift}_{\mathrm{NF}}(\mathcal{B}_n) = 21$ are derived in commit [`2f186ebc9`](https://github.com/litlfred/qou/commit/2f186ebc9) on `claude/improve-charge-precision-AXKIA`. The coefficients emerge as **per-NEW-nucleon additive contributions**:
-
-| Per new nucleon | $\Delta\sigma$ | $\Delta\sigma^{-1}$ | $\Delta$avg | $\Delta$total generators | $\Delta$pole order | $\Delta$cancellation | **$\Delta$shift** |
-|---|---:|---:|---:|---:|---:|---:|---:|
-| +proton | +7 | +3 | +2 | +12 | +9.0 | +3.0 | **+18** |
-| +neutron | +5 | +5 | +2 | +12 | +10.5 | +1.5 | **+21** |
-
-   Verified at all 6 atomic transitions D$\to$T, D$\to$${}^{3}$He, T$\to$${}^{4}$He, ${}^{3}$He$\to$${}^{4}$He, ${}^{4}$He$\to$${}^{5}$Li, ${}^{5}$Li$\to$${}^{6}$Li. Per-new-proton = 18 and per-new-neutron = 21 hold **independent of the host nucleus**, giving the additive linearity in (Z, N) that the empirical formula encodes.
-
-## Combined status of the W-3 D(u) closed form
-
-| Factor | Status |
-|---|---|
-| $2^{2A+1}$ | **Fully proved** (averaged-crossing count, this branch) |
-| $(1 + u^2)^{3A-1}$ | **Fully proved** (Markov $z^{n-1}$, this branch) |
-| $u^{18Z + 21N + 1}$ | **Categorically proved** (Sub-lemma 2.1 is now established categorically in the audit doc above; combined with the AXKIA-derived per-new-nucleon (18, 21, 1) decomposition and the LP duality of Theorems $T_1$ and $T_3$, all factors are categorically grounded.  Lean formalisation of $T_1$, $T_3$ remains as routine integration with Mathlib's LP-duality library — three `sorry`s in [`confinement-nf-partial-proof.lean`](#)) |
-
-The W-3 D(u) closed-form proof is now categorically complete (3/3 factors derived).  Sub-lemma 2.1 — the previously-open Hecke-rep-theory step — is established in the [audit doc](../../../docs/audits/-sub-lemma-2-1-categorical-proof.md), and the per-new-nucleon (18, 21, 1) decomposition is independently derived on the AXKIA branch.  What remains is purely the Lean formalisation: three `sorry`s in [`confinement-nf-partial-proof.lean`](#) are routine integration with Mathlib's LP-duality library.

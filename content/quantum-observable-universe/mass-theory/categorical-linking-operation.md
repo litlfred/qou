@@ -491,25 +491,6 @@ the form used in
 for the EW carriers $W \leftrightarrow \sigma_1^4, Z
 \leftrightarrow \sigma_3^6, H \leftrightarrow \sigma_5^8$ in
 $B_6$.
-
-### Status
-
-**Open.** The categorical content above is internally
-consistent with the ribbon-category framework, but each of the
-five properties (linearity, reduction at $k=0$, multiplicativity,
-trace-cut symmetry, bar-involution compatibility) requires a
-formal proof in the QOU substrate-category. To promote to a
-`proposition`:
-
-1. **Construct $\mathrm{Lk}_R^{(k)}$** as a concrete morphism in
-   $\mathbf{C}$ using the trace-cut formula above.
-2. **Prove the five properties** above from the rigid-monoidal-
-   category axioms + the Frobenius-trace structure on $A$.
-3. **Verify the disjoint-strand-pair reduction** matches the
-   Hoefsmit identification at $n = 6$.
-4. **Discharge the bar-involution compatibility** by direct
-   computation in $H_n(q)$ (path-α-Bring eigenvalue analysis).
-
 ### Audit-flag impact
 
 If discharged, this conjecture supplies the categorical

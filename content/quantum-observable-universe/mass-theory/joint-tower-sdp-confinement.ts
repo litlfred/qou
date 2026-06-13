@@ -25,4 +25,10 @@ export default proposition({
     witness: "folio-assistant/computations/d-from-scratch.witness.json",
     status: "verified",
   },
+  authorNotes: [
+    {
+      kind: "status",
+      body: "See [Table 2](#tbl:joint-tower-sdp-confinement-table2-data).\n\nThe certificate format (Wedderburn block $\\times$ filtration grade $\\times$ jet\nposition $\\to$ coefficient) is identical at every scale; only the variable\ncount grows.",
+    },
+  ],
 });

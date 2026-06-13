@@ -120,19 +120,3 @@ Identifying *any one* of the three candidates explicitly would:
    currently records the algebraic value; geometric identification
    would let it record a *measurement target* (e.g. SnapPy CS
    computation on a specific knot) and verify equality at 50 dps.
-
-### Status
-
-**Open across all three candidates.** Probably the deepest unsolved
-problem in this paper's depth-3 framework. Connected to:
-Goncharov's motivic conjecture, Zagier's polylogarithm conjecture,
-the volume-CS complexification of hyperbolic 3-mfds, and Galois
-descent on multiple polylogs.
-
-**Smallest viable next step**: numerical SnapPy CS computation on
-the seven Bring-natural torus-knot generators
-$\{T(2, 3), T(2, 5), T(2, 7), T(2, 9), T(3, 4), T(3, 5), T(5, 2)\}$,
-fit the resulting numbers as $\mathbb{Q}$-linear combinations of
-$\{\zeta(3), \mathrm{Cl}_3(2\pi/5), \mathrm{Cl}_3(2\pi \cdot 2/5)\}$
-and report which torus knot has the cleanest match. This is a 1-2-day
-numerical project and would discriminate among the candidates.

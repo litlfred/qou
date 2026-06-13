@@ -145,16 +145,3 @@ H_{3A}(q)'s Wedderburn block at the binding's smallest non-trivial
 irrep.  Lean target: a theorem deriving $(p_A, k_A)$ from a Hecke-
 trace minimisation principle, analogous to the meson force-carrier
 derivation queued at `prop:meson-color-tube-uniqueness`.
-
-## Status
-
-This proposition is **proved conditional on the
-`BindingPerRepReebPhase` + `BindingForceCarrierKnot` class
-instances**.  The per-rep Reeb phase axiom is the substrate identity
-(audit-confirmed); the force-carrier knot identification per A is
-the genuine open math.  Sorry-free Lean conditional on both classes.
-
-Closes the $A\ge3$ binding entry in
-[`docs/uniqueness-theorems-backlog.md`](../../../docs/uniqueness-theorems-backlog.md)
-as a structurally identified item, parallel to the meson + lepton
-α_shift specialisations.

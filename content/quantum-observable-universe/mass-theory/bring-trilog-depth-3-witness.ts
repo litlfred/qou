@@ -30,4 +30,10 @@ export default conjecture({
     "50-digit-precision",
     "numerical-witness",
   ],
+  authorNotes: [
+    {
+      kind: "status",
+      body: "**Numerically discharged at 50 digits via functional-equation\ncross-validation.** Depth correspondence verified by construction\n(single $\\mathrm{Li}_3$ factor $\\Rightarrow$ depth 3 on both sides).\nGeometric realisation as a hyperbolic-4-manifold or Chern–Simons\ninvariant is **open**.",
+    },
+  ],
 });

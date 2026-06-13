@@ -125,17 +125,3 @@ Witness: [`Term6-scaling-heavy.witness.json`](../../../docs/audits/-Term6-scalin
   derivation requires the operator structure of $\Phi_n$ on
   self-conjugate isotypical Wedderburn blocks, which is the
   content of `prop:categorical-neutrality-saturated-shells`.
-
-## Status
-
-**Structurally-shaped, empirically-calibrated.** The two
-calibration parameters $(\alpha, \beta)$ improve on the
-five-parameter Bethe–Weizsäcker SEMF, with $R^2 = 0.84$ across
-$A = 2$–$58$. A genuine categorical derivation of $\alpha$ and
-$\beta$ from the framework's first-principles structures
-remains the open work needed to promote this result to an
-**unconditional** proposition.
-
-The 16-atom panel demonstrates the formula's reach; extension
-to medium-heavy nuclei ($A = 100$–$200$) will further constrain
-$\alpha$ and may expose any structural breakdown.

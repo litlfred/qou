@@ -143,15 +143,6 @@ invariant
 $M(\mathfrak{H}) = \rho(\mathfrak{H}) \cdot \mathrm{tr}_M(T_w(\mathfrak{H}))$
 for the atom-knot mass derivation
 ([prop:atom-knot-mass-derivation](#prop:atom-knot-mass-derivation)).
-
-## Implementation roadmap
-
-See [Table 2](#tbl:joint-tower-sdp-confinement-table2-data).
-
-The certificate format (Wedderburn block $\times$ filtration grade $\times$ jet
-position $\to$ coefficient) is identical at every scale; only the variable
-count grows.
-
 ## Refs
 
 - Confinement SDP: [prop:confinement-sdp](#prop:confinement-sdp).

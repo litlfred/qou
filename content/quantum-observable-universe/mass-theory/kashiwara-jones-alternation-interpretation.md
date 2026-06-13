@@ -136,10 +136,3 @@ The "switching back and forth" is therefore not a defect of the framework
 but a **feature** — the τ_M observable is structurally a *bridge* between
 the two moduli spaces, and the precision ladder explicitly tracks the
 interleaved contributions.
-
-## Status
-
-This is a **structural interpretation remark**, not a new theorem. It
-captures the rep-theoretic picture motivating the empirical alternation
-observed in [`prop:q-beta-categorical-precision-ladder`](#prop:q-beta-categorical-precision-ladder).
-The remark interprets but does not introduce new logical content.

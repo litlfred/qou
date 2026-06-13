@@ -77,12 +77,3 @@ populate it:
 - [`rem:k-theory-period-rosetta`](#rem:k-theory-period-rosetta)
   — Beilinson regulator on $K_{2n-1}^{\mathrm{ind}}(\overline{\mathbb{Q}})$
   matches the depth-$n$ axis.
-
-### Status
-
-**Definition block.** Provides the framework symbol; downstream
-blocks make claims about its structure. No proof obligations here
-beyond well-definedness, which follows from the
-existence of the depth filtration ([keystone](#conj:gb-depth-period-correspondence))
-and the explicit central idempotents
-([`prop:explicit-central-idempotent`](#prop:explicit-central-idempotent)).

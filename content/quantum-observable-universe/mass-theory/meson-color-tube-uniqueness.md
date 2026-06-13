@@ -85,17 +85,3 @@ q-integer indices.  The α_shift identification embeds the meson
 into the same universal pole-order chain as 1/α_EM (#1444) and the
 Bring color-tube p-n averaging weight (merged #1445), per the
 audit doc above.
-
-## Status
-
-This proposition is **proved conditional on the
-`MesonGMORFactorization` class instance** (the GMOR fusion form
-itself — established empirically in #1396 to 203 ppm, awaiting
-the resolvent derivation).  The α_shift indexing is fully derived
-via the default `MesonForceCarrierPair` instance, which
-discharges sorry-free from `prop:alpha-shift-torus-knot`.
-
-Closes the meson row of the post-#1422 fitting-gap table
-(audit doc Item 4 of the α_shift universal chain), converting
-the $1098\times$ $m_K/m_\pi$ miss from "open audit finding" to "derived
-modulo shared residue normalisation".

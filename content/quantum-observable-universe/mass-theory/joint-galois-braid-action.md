@@ -102,20 +102,6 @@ For the figure-8 ($\lambda_K = (2, 2)$ self-conjugate cell):
 Joint action stabilises the entire stratum by definition —
 **consistent with the prediction** that the figure-8 is the
 canonical fixed point for both groups in $\mathcal{H}_q^{(2, K)}$.
-
-### Status
-
-**Open.** The joint commutativity is conjectural but mathematically
-natural: motivic-Galois acts on the period side; braid-group acts
-on the algebraic-cell side; they should commute since they touch
-disjoint structure.
-
-**Discharge target.** Verify on a non-trivial $(n, K)$ pair where
-both actions are non-trivial. The simplest candidate: $5_2$ (chiral
-hyperbolic, 4-strand braid, depth-2 grouplike pairing) — bar action
-on $5_2$ swaps the chiral cell pair, braid action on $H_4(q)$
-permutes Wedderburn blocks; commutativity prediction is testable.
-
 ### Significance
 
 If discharged, the joint action gives:

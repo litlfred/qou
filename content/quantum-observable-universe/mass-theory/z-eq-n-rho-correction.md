@@ -65,32 +65,3 @@ ruling out any Z$\leftrightarrow$N exchange-symmetric closed form and pointing t
 a **Coulomb-asymmetry** correction
 (cf. [Coulomb-q-Hecke audit](../../../docs/audits/-coulomb-q-hecke-principled.md))
 that the substrate alone cannot absorb.
-
-### Status
-
-This conjecture is an **empirical regularity** at the $10^{-3}$
-precision level — falsifiable by any single Z=N atom whose binding
-deviates from the formula by more than $10^{-3}$. The natural
-falsification target is **${}^{20}$Ne** ($n_\alpha = 5$) once its native
-non-α-cluster knot pairing is identified.
-
-A categorical derivation requires three lemmas:
-
-1. **L-1** (total-host-count): the Kashaev coefficient at finite $q$
-   is intrinsically $\rho_{\rm struct} + A - [A]_q$, with the
-   integer $\rho_{\rm struct}$ as its $q\to 1$ limit. **Open** —
-   the proposed identification of $[A]_q$ as a Markov-trace
-   evaluation has not been written up yet.
-2. **L-2** (selective q-deformation): the Wedderburn-block
-   multiplicity $\rho_{\rm struct}$ is q-independent on the generic
-   locus. **Essentially classical** — proof sketch deferred to a
-   follow-up audit.
-3. **L-3** (Z=N decoupling): the isospin-asymmetry correction
-   $\delta_{\rm asym}(Z, N)$ vanishes at $Z = N$. Should follow from
-   the Z$\leftrightarrow$N substrate symmetry; **tractable**.
-
-This block is the **conjectural form**; downstream theorems consume
-it via the Lean class
-`QOU.BraidKnot.ZeqNRhoCorrection` (resolved via the `lean.ref` field on this block; the `.lean` source lives at `content/quantum-observable-universe/lean/QOU/BraidKnot/ZeqNRhoCorrection.lean`) per
-the conditional-class policy of
-[CLAUDE.md §3b](../../../CLAUDE.md).
