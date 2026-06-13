@@ -164,6 +164,24 @@
         "reviewed_at": "2026-06-07T01:35:00.961Z",
         "reviewed_sha": "5b22f37e27e74b674fb6b50fae73e0792e7212e2",
         "notes": "Clear: binding B(A)=m_e.rho_0.alpha_shift(T(p_A,k_A)) routed through proved alpha_shift=k(p-1); §3b-cond class structure (BindingPerRepReebPhase + BindingForceCarrierKnot) listed up front."
+      },
+      {
+        "field_hash": {
+          "md": "1d5376d18a38",
+          "ts": "452c4d3b4759",
+          "lean": "a2268765afda"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:16:12.963Z",
+        "reviewed_sha": "246bcaea7cf422ad020e754140fd6af0e4c71345",
+        "notes": "Auto-drained by agent"
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -188,6 +206,24 @@
         "reviewed_at": "2026-06-07T01:35:01.001Z",
         "reviewed_sha": "5b22f37e27e74b674fb6b50fae73e0792e7212e2",
         "notes": "Sorry-free conditional thm binding_unique_via_alpha_shift + binding_subsingleton (funext/rw). But the substantive (p_A,k_A) identification is explicitly 'Phase 3 open math'; instance hardcodes candidate if A=2..4 values, not derived."
+      },
+      {
+        "field_hash": {
+          "md": "1d5376d18a38",
+          "ts": "452c4d3b4759",
+          "lean": "a2268765afda"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:16:12.963Z",
+        "reviewed_sha": "246bcaea7cf422ad020e754140fd6af0e4c71345",
+        "notes": "Auto-drained by agent"
       }
     ],
     "proof-rater-novelty": [
@@ -212,6 +248,24 @@
         "reviewed_at": "2026-06-07T01:35:01.034Z",
         "reviewed_sha": "5b22f37e27e74b674fb6b50fae73e0792e7212e2",
         "notes": "Novel unification: per-rep q-Reeb rotation phase = alpha_shift pole order = Yekutieli boundary holonomy; A>=3 analogue of meson/lepton alpha_shift specialisations."
+      },
+      {
+        "field_hash": {
+          "md": "1d5376d18a38",
+          "ts": "452c4d3b4759",
+          "lean": "a2268765afda"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:16:12.963Z",
+        "reviewed_sha": "246bcaea7cf422ad020e754140fd6af0e4c71345",
+        "notes": "Auto-drained by agent"
       }
     ],
     "proof-statement-integrity": [
@@ -232,6 +286,24 @@
         "reviewed_at": "2026-06-07T01:35:01.068Z",
         "reviewed_sha": "5b22f37e27e74b674fb6b50fae73e0792e7212e2",
         "notes": "Sorry-free §3b-cond; classes honestly axiomatise the open force-carrier-knot input (candidates, not suspect axioms); md/Lean both flag Phase-3 openness. No stub."
+      },
+      {
+        "field_hash": {
+          "md": "1d5376d18a38",
+          "ts": "452c4d3b4759",
+          "lean": "a2268765afda"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:16:12.963Z",
+        "reviewed_sha": "246bcaea7cf422ad020e754140fd6af0e4c71345",
+        "notes": "Auto-drained by agent"
       }
     ],
     "proof-no-bare-sorries": [
@@ -1249,5 +1321,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-13T05:16:12.963Z"
 }
