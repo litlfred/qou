@@ -82,7 +82,10 @@ where $c_4 = -0.97157$ was a fit).
   (bar-ODD for odd $j$, bar-EVEN for even $j$), *independent of which
   modes are active*. This is the structural law behind the ladder's
   parity bookkeeping (bar-even seed $c_2 = -1$ driven by a bar-odd
-  $a_1 = -c_3$). Proof: $e_j(-x) = (-1)^j e_j(x)$ (`esymm_neg`).
+  $a_1 = -c_3$). Proof: $e_j(-x) = (-1)^j e_j(x)$ (`esymm_neg`). The corollaries
+  `esymm_bar_odd` / `esymm_bar_even` specialise the alternation to the explicit
+  forms $\overline{a_j} = -a_j$ for odd $j$ (the $\zeta$-carrying rungs $a_1, a_3$)
+  and $\overline{a_j} = a_j$ for even $j$ (the seed rung $c_2 = -1$).
 - The **cyclotomic bar-stability lemmas** `cyclotomic_two_bar_stable`,
   `cyclotomic_three_bar_stable`, `cyclotomic_six_bar_stable` (sorry-free):
   each cyclotomic factor $\Phi_d$ ($d \in \{2,3,6\}$, $\varphi(d) = 1,2,2$) is
@@ -91,6 +94,14 @@ where $c_4 = -0.97157$ was a fit).
   formal backing for the period-3/$\zeta_6$ closure: because $\overline{\Phi_6}$
   is a unit multiple of $\Phi_6$, the bar-odd projection of a single
   $\zeta_6$-carrier still carries $\zeta_6$ (no cross-mode cancellation needed).
+- The **general prime case** `cyclotomic_prime_bar_stable` (sorry-free): for
+  *every* prime $p$, $\Phi_p(1/q)\,q^{p-1} = \Phi_p(q)$ — subsuming the $d=2,3$
+  lemmas above and extending to $p = 5, 7, 11, \dots$. Because
+  $\Phi_p = \sum_{i<p} X^i$, the identity is the index reflection
+  $\sum_{i<p} q^{p-1-i} = \sum_{i<p} q^i$, with no per-prime computation. The
+  remaining composite $d$ (4, 8, 9, …) require the general palindrome
+  $\operatorname{reverse}(\Phi_d) = \Phi_d$ (not yet in Mathlib); $\Phi_6$ above
+  is the one composite the program uses.
 - A companion compute scaffold
   ([`qbeta_c_k_recursion_scaffold.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/qbeta/qbeta_c_k_recursion_scaffold.py))
   demonstrating the recursion machinery on toy depth-1 and depth-2

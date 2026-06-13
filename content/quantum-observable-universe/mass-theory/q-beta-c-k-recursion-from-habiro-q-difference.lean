@@ -225,4 +225,25 @@ theorem cyclotomic_six_bar_stable {R : Type*} [Field R] (q : R) (hq : q ≠ 0) :
   field_simp
   ring
 
+open Polynomial in
+/-- **General prime case** — subsumes `cyclotomic_two_bar_stable` and
+    `cyclotomic_three_bar_stable` (and every other prime `p = 5, 7, 11, …`): for
+    any prime `p`, `Φ_p` is self-reciprocal, `Φ_p(1/q)·q^{p-1} = Φ_p(q)`
+    (`φ(p) = p-1`). Because `Φ_p = ∑_{i<p} X^i` (`cyclotomic_prime`), the identity
+    is the index reflection `∑_{i<p} q^{p-1-i} = ∑_{i<p} q^i`
+    (`Finset.sum_range_reflect`) — no per-prime computation needed. The remaining
+    composite `d` (4, 6, 8, 9, …) need the general palindrome
+    `reverse (cyclotomic d) = cyclotomic d`, which Mathlib does not yet carry;
+    `cyclotomic_six_bar_stable` covers the one composite (`ζ_6`) the program uses. -/
+theorem cyclotomic_prime_bar_stable {R : Type*} [Field R] (p : ℕ) [Fact p.Prime]
+    (q : R) (hq : q ≠ 0) :
+    (cyclotomic p R).eval (1 / q) * q ^ (p - 1) = (cyclotomic p R).eval q := by
+  rw [one_div, cyclotomic_prime, eval_finset_sum, eval_finset_sum, Finset.sum_mul]
+  simp only [eval_pow, eval_X]
+  rw [← Finset.sum_range_reflect (fun i => q ^ i) p]
+  refine Finset.sum_congr rfl (fun i hi => ?_)
+  rw [Finset.mem_range] at hi
+  rw [inv_pow, pow_sub₀ q hq (by omega : i ≤ p - 1)]
+  field_simp
+
 end QOU.QBeta.CKRecursion
