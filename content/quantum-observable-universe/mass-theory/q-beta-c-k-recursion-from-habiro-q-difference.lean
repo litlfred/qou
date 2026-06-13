@@ -42,6 +42,9 @@ import Mathlib.Data.Finset.Powerset
 import Mathlib.Data.Fin.Basic
 import Mathlib.Data.Fintype.Basic
 import Mathlib.Tactic.Ring
+import Mathlib.RingTheory.Polynomial.Cyclotomic.Basic
+import Mathlib.RingTheory.Polynomial.Cyclotomic.Expand
+import Mathlib.Tactic.FieldSimp
 
 namespace QOU.QBeta.CKRecursion
 
@@ -159,5 +162,50 @@ theorem esymm_bar_parity {R : Type u} [CommRing R] {n : ℕ} (bar : R →+* R)
     refine Finset.sum_congr rfl fun S _ => ?_
     rw [map_prod]
   rw [hmap, show (fun i => bar (r i)) = (fun i => - r i) from funext hodd, esymm_neg]
+
+/-! ## Cyclotomic bar-stability — the lemma behind ζ₆-closed
+
+  The period-3/ζ₆ closure (root-of-unity residue program, #2240) rests on a
+  general fact: every cyclotomic polynomial `Φ_d` (`d > 1`) is **self-reciprocal**,
+  `bar(Φ_d) = q^{-φ(d)}·Φ_d` under the fibre bar involution `q ↦ q⁻¹`. Cleared of
+  denominators this reads `Φ_d(1/q)·q^{φ(d)} = Φ_d(q)`. The lemmas below verify it
+  for the qbeta-relevant `d ∈ {2, 3, 6}` (`φ = 1, 2, 2`) — in particular `Φ_6`,
+  the period-3 carrier — from Mathlib's explicit forms `cyclotomic_two/three/six`.
+
+  **Corollary (divisibility bar-invariance), narrative.** Since `bar(Φ_d)` is a
+  unit multiple (`q^{-φ(d)}`) of `Φ_d`, one has `Φ_d ∣ X ⟺ Φ_d ∣ bar(X)`, hence
+  `Φ_d ∣ (X)_odd := (X - bar X)/2` whenever the odd part is nonzero. That is why
+  the bar-ODD projection of a single ζ₆-carrier still carries ζ₆ — closing
+  period-3/ζ₆ with no cross-mode cancellation.
+
+  Ref: docs/audits/2026-06-13-qbeta-root-of-unity-residue-program.md -/
+
+open Polynomial in
+/-- `Φ_2` is self-reciprocal: `Φ_2(1/q)·q = Φ_2(q)` (`φ(2)=1`). -/
+theorem cyclotomic_two_bar_stable {R : Type*} [Field R] (q : R) (hq : q ≠ 0) :
+    (cyclotomic 2 R).eval (1 / q) * q ^ 1 = (cyclotomic 2 R).eval q := by
+  rw [cyclotomic_two]
+  simp only [eval_add, eval_X, eval_one, pow_one]
+  field_simp
+  ring
+
+open Polynomial in
+/-- `Φ_3` is self-reciprocal: `Φ_3(1/q)·q² = Φ_3(q)` (`φ(3)=2`). -/
+theorem cyclotomic_three_bar_stable {R : Type*} [Field R] (q : R) (hq : q ≠ 0) :
+    (cyclotomic 3 R).eval (1 / q) * q ^ 2 = (cyclotomic 3 R).eval q := by
+  rw [cyclotomic_three]
+  simp only [eval_add, eval_pow, eval_X, eval_one]
+  field_simp
+  ring
+
+open Polynomial in
+/-- `Φ_6` is self-reciprocal: `Φ_6(1/q)·q² = Φ_6(q)` (`φ(6)=2`) — the period-3/ζ₆
+    carrier whose bar-stability closes the period-3 constraint. -/
+theorem cyclotomic_six_bar_stable {R : Type*} [Field R] (q : R) (hq : q ≠ 0) :
+    (cyclotomic 6 R).eval (1 / q) * q ^ 2 = (cyclotomic 6 R).eval q := by
+  rw [cyclotomic_six]
+  simp only [eval_add, eval_sub, eval_pow, eval_X, eval_one]
+  field_simp
+  ring
 
 end QOU.QBeta.CKRecursion

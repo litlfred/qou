@@ -83,6 +83,14 @@ where $c_4 = -0.97157$ was a fit).
   modes are active*. This is the structural law behind the ladder's
   parity bookkeeping (bar-even seed $c_2 = -1$ driven by a bar-odd
   $a_1 = -c_3$). Proof: $e_j(-x) = (-1)^j e_j(x)$ (`esymm_neg`).
+- The **cyclotomic bar-stability lemmas** `cyclotomic_two_bar_stable`,
+  `cyclotomic_three_bar_stable`, `cyclotomic_six_bar_stable` (sorry-free):
+  each cyclotomic factor $\Phi_d$ ($d \in \{2,3,6\}$, $\varphi(d) = 1,2,2$) is
+  self-reciprocal, $\Phi_d(1/q)\,q^{\varphi(d)} = \Phi_d(q)$, so divisibility by
+  $\Phi_d$ is invariant under the bar involution $q \mapsto q^{-1}$. This is the
+  formal backing for the period-3/$\zeta_6$ closure: because $\overline{\Phi_6}$
+  is a unit multiple of $\Phi_6$, the bar-odd projection of a single
+  $\zeta_6$-carrier still carries $\zeta_6$ (no cross-mode cancellation needed).
 - A companion compute scaffold
   ([`qbeta_c_k_recursion_scaffold.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/qbeta/qbeta_c_k_recursion_scaffold.py))
   demonstrating the recursion machinery on toy depth-1 and depth-2

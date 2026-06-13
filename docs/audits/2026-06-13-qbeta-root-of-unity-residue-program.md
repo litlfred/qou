@@ -235,8 +235,11 @@ lemma), then `bar(e_j) = e_j({−r_λ}) = (−1)^j e_j`, so
 Verified symbolically for `j = 1..4`. This is the structural law behind the
 ladder's parity bookkeeping: the bar-even seed `c_2 = −1` is driven by a bar-odd
 `a_1` (= −c_3), a bar-even `a_2`, a bar-odd `a_3`, …. It is a one-line consequence
-of `e_j(−x) = (−1)^j e_j(x)` (Mathlib-provable; flagged as a formalization
-follow-up — sandbox `elan` is firewalled, so not built here).
+of `e_j(−x) = (−1)^j e_j(x)`, formalized sorry-free in Lean as `esymm_neg` /
+`esymm_bar_parity` (#2240). The cyclotomic bar-stability lemma underpinning the
+ζ₆ closure (`Φ_d` self-reciprocal ⇒ divisibility bar-invariant) is likewise now
+formalized sorry-free as `cyclotomic_{two,three,six}_bar_stable` (#2253, verified
+via direct-`lean` + `LEAN_PATH` against the restored `lake-cache` oleans).
 
 **Concrete carriers.** For the principled depth-3 active set
 `Λ = {(2,1), (2,2), (2,1,1)}` (the bar-odd ζ₂ carrier `(2,1)`, a second ζ₂
