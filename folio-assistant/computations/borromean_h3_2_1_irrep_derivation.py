@@ -222,16 +222,20 @@ def main():
     print(f"\nSimplified: {sp.simplify(β_at_q1)}")
     print(f"Trace: {sp.simplify(β_at_q1.trace())}")
     # At q=1: tr should be... well, the closed form gives tr_M = 1 at h=0 (no correction)
-    # The (2,1) contribution at q=1 should be 0 (since closed form sums to 1 from
-    # the y_(3) + y_(1,1,1) trivial contributions: at q=1, y_(3) = y_(1,1,1) = 1/6 · 1 each)
-
+    #
+    # CORRECTED 2026-06-13 (see docs/audits/2026-06-13-wenzl-trace-
+    # normalization-prop-compute-mismatch.md): the Markov weights y_λ at
+    # q=1 are (y_(3), y_(2,1), y_(1,1,1)) = (1/2, 1/4, 0) — NOT the 1/6
+    # values the earlier scratch below assumed. (1/6, 2/3, 1/6) is the
+    # Plancherel measure w_λ = d_λ²/Σ d_μ², a DIFFERENT object — the exact
+    # w_λ ↔ y_λ conflation flagged in PR #2191 Finding 1.
+    #
     # The closed form formula tr_M = (4+h²-3h⁴-h⁶)/(h²+4)
     # At h=0: 4/4 = 1 ✓
-    # This 1 should split as: y_(3) · 1 + y_(2,1) · tr(β in 2,1) + y_(1,1,1) · 1
-    # At q=1: y_(3) = y_(2,1) = y_(1,1,1) = 1/6 (Schur weights at q=1)
-    # So 1 = 1/6 + y_(2,1) · tr(...) + 1/6 → y_(2,1) · tr(...) = 2/3
-    # If y_(2,1) at q=1 = 2/6 = 1/3 (dim of (2,1) is 2, so Schur weight involves dim)
-    # Then tr(β in 2,1) at q=1 = 2 — equal to the dim! That's the trace of the identity matrix on (2,1)
+    # Split with the CORRECT Markov weights:
+    #   tr_M = y_(3)·χ^(3) + y_(2,1)·χ^(2,1) + y_(1,1,1)·χ^(1,1,1)
+    # At q=1 (h=0), χ^(3) = χ^(1,1,1) = 1 and χ^(2,1) = 2 (the dim), so
+    #   1 = (1/2)·1 + (1/4)·2 + 0·1 = 1/2 + 1/2 = 1 ✓
 
     # OK the derivation chain works in principle. Let me complete it more cleanly with
     # what we KNOW from the Jones polynomial and confirm consistency.
