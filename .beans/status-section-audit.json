@@ -3,150 +3,22 @@
   "directive": "no ## Status / ### Status / TODO / Pending section headers in paper content (owner 2026-06-13)",
   "criterion": "voice-status-section",
   "paper": "quantum-observable-universe",
-  "total_blocks": 10,
-  "total_sections": 18,
+  "total_blocks": 1,
+  "total_sections": 9,
   "by_classification": {
     "todo": 0,
     "substantive": 9,
-    "authorNotes": 9
+    "authorNotes": 0
   },
   "extraction_targets": {
     "todo": ".beans/ (this directory)",
     "authorNotes": "block .ts `authorNotes` field (CLAUDE.md §4d)",
     "substantive": "re-head to a scholarly section title; keep the math"
   },
-  "total_batches": 5,
+  "total_batches": 1,
   "batches": [
     {
       "batch_id": 1,
-      "chapter": "appendix-surreals",
-      "status": "open",
-      "block_count": 1,
-      "blocks": [
-        {
-          "block": "content/quantum-observable-universe/appendix-surreals/casimir-epsilon-vacuum",
-          "kind": "conjecture",
-          "sections": [
-            {
-              "header": "## Status",
-              "line": 243,
-              "classification": "authorNotes",
-              "body_lines": 43,
-              "preview": "**Open.** The conditional implication (modulo plate-mode-count ⏎ existence and scaling) is rigorous and is formalised in ⏎ `CasimirEpsilonVacuum.lean` as a §3b-cond conditional theorem with"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "batch_id": 2,
-      "chapter": "braids-and-knots",
-      "status": "open",
-      "block_count": 1,
-      "blocks": [
-        {
-          "block": "content/quantum-observable-universe/braids-and-knots/zeta8-witness-level2-su2",
-          "kind": "proposition",
-          "sections": [
-            {
-              "header": "## Lean status",
-              "line": 74,
-              "classification": "authorNotes",
-              "body_lines": 6,
-              "preview": "The companion Lean file ⏎ [`zeta8-witness-level2-su2.lean`](https://github.com/litlfred/qou/blob/claude/qbeta-habiro-phi8-interference-2026-06-01/content/quantum-observable-universe/braids-and-knots/zeta8-witness-level2-"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "batch_id": 3,
-      "chapter": "mass-theory",
-      "status": "open",
-      "block_count": 6,
-      "blocks": [
-        {
-          "block": "content/quantum-observable-universe/mass-theory/bring-residue-resolvent",
-          "kind": "proposition",
-          "sections": [
-            {
-              "header": "## Status",
-              "line": 83,
-              "classification": "authorNotes",
-              "body_lines": 4,
-              "preview": "This proposition is **proved conditional on ⏎ `BringResidueAtOrder` class instances at the relevant pole orders**. ⏎ The four specialised theorems above are sorry-free conditional on"
-            }
-          ]
-        },
-        {
-          "block": "content/quantum-observable-universe/mass-theory/conj-lepton-tower-h-n-plus-1-branching",
-          "kind": "conjecture",
-          "sections": [
-            {
-              "header": "## Lean status",
-              "line": 146,
-              "classification": "authorNotes",
-              "body_lines": 13,
-              "preview": "The unifying formula's algebraic content is **Lean-proved** in two places: ⏎ - [`three-halves-structural-factor.lean`](three-halves-structural-factor.lean): ⏎ - Muon: `three_halves_factor_eq_q_brackets` — $(3 + h^2)/(2 +"
-            }
-          ]
-        },
-        {
-          "block": "content/quantum-observable-universe/mass-theory/markov-trace-frobenius-selection",
-          "kind": "proposition",
-          "sections": [
-            {
-              "header": "## Status",
-              "line": 149,
-              "classification": "authorNotes",
-              "body_lines": 7,
-              "preview": "This proposition is **proved** — a structural theorem about the ⏎ representation theory of the Hecke algebra, with no fitting and no ⏎ empirical input.  Uniqueness of $\\tau_M$ as the non-degenerate"
-            }
-          ]
-        },
-        {
-          "block": "content/quantum-observable-universe/mass-theory/mass-side-kernel-formalize-first-gates",
-          "kind": "proposition",
-          "sections": [
-            {
-              "header": "## Status",
-              "line": 104,
-              "classification": "authorNotes",
-              "body_lines": 10,
-              "preview": "**Theorem (this proposition).** Sorry-free Lean class definitions ⏎ ([`mass-side-kernel-formalize-first-gates.lean`](mass-side-kernel-formalize-first-gates.lean)) ⏎ — three parametric $\\S 3\\mathrm{b}$-cond conditional cl"
-            }
-          ]
-        },
-        {
-          "block": "content/quantum-observable-universe/mass-theory/pn-averaging-uniqueness",
-          "kind": "proposition",
-          "sections": [
-            {
-              "header": "## Status",
-              "line": 90,
-              "classification": "authorNotes",
-              "body_lines": 6,
-              "preview": "This proposition is **proved conditional on the ⏎ `ColorFlavorCompatible` class instance**.  No fitting, no ⏎ empirical input: the uniqueness reduces to the pointwise"
-            }
-          ]
-        },
-        {
-          "block": "content/quantum-observable-universe/mass-theory/prop-rigid-monoidal-structural-gap-invariance",
-          "kind": "proposition",
-          "sections": [
-            {
-              "header": "## Status",
-              "line": 142,
-              "classification": "authorNotes",
-              "body_lines": 10,
-              "preview": "The proposition is **conjectural** at the falsifiable-prediction ⏎ level (predictions 1–3 are testable but not yet verified ⏎ exhaustively).  The categorical content (Steps 1–3 of the proof)"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "batch_id": 4,
       "chapter": "predicted-spectra",
       "status": "open",
       "block_count": 1,
@@ -217,27 +89,6 @@
               "classification": "substantive",
               "body_lines": 22,
               "preview": "The conjecture, in its corrected reformulation, becomes: ⏎ > *The archimedean realization functor's restriction to ⏎ > molecular-binding $\\Phi_1$ outputs picks up exactly two factors"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "batch_id": 5,
-      "chapter": "stochastic-mechanics",
-      "status": "open",
-      "block_count": 1,
-      "blocks": [
-        {
-          "block": "content/quantum-observable-universe/stochastic-mechanics/c5-involution-leibniz-decomposition",
-          "kind": "proposition",
-          "sections": [
-            {
-              "header": "## Status",
-              "line": 198,
-              "classification": "authorNotes",
-              "body_lines": 13,
-              "preview": "This decomposition is a **structural identification**, not a ⏎ first-principles derivation. The $-b^2$ and $-1/2$ summands are ⏎ identified categorically, but the proof that the precision-ladder"
             }
           ]
         }

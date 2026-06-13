@@ -195,7 +195,7 @@ and checking whether c_8 has a $1/2$ fingerprint — the probe is
 queued in
 [`folio-assistant/computations/qbeta/qbeta_decay_sdp_extended_ck.py`](../../folio-assistant/computations/qbeta/qbeta_decay_sdp_extended_ck.py).
 
-## Status
+## Discussion
 
 This decomposition is a **structural identification**, not a
 first-principles derivation. The $-b^2$ and $-1/2$ summands are
