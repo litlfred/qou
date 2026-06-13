@@ -122,7 +122,7 @@ theorem unlinkJones_not_nStable (q : ℝ) (hq : 0 < q) (hq1 : q ≠ 1) :
   have h12 := h 1 2
   simp only [unlinkJones, Real.sqrt_one, inv_one] at h12
   norm_num at h12
-  exact hq1 ((quantumDim_eq_two_iff q hq).mp h12)
+  exact hq1 ((quantumDim_eq_two_iff q hq).mp h12.symm)
 
 /-- **Uniqueness.** An n-stable, mode-counting functional whose
 single-mode value is `1` (the Hoefsmit normalisation: one unknot
