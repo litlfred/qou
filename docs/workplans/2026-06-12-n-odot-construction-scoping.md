@@ -74,6 +74,31 @@ identification (grounded in
   definition first.
 - **Effort:** research-grade; do not time-box to a session.
 
+### Stage C progress (2026-06-13)
+
+The interface is now reduced to its minimal data, stopping honestly at
+the two external inputs:
+
+- `PlateModeCountFunctor.ofData` (in `CasimirModeCountFunctor.lean`)
+  exhibits the reduction: a functor instance is *exactly* an
+  area-extensive count function `f` together with a proof its per-area
+  part scales as `−π²/(720 d³)`. Closing Stage C is now precisely
+  "produce `f` + those two proofs" — no further data.
+- The two remaining inputs are named and isolated: (1) the free-field
+  `n³` mode degeneracy and (2) the ζ-regularization of the divergent
+  tower to the `d⁻³` Casimir energy (classical Casimir 1948). Neither
+  is substrate-derived; (2) is not elementary and is not in Mathlib.
+- `casimir_coefficient_eq_zeta_prefactor` ties the one numerical
+  constant the construction rests on (`π²/720`) to the machine-checked
+  Stage-B value `(π²/6)·ζ(−3)` (`riemannZeta_neg_three_re`), so that
+  constant is no longer free.
+
+**Still open (the genuine blocker):** the categorical functor itself —
+the Yekutieli-homotopy lift producing `f` from plate-bounded
+ambient-isotopy classes, and a substrate derivation of the `n³`
+degeneracy (input 1), which is Subgoal-2 / research-grade and declined
+unless the owner reverses (see `docs/precision-goals.md`).
+
 ## Stage D — interacting sector and the 1/d power (research-grade)
 
 Extend the Stage-C functor to degree-≥2 closures, weighting each mode
