@@ -744,7 +744,28 @@
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "bdbdef9d9627",
+          "ts": "e9d3b15aef61"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "quantum-observable-universes.ts:67-68 — proof listed immediately after its lemma 'su2-emergence-dagger-unitarity' in sec:emergence-volume-rigidity; .ts uses ['lem:su2-emergence-dagger-unitarity']; .md:33 concludes 'Hence G ⊆ U(2)' matching the lemma",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:36:35.636Z",
+        "reviewed_sha": "aa18c21223a17bf12ee316c9e1ccf3e5e744970c",
+        "notes": "Proof block adjacent to its statement in the SU(2)-emergence sub-arc; canonical placement, no redundancy"
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-13T01:36:35.636Z"
 }
