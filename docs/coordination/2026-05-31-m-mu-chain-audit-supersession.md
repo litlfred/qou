@@ -23,8 +23,8 @@ The witness `per-observable-100x-status.witness.json` regenerated via
 | **Δm_pn** | **754.8** | **159.3×** | shared root w/ Q_β |
 
 **Reality:** 4 of 7 meet, 3 of 7 miss, all 3 sharing the same root
-cause (per CLAUDE.md's reference to `docs/audits/2026-05-30-l2-100x-
-status-3-failing-shared-root.md`).
+cause (per CLAUDE.md's reference to
+`docs/audits/2026-05-30-l2-100x-status-3-failing-shared-root.md`).
 
 ## Why #1534's m_μ pivot is superseded
 
@@ -47,13 +47,11 @@ artifact of the muon-as-4_1 identification (production hypothesis per
 target from being met in the ratio-anchored measurement.  The m_μ
 "open gap" framing in #1534 is therefore best replaced by:
 
-  • Either: pursue the BARE m_μ closure as a structural research
-    question (Geom_full refinement for 4_1, parallel to m_p's
-    Geom_full(𝓑₃) refinement per cheat-sheet §5 item #1)
-
-  • Or: acknowledge that m_μ meets L2 in the canonical measurement
-    convention and pivot to the 3-observable shared-root work
-    instead.
+- **Either:** pursue the BARE m_μ closure as a structural research
+  question (Geom_full refinement for 4_1, parallel to m_p's
+  Geom_full(𝓑₃) refinement per cheat-sheet §5 item #1)
+- **Or:** acknowledge that m_μ meets L2 in the canonical measurement
+  convention and pivot to the 3-observable shared-root work instead.
 
 ## Recommended next thread — shared-root Q_β / m_n / Δm_pn
 
@@ -64,9 +62,10 @@ massive leverage compared to attacking m_μ's 4_1 Geom_full refinement
 in isolation.
 
 The shared-root audit identifies the common structural input.  Next
-concrete branch would be `claude/qbeta-mn-deltapn-shared-root-audit-
-2026-05-31+` — read the audit, identify the specific structural
-gap, and propose a derivation path.
+concrete branch would be
+`claude/qbeta-mn-deltapn-shared-root-audit-2026-05-31+` — read the
+audit, identify the specific structural gap, and propose a derivation
+path.
 
 ## What this doc DOES
 
