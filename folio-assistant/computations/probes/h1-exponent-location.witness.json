@@ -1,0 +1,109 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-06-13T04:29:42.879645+00:00",
+  "commitSha": "14d1e853a6fcda4ee4f618bae431251f1335f8dd",
+  "assertions": [
+    {
+      "name": "D_decomposition_matches_witness_exponent",
+      "computed": 14.98883933278229,
+      "expected": 14.989,
+      "passed": true,
+      "tolerance": 0.002,
+      "source": "ord(Δ_λ) = ord(B_AME) − ord(B_pred); algebraic consistency with the source witness"
+    },
+    {
+      "name": "T_decomposition_matches_witness_exponent",
+      "computed": 24.933807145864563,
+      "expected": 24.934,
+      "passed": true,
+      "tolerance": 0.002,
+      "source": "ord(Δ_λ) = ord(B_AME) − ord(B_pred); algebraic consistency with the source witness"
+    },
+    {
+      "name": "3He_decomposition_matches_witness_exponent",
+      "computed": 23.595651452652188,
+      "expected": 23.596,
+      "passed": true,
+      "tolerance": 0.002,
+      "source": "ord(Δ_λ) = ord(B_AME) − ord(B_pred); algebraic consistency with the source witness"
+    },
+    {
+      "name": "4He_decomposition_matches_witness_exponent",
+      "computed": 35.272296287914735,
+      "expected": 35.272,
+      "passed": true,
+      "tolerance": 0.002,
+      "source": "ord(Δ_λ) = ord(B_AME) − ord(B_pred); algebraic consistency with the source witness"
+    },
+    {
+      "name": "B_AME_side_slope_DT_carries_the_increment",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "tolerance": 0,
+      "source": "the ~10–13/nucleon growth lives in the experimental binding curve, not the canonical trace difference"
+    },
+    {
+      "name": "B_AME_side_slope_T4He_carries_the_increment",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "tolerance": 0,
+      "source": "the ~10–13/nucleon growth lives in the experimental binding curve, not the canonical trace difference"
+    },
+    {
+      "name": "trace_side_slope_DT_nowhere_near_minus_10",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "tolerance": 0,
+      "source": "H1 requires ≈ −10 q₀-units/nucleon on the framework trace side; measured slope is small and POSITIVE — H1 forbidden at the proposed location"
+    },
+    {
+      "name": "trace_side_slope_T4He_nowhere_near_minus_10",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "tolerance": 0,
+      "source": "H1 requires ≈ −10 q₀-units/nucleon on the framework trace side; measured slope is small and POSITIVE — H1 forbidden at the proposed location"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 14,
+  "computation": "h1-exponent-location",
+  "scriptFile": "h1_exponent_location_probe.py",
+  "scriptHash": "d8e07e92aec1",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "H1 location test (9b work-plan step 1): decomposes the witnessed Δ_λ ≈ q₀^(10A−5) exponent as ord(B_AME) − ord(B_pred) per isotope and measures which side carries the 10-per-nucleon increment. Framework trace side: +1.2…+2.9 q₀-units/nucleon (wrong magnitude and sign for H1); experimental B_AME side: +11.5…+12.8. Verdict: H1 forbidden at the proposed location — the exponent is not a crossing-count identity of the canonical trace difference. Diagnostic only; nothing wired.",
+  "contentBlock": "conj:canonical-knot-id-sdp",
+  "data": {
+    "D_ord_B_AME": "7.6629894634043438907",
+    "D_ord_B_pred": "-7.3258498693779446462",
+    "T_ord_B_AME": "20.489818827050245834",
+    "T_ord_B_pred": "-4.4439883188143164672",
+    "3He_ord_B_AME": "19.585458373619839981",
+    "3He_ord_B_pred": "-4.0101930790323485893",
+    "4He_ord_B_AME": "32.036475167090979127",
+    "4He_ord_B_pred": "-3.2358211208237521775",
+    "slope_ord_B_AME_DT": "12.8268293636",
+    "slope_ord_B_AME_T4He": "11.54665634",
+    "slope_ord_B_pred_DT": "2.88186155056",
+    "slope_ord_B_pred_T4He": "1.20816719799",
+    "verdict": "H1 FORBIDDEN at the proposed location: the canonical trace difference contributes +1.2…+2.9 q₀-units/nucleon (and toward 0 with A), so no crossing/jet bookkeeping of W_free vs W_atom can yield the 10A−5 exponent; the increment is carried by B_AME's empirical growth. Deriving 10A−5 from word combinatorics is equivalent to deriving the binding curve itself. The 2026-06-09 observation stays near-match tier, now characterised as: B_AME ≈ E₀·q₀^(10A−5)·(trace factor drifting q₀^{+1..+3}/nucleon toward 1)."
+  }
+}
