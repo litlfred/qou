@@ -80,7 +80,7 @@ instance**:
 Closing the class once therefore discharges the residue open math
 across all three PRs.
 
-## Status
+## Lean formalization
 
 This proposition is **proved conditional on
 `BringResidueAtOrder` class instances at the relevant pole orders**.

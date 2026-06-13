@@ -101,7 +101,7 @@ mass-side categorical chain).
 - The $\S 4(\mathrm{c})$ open gap is the mass-side keystone. Closing it is
   owner-gated multi-session research.
 
-## Status
+## Formalization and compute
 
 **Theorem (this proposition).** Sorry-free Lean class definitions
 ([`mass-side-kernel-formalize-first-gates.lean`](mass-side-kernel-formalize-first-gates.lean))

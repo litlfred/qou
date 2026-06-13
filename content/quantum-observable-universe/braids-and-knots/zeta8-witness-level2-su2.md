@@ -71,7 +71,7 @@ hypothesis is in fact correct — provided the categorical framing is the
 truncation acting directly on $(\mathfrak{D} - \mathfrak{n})$" (which is
 indeed not how the truncation interacts with Habiro elements).
 
-## Lean status
+## Lean formalization
 
 The companion Lean file
 [`zeta8-witness-level2-su2.lean`](https://github.com/litlfred/qou/blob/claude/qbeta-habiro-phi8-interference-2026-06-01/content/quantum-observable-universe/braids-and-knots/zeta8-witness-level2-su2.lean)

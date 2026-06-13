@@ -240,7 +240,7 @@ Three reasons:
    template for other boundary-conditioned vacuum problems
    (Lamb shift, Polyakov loops, plate-on-curved-background).
 
-## Status
+## Discussion
 
 **Open.** The conditional implication (modulo plate-mode-count
 existence and scaling) is rigorous and is formalised in
