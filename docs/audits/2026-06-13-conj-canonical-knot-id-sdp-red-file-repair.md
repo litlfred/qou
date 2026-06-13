@@ -1,71 +1,67 @@
-# `conj-canonical-knot-id-sdp.lean` — red-file repair status + follow-up recipe
+# `conj-canonical-knot-id-sdp.lean` — red-file repair (COMPLETED)
 
 **Date:** 2026-06-13 · **Branch:** `claude/vigilant-cerf-f80u04` · **PR #2249**
+**Status:** ✅ fully repaired — the file now elaborates **green** (direct-`lean`,
+EXIT 0, no errors / sorries / warnings).
 
 ## Summary
 
-The "red conj Lean file" `content/quantum-observable-universe/mass-theory/conj-canonical-knot-id-sdp.lean`
-had **never compiled** — it carries **five distinct bug classes**. It is a
-content-*sibling* `.lean` (its decl `QOU.BraidKnot.helium3_uniqueness_closed`
-resolves to a *different* lib module; the sibling itself is **not** in the root
-Lake workspace's `lake build` targets), so CI never elaborated it and the
-heuristic `proof-lean-compiles` QA checker marked it `pass` while it was in
-fact deeply broken.
+The "red conj Lean file"
+`content/quantum-observable-universe/mass-theory/conj-canonical-knot-id-sdp.lean`
+had **never compiled** — it carried **eight distinct bugs across six classes**.
+It is a content-*sibling* `.lean` (its `lean.ref`,
+`QOU.BraidKnot.helium3_uniqueness_closed`, resolves to a *different* lib
+module; the sibling itself is **not** in the root Lake workspace's `lake build`
+targets), so CI never elaborated it and the heuristic `proof-lean-compiles` QA
+checker marked it `pass` while it was in fact deeply broken.
 
-**Three parse-level classes are fixed this PR (the file now parses);** the
-remaining two-to-three are a mechanical but large (~29-site) re-implementation,
-**deferred** (owner decision 2026-06-13) to a session with a clean Mathlib
-toolchain where green can be machine-confirmed.
+All bugs are now fixed (owner-approved deep repair, 2026-06-13). Because the
+sibling is not CI-gated and `lake exe cache get` is 403-blocked in this
+environment, verification was done with **direct `lean` + a manual `LEAN_PATH`**
+(root-tree cache Mathlib + the QOU lib oleans, per `lean-environment-setup.md
+§327`) — the canonical workaround for this sandbox.
 
-## The five bug classes
+## The bugs and their fixes
 
-| # | Class | Status | Mechanism (all confirmed with minimal core-Lean repros) |
+| # | Class | Fix | Confirmed by |
 |---|---|---|---|
-| 1 | `structure StrictComplementarity … : Prop` holding ℝ data fields (`min_block_eig`, …) | **fixed** | a `Prop` structure can't generate data projections, and `obtain ⟨…⟩ := sc` can't eliminate a non-subsingleton `Prop` into the `Type`-valued `CanonicalKnotIdSDP` goal. Fix: drop `: Prop` → `Type` structure (matches `StrictComplementarityPair` in `MathlibExt/SDP.lean`). |
-| 2 | Orphaned `/-- … -/` doc comment (line ~79) followed by `/-!` (not a decl) | **fixed** | a doc comment must attach to a declaration; `/-!` is a command. Fix: `/--` → `/-!`. |
-| 3 | `(10⁻⁶ : ℝ)` superscript "literal" (line ~435) | **fixed** | `10⁻⁶` is not a valid Lean numeral (`unexpected token '⁶'`). Fix: `(1e-6 : ℝ)`. |
-| 4 | Instances reference the `bindingKWord` field by **bare name** inside the `where`-block | **OPEN** | Lean structure-instance `where` fields cannot reference earlier fields by bare identifier → `unknown identifier bindingKWord`. (Note: the *class* field **types** at the `bindingKStructurallyValid : …` lines *can* depend on the prior `bindingKWord` field — dependent record — so those are only hit by bug #5, not #4.) |
-| 5 | BraidWord predicates called via **dot-notation** on the `abbrev BraidWord := List Int` | **OPEN** | dot-notation unfolds the reducible abbrev to `List`, so `x.structurallyValidBinding` seeks `List.structurallyValidBinding` (not found). ~29 call sites of `.structurallyValidBinding` / `.evenPower`. |
-| 6 | `by decide` over the `def`-wrapped predicate Props | **OPEN (likely)** | `decide` needs a `Decidable` instance for `structurallyValidBinding …`; instance search will not unfold a plain `def` → `failed to synthesize Decidable`. |
+| 1 | `structure StrictComplementarity … : Prop` holding ℝ data fields | drop `: Prop` → `Type` structure (matches `StrictComplementarityPair` in `MathlibExt/SDP.lean`) | a `Prop` structure can't generate data projections, and `obtain ⟨…⟩ := sc` can't eliminate a non-subsingleton `Prop` into the `Type`-valued `CanonicalKnotIdSDP` goal — minimal core repro |
+| 2 | orphaned `/-- … -/` doc comment (followed by `/-!`, not a decl) | `/--` → `/-!` | parse error `unexpected '/-!'; expected 'lemma'` |
+| 3 | `(10⁻⁶ : ℝ)` (superscript not a valid numeral) | `(1e-6 : ℝ)` | parse error `unexpected token '⁶'` |
+| 4 | instances reference the `bindingKWord` field by **bare name** inside the `where`-block (out of scope) | use the literal `([3, 3] : BraidWord)` | `unknown identifier bindingKWord` — minimal repro (later `where` fields can't see earlier ones) |
+| 5 | BraidWord predicates via **dot-notation** on `abbrev BraidWord := List Int` → unfolds to `List.*` (not found); also *inside* `structurallyValidBinding`'s body | explicit `BraidWord.f x` application (~29 sites) | `Invalid field … List.structurallyValidBinding` — minimal repro |
+| 6 | `by decide` can't see through the `def`-wrapped predicates | mark the 4 predicates `@[reducible]` | `failed to synthesize Decidable` — minimal repro |
+| 7 | `bindingKWord_nonempty` proved by `cases n <;> decide` over a goal with the free instance var `h` | `h.bindingKStructurallyValid.1` (the `w ≠ []` conjunct — holds for ANY instance, not just the registered three) | `Expected type must not contain free variables` |
+| 8 | three `*_canonical_uniqueness_*` declared `theorem` but with conclusion `CanonicalKnotIdSDP …` (a class / `Type`, not `Prop`) | `theorem` → `def` (they construct an instance, i.e. data) | `type of theorem … is not a proposition` |
 
-## Follow-up fix recipe (for a clean-Mathlib session)
+Bugs 1-3 are parse-level (commits `a11107d9`, `d59d4e07`); bugs 4-8 are the deep
+semantic repair (commit `b8f91a02`). Each mechanism was confirmed with a minimal
+core-Lean repro before the fix.
 
-1. **Bug 5 (dot-notation).** Replace every `‹expr›.structurallyValidBinding`
-   with `BraidWord.structurallyValidBinding ‹expr›` and `‹expr›.evenPower`
-   with `BraidWord.evenPower ‹expr›`. (`‹expr›.length` is fine — `List.length`
-   resolves through the abbrev.) ~29 sites in the class field **types**, the
-   3 per-nucleus instances, and the `helium3/deuterium/tritium_…` +
-   `helium3_existence_with_witness_rho` theorems.
-2. **Bug 4 (field-scope).** In the 3 instances, replace the bare `bindingKWord`
-   in the semantic-Prop field definitions (`constituentUniqueness :=`,
-   `bindingKPSDFeasible :=`, …) with the instance's literal word
-   `([3, 3] : BraidWord)` (all three are `[3,3]`).
-3. **Bug 6 (decide).** Mark the four predicate defs `@[reducible]`
-   (`BraidWord.allNonZero`, `inInterNucleonRange`, `structurallyValidBinding`,
-   `evenPower`) so `decide`'s `Decidable` search unfolds them — or replace the
-   `by decide` proofs with `by unfold … <;> decide`.
-4. **Verify** with direct `lean` (per `lean-environment-setup.md §322/§327`):
-   build `LEAN_PATH` from the **root-tree** cache oleans
-   (`$ROOT/.lake/packages/*/.lake/build/lib/lean`) + the QOU lib oleans
-   (`content/quantum-observable-universe/lean/.lake/build/lib/lean`), **never**
-   the lean-package lake-built Mathlib (incomplete). Build the cache-missing
-   `CanonicalKnotIdSDPUniqueness.olean` once with `lean -o`. EXIT 0 = green.
+## Verification
 
-## Verification caveat (this environment)
+```bash
+ROOT=/home/user/qou; cd "$ROOT/content/quantum-observable-universe/lean"
+LP="$ROOT/content/quantum-observable-universe/lean/.lake/build/lib/lean"
+for d in "$ROOT"/.lake/packages/*/.lake/build/lib/lean; do LP="$LP:$d"; done   # root-tree cache Mathlib
+ELAN_TOOLCHAIN=lean-v4.24.0 LEAN_PATH="$LP" lean ../mass-theory/conj-canonical-knot-id-sdp.lean
+# EXIT 0 — no errors/sorries/warnings
+```
+`CanonicalKnotIdSDPUniqueness.olean` is rebuilt once with `lean -o` (the cache
+omits it — added after the cache seed). Only the **root-tree** cache Mathlib is
+on `LEAN_PATH`; the lean-package lake-built Mathlib is excluded (incomplete, and
+mixing two Mathlib builds causes spurious `failed to synthesize` — skill §322).
 
-The Mathlib `lake exe cache get` is 403-blocked here; the cache orphan branch
-`lake-cache/qou-v4-24-0` ships ~5920 Mathlib + the QOU oleans but **omits**
-`CanonicalKnotIdSDPUniqueness.olean` (added after the cache seed). `lake build`
-re-resolves deps and wipes the restored Mathlib (skill §322), so verification
-must use **direct `lean` + manual `LEAN_PATH`**. The parse/scope/resolution
-error *classes* (bugs 1-6) are reliably checkable this way; a residual
-`failed to synthesize` class remains olean-noise (one imported QOU olean —
-`HeckeAlgebra.Common` or the freshly-built `CanonicalKnotIdSDPUniqueness` —
-is inconsistent with the restored Mathlib) that cannot be cleanly separated
-from genuine elaboration errors without a from-source Mathlib build.
+## Note for future Lean maintenance
+
+The pervasive bug-5 (dot-notation on `abbrev … := List Int`) is a standing
+hazard: any `BraidWord.f` predicate must be called as `BraidWord.f w`, never
+`w.f`. If a future change wants `w.f` to work, make `BraidWord` a one-field
+structure (`structure BraidWord where word : List Int`) — but that costs `.word`
+everywhere List ops are used. The current explicit-application convention is the
+lower-churn choice.
 
 ## Cross-refs
 
-- Parse-level fixes: commits `a11107d9` (Prop), `d59d4e07` (orphan doc + `1e-6`).
 - The conj's uniqueness leg (Task 3): `docs/audits/2026-06-13-strict-complementarity-sdp-uniqueness-attempt.md`.
 - The L>2 binding-K enumeration (Task 2, honest negative): same PR, `binding-k-enumerator.witness.json` + `binding_k_enumerator.py --tritium-L 3 --he3-L 3`.

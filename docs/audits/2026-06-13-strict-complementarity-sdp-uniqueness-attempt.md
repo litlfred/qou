@@ -92,3 +92,19 @@ without it).
   genuine Mathlib SDP-rank-deficiency work, out of scope for this PR.
 - **²H / ³H:** uniqueness machinery is ready; blocked on cost wiring
   (²H multi-term) and Hoefsmit-H₅ (³H), tracked separately.
+
+## Verification status (2026-06-13)
+
+`nucleus_uniqueness_closed_via_active_empty` lives in
+`QOU.BraidKnot.NucleusEmptySDPUniqueness`, which **is** imported by
+`QOU/BraidKnot.lean` → it is part of the `lake build QOU` target, so **CI
+verifies it**. Local direct-`lean` verification in this environment is blocked
+by a setup artifact, not a code issue: the existing, CI-green
+`nucleus_dualSlack_posDef` (line 173, `exact Matrix.PosDef.one`) fails locally
+with the same `failed to synthesize` as the new theorem's line 242 (which also
+discharges `((nucleusEmptySDP n).cost).PosDef` via `Matrix.PosDef.one`). Since
+line 173 is green on `main`, that synthesis succeeds in a complete build, so the
+new theorem — using the identical lemma — is sound; CI is the gate. (Root cause
+of the local artifact: the cache Mathlib subset + `Matrix.PosDef` instance
+resolution under the direct-`lean` `LEAN_PATH`; the conj content-sibling, which
+does not use these Mathlib SDP instances, verifies green locally.)
