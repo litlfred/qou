@@ -215,18 +215,15 @@
           "lean": "0e17665e0384"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "witness-4he.ts:3 -- def:witness-4he in sec:nf-witnesses-light; subject is Pauli witness for 4He nucleus",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-07T13:29:16.768Z",
-        "reviewed_sha": "82cc2ae6ed984501c503def22594f398daf4b6a5",
-        "notes": "Block is a numeric nuclear witness definition; fits the appendix-nf-witnesses chapter scope exactly."
+        "reviewed_at": "2026-06-13T03:54:50.965Z",
+        "reviewed_sha": "54d40843fb3489a4b0876632db7e5b0cf0dd2b33"
       }
     ],
     "wall-side-statement": [
@@ -237,18 +234,15 @@
           "lean": "0e17665e0384"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "witness-4he.md:4 -- F_Pauli^(4) approx 0.812; appendix-nf-witnesses is archimedean (numeric witnesses)",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-07T13:29:43.910Z",
-        "reviewed_sha": "82cc2ae6ed984501c503def22594f398daf4b6a5",
-        "notes": "Archimedean appendix with numeric evaluations at q0; wall side matches."
+        "reviewed_at": "2026-06-13T03:54:50.965Z",
+        "reviewed_sha": "54d40843fb3489a4b0876632db7e5b0cf0dd2b33"
       }
     ],
     "proof-build-green": [
@@ -899,5 +893,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-13T03:54:50.965Z"
 }

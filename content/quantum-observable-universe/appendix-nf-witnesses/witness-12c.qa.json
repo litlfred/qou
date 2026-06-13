@@ -215,18 +215,15 @@
           "lean": "207b3f62ed6b"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "witness-12c.ts:3 -- def:witness-12c in sec:nf-witnesses-light; Pauli witness for 12C nucleus",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-07T13:30:34.117Z",
-        "reviewed_sha": "82cc2ae6ed984501c503def22594f398daf4b6a5",
-        "notes": "Block is a numeric nuclear witness definition; fits appendix-nf-witnesses scope."
+        "reviewed_at": "2026-06-13T03:54:50.965Z",
+        "reviewed_sha": "54d40843fb3489a4b0876632db7e5b0cf0dd2b33"
       }
     ],
     "wall-side-statement": [
@@ -237,18 +234,15 @@
           "lean": "207b3f62ed6b"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "witness-12c.md:4 -- F_Pauli^(12) approx 0.129; appendix-nf-witnesses is archimedean",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-07T13:30:55.918Z",
-        "reviewed_sha": "82cc2ae6ed984501c503def22594f398daf4b6a5",
-        "notes": "Archimedean appendix; numeric evaluation appropriate."
+        "reviewed_at": "2026-06-13T03:54:50.965Z",
+        "reviewed_sha": "54d40843fb3489a4b0876632db7e5b0cf0dd2b33"
       }
     ],
     "proof-build-green": [
@@ -899,5 +893,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-13T03:54:50.965Z"
 }
