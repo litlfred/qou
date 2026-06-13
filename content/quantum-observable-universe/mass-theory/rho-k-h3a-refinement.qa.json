@@ -362,6 +362,26 @@
         "reviewed_at": "2026-06-07T13:46:07.526Z",
         "reviewed_sha": "af638213a478dd151bf02a1c7949162067f278fa",
         "notes": "Lean and narrative both describe rho_K via Wedderburn-Schur decomposition; same claim"
+      },
+      {
+        "field_hash": {
+          "md": "93a86d745101",
+          "ts": "91bd607d932b",
+          "lean": "6c4ce7c0dd44"
+        },
+        "result": "fail",
+        "severity": "major",
+        "evidence": "rho-k-h3a-refinement.lean:58-66 — class RhoKH3ARefinement.identity states the full refinement identity verbatim; lean:69-78 theorem rho_k_h3a_refinement is proved by \"inst.identity data Delta partitions\" (one-line extraction). Also Float where md:31 says R, and \"partitions : List (List Nat)\" unconstrained vs narrative sum over lambda |- 3A.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:17:05.363Z",
+        "reviewed_sha": "ef60242db528c70e6a45d3bbff915cb208b27fff",
+        "notes": "The class field restates the target; nothing of the narrative Steps 1-4 derivation is formalized. The conditional class axiomatises the conclusion itself, not conj:hoefsmit-scattering-pipeline as §3b-cond requires."
       }
     ],
     "voice-author-notes-pollution": [
@@ -417,6 +437,26 @@
         "reviewed_at": "2026-06-07T13:46:07.380Z",
         "reviewed_sha": "af638213a478dd151bf02a1c7949162067f278fa",
         "notes": "Extended numerical discussion at q_0 follows the proposition; interpretive; no companion remark"
+      },
+      {
+        "field_hash": {
+          "md": "93a86d745101",
+          "ts": "91bd607d932b",
+          "lean": "6c4ce7c0dd44"
+        },
+        "result": "fail",
+        "severity": "minor",
+        "evidence": "rho-k-h3a-refinement.md:146-164 \"Interpretation.\" section (shell-structure/SEMF analogy, 1 ppb roadmap) + md:166-181 \"Connection to the six-term narrative\" + md:53-65 Status with audit/compute tracking; grep finds no companion remark with interprets: prop:rho-k-h3a-refinement.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:17:05.221Z",
+        "reviewed_sha": "ef60242db528c70e6a45d3bbff915cb208b27fff",
+        "notes": "Substantial interpretive and roadmap prose in the statement block with no companion interprets: remark to hold it."
       }
     ],
     "fit-section-chapter": [
@@ -439,6 +479,26 @@
         "reviewed_at": "2026-06-07T13:46:07.417Z",
         "reviewed_sha": "af638213a478dd151bf02a1c7949162067f278fa",
         "notes": "H_{3A} Wedderburn refinement of rho_K fits mass-theory archimedean face"
+      },
+      {
+        "field_hash": {
+          "md": "93a86d745101",
+          "ts": "91bd607d932b",
+          "lean": "6c4ce7c0dd44"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "mass-theory.ts:896-907 — block listed in sec:mass-theory-orphan-reconnect \"Weak-spectral and isospin lemmas\"; the block is a Wedderburn/rho_K mass refinement, not a weak-spectral or isospin lemma.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:17:05.256Z",
+        "reviewed_sha": "ef60242db528c70e6a45d3bbff915cb208b27fff",
+        "notes": "Belongs in mass-theory, but sec:mass-physical-face (or a Wedderburn section) is a strictly better home than the orphan-reconnect grab-bag."
       }
     ],
     "wall-side-statement": [
@@ -461,6 +521,26 @@
         "reviewed_at": "2026-06-07T13:46:07.453Z",
         "reviewed_sha": "af638213a478dd151bf02a1c7949162067f278fa",
         "notes": "Statement is archimedean (MeV density at q_0); mass-theory is archimedean chapter; pass"
+      },
+      {
+        "field_hash": {
+          "md": "93a86d745101",
+          "ts": "91bd607d932b",
+          "lean": "6c4ce7c0dd44"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "rho-k-h3a-refinement.md:31 \"Delta_lambda(K) in R\"; md:162 numeric substrate value \"q_0 = 1.109978595554181...\" and MeV-scale m_p/m_n/m_e throughout; no §7c wall banner (only the conditional-on-conjecture banner at md:1).",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:17:05.291Z",
+        "reviewed_sha": "ef60242db528c70e6a45d3bbff915cb208b27fff",
+        "notes": "Statement mixes an exact generic-q Markov-trace identity with archimedean inputs without flagging which side it is evaluated on; numeric q_0 also appears outside intro/Ch 7."
       }
     ],
     "wall-side-proof": [
@@ -483,6 +563,26 @@
         "reviewed_at": "2026-06-07T13:46:07.488Z",
         "reviewed_sha": "af638213a478dd151bf02a1c7949162067f278fa",
         "notes": "Proof is Wedderburn decomposition of trace; algebraic then archimedean evaluation; appropriate"
+      },
+      {
+        "field_hash": {
+          "md": "93a86d745101",
+          "ts": "91bd607d932b",
+          "lean": "6c4ce7c0dd44"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "rho-k-h3a-refinement.md:67-144 — Steps 1-4 are algebraic (Wedderburn block decomposition, Schur-Weyl identity, division), citing substrate props (wedderburn-as-noncomm-fourier, atomic-mass-gb-nf); the constituent-mass pinning is named explicitly at Step 3.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:17:05.327Z",
+        "reviewed_sha": "ef60242db528c70e6a45d3bbff915cb208b27fff",
+        "notes": "Proof method matches the algebraic identity; archimedean inputs enter only at the declared A=1 pinning step."
       }
     ],
     "proof-no-axiom-growth": [
@@ -1309,7 +1409,104 @@
         "reviewed_at": "2026-06-11T18:06:24.673Z",
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7"
       }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "93a86d745101",
+          "ts": "91bd607d932b",
+          "lean": "6c4ce7c0dd44"
+        },
+        "result": "fail",
+        "severity": "critical",
+        "evidence": "rho-k-h3a-refinement.lean:58-66 vs lean:69-78 — the single class field \"identity\" is character-for-character the theorem conclusion; the decl referenced by lean.ref (qou:QOU.BraidKnot.rho_k_h3a_refinement, .ts:8) is therefore an axiom-restates-target pattern. BlockBindingFraction.leading_order (lean:29) is a defaulted Prop field never used.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:17:05.399Z",
+        "reviewed_sha": "ef60242db528c70e6a45d3bbff915cb208b27fff",
+        "notes": "Conditional-class wrapper injects the target as an assumed instance; claim is vacuous as proved. SafeVerify class: axiom restating target."
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "93a86d745101",
+          "ts": "91bd607d932b",
+          "lean": "6c4ce7c0dd44"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.8,
+          "max": 1
+        },
+        "evidence": "rho-k-h3a-refinement.md:67-144 — derivation organized as named Steps 1-4 with cited props (wedderburn-as-noncomm-fourier, schur-weyl-mass-decomposition, atomic-mass-gb-nf); plan legible before the steps.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:17:47.891Z",
+        "reviewed_sha": "ef60242db528c70e6a45d3bbff915cb208b27fff",
+        "notes": "Narrative strategy explicit; Lean side has no strategy (one-line class extraction), which caps the score."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "93a86d745101",
+          "ts": "91bd607d932b",
+          "lean": "6c4ce7c0dd44"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0.15,
+          "max": 1
+        },
+        "evidence": "rho-k-h3a-refinement.lean:58-66 — the remaining gap (the RhoKH3ARefinement instance) restates the target identity; md:53-65 — Delta_lambda values unknown, full evaluation requires p(3A) partitions; CLAUDE.md Delta_lambda gate: six closure ansaetze failed on the deuteron.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:17:47.925Z",
+        "reviewed_sha": "ef60242db528c70e6a45d3bbff915cb208b27fff",
+        "notes": "Restates-target gap class (~0.0-0.2 per rubric); Delta_lambda closure is the standing Track A blocker."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "93a86d745101",
+          "ts": "91bd607d932b",
+          "lean": "6c4ce7c0dd44"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.45,
+          "max": 1
+        },
+        "evidence": "rho-k-h3a-refinement.md:166-177 — block itself states the decomposition is a basis change of the same |tr_M| vs the six-term split (\"Both are exact ... predictions are identical\"); Schur-Weyl identity already carried by prop:schur-weyl-mass-decomposition.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:17:47.959Z",
+        "reviewed_sha": "ef60242db528c70e6a45d3bbff915cb208b27fff",
+        "notes": "Adds the per-block Delta_lambda framing (non-trivial) but substantially overlaps existing decomposition blocks."
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-13T01:17:47.959Z"
 }
