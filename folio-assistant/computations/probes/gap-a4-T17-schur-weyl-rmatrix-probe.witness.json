@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-06-13T13:50:54.733441+00:00",
-  "commitSha": "68c9043153b508db2ca3cb3d014084e421480e91",
+  "computedAt": "2026-06-13T14:00:22.314937+00:00",
+  "commitSha": "efecc27385c6918b2c36ebd9fec86f23ee05162a",
   "assertions": [
     {
       "name": "hecke_relation_holds_on_V_tensor_V",
@@ -18,7 +18,7 @@
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-40,
-      "source": "tr_{V^⊗3}(β_Bor) via direct 8×8 R-matrix computation equals the Schur-Weyl prediction [4]_q · χ^{(3)}(β_Bor) + [2]_q · χ^{(2,1)}(β_Bor) = [4]_q + [2]_q · (2 − 3h⁴ − h⁶) (using χ^{(3)}(β_Bor) = 1 from writhe 0 + T15 polynomial)."
+      "source": "tr_{V^⊗3}(β_Bor) via direct 8×8 R-matrix computation equals the Schur-Weyl prediction dim(V_{3/2})·χ^{(3)}(β_Bor) + dim(V_{1/2})·χ^{(2,1)}(β_Bor) = 4·1 + 2·(2 − 3h⁴ − h⁶) = 8 − 6h⁴ − 2h⁶ (classical integer sl_2 dims 4, 2 — NOT q-deformed [4]_q/[2]_q, per gotcha 1; χ^{(3)}(β_Bor) = 1 from writhe 0 + T15 polynomial)."
     },
     {
       "name": "trace_at_q_one_equals_dim_8",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 10,
   "computation": "gap-a4-T17-schur-weyl-rmatrix-probe",
   "scriptFile": "gap_a4_T17_schur_weyl_rmatrix_probe.py",
-  "scriptHash": "afd50ea9dda1",
-  "scriptCommitSha": "68c9043153b508db2ca3cb3d014084e421480e91",
+  "scriptHash": "96e742b29501",
+  "scriptCommitSha": "efecc27385c6918b2c36ebd9fec86f23ee05162a",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -45,7 +45,7 @@
     "python": "3.11.15",
     "mpmath": "1.4.1"
   },
-  "description": "GAP-A-4 T17 — First categorical / topological distinguisher in the T4-T17 arc.  Derives tr_{V^⊗3}(β_Bor) directly from the U_q(sl_2) R-matrix action on V_{1/2}^⊗3 and cross-checks against the Schur-Weyl prediction [4]_q + [2]_q · (2 − 3h⁴ − h⁶) (combining T15 polynomial χ^{(2,1)} with the trivial rep's χ^{(3)}(β_Bor) = 1 for writhe-0 braids).",
+  "description": "GAP-A-4 T17 — First categorical / topological distinguisher in the T4-T17 arc.  Derives tr_{V^⊗3}(β_Bor) directly from the U_q(sl_2) R-matrix action on V_{1/2}^⊗3 and cross-checks against the Schur-Weyl prediction 4·χ^{(3)} + 2·χ^{(2,1)} = 8 − 6h⁴ − 2h⁶ (classical sl_2 dims 4, 2 — not q-deformed [4]_q/[2]_q; combining T15 polynomial χ^{(2,1)} with the trivial rep's χ^{(3)}(β_Bor) = 1 for writhe-0 braids).",
   "auditOnly": "docs/audits/2026-06-06-gap-a4-T9-T14-followup-retrospective.md",
   "parameters": {
     "q_0_50dps": "1.1099785827513808075916690956107688798744991218736"
