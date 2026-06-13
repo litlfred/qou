@@ -1908,10 +1908,9 @@ to the restored olean dirs and run `lean <file>` directly (`exit 0` =
 checks, sorry-free). The Mathlib oleans **are reachable** — they ship on
 `lake-cache/qou-<toolchain-slug>` (~2919 oleans); restore + `lean`-direct
 is ~2 min vs a 40-min `lake build` storm. If a stray `lake build` already
-dropped the olean count (`find .lake/packages/mathlib -name '*.olean' |
-wc -l` ≪ 2919), re-restore the cache branch before `lean`-direct. Full
-recipe + recovery:
-[`lean-environment-setup.md` §"VERIFY a single file with lean-direct"](.claude/skills/local/lean-environment-setup.md).
+dropped the olean count (`find .lake/packages/mathlib -name '*.olean' | wc -l` ≪ 2919),
+re-restore the cache branch before `lean`-direct. Full recipe + recovery:
+[`lean-environment-setup.md` §"VERIFY a single file with lean-direct"](.claude/skills/local/lean-environment-setup.md#verify-a-single-file-with-lean-direct).
 
 > **STRICT — route, don't give up, and prefer a sub-agent.** On **any**
 > Lean env/tool failure (LSP "no valid project path", `leansearch` SSL

@@ -337,6 +337,7 @@ both occur with **no** `insteadOf` redirect set (so they are additive to
    sibling scope map:
    [`docs/coordination/2026-06-08-lean-cache-architecture.md`](../../../docs/coordination/2026-06-08-lean-cache-architecture.md).
 
+<a id="verify-a-single-file-with-lean-direct"></a>
 > **🟥 VERIFY a single file with `lean`-direct — NEVER `lake build`
 > (2026-06-13, cost a session ~40 min).** To *verify* a PR's one or two
 > changed `.lean` files, run `lean`-direct (the gotcha-#2 recipe above).
