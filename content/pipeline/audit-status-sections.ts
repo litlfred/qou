@@ -42,10 +42,18 @@ import { checkStatusSectionHeader } from "./qa-checkers-voice";
 
 const TODO_RE =
   /\b(?:TODO|FIXME|XXX|HACK|to-?do|pending|punt(?:ed|ing)?|kick\s+the\s+can|not\s+yet\s+(?:implemented|written|done|filled)|remaining\s+work|work\s+remaining|next\s+steps?|needs?\s+(?:work|fixing|attention|filling))\b/i;
+// Formalization / compute STATUS signals — a `## Status` section that
+// merely NAMES its theorem ("**Theorem (this proposition).** Sorry-free
+// Lean proof …") is status, not new math. Deliberately does NOT include
+// a bare "witness" token (it matches "No verified witness yet" in genuine
+// open-problem prose like the Δ_λ gate).
 const STATUS_RE =
-  /\b(?:sorry-free|formali[sz]ed|formali[sz]ation|Lean\s+(?:file|proof|side|structure)|proved|provable|witness|verified\s+in|\bcompute\b|theorem\s*\(this\s+proposition\)|has_sorry|mathlib_ok|not_started|stated)\b/i;
+  /(?:sorry-free|formali[sz]ed|formali[sz]ation|Lean\s+(?:file|proof|class|side|structure|infrastructure)|theorem\s*\(this\s+proposition\)|verified\s+in|\*\*Compute\b|no\s+sympy\s+probe|has_sorry|mathlib_ok|not_started)/i;
+// Genuine new-math content under a status header (open-gate tables,
+// refuted-ansätze lists, a conjecture statement). Checked AFTER STATUS so
+// a status label that happens to bold "Theorem" is not mis-tagged.
 const SUBSTANTIVE_RE =
-  /(?:\*\*(?:Theorem|Proposition|Lemma|Corollary|Definition|Open\s+gate|Conjecture)\b|refuted|ans(?:ä|a)tze|\bconjecture\b|^\s*\|.*\|.*\|)/im;
+  /(?:\*\*Open\s+gate\b|refuted|ans(?:ä|a)tze|\bconjecture\b|^\s*\|.*\|.*\|)/im;
 
 type Classification = "todo" | "substantive" | "authorNotes";
 
@@ -101,8 +109,10 @@ function sectionBody(lines: string[], headerIdx: number): string[] {
 
 function classify(body: string): Classification {
   if (TODO_RE.test(body)) return "todo";
-  if (SUBSTANTIVE_RE.test(body)) return "substantive";
+  // STATUS before SUBSTANTIVE: a section naming its (sorry-free) theorem
+  // is formalization status, not new mathematics.
   if (STATUS_RE.test(body)) return "authorNotes";
+  if (SUBSTANTIVE_RE.test(body)) return "substantive";
   return "authorNotes";
 }
 
