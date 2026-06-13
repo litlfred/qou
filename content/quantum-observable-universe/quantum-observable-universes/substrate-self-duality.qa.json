@@ -1037,7 +1037,192 @@
         "reviewed_at": "2026-06-11T18:06:24.673Z",
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "5f9eac9dd4de",
+          "ts": "4eeca4b530ee",
+          "lean": "734a19efe6d0"
+        },
+        "result": "fail",
+        "severity": "minor",
+        "evidence": "substrate-self-duality.md:17-38 — '**Physical interpretation.** Self-duality means…' and '**Consequences.**' paragraphs follow the bare statement",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T00:51:12.635Z",
+        "reviewed_sha": "49d9628a5b5bb56ae5840b388c8060320ceb8978",
+        "notes": "Substantive physical-interpretation + consequences prose in-block; no companion interprets: remark holds it"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "5f9eac9dd4de",
+          "ts": "4eeca4b530ee",
+          "lean": "734a19efe6d0"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "quantum-observable-universes.ts:234 — block sits in sec:algebraic-substrate-reeb alongside rigid-dualizing-complex",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T00:51:30.791Z",
+        "reviewed_sha": "49d9628a5b5bb56ae5840b388c8060320ceb8978",
+        "notes": "Substrate self-duality squarely in the algebraic-substrate section; no sibling carries the same claim"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "5f9eac9dd4de",
+          "ts": "4eeca4b530ee",
+          "lean": "734a19efe6d0"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "substrate-self-duality.md:1-15 — derived-category quasi-iso A→ω_A•; no Real.*, no numeric q0, no MeV",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T00:51:30.825Z",
+        "reviewed_sha": "49d9628a5b5bb56ae5840b388c8060320ceb8978",
+        "notes": "Generic-ring categorical statement; matches generic chapter regime"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "5f9eac9dd4de",
+          "ts": "4eeca4b530ee",
+          "lean": "734a19efe6d0"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "substrate-self-duality.md — no **Proof.** body; argument is via Frobenius non-degeneracy / cone acyclicity, no linarith/IVT/Real.*",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T00:51:30.859Z",
+        "reviewed_sha": "49d9628a5b5bb56ae5840b388c8060320ceb8978",
+        "notes": "No archimedean proof machinery"
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "5f9eac9dd4de",
+          "ts": "4eeca4b530ee",
+          "lean": "734a19efe6d0"
+        },
+        "result": "fail",
+        "severity": "critical",
+        "evidence": "substrate-self-duality.lean:56-63 — 'axiom substrate_self_duality_axiom … : IsIso (selfDualityMorphism S)' then 'theorem substrate_self_duality … := substrate_self_duality_axiom C S'",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T00:51:59.965Z",
+        "reviewed_sha": "49d9628a5b5bb56ae5840b388c8060320ceb8978",
+        "notes": "Axiom restates the theorem target verbatim; theorem discharges by citing it — passing-by-axiom-injection"
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "5f9eac9dd4de",
+          "ts": "4eeca4b530ee",
+          "lean": "734a19efe6d0"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0,
+          "max": 1
+        },
+        "evidence": "substrate-self-duality.lean:56-63 — proof closes via an axiom whose statement IS the theorem target (IsIso (selfDualityMorphism S))",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T00:51:59.999Z",
+        "reviewed_sha": "49d9628a5b5bb56ae5840b388c8060320ceb8978",
+        "notes": "restates-target gap ⇒ 0.0; the unproved input is the goal itself"
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "5f9eac9dd4de",
+          "ts": "4eeca4b530ee",
+          "lean": "734a19efe6d0"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "evidence": "substrate-self-duality.md:1-23 — standard rigid-monoidal Frobenius self-duality (A≅A∨)",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T00:52:00.062Z",
+        "reviewed_sha": "49d9628a5b5bb56ae5840b388c8060320ceb8978",
+        "notes": "Standard construction, not duplicated by a sibling but not a novel argument"
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "5f9eac9dd4de",
+          "ts": "4eeca4b530ee",
+          "lean": "734a19efe6d0"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.4,
+          "max": 1
+        },
+        "evidence": "substrate-self-duality.lean:33-46 docstring names snake/zig-zag identities; .md:11-15 sketches Frobenius-pairing→bimodule-map→acyclic-cone",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T00:52:25.370Z",
+        "reviewed_sha": "49d9628a5b5bb56ae5840b388c8060320ceb8978",
+        "notes": "Plan sketched in prose/docstring but the Lean executes none of it (target-restating axiom); strategy implicit-and-undelivered"
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-13T00:52:25.370Z"
 }
