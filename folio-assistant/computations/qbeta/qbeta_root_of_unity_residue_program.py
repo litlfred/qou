@@ -94,7 +94,7 @@ def main():
     print(f"  Summed μ_λ carries ONLY ζ_d for d ∈ {zetas} (n≤6).")
     print(f"   • ζ_2: all 27 modes (the universal Φ_2=[2] factor).")
     if 6 in by_zeta:
-        print(f"   • ζ_6: {[''.join(map(str,p)) and tuple(p) for p in by_zeta[6]]} "
+        print(f"   • ζ_6: {by_zeta[6]} "
               f"— MATCHES the synthesis's period-3 (ζ₃/ζ₆) resonance ✓.")
     has3 = 3 in by_zeta
     has4 = 4 in by_zeta
