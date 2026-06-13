@@ -355,5 +355,16 @@ export default chapter({
         "outro-predicted-spectra",
       ],
     }),
+    section({
+      title: "JWST observations and aeon initiations",
+      label: "sec:jwst-aeon-initiations",
+      blocks: [
+        "jwst-aeon-initiations-intro",
+        "spectrahedral-phase-collapse",
+        "tilting-module-rigidity",
+        "eigenspace-invariance-intro",
+        "gauge-conformal-invariance",
+      ],
+    }),
   ],
 });
