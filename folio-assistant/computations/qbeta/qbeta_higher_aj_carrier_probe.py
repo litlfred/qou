@@ -27,50 +27,9 @@ from __future__ import annotations
 import itertools
 import sympy as sp
 
-q = sp.symbols('q')
-
-
-def jackson(k):
-    if k == 0:
-        return sp.Integer(0)
-    return sp.cancel((1 - q ** k) / (1 - q))
-
-
-def contents(part):
-    return [j - i for i, row in enumerate(part) for j in range(row)]
-
-
-def kappa(part):
-    """Per-mode rate r_λ = (q-1)·μ_λ = (q-1)·ℏ_q²·Σ_□[c][c+1]."""
-    hbar2 = ((q - 1) / q) ** 2
-    return sp.cancel((q - 1) * hbar2 * sum(jackson(c) * jackson(c + 1)
-                                          for c in contents(part)))
-
-
-def bar(expr):
-    return sp.cancel(expr.subs(q, 1 / q))
-
-
-def odd_part(expr):
-    return sp.cancel((expr - bar(expr)) / 2)
-
-
-def parity(expr):
-    if sp.cancel(expr) == 0:
-        return "0"
-    if sp.simplify(bar(expr) + expr) == 0:
-        return "ODD"
-    if sp.simplify(bar(expr) - expr) == 0:
-        return "EVEN"
-    return "—"
-
-
-def zeta_content(expr, dmax=12):
-    if sp.cancel(expr) == 0:
-        return []
-    num = sp.Poly(sp.numer(sp.cancel(expr)), q)
-    return [d for d in range(2, dmax + 1)
-            if not num.is_zero and num.rem(sp.Poly(sp.cyclotomic_poly(d, q), q)).is_zero]
+from qbeta_symbolic_utils import (  # shared sympy helpers (single source of truth)
+    kappa, odd_part, parity, cyclotomic_carriers as zeta_content,
+)
 
 
 def elem_sym(rates, j):
