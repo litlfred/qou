@@ -81,6 +81,7 @@ import QOU.BraidKnot.GSReductionOrder
 import QOU.BraidKnot.MassGapKeystone
 import QOU.BraidKnot.MassGapObstruction
 import QOU.BraidKnot.CrossingGradedModel
+import QOU.BraidKnot.MassGapFrontier
 
 /-!
 # BraidKnot — Module Index
