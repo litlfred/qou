@@ -228,7 +228,11 @@ def main() -> int:
             "PR #1642 (mass-table Habiro)",
             "PR #1649 (this branch)",
         ],
-        "data": rows,
+        # Wrap rows under a dict-typed `data` slot. A bare top-level list
+        # for `data` breaks witness_dependency_drift.py, which does
+        # `w.get("data", {}).get("upstream_witness_hashes")` (I6 schema
+        # drift). See docs/audits/2026-05-16-stale-witness-infra-gap.md.
+        "data": {"rows": rows},
         "key_observations": [
             "Active partition count grows with A — cannot explain "
             "non-monotonic mult(Φ_8).",
