@@ -111,12 +111,26 @@ private theorem quadratic_nonneg_implies_linear_zero
     elaboration changes); recorded as an axiom pending the next
     Mathlib API stabilisation. -/
 -- Ref: [horn-johnson-2013] *Matrix Analysis*, §7.7
-axiom quadratic_form_two_index_axiom :
+theorem quadratic_form_two_index_axiom :
     ∀ {n : ℕ} {C : Matrix (Fin n) (Fin n) ℝ} (_hH : C.IsHermitian)
       (α β : ℝ) {i j : Fin n} (_hij : i ≠ j),
         dotProduct (star (Pi.single i α + Pi.single j β))
           (C.mulVec (Pi.single i α + Pi.single j β)) =
-        α ^ 2 * C i i + 2 * α * β * C i j + β ^ 2 * C j j
+        α ^ 2 * C i i + 2 * α * β * C i j + β ^ 2 * C j j := by
+  intro n C hH α β i j hij
+  have hsymm : C j i = C i j := (hH j i).symm
+  simp only [Matrix.dotProduct, Matrix.mulVec, Pi.single, starRingEnd_apply]
+  simp only [star_add, star_trivial]
+  simp only [mul_add, add_mul, Finset.sum_add_distrib, Finset.mul_sum, Finset.sum_mul]
+  simp only [Finset.sum_ite_eq, Finset.sum_ite_eq', Finset.mem_univ, if_true]
+  have h_ne : (j = i) = False := eq_false_iff.mpr hij.symm
+  have h_ne' : (i = j) = False := eq_false_iff.mpr hij
+  simp only [h_ne, h_ne', if_false, mul_zero, zero_mul, add_zero, zero_add]
+  calc
+    α * (C i i * α) + α * (C i j * β) + (β * (C j i * α) + β * (C j j * β))
+      = α ^ 2 * C i i + α * β * C i j + β * α * C j i + β ^ 2 * C j j := by ring
+    _ = α ^ 2 * C i i + α * β * C i j + β * α * C i j + β ^ 2 * C j j := by rw [hsymm]
+    _ = α ^ 2 * C i i + 2 * α * β * C i j + β ^ 2 * C j j := by ring
 
 private theorem quadratic_form_two_index
     {C : Matrix (Fin n) (Fin n) ℝ} (hH : C.IsHermitian)
@@ -145,10 +159,43 @@ private theorem quadratic_form_two_index
 --      structure). Note: §A.5.3 (which was previously cited here) is
 --      "Generalized eigenvalue decomposition" — irrelevant to this
 --      diagonal-zero PSD lemma. Fixed during local-PDF verification.
-axiom entry_sq_le_diag_mul_axiom :
+theorem entry_sq_le_diag_mul_axiom :
     ∀ {n : ℕ} {C : Matrix (Fin n) (Fin n) ℝ} (_hC : C.PosSemidef)
       (i j : Fin n),
-        (C i j) ^ 2 ≤ C i i * C j j
+        (C i j) ^ 2 ≤ C i i * C j j := by
+  intro n C hC i j
+  by_cases hij : i = j
+  · subst hij
+    exact le_rfl
+  have h_quad : ∀ α β : ℝ, 0 ≤ α ^ 2 * C i i + 2 * α * β * C i j + β ^ 2 * C j j := by
+    intro α β
+    have h_pos := hC.2 (Pi.single i α + Pi.single j β)
+    have h_eq := quadratic_form_two_index_axiom hC.1 α β hij
+    rw [h_eq] at h_pos
+    exact h_pos
+  by_cases h_diag : C i i = 0
+  · have h_zero_ij : C i j = 0 := by
+      have h_nonneg : ∀ t : ℝ, 0 ≤ 2 * t * C i j + t ^ 2 * C j j := by
+        intro t
+        have h_spec := h_quad 1 t
+        rw [h_diag] at h_spec
+        linarith
+      have h_cjj : 0 ≤ C j j := by
+        have h_spec2 := h_quad 0 1
+        linarith
+      exact quadratic_nonneg_implies_linear_zero (C i j) (C j j) h_cjj h_nonneg
+    rw [h_zero_ij, h_diag]
+    linarith
+  · have h_cii_pos : 0 < C i i := by
+      have h_spec := h_quad 1 0
+      have : 0 ≤ C i i := by linarith
+      exact lt_of_le_of_ne this (Ne.symm h_diag)
+    have h_spec3 := h_quad (-C i j) (C i i)
+    have h_ineq : 0 ≤ C i i * (C i i * C j j - (C i j) ^ 2) := by
+      calc 0 ≤ (- C i j) ^ 2 * C i i + 2 * (- C i j) * C i i * C i j + C i i ^ 2 * C j j := h_spec3
+           _ = C i i * (C i i * C j j - (C i j) ^ 2) := by ring
+    have h_ineq2 : 0 ≤ C i i * C j j - (C i j) ^ 2 := nonneg_of_mul_nonneg_left h_ineq h_cii_pos
+    linarith
 
 /-- **Cauchy-Schwarz inequality for PSD entries**: for any PSD
     matrix `C : Matrix (Fin n) (Fin n) ℝ` and indices `i, j`,
