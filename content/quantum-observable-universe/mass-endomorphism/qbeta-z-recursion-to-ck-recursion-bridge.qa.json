@@ -1152,7 +1152,107 @@
         "reviewed_at": "2026-06-11T18:06:24.673Z",
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7"
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "ee2ed996cffb",
+          "ts": "61f79b58b6be",
+          "lean": "1ecb38069900"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "score": {
+          "value": 0.9,
+          "max": 1
+        },
+        "evidence": "qbeta-z-recursion-to-ck-recursion-bridge.lean:61-71 — docstring states 'Proof. Algebraic rearrangement of w.recursion n hn'; in-proof comments spell out the algebra before field_simp+linarith; .md:14-18 mirrors the plan",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:49:19.089Z",
+        "reviewed_sha": "d76a620e60ede076c5e637e397e5b54fd839aeff",
+        "notes": "Plan stated up front (named upstream recursion, explicit rearrangement steps); reader knows the strategy before the tactics."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "ee2ed996cffb",
+          "ts": "61f79b58b6be",
+          "lean": "1ecb38069900"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "evidence": "qbeta-z-recursion-to-ck-recursion-bridge.lean:62-71 — theorem z_recursion_forward_form proved sorry-free (field_simp + linarith); no sorry anywhere in file",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:49:19.123Z",
+        "reviewed_sha": "d76a620e60ede076c5e637e397e5b54fd839aeff",
+        "notes": "Sorry-free proof => 1.0 per rubric; the ZRecursionCoeffs class instance is upstream open math, not a gap in this proof."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "ee2ed996cffb",
+          "ts": "61f79b58b6be",
+          "lean": "1ecb38069900"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "score": {
+          "value": 0.4,
+          "max": 1
+        },
+        "evidence": "qbeta-z-recursion-to-ck-recursion-bridge.md:14-18 — 'Algebraic rearrangement of the 3-term recursion ... from prop:qbeta-per-block-chi-closed-forms §Extension #5'; lean:37-43 inlines a byte-identical copy of the upstream class",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:49:19.157Z",
+        "reviewed_sha": "d76a620e60ede076c5e637e397e5b54fd839aeff",
+        "notes": "Math content is a one-line rearrangement of the upstream recursion; the value-add is the variable-vs-constant-kernel comparison table, not a new argument."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "ee2ed996cffb",
+          "ts": "61f79b58b6be",
+          "lean": "1ecb38069900"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "qbeta-z-recursion-to-ck-recursion-bridge.lean:38-43 (inlined byte-copy of ZRecursionCoeffs from PR #1764 — drift risk vs the upstream original); lean:62-63 conclusion is an algebraic rearrangement of the class hypothesis 'recursion', loudly documented in .md:14-18 and the docstring",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:49:19.192Z",
+        "reviewed_sha": "d76a620e60ede076c5e637e397e5b54fd839aeff",
+        "notes": "No silent weakening: statement matches narrative, class hypothesis explicit, n>=1 kept. Warn for (a) near-tautological conclusion = rearrangement of its own hypothesis, candidly disclosed; (b) inlined class copy can silently diverge from the upstream declaration."
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-13T01:49:19.192Z"
 }
