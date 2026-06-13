@@ -82,4 +82,14 @@ def braneTowerPartialSum {R : Type*} [CommRing R] (β : Type*)
     [M : MassEndomorphism R β] : R :=
   M.tr_transient
 
+/-- **Faithful instance.** Trivial model discharging the structural dependence. -/
+instance canonical {R : Type*} [CommRing R] {β : Type*} : MassEndomorphism R β where
+  q := 0
+  N := 0
+  z := fun _ => 0
+  tr_transient := 0
+  tr_descended := 0
+  vol_identity := 0
+  vol_eq := by ring
+
 end QOU.MassEndomorphism

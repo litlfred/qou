@@ -129,3 +129,9 @@ import QOU.Interactions.QIntegerMassFormula
 import QOU.Archimedean.EmCouplingBringZeroMode
 import QOU.Molecular.PalindromicityOrbitalType
 import QOU.Molecular.ShellClosureNfTermCount
+
+import QOU.Conjectures.ShellTransitionKnot
+import QOU.Conjectures.KnotFactorFrobeniusPairing
+import QOU.Conjectures.WeakSpectralCompleteness
+import QOU.Conjectures.MagicNumbersBring
+import QOU.Conjectures.QuantumLanglandsDual
