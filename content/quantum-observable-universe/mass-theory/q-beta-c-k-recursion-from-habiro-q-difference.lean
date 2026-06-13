@@ -44,6 +44,7 @@ import Mathlib.Data.Fintype.Basic
 import Mathlib.Tactic.Ring
 import Mathlib.RingTheory.Polynomial.Cyclotomic.Basic
 import Mathlib.RingTheory.Polynomial.Cyclotomic.Expand
+import Mathlib.Algebra.Polynomial.Reverse
 import Mathlib.Tactic.FieldSimp
 
 namespace QOU.QBeta.CKRecursion
@@ -245,5 +246,91 @@ theorem cyclotomic_prime_bar_stable {R : Type*} [Field R] (p : ℕ) [Fact p.Prim
   rw [Finset.mem_range] at hi
   rw [inv_pow, pow_sub₀ q hq (by omega : i ≤ p - 1)]
   field_simp
+
+open Polynomial Finset in
+/-- Auxiliary: `reverse` is multiplicative across a `Finset` product over an
+    integral domain (`reverse_mul_of_domain` folded over the product). -/
+theorem reverse_finset_prod {R : Type*} [CommRing R] [IsDomain R] {ι : Type*}
+    [DecidableEq ι] (s : Finset ι) (f : ι → R[X]) :
+    reverse (∏ i ∈ s, f i) = ∏ i ∈ s, reverse (f i) := by
+  induction s using Finset.induction with
+  | empty => simp only [prod_empty]; simpa using reverse_C (1 : R)
+  | @insert a s ha ih => rw [prod_insert ha, prod_insert ha, reverse_mul_of_domain, ih]
+
+open Polynomial in
+/-- Auxiliary: `Xⁿ − 1` is anti-palindromic, `reverse (Xⁿ − 1) = 1 − Xⁿ`
+    (so `cyclotomic 1 = X − 1` is bar-odd, the sign that seeds the induction). -/
+theorem reverse_X_pow_sub_one {R : Type*} [CommRing R] [Nontrivial R] (n : ℕ) (hn : 0 < n) :
+    reverse (X ^ n - 1 : R[X]) = 1 - X ^ n := by
+  have hd : (X ^ n - 1 : R[X]).natDegree = n := by
+    rw [show (X ^ n - 1 : R[X]) = X ^ n - C 1 by rw [map_one], natDegree_X_pow_sub_C]
+  ext k
+  rw [coeff_reverse, hd]
+  simp only [coeff_sub, coeff_X_pow, coeff_one]
+  rcases le_or_gt k n with hk | hk
+  · rw [revAt_le hk]; split_ifs <;> first | rfl | (exfalso; omega)
+  · rw [revAt_eq_self_of_lt hk]; split_ifs <;> first | rfl | (exfalso; omega)
+
+open Polynomial Finset in
+/-- **General cyclotomic self-reciprocity (palindrome), all `n > 1`.** Over any
+    integral domain, `Φ_n` equals its own `reverse`. This is the full composite-`d`
+    generalisation that Mathlib does not carry: it is proved by strong induction
+    on the divisor product `∏_{d ∣ n} Φ_d = Xⁿ − 1` (`prod_cyclotomic_eq_X_pow_sub_one`),
+    peeling `d = 1` for the anti-palindrome sign and applying the IH on `1 < d < n`,
+    then cancelling the (nonzero) proper-divisor product. -/
+theorem cyclotomic_self_reverse {R : Type*} [CommRing R] [IsDomain R] :
+    ∀ n : ℕ, 1 < n → reverse (cyclotomic n R) = cyclotomic n R := by
+  intro n
+  induction n using Nat.strong_induction_on with
+  | _ n ih =>
+    intro hn
+    have hn0 : n ≠ 0 := by omega
+    have hP : ∏ d ∈ n.divisors, cyclotomic d R = X ^ n - 1 :=
+      prod_cyclotomic_eq_X_pow_sub_one (by omega) R
+    have hRP : ∏ d ∈ n.divisors, reverse (cyclotomic d R) = 1 - X ^ n := by
+      rw [← reverse_finset_prod, hP, reverse_X_pow_sub_one n (by omega)]
+    have hrev1 : reverse (cyclotomic 1 R) = - cyclotomic 1 R := by
+      rw [cyclotomic_one, show (X - 1 : R[X]) = X ^ 1 - 1 by ring,
+          reverse_X_pow_sub_one 1 one_pos]
+      ring
+    have h1mem : 1 ∈ n.properDivisors := Nat.one_mem_properDivisors_iff_one_lt.2 hn
+    have key : ∏ d ∈ n.properDivisors, reverse (cyclotomic d R)
+             = - ∏ d ∈ n.properDivisors, cyclotomic d R := by
+      rw [← Finset.mul_prod_erase _ (fun d => reverse (cyclotomic d R)) h1mem,
+          ← Finset.mul_prod_erase _ (fun d => cyclotomic d R) h1mem, hrev1]
+      have hcong : ∏ d ∈ (n.properDivisors).erase 1, reverse (cyclotomic d R)
+                 = ∏ d ∈ (n.properDivisors).erase 1, cyclotomic d R :=
+        Finset.prod_congr rfl (fun d hd => by
+          rw [Finset.mem_erase] at hd
+          have hdp := hd.2
+          have hdpos : 0 < d := Nat.pos_of_mem_divisors (Nat.properDivisors_subset_divisors hdp)
+          rw [Nat.mem_properDivisors] at hdp
+          exact ih d hdp.2 (by omega))
+      rw [hcong]; ring
+    rw [← Nat.cons_self_properDivisors hn0, Finset.prod_cons] at hP hRP
+    rw [key] at hRP
+    set P := ∏ d ∈ n.properDivisors, cyclotomic d R with hPdef
+    have hPne : P ≠ 0 :=
+      Finset.prod_ne_zero_iff.2 (fun d _ => cyclotomic_ne_zero d R)
+    have heq : reverse (cyclotomic n R) * P = cyclotomic n R * P := by
+      have h2 : reverse (cyclotomic n R) * (-P) = -(cyclotomic n R * P) := by
+        rw [hRP, hP]; ring
+      linear_combination -h2
+    exact mul_right_cancel₀ hPne heq
+
+open Polynomial in
+/-- **General bar-stability — all `d > 1`** (eval form). Subsumes the explicit
+    `cyclotomic_two/three/six_bar_stable` and `cyclotomic_prime_bar_stable`: for
+    every `n > 1`, `Φ_n` is self-reciprocal, `Φ_n(1/q)·q^{φ(n)} = Φ_n(q)`, so
+    divisibility by `Φ_n` is invariant under the bar involution `q ↦ q⁻¹`.
+    Derived from `cyclotomic_self_reverse` via the reverse↔eval bridge
+    `eval₂_reverse_mul_pow`. -/
+theorem cyclotomic_bar_stable_general {R : Type*} [Field R] (n : ℕ) (hn : 1 < n)
+    (q : R) (hq : q ≠ 0) :
+    (cyclotomic n R).eval (1 / q) * q ^ n.totient = (cyclotomic n R).eval q := by
+  letI : Invertible q := invertibleOfNonzero hq
+  have h := eval₂_reverse_mul_pow (RingHom.id R) q (cyclotomic n R)
+  rw [cyclotomic_self_reverse n hn] at h
+  simpa [eval₂_id, natDegree_cyclotomic, invOf_eq_inv, one_div] using h
 
 end QOU.QBeta.CKRecursion
