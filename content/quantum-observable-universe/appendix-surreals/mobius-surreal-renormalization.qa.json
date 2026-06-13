@@ -818,7 +818,25 @@
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "97f469834a74",
+          "ts": "b6bfb3cf2c9d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T03:56:42.550Z",
+        "reviewed_sha": "b5b8eae463d7af2bb3713e19411d17e939e9c9bb"
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-13T03:56:42.550Z"
 }
