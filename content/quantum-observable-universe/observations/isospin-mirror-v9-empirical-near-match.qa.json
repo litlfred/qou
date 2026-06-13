@@ -30,6 +30,23 @@
         "reviewed_at": "2026-06-05T23:50:19.908Z",
         "reviewed_sha": "9b903b7f688515e376c192f5e66706fb05b2c0c7",
         "notes": "Explicitly marked as cross-reference/forward-reference; no misfile; kind=remark with interprets set."
+      },
+      {
+        "field_hash": {
+          "md": "1278cda21556",
+          "ts": "a3e8da2436ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:22:19.004Z",
+        "reviewed_sha": "7b3c5d5acb7e5db7ecb81bbd8514575abcd2ef77",
+        "notes": "Auto-drained by agent"
       }
     ],
     "proof-no-trivial-skeleton": [
@@ -834,5 +851,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-13T05:22:19.004Z"
 }
