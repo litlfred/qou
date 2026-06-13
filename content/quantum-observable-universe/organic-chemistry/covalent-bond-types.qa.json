@@ -864,7 +864,51 @@
         "reviewed_at": "2026-06-11T18:06:24.673Z",
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "a59164b24049",
+          "ts": "2483fbc7ba4c",
+          "lean": "172e9e39b52f"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "organic-chemistry.ts:21-27 — block listed in sec:covalent-bonding ('Covalent bonding as shared sub-Hopf links'); covalent-bond-types.md:8-21 defines covalent bond of order k as shared sub-Hopf link B_k(R1,R2)",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:10:15.545Z",
+        "reviewed_sha": "2e035c3e24c04ecea740c9c9fbc85cdc5cd5008e",
+        "notes": "Definition names a new construction (bond order k via shared trefoils) squarely in section scope; no sibling carries the same claim"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "a59164b24049",
+          "ts": "2483fbc7ba4c",
+          "lean": "172e9e39b52f"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "covalent-bond-types.md:13-37 — E_bond(k) = k*E_cross(T(2,2)) + C(k,2)*dE_inter is purely symbolic; no numeric q0, no MeV units, no Real.* construct, no order hypothesis on q",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:10:15.580Z",
+        "reviewed_sha": "2e035c3e24c04ecea740c9c9fbc85cdc5cd5008e",
+        "notes": "Statement is regime-neutral symbolic combinatorics of shared Hopf links; no archimedean construct hard-coded, no wall banner needed"
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-13T01:10:15.580Z"
 }
