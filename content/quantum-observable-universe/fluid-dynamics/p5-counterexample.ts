@@ -1,7 +1,7 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:ns-counterexample",
+export default conjecture({
+  label: "conj:ns-counterexample",
   lean: { ref: "qou:QOU.FluidDynamics.NSCounterexample" },
   title:
     "Counter-example to Navier--Stokes regularity via $q \\to 1$ degeneration",

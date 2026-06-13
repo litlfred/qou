@@ -1,6 +1,6 @@
 {
   "$schema": "block-qa/v1",
-  "label": "prop:ns-counterexample",
+  "label": "conj:ns-counterexample",
   "kind": "proposition",
   "paths": {
     "ts": "content/quantum-observable-universe/fluid-dynamics/p5-counterexample.ts",
@@ -172,7 +172,7 @@
         },
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
-        "notes": "Label 'prop:ns-counterexample' → expected 'ns_counterexample'; Lean declares: NSCounterexample, NSCounterexample. Structural match via content."
+        "notes": "Label 'conj:ns-counterexample' → expected 'ns_counterexample'; Lean declares: NSCounterexample, NSCounterexample. Structural match via content."
       }
     ],
     "voice-author-notes-pollution": [

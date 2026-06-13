@@ -5,7 +5,7 @@
 > Time derivatives are bounded uniformly in a weaker dual space,
 > giving the compactness needed to take the classical limit.
 
-The [counter-example construction](#prop:ns-counterexample)
+The [counter-example construction](#conj:ns-counterexample)
 requires that the family of q-NS solutions $\{v_q\}_{q > 1}$
 converges to a distributional solution of the classical
 Navier--Stokes equation as $q \to 1$.  This theorem establishes
@@ -226,7 +226,7 @@ $H^1$ bounds independently of $q$).
 **Step 7: The limit loses regularity.**
 
 The anti-parallel vortex pair initial data
-([counter-example](#prop:ns-counterexample)) causes the
+([counter-example](#conj:ns-counterexample)) causes the
 filaments to approach at rate $d(t) \sim \sqrt{T^* - t}$.
 The vorticity $\omega = \nabla \times v$ satisfies
 $\lVert\omega\rVert_{L^\infty} \sim 1/d(t)^2 \to \infty$ as
@@ -237,7 +237,7 @@ collision ($d_{\min} \geq \ell_q > 0$), so $v_q$ is smooth.
 But the limit $v^*$ has no quantum pressure, and the collision
 proceeds to completion.
 
-**Conjecture (q-Aubin--Lions, conditional on prop:ns-counterexample).**
+**Conjecture (q-Aubin--Lions, conditional on conj:ns-counterexample).**
 Under the hypotheses above, there exists a subsequence
 $q_n \to 1$ such that:
 

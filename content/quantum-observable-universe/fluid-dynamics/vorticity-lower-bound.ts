@@ -7,7 +7,7 @@ export default proposition({
     "Vorticity lower bound for anti-parallel filament collision as $q \\to 1$",
   uses: [
     "thm:q-bkm",
-    "prop:q-aubin-lions",
+    "conj:q-aubin-lions",
   ],
   tags: [
     "vorticity",

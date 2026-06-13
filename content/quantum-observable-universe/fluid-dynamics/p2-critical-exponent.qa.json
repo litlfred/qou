@@ -1,6 +1,6 @@
 {
   "$schema": "block-qa/v1",
-  "label": "prop:critical-exponent",
+  "label": "conj:critical-exponent",
   "kind": "proposition",
   "paths": {
     "ts": "content/quantum-observable-universe/fluid-dynamics/p2-critical-exponent.ts",
@@ -308,7 +308,7 @@
         },
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
-        "notes": "Label 'prop:critical-exponent' → expected 'critical_exponent'; Lean declares: CriticalExponent, CriticalExponent. Structural match via content."
+        "notes": "Label 'conj:critical-exponent' → expected 'critical_exponent'; Lean declares: CriticalExponent, CriticalExponent. Structural match via content."
       },
       {
         "field_hash": {
@@ -507,7 +507,7 @@
         },
         "reviewed_at": "2026-06-07T02:29:28.146Z",
         "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
-        "notes": "BUG: .lean is NOT a theorem stating prop:critical-exponent (alpha=4/3) — it is a conjecture-class axiomatisation, and it is MALFORMED: two duplicate 'class CriticalExponent' declarations (lines ~42 and ~62) with stray 'Ref: ... -/' text between them (line 61) — will not compile. lean.ref -> the class, not the proposition. Integrity FAIL."
+        "notes": "BUG: .lean is NOT a theorem stating conj:critical-exponent (alpha=4/3) — it is a conjecture-class axiomatisation, and it is MALFORMED: two duplicate 'class CriticalExponent' declarations (lines ~42 and ~62) with stray 'Ref: ... -/' text between them (line 61) — will not compile. lean.ref -> the class, not the proposition. Integrity FAIL."
       },
       {
         "field_hash": {

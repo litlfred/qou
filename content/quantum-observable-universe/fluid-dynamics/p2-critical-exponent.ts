@@ -1,7 +1,7 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:critical-exponent",
+export default conjecture({
+  label: "conj:critical-exponent",
   lean: { ref: "qou:QOU.FluidDynamics.CriticalExponent" },
   title: "Critical exponent of the enstrophy divergence at $q = 1$",
   uses: [

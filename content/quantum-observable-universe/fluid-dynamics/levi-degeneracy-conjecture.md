@@ -38,7 +38,7 @@ $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$ holds locally
 on $\Sigma$. The [vorticity lower
 bound](#prop:vorticity-lower-bound) holds, the
 [q-BKM criterion](#thm:q-bkm) diverges, and the
-[counter-example](#prop:ns-counterexample) is established.
+[counter-example](#conj:ns-counterexample) is established.
 Classical 3d Navier--Stokes admits finite-time blowup.
 
 **(B) Linear growth (NS is regular).**
