@@ -216,6 +216,50 @@ way it is not a mode-level fibre constraint.
 are now realisable by the mode-selective f-map + bar-odd projection. The
 keystone's remaining open piece is the single archimedean scalar `S = Q_β/E₀`.
 
+## Higher coefficients `a_2, a_3` — the parity-alternation theorem
+
+Extending the fibre map beyond the leading coefficient
+([`qbeta_higher_aj_carrier_probe.py`](https://github.com/litlfred/qou/blob/claude/qbeta-heat-fmap-symbolic-explore-2026-06-13/folio-assistant/computations/qbeta/qbeta_higher_aj_carrier_probe.py)).
+The depth-`d` recursion `c_{k+1} = Σ_j a_j c_{k+1-j}` has, in the heat-route
+product picture, coefficients `a_j = e_j({r_λ})` — the elementary symmetric
+polynomials of the per-mode **rates** `r_λ = (q−1)·μ_λ = κ_λ` (the q-difference
+kernel of a product of depth-1 modes `A_λ(t)=1−(q−1)μ_λ t`).
+
+**Theorem (parity alternation).** If the f-map feeds **bar-odd** rates `r_λ`
+(the bar-odd projections, which carry each mode's ζ-content by the bar-stability
+lemma), then `bar(e_j) = e_j({−r_λ}) = (−1)^j e_j`, so
+
+> `a_j` is bar-**ODD** for `j` odd, bar-**EVEN** for `j` even — alternating,
+> *independent of which modes are active*.
+
+Verified symbolically for `j = 1..4`. This is the structural law behind the
+ladder's parity bookkeeping: the bar-even seed `c_2 = −1` is driven by a bar-odd
+`a_1` (= −c_3), a bar-even `a_2`, a bar-odd `a_3`, …. It is a one-line consequence
+of `e_j(−x) = (−1)^j e_j(x)` (Mathlib-provable; flagged as a formalization
+follow-up — sandbox `elan` is firewalled, so not built here).
+
+**Concrete carriers.** For the principled depth-3 active set
+`Λ = {(2,1), (2,2), (2,1,1)}` (the bar-odd ζ₂ carrier `(2,1)`, a second ζ₂
+carrier `(2,2)`, and the ζ₆-carrier `(2,1,1)`, all bar-odd-projected):
+
+| coeff | parity (matches theorem) | ζ_d content |
+|---|---|---|
+| `a_1 ~ e_1` | ODD | ζ₂ |
+| `a_2 ~ e_2` | EVEN | ζ₂ |
+| `a_3 ~ e_3` | ODD | **ζ₂ + ζ₆** |
+
+**ζ₆ enters at `a_3`.** For this depth-3 set, `e_3` is the *full product*
+`r_(2,1)·r_(2,2)·r_(2,1,1)`, so it inherits the `Φ₆` factor of the ζ₆-carrier;
+`e_1` (a sum) washes `Φ₆` out exactly as before, and `e_2` keeps only ζ₂. So the
+period-3/ζ₆ resonance surfaces in the **3rd** recursion coefficient — a pleasing
+internal echo of "period 3". *Honesty caveat:* the ζ₆-at-`a_3` onset is
+**active-set-specific** (it follows from `e_3` being the top product at depth 3);
+only the **parity-alternation law is mode-set-independent**. The residual
+freedom is the active set `Λ` (which modes, with what multiplicity); that, times
+the owner-**declined** archimedean scalar `S`, would fix the `c_k` *values*. The
+fibre **structure** — carriers, parities, ζ-content, the alternation law — is now
+mapped through `a_3`.
+
 ## Method notes / honesty caveats
 
 - The bar-parity column uses `κ_λ = (q-1)·ℏ_q²·Σ[c][c+1]`; the `(q-1)` factor is
