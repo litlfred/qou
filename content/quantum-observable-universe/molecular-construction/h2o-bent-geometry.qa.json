@@ -818,7 +818,28 @@
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "0030db2e8c2b",
+          "ts": "50f4db600477"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "h2o-bent-geometry.ts:4-5 — remark, interprets def:h2o-molecular-braid; .md:1 'Interpretation of the H2O molecular braid'",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T00:36:27.122Z",
+        "reviewed_sha": "1b94945ac4ecb973a44ec1b1df0bd68b032105d8",
+        "notes": "In §sec:h2o-computation (Water); interpretive remark on bent geometry / lone pairs / ice. Topic in scope, distinct from siblings (h2o-bond-angle-shift is the angle prop; ice-pauling-residual is separate), remark kind correct with interprets set."
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-13T00:36:27.122Z"
 }
