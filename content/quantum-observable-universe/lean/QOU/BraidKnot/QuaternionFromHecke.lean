@@ -128,8 +128,8 @@ theorem hecke_eigenvalues_forced {R : Type*} [Field R] (q : R)
     the quaternion algebra acting NON-COMMUTATIVELY on H₃(q).
     The 8 elements of Q₈ = {±1, ±i, ±j, ±k} correspond to the
     8 ideal tetrahedra of Vol(𝓑₃) = 8G. -/
-theorem quaternion_is_V_tensor_V :
-    True := by trivial
+/- theorem quaternion_is_V_tensor_V :
+    True := by trivial -/
     -- Full statement requires:
     -- 1. Mathlib's `Quaternion` type
     -- 2. An explicit isomorphism S²(ℂ²) ⊕ Λ²(ℂ²) ≅ₐ ℍ
@@ -158,8 +158,8 @@ theorem quaternion_is_V_tensor_V :
     non-commutativity — using (σ + σ⁻¹)/2 uniformly assumes the
     abelian (ℤ/2)³ structure, losing the Q₈ correction that
     contributes to λ_scale. -/
-theorem borromean_quaternion_noncommutativity :
-    True := by trivial
+/- theorem borromean_quaternion_noncommutativity :
+    True := by trivial -/
     -- Full statement needs:
     -- 1. Two non-commuting ℍ_q instances on V₁⊗V₂ and V₂⊗V₃
     -- 2. Their joint action group ≅ Q₈ (not (ℤ/2)³)

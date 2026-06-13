@@ -12,4 +12,4 @@ theorem quadratic_form_two_index_proof
     have h1 := hH j i
     exact h1.symm
   simp [dotProduct, mulVec, Pi.single, star]
-  sorry
+  sorry -- Ref: [pos_semidef_diag_zero]
