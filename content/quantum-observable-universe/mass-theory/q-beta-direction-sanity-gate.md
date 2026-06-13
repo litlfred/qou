@@ -95,19 +95,3 @@ Concretely, for any candidate $F(q)$:
 
 A unified `BarEvenKernel` typeclass ties all four together,
 extending the `CFinite` recurrence engine.
-
-## Status
-
-**Theorem (this proposition).** Sorry-free Lean proof
-([`q-beta-direction-sanity-gate.lean`](q-beta-direction-sanity-gate.lean))
-— §3b-cond conditional class `DirectionSanityGateClass` with a single
-field hypothesis encoding the magnitude-match condition, plus a
-rejection lemma showing that any candidate with order-of-magnitude
-mismatch fails the gate.
-
-**Compute (sympy + mpmath).** Verified in
-[`qbeta_direction_sanity_gate_probe.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/qbeta/qbeta_direction_sanity_gate_probe.py),
-witness `qbeta-direction-sanity-gate-probe.witness.json`. The probe
-verifies the target magnitude at $q_0$ (~0.998), demonstrates the gate
-on synthetic candidates (one passing at $F(q_0) = 1.001$, one failing
-with the $z(q_0) = 0.4993$ pattern at a target $> 1$).

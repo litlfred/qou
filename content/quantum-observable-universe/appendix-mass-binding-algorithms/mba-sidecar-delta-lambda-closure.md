@@ -12,7 +12,7 @@ for an isotope knot $K$, consumed by Step 9b
 
 - *Per-partition density $\Delta_\lambda(K) \in \mathbb{R}$.*
 
-### Status (2026-06-02)
+### Closure obstructions
 
 **Open gate.** Six closure ansätze have been refuted on the
 deuteron:
