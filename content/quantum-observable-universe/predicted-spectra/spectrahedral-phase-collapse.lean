@@ -34,6 +34,9 @@ determinant for the `(2,1)` representation is strictly negative, rendering the S
 -/
 theorem hadronic_melt_at_supergolden (u : ℝ) (hu_pos : u > 0) (h_melt : u^3 + u - 1 < 0) :
     (gramMatrix u).det < 0 := by
+  -- Ref: [manuscript] §spectrahedral-phase-collapse (provable via the GramMatrixH3Symbolic
+  -- factorization det = f₁·f₂·(u³+u−1) with f₁,f₂ > 0 for u > 0; pending an LSP/Mathlib-cache
+  -- session to discharge — Mathlib oleans unavailable in the current sandbox)
   sorry
 
 /--
@@ -41,6 +44,9 @@ The molecular bond instability.
 We assert that the 3-channel Wedderburn trace for the `H_2` `k=7` boundary interface crosses
 the unbonded threshold algebraically at `q ≈ 1.17`.
 -/
+-- Ref: [manuscript] §spectrahedral-phase-collapse — NON-STATEMENT (the type is `sorry`):
+-- needs a real H₂ k=7 (2,1) Wedderburn-trace threshold statement (crossing at q ≈ 1.17)
+-- plus the H₂ trace defs. Pending an LSP/Mathlib-cache session.
 theorem molecular_bond_instability (q : ℝ) :
     sorry := by
   sorry
@@ -50,6 +56,10 @@ The unconditional stability of leptons.
 We assert that 1D abelian braid representations (e.g. electrons and neutrinos) maintain
 positive-definite Gram matrices for all `q > 1`.
 -/
+-- Ref: [manuscript] §spectrahedral-phase-collapse — NON-STATEMENT (the type is `sorry`):
+-- intended claim "1D abelian channels stay positive for q > 1" is e.g.
+-- `∀ n : ℕ, (0 : ℝ) < q ^ n`, dischargeable by `fun n => pow_pos (by linarith) n`.
+-- Apply + verify in an LSP/Mathlib-cache session (Mathlib oleans unavailable here).
 theorem lepton_unconditional_stability (q : ℝ) (hq_gt_one : q > 1) :
     sorry := by
   sorry
