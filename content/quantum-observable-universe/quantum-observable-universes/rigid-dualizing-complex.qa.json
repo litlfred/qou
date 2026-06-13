@@ -864,7 +864,51 @@
         "reviewed_at": "2026-06-11T18:06:24.673Z",
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "3d72b12762c5",
+          "ts": "584b80145264",
+          "lean": "8b56602f5f8b"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "quantum-observable-universes.ts:220,232 — section 'The algebraic substrate and the Reeb derivation' lists 'rigid-dualizing-complex'; md defines Yekutieli rigid dualizing complex for the Frobenius–Hopf substrate algebra A",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T00:36:59.226Z",
+        "reviewed_sha": "b0c3c298df02c6dfeb8ded819246a53beaa150a0",
+        "notes": "Definition names a genuinely new construction (rigid dualizing complex omega_A•) for the substrate algebra; squarely in the algebraic-substrate section; no sibling carries the same claim."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "3d72b12762c5",
+          "ts": "584b80145264",
+          "lean": "8b56602f5f8b"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "rigid-dualizing-complex.md — statement over derived category D(A), Ext/RHom, enveloping algebra A^e; no Real.*, no numeric q≈, no MeV, no order hypothesis; lean structure over generic [Ring A]",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T00:36:59.261Z",
+        "reviewed_sha": "b0c3c298df02c6dfeb8ded819246a53beaa150a0",
+        "notes": "Generic-ring substrate-chapter statement (purely homological-algebra / derived-category content); correctly on the algebraic side of the §7c wall."
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-13T00:36:59.261Z"
 }
