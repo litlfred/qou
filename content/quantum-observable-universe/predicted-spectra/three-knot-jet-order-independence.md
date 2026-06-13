@@ -50,7 +50,7 @@ condition on the truncated coefficient matrix, hence decidable.
    $\tfrac1{16} \neq 0$ (LU pivots $(\tfrac14, 2, \tfrac18)$,
    `jetOrder3_certificate`) — so full rank $3$ holds at the Reid-1991 base
    order, a finite decidable determinant test on real data
-   (`jet_order_pivots.py` → `jet-order-pivots.witness.json`).  Higher
+   (`jet_order_pivots.py` $\to$ `jet-order-pivots.witness.json`).  Higher
    orders then need **no** further computation, by the following
    structural argument: the order-$N$ Jacobian ($3 \times (N+1)$) contains
    this non-singular $3\times3$ minor as a column-submatrix, so its rank is

@@ -7,7 +7,7 @@
     "md": "content/quantum-observable-universe/information-theory/molecular-hbond-phase-transition.md"
   },
   "source_hashes": {
-    "md": "1966df2085a7",
+    "md": "ad3c190f7a1b",
     "ts": "09c3453a0e0b"
   },
   "criteria": {
@@ -120,6 +120,22 @@
         "reviewed_sha": "a7217279ff3d40758e3e8933eec4de55a629562a",
         "severity": "critical",
         "evidence": "quantum-observable-universe/information-theory/molecular-hbond-phase-transition.md:5: sp³↔pure-$p$ flip that sets the bond angle. | quantum-observable-universe/information-theory/molecular-hbond-phase-transition.md:31: **The sp³ gate (one flip, two observables).** A directional hydrogen bond | quantum-observable-universe/information-theory/molecular-hbond-phase-transition.md:32: requires a directional (sp³) acceptor lone pair. So $S_q^{(\\partial)}$ is gated | quantum-observable-universe/information-theory/molecular-hbond-phase-transition.md:33: by the *same* discrete sp³↔pure-$p$ flip that sets the bond-angle base | quantum-observable-universe/information-theory/molecular-hbond-phase-transition.md:36: sp³ and hydrogen-bond; period-3+ are pure-$p$ and do **not** (their latent heat"
+      },
+      {
+        "field_hash": {
+          "md": "ad3c190f7a1b",
+          "ts": "09c3453a0e0b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "f849b704ab06",
+          "script_commit_sha": "07b55b2b407ff515c1ce4c9d1e8bca52ad655287"
+        },
+        "reviewed_at": "2026-06-13T14:21:48.585Z",
+        "reviewed_sha": "ac2abfcb9eba2474f2f49d3e0846da5e403ddda7"
       }
     ],
     "voice-editorializing": [
@@ -839,5 +855,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-13T13:55:33.060Z"
+  "updated_at": "2026-06-13T14:21:48.585Z"
 }

@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/mass-theory/q-beta-direction-sanity-gate.lean"
   },
   "source_hashes": {
-    "md": "f4f6cc2a07cc",
+    "md": "a2633122c86d",
     "ts": "82193f11430f",
     "lean": "0b03f6f78070"
   },
@@ -290,6 +290,23 @@
         "reviewed_sha": "a7217279ff3d40758e3e8933eec4de55a629562a",
         "severity": "critical",
         "evidence": "quantum-observable-universe/mass-theory/q-beta-direction-sanity-gate.md:62: is the target ladder product computed above. The 10× threshold is | quantum-observable-universe/mass-theory/q-beta-direction-sanity-gate.md:70: proton and muon anchors, so any threshold tighter than ~10× would be"
+      },
+      {
+        "field_hash": {
+          "md": "a2633122c86d",
+          "ts": "82193f11430f",
+          "lean": "0b03f6f78070"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "f849b704ab06",
+          "script_commit_sha": "07b55b2b407ff515c1ce4c9d1e8bca52ad655287"
+        },
+        "reviewed_at": "2026-06-13T14:21:48.585Z",
+        "reviewed_sha": "ac2abfcb9eba2474f2f49d3e0846da5e403ddda7"
       }
     ],
     "voice-editorializing": [
@@ -1228,5 +1245,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-13T13:55:33.060Z"
+  "updated_at": "2026-06-13T14:21:48.585Z"
 }

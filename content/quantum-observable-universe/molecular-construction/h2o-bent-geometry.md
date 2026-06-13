@@ -1,4 +1,4 @@
-*Interpretation of the [H₂O molecular braid](#def:h2o-molecular-braid).*
+*Interpretation of the [H$_2$O molecular braid](#def:h2o-molecular-braid).*
 
 Oxygen contributes two bonding sites and **two lone pairs**. In the assembly, the lone pairs occupy two of the four tetrahedral directions around oxygen as non-bonding *phantom sites* — the $NH_3 \to H_2O$ extension of the methane $T_d$ optimisation: lone-pair repulsion relaxes the $H$–$O$–$H$ angle from the ideal $109.5^\circ$ toward the observed $\approx 104.5^\circ$.
 

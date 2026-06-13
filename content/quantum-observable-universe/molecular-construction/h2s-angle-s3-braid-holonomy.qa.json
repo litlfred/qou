@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/molecular-construction/h2s-angle-s3-braid-holonomy.lean"
   },
   "source_hashes": {
-    "md": "b2d489e59946",
+    "md": "22ae09ab0380",
     "ts": "2d17ea954c13",
     "lean": "c45ede97cd13"
   },
@@ -148,6 +148,23 @@
         "reviewed_sha": "a7217279ff3d40758e3e8933eec4de55a629562a",
         "severity": "critical",
         "evidence": "quantum-observable-universe/molecular-construction/h2s-angle-s3-braid-holonomy.md:1: **Conjecture (H₂S bond-angle chiral residue $=$ S³ braid holonomy).** | quantum-observable-universe/molecular-construction/h2s-angle-s3-braid-holonomy.md:18: ($P_{\\mathrm{skew}}$, odd-in-$h$) part of the chiral lone's S³ braid holonomy — | quantum-observable-universe/molecular-construction/h2s-angle-s3-braid-holonomy.md:35: the clean second-row angles are the bar-symmetric backbone, the H₂S residual | quantum-observable-universe/molecular-construction/h2s-angle-s3-braid-holonomy.md:41: molecular-angle opening $\\Delta\\theta_{\\mathrm{H_2S}}$ *is* this S³ holonomy | quantum-observable-universe/molecular-construction/h2s-angle-s3-braid-holonomy.md:61: base toward sp³, so"
+      },
+      {
+        "field_hash": {
+          "md": "22ae09ab0380",
+          "ts": "2d17ea954c13",
+          "lean": "c45ede97cd13"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "f849b704ab06",
+          "script_commit_sha": "07b55b2b407ff515c1ce4c9d1e8bca52ad655287"
+        },
+        "reviewed_at": "2026-06-13T14:21:48.585Z",
+        "reviewed_sha": "ac2abfcb9eba2474f2f49d3e0846da5e403ddda7"
       }
     ],
     "voice-editorializing": [
@@ -937,5 +954,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-13T13:55:33.060Z"
+  "updated_at": "2026-06-13T14:21:48.585Z"
 }

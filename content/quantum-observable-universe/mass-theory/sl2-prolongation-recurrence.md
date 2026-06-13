@@ -1,4 +1,4 @@
-**Proposition (symplectic prolongation ⇒ one-parameter recurrence).**
+**Proposition (symplectic prolongation $\Rightarrow$ one-parameter recurrence).**
 
 The recurrence on the prolonged Seiberg--Witten periods has depth $2$
 ([`prop:prolonged-periods-fixed-depth`](#prop:prolonged-periods-fixed-depth)

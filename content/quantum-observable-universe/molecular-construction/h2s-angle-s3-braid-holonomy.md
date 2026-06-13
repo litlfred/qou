@@ -1,4 +1,4 @@
-**Conjecture (H₂S bond-angle chiral residue $=$ S³ braid holonomy).**
+**Conjecture (H$_2$S bond-angle chiral residue $=$ S$^3$ braid holonomy).**
 
 *The bond-angle residual of $\mathrm{H_2S}$ — the opening
 $\Delta\theta \approx +2.1^\circ$ of the H–S–H angle above the pure-$p$ base
@@ -15,7 +15,7 @@ $$
 $$
 
 *Equivalently, $\Delta\theta$ is the **bar-anti-symmetric**
-($P_{\mathrm{skew}}$, odd-in-$h$) part of the chiral lone's S³ braid holonomy —
+($P_{\mathrm{skew}}$, odd-in-$h$) part of the chiral lone's S$^3$ braid holonomy —
 the chiral channel the framework otherwise projects away — and it **vanishes**
 for the bar-symmetric (self-dual, palindromic) lone pairs of $\mathrm{H_2O}$,
 which is why $\mathrm{H_2O}$'s angle is the clean $q^2$ prediction with no
@@ -32,13 +32,13 @@ What is **established** (not conjectural):
   Chern–Simons holonomy of a Wilson loop in $S^3$
   ([`rem:residue-as-braid-holonomy`](#rem:residue-as-braid-holonomy)).
 - The split is the bar-involution ([`def:bar-involution`](#def:bar-involution)):
-  the clean second-row angles are the bar-symmetric backbone, the H₂S residual
+  the clean second-row angles are the bar-symmetric backbone, the H$_2$S residual
   the bar-anti-symmetric ($P_{\mathrm{skew}}$) part. **Parity is established**:
   the residual is odd in $h$ (scale $h z^2 \approx 3^\circ$, $h z^3 \approx
   1.5^\circ$, observed $2.1^\circ$ between).
 
 The **conjectural content** is the identification itself — that the
-molecular-angle opening $\Delta\theta_{\mathrm{H_2S}}$ *is* this S³ holonomy
+molecular-angle opening $\Delta\theta_{\mathrm{H_2S}}$ *is* this S$^3$ holonomy
 phase, and that the monodromy/Reshetikhin–Turaev evaluation at $\zeta_\ell$
 returns the observed $\approx 2.1^\circ$.
 
@@ -58,7 +58,7 @@ returns the observed $\approx 2.1^\circ$.
 
 A predictive realisation (no fit): a third-row (pure-$p$) atom retains a small
 **residual $s$-character** $f_s = (1/\sqrt5)/(n-1)^2$ that opens the $90^\circ$
-base toward sp³, so
+base toward sp$^3$, so
 
 $$
   \theta(n) \;=\; 90^\circ \;+\; \frac{1}{\sqrt5}\cdot
