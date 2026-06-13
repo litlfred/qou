@@ -3,6 +3,30 @@
 #   eigen-extraction at 6×6 is float64 territory; substrate
 #   precision is the q-arithmetic input, not the eigensolve.
 """
+CLASS-A diagnostic banner (per `local/production-vs-exploratory-discipline`).
+
+The `c_S` surface-correction coefficient is FITTED to a single
+isotope (⁴He, Z=N=2) and the residuals on ¹²C and ⁴⁰Ca are
+reported as cross-checks.  This is a single-isotope fit, not a
+calibration — c_S is a placeholder for the non-abelian Stokes
+derivation referenced in `prop:wigner-np-pairing` and
+`prop:confined-knot-binding`, not yet assembled into a drop-in
+formula.
+
+What would promote this to Class-B (production) closure:
+- Complete the non-abelian Stokes derivation that produces c_S as
+  a closed-form function of the brane geometry (Bring zero-mode
+  data) and `(Z, N)`, with no free parameter.
+- Then `c_S` becomes a derived quantity and the residuals on
+  ¹²C/⁴⁰Ca become unambiguous tests of the surface-correction
+  formula rather than diagnostic outputs.
+
+Until that derivation lands, the canonical-watcher classifies this
+script as `class-a-acknowledged` (single-isotope c_S placeholder
+fit; not a 4th-calibration violation).
+
+──────────────────────────────────────────────────────────────────
+
 Numerical evaluator for B/A from the spectral decomposition of the
 6×6 transfer matrix of H_3(R, q).
 
@@ -83,8 +107,6 @@ Notes
 """
 from __future__ import annotations
 
-import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
-import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import json
 import math
 import sys
@@ -338,7 +360,7 @@ def main() -> int:
                      script_path=__file__, engine="python",
                      start_time=start_time)
         .save())
-    out = _pb.witness_path("b-over-a.witness.json", HERE)
+    out = HERE / "b-over-a.witness.json"
 
     # Pretty print summary
     print(f"q_0 = {Q0:.10f}")
