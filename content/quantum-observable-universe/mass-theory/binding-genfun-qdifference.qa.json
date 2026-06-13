@@ -35,6 +35,24 @@
         "reviewed_at": "2026-06-07T01:35:37.598Z",
         "reviewed_sha": "5b22f37e27e74b674fb6b50fae73e0792e7212e2",
         "notes": "Clear: q-holonomic G(qx)=R(q,x)G(x) => depth-d P-recursive recurrence (1) + confluent differential limit (2); explicitly flags that R's existence/identity is the open part."
+      },
+      {
+        "field_hash": {
+          "md": "ef35a59288c5",
+          "ts": "fd641b09e49a",
+          "lean": "94e6ef3b8fac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:18:10.273Z",
+        "reviewed_sha": "e894f73c2a59ab6c05a905f8195c7ad684d1786f",
+        "notes": "Auto-drained by agent"
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -59,6 +77,24 @@
         "reviewed_at": "2026-06-07T01:35:37.630Z",
         "reviewed_sha": "5b22f37e27e74b674fb6b50fae73e0792e7212e2",
         "notes": "Sorry-free. Caveat: theorem binding_qdifference_recurrence is just 'S.recurrence n' — it projects the recurrence out of an assumed structure field; the q-holonomic=>P-recursive passage is asserted in prose. Gap (existence of R) named/open."
+      },
+      {
+        "field_hash": {
+          "md": "ef35a59288c5",
+          "ts": "fd641b09e49a",
+          "lean": "94e6ef3b8fac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:18:10.273Z",
+        "reviewed_sha": "e894f73c2a59ab6c05a905f8195c7ad684d1786f",
+        "notes": "Auto-drained by agent"
       }
     ],
     "proof-rater-novelty": [
@@ -83,6 +119,24 @@
         "reviewed_at": "2026-06-07T01:35:37.660Z",
         "reviewed_sha": "5b22f37e27e74b674fb6b50fae73e0792e7212e2",
         "notes": "Standard q-holonomic => P-recursive machinery (md: 'same q-difference machinery as the Q_beta precision ladder'); applied to binding series. Not duplicated but not novel theory."
+      },
+      {
+        "field_hash": {
+          "md": "ef35a59288c5",
+          "ts": "fd641b09e49a",
+          "lean": "94e6ef3b8fac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:18:10.273Z",
+        "reviewed_sha": "e894f73c2a59ab6c05a905f8195c7ad684d1786f",
+        "notes": "Auto-drained by agent"
       }
     ],
     "proof-statement-integrity": [
@@ -103,6 +157,24 @@
         "reviewed_at": "2026-06-07T01:35:37.691Z",
         "reviewed_sha": "5b22f37e27e74b674fb6b50fae73e0792e7212e2",
         "notes": "Sorry-free; no stub/True-placeholder/suspect-axiom. The recurrence is a structure hypothesis field (honest), and md is explicit that kernel R existence is open. Self-consistent."
+      },
+      {
+        "field_hash": {
+          "md": "ef35a59288c5",
+          "ts": "fd641b09e49a",
+          "lean": "94e6ef3b8fac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:18:10.273Z",
+        "reviewed_sha": "e894f73c2a59ab6c05a905f8195c7ad684d1786f",
+        "notes": "Auto-drained by agent"
       }
     ],
     "fit-section-chapter": [
@@ -125,6 +197,24 @@
         "reviewed_at": "2026-06-08T09:27:44.059Z",
         "reviewed_sha": "c68cdf5b88aa2ce4d69c3d3c493841caca7107ca",
         "notes": "Prop about q-difference recurrence of binding generating function; fits mass-theory."
+      },
+      {
+        "field_hash": {
+          "md": "ef35a59288c5",
+          "ts": "fd641b09e49a",
+          "lean": "94e6ef3b8fac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:18:10.273Z",
+        "reviewed_sha": "e894f73c2a59ab6c05a905f8195c7ad684d1786f",
+        "notes": "Auto-drained by agent"
       }
     ],
     "wall-side-statement": [
@@ -147,6 +237,24 @@
         "reviewed_at": "2026-06-08T09:27:44.086Z",
         "reviewed_sha": "c68cdf5b88aa2ce4d69c3d3c493841caca7107ca",
         "notes": "Narrative states fibre-level Q(q) polynomial; Lean evaluates at archimedean R (q0). No explicit wall: field or specialisation step naming the evaluation."
+      },
+      {
+        "field_hash": {
+          "md": "ef35a59288c5",
+          "ts": "fd641b09e49a",
+          "lean": "94e6ef3b8fac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:18:10.273Z",
+        "reviewed_sha": "e894f73c2a59ab6c05a905f8195c7ad684d1786f",
+        "notes": "Auto-drained by agent"
       }
     ],
     "wall-side-proof": [
@@ -169,6 +277,24 @@
         "reviewed_at": "2026-06-08T09:27:44.118Z",
         "reviewed_sha": "c68cdf5b88aa2ce4d69c3d3c493841caca7107ca",
         "notes": "Proof trivially reads hypothesis from structure; no regime mismatch in proof itself."
+      },
+      {
+        "field_hash": {
+          "md": "ef35a59288c5",
+          "ts": "fd641b09e49a",
+          "lean": "94e6ef3b8fac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:18:10.273Z",
+        "reviewed_sha": "e894f73c2a59ab6c05a905f8195c7ad684d1786f",
+        "notes": "Auto-drained by agent"
       }
     ],
     "voice-statement-no-interpretation": [
@@ -191,6 +317,24 @@
         "reviewed_at": "2026-06-08T09:27:44.149Z",
         "reviewed_sha": "c68cdf5b88aa2ce4d69c3d3c493841caca7107ca",
         "notes": "Prop kind; final paragraph adds motivation (precision-floor obstruction, SW diff ref) after formal results; no companion interprets: remark."
+      },
+      {
+        "field_hash": {
+          "md": "ef35a59288c5",
+          "ts": "fd641b09e49a",
+          "lean": "94e6ef3b8fac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:18:10.273Z",
+        "reviewed_sha": "e894f73c2a59ab6c05a905f8195c7ad684d1786f",
+        "notes": "Auto-drained by agent"
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -213,6 +357,24 @@
         "reviewed_at": "2026-06-08T09:27:44.181Z",
         "reviewed_sha": "c68cdf5b88aa2ce4d69c3d3c493841caca7107ca",
         "notes": "Narrative depth-d recurrence from q-diff kernel; Lean same structure. Ref matches. Equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "ef35a59288c5",
+          "ts": "fd641b09e49a",
+          "lean": "94e6ef3b8fac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:18:10.273Z",
+        "reviewed_sha": "e894f73c2a59ab6c05a905f8195c7ad684d1786f",
+        "notes": "Auto-drained by agent"
       }
     ],
     "proof-no-bare-sorries": [
@@ -1249,5 +1411,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-13T05:18:10.273Z"
 }
