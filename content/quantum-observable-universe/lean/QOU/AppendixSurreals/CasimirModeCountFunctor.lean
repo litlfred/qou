@@ -127,4 +127,27 @@ theorem casimir_coefficient_eq_zeta_prefactor :
     Real.pi ^ 2 / 720 = (Real.pi ^ 2 / 6) * (riemannZeta (-3 : ℂ)).re := by
   rw [riemannZeta_neg_three_re]; ring
 
+/-- **Transported consistency witness — NOT a substrate derivation.**
+This inhabits `PlateModeCountFunctor` with the *textbook* Casimir energy
+density hardcoded, `f(A,d) = −A·π²/(720 d³)`. Its only purpose is to show
+the interface is **consistent** (the two axioms are jointly satisfiable,
+so the class is not vacuous) and that the downstream chain
+(`CasimirEpsilonVacuum`, and via `energyPerArea_deriv` the force law)
+runs end-to-end on a concrete object.
+
+It is **transport, not derivation**: the `−π²/(720 d³)` scaling is
+*postulated* here, copied from standard physics, **not** produced from
+substrate data. Providing it as an instance would let `typeclass`
+resolution silently discharge the conjecture, so it is deliberately a
+plain `def` (not an `instance`). The open conjecture
+(`conj:casimir-epsilon-vacuum`) is precisely that the categorical
+Yekutieli lift yields *this* function from the plate-bounded mode count
+— see `docs/workplans/2026-06-12-n-odot-construction-scoping.md` (Stage C).
+-/
+noncomputable def casimirTransportedFunctor : PlateModeCountFunctor :=
+  PlateModeCountFunctor.ofData
+    (fun A d => -A * Real.pi ^ 2 / (720 * d ^ 3))
+    (fun _ _ => by ring)
+    (fun _ _ => by ring)
+
 end QOU.AppendixSurreals
