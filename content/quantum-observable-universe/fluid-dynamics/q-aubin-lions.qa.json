@@ -459,21 +459,20 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "4f3e2a9a4705",
-          "ts": "66c82b7c9b14",
+          "md": "eb47fbc03ef4",
+          "ts": "07a6e0fcb430",
           "lean": "dda87b5c101e"
         },
         "result": "pass",
-        "evidence": "proposition in NS regularity section; Aubin-Lions compactness for q->1 limit",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
+          "agent_date": "2026-06-13",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:57:59.389Z",
-        "reviewed_sha": "31819c3a532a45e14781e97aa9289c34ea582f21"
+        "reviewed_at": "2026-06-13T19:06:41.502Z",
+        "reviewed_sha": "782b75d8a21015413016c4b28f9467f12449ccf5"
       }
     ],
     "wall-side-statement": [
@@ -1389,5 +1388,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-13T15:20:44.541Z"
+  "updated_at": "2026-06-13T19:06:41.502Z"
 }

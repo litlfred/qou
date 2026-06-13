@@ -8,9 +8,9 @@
     "lean": "content/quantum-observable-universe/mass-theory/y-lambda-cyclotomic-factorization.lean"
   },
   "source_hashes": {
-    "md": "8bd321b326ce",
+    "md": "c5406258c931",
     "ts": "24abbd8d399a",
-    "lean": "051be5aed972"
+    "lean": "dd709fee9376"
   },
   "criteria": {
     "voice-status-leak": [
@@ -457,23 +457,21 @@
       },
       {
         "field_hash": {
-          "md": "8bd321b326ce",
+          "md": "c5406258c931",
           "ts": "24abbd8d399a",
-          "lean": "051be5aed972"
+          "lean": "dd709fee9376"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "y-lambda-cyclotomic-factorization.md:3 Proposition (cyclotomic factorisation of y_lambda)",
+        "evidence": "Listed in mass-theory.ts.",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
+          "agent_date": "2026-06-13",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T10:35:25.638Z",
-        "reviewed_sha": "51621d12699c8cffcd2836175a732f45decbf853",
-        "notes": "cyclotomic factorisation of Markov weights is core mass-theory content"
+        "reviewed_at": "2026-06-13T19:07:47.590Z",
+        "reviewed_sha": "782b75d8a21015413016c4b28f9467f12449ccf5"
       }
     ],
     "voice-statement-no-interpretation": [
@@ -499,23 +497,22 @@
       },
       {
         "field_hash": {
-          "md": "8bd321b326ce",
+          "md": "c5406258c931",
           "ts": "24abbd8d399a",
-          "lean": "051be5aed972"
+          "lean": "dd709fee9376"
         },
-        "result": "warn",
+        "result": "fail",
         "severity": "minor",
-        "evidence": "y-lambda-cyclotomic-factorization.md:107 ## Significance section after proof body",
+        "evidence": "Interpretive discussion in proposition.",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
+          "agent_date": "2026-06-13",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T10:36:24.960Z",
-        "reviewed_sha": "51621d12699c8cffcd2836175a732f45decbf853",
-        "notes": "interpretive significance section after proof in same block; no companion interprets: remark"
+        "reviewed_at": "2026-06-13T19:07:47.224Z",
+        "reviewed_sha": "782b75d8a21015413016c4b28f9467f12449ccf5"
       }
     ],
     "wall-side-statement": [
@@ -541,23 +538,21 @@
       },
       {
         "field_hash": {
-          "md": "8bd321b326ce",
+          "md": "c5406258c931",
           "ts": "24abbd8d399a",
-          "lean": "051be5aed972"
+          "lean": "dd709fee9376"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "y-lambda-cyclotomic-factorization.md:1 Lean sibling: archimedean specialisation over R (CLAUDE.md 7c)",
+        "evidence": "Algebraic statement.",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
+          "agent_date": "2026-06-13",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T10:35:45.030Z",
-        "reviewed_sha": "51621d12699c8cffcd2836175a732f45decbf853",
-        "notes": "banner explicitly declares archimedean specialisation; R use is correct per 7c"
+        "reviewed_at": "2026-06-13T19:07:47.802Z",
+        "reviewed_sha": "782b75d8a21015413016c4b28f9467f12449ccf5"
       }
     ],
     "wall-side-proof": [
@@ -583,23 +578,21 @@
       },
       {
         "field_hash": {
-          "md": "8bd321b326ce",
+          "md": "c5406258c931",
           "ts": "24abbd8d399a",
-          "lean": "051be5aed972"
+          "lean": "dd709fee9376"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "y-lambda-cyclotomic-factorization.lean:71 theorem y_lambda_cyclotomic_factorization ... t : Real",
+        "evidence": "Algebraic proof.",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
+          "agent_date": "2026-06-13",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T10:35:45.064Z",
-        "reviewed_sha": "51621d12699c8cffcd2836175a732f45decbf853",
-        "notes": "statement is archimedean; proof uses R consistently; no algebraic statement proved by archimedean-only machinery"
+        "reviewed_at": "2026-06-13T19:07:48.186Z",
+        "reviewed_sha": "782b75d8a21015413016c4b28f9467f12449ccf5"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1507,5 +1500,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-13T13:55:33.060Z"
+  "updated_at": "2026-06-13T19:07:48.186Z"
 }

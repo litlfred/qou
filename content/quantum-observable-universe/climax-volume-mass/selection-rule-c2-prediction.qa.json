@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/climax-volume-mass/selection-rule-c2-prediction.lean"
   },
   "source_hashes": {
-    "md": "0a0e92a9d60e",
+    "md": "337b4bb35b67",
     "ts": "272d3b8da8d4",
     "lean": "2d834c773007"
   },
@@ -16,89 +16,79 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "0a0e92a9d60e",
+          "md": "337b4bb35b67",
           "ts": "272d3b8da8d4",
           "lean": "2d834c773007"
         },
-        "result": "pass",
+        "result": "fail",
         "severity": "minor",
-        "evidence": "selection-rule-c2-prediction.md:1 - proposition + Why this matters / Lean proof sections below",
+        "evidence": "Block contains a 'Why this matters' section with substantive interpretive prose right below the statement.",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
+          "agent_date": "2026-06-13",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-07T13:40:38.496Z",
-        "reviewed_sha": "25902cde45f4f8cac782b53a45b9b0219972eea8",
-        "notes": "Why this matters and Lean proof sections count as scholarly content elaborating the statement, not interpretive physical prose triggering the criterion"
+        "reviewed_at": "2026-06-13T19:05:41.476Z",
+        "reviewed_sha": "782b75d8a21015413016c4b28f9467f12449ccf5"
       }
     ],
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "0a0e92a9d60e",
+          "md": "337b4bb35b67",
           "ts": "272d3b8da8d4",
           "lean": "2d834c773007"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "selection-rule-c2-prediction.ts: label prop:selection-rule-c2-prediction; in braiding-relations/spectral-filter section",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
+          "agent_date": "2026-06-13",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-07T13:40:38.537Z",
-        "reviewed_sha": "25902cde45f4f8cac782b53a45b9b0219972eea8",
-        "notes": "c2 selection rule for linking weight; subject fits q-Hyperbolic Geometry chapter braiding content"
+        "reviewed_at": "2026-06-13T19:05:41.719Z",
+        "reviewed_sha": "782b75d8a21015413016c4b28f9467f12449ccf5"
       }
     ],
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "0a0e92a9d60e",
+          "md": "337b4bb35b67",
           "ts": "272d3b8da8d4",
           "lean": "2d834c773007"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "selection-rule-c2-prediction.md: q in R_{>0} stated; closed form (q+1)^2/(3q) Laurent rational in Z[q,q^-1]",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
+          "agent_date": "2026-06-13",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-07T13:40:38.577Z",
-        "reviewed_sha": "25902cde45f4f8cac782b53a45b9b0219972eea8",
-        "notes": "CLAUDE.md 7c compliant per md annotation; stated over R for substrate-anchor regime; fibre-level Laurent rational"
+        "reviewed_at": "2026-06-13T19:05:41.920Z",
+        "reviewed_sha": "782b75d8a21015413016c4b28f9467f12449ccf5"
       }
     ],
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "0a0e92a9d60e",
+          "md": "337b4bb35b67",
           "ts": "272d3b8da8d4",
           "lean": "2d834c773007"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "selection-rule-c2-prediction.lean:48 - field_simp; ring over R (q : R) (hq : 0 < q)",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
+          "agent_date": "2026-06-13",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-07T13:40:38.616Z",
-        "reviewed_sha": "25902cde45f4f8cac782b53a45b9b0219972eea8",
-        "notes": "proof over archimedean R with q>0; matches statement which is stated over R_{>0}; no side mismatch"
+        "reviewed_at": "2026-06-13T19:05:42.227Z",
+        "reviewed_sha": "782b75d8a21015413016c4b28f9467f12449ccf5"
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1234,5 +1224,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-13T13:55:33.060Z"
+  "updated_at": "2026-06-13T19:05:42.227Z"
 }

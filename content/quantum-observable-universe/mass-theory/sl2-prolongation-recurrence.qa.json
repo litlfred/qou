@@ -16,89 +16,82 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "84041b8e6b6c",
+          "md": "0f0de9e6b680",
           "ts": "29b7acbbed51",
           "lean": "318393fd269b"
         },
-        "result": "pass",
+        "result": "fail",
         "severity": "minor",
-        "evidence": "sl2-prolongation-recurrence.md -- statement and proof of depth-2 recurrence",
+        "evidence": "Has proof discussion and interpretation inside block.",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
+          "agent_date": "2026-06-13",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-07T13:46:07.708Z",
-        "reviewed_sha": "af638213a478dd151bf02a1c7949162067f278fa",
-        "notes": "Block is focused on statement and proof; no extended interpretation section"
+        "reviewed_at": "2026-06-13T19:07:44.039Z",
+        "reviewed_sha": "782b75d8a21015413016c4b28f9467f12449ccf5"
       }
     ],
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "84041b8e6b6c",
+          "md": "0f0de9e6b680",
           "ts": "29b7acbbed51",
           "lean": "318393fd269b"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "sl2-prolongation-recurrence.ts:2 -- proposition",
+        "evidence": "Listed in section sec:mass-theory-orphan-reconnect in mass-theory.ts.",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
+          "agent_date": "2026-06-13",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-07T13:46:07.743Z",
-        "reviewed_sha": "af638213a478dd151bf02a1c7949162067f278fa",
-        "notes": "sl2 prolongation recurrence fits mass-theory chapter"
+        "reviewed_at": "2026-06-13T19:07:44.395Z",
+        "reviewed_sha": "782b75d8a21015413016c4b28f9467f12449ccf5"
       }
     ],
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "84041b8e6b6c",
+          "md": "0f0de9e6b680",
           "ts": "29b7acbbed51",
           "lean": "318393fd269b"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "sl2-prolongation-recurrence.md -- recurrence on prolonged periods; algebraic",
+        "evidence": "Algebraic.",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
+          "agent_date": "2026-06-13",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-07T13:46:07.775Z",
-        "reviewed_sha": "af638213a478dd151bf02a1c7949162067f278fa",
-        "notes": "Statement is algebraic depth-2 recurrence; no archimedean-only constructs in statement"
+        "reviewed_at": "2026-06-13T19:07:44.779Z",
+        "reviewed_sha": "782b75d8a21015413016c4b28f9467f12449ccf5"
       }
     ],
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "84041b8e6b6c",
+          "md": "0f0de9e6b680",
           "ts": "29b7acbbed51",
           "lean": "318393fd269b"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "sl2-prolongation-recurrence.lean -- Lean witness for depth-2 claim",
+        "evidence": "Algebraic.",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
+          "agent_date": "2026-06-13",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-07T13:46:07.810Z",
-        "reviewed_sha": "af638213a478dd151bf02a1c7949162067f278fa",
-        "notes": "Lean witness proves the depth-2 recurrence algebraically"
+        "reviewed_at": "2026-06-13T19:07:45.038Z",
+        "reviewed_sha": "782b75d8a21015413016c4b28f9467f12449ccf5"
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1258,5 +1251,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-13T14:21:48.585Z"
+  "updated_at": "2026-06-13T19:07:45.038Z"
 }

@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/appendix-surreals/surreal-squeeze.lean"
   },
   "source_hashes": {
-    "md": "7262068bfd83",
+    "md": "875c207b88a2",
     "ts": "55c14e0bbbd9",
     "lean": "176e2ebf3658"
   },
@@ -380,26 +380,28 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "7262068bfd83",
+          "md": "875c207b88a2",
           "ts": "55c14e0bbbd9",
           "lean": "176e2ebf3658"
         },
-        "result": "pass",
+        "result": "fail",
+        "severity": "minor",
+        "evidence": "The block contains substantive interpretive prose ('What the lemma says' and 'Downstream') directly following the proof, without moving it to a separate 'interprets:' remark.",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
+          "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-13",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-13T03:56:09.631Z",
-        "reviewed_sha": "54c3d2b33e9cb4b3ec331294d81e4f4f27eb842f"
+        "reviewed_at": "2026-06-13T19:05:16.081Z",
+        "reviewed_sha": "782b75d8a21015413016c4b28f9467f12449ccf5"
       }
     ],
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "7262068bfd83",
+          "md": "875c207b88a2",
           "ts": "55c14e0bbbd9",
           "lean": "176e2ebf3658"
         },
@@ -407,18 +409,18 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
+          "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-13",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-13T03:56:09.631Z",
-        "reviewed_sha": "54c3d2b33e9cb4b3ec331294d81e4f4f27eb842f"
+        "reviewed_at": "2026-06-13T19:05:20.618Z",
+        "reviewed_sha": "782b75d8a21015413016c4b28f9467f12449ccf5"
       }
     ],
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "7262068bfd83",
+          "md": "875c207b88a2",
           "ts": "55c14e0bbbd9",
           "lean": "176e2ebf3658"
         },
@@ -426,18 +428,18 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
+          "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-13",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-13T03:56:09.631Z",
-        "reviewed_sha": "54c3d2b33e9cb4b3ec331294d81e4f4f27eb842f"
+        "reviewed_at": "2026-06-13T19:05:20.871Z",
+        "reviewed_sha": "782b75d8a21015413016c4b28f9467f12449ccf5"
       }
     ],
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "7262068bfd83",
+          "md": "875c207b88a2",
           "ts": "55c14e0bbbd9",
           "lean": "176e2ebf3658"
         },
@@ -445,12 +447,12 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
+          "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-13",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-13T03:56:09.631Z",
-        "reviewed_sha": "54c3d2b33e9cb4b3ec331294d81e4f4f27eb842f"
+        "reviewed_at": "2026-06-13T19:05:21.311Z",
+        "reviewed_sha": "782b75d8a21015413016c4b28f9467f12449ccf5"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1358,5 +1360,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-13T13:55:33.060Z"
+  "updated_at": "2026-06-13T19:05:21.311Z"
 }

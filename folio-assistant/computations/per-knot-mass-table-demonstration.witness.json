@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-03T18:59:16.717080+00:00",
-  "commitSha": "cf87194d51015b63a2a55be374096982b29feeb4",
+  "engineVersion": "mpmath 1.2.1",
+  "computedAt": "2026-06-13T19:04:14.869079+00:00",
+  "commitSha": "782b75d8a21015413016c4b28f9467f12449ccf5",
   "assertions": [
     {
       "name": "n_atoms_with_per_block_prediction",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 7648,
+  "durationMs": 12420,
   "computation": "per-knot-mass-table-demonstration",
   "scriptFile": "per_knot_mass_table_demonstration.py",
-  "scriptHash": "fe943ecca4aa",
-  "scriptCommitSha": "42b2473d28dca7d4bdb470c42b02aff343120233",
+  "scriptHash": "c82b6c134b3a",
+  "scriptCommitSha": "b355671a40f0166f118ad431886163c13de15ec9",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -25,12 +25,13 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.2",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
-    "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.4.0"
+    "sympy": "1.11.1",
+    "mpmath": "0.0.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
   },
   "description": "Per-block reading of m(K) = m_e · VolDensity(K, q₀) for the 6 atoms with Vol(K) data, using vol_density_per_block(vol_K, tr_M_K, q). EXPLORATORY truth-tracking, NOT a closure — validates the vol_density_per_block_wiring.py RED verdict across the atomic table.",
   "data": {

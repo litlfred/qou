@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/fluid-dynamics/core-levi-form.lean"
   },
   "source_hashes": {
-    "md": "9fa41da1cf2e",
+    "md": "16cbab642f55",
     "ts": "d8ab3b33f2ff",
     "lean": "10b98c16aa15"
   },
@@ -574,62 +574,60 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "9fa41da1cf2e",
-          "ts": "d6c99adf43bc",
-          "lean": "d43579af2af8"
+          "md": "16cbab642f55",
+          "ts": "d8ab3b33f2ff",
+          "lean": "10b98c16aa15"
         },
-        "result": "warn",
-        "severity": "minor",
-        "evidence": "statement uses contact geometry Levi form (categorical) but also a_perp/a_parallel as half-max widths in R^3; mixed without banner",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
+          "agent_date": "2026-06-13",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T10:00:00.428Z",
-        "reviewed_sha": "c2b296b787f282526008689a95749a04773bbed7"
+        "reviewed_at": "2026-06-13T19:05:15.430Z",
+        "reviewed_sha": "782b75d8a21015413016c4b28f9467f12449ccf5",
+        "notes": " fluid-dynamics is naturally Archimedean "
       }
     ],
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "9fa41da1cf2e",
-          "ts": "d6c99adf43bc",
-          "lean": "d43579af2af8"
+          "md": "16cbab642f55",
+          "ts": "d8ab3b33f2ff",
+          "lean": "10b98c16aa15"
         },
         "result": "n/a",
-        "evidence": "no proof body in .md; propositions (a)-(e) stated without derivation",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
+          "agent_date": "2026-06-13",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T10:00:00.461Z",
-        "reviewed_sha": "c2b296b787f282526008689a95749a04773bbed7"
+        "reviewed_at": "2026-06-13T19:05:16.055Z",
+        "reviewed_sha": "782b75d8a21015413016c4b28f9467f12449ccf5",
+        "notes": "No proof provided."
       }
     ],
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "9fa41da1cf2e",
-          "ts": "d6c99adf43bc",
-          "lean": "d43579af2af8"
+          "md": "16cbab642f55",
+          "ts": "d8ab3b33f2ff",
+          "lean": "10b98c16aa15"
         },
         "result": "pass",
-        "evidence": "proposition with 5 mathematical conditions; equivalences are formal",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
+          "agent_date": "2026-06-13",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T10:00:00.495Z",
-        "reviewed_sha": "c2b296b787f282526008689a95749a04773bbed7"
+        "reviewed_at": "2026-06-13T19:05:15.285Z",
+        "reviewed_sha": "782b75d8a21015413016c4b28f9467f12449ccf5"
       }
     ],
     "voice-unicode-crash": [
@@ -1465,5 +1463,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-13T13:55:33.060Z"
+  "updated_at": "2026-06-13T19:05:16.055Z"
 }

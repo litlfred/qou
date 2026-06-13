@@ -8,8 +8,8 @@
     "lean": "content/quantum-observable-universe/fluid-dynamics/hyperbolic-overlap-saturation.lean"
   },
   "source_hashes": {
-    "md": "ec9b5c40553e",
-    "ts": "c71c63f76065",
+    "md": "f40b672cd9d3",
+    "ts": "159d8a9bbd4e",
     "lean": "fa6c1cf6a7b6"
   },
   "criteria": {
@@ -347,21 +347,20 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "ec9b5c40553e",
-          "ts": "c71c63f76065",
+          "md": "f40b672cd9d3",
+          "ts": "159d8a9bbd4e",
           "lean": "fa6c1cf6a7b6"
         },
         "result": "pass",
-        "evidence": "remark",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
+          "agent_date": "2026-06-13",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T10:14:34.248Z",
-        "reviewed_sha": "b9d92344e258d5bcb202e00e98ef195dda20d8f4"
+        "reviewed_at": "2026-06-13T19:06:05.309Z",
+        "reviewed_sha": "782b75d8a21015413016c4b28f9467f12449ccf5"
       }
     ],
     "wall-side-statement": [
@@ -1096,5 +1095,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-13T13:55:33.060Z"
+  "updated_at": "2026-06-13T19:06:05.309Z"
 }

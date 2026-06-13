@@ -7,7 +7,7 @@
     "md": "content/quantum-observable-universe/mass-endomorphism/qbeta-canonical-markov-weights-explicit-instance.md"
   },
   "source_hashes": {
-    "md": "fe6db1856fb8",
+    "md": "fd5f6112fd5a",
     "ts": "a0530a224419"
   },
   "criteria": {
@@ -47,6 +47,25 @@
         "reviewed_at": "2026-06-13T13:16:06.918Z",
         "reviewed_sha": "6b44ecdbb4f5bf1c4e1c2b1a08f9244d2ee52803",
         "notes": "Auto-drained by agent"
+      },
+      {
+        "field_hash": {
+          "md": "fd5f6112fd5a",
+          "ts": "a0530a224419"
+        },
+        "result": "fail",
+        "severity": "minor",
+        "evidence": "The block contains extensive interpretive prose including an 'Honest scope' section detailing what is established and not established, as well as a 'Numerical sanity check', which belong in a separate remark linked via interprets:",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T19:05:40.332Z",
+        "reviewed_sha": "782b75d8a21015413016c4b28f9467f12449ccf5",
+        "notes": "Move the 'Honest scope' and 'Numerical sanity check' sections to a separate remark block."
       }
     ],
     "fit-section-chapter": [
@@ -85,6 +104,23 @@
         "reviewed_at": "2026-06-13T13:16:06.918Z",
         "reviewed_sha": "6b44ecdbb4f5bf1c4e1c2b1a08f9244d2ee52803",
         "notes": "Auto-drained by agent"
+      },
+      {
+        "field_hash": {
+          "md": "fd5f6112fd5a",
+          "ts": "a0530a224419"
+        },
+        "result": "pass",
+        "evidence": "The block provides an explicit instance for CanonicalMarkovWeightsH3, properly fitting into the mass-endomorphism chapter and its qbeta sequence.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T19:05:44.558Z",
+        "reviewed_sha": "782b75d8a21015413016c4b28f9467f12449ccf5"
       }
     ],
     "wall-side-statement": [
@@ -123,6 +159,25 @@
         "reviewed_at": "2026-06-13T13:16:06.918Z",
         "reviewed_sha": "6b44ecdbb4f5bf1c4e1c2b1a08f9244d2ee52803",
         "notes": "Auto-drained by agent"
+      },
+      {
+        "field_hash": {
+          "md": "fd5f6112fd5a",
+          "ts": "a0530a224419"
+        },
+        "result": "fail",
+        "severity": "major",
+        "evidence": "The block is in a generic-ring substrate chapter (mass-endomorphism) but the statement hard-codes archimedean constructs (sqrt q) and has an order hypothesis (q > 0) in the statement/proof without a 'wall:' field in the frontmatter or a section 7c conditional banner in the statement.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T19:05:48.704Z",
+        "reviewed_sha": "782b75d8a21015413016c4b28f9467f12449ccf5",
+        "notes": "Add a 'wall:' field or conditional banner since this instance explicitly relies on the real square root."
       }
     ],
     "wall-side-proof": [
@@ -161,6 +216,23 @@
         "reviewed_at": "2026-06-13T13:16:06.918Z",
         "reviewed_sha": "6b44ecdbb4f5bf1c4e1c2b1a08f9244d2ee52803",
         "notes": "Auto-drained by agent"
+      },
+      {
+        "field_hash": {
+          "md": "fd5f6112fd5a",
+          "ts": "a0530a224419"
+        },
+        "result": "pass",
+        "evidence": "The proof relies purely on the algebraic tactic 'ring' which works over generic rings, so it does not use archimedean-only machinery to prove the identity.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T19:05:56.044Z",
+        "reviewed_sha": "782b75d8a21015413016c4b28f9467f12449ccf5"
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1276,5 +1348,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-13T13:55:33.060Z"
+  "updated_at": "2026-06-13T19:05:56.044Z"
 }

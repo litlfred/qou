@@ -8,8 +8,8 @@
     "lean": "content/quantum-observable-universe/mass-theory/term6-binding-density.lean"
   },
   "source_hashes": {
-    "md": "cf30ef81fa50",
-    "ts": "9cc7f1448632",
+    "md": "5e92e0352f07",
+    "ts": "abebe6c7b25c",
     "lean": "19c7b68f1123"
   },
   "criteria": {
@@ -415,6 +415,24 @@
         "reviewed_at": "2026-06-13T13:16:07.687Z",
         "reviewed_sha": "6b44ecdbb4f5bf1c4e1c2b1a08f9244d2ee52803",
         "notes": "Auto-drained by agent"
+      },
+      {
+        "field_hash": {
+          "md": "5e92e0352f07",
+          "ts": "abebe6c7b25c",
+          "lean": "19c7b68f1123"
+        },
+        "result": "pass",
+        "evidence": "Listed in mass-theory.ts.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T19:07:48.694Z",
+        "reviewed_sha": "782b75d8a21015413016c4b28f9467f12449ccf5"
       }
     ],
     "wall-side-statement": [
@@ -1364,5 +1382,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-13T13:55:33.060Z"
+  "updated_at": "2026-06-13T19:07:48.694Z"
 }

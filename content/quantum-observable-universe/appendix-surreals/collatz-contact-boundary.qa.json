@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/appendix-surreals/collatz-contact-boundary.lean"
   },
   "source_hashes": {
-    "md": "9bf2e41acd95",
+    "md": "e53fe4c65bac",
     "ts": "c2d91407c017",
     "lean": "11dfcc363108"
   },
@@ -397,45 +397,49 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "9bf2e41acd95",
+          "md": "e53fe4c65bac",
           "ts": "c2d91407c017",
           "lean": "11dfcc363108"
         },
-        "result": "pass",
+        "result": "fail",
+        "severity": "minor",
+        "evidence": "The proposition statement is followed immediately by extensive interpretive prose ('From integer parity to the [2]_q-divisor', 'The [2]_q-adic valuation as contact order', etc.) in the same block without an 'interprets:' remark.",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
+          "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-13",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-13T03:56:42.550Z",
-        "reviewed_sha": "b5b8eae463d7af2bb3713e19411d17e939e9c9bb"
+        "reviewed_at": "2026-06-13T19:05:56.647Z",
+        "reviewed_sha": "782b75d8a21015413016c4b28f9467f12449ccf5"
       }
     ],
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "9bf2e41acd95",
+          "md": "e53fe4c65bac",
           "ts": "c2d91407c017",
           "lean": "11dfcc363108"
         },
-        "result": "pass",
+        "result": "fail",
+        "severity": "major",
+        "evidence": "The block's primary subject is the q-Collatz contact boundary on the Reeb bundle for q = e^{i\\Theta}. It never mentions surreals or infinitesimals. It is genuinely misfiled and squarely belongs in the Collatz chapter, not the surreals appendix.",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
+          "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-13",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-13T03:56:42.550Z",
-        "reviewed_sha": "b5b8eae463d7af2bb3713e19411d17e939e9c9bb"
+        "reviewed_at": "2026-06-13T19:06:00.918Z",
+        "reviewed_sha": "782b75d8a21015413016c4b28f9467f12449ccf5"
       }
     ],
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "9bf2e41acd95",
+          "md": "e53fe4c65bac",
           "ts": "c2d91407c017",
           "lean": "11dfcc363108"
         },
@@ -443,18 +447,18 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
+          "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-13",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-13T03:56:42.550Z",
-        "reviewed_sha": "b5b8eae463d7af2bb3713e19411d17e939e9c9bb"
+        "reviewed_at": "2026-06-13T19:06:05.309Z",
+        "reviewed_sha": "782b75d8a21015413016c4b28f9467f12449ccf5"
       }
     ],
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "9bf2e41acd95",
+          "md": "e53fe4c65bac",
           "ts": "c2d91407c017",
           "lean": "11dfcc363108"
         },
@@ -462,12 +466,12 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
+          "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-13",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-13T03:56:42.550Z",
-        "reviewed_sha": "b5b8eae463d7af2bb3713e19411d17e939e9c9bb"
+        "reviewed_at": "2026-06-13T19:06:05.716Z",
+        "reviewed_sha": "782b75d8a21015413016c4b28f9467f12449ccf5"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1371,5 +1375,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-13T13:55:33.060Z"
+  "updated_at": "2026-06-13T19:06:05.716Z"
 }

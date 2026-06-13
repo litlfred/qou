@@ -31,6 +31,25 @@
         "reviewed_at": "2026-06-13T13:16:08.222Z",
         "reviewed_sha": "6b44ecdbb4f5bf1c4e1c2b1a08f9244d2ee52803",
         "notes": "Auto-drained by agent"
+      },
+      {
+        "field_hash": {
+          "md": "1554b9bb60b7",
+          "ts": "f702b93025ff",
+          "lean": "5cbec0b8ff1b"
+        },
+        "result": "fail",
+        "severity": "minor",
+        "evidence": "Scope note and other interpretive sections inside the block.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T19:07:37.843Z",
+        "reviewed_sha": "782b75d8a21015413016c4b28f9467f12449ccf5"
       }
     ],
     "fit-section-chapter": [
@@ -51,6 +70,25 @@
         "reviewed_at": "2026-06-13T13:16:08.222Z",
         "reviewed_sha": "6b44ecdbb4f5bf1c4e1c2b1a08f9244d2ee52803",
         "notes": "Auto-drained by agent"
+      },
+      {
+        "field_hash": {
+          "md": "1554b9bb60b7",
+          "ts": "f702b93025ff",
+          "lean": "5cbec0b8ff1b"
+        },
+        "result": "fail",
+        "severity": "major",
+        "evidence": "Orphan block: not listed in mass-theory.ts chapter manifest.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T19:07:38.465Z",
+        "reviewed_sha": "782b75d8a21015413016c4b28f9467f12449ccf5"
       }
     ],
     "wall-side-statement": [
@@ -71,6 +109,24 @@
         "reviewed_at": "2026-06-13T13:16:08.222Z",
         "reviewed_sha": "6b44ecdbb4f5bf1c4e1c2b1a08f9244d2ee52803",
         "notes": "Auto-drained by agent"
+      },
+      {
+        "field_hash": {
+          "md": "1554b9bb60b7",
+          "ts": "f702b93025ff",
+          "lean": "5cbec0b8ff1b"
+        },
+        "result": "pass",
+        "evidence": "Statement is algebraic.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T19:07:39.107Z",
+        "reviewed_sha": "782b75d8a21015413016c4b28f9467f12449ccf5"
       }
     ],
     "wall-side-proof": [
@@ -91,6 +147,24 @@
         "reviewed_at": "2026-06-13T13:16:08.222Z",
         "reviewed_sha": "6b44ecdbb4f5bf1c4e1c2b1a08f9244d2ee52803",
         "notes": "Auto-drained by agent"
+      },
+      {
+        "field_hash": {
+          "md": "1554b9bb60b7",
+          "ts": "f702b93025ff",
+          "lean": "5cbec0b8ff1b"
+        },
+        "result": "pass",
+        "evidence": "Proof is algebraic.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T19:07:39.536Z",
+        "reviewed_sha": "782b75d8a21015413016c4b28f9467f12449ccf5"
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1243,5 +1317,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-13T14:21:48.585Z"
+  "updated_at": "2026-06-13T19:07:39.536Z"
 }

@@ -31,6 +31,25 @@
         "reviewed_at": "2026-06-13T13:16:06.405Z",
         "reviewed_sha": "6b44ecdbb4f5bf1c4e1c2b1a08f9244d2ee52803",
         "notes": "Auto-drained by agent"
+      },
+      {
+        "field_hash": {
+          "md": "46df229bcfea",
+          "ts": "94052db98e71",
+          "lean": "027a98b7b582"
+        },
+        "result": "fail",
+        "severity": "minor",
+        "evidence": "Substantive interpretive prose (explaining why van der Waals is small, its physical meaning, relation to fine-structure constant) immediately follows the proposition in the same block, but it should be separated into an 'interprets:' remark.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T19:06:27.237Z",
+        "reviewed_sha": "782b75d8a21015413016c4b28f9467f12449ccf5"
       }
     ],
     "fit-section-chapter": [
@@ -51,6 +70,24 @@
         "reviewed_at": "2026-06-13T13:16:06.405Z",
         "reviewed_sha": "6b44ecdbb4f5bf1c4e1c2b1a08f9244d2ee52803",
         "notes": "Auto-drained by agent"
+      },
+      {
+        "field_hash": {
+          "md": "46df229bcfea",
+          "ts": "94052db98e71",
+          "lean": "027a98b7b582"
+        },
+        "result": "pass",
+        "evidence": "Van der Waals is described as a 'discarded residual' of the projection, which connects to the statistical mechanics and information loss themes of the information-theory chapter (similar to how earlier blocks handle phase transitions and entropy).",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T19:06:21.598Z",
+        "reviewed_sha": "782b75d8a21015413016c4b28f9467f12449ccf5"
       }
     ],
     "wall-side-statement": [
@@ -71,6 +108,25 @@
         "reviewed_at": "2026-06-13T13:16:06.405Z",
         "reviewed_sha": "6b44ecdbb4f5bf1c4e1c2b1a08f9244d2ee52803",
         "notes": "Auto-drained by agent"
+      },
+      {
+        "field_hash": {
+          "md": "46df229bcfea",
+          "ts": "94052db98e71",
+          "lean": "027a98b7b582"
+        },
+        "result": "fail",
+        "severity": "major",
+        "evidence": "The block statement hard-codes archimedean constructs (`\\ln q`, `\\cosh`, `\\sinh`) directly in the core proposition, but the Lean sibling explicitly claims to be pure `ring` (commutative ring with formal q, qi). Archimedean variables belong outside the generic algebraic statement.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T19:06:07.671Z",
+        "reviewed_sha": "782b75d8a21015413016c4b28f9467f12449ccf5"
       }
     ],
     "wall-side-proof": [
@@ -91,6 +147,24 @@
         "reviewed_at": "2026-06-13T13:16:06.405Z",
         "reviewed_sha": "6b44ecdbb4f5bf1c4e1c2b1a08f9244d2ee52803",
         "notes": "Auto-drained by agent"
+      },
+      {
+        "field_hash": {
+          "md": "46df229bcfea",
+          "ts": "94052db98e71",
+          "lean": "027a98b7b582"
+        },
+        "result": "n/a",
+        "evidence": "The block does not contain a narrative **Proof.** section.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T19:06:14.953Z",
+        "reviewed_sha": "782b75d8a21015413016c4b28f9467f12449ccf5"
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1252,5 +1326,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-13T14:21:48.585Z"
+  "updated_at": "2026-06-13T19:06:27.237Z"
 }

@@ -28,6 +28,23 @@
         "reviewed_at": "2026-06-13T13:16:06.405Z",
         "reviewed_sha": "6b44ecdbb4f5bf1c4e1c2b1a08f9244d2ee52803",
         "notes": "Auto-drained by agent"
+      },
+      {
+        "field_hash": {
+          "md": "ef7d0026428f",
+          "ts": "09c3453a0e0b"
+        },
+        "result": "pass",
+        "evidence": "The block discusses boiling, freezing, latent heat, and entropy of vaporisation, which aligns with the statistical mechanics and thermodynamics scope established in the information-theory chapter (e.g. stat-mech-intro.md).",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T19:05:25.586Z",
+        "reviewed_sha": "782b75d8a21015413016c4b28f9467f12449ccf5"
       }
     ],
     "voice-status-leak": [
@@ -871,5 +888,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-13T14:31:59.507Z"
+  "updated_at": "2026-06-13T19:05:25.586Z"
 }

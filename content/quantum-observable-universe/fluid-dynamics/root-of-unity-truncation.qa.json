@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/fluid-dynamics/root-of-unity-truncation.lean"
   },
   "source_hashes": {
-    "md": "7108167e047e",
+    "md": "e0b139709ac2",
     "ts": "faf5c5829146",
     "lean": "868876f036f4"
   },
@@ -400,84 +400,81 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "7108167e047e",
-          "ts": "fbcd3a95e5f7",
+          "md": "e0b139709ac2",
+          "ts": "faf5c5829146",
           "lean": "868876f036f4"
         },
         "result": "pass",
-        "evidence": "proposition in NS regularity section; Verlinde truncation at roots of unity -> finite-dim ODE",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
+          "agent_date": "2026-06-13",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:56:46.762Z",
-        "reviewed_sha": "cf9b9dcbd87849416f34bd70583fb8673a3c676e"
+        "reviewed_at": "2026-06-13T19:05:54.746Z",
+        "reviewed_sha": "782b75d8a21015413016c4b28f9467f12449ccf5"
       }
     ],
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "7108167e047e",
-          "ts": "fbcd3a95e5f7",
+          "md": "e0b139709ac2",
+          "ts": "faf5c5829146",
           "lean": "868876f036f4"
         },
-        "result": "warn",
-        "severity": "minor",
-        "evidence": "statement mixes categorical (Verlinde, MTC) with classical R^3 Bernstein inequality and trig-poly bounds; no wall: banner",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
+          "agent_date": "2026-06-13",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:56:46.796Z",
-        "reviewed_sha": "cf9b9dcbd87849416f34bd70583fb8673a3c676e",
-        "notes": "intentional regime mix but unnamed; classical-limit accumulation argument crosses substrate/archimedean wall"
+        "reviewed_at": "2026-06-13T19:05:55.317Z",
+        "reviewed_sha": "782b75d8a21015413016c4b28f9467f12449ccf5",
+        "notes": "Has conditional banner."
       }
     ],
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "7108167e047e",
-          "ts": "fbcd3a95e5f7",
+          "md": "e0b139709ac2",
+          "ts": "faf5c5829146",
           "lean": "868876f036f4"
         },
-        "result": "warn",
-        "severity": "minor",
-        "evidence": "proof uses Picard-Lindelof (classical ODE), Bernstein inequality (real analysis); categorical side uses MTC; unnamed mix",
+        "result": "n/a",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
+          "agent_date": "2026-06-13",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:56:46.830Z",
-        "reviewed_sha": "cf9b9dcbd87849416f34bd70583fb8673a3c676e"
+        "reviewed_at": "2026-06-13T19:05:56.172Z",
+        "reviewed_sha": "782b75d8a21015413016c4b28f9467f12449ccf5",
+        "notes": "No proof section."
       }
     ],
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "7108167e047e",
-          "ts": "fbcd3a95e5f7",
+          "md": "e0b139709ac2",
+          "ts": "faf5c5829146",
           "lean": "868876f036f4"
         },
-        "result": "pass",
-        "evidence": "mathematical proposition; contact-geometric reformulation of NS is mathematical framing",
+        "result": "fail",
+        "severity": "minor",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
+          "agent_date": "2026-06-13",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:56:46.866Z",
-        "reviewed_sha": "cf9b9dcbd87849416f34bd70583fb8673a3c676e"
+        "reviewed_at": "2026-06-13T19:05:54.426Z",
+        "reviewed_sha": "782b75d8a21015413016c4b28f9467f12449ccf5",
+        "notes": "The statement is almost entirely interpretive prose and discussion (Three regimes, The refined gap, etc.) and should be factored into a remark or proof."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1393,5 +1390,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-13T13:55:33.060Z"
+  "updated_at": "2026-06-13T19:05:56.172Z"
 }

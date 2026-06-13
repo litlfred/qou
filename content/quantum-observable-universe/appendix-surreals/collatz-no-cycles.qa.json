@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/appendix-surreals/collatz-no-cycles.lean"
   },
   "source_hashes": {
-    "md": "cf8ba39c25b1",
+    "md": "10c1c1aac746",
     "ts": "1a6f1f0436e9",
     "lean": "c11dfc32f75a"
   },
@@ -397,45 +397,49 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "cf8ba39c25b1",
+          "md": "10c1c1aac746",
           "ts": "1a6f1f0436e9",
           "lean": "c11dfc32f75a"
         },
-        "result": "pass",
+        "result": "fail",
+        "severity": "minor",
+        "evidence": "Substantive interpretive prose ('Classical limit', 'The full (a, a+1) family', 'What remains') follows the proof in the same block without being extracted to an 'interprets:' remark.",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
+          "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-13",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-13T03:56:42.550Z",
-        "reviewed_sha": "b5b8eae463d7af2bb3713e19411d17e939e9c9bb"
+        "reviewed_at": "2026-06-13T19:06:21.601Z",
+        "reviewed_sha": "782b75d8a21015413016c4b28f9467f12449ccf5"
       }
     ],
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "cf8ba39c25b1",
+          "md": "10c1c1aac746",
           "ts": "1a6f1f0436e9",
           "lean": "c11dfc32f75a"
         },
-        "result": "pass",
+        "result": "fail",
+        "severity": "major",
+        "evidence": "This block discusses the Skein-Collatz map and algebraic coprimality of [2]_q and [3]_q. It does not mention surreals and is purely algebraic, belonging squarely in the Collatz chapter upstream, not the surreals appendix.",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
+          "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-13",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-13T03:56:42.550Z",
-        "reviewed_sha": "b5b8eae463d7af2bb3713e19411d17e939e9c9bb"
+        "reviewed_at": "2026-06-13T19:06:27.237Z",
+        "reviewed_sha": "782b75d8a21015413016c4b28f9467f12449ccf5"
       }
     ],
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "cf8ba39c25b1",
+          "md": "10c1c1aac746",
           "ts": "1a6f1f0436e9",
           "lean": "c11dfc32f75a"
         },
@@ -443,18 +447,18 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
+          "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-13",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-13T03:56:42.550Z",
-        "reviewed_sha": "b5b8eae463d7af2bb3713e19411d17e939e9c9bb"
+        "reviewed_at": "2026-06-13T19:06:33.086Z",
+        "reviewed_sha": "782b75d8a21015413016c4b28f9467f12449ccf5"
       }
     ],
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "cf8ba39c25b1",
+          "md": "10c1c1aac746",
           "ts": "1a6f1f0436e9",
           "lean": "c11dfc32f75a"
         },
@@ -462,12 +466,12 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
+          "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-13",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-13T03:56:42.550Z",
-        "reviewed_sha": "b5b8eae463d7af2bb3713e19411d17e939e9c9bb"
+        "reviewed_at": "2026-06-13T19:06:33.476Z",
+        "reviewed_sha": "782b75d8a21015413016c4b28f9467f12449ccf5"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1371,5 +1375,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-13T13:55:33.060Z"
+  "updated_at": "2026-06-13T19:06:33.476Z"
 }

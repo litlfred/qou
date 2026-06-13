@@ -8,9 +8,9 @@
     "lean": "content/quantum-observable-universe/fluid-dynamics/p4-universality.lean"
   },
   "source_hashes": {
-    "md": "a5400051cdb5",
-    "ts": "2742d361afd0",
-    "lean": "ed8d208dc74a"
+    "md": "354e804db038",
+    "ts": "66c065437466",
+    "lean": "8f277bdbd493"
   },
   "criteria": {
     "voice-status-leak": [
@@ -511,21 +511,20 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "a5400051cdb5",
-          "ts": "e57741416448",
-          "lean": "ed5f2a2ad375"
+          "md": "354e804db038",
+          "ts": "66c065437466",
+          "lean": "8f277bdbd493"
         },
         "result": "pass",
-        "evidence": "proposition",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
+          "agent_date": "2026-06-13",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T10:14:34.931Z",
-        "reviewed_sha": "b9d92344e258d5bcb202e00e98ef195dda20d8f4"
+        "reviewed_at": "2026-06-13T19:06:51.641Z",
+        "reviewed_sha": "782b75d8a21015413016c4b28f9467f12449ccf5"
       }
     ],
     "wall-side-statement": [
@@ -1419,5 +1418,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-13T13:55:33.060Z"
+  "updated_at": "2026-06-13T19:06:51.641Z"
 }
