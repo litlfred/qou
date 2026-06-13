@@ -98,19 +98,3 @@ A candidate $F(q)$ must clear (in order):
 ```
 
 Steps 1–3 are now formalized in Lean (sorry-free); steps 4–5 are TODO.
-
-## Status
-
-**Theorem (this proposition, the gate direction).** Sorry-free Lean
-proof ([`q-beta-radius-of-convergence-gate.lean`](q-beta-radius-of-convergence-gate.lean))
-— conditional theorem in `CommRing R` over the `RadiusOfConvergenceGateClass`
-typeclass (§3b-cond pattern). The forward direction (the cross-anchor
-asymptotic-pole test) is recorded as a class hypothesis; the gate then
-operates on any candidate `F(q)` that does *not* satisfy the class.
-
-**Compute (sympy + mpmath).** Verified in
-[`qbeta_radius_of_convergence_gate_probe.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/qbeta/qbeta_radius_of_convergence_gate_probe.py),
-witness `qbeta-radius-of-convergence-gate-probe.witness.json`. The probe
-verifies the substrate anchors numerically and demonstrates the gate on
-representative candidate forms — both passing (the canonical SDP $c_k$
-series) and failing (a deliberately-mislocated pole at $u_0 = 2 \cdot u_{\text{substrate}}$).

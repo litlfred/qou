@@ -32,4 +32,20 @@ export default proposition({
     "kernel-invariant",
     "no-fit",
   ],
+  authorNotes: [
+    {
+      kind: "status",
+      body:
+        "**Theorem (this proposition, the gate direction).** Sorry-free " +
+        "Lean proof (`q-beta-radius-of-convergence-gate.lean`) — conditional " +
+        "theorem over `CommRing R` / the `RadiusOfConvergenceGateClass` " +
+        "typeclass (§3b-cond); the forward direction (the cross-anchor " +
+        "asymptotic-pole test) is a class hypothesis. **Compute (sympy + " +
+        "mpmath):** verified in `qbeta_radius_of_convergence_gate_probe.py` " +
+        "(witness `qbeta-radius-of-convergence-gate-probe.witness.json`) — " +
+        "verifies the substrate anchors and demonstrates the gate on " +
+        "candidate forms (passing: canonical SDP $c_k$ series; failing: a " +
+        "mislocated pole at $u_0 = 2 u_{\\text{substrate}}$).",
+    },
+  ],
 });

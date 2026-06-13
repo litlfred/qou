@@ -3,11 +3,11 @@
   "directive": "no ## Status / ### Status / TODO / Pending section headers in paper content (owner 2026-06-13)",
   "criterion": "voice-status-section",
   "paper": "quantum-observable-universe",
-  "total_blocks": 144,
-  "total_sections": 168,
+  "total_blocks": 140,
+  "total_sections": 164,
   "by_classification": {
     "todo": 8,
-    "substantive": 65,
+    "substantive": 61,
     "authorNotes": 95
   },
   "extraction_targets": {
@@ -676,7 +676,7 @@
       "batch_id": 8,
       "chapter": "mass-theory",
       "status": "open",
-      "block_count": 70,
+      "block_count": 66,
       "blocks": [
         {
           "block": "content/quantum-observable-universe/mass-theory/algebraic-geometric-dilog-equivalence",
@@ -1298,32 +1298,6 @@
           ]
         },
         {
-          "block": "content/quantum-observable-universe/mass-theory/q-beta-bar-even-kernel-invariant",
-          "kind": "proposition",
-          "sections": [
-            {
-              "header": "## Status",
-              "line": 98,
-              "classification": "substantive",
-              "body_lines": 8,
-              "preview": "**Theorem (this proposition).** Sorry-free Lean proof ⏎ ([`q-beta-bar-even-kernel-invariant.lean`](q-beta-bar-even-kernel-invariant.lean)) ⏎ — one-line `ring` identity over `CommRing R` plus a symbolic substitution"
-            }
-          ]
-        },
-        {
-          "block": "content/quantum-observable-universe/mass-theory/q-beta-bar-even-kernel-typeclass",
-          "kind": "proposition",
-          "sections": [
-            {
-              "header": "## Status",
-              "line": 103,
-              "classification": "substantive",
-              "body_lines": 11,
-              "preview": "**Theorem (this proposition).** Sorry-free Lean class definition ⏎ ([`q-beta-bar-even-kernel-typeclass.lean`](q-beta-bar-even-kernel-typeclass.lean)) ⏎ with three lifting lemmas"
-            }
-          ]
-        },
-        {
           "block": "content/quantum-observable-universe/mass-theory/q-beta-c-2-eq-neg-one-structural",
           "kind": "proposition",
           "sections": [
@@ -1372,32 +1346,6 @@
               "classification": "substantive",
               "body_lines": 10,
               "preview": "**Theorem (this proposition).** Sorry-free Lean proof in ⏎ [`q-beta-over-e0-classical-vanishing.lean`](q-beta-over-e0-classical-vanishing.lean) ⏎ — one-line `ring` proof of the numerator vanishing, plus an `S(q=1) = 0`"
-            }
-          ]
-        },
-        {
-          "block": "content/quantum-observable-universe/mass-theory/q-beta-q-eq-one-shadow-gate",
-          "kind": "proposition",
-          "sections": [
-            {
-              "header": "## Status",
-              "line": 64,
-              "classification": "substantive",
-              "body_lines": 13,
-              "preview": "**Theorem (this proposition).** Sorry-free Lean proof ⏎ ([`q-beta-q-eq-one-shadow-gate.lean`](q-beta-q-eq-one-shadow-gate.lean)) ⏎ — §3b-cond conditional class `QOneShadowGateClass` with two field"
-            }
-          ]
-        },
-        {
-          "block": "content/quantum-observable-universe/mass-theory/q-beta-radius-of-convergence-gate",
-          "kind": "proposition",
-          "sections": [
-            {
-              "header": "## Status",
-              "line": 102,
-              "classification": "substantive",
-              "body_lines": 12,
-              "preview": "**Theorem (this proposition, the gate direction).** Sorry-free Lean ⏎ proof ([`q-beta-radius-of-convergence-gate.lean`](q-beta-radius-of-convergence-gate.lean)) ⏎ — conditional theorem in `CommRing R` over the `RadiusOfC"
             }
           ]
         },

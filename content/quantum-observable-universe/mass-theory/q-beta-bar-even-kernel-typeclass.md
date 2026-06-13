@@ -97,18 +97,3 @@ with each field hypothesis discharged by the corresponding probe.
 - Subclasses of `BarEvenKernel` (e.g. extending to include the
   `CFinite.recurrence_step` engine for kernel-driven $c_k$
   generation) are natural follow-ups.
-
-## Status
-
-**Theorem (this proposition).** Sorry-free Lean class definition
-([`q-beta-bar-even-kernel-typeclass.lean`](q-beta-bar-even-kernel-typeclass.lean))
-with three lifting lemmas
-(`bar_even_kernel_implies_q_one_shadow`,
-`bar_even_kernel_implies_direction_sanity`,
-`bar_even_kernel_implies_radius_of_convergence`) showing the
-composition is consistent with the prior parametric gate classes.
-
-**No sympy probe.** Pure Lean infrastructure; the structural content
-is fully captured by the type definitions. Future probes wanting to
-test a concrete candidate against the bundled gate plug their
-$(pole, c_2, c_3, magnitude)$ into the typeclass.
