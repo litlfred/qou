@@ -11,7 +11,7 @@ is structurally REFUTED at the formalize-first level.*
 
 The refuted-class map (`2026-06-04-qbeta-ck-refuted-class-map-and-open-axis.md`)
 $\S 4(d)$ states the direction-sanity invariant abstractly. The canonical
-**refutation precedent** is PR #1850's trace-level Markov-stabilization
+**refutation precedent** is the trace-level Markov-stabilization
 attack (refuted-class row C12): the candidate's natural scaling factor
 $z(q_0) = 1 / (q_0^{1/2} + q_0^{-1/2}) = 0.4993$ was strictly less than 1,
 while the target multiplier $\text{linking\_weight} \approx 2.53$ was
@@ -29,9 +29,9 @@ paper, not in compute. This is the $\S 4(d)$ formalize-first gate.
 
 | # | invariant | formalised in |
 |---|---|---|
-| (a) | **Anchor-stable** (cross-anchor swing < 1 ppm) | [`prop:q-beta-radius-of-convergence-gate`](q-beta-radius-of-convergence-gate.md) (PR #1889) |
-| (b) | **Bar-even** under $q \mapsto q^{-1}$ | [`prop:q-beta-bar-even-kernel-invariant`](q-beta-bar-even-kernel-invariant.md) (PR #1875) |
-| (c) | **q = 1 classical-limit shadow** | [`prop:q-beta-q-eq-one-shadow-gate`](q-beta-q-eq-one-shadow-gate.md) (this PR Track A) |
+| (a) | **Anchor-stable** (cross-anchor swing < 1 ppm) | [`prop:q-beta-radius-of-convergence-gate`](q-beta-radius-of-convergence-gate.md) |
+| (b) | **Bar-even** under $q \mapsto q^{-1}$ | [`prop:q-beta-bar-even-kernel-invariant`](q-beta-bar-even-kernel-invariant.md) |
+| (c) | **q = 1 classical-limit shadow** | [`prop:q-beta-q-eq-one-shadow-gate`](q-beta-q-eq-one-shadow-gate.md) |
 | (d) | **Direction sanity** | **this proposition** |
 
 With (d) formalized, the four-invariant set is complete; any future
@@ -51,7 +51,7 @@ $$
 i.e. the ladder product $\prod_k(1 + c_k u^k) \approx 0.99824$ at $q_0$
 (the precision-ladder corrections collectively contribute only ~0.18%
 of the bare $Q_A \cdot \cos$ value). A candidate $F(q_0)$ giving a
-magnitude wildly different from 1 (e.g. ~0.5 like PR #1850's $z(q_0)$,
+magnitude wildly different from 1 (e.g. ~0.5 like the refuted $z(q_0)$,
 or ~10 like an over-scaled formal series) is automatically refuted.
 
 ## Proof sketch
@@ -61,12 +61,12 @@ gives $|F(q_0) - F_{\text{target}}(q_0)| / F_{\text{target}}(q_0) > 10$,
 the candidate fails the gate. Here $F_{\text{target}}(q_0) \approx 0.998$
 is the target ladder product computed above. The 10$\times$ threshold is
 loose by design — it catches order-of-magnitude direction errors (like
-PR #1850's $z < 1$ vs target $> 1$) without false-positives on small
+the $z < 1$ vs target $> 1$ case) without false-positives on small
 numerical deviations that survive into the more precise §4(a) radius-
 of-convergence test.
 
 The lower bound on threshold is set by the cross-anchor swing magnitude:
-PR #1727 shows the substrate $u_0$ varies by only 210 ppb between
+the substrate $u_0$ varies by only 210 ppb between
 proton and muon anchors, so any threshold tighter than ~10$\times$ would be
 testing the cross-anchor invariant (a) rather than direction sanity
 (d). The two gates are deliberately complementary. $\blacksquare$
@@ -86,15 +86,15 @@ Concretely, for any candidate $F(q)$:
 ## Composition with the prior three gates
 
 ```
-1. Bar-even check (§4b)        →  PR #1875  ✓ (q ↔ q⁻¹ Taylor-even-in-t)
-2. Radius-of-convergence (§4a) →  PR #1889  ✓ (simple pole at u_substrate)
-3. q = 1 shadow (§4c)          →  Track A   ✓ (c_2 → −1, c_3 → −2)
-4. Direction sanity (§4d)      →  this prop ✓ (|F(q_0)| in 10× of target)
-5. CFinite recurrence engine   →  PR #1839  ✓ (generates c_k from kernel)
+1. Bar-even check (§4b)        ✓ (q ↔ q⁻¹ Taylor-even-in-t)
+2. Radius-of-convergence (§4a) ✓ (simple pole at u_substrate)
+3. q = 1 shadow (§4c)          ✓ (c_2 → −1, c_3 → −2)
+4. Direction sanity (§4d)      ✓ (|F(q_0)| in 10× of target)
+5. CFinite recurrence engine   ✓ (generates c_k from kernel)
 ```
 
-Track C in this PR will tie all four into a unified `BarEvenKernel`
-typeclass extending PR #1839's `CFinite`.
+A unified `BarEvenKernel` typeclass ties all four together,
+extending the `CFinite` recurrence engine.
 
 ## Status
 
@@ -110,4 +110,4 @@ mismatch fails the gate.
 witness `qbeta-direction-sanity-gate-probe.witness.json`. The probe
 verifies the target magnitude at $q_0$ (~0.998), demonstrates the gate
 on synthetic candidates (one passing at $F(q_0) = 1.001$, one failing
-with PR #1850's $z(q_0) = 0.4993$ pattern at a target $> 1$).
+with the $z(q_0) = 0.4993$ pattern at a target $> 1$).
