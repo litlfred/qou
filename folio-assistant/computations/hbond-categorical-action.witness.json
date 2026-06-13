@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-10T04:26:32.607917+00:00",
-  "commitSha": "4e33dc84950ace0905fa64df772036fc1e792632",
+  "engineVersion": "python 3.11.2",
+  "computedAt": "2026-06-13T14:00:19.663533+00:00",
+  "commitSha": "a7217279ff3d40758e3e8933eec4de55a629562a",
   "assertions": [
     {
       "name": "h² ≈ measured H-bond/covalent energy ratio 0.044",
@@ -34,11 +34,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 98,
   "computation": "hbond-categorical-action",
   "scriptFile": "hbond_categorical_action.py",
   "scriptHash": "31c0163a86ea",
-  "scriptCommitSha": "4e33dc84950ace0905fa64df772036fc1e792632",
+  "scriptCommitSha": "8c2d8c77c60e073b2df9485d5e2a8e5b44c8548f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -46,10 +46,13 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.2",
     "numpy": "2.4.6",
-    "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "scipy": "1.17.1",
+    "sympy": "1.11.1",
+    "mpmath": "0.0.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
   },
   "description": "Models the hydrogen bond as the h²-suppressed weak crossing of the substrate q-deformation parameter h = q₀−q₀⁻¹ ≈ 0.209: E_HB = h²·E_cov, h² ≈ 0.0437 ≈ the measured H-bond/covalent ratio (~0.044). The H-bond is GATED by the sp³↔pure-p flip (reused from hybridization_sp_gap_braid: Δ(n) ∝ (n−1) inner-shell penetration, discrete flip at n=2→3) — a directional H-bond needs an sp³ (directional) acceptor lone pair, so period-2 atoms H-bond and period-3+ (pure-p) do NOT. Per-molecule cohesion L = n_HB·h²·E_cov for the sp³ hydrogen-bonders. No fit (h² from q₀; the gate is the already-derived bond-angle flip; E_cov and L_obs experimental; n_HB from lone-pair structure). RESULT: period-2 H₂O and HF land within ~1–2% of the measured latent heat; period-3+ H₂S/Se/Te have the H-bond correctly OFF (their L is dispersion, separate physics). The SAME flip sets the bond-angle base (merged) AND the boiling point — unifying the angle and temperature results. Wires prop:quantum-ideal-gas-law (T_q=ℏ_q) + the boltzmann-constant Kelvin bridge k_B T_phys = ℏ_q.",
   "contentBlock": "prop:quantum-ideal-gas-law",

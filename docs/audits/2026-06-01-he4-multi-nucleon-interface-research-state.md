@@ -121,6 +121,20 @@ explicit.
    to derive ρ_F.
 4. **If not**: add as ruled-out mechanism #N to the audit list.
 
+## Results of the H_3^4 Tensor Fusion Attack (2026-06-13)
+
+Following the recommended attack, we computed the Littlewood-Richardson fusion of four bosonic nucleons: `[3] ⊗ [3] ⊗ [3] ⊗ [3]`. 
+The results exactly recovered the trace-dominant 2-row partitions identified in PR #1289, plus a unique (4,4,4) block:
+- **(9,3)**: multiplicity 10
+- **(8,4)**: multiplicity 11
+- **(10,2)**: multiplicity 6
+- **(11,1)**: multiplicity 3
+- **(7,5)**: multiplicity 9
+- **(4,4,4)**: multiplicity 1 (unique)
+
+This provides structural justification that the 2-row trace-dominance and the (4,4,4) PSD-dominance both emerge natively from the H_3^4 nucleon tensor product. However, extracting `ρ_F ≈ 1.8891` from these blocks (via ratios of dimensions, Wenzl traces, or LR multiplicities) failed to yield a canonical, structurally-justified q-dependent invariant. 
+**Status:** The `H_3^4` tensor fusion correctly generates the H_12 topological support for ⁴He, but the scalar invariant `ρ_F` cannot be naively extracted from these multiplicities without falling into the "8th-ansatz fit-trap". This mechanism is recorded as incomplete/ruled-out for directly yielding `ρ_F`.
+
 ## Anti-pattern guard (CRITICAL)
 
 DO NOT:
