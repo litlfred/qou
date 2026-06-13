@@ -126,3 +126,4 @@ import QOU.Machinery.DerivedCharacterCatalogue
 
 import QOU.Archimedean.BorromeanQuark
 import QOU.Interactions.QIntegerMassFormula
+import QOU.Archimedean.EmCouplingBringZeroMode

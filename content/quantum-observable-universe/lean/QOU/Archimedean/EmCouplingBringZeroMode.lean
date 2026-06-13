@@ -156,4 +156,12 @@ theorem bring_zero_mode_additive_form
   refine ⟨θ, ?_⟩
   rw [hθ, hodgeRatio_at_g4]
 
+
+/-- **Faithful instance.** Carries the explicit research-grade conjecture as a sorry.
+    Since `BlochWigner_unit_circle` is an unconstrained axiom, this cannot be mathematically
+    proven from first principles without additional axioms on the range of the Bloch-Wigner function. -/
+instance canonical : BringZeroModeBlochClass where
+  bring_zero_mode_realised := sorry
+
+
 end QOU.Archimedean
