@@ -93,6 +93,16 @@ def main() -> None:
     is_rational = C.is_rational_function(q)
     coeff_ne_one = abs(C0 - 1) > mp.mpf("1e-3") if HAVE_MP else abs(C0 - 1) > 1e-3
 
+    # RED-TEAM (owner): is C(q_0) one of the 5 alpha_EM-sibling force-knots?
+    # The 6 force-knot decorations delta_q(T_{m,k}) = q^w - q^-w, w=(m-1)k.
+    sibling_w = {"T2_3": 3, "T2_5": 5, "T2_7": 7, "T3_4": 8, "T2_9": 9, "T3_5": 10}
+    sibling_deltas = {n: (q0 ** w - q0 ** (-w)) for n, w in sibling_w.items()}
+    sibling_brackets = {n: (q0 ** w - q0 ** (-w)) / (q0 - 1 / q0)
+                        for n, w in sibling_w.items()}
+    tol = mp.mpf("1e-2") if HAVE_MP else 1e-2
+    matches_sibling = any(abs(C0 - d) < tol for d in sibling_deltas.values()) or \
+        any(abs(C0 - b) < tol for b in sibling_brackets.values())
+
     # the bridge image: tau_arch(rho_(2,2)) = C(q0) * alpha^2 (alpha factored out)
     print("=" * 74)
     print("conj:e-hartree ROUND 22 — the δ_q → archimedean bridge")
@@ -138,6 +148,13 @@ def main() -> None:
         computed=bool(coeff_ne_one), expected=True,
         source="q_0-evaluation of the depth-0 coefficient",
     )
+    w.add_assertion(
+        "RED-TEAM: C(q_0) is NOT one of the 5 sibling force-knot delta_q/[w]_q "
+        "(it is the (2,2) Plancherel-square, not a single-knot coupling)",
+        computed=bool(not matches_sibling), expected=True,
+        source="6 delta_q={0.636,1.091,1.594,1.870,2.167,2.487}; none ~ 0.873",
+    )
+    w.add_data("sibling_deltas", {n: str(d) for n, d in sibling_deltas.items()})
     w.add_data(
         "finding",
         "Round 22 converts the δ_q→archimedean bridge from 'missing "
