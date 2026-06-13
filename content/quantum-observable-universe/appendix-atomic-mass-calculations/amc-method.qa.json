@@ -165,12 +165,12 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-04",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-12",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-04T13:40:12.681Z",
-        "reviewed_sha": "d8e19e4eb05fb3866c4e123d410cc98279f71291"
+        "reviewed_at": "2026-06-12T23:09:37.587Z",
+        "reviewed_sha": "592936f3b329870cfb5a3af6f100a20a4eb5be92"
       }
     ],
     "detangler-no-forward-ref": [
@@ -782,5 +782,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-12T23:09:37.587Z"
 }
