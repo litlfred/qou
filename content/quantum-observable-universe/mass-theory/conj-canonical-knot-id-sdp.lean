@@ -467,7 +467,7 @@ class R5FullWitness (n : LightNucleus) where
       requires this to be exactly zero. -/
 -- Ref: [boyd-vandenberghe-2004] §5.5 ("Strict complementarity")
 structure StrictComplementarity (n : LightNucleus)
-    [w : R5FullWitness n] : Prop where
+    [w : R5FullWitness n] where
   /-- Concrete real-valued field: minimum eigenvalue across all
       Wedderburn blocks in the witness's `per_block_summary`. -/
   min_block_eig : ℝ
