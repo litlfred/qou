@@ -85,9 +85,11 @@ The explicit geometry of this $\sqrt5$ is the provable scaffold
 [`prop:bring-trefoil-cinquefoil-channel`](../brings-surface/bring-trefoil-cinquefoil-channel.md):
 the chiral channel is the **trefoil** $T_{2,3}$ (Seifert genus $1$) and the
 $\zeta_5$ is the **cinquefoil** $T_{2,5}$ (genus $2$) — two distinct torus knots
-sharing Bring's $\Sigma_4$ (genus $4$) and linked by $\mathrm{Aut}(B) = S_5$, with
-the $\sqrt5$ supplied by the $\mathbb{Z}_5$-orbit quadratic Gauss sum
+sharing Bring's $\Sigma_4$ (genus $4$) and linked by $\mathrm{Aut}(B) = S_5$.
+
+> [!NOTE]
+> **The Quintic Within Brings:** It is critical to distinguish the global *Bring curve* (a genus-4 curve in $\mathbb{CP}^4$ whose $S_5$ characters fix the $2 \times 2$ Picard-Fuchs matrix and depth-2 recurrence for the mass tower) from the *hyperelliptic quintic* $\mathcal{X}_5 \colon y^2 = x^5 - 1$. The latter is a genus-2 curve **embedded within Bring's surface**. The chiral normalisation specifically relies on the $\mathbb{Z}_5$ automorphism of this embedded quintic.
+
+The $\sqrt5$ is supplied by the $\mathbb{Z}_5$-orbit quadratic Gauss sum
 $\bigl(\sum_k \zeta_5^{k^2}\bigr)^2 = 5$ carried by the first Lagrange resolvent
-$w_1$ that embeds the quintic. That scaffold is established; only the exact
-$\zeta_\ell$-residue normalisation returning precisely $1/\sqrt5$ remains the open
-content of this conjecture.
+$w_1$ that embeds the hyperelliptic quintic $\mathcal{X}_5$. That structural scaffold is established; evaluating the exact analytic Picard-Lefschetz monodromy of the $\zeta_5$-residue on the homology of $y^2 = x^5 - 1$ to formally return precisely $1/\sqrt5$ and the $+2.1^\circ$ phase remains the open content of this conjecture.
