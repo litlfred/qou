@@ -55,7 +55,14 @@ def _git_head_sha() -> str:
             cwd=str(_repo_root()),
             stderr=subprocess.DEVNULL,
         ).decode().strip()
-    except Exception:
+    except Exception as exc:  # noqa: BLE001
+        print(
+            f"[qou_substrate.witness] git rev-parse failed ({exc!r}); "
+            "commitSha will serialise as 'unknown'. Common cause in "
+            "fresh sandboxes: dubious-ownership refusal — run "
+            "`git config --global --add safe.directory <repo-root>`.",
+            file=sys.stderr,
+        )
         return "unknown"
 
 
@@ -67,7 +74,13 @@ def _git_file_sha(path: str) -> str:
 
     Per Copilot review on PR #484: never return an ambiguous empty
     string; "unknown" is the canonical sentinel and serialises into
-    witness JSON as a clear marker rather than `""`."""
+    witness JSON as a clear marker rather than `""`.
+
+    An *exception* (as opposed to empty output) means the git
+    invocation itself failed — e.g. the sandbox's dubious-ownership
+    refusal when the checkout is owned by another uid. That case is
+    warned to stderr instead of being silently conflated with the
+    legitimate "file not yet committed" case (2026-06-13)."""
     try:
         sha = subprocess.check_output(
             ["git", "log", "-1", "--format=%H", "--", path],
@@ -75,7 +88,15 @@ def _git_file_sha(path: str) -> str:
             stderr=subprocess.DEVNULL,
         ).decode().strip()
         return sha if sha else "unknown"
-    except Exception:
+    except Exception as exc:  # noqa: BLE001
+        print(
+            f"[qou_substrate.witness] git log failed for {path!r} "
+            f"({exc!r}); scriptCommitSha will serialise as 'unknown'. "
+            "Common cause in fresh sandboxes: dubious-ownership refusal "
+            "— run `git config --global --add safe.directory "
+            "<repo-root>`.",
+            file=sys.stderr,
+        )
         return "unknown"
 
 

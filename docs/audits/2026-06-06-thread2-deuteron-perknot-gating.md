@@ -136,8 +136,14 @@ witness `snappy-census-volume-verification.witness.json` (16/16 assertions), PR 
    [`2026-06-12-knot-id-volume-match-adjudication.md`](2026-06-12-knot-id-volume-match-adjudication.md);
    the mechanical digit fixes stay owner-confirmed.
 
-4. **Infra bug found en route:** `qou_substrate.witness.WitnessBuilder` passes
-   the bare script *name* to `git log` (cwd = repo root), so every producer in
-   a cluster subdirectory (`audits/`, `probes/`, …) serialises
-   `scriptCommitSha: "unknown"`. Content provenance via `scriptHash` is
-   unaffected. Package fix is a follow-up (PyPI version bump required).
+4. **Infra bug found en route — diagnosis CORRECTED 2026-06-13:** the
+   `scriptCommitSha: "unknown"` serialisations were **not** a
+   `WitnessBuilder` pathspec bug (the builder resolves absolute paths
+   correctly). Root cause: fresh sandbox containers run as root on a
+   checkout owned by another uid, git refuses with *dubious ownership*,
+   and the builder's bare `except` silently normalised the failure to
+   `"unknown"`. Fixes: `scripts/session-status.sh` now marks the repo
+   `safe.directory` at session start, and `qou_substrate.witness`
+   (v0.1.2) warns to stderr on git *invocation* failure instead of
+   conflating it with the legitimate "file not yet committed" case.
+   Content provenance via `scriptHash` was never affected.
