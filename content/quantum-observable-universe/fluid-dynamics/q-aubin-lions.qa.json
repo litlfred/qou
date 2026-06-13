@@ -8,8 +8,8 @@
     "lean": "content/quantum-observable-universe/fluid-dynamics/q-aubin-lions.lean"
   },
   "source_hashes": {
-    "md": "4f3e2a9a4705",
-    "ts": "66c82b7c9b14",
+    "md": "eb47fbc03ef4",
+    "ts": "07a6e0fcb430",
     "lean": "dda87b5c101e"
   },
   "criteria": {
@@ -436,6 +436,24 @@
         "reviewed_at": "2026-06-07T02:30:21.272Z",
         "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
         "notes": ".ts declares this a proposition, but .lean provides only a conjecture 'class QAubinLions : Prop where compactness_threshold : exists q_thresh, q_thresh > 0' — a trivial existence placeholder that does NOT encode the real Aubin-Lions compactness claim (no theorem stating the proposition). Vacuous proxy. Integrity FAIL. (.lean is well-formed, unlike p2/p3/p5.)"
+      },
+      {
+        "field_hash": {
+          "md": "eb47fbc03ef4",
+          "ts": "07a6e0fcb430",
+          "lean": "dda87b5c101e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T15:20:44.541Z",
+        "reviewed_sha": "12fd3daef06fd4e4ddfee2bd5fd4db3d4dc1dd43",
+        "notes": "Re-rate after #2188 (merged): demoted proposition→conjecture (conj:q-aubin-lions); .lean is class-axiomatised (QAubinLions), integrity n/a for conjecture kind."
       }
     ],
     "fit-section-chapter": [
@@ -1371,5 +1389,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-13T13:55:33.060Z"
+  "updated_at": "2026-06-13T15:20:44.541Z"
 }

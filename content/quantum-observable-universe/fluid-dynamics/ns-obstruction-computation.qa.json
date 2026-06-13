@@ -334,6 +334,26 @@
         "reviewed_at": "2026-06-07T02:27:44.485Z",
         "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
         "notes": "Sibling stub 'theorem ns_obstruction_computation : True := by trivial' — True-placeholder, does not state the md computation. Integrity FAIL."
+      },
+      {
+        "field_hash": {
+          "md": "d0e0bc848102",
+          "ts": "e96512398250",
+          "lean": "13dca2fd9f0d"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "ns_obstruction_computation.lean — both iffs derived from 4 directional hypotheses (generic CommRing)",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T15:20:44.396Z",
+        "reviewed_sha": "12fd3daef06fd4e4ddfee2bd5fd4db3d4dc1dd43",
+        "notes": "Re-rate after #2188 (merged). Builds green."
       }
     ],
     "fit-section-chapter": [
@@ -1247,5 +1267,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-13T13:55:33.060Z"
+  "updated_at": "2026-06-13T15:20:44.396Z"
 }

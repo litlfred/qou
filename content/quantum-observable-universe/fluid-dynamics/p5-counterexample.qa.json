@@ -9,7 +9,7 @@
   },
   "source_hashes": {
     "md": "1bbfe183c84a",
-    "ts": "102f58c45a63",
+    "ts": "77beb45ac355",
     "lean": "44bf86f09b7e"
   },
   "criteria": {
@@ -283,6 +283,24 @@
         "reviewed_at": "2026-06-07T02:29:28.460Z",
         "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
         "notes": "BUG: .lean is a conjecture-class axiomatisation (not a theorem stating prop:p5-counterexample), and MALFORMED: two duplicate 'class NSCounterexample' declarations (~lines 41 and 56) with stray 'Ref: ... -/' text (line 55) — will not compile. lean.ref -> the class. Integrity FAIL."
+      },
+      {
+        "field_hash": {
+          "md": "1bbfe183c84a",
+          "ts": "77beb45ac355",
+          "lean": "44bf86f09b7e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T15:20:44.505Z",
+        "reviewed_sha": "12fd3daef06fd4e4ddfee2bd5fd4db3d4dc1dd43",
+        "notes": "Re-rate after #2188 (merged): demoted proposition→conjecture (conj:ns-counterexample); .lean is a class-axiomatised conjecture (NSCounterexample), so proof-statement-integrity does not apply."
       }
     ],
     "fit-section-chapter": [
@@ -1219,5 +1237,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-13T13:55:33.060Z"
+  "updated_at": "2026-06-13T15:20:44.505Z"
 }
