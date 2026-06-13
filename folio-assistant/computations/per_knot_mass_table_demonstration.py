@@ -79,7 +79,15 @@ from _li_2_q_util import (  # noqa: E402
     geom_leading,
 )
 from q_parameter import Q as q_0  # noqa: E402
-from codata_constants import M_E_MEV  # noqa: E402
+from codata_constants import (  # noqa: E402
+    M_E_MEV,
+    M_P_MEV_VALIDATION,
+    M_N_MEV_VALIDATION,
+    M_D_MEV_VALIDATION,
+    M_T_MEV_VALIDATION,
+    M_HE3_MEV_VALIDATION,
+    M_HE4_MEV_VALIDATION,
+)
 from closed_form_tau_M import (  # noqa: E402
     compute_tau_M_nucleon_H3,
     closed_form_tau_M,
@@ -87,14 +95,15 @@ from closed_form_tau_M import (  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 
-# CODATA / AME observed masses
+# CODATA / AME observed masses — sourced from the codata_constants
+# registry (validation-only comparison targets, never CAL inputs).
 CODATA = {
-    "p":    mp.mpf("938.272088160"),
-    "n":    mp.mpf("939.565420520"),
-    "D":    mp.mpf("1875.61294257"),    # AME 2020
-    "T":    mp.mpf("2808.92113298"),
-    "3He":  mp.mpf("2808.39155747"),
-    "4He":  mp.mpf("3727.37941020"),
+    "p":    M_P_MEV_VALIDATION,
+    "n":    M_N_MEV_VALIDATION,
+    "D":    M_D_MEV_VALIDATION,
+    "T":    M_T_MEV_VALIDATION,
+    "3He":  M_HE3_MEV_VALIDATION,
+    "4He":  M_HE4_MEV_VALIDATION,
 }
 
 
