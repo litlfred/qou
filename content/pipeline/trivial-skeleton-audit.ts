@@ -72,6 +72,7 @@ const PATTERNS: Array<[string, RegExp]> = [
   ["id_def",           /^\s*def\s+\w[\w.]*[^=]*:=\s*id\s*$/],
   ["one_def",          /^\s*def\s+\w[\w.]*[^=]*:.*=\s*(?:fun\s[^=]*=>\s*)?1\s*$/],
   ["first_arg",        /^\s*def\s+\w[\w.]*\([^)]*\)\s*[^=]*:=\s*\w\s*$/],
+  ["trivial_model",    /^\s*def\s+trivialModel\b/],
 ];
 const SKEL_INSTANCE = /^\s*instance\s+\w*[Ss]keleton\b/;
 const TRIV_INSTANCE = /^\s*instance\s+\w*[Tt]rivial\b/;
