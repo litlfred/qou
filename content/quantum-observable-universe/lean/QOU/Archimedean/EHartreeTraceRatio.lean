@@ -41,10 +41,12 @@ theorem qsub_inv_ne (q : ℝ) (hq : 0 < q) (hq1 : q ≠ 1) : q - q⁻¹ ≠ 0 :=
   rw [sub_ne_zero]
   intro h
   apply hq1
-  have hqq : q * q = 1 := by
-    field_simp at h
-    nlinarith [h, hq]
-  nlinarith [hqq, hq]
+  -- h : q = q⁻¹ ⟹ q² = 1 ⟹ (q-1)(q+1) = 0 ⟹ q = 1 (since q > 0)
+  have hqq : q * q = 1 := by field_simp at h; linarith [h]
+  have hfac : (q - 1) * (q + 1) = 0 := by nlinarith [hqq]
+  rcases mul_eq_zero.mp hfac with h1 | h2
+  · linarith [h1]
+  · linarith [h2, hq]
 
 /-- For `0 < q` and `q ≠ 1`, `q² − (q⁻¹)² ≠ 0` (the `[2]`-amplitude squared). -/
 theorem qsq_sub_inv_sq_ne (q : ℝ) (hq : 0 < q) (hq1 : q ≠ 1) :
@@ -69,9 +71,10 @@ theorem qbracket_four_div_two (q : ℝ) (hq : 0 < q) (hq1 : q ≠ 1) :
   have hq0 : q ≠ 0 := ne_of_gt hq
   have hd := qsub_inv_ne q hq hq1
   have hd2 := qsq_sub_inv_sq_ne q hq hq1
+  have hb2 : qbracket q 2 ≠ 0 := by unfold qbracket; exact div_ne_zero hd2 hd
+  rw [div_eq_iff hb2]
   unfold qbracket
-  rw [div_div_div_cancel_right₀]
-  rw [div_eq_iff hd2]
+  field_simp
   ring
 
 /-- **Trace-ratio factorisation (round 20).**
