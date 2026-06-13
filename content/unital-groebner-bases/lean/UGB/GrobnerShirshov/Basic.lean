@@ -269,6 +269,7 @@ structure IsGrobnerShirshovBasis (G : Type u) (k : Type v) [Ring k] [DecidableEq
     Flatness.lean) provides these operations.
 
     Reference: Bergman 1978, Theorem 1.2 (existence part). -/
+-- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5 Thm 1.2 (existence of normal forms via well-founded reduction)
 axiom normal_form_exists {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
     (ord : AdmissibleOrder G)
     (sys : RewritingSystem G k)

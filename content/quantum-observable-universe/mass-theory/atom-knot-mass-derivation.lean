@@ -198,6 +198,7 @@ def MassIdentity (cert : MassDerivationCertificate) : Prop :=
     prop:archimedean-realization-functor;
     prop:wedderburn-trace-identity (ν_SDP-multiplicity);
     thm:knot-mass-formula-unified (multi-term M(𝔥)). -/
+-- Ref: [manuscript] Ch. mass-theory, prop:atom-knot-mass-derivation §"Mass identity" (B(𝔥)=m_e·M(𝔥)|_{q=q_0})
 axiom atom_knot_mass_derivation (cert : MassDerivationCertificate)
     (T_w : Type*) :
     YekutieliFiniteSliceMultiplicativeTrace T_w →

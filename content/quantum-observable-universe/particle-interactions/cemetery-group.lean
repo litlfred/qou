@@ -47,6 +47,7 @@ namespace CemeteryGroup
 
 /-- The trivial state (zero index) is by convention not in the cemetery
     group: it is the unit of the algebra. -/
+-- Ref: [manuscript] Ch. particle-interactions, def:cemetery-group (unit/zero-index state excluded from cemetery group)
 axiom zero_not_in_cemetery {R : Type u} [CommRing R] (Z : CemeteryGroup R) :
     ¬ Z.inCemetery 0
 

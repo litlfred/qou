@@ -32,11 +32,13 @@ namespace QOU.ParticleInteractions
     Fully developed definition is outside the scope of this
     formalization.  Declared via `axiom` (no body) so that
     downstream lemmas cannot silently depend on a stub value. -/
+-- Ref: [zagier1986] https://doi.org/10.1007/BF01388528 (Bloch-Wigner dilogarithm D(z))
 axiom blochWigner : ℂ → ℝ
 
 /-- Bloch-Wigner vanishes on the real line.
     Taken as an axiom because `blochWigner` is opaque and this
     is a real theorem of hyperbolic geometry (not a rfl). -/
+-- Ref: [zagier1986] https://doi.org/10.1007/BF01388528 (Bloch-Wigner dilogarithm vanishes on ℝ)
 axiom blochWigner_real (x : ℝ) : blochWigner (x : ℂ) = 0
 
 /-- Data of a Thurston ideal triangulation: a finite list of shape

@@ -72,6 +72,7 @@ theorem qGameOfLife_universal {L : Type*} :
     or a structure-tightening refactor.
 
     See the theorem docstring below for the cited reference. -/
+-- Ref: [manuscript] Ch. 8, prop:toffoli-lp-stability (q-AND amplitude non-zero in physical regime)
 axiom qGameOfLife_stable_axiom {M : Type*} (sp : SubstrateParameter M)
     (p : M) (_h : sp.field p > 1) :
     qAnd_amplitude ≠ 0

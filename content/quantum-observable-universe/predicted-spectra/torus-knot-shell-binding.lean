@@ -36,11 +36,13 @@ namespace QOU.Archimedean
 
 /-- Forward declaration — see shell-closure-normal-form.lean for the
     full structure definition with no_squares, no_far_comm, no_yang_baxter. -/
+-- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5 (Gröbner-Shirshov normal form predicate); cf. [unital-groebner-bases:thm:ugb-main-theorem]
 axiom IsNormalForm (support : List (List ℕ)) : Prop
 
 /-- Forward declaration — the Gröbner division algorithm terminates and
     produces a unique normal form remainder.  Justified by
     [unital-groebner-bases:thm:ugb-main-theorem]. -/
+-- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5 Thm 1.2 (GS division terminates with unique normal form); cf. [unital-groebner-bases:thm:ugb-main-theorem]
 axiom division_terminates_unique (n : ℕ) (q : ℝ) (hq : q > 1) :
   ∀ elem : List (List ℕ × ℝ),
   ∃ nf : List (List ℕ × ℝ),

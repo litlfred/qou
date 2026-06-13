@@ -1,1134 +1,1213 @@
 {
- "items": [
-  {
-   "id": "ba9625837273",
-   "block_or_script": "predicted-spectra/tilting-module-rigidity",
-   "paths": {
-    "ts": "content/quantum-observable-universe/predicted-spectra/tilting-module-rigidity.ts",
-    "md": "content/quantum-observable-universe/predicted-spectra/tilting-module-rigidity.md",
-    "lean": "content/quantum-observable-universe/predicted-spectra/tilting-module-rigidity.lean"
-   },
-   "finding": "uncited-sorry",
-   "severity": "critical",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "content/quantum-observable-universe/predicted-spectra/tilting-module-rigidity.lean:33 has a bare `sorry` with no `-- Ref:` anywhere in the file (file Ref-count=0). Enclosing decl `theorem ... Rigid.GeneratesWords := by` (L29). Verbatim L33: `sorry`. Source-level audit; Lean LSP hard-gate could not be run (mcp__lean-lsp__lean_diagnostic_messages permission-denied in audit context). 0 downstream dependents (lem:tilting-module-rigidity).",
-   "status": "queued",
-   "asked_author_at": null
+  "items": [
+    {
+      "id": "ba9625837273",
+      "block_or_script": "predicted-spectra/tilting-module-rigidity",
+      "paths": {
+        "ts": "content/quantum-observable-universe/predicted-spectra/tilting-module-rigidity.ts",
+        "md": "content/quantum-observable-universe/predicted-spectra/tilting-module-rigidity.md",
+        "lean": "content/quantum-observable-universe/predicted-spectra/tilting-module-rigidity.lean"
+      },
+      "finding": "uncited-sorry",
+      "severity": "critical",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "content/quantum-observable-universe/predicted-spectra/tilting-module-rigidity.lean:33 has a bare `sorry` with no `-- Ref:` anywhere in the file (file Ref-count=0). Enclosing decl `theorem ... Rigid.GeneratesWords := by` (L29). Verbatim L33: `sorry`. Source-level audit; Lean LSP hard-gate could not be run (mcp__lean-lsp__lean_diagnostic_messages permission-denied in audit context). 0 downstream dependents (lem:tilting-module-rigidity).",
+      "status": "queued",
+      "asked_author_at": null
+    },
+    {
+      "id": "41290e0f2809",
+      "block_or_script": "predicted-spectra/spectrahedral-phase-collapse",
+      "paths": {
+        "ts": "content/quantum-observable-universe/predicted-spectra/spectrahedral-phase-collapse.ts",
+        "md": "content/quantum-observable-universe/predicted-spectra/spectrahedral-phase-collapse.md",
+        "lean": "content/quantum-observable-universe/predicted-spectra/spectrahedral-phase-collapse.lean"
+      },
+      "finding": "uncited-sorry",
+      "severity": "critical",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "content/quantum-observable-universe/predicted-spectra/spectrahedral-phase-collapse.lean has 4 bare `sorry` (L37, L46, L55, plus sorry-typed sigs L45/L54) with no `-- Ref:` anywhere in file (Ref-count=0). Verbatim L37: `sorry` (theorem hadronic_melt_at_supergolden, L35). Source-level audit; LSP hard-gate denied. 0 downstream dependents (prop:spectrahedral-phase-collapse).",
+      "status": "queued",
+      "asked_author_at": null
+    },
+    {
+      "id": "fe77be56575d",
+      "block_or_script": "predicted-spectra/spectrahedral-phase-collapse",
+      "paths": {
+        "ts": "content/quantum-observable-universe/predicted-spectra/spectrahedral-phase-collapse.ts",
+        "md": "content/quantum-observable-universe/predicted-spectra/spectrahedral-phase-collapse.md",
+        "lean": "content/quantum-observable-universe/predicted-spectra/spectrahedral-phase-collapse.lean"
+      },
+      "finding": "drift-class-A",
+      "severity": "critical",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "content/quantum-observable-universe/predicted-spectra/spectrahedral-phase-collapse.lean L44-46 `theorem molecular_bond_instability (q : ℝ) : sorry := by sorry` and L53-55 `theorem lepton_unconditional_stability ... : sorry := by sorry` — the TYPE SIGNATURE itself is `sorry`, so the Lean 'theorem' states no proposition while the .md narrative (10 math/theorem mentions) claims substantive results (negative Gram det, positive-definite Gram for q>1). Stub-weakening / non-statement.",
+      "status": "queued",
+      "asked_author_at": null
+    },
+    {
+      "id": "898e34d7432b",
+      "block_or_script": "lean/QOU/HeckeAlgebra/MarkovTrace",
+      "paths": {
+        "ts": null,
+        "md": null,
+        "lean": "content/quantum-observable-universe/lean/QOU/HeckeAlgebra/MarkovTrace.lean"
+      },
+      "finding": "hidden-axiom",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "content/quantum-observable-universe/lean/QOU/HeckeAlgebra/MarkovTrace.lean declares 9 `axiom` without any `-- Ref:` in the file (file Ref-count=0). First at L67: `axiom JonesMarkovCoefficient :`. Axiom lines: [67, 78, 80, 90, 98, 107, 113, 126]. Per CLAUDE.md §1 / Slot C proof-no-axiom-growth an axiom encoding a deferred result needs a `-- Ref:` citation. Pre-existing scaffolding (no NEW growth vs baseline), hence major not critical.",
+      "status": "resolved",
+      "asked_author_at": null,
+      "resolution_note": "9 axioms cited: wenzl1988 (y_λ coeffs, sum=1, Wenzl bridge, markovTraceOnWedderburn), kassel2008 (heckeMul, heckeStab), jones1985 (cyclicity, Markov axiom), manuscript (partitions_as_finset).",
+      "resolved_at": "2026-06-13"
+    },
+    {
+      "id": "b39a0ec1bfec",
+      "block_or_script": "lean/QOU/HeckeAlgebra/Formal",
+      "paths": {
+        "ts": null,
+        "md": null,
+        "lean": "content/quantum-observable-universe/lean/QOU/HeckeAlgebra/Formal.lean"
+      },
+      "finding": "hidden-axiom",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "content/quantum-observable-universe/lean/QOU/HeckeAlgebra/Formal.lean declares 5 `axiom` without any `-- Ref:` in the file (file Ref-count=0). First at L153: `axiom heckeFormalMul :`. Axiom lines: [153, 158, 164, 170, 186]. Per CLAUDE.md §1 / Slot C proof-no-axiom-growth an axiom encoding a deferred result needs a `-- Ref:` citation. Pre-existing scaffolding (no NEW growth vs baseline), hence major not critical.",
+      "status": "resolved",
+      "asked_author_at": null,
+      "resolution_note": "5 axioms cited geckpfeiffer2000 (heckeFormalMul/One/Generator/SMul + T-relation §4.4).",
+      "resolved_at": "2026-06-13"
+    },
+    {
+      "id": "4b74db25a199",
+      "block_or_script": "ugb:lean/UGB/GrobnerShirshov/StrongMultiplicativity",
+      "paths": {
+        "ts": null,
+        "md": null,
+        "lean": "content/unital-groebner-bases/lean/UGB/GrobnerShirshov/StrongMultiplicativity.lean"
+      },
+      "finding": "hidden-axiom",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "content/unital-groebner-bases/lean/UGB/GrobnerShirshov/StrongMultiplicativity.lean declares 5 `axiom` without any `-- Ref:` in the file (file Ref-count=0). First at L99: `axiom tensorOrder {G : Type u} (ord : AdmissibleOrder G) :`. Axiom lines: [99, 111, 125, 168, 221]. Per CLAUDE.md §1 / Slot C proof-no-axiom-growth an axiom encoding a deferred result needs a `-- Ref:` citation. Pre-existing scaffolding (no NEW growth vs baseline), hence major not critical.",
+      "status": "resolved",
+      "asked_author_at": null,
+      "resolution_note": "5 axioms cited: bokutchen2014 (tensorOrder/tensorRewritingSystem/tensor_gs_basis), fred2005 (strong_multiplicativity_on_generators, formal_group_is_filtered_bialgebra Thm 4.12/§4).",
+      "resolved_at": "2026-06-13"
+    },
+    {
+      "id": "57daaff41632",
+      "block_or_script": "lean/QOU/HeckeAlgebra/JonesMarkovWenzl",
+      "paths": {
+        "ts": null,
+        "md": null,
+        "lean": "content/quantum-observable-universe/lean/QOU/HeckeAlgebra/JonesMarkovWenzl.lean"
+      },
+      "finding": "hidden-axiom",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "content/quantum-observable-universe/lean/QOU/HeckeAlgebra/JonesMarkovWenzl.lean declares 4 `axiom` without any `-- Ref:` in the file (file Ref-count=0). First at L95: `axiom cellContent : ∀ {n : ℕ}, Nat.Partition n → ℕ → ℕ → ℤ`. Axiom lines: [95, 98, 107, 114]. Per CLAUDE.md §1 / Slot C proof-no-axiom-growth an axiom encoding a deferred result needs a `-- Ref:` citation. Pre-existing scaffolding (no NEW growth vs baseline), hence major not critical.",
+      "status": "resolved",
+      "asked_author_at": null,
+      "resolution_note": "4 axioms cited: fulton1997 (cellContent, cellHookLength), wenzl1988 (wenzlClosedForm, JonesMarkovCoefficient_eq_wenzl Lemma 3.2).",
+      "resolved_at": "2026-06-13"
+    },
+    {
+      "id": "4cbc2fe97aa5",
+      "block_or_script": "ugb:lean/UGB/GrobnerShirshov/CompositionLemma",
+      "paths": {
+        "ts": null,
+        "md": null,
+        "lean": "content/unital-groebner-bases/lean/UGB/GrobnerShirshov/CompositionLemma.lean"
+      },
+      "finding": "hidden-axiom",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "content/unital-groebner-bases/lean/UGB/GrobnerShirshov/CompositionLemma.lean declares 4 `axiom` without any `-- Ref:` in the file (file Ref-count=0). First at L56: `axiom reduction_well_founded`. Axiom lines: [56, 77, 105, 130]. Per CLAUDE.md §1 / Slot C proof-no-axiom-growth an axiom encoding a deferred result needs a `-- Ref:` citation. Pre-existing scaffolding (no NEW growth vs baseline), hence major not critical.",
+      "status": "resolved",
+      "asked_author_at": null,
+      "resolution_note": "4 axioms cited bergman1978 (reduction_well_founded, local_confluence, confluence, normal_form_unique — Diamond Lemma).",
+      "resolved_at": "2026-06-13"
+    },
+    {
+      "id": "9bde4d053054",
+      "block_or_script": "lean/QOU/HeckeAlgebra/Hoefsmit",
+      "paths": {
+        "ts": null,
+        "md": null,
+        "lean": "content/quantum-observable-universe/lean/QOU/HeckeAlgebra/Hoefsmit.lean"
+      },
+      "finding": "hidden-axiom",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "content/quantum-observable-universe/lean/QOU/HeckeAlgebra/Hoefsmit.lean declares 3 `axiom` without any `-- Ref:` in the file (file Ref-count=0). First at L87: `axiom seminormalDim_pos : ∀ {n : ℕ} (lam : Nat.Partition n) (hn : 0 < n),`. Axiom lines: [87, 125, 139]. Per CLAUDE.md §1 / Slot C proof-no-axiom-growth an axiom encoding a deferred result needs a `-- Ref:` citation. Pre-existing scaffolding (no NEW growth vs baseline), hence major not critical.",
+      "status": "resolved",
+      "asked_author_at": null,
+      "resolution_note": "3 axioms cited: fulton1997 (seminormalDim_pos), hoefsmit1974 (HoefsmitMatrix hecke + braid relations).",
+      "resolved_at": "2026-06-13"
+    },
+    {
+      "id": "9f9e3c8469e0",
+      "block_or_script": "q-geometric-langlands/tannaka-krein-isomorphism",
+      "paths": {
+        "ts": "content/quantum-observable-universe/q-geometric-langlands/tannaka-krein-isomorphism.ts",
+        "md": "content/quantum-observable-universe/q-geometric-langlands/tannaka-krein-isomorphism.md",
+        "lean": "content/quantum-observable-universe/q-geometric-langlands/tannaka-krein-isomorphism.lean"
+      },
+      "finding": "hidden-axiom",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "content/quantum-observable-universe/q-geometric-langlands/tannaka-krein-isomorphism.lean declares 3 `axiom` without any `-- Ref:` in the file (file Ref-count=0). First at L24: `axiom RepLoc : Type (u + 1)`. Axiom lines: [24, 29, 43]. Per CLAUDE.md §1 / Slot C proof-no-axiom-growth an axiom encoding a deferred result needs a `-- Ref:` citation. Pre-existing scaffolding (no NEW growth vs baseline), hence major not critical.",
+      "status": "resolved",
+      "asked_author_at": null,
+      "resolution_note": "3 axioms cited: manuscript (RepLoc §2), deligne1990 (ComodH), tannaka1939 (tannaka_krein_isomorphism_axiom).",
+      "resolved_at": "2026-06-13"
+    },
+    {
+      "id": "df282058c93e",
+      "block_or_script": "lean/QOU/BraidKnot/PSDFeasibilityProxy",
+      "paths": {
+        "ts": null,
+        "md": null,
+        "lean": "content/quantum-observable-universe/lean/QOU/BraidKnot/PSDFeasibilityProxy.lean"
+      },
+      "finding": "hidden-axiom",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "content/quantum-observable-universe/lean/QOU/BraidKnot/PSDFeasibilityProxy.lean declares 2 `axiom` without any `-- Ref:` in the file (file Ref-count=0). First at L63: `axiom braidWordEval :`. Axiom lines: [63, 78]. Per CLAUDE.md §1 / Slot C proof-no-axiom-growth an axiom encoding a deferred result needs a `-- Ref:` citation. Pre-existing scaffolding (no NEW growth vs baseline), hence major not critical.",
+      "status": "resolved",
+      "asked_author_at": null,
+      "resolution_note": "2 axioms cited: kassel2008 (braidWordEval §13.6), manuscript (evenPower_necessary_for_blockPosSemidef, prop:operator-selection-lp).",
+      "resolved_at": "2026-06-13"
+    },
+    {
+      "id": "df07019a6c35",
+      "block_or_script": "lean/QOU/HeckeAlgebra/Common",
+      "paths": {
+        "ts": null,
+        "md": null,
+        "lean": "content/quantum-observable-universe/lean/QOU/HeckeAlgebra/Common.lean"
+      },
+      "finding": "hidden-axiom",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "content/quantum-observable-universe/lean/QOU/HeckeAlgebra/Common.lean declares 2 `axiom` without any `-- Ref:` in the file (file Ref-count=0). First at L103: `axiom markovTrace : (n : ℕ) → HeckeElement n → ℝ`. Axiom lines: [103, 109]. Per CLAUDE.md §1 / Slot C proof-no-axiom-growth an axiom encoding a deferred result needs a `-- Ref:` citation. Pre-existing scaffolding (no NEW growth vs baseline), hence major not critical.",
+      "status": "resolved",
+      "asked_author_at": null,
+      "resolution_note": "2 axioms cited kassel2008 (markovTrace, markovTrace_linear §13.6).",
+      "resolved_at": "2026-06-13"
+    },
+    {
+      "id": "b14113cea719",
+      "block_or_script": "mass-theory/thurston-volume-additivity",
+      "paths": {
+        "ts": "content/quantum-observable-universe/mass-theory/thurston-volume-additivity.ts",
+        "md": "content/quantum-observable-universe/mass-theory/thurston-volume-additivity.md",
+        "lean": "content/quantum-observable-universe/mass-theory/thurston-volume-additivity.lean"
+      },
+      "finding": "hidden-axiom",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "content/quantum-observable-universe/mass-theory/thurston-volume-additivity.lean declares 2 `axiom` without any `-- Ref:` in the file (file Ref-count=0). First at L35: `axiom blochWigner : ℂ → ℝ`. Axiom lines: [35, 40]. Per CLAUDE.md §1 / Slot C proof-no-axiom-growth an axiom encoding a deferred result needs a `-- Ref:` citation. Pre-existing scaffolding (no NEW growth vs baseline), hence major not critical.",
+      "status": "resolved",
+      "asked_author_at": null,
+      "resolution_note": "2 axioms cited zagier1986 (blochWigner, blochWigner_real — Bloch-Wigner dilog).",
+      "resolved_at": "2026-06-13"
+    },
+    {
+      "id": "b48c7bc801ed",
+      "block_or_script": "ugb:lean/UGB/GrobnerShirshov/Flatness",
+      "paths": {
+        "ts": null,
+        "md": null,
+        "lean": "content/unital-groebner-bases/lean/UGB/GrobnerShirshov/Flatness.lean"
+      },
+      "finding": "hidden-axiom",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "content/unital-groebner-bases/lean/UGB/GrobnerShirshov/Flatness.lean declares 2 `axiom` without any `-- Ref:` in the file (file Ref-count=0). First at L94: `axiom gs_implies_flat`. Axiom lines: [94, 149]. Per CLAUDE.md §1 / Slot C proof-no-axiom-growth an axiom encoding a deferred result needs a `-- Ref:` citation. Pre-existing scaffolding (no NEW growth vs baseline), hence major not critical.",
+      "status": "resolved",
+      "asked_author_at": null,
+      "resolution_note": "2 axioms cited: fred2005 (gs_implies_flat Thm 3.15), bergman1978 (normal_forms_preserved §5).",
+      "resolved_at": "2026-06-13"
+    },
+    {
+      "id": "b59a98ad41ed",
+      "block_or_script": "lean/QOU/HeckeAlgebra/Wedderburn",
+      "paths": {
+        "ts": null,
+        "md": null,
+        "lean": "content/quantum-observable-universe/lean/QOU/HeckeAlgebra/Wedderburn.lean"
+      },
+      "finding": "hidden-axiom",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "content/quantum-observable-universe/lean/QOU/HeckeAlgebra/Wedderburn.lean declares 1 `axiom` without any `-- Ref:` in the file (file Ref-count=0). First at L109: `axiom wedderburnEmbed : ∀ {n : ℕ}, WedderburnDecomposition n →`. Axiom lines: [109]. Per CLAUDE.md §1 / Slot C proof-no-axiom-growth an axiom encoding a deferred result needs a `-- Ref:` citation. Pre-existing scaffolding (no NEW growth vs baseline), hence major not critical.",
+      "status": "resolved",
+      "asked_author_at": null,
+      "resolution_note": "1 axiom cited wedderburn1908 (wedderburnEmbed; Σ(f^λ)²=n! via RSK [fulton1997]).",
+      "resolved_at": "2026-06-13"
+    },
+    {
+      "id": "215346655e26",
+      "block_or_script": "mass-endomorphism/markov-trace-antipode-polynomial-symmetry",
+      "paths": {
+        "ts": "content/quantum-observable-universe/mass-endomorphism/markov-trace-antipode-polynomial-symmetry.ts",
+        "md": "content/quantum-observable-universe/mass-endomorphism/markov-trace-antipode-polynomial-symmetry.md",
+        "lean": "content/quantum-observable-universe/mass-endomorphism/markov-trace-antipode-polynomial-symmetry.lean"
+      },
+      "finding": "hidden-axiom",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "content/quantum-observable-universe/mass-endomorphism/markov-trace-antipode-polynomial-symmetry.lean declares 1 `axiom` without any `-- Ref:` in the file (file Ref-count=0). First at L84: `axiom markovTraceAntipodePolynomialSymmetry_axiom  :`. Axiom lines: [84]. Per CLAUDE.md §1 / Slot C proof-no-axiom-growth an axiom encoding a deferred result needs a `-- Ref:` citation. Pre-existing scaffolding (no NEW growth vs baseline), hence major not critical.",
+      "status": "resolved",
+      "asked_author_at": null,
+      "resolution_note": "1 axiom cited manuscript (proton closed-form antipode symmetry; antipode S(σ_i)=σ_i⁻¹ per kassel2008).",
+      "resolved_at": "2026-06-13"
+    },
+    {
+      "id": "a3781a8a68e0",
+      "block_or_script": "mass-theory/atom-knot-mass-derivation",
+      "paths": {
+        "ts": "content/quantum-observable-universe/mass-theory/atom-knot-mass-derivation.ts",
+        "md": "content/quantum-observable-universe/mass-theory/atom-knot-mass-derivation.md",
+        "lean": "content/quantum-observable-universe/mass-theory/atom-knot-mass-derivation.lean"
+      },
+      "finding": "hidden-axiom",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "content/quantum-observable-universe/mass-theory/atom-knot-mass-derivation.lean declares 1 `axiom` without any `-- Ref:` in the file (file Ref-count=0). First at L201: `axiom atom_knot_mass_derivation (cert : MassDerivationCertificate)`. Axiom lines: [201]. Per CLAUDE.md §1 / Slot C proof-no-axiom-growth an axiom encoding a deferred result needs a `-- Ref:` citation. Pre-existing scaffolding (no NEW growth vs baseline), hence major not critical.",
+      "status": "resolved",
+      "asked_author_at": null,
+      "resolution_note": "1 axiom cited manuscript (atom_knot_mass_derivation, prop:atom-knot-mass-derivation Mass identity).",
+      "resolved_at": "2026-06-13"
+    },
+    {
+      "id": "d6afe333a88f",
+      "block_or_script": "mass-theory/demazure-fiber-markov-trace",
+      "paths": {
+        "ts": "content/quantum-observable-universe/mass-theory/demazure-fiber-markov-trace.ts",
+        "md": "content/quantum-observable-universe/mass-theory/demazure-fiber-markov-trace.md",
+        "lean": "content/quantum-observable-universe/mass-theory/demazure-fiber-markov-trace.lean"
+      },
+      "finding": "hidden-axiom",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "content/quantum-observable-universe/mass-theory/demazure-fiber-markov-trace.lean declares 1 `axiom` without any `-- Ref:` in the file (file Ref-count=0). First at L118: `axiom demazure_principal_specialization_eq_schur_axiom (lam : Partition n) (q : ℝ) (hq : q > 1) :`. Axiom lines: [118]. Per CLAUDE.md §1 / Slot C proof-no-axiom-growth an axiom encoding a deferred result needs a `-- Ref:` citation. Pre-existing scaffolding (no NEW growth vs baseline), hence major not critical.",
+      "status": "resolved",
+      "asked_author_at": null,
+      "resolution_note": "1 axiom cited macdonald1995 (demazure principal specialisation = hook-content §I.3).",
+      "resolved_at": "2026-06-13"
+    },
+    {
+      "id": "200f53471235",
+      "block_or_script": "mass-theory/wigner-coefficient-derivation",
+      "paths": {
+        "ts": "content/quantum-observable-universe/mass-theory/wigner-coefficient-derivation.ts",
+        "md": "content/quantum-observable-universe/mass-theory/wigner-coefficient-derivation.md",
+        "lean": "content/quantum-observable-universe/mass-theory/wigner-coefficient-derivation.lean"
+      },
+      "finding": "hidden-axiom",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "content/quantum-observable-universe/mass-theory/wigner-coefficient-derivation.lean declares 1 `axiom` without any `-- Ref:` in the file (file Ref-count=0). First at L30: `axiom wigner_coefficient_axiom (q₀ m_e : ℝ)`. Axiom lines: [30]. Per CLAUDE.md §1 / Slot C proof-no-axiom-growth an axiom encoding a deferred result needs a `-- Ref:` citation. Pre-existing scaffolding (no NEW growth vs baseline), hence major not critical.",
+      "status": "resolved",
+      "asked_author_at": null,
+      "resolution_note": "1 axiom cited manuscript (wigner_coefficient_axiom, prop:wigner-coefficient-derivation [5]_q! near-match).",
+      "resolved_at": "2026-06-13"
+    },
+    {
+      "id": "ceea9c89a531",
+      "block_or_script": "observations/n-v-leading-order-derivation",
+      "paths": {
+        "ts": "content/quantum-observable-universe/observations/n-v-leading-order-derivation.ts",
+        "md": "content/quantum-observable-universe/observations/n-v-leading-order-derivation.md",
+        "lean": "content/quantum-observable-universe/observations/n-v-leading-order-derivation.lean"
+      },
+      "finding": "hidden-axiom",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "content/quantum-observable-universe/observations/n-v-leading-order-derivation.lean declares 1 `axiom` without any `-- Ref:` in the file (file Ref-count=0). First at L78: `axiom v_over_m_e_bridge :`. Axiom lines: [78]. Per CLAUDE.md §1 / Slot C proof-no-axiom-growth an axiom encoding a deferred result needs a `-- Ref:` citation. Pre-existing scaffolding (no NEW growth vs baseline), hence major not critical.",
+      "status": "resolved",
+      "asked_author_at": null,
+      "resolution_note": "1 axiom cited manuscript (v_over_m_e_bridge, conj:n-v-bring-action + conj:n-v-tower-depth-ninety).",
+      "resolved_at": "2026-06-13"
+    },
+    {
+      "id": "290d99f3a4cd",
+      "block_or_script": "particle-interactions/cemetery-group",
+      "paths": {
+        "ts": "content/quantum-observable-universe/particle-interactions/cemetery-group.ts",
+        "md": "content/quantum-observable-universe/particle-interactions/cemetery-group.md",
+        "lean": "content/quantum-observable-universe/particle-interactions/cemetery-group.lean"
+      },
+      "finding": "hidden-axiom",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "content/quantum-observable-universe/particle-interactions/cemetery-group.lean declares 1 `axiom` without any `-- Ref:` in the file (file Ref-count=0). First at L50: `axiom zero_not_in_cemetery {R : Type u} [CommRing R] (Z : CemeteryGroup R) :`. Axiom lines: [50]. Per CLAUDE.md §1 / Slot C proof-no-axiom-growth an axiom encoding a deferred result needs a `-- Ref:` citation. Pre-existing scaffolding (no NEW growth vs baseline), hence major not critical.",
+      "status": "resolved",
+      "asked_author_at": null,
+      "resolution_note": "1 axiom cited manuscript (zero_not_in_cemetery, def:cemetery-group).",
+      "resolved_at": "2026-06-13"
+    },
+    {
+      "id": "6526a302fdb6",
+      "block_or_script": "particle-interactions/cpt-orbit-closure-density",
+      "paths": {
+        "ts": "content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.ts",
+        "md": "content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.md",
+        "lean": "content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.lean"
+      },
+      "finding": "hidden-axiom",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.lean declares 1 `axiom` without any `-- Ref:` in the file (file Ref-count=0). First at L60: `axiom partitionTranspose_involutive {n : ℕ} :`. Axiom lines: [60]. Per CLAUDE.md §1 / Slot C proof-no-axiom-growth an axiom encoding a deferred result needs a `-- Ref:` citation. Pre-existing scaffolding (no NEW growth vs baseline), hence major not critical.",
+      "status": "resolved",
+      "asked_author_at": null,
+      "resolution_note": "1 axiom cited fulton1997 (partitionTranspose_involutive; conjugate partition involution).",
+      "resolved_at": "2026-06-13"
+    },
+    {
+      "id": "85fbd25e4e31",
+      "block_or_script": "ugb:lean/UGB/GrobnerShirshov/Basic",
+      "paths": {
+        "ts": null,
+        "md": null,
+        "lean": "content/unital-groebner-bases/lean/UGB/GrobnerShirshov/Basic.lean"
+      },
+      "finding": "hidden-axiom",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "content/unital-groebner-bases/lean/UGB/GrobnerShirshov/Basic.lean declares 1 `axiom` without any `-- Ref:` in the file (file Ref-count=0). First at L272: `axiom normal_form_exists {G : Type u} {k : Type v} [Ring k] [DecidableEq G]`. Axiom lines: [272]. Per CLAUDE.md §1 / Slot C proof-no-axiom-growth an axiom encoding a deferred result needs a `-- Ref:` citation. Pre-existing scaffolding (no NEW growth vs baseline), hence major not critical.",
+      "status": "resolved",
+      "asked_author_at": null,
+      "resolution_note": "1 axiom cited bergman1978 (normal_form_exists Thm 1.2).",
+      "resolved_at": "2026-06-13"
+    },
+    {
+      "id": "6ec595ed80db",
+      "block_or_script": "ugb:lean/UGB/GrobnerShirshov/HeckeGS",
+      "paths": {
+        "ts": null,
+        "md": null,
+        "lean": "content/unital-groebner-bases/lean/UGB/GrobnerShirshov/HeckeGS.lean"
+      },
+      "finding": "hidden-axiom",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "content/unital-groebner-bases/lean/UGB/GrobnerShirshov/HeckeGS.lean declares 1 `axiom` without any `-- Ref:` in the file (file Ref-count=0). First at L155: `axiom hecke_is_gs_basis (n : ℕ) (hp : HeckeParams) :`. Axiom lines: [155]. Per CLAUDE.md §1 / Slot C proof-no-axiom-growth an axiom encoding a deferred result needs a `-- Ref:` citation. Pre-existing scaffolding (no NEW growth vs baseline), hence major not critical.",
+      "status": "resolved",
+      "asked_author_at": null,
+      "resolution_note": "1 axiom cited bokutchen2014 (hecke_is_gs_basis; GS basis for Iwahori-Hecke H_n(q)).",
+      "resolved_at": "2026-06-13"
+    },
+    {
+      "id": "2270a702e1bf",
+      "block_or_script": "stochastic-mechanics/lusztig-canonical-basis-q-eq-1",
+      "paths": {
+        "ts": "content/quantum-observable-universe/stochastic-mechanics/lusztig-canonical-basis-q-eq-1.ts",
+        "md": "content/quantum-observable-universe/stochastic-mechanics/lusztig-canonical-basis-q-eq-1.md",
+        "lean": "content/quantum-observable-universe/stochastic-mechanics/lusztig-canonical-basis-q-eq-1.lean"
+      },
+      "finding": "lean-ref-namespace-mismatch",
+      "severity": "minor",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "content/quantum-observable-universe/stochastic-mechanics/lusztig-canonical-basis-q-eq-1.ts: lean.ref `qou:QOU.BraidsAndKnots.LusztigCanonicalBasisQEqOne` does not match the actual class name in the sibling .lean. sibling has §3b-cond encoding (class LusztigCanonicalBasisQEq1) but lean.ref name mismatched. Auto-dischargeable by aligning lean.ref to the discovered class name (CamelCase/acronym normalisation: SO3->So3, SDP->Sdp, EqOne->Eq1).",
+      "status": "resolved",
+      "asked_author_at": null,
+      "note": "lean.ref aligned to actual .lean decl in commit 859f4e87 (casing fix)"
+    },
+    {
+      "id": "b260e30b00b0",
+      "block_or_script": "mass-theory/kashaev-density-equals-sdp-multiplicity",
+      "paths": {
+        "ts": "content/quantum-observable-universe/mass-theory/kashaev-density-equals-sdp-multiplicity.ts",
+        "md": "content/quantum-observable-universe/mass-theory/kashaev-density-equals-sdp-multiplicity.md",
+        "lean": "content/quantum-observable-universe/mass-theory/kashaev-density-equals-sdp-multiplicity.lean"
+      },
+      "finding": "lean-ref-namespace-mismatch",
+      "severity": "minor",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "content/quantum-observable-universe/mass-theory/kashaev-density-equals-sdp-multiplicity.ts: lean.ref `qou:QOU.Kashaev.DensityEqualsSDPMultiplicity` does not match the actual class name in the sibling .lean. sibling has §3b-cond encoding (class KashaevDensityEqualsSdpMultiplicity) but lean.ref name mismatched. Auto-dischargeable by aligning lean.ref to the discovered class name (CamelCase/acronym normalisation: SO3->So3, SDP->Sdp, EqOne->Eq1).",
+      "status": "resolved",
+      "asked_author_at": null,
+      "note": "lean.ref aligned to actual .lean decl in commit 859f4e87 (casing fix)"
+    },
+    {
+      "id": "2827b65492d6",
+      "block_or_script": "mass-theory/dim-master-pentagon",
+      "paths": {
+        "ts": "content/quantum-observable-universe/mass-theory/dim-master-pentagon.ts",
+        "md": "content/quantum-observable-universe/mass-theory/dim-master-pentagon.md",
+        "lean": "content/quantum-observable-universe/mass-theory/dim-master-pentagon.lean"
+      },
+      "finding": "lean-ref-namespace-mismatch",
+      "severity": "minor",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "content/quantum-observable-universe/mass-theory/dim-master-pentagon.ts: lean.ref `qou:QOU.BraidsAndKnots.DIMMasterPentagon` does not match the actual class name in the sibling .lean. sibling has §3b-cond encoding (class DimMasterPentagon) but lean.ref name mismatched. Auto-dischargeable by aligning lean.ref to the discovered class name (CamelCase/acronym normalisation: SO3->So3, SDP->Sdp, EqOne->Eq1).",
+      "status": "resolved",
+      "asked_author_at": null,
+      "note": "lean.ref aligned to actual .lean decl in commit 859f4e87 (casing fix)"
+    },
+    {
+      "id": "25a7b3418698",
+      "block_or_script": "particle-interactions/wigner-su4-from-spin-isospin",
+      "paths": {
+        "ts": "content/quantum-observable-universe/particle-interactions/wigner-su4-from-spin-isospin.ts",
+        "md": "content/quantum-observable-universe/particle-interactions/wigner-su4-from-spin-isospin.md",
+        "lean": "content/quantum-observable-universe/particle-interactions/wigner-su4-from-spin-isospin.lean"
+      },
+      "finding": "lean-ref-namespace-mismatch",
+      "severity": "minor",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "content/quantum-observable-universe/particle-interactions/wigner-su4-from-spin-isospin.ts: lean.ref `qou:QOU.BraidsAndKnots.WignerSU4FromSpinIsospin` does not match the actual class name in the sibling .lean. sibling has §3b-cond encoding (class WignerSu4FromSpinIsospin) but lean.ref name mismatched. Auto-dischargeable by aligning lean.ref to the discovered class name (CamelCase/acronym normalisation: SO3->So3, SDP->Sdp, EqOne->Eq1).",
+      "status": "resolved",
+      "asked_author_at": null,
+      "note": "lean.ref aligned to actual .lean decl in commit 859f4e87 (casing fix)"
+    },
+    {
+      "id": "b970c22bfbfd",
+      "block_or_script": "particle-interactions/spin-from-so3-fiber",
+      "paths": {
+        "ts": "content/quantum-observable-universe/particle-interactions/spin-from-so3-fiber.ts",
+        "md": "content/quantum-observable-universe/particle-interactions/spin-from-so3-fiber.md",
+        "lean": "content/quantum-observable-universe/particle-interactions/spin-from-so3-fiber.lean"
+      },
+      "finding": "lean-ref-namespace-mismatch",
+      "severity": "minor",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "content/quantum-observable-universe/particle-interactions/spin-from-so3-fiber.ts: lean.ref `qou:QOU.BraidsAndKnots.SpinFromSO3Fiber` does not match the actual class name in the sibling .lean. sibling has §3b-cond encoding (class SpinFromSo3Fiber) but lean.ref name mismatched. Auto-dischargeable by aligning lean.ref to the discovered class name (CamelCase/acronym normalisation: SO3->So3, SDP->Sdp, EqOne->Eq1).",
+      "status": "resolved",
+      "asked_author_at": null,
+      "note": "lean.ref aligned to actual .lean decl in commit 859f4e87 (casing fix)"
+    },
+    {
+      "id": "609bbb342d61",
+      "block_or_script": "particle-interactions/type-b-folding-cpt",
+      "paths": {
+        "ts": "content/quantum-observable-universe/particle-interactions/type-b-folding-cpt.ts",
+        "md": "content/quantum-observable-universe/particle-interactions/type-b-folding-cpt.md",
+        "lean": "content/quantum-observable-universe/particle-interactions/type-b-folding-cpt.lean"
+      },
+      "finding": "lean-ref-namespace-mismatch",
+      "severity": "minor",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "content/quantum-observable-universe/particle-interactions/type-b-folding-cpt.ts: lean.ref `qou:QOU.BraidsAndKnots.TypeBFoldingCPT` does not match the actual class name in the sibling .lean. sibling has §3b-cond encoding (class TypeBFoldingCpt) but lean.ref name mismatched. Auto-dischargeable by aligning lean.ref to the discovered class name (CamelCase/acronym normalisation: SO3->So3, SDP->Sdp, EqOne->Eq1).",
+      "status": "resolved",
+      "asked_author_at": null,
+      "note": "lean.ref aligned to actual .lean decl in commit 859f4e87 (casing fix)"
+    },
+    {
+      "id": "e1215832c16f",
+      "block_or_script": "particle-interactions/q-zero-stokes-region-identification",
+      "paths": {
+        "ts": "content/quantum-observable-universe/particle-interactions/q-zero-stokes-region-identification.ts",
+        "md": "content/quantum-observable-universe/particle-interactions/q-zero-stokes-region-identification.md",
+        "lean": "content/quantum-observable-universe/particle-interactions/q-zero-stokes-region-identification.lean"
+      },
+      "finding": "lean-ref-namespace-mismatch",
+      "severity": "minor",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "content/quantum-observable-universe/particle-interactions/q-zero-stokes-region-identification.ts: lean.ref `qou:QOU.BraidKnot.QZeroStokesRegionIdentification` does not match the actual class name in the sibling .lean. sibling has §3b-cond encoding (class UniversalBase; structure KnotComplement; class MostowPrasadDistinguished) but lean.ref name mismatched. Auto-dischargeable by aligning lean.ref to the discovered class name (CamelCase/acronym normalisation: SO3->So3, SDP->Sdp, EqOne->Eq1).",
+      "status": "resolved",
+      "asked_author_at": null,
+      "note": "lean.ref aligned to actual .lean decl in commit 859f4e87 (casing fix)"
+    },
+    {
+      "id": "ed2a7f0d75b6",
+      "block_or_script": "appendix-surreals/casimir-first-q-correction",
+      "paths": {
+        "ts": "content/quantum-observable-universe/appendix-surreals/casimir-first-q-correction.ts",
+        "md": "content/quantum-observable-universe/appendix-surreals/casimir-first-q-correction.md",
+        "lean": null
+      },
+      "finding": "naked-conjecture",
+      "severity": "minor",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "content/quantum-observable-universe/appendix-surreals/casimir-first-q-correction.ts: conjecture block, lean.ref decl 'FigureEightCasimirWeight' not found in any content .lean; sibling.lean=NO, md_sketch=True. 0 downstream dependents (genuine open conjecture, not blocking provable scaffolding). Finding is the missing/dangling §3b-cond Lean axiomatisation stub; auto-dischargeable by authoring a `class` stub + aligning lean.ref. ref/label: qou:QOU.AppendixSurreals.FigureEightCasimirWeight.",
+      "status": "queued",
+      "asked_author_at": null
+    },
+    {
+      "id": "5397fd53eeda",
+      "block_or_script": "gravity-spacetime/lqg-entropy-qdim-partition-pole",
+      "paths": {
+        "ts": "content/quantum-observable-universe/gravity-spacetime/lqg-entropy-qdim-partition-pole.ts",
+        "md": "content/quantum-observable-universe/gravity-spacetime/lqg-entropy-qdim-partition-pole.md",
+        "lean": null
+      },
+      "finding": "naked-conjecture",
+      "severity": "minor",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "content/quantum-observable-universe/gravity-spacetime/lqg-entropy-qdim-partition-pole.ts: conjecture block, conjecture has no lean.ref; sibling.lean=NO, md_sketch=False. 0 downstream dependents (genuine open conjecture, not blocking provable scaffolding). Finding is the missing/dangling §3b-cond Lean axiomatisation stub; auto-dischargeable by authoring a `class` stub + aligning lean.ref. ref/label: no-lean-ref.",
+      "status": "queued",
+      "asked_author_at": null
+    },
+    {
+      "id": "cf10183971f0",
+      "block_or_script": "mass-endomorphism/conj-rho-k-pair-gen-canonical-form",
+      "paths": {
+        "ts": "content/quantum-observable-universe/mass-endomorphism/conj-rho-k-pair-gen-canonical-form.ts",
+        "md": "content/quantum-observable-universe/mass-endomorphism/conj-rho-k-pair-gen-canonical-form.md",
+        "lean": "content/quantum-observable-universe/mass-endomorphism/conj-rho-k-pair-gen-canonical-form.lean"
+      },
+      "finding": "naked-conjecture",
+      "severity": "minor",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "content/quantum-observable-universe/mass-endomorphism/conj-rho-k-pair-gen-canonical-form.ts: conjecture block, lean.ref decl 'pair_gen_kashaev_limit' not found in any content .lean; sibling.lean=yes, md_sketch=True. 0 downstream dependents (genuine open conjecture, not blocking provable scaffolding). Finding is the missing/dangling §3b-cond Lean axiomatisation stub; auto-dischargeable by authoring a `class` stub + aligning lean.ref. ref/label: qou:QOU.BraidKnot.RhoKPairGenCanonicalForm.pair_gen_kashaev_limit.",
+      "status": "queued",
+      "asked_author_at": null
+    },
+    {
+      "id": "591cb8d2ee2d",
+      "block_or_script": "mass-theory/reidemeister-mass-invariance",
+      "paths": {
+        "ts": "content/quantum-observable-universe/mass-theory/reidemeister-mass-invariance.ts",
+        "md": "content/quantum-observable-universe/mass-theory/reidemeister-mass-invariance.md",
+        "lean": "content/quantum-observable-universe/mass-theory/reidemeister-mass-invariance.lean"
+      },
+      "finding": "cite-position-hygiene",
+      "severity": "minor",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "content/quantum-observable-universe/mass-theory/reidemeister-mass-invariance.lean: 8 `axiom`(s) have a `-- Ref:` present elsewhere in the file but NOT in the 12-line window above the axiom (lines [78, 81, 82, 83, 87, 90]). Per CLAUDE.md §1 the Ref should be immediately above. Auto-dischargeable by moving/duplicating the Ref line.",
+      "status": "resolved",
+      "asked_author_at": null,
+      "resolution_note": "8 axioms: added -- Ref: [manuscript] Ch.4 immediately above bareMass/bindingEnergy axioms (+ jones1987 cross-ref).",
+      "resolved_at": "2026-06-13"
+    },
+    {
+      "id": "01241f8749f6",
+      "block_or_script": "quantum-observable-universes/q-codifferential-formula-prop",
+      "paths": {
+        "ts": "content/quantum-observable-universe/quantum-observable-universes/q-codifferential-formula-prop.ts",
+        "md": "content/quantum-observable-universe/quantum-observable-universes/q-codifferential-formula-prop.md",
+        "lean": "content/quantum-observable-universe/quantum-observable-universes/q-codifferential-formula-prop.lean"
+      },
+      "finding": "cite-position-hygiene",
+      "severity": "minor",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "content/quantum-observable-universe/quantum-observable-universes/q-codifferential-formula-prop.lean: 4 `axiom`(s) have a `-- Ref:` present elsewhere in the file but NOT in the 12-line window above the axiom (lines [72, 74, 76, 136]). Per CLAUDE.md §1 the Ref should be immediately above. Auto-dischargeable by moving/duplicating the Ref line.",
+      "status": "resolved",
+      "asked_author_at": null,
+      "resolution_note": "4 axioms: added -- Ref: [manuscript] Ch.2 prop:q-codifferential-formula above d_classical/δ_classical/L_reeb/L_reeb_star/ι_reeb/θ_wedge + formula axiom.",
+      "resolved_at": "2026-06-13"
+    },
+    {
+      "id": "247dfb9d4a79",
+      "block_or_script": "ugb:lean/UGB/GrobnerShirshov/NormalForms",
+      "paths": {
+        "ts": null,
+        "md": null,
+        "lean": "content/unital-groebner-bases/lean/UGB/GrobnerShirshov/NormalForms.lean"
+      },
+      "finding": "cite-position-hygiene",
+      "severity": "minor",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "content/unital-groebner-bases/lean/UGB/GrobnerShirshov/NormalForms.lean: 4 `axiom`(s) have a `-- Ref:` present elsewhere in the file but NOT in the 12-line window above the axiom (lines [386, 402, 441, 478]). Per CLAUDE.md §1 the Ref should be immediately above. Auto-dischargeable by moving/duplicating the Ref line.",
+      "status": "resolved",
+      "asked_author_at": null,
+      "resolution_note": "4 axioms: added -- Ref above qSerreRewritingSystem/qSerre_is_gs_basis/pbw_monomials_are_normal_forms (bokut2005), dist_algebra_gs_basis (fred2005).",
+      "resolved_at": "2026-06-13"
+    },
+    {
+      "id": "a40d5a7eb946",
+      "block_or_script": "braids-and-knots/frobenius-antipode-lean-stub",
+      "paths": {
+        "ts": null,
+        "md": null,
+        "lean": "content/quantum-observable-universe/braids-and-knots/frobenius-antipode-lean-stub.lean"
+      },
+      "finding": "cite-position-hygiene",
+      "severity": "minor",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "content/quantum-observable-universe/braids-and-knots/frobenius-antipode-lean-stub.lean: 2 `axiom`(s) have a `-- Ref:` present elsewhere in the file but NOT in the 12-line window above the axiom (lines [69, 100]). Per CLAUDE.md §1 the Ref should be immediately above. Auto-dischargeable by moving/duplicating the Ref line.",
+      "status": "resolved",
+      "asked_author_at": null,
+      "resolution_note": "2 axioms: added -- Ref: kassel1995 above antipode_anti_hom; kassel1995+yekutieli2010 above markov_trace_antipode_invariant.",
+      "resolved_at": "2026-06-13"
+    },
+    {
+      "id": "66f999c03ee8",
+      "block_or_script": "lean/QOU/MathlibExt/SDPRankEquality",
+      "paths": {
+        "ts": null,
+        "md": null,
+        "lean": "content/quantum-observable-universe/lean/QOU/MathlibExt/SDPRankEquality.lean"
+      },
+      "finding": "cite-position-hygiene",
+      "severity": "minor",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "content/quantum-observable-universe/lean/QOU/MathlibExt/SDPRankEquality.lean: 2 `axiom`(s) have a `-- Ref:` present elsewhere in the file but NOT in the 12-line window above the axiom (lines [172, 614]). Per CLAUDE.md §1 the Ref should be immediately above. Auto-dischargeable by moving/duplicating the Ref line.",
+      "status": "resolved",
+      "asked_author_at": null,
+      "resolution_note": "2 axioms: added -- Ref: [manuscript] prop:operator-selection-lp above rank_via_eigenvalues + affine_slater_rigidity (no published convex-opt key in references.ts).",
+      "resolved_at": "2026-06-13"
+    },
+    {
+      "id": "cc4bd7cd2744",
+      "block_or_script": "predicted-spectra/torus-knot-shell-binding",
+      "paths": {
+        "ts": "content/quantum-observable-universe/predicted-spectra/torus-knot-shell-binding.ts",
+        "md": "content/quantum-observable-universe/predicted-spectra/torus-knot-shell-binding.md",
+        "lean": "content/quantum-observable-universe/predicted-spectra/torus-knot-shell-binding.lean"
+      },
+      "finding": "cite-position-hygiene",
+      "severity": "minor",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "content/quantum-observable-universe/predicted-spectra/torus-knot-shell-binding.lean: 2 `axiom`(s) have a `-- Ref:` present elsewhere in the file but NOT in the 12-line window above the axiom (lines [39, 44]). Per CLAUDE.md §1 the Ref should be immediately above. Auto-dischargeable by moving/duplicating the Ref line.",
+      "status": "resolved",
+      "asked_author_at": null,
+      "resolution_note": "2 axioms: added -- Ref: bergman1978 above IsNormalForm + division_terminates_unique (cf [unital-groebner-bases:thm:ugb-main-theorem]).",
+      "resolved_at": "2026-06-13"
+    },
+    {
+      "id": "47413cbae68b",
+      "block_or_script": "information-theory/q-game-of-life",
+      "paths": {
+        "ts": "content/quantum-observable-universe/information-theory/q-game-of-life.ts",
+        "md": "content/quantum-observable-universe/information-theory/q-game-of-life.md",
+        "lean": "content/quantum-observable-universe/information-theory/q-game-of-life.lean"
+      },
+      "finding": "cite-position-hygiene",
+      "severity": "minor",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "content/quantum-observable-universe/information-theory/q-game-of-life.lean: 1 `axiom`(s) have a `-- Ref:` present elsewhere in the file but NOT in the 12-line window above the axiom (lines [75]). Per CLAUDE.md §1 the Ref should be immediately above. Auto-dischargeable by moving/duplicating the Ref line.",
+      "status": "resolved",
+      "asked_author_at": null,
+      "resolution_note": "1 axiom: added -- Ref: [manuscript] Ch.8 prop:toffoli-lp-stability above qGameOfLife_stable_axiom.",
+      "resolved_at": "2026-06-13"
+    },
+    {
+      "id": "3ba640085174",
+      "block_or_script": "lean/QOU/Archimedean/EmCouplingBringZeroMode",
+      "paths": {
+        "ts": null,
+        "md": null,
+        "lean": "content/quantum-observable-universe/lean/QOU/Archimedean/EmCouplingBringZeroMode.lean"
+      },
+      "finding": "cite-position-hygiene",
+      "severity": "minor",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "content/quantum-observable-universe/lean/QOU/Archimedean/EmCouplingBringZeroMode.lean: 1 `axiom`(s) have a `-- Ref:` present elsewhere in the file but NOT in the 12-line window above the axiom (lines [79]). Per CLAUDE.md §1 the Ref should be immediately above. Auto-dischargeable by moving/duplicating the Ref line.",
+      "status": "resolved",
+      "asked_author_at": null,
+      "resolution_note": "1 axiom: added -- Ref: zagier1986 above BlochWigner_unit_circle (Clausen function).",
+      "resolved_at": "2026-06-13"
+    },
+    {
+      "id": "23144b1d116f",
+      "block_or_script": "lean/QOU/Mathlib/RSKBridge",
+      "paths": {
+        "ts": null,
+        "md": null,
+        "lean": "content/quantum-observable-universe/lean/QOU/Mathlib/RSKBridge.lean"
+      },
+      "finding": "cite-position-hygiene",
+      "severity": "minor",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "content/quantum-observable-universe/lean/QOU/Mathlib/RSKBridge.lean: 1 `axiom`(s) have a `-- Ref:` present elsewhere in the file but NOT in the 12-line window above the axiom (lines [96]). Per CLAUDE.md §1 the Ref should be immediately above. Auto-dischargeable by moving/duplicating the Ref line.",
+      "status": "resolved",
+      "asked_author_at": null,
+      "resolution_note": "1 axiom: moved -- Ref: stanley1999 §7.11 to immediately above RSK_substrate_axiom.",
+      "resolved_at": "2026-06-13"
+    },
+    {
+      "id": "c7eedae024b9",
+      "block_or_script": "lean/QOU/MathlibExt/SDPRealUniqueness",
+      "paths": {
+        "ts": null,
+        "md": null,
+        "lean": "content/quantum-observable-universe/lean/QOU/MathlibExt/SDPRealUniqueness.lean"
+      },
+      "finding": "cite-position-hygiene",
+      "severity": "minor",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "content/quantum-observable-universe/lean/QOU/MathlibExt/SDPRealUniqueness.lean: 1 `axiom`(s) have a `-- Ref:` present elsewhere in the file but NOT in the 12-line window above the axiom (lines [187]). Per CLAUDE.md §1 the Ref should be immediately above. Auto-dischargeable by moving/duplicating the Ref line.",
+      "status": "resolved",
+      "asked_author_at": null,
+      "resolution_note": "1 axiom: added -- Ref: [manuscript] prop:operator-selection-lp above slater_strict_complementarity_kernel_axiom.",
+      "resolved_at": "2026-06-13"
+    },
+    {
+      "id": "0c9b6a7f44da",
+      "block_or_script": "mass-theory/confinement-categorical",
+      "paths": {
+        "ts": "content/quantum-observable-universe/mass-theory/confinement-categorical.ts",
+        "md": "content/quantum-observable-universe/mass-theory/confinement-categorical.md",
+        "lean": "content/quantum-observable-universe/mass-theory/confinement-categorical.lean"
+      },
+      "finding": "cite-position-hygiene",
+      "severity": "minor",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "content/quantum-observable-universe/mass-theory/confinement-categorical.lean: 1 `axiom`(s) have a `-- Ref:` present elsewhere in the file but NOT in the 12-line window above the axiom (lines [65]). Per CLAUDE.md §1 the Ref should be immediately above. Auto-dischargeable by moving/duplicating the Ref line.",
+      "status": "resolved",
+      "asked_author_at": null,
+      "resolution_note": "1 axiom: added -- Ref: kock2004 above confinement_int_factors_through_centre_axiom (cf prop:confinement-categorical).",
+      "resolved_at": "2026-06-13"
+    },
+    {
+      "id": "61d43390e9f8",
+      "block_or_script": "mass-theory/habiro-expansion-atomic",
+      "paths": {
+        "ts": "content/quantum-observable-universe/mass-theory/habiro-expansion-atomic.ts",
+        "md": "content/quantum-observable-universe/mass-theory/habiro-expansion-atomic.md",
+        "lean": "content/quantum-observable-universe/mass-theory/habiro-expansion-atomic.lean"
+      },
+      "finding": "cite-position-hygiene",
+      "severity": "minor",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "content/quantum-observable-universe/mass-theory/habiro-expansion-atomic.lean: 1 `axiom`(s) have a `-- Ref:` present elsewhere in the file but NOT in the 12-line window above the axiom (lines [191]). Per CLAUDE.md §1 the Ref should be immediately above. Auto-dischargeable by moving/duplicating the Ref line.",
+      "status": "resolved",
+      "asked_author_at": null,
+      "resolution_note": "1 axiom: moved -- Ref: jones1987 Thm 3 to immediately above atomic_braid_polynomial_integral.",
+      "resolved_at": "2026-06-13"
+    },
+    {
+      "id": "e90b75cbac82",
+      "block_or_script": "mass-theory/wedderburn-bratteli-recursion",
+      "paths": {
+        "ts": "content/quantum-observable-universe/mass-theory/wedderburn-bratteli-recursion.ts",
+        "md": "content/quantum-observable-universe/mass-theory/wedderburn-bratteli-recursion.md",
+        "lean": "content/quantum-observable-universe/mass-theory/wedderburn-bratteli-recursion.lean"
+      },
+      "finding": "cite-position-hygiene",
+      "severity": "minor",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "content/quantum-observable-universe/mass-theory/wedderburn-bratteli-recursion.lean: 1 `axiom`(s) have a `-- Ref:` present elsewhere in the file but NOT in the 12-line window above the axiom (lines [164]). Per CLAUDE.md §1 the Ref should be immediately above. Auto-dischargeable by moving/duplicating the Ref line.",
+      "status": "resolved",
+      "asked_author_at": null,
+      "resolution_note": "1 axiom: added -- Ref: wenzl1988 Lemma 3.2 above plancherel_completeness_axiom.",
+      "resolved_at": "2026-06-13"
+    },
+    {
+      "id": "e0d6d93a031a",
+      "block_or_script": "observations/n-v-bring-action",
+      "paths": {
+        "ts": "content/quantum-observable-universe/observations/n-v-bring-action.ts",
+        "md": "content/quantum-observable-universe/observations/n-v-bring-action.md",
+        "lean": "content/quantum-observable-universe/observations/n-v-bring-action.lean"
+      },
+      "finding": "cite-position-hygiene",
+      "severity": "minor",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "content/quantum-observable-universe/observations/n-v-bring-action.lean: 1 `axiom`(s) have a `-- Ref:` present elsewhere in the file but NOT in the 12-line window above the axiom (lines [87]). Per CLAUDE.md §1 the Ref should be immediately above. Auto-dischargeable by moving/duplicating the Ref line.",
+      "status": "resolved",
+      "asked_author_at": null,
+      "resolution_note": "1 axiom: added -- Ref: klein1888+bring1786 above s5_acts_on_ew_slice (cf prop:brings-is-qou).",
+      "resolved_at": "2026-06-13"
+    },
+    {
+      "id": "7aea63a47445",
+      "block_or_script": "particle-interactions/bar-involution-invariance",
+      "paths": {
+        "ts": "content/quantum-observable-universe/particle-interactions/bar-involution-invariance.ts",
+        "md": "content/quantum-observable-universe/particle-interactions/bar-involution-invariance.md",
+        "lean": "content/quantum-observable-universe/particle-interactions/bar-involution-invariance.lean"
+      },
+      "finding": "cite-position-hygiene",
+      "severity": "minor",
+      "source": "backlog",
+      "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "evidence": "content/quantum-observable-universe/particle-interactions/bar-involution-invariance.lean: 1 `axiom`(s) have a `-- Ref:` present elsewhere in the file but NOT in the 12-line window above the axiom (lines [110]). Per CLAUDE.md §1 the Ref should be immediately above. Auto-dischargeable by moving/duplicating the Ref line.",
+      "status": "resolved",
+      "asked_author_at": null,
+      "resolution_note": "1 axiom: added -- Ref: fulton1997 §4 above hookLengths_transpose.",
+      "resolved_at": "2026-06-13"
+    }
+  ],
+  "audited": {
+    "predicted-spectra/tilting-module-rigidity": {
+      "ts": "4fee31507b6d07cc3c923da9923cbb14fb43e973",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "proof-no-bare-sorries"
+      ]
+    },
+    "predicted-spectra/spectrahedral-phase-collapse": {
+      "ts": "12be020d77882697c8e30b178f895a6c46723a94",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "proof-no-bare-sorries",
+        "proof-statement-integrity"
+      ]
+    },
+    "lean/QOU/HeckeAlgebra/MarkovTrace": {
+      "ts": "1811317c0635099d896a6f3fc5d24c18a7c679ed",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "proof-no-axiom-growth"
+      ]
+    },
+    "lean/QOU/HeckeAlgebra/Formal": {
+      "ts": "1811317c0635099d896a6f3fc5d24c18a7c679ed",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "proof-no-axiom-growth"
+      ]
+    },
+    "ugb:lean/UGB/GrobnerShirshov/StrongMultiplicativity": {
+      "ts": "1811317c0635099d896a6f3fc5d24c18a7c679ed",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "proof-no-axiom-growth"
+      ]
+    },
+    "lean/QOU/HeckeAlgebra/JonesMarkovWenzl": {
+      "ts": "35f3904b81cedeec663eeb1e17f416f9993aa62b",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "proof-no-axiom-growth"
+      ]
+    },
+    "ugb:lean/UGB/GrobnerShirshov/CompositionLemma": {
+      "ts": "1811317c0635099d896a6f3fc5d24c18a7c679ed",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "proof-no-axiom-growth"
+      ]
+    },
+    "lean/QOU/HeckeAlgebra/Hoefsmit": {
+      "ts": "1811317c0635099d896a6f3fc5d24c18a7c679ed",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "proof-no-axiom-growth"
+      ]
+    },
+    "q-geometric-langlands/tannaka-krein-isomorphism": {
+      "ts": "bd282baf8ce5805cc3ea3c045f892f40e3978e9c",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "proof-no-axiom-growth"
+      ]
+    },
+    "lean/QOU/BraidKnot/PSDFeasibilityProxy": {
+      "ts": "1811317c0635099d896a6f3fc5d24c18a7c679ed",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "proof-no-axiom-growth"
+      ]
+    },
+    "lean/QOU/HeckeAlgebra/Common": {
+      "ts": "1811317c0635099d896a6f3fc5d24c18a7c679ed",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "proof-no-axiom-growth"
+      ]
+    },
+    "mass-theory/thurston-volume-additivity": {
+      "ts": "1811317c0635099d896a6f3fc5d24c18a7c679ed",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "proof-no-axiom-growth"
+      ]
+    },
+    "ugb:lean/UGB/GrobnerShirshov/Flatness": {
+      "ts": "1811317c0635099d896a6f3fc5d24c18a7c679ed",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "proof-no-axiom-growth"
+      ]
+    },
+    "lean/QOU/HeckeAlgebra/Wedderburn": {
+      "ts": "1811317c0635099d896a6f3fc5d24c18a7c679ed",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "proof-no-axiom-growth"
+      ]
+    },
+    "mass-endomorphism/markov-trace-antipode-polynomial-symmetry": {
+      "ts": "1811317c0635099d896a6f3fc5d24c18a7c679ed",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "proof-no-axiom-growth"
+      ]
+    },
+    "mass-theory/atom-knot-mass-derivation": {
+      "ts": "1811317c0635099d896a6f3fc5d24c18a7c679ed",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "proof-no-axiom-growth"
+      ]
+    },
+    "mass-theory/demazure-fiber-markov-trace": {
+      "ts": "f1e2dcb5e6a465c2b9e9c8e7588c31d4f59f5157",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "proof-no-axiom-growth"
+      ]
+    },
+    "mass-theory/wigner-coefficient-derivation": {
+      "ts": "1811317c0635099d896a6f3fc5d24c18a7c679ed",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "proof-no-axiom-growth"
+      ]
+    },
+    "observations/n-v-leading-order-derivation": {
+      "ts": "1811317c0635099d896a6f3fc5d24c18a7c679ed",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "proof-no-axiom-growth"
+      ]
+    },
+    "particle-interactions/cemetery-group": {
+      "ts": "1811317c0635099d896a6f3fc5d24c18a7c679ed",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "proof-no-axiom-growth"
+      ]
+    },
+    "particle-interactions/cpt-orbit-closure-density": {
+      "ts": "1811317c0635099d896a6f3fc5d24c18a7c679ed",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "proof-no-axiom-growth"
+      ]
+    },
+    "ugb:lean/UGB/GrobnerShirshov/Basic": {
+      "ts": "1811317c0635099d896a6f3fc5d24c18a7c679ed",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "proof-no-axiom-growth"
+      ]
+    },
+    "ugb:lean/UGB/GrobnerShirshov/HeckeGS": {
+      "ts": "1811317c0635099d896a6f3fc5d24c18a7c679ed",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "proof-no-axiom-growth"
+      ]
+    },
+    "stochastic-mechanics/lusztig-canonical-basis-q-eq-1": {
+      "ts": "1811317c0635099d896a6f3fc5d24c18a7c679ed",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "proof-no-bare-sorries"
+      ]
+    },
+    "mass-theory/kashaev-density-equals-sdp-multiplicity": {
+      "ts": "1811317c0635099d896a6f3fc5d24c18a7c679ed",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "proof-no-bare-sorries"
+      ]
+    },
+    "mass-theory/dim-master-pentagon": {
+      "ts": "1811317c0635099d896a6f3fc5d24c18a7c679ed",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "proof-no-bare-sorries"
+      ]
+    },
+    "particle-interactions/wigner-su4-from-spin-isospin": {
+      "ts": "1811317c0635099d896a6f3fc5d24c18a7c679ed",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "proof-no-bare-sorries"
+      ]
+    },
+    "particle-interactions/spin-from-so3-fiber": {
+      "ts": "1811317c0635099d896a6f3fc5d24c18a7c679ed",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "proof-no-bare-sorries"
+      ]
+    },
+    "particle-interactions/type-b-folding-cpt": {
+      "ts": "1811317c0635099d896a6f3fc5d24c18a7c679ed",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "proof-no-bare-sorries"
+      ]
+    },
+    "particle-interactions/q-zero-stokes-region-identification": {
+      "ts": "1811317c0635099d896a6f3fc5d24c18a7c679ed",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "proof-no-bare-sorries"
+      ]
+    },
+    "appendix-surreals/casimir-first-q-correction": {
+      "ts": "ec225d6cb3f7b9ac758ca889b21527238d228d4f",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "proof-no-bare-sorries"
+      ]
+    },
+    "gravity-spacetime/lqg-entropy-qdim-partition-pole": {
+      "ts": "1811317c0635099d896a6f3fc5d24c18a7c679ed",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "proof-no-bare-sorries"
+      ]
+    },
+    "mass-endomorphism/conj-rho-k-pair-gen-canonical-form": {
+      "ts": "1811317c0635099d896a6f3fc5d24c18a7c679ed",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "proof-no-bare-sorries"
+      ]
+    },
+    "mass-theory/reidemeister-mass-invariance": {
+      "ts": "1811317c0635099d896a6f3fc5d24c18a7c679ed",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "proof-no-axiom-growth"
+      ]
+    },
+    "quantum-observable-universes/q-codifferential-formula-prop": {
+      "ts": "1811317c0635099d896a6f3fc5d24c18a7c679ed",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "proof-no-axiom-growth"
+      ]
+    },
+    "ugb:lean/UGB/GrobnerShirshov/NormalForms": {
+      "ts": "1811317c0635099d896a6f3fc5d24c18a7c679ed",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "proof-no-axiom-growth"
+      ]
+    },
+    "braids-and-knots/frobenius-antipode-lean-stub": {
+      "ts": "1811317c0635099d896a6f3fc5d24c18a7c679ed",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "proof-no-axiom-growth"
+      ]
+    },
+    "lean/QOU/MathlibExt/SDPRankEquality": {
+      "ts": "1811317c0635099d896a6f3fc5d24c18a7c679ed",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "proof-no-axiom-growth"
+      ]
+    },
+    "predicted-spectra/torus-knot-shell-binding": {
+      "ts": "1811317c0635099d896a6f3fc5d24c18a7c679ed",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "proof-no-axiom-growth"
+      ]
+    },
+    "information-theory/q-game-of-life": {
+      "ts": "1811317c0635099d896a6f3fc5d24c18a7c679ed",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "proof-no-axiom-growth"
+      ]
+    },
+    "lean/QOU/Archimedean/EmCouplingBringZeroMode": {
+      "ts": "1811317c0635099d896a6f3fc5d24c18a7c679ed",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "proof-no-axiom-growth"
+      ]
+    },
+    "lean/QOU/Mathlib/RSKBridge": {
+      "ts": "1811317c0635099d896a6f3fc5d24c18a7c679ed",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "proof-no-axiom-growth"
+      ]
+    },
+    "lean/QOU/MathlibExt/SDPRealUniqueness": {
+      "ts": "1811317c0635099d896a6f3fc5d24c18a7c679ed",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "proof-no-axiom-growth"
+      ]
+    },
+    "mass-theory/confinement-categorical": {
+      "ts": "1811317c0635099d896a6f3fc5d24c18a7c679ed",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "proof-no-axiom-growth"
+      ]
+    },
+    "mass-theory/habiro-expansion-atomic": {
+      "ts": "1811317c0635099d896a6f3fc5d24c18a7c679ed",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "proof-no-axiom-growth"
+      ]
+    },
+    "mass-theory/wedderburn-bratteli-recursion": {
+      "ts": "1811317c0635099d896a6f3fc5d24c18a7c679ed",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "proof-no-axiom-growth"
+      ]
+    },
+    "observations/n-v-bring-action": {
+      "ts": "1811317c0635099d896a6f3fc5d24c18a7c679ed",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "proof-no-axiom-growth"
+      ]
+    },
+    "particle-interactions/bar-involution-invariance": {
+      "ts": "1811317c0635099d896a6f3fc5d24c18a7c679ed",
+      "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
+      "criteria": [
+        "proof-no-axiom-growth"
+      ]
+    }
   },
-  {
-   "id": "41290e0f2809",
-   "block_or_script": "predicted-spectra/spectrahedral-phase-collapse",
-   "paths": {
-    "ts": "content/quantum-observable-universe/predicted-spectra/spectrahedral-phase-collapse.ts",
-    "md": "content/quantum-observable-universe/predicted-spectra/spectrahedral-phase-collapse.md",
-    "lean": "content/quantum-observable-universe/predicted-spectra/spectrahedral-phase-collapse.lean"
-   },
-   "finding": "uncited-sorry",
-   "severity": "critical",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "content/quantum-observable-universe/predicted-spectra/spectrahedral-phase-collapse.lean has 4 bare `sorry` (L37, L46, L55, plus sorry-typed sigs L45/L54) with no `-- Ref:` anywhere in file (Ref-count=0). Verbatim L37: `sorry` (theorem hadronic_melt_at_supergolden, L35). Source-level audit; LSP hard-gate denied. 0 downstream dependents (prop:spectrahedral-phase-collapse).",
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "fe77be56575d",
-   "block_or_script": "predicted-spectra/spectrahedral-phase-collapse",
-   "paths": {
-    "ts": "content/quantum-observable-universe/predicted-spectra/spectrahedral-phase-collapse.ts",
-    "md": "content/quantum-observable-universe/predicted-spectra/spectrahedral-phase-collapse.md",
-    "lean": "content/quantum-observable-universe/predicted-spectra/spectrahedral-phase-collapse.lean"
-   },
-   "finding": "drift-class-A",
-   "severity": "critical",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "content/quantum-observable-universe/predicted-spectra/spectrahedral-phase-collapse.lean L44-46 `theorem molecular_bond_instability (q : \u211d) : sorry := by sorry` and L53-55 `theorem lepton_unconditional_stability ... : sorry := by sorry` \u2014 the TYPE SIGNATURE itself is `sorry`, so the Lean 'theorem' states no proposition while the .md narrative (10 math/theorem mentions) claims substantive results (negative Gram det, positive-definite Gram for q>1). Stub-weakening / non-statement.",
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "898e34d7432b",
-   "block_or_script": "lean/QOU/HeckeAlgebra/MarkovTrace",
-   "paths": {
-    "ts": null,
-    "md": null,
-    "lean": "content/quantum-observable-universe/lean/QOU/HeckeAlgebra/MarkovTrace.lean"
-   },
-   "finding": "hidden-axiom",
-   "severity": "major",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "content/quantum-observable-universe/lean/QOU/HeckeAlgebra/MarkovTrace.lean declares 9 `axiom` without any `-- Ref:` in the file (file Ref-count=0). First at L67: `axiom JonesMarkovCoefficient :`. Axiom lines: [67, 78, 80, 90, 98, 107, 113, 126]. Per CLAUDE.md \u00a71 / Slot C proof-no-axiom-growth an axiom encoding a deferred result needs a `-- Ref:` citation. Pre-existing scaffolding (no NEW growth vs baseline), hence major not critical.",
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "b39a0ec1bfec",
-   "block_or_script": "lean/QOU/HeckeAlgebra/Formal",
-   "paths": {
-    "ts": null,
-    "md": null,
-    "lean": "content/quantum-observable-universe/lean/QOU/HeckeAlgebra/Formal.lean"
-   },
-   "finding": "hidden-axiom",
-   "severity": "major",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "content/quantum-observable-universe/lean/QOU/HeckeAlgebra/Formal.lean declares 5 `axiom` without any `-- Ref:` in the file (file Ref-count=0). First at L153: `axiom heckeFormalMul :`. Axiom lines: [153, 158, 164, 170, 186]. Per CLAUDE.md \u00a71 / Slot C proof-no-axiom-growth an axiom encoding a deferred result needs a `-- Ref:` citation. Pre-existing scaffolding (no NEW growth vs baseline), hence major not critical.",
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "4b74db25a199",
-   "block_or_script": "ugb:lean/UGB/GrobnerShirshov/StrongMultiplicativity",
-   "paths": {
-    "ts": null,
-    "md": null,
-    "lean": "content/unital-groebner-bases/lean/UGB/GrobnerShirshov/StrongMultiplicativity.lean"
-   },
-   "finding": "hidden-axiom",
-   "severity": "major",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "content/unital-groebner-bases/lean/UGB/GrobnerShirshov/StrongMultiplicativity.lean declares 5 `axiom` without any `-- Ref:` in the file (file Ref-count=0). First at L99: `axiom tensorOrder {G : Type u} (ord : AdmissibleOrder G) :`. Axiom lines: [99, 111, 125, 168, 221]. Per CLAUDE.md \u00a71 / Slot C proof-no-axiom-growth an axiom encoding a deferred result needs a `-- Ref:` citation. Pre-existing scaffolding (no NEW growth vs baseline), hence major not critical.",
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "57daaff41632",
-   "block_or_script": "lean/QOU/HeckeAlgebra/JonesMarkovWenzl",
-   "paths": {
-    "ts": null,
-    "md": null,
-    "lean": "content/quantum-observable-universe/lean/QOU/HeckeAlgebra/JonesMarkovWenzl.lean"
-   },
-   "finding": "hidden-axiom",
-   "severity": "major",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "content/quantum-observable-universe/lean/QOU/HeckeAlgebra/JonesMarkovWenzl.lean declares 4 `axiom` without any `-- Ref:` in the file (file Ref-count=0). First at L95: `axiom cellContent : \u2200 {n : \u2115}, Nat.Partition n \u2192 \u2115 \u2192 \u2115 \u2192 \u2124`. Axiom lines: [95, 98, 107, 114]. Per CLAUDE.md \u00a71 / Slot C proof-no-axiom-growth an axiom encoding a deferred result needs a `-- Ref:` citation. Pre-existing scaffolding (no NEW growth vs baseline), hence major not critical.",
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "4cbc2fe97aa5",
-   "block_or_script": "ugb:lean/UGB/GrobnerShirshov/CompositionLemma",
-   "paths": {
-    "ts": null,
-    "md": null,
-    "lean": "content/unital-groebner-bases/lean/UGB/GrobnerShirshov/CompositionLemma.lean"
-   },
-   "finding": "hidden-axiom",
-   "severity": "major",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "content/unital-groebner-bases/lean/UGB/GrobnerShirshov/CompositionLemma.lean declares 4 `axiom` without any `-- Ref:` in the file (file Ref-count=0). First at L56: `axiom reduction_well_founded`. Axiom lines: [56, 77, 105, 130]. Per CLAUDE.md \u00a71 / Slot C proof-no-axiom-growth an axiom encoding a deferred result needs a `-- Ref:` citation. Pre-existing scaffolding (no NEW growth vs baseline), hence major not critical.",
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "9bde4d053054",
-   "block_or_script": "lean/QOU/HeckeAlgebra/Hoefsmit",
-   "paths": {
-    "ts": null,
-    "md": null,
-    "lean": "content/quantum-observable-universe/lean/QOU/HeckeAlgebra/Hoefsmit.lean"
-   },
-   "finding": "hidden-axiom",
-   "severity": "major",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "content/quantum-observable-universe/lean/QOU/HeckeAlgebra/Hoefsmit.lean declares 3 `axiom` without any `-- Ref:` in the file (file Ref-count=0). First at L87: `axiom seminormalDim_pos : \u2200 {n : \u2115} (lam : Nat.Partition n) (hn : 0 < n),`. Axiom lines: [87, 125, 139]. Per CLAUDE.md \u00a71 / Slot C proof-no-axiom-growth an axiom encoding a deferred result needs a `-- Ref:` citation. Pre-existing scaffolding (no NEW growth vs baseline), hence major not critical.",
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "9f9e3c8469e0",
-   "block_or_script": "q-geometric-langlands/tannaka-krein-isomorphism",
-   "paths": {
-    "ts": "content/quantum-observable-universe/q-geometric-langlands/tannaka-krein-isomorphism.ts",
-    "md": "content/quantum-observable-universe/q-geometric-langlands/tannaka-krein-isomorphism.md",
-    "lean": "content/quantum-observable-universe/q-geometric-langlands/tannaka-krein-isomorphism.lean"
-   },
-   "finding": "hidden-axiom",
-   "severity": "major",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "content/quantum-observable-universe/q-geometric-langlands/tannaka-krein-isomorphism.lean declares 3 `axiom` without any `-- Ref:` in the file (file Ref-count=0). First at L24: `axiom RepLoc : Type (u + 1)`. Axiom lines: [24, 29, 43]. Per CLAUDE.md \u00a71 / Slot C proof-no-axiom-growth an axiom encoding a deferred result needs a `-- Ref:` citation. Pre-existing scaffolding (no NEW growth vs baseline), hence major not critical.",
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "df282058c93e",
-   "block_or_script": "lean/QOU/BraidKnot/PSDFeasibilityProxy",
-   "paths": {
-    "ts": null,
-    "md": null,
-    "lean": "content/quantum-observable-universe/lean/QOU/BraidKnot/PSDFeasibilityProxy.lean"
-   },
-   "finding": "hidden-axiom",
-   "severity": "major",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "content/quantum-observable-universe/lean/QOU/BraidKnot/PSDFeasibilityProxy.lean declares 2 `axiom` without any `-- Ref:` in the file (file Ref-count=0). First at L63: `axiom braidWordEval :`. Axiom lines: [63, 78]. Per CLAUDE.md \u00a71 / Slot C proof-no-axiom-growth an axiom encoding a deferred result needs a `-- Ref:` citation. Pre-existing scaffolding (no NEW growth vs baseline), hence major not critical.",
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "df07019a6c35",
-   "block_or_script": "lean/QOU/HeckeAlgebra/Common",
-   "paths": {
-    "ts": null,
-    "md": null,
-    "lean": "content/quantum-observable-universe/lean/QOU/HeckeAlgebra/Common.lean"
-   },
-   "finding": "hidden-axiom",
-   "severity": "major",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "content/quantum-observable-universe/lean/QOU/HeckeAlgebra/Common.lean declares 2 `axiom` without any `-- Ref:` in the file (file Ref-count=0). First at L103: `axiom markovTrace : (n : \u2115) \u2192 HeckeElement n \u2192 \u211d`. Axiom lines: [103, 109]. Per CLAUDE.md \u00a71 / Slot C proof-no-axiom-growth an axiom encoding a deferred result needs a `-- Ref:` citation. Pre-existing scaffolding (no NEW growth vs baseline), hence major not critical.",
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "b14113cea719",
-   "block_or_script": "mass-theory/thurston-volume-additivity",
-   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/thurston-volume-additivity.ts",
-    "md": "content/quantum-observable-universe/mass-theory/thurston-volume-additivity.md",
-    "lean": "content/quantum-observable-universe/mass-theory/thurston-volume-additivity.lean"
-   },
-   "finding": "hidden-axiom",
-   "severity": "major",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "content/quantum-observable-universe/mass-theory/thurston-volume-additivity.lean declares 2 `axiom` without any `-- Ref:` in the file (file Ref-count=0). First at L35: `axiom blochWigner : \u2102 \u2192 \u211d`. Axiom lines: [35, 40]. Per CLAUDE.md \u00a71 / Slot C proof-no-axiom-growth an axiom encoding a deferred result needs a `-- Ref:` citation. Pre-existing scaffolding (no NEW growth vs baseline), hence major not critical.",
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "b48c7bc801ed",
-   "block_or_script": "ugb:lean/UGB/GrobnerShirshov/Flatness",
-   "paths": {
-    "ts": null,
-    "md": null,
-    "lean": "content/unital-groebner-bases/lean/UGB/GrobnerShirshov/Flatness.lean"
-   },
-   "finding": "hidden-axiom",
-   "severity": "major",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "content/unital-groebner-bases/lean/UGB/GrobnerShirshov/Flatness.lean declares 2 `axiom` without any `-- Ref:` in the file (file Ref-count=0). First at L94: `axiom gs_implies_flat`. Axiom lines: [94, 149]. Per CLAUDE.md \u00a71 / Slot C proof-no-axiom-growth an axiom encoding a deferred result needs a `-- Ref:` citation. Pre-existing scaffolding (no NEW growth vs baseline), hence major not critical.",
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "b59a98ad41ed",
-   "block_or_script": "lean/QOU/HeckeAlgebra/Wedderburn",
-   "paths": {
-    "ts": null,
-    "md": null,
-    "lean": "content/quantum-observable-universe/lean/QOU/HeckeAlgebra/Wedderburn.lean"
-   },
-   "finding": "hidden-axiom",
-   "severity": "major",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "content/quantum-observable-universe/lean/QOU/HeckeAlgebra/Wedderburn.lean declares 1 `axiom` without any `-- Ref:` in the file (file Ref-count=0). First at L109: `axiom wedderburnEmbed : \u2200 {n : \u2115}, WedderburnDecomposition n \u2192`. Axiom lines: [109]. Per CLAUDE.md \u00a71 / Slot C proof-no-axiom-growth an axiom encoding a deferred result needs a `-- Ref:` citation. Pre-existing scaffolding (no NEW growth vs baseline), hence major not critical.",
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "215346655e26",
-   "block_or_script": "mass-endomorphism/markov-trace-antipode-polynomial-symmetry",
-   "paths": {
-    "ts": "content/quantum-observable-universe/mass-endomorphism/markov-trace-antipode-polynomial-symmetry.ts",
-    "md": "content/quantum-observable-universe/mass-endomorphism/markov-trace-antipode-polynomial-symmetry.md",
-    "lean": "content/quantum-observable-universe/mass-endomorphism/markov-trace-antipode-polynomial-symmetry.lean"
-   },
-   "finding": "hidden-axiom",
-   "severity": "major",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "content/quantum-observable-universe/mass-endomorphism/markov-trace-antipode-polynomial-symmetry.lean declares 1 `axiom` without any `-- Ref:` in the file (file Ref-count=0). First at L84: `axiom markovTraceAntipodePolynomialSymmetry_axiom  :`. Axiom lines: [84]. Per CLAUDE.md \u00a71 / Slot C proof-no-axiom-growth an axiom encoding a deferred result needs a `-- Ref:` citation. Pre-existing scaffolding (no NEW growth vs baseline), hence major not critical.",
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "a3781a8a68e0",
-   "block_or_script": "mass-theory/atom-knot-mass-derivation",
-   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/atom-knot-mass-derivation.ts",
-    "md": "content/quantum-observable-universe/mass-theory/atom-knot-mass-derivation.md",
-    "lean": "content/quantum-observable-universe/mass-theory/atom-knot-mass-derivation.lean"
-   },
-   "finding": "hidden-axiom",
-   "severity": "major",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "content/quantum-observable-universe/mass-theory/atom-knot-mass-derivation.lean declares 1 `axiom` without any `-- Ref:` in the file (file Ref-count=0). First at L201: `axiom atom_knot_mass_derivation (cert : MassDerivationCertificate)`. Axiom lines: [201]. Per CLAUDE.md \u00a71 / Slot C proof-no-axiom-growth an axiom encoding a deferred result needs a `-- Ref:` citation. Pre-existing scaffolding (no NEW growth vs baseline), hence major not critical.",
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "d6afe333a88f",
-   "block_or_script": "mass-theory/demazure-fiber-markov-trace",
-   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/demazure-fiber-markov-trace.ts",
-    "md": "content/quantum-observable-universe/mass-theory/demazure-fiber-markov-trace.md",
-    "lean": "content/quantum-observable-universe/mass-theory/demazure-fiber-markov-trace.lean"
-   },
-   "finding": "hidden-axiom",
-   "severity": "major",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "content/quantum-observable-universe/mass-theory/demazure-fiber-markov-trace.lean declares 1 `axiom` without any `-- Ref:` in the file (file Ref-count=0). First at L118: `axiom demazure_principal_specialization_eq_schur_axiom (lam : Partition n) (q : \u211d) (hq : q > 1) :`. Axiom lines: [118]. Per CLAUDE.md \u00a71 / Slot C proof-no-axiom-growth an axiom encoding a deferred result needs a `-- Ref:` citation. Pre-existing scaffolding (no NEW growth vs baseline), hence major not critical.",
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "200f53471235",
-   "block_or_script": "mass-theory/wigner-coefficient-derivation",
-   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/wigner-coefficient-derivation.ts",
-    "md": "content/quantum-observable-universe/mass-theory/wigner-coefficient-derivation.md",
-    "lean": "content/quantum-observable-universe/mass-theory/wigner-coefficient-derivation.lean"
-   },
-   "finding": "hidden-axiom",
-   "severity": "major",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "content/quantum-observable-universe/mass-theory/wigner-coefficient-derivation.lean declares 1 `axiom` without any `-- Ref:` in the file (file Ref-count=0). First at L30: `axiom wigner_coefficient_axiom (q\u2080 m_e : \u211d)`. Axiom lines: [30]. Per CLAUDE.md \u00a71 / Slot C proof-no-axiom-growth an axiom encoding a deferred result needs a `-- Ref:` citation. Pre-existing scaffolding (no NEW growth vs baseline), hence major not critical.",
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "ceea9c89a531",
-   "block_or_script": "observations/n-v-leading-order-derivation",
-   "paths": {
-    "ts": "content/quantum-observable-universe/observations/n-v-leading-order-derivation.ts",
-    "md": "content/quantum-observable-universe/observations/n-v-leading-order-derivation.md",
-    "lean": "content/quantum-observable-universe/observations/n-v-leading-order-derivation.lean"
-   },
-   "finding": "hidden-axiom",
-   "severity": "major",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "content/quantum-observable-universe/observations/n-v-leading-order-derivation.lean declares 1 `axiom` without any `-- Ref:` in the file (file Ref-count=0). First at L78: `axiom v_over_m_e_bridge :`. Axiom lines: [78]. Per CLAUDE.md \u00a71 / Slot C proof-no-axiom-growth an axiom encoding a deferred result needs a `-- Ref:` citation. Pre-existing scaffolding (no NEW growth vs baseline), hence major not critical.",
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "290d99f3a4cd",
-   "block_or_script": "particle-interactions/cemetery-group",
-   "paths": {
-    "ts": "content/quantum-observable-universe/particle-interactions/cemetery-group.ts",
-    "md": "content/quantum-observable-universe/particle-interactions/cemetery-group.md",
-    "lean": "content/quantum-observable-universe/particle-interactions/cemetery-group.lean"
-   },
-   "finding": "hidden-axiom",
-   "severity": "major",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "content/quantum-observable-universe/particle-interactions/cemetery-group.lean declares 1 `axiom` without any `-- Ref:` in the file (file Ref-count=0). First at L50: `axiom zero_not_in_cemetery {R : Type u} [CommRing R] (Z : CemeteryGroup R) :`. Axiom lines: [50]. Per CLAUDE.md \u00a71 / Slot C proof-no-axiom-growth an axiom encoding a deferred result needs a `-- Ref:` citation. Pre-existing scaffolding (no NEW growth vs baseline), hence major not critical.",
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "6526a302fdb6",
-   "block_or_script": "particle-interactions/cpt-orbit-closure-density",
-   "paths": {
-    "ts": "content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.ts",
-    "md": "content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.md",
-    "lean": "content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.lean"
-   },
-   "finding": "hidden-axiom",
-   "severity": "major",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.lean declares 1 `axiom` without any `-- Ref:` in the file (file Ref-count=0). First at L60: `axiom partitionTranspose_involutive {n : \u2115} :`. Axiom lines: [60]. Per CLAUDE.md \u00a71 / Slot C proof-no-axiom-growth an axiom encoding a deferred result needs a `-- Ref:` citation. Pre-existing scaffolding (no NEW growth vs baseline), hence major not critical.",
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "85fbd25e4e31",
-   "block_or_script": "ugb:lean/UGB/GrobnerShirshov/Basic",
-   "paths": {
-    "ts": null,
-    "md": null,
-    "lean": "content/unital-groebner-bases/lean/UGB/GrobnerShirshov/Basic.lean"
-   },
-   "finding": "hidden-axiom",
-   "severity": "major",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "content/unital-groebner-bases/lean/UGB/GrobnerShirshov/Basic.lean declares 1 `axiom` without any `-- Ref:` in the file (file Ref-count=0). First at L272: `axiom normal_form_exists {G : Type u} {k : Type v} [Ring k] [DecidableEq G]`. Axiom lines: [272]. Per CLAUDE.md \u00a71 / Slot C proof-no-axiom-growth an axiom encoding a deferred result needs a `-- Ref:` citation. Pre-existing scaffolding (no NEW growth vs baseline), hence major not critical.",
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "6ec595ed80db",
-   "block_or_script": "ugb:lean/UGB/GrobnerShirshov/HeckeGS",
-   "paths": {
-    "ts": null,
-    "md": null,
-    "lean": "content/unital-groebner-bases/lean/UGB/GrobnerShirshov/HeckeGS.lean"
-   },
-   "finding": "hidden-axiom",
-   "severity": "major",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "content/unital-groebner-bases/lean/UGB/GrobnerShirshov/HeckeGS.lean declares 1 `axiom` without any `-- Ref:` in the file (file Ref-count=0). First at L155: `axiom hecke_is_gs_basis (n : \u2115) (hp : HeckeParams) :`. Axiom lines: [155]. Per CLAUDE.md \u00a71 / Slot C proof-no-axiom-growth an axiom encoding a deferred result needs a `-- Ref:` citation. Pre-existing scaffolding (no NEW growth vs baseline), hence major not critical.",
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "2270a702e1bf",
-   "block_or_script": "stochastic-mechanics/lusztig-canonical-basis-q-eq-1",
-   "paths": {
-    "ts": "content/quantum-observable-universe/stochastic-mechanics/lusztig-canonical-basis-q-eq-1.ts",
-    "md": "content/quantum-observable-universe/stochastic-mechanics/lusztig-canonical-basis-q-eq-1.md",
-    "lean": "content/quantum-observable-universe/stochastic-mechanics/lusztig-canonical-basis-q-eq-1.lean"
-   },
-   "finding": "lean-ref-namespace-mismatch",
-   "severity": "minor",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "content/quantum-observable-universe/stochastic-mechanics/lusztig-canonical-basis-q-eq-1.ts: lean.ref `qou:QOU.BraidsAndKnots.LusztigCanonicalBasisQEqOne` does not match the actual class name in the sibling .lean. sibling has \u00a73b-cond encoding (class LusztigCanonicalBasisQEq1) but lean.ref name mismatched. Auto-dischargeable by aligning lean.ref to the discovered class name (CamelCase/acronym normalisation: SO3->So3, SDP->Sdp, EqOne->Eq1).",
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "b260e30b00b0",
-   "block_or_script": "mass-theory/kashaev-density-equals-sdp-multiplicity",
-   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/kashaev-density-equals-sdp-multiplicity.ts",
-    "md": "content/quantum-observable-universe/mass-theory/kashaev-density-equals-sdp-multiplicity.md",
-    "lean": "content/quantum-observable-universe/mass-theory/kashaev-density-equals-sdp-multiplicity.lean"
-   },
-   "finding": "lean-ref-namespace-mismatch",
-   "severity": "minor",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "content/quantum-observable-universe/mass-theory/kashaev-density-equals-sdp-multiplicity.ts: lean.ref `qou:QOU.Kashaev.DensityEqualsSDPMultiplicity` does not match the actual class name in the sibling .lean. sibling has \u00a73b-cond encoding (class KashaevDensityEqualsSdpMultiplicity) but lean.ref name mismatched. Auto-dischargeable by aligning lean.ref to the discovered class name (CamelCase/acronym normalisation: SO3->So3, SDP->Sdp, EqOne->Eq1).",
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "2827b65492d6",
-   "block_or_script": "mass-theory/dim-master-pentagon",
-   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/dim-master-pentagon.ts",
-    "md": "content/quantum-observable-universe/mass-theory/dim-master-pentagon.md",
-    "lean": "content/quantum-observable-universe/mass-theory/dim-master-pentagon.lean"
-   },
-   "finding": "lean-ref-namespace-mismatch",
-   "severity": "minor",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "content/quantum-observable-universe/mass-theory/dim-master-pentagon.ts: lean.ref `qou:QOU.BraidsAndKnots.DIMMasterPentagon` does not match the actual class name in the sibling .lean. sibling has \u00a73b-cond encoding (class DimMasterPentagon) but lean.ref name mismatched. Auto-dischargeable by aligning lean.ref to the discovered class name (CamelCase/acronym normalisation: SO3->So3, SDP->Sdp, EqOne->Eq1).",
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "25a7b3418698",
-   "block_or_script": "particle-interactions/wigner-su4-from-spin-isospin",
-   "paths": {
-    "ts": "content/quantum-observable-universe/particle-interactions/wigner-su4-from-spin-isospin.ts",
-    "md": "content/quantum-observable-universe/particle-interactions/wigner-su4-from-spin-isospin.md",
-    "lean": "content/quantum-observable-universe/particle-interactions/wigner-su4-from-spin-isospin.lean"
-   },
-   "finding": "lean-ref-namespace-mismatch",
-   "severity": "minor",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "content/quantum-observable-universe/particle-interactions/wigner-su4-from-spin-isospin.ts: lean.ref `qou:QOU.BraidsAndKnots.WignerSU4FromSpinIsospin` does not match the actual class name in the sibling .lean. sibling has \u00a73b-cond encoding (class WignerSu4FromSpinIsospin) but lean.ref name mismatched. Auto-dischargeable by aligning lean.ref to the discovered class name (CamelCase/acronym normalisation: SO3->So3, SDP->Sdp, EqOne->Eq1).",
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "b970c22bfbfd",
-   "block_or_script": "particle-interactions/spin-from-so3-fiber",
-   "paths": {
-    "ts": "content/quantum-observable-universe/particle-interactions/spin-from-so3-fiber.ts",
-    "md": "content/quantum-observable-universe/particle-interactions/spin-from-so3-fiber.md",
-    "lean": "content/quantum-observable-universe/particle-interactions/spin-from-so3-fiber.lean"
-   },
-   "finding": "lean-ref-namespace-mismatch",
-   "severity": "minor",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "content/quantum-observable-universe/particle-interactions/spin-from-so3-fiber.ts: lean.ref `qou:QOU.BraidsAndKnots.SpinFromSO3Fiber` does not match the actual class name in the sibling .lean. sibling has \u00a73b-cond encoding (class SpinFromSo3Fiber) but lean.ref name mismatched. Auto-dischargeable by aligning lean.ref to the discovered class name (CamelCase/acronym normalisation: SO3->So3, SDP->Sdp, EqOne->Eq1).",
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "609bbb342d61",
-   "block_or_script": "particle-interactions/type-b-folding-cpt",
-   "paths": {
-    "ts": "content/quantum-observable-universe/particle-interactions/type-b-folding-cpt.ts",
-    "md": "content/quantum-observable-universe/particle-interactions/type-b-folding-cpt.md",
-    "lean": "content/quantum-observable-universe/particle-interactions/type-b-folding-cpt.lean"
-   },
-   "finding": "lean-ref-namespace-mismatch",
-   "severity": "minor",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "content/quantum-observable-universe/particle-interactions/type-b-folding-cpt.ts: lean.ref `qou:QOU.BraidsAndKnots.TypeBFoldingCPT` does not match the actual class name in the sibling .lean. sibling has \u00a73b-cond encoding (class TypeBFoldingCpt) but lean.ref name mismatched. Auto-dischargeable by aligning lean.ref to the discovered class name (CamelCase/acronym normalisation: SO3->So3, SDP->Sdp, EqOne->Eq1).",
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "e1215832c16f",
-   "block_or_script": "particle-interactions/q-zero-stokes-region-identification",
-   "paths": {
-    "ts": "content/quantum-observable-universe/particle-interactions/q-zero-stokes-region-identification.ts",
-    "md": "content/quantum-observable-universe/particle-interactions/q-zero-stokes-region-identification.md",
-    "lean": "content/quantum-observable-universe/particle-interactions/q-zero-stokes-region-identification.lean"
-   },
-   "finding": "lean-ref-namespace-mismatch",
-   "severity": "minor",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "content/quantum-observable-universe/particle-interactions/q-zero-stokes-region-identification.ts: lean.ref `qou:QOU.BraidKnot.QZeroStokesRegionIdentification` does not match the actual class name in the sibling .lean. sibling has \u00a73b-cond encoding (class UniversalBase; structure KnotComplement; class MostowPrasadDistinguished) but lean.ref name mismatched. Auto-dischargeable by aligning lean.ref to the discovered class name (CamelCase/acronym normalisation: SO3->So3, SDP->Sdp, EqOne->Eq1).",
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "ed2a7f0d75b6",
-   "block_or_script": "appendix-surreals/casimir-first-q-correction",
-   "paths": {
-    "ts": "content/quantum-observable-universe/appendix-surreals/casimir-first-q-correction.ts",
-    "md": "content/quantum-observable-universe/appendix-surreals/casimir-first-q-correction.md",
-    "lean": null
-   },
-   "finding": "naked-conjecture",
-   "severity": "minor",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "content/quantum-observable-universe/appendix-surreals/casimir-first-q-correction.ts: conjecture block, lean.ref decl 'FigureEightCasimirWeight' not found in any content .lean; sibling.lean=NO, md_sketch=True. 0 downstream dependents (genuine open conjecture, not blocking provable scaffolding). Finding is the missing/dangling \u00a73b-cond Lean axiomatisation stub; auto-dischargeable by authoring a `class` stub + aligning lean.ref. ref/label: qou:QOU.AppendixSurreals.FigureEightCasimirWeight.",
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "5397fd53eeda",
-   "block_or_script": "gravity-spacetime/lqg-entropy-qdim-partition-pole",
-   "paths": {
-    "ts": "content/quantum-observable-universe/gravity-spacetime/lqg-entropy-qdim-partition-pole.ts",
-    "md": "content/quantum-observable-universe/gravity-spacetime/lqg-entropy-qdim-partition-pole.md",
-    "lean": null
-   },
-   "finding": "naked-conjecture",
-   "severity": "minor",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "content/quantum-observable-universe/gravity-spacetime/lqg-entropy-qdim-partition-pole.ts: conjecture block, conjecture has no lean.ref; sibling.lean=NO, md_sketch=False. 0 downstream dependents (genuine open conjecture, not blocking provable scaffolding). Finding is the missing/dangling \u00a73b-cond Lean axiomatisation stub; auto-dischargeable by authoring a `class` stub + aligning lean.ref. ref/label: no-lean-ref.",
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "cf10183971f0",
-   "block_or_script": "mass-endomorphism/conj-rho-k-pair-gen-canonical-form",
-   "paths": {
-    "ts": "content/quantum-observable-universe/mass-endomorphism/conj-rho-k-pair-gen-canonical-form.ts",
-    "md": "content/quantum-observable-universe/mass-endomorphism/conj-rho-k-pair-gen-canonical-form.md",
-    "lean": "content/quantum-observable-universe/mass-endomorphism/conj-rho-k-pair-gen-canonical-form.lean"
-   },
-   "finding": "naked-conjecture",
-   "severity": "minor",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "content/quantum-observable-universe/mass-endomorphism/conj-rho-k-pair-gen-canonical-form.ts: conjecture block, lean.ref decl 'pair_gen_kashaev_limit' not found in any content .lean; sibling.lean=yes, md_sketch=True. 0 downstream dependents (genuine open conjecture, not blocking provable scaffolding). Finding is the missing/dangling \u00a73b-cond Lean axiomatisation stub; auto-dischargeable by authoring a `class` stub + aligning lean.ref. ref/label: qou:QOU.BraidKnot.RhoKPairGenCanonicalForm.pair_gen_kashaev_limit.",
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "591cb8d2ee2d",
-   "block_or_script": "mass-theory/reidemeister-mass-invariance",
-   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/reidemeister-mass-invariance.ts",
-    "md": "content/quantum-observable-universe/mass-theory/reidemeister-mass-invariance.md",
-    "lean": "content/quantum-observable-universe/mass-theory/reidemeister-mass-invariance.lean"
-   },
-   "finding": "cite-position-hygiene",
-   "severity": "minor",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "content/quantum-observable-universe/mass-theory/reidemeister-mass-invariance.lean: 8 `axiom`(s) have a `-- Ref:` present elsewhere in the file but NOT in the 12-line window above the axiom (lines [78, 81, 82, 83, 87, 90]). Per CLAUDE.md \u00a71 the Ref should be immediately above. Auto-dischargeable by moving/duplicating the Ref line.",
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "01241f8749f6",
-   "block_or_script": "quantum-observable-universes/q-codifferential-formula-prop",
-   "paths": {
-    "ts": "content/quantum-observable-universe/quantum-observable-universes/q-codifferential-formula-prop.ts",
-    "md": "content/quantum-observable-universe/quantum-observable-universes/q-codifferential-formula-prop.md",
-    "lean": "content/quantum-observable-universe/quantum-observable-universes/q-codifferential-formula-prop.lean"
-   },
-   "finding": "cite-position-hygiene",
-   "severity": "minor",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "content/quantum-observable-universe/quantum-observable-universes/q-codifferential-formula-prop.lean: 4 `axiom`(s) have a `-- Ref:` present elsewhere in the file but NOT in the 12-line window above the axiom (lines [72, 74, 76, 136]). Per CLAUDE.md \u00a71 the Ref should be immediately above. Auto-dischargeable by moving/duplicating the Ref line.",
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "247dfb9d4a79",
-   "block_or_script": "ugb:lean/UGB/GrobnerShirshov/NormalForms",
-   "paths": {
-    "ts": null,
-    "md": null,
-    "lean": "content/unital-groebner-bases/lean/UGB/GrobnerShirshov/NormalForms.lean"
-   },
-   "finding": "cite-position-hygiene",
-   "severity": "minor",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "content/unital-groebner-bases/lean/UGB/GrobnerShirshov/NormalForms.lean: 4 `axiom`(s) have a `-- Ref:` present elsewhere in the file but NOT in the 12-line window above the axiom (lines [386, 402, 441, 478]). Per CLAUDE.md \u00a71 the Ref should be immediately above. Auto-dischargeable by moving/duplicating the Ref line.",
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "a40d5a7eb946",
-   "block_or_script": "braids-and-knots/frobenius-antipode-lean-stub",
-   "paths": {
-    "ts": null,
-    "md": null,
-    "lean": "content/quantum-observable-universe/braids-and-knots/frobenius-antipode-lean-stub.lean"
-   },
-   "finding": "cite-position-hygiene",
-   "severity": "minor",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "content/quantum-observable-universe/braids-and-knots/frobenius-antipode-lean-stub.lean: 2 `axiom`(s) have a `-- Ref:` present elsewhere in the file but NOT in the 12-line window above the axiom (lines [69, 100]). Per CLAUDE.md \u00a71 the Ref should be immediately above. Auto-dischargeable by moving/duplicating the Ref line.",
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "66f999c03ee8",
-   "block_or_script": "lean/QOU/MathlibExt/SDPRankEquality",
-   "paths": {
-    "ts": null,
-    "md": null,
-    "lean": "content/quantum-observable-universe/lean/QOU/MathlibExt/SDPRankEquality.lean"
-   },
-   "finding": "cite-position-hygiene",
-   "severity": "minor",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "content/quantum-observable-universe/lean/QOU/MathlibExt/SDPRankEquality.lean: 2 `axiom`(s) have a `-- Ref:` present elsewhere in the file but NOT in the 12-line window above the axiom (lines [172, 614]). Per CLAUDE.md \u00a71 the Ref should be immediately above. Auto-dischargeable by moving/duplicating the Ref line.",
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "cc4bd7cd2744",
-   "block_or_script": "predicted-spectra/torus-knot-shell-binding",
-   "paths": {
-    "ts": "content/quantum-observable-universe/predicted-spectra/torus-knot-shell-binding.ts",
-    "md": "content/quantum-observable-universe/predicted-spectra/torus-knot-shell-binding.md",
-    "lean": "content/quantum-observable-universe/predicted-spectra/torus-knot-shell-binding.lean"
-   },
-   "finding": "cite-position-hygiene",
-   "severity": "minor",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "content/quantum-observable-universe/predicted-spectra/torus-knot-shell-binding.lean: 2 `axiom`(s) have a `-- Ref:` present elsewhere in the file but NOT in the 12-line window above the axiom (lines [39, 44]). Per CLAUDE.md \u00a71 the Ref should be immediately above. Auto-dischargeable by moving/duplicating the Ref line.",
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "47413cbae68b",
-   "block_or_script": "information-theory/q-game-of-life",
-   "paths": {
-    "ts": "content/quantum-observable-universe/information-theory/q-game-of-life.ts",
-    "md": "content/quantum-observable-universe/information-theory/q-game-of-life.md",
-    "lean": "content/quantum-observable-universe/information-theory/q-game-of-life.lean"
-   },
-   "finding": "cite-position-hygiene",
-   "severity": "minor",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "content/quantum-observable-universe/information-theory/q-game-of-life.lean: 1 `axiom`(s) have a `-- Ref:` present elsewhere in the file but NOT in the 12-line window above the axiom (lines [75]). Per CLAUDE.md \u00a71 the Ref should be immediately above. Auto-dischargeable by moving/duplicating the Ref line.",
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "3ba640085174",
-   "block_or_script": "lean/QOU/Archimedean/EmCouplingBringZeroMode",
-   "paths": {
-    "ts": null,
-    "md": null,
-    "lean": "content/quantum-observable-universe/lean/QOU/Archimedean/EmCouplingBringZeroMode.lean"
-   },
-   "finding": "cite-position-hygiene",
-   "severity": "minor",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "content/quantum-observable-universe/lean/QOU/Archimedean/EmCouplingBringZeroMode.lean: 1 `axiom`(s) have a `-- Ref:` present elsewhere in the file but NOT in the 12-line window above the axiom (lines [79]). Per CLAUDE.md \u00a71 the Ref should be immediately above. Auto-dischargeable by moving/duplicating the Ref line.",
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "23144b1d116f",
-   "block_or_script": "lean/QOU/Mathlib/RSKBridge",
-   "paths": {
-    "ts": null,
-    "md": null,
-    "lean": "content/quantum-observable-universe/lean/QOU/Mathlib/RSKBridge.lean"
-   },
-   "finding": "cite-position-hygiene",
-   "severity": "minor",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "content/quantum-observable-universe/lean/QOU/Mathlib/RSKBridge.lean: 1 `axiom`(s) have a `-- Ref:` present elsewhere in the file but NOT in the 12-line window above the axiom (lines [96]). Per CLAUDE.md \u00a71 the Ref should be immediately above. Auto-dischargeable by moving/duplicating the Ref line.",
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "c7eedae024b9",
-   "block_or_script": "lean/QOU/MathlibExt/SDPRealUniqueness",
-   "paths": {
-    "ts": null,
-    "md": null,
-    "lean": "content/quantum-observable-universe/lean/QOU/MathlibExt/SDPRealUniqueness.lean"
-   },
-   "finding": "cite-position-hygiene",
-   "severity": "minor",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "content/quantum-observable-universe/lean/QOU/MathlibExt/SDPRealUniqueness.lean: 1 `axiom`(s) have a `-- Ref:` present elsewhere in the file but NOT in the 12-line window above the axiom (lines [187]). Per CLAUDE.md \u00a71 the Ref should be immediately above. Auto-dischargeable by moving/duplicating the Ref line.",
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "0c9b6a7f44da",
-   "block_or_script": "mass-theory/confinement-categorical",
-   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/confinement-categorical.ts",
-    "md": "content/quantum-observable-universe/mass-theory/confinement-categorical.md",
-    "lean": "content/quantum-observable-universe/mass-theory/confinement-categorical.lean"
-   },
-   "finding": "cite-position-hygiene",
-   "severity": "minor",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "content/quantum-observable-universe/mass-theory/confinement-categorical.lean: 1 `axiom`(s) have a `-- Ref:` present elsewhere in the file but NOT in the 12-line window above the axiom (lines [65]). Per CLAUDE.md \u00a71 the Ref should be immediately above. Auto-dischargeable by moving/duplicating the Ref line.",
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "61d43390e9f8",
-   "block_or_script": "mass-theory/habiro-expansion-atomic",
-   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/habiro-expansion-atomic.ts",
-    "md": "content/quantum-observable-universe/mass-theory/habiro-expansion-atomic.md",
-    "lean": "content/quantum-observable-universe/mass-theory/habiro-expansion-atomic.lean"
-   },
-   "finding": "cite-position-hygiene",
-   "severity": "minor",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "content/quantum-observable-universe/mass-theory/habiro-expansion-atomic.lean: 1 `axiom`(s) have a `-- Ref:` present elsewhere in the file but NOT in the 12-line window above the axiom (lines [191]). Per CLAUDE.md \u00a71 the Ref should be immediately above. Auto-dischargeable by moving/duplicating the Ref line.",
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "e90b75cbac82",
-   "block_or_script": "mass-theory/wedderburn-bratteli-recursion",
-   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/wedderburn-bratteli-recursion.ts",
-    "md": "content/quantum-observable-universe/mass-theory/wedderburn-bratteli-recursion.md",
-    "lean": "content/quantum-observable-universe/mass-theory/wedderburn-bratteli-recursion.lean"
-   },
-   "finding": "cite-position-hygiene",
-   "severity": "minor",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "content/quantum-observable-universe/mass-theory/wedderburn-bratteli-recursion.lean: 1 `axiom`(s) have a `-- Ref:` present elsewhere in the file but NOT in the 12-line window above the axiom (lines [164]). Per CLAUDE.md \u00a71 the Ref should be immediately above. Auto-dischargeable by moving/duplicating the Ref line.",
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "e0d6d93a031a",
-   "block_or_script": "observations/n-v-bring-action",
-   "paths": {
-    "ts": "content/quantum-observable-universe/observations/n-v-bring-action.ts",
-    "md": "content/quantum-observable-universe/observations/n-v-bring-action.md",
-    "lean": "content/quantum-observable-universe/observations/n-v-bring-action.lean"
-   },
-   "finding": "cite-position-hygiene",
-   "severity": "minor",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "content/quantum-observable-universe/observations/n-v-bring-action.lean: 1 `axiom`(s) have a `-- Ref:` present elsewhere in the file but NOT in the 12-line window above the axiom (lines [87]). Per CLAUDE.md \u00a71 the Ref should be immediately above. Auto-dischargeable by moving/duplicating the Ref line.",
-   "status": "queued",
-   "asked_author_at": null
-  },
-  {
-   "id": "7aea63a47445",
-   "block_or_script": "particle-interactions/bar-involution-invariance",
-   "paths": {
-    "ts": "content/quantum-observable-universe/particle-interactions/bar-involution-invariance.ts",
-    "md": "content/quantum-observable-universe/particle-interactions/bar-involution-invariance.md",
-    "lean": "content/quantum-observable-universe/particle-interactions/bar-involution-invariance.lean"
-   },
-   "finding": "cite-position-hygiene",
-   "severity": "minor",
-   "source": "backlog",
-   "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "evidence": "content/quantum-observable-universe/particle-interactions/bar-involution-invariance.lean: 1 `axiom`(s) have a `-- Ref:` present elsewhere in the file but NOT in the 12-line window above the axiom (lines [110]). Per CLAUDE.md \u00a71 the Ref should be immediately above. Auto-dischargeable by moving/duplicating the Ref line.",
-   "status": "queued",
-   "asked_author_at": null
+  "reviewed_up_to": {
+    "proof-no-bare-sorries": "565be78e866d733c6a9db086f66715be0c0fd17e",
+    "proof-no-axiom-growth": "565be78e866d733c6a9db086f66715be0c0fd17e",
+    "proof-no-conj-propagation-violation": "565be78e866d733c6a9db086f66715be0c0fd17e",
+    "proof-narrative-lean-equiv": "565be78e866d733c6a9db086f66715be0c0fd17e",
+    "proof-lean-compiles": "565be78e866d733c6a9db086f66715be0c0fd17e"
   }
- ],
- "audited": {
-  "predicted-spectra/tilting-module-rigidity": {
-   "ts": "4fee31507b6d07cc3c923da9923cbb14fb43e973",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "proof-no-bare-sorries"
-   ]
-  },
-  "predicted-spectra/spectrahedral-phase-collapse": {
-   "ts": "12be020d77882697c8e30b178f895a6c46723a94",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "proof-no-bare-sorries",
-    "proof-statement-integrity"
-   ]
-  },
-  "lean/QOU/HeckeAlgebra/MarkovTrace": {
-   "ts": "1811317c0635099d896a6f3fc5d24c18a7c679ed",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "proof-no-axiom-growth"
-   ]
-  },
-  "lean/QOU/HeckeAlgebra/Formal": {
-   "ts": "1811317c0635099d896a6f3fc5d24c18a7c679ed",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "proof-no-axiom-growth"
-   ]
-  },
-  "ugb:lean/UGB/GrobnerShirshov/StrongMultiplicativity": {
-   "ts": "1811317c0635099d896a6f3fc5d24c18a7c679ed",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "proof-no-axiom-growth"
-   ]
-  },
-  "lean/QOU/HeckeAlgebra/JonesMarkovWenzl": {
-   "ts": "35f3904b81cedeec663eeb1e17f416f9993aa62b",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "proof-no-axiom-growth"
-   ]
-  },
-  "ugb:lean/UGB/GrobnerShirshov/CompositionLemma": {
-   "ts": "1811317c0635099d896a6f3fc5d24c18a7c679ed",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "proof-no-axiom-growth"
-   ]
-  },
-  "lean/QOU/HeckeAlgebra/Hoefsmit": {
-   "ts": "1811317c0635099d896a6f3fc5d24c18a7c679ed",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "proof-no-axiom-growth"
-   ]
-  },
-  "q-geometric-langlands/tannaka-krein-isomorphism": {
-   "ts": "bd282baf8ce5805cc3ea3c045f892f40e3978e9c",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "proof-no-axiom-growth"
-   ]
-  },
-  "lean/QOU/BraidKnot/PSDFeasibilityProxy": {
-   "ts": "1811317c0635099d896a6f3fc5d24c18a7c679ed",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "proof-no-axiom-growth"
-   ]
-  },
-  "lean/QOU/HeckeAlgebra/Common": {
-   "ts": "1811317c0635099d896a6f3fc5d24c18a7c679ed",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "proof-no-axiom-growth"
-   ]
-  },
-  "mass-theory/thurston-volume-additivity": {
-   "ts": "1811317c0635099d896a6f3fc5d24c18a7c679ed",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "proof-no-axiom-growth"
-   ]
-  },
-  "ugb:lean/UGB/GrobnerShirshov/Flatness": {
-   "ts": "1811317c0635099d896a6f3fc5d24c18a7c679ed",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "proof-no-axiom-growth"
-   ]
-  },
-  "lean/QOU/HeckeAlgebra/Wedderburn": {
-   "ts": "1811317c0635099d896a6f3fc5d24c18a7c679ed",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "proof-no-axiom-growth"
-   ]
-  },
-  "mass-endomorphism/markov-trace-antipode-polynomial-symmetry": {
-   "ts": "1811317c0635099d896a6f3fc5d24c18a7c679ed",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "proof-no-axiom-growth"
-   ]
-  },
-  "mass-theory/atom-knot-mass-derivation": {
-   "ts": "1811317c0635099d896a6f3fc5d24c18a7c679ed",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "proof-no-axiom-growth"
-   ]
-  },
-  "mass-theory/demazure-fiber-markov-trace": {
-   "ts": "f1e2dcb5e6a465c2b9e9c8e7588c31d4f59f5157",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "proof-no-axiom-growth"
-   ]
-  },
-  "mass-theory/wigner-coefficient-derivation": {
-   "ts": "1811317c0635099d896a6f3fc5d24c18a7c679ed",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "proof-no-axiom-growth"
-   ]
-  },
-  "observations/n-v-leading-order-derivation": {
-   "ts": "1811317c0635099d896a6f3fc5d24c18a7c679ed",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "proof-no-axiom-growth"
-   ]
-  },
-  "particle-interactions/cemetery-group": {
-   "ts": "1811317c0635099d896a6f3fc5d24c18a7c679ed",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "proof-no-axiom-growth"
-   ]
-  },
-  "particle-interactions/cpt-orbit-closure-density": {
-   "ts": "1811317c0635099d896a6f3fc5d24c18a7c679ed",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "proof-no-axiom-growth"
-   ]
-  },
-  "ugb:lean/UGB/GrobnerShirshov/Basic": {
-   "ts": "1811317c0635099d896a6f3fc5d24c18a7c679ed",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "proof-no-axiom-growth"
-   ]
-  },
-  "ugb:lean/UGB/GrobnerShirshov/HeckeGS": {
-   "ts": "1811317c0635099d896a6f3fc5d24c18a7c679ed",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "proof-no-axiom-growth"
-   ]
-  },
-  "stochastic-mechanics/lusztig-canonical-basis-q-eq-1": {
-   "ts": "1811317c0635099d896a6f3fc5d24c18a7c679ed",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "proof-no-bare-sorries"
-   ]
-  },
-  "mass-theory/kashaev-density-equals-sdp-multiplicity": {
-   "ts": "1811317c0635099d896a6f3fc5d24c18a7c679ed",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "proof-no-bare-sorries"
-   ]
-  },
-  "mass-theory/dim-master-pentagon": {
-   "ts": "1811317c0635099d896a6f3fc5d24c18a7c679ed",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "proof-no-bare-sorries"
-   ]
-  },
-  "particle-interactions/wigner-su4-from-spin-isospin": {
-   "ts": "1811317c0635099d896a6f3fc5d24c18a7c679ed",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "proof-no-bare-sorries"
-   ]
-  },
-  "particle-interactions/spin-from-so3-fiber": {
-   "ts": "1811317c0635099d896a6f3fc5d24c18a7c679ed",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "proof-no-bare-sorries"
-   ]
-  },
-  "particle-interactions/type-b-folding-cpt": {
-   "ts": "1811317c0635099d896a6f3fc5d24c18a7c679ed",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "proof-no-bare-sorries"
-   ]
-  },
-  "particle-interactions/q-zero-stokes-region-identification": {
-   "ts": "1811317c0635099d896a6f3fc5d24c18a7c679ed",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "proof-no-bare-sorries"
-   ]
-  },
-  "appendix-surreals/casimir-first-q-correction": {
-   "ts": "ec225d6cb3f7b9ac758ca889b21527238d228d4f",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "proof-no-bare-sorries"
-   ]
-  },
-  "gravity-spacetime/lqg-entropy-qdim-partition-pole": {
-   "ts": "1811317c0635099d896a6f3fc5d24c18a7c679ed",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "proof-no-bare-sorries"
-   ]
-  },
-  "mass-endomorphism/conj-rho-k-pair-gen-canonical-form": {
-   "ts": "1811317c0635099d896a6f3fc5d24c18a7c679ed",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "proof-no-bare-sorries"
-   ]
-  },
-  "mass-theory/reidemeister-mass-invariance": {
-   "ts": "1811317c0635099d896a6f3fc5d24c18a7c679ed",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "proof-no-axiom-growth"
-   ]
-  },
-  "quantum-observable-universes/q-codifferential-formula-prop": {
-   "ts": "1811317c0635099d896a6f3fc5d24c18a7c679ed",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "proof-no-axiom-growth"
-   ]
-  },
-  "ugb:lean/UGB/GrobnerShirshov/NormalForms": {
-   "ts": "1811317c0635099d896a6f3fc5d24c18a7c679ed",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "proof-no-axiom-growth"
-   ]
-  },
-  "braids-and-knots/frobenius-antipode-lean-stub": {
-   "ts": "1811317c0635099d896a6f3fc5d24c18a7c679ed",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "proof-no-axiom-growth"
-   ]
-  },
-  "lean/QOU/MathlibExt/SDPRankEquality": {
-   "ts": "1811317c0635099d896a6f3fc5d24c18a7c679ed",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "proof-no-axiom-growth"
-   ]
-  },
-  "predicted-spectra/torus-knot-shell-binding": {
-   "ts": "1811317c0635099d896a6f3fc5d24c18a7c679ed",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "proof-no-axiom-growth"
-   ]
-  },
-  "information-theory/q-game-of-life": {
-   "ts": "1811317c0635099d896a6f3fc5d24c18a7c679ed",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "proof-no-axiom-growth"
-   ]
-  },
-  "lean/QOU/Archimedean/EmCouplingBringZeroMode": {
-   "ts": "1811317c0635099d896a6f3fc5d24c18a7c679ed",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "proof-no-axiom-growth"
-   ]
-  },
-  "lean/QOU/Mathlib/RSKBridge": {
-   "ts": "1811317c0635099d896a6f3fc5d24c18a7c679ed",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "proof-no-axiom-growth"
-   ]
-  },
-  "lean/QOU/MathlibExt/SDPRealUniqueness": {
-   "ts": "1811317c0635099d896a6f3fc5d24c18a7c679ed",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "proof-no-axiom-growth"
-   ]
-  },
-  "mass-theory/confinement-categorical": {
-   "ts": "1811317c0635099d896a6f3fc5d24c18a7c679ed",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "proof-no-axiom-growth"
-   ]
-  },
-  "mass-theory/habiro-expansion-atomic": {
-   "ts": "1811317c0635099d896a6f3fc5d24c18a7c679ed",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "proof-no-axiom-growth"
-   ]
-  },
-  "mass-theory/wedderburn-bratteli-recursion": {
-   "ts": "1811317c0635099d896a6f3fc5d24c18a7c679ed",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "proof-no-axiom-growth"
-   ]
-  },
-  "observations/n-v-bring-action": {
-   "ts": "1811317c0635099d896a6f3fc5d24c18a7c679ed",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "proof-no-axiom-growth"
-   ]
-  },
-  "particle-interactions/bar-involution-invariance": {
-   "ts": "1811317c0635099d896a6f3fc5d24c18a7c679ed",
-   "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
-   "criteria": [
-    "proof-no-axiom-growth"
-   ]
-  }
- },
- "reviewed_up_to": {
-  "proof-no-bare-sorries": "565be78e866d733c6a9db086f66715be0c0fd17e",
-  "proof-no-axiom-growth": "565be78e866d733c6a9db086f66715be0c0fd17e",
-  "proof-no-conj-propagation-violation": "565be78e866d733c6a9db086f66715be0c0fd17e",
-  "proof-narrative-lean-equiv": "565be78e866d733c6a9db086f66715be0c0fd17e",
-  "proof-lean-compiles": "565be78e866d733c6a9db086f66715be0c0fd17e"
- }
 }

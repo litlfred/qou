@@ -184,6 +184,7 @@ class SlaterStrictComplementarityKernel : Prop where
 /-- The cited-axiom field carrier — discharges the §3b-cond class
     via Boyd-Vandenberghe / Alizadeh-Haeberly-Overton.  Closing this
     axiom in Mathlib is the Phase-3 SDP uniqueness follow-up. -/
+-- Ref: [manuscript] Ch. braid-knot, prop:operator-selection-lp §"dual program" (Slater + strict-complementarity ⟹ SDP primal optimum unique)
 axiom slater_strict_complementarity_kernel_axiom :
     ∀ {n : ℕ} {ι : Type*} [Fintype ι] {sdp : SDPPrimal n ℝ ι}
       (sc : RealStrictComplementarityPair sdp)

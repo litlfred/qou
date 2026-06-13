@@ -150,23 +150,27 @@ type-level interface here; concrete construction is open work. -/
     Concrete structure: T-form generators `T_i ∈ Hecke_formal R n`
     with `T_i² = (q - 1) T_i + q` (relation in `R[q, q⁻¹]`,
     integer-coefficient when `R = ℤ`). -/
+-- Ref: [geckpfeiffer2000] https://doi.org/10.1093/oso/9780198502500.001.0001 §4.4 (Iwahori-Hecke algebra over ℤ[q,q⁻¹])
 axiom heckeFormalMul :
     ∀ {R : Type*} [CommRing R] {n : ℕ},
       HeckeFormalElement R n → HeckeFormalElement R n → HeckeFormalElement R n
 
 /-- **Formal Hecke-algebra unit** — the multiplicative identity. -/
+-- Ref: [geckpfeiffer2000] https://doi.org/10.1093/oso/9780198502500.001.0001 §4.4 (Hecke algebra unit)
 axiom heckeFormalOne :
     ∀ {R : Type*} [CommRing R] (n : ℕ), HeckeFormalElement R n
 
 /-- **T-form Hecke generator** `T_i ∈ Hecke_formal R n`.
     Axiomatised at the type level; concrete construction
     pending Mathlib Iwahori-Hecke port. -/
+-- Ref: [geckpfeiffer2000] https://doi.org/10.1093/oso/9780198502500.001.0001 §4.4 (T-form generators T_i)
 axiom heckeFormalGenerator :
     ∀ {R : Type*} [CommRing R] {n : ℕ} (_i : Fin (n - 1)),
       HeckeFormalElement R n
 
 /-- **Scalar action** of `R[q, q⁻¹]` on `HeckeFormalElement R n`:
     formal scalar multiplication by a Laurent polynomial. -/
+-- Ref: [geckpfeiffer2000] https://doi.org/10.1093/oso/9780198502500.001.0001 §4.4 (scalar action of R[q,q⁻¹])
 axiom heckeFormalSMul :
     ∀ {R : Type*} [CommRing R] {n : ℕ},
       LaurentPolynomial R → HeckeFormalElement R n → HeckeFormalElement R n
@@ -183,6 +187,7 @@ axiom heckeFormalSMul :
     Iwahori-Hecke port has not yet landed in Mathlib).
     Pointwise add `+` on `Fin _ → LaurentPolynomial R` uses the
     natural `Pi` ring instance. -/
+-- Ref: [geckpfeiffer2000] https://doi.org/10.1093/oso/9780198502500.001.0001 §4.4 (T-form Hecke relation T_i² = (q−1)T_i + q)
 axiom heckeFormalGenerator_T_relation :
     ∀ {R : Type*} [CommRing R] {n : ℕ} (i : Fin (n - 1)),
       heckeFormalMul (heckeFormalGenerator (R := R) (n := n) i)

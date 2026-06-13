@@ -93,12 +93,11 @@ theorem BurnsideFromRSK (n : ℕ) [R : RSKBijection n] :
     Stated as an axiom pending Mathlib's
     `Combinatorics.RSK.cardinality_eq` theorem; once that lands,
     this becomes a derived consequence. -/
+-- Ref: [stanley1999] Enumerative Combinatorics II §7.11 (RSK bijection cardinality Σ_λ (f^λ)² = n!);
+--      Mathlib.Combinatorics.RSK (partial; cardinality_eq is the upstream target).
 axiom RSK_substrate_axiom (n : ℕ) :
     ∃ dimFn : Nat.Partition n → ℕ,
       ∑ λ : Nat.Partition n, (dimFn λ) ^ 2 = n.factorial
--- Ref: [stanley1999] Stanley §7.11 (RSK bijection cardinality);
---      Mathlib.Combinatorics.RSK (partial; cardinality_eq is
---      the upstream target).
 
 /-! ### Cohort-based RSKBijection (concrete via explicit cohort lists)
 

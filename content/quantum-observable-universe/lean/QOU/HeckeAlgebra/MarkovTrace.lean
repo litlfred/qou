@@ -64,6 +64,7 @@ open QOU.HeckeAlgebra QOU.HeckeAlgebra.Hoefsmit QOU.HeckeAlgebra.Wedderburn
 /-- **Jones-Markov central coefficient** `y_λ(q)` for partition
     `λ` at parameter `q`.  Axiomatised; concrete Wenzl 1988 §3
     formula is deferred to the next round of Lean port. -/
+-- Ref: [wenzl1988] https://doi.org/10.1007/BF01404457 §3 (Jones-Markov coefficients y_λ)
 axiom JonesMarkovCoefficient :
     ∀ {n : ℕ}, Nat.Partition n → ℝ → ℝ
 
@@ -75,8 +76,10 @@ axiom JonesMarkovCoefficient :
     (`partitions_as_finset n`) since `Nat.Partition n` is a
     proposition, not a `Finset`.  Concrete enumeration of
     partitions as a Finset is a deferred Mathlib-API task. -/
+-- Ref: [manuscript] Ch. Mass-theory, prop:markov-trace-axioms (Finset enumeration of Nat.Partition n; Mathlib-API task)
 axiom partitions_as_finset (n : ℕ) : Finset (Nat.Partition n)
 
+-- Ref: [wenzl1988] https://doi.org/10.1007/BF01404457 Lemma 3.2 (central-element normalisation Σ_λ y_λ = 1)
 axiom JonesMarkovCoefficient_sum_eq_one :
     ∀ (n : ℕ) (q : ℝ),
     (∑ lam ∈ partitions_as_finset n, JonesMarkovCoefficient lam q) = 1
@@ -87,6 +90,7 @@ axiom JonesMarkovCoefficient_sum_eq_one :
     axiomatise the multiplication operation at the type level.
     Concrete instance comes from the matrix algebra under
     `wedderburnEmbed`. -/
+-- Ref: [kassel2008] https://doi.org/10.1007/978-0-387-68548-9 §13.6 (Iwahori-Hecke algebra multiplication)
 axiom heckeMul : ∀ {n : ℕ}, HeckeElement n → HeckeElement n → HeckeElement n
 
 /-- Notation for Hecke-algebra multiplication. -/
@@ -95,6 +99,7 @@ scoped infixl:70 " *_h " => heckeMul
 /-- **Cyclicity** of the Markov trace.  `tr_M(x ·_h y) = tr_M(y
     ·_h x)`.  Inherited from ordinary matrix trace via the
     Wedderburn block decomposition. -/
+-- Ref: [jones1985] https://doi.org/10.1090/S0273-0979-1985-15304-2 (Markov trace cyclicity tr(xy)=tr(yx))
 axiom MarkovTrace_cyclic :
     ∀ {n : ℕ} (x y : HeckeElement n),
     markovTrace n (heckeMul x y) = markovTrace n (heckeMul y x)
@@ -104,12 +109,14 @@ axiom MarkovTrace_cyclic :
     `σ_n`.  Axiomatised pending the concrete construction
     (which requires the Hecke generator `σ_n` to be expressible
     as a `HeckeElement (n + 1)` — the natural inclusion). -/
+-- Ref: [kassel2008] https://doi.org/10.1007/978-0-387-68548-9 §13.6 (stabilisation by generator σ_n)
 axiom heckeStab : ∀ {n : ℕ}, HeckeElement n → HeckeElement (n + 1)
 
 /-- **Markov axiom** for the Markov trace: stabilisation scales
     the trace by the Markov parameter `z`.  Concrete formula:
     `tr_M(stab_n x) = z · tr_M(x)` where
     `z = 1 / (q_0^{1/2} + q_0^{-1/2})`.  Axiomatised. -/
+-- Ref: [jones1985] https://doi.org/10.1090/S0273-0979-1985-15304-2 (Markov axiom: tr(stab x) = z·tr(x))
 axiom MarkovTrace_markov_axiom :
     ∀ {n : ℕ} (x : HeckeElement n) (z : ℝ),
     -- z is the Markov parameter; for the QOU substrate
@@ -123,6 +130,7 @@ axiom MarkovTrace_markov_axiom :
     ℝ` (vector form) and the per-block decomposition.  The
     `wenzlBridge` below relates this trace to the block-trace
     sum form. -/
+-- Ref: [wenzl1988] https://doi.org/10.1007/BF01404457 §3 (categorical Markov trace on Wedderburn blocks)
 axiom markovTraceOnWedderburn :
     ∀ {n : ℕ}, WedderburnDecomposition n → ℝ
 
@@ -135,6 +143,7 @@ axiom markovTraceOnWedderburn :
     where `tr` is the ordinary matrix trace per block.  This is
     the categorical content that the Python compute layer
     implements in `wedderburn_jones_markov.py`. -/
+-- Ref: [wenzl1988] https://doi.org/10.1007/BF01404457 Lemma 3.2 (Wenzl bridge: tr_M = Σ_λ y_λ·χ^λ)
 axiom wenzlBridge :
     ∀ {n : ℕ} (q : ℝ) (x : WedderburnDecomposition n),
     markovTraceOnWedderburn x =

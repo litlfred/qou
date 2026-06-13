@@ -75,22 +75,30 @@ theorem writhe_R1_changes (K : KnotDiagram) (sign : Int) (h : sign = 1 ∨ sign 
 /-- Bare mass depends only on the knot type (hyperbolic volume).
     Since knot type is invariant under R-I, R-II, R-III,
     bare mass is a knot invariant. -/
+-- Ref: [manuscript] Ch. 4, prop:reidemeister-mass-invariance (bare mass = knot invariant via hyperbolic volume); cf. [jones1987] knot-invariance of the Markov trace
 axiom bareMass : KnotDiagram → R_q
 
 /-- Bare mass is a knot invariant. -/
+-- Ref: [manuscript] Ch. 4 (bare mass invariant under R-I)
 axiom bareMass_R1_invariant : ∀ K sign h, bareMass (applyR1 K sign h) = bareMass K
+-- Ref: [manuscript] Ch. 4 (bare mass invariant under R-II)
 axiom bareMass_R2_invariant : ∀ K, bareMass (applyR2 K) = bareMass K
+-- Ref: [manuscript] Ch. 4 (bare mass invariant under R-III)
 axiom bareMass_R3_invariant : ∀ K, bareMass (applyR3 K) = bareMass K
 
 /-- Binding energy depends on the embedding (writhe-sensitive).
     It is a regular isotopy invariant but not a knot invariant. -/
+-- Ref: [manuscript] Ch. 4, prop:reidemeister-mass-invariance (binding energy = embedding/writhe invariant)
 axiom bindingEnergy : KnotDiagram → R_q
 
 /-- Binding energy is invariant under R-II and R-III. -/
+-- Ref: [manuscript] Ch. 4 (binding energy invariant under R-II)
 axiom bindingEnergy_R2_invariant : ∀ K, bindingEnergy (applyR2 K) = bindingEnergy K
+-- Ref: [manuscript] Ch. 4 (binding energy invariant under R-III)
 axiom bindingEnergy_R3_invariant : ∀ K, bindingEnergy (applyR3 K) = bindingEnergy K
 
 /-- Binding energy changes under R-I (shell transition). -/
+-- Ref: [manuscript] Ch. 4 (binding energy changes under R-I / shell transition)
 axiom bindingEnergy_R1_changes : ∀ K sign h,
     bindingEnergy (applyR1 K sign h) ≠ bindingEnergy K
 

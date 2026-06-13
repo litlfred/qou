@@ -60,6 +60,7 @@ open QOU.HeckeAlgebra QOU.HeckeAlgebra.Wedderburn
     `n`, returns the Wedderburn decomposition of the corresponding
     Hecke-algebra element.  The map respects the Hecke and braid
     relations (a downstream `axiom`). -/
+-- Ref: [kassel2008] https://doi.org/10.1007/978-0-387-68548-9 §13.6 (braid-word → Hecke element evaluation)
 axiom braidWordEval :
     ∀ (n : ℕ) (_w : List Int), WedderburnDecomposition n
 
@@ -75,6 +76,7 @@ axiom braidWordEval :
 
     Axiomatised at the categorical-content level; concrete proof
     requires the Hoefsmit-eigenvalue computation per block. -/
+-- Ref: [manuscript] Ch. braid-knot, prop:operator-selection-lp (evenPower necessary for block PSD; binding-k-solver.witness.json)
 axiom evenPower_necessary_for_blockPosSemidef :
     ∀ (n : ℕ) (w : List Int),
     (braidWordEval n w).PosSemidef →

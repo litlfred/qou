@@ -62,6 +62,7 @@ theorem confinement_survives_only_centre
     or a structure-tightening refactor.
 
     See the theorem docstring below for the cited reference. -/
+-- Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443 (Frobenius integral factors through the Wedderburn centre); cf. [manuscript] prop:confinement-categorical
 axiom confinement_int_factors_through_centre_axiom {R : Type*} [CommRing R] {A : Type*} [Ring A] [Algebra R A]
     [I : SemisimpleFrobeniusHeckeLike R A] :
     ∃ μ :

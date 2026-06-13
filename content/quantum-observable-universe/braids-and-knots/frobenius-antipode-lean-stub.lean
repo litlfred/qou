@@ -66,6 +66,7 @@ def heckeSigma (_n : ℕ) (_q : ℝ) (_i : ℕ) : HeckeAlgebra _n _q :=
     S(a · b) = S(b) · S(a).
 
     Ref: [kassel1995] Quantum Groups, Ch. III. -/
+-- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2 Ch. III (antipode is an anti-homomorphism)
 axiom antipode_anti_hom (n : ℕ) (q : ℝ) (a b : HeckeAlgebra n q) :
     antipodeS n q (heckeMul a b) =
       heckeMul (antipodeS n q b) (antipodeS n q a)
@@ -97,6 +98,7 @@ axiom antipode_involution (n : ℕ) (q : ℝ) (a : HeckeAlgebra n q) :
     (Yekutieli's rigid dualizing complex).
 
     Ref: [kassel1995], [yekutieli2010]. -/
+-- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2 Ch. III; [yekutieli2010] (Markov trace is S-invariant up to parity sign-twist)
 axiom markov_trace_antipode_invariant (n : ℕ) (q : ℝ)
     (x : HeckeAlgebra n q) :
     markovTrace n q (antipodeS n q x) = markovTrace n q x

@@ -84,6 +84,7 @@ noncomputable opaque rescale_EW (Σ : ElectroweakSlice) : ℝ
     curve and its `S_5` automorphism group;
     [manuscript] `prop:brings-is-qou` for the Bring-as-QOU-substrate
     identification. -/
+-- Ref: [klein1888] + [bring1786] (Bring/Klein curve and its S_5 automorphism group); [manuscript] prop:brings-is-qou (|S_5|=120 rescaling at the EW slice)
 axiom s5_acts_on_ew_slice (Σ : ElectroweakSlice) :
     tau_M_C_dim_q_EW Σ * rescale_EW Σ
       = 120 * tau_M_C_dim_q_EW Σ

@@ -75,6 +75,7 @@ noncomputable def N_v : ℝ := 3 * v_ew_real / m_e_real
          `conj:mass-endomorphism`,
          `conj:n-v-bring-action`,
          `conj:n-v-tower-depth-ninety`. -/
+-- Ref: [manuscript] Ch. observations, conj:n-v-bring-action + conj:n-v-tower-depth-ninety (v/m_e = 40·q_0^90 substrate bridge)
 axiom v_over_m_e_bridge :
     ∃ ε₁ : ℝ, abs ε₁ ≤ 0.006 ∧
       v_ew_real / m_e_real = 40 * q_0_real^(90 : ℕ) * (1 + ε₁)

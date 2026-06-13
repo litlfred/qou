@@ -81,6 +81,7 @@ noncomputable def shiftedReverse20 (p : ℤ[X]) : ℤ[X] :=
     or a structure-tightening refactor.
 
     See the theorem docstring below for the cited reference. -/
+-- Ref: [manuscript] Ch. mass-endomorphism, prop:markov-trace-antipode-polynomial-symmetry (proton closed-form antipode symmetry); antipode S(σ_i)=σ_i⁻¹ per [kassel2008]
 axiom markovTraceAntipodePolynomialSymmetry_axiom  :
     shiftedReverse20 protonClosedFormPolynomial = -protonClosedFormPolynomial
 
