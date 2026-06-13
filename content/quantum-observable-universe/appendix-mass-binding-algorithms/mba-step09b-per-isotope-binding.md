@@ -40,7 +40,7 @@ $\Delta_\lambda$.*
 *The remaining conjectural input is $\Delta_\lambda(K)$ itself —
 six closure ansätze (Frobenius co-Casimir, Demazure-fibre,
 LP-Plancherel, LP-Frobenius, crystal-graph, augmented Markov)
-have all failed on the deuteron as of 2026-05-31. The current
+have all failed on the deuteron. The current
 direction is Option E (Kashiwara crystal) — see
 `alg:delta-lambda-closure`.*
 

@@ -60,7 +60,7 @@ $T_\beta = S \cdot 1$, with $\| T_\beta \|^2_\tau = S^2$. $\quad\blacksquare$
 
 The Q_β production rule extracts the c_k Taylor coefficients from
 $\tau_M(T_\beta)(q)$.  Under either norm choice — Euclidean L2 on
-coordinate-vector space $R^6$ (the [PR #1739 SHAPE x S decomposition](https://github.com/litlfred/qou/pull/1739))
+coordinate-vector space $R^6$ (the SHAPE x S decomposition)
 or the canonical Markov–Frobenius norm above — the SDP **constraint**
 $\tau_M(T_\beta) = S = Q_\beta / E_0$ is satisfied identically.
 Therefore $\tau_M(T_\beta)(q) \equiv S(q)$ in both cases, and the
@@ -88,7 +88,7 @@ Under the Markov–Frobenius norm $T_\beta = S \cdot 1_H$ is a
 canonical primal-feasible operator flows through the single
 q-rational scalar $S(q)$; there is no multi-channel SHAPE
 distributed across the NF basis $\{\gamma, \sigma_0, \sigma_1,
-L_+, L_-, e_-\}$.  The six-channel spread observed in PR #1739
+L_+, L_-, e_-\}$.  The six-channel spread observed
 under the Euclidean coordinate norm is a **basis-dependence**
 of the inner product on $R^6$, not categorical structure of
 $T_\beta$.
@@ -113,11 +113,9 @@ the general lift is mechanical typeclass scaffolding.
 
 ## References
 
-- PR #1750 — Markov-trace SHAPE collapse audit (this PR).
 - [`docs/audits/2026-06-03-qbeta-markov-trace-shape-collapse.md`](https://github.com/litlfred/qou/blob/claude/qbeta-markov-trace-2026-06-03/docs/audits/2026-06-03-qbeta-markov-trace-shape-collapse.md)
   — structural finding + numerical verification at $q_0$.
 - [`docs/coordination/1ppq-qbeta.md`](https://github.com/litlfred/qou/blob/claude/qbeta-markov-trace-2026-06-03/docs/coordination/1ppq-qbeta.md)
-  — 1ppQ master ledger; 2026-06-03 session entry.
-- PR #1739 (merged) — Euclidean L2 SHAPE $\times$ S decomposition.
+  — 1ppQ master ledger.
 - Jones 1987 — Hecke algebra Markov trace existence + uniqueness.
 - Wenzl 1988 — non-degeneracy of the Markov trace.
