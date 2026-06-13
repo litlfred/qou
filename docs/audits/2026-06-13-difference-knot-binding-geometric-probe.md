@@ -1,5 +1,12 @@
 # Binding as the mass of the difference knot — first geometric probe
 
+> **⛔ RETRACTED 2026-06-13** — the volumes reported below are SnapPy noise on
+> non-geometric triangulations. The difference link is **reducible /
+> non-hyperbolic** (Regina `isIrreducible=False`; negative + 29–135 %-unstable
+> "volumes"), so it has no hyperbolic volume. See
+> [`2026-06-13-difference-knot-nonhyperbolic-retraction.md`](2026-06-13-difference-knot-nonhyperbolic-retraction.md).
+> `prop:binding-error-amplification` is unaffected.
+
 **Date:** 2026-06-13 · **Branch:** `claude/binding-difference-knot-geometric-2026-06-13`
 **Probe:** [`probes/difference_knot_binding_probe.py`](../../computations/probes/difference_knot_binding_probe.py)
 (witness `difference-knot-binding.witness.json`)
