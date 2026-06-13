@@ -1151,13 +1151,27 @@ investigation that has sharply diagnosed the gap.
 
 ---
 
-**Conjecture (original framing — open).**
+> **Restatement (round 21 supersedes the original Markov-layer form).**
+> The original conjecture below is stated about the **Markov-layer LP dual
+> $y_{\mathrm{cov}}$**, claiming $y_{\mathrm{cov}} = c_2\alpha^2 + O(\alpha^4)$.
+> **Round 21 refutes that form**: $y_{\mathrm{cov}}$ is *linear* in the turn-on
+> parameter (the separated-atom point is a kink, not a smooth facet), so its
+> leading term is $O(\alpha)$, not $O(\alpha^2)$. The $\alpha^2$ scaling is
+> real but lives in the **q-dimension layer**, not the Markov layer. The
+> **corrected headline statement** is the round-20 trace-ratio:
+> $$\rho_{(2,2)} \;=\; \frac{\chi_{(2,2)}^{\mathrm{dressed}}}{\bigl(q[9]_q[10]_q\bigr)^2} \;=\; C(q)\,\alpha_{EM}^2, \qquad C(q) = h\,(\dim_q V_{(2,2)})^2,$$
+> with $C(q)$ a fixed categorical coefficient (the EM-block Plancherel-square,
+> *not* a free parameter — round 22 red-team). The original $y_{\mathrm{cov}}$
+> framing is retained below only as the historical statement that motivated the
+> 21-round investigation; it is **not** the live claim.
+
+**Conjecture (original framing — superseded by the round-21 restatement above).**
 *The molecular-binding LP/SDP dual variable
 $y_{\mathrm{cov}}$ for any covalent diatomic with definite-parity
 ground state, expanded in the EM coupling
 $\alpha_{EM} = 1/(q\,[9]_q\,[10]_q)$ around the
-fully-decoupled ($\alpha_{EM} \to 0$, separated-atom) limit, vanishes
-to first order:*
+fully-decoupled ($\alpha_{EM} \to 0$, separated-atom) limit, was
+conjectured to vanish to first order:*
 
 $$
   y_{\mathrm{cov}}(\alpha_{EM})
