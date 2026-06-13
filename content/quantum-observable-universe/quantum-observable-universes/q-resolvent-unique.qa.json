@@ -206,6 +206,26 @@
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
         "notes": "Label 'prop:q-resolvent-unique' → expected 'q_resolvent_unique'; Lean declares: QResolvent.unique_axiom, QResolvent.unique. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "8f8e02874f95",
+          "ts": "51fe1c209247",
+          "lean": "58e400c4d1cb"
+        },
+        "result": "warn",
+        "severity": "major",
+        "evidence": "q-resolvent-unique.lean:44-52 — QResolvent.unique takes (hsurj : Function.Surjective R₁.delta_q) and proves R₁.R = R₂.R via inverse_witness R(delta_q x)=x; the structure field s is unused, so Lean handles delta_q rather than s + Δ̂_q. Narrative md:1-4 claims uniqueness for inverses of invertible s + Δ̂_q.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:10:38.598Z",
+        "reviewed_sha": "6183b3ca66b73678e421339b35152ad289b928a9",
+        "notes": "Reconcilable gap: invertible implies surjective, same uniqueness shape; the s-shift drop + surjectivity hypothesis are loudly flagged in the docstring ('open refactor')"
       }
     ],
     "voice-author-notes-pollution": [
@@ -1048,7 +1068,192 @@
         "reviewed_at": "2026-06-11T18:06:24.673Z",
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "8f8e02874f95",
+          "ts": "51fe1c209247",
+          "lean": "58e400c4d1cb"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "quantum-observable-universes.ts:436-449 — block listed in sec:q-resolvent-wick directly after q-resolvent / q-resolvent-exists(-proof); uniqueness companion of the section's central object",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:10:03.692Z",
+        "reviewed_sha": "6183b3ca66b73678e421339b35152ad289b928a9",
+        "notes": "Uniqueness prop sits with its definition+existence siblings; no better home, no redundant sibling"
+      }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "8f8e02874f95",
+          "ts": "51fe1c209247",
+          "lean": "58e400c4d1cb"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "q-resolvent-unique.md:1-4 — 'The q-resolvent R_q(s) is the unique morphism satisfying (s + Δ̂_q)∘R_q(s) = id … Any two inverses … coincide.'",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:10:03.730Z",
+        "reviewed_sha": "6183b3ca66b73678e421339b35152ad289b928a9",
+        "notes": "Bare 4-line statement; no physical interpretation or motivation in-block"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "8f8e02874f95",
+          "ts": "51fe1c209247",
+          "lean": "58e400c4d1cb"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "q-resolvent-unique.md:1-4 — purely algebraic uniqueness of an inverse morphism; no Real.*, no numeric q, no MeV, no order hypothesis",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:10:03.767Z",
+        "reviewed_sha": "6183b3ca66b73678e421339b35152ad289b928a9",
+        "notes": "Generic-ring statement matching the substrate-chapter regime"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "8f8e02874f95",
+          "ts": "51fe1c209247",
+          "lean": "58e400c4d1cb"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "q-resolvent-unique-proof.md:1-6 — R1 = R1∘(s+Δ̂_q)∘R2 = R2 two-sided-inverse computation; isotypic scalar inverses (s+λ_j(q))^{-1}",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:10:03.805Z",
+        "reviewed_sha": "6183b3ca66b73678e421339b35152ad289b928a9",
+        "notes": "Algebraic proof; no linarith/IVT/continuity/Real.* machinery"
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "8f8e02874f95",
+          "ts": "51fe1c209247",
+          "lean": "58e400c4d1cb"
+        },
+        "result": "warn",
+        "severity": "major",
+        "evidence": "q-resolvent-unique.lean:9-23 — 'Honest statement (2026-06-09 axiom audit)' docstring: replaced an unchecked external axiom with a proved theorem conditional on surjectivity; 'dropping it to the full spectral-domain statement is the open refactor'",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:10:38.635Z",
+        "reviewed_sha": "6183b3ca66b73678e421339b35152ad289b928a9",
+        "notes": "Loudly-documented weakening (warn per rubric); sorry-free, no axiom restating target, no True-gutting"
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "8f8e02874f95",
+          "ts": "51fe1c209247",
+          "lean": "58e400c4d1cb"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.9,
+          "max": 1
+        },
+        "evidence": "q-resolvent-unique-proof.md:1 — 'Standard: if R1, R2 are both two-sided inverses … then R1 = R1∘(s+Δ̂_q)∘R2 = R2'; Lean proof is 3 transparent lines (funext, obtain, rw)",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:10:38.669Z",
+        "reviewed_sha": "6183b3ca66b73678e421339b35152ad289b928a9",
+        "notes": "Plan stated up front with the whole computation in one displayed identity"
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "8f8e02874f95",
+          "ts": "51fe1c209247",
+          "lean": "58e400c4d1cb"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "evidence": "q-resolvent-unique.lean:44-52 — theorem QResolvent.unique closes by rw [inverse_witness, hd, inverse_witness]; no sorry in file",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:10:38.703Z",
+        "reviewed_sha": "6183b3ca66b73678e421339b35152ad289b928a9",
+        "notes": "Sorry-free proof => 1.0 per rubric"
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "8f8e02874f95",
+          "ts": "51fe1c209247",
+          "lean": "58e400c4d1cb"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.45,
+          "max": 1
+        },
+        "evidence": "q-resolvent-unique-proof.md:1-6 — textbook two-sided-inverse uniqueness; sibling uniqueness proofs (categorical-laplace-transform-unique-proof.md, categorical-fourier-transform-unique-proof.md) use different (generator/monoidality) arguments, so not duplicated",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:10:38.739Z",
+        "reviewed_sha": "6183b3ca66b73678e421339b35152ad289b928a9",
+        "notes": "Standard argument, not a corpus duplicate: ~0.45 per rubric (0.5 = standard, not duplicated)"
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-13T01:10:38.739Z"
 }
