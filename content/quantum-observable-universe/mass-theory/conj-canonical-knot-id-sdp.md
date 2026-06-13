@@ -155,10 +155,10 @@ fully constructive.  The closure is
 `nucleus_uniqueness_closed_via_active_empty` at the $^3\mathrm{He}$
 strand count $n_0 = 9$ (specialised as
 `helium3_uniqueness_closed_via_active_empty` in
-[`AppliedHelium3Uniqueness.lean`](../../../content/quantum-observable-universe/lean/QOU/BraidKnot/AppliedHelium3Uniqueness.lean)),
+[`AppliedHelium3Uniqueness.lean`](../lean/QOU/BraidKnot/AppliedHelium3Uniqueness.lean)),
 discharged through
 `real_strict_complementarity_unique_of_active_empty_and_cost_posDef`
-([`SDPRealUniqueness.lean`](../../../content/quantum-observable-universe/lean/QOU/MathlibExt/SDPRealUniqueness.lean))
+([`SDPRealUniqueness.lean`](../lean/QOU/MathlibExt/SDPRealUniqueness.lean))
 with no dependency on the general SDP rank-deficiency axiom.
 
 The general (non-empty active set) case — needed at the degenerate /

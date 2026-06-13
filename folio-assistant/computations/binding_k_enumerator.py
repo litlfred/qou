@@ -720,10 +720,10 @@ if __name__ == "__main__":
     )
     ap.add_argument("--deuteron-L", type=int, default=4,
                     help="max binding-word length for deuteron (minimal gens σ_3); default 4")
-    ap.add_argument("--tritium-L", type=int, default=2,
-                    help="max binding-word length for tritium (extended gens σ_3..σ_8); default 2")
-    ap.add_argument("--he3-L", type=int, default=2,
-                    help="max binding-word length for ³He (extended gens σ_3..σ_8); default 2")
+    ap.add_argument("--tritium-L", type=int, default=3,
+                    help="max binding-word length for tritium (extended gens σ_3..σ_8); default 3")
+    ap.add_argument("--he3-L", type=int, default=3,
+                    help="max binding-word length for ³He (extended gens σ_3..σ_8); default 3")
     args = ap.parse_args()
 
     main(
