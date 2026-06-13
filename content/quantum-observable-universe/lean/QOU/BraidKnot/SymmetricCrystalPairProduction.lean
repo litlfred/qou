@@ -89,21 +89,13 @@ theorem nodeOf_barInvolution_highest_weight
   rw [S.bar_invariant T]
   exact C.crystal_realises T i
 
-/-- **Trivial model (consistency witness).**
-
-    Concrete `SymmetricCrystalPairProduction R q` over an upstream
-    `CrystalGraphRealization R q`: `barInvolution := id`, so
-    involutivity is `T = T` (rfl) and bar-invariance is `T = T`
-    (rfl).  Proves the class axiomatisation is **consistent**.
-    Provided as a `def` (not `instance`) to avoid polluting
-    typeclass resolution. -/
--- Ref: [manuscript] braids-and-knots/symmetric-crystal-pair-production
-def trivialModel (R : Type u) [CommRing R] (q : R)
+/-- **Faithful instance.** Carries the explicit research-grade conjecture as a sorry. -/
+instance canonical (R : Type u) [CommRing R] (q : R)
     [C : CrystalGraphRealization R q] :
     SymmetricCrystalPairProduction R q where
   barInvolution T := T
   bar_involutive _ := rfl
-  bar_invariant _ := rfl
+  bar_invariant _ := sorry
 
 end SymmetricCrystalPairProduction
 

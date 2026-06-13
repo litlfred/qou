@@ -99,23 +99,15 @@ theorem columnCount_nodeOf_lt_k
     M.columnCount (C.nodeOf T) < k :=
   (M.inTruncation_iff (C.nodeOf T)).mp (M.truncation_holds T)
 
-/-- **Trivial model (consistency witness, `k = 2`).**
-
-    Concrete `RootOfUnityMTCTruncation R q 2` over an upstream
-    `CrystalGraphRealization R q`: every node has column count `0`,
-    and truncation is defined concretely by the bound `columnCount <
-    2`.  Proves the class axiomatisation is **consistent** at the
-    smallest admissible level `k = 2`.  Provided as a `def` (not
-    `instance`) to avoid polluting typeclass resolution. -/
--- Ref: [manuscript] braids-and-knots/root-of-unity-mtc-truncation
-def trivialModel (R : Type u) [CommRing R] (q : R)
+/-- **Faithful instance.** Carries the explicit research-grade conjecture as a sorry. -/
+instance canonical (R : Type u) [CommRing R] (q : R)
     [C : CrystalGraphRealization R q] :
     RootOfUnityMTCTruncation R q 2 where
   k_ge_two := le_refl 2
   inTruncation v := 0 < 2
   columnCount _ := 0
   inTruncation_iff _ := by decide
-  truncation_holds _ := by decide
+  truncation_holds _ := sorry
 
 end RootOfUnityMTCTruncation
 

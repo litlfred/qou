@@ -92,18 +92,37 @@ theorem combiner_value_three_eq
   norm_num at h
   exact h
 
-/-- **Convergence at every level ≥ 2 (conditional)** — the recursion
-    determines the combiner value at `A+1` from level `A` for all
-    `A ≥ 2`.  This is the full statement of
-    `prop:operator-valued-combiner-convergence`, conditional on the
-    `[WenzlAOperator R q]` instance. -/
+/-- Unwinds the branching recursion using `Nat.rec`.
+    At step `n`, computes the `A = n + 2` combiner value by multiplying the
+    LR weight `lrWeight (n + 1)` with the previously computed value. -/
+def iteratedCombinerValue
+    {R : Type u} [CommRing R] {q : R}
+    [CrystalGraphRealization R q]
+    (W : WenzlAOperator R q) : ℕ → R :=
+  Nat.rec (W.combinerValue 2) (fun n prev => W.lrWeight (n + 2) * prev)
+
+/-- **Convergence at every level ≥ 2 (conditional)** — the iterated application
+    of the branching recursion assembles into a convergent representation.
+    This proves `prop:operator-valued-combiner-convergence` using `Nat.rec`,
+    establishing that the `A`-nucleon value is exactly the unwound
+    accumulation from the `A=2` base case. -/
 -- Ref: [manuscript] docs/audits/2026-06-02-subgoal-1-sdp-multiterm-and-tritium.md
 theorem operator_valued_combiner_convergence
     {R : Type u} [CommRing R] {q : R}
     [CrystalGraphRealization R q]
     [W : WenzlAOperator R q] :
-    ∀ A : ℕ, 2 ≤ A → W.combinerValue (A + 1) = W.lrWeight A * W.combinerValue A :=
-  W.branching_recursion
+    ∀ n : ℕ, W.combinerValue (n + 2) = iteratedCombinerValue W n := by
+  intro n
+  induction n with
+  | zero => rfl
+  | succ k ih =>
+    have h : W.combinerValue (k + 2 + 1) = W.lrWeight (k + 2) * W.combinerValue (k + 2) :=
+      W.branching_recursion (k + 2) (by omega)
+    have eq_idx : k + 1 + 2 = k + 2 + 1 := by omega
+    rw [eq_idx]
+    rw [h]
+    rw [ih]
+    rfl
 
 end WenzlAOperator
 

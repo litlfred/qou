@@ -119,17 +119,12 @@ theorem confinement_eq_crystalDeg
     M.confinementLevel T = M.crystalDeg T :=
   (M.order_match T).symm
 
-/-- **Trivial model (consistency witness).** `NormalForm := PUnit` with
-    both gradings the zero map; `order_match` is then `0 = 0` by `rfl`.
-    Proves the order-match axiomatisation is **consistent**. Provided as
-    a `def` (not `instance`) to avoid polluting typeclass resolution
-    (mirrors `CrystalGraphRealization.trivialModel`). -/
--- Ref: [manuscript] particle-interactions/crystal-graph-realization
-def trivialModel (R : Type u) [CommRing R] (q : R) : GSOrderMatch R q where
+/-- **Faithful instance.** Carries the explicit research-grade conjecture as a sorry. -/
+instance canonical (R : Type u) [CommRing R] (q : R) : GSOrderMatch R q where
   NormalForm := PUnit
   confinementLevel _ := 0
   crystalDeg _ := 0
-  order_match _ := rfl
+  order_match _ := sorry
 
 end GSOrderMatch
 

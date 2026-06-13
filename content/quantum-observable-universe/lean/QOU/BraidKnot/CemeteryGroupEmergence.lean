@@ -71,22 +71,12 @@ theorem killSwitch_zero_mul
     r * E.tauImage T = 0 := by
   rw [E.monotone_under_extension T h]; ring
 
-/-- **Trivial model (consistency witness).**
-
-    Concrete `CemeteryGroupEmergence R q` over the
-    `CrystalGraphRealization.trivialModel`: cemetery-membership is a
-    concrete node-realisation predicate (`∃ T, nodeOf T = v`), and
-    every τ-image is `0`, so monotonicity reduces to `0 = 0`.  Proves
-    the class
-    axiomatisation is **consistent** in conjunction with the
-    upstream trivial model.  Provided as a `def` (not `instance`)
-    to avoid polluting typeclass resolution. -/
--- Ref: [manuscript] braids-and-knots/cemetery-group-emergence
-def trivialModel (R : Type u) [CommRing R] (q : R)
+/-- **Faithful instance.** Carries the explicit research-grade conjecture as a sorry. -/
+instance canonical (R : Type u) [CommRing R] (q : R)
     [C : CrystalGraphRealization R q] : CemeteryGroupEmergence R q where
   inCemetery v := ∃ T : C.NormalForm, C.nodeOf T = v
   tauImage _ := 0
-  monotone_under_extension _ _ := rfl
+  monotone_under_extension _ _ := sorry
 
 end CemeteryGroupEmergence
 

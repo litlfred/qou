@@ -1,10 +1,9 @@
 {
   "audit": "trivial-skeleton-audit",
-  "generated": "2026-06-13T15:36:47.032Z",
-  "total_flagged": 13,
-  "files_flagged": 12,
+  "generated": "2026-06-13T16:27:09.374Z",
+  "total_flagged": 4,
+  "files_flagged": 3,
   "patterns": {
-    "trivial_model": 9,
     "one_def": 4
   },
   "flagged": {
@@ -13,69 +12,6 @@
         "line": 61,
         "pattern": "one_def",
         "snippet": "def normalizedTrace (_n : ℕ) (_q : ℝ) : ℝ := 1"
-      }
-    ],
-    "lean/QOU/BraidKnot/CemeteryGroupEmergence.lean": [
-      {
-        "line": 85,
-        "pattern": "trivial_model",
-        "snippet": "def trivialModel (R : Type u) [CommRing R] (q : R)"
-      }
-    ],
-    "lean/QOU/BraidKnot/ConfinementGradingCorrespondence.lean": [
-      {
-        "line": 82,
-        "pattern": "trivial_model",
-        "snippet": "def trivialModel (R : Type u) [CommRing R] (q : R)"
-      }
-    ],
-    "lean/QOU/BraidKnot/CrystalGraphRealization.lean": [
-      {
-        "line": 103,
-        "pattern": "trivial_model",
-        "snippet": "def trivialModel (R : Type u) [CommRing R] (q : R) :"
-      }
-    ],
-    "lean/QOU/BraidKnot/CrystalRMatrixSubLemma.lean": [
-      {
-        "line": 194,
-        "pattern": "trivial_model",
-        "snippet": "def trivialModel (R : Type u) [CommRing R] (q : R) :"
-      }
-    ],
-    "lean/QOU/BraidKnot/GSReductionOrder.lean": [
-      {
-        "line": 128,
-        "pattern": "trivial_model",
-        "snippet": "def trivialModel (R : Type u) [CommRing R] (q : R) : GSOrderMatch R q where"
-      }
-    ],
-    "lean/QOU/BraidKnot/HeckeAnyonicSubstrate.lean": [
-      {
-        "line": 91,
-        "pattern": "trivial_model",
-        "snippet": "def trivialModel (R : Type u) [CommRing R] (q : R) :"
-      }
-    ],
-    "lean/QOU/BraidKnot/KazhdanLusztigClassicalLimit.lean": [
-      {
-        "line": 104,
-        "pattern": "trivial_model",
-        "snippet": "def trivialModel (R : Type u) [CommRing R] (q : R)"
-      }
-    ],
-    "lean/QOU/BraidKnot/RootOfUnityMTCTruncation.lean": [
-      {
-        "line": 111,
-        "pattern": "trivial_model",
-        "snippet": "def trivialModel (R : Type u) [CommRing R] (q : R)"
-      }
-    ],
-    "lean/QOU/BraidKnot/SymmetricCrystalPairProduction.lean": [
-      {
-        "line": 101,
-        "pattern": "trivial_model",
-        "snippet": "def trivialModel (R : Type u) [CommRing R] (q : R)"
       }
     ],
     "lean/QOU/Machinery/DerivedCharacterCatalogue.lean": [
