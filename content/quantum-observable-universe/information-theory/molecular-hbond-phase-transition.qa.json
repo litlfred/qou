@@ -7,7 +7,7 @@
     "md": "content/quantum-observable-universe/information-theory/molecular-hbond-phase-transition.md"
   },
   "source_hashes": {
-    "md": "ad3c190f7a1b",
+    "md": "ef7d0026428f",
     "ts": "09c3453a0e0b"
   },
   "criteria": {
@@ -136,6 +136,22 @@
         },
         "reviewed_at": "2026-06-13T14:21:48.585Z",
         "reviewed_sha": "ac2abfcb9eba2474f2f49d3e0846da5e403ddda7"
+      },
+      {
+        "field_hash": {
+          "md": "ef7d0026428f",
+          "ts": "09c3453a0e0b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "f849b704ab06",
+          "script_commit_sha": "07b55b2b407ff515c1ce4c9d1e8bca52ad655287"
+        },
+        "reviewed_at": "2026-06-13T14:31:59.507Z",
+        "reviewed_sha": "2d7f83b88ffbab88292a7b2c66de5ae1edb6855b"
       }
     ],
     "voice-editorializing": [
@@ -855,5 +871,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-13T14:21:48.585Z"
+  "updated_at": "2026-06-13T14:31:59.507Z"
 }
