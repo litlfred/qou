@@ -1005,6 +1005,57 @@ does not establish it. The $m_e c^2$ unit transport is the only other
 open input. No comparison of $C(q_0)$ to an experimental Hartree
 $O(1)$ coefficient is made — that comparison is the gated step.
 
+### Round 21 — Mechanism B refuted (kink, not smooth facet); the α² is a q-dimension-layer effect
+
+Witness:
+[`e-hartree-mechanism-b-probe.witness.json`](folio-assistant/computations/e-hartree-mechanism-b-probe.witness.json)
+(producer
+[`e_hartree_mechanism_b_probe.py`](folio-assistant/computations/e_hartree_mechanism_b_probe.py),
+3/3). Round 20 reduced the conjecture to one question: is the
+separated-atom point a **smooth facet** of the binding LP (so
+$y_{\mathrm{cov}} \sim \varepsilon^2$, Mechanism B) or a **kink**?
+This probe answers it on the actual H₂ binding functional
+([`prop:h2-lp-dual-binding`](#prop:h2-lp-dual-binding),
+[`h2-molecular-binding.py`](folio-assistant/computations/h2-molecular-binding.py)):
+interpolate every inter-atomic (covalent-channel) crossing toward the
+identity by $\varepsilon \in [0,1]$ — $\varepsilon = 0$ is two
+separated atoms, $\varepsilon = 1$ is the molecule — and read the
+leading power of $B(\varepsilon) = \Phi_1(\mathrm{H}_2;\varepsilon) -
+\Phi_1(2\mathrm{H})$.
+
+**Result: $B(\varepsilon)$ is linear** — $p = 1.0$ to machine
+precision, $B/\varepsilon \to -9.118$ (a nonzero constant) while
+$B/\varepsilon^2$ diverges — and the **LP-optimal strand ordering
+switches** $(0,1,2,3) \to (0,3,1,2)$ as $\varepsilon \to 0$. So the
+separated-atom point is a **kink**, not a smooth facet: **Mechanism B
+fails as stated**, exactly the risk this block's Mechanism B
+discussion flagged. (The $-9.118$ leading coefficient agrees with
+round 13's $-9\theta$ leading term, confirming the linearity from an
+independent deformation.)
+
+**This is progress, not regression — it eliminates the Markov-layer
+route.** The $\alpha_{EM}^2$ scaling is real (round 20) but it does
+**not** come from LP-dual smoothness in the Markov-trace layer; it
+comes from the **q-dimension-layer trace-ratio**
+$\rho_{(2,2)} = C(q)\,\alpha_{EM}^2$. This unifies the investigation:
+round 11 ($\alpha_{EM}$ lives in the q-dimension layer, not the Markov
+layer), round 13 (the raw Markov binding is linear in $\theta$ and
+non-perturbative at $q_0$), round 20 ($\alpha^2$ from the q-dim
+trace-ratio), and round 21 (the Markov-layer LP route is a kink — so
+it *cannot* be where $\alpha^2$ lives). The three candidate mechanisms
+are now all resolved: A (per-crossing $\alpha$ factor) refuted
+(round 10), **B (LP-dual smoothness) refuted (round 21)**, C (antipode
+parity) refuted (the $S(\alpha) = q^2\alpha$ scaling, this block).
+
+**Re-sharpened remaining gap.** Not "is the LP point smooth" (no, it
+is a kink) but: *why does the q-dimension-layer trace-ratio
+$\rho_{(2,2)}$ — rather than the Markov-layer binding $y_{\mathrm{cov}}$
+— set the physical energy?* That is the **q-dimension-decoration →
+archimedean functor** ($\delta_q$, round 11), plus the standing
+$m_e c^2$ unit transport. The closure is no longer gated on an LP-
+smoothness fact that is now known false; it is gated on the
+q-dim-layer-to-archimedean bridge.
+
 ### What is still missing for closure
 
 A genuinely categorical derivation of the $\alpha_{EM}^{2}$ scaling
