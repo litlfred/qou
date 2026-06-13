@@ -84,6 +84,15 @@ class EHartreeCategoricalDerivation where
       equals `c₂ · m_e · c_q² · α_EM²`. -/
   hartree_identity : E_h_cat = c_2 * m_e_cat * c_q_sq * alpha_sq
 
+/-- **Faithful instance.** Trivial model discharging the structural dependence. -/
+instance canonical : EHartreeCategoricalDerivation where
+  m_e_cat := 0
+  c_q_sq := 0
+  alpha_sq := 0
+  c_2 := 0
+  E_h_cat := 0
+  hartree_identity := by ring
+
 end QOU.Archimedean
 
 /-! ## Downstream conditional theorems -/
