@@ -98,10 +98,18 @@ where $c_4 = -0.97157$ was a fit).
   *every* prime $p$, $\Phi_p(1/q)\,q^{p-1} = \Phi_p(q)$ — subsuming the $d=2,3$
   lemmas above and extending to $p = 5, 7, 11, \dots$. Because
   $\Phi_p = \sum_{i<p} X^i$, the identity is the index reflection
-  $\sum_{i<p} q^{p-1-i} = \sum_{i<p} q^i$, with no per-prime computation. The
-  remaining composite $d$ (4, 8, 9, …) require the general palindrome
-  $\operatorname{reverse}(\Phi_d) = \Phi_d$ (not yet in Mathlib); $\Phi_6$ above
-  is the one composite the program uses.
+  $\sum_{i<p} q^{p-1-i} = \sum_{i<p} q^i$, with no per-prime computation.
+- The **fully general case** `cyclotomic_self_reverse` and
+  `cyclotomic_bar_stable_general` (sorry-free): for *every* $n > 1$ (over any
+  integral domain) $\Phi_n$ is self-reciprocal —
+  $\operatorname{reverse}(\Phi_n) = \Phi_n$, equivalently
+  $\Phi_n(1/q)\,q^{\varphi(n)} = \Phi_n(q)$ — subsuming **all** the explicit and
+  prime cases above, including every composite $d$ (4, 8, 9, …). Mathlib carries
+  no cyclotomic palindrome lemma; this is proved here by strong induction on the
+  divisor product $\prod_{d \mid n}\Phi_d = X^n - 1$ (peeling $d=1$ for the
+  anti-palindrome sign, the inductive hypothesis on $1 < d < n$, then cancelling
+  the nonzero proper-divisor product), with the eval form following via
+  `eval₂_reverse_mul_pow`.
 - A companion compute scaffold
   ([`qbeta_c_k_recursion_scaffold.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/qbeta/qbeta_c_k_recursion_scaffold.py))
   demonstrating the recursion machinery on toy depth-1 and depth-2
