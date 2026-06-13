@@ -91,7 +91,7 @@ theorem qInteger_three (q : ℝ) (hq : q - q⁻¹ ≠ 0) :
     − q⁻^(n+1))/(q − q⁻¹)`, one rearranges the numerator
     `q^(n+1) − q⁻^(n+1) = q · (q^n − q⁻^n) + q⁻ⁿ · (q − q⁻¹)`
     which yields the recursion after dividing by `q − q⁻¹`. -/
-theorem qInteger_succ (q : ℝ) (n : ℕ) (hq : q - q⁻¹ ≠ 0) (hq0 : q ≠ 0) :
+theorem qInteger_succ (q : ℝ) (n : ℕ) (hq : q - q⁻¹ ≠ 0) (_hq0 : q ≠ 0) :
     qInteger q (n + 1) = q * qInteger q n + q⁻¹ ^ n := by
   unfold qInteger
   rw [div_eq_iff hq, add_mul, mul_assoc, div_mul_cancel₀ _ hq]
