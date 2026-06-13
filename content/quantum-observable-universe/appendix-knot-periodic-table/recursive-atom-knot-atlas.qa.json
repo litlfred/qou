@@ -363,21 +363,20 @@
       },
       {
         "field_hash": {
-          "md": "82351c8bd514",
-          "ts": "2419e0b47ac0",
+          "md": "9638139b985e",
+          "ts": "4f3ae2d1d96c",
           "lean": "d9cd4931757c"
         },
         "result": "pass",
-        "evidence": "recursive-atom-knot-atlas.lean defines atomKnotAtlas : List AtlasEntry mirroring the narrative atlas structure; Lean AtlasEntry fields (braid_word, closure_knot, methodology, etc.) match the .md table columns exactly",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-04",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-04T14:03:37.485Z",
-        "reviewed_sha": "c014067cdd67ac2ee17119c9500173c36af98215"
+        "reviewed_at": "2026-06-13T03:15:30.898Z",
+        "reviewed_sha": "d9ddbd6c3006a8706e3cc06f5eeb6ebf049cc031"
       }
     ],
     "voice-author-notes-pollution": [
@@ -416,78 +415,77 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "82351c8bd514",
-          "ts": "2419e0b47ac0",
+          "md": "9638139b985e",
+          "ts": "4f3ae2d1d96c",
           "lean": "d9cd4931757c"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-04",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-04T14:02:52.166Z",
-        "reviewed_sha": "c014067cdd67ac2ee17119c9500173c36af98215"
+        "reviewed_at": "2026-06-13T03:15:30.898Z",
+        "reviewed_sha": "d9ddbd6c3006a8706e3cc06f5eeb6ebf049cc031"
       }
     ],
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "82351c8bd514",
-          "ts": "2419e0b47ac0",
+          "md": "9638139b985e",
+          "ts": "4f3ae2d1d96c",
           "lean": "d9cd4931757c"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-04",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-04T14:03:11.445Z",
-        "reviewed_sha": "c014067cdd67ac2ee17119c9500173c36af98215"
+        "reviewed_at": "2026-06-13T03:15:30.898Z",
+        "reviewed_sha": "d9ddbd6c3006a8706e3cc06f5eeb6ebf049cc031"
       }
     ],
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "82351c8bd514",
-          "ts": "2419e0b47ac0",
+          "md": "9638139b985e",
+          "ts": "4f3ae2d1d96c",
           "lean": "d9cd4931757c"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-04",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-04T14:03:11.487Z",
-        "reviewed_sha": "c014067cdd67ac2ee17119c9500173c36af98215"
+        "reviewed_at": "2026-06-13T03:15:30.898Z",
+        "reviewed_sha": "d9ddbd6c3006a8706e3cc06f5eeb6ebf049cc031"
       }
     ],
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "82351c8bd514",
-          "ts": "2419e0b47ac0",
+          "md": "9638139b985e",
+          "ts": "4f3ae2d1d96c",
           "lean": "d9cd4931757c"
         },
         "result": "pass",
-        "evidence": "recursive-atom-knot-atlas.md — no narrative Proof section; atlas is a data registry, no linarith/IVT/continuity arguments present",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-04",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-04T14:03:11.529Z",
-        "reviewed_sha": "c014067cdd67ac2ee17119c9500173c36af98215"
+        "reviewed_at": "2026-06-13T03:15:30.898Z",
+        "reviewed_sha": "d9ddbd6c3006a8706e3cc06f5eeb6ebf049cc031"
       }
     ],
     "detangler-no-forward-ref": [
@@ -1332,7 +1330,83 @@
         "reviewed_at": "2026-06-11T18:06:24.673Z",
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7"
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "9638139b985e",
+          "ts": "4f3ae2d1d96c",
+          "lean": "d9cd4931757c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T03:15:30.898Z",
+        "reviewed_sha": "d9ddbd6c3006a8706e3cc06f5eeb6ebf049cc031"
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "9638139b985e",
+          "ts": "4f3ae2d1d96c",
+          "lean": "d9cd4931757c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T03:15:30.898Z",
+        "reviewed_sha": "d9ddbd6c3006a8706e3cc06f5eeb6ebf049cc031"
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "9638139b985e",
+          "ts": "4f3ae2d1d96c",
+          "lean": "d9cd4931757c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T03:15:30.898Z",
+        "reviewed_sha": "d9ddbd6c3006a8706e3cc06f5eeb6ebf049cc031"
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "9638139b985e",
+          "ts": "4f3ae2d1d96c",
+          "lean": "d9cd4931757c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T03:15:30.898Z",
+        "reviewed_sha": "d9ddbd6c3006a8706e3cc06f5eeb6ebf049cc031"
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-13T03:15:30.898Z"
 }

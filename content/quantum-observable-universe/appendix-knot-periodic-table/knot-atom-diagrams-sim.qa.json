@@ -162,16 +162,15 @@
           "ts": "6767dc670787"
         },
         "result": "pass",
-        "evidence": "simulator for knot diagrams of light atoms; placed in sec:knot-atom-diagrams of app:knot-periodic-table — matches section topic exactly",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-04",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-04T14:04:36.596Z",
-        "reviewed_sha": "c014067cdd67ac2ee17119c9500173c36af98215"
+        "reviewed_at": "2026-06-13T03:15:30.898Z",
+        "reviewed_sha": "d9ddbd6c3006a8706e3cc06f5eeb6ebf049cc031"
       }
     ],
     "detangler-no-forward-ref": [
@@ -766,5 +765,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-13T03:15:30.898Z"
 }
