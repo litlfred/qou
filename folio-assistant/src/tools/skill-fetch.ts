@@ -1,5 +1,8 @@
 import { z } from "zod";
 import type { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
+import { readFileSync, existsSync } from "node:fs";
+import { resolve, join } from "node:path";
+import { fileURLToPath } from "node:url";
 
 // Session-level cache (lives for the lifetime of the MCP server process)
 const skillCache = new Map<string, { content: string; fetchedAt: number }>();
@@ -32,6 +35,13 @@ const REFERENCE_PACKAGES: Record<string, { repo: string; ref: string; skills: Re
   },
 };
 
+const LOCAL_SKILLS = [
+  "deployment-auth",
+  "editor",
+  "todo-review",
+  "readability-editing",
+  "symbiotic-interaction"
+];
 export function registerSkillFetchTools(server: McpServer): void {
   server.tool(
     "skill_fetch",
@@ -49,12 +59,44 @@ export function registerSkillFetchTools(server: McpServer): void {
       ),
     },
     async ({ skill, package_name }) => {
+      if (package_name === "folio-assistant") {
+        if (!LOCAL_SKILLS.includes(skill)) {
+          return {
+            content: [{
+              type: "text" as const,
+              text: `Error: Unknown local skill '${skill}'. Available: ${LOCAL_SKILLS.join(", ")}`,
+            }],
+          };
+        }
+        
+        // Since skill-fetch.ts is in src/tools/, skills are in src/skills/
+        const srcDir = resolve(__dirname, "..");
+        const skillPath = join(srcDir, "skills", `${skill}.md`);
+        
+        if (!existsSync(skillPath)) {
+          return {
+            content: [{
+              type: "text" as const,
+              text: `Error: Skill file not found at ${skillPath}`,
+            }],
+          };
+        }
+        
+        const content = readFileSync(skillPath, "utf-8");
+        return {
+          content: [{
+            type: "text" as const,
+            text: `# ${skill} (served locally from folio-assistant)\n\n${content}`,
+          }],
+        };
+      }
+
       const pkg = REFERENCE_PACKAGES[package_name];
       if (!pkg) {
         return {
           content: [{
             type: "text" as const,
-            text: `Error: Unknown package '${package_name}'. Available: ${Object.keys(REFERENCE_PACKAGES).join(", ")}`,
+            text: `Error: Unknown package '${package_name}'. Available: ${Object.keys(REFERENCE_PACKAGES).join(", ")}, folio-assistant`,
           }],
         };
       }
@@ -119,6 +161,13 @@ export function registerSkillFetchTools(server: McpServer): void {
     {},
     async () => {
       const lines: string[] = ["# Available External Skills (Reference Packages)\n"];
+      
+      lines.push(`## folio-assistant (local)`);
+      for (const localSkill of LOCAL_SKILLS) {
+        lines.push(`- **${localSkill}** — \`folio-assistant/src/skills/${localSkill}.md\``);
+      }
+      lines.push("");
+
       for (const [pkgName, pkg] of Object.entries(REFERENCE_PACKAGES)) {
         lines.push(`## ${pkgName} (${pkg.repo})\n`);
         for (const [skillId, path] of Object.entries(pkg.skills)) {
