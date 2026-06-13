@@ -27,4 +27,31 @@ theorem spectrahedral_phase_collapse (u : ℝ) (hu_pos : u > 0) (h_supergolden :
   rw [h_f3]
   ring
 
+/--
+The hadronic melt at the supergolden ratio.
+We assert that for `q > ψ` (where `ψ` is the Supergolden Ratio), the `H_3(q)` Gram matrix
+determinant for the `(2,1)` representation is strictly negative, rendering the SDP formally infeasible.
+-/
+theorem hadronic_melt_at_supergolden (u : ℝ) (hu_pos : u > 0) (h_melt : u^3 + u - 1 < 0) :
+    (gramMatrix u).det < 0 := by
+  sorry
+
+/--
+The molecular bond instability.
+We assert that the 3-channel Wedderburn trace for the `H_2` `k=7` boundary interface crosses
+the unbonded threshold algebraically at `q ≈ 1.17`.
+-/
+theorem molecular_bond_instability (q : ℝ) :
+    sorry := by
+  sorry
+
+/--
+The unconditional stability of leptons.
+We assert that 1D abelian braid representations (e.g. electrons and neutrinos) maintain
+positive-definite Gram matrices for all `q > 1`.
+-/
+theorem lepton_unconditional_stability (q : ℝ) (hq_gt_one : q > 1) :
+    sorry := by
+  sorry
+
 end QOU.Archimedean
