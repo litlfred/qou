@@ -239,13 +239,13 @@ round-20 `α²` algebra remain (and `prop:force-carrier-intertwining-corresponde
 is e-hartree-conditional, so the `(2,1,1)` coincidence is corroboration only). -/
 theorem em_channel_forced_to_two_two :
     ([[2, 2], [2, 1, 1], [1, 1, 1, 1]] : List (List ℕ)).filter
-      (fun l => decide (conjPart l = l)) = [[2, 2]] := by decide
+      (fun l => conjPart l == l) = [[2, 2]] := by decide
 
 /-- `(2,2)` is the **unique** self-conjugate partition of `4` (the fact the
 corpus cites for the EM block — `(2,2)ᵀ = (2,2)`, while `(4)↔(1,1,1,1)` and
 `(3,1)↔(2,1,1)` swap), re-derived here by `decide`. -/
 theorem unique_self_conjugate_partition_of_four :
     ([[4], [3, 1], [2, 2], [2, 1, 1], [1, 1, 1, 1]] : List (List ℕ)).filter
-      (fun l => decide (conjPart l = l)) = [[2, 2]] := by decide
+      (fun l => conjPart l == l) = [[2, 2]] := by decide
 
 end QOU.Archimedean.EHartreeTraceRatio
