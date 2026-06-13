@@ -63,7 +63,7 @@ class P4UniversalityContext where
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/p4-universality.ts
 theorem p4_universality [ctx : P4UniversalityContext]
     (v₀ v₀' : ctx.InitialData) : ctx.α v₀ = ctx.α v₀' :=
-  let ⟨f, hf⟩ := ctx.alpha_factors_through_invariants
+  let ⟨_f, hf⟩ := ctx.alpha_factors_through_invariants
   (hf v₀).trans (hf v₀').symm
 
 end QOU.FluidDynamics

@@ -1,5 +1,6 @@
 import Mathlib.Algebra.Ring.Defs
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
+import Mathlib.Data.Fintype.Basic
 
 /-!
 # QOU.FluidDynamics.leray_profile — finite-dimensional Leray profile
@@ -48,7 +49,7 @@ class LerayProfileContext (R : Type*) [CommRing R] where
   basis_at_zero : ∀ n, basis n 0 = 1
   /-- **Finite ansatz (the representation-theoretic input):** `V` is the
       finite sum of its weight components. -/
-  profile_expansion : ∀ x : R, V x = ∑ n, V_coeff n * basis n x
+  profile_expansion : ∀ x : R, V x = ∑ n : Fin (j_max + 1), V_coeff n * basis n x
 
 /-- **Leray-profile reconstruction** ([`prop:leray-profile`]).
 
