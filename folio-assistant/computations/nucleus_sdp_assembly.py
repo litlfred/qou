@@ -163,15 +163,22 @@ def build_cost_gram(
     return cost_gram_from_arrays(keys, parts, dims, y, chi_v, n=n, tr_M_check=tr_M_check)
 
 
-def solve_real_sdp(cg: CostGram, n_target: float) -> dict:
-    """LP + SDP operator-selection solve through the canonical dual-emitting
-    entry point. Returns `{'lp': ..., 'sdp': ...}` with primal + dual + gap
-    (CLAUDE.md §LP/SDP duals)."""
+def solve_real_sdp_arrays(t, G, n_target: float) -> dict:
+    """LP + SDP operator-selection solve from raw cost `t` + Gram `G` through
+    the canonical dual-emitting entry point. Returns `{'lp': ..., 'sdp': ...}`
+    with primal + dual + gap (CLAUDE.md §LP/SDP duals — always emit BOTH)."""
     solve_lp, solve_sdp = _solver()
-    G = cg.gram
-    lp = solve_lp(cg.t, G, n_target)
-    sdp = solve_sdp(cg.t, G, n_target)
+    t = np.asarray(t, dtype=float)
+    G = np.asarray(G, dtype=float)
+    lp = solve_lp(t, G, n_target)
+    sdp = solve_sdp(t, G, n_target)
     return {"lp": lp.to_dict(), "sdp": sdp.to_dict()}
+
+
+def solve_real_sdp(cg: CostGram, n_target: float) -> dict:
+    """LP + SDP solve from a `CostGram` (delegates to `solve_real_sdp_arrays`
+    with `cg.t` and `cg.gram`)."""
+    return solve_real_sdp_arrays(cg.t, cg.gram, n_target)
 
 
 def tr_M_from_cache(
