@@ -11,8 +11,10 @@ allowed-tools: Read Grep Glob TodoWrite AskUserQuestion
 # Session Task Manager (`beans`)
 
 > **Disambiguation:**
-> - `todo-manager` (this file) = the agent's **session work-plan**.
->   This is now managed entirely via the `beans` CLI issue tracker (data stored in `.beans/`).
+> - `beans` (`todo-manager`, this file) = the agent's **session work-plan**.
+>   Managed entirely via the `beans` CLI issue tracker (data stored in `.beans/`).
+> - `sidecars` (`.qa.json` and `.witness.json` files) = **content state tracking**.
+>   Beans and sidecars are NOT synonymous! Do NOT convert QA queue items from `qa-sweep.ts` into beans. They are completely separate workflow systems.
 > - `todo-review` = triage of **content feedback** stored in
 >   `todos/content-todos.ts` and surfaced via the MCP `/todos`
 >   dashboard. That is paper-content scope, not session scope.
