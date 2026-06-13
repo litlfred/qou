@@ -132,6 +132,9 @@ noncomputable def binding_energy_bw (q m_e : ℝ) (Z N : ℕ)
     `theorem`/`proposition` per CLAUDE.md §3b-cond.
 
     Ref: [manuscript] Ch 11 §8, conj:q-integer-mass-formula -/
+/-- **Predicate:** Identifies experimental binding energies from the Atomic Mass Evaluation (AME) database. -/
+class IsAMEValue (Z N : ℕ) (B_AME : ℝ) : Prop
+
 class QIntegerMassFormula where
   /-- Magic-proximity function. Peaks at the nuclear magic numbers
       {2, 8, 20, 28, 50, 82, 126}; smooth decay between magics. -/
@@ -147,7 +150,7 @@ class QIntegerMassFormula where
       This is the conjecture proper; the `sorry` in a concrete
       instance carries this assertion. -/
   fits_AME :
-    ∀ (q m_e : ℝ) (Z N : ℕ) (B_AME : ℝ),
+    ∀ (q m_e : ℝ) (Z N : ℕ) (B_AME : ℝ) [IsAMEValue Z N B_AME],
       ∃ δ : ℝ, |δ| ≤ tolerance ∧
         B_AME = (1 + δ) * binding_energy_bw q m_e Z N (f_magic Z) (f_magic N)
 
@@ -157,7 +160,7 @@ class QIntegerMassFormula where
     binding energy and the seven-term prediction. Fully verified
     by Lean once an instance is fixed. -/
 theorem fits_AME_conditional [inst : QIntegerMassFormula]
-    (q m_e : ℝ) (Z N : ℕ) (B_AME : ℝ) :
+    (q m_e : ℝ) (Z N : ℕ) (B_AME : ℝ) [IsAMEValue Z N B_AME] :
     ∃ δ : ℝ, |δ| ≤ inst.tolerance ∧
       B_AME = (1 + δ) * binding_energy_bw q m_e Z N
         (inst.f_magic Z) (inst.f_magic N) :=
