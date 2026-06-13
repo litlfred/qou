@@ -273,10 +273,12 @@
     "id": "triage-alpha-em-4pi-sibling-family",
     "summary": "Triage the stalled alpha-em-4pi-* / alpha-em-* sibling family (12 open PRs)",
     "comment": "QUEUED 2026-06-10 (user: \"queue up _EM sibling family (alpha-em-4pi-*) .... I think agent stalled. not sure complete\"). 24+ branches, 12 OPEN PRs spanning 2026-05-30..2026-06-09, none recently merged — a stalled derivation family. Open PRs: #1495 (coord ledger, 06-09), #1733 (alpha_r r=15 scaffold), #1521 (Habiro [2]_q(1-h2a) IS closed fermion-loop), #1503 (subgoal-1 to CAL-2 floor + O(a2)), #1538/#1527/#1549/#1552 (RT phases 1-4), #1523 (categorical id content), #1508 (lean conditional theorem), #1491 (H refinement), #1505 (canonical-chain walkthrough). TASK: triage — (1) identify the CANONICAL/complete alpha_EM derivation among them; (2) check which are SUPERSEDED by the already-merged Habiro element [2]_q(1-h2*alpha) (content/.../braids-and-knots/alpha-em-habiro-bar-involution on main, bar-symmetric cosh sector); (3) merge the canonical one via /prepare-merge, close refuted/superseded/duplicate PRs; (4) find the stalled agent / confirm completeness. Many are REFUTED attempts (gap-i/ii/iii, B_4 PSLQ, q-vertex) that should likely close. CROSS-REF: the vdW sinh/cosh research (this session, merged PR #2093) reuses the SAME bar-involution + Habiro machinery (crossing-energy-decomposition cosh/sinh, rem-im-q-vs-p-skew); coordinate the two. Anti-pattern guard: the 12-candidate alpha_EM refutation log (alpha-em-4pi-derived-form AGENT WARNING) — do not re-run refuted candidates.",
-    "status": "open",
+    "status": "done",
     "priority": "high",
     "origin": "user-2026-06-10",
     "createdAt": "2026-06-10",
+    "completedAt": "2026-06-13",
+    "completedBy": "antigravity",
     "data": {
       "goal": "1ppq-alpha-em",
       "open_prs": [
