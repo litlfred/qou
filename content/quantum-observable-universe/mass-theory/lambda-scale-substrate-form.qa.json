@@ -347,23 +347,23 @@
       },
       {
         "field_hash": {
-          "md": "318eb33aad53",
-          "ts": "2bade417615a",
+          "md": "82b936b8864d",
+          "ts": "4cbda4b9d7ed",
           "lean": "0d43967d00bf"
         },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "Lean theorem lambdaA_qForm_eq_hForm (q:ℝ)(hq:q≠0) matches .md claim λ_A(q)=5/2+(3/4)h² exactly.",
+        "result": "warn",
+        "severity": "major",
+        "evidence": "lambda-scale-substrate-form.lean:48-49 — lambdaA_qForm is DEFINED as (3q^2+4+3q^-2)/4; the narrative first equality (1/4) sum_lambda dim_q V_lambda = that polynomial (md:28-29) is comment-only. lean:81-94 — c4/higher-even theorems are degenerate-witness rfl-tautologies (exists c, c = 0 and f h = ... + c*h^4). Core identity qForm = hForm genuinely proved (lean:59-63), q-inverse symmetry too (lean:99-108).",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-06",
+          "agent_date": "2026-06-13",
           "agent_skill": "qa-agent-drain"
         },
-        "reviewed_at": "2026-06-06T00:54:22.202Z",
-        "reviewed_sha": "8e360dbc3f6cbc3edf8efdd9017899182aa12a43",
-        "notes": "Narrative and Lean signature express identical Family A closed-form claim."
+        "reviewed_at": "2026-06-13T01:18:38.285Z",
+        "reviewed_sha": "5a0a217edc86c5a7edf5d5264339673c94c67b09",
+        "notes": "Central h-form identity and symmetry faithfully formalized; the quantum-dimension-sum input is dropped to a docstring, and the no-higher-corrections clause is encoded as definitional tautologies rather than coefficient extraction."
       }
     ],
     "voice-author-notes-pollution": [
@@ -404,89 +404,89 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "318eb33aad53",
-          "ts": "2bade417615a",
+          "md": "82b936b8864d",
+          "ts": "4cbda4b9d7ed",
           "lean": "0d43967d00bf"
         },
-        "result": "pass",
+        "result": "fail",
         "severity": "minor",
-        "evidence": "Title is a bare claim; physical interpretation lives in separate remarks and authorNotes.",
+        "evidence": "lambda-scale-substrate-form.md:3-14 \"Status — what is canonical here\" paragraph (falsification/purge history, \"Do not revive\") + md:43-51 \"Structural interpretation of the leading term\" section; grep finds no companion remark with interprets: prop:lambda-scale-substrate-form.",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-06",
+          "agent_date": "2026-06-13",
           "agent_skill": "qa-agent-drain"
         },
-        "reviewed_at": "2026-06-06T00:52:56.474Z",
-        "reviewed_sha": "8e360dbc3f6cbc3edf8efdd9017899182aa12a43",
-        "notes": "Statement is proposition-only; no embedded interpretation in title."
+        "reviewed_at": "2026-06-13T01:18:38.144Z",
+        "reviewed_sha": "5a0a217edc86c5a7edf5d5264339673c94c67b09",
+        "notes": "Statement block carries substantial status/interpretation prose in-block with no companion interprets: remark; the status material duplicates the .ts authorNotes (deprecated, 2026-05-27) and belongs there."
       }
     ],
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "318eb33aad53",
-          "ts": "2bade417615a",
+          "md": "82b936b8864d",
+          "ts": "4cbda4b9d7ed",
           "lean": "0d43967d00bf"
         },
-        "result": "pass",
+        "result": "warn",
         "severity": "minor",
-        "evidence": "Block is in mass-theory; its primary subject is the Borromean baryon λ_scale form — directly on-topic for mass-theory chapter.",
+        "evidence": "mass-theory.ts:864 — listed in sec:mass-physical-face (topical fit OK), but .ts:51-52 title still advertises the FALSIFIED \"empirical form 5/2 - h^2 G (acknowledged-CAL-4)\" while md:24-34 content is the proved Family A theorem 5/2 + (3/4)h^2; .ts:40-41 history says kind demoted to conjecture (PR #904) yet builder/label remain proposition/prop:.",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-06",
+          "agent_date": "2026-06-13",
           "agent_skill": "qa-agent-drain"
         },
-        "reviewed_at": "2026-06-06T00:53:09.219Z",
-        "reviewed_sha": "8e360dbc3f6cbc3edf8efdd9017899182aa12a43",
-        "notes": "Content fits mass-theory chapter scope."
+        "reviewed_at": "2026-06-13T01:18:38.180Z",
+        "reviewed_sha": "5a0a217edc86c5a7edf5d5264339673c94c67b09",
+        "notes": "Placement fine; title-vs-content and kind/label inconsistency make the block partially self-contradictory — warn, not fail (authorNotes document the retention rationale)."
       }
     ],
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "318eb33aad53",
-          "ts": "2bade417615a",
+          "md": "82b936b8864d",
+          "ts": "4cbda4b9d7ed",
           "lean": "0d43967d00bf"
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "Statement is λ_A(q) = 5/2 + (3/4)h² over ℝ with q≠0; mass-theory is archimedean chapter, ℝ specialisation is appropriate.",
+        "evidence": "lambda-scale-substrate-form.md:1 — \"Lean sibling: archimedean specialisation over R (CLAUDE.md §7c). Underlying combinatorial content stays generic...\" banner present; q_0 in R declared at md:18.",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-06",
+          "agent_date": "2026-06-13",
           "agent_skill": "qa-agent-drain"
         },
-        "reviewed_at": "2026-06-06T00:53:45.249Z",
-        "reviewed_sha": "8e360dbc3f6cbc3edf8efdd9017899182aa12a43",
-        "notes": "Archimedean ℝ usage correct for mass-theory chapter."
+        "reviewed_at": "2026-06-13T01:18:38.215Z",
+        "reviewed_sha": "5a0a217edc86c5a7edf5d5264339673c94c67b09",
+        "notes": "Archimedean usage is explicitly banner-ed per §7c; statement matches declared regime."
       }
     ],
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "318eb33aad53",
-          "ts": "2bade417615a",
+          "md": "82b936b8864d",
+          "ts": "4cbda4b9d7ed",
           "lean": "0d43967d00bf"
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "Proof is algebraic substitution h²=q²−2+q⁻²; uses ring/linarith tactics appropriate for real-q archimedean chapter.",
+        "evidence": "lambda-scale-substrate-form.md:36-40 — proof is direct algebraic computation (\"Division by 4 and substitution h = q - q^{-1} yields the form via field_simp; ring\"); .lean:59-63 matches.",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-06",
+          "agent_date": "2026-06-13",
           "agent_skill": "qa-agent-drain"
         },
-        "reviewed_at": "2026-06-06T00:54:03.977Z",
-        "reviewed_sha": "8e360dbc3f6cbc3edf8efdd9017899182aa12a43",
-        "notes": "Proof machinery matches archimedean chapter."
+        "reviewed_at": "2026-06-13T01:18:38.251Z",
+        "reviewed_sha": "5a0a217edc86c5a7edf5d5264339673c94c67b09",
+        "notes": "Algebraic identity proved by ring algebra under the declared §7c archimedean specialisation; no wall violation."
       }
     ],
     "proof-no-axiom-growth": [
@@ -1314,7 +1314,104 @@
         "reviewed_at": "2026-06-11T18:06:24.673Z",
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7"
       }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "82b936b8864d",
+          "ts": "4cbda4b9d7ed",
+          "lean": "0d43967d00bf"
+        },
+        "result": "warn",
+        "severity": "major",
+        "evidence": "lambda-scale-substrate-form.lean:48-49 — definition replaces the narrative Wedderburn sum (weakening disclosed in the docstring lean:42-47); .ts:51-52 title still names the falsified 5/2 - h^2 G form vs the proved 5/2 + (3/4)h^2 (documented in authorNotes .ts:73). No sorry, no axiom, no True-stub; lean.ref decl lambdaA_qForm_eq_hForm proved by field_simp; ring.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:18:38.320Z",
+        "reviewed_sha": "5a0a217edc86c5a7edf5d5264339673c94c67b09",
+        "notes": "Weakenings are loudly documented (docstring + authorNotes + md Status), so warn not fail; \"Theorem c_4 (= 0)\" headers overstate the degenerate-witness content."
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "82b936b8864d",
+          "ts": "4cbda4b9d7ed",
+          "lean": "0d43967d00bf"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.85,
+          "max": 1
+        },
+        "evidence": "lambda-scale-substrate-form.md:36-40 — proof plan stated (list the 5 quantum dimensions, sum, substitute h = q - q^{-1}, field_simp; ring); .lean:21-25 enumerates all c_i targets up front.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:19:36.064Z",
+        "reviewed_sha": "5a0a217edc86c5a7edf5d5264339673c94c67b09",
+        "notes": "Reader knows the plan before the steps in both narrative and Lean."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "82b936b8864d",
+          "ts": "4cbda4b9d7ed",
+          "lean": "0d43967d00bf"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.85,
+          "max": 1
+        },
+        "evidence": "lambda-scale-substrate-form.lean — sorry-free; all theorems close by field_simp/ring/norm_num. Remaining formalization gap (hook-content quantum dimensions summing to 3q^2+4+3q^-2, currently sympy-verified per md:39) is routine.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:19:36.102Z",
+        "reviewed_sha": "5a0a217edc86c5a7edf5d5264339673c94c67b09",
+        "notes": "Sorry-free proof; the one unformalized input is a routine finite computation."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "82b936b8864d",
+          "ts": "4cbda4b9d7ed",
+          "lean": "0d43967d00bf"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.55,
+          "max": 1
+        },
+        "evidence": "lambda-scale-substrate-form.md:24-34 — concrete H_4 half-symmetric Wedderburn-sum evaluation, the production linking_weight value per the authorNotes; method overlaps prop:y-lambda-closed-form-wenzl-bridge and is a standard quantum-dimension sum.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:19:36.137Z",
+        "reviewed_sha": "5a0a217edc86c5a7edf5d5264339673c94c67b09",
+        "notes": "Production-relevant concrete value, but the argument is a standard Wedderburn/quantum-dimension computation, not a novel technique."
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-13T01:19:36.137Z"
 }
