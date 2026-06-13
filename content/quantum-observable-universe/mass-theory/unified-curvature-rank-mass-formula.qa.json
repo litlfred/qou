@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "2e732d62d8df",
     "ts": "119e6c41a67c",
-    "lean": "57dbd118eab6"
+    "lean": "18351b6436ca"
   },
   "criteria": {
     "voice-status-leak": [
@@ -189,6 +189,24 @@
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
         "notes": "Label 'prop:unified-curvature-rank-mass-formula' → expected 'unified_curvature_rank_mass_formula'; Lean declares: StratumBlock, Phi_at_depth, unified_curvature_rank_mass, unified_mass_finite, term_6_plus_term_7_eq_high_strata_axiom.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "2e732d62d8df",
+          "ts": "119e6c41a67c",
+          "lean": "18351b6436ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:17:54.244Z",
+        "reviewed_sha": "6689019c10d0a67dbfe63a02972f553de8e358a4",
+        "notes": "Auto-drained by agent"
       }
     ],
     "voice-author-notes-pollution": [
@@ -1118,7 +1136,87 @@
         "reviewed_at": "2026-06-11T18:06:24.673Z",
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7"
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "2e732d62d8df",
+          "ts": "119e6c41a67c",
+          "lean": "18351b6436ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:17:54.244Z",
+        "reviewed_sha": "6689019c10d0a67dbfe63a02972f553de8e358a4",
+        "notes": "Auto-drained by agent"
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "2e732d62d8df",
+          "ts": "119e6c41a67c",
+          "lean": "18351b6436ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:17:54.244Z",
+        "reviewed_sha": "6689019c10d0a67dbfe63a02972f553de8e358a4",
+        "notes": "Auto-drained by agent"
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "2e732d62d8df",
+          "ts": "119e6c41a67c",
+          "lean": "18351b6436ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:17:54.244Z",
+        "reviewed_sha": "6689019c10d0a67dbfe63a02972f553de8e358a4",
+        "notes": "Auto-drained by agent"
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "2e732d62d8df",
+          "ts": "119e6c41a67c",
+          "lean": "18351b6436ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/drain-batch",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-06-13",
+          "agent_skill": "local/prepare-merge-auto"
+        },
+        "reviewed_at": "2026-06-13T05:17:54.244Z",
+        "reviewed_sha": "6689019c10d0a67dbfe63a02972f553de8e358a4",
+        "notes": "Auto-drained by agent"
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-13T05:17:54.244Z"
 }
