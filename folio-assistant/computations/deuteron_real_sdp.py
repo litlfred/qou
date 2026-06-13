@@ -324,6 +324,10 @@ def main() -> int:
     methods["4_ame_binding_equality"] = {
         "description": "t·x = B_D_AME (physical binding-energy target)",
         "ansatz_flag": False,
+        "production_default": False,
+        "non_default_reason": "imposes the AME binding as an equality (consumes "
+                              "the experimental answer); a validation anchor, not "
+                              "a substrate derivation.",
         "result": solve_lp_with_eq(t, np.diag(frob_diag), [t], [B_D_AME_MeV], n_target),
     }
 
@@ -346,8 +350,29 @@ def main() -> int:
     def pkey(lst):  # [3] -> "(3,)" ; [2,1] -> "(2, 1)"
         return "(" + ", ".join(str(x) for x in lst) + ("," if len(lst) == 1 else "") + ")"
 
+    # tr_M_neutron = Σ_ν y_ν χ^ν(n) — the canonical H_3 neutron Markov trace,
+    # read from the y-lambda-at-q0 cache (full-Hecke y_ν; no Rust needed).
+    # CORRECTION (2026-06-13): earlier code used the UNWEIGHTED proxy
+    # Σ_ν χ^ν(n) AND divided the RHS by len(parts3)=3 — both deviated from
+    # the stated identity Σ_λ[Σ_ν c^λ_{μν} χ^ν(n)] x_λ = χ^μ(p)·tr_M_neutron.
+    # Implemented verbatim here (no fit / no tuning); this is the canonical,
+    # production-default encoding.
+    _yl = json.loads((HERE / "y-lambda-at-q0.witness.json").read_text())
+    _ynu_h3: dict = {}
+
+    def _collect_ynu(o):
+        if isinstance(o, dict):
+            if o.get("partition") and "y_at_q0_50dps" in o and sum(o["partition"]) == 3:
+                _ynu_h3[pkey(o["partition"])] = float(o["y_at_q0_50dps"])
+            for v in o.values():
+                _collect_ynu(v)
+        elif isinstance(o, list):
+            for v in o:
+                _collect_ynu(v)
+
+    _collect_ynu(_yl)
+    tr_M_neutron = sum(_ynu_h3[k] * chi_n[k] for k in parts3)
     lr_rows, lr_rhs = [], []
-    tr_M_n = sum(chi_n.values())  # neutron H_3 trace proxy (Σ_ν χ^ν(n))
     for mu in parts3:
         row = np.zeros(n_blocks)
         for li, lkey in enumerate(keys):
@@ -358,11 +383,15 @@ def main() -> int:
                     coeff += term["c"] * chi_n.get(pkey(term["nu"]), 0.0)
             row[li] = coeff
         lr_rows.append(row)
-        lr_rhs.append(chi_p[mu] * tr_M_n / len(parts3))
+        lr_rhs.append(chi_p[mu] * tr_M_neutron)  # stated identity: no /len(parts3)
     methods["5_lr_branching_canonical"] = {
-        "description": "Littlewood-Richardson H_6⊃H_3×H_3 branching rows (canonical, no fit)",
+        "description": "Littlewood-Richardson H_6⊃H_3×H_3 branching rows: "
+                       "Σ_λ[Σ_ν c^λ_{μν} χ^ν(n)] x_λ = χ^μ(p)·tr_M_neutron, "
+                       "tr_M_neutron = Σ_ν y_ν χ^ν(n) (canonical, no fit).",
         "ansatz_flag": False,
         "canonical": True,
+        "production_default": True,
+        "tr_M_neutron": tr_M_neutron,
         "result": solve_lp_with_eq(t, np.diag(frob_diag), lr_rows, lr_rhs, n_target),
     }
 
@@ -379,6 +408,7 @@ def main() -> int:
     methods["6_scalar_9pair_ratio_fitted"] = {
         "description": "single 9-pair weighted-ratio row (FITTED; bar-flip on mixed channel)",
         "ansatz_flag": True,
+        "production_default": False,
         "discipline_label": "near-match / exploratory — NOT substrate-canonical (CAL-4)",
         "result": solve_lp_with_eq(
             t, np.diag(frob_diag), [r_lambda], [ratio_scalar * n_target], n_target,
@@ -447,6 +477,16 @@ def main() -> int:
             "B_D_AME_MeV": B_D_AME_MeV,
             "nine_pair_multiplicities": NINE_PAIR,
             "phase_B_full_methods": methods,
+            "production_default_encoding": "5_lr_branching_canonical",
+            "production_default_note": (
+                "The canonical (substrate-derived, no-fit) LR-branching "
+                "encoding is the production default. Encoding 4 (AME equality) "
+                "consumes the experimental binding and is a validation anchor "
+                "only; encoding 6 is fitted; encoding 2 is an un-vetted ansatz. "
+                "The canonical encoding does NOT yet reproduce the deuteron "
+                "binding — that closure is the open Δ_λ gate (CLAUDE.md); "
+                "production reports the honest canonical result, not a fit."
+            ),
             # ---- scope markers ----
             "phase_A_cost": "done",
             "phase_B_constraints": "interim (bounded subspace) + 4 full encodings compared (method 2 un-vetted ansatz); full color-flavor 9-pair + AME2020 RHS",
