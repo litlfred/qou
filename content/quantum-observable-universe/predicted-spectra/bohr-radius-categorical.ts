@@ -1,4 +1,4 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
 /**
  * The categorical Bohr radius a_0^cat = ℏ/(m_e c α_EM).
@@ -18,8 +18,8 @@ import { proposition } from "../../schema/builders";
  * Five candidate closure routes are explored in the .md (Option 4a-4e),
  * pointing to concrete next investigations.
  */
-export default proposition({
-  label: "prop:bohr-radius-categorical",
+export default conjecture({
+  label: "conj:bohr-radius-categorical",
   lean: { ref: "qou:QOU.Archimedean.bohr_radius_categorical", validation: "not_checked" },
   title:
     "Categorical Bohr radius $a_0^{\\mathrm{cat}} = \\hbar/(m_e c\\,\\alpha_{EM})$ (transported from QED virial-balance; categorical derivation open)",

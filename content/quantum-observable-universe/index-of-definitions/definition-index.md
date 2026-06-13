@@ -305,7 +305,7 @@
 | [prop:braiding-induced-ordering](#prop:braiding-induced-ordering) | Canonical admissible ordering on the Hecke basis induced by braiding | Ch 2 | `qou:QOU.braiding_induced_ordering` |
 | [prop:rj-canonical-inner-product](#prop:rj-canonical-inner-product) | Canonical inner product on $R(H_r(q))$ via Schur orthogonality | Ch 12 | `qou:QOU.Archimedean.rj_canonical_inner_product` |
 | [prop:wedderburn-weight-canonical](#prop:wedderburn-weight-canonical) | Canonical q-deformed Wedderburn-block weight $\tilde w_\lambda$ and named scalings (BW, LP for all $\lambda$; Wenzl-bridge on the self-conjugate stratum) | Ch 10 | `qou:QOU.BraidKnot.wedderburnWeightCanonical` |
-| [prop:bohr-radius-categorical](#prop:bohr-radius-categorical) | Categorical Bohr radius $a_0^{\mathrm{cat}} = \hbar/(m_e c\,\alpha_{EM})$ (transported from QED virial-balance; categorical derivation open) | Ch 12 | `qou:QOU.Archimedean.bohr_radius_categorical` |
+| [conj:bohr-radius-categorical](#conj:bohr-radius-categorical) | Categorical Bohr radius $a_0^{\mathrm{cat}} = \hbar/(m_e c\,\alpha_{EM})$ (transported from QED virial-balance; categorical derivation open) | Ch 12 | `qou:QOU.Archimedean.bohr_radius_categorical` |
 | [prop:helicity-conservation](#prop:helicity-conservation) | Categorical helicity conservation | Ch 16 | `qou:QOU.FluidDynamics.helicity_conservation` |
 | [prop:categorical-lichnerowicz](#prop:categorical-lichnerowicz) | Categorical Lichnerowicz: $\Delta_\nabla^q = \mathfrak{D}_\nabla^2 + \tfrac{1}{4}\,\mathrm{Sc}_q$ | Ch 2 | `qou:QOU.Lichnerowicz.qDirac` |
 | [prop:yekutieli-lifting](#prop:yekutieli-lifting) | Categorical lifting condition holds in the brane tower | Ch 4 | `qou:QOU.YekutieliLifting` |
