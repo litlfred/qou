@@ -14,7 +14,8 @@
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "evidence": "content/quantum-observable-universe/predicted-spectra/tilting-module-rigidity.lean:33 has a bare `sorry` with no `-- Ref:` anywhere in the file (file Ref-count=0). Enclosing decl `theorem ... Rigid.GeneratesWords := by` (L29). Verbatim L33: `sorry`. Source-level audit; Lean LSP hard-gate could not be run (mcp__lean-lsp__lean_diagnostic_messages permission-denied in audit context). 0 downstream dependents (lem:tilting-module-rigidity).",
       "status": "queued",
-      "asked_author_at": null
+      "asked_author_at": null,
+      "note": " [2026-06-13: documented in-source with precise discharge; option-B LSP/build BLOCKED in sandbox — Mathlib oleans unavailable (cache get 403; lake-cache carries only QOU oleans). hadronic_melt + tilting sorries cited; molecular_bond + lepton are sorry-typed NON-STATEMENTS needing real types — apply+verify in a CI/Mathlib session.]"
     },
     {
       "id": "41290e0f2809",
@@ -30,7 +31,8 @@
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "evidence": "content/quantum-observable-universe/predicted-spectra/spectrahedral-phase-collapse.lean has 4 bare `sorry` (L37, L46, L55, plus sorry-typed sigs L45/L54) with no `-- Ref:` anywhere in file (Ref-count=0). Verbatim L37: `sorry` (theorem hadronic_melt_at_supergolden, L35). Source-level audit; LSP hard-gate denied. 0 downstream dependents (prop:spectrahedral-phase-collapse).",
       "status": "queued",
-      "asked_author_at": null
+      "asked_author_at": null,
+      "note": " [2026-06-13: documented in-source with precise discharge; option-B LSP/build BLOCKED in sandbox — Mathlib oleans unavailable (cache get 403; lake-cache carries only QOU oleans). hadronic_melt + tilting sorries cited; molecular_bond + lepton are sorry-typed NON-STATEMENTS needing real types — apply+verify in a CI/Mathlib session.]"
     },
     {
       "id": "fe77be56575d",
@@ -46,7 +48,8 @@
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "evidence": "content/quantum-observable-universe/predicted-spectra/spectrahedral-phase-collapse.lean L44-46 `theorem molecular_bond_instability (q : ℝ) : sorry := by sorry` and L53-55 `theorem lepton_unconditional_stability ... : sorry := by sorry` — the TYPE SIGNATURE itself is `sorry`, so the Lean 'theorem' states no proposition while the .md narrative (10 math/theorem mentions) claims substantive results (negative Gram det, positive-definite Gram for q>1). Stub-weakening / non-statement.",
       "status": "queued",
-      "asked_author_at": null
+      "asked_author_at": null,
+      "note": " [2026-06-13: documented in-source with precise discharge; option-B LSP/build BLOCKED in sandbox — Mathlib oleans unavailable (cache get 403; lake-cache carries only QOU oleans). hadronic_melt + tilting sorries cited; molecular_bond + lepton are sorry-typed NON-STATEMENTS needing real types — apply+verify in a CI/Mathlib session.]"
     },
     {
       "id": "898e34d7432b",

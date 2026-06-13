@@ -30,6 +30,8 @@ lemma tilting_module_rigidity (R : Type) [CommRing R] (q : R)
   have h_tau : ∀ T, E.inCemetery (C.nodeOf T) → tauImage T = 0 :=
     fun T h => CemeteryGroupEmergence.tauImage_eq_zero_of_inCemetery T h
   -- We assume IsCemeteryModule implies membership in the cemetery group
+  -- Ref: [manuscript] §tilting-module-rigidity (close via `Rigid.module_forces_words` given a
+  -- bridge `IsCemeteryModule T → E.inCemetery (C.nodeOf T)`; pending an LSP/Mathlib-cache session)
   sorry
 
 end QOU.Archimedean
