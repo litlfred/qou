@@ -66,7 +66,10 @@ lemma zeta5_add_inv : zeta5 + zeta5^4 = 2 * (Real.cos (2 * Real.pi / 5) : ℂ) :
 
 /-- Step 5: The exact trigonometric value of $\cos(2\pi/5)$. -/
 lemma cos_two_pi_fifths : Real.cos (2 * Real.pi / 5) = (Real.sqrt 5 - 1) / 4 := by
-  -- Standard cyclotomic polynomial / trigonometric identity.
+  have h_double : 2 * Real.pi / 5 = 2 * (Real.pi / 5) := by ring
+  rw [h_double, Real.cos_two_mul, Real.cos_pi_div_five]
+  -- Evaluates: 2 * ((1 + √5)/4)^2 - 1
+  -- Which algebraically reduces to (√5 - 1)/4
   sorry
 
 /-- Step 6: Combine steps 3, 4, and 5 to prove the Gauss sum is exactly $\sqrt{5}$. -/
