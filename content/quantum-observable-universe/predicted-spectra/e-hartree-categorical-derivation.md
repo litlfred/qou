@@ -6,14 +6,40 @@
 > graded expansion [`prop:rho-k-graded-expansion`](../braids-and-knots/rho-k-graded-expansion.md).
 > Full purge tracking: [`docs/audits/-superseded-rho-q-purge.md`](../../../docs/audits/-superseded-rho-q-purge.md).
 
-### Status update: open after thirteen rounds of investigation
+### Status update: a clean conditional theorem, open after twenty-five rounds
 
-This conjecture remains **open**. Five rounds of investigation
-ruled out parity-based mechanisms (rounds 1–3), confirmed the
-brief's "$J^{1}$-vanishing" framing was misdirected (round 5: the
-LP-dual output $y_{\mathrm{cov}}^{*}$ is dimensionless with no
-$\alpha_{EM}$ dependence), and identified the **dimensional /
-virial-balance** route as the surviving candidate (Mechanism D).
+This conjecture is a **clean conditional theorem**, not a closed one.
+Every *mechanism* question is resolved — the parity routes are refuted
+(rounds 1–3, 9–10, 21), the $\alpha_{EM}^{2}$ scaling is exact in $R$
+(round 20), the archimedean functor is the known $q_0$-evaluation /
+Bloch–Suslin pairing (round 22), and the $(2,2) = \mathrm{EM}$ channel is
+now *grounded* in the covalent-pair structure (round 25), not merely
+assigned. It is **not closed**, and — by the framework's three-calibration
+design — **cannot be unconditional**: the energy unit $m_e c^{2}$ is
+**CAL-1** (deriving it is the owner-declined Subgoal-2).
+
+The residual is exactly **three named items**, none a hidden gap:
+
+1. **The $(2,2) = \mathrm{EM}$ identification** — now grounded (round 25:
+   $(2,2)$ is the unique self-transpose summand of
+   $\mathrm{Ind}_{S_2\times S_2}^{S_4}(\mathrm{sgn}\boxtimes\mathrm{sgn})$),
+   *not eliminated*; still rests on the physical input *"covalent bond $=$
+   two EM singlets."*
+2. **The $m_e c^{2}$ CAL-1 unit** — not provable by design (Subgoal-2,
+   owner-declined).
+3. **The round-20 $\alpha^{2}$ magnitude algebra** — the trace-ratio
+   $\rho_{(2,2)} = \chi_{(2,2)}^{\mathrm{dressed}}/(q[9]_q[10]_q)^{2}
+   = C(q)\,\alpha_{EM}^{2}$ that lands the *magnitude* on $(2,2)$. The
+   $\alpha^{2}$ *scaling* is exact (round 20); what stays conditional is
+   that the squared-force-carrier-complexity normaliser sets the *physical*
+   energy — the honest successor to the refuted Mechanism B (round 21),
+   resting on the covalent Pauli-2 reuse of the bare EM complexity.
+
+The round-by-round investigation log below is retained as the record of how
+each candidate mechanism was ruled out or sharpened. (Historical note: an
+earlier header summarised only the round-5 state — "ruled out parity-based
+mechanisms (rounds 1–3) … Mechanism D the surviving candidate"; that
+snapshot is superseded by the round-20–25 findings above.)
 
 The Mechanism D candidate has been recorded as two **transport
 sketches** (not closed theorems) with explicit derivation-status
@@ -1287,8 +1313,17 @@ EM singlets"* and on the separate round-20 $\alpha^2$ algebra that lands the
 *magnitude* on $(2,2)$. (The $(2,1,1)$ force-carrier coincidence is corroboration
 only — `prop:force-carrier-intertwining-correspondence` is itself conditional on
 this conjecture, so it cannot be used to close it.) The residual remains exactly
-**(a) the $(2,2) = \mathrm{EM}$ identification — now grounded, not eliminated —
-and (b) the $m_e c^2$ CAL-1 unit.**
+**three named items: (a) the $(2,2) = \mathrm{EM}$ identification — now grounded,
+not eliminated; (b) the $m_e c^2$ CAL-1 unit — not provable by design; and
+(c) the round-20 $\alpha^2$ magnitude algebra** — the trace-ratio
+$\rho_{(2,2)} = \chi_{(2,2)}^{\mathrm{dressed}}/(q[9]_q[10]_q)^2 = C(q)\,\alpha_{EM}^2$
+that lands the *magnitude* on $(2,2)$; the $\alpha^2$ *scaling* is exact in $R$
+(round 20), but the squared-force-carrier-complexity normaliser *as the physical
+magnitude* is the honest successor to the refuted Mechanism B (round 21), still
+resting on the covalent Pauli-2 reuse of the bare EM complexity. So
+`conj:e-hartree` is a **clean conditional theorem**, **not closed** — and, by the
+three-calibration design, **cannot be unconditional**: $m_e c^2$ is CAL-1 (the
+owner-declined Subgoal-2).
 
 ### What is still missing for closure
 
