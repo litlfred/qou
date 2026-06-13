@@ -170,7 +170,8 @@ def check_rmatrix_hecke_relation(q: mp.mpf) -> dict:
 
 def check_direct_vs_schur_weyl(q: mp.mpf) -> dict:
     """Compute β_Bor's trace on V^⊗3 via direct R-matrix; compare to the
-    Schur-Weyl prediction tr = [4]_q + [2]_q · (2 − 3h⁴ − h⁶)."""
+    Schur-Weyl prediction tr = 4·χ^{(3)} + 2·χ^{(2,1)} = 8 − 6h⁴ − 2h⁶
+    (classical sl_2 dims 4, 2 — not q-deformed [4]_q/[2]_q; see gotcha 1)."""
     print("=" * 78)
     print("T17b — Direct R-matrix vs Schur-Weyl prediction")
     print("=" * 78)
@@ -246,9 +247,10 @@ def main():
         "GAP-A-4 T17 — First categorical / topological distinguisher in "
         "the T4-T17 arc.  Derives tr_{V^⊗3}(β_Bor) directly from the "
         "U_q(sl_2) R-matrix action on V_{1/2}^⊗3 and cross-checks "
-        "against the Schur-Weyl prediction [4]_q + [2]_q · (2 − 3h⁴ − h⁶) "
-        "(combining T15 polynomial χ^{(2,1)} with the trivial rep's "
-        "χ^{(3)}(β_Bor) = 1 for writhe-0 braids)."
+        "against the Schur-Weyl prediction 4·χ^{(3)} + 2·χ^{(2,1)} "
+        "= 8 − 6h⁴ − 2h⁶ (classical sl_2 dims 4, 2 — not q-deformed "
+        "[4]_q/[2]_q; combining T15 polynomial χ^{(2,1)} with the "
+        "trivial rep's χ^{(3)}(β_Bor) = 1 for writhe-0 braids)."
     )
 
     q_0 = mp.mpf(Q_0_50DPS)
@@ -287,9 +289,11 @@ def main():
         source=(
             "tr_{V^⊗3}(β_Bor) via direct 8×8 R-matrix computation "
             "equals the Schur-Weyl prediction "
-            "[4]_q · χ^{(3)}(β_Bor) + [2]_q · χ^{(2,1)}(β_Bor) "
-            "= [4]_q + [2]_q · (2 − 3h⁴ − h⁶) "
-            "(using χ^{(3)}(β_Bor) = 1 from writhe 0 + T15 polynomial)."
+            "dim(V_{3/2})·χ^{(3)}(β_Bor) + dim(V_{1/2})·χ^{(2,1)}(β_Bor) "
+            "= 4·1 + 2·(2 − 3h⁴ − h⁶) = 8 − 6h⁴ − 2h⁶ "
+            "(classical integer sl_2 dims 4, 2 — NOT q-deformed "
+            "[4]_q/[2]_q, per gotcha 1; χ^{(3)}(β_Bor) = 1 from writhe 0 "
+            "+ T15 polynomial)."
         ),
     )
     w.add_assertion(
