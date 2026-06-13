@@ -1,10 +1,12 @@
-**Proposition (Closed-form Wenzl/Markov weights on $\mathrm{H}_3(q)$).**
-*Let $y_\lambda(q)$ denote the Wenzl coefficient of $V_\lambda$ in the
-Frobenius expansion $\mathrm{tr}_M = \sum_{\lambda \vdash 3} y_\lambda \,
-\chi^\lambda$ of the Markov trace on $\mathrm{H}_3(q)$, in the
-$V_{\mathrm{Jones}} / [2]_q^{\,c-1}$ closure normalisation of
-[`prop:borromean-markov-trace-closed-form`](borromean-markov-trace-closed-form.md).
-Then for all $q$:*
+**Proposition (Closed-form Jones/Temperley–Lieb weights on $\mathrm{H}_3(q)$).**
+*Let $y_\lambda(q)$ denote the coefficient of $\chi^\lambda$ in the Frobenius
+expansion $\mathrm{tr}_M^{\mathrm{Jones}} = \sum_{\lambda \vdash 3} y_\lambda \,
+\chi^\lambda$ of the **Jones-normalised** Markov trace on $\mathrm{H}_3(q)$ —
+the $V_{\mathrm{Jones}} / [2]_q^{\,c-1}$ Temperley–Lieb closure of
+[`prop:borromean-markov-trace-closed-form`](borromean-markov-trace-closed-form.md),
+i.e. the trace computing the **Borromean rings' Jones polynomial**. (This is
+**not** the full-Hecke Ocneanu trace consumed by the mass/binding pipeline —
+see the **Scope** note below.) Then for all $q$:*
 
 $$
   \boxed{\;\;
@@ -24,6 +26,31 @@ $$
   \bigl(\tfrac{1}{2},\, \tfrac{1}{4},\, 0\bigr)
   \qquad \text{— \emph{not} uniform.}
 $$
+
+## Scope — Jones/TL trace vs. the full-Hecke mass-pipeline trace
+
+This proposition concerns the **Jones / Temperley–Lieb** normalisation of the
+$\mathrm{H}_3(q)$ Markov trace — the trace whose value on a braid closure is the
+**Jones polynomial**. Its defining feature is $y_{(1^3)} \equiv 0$: the
+Temperley–Lieb quotient annihilates the three-row partition.
+
+The framework's **mass and binding computations** use a *different* trace: the
+**full-Hecke Ocneanu** Markov trace, with parameter $z = 1/(q^{1/2}+q^{-1/2})$
+and Wedderburn weights given by the Wenzl Schur-principal specialisation
+(`y_lambda_wenzl_bridge_numeric` → `closed_form_tau_M`). That trace is proven
+canonical — Path A (ladder linear system) $=$ Path B (Wenzl Schur) as a
+$\mathbb{Z}$-Laurent identity — in the $y_\lambda$–$\mathrm{tr}_M$ equivalence
+proof (`docs/audits/2026-05-05-y-lambda-tr-m-equivalence-proof.md`), and its
+three-row weight is $y_{(1^3)}(q) \neq 0$ for $q \neq 1$.
+
+The two traces **coincide at the symmetric point** $q = 1$ (both give
+$(\tfrac12,\tfrac14,0)$) and on the observable combination carried by
+writhe-$0$, $\pi=\mathrm{id}$ braids — which is why every *physical* mass
+prediction is insensitive to the distinction. They **diverge for $q \neq 1$**:
+the full-Hecke weights at the substrate are $(0.4154,\,0.2809,\,0.0227)$.
+Consequently the closed forms below should be read as the **Jones-polynomial**
+weights, not as the general $\mathrm{tr}_M$ $y_\lambda$ used by the compute
+pipeline.
 
 **Proof.** Three steps, each forced.
 
@@ -115,9 +142,12 @@ Four $\lambda$-indexed scalars appear in the Hecke-algebra blocks of
 this paper. They are easy to conflate by symbol similarity but encode
 independent data:
 
-- $y_\lambda(q)$ — Wenzl/Markov coefficient (this proposition):
-  appears in $\mathrm{tr}_M = \sum_\lambda y_\lambda \cdot \chi^\lambda$,
-  normalised by $\sum_\lambda y_\lambda \, d_\lambda = 1$.
+- $y_\lambda(q)$ — Wenzl/Markov coefficient: appears in
+  $\mathrm{tr}_M = \sum_\lambda y_\lambda \cdot \chi^\lambda$, normalised by
+  $\sum_\lambda y_\lambda \, d_\lambda = 1$. **This proposition gives the
+  Jones/TL values** ($y_{(1^3)} \equiv 0$); the full-Hecke Ocneanu trace used
+  by the mass pipeline has *different* $y_\lambda$ at $q \neq 1$
+  ($y_{(1^3)} \neq 0$) — see the Scope note above.
 - $\chi^\lambda(g)$ — character: trace of the $V_\lambda$-representation
   on a specific element $g$ (e.g. a braid).
 - $\mu_\lambda(q)$ — $q$-Laplacian eigenvalue on $V_\lambda$
