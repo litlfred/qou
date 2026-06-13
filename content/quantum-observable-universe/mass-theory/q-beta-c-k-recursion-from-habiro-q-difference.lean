@@ -163,6 +163,23 @@ theorem esymm_bar_parity {R : Type u} [CommRing R] {n : ℕ} (bar : R →+* R)
     rw [map_prod]
   rw [hmap, show (fun i => bar (r i)) = (fun i => - r i) from funext hodd, esymm_neg]
 
+/-- Corollary of the parity-alternation theorem: for **odd** `j` the recursion
+    coefficient `a_j = e_j` is bar-ODD (`bar(a_j) = -a_j`). These are the
+    ζ-carrying rungs of the ladder — the bar-odd `a_1 = -c_3`, and `a_3` (whose
+    concrete active-set ζ-content is ζ₂+ζ₆). -/
+theorem esymm_bar_odd {R : Type u} [CommRing R] {n : ℕ} (bar : R →+* R)
+    (r : Fin n → R) {j : ℕ} (hodd : ∀ i, bar (r i) = - r i) (hj : Odd j) :
+    bar (esymm r j) = - esymm r j := by
+  rw [esymm_bar_parity bar r j hodd, hj.neg_one_pow, neg_one_mul]
+
+/-- Corollary of the parity-alternation theorem: for **even** `j` the recursion
+    coefficient `a_j = e_j` is bar-EVEN (`bar(a_j) = a_j`) — e.g. the bar-even
+    seed rung `c_2 = -1`. -/
+theorem esymm_bar_even {R : Type u} [CommRing R] {n : ℕ} (bar : R →+* R)
+    (r : Fin n → R) {j : ℕ} (hodd : ∀ i, bar (r i) = - r i) (hj : Even j) :
+    bar (esymm r j) = esymm r j := by
+  rw [esymm_bar_parity bar r j hodd, hj.neg_one_pow, one_mul]
+
 /-! ## Cyclotomic bar-stability — the lemma behind ζ₆-closed
 
   The period-3/ζ₆ closure (root-of-unity residue program, #2240) rests on a
