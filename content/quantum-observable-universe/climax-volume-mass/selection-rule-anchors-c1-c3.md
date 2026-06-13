@@ -18,11 +18,11 @@ $$
 $$
 
 *These are the muon (c=1, knot) and the proton (c=3, Borromean 3-link)
-anchors of the per-component selection rule from PR #1765.*
+anchors of the per-component selection rule.*
 
 ## Why this matters
 
-PR #1765's main result is the zero-parameter selection rule
+The zero-parameter selection rule is
 $\mathrm{lw}(L) = \frac{1}{c+1}\sum_{\lambda\vdash(c+1)} \dim_q V_\lambda$
 where $c$ is the number of link components.  The c=1 case must equal 1
 for all $q$ (muon, a knot, framework `linking_weight = 1`); the c=3 case
@@ -71,5 +71,5 @@ CLAUDE.md §7c-compliant.
   enters at the per-crossing level.
 - $\operatorname{prop:coulomb-strong-ratio-q-rational}$ — companion identity
   proving $\tanh(\ln q) = (q^2-1)/(q^2+1)$ over real $q > 0$.
-- PR #1765 audit doc:
+- Derivation audit doc:
   [`docs/audits/2026-06-03-habiro-per-knot-lambda-derivation.md`](../../../docs/audits/2026-06-03-habiro-per-knot-lambda-derivation.md).

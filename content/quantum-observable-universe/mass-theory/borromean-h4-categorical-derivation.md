@@ -39,7 +39,7 @@ $$
   V_{1/2} \otimes S^{(2,1)}
 $$
 
-(dimensions: $4 \otimes 1 \;\oplus\; 2 \otimes 2 \;=\; 4 + 4 = 8$ ✓).
+(dimensions: $4 \otimes 1 \;\oplus\; 2 \otimes 2 \;=\; 4 + 4 = 8$).
 Tracing on the $V^{\otimes 3}$ side via the standard ordinary trace
 (matching the $\mathrm{H}_n(q)$-side classical-dim convention) gives:
 
