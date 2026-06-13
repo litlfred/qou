@@ -25,7 +25,7 @@ in the QOU formalization.  Its purpose is twofold:
    | Self-dual instantons | Instanton | `categorical_self_duality` |
    | Topological mass decomposition | TopologicalMass | `topological_mass_decomposition` |
    | CODATA end-to-end chain | CODATAChain | `end_to_end` |
-   | Descartes terminality | DescartesUniverse | `descartes_terminal` |
+   | Descartes terminality | ArchimedeanUniverse | `descartes_terminal` |
 
 ## How to use
 
@@ -41,7 +41,7 @@ and `HadronicMass` to `terminal_resolution_hadronic_mass`.
 
 namespace QOU
 
-open HadronicMass CODATAChain DescartesUniverse Torsion
+open HadronicMass CODATAChain ArchimedeanUniverse Torsion
 
 /-! ## Concluding Observational Synthesis -/
 
