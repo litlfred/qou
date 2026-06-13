@@ -590,7 +590,7 @@
 | [prop:tritium-qvalue-symbolic](#prop:tritium-qvalue-symbolic) | Symbolic Q-value for tritium beta decay | Ch 8 | `qou:QOU.ParticleInteractions.tritium_qvalue_symbolic` |
 | [prop:tannaka-krein-reconstruction](#prop:tannaka-krein-reconstruction) | Tannaka--Krein reconstruction of the quantum gauge group | Ch 2 | `qou:QOU.tannaka_krein_reconstruction` |
 | [prop:q-exponential-taylor](#prop:q-exponential-taylor) | Taylor series of $\exp_q$ (archimedean) | Ch 18 | `qou:QOU.qExponentialTaylor` |
-| [prop:term6-binding-density](#prop:term6-binding-density) | Term 6 binding density: $B(Z,N)/A \approx \alpha \cdot T_6(Z,N)/A^3 + \beta + \delta_M(Z,N)$ | Ch 10 | `qou:QOU.BraidKnot.Term6BindingDensity` |
+| [rem:term6-binding-density](#rem:term6-binding-density) | Term 6 binding density: $B(Z,N)/A \approx \alpha \cdot T_6(Z,N)/A^3 + \beta + \delta_M(Z,N)$ | Ch 10 | `qou:QOU.BraidKnot.Term6BindingDensity` |
 | [prop:terminal-resolution](#prop:terminal-resolution) | Terminal Resolution of Hadronic Mass | Ch 10 | `qou:QOU.Experimental.terminal_resolution` |
 | [prop:terms-2-6-higher-operations](#prop:terms-2-6-higher-operations) | Terms 2 and 6 as higher Gerstenhaber / cup-product operations on the spectral sequence | Ch 10 | `qou:QOU.BraidKnot.terms_2_6_higher_operations` |
 | [prop:alpha-em-habiro-bar-involution](#prop:alpha-em-habiro-bar-involution) | The $\alpha_{EM}$ Habiro element $[2]_q(1-h^2\alpha)$ is a bar-involution fixed point, with $H(1)=2$, $H(-1)=-2$ | Ch 5 | `qou:QOU.BraidKnot.alphaEmHabiro_bar_invariant` |
