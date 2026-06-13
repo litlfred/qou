@@ -325,6 +325,26 @@
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
         "notes": "Label 'prop:qou-canonical-action' → expected 'qou_canonical_action'; Lean declares: QOUCanonicalAction, qou_canonical_action_dirac_sq, qou_canonical_action_unique_up_to_scalar. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "700e54f6a474",
+          "ts": "ab87d5e81e28",
+          "lean": "b6c523c7317e"
+        },
+        "result": "fail",
+        "severity": "major",
+        "evidence": "qou-canonical-action.lean:95 — qou_canonical_action_unique_up_to_scalar concludes 'True := by trivial' while .md:38 asserts uniqueness up to scalar λ∈R×; dirac_sq proves 'gravity ≫ gauge = gravity ≫ gauge := rfl'",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T00:45:51.733Z",
+        "reviewed_sha": "b20c3526a7fe0234b106e5831583017783ceafa3",
+        "notes": "Lean conclusions are True/rfl tautologies; struct fields all x=x — no real claim encoded"
       }
     ],
     "voice-author-notes-pollution": [
@@ -1190,7 +1210,192 @@
         "reviewed_at": "2026-06-11T18:06:24.673Z",
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7"
       }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "700e54f6a474",
+          "ts": "ab87d5e81e28",
+          "lean": "b6c523c7317e"
+        },
+        "result": "fail",
+        "severity": "critical",
+        "evidence": "qou-canonical-action.lean:96 — uniqueness theorem proves ': True := by trivial'; structure fields gravity_eq/gauge_eq/matter_eq are 'action.x = action.x' self-equalities",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T00:45:51.771Z",
+        "reviewed_sha": "b20c3526a7fe0234b106e5831583017783ceafa3",
+        "notes": "Statement gutted to True placeholder — degenerate witness"
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "700e54f6a474",
+          "ts": "ab87d5e81e28",
+          "lean": "b6c523c7317e"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0,
+          "max": 1
+        },
+        "evidence": "qou-canonical-action.lean:96 ': True := by trivial' — real uniqueness claim entirely unproven, placeholder restates nothing",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T00:45:51.808Z",
+        "reviewed_sha": "b20c3526a7fe0234b106e5831583017783ceafa3",
+        "notes": "Core claim is a True-placeholder; gap is the whole goal"
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "700e54f6a474",
+          "ts": "ab87d5e81e28",
+          "lean": "b6c523c7317e"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.7,
+          "max": 1
+        },
+        "evidence": "qou-canonical-action.md:38 — 'evaluation/coevaluation determined up to unique iso by duality data … residual ambiguity is scalar λ = normalization of ∫_A'",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T00:45:51.844Z",
+        "reviewed_sha": "b20c3526a7fe0234b106e5831583017783ceafa3",
+        "notes": "Narrative strategy legible despite degenerate Lean"
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "700e54f6a474",
+          "ts": "ab87d5e81e28",
+          "lean": "b6c523c7317e"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.6,
+          "max": 1
+        },
+        "evidence": "qou-canonical-action.md:30 — categorical reframing of Chamseddine–Connes gravity+gauge+matter spectral action decomposition",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T00:45:51.881Z",
+        "reviewed_sha": "b20c3526a7fe0234b106e5831583017783ceafa3",
+        "notes": "Standard spectral-action analog, categorically reframed; not duplicated"
+      }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "700e54f6a474",
+          "ts": "ab87d5e81e28",
+          "lean": "b6c523c7317e"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "qou-canonical-action.md:42 — 'categorical analog of the choice of physical units … freedom in choosing G, g², ħ' interpretive prose in-statement; companion rem:physicist-translation exists",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T00:45:51.915Z",
+        "reviewed_sha": "b20c3526a7fe0234b106e5831583017783ceafa3",
+        "notes": "Some interpretation in-block but a linked physicist-translation remark holds the bulk"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "700e54f6a474",
+          "ts": "ab87d5e81e28",
+          "lean": "b6c523c7317e"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "quantum-observable-universes.ts:281 — block sits in section 'Categorical action' (sec containing qou-canonical-action), matching its subject",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T00:45:51.950Z",
+        "reviewed_sha": "b20c3526a7fe0234b106e5831583017783ceafa3",
+        "notes": "Canonical action prop correctly placed in Categorical action section"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "700e54f6a474",
+          "ts": "ab87d5e81e28",
+          "lean": "b6c523c7317e"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "qou-canonical-action.md:1 — generic (C,A,τ) categorical statement; scalar λ∈R×; no Real.*/numeric q≈/MeV/order hypotheses",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T00:45:51.983Z",
+        "reviewed_sha": "b20c3526a7fe0234b106e5831583017783ceafa3",
+        "notes": "Generic-ring categorical statement, correct for substrate chapter"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "700e54f6a474",
+          "ts": "ab87d5e81e28",
+          "lean": "b6c523c7317e"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "qou-canonical-action.md:38 — proof uses duality data + Frobenius–Hopf axioms, no linarith/IVT/continuity/Real.* machinery",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T00:45:52.018Z",
+        "reviewed_sha": "b20c3526a7fe0234b106e5831583017783ceafa3",
+        "notes": "Algebraic proof method matches generic-ring statement"
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-13T00:45:52.018Z"
 }
