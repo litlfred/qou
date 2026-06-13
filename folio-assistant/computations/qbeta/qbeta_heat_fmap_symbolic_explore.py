@@ -18,40 +18,9 @@ STRUCTURAL only — no c_3 value claimed/wired; flip-flop guard respected.
 from __future__ import annotations
 import sympy as sp
 
-q = sp.symbols('q', positive=True)
-
-
-def jackson(k):
-    """[k]_q = (1-q^k)/(1-q); [0]=0 (works for negative k too)."""
-    if k == 0:
-        return sp.Integer(0)
-    return (1 - q ** k) / (1 - q)
-
-
-def contents(part):
-    return [j - i for i, row in enumerate(part) for j in range(row)]
-
-
-def mu(part):
-    hbar2 = ((q - 1) / q) ** 2
-    return sp.simplify(hbar2 * sum(jackson(c) * jackson(c + 1) for c in contents(part)))
-
-
-def kappa(part):
-    return sp.simplify((q - 1) * mu(part))
-
-
-def bar(expr):
-    return sp.simplify(expr.subs(q, 1 / q))
-
-
-def parity(expr):
-    b = sp.simplify(bar(expr) + expr)
-    if b == 0:
-        return "ODD"
-    if sp.simplify(bar(expr) - expr) == 0:
-        return "EVEN"
-    return "neither"
+from qbeta_symbolic_utils import (  # shared sympy helpers (single source of truth)
+    q, kappa, bar, parity,
+)
 
 
 def main():
@@ -74,8 +43,8 @@ def main():
 
     print("\n  ── Mode-selectivity test ──")
     print("  A bar-EVEN scalar S(q) preserves parity: S·(even)=even, S·(odd)=odd,")
-    print("  S·(neither)=neither. So if e_1 is 'neither', NO bar-even scalar f-map")
-    print(f"  can produce a bar-ODD a_1 from the full sum.  e_1 parity = {parity(e1)}.")
+    print("  S·(—)=— (bar-neither). So if e_1 is bar-neither ('—'), NO bar-even")
+    print(f"  scalar f-map can produce a bar-ODD a_1 from the full sum.  e_1 parity = {parity(e1)}.")
     print("  ⇒ the f-map must SELECT the bar-odd modes (κ_(2,1), the c=1-dominated")
     print("    standard rep), not act as a global scalar.")
 

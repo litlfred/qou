@@ -29,72 +29,15 @@ STRUCTURAL only; no c_3 value; flip-flop guard respected.
 from __future__ import annotations
 import sympy as sp
 
-q = sp.symbols('q')
-
-
-def jackson(k):
-    """[k]_q = (1-q^k)/(1-q); valid for negative k (Laurent), [0]=0."""
-    if k == 0:
-        return sp.Integer(0)
-    return sp.cancel((1 - q ** k) / (1 - q))
-
-
-def per_cell(c):
-    """The per-cell content-Casimir factor [c]_q[c+1]_q."""
-    return sp.cancel(jackson(c) * jackson(c + 1))
-
-
-def cyclotomic_carriers(expr, dmax=12):
-    """Which Φ_d(q) (d=2..dmax) divide numer(expr)."""
-    if expr == 0:
-        return []
-    poly = sp.Poly(sp.numer(sp.cancel(expr)), q)
-    out = []
-    for d in range(2, dmax + 1):
-        Phi = sp.Poly(sp.cyclotomic_poly(d, q), q)
-        if poly.rem(Phi).is_zero:
-            out.append(d)
-    return out
-
-
-def bar(expr):
-    return sp.cancel(expr.subs(q, 1 / q))
-
-
-def parity(expr):
-    if sp.simplify(bar(expr) + expr) == 0:
-        return "ODD"
-    if sp.simplify(bar(expr) - expr) == 0:
-        return "EVEN"
-    return "—"
+from qbeta_symbolic_utils import (  # shared sympy helpers (single source of truth)
+    q, per_cell, cyclotomic_carriers, parity, contents, kappa as casimir_kappa,
+)
 
 
 def kappa_cell(c):
     """Per-cell a_1 building block (q-1)·ℏ_q²·[c][c+1], ℏ_q=(q-1)/q."""
     hbar2 = ((q - 1) / q) ** 2
     return sp.cancel((q - 1) * hbar2 * per_cell(c))
-
-
-def partitions(n):
-    def rec(rem, mx):
-        if rem == 0:
-            yield ()
-            return
-        for f in range(min(rem, mx), 0, -1):
-            for r in rec(rem - f, f):
-                yield (f,) + r
-    yield from rec(n, n)
-
-
-def contents(part):
-    return [j - i for i, row in enumerate(part) for j in range(row)]
-
-
-def casimir_kappa(part):
-    """Full mode κ_λ = (q-1)ℏ_q² Σ_□[c][c+1]."""
-    hbar2 = ((q - 1) / q) ** 2
-    return sp.cancel((q - 1) * hbar2 * sum(jackson(c) * jackson(c + 1)
-                                          for c in contents(part)))
 
 
 def main():

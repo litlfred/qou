@@ -17,55 +17,15 @@ with carrying ζ₃ and ζ₄?
 STRUCTURAL only; no c_3 value; flip-flop guard respected.
 """
 from __future__ import annotations
-import sympy as sp
-
-q = sp.symbols('q')
-
-
-def jackson(k):
-    if k == 0:
-        return sp.Integer(0)
-    return sp.cancel((1 - q ** k) / (1 - q))
-
-
-def contents(part):
-    return [j - i for i, row in enumerate(part) for j in range(row)]
-
-
-def casimir_sum(part):
-    """Σ_□ [c]_q[c+1]_q (the μ_λ Casimir sum, ℏ_q² stripped)."""
-    return sp.expand(sum(jackson(c) * jackson(c + 1) for c in contents(part)))
-
-
-def partitions(n):
-    if n == 0:
-        yield ()
-        return
-    def rec(rem, mx):
-        if rem == 0:
-            yield ()
-            return
-        for f in range(min(rem, mx), 0, -1):
-            for r in rec(rem - f, f):
-                yield (f,) + r
-    yield from rec(n, n)
-
-
-def cyclotomic_carriers(expr, dmax=12):
-    """Which Φ_d(q) (d=2..dmax) divide expr → which roots of unity ζ_d it carries."""
-    poly = sp.Poly(sp.numer(sp.cancel(expr)), q)
-    carried = []
-    for d in range(2, dmax + 1):
-        Phi = sp.Poly(sp.cyclotomic_poly(d, q), q)
-        if poly.rem(Phi).is_zero:
-            carried.append(d)
-    return carried
+from qbeta_symbolic_utils import (  # shared sympy helpers (single source of truth)
+    contents, casimir_sum, partitions, cyclotomic_carriers, kappa, parity,
+)
 
 
 def bar_parity(part):
-    hbar2 = ((q - 1) / q) ** 2
-    kap = sp.cancel((q - 1) * hbar2 * casimir_sum(part))
-    return "ODD" if sp.simplify(kap.subs(q, 1 / q) + kap) == 0 else "—"
+    """a_1-parity display: 'ODD' (bar-odd κ_λ) else '—' — preserves this
+    probe's binary ODD/— labelling via the shared kappa + parity helpers."""
+    return "ODD" if parity(kappa(part)) == "ODD" else "—"
 
 
 def main():

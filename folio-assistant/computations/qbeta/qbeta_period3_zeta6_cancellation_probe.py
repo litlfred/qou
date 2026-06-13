@@ -31,50 +31,9 @@ STRUCTURAL only; no c_3 value; flip-flop guard respected.
 from __future__ import annotations
 import sympy as sp
 
-q = sp.symbols('q')
-
-
-def jackson(k):
-    if k == 0:
-        return sp.Integer(0)
-    return sp.cancel((1 - q ** k) / (1 - q))
-
-
-def contents(part):
-    return [j - i for i, row in enumerate(part) for j in range(row)]
-
-
-def kappa(part):
-    hbar2 = ((q - 1) / q) ** 2
-    return sp.cancel((q - 1) * hbar2 * sum(jackson(c) * jackson(c + 1)
-                                          for c in contents(part)))
-
-
-def bar(expr):
-    return sp.cancel(expr.subs(q, 1 / q))
-
-
-def odd_part(expr):
-    return sp.cancel((expr - bar(expr)) / 2)
-
-
-def divides(Phi_d, expr):
-    """Does Φ_d(q) divide numer(expr)?  (expr a Laurent poly / rational.)"""
-    if sp.cancel(expr) == 0:
-        return False
-    num = sp.Poly(sp.numer(sp.cancel(expr)), q)
-    return num.rem(sp.Poly(Phi_d, q)).is_zero
-
-
-def partitions(n):
-    def rec(rem, mx):
-        if rem == 0:
-            yield ()
-            return
-        for f in range(min(rem, mx), 0, -1):
-            for r in rec(rem - f, f):
-                yield (f,) + r
-    yield from rec(n, n)
+from qbeta_symbolic_utils import (  # shared sympy helpers (single source of truth)
+    q, kappa, bar, odd_part, divides, partitions,
+)
 
 
 def main():
