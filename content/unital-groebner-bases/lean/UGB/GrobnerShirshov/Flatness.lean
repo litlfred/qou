@@ -91,6 +91,7 @@ def isFlat (h₁ h₂ : HilbertFunction) : Prop :=
     homogeneous by construction of the deg-lex order).
 
     Reference: [fred2005, Theorem 3.15], Bergman 1978 §5. -/
+-- Ref: [fred2005] Theorem 3.15 (GS basis ⟹ flat: Hilbert function preserved between deformed algebra and associated graded)
 axiom gs_implies_flat
     {G : Type u} {k : Type v} [Field k] [DecidableEq G]
     (ord : AdmissibleOrder G)
@@ -146,6 +147,7 @@ theorem dist_flat_deformation
 
     Reference: Bergman 1978, §5 (filtered deformations preserve
     the leading-term ideal). -/
+-- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5 §5 (filtered deformations preserve the leading-term ideal / normal forms)
 axiom normal_forms_preserved
     {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
     (ord : AdmissibleOrder G)

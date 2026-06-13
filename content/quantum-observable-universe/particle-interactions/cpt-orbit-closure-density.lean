@@ -57,6 +57,7 @@ instance partitionDecEq (n : ℕ) : DecidableEq (Partition n) := by
 constant partitionTranspose {n : ℕ} : Partition n → Partition n
 
 /-- `partitionTranspose` is involutive. -/
+-- Ref: [fulton1997] https://doi.org/10.1017/CBO9780511626241 §1 (conjugate/transpose partition is an involution λ^{TT}=λ)
 axiom partitionTranspose_involutive {n : ℕ} :
     Function.Involutive (@partitionTranspose n)
   -- See Mathlib module Mathlib.Combinatorics.Young.YoungDiagram —

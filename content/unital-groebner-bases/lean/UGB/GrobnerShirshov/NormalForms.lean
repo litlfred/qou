@@ -383,6 +383,7 @@ structure QSerreRelations (k : Type v) [Field k] where
     with specific coefficient maps.  We axiomatise the construction
     and state the GS property as an axiom verified by the six
     S-polynomial computations of Bokut–Malcolmson 1996. -/
+-- Ref: [bokut2005] https://doi.org/10.1142/S0218196705002347 (q-Serre rewriting system for U_q(su(2)))
 axiom qSerreRewritingSystem (k : Type v) [Field k]
     (qs : QSerreRelations k) : RewritingSystem SU2Gen k
 
@@ -399,6 +400,7 @@ axiom qSerreRewritingSystem (k : Type v) [Field k]
     - (4,5): `K·E_-` vs `E_+·E_-` → no overlap (wrong orientation)
 
     Reference: Bokut & Malcolmson, Israel J. Math. 96 (1996). -/
+-- Ref: [bokut2005] https://doi.org/10.1142/S0218196705002347 (q-Serre relations form a GS basis for U_q(su(2)))
 axiom qSerre_is_gs_basis (k : Type v) [Field k]
     (qs : QSerreRelations k) :
     IsGrobnerShirshovBasis SU2Gen k degLexOrder (qSerreRewritingSystem k qs)
@@ -438,6 +440,7 @@ def PBWMonomial.toMonomial (m : PBWMonomial) : Monomial SU2Gen :=
     order with each block homogeneous.
 
     Reference: Bokut & Malcolmson, Israel J. Math. 96 (1996), Theorem 3.2. -/
+-- Ref: [bokut2005] https://doi.org/10.1142/S0218196705002347 (PBW monomials E_+^a K^b E_-^c are GS normal forms)
 axiom pbw_monomials_are_normal_forms (k : Type v) [Field k]
     (qs : QSerreRelations k)
     (m : PBWMonomial) :
@@ -475,6 +478,7 @@ structure DistAlgGenerators where
     which depend on the formal group law of `G`.
 
     Reference: [fred2005, Proposition 3.8]. -/
+-- Ref: [fred2005] Proposition 3.8 (relations of Dist(G) form a GS basis under filtration-compatible order)
 axiom dist_algebra_gs_basis
     (dg : DistAlgGenerators)
     (G : Type u)

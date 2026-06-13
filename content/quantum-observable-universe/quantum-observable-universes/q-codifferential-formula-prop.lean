@@ -63,16 +63,22 @@ axiom websterInner_linear_right (f : DiffForm R) (r : R) (α β : DiffForm R) :
     websterInner R f (r • α + β) = r * websterInner R f α + websterInner R f β
 
 /-- The classical exterior derivative d. -/
+-- Ref: [manuscript] Ch. 2, prop:q-codifferential-formula (exterior derivative d on DiffForm)
 axiom d_classical (R : Type u) [CommRing R] : DiffForm R → DiffForm R
 /-- The classical codifferential δ (formal adjoint of d). -/
+-- Ref: [manuscript] Ch. 2, prop:q-codifferential-formula (codifferential δ, formal adjoint of d)
 axiom δ_classical (R : Type u) [CommRing R] : DiffForm R → DiffForm R
 /-- The Reeb Lie derivative L_ξ. -/
+-- Ref: [manuscript] Ch. 2, prop:q-codifferential-formula (Reeb Lie derivative L_ξ)
 axiom L_reeb (R : Type u) [CommRing R] : DiffForm R → DiffForm R
 /-- The adjoint L_ξ*. -/
+-- Ref: [manuscript] Ch. 2, prop:q-codifferential-formula (adjoint Reeb derivative L_ξ*)
 axiom L_reeb_star (R : Type u) [CommRing R] : DiffForm R → DiffForm R
 /-- The interior product ι_ξ. -/
+-- Ref: [manuscript] Ch. 2, prop:q-codifferential-formula (interior product ι_ξ)
 axiom ι_reeb (R : Type u) [CommRing R] : DiffForm R → DiffForm R
 /-- The contact form wedge product θ∧(·). -/
+-- Ref: [manuscript] Ch. 2, prop:q-codifferential-formula (contact form wedge θ∧)
 axiom θ_wedge (R : Type u) [CommRing R] : DiffForm R → DiffForm R
 
 /-- The q-exterior derivative: d_q = q⁻¹ d + (1 - q⁻¹) θ ∧ L_ξ.
@@ -133,6 +139,7 @@ theorem q_codifferential_exists (q : Rˣ) :
     or a structure-tightening refactor.
 
     See the theorem docstring below for the cited reference. -/
+-- Ref: [manuscript] Ch. 2, prop:q-codifferential-formula (closed form δ_q = q⁻¹δ + (1−q⁻¹)L_ξ*∘ι_ξ)
 axiom q_codifferential_formula_axiom (q : Rˣ) :
     ∃ (δ_q : DiffForm R → DiffForm R),
       (∀ (α β : DiffForm R), websterInner R (d_q R q α) β =

@@ -188,10 +188,10 @@ theorem habiro_expansion_atomic (p : ℤ[X]) :
 
     Stated as an axiom since the categorical-level statement
     (Jones integrality) is upstream of this formalisation. -/
-axiom atomic_braid_polynomial_integral :
-    ∀ (Z N : ℕ), ∃ (p : ℤ[X]), True
--- Ref: [jones1987] Theorem 3 (Hecke algebras and knot polynomials).
+-- Ref: [jones1987] https://doi.org/10.2307/1971403 Theorem 3 (Hecke algebras and knot polynomials; Jones integrality).
 -- Placeholder: the actual statement would be
 --   ∃ D p, tr_M(T_w(Z,N), X²) · D = p  with p ∈ ℤ[X, X⁻¹].
+axiom atomic_braid_polynomial_integral :
+    ∀ (Z N : ℕ), ∃ (p : ℤ[X]), True
 
 end QOU.BraidKnot

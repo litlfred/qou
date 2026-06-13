@@ -92,9 +92,11 @@ theorem qInteger_zero (q : ℝ) : qInteger 0 q = 0 := by
     index minus row index).  Axiomatised at the abstraction
     level needed by the Wenzl closed form; concrete
     implementation requires the Mathlib `YoungDiagram` bridge. -/
+-- Ref: [fulton1997] https://doi.org/10.1017/CBO9780511626241 §1 (cell content c=j−i on Young diagrams)
 axiom cellContent : ∀ {n : ℕ}, Nat.Partition n → ℕ → ℕ → ℤ
 
 /-- **Hook length** of a cell in a partition.  Axiomatised. -/
+-- Ref: [fulton1997] https://doi.org/10.1017/CBO9780511626241 §4 (hook length formula on Young diagrams)
 axiom cellHookLength : ∀ {n : ℕ}, Nat.Partition n → ℕ → ℕ → ℕ
 
 /-- **Wenzl closed form** for the Jones-Markov coefficient `y_λ(q)`
@@ -104,6 +106,7 @@ axiom cellHookLength : ∀ {n : ℕ}, Nat.Partition n → ℕ → ℕ → ℕ
 
     Axiomatised at this layer; concrete formula uses `qInteger`
     + `cellContent` + `cellHookLength`. -/
+-- Ref: [wenzl1988] https://doi.org/10.1007/BF01404457 Lemma 3.2 (closed form for y_λ(q))
 axiom wenzlClosedForm : ∀ {n : ℕ}, Nat.Partition n → ℝ → ℝ
 
 /-- **Identification axiom**: the abstract `JonesMarkovCoefficient`
@@ -111,6 +114,7 @@ axiom wenzlClosedForm : ∀ {n : ℕ}, Nat.Partition n → ℝ → ℝ
     `wenzlClosedForm`.  The actual proof closes Wenzl 1988
     Lemma 3.2; this axiomatisation lets downstream code use
     either form interchangeably. -/
+-- Ref: [wenzl1988] https://doi.org/10.1007/BF01404457 Lemma 3.2 (identification y_λ = wenzlClosedForm)
 axiom JonesMarkovCoefficient_eq_wenzl :
     ∀ {n : ℕ} (lam : Nat.Partition n) (q : ℝ),
     JonesMarkovCoefficient lam q = wenzlClosedForm lam q

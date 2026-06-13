@@ -96,6 +96,7 @@ instance {G : Type u} [DecidableEq G] : DecidableEq (TensorGen G) :=
     lifts to an admissible order on `G ⊕ G` via the coproduct ordering.
 
     Reference: Bokut & Chen, Bull. Math. Sci. 4 (2014), §2.1. -/
+-- Ref: [bokutchen2014] https://doi.org/10.1007/s13373-014-0054-6 §2.1 (admissible order lifts to coproduct G⊕G)
 axiom tensorOrder {G : Type u} (ord : AdmissibleOrder G) :
     AdmissibleOrder (TensorGen G)
 
@@ -108,6 +109,7 @@ axiom tensorOrder {G : Type u} (ord : AdmissibleOrder G) :
 
     The commutativity relations ensure that `G₁` and `G₂` generators
     commute, which is the defining property of the tensor product. -/
+-- Ref: [bokutchen2014] https://doi.org/10.1007/s13373-014-0054-6 §3 (tensor-product rewriting system on k⟨G₁⊔G₂⟩)
 axiom tensorRewritingSystem {G : Type u} {k : Type v} [Field k] [DecidableEq G]
     (sys : RewritingSystem G k) :
     RewritingSystem (TensorGen G) k
@@ -122,6 +124,7 @@ axiom tensorRewritingSystem {G : Type u} {k : Type v} [Field k] [DecidableEq G]
        involve generators from different copies).
     3. S-polynomials among commutativity relations reduce to zero (trivially,
        since commutativity relations don't overlap with each other). -/
+-- Ref: [bokutchen2014] https://doi.org/10.1007/s13373-014-0054-6 §3 (GS basis induced on tensor product)
 axiom tensor_gs_basis
     {G : Type u} {k : Type v} [Field k] [DecidableEq G]
     (ord : AdmissibleOrder G)
@@ -165,6 +168,7 @@ axiom tensor_gs_basis
     - Six S-polynomial checks on the tensor product
 
     Reference: [fred2005, Theorem 4.12]. -/
+-- Ref: [fred2005] Theorem 4.12 (strong multiplicativity: Δ is an algebra homomorphism on Dist(G))
 axiom strong_multiplicativity_on_generators
     {G : Type u} {k : Type v} [Field k] [DecidableEq G]
     (ord : AdmissibleOrder G)
@@ -218,6 +222,7 @@ theorem frobenius_preserved_by_degree
     a `NoncommutativeFormalGroup` and its associated `GrobnerShirshovBasis`.
     This construction is axiomatised since it depends on the specific
     formal group law. -/
+-- Ref: [fred2005] §4 (formal group with GS basis yields a filtered bialgebra structure)
 axiom formal_group_is_filtered_bialgebra
     {G : Type u} {k : Type v} [Field k] [DecidableEq G]
     (ord : AdmissibleOrder G)

@@ -84,6 +84,7 @@ opaque seminormalDim : ∀ {n : ℕ}, Nat.Partition n → ℕ
 /-- The seminormal dimension is positive for non-empty
     partitions (the trivial Young tableau `T = λ` is always
     standard, giving `f^λ ≥ 1`). -/
+-- Ref: [fulton1997] https://doi.org/10.1017/CBO9780511626241 §4 (f^λ ≥ 1 for nonempty λ; standard Young tableaux)
 axiom seminormalDim_pos : ∀ {n : ℕ} (lam : Nat.Partition n) (hn : 0 < n),
     0 < seminormalDim lam
 
@@ -122,6 +123,7 @@ opaque HoefsmitMatrix : ∀ {n : ℕ} (lam : Nat.Partition n) (_q : ℝ) (_i : F
     For the q-integer convention, the T-form analogue is
     `[k]_q := (q^k − 1) / (q − 1)` (a polynomial in q, integer
     coefficients).  See `QOU.HeckeAlgebra.JonesMarkovWenzl`. -/
+-- Ref: [hoefsmit1974] Hoefsmit, PhD thesis, UBC (1974) — seminormal Hecke relation T_i² = (q−1)T_i + q
 axiom HoefsmitMatrix_hecke_relation : ∀ {n : ℕ} (lam : Nat.Partition n) (q : ℝ)
     (i : Fin (n - 1)),
     (HoefsmitMatrix lam q i) * (HoefsmitMatrix lam q i) =
@@ -136,6 +138,7 @@ axiom HoefsmitMatrix_hecke_relation : ∀ {n : ℕ} (lam : Nat.Partition n) (q :
     has the same shape as the σ-form (it does not depend on the
     quadratic relation), but we phrase it in T's to keep this
     file uniformly in the T-form / `ℤ[q, q⁻¹]`-friendly setup. -/
+-- Ref: [hoefsmit1974] Hoefsmit, PhD thesis, UBC (1974) — seminormal braid relation T_i T_{i+1} T_i = T_{i+1} T_i T_{i+1}
 axiom HoefsmitMatrix_braid_relation : ∀ {n : ℕ} (lam : Nat.Partition n) (q : ℝ)
     (i j : Fin (n - 1)) (_h_adj : j.val = i.val + 1),
     (HoefsmitMatrix lam q i) * (HoefsmitMatrix lam q j) * (HoefsmitMatrix lam q i) =

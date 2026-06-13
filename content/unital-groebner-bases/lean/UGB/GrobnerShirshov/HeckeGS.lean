@@ -152,6 +152,7 @@ noncomputable def heckeRewritingSystem (n : ℕ) (hp : HeckeParams) :
 
 /-- **Theorem** (Bokut & Shiao 2001, Theorem 3.5):
     The Hecke relations form a GS basis for `H_n(q)`. -/
+-- Ref: [bokutchen2014] https://doi.org/10.1007/s13373-014-0054-6 (Gröbner-Shirshov basis for the Iwahori-Hecke algebra H_n(q))
 axiom hecke_is_gs_basis (n : ℕ) (hp : HeckeParams) :
     IsGrobnerShirshovBasis (HeckeGen n) ℝ (heckeOrder n)
       (heckeRewritingSystem n hp)

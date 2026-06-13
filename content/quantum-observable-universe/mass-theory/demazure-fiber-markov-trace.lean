@@ -115,6 +115,7 @@ constant macdonaldHookPrincipal
     or a structure-tightening refactor.
 
     See the theorem docstring below for the cited reference. -/
+-- Ref: [macdonald1995] Symmetric Functions and Hall Polynomials, 2nd ed., OUP, §I.3 Ex. 1 (principal specialisation s_λ(1,q,…,q^{n−1}) hook-content); cf. prop:macdonald-hook-telescope
 axiom demazure_principal_specialization_eq_schur_axiom (lam : Partition n) (q : ℝ) (hq : q > 1) :
     inst.demazureCharacter lam inst.w0 q
       = macdonaldHookPrincipal Partition n lam q

@@ -76,6 +76,7 @@ theorem hodgeRatio_at_g4 : hodgeRatio 4 = bringZeroModeValue := by
     follow-up (`content/quantum-observable-universe/lean/QOU/...`);
     until that lands, the axiom mirrors the filler's signature
     exactly. -/
+-- Ref: [zagier1986] https://doi.org/10.1007/BF01388528 (Bloch-Wigner on unit circle D(e^{iθ}) = Clausen function Cl_2 θ)
 axiom BlochWigner_unit_circle : ℝ → ℝ
 
 /-- Bloch-Wigner identification of the Bring zero-mode contribution,

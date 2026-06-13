@@ -27,6 +27,7 @@ noncomputable def wignerCoefficient (k : ℕ) (q m_e : ℝ) : ℝ :=
     or a structure-tightening refactor.
 
     See the theorem docstring below for the cited reference. -/
+-- Ref: [manuscript] Ch. mass-theory, prop:wigner-coefficient-derivation ([5]_q!·m_e near-match to 68.9 MeV at q_0)
 axiom wigner_coefficient_axiom (q₀ m_e : ℝ)
     (hq : q₀ = 1.109978595554181)
     (hme : m_e = 0.51099895) :

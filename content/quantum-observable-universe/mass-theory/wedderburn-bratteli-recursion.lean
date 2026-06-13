@@ -161,6 +161,7 @@ theorem y_base_case_singleton {R : Type u} [Field R] (y : Partition → R)
     or a structure-tightening refactor.
 
     See the theorem docstring below for the cited reference. -/
+-- Ref: [wenzl1988] https://doi.org/10.1007/BF01404457 Lemma 3.2 (Plancherel completeness Σ_λ y_λ·d_λ = 1 from Markov-trace normalisation)
 axiom plancherel_completeness_axiom {R : Type u} [Field R] (q v : R) (n : ℕ)
     (parts : List Partition)
     (_parts_complete : ∀ λ : Partition, λ.parts.sum = n → λ ∈ parts)

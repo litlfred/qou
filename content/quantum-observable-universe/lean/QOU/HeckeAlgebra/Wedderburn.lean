@@ -106,6 +106,7 @@ theorem WedderburnDecomposition.PosSemidef.add
     `markovTrace_zero` (the trace of zero is zero).  Using
     `axiom` keeps the embedding opaque pending concrete
     construction. -/
+-- Ref: [wedderburn1908] https://doi.org/10.1112/plms/s2-6.1.77 (Wedderburn decomposition ⊕_λ M_{f^λ}; Σ_λ(f^λ)²=n! via RSK, [fulton1997])
 axiom wedderburnEmbed : ∀ {n : ℕ}, WedderburnDecomposition n →
     Matrix (Fin (heckeDim n)) (Fin (heckeDim n)) ℝ
 

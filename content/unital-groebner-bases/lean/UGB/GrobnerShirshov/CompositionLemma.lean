@@ -53,6 +53,7 @@ variable {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
     operations that are not available at the abstract level.
 
     Reference: Bergman 1978, §2, proof of Theorem 1.1 (termination). -/
+-- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5 §2 Thm 1.1 (reduction is well-founded / terminating)
 axiom reduction_well_founded
     (ord : AdmissibleOrder G)
     (sys : RewritingSystem G k) :
@@ -74,6 +75,7 @@ axiom reduction_well_founded
       by `hgs.inclusion_resolves`.
 
     Reference: Bergman 1978, §3, proof of Theorem 1.2 (the Diamond Lemma). -/
+-- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5 §3 Thm 1.2 (local confluence from S-polynomial resolution)
 axiom local_confluence
     (ord : AdmissibleOrder G)
     (sys : RewritingSystem G k)
@@ -102,6 +104,7 @@ axiom local_confluence
     measure on `MultiStepReduction` that we do not carry.
 
     Reference: Newman (1942); Bergman 1978, Corollary to Theorem 1.2. -/
+-- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5 Cor. to Thm 1.2 (Newman's lemma: termination + local confluence ⟹ confluence)
 axiom confluence
     (ord : AdmissibleOrder G)
     (sys : RewritingSystem G k)
@@ -127,6 +130,7 @@ axiom confluence
     2. The fact that normal forms are irreducible under →.
 
     Justified by Bergman 1978, Theorem 1.2. -/
+-- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5 Thm 1.2 (uniqueness of normal forms from confluence)
 axiom normal_form_unique
     {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
     (ord : AdmissibleOrder G)

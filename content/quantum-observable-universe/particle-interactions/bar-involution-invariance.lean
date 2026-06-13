@@ -107,6 +107,7 @@ constant partitionTranspose {n : ℕ} : Partition n → Partition n
 
 /-- Hook lengths are preserved by transpose (Mathlib
     `YoungDiagram.transpose_hookLengths` once available). -/
+-- Ref: [fulton1997] https://doi.org/10.1017/CBO9780511626241 §4 (hook lengths are permuted by partition transpose λ↦λ^T)
 axiom hookLengths_transpose
     {n : ℕ} (lam : Partition n) :
     (hookLengths (partitionTranspose lam)).Perm (hookLengths lam)
