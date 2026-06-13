@@ -1119,7 +1119,104 @@
         "reviewed_at": "2026-06-11T18:06:24.673Z",
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7"
       }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "1219e2ff26b2",
+          "ts": "064515b68b58",
+          "lean": "dffe15058b1b"
+        },
+        "result": "fail",
+        "severity": "critical",
+        "evidence": "q-codifferential-formula-prop.lean:~135 — theorem q_codifferential_formula := q_codifferential_formula_axiom, where that axiom restates the theorem's exact target (same exists/adjoint-relation/closed-formula conjunction) verbatim",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T00:23:48.818Z",
+        "reviewed_sha": "acf23ff62faf53ecb0db46e255dbf010a434bab3",
+        "notes": "Proof passes by injecting an axiom that IS the goal (restates-target); not a genuine proof"
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "1219e2ff26b2",
+          "ts": "064515b68b58",
+          "lean": "dffe15058b1b"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0,
+          "max": 1
+        },
+        "evidence": "q-codifferential-formula-prop.lean — q_codifferential_formula_axiom restates the full target; the remaining gap IS the goal",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T00:23:48.853Z",
+        "reviewed_sha": "acf23ff62faf53ecb0db46e255dbf010a434bab3",
+        "notes": "restates-target axiom => 0.0 per rubric"
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "1219e2ff26b2",
+          "ts": "064515b68b58",
+          "lean": "dffe15058b1b"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "evidence": "q-codifferential-formula-prop.md — narrative gives the formula + adjoint relation but no derivation; Lean discharges via a target-restating axiom rather than an explicit per-term adjoint argument",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T00:23:48.891Z",
+        "reviewed_sha": "acf23ff62faf53ecb0db46e255dbf010a434bab3",
+        "notes": "Plan recoverable (term-by-term adjoint) but implicit; no explicit derivation"
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "1219e2ff26b2",
+          "ts": "064515b68b58",
+          "lean": "dffe15058b1b"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.7,
+          "max": 1
+        },
+        "evidence": "q-codifferential-formula-prop.md — closed formula delta_q = q^-1 delta + (1-q^-1) L_xi* o iota_xi is a genuine q-deformed Tanaka-Webster adjoint, not duplicated by a sibling",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T00:23:48.925Z",
+        "reviewed_sha": "acf23ff62faf53ecb0db46e255dbf010a434bab3",
+        "notes": "Novel q-deformed codifferential construction"
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-13T00:23:48.925Z"
 }
