@@ -1,5 +1,29 @@
 #!/usr/bin/env python3
 """
+CLASS-A diagnostic banner (per `local/production-vs-exploratory-discipline`).
+
+This script performs per-isotope fits of `α` in
+`B_pred = B_leading + α · m_e · |(q;q)_r|` against AME 2020 binding
+energies, scanning rank `r = 1..7`.  Each fit is per-isotope; **no
+universal α is claimed**.  The fitted values are diagnostic output
+intended to expose pattern structure across isotopes (signs,
+magnitudes, rank-dependence) for subsequent categorical derivation,
+not production mass predictions.
+
+What would promote this to Class-B (production) closure:
+- A categorical derivation of `α(K)` from the brane-tower
+  structure (Option E crystal-weight assignment, per
+  `docs/audits/2026-05-25-option-e-crystal-weight-delta-lambda.md`).
+- Then `α` becomes a derived quantity per isotope, not a fit,
+  and `binding_ladder_catalog.py` becomes a cross-check rather
+  than a fit emitter.
+
+Until that derivation lands, the canonical-watcher classifies this
+script as `class-a-acknowledged` (diagnostic fit-class probe,
+explicit fitting; not a 4th-calibration violation).
+
+──────────────────────────────────────────────────────────────────
+
 29b: Per-isotope binding catalog with ladder corrections.
 
 For each light isotope D, T, ³He, ⁴He, ⁶Li, ⁷Li:
@@ -21,7 +45,6 @@ per isotope.
 Target: each isotope ≤ 100 ppb (using 3-cal calibration framework).
 """
 from __future__ import annotations
-import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import sys, json, warnings
 from pathlib import Path
 from datetime import datetime, timezone
