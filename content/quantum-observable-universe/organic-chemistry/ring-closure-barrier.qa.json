@@ -1037,7 +1037,192 @@
         "reviewed_at": "2026-06-11T18:06:24.673Z",
         "reviewed_sha": "58af3db6fd9d530a50b6be301228b09f754c3df7"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "d1174875f401",
+          "ts": "141de25a8dd3",
+          "lean": "16f25fad683e"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "organic-chemistry.ts:29-40 — sec:molecular-chains-rings lists ring-closure-barrier last, after molecular-hopf-chain/ring defs it builds on; ring-closure-barrier.md:1-6 chain-to-ring topological phase transition",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:16:57.486Z",
+        "reviewed_sha": "4f9e1fcec544728419f3b8010031046a9158f0e7",
+        "notes": "Proposition is the capstone of §2 (chain vs ring crossing energies); depends only on §2 defs; the §3 sibling chain-ring-energy is its interprets: companion, not a redundant restatement."
+      }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "d1174875f401",
+          "ts": "141de25a8dd3",
+          "lean": "16f25fad683e"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "ring-closure-barrier.md:99-105 — 'The spring analogy. The open chain is a spring held apart…'; md:77-97 'Ring super-stability from threading… deep topological trap'",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:16:57.522Z",
+        "reviewed_sha": "4f9e1fcec544728419f3b8010031046a9158f0e7",
+        "notes": "Interpretive/analogical prose (spring analogy, super-stability narrative) follows the Statement in-block; companion remark chain-ring-energy.ts has interprets:'prop:ring-closure-barrier' and holds related interpretation, so warn not fail."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "d1174875f401",
+          "ts": "141de25a8dd3",
+          "lean": "16f25fad683e"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "ring-closure-barrier.md:27-31 — symbolic Delta_{T(2,N)}(q)=(q^{N/2}-q^{-N/2})/(q-q^{-1}); md:42-43 numeric eval flagged inline as 'approx 3 (|q| approx 1)'",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:17:23.071Z",
+        "reviewed_sha": "4f9e1fcec544728419f3b8010031046a9158f0e7",
+        "notes": "Statement is generic Laurent-polynomial algebra in symbolic q; the one numeric evaluation is approx-flagged with explicit |q|~1 qualifier; no Real.*, no MeV, no q0=1.11, no order hypothesis. Matches the applications-chapter regime."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "d1174875f401",
+          "ts": "141de25a8dd3",
+          "lean": "16f25fad683e"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "ring-closure-barrier.md:50-75 argues via braid-word/Alexander-weight comparison; ring-closure-barrier.lean:23-50 proofs over ℕ via omega, no linarith/IVT/Real.*",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:17:23.106Z",
+        "reviewed_sha": "4f9e1fcec544728419f3b8010031046a9158f0e7",
+        "notes": "No archimedean machinery anywhere in the argument: narrative reasoning is combinatorial (Alexander weights, braid words), Lean side is ℕ arithmetic. Proof method matches statement side of the wall."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "d1174875f401",
+          "ts": "141de25a8dd3",
+          "lean": "16f25fad683e"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "evidence": "ring-closure-barrier.lean:23-50 — zero sorry; three decls proved (native_decide, omega)",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:17:57.411Z",
+        "reviewed_sha": "4f9e1fcec544728419f3b8010031046a9158f0e7",
+        "notes": "Sorry-free Lean file => 1.0 per rubric (no remaining goals to close)."
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "d1174875f401",
+          "ts": "141de25a8dd3",
+          "lean": "16f25fad683e"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.6,
+          "max": 1
+        },
+        "evidence": "ring-closure-barrier.md:8,50,77 — bolded plan headings (Statement / The barrier: topological reorganisation / Ring super-stability); central inequality md:65-72 asserted without a stated proof plan",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:17:57.447Z",
+        "reviewed_sha": "4f9e1fcec544728419f3b8010031046a9158f0e7",
+        "notes": "Plan recoverable from section headings and weight comparison, but the key transition-maximum inequality has no explicit derivation strategy; Lean covers only the arithmetic proxy. 0.6 = recoverable but partly implicit."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "d1174875f401",
+          "ts": "141de25a8dd3",
+          "lean": "16f25fad683e"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.55,
+          "max": 1
+        },
+        "evidence": "ring-closure-barrier.lean:23-24 def (N-1)-N/2 proved by omega; chain-ring-energy.md:8-22 repeats the same chain-vs-ring Alexander weight comparison (table 5 vs 3) and discontinuity argument",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:17:57.483Z",
+        "reviewed_sha": "4f9e1fcec544728419f3b8010031046a9158f0e7",
+        "notes": "Framework-specific threading-barrier argument is distinct, but the formal content is elementary ℕ arithmetic and the exposition substantially overlaps the companion remark chain-ring-energy. 0.55 = standard, partial sibling overlap."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "d1174875f401",
+          "ts": "141de25a8dd3",
+          "lean": "16f25fad683e"
+        },
+        "result": "warn",
+        "severity": "major",
+        "evidence": "ring-closure-barrier.lean:19-24 docstring 'This quantity is proportional to the energy barrier' + theorem ring_opening_exceeds_closure (lean:46-50) proves only N/2 < N-1, while md:65-72 claims E_cross(transition) > max(...)",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-13",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-13T01:17:57.520Z",
+        "reviewed_sha": "4f9e1fcec544728419f3b8010031046a9158f0e7",
+        "notes": "No sorryAx; signatures stable on branch (no recent signature-changing diff); no §3b-cond banner needed (uses[] has no conj:). However the Lean encodes a weaker arithmetic proxy of the narrative barrier claim — weakening IS documented in the docstring (proportionality proxy), so warn not fail."
+      }
     ]
   },
-  "updated_at": "2026-06-11T18:06:24.673Z"
+  "updated_at": "2026-06-13T01:17:57.520Z"
 }
