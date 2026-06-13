@@ -117,7 +117,7 @@ The two candidate closures agree to four significant figures at
 the substrate level. The CAL-3 residual remains an open finding
 in the same direction for both.
 
-## Status
+## Discussion
 
 **Open conjecture.** All three sub-claims (existence, selection,
 direction) require categorical derivation. The closure proposal

@@ -46,7 +46,7 @@ start.
 Form A and Form B agree only at $q = q_0$; at every other $q$ they give
 different values for $1/\alpha$, confirming that they are not the same
 function of $q$ and that Form B's match is single-point fit.
-## Status of derivation effort (this audit)
+## Ruled-out derivation paths
 
 Four computational paths to close the $1.55 \times 10^{-3}$ correction
 have been tried and **ruled out** (or shown not to be expressible as

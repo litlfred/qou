@@ -41,7 +41,7 @@ theorem closure2_jones_at_one_sigma_sq_eq_neg_two :
 
 closed by `closure2_at_two_crossings_eq_hopf` + `jonesAtOne_hopf_eq_neg_two`.
 
-## Track-C status after Step A
+## Track-C atoms (Step A)
 
 | Track-C atom | Lean status |
 |---|---|

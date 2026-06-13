@@ -88,7 +88,7 @@ matching the Bloch-regulator class of the archimedean image. See the
 explicit numerical witness in
 [`conj:bring-figure-eight-depth-2-witness`](#conj:bring-figure-eight-depth-2-witness).
 
-### Status and discharge targets
+### Discharge targets
 
 **Open.** The conjecture is structural (no concrete computation
 suffices to discharge it), but admits a clean reduction to known

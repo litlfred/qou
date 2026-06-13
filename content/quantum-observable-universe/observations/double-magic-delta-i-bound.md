@@ -54,7 +54,7 @@ $j$:
 The $\Delta i \leq 1$ rule is therefore **the LR-fusion
 compatibility constraint** between Bring shells.
 
-## Status
+## Discussion
 
 **Conjecture** (CLAUDE.md §3b axiom-class).
 

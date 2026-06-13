@@ -123,7 +123,7 @@ by the GS-filtration Term 6 plus an `is_magic_pair`
 operator-correction with correlation $+0.74$ to the AME residual
 ([reframing memo](../../../docs/audits/-self-conj-support-reframing.md)).
 
-## Status
+## Discussion
 
 **Status: conjectural** under CLAUDE.md §3b. Numerical witnesses at
 $k = 3, \dots, 10$ are supportive but not a proof; the conjecture

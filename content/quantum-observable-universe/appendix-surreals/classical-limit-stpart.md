@@ -71,7 +71,7 @@ detected in the surreal lift (as a non-trivial first-order
 $\varepsilon$-term), but it is "felt by the classical observer"
 only when the standard-part is non-zero.
 
-## Status
+## Discussion
 
 **Open.** The conjecture is partly motivated by Berarducci--
 Mantova's derivation construction

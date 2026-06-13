@@ -68,7 +68,7 @@ This proposition serves three purposes:
    bi-filtration definition but are not yet realised in the paper.
    Each is a falsifiability target.
 
-### Status
+### Discussion
 
 **Tabulation block.** The placement of each existing operation is
 *verified by inspection* of its defining block. The closure

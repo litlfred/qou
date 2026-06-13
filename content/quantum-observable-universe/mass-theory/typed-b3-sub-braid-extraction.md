@@ -58,7 +58,7 @@ The Lean discharge of this axiom requires:
 Steps 1, 2, 4 are mechanical Lean infrastructure. Step 3 is the
 substantive combinatorial content.
 
-## Cumulative Track-C status
+## Cumulative Track-C atoms
 
 After this file:
 

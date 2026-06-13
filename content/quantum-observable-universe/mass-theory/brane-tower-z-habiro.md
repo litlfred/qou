@@ -101,7 +101,7 @@ If true, the conjecture:
    single open computation reduces from "find the right Φ_q
    regularization" to "identify $n_\star$ from substrate data".
 
-## Status of $n_\star$
+## The open part: $n_\star$
 
 The level-selection rule $n_\star$ is **the open part**. Candidate
 structural inputs:
@@ -497,7 +497,7 @@ $\Delta_{\text{shell}}(N{=}2) = \Delta_{\text{shell}}(Z{=}2)$
 gives the wrong sign on ${}^{4}$He (predicted $-11$ MeV vs AME $+28.3$
 MeV, $-139\%$ error).
 
-### Status update
+### Pair-knot magic-shell probe
 
 The pair-knot magic-shell probe **partially supports the structural
 diagnosis but does not close the conjecture**:

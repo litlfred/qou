@@ -75,7 +75,7 @@ Two reasons:
  case of $\varepsilon$-vacuum subtraction. This unifies two
  regularisations into one.
 
-## Status
+## Discussion
 
 **Open**. The conjecture is the most directly testable of the
 appendix's relaxation conjectures: pick an

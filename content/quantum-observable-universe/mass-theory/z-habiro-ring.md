@@ -78,7 +78,7 @@ how $N$ labels the $N$-th colored Jones in the $q$-Habiro picture.
   brane-tower-coexistence (in $z$) data simultaneously. Construction
   of the bicompletion is open.
 
-## Status
+## Discussion
 
 This definition is **proposed structure**, not established. The
 parallel with the $q$-Habiro ring is formal and the construction of
