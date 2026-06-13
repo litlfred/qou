@@ -5,7 +5,7 @@ export default conjecture({
   title:
     "Spin $\\mathrm{SU}(2)_S$ from full $\\mathrm{SO}(3)$ fiber action on color-sheet rotations",
   lean: {
-    ref: "qou:QOU.BraidsAndKnots.SpinFromSO3Fiber",
+    ref: "qou:QOU.BraidsAndKnots.SpinFromSo3Fiber",
     validation: "not_checked",
   },
   uses: [

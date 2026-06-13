@@ -5,7 +5,7 @@ export default conjecture({
   title:
     "Lusztig canonical basis at $q = 1$ — decategorification of Kashiwara crystal via Kazhdan–Lusztig polynomials",
   lean: {
-    ref: "qou:QOU.BraidsAndKnots.LusztigCanonicalBasisQEqOne",
+    ref: "qou:QOU.BraidsAndKnots.LusztigCanonicalBasisQEq1",
     validation: "not_checked",
   },
   uses: [

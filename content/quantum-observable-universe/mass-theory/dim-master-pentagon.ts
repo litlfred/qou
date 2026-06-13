@@ -5,7 +5,7 @@ export default conjecture({
   title:
     "Ding–Iohara–Miki master Pentagon as unified ancestor of Macdonald + $q$-dilog Pentagons",
   lean: {
-    ref: "qou:QOU.BraidsAndKnots.DIMMasterPentagon",
+    ref: "qou:QOU.BraidsAndKnots.DimMasterPentagon",
     validation: "not_checked",
   },
   uses: [

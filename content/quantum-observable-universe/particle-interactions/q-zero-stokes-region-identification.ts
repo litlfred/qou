@@ -5,7 +5,7 @@ export default conjecture({
   title:
     "Substrate $q_0$ identification via Stokes region of the generating function (over $\\mathbb{Z}[q, q^{-1}]$)",
   lean: {
-    ref: "qou:QOU.BraidKnot.QZeroStokesRegionIdentification",
+    ref: "qou:QOU.BraidKnot.QZeroStokesRegionIdentification.QZeroStokesIdentification",
     validation: "not_checked",
   },
   uses: ["prop:phi-q-aj-machinery-identification"],
