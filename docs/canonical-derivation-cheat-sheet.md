@@ -59,6 +59,12 @@ trace-canonical path the whole gap collapses to a near-integer q₀-power,
 **derive-or-refute `10A−5`** from the canonical chain's crossing/jet
 bookkeeping, not a search over closure ansätze
 ([residual audit](audits/2026-06-09-delta-lambda-canonical-residual.md)).
+**9a flip decision settled (owner, 2026-06-13):** production stays on the
+uniform shortcut until the per-A normalisation `R(K)` — the same object as
+the 9b ρ/Δ_λ leg — is derived; the flip is a *derivation milestone*, not a
+wiring choice, and flip+re-pin is **refuted** (`R(K)` runs 2.3→63× with A;
+[decision package](audits/2026-06-13-step9a-flip-decision-package.md)).
+Do not re-litigate per-knot production flips against this gate.
 
 > ## ⚠ Critical framing — do NOT treat `λ_scale` as a separate object
 >

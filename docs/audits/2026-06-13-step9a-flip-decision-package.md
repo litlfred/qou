@@ -54,7 +54,8 @@ would still need to supply.
   `tr_M` only where the constant cancels (ratios, isotope deltas).
   Cost: the +2.9→3.7 % A-trend stays; the paper's Stage-4 per-block form
   remains unwired in production.
-- **(B) Flip as a derivation milestone (recommended).** Treat R(K) as the
+- **(B) Flip as a derivation milestone — OWNER-SELECTED 2026-06-13.**
+  Treat R(K) as the
   missing per-A normalisation — the same object as the step-9b per-block
   density leg (`ρ(K)` / Δ_λ; cf. the trace-canonical residual
   `Δ_λ(K) ≈ q₀^(10A−5)` thread,
