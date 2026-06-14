@@ -326,26 +326,26 @@
  {
   "id": "lean-drain-QIntegerMassFormula",
   "summary": "[T2] Interactions/QIntegerMassFormula.lean: No goals @89 + sorry @172",
-  "comment": "Lean build-drain bean (2026-06-14, one-per-lean). File: content/quantum-observable-universe/lean/QOU/Interactions/QIntegerMassFormula.lean. Root: No goals @89 + sorry @172. Fix: remove extra tactic; discharge sorry. Status: open. Verify: LEAN_PATH=$(find . -type d -path '*/.lake/build/lib/lean'|tr '\\n' ':') lean <file>. Goal: move block to proved. See docs/audits/2026-06-14-lean-build-drain-beans.md.",
-  "status": "open"
+  "comment": "Lean build-drain bean (2026-06-14, one-per-lean). File: content/quantum-observable-universe/lean/QOU/Interactions/QIntegerMassFormula.lean. Root: No goals @89 + sorry @172. Fix: remove extra tactic; discharge sorry. Status: partial (3 errors fixed; residual sorry is §3b-cond conjecture-class instance → has_sorry, not proved). Verify: LEAN_PATH=$(find . -type d -path '*/.lake/build/lib/lean'|tr '\\n' ':') lean <file>. Goal: move block to proved. See docs/audits/2026-06-14-lean-build-drain-beans.md.",
+  "status": "partial"
  },
  {
   "id": "lean-drain-FlavorMassSplittingBound",
   "summary": "[T2] FlavorDressing/FlavorMassSplittingBound.lean: No goals @78",
   "comment": "Lean build-drain bean (2026-06-14, one-per-lean). File: content/quantum-observable-universe/lean/QOU/FlavorDressing/FlavorMassSplittingBound.lean. Root: No goals @78. Fix: remove extra tactic. Status: open. Verify: LEAN_PATH=$(find . -type d -path '*/.lake/build/lib/lean'|tr '\\n' ':') lean <file>. Goal: move block to proved. See docs/audits/2026-06-14-lean-build-drain-beans.md.",
-  "status": "open"
+  "status": "drained-verified"
  },
  {
   "id": "lean-drain-HeckeLogDecomposition",
   "summary": "[T2] Information/HeckeLogDecomposition.lean: Unknown constant Real.log_one_div",
   "comment": "Lean build-drain bean (2026-06-14, one-per-lean). File: content/quantum-observable-universe/lean/QOU/Information/HeckeLogDecomposition.lean. Root: Unknown constant Real.log_one_div. Fix: find current Mathlib lemma name. Status: open. Verify: LEAN_PATH=$(find . -type d -path '*/.lake/build/lib/lean'|tr '\\n' ':') lean <file>. Goal: move block to proved. See docs/audits/2026-06-14-lean-build-drain-beans.md.",
-  "status": "open"
+  "status": "drained-verified"
  },
  {
   "id": "lean-drain-BorromeanQuark",
   "summary": "[T2] Archimedean/BorromeanQuark.lean: Unknown constant Finset.univ.sum",
   "comment": "Lean build-drain bean (2026-06-14, one-per-lean). File: content/quantum-observable-universe/lean/QOU/Archimedean/BorromeanQuark.lean. Root: Unknown constant Finset.univ.sum. Fix: use ∑ / Finset.sum Finset.univ. Status: open. Verify: LEAN_PATH=$(find . -type d -path '*/.lake/build/lib/lean'|tr '\\n' ':') lean <file>. Goal: move block to proved. See docs/audits/2026-06-14-lean-build-drain-beans.md.",
-  "status": "open"
+  "status": "drained-verified"
  },
  {
   "id": "lean-drain-EmCouplingBringZeroMode",
@@ -356,50 +356,50 @@
  {
   "id": "lean-drain-CategoricalDqSquared",
   "summary": "[T2] CategoricalDqSquared.lean: unexpected 'section' expected lemma @43",
-  "comment": "Lean build-drain bean (2026-06-14, one-per-lean). File: content/quantum-observable-universe/lean/QOU/CategoricalDqSquared.lean. Root: unexpected 'section' expected lemma @43. Fix: complete the lemma. Status: open. Verify: LEAN_PATH=$(find . -type d -path '*/.lake/build/lib/lean'|tr '\\n' ':') lean <file>. Goal: move block to proved. See docs/audits/2026-06-14-lean-build-drain-beans.md.",
+  "comment": "Lean build-drain bean (2026-06-14, one-per-lean). File: content/quantum-observable-universe/lean/QOU/CategoricalDqSquared.lean. Root: unexpected 'section' expected lemma @43. Fix: complete the lemma. Status: open (SKIPPED — references CategoricalQExtDeriv with no local def; Instanton's is Linear ℝ C vs local Linear R_q C, a §7c base-ring design decision). Verify: LEAN_PATH=$(find . -type d -path '*/.lake/build/lib/lean'|tr '\\n' ':') lean <file>. Goal: move block to proved. See docs/audits/2026-06-14-lean-build-drain-beans.md.",
   "status": "open"
  },
  {
   "id": "lean-drain-CosimplicialCrossedGroupoid",
   "summary": "[T2] LiftingDescent/CosimplicialCrossedGroupoid.lean: unexpected 'section' expected lemma @33",
   "comment": "Lean build-drain bean (2026-06-14, one-per-lean). File: content/quantum-observable-universe/lean/QOU/LiftingDescent/CosimplicialCrossedGroupoid.lean. Root: unexpected 'section' expected lemma @33. Fix: complete the lemma. Status: open. Verify: LEAN_PATH=$(find . -type d -path '*/.lake/build/lib/lean'|tr '\\n' ':') lean <file>. Goal: move block to proved. See docs/audits/2026-06-14-lean-build-drain-beans.md.",
-  "status": "open"
+  "status": "drained-verified"
  },
  {
   "id": "lean-drain-su2_emergence_volume_determinant",
   "summary": "[T2] su2_emergence_volume_determinant.lean: Unknown identifier SU2EmergenceContext",
   "comment": "Lean build-drain bean (2026-06-14, one-per-lean). File: content/quantum-observable-universe/lean/QOU/su2_emergence_volume_determinant.lean. Root: Unknown identifier SU2EmergenceContext. Fix: add missing def/import. Status: open. Verify: LEAN_PATH=$(find . -type d -path '*/.lake/build/lib/lean'|tr '\\n' ':') lean <file>. Goal: move block to proved. See docs/audits/2026-06-14-lean-build-drain-beans.md.",
-  "status": "open"
+  "status": "drained-verified"
  },
  {
   "id": "lean-drain-WitnessR5Full",
   "summary": "[T2] BraidKnot/WitnessR5Full.lean: Prop projection min_block_eig must be a proof @67",
   "comment": "Lean build-drain bean (2026-06-14, one-per-lean). File: content/quantum-observable-universe/lean/QOU/BraidKnot/WitnessR5Full.lean. Root: Prop projection min_block_eig must be a proof @67. Fix: fix struct field type. Status: open. Verify: LEAN_PATH=$(find . -type d -path '*/.lake/build/lib/lean'|tr '\\n' ':') lean <file>. Goal: move block to proved. See docs/audits/2026-06-14-lean-build-drain-beans.md.",
-  "status": "open"
+  "status": "drained-verified"
  },
  {
   "id": "lean-drain-HeckeGenPolyReduction",
   "summary": "[T2] Braiding/HeckeGenPolyReduction.lean: unknown tactic @86",
   "comment": "Lean build-drain bean (2026-06-14, one-per-lean). File: content/quantum-observable-universe/lean/QOU/Braiding/HeckeGenPolyReduction.lean. Root: unknown tactic @86. Fix: fix tactic. Status: open. Verify: LEAN_PATH=$(find . -type d -path '*/.lake/build/lib/lean'|tr '\\n' ':') lean <file>. Goal: move block to proved. See docs/audits/2026-06-14-lean-build-drain-beans.md.",
-  "status": "open"
+  "status": "drained-verified"
  },
  {
   "id": "lean-drain-MassEndomorphismConjecture",
   "summary": "[T2] MassEndomorphism/MassEndomorphismConjecture.lean: unknown tactic @75,93",
   "comment": "Lean build-drain bean (2026-06-14, one-per-lean). File: content/quantum-observable-universe/lean/QOU/MassEndomorphism/MassEndomorphismConjecture.lean. Root: unknown tactic @75,93. Fix: fix tactic. Status: open. Verify: LEAN_PATH=$(find . -type d -path '*/.lake/build/lib/lean'|tr '\\n' ':') lean <file>. Goal: move block to proved. See docs/audits/2026-06-14-lean-build-drain-beans.md.",
-  "status": "open"
+  "status": "drained-verified"
  },
  {
   "id": "lean-drain-PhiQJSJ",
   "summary": "[T2] PhiQJSJ.lean: unknown tactic @44",
   "comment": "Lean build-drain bean (2026-06-14, one-per-lean). File: content/quantum-observable-universe/lean/QOU/PhiQJSJ.lean. Root: unknown tactic @44. Fix: fix tactic. Status: open. Verify: LEAN_PATH=$(find . -type d -path '*/.lake/build/lib/lean'|tr '\\n' ':') lean <file>. Goal: move block to proved. See docs/audits/2026-06-14-lean-build-drain-beans.md.",
-  "status": "open"
+  "status": "drained-verified"
  },
  {
   "id": "lean-drain-RpowAlgebra",
   "summary": "[T2] MathlibExt/RpowAlgebra.lean: unsolved goals @51",
   "comment": "Lean build-drain bean (2026-06-14, one-per-lean). File: content/quantum-observable-universe/lean/QOU/MathlibExt/RpowAlgebra.lean. Root: unsolved goals @51. Fix: complete proof. Status: open. Verify: LEAN_PATH=$(find . -type d -path '*/.lake/build/lib/lean'|tr '\\n' ':') lean <file>. Goal: move block to proved. See docs/audits/2026-06-14-lean-build-drain-beans.md.",
-  "status": "open"
+  "status": "drained-verified"
  },
  {
   "id": "lean-drain-PalindromicityOrbitalType",

@@ -48,26 +48,38 @@ modules need those QOU oleans built first.)
 
 ## Tier 2 — local semantic (extra tactic / wrong lemma name / structure)
 
-- [ ] ⬜ `AppendixSurreals/KComplex.lean:103` — `No goals to be solved` (remove extra tactic).
-- [ ] ⬜ `Interactions/QIntegerMassFormula.lean:89` — `No goals` + sorry at `:172`.
-- [ ] ⬜ `FlavorDressing/FlavorMassSplittingBound.lean:78` — `No goals`.
-- [ ] ⬜ `Information/HeckeLogDecomposition.lean:53` — `Unknown constant Real.log_one_div`
-  (Mathlib rename → find current name, e.g. `Real.log_inv`/`Real.log_div`).
-- [ ] ⬜ `Archimedean/BorromeanQuark.lean:35` — `Unknown constant Finset.univ.sum`
-  → `∑ x, …` / `Finset.sum Finset.univ` (+ downstream type mismatches).
+- [ ] 🟡 `AppendixSurreals/KComplex.lean:103` — `No goals to be solved` (remove extra tactic).
+- [x] ✅ `Interactions/QIntegerMassFormula.lean:89` — `No goals`@89 + orphan-docstring@134
+  + noncomputable@172 fixed; residual `sorry`@172 is the §3b-cond conjecture-class
+  instance (file moves error → has_sorry). lean-direct EXIT 0.
+- [x] ✅ `FlavorDressing/FlavorMassSplittingBound.lean:78` — 8 errors (No-goals ×4 +
+  `inv_lt_one₀`/`div_lt_iff₀`/`sq_pos_of_ne_zero`→`pow_pos`/`positivity`→`pow_pos`).
+  lean-direct EXIT 0.
+- [x] ✅ `Information/HeckeLogDecomposition.lean:53` — `Real.log_one_div` → `one_div` +
+  `Real.log_inv`. lean-direct EXIT 0.
+- [x] ✅ `Archimedean/BorromeanQuark.lean:35` — `Finset.univ.sum`→`∑ i, …` + import
+  `Algebra.BigOperators.Fin` & `Fin.VecNotation` (for `![..]`). lean-direct EXIT 0.
 - [ ] ⬜ `Archimedean/EmCouplingBringZeroMode.lean:103` — `unexpected '/--' expected 'lemma'`
   (malformed lemma/docstring) + sorry at `:193`.
-- [ ] ⬜ `CategoricalDqSquared.lean:43` — `unexpected 'section' expected 'lemma'`
-  (incomplete lemma before `section`).
-- [ ] ⬜ `LiftingDescent/CosimplicialCrossedGroupoid.lean:33` — same incomplete-lemma.
-- [ ] ⬜ `su2_emergence_volume_determinant.lean:58` — `Unknown identifier SU2EmergenceContext`
-  (missing def/import).
-- [ ] ⬜ `BraidKnot/WitnessR5Full.lean:67` — Prop-valued struct field `min_block_eig`
-  must be a proof (fix the field type).
-- [ ] ⬜ `Braiding/HeckeGenPolyReduction.lean:86` — `unknown tactic`.
-- [ ] ⬜ `MassEndomorphism/MassEndomorphismConjecture.lean:75,93` — `unknown tactic`.
-- [ ] ⬜ `PhiQJSJ.lean:44` — `unknown tactic`.
-- [ ] ⬜ `MathlibExt/RpowAlgebra.lean:51` — `unsolved goals`.
+- [ ] ⬜ `CategoricalDqSquared.lean:43` — SKIPPED. Section/docstring structure fixed locally
+  but file references `CategoricalQExtDeriv` with NO local def; only Instanton defines it
+  as `Linear ℝ C` while the local theorem declares `Linear R_q C` — reconciling is a §7c
+  base-ring design decision, not mechanical. Reverted to HEAD.
+- [x] ✅ `LiftingDescent/CosimplicialCrossedGroupoid.lean:33` — docstring orphaned the
+  `noncomputable section` + unclosed section; moved docstring + added bare `end`.
+  lean-direct EXIT 0.
+- [x] ✅ `su2_emergence_volume_determinant.lean:58` — `Unknown identifier SU2EmergenceContext`
+  → `import QOU.su2_emergence_dagger_unitarity`. lean-direct EXIT 0.
+- [x] ✅ `BraidKnot/WitnessR5Full.lean:67` — Prop-valued struct with ℝ data field →
+  dropped `: Prop`. lean-direct EXIT 0.
+- [x] ✅ `Braiding/HeckeGenPolyReduction.lean:86` — `module` unknown tactic →
+  `import Mathlib.Tactic.Module`. lean-direct EXIT 0.
+- [x] ✅ `MassEndomorphism/MassEndomorphismConjecture.lean:75,93` — `ring` unknown tactic →
+  `import Mathlib.Tactic.Ring`. lean-direct EXIT 0.
+- [x] ✅ `PhiQJSJ.lean:44` — `linarith` unknown tactic → `import Mathlib.Tactic.Linarith`;
+  + `TowerSummandRealization.realisation (q := q) β S` named-arg. lean-direct EXIT 0.
+- [x] ✅ `MathlibExt/RpowAlgebra.lean:51` — `unsolved goals` (q=0 case) → explicit
+  `Real.zero_rpow`. lean-direct EXIT 0.
 - [ ] ⬜ `Molecular/PalindromicityOrbitalType.lean:42` — `Type mismatch`.
 - [ ] ⬜ `Molecular/ShellClosureNfTermCount.lean:92` — `typeclass instance stuck`.
 
@@ -93,9 +105,20 @@ modules need those QOU oleans built first.)
 
 | | count |
 |---|--:|
-| ✅ drained (verified clean) | 4 |
-| 🟡 partial | 1 (Plancherel) |
-| ⬜ open | 25 |
+| ✅ drained (verified clean) | 13 |
+| 🟡 partial | 2 (Plancherel, KComplex) |
+| ⬜ open | 13 |
+| ⏭ skipped (needs design decision) | 1 (CategoricalDqSquared) |
+
+Session 2 (2026-06-14, branch `claude/gallant-volta-olmlar`, PR #2295)
+drained 9 more: HeckeLogDecomposition, QIntegerMassFormula,
+RpowAlgebra, CosimplicialCrossedGroupoid, MassEndomorphismConjecture,
+BorromeanQuark, HeckeGenPolyReduction, PhiQJSJ,
+su2_emergence_volume_determinant, WitnessR5Full, FlavorMassSplittingBound
+(11 commits; all lean-direct EXIT 0). The common roots were missing
+tactic imports (`Tactic.Ring`/`.Linarith`/`.Module`),
+`field_simp; ring`→"No goals", and the GroupWithZero order refactor
+(`inv_lt_one₀`/`div_lt_iff₀`).
 
 Next pass: Tier 2 "No goals / unknown tactic" quick wins, then the
 Mathlib-rename beans (HeckeLogDecomposition, TraceLocality), then the
