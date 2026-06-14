@@ -18,7 +18,7 @@ Both are **infinite surreals of $\operatorname{ord}_\omega = +1$**
 ([Conway normal form](#rem:conway-normal-form)): each diverges like $c\,\omega$
 as the cutoff shrinks. Because $|\varrho(s)-\varrho(t)| = D(s,t) + O(|s-t|^3)$
 near the diagonal, $I_1$ and $I_2$ share the **same leading coefficient** $c$,
-so the $\omega^{+1}$ parts cancel, $I_1 - I_2$ is **appreciable** (finite), and
+consequently the $\omega^{+1}$ parts cancel, $I_1 - I_2$ is **appreciable** (finite), and
 
 $$
   E(\varrho) \;=\; \operatorname{std}\!\bigl(I_1 - I_2\bigr).

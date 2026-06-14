@@ -15,7 +15,7 @@ per-molecule multiplicity
 
     W₁ = C(4,2) · (1/2)² = 6/4 = 3/2,
 
-so the molar residual entropy is `S = R·ln(3/2) ≈ 3.37 J mol⁻¹ K⁻¹`. The
+thus the molar residual entropy is `S = R·ln(3/2) ≈ 3.37 J mol⁻¹ K⁻¹`. The
 multiplicity `3/2` is the exact, axiom-free content; `S = R ln W₁` is the
 archimedean evaluation.
 

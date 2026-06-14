@@ -23,7 +23,7 @@ $$
   \sum_{i=1}^{k}(n_i - 1) \;=\; N - k,
 $$
 
-so the **bonding** degrees of freedom number $(N-1) - (N-k) = k-1$ — one
+consequently the **bonding** degrees of freedom number $(N-1) - (N-k) = k-1$ — one
 per join between sub-units.  For benzene's $\lambda = (2,2,2)$ this is
 $N - k = 3$ intra-unit generators and $k - 1 = 2$ bonding generators
 linking the three units into a ring (the third join closes the ring).

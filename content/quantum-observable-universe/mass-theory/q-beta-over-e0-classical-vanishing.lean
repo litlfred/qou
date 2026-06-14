@@ -51,7 +51,7 @@ theorem qbeta_over_e0_numerator_at_one_eq_zero {R : Type u} [CommRing R] :
 
 /-- The simplified closed form of `S(q) = Q_β(q) / E_0(q)` using the
     `N = 0` form of `E_0`.  The `m_e` mass scale cancels in the ratio,
-    so the result is a pure rational function of `q`. -/
+    consequently the result is a pure rational function of `q`. -/
 noncomputable def S_N0 {R : Type u} [Field R] (q : R) : R :=
   (2 * q + 1 - q ^ 2) * (q ^ 2 - 1) / (2 * q ^ 2)
 

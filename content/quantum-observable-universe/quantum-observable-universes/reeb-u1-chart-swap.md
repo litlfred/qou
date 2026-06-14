@@ -77,7 +77,7 @@ $$
   \qquad (\text{equivalently } \varTheta = i\,t),
 $$
 
-so the chart-swap parameter $\varTheta$ and the Reeb parameter $t$
+consequently the chart-swap parameter $\varTheta$ and the Reeb parameter $t$
 are related by Wick rotation $\varTheta = i\,t$ (real Reeb time
 $\leftrightarrow$ imaginary chart-swap angle, recovering the
 Bargmann–Hall–Wightman forward-tube reading).

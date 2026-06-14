@@ -48,7 +48,7 @@ following, and only the first two are theorems:
    x_{\mathfrak p}$ with $\tau(x_{\mathfrak n})-\tau(x_{\mathfrak p})
    \neq \tau(x_{\mathfrak n}-x_{\mathfrak p})$
    (`archimedean_does_not_commute_sub`, witnessed by $\tau=(\cdot)^2$).
-   So the two orders — *masses-then-delta* and
+   Thus the two orders — *masses-then-delta* and
    *delta-then-archimedean* — are different operations; one
    cannot be substituted for the other.
 

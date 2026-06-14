@@ -17,7 +17,7 @@ $$
 R = x^2 - \tau\,x + 1,\quad \tau := \operatorname{tr} B,
 $$
 
-so the prolonged periods satisfy the one-parameter "Lucas/Chebyshev" recurrence
+consequently the prolonged periods satisfy the one-parameter "Lucas/Chebyshev" recurrence
 
 $$
 a_D^{(n+2)} = \tau\,a_D^{(n+1)} - a_D^{(n)} .

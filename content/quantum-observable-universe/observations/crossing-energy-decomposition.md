@@ -54,7 +54,7 @@ $$
   q^{n} - q^{-n} = 2\sinh(n\lambda),
 $$
 
-so the **quantum integer is a ratio of hyperbolic sines**:
+consequently the **quantum integer is a ratio of hyperbolic sines**:
 
 $$
   [n]_q \;=\; \frac{q^{n} - q^{-n}}{q - q^{-1}}

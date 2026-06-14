@@ -79,7 +79,7 @@ noncomputable def naiveCrossS1Shift (g : ℕ) : ℝ :=
   (2 * (g : ℝ) + 1) / (8 * Real.pi ^ 2 * ((g : ℝ) - 1))
 
 /-- The difference surface-minus-naive at `g=4` has the closed form
-    `(16π-9)/(24π²)` — manifestly positive for `π > 9/16` (the surface value
+    `(16π-9)/(24π²)` — positive for `π > 9/16` (the surface value
     dominates the naive `M×S¹` value). Pure algebra, no `π`-bound needed. -/
 theorem surface_minus_naive_g4 :
     photonZeroModeShift 4 - naiveCrossS1Shift 4
@@ -102,7 +102,7 @@ theorem surface_minus_naive_g4 :
 noncomputable def selfEnergyDenominator (g : ℕ) : ℝ := Real.pi * (betti1 g : ℝ)
 
 /-- At `g = 4` the self-energy denominator is `8π` (since `b₁ = 2g = 8`),
-    so the n=2 term's `8π` is `π·dim H¹(M_Bring)` — the same Betti number that
+    thus the n=2 term's `8π` is `π·dim H¹(M_Bring)` — the same Betti number that
     gives the n=1 zero-mode `2/(3π) = b₁/Area`. -/
 theorem selfEnergyDenominator_at_g4 : selfEnergyDenominator 4 = 8 * Real.pi := by
   unfold selfEnergyDenominator betti1

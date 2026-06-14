@@ -94,7 +94,7 @@ noncomputable def qInt (q : R) (n : ℕ) : R :=
     integer).
 
     Since `ζ^4` is a primitive 2nd root of unity, `ζ^4 = −1 = ζ^(−4)`,
-    so the numerator `q^4 − q^(−4)` vanishes while the denominator is
+    consequently the numerator `q^4 - q^(-4)` vanishes while the denominator is
     nonzero. The vanishing `[4]_q = 0` is the Wenzl projector boundary
     for the level-`k = 2` SU(2) Verlinde truncation. -/
 theorem qInt_four_eq_zero (hζ : IsPrimitiveRoot ζ 8) : qInt ζ 4 = 0 := by

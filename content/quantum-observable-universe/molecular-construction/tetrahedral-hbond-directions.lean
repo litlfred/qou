@@ -7,7 +7,7 @@ The four hydrogen-bond directions of a water in ice (two donor, two
 acceptor) point to the vertices of a regular tetrahedron. Taking the four
 vertex vectors `(±1,±1,±1)` with an even number of minus signs, they sum
 to zero, each has squared length `3`, and any two have dot product `-1`,
-so the bond-angle cosine is
+thus the bond-angle cosine is
 
     cos θ₀ = (uᵢ · uⱼ) / (|uᵢ| |uⱼ|) = -1/3,   θ₀ = arccos(-1/3) ≈ 109.47°.
 
