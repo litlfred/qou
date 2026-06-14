@@ -134,6 +134,39 @@ machinery is decoupled from the specific kernel — this $q$-heat derivation
 provides the canonical $R$ that turns the framework into a concrete $c_k$
 predictor.
 
+### The q-Bessel identification of $F$ (fibre-level)
+
+The partition function $Z_q$ above **is**, at the fibre level, a **Hahn–Exton
+q-Bessel function** — the matrix coefficient of the quantum motion group
+$E_q(2)$, i.e. the $\mathrm{SU}_q(2)\to E_q(2)$ contraction limit of the
+substrate (PR [#2279](https://github.com/litlfred/qou/pull/2279);
+Vaksman–Korogodsky 1989, Koelink 1994 \cite{koelink1994}). Concretely, the
+ladder coefficients $c_k$ are its q-Bessel power-series coefficients, obeying
+the first-order q-recurrence $c_k(1-q^k)(1-q^{\nu+k}) = -q^{k-1}c_{k-1}$ —
+equivalently the **second-order q-difference equation** (the q-Bessel
+equation), with $g(w)=\sum_k c_k w^k$:
+
+$$q^{\nu}\,g(q^2 w) \;-\; (1+q^{\nu}-w)\,g(qw) \;+\; g(w) \;=\; 0,$$
+
+proved sorry-free as `QOU.QBeta.qbessel_second_order_recurrence`
+([`QBesselContiguityRecurrence.lean`](../lean/QOU/QBeta/QBesselContiguityRecurrence.lean)).
+The linear-in-$w$ middle term is the *source* of the descending ladder: every
+"quadratic correction" in the framework ($c_2=-1$, $\alpha_{\mathrm{EM}}$'s
+$[2]_q(1-h^2\alpha)$) is a second-order truncation of one of these q-Bessel
+tails.
+
+**Discipline (fibre vs archimedean).** This identification is **fibre-level
+only**. The *real-$x$ archimedean* closure of $c_3$ via a substrate-fixed
+q-Bessel is **refuted** (PR [#2300](https://github.com/litlfred/qou/pull/2300):
+the cross-anchor slope $dc_3/dq_0\approx 4.66\times10^{6}$ is unreachable by any
+smooth real $x$). And the finite per-$n$ content-Casimir spectrum
+$\{\mu_\lambda\}$ is the **compact $\mathrm{SU}_q(2)$ q-Casimir**, *not* a
+q-Bessel zero spectrum ($p(n)\neq n$; algebraic vs transcendental). The q-Bessel
+object — and the **q-Lommel** three-term recurrence that truncates its zeros —
+lives in the $n\to\infty$ brane-tower (contraction) limit, the open keystone
+direction, where the binding $\Delta_\lambda$ ladder also lives. Nothing here is
+wired to production; $c_k$ stays cal-anchored.
+
 ## Literature — AJ-recurrence parent + a quantum-modularity remark
 
 This depth-$d$ recurrence is the $Q_\beta$-specialised image of the

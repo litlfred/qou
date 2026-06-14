@@ -171,7 +171,13 @@ variable). The Iwahori–Hecke algebra $H_n(q)$ is presented as a
 quotient of the braid group algebra of $B_n$, so the same symbol
 $\sigma_i$ denotes both the braid-group generator and its image in
 $H_n(q)$ — context disambiguates. The Jones polynomial is always
-$J_K(q)$, not $V_K(t)$.
+$J_K(q)$, not $V_K(t)$. The letter $J$ is shared with the **Hahn–Exton
+q-Bessel** function $J_\nu^{(3)}(x;q)$ (substrate harmonic analysis, the
+$\mathrm{SU}_q(2)\to E_q(2)$ contraction; PR #2279) and the ordinary Bessel
+weights $J_n(x)$ of the Jacobi–Anger expansion. These are disambiguated by
+their subscript: a **knot/link $K$** for the Jones polynomial, an **order
+$\nu$/$n$** (always with an argument $x$, and the $(3)$ superscript for
+Hahn–Exton) for Bessel. Never bare $J$.
 
 **Categories vs CPT operators.** Categories are typeset bold,
 $\mathbf{C}$, $\mathbf{Rep}$, etc. The calligraphic $\mathcal{C}$

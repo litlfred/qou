@@ -13,8 +13,9 @@ export default proposition({
     "prop:t-beta-markov-frobenius-collapse",
     "rem:alpha-em-habiro-bar-involution",
     "rem:markov-trace-inductive-limit",
+    "prop:q-heat-kernel-peter-weyl",
   ],
-  cites: ["jones1987", "wenzl1988", "habiro2004"],
+  cites: ["jones1987", "wenzl1988", "habiro2004", "koelink1994"],
   computation: {
     engine: "sympy",
     script:
