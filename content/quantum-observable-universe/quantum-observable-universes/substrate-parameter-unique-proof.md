@@ -9,7 +9,9 @@ $\epsilon \colon \Lambda^2 V \twoheadrightarrow \mathbf{1}$
 determine the canonical splitting
 $V \otimes V = S^2 V \oplus \Lambda^2 V$ uniquely as the eigenspace
 decomposition of $c_{V,V}$ under the induced
-$S_2$-action; neither summand involves a choice.  Hence
+$H_2(q)$-action (the braiding generates the two-strand
+Iwahori--Hecke algebra, the $q$-deformation of $S_2$); neither
+summand involves a choice.  Hence
 the eigenvalues $\lambda_+, \lambda_- \in \mathrm{End}(\mathbf{1})$
 of $c_{V,V}$ on $S^2 V$ and $\Lambda^2 V$ are intrinsic invariants.
 
