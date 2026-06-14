@@ -100,7 +100,7 @@ theorem KComplex.I_mul_I :
     KComplex.mul (KComplex.I K) (KComplex.I K)
       = (-(1 : K), (0 : K)) := by
   unfold KComplex.mul KComplex.I
-  refine Prod.ext ?_ ?_ <;> · simp; try ring
+  refine Prod.ext ?_ ?_ <;> simp
 
 /-! ### Conjugate identities -/
 
