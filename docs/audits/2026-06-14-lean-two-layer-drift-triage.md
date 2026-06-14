@@ -165,3 +165,73 @@ regen must not hand-roll a LaTeX/sibling parser. Design:
    stale-sibling/library duplicates, as the relink backlog.
 
 The stale `extract_proof_objects.py` (9-chapter LaTeX path) is retired.
+
+## Build-verified status (`lake build QOU`, 2026-06-14)
+
+Ran the default Lean build via cache-restore from `lake-cache/qou-v4-24-0`
+(2951 mathlib + QOU oleans). **Headline: the QOU library does not cleanly
+compile on this branch** (`error: build failed`) — and CI's
+`continue-on-error: true` (every Lean workflow) has masked it, deploying
+partial gh-pages output even when the Lean build fails.
+
+### `sorry` (6 in QOU, +2 in the UGB dep)
+
+`Interactions/QIntegerMassFormula.lean:172`, `BraidKnot/GSReductionOrder.lean:123`,
+`Archimedean/HyperbolicVolumeIndependence.lean:39`,
+`Archimedean/EmCouplingBringZeroMode.lean:193`,
+`AppendixSurreals/PolynomialEval.lean:357` & `:453`.
+
+### 28 files with hard errors (240 error lines) — genuine source bugs
+
+Spot-checked as real source-level breakage, **not** cache/hazard
+artifacts (a mathlib mismatch cannot produce "unexpected token 'λ'"):
+
+- `AlgebraicSubstrate/TwoFiltrationBridge{General,SmallCases}.lean` — `λ`
+  used as an identifier (`conj lam = λ → …`); `λ` is reserved lambda
+  syntax → "unexpected token '→'". A notation-collision bug.
+- `BraidKnot/PlancherelWeightBoundedness.lean` — same `λ`-as-identifier.
+- `BraidKnot/KnotFactorSpectralDerivation.lean:23` — `Unknown identifier ℝ`
+  (missing `import Mathlib.Data.Real.Basic`).
+- `AtomicMass.lean` — `rw [ElementDatum.codata_minus_ame_eq_Z_offset]` on an
+  **undefined** constant → cascades to 50 `Unknown constant` errors.
+- `Archimedean/BorromeanQuark.lean` — `Finset.univ.sum` (wrong API),
+  `Application type mismatch`.
+- `MassEndomorphism/MassEndomorphismConjecture.lean` — `unknown tactic` +
+  `unsolved goals`.
+- `su2_emergence_volume_determinant.lean` — `Unknown identifier SU2EmergenceContext`.
+
+Full 28: `AlgebraicSubstrate/TwoFiltrationBridgeGeneral`,
+`AlgebraicSubstrate/TwoFiltrationBridgeSmallCases`, `AppendixSurreals/KComplex`,
+`AppendixSurreals/PolynomialEval`, `Archimedean/BorromeanQuark`,
+`Archimedean/EmCouplingBringZeroMode`, `Archimedean/HeckeH3`, `AtomicMass`,
+`BraidKnot/GramSeminormalBlock`, `BraidKnot/KnotFactorSpectralDerivation`,
+`BraidKnot/NucleusEmptySDPUniqueness`, `BraidKnot/PlancherelWeightBoundedness`,
+`BraidKnot/WitnessR5Full`, `Braiding/HeckeGenPolyReduction`,
+`CategoricalDqSquared`, `FeynmanPathIntegrals`,
+`FlavorDressing/FlavorMassSplittingBound`, `Information/HeckeLogDecomposition`,
+`Interactions/QIntegerMassFormula`, `LiftingDescent/CosimplicialCrossedGroupoid`,
+`MassEndomorphism/MassEndomorphismConjecture`, `MathlibExt/RpowAlgebra`,
+`Molecular/PalindromicityOrbitalType`, `Molecular/ShellClosureNfTermCount`,
+`Observations/TraceLocalityMeetsGsNonLocality`, `PhiQJSJ`, `QGeometricLanglands`,
+`su2_emergence_volume_determinant`.
+
+Several are cascades from a smaller root-cause set (the `λ`-identifier
+files, `AtomicMass`'s missing constant). Many are quick fixes
+(`λ`→`lam` rename, add the `ℝ` import) — a `lean-build-fix` follow-up.
+
+### Build caveat
+
+The cache restore hit the documented mathlib-reclone hazard (recovered),
+and `Archimedean/PauliWitness/Witness12B.lean` does not terminate
+elaboration (~16 min, killed), so `build_ok` is recorded `false` and ≤6
+modules are unrepresented. The 28 source errors are independent of these
+and reproduce on a clean build.
+
+### Result
+
+`proof-objects.json` v2 records this truthfully: **36 blocks → `error`**,
+6 → `has_sorry` (library), the remainder `proved`/`stated`. Status by kind
+(formalizable): definition 209 stated / 6 sorry / 7 error; proposition 263
+proved / 221 stated / 40 sorry / 12 error; theorem 18 proved / 20 stated /
+4 sorry / 1 error; lemma 37 proved / 3 error; corollary 6 proved / 3 sorry;
+conjecture 72 proved / 47 stated / 13 sorry / 10 error.

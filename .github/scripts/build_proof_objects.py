@@ -103,46 +103,56 @@ def resolve_ref(ref, by_full, by_leaf):
 # 2. parse the default `lake build QOU` log → sorry / error locations
 # ----------------------------------------------------------------------------
 def parse_build_log(text, files):
-    # normalize a logged path to a repo-relative indexed path by suffix match
+    """Parse real `lake build` output. Lake emits severity-first lines:
+        warning: QOU/Foo.lean:172:9: declaration uses 'sorry'
+        error: QOU/Foo.lean:26:5: <message>
+    (older Lean also emits `Foo.lean:L:C: error:`; handle both orders).
+    Returns (sorry_loc {(repo_rel_file, line)}, error_files {repo_rel_file})."""
     tails = {}
     for rel in files:
         tails.setdefault(os.path.basename(rel), []).append(rel)
 
     def norm(p):
-        base = os.path.basename(p)
-        cands = tails.get(base, [])
+        p = p.replace("./", "")
+        cands = tails.get(os.path.basename(p), [])
         if len(cands) == 1:
             return cands[0]
         for c in cands:
-            if p.replace("./", "").endswith(c) or c.endswith(p.replace("./", "")):
+            if c.endswith(p) or p.endswith(c):
                 return c
         return cands[0] if cands else None
 
-    sorry_loc, error_loc = set(), set()
-    for m in re.finditer(r"(\S+\.lean):(\d+):\d+:\s*warning:\s*declaration uses 'sorry'", text):
+    sorry_loc, error_files = set(), set()
+    # sorry — both orderings
+    for m in re.finditer(r"(?:warning:\s*)?(\S+\.lean):(\d+):\d+:\s*(?:warning:\s*)?declaration uses 'sorry'", text):
         r = norm(m.group(1))
         if r:
             sorry_loc.add((r, int(m.group(2))))
-    for m in re.finditer(r"(\S+\.lean):(\d+):\d+:\s*error:", text):
+    # errors — whole file is unverified if it has ANY error (no olean produced)
+    for m in re.finditer(r"(?:error:\s*)?(\S+\.lean):(\d+):\d+:\s*(?:error:)", text):
         r = norm(m.group(1))
         if r:
-            error_loc.add((r, int(m.group(2))))
-    return sorry_loc, error_loc
+            error_files.add(r)
+    for m in re.finditer(r"error:\s*(\S+\.lean):(\d+):\d+:", text):
+        r = norm(m.group(1))
+        if r:
+            error_files.add(r)
+    return sorry_loc, error_files
 
 
-def apply_log_to_index(by_full, sorry_loc, error_loc):
-    # mark a decl if a sorry/error line falls within its [start,end) span
+def apply_log_to_index(by_full, sorry_loc, error_files):
     per_file = {}
     for rec in by_full.values():
         per_file.setdefault(rec["file"], []).append(rec)
+    # a sorry warning marks the decl whose span contains the warned line
     for (f, ln) in sorry_loc:
         for rec in per_file.get(f, []):
             if rec["start"] <= ln < rec["end"] + 1:
                 rec["log_sorry"] = True
-    for (f, ln) in error_loc:
+    # an erroring file produces no olean → EVERY decl in it is unverified
+    for f in error_files:
         for rec in per_file.get(f, []):
-            if rec["start"] <= ln < rec["end"] + 1:
-                rec["log_error"] = True
+            rec["log_error"] = True
 
 
 # ----------------------------------------------------------------------------
@@ -234,10 +244,10 @@ def main():
     have_log = False
     if args.build_log and args.build_log.exists():
         text = args.build_log.read_text(encoding="utf-8", errors="ignore")
-        sloc, eloc = parse_build_log(text, files)
-        apply_log_to_index(by_full, sloc, eloc)
+        sloc, efiles = parse_build_log(text, files)
+        apply_log_to_index(by_full, sloc, efiles)
         have_log = True
-        print(f"build log: {len(sloc)} sorry-warnings, {len(eloc)} error-lines")
+        print(f"build log: {len(sloc)} sorry-warnings, {len(efiles)} erroring files")
     else:
         print("no build log — static decl-span sorry scan (not build-verified)")
 
