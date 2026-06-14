@@ -60,7 +60,7 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 try:
     from qbeta_utils import chi_block_3, chi_block_21, chi_block_111  # type: ignore
     _CHI_SOURCE = "qbeta_utils (canonical)"
-except Exception:  # pragma: no cover - portability fallback
+except ImportError:  # pragma: no cover - portability fallback
     def chi_block_3(q):
         return -(q ** 2 - 1) * (q ** 2 + 1) ** 2 / (4 * q)
 
@@ -97,8 +97,8 @@ for x, eta in test_pts:
     # generating function  e^{x sinh η} = Σ_n J_n(x) e^{nη}
     # (sum to ±2M so the truncation order matches the bar-odd/even loops, which
     #  reach order 2M−1; the e^{nη} factor converges slower than sinh((2m+1)η))
-    gen = sum(besselj(n, x) * mp.e ** (n * eta) for n in range(-2 * M, 2 * M + 1))
-    max_gen = max(max_gen, fabs(gen - mp.e ** (x * sinh(eta))))
+    gen = sum(besselj(n, x) * mp.exp(n * eta) for n in range(-2 * M, 2 * M + 1))
+    max_gen = max(max_gen, fabs(gen - mp.exp(x * sinh(eta))))
     # bar-ODD:  sinh(x sinh η) = 2 Σ_{m≥0} J_{2m+1}(x) sinh((2m+1)η)
     odd = 2 * sum(besselj(2 * m + 1, x) * sinh((2 * m + 1) * eta)
                   for m in range(0, M))

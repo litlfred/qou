@@ -125,7 +125,7 @@ $$
 J_\nu(x;q) \;=\; x^{\nu}\,\frac{(q^{\nu+1};q)_\infty}{(q;q)_\infty}\;
 {}_1\phi_1\!\big(0;\,q^{\nu+1};\,q,\,q x^{2}\big)
 \;=\; x^{\nu}\,\frac{(q^{\nu+1};q)_\infty}{(q;q)_\infty}
-\sum_{k=0}^{\infty}\frac{(-1)^k\,q^{k(k+1)/2}}{(q;q)_k\,(q^{\nu+1};q)_k}\,
+\sum_{k=0}^{\infty}\frac{(-1)^k\,q^{k(k-1)/2}}{(q;q)_k\,(q^{\nu+1};q)_k}\,
 \big(q x^{2}\big)^{k},
 $$
 
