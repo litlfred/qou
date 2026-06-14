@@ -40,12 +40,28 @@ from __future__ import annotations
 import json
 import pathlib
 
-ROOT = pathlib.Path(__file__).resolve().parents[1]
 SRC = pathlib.Path(__file__).resolve().parent / "delta-lambda-canonical-residual.witness.json"
 
-rows = json.loads(SRC.read_text())["data"]["rows"]
-tower = {r["atom"]: float(r["Delta_lambda"]) for r in rows}
-Aof = {r["atom"]: r["A"] for r in rows}
+payload = json.loads(SRC.read_text())
+_data = payload.get("data") if isinstance(payload.get("data"), dict) else {}
+# Support schema variants rather than assuming a uniform shape (legacy witnesses
+# may carry the table at top level or under data.results).
+if "rows" in _data:
+    rows = _data["rows"]
+elif "rows" in payload:
+    rows = payload["rows"]
+elif "results" in _data:
+    rows = _data["results"]
+else:
+    raise SystemExit(
+        f"{SRC.name}: no per-atom Δ_λ table (data.rows / rows / data.results); "
+        f"keys = {list(payload.keys())} (legacy/incompatible schema)"
+    )
+try:
+    tower = {r["atom"]: float(r["Delta_lambda"]) for r in rows}
+    Aof = {r["atom"]: r["A"] for r in rows}
+except (KeyError, TypeError, ValueError) as e:
+    raise SystemExit(f"{SRC.name}: row missing atom/A/Delta_lambda ({e})")
 
 results: dict = {}
 asserts: list[tuple[str, bool]] = []
