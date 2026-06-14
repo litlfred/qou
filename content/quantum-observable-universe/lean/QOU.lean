@@ -116,6 +116,7 @@ import QOU.FluidDynamics.q_bkm_criterion
 import QOU.QBeta.RationalCoeffRecurrence
 import QOU.QBeta.ReebTowerJacobiAnger
 import QOU.QBeta.QBesselContiguityRecurrence
+import QOU.QBeta.QLommelOrderRecurrence
 -- Concrete H₃(q) Markov-trace functional (NF model: linearity, cyclicity,
 -- Hecke σ₀²=hσ₀+1, Markov reduction tr(x·σ₁)=z·tr(x)); cross-checked vs
 -- `gram.py` / `pyhecke.trace_formal`. Was an orphan under `Machinery/`.
