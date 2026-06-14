@@ -435,20 +435,24 @@
     "proof-rater-goal-plausibility": [
       {
         "field_hash": {
-          "md": "19b66ba88b22",
-          "ts": "f1a1f8c2eeb4",
+          "md": "bbc2c96c07eb",
+          "ts": "792fea0a7201",
           "lean": "7c2058e59fc1"
         },
-        "result": "pass",
+        "result": "fail",
+        "score": {
+          "value": 0,
+          "max": 1
+        },
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-06-13",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-13T03:56:42.550Z",
-        "reviewed_sha": "b5b8eae463d7af2bb3713e19411d17e939e9c9bb"
+        "reviewed_at": "2026-06-14T03:44:18.388Z",
+        "reviewed_sha": "9bb7d7e5d13f47201c58c50e53a5109662f2e225"
       }
     ],
     "voice-unicode-crash": [
@@ -2098,5 +2102,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T02:11:07.128Z"
+  "updated_at": "2026-06-14T03:44:18.388Z"
 }

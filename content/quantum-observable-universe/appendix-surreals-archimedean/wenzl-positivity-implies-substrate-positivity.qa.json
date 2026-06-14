@@ -103,6 +103,27 @@
         "reviewed_at": "2026-06-13T12:47:05.832Z",
         "reviewed_sha": "22f90766a222e0b9a6f08cfa5e1bcfe3fccd402f",
         "notes": "Auto-drained by agent"
+      },
+      {
+        "field_hash": {
+          "md": "51e14870351a",
+          "ts": "ce04024cf4b0",
+          "lean": "05490a6342f8"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T02:24:30.728Z",
+        "reviewed_sha": "9bb7d7e5d13f47201c58c50e53a5109662f2e225"
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -2368,5 +2389,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T02:11:07.128Z"
+  "updated_at": "2026-06-14T02:24:30.728Z"
 }

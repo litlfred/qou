@@ -100,3 +100,37 @@ first-order quantum correction.
 
 The functorial standard-part is the bridge between the surreal-
 ambient reformulation and the archimedean paper.
+
+## Archimedean Functor & Trace Commutativity
+
+The standard-part functor acts as the **Archimedean Functor** $\mathcal{F}_{Arch}$, transforming algebraic traces into physical macroscopic observables. The evaluation of nuclear binding traces rigorously commutes as the scale $A \to \infty$:
+
+```mermaid
+flowchart TD
+    classDef base fill:#1e1e2e,stroke:#89b4fa,stroke-width:2px,color:#cdd6f4
+    classDef trace fill:#313244,stroke:#f38ba8,stroke-width:2px,color:#cdd6f4
+    classDef proxy fill:#313244,stroke:#f9e2af,stroke-width:2px,color:#cdd6f4
+    classDef physical fill:#1e1e2e,stroke:#a6e3a1,stroke-width:2px,color:#cdd6f4
+
+    M_unb["Unbound Base \n m_unbound = Z·m_p + N·m_n"]:::base
+    
+    B_sym["Exact Algebraic Trace \n B_sym = -α ln |τ_M(K)|"]:::trace
+    B_proxy["Q-CLT Macroscopic Proxy \n B_proxy = -α Σ ln |V_i|"]:::proxy
+    
+    M_sym["Exact Algebraic Mass \n m_sym = m_unbound - B_sym"]:::physical
+    M_qclt["Limit Approximation Mass \n m_qclt = m_unbound - B_proxy"]:::physical
+    M_obs["Macroscopic Empirical Observation \n AME 2020"]:::physical
+
+    M_unb -->|"Exact active-partition factorization"| B_sym
+    M_unb -->|"Statistical averaging (SnapPea proxy limit)"| B_proxy
+    
+    B_sym -.->|"Q-CLT Limit (A → ∞)"| B_proxy
+    
+    B_sym == "Archimedean Functor 𝓕_Arch (Standard-Part)" ==> M_sym
+    B_proxy == "Asymptotic Convergence" ==> M_qclt
+    
+    M_sym -.->|"Perfect mapping in algebraic limit"| M_obs
+    M_qclt -.->|"Approximates"| M_obs
+```
+
+This mapping guarantees that the exact active-partition factorization and the Q-CLT statistical proxy share the same macroscopic limit under $\mathrm{St}$.

@@ -308,22 +308,6 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-04",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-04T13:47:40.434Z",
-        "reviewed_sha": "70fc3f056ae012683d21bf711e8c15547e5a165d"
-      },
-      {
-        "field_hash": {
-          "md": "6c0d12dc4109",
-          "ts": "91ce09f260e9"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
           "id": "local/drain-batch",
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-06-13",
@@ -332,6 +316,26 @@
         "reviewed_at": "2026-06-13T13:00:31.893Z",
         "reviewed_sha": "360ce5e9a42169236a6f2f8e49aecc5f5cccda5f",
         "notes": "Auto-drained by agent"
+      },
+      {
+        "field_hash": {
+          "md": "e1abba094952",
+          "ts": "15f26f8f4ce7"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T02:24:25.616Z",
+        "reviewed_sha": "9bb7d7e5d13f47201c58c50e53a5109662f2e225"
       }
     ],
     "detangler-no-forward-ref": [
@@ -1933,5 +1937,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T02:11:07.128Z"
+  "updated_at": "2026-06-14T02:24:25.616Z"
 }

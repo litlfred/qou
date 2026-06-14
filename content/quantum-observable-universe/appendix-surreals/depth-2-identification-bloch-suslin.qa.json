@@ -477,9 +477,9 @@
           "ts": "c077b11cb64f",
           "lean": "7f834ce18ac8"
         },
-        "result": "fail",
+        "result": "pass",
         "score": {
-          "value": 0,
+          "value": 1,
           "max": 1
         },
         "reviewer": {
@@ -489,8 +489,8 @@
           "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-14T02:23:55.850Z",
-        "reviewed_sha": "9f05f580a06843a4336af4c62c1baf6e69cd67cd"
+        "reviewed_at": "2026-06-14T03:44:17.075Z",
+        "reviewed_sha": "9bb7d7e5d13f47201c58c50e53a5109662f2e225"
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -512,8 +512,8 @@
           "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-14T02:23:55.953Z",
-        "reviewed_sha": "9f05f580a06843a4336af4c62c1baf6e69cd67cd"
+        "reviewed_at": "2026-06-14T03:44:17.134Z",
+        "reviewed_sha": "9bb7d7e5d13f47201c58c50e53a5109662f2e225"
       }
     ],
     "proof-rater-novelty": [
@@ -535,8 +535,8 @@
           "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-14T02:23:55.900Z",
-        "reviewed_sha": "9f05f580a06843a4336af4c62c1baf6e69cd67cd"
+        "reviewed_at": "2026-06-14T03:44:17.187Z",
+        "reviewed_sha": "9bb7d7e5d13f47201c58c50e53a5109662f2e225"
       }
     ],
     "proof-statement-integrity": [
@@ -558,8 +558,8 @@
           "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-14T02:23:55.998Z",
-        "reviewed_sha": "9f05f580a06843a4336af4c62c1baf6e69cd67cd"
+        "reviewed_at": "2026-06-14T03:44:17.261Z",
+        "reviewed_sha": "9bb7d7e5d13f47201c58c50e53a5109662f2e225"
       }
     ],
     "voice-unicode-crash": [
@@ -2465,5 +2465,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T02:23:55.998Z"
+  "updated_at": "2026-06-14T03:44:17.261Z"
 }
