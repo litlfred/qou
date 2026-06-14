@@ -36,6 +36,7 @@ const REFERENCE_PACKAGES: Record<string, { repo: string; ref: string; skills: Re
 };
 
 const LOCAL_SKILLS = [
+  "corpus-grep",
   "deployment-auth",
   "editor",
   "todo-review",
