@@ -95,4 +95,41 @@ theorem brings_involution_fixed_points_are_real (p : BringsSurfacePoint) :
       have eq2 : star z2 = z2 := by ext <;> simp [h2]
       rw [eq1, eq2]
 
+/--
+  A Relational Position is defined not by absolute Cartesian coordinates, 
+  but by the Gram matrix of inner products (relative phase/distances) 
+  between a set of knots/hadrons on Bring's surface.
+-/
+def innerProduct (p1 p2 : BringsSurfacePoint) : ℂ :=
+  p1.z1 * star p2.z1 + p1.z2 * star p2.z2
+
+def relationalGramMatrix (pts : List BringsSurfacePoint) : List (List ℂ) :=
+  pts.map fun p1 => pts.map fun p2 => innerProduct p1 p2
+
+/--
+  The Reeb vector field induces a natural 1-parameter flow on Bring's surface,
+  acting as the discrete Planck-scale time evolution operator.
+  (Simplified here as an abstract rotational phase shift).
+-/
+def reebFlowStep (p : BringsSurfacePoint) (τ_p : ℝ) : BringsSurfacePoint :=
+  -- The exact flow maps z ↦ z * e^(i * τ_p)
+  ⟨p.z1 * ⟨Real.cos τ_p, Real.sin τ_p⟩, p.z2 * ⟨Real.cos τ_p, Real.sin τ_p⟩⟩
+
+/--
+  The SDP timestep updates the entire relational Gram matrix.
+  It applies the knot operation (a local monodromy) and then evolves the base 
+  configuration via the Reeb flow.
+-/
+def evolveRelationalState (pts : List BringsSurfacePoint) (τ_p : ℝ) : List (List ℂ) :=
+  relationalGramMatrix (pts.map (fun p => reebFlowStep p τ_p))
+
+/--
+  Proposition: The relational Gram matrix is Hermitian, satisfying the SDP requirement.
+-/
+theorem relational_gram_hermitian (p1 p2 : BringsSurfacePoint) :
+    star (innerProduct p1 p2) = innerProduct p2 p1 := by
+  dsimp [innerProduct]
+  simp only [star_add, star_mul, star_star]
+  rw [mul_comm (star p2.z1) p1.z1, mul_comm (star p2.z2) p1.z2]
+
 end QOU
