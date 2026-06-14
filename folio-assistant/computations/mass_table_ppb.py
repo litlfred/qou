@@ -45,10 +45,14 @@ from pathlib import Path
 warnings.filterwarnings("ignore", category=UserWarning)
 
 sys.path.insert(0, str(Path(__file__).parent))
+# qou-substrate (Layer 2a): import WitnessBuilder directly from the
+# package rather than via the witness_base back-compat shim (which
+# re-exports the identical class). Mirrors low_isotopes_binding_sweep.py.
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "tools" / "qou-substrate" / "python"))
 
 from q_parameter import Q as Q0
 from experimental_constants import M_E_MEV
-from witness_base import WitnessBuilder  # noqa: E402
+from qou_substrate.witness import WitnessBuilder  # noqa: E402
 from knot_volumes import VOL_BORROMEAN, VOL_7_SQ_1  # noqa: E402
 
 # Knot volumes now imported from `knot_volumes` (canonical mpmath
