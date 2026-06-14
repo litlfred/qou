@@ -43,11 +43,31 @@ The two-channel mass split in
   Issue #649) — GNS embedding, Plancherel skeleton, non-comm probability
   dictionary. **No** mention of an `m_qCLT_approx` compute channel.
 
-**Blocker.** Wiring channel 2 needs new algorithmic infrastructure: a
-hyperbolic-volume solver (SnapPy triangulation or an explicit JSJ
-formula), cached Vol_p / Vol_n constants, and a per-isotope (Z,N)→mass
-evaluator emitting a witness. This is research-scope 3D topology, not
-compute engineering. **Not tractable without new math.**
+**Blocker (original triage).** A full SnapPy-grade hyperbolic-volume
+solver is research-scope. **But** the *leading* term does not need it.
+
+**Update (this PR): channel 2 is now wired.** The JSJ-additive leading
+term `m_qCLT_leading(Z,N) = Z·m_p + N·m_n` needs only the framework's
+existing predicted nucleon masses — no volume solver — and the binding
+correction `B(Z,N)` is exactly the Δ_λ term (Item 2). Wired in
+[`m_qclt_approx.py`](../../folio-assistant/computations/m_qclt_approx.py)
+→ witness `m-qclt-approx.witness.json` (3 assertions, all pass):
+
+- The binding-corrected channel `Z·m_p + N·m_n − B` reproduces the CODATA
+  atomic mass of D/T/³He to **within the 2.89 % nucleon-mass gap**, and
+  that residual is **uniform** across isotopes (2.892–2.906 %, spread
+  0.014 %) — the JSJ-additive **structure is sound**.
+- The leading term alone carries an extra, A-growing **binding-fraction**
+  error (3.01→3.20 %) — so the remark's "exact asymptotic limit" is
+  **false** and was corrected to "asymptotically linear structure;
+  ~1 % absolute estimator". The Lean
+  [`LinearJSJVolume.lean`](../../content/quantum-observable-universe/lean/QOU/BraidsKnots/LinearJSJVolume.lean)
+  was also fixed (removed-keyword `constant`→`axiom`; the vacuous
+  self-`exact` theorem replaced by three genuine derivations:
+  cluster-additivity + proton/neutron increments; lean-direct exit 0).
+
+What remains gated is only the **absolute** accuracy: the nucleon-mass
+gap (Subgoal-2, declined) and the binding model `B` for A > 8 (= Item 2).
 
 ## Item 2 — q-Lommel → Δ_λ: **OPEN-AND-GATED**
 
@@ -111,6 +131,6 @@ witness retains the correct 5-atom physics in the meantime.
 
 | Item | Verdict | Tractable now? |
 |------|---------|----------------|
-| 3 — qCLT `m_qCLT_approx` | open-and-gated (no compute behind channel 2) | no — needs hyperbolic-volume solver (research) |
+| 3 — qCLT `m_qCLT_approx` | **leading term WIRED** this PR (structure validated, "exact" overclaim corrected); only absolute accuracy gated | partial — leading done; binding correction `B` = Item 2 |
 | 2 — q-Lommel → Δ_λ | open-and-gated (precheck ran, data-limited) | no — gated on Borromean tower; Δ_λ gate forbids fit |
 | 1 — low-isotope re-witness | canonical timeout-degraded to 2 rows | yes, but requires regenerating the shared canonical (decision pending) |
