@@ -87,18 +87,57 @@ Every factor is substrate-derived (ρ ∈ {m_e, μ₀, ×ℏ_q}, Vol from
 `substrate/knot_volumes`, y_λ from `chi-*-at-q0-50dps`, θ_λ/r_λ from the
 Reeb decomposition). **No tuned parameters.**
 
-## Result
+## Result — NO-GO (the joint combiner hurts the trustworthy cases)
 
-*(filled in by the probe run below — `binding_a3plus_joint_ji_combiner.py`,
-witness `binding-a3plus-joint-ji-combiner.witness.json`.)*
+Probe run 2026-06-14 (`binding-a3plus-joint-ji-combiner.witness.json`,
+2 assertions passed — the ³He baseline **reproduces the full-θ 0.7587**,
+confirming the y_λ / θ_λ read is correct). Volume-scaled rel_err at ρ=μ₀:
 
-| atom | baseline `Σ|Δθ|` rel_err | joint `S_joint` rel_err | moved toward closure? |
-|------|--------------------------|-------------------------|-----------------------|
-| ³He  | PENDING | PENDING | PENDING |
-| T    | PENDING | PENDING | PENDING |
-| D    | PENDING (special) | PENDING | PENDING |
+| atom | baseline `Σ y·dim·\|Δθ\|` | joint `\|Σ y·dim·(z_a−z_f)\|` | closer? |
+|------|---------------------------|--------------------------------|---------|
+| D    | +286.7 % | +442.0 % | no |
+| T    | +39.1 %  | +87.6 %  | no |
+| **³He** | **+17.4 %** | **+117.9 %** | **no** |
+| ⁴He  | +25.9 %  | +13.5 %  | YES — but on the **provisional/wrong** 2·Vol(𝓑₃) |
 
-**Verdict:** PENDING.
+**Verdict: NO-GO.** The joint J⊕I combiner makes all three data-complete,
+correct-volume cases (D / T / ³He) **substantially worse** — ³He degrades
+6.8× (+17.4 % → +117.9 %). The lone ⁴He "improvement" sits on the
+provisional `2·Vol(𝓑₃)` volume the full-θ verdict already flagged as
+wrong (⁴He needs a JSJ decomposition, not a single doubled link) — exactly
+the provisional-input mirage that produced the **retracted** +2.7 % ⁴He
+claim. (chi-helium-4 is now complete 77/77 — regenerated since 2026-06-02
+— but the *volume* is still provisional, so ⁴He stays untrustworthy here.)
+
+### Why — structural read
+
+Per-block partial moduli: the **growth** channel contributes ~nothing to
+the joint differencing (`grow` mod ≈ 0.001–0.003 across all atoms); the
+joint sum is entirely **rotation phasors adding as vectors**, and they add
+*constructively*, so the joint modulus exceeds the `Σ|Δθ|` baseline (³He
+1.41 vs 0.76) → overshoot. "Joint J⊕I" reduces, in this free→bound
+differencing form, to "rotation phasors, un-collapsed", and the
+phase-preservation **hurts**: the `|Δθ|` magnitude collapse (baseline) is
+strictly better for binding.
+
+This refutes the operator-valued-combiner motivation
+(`binding_reeb_phase_decomposition.py` docstring line 176: "carry the
+per-λ phase to the operator-valued combiner") **for absolute binding in
+the free→bound differencing scheme** — the data prefers the collapsed
+magnitude, consistent with the "observation collapses the phase" theme of
+the [quadratic-obstruction finding](2026-06-09-delta-lambda-gate-quadratic-obstruction.md).
+
+### Bearing on PR #2279
+
+PR #2279's Hahn–Exton q-Bessel identification is sound **as mathematics /
+exposition**, but its joint `J_ν⊕I_ν` structure, applied as the binding
+operator-valued combiner, does **not** rescue absolute A≥3 binding. So
+#2279 is **not load-bearing** for the binding frontier — it stands on its
+own mathematical merit. The one named open lever from the full-θ verdict
+("rotation/growth NOT separately combined") is now **tested and retired**
+in this differencing form; the productive binding directions remain
+GAP-A-3 / GAP-A-4 (Option-E) and the ⁴He JSJ volume, not the J/I phase
+split.
 
 ## Reproducibility
 
