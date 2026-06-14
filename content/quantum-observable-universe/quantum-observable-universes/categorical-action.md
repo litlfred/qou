@@ -1,11 +1,11 @@
 Let $(\mathbf{C}, A, \tau)$ be a
 ([quantum observable universe](#def\:quantum-observable-universe)).
 A *categorical action* on $(\mathbf{C}, A, \tau)$ is a morphism
-$\mathcal{S} \colon \mathbf{1} \to \mathbf{1}$ of the form
+$\mathfrak{S} \colon \mathbf{1} \to \mathbf{1}$ of the form
 
 ```tex
 \begin{equation}\label{eq:categorical-action}
-  \mathcal{S}
+  \mathfrak{S}
   = 
   \mathrm{ev}_A
     \circ
@@ -23,7 +23,7 @@ where $\Phi \in \mathrm{End}_{\mathbf{C}}(A)$ is called the
 \begin{tikzcd}[row sep=2.5em, column sep=3em]
   \mathbf{1}
     \ar[r, "\mathrm{coev}_A"]
-    \ar[rr, bend right=25, "\mathcal{S}"']
+    \ar[rr, bend right=25, "\mathfrak{S}"']
   & A \otimes A^{\vee}
     \ar[r, "\Phi \otimes \mathrm{id}"]
   & A \otimes A^{\vee}
@@ -41,7 +41,7 @@ are the structure maps of the rigid duality on $A$
 them with an inserted endomorphism produces the categorical trace:
 
 $$
-  \mathcal{S} = \mathrm{tr}(\Phi).
+  \mathfrak{S} = \mathrm{tr}(\Phi).
 $$
 
 As a string diagram, the action is a single closed loop with $\Phi$
