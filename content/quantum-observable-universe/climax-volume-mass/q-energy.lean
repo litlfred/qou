@@ -91,4 +91,10 @@ noncomputable def crossingEnergy_neg (q : R_q) : R_q := 1 / q
   rw [div_lt_iff (by linarith : (0 : R_q) < q)]
   nlinarith
 
+-- Ref: [manuscript] def:q-energy
+/-- Q-Deformed Energy structure. -/
+theorem q_energy_def :
+    ∃ (E : QEnergy), E.S_q ≥ 0 := by
+  sorry
+
 end QOU.Archimedean

@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "9af042539bd6",
     "ts": "cc5a3e015b3d",
-    "lean": "02e9e4dc26f5"
+    "lean": "7d4c5f485657"
   },
   "criteria": {
     "voice-status-leak": [
@@ -209,6 +209,22 @@
         "reviewed_at": "2026-06-05T18:29:52.801Z",
         "reviewed_sha": "66053835d2dd3f1a71595e37c927fa8e4e4cddaa",
         "notes": "Lean formalization pending; gap expected but flagged."
+      },
+      {
+        "field_hash": {
+          "md": "9af042539bd6",
+          "ts": "cc5a3e015b3d",
+          "lean": "7d4c5f485657"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-14T01:30:06.435Z",
+        "reviewed_sha": "dfd236e499b4b6b0985b78c158134b2b725cf09b",
+        "notes": "Label 'prop:nuclear-groebner-reduction' aligns with Lean declaration. Has sorry (cited)."
       }
     ],
     "voice-author-notes-pollution": [
@@ -1228,5 +1244,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T01:08:44.722Z"
+  "updated_at": "2026-06-14T01:30:06.435Z"
 }

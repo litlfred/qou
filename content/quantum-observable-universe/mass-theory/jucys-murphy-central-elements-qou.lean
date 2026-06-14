@@ -51,7 +51,7 @@ structure HeckeJMSpectrum (R : Type*) [CommRing R] (q : R) (n : ℕ) where
   esymm : ℕ → List R → R
   /-- Wedderburn-block scalar action of e_ℓ(J_1,…,J_n) on V_λ. -/
   centralScalar : ℕ → List ℕ → R
-  /-- **Murphy 1992 spectrum theorem (axiomatised).**
+  /-- Murphy 1992 spectrum theorem (axiomatised).
       The central-scalar action of `P_ℓ = e_ℓ(J_1, …, J_n)` on
       the Wedderburn block `V_λ` equals `e_ℓ` applied to the
       q-content multiset of `λ`.  This is the substantive
@@ -63,6 +63,22 @@ structure HeckeJMSpectrum (R : Type*) [CommRing R] (q : R) (n : ℕ) where
 
 /-- Cell content c(□) = j − i for cell (i, j). -/
 def cellContent (i j : ℤ) : ℤ := j - i
+
+-- Ref: [manuscript] quantum-observable-universe/braids-and-knots/jucys-murphy-central-elements-qou.ts
+/-- Step 1: The Jucys-Murphy elements pairwise commute. -/
+theorem jm_elements_commute
+    {R : Type*} [CommRing R] (q : R) (n : ℕ)
+    (sp : HeckeJMSpectrum R q n) (k l : Fin n) :
+    sp.jm k * sp.jm l = sp.jm l * sp.jm k := sorry
+
+-- Ref: [manuscript] quantum-observable-universe/braids-and-knots/jucys-murphy-central-elements-qou.ts
+/-- Step 2: The symmetric polynomials in J_k are central. -/
+opaque jm_esymm_eval {R : Type*} [CommRing R] (q : R) (n : ℕ) (sp : HeckeJMSpectrum R q n) (ℓ : ℕ) : sp.algebra
+
+theorem jm_esymm_central
+    {R : Type*} [CommRing R] (q : R) (n : ℕ)
+    (sp : HeckeJMSpectrum R q n) (ℓ : ℕ) (x : sp.algebra) :
+    jm_esymm_eval q n sp ℓ * x = x * jm_esymm_eval q n sp ℓ := sorry
 
 /-- Murphy 1992: spectrum equation for e_ℓ(J_1,…,J_n) on V_λ.
 

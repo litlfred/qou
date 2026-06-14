@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "401c335e6fa0",
     "ts": "81b5947fae0f",
-    "lean": "532c7423266c"
+    "lean": "80a41d426a8c"
   },
   "criteria": {
     "voice-status-leak": [
@@ -345,6 +345,22 @@
         "reviewed_at": "2026-06-04T23:49:28.365Z",
         "reviewed_sha": "6284b6a206ad94a04ef89f944551dab78a276b7c",
         "notes": "Lean is an acknowledged sorry-free placeholder; narrative claim substantively richer than Lean statement"
+      },
+      {
+        "field_hash": {
+          "md": "401c335e6fa0",
+          "ts": "81b5947fae0f",
+          "lean": "80a41d426a8c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-14T01:30:06.435Z",
+        "reviewed_sha": "dfd236e499b4b6b0985b78c158134b2b725cf09b",
+        "notes": "Label 'prop:compound-beta-shell-calibration' → expected 'compound_beta_shell_calibration'; Lean declares: CompoundBetaChain, magic_crossing_Q_value, compound_beta_y_target_extraction, single_calibration_framework. Structural match via content."
       }
     ],
     "voice-author-notes-pollution": [
@@ -1466,5 +1482,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T01:08:44.722Z"
+  "updated_at": "2026-06-14T01:30:06.435Z"
 }

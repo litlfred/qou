@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "8637df4c3038",
     "ts": "8ba79fef68aa",
-    "lean": "b809b5abeddf"
+    "lean": "20865ac6b25d"
   },
   "criteria": {
     "voice-status-leak": [
@@ -362,6 +362,22 @@
         "reviewed_at": "2026-06-05T19:19:37.553Z",
         "reviewed_sha": "70583d5634e6da08b3629f1b63685ff323c3227d",
         "notes": "Axiom stubs for log Taylor bounds are documented as structured open lemmas; algebraic core is fully proved."
+      },
+      {
+        "field_hash": {
+          "md": "8637df4c3038",
+          "ts": "8ba79fef68aa",
+          "lean": "20865ac6b25d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-14T01:30:06.435Z",
+        "reviewed_sha": "dfd236e499b4b6b0985b78c158134b2b725cf09b",
+        "notes": "Label 'prop:q-beta-spectral-bridge' aligns with Lean declaration. Has sorry (cited)."
       }
     ],
     "voice-author-notes-pollution": [
@@ -1398,5 +1414,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T01:08:44.722Z"
+  "updated_at": "2026-06-14T01:30:06.435Z"
 }

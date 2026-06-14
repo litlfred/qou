@@ -8,7 +8,8 @@
   },
   "source_hashes": {
     "md": "a686cd99a1d8",
-    "ts": "8b69ac0a0b42"
+    "ts": "8b69ac0a0b42",
+    "lean": "0cb816c4289e"
   },
   "criteria": {
     "voice-status-leak": [
@@ -366,6 +367,22 @@
         },
         "reviewed_at": "2026-06-04T17:13:51.310Z",
         "reviewed_sha": "a5fd9501f52decb0cc8a7770fa148322b64d3343"
+      },
+      {
+        "field_hash": {
+          "md": "a686cd99a1d8",
+          "ts": "8b69ac0a0b42",
+          "lean": "0cb816c4289e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-14T01:30:06.435Z",
+        "reviewed_sha": "dfd236e499b4b6b0985b78c158134b2b725cf09b",
+        "notes": "Block kind 'undefined' has no provable Lean content expected."
       }
     ],
     "voice-author-notes-pollution": [
@@ -1358,5 +1375,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T01:08:44.722Z"
+  "updated_at": "2026-06-14T01:30:06.435Z"
 }

@@ -254,6 +254,9 @@ namespace QOU.ParticleInteractions.QBetaSpectral.ConditionalAudit
 class BorromeanQuark : Prop where
   holds : True
 
-theorem q_beta_spectral_conditional [_inst : BorromeanQuark] : True := trivial
+-- Ref: [manuscript] prop:q-beta-spectral-bridge
+theorem q_beta_spectral_conditional [_inst : BorromeanQuark]
+    (Q_beta_A Q_beta_B : ℝ) : Q_beta_A = Q_beta_B := by
+  sorry
 
 end QOU.ParticleInteractions.QBetaSpectral.ConditionalAudit

@@ -126,14 +126,21 @@ class MarkovTraceAlgebra (R : Type*) [CommRing R] where
         τ_M(β_K) = z^(A-1) · τ_M(β_K^constit). -/
 -- Ref: [jones1987] Hecke algebra representations of braid groups
 -- Ref: [markov1936] Markov's theorem on braid equivalence
--- Ref: [manuscript] prop:interface-knot-markov-z
-theorem interface_knot_markov_z
+theorem interface_knot_markov_z_single
     {R : Type*} [CommRing R] [inst : MarkovTraceAlgebra R]
     (alpha sigma : R)
     (h_interface : inst.isInterface sigma)
     (h_below : inst.isBelow alpha sigma) :
     inst.tau_M (alpha * sigma) = inst.z * inst.tau_M alpha :=
   inst.markov_axiom alpha sigma h_interface h_below
+
+-- Ref: [manuscript] prop:interface-knot-markov-z
+/-- The Markov trace ratio for an atomic braid B_K = B_K^vac * bowtie_K equals z^{p+} * (z-h)^{p-}. -/
+theorem interface_knot_markov_z
+    {R : Type*} [CommRing R] [inst : MarkovTraceAlgebra R]
+    (tau_M_B_K tau_M_B_K_vac z h : ℝ) (p_plus p_minus : ℕ) :
+    tau_M_B_K / tau_M_B_K_vac = (z ^ p_plus) * ((z - h) ^ p_minus) := by
+  sorry
 
 /-! ## §3. Negative-interface variant via Hecke skein -/
 
@@ -197,6 +204,6 @@ theorem interface_knot_markov_z_per_Z_step
     (h_interface : inst.isInterface sigma_interface)
     (h_below : inst.isBelow beta_prev sigma_interface) :
     inst.tau_M (beta_prev * sigma_interface) = inst.z * inst.tau_M beta_prev :=
-  interface_knot_markov_z beta_prev sigma_interface h_interface h_below
+  interface_knot_markov_z_single beta_prev sigma_interface h_interface h_below
 
 end QOU.BraidKnot

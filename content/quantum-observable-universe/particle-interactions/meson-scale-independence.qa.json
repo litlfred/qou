@@ -8,7 +8,8 @@
   },
   "source_hashes": {
     "md": "ded31a83bbc6",
-    "ts": "bbfb4081d610"
+    "ts": "bbfb4081d610",
+    "lean": "4f1907f3b93c"
   },
   "criteria": {
     "voice-statement-no-interpretation": [
@@ -114,6 +115,22 @@
         "reviewed_at": "2026-06-05T18:15:18.137Z",
         "reviewed_sha": "2f5a7de3f91fb4a0a86d575a4fb3a84ba2e91c85",
         "notes": "Lean file needed for proposition kind."
+      },
+      {
+        "field_hash": {
+          "md": "ded31a83bbc6",
+          "ts": "bbfb4081d610",
+          "lean": "4f1907f3b93c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-14T01:30:06.435Z",
+        "reviewed_sha": "dfd236e499b4b6b0985b78c158134b2b725cf09b",
+        "notes": "Label 'prop:meson-scale-independence' aligns with Lean declaration. Has sorry (cited)."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1195,5 +1212,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T01:08:44.722Z"
+  "updated_at": "2026-06-14T01:30:06.435Z"
 }

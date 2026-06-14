@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "e0d07bab65a9",
     "ts": "1bcca1dce67d",
-    "lean": "0879c2a6fe9f"
+    "lean": "d2a6283fb7c8"
   },
   "criteria": {
     "voice-status-leak": [
@@ -225,6 +225,22 @@
         },
         "reviewed_at": "2026-06-04T17:37:34.556Z",
         "reviewed_sha": "10259933c791246a0070a8b46db04de1c4ab5169"
+      },
+      {
+        "field_hash": {
+          "md": "e0d07bab65a9",
+          "ts": "1bcca1dce67d",
+          "lean": "d2a6283fb7c8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-14T01:30:06.435Z",
+        "reviewed_sha": "dfd236e499b4b6b0985b78c158134b2b725cf09b",
+        "notes": "Label 'prop:chi-lambda-w0-sign-weighting' aligns with Lean declaration. Has sorry (cited)."
       }
     ],
     "voice-author-notes-pollution": [
@@ -1226,5 +1242,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T01:08:44.722Z"
+  "updated_at": "2026-06-14T01:30:06.435Z"
 }

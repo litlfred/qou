@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "8da180d3c8a5",
     "ts": "44f385cd07d6",
-    "lean": "6c56e54b2aca"
+    "lean": "73ac19b87aa3"
   },
   "criteria": {
     "voice-status-leak": [
@@ -362,6 +362,22 @@
         "reviewed_at": "2026-06-04T23:31:46.570Z",
         "reviewed_sha": "8153a861cacd77cf4cb9a88be0307c0c7207e730",
         "notes": "Agreement on 3-of-4 reduction scope and hypotheses; Lean chirality conclusion is weaker (∃ placeholder) vs narrative's structural claim — minor notational gap, not theorem-changing"
+      },
+      {
+        "field_hash": {
+          "md": "8da180d3c8a5",
+          "ts": "44f385cd07d6",
+          "lean": "73ac19b87aa3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-14T01:30:06.435Z",
+        "reviewed_sha": "dfd236e499b4b6b0985b78c158134b2b725cf09b",
+        "notes": "Label 'prop:crystal-basis-resolves-mass-tower-open-problems' → expected 'crystal_basis_resolves_mass_tower_open_problems'; Lean declares: CrystalBasisCorrespondence, crystal_basis_reduction. Structural match via content."
       }
     ],
     "voice-author-notes-pollution": [
@@ -1390,5 +1406,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T01:08:44.722Z"
+  "updated_at": "2026-06-14T01:30:06.435Z"
 }

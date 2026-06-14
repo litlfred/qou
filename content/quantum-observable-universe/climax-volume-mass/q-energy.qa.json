@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "09f933ca0389",
     "ts": "0e5ae0b177a0",
-    "lean": "01cb482e34d9"
+    "lean": "97d1caab1d9a"
   },
   "criteria": {
     "voice-status-leak": [
@@ -209,6 +209,22 @@
         "reviewed_at": "2026-06-04T22:56:49.857Z",
         "reviewed_sha": "5c96ddd08cdaedefa17e4441aa10bb93b773e3f3",
         "notes": "Definition content matches; dangling uncommented proof lines 73-76 are syntactically orphaned — may cause build error"
+      },
+      {
+        "field_hash": {
+          "md": "09f933ca0389",
+          "ts": "0e5ae0b177a0",
+          "lean": "97d1caab1d9a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-14T01:30:06.435Z",
+        "reviewed_sha": "dfd236e499b4b6b0985b78c158134b2b725cf09b",
+        "notes": "Label 'def:q-energy' → expected 'q_energy'; Lean declares: R_q, q_param, q_inv_param, hbar_q, q_number.... Structural match via content."
       }
     ],
     "voice-author-notes-pollution": [
@@ -919,5 +935,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T01:08:44.722Z"
+  "updated_at": "2026-06-14T01:30:06.435Z"
 }

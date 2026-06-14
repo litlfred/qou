@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "366ae0556c8d",
     "ts": "08d5240ba178",
-    "lean": "39d20f7f303a"
+    "lean": "006ae4472536"
   },
   "criteria": {
     "voice-status-leak": [
@@ -345,6 +345,22 @@
         "reviewed_at": "2026-06-05T00:59:08.767Z",
         "reviewed_sha": "b0d1387e463bbd084eb66fc59396c0749b9fbf0e",
         "notes": "Lean is a valid placeholder scaffold but does not express the full 5-claim proposition; partial coverage only."
+      },
+      {
+        "field_hash": {
+          "md": "366ae0556c8d",
+          "ts": "08d5240ba178",
+          "lean": "006ae4472536"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-14T01:30:06.435Z",
+        "reviewed_sha": "dfd236e499b4b6b0985b78c158134b2b725cf09b",
+        "notes": "Label 'prop:confinement-phase-stratification' → expected 'confinement_phase_stratification'; Lean declares: ConfinedParticleTy, confinementLocus, ConfinementPhaseStratification_open, ConfinementPhaseStratification_mu_constant, ConfinementPhaseStratification. Structural match via content."
       }
     ],
     "voice-author-notes-pollution": [
@@ -1465,5 +1481,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T01:08:44.722Z"
+  "updated_at": "2026-06-14T01:30:06.435Z"
 }

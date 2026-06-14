@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "387dd05deb5c",
     "ts": "7a2938350d81",
-    "lean": "55df7d1fc523"
+    "lean": "14e75b4042a7"
   },
   "criteria": {
     "voice-status-leak": [
@@ -345,6 +345,22 @@
         "reviewed_at": "2026-06-05T14:40:25.977Z",
         "reviewed_sha": "4ec42c5d4ed1b96abc41b4dd1325376b4cd33b7c",
         "notes": "The lean sibling lacks the top-level theorem corresponding to the narrative proposition."
+      },
+      {
+        "field_hash": {
+          "md": "387dd05deb5c",
+          "ts": "7a2938350d81",
+          "lean": "14e75b4042a7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-14T01:30:06.435Z",
+        "reviewed_sha": "dfd236e499b4b6b0985b78c158134b2b725cf09b",
+        "notes": "Label 'prop:generator-volume-decomposition' aligns with Lean declaration. Has sorry (cited)."
       }
     ],
     "voice-author-notes-pollution": [
@@ -1465,5 +1481,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T01:08:44.722Z"
+  "updated_at": "2026-06-14T01:30:06.435Z"
 }

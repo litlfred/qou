@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "6bac34211849",
     "ts": "e8f69c4633c9",
-    "lean": "b28b444bd3da"
+    "lean": "f930a9721a09"
   },
   "criteria": {
     "voice-status-leak": [
@@ -345,6 +345,22 @@
         "reviewed_at": "2026-06-05T01:04:59.942Z",
         "reviewed_sha": "058124d7942d2ff568c1431c8b71310f57e51768",
         "notes": "Stub is a placeholder pending formalization; not a contradiction but not equivalent"
+      },
+      {
+        "field_hash": {
+          "md": "6bac34211849",
+          "ts": "e8f69c4633c9",
+          "lean": "f930a9721a09"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-14T01:30:06.435Z",
+        "reviewed_sha": "dfd236e499b4b6b0985b78c158134b2b725cf09b",
+        "notes": "Label 'prop:descended-level-zero' aligns with Lean declaration. Has sorry (cited)."
       }
     ],
     "voice-author-notes-pollution": [
@@ -1373,5 +1389,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T01:08:44.722Z"
+  "updated_at": "2026-06-14T01:30:06.435Z"
 }

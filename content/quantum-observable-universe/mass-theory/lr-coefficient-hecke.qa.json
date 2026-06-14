@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "a3e074046cbc",
     "ts": "739f3567c673",
-    "lean": "0ed16f0fa4cc"
+    "lean": "28c637334c87"
   },
   "criteria": {
     "voice-statement-no-interpretation": [
@@ -121,6 +121,22 @@
         "reviewed_at": "2026-06-06T01:10:16.861Z",
         "reviewed_sha": "fbc2c733b6a6d13d2f1c4d990c3db47c284dc992",
         "notes": "Minor gap: narrative claims tableau formula as class field; Lean omits it (Sprint-2 note covers this)."
+      },
+      {
+        "field_hash": {
+          "md": "a3e074046cbc",
+          "ts": "739f3567c673",
+          "lean": "28c637334c87"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-14T01:30:06.435Z",
+        "reviewed_sha": "dfd236e499b4b6b0985b78c158134b2b725cf09b",
+        "notes": "Label 'prop:lr-coefficient-hecke' → expected 'lr_coefficient_hecke'; Lean declares: Partition, Partition.size, Partition.contains, LRCoefficientHecke, lr_coefficient_hecke_non_negative.... Structural match via content."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1237,5 +1253,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T01:08:44.722Z"
+  "updated_at": "2026-06-14T01:30:06.435Z"
 }

@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "9e866ae41e3e",
     "ts": "a25370c845b2",
-    "lean": "8721a857cf8b"
+    "lean": "3526fbb82bce"
   },
   "criteria": {
     "voice-status-leak": [
@@ -363,6 +363,22 @@
         "reviewed_at": "2026-06-06T02:02:38.071Z",
         "reviewed_sha": "448772efff7fe0b70b562c15af40563a17899d03",
         "notes": "Detailed narrative proof exists but Lean declaration is absent; equivalence unverifiable."
+      },
+      {
+        "field_hash": {
+          "md": "9e866ae41e3e",
+          "ts": "a25370c845b2",
+          "lean": "3526fbb82bce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-14T01:30:06.435Z",
+        "reviewed_sha": "dfd236e499b4b6b0985b78c158134b2b725cf09b",
+        "notes": "Label 'prop:mass-endomorphism-tower' → expected 'mass_endomorphism_tower'; Lean declares: quantumDilogPoly, markovParamPoly, massPoly, proton_electron_ratio. Structural match via content."
       }
     ],
     "voice-author-notes-pollution": [
@@ -1391,5 +1407,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T01:08:44.722Z"
+  "updated_at": "2026-06-14T01:30:06.435Z"
 }
