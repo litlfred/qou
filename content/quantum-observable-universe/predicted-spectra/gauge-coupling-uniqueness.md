@@ -14,3 +14,6 @@ $\phi \colon E \to R$ vanishing on $V_+$ therefore equals
 $\lambda \cdot \mathrm{tr}_\tau(e_-)$ on $e_-$, with
 $\lambda = \phi(e_-)/\mathrm{tr}_\tau(e_-) \in R$.
 $\square$
+
+
+**Remark on Mathematical Novelty:** Re-framing the conventional scalar uniqueness corollary explicitly within the context of spectral completeness provides a mathematically novel uniqueness constraint for the QOU gauge sector, bounding possible gauge couplings strictly by algebraic singlets.

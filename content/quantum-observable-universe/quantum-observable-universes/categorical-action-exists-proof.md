@@ -1,3 +1,5 @@
+The proof strategy directly leverages the dualizability inherent in the rigid monoidal category. By explicitly composing the coevaluation morphism with the endomorphism $\Phi$ and the evaluation morphism, we construct the required map $\mathbf{1} \to \mathbf{1}$.
+
 The rigid structure of $\mathbf{C}$ supplies the evaluation and
 coevaluation morphisms $\mathrm{ev}_A \colon A^\vee \otimes A \to \mathbf{1}$
 and $\mathrm{coev}_A \colon \mathbf{1} \to A \otimes A^\vee$

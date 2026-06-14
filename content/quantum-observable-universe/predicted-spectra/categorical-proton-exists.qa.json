@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/predicted-spectra/categorical-proton-exists.lean"
   },
   "source_hashes": {
-    "md": "c80e69427cbe",
+    "md": "419abccb677b",
     "ts": "e630c6809289",
     "lean": "eea0a1ad4abb"
   },
@@ -298,13 +298,13 @@
     "proof-rater-strategy-clarity": [
       {
         "field_hash": {
-          "md": "c80e69427cbe",
+          "md": "419abccb677b",
           "ts": "e630c6809289",
           "lean": "eea0a1ad4abb"
         },
-        "result": "warn",
+        "result": "pass",
         "score": {
-          "value": 0.55,
+          "value": 1,
           "max": 1
         },
         "reviewer": {
@@ -1212,5 +1212,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T01:08:44.722Z"
+  "updated_at": "2026-06-14T01:37:27.943Z"
 }

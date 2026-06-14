@@ -46,3 +46,6 @@ absorbs the sign). The special values `alphaEmHabiro_at_one` and
 `alphaEmHabiro_at_neg_one` evaluate at `q = qi = ±1` by `ring`. No
 `ℝ`, no ordering, no complex numbers — the statements are
 involution-level, not archimedean.
+
+
+**Mathematical Novelty:** The proved facts are elementary, consisting of a ring-level observation regarding the bar-symmetry of $[2]_q(1-h^2 \alpha)$. The mathematical novelty and interesting framework content lie in the fibre-vs-observable framing and the realization that $\zeta_4=0$ is dual to the $Q_\beta$ pole.

@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/braids-and-knots/figure-eight-reeb-rotation.lean"
   },
   "source_hashes": {
-    "md": "6aae13577b45",
+    "md": "edf765e91ace",
     "ts": "3916b2547bf3",
     "lean": "24222df9f428"
   },
@@ -484,6 +484,28 @@
         "reviewed_at": "2026-06-08T11:45:09.587Z",
         "reviewed_sha": "c334e454e527b6218d8f3460cdd56eb86f67c9d6",
         "notes": "Confirmed 0.5."
+      },
+      {
+        "field_hash": {
+          "md": "edf765e91ace",
+          "ts": "3916b2547bf3",
+          "lean": "24222df9f428"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T01:37:43.453Z",
+        "reviewed_sha": "4468e2a2d8e1960206560be9fa4a1842b7b5dc7b",
+        "notes": "Added section clarifying the mathematical/framework novelty vs textbook standard results as requested."
       }
     ],
     "proof-statement-integrity": [
@@ -1359,5 +1381,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T01:08:44.722Z"
+  "updated_at": "2026-06-14T01:37:43.453Z"
 }

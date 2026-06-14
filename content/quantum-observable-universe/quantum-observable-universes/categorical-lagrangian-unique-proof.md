@@ -1,3 +1,5 @@
+The proof strategy rests on algebraic rigidity and the categorical action principle. We assume an arbitrary endomorphism in $\mathrm{End}(A)$ that acts as a Lagrangian and show that enforcing the variational equations uniquely constrains it to be identical to $L_q = D^2 + \psi^* \otimes D \psi$.
+
 $\mathcal{D}_\nabla$ is unique by
 ([uniqueness of Dirac operator](#prop:categorical-dirac-operator-unique)),
 and $\mathcal{D}_\nabla^2$ is unique by composition.  The adjoint

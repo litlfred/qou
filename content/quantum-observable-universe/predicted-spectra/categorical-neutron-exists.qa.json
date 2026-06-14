@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/predicted-spectra/categorical-neutron-exists.lean"
   },
   "source_hashes": {
-    "md": "ae64a85f3131",
+    "md": "851de0ffdbf0",
     "ts": "6f42b5090f09",
     "lean": "3d4829755e87"
   },
@@ -298,13 +298,13 @@
     "proof-rater-strategy-clarity": [
       {
         "field_hash": {
-          "md": "ae64a85f3131",
+          "md": "851de0ffdbf0",
           "ts": "6f42b5090f09",
           "lean": "3d4829755e87"
         },
-        "result": "warn",
+        "result": "pass",
         "score": {
-          "value": 0.55,
+          "value": 1,
           "max": 1
         },
         "reviewer": {
@@ -1212,5 +1212,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T01:08:44.722Z"
+  "updated_at": "2026-06-14T01:37:27.943Z"
 }

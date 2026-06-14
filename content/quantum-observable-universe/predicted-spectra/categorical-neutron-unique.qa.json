@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/predicted-spectra/categorical-neutron-unique.lean"
   },
   "source_hashes": {
-    "md": "4cc7f33738da",
+    "md": "2ee6054683db",
     "ts": "ba6b293f846b",
     "lean": "82267127a6e8"
   },
@@ -331,13 +331,13 @@
     "proof-rater-strategy-clarity": [
       {
         "field_hash": {
-          "md": "4cc7f33738da",
+          "md": "2ee6054683db",
           "ts": "ba6b293f846b",
-          "lean": "fb6db4a866cb"
+          "lean": "82267127a6e8"
         },
-        "result": "warn",
+        "result": "pass",
         "score": {
-          "value": 0.5,
+          "value": 1,
           "max": 1
         },
         "reviewer": {
@@ -1266,5 +1266,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T01:08:44.722Z"
+  "updated_at": "2026-06-14T01:36:25.401Z"
 }

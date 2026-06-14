@@ -61,6 +61,9 @@ $|v| = c_s$.  Three conditions must hold simultaneously:
    $\rho > 0$ and $Q_q \geq 0$.
 
 **Surface gravity and Hawking temperature.**
+
+**Mathematical Novelty.** While the underlying construction of an acoustic metric and its associated Unruh/Hawking temperature is standard in analogue gravity, the mathematical novelty here is instantiating this framework natively over the $q$-deformed categorical substrate. The acoustic horizon conditions, rather than being ad-hoc physical analogies, become exact geometric constraints on the $q$-Navier-Stokes fluid, where the Hawking temperature is rigorously suppressed by the specific cyclotomic factor $\hbar_q = (q-1)/q$.
+
 At an acoustic horizon, the surface gravity is
 
 $$

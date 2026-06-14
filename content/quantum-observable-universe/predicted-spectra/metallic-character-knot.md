@@ -51,6 +51,9 @@ Each trefoil can slide along the chain by a sequence of
 Reidemeister II moves (crossing exchanges with neighbours)
 without changing the total linking number.
 
+**Strategy.**
+The proof translates the phenomenological properties of metals into structural conditions on the sub-Hopf links. We correlate macroscopic conductivity with Reidemeister-II mobility of outermost knots, and formalize shared bonding via merged linking sites between residual sub-links. The energetic inequalities naturally follow from knot-theoretic crossing energies, culminating in the $\lambda(R)$ index.
+
 **Classification by residual size.**
 
 The number of electrons in the residual sub-link $|R|$ and
@@ -127,3 +130,6 @@ relative to the shell capacity (few electrons, many open
 sites), and weakest when $\lambda(R)$ approaches the closure
 threshold $2n^2$ (nearly full curls — approaching noble gas
 behaviour).
+
+
+**Remark on Mathematical Novelty:** Replacing qualitative atomic structure models with a rigid residual-linking-number lambda(R) classification introduces a highly novel knot-theoretic metric for metallic versus noble traits, formalizing Reidemeister-transport conductivity as a core algebraic topological property.

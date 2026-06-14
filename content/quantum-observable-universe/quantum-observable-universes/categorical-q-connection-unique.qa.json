@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/quantum-observable-universes/categorical-q-connection-unique.lean"
   },
   "source_hashes": {
-    "md": "641f3deeb81c",
+    "md": "fafc985f14be",
     "ts": "e1c989289998",
     "lean": "dd21c9296e23"
   },
@@ -331,13 +331,13 @@
     "proof-rater-strategy-clarity": [
       {
         "field_hash": {
-          "md": "641f3deeb81c",
+          "md": "fafc985f14be",
           "ts": "e1c989289998",
-          "lean": "aaaf6e1bed15"
+          "lean": "dd21c9296e23"
         },
-        "result": "warn",
+        "result": "pass",
         "score": {
-          "value": 0.5,
+          "value": 1,
           "max": 1
         },
         "reviewer": {
@@ -1247,5 +1247,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T01:08:44.722Z"
+  "updated_at": "2026-06-14T01:35:35.137Z"
 }

@@ -63,3 +63,6 @@ The correction $S = R_{\mathrm{alg}} / (\mathrm{Vol}(4_1)/\hbar_q^2)$
 inherits transcendental dependence on $\mathrm{Vol}(4_1)$ and
 cannot be expressed as a closed-form rational function of $\hbar_q^2$
 from representation theory alone.
+
+
+**Mathematical Novelty:** The proved identity relies on the elementary textbook algebraic factorization $1-q^k = (1-u^k)(1+u^k)$. The novel, framework-specific mathematical contribution lies in its application to the Habiro-weighted-average ratio, linking standard q-series identities to the physical structure.

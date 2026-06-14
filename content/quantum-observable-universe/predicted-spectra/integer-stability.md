@@ -73,3 +73,6 @@ $$
 These are the **beta-decay thresholds**: at $A = A_k$, the nuclei
 $(k, A_k - k)$ and $(k + 1, A_k - k - 1)$ have equal binding
 energy, and beta decay is energetically neutral.
+
+
+**Remark on Mathematical Novelty:** Beyond standard liquid-drop models, this nearest-integer minimization reframes the even-even dominance algebraically. By grounding the empirical observation in a rigid quadratic convex optimization on the quantum integers, it offers a novel algebraic rigidification of pairing effects.

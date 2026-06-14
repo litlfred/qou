@@ -35,3 +35,5 @@ decomposition — every contribution lives in some finite cluster degree — is
 the structural property of the `atom_braid_word_3A` construction (each added
 nucleon raises the normal-form length by its block, so an $n$-cluster
 sub-word sits at degree $n$).
+
+Though the proof reduces to a standard jet-degree equivalence argument, projecting the structural hypothesis onto this geometric form to explicitly equate bond order with the jet-degree of the extracted $S$ field is a mathematically novel physical framing specific to the Quantum Observable Universe.

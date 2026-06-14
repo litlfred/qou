@@ -48,3 +48,6 @@ derived-candidate exact sinh-channel closure form is the open
 categorical piece. (Specific numerical residuals and the substrate
 evaluation live in the audit document, not here — this block carries
 only the categorical fusion identity.)
+
+
+**Mathematical Novelty:** The q-Clebsch-Gordan fusion $[3]_q[4]_q=[2]_q+[4]_q+[6]_q$ is standard q-representation theory. The novel, framework-specific mathematical insight is its application to the 2-body meson $m_K^2/m_\pi^2$ squared-ratio (as opposed to a 1-body character).

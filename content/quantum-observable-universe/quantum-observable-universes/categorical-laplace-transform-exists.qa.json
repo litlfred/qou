@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/quantum-observable-universes/categorical-laplace-transform-exists.lean"
   },
   "source_hashes": {
-    "md": "242c9ea713d2",
+    "md": "721c4224329a",
     "ts": "081ee9db7897",
     "lean": "91280c112058"
   },
@@ -294,13 +294,13 @@
     "proof-rater-strategy-clarity": [
       {
         "field_hash": {
-          "md": "242c9ea713d2",
+          "md": "721c4224329a",
           "ts": "081ee9db7897",
           "lean": "91280c112058"
         },
-        "result": "warn",
+        "result": "pass",
         "score": {
-          "value": 0.5,
+          "value": 1,
           "max": 1
         },
         "reviewer": {
@@ -1212,5 +1212,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T01:08:44.722Z"
+  "updated_at": "2026-06-14T01:35:35.137Z"
 }

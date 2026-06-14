@@ -38,6 +38,8 @@ with $\mathbb{Z}_2 = \langle \iota \rangle$ acting on the cyclic
 subgroup $\langle q \rangle \subset R^\times$ by inversion
 $q \mapsto q^{-1}$.
 
+**Mathematical Novelty.** While the construction of $R[q, q^{-1}][i]/(i^2+1)$ is routine commutative algebra, its mathematical novelty here is that this specific elementary ring is proven to universally parameterise the chart-transition data of the quantum projective line. Instead of taking the deformation parameter $q$ and the imaginary unit $i$ as externally posited constants, this algebraic derivation strictly recovers them as the unavoidable geometric consequences of requiring chart-transition invertibility and chart-swap reflection within the non-commutative coordinate algebra.
+
 *Proof.*
 Existence: $S = R[q, q^{-1}][i]/(i^2+1)$ visibly satisfies (1) by
 construction of the Laurent polynomial ring and (2) via $i = $ image

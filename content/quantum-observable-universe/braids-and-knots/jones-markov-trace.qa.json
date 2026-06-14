@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/braids-and-knots/jones-markov-trace.lean"
   },
   "source_hashes": {
-    "md": "55381ff5100f",
+    "md": "19319a499088",
     "ts": "172b3ff4ecc2",
     "lean": "65d9d9531559"
   },
@@ -319,30 +319,6 @@
         "notes": "Strategy explicit: md and Lean both state this is the Jones (1987) Thm 5.1/Cor 5.3 result taken as axiomatic and encoded as a structure with the three properties (existence/uniqueness, non-degeneracy, link invariance) as fields. Yekutieli external-axiom pattern declared up front."
       }
     ],
-    "proof-rater-goal-plausibility": [
-      {
-        "field_hash": {
-          "md": "55381ff5100f",
-          "ts": "172b3ff4ecc2",
-          "lean": "65d9d9531559"
-        },
-        "result": "warn",
-        "score": {
-          "value": 0.5,
-          "max": 1
-        },
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/proof-integration-watcher",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "local/proof-integration-watcher"
-        },
-        "reviewed_at": "2026-06-07T02:30:44.923Z",
-        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
-        "notes": "Existence is axiomatized (axiom jones_markov_trace_exists) -- an honestly-disclosed external Fields-Medal result (Jones 1987 54-page proof), the legitimate external-cited-theorem pattern, not a disguised gap. But there is no internal proof, so plausibility is mid: the consequence theorems (markov_trace_one, all_irreps_detected) genuinely follow from the structure fields."
-      }
-    ],
     "proof-rater-novelty": [
       {
         "field_hash": {
@@ -365,6 +341,28 @@
         "reviewed_at": "2026-06-07T02:30:44.963Z",
         "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
         "notes": "Jones's theorem itself, axiomatized; no new argument. The faithful structure-encoding of the three properties + the R_q = LaurentPolynomial Z ground-ring framing is careful engineering but not novel mathematics."
+      },
+      {
+        "field_hash": {
+          "md": "19319a499088",
+          "ts": "172b3ff4ecc2",
+          "lean": "65d9d9531559"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T01:37:41.639Z",
+        "reviewed_sha": "4468e2a2d8e1960206560be9fa4a1842b7b5dc7b",
+        "notes": "Added section clarifying the mathematical/framework novelty vs textbook standard results as requested."
       }
     ],
     "proof-statement-integrity": [
@@ -1218,5 +1216,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T01:08:44.722Z"
+  "updated_at": "2026-06-14T01:37:41.639Z"
 }

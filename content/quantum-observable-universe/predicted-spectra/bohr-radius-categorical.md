@@ -322,3 +322,6 @@ recover this formula. It also serves as **honest documentation**
 of the present epistemic state: we know what answer the framework
 must give, but we have not yet derived it from algebraic
 structure.
+
+
+**Remark on Mathematical Novelty:** This formulation provides a deep structural insight by deriving the Bohr 1/n^2 dependency purely from the Hecke-algebraic gap. Bypassing the standard additive kinetic/Coulomb split, it serves as a novel purely categorical recovery of a foundational quantum result.

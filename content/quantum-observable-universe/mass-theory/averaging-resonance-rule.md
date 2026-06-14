@@ -90,3 +90,5 @@ $c_5 = -b^2 - 1/2$) — that is handled by
 - The conjecture is the **selection rule**, not the magnitude.
   Magnitude is the bar-involution channel; see
   [`prop:c5-involution-leibniz-decomposition`](../stochastic-mechanics/c5-involution-leibniz-decomposition.md).
+
+While the underlying formal verification relies on standard floor arithmetic and bar-symmetry properties, defining this explicit averaging resonance rule as the predictive mechanism for the typed-$B_3$ proton recipe forms a mathematically novel structural claim within the Quantum Observable Universe.

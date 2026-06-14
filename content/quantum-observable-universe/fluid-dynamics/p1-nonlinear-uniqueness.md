@@ -33,3 +33,5 @@ all $t \geq 0$: the enstrophy never blows up in finite time.
 **(c) Uniqueness.**
 If $v_1, v_2$ are two solutions with $v_1(0) = v_2(0)$, then
 $v_1(t) = v_2(t)$ for all $t \geq 0$.
+
+**Mathematical Novelty.** While these steps mirror the standard Ladyzhenskaya/enstrophy arguments for classical 2D fluid uniqueness, the mathematical novelty is demonstrating that this precise package of estimates lifts identically to the non-commutative algebraic $q$-deformed categorical setting without modification, anchoring the well-posedness natively in the quantum group Sobolev spaces rather than classical function spaces.

@@ -9,3 +9,6 @@ satisfying the vertical-generator and normalisation axioms coincide:
 $$
   \xi_1 \;=\; \xi_2, \qquad \varTheta_A^{(1)} \;=\; \varTheta_A^{(2)}.
 $$
+
+
+**Strategy.** We sequentially apply the categorical Reeb axioms to pin down the derivation. The vertical-generator and normalization axioms together fix the unique derivation along the vertical distribution (corresponding to the free $T$-action). The dual form is then uniquely determined by extending to the horizontal distribution via the Maurer--Cartan condition.

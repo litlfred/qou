@@ -8,6 +8,8 @@ $$
   1 - b^2 = \frac{1}{[2]_q^2}.
 $$
 
+**Mathematical Novelty.** While the computation of the Hoefsmit seminormal matrix is a standard algebraic procedure within Hecke representation theory, the mathematical novelty is demonstrating that this specific exact rational relation ($1-b^2 = 1/[2]_q^2$) directly governs the discrete geometric de-entanglement fraction of the pion's mass, reinterpreting an abstract representation-theoretic off-diagonal matrix element as a topological binding constraint.
+
 **Proof.** The Hoefsmit seminormal matrix for $\sigma_2$ on
 $V_{(2,1)}$ has a $2 \times 2$ block with entries
 

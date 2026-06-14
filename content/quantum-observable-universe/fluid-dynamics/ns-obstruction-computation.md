@@ -122,6 +122,8 @@ terms cannot cancel.
 Therefore $\mathrm{Obs}_\partial(A) = 0$ and the Descartes
 universe is **NS-singular**.
 
+**Mathematical Novelty.** While calculating local Euler classes via excision ($H^2_{\{p\}}$) and asserting Biot-Savart jet divergence are standard in differential topology and fluid mechanics respectively, the mathematical novelty is explicitly combining them to show that analytic and topological terms live in complementary subgroups of the Yekutieli obstruction tower. This proves that classical divergence bounds cannot be "cancelled out" by topological adjustments in the background manifold, guaranteeing the persistence of the obstruction across all jet levels.
+
 *Formal asymptotic content. The jet divergence
 $|j^n v|_\Sigma \sim 1/(T^*-t)^{(n+1)/2}$ has
 $\ordw(\lvert j^n v \rvert_\Sigma) = -\tfrac{n+1}{2}\,\ordw(T^*-t)$
