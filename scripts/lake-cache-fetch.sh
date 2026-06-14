@@ -187,7 +187,7 @@ echo "  assembled tarball: $((tar_size / 1024 / 1024)) MB"
 # review on PR #1950: a malicious or corrupted tarball could otherwise
 # write outside .lake/ via absolute paths or '..' traversal).
 bad_entries=$(tar -tzf "$TMP/lake-oleans.tgz" 2>/dev/null \
-  | awk '/^\// || /(^|\/)\.\.($|\/)/ || !/^\.lake\//' | head -5)
+  | awk '/^\// || /(^|\/)\.\.($|\/)/ || !/^(\.lake\/|content\/.*\/\.lake\/)/' | head -5)
 if [ -n "$bad_entries" ]; then
   echo "lake-cache-fetch: ERROR — tarball contains entries outside .lake/ or with traversal" >&2
   echo "  Offending entries (first 5):" >&2
