@@ -62,7 +62,13 @@ from isotope_record_schema import (  # noqa: E402
 )
 from q_parameter import Q as Q_FLOAT, Q_50_DIGIT_STR  # noqa: E402
 from wedderburn_jones_markov import y_lambda_at  # noqa: E402
-from witness_base import WitnessBuilder  # noqa: E402
+
+# qou-substrate (Layer 2a): import WitnessBuilder directly from the
+# package rather than via the witness_base back-compat shim (which
+# re-exports the identical class). Bootstrap the in-repo package path —
+# mirrors low_isotopes_binding_sweep.py.
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "tools" / "qou-substrate" / "python"))
+from qou_substrate.witness import WitnessBuilder  # noqa: E402
 
 set_compute_dps()  # ensure mp.mp.dps = COMPUTE_DPS (consistent with infra)
 
