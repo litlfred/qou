@@ -1,5 +1,7 @@
 import Mathlib.Data.Real.Basic
 import Mathlib.Data.Finset.Basic
+import Mathlib.Data.Fin.VecNotation
+import Mathlib.Algebra.BigOperators.Fin
 
 
 /-!
@@ -32,7 +34,7 @@ structure BorromeanBaryon where
   /-- Crossing orientation: +1 (up) or -1 (down) for each component -/
   orientation : Fin 3 → Int
   /-- The orientations sum to the net Coulomb charge -/
-  charge_sum : (Finset.univ.sum orientation) = orientation 0 + orientation 1 + orientation 2
+  charge_sum : (∑ i, orientation i) = orientation 0 + orientation 1 + orientation 2
 
 /-- The proton: two up (+1) and one down (-1), net charge +1.
     Color assignment: one quark per color tube (bijective). -/
