@@ -30,18 +30,23 @@ $$
   \bigr),
 $$
 
-The categorical action expands to three terms:
+The categorical action expands to three terms.  The categorical trace
+factors as $\mathrm{tr} = \int_A \circ \mathrm{tr}_A$ --- the Frobenius
+form $\int_A \colon A \to \mathbf{1}$ after the partial trace
+$\mathrm{tr}_A \colon \mathrm{End}(A) \to A$ --- so all three summands
+share the *same* integration $\int_A$: there is one trace, applied term
+by term, not three distinct integrations.
 
 ```tex
 \begin{equation}\label{eq:canonical-action-decomposition}
-  \mathcal{S}_q[\nabla, \textstyle\int_A, \psi]
+  \mathcal{S}_q
   = 
   \underbrace{%
-    \mathrm{tr}\bigl(q \cdot R_{\int}\bigr)
+    \int_A \mathrm{tr}_A\bigl(q \cdot R_{\int}\bigr)
   }_{\text{gravity}}
   + 
   \underbrace{%
-    \int_A \!\circ \mathrm{tr}_A\bigl(
+    \int_A \mathrm{tr}_A\bigl(
       F_\nabla \wedge_q \star_q F_\nabla
     \bigr)
   }_{\text{gauge}}
@@ -53,9 +58,13 @@ The categorical action expands to three terms:
 ```
 
 with notation as in [categorical action notation](#sec:categorical-action-notation).
-Here $\mathrm{tr} = \mathrm{ev}_A \circ (\mathrm{id}_{A^\vee} \otimes {-}) \circ \mathrm{coev}_A$ is the categorical trace, which plays the role of
-spacetime integration; $R_{\int}$ is the Frobenius--Ricci endomorphism;
-and $F_\nabla = \nabla^2$ is the curvature.
+Here $\mathrm{tr} = \mathrm{ev}_A \circ (\mathrm{id}_{A^\vee} \otimes {-}) \circ \mathrm{coev}_A = \int_A \circ \mathrm{tr}_A$ is the
+categorical trace, which plays the role of spacetime integration;
+$R_{\int}$ is the Frobenius--Ricci endomorphism; and
+$F_\nabla = \nabla^2$ is the curvature.  In the matter term the state
+bilinear $\psi^* \cdot \mathcal{D}_\nabla\psi \in A$ is already a
+density, so $\int_A$ applies directly --- equivalently
+$\int_A \mathrm{tr}_A(\psi^* \otimes \mathcal{D}_\nabla\psi)$.
 Cf.\ the gravity + gauge + matter decomposition of the
 Chamseddine--Connes spectral action
 \cite{chamseddine-connes-1997, connes1996}, and the categorical
