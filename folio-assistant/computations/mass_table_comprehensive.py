@@ -164,13 +164,7 @@ def borromean_mass_prediction(
         preds = sub_data["data"]["predictions"]
         m_p_pred = mp.mpf(str(preds["m_p_MeV"]))
         m_n_pred = mp.mpf(str(preds["m_n_MeV"]))
-        # Apply Habiro brane-tower correction (PR #1346)
-        hbar_q = (q - 1) / q
-        b_val = ((q ** 4 + q ** 2 + 1) / (q ** 2 + 1) ** 2) ** mp.mpf("0.5")
-        u_val = b_val * hbar_q ** 2
-        habiro_ratio = (1 + 46 * u_val ** 4) * (1 + 4 * u_val ** 5) * (1 - 29 * u_val ** 6)
-        m_p_pred = m_p_pred * habiro_ratio
-        m_n_pred = m_n_pred * habiro_ratio
+        # Habiro brane-tower correction (PR #1346) is now natively included in the substrate witness.
         _source = "substrate-identity + Habiro brane-tower"
     else:
         vol_density = vol_density_borromean(q)
@@ -456,7 +450,14 @@ def main() -> int:
         if A > 4:
             caveats.append("H_{3A} kernel not available (Phase-2 gated)")
 
-        atlas_tag = ATLAS_TAG.get(name, "not-in-atlas")
+        if name in ATLAS_TAG:
+            atlas_tag = ATLAS_TAG[name]
+        elif B_method and "Exact symbolic" in B_method:
+            atlas_tag = "principled-derivation (Q-CLT proxy)"
+        elif B_method and "alpha_cluster_recursion" in B_method:
+            atlas_tag = "recursive-on-⁴He"
+        else:
+            atlas_tag = "principled-derivation (extrapolated)"
 
         row = {
             "atom": name,
