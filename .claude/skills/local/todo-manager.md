@@ -21,6 +21,21 @@ allowed-tools: Read Grep Glob TodoWrite AskUserQuestion
 
 Instead of an in-memory list or markdown checklists, we manage session work and cross-agent coordination using the `beans` CLI issue tracker.
 
+## Installing beans (fresh sandbox / cloud container)
+
+`beans` is the [`hmans/beans`](https://github.com/hmans/beans) Go binary — a
+flat-file issue tracker storing issues as markdown under `.beans/`. Cloud
+sandboxes do **not** ship it, so reinstall on demand (Go ships in the sandbox):
+
+```bash
+scripts/install-beans.sh          # idempotent; installs into a PATH dir
+# equivalently, the one-liner it runs:
+GOBIN="$HOME/.local/bin" go install github.com/hmans/beans@latest
+```
+
+Note: the npm package named `beans` is an unrelated abandoned tool — do **not**
+`npm install beans`. Verify with `beans list && beans check`.
+
 ## Core Directives for Sessions
 
 1. **Every session is a Bean:** At the start of your session, you MUST create a parent bean (`--type milestone` or `--epic`) that represents the session and its goals.
