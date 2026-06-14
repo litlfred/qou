@@ -425,8 +425,8 @@ def main() -> int:
                 B_pred = binding.get("B_pred_MeV") or 0.0
                 B_method = binding.get("method", "?")
 
-        m_approx = (m_unbound_approx - B_pred) if (m_unbound_approx is not None and (B_pred > 0 or A == 1)) else None
-        m_symbolic = (m_unbound_symbolic - B_pred) if (m_unbound_symbolic is not None and (B_pred > 0 or A == 1)) else None
+        m_symbolic = (m_unbound_approx - B_pred) if (m_unbound_approx is not None and (B_pred > 0 or A == 1)) else None
+        m_approx = (m_unbound_approx - B_proxy) if (m_unbound_approx is not None and (B_proxy > 0 or A == 1)) else None
         B_AME = AME_BINDING.get(name, 0.0)
 
         # CODATA/AME observed mass for comparison

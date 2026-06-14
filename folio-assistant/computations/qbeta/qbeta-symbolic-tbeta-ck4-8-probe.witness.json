@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy+mpmath",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-04T14:40:51.063599+00:00",
-  "commitSha": "dafc4ab46f80100bd0ae80722e871c7a93943d8f",
+  "engineVersion": "python 3.11.2",
+  "computedAt": "2026-06-14T02:20:22.006336+00:00",
+  "commitSha": "e6cc581cd706edabc6f9f36824122bddb0381a2e",
   "assertions": [
     {
       "name": "at_least_one_candidate_respects_c2_structural",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 793,
+  "durationMs": 628,
   "computation": "qbeta-symbolic-tbeta-ck4-8-probe",
   "scriptFile": "qbeta_symbolic_tbeta_ck4_8_probe.py",
   "scriptHash": "dc1404cbf96d",
-  "scriptCommitSha": "dafc4ab46f80100bd0ae80722e871c7a93943d8f",
+  "scriptCommitSha": "ba1cdd52b5cd9d23ce0a01533ed73c490023089d",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
@@ -26,9 +26,13 @@
     "truncation_bound": "1e-50"
   },
   "environment": {
-    "python": "3.11.15",
-    "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "python": "3.11.2",
+    "numpy": "1.26.4",
+    "scipy": "1.17.1",
+    "sympy": "1.11.1",
+    "mpmath": "0.0.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
   },
   "description": "1 ppQ keystone: compute c_4..c_8 symbolically (unbiased) from canonical operator-valued T_β candidates using PR #1786's exact α(q),b(q) chain. Filters by c_2=-1 (structural), evaluates Q_β(q_0) ppQ vs CODATA, and cross-anchor stability. Reports which candidate reaches 1 ppQ + is q-stable.",
   "contentBlock": "prop:q-beta-c-k-recursion-from-habiro-q-difference",
