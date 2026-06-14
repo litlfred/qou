@@ -102,8 +102,15 @@ modules need those QOU oleans built first.)
   ×38 + sorries at `:357,:453`.
 - [ ] ⬜ `Archimedean/HeckeH3.lean:89` — `simp` nested failure (×11).
 - [ ] ⬜ `BraidKnot/NucleusEmptySDPUniqueness.lean:105` — `failed to synthesize` (×9).
-- [ ] ⬜ `FeynmanPathIntegrals.lean:300` — `Application type mismatch` (×2).
-- [ ] ⬜ `QGeometricLanglands.lean:271` — `Application type mismatch` (×7).
+- [x] ✅ `FeynmanPathIntegrals.lean:300` — `Fin (n-1)` binder vs `Fin (hecke_q.n-1)`
+  expected by `hecke_q.T i`; structure carries `n_eq : hecke_q.n = n`, so changed the
+  binder to `Fin (hecke_q.n - 1)`. (Not a real cascade — single index-type fix.)
+  lean-direct EXIT 0.
+- [ ] ⬜ `QGeometricLanglands.lean:271` — SKIPPED. Mixed errors needing structural
+  understanding, not mechanical: universe mismatch `QLocalSystem.{u_1,u_4}` vs `{u_1,u_2}`
+  @271; `⟨…⟩` type-inference @306; `introN` on a `Prop` goal @308; `Int.mul_emod_right`
+  orientation @329. The universe-polymorphism + anonymous-constructor issues need the
+  author's intent on `QLocalSystem`'s universe variables.
 - [ ] ⬜ `AppendixSurreals/KComplex.lean` — (see Tier 2; 3 errors total).
 
 ## Sorry-only (file compiles; discharge the sorry to reach `proved`)
@@ -121,10 +128,10 @@ modules need those QOU oleans built first.)
 
 | | count |
 |---|--:|
-| ✅ drained / compiles (lean-direct EXIT 0, committed) | 20 |
+| ✅ drained / compiles (lean-direct EXIT 0, committed) | 21 |
 | 🟡 partial (Plancherel — only file not yet EXIT 0) | 1 |
-| ⏭ skipped (needs proof reconstruction / design decision / open conjecture) | 4 |
-| ⬜ open (Tier-3 cascades not yet attempted) | 5 |
+| ⏭ skipped (needs proof reconstruction / design decision / open conjecture) | 5 |
+| ⬜ open (Tier-3 cascades not yet attempted) | 3 |
 
 **Of the 20 EXIT-0 files**: 17 are sorry-free `proved`; 2 (QIntegerMassFormula,
 EmCouplingBringZeroMode) compile with a permanent §3b-cond conjecture-class

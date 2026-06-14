@@ -441,12 +441,12 @@
   "id": "lean-drain-FeynmanPathIntegrals",
   "summary": "[T3] FeynmanPathIntegrals.lean: Application type mismatch @300",
   "comment": "Lean build-drain bean (2026-06-14, one-per-lean). File: content/quantum-observable-universe/lean/QOU/FeynmanPathIntegrals.lean. Root: Application type mismatch @300. Fix: fix application. Status: open. Verify: LEAN_PATH=$(find . -type d -path '*/.lake/build/lib/lean'|tr '\\n' ':') lean <file>. Goal: move block to proved. See docs/audits/2026-06-14-lean-build-drain-beans.md.",
-  "status": "open"
+  "status": "drained-verified"
  },
  {
   "id": "lean-drain-QGeometricLanglands",
   "summary": "[T3] QGeometricLanglands.lean: Application type mismatch @271 ×7",
-  "comment": "Lean build-drain bean (2026-06-14, one-per-lean). File: content/quantum-observable-universe/lean/QOU/QGeometricLanglands.lean. Root: Application type mismatch @271 ×7. Fix: fix application. Status: open. Verify: LEAN_PATH=$(find . -type d -path '*/.lake/build/lib/lean'|tr '\\n' ':') lean <file>. Goal: move block to proved. See docs/audits/2026-06-14-lean-build-drain-beans.md.",
+  "comment": "Lean build-drain bean (2026-06-14, one-per-lean). File: content/quantum-observable-universe/lean/QOU/QGeometricLanglands.lean. Root: Application type mismatch @271 ×7. Fix: fix application. Status: open (SKIPPED — universe mismatch @271 + ⟨⟩ type-inference @306 + introN-on-Prop @308 + mul_emod orientation @329; needs author intent on QLocalSystem universe vars, not mechanical). Verify: LEAN_PATH=$(find . -type d -path '*/.lake/build/lib/lean'|tr '\\n' ':') lean <file>. Goal: move block to proved. See docs/audits/2026-06-14-lean-build-drain-beans.md.",
   "status": "open"
  },
  {
