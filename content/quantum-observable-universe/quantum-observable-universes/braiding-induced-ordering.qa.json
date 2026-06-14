@@ -477,6 +477,27 @@
         "reviewed_at": "2026-06-07T06:00:58.402Z",
         "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
         "notes": "md gives a textbook well-ordering proof (a) degree bounded below (b) finite alphabet per degree (c) lex-min is the global min, plus admissibility argument."
+      },
+      {
+        "field_hash": {
+          "md": "8d6e0897ccdd",
+          "ts": "09ca76d12cbe",
+          "lean": "65a3da41886a"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T04:09:44.315Z",
+        "reviewed_sha": "2a15777a4cac9f2535b4e39e26ddff3c1b4a1b7e"
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -501,6 +522,27 @@
         "reviewed_at": "2026-06-07T06:00:58.438Z",
         "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
         "notes": "Sorry-free and genuinely proved: degLex_wellOrdered via InvImage.wf + Prod.lex_wf + List.wellFoundedLT; admissibility lemmas proved by induction."
+      },
+      {
+        "field_hash": {
+          "md": "8d6e0897ccdd",
+          "ts": "09ca76d12cbe",
+          "lean": "65a3da41886a"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T04:09:44.662Z",
+        "reviewed_sha": "2a15777a4cac9f2535b4e39e26ddff3c1b4a1b7e"
       }
     ],
     "proof-rater-novelty": [
@@ -525,6 +567,27 @@
         "reviewed_at": "2026-06-07T06:00:58.475Z",
         "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
         "notes": "Standard well-foundedness construction (deg-lex = InvImage of a lex product of well-founded relations); correct but not novel."
+      },
+      {
+        "field_hash": {
+          "md": "8d6e0897ccdd",
+          "ts": "09ca76d12cbe",
+          "lean": "65a3da41886a"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T04:09:44.824Z",
+        "reviewed_sha": "2a15777a4cac9f2535b4e39e26ddff3c1b4a1b7e"
       }
     ],
     "proof-statement-integrity": [
@@ -545,6 +608,27 @@
         "reviewed_at": "2026-06-07T06:00:58.508Z",
         "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
         "notes": "lean.ref QOU.braiding_induced_ordering present (def : Prop, line 82) stating the claim; it is actually discharged by degLex_wellOrdered in the same file. Minor: ref points at the Prop def rather than the proof, but content is proved and self-consistent."
+      },
+      {
+        "field_hash": {
+          "md": "8d6e0897ccdd",
+          "ts": "09ca76d12cbe",
+          "lean": "65a3da41886a"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T04:09:44.876Z",
+        "reviewed_sha": "2a15777a4cac9f2535b4e39e26ddff3c1b4a1b7e"
       }
     ],
     "voice-unicode-crash": [
@@ -2528,5 +2612,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T02:11:07.128Z"
+  "updated_at": "2026-06-14T04:09:44.876Z"
 }

@@ -479,6 +479,27 @@
         "reviewed_at": "2026-06-07T06:00:58.256Z",
         "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
         "notes": "md gives explicit 5-point plan (spectral decomp -> eigenvalue def of q -> Hecke relation -> classical/quantum -> substrate link)."
+      },
+      {
+        "field_hash": {
+          "md": "2b097ab6e6e2",
+          "ts": "dc6f9a0e6d22",
+          "lean": "073f6af238d7"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T04:08:00.551Z",
+        "reviewed_sha": "2a15777a4cac9f2535b4e39e26ddff3c1b4a1b7e"
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -504,6 +525,27 @@
         "reviewed_at": "2026-06-07T06:00:58.294Z",
         "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
         "notes": "Pure-algebra part (anti_eq_neg_inv, hecke_polynomial_roots, named theorem braiding_eigenvalue_extraction) is sorry-free, but the spectral decomposition is an axiom (spectral_decomposition_of_braiding) with Prop-valued placeholder hypotheses; the core categorical step rests on the axiom."
+      },
+      {
+        "field_hash": {
+          "md": "2b097ab6e6e2",
+          "ts": "dc6f9a0e6d22",
+          "lean": "073f6af238d7"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T04:08:00.807Z",
+        "reviewed_sha": "2a15777a4cac9f2535b4e39e26ddff3c1b4a1b7e"
       }
     ],
     "proof-rater-novelty": [
@@ -528,6 +570,27 @@
         "reviewed_at": "2026-06-07T06:00:58.331Z",
         "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
         "notes": "Standard field_simp/ring algebra over a determinant constraint; the substantive content is the cited Kassel axiom, not a new argument."
+      },
+      {
+        "field_hash": {
+          "md": "2b097ab6e6e2",
+          "ts": "dc6f9a0e6d22",
+          "lean": "073f6af238d7"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T04:08:00.989Z",
+        "reviewed_sha": "2a15777a4cac9f2535b4e39e26ddff3c1b4a1b7e"
       }
     ],
     "proof-statement-integrity": [
@@ -548,6 +611,27 @@
         "reviewed_at": "2026-06-07T06:00:58.364Z",
         "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
         "notes": "lean.ref QOU.braiding_eigenvalue_extraction present (theorem, line 195); proves existence of eigenvalue data satisfying the Hecke relation, consistent with md. Not vacuous."
+      },
+      {
+        "field_hash": {
+          "md": "2b097ab6e6e2",
+          "ts": "dc6f9a0e6d22",
+          "lean": "073f6af238d7"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T04:08:01.130Z",
+        "reviewed_sha": "2a15777a4cac9f2535b4e39e26ddff3c1b4a1b7e"
       }
     ],
     "voice-unicode-crash": [
@@ -2533,5 +2617,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T02:11:07.128Z"
+  "updated_at": "2026-06-14T04:08:01.130Z"
 }

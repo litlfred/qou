@@ -261,6 +261,27 @@
         },
         "reviewed_at": "2026-06-14T02:00:54.341Z",
         "reviewed_sha": "e138518ae1368fc556abef02d0b7a1691559967d"
+      },
+      {
+        "field_hash": {
+          "md": "99c545d866f5",
+          "ts": "aeba233bc626",
+          "lean": "7b72f9df356a"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T04:05:53.421Z",
+        "reviewed_sha": "2a15777a4cac9f2535b4e39e26ddff3c1b4a1b7e"
       }
     ],
     "voice-ai-slop": [
@@ -685,6 +706,27 @@
         "reviewed_at": "2026-06-07T05:54:10.548Z",
         "reviewed_sha": "c47fda4d79ef12172fe90e0c9b670b761a3f4d95",
         "notes": "Plan up front: compose prop:em-coupling-projection (bare q[9]_q[10]_q) with prop:alpha-shift-torus-knot (alpha_shift=k(p-1)) specialised at (2,9),(3,5). Lean docstring states the rw/simp substitution."
+      },
+      {
+        "field_hash": {
+          "md": "99c545d866f5",
+          "ts": "aeba233bc626",
+          "lean": "7b72f9df356a"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T04:05:52.834Z",
+        "reviewed_sha": "2a15777a4cac9f2535b4e39e26ddff3c1b4a1b7e"
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -709,6 +751,27 @@
         "reviewed_at": "2026-06-07T05:54:10.584Z",
         "reviewed_sha": "c47fda4d79ef12172fe90e0c9b670b761a3f4d95",
         "notes": "Sorry-free (rw alpha_shift_torus_knot; rfl) but Lean proves only the index-list proxy [alphaShift 2 9, alphaShift 3 5]=[9,10], not the full q-integer product identity; relies on witness-backed HasAlphaShiftTorus instances. Faithful to the load-bearing substitution step."
+      },
+      {
+        "field_hash": {
+          "md": "99c545d866f5",
+          "ts": "aeba233bc626",
+          "lean": "7b72f9df356a"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T04:05:53.257Z",
+        "reviewed_sha": "2a15777a4cac9f2535b4e39e26ddff3c1b4a1b7e"
       }
     ],
     "proof-rater-novelty": [
@@ -733,6 +796,27 @@
         "reviewed_at": "2026-06-07T05:54:10.619Z",
         "reviewed_sha": "c47fda4d79ef12172fe90e0c9b670b761a3f4d95",
         "notes": "Standard composition of two already-named identities; multiplicative-chain re-expression, not a novel argument."
+      },
+      {
+        "field_hash": {
+          "md": "99c545d866f5",
+          "ts": "aeba233bc626",
+          "lean": "7b72f9df356a"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T04:05:53.113Z",
+        "reviewed_sha": "2a15777a4cac9f2535b4e39e26ddff3c1b4a1b7e"
       }
     ],
     "proof-statement-integrity": [
@@ -753,6 +837,27 @@
         "reviewed_at": "2026-06-07T05:54:10.654Z",
         "reviewed_sha": "c47fda4d79ef12172fe90e0c9b670b761a3f4d95",
         "notes": "lean.ref decl alpha_em_shift_chain present. Statement chainIndices=bareIndices is a faithful index-projection of the substitution (not vacuous, not =True, not restating-target); the full identity is the composed md claim."
+      },
+      {
+        "field_hash": {
+          "md": "99c545d866f5",
+          "ts": "aeba233bc626",
+          "lean": "7b72f9df356a"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T04:05:53.337Z",
+        "reviewed_sha": "2a15777a4cac9f2535b4e39e26ddff3c1b4a1b7e"
       }
     ],
     "voice-unicode-crash": [
@@ -2809,5 +2914,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T02:11:07.128Z"
+  "updated_at": "2026-06-14T04:05:53.421Z"
 }

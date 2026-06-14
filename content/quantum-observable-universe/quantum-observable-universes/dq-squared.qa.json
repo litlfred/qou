@@ -503,6 +503,27 @@
         "reviewed_at": "2026-06-07T06:01:02.053Z",
         "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
         "notes": "md gives the explicit archimedean formula d_q^2 = q^{-1}(1-q^{-1}) dTheta ^ L_xi alpha with iff-vanishing and a diagram."
+      },
+      {
+        "field_hash": {
+          "md": "2a66395a0b81",
+          "ts": "08f0c5aa12d3",
+          "lean": "2cf4a6d611d8"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T04:09:03.987Z",
+        "reviewed_sha": "2a15777a4cac9f2535b4e39e26ddff3c1b4a1b7e"
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -527,6 +548,27 @@
         "reviewed_at": "2026-06-07T06:01:02.091Z",
         "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
         "notes": "Sorry-free and compiles (unlike categorical-dq-squared): dq_squared_zero_reeb_invariant / _zero_classical / _cochain_on_invariant proved by simp; no broken q_pos reference here."
+      },
+      {
+        "field_hash": {
+          "md": "2a66395a0b81",
+          "ts": "08f0c5aa12d3",
+          "lean": "2cf4a6d611d8"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T04:09:04.138Z",
+        "reviewed_sha": "2a15777a4cac9f2535b4e39e26ddff3c1b4a1b7e"
       }
     ],
     "proof-rater-novelty": [
@@ -551,6 +593,27 @@
         "reviewed_at": "2026-06-07T06:01:02.133Z",
         "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
         "notes": "Standard simp-based vanishing arguments over the obstruction product."
+      },
+      {
+        "field_hash": {
+          "md": "2a66395a0b81",
+          "ts": "08f0c5aa12d3",
+          "lean": "2cf4a6d611d8"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T04:09:04.395Z",
+        "reviewed_sha": "2a15777a4cac9f2535b4e39e26ddff3c1b4a1b7e"
       }
     ],
     "proof-statement-integrity": [
@@ -575,23 +638,24 @@
       },
       {
         "field_hash": {
-          "md": "c99bb88df467",
+          "md": "2a66395a0b81",
           "ts": "08f0c5aa12d3",
           "lean": "2cf4a6d611d8"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "dq-squared.lean:62 — theorem dq_squared (the lean.ref target, previously ABSENT — only a struct field existed) now states d.dqSquared = 0 ↔ (d.q = 1 ∨ d.lie_deriv = 0) for d.levi_form ≠ 0, matching the md.",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T16:30:57.609Z",
-        "reviewed_sha": "910c36462b195e2bfc30a0027b3032ea1bd4983c",
-        "notes": "RESOLVED: added the named top-level lean.ref decl QOU.dq_squared (was absent; only the struct field dq_squared existed). dqSquared made a def of the data; carrier moved to generic [Field R] with q≠0 (§7c). Verified green via QOU._Scratch.Dq, lake build exit 0, no sorry."
+        "reviewed_at": "2026-06-14T04:09:04.949Z",
+        "reviewed_sha": "2a15777a4cac9f2535b4e39e26ddff3c1b4a1b7e"
       }
     ],
     "voice-unicode-crash": [
@@ -2594,5 +2658,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T02:11:07.128Z"
+  "updated_at": "2026-06-14T04:09:04.949Z"
 }

@@ -495,6 +495,27 @@
         "reviewed_at": "2026-06-07T06:01:01.741Z",
         "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
         "notes": "Closed by CategoricalReeb.unique_axiom (pure axiom, HEq form); uniqueness not proved."
+      },
+      {
+        "field_hash": {
+          "md": "463c2f5dfd70",
+          "ts": "115610e2c416",
+          "lean": "ecc7631e8428"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T04:09:03.529Z",
+        "reviewed_sha": "2a15777a4cac9f2535b4e39e26ddff3c1b4a1b7e"
       }
     ],
     "proof-rater-novelty": [
@@ -520,6 +541,27 @@
         "reviewed_at": "2026-06-07T06:01:01.780Z",
         "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
         "notes": "Axiom-laundered HEq-uniqueness boilerplate."
+      },
+      {
+        "field_hash": {
+          "md": "463c2f5dfd70",
+          "ts": "115610e2c416",
+          "lean": "ecc7631e8428"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T04:09:03.679Z",
+        "reviewed_sha": "2a15777a4cac9f2535b4e39e26ddff3c1b4a1b7e"
       }
     ],
     "proof-statement-integrity": [
@@ -540,6 +582,27 @@
         "reviewed_at": "2026-06-07T06:01:01.815Z",
         "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
         "notes": "lean.ref QOU.CategoricalReeb.unique present (theorem := axiom) matching md (HEq xi, HEq theta under equal A/forms/projV); honest axiom. Plausibility, not integrity, is the issue."
+      },
+      {
+        "field_hash": {
+          "md": "463c2f5dfd70",
+          "ts": "115610e2c416",
+          "lean": "ecc7631e8428"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T04:09:03.744Z",
+        "reviewed_sha": "2a15777a4cac9f2535b4e39e26ddff3c1b4a1b7e"
       }
     ],
     "voice-unicode-crash": [
@@ -2615,5 +2678,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T02:11:07.128Z"
+  "updated_at": "2026-06-14T04:09:03.744Z"
 }

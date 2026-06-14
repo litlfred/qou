@@ -176,6 +176,27 @@
         },
         "reviewed_at": "2026-06-14T02:00:54.341Z",
         "reviewed_sha": "e138518ae1368fc556abef02d0b7a1691559967d"
+      },
+      {
+        "field_hash": {
+          "md": "b0a773cb5ad6",
+          "ts": "d7747648215d",
+          "lean": "48adf5116ba9"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T04:06:19.319Z",
+        "reviewed_sha": "2a15777a4cac9f2535b4e39e26ddff3c1b4a1b7e"
       }
     ],
     "voice-ai-slop": [
@@ -546,6 +567,27 @@
         "reviewed_at": "2026-06-07T06:10:56.571Z",
         "reviewed_sha": "4e961c6c457cf2aaa28e91304a917b1bcfdf2afe",
         "notes": "Core gap: no derivation - the content is a physical analogy (electron delocalisation as sliding trefoils, resistance as pinning sites) with a True-stub Lean. The iff is asserted, not proved."
+      },
+      {
+        "field_hash": {
+          "md": "b0a773cb5ad6",
+          "ts": "d7747648215d",
+          "lean": "48adf5116ba9"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T04:06:19.200Z",
+        "reviewed_sha": "2a15777a4cac9f2535b4e39e26ddff3c1b4a1b7e"
       }
     ],
     "proof-rater-novelty": [
@@ -570,6 +612,27 @@
         "reviewed_at": "2026-06-07T06:10:56.606Z",
         "reviewed_sha": "4e961c6c457cf2aaa28e91304a917b1bcfdf2afe",
         "notes": "The residual-linking-number lambda(R) classification (noble gas <-> lambda=0; metal <-> small lambda) and Reidemeister-transport conductivity are creative knot-theoretic analogies, but qualitative and unproven."
+      },
+      {
+        "field_hash": {
+          "md": "b0a773cb5ad6",
+          "ts": "d7747648215d",
+          "lean": "48adf5116ba9"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T04:06:19.144Z",
+        "reviewed_sha": "2a15777a4cac9f2535b4e39e26ddff3c1b4a1b7e"
       }
     ],
     "proof-statement-integrity": [
@@ -591,6 +654,27 @@
         "reviewed_at": "2026-06-07T06:10:56.496Z",
         "reviewed_sha": "4e961c6c457cf2aaa28e91304a917b1bcfdf2afe",
         "notes": "lean.ref qou:QOU.Archimedean.metallic_character_knot is a sibling STUB: 'theorem metallic_character_knot : True := by trivial' (ts validation:not_started). Vacuous =True; does not formalize the iff metallic-character conditions (incompleteness |R|<2n^2, low crossing energy, open linking site)."
+      },
+      {
+        "field_hash": {
+          "md": "b0a773cb5ad6",
+          "ts": "d7747648215d",
+          "lean": "48adf5116ba9"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T04:06:19.252Z",
+        "reviewed_sha": "2a15777a4cac9f2535b4e39e26ddff3c1b4a1b7e"
       }
     ],
     "voice-unicode-crash": [
@@ -2849,5 +2933,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T02:11:07.128Z"
+  "updated_at": "2026-06-14T04:06:19.319Z"
 }

@@ -555,23 +555,24 @@
     "proof-rater-goal-plausibility": [
       {
         "field_hash": {
-          "md": "155ffc58a0f6",
-          "ts": "8bc714bc5f0a",
+          "md": "5c81290fc07d",
+          "ts": "4eaaf360a48d",
           "lean": "c550806b5636"
         },
-        "result": "n/a",
-        "severity": "minor",
-        "evidence": "weinberg-angle-categorical.md:1 -- not in agent rubric",
+        "result": "fail",
+        "score": {
+          "value": 0,
+          "max": 1
+        },
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:30:15.679Z",
-        "reviewed_sha": "d9638fb15d2e1ad6b46a3833c854f399cd6dbe24",
-        "notes": "proof-rater/proof-statement criteria not in agent rubric"
+        "reviewed_at": "2026-06-14T04:03:47.152Z",
+        "reviewed_sha": "2a15777a4cac9f2535b4e39e26ddff3c1b4a1b7e"
       }
     ],
     "voice-unicode-crash": [
@@ -2427,5 +2428,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T02:11:07.128Z"
+  "updated_at": "2026-06-14T04:03:47.152Z"
 }

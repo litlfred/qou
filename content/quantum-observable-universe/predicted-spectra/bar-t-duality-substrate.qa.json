@@ -176,6 +176,27 @@
         },
         "reviewed_at": "2026-06-14T02:00:54.341Z",
         "reviewed_sha": "e138518ae1368fc556abef02d0b7a1691559967d"
+      },
+      {
+        "field_hash": {
+          "md": "b0350b8eabab",
+          "ts": "9b1588d9f537",
+          "lean": "6497091e635b"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T04:05:07.519Z",
+        "reviewed_sha": "2a15777a4cac9f2535b4e39e26ddff3c1b4a1b7e"
       }
     ],
     "voice-ai-slop": [
@@ -496,6 +517,27 @@
         "reviewed_at": "2026-06-07T05:56:13.152Z",
         "reviewed_sha": "c47fda4d79ef12172fe90e0c9b670b761a3f4d95",
         "notes": "Plan: substitute q->q^-1 in Weierstrass coeffs to get E_{1/q}; iota_* is an involution; (1) discriminant zero pairing, (2) j-invariant pullback, (3) confinement band fixed setwise. Lean abstracts to involution properties + abstract bar-paired zero locus."
+      },
+      {
+        "field_hash": {
+          "md": "b0350b8eabab",
+          "ts": "9b1588d9f537",
+          "lean": "6497091e635b"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T04:05:07.240Z",
+        "reviewed_sha": "2a15777a4cac9f2535b4e39e26ddff3c1b4a1b7e"
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -520,6 +562,27 @@
         "reviewed_at": "2026-06-07T05:56:13.189Z",
         "reviewed_sha": "c47fda4d79ef12172fe90e0c9b670b761a3f4d95",
         "notes": "Sorry-free: bar_involutive, bar_one, bar_lt_iff, bar_paired_zero_locus, headline bar_t_duality_substrate all real-proved. NOTE Lean is a structure-projection: it proves abstract involution + generic-discriminant zero pairing, NOT the actual Descartes E_q / Weierstrass / j-invariant geometry (md parts 1-2). Faithful but reduced scope."
+      },
+      {
+        "field_hash": {
+          "md": "b0350b8eabab",
+          "ts": "9b1588d9f537",
+          "lean": "6497091e635b"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T04:05:07.388Z",
+        "reviewed_sha": "2a15777a4cac9f2535b4e39e26ddff3c1b4a1b7e"
       }
     ],
     "proof-rater-novelty": [
@@ -544,6 +607,27 @@
         "reviewed_at": "2026-06-07T05:56:13.225Z",
         "reviewed_sha": "c47fda4d79ef12172fe90e0c9b670b761a3f4d95",
         "notes": "Standard involution algebra (q->q^-1 self-inverse, order-reversing). The Hecke-bar-origin framing is interesting exposition but the formalized content is routine."
+      },
+      {
+        "field_hash": {
+          "md": "b0350b8eabab",
+          "ts": "9b1588d9f537",
+          "lean": "6497091e635b"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T04:05:07.325Z",
+        "reviewed_sha": "2a15777a4cac9f2535b4e39e26ddff3c1b4a1b7e"
       }
     ],
     "proof-statement-integrity": [
@@ -564,6 +648,27 @@
         "reviewed_at": "2026-06-07T05:56:13.262Z",
         "reviewed_sha": "c47fda4d79ef12172fe90e0c9b670b761a3f4d95",
         "notes": "lean.ref ...bar_t_duality_substrate present and sorry-free. Conjunction (involutive + fixes 1 + order-reversing + bar-paired zero locus) is faithful to the abstract content of the md; bar_paired_zero_locus uses generic f:R->R (projection of the discriminant claim). Not vacuous. Geometric specialization (E_q) not in Lean -> recorded under plausibility."
+      },
+      {
+        "field_hash": {
+          "md": "b0350b8eabab",
+          "ts": "9b1588d9f537",
+          "lean": "6497091e635b"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T04:05:07.451Z",
+        "reviewed_sha": "2a15777a4cac9f2535b4e39e26ddff3c1b4a1b7e"
       }
     ],
     "voice-unicode-crash": [
@@ -2620,5 +2725,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T02:11:07.128Z"
+  "updated_at": "2026-06-14T04:05:07.519Z"
 }

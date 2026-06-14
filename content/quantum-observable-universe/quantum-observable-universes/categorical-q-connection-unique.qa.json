@@ -528,6 +528,27 @@
         "reviewed_at": "2026-06-07T06:01:01.133Z",
         "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
         "notes": "Closed by CategoricalQConnection.unique_axiom (pure axiom); uniqueness not proved."
+      },
+      {
+        "field_hash": {
+          "md": "fafc985f14be",
+          "ts": "e1c989289998",
+          "lean": "dd21c9296e23"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T04:08:52.272Z",
+        "reviewed_sha": "2a15777a4cac9f2535b4e39e26ddff3c1b4a1b7e"
       }
     ],
     "proof-rater-novelty": [
@@ -553,6 +574,27 @@
         "reviewed_at": "2026-06-07T06:01:01.173Z",
         "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
         "notes": "Axiom-laundered Subsingleton boilerplate."
+      },
+      {
+        "field_hash": {
+          "md": "fafc985f14be",
+          "ts": "e1c989289998",
+          "lean": "dd21c9296e23"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T04:08:52.361Z",
+        "reviewed_sha": "2a15777a4cac9f2535b4e39e26ddff3c1b4a1b7e"
       }
     ],
     "proof-statement-integrity": [
@@ -573,6 +615,27 @@
         "reviewed_at": "2026-06-07T06:01:01.209Z",
         "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
         "notes": "lean.ref QOU.CategoricalQConnection.unique present (theorem := axiom) matching md; honest axiom. Plausibility, not integrity, is the issue."
+      },
+      {
+        "field_hash": {
+          "md": "fafc985f14be",
+          "ts": "e1c989289998",
+          "lean": "dd21c9296e23"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T04:08:52.423Z",
+        "reviewed_sha": "2a15777a4cac9f2535b4e39e26ddff3c1b4a1b7e"
       }
     ],
     "voice-unicode-crash": [
@@ -2648,5 +2711,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T02:11:07.128Z"
+  "updated_at": "2026-06-14T04:08:52.423Z"
 }

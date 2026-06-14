@@ -261,6 +261,27 @@
         },
         "reviewed_at": "2026-06-14T02:00:54.341Z",
         "reviewed_sha": "e138518ae1368fc556abef02d0b7a1691559967d"
+      },
+      {
+        "field_hash": {
+          "md": "0d0b685206dd",
+          "ts": "ca5be552846c",
+          "lean": "870b856da170"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T04:04:45.478Z",
+        "reviewed_sha": "2a15777a4cac9f2535b4e39e26ddff3c1b4a1b7e"
       }
     ],
     "voice-ai-slop": [
@@ -683,6 +704,27 @@
         "reviewed_at": "2026-06-07T05:53:03.502Z",
         "reviewed_sha": "c47fda4d79ef12172fe90e0c9b670b761a3f4d95",
         "notes": "Plan stated up front: substitute delta_q(T_{2,9})=h[9]_q, delta_q(T_{3,5})=h[10]_q into the boxed ratio; derivation + Lean docstring both lay out the field_simp+ring reduction."
+      },
+      {
+        "field_hash": {
+          "md": "0d0b685206dd",
+          "ts": "ca5be552846c",
+          "lean": "870b856da170"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T04:04:44.851Z",
+        "reviewed_sha": "2a15777a4cac9f2535b4e39e26ddff3c1b4a1b7e"
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -707,6 +749,27 @@
         "reviewed_at": "2026-06-07T05:53:36.295Z",
         "reviewed_sha": "c47fda4d79ef12172fe90e0c9b670b761a3f4d95",
         "notes": "Sorry-free: theorem alpha_em_categorical_trace_ratio proven by field_simp; ring under (q,h,q^9-q^-9,q^10-q^-10) nonzero hyps. No axiom, no proxy weakening."
+      },
+      {
+        "field_hash": {
+          "md": "0d0b685206dd",
+          "ts": "ca5be552846c",
+          "lean": "870b856da170"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T04:04:45.139Z",
+        "reviewed_sha": "2a15777a4cac9f2535b4e39e26ddff3c1b4a1b7e"
       }
     ],
     "proof-rater-novelty": [
@@ -731,6 +794,27 @@
         "reviewed_at": "2026-06-07T05:53:36.337Z",
         "reviewed_sha": "c47fda4d79ef12172fe90e0c9b670b761a3f4d95",
         "notes": "Standard algebraic refactor (substitute two delta_q definitions, cancel h^2). Re-expresses an existing identity (em-coupling-projection) in the q-dimension layer; not a novel argument."
+      },
+      {
+        "field_hash": {
+          "md": "0d0b685206dd",
+          "ts": "ca5be552846c",
+          "lean": "870b856da170"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T04:04:45.036Z",
+        "reviewed_sha": "2a15777a4cac9f2535b4e39e26ddff3c1b4a1b7e"
       }
     ],
     "proof-statement-integrity": [
@@ -751,6 +835,27 @@
         "reviewed_at": "2026-06-07T05:53:36.402Z",
         "reviewed_sha": "c47fda4d79ef12172fe90e0c9b670b761a3f4d95",
         "notes": "Lean statement alpha_em_bare q = alpha_em_via_delta_q q matches md boxed identity; defs alpha_em_bare/alpha_em_via_delta_q mirror md RHS/LHS. Not vacuous, not restating-target. lean.ref decl present."
+      },
+      {
+        "field_hash": {
+          "md": "0d0b685206dd",
+          "ts": "ca5be552846c",
+          "lean": "870b856da170"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T04:04:45.250Z",
+        "reviewed_sha": "2a15777a4cac9f2535b4e39e26ddff3c1b4a1b7e"
       }
     ],
     "voice-unicode-crash": [
@@ -2807,5 +2912,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T02:11:07.128Z"
+  "updated_at": "2026-06-14T04:04:45.478Z"
 }

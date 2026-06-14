@@ -176,6 +176,27 @@
         },
         "reviewed_at": "2026-06-14T02:00:54.341Z",
         "reviewed_sha": "e138518ae1368fc556abef02d0b7a1691559967d"
+      },
+      {
+        "field_hash": {
+          "md": "cbc196f2d939",
+          "ts": "5e6f5df02231",
+          "lean": "43fb9bbfdac7"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T04:05:19.421Z",
+        "reviewed_sha": "2a15777a4cac9f2535b4e39e26ddff3c1b4a1b7e"
       }
     ],
     "voice-ai-slop": [
@@ -487,6 +508,27 @@
         "reviewed_at": "2026-06-07T06:01:47.509Z",
         "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
         "notes": "Plan up front: close the unconditional boundary cases (Cl_2(0)=0 pentagon all-zero; Faddeev-Kashaev at x=0) by direct rw/simp/ring on Cl_2_zero + faddeev_limit_at_zero; md explicitly scopes to boundary, defers general case."
+      },
+      {
+        "field_hash": {
+          "md": "cbc196f2d939",
+          "ts": "5e6f5df02231",
+          "lean": "43fb9bbfdac7"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T04:05:19.094Z",
+        "reviewed_sha": "2a15777a4cac9f2535b4e39e26ddff3c1b4a1b7e"
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -511,6 +553,27 @@
         "reviewed_at": "2026-06-07T06:01:47.544Z",
         "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
         "notes": "Sorry-free for the STATED (boundary-only) claim: ref'd partial_closures_at_boundary : (Cl_2 0 = 0) and (LiTwo 0 = 0) proven via Cl_2_zero + simp; supporting boundary theorems real. General non-boundary case honestly out of scope (Mathlib Fourier/Tauberian pending). One helper faddeev_kashaev_consistency_at_zero:True:=trivial but it is NOT the ref'd decl."
+      },
+      {
+        "field_hash": {
+          "md": "cbc196f2d939",
+          "ts": "5e6f5df02231",
+          "lean": "43fb9bbfdac7"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T04:05:19.324Z",
+        "reviewed_sha": "2a15777a4cac9f2535b4e39e26ddff3c1b4a1b7e"
       }
     ],
     "proof-rater-novelty": [
@@ -535,6 +598,27 @@
         "reviewed_at": "2026-06-07T06:01:47.580Z",
         "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
         "notes": "Boundary-case Mathlib filler; the substantive content (general 5-arg pentagon, x in (0,1) Faddeev-Kashaev) remains open. Boundary closures are consistency scaffolding, not a novel argument."
+      },
+      {
+        "field_hash": {
+          "md": "cbc196f2d939",
+          "ts": "5e6f5df02231",
+          "lean": "43fb9bbfdac7"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T04:05:19.241Z",
+        "reviewed_sha": "2a15777a4cac9f2535b4e39e26ddff3c1b4a1b7e"
       }
     ],
     "proof-statement-integrity": [
@@ -555,6 +639,27 @@
         "reviewed_at": "2026-06-07T06:01:47.613Z",
         "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
         "notes": "lean.ref ...PartialClosures.partial_closures_at_boundary present; statement (Cl_2 0 = 0) and (LiTwo 0 = 0) are real boundary evaluations matching the md's honest boundary-only claim. Not vacuous/=True (the True helper is a different, non-ref'd decl)."
+      },
+      {
+        "field_hash": {
+          "md": "cbc196f2d939",
+          "ts": "5e6f5df02231",
+          "lean": "43fb9bbfdac7"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T04:05:19.372Z",
+        "reviewed_sha": "2a15777a4cac9f2535b4e39e26ddff3c1b4a1b7e"
       }
     ],
     "voice-unicode-crash": [
@@ -2630,5 +2735,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T02:11:07.128Z"
+  "updated_at": "2026-06-14T04:05:19.421Z"
 }

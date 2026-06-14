@@ -470,6 +470,27 @@
         "reviewed_at": "2026-06-07T06:00:58.843Z",
         "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
         "notes": "md gives a full structured proof: existence by construction, why-semidirect (z -> q^{-1}z computation), Galois/braiding triple-face, and universality via Laurent + AdjoinRoot universal properties."
+      },
+      {
+        "field_hash": {
+          "md": "5ea1ab1e4b7b",
+          "ts": "b7ccc9ffc6e3",
+          "lean": "dd2547cd8e17"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T04:08:11.622Z",
+        "reviewed_sha": "2a15777a4cac9f2535b4e39e26ddff3c1b4a1b7e"
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -495,6 +516,27 @@
         "reviewed_at": "2026-06-07T06:00:58.881Z",
         "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
         "notes": "i_coord_sq_eq_neg_one and q_coord_isUnit are sorry-free, but the KEY universal-property claim (categorical_coordinate_ring_universal) is an axiom; the characterising property is not proved."
+      },
+      {
+        "field_hash": {
+          "md": "5ea1ab1e4b7b",
+          "ts": "b7ccc9ffc6e3",
+          "lean": "dd2547cd8e17"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T04:08:11.786Z",
+        "reviewed_sha": "2a15777a4cac9f2535b4e39e26ddff3c1b4a1b7e"
       }
     ],
     "proof-rater-novelty": [
@@ -519,6 +561,27 @@
         "reviewed_at": "2026-06-07T06:00:58.920Z",
         "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
         "notes": "Standard AdjoinRoot(X^2+1) over LaurentPolynomial construction; routine commutative-algebra."
+      },
+      {
+        "field_hash": {
+          "md": "5ea1ab1e4b7b",
+          "ts": "b7ccc9ffc6e3",
+          "lean": "dd2547cd8e17"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T04:08:11.972Z",
+        "reviewed_sha": "2a15777a4cac9f2535b4e39e26ddff3c1b4a1b7e"
       }
     ],
     "proof-statement-integrity": [
@@ -539,6 +602,27 @@
         "reviewed_at": "2026-06-07T06:00:58.957Z",
         "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
         "notes": "lean.ref QOU.QuantumObservableUniverse.CategoricalCoordinateRing present (def); the i^2=-1 and unit facts match the md. Not vacuous."
+      },
+      {
+        "field_hash": {
+          "md": "5ea1ab1e4b7b",
+          "ts": "b7ccc9ffc6e3",
+          "lean": "dd2547cd8e17"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T04:08:12.086Z",
+        "reviewed_sha": "2a15777a4cac9f2535b4e39e26ddff3c1b4a1b7e"
       }
     ],
     "voice-unicode-crash": [
@@ -2541,5 +2625,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T02:11:07.128Z"
+  "updated_at": "2026-06-14T04:08:12.086Z"
 }
