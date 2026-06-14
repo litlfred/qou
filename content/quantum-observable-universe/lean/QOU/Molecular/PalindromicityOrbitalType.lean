@@ -39,6 +39,7 @@ open Classical in
 
     The histogram counts nonzero coefficients at each length. -/
 noncomputable def h3_histogram (x : Fin 6 → R_q) : List ℕ :=
+  letI : DecidablePred (fun i : Fin 6 => x i ≠ 0) := fun _ => Classical.propDecidable _
   let count_at := fun (slots : List (Fin 6)) =>
     slots.filter (fun i => decide (x i ≠ 0)) |>.length
   -- Full histogram over all word lengths 0..3.
@@ -90,5 +91,9 @@ instance : PalindromicityOrbitalType 2 where
     constructor
     · intro _; omega
     · intro _; exact helium_histogram_palindromic
+
+
+/-- Canonical instance: reuse the verified `Z = 2` (helium) instance. -/
+instance canonical : PalindromicityOrbitalType 2 := inferInstance
 
 end QOU.Molecular
