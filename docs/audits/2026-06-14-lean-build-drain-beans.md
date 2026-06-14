@@ -41,14 +41,15 @@ modules need those QOU oleans built first.)
 - [ ] 🟡 `BraidKnot/PlancherelWeightBoundedness.lean` — `λ`-binder fixed (`λ`→`lam`);
   **remaining**: 46 `typeclass instance stuck (LE)`, 57 `abs '|' parse` — needs
   an order/abs import + small proof repair. → `prop:plancherel-weight-boundedness`
-- [ ] ⬜ `Observations/TraceLocalityMeetsGsNonLocality.lean:36` — `[LinearOrderedField R]`
-  is not a class (Mathlib 2025 order refactor deprecated it); replace with
-  `[Field R] [LinearOrder R] [IsStrictOrderedRing R]` idiom. **Do not guess
-  the exact spelling — confirm against the pinned Mathlib rev.**
+- [x] ✅ `Observations/TraceLocalityMeetsGsNonLocality.lean:36` — `[LinearOrderedField R]`
+  removed by Mathlib 2025 order refactor → `[Field R] [LinearOrder R]
+  [IsStrictOrderedRing R]` (verified spelling against pinned Mathlib).
+  lean-direct EXIT 0.
 
 ## Tier 2 — local semantic (extra tactic / wrong lemma name / structure)
 
-- [ ] 🟡 `AppendixSurreals/KComplex.lean:103` — `No goals to be solved` (remove extra tactic).
+- [x] ✅ `AppendixSurreals/KComplex.lean:103` — No-goals @103 (I_mul_I `<;> simp`)
+  + @117 (mul_conj `<;> · simp; try ring`). lean-direct EXIT 0.
 - [x] ✅ `Interactions/QIntegerMassFormula.lean:89` — `No goals`@89 + orphan-docstring@134
   + noncomputable@172 fixed; residual `sorry`@172 is the §3b-cond conjecture-class
   instance (file moves error → has_sorry). lean-direct EXIT 0.
@@ -59,8 +60,10 @@ modules need those QOU oleans built first.)
   `Real.log_inv`. lean-direct EXIT 0.
 - [x] ✅ `Archimedean/BorromeanQuark.lean:35` — `Finset.univ.sum`→`∑ i, …` + import
   `Algebra.BigOperators.Fin` & `Fin.VecNotation` (for `![..]`). lean-direct EXIT 0.
-- [ ] ⬜ `Archimedean/EmCouplingBringZeroMode.lean:103` — `unexpected '/--' expected 'lemma'`
-  (malformed lemma/docstring) + sorry at `:193`.
+- [x] ✅ `Archimedean/EmCouplingBringZeroMode.lean:103` — orphaned docstring (documented a
+  since-removed axiom) → non-doc `/- … -/` comment. File compiles EXIT 0 (error →
+  has_sorry); residual `sorry`@191 is a permanent §3b-cond research conjecture
+  (Bloch-Wigner range, PR #952) — NOT discharged.
 - [ ] ⬜ `CategoricalDqSquared.lean:43` — SKIPPED. Section/docstring structure fixed locally
   but file references `CategoricalQExtDeriv` with NO local def; only Instanton defines it
   as `Linear ℝ C` while the local theorem declares `Linear R_q C` — reconciling is a §7c
@@ -80,8 +83,15 @@ modules need those QOU oleans built first.)
   + `TowerSummandRealization.realisation (q := q) β S` named-arg. lean-direct EXIT 0.
 - [x] ✅ `MathlibExt/RpowAlgebra.lean:51` — `unsolved goals` (q=0 case) → explicit
   `Real.zero_rpow`. lean-direct EXIT 0.
-- [ ] ⬜ `Molecular/PalindromicityOrbitalType.lean:42` — `Type mismatch`.
-- [ ] ⬜ `Molecular/ShellClosureNfTermCount.lean:92` — `typeclass instance stuck`.
+- [x] ✅ `Molecular/PalindromicityOrbitalType.lean:42` — filter Prop→Bool (classical decide)
+  + simp-loop@63 (`decide`) + malformed `canonical` instance@95 (→ `inferInstance` on the
+  verified Z=2, drops a sorry). lean-direct EXIT 0.
+- [ ] ⬜ `Molecular/ShellClosureNfTermCount.lean:92` — SKIPPED. `linarith@92` on a
+  LaurentPolynomial (Semiring metavar stuck) → could be `sub_eq_zero.mp h`, BUT
+  `LaurentPolynomial.T_ne_zero`/`T_injective`@94,217,230 do NOT exist in pinned Mathlib
+  and the `ring_nf … linarith [T_ne_zero …]` proofs need genuine reconstruction
+  (extract degree-2 coeff via `Finsupp.single_ne_zero`/`single_left_injective`) — not a
+  mechanical rename. Left for a focused session.
 
 ## Tier 3 — bigger / cascade
 
@@ -98,27 +108,61 @@ modules need those QOU oleans built first.)
 
 ## Sorry-only (file compiles; discharge the sorry to reach `proved`)
 
-- [ ] ⬜ `BraidKnot/GSReductionOrder.lean:123` — discharge `sorry`.
-- [ ] ⬜ `Archimedean/HyperbolicVolumeIndependence.lean:39` — discharge `sorry`.
+- [x] ✅ `BraidKnot/GSReductionOrder.lean:123` — sorry discharged via `rfl`: the `canonical`
+  instance's trivial `PUnit`/`0`/`0` model makes `order_match : ∀ T, 0 = 0` true by `rfl`
+  (does NOT prove the general conjecture, which stays in `[GSOrderMatch]`). lean-direct
+  EXIT 0, sorry-free → `proved`.
+- [ ] ⬜ `Archimedean/HyperbolicVolumeIndependence.lean:39` — SKIPPED. The `sorry`@42 IS the
+  open conjecture by design (algebraic independence of Vol(4₁)/Vol(5₂)/Vol(𝓑₃) over ℚ,
+  cited [zagier1986]); §3b conjectural witness, NOT a gap. File already compiles. Discharging
+  it would mean proving a Borel-Zagier open problem — out of scope.
 
 ## Progress
 
 | | count |
 |---|--:|
-| ✅ drained (verified clean) | 13 |
-| 🟡 partial | 2 (Plancherel, KComplex) |
-| ⬜ open | 13 |
-| ⏭ skipped (needs design decision) | 1 (CategoricalDqSquared) |
+| ✅ drained / compiles (lean-direct EXIT 0, committed) | 20 |
+| 🟡 partial (Plancherel — only file not yet EXIT 0) | 1 |
+| ⏭ skipped (needs proof reconstruction / design decision / open conjecture) | 4 |
+| ⬜ open (Tier-3 cascades not yet attempted) | 5 |
+
+**Of the 20 EXIT-0 files**: 17 are sorry-free `proved`; 2 (QIntegerMassFormula,
+EmCouplingBringZeroMode) compile with a permanent §3b-cond conjecture-class
+sorry (error → has_sorry, the legitimate state); 1 (GSReductionOrder) had its
+trivial-model sorry discharged via `rfl`.
 
 Session 2 (2026-06-14, branch `claude/gallant-volta-olmlar`, PR #2295)
-drained 9 more: HeckeLogDecomposition, QIntegerMassFormula,
-RpowAlgebra, CosimplicialCrossedGroupoid, MassEndomorphismConjecture,
-BorromeanQuark, HeckeGenPolyReduction, PhiQJSJ,
-su2_emergence_volume_determinant, WitnessR5Full, FlavorMassSplittingBound
-(11 commits; all lean-direct EXIT 0). The common roots were missing
-tactic imports (`Tactic.Ring`/`.Linarith`/`.Module`),
-`field_simp; ring`→"No goals", and the GroupWithZero order refactor
-(`inv_lt_one₀`/`div_lt_iff₀`).
+drained 16 beans across 16 commits — all verified lean-direct EXIT 0:
+HeckeLogDecomposition, QIntegerMassFormula, RpowAlgebra,
+CosimplicialCrossedGroupoid, MassEndomorphismConjecture, BorromeanQuark,
+HeckeGenPolyReduction, PhiQJSJ, su2_emergence_volume_determinant,
+WitnessR5Full, FlavorMassSplittingBound, KComplex,
+PalindromicityOrbitalType, GSReductionOrder, EmCouplingBringZeroMode,
+TraceLocalityMeetsGsNonLocality.
+
+**Root-cause taxonomy** (this session): (a) missing tactic imports —
+`ring`/`linarith`/`module` live in `Mathlib.Tactic.*`, not in the
+`Mathlib.Algebra.*` data modules (4 files); (b) `field_simp; ring`
+→ "No goals" when field_simp already closes (5 files); (c) GroupWithZero
+order refactor — `inv_lt_one₀`, `div_lt_iff₀`, drop `LinearOrderedField`
+(2 files); (d) orphaned docstrings after a removed axiom/inserted decl,
+and unclosed `noncomputable section` (3 files); (e) missing
+sibling/notation imports — `Fin.VecNotation` `![..]`, `BigOperators.Fin`
+`∑`, sibling `su2_emergence_dagger_unitarity` (3 files); (f) Prop-valued
+struct with ℝ data field (1 file).
+
+**Skipped (4), with reasons**: `CategoricalDqSquared` (references
+`CategoricalQExtDeriv` with no consistent base ring — §7c design
+decision); `ShellClosureNfTermCount` (`T_ne_zero`/`T_injective` don't
+exist + `linarith`-on-polynomial proofs need real reconstruction);
+`HyperbolicVolumeIndependence` (`sorry` IS the open Borel-Zagier
+conjecture, by design — already compiles); `PlancherelWeightBoundedness`
+(prior session's partial — LE-stuck + abs-parse, still open).
+
+Remaining open Tier-3 cascades (5): AtomicMass (~101-error cascade),
+PolynomialEval (Exists.pow ×38), HeckeH3 (simp ×11),
+NucleusEmptySDPUniqueness (synth ×9), FeynmanPathIntegrals +
+QGeometricLanglands (app type mismatch).
 
 Next pass: Tier 2 "No goals / unknown tactic" quick wins, then the
 Mathlib-rename beans (HeckeLogDecomposition, TraceLocality), then the

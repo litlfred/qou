@@ -315,13 +315,13 @@
   "id": "lean-drain-TraceLocalityMeetsGsNonLocality",
   "summary": "[T1] Observations/TraceLocalityMeetsGsNonLocality.lean: [LinearOrderedField R] not a class (Mathlib refactor)",
   "comment": "Lean build-drain bean (2026-06-14, one-per-lean). File: content/quantum-observable-universe/lean/QOU/Observations/TraceLocalityMeetsGsNonLocality.lean. Root: [LinearOrderedField R] not a class (Mathlib refactor). Fix: [Field][LinearOrder][IsStrictOrderedRing] — confirm spelling. Status: open. Verify: LEAN_PATH=$(find . -type d -path '*/.lake/build/lib/lean'|tr '\\n' ':') lean <file>. Goal: move block to proved. See docs/audits/2026-06-14-lean-build-drain-beans.md.",
-  "status": "open"
+  "status": "drained-verified"
  },
  {
   "id": "lean-drain-KComplex",
   "summary": "[T2] AppendixSurreals/KComplex.lean: No goals to be solved @103",
   "comment": "Lean build-drain bean (2026-06-14, one-per-lean). File: content/quantum-observable-universe/lean/QOU/AppendixSurreals/KComplex.lean. Root: No goals to be solved @103. Fix: remove extra tactic. Status: open. Verify: LEAN_PATH=$(find . -type d -path '*/.lake/build/lib/lean'|tr '\\n' ':') lean <file>. Goal: move block to proved. See docs/audits/2026-06-14-lean-build-drain-beans.md.",
-  "status": "open"
+  "status": "drained-verified"
  },
  {
   "id": "lean-drain-QIntegerMassFormula",
@@ -350,8 +350,8 @@
  {
   "id": "lean-drain-EmCouplingBringZeroMode",
   "summary": "[T2] Archimedean/EmCouplingBringZeroMode.lean: unexpected '/--' expected lemma @103 + sorry @193",
-  "comment": "Lean build-drain bean (2026-06-14, one-per-lean). File: content/quantum-observable-universe/lean/QOU/Archimedean/EmCouplingBringZeroMode.lean. Root: unexpected '/--' expected lemma @103 + sorry @193. Fix: fix malformed lemma; discharge sorry. Status: open. Verify: LEAN_PATH=$(find . -type d -path '*/.lake/build/lib/lean'|tr '\\n' ':') lean <file>. Goal: move block to proved. See docs/audits/2026-06-14-lean-build-drain-beans.md.",
-  "status": "open"
+  "comment": "Lean build-drain bean (2026-06-14, one-per-lean). File: content/quantum-observable-universe/lean/QOU/Archimedean/EmCouplingBringZeroMode.lean. Root: unexpected '/--' expected lemma @103 + sorry @193. Fix: fix malformed lemma; discharge sorry. Status: partial (parse error fixed, compiles EXIT 0; residual sorry is permanent §3b-cond research conjecture, error→has_sorry). Verify: LEAN_PATH=$(find . -type d -path '*/.lake/build/lib/lean'|tr '\\n' ':') lean <file>. Goal: move block to proved. See docs/audits/2026-06-14-lean-build-drain-beans.md.",
+  "status": "partial"
  },
  {
   "id": "lean-drain-CategoricalDqSquared",
@@ -405,12 +405,12 @@
   "id": "lean-drain-PalindromicityOrbitalType",
   "summary": "[T2] Molecular/PalindromicityOrbitalType.lean: Type mismatch @42",
   "comment": "Lean build-drain bean (2026-06-14, one-per-lean). File: content/quantum-observable-universe/lean/QOU/Molecular/PalindromicityOrbitalType.lean. Root: Type mismatch @42. Fix: fix types. Status: open. Verify: LEAN_PATH=$(find . -type d -path '*/.lake/build/lib/lean'|tr '\\n' ':') lean <file>. Goal: move block to proved. See docs/audits/2026-06-14-lean-build-drain-beans.md.",
-  "status": "open"
+  "status": "drained-verified"
  },
  {
   "id": "lean-drain-ShellClosureNfTermCount",
   "summary": "[T2] Molecular/ShellClosureNfTermCount.lean: typeclass instance stuck @92",
-  "comment": "Lean build-drain bean (2026-06-14, one-per-lean). File: content/quantum-observable-universe/lean/QOU/Molecular/ShellClosureNfTermCount.lean. Root: typeclass instance stuck @92. Fix: supply instance. Status: open. Verify: LEAN_PATH=$(find . -type d -path '*/.lake/build/lib/lean'|tr '\\n' ':') lean <file>. Goal: move block to proved. See docs/audits/2026-06-14-lean-build-drain-beans.md.",
+  "comment": "Lean build-drain bean (2026-06-14, one-per-lean). File: content/quantum-observable-universe/lean/QOU/Molecular/ShellClosureNfTermCount.lean. Root: typeclass instance stuck @92. Fix: supply instance. Status: open (SKIPPED — T_ne_zero/T_injective don't exist in pinned Mathlib; linarith-on-LaurentPolynomial proofs @92,217,230 need real reconstruction via Finsupp.single_ne_zero/single_left_injective, not a mechanical rename). Verify: LEAN_PATH=$(find . -type d -path '*/.lake/build/lib/lean'|tr '\\n' ':') lean <file>. Goal: move block to proved. See docs/audits/2026-06-14-lean-build-drain-beans.md.",
   "status": "open"
  },
  {
@@ -453,12 +453,12 @@
   "id": "lean-drain-GSReductionOrder",
   "summary": "[sorry] BraidKnot/GSReductionOrder.lean: sorry @123 (file compiles)",
   "comment": "Lean build-drain bean (2026-06-14, one-per-lean). File: content/quantum-observable-universe/lean/QOU/BraidKnot/GSReductionOrder.lean. Root: sorry @123 (file compiles). Fix: discharge sorry. Status: open. Verify: LEAN_PATH=$(find . -type d -path '*/.lake/build/lib/lean'|tr '\\n' ':') lean <file>. Goal: move block to proved. See docs/audits/2026-06-14-lean-build-drain-beans.md.",
-  "status": "open"
+  "status": "drained-verified"
  },
  {
   "id": "lean-drain-HyperbolicVolumeIndependence",
   "summary": "[sorry] Archimedean/HyperbolicVolumeIndependence.lean: sorry @39 (file compiles)",
-  "comment": "Lean build-drain bean (2026-06-14, one-per-lean). File: content/quantum-observable-universe/lean/QOU/Archimedean/HyperbolicVolumeIndependence.lean. Root: sorry @39 (file compiles). Fix: discharge sorry. Status: open. Verify: LEAN_PATH=$(find . -type d -path '*/.lake/build/lib/lean'|tr '\\n' ':') lean <file>. Goal: move block to proved. See docs/audits/2026-06-14-lean-build-drain-beans.md.",
+  "comment": "Lean build-drain bean (2026-06-14, one-per-lean). File: content/quantum-observable-universe/lean/QOU/Archimedean/HyperbolicVolumeIndependence.lean. Root: sorry @39 (file compiles). Fix: discharge sorry. Status: open (SKIPPED — sorry@42 IS the open Borel-Zagier conjecture by design [zagier1986], §3b conjectural witness; file already compiles; discharging would prove an open problem). Verify: LEAN_PATH=$(find . -type d -path '*/.lake/build/lib/lean'|tr '\\n' ':') lean <file>. Goal: move block to proved. See docs/audits/2026-06-14-lean-build-drain-beans.md.",
   "status": "open"
  }
 ]
