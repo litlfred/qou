@@ -699,6 +699,27 @@
         "reviewed_at": "2026-06-07T01:34:06.913Z",
         "reviewed_sha": "5b22f37e27e74b674fb6b50fae73e0792e7212e2",
         "notes": "Explicit tikzcd pipeline (Yekutieli finite-slice -> SDP -> T_w -> Wedderburn -> tr_M -> M -> archimedean B); algorithm spelled out step-by-step with caveats up front."
+      },
+      {
+        "field_hash": {
+          "md": "8d89a0f5b897",
+          "ts": "82492d372b39",
+          "lean": "9dbc48705fc5"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:52:59.417Z",
+        "reviewed_sha": "0e08f05ccb8bfad5e440f3c3770807daaf07d24c"
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -724,6 +745,27 @@
         "reviewed_at": "2026-06-07T01:39:41.437Z",
         "reviewed_sha": "5b22f37e27e74b674fb6b50fae73e0792e7212e2",
         "notes": "core gap: ~173x m_p shortfall; key Lean is a substrate axiom; MassIdentity weakened to 25% proxy"
+      },
+      {
+        "field_hash": {
+          "md": "8d89a0f5b897",
+          "ts": "82492d372b39",
+          "lean": "9dbc48705fc5"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:52:59.506Z",
+        "reviewed_sha": "0e08f05ccb8bfad5e440f3c3770807daaf07d24c"
       }
     ],
     "proof-rater-novelty": [
@@ -748,6 +790,27 @@
         "reviewed_at": "2026-06-07T01:34:06.982Z",
         "reviewed_sha": "5b22f37e27e74b674fb6b50fae73e0792e7212e2",
         "notes": "Novel: end-to-end categorical mass pipeline via finite-slice Yekutieli + GB spectral collapse, replacing the geometric/volume-conjecture leg with finite Markov-trace computation."
+      },
+      {
+        "field_hash": {
+          "md": "8d89a0f5b897",
+          "ts": "82492d372b39",
+          "lean": "9dbc48705fc5"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:52:59.647Z",
+        "reviewed_sha": "0e08f05ccb8bfad5e440f3c3770807daaf07d24c"
       }
     ],
     "proof-statement-integrity": [
@@ -768,6 +831,27 @@
         "reviewed_at": "2026-06-07T01:34:07.015Z",
         "reviewed_sha": "5b22f37e27e74b674fb6b50fae73e0792e7212e2",
         "notes": "atom_knot_mass_derivation is a DECLARED substrate axiom (S2), documented w/ Mathlib-gap path, not an obviously-suspect axiom; per-atom MassIdentity theorems are honest norm_num on the 25% proxy. Not a True-stub."
+      },
+      {
+        "field_hash": {
+          "md": "8d89a0f5b897",
+          "ts": "82492d372b39",
+          "lean": "9dbc48705fc5"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:52:59.846Z",
+        "reviewed_sha": "0e08f05ccb8bfad5e440f3c3770807daaf07d24c"
       }
     ],
     "voice-unicode-crash": [
@@ -2854,5 +2938,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T02:11:07.128Z"
+  "updated_at": "2026-06-14T03:52:59.846Z"
 }

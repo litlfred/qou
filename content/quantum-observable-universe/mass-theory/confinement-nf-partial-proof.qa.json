@@ -431,6 +431,27 @@
         "reviewed_at": "2026-06-04T23:10:46.962Z",
         "reviewed_sha": "fc693f631bfd72f4117c8b490468e3af495079fd",
         "notes": "Minor: .ts lean.ref cites only T3 theorem; narrative claims T1+T2+T3; ref could point at a top-level wrapper theorem; quantifiers and hypotheses otherwise match"
+      },
+      {
+        "field_hash": {
+          "md": "a15b5daffdfb",
+          "ts": "3ba4f47768f2",
+          "lean": "683dfbda4401"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:55:01.813Z",
+        "reviewed_sha": "0e08f05ccb8bfad5e440f3c3770807daaf07d24c"
       }
     ],
     "voice-author-notes-pollution": [
@@ -486,6 +507,27 @@
         "reviewed_at": "2026-06-04T23:09:07.753Z",
         "reviewed_sha": "8f2a783fc9f993048e93178a95afdbf7823eae05",
         "notes": "Status tracking and verification summary belong in authorNotes or a companion remark; substantial tracking content is mixed into the proof block"
+      },
+      {
+        "field_hash": {
+          "md": "a15b5daffdfb",
+          "ts": "3ba4f47768f2",
+          "lean": "683dfbda4401"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:55:01.376Z",
+        "reviewed_sha": "0e08f05ccb8bfad5e440f3c3770807daaf07d24c"
       }
     ],
     "fit-section-chapter": [
@@ -508,6 +550,27 @@
         "reviewed_at": "2026-06-04T23:09:25.737Z",
         "reviewed_sha": "8f2a783fc9f993048e93178a95afdbf7823eae05",
         "notes": "Correctly placed; no sibling carries the same T1/T2/T3 partial-proof claim"
+      },
+      {
+        "field_hash": {
+          "md": "a15b5daffdfb",
+          "ts": "3ba4f47768f2",
+          "lean": "683dfbda4401"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:55:01.533Z",
+        "reviewed_sha": "0e08f05ccb8bfad5e440f3c3770807daaf07d24c"
       }
     ],
     "wall-side-statement": [
@@ -530,6 +593,27 @@
         "reviewed_at": "2026-06-04T23:09:40.847Z",
         "reviewed_sha": "69e525599e13e46845963348918af6e5eb07d18f",
         "notes": "Correctly generic-ring; §3b-cond banner makes conditional hypothesis explicit"
+      },
+      {
+        "field_hash": {
+          "md": "a15b5daffdfb",
+          "ts": "3ba4f47768f2",
+          "lean": "683dfbda4401"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:55:01.616Z",
+        "reviewed_sha": "0e08f05ccb8bfad5e440f3c3770807daaf07d24c"
       }
     ],
     "wall-side-proof": [
@@ -552,6 +636,27 @@
         "reviewed_at": "2026-06-04T23:10:07.133Z",
         "reviewed_sha": "69e525599e13e46845963348918af6e5eb07d18f",
         "notes": "No archimedean-only machinery; proof method matches generic-ring statement"
+      },
+      {
+        "field_hash": {
+          "md": "a15b5daffdfb",
+          "ts": "3ba4f47768f2",
+          "lean": "683dfbda4401"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:55:01.728Z",
+        "reviewed_sha": "0e08f05ccb8bfad5e440f3c3770807daaf07d24c"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -572,6 +677,27 @@
         "reviewed_at": "2026-06-13T13:16:07.134Z",
         "reviewed_sha": "6b44ecdbb4f5bf1c4e1c2b1a08f9244d2ee52803",
         "notes": "Auto-drained by agent"
+      },
+      {
+        "field_hash": {
+          "md": "a15b5daffdfb",
+          "ts": "3ba4f47768f2",
+          "lean": "683dfbda4401"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:55:01.888Z",
+        "reviewed_sha": "0e08f05ccb8bfad5e440f3c3770807daaf07d24c"
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -592,6 +718,27 @@
         "reviewed_at": "2026-06-13T13:16:07.134Z",
         "reviewed_sha": "6b44ecdbb4f5bf1c4e1c2b1a08f9244d2ee52803",
         "notes": "Auto-drained by agent"
+      },
+      {
+        "field_hash": {
+          "md": "a15b5daffdfb",
+          "ts": "3ba4f47768f2",
+          "lean": "683dfbda4401"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:55:02.025Z",
+        "reviewed_sha": "0e08f05ccb8bfad5e440f3c3770807daaf07d24c"
       }
     ],
     "proof-rater-novelty": [
@@ -612,6 +759,27 @@
         "reviewed_at": "2026-06-13T13:16:07.134Z",
         "reviewed_sha": "6b44ecdbb4f5bf1c4e1c2b1a08f9244d2ee52803",
         "notes": "Auto-drained by agent"
+      },
+      {
+        "field_hash": {
+          "md": "a15b5daffdfb",
+          "ts": "3ba4f47768f2",
+          "lean": "683dfbda4401"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:55:02.116Z",
+        "reviewed_sha": "0e08f05ccb8bfad5e440f3c3770807daaf07d24c"
       }
     ],
     "proof-statement-integrity": [
@@ -632,6 +800,27 @@
         "reviewed_at": "2026-06-13T13:16:07.134Z",
         "reviewed_sha": "6b44ecdbb4f5bf1c4e1c2b1a08f9244d2ee52803",
         "notes": "Auto-drained by agent"
+      },
+      {
+        "field_hash": {
+          "md": "a15b5daffdfb",
+          "ts": "3ba4f47768f2",
+          "lean": "683dfbda4401"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:55:02.278Z",
+        "reviewed_sha": "0e08f05ccb8bfad5e440f3c3770807daaf07d24c"
       }
     ],
     "voice-unicode-crash": [
@@ -2860,5 +3049,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T02:11:07.128Z"
+  "updated_at": "2026-06-14T03:55:02.278Z"
 }

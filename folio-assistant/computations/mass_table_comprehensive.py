@@ -382,7 +382,7 @@ def main() -> int:
     print("=" * 120)
     print()
     print(f"\n{'Atom':>5s} {'Z':>2s} {'N':>2s} {'A':>2s}  "
-          f"{'m_symbolic':>14s} {'m_qCLT_approx':>14s} {'m_observed':>14s}  "
+          f"{'m_symb':>14s} {'m_qCLT':>14s} {'m_obs':>14s}  "
           f"{'B_sym':>12s} {'B_qCLT':>12s} {'B_AME':>11s}  "
           f"{'Methodology':>30s}  Caveats")
     print("-" * 150)

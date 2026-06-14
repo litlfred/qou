@@ -318,6 +318,26 @@
         "reviewed_at": "2026-06-04T23:30:10.279Z",
         "reviewed_sha": "29b0ed60e16090fc51d20ba80be79d55418a16d7",
         "notes": "fits mass-theory geometric face; interprets declared sibling"
+      },
+      {
+        "field_hash": {
+          "md": "0d85a9b9ee5e",
+          "ts": "3d39fb05f7bf"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:55:02.508Z",
+        "reviewed_sha": "0e08f05ccb8bfad5e440f3c3770807daaf07d24c"
       }
     ],
     "voice-unicode-crash": [
@@ -1987,5 +2007,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T02:11:07.128Z"
+  "updated_at": "2026-06-14T03:55:02.508Z"
 }

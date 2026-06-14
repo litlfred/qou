@@ -701,6 +701,27 @@
         "reviewed_at": "2026-06-07T01:33:19.024Z",
         "reviewed_sha": "5b22f37e27e74b674fb6b50fae73e0792e7212e2",
         "notes": "Strategy clear: compute chi on the all-antisymmetric V_(1^p) channel (each sigma=-q^-1 scalar) => single Laurent monomial pole order k(p-1); maximality argued separately."
+      },
+      {
+        "field_hash": {
+          "md": "ca5e05100d6f",
+          "ts": "8b69ac0a0b42",
+          "lean": "0cb816c4289e"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:53:02.622Z",
+        "reviewed_sha": "0e08f05ccb8bfad5e440f3c3770807daaf07d24c"
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -725,6 +746,27 @@
         "reviewed_at": "2026-06-07T01:39:41.402Z",
         "reviewed_sha": "5b22f37e27e74b674fb6b50fae73e0792e7212e2",
         "notes": "core gap: maximality pt1 only case-by-case for 6 pairs + conjectured/deferred categorical argument"
+      },
+      {
+        "field_hash": {
+          "md": "ca5e05100d6f",
+          "ts": "8b69ac0a0b42",
+          "lean": "0cb816c4289e"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:53:02.718Z",
+        "reviewed_sha": "0e08f05ccb8bfad5e440f3c3770807daaf07d24c"
       }
     ],
     "proof-rater-novelty": [
@@ -748,6 +790,27 @@
         "reviewed_at": "2026-06-07T01:33:19.096Z",
         "reviewed_sha": "5b22f37e27e74b674fb6b50fae73e0792e7212e2",
         "notes": "Novel Hoefsmit pole-order argument tying alpha_shift=k(p-1) to the column-rich irrep; feeds the alpha_EM=q[9]_q[10]_q shift-exponent chain. Not duplicated."
+      },
+      {
+        "field_hash": {
+          "md": "ca5e05100d6f",
+          "ts": "8b69ac0a0b42",
+          "lean": "0cb816c4289e"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:53:02.836Z",
+        "reviewed_sha": "0e08f05ccb8bfad5e440f3c3770807daaf07d24c"
       }
     ],
     "proof-statement-integrity": [
@@ -767,6 +830,27 @@
         "reviewed_at": "2026-06-07T01:33:19.129Z",
         "reviewed_sha": "5b22f37e27e74b674fb6b50fae73e0792e7212e2",
         "notes": "No .lean file (proposition kind, Lean optional/warn). md states maximality as conjectured/case-verified honestly; no suspect axiom. Statement self-consistent."
+      },
+      {
+        "field_hash": {
+          "md": "ca5e05100d6f",
+          "ts": "8b69ac0a0b42",
+          "lean": "0cb816c4289e"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:53:02.931Z",
+        "reviewed_sha": "0e08f05ccb8bfad5e440f3c3770807daaf07d24c"
       }
     ],
     "voice-unicode-crash": [
@@ -2973,5 +3057,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T02:11:07.128Z"
+  "updated_at": "2026-06-14T03:53:02.931Z"
 }

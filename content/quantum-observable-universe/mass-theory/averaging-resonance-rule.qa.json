@@ -130,6 +130,27 @@
         "reviewed_at": "2026-06-07T01:34:14.228Z",
         "reviewed_sha": "5b22f37e27e74b674fb6b50fae73e0792e7212e2",
         "notes": "Two layers named up front (half-fill cyclicity = rung selection; bar-invariant magnitude); scope explicit; defers magnitude to c5-involution-leibniz-decomposition."
+      },
+      {
+        "field_hash": {
+          "md": "84a2e531b9ab",
+          "ts": "9090da6593bd",
+          "lean": "19bdae67442d"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:53:03.045Z",
+        "reviewed_sha": "0e08f05ccb8bfad5e440f3c3770807daaf07d24c"
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -154,6 +175,27 @@
         "reviewed_at": "2026-06-07T01:34:14.260Z",
         "reviewed_sha": "5b22f37e27e74b674fb6b50fae73e0792e7212e2",
         "notes": "Sorry-free Lean (kRes_def rfl; kRes_proton_recipe/_deuteron/_tritium by decide). Note: Lean content is trivial Nat arith; the selection-rule justification lives in prose, not Lean. Gap is scoped/named."
+      },
+      {
+        "field_hash": {
+          "md": "84a2e531b9ab",
+          "ts": "9090da6593bd",
+          "lean": "19bdae67442d"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:53:03.177Z",
+        "reviewed_sha": "0e08f05ccb8bfad5e440f3c3770807daaf07d24c"
       }
     ],
     "proof-rater-novelty": [
@@ -178,6 +220,27 @@
         "reviewed_at": "2026-06-07T01:34:14.292Z",
         "reviewed_sha": "5b22f37e27e74b674fb6b50fae73e0792e7212e2",
         "notes": "Rule k_res=floor(n/2)+wrap is specific to typed-B_3 proton recipe but the proved Lean is trivial floor arithmetic with a hardcoded wrap=if n=9 then 1; conceptual claim standard bar-symmetry."
+      },
+      {
+        "field_hash": {
+          "md": "84a2e531b9ab",
+          "ts": "9090da6593bd",
+          "lean": "19bdae67442d"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:53:03.304Z",
+        "reviewed_sha": "0e08f05ccb8bfad5e440f3c3770807daaf07d24c"
       }
     ],
     "proof-statement-integrity": [
@@ -198,6 +261,27 @@
         "reviewed_at": "2026-06-07T01:34:14.324Z",
         "reviewed_sha": "5b22f37e27e74b674fb6b50fae73e0792e7212e2",
         "notes": "Sorry-free; no True-placeholder (real Nat theorems via decide). Honestly scoped: md states the magnitude layer is NOT addressed here. Default class instance backed by structural thm."
+      },
+      {
+        "field_hash": {
+          "md": "84a2e531b9ab",
+          "ts": "9090da6593bd",
+          "lean": "19bdae67442d"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:53:03.451Z",
+        "reviewed_sha": "0e08f05ccb8bfad5e440f3c3770807daaf07d24c"
       }
     ],
     "voice-status-leak": [
@@ -2637,5 +2721,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T02:11:07.128Z"
+  "updated_at": "2026-06-14T03:53:03.451Z"
 }

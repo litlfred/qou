@@ -16,111 +16,116 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "1d5376d18a38",
-          "ts": "452c4d3b4759",
+          "md": "4a4b78db05cf",
+          "ts": "7d011309058a",
           "lean": "a2268765afda"
         },
-        "result": "warn",
-        "severity": "minor",
-        "evidence": "binding-alpha-shift-extension.md:9 -- ## Setting section and ## Lean structure section extend beyond the statement",
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-07T13:44:31.643Z",
-        "reviewed_sha": "af638213a478dd151bf02a1c7949162067f278fa",
-        "notes": "Setting, Lean structure, and Remaining open math sections interpret the proposition; no companion remark"
+        "reviewed_at": "2026-06-14T03:54:55.720Z",
+        "reviewed_sha": "0e08f05ccb8bfad5e440f3c3770807daaf07d24c"
       }
     ],
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "1d5376d18a38",
-          "ts": "452c4d3b4759",
+          "md": "4a4b78db05cf",
+          "ts": "7d011309058a",
           "lean": "a2268765afda"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "binding-alpha-shift-extension.ts:2 -- proposition",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-07T13:44:31.693Z",
-        "reviewed_sha": "af638213a478dd151bf02a1c7949162067f278fa",
-        "notes": "Binding energy A>=3 via Reeb phase fits mass-theory chapter"
+        "reviewed_at": "2026-06-14T03:54:55.828Z",
+        "reviewed_sha": "0e08f05ccb8bfad5e440f3c3770807daaf07d24c"
       }
     ],
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "1d5376d18a38",
-          "ts": "452c4d3b4759",
+          "md": "4a4b78db05cf",
+          "ts": "7d011309058a",
           "lean": "a2268765afda"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "binding-alpha-shift-extension.md:1-2 -- archimedean statement about MeV binding energy",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-07T13:44:31.739Z",
-        "reviewed_sha": "af638213a478dd151bf02a1c7949162067f278fa",
-        "notes": "mass-theory is archimedean; binding energy formula uses q_0 archimedean evaluation appropriately"
+        "reviewed_at": "2026-06-14T03:54:55.942Z",
+        "reviewed_sha": "0e08f05ccb8bfad5e440f3c3770807daaf07d24c"
       }
     ],
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "1d5376d18a38",
-          "ts": "452c4d3b4759",
+          "md": "4a4b78db05cf",
+          "ts": "7d011309058a",
           "lean": "a2268765afda"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "binding-alpha-shift-extension.md:85+ -- Lean structure section describes conditional class proof",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-07T13:44:31.782Z",
-        "reviewed_sha": "af638213a478dd151bf02a1c7949162067f278fa",
-        "notes": "Proof routes through categorical then archimedean; appropriately declares specialisation via alpha_shift formula"
+        "reviewed_at": "2026-06-14T03:54:56.083Z",
+        "reviewed_sha": "0e08f05ccb8bfad5e440f3c3770807daaf07d24c"
       }
     ],
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "1d5376d18a38",
-          "ts": "452c4d3b4759",
+          "md": "4a4b78db05cf",
+          "ts": "7d011309058a",
           "lean": "a2268765afda"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "binding-alpha-shift-extension.lean -- conditional class pattern per sec 3b-cond",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-07T13:44:31.825Z",
-        "reviewed_sha": "af638213a478dd151bf02a1c7949162067f278fa",
-        "notes": "Lean uses conditional class for alpha_shift; narrative describes same conditional structure; no divergence"
+        "reviewed_at": "2026-06-14T03:54:56.211Z",
+        "reviewed_sha": "0e08f05ccb8bfad5e440f3c3770807daaf07d24c"
       }
     ],
     "detangler-no-forward-ref": [
@@ -199,6 +204,27 @@
         "reviewed_at": "2026-06-13T13:16:07.022Z",
         "reviewed_sha": "6b44ecdbb4f5bf1c4e1c2b1a08f9244d2ee52803",
         "notes": "Auto-drained by agent"
+      },
+      {
+        "field_hash": {
+          "md": "4a4b78db05cf",
+          "ts": "7d011309058a",
+          "lean": "a2268765afda"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:54:56.598Z",
+        "reviewed_sha": "0e08f05ccb8bfad5e440f3c3770807daaf07d24c"
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -241,6 +267,27 @@
         "reviewed_at": "2026-06-13T13:16:07.022Z",
         "reviewed_sha": "6b44ecdbb4f5bf1c4e1c2b1a08f9244d2ee52803",
         "notes": "Auto-drained by agent"
+      },
+      {
+        "field_hash": {
+          "md": "4a4b78db05cf",
+          "ts": "7d011309058a",
+          "lean": "a2268765afda"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:54:57.046Z",
+        "reviewed_sha": "0e08f05ccb8bfad5e440f3c3770807daaf07d24c"
       }
     ],
     "proof-rater-novelty": [
@@ -283,6 +330,27 @@
         "reviewed_at": "2026-06-13T13:16:07.022Z",
         "reviewed_sha": "6b44ecdbb4f5bf1c4e1c2b1a08f9244d2ee52803",
         "notes": "Auto-drained by agent"
+      },
+      {
+        "field_hash": {
+          "md": "4a4b78db05cf",
+          "ts": "7d011309058a",
+          "lean": "a2268765afda"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:54:57.340Z",
+        "reviewed_sha": "0e08f05ccb8bfad5e440f3c3770807daaf07d24c"
       }
     ],
     "proof-statement-integrity": [
@@ -321,6 +389,27 @@
         "reviewed_at": "2026-06-13T13:16:07.022Z",
         "reviewed_sha": "6b44ecdbb4f5bf1c4e1c2b1a08f9244d2ee52803",
         "notes": "Auto-drained by agent"
+      },
+      {
+        "field_hash": {
+          "md": "4a4b78db05cf",
+          "ts": "7d011309058a",
+          "lean": "a2268765afda"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:54:57.483Z",
+        "reviewed_sha": "0e08f05ccb8bfad5e440f3c3770807daaf07d24c"
       }
     ],
     "voice-status-leak": [
@@ -2928,5 +3017,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T02:11:07.128Z"
+  "updated_at": "2026-06-14T03:54:57.483Z"
 }

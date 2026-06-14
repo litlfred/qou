@@ -482,26 +482,6 @@
       {
         "field_hash": {
           "md": "366341cb3d1c",
-          "ts": "37f725a05628",
-          "lean": "4d041bbc115f"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "prop-rigid-monoidal-structural-gap-invariance.lean -- Type-B folding structure",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T13:44:32.268Z",
-        "reviewed_sha": "af638213a478dd151bf02a1c7949162067f278fa",
-        "notes": "Narrative and lean both describe convention-independence via Type-B folding; same claim"
-      },
-      {
-        "field_hash": {
-          "md": "366341cb3d1c",
           "ts": "afcf5cdb6fac",
           "lean": "4d041bbc115f"
         },
@@ -514,6 +494,27 @@
         "reviewed_at": "2026-06-14T01:00:45.351Z",
         "reviewed_sha": "0897db293a9e33bee002700a742ee9370ca482e1",
         "notes": "Label 'prop:rigid-monoidal-structural-gap-invariance' → expected 'rigid_monoidal_structural_gap_invariance'; Lean declares: OperatorVolumeConvention, OperatorVolumeConvention.agree_on_trace, RigidMonoidalStructuralGapInvariance, trace_convention_independence, convention_equivalence_refl.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "e1093b523cc3",
+          "ts": "afcf5cdb6fac",
+          "lean": "4d041bbc115f"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:54:00.572Z",
+        "reviewed_sha": "0e08f05ccb8bfad5e440f3c3770807daaf07d24c"
       }
     ],
     "voice-author-notes-pollution": [
@@ -569,89 +570,93 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "366341cb3d1c",
-          "ts": "37f725a05628",
+          "md": "e1093b523cc3",
+          "ts": "afcf5cdb6fac",
           "lean": "4d041bbc115f"
         },
-        "result": "warn",
-        "severity": "minor",
-        "evidence": "prop-rigid-monoidal-structural-gap-invariance.md:30 -- ## Why this is convention-independent section",
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-07T13:44:32.098Z",
-        "reviewed_sha": "af638213a478dd151bf02a1c7949162067f278fa",
-        "notes": "Interpretive Why section and unification of findings section follow statement; no companion remark"
+        "reviewed_at": "2026-06-14T03:54:00.122Z",
+        "reviewed_sha": "0e08f05ccb8bfad5e440f3c3770807daaf07d24c"
       }
     ],
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "366341cb3d1c",
-          "ts": "37f725a05628",
+          "md": "e1093b523cc3",
+          "ts": "afcf5cdb6fac",
           "lean": "4d041bbc115f"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "prop-rigid-monoidal-structural-gap-invariance.ts:2 -- proposition",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-07T13:44:32.141Z",
-        "reviewed_sha": "af638213a478dd151bf02a1c7949162067f278fa",
-        "notes": "Rigid monoidal gap invariance fits mass-theory algebraic face"
+        "reviewed_at": "2026-06-14T03:54:00.252Z",
+        "reviewed_sha": "0e08f05ccb8bfad5e440f3c3770807daaf07d24c"
       }
     ],
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "366341cb3d1c",
-          "ts": "37f725a05628",
+          "md": "e1093b523cc3",
+          "ts": "afcf5cdb6fac",
           "lean": "4d041bbc115f"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "prop-rigid-monoidal-structural-gap-invariance.lean:1 -- import Mathlib.Data.Real.Basic",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-07T13:44:32.183Z",
-        "reviewed_sha": "af638213a478dd151bf02a1c7949162067f278fa",
-        "notes": "mass-theory is archimedean; Real import in lean is appropriate; no wall violation"
+        "reviewed_at": "2026-06-14T03:54:00.359Z",
+        "reviewed_sha": "0e08f05ccb8bfad5e440f3c3770807daaf07d24c"
       }
     ],
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "366341cb3d1c",
-          "ts": "37f725a05628",
+          "md": "e1093b523cc3",
+          "ts": "afcf5cdb6fac",
           "lean": "4d041bbc115f"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "prop-rigid-monoidal-structural-gap-invariance.md:88 -- ## Proof sketch",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-07T13:44:32.227Z",
-        "reviewed_sha": "af638213a478dd151bf02a1c7949162067f278fa",
-        "notes": "Proof sketch uses categorical machinery; no archimedean-only proof of algebraic statement"
+        "reviewed_at": "2026-06-14T03:54:00.477Z",
+        "reviewed_sha": "0e08f05ccb8bfad5e440f3c3770807daaf07d24c"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -672,6 +677,27 @@
         "reviewed_at": "2026-06-13T13:16:08.222Z",
         "reviewed_sha": "6b44ecdbb4f5bf1c4e1c2b1a08f9244d2ee52803",
         "notes": "Auto-drained by agent"
+      },
+      {
+        "field_hash": {
+          "md": "e1093b523cc3",
+          "ts": "afcf5cdb6fac",
+          "lean": "4d041bbc115f"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:54:00.684Z",
+        "reviewed_sha": "0e08f05ccb8bfad5e440f3c3770807daaf07d24c"
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -692,6 +718,27 @@
         "reviewed_at": "2026-06-13T13:16:08.222Z",
         "reviewed_sha": "6b44ecdbb4f5bf1c4e1c2b1a08f9244d2ee52803",
         "notes": "Auto-drained by agent"
+      },
+      {
+        "field_hash": {
+          "md": "e1093b523cc3",
+          "ts": "afcf5cdb6fac",
+          "lean": "4d041bbc115f"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:54:00.764Z",
+        "reviewed_sha": "0e08f05ccb8bfad5e440f3c3770807daaf07d24c"
       }
     ],
     "proof-rater-novelty": [
@@ -712,6 +759,27 @@
         "reviewed_at": "2026-06-13T13:16:08.222Z",
         "reviewed_sha": "6b44ecdbb4f5bf1c4e1c2b1a08f9244d2ee52803",
         "notes": "Auto-drained by agent"
+      },
+      {
+        "field_hash": {
+          "md": "e1093b523cc3",
+          "ts": "afcf5cdb6fac",
+          "lean": "4d041bbc115f"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:54:01.079Z",
+        "reviewed_sha": "0e08f05ccb8bfad5e440f3c3770807daaf07d24c"
       }
     ],
     "proof-statement-integrity": [
@@ -732,6 +800,27 @@
         "reviewed_at": "2026-06-13T13:16:08.222Z",
         "reviewed_sha": "6b44ecdbb4f5bf1c4e1c2b1a08f9244d2ee52803",
         "notes": "Auto-drained by agent"
+      },
+      {
+        "field_hash": {
+          "md": "e1093b523cc3",
+          "ts": "afcf5cdb6fac",
+          "lean": "4d041bbc115f"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:54:01.203Z",
+        "reviewed_sha": "0e08f05ccb8bfad5e440f3c3770807daaf07d24c"
       }
     ],
     "voice-unicode-crash": [
@@ -2811,5 +2900,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T02:11:07.128Z"
+  "updated_at": "2026-06-14T03:54:01.203Z"
 }

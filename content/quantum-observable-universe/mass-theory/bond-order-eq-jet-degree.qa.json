@@ -35,6 +35,27 @@
         "reviewed_at": "2026-06-07T01:36:17.363Z",
         "reviewed_sha": "5b22f37e27e74b674fb6b50fae73e0792e7212e2",
         "notes": "Clear: 2 numbered claims (n-cluster sub-braid sits at jet degree n; gr_n = n-body term) => body-order series = jet-graded total; obligation (C) of the many-body conjecture."
+      },
+      {
+        "field_hash": {
+          "md": "e10884ca6b06",
+          "ts": "c75199ce08f1",
+          "lean": "e45f31393b92"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:53:04.818Z",
+        "reviewed_sha": "0e08f05ccb8bfad5e440f3c3770807daaf07d24c"
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -59,6 +80,27 @@
         "reviewed_at": "2026-06-07T01:36:17.394Z",
         "reviewed_sha": "5b22f37e27e74b674fb6b50fae73e0792e7212e2",
         "notes": "Sorry-free: bodyorder_eq_jet_total via rw[total_eq]+sum_congr. Caveat: substantive grading-match (Steps 1-2) packaged as structure fields body_eq_graded/total_eq (assumed), extracted as series identity. Gap named."
+      },
+      {
+        "field_hash": {
+          "md": "e10884ca6b06",
+          "ts": "c75199ce08f1",
+          "lean": "e45f31393b92"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:53:05.024Z",
+        "reviewed_sha": "0e08f05ccb8bfad5e440f3c3770807daaf07d24c"
       }
     ],
     "proof-rater-novelty": [
@@ -84,6 +126,27 @@
         "reviewed_at": "2026-06-07T01:39:41.470Z",
         "reviewed_sha": "5b22f37e27e74b674fb6b50fae73e0792e7212e2",
         "notes": "standard jet-degree argument; structure-hypothesis projection (theorem extracts S field)"
+      },
+      {
+        "field_hash": {
+          "md": "e10884ca6b06",
+          "ts": "c75199ce08f1",
+          "lean": "e45f31393b92"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:53:05.134Z",
+        "reviewed_sha": "0e08f05ccb8bfad5e440f3c3770807daaf07d24c"
       }
     ],
     "proof-statement-integrity": [
@@ -104,6 +167,27 @@
         "reviewed_at": "2026-06-07T01:36:17.456Z",
         "reviewed_sha": "5b22f37e27e74b674fb6b50fae73e0792e7212e2",
         "notes": "Sorry-free; BodyOrderJetGrading honestly packages the grading match + exhaustiveness as hypotheses; no suspect axiom, no True-stub. md ties (C) to gb-spectral-sequence/jet-prefix steps."
+      },
+      {
+        "field_hash": {
+          "md": "e10884ca6b06",
+          "ts": "c75199ce08f1",
+          "lean": "e45f31393b92"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:53:05.302Z",
+        "reviewed_sha": "0e08f05ccb8bfad5e440f3c3770807daaf07d24c"
       }
     ],
     "fit-section-chapter": [
@@ -2653,5 +2737,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T02:11:07.128Z"
+  "updated_at": "2026-06-14T03:53:05.302Z"
 }

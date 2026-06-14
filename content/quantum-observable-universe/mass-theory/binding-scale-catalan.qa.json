@@ -477,6 +477,27 @@
         "reviewed_at": "2026-06-07T01:35:58.718Z",
         "reviewed_sha": "5b22f37e27e74b674fb6b50fae73e0792e7212e2",
         "notes": "Clear: alpha=m_e.Vol(B_3)=m_e.8G; proof cites Borromean complement = 2 regular ideal octahedra (each 4G), Vol=8G a hyperbolic-geometry theorem; connects lepton scale m_e to baryon topology 8G."
+      },
+      {
+        "field_hash": {
+          "md": "b324716d6c5b",
+          "ts": "868bb7cee286",
+          "lean": "9e1b0d4e39fa"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:52:57.475Z",
+        "reviewed_sha": "0e08f05ccb8bfad5e440f3c3770807daaf07d24c"
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -501,6 +522,27 @@
         "reviewed_at": "2026-06-07T01:35:58.752Z",
         "reviewed_sha": "5b22f37e27e74b674fb6b50fae73e0792e7212e2",
         "notes": "Sorry-free. Caveat: Lean only proves the numeric sanity bindingScale_value |alpha-3.7445|<0.001 by norm_num, NOT the Vol_q(B_3) algebraic claim or Vol=8G (cited as known hyperbolic geometry; Real.catalan not in Mathlib)."
+      },
+      {
+        "field_hash": {
+          "md": "b324716d6c5b",
+          "ts": "868bb7cee286",
+          "lean": "9e1b0d4e39fa"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:52:58.097Z",
+        "reviewed_sha": "0e08f05ccb8bfad5e440f3c3770807daaf07d24c"
       }
     ],
     "proof-rater-novelty": [
@@ -525,6 +567,27 @@
         "reviewed_at": "2026-06-07T01:35:58.786Z",
         "reviewed_sha": "5b22f37e27e74b674fb6b50fae73e0792e7212e2",
         "notes": "Vol(Borromean)=8G is classical (Thurston, 2 ideal octahedra); QOU contribution is the m_e x 8G binding-scale identification. Standard underlying math, repo-specific framing."
+      },
+      {
+        "field_hash": {
+          "md": "b324716d6c5b",
+          "ts": "868bb7cee286",
+          "lean": "9e1b0d4e39fa"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:52:58.176Z",
+        "reviewed_sha": "0e08f05ccb8bfad5e440f3c3770807daaf07d24c"
       }
     ],
     "proof-statement-integrity": [
@@ -545,6 +608,27 @@
         "reviewed_at": "2026-06-07T01:35:58.817Z",
         "reviewed_sha": "5b22f37e27e74b674fb6b50fae73e0792e7212e2",
         "notes": "Sorry-free; catalanConstant/volBorromean are noncomputable real-literal defs (honest, w/ Real.catalan migration note), not suspect axioms; numeric thm is real. No True-stub."
+      },
+      {
+        "field_hash": {
+          "md": "b324716d6c5b",
+          "ts": "868bb7cee286",
+          "lean": "9e1b0d4e39fa"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:52:58.262Z",
+        "reviewed_sha": "0e08f05ccb8bfad5e440f3c3770807daaf07d24c"
       }
     ],
     "voice-unicode-crash": [
@@ -2601,5 +2685,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T02:11:07.128Z"
+  "updated_at": "2026-06-14T03:52:58.262Z"
 }

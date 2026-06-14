@@ -380,6 +380,27 @@
         "reviewed_at": "2026-06-05T23:51:15.219Z",
         "reviewed_sha": "ec260cd5c2f557373c25fa35a730ea8ea4f42e89",
         "notes": "Well-placed; uniform binding bound is the open hypothesis underpinning the residue/Habiro convergence argument."
+      },
+      {
+        "field_hash": {
+          "md": "0964106de7b8",
+          "ts": "9b664c9f482d",
+          "lean": "14bf958dfcfc"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:53:54.131Z",
+        "reviewed_sha": "0e08f05ccb8bfad5e440f3c3770807daaf07d24c"
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -400,6 +421,27 @@
         "reviewed_at": "2026-06-13T13:16:08.222Z",
         "reviewed_sha": "6b44ecdbb4f5bf1c4e1c2b1a08f9244d2ee52803",
         "notes": "Auto-drained by agent"
+      },
+      {
+        "field_hash": {
+          "md": "0964106de7b8",
+          "ts": "9b664c9f482d",
+          "lean": "14bf958dfcfc"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:53:54.224Z",
+        "reviewed_sha": "0e08f05ccb8bfad5e440f3c3770807daaf07d24c"
       }
     ],
     "voice-unicode-crash": [
@@ -2101,5 +2143,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T02:11:07.128Z"
+  "updated_at": "2026-06-14T03:53:54.224Z"
 }

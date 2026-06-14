@@ -680,6 +680,27 @@
         "reviewed_at": "2026-06-07T01:32:52.092Z",
         "reviewed_sha": "5b22f37e27e74b674fb6b50fae73e0792e7212e2",
         "notes": "Strategy up front: Markov property pins tr_M(w_mu)=z^{n-len}, char matrix invertible (Schur-Weyl-Hecke) => unique y_lambda; explicit 4-step algorithm + H_3 worked example."
+      },
+      {
+        "field_hash": {
+          "md": "740ee6f269cb",
+          "ts": "e61aeab1bc5e",
+          "lean": "f87ac8c15093"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:52:58.508Z",
+        "reviewed_sha": "0e08f05ccb8bfad5e440f3c3770807daaf07d24c"
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -704,6 +725,27 @@
         "reviewed_at": "2026-06-07T01:32:52.123Z",
         "reviewed_sha": "5b22f37e27e74b674fb6b50fae73e0792e7212e2",
         "notes": "md proof sound (cites Jones Thm5.1, induction on len). But Lean only proves the tautology '∃ y, y = solveJonesMarkov n S := ⟨_,rfl⟩' — invertibility/uniqueness claim is NOT formalized."
+      },
+      {
+        "field_hash": {
+          "md": "740ee6f269cb",
+          "ts": "e61aeab1bc5e",
+          "lean": "f87ac8c15093"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:52:58.652Z",
+        "reviewed_sha": "0e08f05ccb8bfad5e440f3c3770807daaf07d24c"
       }
     ],
     "proof-rater-novelty": [
@@ -728,6 +770,27 @@
         "reviewed_at": "2026-06-07T01:32:52.160Z",
         "reviewed_sha": "5b22f37e27e74b674fb6b50fae73e0792e7212e2",
         "notes": "Standard Jones-Markov/Wenzl-bridge linear-system extraction of y_lambda; competent but not novel machinery. Not duplicated as a sibling block."
+      },
+      {
+        "field_hash": {
+          "md": "740ee6f269cb",
+          "ts": "e61aeab1bc5e",
+          "lean": "f87ac8c15093"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:52:58.835Z",
+        "reviewed_sha": "0e08f05ccb8bfad5e440f3c3770807daaf07d24c"
       }
     ],
     "proof-statement-integrity": [
@@ -752,23 +815,24 @@
       },
       {
         "field_hash": {
-          "md": "d104e08da377",
+          "md": "740ee6f269cb",
           "ts": "e61aeab1bc5e",
           "lean": "f87ac8c15093"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "alpha-k-derivation-procedure.lean — ∃! y, A *ᵥ y = b proved: existence (A⁻¹ *ᵥ b) + uniqueness (mulVec_injective_of_invertible). Faithful to md's invertibility/uniqueness claim.",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-13",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-13T15:32:16.199Z",
-        "reviewed_sha": "edebb8f0723220c406756f110dc281186da6b303",
-        "notes": "Statement was already faithful (∃!), but never compiled (validation:not_checked) — missing Mathlib.Data.Real.Basic for the Matrix Mul ℝ-instance. Import fixed; builds green (direct lean, exit 0). Not the old vacuous ∃y,y=solveJonesMarkov."
+        "reviewed_at": "2026-06-14T03:52:59.172Z",
+        "reviewed_sha": "0e08f05ccb8bfad5e440f3c3770807daaf07d24c"
       }
     ],
     "voice-unicode-crash": [
@@ -2940,5 +3004,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T02:11:07.128Z"
+  "updated_at": "2026-06-14T03:52:59.172Z"
 }

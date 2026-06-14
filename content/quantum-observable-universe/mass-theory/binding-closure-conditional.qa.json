@@ -35,6 +35,27 @@
         "reviewed_at": "2026-06-07T01:35:25.323Z",
         "reviewed_sha": "5b22f37e27e74b674fb6b50fae73e0792e7212e2",
         "notes": "Crystal: obligations (C proved grading), (B conditional mass id), (D residue form proved) named up front w/ conditional banner; B(K)=m_e.Sum a_D^(n) closed form stated."
+      },
+      {
+        "field_hash": {
+          "md": "d2b5edfb6d53",
+          "ts": "85e75c9b1c9f",
+          "lean": "9d859da88c03"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:53:04.256Z",
+        "reviewed_sha": "0e08f05ccb8bfad5e440f3c3770807daaf07d24c"
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -59,6 +80,27 @@
         "reviewed_at": "2026-06-07T01:35:25.353Z",
         "reviewed_sha": "5b22f37e27e74b674fb6b50fae73e0792e7212e2",
         "notes": "Sorry-free: binding_closure_conditional proved from BindingClosureInput via rw[body_is_series,Finset.mul_sum]+sum_congr. Open input (B) is a named class field, not a hidden gap — rigorous-conditional."
+      },
+      {
+        "field_hash": {
+          "md": "d2b5edfb6d53",
+          "ts": "85e75c9b1c9f",
+          "lean": "9d859da88c03"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:53:04.429Z",
+        "reviewed_sha": "0e08f05ccb8bfad5e440f3c3770807daaf07d24c"
       }
     ],
     "proof-rater-novelty": [
@@ -83,6 +125,27 @@
         "reviewed_at": "2026-06-07T01:35:25.382Z",
         "reviewed_sha": "5b22f37e27e74b674fb6b50fae73e0792e7212e2",
         "notes": "Body-order = Sum m_e.a_D^(n) (SW periods) framing is coherent but the Lean is a standard factor-out-m_e over a Finset; conditional-class packaging is the same §3b-cond pattern as siblings."
+      },
+      {
+        "field_hash": {
+          "md": "d2b5edfb6d53",
+          "ts": "85e75c9b1c9f",
+          "lean": "9d859da88c03"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:53:04.547Z",
+        "reviewed_sha": "0e08f05ccb8bfad5e440f3c3770807daaf07d24c"
       }
     ],
     "proof-statement-integrity": [
@@ -103,6 +166,27 @@
         "reviewed_at": "2026-06-07T01:35:25.413Z",
         "reviewed_sha": "5b22f37e27e74b674fb6b50fae73e0792e7212e2",
         "notes": "Sorry-free §3b-cond theorem; BindingClosureInput honestly bundles proved (C) + open (B) as class fields; no suspect axiom, no True-stub. md banner matches Lean."
+      },
+      {
+        "field_hash": {
+          "md": "d2b5edfb6d53",
+          "ts": "85e75c9b1c9f",
+          "lean": "9d859da88c03"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:53:04.681Z",
+        "reviewed_sha": "0e08f05ccb8bfad5e440f3c3770807daaf07d24c"
       }
     ],
     "fit-section-chapter": [
@@ -2650,5 +2734,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T02:11:07.128Z"
+  "updated_at": "2026-06-14T03:53:04.681Z"
 }

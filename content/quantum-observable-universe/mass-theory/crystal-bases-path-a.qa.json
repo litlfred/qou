@@ -462,6 +462,26 @@
         "reviewed_at": "2026-06-04T23:29:10.318Z",
         "reviewed_sha": "f91ea5cf075706372f0ef73d19826fd4bb256ddc",
         "notes": "Well-placed: crystal-bases pole-order speedup belongs in mass-theory"
+      },
+      {
+        "field_hash": {
+          "md": "e214b10b16a5",
+          "ts": "c5b201b395f0"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:55:02.794Z",
+        "reviewed_sha": "0e08f05ccb8bfad5e440f3c3770807daaf07d24c"
       }
     ],
     "voice-unicode-crash": [
@@ -2131,5 +2151,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T02:11:07.128Z"
+  "updated_at": "2026-06-14T03:55:02.794Z"
 }
