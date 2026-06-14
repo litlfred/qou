@@ -1,67 +1,24 @@
 import Mathlib.Data.Real.Basic
 
-
 /-!
 # QOU.Archimedean.borromean_hopf_energy_crossover
-
-Energy comparison between Borromean (confined) and Hopf-diquark
-(CFL) phases.  The Borromean phase dominates at q = 1.1097 by
-a factor of ~250, requiring extreme compression to reach the
-CFL crossover.
-
-## References
-
-- [manuscript] Ch. 7, §Strangelet Stability
-- [thurston1978] Geometry and topology of three-manifolds
-
-**Ground ring**: `ℝ` (archimedean realisation).
-Evaluates formal results at q₀ ≈ 1.1098 for comparison with
-experimental data. NOT part of the formal proof chain.
-See `GroundRingAnnotations.lean`.
 -/
-
-noncomputable section
 
 namespace QOU.Archimedean
 
-/-- Borromean volume (Catalan's constant × 8). -/
--- Ref: [thurston1978]
-def V_B : ℝ := 7.32772
+class EnergyFunctional (E : Type*)
+class CrossoverDynamics {E : Type*} [EnergyFunctional E] where
+  borromean_energy : ℝ → E
+  hopf_energy : ℝ → E
 
-/-- The ratio of Borromean to Hopf binding at substrate parameter q.
-    This measures how much compression energy is needed to reach
-    the CFL transition. -/
--- Ref: [manuscript] Ch. 7
-def binding_ratio (q : ℝ) (hq : q > 1) : ℝ :=
-  (V_B * q ^ 2 / (q - 1) ^ 2) / ((3 / 2) * (q + q⁻¹))
-
-/-- The Borromean binding energy at q = 1.1097 exceeds 700. -/
--- Ref: [manuscript] Ch. 7
-theorem borromean_binding_large :
-    ∀ q : ℝ, q = 1.1097 →
-    V_B * q ^ 2 / (q - 1) ^ 2 > 700 := by
-  intro q hq
-  subst hq
-  unfold V_B
-  norm_num
-
-/-- The Milnor triple linking invariant of the Borromean link. -/
--- Ref: [manuscript] Ch. 4
-def milnor_mu_borromean : Int :=
-  1
-
-/-- The Milnor triple linking invariant of the Hopf-diquark phase. -/
--- Ref: [manuscript] Ch. 7
-def milnor_mu_cfl : Int :=
-  0
-
-/-- The Milnor invariant jumps: this is a first-order transition. -/
--- Ref: [manuscript] Ch. 7
-theorem milnor_discontinuity :
-    milnor_mu_borromean ≠ milnor_mu_cfl := by
-  unfold milnor_mu_borromean milnor_mu_cfl
-  decide
+/-- **PROPOSITION.** Energy crossover between Borromean and Hopf-diquark phases.
+    There exists a critical density where the Borromean binding energy is superseded
+    by the Hopf-diquark condensate energy. -/
+theorem borromean_hopf_energy_crossover
+    {E : Type*} [EnergyFunctional E] [dyn : CrossoverDynamics E] :
+    ∃ (rho_c : ℝ), rho_c > 0 ∧
+      ∀ rho > rho_c, dyn.hopf_energy rho < dyn.borromean_energy rho := by
+  -- Ref: [manuscript] prop:borromean-hopf-energy-crossover
+  sorry
 
 end QOU.Archimedean
-
-end
