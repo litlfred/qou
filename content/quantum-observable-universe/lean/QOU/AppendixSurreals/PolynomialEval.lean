@@ -1,5 +1,6 @@
 import QOU.AppendixSurreals.Basic
 import QOU.AppendixSurreals.StandardPart
+import QOU.AppendixSurreals.Blowup
 import Mathlib.Algebra.Polynomial.Eval.Defs
 import Mathlib.Algebra.Polynomial.Basic
 import Mathlib.Algebra.MvPolynomial.CommRing
