@@ -114,12 +114,20 @@ theorem beta_decay_locality (p : ℕ) (vols_par vols_dau : List ℝ)
     rwa [getElem!_pos h_bound₁, getElem!_pos h_bound₂] at h₃
 
 /-- Top-level alias matching the manifest declaration. -/
--- Ref: [manuscript] §6/generator-volume-decomposition
 noncomputable def generator_volume_decomposition (q : ℝ)
     (crossings_per_gen : List (List (ℝ × ℝ))) : ℝ :=
   let volumes := crossings_per_gen.map fun cs =>
     let ⟨a, b⟩ := chainReduce q cs
     generatorVolume a b
   nuclearEnergy volumes
+
+/-- **PROPOSITION.** The nuclear binding energy decomposes as a sum of generator volumes.
+    Each generator's volume is computed by a transfer matrix product. -/
+-- Ref: [manuscript] prop:generator-volume-decomposition
+theorem generator_volume_decomposition_prop (q : ℝ) (A : ℕ)
+    (nuclear_energy : ℝ) (crossings_per_gen : List (List (ℝ × ℝ)))
+    (h_len : crossings_per_gen.length = A - 1) :
+    nuclear_energy = generator_volume_decomposition q crossings_per_gen := by
+  sorry
 
 end QOU.Archimedean

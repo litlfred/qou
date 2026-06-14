@@ -15,7 +15,16 @@ namespace QOU.BraidKnot
 
     Placeholder; full formalisation pending. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/jucys-murphy-central-elements-qou.ts
--- Placeholder structure; full data to be specified.
-structure JucysMurphyCentralElementsQOU where
+opaque IwahoriHeckeAlgebra : Type*
+opaque JMElement (k : ℕ) : IwahoriHeckeAlgebra
+opaque esymm_JM (ell : ℕ) : IwahoriHeckeAlgebra
+
+/-- Jucys-Murphy elements commute -/
+theorem jucys_murphy_elements_commute (k l : ℕ) :
+    JMElement k * JMElement l = JMElement l * JMElement k := sorry
+
+/-- Symmetric polynomials in JM elements are central -/
+theorem jucys_murphy_esymm_central (ell : ℕ) (x : IwahoriHeckeAlgebra) :
+    esymm_JM ell * x = x * esymm_JM ell := sorry
 
 end QOU.BraidKnot

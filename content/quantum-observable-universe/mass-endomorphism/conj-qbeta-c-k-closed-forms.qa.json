@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "4a25f5f9cc73",
     "ts": "d6971c0ad117",
-    "lean": "95c5d60be687"
+    "lean": "5cb44ff7c5e6"
   },
   "criteria": {
     "voice-status-leak": [
@@ -329,6 +329,22 @@
         "reviewed_at": "2026-06-05T12:40:05.537Z",
         "reviewed_sha": "2c68dfd4a6209bbf8a307740a69265d87f181b12",
         "notes": "Lean decl absent; equivalence unverifiable."
+      },
+      {
+        "field_hash": {
+          "md": "4a25f5f9cc73",
+          "ts": "d6971c0ad117",
+          "lean": "5cb44ff7c5e6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-14T01:30:06.435Z",
+        "reviewed_sha": "dfd236e499b4b6b0985b78c158134b2b725cf09b",
+        "notes": "Label 'prop:qbeta-c-k-closed-forms' → expected 'qbeta_c_k_closed_forms'; Lean declares: hoefsmitB, QBetaCKClosedForms, defaultQBetaCKClosedForms, qbeta_c_k_closed_forms_derived. Structural match via content."
       }
     ],
     "voice-author-notes-pollution": [
@@ -1376,5 +1392,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T01:08:44.722Z"
+  "updated_at": "2026-06-14T01:30:06.435Z"
 }

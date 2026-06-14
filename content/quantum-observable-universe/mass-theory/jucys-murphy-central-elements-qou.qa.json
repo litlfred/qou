@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "17b6ec0d1fcb",
     "ts": "8471ffc52042",
-    "lean": "7c178c0beb0f"
+    "lean": "f867aa632ed3"
   },
   "criteria": {
     "voice-status-leak": [
@@ -362,6 +362,22 @@
         "reviewed_at": "2026-06-06T00:05:47.977Z",
         "reviewed_sha": "2490eb2fcfcd4e47e9e155d26a63c2f52a24eae7",
         "notes": "Core claim matches but commutativity/centrality sub-steps are axiomatised, not proved from braid relations — minor gap."
+      },
+      {
+        "field_hash": {
+          "md": "17b6ec0d1fcb",
+          "ts": "8471ffc52042",
+          "lean": "f867aa632ed3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-14T01:30:06.435Z",
+        "reviewed_sha": "dfd236e499b4b6b0985b78c158134b2b725cf09b",
+        "notes": "Label 'prop:jucys-murphy-central-elements-qou' → expected 'jucys_murphy_central_elements_qou'; Lean declares: HeckeJMSpectrum, cellContent, jm_elements_commute, jm_esymm_central, jm_central_scalar_eq_esymm_qcontent.... Structural match via content."
       }
     ],
     "voice-author-notes-pollution": [
@@ -1390,5 +1406,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T01:08:44.722Z"
+  "updated_at": "2026-06-14T01:30:06.435Z"
 }

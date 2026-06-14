@@ -75,7 +75,7 @@ opaque centralIdempotent {R : Type*} [CommRing R]
     -/
 theorem explicit_central_idempotent_via_murphy
     {n : ℕ} (lam : List ℕ) (h : lam.sum = n) :
-    True :=
+    centralIdempotent lam q * centralIdempotent lam q = centralIdempotent lam q := by
   -- Ref: [murphy1981] — Murphy elements in symmetric-group algebras.
   -- Ref: [dipper-james1986] — extension of Murphy's construction
   -- to the Iwahori–Hecke algebra at generic q.
@@ -87,13 +87,13 @@ theorem explicit_central_idempotent_via_murphy
   -- four cross-checks (sum-to-identity, orthogonality,
   -- self-adjointness, bar-pairing) follow from Lagrange
   -- interpolation in commuting variables (J_1, ..., J_n).
-  trivial
+  sorry
 
 /-- Computability witness for small `n`: the (2,2) self-conjugate
     cell of `H_4(q)` is the Bring-figure-8 cell, witnessed in
     `conj:bring-figure-eight-depth-2-witness`. The `e_{(2,2)}`
     formula is concrete and finite (sum over 2 SYTs × product
     over 4 boxes × Lagrange factor). -/
-example : True := trivial
+example : centralIdempotent [2, 2] q * centralIdempotent [2, 2] q = centralIdempotent [2, 2] q := sorry
 
 end QOU.BraidKnot.ExplicitCentralIdempotent

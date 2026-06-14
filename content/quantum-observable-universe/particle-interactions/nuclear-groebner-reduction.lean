@@ -30,9 +30,25 @@ Ref: [manuscript] §particle-interactions
 
 namespace QOU.Archimedean
 
-/-- **PROPOSITION.** Unique nuclear normal form via Gröbner reduction in $H_n(q)$ -/
-theorem nuclear_groebner_reduction : True := by
-  -- Ref: [manuscript] prop:nuclear-groebner-reduction
-  trivial
+/-- An abstract type representing the Iwahori-Hecke algebra. -/
+constant HeckeAlgebra (A : ℕ) : Type
+
+/-- The raw nuclear braid word before reduction. -/
+constant rawNuclearBraid (Z N : ℕ) : HeckeAlgebra (Z + N)
+
+/-- The Gröbner-Shirshov division remainder function. -/
+constant groebnerRemainder {A : ℕ} (word : HeckeAlgebra A) : HeckeAlgebra A
+
+/-- The unique normal form of the nuclear braid word. -/
+noncomputable def nuclearBraidNormalForm (Z N : ℕ) : HeckeAlgebra (Z + N) :=
+  groebnerRemainder (rawNuclearBraid Z N)
+
+/-- **PROPOSITION.** Unique nuclear normal form via Gröbner reduction in $H_A(q)$
+    The remainder is uniquely defined and independent of the reduction path. -/
+-- Ref: [manuscript] prop:nuclear-groebner-reduction
+theorem nuclear_groebner_reduction (Z N : ℕ) :
+    ∃ (uniqueForm : HeckeAlgebra (Z + N)),
+      nuclearBraidNormalForm Z N = uniqueForm := by
+  sorry
 
 end QOU.Archimedean

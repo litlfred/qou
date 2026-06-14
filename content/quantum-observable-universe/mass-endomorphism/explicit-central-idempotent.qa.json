@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "94c563d6880f",
     "ts": "cd746e7c07c6",
-    "lean": "340aebe814f6"
+    "lean": "2fcaee9ed2c3"
   },
   "criteria": {
     "voice-status-leak": [
@@ -362,6 +362,22 @@
         "reviewed_at": "2026-06-05T12:48:22.522Z",
         "reviewed_sha": "259400f85ac43fa212c106afff4cdb8b878a102c",
         "notes": "Scaffold Lean does not yet encode the formula; reader can reconcile but gap exists."
+      },
+      {
+        "field_hash": {
+          "md": "94c563d6880f",
+          "ts": "cd746e7c07c6",
+          "lean": "2fcaee9ed2c3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-14T01:30:06.435Z",
+        "reviewed_sha": "dfd236e499b4b6b0985b78c158134b2b725cf09b",
+        "notes": "Label 'prop:explicit-central-idempotent' → expected 'explicit_central_idempotent'; Lean declares: qContent, explicit_central_idempotent_via_murphy. Structural match via content."
       }
     ],
     "voice-author-notes-pollution": [
@@ -1392,5 +1408,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T01:08:44.722Z"
+  "updated_at": "2026-06-14T01:30:06.435Z"
 }

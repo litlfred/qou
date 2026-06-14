@@ -94,17 +94,13 @@ theorem lr_coefficient_hecke_non_negative
 @[simp] theorem partition_empty_size :
     Partition.size [] = 0 := rfl
 
-/-- Singleton check: the unique LR coefficient for `c^μ_{μ,()}` is 1
-    (statement-level; pending Sprint 2 to discharge). -/
+-- Ref: [manuscript] prop:lr-coefficient-hecke
 theorem lr_coefficient_hecke_trivial_case
     [hLR : LRCoefficientHecke] (mu : Partition) :
-    hLR.coeff mu mu [] = 0 ∨ hLR.coeff mu mu [] > 0 := by
+    hLR.coeff mu mu [] = 1 := by
   -- Standard LR theorem: c^μ_{μ, ()} = 1.
-  -- Sprint 2 will replace this disjunction with the equality.
-  -- Ref: [manuscript] prop:lr-coefficient-hecke
+  -- Sprint 2 will replace this with the equality.
   -- Ref: [stanley1999] §A1.3 (LR rule, base case)
-  by_cases h : hLR.coeff mu mu [] = 0
-  · left; exact h
-  · right; exact Nat.pos_of_ne_zero h
+  sorry
 
 end QOU.BraidKnot

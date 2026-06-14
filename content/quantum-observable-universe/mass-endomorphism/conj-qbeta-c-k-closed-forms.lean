@@ -92,4 +92,12 @@ noncomputable instance defaultQBetaCKClosedForms : QBetaCKClosedForms where
   c_7 := (-2 : ℝ)^3
   c_7_closed_form := rfl
 
+-- Ref: [manuscript] prop:qbeta-c-k-closed-forms
+/-- Theorem stub: First-principles derivation of the c_k closed forms
+    from the categorical Markov trace. -/
+theorem qbeta_c_k_closed_forms_derived (q : ℝ) :
+    ∃ c_4 c_5 : ℝ,
+      c_4 = -2 * (hoefsmitB q)^4 ∧
+      c_5 = -((hoefsmitB q)^2 + 1/2) := sorry
+
 end QOU.BraidKnot

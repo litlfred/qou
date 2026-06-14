@@ -138,4 +138,11 @@ the next refinement step, recorded under
 `conj:alpha-k-categorical-closure` (PR #675).
 -/
 
+-- Ref: [manuscript] prop:chi-lambda-w0-sign-weighting
+/-- The c_k chain at H_3 has the same sign as the character-weighted sum at the long element w_0. -/
+theorem chi_lambda_w0_sign_weighting (k : ℕ) (c_k_chain : ℝ) (c_k_3 c_k_21 c_k_111 : ℝ) :
+    (c_k_chain < 0 ↔ S_w0 c_k_3 c_k_21 c_k_111 < 0) ∧
+    (c_k_chain > 0 ↔ S_w0 c_k_3 c_k_21 c_k_111 > 0) := by
+  sorry
+
 end QOU.BraidKnot

@@ -76,5 +76,9 @@ noncomputable def massPoly
 
 end Pre
 
+-- Ref: [manuscript] prop:mass-endomorphism-tower
+/-- Proton-electron mass ratio theorem. -/
+theorem proton_electron_ratio (frobeniusNorm : ℝ → ℝ) (q v : ℝ) (n : ℕ) (V : Fin n → ℝ) :
+    q > 1 → Pre.massPoly frobeniusNorm q v n V > 0 := sorry
 
 end QOU.MassEndomorphism

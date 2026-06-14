@@ -28,73 +28,48 @@ namespace QOU.BraidKnot
 
 universe u
 
-/-- Concrete model of a confined particle.  Carries the two minimal
-    physical observables (strand count + colour charge); proofs
-    below never inspect these fields, so they close by
-    `rfl`-style evaluation. -/
+/-- Concrete model of a confined particle. -/
 structure ConfinedParticleTy where
-  /-- Strand count in the confined particle's braid representation. -/
   strands : ℕ
-  /-- Total colour charge (mod 3 sum of strand colours). -/
   colourCharge : Fin 3
   deriving Repr
 
-/-- Confinement predicate: in the unit-particle model every
-    particle is confined at every `q`. -/
--- Ref: [manuscript] particle-interactions/confinement-sdp
-def confined : ConfinedParticleTy → ℝ → Prop := fun _ _ => True
+/-- Confinement predicate: Slater-strict feasibility of the confinement SDP. -/
+constant confined : ConfinedParticleTy → ℝ → Prop
 
 /-- The confinement locus `Ω(P) ⊆ ℝ` of a particle. -/
--- Ref: [manuscript] braids-and-knots/confinement-phase-stratification
 def confinementLocus (P : ConfinedParticleTy) : Set ℝ :=
   { q : ℝ | confined P q }
 
-/-- Binding multiplicity — concrete model returns `2`. -/
--- Ref: [manuscript] braids-and-knots/electron-shell
-def mu : ConfinedParticleTy → ℝ → ℕ := fun _ _ => 2
+/-- Binding multiplicity. -/
+constant mu : ConfinedParticleTy → ℝ → ℕ
 
-/-- Frobenius stability index — content-bearing via the
-    `ConfinedParticleTy.strands` field cast to ℝ.  Larger strand
-    count → larger structural Frobenius stability (more degrees
-    of freedom in the braid group). -/
--- Ref: [manuscript] braids-and-knots/shell-closure-stability
-def sigmaF : ConfinedParticleTy → ℝ → ℝ := fun p _ => (p.strands : ℝ)
-
-/-- The confinement locus on the concrete model is the universal
-    set, since `confined P q := True` for every `(P, q)`. -/
-private theorem confinementLocus_eq_univ (P : ConfinedParticleTy) :
-    confinementLocus P = Set.univ := by
-  ext q
-  simp [confinementLocus, confined]
+/-- Frobenius stability index. -/
+constant sigmaF : ConfinedParticleTy → ℝ → ℝ
 
 /-- **Phase stratification, claim (1) — openness.**
     `Ω(P)` is open in ℝ. -/
--- Ref: [manuscript] braids-and-knots/confinement-phase-stratification
--- Ref: [boyd-vandenberghe-2004] §5.6 (Perturbation and sensitivity
---      analysis — feasibility-set topology + value-function continuity)
-theorem ConfinementPhaseStratification_open
-    (P : ConfinedParticleTy) :
+-- Ref: [manuscript] prop:confinement-phase-stratification
+theorem ConfinementPhaseStratification_open (P : ConfinedParticleTy) :
     IsOpen (confinementLocus P) := by
-  rw [confinementLocus_eq_univ P]
-  exact isOpen_univ
+  sorry
 
 /-- **Phase stratification, claim (3) — local constancy of μ.**
-    On each connected component of `Ω(P)`, binding multiplicity is
-    constant.  Trivial on the concrete model where `mu ≡ 2`. -/
--- Ref: [manuscript] braids-and-knots/confinement-phase-stratification
+    On each connected component of `Ω(P)`, binding multiplicity is constant. -/
+-- Ref: [manuscript] prop:confinement-phase-stratification
 theorem ConfinementPhaseStratification_mu_constant
     (P : ConfinedParticleTy) (C : Set ℝ)
-    (_h_comp : IsConnected C) (_h_sub : C ⊆ confinementLocus P)
-    (q₁ q₂ : ℝ) (_h₁ : q₁ ∈ C) (_h₂ : q₂ ∈ C) :
-    mu P q₁ = mu P q₂ := rfl
+    (h_comp : IsConnected C) (h_sub : C ⊆ confinementLocus P)
+    (q₁ q₂ : ℝ) (h₁ : q₁ ∈ C) (h₂ : q₂ ∈ C) :
+    mu P q₁ = mu P q₂ := by
+  sorry
 
 /-- **Phase stratification (headline).** -/
--- Ref: [manuscript] braids-and-knots/confinement-phase-stratification
--- Ref: [boyd-vandenberghe-2004] §5.6 (Perturbation and sensitivity
---      analysis — feasibility-set topology + value-function continuity)
-theorem ConfinementPhaseStratification
-    (P : ConfinedParticleTy) :
-    IsOpen (confinementLocus P) :=
-  ConfinementPhaseStratification_open P
+-- Ref: [manuscript] prop:confinement-phase-stratification
+theorem ConfinementPhaseStratification (P : ConfinedParticleTy) :
+    IsOpen (confinementLocus P) ∧
+    ∀ (C : Set ℝ), IsConnected C → C ⊆ confinementLocus P →
+      ∀ q₁ q₂, q₁ ∈ C → q₂ ∈ C → mu P q₁ = mu P q₂ := by
+  exact ⟨ConfinementPhaseStratification_open P, ConfinementPhaseStratification_mu_constant P⟩
 
 end QOU.BraidKnot

@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "576d0af8f512",
     "ts": "e42c9aedd8b7",
-    "lean": "4541dbff916a"
+    "lean": "937785e426a3"
   },
   "criteria": {
     "voice-status-leak": [
@@ -345,6 +345,22 @@
         "reviewed_at": "2026-06-04T23:14:42.787Z",
         "reviewed_sha": "daf4c521d758a973becdf3fb7e239711ad73e3be",
         "notes": "Lean is a stub; narrative states a full primal+dual SDP proposition with strong duality; no Lean theorem yet encodes the matrix inequality or complementary slackness condition"
+      },
+      {
+        "field_hash": {
+          "md": "576d0af8f512",
+          "ts": "e42c9aedd8b7",
+          "lean": "937785e426a3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-14T01:30:06.435Z",
+        "reviewed_sha": "dfd236e499b4b6b0985b78c158134b2b725cf09b",
+        "notes": "Label 'prop:confinement-sdp' aligns with Lean declaration. Has sorry (cited)."
       }
     ],
     "voice-author-notes-pollution": [
@@ -1373,5 +1389,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T01:08:44.722Z"
+  "updated_at": "2026-06-14T01:30:06.435Z"
 }

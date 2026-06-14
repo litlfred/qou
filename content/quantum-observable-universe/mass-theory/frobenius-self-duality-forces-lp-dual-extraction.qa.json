@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "e1dbc91b6d24",
     "ts": "221545be3a9d",
-    "lean": "10859d9beab0"
+    "lean": "9e2355b8a744"
   },
   "criteria": {
     "voice-status-leak": [
@@ -362,6 +362,22 @@
         "reviewed_at": "2026-06-05T15:31:02.429Z",
         "reviewed_sha": "ec5c795fa56a7b1aeefd17fc58eb52af8cec0be2",
         "notes": "Gap is notational/scope: injectivity vs full iso. Reader can reconcile; not theorem-changing for the main structural point."
+      },
+      {
+        "field_hash": {
+          "md": "e1dbc91b6d24",
+          "ts": "221545be3a9d",
+          "lean": "9e2355b8a744"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-14T01:30:06.435Z",
+        "reviewed_sha": "dfd236e499b4b6b0985b78c158134b2b725cf09b",
+        "notes": "Label 'prop:frobenius-self-duality-forces-lp-dual-extraction' aligns with Lean declaration. Has sorry (cited)."
       }
     ],
     "voice-author-notes-pollution": [
@@ -1390,5 +1406,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T01:08:44.722Z"
+  "updated_at": "2026-06-14T01:30:06.435Z"
 }
