@@ -21,7 +21,9 @@ independent of any computation — the witness analogue of `proof-no-trivial-tru
 Of these, **146** are the `computed=1, expected=1` boolean "did-this-run" idiom and
 **7** embed real physical literals; the strongest faked-compute cases are two `c_3`
 "match" assertions that compare `-2==-2` instead of comparing the empirical value
-they name.
+they name. (Orthogonal finding: the CODATA literals among the 7 — `1836.152`,
+`1838.684` — are *also* `canonical-no-hardcoded-observable` violations independent
+of the vacuity question; they should import from the `codata_constants` registry.)
 
 ## Part A — Structure map
 
@@ -62,13 +64,13 @@ vacuity risk concentrates there. Rust + `pyhecke` have genuinely good hygiene.
   - **7 real-physical-literal cases** (the ones that warrant agent scrutiny):
     - `folio-assistant/computations/probes/khovanov_at_q0_probe.py:222` — `c_3_match_at_q1`, `computed=-2, expected=-2` while the genuine `empirical_c3` is computed two lines up (`c_3_empirical`, line 213) but **never compared**. The honest form is `computed=float(empirical_c3), expected=-2`.
     - `folio-assistant/computations/probes/khovanov_klr_rank_cohomology_probe.py:231` — `c_3_exact_match`, same `-2==-2` pattern, source literally says "matches empirical c_3 exactly" yet asserts the constant against itself.
-    - `folio-assistant/computations/m_p_m_e_li2q.py:126` — `codata_mp_me_loaded`, `computed=1836.152, expected=1836.152`. This one is benign (a CODATA load self-check, honestly named); the real predicted `mp_me` is used in the error computation at line 98.
+    - `folio-assistant/computations/m_p_m_e_li2q.py:126` — `codata_mp_me_loaded`, `computed=1836.152, expected=1836.152`. Benign *re: vacuity* (a CODATA load self-check, honestly named; the real predicted `mp_me` is used in the error computation at line 98) — but the hardcoded literal `1836.152` is *separately* a `canonical-no-hardcoded-observable` violation: it should import from `folio-assistant/computations/substrate/codata_constants.py` (a `*_MEV_VALIDATION` alias) rather than inline the value.
     - `probes/qbeta_complex_c3_fibre_probe.py:293` (`computed=4.0==4.0`), `probes/additive_composition_categorical_probe.py:268` (`…supported_by_all_4_hypotheses`, `4==4`), `alpha/alpha_em_habiro_taylor_investigation.py:245` (`habiro_taylor_coefficients_extracted`, `5==5`), `qbeta/qbeta_habiro_depth15_interpretation.py:623` (`6==6`) — these encode a *count* (of hypotheses / extracted coefficients) as a tautology rather than asserting the count was actually produced.
 
 ### B3. Hardcoded-witness producer (literal baked in as "computed") — **0 strict, ~2 borderline**
 - *Misleading because:* a producer that writes a literal numeric result it claims to compute is the self-assuming-projection analogue — the witness "proves" a number the script never derived.
 - *Heuristic:* `(value|result|computed)\s*[:=]\s*-?\d+\.\d{3,}` in producer bodies that emit JSON, cross-checked against whether the value flows from a computation.
-- *Instances:* **No strict cases in live producers.** Numeric literals found are CODATA/experimental constants used as *comparison targets* (`codata_mp_me = 1836.152`, `codata_mn_me = 1838.684` at `m_p_m_e_li2q.py:96-97`) — legitimate. The two `c_3` cases in B2 are the closest borderline: they hardcode the categorical value `-2` into the assertion's `passed` flag instead of comparing the empirical quantity, so the *assertion* is faked even though the *witness data* (`c_3_empirical`) is real. (Deprecated `_deprecated/trefoil-quark-nucleon-nf.py:508 phi_val = 0.0486…` exists but is dead code.)
+- *Instances:* **No strict cases in live producers.** Numeric literals found are CODATA/experimental constants used as *comparison targets* (`codata_mp_me = 1836.152`, `codata_mn_me = 1838.684` at `m_p_m_e_li2q.py:96-97`) — legitimate *as comparison targets* (real values, not faked computes), **but** these hardcoded literals are *separately* flagged by `canonical-no-hardcoded-observable` and should be imported from the central `codata_constants` registry (`*_MEV_VALIDATION` aliases) rather than inlined. The two `c_3` cases in B2 are the closest borderline: they hardcode the categorical value `-2` into the assertion's `passed` flag instead of comparing the empirical quantity, so the *assertion* is faked even though the *witness data* (`c_3_empirical`) is real. (Deprecated `_deprecated/trefoil-quark-nucleon-nf.py:508 phi_val = 0.0486…` exists but is dead code.)
 
 ### B4. Tests with no assertions (run-but-never-check) — **0 found** (2 false positives)
 - *Misleading because:* exercises a path but verifies nothing about the output.
