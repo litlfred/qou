@@ -8,7 +8,7 @@ export default proposition({
   uses: [],
   defines: [],
   tags: ["normalization", "no-fitting", "uniqueness", "bring", "residue"],
-  lean: { ref: "qou:QOU.BraidKnot.bring_residue_gives_resolvent" },
+  lean: { ref: "qou:QOU.BraidKnot.bring_residue_equation" },
   authorNotes: [
     {
       kind: "note",

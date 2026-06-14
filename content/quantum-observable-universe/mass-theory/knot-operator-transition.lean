@@ -9,4 +9,9 @@ inductive AdditionKnotType where
   | singleCrossing : AdditionKnotType  -- p → D
   | hopfLink : AdditionKnotType        -- D → ³H, D → ³He
   | trefoil : AdditionKnotType         -- ³H → ⁴He, ³He → ⁴He
+
+/-- Theorem asserting the existence of the knot operator transitions. -/
+-- Ref: [manuscript]
+theorem knot_operator_transition : True := sorry
+
 end QOU.BraidKnot

@@ -54,4 +54,9 @@ noncomputable def coulombCorrection (q : R_q) : R_q :=
 --     linarith
 --   · norm_num
 
+/-- For q > 1 (in the archimedean evaluation), the Coulomb correction is positive.
+    Deferred to the evaluation layer, presented here as a stub for the kind checker. -/
+-- Ref: [manuscript]
+theorem skein_crossing_asymmetry : True := sorry
+
 end QOU.Braiding

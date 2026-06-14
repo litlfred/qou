@@ -39,9 +39,14 @@ namespace QOU.QuantumObservableUniverse
 -- Ref: [kock2004]
 -- NOTE: `def`, not `theorem` — `FrobeniusHopfData` is a `Type _`
 -- (data, not a proposition).  Per Copilot review on PR #794.
-def exists_axiom_1_frobenius
+def exists_axiom_1_frobenius_data
     {k : Type*} [Field k] (Q : QOU.QuantumObservableUniverse.{u, v} k) :
     @QOU.FrobeniusHopfData Q.C Q.catInst Q.monInst :=
   Q.frobHopf
+
+lemma exists_axiom_1_frobenius
+    {k : Type*} [Field k] (Q : QOU.QuantumObservableUniverse.{u, v} k) :
+    Nonempty (@QOU.FrobeniusHopfData Q.C Q.catInst Q.monInst) :=
+  ⟨exists_axiom_1_frobenius_data Q⟩
 
 end QOU.QuantumObservableUniverse

@@ -37,9 +37,14 @@ namespace QOU.QuantumObservableUniverse
 -- Ref: [manuscript] §1 Quantum Observable Universe, Axiom 2
 -- NOTE: `def`, not `theorem` — `Functor` is a `Type _` (data,
 -- not a proposition).  Per Copilot review on PR #794.
-def exists_axiom_2_observability
+def exists_axiom_2_observability_data
     {k : Type*} [Field k] (Q : QOU.QuantumObservableUniverse.{u, v} k) :
     @CategoryTheory.Functor Q.C Q.catInst (Type _) inferInstance :=
   Q.fibreFunctor
+
+lemma exists_axiom_2_observability
+    {k : Type*} [Field k] (Q : QOU.QuantumObservableUniverse.{u, v} k) :
+    Nonempty (@CategoryTheory.Functor Q.C Q.catInst (Type _) inferInstance) :=
+  ⟨exists_axiom_2_observability_data Q⟩
 
 end QOU.QuantumObservableUniverse

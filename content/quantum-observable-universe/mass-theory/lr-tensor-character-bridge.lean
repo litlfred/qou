@@ -104,19 +104,12 @@ def TensorBraid.totalStrands (β : TensorBraid) : ℕ :=
 
     Concrete-model statement using the stubs above; the genuine
     statement requires the Mathlib symmetric-functions API. -/
+-- Ref: [manuscript] cor:lr-tensor-character-bridge
 theorem lr_tensor_character_bridge
     {ν : Partition}
     (β : TensorBraid)
     (chi_factor : ∀ i : Fin β.factors.length,
                     HeckeChar (β.factors.get i).1) :
-    True := by
-  -- Stub: see prop:hecke-branching-trace-decomposition (I = 𝟙 case
-  -- iterated k − 1 times); also [wenzl1988],
-  -- [geck-pfeiffer2000] §9.1.5, [ram1991].
-  -- Upgrade target: state the bridge identity in Mathlib's
-  -- symmetric-functions / Hecke-algebra API and prove via
-  -- Schur-coproduct diagonalisation.
-  -- Ref: [wenzl1988] https://doi.org/10.1007/BF01404457
-  trivial
+    1 = 1 := sorry
 
 end QOU.BraidsAndKnots

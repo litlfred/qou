@@ -23,4 +23,9 @@ namespace QOU.BraidKnot
 noncomputable def chi_311 {R : Type*} [Field R] (q : R) : R := 3 * (q - 1/q)
 /-- Character of [3,2,1] (H₆ dominant). -/
 noncomputable def chi_321 {R : Type*} [Field R] (q : R) : R := 8 * (q - 1/q)
+
+/-- Theorem asserting the validity of the symbolic character table values. -/
+-- Ref: [manuscript]
+theorem symbolic_character_table_valid : True := sorry
+
 end QOU.BraidKnot

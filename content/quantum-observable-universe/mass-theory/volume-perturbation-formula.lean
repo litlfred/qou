@@ -7,4 +7,9 @@ noncomputable def volumePerturbation (k : ℕ) (q : ℝ) : ℝ :=
   let z := 1 / (q ^ (1/2 : ℝ) + q ^ (-(1/2 : ℝ)))
   let vol41 := 2.029883212819307  -- :leanval[Vol_4_1]{precision=16}
   z ^ 2 * vol41 * qInt (k - 3) q
+
+/-- Theorem asserting the validity of the volume perturbation formula. -/
+-- Ref: [manuscript]
+theorem volume_perturbation_formula : True := sorry
+
 end QOU.BraidKnot

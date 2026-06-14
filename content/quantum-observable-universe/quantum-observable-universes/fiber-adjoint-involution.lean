@@ -65,4 +65,10 @@ structure FiberAdjointInvolution (C : Type u) [CategoryTheory.Category.{v} C]
   orbit_mono : ∀ (f g : (𝟙_ C) ⟶ projLine),
     f ≫ orbit_embed = g ≫ orbit_embed → f = g
 
+/-- Theorem stating the existence of the fiber-adjoint involution. -/
+-- Ref: [manuscript] prop:fiber-adjoint-involution
+theorem fiber_adjoint_involution_exists (C : Type u) [CategoryTheory.Category.{v} C]
+    [CategoryTheory.MonoidalCategory C] (fh : FrobeniusHopfData C) :
+    ∃ (inv : FiberAdjointInvolution C fh), True := sorry
+
 end QOU

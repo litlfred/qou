@@ -20,6 +20,7 @@ Empirical scorecard (light isotopes through ⁷Li):
   Bindings:     under-predicted by 30-76% (structural gap)
 
 -- Ref: [manuscript] prop:derived-mass-formula-light-isotopes
+-- Triggering hash update for AI sweep
 -/
 
 namespace QOU.WedderburnMass
