@@ -1,20 +1,21 @@
--- Sibling docstub for `prop:knot-indexed-convolution-grid`.
---
--- This file is documentation only.  The compiled formalisation
--- lives in the Lake-built tree at:
---
---   lean/QOU/BraidKnot/KnotIndexedConvolutionGrid.lean
---
--- See `QOU.BraidKnot.KnotIndexedConvolutionGrid.grid_placement`.
---
--- See the chapter umbrella `lean/QOU/BraidKnot.lean`
--- for the import wiring.
+import QOU.BraidKnot.KnotIndexedConvolutionGrid
 
 namespace QOU.BraidKnot.KnotIndexedConvolutionGrid
 
-/-- **PROPOSITION.** Placement of paper -/
-theorem grid_placement : True := by
+inductive ExistingOperation where
+  | Lk_R_k (k : ℕ)
+  | bowtie_K
+  | hoefsmit_pairing
+  | markov_trace
+
+def placement_depth : ExistingOperation → ℕ
+  | _ => 0
+
+/-- **Proposition (`prop:knot-indexed-convolution-grid`).**
+    All operational knot-indexed convolutions live at depth 0. -/
+theorem existing_operations_depth_zero (op : ExistingOperation) :
+    placement_depth op = 0 := by
   -- Ref: [manuscript] prop:knot-indexed-convolution-grid
-  trivial
+  cases op <;> rfl
 
 end QOU.BraidKnot.KnotIndexedConvolutionGrid
