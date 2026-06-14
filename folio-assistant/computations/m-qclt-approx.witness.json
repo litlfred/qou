@@ -1,0 +1,106 @@
+{
+  "engine": "python+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-14T21:32:42.239165+00:00",
+  "commitSha": "d58256673c467c5aa3bd764a39fe0066d3c0f9ff",
+  "assertions": [
+    {
+      "name": "err_full_uniform_across_isotopes",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "binding removed ⇒ only per-nucleon calibration error remains"
+    },
+    {
+      "name": "err_full_equals_nucleon_gap",
+      "computed": "2.90569",
+      "expected": "2.88961",
+      "passed": true,
+      "tolerance": 0.1,
+      "source": "m_qCLT_approx − CODATA mass = the m_p gap (binding cancels)"
+    },
+    {
+      "name": "leading_term_not_exact",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "err_leading = err_full + binding_fraction > err_full"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 11,
+  "computation": "m-qclt-approx",
+  "scriptFile": "m_qclt_approx.py",
+  "scriptHash": "853884f5721f",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Leading-order JSJ-additive heavy-isotope mass channel (channel 2 of q-clt-jsj-mass-scaling). m_qCLT_approx(Z,N) = Z·m_p + N·m_n − B(Z,N). The additive structure is exact (volume additive under torus gluing); the absolute prediction is a ~1%-level estimator gated by the 2.89% nucleon-mass gap and the binding model (Δ_λ). NOT an 'exact asymptotic limit' — the leading-term error is the binding fraction, which plateaus (does not vanish) for heavy A.",
+  "parameters": {
+    "source_witness": "low-isotope-mass-table.witness.json",
+    "m_p_pred_MeV": "965.384475574",
+    "m_n_pred_MeV": "966.71477364"
+  },
+  "data": {
+    "rows": [
+      {
+        "label": "D",
+        "Z": 1,
+        "N": 1,
+        "A": 2,
+        "m_qCLT_leading_MeV": "1932.099249214279",
+        "m_qCLT_approx_MeV": "1929.850428419414",
+        "m_ref_codata_MeV": "1875.61294279",
+        "B_pred_MeV": "2.24882079486",
+        "binding_fraction_pct": "0.118605",
+        "err_leading_pct": "3.01162",
+        "err_full_pct": "2.89172"
+      },
+      {
+        "label": "T",
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "m_qCLT_leading_MeV": "2898.814022854064",
+        "m_qCLT_approx_MeV": "2890.345424467531",
+        "m_ref_codata_MeV": "2808.9211309",
+        "B_pred_MeV": "8.46859838653",
+        "binding_fraction_pct": "0.301959",
+        "err_leading_pct": "3.20026",
+        "err_full_pct": "2.89877"
+      },
+      {
+        "label": "3He",
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "m_qCLT_leading_MeV": "2897.483724788773",
+        "m_qCLT_approx_MeV": "2889.994805479002",
+        "m_ref_codata_MeV": "2808.39155404",
+        "B_pred_MeV": "7.48891930977",
+        "binding_fraction_pct": "0.274821",
+        "err_leading_pct": "3.17236",
+        "err_full_pct": "2.90569"
+      }
+    ],
+    "nucleon_mass_gap_pct": "2.88961",
+    "err_full_cross_isotope_spread_pct": "0.01397",
+    "interpretation": {
+      "leading_term": "Z·m_p + N·m_n (JSJ volume-additivity asymptotic)",
+      "correction": "B(Z,N) binding = Δ_λ term (item 2; gated A>8)",
+      "err_full_is": "the 2.89% nucleon-mass gap, uniform in isotope",
+      "err_leading_is": "nucleon gap + binding fraction (grows with A)",
+      "overclaim_corrected": "'exact asymptotic limit' → asymptotically linear structure; ~1% absolute estimator"
+    }
+  }
+}
