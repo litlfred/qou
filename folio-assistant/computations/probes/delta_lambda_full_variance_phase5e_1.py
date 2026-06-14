@@ -34,6 +34,9 @@ is orthonormal w.r.t. tr_M, so the dual-character pullback is the
 """
 from __future__ import annotations
 
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))  # probes/ → computations/ root (reach the Phase 6 bridge)
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import json
 import sys
