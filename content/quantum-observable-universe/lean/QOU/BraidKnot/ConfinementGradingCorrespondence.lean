@@ -70,8 +70,11 @@ theorem klrTopDegree_le_confLevel
     F.klrTopDegree T ≤ F.confLevel T :=
   (F.filtrations_agree T).symm.le
 
-/-- **Faithful instance.** Carries the explicit research-grade conjecture as a sorry. -/
-instance canonical (R : Type u) [CommRing R] (q : R)
+/-- **Faithful realisation** (`def`, not `instance`: keeps this `sorry` out of
+    typeclass resolution, so downstream `[...]` hypotheses stay genuinely
+    conditional -- CLAUDE.md §3b-cond, #2269). Carries the explicit
+    research-grade conjecture as a sorry. -/
+def canonical (R : Type u) [CommRing R] (q : R)
     [C : CrystalGraphRealization R q] :
     ConfinementGradingCorrespondence R q where
   confLevel _ := 0

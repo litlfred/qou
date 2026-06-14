@@ -185,7 +185,7 @@ theorem inter_nucleon_interface_pole :
     indicator `fun ρ => decide (ρ ≤ -1)`, so `pole_indicator_correct`
     holds by `rfl` (the indicator IS the witness function) — this
     instance introduces no `sorry`. -/
-instance canonical (R : Type u) [CommRing R] (q : R) :
+def canonical (R : Type u) [CommRing R] (q : R) :
     let C := CrystalGraphRealization.canonical R q
     @CrystalRMatrixSubLemma R _ q C := by
   intro C

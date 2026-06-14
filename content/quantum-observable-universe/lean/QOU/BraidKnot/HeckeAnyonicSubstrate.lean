@@ -78,8 +78,11 @@ theorem normal_form_inhabited_of_action
     Nonempty H.NormalForm :=
   ⟨T⟩
 
-/-- **Faithful instance.** Carries the explicit research-grade conjecture as a sorry. -/
-instance canonical (R : Type u) [CommRing R] (q : R) :
+/-- **Faithful realisation** (`def`, not `instance`: keeps this `sorry` out of
+    typeclass resolution, so downstream `[...]` hypotheses stay genuinely
+    conditional -- CLAUDE.md §3b-cond, #2269). Carries the explicit
+    research-grade conjecture as a sorry. -/
+def canonical (R : Type u) [CommRing R] (q : R) :
     HeckeAnyonicSubstrate R q where
   NormalForm := PUnit
   braidAction _ T := T

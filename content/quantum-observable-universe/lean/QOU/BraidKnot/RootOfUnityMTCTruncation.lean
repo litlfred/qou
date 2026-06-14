@@ -99,8 +99,11 @@ theorem columnCount_nodeOf_lt_k
     M.columnCount (C.nodeOf T) < k :=
   (M.inTruncation_iff (C.nodeOf T)).mp (M.truncation_holds T)
 
-/-- **Faithful instance.** Carries the explicit research-grade conjecture as a sorry. -/
-instance canonical (R : Type u) [CommRing R] (q : R)
+/-- **Faithful realisation** (`def`, not `instance`: keeps this `sorry` out of
+    typeclass resolution, so downstream `[...]` hypotheses stay genuinely
+    conditional -- CLAUDE.md §3b-cond, #2269). Carries the explicit
+    research-grade conjecture as a sorry. -/
+def canonical (R : Type u) [CommRing R] (q : R)
     [C : CrystalGraphRealization R q] :
     RootOfUnityMTCTruncation R q 2 where
   k_ge_two := le_refl 2

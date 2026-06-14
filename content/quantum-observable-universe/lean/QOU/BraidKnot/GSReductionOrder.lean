@@ -119,8 +119,11 @@ theorem confinement_eq_crystalDeg
     M.confinementLevel T = M.crystalDeg T :=
   (M.order_match T).symm
 
-/-- **Faithful instance.** Carries the explicit research-grade conjecture as a sorry. -/
-instance canonical (R : Type u) [CommRing R] (q : R) : GSOrderMatch R q where
+/-- **Faithful realisation** (`def`, not `instance`: keeps this `sorry` out of
+    typeclass resolution, so downstream `[...]` hypotheses stay genuinely
+    conditional -- CLAUDE.md §3b-cond, #2269). Carries the explicit
+    research-grade conjecture as a sorry. -/
+def canonical (R : Type u) [CommRing R] (q : R) : GSOrderMatch R q where
   NormalForm := PUnit
   confinementLevel _ := 0
   crystalDeg _ := 0
