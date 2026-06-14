@@ -63,6 +63,14 @@ from isotope_record_schema import (  # noqa: E402
 from q_parameter import Q as Q_FLOAT, Q_50_DIGIT_STR  # noqa: E402
 from wedderburn_jones_markov import y_lambda_at  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from codata_constants import (  # noqa: E402
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+    AME_B_LI5_MEV_VALIDATION,
+    AME_B_LI6_MEV_VALIDATION,
+)
 
 set_compute_dps()  # ensure mp.mp.dps = COMPUTE_DPS (consistent with infra)
 
@@ -70,12 +78,12 @@ set_compute_dps()  # ensure mp.mp.dps = COMPUTE_DPS (consistent with infra)
 B_AME_MEV: dict[tuple[int, int], float] = {
     (1, 0):  0.0,        # proton (no binding)
     (0, 1):  0.0,        # neutron (no binding; mass excess separate)
-    (1, 1):  2.22456589, # D
-    (1, 2):  8.4817983,  # T
-    (2, 1):  7.7180428,  # ³He
-    (2, 2): 28.295673,   # ⁴He
-    (3, 2): 26.328,      # ⁵Li (unstable, half-life ~10⁻²² s)
-    (3, 3): 31.99405,    # ⁶Li
+    (1, 1):  AME_B_DEUTERON_MEV_VALIDATION, # D
+    (1, 2):  AME_B_TRITIUM_MEV_VALIDATION,  # T
+    (2, 1):  AME_B_HE3_MEV_VALIDATION,      # ³He
+    (2, 2):  AME_B_HE4_MEV_VALIDATION,      # ⁴He
+    (3, 2):  AME_B_LI5_MEV_VALIDATION,      # ⁵Li (unstable, half-life ~10⁻²² s)
+    (3, 3):  AME_B_LI6_MEV_VALIDATION,      # ⁶Li
     (3, 4): 39.24522,    # ⁷Li
     (4, 3): 37.6,        # ⁷Be
     (4, 4): 56.49951,    # ⁸Be
@@ -552,7 +560,7 @@ def main() -> int:
 
         tr_m_str = fmt(tr_m, dps=15)  # display-only, full precision via fmt
         pred_str = f"{pred:.4f}" if pred is not None else "—"
-        ame_str = f"{ref:.4f}" if ref is not None else "—"
+        ame_str = f"{float(ref):.4f}" if ref is not None else "—"
         origin_str = (origin or "—")[:20]
         print(f"  {atom_str:<6} {A:>2} {n:>3} {tr_m_str:<22} "
               f"{pred_str:>16} {ame_str:>10} {origin_str:<22} "
