@@ -132,14 +132,16 @@ def principledAtlas : List AtlasEntry → List AtlasEntry
 
 /-- **Source of truth** for the principled atlas:
       1. confined-particle.md — GB-NF particle registry.
-      2. mass-table-ppb.witness.json — D..⁴⁰Ca.
+      2. mass-table-ppb.witness.json — D..⁴⁰Ca. (Dual-column exact symbolic vs Q-CLT proxy trace).
       3. methodology-deprecation.witness.json — per-particle audit.
       4. hp_volume.py — ≥ 50-digit Markov-closure → Vol_hyp.
-      5. y_lambda_wenzl_bridge_extended.py — symbolic-q Wenzl bridge.
+      5. closed_form_tau_M.py — Active-partition factored exact symbolic trace for $A \geq 5$.
+      6. hecke_core.py — Q-CLT finite sum approximations tracking active asymptotics.
+      7. y_lambda_wenzl_bridge_extended.py — symbolic-q Wenzl bridge.
 
     DEPRECATED INPUT (consumed only by the quarantined provisional
     section, never by the principled atlas):
-      6. li-atom-knot-search.witness.json — (provisional) volume-match search.
+      8. li-atom-knot-search.witness.json — (provisional) volume-match search.
 
     Updates to any input propagate via witness_staleness_tracker.py
     to the rendered appendix on the next `bun run build`.

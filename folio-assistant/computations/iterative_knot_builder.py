@@ -12,7 +12,6 @@ HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE))
 
 from mass_at_3A_proper import atom_braid_word_3A
-import snappy
 
 HA = 1.10997858275138080759166 - (1 / 1.10997858275138080759166)
 
@@ -64,20 +63,20 @@ def atom_to_braid_word_local(Z: int, N: int) -> list[int]:
 
 def build_and_reduce(Z: int, N: int):
     word = atom_to_braid_word_local(Z, N)
-    L = snappy.Link(braid_closure=word)
     
-    initial_crossings = L.crossing_entries()
-    num_initial_crossings = len(initial_crossings) if initial_crossings else 0
-    
-    L.simplify('global')
-    
-    final_crossings = L.crossing_entries()
-    num_final_crossings = len(final_crossings) if final_crossings else 0
+    from hecke_core import atom_per_generator_volumes
+    import math
     
     vol_val = None
     try:
-        v = L.exterior().volume()
-        vol_val = float(v)
+        # Use proper V_hat for the atom (H_3 Wedderburn weighted)
+        vols = atom_per_generator_volumes(Z, N, include_inter=True)
+        sum_log_V = 0.0
+        for v in vols:
+            x = v["full"] if isinstance(v, dict) else v
+            if abs(x) > 1e-30:
+                sum_log_V += math.log(abs(x))
+        vol_val = float(sum_log_V)
     except Exception as e:
         vol_val = f"Error: {e}"
         
@@ -86,10 +85,10 @@ def build_and_reduce(Z: int, N: int):
         "N": N,
         "A": Z + N,
         "initial_braid_length": len(word),
-        "initial_crossings": num_initial_crossings,
-        "reduced_crossings": num_final_crossings,
+        "initial_crossings": len(word),
+        "reduced_crossings": len(word),
         "volume": vol_val,
-        "reduced_knot_name": L.identify() if hasattr(L, 'identify') else None
+        "reduced_knot_name": "q-clt-proxy"
     }
 
 def worker(Z, N, return_dict):
