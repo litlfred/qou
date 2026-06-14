@@ -34,10 +34,16 @@ class CrossedModuleContext where
   boundary : H → G_n
   /-- The conjugation action `G_n ⊗ H → H`. -/
   action : G_n → H → H
-  /-- Peiffer identity: `∂(g · a) = g · ∂(a) · g⁻¹`. -/
-  peiffer : ∀ g a, boundary (action g a) = mul_G (mul_G g (boundary a)) (inv_G g)
-  /-- Boundary compatibility: `action (∂(b)) a = b · a · b⁻¹` (in H). -/
-  boundary_compat : ∀ a b, action (boundary b) a = mul_H (mul_H b a) b  -- abstract; full identity needs `H`-inverse
+  /-- Embed map from H to G_n. -/
+  embed : H → G_n
+  /-- Boundary is just the embed map. -/
+  boundary_def : ∀ a, boundary a = embed a
+  /-- Embed is a homomorphism. -/
+  embed_mul : ∀ a b, embed (mul_H a b) = mul_G (embed a) (embed b)
+  /-- Action is conjugation in G_n. -/
+  action_def : ∀ g a, embed (action g a) = mul_G (mul_G g (embed a)) (inv_G g)
+  /-- Embed is injective. -/
+  embed_inj : ∀ a b, embed a = embed b → a = b
 
 /-- **Crossed-module axioms hold for `(SU_{q_n}(2), 𝓞_M^×)`**
     ([`lem:ccg-crossed-module-structure`]). -/
@@ -50,6 +56,13 @@ theorem ccg_crossed_module_structure
               = ctx.mul_G (ctx.mul_G g (ctx.boundary a)) (ctx.inv_G g)) ∧
     (∀ a b, ctx.action (ctx.boundary b) a
               = ctx.mul_H (ctx.mul_H b a) b) := by
-  exact ⟨ctx.peiffer, ctx.boundary_compat⟩
+  constructor
+  · intro g a
+    rw [ctx.boundary_def, ctx.boundary_def]
+    exact ctx.action_def g a
+  · intro a b
+    apply ctx.embed_inj
+    rw [ctx.action_def, ctx.boundary_def]
+    rw [ctx.embed_mul, ctx.embed_mul]
 
 end QOU.LiftingDescent

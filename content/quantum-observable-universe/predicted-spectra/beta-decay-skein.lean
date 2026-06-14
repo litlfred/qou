@@ -77,12 +77,13 @@ structure NuclearLink where
   p : ℕ
   /-- Number of neutrons. -/
   n : ℕ
-  /-- Mass number A = p + n. -/
-  A : ℕ := p + n
   /-- The categorical action S_q evaluated on this normal form. -/
   action : ℝ
   /-- The action is positive. -/
   action_pos : 0 < action
+
+/-- Mass number A = p + n. -/
+def NuclearLink.A (l : NuclearLink) : ℕ := l.p + l.n
 
 -- ═══════════════════════════════════════════════════════════════════
 -- Beta decay as a Skein operation
@@ -103,10 +104,10 @@ structure BetaMinusDecay where
   daughter : NuclearLink
   /-- The daughter has one more proton. -/
   p_inc : daughter.p = parent.p + 1
+  /-- The parent must have at least one neutron to decay. -/
+  n_pos : 0 < parent.n
   /-- The daughter has one fewer neutron. -/
   n_dec : daughter.n = parent.n - 1
-  /-- Mass number is preserved. -/
-  A_preserved : daughter.A = parent.A
   /-- The electron mass (trefoil T_{2,3}). -/
   m_e : ℝ
   /-- Electron mass is positive. -/
@@ -128,12 +129,12 @@ structure BetaPlusDecay where
   parent : NuclearLink
   /-- The daughter nucleus. -/
   daughter : NuclearLink
+  /-- The parent must have at least one proton to decay. -/
+  p_pos : 0 < parent.p
   /-- The daughter has one fewer proton. -/
   p_dec : daughter.p = parent.p - 1
   /-- The daughter has one more neutron. -/
   n_inc : daughter.n = parent.n + 1
-  /-- Mass number is preserved. -/
-  A_preserved : daughter.A = parent.A
   /-- The positron mass (mirror trefoil σ(T_{2,3})); same as electron mass. -/
   m_e : ℝ
   m_e_pos : 0 < m_e
@@ -242,7 +243,14 @@ noncomputable def electronMass_from_q : ℝ := 3 * (1.110 - 1 / 1.110) / 2 * 1.6
 theorem beta_decay_locality (d : BetaMinusDecay) :
     d.daughter.p = d.parent.p + 1 ∧
     d.daughter.n = d.parent.n - 1 ∧
-    d.daughter.A = d.parent.A :=
-  ⟨d.p_inc, d.n_dec, d.A_preserved⟩
+    d.daughter.A = d.parent.A := by
+  refine ⟨d.p_inc, d.n_dec, ?_⟩
+  have hp : d.daughter.p = d.parent.p + 1 := d.p_inc
+  have hn : d.daughter.n = d.parent.n - 1 := d.n_dec
+  have hpos : 0 < d.parent.n := d.n_pos
+  -- A = p + n
+  -- daughter.A = daughter.p + daughter.n = (parent.p + 1) + (parent.n - 1) = parent.p + parent.n = parent.A
+  dsimp [NuclearLink.A]
+  omega
 
 end QOU.Archimedean
