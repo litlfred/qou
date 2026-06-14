@@ -9,4 +9,12 @@ export default remark({
   interprets: "prop:co-lp-dual-binding",
   uses: ["def:co-molecular-braid"],
   tags: ["CO", "triple-bond", "binding-energy", "prediction"],
+  computation: {
+    engine: "python",
+    script: "folio-assistant/computations/co_bond_order_active_set.py",
+    witness: [
+      "folio-assistant/computations/co-bond-order-active-set.witness.json"
+    ],
+    status: "experimental",
+  },
 });

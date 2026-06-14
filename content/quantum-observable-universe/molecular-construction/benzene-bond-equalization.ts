@@ -9,4 +9,12 @@ export default remark({
   interprets: "prop:benzene-threading-emergence",
   uses: ["def:benzene-molecular-braid"],
   tags: ["benzene", "bond-equalization", "D6", "aromatic", "bond-order"],
+  computation: {
+    engine: "python",
+    script: "folio-assistant/computations/molecular_experimental_refs.py",
+    witness: [
+      "folio-assistant/computations/molecular-experimental-refs.witness.json"
+    ],
+    status: "experimental",
+  },
 });
