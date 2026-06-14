@@ -1,14 +1,14 @@
 ---
 # lk05
 title: 'Lean drain: HeckeH3 — 11 errors, matrix simp<;>ring v4.24 drift (one-pattern fix candidate)'
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - coordinate
     - blocked
 created_at: 2026-06-14T17:29:07Z
-updated_at: 2026-06-14T18:02:11Z
+updated_at: 2026-06-14T18:15:00Z
 parent: w5q7
 ---
 
@@ -19,3 +19,5 @@ TRIAGE (build-unverified read, 2026-06-14): root cause is Laurent-poly ring->rin
 SATISFIED BY open PR #2125 (head claude/stoic-brahmagupta-izu39s): "HeckeH3 Laurent-T closers + QGeometricLanglands universe pinning", locally lake-build-verified (exit 0, no sorryAx); CI billing-blocked. Action: LAND #2125 (coordinate), do NOT redo. Caveat: #2125 also carries QGeometricLanglands and is behind current main (needs rebase).
 
 BLOCKER (2026-06-14): #2125 cannot be cleanly rebased onto current main — 3-day-stale branch; rebase hits add/add conflicts on tools/qou-substrate/* (pkg restructured on main) + ~dozens of .claude/skills/*.md conflicts (~50 files, 374KB output). Aborted cleanly. Main also touched HeckeH3.lean (commit 32b7684d). Options: (a) cherry-pick HeckeH3.lean fix to fresh branch off main [honors intent, drops QGL]; (b) leave whole #2125 for sibling/owner rebase; (c) full ~50-file conflict resolution. Awaiting owner decision.
+
+DONE: HeckeH3 landed on main via cherry-pick PR #2309 (MERGED, sha 13f645cb); lean-direct verified LEAN_EXIT=0 on current main; Gemini doc-nit fixed+resolved. QGL remains on #2125 for the sibling.
