@@ -940,6 +940,26 @@ lean: { ref: "ugb:UGB.GrobnerShirshov.Basis" }
   `<rootName>.lean`, (2) `<lakeRoot>/<Decl/Path>.lean` under the
   package's Lake root, (3) grep fallback on current branch.
 
+> **🚫 No shadowing stubs (STRICT, 2026-06-14).** Because resolution checks
+> the **sibling first**, a trivial `theorem foo : True := trivial`
+> content-block sibling **shadows** the real library declaration the
+> `lean.ref` would otherwise resolve to (candidate 2). NEVER create or keep
+> such a stub when the real formalisation exists in the library tree:
+> - If the decl lives at `<lakeRoot>/<Decl/Path>.lean` (candidate 2),
+>   **do not** add a sibling `.lean` — let the ref resolve to the library decl.
+> - If the decl lives in a **mis-named** library file (decl-name ≠ file-name),
+>   **align** it (rename the file / move the decl so candidate 2 resolves) —
+>   do not paper over it with a stub.
+> - A sibling `.lean` is legitimate ONLY when it carries the **real**
+>   formalisation (not `: True`), for a `definition` block (sibling required),
+>   or as a genuine placeholder where no library formalisation exists yet — and
+>   then it must be honest (state the real proposition with `sorry` + `-- Ref:`,
+>   or be a `conjecture`), never `: True := trivial` and never a
+>   `: True ∧ True := ⟨…⟩` self-assuming projection.
+>
+> Audit + drain: [`lean-proof-vacuity-audit`](.claude/skills/local/lean-proof-vacuity-audit.md)
+> + [`docs/audits/2026-06-14-lean-vacuous-proof-audit.md`](docs/audits/2026-06-14-lean-vacuous-proof-audit.md).
+
 To register a **new paper** as a Lake package: add a `[[require]]`
 stanza to the root `lakefile.toml`, append to `LEAN_PACKAGES` in
 `lean-packages.ts`, and add the library name to `defaultTargets`.
