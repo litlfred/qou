@@ -84,9 +84,10 @@ noncomputable def stdRep3_genInv1 : TMatrix :=
   independent atoms and cannot use the relation).  The closers below
   therefore unfold all scalars to `T`-monomials, distribute, fold every
   product with `← LaurentPolynomial.T_add` (so `T m * T n` becomes
-  `T (m + n)` with a *literal* exponent), and let `norm_num` evaluate
-  the exponent arithmetic; the surviving goal is ℤ-linear in distinct
-  `T k` atoms, which the ring-normalising core of `norm_num` closes. -/
+  `T (m + n)` with a *literal* exponent), and let `simp only`
+  (`Int.reduceAdd`/`Int.reduceNeg`) evaluate the exponent arithmetic;
+  the surviving goal is ℤ-linear in distinct `T k` atoms, which `ring1`
+  closes. -/
 
 /-- `q − HA = q⁻¹` in `R_t` (pure ring identity, no `t·t⁻¹` relation). -/
 lemma q_from_t_sub_HA_t : q_from_t - HA_t = q_inv_from_t := by
