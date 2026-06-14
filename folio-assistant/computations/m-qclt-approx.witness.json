@@ -1,23 +1,30 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-14T21:32:42.239165+00:00",
-  "commitSha": "d58256673c467c5aa3bd764a39fe0066d3c0f9ff",
+  "computedAt": "2026-06-14T22:55:46.754254+00:00",
+  "commitSha": "8e4c5cb4ef6c37997d64a49a1049c7907237f33f",
   "assertions": [
     {
-      "name": "err_full_uniform_across_isotopes",
+      "name": "err_full_production_uniform_across_isotopes",
       "computed": true,
       "expected": true,
       "passed": true,
       "source": "binding removed ⇒ only per-nucleon calibration error remains"
     },
     {
-      "name": "err_full_equals_nucleon_gap",
+      "name": "err_full_production_equals_nucleon_gap",
       "computed": "2.90569",
       "expected": "2.88961",
       "passed": true,
       "tolerance": 0.1,
       "source": "m_qCLT_approx − CODATA mass = the m_p gap (binding cancels)"
+    },
+    {
+      "name": "spectral_correction_reduces_residual_gt_20x",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "derived θ/(8ℏ²) ≈ 0.9711 closes +2.89% → ~-819 ppm"
     },
     {
       "name": "leading_term_not_exact",
@@ -28,11 +35,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 13,
   "computation": "m-qclt-approx",
   "scriptFile": "m_qclt_approx.py",
-  "scriptHash": "853884f5721f",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "fd4a30f92a99",
+  "scriptCommitSha": "ba60540e5b370d3336291958b56ebb383a00e56c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -45,11 +52,13 @@
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
-  "description": "Leading-order JSJ-additive heavy-isotope mass channel (channel 2 of q-clt-jsj-mass-scaling). m_qCLT_approx(Z,N) = Z·m_p + N·m_n − B(Z,N). The additive structure is exact (volume additive under torus gluing); the absolute prediction is a ~1%-level estimator gated by the 2.89% nucleon-mass gap and the binding model (Δ_λ). NOT an 'exact asymptotic limit' — the leading-term error is the binding fraction, which plateaus (does not vanish) for heavy A.",
+  "description": "Leading-order JSJ-additive heavy-isotope mass channel (channel 2 of q-clt-jsj-mass-scaling). m_qCLT_approx(Z,N) = Z·m_p + N·m_n − B(Z,N). The additive structure is exact (volume additive under torus gluing); the absolute residual is the nucleon-mass gap, reported in BOTH regimes — production (+2.89%, proved-only linking weight) and spectral-corrected (~-819 ppm; EXPLORATORY, derived θ/(8ℏ²), not wired per production-vs-exploratory discipline). NOT an 'exact asymptotic limit': the leading-term error is the binding fraction (plateaus, does not vanish for heavy A).",
   "parameters": {
     "source_witness": "low-isotope-mass-table.witness.json",
-    "m_p_pred_MeV": "965.384475574",
-    "m_n_pred_MeV": "966.71477364"
+    "q0": "1.10997859556",
+    "spectral_correction_factor": "0.971119658098",
+    "m_p_pred_production_MeV": "965.384475574",
+    "m_n_pred_production_MeV": "966.71477364"
   },
   "data": {
     "rows": [
@@ -59,12 +68,14 @@
         "N": 1,
         "A": 2,
         "m_qCLT_leading_MeV": "1932.099249214279",
-        "m_qCLT_approx_MeV": "1929.850428419414",
+        "m_qCLT_approx_production_MeV": "1929.850428419414",
+        "m_qCLT_approx_spectral_MeV": "1874.050741513939",
         "m_ref_codata_MeV": "1875.61294279",
         "B_pred_MeV": "2.24882079486",
         "binding_fraction_pct": "0.118605",
-        "err_leading_pct": "3.01162",
-        "err_full_pct": "2.89172"
+        "err_full_production_pct": "2.89172",
+        "err_full_spectral_pct": "-0.0832902",
+        "err_full_spectral_ppm": "-832.902"
       },
       {
         "label": "T",
@@ -72,12 +83,14 @@
         "N": 2,
         "A": 3,
         "m_qCLT_leading_MeV": "2898.814022854064",
-        "m_qCLT_approx_MeV": "2890.345424467531",
+        "m_qCLT_approx_production_MeV": "2890.345424467531",
+        "m_qCLT_approx_spectral_MeV": "2806.626684377839",
         "m_ref_codata_MeV": "2808.9211309",
         "B_pred_MeV": "8.46859838653",
         "binding_fraction_pct": "0.301959",
-        "err_leading_pct": "3.20026",
-        "err_full_pct": "2.89877"
+        "err_full_production_pct": "2.89877",
+        "err_full_spectral_pct": "-0.0816843",
+        "err_full_spectral_ppm": "-816.843"
       },
       {
         "label": "3He",
@@ -85,22 +98,27 @@
         "N": 1,
         "A": 3,
         "m_qCLT_leading_MeV": "2897.483724788773",
-        "m_qCLT_approx_MeV": "2889.994805479002",
+        "m_qCLT_approx_production_MeV": "2889.994805479002",
+        "m_qCLT_approx_spectral_MeV": "2806.314484852267",
         "m_ref_codata_MeV": "2808.39155404",
         "B_pred_MeV": "7.48891930977",
         "binding_fraction_pct": "0.274821",
-        "err_leading_pct": "3.17236",
-        "err_full_pct": "2.90569"
+        "err_full_production_pct": "2.90569",
+        "err_full_spectral_pct": "-0.0739594",
+        "err_full_spectral_ppm": "-739.594"
       }
     ],
-    "nucleon_mass_gap_pct": "2.88961",
-    "err_full_cross_isotope_spread_pct": "0.01397",
+    "nucleon_gap_production_pct": "2.88961",
+    "nucleon_gap_spectral_pct": "-0.0818788",
+    "spectral_reduction_factor": "34.8863",
+    "err_full_production_cross_isotope_spread_pct": "0.01397",
     "interpretation": {
       "leading_term": "Z·m_p + N·m_n (JSJ volume-additivity asymptotic)",
       "correction": "B(Z,N) binding = Δ_λ term (item 2; gated A>8)",
-      "err_full_is": "the 2.89% nucleon-mass gap, uniform in isotope",
-      "err_leading_is": "nucleon gap + binding fraction (grows with A)",
-      "overclaim_corrected": "'exact asymptotic limit' → asymptotically linear structure; ~1% absolute estimator"
+      "production_residual": "the proved +2.89% nucleon-mass gap, uniform",
+      "spectral_residual": "~-819 ppm — derived θ/(8ℏ²), EXPLORATORY/unwired",
+      "spectral_audit": "docs/audits/2026-05-28-spectral-phase-correction-derived.md",
+      "overclaim_corrected": "'exact asymptotic limit' → asymptotically linear structure; residual = nucleon gap"
     }
   }
 }
