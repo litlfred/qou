@@ -519,6 +519,24 @@
         "reviewed_at": "2026-06-05T15:18:08.611Z",
         "reviewed_sha": "beece88290ed89594a189e5f1e9347af979298b1",
         "notes": "Faithfulness is noted in docstring but not formally proved as a separate theorem; narrative also notes it informally — no divergence in the core claim."
+      },
+      {
+        "field_hash": {
+          "md": "93e6764d3d24",
+          "ts": "b854d2bc9a1c",
+          "lean": "10bb4b4cd067"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:38.443Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "Markdown statement and Lean signature structurally align"
       }
     ],
     "voice-author-notes-pollution": [
@@ -591,6 +609,24 @@
         "reviewed_at": "2026-06-05T15:16:03.604Z",
         "reviewed_sha": "beece88290ed89594a189e5f1e9347af979298b1",
         "notes": "No companion remark needed; extra sections extend the result rather than interpret it."
+      },
+      {
+        "field_hash": {
+          "md": "93e6764d3d24",
+          "ts": "b854d2bc9a1c",
+          "lean": "10bb4b4cd067"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:37.845Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "No interpretive sections present"
       }
     ],
     "fit-section-chapter": [
@@ -613,6 +649,24 @@
         "reviewed_at": "2026-06-05T15:16:26.466Z",
         "reviewed_sha": "beece88290ed89594a189e5f1e9347af979298b1",
         "notes": "Block fits the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "93e6764d3d24",
+          "ts": "b854d2bc9a1c",
+          "lean": "10bb4b4cd067"
+        },
+        "result": "pass",
+        "evidence": "Listed in section manifest",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:37.999Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-statement": [
@@ -635,6 +689,24 @@
         "reviewed_at": "2026-06-05T15:16:45.238Z",
         "reviewed_sha": "beece88290ed89594a189e5f1e9347af979298b1",
         "notes": "Operates on ℂ× which is appropriate for this complex-algebraic claim."
+      },
+      {
+        "field_hash": {
+          "md": "93e6764d3d24",
+          "ts": "b854d2bc9a1c",
+          "lean": "10bb4b4cd067"
+        },
+        "result": "pass",
+        "evidence": "Archimedean chapter statement",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:38.239Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-proof": [
@@ -657,6 +729,24 @@
         "reviewed_at": "2026-06-05T15:17:00.669Z",
         "reviewed_sha": "beece88290ed89594a189e5f1e9347af979298b1",
         "notes": "All proof steps are purely algebraic."
+      },
+      {
+        "field_hash": {
+          "md": "93e6764d3d24",
+          "ts": "b854d2bc9a1c",
+          "lean": "10bb4b4cd067"
+        },
+        "result": "pass",
+        "evidence": "Archimedean chapter proof",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:38.347Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2908,5 +2998,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T04:05:41.784Z"
+  "updated_at": "2026-06-14T13:27:38.443Z"
 }

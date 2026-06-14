@@ -380,6 +380,24 @@
         "reviewed_at": "2026-06-05T14:45:11.151Z",
         "reviewed_sha": "11e13227856aed0e4a3e4bbe1ab5a7dd26a2f8b9",
         "notes": "Content relates to Jones-at-q=1 values used in Hecke context, so placement is defensible; a dedicated Q_β section would be a strictly better home."
+      },
+      {
+        "field_hash": {
+          "md": "9fcdd61fbadd",
+          "ts": "0d683e8147b5",
+          "lean": "d0c0701e72a4"
+        },
+        "result": "pass",
+        "evidence": "Listed in section manifest",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:24:41.494Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "voice-unicode-crash": [
@@ -2215,5 +2233,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T02:11:07.128Z"
+  "updated_at": "2026-06-14T13:24:41.494Z"
 }

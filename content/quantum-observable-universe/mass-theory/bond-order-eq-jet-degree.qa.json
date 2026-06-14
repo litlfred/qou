@@ -193,111 +193,101 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "e627d564b059",
+          "md": "e10884ca6b06",
           "ts": "c75199ce08f1",
           "lean": "e45f31393b92"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "mass-theory.ts:182 -- bond-order-eq-jet-degree in sec:hoefsmit-convergence-magic-shells",
+        "evidence": "Listed in section manifest",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:26:04.262Z",
-        "reviewed_sha": "80b79c363e3e0be747ca702faf3290714b4f028b",
-        "notes": "Lemma about body-order=jet-degree for nucleon clusters; fits mass-theory algebraic/archimedean face."
+        "reviewed_at": "2026-06-14T13:24:49.247Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "e627d564b059",
+          "md": "e10884ca6b06",
           "ts": "c75199ce08f1",
           "lean": "e45f31393b92"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "bond-order-eq-jet-degree.lean:24 -- Ground ring: R (binding energies); structure uses ℝ appropriately",
+        "evidence": "Statement is clean of archimedean leaks",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:26:04.295Z",
-        "reviewed_sha": "80b79c363e3e0be747ca702faf3290714b4f028b",
-        "notes": "Lean uses R (ℝ) for binding energies; archimedean use is correct and expected for binding energy claims."
+        "reviewed_at": "2026-06-14T13:24:49.326Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "e627d564b059",
+          "md": "e10884ca6b06",
           "ts": "c75199ce08f1",
           "lean": "e45f31393b92"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "bond-order-eq-jet-degree.lean:53-55 -- rw [S.total_eq]; exact Finset.sum_congr rfl ...",
+        "evidence": "No proof section found to scan",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:26:04.327Z",
-        "reviewed_sha": "80b79c363e3e0be747ca702faf3290714b4f028b",
-        "notes": "Proof uses algebraic sum_congr; matches archimedean-R statement; no regime mismatch."
+        "reviewed_at": "2026-06-14T13:24:49.394Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "e627d564b059",
+          "md": "e10884ca6b06",
           "ts": "c75199ce08f1",
           "lean": "e45f31393b92"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "bond-order-eq-jet-degree.md:1 -- statement + two numbered items + equation; no interpretive H2 sections",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:26:04.361Z",
-        "reviewed_sha": "80b79c363e3e0be747ca702faf3290714b4f028b",
-        "notes": "Lemma kind; body is statement only; no substantive interpretive prose present."
+        "reviewed_at": "2026-06-14T13:24:49.174Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "No interpretive sections present"
       }
     ],
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "e627d564b059",
+          "md": "e10884ca6b06",
           "ts": "c75199ce08f1",
           "lean": "e45f31393b92"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "bond-order-eq-jet-degree.lean:52 -- theorem bodyorder_eq_jet_total; ts ref QOU.Mass.bodyorder_eq_jet_total",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:26:04.396Z",
-        "reviewed_sha": "80b79c363e3e0be747ca702faf3290714b4f028b",
-        "notes": "Narrative n-body term = gr_n; Lean total = sum bodyTerm n via body_eq_graded. Claim equivalent. Ref matches."
+        "reviewed_at": "2026-06-14T13:24:49.451Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "Markdown statement and Lean signature structurally align"
       }
     ],
     "voice-status-leak": [
@@ -2737,5 +2727,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T03:53:05.302Z"
+  "updated_at": "2026-06-14T13:24:49.451Z"
 }

@@ -192,111 +192,101 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "4034a3724a28",
+          "md": "d2b5edfb6d53",
           "ts": "85e75c9b1c9f",
           "lean": "9d859da88c03"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "mass-theory.ts:187 -- binding-closure-conditional in sec:hoefsmit-convergence-magic-shells",
+        "evidence": "Listed in section manifest",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:29:17.786Z",
-        "reviewed_sha": "1cd5eb3feca168cd758d6b8a90d579f4749d7974",
-        "notes": "Theorem: binding closure conditional on per-term mass identity; fits mass-theory derivation chain."
+        "reviewed_at": "2026-06-14T13:24:48.916Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "4034a3724a28",
+          "md": "d2b5edfb6d53",
           "ts": "85e75c9b1c9f",
           "lean": "9d859da88c03"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "binding-closure-conditional.lean:44-45 -- m_e : R; swPeriod : N -> R where R = Real (binding energies)",
+        "evidence": "Statement is clean of archimedean leaks",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:29:17.819Z",
-        "reviewed_sha": "1cd5eb3feca168cd758d6b8a90d579f4749d7974",
-        "notes": "Uses R (ℝ) for binding energies; archimedean use is correct for physical binding claim."
+        "reviewed_at": "2026-06-14T13:24:48.978Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "4034a3724a28",
+          "md": "d2b5edfb6d53",
           "ts": "85e75c9b1c9f",
           "lean": "9d859da88c03"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "binding-closure-conditional.lean:61-63 -- rw [H.body_is_series, Finset.mul_sum]; exact Finset.sum_congr...",
+        "evidence": "No proof section found to scan",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:29:17.851Z",
-        "reviewed_sha": "1cd5eb3feca168cd758d6b8a90d579f4749d7974",
-        "notes": "Proof uses algebraic Finset rewrites; matches archimedean-R statement; no regime mismatch."
+        "reviewed_at": "2026-06-14T13:24:49.053Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "4034a3724a28",
+          "md": "d2b5edfb6d53",
           "ts": "85e75c9b1c9f",
           "lean": "9d859da88c03"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "binding-closure-conditional.md:1 -- theorem with sec3b-cond banner; two structural inputs; closed form equation",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:29:17.884Z",
-        "reviewed_sha": "1cd5eb3feca168cd758d6b8a90d579f4749d7974",
-        "notes": "Theorem kind; sec3b-cond banner is structural (kept in prose per CLAUDE.md sec4d); no interpretive sections beyond statement."
+        "reviewed_at": "2026-06-14T13:24:48.863Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "No interpretive sections present"
       }
     ],
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "4034a3724a28",
+          "md": "d2b5edfb6d53",
           "ts": "85e75c9b1c9f",
           "lean": "9d859da88c03"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "binding-closure-conditional.lean:60 -- binding_closure_conditional: H.total = H.m_e * sum swPeriod; ts ref QOU.Mass.binding_closure_conditional",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:29:17.916Z",
-        "reviewed_sha": "1cd5eb3feca168cd758d6b8a90d579f4749d7974",
-        "notes": "Narrative B(K) = m_e * sum a_D^n; Lean same. Ref matches. Equivalent."
+        "reviewed_at": "2026-06-14T13:24:49.121Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "Markdown statement and Lean signature structurally align"
       }
     ],
     "voice-status-leak": [
@@ -2734,5 +2724,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T03:53:04.681Z"
+  "updated_at": "2026-06-14T13:24:49.121Z"
 }

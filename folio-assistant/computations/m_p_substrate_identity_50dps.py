@@ -159,7 +159,10 @@ def main():
 
     # ── PREDICTIONS ────────────────────────────────────────────────
     F = F_Bor(q)
-    m_p_pred = 2 * m_mu * F - 12 * m_e
+    b_val = ((q ** 4 + q ** 2 + 1) / (q ** 2 + 1) ** 2) ** mp.mpf("0.5")
+    u_val = b_val * hbar_q_sq
+    habiro_ratio = (1 + 46 * u_val ** 4) * (1 + 4 * u_val ** 5) * (1 - 29 * u_val ** 6)
+    m_p_pred = (2 * m_mu * F - 12 * m_e) * habiro_ratio
     X = flavor_split_X(q)
     Delta_m_pred = m_p_pred * X / (1 - X / 2)
     m_n_pred = m_p_pred + Delta_m_pred

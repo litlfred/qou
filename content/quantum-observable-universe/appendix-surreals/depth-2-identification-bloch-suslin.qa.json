@@ -345,20 +345,21 @@
       },
       {
         "field_hash": {
-          "md": "f41fe913f797",
+          "md": "324a05df9614",
           "ts": "c077b11cb64f",
           "lean": "7f834ce18ac8"
         },
-        "result": "pass",
+        "result": "fail",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-06-13",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-13T03:56:09.631Z",
-        "reviewed_sha": "54c3d2b33e9cb4b3ec331294d81e4f4f27eb842f"
+        "reviewed_at": "2026-06-14T13:21:50.557Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "Lean signature is a placeholder True stub"
       }
     ],
     "voice-author-notes-pollution": [
@@ -397,77 +398,83 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "f41fe913f797",
+          "md": "324a05df9614",
           "ts": "c077b11cb64f",
           "lean": "7f834ce18ac8"
         },
-        "result": "pass",
+        "result": "fail",
+        "severity": "minor",
+        "evidence": "Substantive interpretive prose follows the statement.",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-04",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-04T13:49:34.409Z",
-        "reviewed_sha": "36c20c011ed75b6d3eeb87283fb2738cadb7ec24"
+        "reviewed_at": "2026-06-14T13:21:50.067Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "f41fe913f797",
+          "md": "324a05df9614",
           "ts": "c077b11cb64f",
           "lean": "7f834ce18ac8"
         },
         "result": "pass",
+        "evidence": "Listed in section manifest",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-04",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-04T13:49:34.449Z",
-        "reviewed_sha": "36c20c011ed75b6d3eeb87283fb2738cadb7ec24"
+        "reviewed_at": "2026-06-14T13:21:50.221Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "f41fe913f797",
+          "md": "324a05df9614",
           "ts": "c077b11cb64f",
           "lean": "7f834ce18ac8"
         },
-        "result": "pass",
+        "result": "fail",
+        "severity": "major",
+        "evidence": "Substrate block contains archimedean constructs without proper banner: π",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-06-13",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-13T03:56:09.631Z",
-        "reviewed_sha": "54c3d2b33e9cb4b3ec331294d81e4f4f27eb842f"
+        "reviewed_at": "2026-06-14T13:21:50.364Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "f41fe913f797",
+          "md": "324a05df9614",
           "ts": "c077b11cb64f",
           "lean": "7f834ce18ac8"
         },
         "result": "pass",
+        "evidence": "Proof is clean of archimedean leaks",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-06-13",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-13T03:56:09.631Z",
-        "reviewed_sha": "54c3d2b33e9cb4b3ec331294d81e4f4f27eb842f"
+        "reviewed_at": "2026-06-14T13:21:50.471Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2465,5 +2472,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T03:44:17.261Z"
+  "updated_at": "2026-06-14T13:21:50.557Z"
 }

@@ -533,6 +533,24 @@
         "reviewed_at": "2026-06-05T00:16:39.527Z",
         "reviewed_sha": "ea9a8ed42ae1ef03135bd32727bc63d6992d781f",
         "notes": "conjecture on delta-i bound for doubly-magic isotopes is appropriate for observations chapter"
+      },
+      {
+        "field_hash": {
+          "md": "4d6db1e61af5",
+          "ts": "c080ddeb9b19",
+          "lean": "df04c5747e98"
+        },
+        "result": "pass",
+        "evidence": "Listed in section manifest",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:13.641Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -2275,5 +2293,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T04:01:39.182Z"
+  "updated_at": "2026-06-14T13:27:13.641Z"
 }

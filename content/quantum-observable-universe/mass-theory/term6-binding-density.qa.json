@@ -604,21 +604,21 @@
       },
       {
         "field_hash": {
-          "md": "5e92e0352f07",
-          "ts": "abebe6c7b25c",
+          "md": "728e069868bd",
+          "ts": "7232c68c30bc",
           "lean": "19c7b68f1123"
         },
         "result": "pass",
-        "evidence": "Listed in mass-theory.ts.",
+        "evidence": "Listed in section manifest",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-13",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-13T19:07:48.694Z",
-        "reviewed_sha": "782b75d8a21015413016c4b28f9467f12449ccf5"
+        "reviewed_at": "2026-06-14T13:27:02.138Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-statement": [
@@ -2542,5 +2542,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T02:11:07.128Z"
+  "updated_at": "2026-06-14T13:27:02.138Z"
 }

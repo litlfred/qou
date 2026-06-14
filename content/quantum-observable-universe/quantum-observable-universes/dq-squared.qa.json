@@ -358,6 +358,24 @@
         "reviewed_at": "2026-06-14T01:00:45.351Z",
         "reviewed_sha": "0897db293a9e33bee002700a742ee9370ca482e1",
         "notes": "Label 'prop:dq-squared' aligns with Lean declaration. Sorry-free."
+      },
+      {
+        "field_hash": {
+          "md": "2a66395a0b81",
+          "ts": "08f0c5aa12d3",
+          "lean": "2cf4a6d611d8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:54.585Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "Markdown statement and Lean signature structurally align"
       }
     ],
     "voice-author-notes-pollution": [
@@ -413,6 +431,24 @@
         "reviewed_at": "2026-06-05T19:38:17.586Z",
         "reviewed_sha": "c1e349075d04c6f25ca2a6f5d23678de3a782141",
         "notes": "Short scope note is not interpretation."
+      },
+      {
+        "field_hash": {
+          "md": "2a66395a0b81",
+          "ts": "08f0c5aa12d3",
+          "lean": "2cf4a6d611d8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:53.696Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "No interpretive sections present"
       }
     ],
     "fit-section-chapter": [
@@ -435,6 +471,24 @@
         "reviewed_at": "2026-06-05T19:38:35.698Z",
         "reviewed_sha": "c1e349075d04c6f25ca2a6f5d23678de3a782141",
         "notes": "Clean placement."
+      },
+      {
+        "field_hash": {
+          "md": "2a66395a0b81",
+          "ts": "08f0c5aa12d3",
+          "lean": "2cf4a6d611d8"
+        },
+        "result": "pass",
+        "evidence": "Listed in section manifest",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:53.954Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-statement": [
@@ -457,6 +511,24 @@
         "reviewed_at": "2026-06-05T19:38:35.739Z",
         "reviewed_sha": "c1e349075d04c6f25ca2a6f5d23678de3a782141",
         "notes": "Declared archimedean specialisation is correct banner usage."
+      },
+      {
+        "field_hash": {
+          "md": "2a66395a0b81",
+          "ts": "08f0c5aa12d3",
+          "lean": "2cf4a6d611d8"
+        },
+        "result": "pass",
+        "evidence": "Statement is clean of archimedean leaks",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:54.241Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-proof": [
@@ -479,6 +551,24 @@
         "reviewed_at": "2026-06-05T19:38:35.779Z",
         "reviewed_sha": "c1e349075d04c6f25ca2a6f5d23678de3a782141",
         "notes": "Proof method matches archimedean-specialisation statement."
+      },
+      {
+        "field_hash": {
+          "md": "2a66395a0b81",
+          "ts": "08f0c5aa12d3",
+          "lean": "2cf4a6d611d8"
+        },
+        "result": "pass",
+        "evidence": "No proof section found to scan",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:54.425Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2658,5 +2748,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T04:09:04.949Z"
+  "updated_at": "2026-06-14T13:27:54.585Z"
 }

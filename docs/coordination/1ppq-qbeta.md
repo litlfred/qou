@@ -359,3 +359,4 @@ Follow-up to #2240, resolving the `/coordinate`-surfaced question vs #2106.
 - `docs/audits/2026-05-31-qbeta-ck-truncation-order-canonical-framing.md`
 - `docs/audits/2026-05-30-l2-100x-status-3-failing-shared-root.md`
 - `docs/audits/2026-05-30-klr-dialog-assessment.md` (recurrent re-pitch failure modes)
+- `docs/audits/2026-06-14-klr-positivity-mass-gap.md` (KLR positivity resolution and missing T2/T3 quadratic absolute mass gap)

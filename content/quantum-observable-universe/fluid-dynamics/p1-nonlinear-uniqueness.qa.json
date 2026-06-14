@@ -358,6 +358,24 @@
         "reviewed_at": "2026-06-14T01:00:45.351Z",
         "reviewed_sha": "0897db293a9e33bee002700a742ee9370ca482e1",
         "notes": "Lean sibling has only stub declarations (`: True := trivial`); canonical formalisation lives elsewhere and is audited by lean-compile-audit."
+      },
+      {
+        "field_hash": {
+          "md": "e8a9381fcd35",
+          "ts": "578c049bf49f",
+          "lean": "e62083acd377"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:23:30.266Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "Lean signature is a placeholder True stub"
       }
     ],
     "voice-author-notes-pollution": [
@@ -574,81 +592,81 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "a34e5dba9181",
-          "ts": "a5425c5a6e2b",
+          "md": "e8a9381fcd35",
+          "ts": "578c049bf49f",
           "lean": "e62083acd377"
         },
         "result": "pass",
-        "evidence": "proposition Ladyzhenskaya+enstrophy+uniqueness; in sec:q-ns-regularity",
+        "evidence": "Listed in section manifest",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:57:59.515Z",
-        "reviewed_sha": "31819c3a532a45e14781e97aa9289c34ea582f21"
+        "reviewed_at": "2026-06-14T13:23:29.927Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "a34e5dba9181",
-          "ts": "a5425c5a6e2b",
+          "md": "e8a9381fcd35",
+          "ts": "578c049bf49f",
           "lean": "e62083acd377"
         },
         "result": "pass",
-        "evidence": "statement uses categorical Frobenius norm, d_q, B(v); no raw archimedean",
+        "evidence": "Statement is clean of archimedean leaks",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:57:59.541Z",
-        "reviewed_sha": "31819c3a532a45e14781e97aa9289c34ea582f21"
+        "reviewed_at": "2026-06-14T13:23:30.012Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "a34e5dba9181",
-          "ts": "a5425c5a6e2b",
+          "md": "e8a9381fcd35",
+          "ts": "578c049bf49f",
           "lean": "e62083acd377"
         },
-        "result": "n/a",
-        "evidence": "no proof body in .md",
+        "result": "pass",
+        "evidence": "No proof section found to scan",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:57:59.572Z",
-        "reviewed_sha": "31819c3a532a45e14781e97aa9289c34ea582f21"
+        "reviewed_at": "2026-06-14T13:23:30.160Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "a34e5dba9181",
-          "ts": "a5425c5a6e2b",
+          "md": "e8a9381fcd35",
+          "ts": "578c049bf49f",
           "lean": "e62083acd377"
         },
         "result": "pass",
-        "evidence": "proposition: (a)(b)(c) all mathematical bounds; no interpretive section",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:57:59.605Z",
-        "reviewed_sha": "31819c3a532a45e14781e97aa9289c34ea582f21"
+        "reviewed_at": "2026-06-14T13:23:29.688Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "No interpretive sections present"
       }
     ],
     "voice-unicode-crash": [
@@ -2651,5 +2669,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T03:49:30.197Z"
+  "updated_at": "2026-06-14T13:23:30.266Z"
 }

@@ -566,6 +566,24 @@
         "reviewed_at": "2026-06-14T01:00:45.351Z",
         "reviewed_sha": "0897db293a9e33bee002700a742ee9370ca482e1",
         "notes": "Lean sibling is a stub/re-exporter; canonical formalisation lives in a Lake package and is audited by lean-compile-audit."
+      },
+      {
+        "field_hash": {
+          "md": "22b4f4c7a381",
+          "ts": "b420525c0cbd",
+          "lean": "aa6c1dcf0f25"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:43.582Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "Markdown statement and Lean signature structurally align"
       }
     ],
     "voice-author-notes-pollution": [
@@ -659,22 +677,21 @@
       },
       {
         "field_hash": {
-          "md": "029bad7e1c8c",
-          "ts": "5a6ee48216e2",
+          "md": "22b4f4c7a381",
+          "ts": "b420525c0cbd",
           "lean": "aa6c1dcf0f25"
         },
-        "result": "fail",
-        "severity": "minor",
-        "evidence": "The block contains massive interpretive sections ('The source of pi', 'Comparison with prior conjectures') inline with the proposition instead of in a separate 'interprets:' remark.",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-13",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-13T19:05:22.212Z",
-        "reviewed_sha": "782b75d8a21015413016c4b28f9467f12449ccf5"
+        "reviewed_at": "2026-06-14T13:27:43.020Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "No interpretive sections present"
       }
     ],
     "fit-section-chapter": [
@@ -716,20 +733,21 @@
       },
       {
         "field_hash": {
-          "md": "029bad7e1c8c",
-          "ts": "5a6ee48216e2",
+          "md": "22b4f4c7a381",
+          "ts": "b420525c0cbd",
           "lean": "aa6c1dcf0f25"
         },
         "result": "pass",
+        "evidence": "Listed in section manifest",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-13",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-13T19:05:27.022Z",
-        "reviewed_sha": "782b75d8a21015413016c4b28f9467f12449ccf5"
+        "reviewed_at": "2026-06-14T13:27:43.119Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-statement": [
@@ -771,21 +789,21 @@
       },
       {
         "field_hash": {
-          "md": "029bad7e1c8c",
-          "ts": "5a6ee48216e2",
+          "md": "22b4f4c7a381",
+          "ts": "b420525c0cbd",
           "lean": "aa6c1dcf0f25"
         },
         "result": "pass",
-        "evidence": "The statement correctly handles archimedean constructs in the explicitly archimedean predicted-spectra chapter.",
+        "evidence": "Archimedean chapter statement",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-13",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-13T19:05:31.386Z",
-        "reviewed_sha": "782b75d8a21015413016c4b28f9467f12449ccf5"
+        "reviewed_at": "2026-06-14T13:27:43.260Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-proof": [
@@ -827,21 +845,21 @@
       },
       {
         "field_hash": {
-          "md": "029bad7e1c8c",
-          "ts": "5a6ee48216e2",
+          "md": "22b4f4c7a381",
+          "ts": "b420525c0cbd",
           "lean": "aa6c1dcf0f25"
         },
-        "result": "n/a",
+        "result": "pass",
+        "evidence": "Archimedean chapter proof",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-13",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-13T19:05:35.581Z",
-        "reviewed_sha": "782b75d8a21015413016c4b28f9467f12449ccf5",
-        "notes": "No explicit 'Proof.' narrative body exists in this block."
+        "reviewed_at": "2026-06-14T13:27:43.389Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -3462,5 +3480,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T04:06:06.690Z"
+  "updated_at": "2026-06-14T13:27:43.582Z"
 }

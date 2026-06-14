@@ -380,6 +380,24 @@
         "reviewed_at": "2026-06-05T18:02:41.297Z",
         "reviewed_sha": "c4e511cd48c359126b53f26bd5a75c62b635a017",
         "notes": "Remark kind correct (interprets rem:ck-extraction-from-algebraic-rules); no sibling carries same scalar-identity claim."
+      },
+      {
+        "field_hash": {
+          "md": "9f5932c7cd91",
+          "ts": "2499a8a1f2f6",
+          "lean": "1a3d81c95d79"
+        },
+        "result": "pass",
+        "evidence": "Listed in section manifest",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:24:44.514Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "voice-unicode-crash": [
@@ -2130,5 +2148,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T02:11:07.128Z"
+  "updated_at": "2026-06-14T13:24:44.514Z"
 }

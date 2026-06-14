@@ -325,6 +325,24 @@
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
         "notes": "Label 'prop:golden-quartet-galois' aligns with Lean declaration. Sorry-free."
+      },
+      {
+        "field_hash": {
+          "md": "2ea39de24bc0",
+          "ts": "98cb83fe1242",
+          "lean": "b0eef5a5f8f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:26.935Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "Markdown statement and Lean signature structurally align"
       }
     ],
     "voice-author-notes-pollution": [
@@ -380,6 +398,24 @@
         "reviewed_at": "2026-06-05T13:13:58.306Z",
         "reviewed_sha": "af5ea9823326ee82869e7cde3d37ee00ea4a02a7",
         "notes": "Interpretation of Galois result for Brings surface belongs in a separate remark."
+      },
+      {
+        "field_hash": {
+          "md": "2ea39de24bc0",
+          "ts": "98cb83fe1242",
+          "lean": "b0eef5a5f8f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:24.851Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "No interpretive sections present"
       }
     ],
     "fit-section-chapter": [
@@ -402,6 +438,24 @@
         "reviewed_at": "2026-06-05T13:13:58.348Z",
         "reviewed_sha": "af5ea9823326ee82869e7cde3d37ee00ea4a02a7",
         "notes": "This is upstream algebraic background; belongs in braids-and-knots or a math-background chapter."
+      },
+      {
+        "field_hash": {
+          "md": "2ea39de24bc0",
+          "ts": "98cb83fe1242",
+          "lean": "b0eef5a5f8f0"
+        },
+        "result": "pass",
+        "evidence": "Listed in section manifest",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:25.022Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-statement": [
@@ -424,6 +478,24 @@
         "reviewed_at": "2026-06-05T13:13:58.388Z",
         "reviewed_sha": "af5ea9823326ee82869e7cde3d37ee00ea4a02a7",
         "notes": "Archimedean R-times reference in statement; consider generic-ring formulation per CLAUDE.md §7c."
+      },
+      {
+        "field_hash": {
+          "md": "2ea39de24bc0",
+          "ts": "98cb83fe1242",
+          "lean": "b0eef5a5f8f0"
+        },
+        "result": "pass",
+        "evidence": "Archimedean chapter statement",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:25.248Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-proof": [
@@ -446,6 +518,24 @@
         "reviewed_at": "2026-06-05T13:13:58.429Z",
         "reviewed_sha": "af5ea9823326ee82869e7cde3d37ee00ea4a02a7",
         "notes": "Algebraic proof, no wall crossing."
+      },
+      {
+        "field_hash": {
+          "md": "2ea39de24bc0",
+          "ts": "98cb83fe1242",
+          "lean": "b0eef5a5f8f0"
+        },
+        "result": "pass",
+        "evidence": "Archimedean chapter proof",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:26.646Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -470,6 +560,28 @@
         "reviewed_at": "2026-06-07T06:06:41.810Z",
         "reviewed_sha": "4e961c6c457cf2aaa28e91304a917b1bcfdf2afe",
         "notes": "Plan clear: factor P(x)=x^4-3x^2+1=(x^2-x-1)(x^2+x-1); the two quadratics are min polys of phi and 1/phi; Galois (sqrt5->-sqrt5) flips signs, bar (x->1/x) exchanges orbits; G=Z/2 x Z/2 acts with single orbit (explicit table). Direct expansion proof."
+      },
+      {
+        "field_hash": {
+          "md": "2ea39de24bc0",
+          "ts": "98cb83fe1242",
+          "lean": "b0eef5a5f8f0"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:27.017Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "Proof strategy is implicit."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -494,6 +606,28 @@
         "reviewed_at": "2026-06-07T06:06:41.847Z",
         "reviewed_sha": "4e961c6c457cf2aaa28e91304a917b1bcfdf2afe",
         "notes": "Fully sorry-free: all four roots verified (phi_quartic etc. via ring/nlinarith[sqrt5_sq]), Galois conjugates galois_phi_eq_neg_phiInv, bar pairing phi*phiInv=1; headline golden_quartet_galois conjunction real. NOTE Lean conjunction proves root set + bar pairing but NOT the group-action transitivity/faithfulness (md's single-orbit |G|=4=|Q| claim) - faithful but partial vs md."
+      },
+      {
+        "field_hash": {
+          "md": "2ea39de24bc0",
+          "ts": "98cb83fe1242",
+          "lean": "b0eef5a5f8f0"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:27.561Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "Proof is sorry-free."
       }
     ],
     "proof-rater-novelty": [
@@ -518,6 +652,28 @@
         "reviewed_at": "2026-06-07T06:06:41.883Z",
         "reviewed_sha": "4e961c6c457cf2aaa28e91304a917b1bcfdf2afe",
         "notes": "Standard Galois/golden-ratio algebra; the quartet+bar-orbit framing as a zeta_5-elimination tool (replace Gal(Q(zeta_5)) bookkeeping with the real quartet orbit) is a useful exposition observation but not a novel argument."
+      },
+      {
+        "field_hash": {
+          "md": "2ea39de24bc0",
+          "ts": "98cb83fe1242",
+          "lean": "b0eef5a5f8f0"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:27.614Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "Standard but not duplicated."
       }
     ],
     "proof-statement-integrity": [
@@ -538,6 +694,28 @@
         "reviewed_at": "2026-06-07T06:06:41.920Z",
         "reviewed_sha": "4e961c6c457cf2aaa28e91304a917b1bcfdf2afe",
         "notes": "lean.ref ...GoldenQuartetGalois.golden_quartet_galois present and sorry-free; conjunction (4 roots of x^4-3x^2+1 + phi*phiInv=1) is a faithful (partial) encoding of the md proposition. Not vacuous. Group-orbit transitivity not in Lean -> coverage note under plausibility."
+      },
+      {
+        "field_hash": {
+          "md": "2ea39de24bc0",
+          "ts": "98cb83fe1242",
+          "lean": "b0eef5a5f8f0"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:27.702Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "Lean signature is unchanged and has no sorry"
       }
     ],
     "voice-unicode-crash": [
@@ -2613,5 +2791,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T02:11:07.128Z"
+  "updated_at": "2026-06-14T13:27:27.702Z"
 }

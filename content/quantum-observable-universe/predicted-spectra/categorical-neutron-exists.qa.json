@@ -325,6 +325,24 @@
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
         "notes": "Label 'prop:categorical-neutron-exists' → expected 'categorical_neutron_exists'; Lean declares: CategoricalNeutron.exists. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "fc0399958d00",
+          "ts": "6f42b5090f09",
+          "lean": "3d4829755e87"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:18.676Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "Markdown statement and Lean signature structurally align"
       }
     ],
     "voice-author-notes-pollution": [
@@ -380,6 +398,24 @@
         "reviewed_at": "2026-06-04T23:40:03.150Z",
         "reviewed_sha": "f1e1bb1806b35ab32edbbc756ad8250bad123ce1",
         "notes": "Squarely in predicted-spectra nucleon section; no sibling redundancy"
+      },
+      {
+        "field_hash": {
+          "md": "fc0399958d00",
+          "ts": "6f42b5090f09",
+          "lean": "3d4829755e87"
+        },
+        "result": "pass",
+        "evidence": "Listed in section manifest",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:18.467Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-statement": [
@@ -402,6 +438,24 @@
         "reviewed_at": "2026-06-04T23:40:03.186Z",
         "reviewed_sha": "f1e1bb1806b35ab32edbbc756ad8250bad123ce1",
         "notes": "Statement is purely algebraic; predicted-spectra is archimedean chapter but statement itself is ring-generic — no wall violation"
+      },
+      {
+        "field_hash": {
+          "md": "fc0399958d00",
+          "ts": "6f42b5090f09",
+          "lean": "3d4829755e87"
+        },
+        "result": "pass",
+        "evidence": "Archimedean chapter statement",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:18.547Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-proof": [
@@ -424,6 +478,24 @@
         "reviewed_at": "2026-06-04T23:40:03.227Z",
         "reviewed_sha": "f1e1bb1806b35ab32edbbc756ad8250bad123ce1",
         "notes": "Proof method matches algebraic statement; no archimedean machinery in proof body"
+      },
+      {
+        "field_hash": {
+          "md": "fc0399958d00",
+          "ts": "6f42b5090f09",
+          "lean": "3d4829755e87"
+        },
+        "result": "pass",
+        "evidence": "Archimedean chapter proof",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:18.606Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "voice-statement-no-interpretation": [
@@ -446,6 +518,24 @@
         "reviewed_at": "2026-06-04T23:51:37.755Z",
         "reviewed_sha": "beb4340382ed4d5d96213c9ea7b4af9d3bac9068",
         "notes": "Clean statement; passes"
+      },
+      {
+        "field_hash": {
+          "md": "fc0399958d00",
+          "ts": "6f42b5090f09",
+          "lean": "3d4829755e87"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:18.360Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "No interpretive sections present"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -470,6 +560,28 @@
         "reviewed_at": "2026-06-07T05:58:59.974Z",
         "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
         "notes": "md is terse (3 lines): asserts n = B_3(u,d,d) exists as LP-stable element of H_3(q), defers uniqueness. Plan implicit; the real construction (Borromean + Hopf stabiliser, negative crossing energy) is only in the docstring, not argued."
+      },
+      {
+        "field_hash": {
+          "md": "fc0399958d00",
+          "ts": "6f42b5090f09",
+          "lean": "3d4829755e87"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:18.792Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "No proof strategy or outline found."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -494,6 +606,28 @@
         "reviewed_at": "2026-06-07T05:59:00.009Z",
         "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
         "notes": "Weak proxy: theorem CategoricalNeutron.exists := <{skein_ud:=0, skein_dd:=0}> proves Nonempty of a structure with NO stability/positivity field constraints (skein_ud/dd are free reals); docstring admits 'Trivial witness ... intended Borromean B_3(u,d,d) x (L_- o L_-) witness is sharper but requires Hecke NF infra'. Existence is sorry-free but skips the md's LP-stable / negative-crossing-energy content."
+      },
+      {
+        "field_hash": {
+          "md": "fc0399958d00",
+          "ts": "6f42b5090f09",
+          "lean": "3d4829755e87"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:18.845Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "Proof is sorry-free."
       }
     ],
     "proof-rater-novelty": [
@@ -518,6 +652,28 @@
         "reviewed_at": "2026-06-07T05:59:00.044Z",
         "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
         "notes": "Standard Nonempty-witness existence; the categorical-neutron construction idea is in def:categorical-neutron, not novel to this block."
+      },
+      {
+        "field_hash": {
+          "md": "fc0399958d00",
+          "ts": "6f42b5090f09",
+          "lean": "3d4829755e87"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:18.901Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "Standard but not duplicated."
       }
     ],
     "proof-statement-integrity": [
@@ -538,6 +694,28 @@
         "reviewed_at": "2026-06-07T05:59:00.079Z",
         "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
         "notes": "lean.ref qou:QOU.CategoricalNeutron.exists present; statement Nonempty CategoricalNeutron is a faithful (if weak) rendering of 'the neutron exists' — not =True, not <_,rfl> on a target-restatement. NOTE: CategoricalNeutron structure carries no stability constraints, so the witness is degenerate (recorded under plausibility, not integrity)."
+      },
+      {
+        "field_hash": {
+          "md": "fc0399958d00",
+          "ts": "6f42b5090f09",
+          "lean": "3d4829755e87"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:18.972Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "Lean signature is unchanged and has no sorry"
       }
     ],
     "voice-unicode-crash": [
@@ -2613,5 +2791,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T02:11:07.128Z"
+  "updated_at": "2026-06-14T13:27:18.972Z"
 }

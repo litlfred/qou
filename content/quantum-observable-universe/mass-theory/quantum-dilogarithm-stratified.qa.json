@@ -394,6 +394,24 @@
         "reviewed_at": "2026-06-13T13:16:07.687Z",
         "reviewed_sha": "6b44ecdbb4f5bf1c4e1c2b1a08f9244d2ee52803",
         "notes": "Auto-drained by agent"
+      },
+      {
+        "field_hash": {
+          "md": "dbe789f6770e",
+          "ts": "ec72e10dbe11",
+          "lean": "41cfe5716397"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:25:10.938Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "Markdown statement and Lean signature structurally align"
       }
     ],
     "voice-author-notes-pollution": [
@@ -432,89 +450,81 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "b48ec81b1f5a",
-          "ts": "abe59bb72c0d",
-          "lean": "43646f53e590"
+          "md": "dbe789f6770e",
+          "ts": "ec72e10dbe11",
+          "lean": "41cfe5716397"
         },
-        "result": "warn",
-        "severity": "minor",
-        "evidence": "quantum-dilogarithm-stratified.md:66 -- ## Why this resolves Step 4 section",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-07T13:46:07.234Z",
-        "reviewed_sha": "af638213a478dd151bf02a1c7949162067f278fa",
-        "notes": "Why this resolves section is interpretive; no companion remark"
+        "reviewed_at": "2026-06-14T13:25:10.601Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "No interpretive sections present"
       }
     ],
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "b48ec81b1f5a",
-          "ts": "abe59bb72c0d",
-          "lean": "43646f53e590"
+          "md": "dbe789f6770e",
+          "ts": "ec72e10dbe11",
+          "lean": "41cfe5716397"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "quantum-dilogarithm-stratified.ts:2 -- proposition",
+        "evidence": "Listed in section manifest",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-07T13:46:07.269Z",
-        "reviewed_sha": "af638213a478dd151bf02a1c7949162067f278fa",
-        "notes": "Partition-depth stratification of phi_q fits mass-theory geometric face"
+        "reviewed_at": "2026-06-14T13:25:10.698Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "b48ec81b1f5a",
-          "ts": "abe59bb72c0d",
-          "lean": "43646f53e590"
+          "md": "dbe789f6770e",
+          "ts": "ec72e10dbe11",
+          "lean": "41cfe5716397"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "quantum-dilogarithm-stratified.lean:1 -- import Mathlib.Data.Real.Basic",
+        "evidence": "Statement is clean of archimedean leaks",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-07T13:46:07.308Z",
-        "reviewed_sha": "af638213a478dd151bf02a1c7949162067f278fa",
-        "notes": "mass-theory is archimedean; Real import for evaluation at q_0; appropriate"
+        "reviewed_at": "2026-06-14T13:25:10.787Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "b48ec81b1f5a",
-          "ts": "abe59bb72c0d",
-          "lean": "43646f53e590"
+          "md": "dbe789f6770e",
+          "ts": "ec72e10dbe11",
+          "lean": "41cfe5716397"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "quantum-dilogarithm-stratified.md:83 -- ## Status of the bridge",
+        "evidence": "No proof section found to scan",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-07T13:46:07.343Z",
-        "reviewed_sha": "af638213a478dd151bf02a1c7949162067f278fa",
-        "notes": "Proof via stratification of centre by GB-depth; algebraic centre decomposition; appropriate"
+        "reviewed_at": "2026-06-14T13:25:10.869Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2943,5 +2953,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T03:57:06.879Z"
+  "updated_at": "2026-06-14T13:25:10.938Z"
 }

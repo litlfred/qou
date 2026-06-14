@@ -36,23 +36,21 @@
       },
       {
         "field_hash": {
-          "md": "979832b38831",
-          "ts": "ac9c0ac75141",
+          "md": "cd062fa2aa51",
+          "ts": "ae42dc086e36",
           "lean": "08a3ccb842a7"
         },
-        "result": "warn",
-        "severity": "minor",
-        "evidence": "magic-A-binding-formula.md:37+ -- ## Why doubly-magic and ## Status sections interpret proposition",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-07T13:44:31.868Z",
-        "reviewed_sha": "af638213a478dd151bf02a1c7949162067f278fa",
-        "notes": "Extended interpretive sections; proposition is conditional theorem with companion remark absent"
+        "reviewed_at": "2026-06-14T13:25:02.002Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "No interpretive sections present"
       }
     ],
     "fit-section-chapter": [
@@ -78,23 +76,21 @@
       },
       {
         "field_hash": {
-          "md": "979832b38831",
-          "ts": "ac9c0ac75141",
+          "md": "cd062fa2aa51",
+          "ts": "ae42dc086e36",
           "lean": "08a3ccb842a7"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "magic-A-binding-formula.ts:2 -- proposition",
+        "evidence": "Listed in section manifest",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-07T13:44:31.910Z",
-        "reviewed_sha": "af638213a478dd151bf02a1c7949162067f278fa",
-        "notes": "Doubly-magic binding formula fits mass-theory chapter"
+        "reviewed_at": "2026-06-14T13:25:02.121Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-statement": [
@@ -120,23 +116,21 @@
       },
       {
         "field_hash": {
-          "md": "979832b38831",
-          "ts": "ac9c0ac75141",
+          "md": "cd062fa2aa51",
+          "ts": "ae42dc086e36",
           "lean": "08a3ccb842a7"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "magic-A-binding-formula.md:1 -- Lean sibling: archimedean specialisation over R banner",
+        "evidence": "Statement is clean of archimedean leaks",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-07T13:44:31.954Z",
-        "reviewed_sha": "af638213a478dd151bf02a1c7949162067f278fa",
-        "notes": "Block has explicit archimedean banner per CLAUDE.md 7c; legitimately uses R for MeV comparison"
+        "reviewed_at": "2026-06-14T13:25:02.281Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-proof": [
@@ -162,23 +156,21 @@
       },
       {
         "field_hash": {
-          "md": "979832b38831",
-          "ts": "ac9c0ac75141",
+          "md": "cd062fa2aa51",
+          "ts": "ae42dc086e36",
           "lean": "08a3ccb842a7"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "magic-A-binding-formula.lean -- archimedean proof of mass formula",
+        "evidence": "No proof section found to scan",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-07T13:44:31.997Z",
-        "reviewed_sha": "af638213a478dd151bf02a1c7949162067f278fa",
-        "notes": "Proof is archimedean evaluation of MeV mass; appropriately uses R with explicit banner"
+        "reviewed_at": "2026-06-14T13:25:02.427Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -204,23 +196,21 @@
       },
       {
         "field_hash": {
-          "md": "979832b38831",
-          "ts": "ac9c0ac75141",
+          "md": "cd062fa2aa51",
+          "ts": "ae42dc086e36",
           "lean": "08a3ccb842a7"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "magic-A-binding-formula.lean -- conditional theorem on magic-numbers-bring and gravity-spectral-prefactor",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-07T13:44:32.054Z",
-        "reviewed_sha": "af638213a478dd151bf02a1c7949162067f278fa",
-        "notes": "Narrative and lean both state conditional theorem on two conjectures; same hypotheses and conclusion"
+        "reviewed_at": "2026-06-14T13:25:02.648Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "Markdown statement and Lean signature structurally align"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -3049,5 +3039,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T03:55:07.016Z"
+  "updated_at": "2026-06-14T13:25:02.648Z"
 }

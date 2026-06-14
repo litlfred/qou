@@ -516,23 +516,21 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "fc08e8bb6535",
-          "ts": "47541f78c24a",
+          "md": "dc3ee389286f",
+          "ts": "0e29422fe829",
           "lean": "dbaf7f78dda5"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "weak-spectral-completeness.ts -- block in mass-theory chapter",
+        "evidence": "Listed in section manifest",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-07T13:39:43.012Z",
-        "reviewed_sha": "ea16b464d587fbd725060636a1beb8dbcaabd167",
-        "notes": "Block subject fits mass-theory chapter scope"
+        "reviewed_at": "2026-06-14T13:27:06.437Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -2429,5 +2427,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T03:57:47.097Z"
+  "updated_at": "2026-06-14T13:27:06.437Z"
 }

@@ -271,6 +271,23 @@
         "reviewed_at": "2026-06-13T13:16:06.918Z",
         "reviewed_sha": "6b44ecdbb4f5bf1c4e1c2b1a08f9244d2ee52803",
         "notes": "Auto-drained by agent"
+      },
+      {
+        "field_hash": {
+          "md": "fd5f6112fd5a",
+          "ts": "a0530a224419"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:24:40.024Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "No Lean formalisation file exists"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2183,5 +2200,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T03:51:18.442Z"
+  "updated_at": "2026-06-14T13:24:40.024Z"
 }

@@ -533,6 +533,24 @@
         "reviewed_at": "2026-06-06T00:55:30.385Z",
         "reviewed_sha": "eb4c5eba2402db99ed0c7c9f20d7b18217e4f69f",
         "notes": "Clean fit; follows naturally from the Bring's coordinate ring definition."
+      },
+      {
+        "field_hash": {
+          "md": "71bf1bbec797",
+          "ts": "47faa237d53d",
+          "lean": "7e8f819d8e87"
+        },
+        "result": "pass",
+        "evidence": "Listed in section manifest",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:55.739Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -2275,5 +2293,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T04:09:44.977Z"
+  "updated_at": "2026-06-14T13:27:55.739Z"
 }

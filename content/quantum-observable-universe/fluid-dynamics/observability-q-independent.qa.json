@@ -358,6 +358,24 @@
         "reviewed_at": "2026-06-14T01:00:45.351Z",
         "reviewed_sha": "0897db293a9e33bee002700a742ee9370ca482e1",
         "notes": "Lean sibling has only stub declarations (`: True := trivial`); canonical formalisation lives elsewhere and is audited by lean-compile-audit."
+      },
+      {
+        "field_hash": {
+          "md": "7ffd6f70ef1b",
+          "ts": "fe0538eeb3f0",
+          "lean": "357784fd52c7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:23:29.583Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "Lean signature is a placeholder True stub"
       }
     ],
     "voice-author-notes-pollution": [
@@ -574,81 +592,81 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "d536de25f593",
-          "ts": "f987dcc33db2",
+          "md": "7ffd6f70ef1b",
+          "ts": "fe0538eeb3f0",
           "lean": "357784fd52c7"
         },
         "result": "pass",
-        "evidence": "theorem thm:observability-q-independent; Hom(1,Ad(A)) q-independence; observability is base property",
+        "evidence": "Listed in section manifest",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:56:03.798Z",
-        "reviewed_sha": "cf9b9dcbd87849416f34bd70583fb8673a3c676e"
+        "reviewed_at": "2026-06-14T13:23:29.141Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "d536de25f593",
-          "ts": "f987dcc33db2",
+          "md": "7ffd6f70ef1b",
+          "ts": "fe0538eeb3f0",
           "lean": "357784fd52c7"
         },
         "result": "pass",
-        "evidence": "statement is categorical Hom-space equality; no archimedean constructs",
+        "evidence": "Statement is clean of archimedean leaks",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:56:03.839Z",
-        "reviewed_sha": "cf9b9dcbd87849416f34bd70583fb8673a3c676e"
+        "reviewed_at": "2026-06-14T13:23:29.291Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "d536de25f593",
-          "ts": "f987dcc33db2",
+          "md": "7ffd6f70ef1b",
+          "ts": "fe0538eeb3f0",
           "lean": "357784fd52c7"
         },
         "result": "pass",
-        "evidence": "proof: Hom(1,Ad(A)) uses only Hopf structure, no q; categorical argument",
+        "evidence": "Proof is clean of archimedean leaks",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:56:03.876Z",
-        "reviewed_sha": "cf9b9dcbd87849416f34bd70583fb8673a3c676e"
+        "reviewed_at": "2026-06-14T13:23:29.429Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "d536de25f593",
-          "ts": "f987dcc33db2",
+          "md": "7ffd6f70ef1b",
+          "ts": "fe0538eeb3f0",
           "lean": "357784fd52c7"
         },
         "result": "pass",
-        "evidence": "theorem+proof+corollary; corollary is mathematical consequence not interpretive",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:56:03.911Z",
-        "reviewed_sha": "cf9b9dcbd87849416f34bd70583fb8673a3c676e"
+        "reviewed_at": "2026-06-14T13:23:28.978Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "No interpretive sections present"
       }
     ],
     "voice-unicode-crash": [
@@ -2651,5 +2669,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T03:49:29.866Z"
+  "updated_at": "2026-06-14T13:23:29.583Z"
 }

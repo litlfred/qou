@@ -363,6 +363,24 @@
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
         "notes": "Label 'prop:bar-self-dual-confinement-band' aligns with Lean declaration. Sorry-free."
+      },
+      {
+        "field_hash": {
+          "md": "203d4c030e8b",
+          "ts": "732bbebad428",
+          "lean": "16ffa3d00535"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:34.472Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "Markdown statement and Lean signature structurally align"
       }
     ],
     "voice-author-notes-pollution": [
@@ -401,7 +419,7 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "48c71bd97e11",
+          "md": "203d4c030e8b",
           "ts": "732bbebad428",
           "lean": "16ffa3d00535"
         },
@@ -410,68 +428,72 @@
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-04",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-04T14:15:51.276Z",
-        "reviewed_sha": "ca48f1cf8d32b70bb0f3df8a60c7308a921cdf31"
+        "reviewed_at": "2026-06-14T13:27:33.233Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "No interpretive sections present"
       }
     ],
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "48c71bd97e11",
+          "md": "203d4c030e8b",
           "ts": "732bbebad428",
           "lean": "16ffa3d00535"
         },
         "result": "pass",
+        "evidence": "Listed in section manifest",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-04",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-04T14:15:51.312Z",
-        "reviewed_sha": "ca48f1cf8d32b70bb0f3df8a60c7308a921cdf31"
+        "reviewed_at": "2026-06-14T13:27:33.538Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "48c71bd97e11",
+          "md": "203d4c030e8b",
           "ts": "732bbebad428",
           "lean": "16ffa3d00535"
         },
         "result": "pass",
+        "evidence": "Archimedean chapter statement",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-04",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-04T14:15:51.347Z",
-        "reviewed_sha": "ca48f1cf8d32b70bb0f3df8a60c7308a921cdf31"
+        "reviewed_at": "2026-06-14T13:27:33.899Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "48c71bd97e11",
+          "md": "203d4c030e8b",
           "ts": "732bbebad428",
           "lean": "16ffa3d00535"
         },
         "result": "pass",
+        "evidence": "Archimedean chapter proof",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-04",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-04T14:15:51.384Z",
-        "reviewed_sha": "ca48f1cf8d32b70bb0f3df8a60c7308a921cdf31"
+        "reviewed_at": "2026-06-14T13:27:34.218Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "detangler-no-forward-ref": [
@@ -2723,5 +2745,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T04:04:56.502Z"
+  "updated_at": "2026-06-14T13:27:34.472Z"
 }

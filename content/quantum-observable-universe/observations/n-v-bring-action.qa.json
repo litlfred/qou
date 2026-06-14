@@ -397,6 +397,24 @@
         "reviewed_at": "2026-06-06T00:34:22.125Z",
         "reviewed_sha": "9c9a1851255ce032081117f3851d4e21e98f962d",
         "notes": "Block is correctly placed in observations; no misfile."
+      },
+      {
+        "field_hash": {
+          "md": "dda1a269b642",
+          "ts": "588286e76e39",
+          "lean": "eb6eb1d7c20c"
+        },
+        "result": "pass",
+        "evidence": "Listed in section manifest",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:13.786Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -2408,5 +2426,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T04:02:55.300Z"
+  "updated_at": "2026-06-14T13:27:13.786Z"
 }

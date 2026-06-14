@@ -45,6 +45,24 @@
         "reviewed_at": "2026-06-14T01:00:45.351Z",
         "reviewed_sha": "0897db293a9e33bee002700a742ee9370ca482e1",
         "notes": "Label 'prop:habiro-pochhammer-bridge' → expected 'habiro_pochhammer_bridge'; Lean declares: one_sub_sq_factor, pochhammer_factor, HabiroPochhammerBridge. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "aa634b5a98d8",
+          "ts": "9891a18a24fd",
+          "lean": "cb569019082f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:22:03.879Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "Markdown statement and Lean signature structurally align"
       }
     ],
     "voice-statement-no-interpretation": [
@@ -67,6 +85,24 @@
         "reviewed_at": "2026-06-06T01:43:44.686Z",
         "reviewed_sha": "c34d169ec0f5e12b3f110543d7f623d3c5672ab5",
         "notes": "Clean pass: numerical check is technical verification not physical-meaning commentary."
+      },
+      {
+        "field_hash": {
+          "md": "aa634b5a98d8",
+          "ts": "9891a18a24fd",
+          "lean": "cb569019082f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:22:03.236Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "No interpretive sections present"
       }
     ],
     "fit-section-chapter": [
@@ -89,6 +125,25 @@
         "reviewed_at": "2026-06-06T01:44:10.228Z",
         "reviewed_sha": "c34d169ec0f5e12b3f110543d7f623d3c5672ab5",
         "notes": "No misfile, no redundancy, kind matches content."
+      },
+      {
+        "field_hash": {
+          "md": "aa634b5a98d8",
+          "ts": "9891a18a24fd",
+          "lean": "cb569019082f"
+        },
+        "result": "fail",
+        "severity": "major",
+        "evidence": "Orphan block",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:22:03.383Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-statement": [
@@ -111,6 +166,24 @@
         "reviewed_at": "2026-06-06T01:44:42.711Z",
         "reviewed_sha": "c34d169ec0f5e12b3f110543d7f623d3c5672ab5",
         "notes": "Move q to generic CommRing R or add wall: field; numerical q_0≈1.1100 block in proof also leaks archimedean."
+      },
+      {
+        "field_hash": {
+          "md": "aa634b5a98d8",
+          "ts": "9891a18a24fd",
+          "lean": "cb569019082f"
+        },
+        "result": "pass",
+        "evidence": "Statement is clean of archimedean leaks",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:22:03.602Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-proof": [
@@ -133,6 +206,24 @@
         "reviewed_at": "2026-06-06T01:45:00.116Z",
         "reviewed_sha": "c34d169ec0f5e12b3f110543d7f623d3c5672ab5",
         "notes": "Numerical verification section belongs in observations/descartes-universe chapter or needs wall: annotation."
+      },
+      {
+        "field_hash": {
+          "md": "aa634b5a98d8",
+          "ts": "9891a18a24fd",
+          "lean": "cb569019082f"
+        },
+        "result": "pass",
+        "evidence": "Proof is clean of archimedean leaks",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:22:03.759Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2499,5 +2590,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T03:45:53.128Z"
+  "updated_at": "2026-06-14T13:22:03.879Z"
 }

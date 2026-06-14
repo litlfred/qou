@@ -1,0 +1,46 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.2",
+  "computedAt": "2026-06-13T20:45:32.391875+00:00",
+  "commitSha": "58f27639c257ddf42267f5ac09d41a376c9cd08d",
+  "assertions": [
+    {
+      "name": "SDP shadow price predicts temperatures far above empirical",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "T_boil_pred > 10000 K for H2O"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 658,
+  "computation": "phase-transition-sdp-derivation",
+  "scriptFile": "phase_transition_sdp_derivation.py",
+  "scriptHash": "658d56b690a9",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.2",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.11.1",
+    "mpmath": "0.0.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
+  },
+  "description": "Rigorous SDP derivation of molecular boiling and melting points. Replaces the fitted h² parameter with the canonical LP-dual shadow price of the H_2(q) Wedderburn idempotents. The SDP selects the antisymmetric e_− (directional H-bond) channel, producing a shadow price y0* ≈ 0.3036. Plugging this derived cohesion into the bare q-ideal gas equation yields temperatures of order ~10^4 K, proving that a purely structural map from P_q V_q = n_q R T requires a much larger entropic/topological denominator ΔS_vap than simply [2]_q.",
+  "data": {
+    "H2O_T_boil_pred": 16709.825885953123,
+    "H2O_boil_ratio": 44.780452595345366,
+    "HF_T_boil_pred": 10262.012636482083,
+    "HF_boil_ratio": 35.00601274597334,
+    "NH3_T_boil_pred": 7101.676001530078,
+    "NH3_boil_ratio": 29.613760900421493,
+    "y0_star": 0.3036743128223159
+  }
+}

@@ -362,20 +362,21 @@
       },
       {
         "field_hash": {
-          "md": "9bbb4ff55642",
-          "ts": "ed9693dec30d",
+          "md": "46c4a3047f82",
+          "ts": "fd3074b16a50",
           "lean": "e418f73f59b5"
         },
-        "result": "pass",
+        "result": "fail",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-06-13",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-13T03:56:09.631Z",
-        "reviewed_sha": "54c3d2b33e9cb4b3ec331294d81e4f4f27eb842f"
+        "reviewed_at": "2026-06-14T13:21:53.426Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "Lean signature is a placeholder True stub"
       }
     ],
     "voice-author-notes-pollution": [
@@ -414,77 +415,83 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "9bbb4ff55642",
-          "ts": "ed9693dec30d",
+          "md": "46c4a3047f82",
+          "ts": "fd3074b16a50",
           "lean": "e418f73f59b5"
         },
-        "result": "pass",
+        "result": "fail",
+        "severity": "minor",
+        "evidence": "Substantive interpretive prose follows the statement.",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-06-13",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-13T03:56:09.631Z",
-        "reviewed_sha": "54c3d2b33e9cb4b3ec331294d81e4f4f27eb842f"
+        "reviewed_at": "2026-06-14T13:21:52.869Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "9bbb4ff55642",
-          "ts": "ed9693dec30d",
+          "md": "46c4a3047f82",
+          "ts": "fd3074b16a50",
           "lean": "e418f73f59b5"
         },
         "result": "pass",
+        "evidence": "Listed in section manifest",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-06-13",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-13T03:56:09.631Z",
-        "reviewed_sha": "54c3d2b33e9cb4b3ec331294d81e4f4f27eb842f"
+        "reviewed_at": "2026-06-14T13:21:53.015Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "9bbb4ff55642",
-          "ts": "ed9693dec30d",
+          "md": "46c4a3047f82",
+          "ts": "fd3074b16a50",
           "lean": "e418f73f59b5"
         },
-        "result": "pass",
+        "result": "fail",
+        "severity": "major",
+        "evidence": "Substrate block contains archimedean constructs without proper banner: π",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-06-13",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-13T03:56:09.631Z",
-        "reviewed_sha": "54c3d2b33e9cb4b3ec331294d81e4f4f27eb842f"
+        "reviewed_at": "2026-06-14T13:21:53.153Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "9bbb4ff55642",
-          "ts": "ed9693dec30d",
+          "md": "46c4a3047f82",
+          "ts": "fd3074b16a50",
           "lean": "e418f73f59b5"
         },
         "result": "pass",
+        "evidence": "No proof section found to scan",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-06-13",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-13T03:56:09.631Z",
-        "reviewed_sha": "54c3d2b33e9cb4b3ec331294d81e4f4f27eb842f"
+        "reviewed_at": "2026-06-14T13:21:53.309Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2671,5 +2678,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T03:44:18.284Z"
+  "updated_at": "2026-06-14T13:21:53.426Z"
 }

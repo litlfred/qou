@@ -16,7 +16,7 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "4ef119e8cc71",
+          "md": "84a2e531b9ab",
           "ts": "9090da6593bd",
           "lean": "19bdae67442d"
         },
@@ -25,87 +25,92 @@
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-04",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-04T17:43:48.849Z",
-        "reviewed_sha": "caf92c63d6227772dff112c426906eb978b5f24b"
+        "reviewed_at": "2026-06-14T13:24:48.049Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "No interpretive sections present"
       }
     ],
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "4ef119e8cc71",
+          "md": "84a2e531b9ab",
           "ts": "9090da6593bd",
           "lean": "19bdae67442d"
         },
         "result": "pass",
+        "evidence": "Listed in section manifest",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-04",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-04T17:43:48.882Z",
-        "reviewed_sha": "caf92c63d6227772dff112c426906eb978b5f24b"
+        "reviewed_at": "2026-06-14T13:24:48.135Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "4ef119e8cc71",
+          "md": "84a2e531b9ab",
           "ts": "9090da6593bd",
           "lean": "19bdae67442d"
         },
         "result": "pass",
+        "evidence": "Statement is clean of archimedean leaks",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-04",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-04T17:43:48.917Z",
-        "reviewed_sha": "caf92c63d6227772dff112c426906eb978b5f24b"
+        "reviewed_at": "2026-06-14T13:24:48.213Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "4ef119e8cc71",
+          "md": "84a2e531b9ab",
           "ts": "9090da6593bd",
           "lean": "19bdae67442d"
         },
         "result": "pass",
+        "evidence": "No proof section found to scan",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-04",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-04T17:43:48.950Z",
-        "reviewed_sha": "caf92c63d6227772dff112c426906eb978b5f24b"
+        "reviewed_at": "2026-06-14T13:24:48.285Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "4ef119e8cc71",
+          "md": "84a2e531b9ab",
           "ts": "9090da6593bd",
           "lean": "19bdae67442d"
         },
-        "result": "pass",
+        "result": "fail",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-04",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-04T17:43:48.984Z",
-        "reviewed_sha": "caf92c63d6227772dff112c426906eb978b5f24b"
+        "reviewed_at": "2026-06-14T13:24:48.348Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "Lean signature is a placeholder True stub"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2721,5 +2726,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T03:53:03.451Z"
+  "updated_at": "2026-06-14T13:24:48.348Z"
 }

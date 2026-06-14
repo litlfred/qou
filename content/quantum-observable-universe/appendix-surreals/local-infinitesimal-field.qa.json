@@ -516,21 +516,21 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "0cd90c6a645b",
-          "ts": "e87864fd8f6b",
+          "md": "6d314519dae3",
+          "ts": "daf9368c107b",
           "lean": "777743f8697e"
         },
         "result": "pass",
-        "evidence": "local-infinitesimal-field.md — conjecture about substrate parameter as a sheaf of infinitesimals; correctly placed in sec:surreal-speculative ('Speculative reformulations'). Topic and kind (conjecture) fit the chapter's speculative appendix scope.",
+        "evidence": "Listed in section manifest",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-04",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-04T13:47:24.876Z",
-        "reviewed_sha": "70fc3f056ae012683d21bf711e8c15547e5a165d"
+        "reviewed_at": "2026-06-14T13:21:54.527Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "detangler-no-forward-ref": [
@@ -2257,5 +2257,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T03:44:18.433Z"
+  "updated_at": "2026-06-14T13:21:54.527Z"
 }

@@ -396,6 +396,24 @@
         "reviewed_at": "2026-06-14T01:00:45.351Z",
         "reviewed_sha": "0897db293a9e33bee002700a742ee9370ca482e1",
         "notes": "Lean sibling has only stub declarations (`: True := trivial`); canonical formalisation lives elsewhere and is audited by lean-compile-audit."
+      },
+      {
+        "field_hash": {
+          "md": "dab689375e58",
+          "ts": "a75a7b64ad6c",
+          "lean": "ea74f474fab0"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:25:04.101Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "Lean signature is a placeholder True stub"
       }
     ],
     "voice-author-notes-pollution": [
@@ -434,89 +452,81 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "ff8eee547c35",
-          "ts": "de4692ceae1a",
+          "md": "dab689375e58",
+          "ts": "a75a7b64ad6c",
           "lean": "ea74f474fab0"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "mass-theory.ts:98 -- pentagon-uv-commutation in sec:mass-algebraic-consolidated",
+        "evidence": "Listed in section manifest",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:28:25.846Z",
-        "reviewed_sha": "650fece3d88bf6085d28a6878e76ed03b969ef37",
-        "notes": "pentagon identity at adjacent jet levels fits algebraic consolidated section"
+        "reviewed_at": "2026-06-14T13:25:03.719Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "ff8eee547c35",
-          "ts": "de4692ceae1a",
+          "md": "dab689375e58",
+          "ts": "a75a7b64ad6c",
           "lean": "ea74f474fab0"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "pentagon-uv-commutation.md -- uv=qvu; Phi_q operator; Z[q^+-1/2,z]; no Real.*",
+        "evidence": "Statement is clean of archimedean leaks",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:28:25.881Z",
-        "reviewed_sha": "650fece3d88bf6085d28a6878e76ed03b969ef37",
-        "notes": "statement uses generic ring Laurent polynomials; no archimedean leak"
+        "reviewed_at": "2026-06-14T13:25:03.829Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "ff8eee547c35",
-          "ts": "de4692ceae1a",
+          "md": "dab689375e58",
+          "ts": "a75a7b64ad6c",
           "lean": "ea74f474fab0"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "pentagon-uv-commutation.md -- two-part analysis: within jet level (scalar commutativity) and between levels (quantum torus)",
+        "evidence": "No proof section found to scan",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:28:25.910Z",
-        "reviewed_sha": "650fece3d88bf6085d28a6878e76ed03b969ef37",
-        "notes": "proof uses algebraic brane tower structure; no archimedean machinery"
+        "reviewed_at": "2026-06-14T13:25:03.957Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "ff8eee547c35",
-          "ts": "de4692ceae1a",
+          "md": "dab689375e58",
+          "ts": "a75a7b64ad6c",
           "lean": "ea74f474fab0"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "pentagon-uv-commutation.md -- Within a single jet level / Between adjacent jet levels sections are part of stated proposition",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:28:25.946Z",
-        "reviewed_sha": "650fece3d88bf6085d28a6878e76ed03b969ef37",
-        "notes": "sections develop the proposition statement; no standalone interpretive prose after proof"
+        "reviewed_at": "2026-06-14T13:25:03.598Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "No interpretive sections present"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2949,5 +2959,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T03:55:28.936Z"
+  "updated_at": "2026-06-14T13:25:04.101Z"
 }

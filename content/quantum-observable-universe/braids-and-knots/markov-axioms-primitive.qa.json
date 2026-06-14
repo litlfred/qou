@@ -336,22 +336,20 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "6889324d4ca3",
-          "ts": "ae253efdfb5a"
+          "md": "406a4e4f700e",
+          "ts": "7d7fb15af3e4"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "markov-axioms-primitive.ts:4 — remark interprets prop:markov-trace-frobenius-selection; Markov trace axioms",
+        "evidence": "Listed in section manifest",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:33:10.000Z",
-        "reviewed_sha": "8b2b9773c91b3fddf1abf16f20f58d325bf77565",
-        "notes": "Markov trace axioms remark fits braids-and-knots chapter (Hecke quotient/eigenbasis section)."
+        "reviewed_at": "2026-06-14T13:22:14.637Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "voice-unicode-crash": [
@@ -1861,5 +1859,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T02:11:07.128Z"
+  "updated_at": "2026-06-14T13:22:14.637Z"
 }

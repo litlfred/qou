@@ -358,6 +358,24 @@
         "reviewed_at": "2026-06-14T01:00:45.351Z",
         "reviewed_sha": "0897db293a9e33bee002700a742ee9370ca482e1",
         "notes": "Label 'prop:categorical-laplace-unique' → expected 'categorical_laplace_unique'; Lean declares: CategoricalLaplace.unique. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "24fd6aa26485",
+          "ts": "137537f15aad",
+          "lean": "0d0737a2e640"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:50.766Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "Markdown statement and Lean signature structurally align"
       }
     ],
     "voice-author-notes-pollution": [
@@ -413,6 +431,24 @@
         "reviewed_at": "2026-06-05T18:14:00.712Z",
         "reviewed_sha": "2b41fc5b0c2cf640a29afdc2d615faea4540cc29",
         "notes": "No interpretation or motivation mixed into the statement."
+      },
+      {
+        "field_hash": {
+          "md": "24fd6aa26485",
+          "ts": "137537f15aad",
+          "lean": "0d0737a2e640"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:50.302Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "No interpretive sections present"
       }
     ],
     "fit-section-chapter": [
@@ -435,6 +471,24 @@
         "reviewed_at": "2026-06-05T18:14:00.759Z",
         "reviewed_sha": "2b41fc5b0c2cf640a29afdc2d615faea4540cc29",
         "notes": "Block correctly placed in chapter."
+      },
+      {
+        "field_hash": {
+          "md": "24fd6aa26485",
+          "ts": "137537f15aad",
+          "lean": "0d0737a2e640"
+        },
+        "result": "pass",
+        "evidence": "Listed in section manifest",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:50.429Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-statement": [
@@ -457,6 +511,24 @@
         "reviewed_at": "2026-06-05T18:14:00.806Z",
         "reviewed_sha": "2b41fc5b0c2cf640a29afdc2d615faea4540cc29",
         "notes": "Chapter is generic-ring regime; statement stays on correct side of wall."
+      },
+      {
+        "field_hash": {
+          "md": "24fd6aa26485",
+          "ts": "137537f15aad",
+          "lean": "0d0737a2e640"
+        },
+        "result": "pass",
+        "evidence": "Statement is clean of archimedean leaks",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:50.532Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-proof": [
@@ -479,6 +551,24 @@
         "reviewed_at": "2026-06-05T18:14:00.852Z",
         "reviewed_sha": "2b41fc5b0c2cf640a29afdc2d615faea4540cc29",
         "notes": "Lean theorem uses axiom CategoricalLaplace.unique_axiom — no archimedean leak."
+      },
+      {
+        "field_hash": {
+          "md": "24fd6aa26485",
+          "ts": "137537f15aad",
+          "lean": "0d0737a2e640"
+        },
+        "result": "pass",
+        "evidence": "No proof section found to scan",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:50.677Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2714,5 +2804,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T04:08:23.477Z"
+  "updated_at": "2026-06-14T13:27:50.766Z"
 }

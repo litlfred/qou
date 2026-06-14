@@ -318,6 +318,23 @@
         "reviewed_at": "2026-06-04T23:44:31.347Z",
         "reviewed_sha": "c3da5cbcb77d1f73ed88bfd6b0a2786b66fc9b5e",
         "notes": "Proof of Fourier existence belongs in q-linear-transforms section — correct"
+      },
+      {
+        "field_hash": {
+          "md": "42733b0bd377",
+          "ts": "b2d020073dbc"
+        },
+        "result": "pass",
+        "evidence": "Listed in section manifest",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:47.753Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "voice-unicode-crash": [
@@ -1722,5 +1739,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T02:11:07.128Z"
+  "updated_at": "2026-06-14T13:27:47.753Z"
 }

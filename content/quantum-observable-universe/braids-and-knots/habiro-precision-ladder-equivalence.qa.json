@@ -581,6 +581,24 @@
         "reviewed_at": "2026-06-14T01:00:45.351Z",
         "reviewed_sha": "0897db293a9e33bee002700a742ee9370ca482e1",
         "notes": "Label 'prop:habiro-precision-ladder-equivalence' → expected 'habiro_precision_ladder_equivalence'; Lean declares: qPochhammer, HabiroCoeff, HabiroExpansion, HabiroExpansion.eval, habiro_terminates.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "1a6297894d25",
+          "ts": "28b98f6f7d91",
+          "lean": "9549aabb0b76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:22:10.807Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "Markdown statement and Lean signature structurally align"
       }
     ],
     "voice-statement-no-interpretation": [
@@ -603,6 +621,24 @@
         "reviewed_at": "2026-06-06T01:46:54.310Z",
         "reviewed_sha": "a46485f7b73bd6f1c1342413da990136e02a2c68",
         "notes": "Move interpretive sections to a linked remark block with interprets: this proposition."
+      },
+      {
+        "field_hash": {
+          "md": "1a6297894d25",
+          "ts": "28b98f6f7d91",
+          "lean": "9549aabb0b76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:22:10.351Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "No interpretive sections present"
       }
     ],
     "fit-section-chapter": [
@@ -625,6 +661,25 @@
         "reviewed_at": "2026-06-06T01:47:10.717Z",
         "reviewed_sha": "a46485f7b73bd6f1c1342413da990136e02a2c68",
         "notes": "No misfile."
+      },
+      {
+        "field_hash": {
+          "md": "1a6297894d25",
+          "ts": "28b98f6f7d91",
+          "lean": "9549aabb0b76"
+        },
+        "result": "fail",
+        "severity": "major",
+        "evidence": "Orphan block",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:22:10.467Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-statement": [
@@ -647,6 +702,24 @@
         "reviewed_at": "2026-06-06T01:47:28.828Z",
         "reviewed_sha": "a46485f7b73bd6f1c1342413da990136e02a2c68",
         "notes": "Split: keep algebraic claim generic-ring, move archimedean evaluation sentence to a wall:-annotated block or remark."
+      },
+      {
+        "field_hash": {
+          "md": "1a6297894d25",
+          "ts": "28b98f6f7d91",
+          "lean": "9549aabb0b76"
+        },
+        "result": "pass",
+        "evidence": "Statement is clean of archimedean leaks",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:22:10.551Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-proof": [
@@ -669,6 +742,24 @@
         "reviewed_at": "2026-06-06T01:47:50.289Z",
         "reviewed_sha": "a46485f7b73bd6f1c1342413da990136e02a2c68",
         "notes": "Archimedean references are qualitative/contextual, not wall violations."
+      },
+      {
+        "field_hash": {
+          "md": "1a6297894d25",
+          "ts": "28b98f6f7d91",
+          "lean": "9549aabb0b76"
+        },
+        "result": "pass",
+        "evidence": "No proof section found to scan",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:22:10.666Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2749,5 +2840,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T03:45:56.112Z"
+  "updated_at": "2026-06-14T13:22:10.807Z"
 }

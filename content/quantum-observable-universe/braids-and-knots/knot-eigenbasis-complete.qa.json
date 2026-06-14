@@ -325,6 +325,24 @@
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
         "notes": "Label 'prop:knot-eigenbasis-complete' aligns with Lean declaration. Sorry-free."
+      },
+      {
+        "field_hash": {
+          "md": "6f6d6f93db34",
+          "ts": "6a7a9d6041e9",
+          "lean": "315d0115ac3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:22:00.180Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "Markdown statement and Lean signature structurally align"
       }
     ],
     "voice-author-notes-pollution": [
@@ -416,6 +434,24 @@
         "reviewed_at": "2026-06-06T02:06:12.070Z",
         "reviewed_sha": "435d668edd86736187706af5a4894c81001b2178",
         "notes": "Clean proposition statement."
+      },
+      {
+        "field_hash": {
+          "md": "6f6d6f93db34",
+          "ts": "6a7a9d6041e9",
+          "lean": "315d0115ac3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:21:59.496Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "No interpretive sections present"
       }
     ],
     "fit-section-chapter": [
@@ -438,6 +474,24 @@
         "reviewed_at": "2026-06-06T02:06:28.671Z",
         "reviewed_sha": "435d668edd86736187706af5a4894c81001b2178",
         "notes": "Well-placed."
+      },
+      {
+        "field_hash": {
+          "md": "6f6d6f93db34",
+          "ts": "6a7a9d6041e9",
+          "lean": "315d0115ac3c"
+        },
+        "result": "pass",
+        "evidence": "Listed in section manifest",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:21:59.774Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-statement": [
@@ -460,6 +514,24 @@
         "reviewed_at": "2026-06-06T02:06:42.450Z",
         "reviewed_sha": "435d668edd86736187706af5a4894c81001b2178",
         "notes": "Proper generic-ring statement in substrate chapter."
+      },
+      {
+        "field_hash": {
+          "md": "6f6d6f93db34",
+          "ts": "6a7a9d6041e9",
+          "lean": "315d0115ac3c"
+        },
+        "result": "pass",
+        "evidence": "Statement is clean of archimedean leaks",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:21:59.932Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-proof": [
@@ -482,6 +554,24 @@
         "reviewed_at": "2026-06-06T02:07:00.981Z",
         "reviewed_sha": "435d668edd86736187706af5a4894c81001b2178",
         "notes": "Proof wall check N/A for statement-only block."
+      },
+      {
+        "field_hash": {
+          "md": "6f6d6f93db34",
+          "ts": "6a7a9d6041e9",
+          "lean": "315d0115ac3c"
+        },
+        "result": "pass",
+        "evidence": "No proof section found to scan",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:22:00.010Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2455,5 +2545,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T03:45:51.719Z"
+  "updated_at": "2026-06-14T13:22:00.180Z"
 }

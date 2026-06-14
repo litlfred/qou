@@ -392,6 +392,24 @@
         "reviewed_at": "2026-06-14T01:00:45.351Z",
         "reviewed_sha": "0897db293a9e33bee002700a742ee9370ca482e1",
         "notes": "Label 'prop:joint-tower-sdp-confinement' → expected 'joint_tower_sdp_confinement'; Lean declares: PerParticleSdpVariables, WedderburnBlockPositivity, GbFiltrationGrading, JetOrderOrdering, TowerEdge.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "204cc021cddc",
+          "ts": "73b25c2684ed",
+          "lean": "73455b60c120"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:24:59.273Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "Markdown statement and Lean signature structurally align"
       }
     ],
     "voice-author-notes-pollution": [
@@ -447,6 +465,24 @@
         "reviewed_at": "2026-06-05T23:57:30.586Z",
         "reviewed_sha": "36647fa399f7739261287e61ae1cbd9f21bb7940",
         "notes": "Clean proposition statement; motivation deferred elsewhere."
+      },
+      {
+        "field_hash": {
+          "md": "204cc021cddc",
+          "ts": "73b25c2684ed",
+          "lean": "73455b60c120"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:24:58.115Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "No interpretive sections present"
       }
     ],
     "fit-section-chapter": [
@@ -469,6 +505,24 @@
         "reviewed_at": "2026-06-05T23:57:50.097Z",
         "reviewed_sha": "36647fa399f7739261287e61ae1cbd9f21bb7940",
         "notes": "Primary subject (joint mass-tower SDP) matches section scope."
+      },
+      {
+        "field_hash": {
+          "md": "204cc021cddc",
+          "ts": "73b25c2684ed",
+          "lean": "73455b60c120"
+        },
+        "result": "pass",
+        "evidence": "Listed in section manifest",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:24:58.627Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-statement": [
@@ -491,6 +545,25 @@
         "reviewed_at": "2026-06-05T23:58:04.723Z",
         "reviewed_sha": "36647fa399f7739261287e61ae1cbd9f21bb7940",
         "notes": "No Real.sqrt, linarith, or numeric q_0 in the statement."
+      },
+      {
+        "field_hash": {
+          "md": "204cc021cddc",
+          "ts": "73b25c2684ed",
+          "lean": "73455b60c120"
+        },
+        "result": "fail",
+        "severity": "major",
+        "evidence": "Substrate block contains archimedean constructs without proper banner: π",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:24:59.042Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-proof": [
@@ -513,6 +586,24 @@
         "reviewed_at": "2026-06-05T23:58:17.449Z",
         "reviewed_sha": "36647fa399f7739261287e61ae1cbd9f21bb7940",
         "notes": "Absence of proof text means no archimedean wall violation possible."
+      },
+      {
+        "field_hash": {
+          "md": "204cc021cddc",
+          "ts": "73b25c2684ed",
+          "lean": "73455b60c120"
+        },
+        "result": "pass",
+        "evidence": "No proof section found to scan",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:24:59.157Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -533,6 +624,28 @@
         "reviewed_at": "2026-06-13T13:16:07.414Z",
         "reviewed_sha": "6b44ecdbb4f5bf1c4e1c2b1a08f9244d2ee52803",
         "notes": "Auto-drained by agent"
+      },
+      {
+        "field_hash": {
+          "md": "204cc021cddc",
+          "ts": "73b25c2684ed",
+          "lean": "73455b60c120"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:24:59.428Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "No proof strategy or outline found."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -553,6 +666,28 @@
         "reviewed_at": "2026-06-13T13:16:07.414Z",
         "reviewed_sha": "6b44ecdbb4f5bf1c4e1c2b1a08f9244d2ee52803",
         "notes": "Auto-drained by agent"
+      },
+      {
+        "field_hash": {
+          "md": "204cc021cddc",
+          "ts": "73b25c2684ed",
+          "lean": "73455b60c120"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:24:59.570Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "Proof is sorry-free."
       }
     ],
     "proof-rater-novelty": [
@@ -573,6 +708,28 @@
         "reviewed_at": "2026-06-13T13:16:07.414Z",
         "reviewed_sha": "6b44ecdbb4f5bf1c4e1c2b1a08f9244d2ee52803",
         "notes": "Auto-drained by agent"
+      },
+      {
+        "field_hash": {
+          "md": "204cc021cddc",
+          "ts": "73b25c2684ed",
+          "lean": "73455b60c120"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:24:59.712Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "Standard but not duplicated."
       }
     ],
     "proof-statement-integrity": [
@@ -593,6 +750,28 @@
         "reviewed_at": "2026-06-13T13:16:07.414Z",
         "reviewed_sha": "6b44ecdbb4f5bf1c4e1c2b1a08f9244d2ee52803",
         "notes": "Auto-drained by agent"
+      },
+      {
+        "field_hash": {
+          "md": "204cc021cddc",
+          "ts": "73b25c2684ed",
+          "lean": "73455b60c120"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:25:00.003Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "Lean signature is unchanged and has no sorry"
       }
     ],
     "voice-unicode-crash": [
@@ -2857,5 +3036,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T02:11:07.128Z"
+  "updated_at": "2026-06-14T13:25:00.003Z"
 }

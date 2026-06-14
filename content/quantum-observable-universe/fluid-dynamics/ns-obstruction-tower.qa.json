@@ -749,61 +749,61 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "b45451a87d92",
-          "ts": "965ea23de38c",
-          "lean": "9f2ceb24a8b8"
+          "md": "1759c7c70cc6",
+          "ts": "b7e562226f04",
+          "lean": "76013347d865"
         },
         "result": "pass",
-        "evidence": "proposition in NS obstruction section; Yekutieli tower kappa_n, restriction to collision locus Sigma",
+        "evidence": "Listed in section manifest",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T10:00:00.567Z",
-        "reviewed_sha": "c2b296b787f282526008689a95749a04773bbed7"
+        "reviewed_at": "2026-06-14T13:22:27.362Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "b45451a87d92",
-          "ts": "965ea23de38c",
-          "lean": "9f2ceb24a8b8"
+          "md": "1759c7c70cc6",
+          "ts": "b7e562226f04",
+          "lean": "76013347d865"
         },
         "result": "pass",
-        "evidence": "statement uses categorical H^2(S,B) cohomology classes; Yekutieli tower is categorical substrate-side",
+        "evidence": "Statement is clean of archimedean leaks",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T10:00:00.600Z",
-        "reviewed_sha": "c2b296b787f282526008689a95749a04773bbed7"
+        "reviewed_at": "2026-06-14T13:22:35.372Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "b45451a87d92",
-          "ts": "965ea23de38c",
-          "lean": "9f2ceb24a8b8"
+          "md": "1759c7c70cc6",
+          "ts": "b7e562226f04",
+          "lean": "76013347d865"
         },
         "result": "pass",
-        "evidence": "proof uses local cohomology H^1_{m_p}(A), long exact sequence, Euler class; categorical tools throughout",
+        "evidence": "No proof section found to scan",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T10:00:00.631Z",
-        "reviewed_sha": "c2b296b787f282526008689a95749a04773bbed7"
+        "reviewed_at": "2026-06-14T13:22:44.098Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "voice-statement-no-interpretation": [
@@ -2652,5 +2652,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T03:49:13.584Z"
+  "updated_at": "2026-06-14T13:22:44.098Z"
 }

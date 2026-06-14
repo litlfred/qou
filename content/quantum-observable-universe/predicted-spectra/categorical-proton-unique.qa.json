@@ -358,6 +358,24 @@
         "reviewed_at": "2026-06-14T01:00:45.351Z",
         "reviewed_sha": "0897db293a9e33bee002700a742ee9370ca482e1",
         "notes": "Label 'prop:categorical-proton-unique' → expected 'categorical_proton_unique'; Lean declares: CategoricalProton, ProtonSameHeckeNF, CategoricalProton.unique_up_to_isotopy. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "3383c5f843cf",
+          "ts": "7b8e109a6169",
+          "lean": "364ab9d8b28a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:22.365Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "Markdown statement and Lean signature structurally align"
       }
     ],
     "voice-author-notes-pollution": [
@@ -413,6 +431,24 @@
         "reviewed_at": "2026-06-05T00:13:13.643Z",
         "reviewed_sha": "375e734e148c22f4191ac14dc7f5dd47dd830fd1",
         "notes": "Clean proposition block."
+      },
+      {
+        "field_hash": {
+          "md": "3383c5f843cf",
+          "ts": "7b8e109a6169",
+          "lean": "364ab9d8b28a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:21.583Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "No interpretive sections present"
       }
     ],
     "fit-section-chapter": [
@@ -435,6 +471,24 @@
         "reviewed_at": "2026-06-05T00:13:13.678Z",
         "reviewed_sha": "375e734e148c22f4191ac14dc7f5dd47dd830fd1",
         "notes": "Clean proposition block."
+      },
+      {
+        "field_hash": {
+          "md": "3383c5f843cf",
+          "ts": "7b8e109a6169",
+          "lean": "364ab9d8b28a"
+        },
+        "result": "pass",
+        "evidence": "Listed in section manifest",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:21.737Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-statement": [
@@ -457,6 +511,24 @@
         "reviewed_at": "2026-06-05T00:13:13.712Z",
         "reviewed_sha": "375e734e148c22f4191ac14dc7f5dd47dd830fd1",
         "notes": "Clean proposition block."
+      },
+      {
+        "field_hash": {
+          "md": "3383c5f843cf",
+          "ts": "7b8e109a6169",
+          "lean": "364ab9d8b28a"
+        },
+        "result": "pass",
+        "evidence": "Archimedean chapter statement",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:22.022Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-proof": [
@@ -479,6 +551,24 @@
         "reviewed_at": "2026-06-05T00:13:13.748Z",
         "reviewed_sha": "375e734e148c22f4191ac14dc7f5dd47dd830fd1",
         "notes": "Clean proposition block."
+      },
+      {
+        "field_hash": {
+          "md": "3383c5f843cf",
+          "ts": "7b8e109a6169",
+          "lean": "364ab9d8b28a"
+        },
+        "result": "pass",
+        "evidence": "Archimedean chapter proof",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:22.269Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -503,6 +593,28 @@
         "reviewed_at": "2026-06-07T06:01:19.116Z",
         "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
         "notes": "md (7 lines) sketches uniqueness (Hecke NF unique in H_3(q) + S_3 color-tube symmetry) but does not carry it out; Lean defers to an axiom."
+      },
+      {
+        "field_hash": {
+          "md": "3383c5f843cf",
+          "ts": "7b8e109a6169",
+          "lean": "364ab9d8b28a"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:22.501Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "No proof strategy or outline found."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -527,6 +639,28 @@
         "reviewed_at": "2026-06-07T06:01:19.153Z",
         "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
         "notes": "Key Lean is an 'axiom' (auto-extracted single-sorry) => ~0.3 per rubric; compounded by the axiom being false for the free-field structure."
+      },
+      {
+        "field_hash": {
+          "md": "3383c5f843cf",
+          "ts": "7b8e109a6169",
+          "lean": "364ab9d8b28a"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:22.630Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "Proof is sorry-free."
       }
     ],
     "proof-rater-novelty": [
@@ -551,6 +685,28 @@
         "reviewed_at": "2026-06-07T06:01:19.188Z",
         "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
         "notes": "Standard uniqueness-up-to-isotopy; conventional Hecke-NF + S_3-symmetry argument."
+      },
+      {
+        "field_hash": {
+          "md": "3383c5f843cf",
+          "ts": "7b8e109a6169",
+          "lean": "364ab9d8b28a"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:22.801Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "Standard but not duplicated."
       }
     ],
     "proof-statement-integrity": [
@@ -575,23 +731,25 @@
       },
       {
         "field_hash": {
-          "md": "7467d0e7442f",
+          "md": "3383c5f843cf",
           "ts": "7b8e109a6169",
           "lean": "364ab9d8b28a"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "categorical-proton-unique.lean:62 — theorem CategoricalProton.unique_up_to_isotopy (P Q) [ProtonSameHeckeNF P Q] : P = Q",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-09",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-09T02:51:53.296Z",
-        "reviewed_sha": "9663de6f86bc94e6ef87192b18383e45d633655f",
-        "notes": "Replaced false 'axiom Subsingleton CategoricalProton' with genuine conditional uniqueness via a Hecke-NF coincidence context class; states the md proposition (same Hecke NF + S3 assignment => equal). _Scratch build green."
+        "reviewed_at": "2026-06-14T13:27:23.041Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "Lean signature is unchanged and has no sorry"
       }
     ],
     "voice-unicode-crash": [
@@ -2667,5 +2825,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T02:11:07.128Z"
+  "updated_at": "2026-06-14T13:27:23.041Z"
 }

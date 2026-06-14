@@ -449,6 +449,24 @@
         "reviewed_at": "2026-06-06T00:35:52.332Z",
         "reviewed_sha": "ea7bc1a6b5755336628499d1f277cc0155c9edc1",
         "notes": "Block correctly placed; derives an observable (EW scale) from QOU substrate."
+      },
+      {
+        "field_hash": {
+          "md": "af82ac00fdaf",
+          "ts": "9770bf45270b",
+          "lean": "fafbd60f13a6"
+        },
+        "result": "pass",
+        "evidence": "Listed in section manifest",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:12.599Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -2270,5 +2288,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T04:02:49.864Z"
+  "updated_at": "2026-06-14T13:27:12.599Z"
 }

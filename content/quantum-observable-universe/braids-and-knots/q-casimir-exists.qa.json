@@ -327,6 +327,24 @@
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
         "notes": "Label 'prop:q-casimir-exists' → expected 'q_casimir_exists'; Lean declares: QCasimir.exists_axiom, QCasimir.exists. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "90acafa7cbdd",
+          "ts": "ffa00ce627ff",
+          "lean": "1e2e5a894579"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:22:01.803Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "Markdown statement and Lean signature structurally align"
       }
     ],
     "voice-author-notes-pollution": [
@@ -557,6 +575,24 @@
         "reviewed_at": "2026-06-13T13:05:15.588Z",
         "reviewed_sha": "9afbca5f72163ef12a81c0cf2976fc1de72dd8f1",
         "notes": "Auto-drained by agent"
+      },
+      {
+        "field_hash": {
+          "md": "90acafa7cbdd",
+          "ts": "ffa00ce627ff",
+          "lean": "1e2e5a894579"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:22:01.136Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "No interpretive sections present"
       }
     ],
     "fit-section-chapter": [
@@ -577,6 +613,24 @@
         "reviewed_at": "2026-06-13T13:05:15.588Z",
         "reviewed_sha": "9afbca5f72163ef12a81c0cf2976fc1de72dd8f1",
         "notes": "Auto-drained by agent"
+      },
+      {
+        "field_hash": {
+          "md": "90acafa7cbdd",
+          "ts": "ffa00ce627ff",
+          "lean": "1e2e5a894579"
+        },
+        "result": "pass",
+        "evidence": "Listed in section manifest",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:22:01.282Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-statement": [
@@ -597,6 +651,24 @@
         "reviewed_at": "2026-06-13T13:05:15.588Z",
         "reviewed_sha": "9afbca5f72163ef12a81c0cf2976fc1de72dd8f1",
         "notes": "Auto-drained by agent"
+      },
+      {
+        "field_hash": {
+          "md": "90acafa7cbdd",
+          "ts": "ffa00ce627ff",
+          "lean": "1e2e5a894579"
+        },
+        "result": "pass",
+        "evidence": "Statement is clean of archimedean leaks",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:22:01.427Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-proof": [
@@ -617,6 +689,24 @@
         "reviewed_at": "2026-06-13T13:05:15.588Z",
         "reviewed_sha": "9afbca5f72163ef12a81c0cf2976fc1de72dd8f1",
         "notes": "Auto-drained by agent"
+      },
+      {
+        "field_hash": {
+          "md": "90acafa7cbdd",
+          "ts": "ffa00ce627ff",
+          "lean": "1e2e5a894579"
+        },
+        "result": "pass",
+        "evidence": "No proof section found to scan",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:22:01.580Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "voice-unicode-crash": [
@@ -2522,5 +2612,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T03:45:52.301Z"
+  "updated_at": "2026-06-14T13:22:01.803Z"
 }

@@ -44,15 +44,20 @@ MASS_RATIO_MU_E_ERR  = 0.0000046
 # substrate identity below; the arbitrary-precision derivation is
 # q_at() (mpmath findroot). m_μ-anchor cross-check: q_muon_at().
 def _solve_q_proton_f64(mp_me, vol, iters=80):
-    """f64 Newton solve of  m_p/m_e = 2·(vol/ℏ_q²)·F_Bor(q) − 12
+    """f64 Newton solve of  m_p/m_e = (2·(vol/ℏ_q²)·F_Bor(q) − 12) * habiro_ratio
     for q, with |tr_M(β_Bor)| = (4+h²−3h⁴−h⁶)/(h²+4). Self-contained
     (closed-form tr_M ⇒ no Hecke machinery)."""
     def _mp_of_q(q):
         h = q - 1.0 / q
-        hbar2 = (1.0 - 1.0 / q) ** 2
+        hbar_q = 1.0 - 1.0 / q
+        hbar2 = hbar_q ** 2
         trM = abs((4 + h**2 - 3 * h**4 - h**6) / (h**2 + 4))
         qf3 = (q**2 + 1 + q**-2) * (q + 1.0 / q)
-        return 2 * vol / hbar2 * (trM * qf3 / q**3) - 12
+        base = 2 * vol / hbar2 * (trM * qf3 / q**3) - 12
+        b_val = ((q ** 4 + q ** 2 + 1) / (q ** 2 + 1) ** 2) ** 0.5
+        u_val = b_val * hbar2
+        habiro_ratio = (1 + 46 * u_val ** 4) * (1 + 4 * u_val ** 5) * (1 - 29 * u_val ** 6)
+        return base * habiro_ratio
     q = 1.11
     # f64 central difference: dq = q·1e-10 is the right scale for f64
     # (machine ε ≈ 2.2e-16); a dps-scaled dq would underflow here. The
@@ -210,7 +215,11 @@ try:
                 hbar_sq = (1 - 1 / q) ** 2
                 trM = _mp.fabs((4 + h**2 - 3 * h**4 - h**6) / (h**2 + 4))
                 qf3 = (q**2 + 1 + q**(-2)) * (q + q**(-1))
-                return 2 * vol / hbar_sq * (trM * qf3 / q**3) - 12 - mp_me
+                base = 2 * vol / hbar_sq * (trM * qf3 / q**3) - 12
+                b_val = ((q ** 4 + q ** 2 + 1) / (q ** 2 + 1) ** 2) ** _mp.mpf("0.5")
+                u_val = b_val * hbar_sq
+                habiro_ratio = (1 + 46 * u_val ** 4) * (1 + 4 * u_val ** 5) * (1 - 29 * u_val ** 6)
+                return base * habiro_ratio - mp_me
 
             q = _mp.findroot(_resid, _mp.mpf("1.10997858"))
             _mp.mp.dps = max(prev, dps)

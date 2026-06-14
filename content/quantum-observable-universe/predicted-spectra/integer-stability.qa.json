@@ -379,6 +379,24 @@
         "reviewed_at": "2026-06-14T01:00:45.351Z",
         "reviewed_sha": "0897db293a9e33bee002700a742ee9370ca482e1",
         "notes": "Label 'prop:integer-stability' aligns with Lean declaration. Sorry-free."
+      },
+      {
+        "field_hash": {
+          "md": "0b237dbf5548",
+          "ts": "2e553aa598e9",
+          "lean": "31a74aef2798"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:30.600Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "Markdown statement and Lean signature structurally align"
       }
     ],
     "voice-author-notes-pollution": [
@@ -434,6 +452,24 @@
         "reviewed_at": "2026-06-05T14:30:31.090Z",
         "reviewed_sha": "30ec359926848090d6c19544db51bc2018808b9d",
         "notes": "Move Even-odd and Regime-transitions narrative to a linked remark block"
+      },
+      {
+        "field_hash": {
+          "md": "0b237dbf5548",
+          "ts": "2e553aa598e9",
+          "lean": "31a74aef2798"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:30.175Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "No interpretive sections present"
       }
     ],
     "fit-section-chapter": [
@@ -456,6 +492,24 @@
         "reviewed_at": "2026-06-05T14:30:59.805Z",
         "reviewed_sha": "30ec359926848090d6c19544db51bc2018808b9d",
         "notes": "Well placed"
+      },
+      {
+        "field_hash": {
+          "md": "0b237dbf5548",
+          "ts": "2e553aa598e9",
+          "lean": "31a74aef2798"
+        },
+        "result": "pass",
+        "evidence": "Listed in section manifest",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:30.289Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-statement": [
@@ -478,6 +532,24 @@
         "reviewed_at": "2026-06-05T14:31:14.287Z",
         "reviewed_sha": "30ec359926848090d6c19544db51bc2018808b9d",
         "notes": "Regime match"
+      },
+      {
+        "field_hash": {
+          "md": "0b237dbf5548",
+          "ts": "2e553aa598e9",
+          "lean": "31a74aef2798"
+        },
+        "result": "pass",
+        "evidence": "Archimedean chapter statement",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:30.386Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-proof": [
@@ -500,6 +572,24 @@
         "reviewed_at": "2026-06-05T14:31:14.327Z",
         "reviewed_sha": "30ec359926848090d6c19544db51bc2018808b9d",
         "notes": "Pass"
+      },
+      {
+        "field_hash": {
+          "md": "0b237dbf5548",
+          "ts": "2e553aa598e9",
+          "lean": "31a74aef2798"
+        },
+        "result": "pass",
+        "evidence": "Archimedean chapter proof",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:30.492Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2756,5 +2846,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T04:04:07.454Z"
+  "updated_at": "2026-06-14T13:27:30.600Z"
 }

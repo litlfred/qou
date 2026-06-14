@@ -380,6 +380,24 @@
         "reviewed_at": "2026-06-05T15:46:07.399Z",
         "reviewed_sha": "443f0300d3ed2b632135977ef0bd20d9b12f139b",
         "notes": "Conjecture directly relevant to Kashaev/archimedean context of the section."
+      },
+      {
+        "field_hash": {
+          "md": "ecb246e6c615",
+          "ts": "3ab7b74153d2",
+          "lean": "96a465923540"
+        },
+        "result": "pass",
+        "evidence": "Listed in section manifest",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:24:50.530Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -2122,5 +2140,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T03:53:07.404Z"
+  "updated_at": "2026-06-14T13:24:50.530Z"
 }

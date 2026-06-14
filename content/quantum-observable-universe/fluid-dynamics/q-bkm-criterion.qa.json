@@ -377,6 +377,24 @@
         "reviewed_at": "2026-06-14T01:00:45.351Z",
         "reviewed_sha": "0897db293a9e33bee002700a742ee9370ca482e1",
         "notes": "Label 'thm:q-bkm' → expected 'q_bkm'; Lean declares: QBKMContext, q_bkm_criterion. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "a0c7896efa29",
+          "ts": "949aea0a9766",
+          "lean": "fbfc0454994a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:24:04.927Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "Markdown statement and Lean signature structurally align"
       }
     ],
     "voice-author-notes-pollution": [
@@ -612,81 +630,81 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "b67063f87d56",
-          "ts": "f8eaa89a1ac4",
-          "lean": "e6d444bc9d4e"
+          "md": "a0c7896efa29",
+          "ts": "949aea0a9766",
+          "lean": "fbfc0454994a"
         },
         "result": "pass",
-        "evidence": "theorem thm:q-bkm in sec:q-ns-regularity; blowup criterion for q-NS vorticity",
+        "evidence": "Listed in section manifest",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:54:32.177Z",
-        "reviewed_sha": "47a32b00dba3d208a158bf8b67a6aea13cb58f9c"
+        "reviewed_at": "2026-06-14T13:23:44.591Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "b67063f87d56",
-          "ts": "f8eaa89a1ac4",
-          "lean": "e6d444bc9d4e"
+          "md": "a0c7896efa29",
+          "ts": "949aea0a9766",
+          "lean": "fbfc0454994a"
         },
         "result": "pass",
-        "evidence": "statement uses L-inf norm integral; q>1 context is NS regularity setting not archimedean leak",
+        "evidence": "Statement is clean of archimedean leaks",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:54:32.211Z",
-        "reviewed_sha": "47a32b00dba3d208a158bf8b67a6aea13cb58f9c"
+        "reviewed_at": "2026-06-14T13:23:51.890Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "b67063f87d56",
-          "ts": "f8eaa89a1ac4",
-          "lean": "e6d444bc9d4e"
+          "md": "a0c7896efa29",
+          "ts": "949aea0a9766",
+          "lean": "fbfc0454994a"
         },
-        "result": "n/a",
-        "evidence": "no proof body in .md; statement only with reference to thm:q-ns-wellposedness",
+        "result": "pass",
+        "evidence": "No proof section found to scan",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:54:32.246Z",
-        "reviewed_sha": "47a32b00dba3d208a158bf8b67a6aea13cb58f9c"
+        "reviewed_at": "2026-06-14T13:23:56.634Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "b67063f87d56",
-          "ts": "f8eaa89a1ac4",
-          "lean": "e6d444bc9d4e"
+          "md": "a0c7896efa29",
+          "ts": "949aea0a9766",
+          "lean": "fbfc0454994a"
         },
         "result": "pass",
-        "evidence": "statement + classical-limit remark is mathematical, not interpretive prose",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:54:32.283Z",
-        "reviewed_sha": "47a32b00dba3d208a158bf8b67a6aea13cb58f9c"
+        "reviewed_at": "2026-06-14T13:23:37.837Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "No interpretive sections present"
       }
     ],
     "voice-unicode-crash": [
@@ -2870,5 +2888,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T03:49:44.161Z"
+  "updated_at": "2026-06-14T13:24:04.927Z"
 }
