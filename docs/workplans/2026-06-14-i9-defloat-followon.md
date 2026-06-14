@@ -69,9 +69,31 @@ reclassifications, and the triage above. Recommended sequence:
    above), 26h `mass_table_ppb` source-de-floated with verification under the
    long-compute logging discipline.
 
+## Outcome C — production de-float (owner: "skip probes, only production")
+
+125 violations → 51 (#2277's already-routed) → 68 residue → after dropping
+probe-named + already-compliant + source files, the **genuinely-production**
+set is a handful of AME-validation mass tables. All flagged literals are
+hardcoded AME binding energies + the m_e divisor — routed to the
+`AME_B_*_MEV_VALIDATION` / `M_E_MEV` registry symbols:
+
+| Script | Routed | Verification |
+|---|---|---|
+| `unified_low_isotope_predictor` | 5 AME (D/T/3He/4He/6Li) | **run-verified** (exit 0); fixed latent `max(errs):.2f`→`float()`; witness regenerated + committed |
+| `canonical_mass_table_extended` | 6 AME dict | **run-verified** (f64 fast path prints routed values); fixed `ame_str` `float(ref)`; witness regen deferred to CI (MPFR-50dps) |
+| `mass_table_ppb` (26h) | 26 (AME table + 5Li/6Li targets + 14× m_e) | **import-verified** (symbols resolve, top-level mpf divisions execute, `AME_TABLE[0]==mpf('2.224566')`); full numerical run + witness regen deferred (26h, logged) |
+
+**Skipped:** `mass_table_comprehensive` — its AME values are off-canonical
+(D `2.22452` vs registry `2.224566`; only 2/6 match within tolerance), so
+routing 2 while leaving 4 approximate is incoherent. Needs the author to
+decide: correct all to canonical, or leave as an approximate table.
+
 ## Status
 
-- [x] Compute env built (pyhecke_native wheel + core stack).
+- [x] Compute env built (pyhecke_native wheel + mpmath/numpy/sympy/scipy).
 - [x] `delta_lambda` + `gap_a4` reclassified as probes → `probes/` (verified).
 - [x] Triage of the 125: probe + already-compliant false-positive classes identified.
-- [→] Scanner false-positive fixes + genuine-residue de-float — to #2277 (post-merge), with this triage.
+- [x] Production de-float: 3 genuine mass-tables routed (2 run-verified, 1 import-verified).
+- [→] Witness regens for canonical (MPFR-50dps) + `mass_table_ppb` (26h) — canonical-env logged runs.
+- [→] `mass_table_comprehensive` off-canonical values — author decision.
+- [→] Scanner false-positive fixes (probe-name widening + `binding_K_direct` over-report) — to #2277.
