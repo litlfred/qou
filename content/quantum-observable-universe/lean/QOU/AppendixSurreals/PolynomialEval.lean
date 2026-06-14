@@ -38,6 +38,8 @@ namespace QOU.AppendixSurreals
 
 open SurrealField Polynomial
 
+universe v
+
 universe u
 
 variable {K : Type u} [SurrealField K]
@@ -132,7 +134,7 @@ theorem polySurrealEval_ofReal (p : ℝ[X]) (r : ℝ) :
 /-! ### Finite-stability and infinitesimal-stability -/
 
 /-- A finite power of a finite surreal is finite. -/
-theorem IsFinite.pow {x : K} (hx : IsFinite x) (n : ℕ) :
+theorem SurrealField.IsFinite.pow {x : K} (hx : IsFinite x) (n : ℕ) :
     IsFinite (x ^ n) := by
   induction n with
   | zero =>
@@ -325,7 +327,7 @@ noncomputable def substrateQ : K := 1 + epsilonSurreal K
 
       `polySubstrateEval p ≈ p.eval 1` (modulo infinitesimals). -/
 noncomputable def polySubstrateEval (p : ℝ[X]) : K :=
-  polySurrealEval p (substrateQ K)
+  polySurrealEval p (substrateQ (K := K))
 
 /-- The substrate parameter is finite: `1 + ε` differs from `1` by
     an infinitesimal, hence is finite. -/
@@ -551,7 +553,7 @@ noncomputable def mvPolySurrealEval {σ : Type v}
     which to evaluate substrate-physics formulas with multiple
     fluctuation parameters. -/
 noncomputable def mvSubstratePoint {σ : Type v} : σ → K :=
-  fun _ => substrateQ K
+  fun _ => substrateQ (K := K)
 
 /-- **Multivariate substrate evaluator.**  Lifts a multivariate real
     polynomial in the substrate fluctuation variables to a `K`-value
@@ -581,9 +583,9 @@ theorem polySubstrateEval_isFinite (p : ℝ[X]) :
 /-- Substrate evaluation as Mathlib's `aeval` at the substrate point. -/
 theorem polySubstrateEval_eq_aeval (p : ℝ[X]) :
     polySubstrateEval (K := K) p
-      = Polynomial.aeval (substrateQ K) p := by
+      = Polynomial.aeval (substrateQ (K := K)) p := by
   unfold polySubstrateEval
-  exact polySurrealEval_eq_aeval p (substrateQ K)
+  exact polySurrealEval_eq_aeval p (substrateQ (K := K))
 
 /-- **Substrate-level proximity classification.**  Two polynomial
     substrate-evaluations are `IsClose` iff their classical values at
