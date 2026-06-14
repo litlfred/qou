@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-10T01:02:51.640221+00:00",
-  "commitSha": "a08e442d26aa35253e617515e596f30afd3f966d",
+  "computedAt": "2026-06-14T23:42:36.072954+00:00",
+  "commitSha": "96c4de9c94ef659a11c87efc0293c598271531ad",
   "assertions": [
     {
       "name": "active_set_small",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 14,
+  "durationMs": 19,
   "computation": "low-isotopes-binding-sweep",
   "scriptFile": "low_isotopes_binding_sweep.py",
   "scriptHash": "b9587242cbe2",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "09f3725ed2ef08b6f7c7a193235fde0181ce750e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -29,7 +29,8 @@
     "python": "3.11.15",
     "numpy": "2.4.6",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Low-isotopes binding sweep on the canonical Jones–Markov path (binding_canonical.py): B_AME, B_pred, residual Δ_λ (near-match q₀^(10A−5), not derived), and the tr_M ACTIVE SET (3–4 few-row partitions carry 90% of p(3A)) — the basis for active-set-truncated + nucleon-cached O(A·few) scaling.",
   "data": {
@@ -77,7 +78,7 @@
         "n_strands": 9,
         "B_AME_MeV": 8.4818,
         "B_pred_canonical_MeV": 0.62896,
-        "Delta_lambda": 13.4855,
+        "Delta_lambda": 13.4854,
         "log_q0_Delta": 24.934,
         "law_10A_minus_5": 25,
         "dev_from_law": -0.066,
@@ -89,22 +90,22 @@
             {
               "partition": "[8, 1]",
               "dim": 8,
-              "frac": 0.284
+              "frac": 0.2782
             },
             {
               "partition": "[7, 2]",
               "dim": 27,
-              "frac": 0.2518
+              "frac": 0.2467
             },
             {
               "partition": "[9]",
               "dim": 1,
-              "frac": 0.2294
+              "frac": 0.2246
             },
             {
               "partition": "[6, 3]",
               "dim": 48,
-              "frac": 0.1639
+              "frac": 0.1605
             }
           ]
         }

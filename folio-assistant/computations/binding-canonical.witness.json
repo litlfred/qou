@@ -1,15 +1,15 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-03T20:14:40.070820+00:00",
-  "commitSha": "2a85010aa5dc25fe0c803e67a672c1cfd909f8a7",
+  "computedAt": "2026-06-14T23:42:35.465479+00:00",
+  "commitSha": "96c4de9c94ef659a11c87efc0293c598271531ad",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 30,
+  "durationMs": 26,
   "computation": "binding-canonical",
   "scriptFile": "binding_canonical.py",
   "scriptHash": "6c4c33f86c09",
-  "scriptCommitSha": "8ffc972b480f56b61a9b2a3773f65cdcb43df92a",
+  "scriptCommitSha": "09f3725ed2ef08b6f7c7a193235fde0181ce750e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -19,16 +19,14 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "pyhecke_native": "0.9.0"
   },
   "description": "Atom binding via the canonical Jones-Markov trace (Direction 1 of validity audit): matches the prop's explicit-values table tr_M(σ_0)=z, tr_M(σ_0σ_1)=z², tr_M(σ_0σ_1σ_0)=hz²+z. Replaces the Plancherel-weighted trace used in binding_3A and atom_markov_trace. Binding = Q_β(n)·(tr_M_free − tr_M_atom) [SIGNED categorical difference; the double-modulus |·|−|·| was a non-archimedean misuse] with Q_β(n) = 0.78233341 MeV (free-neutron β-decay Q-value, CAL-3 calibration input — NOT the canonical E_0 = m_e/(q_0(q_0-1)) ≈ 4.186 MeV). DIAGNOSTIC ONLY: predicted B values are 5–40× smaller than AME because Q_β is the wrong energy scale; the primary canonical mass-prediction pipeline is canonical-mass-table-extended.witness.json. This witness is retained for the Direction 1 validity audit of the Jones-Markov trace itself.",
   "auditOnly": "docs/audits/categorical-vs-fitted-q-decay-ba.md",
   "parameters": {
-    "q0": 1.1099785827513808,
+    "q0": 1.1099785955573347,
     "Q_beta_n_MeV": 0.7823334100000222
   },
   "data": {
@@ -38,64 +36,64 @@
         "Z": 1,
         "N": 1,
         "A": 2,
-        "tr_M_atom": "0.3883572099845971",
-        "tr_M_free": "0.9835260324047488",
+        "tr_M_atom": "0.3883572575106486",
+        "tr_M_free": "0.9835261819554801",
         "Q_beta_n_MeV": 0.7823334100000222,
-        "B_MeV": 0.46562045436965493,
+        "B_MeV": 0.4656205341869706,
         "n_atom_terms": 32,
         "n_free_terms": 16,
         "use_closed_form": false,
         "atom": "D",
         "B_AME_MeV": 2.224566,
-        "delta_m_over_m_pct": 0.09373323409202804
+        "delta_m_over_m_pct": 0.09373322983860749
       },
       {
         "status": "solved",
         "Z": 1,
         "N": 2,
         "A": 3,
-        "tr_M_atom": "0.10407107578806137",
-        "tr_M_free": "0.9080239155992136",
+        "tr_M_atom": "0.10407108773543419",
+        "tr_M_free": "0.9080241198356662",
         "Q_beta_n_MeV": 0.7823334100000222,
-        "B_MeV": 0.6289591666486603,
+        "B_MeV": 0.6289593170828318,
         "n_atom_terms": 256,
         "n_free_terms": 64,
         "use_closed_form": false,
         "atom": "T",
         "B_AME_MeV": 8.481798,
-        "delta_m_over_m_pct": 0.27898228855807916
+        "delta_m_over_m_pct": 0.27898228321371005
       },
       {
         "status": "solved",
         "Z": 2,
         "N": 1,
         "A": 3,
-        "tr_M_atom": "0.20657847010037073",
-        "tr_M_free": "1.0477563253549802",
+        "tr_M_atom": "0.2065785116771369",
+        "tr_M_free": "1.0477565676412999",
         "Q_beta_n_MeV": 0.7823334100000222,
-        "B_MeV": 0.6580815399178437,
+        "B_MeV": 0.6580816969396331,
         "n_atom_terms": 128,
         "n_free_terms": 64,
         "use_closed_form": false,
         "atom": "3He",
         "B_AME_MeV": 7.718043,
-        "delta_m_over_m_pct": 0.25081429111986425
+        "delta_m_over_m_pct": 0.25081428554146146
       },
       {
         "status": "solved",
         "Z": 2,
         "N": 2,
         "A": 4,
-        "tr_M_atom": "0.05535842534982198",
-        "tr_M_free": "0.9673234564178275",
+        "tr_M_atom": "0.055358436072016425",
+        "tr_M_free": "0.9673237505919251",
         "Q_beta_n_MeV": 0.7823334100000222,
-        "B_MeV": 0.7134607125562089,
+        "B_MeV": 0.7134609343101029,
         "n_atom_terms": 1024,
         "n_free_terms": 256,
         "use_closed_form": false,
         "atom": "4He",
         "B_AME_MeV": 28.295673,
-        "delta_m_over_m_pct": 0.734920409428728
+        "delta_m_over_m_pct": 0.734920403520157
       }
     ]
   }
