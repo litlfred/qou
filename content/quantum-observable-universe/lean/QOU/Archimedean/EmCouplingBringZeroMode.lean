@@ -95,13 +95,10 @@ theorem bring_group_homology_ratio_exact :
     `predicted-spectra/bloch-wigner-mathlib-filler.lean`
     (`noncomputable def BlochWigner_unit_circle (θ : ℝ) : ℝ := Cl_2 θ`).
 
-    Declared here as an `axiom` for §3b-cond strengthening of the
-    `BringZeroModeBlochClass` field below.  Closing this axiom to a
-    direct namespace import is the Lake-tree wire-up Phase 1
-    follow-up (`content/quantum-observable-universe/lean/QOU/...`);
-    until that lands, the axiom mirrors the filler's signature
-    exactly. -/
--- axiom removed in favor of import QOU.Archimedean.BlochWignerUnitCircle
+    Previously declared here as an `axiom` for §3b-cond strengthening
+    of the `BringZeroModeBlochClass` field below; the axiom was removed
+    in favour of `import QOU.Archimedean.BlochWignerUnitCircle`, so this
+    is now a plain (non-doc) comment with no declaration to attach to. -/
 
 /-- Bloch-Wigner identification of the Bring zero-mode contribution,
     packaged as a typeclass. A concrete instance asserts the existence
