@@ -120,7 +120,50 @@ Codified as the **no-shadowing-stubs** directive in CLAUDE.md §0a. Deleting the
 formalisation status); the 19 NEEDED placeholders are the genuine integrity gap.
 
 **Real drain targets — the independent-6** (genuine vacuity in real files, not
-stubs): `beta-decay-skein.lean:242`, `emergence-to-quantum-flat.lean:57`,
-`ccg_cosimplicial_identities.lean:47`, `MostowRigidity.lean:153`,
-`ccg_crossed_module_structure.lean:46`, `geom_yekutieli_alignment.lean:85`.
-Per-file classification + honest fixes in progress.
+stubs). Per-file classification + status:
+
+| # | File | Decl | Verdict | Status |
+|---|------|------|---------|--------|
+| 7 | `beta-decay-skein.lean:242` | `beta_decay_locality` | recipe-1 restructure | deferred (follow-up) |
+| 8 | `emergence-to-quantum-flat.lean:57` | `emergence_to_quantum_flat` | recipe-1 genuine proof | **DRAINED** (commit `e9b4fe72`) |
+| 9 | `ccg_cosimplicial_identities.lean:47` | `ccg_cosimplicial_identities` | recipe-1 restructure | deferred (follow-up) |
+| 10 | `MostowRigidity.lean:153` | `mass_rigidity_of_mostow` | false positive | no change |
+| 11 | `ccg_crossed_module_structure.lean:46` | `ccg_crossed_module_structure` | recipe-1 restructure | deferred (follow-up) |
+| 12 | `geom_yekutieli_alignment.lean:85` | `geom_yekutieli_per_block_alignment` | recipe-2 §3b-cond (non-degenerate restructure) | deferred — **reclassified**, see below |
+
+**#8 `emergence_to_quantum_flat` — DRAINED (recipe-1).** The conclusion-field
+`instanton : anti_self_dual = 0` was replaced with two *hypothesis* fields —
+`quantum_flat_anti : anti_self_dual = b_anti_self_dual` (F = B on the
+anti-self-dual component) and `simplicity : b_anti_self_dual = 0` (B self-dual) —
+and the theorem now *derives* `anti_self_dual = 0` by composition
+(`quantum_flat_anti.trans simplicity`). Faithful to the docstring intent. Theorem
+signatures unchanged. Also fixed a latent missing `import Mathlib.Tactic.Linarith`
+(the pre-existing `self_dual_eq_b_field` used `linarith` without the import — never
+caught because content-block siblings aren't in the lib compile target). Verified
+`lean`-direct exit 0, sorry-free.
+
+**#12 `geom_yekutieli_per_block_alignment` — RECLASSIFIED (not a quick fix).** On
+inspection this is a §3b-cond *conditional-class* with genuinely conjectural
+content (`conj:geom-yekutieli-alignment`, `conj:hyperbolic-volume-transcendence`).
+Its projected fields `claim_iv_holonomy_equals_trM` / `claim_v_mass_factor_per_block`
+are **mass-formula-adjacent** (Step 9–11 of the canonical chain; the
+`vol_density_borromean` per-block/global discrepancy is in its own docstring,
+cross-ref `docs/audits/2026-06-01-vol-density-perblock-wiring-fix.md`). Making it
+non-degenerate per §3b-cond item 5 (class carries *sub-hypotheses*, theorem
+*derives*) is a real restructure that triggers the **mass-binding appendix sync**
+rule and may need owner sign-off. Deferred to a follow-up drain, not rushed into
+the detector PR.
+
+**Independent-6 follow-up scope** (separate branch): #7, #9, #11 recipe-1
+restructures + #12 §3b-cond restructure; plus reclassify the 25 MISMATCH (some
+likely deletable — the manifest checked the full decl-path, not the resolver's
+shorter-prefix walk) and the 19 NEEDED genuine placeholders (`theorem → conjecture`
+demotions are claim changes — owner sign-off, not auto-commit).
+
+**Compute analogue (option 3, separate branch).** The compute-side sibling of this
+audit — Rust + Python "vacuous test / faked-witness" anti-patterns — is written up
+in `docs/audits/2026-06-14-compute-vacuity-analogue.md`: test hygiene is strong
+(0 empty tests), the systemic finding is 153 tautological `add_assertion(computed=L,
+expected=L)` witness calls (146 benign status-flags, ~7 real, strongest the two
+`c_3` `-2==-2` probes). Proposes a `compute-vacuity-audit` skill + criteria
+mirroring this Lean detector.
