@@ -52,7 +52,7 @@ structure QuantumFlatnessEmergence where
 /-- Under the simplicity constraint, quantum flatness implies
     the instanton equation (F⁻ = 0 follows from F = B). -/
 -- Ref: [baez2004], [manuscript] §1
-theorem instanton_of_quantum_flat
+theorem emergence_to_quantum_flat
     (qfe : QuantumFlatnessEmergence) :
     qfe.anti_self_dual = 0 :=
   qfe.instanton

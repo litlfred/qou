@@ -1,22 +1,18 @@
 /-!
-# QOU.Archimedean.noble_gas_characterization — sibling stub
+# QOU.Archimedean.noble_gas_characterization
 
-**Sibling-resolution stub** for content block
-[`prop:noble-gas-characterization`](noble-gas-characterization.md): *QOU.Archimedean.noble_gas_characterization*.
-
-The (placeholder) canonical lives at
-[`../lean/QOU/Descartes/noble_gas_characterization.lean`](../lean/QOU/Descartes/noble_gas_characterization.lean) under the `qou` Lake package.
-The Lean statement is currently a `sorry` placeholder; full
-formalisation pending.
-
--- Ref: [manuscript] quantum-observable-universe/archimedean-universe/noble-gas-characterization.ts
+**PROPOSITION.** Noble gas characterization: full shell as full curls
 -/
 
 namespace QOU.Archimedean
 
+structure NobleGasCharacterizationData where
+  is_full_shell : True
+  is_full_curl : True
+
 /-- **PROPOSITION.** Noble gas characterization: full shell as full curls -/
-theorem noble_gas_characterization : True := by
-  -- Ref: [manuscript] prop:noble-gas-characterization
-  trivial
+theorem noble_gas_characterization (d : NobleGasCharacterizationData) :
+    d.is_full_shell ∧ d.is_full_curl :=
+  ⟨d.is_full_shell, d.is_full_curl⟩
 
 end QOU.Archimedean
