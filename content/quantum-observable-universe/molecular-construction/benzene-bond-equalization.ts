@@ -8,7 +8,7 @@ export default remark({
   title: "Bond equalization from $D_6$ symmetry of $T(2,6)$",
   interprets: "prop:benzene-threading-emergence",
   uses: ["def:benzene-molecular-braid"],
-  tags: ["benzene", "bond-equalization", "D6", "aromatic", "bond-order"],,
+  tags: ["benzene", "bond-equalization", "D6", "aromatic", "bond-order"],
   computation: {
     engine: "python",
     witness: [

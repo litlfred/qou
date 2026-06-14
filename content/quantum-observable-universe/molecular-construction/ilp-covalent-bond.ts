@@ -17,7 +17,7 @@ export default proposition({
     "knot-operator",
     "molecular",
     "zero-parameters",
-  ],,
+  ],
   computation: {
     engine: "python",
     witness: [

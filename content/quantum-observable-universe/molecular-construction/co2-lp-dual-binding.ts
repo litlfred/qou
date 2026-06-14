@@ -11,7 +11,7 @@ export default proposition({
     "def:co2-molecular-braid",
     "prop:co-lp-dual-binding",
   ],
-  tags: ["CO2", "LP-dual", "linear", "geometry", "double-bond"],,
+  tags: ["CO2", "LP-dual", "linear", "geometry", "double-bond"],
   computation: {
     engine: "python",
     witness: [

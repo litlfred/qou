@@ -17,7 +17,7 @@ export default definition({
     "linear",
     "triatomic",
     "molecular-braid",
-  ],,
+  ],
   computation: {
     engine: "python",
     witness: [

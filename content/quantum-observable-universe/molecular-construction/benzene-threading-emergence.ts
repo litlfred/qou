@@ -18,7 +18,7 @@ export default proposition({
     "LP-dual",
     "aromatic",
     "emergence",
-  ],,
+  ],
   computation: {
     engine: "python",
     witness: [
