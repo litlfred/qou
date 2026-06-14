@@ -56,7 +56,7 @@ absorbed by — the* $\Delta S(n - p)$ *substrate identity below
 which derives the proton–neutron Skein offset from
 $\{m_e, q_0, \mathrm{Vol}(\mathcal{B}_3)\}$ alone.*
 
-## Status
+## Discussion
 
 This conjecture has two parts:
 

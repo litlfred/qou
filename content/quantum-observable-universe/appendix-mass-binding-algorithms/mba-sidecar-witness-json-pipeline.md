@@ -98,19 +98,6 @@ w.add_assertion(
 )
 w.save()
 ```
-
-### Migration status
-
-Not every `*.witness.json` currently under
-`folio-assistant/computations/` conforms to the `WitnessBuilder`
-shape above — legacy scripts emitted hand-shaped JSON
-(e.g. `name` / `timestamp` / `git_sha`) before `WitnessBuilder`
-existed. The migration is tracked under the "P30 wrap-legacy"
-discipline noted in [`compute-audit.md`](../../../.claude/skills/local/compute-audit.md);
-the contract above applies in full to **WitnessBuilder-backed
-witnesses** and is the target shape for the migration of legacy
-witnesses.
-
 ### Witness contract (meta)
 
 *Every `*.witness.json` is audited by:

@@ -119,7 +119,7 @@ The $E_\infty^{p, >0}(n) = 0$ collapse condition stated above is
 precisely operator-level (page collapse on the associated graded
 algebra), and is consistent with this reading.
 
-## Status
+## Discussion
 
 **Conjectural** under CLAUDE.md §3b. The supporting evidence is:
 

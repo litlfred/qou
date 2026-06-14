@@ -23,4 +23,10 @@ export default conjecture({
     "ehrlich2012",
     "berarducci-mantova2018",
   ],
+  authorNotes: [
+    {
+      kind: "status",
+      body: "**Open and speculative.** This is the most strongly\nconjectural of the appendix's conjectures: it assumes a\ngeometric-scheme picture of $X$ that the main paper does not\nrequire, and interprets the substrate parameter in a way that\ngoes beyond the main-paper physics. Included here to record the\nnatural connection between the paper's points-and-topology\nframework and the surreal lift.",
+    },
+  ],
 });

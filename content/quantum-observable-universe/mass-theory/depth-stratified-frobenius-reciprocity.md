@@ -239,7 +239,7 @@ $(m_e, q_0, Q_\beta)$ + the three distinguished knots
 $\{K_1^*, K_2^*, K_3^* = 4_1\}$ (with $K_3^* = 4_1$ empirically
 resolved per ).
 
-### Status
+### Discussion
 
 **Conjecture, with structural framing solid + two empirical
 falsifications recorded.** Open: identification of $K_1^*, K_2^*$;

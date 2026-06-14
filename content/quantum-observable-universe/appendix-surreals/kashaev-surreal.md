@@ -100,7 +100,7 @@ analytic statement (it asserts an asymptotic relationship
 between the algebraic and the geometric). The surreal lift may
 just relocate the difficulty rather than dissolve it.
 
-## Status
+## Discussion
 
 **Open** — the conjecture is a reformulation, not a proof. Its
 value is in *separating* the algebraic content (which is

@@ -95,26 +95,6 @@ See [Table 2](#tbl:qou-infra-discharges-goncharov-zeta5-table2-data).
 
 This is **a substantive but partial result**: it would close one
 specific cyclotomic case, not the general statement.
-
-### Status and roadmap
-
-**Open.** Both avenues require non-trivial new computation:
-
-- Avenue A: need to enumerate Jones-coincident pairs in the
-  Bring-embeddable class. The recursive atom-knot atlas already
-  has the braid words; the Hecke NF reduction would highlight
-  pairs with identical NF tail but different head. The
-  Anstee–Przytycki–Rolfsen 1989 construction provides explicit
-  examples to start from.
-- Avenue B: need to express the Goncharov 22-term relation at
-  $\zeta_5$ as a Markov trace of an explicit Hecke element. The
-  key technical step is identifying the right $H_n(q)$ and the
-  The right braid word.
-
-Both are concrete projects of approximately 1–2 weeks of focused
-work for a contributor familiar with both QOU's Hecke / NF
-infrastructure and Goncharov's depth-3 polylogarithm machinery.
-
 ### Cross-references
 
 - Keystone: [`conj:gb-depth-period-correspondence`](#conj:gb-depth-period-correspondence) ("B1")

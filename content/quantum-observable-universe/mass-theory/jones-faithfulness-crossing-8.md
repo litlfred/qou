@@ -85,13 +85,6 @@ If such a pair were found:
  fail.
 - The framework would still be valid for the *coloured* version of
  the Jones-faithfulness implication.
-
-### Status
-
-**Theorem-level at crossing $\leq 10$. Conway-KT mutant pair (crossing
-11) is the unique known Jones-coincident pair satisfying Vol-equality
-via Ruberman. Crossing $\geq 12$ open.**
-
 ### Cross-references
 
 - Original open question: [`rem:knot-exhaustiveness`](#rem:knot-exhaustiveness) Q3

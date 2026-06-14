@@ -198,4 +198,48 @@ theorem nucleus_objAt_optimum_eq_zero :
   unfold SDPPrimal.objAt nucleusEmptySDP
   simp [nucleus_optimum_is_zero]
 
+/-! ## Active-empty closure route (matches the empirical-witness language)
+
+`nucleus_uniqueness_closed` above closes uniqueness through the
+dual-slack-PosDef interior argument.  The R5-full witnesses report the
+result in the *active-set* language ("all Wedderburn-block min-eigs > 0
+⟹ active set empty"), so we also expose the closure through the
+active-empty theorem
+`real_strict_complementarity_unique_of_active_empty_and_cost_posDef`.
+For the empty-constraint SDP (`ι = Empty`) the active set is empty by
+construction and the cost is the PosDef identity, so this route is also
+sorry-free and axiom-free — and its hypotheses match the R5-full
+witness's reported `active = ∅` certificate directly (e.g. ³He at
+`n = 9`: the three Wedderburn-block min-eigs 1.87, 0.53, 0.53 are all
+> 0).  This is the first BraidKnot-layer consumer of the active-empty
+closure (previously only `SDPRealUniqueness` referenced it). -/
+
+/-- **Trivial real strict-complementarity pair** for the empty SDP:
+    empty active set, optimum `Φ⋆ = 0`.  (`ι = Empty`, so the
+    active/inactive dual obligations are discharged by `Empty.elim`.) -/
+def nucleusTrivialRealStrictCompPair :
+    RealStrictComplementarityPair (nucleusEmptySDP n) where
+  toRealStrongDualityPair := nucleusRealStrongDualityPair n
+  active := ∅
+  active_dual_pos := fun i => i.elim
+  inactive_dual_zero := fun i => i.elim
+
+/-- **Sorry-free, axiom-free uniqueness via the active-empty route.**
+    Discharged by
+    `real_strict_complementarity_unique_of_active_empty_and_cost_posDef`
+    (active set empty + identity cost PosDef).  Complements
+    `nucleus_uniqueness_closed` (dual-slack-PosDef route) with the
+    argument whose hypotheses match the R5-full witness's `active = ∅`
+    finding directly. -/
+theorem nucleus_uniqueness_closed_via_active_empty
+    {Φ' : Matrix (Fin (heckeDim n)) (Fin (heckeDim n)) ℝ}
+    (h_feas : (nucleusEmptySDP n).IsFeasible Φ')
+    (h_obj : (nucleusEmptySDP n).objAt Φ' =
+             (nucleusEmptySDP n).objAt (nucleusTrivialRealStrictCompPair n).Φstar) :
+    Φ' = (nucleusTrivialRealStrictCompPair n).Φstar :=
+  real_strict_complementarity_unique_of_active_empty_and_cost_posDef
+    (nucleusTrivialRealStrictCompPair n) rfl
+    (Matrix.PosDef.one : ((nucleusEmptySDP n).cost).PosDef)
+    h_feas h_obj
+
 end QOU.BraidKnot

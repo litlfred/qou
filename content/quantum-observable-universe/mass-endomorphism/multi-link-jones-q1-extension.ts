@@ -26,4 +26,10 @@ export default remark({
     script: "folio-assistant/computations/probe_q_beta_c5_c6_multilink.py",
     status: "experimental",
   },
+  authorNotes: [
+    {
+      kind: "status",
+      body: "**Open R&D recorded.** The Lean class `MultiLinkJonesAtOne` is the\nhook — once an empirical or theoretical match is found, a new\ninstance plugs in the right $(c_5, c_6)$ values and the\nprecision-ladder extension auto-picks-up. Until then the default\ninstance carries the probe's exploratory placeholders with the\nmismatch explicitly documented.",
+    },
+  ],
 });

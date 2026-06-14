@@ -146,7 +146,7 @@ at the proton-pinned $q_0$:
 > $\tau_{\mathrm{SW}}$ and reads the from-scratch as a different
 > braid's $\tau_M$, not a competing form.
 
-## Status
+## Discussion
 
 This proposition is **proved** — a structural theorem about the
 representation theory of the Hecke algebra, with no fitting and no

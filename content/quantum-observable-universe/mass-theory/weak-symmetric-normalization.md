@@ -146,24 +146,6 @@ direction; concrete exponents are determined by the LP/SDP solve
 on the EW sector + PSLQ uniqueness on the
 $\{[4]_q, [6]_q, [8]_q, [2]_q, \mathrm{tr}_{\rm pure}\}$ basis,
 **not** the Plancherel basis.
-
-### Status
-
-**Open** as a formal proposition. The closed-form expression
-$\mathcal{N}_{\rm sym}(q) = q^6 \cdot [3]_{q^2} / 3 \in R$ is
-straightforwardly derivable once
-[`conj:weak-spectral-completeness`](#conj:weak-spectral-completeness)
-is in place; the open inputs are:
-
-1. **Discharge** the host-distinctness drop (this audit, §1) — done.
-2. **Verify** the Frobenius-trace normalisation $\tau(e_X^\pm) =
-   1/[2]_q$ is uniform across $X \in \{W, Z, H\}$ (follows
-   mechanically from the projector formulas and Hecke relations,
-   but should be authored as a small lemma).
-3. **Connect** to the constrained-PSLQ ansatz: confirm that
-   $\mathcal{N}_{\rm sym}(q)$ + the EW $[2k]_q$ basis suffices to
-   reach CODATA-$G_F$ precision for $N_v$.
-
 ### Audit-flag impact
 
 If $\mathcal{N}_{\rm sym}(q)$ is the right structural input,

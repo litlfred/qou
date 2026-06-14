@@ -65,24 +65,6 @@ representative of degree $< n$ in $z$ — so $\pi_n^{(z)}$ acts as a
 from an ad-hoc cutoff to a structural quotient: the truncation depth
 $n$ becomes a parameter labelling cyclotomic quotients, parallel to
 how $N$ labels the $N$-th colored Jones in the $q$-Habiro picture.
-
-## Status of $\Phi_q$ in the $z$-Habiro ring
-
-**Caveat.** The analytic dilogarithm $\Phi_q(z)$ itself is **not** an
-element of $\widehat{\mathbb{Z}[q^{\pm 1}][z]}_z$ — it is the inverse
-of an element whose image in every cyclotomic quotient is zero (the
-limit of $P_n$ has zero image at every level). The same phenomenon
-holds in the $q$-Habiro picture: $1/(q;q)_\infty$ is not in
-$\widehat{\mathbb{Z}[q]}$, but partial sums of cyclotomic expansions
-of quantum invariants are.
-
-What is conjectured to live in $\widehat{\mathbb{Z}[q^{\pm 1}][z]}_z$
-is the **brane-tower element** — a single element collecting the
-finite-rank brane-tower partial sums $\Phi_q^{(N)}(\beta) = \sum_{i=1}^{N} \Phi_q(z_i)$
-across all $N$ as a Cauchy sequence in the $z$-cyclotomic topology.
-See [brane tower in $z$-Habiro](#conj:brane-tower-z-habiro) for the
-precise statement.
-
 ## Relation to existing blocks
 
 - The [algebraic quantum volume](#def:algebraic-quantum-volume)
@@ -96,7 +78,7 @@ precise statement.
   brane-tower-coexistence (in $z$) data simultaneously. Construction
   of the bicompletion is open.
 
-## Status
+## Discussion
 
 This definition is **proposed structure**, not established. The
 parallel with the $q$-Habiro ring is formal and the construction of

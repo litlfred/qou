@@ -139,7 +139,7 @@ endomorphism algebra. $\square$
    is the precise content of
    `conj:magic-shell-stabilization`.
 
-## Status
+## Discussion
 
 The proposition is **conjectural** at the falsifiable-prediction
 level (predictions 1–3 are testable but not yet verified

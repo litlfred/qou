@@ -321,6 +321,37 @@ kernel-status row. Audit:
   a_3) is complete; turning it into `c_k` VALUES needs `S` + the active
   set `Λ`, both deferred. Do not attempt `S` without owner reversal.
 
+## 2026-06-13 — a_1 carrier reconciliation + cyclotomic bar-stability Lean (PR #2253)
+
+Follow-up to #2240, resolving the `/coordinate`-surfaced question vs #2106.
+
+- **a_1 has two factorizations of the SAME number** (`a_1 = −c_3 ≈ 2.0694`):
+  #2240 mode/Wedderburn basis `a_1 = κ_(2,1)·S` (`κ_(2,1)=(q−1)³(q+1)/q²` pure-q
+  bar-ODD fibre carrier; `S = Q_β/E₀` archimedean scalar) vs #2106 Hoefsmit
+  level basis `a_1 = √2·Φ₂` (`Φ₂ = 1.46324616887618` numeric synthesis target).
+  `qbeta_a1_carrier_reconciliation.py`: `S = (√2·Φ₂)/κ_(2,1)(q_0) = 908.36/886.79`
+  reproduces #2240 exactly; `|κ_(2,1)(q_0)|/|√2·Φ₂| = 1.1e-3 = 1/S`.
+- **#2106's R_λ "honest negative" RESOLVED.** #2106's per-mode candidate
+  `−(q−1)μ_λ` (= ∓κ_λ) was rejected by a magnitude gate (`|κ_λ| ~ 10⁻³` vs
+  `2.069`, fails <1%) — that rejected the SCALE-1 carrier; supplying `S ≈ 908`
+  recovers the magnitude. `κ_(2,1)` IS the bar-ODD carrier — `S` was the missing
+  piece (owner-declined to derive, see #2240 entry). Mode basis = clean
+  fibre/archimedean cut; `√2·Φ₂` is the archimedean a_1 VALUE.
+- **Only (2,1) is bar-ODD among λ⊢3** ((3),(1³) bar-neither); #2106's "three
+  bar-MIXED candidates" are the heat-trace R_λ family (a different μ_λ).
+- **Cyclotomic bar-stability NOW LEAN-FORMALIZED** (corrects the #2240
+  "formalization follow-up — sandbox elan firewalled" note above): `Φ_d`
+  self-reciprocal `Φ_d(1/q)·q^{φ(d)} = Φ_d(q)` proved sorry-free as
+  `cyclotomic_{two,three,six}_bar_stable` (d∈{2,3,6}; `Φ_6` = the ζ₆ carrier) in
+  the recursion `.lean`. `esymm_bar_parity` (parity-alternation) was likewise
+  already Lean'd in #2240. Verified FOREGROUND via direct-`lean` + `LEAN_PATH`
+  against the restored `lake-cache/qou-v4-24-0` oleans (the lake dep-wipe bypass,
+  `lean-environment-setup.md §322`) — the elan firewall no longer blocks Lean
+  verification in-sandbox.
+- **Coordination:** intent posted on #2106 (reconciliation framing) + #2127
+  (Q_β/c_k domain); owner `beans`-CLI ask acked (not on `main` yet — will adopt
+  when the skill updates land).
+
 ## Cross-refs
 
 - CLAUDE.md §Precision goals (L1 / L2 / Subgoal-1 / Subgoal-2)

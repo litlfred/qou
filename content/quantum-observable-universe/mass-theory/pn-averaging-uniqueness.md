@@ -87,7 +87,7 @@ the Bring weighted convention requires (a) extending the closed
 form to accept quark-mass inputs, and (b) defining the canonical
 color-sheet $\leftrightarrow$ quark-flavor mapping.
 
-## Status
+## Lean formalization
 
 This proposition is **proved conditional on the
 `ColorFlavorCompatible` class instance**.  No fitting, no

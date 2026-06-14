@@ -14,11 +14,6 @@ field and at the figure-8 / 7 torus-knot / Borromean / Whitehead
 rows; conditionally theorem-level at depth 3 over $\mathbb{Q}(\zeta_5)$
 modulo a single specific real number; conjectural at depth $\ge$ 3
 over arbitrary $F$ via Beilinson/Goncharov.**
-
-### Status table
-
-See [Table 1](#tbl:b1-current-status-table1-data).
-
 ### Concrete sharpest open content
 
 After eleven rounds, B1's open content reduces to:

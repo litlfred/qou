@@ -24,7 +24,7 @@ $$
 *matching the CODATA Higgs vacuum-expectation value
 $v_{\mathrm{CODATA}} = 246.22$ GeV to within $-0.58\%$.*
 
-## Status
+## Discussion
 
 **Conditional conjecture.**  Conditional on the two substrate axioms
 [`conj:n-v-bring-action`](#conj:n-v-bring-action) and

@@ -110,22 +110,3 @@ encodes the chain at three levels:
 
 The class-axiomatization pattern follows CLAUDE.md §3b's conditional-
 class rule for results downstream of an unproved structural input.
-
-## Status
-
-The classical-limit Jones evaluation $J_{\text{Hopf}}(1) = -2$ is
-elementary; the 2-strand sub-braid extraction at order 3 is the
-substantive open step. Empirical observation (112$\times$ tightening),
-Markov cyclicity, and KL decategorification give strong support, but a
-fully-formalised proof requires:
-
-- Per-crossing Hecke-quadratic expansion in $\hbar_q$ (mechanizable
-  via existing symbolic-computation infrastructure).
-- Sub-braid combinatorial extraction at order 3 (combinatorial
-  formalisation of "choose 2 strands from $\beta$ and Markov-close").
-- Cross-Wedderburn-block coupling identification (categorical proof
-  that the Hopf-link factor survives the $V_{(3)} \oplus V_{(2,1)}
-  \oplus V_{(1,1,1)}$ decomposition at the third order).
-
-These three steps form a concrete path to closing the open Track-C
-formalisation gap, beyond the present empirical-observation status.

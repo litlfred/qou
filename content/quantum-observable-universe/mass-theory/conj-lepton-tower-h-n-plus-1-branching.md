@@ -143,7 +143,7 @@ The triple $(2m-1, m, 2m)$ is **symmetric in $h = q - q^{-1}$** at every step:
 
 This pattern is precisely what the lepton's amphichirality should produce — the upper and lower indices are reflections of each other across the middle, consistent with the **knot-operator = symmetry equivalence** in the owner's  directive.
 
-## Lean status
+## Lean formalization
 
 The unifying formula's algebraic content is **Lean-proved** in two places:
 

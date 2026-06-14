@@ -20,40 +20,6 @@ the chiral channel the framework otherwise projects away — and it **vanishes**
 for the bar-symmetric (self-dual, palindromic) lone pairs of $\mathrm{H_2O}$,
 which is why $\mathrm{H_2O}$'s angle is the clean $q^2$ prediction with no
 residual.*
-
-## Status of the pieces
-
-What is **established** (not conjectural):
-
-- The chiral channel is exactly the $c_\lambda=0$ block $V_{(2,1)}$
-  ([`prop:chirality-residue-mass-term`](#prop:chirality-residue-mass-term):
-  $c_\lambda(3)=+3$, $c_\lambda(2,1)=0$, $c_\lambda(1,1,1)=-3$).
-- The residue is the braid holonomy around the singular fibre — the q-deformed
-  Chern–Simons holonomy of a Wilson loop in $S^3$
-  ([`rem:residue-as-braid-holonomy`](#rem:residue-as-braid-holonomy)).
-- The split is the bar-involution ([`def:bar-involution`](#def:bar-involution)):
-  the clean second-row angles are the bar-symmetric backbone, the H$_2$S residual
-  the bar-anti-symmetric ($P_{\mathrm{skew}}$) part. **Parity is established**:
-  the residual is odd in $h$ (scale $h z^2 \approx 3^\circ$, $h z^3 \approx
-  1.5^\circ$, observed $2.1^\circ$ between).
-
-The **conjectural content** is the identification itself — that the
-molecular-angle opening $\Delta\theta_{\mathrm{H_2S}}$ *is* this S$^3$ holonomy
-phase, and that the monodromy/Reshetikhin–Turaev evaluation at $\zeta_\ell$
-returns the observed $\approx 2.1^\circ$.
-
-> **Caveat (the exact form is open).** Three a-priori distinct involutions are
-> in play and must not be conflated: the **palindromic reversal** (which fixes
-> the orbital $\ell = \tfrac12$ defect, so $s$ self-dual / $p$ chiral), the
-> **bar-involution** $\sigma_i \mapsto \sigma_i^{-1}$ (the $P_{\mathrm{avg}}$ /
-> $P_{\mathrm{skew}}$ even–odd split), and the **longest-element** $w \mapsto
-> w_0 w$ (the self-duality of `palindromicity-orbital-type`). The naive
-> $P_{\mathrm{skew}}$ of the length-3 chiral word on $V_{(2,1)}$ in fact
-> *vanishes*, so $\Delta\theta$ is **not** the leading bar-skew matrix part;
-> the parity argument ($\Delta\theta$ odd in $h$, bracketed by $hz^2/hz^3$) is
-> observational. Pinning the exact form requires the monodromy phase at
-> $\zeta_\ell$ with the correct involution — this is the open content.
-
 ## Concrete realisation — the Bring $1/\sqrt5$ residual-mixing form
 
 A predictive realisation (no fit): a third-row (pure-$p$) atom retains a small
@@ -85,9 +51,11 @@ The explicit geometry of this $\sqrt5$ is the provable scaffold
 [`prop:bring-trefoil-cinquefoil-channel`](../brings-surface/bring-trefoil-cinquefoil-channel.md):
 the chiral channel is the **trefoil** $T_{2,3}$ (Seifert genus $1$) and the
 $\zeta_5$ is the **cinquefoil** $T_{2,5}$ (genus $2$) — two distinct torus knots
-sharing Bring's $\Sigma_4$ (genus $4$) and linked by $\mathrm{Aut}(B) = S_5$, with
-the $\sqrt5$ supplied by the $\mathbb{Z}_5$-orbit quadratic Gauss sum
+sharing Bring's $\Sigma_4$ (genus $4$) and linked by $\mathrm{Aut}(B) = S_5$.
+
+> [!NOTE]
+> **The Quintic Within Brings:** It is critical to distinguish the global *Bring curve* (a genus-4 curve in $\mathbb{CP}^4$ whose $S_5$ characters fix the $2 \times 2$ Picard-Fuchs matrix and depth-2 recurrence for the mass tower) from the *hyperelliptic quintic* $\mathcal{X}_5 \colon y^2 = x^5 - 1$. The latter is a genus-2 curve **embedded within Bring's surface**. The chiral normalisation specifically relies on the $\mathbb{Z}_5$ automorphism of this embedded quintic.
+
+The $\sqrt5$ is supplied by the $\mathbb{Z}_5$-orbit quadratic Gauss sum
 $\bigl(\sum_k \zeta_5^{k^2}\bigr)^2 = 5$ carried by the first Lagrange resolvent
-$w_1$ that embeds the quintic. That scaffold is established; only the exact
-$\zeta_\ell$-residue normalisation returning precisely $1/\sqrt5$ remains the open
-content of this conjecture.
+$w_1$ that embeds the hyperelliptic quintic $\mathcal{X}_5$. That structural scaffold is established; evaluating the exact analytic Picard-Lefschetz monodromy of the $\zeta_5$-residue on the homology of $y^2 = x^5 - 1$ to formally return precisely $1/\sqrt5$ and the $+2.1^\circ$ phase remains the open content of this conjecture.

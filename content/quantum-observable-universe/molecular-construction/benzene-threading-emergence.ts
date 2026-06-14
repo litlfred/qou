@@ -18,9 +18,10 @@ export default proposition({
     "LP-dual",
     "aromatic",
     "emergence",
-  ],,
+  ],
   computation: {
     engine: "python",
+    script: "folio-assistant/computations/molecular_experimental_refs.py",
     witness: [
       "folio-assistant/computations/molecular-experimental-refs.witness.json"
     ],

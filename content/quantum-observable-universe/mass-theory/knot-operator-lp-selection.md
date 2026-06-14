@@ -145,25 +145,6 @@ The LP dual variables (shadow prices) $y^* \geq 0$ then identify
 the saturated demand channels — the EW-sector analog of the
 existing $\{e^-, L_+, L_-, \gamma\}$ active-set extraction for
 matter operators.
-
-### Status
-
-**Open** as a fully-formalized proposition. The LP/SDP
-infrastructure is already first-class
-([CLAUDE.md §LP/SDP duals](https://github.com/litlfred/qou/blob/main/CLAUDE.md))
-and witnesses for individual confinements are in place. To
-promote to `proposition`:
-
-1. **Discharge** the LP-feasibility $\leftrightarrow$ confinement-realisability
-   equivalence (currently asserted as part of [`prop:operator-selection-lp`](#prop:operator-selection-lp); requires
-   a categorical-physics statement linking the Frobenius-positive
-   cone to physical confinement).
-2. **Verify** that for every authored confinement (proton,
-   neutron, deuteron, ...) the LP/SDP solver returns an active
-   set matching the existing categorical-physics identification.
-3. **Lean formalization**: encode the LP duality statement as a
-   class hypothesis with the witness data as an instance proof.
-
 ### Audit-flag impact
 
 *Closing this proposition would close the methodological

@@ -140,26 +140,3 @@ identification with $\mathrm{Vol}(K) / \hbar_{q_0}^{2}$ via the
 volume conjecture is the τ-image step recorded by
 [`prop:topological-mass-formula`](#prop:topological-mass-formula).
 $\square$
-
-## Status and audit closure
-
-**Status: provable** in $\mathbb{Q}(q)$ from the upstream lemmas (mass
-formula, jet-tower-pair equality, algebraic-volume definition,
-Markov-trace factorization). The corresponding Lean stub
-[qou:QOU.Torsion.AlgebraicMassFormula](topological-mass-formula-algebraic.lean)
-states the identity as a `theorem` parametric on the substrate
-package.
-
-This block closes the **audit §4.B** wall risk for callers that
-need the mass-volume identity on the algebraic side: those callers
-must now route through
-[`prop:topological-mass-formula-algebraic`](#prop:topological-mass-formula-algebraic),
-not [`prop:topological-mass-formula`](#prop:topological-mass-formula).
-The two real-violation proofs identified by the **P0.1 sweep**
-([`docs/audits/-p0-1-wall-violation-sweep.md`](../../../docs/audits/-p0-1-wall-violation-sweep.md)) —
-[`local-substrate-q-proof.md`](../observations/local-substrate-q-proof.md)
-and
-[`skein-mass-relation-proof.md`](../observations/skein-mass-relation-proof.md) —
-are updated in this same workplan task to cite the algebraic
-version with the $\tau_{\mathrm{arch}}$-specialisation as the
-final numerical step.

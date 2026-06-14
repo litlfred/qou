@@ -32,4 +32,10 @@ export default proposition({
     "scaffolding",
     "categorical-derivation",
   ],
+  authorNotes: [
+    {
+      kind: "status",
+      body: "**Scaffolding.** The Lean structure + applyRecursion method form a\nworking recursion engine; the compute scaffold demonstrates two toy\nkernels (depth-1 geometric, depth-2 underdetermined-from-seeds-alone).\nThe categorical $F(q)$ construction remains the open keystone for the\n$1\\,\\mathrm{ppQ}$ target.",
+    },
+  ],
 });

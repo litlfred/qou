@@ -105,12 +105,3 @@ sympy.factor`, and reports the three closed forms above plus all
 $\varepsilon^k$ coefficients ($k = 0..12$) of the difference at
 $q = 1 + \varepsilon$. The witness data backs every Lean closed-form
 theorem in this module empirically.
-
-## Status
-
-**All three V_λ formally closed**, cyclotomic pattern documented,
-compute wired, lit pointers in place. The substantive next R&D step
-is to derive the Hoefsmit-matrix-expansion formula for V_(2,1)
-**from the matrix algebra directly** in Lean (currently the closed
-form is recorded as a verified rational identity, with the
-matrix-product derivation backed empirically by sympy in the probe).

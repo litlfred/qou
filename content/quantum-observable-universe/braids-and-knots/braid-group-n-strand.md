@@ -50,12 +50,3 @@ in the generic n-strand types).
 - Higher-$n$ `closureN` discharges: Borromean link at $n=3$,
   di-baryon at $n=6$, etc. (current $n \geq 3$ returns `Link.unknot`
   as a ansatz).
-
-## Status
-
-**Scaffolding only.** This block defines the n-strand types and
-classes; substantive theorems (specific closures, sub-braid
-extractions at higher $n$) plug in as separate per-$n$ blocks.
-
-`Braid2_writhe_eq` is **closed** by structural recursion mirroring
-the `toBraidWord` construction — no `sorry`s remain in this module.

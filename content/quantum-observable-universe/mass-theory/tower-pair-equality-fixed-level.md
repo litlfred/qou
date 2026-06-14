@@ -125,28 +125,3 @@ is bounded by
 $\le \Delta_{\max}\,\hbar_q^{2(N+1)} / (1 - \hbar_q^2)$ once the
 uniform $\Delta_{\max}$ bound is established (P3.4 in the workplan,
 still open).
-
-## Status
-
-**Status: provable** — the lemma's content is `prop:markov-pair-z2`
-plus pair commutativity
-([`lem:vhat-pair-commutation-trace`](#lem\:vhat-pair-commutation-trace))
-plus Markov-trace factorization
-([`thm:markov-trace-factorization`](#thm\:markov-trace-factorization)),
-all of which are themselves provable. The corresponding Lean stub
-[qou:QOU.BraidKnot.TowerPairEqualityFixedLevel](tower-pair-equality-fixed-level.lean)
-states the lemma in the abstract form `tr_M(prod over P_n) = z^2 * (sum
-of dilogs)` and reduces to those upstream lemmas.
-
-This block closes audit GAP 17b
-([line 114 of `derivation-audit-.md`](../../../docs/audits/derivation-audit-.md))
-and the corresponding ":refterm[Descent]{#descent} involution on pairs / pentagon
-sharpness" subconjecture: the level-$n$ pair formula is an exact
-equality. The empirical residual to CODATA at light atoms reflects
-incomplete tower truncation (level $\ge 1$ contributions), not a
-sharpness gap in the level-$n$ formula.
-
-The remaining open piece is the uniform $\Delta_{\max}$ bound for
-the truncation-error formula
-([`prop:jet-tower-convergence`](#prop\:jet-tower-convergence)),
-tracked as workplan task **P3.4**.

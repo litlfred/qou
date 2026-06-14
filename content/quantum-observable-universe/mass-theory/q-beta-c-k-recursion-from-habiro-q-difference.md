@@ -82,7 +82,34 @@ where $c_4 = -0.97157$ was a fit).
   (bar-ODD for odd $j$, bar-EVEN for even $j$), *independent of which
   modes are active*. This is the structural law behind the ladder's
   parity bookkeeping (bar-even seed $c_2 = -1$ driven by a bar-odd
-  $a_1 = -c_3$). Proof: $e_j(-x) = (-1)^j e_j(x)$ (`esymm_neg`).
+  $a_1 = -c_3$). Proof: $e_j(-x) = (-1)^j e_j(x)$ (`esymm_neg`). The corollaries
+  `esymm_bar_odd` / `esymm_bar_even` specialise the alternation to the explicit
+  forms $\overline{a_j} = -a_j$ for odd $j$ (the $\zeta$-carrying rungs $a_1, a_3$)
+  and $\overline{a_j} = a_j$ for even $j$ (the seed rung $c_2 = -1$).
+- The **cyclotomic bar-stability lemmas** `cyclotomic_two_bar_stable`,
+  `cyclotomic_three_bar_stable`, `cyclotomic_six_bar_stable` (sorry-free):
+  each cyclotomic factor $\Phi_d$ ($d \in \{2,3,6\}$, $\varphi(d) = 1,2,2$) is
+  self-reciprocal, $\Phi_d(1/q)\,q^{\varphi(d)} = \Phi_d(q)$, so divisibility by
+  $\Phi_d$ is invariant under the bar involution $q \mapsto q^{-1}$. This is the
+  formal backing for the period-3/$\zeta_6$ closure: because $\overline{\Phi_6}$
+  is a unit multiple of $\Phi_6$, the bar-odd projection of a single
+  $\zeta_6$-carrier still carries $\zeta_6$ (no cross-mode cancellation needed).
+- The **general prime case** `cyclotomic_prime_bar_stable` (sorry-free): for
+  *every* prime $p$, $\Phi_p(1/q)\,q^{p-1} = \Phi_p(q)$ — subsuming the $d=2,3$
+  lemmas above and extending to $p = 5, 7, 11, \dots$. Because
+  $\Phi_p = \sum_{i<p} X^i$, the identity is the index reflection
+  $\sum_{i<p} q^{p-1-i} = \sum_{i<p} q^i$, with no per-prime computation.
+- The **fully general case** `cyclotomic_self_reverse` and
+  `cyclotomic_bar_stable_general` (sorry-free): for *every* $n > 1$ (over any
+  integral domain) $\Phi_n$ is self-reciprocal —
+  $\operatorname{reverse}(\Phi_n) = \Phi_n$, equivalently
+  $\Phi_n(1/q)\,q^{\varphi(n)} = \Phi_n(q)$ — subsuming **all** the explicit and
+  prime cases above, including every composite $d$ (4, 8, 9, …). Mathlib carries
+  no cyclotomic palindrome lemma; this is proved here by strong induction on the
+  divisor product $\prod_{d \mid n}\Phi_d = X^n - 1$ (peeling $d=1$ for the
+  anti-palindrome sign, the inductive hypothesis on $1 < d < n$, then cancelling
+  the nonzero proper-divisor product), with the eval form following via
+  `eval₂_reverse_mul_pow`.
 - A companion compute scaffold
   ([`qbeta_c_k_recursion_scaffold.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/qbeta/qbeta_c_k_recursion_scaffold.py))
   demonstrating the recursion machinery on toy depth-1 and depth-2
@@ -132,11 +159,3 @@ vanishing of the modular cocycle's Bloch–Wigner (volume) term on the
 **non-hyperbolic** Hopf link. This is a motivated analogy, **not a theorem** —
 establishing it would require exhibiting $F(q)$ as a quantum modular form.
 Full discussion: [`docs/audits/2026-06-13-qbeta-heat-fmap-symbolic-and-literature.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-06-13-qbeta-heat-fmap-symbolic-and-literature.md).
-
-## Status
-
-**Scaffolding.** The Lean structure + applyRecursion method form a
-working recursion engine; the compute scaffold demonstrates two toy
-kernels (depth-1 geometric, depth-2 underdetermined-from-seeds-alone).
-The categorical $F(q)$ construction remains the open keystone for the
-$1\,\mathrm{ppQ}$ target.

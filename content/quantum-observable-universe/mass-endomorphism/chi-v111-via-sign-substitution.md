@@ -52,17 +52,3 @@ substitution on the generator level.
 | `chi_V111_difference_at_two` | numerical: $-75/128$ at $q = 2$ |
 
 All sorry-free, closed by `field_simp + ring` or `norm_num`.
-
-## Status
-
-**V_(1,1,1) FULLY DERIVED IN LEAN** (item 2 of  closure).
-
-The derivation proceeds purely from the scalar sign-rep arithmetic,
-mirroring V_(3)'s template. Combined with V_(3) (`rem:chi-v3-closed-form-proof`),
-this closes **both 1-d irreps** of $H_3(q)$ from first principles.
-
-The remaining V_(2,1) case (item 1) is partially closed at the
-rational-identity level in
-[`rem:chi-v21-hoefsmit-matrix-derivation`](#rem:chi-v21-hoefsmit-matrix-derivation);
-full matrix-product trace requires the 2$\times$2 Hoefsmit machinery from
-`hoefsmit-V21-cos-symmetrization.lean` (currently chapter-isolated).

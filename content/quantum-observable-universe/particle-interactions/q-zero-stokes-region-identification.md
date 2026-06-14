@@ -111,7 +111,7 @@ The Lean `sorry` count is EXACTLY ONE per OPEN GAP — not per missing tactic.
 - [`docs/audits/-q0-into-character-variety-minimal-archimedean.md`](../../../docs/audits/-q0-into-character-variety-minimal-archimedean.md) §§11-13 — origin of this conjecture
 - [`docs/coordination/-post-1231-wire-up-ledger.md`](../../../docs/coordination/-post-1231-wire-up-ledger.md) — session ledger
 
-## §8. Honest status
+## §8. Honest assessment
 
 **What's NEW in this conjecture (vs prior content blocks):**
 - Explicit identification of the structural gap (Option A from §11 of the audit)

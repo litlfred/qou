@@ -79,19 +79,3 @@ $T_w$** evaluates to a *finite* sum over the $\leq k_\star(T_w)$
 depth-strata of the centre. The $|\hat V|\approx 1$ ill-conditioning is
 then a property of the analytic representation, not of the
 Frobenius-paired categorical mass.
-
-## Status of the bridge
-
-The proposition is asserted, not yet fully proved at the level of the
-curvature-rank stratification. The proof
-([proof block](#prf:quantum-dilogarithm-stratified)) derives existence
-of $\phi_q^{(k)}(z_i)$ by applying the Frobenius dual to the depth-
-graded centre decomposition; the truncation identity follows from
-$T_w$-orthogonality at depths $> k_\star(T_w)$. The remaining gap is a **uniform bound on the
-$\phi_q^{(k)}(z_i)$ at $|z_i| \to q$**: the proposition asserts the
-truncation identity as a Frobenius-paired equality, but to conclude
-that *replacing* $\Phi_q$ with $\Phi_q^{[\leq k_\star(T_w)]}$ in the
-mass formula gives the same numerical answer one needs the
-$\phi_q^{(k)}$'s to be uniformly bounded as $|z_i| \to q$. That bound
-is the open part — the conjectural target of
-[$z$-Habiro completion](#conj:brane-tower-z-habiro).

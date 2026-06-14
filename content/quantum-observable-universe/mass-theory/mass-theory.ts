@@ -927,7 +927,9 @@ export default chapter({
           label: "sec:mass-application-trace-operator-lemmas",
           blocks: [
             "block-multiplicativity-v-free",
+            "wenzl-A-operator",
             "crystal-r-matrix-sub-lemma",
+            "operator-valued-combiner-convergence",
             "depth-stratified-frobenius-reciprocity",
             "eigenvalue-product-expansion",
             "knot-operator-lp-selection",

@@ -135,20 +135,6 @@ projector and $E_\times \cdot \mu_0$ is the unit-mass scale per
    PSLQ structurally derived from the Hoefsmit cell-content
    arithmetic + the per-pattern multiplicities $(2, 1, 3, 3, 1,
    2)$. Gated on (1) and (2) above.
-
-### Status
-
-**Skeleton.** The structural
-sketch above is internally consistent with the path-α-Bring
-refinement and the Hoefsmit cell-content identification. The
-open inputs (Steps A–D above) are research-grade gaps; this
-block records the framework so downstream consumers (e.g.
-`conj:force-carrier-knot-vs-link-dichotomy` Status item 1) have
-a concrete forward-reference.
-
-**To promote to `proposition`:** discharge each of the four
-"What this skeleton needs" items.
-
 ### Audit-flag impact
 
 If discharged, this conjecture supplies the categorical

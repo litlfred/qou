@@ -67,18 +67,3 @@ The skew-SYT primitive
 related-but-distinct quantity ($f^{\lambda/\mu} = $ # SYT of skew
 shape, weights all chains; $c^\lambda_{\mu\nu}$ counts only the
 Yamanouchi-valid SSYT of content $\nu$).
-
-## Status
-
-**Statement.** Proven in the symmetric-function literature
-(\cite{macdonald1995} §I.9, \cite{stanley1999} §A1.3) and the
-Hecke deformation (\cite{ariki1996}). For QOU, the proof is consumed
-as a class hypothesis via the
-[`LRCoefficientHecke`](#prop:lr-coefficient-hecke) Lean class — the
-non-negativity, integrality, and the LR-tableau formula are all
-recorded as class fields, sorry-free per CLAUDE.md §3b-cond.
-
-Downstream consumers ([`def:wenzl-A-operator`](wenzl-A-operator.md),
-[`prop:crystal-r-matrix-sub-lemma`](crystal-r-matrix-sub-lemma.md),
-[`prop:operator-valued-combiner-convergence`](operator-valued-combiner-convergence.md))
-take `[LRCoefficientHecke]` as an explicit class hypothesis.

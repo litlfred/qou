@@ -69,15 +69,6 @@ particular $X$ itself) to bar-symmetric outputs (degree-even
 polynomials). The synthesis-class fields `series_avatar`,
 `phase_avatar`, `gain_avatar` then become explicit elements of
 $R[X^2]$.
-
-## Status
-
-Type-level infrastructure complete. Future work: instantiate
-specific `BarHeckeFunctor R[X]` examples corresponding to
-truncated $\cos$ / $\cosh$ / Li_2^q expansions in $X$, and
-extend to `RatFunc R = FractionRing (R[X])` for rational-function
-functors. Polynomial-level truncation work is `sorry`-free.
-
 ## Proofs (Lean $\leftrightarrow$ paper bridge)
 
 Every Lean theorem below has both a narrative proof here and a

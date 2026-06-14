@@ -42,6 +42,10 @@ import Mathlib.Data.Finset.Powerset
 import Mathlib.Data.Fin.Basic
 import Mathlib.Data.Fintype.Basic
 import Mathlib.Tactic.Ring
+import Mathlib.RingTheory.Polynomial.Cyclotomic.Basic
+import Mathlib.RingTheory.Polynomial.Cyclotomic.Expand
+import Mathlib.Algebra.Polynomial.Reverse
+import Mathlib.Tactic.FieldSimp
 
 namespace QOU.QBeta.CKRecursion
 
@@ -159,5 +163,174 @@ theorem esymm_bar_parity {R : Type u} [CommRing R] {n : ℕ} (bar : R →+* R)
     refine Finset.sum_congr rfl fun S _ => ?_
     rw [map_prod]
   rw [hmap, show (fun i => bar (r i)) = (fun i => - r i) from funext hodd, esymm_neg]
+
+/-- Corollary of the parity-alternation theorem: for **odd** `j` the recursion
+    coefficient `a_j = e_j` is bar-ODD (`bar(a_j) = -a_j`). These are the
+    ζ-carrying rungs of the ladder — the bar-odd `a_1 = -c_3`, and `a_3` (whose
+    concrete active-set ζ-content is ζ₂+ζ₆). -/
+theorem esymm_bar_odd {R : Type u} [CommRing R] {n : ℕ} (bar : R →+* R)
+    (r : Fin n → R) {j : ℕ} (hodd : ∀ i, bar (r i) = - r i) (hj : Odd j) :
+    bar (esymm r j) = - esymm r j := by
+  rw [esymm_bar_parity bar r j hodd, hj.neg_one_pow, neg_one_mul]
+
+/-- Corollary of the parity-alternation theorem: for **even** `j` the recursion
+    coefficient `a_j = e_j` is bar-EVEN (`bar(a_j) = a_j`) — e.g. the bar-even
+    seed rung `c_2 = -1`. -/
+theorem esymm_bar_even {R : Type u} [CommRing R] {n : ℕ} (bar : R →+* R)
+    (r : Fin n → R) {j : ℕ} (hodd : ∀ i, bar (r i) = - r i) (hj : Even j) :
+    bar (esymm r j) = esymm r j := by
+  rw [esymm_bar_parity bar r j hodd, hj.neg_one_pow, one_mul]
+
+/-! ## Cyclotomic bar-stability — the lemma behind ζ₆-closed
+
+  The period-3/ζ₆ closure (root-of-unity residue program, #2240) rests on a
+  general fact: every cyclotomic polynomial `Φ_d` (`d > 1`) is **self-reciprocal**,
+  `bar(Φ_d) = q^{-φ(d)}·Φ_d` under the fibre bar involution `q ↦ q⁻¹`. Cleared of
+  denominators this reads `Φ_d(1/q)·q^{φ(d)} = Φ_d(q)`. The lemmas below verify it
+  for the qbeta-relevant `d ∈ {2, 3, 6}` (`φ = 1, 2, 2`) — in particular `Φ_6`,
+  the period-3 carrier — from Mathlib's explicit forms `cyclotomic_two/three/six`.
+
+  **Corollary (divisibility bar-invariance), narrative.** Since `bar(Φ_d)` is a
+  unit multiple (`q^{-φ(d)}`) of `Φ_d`, one has `Φ_d ∣ X ⟺ Φ_d ∣ bar(X)`, hence
+  `Φ_d ∣ (X)_odd := (X - bar X)/2` whenever the odd part is nonzero. That is why
+  the bar-ODD projection of a single ζ₆-carrier still carries ζ₆ — closing
+  period-3/ζ₆ with no cross-mode cancellation.
+
+  Ref: docs/audits/2026-06-13-qbeta-root-of-unity-residue-program.md -/
+
+open Polynomial in
+/-- `Φ_2` is self-reciprocal: `Φ_2(1/q)·q = Φ_2(q)` (`φ(2)=1`). -/
+theorem cyclotomic_two_bar_stable {R : Type*} [Field R] (q : R) (hq : q ≠ 0) :
+    (cyclotomic 2 R).eval (1 / q) * q ^ 1 = (cyclotomic 2 R).eval q := by
+  rw [cyclotomic_two]
+  simp only [eval_add, eval_X, eval_one, pow_one]
+  field_simp
+  ring
+
+open Polynomial in
+/-- `Φ_3` is self-reciprocal: `Φ_3(1/q)·q² = Φ_3(q)` (`φ(3)=2`). -/
+theorem cyclotomic_three_bar_stable {R : Type*} [Field R] (q : R) (hq : q ≠ 0) :
+    (cyclotomic 3 R).eval (1 / q) * q ^ 2 = (cyclotomic 3 R).eval q := by
+  rw [cyclotomic_three]
+  simp only [eval_add, eval_pow, eval_X, eval_one]
+  field_simp
+  ring
+
+open Polynomial in
+/-- `Φ_6` is self-reciprocal: `Φ_6(1/q)·q² = Φ_6(q)` (`φ(6)=2`) — the period-3/ζ₆
+    carrier whose bar-stability closes the period-3 constraint. -/
+theorem cyclotomic_six_bar_stable {R : Type*} [Field R] (q : R) (hq : q ≠ 0) :
+    (cyclotomic 6 R).eval (1 / q) * q ^ 2 = (cyclotomic 6 R).eval q := by
+  rw [cyclotomic_six]
+  simp only [eval_add, eval_sub, eval_pow, eval_X, eval_one]
+  field_simp
+  ring
+
+open Polynomial in
+/-- **General prime case** — subsumes `cyclotomic_two_bar_stable` and
+    `cyclotomic_three_bar_stable` (and every other prime `p = 5, 7, 11, …`): for
+    any prime `p`, `Φ_p` is self-reciprocal, `Φ_p(1/q)·q^{p-1} = Φ_p(q)`
+    (`φ(p) = p-1`). Because `Φ_p = ∑_{i<p} X^i` (`cyclotomic_prime`), the identity
+    is the index reflection `∑_{i<p} q^{p-1-i} = ∑_{i<p} q^i`
+    (`Finset.sum_range_reflect`) — no per-prime computation needed. The remaining
+    composite `d` (4, 6, 8, 9, …) need the general palindrome
+    `reverse (cyclotomic d) = cyclotomic d`, which Mathlib does not yet carry;
+    `cyclotomic_six_bar_stable` covers the one composite (`ζ_6`) the program uses. -/
+theorem cyclotomic_prime_bar_stable {R : Type*} [Field R] (p : ℕ) [Fact p.Prime]
+    (q : R) (hq : q ≠ 0) :
+    (cyclotomic p R).eval (1 / q) * q ^ (p - 1) = (cyclotomic p R).eval q := by
+  rw [one_div, cyclotomic_prime, eval_finset_sum, eval_finset_sum, Finset.sum_mul]
+  simp only [eval_pow, eval_X]
+  rw [← Finset.sum_range_reflect (fun i => q ^ i) p]
+  refine Finset.sum_congr rfl (fun i hi => ?_)
+  rw [Finset.mem_range] at hi
+  rw [inv_pow, pow_sub₀ q hq (by omega : i ≤ p - 1)]
+  field_simp
+
+open Polynomial Finset in
+/-- Auxiliary: `reverse` is multiplicative across a `Finset` product over an
+    integral domain (`reverse_mul_of_domain` folded over the product). -/
+theorem reverse_finset_prod {R : Type*} [CommRing R] [IsDomain R] {ι : Type*}
+    [DecidableEq ι] (s : Finset ι) (f : ι → R[X]) :
+    reverse (∏ i ∈ s, f i) = ∏ i ∈ s, reverse (f i) := by
+  induction s using Finset.induction with
+  | empty => simp only [prod_empty]; simpa using reverse_C (1 : R)
+  | @insert a s ha ih => rw [prod_insert ha, prod_insert ha, reverse_mul_of_domain, ih]
+
+open Polynomial in
+/-- Auxiliary: `Xⁿ − 1` is anti-palindromic, `reverse (Xⁿ − 1) = 1 − Xⁿ`
+    (so `cyclotomic 1 = X − 1` is bar-odd, the sign that seeds the induction). -/
+theorem reverse_X_pow_sub_one {R : Type*} [CommRing R] [Nontrivial R] (n : ℕ) (hn : 0 < n) :
+    reverse (X ^ n - 1 : R[X]) = 1 - X ^ n := by
+  have hd : (X ^ n - 1 : R[X]).natDegree = n := by
+    rw [show (X ^ n - 1 : R[X]) = X ^ n - C 1 by rw [map_one], natDegree_X_pow_sub_C]
+  ext k
+  rw [coeff_reverse, hd]
+  simp only [coeff_sub, coeff_X_pow, coeff_one]
+  rcases le_or_gt k n with hk | hk
+  · rw [revAt_le hk]; split_ifs <;> first | rfl | (exfalso; omega)
+  · rw [revAt_eq_self_of_lt hk]; split_ifs <;> first | rfl | (exfalso; omega)
+
+open Polynomial Finset in
+/-- **General cyclotomic self-reciprocity (palindrome), all `n > 1`.** Over any
+    integral domain, `Φ_n` equals its own `reverse`. This is the full composite-`d`
+    generalisation that Mathlib does not carry: it is proved by strong induction
+    on the divisor product `∏_{d ∣ n} Φ_d = Xⁿ − 1` (`prod_cyclotomic_eq_X_pow_sub_one`),
+    peeling `d = 1` for the anti-palindrome sign and applying the IH on `1 < d < n`,
+    then cancelling the (nonzero) proper-divisor product. -/
+theorem cyclotomic_self_reverse {R : Type*} [CommRing R] [IsDomain R] :
+    ∀ n : ℕ, 1 < n → reverse (cyclotomic n R) = cyclotomic n R := by
+  intro n
+  induction n using Nat.strong_induction_on with
+  | _ n ih =>
+    intro hn
+    have hn0 : n ≠ 0 := by omega
+    have hP : ∏ d ∈ n.divisors, cyclotomic d R = X ^ n - 1 :=
+      prod_cyclotomic_eq_X_pow_sub_one (by omega) R
+    have hRP : ∏ d ∈ n.divisors, reverse (cyclotomic d R) = 1 - X ^ n := by
+      rw [← reverse_finset_prod, hP, reverse_X_pow_sub_one n (by omega)]
+    have hrev1 : reverse (cyclotomic 1 R) = - cyclotomic 1 R := by
+      rw [cyclotomic_one, show (X - 1 : R[X]) = X ^ 1 - 1 by ring,
+          reverse_X_pow_sub_one 1 one_pos]
+      ring
+    have h1mem : 1 ∈ n.properDivisors := Nat.one_mem_properDivisors_iff_one_lt.2 hn
+    have key : ∏ d ∈ n.properDivisors, reverse (cyclotomic d R)
+             = - ∏ d ∈ n.properDivisors, cyclotomic d R := by
+      rw [← Finset.mul_prod_erase _ (fun d => reverse (cyclotomic d R)) h1mem,
+          ← Finset.mul_prod_erase _ (fun d => cyclotomic d R) h1mem, hrev1]
+      have hcong : ∏ d ∈ (n.properDivisors).erase 1, reverse (cyclotomic d R)
+                 = ∏ d ∈ (n.properDivisors).erase 1, cyclotomic d R :=
+        Finset.prod_congr rfl (fun d hd => by
+          rw [Finset.mem_erase] at hd
+          have hdp := hd.2
+          have hdpos : 0 < d := Nat.pos_of_mem_divisors (Nat.properDivisors_subset_divisors hdp)
+          rw [Nat.mem_properDivisors] at hdp
+          exact ih d hdp.2 (by omega))
+      rw [hcong]; ring
+    rw [← Nat.cons_self_properDivisors hn0, Finset.prod_cons] at hP hRP
+    rw [key] at hRP
+    set P := ∏ d ∈ n.properDivisors, cyclotomic d R with hPdef
+    have hPne : P ≠ 0 :=
+      Finset.prod_ne_zero_iff.2 (fun d _ => cyclotomic_ne_zero d R)
+    have heq : reverse (cyclotomic n R) * P = cyclotomic n R * P := by
+      have h2 : reverse (cyclotomic n R) * (-P) = -(cyclotomic n R * P) := by
+        rw [hRP, hP]; ring
+      linear_combination -h2
+    exact mul_right_cancel₀ hPne heq
+
+open Polynomial in
+/-- **General bar-stability — all `d > 1`** (eval form). Subsumes the explicit
+    `cyclotomic_two/three/six_bar_stable` and `cyclotomic_prime_bar_stable`: for
+    every `n > 1`, `Φ_n` is self-reciprocal, `Φ_n(1/q)·q^{φ(n)} = Φ_n(q)`, so
+    divisibility by `Φ_n` is invariant under the bar involution `q ↦ q⁻¹`.
+    Derived from `cyclotomic_self_reverse` via the reverse↔eval bridge
+    `eval₂_reverse_mul_pow`. -/
+theorem cyclotomic_bar_stable_general {R : Type*} [Field R] (n : ℕ) (hn : 1 < n)
+    (q : R) (hq : q ≠ 0) :
+    (cyclotomic n R).eval (1 / q) * q ^ n.totient = (cyclotomic n R).eval q := by
+  letI : Invertible q := invertibleOfNonzero hq
+  have h := eval₂_reverse_mul_pow (RingHom.id R) q (cyclotomic n R)
+  rw [cyclotomic_self_reverse n hn] at h
+  simpa [eval₂_id, natDegree_cyclotomic, invOf_eq_inv, one_div] using h
 
 end QOU.QBeta.CKRecursion

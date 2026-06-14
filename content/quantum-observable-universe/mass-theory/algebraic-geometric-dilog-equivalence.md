@@ -81,7 +81,7 @@ volume are not two competing engines: they are the same regulator
 $\Phi_n(x; q_0) \mapsto D(z(x))$ evaluated through two convergence
 schemes.
 
-## Status (CLAUDE.md §3b)
+## Conjectural standing (CLAUDE.md §3b)
 
 This block is downstream of
 ([Kashaev volume conjecture](#conj:kashaev-volume-conjecture)) and

@@ -22,4 +22,10 @@ export default proposition({
     "categorical-action",
     "mathlib",
   ],
+  authorNotes: [
+    {
+      kind: "status",
+      body: "Type-level infrastructure complete. Future work: instantiate\nspecific `BarHeckeFunctor R[X]` examples corresponding to\ntruncated $\\cos$ / $\\cosh$ / Li_2^q expansions in $X$, and\nextend to `RatFunc R = FractionRing (R[X])` for rational-function\nfunctors. Polynomial-level truncation work is `sorry`-free.",
+    },
+  ],
 });

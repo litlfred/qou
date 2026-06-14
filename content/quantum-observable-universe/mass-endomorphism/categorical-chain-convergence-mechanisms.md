@@ -109,11 +109,3 @@ The two convergence mechanisms have different empirical signatures:
    factorisation for two unlinked braids in a higher-rank Hecke algebra.
    See [`probe_inter_knot_decoupling.py`](../../folio-assistant/computations/probe_inter_knot_decoupling.py)
    for the empirical test.
-
-## Status
-
-This is a **structural-interpretation proposition** capturing the
-two convergence mechanisms behind $Q_\beta^{\text{cat}}$'s finite
-predictiveness. The formal Habiro-ring identification is sketched
-but not yet machine-proved; the **empirical verification of both
-mechanisms** is the concrete next step.

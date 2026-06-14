@@ -159,7 +159,7 @@ Steps 3, 4 generalize. **Step 2 (Goncharov's motivic
 conjecture) is the open piece**. Conditional on Step 2, the
 depth-3 identification follows by the same argument.
 
-### Status and significance
+### Significance
 
 **Theorem-level at depth 2**, conditional on Goncharov at depth 3.
 The combination with [`prop:borel-partial-resolution`](#prop:borel-partial-resolution)

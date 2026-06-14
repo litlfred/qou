@@ -153,20 +153,6 @@ conj:archimedean-remainder-exponential-decay):
 finite-depth truncations recover the exact $Q_\beta$ exponentially
 fast in GB depth $N$, which is why the single-wrap symbolic form
 (Form A at $N = 0$) already achieves $+0.168\%$ accuracy.
-
-## Status
-
-* Form A is the canonical predictor used in
-  [prop:neutron-qvalue-symbolic](#prop:neutron-qvalue-symbolic)
-  ($+0.168\%$ residual vs CODATA at $N = 0$).
-* Form B is mathematically equivalent via the bridge above; it is
-  retained because the eigenfunction basis is the natural one for
-  $N \geq 1$ truncation analysis and for the general atom-level
-  binding cascade (where the brane-tower truncation is non-trivial).
-* The exponential-remainder bound is the open conjectural input
-  (conj:archimedean-remainder-exponential-decay);
-  the Taylor-expansion algebra above is unconditional.
-
 ## Provenance
 
 This proposition was derived during the cycle-6/7 audit on 

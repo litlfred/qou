@@ -93,4 +93,10 @@ export default proposition({
     "deuteron-pairing",
     "verified-empirically",
   ],
+  authorNotes: [
+    {
+      kind: "status",
+      body: "Per the conditional-class pattern (CLAUDE.md §3b-cond) the Lean\nversion is a class `HasHe4ChannelActiveSet` whose instance\nencodes the witness-verified ordering; the empirical\n$\\Delta_\\mathrm{cat}$ anchors and the LP solution are the sole\n`sorry` inputs.",
+    },
+  ],
 });

@@ -53,7 +53,7 @@ $b^2 = (1 - q^{2\rho - 2})(1 - q^{2\rho + 2})/(1 - q^{2\rho})^2$
 zeroing on adjacent contents in the $2 \times 2$ Hoefsmit blocks
 never fires on $V_{(1^p)}$.
 
-### Maximality across irreps (status)
+### Maximality across irreps
 
 The maximality claim — that no other $\lambda \vdash p$ achieves
 pole order $> k(p - 1)$ — is **verified case-by-case** in

@@ -58,7 +58,7 @@ The Lean discharge of this axiom requires:
 Steps 1, 2, 4 are mechanical Lean infrastructure. Step 3 is the
 substantive combinatorial content.
 
-## Cumulative Track-C status
+## Cumulative Track-C atoms
 
 After this file:
 
@@ -74,9 +74,3 @@ The single remaining axiomatic content is a **specific combinatorial
 fact** about typed-braid sub-braid extraction, not a research-level
 categorical question. Discharging it is substantial Lean work but no
 longer at the categorical-frontier level.
-
-## Status
-
-Lean stub: **no `sorry`s**. The chain is fully proved conditionally on
-the single remaining axiom (`DominantSubBraidAtEps6`). All other
-substantive content is Lean-theorem-closed.

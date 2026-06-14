@@ -70,17 +70,3 @@ At depth $\geq 3$: open. The depth-3 case requires identifying
 projections compatible with the trilog grouplike $\mathrm{Li}_3^q$
 — see the depth-3 witness
 ([`conj:bring-trilog-depth-3-witness`](#conj:bring-trilog-depth-3-witness)).
-
-### Status
-
-**Open at depth $\geq 3$**, conditional on
-[`conj:gb-depth-period-correspondence`](#conj:gb-depth-period-correspondence).
-The depth-2 case follows from
-[`prop:hecke-baer-star-generic`](#prop:hecke-baer-star-generic)
-and the Schur–Weyl identification of $\mathrm{Li}_2^q$ values
-with Markov-trace cell pairings.
-
-**Discharge target.** Construct an explicit projection-generation
-algorithm at depth 3 using $\mathrm{Li}_3^q$-Hodge theory
-(Beilinson–Levin polylogs, motivic complexes). The
-Garoufalidis–Lê 3D-index machinery is a candidate technical input.

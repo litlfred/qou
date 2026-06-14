@@ -36,28 +36,6 @@ each per-block character satisfies $\chi_\lambda(q) = (q^2 - 1) \cdot P_\lambda(
 for $q > 0$. Substituting and factoring out $(q^2 - 1)$ from the
 weighted sum gives the claim. The Lean proof is a direct substitution
 plus ring identity. $\square$
-
-## §3b-cond status — conditional rigour modulo conjectural class
-
-This block is a CLAUDE.md §3b-cond conditional theorem:
-
-- **Class axiomatisation.** The Lean
-  `class CanonicalMarkovWeightsH3` ([`qbeta-per-block-chi-closed-forms.lean`](qbeta-per-block-chi-closed-forms.lean))
-  is the single sorry point. A concrete instance would need to encode
-  the canonical Wenzl construction's $\sqrt q$-bearing weights and
-  verify the normalisation axiom.
-- **Explicit hypothesis on Lean side.** The Lean theorem
-  `delta_tau_M_canonical_has_q2_minus_1_factor` carries
-  `[CanonicalMarkovWeightsH3]` as an explicit `[Instance]` hypothesis.
-- **Explicit conditional banner on narrative side.** The opening
-  "Proposition (conditional on ...)" above.
-- **`uses[]` includes the conjectural upstream.** The block uses
-  `prop:qbeta-per-block-chi-closed-forms`, whose Lean file hosts
-  the class declaration.
-
-Once a concrete instance lands (closing the canonical weights gap),
-this proposition becomes unconditional — fully verified by Lean.
-
 ## What this block does NOT establish
 
 - **A concrete instance of `CanonicalMarkovWeightsH3`.** The canonical

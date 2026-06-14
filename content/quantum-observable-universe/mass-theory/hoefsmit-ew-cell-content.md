@@ -249,31 +249,6 @@ structural input — not the Plancherel-weighted form. The
 block needs corresponding refinement: the Plancherel framing is
 demoted to "degenerate special case" status; the bar-self-dual
 $\mathrm{tr}_{\rm pure}$ is the operative quantity going forward.
-
-### Status
-
-**Open.** The Hoefsmit cell-content arithmetic is correct
-(verified by the witness enumeration); the open inputs are:
-
-1. **The $W \leftrightarrow \sigma_1^4$, $Z \leftrightarrow \sigma_3^6$,
- $H \leftrightarrow \sigma_5^8$ identification** — currently a
- structural proposal motivated by disjoint-strand-pair commutativity
- plus matching twist parameters $k = 2, 3, 4$ to the EW link triplet.
- Needs a categorical-physics block (the "categorical Higgs mechanism"
- item from
- `conj:force-carrier-knot-vs-link-dichotomy`
- §Status) discharging the boson-to-strand-pair assignment.
-2. **The non-uniform Plancherel weight derivation** — the
- multiplicities $(2, 1, 3, 3, 1, 2)$ are read off from the
- tableaux enumeration; promoting them to a closed-form
- $q$-rational requires identifying their generating function in
- the Hoefsmit cell-content arithmetic.
-3. **Refinement of upstream blocks** — the existing
- [`conj:weak-spectral-completeness`](#conj:weak-spectral-completeness)
- and
- [`prop:weak-symmetric-normalization`](#prop:weak-symmetric-normalization)
- should be edited to reference this $n = 6$ formulation.
-
 ### Audit-flag impact
 
 If this conjecture is discharged, it **fixes** the

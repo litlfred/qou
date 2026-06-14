@@ -12,7 +12,7 @@ for an isotope knot $K$, consumed by Step 9b
 
 - *Per-partition density $\Delta_\lambda(K) \in \mathbb{R}$.*
 
-### Status (2026-06-02)
+### Closure obstructions
 
 **Open gate.** Six closure ansätze have been refuted on the
 deuteron:
@@ -28,8 +28,8 @@ deuteron:
 
 The current direction is **Option E** (Kashiwara crystal, q-Reeb
 + isospin mirror — `option_e_v9.py`), with PROBE 4 cheap-pass
-refutation logged on PR #1516 and the full-order $\theta_\lambda$
-approach on PR #1726.
+refutation and the full-order $\theta_\lambda$
+approach.
 
 ### Correctness conditions
 
@@ -56,8 +56,7 @@ emergence pattern (Section: cemetery group).*
 
 *No verified witness yet — Option E v9 is candidate code, not
 production. Cross-PR coordination tracked in
-[`docs/coordination/2026-06-02-mba-appendix-maintenance-contract.md`](../../../docs/coordination/2026-06-02-mba-appendix-maintenance-contract.md);
-sibling PRs #1516, #1726, #1714 are active on this gate.*
+[`docs/coordination/2026-06-02-mba-appendix-maintenance-contract.md`](../../../docs/coordination/2026-06-02-mba-appendix-maintenance-contract.md).*
 
 ### Notes
 

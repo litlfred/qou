@@ -128,7 +128,7 @@ Step 2 requires explicit construction of the period sub-lattices;
 this is the main technical content and is the deferred Phase 2
 computation.
 
-## Status
+## Discussion
 
 **Conjectural** under CLAUDE.md §3b. The conjecture's role is
 to **name** the algebraic mechanism behind the magic-number

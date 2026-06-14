@@ -23,20 +23,6 @@ $$
 projector from the universal Frobenius co-Casimir trace
 ([Frobenius co-Casimir universal](#thm:frobenius-codim-universal))
 onto the EW slice.*
-
-## Status
-
-**Conjectural.**  This is a substrate axiom in the precise sense
-of [`CLAUDE.md` §3b](../../../CLAUDE.md#3b-conjectural-propagation):
-the categorical $S_5$-action on $H_n(R, q)$ at the EW slice is
-asserted but not formally constructed.  It is the **first** of the
-two lemmas in the
-[N_v derivation](#conj:n-v-leading-order-derivation) chain;
-combining it with
-[the EW-slice depth lemma](#conj:n-v-tower-depth-ninety) gives the
-leading-order closure $N_v = 120 \cdot q_0^{90}$ (residual $-0.58\%$
-vs CODATA Higgs VEV).
-
 ## Why $S_5$, not another finite group
 
 The choice of $S_5$ is forced by **three independent structural

@@ -68,4 +68,10 @@ export default proposition({
     "cross-check",
     "infrastructure",
   ],
+  authorNotes: [
+    {
+      kind: "status",
+      body: "The proposition is a numerical-equality claim between three\nimplemented paths, all of which agree to their precision floors.\nMathematical proof: the partition-sum form is the spectral\nexpansion of $\\mathrm{tr}_M$ in the Wedderburn–Artin basis. The\ncanonical Hecke character $\\chi^\\lambda_q$ is the diagonal of\n$\\rho_\\lambda^q$ in the seminormal basis (Hoefsmit 1974, Mathas\n1999 §3.4); $y_\\lambda(q)$ is the unique Jones-Markov weight given\nthe Markov axioms (Wenzl 1988). Combining: the partition-sum form\nidentically equals the recursive Markov ascent. Numerical\nverification confirms.",
+    },
+  ],
 });

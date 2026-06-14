@@ -315,27 +315,3 @@ convention until the canonical $\bowtie_K$ migration completes
    at $A = 4$
    ([term7 height-6 partition enumeration](../../../folio-assistant/computations/term7-height6-partition-enum.witness.json)),
    and that fact is independent of the interface convention.*
-
-## Status
-
-This proposition is **conditional on**
-[`conj:crystal-graph-realization`](#conj:crystal-graph-realization)
-(the conjectural identification of the $q \to 0$ limit of
-$\chi^\lambda$ with the signed-permutation action on
-$\mathrm{SYT}(\lambda)$ used by
-[`term7_alpha5_crystal_derivation.py`](../../../folio-assistant/computations/term7_alpha5_crystal_derivation.py)).
-The Lean formalisation extracts only the per-eigenline content of
-this conjecture into a smaller class
-$[\mathrm{CrystalEigenlineSignBlind}\;R]$ (`crystal-isospin-degeneracy.lean`),
-which axiomatises the *single* fact required for this proposition
-— that on every SYT eigenline, the $q = 0$ actions of $\sigma_i$
-and $\sigma_i^{-1}$ agree.  The class
-$[\mathrm{CrystalGraphRealization}\;R\;q]$ (Lake-tracked in
-`QOU.BraidKnot.CrystalGraphRealization`) implies
-$[\mathrm{CrystalEigenlineSignBlind}\;R]$, so this proposition is
-a *downstream consequence* of `conj:crystal-graph-realization`
-under CLAUDE.md §3b-cond conditional-class semantics.  Modulo the
-upstream conjecture, the equality
-$S_{\mathrm{crystal}}(T) = S_{\mathrm{crystal}}({}^3\mathrm{He})$
-is **exact** under the legacy disjoint-product convention, and
-the proposition itself is a fully verified Lean theorem.

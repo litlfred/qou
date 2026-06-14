@@ -15,4 +15,10 @@ export default conjecture({
   ],
   uses: ["conj:archimedean-stpart"],
   cites: ["robinson1966"],
+  authorNotes: [
+    {
+      kind: "status",
+      body: "**Open.** Constructing a non-trivial example in\n$\\mathrm{Rep}_{\\mathbf{No}}(\\mathrm{SU}_q(2))$ would establish (2);\nabsence of such examples (i.e. every $\\varepsilon$-Frobenius\nalgebra is gauge-equivalent to a strict one) would refute it.\n\nThe matter is delicate because the $\\mathrm{Rep}(\\mathrm{SU}_q(2))$\ncategory has rigid Frobenius structure\n([fibre functor rigidity](#rem:fibre-functor-rigidity)) — every\nsmall deformation is trivial. So the candidate examples must lie\n*outside* this rigid regime, in larger or non-rigid Frobenius\nalgebras.",
+    },
+  ],
 });

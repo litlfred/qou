@@ -31,8 +31,7 @@ $t \mapsto -t$, so:
 - **If $R$ has odd-in-$t$ content**, those coefficients sit at $t^{2k+1}$
   and cannot be absorbed into integer powers of $u \sim t^2$: the $q \to u$
   reversion picks up a $\sqrt{u}$ branch, and the scalar $c_k$ extraction
-  is singular at $u = 0$ (the [PR #1840](https://github.com/litlfred/qou/pull/1840)
-  obstruction).
+  is singular at $u = 0$ (the $\sqrt{u}$-branch obstruction).
 
 The bar-even invariant is the **§4(b) formalize-first gate** of the
 [refuted-class map](../../../docs/audits/2026-06-04-qbeta-ck-refuted-class-map-and-open-axis.md):
@@ -62,14 +61,14 @@ and higher, which the bar-even ladder absorbs trivially). $\blacksquare$
 
 | programme | kernel | bar-even? | scalar $c_k$ extraction |
 |---|---|---|---|
-| $\alpha_{\text{EM}}$ | $H(q) = [2]_q \cdot (1 - h^2 \alpha)$ ([PR #1521](https://github.com/litlfred/qou/pull/1521)) | **yes** — $[2]_q = q + q^{-1}$ and $h^2 = (q - q^{-1})^2$ are manifest q-symmetric | **clean** |
-| $Q_\beta$ | trace-difference $T_\beta$ on the operator level | **no** — archimedean trace mixes odd-in-$t$ content (closed [PR #1867](https://github.com/litlfred/qou/pull/1867) framing) | **singular at $u = 0$** ([PR #1840](https://github.com/litlfred/qou/pull/1840)) |
+| $\alpha_{\text{EM}}$ | $H(q) = [2]_q \cdot (1 - h^2 \alpha)$ | **yes** — $[2]_q = q + q^{-1}$ and $h^2 = (q - q^{-1})^2$ are manifest q-symmetric | **clean** |
+| $Q_\beta$ | trace-difference $T_\beta$ on the operator level | **no** — archimedean trace mixes odd-in-$t$ content (closed operator-level framing) | **singular at $u = 0$** |
 
 The bar-even discriminant explains the asymmetry structurally: $\alpha_{\text{EM}}$
 admits a scalar Habiro element because its kernel is bar-even; $Q_\beta$ does
 not, so its $c_k \ge 3$ requires the **operator-level grading** (the open
 [probe-B](https://github.com/litlfred/qou/blob/claude/qbeta-ck-habiro-operator-route-2026-06-04/docs/audits/2026-06-04-qbeta-ck-operator-route-kickoff.md)
-spec from the closed sibling PR #1867).
+spec from the closed sibling analysis).
 
 ## Use in the formalize-first gate for new $F(q)$ candidates
 
@@ -90,19 +89,7 @@ $R(q,\xi)$:
 This is the bar-involution test of the §4 invariants from the
 refuted-class map, formalised. It complements the
 [`CFinite.recurrence_step`](https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/lean/QOU/QBeta/RationalCoeffRecurrence.lean)
-engine from [PR #1839](https://github.com/litlfred/qou/pull/1839): the
+engine: the
 recurrence step says "*given a kernel, here is the next $c_k$*"; the
 bar-even invariant here says "*here is the necessary condition any
 candidate kernel must satisfy*".
-
-## Status
-
-**Theorem (this proposition).** Sorry-free Lean proof
-([`q-beta-bar-even-kernel-invariant.lean`](q-beta-bar-even-kernel-invariant.lean))
-— one-line `ring` identity over `CommRing R` plus a symbolic substitution
-check on the N=2 factor.
-
-**Compute (sympy).** Verified in
-[`qbeta_bar_even_kernel_invariant_probe.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/qbeta/qbeta_bar_even_kernel_invariant_probe.py),
-witness `qbeta-bar-even-kernel-invariant-probe.witness.json`, assertion
-`bar_even_invariant_holds_for_N2_factor` (passing).

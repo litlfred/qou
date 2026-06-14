@@ -115,24 +115,6 @@ $\mathrm{SU}(2)_L \times \mathrm{U}(1)_Y \to \mathrm{U}(1)_{\rm em}$
 should manifest categorically as a specific automorphism of the
 Hoefsmit projector decomposition; the $\theta_W$ rotation is
 this automorphism's restriction to the $(W^3, B)$ subspace.
-
-### Status
-
-**Open.** The statement is currently a structural proposal;
-the simple-multiplicity reading numerically fails. To promote
-to a `proposition`, the authoring sequence is:
-
-1. Discharge [`conj:categorical-linking-operation`](#conj:categorical-linking-operation)
-   first — needed to formalise the $W^3$–$B$ interaction.
-2. Discharge [`thm:hoefsmit-ew-cell-content`](#thm:hoefsmit-ew-cell-content)
-   structural assignment (which slot is $W^3$ vs $B$).
-3. Compute $\cos\theta_W, \sin\theta_W$ from the corrected
-   Hoefsmit-projector traces (using non-uniform multiplicities
-   + linking operation).
-4. Verify against CODATA $\sin^2\theta_W$ at the appropriate
-   precision (CODATA-$\theta_W$ has relative uncertainty
-   $\sim 10^{-3}$, much weaker than CODATA-$G_F$).
-
 ### Audit-flag impact
 
 If discharged, this conjecture supplies $\sin\theta_W,

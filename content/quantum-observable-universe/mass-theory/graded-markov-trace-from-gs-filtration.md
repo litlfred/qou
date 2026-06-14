@@ -138,15 +138,3 @@ companion block
 algebraic definition of the residues required to assemble the
 GB-residue spectral sum
 ([`prop:gb-spectral-sequence`](#prop\:gb-spectral-sequence)).
-
-## Status
-
-**Status: provable** in pure Hecke combinatorics, conditional on the
-GS filtration's two-sidedness
-([`prop:gb-spectral-sequence`](#prop\:gb-spectral-sequence)) and
-the Markov-trace uniqueness theorem
-\cite{kassel1995, geckpfeiffer2000}.  The downstream effect is
-that the Lean `noncomputable opaque gradedMarkovTrace` can be
-**replaced** by a `def` plus a `theorem` body; this refactor is
-the Lean-side action item for P2.6, deferred to Phase 2 of the
-algebraic-refactor branch.
