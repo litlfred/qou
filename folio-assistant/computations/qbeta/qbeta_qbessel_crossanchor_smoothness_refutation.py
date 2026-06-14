@@ -67,8 +67,9 @@ Three-calibration; **no 7th fit** (zero free parameters — `x` is *pinned*, `K`
 cancels in the ratio); derive-or-refute; report TIERED; `c_3` stays cal-anchored;
 nothing wired to production.
 
-# Ref: [koelink1994] https://doi.org/10.1215/S0012-7094-94-07617-0
-# Ref: [gasper-rahman-2004] https://doi.org/10.1017/CBO9780511526251
+The q-Bessel object refuted here is defined and cited (Vaksman–Korogodsky 1989,
+Koelink 1994, Gasper–Rahman 2004) in PR #2279; this probe is a self-contained
+smoothness bound and adds no bibliography.
 """
 from __future__ import annotations
 
@@ -187,9 +188,12 @@ check(
 # ── (4) DUAL (inverse): the x that WOULD match the slope is absurd ───────────
 print("\n(4) DUAL — solve for the x that would match the observed slope")
 inv = {}
+x_req_auth = None  # cache the authoritative root for the assertion (findroot is costly)
 for tag, c3m in [("authoritative", C3_MUON_AUTH), ("scope_phi2", C3_MUON_SCOPE)]:
     target = abs((c3m - C3_PROTON) / dq / C3_PROTON)  # |d ln c_3 / dq₀|
     x_req = findroot(lambda x: coth(x * se) * x * ce / Q0_PROTON - target, mpf("2e6"))
+    if tag == "authoritative":
+        x_req_auth = x_req
     arg = x_req * se
     print(
         f"    [{tag:13s}] required x = {mp.nstr(x_req,5)}   "
@@ -199,12 +203,7 @@ for tag, c3m in [("authoritative", C3_MUON_AUTH), ("scope_phi2", C3_MUON_SCOPE)]
 results["inverse_required_x"] = inv
 check(
     "required x > 1e6 (≥ 4 orders past the O(117) brane-tower scale) — absurd",
-    findroot(
-        lambda x: coth(x * se) * x * ce / Q0_PROTON
-        - abs((C3_MUON_AUTH - C3_PROTON) / dq / C3_PROTON),
-        mpf("2e6"),
-    )
-    > mpf("1e6"),
+    x_req_auth > mpf("1e6"),
 )
 
 
