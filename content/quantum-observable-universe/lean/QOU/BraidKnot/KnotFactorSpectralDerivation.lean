@@ -28,8 +28,8 @@ structure HeckeExpansion (n : ℕ) where
 /-- The knot-factor `a_K` as a Gram pairing on the chirality block. -/
 noncomputable def knotFactor (n : ℕ)
     (β β_mirror : HeckeExpansion n) : ℝ :=
-  β.partitions.sum fun p =>
-    β.weight p * (β.c p * β_mirror.c p) / (β.trivial p) ^ 2
+  β.partitions.sum fun lam =>
+    β.weight lam * (β.c lam * β_mirror.c lam) / (β.trivial lam) ^ 2
 
 /-- **Proposition (knot factor as chirality Gram pairing)**.
 

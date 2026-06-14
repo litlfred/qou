@@ -8,10 +8,10 @@ import Mathlib.Algebra.BigOperators.Ring.Finset
 /-!
 # QOU.BraidKnot.plancherel_weight_boundedness
 
-Plancherel weights `w_λ = (dim V_λ)² / n!` (with `dim V_λ` the
+Plancherel weights `w_lam = (dim V_lam)² / n!` (with `dim V_lam` the
 classical, q-independent Hecke irrep dimension) form a probability
-distribution on partitions of `n`: each `w_λ ∈ [0, 1]` and
-`Σ_λ w_λ = 1` exactly.
+distribution on partitions of `n`: each `w_lam ∈ [0, 1]` and
+`Σ_lam w_lam = 1` exactly.
 
 Remark: the q-deformed alternative `dim_q²/[n]_q!` does NOT sum to
 1 at finite `q ≠ 1` (empirical: ~1.51 at q₀ ≈ 1.1097, n = 12);
@@ -34,7 +34,7 @@ namespace QOU.BraidKnot
 structure PlancherelDistribution where
   partitions : Finset (List ℕ)
   weight : List ℕ → ℝ
-  weight_nonneg : ∀ p ∈ partitions, 0 ≤ weight p
+  weight_nonneg : ∀ lam ∈ partitions, 0 ≤ weight lam
   weight_sum_one : (partitions.sum weight) = 1
 
 namespace PlancherelDistribution
@@ -43,13 +43,13 @@ variable (P : PlancherelDistribution)
 
 /-- Each Plancherel weight is bounded above by 1. -/
 -- Ref: [manuscript] Ch. Braids and Knots, §Plancherel boundedness
-theorem weight_le_one : ∀ p ∈ P.partitions, P.weight p ≤ 1 := by
-  intro p hp
-  -- weight p ≤ Σ_μ weight μ = 1, since other weights are non-negative.
-  have h_sum : P.weight p ≤ P.partitions.sum P.weight := by
+theorem weight_le_one : ∀ lam ∈ P.partitions, P.weight lam ≤ 1 := by
+  intro lam hlam
+  -- weight lam ≤ Σ_μ weight μ = 1, since other weights are non-negative.
+  have h_sum : P.weight lam ≤ P.partitions.sum P.weight := by
     have := P.weight_nonneg
     exact Finset.single_le_sum (f := P.weight)
-      (fun μ hμ => P.weight_nonneg μ hμ) hp
+      (fun μ hμ => P.weight_nonneg μ hμ) hlam
   rw [P.weight_sum_one] at h_sum
   exact h_sum
 
@@ -57,20 +57,20 @@ theorem weight_le_one : ∀ p ∈ P.partitions, P.weight p ≤ 1 := by
 -- Ref: [manuscript] Ch. Braids and Knots, §Plancherel boundedness
 theorem weighted_sum_bounded
     (f : List ℕ → ℝ) (M : ℝ)
-    (hM : ∀ p ∈ P.partitions, |f p| ≤ M) (_hM_nn : 0 ≤ M) :
-    |P.partitions.sum (fun p => P.weight p * f p)| ≤ M := by
+    (hM : ∀ lam ∈ P.partitions, |f lam| ≤ M) (hM_nn : 0 ≤ M) :
+    |P.partitions.sum (fun lam => P.weight lam * f lam)| ≤ M := by
   -- |Σ w · f| ≤ Σ |w · f| = Σ w · |f| ≤ Σ w · M = M · Σ w = M
-  calc |P.partitions.sum (fun p => P.weight p * f p)|
-      ≤ P.partitions.sum (fun p => |P.weight p * f p|) :=
+  calc |P.partitions.sum (fun lam => P.weight lam * f lam)|
+      ≤ P.partitions.sum (fun lam => |P.weight lam * f lam|) :=
         Finset.abs_sum_le_sum_abs _ _
-    _ = P.partitions.sum (fun p => P.weight p * |f p|) := by
+    _ = P.partitions.sum (fun lam => P.weight lam * |f lam|) := by
         apply Finset.sum_congr rfl
-        intro p hp
-        rw [abs_mul, abs_of_nonneg (P.weight_nonneg p hp)]
-    _ ≤ P.partitions.sum (fun p => P.weight p * M) := by
+        intro lam hlam
+        rw [abs_mul, abs_of_nonneg (P.weight_nonneg lam hlam)]
+    _ ≤ P.partitions.sum (fun lam => P.weight lam * M) := by
         apply Finset.sum_le_sum
-        intro p hp
-        exact mul_le_mul_of_nonneg_left (hM p hp) (P.weight_nonneg p hp)
+        intro lam hlam
+        exact mul_le_mul_of_nonneg_left (hM lam hlam) (P.weight_nonneg lam hlam)
     _ = (P.partitions.sum P.weight) * M := by
         rw [← Finset.sum_mul]
     _ = M := by rw [P.weight_sum_one, one_mul]
@@ -87,9 +87,9 @@ end PlancherelDistribution
     average bounded by `‖f‖_∞`. -/
 -- Ref: [manuscript] Ch. Braids and Knots, §Plancherel boundedness
 theorem plancherel_weight_boundedness (P : PlancherelDistribution) :
-    (∀ p ∈ P.partitions, 0 ≤ P.weight p ∧ P.weight p ≤ 1) ∧
+    (∀ lam ∈ P.partitions, 0 ≤ P.weight lam ∧ P.weight lam ≤ 1) ∧
     P.partitions.sum P.weight = 1 :=
-  ⟨fun p hp => ⟨P.weight_nonneg p hp, P.weight_le_one p hp⟩,
+  ⟨fun lam hlam => ⟨P.weight_nonneg lam hlam, P.weight_le_one lam hlam⟩,
    P.weight_sum_one⟩
 
 end QOU.BraidKnot
