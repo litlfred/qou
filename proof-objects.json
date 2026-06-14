@@ -4,11 +4,11 @@
   "manuscript": {
     "repo": "litlfred/qou",
     "paper": "content/quantum-observable-universe",
-    "commit_sha": "f12ea5eb21857bbba16c09483ed655deb4fb6e64",
+    "commit_sha": "7460bf9d0d8ee2d520b8f0830d5117affbd2ba82",
     "branch": "claude/gallant-volta-olmlar",
     "build_verified": true,
     "build_ok": false,
-    "generated_at": "2026-06-14T03:54:48.638507+00:00"
+    "generated_at": "2026-06-14T05:25:45.792176+00:00"
   },
   "summary": {
     "blocks": 2615,
@@ -22,18 +22,18 @@
     "status": {
       "n/a": 958,
       "not_started": 577,
-      "stated": 558,
+      "stated": 559,
       "has_sorry": 75,
-      "proved": 411,
-      "error": 36
+      "proved": 429,
+      "error": 17
     },
     "status_by_kind": {
       "conjecture": {
         "has_sorry": 13,
-        "proved": 72,
+        "proved": 76,
         "not_started": 2,
         "stated": 47,
-        "error": 10
+        "error": 6
       },
       "corollary": {
         "proved": 6,
@@ -41,9 +41,9 @@
         "stated": 6
       },
       "definition": {
-        "stated": 209,
+        "stated": 210,
         "has_sorry": 6,
-        "error": 7
+        "error": 6
       },
       "example": {
         "not_started": 61,
@@ -51,23 +51,21 @@
         "proved": 12
       },
       "lemma": {
-        "proved": 37,
-        "stated": 6,
-        "error": 3
+        "proved": 40,
+        "stated": 6
       },
       "proposition": {
         "stated": 221,
-        "proved": 263,
+        "proved": 270,
         "has_sorry": 40,
-        "error": 12,
-        "not_started": 2
+        "not_started": 2,
+        "error": 5
       },
       "remark": {
         "not_started": 512,
         "stated": 32,
         "has_sorry": 9,
-        "proved": 3,
-        "error": 3
+        "proved": 6
       },
       "simulator": {
         "n/a": 11
@@ -75,8 +73,7 @@
       "theorem": {
         "has_sorry": 4,
         "stated": 20,
-        "proved": 18,
-        "error": 1
+        "proved": 19
       },
       "unknown": {
         "n/a": 947
@@ -3635,11 +3632,11 @@
       "chapter": "braids-and-knots",
       "title": "Reconciliation: Markov locality of single generators vs. Gr\u00f6bner-Shirshov non-locality of composite braids",
       "source": "library",
-      "formalization_status": "error",
+      "formalization_status": "proved",
       "lean": {
         "ref": "qou:QOU.Observations.TraceLocalityMeetsGsNonLocality.HasReconciliation",
         "resolution": "exact",
-        "sorry_free": false,
+        "sorry_free": true,
         "decl": "QOU.Observations.TraceLocalityMeetsGsNonLocality.HasReconciliation",
         "file": "content/quantum-observable-universe/lean/QOU/Observations/TraceLocalityMeetsGsNonLocality.lean",
         "github_source_url": "https://github.com/litlfred/qou/blob/claude/gallant-volta-olmlar/content/quantum-observable-universe/lean/QOU/Observations/TraceLocalityMeetsGsNonLocality.lean",
@@ -9905,11 +9902,11 @@
       "chapter": "lifting-and-descent",
       "title": "Cosimplicial crossed groupoid",
       "source": "library",
-      "formalization_status": "error",
+      "formalization_status": "proved",
       "lean": {
         "ref": "qou:QOU.LiftingDescent.cosimplicial_crossed_groupoid_exists",
         "resolution": "exact",
-        "sorry_free": false,
+        "sorry_free": true,
         "decl": "QOU.LiftingDescent.cosimplicial_crossed_groupoid_exists",
         "file": "content/quantum-observable-universe/lean/QOU/LiftingDescent/CosimplicialCrossedGroupoid.lean",
         "github_source_url": "https://github.com/litlfred/qou/blob/claude/gallant-volta-olmlar/content/quantum-observable-universe/lean/QOU/LiftingDescent/CosimplicialCrossedGroupoid.lean",
@@ -11642,11 +11639,11 @@
       "chapter": "mass-endomorphism",
       "title": "Mass endomorphism conjecture",
       "source": "library",
-      "formalization_status": "error",
+      "formalization_status": "proved",
       "lean": {
         "ref": "qou:QOU.MassEndomorphism.MassEndomorphism",
         "resolution": "exact",
-        "sorry_free": false,
+        "sorry_free": true,
         "decl": "QOU.MassEndomorphism.MassEndomorphism",
         "file": "content/quantum-observable-universe/lean/QOU/MassEndomorphism/MassEndomorphismConjecture.lean",
         "github_source_url": "https://github.com/litlfred/qou/blob/claude/gallant-volta-olmlar/content/quantum-observable-universe/lean/QOU/MassEndomorphism/MassEndomorphismConjecture.lean",
@@ -14943,11 +14940,11 @@
       "chapter": "mass-theory",
       "title": "Feynman transition amplitude as categorical trace",
       "source": "library",
-      "formalization_status": "error",
+      "formalization_status": "proved",
       "lean": {
         "ref": "qou:QOU.FeynmanPathIntegrals.FeynmanCategoricalTrace",
         "resolution": "exact",
-        "sorry_free": false,
+        "sorry_free": true,
         "decl": "QOU.FeynmanPathIntegrals.FeynmanCategoricalTrace",
         "file": "content/quantum-observable-universe/lean/QOU/FeynmanPathIntegrals.lean",
         "github_source_url": "https://github.com/litlfred/qou/blob/claude/gallant-volta-olmlar/content/quantum-observable-universe/lean/QOU/FeynmanPathIntegrals.lean",
@@ -14964,11 +14961,11 @@
       "chapter": "mass-theory",
       "title": "Classical limit and the symmetric degeneration",
       "source": "library",
-      "formalization_status": "error",
+      "formalization_status": "proved",
       "lean": {
         "ref": "qou:QOU.FeynmanPathIntegrals.jones_trace_generator_at_one",
         "resolution": "exact",
-        "sorry_free": false,
+        "sorry_free": true,
         "decl": "QOU.FeynmanPathIntegrals.jones_trace_generator_at_one",
         "file": "content/quantum-observable-universe/lean/QOU/FeynmanPathIntegrals.lean",
         "github_source_url": "https://github.com/litlfred/qou/blob/claude/gallant-volta-olmlar/content/quantum-observable-universe/lean/QOU/FeynmanPathIntegrals.lean"
@@ -14984,11 +14981,11 @@
       "chapter": "mass-theory",
       "title": "Classical limit: recovery of the symmetric path integral",
       "source": "library",
-      "formalization_status": "error",
+      "formalization_status": "proved",
       "lean": {
         "ref": "qou:QOU.FeynmanPathIntegrals.ClassicalLimitDegeneration",
         "resolution": "exact",
-        "sorry_free": false,
+        "sorry_free": true,
         "decl": "QOU.FeynmanPathIntegrals.ClassicalLimitDegeneration",
         "file": "content/quantum-observable-universe/lean/QOU/FeynmanPathIntegrals.lean",
         "github_source_url": "https://github.com/litlfred/qou/blob/claude/gallant-volta-olmlar/content/quantum-observable-universe/lean/QOU/FeynmanPathIntegrals.lean",
@@ -15018,11 +15015,11 @@
       "chapter": "mass-theory",
       "title": "Eigenbasis decomposition for the Feynman amplitude",
       "source": "library",
-      "formalization_status": "error",
+      "formalization_status": "proved",
       "lean": {
         "ref": "qou:QOU.FeynmanPathIntegrals.eigenbasis_decomposition",
         "resolution": "exact",
-        "sorry_free": false,
+        "sorry_free": true,
         "decl": "QOU.FeynmanPathIntegrals.eigenbasis_decomposition",
         "file": "content/quantum-observable-universe/lean/QOU/FeynmanPathIntegrals.lean",
         "github_source_url": "https://github.com/litlfred/qou/blob/claude/gallant-volta-olmlar/content/quantum-observable-universe/lean/QOU/FeynmanPathIntegrals.lean",
@@ -15083,11 +15080,11 @@
       "chapter": "mass-theory",
       "title": "Dictionary: Feynman path integral $\\\\leftrightarrow$ QOU categorical trace",
       "source": "library",
-      "formalization_status": "error",
+      "formalization_status": "proved",
       "lean": {
         "ref": "qou:QOU.FeynmanPathIntegrals.FeynmanQOUDictionary",
         "resolution": "exact",
-        "sorry_free": false,
+        "sorry_free": true,
         "decl": "QOU.FeynmanPathIntegrals.FeynmanQOUDictionary",
         "file": "content/quantum-observable-universe/lean/QOU/FeynmanPathIntegrals.lean",
         "github_source_url": "https://github.com/litlfred/qou/blob/claude/gallant-volta-olmlar/content/quantum-observable-universe/lean/QOU/FeynmanPathIntegrals.lean"
@@ -15117,11 +15114,11 @@
       "chapter": "mass-theory",
       "title": "Path integral collapses to a finite sum on the eigenbasis",
       "source": "library",
-      "formalization_status": "error",
+      "formalization_status": "proved",
       "lean": {
         "ref": "qou:QOU.FeynmanPathIntegrals.trace_collapse",
         "resolution": "exact",
-        "sorry_free": false,
+        "sorry_free": true,
         "decl": "QOU.FeynmanPathIntegrals.trace_collapse",
         "file": "content/quantum-observable-universe/lean/QOU/FeynmanPathIntegrals.lean",
         "github_source_url": "https://github.com/litlfred/qou/blob/claude/gallant-volta-olmlar/content/quantum-observable-universe/lean/QOU/FeynmanPathIntegrals.lean",
@@ -15232,11 +15229,11 @@
       "chapter": "mass-theory",
       "title": "Two-sided substrate bound on the dressed-quark splitting",
       "source": "library",
-      "formalization_status": "error",
+      "formalization_status": "proved",
       "lean": {
         "ref": "qou:QOU.FlavorDressing.flavor_mass_splitting_bound",
         "resolution": "exact",
-        "sorry_free": false,
+        "sorry_free": true,
         "decl": "QOU.FlavorDressing.flavor_mass_splitting_bound",
         "file": "content/quantum-observable-universe/lean/QOU/FlavorDressing/FlavorMassSplittingBound.lean",
         "github_source_url": "https://github.com/litlfred/qou/blob/claude/gallant-volta-olmlar/content/quantum-observable-universe/lean/QOU/FlavorDressing/FlavorMassSplittingBound.lean",
@@ -15977,11 +15974,11 @@
       "chapter": "mass-theory",
       "title": "Single-generator Hecke polynomial reduction",
       "source": "library",
-      "formalization_status": "error",
+      "formalization_status": "proved",
       "lean": {
         "ref": "qou:QOU.Braiding.hecke_gen_poly_reduction",
         "resolution": "exact",
-        "sorry_free": false,
+        "sorry_free": true,
         "decl": "QOU.Braiding.hecke_gen_poly_reduction",
         "file": "content/quantum-observable-universe/lean/QOU/Braiding/HeckeGenPolyReduction.lean",
         "github_source_url": "https://github.com/litlfred/qou/blob/claude/gallant-volta-olmlar/content/quantum-observable-universe/lean/QOU/Braiding/HeckeGenPolyReduction.lean"
@@ -16723,11 +16720,11 @@
       "chapter": "mass-theory",
       "title": "Knot factor $a_K$ as a chirality-block Plancherel pairing",
       "source": "library",
-      "formalization_status": "error",
+      "formalization_status": "proved",
       "lean": {
         "ref": "qou:QOU.BraidKnot.knot_factor_spectral_form",
         "resolution": "exact",
-        "sorry_free": false,
+        "sorry_free": true,
         "decl": "QOU.BraidKnot.knot_factor_spectral_form",
         "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/KnotFactorSpectralDerivation.lean",
         "github_source_url": "https://github.com/litlfred/qou/blob/claude/gallant-volta-olmlar/content/quantum-observable-universe/lean/QOU/BraidKnot/KnotFactorSpectralDerivation.lean"
@@ -18231,11 +18228,11 @@
       "chapter": "mass-theory",
       "title": "\u03a6$_q$ tower equals $\\\\rho_q \\\\cdot \\\\sum_S \\\\mathrm{Vol}(K_S)$ (archimedean bridge)",
       "source": "library",
-      "formalization_status": "error",
+      "formalization_status": "proved",
       "lean": {
         "ref": "qou:QOU.PhiQJSJ.bridge",
         "resolution": "exact",
-        "sorry_free": false,
+        "sorry_free": true,
         "decl": "QOU.PhiQJSJ.bridge",
         "file": "content/quantum-observable-universe/lean/QOU/PhiQJSJ.lean",
         "github_source_url": "https://github.com/litlfred/qou/blob/claude/gallant-volta-olmlar/content/quantum-observable-universe/lean/QOU/PhiQJSJ.lean",
@@ -18738,11 +18735,11 @@
       "chapter": "mass-theory",
       "title": "Seven-term atomic mass formula with $q$-integer coefficients",
       "source": "library",
-      "formalization_status": "error",
+      "formalization_status": "proved",
       "lean": {
         "ref": "qou:QOU.Interactions.QIntegerMassFormula",
         "resolution": "exact",
-        "sorry_free": false,
+        "sorry_free": true,
         "decl": "QOU.Interactions.QIntegerMassFormula",
         "file": "content/quantum-observable-universe/lean/QOU/Interactions/QIntegerMassFormula.lean",
         "github_source_url": "https://github.com/litlfred/qou/blob/claude/gallant-volta-olmlar/content/quantum-observable-universe/lean/QOU/Interactions/QIntegerMassFormula.lean",
@@ -22479,11 +22476,11 @@
       "chapter": "molecular-construction",
       "title": "Palindromicity and orbital type",
       "source": "library",
-      "formalization_status": "error",
+      "formalization_status": "proved",
       "lean": {
         "ref": "qou:QOU.Molecular.PalindromicityOrbitalType",
         "resolution": "exact",
-        "sorry_free": false,
+        "sorry_free": true,
         "decl": "QOU.Molecular.PalindromicityOrbitalType",
         "file": "content/quantum-observable-universe/lean/QOU/Molecular/PalindromicityOrbitalType.lean",
         "github_source_url": "https://github.com/litlfred/qou/blob/claude/gallant-volta-olmlar/content/quantum-observable-universe/lean/QOU/Molecular/PalindromicityOrbitalType.lean",
@@ -22912,11 +22909,11 @@
       "chapter": "observations",
       "title": "Quarks as Borromean-linked unknots in the exceptional divisor",
       "source": "library",
-      "formalization_status": "error",
+      "formalization_status": "proved",
       "lean": {
         "ref": "qou:QOU.Archimedean.BorromeanQuark",
         "resolution": "exact",
-        "sorry_free": false,
+        "sorry_free": true,
         "decl": "QOU.Archimedean.BorromeanQuark",
         "file": "content/quantum-observable-universe/lean/QOU/Archimedean/BorromeanQuark.lean",
         "github_source_url": "https://github.com/litlfred/qou/blob/claude/gallant-volta-olmlar/content/quantum-observable-universe/lean/QOU/Archimedean/BorromeanQuark.lean",
@@ -26224,11 +26221,11 @@
       "chapter": "particle-interactions",
       "title": "Borromean baryon",
       "source": "library",
-      "formalization_status": "error",
+      "formalization_status": "stated",
       "lean": {
         "ref": "qou:QOU.Braiding.BorromeanBaryon",
         "resolution": "leaf",
-        "sorry_free": false,
+        "sorry_free": true,
         "decl": "QOU.Archimedean.BorromeanBaryon",
         "file": "content/quantum-observable-universe/lean/QOU/Archimedean/BorromeanQuark.lean",
         "github_source_url": "https://github.com/litlfred/qou/blob/claude/gallant-volta-olmlar/content/quantum-observable-universe/lean/QOU/Archimedean/BorromeanQuark.lean",
@@ -30267,11 +30264,11 @@
       "chapter": "predicted-spectra",
       "title": "Additive Bring zero-mode form $1/\\\\alpha_{EM} = q\\\\cdot[9]_q\\\\cdot[10]_q + 2g/(4\\\\pi(g-1))$ (conditional)",
       "source": "library",
-      "formalization_status": "error",
+      "formalization_status": "proved",
       "lean": {
         "ref": "qou:QOU.Archimedean.bring_zero_mode_additive_form",
         "resolution": "exact",
-        "sorry_free": false,
+        "sorry_free": true,
         "decl": "QOU.Archimedean.bring_zero_mode_additive_form",
         "file": "content/quantum-observable-universe/lean/QOU/Archimedean/EmCouplingBringZeroMode.lean",
         "github_source_url": "https://github.com/litlfred/qou/blob/claude/gallant-volta-olmlar/content/quantum-observable-universe/lean/QOU/Archimedean/EmCouplingBringZeroMode.lean"
@@ -36522,11 +36519,11 @@
       "chapter": "quantum-observable-universes",
       "title": "Volume constraint forces $\\\\det(g_V) = 1$",
       "source": "library",
-      "formalization_status": "error",
+      "formalization_status": "proved",
       "lean": {
         "ref": "qou:QOU.su2_emergence_volume_determinant",
         "resolution": "exact",
-        "sorry_free": false,
+        "sorry_free": true,
         "decl": "QOU.su2_emergence_volume_determinant",
         "file": "content/quantum-observable-universe/lean/QOU/su2_emergence_volume_determinant.lean",
         "github_source_url": "https://github.com/litlfred/qou/blob/claude/gallant-volta-olmlar/content/quantum-observable-universe/lean/QOU/su2_emergence_volume_determinant.lean",

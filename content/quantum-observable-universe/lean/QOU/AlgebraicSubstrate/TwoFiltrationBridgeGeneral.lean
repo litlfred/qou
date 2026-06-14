@@ -1,3 +1,5 @@
+import Mathlib.Data.Nat.Basic
+
 /-!
 # Two-filtration bridge in full generality
 

@@ -375,7 +375,7 @@
   "id": "lean-drain-WitnessR5Full",
   "summary": "[T2] BraidKnot/WitnessR5Full.lean: Prop projection min_block_eig must be a proof @67",
   "comment": "Lean build-drain bean (2026-06-14, one-per-lean). File: content/quantum-observable-universe/lean/QOU/BraidKnot/WitnessR5Full.lean. Root: Prop projection min_block_eig must be a proof @67. Fix: fix struct field type. Status: open. Verify: LEAN_PATH=$(find . -type d -path '*/.lake/build/lib/lean'|tr '\\n' ':') lean <file>. Goal: move block to proved. See docs/audits/2026-06-14-lean-build-drain-beans.md.",
-  "status": "drained-verified"
+  "status": "open"
  },
  {
   "id": "lean-drain-HeckeGenPolyReduction",

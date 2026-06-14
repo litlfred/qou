@@ -61,7 +61,7 @@ class R5FullWitness (n : LightNucleus) where
     `StrictComplementarity` structure in the content-block
     file. -/
 structure StrictComplementarityCert (n : LightNucleus)
-    [_w : R5FullWitness n] where
+    [_w : R5FullWitness n] : Prop where
   /-- Minimum eigenvalue across all Wedderburn blocks in the
       witness's `per_block_summary`. -/
   min_block_eig : ℝ

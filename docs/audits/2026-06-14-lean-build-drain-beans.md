@@ -176,3 +176,39 @@ Mathlib-rename beans (HeckeLogDecomposition, TraceLocality), then the
 Tier-3 cascades (AtomicMass root unblocks ~101). Each fix verified with
 the lean-direct recipe above; a full `lake build QOU` + `proof-objects.json`
 regen at the end of the campaign reconciles the dashboard.
+
+## Post-build reconciliation (2026-06-14)
+
+A full cache-restored `lake build QOU` verified the campaign end-to-end:
+**erroring library files 28 → 13; error-status blocks 36 → 17; proved
+411 → 429; sorry warnings held at 6.** The build caught two issues that
+per-file `lean`-direct verification had MISSED — recorded so the method is
+fixed:
+
+### ⚠ Verification-method fixes
+1. **`lean`-direct must pass `-D autoImplicit=false`** (the package
+   `lakefile.toml` sets it; plain `lean` defaults to `true`). With
+   autoImplicit ON, an *undeclared* identifier is silently bound as an
+   implicit variable — so `TwoFiltrationBridge{General,SmallCases}.lean`
+   (using `ℕ` with no Nat import) passed `lean`-direct but FAILED the
+   package build with `Unknown identifier ℕ`. Fixed by adding
+   `import Mathlib.Data.Nat.Basic`; re-verified with
+   `lean -D autoImplicit=false` → clean. **Corrected recipe:**
+   `LEAN_PATH="$LP" lean -D autoImplicit=false <file>`.
+2. **`lean`-direct does NOT check a changed file's dependents.** The
+   `WitnessR5Full.lean` fix (dropping `: Prop`) compiled itself but turned
+   `StrictComplementarityCert` into a `Type`, breaking 3 downstream
+   witnesses (`Deuteron/Helium3/TritiumWitness`: `theorem … : …Cert` →
+   "type is not a proposition"). **Reverted** `WitnessR5Full` (un-regresses
+   the 3 witnesses); re-opened as a bean — Prop-vs-`structure` is an author
+   design call. **A full `lake build QOU` is the only true gate.**
+
+### Remaining erroring files (~9 post-reconciliation)
+Tier-3 cascades: `AtomicMass` (×101 root), `PolynomialEval` (×38),
+`HeckeH3` (×11), `NucleusEmptySDPUniqueness` (×9). Design/author beans:
+`CategoricalDqSquared`, `QGeometricLanglands`, `ShellClosureNfTermCount`,
+`PlancherelWeightBoundedness` (partial), `WitnessR5Full` (Prop/Type).
+
+`proof-objects.json` is regenerated from build-2; the 2 bridge fixes +
+WitnessR5Full revert post-date that log, so a clean CI rebuild will show
+~9 erroring files / ~431 proved.
