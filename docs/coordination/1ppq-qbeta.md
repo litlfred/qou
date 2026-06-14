@@ -352,6 +352,59 @@ Follow-up to #2240, resolving the `/coordinate`-surfaced question vs #2106.
   (Q_β/c_k domain); owner `beans`-CLI ask acked (not on `main` yet — will adopt
   when the skill updates land).
 
+## 2026-06-14 — q-Bessel identification of the Reeb-phase objects (PR #2279)
+
+**Scope.** Exposition + supporting infra, no production wiring. Answers "where
+do Bessel functions play a role" and makes explicit that the home-grown
+Reeb-phase / Markov-trace objects **are** the q-special functions of
+`Rep(SU_q(2))`: Chebyshev / little-q-Jacobi matrix coefficients (rotation
+regime), **Hahn–Exton q-Bessel** in the `SU_q(2)→E_q(2)` contraction / brane-
+tower limit (Vaksman–Korogodsky 1989; Koelink 1994).
+
+**Proved (Lean, sorry-free, verified `lean`-direct vs the restored
+`lake-cache/qou-v4-24-0` oleans):**
+
+- `QOU/QBeta/ReebTowerJacobiAnger.lean` — bar-graded three-term recurrence
+  `sinh((k+1)η)=2cosh η·sinh(kη)−sinh((k−1)η)`; the **rotation/growth = `J_ν`/`I_ν`**
+  unification (one recurrence `p_{k+1}=2t·p_k−p_{k−1}`, two conics: circle
+  `cos²+sin²=1` vs hyperbola `cosh²−sinh²=1`).
+- `QOU/QBeta/QBesselContiguityRecurrence.lean` — q-Bessel contiguity ⟹
+  closed-form coefficients (first-order **q-holonomic**); C-finite as the
+  constant-ratio degeneration; links to
+  `RationalCoeffRecurrence.pole_reciprocal_is_char_root`.
+
+**Compute (run, witnesses committed):**
+
+- `qbeta_reeb_tower_jacobi_anger.py` (6/6) — the scope-doc "Bessel-like" tag
+  IS the identity `sinh(x sinh η)=2 Σ_m J_{2m+1}(x) sinh((2m+1)η)` (bar-ODD,
+  `c_3` sector), proved `<1e-40`; `I_ν(x)=i^{−ν}J_ν(ix)`. **n=3 bar-odd spectra
+  are pure odd-order {1,3,5}** (the right structure) but the 3-order truncation
+  does NOT match a single-`x` Bessel profile (resid 0.128) ⇒ the Bessel object
+  is the TOWER / contraction limit, not the n=3 trace (a clean refutation that
+  confirms the framing — same footing as #1887's f-map refutation).
+- `qbeta_qbessel_contiguity_cfinite.py` (4/4) — **#1839 DERIVED**: the q-Bessel
+  coefficient recurrence is q-holonomic (q^k-dependent), NOT C-finite, which
+  predicts #1839's "no low-order constant recurrence"; the tail ratio
+  `c_{k+1}/c_k → 1/u_substrate = 117.41` (the q-difference pole) is reproduced
+  to **rel-err 0.0000**. The kernel `R` of `F(qξ)=R·F(ξ)` is the q-Bessel
+  q-difference operator, not a rational degeneration.
+
+**Relation to the carrier work (#2240/#2106).** Independent and complementary:
+the carrier thread pins the *archimedean a_1 VALUE* (`√2·Φ₂`, `κ_(2,1)`); this PR
+pins the *fibre-level functional class* (q-Bessel / odd-order Jacobi-Anger). The
+bar-ODD localization to the `(2,1)` block (`χ^(2,1)(σ_1)=2 sinh η`, pure odd)
+agrees with the ledger's "only (2,1) is bar-ODD among λ⊢3".
+
+**NOT wired** to production Q_β or to the mass endomorphism. `c_3` stays
+cal-anchored. The structural lever (per-λ Reeb phase θ_λ, rotation/growth) is the
+same one the A≥3 binding decomposition uses (`binding_reeb_phase_decomposition.py`),
+but that side is the open Δ_λ frontier, also unwired. Refs added:
+Koelink 1994, Koelink–Swarttouw 1994, Vaksman–Korogodsky 1989, Koornwinder 1990,
+Gasper–Rahman 2004. Audit:
+`docs/audits/2026-06-13-reeb-phase-qbessel-identification.md`.
+
+**Coordination:** intent posted on #2106 (bar-parity per-block overlap).
+
 ## Cross-refs
 
 - CLAUDE.md §Precision goals (L1 / L2 / Subgoal-1 / Subgoal-2)
