@@ -207,6 +207,24 @@ canvas { display: block; width: 100%; height: 100%; }
   </div>
 
   <div class="control-group">
+    <div class="control-title">Grid Editor (SDP Evolution)</div>
+    <div class="radio-group" style="margin-bottom: 5px;">
+      <label class="radio-label"><input type="radio" name="grid_mode" value="auto" checked> <span>Auto Slits</span></label>
+      <label class="radio-label"><input type="radio" name="grid_mode" value="manual"> <span>Manual Atoms</span></label>
+    </div>
+    <div id="grid_tools" style="display:none; margin-top:8px;">
+       <select id="sel_particle" style="width:100%; margin-bottom:5px; background:var(--bg); color:var(--text); border:1px solid var(--border); padding:3px;">
+         <option value="1">Hydrogen (p+)</option>
+         <option value="6">Carbon (Z=6)</option>
+         <option value="79">Gold (Z=79)</option>
+         <option value="e">Electron (e-)</option>
+       </select>
+       <button onclick="clearGrid()" style="width:100%">Clear Grid</button>
+       <p style="font-size: 10px; margin-top: 5px; color: var(--dim);">Click 2D view to place particles.</p>
+    </div>
+  </div>
+
+  <div class="control-group">
     <div class="control-title">Parameters</div>
     
     <div class="slider-row">
@@ -376,8 +394,34 @@ document.getElementById('sel_material').addEventListener('change', async (e) => 
     console.error("Failed to load shard", err);
   }
 });
+let manualGrid = [];
+function clearGrid() { manualGrid = []; update(); }
+
+cvs.view2d.addEventListener('mousedown', e => {
+  if (P.grid_mode !== 'manual') return;
+  const rect = cvs.view2d.getBoundingClientRect();
+  const px = e.clientX - rect.left;
+  const py = e.clientY - rect.top;
+  
+  const type = document.getElementById('sel_particle').value;
+  let charge = 0, mass = 0, color = '#fff';
+  if (type === 'e') { charge = -1; mass = 0.0005; color = '#00d2ff'; }
+  else { mass = parseInt(type) * 1.0; charge = parseInt(type); color = '#ffaa33'; }
+  
+  manualGrid.push({ x: px, y: py, type, mass, charge, color });
+  update();
+});
+
 const bindRadio = (name) => document.querySelectorAll(`input[name="${name}"]`).forEach(r => r.addEventListener('change', e => { P[name] = isNaN(e.target.value) ? e.target.value : parseInt(e.target.value); update(); }));
 bindRadio('mode'); bindRadio('theory'); bindRadio('surface');
+if(document.querySelector('input[name="grid_mode"]')) {
+  document.querySelectorAll('input[name="grid_mode"]').forEach(r => r.addEventListener('change', e => {
+    P.grid_mode = e.target.value;
+    document.getElementById('grid_tools').style.display = P.grid_mode === 'manual' ? 'block' : 'none';
+    update();
+  }));
+  P.grid_mode = 'auto';
+}
 document.getElementById('cb_bach').addEventListener('change', e => { P.showBach = e.target.checked; update(); });
 
 const bindSlider = (id, key, unit) => {
@@ -538,22 +582,42 @@ function update() {
   const sx = W2*0.1, sy = H2*0.5, slx = W2*0.3, scx = W2*0.85, gap = 20;
   ctx.view2d.fillStyle = '#fff'; ctx.view2d.beginPath(); ctx.view2d.arc(sx,sy,4,0,Math.PI*2); ctx.view2d.fill();
   
-  // Draw Slits as Discrete Generative Lattice
-  ctx.view2d.fillStyle = P.vdw > 0.01 ? '#778' : '#445';
-  const ATOM_SPACING = 3;
-  const drawLatticeBlock = (yStart, yEnd) => {
-    for(let y = yStart; y <= yEnd; y += ATOM_SPACING) {
-      // q-Reeb thermal vibration proportional to Isotope mass (vdw)
-      let vibX = (Math.random()-0.5) * P.vdw * latticeZr * 3.0;
-      let vibY = (Math.random()-0.5) * P.vdw * latticeZi * 3.0;
+  // Draw Slits or Manual Grid
+  if (P.grid_mode === 'manual') {
+    for (let atom of manualGrid) {
+      // Planck-time quantum jitters proportional to inverse mass
+      let vibScale = atom.mass > 0 ? 0.05 / atom.mass : 0.5;
+      let vibX = (Math.random()-0.5) * vibScale * latticeZr * 10.0;
+      let vibY = (Math.random()-0.5) * vibScale * latticeZi * 10.0;
+      ctx.view2d.fillStyle = atom.color;
       ctx.view2d.beginPath();
-      ctx.view2d.arc(slx + 2 + vibX, y + vibY, 1.5, 0, Math.PI*2);
+      ctx.view2d.arc(atom.x + vibX, atom.y + vibY, 2.5, 0, Math.PI*2);
       ctx.view2d.fill();
+      // Draw quantum halo
+      ctx.view2d.strokeStyle = atom.color;
+      ctx.view2d.globalAlpha = 0.3;
+      ctx.view2d.beginPath();
+      ctx.view2d.arc(atom.x + vibX, atom.y + vibY, 6, 0, Math.PI*2);
+      ctx.view2d.stroke();
+      ctx.view2d.globalAlpha = 1.0;
     }
-  };
-  drawLatticeBlock(0, sy - gap/2 - 2);
-  drawLatticeBlock(sy - gap/2 + 2, sy + gap/2 - 2);
-  drawLatticeBlock(sy + gap/2 + 2, H2);
+  } else {
+    // Draw Slits as Discrete Generative Lattice
+    ctx.view2d.fillStyle = P.vdw > 0.01 ? '#778' : '#445';
+    const ATOM_SPACING = 3;
+    const drawLatticeBlock = (yStart, yEnd) => {
+      for(let y = yStart; y <= yEnd; y += ATOM_SPACING) {
+        let vibX = (Math.random()-0.5) * P.vdw * latticeZr * 3.0;
+        let vibY = (Math.random()-0.5) * P.vdw * latticeZi * 3.0;
+        ctx.view2d.beginPath();
+        ctx.view2d.arc(slx + 2 + vibX, y + vibY, 1.5, 0, Math.PI*2);
+        ctx.view2d.fill();
+      }
+    };
+    drawLatticeBlock(0, sy - gap/2 - 2);
+    drawLatticeBlock(sy - gap/2 + 2, sy + gap/2 - 2);
+    drawLatticeBlock(sy + gap/2 + 2, H2);
+  }
   
   // Clarify Spacetime Axis in 2D View
   ctx.view2d.fillStyle = 'rgba(0,0,0,0.5)';
@@ -685,7 +749,30 @@ function tick() {
     
     // N-body structural interaction with slit lattice
     // The slit is located at p.x ≈ 0.3. We apply the q-harmonic & WASM Hecke Traces
-    if (p.x > 0.25 && p.x < 0.35) {
+    if (P.grid_mode === 'manual') {
+       let forceY = 0;
+       const W2 = cvs.view2d.offsetWidth, H2 = cvs.view2d.offsetHeight;
+       const sx = W2*0.1, sy = H2*0.5, scx = W2*0.85;
+       let ppx = sx + p.x * (scx - sx);
+       let ppy = sy + p.y * H2 * 0.8;
+       
+       for (let atom of manualGrid) {
+          let dx = ppx - atom.x;
+          let dy = ppy - atom.y;
+          // Planck minimum distance cutoff to avoid singularities
+          let r2 = dx*dx + dy*dy + 0.1; 
+          
+          // SDP Semidefinite projection evolution: 
+          // Particles exert a localized geometric force based on trace closure
+          let chargeInteraction = (-1) * atom.charge; // Emitted particles assumed electrons
+          let sdpEigenvalue = chargeInteraction / r2;
+          let q_harmonic = (P.q - 1.0) * dy;
+          
+          forceY += sdpEigenvalue * 15.0 * dy + q_harmonic * 0.1;
+       }
+       p.targetY += forceY * 0.0005;
+       p.targetTheta += forceY * 0.002;
+    } else if (p.x > 0.25 && p.x < 0.35) {
        let forceY = 0;
        
        // 1. Classical N-Body lattice Van der Waals scattering
