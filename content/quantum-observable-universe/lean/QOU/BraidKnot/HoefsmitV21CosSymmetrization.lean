@@ -1,6 +1,7 @@
 import Mathlib.Data.Matrix.Basic
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
+import Mathlib.Analysis.SpecialFunctions.Trigonometric.Inverse
 import Mathlib.Tactic
 
 
@@ -291,13 +292,38 @@ theorem hoefsmit_V21_cos_symmetrization (q : ℝ) (hq : q ≠ 0) [V21Eigenphase 
 end QOU.BraidKnot
 
 
-/-! ## §3b-cond conditional-class hypothesis (audit-visibility stub) -/
+/-! ## Eigenphase forcing — the provable core of `θ = arccos(χ^(2,1)/2)`
 
-namespace QOU.HoefsmitV21CosSymmetrization.ConditionalAudit
+The Borromean braid `𝓑₃` has even writhe, so its `V_(2,1)` image is
+`det = +1` — a genuine `SU(2)`-type rotation, unlike the single generator
+`σ_1` (`det = -1`, `hoefsmit_sigma1_det_eq`). For any such real `2×2`
+rotation with `|trace| ≤ 2` the eigenphase is **forced**:
+`trace = 2 cos θ` at `θ = arccos(trace/2)`. This is the provable content
+behind the spectral phase `θ = arccos(χ^(2,1)(𝓑₃)/2)`.
 
-class BorromeanQuark : Prop where
-  holds : True
+**Not proved here (and provably non-generalising).** Why the factor
+`θ/(8ℏ_q²)` is the correct *mass* correction is a top-down ansatz: the
+`/8` is the Borromean octahedral count `Vol(𝓑₃) = 8·G`, but the second
+`/ℏ_q²` is unexplained, and it does **not** extend to binding — atoms
+`A ≥ 2` live in the `(3A−1, 1)` irrep (`dim 3A−1 > 2`), whose `H_{3A}`
+eigenvalues are real reciprocal pairs (hyperbolic), with no single
+rotation angle (see
+`docs/audits/2026-05-28-spectral-phase-correction-derived.md`). The
+spectral mass correction therefore stays EXPLORATORY; this lemma records
+only its proved kinematic core, replacing a prior vacuous
+`True := by trivial` audit stub. -/
 
-theorem hoefsmit_cos_symmetrization_g2_conditional [_inst : BorromeanQuark] : True := trivial
+namespace QOU.BraidKnot
 
-end QOU.HoefsmitV21CosSymmetrization.ConditionalAudit
+/-- **Eigenphase forcing.** A real `2×2` rotation (`det = 1`,
+    `|trace| ≤ 2`) has its trace pinned to `2 cos θ` at the forced angle
+    `θ = arccos(trace/2)`: concretely `2 · cos(arccos(t/2)) = t` for
+    `|t| ≤ 2`. The provable kinematic core of the Borromean spectral
+    phase `θ = arccos(χ^(2,1)(𝓑₃)/2)`. -/
+theorem eigenphase_forced (t : ℝ) (ht : |t| ≤ 2) :
+    2 * Real.cos (Real.arccos (t / 2)) = t := by
+  obtain ⟨h1, h2⟩ := abs_le.mp ht
+  rw [Real.cos_arccos (by linarith) (by linarith)]
+  ring
+
+end QOU.BraidKnot
