@@ -75,8 +75,8 @@ theorem substrate_to_bound_ratio {R : Type*} [Field R]
   rw [h_neg4]
   -- (q - q⁻¹) = (q^2 - 1)/q  and  (q + q⁻¹) = (q^2 + 1)/q;  rewriting
   -- these makes the denominator a clean rational expression.
-  have h_qm : q - q⁻¹ = (q^2 - 1) / q := by field_simp; ring
-  have h_qp : q + q⁻¹ = (q^2 + 1) / q := by field_simp; ring
+  have h_qm : q - q⁻¹ = (q^2 - 1) / q := by field_simp
+  have h_qp : q + q⁻¹ = (q^2 + 1) / q := by field_simp
   rw [h_qm, h_qp]
   field_simp
   ring
@@ -97,7 +97,7 @@ private lemma substrate_split_factor_pos {q : ℝ} (hq : 1 < q) :
     have h_pow : (q : ℝ) ^ (-4 : ℤ) = (q ^ 4)⁻¹ := by
       rw [show (-4 : ℤ) = -((4 : ℕ) : ℤ) from rfl, zpow_neg, zpow_natCast]
     rw [h_pow]
-    have : (q ^ 4 : ℝ)⁻¹ < 1 := (inv_lt_one_iff_of_pos hq4_pos).mpr hq4_gt_1
+    have : (q ^ 4 : ℝ)⁻¹ < 1 := (inv_lt_one₀ hq4_pos).mpr hq4_gt_1
     linarith
   have h_sqrt_q : 0 < Real.sqrt q := Real.sqrt_pos.mpr hq0
   have h_sqrt_qinv : 0 < Real.sqrt q⁻¹ := Real.sqrt_pos.mpr hq_inv_pos
@@ -128,7 +128,8 @@ private lemma sqrt_sum_lt_three_mul_qq_inv {q : ℝ} (hq : 1 < q) :
     nlinarith [h1, h2, hsqrt_mul]
   -- AM-GM strict at q ≠ 1:  q + q⁻¹ > 2
   have h_qpqinv_gt_2 : q + q⁻¹ > 2 := by
-    have hpos : 0 < (q - 1) ^ 2 / q := div_pos (sq_pos_of_ne_zero _ (by linarith)) hq0
+    have hpos : 0 < (q - 1) ^ 2 / q :=
+      div_pos (pow_pos (by linarith : (0:ℝ) < q - 1) 2) hq0
     have h_eq : (q - 1) ^ 2 / q = q + q⁻¹ - 2 := by field_simp; ring
     linarith
   -- (√q + √q⁻¹)² > 4, hence √q + √q⁻¹ > 2
@@ -181,11 +182,12 @@ theorem flavor_mass_splitting_bound
   have hq_inv_pos : 0 < q⁻¹ := inv_pos.mpr hq0
   have h_qpqinv_pos : 0 < q + q⁻¹ := by linarith
   have h_qmqinv_pos : 0 < q - q⁻¹ := by
-    have : q - q⁻¹ = (q ^ 2 - 1) / q := by field_simp; ring
+    have : q - q⁻¹ = (q ^ 2 - 1) / q := by field_simp
     rw [this]
     apply div_pos _ hq0
     nlinarith
-  have h_sub_div_sq_pos : 0 < ((q - 1) / q) ^ 2 := by positivity
+  have h_sub_div_sq_pos : 0 < ((q - 1) / q) ^ 2 :=
+    pow_pos (div_pos (by linarith) hq0) 2
   have h_sqrt_q : 0 < Real.sqrt q := Real.sqrt_pos.mpr hq0
   have h_sqrt_qinv : 0 < Real.sqrt q⁻¹ := Real.sqrt_pos.mpr hq_inv_pos
   have h_sqrt_sum_pos : 0 < Real.sqrt q + Real.sqrt q⁻¹ := by linarith
@@ -215,7 +217,6 @@ theorem flavor_mass_splitting_bound
     unfold substrate_split_factor
     rw [h_numerator_form]
     field_simp
-    ring
   -- Strict upper bound on the factor.
   have h_factor_lt :
       substrate_split_factor q
@@ -232,7 +233,7 @@ theorem flavor_mass_splitting_bound
         ((q - 1) / q) ^ 2 * (q - q⁻¹) *
             (Real.sqrt q + Real.sqrt q⁻¹) / 3
           < ((q - 1) / q) ^ 2 * (q - q⁻¹) * (q + q⁻¹) := by
-      rw [div_lt_iff (by norm_num : (0 : ℝ) < 3)]
+      rw [div_lt_iff₀ (by norm_num : (0 : ℝ) < 3)]
       calc ((q - 1) / q) ^ 2 * (q - q⁻¹) *
               (Real.sqrt q + Real.sqrt q⁻¹)
           < ((q - 1) / q) ^ 2 * (q - q⁻¹) * (3 * (q + q⁻¹)) := by
