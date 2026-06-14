@@ -105,8 +105,14 @@ structure BetaMinusDecay where
   p_inc : daughter.p = parent.p + 1
   /-- The daughter has one fewer neutron. -/
   n_dec : daughter.n = parent.n - 1
-  /-- Mass number is preserved. -/
-  A_preserved : daughter.A = parent.A
+  /-- The parent has at least one neutron available to convert
+      (the β⁻ precondition; without it ℕ-truncated `parent.n - 1`
+      would not satisfy mass-number conservation). -/
+  parent_has_neutron : 1 ≤ parent.n
+  /-- Mass-number invariant on the parent nucleus: `A = p + n`. -/
+  parent_A_eq : parent.A = parent.p + parent.n
+  /-- Mass-number invariant on the daughter nucleus: `A = p + n`. -/
+  daughter_A_eq : daughter.A = daughter.p + daughter.n
   /-- The electron mass (trefoil T_{2,3}). -/
   m_e : ℝ
   /-- Electron mass is positive. -/
@@ -236,13 +242,19 @@ noncomputable def skeinAmplitudeAtQ : ℝ := Real.sqrt 1.110 - 1 / Real.sqrt 1.1
 noncomputable def electronMass_from_q : ℝ := 3 * (1.110 - 1 / 1.110) / 2 * 1.6296
 
 /-- Beta decay locality: the Skein crossing change affects exactly
-    one generator σ_k per converting nucleon. The remaining A-1
-    nucleons contribute unchanged transfer matrices. -/
+    one generator σ_k per converting nucleon. The proton/neutron deltas
+    (`p_inc`, `n_dec`) are the defining β⁻ channel; mass-number
+    conservation `daughter.A = parent.A` is **derived** from them via the
+    per-nucleus invariant `A = p + n` and the β⁻ precondition
+    `1 ≤ parent.n` — it is no longer assumed as a field. -/
 -- Ref: [manuscript] §6/beta-decay-skein
 theorem beta_decay_locality (d : BetaMinusDecay) :
     d.daughter.p = d.parent.p + 1 ∧
     d.daughter.n = d.parent.n - 1 ∧
     d.daughter.A = d.parent.A :=
-  ⟨d.p_inc, d.n_dec, d.A_preserved⟩
+  ⟨d.p_inc, d.n_dec, by
+    have hn := d.parent_has_neutron
+    rw [d.daughter_A_eq, d.parent_A_eq, d.p_inc, d.n_dec]
+    omega⟩
 
 end QOU.Archimedean
