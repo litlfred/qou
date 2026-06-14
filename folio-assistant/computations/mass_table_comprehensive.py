@@ -52,6 +52,9 @@ from codata_constants import (  # noqa: E402
     M_P_MEV_VALIDATION, M_N_MEV_VALIDATION, M_E_MEV,
     M_D_MEV_VALIDATION, M_T_MEV_VALIDATION, M_HE4_MEV_VALIDATION,
     Q_BETA_MEV,
+    AME_B_DEUTERON_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION,
+    AME_B_LI6_MEV_VALIDATION, AME_B_LI7_MEV_VALIDATION,
 )
 from _li_2_q_util import (  # noqa: E402
     linking_weight_family_a,
@@ -64,8 +67,8 @@ from witness_base import WitnessBuilder  # noqa: E402
 # Source: Wang et al., Chinese Physics C 45 (2021) 030003.
 AME_BINDING = {
     "p": 0.0, "n": 0.0,
-    "D": 2.22452, "T": 8.481821, "3He": 7.71804,
-    "4He": 28.2957, "6Li": 31.994, "7Li": 39.2445,
+    "D": AME_B_DEUTERON_MEV_VALIDATION, "T": AME_B_TRITIUM_MEV_VALIDATION, "3He": AME_B_HE3_MEV_VALIDATION,
+    "4He": AME_B_HE4_MEV_VALIDATION, "6Li": AME_B_LI6_MEV_VALIDATION, "7Li": AME_B_LI7_MEV_VALIDATION,
     "9Be": 58.165, "10B": 64.751, "11B": 76.205,
     "12C": 92.162, "13C": 97.108, "14N": 104.659, "15N": 115.492,
     "16O": 127.619, "17O": 131.763, "18O": 139.808,
@@ -415,11 +418,11 @@ def main() -> int:
         rows.append(row)
 
         # Print row
-        m_sym_s = f"{m_symbolic:14.6f}" if m_symbolic else "           n/a"
-        m_app_s = f"{m_approx:14.6f}" if m_approx else "           n/a"
-        m_obs_s = f"{m_observed:14.6f}" if m_observed else "           n/a"
-        B_pred_s = f"{B_pred:12.6f}" if B_pred else "         n/a"
-        B_AME_s = f"{B_AME:11.6f}"
+        m_sym_s = f"{float(m_symbolic):14.6f}" if m_symbolic else "           n/a"
+        m_app_s = f"{float(m_approx):14.6f}" if m_approx else "           n/a"
+        m_obs_s = f"{float(m_observed):14.6f}" if m_observed else "           n/a"
+        B_pred_s = f"{float(B_pred):12.6f}" if B_pred else "         n/a"
+        B_AME_s = f"{float(B_AME):11.6f}"
 
         elapsed = time.monotonic() - t0
         print(f"{name:>5s} {Z:>2d} {N:>2d} {A:>2d}  "
