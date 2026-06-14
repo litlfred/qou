@@ -405,6 +405,41 @@ Gasper–Rahman 2004. Audit:
 
 **Coordination:** intent posted on #2106 (bar-parity per-block overlap).
 
+## 2026-06-14 — q-Bessel derive-first follow-up (PR #2305)
+
+Follow-up to the merged q-Bessel trilogy (#2279 identification / #2300 real-x c_3
+refutation / #2294 binding NO-GO), under the owner steer *"derive/prove first,
+not fit/probe."* Three deliverables:
+
+1. **2nd-order q-Bessel equation PROVED in Lean.** The function-level companion of
+   #1839's q-holonomic kernel: `q^ν·g(q²w) − (1+q^ν−w)·g(qw) + g(w) = 0`
+   (`g=Σ c_k w^k`) is sorry-free (`QOU.QBeta.qbessel_second_order_recurrence`),
+   derived from the #2279 coefficient recurrence (★) via the factorization
+   `a·q^{2k+1}−q^{k+1}−a·q^k+1 = (1−q^{k+1})(1−a·q^k)`. Witness:
+   `qbessel-second-order-qdifference-equation.witness.json` (3/3).
+2. **Lead-4 derivation (exact ℚ(q), no fit): the finite spectrum is NOT q-Bessel
+   zeros.** `μ_λ = ℏ_q² Σ[c]_q[c+1]_q` is the **compact SU_q(2) q-Casimir**
+   (rational in q, finite of size `p(n)`, quadratic-in-content; `q→1 →
+   Σc(c+1)`), with content-Casimir degeneracies (`μ_{(3,1)}=μ_{(3)}`). It cannot
+   be a q-Bessel zero spectrum (infinite/transcendental), and `p(n)≠n` rules out
+   the degree-n q-Lommel zero set. **REDIRECT:** the q-Bessel/q-Lommel zeros live
+   in the `n→∞` brane-tower / E_q(2) contraction limit — where the binding `Δ_λ`
+   ladder also lives, via the **q-Lommel three-term recurrence**. Confirms #2279's
+   "Bessel object is the tower, not the n-trace" from the spectral side. Audit:
+   `docs/audits/2026-06-14-qbessel-lead4-mu-lambda-qlommel-derivation.md`.
+3. **Linkage + notation.** Wired the missing `uses[]` edge
+   `prop:q-beta-c-k-recursion-from-habiro-q-difference → prop:q-heat-kernel-peter-weyl`
+   (the narrative already had `F = trace of the q-heat kernel`); added the
+   "q-Bessel identification of F" subsection (F = Z_q = Hahn–Exton q-Bessel, with
+   the honest fibre-vs-archimedean banner); registered `J_ν^{(3)}` (Hahn–Exton
+   q-Bessel) + q-Lommel `h_{n,ν}` in the notation register with the `J_K` (Jones)
+   collision note.
+
+**NOT wired** to production; `c_k` stays cal-anchored (the real-x archimedean
+closure is refuted — this is fibre-level structure). **Coordination:** intent
+posted on #1839 (c_k kernel — function-level form), #2078 (binding Δ_λ — q-Lommel
+tower lead + no-7th-fit gate), #1762 (1ppQ roadmap — q-Bessel route status).
+
 ## Cross-refs
 
 - CLAUDE.md §Precision goals (L1 / L2 / Subgoal-1 / Subgoal-2)
