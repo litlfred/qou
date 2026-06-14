@@ -76,6 +76,15 @@ gap (Subgoal-2, declined) and the binding model `B` for A > 8 (= Item 2).
 
 ## Item 2 — q-Lommel → Δ_λ: **OPEN-AND-GATED**
 
+> **Update (2026-06-14): reduced to a derived-`b` near-match.** The
+> *second-kind* order recurrence (not the argument recurrence this section's
+> original NO was based on) gives a DERIVED coefficient
+> `b = q₀¹⁰+q₀⁻¹⁰ = 2cosh(10η₀)` from the `q₀^(10A−5)` residual; two seeds then
+> predict ⁴He to −3.5% with no fit (gate-respecting). Full synthesis +
+> open keystone (derive `10A−5` from Bring's-surface crossings):
+> [`2026-06-14-qlommel-delta-lambda-second-kind-derived-b.md`](2026-06-14-qlommel-delta-lambda-second-kind-derived-b.md).
+> The paragraphs below record the *original* data-limited precheck framing.
+
 The precheck **already ran**:
 [`delta_lambda_qlommel_recurrence_precheck.py`](../../folio-assistant/computations/delta_lambda_qlommel_recurrence_precheck.py)
 → witness
@@ -137,5 +146,5 @@ witness retains the correct 5-atom physics in the meantime.
 | Item | Verdict | Tractable now? |
 |------|---------|----------------|
 | 3 — qCLT `m_qCLT_approx` | **leading term WIRED** this PR (structure validated, "exact" overclaim corrected); only absolute accuracy gated | partial — leading done; binding correction `B` = Item 2 |
-| 2 — q-Lommel → Δ_λ | open-and-gated (precheck ran, data-limited) | no — gated on Borromean tower; Δ_λ gate forbids fit |
+| 2 — q-Lommel → Δ_λ | **near-match via DERIVED b** (2026-06-14): second-kind order recurrence, `b = q₀¹⁰+q₀⁻¹⁰ = 2cosh(10η₀)` from `q₀^(10A−5)`; two-seed predicts ⁴He −3.5%, no fit; Lean `two_root_geometric` | partial — structure + derived `b` done; open keystone = derive `10A−5 = 5(2A−1)` from Bring-surface crossings + the Z-correction. See [`2026-06-14-qlommel-delta-lambda-second-kind-derived-b.md`](2026-06-14-qlommel-delta-lambda-second-kind-derived-b.md) |
 | 1 — low-isotope re-witness | canonical timeout-degraded to 2 rows | yes, but requires regenerating the shared canonical (decision pending) |
