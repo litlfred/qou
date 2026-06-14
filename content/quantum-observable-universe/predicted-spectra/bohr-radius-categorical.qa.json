@@ -796,6 +796,27 @@
         "reviewed_at": "2026-06-07T05:58:13.152Z",
         "reviewed_sha": "c47fda4d79ef12172fe90e0c9b670b761a3f4d95",
         "notes": "Core gap: md self-declares the formula is TRANSPORTED from QED (not derived from Hecke); Phi_kin/Phi_Coul postulated; absolute scale m_e c^2 alpha^2 not derived; Lean is a True stub. By the rubric this is a core/restates-target-equivalent gap."
+      },
+      {
+        "field_hash": {
+          "md": "724761230205",
+          "ts": "eee6fb5a41f6",
+          "lean": "d0a836478d3d"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T04:06:02.106Z",
+        "reviewed_sha": "2a15777a4cac9f2535b4e39e26ddff3c1b4a1b7e"
       }
     ],
     "proof-rater-novelty": [
@@ -2680,5 +2701,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T02:11:07.128Z"
+  "updated_at": "2026-06-14T04:06:02.106Z"
 }

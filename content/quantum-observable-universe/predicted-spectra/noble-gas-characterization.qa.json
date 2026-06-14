@@ -261,6 +261,27 @@
         },
         "reviewed_at": "2026-06-14T02:00:54.341Z",
         "reviewed_sha": "e138518ae1368fc556abef02d0b7a1691559967d"
+      },
+      {
+        "field_hash": {
+          "md": "f5f8d24028ec",
+          "ts": "4dde9e98a381",
+          "lean": "8f53405a5663"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T04:06:29.577Z",
+        "reviewed_sha": "2a15777a4cac9f2535b4e39e26ddff3c1b4a1b7e"
       }
     ],
     "voice-ai-slop": [
@@ -673,6 +694,27 @@
         "reviewed_at": "2026-06-07T06:12:17.181Z",
         "reviewed_sha": "4e961c6c457cf2aaa28e91304a917b1bcfdf2afe",
         "notes": "md organizes a 3-condition iff (closure / exhaustion / monotone-nesting) + a proof SKETCH (forward via torus-hopf-stability; reverse via the electron-shells-hopf conjecture). Clear structure, but the reverse rests on a conjecture."
+      },
+      {
+        "field_hash": {
+          "md": "f5f8d24028ec",
+          "ts": "4dde9e98a381",
+          "lean": "8f53405a5663"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T04:06:29.308Z",
+        "reviewed_sha": "2a15777a4cac9f2535b4e39e26ddff3c1b4a1b7e"
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -697,6 +739,27 @@
         "reviewed_at": "2026-06-07T06:12:17.289Z",
         "reviewed_sha": "4e961c6c457cf2aaa28e91304a917b1bcfdf2afe",
         "notes": "Core gap: Lean is a True stub; the md 'proof sketch' reverse direction (inertness => closed partition) depends on rem:electron-shells-hopf (a conjecture). No formal/established proof."
+      },
+      {
+        "field_hash": {
+          "md": "f5f8d24028ec",
+          "ts": "4dde9e98a381",
+          "lean": "8f53405a5663"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T04:06:29.447Z",
+        "reviewed_sha": "2a15777a4cac9f2535b4e39e26ddff3c1b4a1b7e"
       }
     ],
     "proof-rater-novelty": [
@@ -721,6 +784,27 @@
         "reviewed_at": "2026-06-07T06:12:17.327Z",
         "reviewed_sha": "4e961c6c457cf2aaa28e91304a917b1bcfdf2afe",
         "notes": "The full-shell-as-full-curls topological characterization (closed sub-Hopf link <-> chemical inertness, ionization-energy peaks as crossing-energy maxima) is a creative knot-theoretic analogy, but qualitative and conjecture-backed."
+      },
+      {
+        "field_hash": {
+          "md": "f5f8d24028ec",
+          "ts": "4dde9e98a381",
+          "lean": "8f53405a5663"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T04:06:29.380Z",
+        "reviewed_sha": "2a15777a4cac9f2535b4e39e26ddff3c1b4a1b7e"
       }
     ],
     "proof-statement-integrity": [
@@ -742,6 +826,27 @@
         "reviewed_at": "2026-06-07T06:12:17.094Z",
         "reviewed_sha": "4e961c6c457cf2aaa28e91304a917b1bcfdf2afe",
         "notes": "lean.ref qou:QOU.Archimedean.noble_gas_characterization is a sibling STUB: 'theorem noble_gas_characterization : True := by trivial' (ts validation:not_started). Vacuous =True; does not formalize the iff (closed sub-Hopf partition <=> chemically inert) with its 3 conditions (closure, exhaustion, monotone nesting)."
+      },
+      {
+        "field_hash": {
+          "md": "f5f8d24028ec",
+          "ts": "4dde9e98a381",
+          "lean": "8f53405a5663"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T04:06:29.510Z",
+        "reviewed_sha": "2a15777a4cac9f2535b4e39e26ddff3c1b4a1b7e"
       }
     ],
     "voice-unicode-crash": [
@@ -3000,5 +3105,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T02:11:07.128Z"
+  "updated_at": "2026-06-14T04:06:29.577Z"
 }

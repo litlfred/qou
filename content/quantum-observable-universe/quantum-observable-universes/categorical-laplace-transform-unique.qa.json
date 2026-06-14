@@ -528,6 +528,27 @@
         "reviewed_at": "2026-06-07T06:01:00.685Z",
         "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
         "notes": "Closed by CategoricalLaplace.unique_axiom; docstring states 'bare Subsingleton is too strong (3b-cond pattern)', i.e. self-diagnosed as not actually true."
+      },
+      {
+        "field_hash": {
+          "md": "24fd6aa26485",
+          "ts": "137537f15aad",
+          "lean": "0d0737a2e640"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T04:08:22.972Z",
+        "reviewed_sha": "2a15777a4cac9f2535b4e39e26ddff3c1b4a1b7e"
       }
     ],
     "proof-rater-novelty": [
@@ -553,6 +574,27 @@
         "reviewed_at": "2026-06-07T06:01:00.724Z",
         "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
         "notes": "Axiom-laundered Subsingleton boilerplate."
+      },
+      {
+        "field_hash": {
+          "md": "24fd6aa26485",
+          "ts": "137537f15aad",
+          "lean": "0d0737a2e640"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T04:08:23.395Z",
+        "reviewed_sha": "2a15777a4cac9f2535b4e39e26ddff3c1b4a1b7e"
       }
     ],
     "proof-statement-integrity": [
@@ -577,22 +619,24 @@
       },
       {
         "field_hash": {
-          "md": "ea64659fffb7",
+          "md": "24fd6aa26485",
           "ts": "137537f15aad",
-          "lean": "d374355dcbb5"
+          "lean": "0d0737a2e640"
         },
-        "result": "pass",
-        "evidence": "theorem CategoricalLaplace.unique (same transform ⟹ equal); dropped false/too-strong Subsingleton axiom",
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-09",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-09T15:57:08.403Z",
-        "reviewed_sha": "22b58ea827369ef210aa0d1213da8bc308cf1158",
-        "notes": "Strengthened over [CommRing R][Preadditive C][Linear R C], restoring the k-linearity the (C,A,τ) triple declares; removed false axiom / vacuous witness; verified green via _Scratch bundle against fixed GaugeTheory (exit 0)."
+        "reviewed_at": "2026-06-14T04:08:23.477Z",
+        "reviewed_sha": "2a15777a4cac9f2535b4e39e26ddff3c1b4a1b7e"
       }
     ],
     "voice-unicode-crash": [
@@ -2670,5 +2714,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T02:11:07.128Z"
+  "updated_at": "2026-06-14T04:08:23.477Z"
 }

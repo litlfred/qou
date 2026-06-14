@@ -261,6 +261,27 @@
         },
         "reviewed_at": "2026-06-14T02:00:54.341Z",
         "reviewed_sha": "e138518ae1368fc556abef02d0b7a1691559967d"
+      },
+      {
+        "field_hash": {
+          "md": "3531736ffd1f",
+          "ts": "c7050cec465d",
+          "lean": "20865ac6b25d"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T04:02:56.440Z",
+        "reviewed_sha": "2a15777a4cac9f2535b4e39e26ddff3c1b4a1b7e"
       }
     ],
     "voice-ai-slop": [
@@ -691,89 +712,93 @@
     "proof-rater-strategy-clarity": [
       {
         "field_hash": {
-          "md": "8637df4c3038",
-          "ts": "8ba79fef68aa",
-          "lean": "b809b5abeddf"
+          "md": "3531736ffd1f",
+          "ts": "c7050cec465d",
+          "lean": "20865ac6b25d"
         },
-        "result": "n/a",
-        "severity": "minor",
-        "evidence": "q-beta-spectral-bridge.md:1 -- not in agent rubric",
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:30:17.357Z",
-        "reviewed_sha": "442029bc092f00eaf26886197838b8c1c77d2951",
-        "notes": "proof-rater/proof-statement criteria not in agent rubric"
+        "reviewed_at": "2026-06-14T04:02:55.300Z",
+        "reviewed_sha": "2a15777a4cac9f2535b4e39e26ddff3c1b4a1b7e"
       }
     ],
     "proof-rater-goal-plausibility": [
       {
         "field_hash": {
-          "md": "8637df4c3038",
-          "ts": "8ba79fef68aa",
-          "lean": "b809b5abeddf"
+          "md": "3531736ffd1f",
+          "ts": "c7050cec465d",
+          "lean": "20865ac6b25d"
         },
-        "result": "n/a",
-        "severity": "minor",
-        "evidence": "q-beta-spectral-bridge.md:1 -- not in agent rubric",
+        "result": "fail",
+        "score": {
+          "value": 0,
+          "max": 1
+        },
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:30:17.527Z",
-        "reviewed_sha": "25536c049387834cb58e177b1d87c68fd869ef25",
-        "notes": "proof-rater/proof-statement criteria not in agent rubric"
+        "reviewed_at": "2026-06-14T04:02:56.002Z",
+        "reviewed_sha": "2a15777a4cac9f2535b4e39e26ddff3c1b4a1b7e"
       }
     ],
     "proof-rater-novelty": [
       {
         "field_hash": {
-          "md": "8637df4c3038",
-          "ts": "8ba79fef68aa",
-          "lean": "b809b5abeddf"
+          "md": "3531736ffd1f",
+          "ts": "c7050cec465d",
+          "lean": "20865ac6b25d"
         },
-        "result": "n/a",
-        "severity": "minor",
-        "evidence": "q-beta-spectral-bridge.md:1 -- not in agent rubric",
+        "result": "fail",
+        "score": {
+          "value": 0,
+          "max": 1
+        },
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:30:17.561Z",
-        "reviewed_sha": "25536c049387834cb58e177b1d87c68fd869ef25",
-        "notes": "proof-rater/proof-statement criteria not in agent rubric"
+        "reviewed_at": "2026-06-14T04:02:55.824Z",
+        "reviewed_sha": "2a15777a4cac9f2535b4e39e26ddff3c1b4a1b7e"
       }
     ],
     "proof-statement-integrity": [
       {
         "field_hash": {
-          "md": "8637df4c3038",
-          "ts": "8ba79fef68aa",
-          "lean": "b809b5abeddf"
+          "md": "3531736ffd1f",
+          "ts": "c7050cec465d",
+          "lean": "20865ac6b25d"
         },
-        "result": "n/a",
-        "severity": "minor",
-        "evidence": "q-beta-spectral-bridge.md:1 -- not in agent rubric",
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:30:17.596Z",
-        "reviewed_sha": "25536c049387834cb58e177b1d87c68fd869ef25",
-        "notes": "proof-rater/proof-statement criteria not in agent rubric"
+        "reviewed_at": "2026-06-14T04:02:56.105Z",
+        "reviewed_sha": "2a15777a4cac9f2535b4e39e26ddff3c1b4a1b7e"
       }
     ],
     "voice-unicode-crash": [
@@ -3221,5 +3246,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T02:11:07.128Z"
+  "updated_at": "2026-06-14T04:02:56.440Z"
 }

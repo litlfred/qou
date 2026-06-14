@@ -261,6 +261,27 @@
         },
         "reviewed_at": "2026-06-14T02:00:54.341Z",
         "reviewed_sha": "e138518ae1368fc556abef02d0b7a1691559967d"
+      },
+      {
+        "field_hash": {
+          "md": "93e6764d3d24",
+          "ts": "b854d2bc9a1c",
+          "lean": "10bb4b4cd067"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T04:05:41.784Z",
+        "reviewed_sha": "2a15777a4cac9f2535b4e39e26ddff3c1b4a1b7e"
       }
     ],
     "voice-ai-slop": [
@@ -660,6 +681,27 @@
         "reviewed_at": "2026-06-07T06:11:33.170Z",
         "reviewed_sha": "4e961c6c457cf2aaa28e91304a917b1bcfdf2afe",
         "notes": "Plan clear: sigma:q->iq, tau:q->q^-1 generate D_4 via sigma^4=tau^2=(sigma tau)^2=id; the dihedral commutation tau sigma tau=sigma^-1 verified explicitly. Golden octet = D_4-orbit of phi; octet = roots of z^8-7z^4+1. Direct computation proof."
+      },
+      {
+        "field_hash": {
+          "md": "93e6764d3d24",
+          "ts": "b854d2bc9a1c",
+          "lean": "10bb4b4cd067"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T04:05:41.542Z",
+        "reviewed_sha": "2a15777a4cac9f2535b4e39e26ddff3c1b4a1b7e"
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -684,6 +726,27 @@
         "reviewed_at": "2026-06-07T06:11:33.207Z",
         "reviewed_sha": "4e961c6c457cf2aaa28e91304a917b1bcfdf2afe",
         "notes": "Fully sorry-free: sigma_pow_four (I*I=-1), tau_pow_two, sigma_tau_involution (real complex-arithmetic via I_inv=-I, mul_inv_cancel0), headline moduli_symmetry_d4 conjunction of the 3 dihedral relations. NOTE Lean proves the relations but not the faithfulness (sigma genuinely order 4) nor the golden-octet orbit / z^8-7z^4+1 factorisation - faithful but partial vs md."
+      },
+      {
+        "field_hash": {
+          "md": "93e6764d3d24",
+          "ts": "b854d2bc9a1c",
+          "lean": "10bb4b4cd067"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T04:05:41.684Z",
+        "reviewed_sha": "2a15777a4cac9f2535b4e39e26ddff3c1b4a1b7e"
       }
     ],
     "proof-rater-novelty": [
@@ -708,6 +771,27 @@
         "reviewed_at": "2026-06-07T06:11:33.378Z",
         "reviewed_sha": "4e961c6c457cf2aaa28e91304a917b1bcfdf2afe",
         "notes": "D_4 action on the moduli line and the golden octet are standard group theory; the observation that Z[i] (not Z) is the natural ring of definition for the Mobius family is a mildly novel structural point."
+      },
+      {
+        "field_hash": {
+          "md": "93e6764d3d24",
+          "ts": "b854d2bc9a1c",
+          "lean": "10bb4b4cd067"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T04:05:41.638Z",
+        "reviewed_sha": "2a15777a4cac9f2535b4e39e26ddff3c1b4a1b7e"
       }
     ],
     "proof-statement-integrity": [
@@ -728,6 +812,27 @@
         "reviewed_at": "2026-06-07T06:11:33.478Z",
         "reviewed_sha": "4e961c6c457cf2aaa28e91304a917b1bcfdf2afe",
         "notes": "lean.ref ...ModuliSymmetryD4.moduli_symmetry_d4 present and sorry-free; conjunction (sigma^4=id, tau^2=id on C*, (sigma tau)^2=id) faithfully encodes the md dihedral relations. Not vacuous. Octet/faithfulness coverage gap noted under plausibility."
+      },
+      {
+        "field_hash": {
+          "md": "93e6764d3d24",
+          "ts": "b854d2bc9a1c",
+          "lean": "10bb4b4cd067"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T04:05:41.731Z",
+        "reviewed_sha": "2a15777a4cac9f2535b4e39e26ddff3c1b4a1b7e"
       }
     ],
     "voice-unicode-crash": [
@@ -2803,5 +2908,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T02:11:07.128Z"
+  "updated_at": "2026-06-14T04:05:41.784Z"
 }
