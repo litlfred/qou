@@ -744,7 +744,7 @@ const PROOF: QaCriterionDefinition[] = [
       "fields unused. LEGITIMATE: the proof COMPOSES fields / derives via " +
       "lemmas (`Iff.intro h.fwd h.bwd`; `obtain ⟨…⟩ := upstream; <derivation>`) " +
       "per §3b-cond. Agent-checked (Lean AST + field-type unification). " +
-      "Routes to `lean-proof-review`.",
+      "Routes to `lean-proof-review`. Evaluate the decl the `lean.ref` RESOLVES to (sibling first, then library decl-path): a trivial `: True` sibling that shadows a real library decl is a DELETION target (see CLAUDE.md §0a no-shadowing-stubs), and a genuine placeholder stub (no library decl) is FLAGGED as unformalised — neither is silently blessed.",
     default_severity: "critical",
     depends_on: ["lean"],
     automated: false,
@@ -760,7 +760,7 @@ const PROOF: QaCriterionDefinition[] = [
       "a proof that ignores all hypotheses to close `True`/`rfl` is flagged. " +
       "LEGITIMATE: genuine reflexivity results where `rfl` IS the content " +
       "(definitional unfolding establishing a named equation). Agent-checked. " +
-      "Routes to `lean-proof-review`.",
+      "Routes to `lean-proof-review`. Evaluate the decl the `lean.ref` RESOLVES to (sibling first, then library decl-path): a trivial `: True` sibling that shadows a real library decl is a DELETION target (see CLAUDE.md §0a no-shadowing-stubs), and a genuine placeholder stub (no library decl) is FLAGGED as unformalised — neither is silently blessed.",
     default_severity: "critical",
     depends_on: ["lean"],
     automated: false,
