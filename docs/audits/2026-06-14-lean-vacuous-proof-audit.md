@@ -85,3 +85,42 @@ Per the skill's fix recipe, classify each instance during the drain:
 Commit per file (or per small directory batch); verify each with `lean`-direct
 against restored `lake-cache/qou-<toolchain-slug>` oleans. Backfill
 `proof-no-self-assuming-projection` sidecars via `qa-sweep` on each drained block.
+
+## Resolution (2026-06-14)
+
+**Batch-6 (the `e138518a` files) — RESOLVED (commit `af008b68`).** These are
+**sibling-resolution stubs**: the genuine formalisations already exist in the QOU
+library tree (`lean/QOU/Archimedean/{HyperbolicVolumeTranscendence,
+knot_operator_selection, metallic_character_knot, noble_gas_characterization}.lean`,
+`lean/QOU/QuantumObservableUniverse/{fai_projector_coadjoint_orbit,
+fibre_functor_atlas}.lean`). The 6 siblings were reverted to the honest
+`: True := trivial` stub form (matching ~207 other siblings); the deceptive
+`True ∧ True` projection is gone. Not formalised here — already formalised in the
+library.
+
+**Sibling-stub exemption.** `proof-no-self-assuming-projection` /
+`proof-no-trivial-true` now EXEMPT sibling-resolution stubs (they target the
+library decl the block resolves to, not the stub).
+
+**Systemic finding — stub-shadow manifest (2026-06-14).** 219 `Sibling-resolution
+stub` files. The resolver (`content/pipeline/export-json.ts:resolveLeanFilePath`)
+checks the sibling **before** the library decl-path, so a trivial `: True` sibling
+shadows the real library proof. Manifest classification:
+
+| Class | Count | Action |
+|-------|-------|--------|
+| **SHADOW** | 147 | delete — `lean.ref` decl-path resolves to a real library decl |
+| **MISMATCH** | 25 | align — decl in a mis-named library file |
+| **NEEDED** | 19 | flag — no library formalisation; genuinely unformalised `: True` |
+| **NOREF** | 25 | inspect — `.ts` has no `qou:` ref |
+| **definition** | 3 | keep — sibling required |
+
+Codified as the **no-shadowing-stubs** directive in CLAUDE.md §0a. Deleting the
+147 SHADOW stubs makes those blocks resolve to their real library proofs (honest
+formalisation status); the 19 NEEDED placeholders are the genuine integrity gap.
+
+**Real drain targets — the independent-6** (genuine vacuity in real files, not
+stubs): `beta-decay-skein.lean:242`, `emergence-to-quantum-flat.lean:57`,
+`ccg_cosimplicial_identities.lean:47`, `MostowRigidity.lean:153`,
+`ccg_crossed_module_structure.lean:46`, `geom_yekutieli_alignment.lean:85`.
+Per-file classification + honest fixes in progress.

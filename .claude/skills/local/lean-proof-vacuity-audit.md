@@ -121,6 +121,33 @@ field verbatim** (anti) or **derive the conclusion from hypothesis-typed fields*
 (legit)? `obtain ⟨…⟩ := upstream; <derivation>` is legit; `:= d.<conclusion>` is
 not.
 
+## Sibling-resolution stubs — delete shadows, flag placeholders (do NOT bless)
+
+A **sibling-resolution stub** is a content-block `.lean` sibling whose body is
+`theorem foo : True := trivial` with a docstring `**Sibling-resolution stub** …`.
+The criterion evaluates the decl the block's `lean.ref` **resolves to**
+(`export-json.ts`: sibling **first**, then `<lakeRoot>/<Decl/Path>.lean`), so a
+trivial sibling *shadows* the real library decl. Handle each by class — never
+silently bless a bare `: True`:
+
+- **Shadow** — the ref's decl-path resolves to a real library decl. The stub is
+  pure shadowing: **delete it** (the block then resolves to the real proof). Do
+  NOT exempt. See the **no-shadowing-stubs** directive in CLAUDE.md §0a.
+- **Genuine placeholder** — no library formalisation exists. The block is an
+  *unformalised* proposition asserting `: True` — **flag it** (honest fix: state
+  the real proposition with `sorry` + `-- Ref:`, or demote to `conjecture`).
+- **`definition`** blocks require a sibling — it must carry the **real**
+  formalisation, never `: True`.
+
+Detect a stub by: docstring `Sibling-resolution stub`, OR body `: True := by
+trivial` / `:= trivial`. A stub *corrupted* into a `: True ∧ True := ⟨d.f1,…⟩`
+projection (batch `e138518a`) is the self-assuming-projection anti-pattern —
+restore the honest stub, then apply the shadow/placeholder rule above.
+
+> **Manifest (2026-06-14).** 219 stubs → 147 shadow (delete), 25 mismatch (align
+> ref), 19 genuine placeholder (flag), 3 definition, 25 no-ref. See
+> `docs/audits/2026-06-14-lean-vacuous-proof-audit.md`.
+
 ## Fix recipe (priority order)
 
 When a vacuous proof is confirmed, make it **honest** — do not hand-wave a fake
