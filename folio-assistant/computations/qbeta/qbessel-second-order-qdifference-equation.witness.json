@@ -1,0 +1,51 @@
+{
+  "computation": "qbessel_second_order_qdifference_equation",
+  "description": "Derive-and-verify the second-order q-difference equation (☆) q^ν g(q²w) − (1+q^ν−w) g(qw) + g(w) = 0 for the Hahn–Exton q-Bessel generating function, its equivalence to the PR #2279 coefficient recurrence (★), and the q→1 contraction to the ordinary Bessel recurrence. Grounds the c_k ↔ q-heat-kernel ↔ q-Bessel linkage (mass-theory/q-beta-c-k-recursion-from-habiro-q-difference.md).",
+  "discipline": "no fit; derive-or-verify; TIERED; c_k cal-anchored; nothing wired",
+  "precision_dps": 60,
+  "results": {
+    "second_order_qdiff": {
+      "form": "q^nu g(q^2 w) - (1+q^nu-w) g(qw) + g(w) = 0",
+      "cases": [
+        {
+          "nu": "2.0",
+          "q": "0.83",
+          "w": "0.3",
+          "residual": "2.43087e-62"
+        },
+        {
+          "nu": "0.0",
+          "q": "0.6",
+          "w": "1.1",
+          "residual": "1.84746e-61"
+        },
+        {
+          "nu": "3.0",
+          "q": "0.9",
+          "w": "0.27",
+          "residual": "7.21724e-60"
+        },
+        {
+          "nu": "1.0",
+          "q": "0.75",
+          "w": "2.4",
+          "residual": "-2.21739e-58"
+        }
+      ]
+    },
+    "equivalence_to_star": {
+      "max_coeff_residual": "2.54895e-57"
+    },
+    "q_to_1_contraction": {
+      "max_residual": "3.75e-13",
+      "limit": "-1/(k(nu+k))"
+    }
+  },
+  "assertions": {
+    "(☆) holds at all test points (residual < 1e-30)": true,
+    "(☆) ⟺ (★): every w^k coefficient vanishes (< 1e-30)": true,
+    "q→1 contraction to ordinary Bessel recurrence (resid < 1e-9)": true
+  },
+  "allPassed": true,
+  "verdict": "PROVED (derive-and-verify, 60 dps). The Hahn–Exton q-Bessel generating function g(w)=Σ c_k w^k satisfies the SECOND-ORDER q-difference equation (☆) q^ν g(q²w) − (1+q^ν−w) g(qw) + g(w) = 0, equivalent order-by-order to the first-order coefficient recurrence (★) proved in PR #2279, and contracting to the ordinary Bessel recurrence as q→1. This is the function-level q-Bessel equation underlying the c_k ladder; the linear-in-w middle term is the source of the descending ladder (c_2=−1 leading). No fit; nothing wired; c_k stays cal-anchored (the archimedean real-x closure is refuted, PR #2300 — this is fibre-level structure)."
+}
