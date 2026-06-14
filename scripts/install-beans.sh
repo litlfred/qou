@@ -19,7 +19,7 @@ set -euo pipefail
 FORCE="${1:-}"
 BEANS_VERSION="${BEANS_VERSION:-latest}"
 
-if command -v beans >/dev/null 2>&1 && [ "$FORCE" != "--force" ]; then
+if command -v beans >/dev/null 2>&1 && [ "$FORCE" != "--force" ] && [ "$BEANS_VERSION" = "latest" ]; then
   echo "beans already installed: $(command -v beans)"
   beans version 2>/dev/null || true
   echo "(use --force to reinstall)"
@@ -34,16 +34,24 @@ if ! command -v go >/dev/null 2>&1; then
   exit 1
 fi
 
-# Pick a writable bin dir that is already on PATH (fall back to ~/.local/bin).
+# Pick a bin dir that is on PATH *and* writable (fall back to ~/.local/bin).
+# Writability matters: /usr/local/bin is commonly on PATH but not writable for
+# a non-root sandbox user, which would make `go install` fail.
 GOBIN_DIR=""
-for d in "$HOME/.local/bin" "/usr/local/bin" "$(go env GOPATH)/bin"; do
-  case ":$PATH:" in *":$d:"*) GOBIN_DIR="$d"; break;; esac
+for d in "$HOME/.local/bin" "$(go env GOPATH 2>/dev/null)/bin" "/usr/local/bin"; do
+  case ":$PATH:" in
+    *":$d:"*)
+      if [ -w "$d" ] || { [ ! -d "$d" ] && [ -w "$(dirname "$d")" ]; }; then
+        GOBIN_DIR="$d"; break
+      fi
+      ;;
+  esac
 done
 : "${GOBIN_DIR:=$HOME/.local/bin}"
 mkdir -p "$GOBIN_DIR"
 
 echo "Installing beans@${BEANS_VERSION} into ${GOBIN_DIR} via 'go install'..."
-GOBIN="$GOBIN_DIR" GOFLAGS=-mod=mod go install "github.com/hmans/beans@${BEANS_VERSION}"
+GOBIN="$GOBIN_DIR" go install "github.com/hmans/beans@${BEANS_VERSION}"
 
 case ":$PATH:" in
   *":$GOBIN_DIR:"*) ;;
