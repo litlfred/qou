@@ -53,11 +53,7 @@ theorem hecke_log_decomposition (q : ℝ) (hq : 1 < q) :
     rw [hecke_skein_factorization q hq_pos]
     field_simp
   rw [heq, Real.log_mul (one_div_ne_zero hhbar_ne) (one_div_ne_zero hqp1_ne)]
-  -- `simp only` (not `rw`) so the inverse-log rewrite fires on *every*
-  -- `log (1/·)` — the LHS carries two, the RHS one; `rw` hits only the first and
-  -- leaves the goal not `ring`-closable. (`Real.log_one_div` does not exist; use
-  -- `one_div` to expose `·⁻¹`, then `Real.log_inv : log x⁻¹ = -log x`.)
-  simp only [one_div, Real.log_inv, h1p_q_eq]
+  rw [one_div (q + 1), Real.log_inv, h1p_q_eq]
   ring
 
 /-- Numerical equality at the QOU substrate parameter q_0:
