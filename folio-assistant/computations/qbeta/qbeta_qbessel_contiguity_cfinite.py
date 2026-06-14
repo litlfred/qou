@@ -81,7 +81,7 @@ print("(A) Hahn–Exton q-Bessel coefficients satisfy the exact recurrence (★)
 
 def c_direct(k: int, nu: mpf, q: mpf) -> mpf:
     """c_k = (−1)^k q^{k(k−1)/2} / [(q;q)_k (q^{ν+1};q)_k]  (₁φ₁ coefficient)."""
-    return ((-1) ** k * q ** (mpf(k * (k - 1)) / 2)
+    return ((-1) ** k * q ** (k * (k - 1) // 2)
             / (qp(q, q, k) * qp(q ** (nu + 1), q, k)))
 
 
