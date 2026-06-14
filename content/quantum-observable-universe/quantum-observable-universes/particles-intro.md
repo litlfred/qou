@@ -26,8 +26,8 @@ categorical point** (rem) introduce a point of $A$ as a
 morphism $p \colon \mathbf{1} \to A$, the categorical
 replacement for "evaluation at a spacetime point" with no
 ambient topology on $A$. **Observation** (def) defines an
-observation on $U$ as a pair $(\mathfrak{I}, \epsilon)$ where
-$\mathfrak{I}$ is a section of $\mathrm{Ad}(J^1 \mathcal{S})$
+observation on $U$ as a pair $(\mathfrak{O}, \epsilon)$ where
+$\mathfrak{O}$ is a section of $\mathrm{Ad}(J^1 \mathcal{S})$
 satisfying Frobenius compatibility and an adjoint backreaction
 that shifts the substrate parameter via the Hopf coaction;
 $\epsilon \in \{+1, -1\}$ selects the braiding orientation
@@ -37,7 +37,7 @@ backreacting Hecke generator** (prop), with its proof, expand
 the structural content.
 
 **Two-observer parallelogram** (rem) computes the commutator
-$[\mathfrak{I}_{1,p}, \mathfrak{I}_{2,p}](\alpha_p) =
+$[\mathfrak{O}_{1,p}, \mathfrak{O}_{2,p}](\alpha_p) =
 [q_1'(p), q_2'(p)] \cdot (\alpha_V)_p$ at a point and shows that
 it vanishes exactly on bosons; on fermions, the non-cocommutativity
 of the Hopf structure forces independent observations to disagree.

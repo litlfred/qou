@@ -5,18 +5,18 @@ $p \colon \mathbf{1} \to A$ be a
 $\alpha$ be a ([fermion](#def:fermion-boson-decomposition)) with germ
 $\alpha_p \in A / \mathfrak{m}_p^2$.
 Consider two independent observations at $p$,
-$\mathfrak{I}_{1,p}, \mathfrak{I}_{2,p} \colon A / \mathfrak{m}_p^2 \to A / \mathfrak{m}_p^2$
+$\mathfrak{O}_{1,p}, \mathfrak{O}_{2,p} \colon A / \mathfrak{m}_p^2 \to A / \mathfrak{m}_p^2$
 ([observation](#def:observation)).  These data
 assemble into a *parallelogram of observations at $p$*:
 
 ```tex
 \begin{equation}\label{eq:observation-parallelogram}
 \begin{tikzcd}[row sep=2.5em, column sep=3.5em]
-  & \mathfrak{I}_{1,p}(\alpha_p) \arrow[dr, "\text{compare}"] & \\
-  \alpha_p \arrow[ur, "\mathfrak{I}_{1,p}"]
-           \arrow[dr, "\mathfrak{I}_{2,p}"']
+  & \mathfrak{O}_{1,p}(\alpha_p) \arrow[dr, "\text{compare}"] & \\
+  \alpha_p \arrow[ur, "\mathfrak{O}_{1,p}"]
+           \arrow[dr, "\mathfrak{O}_{2,p}"']
   & & \delta\alpha_p \\
-  & \mathfrak{I}_{2,p}(\alpha_p) \arrow[ur, "\text{compare}"'] &
+  & \mathfrak{O}_{2,p}(\alpha_p) \arrow[ur, "\text{compare}"'] &
 \end{tikzcd}
 \end{equation}
 ```
@@ -24,10 +24,10 @@ assemble into a *parallelogram of observations at $p$*:
 The discrepancy is the *commutator of observations at $p$*:
 
 $$
-  [\mathfrak{I}_{1,p}, \mathfrak{I}_{2,p}](\alpha_p)
+  [\mathfrak{O}_{1,p}, \mathfrak{O}_{2,p}](\alpha_p)
   = 
-  \mathfrak{I}_{1,p}(\mathfrak{I}_{2,p}(\alpha_p))
-  - \mathfrak{I}_{2,p}(\mathfrak{I}_{1,p}(\alpha_p)).
+  \mathfrak{O}_{1,p}(\mathfrak{O}_{2,p}(\alpha_p))
+  - \mathfrak{O}_{2,p}(\mathfrak{O}_{1,p}(\alpha_p)).
 $$
 
 Each observation perturbs the substrate parameter at $p$ by
@@ -37,7 +37,7 @@ and $q_2'(p) = q(p) + \delta q_2(p)$.  The commutator
 $[q_1'(p), q_2'(p)]$ measures the obstruction:
 
 $$
-  [\mathfrak{I}_{1,p}, \mathfrak{I}_{2,p}](\alpha_p)
+  [\mathfrak{O}_{1,p}, \mathfrak{O}_{2,p}](\alpha_p)
   = 
   [q_1'(p), q_2'(p)] \cdot (\alpha_V)_p.
 $$
