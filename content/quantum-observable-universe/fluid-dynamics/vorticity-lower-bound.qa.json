@@ -594,21 +594,21 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "1b1b418b20f3",
-          "ts": "617767d057a4",
+          "md": "8dbf6e70da10",
+          "ts": "bd06661dfa86",
           "lean": "b703fb79f609"
         },
         "result": "pass",
-        "evidence": "proposition: bounds (a)(b)(c) + proofs; no interpretive prose without companion remark",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:56:47.072Z",
-        "reviewed_sha": "cf9b9dcbd87849416f34bd70583fb8673a3c676e"
+        "reviewed_at": "2026-06-14T13:24:31.473Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "No interpretive sections present"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2492,5 +2492,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T03:50:05.793Z"
+  "updated_at": "2026-06-14T13:24:31.473Z"
 }

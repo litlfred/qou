@@ -342,6 +342,24 @@
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
         "notes": "Label 'prop:hadron-q-self-correction' aligns with Lean declaration. Sorry-free."
+      },
+      {
+        "field_hash": {
+          "md": "fe4ca75af28c",
+          "ts": "5279cde91f9e",
+          "lean": "2055ce554101"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:29.447Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "Markdown statement and Lean signature structurally align"
       }
     ],
     "voice-author-notes-pollution": [
@@ -397,6 +415,24 @@
         "reviewed_at": "2026-06-05T13:27:07.680Z",
         "reviewed_sha": "ee7def07c60226fb8401998196cd30225683227f",
         "notes": "Interpretation should move to a linked remark."
+      },
+      {
+        "field_hash": {
+          "md": "fe4ca75af28c",
+          "ts": "5279cde91f9e",
+          "lean": "2055ce554101"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:28.979Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "No interpretive sections present"
       }
     ],
     "fit-section-chapter": [
@@ -419,6 +455,24 @@
         "reviewed_at": "2026-06-05T13:27:07.719Z",
         "reviewed_sha": "ee7def07c60226fb8401998196cd30225683227f",
         "notes": "Well-placed."
+      },
+      {
+        "field_hash": {
+          "md": "fe4ca75af28c",
+          "ts": "5279cde91f9e",
+          "lean": "2055ce554101"
+        },
+        "result": "pass",
+        "evidence": "Listed in section manifest",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:29.104Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-statement": [
@@ -441,6 +495,24 @@
         "reviewed_at": "2026-06-05T13:27:07.757Z",
         "reviewed_sha": "ee7def07c60226fb8401998196cd30225683227f",
         "notes": "Wall placement correct."
+      },
+      {
+        "field_hash": {
+          "md": "fe4ca75af28c",
+          "ts": "5279cde91f9e",
+          "lean": "2055ce554101"
+        },
+        "result": "pass",
+        "evidence": "Archimedean chapter statement",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:29.219Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-proof": [
@@ -463,6 +535,24 @@
         "reviewed_at": "2026-06-05T13:27:07.795Z",
         "reviewed_sha": "ee7def07c60226fb8401998196cd30225683227f",
         "notes": "No wall violation."
+      },
+      {
+        "field_hash": {
+          "md": "fe4ca75af28c",
+          "ts": "5279cde91f9e",
+          "lean": "2055ce554101"
+        },
+        "result": "pass",
+        "evidence": "Archimedean chapter proof",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:29.329Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -487,6 +577,28 @@
         "reviewed_at": "2026-06-07T06:08:59.605Z",
         "reviewed_sha": "4e961c6c457cf2aaa28e91304a917b1bcfdf2afe",
         "notes": "md plan clear: q is a field; hadron self-deforms it by signed crossing excess deltaQ = l_net/A^2 * hbar_q^2, l_net = C(p,2)-C(n,2); differential shift across beta decay = (A-1)/A^2 hbar_q^2 > 0. Well-motivated (weights q / q^-1 / (q+q^-1)/2 on pp/nn/pn crossings)."
+      },
+      {
+        "field_hash": {
+          "md": "fe4ca75af28c",
+          "ts": "5279cde91f9e",
+          "lean": "2055ce554101"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:29.561Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "No proof strategy or outline found."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -511,6 +623,28 @@
         "reviewed_at": "2026-06-07T06:08:59.639Z",
         "reviewed_sha": "4e961c6c457cf2aaa28e91304a917b1bcfdf2afe",
         "notes": "The intended theorems (deltaQ<=0 neutron-rich, differentialShift>=0, qEff>1) have real proof bodies (omega/positivity/nlinarith) and differentialShift_small/qPrefactor compile, but the file is broken (commented-out theorem heads, see integrity) so the substantive sign/positivity results do not actually build. Mixed."
+      },
+      {
+        "field_hash": {
+          "md": "fe4ca75af28c",
+          "ts": "5279cde91f9e",
+          "lean": "2055ce554101"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:29.655Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "Proof is sorry-free."
       }
     ],
     "proof-rater-novelty": [
@@ -535,6 +669,28 @@
         "reviewed_at": "2026-06-07T06:08:59.674Z",
         "reviewed_sha": "4e961c6c457cf2aaa28e91304a917b1bcfdf2afe",
         "notes": "Self-deformation of the substrate field by nuclear linking density (l_net/A^2) is a reasonable back-reaction idea; the C(p,2)-C(n,2) signed-crossing excess is a natural but not novel construction."
+      },
+      {
+        "field_hash": {
+          "md": "fe4ca75af28c",
+          "ts": "5279cde91f9e",
+          "lean": "2055ce554101"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:29.759Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "Standard but not duplicated."
       }
     ],
     "proof-statement-integrity": [
@@ -556,6 +712,28 @@
         "reviewed_at": "2026-06-07T06:08:59.569Z",
         "reviewed_sha": "4e961c6c457cf2aaa28e91304a917b1bcfdf2afe",
         "notes": "NON-COMPILING .lean: three theorem heads are COMMENTED OUT leaving dangling top-level proof bodies with no declaration: line 62 'deltaQ q0 p n <= 0 := by ...' (head 'theorem deltaQ_neg_neutron_rich ... -- (archimedean; not meaningful over R_q)' commented), line 91 '0 <= differentialShift q0 A := by ...', line 124 '1 < qEff q0 p n := by ...'. A bare 'expr := by' is not valid top-level Lean syntax -> file does not compile. The ref'd def hadron_q_self_correction (line 131) is itself fine but cannot be soundly built while the file is broken; the 3 substantive theorems are effectively absent."
+      },
+      {
+        "field_hash": {
+          "md": "fe4ca75af28c",
+          "ts": "5279cde91f9e",
+          "lean": "2055ce554101"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:29.883Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "Lean signature is unchanged and has no sorry"
       }
     ],
     "voice-unicode-crash": [
@@ -2814,5 +2992,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T02:11:07.128Z"
+  "updated_at": "2026-06-14T13:27:29.883Z"
 }

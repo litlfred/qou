@@ -16,102 +16,85 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "337b4bb35b67",
-          "ts": "272d3b8da8d4",
+          "md": "a3aa86df048d",
+          "ts": "acfb8caeeeff",
           "lean": "2d834c773007"
         },
-        "result": "fail",
-        "severity": "minor",
-        "evidence": "Block contains a 'Why this matters' section with substantive interpretive prose right below the statement.",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-13",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-13T19:05:41.476Z",
-        "reviewed_sha": "782b75d8a21015413016c4b28f9467f12449ccf5"
+        "reviewed_at": "2026-06-14T13:22:15.024Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "No interpretive sections present"
       }
     ],
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "337b4bb35b67",
-          "ts": "272d3b8da8d4",
+          "md": "a3aa86df048d",
+          "ts": "acfb8caeeeff",
           "lean": "2d834c773007"
         },
-        "result": "pass",
+        "result": "fail",
+        "severity": "major",
+        "evidence": "Orphan block",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-13",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-13T19:05:41.719Z",
-        "reviewed_sha": "782b75d8a21015413016c4b28f9467f12449ccf5"
+        "reviewed_at": "2026-06-14T13:22:15.136Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "337b4bb35b67",
-          "ts": "272d3b8da8d4",
+          "md": "a3aa86df048d",
+          "ts": "acfb8caeeeff",
           "lean": "2d834c773007"
         },
         "result": "pass",
+        "evidence": "Statement is clean of archimedean leaks",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-13",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-13T19:05:41.920Z",
-        "reviewed_sha": "782b75d8a21015413016c4b28f9467f12449ccf5"
+        "reviewed_at": "2026-06-14T13:22:15.259Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "337b4bb35b67",
-          "ts": "272d3b8da8d4",
+          "md": "a3aa86df048d",
+          "ts": "acfb8caeeeff",
           "lean": "2d834c773007"
         },
         "result": "pass",
+        "evidence": "No proof section found to scan",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-13",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-13T19:05:42.227Z",
-        "reviewed_sha": "782b75d8a21015413016c4b28f9467f12449ccf5"
+        "reviewed_at": "2026-06-14T13:22:15.390Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "proof-narrative-lean-equiv": [
-      {
-        "field_hash": {
-          "md": "0a0e92a9d60e",
-          "ts": "272d3b8da8d4",
-          "lean": "2d834c773007"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "selection-rule-c2-prediction.lean:56 - selection_rule_c2_prediction: (1+(q+q^-1)+1)/3 = (q+1)^2/(3*q)",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T13:40:38.655Z",
-        "reviewed_sha": "25902cde45f4f8cac782b53a45b9b0219972eea8",
-        "notes": "lean proves composite identity matching narrative lw(2)=(q+1)^2/(3q); same conclusion and same hypotheses (q:R, 0<q)"
-      },
       {
         "field_hash": {
           "md": "337b4bb35b67",
@@ -127,6 +110,24 @@
         "reviewed_at": "2026-06-14T01:00:45.351Z",
         "reviewed_sha": "0897db293a9e33bee002700a742ee9370ca482e1",
         "notes": "Label 'prop:selection-rule-c2-prediction' aligns with Lean declaration. Sorry-free."
+      },
+      {
+        "field_hash": {
+          "md": "a3aa86df048d",
+          "ts": "acfb8caeeeff",
+          "lean": "2d834c773007"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:22:15.480Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "Markdown statement and Lean signature structurally align"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2924,5 +2925,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T03:46:52.636Z"
+  "updated_at": "2026-06-14T13:22:15.480Z"
 }

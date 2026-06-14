@@ -730,21 +730,21 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "9fa41da1cf2e",
-          "ts": "d6c99adf43bc",
-          "lean": "d43579af2af8"
+          "md": "16cbab642f55",
+          "ts": "d8ab3b33f2ff",
+          "lean": "10b98c16aa15"
         },
         "result": "pass",
-        "evidence": "proposition in NS obstruction section; core aspect ratio = Levi form condition number",
+        "evidence": "Listed in section manifest",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T10:00:00.391Z",
-        "reviewed_sha": "c2b296b787f282526008689a95749a04773bbed7"
+        "reviewed_at": "2026-06-14T13:22:16.461Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-statement": [
@@ -2525,5 +2525,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T03:47:35.510Z"
+  "updated_at": "2026-06-14T13:22:16.461Z"
 }

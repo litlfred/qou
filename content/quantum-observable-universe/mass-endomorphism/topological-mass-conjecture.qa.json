@@ -325,6 +325,24 @@
         "reviewed_at": "2026-06-14T01:00:45.351Z",
         "reviewed_sha": "0897db293a9e33bee002700a742ee9370ca482e1",
         "notes": "Label 'prop:topological-decomposition-mass' → expected 'topological_decomposition_mass'; Lean declares: TopologicalDecompositionMass, mass_unique, mass_nonneg, mass_eq_holonomy_of_flat, mass_gt_holonomy_of_dilog_pos.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "ddadbea91ba4",
+          "ts": "8077656e4dff",
+          "lean": "e438d7744ca0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:24:44.388Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "Markdown statement and Lean signature structurally align"
       }
     ],
     "voice-author-notes-pollution": [
@@ -380,6 +398,24 @@
         "reviewed_at": "2026-06-05T15:51:33.236Z",
         "reviewed_sha": "2495134e4bd1021c55d23f3c6417517bdeb8f35b",
         "notes": "Move interpretive sections to a linked remark."
+      },
+      {
+        "field_hash": {
+          "md": "ddadbea91ba4",
+          "ts": "8077656e4dff",
+          "lean": "e438d7744ca0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:24:43.446Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "No interpretive sections present"
       }
     ],
     "fit-section-chapter": [
@@ -402,6 +438,24 @@
         "reviewed_at": "2026-06-05T15:51:49.197Z",
         "reviewed_sha": "2495134e4bd1021c55d23f3c6417517bdeb8f35b",
         "notes": "Correct placement."
+      },
+      {
+        "field_hash": {
+          "md": "ddadbea91ba4",
+          "ts": "8077656e4dff",
+          "lean": "e438d7744ca0"
+        },
+        "result": "pass",
+        "evidence": "Listed in section manifest",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:24:43.563Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-statement": [
@@ -424,6 +478,24 @@
         "reviewed_at": "2026-06-05T15:51:49.231Z",
         "reviewed_sha": "2495134e4bd1021c55d23f3c6417517bdeb8f35b",
         "notes": "Wall side clean."
+      },
+      {
+        "field_hash": {
+          "md": "ddadbea91ba4",
+          "ts": "8077656e4dff",
+          "lean": "e438d7744ca0"
+        },
+        "result": "pass",
+        "evidence": "Statement is clean of archimedean leaks",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:24:43.758Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-proof": [
@@ -446,6 +518,24 @@
         "reviewed_at": "2026-06-05T15:51:49.265Z",
         "reviewed_sha": "2495134e4bd1021c55d23f3c6417517bdeb8f35b",
         "notes": "N/A for proof body."
+      },
+      {
+        "field_hash": {
+          "md": "ddadbea91ba4",
+          "ts": "8077656e4dff",
+          "lean": "e438d7744ca0"
+        },
+        "result": "pass",
+        "evidence": "Proof is clean of archimedean leaks",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:24:44.237Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2910,5 +3000,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T03:51:55.039Z"
+  "updated_at": "2026-06-14T13:24:44.388Z"
 }

@@ -36,23 +36,21 @@
       },
       {
         "field_hash": {
-          "md": "8ab90a8998ed",
+          "md": "20182be2a114",
           "ts": "fe342d55796e",
           "lean": "af2a984d9e33"
         },
-        "result": "fail",
-        "severity": "minor",
-        "evidence": "delta-pre-archimedean.md:32 -- sections ## What is proved vs. what is expository, ## Why the order is forced for binding, ## Lean structure are interpretive prose in same block with no companion interprets: remark",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:32:46.746Z",
-        "reviewed_sha": "408464485866b17c0be73e1662112b21a1b2f231",
-        "notes": "proposition block with substantial interpretation sections; move to linked remark"
+        "reviewed_at": "2026-06-14T13:27:14.751Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "No interpretive sections present"
       }
     ],
     "fit-section-chapter": [
@@ -78,23 +76,21 @@
       },
       {
         "field_hash": {
-          "md": "8ab90a8998ed",
+          "md": "20182be2a114",
           "ts": "fe342d55796e",
           "lean": "af2a984d9e33"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "delta-pre-archimedean.md:11 -- proposition about fibre vs archimedean order of operations for Q_beta; fits particle-interactions scope",
+        "evidence": "Listed in section manifest",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:32:46.781Z",
-        "reviewed_sha": "408464485866b17c0be73e1662112b21a1b2f231",
-        "notes": "fits chapter scope"
+        "reviewed_at": "2026-06-14T13:27:14.816Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-statement": [
@@ -120,23 +116,22 @@
       },
       {
         "field_hash": {
-          "md": "8ab90a8998ed",
+          "md": "20182be2a114",
           "ts": "fe342d55796e",
           "lean": "af2a984d9e33"
         },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "delta-pre-archimedean.md:12 -- fold_commutes_sub stated over generic fibre coefficient ring; no numeric q value or Real.sqrt in statement",
+        "result": "fail",
+        "severity": "major",
+        "evidence": "Substrate block contains archimedean constructs without proper banner: ℝ",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:32:46.812Z",
-        "reviewed_sha": "408464485866b17c0be73e1662112b21a1b2f231",
-        "notes": "generic algebraic statement; archimedean specialisation noted as separate lean sibling"
+        "reviewed_at": "2026-06-14T13:27:14.884Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-proof": [
@@ -162,23 +157,21 @@
       },
       {
         "field_hash": {
-          "md": "8ab90a8998ed",
+          "md": "20182be2a114",
           "ts": "fe342d55796e",
           "lean": "af2a984d9e33"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "delta-pre-archimedean.md:92 -- proof uses sub_eq_add_neg + map_add + map_neg over CommRing; no archimedean machinery",
+        "evidence": "No proof section found to scan",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:32:46.846Z",
-        "reviewed_sha": "408464485866b17c0be73e1662112b21a1b2f231",
-        "notes": "proof stays on generic algebraic side"
+        "reviewed_at": "2026-06-14T13:27:14.965Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -204,23 +197,21 @@
       },
       {
         "field_hash": {
-          "md": "8ab90a8998ed",
+          "md": "20182be2a114",
           "ts": "fe342d55796e",
           "lean": "af2a984d9e33"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "delta-pre-archimedean.lean:1 -- imports QOU.ParticleInteractions.delta_pre_archimedean; ts ref qou:QOU.ParticleInteractions.fold_commutes_sub matches narrative fold_commutes_sub claim",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:32:46.878Z",
-        "reviewed_sha": "408464485866b17c0be73e1662112b21a1b2f231",
-        "notes": "narrative and Lean agree on fold commutativity over generic ring"
+        "reviewed_at": "2026-06-14T13:27:15.048Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "Markdown statement and Lean signature structurally align"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -3046,5 +3037,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T04:00:38.069Z"
+  "updated_at": "2026-06-14T13:27:15.048Z"
 }

@@ -33,6 +33,24 @@
         "reviewed_at": "2026-06-06T01:08:55.796Z",
         "reviewed_sha": "fbc2c733b6a6d13d2f1c4d990c3db47c284dc992",
         "notes": "Interpretation prose should move to a companion remark; currently co-located."
+      },
+      {
+        "field_hash": {
+          "md": "b8a85ddd3728",
+          "ts": "6ebbe7293c4b",
+          "lean": "28c637334c87"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:25:01.224Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "No interpretive sections present"
       }
     ],
     "fit-section-chapter": [
@@ -55,6 +73,24 @@
         "reviewed_at": "2026-06-06T01:09:15.709Z",
         "reviewed_sha": "fbc2c733b6a6d13d2f1c4d990c3db47c284dc992",
         "notes": "No misplacement."
+      },
+      {
+        "field_hash": {
+          "md": "b8a85ddd3728",
+          "ts": "6ebbe7293c4b",
+          "lean": "28c637334c87"
+        },
+        "result": "pass",
+        "evidence": "Listed in section manifest",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:25:01.418Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-statement": [
@@ -77,6 +113,24 @@
         "reviewed_at": "2026-06-06T01:09:33.830Z",
         "reviewed_sha": "fbc2c733b6a6d13d2f1c4d990c3db47c284dc992",
         "notes": "No wall violation in statement."
+      },
+      {
+        "field_hash": {
+          "md": "b8a85ddd3728",
+          "ts": "6ebbe7293c4b",
+          "lean": "28c637334c87"
+        },
+        "result": "pass",
+        "evidence": "Statement is clean of archimedean leaks",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:25:01.554Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-proof": [
@@ -99,6 +153,24 @@
         "reviewed_at": "2026-06-06T01:09:50.845Z",
         "reviewed_sha": "fbc2c733b6a6d13d2f1c4d990c3db47c284dc992",
         "notes": "Wall clean for proof body."
+      },
+      {
+        "field_hash": {
+          "md": "b8a85ddd3728",
+          "ts": "6ebbe7293c4b",
+          "lean": "28c637334c87"
+        },
+        "result": "pass",
+        "evidence": "No proof section found to scan",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:25:01.680Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -137,6 +209,24 @@
         "reviewed_at": "2026-06-14T01:30:06.435Z",
         "reviewed_sha": "dfd236e499b4b6b0985b78c158134b2b725cf09b",
         "notes": "Label 'prop:lr-coefficient-hecke' → expected 'lr_coefficient_hecke'; Lean declares: Partition, Partition.size, Partition.contains, LRCoefficientHecke, lr_coefficient_hecke_non_negative.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "b8a85ddd3728",
+          "ts": "6ebbe7293c4b",
+          "lean": "28c637334c87"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:25:01.820Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "Markdown statement and Lean signature structurally align"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -3169,5 +3259,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T03:54:57.683Z"
+  "updated_at": "2026-06-14T13:25:01.820Z"
 }

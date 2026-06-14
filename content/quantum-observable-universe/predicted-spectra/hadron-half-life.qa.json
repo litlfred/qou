@@ -325,6 +325,24 @@
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
         "notes": "Label 'prop:hadron-half-life' aligns with Lean declaration. Sorry-free."
+      },
+      {
+        "field_hash": {
+          "md": "c40703427d76",
+          "ts": "a2fa0d11b51c",
+          "lean": "9794d9f33007"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:28.471Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "Markdown statement and Lean signature structurally align"
       }
     ],
     "voice-author-notes-pollution": [
@@ -380,6 +398,24 @@
         "reviewed_at": "2026-06-05T13:25:13.418Z",
         "reviewed_sha": "568f06e5395a137eab04a830a8c1c414fb6e00cd",
         "notes": "Substantive interpretation should move to a linked remark block."
+      },
+      {
+        "field_hash": {
+          "md": "c40703427d76",
+          "ts": "a2fa0d11b51c",
+          "lean": "9794d9f33007"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:27.851Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "No interpretive sections present"
       }
     ],
     "fit-section-chapter": [
@@ -402,6 +438,24 @@
         "reviewed_at": "2026-06-05T13:25:32.827Z",
         "reviewed_sha": "568f06e5395a137eab04a830a8c1c414fb6e00cd",
         "notes": "Well-placed."
+      },
+      {
+        "field_hash": {
+          "md": "c40703427d76",
+          "ts": "a2fa0d11b51c",
+          "lean": "9794d9f33007"
+        },
+        "result": "pass",
+        "evidence": "Listed in section manifest",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:28.248Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-statement": [
@@ -424,6 +478,24 @@
         "reviewed_at": "2026-06-05T13:25:32.868Z",
         "reviewed_sha": "568f06e5395a137eab04a830a8c1c414fb6e00cd",
         "notes": "Wall placement correct."
+      },
+      {
+        "field_hash": {
+          "md": "c40703427d76",
+          "ts": "a2fa0d11b51c",
+          "lean": "9794d9f33007"
+        },
+        "result": "pass",
+        "evidence": "Archimedean chapter statement",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:28.345Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-proof": [
@@ -446,6 +518,24 @@
         "reviewed_at": "2026-06-05T13:25:32.908Z",
         "reviewed_sha": "568f06e5395a137eab04a830a8c1c414fb6e00cd",
         "notes": "No wall violation."
+      },
+      {
+        "field_hash": {
+          "md": "c40703427d76",
+          "ts": "a2fa0d11b51c",
+          "lean": "9794d9f33007"
+        },
+        "result": "pass",
+        "evidence": "Archimedean chapter proof",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:28.400Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -470,6 +560,28 @@
         "reviewed_at": "2026-06-07T06:07:51.701Z",
         "reviewed_sha": "4e961c6c457cf2aaa28e91304a917b1bcfdf2afe",
         "notes": "Plan clear: t_1/2 = ln2/Gamma_beta; Gamma_beta = |W(q)|^2 mu_0/(2pi^3) * [2]_q * |M_q|^2 * f(Q) with all 5 factors derived from q (weak vertex form factor, [2]_q, Markov-trace ratio, Q^5 Sargent rule, mu_0 unit). md lays out each factor + open computations explicitly."
+      },
+      {
+        "field_hash": {
+          "md": "c40703427d76",
+          "ts": "a2fa0d11b51c",
+          "lean": "9794d9f33007"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:28.569Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "No proof strategy or outline found."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -494,6 +606,28 @@
         "reviewed_at": "2026-06-07T06:07:51.749Z",
         "reviewed_sha": "4e961c6c457cf2aaa28e91304a917b1bcfdf2afe",
         "notes": "Sorry-free structural content: qPrefactor_classical (=0 at q=1), qPrefactor_pos, halfLife_pos, mass_splitting, qSensitivity_pos all real-proved over a constrained BetaDecayData structure. md honestly flags open factors (N_v weak scale, W(q) form factor, 10-17% heavy-nucleus overshoot) but the Lean only CLAIMS the structural facts (positivity, classical vanishing), which are proven. Full predictive half-life not formalized."
+      },
+      {
+        "field_hash": {
+          "md": "c40703427d76",
+          "ts": "a2fa0d11b51c",
+          "lean": "9794d9f33007"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:28.645Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "Proof is sorry-free."
       }
     ],
     "proof-rater-novelty": [
@@ -518,6 +652,28 @@
         "reviewed_at": "2026-06-07T06:07:51.788Z",
         "reviewed_sha": "4e961c6c457cf2aaa28e91304a917b1bcfdf2afe",
         "notes": "q-deformed Fermi golden rule + Sargent Q^5 rule + Markov-trace matrix element is a reasonable categorical re-derivation of beta-decay rate, but follows standard weak-decay structure."
+      },
+      {
+        "field_hash": {
+          "md": "c40703427d76",
+          "ts": "a2fa0d11b51c",
+          "lean": "9794d9f33007"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:28.717Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "Standard but not duplicated."
       }
     ],
     "proof-statement-integrity": [
@@ -538,6 +694,28 @@
         "reviewed_at": "2026-06-07T06:07:51.823Z",
         "reviewed_sha": "4e961c6c457cf2aaa28e91304a917b1bcfdf2afe",
         "notes": "lean.ref qou:QOU.Archimedean.hadron_half_life resolves to sibling .lean:150 (noncomputable def hadron_half_life := d.halfLife = ln2/qPrefactor), with substantive companion theorem hadron_half_life_pos and structure BetaDecayData carrying real constraints. Faithful to the md half-life formula; not vacuous/=True."
+      },
+      {
+        "field_hash": {
+          "md": "c40703427d76",
+          "ts": "a2fa0d11b51c",
+          "lean": "9794d9f33007"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:28.849Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "Lean signature is unchanged and has no sorry"
       }
     ],
     "voice-unicode-crash": [
@@ -2613,5 +2791,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T02:11:07.128Z"
+  "updated_at": "2026-06-14T13:27:28.849Z"
 }

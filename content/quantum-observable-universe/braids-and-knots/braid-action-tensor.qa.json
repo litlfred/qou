@@ -358,6 +358,24 @@
         "reviewed_at": "2026-06-14T01:00:45.351Z",
         "reviewed_sha": "0897db293a9e33bee002700a742ee9370ca482e1",
         "notes": "Label 'prop:braid-action-tensor' aligns with Lean declaration. Sorry-free."
+      },
+      {
+        "field_hash": {
+          "md": "2295a2da1ee3",
+          "ts": "44cfe9412e11",
+          "lean": "7e4ea0089b1b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:21:58.500Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "Markdown statement and Lean signature structurally align"
       }
     ],
     "voice-author-notes-pollution": [
@@ -396,77 +414,81 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "0f7096a10d82",
+          "md": "2295a2da1ee3",
           "ts": "44cfe9412e11",
-          "lean": "53fd7264c224"
+          "lean": "7e4ea0089b1b"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-04",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-04T17:56:12.834Z",
-        "reviewed_sha": "35488e5b5e974ebaf725abda6c3fd3c8d17ff63e"
+        "reviewed_at": "2026-06-14T13:21:57.655Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "No interpretive sections present"
       }
     ],
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "0f7096a10d82",
+          "md": "2295a2da1ee3",
           "ts": "44cfe9412e11",
-          "lean": "53fd7264c224"
+          "lean": "7e4ea0089b1b"
         },
         "result": "pass",
+        "evidence": "Listed in section manifest",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-04",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-04T17:56:12.867Z",
-        "reviewed_sha": "35488e5b5e974ebaf725abda6c3fd3c8d17ff63e"
+        "reviewed_at": "2026-06-14T13:21:57.842Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "0f7096a10d82",
+          "md": "2295a2da1ee3",
           "ts": "44cfe9412e11",
-          "lean": "53fd7264c224"
+          "lean": "7e4ea0089b1b"
         },
         "result": "pass",
+        "evidence": "Statement is clean of archimedean leaks",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-04",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-04T17:56:12.905Z",
-        "reviewed_sha": "35488e5b5e974ebaf725abda6c3fd3c8d17ff63e"
+        "reviewed_at": "2026-06-14T13:21:58.092Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "0f7096a10d82",
+          "md": "2295a2da1ee3",
           "ts": "44cfe9412e11",
-          "lean": "53fd7264c224"
+          "lean": "7e4ea0089b1b"
         },
         "result": "pass",
+        "evidence": "No proof section found to scan",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-04",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-04T17:56:12.940Z",
-        "reviewed_sha": "35488e5b5e974ebaf725abda6c3fd3c8d17ff63e"
+        "reviewed_at": "2026-06-14T13:21:58.270Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2476,5 +2498,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T03:45:51.119Z"
+  "updated_at": "2026-06-14T13:21:58.500Z"
 }

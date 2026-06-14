@@ -325,6 +325,24 @@
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
         "notes": "Label 'prop:categorical-proton-exists' → expected 'categorical_proton_exists'; Lean declares: CategoricalProton.exists. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "0561d2526956",
+          "ts": "e630c6809289",
+          "lean": "eea0a1ad4abb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:21.056Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "Markdown statement and Lean signature structurally align"
       }
     ],
     "voice-author-notes-pollution": [
@@ -380,6 +398,24 @@
         "reviewed_at": "2026-06-04T23:54:44.617Z",
         "reviewed_sha": "4f73e8158a0fa05777a1e36846ca01b39efa16c4",
         "notes": "Clean"
+      },
+      {
+        "field_hash": {
+          "md": "0561d2526956",
+          "ts": "e630c6809289",
+          "lean": "eea0a1ad4abb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:20.793Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "No interpretive sections present"
       }
     ],
     "fit-section-chapter": [
@@ -402,6 +438,24 @@
         "reviewed_at": "2026-06-04T23:54:44.653Z",
         "reviewed_sha": "4f73e8158a0fa05777a1e36846ca01b39efa16c4",
         "notes": "Well-placed"
+      },
+      {
+        "field_hash": {
+          "md": "0561d2526956",
+          "ts": "e630c6809289",
+          "lean": "eea0a1ad4abb"
+        },
+        "result": "pass",
+        "evidence": "Listed in section manifest",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:20.860Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-statement": [
@@ -424,6 +478,24 @@
         "reviewed_at": "2026-06-04T23:54:44.688Z",
         "reviewed_sha": "4f73e8158a0fa05777a1e36846ca01b39efa16c4",
         "notes": "Purely algebraic statement; no wall violation"
+      },
+      {
+        "field_hash": {
+          "md": "0561d2526956",
+          "ts": "e630c6809289",
+          "lean": "eea0a1ad4abb"
+        },
+        "result": "pass",
+        "evidence": "Archimedean chapter statement",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:20.934Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-proof": [
@@ -446,6 +518,24 @@
         "reviewed_at": "2026-06-04T23:54:44.722Z",
         "reviewed_sha": "4f73e8158a0fa05777a1e36846ca01b39efa16c4",
         "notes": "N/A: proof block separate"
+      },
+      {
+        "field_hash": {
+          "md": "0561d2526956",
+          "ts": "e630c6809289",
+          "lean": "eea0a1ad4abb"
+        },
+        "result": "pass",
+        "evidence": "Archimedean chapter proof",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:20.995Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -470,6 +560,28 @@
         "reviewed_at": "2026-06-07T06:00:48.441Z",
         "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
         "notes": "md terse (3 lines): p = B_3(u,u,d) exists as well-defined H_3(q) element with Frobenius stability G x[gamma] >= 0 at every LP step. Plan implicit; real construction only in docstring."
+      },
+      {
+        "field_hash": {
+          "md": "0561d2526956",
+          "ts": "e630c6809289",
+          "lean": "eea0a1ad4abb"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:21.143Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "No proof strategy or outline found."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -494,6 +606,28 @@
         "reviewed_at": "2026-06-07T06:00:48.475Z",
         "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
         "notes": "Weak proxy: theorem CategoricalProton.exists := <{skein_uu:=0, skein_ud:=0}> proves Nonempty of a structure with NO Frobenius-stability/positivity constraints (free real fields); docstring admits 'Trivial witness ... degenerate proton ... intended Borromean B_3(u,u,d) x L_- witness is sharper but requires Hecke NF infra'. Sorry-free but skips the md's LP-stability content."
+      },
+      {
+        "field_hash": {
+          "md": "0561d2526956",
+          "ts": "e630c6809289",
+          "lean": "eea0a1ad4abb"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:21.201Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "Proof is sorry-free."
       }
     ],
     "proof-rater-novelty": [
@@ -518,6 +652,28 @@
         "reviewed_at": "2026-06-07T06:00:48.510Z",
         "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
         "notes": "Standard Nonempty-witness existence; construction lives in def:categorical-proton."
+      },
+      {
+        "field_hash": {
+          "md": "0561d2526956",
+          "ts": "e630c6809289",
+          "lean": "eea0a1ad4abb"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:21.312Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "Standard but not duplicated."
       }
     ],
     "proof-statement-integrity": [
@@ -538,6 +694,28 @@
         "reviewed_at": "2026-06-07T06:00:48.545Z",
         "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
         "notes": "lean.ref qou:QOU.CategoricalProton.exists present; Nonempty CategoricalProton is a faithful (weak) rendering of 'the proton exists' - not =True, not <_,rfl> target-restatement. NOTE CategoricalProton has free real fields and no stability constraint, so witness is degenerate (recorded under plausibility)."
+      },
+      {
+        "field_hash": {
+          "md": "0561d2526956",
+          "ts": "e630c6809289",
+          "lean": "eea0a1ad4abb"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:21.422Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "Lean signature is unchanged and has no sorry"
       }
     ],
     "voice-unicode-crash": [
@@ -2613,5 +2791,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T02:11:07.128Z"
+  "updated_at": "2026-06-14T13:27:21.422Z"
 }

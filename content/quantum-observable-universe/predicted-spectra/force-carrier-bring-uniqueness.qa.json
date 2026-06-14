@@ -358,6 +358,24 @@
         "reviewed_at": "2026-06-14T01:00:45.351Z",
         "reviewed_sha": "0897db293a9e33bee002700a742ee9370ca482e1",
         "notes": "Lean sibling is a stub/re-exporter; canonical formalisation lives in a Lake package and is audited by lean-compile-audit."
+      },
+      {
+        "field_hash": {
+          "md": "ba5f10cad05d",
+          "ts": "75359030d51b",
+          "lean": "aa6c1dcf0f25"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:24.059Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "Markdown statement and Lean signature structurally align"
       }
     ],
     "voice-author-notes-pollution": [
@@ -412,6 +430,24 @@
         "reviewed_at": "2026-06-05T01:27:10.784Z",
         "reviewed_sha": "6648f5097189466ee441f75b827b6e4a57baa6d6",
         "notes": "Clean proposition form."
+      },
+      {
+        "field_hash": {
+          "md": "ba5f10cad05d",
+          "ts": "75359030d51b",
+          "lean": "aa6c1dcf0f25"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:23.368Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "No interpretive sections present"
       }
     ],
     "fit-section-chapter": [
@@ -433,6 +469,24 @@
         "reviewed_at": "2026-06-05T01:27:25.800Z",
         "reviewed_sha": "6648f5097189466ee441f75b827b6e4a57baa6d6",
         "notes": "Well-placed."
+      },
+      {
+        "field_hash": {
+          "md": "ba5f10cad05d",
+          "ts": "75359030d51b",
+          "lean": "aa6c1dcf0f25"
+        },
+        "result": "pass",
+        "evidence": "Listed in section manifest",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:23.672Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-statement": [
@@ -454,6 +508,24 @@
         "reviewed_at": "2026-06-05T01:27:39.931Z",
         "reviewed_sha": "6648f5097189466ee441f75b827b6e4a57baa6d6",
         "notes": "Generic ring side, no q-value or Real.*."
+      },
+      {
+        "field_hash": {
+          "md": "ba5f10cad05d",
+          "ts": "75359030d51b",
+          "lean": "aa6c1dcf0f25"
+        },
+        "result": "pass",
+        "evidence": "Archimedean chapter statement",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:23.857Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-proof": [
@@ -475,6 +547,24 @@
         "reviewed_at": "2026-06-05T01:27:57.740Z",
         "reviewed_sha": "6648f5097189466ee441f75b827b6e4a57baa6d6",
         "notes": "Proof matches statement's generic-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "ba5f10cad05d",
+          "ts": "75359030d51b",
+          "lean": "aa6c1dcf0f25"
+        },
+        "result": "pass",
+        "evidence": "Archimedean chapter proof",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:23.940Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -498,6 +588,28 @@
         "reviewed_at": "2026-06-07T06:05:42.952Z",
         "reviewed_sha": "c73427b6738f398cb32fb2a9541142ef5650167e",
         "notes": "Plan clear: a torus knot saturates H_1(Sigma_4)=Z^8 only if Seifert genus = g(Sigma_4)=4; combined with genus-4 classification gives {T_2,9, T_3,5}. md proof + corollary on [9]_q[10]_q complexity explicit."
+      },
+      {
+        "field_hash": {
+          "md": "ba5f10cad05d",
+          "ts": "75359030d51b",
+          "lean": "aa6c1dcf0f25"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:24.216Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "Proof strategy is implicit."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -521,6 +633,28 @@
         "reviewed_at": "2026-06-07T06:05:42.990Z",
         "reviewed_sha": "c73427b6738f398cb32fb2a9541142ef5650167e",
         "notes": "Sorry-free: theorem force_carrier_bring_uniqueness (K)(h:IsBringSaturating K) : (m=2 and n=9) or (m=3 and n=5) := torus_knot_genus_four_unique K h, plus force_carrier_categorical_complexity. Clean delegation to the upstream genus-4 Diophantine result (whose own soundness is tracked under torus-knot-genus-four-unique). No axiom/sorry locally."
+      },
+      {
+        "field_hash": {
+          "md": "ba5f10cad05d",
+          "ts": "75359030d51b",
+          "lean": "aa6c1dcf0f25"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:24.407Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "Proof is sorry-free."
       }
     ],
     "proof-rater-novelty": [
@@ -544,6 +678,28 @@
         "reviewed_at": "2026-06-07T06:05:43.028Z",
         "reviewed_sha": "c73427b6738f398cb32fb2a9541142ef5650167e",
         "notes": "The genus-saturation framing is a reasonable structural argument but the core is the elementary Diophantine (m-1)(n-1)=8, gcd=1 => {(2,9),(3,5)}; conventional."
+      },
+      {
+        "field_hash": {
+          "md": "ba5f10cad05d",
+          "ts": "75359030d51b",
+          "lean": "aa6c1dcf0f25"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:24.540Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "Standard but not duplicated."
       }
     ],
     "proof-statement-integrity": [
@@ -563,6 +719,28 @@
         "reviewed_at": "2026-06-07T06:05:43.066Z",
         "reviewed_sha": "c73427b6738f398cb32fb2a9541142ef5650167e",
         "notes": "lean.ref qou:QOU.Archimedean.force_carrier_bring_uniqueness resolves to lean/QOU/Archimedean/ForceCarrierBringUniqueness.lean:32; statement (K.m=2 and K.n=9) or (K.m=3 and K.n=5) faithfully matches the md classification. Not vacuous, not =True, real content."
+      },
+      {
+        "field_hash": {
+          "md": "ba5f10cad05d",
+          "ts": "75359030d51b",
+          "lean": "aa6c1dcf0f25"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:24.714Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "Lean signature is unchanged and has no sorry"
       }
     ],
     "voice-unicode-crash": [
@@ -2746,5 +2924,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T02:11:07.128Z"
+  "updated_at": "2026-06-14T13:27:24.714Z"
 }

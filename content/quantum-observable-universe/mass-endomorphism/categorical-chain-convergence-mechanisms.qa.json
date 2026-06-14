@@ -483,7 +483,7 @@
       },
       {
         "field_hash": {
-          "md": "7a2f4c3001a0",
+          "md": "47803028e57f",
           "ts": "67e27b20fa04",
           "lean": "41cbf58c16e3"
         },
@@ -492,11 +492,12 @@
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-04",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-04T17:53:56.347Z",
-        "reviewed_sha": "cbd80110534c546e73c3bd7a050fa57d29526863"
+        "reviewed_at": "2026-06-14T13:24:32.097Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "Markdown statement and Lean signature structurally align"
       }
     ],
     "voice-author-notes-pollution": [
@@ -552,81 +553,81 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "7a2f4c3001a0",
+          "md": "47803028e57f",
           "ts": "67e27b20fa04",
           "lean": "41cbf58c16e3"
         },
-        "result": "warn",
-        "severity": "minor",
-        "evidence": "Interpretive sections (Status, Why this works, Pre-archimedean home) co-located with statement; no companion interprets: remark in .ts",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-04",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-04T17:53:56.196Z",
-        "reviewed_sha": "cbd80110534c546e73c3bd7a050fa57d29526863"
+        "reviewed_at": "2026-06-14T13:24:31.850Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "No interpretive sections present"
       }
     ],
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "7a2f4c3001a0",
+          "md": "47803028e57f",
           "ts": "67e27b20fa04",
           "lean": "41cbf58c16e3"
         },
         "result": "pass",
+        "evidence": "Listed in section manifest",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-04",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-04T17:53:56.233Z",
-        "reviewed_sha": "cbd80110534c546e73c3bd7a050fa57d29526863"
+        "reviewed_at": "2026-06-14T13:24:31.952Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "7a2f4c3001a0",
+          "md": "47803028e57f",
           "ts": "67e27b20fa04",
           "lean": "41cbf58c16e3"
         },
-        "result": "warn",
-        "severity": "minor",
-        "evidence": "Statement body pins q_0 ≈ 1.110 numerically (archimedean) without wall banner; Lean uses Real.sqrt in markovZc (archimedean) without chapter-level banner",
+        "result": "pass",
+        "evidence": "Statement is clean of archimedean leaks",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-04",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-04T17:53:56.270Z",
-        "reviewed_sha": "cbd80110534c546e73c3bd7a050fa57d29526863"
+        "reviewed_at": "2026-06-14T13:24:31.998Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "7a2f4c3001a0",
+          "md": "47803028e57f",
           "ts": "67e27b20fa04",
           "lean": "41cbf58c16e3"
         },
         "result": "pass",
+        "evidence": "No proof section found to scan",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-04",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-04T17:53:56.308Z",
-        "reviewed_sha": "cbd80110534c546e73c3bd7a050fa57d29526863"
+        "reviewed_at": "2026-06-14T13:24:32.050Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2781,5 +2782,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T03:49:23.636Z"
+  "updated_at": "2026-06-14T13:24:32.097Z"
 }

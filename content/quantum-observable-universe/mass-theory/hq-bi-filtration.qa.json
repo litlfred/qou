@@ -430,6 +430,24 @@
         "reviewed_at": "2026-06-05T19:31:16.067Z",
         "reviewed_sha": "cb0a5359143653685bd88d195886e75ceb7264cb",
         "notes": "Definition clearly scoped to mass-theory chapter"
+      },
+      {
+        "field_hash": {
+          "md": "86f0573bca21",
+          "ts": "b40f909f370c",
+          "lean": "5acae9574d86"
+        },
+        "result": "pass",
+        "evidence": "Listed in section manifest",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:24:57.402Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-statement": [
@@ -452,6 +470,25 @@
         "reviewed_at": "2026-06-05T19:31:33.240Z",
         "reviewed_sha": "cb0a5359143653685bd88d195886e75ceb7264cb",
         "notes": "No ordering predicates, sqrt, or real-analysis constructs in statement"
+      },
+      {
+        "field_hash": {
+          "md": "86f0573bca21",
+          "ts": "b40f909f370c",
+          "lean": "5acae9574d86"
+        },
+        "result": "fail",
+        "severity": "major",
+        "evidence": "Substrate block contains archimedean constructs without proper banner: π",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:24:57.541Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "voice-unicode-crash": [
@@ -2320,5 +2357,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T02:11:07.128Z"
+  "updated_at": "2026-06-14T13:24:57.541Z"
 }

@@ -363,20 +363,21 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "bec9cf894f72",
+          "md": "653d34c9a6cb",
           "ts": "79932e75f5d5",
           "lean": "f335f41cff5b"
         },
         "result": "pass",
+        "evidence": "Listed in section manifest",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-06-13",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-13T03:56:42.550Z",
-        "reviewed_sha": "b5b8eae463d7af2bb3713e19411d17e939e9c9bb"
+        "reviewed_at": "2026-06-14T13:21:51.385Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1931,5 +1932,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T03:44:17.947Z"
+  "updated_at": "2026-06-14T13:21:51.385Z"
 }

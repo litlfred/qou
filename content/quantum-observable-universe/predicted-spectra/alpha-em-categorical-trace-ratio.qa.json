@@ -521,7 +521,7 @@
       },
       {
         "field_hash": {
-          "md": "500307a97c69",
+          "md": "0d0b685206dd",
           "ts": "ca5be552846c",
           "lean": "870b856da170"
         },
@@ -530,11 +530,12 @@
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-04",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-04T17:23:01.930Z",
-        "reviewed_sha": "6809a6ea0fe048c94ac3654f5f15a3c1fb986b56"
+        "reviewed_at": "2026-06-14T13:27:33.074Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "Markdown statement and Lean signature structurally align"
       }
     ],
     "voice-author-notes-pollution": [
@@ -590,7 +591,7 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "500307a97c69",
+          "md": "0d0b685206dd",
           "ts": "ca5be552846c",
           "lean": "870b856da170"
         },
@@ -599,68 +600,72 @@
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-04",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-04T17:22:41.150Z",
-        "reviewed_sha": "6809a6ea0fe048c94ac3654f5f15a3c1fb986b56"
+        "reviewed_at": "2026-06-14T13:27:32.425Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "No interpretive sections present"
       }
     ],
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "500307a97c69",
+          "md": "0d0b685206dd",
           "ts": "ca5be552846c",
           "lean": "870b856da170"
         },
         "result": "pass",
+        "evidence": "Listed in section manifest",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-04",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-04T17:22:41.188Z",
-        "reviewed_sha": "6809a6ea0fe048c94ac3654f5f15a3c1fb986b56"
+        "reviewed_at": "2026-06-14T13:27:32.697Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "500307a97c69",
+          "md": "0d0b685206dd",
           "ts": "ca5be552846c",
           "lean": "870b856da170"
         },
         "result": "pass",
+        "evidence": "Archimedean chapter statement",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-04",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-04T17:22:41.226Z",
-        "reviewed_sha": "6809a6ea0fe048c94ac3654f5f15a3c1fb986b56"
+        "reviewed_at": "2026-06-14T13:27:32.872Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "500307a97c69",
+          "md": "0d0b685206dd",
           "ts": "ca5be552846c",
           "lean": "870b856da170"
         },
         "result": "pass",
+        "evidence": "Archimedean chapter proof",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-04",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-04T17:23:01.895Z",
-        "reviewed_sha": "6809a6ea0fe048c94ac3654f5f15a3c1fb986b56"
+        "reviewed_at": "2026-06-14T13:27:32.975Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "detangler-no-forward-ref": [
@@ -2912,5 +2917,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T04:04:45.478Z"
+  "updated_at": "2026-06-14T13:27:33.074Z"
 }

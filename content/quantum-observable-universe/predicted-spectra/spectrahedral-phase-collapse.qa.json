@@ -31,6 +31,24 @@
         "reviewed_at": "2026-06-13T13:17:25.918Z",
         "reviewed_sha": "a60319f319d74654752b4454b7d03890ca907d1a",
         "notes": "Auto-drained by agent"
+      },
+      {
+        "field_hash": {
+          "md": "b69b4ba5fdbf",
+          "ts": "ae0cb1f75475",
+          "lean": "2827aea7e5cf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:41.718Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "No interpretive sections present"
       }
     ],
     "fit-section-chapter": [
@@ -51,6 +69,24 @@
         "reviewed_at": "2026-06-13T13:17:25.918Z",
         "reviewed_sha": "a60319f319d74654752b4454b7d03890ca907d1a",
         "notes": "Auto-drained by agent"
+      },
+      {
+        "field_hash": {
+          "md": "b69b4ba5fdbf",
+          "ts": "ae0cb1f75475",
+          "lean": "2827aea7e5cf"
+        },
+        "result": "pass",
+        "evidence": "Listed in section manifest",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:41.865Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-statement": [
@@ -71,6 +107,24 @@
         "reviewed_at": "2026-06-13T13:17:25.918Z",
         "reviewed_sha": "a60319f319d74654752b4454b7d03890ca907d1a",
         "notes": "Auto-drained by agent"
+      },
+      {
+        "field_hash": {
+          "md": "b69b4ba5fdbf",
+          "ts": "ae0cb1f75475",
+          "lean": "2827aea7e5cf"
+        },
+        "result": "pass",
+        "evidence": "Archimedean chapter statement",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:42.063Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-proof": [
@@ -91,6 +145,24 @@
         "reviewed_at": "2026-06-13T13:17:25.918Z",
         "reviewed_sha": "a60319f319d74654752b4454b7d03890ca907d1a",
         "notes": "Auto-drained by agent"
+      },
+      {
+        "field_hash": {
+          "md": "b69b4ba5fdbf",
+          "ts": "ae0cb1f75475",
+          "lean": "2827aea7e5cf"
+        },
+        "result": "pass",
+        "evidence": "Archimedean chapter proof",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:42.236Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -2570,5 +2642,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T04:06:41.005Z"
+  "updated_at": "2026-06-14T13:27:42.236Z"
 }

@@ -45,6 +45,24 @@
         "reviewed_at": "2026-06-14T01:00:45.351Z",
         "reviewed_sha": "0897db293a9e33bee002700a742ee9370ca482e1",
         "notes": "Label 'prop:pion-half-figure-eight' → expected 'pion_half_figure_eight'; Lean declares: pion_eq_half_figure_eight_phase, figure_eight_is_square_of_half, pion_det_one, half_41_det_one. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "47823d6cec93",
+          "ts": "18e0d12369c3",
+          "lean": "f16a34e3d5af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:22:12.548Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "Markdown statement and Lean signature structurally align"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -241,6 +259,24 @@
         "reviewed_at": "2026-06-13T13:06:25.716Z",
         "reviewed_sha": "9f0f1e52c348943756fcc4103e7a15f35172c8c3",
         "notes": "Auto-drained by agent"
+      },
+      {
+        "field_hash": {
+          "md": "47823d6cec93",
+          "ts": "18e0d12369c3",
+          "lean": "f16a34e3d5af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:22:11.881Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "No interpretive sections present"
       }
     ],
     "fit-section-chapter": [
@@ -261,6 +297,24 @@
         "reviewed_at": "2026-06-13T13:06:25.716Z",
         "reviewed_sha": "9f0f1e52c348943756fcc4103e7a15f35172c8c3",
         "notes": "Auto-drained by agent"
+      },
+      {
+        "field_hash": {
+          "md": "47823d6cec93",
+          "ts": "18e0d12369c3",
+          "lean": "f16a34e3d5af"
+        },
+        "result": "pass",
+        "evidence": "Listed in section manifest",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:22:12.001Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-statement": [
@@ -281,6 +335,24 @@
         "reviewed_at": "2026-06-13T13:06:25.716Z",
         "reviewed_sha": "9f0f1e52c348943756fcc4103e7a15f35172c8c3",
         "notes": "Auto-drained by agent"
+      },
+      {
+        "field_hash": {
+          "md": "47823d6cec93",
+          "ts": "18e0d12369c3",
+          "lean": "f16a34e3d5af"
+        },
+        "result": "pass",
+        "evidence": "Statement is clean of archimedean leaks",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:22:12.222Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-proof": [
@@ -301,6 +373,24 @@
         "reviewed_at": "2026-06-13T13:06:25.716Z",
         "reviewed_sha": "9f0f1e52c348943756fcc4103e7a15f35172c8c3",
         "notes": "Auto-drained by agent"
+      },
+      {
+        "field_hash": {
+          "md": "47823d6cec93",
+          "ts": "18e0d12369c3",
+          "lean": "f16a34e3d5af"
+        },
+        "result": "pass",
+        "evidence": "Proof is clean of archimedean leaks",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:22:12.391Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "voice-status-leak": [
@@ -2495,5 +2585,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T03:45:57.575Z"
+  "updated_at": "2026-06-14T13:22:12.548Z"
 }

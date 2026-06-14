@@ -51,6 +51,24 @@
         "reviewed_at": "2026-06-13T13:06:25.716Z",
         "reviewed_sha": "9f0f1e52c348943756fcc4103e7a15f35172c8c3",
         "notes": "Auto-drained by agent"
+      },
+      {
+        "field_hash": {
+          "md": "2d601314ddf7",
+          "ts": "797e41f50237",
+          "lean": "4e3b1d9ee8b6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:22:08.281Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "No interpretive sections present"
       }
     ],
     "fit-section-chapter": [
@@ -91,6 +109,25 @@
         "reviewed_at": "2026-06-13T13:06:25.716Z",
         "reviewed_sha": "9f0f1e52c348943756fcc4103e7a15f35172c8c3",
         "notes": "Auto-drained by agent"
+      },
+      {
+        "field_hash": {
+          "md": "2d601314ddf7",
+          "ts": "797e41f50237",
+          "lean": "4e3b1d9ee8b6"
+        },
+        "result": "fail",
+        "severity": "major",
+        "evidence": "Orphan block",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:22:08.436Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-statement": [
@@ -131,6 +168,24 @@
         "reviewed_at": "2026-06-13T13:06:25.716Z",
         "reviewed_sha": "9f0f1e52c348943756fcc4103e7a15f35172c8c3",
         "notes": "Auto-drained by agent"
+      },
+      {
+        "field_hash": {
+          "md": "2d601314ddf7",
+          "ts": "797e41f50237",
+          "lean": "4e3b1d9ee8b6"
+        },
+        "result": "pass",
+        "evidence": "Statement is clean of archimedean leaks",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:22:08.552Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-proof": [
@@ -171,6 +226,24 @@
         "reviewed_at": "2026-06-13T13:06:25.716Z",
         "reviewed_sha": "9f0f1e52c348943756fcc4103e7a15f35172c8c3",
         "notes": "Auto-drained by agent"
+      },
+      {
+        "field_hash": {
+          "md": "2d601314ddf7",
+          "ts": "797e41f50237",
+          "lean": "4e3b1d9ee8b6"
+        },
+        "result": "pass",
+        "evidence": "Proof is clean of archimedean leaks",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:22:08.692Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -211,6 +284,24 @@
         "reviewed_at": "2026-06-13T13:06:25.716Z",
         "reviewed_sha": "9f0f1e52c348943756fcc4103e7a15f35172c8c3",
         "notes": "Auto-drained by agent"
+      },
+      {
+        "field_hash": {
+          "md": "2d601314ddf7",
+          "ts": "797e41f50237",
+          "lean": "4e3b1d9ee8b6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:22:08.815Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "Markdown statement and Lean signature structurally align"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2569,5 +2660,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T03:45:54.797Z"
+  "updated_at": "2026-06-14T13:22:08.815Z"
 }

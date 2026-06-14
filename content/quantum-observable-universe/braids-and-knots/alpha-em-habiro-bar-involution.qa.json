@@ -16,25 +16,6 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "3b7b623608ef",
-          "ts": "666bc0ac6b1b",
-          "lean": "69cf83354fa9"
-        },
-        "result": "warn",
-        "severity": "minor",
-        "evidence": "## Significance section contains substantive interpretive prose (physical meaning of bar-symmetric sector, structural reason alpha_EM was identifiable) with no companion interprets: remark linked",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-04",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-04T17:54:17.814Z",
-        "reviewed_sha": "d34637829dabea3f0037b2d4cd3f30df88b6e7ba"
-      },
-      {
-        "field_hash": {
           "md": "7aca396db43a",
           "ts": "666bc0ac6b1b",
           "lean": "69cf83354fa9"
@@ -50,28 +31,30 @@
         "reviewed_at": "2026-06-13T13:06:25.716Z",
         "reviewed_sha": "9f0f1e52c348943756fcc4103e7a15f35172c8c3",
         "notes": "Auto-drained by agent"
+      },
+      {
+        "field_hash": {
+          "md": "5867fb5cd5db",
+          "ts": "666bc0ac6b1b",
+          "lean": "69cf83354fa9"
+        },
+        "result": "fail",
+        "severity": "minor",
+        "evidence": "Substantive interpretive prose follows the statement.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:22:07.516Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "3b7b623608ef",
-          "ts": "666bc0ac6b1b",
-          "lean": "69cf83354fa9"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-04",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-04T17:54:17.853Z",
-        "reviewed_sha": "d34637829dabea3f0037b2d4cd3f30df88b6e7ba"
-      },
-      {
-        "field_hash": {
           "md": "7aca396db43a",
           "ts": "666bc0ac6b1b",
           "lean": "69cf83354fa9"
@@ -87,28 +70,29 @@
         "reviewed_at": "2026-06-13T13:06:25.716Z",
         "reviewed_sha": "9f0f1e52c348943756fcc4103e7a15f35172c8c3",
         "notes": "Auto-drained by agent"
+      },
+      {
+        "field_hash": {
+          "md": "5867fb5cd5db",
+          "ts": "666bc0ac6b1b",
+          "lean": "69cf83354fa9"
+        },
+        "result": "pass",
+        "evidence": "Listed in section manifest",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:22:07.638Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "3b7b623608ef",
-          "ts": "666bc0ac6b1b",
-          "lean": "69cf83354fa9"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-04",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-04T17:54:17.889Z",
-        "reviewed_sha": "d34637829dabea3f0037b2d4cd3f30df88b6e7ba"
-      },
-      {
-        "field_hash": {
           "md": "7aca396db43a",
           "ts": "666bc0ac6b1b",
           "lean": "69cf83354fa9"
@@ -124,28 +108,30 @@
         "reviewed_at": "2026-06-13T13:06:25.716Z",
         "reviewed_sha": "9f0f1e52c348943756fcc4103e7a15f35172c8c3",
         "notes": "Auto-drained by agent"
+      },
+      {
+        "field_hash": {
+          "md": "5867fb5cd5db",
+          "ts": "666bc0ac6b1b",
+          "lean": "69cf83354fa9"
+        },
+        "result": "fail",
+        "severity": "major",
+        "evidence": "Substrate block contains archimedean constructs without proper banner: ℝ, π",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:22:07.764Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "3b7b623608ef",
-          "ts": "666bc0ac6b1b",
-          "lean": "69cf83354fa9"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-04",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-04T17:54:17.925Z",
-        "reviewed_sha": "d34637829dabea3f0037b2d4cd3f30df88b6e7ba"
-      },
-      {
-        "field_hash": {
           "md": "7aca396db43a",
           "ts": "666bc0ac6b1b",
           "lean": "69cf83354fa9"
@@ -161,28 +147,29 @@
         "reviewed_at": "2026-06-13T13:06:25.716Z",
         "reviewed_sha": "9f0f1e52c348943756fcc4103e7a15f35172c8c3",
         "notes": "Auto-drained by agent"
+      },
+      {
+        "field_hash": {
+          "md": "5867fb5cd5db",
+          "ts": "666bc0ac6b1b",
+          "lean": "69cf83354fa9"
+        },
+        "result": "pass",
+        "evidence": "No proof section found to scan",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:22:07.890Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "3b7b623608ef",
-          "ts": "666bc0ac6b1b",
-          "lean": "69cf83354fa9"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-04",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-04T17:54:17.960Z",
-        "reviewed_sha": "d34637829dabea3f0037b2d4cd3f30df88b6e7ba"
-      },
-      {
-        "field_hash": {
           "md": "7aca396db43a",
           "ts": "666bc0ac6b1b",
           "lean": "69cf83354fa9"
@@ -198,6 +185,24 @@
         "reviewed_at": "2026-06-13T13:06:25.716Z",
         "reviewed_sha": "9f0f1e52c348943756fcc4103e7a15f35172c8c3",
         "notes": "Auto-drained by agent"
+      },
+      {
+        "field_hash": {
+          "md": "5867fb5cd5db",
+          "ts": "666bc0ac6b1b",
+          "lean": "69cf83354fa9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:22:08.078Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "Markdown statement and Lean signature structurally align"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2484,5 +2489,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T03:45:54.581Z"
+  "updated_at": "2026-06-14T13:22:08.078Z"
 }

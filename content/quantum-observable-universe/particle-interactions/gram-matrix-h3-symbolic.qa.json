@@ -455,6 +455,24 @@
         "reviewed_at": "2026-06-05T14:53:12.339Z",
         "reviewed_sha": "c47bf012be554f6d4bad7fd2fa0ec6e6e52c8075",
         "notes": "Move role/cross-ref prose to a linked remark block."
+      },
+      {
+        "field_hash": {
+          "md": "75d32ff0f24c",
+          "ts": "b3f6fc431da4",
+          "lean": "ff73012a8ad8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:14.329Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "No interpretive sections present"
       }
     ],
     "fit-section-chapter": [
@@ -477,6 +495,24 @@
         "reviewed_at": "2026-06-05T14:53:29.410Z",
         "reviewed_sha": "c47bf012be554f6d4bad7fd2fa0ec6e6e52c8075",
         "notes": "Well-placed."
+      },
+      {
+        "field_hash": {
+          "md": "75d32ff0f24c",
+          "ts": "b3f6fc431da4",
+          "lean": "ff73012a8ad8"
+        },
+        "result": "pass",
+        "evidence": "Listed in section manifest",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:14.463Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-statement": [
@@ -499,6 +535,24 @@
         "reviewed_at": "2026-06-05T14:53:48.392Z",
         "reviewed_sha": "c47bf012be554f6d4bad7fd2fa0ec6e6e52c8075",
         "notes": "Add wall: archimedean annotation or §7c banner to flag the ordering hypothesis."
+      },
+      {
+        "field_hash": {
+          "md": "75d32ff0f24c",
+          "ts": "b3f6fc431da4",
+          "lean": "ff73012a8ad8"
+        },
+        "result": "pass",
+        "evidence": "Statement is clean of archimedean leaks",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:14.538Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-proof": [
@@ -521,6 +575,24 @@
         "reviewed_at": "2026-06-05T14:54:00.890Z",
         "reviewed_sha": "c47bf012be554f6d4bad7fd2fa0ec6e6e52c8075",
         "notes": "Clean wall separation."
+      },
+      {
+        "field_hash": {
+          "md": "75d32ff0f24c",
+          "ts": "b3f6fc431da4",
+          "lean": "ff73012a8ad8"
+        },
+        "result": "pass",
+        "evidence": "No proof section found to scan",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:14.631Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2772,5 +2844,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T03:59:48.464Z"
+  "updated_at": "2026-06-14T13:27:14.631Z"
 }

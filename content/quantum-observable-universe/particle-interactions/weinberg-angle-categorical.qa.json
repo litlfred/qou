@@ -550,6 +550,24 @@
         "reviewed_at": "2026-06-06T00:40:02.102Z",
         "reviewed_sha": "4a3d2fdbe11131a2577886e573c3b4d62e52fc6a",
         "notes": "EW mixing conjecture fits chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "5c81290fc07d",
+          "ts": "4eaaf360a48d",
+          "lean": "c550806b5636"
+        },
+        "result": "pass",
+        "evidence": "Listed in section manifest",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:17.547Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -2428,5 +2446,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T04:03:47.152Z"
+  "updated_at": "2026-06-14T13:27:17.547Z"
 }

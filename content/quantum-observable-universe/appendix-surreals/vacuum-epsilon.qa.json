@@ -516,24 +516,6 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "832eae3b3575",
-          "ts": "e56ea8d6891f",
-          "lean": "82b11ca1fc69"
-        },
-        "result": "pass",
-        "evidence": "vacuum-epsilon.md — conjecture relaxing the strict vacuum axiom to Geom(unknot)=ε. Placed in sec:relaxing-strict-equalities. Topic and kind (conjecture) match the section title precisely.",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-04",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-04T13:48:08.080Z",
-        "reviewed_sha": "70fc3f056ae012683d21bf711e8c15547e5a165d"
-      },
-      {
-        "field_hash": {
           "md": "2f14cb5a0bc1",
           "ts": "848ce7db354d",
           "lean": "82b11ca1fc69"
@@ -549,6 +531,24 @@
         "reviewed_at": "2026-06-13T13:17:24.519Z",
         "reviewed_sha": "a60319f319d74654752b4454b7d03890ca907d1a",
         "notes": "Auto-drained by agent"
+      },
+      {
+        "field_hash": {
+          "md": "539177ddd0fd",
+          "ts": "848ce7db354d",
+          "lean": "82b11ca1fc69"
+        },
+        "result": "pass",
+        "evidence": "Listed in section manifest",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:21:51.993Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "detangler-no-forward-ref": [
@@ -2139,5 +2139,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T03:44:17.996Z"
+  "updated_at": "2026-06-14T13:21:51.993Z"
 }

@@ -496,6 +496,24 @@
         "reviewed_at": "2026-06-13T13:06:25.716Z",
         "reviewed_sha": "9f0f1e52c348943756fcc4103e7a15f35172c8c3",
         "notes": "Auto-drained by agent"
+      },
+      {
+        "field_hash": {
+          "md": "29ad9480616f",
+          "ts": "594d979e3907",
+          "lean": "4853dde67b04"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:22:06.540Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "Lean signature is a placeholder True stub"
       }
     ],
     "voice-author-notes-pollution": [
@@ -743,6 +761,24 @@
         "reviewed_at": "2026-06-13T13:06:25.716Z",
         "reviewed_sha": "9f0f1e52c348943756fcc4103e7a15f35172c8c3",
         "notes": "Auto-drained by agent"
+      },
+      {
+        "field_hash": {
+          "md": "29ad9480616f",
+          "ts": "594d979e3907",
+          "lean": "4853dde67b04"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:22:05.505Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "No interpretive sections present"
       }
     ],
     "fit-section-chapter": [
@@ -763,6 +799,24 @@
         "reviewed_at": "2026-06-13T13:06:25.716Z",
         "reviewed_sha": "9f0f1e52c348943756fcc4103e7a15f35172c8c3",
         "notes": "Auto-drained by agent"
+      },
+      {
+        "field_hash": {
+          "md": "29ad9480616f",
+          "ts": "594d979e3907",
+          "lean": "4853dde67b04"
+        },
+        "result": "pass",
+        "evidence": "Listed in section manifest",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:22:05.649Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-statement": [
@@ -783,6 +837,24 @@
         "reviewed_at": "2026-06-13T13:06:25.716Z",
         "reviewed_sha": "9f0f1e52c348943756fcc4103e7a15f35172c8c3",
         "notes": "Auto-drained by agent"
+      },
+      {
+        "field_hash": {
+          "md": "29ad9480616f",
+          "ts": "594d979e3907",
+          "lean": "4853dde67b04"
+        },
+        "result": "pass",
+        "evidence": "Statement is clean of archimedean leaks",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:22:06.072Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-proof": [
@@ -803,6 +875,24 @@
         "reviewed_at": "2026-06-13T13:06:25.716Z",
         "reviewed_sha": "9f0f1e52c348943756fcc4103e7a15f35172c8c3",
         "notes": "Auto-drained by agent"
+      },
+      {
+        "field_hash": {
+          "md": "29ad9480616f",
+          "ts": "594d979e3907",
+          "lean": "4853dde67b04"
+        },
+        "result": "pass",
+        "evidence": "Proof is clean of archimedean leaks",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:22:06.337Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "voice-unicode-crash": [
@@ -2550,5 +2640,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T03:45:53.964Z"
+  "updated_at": "2026-06-14T13:22:06.540Z"
 }

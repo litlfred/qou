@@ -358,6 +358,24 @@
         "reviewed_at": "2026-06-14T01:00:45.351Z",
         "reviewed_sha": "0897db293a9e33bee002700a742ee9370ca482e1",
         "notes": "Label 'prop:antiparticle-crossing-reversal' aligns with Lean declaration. Sorry-free."
+      },
+      {
+        "field_hash": {
+          "md": "e169ca38b2ca",
+          "ts": "a14b03082474",
+          "lean": "871076a197b0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:17.995Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "Markdown statement and Lean signature structurally align"
       }
     ],
     "voice-author-notes-pollution": [
@@ -396,77 +414,81 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "0e45a91f4d0d",
+          "md": "e169ca38b2ca",
           "ts": "a14b03082474",
-          "lean": "46dd44d0df68"
+          "lean": "871076a197b0"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-04",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-04T14:14:30.961Z",
-        "reviewed_sha": "ca48f1cf8d32b70bb0f3df8a60c7308a921cdf31"
+        "reviewed_at": "2026-06-14T13:27:17.651Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "No interpretive sections present"
       }
     ],
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "0e45a91f4d0d",
+          "md": "e169ca38b2ca",
           "ts": "a14b03082474",
-          "lean": "46dd44d0df68"
+          "lean": "871076a197b0"
         },
         "result": "pass",
+        "evidence": "Listed in section manifest",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-04",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-04T14:14:30.998Z",
-        "reviewed_sha": "ca48f1cf8d32b70bb0f3df8a60c7308a921cdf31"
+        "reviewed_at": "2026-06-14T13:27:17.734Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "0e45a91f4d0d",
+          "md": "e169ca38b2ca",
           "ts": "a14b03082474",
-          "lean": "46dd44d0df68"
+          "lean": "871076a197b0"
         },
         "result": "pass",
+        "evidence": "Archimedean chapter statement",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-04",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-04T14:14:31.033Z",
-        "reviewed_sha": "ca48f1cf8d32b70bb0f3df8a60c7308a921cdf31"
+        "reviewed_at": "2026-06-14T13:27:17.806Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "0e45a91f4d0d",
+          "md": "e169ca38b2ca",
           "ts": "a14b03082474",
-          "lean": "46dd44d0df68"
+          "lean": "871076a197b0"
         },
-        "result": "n/a",
+        "result": "pass",
+        "evidence": "Archimedean chapter proof",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-04",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-04T14:14:31.073Z",
-        "reviewed_sha": "ca48f1cf8d32b70bb0f3df8a60c7308a921cdf31"
+        "reviewed_at": "2026-06-14T13:27:17.875Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "detangler-no-forward-ref": [
@@ -510,6 +532,28 @@
         "reviewed_at": "2026-06-07T05:54:48.333Z",
         "reviewed_sha": "c47fda4d79ef12172fe90e0c9b670b761a3f4d95",
         "notes": "md states 4 numbered parts (antiparticle def, crossing-energy sign reversal, Coulomb reversal, bare-mass invariance) with one-line proofs each; clear plan."
+      },
+      {
+        "field_hash": {
+          "md": "e169ca38b2ca",
+          "ts": "a14b03082474",
+          "lean": "871076a197b0"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:18.116Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "No proof strategy or outline found."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -534,6 +578,28 @@
         "reviewed_at": "2026-06-07T05:54:48.369Z",
         "reviewed_sha": "c47fda4d79ef12172fe90e0c9b670b761a3f4d95",
         "notes": "Sub-lemmas coulomb_reversal/pair_crossing_energy/bare_mass_invariance are sorry-free (push_cast; ring / omega), but the named proposition decl is absent and md part 2 (sign reversal under q<->q^-1) is not the statement Lean proves (.mirror swaps crossing counts; pair-sum identity). Partial coverage of the boxed claim."
+      },
+      {
+        "field_hash": {
+          "md": "e169ca38b2ca",
+          "ts": "a14b03082474",
+          "lean": "871076a197b0"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:18.185Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "Proof is sorry-free."
       }
     ],
     "proof-rater-novelty": [
@@ -558,6 +624,28 @@
         "reviewed_at": "2026-06-07T05:54:48.403Z",
         "reviewed_sha": "c47fda4d79ef12172fe90e0c9b670b761a3f4d95",
         "notes": "Standard crossing-reversal/ring algebra; mirror = swap pos/neg crossings. No novel argument."
+      },
+      {
+        "field_hash": {
+          "md": "e169ca38b2ca",
+          "ts": "a14b03082474",
+          "lean": "871076a197b0"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:18.240Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "Standard but not duplicated."
       }
     ],
     "proof-statement-integrity": [
@@ -582,23 +670,25 @@
       },
       {
         "field_hash": {
-          "md": "0e45a91f4d0d",
+          "md": "e169ca38b2ca",
           "ts": "a14b03082474",
           "lean": "871076a197b0"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "antiparticle-crossing-reversal.lean — theorem antiparticle_crossing_reversal bundles bar-reversal (mirror.crossingEnergy = -barCrossingEnergy), Coulomb reversal, bare-mass invariance",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-09",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-09T02:51:53.379Z",
-        "reviewed_sha": "9663de6f86bc94e6ef87192b18383e45d633655f",
-        "notes": "Added the previously-absent QOU.Torsion.antiparticle_crossing_reversal stating md claims 2-4 over a field R; each a proven lemma (ring/omega). _Scratch build green."
+        "reviewed_at": "2026-06-14T13:27:18.294Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "Lean signature is unchanged and has no sorry"
       }
     ],
     "voice-unicode-crash": [
@@ -2657,5 +2747,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T02:11:07.128Z"
+  "updated_at": "2026-06-14T13:27:18.294Z"
 }

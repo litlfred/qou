@@ -359,6 +359,24 @@
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
         "notes": "Label 'prop:upstream-mathlib-additions' → expected 'upstream_mathlib_additions'; Lean declares: complexLiTwo, blochWigner, Cl_2_neg, Cl_2_zero_via_oddness, Cl_2_at_zero.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "c52ee35ea459",
+          "ts": "0a1d5e3de728",
+          "lean": "4f8d3fec0019"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:45.441Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "Lean signature is a placeholder True stub"
       }
     ],
     "voice-author-notes-pollution": [
@@ -414,6 +432,25 @@
         "reviewed_at": "2026-06-05T18:56:04.678Z",
         "reviewed_sha": "153d2e2d87cb17560270021f35075ca03013d653",
         "notes": "Statement should be a clean provable claim; motivation/roadmap belongs in a linked remark."
+      },
+      {
+        "field_hash": {
+          "md": "c52ee35ea459",
+          "ts": "0a1d5e3de728",
+          "lean": "4f8d3fec0019"
+        },
+        "result": "fail",
+        "severity": "minor",
+        "evidence": "Substantive interpretive prose follows the statement.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:44.832Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "fit-section-chapter": [
@@ -436,6 +473,24 @@
         "reviewed_at": "2026-06-05T18:56:45.533Z",
         "reviewed_sha": "153d2e2d87cb17560270021f35075ca03013d653",
         "notes": "Should live in a formalization or appendix chapter, not predicted-spectra."
+      },
+      {
+        "field_hash": {
+          "md": "c52ee35ea459",
+          "ts": "0a1d5e3de728",
+          "lean": "4f8d3fec0019"
+        },
+        "result": "pass",
+        "evidence": "Listed in section manifest",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:45.007Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-statement": [
@@ -458,6 +513,24 @@
         "reviewed_at": "2026-06-05T18:57:06.271Z",
         "reviewed_sha": "153d2e2d87cb17560270021f35075ca03013d653",
         "notes": "No wall violation: archimedean machinery matches archimedean scope."
+      },
+      {
+        "field_hash": {
+          "md": "c52ee35ea459",
+          "ts": "0a1d5e3de728",
+          "lean": "4f8d3fec0019"
+        },
+        "result": "pass",
+        "evidence": "Archimedean chapter statement",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:45.195Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-proof": [
@@ -480,6 +553,24 @@
         "reviewed_at": "2026-06-05T18:57:06.320Z",
         "reviewed_sha": "153d2e2d87cb17560270021f35075ca03013d653",
         "notes": "No wall violation in proof body."
+      },
+      {
+        "field_hash": {
+          "md": "c52ee35ea459",
+          "ts": "0a1d5e3de728",
+          "lean": "4f8d3fec0019"
+        },
+        "result": "pass",
+        "evidence": "Archimedean chapter proof",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:45.311Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2908,5 +2999,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T04:06:29.510Z"
+  "updated_at": "2026-06-14T13:27:45.441Z"
 }

@@ -446,22 +446,20 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "1cf95b4b4221",
-          "ts": "e69f1e924f54"
+          "md": "06055eba29c4",
+          "ts": "0ad728f270df"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "option-e-isospin-test.ts -- block in mass-theory chapter",
+        "evidence": "Listed in section manifest",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-07T13:39:42.672Z",
-        "reviewed_sha": "ea16b464d587fbd725060636a1beb8dbcaabd167",
-        "notes": "Block subject fits mass-theory chapter scope"
+        "reviewed_at": "2026-06-14T13:25:03.356Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "voice-unicode-crash": [
@@ -2051,5 +2049,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T02:11:07.128Z"
+  "updated_at": "2026-06-14T13:25:03.356Z"
 }

@@ -318,6 +318,23 @@
         "reviewed_at": "2026-06-05T23:59:49.044Z",
         "reviewed_sha": "757f3e1013ff6192635e0aa793f38227367fe362",
         "notes": "Block interprets rem:knot-exhaustiveness Q3, tightening it — appropriate for mass-theory's geometric face."
+      },
+      {
+        "field_hash": {
+          "md": "767ecbe85ae3",
+          "ts": "60807d57ac3a"
+        },
+        "result": "pass",
+        "evidence": "Listed in section manifest",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:25:00.247Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "voice-unicode-crash": [
@@ -1987,5 +2004,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T02:11:07.128Z"
+  "updated_at": "2026-06-14T13:25:00.247Z"
 }

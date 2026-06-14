@@ -359,6 +359,24 @@
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
         "notes": "Label 'lem:vhat-pair-commutation-trace' → expected 'vhat_pair_commutation_trace'; Lean declares: VhatPairCommutationTrace, trace_symmetric. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "85c5199cae47",
+          "ts": "551c88e6431b",
+          "lean": "40685aaac9bb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:06.290Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "Markdown statement and Lean signature structurally align"
       }
     ],
     "voice-author-notes-pollution": [
@@ -397,89 +415,81 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "c97e1c31e578",
-          "ts": "8d39a8ee5429",
+          "md": "85c5199cae47",
+          "ts": "551c88e6431b",
           "lean": "40685aaac9bb"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "mass-theory.ts:432 -- vhat-pair-commutation-trace in sec:phi-q-markov-residue-habiro",
+        "evidence": "Listed in section manifest",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:28:45.488Z",
-        "reviewed_sha": "be696cb666dcc2e1d68dc8cca401d9cdf4481711",
-        "notes": "pair commutation of traced volumes fits phi_q Markov residue section"
+        "reviewed_at": "2026-06-14T13:27:04.307Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "c97e1c31e578",
-          "ts": "8d39a8ee5429",
+          "md": "85c5199cae47",
+          "ts": "551c88e6431b",
           "lean": "40685aaac9bb"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "vhat-pair-commutation-trace.md -- V_i(q) in Z[q^+-1/2, z]; statement: V_i*V_j = V_j*V_i in Laurent ring",
+        "evidence": "Statement is clean of archimedean leaks",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:28:45.526Z",
-        "reviewed_sha": "be696cb666dcc2e1d68dc8cca401d9cdf4481711",
-        "notes": "statement is purely algebraic in Laurent polynomial ring; no archimedean leak"
+        "reviewed_at": "2026-06-14T13:27:04.473Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "c97e1c31e578",
-          "ts": "8d39a8ee5429",
+          "md": "85c5199cae47",
+          "ts": "551c88e6431b",
           "lean": "40685aaac9bb"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "vhat-pair-commutation-trace.md -- Laurent polynomials commute since they are scalars in Z[q^+-1/2,z]",
+        "evidence": "Proof is clean of archimedean leaks",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:28:45.565Z",
-        "reviewed_sha": "be696cb666dcc2e1d68dc8cca401d9cdf4481711",
-        "notes": "proof: scalars in a commutative ring commute; purely algebraic"
+        "reviewed_at": "2026-06-14T13:27:04.677Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "c97e1c31e578",
-          "ts": "8d39a8ee5429",
+          "md": "85c5199cae47",
+          "ts": "551c88e6431b",
           "lean": "40685aaac9bb"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "vhat-pair-commutation-trace.md -- Statement section only; operator lift discussion is part of proposition scope",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:28:45.603Z",
-        "reviewed_sha": "be696cb666dcc2e1d68dc8cca401d9cdf4481711",
-        "notes": "no standalone interpretive prose after statement+proof; operator lift discussion extends the proposition"
+        "reviewed_at": "2026-06-14T13:27:04.173Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "No interpretive sections present"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2908,5 +2918,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T03:57:46.244Z"
+  "updated_at": "2026-06-14T13:27:06.290Z"
 }

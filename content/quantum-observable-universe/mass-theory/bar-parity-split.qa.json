@@ -192,111 +192,101 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "74415698f5a3",
+          "md": "f6ef2d9f25ec",
           "ts": "b612cef336f0",
           "lean": "6b80e94f4159"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "mass-theory.ts:199 -- bar-parity-split in sec:hoefsmit-convergence-magic-shells",
+        "evidence": "Listed in section manifest",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:26:59.475Z",
-        "reviewed_sha": "9a8635304172cd2f90ab18bb8401c8eed465a756",
-        "notes": "Prop about binding/beta-decay as even/odd bar-parities; fits mass-theory algebraic face."
+        "reviewed_at": "2026-06-14T13:24:48.601Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "74415698f5a3",
+          "md": "f6ef2d9f25ec",
           "ts": "b612cef336f0",
           "lean": "6b80e94f4159"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "bar-parity-split.lean:24 -- variable {R : Type*} [CommRing R] {V : Type*} [AddCommGroup V] [Module R V]",
+        "evidence": "Statement is clean of archimedean leaks",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:26:59.508Z",
-        "reviewed_sha": "9a8635304172cd2f90ab18bb8401c8eed465a756",
-        "notes": "Generic CommRing/Module; no archimedean constructs in statement."
+        "reviewed_at": "2026-06-14T13:24:48.657Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "74415698f5a3",
+          "md": "f6ef2d9f25ec",
           "ts": "b612cef336f0",
           "lean": "6b80e94f4159"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "bar-parity-split.lean:35 -- simp only [evenPart, oddPart]; abel",
+        "evidence": "No proof section found to scan",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:26:59.539Z",
-        "reviewed_sha": "9a8635304172cd2f90ab18bb8401c8eed465a756",
-        "notes": "Proof uses abel; purely algebraic; matches generic CommRing statement."
+        "reviewed_at": "2026-06-14T13:24:48.735Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "74415698f5a3",
+          "md": "f6ef2d9f25ec",
           "ts": "b612cef336f0",
           "lean": "6b80e94f4159"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "bar-parity-split.md:1 -- statement with formulas; no H2 interpretive sections",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:26:59.571Z",
-        "reviewed_sha": "9a8635304172cd2f90ab18bb8401c8eed465a756",
-        "notes": "Prop kind; block is statement + two bullet identifications; no standalone interpretive section."
+        "reviewed_at": "2026-06-14T13:24:48.518Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "No interpretive sections present"
       }
     ],
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "74415698f5a3",
+          "md": "f6ef2d9f25ec",
           "ts": "b612cef336f0",
           "lean": "6b80e94f4159"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "bar-parity-split.lean:33-35 -- evenPart_add_oddPart proves evenPart sigma x + oddPart sigma x = 2*x",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:26:59.603Z",
-        "reviewed_sha": "9a8635304172cd2f90ab18bb8401c8eed465a756",
-        "notes": "Narrative even+odd=2x; Lean same. ts ref QOU.Mass.evenPart_add_oddPart matches theorem name. Equivalent."
+        "reviewed_at": "2026-06-14T13:24:48.784Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "Markdown statement and Lean signature structurally align"
       }
     ],
     "voice-status-leak": [
@@ -2649,5 +2639,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T03:53:04.078Z"
+  "updated_at": "2026-06-14T13:24:48.784Z"
 }

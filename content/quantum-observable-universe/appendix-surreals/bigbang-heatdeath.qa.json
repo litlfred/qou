@@ -522,21 +522,21 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "12d50b72d580",
-          "ts": "3950504dc890",
+          "md": "fb2cb3d23954",
+          "ts": "a88e002a8db4",
           "lean": "e0c301d26126"
         },
         "result": "pass",
-        "evidence": "bigbang-heatdeath.md — conjecture interpreting Big Bang (q→1+) and heat death (q→∞) as evaluations at named surreal endpoints. Placed in sec:named-surreals-singular. Topic and kind (conjecture) fit the section on named surreals for singular objects.",
+        "evidence": "Listed in section manifest",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-04",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-04T13:49:37.729Z",
-        "reviewed_sha": "36c20c011ed75b6d3eeb87283fb2738cadb7ec24"
+        "reviewed_at": "2026-06-14T13:21:50.796Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "detangler-no-forward-ref": [
@@ -2109,5 +2109,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T03:44:17.313Z"
+  "updated_at": "2026-06-14T13:21:50.796Z"
 }

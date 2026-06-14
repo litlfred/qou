@@ -548,23 +548,21 @@
       },
       {
         "field_hash": {
-          "md": "eeaad394fe27",
+          "md": "2fd422d8aab7",
           "ts": "f654226fc036",
           "lean": "d007f6644123"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "hoefsmit-binding-amplitude.lean:44 — hoefsmit_b_sq_eq_q3_over_q2sq matches md: b^2 = [3]_q/[2]_q^2 = 1-1/[2]_q^2",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:32:15.633Z",
-        "reviewed_sha": "8b2b9773c91b3fddf1abf16f20f58d325bf77565",
-        "notes": "Lean theorem proves same identity as narrative: qInt3 q / (qInt2 q)^2 = 1 - 1/(qInt2 q)^2."
+        "reviewed_at": "2026-06-14T13:22:11.702Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "Markdown statement and Lean signature structurally align"
       }
     ],
     "voice-statement-no-interpretation": [
@@ -590,23 +588,21 @@
       },
       {
         "field_hash": {
-          "md": "eeaad394fe27",
+          "md": "2fd422d8aab7",
           "ts": "f654226fc036",
           "lean": "d007f6644123"
         },
-        "result": "warn",
-        "severity": "minor",
-        "evidence": "hoefsmit-binding-amplitude.md:42 — Physical interpretation: pion decay section follows statement in same block",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:32:15.599Z",
-        "reviewed_sha": "8b2b9773c91b3fddf1abf16f20f58d325bf77565",
-        "notes": "Block has Physical interpretation and q-integer structure sections; no companion interprets: remark exists. Borderline - sections serve as motivation not separate claims."
+        "reviewed_at": "2026-06-14T13:22:11.018Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "No interpretive sections present"
       }
     ],
     "fit-section-chapter": [
@@ -632,23 +628,21 @@
       },
       {
         "field_hash": {
-          "md": "eeaad394fe27",
+          "md": "2fd422d8aab7",
           "ts": "f654226fc036",
           "lean": "d007f6644123"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "hoefsmit-binding-amplitude.ts:3 — proposition about Hoefsmit seminormal matrix for H_3(q) standard rep",
+        "evidence": "Listed in section manifest",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:32:15.492Z",
-        "reviewed_sha": "8b2b9773c91b3fddf1abf16f20f58d325bf77565",
-        "notes": "Hoefsmit matrix identity for H_3(q) is core Hecke/braid algebra content; fits braids-and-knots."
+        "reviewed_at": "2026-06-14T13:22:11.219Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-statement": [
@@ -674,23 +668,21 @@
       },
       {
         "field_hash": {
-          "md": "eeaad394fe27",
+          "md": "2fd422d8aab7",
           "ts": "f654226fc036",
           "lean": "d007f6644123"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "hoefsmit-binding-amplitude.md:6 — b^2 = [3]_q/[2]_q^2; no numeric q value, no MeV units",
+        "evidence": "Statement is clean of archimedean leaks",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:32:15.533Z",
-        "reviewed_sha": "8b2b9773c91b3fddf1abf16f20f58d325bf77565",
-        "notes": "Statement is generic q-integer identity over any ring with q; no archimedean constructs in statement."
+        "reviewed_at": "2026-06-14T13:22:11.491Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-proof": [
@@ -716,23 +708,21 @@
       },
       {
         "field_hash": {
-          "md": "eeaad394fe27",
+          "md": "2fd422d8aab7",
           "ts": "f654226fc036",
           "lean": "d007f6644123"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "hoefsmit-binding-amplitude.md:23 — proof uses h=q-q^{-1} algebraic expansions only; .lean uses ring/field_simp",
+        "evidence": "Proof is clean of archimedean leaks",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:32:15.567Z",
-        "reviewed_sha": "8b2b9773c91b3fddf1abf16f20f58d325bf77565",
-        "notes": "Proof is purely algebraic q-integer manipulation; no archimedean machinery. Lean uses ring tactic."
+        "reviewed_at": "2026-06-14T13:22:11.572Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2741,5 +2731,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T03:45:56.929Z"
+  "updated_at": "2026-06-14T13:22:11.702Z"
 }

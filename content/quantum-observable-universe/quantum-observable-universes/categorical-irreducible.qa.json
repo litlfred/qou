@@ -358,6 +358,24 @@
         "reviewed_at": "2026-06-14T01:00:45.351Z",
         "reviewed_sha": "0897db293a9e33bee002700a742ee9370ca482e1",
         "notes": "Label 'lem:categorical-irreducible' aligns with Lean declaration. Sorry-free."
+      },
+      {
+        "field_hash": {
+          "md": "e9b323ef711c",
+          "ts": "60d90b7f1673",
+          "lean": "9c5dbee1c931"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:49.015Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "Markdown statement and Lean signature structurally align"
       }
     ],
     "voice-author-notes-pollution": [
@@ -413,6 +431,24 @@
         "reviewed_at": "2026-06-05T00:03:10.072Z",
         "reviewed_sha": "89af330cf662e0b0624ed33fce05d4f9304258f9",
         "notes": "No motivation section"
+      },
+      {
+        "field_hash": {
+          "md": "e9b323ef711c",
+          "ts": "60d90b7f1673",
+          "lean": "9c5dbee1c931"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:48.500Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "No interpretive sections present"
       }
     ],
     "fit-section-chapter": [
@@ -435,6 +471,24 @@
         "reviewed_at": "2026-06-05T00:03:10.110Z",
         "reviewed_sha": "89af330cf662e0b0624ed33fce05d4f9304258f9",
         "notes": "Well-placed"
+      },
+      {
+        "field_hash": {
+          "md": "e9b323ef711c",
+          "ts": "60d90b7f1673",
+          "lean": "9c5dbee1c931"
+        },
+        "result": "pass",
+        "evidence": "Listed in section manifest",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:48.670Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-statement": [
@@ -457,6 +511,24 @@
         "reviewed_at": "2026-06-05T00:03:10.146Z",
         "reviewed_sha": "89af330cf662e0b0624ed33fce05d4f9304258f9",
         "notes": "Algebraic, substrate chapter"
+      },
+      {
+        "field_hash": {
+          "md": "e9b323ef711c",
+          "ts": "60d90b7f1673",
+          "lean": "9c5dbee1c931"
+        },
+        "result": "pass",
+        "evidence": "Statement is clean of archimedean leaks",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:48.805Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-proof": [
@@ -479,6 +551,24 @@
         "reviewed_at": "2026-06-05T00:03:10.182Z",
         "reviewed_sha": "89af330cf662e0b0624ed33fce05d4f9304258f9",
         "notes": "No proof body"
+      },
+      {
+        "field_hash": {
+          "md": "e9b323ef711c",
+          "ts": "60d90b7f1673",
+          "lean": "9c5dbee1c931"
+        },
+        "result": "pass",
+        "evidence": "No proof section found to scan",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:48.907Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2730,5 +2820,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T04:08:13.255Z"
+  "updated_at": "2026-06-14T13:27:49.015Z"
 }

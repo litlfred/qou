@@ -342,6 +342,24 @@
         "reviewed_at": "2026-06-14T01:00:45.351Z",
         "reviewed_sha": "0897db293a9e33bee002700a742ee9370ca482e1",
         "notes": "Label 'prop:categorical-neutrality-saturated-shells' → expected 'categorical_neutrality_saturated_shells'; Lean declares: magicSet, Saturated, MassEndoModule, SaturatedShellConjecture, fullTwist_commutes.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "aef47d5ed9ec",
+          "ts": "7f6d396d130b",
+          "lean": "acb6bc21a78f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:24:32.953Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "Markdown statement and Lean signature structurally align"
       }
     ],
     "voice-author-notes-pollution": [
@@ -380,80 +398,82 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "2b41b75692b5",
+          "md": "aef47d5ed9ec",
           "ts": "7f6d396d130b",
-          "lean": "f7781ec346e1"
+          "lean": "acb6bc21a78f"
         },
-        "result": "warn",
+        "result": "fail",
         "severity": "minor",
-        "evidence": "Proposition block has substantive 'Why this is structural', 'Locality assumption: dropped', 'Operator-level support vs character sum' interpretive sections; no companion interprets: remark to hold this content",
+        "evidence": "Substantive interpretive prose follows the statement.",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-04",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-04T18:51:46.333Z",
-        "reviewed_sha": "591d2e5ed5344a2fc198a8a45d9e7030a4fec906"
+        "reviewed_at": "2026-06-14T13:24:32.624Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "2b41b75692b5",
+          "md": "aef47d5ed9ec",
           "ts": "7f6d396d130b",
-          "lean": "f7781ec346e1"
+          "lean": "acb6bc21a78f"
         },
         "result": "pass",
+        "evidence": "Listed in section manifest",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-04",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-04T18:51:46.374Z",
-        "reviewed_sha": "591d2e5ed5344a2fc198a8a45d9e7030a4fec906"
+        "reviewed_at": "2026-06-14T13:24:32.716Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "2b41b75692b5",
+          "md": "aef47d5ed9ec",
           "ts": "7f6d396d130b",
-          "lean": "f7781ec346e1"
+          "lean": "acb6bc21a78f"
         },
         "result": "pass",
+        "evidence": "Statement is clean of archimedean leaks",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-04",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-04T18:51:46.415Z",
-        "reviewed_sha": "591d2e5ed5344a2fc198a8a45d9e7030a4fec906"
+        "reviewed_at": "2026-06-14T13:24:32.772Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "2b41b75692b5",
+          "md": "aef47d5ed9ec",
           "ts": "7f6d396d130b",
-          "lean": "f7781ec346e1"
+          "lean": "acb6bc21a78f"
         },
         "result": "pass",
-        "evidence": "Block is conjectural; no proof body; no Real.* or linarith machinery",
+        "evidence": "No proof section found to scan",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-04",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-04T18:51:46.456Z",
-        "reviewed_sha": "591d2e5ed5344a2fc198a8a45d9e7030a4fec906"
+        "reviewed_at": "2026-06-14T13:24:32.825Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2712,5 +2732,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T03:49:47.155Z"
+  "updated_at": "2026-06-14T13:24:32.953Z"
 }

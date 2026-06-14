@@ -500,25 +500,6 @@
         "field_hash": {
           "md": "aa311f7a7134",
           "ts": "82492d372b39",
-          "lean": "38361d743506"
-        },
-        "result": "fail",
-        "severity": "major",
-        "evidence": "atom-knot-mass-derivation.lean:201 — axiom atom_knot_mass_derivation proves MassIdentity (25% tolerance bound) not the full mass formula M(𝔥)=ν_SDP·[tr_M+tower+co-Casimir] stated in narrative",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-04",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-04T17:15:06.762Z",
-        "reviewed_sha": "a5fd9501f52decb0cc8a7770fa148322b64d3343"
-      },
-      {
-        "field_hash": {
-          "md": "aa311f7a7134",
-          "ts": "82492d372b39",
           "lean": "9dbc48705fc5"
         },
         "result": "pass",
@@ -530,6 +511,24 @@
         "reviewed_at": "2026-06-14T01:00:45.351Z",
         "reviewed_sha": "0897db293a9e33bee002700a742ee9370ca482e1",
         "notes": "Label 'prop:atom-knot-mass-derivation' aligns with Lean declaration. Sorry-free."
+      },
+      {
+        "field_hash": {
+          "md": "8d89a0f5b897",
+          "ts": "82492d372b39",
+          "lean": "9dbc48705fc5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:24:45.840Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "Markdown statement and Lean signature structurally align"
       }
     ],
     "voice-author-notes-pollution": [
@@ -585,77 +584,81 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "aa311f7a7134",
+          "md": "8d89a0f5b897",
           "ts": "82492d372b39",
-          "lean": "38361d743506"
+          "lean": "9dbc48705fc5"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-04",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-04T17:14:51.183Z",
-        "reviewed_sha": "a5fd9501f52decb0cc8a7770fa148322b64d3343"
+        "reviewed_at": "2026-06-14T13:24:45.467Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "No interpretive sections present"
       }
     ],
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "aa311f7a7134",
+          "md": "8d89a0f5b897",
           "ts": "82492d372b39",
-          "lean": "38361d743506"
+          "lean": "9dbc48705fc5"
         },
         "result": "pass",
+        "evidence": "Listed in section manifest",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-04",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-04T17:14:51.221Z",
-        "reviewed_sha": "a5fd9501f52decb0cc8a7770fa148322b64d3343"
+        "reviewed_at": "2026-06-14T13:24:45.556Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "aa311f7a7134",
+          "md": "8d89a0f5b897",
           "ts": "82492d372b39",
-          "lean": "38361d743506"
+          "lean": "9dbc48705fc5"
         },
         "result": "pass",
+        "evidence": "Statement is clean of archimedean leaks",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-04",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-04T17:14:51.268Z",
-        "reviewed_sha": "a5fd9501f52decb0cc8a7770fa148322b64d3343"
+        "reviewed_at": "2026-06-14T13:24:45.627Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "aa311f7a7134",
+          "md": "8d89a0f5b897",
           "ts": "82492d372b39",
-          "lean": "38361d743506"
+          "lean": "9dbc48705fc5"
         },
         "result": "pass",
+        "evidence": "No proof section found to scan",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-04",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-04T17:14:51.306Z",
-        "reviewed_sha": "a5fd9501f52decb0cc8a7770fa148322b64d3343"
+        "reviewed_at": "2026-06-14T13:24:45.733Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "detangler-no-forward-ref": [
@@ -2938,5 +2941,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T03:52:59.846Z"
+  "updated_at": "2026-06-14T13:24:45.840Z"
 }

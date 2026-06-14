@@ -33,20 +33,21 @@
       },
       {
         "field_hash": {
-          "md": "68f51cfe7453",
+          "md": "02b9ad04bb03",
           "ts": "9b99f6654f73",
           "lean": "e1d0d7c64d9f"
         },
         "result": "pass",
+        "evidence": "Listed in section manifest",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-13",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-13T19:05:36.771Z",
-        "reviewed_sha": "782b75d8a21015413016c4b28f9467f12449ccf5"
+        "reviewed_at": "2026-06-14T13:21:51.113Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -2087,5 +2088,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T03:44:17.384Z"
+  "updated_at": "2026-06-14T13:21:51.113Z"
 }

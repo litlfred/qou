@@ -519,6 +519,24 @@
         "reviewed_at": "2026-06-05T13:16:45.161Z",
         "reviewed_sha": "1bfe181c4ed795e767f046409e9a1c6cc396c3d2",
         "notes": "Narrative and Lean express the same pairing claim."
+      },
+      {
+        "field_hash": {
+          "md": "25724750dde8",
+          "ts": "9db3d20a1948",
+          "lean": "7078f8502e33"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:37.711Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "Markdown statement and Lean signature structurally align"
       }
     ],
     "voice-author-notes-pollution": [
@@ -591,6 +609,24 @@
         "reviewed_at": "2026-06-05T13:16:44.985Z",
         "reviewed_sha": "1bfe181c4ed795e767f046409e9a1c6cc396c3d2",
         "notes": "Interpretive sections after the proof should move to a linked remark."
+      },
+      {
+        "field_hash": {
+          "md": "25724750dde8",
+          "ts": "9db3d20a1948",
+          "lean": "7078f8502e33"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:36.718Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "No interpretive sections present"
       }
     ],
     "fit-section-chapter": [
@@ -613,6 +649,24 @@
         "reviewed_at": "2026-06-05T13:16:45.042Z",
         "reviewed_sha": "1bfe181c4ed795e767f046409e9a1c6cc396c3d2",
         "notes": "Substrate parameter analysis is upstream of particle spectra."
+      },
+      {
+        "field_hash": {
+          "md": "25724750dde8",
+          "ts": "9db3d20a1948",
+          "lean": "7078f8502e33"
+        },
+        "result": "pass",
+        "evidence": "Listed in section manifest",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:37.065Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-statement": [
@@ -635,6 +689,24 @@
         "reviewed_at": "2026-06-05T13:16:45.086Z",
         "reviewed_sha": "1bfe181c4ed795e767f046409e9a1c6cc396c3d2",
         "notes": "Numerical q0 value in stability band section; generic-ring formulation possible per CLAUDE.md §7c."
+      },
+      {
+        "field_hash": {
+          "md": "25724750dde8",
+          "ts": "9db3d20a1948",
+          "lean": "7078f8502e33"
+        },
+        "result": "pass",
+        "evidence": "Archimedean chapter statement",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:37.513Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-proof": [
@@ -657,6 +729,24 @@
         "reviewed_at": "2026-06-05T13:16:45.124Z",
         "reviewed_sha": "1bfe181c4ed795e767f046409e9a1c6cc396c3d2",
         "notes": "Algebraic proof, no wall crossing."
+      },
+      {
+        "field_hash": {
+          "md": "25724750dde8",
+          "ts": "9db3d20a1948",
+          "lean": "7078f8502e33"
+        },
+        "result": "pass",
+        "evidence": "Archimedean chapter proof",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:37.613Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2908,5 +2998,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T04:05:30.994Z"
+  "updated_at": "2026-06-14T13:27:37.711Z"
 }

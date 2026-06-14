@@ -398,6 +398,24 @@
         "reviewed_at": "2026-06-13T13:16:09.269Z",
         "reviewed_sha": "6b44ecdbb4f5bf1c4e1c2b1a08f9244d2ee52803",
         "notes": "Auto-drained by agent"
+      },
+      {
+        "field_hash": {
+          "md": "cbe8d7292530",
+          "ts": "c4e774dd658a",
+          "lean": "eb43c1c13ad7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:15.584Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "Markdown statement and Lean signature structurally align"
       }
     ],
     "voice-author-notes-pollution": [
@@ -453,6 +471,24 @@
         "reviewed_at": "2026-06-04T23:46:02.594Z",
         "reviewed_sha": "b49e071810d0d495b8f9e49812584ad4ba71ad07",
         "notes": "Clean separation; conditional banner per §3b-cond correctly placed"
+      },
+      {
+        "field_hash": {
+          "md": "cbe8d7292530",
+          "ts": "c4e774dd658a",
+          "lean": "eb43c1c13ad7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:15.293Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "No interpretive sections present"
       }
     ],
     "fit-section-chapter": [
@@ -475,6 +511,24 @@
         "reviewed_at": "2026-06-04T23:46:02.628Z",
         "reviewed_sha": "b49e071810d0d495b8f9e49812584ad4ba71ad07",
         "notes": "Conditional theorem follows conjecture in section order; thematic match"
+      },
+      {
+        "field_hash": {
+          "md": "cbe8d7292530",
+          "ts": "c4e774dd658a",
+          "lean": "eb43c1c13ad7"
+        },
+        "result": "pass",
+        "evidence": "Listed in section manifest",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:15.355Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-statement": [
@@ -497,6 +551,24 @@
         "reviewed_at": "2026-06-04T23:46:02.661Z",
         "reviewed_sha": "b49e071810d0d495b8f9e49812584ad4ba71ad07",
         "notes": "Statement correctly on categorical/algebraic side"
+      },
+      {
+        "field_hash": {
+          "md": "cbe8d7292530",
+          "ts": "c4e774dd658a",
+          "lean": "eb43c1c13ad7"
+        },
+        "result": "pass",
+        "evidence": "Statement is clean of archimedean leaks",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:15.410Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-proof": [
@@ -519,6 +591,24 @@
         "reviewed_at": "2026-06-04T23:46:02.694Z",
         "reviewed_sha": "b49e071810d0d495b8f9e49812584ad4ba71ad07",
         "notes": "Proof is sorry-free; conjectural content correctly in class instance only"
+      },
+      {
+        "field_hash": {
+          "md": "cbe8d7292530",
+          "ts": "c4e774dd658a",
+          "lean": "eb43c1c13ad7"
+        },
+        "result": "pass",
+        "evidence": "No proof section found to scan",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:15.516Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2959,5 +3049,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T04:01:40.029Z"
+  "updated_at": "2026-06-14T13:27:15.584Z"
 }

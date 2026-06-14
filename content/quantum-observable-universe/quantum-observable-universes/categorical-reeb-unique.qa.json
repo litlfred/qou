@@ -325,6 +325,24 @@
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
         "notes": "Label 'prop:categorical-reeb-unique' → expected 'categorical_reeb_unique'; Lean declares: CategoricalReeb.unique_axiom, CategoricalReeb.unique. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "463c2f5dfd70",
+          "ts": "115610e2c416",
+          "lean": "ecc7631e8428"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:53.565Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "Markdown statement and Lean signature structurally align"
       }
     ],
     "voice-author-notes-pollution": [
@@ -380,6 +398,24 @@
         "reviewed_at": "2026-06-05T19:09:06.044Z",
         "reviewed_sha": "49c5c15a2e3ddd51562300bf2cef0cdaa0d84c1e",
         "notes": "Clean statement."
+      },
+      {
+        "field_hash": {
+          "md": "463c2f5dfd70",
+          "ts": "115610e2c416",
+          "lean": "ecc7631e8428"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:52.806Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea",
+        "notes": "No interpretive sections present"
       }
     ],
     "fit-section-chapter": [
@@ -402,6 +438,24 @@
         "reviewed_at": "2026-06-05T19:09:06.093Z",
         "reviewed_sha": "49c5c15a2e3ddd51562300bf2cef0cdaa0d84c1e",
         "notes": "Correctly placed."
+      },
+      {
+        "field_hash": {
+          "md": "463c2f5dfd70",
+          "ts": "115610e2c416",
+          "lean": "ecc7631e8428"
+        },
+        "result": "pass",
+        "evidence": "Listed in section manifest",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:52.959Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-statement": [
@@ -424,6 +478,25 @@
         "reviewed_at": "2026-06-05T19:09:06.135Z",
         "reviewed_sha": "49c5c15a2e3ddd51562300bf2cef0cdaa0d84c1e",
         "notes": "Correct wall side."
+      },
+      {
+        "field_hash": {
+          "md": "463c2f5dfd70",
+          "ts": "115610e2c416",
+          "lean": "ecc7631e8428"
+        },
+        "result": "fail",
+        "severity": "major",
+        "evidence": "Substrate block contains archimedean constructs without proper banner: π",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:53.136Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "wall-side-proof": [
@@ -446,6 +519,24 @@
         "reviewed_at": "2026-06-05T19:09:06.176Z",
         "reviewed_sha": "49c5c15a2e3ddd51562300bf2cef0cdaa0d84c1e",
         "notes": "N/A for statement-only block."
+      },
+      {
+        "field_hash": {
+          "md": "463c2f5dfd70",
+          "ts": "115610e2c416",
+          "lean": "ecc7631e8428"
+        },
+        "result": "pass",
+        "evidence": "No proof section found to scan",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T13:27:53.355Z",
+        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2678,5 +2769,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T04:09:03.744Z"
+  "updated_at": "2026-06-14T13:27:53.565Z"
 }
