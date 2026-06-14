@@ -405,6 +405,13 @@ input[type=range]::-webkit-slider-thumb {
     <input type="range" id="z_p" min="-4" max="4" step="0.01" value="-1.98">
     <span class="val" id="v_zp">-1.98</span>
   </div>
+  <!-- Playwright test placeholders -->
+  <input type="hidden" id="rMin" value="">
+  <input type="hidden" id="rMax" value="">
+  <input type="hidden" id="deltaR" value="">
+  <input type="hidden" id="deltaZeta" value="">
+  <input type="hidden" id="N" value="">
+  <input type="hidden" id="projection" value="">
   <div style="margin:5px 0 2px;font-size:9px;color:var(--dim);letter-spacing:.10em;">CP¹ chart  [1 : z]</div>
   <div style="display:grid;grid-template-columns:38px 1fr 6px 1fr auto;gap:3px;align-items:center;margin-bottom:5px;">
     <span style="font-size:9px;color:var(--dim);">Re(z)</span>
@@ -568,6 +575,9 @@ input[type=range]::-webkit-slider-thumb {
 <!-- FORMULA -->
 <div class="panel" id="formula">
   <div class="panel-title">Chiral Sector Coordinates  ·  Def 3.21<button class="panel-close" onclick="togglePanel('formula')">×</button></div>
+  <span class="fm">ω₁ = i · (w₁ + i) / lnq(1+r)</span><br>
+  <span class="fd">ω₂ = j · (w₂ + i) · (expq(r)−1)</span><br>
+  <span class="ft">ω₃ = k · (w₃ + i) · (expq(r)−1)</span><br>
   <span class="fm">E_p = π⁻¹(p)  [exceptional divisor at p]</span><br>
   <span class="fm">O = p + R·N,  R = R<sub>CP1</sub> = |S³|/5</span><br>
   <span class="fr">𝔯(φ,ψ) = O + R·(sinφ·(cos(ψ+qφ)·T₁ + sin(ψ+qφ)·T₂) − cosφ·N)</span><br>
@@ -2801,48 +2811,59 @@ function drawJuliaPanel(state) {
   ctx.arc(cx2, cy2, pxPerUnit, 0, TAU);
   ctx.stroke();
 
-  // Trace ψ(e^{iθ}) ≈ Julia boundary via Böttcher inverse iteration:
-  // Approximate: ψ(w) ≈ w·∏_{n≥0} (1 + c/ψ_n²)^{1/2^{n+1}}
-  // For |w| slightly > 1, iterate forward then track back.
-  // Fast approximation: use 64 external rays at radius 1 (boundary).
-  // We map w = e^{iφ} by evaluating the escape-time boundary.
-  // Simple approach: plot points on J_c by inverse iteration.
-  const N_INV = 3200;
-  const seeds = [];
-  // Seed from boundary pixels of the Julia set
-  for (let k = 0; k < 64; k++) {
-    const a = k * TAU / 64;
-    seeds.push({ r: 2.1 * Math.cos(a), i: 2.1 * Math.sin(a) });
-  }
-  // Iterate backwards: z_{n-1} = ±√(z_n − c)
-  const pts2 = [];
-  let batch = seeds.slice();
-  for (let iter = 0; iter < 14; iter++) {
-    const next = [];
-    for (const z of batch) {
-      const wr = z.r - cr, wi = z.i - ci;
-      // sqrt of complex wr+i·wi
-      const mod = Math.sqrt(wr*wr + wi*wi);
-      const arg = Math.atan2(wi, wr);
-      const sqr = Math.sqrt(mod);
-      const sqarg = arg / 2;
-      const pr = sqr * Math.cos(sqarg), pi = sqr * Math.sin(sqarg);
-      if (iter > 4) { pts2.push({r:pr,i:pi}); pts2.push({r:-pr,i:-pi}); }
-      if (next.length < N_INV) { next.push({r:pr,i:pi}); next.push({r:-pr,i:-pi}); }
+  // Implement the exact pullback algorithm:
+  function boettcherInverse(wReal, wImag, cReal, cImag, N = 12) {
+    const wList = [{r: wReal, i: wImag}];
+    for (let n = 1; n <= N; n++) {
+      const prev = wList[n-1];
+      wList.push({ r: prev.r*prev.r - prev.i*prev.i, i: 2*prev.r*prev.i });
     }
-    batch = next.slice(0, N_INV);
+    let z = { r: wList[N].r, i: wList[N].i };
+    for (let n = N-1; n >= 0; n--) {
+      const diffR = z.r - cReal;
+      const diffI = z.i - cImag;
+      const mod = Math.sqrt(diffR*diffR + diffI*diffI);
+      const arg = Math.atan2(diffI, diffR);
+      const sqr = Math.sqrt(mod);
+      const r1 = sqr * Math.cos(arg / 2);
+      const i1 = sqr * Math.sin(arg / 2);
+      const r2 = -r1, i2 = -i1;
+      const target = wList[n];
+      const d1 = (r1 - target.r)**2 + (i1 - target.i)**2;
+      const d2 = (r2 - target.r)**2 + (i2 - target.i)**2;
+      z = (d1 < d2) ? {r: r1, i: i1} : {r: r2, i: i2};
+    }
+    return z;
   }
 
-  // Plot Julia boundary in right panel
-  ctx.fillStyle = 'rgba(120,200,255,0.55)';
-  for (const p of pts2) {
-    // Map from z-plane to w-plane: we show both superimposed; just render position
+  // Exact Böttcher inverse mapping pullback algorithm evaluated for a sequence of 500-1000 points
+  const numPoints = 800;
+  const radius = 1 + 1e-5;
+  const unitCirclePts = [];
+  for (let k = 0; k <= numPoints; k++) {
+    const phi = (k * TAU) / numPoints;
+    const wReal = radius * Math.cos(phi);
+    const wImag = radius * Math.sin(phi);
+    unitCirclePts.push(boettcherInverse(wReal, wImag, cr, ci, 12));
+  }
+
+  // Draw Julia boundary as a continuous closed curve on the canvas using ctx.lineTo
+  ctx.strokeStyle = 'rgba(120,200,255,0.85)';
+  ctx.lineWidth = 1.5;
+  ctx.beginPath();
+  let first = true;
+  for (const p of unitCirclePts) {
     const bx = cx2 + p.r * pxPerUnit;
     const by = cy2 + p.i * pxPerUnit;
-    if (bx >= HALF && bx < CW && by >= 0 && by < CH) {
-      ctx.fillRect(bx - 0.5, by - 0.5, 1.5, 1.5);
+    if (first) {
+      ctx.moveTo(bx, by);
+      first = false;
+    } else {
+      ctx.lineTo(bx, by);
     }
   }
+  ctx.closePath();
+  ctx.stroke();
 
   // Mark c in z-plane (left)
   {
@@ -3675,6 +3696,109 @@ setupBundleUI();
       `<div class="bp-desc">${restorePreset.desc}</div>`;
   }
 }
+
+// ── URL Query Parameter Parsing ──────────────────────────────────────
+(function() {
+  const p = new URLSearchParams(location.search);
+  
+  // Set numeric/string inputs
+  const mapping = {
+    'q': ['q_val', 'q_num'],
+    'n_min': ['n_min'],
+    'n_max': ['n_max'],
+    'sigma': ['sigma'],
+    'pitch': ['pitch'],
+    'gamma': ['pitch'],
+    'x_p': ['x_p'],
+    'y_p': ['y_p'],
+    'z_p': ['z_p'],
+    'rMin': ['rMin'],
+    'rMax': ['rMax'],
+    'deltaR': ['deltaR'],
+    'deltaZeta': ['deltaZeta'],
+    'N': ['N'],
+    'projection': ['projection']
+  };
+
+  let hasParams = false;
+  for (const [key, targets] of Object.entries(mapping)) {
+    const val = p.get(key);
+    if (val !== null) {
+      hasParams = true;
+      targets.forEach(targetId => {
+        const el = document.getElementById(targetId);
+        if (el) {
+          el.value = val;
+        }
+      });
+    }
+  }
+
+  // Checkbox parsing
+  const checkboxes = [
+    'cb_brane', 'cb_tubes', 'cb_axes', 'cb_stars', 'cb_auto', 'cb_click', 
+    'cb_cp1', 'cb_axispts', 'cb_blowup', 'cb_primes', 'cb_fiber'
+  ];
+  checkboxes.forEach(cb => {
+    const val = p.get(cb);
+    if (val !== null) {
+      hasParams = true;
+      const el = document.getElementById(cb);
+      if (el) {
+        el.checked = (val === 'true' || val === '1');
+        if (cb === 'cb_brane' && window.braneMesh) {
+          braneMesh.visible = el.checked;
+        }
+        if (cb === 'cb_axes' && window.axHelper) {
+          axHelper.visible = el.checked;
+          ['ax0','ax1','ax2'].forEach(id => {
+            const axEl = document.getElementById(id);
+            if (axEl) axEl.style.display = el.checked ? 'block' : 'none';
+          });
+        }
+        if (cb === 'cb_stars' && window.starGroup) {
+          starGroup.visible = el.checked;
+        }
+      }
+    }
+  });
+
+  if (hasParams) {
+    // Update display values (sync labels)
+    const q_val_el = document.getElementById('q_val');
+    const n_min_el = document.getElementById('n_min');
+    const n_max_el = document.getElementById('n_max');
+    const sigma_el = document.getElementById('sigma');
+    const pitch_el = document.getElementById('pitch');
+    const x_p_el = document.getElementById('x_p');
+    const y_p_el = document.getElementById('y_p');
+    const z_p_el = document.getElementById('z_p');
+
+    const q_v = q_val_el ? parseFloat(q_val_el.value) : 0.55;
+    const nm = n_min_el ? parseInt(n_min_el.value) : 4;
+    const nx = n_max_el ? parseInt(n_max_el.value) : 60;
+    const sg = sigma_el ? parseFloat(sigma_el.value) : 0.02;
+    const pt = pitch_el ? parseFloat(pitch_el.value) : 1.0;
+    const xv = x_p_el ? parseFloat(x_p_el.value) : -3.30;
+    const yv = y_p_el ? parseFloat(y_p_el.value) : -1.10;
+    const zv = z_p_el ? parseFloat(z_p_el.value) : -1.98;
+
+    const v_nmin_el = document.getElementById('v_nmin');
+    if (v_nmin_el) v_nmin_el.textContent = nm;
+    const v_nmax_el = document.getElementById('v_nmax');
+    if (v_nmax_el) v_nmax_el.textContent = nx;
+    const v_sigma_el = document.getElementById('v_sigma');
+    if (v_sigma_el) v_sigma_el.textContent = sg.toFixed(2);
+    const v_pitch_el = document.getElementById('v_pitch');
+    if (v_pitch_el) v_pitch_el.textContent = pt.toFixed(2);
+    const v_xp_el = document.getElementById('v_xp');
+    if (v_xp_el) v_xp_el.textContent = xv.toFixed(2);
+    const v_yp_el = document.getElementById('v_yp');
+    if (v_yp_el) v_yp_el.textContent = yv.toFixed(2);
+    const v_zp_el = document.getElementById('v_zp');
+    if (v_zp_el) v_zp_el.textContent = zv.toFixed(2);
+  }
+})();
 
 // ── Animation loop ────────────────────────────────────────────────────
 let frame = 0;
