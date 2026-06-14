@@ -38,6 +38,7 @@ fibre parameters; cf. CLAUDE.md §7c). Sorry-free.
 import Mathlib.Algebra.BigOperators.Ring.Finset
 import Mathlib.Algebra.Field.Basic
 import Mathlib.Tactic.Ring
+import Mathlib.Tactic.LinearCombination
 
 open scoped BigOperators
 
@@ -83,5 +84,32 @@ theorem geometric_of_constant_ratio (r c : ℕ → K) (ρ : K)
     c k = c 0 * ρ ^ k := by
   rw [first_order_solution r c hrec k]
   simp [hconst, Finset.prod_const, Finset.card_range]
+
+/-- **Factorisation behind the second-order q-difference equation `☆`.** The
+middle coefficient of the q-Bessel q-difference equation factors into the `★`
+denominator: with `a = q^{ν+1}` (so `q^ν · q = a`),
+`a·q^{2k+1} − q^{k+1} − a·q^k + 1 = (1 − q^{k+1})(1 − a·q^k)`. This is the purely
+algebraic reason the *second-order* operator reduces to the *first-order* (★). -/
+theorem qbessel_second_order_factor (q a : K) (k : ℕ) :
+    a * q ^ (2 * k + 1) - q ^ (k + 1) - a * q ^ k + 1
+      = (1 - q ^ (k + 1)) * (1 - a * q ^ k) := by
+  ring
+
+/-- **Second-order q-difference equation `☆`, coefficient form.** The Hahn–Exton
+q-Bessel generating function `g(w) = Σ c_k w^k` satisfies
+`q^ν·g(q²w) − (1+q^ν−w)·g(qw) + g(w) = 0` (the function-level q-Bessel equation;
+verified to 60 dps in
+`folio-assistant/computations/qbeta/qbessel_second_order_qdifference_equation.py`).
+Its `w^{k+1}` coefficient is the relation below, which follows from the
+first-order `★` via `qbessel_second_order_factor`. The "second order" is the
+q-difference order (three q-shifts `w, qw, q²w`); on the coefficients it collapses
+to the consecutive-`c_k` relation, so this and `★` are equivalent. -/
+theorem qbessel_second_order_recurrence (q a : K) (c : ℕ → K)
+    (hrec : ∀ k, c (k + 1) * ((1 - q ^ (k + 1)) * (1 - a * q ^ k)) = -q ^ k * c k)
+    (k : ℕ) :
+    (a * q ^ (2 * k + 1) - q ^ (k + 1) - a * q ^ k + 1) * c (k + 1)
+      + q ^ k * c k = 0 := by
+  rw [qbessel_second_order_factor]
+  linear_combination hrec k
 
 end QOU.QBeta
