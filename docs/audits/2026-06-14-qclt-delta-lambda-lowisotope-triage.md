@@ -54,9 +54,14 @@ correction `B(Z,N)` is exactly the Δ_λ term (Item 2). Wired in
 → witness `m-qclt-approx.witness.json` (3 assertions, all pass):
 
 - The binding-corrected channel `Z·m_p + N·m_n − B` reproduces the CODATA
-  atomic mass of D/T/³He to **within the 2.89 % nucleon-mass gap**, and
-  that residual is **uniform** across isotopes (2.892–2.906 %, spread
-  0.014 %) — the JSJ-additive **structure is sound**.
+  atomic mass of D/T/³He to **within the nucleon-mass gap**, *uniformly*
+  across isotopes — the JSJ-additive **structure is sound**. The gap is the
+  proved-pipeline **+2.89 %** (2.892–2.906 %, spread 0.014 %); the derived,
+  no-fit spectral-phase correction θ/(8ℏ²)≈0.9711 reduces it **34.9×** to
+  **~−819 ppm** but is *exploratory/unwired* (per
+  `docs/audits/2026-05-28-spectral-phase-correction-derived.md`). The
+  witness reports **both** regimes, so the residual is transparently the
+  nucleon-mass-gap status, not a floor of the channel.
 - The leading term alone carries an extra, A-growing **binding-fraction**
   error (3.01→3.20 %) — so the remark's "exact asymptotic limit" is
   **false** and was corrected to "asymptotically linear structure;
