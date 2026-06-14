@@ -76,6 +76,7 @@ instance canonical (R : Type u) [CommRing R] (q : R)
     [C : CrystalGraphRealization R q] : CemeteryGroupEmergence R q where
   inCemetery v := ∃ T : C.NormalForm, C.nodeOf T = v
   tauImage _ := 0
+  -- Ref: [manuscript] conj:cemetery-group-emergence (§3b-cond conjectural-class instance; sorry = the conjecture)
   monotone_under_extension _ _ := sorry
 
 end CemeteryGroupEmergence

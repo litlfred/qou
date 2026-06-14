@@ -101,6 +101,7 @@ instance canonical (R : Type u) [CommRing R] (q : R)
   klMap _ := PUnit.unit
   statSign _ := 1
   statSign_pm_one _ := Or.inl rfl
+  -- Ref: [manuscript] conj:kazhdan-lusztig-classical-limit (§3b-cond conjectural-class instance; sorry = the conjecture)
   kl_compatible_with_tau _ := sorry
 
 end KazhdanLusztigClassicalLimit
