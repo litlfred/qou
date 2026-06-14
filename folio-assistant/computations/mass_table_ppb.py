@@ -49,6 +49,15 @@ sys.path.insert(0, str(Path(__file__).parent))
 from q_parameter import Q as Q0
 from experimental_constants import M_E_MEV
 from witness_base import WitnessBuilder  # noqa: E402
+from codata_constants import (  # noqa: E402
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+    AME_B_LI5_MEV_VALIDATION,
+    AME_B_LI6_MEV_VALIDATION,
+    M_E_MEV,
+)
 from knot_volumes import VOL_BORROMEAN, VOL_7_SQ_1  # noqa: E402
 
 # Knot volumes now imported from `knot_volumes` (canonical mpmath
@@ -71,11 +80,11 @@ KNOT_VOL = {
 
 # AME2020 light-atom table (B in MeV; positive = binding).
 AME_TABLE = [
-    ("2H",     1,  1,   2.22456612),
-    ("3H",     1,  2,   8.4817984),
-    ("3He",    2,  1,   7.7180375),
-    ("4He",    2,  2,  28.2956912),
-    ("6Li",    3,  3,  31.99405),
+    ("2H",     1,  1,   AME_B_DEUTERON_MEV_VALIDATION),
+    ("3H",     1,  2,   AME_B_TRITIUM_MEV_VALIDATION),
+    ("3He",    2,  1,   AME_B_HE3_MEV_VALIDATION),
+    ("4He",    2,  2,  AME_B_HE4_MEV_VALIDATION),
+    ("6Li",    3,  3,  AME_B_LI6_MEV_VALIDATION),
     ("7Li",    3,  4,  39.24453),
     ("8Be",    4,  4,  56.49951),
     ("9Be",    4,  5,  58.16498),
@@ -118,17 +127,17 @@ ATOM_ASSIGN = {
     # gap row so the witness output makes the missing prediction
     # visible.  See docs/audits/2026-05-24-a5-a7-isotope-wiring-gap.md
     # for the knot-census target volumes and candidate paths.
-    "5Li":  {"rule": "gap",      "B_AME_MeV_target": 26.328,
-             "vol_kashaev_target_m_e_units": 26.328 / 0.51099895,
-             "vol_kashaev_target_2m_e_units": 26.328 / (2 * 0.51099895),
+    "5Li":  {"rule": "gap",      "B_AME_MeV_target": AME_B_LI5_MEV_VALIDATION,
+             "vol_kashaev_target_m_e_units": AME_B_LI5_MEV_VALIDATION / M_E_MEV,
+             "vol_kashaev_target_2m_e_units": AME_B_LI5_MEV_VALIDATION / (2 * M_E_MEV),
              "origin": "GAP: A ∈ {5,6,7} no atom→knot rule yet"},
-    "6Li":  {"rule": "gap",      "B_AME_MeV_target": 31.99405,
-             "vol_kashaev_target_m_e_units": 31.99405 / 0.51099895,
-             "vol_kashaev_target_2m_e_units": 31.99405 / (2 * 0.51099895),
+    "6Li":  {"rule": "gap",      "B_AME_MeV_target": AME_B_LI6_MEV_VALIDATION,
+             "vol_kashaev_target_m_e_units": AME_B_LI6_MEV_VALIDATION / M_E_MEV,
+             "vol_kashaev_target_2m_e_units": AME_B_LI6_MEV_VALIDATION / (2 * M_E_MEV),
              "origin": "GAP: A ∈ {5,6,7} no atom→knot rule yet"},
     "7Li":  {"rule": "gap",      "B_AME_MeV_target": 39.24453,
-             "vol_kashaev_target_m_e_units": 39.24453 / 0.51099895,
-             "vol_kashaev_target_2m_e_units": 39.24453 / (2 * 0.51099895),
+             "vol_kashaev_target_m_e_units": 39.24453 / M_E_MEV,
+             "vol_kashaev_target_2m_e_units": 39.24453 / (2 * M_E_MEV),
              "origin": "GAP: A ∈ {5,6,7} no atom→knot rule yet"},
     # 8Be: α-cluster (n_α=2, n_pairs=1)
     "8Be":  {"rule": "alpha",    "n_alpha": 2, "n_pairs": 1,
@@ -152,23 +161,23 @@ ATOM_ASSIGN = {
     # low-crossing census). Likely need composite rules combining
     # α-cores + valence nucleon knots.
     "9Be":  {"rule": "gap",      "B_AME_MeV_target": 58.165,
-             "vol_kashaev_target_m_e_units": 58.165 / 0.51099895,
-             "vol_kashaev_target_2m_e_units": 58.165 / (2 * 0.51099895),
+             "vol_kashaev_target_m_e_units": 58.165 / M_E_MEV,
+             "vol_kashaev_target_2m_e_units": 58.165 / (2 * M_E_MEV),
              "structural_hint": "2α + n (Borromean halo nucleus)",
              "origin": "GAP: odd-A, Borromean halo — needs composite rule"},
     "11B":  {"rule": "gap",      "B_AME_MeV_target": 76.206,
-             "vol_kashaev_target_m_e_units": 76.206 / 0.51099895,
-             "vol_kashaev_target_2m_e_units": 76.206 / (2 * 0.51099895),
+             "vol_kashaev_target_m_e_units": 76.206 / M_E_MEV,
+             "vol_kashaev_target_2m_e_units": 76.206 / (2 * M_E_MEV),
              "structural_hint": "2α + 3p (p-shell nucleus)",
              "origin": "GAP: odd-A, p-shell — needs composite rule"},
     "14N":  {"rule": "gap",      "B_AME_MeV_target": 104.659,
-             "vol_kashaev_target_m_e_units": 104.659 / 0.51099895,
-             "vol_kashaev_target_2m_e_units": 104.659 / (2 * 0.51099895),
+             "vol_kashaev_target_m_e_units": 104.659 / M_E_MEV,
+             "vol_kashaev_target_2m_e_units": 104.659 / (2 * M_E_MEV),
              "structural_hint": "3α + 2p (p-shell, N=Z mirror)",
              "origin": "GAP: odd-A, N=Z mirror — needs composite rule"},
     "19F":  {"rule": "gap",      "B_AME_MeV_target": 147.801,
-             "vol_kashaev_target_m_e_units": 147.801 / 0.51099895,
-             "vol_kashaev_target_2m_e_units": 147.801 / (2 * 0.51099895),
+             "vol_kashaev_target_m_e_units": 147.801 / M_E_MEV,
+             "vol_kashaev_target_2m_e_units": 147.801 / (2 * M_E_MEV),
              "structural_hint": "4α + 3p (sd-shell onset)",
              "origin": "GAP: odd-A, sd-shell onset — needs composite rule"},
 }
