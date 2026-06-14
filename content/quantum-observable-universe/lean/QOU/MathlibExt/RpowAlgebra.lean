@@ -48,8 +48,10 @@ theorem rpow_five_half (q : ℝ) (hq : 0 ≤ q) :
   rw [h_decomp]
   -- For q > 0 use Real.rpow_add; for q = 0 both sides are 0.
   rcases eq_or_lt_of_le hq with rfl | hq_pos
-  · -- q = 0: 0^{5/2} = 0 = (sqrt 0)^5
-    simp [Real.zero_rpow (by norm_num : (2 + (1:ℝ)/2) ≠ 0), Real.sqrt_zero]
+  · -- q = 0: 0^{5/2} = 0 = (sqrt 0)^5.  After the h_decomp rewrite the
+    -- exponent is `2 + 2⁻¹`; `Real.zero_rpow` closes the LHS.
+    rw [Real.zero_rpow (by norm_num : (2 + (1:ℝ)/2) ≠ 0)]
+    simp [Real.sqrt_zero]
   · rw [Real.rpow_add hq_pos]
     rw [rpow_half q hq]
     -- q^2 = (sqrt q)^4 via (sqrt q)^2 = q squared.
