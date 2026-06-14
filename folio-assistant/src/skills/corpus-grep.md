@@ -86,8 +86,10 @@ sweep:
 ```bash
 TOPIC='delta_lambda'   # ← keyword or regex for the claim under test
 for d in docs/audits content folio-assistant/computations docs/coordination; do
-  echo "=== $d ==="
-  grep -rln -e "$TOPIC" "$d" 2>/dev/null
+  if [ -d "$d" ]; then
+    echo "=== $d ==="
+    grep -rln -e "$TOPIC" "$d" 2>/dev/null
+  fi
 done
 ```
 
