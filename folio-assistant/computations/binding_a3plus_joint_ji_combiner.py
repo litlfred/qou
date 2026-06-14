@@ -117,6 +117,7 @@ for atom_key, fname in chi_witness_for_atom.items():
     if chi_w.get("partial", False):
         PARTIAL_ATOMS.append((atom_key, chi_w.get("n_partitions", 0),
                               chi_w.get("n_partitions_total", 0)))
+        continue  # gated out of assembly; skip the by_partition deref (may be empty)
     n_strands = chi_w.get("n_strands") or sum(chi_w["by_partition"][0]["partition"])
     weights = Y_JM[str(int(n_strands))]["weights"]
     y_map = {"_".join(str(p) for p in e["partition"]): mp.mpf(str(e["y_lambda"]))
