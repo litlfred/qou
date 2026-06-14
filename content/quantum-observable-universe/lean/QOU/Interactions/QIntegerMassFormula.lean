@@ -114,9 +114,10 @@ noncomputable def binding_energy_bw (q m_e : ℝ) (Z N : ℕ)
 
 -- ── Conjecture class (AGENTS.md §3b-cond axiomatisation) ───────
 
-/- **Conjecture class** (plain comment: the doc-comment below documents
-   `IsAMEValue`; this block documents `class QIntegerMassFormula`).
-   An instance asserts the existence of:
+/-- **Predicate:** Identifies experimental binding energies from the Atomic Mass Evaluation (AME) database. -/
+class IsAMEValue (Z N : ℕ) (B_AME : ℝ) : Prop
+
+/-- **Conjecture class.** An instance asserts the existence of:
     (i) the magic-proximity function `f_magic : ℕ → ℝ` peaking at
         {2, 8, 20, 28, 50, 82, 126},
     (ii) a CODATA-accuracy bound: for every (Z, N) with binding
@@ -133,9 +134,6 @@ noncomputable def binding_energy_bw (q m_e : ℝ) (Z N : ℕ)
     `theorem`/`proposition` per AGENTS.md §3b-cond.
 
     Ref: [manuscript] Ch 11 §8, conj:q-integer-mass-formula -/
-/-- **Predicate:** Identifies experimental binding energies from the Atomic Mass Evaluation (AME) database. -/
-class IsAMEValue (Z N : ℕ) (B_AME : ℝ) : Prop
-
 class QIntegerMassFormula where
   /-- Magic-proximity function. Peaks at the nuclear magic numbers
       {2, 8, 20, 28, 50, 82, 126}; smooth decay between magics. -/
@@ -174,9 +172,8 @@ noncomputable instance canonical : QIntegerMassFormula where
   f_magic := fun _ => 0
   tolerance := 1 / 100
   tolerance_bound := ⟨by norm_num, by norm_num⟩
-  -- Ref: [manuscript] conj:q-integer-mass-formula (§3b-cond conjectural field):
-  --      the AME-accuracy assertion is the conjecture proper; per AGENTS.md
-  --      §3b the `sorry` denotes "conjectured", not "missing proof".
+  -- Ref: [manuscript] Ch 11 §8, conj:q-integer-mass-formula
+  -- (§3b-cond conjecture-class instance; `sorry` ≡ conjecture, not gap)
   fits_AME := sorry
 
 end QOU.Interactions
