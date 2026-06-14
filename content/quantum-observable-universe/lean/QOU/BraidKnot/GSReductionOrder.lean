@@ -124,7 +124,10 @@ instance canonical (R : Type u) [CommRing R] (q : R) : GSOrderMatch R q where
   NormalForm := PUnit
   confinementLevel _ := 0
   crystalDeg _ := 0
-  -- Ref: [manuscript] conj:crystal-graph-realization (§3b-cond; order-match (★) realises the KLR grading, sorry = the conjecture)
+  -- The trivial witness model (PUnit, both filtration levels 0) satisfies
+  -- the order-match (★) by `rfl` (0 = 0). This discharges the field for
+  -- this instance WITHOUT proving the general research conjecture, which
+  -- lives in `[GSOrderMatch]` for a non-trivial `NormalForm`.
   order_match _ := rfl
 
 end GSOrderMatch
