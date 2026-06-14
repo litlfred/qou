@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-14T03:10:14.858109+00:00",
-  "commitSha": "4c2707e6a90e11000ced3269e297ea4fc5c025af",
+  "computedAt": "2026-06-14T13:50:16.921444+00:00",
+  "commitSha": "8a8d1636435dd67ba7a77ae3e91de2dfa63b3c73",
   "assertions": [
     {
       "name": "he3_baseline_sum_reproduces_full_theta_assembly",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 15,
+  "durationMs": 10,
   "computation": "binding-a3plus-joint-ji-combiner",
   "scriptFile": "binding_a3plus_joint_ji_combiner.py",
-  "scriptHash": "c729119f1f22",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "55c52842afac",
+  "scriptCommitSha": "8a8d1636435dd67ba7a77ae3e91de2dfa63b3c73",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
