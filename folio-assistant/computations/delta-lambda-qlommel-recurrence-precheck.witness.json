@@ -1,0 +1,60 @@
+{
+  "computation": "delta_lambda_qlommel_recurrence_precheck",
+  "description": "Formalize-first pre-check for the binding Δ_λ ↔ q-Lommel three-term recurrence hypothesis (PR #2305 redirect; #2078 coordination). Verdict DATA-LIMITED: canonical Δ_λ is only 4 light nuclei (3 A-levels), too thin to test recurrence consistency; decisive test gated on the Subgoal-1 Borromean-tower extension. No fit (Δ_λ gate). docs/audits/2026-06-14-delta-lambda-qlommel-precheck.md.",
+  "discipline": "no fit (Δ_λ gate, no 7th ansatz); derive-or-refute; data-limited honest report; nothing wired",
+  "source_witness": "delta-lambda-canonical-residual.witness.json",
+  "results": {
+    "tower": {
+      "atoms": {
+        "D": 4.7776,
+        "T": 13.4855,
+        "3He": 11.7281,
+        "4He": 39.6597
+      },
+      "A": {
+        "D": 2,
+        "T": 3,
+        "3He": 3,
+        "4He": 4
+      },
+      "n_atoms": 4,
+      "n_A_levels": 3
+    },
+    "preliminary_signal": {
+      "T-chain (D→T→⁴He)": {
+        "delta": [
+          4.7776,
+          13.4855,
+          39.6597
+        ],
+        "interior_b": 3.2951911312150086,
+        "rho": [
+          2.8226515405224384,
+          2.940914315375774
+        ],
+        "rho_spread_pct": 4.1897759307352125
+      },
+      "³He-chain (D→³He→⁴He)": {
+        "delta": [
+          4.7776,
+          11.7281,
+          39.6597
+        ],
+        "interior_b": 3.788959848568822,
+        "rho": [
+          2.454809946416611,
+          3.3815963370025837
+        ],
+        "rho_spread_pct": 37.75389585409012
+      }
+    },
+    "verdict": "INCONCLUSIVE / DATA-LIMITED (no fit attempted, per the Δ_λ gate). The canonical Δ_λ data is only the four light nuclei D/T/³He/⁴He (three A-levels, one isospin pair) — one interior level per single-isospin chain, so the three-term recurrence b_ν cannot be tested for consistency and NOTHING is falsified. Preliminary signal only: the T-chain ratios are near-constant (ρ≈2.82, 2.94; ~4% spread → roughly geometric, recurrence-compatible) while the ³He-chain ratios are not (ρ≈2.46, 3.38). DECISIVE TEST GATED on extending the same-shape Δ_λ tower to ⁶Li, ⁷Li, ⁸Be, … (the Subgoal-1 Borromean-tower extension): with ≥4 same-shape levels one can test whether b_ν is constant (C-finite) or q-Lommel-shaped (q^{-ν}-modulated) vs erratic. Until then the q-Lommel Δ_λ route is neither supported nor refuted; building a closure now would be a fit. Recommendation for #2078: extend the tower FIRST, then run this pre-check; b_ν must be substrate-derived (q-Casimir/contraction), not fitted, and pass the deuteron."
+  },
+  "assertions": {
+    "canonical Δ_λ tower has < 4 distinct A-levels (too thin for a 3-term consistency test)": true,
+    "each chain yields only ONE interior b_ν ⇒ recurrence consistency is NOT testable": true,
+    "verdict recorded: data-limited, decisive test gated on tower extension": true
+  },
+  "allPassed": true,
+  "verdict": "INCONCLUSIVE / DATA-LIMITED (no fit attempted, per the Δ_λ gate). The canonical Δ_λ data is only the four light nuclei D/T/³He/⁴He (three A-levels, one isospin pair) — one interior level per single-isospin chain, so the three-term recurrence b_ν cannot be tested for consistency and NOTHING is falsified. Preliminary signal only: the T-chain ratios are near-constant (ρ≈2.82, 2.94; ~4% spread → roughly geometric, recurrence-compatible) while the ³He-chain ratios are not (ρ≈2.46, 3.38). DECISIVE TEST GATED on extending the same-shape Δ_λ tower to ⁶Li, ⁷Li, ⁸Be, … (the Subgoal-1 Borromean-tower extension): with ≥4 same-shape levels one can test whether b_ν is constant (C-finite) or q-Lommel-shaped (q^{-ν}-modulated) vs erratic. Until then the q-Lommel Δ_λ route is neither supported nor refuted; building a closure now would be a fit. Recommendation for #2078: extend the tower FIRST, then run this pre-check; b_ν must be substrate-derived (q-Casimir/contraction), not fitted, and pass the deuteron."
+}
