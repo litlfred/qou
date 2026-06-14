@@ -12,7 +12,7 @@ export const corpusGrep: SkillDefinition = {
   routingPatterns: [
     "corpus.?grep",
     "before declaring.*open",
-    "is\\s+\\w+\\s+(still\\s+)?open",
+    "is\\s+.*?\\s+(still\\s+)?open",
     "already (implemented|resolved|closed)",
     "open (math|problem|question|gap)",
     "pre.?declaration",
