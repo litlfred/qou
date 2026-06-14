@@ -766,6 +766,69 @@ const PROOF: QaCriterionDefinition[] = [
     automated: false,
     applies_to: ["theorem", "lemma", "proposition", "corollary"],
   },
+  {
+    id: "proof-no-false-premise",
+    domain: "proof",
+    description:
+      "The theorem is NOT vacuously true via an unsatisfiable premise: no " +
+      "declared hypothesis is provably false (`h : (0 : R) = 1`, `h : n < 0` " +
+      "for `n : ℕ`, a self-contradictory conjunction) such that the conclusion " +
+      "is reached ONLY by `absurd` / `.elim` / `False.elim` / `Nat.not_lt_zero` " +
+      "rather than by asserting anything about the intended domain. " +
+      "Anti-pattern: `theorem foo (h : (0:R) = 1) : Anything := absurd h " +
+      "(by norm_num)`. LEGITIMATE: a named ex-falso lemma that DELIBERATELY " +
+      "documents an impossible configuration, or a case-split branch whose " +
+      "impossibility is exactly the point (the sibling branches carry the real " +
+      "content). Agent-checked (read the hypotheses, test satisfiability). " +
+      "Routes to `lean-proof-vacuity-audit` / `lean-proof-review`. A high pass " +
+      "rate is expected — flag only premises that are impossible AND silently " +
+      "render the statement vacuous.",
+    default_severity: "critical",
+    depends_on: ["lean"],
+    automated: false,
+    applies_to: ["theorem", "lemma", "proposition", "corollary"],
+  },
+  {
+    id: "proof-no-unused-hypotheses",
+    domain: "proof",
+    description:
+      "Not ALL declared hypotheses are unused. If every binder / `[Instance]` / " +
+      "`(h : …)` is ignored by the proof term, the statement may have been " +
+      "weakened until trivial, or the 'hypotheses' are scaffolding for a " +
+      "circular field-projection (cf. `proof-no-self-assuming-projection`). " +
+      "LEGITIMATE: an unused binder kept for FAMILY UNIFORMITY (a uniform " +
+      "statement across a parameter where only some instances need the " +
+      "hypothesis), or a typeclass argument used solely for elaboration / " +
+      "instance resolution. Agent judges intent — confirm the conclusion is " +
+      "non-trivial DESPITE the unused binders before flagging. Agent-checked. " +
+      "Routes to `lean-proof-vacuity-audit` / `lean-proof-review`. WARN-level " +
+      "signal, not an automatic failure; a high pass rate is expected.",
+    default_severity: "major",
+    depends_on: ["lean"],
+    automated: false,
+    applies_to: ["theorem", "lemma", "proposition", "corollary"],
+  },
+  {
+    id: "proof-no-decide-masking",
+    domain: "proof",
+    description:
+      "A non-trivial / quantified / structural statement is NOT closed solely " +
+      "by `decide` / `native_decide` in a way that masks unproved structure. " +
+      "`native_decide` additionally injects `Lean.ofReduceBool` into the axiom " +
+      "set — cross-flag with `proof-no-axiom-growth`. LEGITIMATE: `decide` on a " +
+      "genuinely decidable finite goal where the decision procedure IS a valid " +
+      "proof (small `Fin` / `DecidableEq` / concrete numeric facts) — pass " +
+      "these. Anti-pattern: a framework claim about a general `n` / arbitrary " +
+      "object discharged by `native_decide` over a hand-picked finite model, " +
+      "trusting the compiler evaluator instead of proving the general case. " +
+      "Agent judges whether the `decide` IS the content or a mask. Routes to " +
+      "`lean-proof-vacuity-audit` / `lean-proof-review`. A high pass rate is " +
+      "expected.",
+    default_severity: "major",
+    depends_on: ["lean"],
+    automated: false,
+    applies_to: ["theorem", "lemma", "proposition", "corollary"],
+  },
 ];
 
 // ── Domain: canonical ───────────────────────────────────────────

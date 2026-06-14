@@ -197,17 +197,21 @@ Mirrors the existing `proof-statement-integrity` model (Agent-checked,
 |---|---|---|
 | `proof-no-self-assuming-projection` | active | #1 circular projection |
 | `proof-no-trivial-true` | active | #2 tautological conclusion |
-| `proof-no-false-premise` | roadmap | #3 vacuously true |
-| `proof-no-unused-hypotheses` | roadmap | #4 weakened statement |
-| `proof-no-decide-masking` | roadmap | #5 evaluator masking |
+| `proof-no-false-premise` | active | #3 vacuously true |
+| `proof-no-unused-hypotheses` | active | #4 weakened statement |
+| `proof-no-decide-masking` | active | #5 evaluator masking |
 
 **Minimal wiring (per Agent-A recon):**
 
 1. `content/pipeline/qa-criteria-registry.ts` — add a `QaCriterionDefinition`
    to the `PROOF` array (it auto-flows into `QA_CRITERIA_REGISTRY`,
    `PROOF_WATCHER_CRITERIA`, and the `proof` watcher axis). Use:
-   `domain: "proof"`, `default_severity: "critical"`, `depends_on: ["lean"]`,
-   `automated: false`, `applies_to: ["theorem","lemma","proposition","corollary"]`.
+   `domain: "proof"`, `depends_on: ["lean"]`, `automated: false`,
+   `applies_to: ["theorem","lemma","proposition","corollary"]`, and
+   `default_severity` per criterion — `critical` for the hard-vacuity checks
+   (self-assuming-projection, trivial-true, false-premise), `major` for the
+   agent-judgment checks (unused-hypotheses, decide-masking), where a hit is a
+   signal needing adjudication rather than an automatic failure.
 2. `.claude/skills/local/proof-integration-watcher.md` — add a dispatch row per
    criterion → `lean-proof-review` (logic-validity review type).
 3. No new checker file: `qa-sweep` marks `automated: false` criteria
