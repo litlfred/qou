@@ -1,13 +1,13 @@
 ---
 # tc36
 title: 'Lean drain: NucleusEmpty — 9 errors, synthesize/defeq/type-mismatch (deeper, multi-root)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - verify-needed
 created_at: 2026-06-14T17:29:07Z
-updated_at: 2026-06-14T17:49:48Z
+updated_at: 2026-06-14T18:22:27Z
 parent: w5q7
 ---
 
