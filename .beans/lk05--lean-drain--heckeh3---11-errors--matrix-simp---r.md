@@ -1,13 +1,13 @@
 ---
 # lk05
 title: 'Lean drain: HeckeH3 — 11 errors, matrix simp<;>ring v4.24 drift (one-pattern fix candidate)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - coordinate
 created_at: 2026-06-14T17:29:07Z
-updated_at: 2026-06-14T17:50:56Z
+updated_at: 2026-06-14T17:57:22Z
 parent: w5q7
 ---
 
