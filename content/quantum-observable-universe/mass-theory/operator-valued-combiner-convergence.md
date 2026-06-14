@@ -87,7 +87,7 @@ The recursion is realised in
   every $A$ — including the color-weighted $p$–$n$ interface that the
   symbolic `markov_peel` path cannot represent.
 
-## Status
+## Lean formalization
 
 **Conditional theorem (Lean-verified modulo the
 [`def:wenzl-A-operator`](wenzl-A-operator.md) class instance).** The
