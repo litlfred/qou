@@ -61,7 +61,15 @@ B = p.value   # MeV
 *Binding-energy is selected by the `observable` keyword on the
 unified `predict()` entry point; there is no separate
 `binding_energy(...)` function. The mass-table sweep is the
-script [`canonical_mass_table_extended.py`](../../../folio-assistant/computations/canonical_mass_table_extended.py).*
+script [`canonical_mass_table_extended.py`](../../../folio-assistant/computations/canonical_mass_table_extended.py).
+Its `--method auto` routes per-atom over the mixed nucleon+composite
+set: free nucleons ($A < 2$) use the direct $H_3$ Hoefsmit path
+`laurent_q_rust` (pyhecke-native Rust + MPFR), composites ($A \geq 2$)
+use the operator-valued `branching` combiner — whose $\chi^\lambda$ goes
+through the Rust MPFR kernel `chi_lambda_all_partitions_mpfr`, splitting
+the color-weighted p-n crossing by linearity. Both sub-paths are MPFR
+and Rust-backed; `auto` is the only setting that spans a table mixing
+free nucleons and composites in one run.*
 
 ### Witness contract
 
