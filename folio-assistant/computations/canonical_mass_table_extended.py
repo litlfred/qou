@@ -149,6 +149,23 @@ def compute_tr_m_canonical(
 
     Returns (|tr_M|, wall_seconds, error_str, method_used).
     """
+    if method == "auto":
+        # No single method spans the low-isotope set. Free nucleons
+        # (A < 2) need the direct H_3 Hoefsmit path — `laurent_q_rust`
+        # (Rust + MPFR via pyhecke_native.tr_m_atomic_mpfr). Composites
+        # (A ≥ 2) need the operator-valued `branching` combiner for the
+        # color-weighted p-n interface that the atomic σ/σ⁻¹/averaged
+        # reducers cannot represent. branching itself routes χ^λ through
+        # the Rust MPFR kernel `chi_lambda_all_partitions_mpfr` (it
+        # linearity-splits σ − h(½−δ/4)·𝟙 into a sign-0 averaged term
+        # plus an identity term, both at ≥ 50 dps), so BOTH sub-paths
+        # are Rust-backed and MPFR. The returned `method_used` records
+        # the per-atom route ("laurent_q_rust" or "branching").
+        eff = "laurent_q_rust" if (Z + N) < 2 else "branching"
+        return compute_tr_m_canonical(
+            Z, N, label, dps=dps, timeout_sec=timeout_sec, method=eff,
+        )
+
     if method == "laurent_q_rust":
         try:
             from markov_peel_rust_bridge import tr_M_atomic_rust_full
@@ -373,11 +390,15 @@ def main() -> int:
     )
     parser.add_argument(
         "--method",
-        choices=["laurent_q_rust", "markov_peel", "laurent_q", "rust_f64", "rust_mpfr", "branching"],
+        choices=["auto", "laurent_q_rust", "markov_peel", "laurent_q",
+                 "rust_f64", "rust_mpfr", "branching"],
         default="branching",
         help=(
             "Computation method. `branching` (operator-valued Wenzl combiner) "
-            "is the canonical pipeline per user directive, replacing empirical fits."
+            "is the canonical pipeline per user directive, replacing empirical fits. "
+            "`auto` routes per-atom: nucleons (A<2) -> laurent_q_rust (Rust+MPFR "
+            "H_3 Hoefsmit), composites (A>=2) -> branching; both Rust-backed MPFR. "
+            "Use `auto` for mixed nucleon+composite sets (e.g. the low-isotope table)."
         ),
     )
     parser.add_argument(
@@ -398,7 +419,7 @@ def main() -> int:
     #   - laurent_q / laurent_q_rust: enforced MPFR-50dps via dispatcher
     #     (see compute_tr_m_canonical:147 — effective_dps=max(dps, 50))
     #   - rust_f64: f64 dps=0; rust_mpfr: MPFR dps=50
-    if args.method in ("laurent_q", "laurent_q_rust"):
+    if args.method in ("laurent_q", "laurent_q_rust", "auto"):
         dps = 50
     else:
         dps = 50 if args.precision == "mpfr" else 0
@@ -589,7 +610,8 @@ def main() -> int:
         # branches). For laurent_q / laurent_q_rust / markov_peel the
         # effective precision is MPFR-50dps regardless of args.precision.
         .add_parameter("precision", (
-            "mpfr" if args.method in ("laurent_q", "laurent_q_rust", "markov_peel")
+            "mpfr" if args.method in ("laurent_q", "laurent_q_rust",
+                                      "markov_peel", "branching", "auto")
             else args.precision
         ))
         .add_parameter("dps", dps)

@@ -22,9 +22,13 @@ CLI:
     python3 -u low_isotope_mass_table.py [--method M] [--target-dps N]
                                          [--no-rerun-canonical]
 
-`--method` defaults to `laurent_q` (LaurentQ-direct MPFR-50dps path,
-PR #859), matching the canonical-preferred production path. Passes
-through to canonical_mass_table_extended.py.
+`--method` defaults to `auto`, which routes per-atom (the low-isotope
+set mixes free nucleons and composites, and no single method spans
+both): nucleons (A < 2) via `laurent_q_rust` (pyhecke-native Rust +
+MPFR H_3 Hoefsmit), composites (A ≥ 2) via `branching` (operator-valued
+combiner whose χ^λ goes through the Rust MPFR kernel). Both sub-paths
+are MPFR and Rust-backed. Passes through to
+canonical_mass_table_extended.py.
 
 `--no-rerun-canonical` skips the canonical re-run and projects from
 the existing canonical-mass-table-extended.witness.json (faster but
@@ -119,11 +123,20 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
         "--method",
-        choices=["markov_peel", "laurent_q", "rust_f64", "rust_mpfr"],
-        default="laurent_q",
+        # Keep in sync with canonical_mass_table_extended.py's --method
+        # choices (the wrapper passes this through verbatim). laurent_q_rust
+        # is the Tier 1.A pyhecke-native Rust + MPFR path; branching is the
+        # operator-valued combiner; auto routes per-atom across both.
+        choices=["auto", "laurent_q_rust", "markov_peel", "laurent_q",
+                 "rust_f64", "rust_mpfr", "branching"],
+        default="auto",
         help=(
-            "Canonical method to dispatch through. Default laurent_q "
-            "(LaurentQ-direct MPFR-50dps, fastest production path)."
+            "Canonical method to dispatch through. Default `auto` routes "
+            "per-atom: free nucleons (A<2) -> laurent_q_rust (pyhecke-native "
+            "Rust+MPFR H_3 Hoefsmit), composites (A>=2) -> branching "
+            "(operator-valued combiner; chi via the Rust MPFR kernel). This is "
+            "the only setting that covers the full low-isotope set (p,n,D,T,3He) "
+            "in one run, all-MPFR and all Rust-backed."
         ),
     )
     parser.add_argument("--target-dps", type=int, default=11)
