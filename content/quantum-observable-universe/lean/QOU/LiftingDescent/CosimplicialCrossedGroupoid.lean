@@ -29,8 +29,9 @@ LaTeX label: `prop:cosimplicial-crossed-groupoid`
 
 namespace QOU.LiftingDescent
 
-/-- Ground ring `R_q = ℤ[q, q⁻¹]`. -/
 noncomputable section
+
+/-- Ground ring `R_q = ℤ[q, q⁻¹]`. -/
 abbrev R_q := LaurentPolynomial ℤ
 def q_param : R_q := LaurentPolynomial.T 1
 def q_inv_param : R_q := LaurentPolynomial.T (-1)
@@ -107,5 +108,7 @@ theorem cosimplicial_crossed_groupoid_exists (M : Type*)
     coface_coface := fun _ _ => by simp
     codegen_codegen := fun _ _ => by simp
   }⟩
+
+end -- noncomputable section
 
 end QOU.LiftingDescent
