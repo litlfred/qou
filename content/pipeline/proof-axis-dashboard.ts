@@ -83,8 +83,8 @@ function main() {
 
   for (const block of walkBlocks(rootPath)) {
     totalBlocks++;
-    const qaPath = resolve(REPO_ROOT, "content", block.qa);
-    const report = loadQaReport(qaPath);
+    const qaPath = block.qa ? resolve(REPO_ROOT, "content", block.qa) : undefined;
+    const report = qaPath ? loadQaReport(qaPath) : undefined;
 
     const hasLean = block.lean && existsSync(resolve(REPO_ROOT, "content", block.lean));
     if (hasLean) blocksWithLean++;

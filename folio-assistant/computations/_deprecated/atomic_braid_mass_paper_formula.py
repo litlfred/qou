@@ -27,7 +27,8 @@ import mpmath as mp
 mp.mp.dps = 50
 
 HERE = Path(__file__).parent
-sys.path.insert(0, str(HERE))
+sys.path.insert(0, str(HERE.parent))
+import _path_bridge
 
 from q_parameter import Q as Q0_FLOAT, Q_MP  # noqa: E402
 from hecke_core import (  # noqa: E402
