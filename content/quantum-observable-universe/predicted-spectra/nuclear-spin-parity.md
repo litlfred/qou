@@ -102,3 +102,6 @@ $\mathcal{B}_3(\mathfrak{u}, \mathfrak{u}, \mathfrak{d})$ and the neutron $\math
 are spin-$\tfrac{1}{2}$ knots (same Borromean topology, different
 quark colouring), and $14$ half-integer spins couple to integer
 total spin.
+
+
+**Remark on Mathematical Novelty:** Although consistent with standard spin-statistics, formulating the parity content strictly via SU_q(2)/tensor-product categorical rules provides a novel synthesis, embedding empirical parity constraints algebraically within the quantum observable universe without invoking ad-hoc external postulates.

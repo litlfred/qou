@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/braids-and-knots/alpha-em-habiro-bar-involution.lean"
   },
   "source_hashes": {
-    "md": "7aca396db43a",
+    "md": "5867fb5cd5db",
     "ts": "666bc0ac6b1b",
     "lean": "69cf83354fa9"
   },
@@ -270,6 +270,28 @@
         "reviewed_at": "2026-06-07T02:28:08.571Z",
         "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
         "notes": "Modest: bar-symmetry of [2]_q(1-h^2 alpha) is a ring-level observation; the fibre-vs-observable framing and zeta_4=0 dual-to-Qbeta-pole are the interesting content but the proved facts are elementary."
+      },
+      {
+        "field_hash": {
+          "md": "5867fb5cd5db",
+          "ts": "666bc0ac6b1b",
+          "lean": "69cf83354fa9"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T01:37:43.195Z",
+        "reviewed_sha": "4468e2a2d8e1960206560be9fa4a1842b7b5dc7b",
+        "notes": "Added section clarifying the mathematical/framework novelty vs textbook standard results as requested."
       }
     ],
     "proof-statement-integrity": [
@@ -1332,5 +1354,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T01:08:44.722Z"
+  "updated_at": "2026-06-14T01:37:43.195Z"
 }

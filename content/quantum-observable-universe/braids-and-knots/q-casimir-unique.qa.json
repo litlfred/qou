@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/braids-and-knots/q-casimir-unique.lean"
   },
   "source_hashes": {
-    "md": "007f4f967aa8",
+    "md": "b92d3ca2f5a4",
     "ts": "ac04cbbb4422",
     "lean": "5a5dcdde2b66"
   },
@@ -379,6 +379,28 @@
         "reviewed_at": "2026-06-08T11:45:09.798Z",
         "reviewed_sha": "c334e454e527b6218d8f3460cdd56eb86f67c9d6",
         "notes": "Confirmed 0.4."
+      },
+      {
+        "field_hash": {
+          "md": "b92d3ca2f5a4",
+          "ts": "ac04cbbb4422",
+          "lean": "5a5dcdde2b66"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T01:37:42.245Z",
+        "reviewed_sha": "4468e2a2d8e1960206560be9fa4a1842b7b5dc7b",
+        "notes": "Added section clarifying the mathematical/framework novelty vs textbook standard results as requested."
       }
     ],
     "proof-statement-integrity": [
@@ -1326,5 +1348,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T01:08:44.722Z"
+  "updated_at": "2026-06-14T01:37:42.245Z"
 }

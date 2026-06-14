@@ -350,6 +350,23 @@
         "reviewed_at": "2026-06-07T06:00:59.891Z",
         "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
         "notes": "Terse statement-only md (two instantons of equal c_2 coincide up to gauge; moduli parameterised by H^4)."
+      },
+      {
+        "field_hash": {
+          "md": "9b6f0ddfcdc1",
+          "ts": "f3aa24beb27c",
+          "lean": "8cc9e2432f9f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T01:37:22.885Z",
+        "reviewed_sha": "4468e2a2d8e1960206560be9fa4a1842b7b5dc7b"
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1247,5 +1264,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T01:08:44.722Z"
+  "updated_at": "2026-06-14T01:37:22.885Z"
 }

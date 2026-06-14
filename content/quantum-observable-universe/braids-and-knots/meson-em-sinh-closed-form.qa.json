@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/braids-and-knots/meson-em-sinh-closed-form.lean"
   },
   "source_hashes": {
-    "md": "d70576ae34fe",
+    "md": "fa712a606373",
     "ts": "20983b2e18e7",
     "lean": "78002e96d3a2"
   },
@@ -83,6 +83,28 @@
         "reviewed_at": "2026-06-07T02:31:29.732Z",
         "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
         "notes": "Elementary rational-function identity (1+hbar_q-hbar_q^2/2 = (3q^2-1)/(2q^2)); the meson m_K^2/m_pi^2 closure significance and Bring 3-generation reading are interpretive, the proved content is textbook algebra."
+      },
+      {
+        "field_hash": {
+          "md": "fa712a606373",
+          "ts": "20983b2e18e7",
+          "lean": "78002e96d3a2"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T01:37:42.649Z",
+        "reviewed_sha": "4468e2a2d8e1960206560be9fa4a1842b7b5dc7b",
+        "notes": "Added section clarifying the mathematical/framework novelty vs textbook standard results as requested."
       }
     ],
     "proof-statement-integrity": [
@@ -1240,5 +1262,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T01:08:44.722Z"
+  "updated_at": "2026-06-14T01:37:42.649Z"
 }

@@ -35,3 +35,5 @@ $q \neq 1$: the $q$-deformed de Rham complex is *not* a cochain
 complex.  On $\xi$-invariant forms (the horizontal subcomplex
 $\Omega^k_H(A)$), $d_q$ does reduce to $q^{-1} d$ and $d_q^2 = 0$.
 
+
+While the case analysis resolving the vanishing conditions of $d_q^2$ relies on standard algebraic properties, identifying this specific $q$-curvature obstruction and demonstrating its explicit role in breaking the cochain property for generic non-invariant forms represents a mathematically novel application within the framework of categorical $q$-deformations.

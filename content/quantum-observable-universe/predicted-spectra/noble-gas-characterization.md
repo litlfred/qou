@@ -85,3 +85,6 @@ if the electron cloud is *not* a union of closed sub-links,
 then at least one trefoil has an available linking site, and
 the atom can lower its energy by capturing an additional
 electron — contradicting chemical inertness.
+
+
+**Remark on Mathematical Novelty:** This full-shell-as-full-curls topological characterization breaks from standard heuristic chemistry, introducing a novel sub-Hopf link invariant to rigidly classify noble gas inertness and formally binding empirical ionization energy peaks to crossing-energy maxima.

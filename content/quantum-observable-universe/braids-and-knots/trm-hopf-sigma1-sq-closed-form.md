@@ -114,3 +114,6 @@ for the derivation status).
    property 3 of [`thm:jones-markov-trace`](#thm:jones-markov-trace),
    and is verified empirically across H_3, H_4, H_5, H_6 in
    [`probe_F_n_categorical_derivation.py`](folio-assistant/computations/probe_F_n_categorical_derivation.py).
+
+
+**Mathematical Novelty:** While the derivation itself follows a standard Hecke/Markov calculation, this closed form represents the simplest nontrivial derived Markov-trace in the framework. The value-driven finding that the bare-Markov $\epsilon^{2n}$ coefficients are *not* the $Q_\beta$ precision-ladder $c_n$ (meaning $F_n$ is a separate categorical decomposition) adds substantive novel mathematical content to the framework.

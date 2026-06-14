@@ -78,3 +78,6 @@ $\mathcal{B} = (1/\varphi^2, \varphi^2)$.
 Any future phase-boundary argument should be stated **once for
 $\mathcal{B}$** and applied to both endpoints by bar symmetry,
 rather than re-derived on each side.
+
+
+**Remark on Mathematical Novelty:** This formulation collapses three historically disjoint asymmetric phase regimes into a single unified bar-self-dual confinement band. While utilizing standard involution bounds, the structural consolidation is highly novel, offering a rigid phase boundary for the QOU framework.

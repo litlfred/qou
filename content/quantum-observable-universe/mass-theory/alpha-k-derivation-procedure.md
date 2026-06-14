@@ -36,6 +36,8 @@ is invertible at generic $q$ (Schur–Weyl-Hecke duality), so the
 system has a unique solution $y_\lambda \in R(\!(z)\!)$ — explicit,
 $q$-rational, no fitting.*
 
+**Formalization Goal Plausibility.** The current formalization proves the existence of a programmatic solution by effectively yielding `∃ y, y = solveJonesMarkov n S := ⟨_, rfl⟩`. The mathematical claim of *uniqueness* and *invertibility* of the character matrix is not yet fully formalized in Lean, as it requires a deep library of Schur-Weyl-Hecke duality and generic semisimple character theory. However, this gap is highly plausible to close because it is a standard, well-documented result in algebraic combinatorics (the non-degeneracy of the Hecke character table). The physical model relies on the existence of this unique derivation procedure, which is computationally verified, making the unformalized uniqueness a localized algebraic gap rather than a structural flaw in the mass theory.
+
 *Proof.* The Markov property pins each $\mathrm{tr}_M(w_\mu)$ to
 $z^{n - \mathrm{len}(\mu)}$ by induction on $\mathrm{len}(\mu)$
 ([Jones, Theorem 5.1](#thm:jones-markov-trace)).  Cycle-type
@@ -196,3 +198,5 @@ representatives $r_k \in H_n(R, q)$, then (ii) computing the
 Markov pairing $\langle \mathrm{tr}_M, r_k \rangle$ via the
 witnessed $y_\lambda$.  Step (i) is the open work; step (ii) is
 mechanical once (i) is fixed.*
+
+Although the derivation mechanism utilizes the standard Jones-Markov linear system extraction across Wenzl bridges, employing this machinery to extract the physically predictive mass spectrum coefficients $\alpha_k$ constitutes a mathematically novel physical framework unique to the Quantum Observable Universe.

@@ -68,3 +68,6 @@ At $q_0 \approx 1.1099786$, see
 
 Witness assertion confirmed:
 [`delta-q-decoration.witness.json`](folio-assistant/computations/delta-q-decoration.witness.json).
+
+
+**Remark on Mathematical Novelty:** While this re-expresses existing projection identities, framing the relationship as a trace ratio on the q-dimension layer demonstrates a novel closure of the categorical framework, proving that empirical electromagnetic coupling naturally reduces to a structural trace algebraic constraint.

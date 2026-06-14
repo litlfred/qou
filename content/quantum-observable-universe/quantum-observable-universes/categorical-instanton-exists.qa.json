@@ -350,6 +350,23 @@
         "reviewed_at": "2026-06-07T06:00:59.745Z",
         "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
         "notes": "Terse statement-only md (there exists a connection whose curvature is star_q-self-dual)."
+      },
+      {
+        "field_hash": {
+          "md": "17466e305272",
+          "ts": "a09dbae8ac7c",
+          "lean": "32de9741b608"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T01:37:17.909Z",
+        "reviewed_sha": "4468e2a2d8e1960206560be9fa4a1842b7b5dc7b"
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1267,5 +1284,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T01:08:44.722Z"
+  "updated_at": "2026-06-14T01:37:17.909Z"
 }

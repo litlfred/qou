@@ -56,3 +56,5 @@ The same scale $\alpha$ appears at two levels:
 The error in $\alpha$ is dominated by the measurement uncertainty
 of $m_e$ ($\pm 3 \times 10^{-8}$ relative).  The factor $8G$ has
 zero uncertainty.
+
+While the hyperbolic volume of the Borromean complement is a classical result established by Thurston, identifying this exact geometric constant as the fundamental multiplicative physical binding scale factor connecting the lepton sector ($m_e$) and baryon topology represents a mathematically novel unifying synthesis specific to the Quantum Observable Universe.

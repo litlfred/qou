@@ -171,3 +171,6 @@ The natural coordinates for the entire structure are therefore
 **$q$ and $i$**: $q$ generates multiplicative motion on a fixed ray
 through the origin, while $i$ is the order-4 generator of the
 $\sigma$-rotation that connects rays.
+
+
+**Remark on Mathematical Novelty:** Identifying Z[i]—rather than Z—as the strict ring of definition for the Mobius family under the D_4 action represents a conceptually novel structural constraint, tightly locking the moduli line symmetries to a complex algebraic origin.

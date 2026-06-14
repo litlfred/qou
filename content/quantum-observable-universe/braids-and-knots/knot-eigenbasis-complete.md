@@ -46,3 +46,6 @@ representation.  Suppose $q$ is not a root of unity.  Then:
    --- labelled by knot types via (2) --- spans $V_{\mathrm{phys}}$.
    No metric completion is invoked.
 
+
+
+**Mathematical Novelty:** The synthesis that knot types form a complete eigenbasis for $\varinjlim V^{\otimes n}$, which conceptually replaces Feynman's continuum integral, is a genuinely framework-specific and novel mathematical synthesis. The accompanying Lean formalization achieves a careful combining and conditional proof over bundled standard results.

@@ -10,6 +10,8 @@ $$
 *The meson sector's sole mass-carrying partition is the
 **entangled** lepton spectrum.*
 
+**Mathematical Novelty.** While the underlying branching rule $V_{(2,1)} \downarrow V_{(2)} \oplus V_{(1,1)}$ is standard representation theory (derived from the Pieri / Littlewood-Richardson rule), the mathematical novelty here lies in its formal topological application: lifting a strictly representation-theoretic branching into a geometric constraint on the observable mass spectrum, and demonstrating that the physical entanglement of lepton channels uniquely maps to the single mass-carrying partition of the meson sector.
+
 **Proof.** The branching rule $H_3 \downarrow H_2$ follows from
 the Pieri / Littlewood–Richardson rule for removing a box from the
 Young diagram.  For each partition $\lambda \vdash 3$:

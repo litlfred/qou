@@ -1,3 +1,5 @@
+The proof strategy is constructive. We explicitly form the operator $\mathcal{F}[f](\xi) = \mathrm{tr}_M(\exp_q(i \xi \cdot) \cdot f)$ using the categorical trace and the quantum exponential. We then verify that this explicit construction satisfies the monoidal functor properties required for the categorical Fourier transform.
+
 Identical to
 ([existence of categorical Laplace transform](#prop\:categorical-laplace-exists))
 with the substitution $s \mapsto -i\xi$: the grouplike

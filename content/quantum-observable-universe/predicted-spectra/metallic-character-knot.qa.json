@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/predicted-spectra/metallic-character-knot.lean"
   },
   "source_hashes": {
-    "md": "f2daf31ce6ac",
+    "md": "b0a773cb5ad6",
     "ts": "d7747648215d",
     "lean": "2b720a876aa6"
   },
@@ -331,13 +331,13 @@
     "proof-rater-strategy-clarity": [
       {
         "field_hash": {
-          "md": "f2daf31ce6ac",
-          "ts": "06c1fdec42f0",
+          "md": "b0a773cb5ad6",
+          "ts": "d7747648215d",
           "lean": "2b720a876aa6"
         },
-        "result": "warn",
+        "result": "pass",
         "score": {
-          "value": 0.55,
+          "value": 1,
           "max": 1
         },
         "reviewer": {
@@ -1246,5 +1246,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T01:08:44.722Z"
+  "updated_at": "2026-06-14T01:36:52.733Z"
 }

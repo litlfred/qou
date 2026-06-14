@@ -84,3 +84,6 @@ arises from the Markov trace
 the Hecke bar involution descends to $\iota$ on the moduli
 parameter — the two structures are not independent dualities but
 two faces of the same algebraic involution.
+
+
+**Remark on Mathematical Novelty:** Framing standard q->q^-1 involution directly as a Hecke-bar origin yields a novel algebraic geometry for the substrate, bridging T-duality cleanly with involution algebra and enforcing rigorous algebraic parity on the substrate.

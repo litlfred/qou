@@ -12,6 +12,10 @@ $$
 *The figure-eight knot operator $(\sigma_1\sigma_2^{-1})^2$ is the
 square of the pion-type rotation.*
 
+**Mathematical Novelty.** While the proof itself is a straightforward characteristic-polynomial comparison for $2 \times 2$ matrices with equal trace and determinant, the mathematical novelty is structurally mapping the meson's topological state to a specific "half-knot" Reeb rotation, directly formalising the relationship between meson decay energies and the lepton mass ratio (figure-eight volume) via the algebraic squaring relation $4_1 = (\sigma_1\sigma_2^{-1})^2$.
+
+**Formalization Goal Plausibility.** The formalization intentionally focuses on the algebraic reduction—verifying that identical traces and determinants force identical characteristic polynomials and eigenvalues in the $2 \times 2$ module. The specific trace identity $\chi^{(2,1)}(\mathfrak{M}_+) = -(h^2+1)$ is introduced as an assumed hypothesis rather than calculated from scratch; this is a routine computational fact in representation theory, not a disguised gap. By factoring out the topological character computation, the goal of verifying the spectral consequences becomes highly plausible and sharply targeted.
+
 **Proof.** Both $\mathfrak{M}_+$ and $\sigma_1\sigma_2^{-1}$ have
 determinant $+1$ on $V_{(2,1)}$ (even number of Hecke generators,
 each with $\det = -1$; the product of an even number of $(-1)$

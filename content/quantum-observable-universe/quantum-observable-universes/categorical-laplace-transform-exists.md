@@ -12,3 +12,6 @@ defined by the
 
 Uniqueness is
 ([uniqueness of categorical Laplace transform](#prop:categorical-laplace-unique)).
+
+
+**Strategy.** We directly construct $\mathcal{L}[f](s)$ using the Markov trace applied to the composite of the assumed $q$-exponential generator and $f$. The functoriality and intertwining properties then naturally descend from the coproduct axioms on the $q$-exponential.

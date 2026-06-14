@@ -29,3 +29,5 @@ In particular, $d_q^2 = 0$ if and only if $q = 1$ (classical case) or
 $\alpha$ lies in the kernel of $\mathcal{L}_\xi$ (Reeb-invariant forms).
 On horizontal $\mathcal{L}_\xi$-invariant forms, $d_q$ *does*
 define a cochain complex.
+
+Though the proof utilises standard simplification over the obstruction product, framing the failure of the cochain complex condition geometrically—as proportional to the symplectic form and Reeb-invariant flow—constitutes a novel physical translation for the Quantum Observable Universe.

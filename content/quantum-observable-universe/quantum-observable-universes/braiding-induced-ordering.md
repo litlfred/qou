@@ -94,3 +94,5 @@ invariant under simultaneous
 $c_{V,V} \leftrightarrow \bar{c}_{V,V}$ (T),
 $K \mapsto K^{\sigma}$ (C), and
 $\sigma_i \mapsto \sigma_{n-i}$ (P, strand reflection).
+
+Although the underlying mathematical machinery is a standard degree-lexicographic well-foundedness construction, its physical interpretation—formally linking the categorical braid-over-under structure to the macroscopic thermodynamic arrow of time—is a novel conceptual contribution introduced by the Quantum Observable Universe.

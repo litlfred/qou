@@ -78,3 +78,6 @@ it is the **simplest alternating braid** at $H_3$ — the
 minimal-crossing braid that implements a full Reeb rotation on
 $V_{(2,1)}$.  Its volume is the rotation angle, and the rotation
 is the mechanism that connects the two lepton generations.
+
+
+**Mathematical Novelty:** The q-Reeb-rotation-phase reading of the figure-eight eigenvalue on $V_{2,1}$, which connects to $\mathrm{Vol}(4_1)$ and the muon anchor, is a genuinely framework-specific and novel conceptual idea. (Note that this connection is asserted conceptually rather than fully established in the formalization).

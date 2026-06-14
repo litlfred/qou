@@ -26,3 +26,5 @@ either parity (the keystone $\tau$, or the $c_k$ kernel) constrains the other
 through the shared element. The Lean witnesses
 [`QOU.Mass.evenPart_add_oddPart`](#prop:bar-parity-split), `evenPart_fixed`, and
 `oddPart_anti` prove the decomposition and the parity of each part, sorry-free.
+
+Although the even/odd involution split is implemented using standard linear algebraic techniques, attributing this mathematical decomposition to a concrete physical dichotomy—where the even component describes binding and the odd component captures decay processes—represents a mathematically novel interpretive framework developed for the Quantum Observable Universe.

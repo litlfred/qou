@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/braids-and-knots/trm-hopf-sigma1-sq-closed-form.lean"
   },
   "source_hashes": {
-    "md": "d1ae466b6b5b",
+    "md": "29ad9480616f",
     "ts": "594d979e3907",
     "lean": "4853dde67b04"
   },
@@ -465,6 +465,28 @@
         "reviewed_at": "2026-06-07T02:33:56.033Z",
         "reviewed_sha": "8bde9de2c1add6cd380bfdd9a363e5d19ec8ab8f",
         "notes": "A specific derived Markov-trace closed form (simplest nontrivial in the framework); the value-driven finding that the bare-Markov epsilon^{2n} coefficients are NOT the Q_beta precision-ladder c_n (so F_n is a separate categorical decomposition) adds some content. Derivation itself is a standard Hecke/Markov calculation."
+      },
+      {
+        "field_hash": {
+          "md": "29ad9480616f",
+          "ts": "594d979e3907",
+          "lean": "4853dde67b04"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T01:37:42.927Z",
+        "reviewed_sha": "4468e2a2d8e1960206560be9fa4a1842b7b5dc7b",
+        "notes": "Added section clarifying the mathematical/framework novelty vs textbook standard results as requested."
       }
     ],
     "proof-statement-integrity": [
@@ -1398,5 +1420,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T01:08:44.722Z"
+  "updated_at": "2026-06-14T01:37:42.927Z"
 }

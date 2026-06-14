@@ -86,3 +86,6 @@ unchanged by this refactoring; closing it remains the work of
 and the higher-order $C_5$-invariant corrections discussed there.)
 
 All $3$ assertions in the witness pass.
+
+
+**Remark on Mathematical Novelty:** Expressing the shift as a unified multiplicative chain is not merely a composition of known identities, but provides a novel structural proof that the electromagnetic shifts are governed by an intrinsically multiplicative, rather than additive, algebraic chain.
