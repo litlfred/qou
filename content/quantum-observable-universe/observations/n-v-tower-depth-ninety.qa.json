@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "4581ea5e4012",
     "ts": "06ff1ef33c97",
-    "lean": "7bcb0fe78f87"
+    "lean": "a41ab2e5aa42"
   },
   "criteria": {
     "voice-status-leak": [
@@ -190,6 +190,22 @@
         "reviewed_at": "2026-06-14T01:00:45.351Z",
         "reviewed_sha": "0897db293a9e33bee002700a742ee9370ca482e1",
         "notes": "Per §3b, conjectures should use class axiomatisation pattern."
+      },
+      {
+        "field_hash": {
+          "md": "4581ea5e4012",
+          "ts": "06ff1ef33c97",
+          "lean": "a41ab2e5aa42"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-14T01:17:00.210Z",
+        "reviewed_sha": "fdf0d62518a4bdfe6d3d16b6042e2c16e2945afd",
+        "notes": "Conjecture with class/axiom axiomatisation — structural match."
       }
     ],
     "voice-author-notes-pollution": [
@@ -940,5 +956,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T01:08:44.722Z"
+  "updated_at": "2026-06-14T01:17:00.210Z"
 }
