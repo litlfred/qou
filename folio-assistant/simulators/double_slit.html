@@ -280,7 +280,21 @@ canvas { display: block; width: 100%; height: 100%; }
   </div>
 </div>
 
-<script>
+<script type="module">
+import init, { qou_chi_lambda_braid } from './pkg/hecke_engine_wasm.js';
+
+let wasmReady = false;
+async function loadWasm() {
+  try {
+    await init();
+    wasmReady = true;
+    console.log("WASM Hecke Engine loaded.");
+  } catch(e) {
+    console.warn("WASM load failed", e);
+  }
+}
+loadWasm();
+
 const BACH_DATA = [
   [-2.5584,0.1781],[-2.5240,0.2756],[-2.4897,0.2851],[-2.4554,0.2822],[-2.4210,0.2711],
   [-2.3867,0.3044],[-2.3523,0.3149],[-2.3180,0.2994],[-2.2837,0.2844],[-2.2493,0.3470],
@@ -621,6 +635,24 @@ function tick() {
     let p = activeParticles[i];
     p.x += speed; // linear x progress
     p.r += speed; // radial progress for spherical
+    
+    // N-body structural interaction with slit lattice using WASM Hecke Traces
+    if (p.x < 0.1 && wasmReady) {
+       let forceY = 0;
+       // The slit acts as a topological defect. We calculate the Markov trace
+       // using the local q-Reeb vibration (latticeZr).
+       let defectSize = Math.max(0, Math.floor(Math.abs(latticeZr) * 3.0));
+       let genIdx = p.startY > 0 ? 1 : 2;
+       try {
+           // Compute chi_lambda for partition [2, 1] on the braid word
+           let chi = qou_chi_lambda_braid("[2, 1]", `[[${genIdx}, ${defectSize}]]`, P.q);
+           // True N-body scattering scale based on Isotope vdW and the Hecke character
+           let vdw = P.A ? (P.A / 197.0) * 0.8 : 1.0;
+           forceY += (vdw * 0.05) * chi;
+       } catch(e) {}
+       p.targetY += forceY;
+       p.targetTheta += forceY * 0.015;
+    }
     
     // QOU Algebraic / Bohmian Guidance
     // Interpolate y from slit (startY) to target (targetY) to prevent crossing
