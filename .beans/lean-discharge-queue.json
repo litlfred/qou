@@ -1,284 +1,464 @@
 [
-  {
-    "id": "lean-catalan-G-numerical-bound",
-    "summary": "Prove catalan_G_numerical_bounds : G > 0.915 \u2227 G < 0.916 (currently axiom with [lewin1981] ref)",
-    "comment": "BorromeanVolumeCatalan.lean line ~98 has `axiom catalan_G_numerical_bounds : catalan_G > (0.915:\u211d) \u2227 catalan_G < (0.916:\u211d)` (set during 2026-06-03 session a7f80972 batch). Proof strategy: alternating series Leibniz bound. For G = \u03a3 (-1)^k/(2k+1)\u00b2 with N terms, |G - S_N| \u2264 1/(2N+1)\u00b2. Pick N so S_N \u00b1 1/(2N+1)\u00b2 \u2286 (0.915, 0.916). Mathlib lemma VERIFIED 2026-06-03 (PR #1763): `alternating_series_error_bound` in `Mathlib/Analysis/SpecificLimits/Normed.lean` has exactly the right signature (Antitone f \u2192 Summable f \u2192 |\u2211'(-1)^i\u00b7f i - \u2211 range n (-1)^i\u00b7f i| \u2264 f n). Container has working `lake` (post-#1755), so the previously-cited blockers (`no lake` + `lean_leansearch SSL-blocked`) are RESOLVED. Remaining blocker: `lake exe cache get` returns 403 on all 7335 Mathlib oleans downloads (Mathlib cache host shares the same network-policy block as release.lean-lang.org for elan). Building Mathlib from source would take ~1-4h on first run. See `infra-lean-cache-host-bypass` item for the parallel-to-#1755 infra fix needed.",
-    "status": "open",
-    "priority": "medium",
-    "origin": "session-2026-06-03-lobachevsky-catalan",
-    "createdAt": "2026-06-03",
-    "data": {
-      "goal": "lean-discharge",
-      "file": "content/quantum-observable-universe/lean/QOU/Archimedean/BorromeanVolumeCatalan.lean",
-      "proof_sketch": "1. Show series is alternating with antitone |terms| via `Antitone.cauchySeq_alternating_series_of_tendsto_zero`. 2. Use Leibniz error bound |G - S_N| \u2264 a_{N+1}. 3. At N=22, compute S_22 as rational + norm_num. 4. linarith with 1/2209 envelope.",
-      "expected_duration": "1-2h (lake env needed for lemma verification)",
-      "references": [
-        "Lewin 1981 Polylogarithms \u00a74.2",
-        "Mathlib.Analysis.SpecificLimits.Basic"
-      ],
-      "blocker": "needs Mathlib oleans cache; `lake exe cache get` returns 403 (PR #1763 documents the parallel-to-#1755 host bypass needed)"
-    }
-  },
-  {
-    "id": "lean-q-schur-h3-y-lambda-extension",
-    "summary": "Extend QSchurYLambdaClosedForm Lean from H_2 to H_3 (5 partitions of n=3 missing)",
-    "comment": "QSchurYLambdaClosedForm.lean currently has qSchur_H2_top, qSchur_H2_bottom, qSchur_H2_normalization (discharged). H_3 needs the analogous theorems for partitions (3), (2,1), (1,1,1). Mechanical mirror of H_2 pattern; uses contentSum, qBracket, qFactorial unfoldings + decide + field_simp + ring. STALE \u2014 see resolution_note.",
-    "status": "resolved",
-    "resolution_note": "af3316bf landed qSchur_H3_top/mid/bottom on main; full audit in data.resolution_note",
-    "closedAt": "2026-06-09",
-    "closedBy": "owner-batch-close-2026-06-09",
-    "priority": "high",
-    "origin": "session-2026-05-31-queue-build",
-    "createdAt": "2026-05-31",
-    "data": {
-      "goal": "lean-discharge",
-      "file": "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/QSchurYLambdaClosedForm.lean",
-      "pattern_reference": "qSchur_H2_top (lines 145-160) \u2014 adapt for partitions [3], [2,1], [1,1,1]",
-      "proof_sketch": "for each \u03bb: unfold ySchurClosedForm; have hc : contentSum \u03bb = <C>; have hs : \u03bb.sum = 3; rw [hc, hs]; show qFactorial 3 q = [3]_q!; field_simp + ring",
-      "expected_duration": "30min",
-      "resolution_commit": "af3316bf",
-      "resolution_note": "Already implemented in main: qSchur_H3_top (line 262), qSchur_H3_mid (line 273), qSchur_H3_bottom (line 284) \u2014 all proved via the H_2 pattern with helper lemmas q_add_inv_ne_zero and q_sq_add_one_add_inv_sq_ne_zero. Commit af3316bf ('lean(QSchurYLambdaClosedForm): refresh docstrings \u2014 H_2 + H_3 are sorry-free') landed before this 2026-05-31 todo was created. No clean H_3 'normalization' theorem (un-weighted partition sum is not 1 at H_3 without dim_q(\u03bb)\u00b2 weighting). Flagged stale 2026-06-03 post-#1736 merge cleanup. Owner action: close as resolved (per AGENTS.md TodoItem lifecycle rules, only humans may close todos; agents may not set status to 'resolved' or remove entries)."
-    }
-  },
-  {
-    "id": "lean-bar-involution-extension",
-    "summary": "Bar-involution + Mullineux theorems beyond y_\u03bb \u2014 extend to \u03c7^\u03bb, b(q), Hoefsmit form",
-    "comment": "Per commits e3a590e5, 8590f0e7, def3d27f, d07259bb on y_\u03bb. The bar-involution q \u2194 q\u207b\u00b9 on y_\u03bb is proved; extend to other Hecke-algebra quantities: \u03c7^\u03bb(\u03c3_i), Hoefsmit b(q), Markov trace bar-symmetry. STALE \u2014 see resolution_note.",
-    "status": "wontfix",
-    "resolution_note": "Candidate files do not exist on main; full audit in data.resolution_note",
-    "closedAt": "2026-06-09",
-    "closedBy": "owner-batch-close-2026-06-09",
-    "priority": "medium",
-    "origin": "session-2026-05-31-queue-build",
-    "createdAt": "2026-05-31",
-    "data": {
-      "goal": "lean-discharge",
-      "candidate_files": [
-        "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/YLambdaQSchur.lean",
-        "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/HoefsmitBQ.lean (if exists)",
-        "content/quantum-observable-universe/braids-and-knots/jones-markov-trace.lean"
-      ],
-      "expected_duration": "1h",
-      "resolution_commit": "dbb74c3d",
-      "resolution_note": "STALE per 2026-06-02 staleness audit ([docs/audits/2026-06-02-lean-discharge-queue-staleness-audit.md](../docs/audits/2026-06-02-lean-discharge-queue-staleness-audit.md)): no `*bar*involution*` or `*mullineux*` Lean files exist in the QOU package. The candidate_files list refers to files that do not exist. Flagged stale 2026-06-03 post-#1736 merge cleanup. Owner action: close as `wontfix` (referenced files do not exist; if the work is needed, file a fresh item against the actual locations). Per AGENTS.md TodoItem lifecycle rules, only humans may close todos."
-    }
-  },
-  {
-    "id": "lean-mathlibext-sdp-rank-equality",
-    "summary": "Discharge 2 sorries in MathlibExt/SDPRankEquality.lean (R1 + R2 factoring)",
-    "comment": "Per file docstring: 'helium3_uniqueness_closed is an axiom (zero sorry); kernel-disjoint + affine-Slater inputs have proven sub-instances; chain is fully sorry-free'. STALE \u2014 see resolution_note.",
-    "status": "resolved",
-    "resolution_note": "0 sorries on main per dbb74c3d audit; full audit in data.resolution_note",
-    "closedAt": "2026-06-09",
-    "closedBy": "owner-batch-close-2026-06-09",
-    "priority": "medium",
-    "origin": "session-2026-05-31-queue-build",
-    "createdAt": "2026-05-31",
-    "data": {
-      "goal": "lean-discharge",
-      "file": "content/quantum-observable-universe/lean/QOU/MathlibExt/SDPRankEquality.lean",
-      "proof_sketch": "R1: rank-nullity from S * \u03a6 = 0; PSD assumption gives kernel containment. R2: strict-complementarity \u27f9 ker(S) \u2229 ker(\u03a6) = {0} \u27f9 rank equality via dimension counting.",
-      "expected_duration": "1-2h",
-      "references": [
-        "Alizadeh-Haeberly-Overton 1997 \u00a73",
-        "Boyd-Vandenberghe \u00a75.5.4"
-      ],
-      "resolution_commit": "dbb74c3d",
-      "resolution_note": "STALE per 2026-06-02 staleness audit ([docs/audits/2026-06-02-lean-discharge-queue-staleness-audit.md](../docs/audits/2026-06-02-lean-discharge-queue-staleness-audit.md)): SDPRankEquality.lean has 0 sorry tokens on origin/main; the file's own header says 'fully sorry-free'. The queue entry's claim of '2 sorries' is stale. Flagged stale 2026-06-03 post-#1736 merge cleanup. Owner action: close as `resolved` (per AGENTS.md TodoItem lifecycle rules, only humans may close todos)."
-    }
-  },
-  {
-    "id": "lean-staircase-corner-hook",
-    "summary": "Discharge 6 of 9 non-conjectural sorries in StaircaseCornerHook.lean",
-    "comment": "9 sorries, 3 marked as conjectural witnesses. The other 6 are likely combinatorial-identity proofs (hook-length formula bits). STALE \u2014 see resolution_note.",
-    "status": "resolved",
-    "resolution_note": "0 sorries on main per dbb74c3d audit; full audit in data.resolution_note",
-    "closedAt": "2026-06-09",
-    "closedBy": "owner-batch-close-2026-06-09",
-    "priority": "medium",
-    "origin": "session-2026-05-31-queue-build",
-    "createdAt": "2026-05-31",
-    "data": {
-      "goal": "lean-discharge",
-      "file": "content/quantum-observable-universe/lean/QOU/StaircaseCornerHook.lean",
-      "triage_action_first": "lean_diagnostic_messages on each sorry to determine which are tractable",
-      "expected_duration": "2-3h after triage",
-      "resolution_commit": "dbb74c3d",
-      "resolution_note": "STALE per 2026-06-02 staleness audit ([docs/audits/2026-06-02-lean-discharge-queue-staleness-audit.md](../docs/audits/2026-06-02-lean-discharge-queue-staleness-audit.md)): StaircaseCornerHook.lean has 0 sorry tokens on origin/main. The queue entry's claim of '9 sorries' is stale. Flagged stale 2026-06-03 post-#1736 merge cleanup. Owner action: close as `resolved` (per AGENTS.md TodoItem lifecycle rules, only humans may close todos)."
-    }
-  },
-  {
-    "id": "lean-tractable-fluid-dynamics",
-    "summary": "Survey 7+ FluidDynamics/*.lean files (each 2 sorries) for tractable discharge",
-    "comment": "Multiple FluidDynamics files have exactly 2 sorries with 1 conj-marked, suggesting 1 tractable + 1 conjectural per file: ns_obstruction_computation, p1_nonlinear_uniqueness, kelvin_dispersion_derivation, quantum_peter_weyl, vorticity_lower_bound, core_levi_form, p4_universality, ns_obstruction_tower. STALE \u2014 see resolution_note.",
-    "status": "resolved",
-    "resolution_note": "0 sorries on main for all 7 FluidDynamics files per dbb74c3d audit; full audit in data.resolution_note",
-    "closedAt": "2026-06-09",
-    "closedBy": "owner-batch-close-2026-06-09",
-    "priority": "low",
-    "origin": "session-2026-05-31-queue-build",
-    "createdAt": "2026-05-31",
-    "data": {
-      "goal": "lean-discharge",
-      "candidate_files": [
-        "content/quantum-observable-universe/lean/QOU/FluidDynamics/ns_obstruction_computation.lean",
-        "content/quantum-observable-universe/lean/QOU/FluidDynamics/p1_nonlinear_uniqueness.lean",
-        "content/quantum-observable-universe/lean/QOU/FluidDynamics/kelvin_dispersion_derivation.lean",
-        "content/quantum-observable-universe/lean/QOU/FluidDynamics/quantum_peter_weyl.lean",
-        "content/quantum-observable-universe/lean/QOU/FluidDynamics/vorticity_lower_bound.lean",
-        "content/quantum-observable-universe/lean/QOU/FluidDynamics/core_levi_form.lean",
-        "content/quantum-observable-universe/lean/QOU/FluidDynamics/p4_universality.lean",
-        "content/quantum-observable-universe/lean/QOU/FluidDynamics/ns_obstruction_tower.lean"
-      ],
-      "expected_duration": "4-6h triage + discharge",
-      "resolution_commit": "dbb74c3d",
-      "resolution_note": "STALE per 2026-06-02 staleness audit ([docs/audits/2026-06-02-lean-discharge-queue-staleness-audit.md](../docs/audits/2026-06-02-lean-discharge-queue-staleness-audit.md)): all 7 FluidDynamics/*.lean files have 0 sorry tokens on origin/main. The queue entry's claim of '2 sorries each' is stale. Flagged stale 2026-06-03 post-#1736 merge cleanup. Owner action: close as `resolved` (per AGENTS.md TodoItem lifecycle rules, only humans may close todos)."
-    }
-  },
-  {
-    "id": "lean-g-action-on-substrate",
-    "summary": "Discharge 1 tractable sorry in QuantumObservableUniverses/GActionOnSubstrate.lean (3 sorries, 2 conjectural)",
-    "comment": "4 sorries per earlier survey; 2 marked conjectural per grep. The remaining 1-2 likely structural lemmas about G-action commutativity or substrate-fixing. RE-SCOPE TO REGISTRY \u2014 see resolution_note.",
-    "status": "wontfix",
-    "resolution_note": "Re-scoped to \u00a73b-cond registry (PR #1736 strengthened the class); full audit in data.resolution_note",
-    "closedAt": "2026-06-09",
-    "closedBy": "owner-batch-close-2026-06-09",
-    "priority": "low",
-    "origin": "session-2026-05-31-queue-build",
-    "createdAt": "2026-05-31",
-    "data": {
-      "goal": "lean-discharge",
-      "file": "content/quantum-observable-universe/lean/QOU/QuantumObservableUniverses/GActionOnSubstrate.lean",
-      "expected_duration": "1h",
-      "resolution_commit": "dbb74c3d",
-      "resolution_note": "RE-SCOPE per 2026-06-02 staleness audit ([docs/audits/2026-06-02-lean-discharge-queue-staleness-audit.md](../docs/audits/2026-06-02-lean-discharge-queue-staleness-audit.md)): GActionOnSubstrate.lean has 1 sorry total on origin/main, and it is the legitimate \u00a73b-cond conjectural class instance (the registry pattern) \u2014 NOT a discharge target. PR #1736 strengthened the class with extensional identity fields. The 'discharge target' framing is wrong; this entry should be moved to the `lean-section-3b-cond-classes-permanent` registry. Flagged 2026-06-03 post-#1736 merge cleanup. Owner action: close as `wontfix` (re-scoped to registry); per AGENTS.md TodoItem lifecycle rules, only humans may close todos."
-    }
-  },
-  {
-    "id": "lean-section-3b-cond-classes-permanent",
-    "summary": "Catalog all \u00a73b-cond class sorries (NOT discharge targets \u2014 permanent by design)",
-    "comment": "**COMPLETE per session 2026-06-03** \u2014 catalog landed via PR #1780 (`docs/audits/2026-06-03-lean-3b-cond-class-sorries-catalog.md`). Final corrected counts (after `\\bsorry\\b(?!-)` regex fix): 194 classes / 219 class-body sorries. Skill docs updated in PR #1785 with the \u00a73b-cond carve-out so future agents don't treat class-body sorries as missing-proof gaps. Awaiting owner resolution \u2192 'done' per AGENTS.md \u00a74a (agents cannot self-resolve).",
-    "status": "resolved",
-    "resolution_note": "Catalog landed via PR #1780; skill carve-out via PR #1785; this is a one-shot catalog item, not an ongoing target",
-    "closedAt": "2026-06-09",
-    "closedBy": "owner-batch-close-2026-06-09",
-    "priority": "high",
-    "origin": "session-2026-05-31-queue-build",
-    "createdAt": "2026-05-31",
-    "data": {
-      "goal": "lean-discharge-registry",
-      "permanent_sorry_pattern": "field of `class FooClass : Prop where bar := sorry  -- Ref: [manuscript]`",
-      "anti_pattern": "an agent attempting to discharge these is a AGENTS.md violation",
-      "examples": [
-        "QbetaC3StructuralFormClass.c3_is_jones_hopf",
-        "QbetaC4StructuralFormClass.c4_is_jones_kashiwara (added PR #1587)",
-        "PeriodicTableUniqueness class fields",
-        "Jones (1987) markov-trace axiomatisation"
-      ],
-      "expected_count": "~80-100 of the 1100+ sorries are these permanent \u00a73b-cond fields"
-    }
-  },
-  {
-    "id": "lean-discharge-triage-pass",
-    "summary": "Single triage pass: run lean_diagnostic_messages on all 598 sorry files; classify into TRACTABLE / PERMANENT / RESEARCH-GRADE",
-    "comment": "Single triage pass: run lean_diagnostic_messages on all sorry files; classify into TRACTABLE / PROBLEMATIC / RESEARCH-GRADE.\n\n**Partial progress 2026-06-03/04:**\n- Regex-corrected sorry counts landed in PR #1780/#1785:   241 files / 491 real sorries / 219 \u00a73b-cond / 272 non-class.   Old `\\bsorry\\b` regex over-counted by ~25% via `sorry-free`   docstring matches.\n- \u00a73b-cond classes catalogued (PR #1780); 219 of 491 sorries   carved out as permanent.\n- Per-file `lean_diagnostic_messages` triage of the remaining   272 non-class sorries IS the still-open work; requires a   built QOU project (Gate #1) + then ~30 min for the LSP pass.",
-    "status": "open",
-    "priority": "high",
-    "origin": "session-2026-05-31-queue-build",
-    "createdAt": "2026-05-31",
-    "data": {
-      "goal": "lean-discharge-meta",
-      "blocked_on": "lean LSP / lake toolchain available",
-      "expected_duration": "1h triage + this queue gets repopulated based on findings",
-      "tool": "mcp__lean-lsp__lean_diagnostic_messages per file"
-    }
-  },
-  {
-    "id": "infra-lean-cache-host-bypass",
-    "summary": "Add Mathlib-oleans cache-host bypass (parallel to setup-lean-toolchain.sh for elan)",
-    "comment": "**RESOLVED 2026-06-07** by PR #18XX \u2014 `scripts/lake-cache-fetch.sh` fetches the Tier-2 orphan-branch cache (lake-cache/qou-v4-24-0) and extracts ~363 MB chunked tarball into .lake/ in ~20 seconds. Wired into setup-lean-toolchain.sh so every fresh container auto-restores the cache on SessionStart. Combined with the from-source build fallback (PR #1785), this finally closes Gate #1 of the Lean closure path. Owner can mark resolved.\n\nMathlib oleans cache host (release.lean-lang.org/cache) IS still 403-blocked from the container, but it no longer matters \u2014 the orphan branch is git-fetchable and stores the same artifacts.",
-    "status": "resolved",
-    "resolution_note": "lake-cache-fetch.sh landed 2026-06-07; orphan-branch restore replaces blocked CDN; full detail in comment field above",
-    "closedAt": "2026-06-09",
-    "closedBy": "owner-batch-close-2026-06-09",
-    "priority": "low",
-    "origin": "session-2026-06-03-lean-axiom-triage",
-    "createdAt": "2026-06-03",
-    "data": {
-      "goal": "infra",
-      "evidence": "/tmp/lake-cache.log shows 7335 download(s) failed with 403",
-      "blocks": [
-        "lean-catalan-G-numerical-bound",
-        "all-other-lean-discharge-items"
-      ]
-    }
-  },
-  {
-    "id": "lean-compile-diagnostics-regen",
-    "summary": "Regenerate docs/audits/lean-compile-diagnostics.json (the source-of-truth for proof-lean-compiles sidecar \u2014 629 stale fails)",
-    "comment": "**Gate #2 of Lean closure path** (per PR #1780's proof-axis-629-fails-stale audit). The proof-lean-compiles QA criterion sources its evidence from docs/audits/lean-compile-diagnostics.json, which has been stale since 2026-05-27 (generated_at field). All 629 currently-open proof-axis fails reduce to this stale source.\n\nRegen path (per PR #1785's skill update):\n  1. lake build QOU (~1-3 hrs from source, no cache)\n  2. For each .lean file under content/quantum-observable-universe/,      call mcp__lean-lsp__lean_diagnostic_messages\n  3. Feed results as JSONL to      `bun run content/pipeline/lean-compile-audit.ts --ingest`\n  4. Sweep: bun run content/pipeline/qa-sweep.ts \\\n     content/quantum-observable-universe --only proof-lean-compiles\n\nAuto-clears the 629 stale sidecars + any real fails surface as fresh actionable items. Total estimated time after step 1: ~30 min.",
-    "status": "open",
-    "priority": "high",
-    "origin": "session-2026-06-04-closure-path-mapping",
-    "createdAt": "2026-06-04",
-    "data": {
-      "goal": "lean-discharge",
-      "depends_on": "lake-build-qou-completes (Gate #1)",
-      "downstream": "all per-block proof-lean-compiles sidecar fails refresh"
-    }
-  },
-  {
-    "id": "lean-phi-q-at-zero",
-    "summary": "Discharge phi_q_at_zero : \u2200 q : \u211d, phi_q q 0 = 1 (boundary case)",
-    "comment": "Identified as a TRACTABLE candidate in PR #1763 axiom triage (docs/audits/2026-06-03-lean-axiom-tractability-triage.md). Quantum dilogarithm at u=0; should follow by `unfold phi_q + simp` if the definition is clean. ~30-60 min in a warm Lean LSP. File: content/quantum-observable-universe/lean/QOU/BraidKnot/QuantumDilogarithm.lean:56. STALE \u2014 see resolution_note.",
-    "status": "resolved",
-    "resolution_note": "Already a theorem on main (QuantumDilogarithm.lean:67-70, proved 'unfold phi_q; ring'). Restructured via `phi_q_residual` axiom + `def phi_q q z := 1 + z * phi_q_residual q z` so the empty-product convention at z=0 is a *theorem*, not an axiom. The originating queue item assumed the axiom still existed.",
-    "closedAt": "2026-06-09",
-    "closedBy": "owner-batch-close-2026-06-09",
-    "priority": "medium",
-    "origin": "session-2026-06-04-closure-path-mapping",
-    "createdAt": "2026-06-04",
-    "data": {
-      "goal": "lean-discharge",
-      "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/QuantumDilogarithm.lean",
-      "line": 56,
-      "depends_on": "lake-build-qou-completes (Gate #1)"
-    }
-  },
-  {
-    "id": "lean-li2-q-at-zero",
-    "summary": "Discharge li2_q_at_zero : \u2200 q : \u211d, li2_q q 0 = 0 (boundary case, same shape as phi_q)",
-    "comment": "Identified as a TRACTABLE candidate in PR #1763 axiom triage. Same shape as phi_q_at_zero \u2014 boundary value of quantum dilog. ~30-60 min in a warm Lean LSP. File: content/quantum-observable-universe/lean/QOU/BraidKnot/QuantumDilogarithm.lean:77. STALE \u2014 see resolution_note.",
-    "status": "resolved",
-    "resolution_note": "Already a theorem on main (QuantumDilogarithm.lean:98-101, proved 'unfold li2_q; ring'). Same restructure as phi_q_at_zero: `axiom li2_q_residual` + `def li2_q q z := z * li2_q_residual q z` makes the empty-sum convention at z=0 a *theorem*. The originating queue item assumed the axiom still existed.",
-    "closedAt": "2026-06-09",
-    "closedBy": "owner-batch-close-2026-06-09",
-    "priority": "medium",
-    "origin": "session-2026-06-04-closure-path-mapping",
-    "createdAt": "2026-06-04",
-    "data": {
-      "goal": "lean-discharge",
-      "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/QuantumDilogarithm.lean",
-      "line": 77,
-      "depends_on": "lake-build-qou-completes (Gate #1)"
-    }
-  },
-  {
-    "id": "lean-ord-u-zero-trm-eq",
-    "summary": "Discharge ord_u_zero_trM_eq : ord_u_zero_trM Z N = 18*Z + 21*N + 1 (concrete arithmetic identity)",
-    "comment": "Identified as a TRACTABLE candidate in PR #1763 axiom triage. Small concrete identity; should be `decide` if ord_u_zero_trM is computable, otherwise `unfold + ring`. Fastest of the 4 tractable axiom discharges. ~15-30 min in a warm Lean LSP. File: content/quantum-observable-universe/lean/QOU/BraidKnot/CommutativeCrossingEnergy.lean:79. STALE — see resolution_note.",
-    "status": "resolved",
-    "resolution_note": "Already a theorem on main (CommutativeCrossingEnergy.lean:82, proved by `rfl`). The axiom was restructured via `def ord_u_zero_trM (Z N : ℕ) : ℕ := 18 * Z + 21 * N + 1` so the identity is true by definition. The originating queue item assumed the axiom still existed.",
-    "closedAt": "2026-06-09",
-    "closedBy": "owner-batch-close-2026-06-09",
-    "priority": "medium",
-    "origin": "session-2026-06-04-closure-path-mapping",
-    "createdAt": "2026-06-04",
-    "data": {
-      "goal": "lean-discharge",
-      "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/CommutativeCrossingEnergy.lean",
-      "line": 79,
-      "depends_on": "lake-build-qou-completes (Gate #1)"
-    }
+ {
+  "id": "lean-catalan-G-numerical-bound",
+  "summary": "Prove catalan_G_numerical_bounds : G > 0.915 ∧ G < 0.916 (currently axiom with [lewin1981] ref)",
+  "comment": "BorromeanVolumeCatalan.lean line ~98 has `axiom catalan_G_numerical_bounds : catalan_G > (0.915:ℝ) ∧ catalan_G < (0.916:ℝ)` (set during 2026-06-03 session a7f80972 batch). Proof strategy: alternating series Leibniz bound. For G = Σ (-1)^k/(2k+1)² with N terms, |G - S_N| ≤ 1/(2N+1)². Pick N so S_N ± 1/(2N+1)² ⊆ (0.915, 0.916). Mathlib lemma VERIFIED 2026-06-03 (PR #1763): `alternating_series_error_bound` in `Mathlib/Analysis/SpecificLimits/Normed.lean` has exactly the right signature (Antitone f → Summable f → |∑'(-1)^i·f i - ∑ range n (-1)^i·f i| ≤ f n). Container has working `lake` (post-#1755), so the previously-cited blockers (`no lake` + `lean_leansearch SSL-blocked`) are RESOLVED. Remaining blocker: `lake exe cache get` returns 403 on all 7335 Mathlib oleans downloads (Mathlib cache host shares the same network-policy block as release.lean-lang.org for elan). Building Mathlib from source would take ~1-4h on first run. See `infra-lean-cache-host-bypass` item for the parallel-to-#1755 infra fix needed.",
+  "status": "open",
+  "priority": "medium",
+  "origin": "session-2026-06-03-lobachevsky-catalan",
+  "createdAt": "2026-06-03",
+  "data": {
+   "goal": "lean-discharge",
+   "file": "content/quantum-observable-universe/lean/QOU/Archimedean/BorromeanVolumeCatalan.lean",
+   "proof_sketch": "1. Show series is alternating with antitone |terms| via `Antitone.cauchySeq_alternating_series_of_tendsto_zero`. 2. Use Leibniz error bound |G - S_N| ≤ a_{N+1}. 3. At N=22, compute S_22 as rational + norm_num. 4. linarith with 1/2209 envelope.",
+   "expected_duration": "1-2h (lake env needed for lemma verification)",
+   "references": [
+    "Lewin 1981 Polylogarithms §4.2",
+    "Mathlib.Analysis.SpecificLimits.Basic"
+   ],
+   "blocker": "needs Mathlib oleans cache; `lake exe cache get` returns 403 (PR #1763 documents the parallel-to-#1755 host bypass needed)"
   }
+ },
+ {
+  "id": "lean-q-schur-h3-y-lambda-extension",
+  "summary": "Extend QSchurYLambdaClosedForm Lean from H_2 to H_3 (5 partitions of n=3 missing)",
+  "comment": "QSchurYLambdaClosedForm.lean currently has qSchur_H2_top, qSchur_H2_bottom, qSchur_H2_normalization (discharged). H_3 needs the analogous theorems for partitions (3), (2,1), (1,1,1). Mechanical mirror of H_2 pattern; uses contentSum, qBracket, qFactorial unfoldings + decide + field_simp + ring. STALE — see resolution_note.",
+  "status": "resolved",
+  "resolution_note": "af3316bf landed qSchur_H3_top/mid/bottom on main; full audit in data.resolution_note",
+  "closedAt": "2026-06-09",
+  "closedBy": "owner-batch-close-2026-06-09",
+  "priority": "high",
+  "origin": "session-2026-05-31-queue-build",
+  "createdAt": "2026-05-31",
+  "data": {
+   "goal": "lean-discharge",
+   "file": "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/QSchurYLambdaClosedForm.lean",
+   "pattern_reference": "qSchur_H2_top (lines 145-160) — adapt for partitions [3], [2,1], [1,1,1]",
+   "proof_sketch": "for each λ: unfold ySchurClosedForm; have hc : contentSum λ = <C>; have hs : λ.sum = 3; rw [hc, hs]; show qFactorial 3 q = [3]_q!; field_simp + ring",
+   "expected_duration": "30min",
+   "resolution_commit": "af3316bf",
+   "resolution_note": "Already implemented in main: qSchur_H3_top (line 262), qSchur_H3_mid (line 273), qSchur_H3_bottom (line 284) — all proved via the H_2 pattern with helper lemmas q_add_inv_ne_zero and q_sq_add_one_add_inv_sq_ne_zero. Commit af3316bf ('lean(QSchurYLambdaClosedForm): refresh docstrings — H_2 + H_3 are sorry-free') landed before this 2026-05-31 todo was created. No clean H_3 'normalization' theorem (un-weighted partition sum is not 1 at H_3 without dim_q(λ)² weighting). Flagged stale 2026-06-03 post-#1736 merge cleanup. Owner action: close as resolved (per CLAUDE.md TodoItem lifecycle rules, only humans may close todos; agents may not set status to 'resolved' or remove entries)."
+  }
+ },
+ {
+  "id": "lean-bar-involution-extension",
+  "summary": "Bar-involution + Mullineux theorems beyond y_λ — extend to χ^λ, b(q), Hoefsmit form",
+  "comment": "Per commits e3a590e5, 8590f0e7, def3d27f, d07259bb on y_λ. The bar-involution q ↔ q⁻¹ on y_λ is proved; extend to other Hecke-algebra quantities: χ^λ(σ_i), Hoefsmit b(q), Markov trace bar-symmetry. STALE — see resolution_note.",
+  "status": "wontfix",
+  "resolution_note": "Candidate files do not exist on main; full audit in data.resolution_note",
+  "closedAt": "2026-06-09",
+  "closedBy": "owner-batch-close-2026-06-09",
+  "priority": "medium",
+  "origin": "session-2026-05-31-queue-build",
+  "createdAt": "2026-05-31",
+  "data": {
+   "goal": "lean-discharge",
+   "candidate_files": [
+    "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/YLambdaQSchur.lean",
+    "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/HoefsmitBQ.lean (if exists)",
+    "content/quantum-observable-universe/braids-and-knots/jones-markov-trace.lean"
+   ],
+   "expected_duration": "1h",
+   "resolution_commit": "dbb74c3d",
+   "resolution_note": "STALE per 2026-06-02 staleness audit ([docs/audits/2026-06-02-lean-discharge-queue-staleness-audit.md](../docs/audits/2026-06-02-lean-discharge-queue-staleness-audit.md)): no `*bar*involution*` or `*mullineux*` Lean files exist in the QOU package. The candidate_files list refers to files that do not exist. Flagged stale 2026-06-03 post-#1736 merge cleanup. Owner action: close as `wontfix` (referenced files do not exist; if the work is needed, file a fresh item against the actual locations). Per CLAUDE.md TodoItem lifecycle rules, only humans may close todos."
+  }
+ },
+ {
+  "id": "lean-mathlibext-sdp-rank-equality",
+  "summary": "Discharge 2 sorries in MathlibExt/SDPRankEquality.lean (R1 + R2 factoring)",
+  "comment": "Per file docstring: 'helium3_uniqueness_closed is an axiom (zero sorry); kernel-disjoint + affine-Slater inputs have proven sub-instances; chain is fully sorry-free'. STALE — see resolution_note.",
+  "status": "resolved",
+  "resolution_note": "0 sorries on main per dbb74c3d audit; full audit in data.resolution_note",
+  "closedAt": "2026-06-09",
+  "closedBy": "owner-batch-close-2026-06-09",
+  "priority": "medium",
+  "origin": "session-2026-05-31-queue-build",
+  "createdAt": "2026-05-31",
+  "data": {
+   "goal": "lean-discharge",
+   "file": "content/quantum-observable-universe/lean/QOU/MathlibExt/SDPRankEquality.lean",
+   "proof_sketch": "R1: rank-nullity from S * Φ = 0; PSD assumption gives kernel containment. R2: strict-complementarity ⟹ ker(S) ∩ ker(Φ) = {0} ⟹ rank equality via dimension counting.",
+   "expected_duration": "1-2h",
+   "references": [
+    "Alizadeh-Haeberly-Overton 1997 §3",
+    "Boyd-Vandenberghe §5.5.4"
+   ],
+   "resolution_commit": "dbb74c3d",
+   "resolution_note": "STALE per 2026-06-02 staleness audit ([docs/audits/2026-06-02-lean-discharge-queue-staleness-audit.md](../docs/audits/2026-06-02-lean-discharge-queue-staleness-audit.md)): SDPRankEquality.lean has 0 sorry tokens on origin/main; the file's own header says 'fully sorry-free'. The queue entry's claim of '2 sorries' is stale. Flagged stale 2026-06-03 post-#1736 merge cleanup. Owner action: close as `resolved` (per CLAUDE.md TodoItem lifecycle rules, only humans may close todos)."
+  }
+ },
+ {
+  "id": "lean-staircase-corner-hook",
+  "summary": "Discharge 6 of 9 non-conjectural sorries in StaircaseCornerHook.lean",
+  "comment": "9 sorries, 3 marked as conjectural witnesses. The other 6 are likely combinatorial-identity proofs (hook-length formula bits). STALE — see resolution_note.",
+  "status": "resolved",
+  "resolution_note": "0 sorries on main per dbb74c3d audit; full audit in data.resolution_note",
+  "closedAt": "2026-06-09",
+  "closedBy": "owner-batch-close-2026-06-09",
+  "priority": "medium",
+  "origin": "session-2026-05-31-queue-build",
+  "createdAt": "2026-05-31",
+  "data": {
+   "goal": "lean-discharge",
+   "file": "content/quantum-observable-universe/lean/QOU/StaircaseCornerHook.lean",
+   "triage_action_first": "lean_diagnostic_messages on each sorry to determine which are tractable",
+   "expected_duration": "2-3h after triage",
+   "resolution_commit": "dbb74c3d",
+   "resolution_note": "STALE per 2026-06-02 staleness audit ([docs/audits/2026-06-02-lean-discharge-queue-staleness-audit.md](../docs/audits/2026-06-02-lean-discharge-queue-staleness-audit.md)): StaircaseCornerHook.lean has 0 sorry tokens on origin/main. The queue entry's claim of '9 sorries' is stale. Flagged stale 2026-06-03 post-#1736 merge cleanup. Owner action: close as `resolved` (per CLAUDE.md TodoItem lifecycle rules, only humans may close todos)."
+  }
+ },
+ {
+  "id": "lean-tractable-fluid-dynamics",
+  "summary": "Survey 7+ FluidDynamics/*.lean files (each 2 sorries) for tractable discharge",
+  "comment": "Multiple FluidDynamics files have exactly 2 sorries with 1 conj-marked, suggesting 1 tractable + 1 conjectural per file: ns_obstruction_computation, p1_nonlinear_uniqueness, kelvin_dispersion_derivation, quantum_peter_weyl, vorticity_lower_bound, core_levi_form, p4_universality, ns_obstruction_tower. STALE — see resolution_note.",
+  "status": "resolved",
+  "resolution_note": "0 sorries on main for all 7 FluidDynamics files per dbb74c3d audit; full audit in data.resolution_note",
+  "closedAt": "2026-06-09",
+  "closedBy": "owner-batch-close-2026-06-09",
+  "priority": "low",
+  "origin": "session-2026-05-31-queue-build",
+  "createdAt": "2026-05-31",
+  "data": {
+   "goal": "lean-discharge",
+   "candidate_files": [
+    "content/quantum-observable-universe/lean/QOU/FluidDynamics/ns_obstruction_computation.lean",
+    "content/quantum-observable-universe/lean/QOU/FluidDynamics/p1_nonlinear_uniqueness.lean",
+    "content/quantum-observable-universe/lean/QOU/FluidDynamics/kelvin_dispersion_derivation.lean",
+    "content/quantum-observable-universe/lean/QOU/FluidDynamics/quantum_peter_weyl.lean",
+    "content/quantum-observable-universe/lean/QOU/FluidDynamics/vorticity_lower_bound.lean",
+    "content/quantum-observable-universe/lean/QOU/FluidDynamics/core_levi_form.lean",
+    "content/quantum-observable-universe/lean/QOU/FluidDynamics/p4_universality.lean",
+    "content/quantum-observable-universe/lean/QOU/FluidDynamics/ns_obstruction_tower.lean"
+   ],
+   "expected_duration": "4-6h triage + discharge",
+   "resolution_commit": "dbb74c3d",
+   "resolution_note": "STALE per 2026-06-02 staleness audit ([docs/audits/2026-06-02-lean-discharge-queue-staleness-audit.md](../docs/audits/2026-06-02-lean-discharge-queue-staleness-audit.md)): all 7 FluidDynamics/*.lean files have 0 sorry tokens on origin/main. The queue entry's claim of '2 sorries each' is stale. Flagged stale 2026-06-03 post-#1736 merge cleanup. Owner action: close as `resolved` (per CLAUDE.md TodoItem lifecycle rules, only humans may close todos)."
+  }
+ },
+ {
+  "id": "lean-g-action-on-substrate",
+  "summary": "Discharge 1 tractable sorry in QuantumObservableUniverses/GActionOnSubstrate.lean (3 sorries, 2 conjectural)",
+  "comment": "4 sorries per earlier survey; 2 marked conjectural per grep. The remaining 1-2 likely structural lemmas about G-action commutativity or substrate-fixing. RE-SCOPE TO REGISTRY — see resolution_note.",
+  "status": "wontfix",
+  "resolution_note": "Re-scoped to §3b-cond registry (PR #1736 strengthened the class); full audit in data.resolution_note",
+  "closedAt": "2026-06-09",
+  "closedBy": "owner-batch-close-2026-06-09",
+  "priority": "low",
+  "origin": "session-2026-05-31-queue-build",
+  "createdAt": "2026-05-31",
+  "data": {
+   "goal": "lean-discharge",
+   "file": "content/quantum-observable-universe/lean/QOU/QuantumObservableUniverses/GActionOnSubstrate.lean",
+   "expected_duration": "1h",
+   "resolution_commit": "dbb74c3d",
+   "resolution_note": "RE-SCOPE per 2026-06-02 staleness audit ([docs/audits/2026-06-02-lean-discharge-queue-staleness-audit.md](../docs/audits/2026-06-02-lean-discharge-queue-staleness-audit.md)): GActionOnSubstrate.lean has 1 sorry total on origin/main, and it is the legitimate §3b-cond conjectural class instance (the registry pattern) — NOT a discharge target. PR #1736 strengthened the class with extensional identity fields. The 'discharge target' framing is wrong; this entry should be moved to the `lean-section-3b-cond-classes-permanent` registry. Flagged 2026-06-03 post-#1736 merge cleanup. Owner action: close as `wontfix` (re-scoped to registry); per CLAUDE.md TodoItem lifecycle rules, only humans may close todos."
+  }
+ },
+ {
+  "id": "lean-section-3b-cond-classes-permanent",
+  "summary": "Catalog all §3b-cond class sorries (NOT discharge targets — permanent by design)",
+  "comment": "**COMPLETE per session 2026-06-03** — catalog landed via PR #1780 (`docs/audits/2026-06-03-lean-3b-cond-class-sorries-catalog.md`). Final corrected counts (after `\\bsorry\\b(?!-)` regex fix): 194 classes / 219 class-body sorries. Skill docs updated in PR #1785 with the §3b-cond carve-out so future agents don't treat class-body sorries as missing-proof gaps. Awaiting owner resolution → 'done' per CLAUDE.md §4a (agents cannot self-resolve).",
+  "status": "resolved",
+  "resolution_note": "Catalog landed via PR #1780; skill carve-out via PR #1785; this is a one-shot catalog item, not an ongoing target",
+  "closedAt": "2026-06-09",
+  "closedBy": "owner-batch-close-2026-06-09",
+  "priority": "high",
+  "origin": "session-2026-05-31-queue-build",
+  "createdAt": "2026-05-31",
+  "data": {
+   "goal": "lean-discharge-registry",
+   "permanent_sorry_pattern": "field of `class FooClass : Prop where bar := sorry  -- Ref: [manuscript]`",
+   "anti_pattern": "an agent attempting to discharge these is a CLAUDE.md violation",
+   "examples": [
+    "QbetaC3StructuralFormClass.c3_is_jones_hopf",
+    "QbetaC4StructuralFormClass.c4_is_jones_kashiwara (added PR #1587)",
+    "PeriodicTableUniqueness class fields",
+    "Jones (1987) markov-trace axiomatisation"
+   ],
+   "expected_count": "~80-100 of the 1100+ sorries are these permanent §3b-cond fields"
+  }
+ },
+ {
+  "id": "lean-discharge-triage-pass",
+  "summary": "Single triage pass: run lean_diagnostic_messages on all 598 sorry files; classify into TRACTABLE / PERMANENT / RESEARCH-GRADE",
+  "comment": "Single triage pass: run lean_diagnostic_messages on all sorry files; classify into TRACTABLE / PROBLEMATIC / RESEARCH-GRADE.\n\n**Partial progress 2026-06-03/04:**\n- Regex-corrected sorry counts landed in PR #1780/#1785:   241 files / 491 real sorries / 219 §3b-cond / 272 non-class.   Old `\\bsorry\\b` regex over-counted by ~25% via `sorry-free`   docstring matches.\n- §3b-cond classes catalogued (PR #1780); 219 of 491 sorries   carved out as permanent.\n- Per-file `lean_diagnostic_messages` triage of the remaining   272 non-class sorries IS the still-open work; requires a   built QOU project (Gate #1) + then ~30 min for the LSP pass.",
+  "status": "open",
+  "priority": "high",
+  "origin": "session-2026-05-31-queue-build",
+  "createdAt": "2026-05-31",
+  "data": {
+   "goal": "lean-discharge-meta",
+   "blocked_on": "lean LSP / lake toolchain available",
+   "expected_duration": "1h triage + this queue gets repopulated based on findings",
+   "tool": "mcp__lean-lsp__lean_diagnostic_messages per file"
+  }
+ },
+ {
+  "id": "infra-lean-cache-host-bypass",
+  "summary": "Add Mathlib-oleans cache-host bypass (parallel to setup-lean-toolchain.sh for elan)",
+  "comment": "**RESOLVED 2026-06-07** by PR #18XX — `scripts/lake-cache-fetch.sh` fetches the Tier-2 orphan-branch cache (lake-cache/qou-v4-24-0) and extracts ~363 MB chunked tarball into .lake/ in ~20 seconds. Wired into setup-lean-toolchain.sh so every fresh container auto-restores the cache on SessionStart. Combined with the from-source build fallback (PR #1785), this finally closes Gate #1 of the Lean closure path. Owner can mark resolved.\n\nMathlib oleans cache host (release.lean-lang.org/cache) IS still 403-blocked from the container, but it no longer matters — the orphan branch is git-fetchable and stores the same artifacts.",
+  "status": "resolved",
+  "resolution_note": "lake-cache-fetch.sh landed 2026-06-07; orphan-branch restore replaces blocked CDN; full detail in comment field above",
+  "closedAt": "2026-06-09",
+  "closedBy": "owner-batch-close-2026-06-09",
+  "priority": "low",
+  "origin": "session-2026-06-03-lean-axiom-triage",
+  "createdAt": "2026-06-03",
+  "data": {
+   "goal": "infra",
+   "evidence": "/tmp/lake-cache.log shows 7335 download(s) failed with 403",
+   "blocks": [
+    "lean-catalan-G-numerical-bound",
+    "all-other-lean-discharge-items"
+   ]
+  }
+ },
+ {
+  "id": "lean-compile-diagnostics-regen",
+  "summary": "Regenerate docs/audits/lean-compile-diagnostics.json (the source-of-truth for proof-lean-compiles sidecar — 629 stale fails)",
+  "comment": "**Gate #2 of Lean closure path** (per PR #1780's proof-axis-629-fails-stale audit). The proof-lean-compiles QA criterion sources its evidence from docs/audits/lean-compile-diagnostics.json, which has been stale since 2026-05-27 (generated_at field). All 629 currently-open proof-axis fails reduce to this stale source.\n\nRegen path (per PR #1785's skill update):\n  1. lake build QOU (~1-3 hrs from source, no cache)\n  2. For each .lean file under content/quantum-observable-universe/,      call mcp__lean-lsp__lean_diagnostic_messages\n  3. Feed results as JSONL to      `bun run content/pipeline/lean-compile-audit.ts --ingest`\n  4. Sweep: bun run content/pipeline/qa-sweep.ts \\\n     content/quantum-observable-universe --only proof-lean-compiles\n\nAuto-clears the 629 stale sidecars + any real fails surface as fresh actionable items. Total estimated time after step 1: ~30 min.",
+  "status": "open",
+  "priority": "high",
+  "origin": "session-2026-06-04-closure-path-mapping",
+  "createdAt": "2026-06-04",
+  "data": {
+   "goal": "lean-discharge",
+   "depends_on": "lake-build-qou-completes (Gate #1)",
+   "downstream": "all per-block proof-lean-compiles sidecar fails refresh"
+  }
+ },
+ {
+  "id": "lean-phi-q-at-zero",
+  "summary": "Discharge phi_q_at_zero : ∀ q : ℝ, phi_q q 0 = 1 (boundary case)",
+  "comment": "Identified as a TRACTABLE candidate in PR #1763 axiom triage (docs/audits/2026-06-03-lean-axiom-tractability-triage.md). Quantum dilogarithm at u=0; should follow by `unfold phi_q + simp` if the definition is clean. ~30-60 min in a warm Lean LSP. File: content/quantum-observable-universe/lean/QOU/BraidKnot/QuantumDilogarithm.lean:56. STALE — see resolution_note.",
+  "status": "resolved",
+  "resolution_note": "Already a theorem on main (QuantumDilogarithm.lean:67-70, proved 'unfold phi_q; ring'). Restructured via `phi_q_residual` axiom + `def phi_q q z := 1 + z * phi_q_residual q z` so the empty-product convention at z=0 is a *theorem*, not an axiom. The originating queue item assumed the axiom still existed.",
+  "closedAt": "2026-06-09",
+  "closedBy": "owner-batch-close-2026-06-09",
+  "priority": "medium",
+  "origin": "session-2026-06-04-closure-path-mapping",
+  "createdAt": "2026-06-04",
+  "data": {
+   "goal": "lean-discharge",
+   "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/QuantumDilogarithm.lean",
+   "line": 56,
+   "depends_on": "lake-build-qou-completes (Gate #1)"
+  }
+ },
+ {
+  "id": "lean-li2-q-at-zero",
+  "summary": "Discharge li2_q_at_zero : ∀ q : ℝ, li2_q q 0 = 0 (boundary case, same shape as phi_q)",
+  "comment": "Identified as a TRACTABLE candidate in PR #1763 axiom triage. Same shape as phi_q_at_zero — boundary value of quantum dilog. ~30-60 min in a warm Lean LSP. File: content/quantum-observable-universe/lean/QOU/BraidKnot/QuantumDilogarithm.lean:77. STALE — see resolution_note.",
+  "status": "resolved",
+  "resolution_note": "Already a theorem on main (QuantumDilogarithm.lean:98-101, proved 'unfold li2_q; ring'). Same restructure as phi_q_at_zero: `axiom li2_q_residual` + `def li2_q q z := z * li2_q_residual q z` makes the empty-sum convention at z=0 a *theorem*. The originating queue item assumed the axiom still existed.",
+  "closedAt": "2026-06-09",
+  "closedBy": "owner-batch-close-2026-06-09",
+  "priority": "medium",
+  "origin": "session-2026-06-04-closure-path-mapping",
+  "createdAt": "2026-06-04",
+  "data": {
+   "goal": "lean-discharge",
+   "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/QuantumDilogarithm.lean",
+   "line": 77,
+   "depends_on": "lake-build-qou-completes (Gate #1)"
+  }
+ },
+ {
+  "id": "lean-ord-u-zero-trm-eq",
+  "summary": "Discharge ord_u_zero_trM_eq : ord_u_zero_trM Z N = 18*Z + 21*N + 1 (concrete arithmetic identity)",
+  "comment": "Identified as a TRACTABLE candidate in PR #1763 axiom triage. Small concrete identity; should be `decide` if ord_u_zero_trM is computable, otherwise `unfold + ring`. Fastest of the 4 tractable axiom discharges. ~15-30 min in a warm Lean LSP. File: content/quantum-observable-universe/lean/QOU/BraidKnot/CommutativeCrossingEnergy.lean:79. STALE — see resolution_note.",
+  "status": "resolved",
+  "resolution_note": "Already a theorem on main (CommutativeCrossingEnergy.lean:82, proved by `rfl`). The axiom was restructured via `def ord_u_zero_trM (Z N : ℕ) : ℕ := 18 * Z + 21 * N + 1` so the identity is true by definition. The originating queue item assumed the axiom still existed.",
+  "closedAt": "2026-06-09",
+  "closedBy": "owner-batch-close-2026-06-09",
+  "priority": "medium",
+  "origin": "session-2026-06-04-closure-path-mapping",
+  "createdAt": "2026-06-04",
+  "data": {
+   "goal": "lean-discharge",
+   "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/CommutativeCrossingEnergy.lean",
+   "line": 79,
+   "depends_on": "lake-build-qou-completes (Gate #1)"
+  }
+ },
+ {
+  "id": "lean-drain-TwoFiltrationBridgeGeneral",
+  "summary": "[T1] AlgebraicSubstrate/TwoFiltrationBridgeGeneral.lean: λ used as identifier",
+  "comment": "Lean build-drain bean (2026-06-14, one-per-lean). File: content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/TwoFiltrationBridgeGeneral.lean. Root: λ used as identifier. Fix: λ→lam. Status: drained-verified. Verify: LEAN_PATH=$(find . -type d -path '*/.lake/build/lib/lean'|tr '\\n' ':') lean <file>. Goal: move block to proved. See docs/audits/2026-06-14-lean-build-drain-beans.md.",
+  "status": "drained-verified"
+ },
+ {
+  "id": "lean-drain-TwoFiltrationBridgeSmallCases",
+  "summary": "[T1] AlgebraicSubstrate/TwoFiltrationBridgeSmallCases.lean: λ used as identifier",
+  "comment": "Lean build-drain bean (2026-06-14, one-per-lean). File: content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/TwoFiltrationBridgeSmallCases.lean. Root: λ used as identifier. Fix: λ→lam. Status: drained-verified. Verify: LEAN_PATH=$(find . -type d -path '*/.lake/build/lib/lean'|tr '\\n' ':') lean <file>. Goal: move block to proved. See docs/audits/2026-06-14-lean-build-drain-beans.md.",
+  "status": "drained-verified"
+ },
+ {
+  "id": "lean-drain-KnotFactorSpectralDerivation",
+  "summary": "[T1] BraidKnot/KnotFactorSpectralDerivation.lean: Unknown identifier ℝ + λ-ident",
+  "comment": "Lean build-drain bean (2026-06-14, one-per-lean). File: content/quantum-observable-universe/lean/QOU/BraidKnot/KnotFactorSpectralDerivation.lean. Root: Unknown identifier ℝ + λ-ident. Fix: import Real.Basic + λ→lam. Status: drained-verified. Verify: LEAN_PATH=$(find . -type d -path '*/.lake/build/lib/lean'|tr '\\n' ':') lean <file>. Goal: move block to proved. See docs/audits/2026-06-14-lean-build-drain-beans.md.",
+  "status": "drained-verified"
+ },
+ {
+  "id": "lean-drain-GramSeminormalBlock",
+  "summary": "[T1] BraidKnot/GramSeminormalBlock.lean: needs noncomputable (Real div)",
+  "comment": "Lean build-drain bean (2026-06-14, one-per-lean). File: content/quantum-observable-universe/lean/QOU/BraidKnot/GramSeminormalBlock.lean. Root: needs noncomputable (Real div). Fix: noncomputable instance. Status: drained-verified. Verify: LEAN_PATH=$(find . -type d -path '*/.lake/build/lib/lean'|tr '\\n' ':') lean <file>. Goal: move block to proved. See docs/audits/2026-06-14-lean-build-drain-beans.md.",
+  "status": "drained-verified"
+ },
+ {
+  "id": "lean-drain-PlancherelWeightBoundedness",
+  "summary": "[T1] BraidKnot/PlancherelWeightBoundedness.lean: λ-binder + LE-stuck@46 + abs-parse@57",
+  "comment": "Lean build-drain bean (2026-06-14, one-per-lean). File: content/quantum-observable-universe/lean/QOU/BraidKnot/PlancherelWeightBoundedness.lean. Root: λ-binder + LE-stuck@46 + abs-parse@57. Fix: λ→lam done; order/abs import + proof repair remain. Status: partial. Verify: LEAN_PATH=$(find . -type d -path '*/.lake/build/lib/lean'|tr '\\n' ':') lean <file>. Goal: move block to proved. See docs/audits/2026-06-14-lean-build-drain-beans.md.",
+  "status": "partial"
+ },
+ {
+  "id": "lean-drain-TraceLocalityMeetsGsNonLocality",
+  "summary": "[T1] Observations/TraceLocalityMeetsGsNonLocality.lean: [LinearOrderedField R] not a class (Mathlib refactor)",
+  "comment": "Lean build-drain bean (2026-06-14, one-per-lean). File: content/quantum-observable-universe/lean/QOU/Observations/TraceLocalityMeetsGsNonLocality.lean. Root: [LinearOrderedField R] not a class (Mathlib refactor). Fix: [Field][LinearOrder][IsStrictOrderedRing] — confirm spelling. Status: open. Verify: LEAN_PATH=$(find . -type d -path '*/.lake/build/lib/lean'|tr '\\n' ':') lean <file>. Goal: move block to proved. See docs/audits/2026-06-14-lean-build-drain-beans.md.",
+  "status": "open"
+ },
+ {
+  "id": "lean-drain-KComplex",
+  "summary": "[T2] AppendixSurreals/KComplex.lean: No goals to be solved @103",
+  "comment": "Lean build-drain bean (2026-06-14, one-per-lean). File: content/quantum-observable-universe/lean/QOU/AppendixSurreals/KComplex.lean. Root: No goals to be solved @103. Fix: remove extra tactic. Status: open. Verify: LEAN_PATH=$(find . -type d -path '*/.lake/build/lib/lean'|tr '\\n' ':') lean <file>. Goal: move block to proved. See docs/audits/2026-06-14-lean-build-drain-beans.md.",
+  "status": "open"
+ },
+ {
+  "id": "lean-drain-QIntegerMassFormula",
+  "summary": "[T2] Interactions/QIntegerMassFormula.lean: No goals @89 + sorry @172",
+  "comment": "Lean build-drain bean (2026-06-14, one-per-lean). File: content/quantum-observable-universe/lean/QOU/Interactions/QIntegerMassFormula.lean. Root: No goals @89 + sorry @172. Fix: remove extra tactic; discharge sorry. Status: open. Verify: LEAN_PATH=$(find . -type d -path '*/.lake/build/lib/lean'|tr '\\n' ':') lean <file>. Goal: move block to proved. See docs/audits/2026-06-14-lean-build-drain-beans.md.",
+  "status": "open"
+ },
+ {
+  "id": "lean-drain-FlavorMassSplittingBound",
+  "summary": "[T2] FlavorDressing/FlavorMassSplittingBound.lean: No goals @78",
+  "comment": "Lean build-drain bean (2026-06-14, one-per-lean). File: content/quantum-observable-universe/lean/QOU/FlavorDressing/FlavorMassSplittingBound.lean. Root: No goals @78. Fix: remove extra tactic. Status: open. Verify: LEAN_PATH=$(find . -type d -path '*/.lake/build/lib/lean'|tr '\\n' ':') lean <file>. Goal: move block to proved. See docs/audits/2026-06-14-lean-build-drain-beans.md.",
+  "status": "open"
+ },
+ {
+  "id": "lean-drain-HeckeLogDecomposition",
+  "summary": "[T2] Information/HeckeLogDecomposition.lean: Unknown constant Real.log_one_div",
+  "comment": "Lean build-drain bean (2026-06-14, one-per-lean). File: content/quantum-observable-universe/lean/QOU/Information/HeckeLogDecomposition.lean. Root: Unknown constant Real.log_one_div. Fix: find current Mathlib lemma name. Status: open. Verify: LEAN_PATH=$(find . -type d -path '*/.lake/build/lib/lean'|tr '\\n' ':') lean <file>. Goal: move block to proved. See docs/audits/2026-06-14-lean-build-drain-beans.md.",
+  "status": "open"
+ },
+ {
+  "id": "lean-drain-BorromeanQuark",
+  "summary": "[T2] Archimedean/BorromeanQuark.lean: Unknown constant Finset.univ.sum",
+  "comment": "Lean build-drain bean (2026-06-14, one-per-lean). File: content/quantum-observable-universe/lean/QOU/Archimedean/BorromeanQuark.lean. Root: Unknown constant Finset.univ.sum. Fix: use ∑ / Finset.sum Finset.univ. Status: open. Verify: LEAN_PATH=$(find . -type d -path '*/.lake/build/lib/lean'|tr '\\n' ':') lean <file>. Goal: move block to proved. See docs/audits/2026-06-14-lean-build-drain-beans.md.",
+  "status": "open"
+ },
+ {
+  "id": "lean-drain-EmCouplingBringZeroMode",
+  "summary": "[T2] Archimedean/EmCouplingBringZeroMode.lean: unexpected '/--' expected lemma @103 + sorry @193",
+  "comment": "Lean build-drain bean (2026-06-14, one-per-lean). File: content/quantum-observable-universe/lean/QOU/Archimedean/EmCouplingBringZeroMode.lean. Root: unexpected '/--' expected lemma @103 + sorry @193. Fix: fix malformed lemma; discharge sorry. Status: open. Verify: LEAN_PATH=$(find . -type d -path '*/.lake/build/lib/lean'|tr '\\n' ':') lean <file>. Goal: move block to proved. See docs/audits/2026-06-14-lean-build-drain-beans.md.",
+  "status": "open"
+ },
+ {
+  "id": "lean-drain-CategoricalDqSquared",
+  "summary": "[T2] CategoricalDqSquared.lean: unexpected 'section' expected lemma @43",
+  "comment": "Lean build-drain bean (2026-06-14, one-per-lean). File: content/quantum-observable-universe/lean/QOU/CategoricalDqSquared.lean. Root: unexpected 'section' expected lemma @43. Fix: complete the lemma. Status: open. Verify: LEAN_PATH=$(find . -type d -path '*/.lake/build/lib/lean'|tr '\\n' ':') lean <file>. Goal: move block to proved. See docs/audits/2026-06-14-lean-build-drain-beans.md.",
+  "status": "open"
+ },
+ {
+  "id": "lean-drain-CosimplicialCrossedGroupoid",
+  "summary": "[T2] LiftingDescent/CosimplicialCrossedGroupoid.lean: unexpected 'section' expected lemma @33",
+  "comment": "Lean build-drain bean (2026-06-14, one-per-lean). File: content/quantum-observable-universe/lean/QOU/LiftingDescent/CosimplicialCrossedGroupoid.lean. Root: unexpected 'section' expected lemma @33. Fix: complete the lemma. Status: open. Verify: LEAN_PATH=$(find . -type d -path '*/.lake/build/lib/lean'|tr '\\n' ':') lean <file>. Goal: move block to proved. See docs/audits/2026-06-14-lean-build-drain-beans.md.",
+  "status": "open"
+ },
+ {
+  "id": "lean-drain-su2_emergence_volume_determinant",
+  "summary": "[T2] su2_emergence_volume_determinant.lean: Unknown identifier SU2EmergenceContext",
+  "comment": "Lean build-drain bean (2026-06-14, one-per-lean). File: content/quantum-observable-universe/lean/QOU/su2_emergence_volume_determinant.lean. Root: Unknown identifier SU2EmergenceContext. Fix: add missing def/import. Status: open. Verify: LEAN_PATH=$(find . -type d -path '*/.lake/build/lib/lean'|tr '\\n' ':') lean <file>. Goal: move block to proved. See docs/audits/2026-06-14-lean-build-drain-beans.md.",
+  "status": "open"
+ },
+ {
+  "id": "lean-drain-WitnessR5Full",
+  "summary": "[T2] BraidKnot/WitnessR5Full.lean: Prop projection min_block_eig must be a proof @67",
+  "comment": "Lean build-drain bean (2026-06-14, one-per-lean). File: content/quantum-observable-universe/lean/QOU/BraidKnot/WitnessR5Full.lean. Root: Prop projection min_block_eig must be a proof @67. Fix: fix struct field type. Status: open. Verify: LEAN_PATH=$(find . -type d -path '*/.lake/build/lib/lean'|tr '\\n' ':') lean <file>. Goal: move block to proved. See docs/audits/2026-06-14-lean-build-drain-beans.md.",
+  "status": "open"
+ },
+ {
+  "id": "lean-drain-HeckeGenPolyReduction",
+  "summary": "[T2] Braiding/HeckeGenPolyReduction.lean: unknown tactic @86",
+  "comment": "Lean build-drain bean (2026-06-14, one-per-lean). File: content/quantum-observable-universe/lean/QOU/Braiding/HeckeGenPolyReduction.lean. Root: unknown tactic @86. Fix: fix tactic. Status: open. Verify: LEAN_PATH=$(find . -type d -path '*/.lake/build/lib/lean'|tr '\\n' ':') lean <file>. Goal: move block to proved. See docs/audits/2026-06-14-lean-build-drain-beans.md.",
+  "status": "open"
+ },
+ {
+  "id": "lean-drain-MassEndomorphismConjecture",
+  "summary": "[T2] MassEndomorphism/MassEndomorphismConjecture.lean: unknown tactic @75,93",
+  "comment": "Lean build-drain bean (2026-06-14, one-per-lean). File: content/quantum-observable-universe/lean/QOU/MassEndomorphism/MassEndomorphismConjecture.lean. Root: unknown tactic @75,93. Fix: fix tactic. Status: open. Verify: LEAN_PATH=$(find . -type d -path '*/.lake/build/lib/lean'|tr '\\n' ':') lean <file>. Goal: move block to proved. See docs/audits/2026-06-14-lean-build-drain-beans.md.",
+  "status": "open"
+ },
+ {
+  "id": "lean-drain-PhiQJSJ",
+  "summary": "[T2] PhiQJSJ.lean: unknown tactic @44",
+  "comment": "Lean build-drain bean (2026-06-14, one-per-lean). File: content/quantum-observable-universe/lean/QOU/PhiQJSJ.lean. Root: unknown tactic @44. Fix: fix tactic. Status: open. Verify: LEAN_PATH=$(find . -type d -path '*/.lake/build/lib/lean'|tr '\\n' ':') lean <file>. Goal: move block to proved. See docs/audits/2026-06-14-lean-build-drain-beans.md.",
+  "status": "open"
+ },
+ {
+  "id": "lean-drain-RpowAlgebra",
+  "summary": "[T2] MathlibExt/RpowAlgebra.lean: unsolved goals @51",
+  "comment": "Lean build-drain bean (2026-06-14, one-per-lean). File: content/quantum-observable-universe/lean/QOU/MathlibExt/RpowAlgebra.lean. Root: unsolved goals @51. Fix: complete proof. Status: open. Verify: LEAN_PATH=$(find . -type d -path '*/.lake/build/lib/lean'|tr '\\n' ':') lean <file>. Goal: move block to proved. See docs/audits/2026-06-14-lean-build-drain-beans.md.",
+  "status": "open"
+ },
+ {
+  "id": "lean-drain-PalindromicityOrbitalType",
+  "summary": "[T2] Molecular/PalindromicityOrbitalType.lean: Type mismatch @42",
+  "comment": "Lean build-drain bean (2026-06-14, one-per-lean). File: content/quantum-observable-universe/lean/QOU/Molecular/PalindromicityOrbitalType.lean. Root: Type mismatch @42. Fix: fix types. Status: open. Verify: LEAN_PATH=$(find . -type d -path '*/.lake/build/lib/lean'|tr '\\n' ':') lean <file>. Goal: move block to proved. See docs/audits/2026-06-14-lean-build-drain-beans.md.",
+  "status": "open"
+ },
+ {
+  "id": "lean-drain-ShellClosureNfTermCount",
+  "summary": "[T2] Molecular/ShellClosureNfTermCount.lean: typeclass instance stuck @92",
+  "comment": "Lean build-drain bean (2026-06-14, one-per-lean). File: content/quantum-observable-universe/lean/QOU/Molecular/ShellClosureNfTermCount.lean. Root: typeclass instance stuck @92. Fix: supply instance. Status: open. Verify: LEAN_PATH=$(find . -type d -path '*/.lake/build/lib/lean'|tr '\\n' ':') lean <file>. Goal: move block to proved. See docs/audits/2026-06-14-lean-build-drain-beans.md.",
+  "status": "open"
+ },
+ {
+  "id": "lean-drain-AtomicMass",
+  "summary": "[T3] AtomicMass.lean: undefined codata_minus_ame_eq_Z_offset cascades ×101 @118",
+  "comment": "Lean build-drain bean (2026-06-14, one-per-lean). File: content/quantum-observable-universe/lean/QOU/AtomicMass.lean. Root: undefined codata_minus_ame_eq_Z_offset cascades ×101 @118. Fix: define lemma or revert rw. Status: open. Verify: LEAN_PATH=$(find . -type d -path '*/.lake/build/lib/lean'|tr '\\n' ':') lean <file>. Goal: move block to proved. See docs/audits/2026-06-14-lean-build-drain-beans.md.",
+  "status": "open"
+ },
+ {
+  "id": "lean-drain-PolynomialEval",
+  "summary": "[T3] AppendixSurreals/PolynomialEval.lean: Invalid field Exists.pow ×38 + sorry @357,453",
+  "comment": "Lean build-drain bean (2026-06-14, one-per-lean). File: content/quantum-observable-universe/lean/QOU/AppendixSurreals/PolynomialEval.lean. Root: Invalid field Exists.pow ×38 + sorry @357,453. Fix: fix .pow usage; discharge sorries. Status: open. Verify: LEAN_PATH=$(find . -type d -path '*/.lake/build/lib/lean'|tr '\\n' ':') lean <file>. Goal: move block to proved. See docs/audits/2026-06-14-lean-build-drain-beans.md.",
+  "status": "open"
+ },
+ {
+  "id": "lean-drain-HeckeH3",
+  "summary": "[T3] Archimedean/HeckeH3.lean: simp nested failure @89 ×11",
+  "comment": "Lean build-drain bean (2026-06-14, one-per-lean). File: content/quantum-observable-universe/lean/QOU/Archimedean/HeckeH3.lean. Root: simp nested failure @89 ×11. Fix: repair simp call. Status: open. Verify: LEAN_PATH=$(find . -type d -path '*/.lake/build/lib/lean'|tr '\\n' ':') lean <file>. Goal: move block to proved. See docs/audits/2026-06-14-lean-build-drain-beans.md.",
+  "status": "open"
+ },
+ {
+  "id": "lean-drain-NucleusEmptySDPUniqueness",
+  "summary": "[T3] BraidKnot/NucleusEmptySDPUniqueness.lean: failed to synthesize @105 ×9",
+  "comment": "Lean build-drain bean (2026-06-14, one-per-lean). File: content/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean. Root: failed to synthesize @105 ×9. Fix: supply instances. Status: open. Verify: LEAN_PATH=$(find . -type d -path '*/.lake/build/lib/lean'|tr '\\n' ':') lean <file>. Goal: move block to proved. See docs/audits/2026-06-14-lean-build-drain-beans.md.",
+  "status": "open"
+ },
+ {
+  "id": "lean-drain-FeynmanPathIntegrals",
+  "summary": "[T3] FeynmanPathIntegrals.lean: Application type mismatch @300",
+  "comment": "Lean build-drain bean (2026-06-14, one-per-lean). File: content/quantum-observable-universe/lean/QOU/FeynmanPathIntegrals.lean. Root: Application type mismatch @300. Fix: fix application. Status: open. Verify: LEAN_PATH=$(find . -type d -path '*/.lake/build/lib/lean'|tr '\\n' ':') lean <file>. Goal: move block to proved. See docs/audits/2026-06-14-lean-build-drain-beans.md.",
+  "status": "open"
+ },
+ {
+  "id": "lean-drain-QGeometricLanglands",
+  "summary": "[T3] QGeometricLanglands.lean: Application type mismatch @271 ×7",
+  "comment": "Lean build-drain bean (2026-06-14, one-per-lean). File: content/quantum-observable-universe/lean/QOU/QGeometricLanglands.lean. Root: Application type mismatch @271 ×7. Fix: fix application. Status: open. Verify: LEAN_PATH=$(find . -type d -path '*/.lake/build/lib/lean'|tr '\\n' ':') lean <file>. Goal: move block to proved. See docs/audits/2026-06-14-lean-build-drain-beans.md.",
+  "status": "open"
+ },
+ {
+  "id": "lean-drain-GSReductionOrder",
+  "summary": "[sorry] BraidKnot/GSReductionOrder.lean: sorry @123 (file compiles)",
+  "comment": "Lean build-drain bean (2026-06-14, one-per-lean). File: content/quantum-observable-universe/lean/QOU/BraidKnot/GSReductionOrder.lean. Root: sorry @123 (file compiles). Fix: discharge sorry. Status: open. Verify: LEAN_PATH=$(find . -type d -path '*/.lake/build/lib/lean'|tr '\\n' ':') lean <file>. Goal: move block to proved. See docs/audits/2026-06-14-lean-build-drain-beans.md.",
+  "status": "open"
+ },
+ {
+  "id": "lean-drain-HyperbolicVolumeIndependence",
+  "summary": "[sorry] Archimedean/HyperbolicVolumeIndependence.lean: sorry @39 (file compiles)",
+  "comment": "Lean build-drain bean (2026-06-14, one-per-lean). File: content/quantum-observable-universe/lean/QOU/Archimedean/HyperbolicVolumeIndependence.lean. Root: sorry @39 (file compiles). Fix: discharge sorry. Status: open. Verify: LEAN_PATH=$(find . -type d -path '*/.lake/build/lib/lean'|tr '\\n' ':') lean <file>. Goal: move block to proved. See docs/audits/2026-06-14-lean-build-drain-beans.md.",
+  "status": "open"
+ }
 ]
