@@ -197,9 +197,9 @@ Mirrors the existing `proof-statement-integrity` model (Agent-checked,
 |---|---|---|
 | `proof-no-self-assuming-projection` | active | #1 circular projection |
 | `proof-no-trivial-true` | active | #2 tautological conclusion |
-| `proof-no-false-premise` | roadmap | #3 vacuously true |
-| `proof-no-unused-hypotheses` | roadmap | #4 weakened statement |
-| `proof-no-decide-masking` | roadmap | #5 evaluator masking |
+| `proof-no-false-premise` | active | #3 vacuously true |
+| `proof-no-unused-hypotheses` | active | #4 weakened statement |
+| `proof-no-decide-masking` | active | #5 evaluator masking |
 
 **Minimal wiring (per Agent-A recon):**
 
