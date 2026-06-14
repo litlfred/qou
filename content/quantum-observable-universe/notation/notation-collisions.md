@@ -56,6 +56,29 @@ paper to keep them disambiguated:
   letter $H$: $\mathcal{H}_q$ (shuffle Hopf algebra), $\hat{H}_q$
   (Hamiltonian operator), $H_n(q)$ or $H_q(\lambda)$ (Hecke /
   hook-length, always with argument).
+- **$\mathfrak{S}$** = categorical action (fraktur, Hamilton's $S$).
+  Never the **state bundle**, which keeps calligraphic $\mathcal{S}$
+  (QOU tuple $(\mathbf{C}, \varTheta, G, \mathcal{S})$). The action was
+  historically written $\mathcal{S}_q$ and plain $S_q$, colliding with
+  the state bundle and the Hopf **antipode** $S$ respectively — both
+  resolved by $\mathfrak{S}$. The antipode stays plain $S$ (or $S_q$ on
+  the $q$-shuffle Hopf algebra).
+- **$\mathfrak{O}$** = observation / intent morphism — the section
+  $(\mathfrak{O}, \epsilon)$ of $\mathrm{Ad}(J^1\mathcal{S})$ and its
+  germ endomorphism $\mathfrak{O}_p$. Never an **ideal**: the
+  genus-filtration ideal keeps $\mathfrak{I}$
+  ($\mathfrak{I}_4 = (u^5)$). Intent moved off $\mathfrak{I}$ to
+  disambiguate the two.
+- **$\mathfrak{W}$** = confinement observable / $q$-Wilson loop
+  $\mathfrak{W}(\mathcal{K}, \mathcal{T})$. Never the observation
+  morphism (now $\mathfrak{O}$); the abstract Wilson-loop functional is
+  plain $W(\gamma)$.
+- **$S_n$ vs $H_n(q)$** — $q$-deformed braiding decompositions
+  (eigenvalues $\{q, -q^{-1}\}$) are actions of the Iwahori–Hecke
+  algebra $H_n(q)$, **not** the symmetric group $S_n$, even when the
+  block dimensions match the classical $S_n$ irreps (§7a–7b). Write
+  classical $S_n$ only for a genuine $\epsilon = \pm 1$ flip; never
+  fraktur $\mathfrak{S}_n$ (fraktur $\mathfrak{S}$ is the action).
 - **Three partition-weight families** — Markov $y_\lambda$,
   Plancherel $w_\lambda$, q-deformed Wedderburn $\tilde w_\lambda$ —
   are distinct at $q \neq 1$ and must not be conflated. They
