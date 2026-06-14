@@ -42,7 +42,10 @@
     "start": "bun run src/index.ts",
     "start:stdio": "bun run src/index.ts --stdio",
     "start:http": "bun run src/index.ts --http",
-    "check-deps": "bun run src/index.ts --check-deps"
+    "check-deps": "bun run src/index.ts --check-deps",
+    "test:e2e": "playwright test",
+    "test": "bun test",
+    "lint": "eslint ."
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.80.0",
@@ -50,7 +53,8 @@
     "zod": "^3.23.0"
   },
   "devDependencies": {
-    "bun-types": "latest"
+    "bun-types": "latest",
+    "@playwright/test": "^1.60.0"
   },
   "engines": {
     "bun": ">=1.0.0"
