@@ -1,18 +1,22 @@
 /-!
-# QOU.Archimedean.knot_operator_selection
+# QOU.Archimedean.knot_operator_selection — sibling stub
 
-**PROPOSITION.** Knot operator selection via Frobenius dual
+**Sibling-resolution stub** for content block
+[`prop:knot-operator-selection`](knot-operator-selection.md): *Knot operator selection via Frobenius dual*.
+
+The (placeholder) canonical lives at
+[`../lean/QOU/Descartes/knot_operator_selection.lean`](../lean/QOU/Descartes/knot_operator_selection.lean) under the `qou` Lake package.
+The Lean statement is currently a `sorry` placeholder; full
+formalisation pending.
+
+-- Ref: [manuscript] quantum-observable-universe/archimedean-universe/knot-operator-selection.ts
 -/
 
 namespace QOU.Archimedean
 
-structure KnotOperatorSelectionData where
-  is_frobenius_dual : True
-  selects_knot_operator : True
-
 /-- **PROPOSITION.** Knot operator selection via Frobenius dual -/
-theorem knot_operator_selection (d : KnotOperatorSelectionData) :
-    d.is_frobenius_dual ∧ d.selects_knot_operator :=
-  ⟨d.is_frobenius_dual, d.selects_knot_operator⟩
+theorem knot_operator_selection : True := by
+  -- Ref: [manuscript] prop:knot-operator-selection
+  trivial
 
 end QOU.Archimedean
