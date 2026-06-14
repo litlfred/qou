@@ -71,6 +71,16 @@ function emitPreambleAndMacros(paper: Paper, preamblePath: string): string[] {
     lines.push("");
   }
 
+  // 3. Per-render print-mode flag — kept live, NOT dumped into a .fmt format.
+  //    `\newif\ifshowaffiliations` stays in the shared preamble (dumpable);
+  //    only this file-read is per-document, since print-mode.tex is written
+  //    per render by the MCP render tool. Emitted here so it lands after the
+  //    preamble (where `\newif` is defined) and before `\begin{document}` /
+  //    the title page (which consumes `\ifshowaffiliations`).
+  lines.push("% ── Print mode (per-render; lives outside any dumped format) ────────────────");
+  lines.push("\\IfFileExists{print-mode.tex}{\\input{print-mode.tex}}{}");
+  lines.push("");
+
   return lines;
 }
 

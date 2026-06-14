@@ -494,4 +494,8 @@
 % Set \showaffiliationstrue for formal print view.
 % The MCP render tool writes print-mode.tex to set this flag automatically.
 \newif\ifshowaffiliations
-\IfFileExists{print-mode.tex}{\input{print-mode.tex}}{}
+% The per-render print-mode flag (the read of print-mode.tex) is emitted by
+% content/pipeline/generate-main-tex.ts into the per-document section, NOT here.
+% Keeping only \newif here (shared, static) leaves this preamble fully dumpable
+% into a precompiled .fmt format; the flag must be set live per render, not
+% frozen at format-dump time.
