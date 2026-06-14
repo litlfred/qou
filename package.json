@@ -7,7 +7,10 @@
     "build:content": "cd content && bun run pipeline/build.ts quantum-observable-universe/quantum-observable-universe.ts --out-dir ../chapters/",
     "build:docs": "typedoc",
     "export-json": "cd content && bun run pipeline/export-json.ts",
-    "generate-readme": "./scripts/generate-readme.sh"
+    "generate-readme": "./scripts/generate-readme.sh",
+    "test:e2e": "cd folio-assistant && bun run test:e2e",
+    "test": "cd folio-assistant && bun run test",
+    "lint": "cd folio-assistant && bun run lint"
   },
   "devDependencies": {
     "typedoc": "^0.28.17",
