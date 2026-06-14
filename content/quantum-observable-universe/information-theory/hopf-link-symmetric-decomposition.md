@@ -18,7 +18,7 @@ $$
 *which follows from the Hecke relation $\sigma_1^2 = (q-q^{-1})\sigma_1 + 1$
 (Lean `hopf_symmetric_decomposition`, sorry-free, verified Lean 4.24.0).*
 
-So the van der Waals correlation — the Hopf link
+Thus the van der Waals correlation — the Hopf link
 ([`prop:trm-hopf-sigma1-sq-closed-form`](#prop:trm-hopf-sigma1-sq-closed-form)) —
 is **dominantly the symmetric $e_+$ block**: its symmetric fraction
 $q^2/(q^2+q^{-2})$ is $\approx :val[vdw_sigma1sq_pct_symmetric]{precision=1, witness=folio-assistant/computations/hbond-vdw-sdp.witness.json}\%$

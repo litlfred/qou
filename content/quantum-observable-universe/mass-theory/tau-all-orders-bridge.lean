@@ -23,7 +23,7 @@ namespace QOU.MassTheory
     The fibre functor τ is realised by a lower-triangular linear map on
     the h-graded expansion taking `α` to `κ`. Both `α` and `κ` are class
     parameters — NOT universally quantified inside the bridge field —
-    so the class is satisfiable for the specific categorical sequences
+    thus the class is satisfiable for the specific categorical sequences
     (Gemini + Copilot review #1830: a single `tauCoeff` cannot satisfy
     the bridge for *all* sequences, e.g. α = 0, κ = 1).
 

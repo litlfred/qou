@@ -66,7 +66,7 @@ condition on the truncated coefficient matrix, hence decidable.
    independence reduces to it rather than to a separate determinant test at
    each truncation.
 3. **Surreal error bounds** supply the *bridge* to the limit, and the
-   right geometric picture is **parallel transport on the projective
+   correct geometric picture is **parallel transport on the projective
    state fibre**.  The coloured-Jones invariant $J_K(q)$ is the holonomy
    of the categorical (Yekutieli non-abelian Stokes / KZ) connection
    parallel-transported along the substrate $q$-deformation path on

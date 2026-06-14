@@ -272,8 +272,8 @@ namespace + visible to `lean_verify` axiom audits.
 The claim itself (informal):
   Let `T_w(Z, N) ∈ H_{3A}(q)` be the canonical atom-braid, and let
   `F_k` denote its Coxeter-length-≤-k filtration. The inter-nucleon
-  Avg crossings σ_{3k+2} − h/2 (where h = q − q⁻¹) act by left/
-  right-multiplication on `F_k` preserving the Boolean grading —
+  Avg crossings σ_{3k+2} - h/2 (where h = q - q⁻¹) act by
+  left/right-multiplication on `F_k` preserving the Boolean grading —
   i.e. multiplication by σ_{3k+2} − h/2 maps F_k into F_k (or at
   most F_{k+1}, but never increasing the binary-DOF count
   n* = 3A − Z).

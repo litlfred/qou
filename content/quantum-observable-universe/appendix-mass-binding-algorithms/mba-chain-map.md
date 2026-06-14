@@ -47,6 +47,6 @@ the production pipeline and appear in their own sections:
 The per-step blocks that follow each algorithm carry the precise
 input/output contract, the correctness conditions (referring to the
 propositions cited above), the complexity estimate, and the
-canonical Python signature. The reader should be able to reproduce
+canonical Python signature. One should be able to reproduce
 every numerical prediction in the paper from this appendix alone,
 without recourse to the implementation source.

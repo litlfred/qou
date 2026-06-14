@@ -209,7 +209,7 @@ theorem mass_direction_sanity_reject
     - `magnitude`: |w(q_0)| substrate magnitude
 
     Defined as the extension of the three per-gate parametric classes
-    so the bundle equals the conjunction of its parents by construction.
+    thus the bundle equals the conjunction of its parents by construction.
     Mirrors the decay-side `BarEvenKernel` typeclass; uses the
     `extends` pattern for cleaner downstream composition.
 

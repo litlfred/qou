@@ -3,7 +3,7 @@ a linear map with $\sigma^2 = \mathrm{id}$. For any $x$,
 $$
 \mathrm{even}(x) + \mathrm{odd}(x) = (x + \sigma x) + (x - \sigma x) = 2x,
 $$
-so the two parities sum to $2x$ (`evenPart_add_oddPart`); when $2$ is invertible
+thus the two parities sum to $2x$ (`evenPart_add_oddPart`); when $2$ is invertible
 in the coefficient ring (characteristic $\neq 2$), $x$ is half their sum — but
 the decomposition itself needs no division. The even part is
 $\sigma$-fixed: $\sigma(x + \sigma x) = \sigma x + \sigma^2 x = \sigma x + x =
