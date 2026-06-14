@@ -106,7 +106,15 @@ the LaTeX kernel. `mylatexformat` (ships with TeX Live) lets us extend
 that: dump the kernel **plus our whole shared preamble** (packages,
 unicode shims, theorem envs, custom macros) into `qou.fmt` once. Every
 subsequent `pdflatex -fmt=qou` then starts in the post-preamble state,
-skipping the re-parse of `pgf`/`tikz`/`hyperref`/128×`\newunicodechar`.
+skipping the re-parse of `pgf`/`tikz`/`hyperref` + 128×`\newunicodechar`.
+`mylatexformat` **defers `\AtBeginDocument` / begin-document hooks** so
+they fire on the real run, not at format-build time — which is why
+packages with runtime initialisation (hyperref's `.out`/bookmark write
+streams, `tikz`/`pgf`) generally survive dumping. The minority that do
+*not* dump cleanly are excluded with an explicit `\endofdump` placed
+before them (see the boundary note below); the exact cut is an
+empirical, per-package question to settle at implementation (no TeX
+engine here to test it).
 
 **Why it pays here specifically:** the preamble is heavy *and* re-parsed
 N× across compile units and latexmk passes (see Evidence). The `.fmt`
@@ -141,6 +149,18 @@ except the last item):
   flag at format-build time. **Move it into the generated per-doc
   preamble** (or place `\endofdump` before it). This is a small,
   bun-verifiable refactor and the only preamble change `.fmt` requires.
+
+**Non-dumpable packages (review note — Gemini on #2310).** The standard
+caution is that `hyperref` (and occasionally `pgf`/`tikz`) cannot be
+serialised into a format because they open write streams or do runtime
+catcode work. That caution is real but usually too strong here:
+`mylatexformat`'s begin-document-hook deferral handles most of it —
+precompiling `tikz` is a classic use case and `hyperref` is routinely
+dumped — and moving `pgf`/`tikz` out of the dump would forfeit the
+*heaviest* part of the win. Discipline: attempt to dump the whole
+shared preamble; if a specific package errors or breaks links under the
+format, move **only that package** after `\endofdump` so it loads live.
+Settle the exact boundary empirically when the format build runs in CI.
 
 ### Implementation sketch (each step its own commit)
 
