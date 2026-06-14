@@ -128,7 +128,6 @@ theorem differentialShift_small (A : ℕ) (hA : 1 ≤ A) :
 
 /-- Top-level alias matching the manifest declaration. -/
 -- Ref: [manuscript] §6/hadron-q-self-correction
-noncomputable def hadron_q_self_correction (q₀ : R_q) (p n : ℕ) : R_q :=
-  qEff q₀ p n
-
+theorem hadron_q_self_correction (q₀ : R_q) (p n : ℕ) :
+  deltaQ q₀ p n = ((p * (p - 1) : ℤ) / 2 - (n * (n - 1) : ℤ) / 2 : R_q) / (p + n : R_q)^2 * (1 - q₀⁻¹)^2 := rfl
 end QOU.Archimedean

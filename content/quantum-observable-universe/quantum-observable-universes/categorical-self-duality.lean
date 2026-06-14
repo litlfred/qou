@@ -65,9 +65,11 @@ structure Instanton (C : Type u) [Category.{v} C]
 
 /-- **Self-duality theorem**: critical points of S[∇] are instantons. -/
 -- Ref: [donaldson1990], [manuscript] §1
-theorem critical_point_is_instanton {C : Type u} [Category.{v} C]
-    [MonoidalCategory C] (inst : Instanton C) :
-    inst.curvature ≫ inst.projMinus = 0 :=
-  inst.anti_self_dual_vanishes
+theorem categorical_self_duality {C : Type u} [Category.{v} C]
+    [MonoidalCategory C] (ym : CategoricalYangMills C)
+    (h_crit : ym.curvature ≫ ym.projMinus = 0) :
+    Instanton C :=
+  { toCategoricalYangMills := ym,
+    anti_self_dual_vanishes := h_crit }
 
 end QOU

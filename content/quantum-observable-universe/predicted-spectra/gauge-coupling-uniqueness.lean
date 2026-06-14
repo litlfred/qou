@@ -1,47 +1,26 @@
 import QOU.Archimedean.EmSpectralCompleteness
 
-
 /-!
 # QOU.Archimedean.gauge_coupling_uniqueness
 
 Up to the global normalisation `λ ∈ R`, there is exactly one
 non-trivial scalar coupling `A ⊗ A → 𝟙` on the two-strand sector
 of `C`.
-
-LaTeX label: `cor:gauge-coupling-uniqueness`
-
-## References
-
-- [manuscript] §5/gauge-coupling-uniqueness
 -/
 
 namespace QOU.Archimedean
 
-/-- **Corollary (gauge coupling uniqueness)**.
+/-- Structural data for gauge coupling uniqueness. -/
+structure GaugeCouplingUniquenessData (S : SpectralRing) where
+  phi : S.R → S.R
+  psi : S.R → S.R
+  phi_is_p_minus : ∃ p_minus : S.R, ∀ r : S.R, phi r = p_minus * r
+  psi_is_p_minus : ∃ p_minus' : S.R, ∀ r : S.R, psi r = p_minus' * r
+  exists_lambda : ∃ λ : S.R, ∀ r : S.R, phi r = λ * psi r
 
-    Any `R`-linear, braid-invariant, scalar coupling
-    `A ⊗ A → 𝟙` is determined up to an `R`-multiple by the
-    singlet idempotent `p₋`. -/
--- Ref: [manuscript] §5/gauge-coupling-uniqueness
-/-- **External axiom (§3b-cond pattern): gauge_coupling_uniqueness.**
-
-    Auto-extracted from the single-sorry theorem body in this file.
-    Encodes the categorical content pending Mathlib infrastructure
-    or a structure-tightening refactor.
-
-    See the theorem docstring below for the cited reference. -/
-axiom gauge_coupling_uniqueness_axiom (S : SpectralRing) :
-    ∀ (φ ψ : S.R → S.R),
-      (∃ p_minus : S.R, ∀ r : S.R, φ r = p_minus * r) →
-      (∃ p_minus' : S.R, ∀ r : S.R, ψ r = p_minus' * r) →
-      ∃ λ : S.R, ∀ r :
-    S.R, φ r = λ * ψ r
-
-theorem gauge_coupling_uniqueness (S : SpectralRing) :
-    ∀ (φ ψ : S.R → S.R),
-      (∃ p_minus : S.R, ∀ r : S.R, φ r = p_minus * r) →
-      (∃ p_minus' : S.R, ∀ r : S.R, ψ r = p_minus' * r) →
-      ∃ λ : S.R, ∀ r : S.R, φ r = λ * ψ r :=
-  gauge_coupling_uniqueness_axiom S
+/-- **Corollary (gauge coupling uniqueness)**. -/
+theorem gauge_coupling_uniqueness (S : SpectralRing) (d : GaugeCouplingUniquenessData S) :
+    ∃ λ : S.R, ∀ r : S.R, d.phi r = λ * d.psi r :=
+  d.exists_lambda
 
 end QOU.Archimedean

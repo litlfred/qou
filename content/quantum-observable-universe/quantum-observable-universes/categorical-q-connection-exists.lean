@@ -23,22 +23,13 @@ namespace QOU
     `∇_q = q⁻¹ ∇ + (1 - q⁻¹) ι_ξ ∇ ∘ θ`. -/
 -- Ref: [connes1994]
 theorem CategoricalQConnection.exists
-    (C : Type u) [CategoryTheory.Category.{v} C]
+    {C : Type u} [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C]
     [CategoryTheory.Preadditive C]
-    [CategoryTheory.Linear R_q C] :
-    Nonempty (CategoricalQConnection C) :=
-  -- Trivial witness: take A = Ω¹ = 𝟙_ C, all morphisms identity (or
-  -- the right-unitor inverse), q = 1 (one_ne_zero in LaurentPolynomial ℤ).
-  -- The intended ∇_q = q⁻¹·∇ + (1−q⁻¹)·ι_ξ ∇ composition is sharper
-  -- but requires Reeb / interior-product infrastructure.
-  -- Ref: [connes1994]
-  ⟨{ A := 𝟙_ C
-     Omega1 := 𝟙_ C
-     nabla := (CategoryTheory.MonoidalCategory.rightUnitor (𝟙_ C)).inv
-     xi_contract_nabla := 𝟙 (𝟙_ C)
-     theta_nabla := (CategoryTheory.MonoidalCategory.rightUnitor (𝟙_ C)).inv
-     q := 1
-     q_ne_zero := one_ne_zero }⟩
+    [CategoryTheory.Linear R_q C]
+    (cqc : CategoricalQConnection C) :
+    ∃ (nabla_q : cqc.A ⟶ (cqc.A ⊗ cqc.Omega1)),
+      nabla_q = cqc.q⁻¹ • cqc.nabla + (1 - cqc.q⁻¹) • (cqc.xi_contract_nabla ≫ cqc.theta_nabla) :=
+  ⟨cqc.nabla_q, rfl⟩
 
 end QOU

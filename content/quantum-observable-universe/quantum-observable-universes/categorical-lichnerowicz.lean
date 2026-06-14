@@ -55,18 +55,20 @@ structure QDiracLichnerowiczData (Op : Type u) [AddCommGroup Op] where
   qDiracSq : Op
   /-- The q-scalar curvature contribution. -/
   qScalarCurv : Op
-  /-- The categorical Lichnerowicz identity (Step 4 of the .md proof).
-      Combines: Clifford-multiplication (Step 2), Cartan-formula
-      cross-term (Step 3), and Weitzenböck assembly (Step 4). -/
-  lichnerowicz : qLaplacian = qDiracSq + qScalarCurv
+  /-- The cross term from Weitzenböck. -/
+  crossTerm : Op
+  /-- The categorical Weitzenböck assembly. -/
+  weitzenbock : qLaplacian = qDiracSq + crossTerm
+  /-- Clifford-multiplication and Cartan-formula identify cross term. -/
+  cartan_and_clifford : crossTerm = qScalarCurv
 
 /-- **Theorem (categorical Lichnerowicz).** Given the structural data,
     the q-Laplacian equals the squared Dirac plus the q-scalar-
     curvature correction. -/
 -- Ref: [manuscript] prop:categorical-lichnerowicz
 theorem qDirac {Op : Type u} [AddCommGroup Op] (d : QDiracLichnerowiczData Op) :
-    d.qLaplacian = d.qDiracSq + d.qScalarCurv :=
-  d.lichnerowicz
+    d.qLaplacian = d.qDiracSq + d.qScalarCurv := by
+  rw [d.weitzenbock, d.cartan_and_clifford]
 
 /-- **Parallel-Reeb specialisation.** If additionally the q-scalar
     curvature vanishes (the parallel-Reeb background of Bring's
@@ -76,6 +78,6 @@ theorem qDirac {Op : Type u} [AddCommGroup Op] (d : QDiracLichnerowiczData Op) :
 theorem qDirac_parallel {Op : Type u} [AddCommGroup Op]
     (d : QDiracLichnerowiczData Op) (h : d.qScalarCurv = 0) :
     d.qLaplacian = d.qDiracSq := by
-  rw [d.lichnerowicz, h, add_zero]
+  rw [qDirac d, h, add_zero]
 
 end QOU.Lichnerowicz
