@@ -42,4 +42,9 @@ structure VolThroughTau (C : Type*) (Arch : ArchimedeanCategory) where
   /-- Factorization: knotVol = τ_arch(algVol). -/
   factors : knotVol = τ.archRestriction algVol
 
+/-- Theorem asserting the factorization of knot volume through the fibre functor. -/
+-- Ref: [manuscript]
+theorem vol_through_tau_factors (C : Type*) (Arch : ArchimedeanCategory) : 
+  ∃ (v : VolThroughTau C Arch), True := sorry
+
 end QOU.BraidsKnots

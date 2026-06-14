@@ -14,9 +14,15 @@ formalisation pending.
 
 namespace QOU.ParticleInteractions
 
+/-- Context for deuterium binding energy derivation via Markov trace volume integral. -/
+structure DeuteriumBindingContext where
+  mass_p : Real
+  mass_n : Real
+  binding_energy : Real
+
 /-- **PROPOSITION.** Deuterium binding energy from the Markov trace volume integral -/
-theorem deuterium_derived_binding : True := by
-  -- Ref: [manuscript] prop:deuterium-derived-binding
-  trivial
+-- Ref: [manuscript] prop:deuterium-derived-binding
+theorem deuterium_derived_binding (ctx : DeuteriumBindingContext) : 
+  ctx.binding_energy > 0 := sorry
 
 end QOU.ParticleInteractions

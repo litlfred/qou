@@ -72,4 +72,9 @@ structure JetPreservesQU (C : Type u) [Category.{v} C]
   /-- The unit section is a monomorphism. -/
   unitSection_mono : Mono unitSection
 
+/-- Theorem stating that jet prolongation preserves the QU structure. -/
+-- Ref: [manuscript] prop:categorical-jet-prolongation
+theorem categorical_jet_prolongation (C : Type u) [Category.{v} C] [MonoidalCategory C]
+    (fh : FrobeniusHopfData C) : ∃ (jet : JetPreservesQU C), jet.original = fh := sorry
+
 end QOU

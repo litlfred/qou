@@ -89,4 +89,8 @@ structure QuToQou where
   /-- (5) Terminal fiber data at each branch point. -/
   terminalFibers : Fin branchData.numBranchPoints → TerminalFiber
 
+/-- Theorem asserting the existence of the QOU structure from a QU. -/
+-- Ref: [manuscript]
+theorem qu_to_qou_exists : ∃ (q : QuToQou), True := sorry
+
 end QOU

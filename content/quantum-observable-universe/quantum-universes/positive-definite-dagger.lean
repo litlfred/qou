@@ -52,4 +52,11 @@ structure PositiveDefiniteStructure (C : Type u)
   positive_definite : ∀ {X : C} (f : (𝟙_ C) ⟶ X),
     f ≠ 0 → f ≫ dagger f ≠ 0
 
+/-- Theorem stating the existence of the positive-definite dagger structure. -/
+-- Ref: [manuscript]
+theorem positive_definite_dagger_exists (C : Type u)
+    [CategoryTheory.Category.{v} C]
+    [CategoryTheory.MonoidalCategory C] :
+    ∃ (p : PositiveDefiniteStructure C), True := sorry
+
 end QOU
