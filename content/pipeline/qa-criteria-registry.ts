@@ -726,6 +726,46 @@ const PROOF: QaCriterionDefinition[] = [
     automated: false,
     applies_to: ["theorem", "lemma", "proposition", "corollary"],
   },
+  // ── Vacuous-proof family (lean-proof-vacuity-audit) ──────────────
+  //
+  // Semantic anti-patterns that PASS `proof-statement-integrity`
+  // (signature unchanged + no sorryAx) yet carry no mathematical
+  // content. Agent-checked; see
+  // `.claude/skills/local/lean-proof-vacuity-audit.md`.
+  {
+    id: "proof-no-self-assuming-projection",
+    domain: "proof",
+    description:
+      "The proof is NOT a verbatim projection of a structure/class field " +
+      "whose type IS the declaration's own conclusion. Anti-pattern: " +
+      "`structure D where claim : C  …  theorem foo (d : D) : C := d.claim` " +
+      "(or `:= ⟨d.claim_a, d.claim_b⟩`, `:= ctx.claim_foo`) — the goal is " +
+      "assumed as a field and handed back (P ⊢ P), with sibling hypothesis " +
+      "fields unused. LEGITIMATE: the proof COMPOSES fields / derives via " +
+      "lemmas (`Iff.intro h.fwd h.bwd`; `obtain ⟨…⟩ := upstream; <derivation>`) " +
+      "per §3b-cond. Agent-checked (Lean AST + field-type unification). " +
+      "Routes to `lean-proof-review`.",
+    default_severity: "critical",
+    depends_on: ["lean"],
+    automated: false,
+    applies_to: ["theorem", "lemma", "proposition", "corollary"],
+  },
+  {
+    id: "proof-no-trivial-true",
+    domain: "proof",
+    description:
+      "The stated goal is NOT a tautology that any proof discharges " +
+      "vacuously: the conclusion is not `True`, not a syntactic `x = x` / " +
+      "`0 = 0`, and not a `holds : Prop` field instantiated as `True`; AND " +
+      "a proof that ignores all hypotheses to close `True`/`rfl` is flagged. " +
+      "LEGITIMATE: genuine reflexivity results where `rfl` IS the content " +
+      "(definitional unfolding establishing a named equation). Agent-checked. " +
+      "Routes to `lean-proof-review`.",
+    default_severity: "critical",
+    depends_on: ["lean"],
+    automated: false,
+    applies_to: ["theorem", "lemma", "proposition", "corollary"],
+  },
 ];
 
 // ── Domain: canonical ───────────────────────────────────────────
