@@ -100,6 +100,9 @@ batch.
 | `proof-statement-integrity` | agent | `lean-proof-review` (Review Type 4) | Signature-diff vs prior commit + `lean_verify` axiom sweep; FAIL on weakened statement / `sorryAx` |
 | `proof-no-self-assuming-projection` | agent | `lean-proof-vacuity-audit` | Confirm proof is not `:= d.<conclusion-field>` (or `⟨d.claim_a,…⟩`) with sibling hyps unused; fix → genuine proof / §3b-cond / honest `axiom`+`-- Ref:` / demote to `conjecture` |
 | `proof-no-trivial-true` | agent | `lean-proof-vacuity-audit` | Flag conclusion `True` / `x=x` / `holds:Prop:=True` with hypotheses unused; fix → restore the real statement + honest proof or `sorry`+`-- Ref:` |
+| `proof-no-false-premise` | agent | `lean-proof-vacuity-audit` | Flag theorem resting on `False` or uninhabited type; fix → correct the premise or remove theorem if invalid |
+| `proof-no-unused-hypotheses` | agent | `lean-proof-vacuity-audit` | Flag proofs that don't use all hypotheses; fix → remove unused hyps or use them if statement weakened |
+| `proof-no-decide-masking` | agent | `lean-proof-vacuity-audit` | Flag non-trivial goals closed via `decide`; fix → structural proof or explicit justification |
 | `proof-rater-strategy-clarity` | agent **(score)** | `proof-simplifier` / `proof-conciseness` | Score 0–1 → `score` field; if < 0.66, make the strategy explicit, re-rate |
 | `proof-rater-goal-plausibility` | agent **(score)** | `proof-triage` / `lean-build-fix` | Score 0–1 (cross-ref gap-criticality); improve by discharging `routine` gaps, re-rate |
 | `proof-rater-novelty` | agent **(score)** | `proposition-consolidation-audit` | Score 0–1; if redundant (~0), consolidate with the sibling, re-rate |
