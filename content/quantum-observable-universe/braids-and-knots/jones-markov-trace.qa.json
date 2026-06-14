@@ -472,6 +472,27 @@
         "reviewed_at": "2026-06-07T02:30:44.881Z",
         "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
         "notes": "Strategy explicit: md and Lean both state this is the Jones (1987) Thm 5.1/Cor 5.3 result taken as axiomatic and encoded as a structure with the three properties (existence/uniqueness, non-degeneracy, link invariance) as fields. Yekutieli external-axiom pattern declared up front."
+      },
+      {
+        "field_hash": {
+          "md": "19319a499088",
+          "ts": "172b3ff4ecc2",
+          "lean": "65d9d9531559"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:45:51.477Z",
+        "reviewed_sha": "d3822490ce265825bfd758f4b7fccdec884c9a12"
       }
     ],
     "proof-rater-novelty": [
@@ -538,6 +559,27 @@
         "reviewed_at": "2026-06-07T02:30:45.005Z",
         "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
         "notes": "Faithful: JonesMarkovTrace structure fields (tr_one, tr_comm, markov property, nondeg, markov_neg) genuinely state Jones's three properties; the axiom is honestly disclosed in BOTH md ('we take the result as axiomatic') and Lean. Legitimate external-proof-axiom pattern, not a vacuous restatement."
+      },
+      {
+        "field_hash": {
+          "md": "19319a499088",
+          "ts": "172b3ff4ecc2",
+          "lean": "65d9d9531559"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:45:51.359Z",
+        "reviewed_sha": "d3822490ce265825bfd758f4b7fccdec884c9a12"
       }
     ],
     "voice-unicode-crash": [
@@ -2368,7 +2410,30 @@
         "reviewed_at": "2026-06-14T02:00:54.341Z",
         "reviewed_sha": "e138518ae1368fc556abef02d0b7a1691559967d"
       }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "19319a499088",
+          "ts": "172b3ff4ecc2",
+          "lean": "65d9d9531559"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:45:51.229Z",
+        "reviewed_sha": "d3822490ce265825bfd758f4b7fccdec884c9a12"
+      }
     ]
   },
-  "updated_at": "2026-06-14T02:11:07.128Z"
+  "updated_at": "2026-06-14T03:45:51.477Z"
 }

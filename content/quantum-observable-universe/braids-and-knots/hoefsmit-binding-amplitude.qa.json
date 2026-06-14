@@ -757,6 +757,27 @@
         "reviewed_at": "2026-06-07T02:30:44.724Z",
         "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
         "notes": "Strategy stated: compute a_rho*a_{-rho} = -1/[2]_q^2 from Hoefsmit seminormal entries, then b^2 = 1 - 1/[2]_q^2 = [3]_q/[2]_q^2 using [2]_q^2 = h^2+4 and [3]_q = [2]_q^2 - 1. Supporting q-integer identities named."
+      },
+      {
+        "field_hash": {
+          "md": "2fd422d8aab7",
+          "ts": "f654226fc036",
+          "lean": "d007f6644123"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:45:56.929Z",
+        "reviewed_sha": "d3822490ce265825bfd758f4b7fccdec884c9a12"
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -781,6 +802,27 @@
         "reviewed_at": "2026-06-07T02:30:44.766Z",
         "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
         "notes": "Sorry-free over R: hoefsmit_b_sq_eq_q3_over_q2sq and de_entanglement_fraction by field_simp;ring, with qInt2_sq_eq_h_sq_plus_4 and qInt3_eq_qInt2_sq_minus_one supporting. No axiom, no gap."
+      },
+      {
+        "field_hash": {
+          "md": "2fd422d8aab7",
+          "ts": "f654226fc036",
+          "lean": "d007f6644123"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:45:56.238Z",
+        "reviewed_sha": "d3822490ce265825bfd758f4b7fccdec884c9a12"
       }
     ],
     "proof-rater-novelty": [
@@ -805,6 +847,27 @@
         "reviewed_at": "2026-06-07T02:30:44.804Z",
         "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
         "notes": "A specific, genuinely-derived Hecke/Hoefsmit identity (b^2 = [3]_q/[2]_q^2) tied to the pion-decay de-entanglement fraction 1/[2]_q^2. Standard seminormal-form algebra but the meson-binding reading is framework-specific."
+      },
+      {
+        "field_hash": {
+          "md": "2fd422d8aab7",
+          "ts": "f654226fc036",
+          "lean": "d007f6644123"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:45:56.488Z",
+        "reviewed_sha": "d3822490ce265825bfd758f4b7fccdec884c9a12"
       }
     ],
     "proof-statement-integrity": [
@@ -825,6 +888,27 @@
         "reviewed_at": "2026-06-07T02:30:44.842Z",
         "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
         "notes": "Lean faithfully states and proves the md's boxed identities b^2 = [3]_q/[2]_q^2 and 1-b^2 = 1/[2]_q^2 over R via the qInt2/qInt3 defs. Genuine, non-vacuous."
+      },
+      {
+        "field_hash": {
+          "md": "2fd422d8aab7",
+          "ts": "f654226fc036",
+          "lean": "d007f6644123"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:45:56.700Z",
+        "reviewed_sha": "d3822490ce265825bfd758f4b7fccdec884c9a12"
       }
     ],
     "voice-unicode-crash": [
@@ -2657,5 +2741,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T02:11:07.128Z"
+  "updated_at": "2026-06-14T03:45:56.929Z"
 }

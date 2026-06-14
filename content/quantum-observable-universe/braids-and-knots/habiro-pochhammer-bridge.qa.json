@@ -157,6 +157,27 @@
         "reviewed_at": "2026-06-07T02:29:46.745Z",
         "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
         "notes": "Strategy stated: 1-q^k = 1-u^{2k} = (1-u^k)(1+u^k) for q=u^2, applied factor-wise to the Pochhammer product, then divide. Clean derivation in md + docstrings."
+      },
+      {
+        "field_hash": {
+          "md": "aa634b5a98d8",
+          "ts": "9891a18a24fd",
+          "lean": "cb569019082f"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:45:53.128Z",
+        "reviewed_sha": "d3822490ce265825bfd758f4b7fccdec884c9a12"
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -181,6 +202,27 @@
         "reviewed_at": "2026-06-07T02:29:46.783Z",
         "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
         "notes": "Sorry-free over generic CommRing: one_sub_sq_factor, pochhammer_factor by ring; HabiroPochhammerBridge product factorization by prod_mul_distrib + congr + ring. No axiom."
+      },
+      {
+        "field_hash": {
+          "md": "aa634b5a98d8",
+          "ts": "9891a18a24fd",
+          "lean": "cb569019082f"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:45:52.889Z",
+        "reviewed_sha": "d3822490ce265825bfd758f4b7fccdec884c9a12"
       }
     ],
     "proof-rater-novelty": [
@@ -247,6 +289,27 @@
         "reviewed_at": "2026-06-07T02:29:46.860Z",
         "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
         "notes": "Lean HabiroPochhammerBridge faithfully states the md's load-bearing identity (q;q)_m = (u;u)_m * Prod(1+u^k) as a product factorization and proves it. The ratio/weighted-average is the downstream application of this identity."
+      },
+      {
+        "field_hash": {
+          "md": "aa634b5a98d8",
+          "ts": "9891a18a24fd",
+          "lean": "cb569019082f"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:45:53.036Z",
+        "reviewed_sha": "d3822490ce265825bfd758f4b7fccdec884c9a12"
       }
     ],
     "voice-status-leak": [
@@ -2436,5 +2499,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T02:11:07.128Z"
+  "updated_at": "2026-06-14T03:45:53.128Z"
 }

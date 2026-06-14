@@ -69,6 +69,27 @@
         "reviewed_at": "2026-06-07T02:32:36.497Z",
         "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
         "notes": "Strategy stated: both M_+ and sigma1 sigma2^-1 have det=1 (even crossing count) and trace -(h^2+1) on V_(2,1) => same characteristic polynomial => same eigenvalues on unit circle. Clear in md."
+      },
+      {
+        "field_hash": {
+          "md": "47823d6cec93",
+          "ts": "18e0d12369c3",
+          "lean": "f16a34e3d5af"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:45:57.575Z",
+        "reviewed_sha": "d3822490ce265825bfd758f4b7fccdec884c9a12"
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -93,6 +114,27 @@
         "reviewed_at": "2026-06-07T02:32:36.557Z",
         "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
         "notes": "The load-bearing trace computation chi^(2,1)(M_+) = -(h^2+1) (and the det=1) are NOT formalized; they are assumed hypotheses feeding the only substantive theorem. pion_eq_half_figure_eight_phase merely substitutes tr,det into the char poly (a 2x2 triviality via linear_combination); the conclusion 'identical eigenvalues for the real braids' is thus not actually established. Effective core gap on the trace identity."
+      },
+      {
+        "field_hash": {
+          "md": "47823d6cec93",
+          "ts": "18e0d12369c3",
+          "lean": "f16a34e3d5af"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:45:57.131Z",
+        "reviewed_sha": "d3822490ce265825bfd758f4b7fccdec884c9a12"
       }
     ],
     "proof-rater-novelty": [
@@ -117,6 +159,27 @@
         "reviewed_at": "2026-06-07T02:32:36.600Z",
         "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
         "notes": "The pion = half-figure-eight (4_1 = square of pion Reeb rotation) reading, linking meson decay to the lepton mass ratio, is genuinely framework-specific -- but the proved Lean content is a trivial 2x2 char-poly substitution, so the idea is asserted not established."
+      },
+      {
+        "field_hash": {
+          "md": "47823d6cec93",
+          "ts": "18e0d12369c3",
+          "lean": "f16a34e3d5af"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:45:57.334Z",
+        "reviewed_sha": "d3822490ce265825bfd758f4b7fccdec884c9a12"
       }
     ],
     "proof-statement-integrity": [
@@ -137,6 +200,27 @@
         "reviewed_at": "2026-06-07T02:32:36.640Z",
         "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
         "notes": "Borderline-but-honest: pion_eq_half_figure_eight_phase is a genuine conditional (given tr=-(h^2+1), det=1, and a root of lam^2-tr*lam+det, then lam^2+(h^2+1)lam+1=0) proved by linear_combination -- it does NOT misstate as =True or restate the target. The trace/det values are openly inputs (md asserts them via character calc). The remaining lemmas ((1)^2=1, (-1)^6=1) are trivial but supportive, not masquerading as the main claim. Integrity passes; the depth concern is captured under goal-plausibility."
+      },
+      {
+        "field_hash": {
+          "md": "47823d6cec93",
+          "ts": "18e0d12369c3",
+          "lean": "f16a34e3d5af"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:45:57.429Z",
+        "reviewed_sha": "d3822490ce265825bfd758f4b7fccdec884c9a12"
       }
     ],
     "voice-statement-no-interpretation": [
@@ -2411,5 +2495,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T02:11:07.128Z"
+  "updated_at": "2026-06-14T03:45:57.575Z"
 }

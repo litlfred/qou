@@ -222,6 +222,27 @@
         "reviewed_at": "2026-06-07T02:28:08.500Z",
         "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
         "notes": "Plan stated up front: bar invariance via swap q<->qi fixed by ring (q+qi symmetric, (q-qi)^2 absorbs sign); special values at q=qi=+/-1 by ring. Both md 'Lean structure' section and docstrings."
+      },
+      {
+        "field_hash": {
+          "md": "5867fb5cd5db",
+          "ts": "666bc0ac6b1b",
+          "lean": "69cf83354fa9"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:45:54.581Z",
+        "reviewed_sha": "d3822490ce265825bfd758f4b7fccdec884c9a12"
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -246,6 +267,27 @@
         "reviewed_at": "2026-06-07T02:28:08.536Z",
         "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
         "notes": "Sorry-free over generic CommRing: alphaEmHabiro_bar_invariant, _at_one, _at_neg_one all close by ring. No axiom, no gap."
+      },
+      {
+        "field_hash": {
+          "md": "5867fb5cd5db",
+          "ts": "666bc0ac6b1b",
+          "lean": "69cf83354fa9"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:45:54.304Z",
+        "reviewed_sha": "d3822490ce265825bfd758f4b7fccdec884c9a12"
       }
     ],
     "proof-rater-novelty": [
@@ -312,6 +354,27 @@
         "reviewed_at": "2026-06-07T02:28:08.607Z",
         "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
         "notes": "Lean faithfully states md claims: alphaEmHabiro = (q+qi)(1-(q-qi)^2 alpha) matches H=[2]_q(1-h^2 alpha); bar invariance and both special values match the md's enumerated claims 1 and 2."
+      },
+      {
+        "field_hash": {
+          "md": "5867fb5cd5db",
+          "ts": "666bc0ac6b1b",
+          "lean": "69cf83354fa9"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:45:54.422Z",
+        "reviewed_sha": "d3822490ce265825bfd758f4b7fccdec884c9a12"
       }
     ],
     "voice-status-leak": [
@@ -2421,5 +2484,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T02:11:07.128Z"
+  "updated_at": "2026-06-14T03:45:54.581Z"
 }

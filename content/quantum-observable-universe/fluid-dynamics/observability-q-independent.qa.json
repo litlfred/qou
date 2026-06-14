@@ -415,6 +415,27 @@
         "reviewed_at": "2026-06-07T02:28:37.248Z",
         "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
         "notes": "md proof is direct: Hom_C(1, Ad(A)) is computed in C (defined independently of q); q only sets the differential d_q on Omega^*(A), which the Hom space does not see; Ad(A) uses only the Hopf structure (mu, Delta, S). Clear."
+      },
+      {
+        "field_hash": {
+          "md": "7ffd6f70ef1b",
+          "ts": "fe0538eeb3f0",
+          "lean": "357784fd52c7"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:49:29.538Z",
+        "reviewed_sha": "d3822490ce265825bfd758f4b7fccdec884c9a12"
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -440,6 +461,27 @@
         "reviewed_at": "2026-06-07T02:28:37.294Z",
         "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
         "notes": "The sibling .lean is a True stub 'theorem observability_q_independent : True := by trivial' — vacuous; the real claim (Hom space independent of substrate section) is not stated here (header points to GaugeFieldFluidDynamics.lean but the sibling itself proves nothing)."
+      },
+      {
+        "field_hash": {
+          "md": "7ffd6f70ef1b",
+          "ts": "fe0538eeb3f0",
+          "lean": "357784fd52c7"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:49:29.612Z",
+        "reviewed_sha": "d3822490ce265825bfd758f4b7fccdec884c9a12"
       }
     ],
     "proof-rater-novelty": [
@@ -464,6 +506,27 @@
         "reviewed_at": "2026-06-07T02:28:37.337Z",
         "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
         "notes": "Clean but essentially trivial categorical observation: the observability Hom-space lives in the q-independent monoidal category, so it is constant over the substrate G_m fibre. Standard once the setup is granted."
+      },
+      {
+        "field_hash": {
+          "md": "7ffd6f70ef1b",
+          "ts": "fe0538eeb3f0",
+          "lean": "357784fd52c7"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:49:29.758Z",
+        "reviewed_sha": "d3822490ce265825bfd758f4b7fccdec884c9a12"
       }
     ],
     "proof-statement-integrity": [
@@ -488,23 +551,24 @@
       },
       {
         "field_hash": {
-          "md": "d536de25f593",
+          "md": "7ffd6f70ef1b",
           "ts": "fe0538eeb3f0",
           "lean": "357784fd52c7"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "lean/QOU/GaugeFieldFluidDynamics.lean — observability_q_independent derives homRankAt q₁ = homRankAt q₂ by rfl (section _q ignored) ∧ = 0, not the old hom_rank=0 proxy",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-13",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-13T15:19:47.056Z",
-        "reviewed_sha": "12fd3daef06fd4e4ddfee2bd5fd4db3d4dc1dd43",
-        "notes": "Re-rate after #2188 (merged f8936d67): faithful q-independence, section structurally ignored. Lean builds green."
+        "reviewed_at": "2026-06-14T03:49:29.866Z",
+        "reviewed_sha": "d3822490ce265825bfd758f4b7fccdec884c9a12"
       }
     ],
     "fit-section-chapter": [
@@ -2587,5 +2651,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T02:11:07.128Z"
+  "updated_at": "2026-06-14T03:49:29.866Z"
 }

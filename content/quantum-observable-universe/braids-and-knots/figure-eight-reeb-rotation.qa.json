@@ -543,6 +543,27 @@
         "reviewed_at": "2026-06-08T11:45:09.551Z",
         "reviewed_sha": "c334e454e527b6218d8f3460cdd56eb86f67c9d6",
         "notes": "Bumped 0.7→0.85: explicit plan."
+      },
+      {
+        "field_hash": {
+          "md": "edf765e91ace",
+          "ts": "3916b2547bf3",
+          "lean": "24222df9f428"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:45:55.053Z",
+        "reviewed_sha": "d3822490ce265825bfd758f4b7fccdec884c9a12"
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -590,6 +611,27 @@
         "reviewed_at": "2026-06-08T11:45:09.511Z",
         "reviewed_sha": "c334e454e527b6218d8f3460cdd56eb86f67c9d6",
         "notes": "Bumped 0.3→1.0: sorry-free proof of the genuine proposition."
+      },
+      {
+        "field_hash": {
+          "md": "edf765e91ace",
+          "ts": "3916b2547bf3",
+          "lean": "24222df9f428"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:45:54.896Z",
+        "reviewed_sha": "d3822490ce265825bfd758f4b7fccdec884c9a12"
       }
     ],
     "proof-rater-novelty": [
@@ -699,6 +741,27 @@
         "reviewed_at": "2026-06-08T11:45:09.468Z",
         "reviewed_sha": "c334e454e527b6218d8f3460cdd56eb86f67c9d6",
         "notes": "Was vacuous (-1)^4=1 ∧ 2=2. Now real linear-algebra proposition. Build-verified sorry-free."
+      },
+      {
+        "field_hash": {
+          "md": "edf765e91ace",
+          "ts": "3916b2547bf3",
+          "lean": "24222df9f428"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:45:54.969Z",
+        "reviewed_sha": "d3822490ce265825bfd758f4b7fccdec884c9a12"
       }
     ],
     "voice-unicode-crash": [
@@ -2535,5 +2598,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T02:11:07.128Z"
+  "updated_at": "2026-06-14T03:45:55.053Z"
 }

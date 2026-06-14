@@ -418,6 +418,27 @@
         "reviewed_at": "2026-06-07T02:31:29.501Z",
         "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
         "notes": "Strategy stated: DFT w_k = (1/sqrt n) Sum zeta^{kj} x_j; w_0 vanishes from sum constraint at k=0; diagonal action by case-split on k in {0..4}, expand Fin 5 sums, reduce zeta powers mod 5 (zeta^5=1), close by ring. Periodicity simp-lemma scaffold documented."
+      },
+      {
+        "field_hash": {
+          "md": "6e08b81a9fd2",
+          "ts": "ef6c0dbf9455",
+          "lean": "1e37cd51a4d3"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:45:51.965Z",
+        "reviewed_sha": "d3822490ce265825bfd758f4b7fccdec884c9a12"
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -442,6 +463,27 @@
         "reviewed_at": "2026-06-07T02:31:29.539Z",
         "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
         "notes": "Sorry-free: lagrange_resolvent_w0_vanishes and lagrange_resolvent_diagonal_action (sigma(w_k)=zeta^{-k} w_k for n=5) proved with genuine zeta arithmetic (primitive 5th root, zeta_pow_four_eq_inv, fin_cases + ring). No axiom."
+      },
+      {
+        "field_hash": {
+          "md": "6e08b81a9fd2",
+          "ts": "ef6c0dbf9455",
+          "lean": "1e37cd51a4d3"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:45:51.792Z",
+        "reviewed_sha": "d3822490ce265825bfd758f4b7fccdec884c9a12"
       }
     ],
     "proof-rater-novelty": [
@@ -508,6 +550,27 @@
         "reviewed_at": "2026-06-07T02:31:29.616Z",
         "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
         "notes": "Faithful: lagrange_resolvent_diagonal_action states the md's part-1 claim sigma(w_k)=zeta^{-k} w_k; w0_vanishes states w_0=0 under Sum x_i = 0. Both genuine, non-vacuous. (Part-2 example constraints not formalized but the two central claims are faithfully proved.)"
+      },
+      {
+        "field_hash": {
+          "md": "6e08b81a9fd2",
+          "ts": "ef6c0dbf9455",
+          "lean": "1e37cd51a4d3"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:45:51.880Z",
+        "reviewed_sha": "d3822490ce265825bfd758f4b7fccdec884c9a12"
       }
     ],
     "voice-statement-no-interpretation": [
@@ -2384,5 +2447,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T02:11:07.128Z"
+  "updated_at": "2026-06-14T03:45:51.965Z"
 }

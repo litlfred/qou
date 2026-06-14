@@ -570,6 +570,27 @@
         "reviewed_at": "2026-06-07T02:33:55.895Z",
         "reviewed_sha": "8bde9de2c1add6cd380bfdd9a363e5d19ec8ab8f",
         "notes": "Strategy stated: Hecke quadratic relation sigma1^2=(q-q^-1)sigma1+1 => tr_M(sigma1^2)=(q-q^-1)z+1 with z=1/(q^1/2+q^-1/2), simplify to (q^5/2-q^1/2+q^2+q)/(q^2+q)=1+(q-1)/q^1/2; Markov invariance via stabilisation. Clear in md + package Lean."
+      },
+      {
+        "field_hash": {
+          "md": "29ad9480616f",
+          "ts": "594d979e3907",
+          "lean": "4853dde67b04"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:45:53.964Z",
+        "reviewed_sha": "d3822490ce265825bfd758f4b7fccdec884c9a12"
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -594,6 +615,27 @@
         "reviewed_at": "2026-06-07T02:33:55.981Z",
         "reviewed_sha": "8bde9de2c1add6cd380bfdd9a363e5d19ec8ab8f",
         "notes": "Sorry-free: the canonical decl resolves to content/.../lean/QOU/Braiding/TrMHopfSigma1SqClosedForm.lean where trm_hopf_sigma1_sq_closed_form_simplified proves trM_sigma1_sq = 1+(q-1)q^(-1/2) (real rpow/sqrt bridge), plus trm_hopf_sigma1_sq_markov_invariant. No sorry in the resolved proof."
+      },
+      {
+        "field_hash": {
+          "md": "29ad9480616f",
+          "ts": "594d979e3907",
+          "lean": "4853dde67b04"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:45:53.744Z",
+        "reviewed_sha": "d3822490ce265825bfd758f4b7fccdec884c9a12"
       }
     ],
     "proof-rater-novelty": [
@@ -660,6 +702,27 @@
         "reviewed_at": "2026-06-07T02:33:56.075Z",
         "reviewed_sha": "8bde9de2c1add6cd380bfdd9a363e5d19ec8ab8f",
         "notes": "Faithful via resolution: lean.ref qou:QOU.Braiding.TrMHopfSigma1SqClosedForm; the block sibling .lean is an explicit, disclosed 'sibling-resolution stub' (theorem ...:True) pointing to the package file, where trm_hopf_sigma1_sq_closed_form_simplified genuinely states and proves the md's boxed tr_M(sigma1^2)=1+(q-1)/q^1/2. The real claim is faithfully formalized and reachable. NOTE: minor name-collision -- the ref decl name resolves to a True stub in the sibling file while the real theorems use different names in the package file; worth tidying the ref to point at the proved theorem."
+      },
+      {
+        "field_hash": {
+          "md": "29ad9480616f",
+          "ts": "594d979e3907",
+          "lean": "4853dde67b04"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:45:53.866Z",
+        "reviewed_sha": "d3822490ce265825bfd758f4b7fccdec884c9a12"
       }
     ],
     "voice-statement-no-interpretation": [
@@ -2487,5 +2550,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T02:11:07.128Z"
+  "updated_at": "2026-06-14T03:45:53.964Z"
 }

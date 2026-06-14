@@ -554,6 +554,27 @@
         "reviewed_at": "2026-06-07T02:32:36.683Z",
         "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
         "notes": "Strategy stated as two short observations: (1) Z/2 self-dual (char determined by value at 1, fin_cases), (2) sign hom surjective via swap 0 1 having sign -1. Composition gives self-duality of S_n^ab. Clear in md and docstring."
+      },
+      {
+        "field_hash": {
+          "md": "0e1235de1c00",
+          "ts": "3def03d54601",
+          "lean": "a3cc2ad89343"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:45:58.002Z",
+        "reviewed_sha": "d3822490ce265825bfd758f4b7fccdec884c9a12"
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -578,6 +599,27 @@
         "reviewed_at": "2026-06-07T02:32:36.725Z",
         "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
         "notes": "Sorry-free, no axiom in the load-bearing theorem: pontryagin_dual_coxeter_character_structural proves the conjunction (self-duality + swap sign witness) via zmodTwo_pontryagin_self_dual_via_value_at_one (fin_cases) and Equiv.Perm.sign_swap. Discharges the previously-conjectural D20."
+      },
+      {
+        "field_hash": {
+          "md": "0e1235de1c00",
+          "ts": "3def03d54601",
+          "lean": "a3cc2ad89343"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:45:57.673Z",
+        "reviewed_sha": "d3822490ce265825bfd758f4b7fccdec884c9a12"
       }
     ],
     "proof-rater-novelty": [
@@ -603,6 +645,27 @@
         "reviewed_at": "2026-06-07T02:33:08.116Z",
         "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
         "notes": "md itself states this is degenerate / low priority, recorded for tracker completeness, yielding 'no new information beyond sign-of-a-permutation' -- the same Z/2 the bar involution already classifies. Standard finite-group facts; redundant-tier novelty."
+      },
+      {
+        "field_hash": {
+          "md": "0e1235de1c00",
+          "ts": "3def03d54601",
+          "lean": "a3cc2ad89343"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:45:57.774Z",
+        "reviewed_sha": "d3822490ce265825bfd758f4b7fccdec884c9a12"
       }
     ],
     "proof-statement-integrity": [
@@ -623,6 +686,27 @@
         "reviewed_at": "2026-06-07T02:32:36.804Z",
         "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
         "notes": "Faithful: pontryagin_dual_coxeter_character_structural captures the md's structural claim (Z/2 self-Pontryagin-dual + sign-surjectivity witness for S_n^ab). The class PontryaginDualCoxeterCharacter with holds:Prop:=True is only a disclosed backward-compat shim, NOT the headline -- the headline is the genuine structural theorem."
+      },
+      {
+        "field_hash": {
+          "md": "0e1235de1c00",
+          "ts": "3def03d54601",
+          "lean": "a3cc2ad89343"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:45:57.874Z",
+        "reviewed_sha": "d3822490ce265825bfd758f4b7fccdec884c9a12"
       }
     ],
     "voice-statement-no-interpretation": [
@@ -2556,5 +2640,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T02:11:07.128Z"
+  "updated_at": "2026-06-14T03:45:58.002Z"
 }

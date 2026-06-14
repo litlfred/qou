@@ -33,7 +33,7 @@ $\sigma$-braid word at $\geq 50$ decimal digits via SnapPy's
 `mpmath.workdps(50)`; symbolic-in-$q$ Markov-trace coefficients $y_\lambda$
 are supplied by the Wenzl bridge ([`y_lambda_wenzl_bridge_extended.py`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/folio-assistant/computations/y_lambda_wenzl_bridge_extended.py)).
 
-For atoms $A \geq 5$, where the combinatorics of the full $\mathcal{H}_{3A}$ space explode and `SnapPea` topological limits fail, we bypass the full evaluation by taking the exact symbolic trace restricted solely to **active block-partitions** (`closed_form_tau_M`), sidestepping the combinatorial blow-up. This exact symbolic trace $B_{sym} = -\alpha \ln |\tau_M|$ is shown side-by-side with the rigorous Q-CLT finite-sum approximation $B_{proxy} = -\alpha \sum \ln |\hat{V}_i|$.
+For atoms $A \geq 5$, where the combinatorics of the full $\mathcal{H}_{3A}$ space explode and `SnapPea` topological limits fail, we bypass the full evaluation by taking the exact symbolic trace restricted solely to **active block-partitions** (`closed_form_tau_M`), sidestepping the combinatorial blow-up. This exact symbolic trace $B_{sym} = -\alpha \ln |\tau_M|$ is shown side-by-side with the rigorous Q-CLT finite-sum approximation $B_{qCLT} = -\alpha \sum \ln |\hat{V}_i|$.
 
 Volume-match search (`li_atom_knot_search.py`) is **deprecated** and
 its output is consumed only in the quarantined provisional section

@@ -491,6 +491,27 @@
         "reviewed_at": "2026-06-07T02:28:08.642Z",
         "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
         "notes": "Full diagram-chase strategy stated: three cited lemmas (hexagon reduction, braiding naturality, sigma2-alpha interchange) named with their roles, then a calc proof. md states braid relation <=> Yang-Baxter."
+      },
+      {
+        "field_hash": {
+          "md": "2295a2da1ee3",
+          "ts": "44cfe9412e11",
+          "lean": "7e4ea0089b1b"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:45:51.119Z",
+        "reviewed_sha": "d3822490ce265825bfd758f4b7fccdec884c9a12"
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -515,6 +536,27 @@
         "reviewed_at": "2026-06-07T02:28:08.680Z",
         "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
         "notes": "Sorry-free: yang_baxter_braiding (sigma1 sigma2 sigma1 = sigma2 sigma1 sigma2) proved by full categorical calc chase using BraidedCategory.hexagon_forward + braiding_naturality_right. sigma1/sigma2 iso lemmas also proved. No axiom."
+      },
+      {
+        "field_hash": {
+          "md": "2295a2da1ee3",
+          "ts": "44cfe9412e11",
+          "lean": "7e4ea0089b1b"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:45:50.973Z",
+        "reviewed_sha": "d3822490ce265825bfd758f4b7fccdec884c9a12"
       }
     ],
     "proof-rater-novelty": [
@@ -581,6 +623,27 @@
         "reviewed_at": "2026-06-07T02:28:08.755Z",
         "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
         "notes": "Lean genuinely states and proves the md's claim: rho_n(sigma_i) braiding rep + braid relation = Yang-Baxter. yang_baxter_braiding is the real categorical theorem, not a placeholder; BraidRepB3 bundles it."
+      },
+      {
+        "field_hash": {
+          "md": "2295a2da1ee3",
+          "ts": "44cfe9412e11",
+          "lean": "7e4ea0089b1b"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:45:51.057Z",
+        "reviewed_sha": "d3822490ce265825bfd758f4b7fccdec884c9a12"
       }
     ],
     "voice-unicode-crash": [
@@ -2413,5 +2476,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T02:11:07.128Z"
+  "updated_at": "2026-06-14T03:45:51.119Z"
 }

@@ -384,6 +384,27 @@
         "reviewed_at": "2026-06-07T02:32:36.845Z",
         "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
         "notes": "Strategy stated: C_q = FE + (qK+q^-1 K^-1 - (q+q^-1))/(q-q^-1)^2 central by direct Serre-relation verification; recorded as external axiom (Kassel VI.4) pending a Mathlib U_q(su2)."
+      },
+      {
+        "field_hash": {
+          "md": "90acafa7cbdd",
+          "ts": "ffa00ce627ff",
+          "lean": "1e2e5a894579"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:45:52.301Z",
+        "reviewed_sha": "d3822490ce265825bfd758f4b7fccdec884c9a12"
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -408,6 +429,27 @@
         "reviewed_at": "2026-06-07T02:32:36.887Z",
         "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
         "notes": "Existence is axiomatized (axiom QCasimir.exists_axiom) -- a genuine external result (Kassel VI.4), honestly disclosed as 'pending a Mathlib-style U_q(su2) formalisation'. No internal construction, so mid plausibility; QCasimir.exists derives Nonempty QCasimirData from the axiom faithfully."
+      },
+      {
+        "field_hash": {
+          "md": "90acafa7cbdd",
+          "ts": "ffa00ce627ff",
+          "lean": "1e2e5a894579"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:45:52.088Z",
+        "reviewed_sha": "d3822490ce265825bfd758f4b7fccdec884c9a12"
       }
     ],
     "proof-rater-novelty": [
@@ -474,6 +516,27 @@
         "reviewed_at": "2026-06-07T02:32:36.984Z",
         "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
         "notes": "Faithful: QCasimir.exists : Nonempty (QCasimirData qs) states the md's existence claim; the axiom is openly disclosed in both md and Lean. Not a vacuous =True. (The md's eigenvalue-action [j]_q[j+1]_q is presumably carried by QCasimirData's def in QOU.Basic; the existence-of-data is faithfully asserted.)"
+      },
+      {
+        "field_hash": {
+          "md": "90acafa7cbdd",
+          "ts": "ffa00ce627ff",
+          "lean": "1e2e5a894579"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:45:52.214Z",
+        "reviewed_sha": "d3822490ce265825bfd758f4b7fccdec884c9a12"
       }
     ],
     "voice-statement-no-interpretation": [
@@ -2459,5 +2522,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T02:11:07.128Z"
+  "updated_at": "2026-06-14T03:45:52.301Z"
 }

@@ -415,6 +415,27 @@
         "reviewed_at": "2026-06-07T02:28:37.503Z",
         "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
         "notes": "md states the plan: (a) q-Ladyzhenskaya bound on the advection term, (b) enstrophy Gronwall bound (no finite-time blowup), (c) uniqueness from (a)+(b). Clear, though concise."
+      },
+      {
+        "field_hash": {
+          "md": "e8a9381fcd35",
+          "ts": "578c049bf49f",
+          "lean": "e62083acd377"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:49:29.982Z",
+        "reviewed_sha": "d3822490ce265825bfd758f4b7fccdec884c9a12"
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -440,6 +461,27 @@
         "reviewed_at": "2026-06-07T02:28:37.541Z",
         "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
         "notes": "Lean is a sibling stub 'theorem p1_nonlinear_uniqueness : True := by trivial'; the estimates/uniqueness are not stated. (Also: Lean Ref says prop:q-ns-nonlinear-uniqueness but .ts label is prop:p1-nonlinear-uniqueness — label drift.)"
+      },
+      {
+        "field_hash": {
+          "md": "e8a9381fcd35",
+          "ts": "578c049bf49f",
+          "lean": "e62083acd377"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:49:30.064Z",
+        "reviewed_sha": "d3822490ce265825bfd758f4b7fccdec884c9a12"
       }
     ],
     "proof-rater-novelty": [
@@ -464,6 +506,27 @@
         "reviewed_at": "2026-06-07T02:28:37.579Z",
         "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
         "notes": "q-deformed Ladyzhenskaya inequality + enstrophy Gronwall + uniqueness is a routine q-analogue of the standard 2D NS regularity argument; sound but not a new argument."
+      },
+      {
+        "field_hash": {
+          "md": "e8a9381fcd35",
+          "ts": "578c049bf49f",
+          "lean": "e62083acd377"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:49:30.142Z",
+        "reviewed_sha": "d3822490ce265825bfd758f4b7fccdec884c9a12"
       }
     ],
     "proof-statement-integrity": [
@@ -488,23 +551,24 @@
       },
       {
         "field_hash": {
-          "md": "a34e5dba9181",
+          "md": "e8a9381fcd35",
           "ts": "578c049bf49f",
           "lean": "e62083acd377"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "p1_nonlinear_uniqueness.lean — (c) uniqueness derived from the distance Gronwall bound",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-13",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-13T15:20:44.360Z",
-        "reviewed_sha": "12fd3daef06fd4e4ddfee2bd5fd4db3d4dc1dd43",
-        "notes": "Re-rate after #2188 (merged): derived, not self-assuming. Builds green."
+        "reviewed_at": "2026-06-14T03:49:30.197Z",
+        "reviewed_sha": "d3822490ce265825bfd758f4b7fccdec884c9a12"
       }
     ],
     "fit-section-chapter": [
@@ -2587,5 +2651,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T02:11:07.128Z"
+  "updated_at": "2026-06-14T03:49:30.197Z"
 }

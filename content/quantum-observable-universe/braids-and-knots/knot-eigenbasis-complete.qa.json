@@ -506,6 +506,27 @@
         "reviewed_at": "2026-06-07T02:31:29.347Z",
         "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
         "notes": "Strategy explicit: 3-part decomposition (q-Schur-Weyl semisimplicity + Alexander surjectivity + Markov-trace detection) named, then the combining theorem obtains a summand from completeness and a detecting braid from summands_detected."
+      },
+      {
+        "field_hash": {
+          "md": "6f6d6f93db34",
+          "ts": "6a7a9d6041e9",
+          "lean": "315d0115ac3c"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:45:51.719Z",
+        "reviewed_sha": "d3822490ce265825bfd758f4b7fccdec884c9a12"
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -530,6 +551,27 @@
         "reviewed_at": "2026-06-07T02:31:29.386Z",
         "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
         "notes": "Sorry-free, no axiom in this file: knot_eigenbasis_complete proved by obtain from the KnotEigenbasisData bundle; supporting max_spin_bound/num_summands_bound/alexander_has_braid genuine. The hard external inputs (Schur-Weyl completeness, Alexander surjectivity) are structure-field hypotheses, the standard conditional/data-bundle pattern, not gaps."
+      },
+      {
+        "field_hash": {
+          "md": "6f6d6f93db34",
+          "ts": "6a7a9d6041e9",
+          "lean": "315d0115ac3c"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:45:51.575Z",
+        "reviewed_sha": "d3822490ce265825bfd758f4b7fccdec884c9a12"
       }
     ],
     "proof-rater-novelty": [
@@ -596,6 +638,27 @@
         "reviewed_at": "2026-06-07T02:31:29.464Z",
         "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
         "notes": "Faithful: knot_eigenbasis_complete states 'every v in V^{tensor n} lies in a knot-detected irreducible summand' given the three components -- matching the md's 3-part claim. Real obtain-based proof from genuine hypotheses, not vacuous. SchurWeylDecomposition.complete and summands_detected carry the real content."
+      },
+      {
+        "field_hash": {
+          "md": "6f6d6f93db34",
+          "ts": "6a7a9d6041e9",
+          "lean": "315d0115ac3c"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:45:51.645Z",
+        "reviewed_sha": "d3822490ce265825bfd758f4b7fccdec884c9a12"
       }
     ],
     "voice-unicode-crash": [
@@ -2392,5 +2455,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T02:11:07.128Z"
+  "updated_at": "2026-06-14T03:45:51.719Z"
 }

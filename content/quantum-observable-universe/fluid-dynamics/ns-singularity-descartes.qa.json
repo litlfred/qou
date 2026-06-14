@@ -450,6 +450,27 @@
         "reviewed_at": "2026-06-07T02:27:44.674Z",
         "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
         "notes": "md gives a 4-step proof: Step1 arithmetic (2k nmid 6 for k>=4), Step2 algebra (complementary subgroups), Step3 geometry (Levi non-degenerate), Step4 dynamics (vorticity lower bound -> BKM divergence). Clear case chain."
+      },
+      {
+        "field_hash": {
+          "md": "aacbc1b95a7a",
+          "ts": "310ed1172277",
+          "lean": "b70bd86e38ec"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:49:15.968Z",
+        "reviewed_sha": "d3822490ce265825bfd758f4b7fccdec884c9a12"
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -475,6 +496,27 @@
         "reviewed_at": "2026-06-07T02:27:44.712Z",
         "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
         "notes": "Lean is a sibling stub 'theorem ns_singularity_descartes : True := by trivial'. The md proof chains through prop:core-levi-form (itself conditional/gapped) and the perpetual-obstruction claim — core gap; nothing established in Lean."
+      },
+      {
+        "field_hash": {
+          "md": "aacbc1b95a7a",
+          "ts": "310ed1172277",
+          "lean": "b70bd86e38ec"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:49:19.953Z",
+        "reviewed_sha": "d3822490ce265825bfd758f4b7fccdec884c9a12"
       }
     ],
     "proof-rater-novelty": [
@@ -499,6 +541,27 @@
         "reviewed_at": "2026-06-07T02:27:44.751Z",
         "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
         "notes": "The headline (Descartes universe chi(A)=-6 => classical NS admits finite-time blowup) is a striking claim, but the argument is assembled from upstream conditional results (Kummer, perpetual obstruction, core-Levi, BKM) rather than a new self-contained argument."
+      },
+      {
+        "field_hash": {
+          "md": "aacbc1b95a7a",
+          "ts": "310ed1172277",
+          "lean": "b70bd86e38ec"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:49:24.519Z",
+        "reviewed_sha": "d3822490ce265825bfd758f4b7fccdec884c9a12"
       }
     ],
     "proof-statement-integrity": [
@@ -539,6 +602,27 @@
         "reviewed_at": "2026-06-12T19:15:26.677Z",
         "reviewed_sha": "a703fbb161562601cfe639e2abaa427f72510c66",
         "notes": "§3b-cond non-degenerate conditional (setup χ(A)=-6 + obstruction-survival hypothesis; theorem derives chi_A = -6 ∧ NS_A ≠ 0). Generic [CommRing R] for NS_A, ℤ for χ — no ℝ (§7c). Builds: lake build exit 0. Canonical decl resolved via lean.ref; sibling stub dropped."
+      },
+      {
+        "field_hash": {
+          "md": "aacbc1b95a7a",
+          "ts": "310ed1172277",
+          "lean": "b70bd86e38ec"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:49:29.243Z",
+        "reviewed_sha": "d3822490ce265825bfd758f4b7fccdec884c9a12"
       }
     ],
     "fit-section-chapter": [
@@ -2729,5 +2813,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T02:11:07.128Z"
+  "updated_at": "2026-06-14T03:49:29.243Z"
 }

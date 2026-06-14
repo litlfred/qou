@@ -434,6 +434,27 @@
         "reviewed_at": "2026-06-07T02:30:21.309Z",
         "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
         "notes": "md states the BKM criterion cleanly as an iff (smooth extension past T <=> integral of ||omega_q||_inf dt finite), plus the contrapositive and the q>1 global-regularity remark (integral finite for q>1; non-trivial only as q->1). Clear, concise statement."
+      },
+      {
+        "field_hash": {
+          "md": "a0c7896efa29",
+          "ts": "949aea0a9766",
+          "lean": "fbfc0454994a"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:49:33.533Z",
+        "reviewed_sha": "d3822490ce265825bfd758f4b7fccdec884c9a12"
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -459,6 +480,27 @@
         "reviewed_at": "2026-06-07T02:30:21.347Z",
         "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
         "notes": "Lean is a sibling stub 'theorem q_bkm_criterion : True := by trivial'; the BKM iff is not stated. (Lean Ref thm:q-bkm vs .ts label thm:q-bkm-criterion — minor label drift.)"
+      },
+      {
+        "field_hash": {
+          "md": "a0c7896efa29",
+          "ts": "949aea0a9766",
+          "lean": "fbfc0454994a"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:49:37.236Z",
+        "reviewed_sha": "d3822490ce265825bfd758f4b7fccdec884c9a12"
       }
     ],
     "proof-rater-novelty": [
@@ -483,6 +525,27 @@
         "reviewed_at": "2026-06-07T02:30:21.385Z",
         "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
         "notes": "A direct q-analogue of the classical Beale-Kato-Majda theorem with q-vorticity omega_q=d_q v; the statement essentially transcribes BKM and adds the q>1-global remark. Standard, not a new argument."
+      },
+      {
+        "field_hash": {
+          "md": "a0c7896efa29",
+          "ts": "949aea0a9766",
+          "lean": "fbfc0454994a"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:49:40.413Z",
+        "reviewed_sha": "d3822490ce265825bfd758f4b7fccdec884c9a12"
       }
     ],
     "proof-statement-integrity": [
@@ -523,6 +586,27 @@
         "reviewed_at": "2026-06-12T15:33:55.576Z",
         "reviewed_sha": "fcb1152f5616e324ed4de829859d39d62e0476c1",
         "notes": "§3b-cond non-degenerate conditional (class axiomatises the two BKM directions; theorem derives the iff). Generic [CommRing R], no ℝ (§7c). Predicates remain abstract Props (deep PDE content deferred). Builds: lake build -R exit 0. Canonical decl resolved via lean.ref; sibling stub dropped."
+      },
+      {
+        "field_hash": {
+          "md": "a0c7896efa29",
+          "ts": "949aea0a9766",
+          "lean": "fbfc0454994a"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:49:44.161Z",
+        "reviewed_sha": "d3822490ce265825bfd758f4b7fccdec884c9a12"
       }
     ],
     "fit-section-chapter": [
@@ -2786,5 +2870,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T02:11:07.128Z"
+  "updated_at": "2026-06-14T03:49:44.161Z"
 }

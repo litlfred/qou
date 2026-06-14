@@ -571,6 +571,27 @@
         "reviewed_at": "2026-06-07T02:27:44.523Z",
         "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
         "notes": "md opens with conditional banner and lays out (a) where the obstruction sits (kappa_0=e(xi)), (b) restriction to collision locus, (c) local-cohomology computation, (d) connection to core aspect ratio, (e) Euler-class residue. Clear."
+      },
+      {
+        "field_hash": {
+          "md": "1759c7c70cc6",
+          "ts": "b7e562226f04",
+          "lean": "76013347d865"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:49:01.002Z",
+        "reviewed_sha": "d3822490ce265825bfd758f4b7fccdec884c9a12"
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -596,6 +617,27 @@
         "reviewed_at": "2026-06-07T02:27:44.559Z",
         "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
         "notes": "Lean takes 5 [Instance] hyps but proves 'True := trivial'; real tower claim not stated. md itself defers the q->1 persistence to conj:levi-degeneracy (genuine core gap) + depends on the conjecture cone."
+      },
+      {
+        "field_hash": {
+          "md": "1759c7c70cc6",
+          "ts": "b7e562226f04",
+          "lean": "76013347d865"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:49:04.921Z",
+        "reviewed_sha": "d3822490ce265825bfd758f4b7fccdec884c9a12"
       }
     ],
     "proof-rater-novelty": [
@@ -620,6 +662,27 @@
         "reviewed_at": "2026-06-07T02:27:44.597Z",
         "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
         "notes": "Framing boundary observability Obs_d(A) as ker of the restriction of the graded Yekutieli obstruction tower to the collision locus, with NS-singularity <=> res_Sigma(kappa_n) != 0, is a novel cohomological criterion."
+      },
+      {
+        "field_hash": {
+          "md": "1759c7c70cc6",
+          "ts": "b7e562226f04",
+          "lean": "76013347d865"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:49:08.676Z",
+        "reviewed_sha": "d3822490ce265825bfd758f4b7fccdec884c9a12"
       }
     ],
     "proof-statement-integrity": [
@@ -660,6 +723,27 @@
         "reviewed_at": "2026-06-12T19:15:26.636Z",
         "reviewed_sha": "a703fbb161562601cfe639e2abaa427f72510c66",
         "notes": "§3b-cond non-degenerate conditional (class axiomatises sufficiency + necessity directions; theorem derives the iff). Generic [CommRing R], no ℝ (§7c) — dropped the SobolevHkRegularity (ℝ) import; res_Σ renamed res_sigma (Σ is a reserved Lean token; old file never parsed). Builds: lake build exit 0. Canonical decl resolved via lean.ref; sibling stub dropped."
+      },
+      {
+        "field_hash": {
+          "md": "1759c7c70cc6",
+          "ts": "b7e562226f04",
+          "lean": "76013347d865"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:49:13.584Z",
+        "reviewed_sha": "d3822490ce265825bfd758f4b7fccdec884c9a12"
       }
     ],
     "fit-section-chapter": [
@@ -2568,5 +2652,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T02:11:07.128Z"
+  "updated_at": "2026-06-14T03:49:13.584Z"
 }

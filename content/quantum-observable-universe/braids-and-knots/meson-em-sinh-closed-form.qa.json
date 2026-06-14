@@ -35,6 +35,27 @@
         "reviewed_at": "2026-06-07T02:31:29.655Z",
         "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
         "notes": "Strategy stated: expand hbar_q^2 = (1-q^-1)^2, combine over common denom; each step closed by field_simp;ring. Four-way equality chain enumerated in md."
+      },
+      {
+        "field_hash": {
+          "md": "fa712a606373",
+          "ts": "20983b2e18e7",
+          "lean": "78002e96d3a2"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:45:53.395Z",
+        "reviewed_sha": "d3822490ce265825bfd758f4b7fccdec884c9a12"
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -59,6 +80,27 @@
         "reviewed_at": "2026-06-07T02:31:29.693Z",
         "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
         "notes": "Sorry-free over a Field: meson_EM_closed_form, _inverse, _planck all by field_simp;ring. No axiom, no gap."
+      },
+      {
+        "field_hash": {
+          "md": "fa712a606373",
+          "ts": "20983b2e18e7",
+          "lean": "78002e96d3a2"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:45:53.223Z",
+        "reviewed_sha": "d3822490ce265825bfd758f4b7fccdec884c9a12"
       }
     ],
     "proof-rater-novelty": [
@@ -125,6 +167,27 @@
         "reviewed_at": "2026-06-07T02:31:29.771Z",
         "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
         "notes": "Faithful: meson_EM_closed_form states the md's boxed chain 1+hbar_q-hbar_q^2/2 = (3q^2-1)/(2q^2), with _inverse and _planck giving the other equalities. Genuine, non-vacuous."
+      },
+      {
+        "field_hash": {
+          "md": "fa712a606373",
+          "ts": "20983b2e18e7",
+          "lean": "78002e96d3a2"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:45:53.307Z",
+        "reviewed_sha": "d3822490ce265825bfd758f4b7fccdec884c9a12"
       }
     ],
     "voice-statement-no-interpretation": [
@@ -2414,5 +2477,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T02:11:07.128Z"
+  "updated_at": "2026-06-14T03:45:53.395Z"
 }

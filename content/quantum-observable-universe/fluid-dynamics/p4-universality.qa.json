@@ -605,6 +605,27 @@
         "reviewed_at": "2026-06-07T02:30:21.002Z",
         "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
         "notes": "md opens with conditional banner, states the claim (alpha depends only on chi(A), d=3, gauge rank, not on v0/E0), then argues (a) Sobolev-constant scaling, (b) cascade-depth scaling, (c) independence from v0, with a universality-class table. Clear."
+      },
+      {
+        "field_hash": {
+          "md": "e319a557127e",
+          "ts": "66c065437466",
+          "lean": "8f277bdbd493"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:49:49.450Z",
+        "reviewed_sha": "d3822490ce265825bfd758f4b7fccdec884c9a12"
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -630,6 +651,27 @@
         "reviewed_at": "2026-06-07T02:30:21.038Z",
         "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
         "notes": "Lean takes 3 [Instance] hyps but proves 'True := trivial' (classes are toy proxies, e.g. (3*4:N)=12). The universality argument is heuristic and downstream of p2's heuristic alpha=4/3; depends on the conjecture cone. Core gap; nothing established in Lean."
+      },
+      {
+        "field_hash": {
+          "md": "e319a557127e",
+          "ts": "66c065437466",
+          "lean": "8f277bdbd493"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:49:55.874Z",
+        "reviewed_sha": "d3822490ce265825bfd758f4b7fccdec884c9a12"
       }
     ],
     "proof-rater-novelty": [
@@ -654,6 +696,27 @@
         "reviewed_at": "2026-06-07T02:30:21.076Z",
         "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
         "notes": "The universality-class framing (critical exponent fixed by categorical invariants chi(A), dimension, gauge rank) is a reasonable physics-style extension but is downstream of and dependent on p2-critical-exponent's heuristic derivation."
+      },
+      {
+        "field_hash": {
+          "md": "e319a557127e",
+          "ts": "66c065437466",
+          "lean": "8f277bdbd493"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:50:00.743Z",
+        "reviewed_sha": "d3822490ce265825bfd758f4b7fccdec884c9a12"
       }
     ],
     "proof-statement-integrity": [
@@ -694,6 +757,27 @@
         "reviewed_at": "2026-06-12T15:33:55.627Z",
         "reviewed_sha": "fcb1152f5616e324ed4de829859d39d62e0476c1",
         "notes": "§3b-cond non-degenerate: universality (initial-data independence) derived from the factoring hypothesis. Fully generic types, no ℝ (§7c). Builds exit 0. Canonical decl via lean.ref; sibling stub dropped."
+      },
+      {
+        "field_hash": {
+          "md": "e319a557127e",
+          "ts": "66c065437466",
+          "lean": "8f277bdbd493"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:50:04.483Z",
+        "reviewed_sha": "d3822490ce265825bfd758f4b7fccdec884c9a12"
       }
     ],
     "fit-section-chapter": [
@@ -2883,5 +2967,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T02:11:07.128Z"
+  "updated_at": "2026-06-14T03:50:04.483Z"
 }

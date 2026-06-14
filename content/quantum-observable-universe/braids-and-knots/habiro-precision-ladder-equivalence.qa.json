@@ -716,6 +716,27 @@
         "reviewed_at": "2026-06-08T11:44:35.419Z",
         "reviewed_sha": "c334e454e527b6218d8f3460cdd56eb86f67c9d6",
         "notes": "Bumped 0.8→0.85: strategy explicit in docstrings."
+      },
+      {
+        "field_hash": {
+          "md": "1a6297894d25",
+          "ts": "28b98f6f7d91",
+          "lean": "9549aabb0b76"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:45:56.112Z",
+        "reviewed_sha": "d3822490ce265825bfd758f4b7fccdec884c9a12"
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -763,6 +784,27 @@
         "reviewed_at": "2026-06-08T11:44:35.362Z",
         "reviewed_sha": "c334e454e527b6218d8f3460cdd56eb86f67c9d6",
         "notes": "Bumped 0.3→0.9: gap-as-goal removed; sorry-free."
+      },
+      {
+        "field_hash": {
+          "md": "1a6297894d25",
+          "ts": "28b98f6f7d91",
+          "lean": "9549aabb0b76"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:45:55.683Z",
+        "reviewed_sha": "d3822490ce265825bfd758f4b7fccdec884c9a12"
       }
     ],
     "proof-rater-novelty": [
@@ -810,6 +852,27 @@
         "reviewed_at": "2026-06-08T11:44:35.496Z",
         "reviewed_sha": "c334e454e527b6218d8f3460cdd56eb86f67c9d6",
         "notes": "Confirmed 0.55 — standard result."
+      },
+      {
+        "field_hash": {
+          "md": "1a6297894d25",
+          "ts": "28b98f6f7d91",
+          "lean": "9549aabb0b76"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:45:55.836Z",
+        "reviewed_sha": "d3822490ce265825bfd758f4b7fccdec884c9a12"
       }
     ],
     "proof-statement-integrity": [
@@ -850,6 +913,27 @@
         "reviewed_at": "2026-06-08T11:44:35.277Z",
         "reviewed_sha": "c334e454e527b6218d8f3460cdd56eb86f67c9d6",
         "notes": "Was 3 props of type True / ∃ M, True; lean.ref pointed at namespace. Now genuine non-vacuous statements; fixed pre-existing eval₂ type error + missing Real import. Build-verified sorry-free."
+      },
+      {
+        "field_hash": {
+          "md": "1a6297894d25",
+          "ts": "28b98f6f7d91",
+          "lean": "9549aabb0b76"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:45:55.985Z",
+        "reviewed_sha": "d3822490ce265825bfd758f4b7fccdec884c9a12"
       }
     ],
     "voice-unicode-crash": [
@@ -2665,5 +2749,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T02:11:07.128Z"
+  "updated_at": "2026-06-14T03:45:56.112Z"
 }

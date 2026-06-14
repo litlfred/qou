@@ -337,7 +337,7 @@ def try_binding_q_clt_proxy(Z: int, N: int) -> dict | None:
         
         return {
             "B_pred_MeV": B_pred,
-            "method": "Q-CLT proxy (alpha * sum ln|V|)"
+            "method": "Q-CLT derivation (alpha * sum ln|V|)"
         }
     except Exception as e:
         return None
@@ -383,7 +383,7 @@ def main() -> int:
     print()
     print(f"\n{'Atom':>5s} {'Z':>2s} {'N':>2s} {'A':>2s}  "
           f"{'m_symbolic':>14s} {'m_qCLT_approx':>14s} {'m_observed':>14s}  "
-          f"{'B_sym':>12s} {'B_proxy':>12s} {'B_AME':>11s}  "
+          f"{'B_sym':>12s} {'B_qCLT':>12s} {'B_AME':>11s}  "
           f"{'Methodology':>30s}  Caveats")
     print("-" * 150)
 
@@ -404,7 +404,7 @@ def main() -> int:
 
         # Binding energies
         B_pred = 0.0
-        B_proxy = 0.0
+        B_qCLT = 0.0
         B_method = "n/a"
         if A >= 2:
             sym_binding = try_binding_symbolic_log_trace(Z, N)
@@ -412,12 +412,12 @@ def main() -> int:
                 B_pred = sym_binding.get("B_pred_MeV", 0.0)
                 B_method = sym_binding.get("method", "?")
                 
-            proxy_binding = try_binding_q_clt_proxy(Z, N)
-            if proxy_binding:
-                B_proxy = proxy_binding.get("B_pred_MeV", 0.0)
+            qclt_binding = try_binding_q_clt_proxy(Z, N)
+            if qclt_binding:
+                B_qCLT = qclt_binding.get("B_pred_MeV", 0.0)
                 if not sym_binding:
-                    B_pred = B_proxy
-                    B_method = proxy_binding.get("method", "?")
+                    B_pred = B_qCLT
+                    B_method = qclt_binding.get("method", "?")
         else:
             # Fallback for nucleon
             binding = try_binding_canonical(Z, N, Q_50_DIGIT_STR)
@@ -426,7 +426,7 @@ def main() -> int:
                 B_method = binding.get("method", "?")
 
         m_symbolic = (m_unbound_approx - B_pred) if (m_unbound_approx is not None and (B_pred > 0 or A == 1)) else None
-        m_approx = (m_unbound_approx - B_proxy) if (m_unbound_approx is not None and (B_proxy > 0 or A == 1)) else None
+        m_approx = (m_unbound_approx - B_qCLT) if (m_unbound_approx is not None and (B_qCLT > 0 or A == 1)) else None
         B_AME = AME_BINDING.get(name, 0.0)
 
         # CODATA/AME observed mass for comparison
@@ -467,7 +467,7 @@ def main() -> int:
             "m_err_pct_approx": round(m_err_pct_approx, 4) if m_err_pct_approx is not None else None,
             "m_err_pct_sym": round(m_err_pct_sym, 4) if m_err_pct_sym is not None else None,
             "B_pred_MeV": round(B_pred, 6) if B_pred else None,
-            "B_proxy_MeV": round(B_proxy, 6) if B_proxy else None,
+            "B_qCLT_MeV": round(B_qCLT, 6) if B_qCLT else None,
             "B_AME_MeV": round(B_AME, 6),
             "B_err_pct": round(B_err_pct, 4) if B_err_pct is not None else None,
             "binding_method": B_method,
@@ -481,13 +481,13 @@ def main() -> int:
         m_app_s = f"{m_approx:14.6f}" if m_approx else "           n/a"
         m_obs_s = f"{m_observed:14.6f}" if m_observed else "           n/a"
         B_pred_s = f"{B_pred:12.6f}" if B_pred else "         n/a"
-        B_proxy_s = f"{B_proxy:12.6f}" if B_proxy else "         n/a"
+        B_qCLT_s = f"{B_qCLT:12.6f}" if B_qCLT else "         n/a"
         B_AME_s = f"{B_AME:11.6f}"
 
         elapsed = time.monotonic() - t0
         print(f"{name:>5s} {Z:>2d} {N:>2d} {A:>2d}  "
               f"{m_sym_s} {m_app_s} {m_obs_s}  "
-              f"{B_pred_s} {B_proxy_s} {B_AME_s}  "
+              f"{B_pred_s} {B_qCLT_s} {B_AME_s}  "
               f"{atlas_tag:>30s}  "
               f"{'|'.join(caveats[:2])}"
               f"  [{elapsed:.1f}s]")

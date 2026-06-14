@@ -115,22 +115,22 @@ flowchart TD
     M_unb["Unbound Base \n m_unbound = Z·m_p + N·m_n"]:::base
     
     B_sym["Exact Algebraic Trace \n B_sym = -α ln |τ_M(K)|"]:::trace
-    B_proxy["Q-CLT Macroscopic Proxy \n B_proxy = -α Σ ln |V_i|"]:::proxy
+    B_qCLT["Q-CLT Macroscopic Limit \n B_qCLT = -α Σ ln |V_i|"]:::proxy
     
     M_sym["Exact Algebraic Mass \n m_sym = m_unbound - B_sym"]:::physical
-    M_qclt["Limit Approximation Mass \n m_qclt = m_unbound - B_proxy"]:::physical
+    M_qclt["Limit Approximation Mass \n m_qclt = m_unbound - B_qCLT"]:::physical
     M_obs["Macroscopic Empirical Observation \n AME 2020"]:::physical
 
     M_unb -->|"Exact active-partition factorization"| B_sym
-    M_unb -->|"Statistical averaging (SnapPea proxy limit)"| B_proxy
+    M_unb -->|"Statistical averaging (Q-CLT macroscopic limit)"| B_qCLT
     
-    B_sym -.->|"Q-CLT Limit (A → ∞)"| B_proxy
+    B_sym -.->|"Q-CLT Limit (A → ∞)"| B_qCLT
     
     B_sym == "Archimedean Functor 𝓕_Arch (Standard-Part)" ==> M_sym
-    B_proxy == "Asymptotic Convergence" ==> M_qclt
+    B_qCLT == "Asymptotic Convergence" ==> M_qclt
     
     M_sym -.->|"Perfect mapping in algebraic limit"| M_obs
     M_qclt -.->|"Approximates"| M_obs
 ```
 
-This mapping guarantees that the exact active-partition factorization and the Q-CLT statistical proxy share the same macroscopic limit under $\mathrm{St}$.
+This mapping guarantees that the exact active-partition factorization and the Q-CLT statistical limit share the same macroscopic limit under $\mathrm{St}$.

@@ -520,6 +520,27 @@
         "reviewed_at": "2026-06-07T02:29:46.590Z",
         "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
         "notes": "Strategy stated: branching via Pieri/LR box-removal from Young diagram of each lambda |- 3; explicit per-partition restriction listed. Frobenius reciprocity invoked for multiplicity-one."
+      },
+      {
+        "field_hash": {
+          "md": "122d90386dce",
+          "ts": "3010433f709f",
+          "lean": "c4291c669c30"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:45:55.551Z",
+        "reviewed_sha": "d3822490ce265825bfd758f4b7fccdec884c9a12"
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -544,6 +565,27 @@
         "reviewed_at": "2026-06-07T02:29:46.632Z",
         "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
         "notes": "Sorry-free: standard_restricts_to_both_leptons, Artin-Wedderburn dimension checks (h2/h3/h4), and Frobenius reciprocity restatement all close by omega/rfl/simp. No axiom, no gap."
+      },
+      {
+        "field_hash": {
+          "md": "122d90386dce",
+          "ts": "3010433f709f",
+          "lean": "c4291c669c30"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:45:55.210Z",
+        "reviewed_sha": "d3822490ce265825bfd758f4b7fccdec884c9a12"
       }
     ],
     "proof-rater-novelty": [
@@ -568,6 +610,27 @@
         "reviewed_at": "2026-06-07T02:29:46.671Z",
         "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
         "notes": "Structure-hypothesis projection: the branching V_(2,1)->V_(2)+V_(1,1) is standard rep theory encoded as a hardcoded branchingH3H2 value table; Lean theorems extract/verify the tabulated multiplicities rather than deriving them from Pieri. The entanglement/mass-bridge reading is interpretive."
+      },
+      {
+        "field_hash": {
+          "md": "122d90386dce",
+          "ts": "3010433f709f",
+          "lean": "c4291c669c30"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:45:55.321Z",
+        "reviewed_sha": "d3822490ce265825bfd758f4b7fccdec884c9a12"
       }
     ],
     "proof-statement-integrity": [
@@ -588,6 +651,27 @@
         "reviewed_at": "2026-06-07T02:29:46.707Z",
         "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
         "notes": "Lean faithfully encodes the md claim: branchingH3H2 1 0 = 1 AND 1 1 = 1 IS the statement V_(2,1) restricts to both lepton irreps. Value-table assertion, but a faithful (non-vacuous) encoding of the multiplicity content."
+      },
+      {
+        "field_hash": {
+          "md": "122d90386dce",
+          "ts": "3010433f709f",
+          "lean": "c4291c669c30"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:45:55.413Z",
+        "reviewed_sha": "d3822490ce265825bfd758f4b7fccdec884c9a12"
       }
     ],
     "voice-unicode-crash": [
@@ -2420,5 +2504,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T02:11:07.128Z"
+  "updated_at": "2026-06-14T03:45:55.551Z"
 }

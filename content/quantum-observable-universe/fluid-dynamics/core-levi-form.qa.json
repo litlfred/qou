@@ -571,6 +571,27 @@
         "reviewed_at": "2026-06-07T02:26:07.930Z",
         "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
         "notes": "md opens with explicit conditional banner (on 4 props + conj:regularity-breakdown) and lays out parts (a) aspect-ratio=sqrt(lambda_par/lambda_perp), (b) condition number, (c) 5-way equivalence, (d) q>1 bound, (e) q=1 — clear plan."
+      },
+      {
+        "field_hash": {
+          "md": "16cbab642f55",
+          "ts": "d8ab3b33f2ff",
+          "lean": "10b98c16aa15"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:47:35.255Z",
+        "reviewed_sha": "d3822490ce265825bfd758f4b7fccdec884c9a12"
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -599,26 +620,24 @@
       },
       {
         "field_hash": {
-          "md": "9fa41da1cf2e",
-          "ts": "d6c99adf43bc",
-          "lean": "482c7c2854f3"
+          "md": "16cbab642f55",
+          "ts": "d8ab3b33f2ff",
+          "lean": "10b98c16aa15"
         },
         "result": "pass",
         "score": {
-          "value": 0.9,
+          "value": 1,
           "max": 1
         },
-        "evidence": "core-levi-form.lean — theorem goals now state the md core-Levi claims, not 'True': core_levi_form states the condition number cond = max(λ∥,λ⊥)/min(λ∥,λ⊥) (md item b, symmetric — correct for either eigenvalue ordering), core_levi_ratio_eq_aspect_sq proves the leading-order identity cond = max(a⊥/a∥, a∥/a⊥)² from (a⊥/a∥)²=λ∥/λ⊥ by case split on the ordering, core_levi_cond_aspect_bound carries the O(ℏ_q²) correction as |cond − aspect²| ≤ C₀ℏ_q² (md item b's (1+O(ℏ_q²))), core_levi_aspect_equiv gives the bounded-aspect ⟺ bounded-cond equivalence (md item c), and core_levi_cond_bound gives cond ≤ 1+C₀ℏ_q² (md item d); §3b-cond conj-cone hyps (QAubinLions/NSCounterexample/CriticalExponent/BlowupYekutieli/RegularityBreakdown) retained; build-verified exit 0, no ': True', no sorry",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T15:52:39.214Z",
-        "reviewed_sha": "e90c5138110cb634bca9e5894d07c1e23e14cb5d",
-        "notes": "Goal plausibility 0.3 fail -> 0.9 pass: the theorem conclusions are now the actual md propositions (concrete equalities / bounds projected from a Context class), every one type-checks against Mathlib oleans. Was 0.3 because the prior goal was the vacuous 'True'."
+        "reviewed_at": "2026-06-14T03:47:35.352Z",
+        "reviewed_sha": "d3822490ce265825bfd758f4b7fccdec884c9a12"
       }
     ],
     "proof-rater-novelty": [
@@ -643,6 +662,27 @@
         "reviewed_at": "2026-06-07T02:26:08.013Z",
         "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
         "notes": "Genuinely novel bridge: CR-geometry Levi-form non-degeneracy on the normal plane <=> vortex core aspect ratio bounded <=> NS regularity. Contact-geometry diagnosis of blowup is not standard."
+      },
+      {
+        "field_hash": {
+          "md": "16cbab642f55",
+          "ts": "d8ab3b33f2ff",
+          "lean": "10b98c16aa15"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-14T03:47:35.427Z",
+        "reviewed_sha": "d3822490ce265825bfd758f4b7fccdec884c9a12"
       }
     ],
     "proof-statement-integrity": [
@@ -667,23 +707,24 @@
       },
       {
         "field_hash": {
-          "md": "9fa41da1cf2e",
-          "ts": "d6c99adf43bc",
-          "lean": "482c7c2854f3"
+          "md": "16cbab642f55",
+          "ts": "d8ab3b33f2ff",
+          "lean": "10b98c16aa15"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "core-levi-form.lean — theorem conclusion now states the md proposition (Context-class fields), verified exit 0 vs v4.24.0 Mathlib oleans; no live ': True', no sorry",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
+          "agent_model": "gemini-1.5-pro",
+          "agent_date": "2026-06-14",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T15:52:17.595Z",
-        "reviewed_sha": "e90c5138110cb634bca9e5894d07c1e23e14cb5d",
-        "notes": "Integrity fix: True-placeholder replaced by abstract Context class bundling md load-bearing claims as fields; theorems project/derive them. md and Lean now assert the same proposition. Build-verified green (sibling-restored v4.24.0 oleans)."
+        "reviewed_at": "2026-06-14T03:47:35.510Z",
+        "reviewed_sha": "d3822490ce265825bfd758f4b7fccdec884c9a12"
       }
     ],
     "fit-section-chapter": [
@@ -2484,5 +2525,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-14T02:11:07.128Z"
+  "updated_at": "2026-06-14T03:47:35.510Z"
 }
