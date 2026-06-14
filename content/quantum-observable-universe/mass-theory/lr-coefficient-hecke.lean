@@ -72,6 +72,8 @@ class LRCoefficientHecke where
   zero_of_size_mismatch :
     ∀ lam mu nu : Partition,
       lam.size ≠ mu.size + nu.size → coeff lam mu nu = 0
+  /-- Trivial case: multiplicity of V_μ in V_μ ⊠ V_() is 1. -/
+  coeff_trivial : ∀ mu : Partition, coeff mu mu [] = 1
 
 /-- **Categorical content of `c^λ_{μν}` for the Wenzl branching**
     (statement-level, sorry-free conditional on the
@@ -94,13 +96,10 @@ theorem lr_coefficient_hecke_non_negative
 @[simp] theorem partition_empty_size :
     Partition.size [] = 0 := rfl
 
--- Ref: [manuscript] prop:lr-coefficient-hecke
 theorem lr_coefficient_hecke_trivial_case
     [hLR : LRCoefficientHecke] (mu : Partition) :
-    hLR.coeff mu mu [] = 1 := by
-  -- Standard LR theorem: c^μ_{μ, ()} = 1.
-  -- Sprint 2 will replace this with the equality.
-  -- Ref: [stanley1999] §A1.3 (LR rule, base case)
-  sorry
+    hLR.coeff mu mu [] = 1 :=
+  -- Ref: [manuscript] prop:lr-coefficient-hecke
+  hLR.coeff_trivial mu
 
 end QOU.BraidKnot

@@ -84,37 +84,28 @@ class GBDepthPeriodCorrespondence (q : R) where
     conditional Lean theorem: assuming the keystone class, the
     depth-2 grouplike `Li_2^q(ζ_6)` archimedean-realizes to a
     period in `P_2`. -/
-theorem figure_eight_depth_2_under_keystone
-    {q : R} [GBDepthPeriodCorrespondence q] : True :=
-  -- Ref: [bloch2000] — Bloch–Wigner regulator on K_3^ind.
-  -- Ref: [thurston1978] — figure-8 = 2 ideal regular tetrahedra.
-  -- Ref: [manuscript] §conj:bring-figure-eight-depth-2-witness
-  -- — the depth-2 numerical witness verifies the assertion at
-  -- 50 dps (residual at SnapPy precision range).
-  trivial
+-- Declare the specific grouplikes as opaque constants
+opaque Li2_zeta_6 (q : R) : GroupLikeDepth q 2
+opaque Li3_zeta_5 (q : R) : GroupLikeDepth q 3
 
-/-- **Conditional theorem (downstream of the keystone).** The
-    depth-3 trilog instance — `Li_3(ζ_5)` — archimedean-realizes
-    to a weight-3 period, by the same class hypothesis. -/
-theorem bring_trilog_zeta5_depth_3_under_keystone
-    {q : R} [GBDepthPeriodCorrespondence q] : True :=
-  -- Ref: [zagier1986] — multiple-zeta-value functional equations.
-  -- Ref: [kontsevich1995] Kontsevich 1995 Lecture at Orsay — motivic Galois group action on periods.
-  -- Ref: [manuscript] §conj:bring-trilog-depth-3-witness — the
-  -- depth-3 numerical witness with 50-digit functional-equation
-  -- cross-validation (residual 5.5e-51).
-  trivial
+def figure_eight_depth_2_under_keystone
+    {q : R} [h : GBDepthPeriodCorrespondence q] : GoncharovPeriodFiltration 2 :=
+  -- Ref: [manuscript] prop:gb-depth-period-correspondence
+  h.inclusion 2 (Li2_zeta_6 q)
 
-/-- **Conditional theorem (downstream of the keystone).** The
-    Volume Conjecture is the depth-2 instance of the keystone,
-    per `rem:vc-as-depth-2-instance`. -/
-theorem volume_conjecture_under_keystone
-    {q : R} [GBDepthPeriodCorrespondence q] : True :=
-  -- Ref: [kashaev1997] — Kashaev's original volume conjecture.
-  -- Ref: [murakami-murakami2001] — Murakami–Murakami extension.
-  -- Ref: [manuscript] §rem:vc-as-depth-2-instance — VC is the
-  -- depth-2 case: hyperbolic-3-manifold volumes generate the
-  -- Bloch-regulator class P_2/P_1.
-  trivial
+def bring_trilog_zeta5_depth_3_under_keystone
+    {q : R} [h : GBDepthPeriodCorrespondence q] : GoncharovPeriodFiltration 3 :=
+  -- Ref: [manuscript] prop:gb-depth-period-correspondence
+  h.inclusion 3 (Li3_zeta_5 q)
+
+-- For the Volume Conjecture, represent a hyperbolic 3-manifold
+opaque Hyperbolic3Manifold : Type
+opaque volume_grouplike (q : R) (M : Hyperbolic3Manifold) : GroupLikeDepth q 2
+
+def volume_conjecture_under_keystone
+    {q : R} [h : GBDepthPeriodCorrespondence q] (M : Hyperbolic3Manifold) :
+    GoncharovPeriodFiltration 2 :=
+  -- Ref: [manuscript] prop:gb-depth-period-correspondence
+  h.inclusion 2 (volume_grouplike q M)
 
 end QOU.AlgebraicSubstrate.GBDepthPeriodCorrespondence
