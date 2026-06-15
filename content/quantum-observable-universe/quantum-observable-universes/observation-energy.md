@@ -19,18 +19,18 @@ substrate perturbation $\delta q$.  Then:*
    energy of the system.*
 
 2. **(Action deformation.)** *The categorical action
-   $S_q[\nabla, \lambda, \psi]$
+   $\mathfrak{S}_q[\nabla, \lambda, \psi]$
    ([categorical action](#def:categorical-action)) evaluated
    at the perturbed parameter $q' = q + \delta q$ satisfies*
 
    $$
-     S_{q'}
+     \mathfrak{S}_{q'}
      = 
-     S_q +  \delta q \cdot \frac{\partial S_q}{\partial q}
+     \mathfrak{S}_q +  \delta q \cdot \frac{\partial \mathfrak{S}_q}{\partial q}
      +  O((\delta q)^2)
    $$
 
-   *The first-order shift $\partial S_q / \partial q$ is the
+   *The first-order shift $\partial \mathfrak{S}_q / \partial q$ is the
    **observation cost**: the rate at which the action changes
    per unit of substrate perturbation.*
 
