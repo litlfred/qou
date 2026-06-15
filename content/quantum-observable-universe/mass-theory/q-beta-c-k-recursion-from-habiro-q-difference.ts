@@ -22,7 +22,7 @@ export default proposition({
       "folio-assistant/computations/qbeta/qbeta_c_k_recursion_scaffold.py",
     witness:
       "folio-assistant/computations/qbeta/qbeta-c-k-recursion-scaffold.witness.json",
-    status: "scaffolding",
+    status: "experimental",
   },
   tags: [
     "q-beta",

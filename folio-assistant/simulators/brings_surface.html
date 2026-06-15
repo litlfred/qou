@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <title>Bring's Surface — Quaternionic Spectral Resolvents</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@300;400;600&display=swap');
 
 :root {
   --bg:      #020710;
@@ -233,9 +232,9 @@ input[type=range]::-webkit-slider-thumb {
 <!-- FORMULA -->
 <div class="panel" id="formula">
   <div class="panel-title">Def 3.21 + Rmk 3.23</div>
-  <span class="fm">ω₁ = i · w₁ / lnq(1+r)</span>   [space-like]<br>
-  <span class="fd">ω₂ = j · w₂ · (expq(r)−1)</span>  [time-like]<br>
-  <span class="ft">ω₃ = k · w₃ · (expq(r)−1)</span>  [time-like]<br>
+  <span class="fm">ω₁ = i · (w₁ + i) / lnq(1+r)</span>   [space-like]<br>
+  <span class="fd">ω₂ = j · (w₂ + i) · (expq(r)−1)</span>  [time-like]<br>
+  <span class="ft">ω₃ = k · (w₃ + i) · (expq(r)−1)</span>  [time-like]<br>
   <span class="fdm">xⱼ via cosq(α−2πj/5)+cosq(β−4πj/5)</span><br>
   <span class="fdm">Sp(1): cosq(2θ), sinq(2θ),  θ=π/2·e⁻ʳ</span><br>
   <span style="color:var(--dim)">q = e⁻ʳ,  ℏ_q = 1−q</span><br>
@@ -250,7 +249,7 @@ input[type=range]::-webkit-slider-thumb {
 <div class="axl" id="ax2" style="color:#5588ff">Re(ω₂)</div>
 <div id="tip"></div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="./three.min.js"></script>
 <script>
 // ════════════════════════════════════════════════════════════════════
 //   BRING'S SURFACE  —  Quaternionic Spectral Resolvent Coordinates
@@ -323,6 +322,7 @@ function expQ(x, q, N) {
     const qf = qFact(n, q);
     if (Math.abs(qf) < 1e-15) break;
     const t = xn / qf;
+    if (!isFinite(t)) break;
     sum += t;
     if (n > 6 && Math.abs(t) < 1e-14 * (1 + Math.abs(sum))) break;
   }
@@ -339,6 +339,7 @@ function lnQ(x, q, N) {
     const qn = qInt(n, q);
     if (Math.abs(qn) < 1e-15) break;
     const t = Math.pow(-1, n + 1) * xn / qn;
+    if (!isFinite(t)) break;
     sum += t;
     if (n > 8 && Math.abs(t) < 1e-13 * (1 + Math.abs(sum))) break;
   }
@@ -353,6 +354,7 @@ function cosQ(x, q, N) {
     const qf = qFact(2 * n, q);
     if (Math.abs(qf) < 1e-15) break;
     const t = xn / qf;
+    if (!isFinite(t)) break;
     sum += t;
     if (n > 4 && Math.abs(t) < 1e-14 * (1 + Math.abs(sum))) break;
   }
@@ -367,6 +369,7 @@ function sinQ(x, q, N) {
     const qf = qFact(2 * n + 1, q);
     if (Math.abs(qf) < 1e-15) break;
     const t = xn / qf;
+    if (!isFinite(t)) break;
     sum += t;
     if (n > 4 && Math.abs(t) < 1e-14 * (1 + Math.abs(sum))) break;
   }
@@ -419,6 +422,16 @@ function sp1Rot(X, Y, Z, th, q, N) {
   return { x: X * ca + Z * sa, y: Y, z: -X * sa + Z * ca };
 }
 
+// ── Quaternionic Multiplication ───────────────────────────────────
+function qMul(q, p) {
+  return [
+    q[0]*p[0] - q[1]*p[1] - q[2]*p[2] - q[3]*p[3],
+    q[0]*p[1] + q[1]*p[0] + q[2]*p[3] - q[3]*p[2],
+    q[0]*p[2] - q[1]*p[3] + q[2]*p[0] + q[3]*p[1],
+    q[0]*p[3] + q[1]*p[2] - q[2]*p[1] + q[3]*p[0]
+  ];
+}
+
 // ── Full 3D point in chosen projection mode ───────────────────────
 function point3D(r, alpha, b, gf, N) {
   const beta    = BETAS[b](alpha);
@@ -430,15 +443,37 @@ function point3D(r, alpha, b, gf, N) {
 
   const W1 = wk(xs, 1);
   const W2 = wk(xs, 2);
+  const W3 = wk(xs, 3);
 
-  const X = W1.re * g1;
-  const Y = W1.im * g1;
-  const Z = W2.re * g2;
+  W1.im += 1.0;
+  W2.im += 1.0;
+  W3.im += 1.0;
+
+  const p_real = -g1 * W1.im;
+  const p_i = g1 * W1.re;
+  const p_j = g2 * (W2.re + W3.im);
+  const p_k = g2 * (W3.re - W2.im);
 
   if (projMode === 'sp1') {
-    return sp1Rot(X, Y, Z, th, q, N);
+    const ca = cosQ(th, q, N);
+    const sa = sinQ(th, q, N);
+    const R = [ca, 0, sa, 0];
+    const normSq = ca * ca + sa * sa;
+    if (normSq < 1e-15) return { x: 0, y: 0, z: 0 };
+    const R_inv = [ca / normSq, 0, -sa / normSq, 0];
+    const p = [p_real, p_i, p_j, p_k];
+    const p_prime = qMul(qMul(R, p), R_inv);
+    return { 
+      x: isFinite(p_prime[1]) ? p_prime[1] : 0, 
+      y: isFinite(p_prime[2]) ? p_prime[2] : 0, 
+      z: isFinite(p_prime[3]) ? p_prime[3] : 0 
+    };
   }
-  return { x: X, y: Y, z: Z };
+  return { 
+    x: isFinite(p_i) ? p_i : 0, 
+    y: isFinite(p_j) ? p_j : 0, 
+    z: isFinite(p_k) ? p_k : 0 
+  };
 }
 
 // ════════════════════════════════════════════════════════════════════
@@ -536,6 +571,8 @@ function buildSurface() {
   const nR     = rs.length;
   const nAlpha = alphas.length;
   const nBranch = document.getElementById('cb_all').checked ? 4 : 1;
+
+  if (isNaN(qN) || nR === 0 || nAlpha === 0) return;
 
   // Pre-compute growth factors per r (independent of branch / α)
   const GF = rs.map(r => growthFactors(r, qN));
@@ -779,8 +816,11 @@ function updateHover() {
   const { q, g1, g2, th, cq } = gf;
   const hq  = 1 - q;
   const beta = BETAS[0](bestA);
-  const xs  = bringXj(bestR, bestA, beta);
+  const xs  = bringXj(bestR, bestA, beta, q, qN);
   const W1  = wk(xs, 1), W2 = wk(xs, 2), W3 = wk(xs, 3);
+  W1.im += 1.0;
+  W2.im += 1.0;
+  W3.im += 1.0;
   const cg1 = Math.min(Math.abs(g1), 9999);
   const cg2 = Math.min(Math.abs(g2), 9999);
 
@@ -860,8 +900,66 @@ document.querySelectorAll('.pill[data-mode]').forEach(pill => {
   });
 });
 
+// ── URL Query Parameter Parsing ───────────────────────────────────
+(function() {
+  const p = new URLSearchParams(location.search);
+  
+  // Numeric and string parameters
+  const params = ['rmin', 'rmax', 'dr', 'dzeta', 'qN'];
+  params.forEach(param => {
+    let val = p.get(param);
+    if (param === 'qN' && !val) {
+      val = p.get('N') || p.get('q');
+    }
+    if (param === 'dzeta' && !val && p.get('grid')) {
+      const g = parseInt(p.get('grid'));
+      if (!isNaN(g) && g > 0) val = (4 / g).toString();
+    }
+    if (val !== null) {
+      if (isNaN(parseFloat(val))) return;
+      const el = document.getElementById(param);
+      if (el) el.value = val;
+    }
+  });
+
+  // Checkboxes
+  const checkboxes = { 'cb_surf': 'surf', 'cb_grid': 'showGrid', 'cb_tess': 'tess', 'cb_axes': 'axes', 'cb_auto': 'auto', 'cb_all': 'all' };
+  Object.keys(checkboxes).forEach(cb => {
+    let val = p.get(cb);
+    if (val === null) val = p.get(checkboxes[cb]); // check short name
+
+    if (val !== null) {
+      const el = document.getElementById(cb);
+      if (el) {
+        el.checked = (val === 'true' || val === '1');
+        if (cb === 'cb_axes') {
+          axHelper.visible = el.checked;
+          ['ax0','ax1','ax2'].forEach(id => {
+            const axEl = document.getElementById(id);
+            if (axEl) axEl.style.display = el.checked ? 'block' : 'none';
+          });
+        }
+      }
+    }
+  });
+
+  // Mode
+  const modeVal = p.get('mode') || p.get('projection');
+  if (modeVal !== null) {
+    projMode = modeVal;
+    // Update UI pills
+    document.querySelectorAll('.pill[data-mode]').forEach(pill => {
+      if (pill.dataset.mode === projMode) {
+        pill.classList.add('active');
+      } else {
+        pill.classList.remove('active');
+      }
+    });
+  }
+})();
+
 // ── Boot ──────────────────────────────────────────────────────────
-buildSurface();
+window.addEventListener('DOMContentLoaded', () => setTimeout(buildSurface, 100));
 
 let frame = 0;
 function animate() {

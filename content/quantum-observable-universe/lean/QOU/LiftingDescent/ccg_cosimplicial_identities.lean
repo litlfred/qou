@@ -31,14 +31,30 @@ class CcgCosimplicialIdentitiesContext where
   delta : (n i : ℕ) → Obj n → Obj (n + 1)
   /-- Codegeneracy map `σⁱ : Obj (n+1) → Obj n`. -/
   sigma : (n i : ℕ) → Obj (n + 1) → Obj n
-  /-- Face-face cosimplicial identity: `δʲ ∘ δⁱ = δⁱ ∘ δ^{j−1}` for `i < j`. -/
-  claim_face_face : ∀ (n i j : ℕ) (x : Obj n),
-    i < j →
-      delta (n + 1) j (delta n i x) = delta (n + 1) i (delta n (j - 1) x)
-  /-- Degeneracy-degeneracy: `σʲ ∘ σⁱ = σⁱ ∘ σ^{j+1}` for `i ≤ j`. -/
-  claim_deg_deg : ∀ (n i j : ℕ) (y : Obj (n + 2)),
-    i ≤ j →
-      sigma n j (sigma (n + 1) i y) = sigma n i (sigma (n + 1) (j + 1) y)
+  /-- Čech face map. -/
+  cech_face : (n i : ℕ) → Obj n → Obj (n + 1)
+  /-- Jet prolongation map. -/
+  jet : (n : ℕ) → Obj n → Obj n
+  /-- Coface map is composite of jet and Čech face. -/
+  delta_def : ∀ n i x, delta n i x = cech_face n i (jet n x)
+  /-- Čech degeneracy map. -/
+  cech_deg : (n i : ℕ) → Obj (n + 1) → Obj n
+  /-- Descent map. -/
+  descent : (n : ℕ) → Obj n → Obj n
+  /-- Codegeneracy map is composite of descent and Čech degeneracy. -/
+  sigma_def : ∀ n i y, sigma n i y = descent n (cech_deg n i y)
+
+  /-- Jet prolongation commutes with Čech face. -/
+  jet_face_comm : ∀ n i x, jet (n + 1) (cech_face n i x) = cech_face n i (jet n x)
+  /-- Čech face maps satisfy disjoint-support commutation. -/
+  cech_face_comm : ∀ n i j x, i < j →
+    cech_face (n + 1) j (cech_face n i x) = cech_face (n + 1) i (cech_face n (j - 1) x)
+
+  /-- Descent commutes with Čech degeneracy. -/
+  descent_deg_comm : ∀ n i y, descent n (cech_deg n i y) = cech_deg n i (descent (n + 1) y)
+  /-- Čech degeneracy maps satisfy disjoint-support commutation. -/
+  cech_deg_comm : ∀ n i j y, i ≤ j →
+    cech_deg n j (cech_deg (n + 1) i y) = cech_deg n i (cech_deg (n + 1) (j + 1) y)
 
 /-- **Cosimplicial identities** ([`lem:ccg-cosimplicial-identities`]).
 
@@ -53,7 +69,15 @@ theorem ccg_cosimplicial_identities
     -- Degeneracy-degeneracy: `σʲ ∘ σⁱ = σⁱ ∘ σ^{j+1}` for `i ≤ j`.
     (i ≤ j →
        ctx.sigma n j (ctx.sigma (n + 1) i y)
-         = ctx.sigma n i (ctx.sigma (n + 1) (j + 1) y)) :=
-  ⟨ctx.claim_face_face n i j x, ctx.claim_deg_deg n i j y⟩
+         = ctx.sigma n i (ctx.sigma (n + 1) (j + 1) y)) := by
+  constructor
+  · intro hij
+    rw [ctx.delta_def, ctx.delta_def, ctx.delta_def, ctx.delta_def]
+    rw [ctx.jet_face_comm]
+    rw [ctx.cech_face_comm _ _ _ _ hij]
+  · intro hij
+    rw [ctx.sigma_def, ctx.sigma_def, ctx.sigma_def, ctx.sigma_def]
+    rw [← ctx.descent_deg_comm]
+    rw [ctx.cech_deg_comm _ _ _ _ hij]
 
 end QOU.LiftingDescent

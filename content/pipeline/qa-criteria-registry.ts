@@ -766,6 +766,46 @@ const PROOF: QaCriterionDefinition[] = [
     automated: false,
     applies_to: ["theorem", "lemma", "proposition", "corollary"],
   },
+  {
+    id: "proof-no-false-premise",
+    domain: "proof",
+    description:
+      "The theorem does not rely on a false or contradictory premise (e.g., " +
+      "`h : False`, `h : 0 = 1`, or an uninhabited type) that makes the " +
+      "implication trivially true via `False.elim`. Agent-checked. " +
+      "Routes to `lean-proof-review`.",
+    default_severity: "critical",
+    depends_on: ["lean"],
+    automated: false,
+    applies_to: ["theorem", "lemma", "proposition", "corollary"],
+  },
+  {
+    id: "proof-no-unused-hypotheses",
+    domain: "proof",
+    description:
+      "The proof utilizes all stated hypotheses. Unused hypotheses " +
+      "often indicate that the proven statement is weaker than intended, " +
+      "or that the hypotheses were added to satisfy an interface without " +
+      "genuine mathematical dependence. Agent-checked (Lean unused vars lint). " +
+      "Routes to `lean-proof-review`.",
+    default_severity: "major",
+    depends_on: ["lean"],
+    automated: false,
+    applies_to: ["theorem", "lemma", "proposition", "corollary"],
+  },
+  {
+    id: "proof-no-decide-masking",
+    domain: "proof",
+    description:
+      "The proof does not use `decide` or `trivial` to mask an incomplete " +
+      "or vacuous goal state where a substantive structural proof is " +
+      "expected. Computational reflection (`decide`) must be justified. " +
+      "Agent-checked. Routes to `lean-proof-review`.",
+    default_severity: "critical",
+    depends_on: ["lean"],
+    automated: false,
+    applies_to: ["theorem", "lemma", "proposition", "corollary"],
+  },
 ];
 
 // ── Domain: canonical ───────────────────────────────────────────

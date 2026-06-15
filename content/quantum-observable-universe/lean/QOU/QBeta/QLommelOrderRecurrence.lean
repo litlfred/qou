@@ -97,4 +97,16 @@ theorem two_root_geometric (r s α β : K) (hrs : r * s = 1) :
   rw [hr2, hr1, hs2, hs1]
   linear_combination (-(α * r ^ n + β * s ^ n)) * hrs
 
+/-- **Double-root / C-finite linear expansion.** The special case `r = s = 1`,
+corresponding to the recurrence coefficient `b = 2`. The general solution
+is the linear sequence `a n = α + β * n`. This formalises the decisive C-finite
+recurrence found in the extended alpha-cluster tower where `b_ν ≈ 2` and `ρ ≈ 1`
+(constant binding fractions). -/
+theorem double_root_linear (α β : K) :
+    IsOrderThreeTermRec (fun _ => 2) (fun n => α + β * (n : K)) := by
+  intro n
+  show α + β * (n + 2 : K) = 2 * (α + β * (n + 1 : K)) - (α + β * (n : K))
+  push_cast
+  ring
+
 end QOU.QBeta

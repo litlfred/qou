@@ -120,6 +120,16 @@ svg text{font-family:'SF Mono','Cascadia Code','Consolas','DejaVu Sans Mono',mon
     <option value="alpha">Alpha clusters</option>
     <option value="spin">Nuclear spin J</option>
     <option value="gm">𝔾ₘ breaking</option>
+    <option value="alexander">Alexander Polynomial</option>
+  </select></label>
+  <label>Layout: <select id="layout-mode" onchange="buildTable()">
+    <option value="standard">Standard</option>
+    <option value="grid">Grid</option>
+  </select></label>
+  <label>Columns: <input type="number" id="columns-input" value="18" style="width: 40px;"></label>
+  <label>Filter: <select id="filter-mode" onchange="buildTable()">
+    <option value="none">None</option>
+    <option value="alternating">Alternating</option>
   </select></label>
   <label>q <input type="range" id="sl-q" min="1.001" max="2.0" step="0.001" value="1.110"> <span class="val" id="v-q">1.110</span></label>
    <span id="spin-key" style="display:none;font-size:9px;color:var(--dim);margin-left:6px;">
@@ -900,7 +910,8 @@ function buildTable() {
 // ── Element Selection ───────────────────────────────────────────────
 function selectElement(Z) {
   selectedZ = Z;
-  buildTable();
+  syncStateToURL();
+  window.addEventListener('DOMContentLoaded', () => setTimeout(buildTable, 100));
   buildSpinTable();
   updateKnotPanel();
   updateDecayPanel();
@@ -1170,6 +1181,7 @@ function setDecay(type) {
   decayType = type;
   document.getElementById('btn-bminus').classList.toggle('active', type === '-');
   document.getElementById('btn-bplus').classList.toggle('active', type === '+');
+  syncStateToURL();
   updateDecayPanel();
 }
 
@@ -1445,6 +1457,7 @@ function toggleSpinTable() {
   spinTableOpen = !spinTableOpen;
   document.getElementById('spin-table-wrap').style.display = spinTableOpen ? '' : 'none';
   document.getElementById('spin-toggle-arrow').innerHTML = spinTableOpen ? '&#9660;' : '&#9654;';
+  syncStateToURL();
 }
 
 function buildSpinTable() {
@@ -1520,6 +1533,116 @@ function buildSpinTable() {
   wrap.innerHTML = html;
 }
 
+// ── URL parameter parsing and state synchronization ─────────────
+function loadStateFromURL() {
+  const params = new URLSearchParams(window.location.search);
+  
+  if (params.has('q')) {
+    const qVal = parseFloat(params.get('q'));
+    if (!isNaN(qVal)) {
+      document.getElementById('sl-q').value = qVal;
+      document.getElementById('v-q').textContent = qVal.toFixed(3);
+    }
+  }
+  
+  if (params.has('color')) {
+    const colorVal = params.get('color');
+    const colorMode = document.getElementById('color-mode');
+    let found = false;
+    for (let i = 0; i < colorMode.options.length; i++) {
+      if (colorMode.options[i].value === colorVal) {
+        colorMode.value = colorVal;
+        found = true;
+        break;
+      }
+    }
+    if (!found) {
+      colorMode.value = 'signature';
+    }
+  }
+  
+  if (params.has('layout')) {
+    const layoutMode = document.getElementById('layout-mode');
+    layoutMode.value = params.get('layout');
+    layoutMode.dispatchEvent(new Event('change'));
+  }
+  if (params.has('columns')) {
+    let val = parseFloat(params.get('columns'));
+    if (!isNaN(val)) {
+      const columnsInput = document.getElementById('columns-input');
+      columnsInput.value = val;
+      columnsInput.dispatchEvent(new Event('input'));
+    }
+  }
+  if (params.has('filter')) {
+    const filterMode = document.getElementById('filter-mode');
+    filterMode.value = params.get('filter');
+    filterMode.dispatchEvent(new Event('change'));
+  }
+  
+  if (params.has('decay')) {
+    const decayVal = params.get('decay');
+    if (decayVal === '+' || decayVal === '-') {
+      decayType = decayVal;
+      document.getElementById('btn-bminus').classList.toggle('active', decayType === '-');
+      document.getElementById('btn-bplus').classList.toggle('active', decayType === '+');
+    }
+  }
+  
+  if (params.has('spinTable')) {
+    const stVal = params.get('spinTable');
+    if (stVal === 'none') {
+      spinTableOpen = false;
+      document.getElementById('spin-table-wrap').style.display = 'none';
+      document.getElementById('spin-toggle-arrow').innerHTML = '&#9654;';
+    } else {
+      spinTableOpen = true;
+      document.getElementById('spin-table-wrap').style.display = '';
+      document.getElementById('spin-toggle-arrow').innerHTML = '&#9660;';
+    }
+  }
+  
+  if (params.has('element')) {
+    const elVal = parseInt(params.get('element'));
+    if (!isNaN(elVal)) {
+      selectedZ = elVal;
+    } else {
+      selectedZ = 26;
+    }
+  } else {
+    selectedZ = 26;
+  }
+}
+
+function syncStateToURL() {
+  const params = new URLSearchParams();
+  
+  params.set('q', document.getElementById('sl-q').value);
+  params.set('color', document.getElementById('color-mode').value);
+  params.set('layout', document.getElementById('layout-mode').value);
+  params.set('columns', document.getElementById('columns-input').value);
+  params.set('filter', document.getElementById('filter-mode').value);
+  params.set('decay', decayType);
+  params.set('spinTable', spinTableOpen ? 'block' : 'none');
+  if (selectedZ !== null) {
+    params.set('element', selectedZ);
+  }
+  
+  const newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?' + params.toString();
+  window.history.replaceState({ path: newurl }, '', newurl);
+}
+
+document.getElementById('columns-input').addEventListener('input', function() {
+  buildTable();
+  syncStateToURL();
+});
+document.getElementById('layout-mode').addEventListener('change', function() {
+  syncStateToURL();
+});
+document.getElementById('filter-mode').addEventListener('change', function() {
+  syncStateToURL();
+});
+
 // ── q slider update ─────────────────────────────────────────────────
 document.getElementById('sl-q').addEventListener('input', function() {
   document.getElementById('v-q').textContent = this.value;
@@ -1528,13 +1651,47 @@ document.getElementById('sl-q').addEventListener('input', function() {
   updateDecayPanel();
   buildSpinTable();
   if (selectedZ) updateKnotPanel();
+  syncStateToURL();
 });
 
-// ── Initialize ──────────────────────────────────────────────────────
-buildTable();
-buildSpinTable();
-// Select Iron by default
-selectElement(26);
+// ── color mode update ───────────────────────────────────────────────
+document.getElementById('color-mode').addEventListener('change', function() {
+  syncStateToURL();
+});
+
+// ── Initialize on window load ───────────────────────────────────────
+window.addEventListener('load', async () => {
+  // Parse URL parameters and update UI controls before initial render
+  loadStateFromURL();
+  
+  // Asynchronously fetch witness file
+  try {
+    const response = await fetch('../computations/ame-2020-binding-energies.witness.json');
+    if (response.ok) {
+      const payload = await response.json();
+      if (payload && payload.data) {
+        // Find Helium-4 entry in EL array and update its binding energy per nucleon (index 4)
+        const heEntry = EL.find(el => el[0] === 2 && el[1] === 4);
+        if (heEntry && payload.data.B_he4_MeV !== undefined) {
+          heEntry[4] = parseFloat(payload.data.B_he4_MeV) / 4;
+        }
+        
+        // Find Lithium-7 entry in EL array and update its binding energy (index 4)
+        const liEntry = EL.find(el => el[0] === 3 && el[1] === 7);
+        if (liEntry && payload.data.B_li7_MeV !== undefined) {
+          liEntry[4] = parseFloat(payload.data.B_li7_MeV) / 7;
+        }
+      }
+    }
+  } catch (err) {
+    console.error('Failed to fetch binding energies witness:', err);
+  }
+  
+  // Build and draw periodic table / spin table
+  buildTable();
+  buildSpinTable();
+  selectElement(selectedZ);
+});
 </script>
 </body>
 </html>

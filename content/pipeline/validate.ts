@@ -407,7 +407,7 @@ export async function validateObjects(
   // Pre-load all .md content once — avoids redundant filesystem reads
   // across Phase 2 (constraint rules) and Phase 3 (AST validation).
   // Store undefined for missing files to preserve the distinction from empty files.
-  const mdCache = new Map<string, string | undefined>();
+  console.log("Preloading MD cache"); const mdCache = new Map<string, string | undefined>();
   const leanCache = new Map<string, string | undefined>();
   for (const [name, { dir }] of allBlocks) {
     const mdPath = join(dir, `${name}.md`);
@@ -457,6 +457,7 @@ export async function validateObjects(
         while (stack.length) {
           const dir = stack.pop()!;
           for (const entry of readdirSync(dir, { withFileTypes: true })) {
+            if (entry.name === 'node_modules' || entry.name === '.git' || entry.name === '.lake' || entry.name === 'build') continue;
             const full = join(dir, entry.name);
             if (entry.isDirectory()) stack.push(full);
             else if (entry.isFile() && entry.name.endsWith(".lean")) cached.add(entry.name);
@@ -471,7 +472,7 @@ export async function validateObjects(
   }
 
   // Phase 2: Constraint rules
-  for (const [name, { block, dir }] of allBlocks) {
+  console.log("Starting Phase 2"); for (const [name, { block, dir }] of allBlocks) {
     const mdContent = mdCache.get(name);
     const ctx: ConstraintContext = {
       rootName: name,

@@ -1,0 +1,5 @@
+$ playwright test
+
+Running 18 tests using 1 worker
+
+  ✘   1 [chromium] › tests/simulators.spec.ts:39:5 › Tier 1: Feature Coverage & Parameter Parsing › Brings Surface › Default Happy-Path Load (37.7s)

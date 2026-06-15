@@ -43,28 +43,33 @@ from codata_constants import M_E_MEV as _M_E_MEV  # noqa: E402  (registry, P31)
 M_E_MEV = float(_M_E_MEV)
 AME = HERE / "ame-2020-binding-energies.witness.json"
 
-# (label, matrix-M tr_M witness, AME binding key, Z, N)
+# (label, AME binding key, Z, N, atom_symbol)
 NUCLEI = [
-    ("deuteron", "chi-at-q0-matrix-m-deuteron.witness.json", "B_deuteron_MeV", 1, 1),
-    ("tritium", "chi-at-q0-matrix-m-tritium.witness.json", "B_tritium_MeV", 1, 2),
+    ("deuteron", "B_deuteron_MeV", 1, 1, "D"),
+    ("tritium", "B_tritium_MeV", 1, 2, "T"),
+    ("helium-3", "B_he3_MeV", 2, 1, "3He"),
+    ("helium-4", "B_he4_MeV", 2, 2, "4He"),
+    ("lithium-6", "B_li6_MeV", 3, 3, "6Li"),
+    ("lithium-7", "B_li7_MeV", 3, 4, "7Li"),
+    ("beryllium-9", "B_be9_MeV", 4, 5, "9Be"),
 ]
-
-
-def _tr_M(witness_name: str) -> float:
-    w = json.loads((HERE / witness_name).read_text())
-    return float(w["data"]["tr_M_at_q0"])
-
 
 def main() -> int:
     t0 = time.monotonic()
     ame = json.loads(AME.read_text())["data"]
+    transfer_path = HERE / "tr-m-atom-via-transfer.witness.json"
+    if not transfer_path.exists():
+        print(f"Error: {transfer_path} not found")
+        return 1
+    transfer_data = json.loads(transfer_path.read_text())["data"]["rows"]
+    tr_m_by_atom = {r["atom"]: float(r["tr_M_atom"]) for r in transfer_data}
+
     rows = []
-    for label, wname, bkey, Z, N in NUCLEI:
-        path = HERE / wname
-        if not path.exists():
-            rows.append({"label": label, "status": "matrix-M witness absent"})
+    for label, bkey, Z, N, atom_sym in NUCLEI:
+        if atom_sym not in tr_m_by_atom:
+            rows.append({"label": label, "status": f"{atom_sym} missing from transfer witness"})
             continue
-        tr_M = _tr_M(wname)
+        tr_M = tr_m_by_atom[atom_sym]
         B = float(ame[bkey])
         A = Z + N
         delta_bar = B / (M_E_MEV * tr_M)   # required λ-independent Δ̄

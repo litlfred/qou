@@ -70,7 +70,7 @@ theorem qbessel_coeff_closed_form (q a : K) (c : ℕ → K)
     (k : ℕ) :
     c k = c 0 * ∏ j ∈ Finset.range k, qbesselRatio q a j := by
   refine first_order_solution (qbesselRatio q a) c (fun n => ?_) k
-  rw [qbesselRatio, div_mul_eq_mul_div, eq_div_iff (hD n)]
+  rw [qbesselRatio, mul_div_assoc, eq_div_iff (hD n)]
   exact hrec n
 
 /-- **C-finite degeneration.** When the ratio is a *constant* `ρ` (the rational /
@@ -111,5 +111,39 @@ theorem qbessel_second_order_recurrence (q a : K) (c : ℕ → K)
       + q ^ k * c k = 0 := by
   rw [qbessel_second_order_factor]
   linear_combination hrec k
+
+/-- **Jackson's First Kind q-Bessel coefficient ratio.**
+Associated with the quantum hyperbolic plane `SU_q(1,1)`, its ratio is
+`r_k = -1 / [(1-q^{k+1})(1-a q^{k+1})]` (with `a = q^ν`).
+-/
+def qbesselFirstKindRatio (q a : K) (k : ℕ) : K :=
+  -1 / ((1 - q ^ (k + 1)) * (1 - a * q ^ (k + 1)))
+
+/-- **Jackson's First Kind q-Bessel contiguity.** -/
+theorem qbessel_first_kind_coeff_closed_form (q a : K) (c : ℕ → K)
+    (hD : ∀ k, (1 - q ^ (k + 1)) * (1 - a * q ^ (k + 1)) ≠ 0)
+    (hrec : ∀ k, c (k + 1) * ((1 - q ^ (k + 1)) * (1 - a * q ^ (k + 1))) = -c k)
+    (k : ℕ) :
+    c k = c 0 * ∏ j ∈ Finset.range k, qbesselFirstKindRatio q a j := by
+  refine first_order_solution (qbesselFirstKindRatio q a) c (fun n => ?_) k
+  rw [qbesselFirstKindRatio, mul_div_assoc, eq_div_iff (hD n)]
+  exact hrec n
+
+/-- **Jackson's Second Kind q-Bessel coefficient ratio.**
+Also associated with `SU_q(1,1)`, its ratio is
+`r_k = -a q^{2k+1} / [(1-q^{k+1})(1-a q^{k+1})]` (with `a = q^ν`).
+-/
+def qbesselSecondKindRatio (q a : K) (k : ℕ) : K :=
+  -(a * q ^ (2 * k + 1)) / ((1 - q ^ (k + 1)) * (1 - a * q ^ (k + 1)))
+
+/-- **Jackson's Second Kind q-Bessel contiguity.** -/
+theorem qbessel_second_kind_coeff_closed_form (q a : K) (c : ℕ → K)
+    (hD : ∀ k, (1 - q ^ (k + 1)) * (1 - a * q ^ (k + 1)) ≠ 0)
+    (hrec : ∀ k, c (k + 1) * ((1 - q ^ (k + 1)) * (1 - a * q ^ (k + 1))) = -(a * q ^ (2 * k + 1)) * c k)
+    (k : ℕ) :
+    c k = c 0 * ∏ j ∈ Finset.range k, qbesselSecondKindRatio q a j := by
+  refine first_order_solution (qbesselSecondKindRatio q a) c (fun n => ?_) k
+  rw [qbesselSecondKindRatio, mul_div_assoc, eq_div_iff (hD n)]
+  exact hrec n
 
 end QOU.QBeta

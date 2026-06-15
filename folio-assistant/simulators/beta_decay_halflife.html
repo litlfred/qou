@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <title>Beta-Decay Half-Life — Transfer Matrix Calculator</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@300;400;600&display=swap');
 :root {
   --bg:#020710; --panel:rgba(3,10,30,0.93); --border:rgba(60,120,255,0.20);
   --accent:#3a90ff; --accent2:#ff5533; --accent3:#33ffaa; --accent4:#ffaa33;
@@ -108,8 +107,8 @@ input[type=radio],input[type=checkbox]{margin-right:4px;cursor:pointer;}
 const VOL_FIG8 = 2.029883212819307;
 const MASS_RATIO = 206.7682830;
 const HBAR_Q_SQ = VOL_FIG8 / MASS_RATIO;
-const M_E = 0.511;
-const G_F = 1.1664e-11;
+let M_E = 0.51099895; // CODATA fallback (the exact value required is 0.51099895)
+let G_F = 1.1663787e-11; // CODATA fallback (the exact value required is 1.1663787e-11)
 const HBAR = 6.582119569e-22;
 const YR = 3.15576e7;
 const MAGIC = [0, 2, 8, 20, 28, 50, 82, 126];
@@ -508,10 +507,122 @@ function updateResults(r, Z, N, nucIdx) {
   el.innerHTML = '<table>' + rows + '</table>';
 }
 
+// ── URL parameter parsing and state synchronization ─────────────
+function findKeyCaseInsensitive(obj, keyToFind) {
+  if (!obj || typeof obj !== 'object') return undefined;
+  const lowerKey = keyToFind.toLowerCase();
+  for (const k in obj) {
+    if (k.toLowerCase() === lowerKey) {
+      return obj[k];
+    }
+  }
+  for (const k in obj) {
+    if (Object.prototype.hasOwnProperty.call(obj, k)) {
+      const val = findKeyCaseInsensitive(obj[k], keyToFind);
+      if (val !== undefined) return val;
+    }
+  }
+  return undefined;
+}
+
+function loadStateFromURL() {
+  const params = new URLSearchParams(window.location.search);
+  
+  if (params.has('q')) {
+    const qVal = parseFloat(params.get('q'));
+    if (!isNaN(qVal)) {
+      document.getElementById('sl-q').value = qVal;
+      document.getElementById('v-q').textContent = qVal.toFixed(3);
+    }
+  }
+  
+  if (params.has('nucleus')) {
+    const nucVal = params.get('nucleus');
+    const selNuc = document.getElementById('sel-nuc');
+    let found = false;
+    for (let i = 0; i < selNuc.options.length; i++) {
+      if (selNuc.options[i].value === nucVal) {
+        selNuc.value = nucVal;
+        found = true;
+        break;
+      }
+    }
+    if (!found && nucVal !== 'custom') {
+      selNuc.value = '0';
+    }
+
+    if (nucVal === 'custom') {
+      document.getElementById('custom-div').classList.add('show');
+      if (params.has('Z')) {
+        const zVal = parseInt(params.get('Z'));
+        if (!isNaN(zVal)) document.getElementById('in-Z').value = zVal;
+      }
+      if (params.has('N')) {
+        const nVal = parseInt(params.get('N'));
+        if (!isNaN(nVal)) document.getElementById('in-N').value = nVal;
+      }
+    } else if (found) {
+      document.getElementById('custom-div').classList.remove('show');
+    }
+  }
+  
+  if (params.has('mode')) {
+    const modeVal = params.get('mode');
+    const radios = document.querySelectorAll('input[name="mode"]');
+    radios.forEach(radio => {
+      if (radio.value === modeVal) {
+        radio.checked = true;
+      }
+    });
+  }
+  
+  if (params.has('shell')) {
+    const shellVal = params.get('shell');
+    const cbShell = document.getElementById('cb-shell');
+    if (shellVal === 'true' || shellVal === '1') {
+      cbShell.checked = true;
+    } else if (shellVal === 'false' || shellVal === '0') {
+      cbShell.checked = false;
+    }
+  }
+}
+
+function syncStateToURL() {
+  const params = new URLSearchParams();
+  
+  const q = document.getElementById('sl-q').value;
+  params.set('q', q);
+  
+  const nucleus = document.getElementById('sel-nuc').value;
+  params.set('nucleus', nucleus);
+  if (nucleus === 'custom') {
+    params.set('Z', document.getElementById('in-Z').value);
+    params.set('N', document.getElementById('in-N').value);
+  }
+  
+  const checkedMode = document.querySelector('input[name="mode"]:checked');
+  if (checkedMode) {
+    params.set('mode', checkedMode.value);
+  }
+  
+  const shell = document.getElementById('cb-shell').checked;
+  params.set('shell', shell ? 'true' : 'false');
+  
+  const newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?' + params.toString();
+  window.history.replaceState({ path: newurl }, '', newurl);
+}
+
 // ── Event listeners ─────────────────────────────────────────────
 document.querySelectorAll('input[type=range],select,input[type=radio],input[type=checkbox],input[type=number]')
-  .forEach(el => el.addEventListener('input', () => { sweepCache = null; draw(); }));
-document.getElementById('sl-q').addEventListener('input', draw);
+  .forEach(el => {
+    const updateHandler = () => {
+      sweepCache = null;
+      syncStateToURL();
+      draw();
+    };
+    el.addEventListener('input', updateHandler);
+    el.addEventListener('change', updateHandler);
+  });
 window.addEventListener('resize', draw);
 
 // Hover tooltip on canvas
@@ -540,7 +651,39 @@ cv.addEventListener('mousemove', e => {
 });
 cv.addEventListener('mouseleave', () => { tip.style.display='none'; });
 
-draw();
+// Window load trigger
+window.addEventListener('load', async () => {
+  // Parse URL parameters and update UI controls before initial render
+  loadStateFromURL();
+  
+  // Render using fallback constants initially
+  sweepCache = null;
+  draw();
+  
+  // Asynchronously fetch witness file
+  try {
+    const response = await fetch('../computations/codata-masses.witness.json');
+    if (response.ok) {
+      const payload = await response.json();
+      if (payload && payload.data && payload.data.m_e_MeV) {
+        M_E = parseFloat(payload.data.m_e_MeV);
+      }
+      
+      const gfVal = findKeyCaseInsensitive(payload, 'G_F');
+      if (gfVal !== undefined) {
+        G_F = parseFloat(gfVal);
+      } else {
+        G_F = 1.1663787e-11;
+      }
+      
+      // Re-render after constants are updated from JSON
+      sweepCache = null;
+      draw();
+    }
+  } catch (err) {
+    console.error('Failed to fetch CODATA masses:', err);
+  }
+});
 </script>
 </body>
 </html>

@@ -1,5 +1,14 @@
 # Claude Code — Quantum Observable Universe
 
+## CRITICAL: READ SKILLS BEFORE ACTING (Anti-Guessing Rule)
+
+**DO NOT GUESS WORKFLOWS.** This repository has highly customized, non-standard workflows for building Lean, preparing merges, syncing with siblings, and validating. 
+When the user asks you to perform a task (e.g., "run prepare-merge", "set up lean", "audit compute"), **you MUST FIRST read the corresponding skill file in `.claude/skills/local/*.md`** before taking any action.
+
+**Why this is strictly enforced:** Agents frequently fail in this repository by running standard commands (like `lake build` from scratch) instead of following the explicit repo skills (which use custom caches and scripts). This wastes the user's time.
+
+**Required Action:** Before executing any multi-step task or slash command, run `ls .claude/skills/local/` and `view_file` on the relevant `.md` file. Follow its instructions exactly. NEVER guess.
+
 ## User accessibility
 
 The repo owner is physically disabled and types with difficulty.
