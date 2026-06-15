@@ -1,0 +1,302 @@
+{
+  "config": {
+    "configFile": "/home/litlfred/space_cats/qou/folio-assistant/playwright.config.ts",
+    "rootDir": "/home/litlfred/space_cats/qou/folio-assistant/tests",
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/home/litlfred/space_cats/qou/folio-assistant/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/home/litlfred/space_cats/qou/folio-assistant/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.60.0",
+    "workers": 1,
+    "webServer": {
+      "command": "python3 -m http.server 8080",
+      "port": 8080,
+      "reuseExistingServer": true
+    }
+  },
+  "suites": [
+    {
+      "title": "simulators.spec.ts",
+      "file": "simulators.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Tier 1: Feature Coverage & Parameter Parsing",
+          "file": "simulators.spec.ts",
+          "line": 39,
+          "column": 6,
+          "specs": [],
+          "suites": [
+            {
+              "title": "Brings Surface",
+              "file": "simulators.spec.ts",
+              "line": 41,
+              "column": 8,
+              "specs": [
+                {
+                  "title": "Custom Parameters Parsing",
+                  "ok": false,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "failed",
+                          "duration": 19797,
+                          "error": {
+                            "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('#mode-row .pill.active')\nExpected: \u001b[32m\"sp1\"\u001b[39m\nReceived: \u001b[31m\"omega\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#mode-row .pill.active')\u001b[22m\n\u001b[2m    11 × locator resolved to <div data-mode=\"omega\" class=\"pill active\">ω-coords</div>\u001b[22m\n\u001b[2m       - unexpected value \"omega\"\u001b[22m\n",
+                            "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('#mode-row .pill.active')\nExpected: \u001b[32m\"sp1\"\u001b[39m\nReceived: \u001b[31m\"omega\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#mode-row .pill.active')\u001b[22m\n\u001b[2m    11 × locator resolved to <div data-mode=\"omega\" class=\"pill active\">ω-coords</div>\u001b[22m\n\u001b[2m       - unexpected value \"omega\"\u001b[22m\n\n    at /home/litlfred/space_cats/qou/folio-assistant/tests/simulators.spec.ts:64:60",
+                            "location": {
+                              "file": "/home/litlfred/space_cats/qou/folio-assistant/tests/simulators.spec.ts",
+                              "column": 60,
+                              "line": 64
+                            },
+                            "snippet": "  62 |       await expect(page.locator('#dzeta')).toHaveValue('0.15');\n  63 |       await expect(page.locator('#qN')).toHaveValue('12');\n> 64 |       await expect(page.locator('#mode-row .pill.active')).toHaveAttribute('data-mode', 'sp1');\n     |                                                            ^\n  65 |     });\n  66 |   });\n  67 |"
+                          },
+                          "errors": [
+                            {
+                              "location": {
+                                "file": "/home/litlfred/space_cats/qou/folio-assistant/tests/simulators.spec.ts",
+                                "column": 60,
+                                "line": 64
+                              },
+                              "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('#mode-row .pill.active')\nExpected: \u001b[32m\"sp1\"\u001b[39m\nReceived: \u001b[31m\"omega\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#mode-row .pill.active')\u001b[22m\n\u001b[2m    11 × locator resolved to <div data-mode=\"omega\" class=\"pill active\">ω-coords</div>\u001b[22m\n\u001b[2m       - unexpected value \"omega\"\u001b[22m\n\n\n  62 |       await expect(page.locator('#dzeta')).toHaveValue('0.15');\n  63 |       await expect(page.locator('#qN')).toHaveValue('12');\n> 64 |       await expect(page.locator('#mode-row .pill.active')).toHaveAttribute('data-mode', 'sp1');\n     |                                                            ^\n  65 |     });\n  66 |   });\n  67 |\n    at /home/litlfred/space_cats/qou/folio-assistant/tests/simulators.spec.ts:64:60"
+                            }
+                          ],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-15T02:29:40.290Z",
+                          "annotations": [],
+                          "attachments": [
+                            {
+                              "name": "error-context",
+                              "contentType": "text/markdown",
+                              "path": "/home/litlfred/space_cats/qou/folio-assistant/test-results/simulators-Tier-1-Feature--4df6a-e-Custom-Parameters-Parsing-chromium/error-context.md"
+                            }
+                          ],
+                          "errorLocation": {
+                            "file": "/home/litlfred/space_cats/qou/folio-assistant/tests/simulators.spec.ts",
+                            "column": 60,
+                            "line": 64
+                          }
+                        }
+                      ],
+                      "status": "unexpected"
+                    }
+                  ],
+                  "id": "1faf8ae8676c2bd7c7c0-d602bb41fe5163b12bf9",
+                  "file": "simulators.spec.ts",
+                  "line": 54,
+                  "column": 5
+                }
+              ]
+            },
+            {
+              "title": "Quantum Brings Surface (Placeholders)",
+              "file": "simulators.spec.ts",
+              "line": 68,
+              "column": 8,
+              "specs": [
+                {
+                  "title": "Custom Parameters Parsing (Placeholder Assertions)",
+                  "ok": false,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [
+                        {
+                          "workerIndex": 1,
+                          "parallelIndex": 0,
+                          "status": "failed",
+                          "duration": 1922,
+                          "error": {
+                            "message": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:8080/simulators/quantum_brings_surface.html?rMin=0.35&rMax=2.8&deltaR=0.05&deltaZeta=0.08&N=15&projection=polar\nCall log:\n\u001b[2m  - navigating to \"http://localhost:8080/simulators/quantum_brings_surface.html?rMin=0.35&rMax=2.8&deltaR=0.05&deltaZeta=0.08&N=15&projection=polar\", waiting until \"domcontentloaded\"\u001b[22m\n",
+                            "stack": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:8080/simulators/quantum_brings_surface.html?rMin=0.35&rMax=2.8&deltaR=0.05&deltaZeta=0.08&N=15&projection=polar\nCall log:\n\u001b[2m  - navigating to \"http://localhost:8080/simulators/quantum_brings_surface.html?rMin=0.35&rMax=2.8&deltaR=0.05&deltaZeta=0.08&N=15&projection=polar\", waiting until \"domcontentloaded\"\u001b[22m\n\n    at /home/litlfred/space_cats/qou/folio-assistant/tests/simulators.spec.ts:76:18",
+                            "location": {
+                              "file": "/home/litlfred/space_cats/qou/folio-assistant/tests/simulators.spec.ts",
+                              "column": 18,
+                              "line": 76
+                            },
+                            "snippet": "  74 |     test('Custom Parameters Parsing (Placeholder Assertions)', async ({ page }) => {\n  75 |       const query = '?rMin=0.35&rMax=2.8&deltaR=0.05&deltaZeta=0.08&N=15&projection=polar';\n> 76 |       await page.goto(`${QUANTUM_BRINGS_SURFACE_URL}${query}`, { waitUntil: 'domcontentloaded' });\n     |                  ^\n  77 |\n  78 |       // Placeholder assertions that should fail if the elements are not present/implemented\n  79 |       await expect(page.locator('#rMin')).toHaveValue('0.35');"
+                          },
+                          "errors": [
+                            {
+                              "location": {
+                                "file": "/home/litlfred/space_cats/qou/folio-assistant/tests/simulators.spec.ts",
+                                "column": 18,
+                                "line": 76
+                              },
+                              "message": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:8080/simulators/quantum_brings_surface.html?rMin=0.35&rMax=2.8&deltaR=0.05&deltaZeta=0.08&N=15&projection=polar\nCall log:\n\u001b[2m  - navigating to \"http://localhost:8080/simulators/quantum_brings_surface.html?rMin=0.35&rMax=2.8&deltaR=0.05&deltaZeta=0.08&N=15&projection=polar\", waiting until \"domcontentloaded\"\u001b[22m\n\n\n  74 |     test('Custom Parameters Parsing (Placeholder Assertions)', async ({ page }) => {\n  75 |       const query = '?rMin=0.35&rMax=2.8&deltaR=0.05&deltaZeta=0.08&N=15&projection=polar';\n> 76 |       await page.goto(`${QUANTUM_BRINGS_SURFACE_URL}${query}`, { waitUntil: 'domcontentloaded' });\n     |                  ^\n  77 |\n  78 |       // Placeholder assertions that should fail if the elements are not present/implemented\n  79 |       await expect(page.locator('#rMin')).toHaveValue('0.35');\n    at /home/litlfred/space_cats/qou/folio-assistant/tests/simulators.spec.ts:76:18"
+                            }
+                          ],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-15T02:30:06.415Z",
+                          "annotations": [],
+                          "attachments": [
+                            {
+                              "name": "error-context",
+                              "contentType": "text/markdown",
+                              "path": "/home/litlfred/space_cats/qou/folio-assistant/test-results/simulators-Tier-1-Feature--9de0e-ing-Placeholder-Assertions--chromium/error-context.md"
+                            }
+                          ],
+                          "errorLocation": {
+                            "file": "/home/litlfred/space_cats/qou/folio-assistant/tests/simulators.spec.ts",
+                            "column": 18,
+                            "line": 76
+                          }
+                        }
+                      ],
+                      "status": "unexpected"
+                    }
+                  ],
+                  "id": "1faf8ae8676c2bd7c7c0-725875b66aba1cfcf5de",
+                  "file": "simulators.spec.ts",
+                  "line": 74,
+                  "column": 5
+                }
+              ]
+            },
+            {
+              "title": "Beta Decay Half-Life",
+              "file": "simulators.spec.ts",
+              "line": 88,
+              "column": 8,
+              "specs": [
+                {
+                  "title": "Custom Parameters Parsing",
+                  "ok": false,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [
+                        {
+                          "workerIndex": 2,
+                          "parallelIndex": 0,
+                          "status": "failed",
+                          "duration": 903,
+                          "error": {
+                            "message": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:8080/simulators/beta_decay_halflife.html?q=1.234&nucleus=He6&mode=from-Qexp&showShellCorrection=false\nCall log:\n\u001b[2m  - navigating to \"http://localhost:8080/simulators/beta_decay_halflife.html?q=1.234&nucleus=He6&mode=from-Qexp&showShellCorrection=false\", waiting until \"domcontentloaded\"\u001b[22m\n",
+                            "stack": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:8080/simulators/beta_decay_halflife.html?q=1.234&nucleus=He6&mode=from-Qexp&showShellCorrection=false\nCall log:\n\u001b[2m  - navigating to \"http://localhost:8080/simulators/beta_decay_halflife.html?q=1.234&nucleus=He6&mode=from-Qexp&showShellCorrection=false\", waiting until \"domcontentloaded\"\u001b[22m\n\n    at /home/litlfred/space_cats/qou/folio-assistant/tests/simulators.spec.ts:100:18",
+                            "location": {
+                              "file": "/home/litlfred/space_cats/qou/folio-assistant/tests/simulators.spec.ts",
+                              "column": 18,
+                              "line": 100
+                            },
+                            "snippet": "   98 |     test('Custom Parameters Parsing', async ({ page }) => {\n   99 |       const query = '?q=1.234&nucleus=He6&mode=from-Qexp&showShellCorrection=false';\n> 100 |       await page.goto(`${BETA_DECAY_HALFLIFE_URL}${query}`, { waitUntil: 'domcontentloaded' });\n      |                  ^\n  101 |\n  102 |       await expect(page.locator('#sl-q')).toHaveValue('1.234');\n  103 |       await expect(page.locator('#sel-nuc')).toHaveValue('custom');"
+                          },
+                          "errors": [
+                            {
+                              "location": {
+                                "file": "/home/litlfred/space_cats/qou/folio-assistant/tests/simulators.spec.ts",
+                                "column": 18,
+                                "line": 100
+                              },
+                              "message": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:8080/simulators/beta_decay_halflife.html?q=1.234&nucleus=He6&mode=from-Qexp&showShellCorrection=false\nCall log:\n\u001b[2m  - navigating to \"http://localhost:8080/simulators/beta_decay_halflife.html?q=1.234&nucleus=He6&mode=from-Qexp&showShellCorrection=false\", waiting until \"domcontentloaded\"\u001b[22m\n\n\n   98 |     test('Custom Parameters Parsing', async ({ page }) => {\n   99 |       const query = '?q=1.234&nucleus=He6&mode=from-Qexp&showShellCorrection=false';\n> 100 |       await page.goto(`${BETA_DECAY_HALFLIFE_URL}${query}`, { waitUntil: 'domcontentloaded' });\n      |                  ^\n  101 |\n  102 |       await expect(page.locator('#sl-q')).toHaveValue('1.234');\n  103 |       await expect(page.locator('#sel-nuc')).toHaveValue('custom');\n    at /home/litlfred/space_cats/qou/folio-assistant/tests/simulators.spec.ts:100:18"
+                            }
+                          ],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-15T02:30:13.232Z",
+                          "annotations": [],
+                          "attachments": [
+                            {
+                              "name": "error-context",
+                              "contentType": "text/markdown",
+                              "path": "/home/litlfred/space_cats/qou/folio-assistant/test-results/simulators-Tier-1-Feature--67606-e-Custom-Parameters-Parsing-chromium/error-context.md"
+                            }
+                          ],
+                          "errorLocation": {
+                            "file": "/home/litlfred/space_cats/qou/folio-assistant/tests/simulators.spec.ts",
+                            "column": 18,
+                            "line": 100
+                          }
+                        }
+                      ],
+                      "status": "unexpected"
+                    }
+                  ],
+                  "id": "1faf8ae8676c2bd7c7c0-451d2fa65df2476d94ff",
+                  "file": "simulators.spec.ts",
+                  "line": 98,
+                  "column": 5
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-06-15T02:29:36.156Z",
+    "duration": 42031.924,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 3,
+    "flaky": 0
+  }
+}

@@ -120,6 +120,7 @@ svg text{font-family:'SF Mono','Cascadia Code','Consolas','DejaVu Sans Mono',mon
     <option value="alpha">Alpha clusters</option>
     <option value="spin">Nuclear spin J</option>
     <option value="gm">𝔾ₘ breaking</option>
+    <option value="alexander">Alexander Polynomial</option>
   </select></label>
   <label>Layout: <select id="layout-mode" onchange="buildTable()">
     <option value="standard">Standard</option>
@@ -910,7 +911,7 @@ function buildTable() {
 function selectElement(Z) {
   selectedZ = Z;
   syncStateToURL();
-  buildTable();
+  window.addEventListener('DOMContentLoaded', () => setTimeout(buildTable, 100));
   buildSpinTable();
   updateKnotPanel();
   updateDecayPanel();
@@ -1547,11 +1548,16 @@ function loadStateFromURL() {
   if (params.has('color')) {
     const colorVal = params.get('color');
     const colorMode = document.getElementById('color-mode');
+    let found = false;
     for (let i = 0; i < colorMode.options.length; i++) {
       if (colorMode.options[i].value === colorVal) {
         colorMode.value = colorVal;
+        found = true;
         break;
       }
+    }
+    if (!found) {
+      colorMode.value = 'signature';
     }
   }
   
@@ -1561,9 +1567,12 @@ function loadStateFromURL() {
     layoutMode.dispatchEvent(new Event('change'));
   }
   if (params.has('columns')) {
-    const columnsInput = document.getElementById('columns-input');
-    columnsInput.value = params.get('columns');
-    columnsInput.dispatchEvent(new Event('input'));
+    let val = parseFloat(params.get('columns'));
+    if (!isNaN(val)) {
+      const columnsInput = document.getElementById('columns-input');
+      columnsInput.value = val;
+      columnsInput.dispatchEvent(new Event('input'));
+    }
   }
   if (params.has('filter')) {
     const filterMode = document.getElementById('filter-mode');

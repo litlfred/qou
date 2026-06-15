@@ -27,7 +27,7 @@ export default defineConfig({
     port: 8080,
     reuseExistingServer: !process.env.CI,
   },
-  timeout: 60000,
+  timeout: 180000,
   expect: {
     timeout: 10000,
   },

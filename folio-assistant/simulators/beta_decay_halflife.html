@@ -547,7 +547,10 @@ function loadStateFromURL() {
         break;
       }
     }
-    
+    if (!found && nucVal !== 'custom') {
+      selNuc.value = '0';
+    }
+
     if (nucVal === 'custom') {
       document.getElementById('custom-div').classList.add('show');
       if (params.has('Z')) {
