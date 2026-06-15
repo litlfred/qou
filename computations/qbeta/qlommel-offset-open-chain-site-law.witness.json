@@ -1,0 +1,198 @@
+{
+  "engine": "python+algebra",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-15T21:57:44.412938+00:00",
+  "commitSha": "6b0b2a8675e9e64ce9f8c488a98559459c4a5232",
+  "assertions": [
+    {
+      "name": "exponent_is_five_times_open_chain_sites",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "10A−5 = 5·(2A−1) exactly for A=1..12"
+    },
+    {
+      "name": "offset_is_open_chain_boundary_minus_5",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "2A−1 = A + (A−1) (open chain); exponent − 5·2A = −5 (one missing terminal bond)"
+    },
+    {
+      "name": "per_site_q_power_is_constant_5",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "(10A−5)/(2A−1) = 5 for all A — the single residual unknown"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 6,
+  "computation": "qlommel-offset-open-chain-site-law",
+  "scriptFile": "qlommel_offset_open_chain_site_law.py",
+  "scriptHash": "04d1e1e095cf",
+  "scriptCommitSha": "6b0b2a8675e9e64ce9f8c488a98559459c4a5232",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "mpmath": "1.4.1"
+  },
+  "description": "Derive-or-refute (pure algebra, no fit): the Δ_λ exponent offset is the OPEN-CHAIN boundary. 10A−5 = 5·(2A−1) = 5·[A nucleons + (A−1) bonds]: 5 per chain-site of an open A-chain. The slope 10/nucleon is forced (2 sites/nucleon × 5); the −5 offset is the open chain having one fewer bond (A−1) than nucleons (A) — a closed chain would give 10A. The '−3 vs crossings' was a category error (crossing COUNT σ+σ⁻¹=10A−2 ≠ q-POWER 5(2A−1)). Reduces the keystone to a SINGLE unknown: per-site q-power = 5 (Bring quintic 𝒳₅, Aut=S₅), whose confirmation needs the q-graded trace (Rust engine, out of scope). Gate-respecting; NOT wired.",
+  "parameters": {
+    "per_site_q_power": "5"
+  },
+  "data": {
+    "site_law_rows": [
+      {
+        "A": 1,
+        "exponent_10A_5": 5,
+        "sites_2A_1": 1,
+        "nucleon_sites": 1,
+        "bond_sites": 0,
+        "five_times_sites": 5,
+        "per_site": 5.0,
+        "closed_chain_10A": 10,
+        "open_chain_offset": -5
+      },
+      {
+        "A": 2,
+        "exponent_10A_5": 15,
+        "sites_2A_1": 3,
+        "nucleon_sites": 2,
+        "bond_sites": 1,
+        "five_times_sites": 15,
+        "per_site": 5.0,
+        "closed_chain_10A": 20,
+        "open_chain_offset": -5
+      },
+      {
+        "A": 3,
+        "exponent_10A_5": 25,
+        "sites_2A_1": 5,
+        "nucleon_sites": 3,
+        "bond_sites": 2,
+        "five_times_sites": 25,
+        "per_site": 5.0,
+        "closed_chain_10A": 30,
+        "open_chain_offset": -5
+      },
+      {
+        "A": 4,
+        "exponent_10A_5": 35,
+        "sites_2A_1": 7,
+        "nucleon_sites": 4,
+        "bond_sites": 3,
+        "five_times_sites": 35,
+        "per_site": 5.0,
+        "closed_chain_10A": 40,
+        "open_chain_offset": -5
+      },
+      {
+        "A": 5,
+        "exponent_10A_5": 45,
+        "sites_2A_1": 9,
+        "nucleon_sites": 5,
+        "bond_sites": 4,
+        "five_times_sites": 45,
+        "per_site": 5.0,
+        "closed_chain_10A": 50,
+        "open_chain_offset": -5
+      },
+      {
+        "A": 6,
+        "exponent_10A_5": 55,
+        "sites_2A_1": 11,
+        "nucleon_sites": 6,
+        "bond_sites": 5,
+        "five_times_sites": 55,
+        "per_site": 5.0,
+        "closed_chain_10A": 60,
+        "open_chain_offset": -5
+      },
+      {
+        "A": 7,
+        "exponent_10A_5": 65,
+        "sites_2A_1": 13,
+        "nucleon_sites": 7,
+        "bond_sites": 6,
+        "five_times_sites": 65,
+        "per_site": 5.0,
+        "closed_chain_10A": 70,
+        "open_chain_offset": -5
+      },
+      {
+        "A": 8,
+        "exponent_10A_5": 75,
+        "sites_2A_1": 15,
+        "nucleon_sites": 8,
+        "bond_sites": 7,
+        "five_times_sites": 75,
+        "per_site": 5.0,
+        "closed_chain_10A": 80,
+        "open_chain_offset": -5
+      },
+      {
+        "A": 9,
+        "exponent_10A_5": 85,
+        "sites_2A_1": 17,
+        "nucleon_sites": 9,
+        "bond_sites": 8,
+        "five_times_sites": 85,
+        "per_site": 5.0,
+        "closed_chain_10A": 90,
+        "open_chain_offset": -5
+      },
+      {
+        "A": 10,
+        "exponent_10A_5": 95,
+        "sites_2A_1": 19,
+        "nucleon_sites": 10,
+        "bond_sites": 9,
+        "five_times_sites": 95,
+        "per_site": 5.0,
+        "closed_chain_10A": 100,
+        "open_chain_offset": -5
+      },
+      {
+        "A": 11,
+        "exponent_10A_5": 105,
+        "sites_2A_1": 21,
+        "nucleon_sites": 11,
+        "bond_sites": 10,
+        "five_times_sites": 105,
+        "per_site": 5.0,
+        "closed_chain_10A": 110,
+        "open_chain_offset": -5
+      },
+      {
+        "A": 12,
+        "exponent_10A_5": 115,
+        "sites_2A_1": 23,
+        "nucleon_sites": 12,
+        "bond_sites": 11,
+        "five_times_sites": 115,
+        "per_site": 5.0,
+        "closed_chain_10A": 120,
+        "open_chain_offset": -5
+      }
+    ],
+    "decomposition": {
+      "exponent": "10A−5 = 5·(2A−1)",
+      "sites": "2A−1 = A (nucleon-sites) + (A−1) (bond-sites), OPEN chain",
+      "slope": "10/nucleon = 2 sites/nucleon × 5/site (forced)",
+      "offset": "−5 = open-chain boundary (A−1 bonds, one fewer than A nucleons); closed chain (A bonds) would give 10A",
+      "minus_3_resolved": "category error: crossing COUNT 10A−2 ≠ q-POWER 10A−5"
+    },
+    "residual_open": {
+      "only_unknown": "per-site q-power = 5 (Bring quintic; needs q-graded trace)",
+      "reduces_with": "qlommel_b_ladder_slope_derivation.py + Lean first_kind_geometric_b"
+    },
+    "discipline": "pure algebra; no fit; structure derived; per-site 5 still conjectural; NOT wired"
+  }
+}
