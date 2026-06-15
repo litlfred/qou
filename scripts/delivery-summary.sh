@@ -46,7 +46,7 @@ Restart & preview:
 
 Viewer links:
   http://localhost:${PORT}/viewer/
-  http://localhost:${PORT}/assistant/
+  http://localhost:${PORT}/folio/
 EOF
 
 # Add specific block links if we found labels

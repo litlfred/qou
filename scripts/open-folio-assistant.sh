@@ -9,7 +9,7 @@ set -uo pipefail
 
 source "$(dirname "$0")/folio-port.sh"
 PORT="$FOLIO_PORT"
-URL="http://localhost:${PORT}/assistant/"
+URL="http://localhost:${PORT}/folio/"
 
 # ── Check if server is already running ───────────────────────────
 if curl -sf --max-time 2 "http://localhost:${PORT}/health" &>/dev/null; then
