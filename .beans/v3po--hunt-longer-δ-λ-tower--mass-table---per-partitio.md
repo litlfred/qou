@@ -1,7 +1,7 @@
 ---
 # v3po
 title: 'Hunt longer Δ_λ tower (mass-table / per-partition witnesses) — make recurrence test decisive (indep of #2078)'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-06-14T17:29:07Z
