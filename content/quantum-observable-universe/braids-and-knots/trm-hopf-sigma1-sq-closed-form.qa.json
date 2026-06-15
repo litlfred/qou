@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/lean/QOU/Braiding/TrMHopfSigma1SqClosedForm.lean"
   },
   "source_hashes": {
-    "md": "e42ab71919f4",
+    "md": "4efdeecc7864",
     "ts": "594d979e3907",
     "lean": "71102bd2d813"
   },
@@ -1073,6 +1073,23 @@
         },
         "reviewed_at": "2026-06-15T16:50:19.279Z",
         "reviewed_sha": "8da3fb393602ecc5b2d0115f1e25243e6785c365"
+      },
+      {
+        "field_hash": {
+          "md": "4efdeecc7864",
+          "ts": "594d979e3907",
+          "lean": "71102bd2d813"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "d735760f2b64",
+          "script_commit_sha": "71e01b4cfaeedc9dff3f2e7b3b6437c6967f9706"
+        },
+        "reviewed_at": "2026-06-15T19:39:11.897Z",
+        "reviewed_sha": "5451c8143fb884e9284d6478dcbc1acaff9698c9"
       }
     ],
     "wall-base-ring-minimal": [
@@ -3055,5 +3072,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-15T16:50:19.279Z"
+  "updated_at": "2026-06-15T19:39:11.897Z"
 }
