@@ -1,7 +1,7 @@
 ---
 # qb5s
 title: 'Record the Bring-quintic / EW-twist interpretation of the Δ_λ exponent (5 per chain-site) in the audit'
-status: open
+status: completed
 type: task
 priority: normal
 created_at: 2026-06-15T01:27:00Z

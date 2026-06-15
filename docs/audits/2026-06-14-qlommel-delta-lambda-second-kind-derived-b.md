@@ -79,6 +79,13 @@
      second-kind `α/β` ray. Open: the coefficient (~−1.4/excess-proton) and the
      p≠n asymmetry (intra proton 6σ/3σ⁻¹ vs neutron 5σ/4σ⁻¹).
 
+> [!NOTE]
+> **Observation: The Bring-Quintic / EW-Twist Interpretation**
+> Pending the `q₀^5`-per-site mechanism (jet-order derivation), we record the following interpretive findings:
+> - The Δ_λ q₀-exponent factors as `5·(2A−1) = 5 × (A nucleons + (A−1) bonds)`, i.e. **5 per chain-SITE** (nucleon or inter-nucleon bond), with NO −3 offset (the −3 was an artifact of using the crossing count `10A−2` as the unit).
+> - The per-site q-power **5 = the degree of the Bring quintic** (`𝒳₅`; genus 4, χ=−6, Aut = S₅, `g²=5`).
+> - The same odd integers recur: the Δ_λ sites give `2A−1 ∈ {3,5,7}`, and the categorical Weinberg angle is `cosh(5η₀)/cosh(7η₀)` — the same `5,7` as the EW torus-LINK twist counts `2m+1` for the W=T(2,4)/Z=T(2,6) triplet. Cross-observable thread: Δ_λ chain-sites and electroweak twists draw on one shared odd-integer/quintic structure.
+
 ## Disciplinary note
 
 `b` is **derived** (from the `q₀^(10A−5)` structure + `r·s = 1`), so the
