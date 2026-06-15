@@ -99,8 +99,12 @@ def _load_canonical_traces():
     source for every trace-based model here.
     """
     bc = json.loads((HERE / "binding-canonical.witness.json").read_text())
+    # Tolerate schema variants: canonical `data.results`, `data.rows`, or a
+    # legacy top-level `rows` key.
+    data = bc.get("data") or {}
+    results = data.get("results") or data.get("rows") or bc.get("rows", [])
     out = []
-    for r in bc["data"]["results"]:
+    for r in results:
         if r.get("status") != "solved":
             continue
         ta = float(r["tr_M_atom"].strip("()").split("+")[0])
@@ -141,7 +145,7 @@ def _miss(bame, b):
 
 
 def main() -> int:
-    t0 = time.time()
+    t0 = time.monotonic()   # WitnessBuilder.save() computes (time.monotonic()−t0)
     me, q0, E0, g8 = _constants()
     recs = _load_canonical_traces()
 
