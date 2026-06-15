@@ -42,10 +42,17 @@ Extracts present (this branch):
   - H_12 pp / pn / nn  IN FLIGHT (background task b1pwlz1gf)
 
 A=2 (deuteron) runs via the operator-valued branching end-to-end. A≥3
-is now VALIDATED (full-basis H_9 extracts; sublemma_2_1_h9_*verify agree
-at ~1e-13) but its tr_M is delegated to the production native Hoefsmit
-kernel (handles every A + the color-weighted p-n interface), rather than
-re-wiring the recursion here — see compute_tr_m_via_branching.
+tr_M is computed via the fine-Bratteli transfer matrix
+(tr_m_atom_via_transfer.tr_m_atom_zn → chi_monotone_transfer): a lossless
+Σ_{λ⊢3A} y_λ χ^λ over ALL p(3A) partitions at 50 dps in one sweep, with
+no d_λ wall and no pyhecke_native dependency. This replaced the earlier
+native-Hoefsmit-kernel delegation (which required the Rust wheel and
+formed χ per-partition); same canonical color-weighted p-n convention, so
+the value is identical (transfer ≡ char_fast to 4.7e-15). ~5000× the
+markov_peel symbolic path — ⁶Li in ~0.16 s vs ~17 min. The operator-
+valued branching recursion above (compute_chi_lambda_via_branching) is
+retained as the A=2 path and as a structural cross-check; see
+compute_tr_m_via_branching.
 """
 from __future__ import annotations
 
@@ -336,15 +343,17 @@ def compute_chi_lambda_via_branching(
 def compute_tr_m_via_branching(
     Z: int, N: int, q_val: float = None,
 ) -> tuple[mp.mpf | None, float, str | None]:
-    """Compute |tr_M(β_atom, q_0)| via operator-valued Wenzl branching.
+    """Compute |tr_M(β_atom, q_0)| at the canonical color-weighted p-n
+    convention.
 
-    For A=2 (deuteron) this runs the operator-valued branching
-    end-to-end. For A ≥ 3 the value is delegated to the production
-    native Hoefsmit kernel (tr_M = Σ_λ y_λ χ^λ via
-    pyhecke_native.chi_q_atomic_all_partitions): the A=3 branching is
-    validated (sublemma_2_1_h9_*verify, ~1e-13) but re-wiring the
-    recursion here is unnecessary given the native infra handles every A
-    (including the color-weighted p-n interface markov_peel cannot).
+    For A=2 (deuteron) this runs the operator-valued Wenzl branching
+    end-to-end (H_6 extract). For A ≥ 3 the value is computed via the
+    fine-Bratteli transfer matrix (tr_m_atom_via_transfer.tr_m_atom_zn):
+    a lossless Σ_{λ⊢3A} y_λ χ^λ over ALL p(3A) partitions at 50 dps in
+    one sweep — no d_λ wall, no pyhecke_native dependency. This replaced
+    the earlier native-kernel delegation; the value is identical (same
+    convention and y_λ; transfer ≡ char_fast full Hoefsmit to 4.7e-15)
+    while running ~5000× faster than the markov_peel symbolic path.
     """
     if q_val is None:
         q_val = float(Q_FLOAT)
@@ -356,77 +365,34 @@ def compute_tr_m_via_branching(
         # the H_3 Hoefsmit direct path. Copilot review #708.
         return None, 0.0, "A < 2: branching combiner inapplicable (use direct H_3 path)"
     if A >= 3:
-        # A=3 operator-valued branching is now VALIDATED end-to-end: the
-        # H_9 extracts are full-rank over the S_6×S_3 permutation basis and
-        # sublemma_2_1_h9_{tritium,he3}_verify agree Path A vs Path B at
-        # ~1e-13 (the earlier "underdetermined extracts" blocker was a
-        # degenerate test-word set, not structural). Re-wiring that
-        # recursion through THIS combiner's word conventions — and
-        # extending it to A≥4, where a full S_n test-word basis is
-        # infeasible (n! at H_18) — is unnecessary: the production native
-        # Hoefsmit kernel already handles every A, including the averaged
-        # color-weighted p-n interface that the symbolic markov_peel path
-        # cannot represent. So delegate A≥3 to native: tr_M = Σ_λ y_λ χ^λ
-        # with χ^λ from pyhecke_native.chi_q_atomic_all_partitions.
-        # CANONICAL TIER — no f64 on this path. χ^λ at MPFR 50 dps via
-        # chi_lambda_all_partitions_mpfr (its docstring: "the production
-        # path ... the f64 variant exists for speed-only use cases").
-        # The (c, d) word maps to the signed-word API by linearity:
-        #   σ (d=0) → +1;  σ⁻¹ (d=−h) → −1;  averaged (d=−h/2) → 0;
-        #   color-weighted pn  σ − h(1/2 − δ/4)·1
-        #     = [σ − h/2·1] + (h·δ/4)·1  →  sign-0 term + identity term.
-        # The identity-term coefficient is rebuilt at 50 dps from
-        # flavor_split_subleading (the float d in the word builder
-        # carries only ~17 digits, which would cap the witness there).
-        import pyhecke_native as _pn
-        from mass_at_3A_proper import atom_braid_word_3A as _abw
-        from q_parameter import Q_50_DIGIT_STR as _QSTR
+        # A≥3 via the fine-Bratteli transfer matrix (chi_monotone_transfer
+        # → tr_m_atom_via_transfer.tr_m_atom_zn): lossless Σ_{λ⊢3A} y_λ χ^λ
+        # over ALL p(3A) partitions at 50 dps, computed in ONE sweep — no
+        # d_λ wall and NO pyhecke_native (Rust wheel) dependency.
+        #
+        # This replaces the former native path
+        # (pyhecke_native.chi_lambda_all_partitions_mpfr per signed word),
+        # which required the wheel and formed χ per-partition. The transfer
+        # gives every χ^λ at once via the monotone-word seminormal transfer
+        # (Cayley–Hamilton per generator, content-gap weights), so the
+        # color-weighted p-n identity-term split the native path did by hand
+        # is handled internally by chi_monotone_transfer.word_to_mpfr.
+        #
+        # Same canonical color-weighted p-n convention (atom_braid_word_3A
+        # default include_inter=True, pn_convention="bring_color_weighted")
+        # and same y_λ Jones–Markov weights, so the value is identical:
+        # transfer ≡ char_fast (full Hoefsmit) to 4.7e-15, and
+        # tr_M_atom(D)=0.388357 matches this combiner's own A=2 value.
+        # ~5000× the markov_peel symbolic path (⁶Li 0.16 s vs ~17 min).
+        #
+        # Honours the no-truncation precision ruling — ALL partitions kept
+        # (the active-set truncation is a ~10⁻³ error, rejected for 1-ppQ);
+        # the speedup is the transfer sweep, not dropping partitions. See
+        # docs/audits/2026-06-10-binding-active-set-compute-optimization.md.
+        from tr_m_atom_via_transfer import tr_m_atom_zn
         t0 = time.time()
-        h_f = float(q_val) - 1.0 / float(q_val)
-        tol = 1e-9
-        terms: list[tuple[mp.mpf, list[tuple[int, int]]]] = [(mp.mpf(1), [])]
-        for (c, d, g) in _abw(Z, N):
-            cf, df = float(c), float(d)
-            if abs(cf - 1.0) > tol:
-                return None, 0.0, (
-                    f"unsupported crossing c={c} at gen={g} "
-                    "(expected c=1 templates)"
-                )
-            if abs(df) < tol:
-                terms = [(co, w + [(1, g + 1)]) for co, w in terms]
-            elif abs(df + h_f) < tol:
-                terms = [(co, w + [(-1, g + 1)]) for co, w in terms]
-            elif abs(df + h_f / 2) < tol:
-                terms = [(co, w + [(0, g + 1)]) for co, w in terms]
-            else:
-                from _li_2_q_util import flavor_split_subleading
-                q_mp = mp.mpf(_QSTR)
-                h_mp = q_mp - 1 / q_mp
-                delta_mp = flavor_split_subleading(q_mp)
-                expected_d = -(h_mp * (mp.mpf("0.5") - delta_mp / 4))
-                if abs(df - float(expected_d)) > tol:
-                    return None, 0.0, (
-                        f"unrecognised crossing (c={c}, d={d}) at gen={g}; "
-                        "expected σ / σ⁻¹ / averaged / color-weighted pn"
-                    )
-                id_coeff = h_mp * delta_mp / 4
-                split: list[tuple[mp.mpf, list[tuple[int, int]]]] = []
-                for co, w in terms:
-                    split.append((co, w + [(0, g + 1)]))
-                    split.append((co * id_coeff, w))
-                terms = split
-        y_table = y_lambda_at(n, q_val)
-        chi_acc: dict[tuple, mp.mpf] = {}
-        for co, w in terms:
-            for shape, chi_str in _pn.chi_lambda_all_partitions_mpfr(
-                n, w, _QSTR, mp.mp.dps
-            ):
-                key = tuple(shape)
-                chi_acc[key] = chi_acc.get(key, mp.mpf(0)) + co * mp.mpf(chi_str)
-        tr_m = mp.mpf(0)
-        for key, chi in chi_acc.items():
-            tr_m += mp.mpf(str(y_table.get(key, 0))) * chi
-        return abs(tr_m), time.time() - t0, None
+        tr_atom_mp, _tr_free, _chi, _wall = tr_m_atom_zn(Z, N, dps=mp.mp.dps)
+        return abs(tr_atom_mp), time.time() - t0, None
 
     # Load required extracts
     ordering = ["p"] * Z + ["n"] * N
@@ -463,8 +429,8 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
         "--atoms", default="D",
-        help="Comma-separated atoms (default: D). A=2 via branching; "
-             "A>=3 delegated to the native Hoefsmit kernel.",
+        help="Comma-separated atoms (default: D). A=2 via operator-valued "
+             "branching; A>=3 via the fine-Bratteli transfer matrix.",
     )
     parser.add_argument(
         "--verify-against-markov-peel", action="store_true",
