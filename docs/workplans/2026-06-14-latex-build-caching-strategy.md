@@ -353,9 +353,20 @@ memoize, when enabled, additionally needs `-shell-escape` on every
 Per owner directive ("make ideal behaviour default; will debug later"),
 the cache is **on by default** in `publish.yml` (no `use_fmt` opt-in
 gate): content-pipeline generates with `--use-format qou --memoize`;
-`paper-pdf` + `diff-pdf` restore the caches (format keyed on the
-preamble hash → populated from main head; `.memo` per-SHA) and build
-`qou.fmt`; the draft gate is a single `pdflatex -draftmode` pass.
+`paper-pdf` + `diff-pdf` restore the caches and build `qou.fmt`; the
+draft gate is a single `pdflatex -draftmode` pass.
+
+**Cache propagation (main → draft).** GitHub scopes default-branch
+caches to every branch, so:
+- **Format** (`qou.fmt`): keyed on `sha256(preamble.tex)` only — content-
+  addressed, so main builds it once and every branch/PR with the same
+  preamble restores it.
+- **Memoize** (`.memo`): main builds save the canonical
+  `latex-memo-main-<run_id>` ("blessed") cache; draft/feature builds
+  restore `latex-memo-<branch>-` (own, fast iteration) then
+  `latex-memo-main-` (main's). So drafts always build on main's cache,
+  and each main build squash-consolidates the boxes for later drafts —
+  branch caches never pollute main's blessed set.
 
 ### Block-level caching via FIXED (declarative) numbering
 

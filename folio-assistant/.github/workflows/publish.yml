@@ -346,9 +346,17 @@ jobs:
         uses: actions/cache@v4
         with:
           path: .memo
-          key: latex-memo-${{ github.sha }}
+          # Main → draft cache propagation: main builds save the canonical
+          # ("blessed") cache latex-memo-main-<run_id>; draft/feature builds
+          # restore their own branch cache first, then fall back to main's. So
+          # every draft builds on main's cache, and each main build refreshes
+          # (squash-consolidates) the boxes for subsequent drafts. Main caches
+          # are visible to all branches (default-branch scope); branch caches
+          # are not, so drafts can iterate without polluting main's blessed set.
+          key: ${{ (github.event_name == 'push' && github.ref_name == 'main') && format('latex-memo-main-{0}', github.run_id) || format('latex-memo-{0}-{1}', github.head_ref || github.ref_name, github.sha) }}
           restore-keys: |
-            latex-memo-
+            latex-memo-${{ github.head_ref || github.ref_name }}-
+            latex-memo-main-
 
       - name: Build preamble format (qou.fmt — precompiled preamble cache)
         run: |
@@ -531,9 +539,17 @@ jobs:
         uses: actions/cache@v4
         with:
           path: .memo
-          key: latex-memo-${{ github.sha }}
+          # Main → draft cache propagation: main builds save the canonical
+          # ("blessed") cache latex-memo-main-<run_id>; draft/feature builds
+          # restore their own branch cache first, then fall back to main's. So
+          # every draft builds on main's cache, and each main build refreshes
+          # (squash-consolidates) the boxes for subsequent drafts. Main caches
+          # are visible to all branches (default-branch scope); branch caches
+          # are not, so drafts can iterate without polluting main's blessed set.
+          key: ${{ (github.event_name == 'push' && github.ref_name == 'main') && format('latex-memo-main-{0}', github.run_id) || format('latex-memo-{0}-{1}', github.head_ref || github.ref_name, github.sha) }}
           restore-keys: |
-            latex-memo-
+            latex-memo-${{ github.head_ref || github.ref_name }}-
+            latex-memo-main-
 
       - name: Build preamble format (qou.fmt)
         run: bash scripts/build-fmt.sh --preamble latex/preamble.tex --name qou || true
