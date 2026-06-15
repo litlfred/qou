@@ -1,0 +1,72 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-06-15T19:37:19.040515+00:00",
+  "commitSha": "0770f0ba408a2ac651a21b289233a71b90fb3e5d",
+  "assertions": [
+    {
+      "name": "algebraic_q0_matches_transfer",
+      "computed": 2.3730617471073856e-08,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-07,
+      "source": "max |tr_M_algebraic(q₀) − tr_m_atom_zn| over D/T(/³He), atom & free words; ~1e-8 float64-eval floor of the exact ℚ(q) form vs the 50-dps transfer"
+    },
+    {
+      "name": "symbolic_delta_matches_li2q",
+      "computed": 2.168404344971009e-19,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-12,
+      "source": "flavor_split_subleading_sym(q₀) vs _li_2_q_util"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 28,
+  "computation": "tr-m-algebraic-q",
+  "scriptFile": "tr_m_algebraic_q.py",
+  "scriptHash": "5704dfe6a223",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Algebraic q-parameterized Markov trace tr_M(q) ∈ ℚ(q): the atom braid word with the colour split flavor_split_subleading(q) kept SYMBOLIC (vs the production q₀-baked float), so the trace is a clean Laurent object. Cross-checked: tr_M_algebraic(Z,N).subs(q,q₀) == the canonical transfer value tr_m_atom_zn(Z,N) to ~1e-8 for D/T(/³He) (float64-eval floor of the exact form).",
+  "parameters": {
+    "q0": 1.1099785955573347
+  },
+  "data": {
+    "rows": [
+      {
+        "atom": "D",
+        "Z": 1,
+        "N": 1,
+        "tr_atom_q0_algebraic": 0.3883572575106489,
+        "tr_atom_transfer": 0.38835727614609034,
+        "tr_free_q0_algebraic": 0.9835261819554807,
+        "tr_free_transfer": 0.983526199175533,
+        "abs_diff_atom": 1.863544141222917e-08,
+        "abs_diff_free": 1.7220052273003716e-08
+      },
+      {
+        "atom": "T",
+        "Z": 1,
+        "N": 2,
+        "tr_atom_q0_algebraic": 0.10407108773544438,
+        "tr_atom_transfer": 0.10407109805763905,
+        "tr_free_q0_algebraic": 0.9080241198356674,
+        "tr_free_transfer": 0.9080241435662849,
+        "abs_diff_atom": 1.0322194668455076e-08,
+        "abs_diff_free": 2.3730617471073856e-08
+      }
+    ]
+  }
+}
