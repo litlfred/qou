@@ -66,11 +66,23 @@ def _trM(chi: dict, y: dict) -> "mp.mpf":
     return mp.fsum(y[lam] * chi.get(lam, mp.mpf(0)) for lam in y)
 
 
-def tr_m_atom(atom: str, *, dps: int = 50):
-    """`(tr_M_atom, tr_M_free, chi_atom, wall_sec)` for `atom` at q₀."""
+def tr_m_atom_zn(Z: int, N: int, *, dps: int = 50):
+    """`(tr_M_atom, tr_M_free, chi_atom, wall_sec)` for nucleon counts
+    `(Z, N)` at q₀ — the (Z,N)-keyed entry point for binding consumers
+    (`binding_canonical`, `canonical_tr_m_via_branching`).
+
+    Canonical color-weighted p-n convention, summed over ALL `p(3A)`
+    partitions — LOSSLESS: no `max_dim` cap, no active-set truncation
+    (the active-set truncation is a ~10⁻³ error, rejected for 1-ppQ; see
+    `docs/audits/2026-06-10-binding-active-set-compute-optimization.md`).
+    The speed comes from the fine-Bratteli transfer matrix (no d_λ wall),
+    NOT from dropping partitions. This is the scalable replacement for the
+    symbolic `tr_M_element` and native `chi_lambda_all_partitions_mpfr`
+    per-partition paths: ⁶Li in ~0.2 s vs markov_peel's ~17 min (~5000×),
+    validated transfer ≡ full Hoefsmit (`char_fast`) to the 50-dps floor.
+    """
     if mp.mp.dps < dps:
         mp.mp.dps = dps
-    Z, N = ZN[atom]
     n = 3 * (Z + N)
     y = {tuple(k): mp.mpf(str(v)) for k, v in y_lambda_at(n, Q0).items()}
     t0 = time.time()
@@ -78,6 +90,12 @@ def tr_m_atom(atom: str, *, dps: int = 50):
     chi_free = chi_all_lambda_reduced_block(atom_braid_word_3A(Z, N, include_inter=False), n)
     wall = time.time() - t0
     return _trM(chi_atom, y), _trM(chi_free, y), chi_atom, wall
+
+
+def tr_m_atom(atom: str, *, dps: int = 50):
+    """`(tr_M_atom, tr_M_free, chi_atom, wall_sec)` for named `atom` at q₀."""
+    Z, N = ZN[atom]
+    return tr_m_atom_zn(Z, N, dps=dps)
 
 
 def main() -> int:
