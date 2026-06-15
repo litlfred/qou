@@ -72,11 +72,13 @@ unified `predict()` entry point; there is no separate
 script [`canonical_mass_table_extended.py`](../../../folio-assistant/computations/canonical_mass_table_extended.py).
 Its `--method auto` routes per-atom over the mixed nucleon+composite
 set: free nucleons ($A < 2$) use the direct $H_3$ Hoefsmit path
-`laurent_q_rust` (pyhecke-native Rust + MPFR), composites ($A \geq 2$)
-use the operator-valued `branching` combiner — whose $\chi^\lambda$ goes
-through the Rust MPFR kernel `chi_lambda_all_partitions_mpfr`, splitting
-the color-weighted p-n crossing by linearity. Both sub-paths are MPFR
-and Rust-backed; `auto` is the only setting that spans a table mixing
+`laurent_q_rust` (pyhecke-native Rust + MPFR); composites ($A \geq 2$)
+use the `branching` combiner, whose $\chi^\lambda$ comes from the
+operator-valued Wenzl recursion at $A = 2$ and the lossless
+fine-Bratteli transfer matrix at $A \geq 3$ (`chi_monotone_transfer` —
+all $p(3A)$ partitions at 50 dps, no $d_\lambda$ wall, pure mpmath, with
+the color-weighted p-n crossing handled internally). All routes are MPFR
+at the 50-dps floor; `auto` is the only setting that spans a table mixing
 free nucleons and composites in one run.*
 
 ### Witness contract
@@ -108,7 +110,7 @@ bond count) plus per-bond growth. See
 [`docs/audits/2026-06-03-color-averaging-wiring-audit.md`](../../../docs/audits/2026-06-03-color-averaging-wiring-audit.md)
 and [`docs/audits/2026-06-03-nuclear-a3-dpn-plan.md`](../../../docs/audits/2026-06-03-nuclear-a3-dpn-plan.md).*
 
-*Production wiring (2026-06-15): the canonical color-weighted
+*Production wiring (atom-trace compute): the canonical color-weighted
 $\mathrm{tr}_M(\beta_{\text{atom}})$ feeding step 2b is assembled by
 [`tr_m_atom_via_transfer.tr_m_atom_zn`](../../../folio-assistant/computations/tr_m_atom_via_transfer.py),
 through which the binding consumers
