@@ -3,14 +3,14 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "validate": "cd content && bun run pipeline/validate.ts quantum-observable-universe/",
-    "build:content": "cd content && bun run pipeline/build.ts quantum-observable-universe/quantum-observable-universe.ts --out-dir ../chapters/",
+    "validate": "cd content && bun run ../../FolioAssistant/content/pipeline/validate.ts quantum-observable-universe/",
+    "build:content": "cd content && bun run ../../FolioAssistant/content/pipeline/build.ts quantum-observable-universe/quantum-observable-universe.ts --out-dir ../chapters/",
     "build:docs": "typedoc",
-    "export-json": "cd content && bun run pipeline/export-json.ts",
+    "export-json": "cd content && bun run ../../FolioAssistant/content/pipeline/export-json.ts",
     "generate-readme": "./scripts/generate-readme.sh",
-    "test:e2e": "cd folio-assistant && bun run test:e2e",
-    "test": "cd folio-assistant && bun run test",
-    "lint": "cd folio-assistant && bun run lint"
+    "test:e2e": "cd ../FolioAssistant && bun run test:e2e",
+    "test": "cd ../FolioAssistant && bun run test",
+    "lint": "cd ../FolioAssistant && bun run lint"
   },
   "devDependencies": {
     "typedoc": "^0.28.17",
