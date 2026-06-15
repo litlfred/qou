@@ -33,16 +33,42 @@ attempt starts informed.
 | **tikz externalization** (`\tikzexternalize`) | ❌ aborts on tikzcd | The `external` library collects until `\end{tikzpicture}`; tikzcd ends with `\end{tikzcd}` → *"File ended while scanning…"* fatal. Only hooks `tikzpicture`. |
 | **fixed numbering + per-section `\clearpage`** | reverted | Were *enablers* for block-level caching (deterministic block output) that none of the above delivered; pure overhead + a layout change without a working cache. |
 
-**The one mechanism that *would* cache the diagrams** is a
-`standalone`-package restructure: render each `tikzcd` to its own
-`.tex` → compile to `.pdf` → `\includegraphics`, with a 2-pass build +
-a PDF cache. Large, separate effort — not yet done. That's the path for
-a future "diagram cache" PR.
+**`standalone` externalization *works* but is NOT worth doing** (measured
+2026-06-15, real engine): render each `tikzcd` to its own `.tex` → `.pdf`
+→ `\includegraphics` compiles cleanly — but **diagrams are not the
+bottleneck.** A `tikzcd` renders in ~0 ms (10 inline added 0 ms over
+baseline, within noise); a `standalone` sub-build *costs* ~0.63 s of
+pdflatex startup per diagram. Caching them is **net-negative.** Do NOT
+pursue the standalone diagram cache. (Census: 94 `tikzcd` blocks / 79
+files; 6 `tikzpicture`.)
 
 > **Why not "cache each block's PDF and concatenate"?** LaTeX is a
 > single-pass global typesetter — a block's numbering / pagination / refs
 > depend on everything before it. Only *self-contained boxes* (diagrams)
-> are cacheable, and even those need the standalone route above.
+> are cacheable — and per the measurements below, caching even those is
+> net-negative here.
+
+## Measured: where the build time actually is (2026-06-15, real engine)
+
+Installed `texlive-full` via `install-tex.sh`; measured the real paper:
+
+- **Real `main.tex`, one pass: 14.0 s.** Body (2944 blocks) ≈ **95%**;
+  preamble/startup ≈ **5%** (~0.7 s); diagrams ≈ **0%**. The body is the
+  single-pass global typeset — **intrinsically uncacheable** in pdflatex.
+- Hotspots: `mass-theory` (3.5 s) + `quantum-observable-universes`
+  (3.3 s) ≈ 40% (math/table-heavy); the rest a ~1 s/chapter tail.
+- `.fmt` saves only ~0.45 s of startup = **~3% of a pass** (and is broken
+  on this preamble: per-doc macro drop + `^^H` unicode corruption). Skip.
+
+**Whole-pipeline CI ranking** (LaTeX is NOT the dominant cost): witness
+regen (Python, ~36 min, gated by `skip_witnesses`) ≫ `texlive-full`
+install ×3 (~3–6 min) ≫ LaTeX compile (~2–3 min) ≫ bun render.
+
+**The only real win — the prebuilt CI image** (PR #2310): `publish.yml`'s
+3 TeX jobs now `container: ghcr.io/litlfred/qou-paper-builder` instead of
+`apt-get install texlive-full` ×3; `paper-builder-image.yml` now triggers
+on main pushes (touching the Dockerfile) + monthly cron — it previously
+only ran on `workflow_dispatch`, so the image was never actually built.
 
 ## What works (use these)
 
