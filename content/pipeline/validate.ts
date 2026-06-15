@@ -203,7 +203,6 @@ function checkMathLinks(
   mdFile: string,
   issues: ValidationIssue[],
 ): void {
-  return;
   // Match $$…$$ (multi-line) and \[…\] math blocks.
   const mathBlockRegex = /\$\$([\s\S]*?)\$\$|\\\[([\s\S]*?)\\\]/g;
   // Markdown link with internal anchor: [text](#anchor) or [text](\#anchor).
@@ -500,12 +499,12 @@ export async function validateObjects(
   }
 
   // Phase 3: AST validation (render → parse)
-  console.log("Starting Phase 2"); for (const [name, { block, dir }] of allBlocks) {
+  for (const [name, { block, dir }] of allBlocks) {
     const mdContent = mdCache.get(name) ?? "";
 
     try {
-      if (name === "recursive-atom-knot-atlas" || name === "knot-periodic-table") continue; const latex = renderBlock(block, mdContent);
-      if (name === "recursive-atom-knot-atlas" || name === "knot-periodic-table") continue; const astResult = validateLatexAst(latex);
+      const latex = renderBlock(block, mdContent);
+      const astResult = validateLatexAst(latex);
       if (!astResult.valid) {
         for (const err of astResult.errors) {
           issues.push({

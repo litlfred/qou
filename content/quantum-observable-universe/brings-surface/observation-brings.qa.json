@@ -318,6 +318,23 @@
         "reviewed_at": "2026-06-06T01:22:01.651Z",
         "reviewed_sha": "e6279a64a6969659e491c6db3058286afc924a67",
         "notes": "Well-placed remark."
+      },
+      {
+        "field_hash": {
+          "md": "f2fc664f59b7",
+          "ts": "f38aa7760071"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-15",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-15T13:25:43.317Z",
+        "reviewed_sha": "ba054a5f36280a14538808c396d021e8fefbdf67",
+        "notes": "Passed default validation check."
       }
     ],
     "voice-unicode-crash": [
@@ -1985,5 +2002,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-15T03:54:06.462Z"
+  "updated_at": "2026-06-15T13:25:43.317Z"
 }

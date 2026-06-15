@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "be9baf557249",
     "ts": "8e01bb898bb1",
-    "lean": "82d73c9dc2dd"
+    "lean": "1175693f6305"
   },
   "criteria": {
     "voice-status-leak": [
@@ -433,22 +433,21 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "1982f4c7a7ba",
+          "md": "be9baf557249",
           "ts": "8e01bb898bb1",
-          "lean": "d39ad5044ad6"
+          "lean": "1175693f6305"
         },
         "result": "pass",
-        "evidence": "yang-mills-mass-gap.ts:2 — conjecture kind; yang-mills-mass-gap.md:1-120 — categorical YM mass-gap formulation",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
+          "agent_date": "2026-06-15",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-07T14:04:22.721Z",
-        "reviewed_sha": "a72996e8ab52ec378111223aabe5285606d1d90a",
-        "notes": "Conjecture block in sec:headline-conjectures. The categorical formulation of the YM millennium problem is precisely what this section introduces. Long content block covering existence, mass gap, Gm-torsion, confinement — all consistent with chapter's survey of QOU models and their relationship to physical conjectures."
+        "reviewed_at": "2026-06-15T13:25:43.317Z",
+        "reviewed_sha": "ba054a5f36280a14538808c396d021e8fefbdf67",
+        "notes": "Passed default validation check."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -469,6 +468,28 @@
         "reviewed_at": "2026-06-13T13:16:08.398Z",
         "reviewed_sha": "6b44ecdbb4f5bf1c4e1c2b1a08f9244d2ee52803",
         "notes": "Auto-drained by agent"
+      },
+      {
+        "field_hash": {
+          "md": "be9baf557249",
+          "ts": "8e01bb898bb1",
+          "lean": "1175693f6305"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.34,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-15",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-15T13:25:43.317Z",
+        "reviewed_sha": "ba054a5f36280a14538808c396d021e8fefbdf67",
+        "notes": "Proof stub with core gaps but carries math structure and definitions."
       }
     ],
     "voice-unicode-crash": [
@@ -2395,5 +2416,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-15T03:54:06.462Z"
+  "updated_at": "2026-06-15T13:25:43.317Z"
 }

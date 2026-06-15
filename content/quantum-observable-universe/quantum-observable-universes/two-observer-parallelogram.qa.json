@@ -302,22 +302,20 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "a6786e7bb2c8",
+          "md": "7766e418f6e1",
           "ts": "d9fe5324beb7"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "quantum-observable-universes.ts:301 — block in sec:particles; remark on two-observer observation commutator",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
+          "agent_date": "2026-06-15",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:29:18.740Z",
-        "reviewed_sha": "1cd5eb3feca168cd758d6b8a90d579f4749d7974",
-        "notes": "Two-observer parallelogram remark; fits sec:particles."
+        "reviewed_at": "2026-06-15T13:25:43.317Z",
+        "reviewed_sha": "ba054a5f36280a14538808c396d021e8fefbdf67",
+        "notes": "Passed default validation check."
       }
     ],
     "voice-unicode-crash": [
@@ -1985,5 +1983,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-15T03:54:06.462Z"
+  "updated_at": "2026-06-15T13:25:43.317Z"
 }

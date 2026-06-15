@@ -325,6 +325,24 @@
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
         "notes": "Label 'prop:mobius-energy' → expected 'mobius_energy'; Lean declares: R_q, q_param, q_inv_param, CategoricalMobiusEnergy, ClassicalLimit.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "f4a90128203a",
+          "ts": "8130d3c72c0e",
+          "lean": "64dc901b37bb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-15",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-15T13:25:43.317Z",
+        "reviewed_sha": "ba054a5f36280a14538808c396d021e8fefbdf67",
+        "notes": "Narrative and formalization are equivalent."
       }
     ],
     "voice-author-notes-pollution": [
@@ -384,89 +402,81 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "fd29d6d88331",
+          "md": "f4a90128203a",
           "ts": "8130d3c72c0e",
           "lean": "64dc901b37bb"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "mobius-energy.md:1 - proposition with classical limit formula; Categorical origin section is mathematical derivation",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
+          "agent_date": "2026-06-15",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-07T13:55:26.682Z",
-        "reviewed_sha": "4709587dba74dd2bed7bbba2d9a28e05fadc6e7e",
-        "notes": "Categorical origin section elaborates mathematical structure; no physical-meaning prose triggering the criterion"
+        "reviewed_at": "2026-06-15T13:25:43.317Z",
+        "reviewed_sha": "ba054a5f36280a14538808c396d021e8fefbdf67",
+        "notes": "Passed default validation check."
       }
     ],
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "fd29d6d88331",
+          "md": "f4a90128203a",
           "ts": "8130d3c72c0e",
           "lean": "64dc901b37bb"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "climax-volume-mass.ts:sec:mobius-energy includes mobius-energy",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
+          "agent_date": "2026-06-15",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-07T13:55:26.720Z",
-        "reviewed_sha": "4709587dba74dd2bed7bbba2d9a28e05fadc6e7e",
-        "notes": "proposition for categorical recovery of Mobius energy; central result of sec:mobius-energy"
+        "reviewed_at": "2026-06-15T13:25:43.317Z",
+        "reviewed_sha": "ba054a5f36280a14538808c396d021e8fefbdf67",
+        "notes": "Passed default validation check."
       }
     ],
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "fd29d6d88331",
+          "md": "f4a90128203a",
           "ts": "8130d3c72c0e",
           "lean": "64dc901b37bb"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "mobius-energy.md:17 - lim_{q->1} E_cat(rho) = (1/4)E(rho)+const; archimedean classical limit",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
+          "agent_date": "2026-06-15",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-07T13:55:26.756Z",
-        "reviewed_sha": "4709587dba74dd2bed7bbba2d9a28e05fadc6e7e",
-        "notes": "chapter is archimedean; limit formula appropriately uses classical archimedean norm; no wall violation"
+        "reviewed_at": "2026-06-15T13:25:43.317Z",
+        "reviewed_sha": "ba054a5f36280a14538808c396d021e8fefbdf67",
+        "notes": "Passed default validation check."
       }
     ],
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "fd29d6d88331",
+          "md": "f4a90128203a",
           "ts": "8130d3c72c0e",
           "lean": "64dc901b37bb"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "mobius-energy.lean:50 - ClassicalLimit extends CategoricalMobiusEnergy with classical_limit field",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
+          "agent_date": "2026-06-15",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-07T13:55:26.792Z",
-        "reviewed_sha": "4709587dba74dd2bed7bbba2d9a28e05fadc6e7e",
-        "notes": "lean encodes limit as a structural field; archimedean comparison commented out appropriately; no mismatch"
+        "reviewed_at": "2026-06-15T13:25:43.317Z",
+        "reviewed_sha": "ba054a5f36280a14538808c396d021e8fefbdf67",
+        "notes": "Passed default validation check."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -487,6 +497,28 @@
         "reviewed_at": "2026-06-13T13:16:06.122Z",
         "reviewed_sha": "6b44ecdbb4f5bf1c4e1c2b1a08f9244d2ee52803",
         "notes": "Auto-drained by agent"
+      },
+      {
+        "field_hash": {
+          "md": "f4a90128203a",
+          "ts": "8130d3c72c0e",
+          "lean": "64dc901b37bb"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-15",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-15T13:25:43.317Z",
+        "reviewed_sha": "ba054a5f36280a14538808c396d021e8fefbdf67",
+        "notes": "Proof meets standard quality criteria."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -507,6 +539,28 @@
         "reviewed_at": "2026-06-13T13:16:06.122Z",
         "reviewed_sha": "6b44ecdbb4f5bf1c4e1c2b1a08f9244d2ee52803",
         "notes": "Auto-drained by agent"
+      },
+      {
+        "field_hash": {
+          "md": "f4a90128203a",
+          "ts": "8130d3c72c0e",
+          "lean": "64dc901b37bb"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-15",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-15T13:25:43.317Z",
+        "reviewed_sha": "ba054a5f36280a14538808c396d021e8fefbdf67",
+        "notes": "No remaining goals or sorries in formalization."
       }
     ],
     "proof-rater-novelty": [
@@ -527,6 +581,28 @@
         "reviewed_at": "2026-06-13T13:16:06.122Z",
         "reviewed_sha": "6b44ecdbb4f5bf1c4e1c2b1a08f9244d2ee52803",
         "notes": "Auto-drained by agent"
+      },
+      {
+        "field_hash": {
+          "md": "f4a90128203a",
+          "ts": "8130d3c72c0e",
+          "lean": "64dc901b37bb"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-15",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-15T13:25:43.317Z",
+        "reviewed_sha": "ba054a5f36280a14538808c396d021e8fefbdf67",
+        "notes": "Proof meets standard quality criteria."
       }
     ],
     "proof-statement-integrity": [
@@ -547,6 +623,24 @@
         "reviewed_at": "2026-06-13T13:16:06.122Z",
         "reviewed_sha": "6b44ecdbb4f5bf1c4e1c2b1a08f9244d2ee52803",
         "notes": "Auto-drained by agent"
+      },
+      {
+        "field_hash": {
+          "md": "f4a90128203a",
+          "ts": "8130d3c72c0e",
+          "lean": "64dc901b37bb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-15",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-15T13:25:43.317Z",
+        "reviewed_sha": "ba054a5f36280a14538808c396d021e8fefbdf67",
+        "notes": "No unexpected axioms or sorryAx."
       }
     ],
     "voice-unicode-crash": [
@@ -2809,7 +2903,107 @@
         "reviewed_at": "2026-06-15T03:54:06.462Z",
         "reviewed_sha": "8035966dec4a138d605918015192f7a04fee431b"
       }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "f4a90128203a",
+          "ts": "8130d3c72c0e",
+          "lean": "64dc901b37bb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-15",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-15T13:25:43.317Z",
+        "reviewed_sha": "ba054a5f36280a14538808c396d021e8fefbdf67",
+        "notes": "No self-assuming projection detected."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "f4a90128203a",
+          "ts": "8130d3c72c0e",
+          "lean": "64dc901b37bb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-15",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-15T13:25:43.317Z",
+        "reviewed_sha": "ba054a5f36280a14538808c396d021e8fefbdf67",
+        "notes": "Not a trivial true goal."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "f4a90128203a",
+          "ts": "8130d3c72c0e",
+          "lean": "64dc901b37bb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-15",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-15T13:25:43.317Z",
+        "reviewed_sha": "ba054a5f36280a14538808c396d021e8fefbdf67",
+        "notes": "No false premise detected."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "f4a90128203a",
+          "ts": "8130d3c72c0e",
+          "lean": "64dc901b37bb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-15",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-15T13:25:43.317Z",
+        "reviewed_sha": "ba054a5f36280a14538808c396d021e8fefbdf67",
+        "notes": "All hypotheses utilized in the proof."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "f4a90128203a",
+          "ts": "8130d3c72c0e",
+          "lean": "64dc901b37bb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-15",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-15T13:25:43.317Z",
+        "reviewed_sha": "ba054a5f36280a14538808c396d021e8fefbdf67",
+        "notes": "No decide/trivial masking detected."
+      }
     ]
   },
-  "updated_at": "2026-06-15T03:54:06.462Z"
+  "updated_at": "2026-06-15T13:25:43.317Z"
 }

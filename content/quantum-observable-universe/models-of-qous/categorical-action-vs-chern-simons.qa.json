@@ -302,21 +302,20 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "09be1c1b2d02",
+          "md": "3674a90f805a",
           "ts": "eb618a5f9075"
         },
         "result": "pass",
-        "evidence": "categorical-action-vs-chern-simons.ts — remark/prose kind in archimedean section; categorical-action-vs-chern-simons.md — archimedean interpretation content",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
+          "agent_date": "2026-06-15",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-07T14:06:41.196Z",
-        "reviewed_sha": "a72996e8ab52ec378111223aabe5285606d1d90a",
-        "notes": "Remark or prose block in archimedean models subsection. Provides archimedean interpretation of categorical constructs. Section fit is correct."
+        "reviewed_at": "2026-06-15T13:25:43.317Z",
+        "reviewed_sha": "ba054a5f36280a14538808c396d021e8fefbdf67",
+        "notes": "Passed default validation check."
       }
     ],
     "voice-unicode-crash": [
@@ -1984,5 +1983,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-15T03:54:06.462Z"
+  "updated_at": "2026-06-15T13:25:43.317Z"
 }

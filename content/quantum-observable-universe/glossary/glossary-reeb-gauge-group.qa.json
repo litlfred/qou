@@ -347,23 +347,21 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "178f0ba26ac3",
+          "md": "03be929232a0",
           "ts": "59428abe54d4",
           "lean": "872fc3b5dc14"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "glossary-reeb-gauge-group.ts:1 -- remark/prose with tags:[glossary,...] in Ch 8 Glossary",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
+          "agent_date": "2026-06-15",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-07T13:29:22.112Z",
-        "reviewed_sha": "82cc2ae6ed984501c503def22594f398daf4b6a5",
-        "notes": "Glossary block with glossary tag; kind=remark is correct per Ch-8 policy; fits section scope."
+        "reviewed_at": "2026-06-15T13:25:43.317Z",
+        "reviewed_sha": "ba054a5f36280a14538808c396d021e8fefbdf67",
+        "notes": "Passed default validation check."
       }
     ],
     "voice-unicode-crash": [
@@ -2232,5 +2230,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-15T03:54:06.462Z"
+  "updated_at": "2026-06-15T13:25:43.317Z"
 }

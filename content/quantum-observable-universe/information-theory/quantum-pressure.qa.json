@@ -363,43 +363,41 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "c84e7c94b918",
+          "md": "58c6d2c72d49",
           "ts": "676d62712265",
           "lean": "ccd413f2e26e"
         },
         "result": "pass",
-        "evidence": "listed in sec:stat-mech line 123; definition of quantum pressure via free energy derivative - fits stat mech section",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
+          "agent_date": "2026-06-15",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:56:04.331Z",
-        "reviewed_sha": "d1c970e20f187ed12d58f4bfb2ee48b53b744822",
-        "notes": "section and content match"
+        "reviewed_at": "2026-06-15T13:25:43.317Z",
+        "reviewed_sha": "ba054a5f36280a14538808c396d021e8fefbdf67",
+        "notes": "Passed default validation check."
       }
     ],
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "c84e7c94b918",
+          "md": "58c6d2c72d49",
           "ts": "676d62712265",
           "lean": "ccd413f2e26e"
         },
         "result": "pass",
-        "evidence": "definition uses symbolic hbar_q, t_P(q) - no numeric q value hardcoded; formula is algebraic definition of pressure via partition function",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
+          "agent_date": "2026-06-15",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T09:56:04.374Z",
-        "reviewed_sha": "d1c970e20f187ed12d58f4bfb2ee48b53b744822",
-        "notes": "no archimedean leak in statement"
+        "reviewed_at": "2026-06-15T13:25:43.317Z",
+        "reviewed_sha": "ba054a5f36280a14538808c396d021e8fefbdf67",
+        "notes": "Passed default validation check."
       }
     ],
     "voice-unicode-crash": [
@@ -2245,5 +2243,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-15T03:54:06.462Z"
+  "updated_at": "2026-06-15T13:25:43.317Z"
 }

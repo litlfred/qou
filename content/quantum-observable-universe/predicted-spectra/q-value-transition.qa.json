@@ -413,6 +413,24 @@
         "reviewed_at": "2026-06-05T15:50:53.782Z",
         "reviewed_sha": "04d393b3c30ca874407c07b49bb898b17eae9fcc",
         "notes": "Well-placed in nuclear decay section."
+      },
+      {
+        "field_hash": {
+          "md": "e49a48e4b60f",
+          "ts": "d5b18ba28af8",
+          "lean": "23be3fc94f82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-15",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-15T13:25:43.317Z",
+        "reviewed_sha": "ba054a5f36280a14538808c396d021e8fefbdf67",
+        "notes": "Passed default validation check."
       }
     ],
     "wall-side-statement": [
@@ -435,6 +453,24 @@
         "reviewed_at": "2026-06-05T15:51:13.636Z",
         "reviewed_sha": "04d393b3c30ca874407c07b49bb898b17eae9fcc",
         "notes": "Archimedean content matches archimedean chapter regime."
+      },
+      {
+        "field_hash": {
+          "md": "e49a48e4b60f",
+          "ts": "d5b18ba28af8",
+          "lean": "23be3fc94f82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-15",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-15T13:25:43.317Z",
+        "reviewed_sha": "ba054a5f36280a14538808c396d021e8fefbdf67",
+        "notes": "Passed default validation check."
       }
     ],
     "voice-unicode-crash": [
@@ -2370,5 +2406,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-15T03:54:06.462Z"
+  "updated_at": "2026-06-15T13:25:43.317Z"
 }

@@ -380,6 +380,24 @@
         "reviewed_at": "2026-06-05T19:40:36.252Z",
         "reviewed_sha": "e08870b4b497c8b40b477a50dec53483e19800bd",
         "notes": "Directly exercises the half-life formula with numerical predictions — canonical fit for the observations chapter."
+      },
+      {
+        "field_hash": {
+          "md": "d0c052d8a485",
+          "ts": "8730ba37475d",
+          "lean": "c6c6139d88b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-15",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-15T13:25:43.317Z",
+        "reviewed_sha": "ba054a5f36280a14538808c396d021e8fefbdf67",
+        "notes": "Passed default validation check."
       }
     ],
     "voice-unicode-crash": [
@@ -2142,5 +2160,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-15T03:54:06.462Z"
+  "updated_at": "2026-06-15T13:25:43.317Z"
 }

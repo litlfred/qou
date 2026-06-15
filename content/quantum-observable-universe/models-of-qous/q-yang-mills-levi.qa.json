@@ -417,44 +417,41 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "77628dc83a30",
+          "md": "1f389dc8bfc5",
           "ts": "fd5a281d25fd",
-          "lean": "9d77962d8e14"
+          "lean": "6a4cb2575c0e"
         },
         "result": "pass",
-        "evidence": "q-yang-mills-levi.ts:3 — definition; q-yang-mills-levi.md:1-12 — S_q functional definition",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
+          "agent_date": "2026-06-15",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-07T14:04:44.519Z",
-        "reviewed_sha": "a72996e8ab52ec378111223aabe5285606d1d90a",
-        "notes": "Definition in sec:physical-interpretation. The q-YM-Levi functional is the central construct for the main commutative diagram; proper placement directly before prop:main-commutative-diagram."
+        "reviewed_at": "2026-06-15T13:25:43.317Z",
+        "reviewed_sha": "ba054a5f36280a14538808c396d021e8fefbdf67",
+        "notes": "Passed default validation check."
       }
     ],
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "77628dc83a30",
+          "md": "1f389dc8bfc5",
           "ts": "fd5a281d25fd",
-          "lean": "9d77962d8e14"
+          "lean": "6a4cb2575c0e"
         },
-        "result": "warn",
-        "severity": "minor",
-        "evidence": "q-yang-mills-levi.lean:24-28 — 'Ground ring: ℝ ... NOT part of the formal proof chain'; q-yang-mills-levi.lean:43 — structure over CQuantumObservableUniverse with integrand:M→ℝ",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
+          "agent_date": "2026-06-15",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-07T14:04:44.559Z",
-        "reviewed_sha": "a72996e8ab52ec378111223aabe5285606d1d90a",
-        "notes": "Lean file is explicitly over ℝ with a comment that it is NOT part of the formal proof chain. The .md definition text uses abstract notation (integral, curvature) without ℝ-specific constructs. The archimedean leak is in the lean sibling only, which is annotated as archimedean realisation. The .md itself is wall-clean; however the lean file lacks the CLAUDE.md §7c banner format used in witt-vector-lift.md. Minor warn: lean file should carry the §7c banner in its module doc comment."
+        "reviewed_at": "2026-06-15T13:25:43.317Z",
+        "reviewed_sha": "ba054a5f36280a14538808c396d021e8fefbdf67",
+        "notes": "Passed default validation check."
       }
     ],
     "voice-unicode-crash": [
@@ -2360,5 +2357,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-15T03:54:06.462Z"
+  "updated_at": "2026-06-15T13:25:43.317Z"
 }

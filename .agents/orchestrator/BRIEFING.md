@@ -54,18 +54,20 @@ Fix Lean formalization failures and warnings in the mass-theory chapter (content
 | Worker | teamwork_preview_worker | Implement fixes & update QA | completed | 195b0564-459c-449c-8720-222cbb699cf6 |
 | Auditor | teamwork_preview_auditor | Verify proof integrity & axioms | stuck/replaced | 11254f8c-23dd-49ba-909b-f9cba0fa6544 |
 | Verification Worker | teamwork_preview_worker | Verify Lean compilation/goals (Predecessor) | stuck/replaced | a1418523-8136-4f8e-9114-4dab3fd1dbcb |
-| Verification Worker (Rep) | teamwork_preview_worker | Verify Lean compilation/goals | in-progress | 46ac9a49-3fa5-484c-b44a-04a9ceb96685 |
-| Auditor (Rep) | teamwork_preview_auditor | Verify proof integrity & axioms | in-progress | abe33f86-4919-4667-897e-430336e463a3 |
+| Verification Worker (Rep) | teamwork_preview_worker | Verify Lean compilation/goals | stuck/replaced | 46ac9a49-3fa5-484c-b44a-04a9ceb96685 |
+| Auditor (Rep) | teamwork_preview_auditor | Verify proof integrity & axioms | stuck/replaced | abe33f86-4919-4667-897e-430336e463a3 |
+| Reviewer (Fresh) | teamwork_preview_reviewer | Verify Lean compilation/goals | in-progress | 643f91aa-c512-41da-888e-d19f3865b00b |
+| Auditor (Fresh) | teamwork_preview_auditor | Verify proof integrity & axioms | in-progress | 16f985ac-cd8e-4a79-82c9-2105ad1e2958 |
 
 ## Succession Status
 - Succession required: no
-- Spawn count: 5 / 16
-- Pending subagents: 46ac9a49-3fa5-484c-b44a-04a9ceb96685, abe33f86-4919-4667-897e-430336e463a3
+- Spawn count: 7 / 16
+- Pending subagents: 643f91aa-c512-41da-888e-d19f3865b00b, 16f985ac-cd8e-4a79-82c9-2105ad1e2958
 - Predecessor: unresponsive_predecessor
 - Successor: not yet spawned
 
 ## Active Timers
-- Heartbeat cron: task-19
+- Heartbeat cron: task-113
 - Safety timer: none
 - On succession: kill all timers before spawning successor
 - On context truncation: run `manage_task(Action="list")` — re-create if missing

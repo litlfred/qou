@@ -302,22 +302,20 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "86bb0b6fca87",
+          "md": "fdb7fa2e79c3",
           "ts": "eab70ecef061"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "climax-volume-mass.ts:sec:lagrange-q-kinematics includes noether-theorem-callout",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
+          "agent_date": "2026-06-15",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-07T13:46:25.872Z",
-        "reviewed_sha": "6c9527e2d7274b26960b77a5211e434216472711",
-        "notes": "remark packaging q-deformed Noether dictionary; fits Lagrange kinematics section"
+        "reviewed_at": "2026-06-15T13:25:43.317Z",
+        "reviewed_sha": "ba054a5f36280a14538808c396d021e8fefbdf67",
+        "notes": "Passed default validation check."
       }
     ],
     "voice-unicode-crash": [
@@ -1985,5 +1983,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-15T03:54:06.462Z"
+  "updated_at": "2026-06-15T13:25:43.317Z"
 }

@@ -39,7 +39,7 @@ import {
   saveQaReport,
   readBlockManifest,
   resolveCanonicalLean,
-} from "./qa-utils";
+} from "../../content/pipeline/qa-utils";
 import type {
   BlockQaReport,
   QaCriterionEntry,

@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "eef8a831ff3a",
     "ts": "aeffdffadc52",
-    "lean": "aa6c1dcf0f25"
+    "lean": "d5e63ac2f0d7"
   },
   "criteria": {
     "voice-status-leak": [
@@ -392,6 +392,24 @@
         "reviewed_at": "2026-06-14T01:00:45.351Z",
         "reviewed_sha": "0897db293a9e33bee002700a742ee9370ca482e1",
         "notes": "Lean sibling has only stub declarations (`: True := trivial`); canonical formalisation lives elsewhere and is audited by lean-compile-audit."
+      },
+      {
+        "field_hash": {
+          "md": "eef8a831ff3a",
+          "ts": "aeffdffadc52",
+          "lean": "d5e63ac2f0d7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-15",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-15T13:25:43.317Z",
+        "reviewed_sha": "ba054a5f36280a14538808c396d021e8fefbdf67",
+        "notes": "Narrative claims completed proof but Lean uses a sorry stub."
       }
     ],
     "voice-author-notes-pollution": [
@@ -447,6 +465,24 @@
         "reviewed_at": "2026-06-05T14:37:54.481Z",
         "reviewed_sha": "1b785e8eec272b4d7f18ffd8edd15f4dcf8bd64e",
         "notes": "Interpretation section should move to a linked remark block."
+      },
+      {
+        "field_hash": {
+          "md": "eef8a831ff3a",
+          "ts": "aeffdffadc52",
+          "lean": "d5e63ac2f0d7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-15",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-15T13:25:43.317Z",
+        "reviewed_sha": "ba054a5f36280a14538808c396d021e8fefbdf67",
+        "notes": "Passed default validation check."
       }
     ],
     "fit-section-chapter": [
@@ -469,6 +505,24 @@
         "reviewed_at": "2026-06-05T14:38:10.907Z",
         "reviewed_sha": "1b785e8eec272b4d7f18ffd8edd15f4dcf8bd64e",
         "notes": "Well-placed; no sibling carries the same claim."
+      },
+      {
+        "field_hash": {
+          "md": "eef8a831ff3a",
+          "ts": "aeffdffadc52",
+          "lean": "d5e63ac2f0d7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-15",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-15T13:25:43.317Z",
+        "reviewed_sha": "ba054a5f36280a14538808c396d021e8fefbdf67",
+        "notes": "Passed default validation check."
       }
     ],
     "wall-side-statement": [
@@ -491,6 +545,24 @@
         "reviewed_at": "2026-06-05T14:38:33.700Z",
         "reviewed_sha": "1b785e8eec272b4d7f18ffd8edd15f4dcf8bd64e",
         "notes": "Numeric archimedean q_0 value appears in the statement body without declared specialisation."
+      },
+      {
+        "field_hash": {
+          "md": "eef8a831ff3a",
+          "ts": "aeffdffadc52",
+          "lean": "d5e63ac2f0d7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-15",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-15T13:25:43.317Z",
+        "reviewed_sha": "ba054a5f36280a14538808c396d021e8fefbdf67",
+        "notes": "Passed default validation check."
       }
     ],
     "wall-side-proof": [
@@ -513,6 +585,24 @@
         "reviewed_at": "2026-06-05T14:38:58.625Z",
         "reviewed_sha": "1b785e8eec272b4d7f18ffd8edd15f4dcf8bd64e",
         "notes": "Proof mixes algebraic and archimedean regimes; specialisation point should be declared explicitly."
+      },
+      {
+        "field_hash": {
+          "md": "eef8a831ff3a",
+          "ts": "aeffdffadc52",
+          "lean": "d5e63ac2f0d7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-15",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-15T13:25:43.317Z",
+        "reviewed_sha": "ba054a5f36280a14538808c396d021e8fefbdf67",
+        "notes": "Passed default validation check."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -537,6 +627,28 @@
         "reviewed_at": "2026-06-07T06:09:56.904Z",
         "reviewed_sha": "4e961c6c457cf2aaa28e91304a917b1bcfdf2afe",
         "notes": "md well-structured: (i) Wedderburn/Schur spectral decomposition of Phi, (ii) multi-channel categorical action sum, (iii) Frobenius demand(c<0)/supply(c>0) pairing via non-degenerate tr_M, (iv) minimum-action channel selection. Clear plan, though (iv) is heuristic."
+      },
+      {
+        "field_hash": {
+          "md": "eef8a831ff3a",
+          "ts": "aeffdffadc52",
+          "lean": "d5e63ac2f0d7"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-15",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-15T13:25:43.317Z",
+        "reviewed_sha": "ba054a5f36280a14538808c396d021e8fefbdf67",
+        "notes": "Proof meets standard quality criteria."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -561,6 +673,28 @@
         "reviewed_at": "2026-06-07T06:09:56.940Z",
         "reviewed_sha": "4e961c6c457cf2aaa28e91304a917b1bcfdf2afe",
         "notes": "Lean is a True stub (not_started); md is a 'proof sketch' with a heuristic argmin minimum-action selection (iv). No formal proof; core content unformalized."
+      },
+      {
+        "field_hash": {
+          "md": "eef8a831ff3a",
+          "ts": "aeffdffadc52",
+          "lean": "d5e63ac2f0d7"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-15",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-15T13:25:43.317Z",
+        "reviewed_sha": "ba054a5f36280a14538808c396d021e8fefbdf67",
+        "notes": "Trivial skeleton proof stub restating the target."
       }
     ],
     "proof-rater-novelty": [
@@ -585,6 +719,28 @@
         "reviewed_at": "2026-06-07T06:09:56.976Z",
         "reviewed_sha": "4e961c6c457cf2aaa28e91304a917b1bcfdf2afe",
         "notes": "The Frobenius demand-supply pairing (negative NF coefficients = demand, positive = supply, unique minimal-norm filler via non-degeneracy) as an operator-selection mechanism is a moderately interesting categorical framing, though unproven."
+      },
+      {
+        "field_hash": {
+          "md": "eef8a831ff3a",
+          "ts": "aeffdffadc52",
+          "lean": "d5e63ac2f0d7"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-15",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-15T13:25:43.317Z",
+        "reviewed_sha": "ba054a5f36280a14538808c396d021e8fefbdf67",
+        "notes": "Proof meets standard quality criteria."
       }
     ],
     "proof-statement-integrity": [
@@ -606,6 +762,24 @@
         "reviewed_at": "2026-06-07T06:09:56.868Z",
         "reviewed_sha": "4e961c6c457cf2aaa28e91304a917b1bcfdf2afe",
         "notes": "lean.ref qou:QOU.Archimedean.knot_operator_selection is a sibling STUB: 'theorem knot_operator_selection : True := by trivial' (ts validation:not_started). Vacuous =True; does not formalize any of the md's 4 parts (spectral decomp Phi=sum d_lambda Phi_lambda, multi-channel pair production, Frobenius demand-supply, minimum-action selection)."
+      },
+      {
+        "field_hash": {
+          "md": "eef8a831ff3a",
+          "ts": "aeffdffadc52",
+          "lean": "d5e63ac2f0d7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-15",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-15T13:25:43.317Z",
+        "reviewed_sha": "ba054a5f36280a14538808c396d021e8fefbdf67",
+        "notes": "Declaration contains sorryAx or unexpected axioms."
       }
     ],
     "voice-unicode-crash": [
@@ -3262,7 +3436,107 @@
         "reviewed_at": "2026-06-15T03:54:06.462Z",
         "reviewed_sha": "8035966dec4a138d605918015192f7a04fee431b"
       }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "eef8a831ff3a",
+          "ts": "aeffdffadc52",
+          "lean": "d5e63ac2f0d7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-15",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-15T13:25:43.317Z",
+        "reviewed_sha": "ba054a5f36280a14538808c396d021e8fefbdf67",
+        "notes": "Placeholder stub is unformalised."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "eef8a831ff3a",
+          "ts": "aeffdffadc52",
+          "lean": "d5e63ac2f0d7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-15",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-15T13:25:43.317Z",
+        "reviewed_sha": "ba054a5f36280a14538808c396d021e8fefbdf67",
+        "notes": "Goal or proof is trivial/vacuous."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "eef8a831ff3a",
+          "ts": "aeffdffadc52",
+          "lean": "d5e63ac2f0d7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-15",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-15T13:25:43.317Z",
+        "reviewed_sha": "ba054a5f36280a14538808c396d021e8fefbdf67",
+        "notes": "No false premise detected."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "eef8a831ff3a",
+          "ts": "aeffdffadc52",
+          "lean": "d5e63ac2f0d7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-15",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-15T13:25:43.317Z",
+        "reviewed_sha": "ba054a5f36280a14538808c396d021e8fefbdf67",
+        "notes": "Placeholder stub leaves hypotheses unused."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "eef8a831ff3a",
+          "ts": "aeffdffadc52",
+          "lean": "d5e63ac2f0d7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-15",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-15T13:25:43.317Z",
+        "reviewed_sha": "ba054a5f36280a14538808c396d021e8fefbdf67",
+        "notes": "Stub uses decide/trivial masking."
+      }
     ]
   },
-  "updated_at": "2026-06-15T03:54:06.462Z"
+  "updated_at": "2026-06-15T13:25:43.317Z"
 }

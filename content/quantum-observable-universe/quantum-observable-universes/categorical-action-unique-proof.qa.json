@@ -446,20 +446,20 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "ac08d761ffce",
+          "md": "2c7cef95f241",
           "ts": "2cf8b564f80b"
         },
         "result": "pass",
-        "evidence": "Listed in section manifest",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-14",
+          "agent_date": "2026-06-15",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-14T13:27:46.316Z",
-        "reviewed_sha": "5cd90f065f67987b970c57ec0499ddee323c1cea"
+        "reviewed_at": "2026-06-15T13:25:43.317Z",
+        "reviewed_sha": "ba054a5f36280a14538808c396d021e8fefbdf67",
+        "notes": "Passed default validation check."
       }
     ],
     "voice-unicode-crash": [
@@ -2193,5 +2193,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-15T03:54:06.462Z"
+  "updated_at": "2026-06-15T13:25:43.317Z"
 }

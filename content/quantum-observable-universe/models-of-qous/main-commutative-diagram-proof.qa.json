@@ -363,22 +363,21 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "928e04cdead4",
+          "md": "9e0e7c00ee83",
           "ts": "80d6e7e03e5a",
-          "lean": "b5fe35a69a01"
+          "lean": "7259eaab6303"
         },
         "result": "pass",
-        "evidence": "main-commutative-diagram-proof.ts:2 — proof kind; main-commutative-diagram-proof.md:1-42 — proof tracing top-right and left-bottom paths",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
+          "agent_date": "2026-06-15",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-07T14:05:46.470Z",
-        "reviewed_sha": "a72996e8ab52ec378111223aabe5285606d1d90a",
-        "notes": "Proof block for prop:main-commutative-diagram, placed immediately after the proposition in sec:physical-interpretation. Correct proof-following-proposition placement."
+        "reviewed_at": "2026-06-15T13:25:43.317Z",
+        "reviewed_sha": "ba054a5f36280a14538808c396d021e8fefbdf67",
+        "notes": "Passed default validation check."
       }
     ],
     "voice-unicode-crash": [
@@ -2139,5 +2138,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-15T03:54:06.462Z"
+  "updated_at": "2026-06-15T13:25:43.317Z"
 }

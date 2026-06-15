@@ -318,6 +318,23 @@
         "reviewed_at": "2026-06-05T18:34:01.205Z",
         "reviewed_sha": "9493f97f636359f63aa93a1cfa53819552353036",
         "notes": "Correctly placed in predicted-spectra as a boundary/scope note on mass predictions."
+      },
+      {
+        "field_hash": {
+          "md": "41c1db76fd2a",
+          "ts": "62df698a91ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-15",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-15T13:25:43.317Z",
+        "reviewed_sha": "ba054a5f36280a14538808c396d021e8fefbdf67",
+        "notes": "Passed default validation check."
       }
     ],
     "voice-unicode-crash": [
@@ -1985,5 +2002,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-15T03:54:06.462Z"
+  "updated_at": "2026-06-15T13:25:43.317Z"
 }

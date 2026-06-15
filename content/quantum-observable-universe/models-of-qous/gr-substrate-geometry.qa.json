@@ -302,21 +302,20 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "b33ad5479790",
+          "md": "45a06609b764",
           "ts": "8e5ad5b18f8e"
         },
         "result": "pass",
-        "evidence": "gr-substrate-geometry.ts:4 — remark interprets:def:q-yang-mills-levi; gr-substrate-geometry.md:1-23 — GR as substrate geometry, variational equations",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
+          "agent_date": "2026-06-15",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-07T14:03:52.016Z",
-        "reviewed_sha": "a72996e8ab52ec378111223aabe5285606d1d90a",
-        "notes": "Remark interpreting the YM-Levi functional in terms of GR field equations. Correctly placed in sec:headline-conjectures alongside yang-mills-mass-gap; provides the substrate-geometry motivation for the conjecture."
+        "reviewed_at": "2026-06-15T13:25:43.317Z",
+        "reviewed_sha": "ba054a5f36280a14538808c396d021e8fefbdf67",
+        "notes": "Passed default validation check."
       }
     ],
     "voice-unicode-crash": [
@@ -1984,5 +1983,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-15T03:54:06.462Z"
+  "updated_at": "2026-06-15T13:25:43.317Z"
 }

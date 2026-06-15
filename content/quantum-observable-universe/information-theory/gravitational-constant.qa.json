@@ -380,6 +380,24 @@
         "reviewed_at": "2026-06-05T01:01:04.914Z",
         "reviewed_sha": "4412eb3f0aa31e12d4ed419f3f6e7f3010f963dc",
         "notes": "No misfiling; emergent-gravity via entropy is canonical information-theory content."
+      },
+      {
+        "field_hash": {
+          "md": "e0d2d87da87b",
+          "ts": "1290d0055194",
+          "lean": "92ac43e7cd45"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-15",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-15T13:25:43.317Z",
+        "reviewed_sha": "ba054a5f36280a14538808c396d021e8fefbdf67",
+        "notes": "Passed default validation check."
       }
     ],
     "wall-side-statement": [
@@ -402,6 +420,24 @@
         "reviewed_at": "2026-06-05T01:01:22.796Z",
         "reviewed_sha": "4412eb3f0aa31e12d4ed419f3f6e7f3010f963dc",
         "notes": "Chapter regime is archimedean; numeric values are correctly compartmentalized in a table, not smuggled into generic-ring statements."
+      },
+      {
+        "field_hash": {
+          "md": "e0d2d87da87b",
+          "ts": "1290d0055194",
+          "lean": "92ac43e7cd45"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-15",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-15T13:25:43.317Z",
+        "reviewed_sha": "ba054a5f36280a14538808c396d021e8fefbdf67",
+        "notes": "Passed default validation check."
       }
     ],
     "voice-unicode-crash": [
@@ -2247,5 +2283,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-15T03:54:06.462Z"
+  "updated_at": "2026-06-15T13:25:43.317Z"
 }

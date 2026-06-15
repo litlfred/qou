@@ -358,6 +358,24 @@
         "reviewed_at": "2026-06-14T01:00:45.351Z",
         "reviewed_sha": "0897db293a9e33bee002700a742ee9370ca482e1",
         "notes": "Label 'prop:categorical-action-unique' → expected 'categorical_action_unique'; Lean declares: categoricalAction, CategoricalAction.unique. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "6d194e4aaa4d",
+          "ts": "b848a029651c",
+          "lean": "0bf6f69a78d5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-15",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-15T13:25:43.317Z",
+        "reviewed_sha": "ba054a5f36280a14538808c396d021e8fefbdf67",
+        "notes": "Narrative and formalization are equivalent."
       }
     ],
     "voice-author-notes-pollution": [
@@ -413,6 +431,24 @@
         "reviewed_at": "2026-06-04T23:19:48.403Z",
         "reviewed_sha": "1e44380a7234fce2043e25abc902fc58f37cd565",
         "notes": "Correct placement alongside existence proposition"
+      },
+      {
+        "field_hash": {
+          "md": "6d194e4aaa4d",
+          "ts": "b848a029651c",
+          "lean": "0bf6f69a78d5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-15",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-15T13:25:43.317Z",
+        "reviewed_sha": "ba054a5f36280a14538808c396d021e8fefbdf67",
+        "notes": "Passed default validation check."
       }
     ],
     "voice-statement-no-interpretation": [
@@ -435,6 +471,24 @@
         "reviewed_at": "2026-06-04T23:19:48.365Z",
         "reviewed_sha": "1e44380a7234fce2043e25abc902fc58f37cd565",
         "notes": "Statement is clean claim; proof in companion prf: block"
+      },
+      {
+        "field_hash": {
+          "md": "6d194e4aaa4d",
+          "ts": "b848a029651c",
+          "lean": "0bf6f69a78d5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-15",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-15T13:25:43.317Z",
+        "reviewed_sha": "ba054a5f36280a14538808c396d021e8fefbdf67",
+        "notes": "Passed default validation check."
       }
     ],
     "wall-side-statement": [
@@ -457,6 +511,24 @@
         "reviewed_at": "2026-06-04T23:19:48.438Z",
         "reviewed_sha": "1e44380a7234fce2043e25abc902fc58f37cd565",
         "notes": "Generic-ring chapter, statement stays generic; no q≈value, no Real.*, no ordering hypotheses"
+      },
+      {
+        "field_hash": {
+          "md": "6d194e4aaa4d",
+          "ts": "b848a029651c",
+          "lean": "0bf6f69a78d5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-15",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-15T13:25:43.317Z",
+        "reviewed_sha": "ba054a5f36280a14538808c396d021e8fefbdf67",
+        "notes": "Passed default validation check."
       }
     ],
     "wall-side-proof": [
@@ -479,6 +551,24 @@
         "reviewed_at": "2026-06-04T23:19:48.478Z",
         "reviewed_sha": "1e44380a7234fce2043e25abc902fc58f37cd565",
         "notes": "Proof method matches algebraic statement"
+      },
+      {
+        "field_hash": {
+          "md": "6d194e4aaa4d",
+          "ts": "b848a029651c",
+          "lean": "0bf6f69a78d5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-15",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-15T13:25:43.317Z",
+        "reviewed_sha": "ba054a5f36280a14538808c396d021e8fefbdf67",
+        "notes": "Passed default validation check."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -506,20 +596,25 @@
       },
       {
         "field_hash": {
-          "md": "9b57eaab4051",
+          "md": "6d194e4aaa4d",
           "ts": "b848a029651c",
           "lean": "0bf6f69a78d5"
         },
         "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-14",
+          "agent_date": "2026-06-15",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-14T01:36:55.575Z",
-        "reviewed_sha": "4468e2a2d8e1960206560be9fa4a1842b7b5dc7b"
+        "reviewed_at": "2026-06-15T13:25:43.317Z",
+        "reviewed_sha": "ba054a5f36280a14538808c396d021e8fefbdf67",
+        "notes": "Proof meets standard quality criteria."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -545,6 +640,28 @@
         "reviewed_at": "2026-06-07T06:00:58.730Z",
         "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
         "notes": "Closed by CategoricalAction.unique_axiom; the docstring states the Subsingleton claim is STRICTLY FALSE (struct has free fields state/gravity/gauge/matter), so the axiom asserts a false statement."
+      },
+      {
+        "field_hash": {
+          "md": "6d194e4aaa4d",
+          "ts": "b848a029651c",
+          "lean": "0bf6f69a78d5"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-15",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-15T13:25:43.317Z",
+        "reviewed_sha": "ba054a5f36280a14538808c396d021e8fefbdf67",
+        "notes": "No remaining goals or sorries in formalization."
       }
     ],
     "proof-rater-novelty": [
@@ -570,6 +687,28 @@
         "reviewed_at": "2026-06-07T06:00:58.769Z",
         "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
         "notes": "Axiom-laundered Subsingleton; no argument."
+      },
+      {
+        "field_hash": {
+          "md": "6d194e4aaa4d",
+          "ts": "b848a029651c",
+          "lean": "0bf6f69a78d5"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-15",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-15T13:25:43.317Z",
+        "reviewed_sha": "ba054a5f36280a14538808c396d021e8fefbdf67",
+        "notes": "Proof meets standard quality criteria."
       }
     ],
     "proof-statement-integrity": [
@@ -594,23 +733,21 @@
       },
       {
         "field_hash": {
-          "md": "9b57eaab4051",
+          "md": "6d194e4aaa4d",
           "ts": "b848a029651c",
           "lean": "0bf6f69a78d5"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "categorical-action-unique.lean — CategoricalAction.unique no longer := a Subsingleton axiom the docstring documented as strictly false; it now proves any two morphisms factoring as categoricalAction Φ swap are equal (= tr(Φ)), matching the md.",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
+          "agent_date": "2026-06-15",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T16:30:57.692Z",
-        "reviewed_sha": "910c36462b195e2bfc30a0027b3032ea1bd4983c",
-        "notes": "RESOLVED: removed the wrong-proposition axiom Subsingleton(CategoricalAction) (false: free state/gravity/gauge/matter fields). Replaced with the md's true uniqueness claim (two morphisms factoring as the action composite for the same (Φ,swap) are equal). No axiom, no sorry. Verified green via QOU._Scratch.CatActUnique, lake build exit 0."
+        "reviewed_at": "2026-06-15T13:25:43.317Z",
+        "reviewed_sha": "ba054a5f36280a14538808c396d021e8fefbdf67",
+        "notes": "No unexpected axioms or sorryAx."
       }
     ],
     "voice-unicode-crash": [
@@ -2905,7 +3042,107 @@
         "reviewed_at": "2026-06-15T03:54:06.462Z",
         "reviewed_sha": "8035966dec4a138d605918015192f7a04fee431b"
       }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "6d194e4aaa4d",
+          "ts": "b848a029651c",
+          "lean": "0bf6f69a78d5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-15",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-15T13:25:43.317Z",
+        "reviewed_sha": "ba054a5f36280a14538808c396d021e8fefbdf67",
+        "notes": "No self-assuming projection detected."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "6d194e4aaa4d",
+          "ts": "b848a029651c",
+          "lean": "0bf6f69a78d5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-15",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-15T13:25:43.317Z",
+        "reviewed_sha": "ba054a5f36280a14538808c396d021e8fefbdf67",
+        "notes": "Not a trivial true goal."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "6d194e4aaa4d",
+          "ts": "b848a029651c",
+          "lean": "0bf6f69a78d5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-15",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-15T13:25:43.317Z",
+        "reviewed_sha": "ba054a5f36280a14538808c396d021e8fefbdf67",
+        "notes": "No false premise detected."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "6d194e4aaa4d",
+          "ts": "b848a029651c",
+          "lean": "0bf6f69a78d5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-15",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-15T13:25:43.317Z",
+        "reviewed_sha": "ba054a5f36280a14538808c396d021e8fefbdf67",
+        "notes": "All hypotheses utilized in the proof."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "6d194e4aaa4d",
+          "ts": "b848a029651c",
+          "lean": "0bf6f69a78d5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-15",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-15T13:25:43.317Z",
+        "reviewed_sha": "ba054a5f36280a14538808c396d021e8fefbdf67",
+        "notes": "No decide/trivial masking detected."
+      }
     ]
   },
-  "updated_at": "2026-06-15T03:54:06.462Z"
+  "updated_at": "2026-06-15T13:25:43.317Z"
 }

@@ -70,7 +70,7 @@ theorem qbessel_coeff_closed_form (q a : K) (c : ℕ → K)
     (k : ℕ) :
     c k = c 0 * ∏ j ∈ Finset.range k, qbesselRatio q a j := by
   refine first_order_solution (qbesselRatio q a) c (fun n => ?_) k
-  rw [qbesselRatio, div_mul_eq_mul_div, eq_div_iff (hD n)]
+  rw [qbesselRatio, mul_div_assoc, eq_div_iff (hD n)]
   exact hrec n
 
 /-- **C-finite degeneration.** When the ratio is a *constant* `ρ` (the rational /
@@ -126,7 +126,7 @@ theorem qbessel_first_kind_coeff_closed_form (q a : K) (c : ℕ → K)
     (k : ℕ) :
     c k = c 0 * ∏ j ∈ Finset.range k, qbesselFirstKindRatio q a j := by
   refine first_order_solution (qbesselFirstKindRatio q a) c (fun n => ?_) k
-  rw [qbesselFirstKindRatio, div_mul_eq_mul_div, eq_div_iff (hD n)]
+  rw [qbesselFirstKindRatio, mul_div_assoc, eq_div_iff (hD n)]
   exact hrec n
 
 /-- **Jackson's Second Kind q-Bessel coefficient ratio.**
@@ -143,7 +143,7 @@ theorem qbessel_second_kind_coeff_closed_form (q a : K) (c : ℕ → K)
     (k : ℕ) :
     c k = c 0 * ∏ j ∈ Finset.range k, qbesselSecondKindRatio q a j := by
   refine first_order_solution (qbesselSecondKindRatio q a) c (fun n => ?_) k
-  rw [qbesselSecondKindRatio, div_mul_eq_mul_div, eq_div_iff (hD n)]
+  rw [qbesselSecondKindRatio, mul_div_assoc, eq_div_iff (hD n)]
   exact hrec n
 
 end QOU.QBeta
