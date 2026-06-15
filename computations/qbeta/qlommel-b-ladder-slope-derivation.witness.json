@@ -1,0 +1,173 @@
+{
+  "engine": "python+mpmath+combinatorial",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-15T21:51:48.097620+00:00",
+  "commitSha": "2b12e1f50f4ceae2f90d4f955f6dd34176080112",
+  "assertions": [
+    {
+      "name": "slope_10A_minus_2_holds_through_A12",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "σ+σ⁻¹ = 10A−2 (A-only) for D,T,³He,⁴He,⁶Li,⁷Li,⁸Be,¹²C — the derived slope extended past the 4-atom set to A=12"
+    },
+    {
+      "name": "b_equals_2cosh_10_eta",
+      "computed": "3.191125899",
+      "expected": "3.191125899",
+      "passed": true,
+      "tolerance": 1e-09,
+      "source": "b = q0^10 + q0^-10 = 2cosh(10 log q0)"
+    },
+    {
+      "name": "b_independent_of_offset_residual_zero",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "max|b·Δ_A − Δ_(A−1) − Δ_(A+1)| over all tested C (incl. q0^-5) and A=2..11 is ~0 ⇒ b depends only on r=q0^slope, not the offset C"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 102,
+  "computation": "qlommel-b-ladder-slope-derivation",
+  "scriptFile": "qlommel_b_ladder_slope_derivation.py",
+  "scriptHash": "fd1cc81800a1",
+  "scriptCommitSha": "ee2726d8a159e91c7f19185d12c09454b12d4922",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "mpmath": "1.4.1"
+  },
+  "description": "Derive-or-refute (no fit): the b ladder IS derivable. The order-recurrence coefficient b=q0^10+q0^-10=2cosh(10η) is fixed by the exponent SLOPE alone (ratio r=q0^10); the open exponent OFFSET (−5 in 10A−5; the −3 crossing-vs-site puzzle) is the prefactor C in Δ_λ=C·r^A and never enters b. (1) the A-only slope σ+σ⁻¹=10A−2 is EXTENDED past the original D,T,³He,⁴He to the untested tower ⁶Li,⁷Li,⁸Be,¹²C (A≤12) — all hold (the data-gate's test). (2) offset-independence demonstrated: C·r^A satisfies the same recurrence for any C (incl. q0^-5) to machine precision. (3) seeds D,T predict ⁴He via the derived b. Lean: two_root_geometric + first_kind_geometric_b. Open: the absolute Δ_λ scale (the offset) — a normalization question, NOT a recurrence one, so it does NOT gate the b ladder. NOT wired.",
+  "parameters": {
+    "q0": "1.10997859556",
+    "slope": "10",
+    "geometric_ratio_r": "2.83887350003",
+    "b_derived_2cosh10eta": "3.19112589873"
+  },
+  "data": {
+    "slope_extended_rows": [
+      {
+        "atom": "D",
+        "Z": 1,
+        "N": 1,
+        "A": 2,
+        "sigma": 11,
+        "sigma_inv": 7,
+        "non_averaged": 18,
+        "slope_law_10A_2": 18,
+        "exponent_10A_5": 15,
+        "match": true
+      },
+      {
+        "atom": "T",
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "sigma": 16,
+        "sigma_inv": 12,
+        "non_averaged": 28,
+        "slope_law_10A_2": 28,
+        "exponent_10A_5": 25,
+        "match": true
+      },
+      {
+        "atom": "3He",
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "sigma": 18,
+        "sigma_inv": 10,
+        "non_averaged": 28,
+        "slope_law_10A_2": 28,
+        "exponent_10A_5": 25,
+        "match": true
+      },
+      {
+        "atom": "4He",
+        "Z": 2,
+        "N": 2,
+        "A": 4,
+        "sigma": 23,
+        "sigma_inv": 15,
+        "non_averaged": 38,
+        "slope_law_10A_2": 38,
+        "exponent_10A_5": 35,
+        "match": true
+      },
+      {
+        "atom": "6Li",
+        "Z": 3,
+        "N": 3,
+        "A": 6,
+        "sigma": 35,
+        "sigma_inv": 23,
+        "non_averaged": 58,
+        "slope_law_10A_2": 58,
+        "exponent_10A_5": 55,
+        "match": true
+      },
+      {
+        "atom": "7Li",
+        "Z": 3,
+        "N": 4,
+        "A": 7,
+        "sigma": 40,
+        "sigma_inv": 28,
+        "non_averaged": 68,
+        "slope_law_10A_2": 68,
+        "exponent_10A_5": 65,
+        "match": true
+      },
+      {
+        "atom": "8Be",
+        "Z": 4,
+        "N": 4,
+        "A": 8,
+        "sigma": 47,
+        "sigma_inv": 31,
+        "non_averaged": 78,
+        "slope_law_10A_2": 78,
+        "exponent_10A_5": 75,
+        "match": true
+      },
+      {
+        "atom": "12C",
+        "Z": 6,
+        "N": 6,
+        "A": 12,
+        "sigma": 71,
+        "sigma_inv": 47,
+        "non_averaged": 118,
+        "slope_law_10A_2": 118,
+        "exponent_10A_5": 115,
+        "match": true
+      }
+    ],
+    "offset_independence_max_residual": {
+      "C=1": "2.35099e-38",
+      "C=7.3": "7.52316e-37",
+      "C=q0^-5 (keystone offset)": "1.17549e-38",
+      "C=q0^-3": "3.76158e-37"
+    },
+    "bootstrap_DT_to_4He": {
+      "seeds": "D,T",
+      "predict_4He": "38.256328",
+      "actual_4He": "39.6597",
+      "err_pct": "-3.539"
+    },
+    "argument": {
+      "claim": "b ladder derivable: b = q0^slope + q0^-slope, slope DERIVED",
+      "slope_source": "σ+σ⁻¹ = 10A−2 (A-only; Z,N cancel) — verified A=2..12",
+      "offset_role": "the −5/−3 offset is C in Δ_λ=C·r^A; folds into the two seeds (two_seed_unique); does NOT enter b",
+      "lean": "QOU.QBeta.two_root_geometric (b=r+s) + first_kind_geometric_b (b independent of offset C)"
+    },
+    "discipline": "derive-or-refute, no fit; slope DERIVED + EXTENDED to A=12; offset still open but does not gate b; NOT wired"
+  }
+}
