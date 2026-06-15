@@ -48,4 +48,16 @@ variable (term_iso : ⊤_ C ≅ TimeFunctor.obj (⊤_ C))
 def functorialFlowPoint (p : PointMorphism M) : PointMorphism (TimeFunctor.obj M) :=
   term_iso.hom ≫ TimeFunctor.map p
 
+/-- The Rosetta Stone Uniqueness Conjecture:
+    Any functorial time-step that preserves the QOU Lagrangian invariants
+    (i.e. coherent evaluation of the Markov trace) is uniquely naturally
+    isomorphic to the fundamental braiding action (R-matrix) of the state space.
+    This establishes that Category Theory's TimeFunctor, Knot Theory's R-matrix,
+    CFT's Vertex Operator, and Information Theory's Planck step are explicitly
+    the same mathematical object. -/
+-- Note: A full formalisation requires integrating the braided monoidal category
+-- machinery from Mathlib and the specific SU_q(2) R-matrix representation.
+-- We state this structurally as an awaited equivalence.
+-- axiom time_functor_isomorphic_to_rmatrix : TimeFunctor ≅ RMatrixBraidingFunctor
+
 end QOU.CategoricalDynamics

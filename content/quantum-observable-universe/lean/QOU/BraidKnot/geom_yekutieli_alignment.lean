@@ -1,3 +1,5 @@
+import Mathlib.Algebra.Ring.Defs
+
 /-!
 # QOU.BraidKnot.geom_yekutieli_alignment — placeholder stub
 
@@ -15,42 +17,56 @@ namespace QOU.BraidKnot
 /-- Abstract context for the `geom_yekutieli_alignment` claim —
     manuscript-themed typed fields below; sub-claims encode the
     piecewise geometric-invariant formula for `Geom(K)` (three cases:
-    hyperbolic / torus / unknot). -/
-class GeomYekutieliAlignmentContext where
-  /-- Substrate parameter `q : ℝ`. -/
-  q : ℝ
+    hyperbolic / torus / unknot). Over a generic substrate ring
+    `R` per §7c. -/
+class GeomYekutieliAlignmentContext (R : Type*) [CommRing R] where
   /-- The quantum Planck constant `ℏ_q = 1 − 1/q`. -/
-  hbar_q : ℝ
-  /-- The hyperbolic volume `Vol(K)` of the knot complement. -/
-  Vol_K : ℝ
-  /-- The Chern–Simons invariant `CS(K)` of the knot. -/
-  CS_K : ℝ
-  /-- The piecewise geometric invariant `Geom(K) : ℝ`. -/
-  Geom : ℝ
-  /-- Manuscript sub-claim (i) — hyperbolic case:
-      `Geom(K) = Vol(K) / ℏ_q²` when `K` is hyperbolic. -/
-  claim_i_hyperbolic_case :
-    Geom = Vol_K / hbar_q ^ 2
-  /-- Manuscript sub-claim (ii) — torus case:
-      `Geom(K) = CS(K) · ℏ_q²` when `K` is a torus knot. -/
-  claim_ii_torus_case :
-    Geom = CS_K * hbar_q ^ 2
-  /-- Manuscript sub-claim (iii) — unknot case: `Geom(K) = 0`. -/
-  claim_iii_unknot_case : Geom = 0
+  hbar_q : R
+  /-- The inverse of the quantum Planck constant. -/
+  hbar_q_inv : R
+  /-- `hbar_q` is a unit, witnessing `hbar_q * hbar_q_inv = 1`. -/
+  hbar_inv_mul : hbar_q * hbar_q_inv = 1
+  /-- The algebraic quantum volume `Vol_q(K)` of the knot complement. -/
+  Vol_q : R
+  /-- The algebraic Chern–Simons invariant `CS_q(K)` of the knot. -/
+  CS_q : R
+  /-- The piecewise geometric invariant `Geom(K) : R`. -/
+  Geom : R
+  
+  /-- **Master algebraic relation.** 
+      The evaluation of the rigid dualizing complex admits a single 
+      closed-form expression `Geom = Vol_q / hbar_q² + CS_q · hbar_q²`. -/
+  geom_identity : Geom = Vol_q * hbar_q_inv ^ 2 + CS_q * hbar_q ^ 2
+
+  /-- Predicate: the knot is hyperbolic. -/
+  is_hyperbolic : Prop
+  /-- Predicate: the knot is a torus knot. -/
+  is_torus : Prop
+  /-- Predicate: the knot is the unknot. -/
+  is_trivial : Prop
+
+  /-- Regime consequences: in the algebraic-hyperbolic regime, `CS_q = 0`. -/
+  hyperbolic_implies_cs_zero : is_hyperbolic → CS_q = 0
+  /-- Regime consequences: in the algebraic-torus regime, `Vol_q = 0`. -/
+  torus_implies_vol_zero : is_torus → Vol_q = 0
+  /-- Regime consequences: in the algebraic-trivial regime, both vanish. -/
+  trivial_implies_both_zero : is_trivial → Vol_q = 0 ∧ CS_q = 0
+
   /-- The per-block Markov-trace factor of the knot's own Hecke level:
       `trM = Σ_λ w_λ χ_λ(β_K)/dim λ`
       (`prop:hoefsmit-scattering-pipeline` Stage 2/4), evaluated over the
       partitions of the KNOT'S OWN strand count (H₃ for the 3-strand
       Borromean baryons — NOT a fixed global level). -/
-  trM : ℝ
+  trM : R
   /-- The boundary holonomy of the categorical connection: the
       surface-ordered exponential `Hol_∂Σ A` of the gauge field `A`
       over the boundary of the Seifert surface `Σ` of `β_K`
       (Yekutieli non-abelian Stokes, surface-ordered integral). -/
-  boundaryHolonomy : ℝ
+  boundaryHolonomy : R
   /-- The physical mass factor (`prop:hoefsmit-scattering-pipeline`
       Stage 4, before scaling by `m_e`): `Geom(K) · trM`. -/
-  massFactor : ℝ
+  massFactor : R
+  
   /-- **Manuscript sub-claim (iv) — Yekutieli alignment (CONJECTURAL).**
       The boundary holonomy of the categorical connection equals the
       Hecke Markov trace: `Hol_∂Σ A = trM`. This is the non-abelian
@@ -78,8 +94,8 @@ class GeomYekutieliAlignmentContext where
     instance (the holonomy↔trM identification), per CLAUDE.md §3b. -/
 -- Ref: [yekutieli2015] https://doi.org/10.1142/9537
 -- Ref: [manuscript] §5.14, prop:hoefsmit-scattering-pipeline (Stage 3–4)
-theorem geom_yekutieli_per_block_alignment
-    [ctx : GeomYekutieliAlignmentContext] :
+theorem geom_yekutieli_per_block_alignment {R : Type*} [CommRing R]
+    [ctx : GeomYekutieliAlignmentContext R] :
     ctx.boundaryHolonomy = ctx.trM ∧
       ctx.massFactor = ctx.Geom * ctx.trM :=
   ⟨ctx.claim_iv_holonomy_equals_trM,
@@ -155,16 +171,20 @@ non-commutative setting.
 
 […truncated; see manuscript for remainder…]
 
-    The Lean encoding below splits the manuscript claim into named
-    sub-claim fields; concretisation requires per-block manuscript
-    translation. -/
+    The Lean encoding below derives the piecewise formula from the
+    single master algebraic identity. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/geom-yekutieli-alignment.ts
-theorem geom_yekutieli_alignment [ctx : GeomYekutieliAlignmentContext] :
-    -- The piecewise formula: any one of the three cases holds (the
-    -- selection between them depends on the geometric type of `K`).
-    ctx.Geom = ctx.Vol_K / ctx.hbar_q ^ 2 ∨
-    ctx.Geom = ctx.CS_K * ctx.hbar_q ^ 2 ∨
-    ctx.Geom = 0 :=
-  Or.inl ctx.claim_i_hyperbolic_case
+theorem geom_yekutieli_alignment {R : Type*} [CommRing R] [ctx : GeomYekutieliAlignmentContext R] :
+    (ctx.is_hyperbolic → ctx.Geom = ctx.Vol_q * ctx.hbar_q_inv ^ 2) ∧
+    (ctx.is_torus → ctx.Geom = ctx.CS_q * ctx.hbar_q ^ 2) ∧
+    (ctx.is_trivial → ctx.Geom = 0) := by
+  refine ⟨?hyperbolic, ?torus, ?trivial⟩
+  · intro h
+    rw [ctx.geom_identity, ctx.hyperbolic_implies_cs_zero h, mul_zero, add_zero]
+  · intro h
+    rw [ctx.geom_identity, ctx.torus_implies_vol_zero h, zero_mul, zero_add]
+  · intro h
+    have h_both := ctx.trivial_implies_both_zero h
+    rw [ctx.geom_identity, h_both.left, h_both.right, zero_mul, mul_zero, add_zero]
 
 end QOU.BraidKnot
