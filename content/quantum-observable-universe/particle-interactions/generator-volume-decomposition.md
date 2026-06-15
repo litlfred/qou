@@ -287,7 +287,7 @@ Each additional crossing adds one color degree, corresponding
 to one more nucleon entering the interaction region.
 
 This means the generator volume decomposition is the **discrete
-analogue of the jet bundle of the canonical action** $S_q$
+analogue of the jet bundle of the canonical action** $\mathfrak{S}_q$
 over the nuclear configuration space.  The 1-jet gives single
 beta decay; the 2-jet gives double beta decay; the full
 $\infty$-jet gives the exact energy — all computed by the same

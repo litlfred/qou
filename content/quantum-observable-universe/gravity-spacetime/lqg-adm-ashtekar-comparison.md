@@ -19,7 +19,7 @@ regularisation patch.
 | Canonical programme | QOU realisation |
 |---|---|
 | **ADM 3+1 foliation** with lapse $N$ and shift $N^i$ \cite{ashtekar1986} | [contact affine chart](#def:contact-affine-chart) $H = \ker \varTheta_A$ as the spatial slice; [Reeb flow](#thm:categorical-reeb-exists) $\phi_t = \exp(t\xi)$ as the canonical lapse-and-shift |
-| **Wheeler–DeWitt** $\hat H \Psi = 0$ | Variational minimum $\delta S_q / \delta \nabla = 0 \Rightarrow \star_q F_\nabla = F_\nabla$ ([categorical instanton](#def:categorical-instanton)) on adelic states |
+| **Wheeler–DeWitt** $\hat H \Psi = 0$ | Variational minimum $\delta \mathfrak{S}_q / \delta \nabla = 0 \Rightarrow \star_q F_\nabla = F_\nabla$ ([categorical instanton](#def:categorical-instanton)) on adelic states |
 | **Ashtekar connection** $A = \Gamma + \gamma K$ | [Categorical Dirac](#def:categorical-dirac-operator) $\mathfrak{D}_\nabla = q^{-1}\nabla + \hbar_q \iota_\xi \nabla$; the role of $\gamma K$ is played by $\hbar_q \iota_\xi \nabla$ |
 | **Barbero–Immirzi parameter** $\gamma$ (fitted to $\approx 0.274$ to match $S_{BH} = A/4$ \cite{rovelli1995}) | Substrate parameter $q_0 \approx 1.11$, **derived** from the substrate Reeb flow; not a free fit |
 | **Horizon (Bekenstein–Hawking) entropy** $S_{BH} = A/4\ell_p^2$ \cite{rovelli1995} | The archimedean ($\mathrm{std}$) statistical limit of the $q$-dimension (Markov-trace) partition function — the log-count of trace-closed ($\sum_p m_p = 0$, i.e. landing in $\mathcal{O}(\mathbb{P}(V)) = A^{\mathrm{co}T}$, [projective line object](#def:projective-line-object)) boundary states; horizon area = the non-abelian-Stokes surface measure |
@@ -50,7 +50,7 @@ well-known obstructions of the canonical programmes:
    inbuilt time: what emerges as macroscopic time is the
    [Reeb flow](#thm:categorical-reeb-exists), driven by the
    $q$-anomaly $d_q^2 \neq 0$ in the categorical action. The
-   variational constraint $\delta S_q / \delta \nabla = 0$ is
+   variational constraint $\delta \mathfrak{S}_q / \delta \nabla = 0$ is
    solved categorically without needing an external clock; transition
    amplitudes between algebraic states are the
    [Frobenius pairings](#def:frobenius-hopf-substrate), not
@@ -73,7 +73,7 @@ well-known obstructions of the canonical programmes:
    complex metric required intractable "reality conditions". QOU
    recovers exact self-duality $\star_q F_\nabla = F_\nabla$
    ([categorical instanton](#def:categorical-instanton)) as the
-   $\delta S_q / \delta \nabla = 0$ output, and the
+   $\delta \mathfrak{S}_q / \delta \nabla = 0$ output, and the
    [adelic product](#def:adelic-substrate) plus continuous
    $\mathbb{Z}_2 \to U(1)_{\xi}$ deformation (chart-swap–Reeb
    identification, [`prop:reeb-u1-chart-swap`](#prop:reeb-u1-chart-swap))
