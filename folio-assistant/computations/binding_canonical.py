@@ -137,6 +137,7 @@ def binding_canonical(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
                         Q_beta_n_mev: float = float(_Q_BETA_N),
                         reduce_before_trace: bool = True,
                         use_closed_form: bool = False,
+                        use_transfer: bool = True,
                         verbose: bool = False,
                         **kwargs) -> dict:
     """Binding via canonical Markov trace.
@@ -182,6 +183,50 @@ def binding_canonical(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
         )
     A = Z + N
     n_strands = 3 * A
+
+    # ── Fast path: fine-Bratteli transfer matrix (DEFAULT) ───────
+    # Lossless Σ_{λ ⊢ 3A} y_λ χ^λ over ALL p(3A) partitions via the
+    # monotone-word transfer matrix — no d_λ wall, no native dep, full
+    # 50-dps (the legacy symbolic path below collapses to float64 via
+    # complex(sp.N(...)) and lossily nsimplify's the color-weighted δ,
+    # so the transfer path is both faster AND more precise here).
+    # ~5000× the symbolic tr_M_element path (⁶Li 0.16 s vs ~17 min);
+    # transfer ≡ char_fast (full Hoefsmit) to 4.7e-15. Honours the
+    # no-truncation precision ruling — ALL partitions kept, the speed is
+    # from the transfer sweep, NOT from dropping partitions (see
+    # docs/audits/2026-06-10-binding-active-set-compute-optimization.md).
+    # use_closed_form=True still takes precedence: it is the
+    # strict_averaged-convention path retained for that family of callers
+    # (mass_table_comprehensive, binding_factor_f_*, …).
+    if use_transfer and not use_closed_form:
+        import mpmath as mp
+        from tr_m_atom_via_transfer import tr_m_atom_zn
+        tr_atom_mp, tr_free_mp, chi_atom, wall = tr_m_atom_zn(
+            Z, N, m_pp=m_pp, m_pn=m_pn, m_nn=m_nn, dps=50)
+        # Signed categorical scalar Δtr = tr_M(W_free) − tr_M(W_atom);
+        # Im(q_0)=0 ⇒ real at the substrate anchor. Q_β(n) is the MeV-
+        # dimensioned multiplier of the dimensionless trace difference.
+        delta_tr = tr_free_mp - tr_atom_mp
+        B = mp.mpf(str(Q_beta_n_mev)) * delta_tr
+        if verbose:
+            print(f"  transfer tr_M (all λ={len(chi_atom)}, lossless): "
+                  f"atom={mp.nstr(tr_atom_mp, 12)} "
+                  f"free={mp.nstr(tr_free_mp, 12)}  {wall:.3f}s")
+        return {
+            "status": "solved",
+            "Z": Z, "N": N, "A": A,
+            "tr_M_atom": mp.nstr(tr_atom_mp, 50),
+            "tr_M_free": mp.nstr(tr_free_mp, 50),
+            "Q_beta_n_MeV": Q_beta_n_mev,
+            "B_MeV": float(B),
+            "n_atom_terms": -1,
+            "n_free_terms": -1,
+            "use_closed_form": False,
+            "use_transfer": True,
+            "n_partitions": len(chi_atom),
+            "wall_sec": wall,
+        }
+
     div = SymbolicHeckeDivision() if reduce_before_trace else None
 
     # ── Fast path: closed-form tr_M(𝓑_K) (Phase 5q identity) ────
