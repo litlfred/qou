@@ -1,0 +1,121 @@
+{
+  "engine": "python+combinatorial",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-15T00:46:01.260522+00:00",
+  "commitSha": "63fefad03684eccc8971097272d9fdb4049b1252",
+  "assertions": [
+    {
+      "name": "nonavg_crossings_eq_10A_minus_2_all_atoms",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "σ+σ⁻¹ = 10A-2 and (σ+σ⁻¹)-3 = 10A-5 for D,T,³He,⁴He"
+    },
+    {
+      "name": "T_and_3He_share_nonavg_count_28",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "both A=3 ⇒ same leading exponent 25, Z-split is sub-leading"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 196,
+  "computation": "delta-lambda-exponent-from-crossings",
+  "scriptFile": "delta_lambda_exponent_from_crossings.py",
+  "scriptHash": "fc46b8eabc06",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Crossing-bookkeeping derivation of the Δ_λ q₀-exponent slope. The non-averaged crossings σ+σ⁻¹ of atom_braid_word_3A = 10A-2 (exactly 10 per nucleon); the color-averaged p-n interfaces (d=-h/2=(σ+σ⁻¹)/2, count 2A+1) are bar-symmetric ⇒ 0 net q-power. So 10A-5 = (σ+σ⁻¹)-3, i.e. the exponent SLOPE 10 = non-averaged crossings per nucleon (derived, not fit). Open: the -3 offset, the per-nucleon 10 from 𝓑₃, and the proton-excess Z-correction (³He -1.40; NOT writhe — ³He/⁴He share writhe 8). Sharpens docs/audits/2026-06-09-delta-lambda-canonical-residual.md.",
+  "data": {
+    "rows": [
+      {
+        "atom": "D",
+        "Z": 1,
+        "N": 1,
+        "A": 2,
+        "n_cross": 23,
+        "sigma": 11,
+        "averaged": 5,
+        "sigma_inv": 7,
+        "non_averaged": 18,
+        "writhe": 4,
+        "exponent_pred_10A_5": 15,
+        "nonavg_minus_3": 15,
+        "q0_exp_dev_observed": -0.011,
+        "Z_minus_N": 0
+      },
+      {
+        "atom": "T",
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "n_cross": 35,
+        "sigma": 16,
+        "averaged": 7,
+        "sigma_inv": 12,
+        "non_averaged": 28,
+        "writhe": 4,
+        "exponent_pred_10A_5": 25,
+        "nonavg_minus_3": 25,
+        "q0_exp_dev_observed": -0.066,
+        "Z_minus_N": -1
+      },
+      {
+        "atom": "3He",
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "n_cross": 35,
+        "sigma": 18,
+        "averaged": 7,
+        "sigma_inv": 10,
+        "non_averaged": 28,
+        "writhe": 8,
+        "exponent_pred_10A_5": 25,
+        "nonavg_minus_3": 25,
+        "q0_exp_dev_observed": -1.404,
+        "Z_minus_N": 1
+      },
+      {
+        "atom": "4He",
+        "Z": 2,
+        "N": 2,
+        "A": 4,
+        "n_cross": 47,
+        "sigma": 23,
+        "averaged": 9,
+        "sigma_inv": 15,
+        "non_averaged": 38,
+        "writhe": 8,
+        "exponent_pred_10A_5": 35,
+        "nonavg_minus_3": 35,
+        "q0_exp_dev_observed": 0.272,
+        "Z_minus_N": 0
+      }
+    ],
+    "identities": {
+      "n_cross": "12A-1",
+      "averaged": "2A+1",
+      "non_averaged_sigma_plus_inv": "10A-2",
+      "exponent": "10A-5 = (σ+σ⁻¹) - 3  [A≥2]"
+    },
+    "open": {
+      "offset_minus_3": "boundary constant (H₃ seed?), not derived",
+      "per_nucleon_10": "from 𝓑₃/Bring structure, not derived",
+      "Z_correction": "proton-excess (³He); NOT writhe; open"
+    },
+    "discipline": "combinatorial crossing count; derive-or-refute; slope derived, offset+Z-correction open; NOT wired"
+  }
+}

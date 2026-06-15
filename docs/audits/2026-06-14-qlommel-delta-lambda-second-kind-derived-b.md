@@ -48,18 +48,26 @@
 
 - **Does NOT** close to exact. Two pieces remain — both already flagged by the
   2026-06-09 residual audit as the admissible (non-fit) next step:
-  1. **Derive the exponent `10A−5 = 5(2A−1)`** from the W_free vs W_atom
-     crossing / jet bookkeeping. The **"5" is the Bring quintic**
-     ([`brings-surface-example.md`](../../content/quantum-observable-universe/brings-surface/brings-surface-example.md):
-     genus 4, χ=−6, Aut = S₅; `quintic_gauss_sum_sq_eq_five`). The
-     per-nucleon q₀-exponent increment is exactly **10 = 2·5**. Deriving the
-     `(2A−1)` factor (the odd-integer twist count — the same `5, 7` that appear
-     in the categorical Weinberg cosh-ratio `cosh(5η₀)/cosh(7η₀)`) from the
-     atom-braid crossings on Bring's surface is the open keystone.
-  2. **The Z-dependent correction** (³He deviates −1.40 q₀-units): any
-     derivation must produce a per-excess-proton term. In the recurrence
-     language this is a Z-dependence in the **second-kind admixture β** (the
-     proton-rich isotope sits on a different `α/β` ray).
+  1. **The exponent `10A−5 = 5(2A−1)` — slope now DERIVED from crossings**
+     ([`delta_lambda_exponent_from_crossings.py`](../../folio-assistant/computations/delta_lambda_exponent_from_crossings.py),
+     witness `delta-lambda-exponent-from-crossings.witness.json`). Classifying
+     `atom_braid_word_3A(Z,N)` by Hecke crossing type:
+     `n_cross = 12A−1`, color-averaged p-n interfaces `= 2A+1`, and
+     **non-averaged `σ+σ⁻¹ = 10A−2` (exactly 10 per nucleon)**. The averaged
+     interfaces carry `d = −h/2 = (σ+σ⁻¹)/2`, **bar-symmetric (q↔q⁻¹)** ⇒ zero
+     net q-power, so only `σ+σ⁻¹` enters the exponent:
+     `10A−5 = (σ+σ⁻¹) − 3` for A≥2. **The slope 10 = the non-averaged crossing
+     count each nucleon contributes to the bound braid — derived, not fitted**
+     (T and ³He share `σ+σ⁻¹ = 28` ⇒ the same leading exponent 25, as the
+     `q₀^(10A−5)` law requires). Still open: the **−3** boundary offset
+     (plausibly the H₃ seed's 3 strands), *why* exactly 10 per nucleon from the
+     𝓑₃ / Bring structure, and the **"5" = Bring quintic** factorisation
+     (`5·(2A−1)`; same `5,7` as the Weinberg cosh-ratio).
+  2. **The Z-dependent correction** (³He deviates −1.40 q₀-units): NOT the
+     writhe (³He and ⁴He share writhe `σ−σ⁻¹ = 8` but deviate −1.40 vs +0.27);
+     it tracks **proton excess** (Z−N: D=0, T=−1, ³He=+1 outlier, ⁴He=0). In
+     the recurrence language this is a Z-dependence in the **second-kind
+     admixture β** (the proton-rich isotope sits on a different `α/β` ray).
 
 ## Disciplinary note
 
