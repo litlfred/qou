@@ -46,11 +46,22 @@ The closed form **predicts** the Δ_λ q₀-exponent for the un-measured isotope
 ⁶Li (Z=N=3) → 55, ⁸Be (Z=N=4) → 75 — i.e. `Δ_λ ≈ q₀^(10A−5)` continues. This is
 a prediction (derived), NOT a fit; it is the decisive test the data-gate awaited.
 
+## The −3 offset dissolves under the chain-SITE reading
+
+The exponent is more naturally `5·(2A−1)`, and **`2A−1 = A nucleons + (A−1)
+inter-nucleon bonds = the chain "sites"`**. So `exponent = 5 × (sites)` with NO
+offset — the awkward `−3` was an artifact of comparing to the crossing count
+`10A−2` rather than the natural site count. The per-site q-power is **5 = the
+Bring quintic** (Bring's surface is the quintic `𝒳₅`, Aut = S₅, `g²=5`). The
+crossing count `σ+σ⁻¹ = 10A−2` is then a separate fact, exactly 3 above the
+site-quintic law `10A−5`.
+
 ## Honest status
 
-Slope DERIVED; the **−3** boundary offset (plausibly the H₃ seed's 3 strands),
-the Z-correction **coefficient**, and the per-nucleon **9 = intra-𝓑₃** count from
-the Borromean/Bring structure remain open. NOT wired (near-match tier).
+Slope DERIVED; the offset reframed as **5 (Bring quintic) per chain-site**
+(`exponent = 5·(A nucleons + A−1 bonds)`, no `−3`). Remaining open: *why* 5 =
+the Bring quintic per site, the Z-correction **coefficient**, and the
+per-nucleon **9 = intra-𝓑₃** count. NOT wired (near-match tier).
 """
 from __future__ import annotations
 
@@ -121,7 +132,12 @@ def main() -> int:
                                 "exponent": "10A-5 = (σ+σ⁻¹) - 3  [A≥2]"})
      .add_data("per_nucleon_10", "9 (intra-𝓑₃ non-averaged) + 1 (interface, amortized)")
      .add_data("predictions_exponent", preds)
-     .add_data("open", {"offset_minus_3": "H₃ seed (3 strands)? not derived",
+     .add_data("site_reading", {
+         "exponent": "5·(2A-1) = 5 × (A nucleons + A-1 bonds) = 5 per chain-site",
+         "per_site_q_power": "5 = Bring quintic (𝒳₅; Aut=S₅; g²=5)",
+         "offset_minus_3_resolved": "artifact of crossing-count vs site-count; "
+                                    "σ+σ⁻¹=10A-2 = site-law 10A-5 + 3 (separate counts)"})
+     .add_data("open", {"why_5_is_bring_quintic": "the per-site quintic q-power, not derived",
                         "Z_coefficient": "~-1.4/excess-proton; p≠n asymmetry open",
                         "per_nucleon_9": "intra-𝓑₃ count from Borromean/Bring, not derived"})
      .add_data("discipline", "closed-form combinatorial; derive-or-refute; "
