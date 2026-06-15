@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-15T01:08:01.585137+00:00",
-  "commitSha": "0b793d024b0e1810988f4e116429eb40f660bf4e",
+  "computedAt": "2026-06-15T01:16:06.862630+00:00",
+  "commitSha": "c1c3a6ccd446e695f473a34322fb91a75045f8b8",
   "assertions": [
     {
       "name": "err_full_production_uniform_across_isotopes",
@@ -31,15 +31,15 @@
       "computed": true,
       "expected": true,
       "passed": true,
-      "source": "err_leading = err_full + binding_fraction > err_full"
+      "source": "err_leading − err_full = binding_fraction B/m > 0 (mass defect positive)"
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 15,
   "computation": "m-qclt-approx",
   "scriptFile": "m_qclt_approx.py",
-  "scriptHash": "9c5e65c19982",
-  "scriptCommitSha": "a3e054ead114312e111a2b6a9f4d1bad8733b1b4",
+  "scriptHash": "3d040bedf15d",
+  "scriptCommitSha": "c1c3a6ccd446e695f473a34322fb91a75045f8b8",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
