@@ -99,24 +99,24 @@ Faddeev–Kashaev / Reshetikhin–Turaev path-integral reading), the
 scalar variable $x$ is the eigenvalue of a connection-valued
 operator and the scalar Hessian $-\tfrac{1}{2}\log(1-x_0)$ is
 replaced by the operator-valued log-determinant of the Hessian of
-the categorical action $S_q[\nabla]$ at the dominant saddle
+the categorical action $\mathfrak{S}_q[\nabla]$ at the dominant saddle
 $\nabla_0$:
 
 $$
   S_1(x_0)
   \;=\;
   -\tfrac{1}{2}\,\log \det
-   \bigl( \mathrm{Hess}\,S_q[\nabla]\big|_{\nabla_0} \bigr).
+   \bigl( \mathrm{Hess}\,\mathfrak{S}_q[\nabla]\big|_{\nabla_0} \bigr).
 $$
 
 This is the standard one-loop fluctuation rule for stationary-phase
 integrals over the space of connections. The remaining content of
-the conjecture is identifying $\mathrm{Hess}\,S_q[\nabla]_{\nabla_0}$
+the conjecture is identifying $\mathrm{Hess}\,\mathfrak{S}_q[\nabla]_{\nabla_0}$
 with the categorical Dirac operator $\mathfrak{D}_\nabla$.
 
 **Step 3 (new categorical input: Hessian = $\mathfrak{D}_\nabla$ via
 Lichnerowicz on the instanton saddle).** Let $\nabla_0$ be a critical
-point of $S_q$, equivalently a
+point of $\mathfrak{S}_q$, equivalently a
 [categorical instanton](#def:categorical-instanton):
 $\star_q F_{\nabla_0} = F_{\nabla_0}$. For a perturbation $\nabla =
 \nabla_0 + a$ with $a \in \Omega^1(\mathrm{End}\, V)$,
@@ -127,11 +127,11 @@ $$
 
 The first variation vanishes at $\nabla_0$ (saddle condition); the
 second variation of the gauge sector
-$S_q^{\mathrm{gauge}} = \int_A \mathrm{tr}_A(F_\nabla \wedge_q \star_q F_\nabla)$
+$\mathfrak{S}_q^{\mathrm{gauge}} = \int_A \mathrm{tr}_A(F_\nabla \wedge_q \star_q F_\nabla)$
 is
 
 $$
-  \delta^2 S_q^{\mathrm{gauge}}\big|_{\nabla_0}(a, a)
+  \delta^2 \mathfrak{S}_q^{\mathrm{gauge}}\big|_{\nabla_0}(a, a)
   \;=\;
   \langle  d_{\nabla_0} a,  d_{\nabla_0} a  \rangle_F
   \;=\;
@@ -168,7 +168,7 @@ classical limit ($\iota_\xi$ playing the role of $\gamma^0$).
 Therefore on the instanton saddle with vanishing $\mathrm{Sc}_q$:
 
 $$
-  \det \mathrm{Hess}\,S_q^{\mathrm{gauge}}\big|_{\nabla_0}
+  \det \mathrm{Hess}\,\mathfrak{S}_q^{\mathrm{gauge}}\big|_{\nabla_0}
   \;=\;
   \det \Delta_{\nabla_0}^q
   \;=\;
@@ -191,7 +191,7 @@ Combining with Step 2:
 $$
   S_1(x_0)
   \;=\;
-  -\tfrac{1}{2}\, \log\det\bigl(\mathrm{Hess}\,S_q\big|_{\nabla_0}\bigr)
+  -\tfrac{1}{2}\, \log\det\bigl(\mathrm{Hess}\,\mathfrak{S}_q\big|_{\nabla_0}\bigr)
   \;=\;
   -\tfrac{1}{2}\, \log\det \mathfrak{D}_{\nabla_0}^2
   \;=\;
@@ -236,7 +236,7 @@ below.
 |---|---|---|
 | 1. Scalar Faddeev–Kashaev WKB | classical | none — Faddeev 1994, Kashaev 1997 |
 | 2. Scalar $\to$ operator-valued passage | classical | none — standard one-loop fluctuation rule |
-| 3a. Hessian = $\Delta_{\nabla_0}^q$ on $\Omega^1(\mathrm{End}\,V)$ | categorical Yang–Mills computation | direct from the variation of $S_q^{\mathrm{gauge}}$; routine |
+| 3a. Hessian = $\Delta_{\nabla_0}^q$ on $\Omega^1(\mathrm{End}\,V)$ | categorical Yang–Mills computation | direct from the variation of $\mathfrak{S}_q^{\mathrm{gauge}}$; routine |
 | 3b. Categorical Lichnerowicz $\Delta^q = \mathfrak{D}^2 + \tfrac{1}{4}\mathrm{Sc}_q$ | new categorical lemma | Clifford-multiplication structure of $\iota_\xi$; provable but not in the paper yet |
 | 3c. $\mathrm{Sc}_q$ vanishes on contact-flat Bring background | standard | $\xi$ parallel $\Rightarrow$ scalar curvature trivial |
 | 3d. Pfaffian identity for self-dual chiral $\mathfrak{D}$ | classical | none — Atiyah–Singer / index theorem |
