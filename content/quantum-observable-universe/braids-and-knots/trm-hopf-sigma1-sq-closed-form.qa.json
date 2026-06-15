@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/lean/QOU/Braiding/TrMHopfSigma1SqClosedForm.lean"
   },
   "source_hashes": {
-    "md": "29ad9480616f",
+    "md": "e42ab71919f4",
     "ts": "594d979e3907",
     "lean": "71102bd2d813"
   },
@@ -1056,6 +1056,23 @@
         "reviewed_sha": "8035966dec4a138d605918015192f7a04fee431b",
         "severity": "critical",
         "evidence": "quantum-observable-universe/lean/QOU/Braiding/TrMHopfSigma1SqClosedForm.lean:1: Lean file uses archimedean constructs but .md narrative does not acknowledge archimedean specialisation. Add a §7c-style banner or move the archimedean evaluation to a sibling block."
+      },
+      {
+        "field_hash": {
+          "md": "e42ab71919f4",
+          "ts": "594d979e3907",
+          "lean": "71102bd2d813"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "d735760f2b64",
+          "script_commit_sha": "71e01b4cfaeedc9dff3f2e7b3b6437c6967f9706"
+        },
+        "reviewed_at": "2026-06-15T16:50:19.279Z",
+        "reviewed_sha": "8da3fb393602ecc5b2d0115f1e25243e6785c365"
       }
     ],
     "wall-base-ring-minimal": [
@@ -3038,5 +3055,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-15T13:25:43.317Z"
+  "updated_at": "2026-06-15T16:50:19.279Z"
 }
