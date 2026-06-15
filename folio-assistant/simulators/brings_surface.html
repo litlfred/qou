@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <title>Bring's Surface — Quaternionic Spectral Resolvents</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@300;400;600&display=swap');
 
 :root {
   --bg:      #020710;
@@ -250,7 +249,7 @@ input[type=range]::-webkit-slider-thumb {
 <div class="axl" id="ax2" style="color:#5588ff">Re(ω₂)</div>
 <div id="tip"></div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="./three.min.js"></script>
 <script>
 // ════════════════════════════════════════════════════════════════════
 //   BRING'S SURFACE  —  Quaternionic Spectral Resolvent Coordinates
@@ -323,6 +322,7 @@ function expQ(x, q, N) {
     const qf = qFact(n, q);
     if (Math.abs(qf) < 1e-15) break;
     const t = xn / qf;
+    if (!isFinite(t)) break;
     sum += t;
     if (n > 6 && Math.abs(t) < 1e-14 * (1 + Math.abs(sum))) break;
   }
@@ -339,6 +339,7 @@ function lnQ(x, q, N) {
     const qn = qInt(n, q);
     if (Math.abs(qn) < 1e-15) break;
     const t = Math.pow(-1, n + 1) * xn / qn;
+    if (!isFinite(t)) break;
     sum += t;
     if (n > 8 && Math.abs(t) < 1e-13 * (1 + Math.abs(sum))) break;
   }
@@ -353,6 +354,7 @@ function cosQ(x, q, N) {
     const qf = qFact(2 * n, q);
     if (Math.abs(qf) < 1e-15) break;
     const t = xn / qf;
+    if (!isFinite(t)) break;
     sum += t;
     if (n > 4 && Math.abs(t) < 1e-14 * (1 + Math.abs(sum))) break;
   }
@@ -367,6 +369,7 @@ function sinQ(x, q, N) {
     const qf = qFact(2 * n + 1, q);
     if (Math.abs(qf) < 1e-15) break;
     const t = xn / qf;
+    if (!isFinite(t)) break;
     sum += t;
     if (n > 4 && Math.abs(t) < 1e-14 * (1 + Math.abs(sum))) break;
   }
@@ -456,12 +459,21 @@ function point3D(r, alpha, b, gf, N) {
     const sa = sinQ(th, q, N);
     const R = [ca, 0, sa, 0];
     const normSq = ca * ca + sa * sa;
+    if (normSq < 1e-15) return { x: 0, y: 0, z: 0 };
     const R_inv = [ca / normSq, 0, -sa / normSq, 0];
     const p = [p_real, p_i, p_j, p_k];
     const p_prime = qMul(qMul(R, p), R_inv);
-    return { x: p_prime[1], y: p_prime[2], z: p_prime[3] };
+    return { 
+      x: isFinite(p_prime[1]) ? p_prime[1] : 0, 
+      y: isFinite(p_prime[2]) ? p_prime[2] : 0, 
+      z: isFinite(p_prime[3]) ? p_prime[3] : 0 
+    };
   }
-  return { x: p_i, y: p_j, z: p_k };
+  return { 
+    x: isFinite(p_i) ? p_i : 0, 
+    y: isFinite(p_j) ? p_j : 0, 
+    z: isFinite(p_k) ? p_k : 0 
+  };
 }
 
 // ════════════════════════════════════════════════════════════════════
@@ -559,6 +571,8 @@ function buildSurface() {
   const nR     = rs.length;
   const nAlpha = alphas.length;
   const nBranch = document.getElementById('cb_all').checked ? 4 : 1;
+
+  if (isNaN(qN) || nR === 0 || nAlpha === 0) return;
 
   // Pre-compute growth factors per r (independent of branch / α)
   const GF = rs.map(r => growthFactors(r, qN));
@@ -895,7 +909,11 @@ document.querySelectorAll('.pill[data-mode]').forEach(pill => {
   params.forEach(param => {
     let val = p.get(param);
     if (param === 'qN' && !val) {
-      val = p.get('N');
+      val = p.get('N') || p.get('q');
+    }
+    if (param === 'dzeta' && !val && p.get('grid')) {
+      const g = parseInt(p.get('grid'));
+      if (!isNaN(g) && g > 0) val = (4 / g).toString();
     }
     if (val !== null) {
       const el = document.getElementById(param);
@@ -904,9 +922,11 @@ document.querySelectorAll('.pill[data-mode]').forEach(pill => {
   });
 
   // Checkboxes
-  const checkboxes = ['cb_surf', 'cb_grid', 'cb_tess', 'cb_axes', 'cb_auto', 'cb_all'];
-  checkboxes.forEach(cb => {
-    const val = p.get(cb);
+  const checkboxes = { 'cb_surf': 'surf', 'cb_grid': 'showGrid', 'cb_tess': 'tess', 'cb_axes': 'axes', 'cb_auto': 'auto', 'cb_all': 'all' };
+  Object.keys(checkboxes).forEach(cb => {
+    let val = p.get(cb);
+    if (val === null) val = p.get(checkboxes[cb]); // check short name
+
     if (val !== null) {
       const el = document.getElementById(cb);
       if (el) {

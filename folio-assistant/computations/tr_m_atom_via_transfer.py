@@ -46,7 +46,7 @@ sys.path.insert(0, str(HERE))
 
 import mpmath as mp  # noqa: E402
 
-from chi_monotone_transfer import chi_all_lambda  # noqa: E402
+from reduced_block_kernel import chi_all_lambda_reduced_block
 from chi_free_via_lr import chi_free_lr  # noqa: E402
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 from wedderburn_jones_markov import y_lambda_at  # noqa: E402
@@ -74,8 +74,8 @@ def tr_m_atom(atom: str, *, dps: int = 50):
     n = 3 * (Z + N)
     y = {tuple(k): mp.mpf(str(v)) for k, v in y_lambda_at(n, Q0).items()}
     t0 = time.time()
-    chi_atom = chi_all_lambda(atom_braid_word_3A(Z, N, include_inter=True), n)
-    chi_free = chi_all_lambda(atom_braid_word_3A(Z, N, include_inter=False), n)
+    chi_atom = chi_all_lambda_reduced_block(atom_braid_word_3A(Z, N, include_inter=True), n)
+    chi_free = chi_all_lambda_reduced_block(atom_braid_word_3A(Z, N, include_inter=False), n)
     wall = time.time() - t0
     return _trM(chi_atom, y), _trM(chi_free, y), chi_atom, wall
 
@@ -112,7 +112,7 @@ def main() -> int:
         # free χ ≡ chi_free_via_lr cross-check (independent parabolic-LR)
         if n <= 21:
             chf_lr = chi_free_lr(Z, N)
-            chf = chi_all_lambda(atom_braid_word_3A(Z, N, include_inter=False), n)
+            chf = chi_all_lambda_reduced_block(atom_braid_word_3A(Z, N, include_inter=False), n)
             free_lr_max = max(free_lr_max,
                               max(abs(chf[l] - chf_lr.get(l, mp.mpf(0))) for l in chf))
 
