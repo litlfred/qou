@@ -1,0 +1,170 @@
+{
+  "computation": "mass-formula-integrated",
+  "description": "INTEGRATED mass formula for light isotopes. Combines: (1) upstream paper's BW+chirality prediction from bw-chirality-isotopes.witness.json, (2) my Schur-Weyl Frobenius prediction for D from deuteron-first-principles.witness.json, (3) universal Frobenius co-Casimir correction m_e \u00b7 (2+1/[2]_q) at n=3.",
+  "reference_blocks": [
+    "thm:knot-mass-formula-unified",
+    "thm:frobenius-codim-universal",
+    "prop:figure-eight-bw-coefficients",
+    "rem:deuteron-first-principles",
+    "prop:partition-sum-proton-residual"
+  ],
+  "computedAt": "2026-04-24T21:33:39.844251+00:00",
+  "parameters": {
+    "q_0": 1.1099785955541805,
+    "m_e_MeV": 0.51099895,
+    "frobenius_n3_MeV": 1.2761128463443179
+  },
+  "rows": [
+    {
+      "isotope": "D",
+      "A": 2,
+      "B_AME_MeV": 2.22456612,
+      "BW_chirality": {
+        "B_pred_MeV": -5.6314164094804955,
+        "err_pct": -353.146730899619,
+        "B_bulk": -4.444226883656863,
+        "B_Zdep": -0.6138886578631652,
+        "B_shell": 0.0,
+        "chirality_factor": 1.2090603219898792
+      },
+      "my_schur_weyl": {
+        "B_pred_MeV": 0.9952558691106964,
+        "B_pred_plus_frobenius_MeV": 2.271368715455014,
+        "err_pct": -55.26075290457497
+      }
+    },
+    {
+      "isotope": "T",
+      "A": 3,
+      "B_AME_MeV": 8.481798,
+      "BW_chirality": {
+        "B_pred_MeV": 8.524638174781057,
+        "err_pct": 0.5050836483143925,
+        "B_bulk": 9.150002081421505,
+        "B_Zdep": -0.5362811390324466,
+        "B_shell": 0.0,
+        "chirality_factor": 0.956293781769488
+      },
+      "my_schur_weyl": null
+    },
+    {
+      "isotope": "3He",
+      "A": 3,
+      "B_AME_MeV": 7.718058,
+      "BW_chirality": {
+        "B_pred_MeV": 7.784142306732049,
+        "err_pct": 0.8562297242654652,
+        "B_bulk": 9.150002081421505,
+        "B_Zdep": -2.2976942579528683,
+        "B_shell": 0.0,
+        "chirality_factor": 0.956293781769488
+      },
+      "my_schur_weyl": null
+    },
+    {
+      "isotope": "4He",
+      "A": 4,
+      "B_AME_MeV": 28.29566,
+      "BW_chirality": {
+        "B_pred_MeV": 27.14392711784524,
+        "err_pct": -4.070351715262201,
+        "B_bulk": 25.119262214662523,
+        "B_Zdep": -2.0875937760791596,
+        "B_shell": 5.050038966586892,
+        "chirality_factor": 0.9144977970509891
+      },
+      "my_schur_weyl": null
+    },
+    {
+      "isotope": "6Li",
+      "A": 6,
+      "B_AME_MeV": 31.99405,
+      "BW_chirality": {
+        "B_pred_MeV": 34.00806455261833,
+        "err_pct": 6.294965947163074,
+        "B_bulk": 32.19008772661037,
+        "B_Zdep": -4.095022562658328,
+        "B_shell": 3.5395191800665504,
+        "chirality_factor": 1.0
+      },
+      "my_schur_weyl": null
+    },
+    {
+      "isotope": "7Li",
+      "A": 7,
+      "B_AME_MeV": 39.24452,
+      "BW_chirality": {
+        "B_pred_MeV": 46.942119875038735,
+        "err_pct": 19.61445795499278,
+        "B_bulk": 45.694730525564886,
+        "B_Zdep": -3.88992029286402,
+        "B_shell": 2.882706966315059,
+        "chirality_factor": 1.0
+      },
+      "my_schur_weyl": null
+    },
+    {
+      "isotope": "9Be",
+      "A": 9,
+      "B_AME_MeV": 58.16505,
+      "BW_chirality": {
+        "B_pred_MeV": 65.09785843183174,
+        "err_pct": 11.919199642795352,
+        "B_bulk": 65.70271728453044,
+        "B_Zdep": -6.297991667310015,
+        "B_shell": 2.0428089525169844,
+        "chirality_factor": 1.0
+      },
+      "my_schur_weyl": null
+    },
+    {
+      "isotope": "11B",
+      "A": 11,
+      "B_AME_MeV": 76.20546,
+      "BW_chirality": {
+        "B_pred_MeV": 84.43014749917833,
+        "err_pct": 10.792779807612643,
+        "B_bulk": 86.47319272500155,
+        "B_Zdep": -9.110535981928402,
+        "B_shell": 1.7870126849891135,
+        "chirality_factor": 1.0
+      },
+      "my_schur_weyl": null
+    },
+    {
+      "isotope": "12C",
+      "A": 12,
+      "B_AME_MeV": 92.16175,
+      "BW_chirality": {
+        "B_pred_MeV": 97.49082635961605,
+        "err_pct": 5.782308126327954,
+        "B_bulk": 101.00336259170105,
+        "B_Zdep": -12.625783497047337,
+        "B_shell": 1.7953273292896124,
+        "chirality_factor": 1.0
+      },
+      "my_schur_weyl": null
+    },
+    {
+      "isotope": "16O",
+      "A": 16,
+      "B_AME_MeV": 127.61931,
+      "BW_chirality": {
+        "B_pred_MeV": 137.66534794314526,
+        "err_pct": 7.8718792188621505,
+        "B_bulk": 144.10171931722562,
+        "B_Zdep": -20.077321267130145,
+        "B_shell": 2.004109328660443,
+        "chirality_factor": 1.0
+      },
+      "my_schur_weyl": null
+    }
+  ],
+  "sources": {
+    "paper_BW_chirality": "bw-chirality-isotopes.witness.json",
+    "my_schur_weyl_deuteron": "deuteron-first-principles.witness.json",
+    "frobenius_derivation": "frobenius-partition-sum.witness.json"
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
+}

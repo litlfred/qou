@@ -1,0 +1,438 @@
+#!/usr/bin/env python3
+"""
+Derivation-chain validator + computational-trust auditor.
+
+Two responsibilities:
+
+1. **Per-chain validation** (`validate_chain`): for each
+   `*.derivation.json` in this directory, walk the chain bottom-up
+   and verify:
+     - structural well-formedness (already enforced by `structural_check`),
+     - the COMPUTATIONAL leaf's `output_value` matches the chain's
+       `target_value` to within `target_tolerance`,
+     - any DERIVED step whose `operation` is a simple algebraic
+       formula admits a numerical re-evaluation that agrees with
+       the recorded `output_value`,
+     - SCRIPT_CITED steps reference an existing script in the
+       repository (the script's content is not re-executed here;
+       the cross-pipeline validators are responsible for that).
+
+2. **Trust marking** (`audit_witness_trust`): scan every
+   `*.witness.json` file alongside the chains and classify it as
+     - `derivation-backed` if some chain references it via a
+       `SCRIPT_CITED` step's `script:` note,
+     - `derivation-fully-trusted` if some chain certifies its
+       target value via only AXIOM / MATHLIB_CITED / DERIVED /
+       COMPUTATIONAL steps (no SCRIPT_CITED frontier),
+     - `computational-only` (default) if no chain references it.
+
+The audit emits a single output witness
+`derivation-chain-audit.witness.json` summarising the state of the
+methodology directive: how many witnesses are still
+computational-only and what the open frontier looks like.
+"""
+
+from __future__ import annotations
+
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+import json
+import os
+import re
+import sys
+from dataclasses import dataclass
+from pathlib import Path
+from typing import Any, Optional
+
+sys.path.insert(0, str(Path(__file__).parent))
+from derivation_chain import FirstPrinciple, Q_0  # noqa: E402
+from witness_base import WitnessBuilder  # noqa: E402
+
+
+HERE = Path(__file__).parent
+# The audit's own output filename — excluded from the trust audit so
+# the audit does not classify itself as `computational-only`.
+AUDIT_WITNESS_NAME = "derivation-chain-audit.witness.json"
+
+# Repo root resolution: prefer the `QOU_REPO_ROOT` env var if set
+# (lets CI / external runners override the relative path).  Default
+# walks up from this file via `.git` discovery, falling back to
+# `HERE.parent.parent` (i.e. <repo>/folio-assistant/computations →
+# <repo>) which is the standard layout.
+def _resolve_repo_root() -> Path:
+    env_root = os.environ.get("QOU_REPO_ROOT")
+    if env_root:
+        return Path(env_root).resolve()
+    cur = HERE.resolve()
+    for ancestor in [cur, *cur.parents]:
+        if (ancestor / ".git").exists():
+            return ancestor
+    return HERE.parent.parent
+
+
+REPO_ROOT = _resolve_repo_root()
+
+# Match `script:` or `Script:` (case-insensitive); accommodates legacy
+# chains that use the capitalized form.
+SCRIPT_REGEX = re.compile(
+    r"script:\s*([\w\-./]+\.(?:py|sing|sage|sh))",
+    re.IGNORECASE,
+)
+
+
+# ── Per-chain validation ───────────────────────────────────────
+
+@dataclass
+class ChainResult:
+    chain_path: Path
+    target: str
+    target_value: Any
+    target_tolerance: float
+    computed_value: Optional[float]
+    structural_ok: bool
+    leaf_matches: bool
+    issues: list[str]
+    trust_summary: dict[str, int]
+    has_script_frontier: bool
+
+
+def _eval_simple_algebra(operation: str, q: float) -> Optional[float]:
+    """Try to recognise a small set of canonical algebraic operations
+    in the `operation` field; return the numerical result at q if
+    possible, else None."""
+    op = operation.replace(" ", "")
+    # c_q derivation algebra
+    if "1/(q-1)" in op or "1/(q−1)" in op:
+        return 1.0 / (q - 1.0)
+    return None
+
+
+def validate_chain(chain_path: Path) -> ChainResult:
+    with chain_path.open("r", encoding="utf-8") as f:
+        chain_data = json.load(f)
+
+    target = chain_data["target"]
+    target_value_raw = chain_data["target_value"]
+    try:
+        target_value: Any = float(target_value_raw)
+        target_is_numeric = True
+    except (TypeError, ValueError):
+        target_value = target_value_raw
+        target_is_numeric = False
+    target_tolerance = float(chain_data.get("target_tolerance", 1e-9))
+    steps = chain_data["steps"]
+
+    # 1. Structural well-formedness re-check (defended by the schema,
+    #    but a chain might have been hand-edited).  Initialise the
+    #    `defined` set from the canonical FirstPrinciple enum to avoid
+    #    drift between schema and validator.
+    defined: set[str] = {fp.value for fp in FirstPrinciple}
+    structural_issues: list[str] = []
+    for i, s in enumerate(steps):
+        # 1. inputs reference earlier outputs or first principles
+        for inp in s.get("inputs", []):
+            if inp not in defined:
+                structural_issues.append(
+                    f"{s['name']!r}: input {inp!r} not defined"
+                )
+
+        trust_basis = s.get("trust_basis")
+
+        # 2. AXIOM / MATHLIB_CITED / LEAN_PROVEN must declare lean_ref
+        if trust_basis in {"axiom", "mathlib-cited", "lean-proven"} \
+                and not s.get("lean_ref"):
+            structural_issues.append(
+                f"{s['name']!r}: {trust_basis} step requires lean_ref"
+            )
+
+        # 3. SCRIPT_CITED must include a `script:` note + the cited
+        #    script must exist on disk
+        if trust_basis == "script-cited":
+            notes = s.get("notes") or ""
+            matches = list(SCRIPT_REGEX.finditer(notes))
+            if not matches:
+                structural_issues.append(
+                    f"{s['name']!r}: script-cited step requires a "
+                    "`script: <path>` note"
+                )
+            for m in matches:
+                script_path = REPO_ROOT / m.group(1)
+                if not script_path.exists():
+                    # Dead-code sweep (commit 191bd9f5) moved retired
+                    # producers under folio-assistant/computations/_deprecated/.
+                    # Accept the cited script if a copy exists there;
+                    # provenance is preserved for future refresh.
+                    deprecated_path = (
+                        script_path.parent / "_deprecated" /
+                        script_path.name
+                    )
+                    if not deprecated_path.exists():
+                        structural_issues.append(
+                            f"{s['name']!r}: cited script {m.group(1)!r} "
+                            f"not found at {script_path}"
+                        )
+
+        # 4. COMPUTATIONAL is the leaf only
+        if trust_basis == "computational" and i != len(steps) - 1:
+            structural_issues.append(
+                f"{s['name']!r}: computational step must be the final "
+                "step (numerical eval is leaf-only)"
+            )
+
+        defined.add(s["output_name"])
+    structural_ok = not structural_issues
+
+    # 2. Trust summary.
+    trust_summary: dict[str, int] = {}
+    for s in steps:
+        tb = s["trust_basis"]
+        trust_summary[tb] = trust_summary.get(tb, 0) + 1
+    has_script_frontier = trust_summary.get("script-cited", 0) > 0
+
+    # 3. COMPUTATIONAL leaf consistency.  Symbolic chains (no
+    #    COMPUTATIONAL leaf, target_value is a string formula) are
+    #    vacuously leaf-matched.
+    leaves = [s for s in steps if s["trust_basis"] == "computational"]
+    computed = None
+    if not target_is_numeric and not leaves:
+        leaf_matches = True
+    elif not target_is_numeric and leaves:
+        structural_issues.append(
+            "chain has a COMPUTATIONAL leaf but target_value is not numeric "
+            f"({target_value!r})"
+        )
+        leaf_matches = False
+    elif target_is_numeric and not leaves:
+        structural_issues.append(
+            f"chain target_value is numeric ({target_value}) but no "
+            "COMPUTATIONAL leaf step is present"
+        )
+        leaf_matches = False
+    else:
+        last = leaves[-1]
+        try:
+            computed = float(last["output_value"])
+        except (TypeError, ValueError):
+            structural_issues.append(
+                f"COMPUTATIONAL leaf {last['name']!r} output_value not "
+                f"numeric: {last['output_value']!r}"
+            )
+            leaf_matches = False
+        else:
+            if target_value == 0:
+                leaf_matches = computed == 0
+            else:
+                rel = abs(computed - target_value) / abs(target_value)
+                leaf_matches = rel <= target_tolerance
+
+    # 4. Re-evaluate simple algebraic targets (c_q chain) at the shared Q_0.
+    if "c_q" in target and target_is_numeric:
+        recomputed = _eval_simple_algebra(steps[-1].get("operation", ""), Q_0)
+        if recomputed is not None:
+            rel = abs(recomputed - target_value) / abs(target_value)
+            if rel > target_tolerance:
+                structural_issues.append(
+                    f"c_q algebra re-eval at q_0={Q_0} gives {recomputed} "
+                    f"vs target {target_value} (rel_diff {rel:.2e}, "
+                    f"target_tolerance {target_tolerance:.2e})"
+                )
+
+    return ChainResult(
+        chain_path=chain_path,
+        target=target,
+        target_value=target_value,
+        target_tolerance=target_tolerance,
+        computed_value=computed,
+        structural_ok=structural_ok,
+        leaf_matches=leaf_matches,
+        issues=structural_issues,
+        trust_summary=trust_summary,
+        has_script_frontier=has_script_frontier,
+    )
+
+
+# ── Witness trust audit ────────────────────────────────────────
+
+def collect_referenced_scripts(chains_dir: Path) -> set[str]:
+    """Walk every chain JSON and collect the set of script paths
+    referenced via `script: <path>` in any step's `notes`."""
+    refs: set[str] = set()
+    for cp in sorted(chains_dir.glob("*.derivation.json")):
+        with cp.open("r", encoding="utf-8") as f:
+            data = json.load(f)
+        for s in data.get("steps", []):
+            notes = s.get("notes") or ""
+            for m in SCRIPT_REGEX.finditer(notes):
+                refs.add(m.group(1))
+    return refs
+
+
+def _expected_script_for_witness(witness_filename: str) -> str:
+    """Convention: `foo-bar-baz.witness.json` is produced by
+    `foo_bar_baz.py` (hyphens → underscores, .witness.json → .py).
+    Used as a fallback when the witness JSON lacks a `scriptFile`
+    field (e.g. legacy witnesses pre-WitnessBuilder)."""
+    stem = witness_filename.replace(".witness.json", "")
+    return stem.replace("-", "_") + ".py"
+
+
+def collect_fully_trusted_scripts(chains_dir: Path) -> set[str]:
+    """Walk every chain JSON and collect scripts referenced by chains
+    that have **zero** SCRIPT_CITED steps — those scripts are
+    derivation-fully-trusted (the chain proves their output from
+    first principles, no computational shortcuts)."""
+    fully: set[str] = set()
+    for cp in sorted(chains_dir.glob("*.derivation.json")):
+        with cp.open("r", encoding="utf-8") as f:
+            data = json.load(f)
+        steps = data.get("steps", [])
+        if any(s.get("trust_basis") == "script-cited" for s in steps):
+            continue
+        for s in steps:
+            notes = s.get("notes") or ""
+            for m in SCRIPT_REGEX.finditer(notes):
+                fully.add(m.group(1))
+    return fully
+
+
+def audit_witness_trust(chains_dir: Path) -> dict:
+    referenced = collect_referenced_scripts(chains_dir)
+    referenced_basenames = {Path(r).name for r in referenced}
+    fully_trusted = collect_fully_trusted_scripts(chains_dir)
+    fully_trusted_basenames = {Path(r).name for r in fully_trusted}
+
+    out: dict[str, list[str]] = {
+        "derivation-fully-trusted": [],
+        "derivation-backed": [],
+        "computational-only": [],
+    }
+
+    def _is_in_set(witness_name: str, script_field: Optional[str], basenames: set[str], fullpaths: set[str]) -> bool:
+        if script_field and (script_field in basenames or any(script_field in r for r in fullpaths)):
+            return True
+        guessed = _expected_script_for_witness(witness_name)
+        return guessed in basenames
+
+    for wp in sorted(chains_dir.glob("*.witness.json")):
+        # Skip the audit's own output to avoid self-reference noise.
+        if wp.name == AUDIT_WITNESS_NAME:
+            continue
+        try:
+            with wp.open("r", encoding="utf-8") as f:
+                data = json.load(f)
+        except (json.JSONDecodeError, OSError):
+            continue
+        script_file = data.get("scriptFile")
+        if _is_in_set(wp.name, script_file, fully_trusted_basenames, fully_trusted):
+            out["derivation-fully-trusted"].append(wp.name)
+        elif _is_in_set(wp.name, script_file, referenced_basenames, referenced):
+            out["derivation-backed"].append(wp.name)
+        else:
+            out["computational-only"].append(wp.name)
+    return out
+
+
+# ── Main ───────────────────────────────────────────────────────
+
+def main() -> int:
+    chain_files = sorted(HERE.glob("*.derivation.json"))
+    if not chain_files:
+        print("No *.derivation.json files found.")
+        return 1
+
+    results = [validate_chain(p) for p in chain_files]
+
+    overall_ok = all(
+        r.structural_ok and r.leaf_matches and not r.issues
+        for r in results
+    )
+
+    audit = audit_witness_trust(HERE)
+
+    w = WitnessBuilder("derivation-chain-audit", engine="python")
+    w.set_description(
+        "Per-chain validation + computational-trust audit per the "
+        "QOU methodology directive: every numerical claim must trace "
+        "back to first-principles axioms via a DerivationChain."
+    )
+    # Audit-only: this is a per-CI-run validator emitting an audit
+    # report, not a content-block dependency.  Audit doc cites the
+    # CI failure post-mortem that introduced the validator (2026-05-02).
+    w.set_audit_only("docs/audits/2026-05-02-pr503-ci-failure-postmortem.md")
+    # No `def:derivation-chain` content block exists yet (the
+    # methodology lives in `DERIVATION-CHAIN-METHODOLOGY.md`); leaving
+    # contentBlock unset avoids generating broken cross-reference
+    # warnings in the content pipeline.
+    w.add_data("chain_results", [
+        {
+            "chain": r.chain_path.name,
+            "target": r.target,
+            "target_value": r.target_value,
+            "computed_value": r.computed_value,
+            "structural_ok": r.structural_ok,
+            "leaf_matches": r.leaf_matches,
+            "issues": r.issues,
+            "trust_summary": r.trust_summary,
+            "has_script_frontier": r.has_script_frontier,
+        }
+        for r in results
+    ])
+    w.add_data("witness_trust", audit)
+
+    for r in results:
+        w.add_assertion(
+            f"chain_valid[{r.chain_path.stem}]",
+            computed=bool(r.structural_ok and r.leaf_matches and not r.issues),
+            expected=True,
+        )
+        # Numerical leaf assertions only.  Tolerance honours the
+        # chain's declared `target_tolerance` (relative; high-precision
+        # chains declare tighter values).  Symbolic chains (no
+        # COMPUTATIONAL leaf) skip this — they are validated purely
+        # structurally + via `chain_valid[...]` above.
+        if isinstance(r.target_value, (int, float)) and r.computed_value is not None:
+            abs_tol = (
+                abs(r.target_value) * r.target_tolerance
+                if r.target_value != 0
+                else r.target_tolerance
+            )
+            w.add_assertion(
+                f"leaf_value[{r.chain_path.stem}]",
+                computed=r.computed_value,
+                expected=r.target_value,
+                tolerance=abs_tol,
+            )
+    w.save()
+
+    print(f"derivation_chain_validator: {'PASS' if overall_ok else 'FAIL'}")
+    for r in results:
+        marker = "✓" if (r.structural_ok and r.leaf_matches and not r.issues) else "✗"
+        frontier = " [script-frontier]" if r.has_script_frontier else " [fully-trusted]"
+        print(
+            f"  {marker} {r.chain_path.name:>32}  target={r.target}  "
+            f"value={r.computed_value}{frontier}"
+        )
+        for i in r.issues:
+            print(f"      - {i}")
+    n_full = len(audit["derivation-fully-trusted"])
+    n_backed = len(audit["derivation-backed"])
+    n_comp = len(audit["computational-only"])
+    print(
+        f"\nWitness trust audit: "
+        f"fully-trusted={n_full}, derivation-backed={n_backed}, "
+        f"computational-only={n_comp}"
+    )
+    if audit["derivation-fully-trusted"]:
+        print("  derivation-fully-trusted witnesses:")
+        for w_name in audit["derivation-fully-trusted"][:5]:
+            print(f"    - {w_name}")
+    if audit["computational-only"]:
+        print("  computational-only witnesses (need a derivation chain):")
+        for w_name in audit["computational-only"][:10]:
+            print(f"    - {w_name}")
+        if len(audit["computational-only"]) > 10:
+            print(f"    ... ({len(audit['computational-only']) - 10} more)")
+    return 0 if overall_ok else 2
+
+
+if __name__ == "__main__":
+    sys.exit(main())

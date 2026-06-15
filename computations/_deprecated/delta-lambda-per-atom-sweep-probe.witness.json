@@ -1,0 +1,433 @@
+{
+  "engine": "python+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-25T04:35:17.761007+00:00",
+  "commitSha": "7f6554cb4949a8da1d0f58b1a4d410582db1332b",
+  "assertions": [
+    {
+      "name": "D: per-atom min-norm Δ_λ(K) satisfies target equation",
+      "computed": "0.0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": 1e-25
+    },
+    {
+      "name": "T: per-atom min-norm Δ_λ(K) satisfies target equation",
+      "computed": "2.57639759320540031247746376468e-51",
+      "expected": "0",
+      "passed": true,
+      "tolerance": 1e-25
+    },
+    {
+      "name": "He3: per-atom min-norm Δ_λ(K) satisfies target equation",
+      "computed": "5.66273888351102623603060139322e-51",
+      "expected": "0",
+      "passed": true,
+      "tolerance": 1e-25
+    },
+    {
+      "name": "He4: per-atom min-norm Δ_λ(K) satisfies target equation",
+      "computed": "0.0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": 1e-25
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 9,
+  "computation": "delta-lambda-per-atom-sweep-probe",
+  "scriptFile": "delta_lambda_per_atom_sweep_probe.py",
+  "scriptHash": "3ec06398bb6f",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 50,
+    "output_dps": 40,
+    "guard_digits": 10,
+    "truncation_bound": "1e-40"
+  },
+  "parameters": {
+    "atoms": [
+      "D",
+      "T",
+      "He3",
+      "He4"
+    ],
+    "structural_constraint": "bar_invariance_only"
+  },
+  "data": {
+    "per_atom_results": {
+      "D": {
+        "atom": "D",
+        "Z": 1,
+        "N": 1,
+        "A": 2,
+        "n_strands": 6,
+        "target_signed": "-4.35336728187014865686123229803",
+        "abs_tr_M": "0.3882864715477134",
+        "partition_count": 11,
+        "n_pairs": 5,
+        "n_self_conjugate": 1,
+        "effective_nu": 6,
+        "free_dims": 5,
+        "max_abs_delta": "15.6948659562878508277635252285",
+        "nu_norm_2": "18.9721340472154026274600538331",
+        "rel_err": "0.0",
+        "dominant_partition": [
+          2,
+          1,
+          1,
+          1,
+          1
+        ],
+        "dominant_delta": "-15.6948659562878508277635252285",
+        "dominant_shape_category": "hook",
+        "top_5_by_abs_delta": [
+          {
+            "partition": [
+              2,
+              1,
+              1,
+              1,
+              1
+            ],
+            "delta": "-15.6948659562878508277635252285",
+            "shape": "hook"
+          },
+          {
+            "partition": [
+              5,
+              1
+            ],
+            "delta": "-15.6948659562878508277635252285",
+            "shape": "two_row"
+          },
+          {
+            "partition": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "delta": "-7.63371043844759767099711807672",
+            "shape": "single_column"
+          },
+          {
+            "partition": [
+              6
+            ],
+            "delta": "-7.63371043844759767099711807672",
+            "shape": "single_row"
+          },
+          {
+            "partition": [
+              2,
+              2,
+              1,
+              1
+            ],
+            "delta": "-5.59804205616889683372273614298",
+            "shape": "general"
+          }
+        ]
+      },
+      "T": {
+        "atom": "T",
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "n_strands": 9,
+        "target_signed": "-16.5984611514368082361030291745",
+        "abs_tr_M": "0.10405211867552573",
+        "partition_count": 30,
+        "n_pairs": 14,
+        "n_self_conjugate": 2,
+        "effective_nu": 16,
+        "free_dims": 15,
+        "max_abs_delta": "212.873506131395309944744120778",
+        "nu_norm_2": "279.236549534828448646595378364",
+        "rel_err": "2.57639759320540031247746376468e-51",
+        "dominant_partition": [
+          2,
+          2,
+          2,
+          1,
+          1,
+          1
+        ],
+        "dominant_delta": "-212.873506131395309944744120778",
+        "dominant_shape_category": "general",
+        "top_5_by_abs_delta": [
+          {
+            "partition": [
+              2,
+              2,
+              2,
+              1,
+              1,
+              1
+            ],
+            "delta": "-212.873506131395309944744120778",
+            "shape": "general"
+          },
+          {
+            "partition": [
+              6,
+              3
+            ],
+            "delta": "-212.873506131395309944744120778",
+            "shape": "two_row"
+          },
+          {
+            "partition": [
+              2,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "delta": "-128.368139520541680403553773881",
+            "shape": "hook"
+          },
+          {
+            "partition": [
+              8,
+              1
+            ],
+            "delta": "-128.368139520541680403553773881",
+            "shape": "two_row"
+          },
+          {
+            "partition": [
+              2,
+              2,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "delta": "-93.9335478850181778593864364815",
+            "shape": "general"
+          }
+        ]
+      },
+      "He3": {
+        "atom": "He3",
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "n_strands": 9,
+        "target_signed": "-15.1037285105967438876342113815",
+        "abs_tr_M": "0.20654085856226276",
+        "partition_count": 30,
+        "n_pairs": 14,
+        "n_self_conjugate": 2,
+        "effective_nu": 16,
+        "free_dims": 15,
+        "max_abs_delta": "104.558179210194062514871038429",
+        "nu_norm_2": "148.518188409902389732972752004",
+        "rel_err": "5.66273888351102623603060139322e-51",
+        "dominant_partition": [
+          2,
+          2,
+          2,
+          1,
+          1,
+          1
+        ],
+        "dominant_delta": "-104.558179210194062514871038429",
+        "dominant_shape_category": "general",
+        "top_5_by_abs_delta": [
+          {
+            "partition": [
+              2,
+              2,
+              2,
+              1,
+              1,
+              1
+            ],
+            "delta": "-104.558179210194062514871038429",
+            "shape": "general"
+          },
+          {
+            "partition": [
+              6,
+              3
+            ],
+            "delta": "-104.558179210194062514871038429",
+            "shape": "two_row"
+          },
+          {
+            "partition": [
+              2,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "delta": "-70.0769458862667787657693931487",
+            "shape": "hook"
+          },
+          {
+            "partition": [
+              8,
+              1
+            ],
+            "delta": "-70.0769458862667787657693931487",
+            "shape": "two_row"
+          },
+          {
+            "partition": [
+              2,
+              2,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "delta": "-69.2806213846337464994232638279",
+            "shape": "general"
+          }
+        ]
+      },
+      "He4": {
+        "atom": "He4",
+        "Z": 2,
+        "N": 2,
+        "A": 4,
+        "n_strands": 12,
+        "target_signed": "-55.3731849351158157957076037045",
+        "abs_tr_M": "0.0",
+        "partition_count": 24,
+        "n_pairs": 24,
+        "n_self_conjugate": 0,
+        "effective_nu": 24,
+        "free_dims": 23,
+        "max_abs_delta": "1572.65453592043905064202137619",
+        "nu_norm_2": "2329.69027553409275031434336467",
+        "rel_err": "0.0",
+        "dominant_partition": [
+          9,
+          3
+        ],
+        "dominant_delta": "-1572.65453592043905064202137619",
+        "dominant_shape_category": "two_row",
+        "top_5_by_abs_delta": [
+          {
+            "partition": [
+              9,
+              3
+            ],
+            "delta": "-1572.65453592043905064202137619",
+            "shape": "two_row"
+          },
+          {
+            "partition": [
+              2,
+              2,
+              2,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "delta": "-1572.65453592043905064202137619",
+            "shape": "general"
+          },
+          {
+            "partition": [
+              8,
+              4
+            ],
+            "delta": "-1278.35586399681730774495708253",
+            "shape": "two_row"
+          },
+          {
+            "partition": [
+              2,
+              2,
+              2,
+              2,
+              1,
+              1,
+              1,
+              1
+            ],
+            "delta": "-1278.35586399681730774495708253",
+            "shape": "general"
+          },
+          {
+            "partition": [
+              10,
+              2
+            ],
+            "delta": "-730.186573474032163640474646279",
+            "shape": "two_row"
+          }
+        ]
+      }
+    },
+    "cross_atom_scaling": [
+      {
+        "atom": "D",
+        "A": 2,
+        "abs_tr_M": "0.3882864715477134",
+        "abs_target": "4.35336728187014865686123229803",
+        "max_abs_delta": "15.6948659562878508277635252285",
+        "ratio_delta_per_target": "3.60522440218863069470378304022",
+        "ratio_delta_times_tr_M": "6.09410412358133825354939818906"
+      },
+      {
+        "atom": "T",
+        "A": 3,
+        "abs_tr_M": "0.10405211867552573",
+        "abs_target": "16.5984611514368082361030291745",
+        "max_abs_delta": "212.873506131395309944744120778",
+        "ratio_delta_per_target": "12.824894078386802532340113653",
+        "ratio_delta_times_tr_M": "22.149939322859198922087381404"
+      },
+      {
+        "atom": "He3",
+        "A": 3,
+        "abs_tr_M": "0.20654085856226276",
+        "abs_target": "15.1037285105967438876342113815",
+        "max_abs_delta": "104.558179210194062514871038429",
+        "ratio_delta_per_target": "6.92267337411661403683287251653",
+        "ratio_delta_times_tr_M": "21.5955361037804144416254357617"
+      },
+      {
+        "atom": "He4",
+        "A": 4,
+        "abs_tr_M": "0.0",
+        "abs_target": "55.3731849351158157957076037045",
+        "max_abs_delta": "1572.65453592043905064202137619",
+        "ratio_delta_per_target": "28.4010128325328513947058501494",
+        "ratio_delta_times_tr_M": "0.0"
+      }
+    ],
+    "dominant_shape_aggregation": {
+      "hook": 1,
+      "general": 2,
+      "two_row": 1
+    },
+    "diagnostic": "dominant λ*(K) varies across atoms; most common shape category is 'general' (2/4 atoms) — Option E's crystal weight needs an atom-dependent component OR the dominant λ*(K) is not the right summary statistic",
+    "framework_reference": {
+      "formula": "ρ_K(q) = ρ_K^LO + (1/|tr_M|) Σ_λ y_λ χ^λ Δ_λ(K)",
+      "lean_decl": "qou:QOU.BraidKnot.rho_k_h3a_refinement",
+      "md_block": "prop:rho-k-h3a-refinement",
+      "audit": "docs/audits/2026-05-25-delta-lambda-K-dependence-reframing.md"
+    }
+  }
+}

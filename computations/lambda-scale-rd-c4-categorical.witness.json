@@ -1,0 +1,53 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.12.3",
+  "computedAt": "2026-06-02T16:59:03.605993+00:00",
+  "commitSha": "77f2b68af2c9d52ae3d55c1cea746e8e9977db80",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 478,
+  "computation": "lambda-scale-rd-c4-categorical",
+  "scriptFile": "lambda_scale_rd_c4_categorical.py",
+  "scriptHash": "04da1711cf2c",
+  "scriptCommitSha": "d2e9d5e463796608e088af545751396188cb2461",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.12.3",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "R&D: categorical derivation of c_4 via direct H_3/H_4 Markov-trace h-expansion at the canonical Borromean braid (σ_1 σ_2^{-1})^3. Symbolic in q via sympy; extracts the h⁴ coefficient of the half-symmetric Wedderburn trace.",
+  "contentBlock": "conj:lambda-scale-substrate-form",
+  "parameters": {
+    "dps": 80
+  },
+  "data": {
+    "y_lambda_H3": {
+      "(3)": "q**3/(q**4*(q**2 + 2) + 2*q**2 + 1)",
+      "(2,1)": "(q**3 + q)/(q**4 + q**2 + 1)",
+      "(1,1,1)": "q**3/(q**4*(q**2 + 2) + 2*q**2 + 1)"
+    },
+    "chi_v21_witness_exists": false,
+    "c4_structural_target": {
+      "categorical_source": "The h⁴ coefficient of the half-symmetric Wedderburn Markov-trace expansion at the canonical Borromean braid (σ_1 σ_2^{-1})^3 in H_3(q), stabilised to H_4 via σ_3 · z-weight.",
+      "explicit_form_pending": "Requires the Hoefsmit seminormal-form 2x2 matrix product for σ_1 σ_2^{-1} on V_(2,1), cubed, and traced. The χ_(2,1) character at the Borromean braid is the load-bearing symbolic computation.",
+      "empirical_c4": "0.007509575541000836570663978",
+      "empirical_h4_correction_to_lambda_p_ppm": 5.831428787629052
+    },
+    "next_RandD": {
+      "approach_A": "Symbolic computation: derive χ_(2,1)((σ_1 σ_2^{-1})^3) in closed form via Hoefsmit seminormal matrices. See content/quantum-observable-universe/braids-and-knots/chi-v21-hoefsmit-matrix-derivation.md for the matrix convention.",
+      "approach_B": "Yekutieli-Stokes 4th-order: extend the 2nd-order argument (τ^(2) = -G via curvature) to 4th order. The 4th-order term involves the wedge product F ∧ F integrated over Σ_β, which is the Chern-Simons invariant of B_3 at the categorical level corresponding to k=4.",
+      "approach_C": "Direct H_4 stabilised computation: Markov-stabilise the B_3 Borromean braid to B_4 via σ_3, compute the Wedderburn characters χ_λ at H_4 for all 5 partitions of 4, project to the half-symmetric component, expand in h, extract h⁴ coefficient. This is the direct categorical derivation (slow but rigorous)."
+    }
+  },
+  "caveats": [
+    "Categorical derivation incomplete — script identifies the structural target and the load-bearing computational step (Hoefsmit matrix product for χ_(2,1) at the Borromean braid). PSLQ-based searches confirmed in prior probe that c_4 has no simple closed form in the obvious substrate bases."
+  ]
+}

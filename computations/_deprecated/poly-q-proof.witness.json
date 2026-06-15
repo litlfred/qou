@@ -1,0 +1,66 @@
+{
+  "computation": "poly-q-proof",
+  "description": "Independent verification of PR #546's claimed closed form tr_M(proton) = (q^20 + q^18 + 2q^12 - 2q^8 - q^2 - 1) / (12 q^10) via numerical Plancherel-weight Markov trace at multiple q values, plus structural proofs: anti-self-reciprocity q^20·p(1/q) = -p(q) (Frobenius/antipode symmetry), pole order 10 with leading coefficient -1/12.",
+  "reference_blocks": [
+    "prop:atomic-mass-gb-nf",
+    "prop:rho-k-graded-expansion",
+    "prop:hecke-branching-trace-decomposition"
+  ],
+  "computedAt": "2026-05-05T22:14:52.420374+00:00",
+  "claimed_polynomial": "q^20 + q^18 + 2*q^12 - 2*q^8 - q^2 - 1",
+  "claimed_denominator": "12 * q^10",
+  "numerical_verification": [
+    {
+      "q": 1.05,
+      "tr_M_numeric": 1.6342972686323145,
+      "tr_M_pr546_closed_form": 0.18387820817341327,
+      "rel_diff": 7.887933403674615
+    },
+    {
+      "q": 1.1,
+      "tr_M_numeric": 1.6333957780180792,
+      "tr_M_pr546_closed_form": 0.387699003206439,
+      "rel_diff": 3.2130512704680365
+    },
+    {
+      "q": 1.1099785955541805,
+      "tr_M_numeric": 1.6331535640480748,
+      "tr_M_pr546_closed_form": 0.4331339528374911,
+      "rel_diff": 2.7705507807669436
+    },
+    {
+      "q": 1.15,
+      "tr_M_numeric": 1.6319934354982817,
+      "tr_M_pr546_closed_form": 0.6386005653071135,
+      "rel_diff": 1.5555778121076815
+    },
+    {
+      "q": 1.2,
+      "tr_M_numeric": 1.6301591168323284,
+      "tr_M_pr546_closed_form": 0.9657159059383237,
+      "rel_diff": 0.688031756345991
+    },
+    {
+      "q": 1.5,
+      "tr_M_numeric": 1.6129069919307109,
+      "tr_M_pr546_closed_form": 7.237391370948721,
+      "rel_diff": 0.7771424938542074
+    },
+    {
+      "q": 2.0,
+      "tr_M_numeric": 1.57344934874793,
+      "tr_M_pr546_closed_form": 107.291259765625,
+      "rel_diff": 0.9853347854039082
+    }
+  ],
+  "max_relative_diff_across_q": 7.887933403674615,
+  "anti_self_reciprocal_proved": true,
+  "pole_order_at_zero": 10,
+  "leading_coefficient_at_zero": "-1/12",
+  "polynomial_value_at_zero": "-1",
+  "roots_real_count": 1,
+  "roots_complex_count": 0,
+  "engine": "python",
+  "scriptFile": "poly_q_proof_probe.py",
+  "commitSha": "06e88b6885fd78860cf1e0d1d01de2a96f5b0811"
+}

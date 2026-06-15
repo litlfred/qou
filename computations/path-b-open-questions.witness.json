@@ -1,0 +1,113 @@
+{
+  "engine": "numpy",
+  "engineVersion": "numpy 2.4.6",
+  "computedAt": "2026-06-02T20:11:10.766164+00:00",
+  "commitSha": "41f1b2a404de0759b15e4ddd8dbfa55deca21f23",
+  "assertions": [
+    {
+      "name": "self_evacuating_eq_domino_count",
+      "computed": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "two_core_is_nonempty",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "no_self_evacuating_for_321",
+      "computed": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "best_single_invariant_r_lt_0p3",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "multivariate_R2_lt_0p2",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "h2_q_one_fifth_within_1e_2",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "corner_hook_eq_2k_minus_1",
+      "computed": 5,
+      "expected": 5,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 763,
+  "computation": "path-b-open-questions",
+  "scriptFile": "path_b_open_questions.py",
+  "scriptHash": "459d2479dba7",
+  "scriptCommitSha": "5a44813463430491fdc8cd8cd5a97a404b5e7e9d",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.12.3",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Resolve three open questions from path_b_evacuation: (1) why no self-paired SYT — connect to 2-core / domino-tableau count for (3,2,1); (2) refine SYT-level invariants — find which statistic best predicts diag(M) (descents, major index, Hoefsmit + count); (3) derive q^(1/5) — test fractional-power, corner-hook, and abelian-residue hypotheses.",
+  "contentBlock": "conj:weinberg-angle-categorical",
+  "parameters": {
+    "q_0": 1.1099785827513808,
+    "cot_w_codata": 1.8230678710486174,
+    "shape": [
+      3,
+      2,
+      1
+    ]
+  },
+  "data": {
+    "syt_invariant_correlations": {
+      "content_sum": [
+        0.03262383786263811,
+        0.05481631871250128
+      ],
+      "max_diag_entry": [
+        0.0,
+        0.0
+      ],
+      "n_descents": [
+        -0.07075121945687171,
+        -0.1084652289093281
+      ],
+      "major_index": [
+        -0.02773131208052533,
+        -0.001483738317275951
+      ],
+      "n_plus": [
+        0.07536316696876577,
+        -0.03757345746510897
+      ],
+      "n_minus": [
+        -0.17030230186582787,
+        -0.09706476511819816
+      ],
+      "comaj_charge": [
+        0.0,
+        0.0
+      ]
+    },
+    "multivariate_R2": 0.08475652336168293
+  }
+}

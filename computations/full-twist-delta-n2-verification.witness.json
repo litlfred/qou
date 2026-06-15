@@ -1,0 +1,3601 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-06-02T20:14:46.767067+00:00",
+  "commitSha": "41f1b2a404de0759b15e4ddd8dbfa55deca21f23",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 24,
+  "computation": "full-twist-delta-n2-verification",
+  "scriptFile": "full_twist_delta_n2_verification.py",
+  "scriptHash": "0f0f87c57909",
+  "scriptCommitSha": "5a44813463430491fdc8cd8cd5a97a404b5e7e9d",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.12.3",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Empirical verification of the full-twist Δ_n² scalar action q^{c(λ)} per Wedderburn block V_λ ↪ H_n(q). Tabulates c(λ) for every partition λ ⊢ n at n ∈ {1,...,12}; identifies the Δ_n²-invariant subspace (c(λ) = 0); records magic-n empirical realisability of the categorical-neutrality predicate (conj:categorical-neutrality-saturated-shells). Structural finding: at magic n = 2 the invariant subspace is empty under pure-scalar q^c(λ) action, indicating the conjecture must hold via a refined mechanism (root-of-unity specialisation, sum cancellation, or a non-scalar action component captured in T2/T3).",
+  "contentBlock": "conj:categorical-neutrality-saturated-shells",
+  "parameters": {
+    "q_0": "1.10997858275138080759166909561076887987449912187357763605672",
+    "magic_nucleon_counts": [
+      2,
+      8,
+      20,
+      28,
+      50,
+      82,
+      126
+    ],
+    "n_range_swept": [
+      1,
+      12
+    ]
+  },
+  "data": {
+    "reference_blocks": [
+      "conj:categorical-neutrality-saturated-shells",
+      "conj:mass-endomorphism",
+      "prop:atomic-mass-gb-nf"
+    ],
+    "results_by_n": {
+      "1": {
+        "n": 1,
+        "n_partitions": 1,
+        "Sn_order_factorial": 1,
+        "sum_dim_irrep": 1,
+        "sum_dim_irrep_sq": 1,
+        "invariant_sum_dim": 1,
+        "invariant_sum_dim_sq": 1,
+        "invariant_ratio_dim_sq": 1.0,
+        "is_magic_shell": false,
+        "blocks": [
+          {
+            "lambda": [
+              1
+            ],
+            "content_sum": 0,
+            "dim_irrep": 1,
+            "q_to_c_at_q0_50dps": "1.00000000000000000000000000000000000000000000000000000000000",
+            "is_delta_invariant": true
+          }
+        ]
+      },
+      "2": {
+        "n": 2,
+        "n_partitions": 2,
+        "Sn_order_factorial": 2,
+        "sum_dim_irrep": 2,
+        "sum_dim_irrep_sq": 2,
+        "invariant_sum_dim": 0,
+        "invariant_sum_dim_sq": 0,
+        "invariant_ratio_dim_sq": 0.0,
+        "is_magic_shell": true,
+        "blocks": [
+          {
+            "lambda": [
+              2
+            ],
+            "content_sum": 1,
+            "dim_irrep": 1,
+            "q_to_c_at_q0_50dps": "1.10997858275138080759166909561076887987449912187357763605672",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              1,
+              1
+            ],
+            "content_sum": -1,
+            "dim_irrep": 1,
+            "q_to_c_at_q0_50dps": "0.900918283955741492160822882481093936014741626610555073523312",
+            "is_delta_invariant": false
+          }
+        ]
+      },
+      "3": {
+        "n": 3,
+        "n_partitions": 3,
+        "Sn_order_factorial": 6,
+        "sum_dim_irrep": 4,
+        "sum_dim_irrep_sq": 6,
+        "invariant_sum_dim": 2,
+        "invariant_sum_dim_sq": 4,
+        "invariant_ratio_dim_sq": 0.6666666666666666,
+        "is_magic_shell": false,
+        "blocks": [
+          {
+            "lambda": [
+              3
+            ],
+            "content_sum": 3,
+            "dim_irrep": 1,
+            "q_to_c_at_q0_50dps": "1.36755183695138518796672402990936100071109752077276381077332",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              2,
+              1
+            ],
+            "content_sum": 0,
+            "dim_irrep": 2,
+            "q_to_c_at_q0_50dps": "1.00000000000000000000000000000000000000000000000000000000000",
+            "is_delta_invariant": true
+          },
+          {
+            "lambda": [
+              1,
+              1,
+              1
+            ],
+            "content_sum": -3,
+            "dim_irrep": 1,
+            "q_to_c_at_q0_50dps": "0.731233707549433674041352781095106426763989809329484398076866",
+            "is_delta_invariant": false
+          }
+        ]
+      },
+      "4": {
+        "n": 4,
+        "n_partitions": 5,
+        "Sn_order_factorial": 24,
+        "sum_dim_irrep": 10,
+        "sum_dim_irrep_sq": 24,
+        "invariant_sum_dim": 2,
+        "invariant_sum_dim_sq": 4,
+        "invariant_ratio_dim_sq": 0.16666666666666666,
+        "is_magic_shell": false,
+        "blocks": [
+          {
+            "lambda": [
+              4
+            ],
+            "content_sum": 6,
+            "dim_irrep": 1,
+            "q_to_c_at_q0_50dps": "1.87019802674910801799933088389820991409849480764394697465882",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              3,
+              1
+            ],
+            "content_sum": 2,
+            "dim_irrep": 3,
+            "q_to_c_at_q0_50dps": "1.23205245416676393126980451353563618484968142291699735949467",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              2,
+              2
+            ],
+            "content_sum": 0,
+            "dim_irrep": 2,
+            "q_to_c_at_q0_50dps": "1.00000000000000000000000000000000000000000000000000000000000",
+            "is_delta_invariant": true
+          },
+          {
+            "lambda": [
+              2,
+              1,
+              1
+            ],
+            "content_sum": -2,
+            "dim_irrep": 3,
+            "q_to_c_at_q0_50dps": "0.811653754365758058132214822141752124918532537796507916290360",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "content_sum": -6,
+            "dim_irrep": 1,
+            "q_to_c_at_q0_50dps": "0.534702735056490693741653493000447880900426752232645616770110",
+            "is_delta_invariant": false
+          }
+        ]
+      },
+      "5": {
+        "n": 5,
+        "n_partitions": 7,
+        "Sn_order_factorial": 120,
+        "sum_dim_irrep": 26,
+        "sum_dim_irrep_sq": 120,
+        "invariant_sum_dim": 6,
+        "invariant_sum_dim_sq": 36,
+        "invariant_ratio_dim_sq": 0.3,
+        "is_magic_shell": false,
+        "blocks": [
+          {
+            "lambda": [
+              5
+            ],
+            "content_sum": 10,
+            "dim_irrep": 1,
+            "q_to_c_at_q0_50dps": "2.83887317250766638137278904418573560704794500488836767353454",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              4,
+              1
+            ],
+            "content_sum": 5,
+            "dim_irrep": 4,
+            "q_to_c_at_q0_50dps": "1.68489559691622032007890931933453654876143904310339393945169",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              3,
+              2
+            ],
+            "content_sum": 2,
+            "dim_irrep": 5,
+            "q_to_c_at_q0_50dps": "1.23205245416676393126980451353563618484968142291699735949467",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              3,
+              1,
+              1
+            ],
+            "content_sum": 0,
+            "dim_irrep": 6,
+            "q_to_c_at_q0_50dps": "1.00000000000000000000000000000000000000000000000000000000000",
+            "is_delta_invariant": true
+          },
+          {
+            "lambda": [
+              2,
+              2,
+              1
+            ],
+            "content_sum": -2,
+            "dim_irrep": 5,
+            "q_to_c_at_q0_50dps": "0.811653754365758058132214822141752124918532537796507916290360",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              2,
+              1,
+              1,
+              1
+            ],
+            "content_sum": -5,
+            "dim_irrep": 4,
+            "q_to_c_at_q0_50dps": "0.593508584051290603023777070219055928490136130718447055666765",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "content_sum": -10,
+            "dim_irrep": 1,
+            "q_to_c_at_q0_50dps": "0.352252439342567882348926820513303597408754696214058669108009",
+            "is_delta_invariant": false
+          }
+        ]
+      },
+      "6": {
+        "n": 6,
+        "n_partitions": 11,
+        "Sn_order_factorial": 720,
+        "sum_dim_irrep": 76,
+        "sum_dim_irrep_sq": 720,
+        "invariant_sum_dim": 16,
+        "invariant_sum_dim_sq": 256,
+        "invariant_ratio_dim_sq": 0.35555555555555557,
+        "is_magic_shell": false,
+        "blocks": [
+          {
+            "lambda": [
+              6
+            ],
+            "content_sum": 15,
+            "dim_irrep": 1,
+            "q_to_c_at_q0_50dps": "4.78320490856174864899067153889987045762729107224506692723371",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              5,
+              1
+            ],
+            "content_sum": 9,
+            "dim_irrep": 5,
+            "q_to_c_at_q0_50dps": "2.55759274694359848259100250398142520844017905503730091229061",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              4,
+              2
+            ],
+            "content_sum": 5,
+            "dim_irrep": 9,
+            "q_to_c_at_q0_50dps": "1.68489559691622032007890931933453654876143904310339393945169",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              4,
+              1,
+              1
+            ],
+            "content_sum": 3,
+            "dim_irrep": 10,
+            "q_to_c_at_q0_50dps": "1.36755183695138518796672402990936100071109752077276381077332",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              3,
+              3
+            ],
+            "content_sum": 3,
+            "dim_irrep": 5,
+            "q_to_c_at_q0_50dps": "1.36755183695138518796672402990936100071109752077276381077332",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              3,
+              2,
+              1
+            ],
+            "content_sum": 0,
+            "dim_irrep": 16,
+            "q_to_c_at_q0_50dps": "1.00000000000000000000000000000000000000000000000000000000000",
+            "is_delta_invariant": true
+          },
+          {
+            "lambda": [
+              3,
+              1,
+              1,
+              1
+            ],
+            "content_sum": -3,
+            "dim_irrep": 10,
+            "q_to_c_at_q0_50dps": "0.731233707549433674041352781095106426763989809329484398076866",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              2,
+              2,
+              2
+            ],
+            "content_sum": -3,
+            "dim_irrep": 5,
+            "q_to_c_at_q0_50dps": "0.731233707549433674041352781095106426763989809329484398076866",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              2,
+              2,
+              1,
+              1
+            ],
+            "content_sum": -5,
+            "dim_irrep": 9,
+            "q_to_c_at_q0_50dps": "0.593508584051290603023777070219055928490136130718447055666765",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              2,
+              1,
+              1,
+              1,
+              1
+            ],
+            "content_sum": -9,
+            "dim_irrep": 5,
+            "q_to_c_at_q0_50dps": "0.390992663392180232637758708559247290904274760827407802717762",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "content_sum": -15,
+            "dim_irrep": 1,
+            "q_to_c_at_q0_50dps": "0.209064846502820594807266912401664459968639942449182321495493",
+            "is_delta_invariant": false
+          }
+        ]
+      },
+      "7": {
+        "n": 7,
+        "n_partitions": 15,
+        "Sn_order_factorial": 5040,
+        "sum_dim_irrep": 232,
+        "sum_dim_irrep_sq": 5040,
+        "invariant_sum_dim": 20,
+        "invariant_sum_dim_sq": 400,
+        "invariant_ratio_dim_sq": 0.07936507936507936,
+        "is_magic_shell": false,
+        "blocks": [
+          {
+            "lambda": [
+              7
+            ],
+            "content_sum": 21,
+            "dim_irrep": 1,
+            "q_to_c_at_q0_50dps": "8.94554038152882997118788304610201955696854853993188616933190",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              6,
+              1
+            ],
+            "content_sum": 14,
+            "dim_irrep": 6,
+            "q_to_c_at_q0_50dps": "4.30927675803012998894602351465058548119339172187833299607747",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              5,
+              2
+            ],
+            "content_sum": 9,
+            "dim_irrep": 14,
+            "q_to_c_at_q0_50dps": "2.55759274694359848259100250398142520844017905503730091229061",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              5,
+              1,
+              1
+            ],
+            "content_sum": 7,
+            "dim_irrep": 15,
+            "q_to_c_at_q0_50dps": "2.07587975519540389127881851565233872480080841124047842901098",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              4,
+              3
+            ],
+            "content_sum": 6,
+            "dim_irrep": 14,
+            "q_to_c_at_q0_50dps": "1.87019802674910801799933088389820991409849480764394697465882",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              4,
+              2,
+              1
+            ],
+            "content_sum": 3,
+            "dim_irrep": 35,
+            "q_to_c_at_q0_50dps": "1.36755183695138518796672402990936100071109752077276381077332",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              4,
+              1,
+              1,
+              1
+            ],
+            "content_sum": 0,
+            "dim_irrep": 20,
+            "q_to_c_at_q0_50dps": "1.00000000000000000000000000000000000000000000000000000000000",
+            "is_delta_invariant": true
+          },
+          {
+            "lambda": [
+              3,
+              3,
+              1
+            ],
+            "content_sum": 1,
+            "dim_irrep": 21,
+            "q_to_c_at_q0_50dps": "1.10997858275138080759166909561076887987449912187357763605672",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              3,
+              2,
+              2
+            ],
+            "content_sum": -1,
+            "dim_irrep": 21,
+            "q_to_c_at_q0_50dps": "0.900918283955741492160822882481093936014741626610555073523312",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              3,
+              2,
+              1,
+              1
+            ],
+            "content_sum": -3,
+            "dim_irrep": 35,
+            "q_to_c_at_q0_50dps": "0.731233707549433674041352781095106426763989809329484398076866",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              3,
+              1,
+              1,
+              1,
+              1
+            ],
+            "content_sum": -7,
+            "dim_irrep": 15,
+            "q_to_c_at_q0_50dps": "0.481723470493535093676572865537988504618947334405800517211632",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              2,
+              2,
+              2,
+              1
+            ],
+            "content_sum": -6,
+            "dim_irrep": 14,
+            "q_to_c_at_q0_50dps": "0.534702735056490693741653493000447880900426752232645616770110",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              2,
+              2,
+              1,
+              1,
+              1
+            ],
+            "content_sum": -9,
+            "dim_irrep": 14,
+            "q_to_c_at_q0_50dps": "0.390992663392180232637758708559247290904274760827407802717762",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              2,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "content_sum": -14,
+            "dim_irrep": 6,
+            "q_to_c_at_q0_50dps": "0.232057502024335776028884365679950032217186821056796504157747",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "content_sum": -21,
+            "dim_irrep": 1,
+            "q_to_c_at_q0_50dps": "0.111787545229223575473709051463929479257916542551492686068763",
+            "is_delta_invariant": false
+          }
+        ]
+      },
+      "8": {
+        "n": 8,
+        "n_partitions": 22,
+        "Sn_order_factorial": 40320,
+        "sum_dim_irrep": 764,
+        "sum_dim_irrep_sq": 40320,
+        "invariant_sum_dim": 132,
+        "invariant_sum_dim_sq": 9864,
+        "invariant_ratio_dim_sq": 0.24464285714285713,
+        "is_magic_shell": true,
+        "blocks": [
+          {
+            "lambda": [
+              8
+            ],
+            "content_sum": 28,
+            "dim_irrep": 1,
+            "q_to_c_at_q0_50dps": "18.5698661772986674861686999126443685095810985203143097266564",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              7,
+              1
+            ],
+            "content_sum": 20,
+            "dim_irrep": 7,
+            "q_to_c_at_q0_50dps": "8.05920088958374252506878785148495689088250503058864268958673",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              6,
+              2
+            ],
+            "content_sum": 14,
+            "dim_irrep": 20,
+            "q_to_c_at_q0_50dps": "4.30927675803012998894602351465058548119339172187833299607747",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              6,
+              1,
+              1
+            ],
+            "content_sum": 12,
+            "dim_irrep": 21,
+            "q_to_c_at_q0_50dps": "3.49764065925625734960740499940542057608762185036682376474670",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              5,
+              3
+            ],
+            "content_sum": 10,
+            "dim_irrep": 28,
+            "q_to_c_at_q0_50dps": "2.83887317250766638137278904418573560704794500488836767353454",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              5,
+              2,
+              1
+            ],
+            "content_sum": 7,
+            "dim_irrep": 64,
+            "q_to_c_at_q0_50dps": "2.07587975519540389127881851565233872480080841124047842901098",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              5,
+              1,
+              1,
+              1
+            ],
+            "content_sum": 4,
+            "dim_irrep": 35,
+            "q_to_c_at_q0_50dps": "1.51795324981834593754711018277627363962078050951314919580449",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              4,
+              4
+            ],
+            "content_sum": 8,
+            "dim_irrep": 14,
+            "q_to_c_at_q0_50dps": "2.30418206863407775108086405851231558238274918272794391055613",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              4,
+              3,
+              1
+            ],
+            "content_sum": 4,
+            "dim_irrep": 70,
+            "q_to_c_at_q0_50dps": "1.51795324981834593754711018277627363962078050951314919580449",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              4,
+              2,
+              2
+            ],
+            "content_sum": 2,
+            "dim_irrep": 56,
+            "q_to_c_at_q0_50dps": "1.23205245416676393126980451353563618484968142291699735949467",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              4,
+              2,
+              1,
+              1
+            ],
+            "content_sum": 0,
+            "dim_irrep": 90,
+            "q_to_c_at_q0_50dps": "1.00000000000000000000000000000000000000000000000000000000000",
+            "is_delta_invariant": true
+          },
+          {
+            "lambda": [
+              4,
+              1,
+              1,
+              1,
+              1
+            ],
+            "content_sum": -4,
+            "dim_irrep": 35,
+            "q_to_c_at_q0_50dps": "0.658781816976030318011303734540239501843453831996491963112646",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              3,
+              3,
+              2
+            ],
+            "content_sum": 0,
+            "dim_irrep": 42,
+            "q_to_c_at_q0_50dps": "1.00000000000000000000000000000000000000000000000000000000000",
+            "is_delta_invariant": true
+          },
+          {
+            "lambda": [
+              3,
+              3,
+              1,
+              1
+            ],
+            "content_sum": -2,
+            "dim_irrep": 56,
+            "q_to_c_at_q0_50dps": "0.811653754365758058132214822141752124918532537796507916290360",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              3,
+              2,
+              2,
+              1
+            ],
+            "content_sum": -4,
+            "dim_irrep": 70,
+            "q_to_c_at_q0_50dps": "0.658781816976030318011303734540239501843453831996491963112646",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              3,
+              2,
+              1,
+              1,
+              1
+            ],
+            "content_sum": -7,
+            "dim_irrep": 64,
+            "q_to_c_at_q0_50dps": "0.481723470493535093676572865537988504618947334405800517211632",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              3,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "content_sum": -12,
+            "dim_irrep": 21,
+            "q_to_c_at_q0_50dps": "0.285907014876891681894610210738698965405806698056584471472701",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              2,
+              2,
+              2,
+              2
+            ],
+            "content_sum": -8,
+            "dim_irrep": 14,
+            "q_to_c_at_q0_50dps": "0.433993482378239907693723547213248507434654590285027625443337",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              2,
+              2,
+              2,
+              1,
+              1
+            ],
+            "content_sum": -10,
+            "dim_irrep": 28,
+            "q_to_c_at_q0_50dps": "0.352252439342567882348926820513303597408754696214058669108009",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              2,
+              2,
+              1,
+              1,
+              1,
+              1
+            ],
+            "content_sum": -14,
+            "dim_irrep": 20,
+            "q_to_c_at_q0_50dps": "0.232057502024335776028884365679950032217186821056796504157747",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              2,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "content_sum": -20,
+            "dim_irrep": 7,
+            "q_to_c_at_q0_50dps": "0.124081781022789465278301797133681016143638901836331217784262",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "content_sum": -28,
+            "dim_irrep": 1,
+            "q_to_c_at_q0_50dps": "0.0538506842457746027895810014880154948292928002547159526961173",
+            "is_delta_invariant": false
+          }
+        ]
+      },
+      "9": {
+        "n": 9,
+        "n_partitions": 30,
+        "Sn_order_factorial": 362880,
+        "sum_dim_irrep": 2620,
+        "sum_dim_irrep_sq": 362880,
+        "invariant_sum_dim": 112,
+        "invariant_sum_dim_sq": 6664,
+        "invariant_ratio_dim_sq": 0.0183641975308642,
+        "is_magic_shell": false,
+        "blocks": [
+          {
+            "lambda": [
+              9
+            ],
+            "content_sum": 36,
+            "dim_irrep": 1,
+            "q_to_c_at_q0_50dps": "42.7883526626660372854986974416419427644808341208699876459198",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              8,
+              1
+            ],
+            "content_sum": 27,
+            "dim_irrep": 8,
+            "q_to_c_at_q0_50dps": "16.7299319697396806993452557724059217758710560329347175754096",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              7,
+              2
+            ],
+            "content_sum": 20,
+            "dim_irrep": 27,
+            "q_to_c_at_q0_50dps": "8.05920088958374252506878785148495689088250503058864268958673",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              7,
+              1,
+              1
+            ],
+            "content_sum": 18,
+            "dim_irrep": 28,
+            "q_to_c_at_q0_50dps": "6.54128065921850178531308867444950091927570737768275875302413",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              6,
+              3
+            ],
+            "content_sum": 15,
+            "dim_irrep": 48,
+            "q_to_c_at_q0_50dps": "4.78320490856174864899067153889987045762729107224506692723371",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              6,
+              2,
+              1
+            ],
+            "content_sum": 12,
+            "dim_irrep": 105,
+            "q_to_c_at_q0_50dps": "3.49764065925625734960740499940542057608762185036682376474670",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              6,
+              1,
+              1,
+              1
+            ],
+            "content_sum": 9,
+            "dim_irrep": 56,
+            "q_to_c_at_q0_50dps": "2.55759274694359848259100250398142520844017905503730091229061",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              5,
+              4
+            ],
+            "content_sum": 12,
+            "dim_irrep": 42,
+            "q_to_c_at_q0_50dps": "3.49764065925625734960740499940542057608762185036682376474670",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              5,
+              3,
+              1
+            ],
+            "content_sum": 8,
+            "dim_irrep": 162,
+            "q_to_c_at_q0_50dps": "2.30418206863407775108086405851231558238274918272794391055613",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              5,
+              2,
+              2
+            ],
+            "content_sum": 6,
+            "dim_irrep": 120,
+            "q_to_c_at_q0_50dps": "1.87019802674910801799933088389820991409849480764394697465882",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              5,
+              2,
+              1,
+              1
+            ],
+            "content_sum": 4,
+            "dim_irrep": 189,
+            "q_to_c_at_q0_50dps": "1.51795324981834593754711018277627363962078050951314919580449",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              5,
+              1,
+              1,
+              1,
+              1
+            ],
+            "content_sum": 0,
+            "dim_irrep": 70,
+            "q_to_c_at_q0_50dps": "1.00000000000000000000000000000000000000000000000000000000000",
+            "is_delta_invariant": true
+          },
+          {
+            "lambda": [
+              4,
+              4,
+              1
+            ],
+            "content_sum": 6,
+            "dim_irrep": 84,
+            "q_to_c_at_q0_50dps": "1.87019802674910801799933088389820991409849480764394697465882",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              4,
+              3,
+              2
+            ],
+            "content_sum": 3,
+            "dim_irrep": 168,
+            "q_to_c_at_q0_50dps": "1.36755183695138518796672402990936100071109752077276381077332",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              4,
+              3,
+              1,
+              1
+            ],
+            "content_sum": 1,
+            "dim_irrep": 216,
+            "q_to_c_at_q0_50dps": "1.10997858275138080759166909561076887987449912187357763605672",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              4,
+              2,
+              2,
+              1
+            ],
+            "content_sum": -1,
+            "dim_irrep": 216,
+            "q_to_c_at_q0_50dps": "0.900918283955741492160822882481093936014741626610555073523312",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              4,
+              2,
+              1,
+              1,
+              1
+            ],
+            "content_sum": -4,
+            "dim_irrep": 189,
+            "q_to_c_at_q0_50dps": "0.658781816976030318011303734540239501843453831996491963112646",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              4,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "content_sum": -9,
+            "dim_irrep": 56,
+            "q_to_c_at_q0_50dps": "0.390992663392180232637758708559247290904274760827407802717762",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              3,
+              3,
+              3
+            ],
+            "content_sum": 0,
+            "dim_irrep": 42,
+            "q_to_c_at_q0_50dps": "1.00000000000000000000000000000000000000000000000000000000000",
+            "is_delta_invariant": true
+          },
+          {
+            "lambda": [
+              3,
+              3,
+              2,
+              1
+            ],
+            "content_sum": -3,
+            "dim_irrep": 168,
+            "q_to_c_at_q0_50dps": "0.731233707549433674041352781095106426763989809329484398076866",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              3,
+              3,
+              1,
+              1,
+              1
+            ],
+            "content_sum": -6,
+            "dim_irrep": 120,
+            "q_to_c_at_q0_50dps": "0.534702735056490693741653493000447880900426752232645616770110",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              3,
+              2,
+              2,
+              2
+            ],
+            "content_sum": -6,
+            "dim_irrep": 84,
+            "q_to_c_at_q0_50dps": "0.534702735056490693741653493000447880900426752232645616770110",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              3,
+              2,
+              2,
+              1,
+              1
+            ],
+            "content_sum": -8,
+            "dim_irrep": 162,
+            "q_to_c_at_q0_50dps": "0.433993482378239907693723547213248507434654590285027625443337",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              3,
+              2,
+              1,
+              1,
+              1,
+              1
+            ],
+            "content_sum": -12,
+            "dim_irrep": 105,
+            "q_to_c_at_q0_50dps": "0.285907014876891681894610210738698965405806698056584471472701",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              3,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "content_sum": -18,
+            "dim_irrep": 28,
+            "q_to_c_at_q0_50dps": "0.152875262826510756223798918493848524064704280566771375041246",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              2,
+              2,
+              2,
+              2,
+              1
+            ],
+            "content_sum": -12,
+            "dim_irrep": 42,
+            "q_to_c_at_q0_50dps": "0.285907014876891681894610210738698965405806698056584471472701",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              2,
+              2,
+              2,
+              1,
+              1,
+              1
+            ],
+            "content_sum": -15,
+            "dim_irrep": 48,
+            "q_to_c_at_q0_50dps": "0.209064846502820594807266912401664459968639942449182321495493",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              2,
+              2,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "content_sum": -20,
+            "dim_irrep": 27,
+            "q_to_c_at_q0_50dps": "0.124081781022789465278301797133681016143638901836331217784262",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              2,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "content_sum": -27,
+            "dim_irrep": 8,
+            "q_to_c_at_q0_50dps": "0.0597731061793170037139464574356656919383429951201688373583244",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "content_sum": -36,
+            "dim_irrep": 1,
+            "q_to_c_at_q0_50dps": "0.0233708459842747414901828107537634396921621495557554755294601",
+            "is_delta_invariant": false
+          }
+        ]
+      },
+      "10": {
+        "n": 10,
+        "n_partitions": 42,
+        "Sn_order_factorial": 3628800,
+        "sum_dim_irrep": 9496,
+        "sum_dim_irrep_sq": 3628800,
+        "invariant_sum_dim": 1216,
+        "invariant_sum_dim_sq": 790528,
+        "invariant_ratio_dim_sq": 0.21784832451499117,
+        "is_magic_shell": false,
+        "blocks": [
+          {
+            "lambda": [
+              10
+            ],
+            "content_sum": 45,
+            "dim_irrep": 1,
+            "q_to_c_at_q0_50dps": "109.435180423699466627017353989620073282283950494022879993499",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              9,
+              1
+            ],
+            "content_sum": 35,
+            "dim_irrep": 9,
+            "q_to_c_at_q0_50dps": "38.5488092541421685345854246826582497509340111493335015572739",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              8,
+              2
+            ],
+            "content_sum": 27,
+            "dim_irrep": 35,
+            "q_to_c_at_q0_50dps": "16.7299319697396806993452557724059217758710560329347175754096",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              8,
+              1,
+              1
+            ],
+            "content_sum": 25,
+            "dim_irrep": 36,
+            "q_to_c_at_q0_50dps": "13.5789120935229336723209675477187833204984280295533561396673",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              7,
+              3
+            ],
+            "content_sum": 21,
+            "dim_irrep": 75,
+            "q_to_c_at_q0_50dps": "8.94554038152882997118788304610201955696854853993188616933190",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              7,
+              2,
+              1
+            ],
+            "content_sum": 18,
+            "dim_irrep": 160,
+            "q_to_c_at_q0_50dps": "6.54128065921850178531308867444950091927570737768275875302413",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              7,
+              1,
+              1,
+              1
+            ],
+            "content_sum": 15,
+            "dim_irrep": 84,
+            "q_to_c_at_q0_50dps": "4.78320490856174864899067153889987045762729107224506692723371",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              6,
+              4
+            ],
+            "content_sum": 17,
+            "dim_irrep": 90,
+            "q_to_c_at_q0_50dps": "5.89315934637601408814092452704493517900418919945519368641234",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              6,
+              3,
+              1
+            ],
+            "content_sum": 13,
+            "dim_irrep": 315,
+            "q_to_c_at_q0_50dps": "3.88230622193486577076173021072103590257520192345833022768130",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              6,
+              2,
+              2
+            ],
+            "content_sum": 11,
+            "dim_irrep": 225,
+            "q_to_c_at_q0_50dps": "3.15108842063097573113437369850435938970605994337703899955712",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              6,
+              2,
+              1,
+              1
+            ],
+            "content_sum": 9,
+            "dim_irrep": 350,
+            "q_to_c_at_q0_50dps": "2.55759274694359848259100250398142520844017905503730091229061",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              6,
+              1,
+              1,
+              1,
+              1
+            ],
+            "content_sum": 5,
+            "dim_irrep": 126,
+            "q_to_c_at_q0_50dps": "1.68489559691622032007890931933453654876143904310339393945169",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              5,
+              5
+            ],
+            "content_sum": 15,
+            "dim_irrep": 42,
+            "q_to_c_at_q0_50dps": "4.78320490856174864899067153889987045762729107224506692723371",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              5,
+              4,
+              1
+            ],
+            "content_sum": 10,
+            "dim_irrep": 288,
+            "q_to_c_at_q0_50dps": "2.83887317250766638137278904418573560704794500488836767353454",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              5,
+              3,
+              2
+            ],
+            "content_sum": 7,
+            "dim_irrep": 450,
+            "q_to_c_at_q0_50dps": "2.07587975519540389127881851565233872480080841124047842901098",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              5,
+              3,
+              1,
+              1
+            ],
+            "content_sum": 5,
+            "dim_irrep": 567,
+            "q_to_c_at_q0_50dps": "1.68489559691622032007890931933453654876143904310339393945169",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              5,
+              2,
+              2,
+              1
+            ],
+            "content_sum": 3,
+            "dim_irrep": 525,
+            "q_to_c_at_q0_50dps": "1.36755183695138518796672402990936100071109752077276381077332",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              5,
+              2,
+              1,
+              1,
+              1
+            ],
+            "content_sum": 0,
+            "dim_irrep": 448,
+            "q_to_c_at_q0_50dps": "1.00000000000000000000000000000000000000000000000000000000000",
+            "is_delta_invariant": true
+          },
+          {
+            "lambda": [
+              5,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "content_sum": -5,
+            "dim_irrep": 126,
+            "q_to_c_at_q0_50dps": "0.593508584051290603023777070219055928490136130718447055666765",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              4,
+              4,
+              2
+            ],
+            "content_sum": 5,
+            "dim_irrep": 252,
+            "q_to_c_at_q0_50dps": "1.68489559691622032007890931933453654876143904310339393945169",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              4,
+              4,
+              1,
+              1
+            ],
+            "content_sum": 3,
+            "dim_irrep": 300,
+            "q_to_c_at_q0_50dps": "1.36755183695138518796672402990936100071109752077276381077332",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              4,
+              3,
+              3
+            ],
+            "content_sum": 3,
+            "dim_irrep": 210,
+            "q_to_c_at_q0_50dps": "1.36755183695138518796672402990936100071109752077276381077332",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              4,
+              3,
+              2,
+              1
+            ],
+            "content_sum": 0,
+            "dim_irrep": 768,
+            "q_to_c_at_q0_50dps": "1.00000000000000000000000000000000000000000000000000000000000",
+            "is_delta_invariant": true
+          },
+          {
+            "lambda": [
+              4,
+              3,
+              1,
+              1,
+              1
+            ],
+            "content_sum": -3,
+            "dim_irrep": 525,
+            "q_to_c_at_q0_50dps": "0.731233707549433674041352781095106426763989809329484398076866",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              4,
+              2,
+              2,
+              2
+            ],
+            "content_sum": -3,
+            "dim_irrep": 300,
+            "q_to_c_at_q0_50dps": "0.731233707549433674041352781095106426763989809329484398076866",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              4,
+              2,
+              2,
+              1,
+              1
+            ],
+            "content_sum": -5,
+            "dim_irrep": 567,
+            "q_to_c_at_q0_50dps": "0.593508584051290603023777070219055928490136130718447055666765",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              4,
+              2,
+              1,
+              1,
+              1,
+              1
+            ],
+            "content_sum": -9,
+            "dim_irrep": 350,
+            "q_to_c_at_q0_50dps": "0.390992663392180232637758708559247290904274760827407802717762",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              4,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "content_sum": -15,
+            "dim_irrep": 84,
+            "q_to_c_at_q0_50dps": "0.209064846502820594807266912401664459968639942449182321495493",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              3,
+              3,
+              3,
+              1
+            ],
+            "content_sum": -3,
+            "dim_irrep": 210,
+            "q_to_c_at_q0_50dps": "0.731233707549433674041352781095106426763989809329484398076866",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              3,
+              3,
+              2,
+              2
+            ],
+            "content_sum": -5,
+            "dim_irrep": 252,
+            "q_to_c_at_q0_50dps": "0.593508584051290603023777070219055928490136130718447055666765",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              3,
+              3,
+              2,
+              1,
+              1
+            ],
+            "content_sum": -7,
+            "dim_irrep": 450,
+            "q_to_c_at_q0_50dps": "0.481723470493535093676572865537988504618947334405800517211632",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              3,
+              3,
+              1,
+              1,
+              1,
+              1
+            ],
+            "content_sum": -11,
+            "dim_irrep": 225,
+            "q_to_c_at_q0_50dps": "0.317350663171730177371296737673006904305520865799688552791406",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              3,
+              2,
+              2,
+              2,
+              1
+            ],
+            "content_sum": -10,
+            "dim_irrep": 288,
+            "q_to_c_at_q0_50dps": "0.352252439342567882348926820513303597408754696214058669108009",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              3,
+              2,
+              2,
+              1,
+              1,
+              1
+            ],
+            "content_sum": -13,
+            "dim_irrep": 315,
+            "q_to_c_at_q0_50dps": "0.257578857213797907447161460643387709742581883483456029670885",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              3,
+              2,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "content_sum": -18,
+            "dim_irrep": 160,
+            "q_to_c_at_q0_50dps": "0.152875262826510756223798918493848524064704280566771375041246",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              3,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "content_sum": -25,
+            "dim_irrep": 36,
+            "q_to_c_at_q0_50dps": "0.0736436021613980766403651951779223270519040869837550865792684",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              2,
+              2,
+              2,
+              2,
+              2
+            ],
+            "content_sum": -15,
+            "dim_irrep": 42,
+            "q_to_c_at_q0_50dps": "0.209064846502820594807266912401664459968639942449182321495493",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              2,
+              2,
+              2,
+              2,
+              1,
+              1
+            ],
+            "content_sum": -17,
+            "dim_irrep": 90,
+            "q_to_c_at_q0_50dps": "0.169688267569915259644412319706374078627536814865793570131727",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              2,
+              2,
+              2,
+              1,
+              1,
+              1,
+              1
+            ],
+            "content_sum": -21,
+            "dim_irrep": 75,
+            "q_to_c_at_q0_50dps": "0.111787545229223575473709051463929479257916542551492686068763",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              2,
+              2,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "content_sum": -27,
+            "dim_irrep": 35,
+            "q_to_c_at_q0_50dps": "0.0597731061793170037139464574356656919383429951201688373583244",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              2,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "content_sum": -35,
+            "dim_irrep": 9,
+            "q_to_c_at_q0_50dps": "0.0259411385033260769874545550790210428270300456828621368541334",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "content_sum": -45,
+            "dim_irrep": 1,
+            "q_to_c_at_q0_50dps": "0.00913782931712002111393726255566705475376110176092746266142523",
+            "is_delta_invariant": false
+          }
+        ]
+      },
+      "11": {
+        "n": 11,
+        "n_partitions": 56,
+        "Sn_order_factorial": 39916800,
+        "sum_dim_irrep": 35696,
+        "sum_dim_irrep_sq": 39916800,
+        "invariant_sum_dim": 1440,
+        "invariant_sum_dim_sq": 1474848,
+        "invariant_ratio_dim_sq": 0.036948051948051945,
+        "is_magic_shell": false,
+        "blocks": [
+          {
+            "lambda": [
+              11
+            ],
+            "content_sum": 55,
+            "dim_irrep": 1,
+            "q_to_c_at_q0_50dps": "310.672597833376570838726687784172218213449135956948618072378",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              10,
+              1
+            ],
+            "content_sum": 44,
+            "dim_irrep": 10,
+            "q_to_c_at_q0_50dps": "98.5921549517062786146636775218194206690817989306737195637935",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              9,
+              2
+            ],
+            "content_sum": 35,
+            "dim_irrep": 44,
+            "q_to_c_at_q0_50dps": "38.5488092541421685345854246826582497509340111493335015572739",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              9,
+              1,
+              1
+            ],
+            "content_sum": 33,
+            "dim_irrep": 45,
+            "q_to_c_at_q0_50dps": "31.2882857574539687569011307557952330767975594114112326841625",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              8,
+              3
+            ],
+            "content_sum": 28,
+            "dim_irrep": 110,
+            "q_to_c_at_q0_50dps": "18.5698661772986674861686999126443685095810985203143097266564",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              8,
+              2,
+              1
+            ],
+            "content_sum": 25,
+            "dim_irrep": 231,
+            "q_to_c_at_q0_50dps": "13.5789120935229336723209675477187833204984280295533561396673",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              8,
+              1,
+              1,
+              1
+            ],
+            "content_sum": 22,
+            "dim_irrep": 120,
+            "q_to_c_at_q0_50dps": "9.92935823463461703975524722389987383114204521886521714347598",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              7,
+              4
+            ],
+            "content_sum": 23,
+            "dim_irrep": 165,
+            "q_to_c_at_q0_50dps": "11.0213749809104847191073152487926717330723369064454461954242",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              7,
+              3,
+              1
+            ],
+            "content_sum": 19,
+            "dim_irrep": 550,
+            "q_to_c_at_q0_50dps": "7.26068143549837058423365406546123099660346143515652639055644",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              7,
+              2,
+              2
+            ],
+            "content_sum": 17,
+            "dim_irrep": 385,
+            "q_to_c_at_q0_50dps": "5.89315934637601408814092452704493517900418919945519368641234",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              7,
+              2,
+              1,
+              1
+            ],
+            "content_sum": 15,
+            "dim_irrep": 594,
+            "q_to_c_at_q0_50dps": "4.78320490856174864899067153889987045762729107224506692723371",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              7,
+              1,
+              1,
+              1,
+              1
+            ],
+            "content_sum": 11,
+            "dim_irrep": 210,
+            "q_to_c_at_q0_50dps": "3.15108842063097573113437369850435938970605994337703899955712",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              6,
+              5
+            ],
+            "content_sum": 20,
+            "dim_irrep": 132,
+            "q_to_c_at_q0_50dps": "8.05920088958374252506878785148495689088250503058864268958673",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              6,
+              4,
+              1
+            ],
+            "content_sum": 15,
+            "dim_irrep": 693,
+            "q_to_c_at_q0_50dps": "4.78320490856174864899067153889987045762729107224506692723371",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              6,
+              3,
+              2
+            ],
+            "content_sum": 12,
+            "dim_irrep": 990,
+            "q_to_c_at_q0_50dps": "3.49764065925625734960740499940542057608762185036682376474670",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              6,
+              3,
+              1,
+              1
+            ],
+            "content_sum": 10,
+            "dim_irrep": 1232,
+            "q_to_c_at_q0_50dps": "2.83887317250766638137278904418573560704794500488836767353454",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              6,
+              2,
+              2,
+              1
+            ],
+            "content_sum": 8,
+            "dim_irrep": 1100,
+            "q_to_c_at_q0_50dps": "2.30418206863407775108086405851231558238274918272794391055613",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              6,
+              2,
+              1,
+              1,
+              1
+            ],
+            "content_sum": 5,
+            "dim_irrep": 924,
+            "q_to_c_at_q0_50dps": "1.68489559691622032007890931933453654876143904310339393945169",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              6,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "content_sum": 0,
+            "dim_irrep": 252,
+            "q_to_c_at_q0_50dps": "1.00000000000000000000000000000000000000000000000000000000000",
+            "is_delta_invariant": true
+          },
+          {
+            "lambda": [
+              5,
+              5,
+              1
+            ],
+            "content_sum": 13,
+            "dim_irrep": 330,
+            "q_to_c_at_q0_50dps": "3.88230622193486577076173021072103590257520192345833022768130",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              5,
+              4,
+              2
+            ],
+            "content_sum": 9,
+            "dim_irrep": 990,
+            "q_to_c_at_q0_50dps": "2.55759274694359848259100250398142520844017905503730091229061",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              5,
+              4,
+              1,
+              1
+            ],
+            "content_sum": 7,
+            "dim_irrep": 1155,
+            "q_to_c_at_q0_50dps": "2.07587975519540389127881851565233872480080841124047842901098",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              5,
+              3,
+              3
+            ],
+            "content_sum": 7,
+            "dim_irrep": 660,
+            "q_to_c_at_q0_50dps": "2.07587975519540389127881851565233872480080841124047842901098",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              5,
+              3,
+              2,
+              1
+            ],
+            "content_sum": 4,
+            "dim_irrep": 2310,
+            "q_to_c_at_q0_50dps": "1.51795324981834593754711018277627363962078050951314919580449",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              5,
+              3,
+              1,
+              1,
+              1
+            ],
+            "content_sum": 1,
+            "dim_irrep": 1540,
+            "q_to_c_at_q0_50dps": "1.10997858275138080759166909561076887987449912187357763605672",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              5,
+              2,
+              2,
+              2
+            ],
+            "content_sum": 1,
+            "dim_irrep": 825,
+            "q_to_c_at_q0_50dps": "1.10997858275138080759166909561076887987449912187357763605672",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              5,
+              2,
+              2,
+              1,
+              1
+            ],
+            "content_sum": -1,
+            "dim_irrep": 1540,
+            "q_to_c_at_q0_50dps": "0.900918283955741492160822882481093936014741626610555073523312",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              5,
+              2,
+              1,
+              1,
+              1,
+              1
+            ],
+            "content_sum": -5,
+            "dim_irrep": 924,
+            "q_to_c_at_q0_50dps": "0.593508584051290603023777070219055928490136130718447055666765",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              5,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "content_sum": -11,
+            "dim_irrep": 210,
+            "q_to_c_at_q0_50dps": "0.317350663171730177371296737673006904305520865799688552791406",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              4,
+              4,
+              3
+            ],
+            "content_sum": 5,
+            "dim_irrep": 462,
+            "q_to_c_at_q0_50dps": "1.68489559691622032007890931933453654876143904310339393945169",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              4,
+              4,
+              2,
+              1
+            ],
+            "content_sum": 2,
+            "dim_irrep": 1320,
+            "q_to_c_at_q0_50dps": "1.23205245416676393126980451353563618484968142291699735949467",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              4,
+              4,
+              1,
+              1,
+              1
+            ],
+            "content_sum": -1,
+            "dim_irrep": 825,
+            "q_to_c_at_q0_50dps": "0.900918283955741492160822882481093936014741626610555073523312",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              4,
+              3,
+              3,
+              1
+            ],
+            "content_sum": 0,
+            "dim_irrep": 1188,
+            "q_to_c_at_q0_50dps": "1.00000000000000000000000000000000000000000000000000000000000",
+            "is_delta_invariant": true
+          },
+          {
+            "lambda": [
+              4,
+              3,
+              2,
+              2
+            ],
+            "content_sum": -2,
+            "dim_irrep": 1320,
+            "q_to_c_at_q0_50dps": "0.811653754365758058132214822141752124918532537796507916290360",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              4,
+              3,
+              2,
+              1,
+              1
+            ],
+            "content_sum": -4,
+            "dim_irrep": 2310,
+            "q_to_c_at_q0_50dps": "0.658781816976030318011303734540239501843453831996491963112646",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              4,
+              3,
+              1,
+              1,
+              1,
+              1
+            ],
+            "content_sum": -8,
+            "dim_irrep": 1100,
+            "q_to_c_at_q0_50dps": "0.433993482378239907693723547213248507434654590285027625443337",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              4,
+              2,
+              2,
+              2,
+              1
+            ],
+            "content_sum": -7,
+            "dim_irrep": 1155,
+            "q_to_c_at_q0_50dps": "0.481723470493535093676572865537988504618947334405800517211632",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              4,
+              2,
+              2,
+              1,
+              1,
+              1
+            ],
+            "content_sum": -10,
+            "dim_irrep": 1232,
+            "q_to_c_at_q0_50dps": "0.352252439342567882348926820513303597408754696214058669108009",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              4,
+              2,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "content_sum": -15,
+            "dim_irrep": 594,
+            "q_to_c_at_q0_50dps": "0.209064846502820594807266912401664459968639942449182321495493",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              4,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "content_sum": -22,
+            "dim_irrep": 120,
+            "q_to_c_at_q0_50dps": "0.100711443415536940321268487560508674667946557647566400112834",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              3,
+              3,
+              3,
+              2
+            ],
+            "content_sum": -5,
+            "dim_irrep": 462,
+            "q_to_c_at_q0_50dps": "0.593508584051290603023777070219055928490136130718447055666765",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              3,
+              3,
+              3,
+              1,
+              1
+            ],
+            "content_sum": -7,
+            "dim_irrep": 660,
+            "q_to_c_at_q0_50dps": "0.481723470493535093676572865537988504618947334405800517211632",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              3,
+              3,
+              2,
+              2,
+              1
+            ],
+            "content_sum": -9,
+            "dim_irrep": 990,
+            "q_to_c_at_q0_50dps": "0.390992663392180232637758708559247290904274760827407802717762",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              3,
+              3,
+              2,
+              1,
+              1,
+              1
+            ],
+            "content_sum": -12,
+            "dim_irrep": 990,
+            "q_to_c_at_q0_50dps": "0.285907014876891681894610210738698965405806698056584471472701",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              3,
+              3,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "content_sum": -17,
+            "dim_irrep": 385,
+            "q_to_c_at_q0_50dps": "0.169688267569915259644412319706374078627536814865793570131727",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              3,
+              2,
+              2,
+              2,
+              2
+            ],
+            "content_sum": -13,
+            "dim_irrep": 330,
+            "q_to_c_at_q0_50dps": "0.257578857213797907447161460643387709742581883483456029670885",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              3,
+              2,
+              2,
+              2,
+              1,
+              1
+            ],
+            "content_sum": -15,
+            "dim_irrep": 693,
+            "q_to_c_at_q0_50dps": "0.209064846502820594807266912401664459968639942449182321495493",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              3,
+              2,
+              2,
+              1,
+              1,
+              1,
+              1
+            ],
+            "content_sum": -19,
+            "dim_irrep": 550,
+            "q_to_c_at_q0_50dps": "0.137728119444943029186463853121931110364159696523850936973826",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              3,
+              2,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "content_sum": -25,
+            "dim_irrep": 231,
+            "q_to_c_at_q0_50dps": "0.0736436021613980766403651951779223270519040869837550865792684",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              3,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "content_sum": -33,
+            "dim_irrep": 45,
+            "q_to_c_at_q0_50dps": "0.0319608433569028265530154612262730525618944680524276159948637",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              2,
+              2,
+              2,
+              2,
+              2,
+              1
+            ],
+            "content_sum": -20,
+            "dim_irrep": 132,
+            "q_to_c_at_q0_50dps": "0.124081781022789465278301797133681016143638901836331217784262",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              2,
+              2,
+              2,
+              2,
+              1,
+              1,
+              1
+            ],
+            "content_sum": -23,
+            "dim_irrep": 165,
+            "q_to_c_at_q0_50dps": "0.0907327807766313010049462301477026764565510135897520944424590",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              2,
+              2,
+              2,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "content_sum": -28,
+            "dim_irrep": 110,
+            "q_to_c_at_q0_50dps": "0.0538506842457746027895810014880154948292928002547159526961173",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              2,
+              2,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "content_sum": -35,
+            "dim_irrep": 44,
+            "q_to_c_at_q0_50dps": "0.0259411385033260769874545550790210428270300456828621368541334",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              2,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "content_sum": -44,
+            "dim_irrep": 10,
+            "q_to_c_at_q0_50dps": "0.0101427948348408989317906147168542054615100074645029695202273",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "content_sum": -55,
+            "dim_irrep": 1,
+            "q_to_c_at_q0_50dps": "0.00321882266725155873154764333102980321013554043091710129304878",
+            "is_delta_invariant": false
+          }
+        ]
+      },
+      "12": {
+        "n": 12,
+        "n_partitions": 77,
+        "Sn_order_factorial": 479001600,
+        "sum_dim_irrep": 140152,
+        "sum_dim_irrep_sq": 479001600,
+        "invariant_sum_dim": 12440,
+        "invariant_sum_dim_sq": 70669600,
+        "invariant_ratio_dim_sq": 0.14753520656298433,
+        "is_magic_shell": false,
+        "blocks": [
+          {
+            "lambda": [
+              12
+            ],
+            "content_sum": 66,
+            "dim_irrep": 1,
+            "q_to_c_at_q0_50dps": "978.956825640096871430551377399727630523736170749086518734484",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              11,
+              1
+            ],
+            "content_sum": 54,
+            "dim_irrep": 11,
+            "q_to_c_at_q0_50dps": "279.890623712117832519204071367495124189370062104580554686647",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              10,
+              2
+            ],
+            "content_sum": 44,
+            "dim_irrep": 54,
+            "q_to_c_at_q0_50dps": "98.5921549517062786146636775218194206690817989306737195637935",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              10,
+              1,
+              1
+            ],
+            "content_sum": 42,
+            "dim_irrep": 55,
+            "q_to_c_at_q0_50dps": "80.0226927175629648851682097920483783977061071915573517853164",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              9,
+              3
+            ],
+            "content_sum": 36,
+            "dim_irrep": 154,
+            "q_to_c_at_q0_50dps": "42.7883526626660372854986974416419427644808341208699876459198",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              9,
+              2,
+              1
+            ],
+            "content_sum": 33,
+            "dim_irrep": 320,
+            "q_to_c_at_q0_50dps": "31.2882857574539687569011307557952330767975594114112326841625",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              9,
+              1,
+              1,
+              1
+            ],
+            "content_sum": 30,
+            "dim_irrep": 165,
+            "q_to_c_at_q0_50dps": "22.8790491972892062541446602468063912871337227548951550510644",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              8,
+              4
+            ],
+            "content_sum": 30,
+            "dim_irrep": 275,
+            "q_to_c_at_q0_50dps": "22.8790491972892062541446602468063912871337227548951550510644",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              8,
+              3,
+              1
+            ],
+            "content_sum": 26,
+            "dim_irrep": 891,
+            "q_to_c_at_q0_50dps": "15.0723016008741712371304242209537610608003125779892185720498",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              8,
+              2,
+              2
+            ],
+            "content_sum": 24,
+            "dim_irrep": 616,
+            "q_to_c_at_q0_50dps": "12.2334901812825465313745426560283514550414388003388662331005",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              8,
+              2,
+              1,
+              1
+            ],
+            "content_sum": 22,
+            "dim_irrep": 945,
+            "q_to_c_at_q0_50dps": "9.92935823463461703975524722389987383114204521886521714347598",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              8,
+              1,
+              1,
+              1,
+              1
+            ],
+            "content_sum": 18,
+            "dim_irrep": 330,
+            "q_to_c_at_q0_50dps": "6.54128065921850178531308867444950091927570737768275875302413",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              7,
+              5
+            ],
+            "content_sum": 26,
+            "dim_irrep": 297,
+            "q_to_c_at_q0_50dps": "15.0723016008741712371304242209537610608003125779892185720498",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              7,
+              4,
+              1
+            ],
+            "content_sum": 21,
+            "dim_irrep": 1408,
+            "q_to_c_at_q0_50dps": "8.94554038152882997118788304610201955696854853993188616933190",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              7,
+              3,
+              2
+            ],
+            "content_sum": 18,
+            "dim_irrep": 1925,
+            "q_to_c_at_q0_50dps": "6.54128065921850178531308867444950091927570737768275875302413",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              7,
+              3,
+              1,
+              1
+            ],
+            "content_sum": 16,
+            "dim_irrep": 2376,
+            "q_to_c_at_q0_50dps": "5.30925500541481779191864375755532684588959669528486820658757",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              7,
+              2,
+              2,
+              1
+            ],
+            "content_sum": 14,
+            "dim_irrep": 2079,
+            "q_to_c_at_q0_50dps": "4.30927675803012998894602351465058548119339172187833299607747",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              7,
+              2,
+              1,
+              1,
+              1
+            ],
+            "content_sum": 11,
+            "dim_irrep": 1728,
+            "q_to_c_at_q0_50dps": "3.15108842063097573113437369850435938970605994337703899955712",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              7,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "content_sum": 6,
+            "dim_irrep": 462,
+            "q_to_c_at_q0_50dps": "1.87019802674910801799933088389820991409849480764394697465882",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              6,
+              6
+            ],
+            "content_sum": 24,
+            "dim_irrep": 132,
+            "q_to_c_at_q0_50dps": "12.2334901812825465313745426560283514550414388003388662331005",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              6,
+              5,
+              1
+            ],
+            "content_sum": 18,
+            "dim_irrep": 1155,
+            "q_to_c_at_q0_50dps": "6.54128065921850178531308867444950091927570737768275875302413",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              6,
+              4,
+              2
+            ],
+            "content_sum": 14,
+            "dim_irrep": 2673,
+            "q_to_c_at_q0_50dps": "4.30927675803012998894602351465058548119339172187833299607747",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              6,
+              4,
+              1,
+              1
+            ],
+            "content_sum": 12,
+            "dim_irrep": 3080,
+            "q_to_c_at_q0_50dps": "3.49764065925625734960740499940542057608762185036682376474670",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              6,
+              3,
+              3
+            ],
+            "content_sum": 12,
+            "dim_irrep": 1650,
+            "q_to_c_at_q0_50dps": "3.49764065925625734960740499940542057608762185036682376474670",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              6,
+              3,
+              2,
+              1
+            ],
+            "content_sum": 9,
+            "dim_irrep": 5632,
+            "q_to_c_at_q0_50dps": "2.55759274694359848259100250398142520844017905503730091229061",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              6,
+              3,
+              1,
+              1,
+              1
+            ],
+            "content_sum": 6,
+            "dim_irrep": 3696,
+            "q_to_c_at_q0_50dps": "1.87019802674910801799933088389820991409849480764394697465882",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              6,
+              2,
+              2,
+              2
+            ],
+            "content_sum": 6,
+            "dim_irrep": 1925,
+            "q_to_c_at_q0_50dps": "1.87019802674910801799933088389820991409849480764394697465882",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              6,
+              2,
+              2,
+              1,
+              1
+            ],
+            "content_sum": 4,
+            "dim_irrep": 3564,
+            "q_to_c_at_q0_50dps": "1.51795324981834593754711018277627363962078050951314919580449",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              6,
+              2,
+              1,
+              1,
+              1,
+              1
+            ],
+            "content_sum": 0,
+            "dim_irrep": 2100,
+            "q_to_c_at_q0_50dps": "1.00000000000000000000000000000000000000000000000000000000000",
+            "is_delta_invariant": true
+          },
+          {
+            "lambda": [
+              6,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "content_sum": -6,
+            "dim_irrep": 462,
+            "q_to_c_at_q0_50dps": "0.534702735056490693741653493000447880900426752232645616770110",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              5,
+              5,
+              2
+            ],
+            "content_sum": 12,
+            "dim_irrep": 1320,
+            "q_to_c_at_q0_50dps": "3.49764065925625734960740499940542057608762185036682376474670",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              5,
+              5,
+              1,
+              1
+            ],
+            "content_sum": 10,
+            "dim_irrep": 1485,
+            "q_to_c_at_q0_50dps": "2.83887317250766638137278904418573560704794500488836767353454",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              5,
+              4,
+              3
+            ],
+            "content_sum": 9,
+            "dim_irrep": 2112,
+            "q_to_c_at_q0_50dps": "2.55759274694359848259100250398142520844017905503730091229061",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              5,
+              4,
+              2,
+              1
+            ],
+            "content_sum": 6,
+            "dim_irrep": 5775,
+            "q_to_c_at_q0_50dps": "1.87019802674910801799933088389820991409849480764394697465882",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              5,
+              4,
+              1,
+              1,
+              1
+            ],
+            "content_sum": 3,
+            "dim_irrep": 3520,
+            "q_to_c_at_q0_50dps": "1.36755183695138518796672402990936100071109752077276381077332",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              5,
+              3,
+              3,
+              1
+            ],
+            "content_sum": 4,
+            "dim_irrep": 4158,
+            "q_to_c_at_q0_50dps": "1.51795324981834593754711018277627363962078050951314919580449",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              5,
+              3,
+              2,
+              2
+            ],
+            "content_sum": 2,
+            "dim_irrep": 4455,
+            "q_to_c_at_q0_50dps": "1.23205245416676393126980451353563618484968142291699735949467",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              5,
+              3,
+              2,
+              1,
+              1
+            ],
+            "content_sum": 0,
+            "dim_irrep": 7700,
+            "q_to_c_at_q0_50dps": "1.00000000000000000000000000000000000000000000000000000000000",
+            "is_delta_invariant": true
+          },
+          {
+            "lambda": [
+              5,
+              3,
+              1,
+              1,
+              1,
+              1
+            ],
+            "content_sum": -4,
+            "dim_irrep": 3564,
+            "q_to_c_at_q0_50dps": "0.658781816976030318011303734540239501843453831996491963112646",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              5,
+              2,
+              2,
+              2,
+              1
+            ],
+            "content_sum": -3,
+            "dim_irrep": 3520,
+            "q_to_c_at_q0_50dps": "0.731233707549433674041352781095106426763989809329484398076866",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              5,
+              2,
+              2,
+              1,
+              1,
+              1
+            ],
+            "content_sum": -6,
+            "dim_irrep": 3696,
+            "q_to_c_at_q0_50dps": "0.534702735056490693741653493000447880900426752232645616770110",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              5,
+              2,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "content_sum": -11,
+            "dim_irrep": 1728,
+            "q_to_c_at_q0_50dps": "0.317350663171730177371296737673006904305520865799688552791406",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              5,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "content_sum": -18,
+            "dim_irrep": 330,
+            "q_to_c_at_q0_50dps": "0.152875262826510756223798918493848524064704280566771375041246",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              4,
+              4,
+              4
+            ],
+            "content_sum": 6,
+            "dim_irrep": 462,
+            "q_to_c_at_q0_50dps": "1.87019802674910801799933088389820991409849480764394697465882",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              4,
+              4,
+              3,
+              1
+            ],
+            "content_sum": 2,
+            "dim_irrep": 2970,
+            "q_to_c_at_q0_50dps": "1.23205245416676393126980451353563618484968142291699735949467",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              4,
+              4,
+              2,
+              2
+            ],
+            "content_sum": 0,
+            "dim_irrep": 2640,
+            "q_to_c_at_q0_50dps": "1.00000000000000000000000000000000000000000000000000000000000",
+            "is_delta_invariant": true
+          },
+          {
+            "lambda": [
+              4,
+              4,
+              2,
+              1,
+              1
+            ],
+            "content_sum": -2,
+            "dim_irrep": 4455,
+            "q_to_c_at_q0_50dps": "0.811653754365758058132214822141752124918532537796507916290360",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              4,
+              4,
+              1,
+              1,
+              1,
+              1
+            ],
+            "content_sum": -6,
+            "dim_irrep": 1925,
+            "q_to_c_at_q0_50dps": "0.534702735056490693741653493000447880900426752232645616770110",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              4,
+              3,
+              3,
+              2
+            ],
+            "content_sum": -2,
+            "dim_irrep": 2970,
+            "q_to_c_at_q0_50dps": "0.811653754365758058132214822141752124918532537796507916290360",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              4,
+              3,
+              3,
+              1,
+              1
+            ],
+            "content_sum": -4,
+            "dim_irrep": 4158,
+            "q_to_c_at_q0_50dps": "0.658781816976030318011303734540239501843453831996491963112646",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              4,
+              3,
+              2,
+              2,
+              1
+            ],
+            "content_sum": -6,
+            "dim_irrep": 5775,
+            "q_to_c_at_q0_50dps": "0.534702735056490693741653493000447880900426752232645616770110",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              4,
+              3,
+              2,
+              1,
+              1,
+              1
+            ],
+            "content_sum": -9,
+            "dim_irrep": 5632,
+            "q_to_c_at_q0_50dps": "0.390992663392180232637758708559247290904274760827407802717762",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              4,
+              3,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "content_sum": -14,
+            "dim_irrep": 2079,
+            "q_to_c_at_q0_50dps": "0.232057502024335776028884365679950032217186821056796504157747",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              4,
+              2,
+              2,
+              2,
+              2
+            ],
+            "content_sum": -10,
+            "dim_irrep": 1485,
+            "q_to_c_at_q0_50dps": "0.352252439342567882348926820513303597408754696214058669108009",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              4,
+              2,
+              2,
+              2,
+              1,
+              1
+            ],
+            "content_sum": -12,
+            "dim_irrep": 3080,
+            "q_to_c_at_q0_50dps": "0.285907014876891681894610210738698965405806698056584471472701",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              4,
+              2,
+              2,
+              1,
+              1,
+              1,
+              1
+            ],
+            "content_sum": -16,
+            "dim_irrep": 2376,
+            "q_to_c_at_q0_50dps": "0.188350342746791633285780771373094741990288075408242375863279",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              4,
+              2,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "content_sum": -22,
+            "dim_irrep": 945,
+            "q_to_c_at_q0_50dps": "0.100711443415536940321268487560508674667946557647566400112834",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              4,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "content_sum": -30,
+            "dim_irrep": 165,
+            "q_to_c_at_q0_50dps": "0.0437081100432479366908478640066326344064153973539324448870002",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              3,
+              3,
+              3,
+              3
+            ],
+            "content_sum": -6,
+            "dim_irrep": 462,
+            "q_to_c_at_q0_50dps": "0.534702735056490693741653493000447880900426752232645616770110",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              3,
+              3,
+              3,
+              2,
+              1
+            ],
+            "content_sum": -9,
+            "dim_irrep": 2112,
+            "q_to_c_at_q0_50dps": "0.390992663392180232637758708559247290904274760827407802717762",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              3,
+              3,
+              3,
+              1,
+              1,
+              1
+            ],
+            "content_sum": -12,
+            "dim_irrep": 1650,
+            "q_to_c_at_q0_50dps": "0.285907014876891681894610210738698965405806698056584471472701",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              3,
+              3,
+              2,
+              2,
+              2
+            ],
+            "content_sum": -12,
+            "dim_irrep": 1320,
+            "q_to_c_at_q0_50dps": "0.285907014876891681894610210738698965405806698056584471472701",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              3,
+              3,
+              2,
+              2,
+              1,
+              1
+            ],
+            "content_sum": -14,
+            "dim_irrep": 2673,
+            "q_to_c_at_q0_50dps": "0.232057502024335776028884365679950032217186821056796504157747",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              3,
+              3,
+              2,
+              1,
+              1,
+              1,
+              1
+            ],
+            "content_sum": -18,
+            "dim_irrep": 1925,
+            "q_to_c_at_q0_50dps": "0.152875262826510756223798918493848524064704280566771375041246",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              3,
+              3,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "content_sum": -24,
+            "dim_irrep": 616,
+            "q_to_c_at_q0_50dps": "0.0817428211558151615127907578683825757572983868183720774774712",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              3,
+              2,
+              2,
+              2,
+              2,
+              1
+            ],
+            "content_sum": -18,
+            "dim_irrep": 1155,
+            "q_to_c_at_q0_50dps": "0.152875262826510756223798918493848524064704280566771375041246",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              3,
+              2,
+              2,
+              2,
+              1,
+              1,
+              1
+            ],
+            "content_sum": -21,
+            "dim_irrep": 1408,
+            "q_to_c_at_q0_50dps": "0.111787545229223575473709051463929479257916542551492686068763",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              3,
+              2,
+              2,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "content_sum": -26,
+            "dim_irrep": 891,
+            "q_to_c_at_q0_50dps": "0.0663468676835660903041728190827335997198757149028545716775769",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              3,
+              2,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "content_sum": -33,
+            "dim_irrep": 320,
+            "q_to_c_at_q0_50dps": "0.0319608433569028265530154612262730525618944680524276159948637",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              3,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "content_sum": -42,
+            "dim_irrep": 55,
+            "q_to_c_at_q0_50dps": "0.0124964552683757065691997413678138548759838872190705487083652",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              2,
+              2,
+              2,
+              2,
+              2,
+              2
+            ],
+            "content_sum": -24,
+            "dim_irrep": 132,
+            "q_to_c_at_q0_50dps": "0.0817428211558151615127907578683825757572983868183720774774712",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              2,
+              2,
+              2,
+              2,
+              2,
+              1,
+              1
+            ],
+            "content_sum": -26,
+            "dim_irrep": 297,
+            "q_to_c_at_q0_50dps": "0.0663468676835660903041728190827335997198757149028545716775769",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              2,
+              2,
+              2,
+              2,
+              1,
+              1,
+              1,
+              1
+            ],
+            "content_sum": -30,
+            "dim_irrep": 275,
+            "q_to_c_at_q0_50dps": "0.0437081100432479366908478640066326344064153973539324448870002",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              2,
+              2,
+              2,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "content_sum": -36,
+            "dim_irrep": 154,
+            "q_to_c_at_q0_50dps": "0.0233708459842747414901828107537634396921621495557554755294601",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              2,
+              2,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "content_sum": -44,
+            "dim_irrep": 54,
+            "q_to_c_at_q0_50dps": "0.0101427948348408989317906147168542054615100074645029695202273",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              2,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "content_sum": -54,
+            "dim_irrep": 11,
+            "q_to_c_at_q0_50dps": "0.00357282422232390457334681837820055477896866108489732623008785",
+            "is_delta_invariant": false
+          },
+          {
+            "lambda": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "content_sum": -66,
+            "dim_irrep": 1,
+            "q_to_c_at_q0_50dps": "0.00102149550808447953881394426718283918864956992126517473069461",
+            "is_delta_invariant": false
+          }
+        ]
+      }
+    },
+    "magic_findings": {
+      "2": {
+        "invariant_sum_dim_sq": 0,
+        "Sn_order": 2,
+        "scalar_predicate_realisable_at_generic_q": false
+      },
+      "8": {
+        "invariant_sum_dim_sq": 9864,
+        "Sn_order": 40320,
+        "scalar_predicate_realisable_at_generic_q": true
+      }
+    },
+    "structural_finding": "At magic n=2 no λ has c(λ) = 0; pure scalar Δ_n² action would force Φ_n = 0. The categorical-neutrality proposition therefore holds via a refined mechanism — either q at a root of unity, sum cancellation, or a non-scalar action component."
+  }
+}

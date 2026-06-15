@@ -1,0 +1,42 @@
+{
+  "description": "T6 \u2014 F_\u2113 derivation via per-braid mass tower (canonical, post-2026-05-17 Li_2^q form)",
+  "computation": "f_ell_derivation_via_per_braid_mass_tower",
+  "audit_only": true,
+  "precision_dps": 60,
+  "context": {
+    "source": "docs/audits/2026-05-24-superseded-rho-q-purge.md T6",
+    "canonical_formula": "mass-endomorphism-tower.md \u00a7Proposition (post-2026-05-17 Li_2^q corrected)",
+    "purpose": "Test whether per-braid mass tower alone (no SUPERSEDED \u03c1_q) gives correct lepton mass ratios"
+  },
+  "constants": {
+    "q_0": "1.10997859555418057528066772895280873466502767951805708028071",
+    "h": "0.209060321989879461099930195670195691136039014558594187407929",
+    "z_markov": "0.499320334033598250020679944935807503600524083627413529117846",
+    "hbar_q_sq": "0.00981718851347867143633241760289921992749054755054531066546604",
+    "cal2_target_codata": "206.768283"
+  },
+  "electron": {
+    "braid": "\u03c3_1\u00b3 trefoil (1 generator)",
+    "V_e": "0.594",
+    "m_electron_dimensionless": "1.11767535119277563871439570234068244970114443905578904001552",
+    "li2q_neg_Ve": "-0.523675351192775638714395702340682449701144439055789040015524"
+  },
+  "muon_scenario_A_figure_eight": {
+    "braid": "4_1 figure-eight (canonical paper; using proton V\u0302_i as crude proxy)",
+    "V_0": "0.989",
+    "V_1": "0.971",
+    "V_01_product": "0.960319",
+    "m_muon_dimensionless": "2.77687025201053096445422245666909147606952219434190107557539",
+    "ratio_m_mu_over_m_e": "2.48450522689533562277711850176350111288889983787354176863864",
+    "codata_ratio": "206.768283",
+    "relative_error_percent": -98.7984108631906,
+    "caveat": "V\u0302_0=0.989, V\u0302_1=0.971 are PROTON-specific values from mass-endomorphism-tower.md line 362-363. Using them for muon is a CRUDE TEST; the framework does not publish muon-specific V\u0302_i."
+  },
+  "cross_check_proton": {
+    "ratio_m_p_over_m_e_computed": "2.48450522689533562277711850176350111288889983787354176863864",
+    "codata_m_p_over_m_e": "1836.15",
+    "paper_reports": "1870 (1.8% error) per mass-endomorphism-tower.md line 384"
+  },
+  "verdict": "FAR \u2014 >50% from CODATA; per-braid mass tower with PROTON V\u0302_i values DOES NOT give muon mass. Either V\u0302_i are muon-specific (unpublished) or the per-braid mass tower needs different inputs for leptons.",
+  "timestamp": "2026-05-25T02:36:57+00:00"
+}

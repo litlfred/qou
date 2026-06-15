@@ -1,0 +1,117 @@
+{
+  "computedAt": "2026-05-05T22:33:29.635181+00:00",
+  "computation": "factor-2-normalization-trace",
+  "description": "Traces the factor-of-2 normalization mismatch between PR #546's hoefsmit_symbolic.tr_M_symbolic (using w_λ = dim_q² / [n]_q! and dividing by f^λ) and char_fast + Plancherel-Markov-axiom convention (using y_λ solved from {tr_M(1)=1, tr_M(σ_1)=z, tr_M(σ_1σ_2)=z²}). Tests whether the two formulas are equivalent (y_λ = w_λ/f^λ) and where any discrepancy arises.",
+  "auditOnly": "docs/audits/2026-05-05-factor-2-resolved-different-traces.md",
+  "parameters": {
+    "q_0": 1.1099785955541805
+  },
+  "reference_blocks": [
+    "prop:atomic-mass-gb-nf",
+    "prop:markov-trace-antipode-polynomial-symmetry"
+  ],
+  "weight_comparison": [
+    {
+      "lambda": [
+        3
+      ],
+      "f_lambda": 1,
+      "w_lambda_PR546": 0.16338322733975827,
+      "w_over_f_PR546": 0.16338322733975827,
+      "y_lambda_char_fast": 0.4153957863345668,
+      "ratio_y_over_w_over_f": 2.5424628531222733
+    },
+    {
+      "lambda": [
+        2,
+        1
+      ],
+      "f_lambda": 2,
+      "w_lambda_PR546": 0.6606737723483496,
+      "w_over_f_PR546": 0.3303368861741748,
+      "y_lambda_char_fast": 0.280929633979864,
+      "ratio_y_over_w_over_f": 0.8504337412435978
+    },
+    {
+      "lambda": [
+        1,
+        1,
+        1
+      ],
+      "f_lambda": 1,
+      "w_lambda_PR546": 0.16338322733975827,
+      "w_over_f_PR546": 0.16338322733975827,
+      "y_lambda_char_fast": 0.022744945705705285,
+      "ratio_y_over_w_over_f": 0.13921224397414292
+    }
+  ],
+  "trace_comparison": [
+    {
+      "name": "identity",
+      "ctypes": [],
+      "tr_M_pr546": 0.9874402270278662,
+      "tr_M_char_fast": 1,
+      "ratio_cf_over_pr546": 1.0127195273479368,
+      "tr_M_pr546_renormalized": 1,
+      "ratio_cf_over_pr546_renormalized": 1
+    },
+    {
+      "name": "σ_1",
+      "ctypes": [
+        [
+          1,
+          "sigma"
+        ]
+      ],
+      "tr_M_pr546": 0.10321728590410265,
+      "tr_M_char_fast": 0.4993203340335982,
+      "ratio_cf_over_pr546": 4.83756504213362,
+      "tr_M_pr546_renormalized": 0.10453016099493968,
+      "ratio_cf_over_pr546_renormalized": 4.776806323466491
+    },
+    {
+      "name": "σ_1²",
+      "ctypes": [
+        [
+          1,
+          "sigma"
+        ],
+        [
+          1,
+          "sigma"
+        ]
+      ],
+      "tr_M_pr546": 1.0090188660538995,
+      "tr_M_char_fast": 1.1043880698091577,
+      "ratio_cf_over_pr546": 1.0945167696697595,
+      "tr_M_pr546_renormalized": 1.0218531091152563,
+      "ratio_cf_over_pr546_renormalized": 1.0807698875285139
+    },
+    {
+      "name": "trefoil σ_1³",
+      "ctypes": [
+        [
+          1,
+          "sigma"
+        ],
+        [
+          1,
+          "sigma"
+        ],
+        [
+          1,
+          "sigma"
+        ]
+      ],
+      "tr_M_pr546": 0.3141630949351938,
+      "tr_M_char_fast": 0.7302040595096814,
+      "ratio_cf_over_pr546": 2.324283377906973,
+      "tr_M_pr546_renormalized": 0.31815910101293443,
+      "ratio_cf_over_pr546_renormalized": 2.2950909063575575
+    }
+  ],
+  "y_lambda_equals_w_lambda_over_f_lambda": false,
+  "engine": "python",
+  "scriptFile": "factor_2_normalization_trace_probe.py",
+  "commitSha": "06e88b6885fd78860cf1e0d1d01de2a96f5b0811"
+}

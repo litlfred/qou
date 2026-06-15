@@ -1,0 +1,389 @@
+{
+  "computation": "canonical-plus-multibrane",
+  "description": "Canonical Jones-Markov trace (level 0) PLUS multi-brane \u03a6_q tower (levels 1..N) per prop:categorical-mass-markov's full formula \ud835\udd2a = |tr_M| + \u03a3 \u2016\u03a6_q(z_i)\u2016.  Level 0 uses markov_trace_canonical.tr_M_element (7/7 prop-table values).  Levels 1..N use aggregated V\u0302 (\u03a3_\u03bb w_\u03bb V\u0302_i^\u03bb) with Markov-stabilization jet lift V\u0302^(n) = z^n V\u0302^(0).  Aggregated-BEFORE-\u03a6_q ordering matches the prop's letter (\u03a6_q nonlinearity breaks per-irrep-then-sum).  Proper K\u00e4hler-differential jet lift is open.",
+  "computedAt": "2026-04-18T12:19:59.067858+00:00",
+  "parameters": {
+    "q0": 1.1099785955541805,
+    "E_0_MeV": 0.782
+  },
+  "results": [
+    {
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "n_brane_levels": 1,
+      "pair_mode": "adjacent",
+      "apply_brane_scaling": true,
+      "geometric_closed_form": true,
+      "canonical_contribution_MeV": 0.465477453510069,
+      "tower_contribution_MeV": 1.3827189672250204,
+      "B_MeV": 1.8481964207350894,
+      "B_truncation_err_MeV": 7.5853330013654776e-06,
+      "per_level": [
+        {
+          "level": "1..2 (converged to \u03b5<1.279e-03)",
+          "N_summed": 2,
+          "delta_raw_at_level_1": 180.0102713637433,
+          "sum_scaled": 1.7681828225383893,
+          "per_level_terms_MeV": [
+            1.381946308842129,
+            0.0007726583828915043
+          ],
+          "truncation_next_term_MeV": 7.5853330013654776e-06,
+          "eps_markov_stab_MeV": 0.13692562612151962,
+          "eps_kahler_proper_MeV": 0.01356682742940919,
+          "within_AME_D": false
+        }
+      ],
+      "tr_M_atom": 0.3882864715477132,
+      "tr_M_free": 0.9835261819186453,
+      "atom": "D",
+      "B_AME_MeV": 2.22452,
+      "delta_m_over_m_pct": 0.020054077030163462
+    },
+    {
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "n_brane_levels": 1,
+      "pair_mode": "full",
+      "apply_brane_scaling": true,
+      "geometric_closed_form": true,
+      "canonical_contribution_MeV": 0.465477453510069,
+      "tower_contribution_MeV": 1.4136868560191118,
+      "B_MeV": 1.8791643095291808,
+      "B_truncation_err_MeV": 7.826048380979921e-06,
+      "per_level": [
+        {
+          "level": "1..2 (converged to \u03b5<1.279e-03)",
+          "N_summed": 2,
+          "delta_raw_at_level_1": 184.0409086005758,
+          "sum_scaled": 1.8077837033492479,
+          "per_level_terms_MeV": [
+            1.4128896778483724,
+            0.000797178170739517
+          ],
+          "truncation_next_term_MeV": 7.826048380979921e-06,
+          "eps_markov_stab_MeV": 0.1399915485443951,
+          "eps_kahler_proper_MeV": 0.013870604316185614,
+          "within_AME_D": false
+        }
+      ],
+      "tr_M_atom": 0.3882864715477132,
+      "tr_M_free": 0.9835261819186453,
+      "atom": "D",
+      "B_AME_MeV": 2.22452,
+      "delta_m_over_m_pct": 0.018403815230062244
+    },
+    {
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "n_brane_levels": 0,
+      "pair_mode": "adjacent",
+      "apply_brane_scaling": true,
+      "geometric_closed_form": false,
+      "canonical_contribution_MeV": 0.465477453510069,
+      "tower_contribution_MeV": 0.0,
+      "B_MeV": 0.465477453510069,
+      "B_truncation_err_MeV": 0.0,
+      "per_level": [],
+      "tr_M_atom": 0.3882864715477132,
+      "tr_M_free": 0.9835261819186453,
+      "atom": "D",
+      "B_AME_MeV": 2.22452,
+      "delta_m_over_m_pct": 0.0937384120217768
+    },
+    {
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "n_brane_levels": 1,
+      "pair_mode": "adjacent",
+      "apply_brane_scaling": true,
+      "geometric_closed_form": false,
+      "canonical_contribution_MeV": 0.465477453510069,
+      "tower_contribution_MeV": 1.381946308842129,
+      "B_MeV": 1.847423762352198,
+      "B_truncation_err_MeV": 0.003390791614366888,
+      "per_level": [
+        {
+          "level": 1,
+          "delta_raw": 180.0102713637433,
+          "scale": 0.009817188513478667,
+          "delta_scaled": 1.7671947683403184
+        }
+      ],
+      "tr_M_atom": 0.3882864715477132,
+      "tr_M_free": 0.9835261819186453,
+      "atom": "D",
+      "B_AME_MeV": 2.22452,
+      "delta_m_over_m_pct": 0.020095251571388785
+    },
+    {
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "n_brane_levels": 2,
+      "pair_mode": "adjacent",
+      "apply_brane_scaling": true,
+      "geometric_closed_form": false,
+      "canonical_contribution_MeV": 0.465477453510069,
+      "tower_contribution_MeV": 1.3827189672250204,
+      "B_MeV": 1.8481964207350894,
+      "B_truncation_err_MeV": 3.3288040488162394e-05,
+      "per_level": [
+        {
+          "level": 1,
+          "delta_raw": 180.0102713637433,
+          "scale": 0.009817188513478667,
+          "delta_scaled": 1.7671947683403184
+        },
+        {
+          "level": 2,
+          "delta_raw": 10.25195064206899,
+          "scale": 9.637719030917748e-05,
+          "delta_scaled": 0.0009880541980709773
+        }
+      ],
+      "tr_M_atom": 0.3882864715477132,
+      "tr_M_free": 0.9835261819186453,
+      "atom": "D",
+      "B_AME_MeV": 2.22452,
+      "delta_m_over_m_pct": 0.020054077030163462
+    },
+    {
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "n_brane_levels": 0,
+      "pair_mode": "full",
+      "apply_brane_scaling": true,
+      "geometric_closed_form": false,
+      "canonical_contribution_MeV": 0.465477453510069,
+      "tower_contribution_MeV": 0.0,
+      "B_MeV": 0.465477453510069,
+      "B_truncation_err_MeV": 0.0,
+      "per_level": [],
+      "tr_M_atom": 0.3882864715477132,
+      "tr_M_free": 0.9835261819186453,
+      "atom": "D",
+      "B_AME_MeV": 2.22452,
+      "delta_m_over_m_pct": 0.0937384120217768
+    },
+    {
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "n_brane_levels": 1,
+      "pair_mode": "full",
+      "apply_brane_scaling": true,
+      "geometric_closed_form": false,
+      "canonical_contribution_MeV": 0.465477453510069,
+      "tower_contribution_MeV": 1.4128896778483724,
+      "B_MeV": 1.8783671313584411,
+      "B_truncation_err_MeV": 0.003466715342716754,
+      "per_level": [
+        {
+          "level": 1,
+          "delta_raw": 184.0409086005758,
+          "scale": 0.009817188513478667,
+          "delta_scaled": 1.8067642939237498
+        }
+      ],
+      "tr_M_atom": 0.3882864715477132,
+      "tr_M_free": 0.9835261819186453,
+      "atom": "D",
+      "B_AME_MeV": 2.22452,
+      "delta_m_over_m_pct": 0.018446296417326688
+    },
+    {
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "n_brane_levels": 2,
+      "pair_mode": "full",
+      "apply_brane_scaling": true,
+      "geometric_closed_form": false,
+      "canonical_contribution_MeV": 0.465477453510069,
+      "tower_contribution_MeV": 1.4136868560191118,
+      "B_MeV": 1.8791643095291808,
+      "B_truncation_err_MeV": 3.4033398042019176e-05,
+      "per_level": [
+        {
+          "level": 1,
+          "delta_raw": 184.0409086005758,
+          "scale": 0.009817188513478667,
+          "delta_scaled": 1.8067642939237498
+        },
+        {
+          "level": 2,
+          "delta_raw": 10.577289317398069,
+          "scale": 9.637719030917748e-05,
+          "delta_scaled": 0.0010194094254981035
+        }
+      ],
+      "tr_M_atom": 0.3882864715477132,
+      "tr_M_free": 0.9835261819186453,
+      "atom": "D",
+      "B_AME_MeV": 2.22452,
+      "delta_m_over_m_pct": 0.018403815230062244
+    },
+    {
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "n_brane_levels": 0,
+      "pair_mode": "adjacent",
+      "apply_brane_scaling": false,
+      "geometric_closed_form": false,
+      "canonical_contribution_MeV": 0.465477453510069,
+      "tower_contribution_MeV": 0.0,
+      "B_MeV": 0.465477453510069,
+      "B_truncation_err_MeV": 0.0,
+      "per_level": [],
+      "tr_M_atom": 0.3882864715477132,
+      "tr_M_free": 0.9835261819186453,
+      "atom": "D",
+      "B_AME_MeV": 2.22452,
+      "delta_m_over_m_pct": 0.0937384120217768
+    },
+    {
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "n_brane_levels": 1,
+      "pair_mode": "adjacent",
+      "apply_brane_scaling": false,
+      "geometric_closed_form": false,
+      "canonical_contribution_MeV": 0.465477453510069,
+      "tower_contribution_MeV": 140.76803220644726,
+      "B_MeV": 141.23350965995732,
+      "B_truncation_err_MeV": 0.0,
+      "per_level": [
+        {
+          "level": 1,
+          "delta_raw": 180.0102713637433,
+          "scale": 1.0,
+          "delta_scaled": 180.0102713637433
+        }
+      ],
+      "tr_M_atom": 0.3882864715477132,
+      "tr_M_free": 0.9835261819186453,
+      "atom": "D",
+      "B_AME_MeV": 2.22452,
+      "delta_m_over_m_pct": 7.407712777316029
+    },
+    {
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "n_brane_levels": 2,
+      "pair_mode": "adjacent",
+      "apply_brane_scaling": false,
+      "geometric_closed_form": false,
+      "canonical_contribution_MeV": 0.465477453510069,
+      "tower_contribution_MeV": 148.78505760854523,
+      "B_MeV": 149.2505350620553,
+      "B_truncation_err_MeV": 0.0,
+      "per_level": [
+        {
+          "level": 1,
+          "delta_raw": 180.0102713637433,
+          "scale": 1.0,
+          "delta_scaled": 180.0102713637433
+        },
+        {
+          "level": 2,
+          "delta_raw": 10.25195064206899,
+          "scale": 1.0,
+          "delta_scaled": 10.25195064206899
+        }
+      ],
+      "tr_M_atom": 0.3882864715477132,
+      "tr_M_free": 0.9835261819186453,
+      "atom": "D",
+      "B_AME_MeV": 2.22452,
+      "delta_m_over_m_pct": 7.834935661623456
+    },
+    {
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "n_brane_levels": 0,
+      "pair_mode": "full",
+      "apply_brane_scaling": false,
+      "geometric_closed_form": false,
+      "canonical_contribution_MeV": 0.465477453510069,
+      "tower_contribution_MeV": 0.0,
+      "B_MeV": 0.465477453510069,
+      "B_truncation_err_MeV": 0.0,
+      "per_level": [],
+      "tr_M_atom": 0.3882864715477132,
+      "tr_M_free": 0.9835261819186453,
+      "atom": "D",
+      "B_AME_MeV": 2.22452,
+      "delta_m_over_m_pct": 0.0937384120217768
+    },
+    {
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "n_brane_levels": 1,
+      "pair_mode": "full",
+      "apply_brane_scaling": false,
+      "geometric_closed_form": false,
+      "canonical_contribution_MeV": 0.465477453510069,
+      "tower_contribution_MeV": 143.91999052565026,
+      "B_MeV": 144.38546797916032,
+      "B_truncation_err_MeV": 0.0,
+      "per_level": [
+        {
+          "level": 1,
+          "delta_raw": 184.0409086005758,
+          "scale": 1.0,
+          "delta_scaled": 184.0409086005758
+        }
+      ],
+      "tr_M_atom": 0.3882864715477132,
+      "tr_M_free": 0.9835261819186453,
+      "atom": "D",
+      "B_AME_MeV": 2.22452,
+      "delta_m_over_m_pct": 7.575678906498346
+    },
+    {
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "n_brane_levels": 2,
+      "pair_mode": "full",
+      "apply_brane_scaling": false,
+      "geometric_closed_form": false,
+      "canonical_contribution_MeV": 0.465477453510069,
+      "tower_contribution_MeV": 152.19143077185558,
+      "B_MeV": 152.65690822536564,
+      "B_truncation_err_MeV": 0.0,
+      "per_level": [
+        {
+          "level": 1,
+          "delta_raw": 184.0409086005758,
+          "scale": 1.0,
+          "delta_scaled": 184.0409086005758
+        },
+        {
+          "level": 2,
+          "delta_raw": 10.577289317398069,
+          "scale": 1.0,
+          "delta_scaled": 10.577289317398069
+        }
+      ],
+      "tr_M_atom": 0.3882864715477132,
+      "tr_M_free": 0.9835261819186453,
+      "atom": "D",
+      "B_AME_MeV": 2.22452,
+      "delta_m_over_m_pct": 8.016459418237229
+    }
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
+}

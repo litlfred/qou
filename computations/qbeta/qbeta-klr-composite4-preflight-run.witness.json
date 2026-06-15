@@ -1,0 +1,77 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-06-06T19:31:11.433545+00:00",
+  "commitSha": "696088319219fa47f916f4c2742eb1123c41941d",
+  "assertions": [
+    {
+      "name": "parity_gate_analytical_pass",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true
+    },
+    {
+      "name": "c2_magnitude_gate_decisive_both_anchors",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 10,
+  "computation": "qbeta-klr-composite4-preflight-run",
+  "scriptFile": "qbeta_klr_composite4_preflight_run.py",
+  "scriptHash": "9040eba48208",
+  "scriptCommitSha": "696088319219fa47f916f4c2742eb1123c41941d",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "KLR tranche 2 preflight RUN — sanity-check the Composite-4 ansatz (Wenzl × q-Pochhammer, cont. 9 master infra scope Option B) against the c_2 = -1 magnitude target with both the bare (q;q)_k form and the Y_k = q^{-k(k+1)/4}·(q;q)_k renormalisation that passes the bar-odd parity gate (PR #1914 §3c). One focused session, no fit, no production wiring. Verdict gates the 5-6 session infra investment.",
+  "contentBlock": "conj:qbeta-precision-ladder",
+  "data": {
+    "anchors": [
+      {
+        "anchor": "proton",
+        "q": "1.10997858275138080759166909561076887987449912187357873607281",
+        "q_pochhammer_2_bare": "0.0255208000332404491052504207629559359869169759821893390498063",
+        "Y_2_renormalised": "0.0218233986503611176540101179856317723027112228939578593337198",
+        "tr_M_p2_JW_sym": "-0.499320334183694452413442680257666303751948164041532194568092",
+        "A_2_bare": "-0.0127430544012328615368027152996854297249266150312004621094011",
+        "A_2_with_Y": "-0.0108968667071222997524919780918628158892407484841329167639324",
+        "c2_miss_factor_Y": "0.0108968667071222997524919780918628158892407484841329167639324",
+        "c2_passes_magnitude_within_1pct": false,
+        "A_3_with_Y": "-0.00227810220972724227589726513453417221163389459444438316723095",
+        "c3_target": "-2.06934257711516784000000000000000000000000000000000000000000",
+        "c3_miss_factor_Y": "0.00110088210377573266444744791966473651753100393756176762351054"
+      },
+      {
+        "anchor": "muon",
+        "q": "1.10997859555418057528159407960950937799328227995868622546675",
+        "q_pochhammer_2_bare": "0.0255208061299366025028155986841074227806587940917252394200220",
+        "Y_2_renormalised": "0.0218234034862046321048649550208162515695300663534101647168902",
+        "tr_M_p2_JW_sym": "-0.499320334033598250020669084676721506369316362634457905011652",
+        "A_2_bare": "-0.0127430574416066461856137548333165559430213564907059519986935",
+        "A_2_with_Y": "-0.0108968691184816894615797369210968495248082560009137669504544",
+        "c2_miss_factor_Y": "0.0108968691184816894615797369210968495248082560009137669504544",
+        "c2_passes_magnitude_within_1pct": false,
+        "A_3_with_Y": "-0.00227810296659135596215759054953386075004970985404975360524706",
+        "c3_target": "-2.02020023502125517000000000000000000000000000000000000000000",
+        "c3_miss_factor_Y": "0.00112766196493754358730203247461920338231034707353856544098461"
+      }
+    ],
+    "parity_gate_pass_analytic": true,
+    "c2_magnitude_gate_pass": false,
+    "verdict": "PARITY_PASS_C2_MAGNITUDE_FAIL_BUILD_NOT_AUTHORISED",
+    "interpretation": "Even with the bar-eigenvector renormalisation Y_k = q^{-k(k+1)/4}·(q;q)_k that the preflight scope §3c showed is bar-odd at k=3 (passing the parity gate the kernel constraint requires), the naive Composite-4 ansatz A_k = tr_M(p_k^JW)·Y_k produces |A_2| ≈ 0.011 at both anchors, NOT the proved target |c_2| = 1. Off by ~92× — not a rescaling that can come from a non-fit constant. So Composite 4 as written in cont. 9 cannot source c_2 = -1, let alone the bar-odd c_3, even after the parity rescue. The 5-6 session infra build (cont. 9 Option B) would discover this failure at the end; the one-session preflight surfaces it now. Redirect: cont. 9 Option C (Composite 1 Demazure × q-Poch) or a reformulated Composite 4 with an additional categorical normalising factor (which must come from structure, not a fit, per the Δ_λ gate)."
+  }
+}

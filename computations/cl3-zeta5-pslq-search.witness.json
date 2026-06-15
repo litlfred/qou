@@ -1,0 +1,55 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-05-11T00:42:41.275860+00:00",
+  "commitSha": "77083bddbf3a2b52b2fdb80414d0446d7433197b",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 35,
+  "computation": "cl3-zeta5-pslq-search",
+  "scriptFile": "cl3_zeta5_pslq_search.py",
+  "scriptHash": "513f381b498d",
+  "scriptCommitSha": "77083bddbf3a2b52b2fdb80414d0446d7433197b",
+  "description": "PSLQ relation search at 50 decimal digits of mpmath precision for the antisymmetric depth-3 generator X = Cl_3(2π/5) - Cl_3(4π/5) against three candidate bases of weight-3 periods. PSLQ tolerance 1e-45, max integer coefficient norm 1e8. No relation found in any basis — certifies X is INDEPENDENT of standard depth-3 constants (ζ(3), π³, π·log²(φ), log³(φ), etc.) up to the search bound. Strong evidence that X is the genuinely-new depth-3 generator at ζ_5 over Q(ζ_5).",
+  "timestamp": "2026-05-11T00:42:41.268717+00:00",
+  "precision_decimal_digits": 50,
+  "pslq_tolerance": "1e-45",
+  "max_coefficient_norm": "1e8",
+  "target": {
+    "name": "X = Cl_3(2π/5) - Cl_3(4π/5)",
+    "value_str": "0.95572314353826862475076392705832322282974187981191"
+  },
+  "search_1": {
+    "basis": [
+      "ζ(3)",
+      "π³"
+    ],
+    "relation": null,
+    "found": false
+  },
+  "search_2": {
+    "basis": [
+      "ζ(3)",
+      "π³",
+      "π · log²(φ)",
+      "log³(φ)"
+    ],
+    "relation": null,
+    "found": false
+  },
+  "search_3": {
+    "basis": [
+      "ζ(3)",
+      "π³",
+      "π · log²(φ)",
+      "log³(φ)",
+      "π · log²(2)",
+      "π² · log(φ)",
+      "π² · log(2)",
+      "log³(2)"
+    ],
+    "relation": null,
+    "found": false
+  },
+  "conclusion": "No ℚ-linear relation found in any candidate basis up to coefficient norm 1e8. X is numerically certified independent of the standard depth-3 weight-3 period basis. This is strong evidence (not proof) that X represents the genuinely-new 1-dim depth-3 generator of K_5^ind(Q(ζ_5)) ⊗ Q's regulator image, modulo the ζ(3)-line."
+}

@@ -1,0 +1,241 @@
+{
+  "computation": "e0-lambda-composite",
+  "description": "Is M_\u03bb a FORCED categorical composite (\u03b8_\u03bb \u00d7 \u03c7^\u03bb \u00d7 dim_q, archimedean)? Derivation-first: production VolDensity is a single opaque scalar (no per-\u03bb sum); the per-\u03bb form lives in the Markov-trace step tr_M = \u03a3_\u03bb y_\u03bb \u03c7_\u03bb. Computes the functor-dictated summand s_\u03bb = y_\u03bb \u03c7_\u03bb and the owner's product composite c_\u03bb = \u03b8_\u03bb \u03c7_\u03bb dim_q (\u03b8_\u03bb = arccos(\u03c7/d) Reeb phase) at q\u2080, ZERO free parameters, reading the cached H_3 per-\u03bb data from the GAP-A-4 verifier witness. Falsification test: proton \u2261 neutron at H_3 (bit-identical \u03c7_\u03bb, y_\u03bb, dim_q) so any per-\u03bb composite collapses p\u2261n, but m_p \u2260 m_n. NOT tuned to anchors or B_AME.",
+  "timestamp": "2026-06-02T20:06:30.000287+00:00",
+  "contentBlock": "prop:rho-k-h3a-refinement",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "truncation_bound": "1e-50"
+  },
+  "parameters": {
+    "q0": "1.1099785827513808075916690956107688798744991218735787360728142402",
+    "h": "0.20906029879563931543084621312967494385975749526302455538169605449",
+    "m_e_MeV": "0.51099895",
+    "m_p_MeV": "938.27208816",
+    "m_n_MeV": "939.56542052",
+    "source_witness": "rho-prefactor-structural-verifier.witness.json"
+  },
+  "atoms": {
+    "proton": {
+      "atom": "proton",
+      "per_lambda": [
+        {
+          "lambda": [
+            2,
+            1
+          ],
+          "chi": "1.9941858129799634",
+          "y_wenzl": "0.2809296339798641",
+          "dim_q": "2.010896866707122",
+          "d_lambda": 2,
+          "theta_reeb": "0.076269300968103299800097601561190594104531861094538212045368939009",
+          "s_lambda_y_chi": "0.56022589052829884118381235497394",
+          "c_lambda_theta_chi_dimq": "0.30584767657603172106582520046662142360761427537437136418137689919"
+        },
+        {
+          "lambda": [
+            3
+          ],
+          "chi": "1.0",
+          "y_wenzl": "0.4153957863345666",
+          "dim_q": "1.0",
+          "d_lambda": 1,
+          "theta_reeb": "0.0",
+          "s_lambda_y_chi": "0.4153957863345666",
+          "c_lambda_theta_chi_dimq": "0.0"
+        },
+        {
+          "lambda": [
+            1,
+            1,
+            1
+          ],
+          "chi": "1.0",
+          "y_wenzl": "0.022744945705705264",
+          "dim_q": "1.0",
+          "d_lambda": 1,
+          "theta_reeb": "0.0",
+          "s_lambda_y_chi": "0.022744945705705264",
+          "c_lambda_theta_chi_dimq": "0.0"
+        }
+      ],
+      "sum_s_trM": "0.99836662256857070518381235497394",
+      "sum_c_composite": "0.30584767657603172106582520046662142360761427537437136418137689919"
+    },
+    "neutron": {
+      "atom": "neutron",
+      "per_lambda": [
+        {
+          "lambda": [
+            2,
+            1
+          ],
+          "chi": "1.9941858129799634",
+          "y_wenzl": "0.2809296339798641",
+          "dim_q": "2.010896866707122",
+          "d_lambda": 2,
+          "theta_reeb": "0.076269300968103299800097601561190594104531861094538212045368939009",
+          "s_lambda_y_chi": "0.56022589052829884118381235497394",
+          "c_lambda_theta_chi_dimq": "0.30584767657603172106582520046662142360761427537437136418137689919"
+        },
+        {
+          "lambda": [
+            3
+          ],
+          "chi": "1.0",
+          "y_wenzl": "0.4153957863345666",
+          "dim_q": "1.0",
+          "d_lambda": 1,
+          "theta_reeb": "0.0",
+          "s_lambda_y_chi": "0.4153957863345666",
+          "c_lambda_theta_chi_dimq": "0.0"
+        },
+        {
+          "lambda": [
+            1,
+            1,
+            1
+          ],
+          "chi": "1.0",
+          "y_wenzl": "0.022744945705705264",
+          "dim_q": "1.0",
+          "d_lambda": 1,
+          "theta_reeb": "0.0",
+          "s_lambda_y_chi": "0.022744945705705264",
+          "c_lambda_theta_chi_dimq": "0.0"
+        }
+      ],
+      "sum_s_trM": "0.99836662256857070518381235497394",
+      "sum_c_composite": "0.30584767657603172106582520046662142360761427537437136418137689919"
+    },
+    "he3": {
+      "atom": "he3",
+      "per_lambda": [
+        {
+          "lambda": [
+            2,
+            1
+          ],
+          "chi": "1.9941858129799634",
+          "y_wenzl": "0.2809296339798641",
+          "dim_q": "2.010896866707122",
+          "d_lambda": 2,
+          "theta_reeb": "0.076269300968103299800097601561190594104531861094538212045368939009",
+          "s_lambda_y_chi": "0.56022589052829884118381235497394",
+          "c_lambda_theta_chi_dimq": "0.30584767657603172106582520046662142360761427537437136418137689919"
+        },
+        {
+          "lambda": [
+            3
+          ],
+          "chi": "1.0",
+          "y_wenzl": "0.4153957863345666",
+          "dim_q": "1.0",
+          "d_lambda": 1,
+          "theta_reeb": "0.0",
+          "s_lambda_y_chi": "0.4153957863345666",
+          "c_lambda_theta_chi_dimq": "0.0"
+        },
+        {
+          "lambda": [
+            1,
+            1,
+            1
+          ],
+          "chi": "1.0",
+          "y_wenzl": "0.022744945705705264",
+          "dim_q": "1.0",
+          "d_lambda": 1,
+          "theta_reeb": "0.0",
+          "s_lambda_y_chi": "0.022744945705705264",
+          "c_lambda_theta_chi_dimq": "0.0"
+        }
+      ],
+      "sum_s_trM": "0.99836662256857070518381235497394",
+      "sum_c_composite": "0.30584767657603172106582520046662142360761427537437136418137689919"
+    },
+    "deuteron": {
+      "atom": "deuteron",
+      "per_lambda": [
+        {
+          "lambda": [
+            3
+          ],
+          "chi": "1.232052454166764",
+          "y_wenzl": "0.4153957863345666",
+          "dim_q": "1.0",
+          "d_lambda": 1,
+          "theta_reeb": "0.0",
+          "s_lambda_y_chi": "0.5117893980040355074687340644824",
+          "c_lambda_theta_chi_dimq": "0.0"
+        },
+        {
+          "lambda": [
+            2,
+            1
+          ],
+          "chi": "-0.8611569547181094",
+          "y_wenzl": "0.2809296339798641",
+          "dim_q": "2.010896866707122",
+          "d_lambda": 2,
+          "theta_reeb": "2.0159299402181731011395442807801054428966761690976247674841224413",
+          "s_lambda_y_chi": "-0.24192450808817287658945122093254",
+          "c_lambda_theta_chi_dimq": "-3.4909814867515589246215102010471627899075166063897648606940443104"
+        },
+        {
+          "lambda": [
+            1,
+            1,
+            1
+          ],
+          "chi": "0.811653754365758",
+          "y_wenzl": "0.022744945705705264",
+          "dim_q": "1.0",
+          "d_lambda": 1,
+          "theta_reeb": "0.6238186564317142884868885551649581043743464212917534981956892425",
+          "s_lambda_y_chi": "0.018461020574881002594588401950112",
+          "c_lambda_theta_chi_dimq": "0.50632475453620381104497303030766171882818684047766945441199257628"
+        }
+      ],
+      "sum_s_trM": "0.288325910490743633473871245499972",
+      "sum_c_composite": "-2.9846567322153551135765371707395010710793297659120954062820517341"
+    }
+  },
+  "falsification_test_pn": {
+    "experimental_m_n_minus_m_p_MeV": "1.2933323600000000000000000000000000000000000000000000000000000002",
+    "delta_trM_p_minus_n": "0.0",
+    "delta_composite_p_minus_n": "0.0",
+    "per_lambda_pn_diff": [
+      {
+        "lambda": [
+          2,
+          1
+        ],
+        "delta_s_lambda": "0.0",
+        "delta_c_lambda": "0.0"
+      },
+      {
+        "lambda": [
+          3
+        ],
+        "delta_s_lambda": "0.0",
+        "delta_c_lambda": "0.0"
+      },
+      {
+        "lambda": [
+          1,
+          1,
+          1
+        ],
+        "delta_s_lambda": "0.0",
+        "delta_c_lambda": "0.0"
+      }
+    ],
+    "p_equiv_n_collapse": true
+  },
+  "verdict": "FORCED-BUT-MISSES",
+  "verdict_detail": "FORCED-BUT-MISSES: the functor-dictated per-\u03bb Markov summand y_\u03bb \u03c7_\u03bb and the owner's product composite \u03b8_\u03bb \u03c7_\u03bb dim_q are bit-for-bit identical for proton and neutron at the H_3 braid strand count (GAP-A-4 Markov-equivalence). A per-block composite of (character, q-dim, Reeb twist) therefore CANNOT represent the 1.293 MeV m_n - m_p split with any per-\u03bb scale assignment. The miss is structural (the p/n distinction lives in the braid WORD / per-generator V\u0302, which the per-\u03bb character collapses), not a failed fit. Separately, the OWNER'S PRODUCT composite is itself NOT forced by the functor's definition (audit Finding 2): the definition gives a SUM |tr_M| + tower + tr_M(C_dim_q), not the PRODUCT \u03b8_\u03bb \u03c7_\u03bb dim_q; assembling the product + choosing the dim_q exponent is a modeling choice \u2192 latent-fit risk.",
+  "assertions": [],
+  "allPassed": true
+}

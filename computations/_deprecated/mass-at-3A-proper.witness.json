@@ -1,0 +1,154 @@
+{
+  "computation": "mass-at-3A-proper",
+  "description": "Task-1 fix: H_{3A} Wedderburn-character binding. Two paths on the same H_{3A} character theory:\n(a) single-brane Markov trace: B = E_0 \u00b7 (|tr_M_free| \u2212 |tr_M_atom|), tr_M(W) = \u03a3_\u03bb w_\u03bb \u00b7 \u03c7_\u03bb(W) / d_\u03bb;\n(b) FULL TOWER combining H_{3A} per-generator V\u0302_i with prop:mass-endomorphism-tower \u03a6_q formula: per-gen V\u0302_i = \u03a3_\u03bb w_\u03bb \u00b7 \u03c7_\u03bb(W_i)/d_\u03bb, then \ud835\udd2a = |\u03a0 V\u0302_i| + \u03a3 \u03a6_q(|V\u0302_i|) + z\u00b2 \u03a3_{adj} \u03a6_q(|V\u0302_i V\u0302_j|), and B = E_0 \u00b7 (\ud835\udd2a_free \u2212 \ud835\udd2a_atom).\nE_0 = 0.782 MeV (free-neutron \u03b2-decay Q). No Catalan.",
+  "computedAt": "2026-04-18T02:13:04.576533+00:00",
+  "parameters": {
+    "q0": 1.1099785955541805,
+    "E_0_MeV": 0.782,
+    "max_A": 3
+  },
+  "markov_path": [
+    {
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "m_pp": 1,
+      "m_pn": 1,
+      "m_nn": 1,
+      "tr_M_atom": -0.005400322224014615,
+      "tr_M_free": 0.4256701505198476,
+      "abs_diff": 0.420269828295833,
+      "E_0_MeV": 0.782,
+      "B_MeV": 0.3286510057273414,
+      "n_partitions": 11,
+      "atom": "D",
+      "B_AME_MeV": 2.22452,
+      "delta_m_over_m_pct": 0.10102981834013262,
+      "time_sec": 0.009492635726928711
+    },
+    {
+      "Z": 1,
+      "N": 2,
+      "A": 3,
+      "m_pp": 1,
+      "m_pn": 1,
+      "m_nn": 1,
+      "tr_M_atom": 0.00041595502450810293,
+      "tr_M_free": 0.28812639179613625,
+      "abs_diff": 0.28771043677162816,
+      "E_0_MeV": 0.782,
+      "B_MeV": 0.22498956155541322,
+      "n_partitions": 30,
+      "atom": "T",
+      "B_AME_MeV": 8.481821,
+      "delta_m_over_m_pct": 0.2933346775932987,
+      "time_sec": 0.19683623313903809
+    },
+    {
+      "Z": 2,
+      "N": 1,
+      "A": 3,
+      "m_pp": 1,
+      "m_pn": 1,
+      "m_nn": 1,
+      "tr_M_atom": -0.0003963873332270496,
+      "tr_M_free": 0.33928178340865855,
+      "abs_diff": 0.3388853960754315,
+      "E_0_MeV": 0.782,
+      "B_MeV": 0.26500837973098745,
+      "n_partitions": 30,
+      "atom": "3He",
+      "B_AME_MeV": 7.71804,
+      "delta_m_over_m_pct": 0.264778643444865,
+      "time_sec": 0.13398432731628418
+    }
+  ],
+  "tower_path": [
+    {
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "m_pp": 1,
+      "m_pn": 1,
+      "m_nn": 1,
+      "m_atom_tower_H3A": 31895242.486892264,
+      "m_free_tower_H3A": 34114962.398211524,
+      "m_atom_breakdown": {
+        "desc": 4.528307256103239e-17,
+        "single": 31894275.241557863,
+        "cross": 967.245334403565
+      },
+      "m_free_breakdown": {
+        "desc": 0.42531835560314857,
+        "single": 32795661.70729728,
+        "cross": 1319300.2655958864
+      },
+      "E_0_MeV": 0.782,
+      "weight_scheme": "normalized_plancherel",
+      "cap_frac": 0.98,
+      "B_MeV": 1735820.970651661,
+      "atom": "D",
+      "B_AME_MeV": 2.22452,
+      "delta_m_over_m_pct": 92500.82844482522,
+      "time_sec": 0.2524735927581787
+    },
+    {
+      "Z": 1,
+      "N": 2,
+      "A": 3,
+      "m_pp": 1,
+      "m_pn": 1,
+      "m_nn": 1,
+      "m_atom_tower_H3A": 58500506.09550958,
+      "m_free_tower_H3A": 68254811.30389321,
+      "m_atom_breakdown": {
+        "desc": 2.4610392278924493e-18,
+        "single": 58499366.222202,
+        "cross": 1139.8733075796083
+      },
+      "m_free_breakdown": {
+        "desc": 0.255363107589454,
+        "single": 60302137.50224908,
+        "cross": 7952673.54628103
+      },
+      "E_0_MeV": 0.782,
+      "weight_scheme": "normalized_plancherel",
+      "cap_frac": 0.98,
+      "B_MeV": 7627866.672955996,
+      "atom": "T",
+      "B_AME_MeV": 8.481821,
+      "delta_m_over_m_pct": 270989.5847947076,
+      "time_sec": 0.3158752918243408
+    },
+    {
+      "Z": 2,
+      "N": 1,
+      "A": 3,
+      "m_pp": 1,
+      "m_pn": 1,
+      "m_nn": 1,
+      "m_atom_tower_H3A": 37185227.49175901,
+      "m_free_tower_H3A": 41625034.95936641,
+      "m_atom_breakdown": {
+        "desc": 1.4866054030558821e-18,
+        "single": 37183463.805334985,
+        "cross": 1763.6864240219238
+      },
+      "m_free_breakdown": {
+        "desc": 0.30128965739261804,
+        "single": 38986235.08538205,
+        "cross": 2638799.5726947063
+      },
+      "E_0_MeV": 0.782,
+      "weight_scheme": "normalized_plancherel",
+      "cap_frac": 0.98,
+      "B_MeV": 3471929.439668988,
+      "atom": "3He",
+      "B_AME_MeV": 7.71804,
+      "delta_m_over_m_pct": 123344.53554438328,
+      "time_sec": 0.321319580078125
+    }
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
+}

@@ -1,0 +1,98 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-06-06T19:44:25.106551+00:00",
+  "commitSha": "9eac529594d0e5b0b3ff838122fd0c0c75185ba8",
+  "assertions": [
+    {
+      "name": "vol_density_equiv_vol_density",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "vol_density_equiv_vol_density: |Δ| = 1.916e-47 < 1.0e-40"
+    },
+    {
+      "name": "h_eq_2sinh_log_q",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "h_eq_2sinh_log_q: |Δ| = 6.682e-52 < 1.0e-40"
+    },
+    {
+      "name": "bracket2_eq_2cosh_log_q",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "bracket2_eq_2cosh_log_q: |Δ| = 0.0 < 1.0e-40"
+    },
+    {
+      "name": "pair_average_eq_cosh",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "pair_average_eq_cosh: |Δ| = 0.0 < 1.0e-40"
+    },
+    {
+      "name": "pair_half_diff_eq_sinh",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "pair_half_diff_eq_sinh: |Δ| = 4.918e-49 < 1.0e-40"
+    },
+    {
+      "name": "parity_average_even",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "parity_average_even: |Δ| = 0.0 < 1.0e-40"
+    },
+    {
+      "name": "parity_difference_odd",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "parity_difference_odd: |Δ| = 0.0 < 1.0e-40"
+    },
+    {
+      "name": "vol_density_vd_per_block_equiv",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "vol_density_vd(density=tr_M) ≡ vol_density_per_block: |Δ| = 8.211e-48 < 1.0e-40"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 12,
+  "computation": "mass-vol-density",
+  "scriptFile": "mass_vol_density.py",
+  "scriptHash": "b08627c716bb",
+  "scriptCommitSha": "303eb5358a3a7c49f81de1cf4040a63e71763518",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
+  },
+  "auditOnly": "docs/workplans/2026-06-04-mass-vol-density-stokes-delta-formalization.md",
+  "parameters": {
+    "q_0": "1.1099785827513808075916690956107688798744991218736"
+  },
+  "data": {
+    "bracket_2_q_at_q0": "2.010896866707122",
+    "su2_density_loss": {
+      "density_global_H4_scalar": "2.532779656399391",
+      "density_per_block_H3_trM_proton": "1.06530614425445",
+      "ratio_global_over_per_block": "2.377513421901783",
+      "gate_verdict": "RED — global SU(2)-blind scalar ≠ per-block Markov trace"
+    }
+  }
+}

@@ -1,0 +1,123 @@
+{
+  "computation": "rho-k-codata-vs-six-term",
+  "description": "\u03c1_K investigation: compares the categorical density factor \u03c1_K = m(K) / (m_e \u00b7 |tr_M(NF_GS(\u03b2_K))|) computed two ways: (a) \u03c1_K^CODATA via M(K)_CODATA, (b) \u03c1_K^six-term via M(K) predicted by thm:knot-mass-formula-unified (li2q tower_mode, default). The gap measures missing categorical content in the six-term theorem when proton is the only calibration anchor.",
+  "reference_blocks": [
+    "prop:categorical-mass-markov",
+    "prop:atomic-braid-mass",
+    "thm:knot-mass-formula-unified"
+  ],
+  "computedAt": "2026-05-04T17:37:41.332982+00:00",
+  "parameters": {
+    "m_e_MeV": 0.51099895,
+    "tr_M_source": "atomic-tr-m-mpfr-50dps.witness.json",
+    "six_term_source": "paper-six-term-isotope-sweep.witness.json"
+  },
+  "rows": [
+    {
+      "atom": "p",
+      "Z": 1,
+      "N": 0,
+      "A": 1,
+      "abs_tr_M_NF_GS": 1.0653062285923893,
+      "M_codata_MeV": 938.27208816,
+      "M_six_term_MeV": 938.2720881600001,
+      "rho_K_codata": 1723.5914182642152,
+      "rho_K_six_term": 1723.5914182642155,
+      "rho_gap_pct": -1.319185469559916e-14,
+      "six_term_err_pct": 9.395996045755761e-06
+    },
+    {
+      "atom": "n",
+      "Z": 0,
+      "N": 1,
+      "A": 1,
+      "abs_tr_M_NF_GS": 0.9232332971695837,
+      "M_codata_MeV": 939.56542052,
+      "M_six_term_MeV": 893.4294652036698,
+      "rho_K_codata": 1991.5699177606223,
+      "rho_K_six_term": 1893.776854362973,
+      "rho_gap_pct": 4.910350499148463,
+      "six_term_err_pct": -4.910307939986085
+    },
+    {
+      "atom": "D",
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "abs_tr_M_NF_GS": 0.3882864715477134,
+      "M_codata_MeV": 1875.61294257,
+      "M_six_term_MeV": 1467.907653267809,
+      "rho_K_codata": 9453.028206804904,
+      "rho_K_six_term": 7398.206813561438,
+      "rho_gap_pct": 21.73717615445463,
+      "six_term_err_pct": -21.758494999914234
+    },
+    {
+      "atom": "T",
+      "Z": 1,
+      "N": 2,
+      "A": 3,
+      "abs_tr_M_NF_GS": 0.10405211867552573,
+      "M_codata_MeV": 2808.92113298,
+      "M_six_term_MeV": 1924.4416326507187,
+      "rho_K_codata": 52828.540213112974,
+      "rho_K_six_term": 36193.76884050135,
+      "rho_gap_pct": 31.488228343062534,
+      "six_term_err_pct": -31.500686521306836
+    },
+    {
+      "atom": "3He",
+      "Z": 2,
+      "N": 1,
+      "A": 3,
+      "abs_tr_M_NF_GS": 0.20654085856226276,
+      "M_codata_MeV": 2808.39160743,
+      "M_six_term_MeV": 2060.5501690712767,
+      "rho_K_codata": 26609.19160651719,
+      "rho_K_six_term": 19523.478890408143,
+      "rho_gap_pct": 26.62881616581541,
+      "six_term_err_pct": -26.65549105555941
+    }
+  ],
+  "structural_analysis": {
+    "proton_rho_K": 1723.5914182642152,
+    "rho_per_A_mean": {
+      "1": 1857.5806680124188,
+      "2": 9453.028206804904,
+      "3": 39718.86590981508
+    },
+    "rho_per_strand": [
+      {
+        "A": 1,
+        "atom": "p",
+        "rho_per_strand": 574.5304727547384
+      },
+      {
+        "A": 1,
+        "atom": "n",
+        "rho_per_strand": 663.8566392535407
+      },
+      {
+        "A": 2,
+        "atom": "D",
+        "rho_per_strand": 1575.5047011341505
+      },
+      {
+        "A": 3,
+        "atom": "T",
+        "rho_per_strand": 5869.837801456997
+      },
+      {
+        "A": 3,
+        "atom": "3He",
+        "rho_per_strand": 2956.5768451685767
+      }
+    ],
+    "ratio_rho_to_proton_rho": {
+      "n": 1.1554768123447037,
+      "D": 5.484494820892532,
+      "T": 30.65026876631542,
+      "3He": 15.438224700210347
+    }
+  }
+}

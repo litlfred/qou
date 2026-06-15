@@ -1,0 +1,83 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-06-02T19:45:45.593853+00:00",
+  "commitSha": "67292fc1f4aa5e860b199108eaebedbb324d5d28",
+  "assertions": [
+    {
+      "name": "bond_type_reproduces_T_He3_ordering",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "bond-type sum gives B_T=7.516 vs B_³He=7.362; AME 8.48 vs 7.72 — ordering matches (the bond-type discriminator, 0 fit)."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 21,
+  "computation": "derive-binding-bond-type",
+  "scriptFile": "derive_binding_bond_type.py",
+  "scriptHash": "ad7910dd7c35",
+  "scriptCommitSha": "50b75bb1008200e7cdf80c9f4c3caee6592e5eeb",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "clarabel": "0.11.1"
+  },
+  "description": "DERIVATION (0 fit, level-1): bond-TYPE per-bond binding sum B(K)=n_pp·B_pp+n_pn·B_pn+n_nn·B_nn, B_xy=E_0·Δtr_M of the 2-nucleon (Z,N) sub-braid (pure-Python canonical Markov trace; pn=deuteron). E_0=m_e/(q₀(q₀−1)) calibration. Isolates the bond-type T-vs-³He discriminator; per-block + per-bond-growth need the Rust χ kernel.",
+  "parameters": {
+    "E0_MeV": 4.185981363294476
+  },
+  "data": {
+    "bond_type_binding_MeV": {
+      "pp": 2.378516167869644,
+      "pn": 2.4916619071639143,
+      "nn": 2.5323247886062954
+    },
+    "per_atom": {
+      "D": {
+        "n_pp": 0,
+        "n_pn": 1,
+        "n_nn": 0,
+        "B_pred_MeV": 2.4916619071639143,
+        "AME_MeV": 2.2245662,
+        "err": 0.12006642336106443
+      },
+      "T": {
+        "n_pp": 0,
+        "n_pn": 2,
+        "n_nn": 1,
+        "B_pred_MeV": 7.515648602934124,
+        "AME_MeV": 8.4818,
+        "err": -0.11390876901906152
+      },
+      "3He": {
+        "n_pp": 1,
+        "n_pn": 2,
+        "n_nn": 0,
+        "B_pred_MeV": 7.3618399821974725,
+        "AME_MeV": 7.718,
+        "err": -0.04614667242841767
+      },
+      "4He": {
+        "n_pp": 1,
+        "n_pn": 4,
+        "n_nn": 1,
+        "B_pred_MeV": 14.877488585131596,
+        "AME_MeV": 28.29566,
+        "err": -0.47421305652062556
+      }
+    },
+    "t_he3_ordering_matches": true,
+    "A_growth": 5.970909834258215
+  }
+}

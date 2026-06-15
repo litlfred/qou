@@ -1,0 +1,264 @@
+{
+  "engine": "numpy",
+  "engineVersion": "numpy 2.4.6",
+  "computedAt": "2026-06-02T20:06:40.227982+00:00",
+  "commitSha": "41f1b2a404de0759b15e4ddd8dbfa55deca21f23",
+  "assertions": [
+    {
+      "name": "g_A",
+      "computed": 3.591107424543653,
+      "expected": 1.2754,
+      "passed": false,
+      "tolerance": 0.5,
+      "source": "PDG 2024"
+    },
+    {
+      "name": "lp_duality_gap_zero",
+      "computed": 6.022959908591474e-15,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-10,
+      "source": "prop:operator-selection-lp § strong duality"
+    },
+    {
+      "name": "lp_active_set_nonempty",
+      "computed": 5.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 10.0,
+      "source": "prop:confinement-frobenius-reciprocity § master formula"
+    }
+  ],
+  "allPassed": false,
+  "durationMs": 27,
+  "computation": "borromean-axial-coupling",
+  "scriptFile": "borromean-axial-coupling.py",
+  "scriptHash": "182eadcde11c",
+  "scriptCommitSha": "d2e9d5e463796608e088af545751396188cb2461",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.12.3",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Axial coupling g_A as an instance of the master formula ⟨O⟩_T = Σ_{i,j ∈ A*(T)} u_i (G⁻¹)_{ij} ⟨O,b_j⟩ (prop:confinement-frobenius-reciprocity). Replaces the prior cyclic-trivial conjugation-pattern computation tr(β·σ₁·β⁻¹)/tr(σ₁) — see docs/audits/2026-05-06-frobenius-pairing-compute-audit.md § 3.1. Bound-state observable: g_A (axial coupling, Gamow-Teller form factor).",
+  "contentBlock": "prop:confinement-frobenius-reciprocity",
+  "parameters": {
+    "q": 1.1099785827513808,
+    "q_inv": 0.9009182839557415,
+    "n_target": 1.0
+  },
+  "data": {
+    "gram_matrix": [
+      [
+        1.0,
+        0.4993203340335982,
+        0.4993203340335982,
+        0.2493207959794241,
+        0.2493207959794241,
+        0.5514434199198297
+      ],
+      [
+        0.4993203340335982,
+        1.1043880698091582,
+        0.2493207959794241,
+        0.5514434199198297,
+        0.5514434199198297,
+        0.364605734907064
+      ],
+      [
+        0.4993203340335982,
+        0.2493207959794241,
+        1.1043880698091582,
+        0.5514434199198297,
+        0.5514434199198297,
+        0.364605734907064
+      ],
+      [
+        0.2493207959794241,
+        0.5514434199198297,
+        0.5514434199198297,
+        0.364605734907064,
+        1.219673008736798,
+        0.6276680122588572
+      ],
+      [
+        0.2493207959794241,
+        0.5514434199198297,
+        0.5514434199198297,
+        1.219673008736798,
+        0.364605734907064,
+        0.6276680122588572
+      ],
+      [
+        0.5514434199198297,
+        0.364605734907064,
+        0.364605734907064,
+        0.6276680122588572,
+        0.6276680122588572,
+        1.3508934854823822
+      ]
+    ],
+    "gram_inverse": [
+      [
+        2.997745834168535,
+        -1.8589705965077448,
+        -1.8589705965077448,
+        1.4396102188932491,
+        1.4396102188932494,
+        -1.5580052206060016
+      ],
+      [
+        -1.8589705965077448,
+        2.6091088426929088,
+        1.4396102188932496,
+        -1.5580052206060013,
+        -1.5580052206060013,
+        1.1138931458114458
+      ],
+      [
+        -1.8589705965077448,
+        1.4396102188932496,
+        2.6091088426929088,
+        -1.5580052206060013,
+        -1.5580052206060013,
+        1.1138931458114458
+      ],
+      [
+        1.4396102188932494,
+        -1.5580052206060018,
+        -1.5580052206060018,
+        1.1138931458114458,
+        2.2833917696111046,
+        -1.3251343608803412
+      ],
+      [
+        1.4396102188932494,
+        -1.5580052206060018,
+        -1.5580052206060018,
+        2.283391769611105,
+        1.1138931458114458,
+        -1.3251343608803412
+      ],
+      [
+        -1.5580052206060013,
+        1.1138931458114458,
+        1.1138931458114458,
+        -1.3251343608803412,
+        -1.3251343608803412,
+        2.0063587534456078
+      ]
+    ],
+    "lp_active_set": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "shadow_prices": [
+      1.0000002711431513,
+      7.586395976835048e-08,
+      7.586395976835048e-08,
+      1.8033915812320814e-07,
+      1.8033915812320814e-07,
+      0.0
+    ],
+    "active_basis_names": [
+      "γ",
+      "σ₀",
+      "σ₁",
+      "L₊",
+      "L₋"
+    ],
+    "x_star": [
+      -60.22183277470685,
+      43.05549549433302,
+      43.05549549433304,
+      -51.22063702322779,
+      -51.22063702322783,
+      77.5521158324964
+    ],
+    "y0_star": -4.368285917710768e-07,
+    "y_star": [
+      1.0000002711431513,
+      7.586395976835048e-08,
+      7.586395976835048e-08,
+      1.8033915812320814e-07,
+      1.8033915812320814e-07,
+      0.0
+    ],
+    "active_set": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "primal_obj": -4.368285857481169e-07,
+    "dual_obj": -4.368285917710768e-07,
+    "duality_gap": 6.022959908591474e-15,
+    "lp_feasible": true,
+    "observable_vector": {
+      "name": "O_V (trivial / vector / +q eigenspace)",
+      "char_on_basis": [
+        1.0,
+        1.1099785827513808,
+        1.1099785827513808,
+        1.232052454166764,
+        1.232052454166764,
+        1.3675518369513853
+      ],
+      "dual_pairing_value": 2.418262598882023,
+      "u_active": [
+        1.0000002711431513,
+        7.586395976835048e-08,
+        7.586395976835048e-08,
+        1.8033915812320814e-07,
+        1.8033915812320814e-07
+      ],
+      "obs_active": [
+        1.0,
+        1.1099785827513808,
+        1.1099785827513808,
+        1.232052454166764,
+        1.232052454166764
+      ]
+    },
+    "observable_axial": {
+      "name": "O_A (sign / axial / -q⁻¹ eigenspace)",
+      "char_on_basis": [
+        1.0,
+        -0.9009182839557415,
+        -0.9009182839557415,
+        0.811653754365758,
+        0.811653754365758,
+        -0.7312337075494336
+      ],
+      "dual_pairing_value": 8.684240773341463,
+      "u_active": [
+        1.0000002711431513,
+        7.586395976835048e-08,
+        7.586395976835048e-08,
+        1.8033915812320814e-07,
+        1.8033915812320814e-07
+      ],
+      "obs_active": [
+        1.0,
+        -0.9009182839557415,
+        -0.9009182839557415,
+        0.811653754365758,
+        0.811653754365758
+      ]
+    },
+    "g_A_note": "g_A from confinement Frobenius reciprocity (master formula); no external Clebsch-Gordan factor inserted.",
+    "interpretation": "g_A is the ratio of two instances of the master formula on the same proton bound state T (operator-selection LP optimum at n_target = 1). The vector channel O_V uses the trivial-rep character (σ_i ↦ q); the axial channel O_A uses the sign-rep character (σ_i ↦ -q⁻¹). The Gram-inverse dual pairing on the LP-active subspace replaces the cyclic-trivial conjugation pattern of the prior implementation. Exact numerical agreement with PDG g_A = 1.2754 requires the categorical Clebsch-Gordan structure to be installed on the same active subspace; this v1 establishes the correct STRUCTURE — the conjugation bug is gone — with refinement (proper isospin projector on T) deferred."
+  }
+}

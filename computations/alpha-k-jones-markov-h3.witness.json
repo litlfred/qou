@@ -1,0 +1,31 @@
+{
+  "computation": "alpha-k-jones-markov-h3",
+  "description": "Solve for Jones-Markov weights y_\u03bb at H_3 via constraints tr_M(1)=1, tr_M(\u03c3_i)=z, tr_M(\u03c3_i\u03c3_j)=z\u00b2.  Then explicitly compute \u03b1_k on each surviving E_\u221e class with correct normalization.  Confirms \u03b1_2 = z\u00b2 structurally derived; \u03b1_1 = 0 vanishes; \u03b1_3 has q-rational form related to z\u00b3.",
+  "timestamp_utc": "2026-05-30T21:47:55.458452+00:00",
+  "q_0": 1.1099785827513808,
+  "z": 0.4993203341836944,
+  "jones_markov_weights": {
+    "y_sym (\u03bb=(3))": 0.4153957953606133,
+    "y_std (\u03bb=(2,1))": 0.28092963103101976,
+    "y_alt (\u03bb=(1,1,1))": 0.022744942577347143,
+    "sum": 0.7190703689689801
+  },
+  "alpha_k_at_H3_jones_markov": {
+    "alpha_0": 1.0,
+    "alpha_1": -6.23789089340176e-17,
+    "alpha_2": 0.2493207961293163,
+    "alpha_2_eq_z_squared_check": 2.7755575615628914e-17,
+    "alpha_3": 0.5514434143184563,
+    "alpha_3_over_z_cubed": 4.4295866025005175
+  },
+  "verification": {
+    "tr_M(1)": 1.0,
+    "tr_M(\u03c3_1)": 0.49932033418369437,
+    "tr_M(\u03c3_1\u03c3_2)": 0.2493207961293163,
+    "expected": {
+      "1": 1,
+      "\u03c3_1": 0.4993203341836944,
+      "\u03c3_1\u03c3_2": 0.24932079612931632
+    }
+  }
+}

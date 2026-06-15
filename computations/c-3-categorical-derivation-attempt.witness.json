@@ -1,0 +1,238 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-06-03T19:13:50.647809+00:00",
+  "commitSha": "d342f282d83743da0654be41bef96067a78f4dca",
+  "assertions": [
+    {
+      "name": "c_3_taylor_exact_promotion",
+      "computed": 0,
+      "expected": 0,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Number of candidates that match empirical c_3 at BOTH q₀ anchors to ≤ 10 ppm. Promotion to Taylor-exact requires ≥ 1; 0 = c_3 stays near-match."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 14,
+  "computation": "c-3-categorical-derivation-attempt",
+  "scriptFile": "c_3_categorical_derivation_attempt.py",
+  "scriptHash": "c2350db48a10",
+  "scriptCommitSha": "5a44813463430491fdc8cd8cd5a97a404b5e7e9d",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.4.0"
+  },
+  "description": "Hard structural attempt to promote Q_β precision-ladder coefficient c_3 from q₀-dependent near-match to Taylor-exact. Evaluates SIX structural candidates (bar-symmetrization, J_Hopf at q₀, linking-number weighted, Wedderburn-block weighted, 3-strand Markov braids, Habiro binomial) at BOTH muon-pin and m_p-pin q₀ anchors and checks for ≤ 10 ppm match with the empirically extracted c_3(q₀). Negative result is informative: it confirms c_3 is intrinsically scale-dependent (the ladder is a running coupling, not a Taylor expansion at c_3 level).",
+  "contentBlock": "prop:q-beta-categorical-precision-ladder",
+  "data": {
+    "anchors": {
+      "q0_mp_pin": "1.1099785827513808075916690956107688798744991218736",
+      "q0_muon_pin": "1.1099785955541805",
+      "u_mp_pin": "0.008517234550156142189255574",
+      "u_muon_pin": "0.008517236340043947582414571",
+      "b_mp_pin_recomputed": "0.8675840669652511556511629",
+      "b_mp_pin_stored": "0.8675840669652511556511629",
+      "b_match_ppm": 2.4130863612097237e-60
+    },
+    "empirical_c3": {
+      "muon_pin": "-2.0097",
+      "mp_pin_multiplicative": "-2.06934257711516783787971951725",
+      "mp_pin_additive": "-2.06249495572898589843212179255",
+      "cross_anchor_swing_pct": 2.9677353393624837
+    },
+    "candidates": [
+      {
+        "name": "a1) −2 · bar-sym(tr_M(σ_1²))",
+        "formula": "−2 · (tr_M(σ_1²; q) + tr_M(σ_1²; q⁻¹))/2 — q-bar symmetrised Hopf trace times standard linking factor",
+        "pred_mp": "-2.0",
+        "pred_muon": "-2.0",
+        "miss_mp_mult_ppm": 33509.47198498039,
+        "miss_mp_add_ppm": 30300.65870240984,
+        "miss_muon_ppm": 4826.591033487585,
+        "best_mp_ppm": 30300.65870240984,
+        "passes_10ppm": false
+      },
+      {
+        "name": "a2) bar-sym(J_Hopf(q))",
+        "formula": "(J_Hopf(q) + J_Hopf(q⁻¹))/2 — bar-symmetric Jones (drops writhe asymmetry, keeps q-content)",
+        "pred_mp": "-2.11022063766",
+        "pred_muon": "-2.11022066233",
+        "miss_mp_mult_ppm": 19754.12916176916,
+        "miss_mp_add_ppm": 23139.781167413643,
+        "miss_muon_ppm": 50017.745102396686,
+        "best_mp_ppm": 19754.12916176916,
+        "passes_10ppm": false
+      },
+      {
+        "name": "b) J_Hopf(q₀)",
+        "formula": "J_Hopf(q₀) = −q²·(1+q²) evaluated at canonical q₀",
+        "pred_mp": "-2.75000570399",
+        "pred_muon": "-2.75000580244",
+        "miss_mp_mult_ppm": 328927.2324444423,
+        "miss_mp_add_ppm": 333339.3598594884,
+        "miss_muon_ppm": 368366.32454632386,
+        "best_mp_ppm": 328927.2324444423,
+        "passes_10ppm": false
+      },
+      {
+        "name": "c1) −[2]_q",
+        "formula": "−[2]_q = −(q + q⁻¹) — quantum-2 weighted Hopf",
+        "pred_mp": "-2.01089686671",
+        "pred_muon": "-2.01089686912",
+        "miss_mp_mult_ppm": 28243.61275624243,
+        "miss_mp_add_ppm": 25017.316468357774,
+        "miss_muon_ppm": 595.5461603630768,
+        "best_mp_ppm": 25017.316468357774,
+        "passes_10ppm": false
+      },
+      {
+        "name": "c2) −[2]_q²/2",
+        "formula": "−[2]_q² / 2 — squared quantum-2 over writhe normalisation",
+        "pred_mp": "-2.02185310427",
+        "pred_muon": "-2.02185310912",
+        "miss_mp_mult_ppm": 22949.062844447457,
+        "miss_mp_add_ppm": 19705.18829625942,
+        "miss_muon_ppm": 6047.22551388566,
+        "best_mp_ppm": 19705.18829625942,
+        "passes_10ppm": false
+      },
+      {
+        "name": "c3) −[2]_q · (1 − ℏ_q²/2)",
+        "formula": "−[2]_q · (1 − ℏ_q²/2) — first-correction Habiro-like",
+        "pred_mp": "-2.00102619197",
+        "pred_muon": "-2.0010261923",
+        "miss_mp_mult_ppm": 33013.56957709478,
+        "miss_mp_add_ppm": 29803.109865317576,
+        "miss_muon_ppm": 4315.971390838634,
+        "best_mp_ppm": 29803.109865317576,
+        "passes_10ppm": false
+      },
+      {
+        "name": "d1) −tr_M(σ_1²) via Wedderburn",
+        "formula": "−(w_t·q² + w_s·q⁻²) — sign-flipped Wedderburn σ_1² trace",
+        "pred_mp": "-1.03280934183",
+        "pred_muon": "-1.03280934911",
+        "miss_mp_mult_ppm": 500899.7769401623,
+        "miss_mp_add_ppm": 499242.73077295616,
+        "miss_muon_ppm": 486087.79961584794,
+        "best_mp_ppm": 499242.73077295616,
+        "passes_10ppm": false
+      },
+      {
+        "name": "d2) −2·tr_M(σ_1²)",
+        "formula": "−2·tr_M(σ_1²) — Wedderburn-weighted with linking factor 2",
+        "pred_mp": "-2.06561868365",
+        "pred_muon": "-2.06561869822",
+        "miss_mp_mult_ppm": 1799.553880324576,
+        "miss_mp_add_ppm": 1514.5384540877112,
+        "miss_muon_ppm": 27824.40076830407,
+        "best_mp_ppm": 1514.5384540877112,
+        "passes_10ppm": false
+      },
+      {
+        "name": "d3) −(q² + q⁻²)",
+        "formula": "−(q² + q⁻²) — un-weighted block-eigenvalue sum",
+        "pred_mp": "-2.04370620853",
+        "pred_muon": "-2.04370621823",
+        "miss_mp_mult_ppm": 12388.653703914522,
+        "miss_mp_add_ppm": 9109.717890108997,
+        "miss_muon_ppm": 16921.042061258904,
+        "best_mp_ppm": 9109.717890108997,
+        "passes_10ppm": false
+      },
+      {
+        "name": "e1) −tr_M(σ_1²·σ_2²)",
+        "formula": "−tr_M(σ_1²·σ_2²) = −(h·z + 1)²  — H_3 disjoint Hopf",
+        "pred_mp": "-1.21967298323",
+        "pred_muon": "-1.21967300874",
+        "miss_mp_mult_ppm": 410598.8072183732,
+        "miss_mp_add_ppm": 408641.95578389,
+        "miss_muon_ppm": 393106.92703547893,
+        "best_mp_ppm": 408641.95578389,
+        "passes_10ppm": false
+      },
+      {
+        "name": "e2) −2·tr_M(σ_1²·σ_2²)",
+        "formula": "−2·tr_M(σ_1²·σ_2²) — doubled Hopf trace",
+        "pred_mp": "-2.43934596645",
+        "pred_muon": "-2.43934601747",
+        "miss_mp_mult_ppm": 178802.38556325372,
+        "miss_mp_add_ppm": 182716.0884322201,
+        "miss_muon_ppm": 213786.14592904213,
+        "best_mp_ppm": 178802.38556325372,
+        "passes_10ppm": false
+      },
+      {
+        "name": "e3) −tr_M(σ_1³)",
+        "formula": "−tr_M(σ_1³) = −((h²+1)·z + h) — trefoil-like",
+        "pred_mp": "-0.73020403163",
+        "pred_muon": "-0.73020405951",
+        "miss_mp_mult_ppm": 647132.3599557601,
+        "miss_mp_add_ppm": 645960.81575792,
+        "miss_muon_ppm": 636660.1684282818,
+        "best_mp_ppm": 645960.81575792,
+        "passes_10ppm": false
+      },
+      {
+        "name": "e4) J_Hopf(q=1) − 6·ℏ_q²",
+        "formula": "−2 − 6·ℏ_q² — closest structural from qbeta-ck-cache",
+        "pred_mp": "-2.05890311873",
+        "pred_muon": "-2.05890313108",
+        "miss_mp_mult_ppm": 5044.818825537746,
+        "miss_mp_add_ppm": 1741.5009880913508,
+        "miss_muon_ppm": 24482.823844788752,
+        "best_mp_ppm": 1741.5009880913508,
+        "passes_10ppm": false
+      },
+      {
+        "name": "f1) Habiro 2·C(1/2,3/2)·(1/4)^(3/2)",
+        "formula": "α_EM Habiro extrapolated to k=3 (treating C(1/2,k/2) analytically). q-independent.",
+        "pred_mp": "0.0",
+        "pred_muon": "0.0",
+        "miss_mp_mult_ppm": 1000000.0,
+        "miss_mp_add_ppm": 1000000.0,
+        "miss_muon_ppm": 1000000.0,
+        "best_mp_ppm": 1000000.0,
+        "passes_10ppm": false
+      },
+      {
+        "name": "f2) −[3]_q · (1 − ℏ_q²)",
+        "formula": "−[3]_q · (1 − ℏ_q²) — quantum-3 with 1-loop suppression",
+        "pred_mp": "-3.01382557717",
+        "pred_muon": "-3.01382558051",
+        "miss_mp_mult_ppm": 456416.93671274185,
+        "miss_mp_add_ppm": 461252.338484431,
+        "miss_muon_ppm": 499639.5384915639,
+        "best_mp_ppm": 456416.93671274185,
+        "passes_10ppm": false
+      }
+    ],
+    "pass_threshold_ppm": 10.0,
+    "n_passing": 0,
+    "verdict": "NEGATIVE",
+    "verdict_text": "No structural candidate at the c_3 level reproduces the empirical c_3 at both q₀ anchors to ≤ 10 ppm. The cross-anchor 3% swing CANNOT be absorbed by any single-formula candidate from the six tested. c_3 is intrinsically scale-dependent at this level — the Q_β ladder is a RUNNING coupling at c_3+, not a Taylor expansion. Promotion to Taylor-exact requires the Habiro-element identification per the truncation-order audit (which embeds the q-dependence into a generating function rather than a single closed coefficient). c_3 STAYS TIER 'near-match' per #1479 discipline; no wire/un-wire decision is required.",
+    "best_miss_candidate": {
+      "name": "d3) −(q² + q⁻²)",
+      "formula": "−(q² + q⁻²) — un-weighted block-eigenvalue sum",
+      "pred_mp": "-2.04370620853",
+      "pred_muon": "-2.04370621823",
+      "miss_mp_mult_ppm": 12388.653703914522,
+      "miss_mp_add_ppm": 9109.717890108997,
+      "miss_muon_ppm": 16921.042061258904,
+      "best_mp_ppm": 9109.717890108997,
+      "passes_10ppm": false
+    },
+    "structural_input_needed": "Q_β Habiro element (q-series whose Taylor coefficients ARE the c_k for k ≥ 3), parallel to the α_EM Habiro element [2]_q·(1−h²α) closed in PR #1511. The single-closed-form candidate scan rules out 12 mechanisms at the c_3 level alone; the Habiro generating-function approach is the only remaining direction (and is endorsed by the truncation-order canonical-framing audit, #1479 discipline lock)."
+  }
+}

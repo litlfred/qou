@@ -1,0 +1,386 @@
+{
+  "computedAt": "2026-04-27T21:20:43.384482+00:00",
+  "computation": "paper-six-term-shadow-price-sweep",
+  "description": "BW shadow-price decomposition B = \u03a3_\u03bb C_\u03bb \u00b7 S_\u03bb for each isotope.  Markov-invariant by construction: C_\u03bb depends only on partition (no braid-word ordering); S_\u03bb depends only on (Z, N, A, content_sum).  Replaces the non-Markov-invariant per-generator V\u0302_i sum of paper_six_term_isotope_sweep.py.",
+  "auditOnly": "docs/audits/2026-05-02-lp-dual-infra-scope.md",
+  "parameters": {
+    "q_0": 1.1099785955541805,
+    "tau_lambda_implementation": "Wigner-2 closed form (h/2) for self-conjugate \u03bb; approximate q^{c\u0304} \u2212 q^{\u2212c\u0304} for non-self-conjugate (coarse \u2014 exact via Hoefsmit available in pyhecke)."
+  },
+  "reference_blocks": [
+    "thm:knot-mass-formula-unified",
+    "prop:mass-coefficient-shadow-price",
+    "prop:wigner-2-coefficient",
+    "prop:content-scaling-correspondence",
+    "conj:shell-correction-term-seven"
+  ],
+  "results": {
+    "p   (Z=1, N=0)": {
+      "Z": 1,
+      "N": 0,
+      "B_shadow": 0.06906033578870716,
+      "n_partitions_nonzero": 3,
+      "top_5_contributions": [
+        {
+          "shape": [
+            2,
+            1
+          ],
+          "height": 2,
+          "content_sum": 0,
+          "self_conjugate": true,
+          "C_lambda": 0.06906033578870716,
+          "S_lambda": 1,
+          "contribution": 0.06906033578870716
+        },
+        {
+          "shape": [
+            3
+          ],
+          "height": 1,
+          "content_sum": 3,
+          "self_conjugate": false,
+          "C_lambda": 0.05135162815674618,
+          "S_lambda": 0.75,
+          "contribution": 0.038513721117559636
+        },
+        {
+          "shape": [
+            1,
+            1,
+            1
+          ],
+          "height": 3,
+          "content_sum": -3,
+          "self_conjugate": false,
+          "C_lambda": -0.05135162815674618,
+          "S_lambda": 0.75,
+          "contribution": -0.038513721117559636
+        }
+      ],
+      "walltime_sec": 0.00072479248046875
+    },
+    "n   (Z=0, N=1)": {
+      "Z": 0,
+      "N": 1,
+      "B_shadow": 0.06906033578870716,
+      "n_partitions_nonzero": 3,
+      "top_5_contributions": [
+        {
+          "shape": [
+            2,
+            1
+          ],
+          "height": 2,
+          "content_sum": 0,
+          "self_conjugate": true,
+          "C_lambda": 0.06906033578870716,
+          "S_lambda": 1,
+          "contribution": 0.06906033578870716
+        },
+        {
+          "shape": [
+            3
+          ],
+          "height": 1,
+          "content_sum": 3,
+          "self_conjugate": false,
+          "C_lambda": 0.05135162815674618,
+          "S_lambda": 0.75,
+          "contribution": 0.038513721117559636
+        },
+        {
+          "shape": [
+            1,
+            1,
+            1
+          ],
+          "height": 3,
+          "content_sum": -3,
+          "self_conjugate": false,
+          "C_lambda": -0.05135162815674618,
+          "S_lambda": 0.75,
+          "contribution": -0.038513721117559636
+        }
+      ],
+      "walltime_sec": 0.0005447864532470703
+    },
+    "D   (Z=1, N=1)": {
+      "Z": 1,
+      "N": 1,
+      "B_shadow": 0.07497648289486407,
+      "n_partitions_nonzero": 1,
+      "top_5_contributions": [
+        {
+          "shape": [
+            3,
+            2,
+            1
+          ],
+          "height": 3,
+          "content_sum": 0,
+          "self_conjugate": true,
+          "C_lambda": 0.037488241447432034,
+          "S_lambda": 2,
+          "contribution": 0.07497648289486407
+        }
+      ],
+      "walltime_sec": 0.002999544143676758
+    },
+    "T   (Z=1, N=2)": {
+      "Z": 1,
+      "N": 2,
+      "B_shadow": 0.0008740677314373878,
+      "n_partitions_nonzero": 29,
+      "top_5_contributions": [
+        {
+          "shape": [
+            4,
+            2,
+            2,
+            1
+          ],
+          "height": 4,
+          "content_sum": -1,
+          "self_conjugate": false,
+          "C_lambda": -0.0038154968815414655,
+          "S_lambda": 1.3867225487012693,
+          "contribution": -0.0052910355601329265
+        },
+        {
+          "shape": [
+            5,
+            1,
+            1,
+            1,
+            1
+          ],
+          "height": 5,
+          "content_sum": 0,
+          "self_conjugate": true,
+          "C_lambda": 0.0014417276851054703,
+          "S_lambda": 3,
+          "contribution": 0.004325183055316411
+        },
+        {
+          "shape": [
+            5,
+            3,
+            1
+          ],
+          "height": 3,
+          "content_sum": 8,
+          "self_conjugate": false,
+          "C_lambda": 0.01677279551708543,
+          "S_lambda": 0.25,
+          "contribution": 0.0041931988792713575
+        },
+        {
+          "shape": [
+            3,
+            2,
+            2,
+            1,
+            1
+          ],
+          "height": 5,
+          "content_sum": -8,
+          "self_conjugate": false,
+          "C_lambda": -0.01677279551708543,
+          "S_lambda": 0.25,
+          "contribution": -0.0041931988792713575
+        },
+        {
+          "shape": [
+            5,
+            2,
+            1,
+            1
+          ],
+          "height": 4,
+          "content_sum": 4,
+          "self_conjugate": false,
+          "C_lambda": 0.011093964000429852,
+          "S_lambda": 0.25,
+          "contribution": 0.002773491000107463
+        }
+      ],
+      "walltime_sec": 0.011742830276489258
+    },
+    "\u00b3He (Z=2, N=1)": {
+      "Z": 2,
+      "N": 1,
+      "B_shadow": 0.01145613885170324,
+      "n_partitions_nonzero": 29,
+      "top_5_contributions": [
+        {
+          "shape": [
+            4,
+            3,
+            1,
+            1
+          ],
+          "height": 4,
+          "content_sum": 1,
+          "self_conjugate": false,
+          "C_lambda": 0.0038154968815414655,
+          "S_lambda": 1.3867225487012693,
+          "contribution": 0.0052910355601329265
+        },
+        {
+          "shape": [
+            5,
+            1,
+            1,
+            1,
+            1
+          ],
+          "height": 5,
+          "content_sum": 0,
+          "self_conjugate": true,
+          "C_lambda": 0.0014417276851054703,
+          "S_lambda": 3,
+          "contribution": 0.004325183055316411
+        },
+        {
+          "shape": [
+            5,
+            3,
+            1
+          ],
+          "height": 3,
+          "content_sum": 8,
+          "self_conjugate": false,
+          "C_lambda": 0.01677279551708543,
+          "S_lambda": 0.25,
+          "contribution": 0.0041931988792713575
+        },
+        {
+          "shape": [
+            3,
+            2,
+            2,
+            1,
+            1
+          ],
+          "height": 5,
+          "content_sum": -8,
+          "self_conjugate": false,
+          "C_lambda": -0.01677279551708543,
+          "S_lambda": 0.25,
+          "contribution": -0.0041931988792713575
+        },
+        {
+          "shape": [
+            5,
+            2,
+            1,
+            1
+          ],
+          "height": 4,
+          "content_sum": 4,
+          "self_conjugate": false,
+          "C_lambda": 0.011093964000429852,
+          "S_lambda": 0.25,
+          "contribution": 0.002773491000107463
+        }
+      ],
+      "walltime_sec": 0.011924982070922852
+    },
+    "\u2074He (Z=2, N=2)": {
+      "Z": 2,
+      "N": 2,
+      "B_shadow": 0.094617772880196,
+      "n_partitions_nonzero": 7,
+      "top_5_contributions": [
+        {
+          "shape": [
+            5,
+            3,
+            2,
+            1,
+            1
+          ],
+          "height": 5,
+          "content_sum": 0,
+          "self_conjugate": true,
+          "C_lambda": 0.019865503904309783,
+          "S_lambda": 4,
+          "contribution": 0.07946201561723913
+        },
+        {
+          "shape": [
+            4,
+            4,
+            2,
+            2
+          ],
+          "height": 4,
+          "content_sum": 0,
+          "self_conjugate": true,
+          "C_lambda": 0.0025354163130576,
+          "S_lambda": 4,
+          "contribution": 0.0101416652522304
+        },
+        {
+          "shape": [
+            6,
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "height": 6,
+          "content_sum": 0,
+          "self_conjugate": true,
+          "C_lambda": 0.001253523002681617,
+          "S_lambda": 4,
+          "contribution": 0.005014092010726468
+        },
+        {
+          "shape": [
+            5,
+            3,
+            2,
+            2
+          ],
+          "height": 4,
+          "content_sum": 2,
+          "self_conjugate": false,
+          "C_lambda": 0.002515141410432247,
+          "S_lambda": 1.5874010519681996,
+          "contribution": 0.00399253812076893
+        },
+        {
+          "shape": [
+            4,
+            4,
+            2,
+            1,
+            1
+          ],
+          "height": 5,
+          "content_sum": -2,
+          "self_conjugate": false,
+          "C_lambda": -0.002515141410432247,
+          "S_lambda": 1.5874010519681996,
+          "contribution": -0.00399253812076893
+        }
+      ],
+      "walltime_sec": 0.038066864013671875
+    }
+  },
+  "engine": "python",
+  "scriptFile": "paper_six_term_shadow_price_sweep.py",
+  "commitSha": "610a6aa2bde5fabec35796ead6bbb0adb76f6533",
+  "y0_star": null,
+  "y0_star_status": "STUB \u2014 re-run script through lp_dual_solver.py to populate",
+  "dual_obj": null,
+  "dual_obj_status": "STUB \u2014 re-run script through lp_dual_solver.py to populate",
+  "duality_gap": null,
+  "duality_gap_status": "STUB \u2014 re-run script through lp_dual_solver.py to populate",
+  "y_star": null,
+  "active_set": null,
+  "primal_obj": null
+}

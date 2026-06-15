@@ -1,0 +1,1881 @@
+{
+  "computation": "inductive-atom-witness",
+  "timestamp": "2026-04-03T21:14:19.172532+00:00",
+  "description": "Complete Gr\u00f6bner basis witness for inductive atom construction. Every crossing, every reduction step, every Hecke energy cost is recorded. Includes natural and synthetic formation paths.",
+  "parameters": {
+    "q": 1.1099785955541805,
+    "q_inv": 0.9009182735643011,
+    "HA": 0.20906032198987945,
+    "s": 0.10438806980915827,
+    "z_markov": 0.4993203340335982
+  },
+  "crossing_types": {
+    "pp": {
+      "c": 1.0,
+      "d": 0.0,
+      "description": "proton-proton: positive crossing sigma"
+    },
+    "nn": {
+      "c": 1.2320524825884311,
+      "d": -0.11586852311938126,
+      "description": "neutron-neutron: Skein inverse q^2*sigma - q*s"
+    },
+    "pn": {
+      "c": 1.1160262412942155,
+      "d": -0.05793426155969063,
+      "description": "proton-neutron: mixed (sigma + sigma^-1)/2"
+    },
+    "np": {
+      "c": 1.1160262412942155,
+      "d": -0.05793426155969063,
+      "description": "neutron-proton: mixed"
+    },
+    "pe": {
+      "c": 1.0,
+      "d": 0.0,
+      "description": "proton-electron: Hopf link sigma"
+    },
+    "ep": {
+      "c": 1.0,
+      "d": 0.0,
+      "description": "electron-proton: Hopf link sigma"
+    },
+    "ne": {
+      "c": 1.0,
+      "d": 0.0,
+      "description": "neutron-electron: Hopf link sigma"
+    },
+    "en": {
+      "c": 1.0,
+      "d": 0.0,
+      "description": "electron-neutron: Hopf link sigma"
+    },
+    "ee": {
+      "c": 1.0,
+      "d": 0.0,
+      "description": "electron-electron: Hopf link sigma"
+    }
+  },
+  "atoms": {
+    "proton (bare)": {
+      "label": "proton (bare)",
+      "formation": "natural",
+      "particles": [
+        "p"
+      ],
+      "n_strands": 1,
+      "construction_order": [
+        {
+          "position": 0,
+          "type": "p"
+        }
+      ],
+      "ideal": {
+        "generators": [
+          "sigma_i^2 = (q - q^{-1}) * sigma_i + 1  [Hecke relation]",
+          "sigma_i * sigma_{i+1} * sigma_i = sigma_{i+1} * sigma_i * sigma_{i+1}  [Yang-Baxter]",
+          "sigma_i * sigma_j = sigma_j * sigma_i  for |i-j| >= 2  [far-commutativity]"
+        ],
+        "parameters": {
+          "q": 1.1099785955541805,
+          "q_inv": 0.9009182735643011,
+          "HA": 0.20906032198987945,
+          "s": 0.10438806980915827,
+          "z_markov": 0.4993203340335982
+        },
+        "ordering": "length-lexicographic on positive braid monomials"
+      },
+      "steps": [
+        {
+          "description": "Step 0: single particle p",
+          "element_before": "1 (identity)",
+          "crossings": [],
+          "reductions": [],
+          "element_after": {
+            "1": 1.0
+          },
+          "n_terms": 1,
+          "hecke_energy": 0.0
+        }
+      ],
+      "q_torsion_note": "Natural formation: nucleons aggregate by lowest-energy Hopf linking, electrons captured sequentially by shell.",
+      "normal_form": {
+        "terms": {
+          "1": 1.0
+        },
+        "n_terms": 1,
+        "markov_trace": 1.0,
+        "ln_markov_trace": 0.0,
+        "total_hecke_energy": 0.0,
+        "total_hecke_steps": 0,
+        "total_yb_steps": 0,
+        "total_far_comm_steps": 0,
+        "in_groebner_nf": true
+      }
+    },
+    "neutron (bare)": {
+      "label": "neutron (bare)",
+      "formation": "natural",
+      "particles": [
+        "n"
+      ],
+      "n_strands": 1,
+      "construction_order": [
+        {
+          "position": 0,
+          "type": "n"
+        }
+      ],
+      "ideal": {
+        "generators": [
+          "sigma_i^2 = (q - q^{-1}) * sigma_i + 1  [Hecke relation]",
+          "sigma_i * sigma_{i+1} * sigma_i = sigma_{i+1} * sigma_i * sigma_{i+1}  [Yang-Baxter]",
+          "sigma_i * sigma_j = sigma_j * sigma_i  for |i-j| >= 2  [far-commutativity]"
+        ],
+        "parameters": {
+          "q": 1.1099785955541805,
+          "q_inv": 0.9009182735643011,
+          "HA": 0.20906032198987945,
+          "s": 0.10438806980915827,
+          "z_markov": 0.4993203340335982
+        },
+        "ordering": "length-lexicographic on positive braid monomials"
+      },
+      "steps": [
+        {
+          "description": "Step 0: single particle n",
+          "element_before": "1 (identity)",
+          "crossings": [],
+          "reductions": [],
+          "element_after": {
+            "1": 1.0
+          },
+          "n_terms": 1,
+          "hecke_energy": 0.0
+        }
+      ],
+      "q_torsion_note": "Natural formation: nucleons aggregate by lowest-energy Hopf linking, electrons captured sequentially by shell.",
+      "normal_form": {
+        "terms": {
+          "1": 1.0
+        },
+        "n_terms": 1,
+        "markov_trace": 1.0,
+        "ln_markov_trace": 0.0,
+        "total_hecke_energy": 0.0,
+        "total_hecke_steps": 0,
+        "total_yb_steps": 0,
+        "total_far_comm_steps": 0,
+        "in_groebner_nf": true
+      }
+    },
+    "protium H (natural)": {
+      "label": "protium H (natural)",
+      "formation": "natural",
+      "particles": [
+        "p",
+        "e"
+      ],
+      "n_strands": 2,
+      "construction_order": [
+        {
+          "position": 0,
+          "type": "p"
+        },
+        {
+          "position": 1,
+          "type": "e"
+        }
+      ],
+      "ideal": {
+        "generators": [
+          "sigma_i^2 = (q - q^{-1}) * sigma_i + 1  [Hecke relation]",
+          "sigma_i * sigma_{i+1} * sigma_i = sigma_{i+1} * sigma_i * sigma_{i+1}  [Yang-Baxter]",
+          "sigma_i * sigma_j = sigma_j * sigma_i  for |i-j| >= 2  [far-commutativity]"
+        ],
+        "parameters": {
+          "q": 1.1099785955541805,
+          "q_inv": 0.9009182735643011,
+          "HA": 0.20906032198987945,
+          "s": 0.10438806980915827,
+          "z_markov": 0.4993203340335982
+        },
+        "ordering": "length-lexicographic on positive braid monomials"
+      },
+      "steps": [
+        {
+          "description": "Step 1: add e at position 1",
+          "particle_added": "e",
+          "position": 1,
+          "crossings": [
+            {
+              "with_particle": 0,
+              "with_type": "p",
+              "pair": "pe",
+              "generator": "sigma_0",
+              "crossing_coefficients": {
+                "c": 1.0,
+                "d": 0.0,
+                "description": "proton-electron: Hopf link sigma"
+              },
+              "hecke_element": {
+                "sigma_0": 1.0
+              },
+              "reduction": {
+                "pre_reduction": {
+                  "sigma_0": 1.0
+                },
+                "pre_terms": 1,
+                "hecke_steps": 0,
+                "yang_baxter_steps": 0,
+                "far_comm_steps": 0,
+                "hecke_energy": 0,
+                "post_reduction": {
+                  "sigma_0": 1.0
+                },
+                "post_terms": 1
+              }
+            }
+          ],
+          "reductions": [],
+          "element_before": {
+            "1": 1.0
+          },
+          "n_terms_before": 1,
+          "element_after": {
+            "sigma_0": 1.0
+          },
+          "n_terms_after": 1,
+          "cumulative_hecke_energy": 0.0,
+          "cumulative_hecke_steps": 0,
+          "cumulative_yb_steps": 0
+        }
+      ],
+      "q_torsion_note": "Natural formation: nucleons aggregate by lowest-energy Hopf linking, electrons captured sequentially by shell.",
+      "normal_form": {
+        "terms": {
+          "sigma_0": 1.0
+        },
+        "n_terms": 1,
+        "markov_trace": 0.4993203340335982,
+        "ln_markov_trace": -0.6945074372225054,
+        "total_hecke_energy": 0.0,
+        "total_hecke_steps": 0,
+        "total_yb_steps": 0,
+        "total_far_comm_steps": 0,
+        "in_groebner_nf": true
+      }
+    },
+    "protium H (synthetic: e first)": {
+      "label": "protium H (synthetic: e first)",
+      "formation": "synthetic",
+      "particles": [
+        "e",
+        "p"
+      ],
+      "n_strands": 2,
+      "construction_order": [
+        {
+          "position": 0,
+          "type": "e"
+        },
+        {
+          "position": 1,
+          "type": "p"
+        }
+      ],
+      "ideal": {
+        "generators": [
+          "sigma_i^2 = (q - q^{-1}) * sigma_i + 1  [Hecke relation]",
+          "sigma_i * sigma_{i+1} * sigma_i = sigma_{i+1} * sigma_i * sigma_{i+1}  [Yang-Baxter]",
+          "sigma_i * sigma_j = sigma_j * sigma_i  for |i-j| >= 2  [far-commutativity]"
+        ],
+        "parameters": {
+          "q": 1.1099785955541805,
+          "q_inv": 0.9009182735643011,
+          "HA": 0.20906032198987945,
+          "s": 0.10438806980915827,
+          "z_markov": 0.4993203340335982
+        },
+        "ordering": "length-lexicographic on positive braid monomials"
+      },
+      "steps": [
+        {
+          "description": "Step 1: add p at position 1",
+          "particle_added": "p",
+          "position": 1,
+          "crossings": [
+            {
+              "with_particle": 0,
+              "with_type": "e",
+              "pair": "ep",
+              "generator": "sigma_0",
+              "crossing_coefficients": {
+                "c": 1.0,
+                "d": 0.0,
+                "description": "electron-proton: Hopf link sigma"
+              },
+              "hecke_element": {
+                "sigma_0": 1.0
+              },
+              "reduction": {
+                "pre_reduction": {
+                  "sigma_0": 1.0
+                },
+                "pre_terms": 1,
+                "hecke_steps": 0,
+                "yang_baxter_steps": 0,
+                "far_comm_steps": 0,
+                "hecke_energy": 0,
+                "post_reduction": {
+                  "sigma_0": 1.0
+                },
+                "post_terms": 1
+              }
+            }
+          ],
+          "reductions": [],
+          "element_before": {
+            "1": 1.0
+          },
+          "n_terms_before": 1,
+          "element_after": {
+            "sigma_0": 1.0
+          },
+          "n_terms_after": 1,
+          "cumulative_hecke_energy": 0.0,
+          "cumulative_hecke_steps": 0,
+          "cumulative_yb_steps": 0
+        }
+      ],
+      "q_torsion_note": "Natural atoms form through stellar nucleosynthesis or Big Bang. Synthetic atoms (accelerator-produced) may have different q-torsion due to the high-energy formation environment affecting the initial braid word before reduction.",
+      "normal_form": {
+        "terms": {
+          "sigma_0": 1.0
+        },
+        "n_terms": 1,
+        "markov_trace": 0.4993203340335982,
+        "ln_markov_trace": -0.6945074372225054,
+        "total_hecke_energy": 0.0,
+        "total_hecke_steps": 0,
+        "total_yb_steps": 0,
+        "total_far_comm_steps": 0,
+        "in_groebner_nf": true
+      }
+    },
+    "deuterium nucleus D": {
+      "label": "deuterium nucleus D",
+      "formation": "natural",
+      "particles": [
+        "p",
+        "n"
+      ],
+      "n_strands": 2,
+      "construction_order": [
+        {
+          "position": 0,
+          "type": "p"
+        },
+        {
+          "position": 1,
+          "type": "n"
+        }
+      ],
+      "ideal": {
+        "generators": [
+          "sigma_i^2 = (q - q^{-1}) * sigma_i + 1  [Hecke relation]",
+          "sigma_i * sigma_{i+1} * sigma_i = sigma_{i+1} * sigma_i * sigma_{i+1}  [Yang-Baxter]",
+          "sigma_i * sigma_j = sigma_j * sigma_i  for |i-j| >= 2  [far-commutativity]"
+        ],
+        "parameters": {
+          "q": 1.1099785955541805,
+          "q_inv": 0.9009182735643011,
+          "HA": 0.20906032198987945,
+          "s": 0.10438806980915827,
+          "z_markov": 0.4993203340335982
+        },
+        "ordering": "length-lexicographic on positive braid monomials"
+      },
+      "steps": [
+        {
+          "description": "Step 1: add n at position 1",
+          "particle_added": "n",
+          "position": 1,
+          "crossings": [
+            {
+              "with_particle": 0,
+              "with_type": "p",
+              "pair": "pn",
+              "generator": "sigma_0",
+              "crossing_coefficients": {
+                "c": 1.1160262412942155,
+                "d": -0.05793426155969063,
+                "description": "proton-neutron: mixed (sigma + sigma^-1)/2"
+              },
+              "hecke_element": {
+                "1": -0.05793426155969063,
+                "sigma_0": 1.1160262412942155
+              },
+              "reduction": {
+                "pre_reduction": {
+                  "1": -0.05793426155969063,
+                  "sigma_0": 1.1160262412942155
+                },
+                "pre_terms": 2,
+                "hecke_steps": 0,
+                "yang_baxter_steps": 0,
+                "far_comm_steps": 0,
+                "hecke_energy": 0,
+                "post_reduction": {
+                  "1": -0.05793426155969063,
+                  "sigma_0": 1.1160262412942155
+                },
+                "post_terms": 2
+              }
+            }
+          ],
+          "reductions": [],
+          "element_before": {
+            "1": 1.0
+          },
+          "n_terms_before": 1,
+          "element_after": {
+            "1": -0.05793426155969063,
+            "sigma_0": 1.1160262412942155
+          },
+          "n_terms_after": 2,
+          "cumulative_hecke_energy": 0.0,
+          "cumulative_hecke_steps": 0,
+          "cumulative_yb_steps": 0
+        }
+      ],
+      "q_torsion_note": "Natural formation: nucleons aggregate by lowest-energy Hopf linking, electrons captured sequentially by shell.",
+      "normal_form": {
+        "terms": {
+          "1": -0.05793426155969063,
+          "sigma_0": 1.1160262412942155
+        },
+        "n_terms": 2,
+        "markov_trace": 0.4993203340335981,
+        "ln_markov_trace": -0.6945074372225056,
+        "total_hecke_energy": 0.0,
+        "total_hecke_steps": 0,
+        "total_yb_steps": 0,
+        "total_far_comm_steps": 0,
+        "in_groebner_nf": true
+      }
+    },
+    "deuterium atom D (natural)": {
+      "label": "deuterium atom D (natural)",
+      "formation": "natural",
+      "particles": [
+        "p",
+        "n",
+        "e"
+      ],
+      "n_strands": 3,
+      "construction_order": [
+        {
+          "position": 0,
+          "type": "p"
+        },
+        {
+          "position": 1,
+          "type": "n"
+        },
+        {
+          "position": 2,
+          "type": "e"
+        }
+      ],
+      "ideal": {
+        "generators": [
+          "sigma_i^2 = (q - q^{-1}) * sigma_i + 1  [Hecke relation]",
+          "sigma_i * sigma_{i+1} * sigma_i = sigma_{i+1} * sigma_i * sigma_{i+1}  [Yang-Baxter]",
+          "sigma_i * sigma_j = sigma_j * sigma_i  for |i-j| >= 2  [far-commutativity]"
+        ],
+        "parameters": {
+          "q": 1.1099785955541805,
+          "q_inv": 0.9009182735643011,
+          "HA": 0.20906032198987945,
+          "s": 0.10438806980915827,
+          "z_markov": 0.4993203340335982
+        },
+        "ordering": "length-lexicographic on positive braid monomials"
+      },
+      "steps": [
+        {
+          "description": "Step 1: add n at position 1",
+          "particle_added": "n",
+          "position": 1,
+          "crossings": [
+            {
+              "with_particle": 0,
+              "with_type": "p",
+              "pair": "pn",
+              "generator": "sigma_0",
+              "crossing_coefficients": {
+                "c": 1.1160262412942155,
+                "d": -0.05793426155969063,
+                "description": "proton-neutron: mixed (sigma + sigma^-1)/2"
+              },
+              "hecke_element": {
+                "1": -0.05793426155969063,
+                "sigma_0": 1.1160262412942155
+              },
+              "reduction": {
+                "pre_reduction": {
+                  "1": -0.05793426155969063,
+                  "sigma_0": 1.1160262412942155
+                },
+                "pre_terms": 2,
+                "hecke_steps": 0,
+                "yang_baxter_steps": 0,
+                "far_comm_steps": 0,
+                "hecke_energy": 0,
+                "post_reduction": {
+                  "1": -0.05793426155969063,
+                  "sigma_0": 1.1160262412942155
+                },
+                "post_terms": 2
+              }
+            }
+          ],
+          "reductions": [],
+          "element_before": {
+            "1": 1.0
+          },
+          "n_terms_before": 1,
+          "element_after": {
+            "1": -0.05793426155969063,
+            "sigma_0": 1.1160262412942155
+          },
+          "n_terms_after": 2,
+          "cumulative_hecke_energy": 0.0,
+          "cumulative_hecke_steps": 0,
+          "cumulative_yb_steps": 0
+        },
+        {
+          "description": "Step 2: add e at position 2",
+          "particle_added": "e",
+          "position": 2,
+          "crossings": [
+            {
+              "with_particle": 0,
+              "with_type": "p",
+              "pair": "pe",
+              "generator": "sigma_0",
+              "crossing_coefficients": {
+                "c": 1.0,
+                "d": 0.0,
+                "description": "proton-electron: Hopf link sigma"
+              },
+              "hecke_element": {
+                "sigma_0": 1.0
+              },
+              "reduction": {
+                "pre_reduction": {
+                  "sigma_0": -0.05793426155969063,
+                  "sigma_0.sigma_0": 1.1160262412942155
+                },
+                "pre_terms": 2,
+                "hecke_steps": 1,
+                "yang_baxter_steps": 0,
+                "far_comm_steps": 0,
+                "hecke_energy": 0.2333168053541237,
+                "post_reduction": {
+                  "1": 1.1160262412942155,
+                  "sigma_0": 0.17538254379443297
+                },
+                "post_terms": 2
+              }
+            },
+            {
+              "with_particle": 1,
+              "with_type": "n",
+              "pair": "ne",
+              "generator": "sigma_1",
+              "crossing_coefficients": {
+                "c": 1.0,
+                "d": 0.0,
+                "description": "neutron-electron: Hopf link sigma"
+              },
+              "hecke_element": {
+                "sigma_1": 1.0
+              },
+              "reduction": {
+                "pre_reduction": {
+                  "sigma_1": 1.1160262412942155,
+                  "sigma_0.sigma_1": 0.17538254379443297
+                },
+                "pre_terms": 2,
+                "hecke_steps": 0,
+                "yang_baxter_steps": 0,
+                "far_comm_steps": 0,
+                "hecke_energy": 0,
+                "post_reduction": {
+                  "sigma_1": 1.1160262412942155,
+                  "sigma_0.sigma_1": 0.17538254379443297
+                },
+                "post_terms": 2
+              }
+            }
+          ],
+          "reductions": [],
+          "element_before": {
+            "1": -0.05793426155969063,
+            "sigma_0": 1.1160262412942155
+          },
+          "n_terms_before": 2,
+          "element_after": {
+            "sigma_1": 1.1160262412942155,
+            "sigma_0.sigma_1": 0.17538254379443297
+          },
+          "n_terms_after": 2,
+          "cumulative_hecke_energy": 0.2333168053541237,
+          "cumulative_hecke_steps": 1,
+          "cumulative_yb_steps": 0
+        }
+      ],
+      "q_torsion_note": "Natural formation: nucleons aggregate by lowest-energy Hopf linking, electrons captured sequentially by shell.",
+      "normal_form": {
+        "terms": {
+          "sigma_1": 1.1160262412942155,
+          "sigma_0.sigma_1": 0.17538254379443297
+        },
+        "n_terms": 2,
+        "markov_trace": 0.600981111013013,
+        "ln_markov_trace": -0.5091917742037126,
+        "total_hecke_energy": 0.2333168053541237,
+        "total_hecke_steps": 1,
+        "total_yb_steps": 0,
+        "total_far_comm_steps": 0,
+        "in_groebner_nf": true
+      }
+    },
+    "tritium nucleus 3H": {
+      "label": "tritium nucleus 3H",
+      "formation": "natural",
+      "particles": [
+        "p",
+        "n",
+        "n"
+      ],
+      "n_strands": 3,
+      "construction_order": [
+        {
+          "position": 0,
+          "type": "p"
+        },
+        {
+          "position": 1,
+          "type": "n"
+        },
+        {
+          "position": 2,
+          "type": "n"
+        }
+      ],
+      "ideal": {
+        "generators": [
+          "sigma_i^2 = (q - q^{-1}) * sigma_i + 1  [Hecke relation]",
+          "sigma_i * sigma_{i+1} * sigma_i = sigma_{i+1} * sigma_i * sigma_{i+1}  [Yang-Baxter]",
+          "sigma_i * sigma_j = sigma_j * sigma_i  for |i-j| >= 2  [far-commutativity]"
+        ],
+        "parameters": {
+          "q": 1.1099785955541805,
+          "q_inv": 0.9009182735643011,
+          "HA": 0.20906032198987945,
+          "s": 0.10438806980915827,
+          "z_markov": 0.4993203340335982
+        },
+        "ordering": "length-lexicographic on positive braid monomials"
+      },
+      "steps": [
+        {
+          "description": "Step 1: add n at position 1",
+          "particle_added": "n",
+          "position": 1,
+          "crossings": [
+            {
+              "with_particle": 0,
+              "with_type": "p",
+              "pair": "pn",
+              "generator": "sigma_0",
+              "crossing_coefficients": {
+                "c": 1.1160262412942155,
+                "d": -0.05793426155969063,
+                "description": "proton-neutron: mixed (sigma + sigma^-1)/2"
+              },
+              "hecke_element": {
+                "1": -0.05793426155969063,
+                "sigma_0": 1.1160262412942155
+              },
+              "reduction": {
+                "pre_reduction": {
+                  "1": -0.05793426155969063,
+                  "sigma_0": 1.1160262412942155
+                },
+                "pre_terms": 2,
+                "hecke_steps": 0,
+                "yang_baxter_steps": 0,
+                "far_comm_steps": 0,
+                "hecke_energy": 0,
+                "post_reduction": {
+                  "1": -0.05793426155969063,
+                  "sigma_0": 1.1160262412942155
+                },
+                "post_terms": 2
+              }
+            }
+          ],
+          "reductions": [],
+          "element_before": {
+            "1": 1.0
+          },
+          "n_terms_before": 1,
+          "element_after": {
+            "1": -0.05793426155969063,
+            "sigma_0": 1.1160262412942155
+          },
+          "n_terms_after": 2,
+          "cumulative_hecke_energy": 0.0,
+          "cumulative_hecke_steps": 0,
+          "cumulative_yb_steps": 0
+        },
+        {
+          "description": "Step 2: add n at position 2",
+          "particle_added": "n",
+          "position": 2,
+          "crossings": [
+            {
+              "with_particle": 0,
+              "with_type": "p",
+              "pair": "pn",
+              "generator": "sigma_0",
+              "crossing_coefficients": {
+                "c": 1.1160262412942155,
+                "d": -0.05793426155969063,
+                "description": "proton-neutron: mixed (sigma + sigma^-1)/2"
+              },
+              "hecke_element": {
+                "1": -0.05793426155969063,
+                "sigma_0": 1.1160262412942155
+              },
+              "reduction": {
+                "pre_reduction": {
+                  "1": 0.003356378662466647,
+                  "sigma_0": -0.12931231234123497,
+                  "sigma_0.sigma_0": 1.2455145712572944
+                },
+                "pre_terms": 3,
+                "hecke_steps": 1,
+                "yang_baxter_steps": 0,
+                "far_comm_steps": 0,
+                "hecke_energy": 0.26038767731013657,
+                "post_reduction": {
+                  "1": 1.248870949919761,
+                  "sigma_0": 0.13107536496890165
+                },
+                "post_terms": 2
+              }
+            },
+            {
+              "with_particle": 1,
+              "with_type": "n",
+              "pair": "nn",
+              "generator": "sigma_1",
+              "crossing_coefficients": {
+                "c": 1.2320524825884311,
+                "d": -0.11586852311938126,
+                "description": "neutron-neutron: Skein inverse q^2*sigma - q*s"
+              },
+              "hecke_element": {
+                "1": -0.11586852311938126,
+                "sigma_1": 1.2320524825884311
+              },
+              "reduction": {
+                "pre_reduction": {
+                  "1": -0.14470483253390146,
+                  "sigma_0": -0.015187508956280517,
+                  "sigma_1": 1.5386745542812137,
+                  "sigma_0.sigma_1": 0.16149172881611995
+                },
+                "pre_terms": 4,
+                "hecke_steps": 0,
+                "yang_baxter_steps": 0,
+                "far_comm_steps": 0,
+                "hecke_energy": 0,
+                "post_reduction": {
+                  "1": -0.14470483253390146,
+                  "sigma_0": -0.015187508956280517,
+                  "sigma_1": 1.5386745542812137,
+                  "sigma_0.sigma_1": 0.16149172881611995
+                },
+                "post_terms": 4
+              }
+            }
+          ],
+          "reductions": [],
+          "element_before": {
+            "1": -0.05793426155969063,
+            "sigma_0": 1.1160262412942155
+          },
+          "n_terms_before": 2,
+          "element_after": {
+            "1": -0.14470483253390146,
+            "sigma_0": -0.015187508956280517,
+            "sigma_1": 1.5386745542812137,
+            "sigma_0.sigma_1": 0.16149172881611995
+          },
+          "n_terms_after": 4,
+          "cumulative_hecke_energy": 0.26038767731013657,
+          "cumulative_hecke_steps": 1,
+          "cumulative_yb_steps": 0
+        }
+      ],
+      "q_torsion_note": "Natural formation: nucleons aggregate by lowest-energy Hopf linking, electrons captured sequentially by shell.",
+      "normal_form": {
+        "terms": {
+          "1": -0.14470483253390146,
+          "sigma_0": -0.015187508956280517,
+          "sigma_1": 1.5386745542812137,
+          "sigma_0.sigma_1": 0.16149172881611995
+        },
+        "n_terms": 4,
+        "markov_trace": 0.6562664742061322,
+        "ln_markov_trace": -0.42118836183919106,
+        "total_hecke_energy": 0.26038767731013657,
+        "total_hecke_steps": 1,
+        "total_yb_steps": 0,
+        "total_far_comm_steps": 0,
+        "in_groebner_nf": true
+      }
+    },
+    "tritium atom 3H (natural)": {
+      "label": "tritium atom 3H (natural)",
+      "formation": "natural",
+      "particles": [
+        "p",
+        "n",
+        "n",
+        "e"
+      ],
+      "n_strands": 4,
+      "construction_order": [
+        {
+          "position": 0,
+          "type": "p"
+        },
+        {
+          "position": 1,
+          "type": "n"
+        },
+        {
+          "position": 2,
+          "type": "n"
+        },
+        {
+          "position": 3,
+          "type": "e"
+        }
+      ],
+      "ideal": {
+        "generators": [
+          "sigma_i^2 = (q - q^{-1}) * sigma_i + 1  [Hecke relation]",
+          "sigma_i * sigma_{i+1} * sigma_i = sigma_{i+1} * sigma_i * sigma_{i+1}  [Yang-Baxter]",
+          "sigma_i * sigma_j = sigma_j * sigma_i  for |i-j| >= 2  [far-commutativity]"
+        ],
+        "parameters": {
+          "q": 1.1099785955541805,
+          "q_inv": 0.9009182735643011,
+          "HA": 0.20906032198987945,
+          "s": 0.10438806980915827,
+          "z_markov": 0.4993203340335982
+        },
+        "ordering": "length-lexicographic on positive braid monomials"
+      },
+      "steps": [
+        {
+          "description": "Step 1: add n at position 1",
+          "particle_added": "n",
+          "position": 1,
+          "crossings": [
+            {
+              "with_particle": 0,
+              "with_type": "p",
+              "pair": "pn",
+              "generator": "sigma_0",
+              "crossing_coefficients": {
+                "c": 1.1160262412942155,
+                "d": -0.05793426155969063,
+                "description": "proton-neutron: mixed (sigma + sigma^-1)/2"
+              },
+              "hecke_element": {
+                "1": -0.05793426155969063,
+                "sigma_0": 1.1160262412942155
+              },
+              "reduction": {
+                "pre_reduction": {
+                  "1": -0.05793426155969063,
+                  "sigma_0": 1.1160262412942155
+                },
+                "pre_terms": 2,
+                "hecke_steps": 0,
+                "yang_baxter_steps": 0,
+                "far_comm_steps": 0,
+                "hecke_energy": 0,
+                "post_reduction": {
+                  "1": -0.05793426155969063,
+                  "sigma_0": 1.1160262412942155
+                },
+                "post_terms": 2
+              }
+            }
+          ],
+          "reductions": [],
+          "element_before": {
+            "1": 1.0
+          },
+          "n_terms_before": 1,
+          "element_after": {
+            "1": -0.05793426155969063,
+            "sigma_0": 1.1160262412942155
+          },
+          "n_terms_after": 2,
+          "cumulative_hecke_energy": 0.0,
+          "cumulative_hecke_steps": 0,
+          "cumulative_yb_steps": 0
+        },
+        {
+          "description": "Step 2: add n at position 2",
+          "particle_added": "n",
+          "position": 2,
+          "crossings": [
+            {
+              "with_particle": 0,
+              "with_type": "p",
+              "pair": "pn",
+              "generator": "sigma_0",
+              "crossing_coefficients": {
+                "c": 1.1160262412942155,
+                "d": -0.05793426155969063,
+                "description": "proton-neutron: mixed (sigma + sigma^-1)/2"
+              },
+              "hecke_element": {
+                "1": -0.05793426155969063,
+                "sigma_0": 1.1160262412942155
+              },
+              "reduction": {
+                "pre_reduction": {
+                  "1": 0.003356378662466647,
+                  "sigma_0": -0.12931231234123497,
+                  "sigma_0.sigma_0": 1.2455145712572944
+                },
+                "pre_terms": 3,
+                "hecke_steps": 1,
+                "yang_baxter_steps": 0,
+                "far_comm_steps": 0,
+                "hecke_energy": 0.26038767731013657,
+                "post_reduction": {
+                  "1": 1.248870949919761,
+                  "sigma_0": 0.13107536496890165
+                },
+                "post_terms": 2
+              }
+            },
+            {
+              "with_particle": 1,
+              "with_type": "n",
+              "pair": "nn",
+              "generator": "sigma_1",
+              "crossing_coefficients": {
+                "c": 1.2320524825884311,
+                "d": -0.11586852311938126,
+                "description": "neutron-neutron: Skein inverse q^2*sigma - q*s"
+              },
+              "hecke_element": {
+                "1": -0.11586852311938126,
+                "sigma_1": 1.2320524825884311
+              },
+              "reduction": {
+                "pre_reduction": {
+                  "1": -0.14470483253390146,
+                  "sigma_0": -0.015187508956280517,
+                  "sigma_1": 1.5386745542812137,
+                  "sigma_0.sigma_1": 0.16149172881611995
+                },
+                "pre_terms": 4,
+                "hecke_steps": 0,
+                "yang_baxter_steps": 0,
+                "far_comm_steps": 0,
+                "hecke_energy": 0,
+                "post_reduction": {
+                  "1": -0.14470483253390146,
+                  "sigma_0": -0.015187508956280517,
+                  "sigma_1": 1.5386745542812137,
+                  "sigma_0.sigma_1": 0.16149172881611995
+                },
+                "post_terms": 4
+              }
+            }
+          ],
+          "reductions": [],
+          "element_before": {
+            "1": -0.05793426155969063,
+            "sigma_0": 1.1160262412942155
+          },
+          "n_terms_before": 2,
+          "element_after": {
+            "1": -0.14470483253390146,
+            "sigma_0": -0.015187508956280517,
+            "sigma_1": 1.5386745542812137,
+            "sigma_0.sigma_1": 0.16149172881611995
+          },
+          "n_terms_after": 4,
+          "cumulative_hecke_energy": 0.26038767731013657,
+          "cumulative_hecke_steps": 1,
+          "cumulative_yb_steps": 0
+        },
+        {
+          "description": "Step 3: add e at position 3",
+          "particle_added": "e",
+          "position": 3,
+          "crossings": [
+            {
+              "with_particle": 0,
+              "with_type": "p",
+              "pair": "pe",
+              "generator": "sigma_0",
+              "crossing_coefficients": {
+                "c": 1.0,
+                "d": 0.0,
+                "description": "proton-electron: Hopf link sigma"
+              },
+              "hecke_element": {
+                "sigma_0": 1.0
+              },
+              "reduction": {
+                "pre_reduction": {
+                  "sigma_0": -0.14470483253390146,
+                  "sigma_0.sigma_0": -0.015187508956280517,
+                  "sigma_1.sigma_0": 1.5386745542812137,
+                  "sigma_0.sigma_1.sigma_0": 0.16149172881611995
+                },
+                "pre_terms": 4,
+                "hecke_steps": 1,
+                "yang_baxter_steps": 0,
+                "far_comm_steps": 0,
+                "hecke_energy": 0.003175105512624182,
+                "post_reduction": {
+                  "1": -0.015187508956280517,
+                  "sigma_0": -0.14787993804652563,
+                  "sigma_1.sigma_0": 1.5386745542812137,
+                  "sigma_0.sigma_1.sigma_0": 0.16149172881611995
+                },
+                "post_terms": 4
+              }
+            },
+            {
+              "with_particle": 1,
+              "with_type": "n",
+              "pair": "ne",
+              "generator": "sigma_1",
+              "crossing_coefficients": {
+                "c": 1.0,
+                "d": 0.0,
+                "description": "neutron-electron: Hopf link sigma"
+              },
+              "hecke_element": {
+                "sigma_1": 1.0
+              },
+              "reduction": {
+                "pre_reduction": {
+                  "sigma_1": -0.015187508956280517,
+                  "sigma_0.sigma_1": -0.14787993804652563,
+                  "sigma_1.sigma_0.sigma_1": 1.5386745542812137,
+                  "sigma_0.sigma_1.sigma_0.sigma_1": 0.16149172881611995
+                },
+                "pre_terms": 4,
+                "hecke_steps": 1,
+                "yang_baxter_steps": 2,
+                "far_comm_steps": 0,
+                "hecke_energy": 0.03376151282500034,
+                "post_reduction": {
+                  "sigma_1": -0.015187508956280517,
+                  "sigma_0.sigma_1": -0.14787993804652563,
+                  "sigma_1.sigma_0": 0.16149172881611995,
+                  "sigma_0.sigma_1.sigma_0": 1.572436067106214
+                },
+                "post_terms": 4
+              }
+            },
+            {
+              "with_particle": 2,
+              "with_type": "n",
+              "pair": "ne",
+              "generator": "sigma_2",
+              "crossing_coefficients": {
+                "c": 1.0,
+                "d": 0.0,
+                "description": "neutron-electron: Hopf link sigma"
+              },
+              "hecke_element": {
+                "sigma_2": 1.0
+              },
+              "reduction": {
+                "pre_reduction": {
+                  "sigma_1.sigma_2": -0.015187508956280517,
+                  "sigma_0.sigma_1.sigma_2": -0.14787993804652563,
+                  "sigma_1.sigma_0.sigma_2": 0.16149172881611995,
+                  "sigma_0.sigma_1.sigma_0.sigma_2": 1.572436067106214
+                },
+                "pre_terms": 4,
+                "hecke_steps": 0,
+                "yang_baxter_steps": 0,
+                "far_comm_steps": 0,
+                "hecke_energy": 0,
+                "post_reduction": {
+                  "sigma_1.sigma_2": -0.015187508956280517,
+                  "sigma_0.sigma_1.sigma_2": -0.14787993804652563,
+                  "sigma_1.sigma_0.sigma_2": 0.16149172881611995,
+                  "sigma_0.sigma_1.sigma_0.sigma_2": 1.572436067106214
+                },
+                "post_terms": 4
+              }
+            }
+          ],
+          "reductions": [],
+          "element_before": {
+            "1": -0.14470483253390146,
+            "sigma_0": -0.015187508956280517,
+            "sigma_1": 1.5386745542812137,
+            "sigma_0.sigma_1": 0.16149172881611995
+          },
+          "n_terms_before": 4,
+          "element_after": {
+            "sigma_1.sigma_2": -0.015187508956280517,
+            "sigma_0.sigma_1.sigma_2": -0.14787993804652563,
+            "sigma_1.sigma_0.sigma_2": 0.16149172881611995,
+            "sigma_0.sigma_1.sigma_0.sigma_2": 1.572436067106214
+          },
+          "n_terms_after": 4,
+          "cumulative_hecke_energy": 0.2973242956477611,
+          "cumulative_hecke_steps": 3,
+          "cumulative_yb_steps": 2
+        }
+      ],
+      "q_torsion_note": "Natural formation: nucleons aggregate by lowest-energy Hopf linking, electrons captured sequentially by shell.",
+      "normal_form": {
+        "terms": {
+          "sigma_1.sigma_2": -0.015187508956280517,
+          "sigma_0.sigma_1.sigma_2": -0.14787993804652563,
+          "sigma_1.sigma_0.sigma_2": 0.16149172881611995,
+          "sigma_0.sigma_1.sigma_0.sigma_2": 1.572436067106214
+        },
+        "n_terms": 4,
+        "markov_trace": 0.09565195998659126,
+        "ln_markov_trace": -2.347039092071199,
+        "total_hecke_energy": 0.2973242956477611,
+        "total_hecke_steps": 3,
+        "total_yb_steps": 2,
+        "total_far_comm_steps": 0,
+        "in_groebner_nf": true
+      }
+    },
+    "helium-3 nucleus 3He": {
+      "label": "helium-3 nucleus 3He",
+      "formation": "natural",
+      "particles": [
+        "p",
+        "p",
+        "n"
+      ],
+      "n_strands": 3,
+      "construction_order": [
+        {
+          "position": 0,
+          "type": "p"
+        },
+        {
+          "position": 1,
+          "type": "p"
+        },
+        {
+          "position": 2,
+          "type": "n"
+        }
+      ],
+      "ideal": {
+        "generators": [
+          "sigma_i^2 = (q - q^{-1}) * sigma_i + 1  [Hecke relation]",
+          "sigma_i * sigma_{i+1} * sigma_i = sigma_{i+1} * sigma_i * sigma_{i+1}  [Yang-Baxter]",
+          "sigma_i * sigma_j = sigma_j * sigma_i  for |i-j| >= 2  [far-commutativity]"
+        ],
+        "parameters": {
+          "q": 1.1099785955541805,
+          "q_inv": 0.9009182735643011,
+          "HA": 0.20906032198987945,
+          "s": 0.10438806980915827,
+          "z_markov": 0.4993203340335982
+        },
+        "ordering": "length-lexicographic on positive braid monomials"
+      },
+      "steps": [
+        {
+          "description": "Step 1: add p at position 1",
+          "particle_added": "p",
+          "position": 1,
+          "crossings": [
+            {
+              "with_particle": 0,
+              "with_type": "p",
+              "pair": "pp",
+              "generator": "sigma_0",
+              "crossing_coefficients": {
+                "c": 1.0,
+                "d": 0.0,
+                "description": "proton-proton: positive crossing sigma"
+              },
+              "hecke_element": {
+                "sigma_0": 1.0
+              },
+              "reduction": {
+                "pre_reduction": {
+                  "sigma_0": 1.0
+                },
+                "pre_terms": 1,
+                "hecke_steps": 0,
+                "yang_baxter_steps": 0,
+                "far_comm_steps": 0,
+                "hecke_energy": 0,
+                "post_reduction": {
+                  "sigma_0": 1.0
+                },
+                "post_terms": 1
+              }
+            }
+          ],
+          "reductions": [],
+          "element_before": {
+            "1": 1.0
+          },
+          "n_terms_before": 1,
+          "element_after": {
+            "sigma_0": 1.0
+          },
+          "n_terms_after": 1,
+          "cumulative_hecke_energy": 0.0,
+          "cumulative_hecke_steps": 0,
+          "cumulative_yb_steps": 0
+        },
+        {
+          "description": "Step 2: add n at position 2",
+          "particle_added": "n",
+          "position": 2,
+          "crossings": [
+            {
+              "with_particle": 0,
+              "with_type": "p",
+              "pair": "pn",
+              "generator": "sigma_0",
+              "crossing_coefficients": {
+                "c": 1.1160262412942155,
+                "d": -0.05793426155969063,
+                "description": "proton-neutron: mixed (sigma + sigma^-1)/2"
+              },
+              "hecke_element": {
+                "1": -0.05793426155969063,
+                "sigma_0": 1.1160262412942155
+              },
+              "reduction": {
+                "pre_reduction": {
+                  "sigma_0": -0.05793426155969063,
+                  "sigma_0.sigma_0": 1.1160262412942155
+                },
+                "pre_terms": 2,
+                "hecke_steps": 1,
+                "yang_baxter_steps": 0,
+                "far_comm_steps": 0,
+                "hecke_energy": 0.2333168053541237,
+                "post_reduction": {
+                  "1": 1.1160262412942155,
+                  "sigma_0": 0.17538254379443297
+                },
+                "post_terms": 2
+              }
+            },
+            {
+              "with_particle": 1,
+              "with_type": "p",
+              "pair": "pn",
+              "generator": "sigma_1",
+              "crossing_coefficients": {
+                "c": 1.1160262412942155,
+                "d": -0.05793426155969063,
+                "description": "proton-neutron: mixed (sigma + sigma^-1)/2"
+              },
+              "hecke_element": {
+                "1": -0.05793426155969063,
+                "sigma_1": 1.1160262412942155
+              },
+              "reduction": {
+                "pre_reduction": {
+                  "1": -0.06465615617061748,
+                  "sigma_0": -0.010160658165190576,
+                  "sigma_1": 1.2455145712572944,
+                  "sigma_0.sigma_1": 0.19573152113951917
+                },
+                "pre_terms": 4,
+                "hecke_steps": 0,
+                "yang_baxter_steps": 0,
+                "far_comm_steps": 0,
+                "hecke_energy": 0,
+                "post_reduction": {
+                  "1": -0.06465615617061748,
+                  "sigma_0": -0.010160658165190576,
+                  "sigma_1": 1.2455145712572944,
+                  "sigma_0.sigma_1": 0.19573152113951917
+                },
+                "post_terms": 4
+              }
+            }
+          ],
+          "reductions": [],
+          "element_before": {
+            "sigma_0": 1.0
+          },
+          "n_terms_before": 1,
+          "element_after": {
+            "1": -0.06465615617061748,
+            "sigma_0": -0.010160658165190576,
+            "sigma_1": 1.2455145712572944,
+            "sigma_0.sigma_1": 0.19573152113951917
+          },
+          "n_terms_after": 4,
+          "cumulative_hecke_energy": 0.2333168053541237,
+          "cumulative_hecke_steps": 1,
+          "cumulative_yb_steps": 0
+        }
+      ],
+      "q_torsion_note": "Natural formation: nucleons aggregate by lowest-energy Hopf linking, electrons captured sequentially by shell.",
+      "normal_form": {
+        "terms": {
+          "1": -0.06465615617061748,
+          "sigma_0": -0.010160658165190576,
+          "sigma_1": 1.2455145712572944,
+          "sigma_0.sigma_1": 0.19573152113951917
+        },
+        "n_terms": 4,
+        "markov_trace": 0.6009811110130129,
+        "ln_markov_trace": -0.5091917742037129,
+        "total_hecke_energy": 0.2333168053541237,
+        "total_hecke_steps": 1,
+        "total_yb_steps": 0,
+        "total_far_comm_steps": 0,
+        "in_groebner_nf": true
+      }
+    },
+    "helium-3 atom 3He (natural)": {
+      "label": "helium-3 atom 3He (natural)",
+      "formation": "natural",
+      "particles": [
+        "p",
+        "p",
+        "n",
+        "e",
+        "e"
+      ],
+      "n_strands": 5,
+      "construction_order": [
+        {
+          "position": 0,
+          "type": "p"
+        },
+        {
+          "position": 1,
+          "type": "p"
+        },
+        {
+          "position": 2,
+          "type": "n"
+        },
+        {
+          "position": 3,
+          "type": "e"
+        },
+        {
+          "position": 4,
+          "type": "e"
+        }
+      ],
+      "ideal": {
+        "generators": [
+          "sigma_i^2 = (q - q^{-1}) * sigma_i + 1  [Hecke relation]",
+          "sigma_i * sigma_{i+1} * sigma_i = sigma_{i+1} * sigma_i * sigma_{i+1}  [Yang-Baxter]",
+          "sigma_i * sigma_j = sigma_j * sigma_i  for |i-j| >= 2  [far-commutativity]"
+        ],
+        "parameters": {
+          "q": 1.1099785955541805,
+          "q_inv": 0.9009182735643011,
+          "HA": 0.20906032198987945,
+          "s": 0.10438806980915827,
+          "z_markov": 0.4993203340335982
+        },
+        "ordering": "length-lexicographic on positive braid monomials"
+      },
+      "steps": [
+        {
+          "description": "Step 1: add p at position 1",
+          "particle_added": "p",
+          "position": 1,
+          "crossings": [
+            {
+              "with_particle": 0,
+              "with_type": "p",
+              "pair": "pp",
+              "generator": "sigma_0",
+              "crossing_coefficients": {
+                "c": 1.0,
+                "d": 0.0,
+                "description": "proton-proton: positive crossing sigma"
+              },
+              "hecke_element": {
+                "sigma_0": 1.0
+              },
+              "reduction": {
+                "pre_reduction": {
+                  "sigma_0": 1.0
+                },
+                "pre_terms": 1,
+                "hecke_steps": 0,
+                "yang_baxter_steps": 0,
+                "far_comm_steps": 0,
+                "hecke_energy": 0,
+                "post_reduction": {
+                  "sigma_0": 1.0
+                },
+                "post_terms": 1
+              }
+            }
+          ],
+          "reductions": [],
+          "element_before": {
+            "1": 1.0
+          },
+          "n_terms_before": 1,
+          "element_after": {
+            "sigma_0": 1.0
+          },
+          "n_terms_after": 1,
+          "cumulative_hecke_energy": 0.0,
+          "cumulative_hecke_steps": 0,
+          "cumulative_yb_steps": 0
+        },
+        {
+          "description": "Step 2: add n at position 2",
+          "particle_added": "n",
+          "position": 2,
+          "crossings": [
+            {
+              "with_particle": 0,
+              "with_type": "p",
+              "pair": "pn",
+              "generator": "sigma_0",
+              "crossing_coefficients": {
+                "c": 1.1160262412942155,
+                "d": -0.05793426155969063,
+                "description": "proton-neutron: mixed (sigma + sigma^-1)/2"
+              },
+              "hecke_element": {
+                "1": -0.05793426155969063,
+                "sigma_0": 1.1160262412942155
+              },
+              "reduction": {
+                "pre_reduction": {
+                  "sigma_0": -0.05793426155969063,
+                  "sigma_0.sigma_0": 1.1160262412942155
+                },
+                "pre_terms": 2,
+                "hecke_steps": 1,
+                "yang_baxter_steps": 0,
+                "far_comm_steps": 0,
+                "hecke_energy": 0.2333168053541237,
+                "post_reduction": {
+                  "1": 1.1160262412942155,
+                  "sigma_0": 0.17538254379443297
+                },
+                "post_terms": 2
+              }
+            },
+            {
+              "with_particle": 1,
+              "with_type": "p",
+              "pair": "pn",
+              "generator": "sigma_1",
+              "crossing_coefficients": {
+                "c": 1.1160262412942155,
+                "d": -0.05793426155969063,
+                "description": "proton-neutron: mixed (sigma + sigma^-1)/2"
+              },
+              "hecke_element": {
+                "1": -0.05793426155969063,
+                "sigma_1": 1.1160262412942155
+              },
+              "reduction": {
+                "pre_reduction": {
+                  "1": -0.06465615617061748,
+                  "sigma_0": -0.010160658165190576,
+                  "sigma_1": 1.2455145712572944,
+                  "sigma_0.sigma_1": 0.19573152113951917
+                },
+                "pre_terms": 4,
+                "hecke_steps": 0,
+                "yang_baxter_steps": 0,
+                "far_comm_steps": 0,
+                "hecke_energy": 0,
+                "post_reduction": {
+                  "1": -0.06465615617061748,
+                  "sigma_0": -0.010160658165190576,
+                  "sigma_1": 1.2455145712572944,
+                  "sigma_0.sigma_1": 0.19573152113951917
+                },
+                "post_terms": 4
+              }
+            }
+          ],
+          "reductions": [],
+          "element_before": {
+            "sigma_0": 1.0
+          },
+          "n_terms_before": 1,
+          "element_after": {
+            "1": -0.06465615617061748,
+            "sigma_0": -0.010160658165190576,
+            "sigma_1": 1.2455145712572944,
+            "sigma_0.sigma_1": 0.19573152113951917
+          },
+          "n_terms_after": 4,
+          "cumulative_hecke_energy": 0.2333168053541237,
+          "cumulative_hecke_steps": 1,
+          "cumulative_yb_steps": 0
+        },
+        {
+          "description": "Step 3: add e at position 3",
+          "particle_added": "e",
+          "position": 3,
+          "crossings": [
+            {
+              "with_particle": 0,
+              "with_type": "p",
+              "pair": "pe",
+              "generator": "sigma_0",
+              "crossing_coefficients": {
+                "c": 1.0,
+                "d": 0.0,
+                "description": "proton-electron: Hopf link sigma"
+              },
+              "hecke_element": {
+                "sigma_0": 1.0
+              },
+              "reduction": {
+                "pre_reduction": {
+                  "sigma_0": -0.06465615617061748,
+                  "sigma_0.sigma_0": -0.010160658165190576,
+                  "sigma_1.sigma_0": 1.2455145712572944,
+                  "sigma_0.sigma_1.sigma_0": 0.19573152113951917
+                },
+                "pre_terms": 4,
+                "hecke_steps": 1,
+                "yang_baxter_steps": 0,
+                "far_comm_steps": 0,
+                "hecke_energy": 0.00212419046764384,
+                "post_reduction": {
+                  "1": -0.010160658165190576,
+                  "sigma_0": -0.06678034663826132,
+                  "sigma_1.sigma_0": 1.2455145712572944,
+                  "sigma_0.sigma_1.sigma_0": 0.19573152113951917
+                },
+                "post_terms": 4
+              }
+            },
+            {
+              "with_particle": 1,
+              "with_type": "p",
+              "pair": "pe",
+              "generator": "sigma_1",
+              "crossing_coefficients": {
+                "c": 1.0,
+                "d": 0.0,
+                "description": "proton-electron: Hopf link sigma"
+              },
+              "hecke_element": {
+                "sigma_1": 1.0
+              },
+              "reduction": {
+                "pre_reduction": {
+                  "sigma_1": -0.010160658165190576,
+                  "sigma_0.sigma_1": -0.06678034663826132,
+                  "sigma_1.sigma_0.sigma_1": 1.2455145712572944,
+                  "sigma_0.sigma_1.sigma_0.sigma_1": 0.19573152113951917
+                },
+                "pre_terms": 4,
+                "hecke_steps": 1,
+                "yang_baxter_steps": 2,
+                "far_comm_steps": 0,
+                "hecke_energy": 0.04091969483299676,
+                "post_reduction": {
+                  "sigma_1": -0.010160658165190576,
+                  "sigma_0.sigma_1": -0.06678034663826132,
+                  "sigma_1.sigma_0": 0.19573152113951917,
+                  "sigma_0.sigma_1.sigma_0": 1.2864342660902912
+                },
+                "post_terms": 4
+              }
+            },
+            {
+              "with_particle": 2,
+              "with_type": "n",
+              "pair": "ne",
+              "generator": "sigma_2",
+              "crossing_coefficients": {
+                "c": 1.0,
+                "d": 0.0,
+                "description": "neutron-electron: Hopf link sigma"
+              },
+              "hecke_element": {
+                "sigma_2": 1.0
+              },
+              "reduction": {
+                "pre_reduction": {
+                  "sigma_1.sigma_2": -0.010160658165190576,
+                  "sigma_0.sigma_1.sigma_2": -0.06678034663826132,
+                  "sigma_1.sigma_0.sigma_2": 0.19573152113951917,
+                  "sigma_0.sigma_1.sigma_0.sigma_2": 1.2864342660902912
+                },
+                "pre_terms": 4,
+                "hecke_steps": 0,
+                "yang_baxter_steps": 0,
+                "far_comm_steps": 0,
+                "hecke_energy": 0,
+                "post_reduction": {
+                  "sigma_1.sigma_2": -0.010160658165190576,
+                  "sigma_0.sigma_1.sigma_2": -0.06678034663826132,
+                  "sigma_1.sigma_0.sigma_2": 0.19573152113951917,
+                  "sigma_0.sigma_1.sigma_0.sigma_2": 1.2864342660902912
+                },
+                "post_terms": 4
+              }
+            }
+          ],
+          "reductions": [],
+          "element_before": {
+            "1": -0.06465615617061748,
+            "sigma_0": -0.010160658165190576,
+            "sigma_1": 1.2455145712572944,
+            "sigma_0.sigma_1": 0.19573152113951917
+          },
+          "n_terms_before": 4,
+          "element_after": {
+            "sigma_1.sigma_2": -0.010160658165190576,
+            "sigma_0.sigma_1.sigma_2": -0.06678034663826132,
+            "sigma_1.sigma_0.sigma_2": 0.19573152113951917,
+            "sigma_0.sigma_1.sigma_0.sigma_2": 1.2864342660902912
+          },
+          "n_terms_after": 4,
+          "cumulative_hecke_energy": 0.2763606906547643,
+          "cumulative_hecke_steps": 3,
+          "cumulative_yb_steps": 2
+        },
+        {
+          "description": "Step 4: add e at position 4",
+          "particle_added": "e",
+          "position": 4,
+          "crossings": [
+            {
+              "with_particle": 0,
+              "with_type": "p",
+              "pair": "pe",
+              "generator": "sigma_0",
+              "crossing_coefficients": {
+                "c": 1.0,
+                "d": 0.0,
+                "description": "proton-electron: Hopf link sigma"
+              },
+              "hecke_element": {
+                "sigma_0": 1.0
+              },
+              "reduction": {
+                "pre_reduction": {
+                  "sigma_1.sigma_2.sigma_0": -0.010160658165190576,
+                  "sigma_0.sigma_1.sigma_2.sigma_0": -0.06678034663826132,
+                  "sigma_1.sigma_0.sigma_2.sigma_0": 0.19573152113951917,
+                  "sigma_0.sigma_1.sigma_0.sigma_2.sigma_0": 1.2864342660902912
+                },
+                "pre_terms": 4,
+                "hecke_steps": 2,
+                "yang_baxter_steps": 0,
+                "far_comm_steps": 4,
+                "hecke_energy": 0.30986205672064726,
+                "post_reduction": {
+                  "sigma_1.sigma_2": 0.19573152113951917,
+                  "sigma_0.sigma_1.sigma_2": 1.2864342660902912,
+                  "sigma_1.sigma_0.sigma_2": 0.0307590366678062,
+                  "sigma_0.sigma_1.sigma_0.sigma_2": 0.2021620152493892
+                },
+                "post_terms": 4
+              }
+            },
+            {
+              "with_particle": 1,
+              "with_type": "p",
+              "pair": "pe",
+              "generator": "sigma_1",
+              "crossing_coefficients": {
+                "c": 1.0,
+                "d": 0.0,
+                "description": "proton-electron: Hopf link sigma"
+              },
+              "hecke_element": {
+                "sigma_1": 1.0
+              },
+              "reduction": {
+                "pre_reduction": {
+                  "sigma_1.sigma_2.sigma_1": 0.19573152113951917,
+                  "sigma_0.sigma_1.sigma_2.sigma_1": 1.2864342660902912,
+                  "sigma_1.sigma_0.sigma_2.sigma_1": 0.0307590366678062,
+                  "sigma_0.sigma_1.sigma_0.sigma_2.sigma_1": 0.2021620152493892
+                },
+                "pre_terms": 4,
+                "hecke_steps": 0,
+                "yang_baxter_steps": 0,
+                "far_comm_steps": 0,
+                "hecke_energy": 0,
+                "post_reduction": {
+                  "sigma_1.sigma_2.sigma_1": 0.19573152113951917,
+                  "sigma_0.sigma_1.sigma_2.sigma_1": 1.2864342660902912,
+                  "sigma_1.sigma_0.sigma_2.sigma_1": 0.0307590366678062,
+                  "sigma_0.sigma_1.sigma_0.sigma_2.sigma_1": 0.2021620152493892
+                },
+                "post_terms": 4
+              }
+            },
+            {
+              "with_particle": 2,
+              "with_type": "n",
+              "pair": "ne",
+              "generator": "sigma_2",
+              "crossing_coefficients": {
+                "c": 1.0,
+                "d": 0.0,
+                "description": "neutron-electron: Hopf link sigma"
+              },
+              "hecke_element": {
+                "sigma_2": 1.0
+              },
+              "reduction": {
+                "pre_reduction": {
+                  "sigma_1.sigma_2.sigma_1.sigma_2": 0.19573152113951917,
+                  "sigma_0.sigma_1.sigma_2.sigma_1.sigma_2": 1.2864342660902912,
+                  "sigma_1.sigma_0.sigma_2.sigma_1.sigma_2": 0.0307590366678062,
+                  "sigma_0.sigma_1.sigma_0.sigma_2.sigma_1.sigma_2": 0.2021620152493892
+                },
+                "pre_terms": 4,
+                "hecke_steps": 3,
+                "yang_baxter_steps": 6,
+                "far_comm_steps": 0,
+                "hecke_energy": 0.35212611272280747,
+                "post_reduction": {
+                  "sigma_2.sigma_1": 0.19573152113951917,
+                  "sigma_0.sigma_2.sigma_1": 1.2864342660902912,
+                  "sigma_1.sigma_2.sigma_1": 0.040919694832996775,
+                  "sigma_0.sigma_1.sigma_2.sigma_1": 0.2689423618876505,
+                  "sigma_1.sigma_0.sigma_2.sigma_1": 0.2021620152493892,
+                  "sigma_0.sigma_1.sigma_0.sigma_2.sigma_1": 0.07302309266996643
+                },
+                "post_terms": 6
+              }
+            },
+            {
+              "with_particle": 3,
+              "with_type": "e",
+              "pair": "ee",
+              "generator": "sigma_3",
+              "crossing_coefficients": {
+                "c": 1.0,
+                "d": 0.0,
+                "description": "electron-electron: Hopf link sigma"
+              },
+              "hecke_element": {
+                "sigma_3": 1.0
+              },
+              "reduction": {
+                "pre_reduction": {
+                  "sigma_2.sigma_1.sigma_3": 0.19573152113951917,
+                  "sigma_0.sigma_2.sigma_1.sigma_3": 1.2864342660902912,
+                  "sigma_1.sigma_2.sigma_1.sigma_3": 0.040919694832996775,
+                  "sigma_0.sigma_1.sigma_2.sigma_1.sigma_3": 0.2689423618876505,
+                  "sigma_1.sigma_0.sigma_2.sigma_1.sigma_3": 0.2021620152493892,
+                  "sigma_0.sigma_1.sigma_0.sigma_2.sigma_1.sigma_3": 0.07302309266996643
+                },
+                "pre_terms": 6,
+                "hecke_steps": 0,
+                "yang_baxter_steps": 0,
+                "far_comm_steps": 0,
+                "hecke_energy": 0,
+                "post_reduction": {
+                  "sigma_2.sigma_1.sigma_3": 0.19573152113951917,
+                  "sigma_0.sigma_2.sigma_1.sigma_3": 1.2864342660902912,
+                  "sigma_1.sigma_2.sigma_1.sigma_3": 0.040919694832996775,
+                  "sigma_0.sigma_1.sigma_2.sigma_1.sigma_3": 0.2689423618876505,
+                  "sigma_1.sigma_0.sigma_2.sigma_1.sigma_3": 0.2021620152493892,
+                  "sigma_0.sigma_1.sigma_0.sigma_2.sigma_1.sigma_3": 0.07302309266996643
+                },
+                "post_terms": 6
+              }
+            }
+          ],
+          "reductions": [],
+          "element_before": {
+            "sigma_1.sigma_2": -0.010160658165190576,
+            "sigma_0.sigma_1.sigma_2": -0.06678034663826132,
+            "sigma_1.sigma_0.sigma_2": 0.19573152113951917,
+            "sigma_0.sigma_1.sigma_0.sigma_2": 1.2864342660902912
+          },
+          "n_terms_before": 4,
+          "element_after": {
+            "sigma_2.sigma_1.sigma_3": 0.19573152113951917,
+            "sigma_0.sigma_2.sigma_1.sigma_3": 1.2864342660902912,
+            "sigma_1.sigma_2.sigma_1.sigma_3": 0.040919694832996775,
+            "sigma_0.sigma_1.sigma_2.sigma_1.sigma_3": 0.2689423618876505,
+            "sigma_1.sigma_0.sigma_2.sigma_1.sigma_3": 0.2021620152493892,
+            "sigma_0.sigma_1.sigma_0.sigma_2.sigma_1.sigma_3": 0.07302309266996643
+          },
+          "n_terms_after": 6,
+          "cumulative_hecke_energy": 0.938348860098219,
+          "cumulative_hecke_steps": 8,
+          "cumulative_yb_steps": 8
+        }
+      ],
+      "q_torsion_note": "Natural formation: nucleons aggregate by lowest-energy Hopf linking, electrons captured sequentially by shell.",
+      "normal_form": {
+        "terms": {
+          "sigma_2.sigma_1.sigma_3": 0.19573152113951917,
+          "sigma_0.sigma_2.sigma_1.sigma_3": 1.2864342660902912,
+          "sigma_1.sigma_2.sigma_1.sigma_3": 0.040919694832996775,
+          "sigma_0.sigma_1.sigma_2.sigma_1.sigma_3": 0.2689423618876505,
+          "sigma_1.sigma_0.sigma_2.sigma_1.sigma_3": 0.2021620152493892,
+          "sigma_0.sigma_1.sigma_0.sigma_2.sigma_1.sigma_3": 0.07302309266996643
+        },
+        "n_terms": 6,
+        "markov_trace": 0.12263019894609034,
+        "ln_markov_trace": -2.0985819648814554,
+        "total_hecke_energy": 0.938348860098219,
+        "total_hecke_steps": 8,
+        "total_yb_steps": 8,
+        "total_far_comm_steps": 4,
+        "in_groebner_nf": true
+      }
+    }
+  }
+}

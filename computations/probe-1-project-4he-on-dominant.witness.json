@@ -1,0 +1,207 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.12.3",
+  "computedAt": "2026-06-02T17:03:37.333901+00:00",
+  "commitSha": "77f2b68af2c9d52ae3d55c1cea746e8e9977db80",
+  "assertions": [
+    {
+      "name": "psd_dominant_pair_contributes_under_1pct_of_trace",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "|y_(4,4,4)·χ_(4,4,4) + y_(3,3,3,3)·χ_(3,3,3,3)| / |tr_M_partial| = 0.000307"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 13,
+  "computation": "probe-1-project-4he-on-dominant",
+  "scriptFile": "probe_1_project_4he_on_dominant.py",
+  "scriptHash": "ea09f339b15f",
+  "scriptCommitSha": "5a44813463430491fdc8cd8cd5a97a404b5e7e9d",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.12.3",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Projects the Frobenius Markov-trace mass formula tr_M(T_w_⁴He) onto the PSD-dominant Wedderburn block (4,4,4) and its conjugate (3,3,3,3), and compares to the partial-sum trace over all evaluated blocks (26/77). Tests whether PSD-dominance and trace-dominance coincide — they appear to be ORTHOGONAL structural axes.",
+  "contentBlock": "conj:atom-braid-exterior-algebra",
+  "auditOnly": "docs/audits/2026-05-25-dominant-partition-nucleon-structure.md",
+  "data": {
+    "partial_tr_M_at_q0": "0.0497834624431837545466606809753",
+    "n_blocks_evaluated": 26,
+    "n_blocks_total": 77,
+    "top_10_trace_contributors": [
+      {
+        "rank": 1,
+        "partition": [
+          9,
+          3
+        ],
+        "y_lambda": "0.000587053870088059943530075721566",
+        "chi_lambda": "27.1692381586661864147080880372",
+        "contribution": "0.0159498064083891803509031308556",
+        "abs_contribution_frac_of_partial_tr_M": 0.320383629937194,
+        "min_eig": -10.82123418510746
+      },
+      {
+        "rank": 2,
+        "partition": [
+          8,
+          4
+        ],
+        "y_lambda": "0.000430967827793357335977879227579",
+        "chi_lambda": "30.0309336663212602031892972665",
+        "contribution": "0.0129423662487808781241111103784",
+        "abs_contribution_frac_of_partial_tr_M": 0.25997320422523,
+        "min_eig": -13.507187523403122
+      },
+      {
+        "rank": 3,
+        "partition": [
+          10,
+          2
+        ],
+        "y_lambda": "0.000712129211381594783117982270633",
+        "chi_lambda": "10.3948202642745131385471069052",
+        "contribution": "0.00740245515725122971305892491787",
+        "abs_contribution_frac_of_partial_tr_M": 0.14869305576524355,
+        "min_eig": -6.922835380603364
+      },
+      {
+        "rank": 4,
+        "partition": [
+          7,
+          5
+        ],
+        "y_lambda": "0.000261783238774027343296021482248",
+        "chi_lambda": "21.590720666057879094032467826",
+        "contribution": "0.00565208878342595644164361347836",
+        "abs_contribution_frac_of_partial_tr_M": 0.11353346083303269,
+        "min_eig": -15.233982933881752
+      },
+      {
+        "rank": 5,
+        "partition": [
+          11,
+          1
+        ],
+        "y_lambda": "0.000767012335967353931622303256341",
+        "chi_lambda": "7.35501862567754618321691495453",
+        "contribution": "0.00564139001716433183976398763075",
+        "abs_contribution_frac_of_partial_tr_M": 0.11331855480326758,
+        "min_eig": -3.3163351635904967
+      },
+      {
+        "rank": 6,
+        "partition": [
+          6,
+          6
+        ],
+        "y_lambda": "0.0000876652720265709845948195505464",
+        "chi_lambda": "20.3240128753683100060932692835",
+        "contribution": "0.00178171011739069402988081367221",
+        "abs_contribution_frac_of_partial_tr_M": 0.03578919645101226,
+        "min_eig": -13.599826695251153
+      },
+      {
+        "rank": 7,
+        "partition": [
+          12
+        ],
+        "y_lambda": "0.000656574571989824931463237164619",
+        "chi_lambda": "2.41424324675422630193111217523",
+        "contribution": "0.0015851307264169814328814216676",
+        "abs_contribution_frac_of_partial_tr_M": 0.03184050784386561,
+        "min_eig": 2.4142432467542263
+      },
+      {
+        "rank": 8,
+        "partition": [
+          9,
+          2,
+          1
+        ],
+        "y_lambda": "0.000197856009786310102725966319269",
+        "chi_lambda": "-7.92030940731039885099309602601",
+        "contribution": "-0.00156708081560341024453935680034",
+        "abs_contribution_frac_of_partial_tr_M": 0.03147793943404135,
+        "min_eig": -11.41873352684113
+      },
+      {
+        "rank": 9,
+        "partition": [
+          10,
+          1,
+          1
+        ],
+        "y_lambda": "0.00016439510272058522414884498184",
+        "chi_lambda": "2.00918586468680744096249046748",
+        "contribution": "0.00033030031660993555397342166181",
+        "abs_contribution_frac_of_partial_tr_M": 0.006634739738862008,
+        "min_eig": -6.641420400212249
+      },
+      {
+        "rank": 10,
+        "partition": [
+          9,
+          1,
+          1,
+          1
+        ],
+        "y_lambda": "-0.0000153101871954400827881849028773",
+        "chi_lambda": "-3.26440709222410817367393542909",
+        "contribution": "0.0000499786836640733344057940792217",
+        "abs_contribution_frac_of_partial_tr_M": 0.0010039214070558548,
+        "min_eig": -10.466861165832446
+      }
+    ],
+    "psd_dominant_pair": [
+      {
+        "partition": [
+          4,
+          4,
+          4
+        ],
+        "y_lambda": "0.00000125709498382799093465161008809",
+        "chi_lambda": "-12.0780966960499832080102970699",
+        "contribution": "-0.0000151833147707938643801989392181",
+        "abs_contribution_frac_of_partial_tr_M": 0.0003049871187268681,
+        "rank_by_abs_contrib": 12,
+        "min_eig": -19.835887443514437
+      },
+      {
+        "partition": [
+          3,
+          3,
+          3,
+          3
+        ],
+        "y_lambda": "-0.00000000465499711246183089586713007487",
+        "chi_lambda": "23.4434272043199587395065179585",
+        "contribution": "-0.0000001091290859423185408443289366",
+        "abs_contribution_frac_of_partial_tr_M": 2.192075050361634e-06,
+        "rank_by_abs_contrib": 18,
+        "min_eig": -15.507158369349328
+      }
+    ],
+    "mass_projection_MeV": {
+      "m_e_x_A_x_8G_MeV_per_unit_tr_M": "14.97783863976644105287459552",
+      "contrib_4_4_4_MeV": "-0.000227413238653732886376923105695",
+      "contrib_3_3_3_3_MeV": "-0.00000163451784014925137783316247406",
+      "pair_contribution_MeV": "-0.000229047756493882137754756268169",
+      "AME_B_4He_MeV": 28.2957
+    }
+  },
+  "caveats": [
+    "tr_M is the PARTIAL sum over 26/77 evaluated Wedderburn blocks (those with d_λ ≤ 500 from the joint-tower-sdp-rust run). The 51 unevaluated blocks may shift tr_M and the fractional contributions. However, the 26 evaluated blocks include both (4,4,4) and (3,3,3,3) plus 24 others spanning low-row partitions, so the *relative* ranking of the dominant pair against the trace-largest contributors is robust."
+  ]
+}

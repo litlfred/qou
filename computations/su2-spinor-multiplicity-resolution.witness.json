@@ -1,0 +1,519 @@
+{
+  "engine": "python+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-02T02:48:39.513884+00:00",
+  "commitSha": "ef3d40d1844068063557ae2e5c99159d3bae8a10",
+  "assertions": [
+    {
+      "name": "spin_ladder_(2)",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0,
+      "source": "#1683 theta_j=q^{j(j+1)} ladder table"
+    },
+    {
+      "name": "spin_ladder_(1,1)",
+      "computed": 0.0,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 0,
+      "source": "#1683 theta_j=q^{j(j+1)} ladder table"
+    },
+    {
+      "name": "spin_ladder_(3)",
+      "computed": 1.5,
+      "expected": 1.5,
+      "passed": true,
+      "tolerance": 0,
+      "source": "#1683 theta_j=q^{j(j+1)} ladder table"
+    },
+    {
+      "name": "spin_ladder_(2,1)",
+      "computed": 0.5,
+      "expected": 0.5,
+      "passed": true,
+      "tolerance": 0,
+      "source": "#1683 theta_j=q^{j(j+1)} ladder table"
+    },
+    {
+      "name": "spin_ladder_(1,1,1)",
+      "computed": 0.0,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 0,
+      "source": "#1683 theta_j=q^{j(j+1)} ladder table"
+    },
+    {
+      "name": "ov_content_separates_all_multiplicity_spaces",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Okounkov-Vershik: JM content vector labels GT basis uniquely"
+    },
+    {
+      "name": "global_canonical_spin_selector_exists",
+      "computed": 0.0,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 0,
+      "source": "is there a single spin value selecting one copy in EVERY m2 space?"
+    },
+    {
+      "name": "final_2_1_block_spin_constant_one_half",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0,
+      "source": "(2,1) block spin = 1/2 by #1683; same for every copy"
+    },
+    {
+      "name": "intermediate_H4_spin_simple_on_all_m2_spaces",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0,
+      "source": "RAW: does the path-spin (j of lam4) separate the 2 copies?"
+    },
+    {
+      "name": "content_simple_on_all_m2_spaces",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Okounkov-Vershik content separation on the m=2 spaces"
+    },
+    {
+      "name": "no_h4_fit_performed",
+      "computed": 0.0,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 0,
+      "source": "discipline: no spin/content chosen to produce h^4"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 44,
+  "computation": "su2-spinor-multiplicity-resolution",
+  "scriptFile": "su2_spinor_multiplicity_resolution.py",
+  "scriptHash": "95a2b90deb7b",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "clarabel": "0.11.1"
+  },
+  "auditOnly": "docs/audits/2026-06-02-su2-spinor-multiplicity-resolution.md",
+  "parameters": {
+    "q0": "1.1099785827513808378341764182550832629203796386719",
+    "compute_dps": 60
+  },
+  "data": {
+    "task0_spin_ladder_check": {
+      "(2)": [
+        "1",
+        "1"
+      ],
+      "(1,1)": [
+        "0",
+        "0"
+      ],
+      "(3)": [
+        "3/2",
+        "3/2"
+      ],
+      "(2,1)": [
+        "1/2",
+        "1/2"
+      ],
+      "(1,1,1)": [
+        "0",
+        "0"
+      ]
+    },
+    "task1_2_per_lambda": {
+      "(5,)": {
+        "multiplicity_2_1": 0,
+        "content_tuples": [],
+        "content_tuples_distinct": true,
+        "intermediate_H4_spins": [],
+        "intermediate_H4_spins_distinct": true,
+        "copies": []
+      },
+      "(4, 1)": {
+        "multiplicity_2_1": 1,
+        "content_tuples": [
+          [
+            2,
+            3
+          ]
+        ],
+        "content_tuples_distinct": true,
+        "intermediate_H4_spins": [
+          "1"
+        ],
+        "intermediate_H4_spins_distinct": true,
+        "copies": [
+          {
+            "lam4": "(3, 1)",
+            "box4_rc": [
+              0,
+              2
+            ],
+            "box5_rc": [
+              0,
+              3
+            ],
+            "content4": 2,
+            "content5": 3,
+            "q_content4": "2.010896866707122305448554690877990140593",
+            "q_content5": "3.043706208532522012310408659095177403261",
+            "spin_intermediate_H4": "1",
+            "spin_H5": "3/2",
+            "spin_final_block_2_1": "1/2",
+            "theta_H4": "1.232052454166763998406875347209621389341",
+            "theta_2_1": "1.081398964315461381477858819546128927504"
+          }
+        ]
+      },
+      "(3, 2)": {
+        "multiplicity_2_1": 2,
+        "content_tuples": [
+          [
+            2,
+            0
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "content_tuples_distinct": true,
+        "intermediate_H4_spins": [
+          "1",
+          "0"
+        ],
+        "intermediate_H4_spins_distinct": true,
+        "copies": [
+          {
+            "lam4": "(3, 1)",
+            "box4_rc": [
+              0,
+              2
+            ],
+            "box5_rc": [
+              1,
+              1
+            ],
+            "content4": 2,
+            "content5": 0,
+            "q_content4": "2.010896866707122305448554690877990140593",
+            "q_content5": "0.0",
+            "spin_intermediate_H4": "1",
+            "spin_H5": "1/2",
+            "spin_final_block_2_1": "1/2",
+            "theta_H4": "1.232052454166763998406875347209621389341",
+            "theta_2_1": "1.081398964315461381477858819546128927504"
+          },
+          {
+            "lam4": "(2, 2)",
+            "box4_rc": [
+              1,
+              1
+            ],
+            "box5_rc": [
+              0,
+              2
+            ],
+            "content4": 0,
+            "content5": 2,
+            "q_content4": "0.0",
+            "q_content5": "2.010896866707122305448554690877990140593",
+            "spin_intermediate_H4": "0",
+            "spin_H5": "1/2",
+            "spin_final_block_2_1": "1/2",
+            "theta_H4": "1.0",
+            "theta_2_1": "1.081398964315461381477858819546128927504"
+          }
+        ]
+      },
+      "(3, 1, 1)": {
+        "multiplicity_2_1": 2,
+        "content_tuples": [
+          [
+            2,
+            -2
+          ],
+          [
+            -2,
+            2
+          ]
+        ],
+        "content_tuples_distinct": true,
+        "intermediate_H4_spins": [
+          "1",
+          "1/2"
+        ],
+        "intermediate_H4_spins_distinct": true,
+        "copies": [
+          {
+            "lam4": "(3, 1)",
+            "box4_rc": [
+              0,
+              2
+            ],
+            "box5_rc": [
+              2,
+              0
+            ],
+            "content4": 2,
+            "content5": -2,
+            "q_content4": "2.010896866707122305448554690877990140593",
+            "q_content5": "-2.010896866707122305448554690877990140593",
+            "spin_intermediate_H4": "1",
+            "spin_H5": "1",
+            "spin_final_block_2_1": "1/2",
+            "theta_H4": "1.232052454166763998406875347209621389341",
+            "theta_2_1": "1.081398964315461381477858819546128927504"
+          },
+          {
+            "lam4": "(2, 1, 1)",
+            "box4_rc": [
+              2,
+              0
+            ],
+            "box5_rc": [
+              0,
+              2
+            ],
+            "content4": -2,
+            "content5": 2,
+            "q_content4": "-2.010896866707122305448554690877990140593",
+            "q_content5": "2.010896866707122305448554690877990140593",
+            "spin_intermediate_H4": "1/2",
+            "spin_H5": "1",
+            "spin_final_block_2_1": "1/2",
+            "theta_H4": "1.081398964315461381477858819546128927504",
+            "theta_2_1": "1.081398964315461381477858819546128927504"
+          }
+        ]
+      },
+      "(2, 2, 1)": {
+        "multiplicity_2_1": 2,
+        "content_tuples": [
+          [
+            0,
+            -2
+          ],
+          [
+            -2,
+            0
+          ]
+        ],
+        "content_tuples_distinct": true,
+        "intermediate_H4_spins": [
+          "0",
+          "1/2"
+        ],
+        "intermediate_H4_spins_distinct": true,
+        "copies": [
+          {
+            "lam4": "(2, 2)",
+            "box4_rc": [
+              1,
+              1
+            ],
+            "box5_rc": [
+              2,
+              0
+            ],
+            "content4": 0,
+            "content5": -2,
+            "q_content4": "0.0",
+            "q_content5": "-2.010896866707122305448554690877990140593",
+            "spin_intermediate_H4": "0",
+            "spin_H5": "0",
+            "spin_final_block_2_1": "1/2",
+            "theta_H4": "1.0",
+            "theta_2_1": "1.081398964315461381477858819546128927504"
+          },
+          {
+            "lam4": "(2, 1, 1)",
+            "box4_rc": [
+              2,
+              0
+            ],
+            "box5_rc": [
+              1,
+              1
+            ],
+            "content4": -2,
+            "content5": 0,
+            "q_content4": "-2.010896866707122305448554690877990140593",
+            "q_content5": "0.0",
+            "spin_intermediate_H4": "1/2",
+            "spin_H5": "0",
+            "spin_final_block_2_1": "1/2",
+            "theta_H4": "1.081398964315461381477858819546128927504",
+            "theta_2_1": "1.081398964315461381477858819546128927504"
+          }
+        ]
+      },
+      "(2, 1, 1, 1)": {
+        "multiplicity_2_1": 1,
+        "content_tuples": [
+          [
+            -2,
+            -3
+          ]
+        ],
+        "content_tuples_distinct": true,
+        "intermediate_H4_spins": [
+          "1/2"
+        ],
+        "intermediate_H4_spins_distinct": true,
+        "copies": [
+          {
+            "lam4": "(2, 1, 1)",
+            "box4_rc": [
+              2,
+              0
+            ],
+            "box5_rc": [
+              3,
+              0
+            ],
+            "content4": -2,
+            "content5": -3,
+            "q_content4": "-2.010896866707122305448554690877990140593",
+            "q_content5": "-3.043706208532522012310408659095177403261",
+            "spin_intermediate_H4": "1/2",
+            "spin_H5": "1/2",
+            "spin_final_block_2_1": "1/2",
+            "theta_H4": "1.081398964315461381477858819546128927504",
+            "theta_2_1": "1.081398964315461381477858819546128927504"
+          }
+        ]
+      },
+      "(1, 1, 1, 1, 1)": {
+        "multiplicity_2_1": 0,
+        "content_tuples": [],
+        "content_tuples_distinct": true,
+        "intermediate_H4_spins": [],
+        "intermediate_H4_spins_distinct": true,
+        "copies": []
+      }
+    },
+    "task3_multiplicity2_cases": {
+      "(3, 2)": {
+        "distinct_intermediate_spins": [
+          "0",
+          "1"
+        ],
+        "num_distinct_spins": 2,
+        "distinct_content_tuples": [
+          [
+            0,
+            2
+          ],
+          [
+            2,
+            0
+          ]
+        ],
+        "num_distinct_contents": 2,
+        "spin_simple_on_this_space": true,
+        "content_simple_on_this_space": true
+      },
+      "(3, 1, 1)": {
+        "distinct_intermediate_spins": [
+          "1/2",
+          "1"
+        ],
+        "num_distinct_spins": 2,
+        "distinct_content_tuples": [
+          [
+            -2,
+            2
+          ],
+          [
+            2,
+            -2
+          ]
+        ],
+        "num_distinct_contents": 2,
+        "spin_simple_on_this_space": true,
+        "content_simple_on_this_space": true
+      },
+      "(2, 2, 1)": {
+        "distinct_intermediate_spins": [
+          "0",
+          "1/2"
+        ],
+        "num_distinct_spins": 2,
+        "distinct_content_tuples": [
+          [
+            -2,
+            0
+          ],
+          [
+            0,
+            -2
+          ]
+        ],
+        "num_distinct_contents": 2,
+        "spin_simple_on_this_space": true,
+        "content_simple_on_this_space": true
+      }
+    },
+    "task3_global_spin_selector": {
+      "m2_intermediate_spin_sets": [
+        [
+          "0",
+          "1"
+        ],
+        [
+          "1",
+          "1/2"
+        ],
+        [
+          "0",
+          "1/2"
+        ]
+      ],
+      "common_spin_across_all_m2": [],
+      "global_canonical_spin_selector_exists": false,
+      "note": "A canonical SELECTION (not just separation) needs one spin value present in every m=2 space. Separation alone does not nominate a copy; nominating one without this is a fit."
+    },
+    "task3_verdict_code": "ii",
+    "task3_verdict_meaning": "spin SEPARATES (simple spectrum) but does NOT canonically SELECT (no forced global selector); canonical eigenbasis exists via GT/JM, spin alone insufficient -> physical selection still open",
+    "task4_h4_falsification": {
+      "h4_borromean_reference": "-3/4",
+      "h4_is_block_invariant_not_copy_selected": true,
+      "selected_copy_carries_distinct_h4": false,
+      "fit_performed": false,
+      "note": "h^4 = -3/4 is the (2,1)-block RAW invariant; spin/JM select which copy embeds, not the h^4 value. No per-copy h^4 chosen (would be a fit)."
+    },
+    "summary": {
+      "ov_contents_separate_multiplicity": true,
+      "final_2_1_spin_constant_one_half": true,
+      "intermediate_H4_spin_separates_m2": true,
+      "global_canonical_spin_selector_exists": false,
+      "verdict_code": "ii",
+      "keystone_status": "SHARPENED (canonical GT/JM eigenbasis EXISTS -- #1684's 'no canonical basis vector' is refuted; but spin SEPARATES without canonically SELECTING -> physical selection of the h^4 carrier still open)"
+    }
+  },
+  "caveats": [
+    "EXPLORATORY / audit-only. Tests whether SU(2) spinor (ribbon-twist) structure FORCES a canonical selection of one (2,1) copy in the Res^{H5}_{H3} multiplicity space. h^4 = -3/4 is a FALSIFICATION reference, never a fit target. A spin/content chosen to produce h^4 is THE catch."
+  ]
+}

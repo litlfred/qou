@@ -1,0 +1,71 @@
+{
+  "computation": "content-weighted-pair-probe",
+  "description": "Content-weighted pair terms SYT-wise.  Replaces scalar V\u0302_i \u00b7 V\u0302_j with V\u0302_{ij}^{content} = \u03a3_\u03bb w_\u03bb / d_\u03bb \u00b7 \u03a3_{T \u2208 SYT(\u03bb)} q^{2(c_T(i+1) + c_T(j+1))} \u00b7 \u27e8T|W^\u03bb|T\u27e9.  Captures per-SYT content correlation between gens i, j missing from the scalar path.  Tests whether this closes the T/\u00b3He residual gap.",
+  "computedAt": "2026-04-18T19:58:47.170407+00:00",
+  "parameters": {
+    "q0": 1.1099785955541805,
+    "E_0_scalar": 0.0007958232069223113,
+    "E_0_content_weighted": 0.0007572513118098012
+  },
+  "results": [
+    {
+      "atom": "D",
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "B_AME": 2.22452,
+      "ILP": {
+        "m_pp": 1,
+        "m_pn": 1,
+        "m_nn": 1,
+        "tr_M": 1.005448434559241
+      },
+      "B_scalar_MeV": -0.019033594882353573,
+      "err_scalar_pct": 0.11955773991349809,
+      "B_content_MeV": 16.748370798250885,
+      "err_content_pct": 0.773968039025511,
+      "scalar_time_sec": 0.0013804435729980469,
+      "content_time_sec": 0.04827141761779785
+    },
+    {
+      "atom": "T",
+      "Z": 1,
+      "N": 2,
+      "A": 3,
+      "B_AME": 8.481821,
+      "ILP": {
+        "m_pp": 1,
+        "m_pn": 1,
+        "m_nn": 2,
+        "tr_M": 0.49188098724315193
+      },
+      "B_scalar_MeV": -498.21137055655925,
+      "err_scalar_pct": 18.000934752273658,
+      "B_content_MeV": -288.4035254623685,
+      "err_content_pct": 10.547238130747036,
+      "scalar_time_sec": 0.0039463043212890625,
+      "content_time_sec": 7.915172815322876
+    },
+    {
+      "atom": "3He",
+      "Z": 2,
+      "N": 1,
+      "A": 3,
+      "B_AME": 7.71804,
+      "ILP": {
+        "m_pp": 1,
+        "m_pn": 2,
+        "m_nn": 1,
+        "tr_M": 0.5700738100821309
+      },
+      "B_scalar_MeV": -1683.980027718856,
+      "err_scalar_pct": 60.09977446905431,
+      "B_content_MeV": -924.6383477035614,
+      "err_content_pct": 33.123173511290304,
+      "scalar_time_sec": 0.0030570030212402344,
+      "content_time_sec": 8.259557247161865
+    }
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
+}

@@ -1,0 +1,53 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-05-17T03:09:55.026960+00:00",
+  "commitSha": "95b4a7cb9297df3cd7d10edfe287afb4d894e283",
+  "assertions": [
+    {
+      "name": "tr_M_and_J_Hopf_are_distinct_symbolically",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "Markov trace and Jones polynomial differ by writhe-correction; see Kauffman bracket / Markov stabilisation conventions"
+    },
+    {
+      "name": "tr_M_at_q_eq_1_is_one",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 1e-30,
+      "unit": "dimensionless",
+      "source": "Direct symbolic substitution q → 1"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 51,
+  "computation": "hopf-markov-trace-genuine",
+  "scriptFile": "probe_hopf_markov_trace_genuine.py",
+  "scriptHash": "4014f35fa640",
+  "scriptCommitSha": "7f06e0befa429da16e679a5bca986bc416a1dab2",
+  "description": "Genuine V_(2,1) Hoefsmit seminormal Markov-trace computation of σ_1² in H_2(q), as a polynomial in q (not hardcoded). Companion / replacement for PR #664's tautological probe_hopf_jones_c3_categorical.py.  Shows that tr_M(σ_1²) and the textbook Jones polynomial -(q+q⁻¹) are DIFFERENT objects; equating them requires writhe/framing-correction conventions PR #664 did not justify.",
+  "auditOnly": "docs/audits/2026-05-17-pr-664-c3-c4-critical-review.md",
+  "parameters": {
+    "q_0": "1.1099785955541805752815940796095093779932822799587"
+  },
+  "data": {
+    "tr_M_sigma1_sq_symbolic": "(q**4 + 1)/(q**3 + q)",
+    "tr_M_sigma1_sq_at_q_eq_1": "1",
+    "tr_M_sigma1_sq_at_q0_50dps": "1.0163157791012987385699173524790816214800669490913",
+    "tr_M_canonical_sigma1_sq_symbolic": "(q**(21/2) + q**(19/2) + 2*q**(17/2) + 2*q**(15/2) - 2*q**(9/2) - 2*q**(7/2) - q**(5/2) - q**(3/2) + q**10 + 2*q**9 + 4*q**8 + 6*q**7 + 6*q**6 + 6*q**5 + 4*q**4 + 2*q**3 + q**2)/(q**10 + 2*q**9 + 4*q**8 + 6*q**7 + 6*q**6 + 6*q**5 + 4*q**4 + 2*q**3 + q**2)",
+    "tr_M_canonical_sigma1_sq_at_q_eq_1": "1",
+    "two_implementations_disagree": true,
+    "J_Hopf_textbook_symbolic": "-q - 1/q",
+    "J_Hopf_textbook_at_q_eq_1": -2,
+    "J_Hopf_textbook_at_q0_50dps": "-2.0108968691184816894615797369210968495248082560009",
+    "tr_M_minus_J_Hopf_symbolic": "(2*q**4 + 2*q**2 + 2)/(q**3 + q)",
+    "ratio_tr_M_over_J_at_q0_50dps": "-0.50540422769011611197260632686898881212838379272869"
+  },
+  "caveats": [
+    "This probe DOES NOT derive c_3 = -2.  PR #664's claim that c_3 = J_Hopf(q=1) = -2 rests on (a) identifying tr_M with the Jones polynomial via a specific convention, AND (b) extracting the order-h^6 coefficient of the full Q_β expansion to show this Hopf contribution is the dominant one. Neither is demonstrated in PR #664.  This probe only shows what tr_M(σ_1²) actually equals — namely (q²+q⁻²)/[2]_q, evaluating to +1 at q=1, NOT -2.",
+    "A genuine c_3 = -2 categorical derivation would require: (1) build V_(2,1)⊗V_(2,1) Schur-Weyl decomposition in H_6; (2) project onto V_(2,2,2); (3) show this projection produces an h^6-order Markov contribution proportional to the Jones value of the Hopf closure; (4) verify no other order-h^6 contribution survives the Frobenius selection.  All four steps are open work.",
+    "Infrastructure issue: the codebase has TWO different tr_M implementations that produce different symbolic answers for the same braid: hoefsmit_symbolic.tr_M_symbolic uses Σ_λ w_λ·χ^λ/f^λ while markov_weights_symbolic.tr_M_canonical uses Σ_λ y_λ·χ^λ (Wenzl's principal-specialization Jones-Markov weights).  Neither matches the textbook Jones polynomial -(q+q⁻¹) directly.  An equivalence script y_lambda_equivalence_proof.py exists but the symbolic outputs of the two routines do NOT agree on σ_1² in H_2. Resolution: ratify one as canonical and audit downstream consumers (proton, neutron, deuteron mass chains all use hoefsmit_symbolic.tr_M_symbolic; the precision-ladder Q_β framework cites tr_M_canonical via thm:jones-markov-trace)."
+  ]
+}

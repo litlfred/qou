@@ -1,0 +1,1120 @@
+{
+  "computation": "e0-calibration-audit",
+  "description": "Audit of E_0 / Q_β(n) calibration constants across folio-assistant/computations. Reports value-precision drift, anchor-of-pinning violations vs CAL-3, and the PDG-derived uncertainty floor on every E_0-dependent quantity.",
+  "computedAt": "2026-05-06T00:53:10.879573+00:00",
+  "reference_blocks": [
+    "prop:three-calibration-inputs",
+    "rem:calibration-inputs"
+  ],
+  "pdg_inputs_2022": {
+    "m_n_MeV": "939.56542052",
+    "m_n_err_MeV": "0.00000054",
+    "m_p_MeV": "938.27208816",
+    "m_p_err_MeV": "0.00000029",
+    "m_e_MeV": "0.51099895",
+    "m_e_err_MeV": "1.5e-10"
+  },
+  "Q_beta_n": {
+    "value_MeV": "0.782333409999999999999999999952",
+    "abs_err_MeV": "0.00000061294373518292851542608324257",
+    "rel_err": "0.000000783481476501084768226993197961",
+    "rel_err_ppb": "783.481476501084768226993197961"
+  },
+  "precision_floor": "Every E_0-dependent quantity inherits a relative uncertainty floor of 7.83e-7 (~783.0 ppb). 1 ppb is NOT physically achievable on these quantities without a tighter Q_β(n) measurement.",
+  "findings_by_pattern": {
+    "literal_0_782": [
+      {
+        "file": "folio-assistant/computations/binding_canonical.py",
+        "line": 120,
+        "pattern": "literal_0_782",
+        "match": "0.782",
+        "context": "E_0 = 0.782 MeV (free-neutron β-decay Q, per",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/binding_canonical.py",
+        "line": 188,
+        "pattern": "literal_0_782",
+        "match": "0.782",
+        "context": "print(f\"q₀ = {Q0_NUM}, E_0 = 0.782 MeV (β-decay Q)\")",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/binding_canonical.py",
+        "line": 224,
+        "pattern": "literal_0_782",
+        "match": "0.782",
+        "context": "\"|tr_M_atom|) with E_0 = 0.782 MeV (β-decay Q).\"",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/binding_canonical.py",
+        "line": 227,
+        "pattern": "literal_0_782",
+        "match": "0.782",
+        "context": "\"parameters\": {\"q0\": Q0_NUM, \"E_0_MeV\": 0.782},",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/binding_fast_pipeline.py",
+        "line": 16,
+        "pattern": "literal_0_782",
+        "match": "0.782",
+        "context": "E_0 = 0.782 MeV (β-decay Q).",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/binding_full_pipeline.py",
+        "line": 17,
+        "pattern": "literal_0_782",
+        "match": "0.782",
+        "context": "E_0 = 0.782 MeV  (β-decay Q)",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/c_alpha_from_Q_beta_trace.py",
+        "line": 17,
+        "pattern": "literal_0_782",
+        "match": "0.782",
+        "context": "reaching the magic anchor.  The single Q_β(³H) = 0.782 MeV plus",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/canonical_plus_multibrane.py",
+        "line": 29,
+        "pattern": "literal_0_782",
+        "match": "0.782",
+        "context": "E_0 = 0.782 MeV  (free-neutron β-decay Q, per prop).",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/canonical_plus_multibrane.py",
+        "line": 39,
+        "pattern": "literal_0_782",
+        "match": "0.782",
+        "context": "3. E_0 = 0.782 MeV is the PROP's calibration for |tr_M| ≲ 1;",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/canonical_tower.py",
+        "line": 51,
+        "pattern": "literal_0_782",
+        "match": "0.782",
+        "context": "with E_0 = 0.782 MeV (β-decay Q, per prop:categorical-mass-markov).",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/canonical_tower.py",
+        "line": 576,
+        "pattern": "literal_0_782",
+        "match": "0.782",
+        "context": "print(f\"q₀ = {Q0}, E_0 = 0.782 MeV (β-decay Q)\")",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/canonical_tower.py",
+        "line": 618,
+        "pattern": "literal_0_782",
+        "match": "0.782",
+        "context": "\"parameters\": {\"q0\": Q0, \"E_0_MeV\": 0.782},",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/compound_beta_shell.py",
+        "line": 13,
+        "pattern": "literal_0_782",
+        "match": "0.782",
+        "context": "- E_0 = 0.782 MeV (free-neutron β-decay Q-value)",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/compound_beta_shell.py",
+        "line": 109,
+        "pattern": "literal_0_782",
+        "match": "0.782",
+        "context": "\"Single archimedean input: E_0 = 0.782 MeV (free-neutron \"",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/crt_markov.py",
+        "line": 552,
+        "pattern": "literal_0_782",
+        "match": "0.782",
+        "context": "print(f\"    E_0 (β)    = 0.782 / Q_cat = {E_0_cat!s} MeV/cat.unit\")",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/crt_markov.py",
+        "line": 614,
+        "pattern": "literal_0_782",
+        "match": "0.782",
+        "context": "\"β-decay calibration: E_0 = 0.782 / (|tr_M(n)| - |tr_M(p)|).\"",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/deuteron_first_principles.py",
+        "line": 207,
+        "pattern": "literal_0_782",
+        "match": "0.782",
+        "context": "\"β-decay calibration: E_0 = 0.782 MeV / |tr_M(n) − tr_M(p)|. \"",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/free-neutron-decay.py",
+        "line": 444,
+        "pattern": "literal_0_782",
+        "match": "0.782",
+        "context": "print(f\"    Q = m_n − m_p − m_e = 939.565 − 938.272 − 0.511 = 0.782 MeV\")",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/groebner-beta-decay.py",
+        "line": 155,
+        "pattern": "literal_0_782",
+        "match": "0.782",
+        "context": "print(f\"    Q_exp (free neutron) ≈ 0.782 MeV\")",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/inductive-quark-atoms.py",
+        "line": 317,
+        "pattern": "literal_0_782",
+        "match": "0.782",
+        "context": "print(f\"  |net_n - net_p| x kappa = {Q_net:.5f} MeV  (exp: 0.782)\")",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/inductive-quark-atoms.py",
+        "line": 318,
+        "pattern": "literal_0_782",
+        "match": "0.782",
+        "context": "print(f\"  error: {(Q_net - 0.782) / 0.782 * 100:+.1f}%\")",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/inductive-quark-atoms.py",
+        "line": 318,
+        "pattern": "literal_0_782",
+        "match": "0.782",
+        "context": "print(f\"  error: {(Q_net - 0.782) / 0.782 * 100:+.1f}%\")",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/inverse-markov-qvalues.py",
+        "line": 269,
+        "pattern": "literal_0_782",
+        "match": "0.782",
+        "context": "print(\"  Q₀ = m_n - m_p - m_e = 0.782 MeV (free neutron Q-value)\")",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/sweeps/light_isotope_sweep.py",
+        "line": 14,
+        "pattern": "literal_0_782",
+        "match": "0.782",
+        "context": "β-decay calibration: E_0 = 0.782 MeV / |tr_M(n) - tr_M(p)|.",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/mass_at_3A_proper.py",
+        "line": 13,
+        "pattern": "literal_0_782",
+        "match": "0.782",
+        "context": "1. Calibration: E_0 = 0.782 MeV (free-neutron β-decay Q-value),",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/mass_at_3A_proper.py",
+        "line": 519,
+        "pattern": "literal_0_782",
+        "match": "0.782",
+        "context": "tower_binding_full.  E_0 = 0.782 MeV (β-decay Q), no Catalan.",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/mass_at_3A_proper.py",
+        "line": 601,
+        "pattern": "literal_0_782",
+        "match": "0.782",
+        "context": "\"(default = β-decay Q = 0.782)\")",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/mass_at_3A_proper.py",
+        "line": 701,
+        "pattern": "literal_0_782",
+        "match": "0.782",
+        "context": "\"E_0 = 0.782 MeV (free-neutron β-decay Q). No Catalan.\"",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/mass_endomorphism_atom.py",
+        "line": 37,
+        "pattern": "literal_0_782",
+        "match": "0.782",
+        "context": "reference experiment (neutron β-decay Q = 0.782 MeV).",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/mass_endomorphism_atom.py",
+        "line": 60,
+        "pattern": "literal_0_782",
+        "match": "0.782",
+        "context": "# descended-level 0.782 MeV.  We calibrate directly from m_p by asking:",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/mass_formula_6term.py",
+        "line": 21,
+        "pattern": "literal_0_782",
+        "match": "0.782",
+        "context": "β-decay calibration: E_0 = 0.782 MeV, m_e = 0.511 MeV.  The",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/mass_formula_6term.py",
+        "line": 242,
+        "pattern": "literal_0_782",
+        "match": "0.782",
+        "context": "# from experimental_constants.py rather than the truncated 0.782",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/mass_formula_6term.py",
+        "line": 362,
+        "pattern": "literal_0_782",
+        "match": "0.782",
+        "context": "print(\"calibrate on β-decay Q_β(n) = 0.782 MeV. Both p and n match\")",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/mass_table_best.py",
+        "line": 113,
+        "pattern": "literal_0_782",
+        "match": "0.782",
+        "context": "# Q_β = m_n - m_p - m_e = 0.782 → m_n - m_p = 0.782 + m_e = 1.293",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/mass_table_best.py",
+        "line": 113,
+        "pattern": "literal_0_782",
+        "match": "0.782",
+        "context": "# Q_β = m_n - m_p - m_e = 0.782 → m_n - m_p = 0.782 + m_e = 1.293",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/multi_level_jet_sum.py",
+        "line": 106,
+        "pattern": "literal_0_782",
+        "match": "0.782",
+        "context": "# E_0_BETA_DECAY_MEV = 0.782 MeV used by the canonical Markov-trace",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/multi_level_jet_sum.py",
+        "line": 123,
+        "pattern": "literal_0_782",
+        "match": "0.782",
+        "context": "tower_binding_full.  The β-decay calibration (0.782 MeV) applies",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/sweeps/paper_six_term_isotope_sweep.py",
+        "line": 560,
+        "pattern": "literal_0_782",
+        "match": "0.782",
+        "context": "#   T1 (descended Markov):  E_0_β = 0.782 MeV per cat unit",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/probe_neutron_gap_round3.py",
+        "line": 17,
+        "pattern": "literal_0_782",
+        "match": "0.782",
+        "context": "(μ_d − μ_u, equivalently Q_β(n) = m_n − m_p − m_e ≈ 0.782 MeV)",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/pure_hecke_binding.py",
+        "line": 14,
+        "pattern": "literal_0_782",
+        "match": "0.782",
+        "context": "E_0 = 0.782 MeV (neutron β-decay Q-value, single calibration)",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/pure_hecke_binding.py",
+        "line": 182,
+        "pattern": "literal_0_782",
+        "match": "0.782",
+        "context": "\"single calibration E_0 = 0.782 MeV.  Compares tr_M ratio \"",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/unified_binding.py",
+        "line": 37,
+        "pattern": "literal_0_782",
+        "match": "0.782",
+        "context": "# E_0 = 0.782 MeV = free-neutron β-decay Q-value.",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/unified_binding.py",
+        "line": 55,
+        "pattern": "literal_0_782",
+        "match": "0.782",
+        "context": "# with E_0_β = 0.782 MeV (free-neutron β-decay Q).",
+        "kind": "doc"
+      }
+    ],
+    "literal_0_78233341": [
+      {
+        "file": "folio-assistant/computations/alpha4_universality_test.py",
+        "line": 88,
+        "pattern": "literal_0_78233341",
+        "match": "0.78233341",
+        "context": "(\"n → p\",         1, \"6_1\",   \"3.16396322888314\", 3, \"0.78233341\", \"6e-7\"),",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/alpha_per_transition_catalog.py",
+        "line": 58,
+        "pattern": "literal_0_78233341",
+        "match": "0.78233341",
+        "context": "(\"n → p\",          0, 1,   \"0.78233341\"),",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/atom_mass_branching.py",
+        "line": 291,
+        "pattern": "literal_0_78233341",
+        "match": "0.78233341",
+        "context": "# Q_NEUTRON_MEV = 0.78233341 MeV). The proton-tower mass is retained",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/atom_mass_branching.py",
+        "line": 295,
+        "pattern": "literal_0_78233341",
+        "match": "0.78233341",
+        "context": "E_0_BRANCH = E_0_CALIBRATION_MEV  # 0.78233341 MeV (CODATA Q_β(n))",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/bigraded_e_infinity_h3.py",
+        "line": 139,
+        "pattern": "literal_0_78233341",
+        "match": "0.78233341",
+        "context": "Q_b_codata = mp.mpf(\"0.78233341\")",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/canonical_plus_multibrane.py",
+        "line": 71,
+        "pattern": "literal_0_78233341",
+        "match": "0.78233341",
+        "context": "# = 0.78233341 MeV (CODATA-derived)",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/compound_beta_shell.py",
+        "line": 36,
+        "pattern": "literal_0_78233341",
+        "match": "0.78233341",
+        "context": "E_0_BETA_MeV = float(Q_NEUTRON_MEV)  # 0.78233341 MeV (CODATA-derived)",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/comprehensive_low_isotope_structural_table.py",
+        "line": 72,
+        "pattern": "literal_0_78233341",
+        "match": "0.78233341",
+        "context": "\"n\":   ( 0, 1,   939.56542052,    0.0,           0.78233341),  # n→p β-decay",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/deuteron_error.py",
+        "line": 27,
+        "pattern": "literal_0_78233341",
+        "match": "0.78233341",
+        "context": "E_0_MeV = mpmath.mpf(str(Q_NEUTRON_MEV))  # 0.78233341 MeV",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/substrate/experimental_constants.py",
+        "line": 43,
+        "pattern": "literal_0_78233341",
+        "match": "0.78233341",
+        "context": "#           = 0.78233341 MeV",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/substrate/experimental_constants.py",
+        "line": 50,
+        "pattern": "literal_0_78233341",
+        "match": "0.78233341",
+        "context": "Q_NEUTRON_MEV     = M_N_MEV - M_P_MEV - M_E_MEV            # 0.78233341 MeV",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/f1_spectral_reconciliation.py",
+        "line": 51,
+        "pattern": "literal_0_78233341",
+        "match": "0.78233341",
+        "context": "Q_b_codata = mp.mpf(\"0.78233341\")",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/hecke/hecke_characters.py",
+        "line": 45,
+        "pattern": "literal_0_78233341",
+        "match": "0.78233341",
+        "context": "E_0_BETA_DECAY_Q_MEV = Q_NEUTRON_MEV  # CODATA: 0.78233341 ± 6.1e-7 MeV",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/substrate/hecke_core.py",
+        "line": 2918,
+        "pattern": "literal_0_78233341",
+        "match": "0.78233341",
+        "context": "#   Q_β(n) = m_n - m_p - m_e = 0.78233341 ± 6.1×10⁻⁷ MeV",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/mass_endomorphism_atom.py",
+        "line": 70,
+        "pattern": "literal_0_78233341",
+        "match": "0.78233341",
+        "context": "# Q_NEUTRON_MEV = 0.78233341 MeV). The proton-tower mass is retained",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/mass_formula_6term.py",
+        "line": 241,
+        "pattern": "literal_0_78233341",
+        "match": "0.78233341",
+        "context": "# Use the canonical CODATA-derived Q_NEUTRON_MEV (0.78233341 MeV)",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/nf-qvalues.py",
+        "line": 29,
+        "pattern": "literal_0_78233341",
+        "match": "0.78233341",
+        "context": "Q_NEUTRON = m_n − m_p − m_e = 0.78233341 ± 6.1e-7 MeV",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/nucleon-with-gluons-nf.py",
+        "line": 547,
+        "pattern": "literal_0_78233341",
+        "match": "0.78233341",
+        "context": "print(f\"  E₀ from this model = {-0.78233341 / delta:.6f} MeV\")",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/nucleon-with-gluons-nf.py",
+        "line": 563,
+        "pattern": "literal_0_78233341",
+        "match": "0.78233341",
+        "context": "\"E0_implied_MeV\": -0.78233341 / delta if abs(delta) > 1e-15 else None,",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/nucleon-with-gluons-nf.py",
+        "line": 757,
+        "pattern": "literal_0_78233341",
+        "match": "0.78233341",
+        "context": "q_codata = -0.78233341",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/path_a_extended_light_isotopes.py",
+        "line": 102,
+        "pattern": "literal_0_78233341",
+        "match": "0.78233341",
+        "context": "Q_b_codata = mp.mpf(\"0.78233341\")",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/per_block_phi_q.py",
+        "line": 275,
+        "pattern": "literal_0_78233341",
+        "match": "0.78233341",
+        "context": "E0_BETA_DECAY = float(Q_NEUTRON_MEV)  # 0.78233341 MeV (CODATA-derived)",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/poiseuille-qvalues.py",
+        "line": 186,
+        "pattern": "literal_0_78233341",
+        "match": "0.78233341",
+        "context": "Q0 = 0.78233341  # m_n - m_p - m_e",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/pure_hecke_binding.py",
+        "line": 61,
+        "pattern": "literal_0_78233341",
+        "match": "0.78233341",
+        "context": "E0 = mp.mpf(str(Q_NEUTRON_MEV))  # 0.78233341 MeV (CODATA-derived)",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/pure_hecke_binding_prefix.py",
+        "line": 51,
+        "pattern": "literal_0_78233341",
+        "match": "0.78233341",
+        "context": "E0 = mp.mpf(str(Q_NEUTRON_MEV))  # 0.78233341 MeV (CODATA-derived)",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/residual_partition_sum.py",
+        "line": 116,
+        "pattern": "literal_0_78233341",
+        "match": "0.78233341",
+        "context": "Q_n = mp.mpf(str(Q_NEUTRON_MEV))  # 0.78233341 MeV (CODATA-derived)",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/spectral_sequence_unified_h3.py",
+        "line": 49,
+        "pattern": "literal_0_78233341",
+        "match": "0.78233341",
+        "context": "Q_b_codata = mp.mpf(\"0.78233341\")",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/three_E0_fit.py",
+        "line": 271,
+        "pattern": "literal_0_78233341",
+        "match": "0.78233341",
+        "context": "E0_BETA_DECAY = float(Q_NEUTRON_MEV)  # 0.78233341 MeV",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/trefoil-quark-nucleon-nf.py",
+        "line": 427,
+        "pattern": "literal_0_78233341",
+        "match": "0.78233341",
+        "context": "print(f\"  E₀ implied = {-0.78233341 / delta_T:.6f} MeV\")",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/trefoil-quark-nucleon-nf.py",
+        "line": 448,
+        "pattern": "literal_0_78233341",
+        "match": "0.78233341",
+        "context": "print(f\"  E₀ implied = {-0.78233341 / delta_S:.6f} MeV\")",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/trefoil-quark-nucleon-nf.py",
+        "line": 586,
+        "pattern": "literal_0_78233341",
+        "match": "0.78233341",
+        "context": "e0_T = -0.78233341 / delta_T",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/trefoil-quark-nucleon-nf.py",
+        "line": 607,
+        "pattern": "literal_0_78233341",
+        "match": "0.78233341",
+        "context": "\"E0_implied\": -0.78233341 / delta_T if abs(delta_T) > 1e-15 else None,",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/trefoil-quark-nucleon-nf.py",
+        "line": 616,
+        "pattern": "literal_0_78233341",
+        "match": "0.78233341",
+        "context": "\"E0_implied\": -0.78233341 / delta_S if abs(delta_S) > 1e-15 else None,",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/unified_binding.py",
+        "line": 41,
+        "pattern": "literal_0_78233341",
+        "match": "0.78233341",
+        "context": "E_0_BETA_MeV = Q_NEUTRON_MEV  # 0.78233341 MeV (CODATA-derived)",
+        "kind": "active"
+      }
+    ],
+    "literal_0_78233": [
+      {
+        "file": "folio-assistant/computations/alpha4_universality_test.py",
+        "line": 17,
+        "pattern": "literal_0_78233",
+        "match": "0.78233",
+        "context": "n → p + e + ν̄                         Q = 0.78233 MeV (calibration)",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/beta-decay-energy-scale.py",
+        "line": 10,
+        "pattern": "literal_0_78233",
+        "match": "0.78233",
+        "context": "energy Q = m_n − m_p − m_e = 0.78233 MeV:",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/free-neutron-decay.py",
+        "line": 503,
+        "pattern": "literal_0_78233",
+        "match": "0.78233",
+        "context": "\"Q_observed_MeV\": 0.78233,",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/transition_nf.py",
+        "line": 198,
+        "pattern": "literal_0_78233",
+        "match": "0.78233",
+        "context": "(0, 1, \"n→¹H\", 0.78233),",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/tritium-he3-groebner-nf.py",
+        "line": 918,
+        "pattern": "literal_0_78233",
+        "match": "0.78233",
+        "context": "Q_exp_neutron = 0.78233  # MeV (CODATA: m_n - m_p - m_e = 0.78233 MeV)",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/tritium-he3-groebner-nf.py",
+        "line": 918,
+        "pattern": "literal_0_78233",
+        "match": "0.78233",
+        "context": "Q_exp_neutron = 0.78233  # MeV (CODATA: m_n - m_p - m_e = 0.78233 MeV)",
+        "kind": "active"
+      }
+    ],
+    "E_0_CALIBRATION_MEV": [
+      {
+        "file": "folio-assistant/computations/probes/adjacent_vs_full_probe.py",
+        "line": 46,
+        "pattern": "E_0_CALIBRATION_MEV",
+        "match": "E_0_CALIBRATION_MEV",
+        "context": "from hecke_core import E_0_CALIBRATION_MEV",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/probes/adjacent_vs_full_probe.py",
+        "line": 384,
+        "pattern": "E_0_CALIBRATION_MEV",
+        "match": "E_0_CALIBRATION_MEV",
+        "context": "\"parameters\": {\"q0\": q0, \"E_0_MeV_per_cat\": E_0_CALIBRATION_MEV,",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/atom_mass_branching.py",
+        "line": 290,
+        "pattern": "E_0_CALIBRATION_MEV",
+        "match": "E_0_CALIBRATION_MEV",
+        "context": "# E_0_CALIBRATION_MEV from hecke_core (= experimental_constants.",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/atom_mass_branching.py",
+        "line": 294,
+        "pattern": "E_0_CALIBRATION_MEV",
+        "match": "E_0_CALIBRATION_MEV",
+        "context": "from hecke_core import E_0_CALIBRATION_MEV  # noqa: E402",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/atom_mass_branching.py",
+        "line": 295,
+        "pattern": "E_0_CALIBRATION_MEV",
+        "match": "E_0_CALIBRATION_MEV",
+        "context": "E_0_BRANCH = E_0_CALIBRATION_MEV  # 0.78233341 MeV (CODATA Q_β(n))",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/canonical_tower.py",
+        "line": 442,
+        "pattern": "E_0_CALIBRATION_MEV",
+        "match": "E_0_CALIBRATION_MEV",
+        "context": "Matches hecke_core.E_0_CALIBRATION_MEV's SPIRIT but in the",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/canonical_tower.py",
+        "line": 455,
+        "pattern": "E_0_CALIBRATION_MEV",
+        "match": "E_0_CALIBRATION_MEV",
+        "context": "# `hecke_core.E_0_CALIBRATION_MEV` = Q_β(n). This proton-tower-",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/canonical_tower.py",
+        "line": 524,
+        "pattern": "E_0_CALIBRATION_MEV",
+        "match": "E_0_CALIBRATION_MEV",
+        "context": "# canonical E_0 is `hecke_core.E_0_CALIBRATION_MEV` = Q_β(n).",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/hecke/hecke_characters.py",
+        "line": 39,
+        "pattern": "E_0_CALIBRATION_MEV",
+        "match": "E_0_CALIBRATION_MEV",
+        "context": "# prop:categorical-mass-markov / hecke_core.E_0_CALIBRATION_MEV.",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/substrate/hecke_core.py",
+        "line": 2922,
+        "pattern": "E_0_CALIBRATION_MEV",
+        "match": "E_0_CALIBRATION_MEV",
+        "context": "E_0_CALIBRATION_MEV     = _Q_NEUTRON_MEV",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/substrate/hecke_core.py",
+        "line": 2923,
+        "pattern": "E_0_CALIBRATION_MEV",
+        "match": "E_0_CALIBRATION_MEV",
+        "context": "E_0_CALIBRATION_MEV_ERR = _Q_NEUTRON_MEV_ERR",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/substrate/hecke_core.py",
+        "line": 2973,
+        "pattern": "E_0_CALIBRATION_MEV",
+        "match": "E_0_CALIBRATION_MEV",
+        "context": "r = _canon(Z, N, E_0=E_0_CALIBRATION_MEV)",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/substrate/hecke_core.py",
+        "line": 2979,
+        "pattern": "E_0_CALIBRATION_MEV",
+        "match": "E_0_CALIBRATION_MEV",
+        "context": "return E_0_CALIBRATION_MEV * (abs(free_tr) - abs(atom_tr))",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/substrate/hecke_core.py",
+        "line": 2984,
+        "pattern": "E_0_CALIBRATION_MEV",
+        "match": "E_0_CALIBRATION_MEV",
+        "context": "return E_0_CALIBRATION_MEV * (abs(free_tr) - abs(atom_tr))",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/mass_at_3A_proper.py",
+        "line": 49,
+        "pattern": "E_0_CALIBRATION_MEV",
+        "match": "E_0_CALIBRATION_MEV",
+        "context": "E_0_CALIBRATION_MEV)",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/mass_at_3A_proper.py",
+        "line": 501,
+        "pattern": "E_0_CALIBRATION_MEV",
+        "match": "E_0_CALIBRATION_MEV",
+        "context": "E_0: float = E_0_CALIBRATION_MEV,",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/mass_at_3A_proper.py",
+        "line": 556,
+        "pattern": "E_0_CALIBRATION_MEV",
+        "match": "E_0_CALIBRATION_MEV",
+        "context": "E_0: float = E_0_CALIBRATION_MEV,",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/mass_at_3A_proper.py",
+        "line": 599,
+        "pattern": "E_0_CALIBRATION_MEV",
+        "match": "E_0_CALIBRATION_MEV",
+        "context": "ap.add_argument(\"--E0\", type=float, default=E_0_CALIBRATION_MEV,",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/mass_at_3A_proper.py",
+        "line": 621,
+        "pattern": "E_0_CALIBRATION_MEV",
+        "match": "E_0_CALIBRATION_MEV",
+        "context": "f\"hecke_core.E_0_CALIBRATION_MEV)\")",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/mass_endomorphism_atom.py",
+        "line": 69,
+        "pattern": "E_0_CALIBRATION_MEV",
+        "match": "E_0_CALIBRATION_MEV",
+        "context": "# E_0_CALIBRATION_MEV from hecke_core (= experimental_constants.",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/mass_endomorphism_atom.py",
+        "line": 74,
+        "pattern": "E_0_CALIBRATION_MEV",
+        "match": "E_0_CALIBRATION_MEV",
+        "context": "from hecke_core import E_0_CALIBRATION_MEV  # noqa: E402, F401",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/mass_endomorphism_atom.py",
+        "line": 191,
+        "pattern": "E_0_CALIBRATION_MEV",
+        "match": "E_0_CALIBRATION_MEV",
+        "context": "B = E_0_CALIBRATION_MEV * (m_free['total'] - m_atom['total'])",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/mass_endomorphism_atom.py",
+        "line": 227,
+        "pattern": "E_0_CALIBRATION_MEV",
+        "match": "E_0_CALIBRATION_MEV",
+        "context": "print(f\"q₀ = {q0}, E_0 = {E_0_CALIBRATION_MEV} MeV\")",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/mass_endomorphism_atom.py",
+        "line": 272,
+        "pattern": "E_0_CALIBRATION_MEV",
+        "match": "E_0_CALIBRATION_MEV",
+        "context": "\"q\": q0, \"E_0_MeV\": E_0_CALIBRATION_MEV,",
+        "kind": "doc"
+      }
+    ],
+    "Q_BETA_MEV": [
+      {
+        "file": "folio-assistant/computations/bigraded_e_infinity_h3.py",
+        "line": 139,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_b_codata",
+        "context": "Q_b_codata = mp.mpf(\"0.78233341\")",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/bigraded_e_infinity_h3.py",
+        "line": 140,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_b_codata",
+        "context": "err_F1 = (Q_b_F1 - Q_b_codata)/Q_b_codata",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/bigraded_e_infinity_h3.py",
+        "line": 140,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_b_codata",
+        "context": "err_F1 = (Q_b_F1 - Q_b_codata)/Q_b_codata",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/bigraded_e_infinity_h3.py",
+        "line": 151,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_b_codata",
+        "context": "err_spec = (Q_b_spec - Q_b_codata)/Q_b_codata",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/bigraded_e_infinity_h3.py",
+        "line": 151,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_b_codata",
+        "context": "err_spec = (Q_b_spec - Q_b_codata)/Q_b_codata",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/binding_canonical.py",
+        "line": 42,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_BETA_N",
+        "context": "from experimental_constants import Q_NEUTRON_MEV as _Q_BETA_N",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/binding_canonical.py",
+        "line": 114,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_BETA_N",
+        "context": "E_0: float = float(_Q_BETA_N),",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/f1_spectral_reconciliation.py",
+        "line": 51,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_b_codata",
+        "context": "Q_b_codata = mp.mpf(\"0.78233341\")",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/path_a_extended_light_isotopes.py",
+        "line": 102,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_b_codata",
+        "context": "Q_b_codata = mp.mpf(\"0.78233341\")",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/path_a_extended_light_isotopes.py",
+        "line": 108,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_b_codata",
+        "context": "print(f\"  TOTAL                       = {float(Q_path_a):>10.6f}  CODATA={float(Q_b_codata):.6f}  err={float((Q_path_a-Q_b_codata)/Q_b_codata)*100:+.4f}%\")",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/path_a_extended_light_isotopes.py",
+        "line": 108,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_b_codata",
+        "context": "print(f\"  TOTAL                       = {float(Q_path_a):>10.6f}  CODATA={float(Q_b_codata):.6f}  err={float((Q_path_a-Q_b_codata)/Q_b_codata)*100:+.4f}%\")",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/path_a_extended_light_isotopes.py",
+        "line": 108,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_b_codata",
+        "context": "print(f\"  TOTAL                       = {float(Q_path_a):>10.6f}  CODATA={float(Q_b_codata):.6f}  err={float((Q_path_a-Q_b_codata)/Q_b_codata)*100:+.4f}%\")",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/path_a_extended_light_isotopes.py",
+        "line": 192,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_b_codata",
+        "context": "\"Q_codata_MeV\":    float(Q_b_codata),",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/path_a_extended_light_isotopes.py",
+        "line": 193,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_b_codata",
+        "context": "\"err_pct\":         float((Q_path_a-Q_b_codata)/Q_b_codata*100)",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/path_a_extended_light_isotopes.py",
+        "line": 193,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_b_codata",
+        "context": "\"err_pct\":         float((Q_path_a-Q_b_codata)/Q_b_codata*100)",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/snappy_tower.py",
+        "line": 328,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_BETA_N",
+        "context": "from experimental_constants import Q_NEUTRON_MEV as _Q_BETA_N  # noqa: E402",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/snappy_tower.py",
+        "line": 331,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_BETA_N",
+        "context": "def binding_snappy(Z: int, N: int, *, E_0: float = float(_Q_BETA_N),",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/snappy_tower.py",
+        "line": 397,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_BETA_N",
+        "context": "f\"E_0 = {float(_Q_BETA_N):.8f} MeV (Q_β(n))\")",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/snappy_tower.py",
+        "line": 450,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_BETA_N",
+        "context": "\"E_0_MeV\": float(_Q_BETA_N)},",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/spectral_sequence_unified_h3.py",
+        "line": 49,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_b_codata",
+        "context": "Q_b_codata = mp.mpf(\"0.78233341\")",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/spectral_sequence_unified_h3.py",
+        "line": 209,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_b_codata",
+        "context": "print(f\"  Q_β CODATA   = {mp.nstr(Q_b_codata, 12)} MeV\")",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/spectral_sequence_unified_h3.py",
+        "line": 210,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_b_codata",
+        "context": "err_Qb = (Q_b_pred - Q_b_codata)/Q_b_codata",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/spectral_sequence_unified_h3.py",
+        "line": 210,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_b_codata",
+        "context": "err_Qb = (Q_b_pred - Q_b_codata)/Q_b_codata",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/spectral_sequence_unified_h3.py",
+        "line": 220,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_b_codata",
+        "context": "err_LO = (Q_b_LO - Q_b_codata)/Q_b_codata",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/spectral_sequence_unified_h3.py",
+        "line": 220,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_b_codata",
+        "context": "err_LO = (Q_b_LO - Q_b_codata)/Q_b_codata",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/spectral_sequence_unified_h3.py",
+        "line": 278,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_b_codata",
+        "context": "\"codata_MeV\": float(Q_b_codata),",
+        "kind": "doc"
+      }
+    ],
+    "proton_mass_anchor": [
+      {
+        "file": "folio-assistant/computations/canonical_tower.py",
+        "line": 472,
+        "pattern": "proton_mass_anchor",
+        "match": "938.272 / m_proton",
+        "context": "Binding: B = E_0 · (𝔪_free − 𝔪_atom), E_0 = 938.272 / m_proton_tower.",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/canonical_tower.py",
+        "line": 538,
+        "pattern": "proton_mass_anchor",
+        "match": "938.272 / m_proton",
+        "context": "E_0 = 938.272 / m_proton_tower); E_0 auto-computed if not passed.",
+        "kind": "doc"
+      }
+    ]
+  },
+  "inconsistencies": [],
+  "achievable_precision_floor_ppb": "783.481476501084768226993197961"
+}

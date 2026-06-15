@@ -1,0 +1,133 @@
+{
+  "engine": "python+sympy",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-01T01:13:33.014452+00:00",
+  "computation": "qbeta-habiro-phi8-interpretation",
+  "scriptFile": "qbeta_habiro_phi8_interpretation_probe.py",
+  "description": "Categorical interpretation of Phi_8 = u^4+1 (squared) in the (D-n) Habiro element factorization. Tests 8 hypotheses; reports best match.",
+  "contentBlock": "prop:neutron-qvalue-symbolic",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
+  "data": {
+    "denominator_structure": {
+      "p_n_denom_factored": "4*check_q**19*(check_q**2 + 1)",
+      "D_denom_factored": "32*check_q**40*(check_q**2 + 1)**3",
+      "phi_4": "check_q**2 + 1",
+      "phi_8": "check_q**4 + 1",
+      "identity_phi4_at_u_squared_equals_phi8": true,
+      "interpretation": "Phi_4 is the 'crossing trace pole' (numerator of [2]_q in the substitution u = q^{1/2}). The deuteron's Phi_4^3 encodes 3 such poles: one for each of (proton-internal, neutron-internal, p-n-interaction). The (D-n) subtraction removes the neutron-internal pole, leaving 2 Phi_4 worth of structure -- which appears as Phi_8 = Phi_4(u^2) after strand-doubling u -> u^2."
+    },
+    "dn_factorization": {
+      "expression": "-u*(check_q**4 + 1)**2*(check_q**16 - check_q**13 - check_q**12 + check_q**11 + check_q**8 - check_q**5 - check_q**4 + check_q**3 + 1)*(check_q**16 + check_q**15 + check_q**13 - check_q**12 - check_q**11 - check_q**9 + check_q**8 + check_q**7 + check_q**5 - check_q**4 - check_q**3 - check_q + 1)*(check_q**45 + check_q**44 + check_q**43 - check_q**42 - 4*check_q**41 - 2*check_q**39 + check_q**38 - check_q**37 - check_q**36 + 3*check_q**35 - 2*check_q**33 + 2*check_q**31 + check_q**30 + check_q**28 + 2*check_q**27 - 3*check_q**26 - 4*check_q**25 - check_q**24 - 4*check_q**23 - 4*check_q**22 + 4*check_q**21 - check_q**20 + 4*check_q**19 - 3*check_q**18 - 2*check_q**17 + check_q**16 + check_q**14 - 2*check_q**13 + 2*check_q**11 - 3*check_q**9 - check_q**8 + check_q**7 + check_q**6 + 2*check_q**5 + 4*check_q**3 - check_q**2 - check_q + 1)",
+      "total_degree": 86,
+      "phi_8_squared_factor": "(check_q**4 + 1)**2",
+      "phi_8_explicit": "check_q**4 + 1"
+    },
+    "hypothesis_g_magic_A": {
+      "claim": "Phi_A appears for atom A",
+      "verdict": "FALSE for direct Phi_A",
+      "note": "Phi_2(u) = u+1, Phi_4(u) = u^2+1, but observed factor is Phi_8(u) = u^4+1. However, Phi_8 = Phi_4(u^2) where u^2 encodes the strand-doubling for A=2. So the pattern is Phi_{2 * 2^{A-1}}(u) = Phi_4(u^{2^{A-1}}). For A=1 -> Phi_4; for A=2 -> Phi_8; for A=3 -> Phi_16; for A=4 -> Phi_32. This is a falsifiable prediction.",
+      "phi_for_A": {
+        "A=1": "Phi_4 (u^2+1) \u2014 single nucleon: present in p,n denom",
+        "A=2": "Phi_8 (u^4+1) \u2014 deuteron: OBSERVED in D-n",
+        "A=3": "Phi_16 (u^8+1) \u2014 He-3/H-3 PREDICTED",
+        "A=4": "Phi_32 (u^16+1) \u2014 He-4 PREDICTED"
+      }
+    },
+    "hypothesis_b_4_strand": {
+      "claim": "deg(Phi_8) = 4 = strand count of deuteron 4-braid",
+      "verdict": "STRUCTURALLY CONSISTENT",
+      "evidence": [
+        "Phi_8 has degree 4 over Q; matches 4-strand B_4 braid structure.",
+        "Deuteron carries 2 nucleons * 2 isospin (or color) = 4 strands.",
+        "Phi_8^2 = degree 8 = strand_count * channel_count for (p-n) and (n-p)."
+      ]
+    },
+    "hypothesis_h_bar_symmetric_quartet": {
+      "claim": "Phi_8 roots = 2 bar-conjugate pairs = (p,p\u0304), (n,n\u0304) or (p,n\u0304), (n,p\u0304)",
+      "verdict": "STRUCTURALLY CONSISTENT",
+      "roots": [
+        "exp(I*pi/4)",
+        "exp(-I*pi/4)",
+        "exp(3*I*pi/4)",
+        "exp(-3*I*pi/4)"
+      ],
+      "bar_pair_traces": [
+        "(-1)**(1/4)*(1 - I)",
+        "(-1)**(1/4)*(-1 + I)"
+      ],
+      "evidence": "Phi_8 has exactly 2 bar-conjugate pairs of roots; for an isoscalar bound state (deuteron, I=0) the bar-involution is a SYMMETRY (CPT-preserving). The squared form Phi_8^2 marks two simultaneously-active bar-pair channels: the (p, n\u0304)/(n, p\u0304) cross-channel (charge exchange) in addition to the (p, p\u0304)/(n, n\u0304) self-channels. THIS IS THE EXCHANGE CURRENT that distinguishes deuteron from p+n direct sum."
+    },
+    "hypothesis_a_level_2_su2": {
+      "claim": "Phi_8 vanishing corresponds to level-2 SU(2) (k=2 WZW)",
+      "verdict": "FALSE in naive form",
+      "evidence": "Phi_8(u)=0 \u27fa u^4=-1 \u27fa q = u^2 has q^2 = -1 i.e. q = \u00b1i. Quantum SU(2) at level k has q = e^{i\u03c0/(k+2)}. For q = i: k+2 = 2 \u27f9 k = 0 (vacuum level). For level-2 (k=2): q = e^{i\u03c0/4}, which would require u^2 = e^{i\u03c0/4}, i.e. u = e^{i\u03c0/8} = \u03b6_16. At that u: Phi_8(\u03b6_16) = i+1 \u2260 0. So Phi_8 does NOT directly correspond to level-2 SU(2).",
+      "phi_8_at_u_eq_zeta_16": "1 + I"
+    },
+    "hypothesis_f_8fold_rotation": {
+      "claim": "Closure has 8-fold rotational symmetry",
+      "verdict": "FALSE in naive form; bar-equivariance is the real symmetry",
+      "note": "Under u -> \u03b6_8 * u, Phi_8(u) -> Phi_8(\u03b6_8 u) which factors but does not equal Phi_8(u). The actual symmetry of the factored polynomial is bar-equivariance u <-> u^{-1}, which is the Z/2 from \u00a7C5 of the prior probe."
+    },
+    "best_interpretation": {
+      "primary_match": "(b) 4-strand deuteron + (h) bar-symmetric quartet",
+      "secondary_match": "(g) modified Phi_{2A^2} pattern",
+      "derivation": "Phi_8(u) = Phi_4(u^2). The substitution u -> u^2 is the categorical signature of DOUBLING THE STRAND COUNT: the Markov trace tr_M on the deuteron's 4-strand braid is the proton/neutron 2-strand trace under the strand-doubling substitution. Phi_4 = u^2+1 is the 'crossing-trace pole' (present in every nucleon's denominator); Phi_8 = Phi_4(u^2) is its image under the deuteron's strand-double. The square Phi_8^2 reflects the TWO ACTIVE bar-conjugate channels in the isoscalar deuteron: (p,n\u0304)+(n,p\u0304) charge-exchange channel and (p,p\u0304)+(n,n\u0304) self-channel. The (D-n) subtraction removes the (n,n\u0304) self-contribution, leaving Phi_8^2 = [crossing-pole-doubled]^2.",
+      "why_squared": "The 'squared' is NOT 2 nucleons (that would give Phi_8 once with multiplicity 2 from a single Wedderburn-block decomposition). It is the TWO BAR-CONJUGATE CHANNELS active in an isoscalar bound state: charge-exchange (p\u2194n) and self-channel. Equivalently: Phi_8^2 = symmetric trace over the 2-dim isospin tensor square (S\u00b2)."
+    },
+    "predictions": {
+      "prediction_1_He3_minus_D": {
+        "claim": "(\u00b3He \u2212 D) Habiro sum carries Phi_16(u) = u^8 + 1 factor",
+        "rationale": "If the pattern is Phi_{2 * 2^{A-1}} = Phi_4(u^{2^{A-1}}), then A=3 -> Phi_16(u). The exponent of Phi_16 in the factorization should be the bar-channel count (3+? for I=1/2 \u00b3He vs I=0 D).",
+        "falsifies_if_absent": true
+      },
+      "prediction_2_He4_minus_He3": {
+        "claim": "(\u2074He \u2212 \u00b3He) Habiro sum carries Phi_32(u) = u^16 + 1 factor",
+        "rationale": "Continuing the pattern: A=4 -> Phi_32. \u2074He being doubly magic (Z=N=2) suggests it should show Phi_32^k with k \u2265 2 (mirror of D's Phi_8^2).",
+        "falsifies_if_absent": true
+      },
+      "prediction_3_general_atomic_step": {
+        "claim": "Any A=k \u2192 A=k+1 atomic-step pair (with shared isospin) carries Phi_{2^{k+1}} = u^{2^k} + 1",
+        "rationale": "Phi_{2^{k+1}}(u) = u^{2^k} + 1 is the (2^{k+1})th cyclotomic. The strand-doubling u -> u^2 at each atomic step accumulates.",
+        "falsifies_if_absent": true
+      },
+      "prediction_4_isospin_mirror_pairs": {
+        "claim": "(\u00b3H \u2212 \u00b3He), (\u2077Li \u2212 \u2077Be) etc. carry Phi_1\u00b7Phi_2 (the n\u2212p signature), NOT Phi_8",
+        "rationale": "Isospin mirror pairs are p<->n exchanges at fixed A; they share the same braid count and atomic-mass scale. Their Habiro \u0394a_m factorization should mirror n-p with Phi_1\u00b7Phi_2 = u^2-1, NOT the Phi_{2^{A+1}} structure.",
+        "falsifies_if_absent": true
+      }
+    }
+  },
+  "assertions": [
+    {
+      "name": "phi8_equals_phi4_at_u_squared",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "sympy.cyclotomic_poly + symbolic identity test"
+    },
+    {
+      "name": "d_denom_carries_phi4_cubed",
+      "computed": 0,
+      "expected": 0,
+      "passed": true,
+      "tolerance": 0,
+      "source": "sympy.factor(D denominator)"
+    },
+    {
+      "name": "phi8_squared_present_in_dn",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Witness qbeta-habiro-cross-pair-quick-dp.witness.json field d_minus_n.habiro_sum_factored"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 505
+}

@@ -1,0 +1,54 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-04-16T23:35:08.345005+00:00",
+  "commitSha": "f14d6393777ad9bf53cf3f052981c1c27ccc8c5a",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 5,
+  "computation": "transition-nf",
+  "scriptFile": "transition_nf.py",
+  "scriptHash": "63cf638a2d8d",
+  "scriptCommitSha": "f54c1977511744651ad9c856d7217b3e383760b0",
+  "description": "Transition NF for \u03b2\u207b decays. Tracks per-crossing changes between parent and daughter at quark level.",
+  "data": {
+    "Z0N1": {
+      "tr_par": 0.6789389560906111,
+      "tr_dau": -0.07720040108891836,
+      "tr_delta": 0.7561393571795294,
+      "tr_ratio": -8.794500371942608,
+      "n_changed": 2,
+      "Q_mass_MeV": 0.782333,
+      "Q_exp_MeV": 0.78233
+    },
+    "Z1N2": {
+      "tr_par": -0.8931086355398631,
+      "tr_dau": 2.3159323076881733,
+      "tr_delta": -3.2090409432280365,
+      "tr_ratio": -0.3856367617373879,
+      "n_changed": 4,
+      "Q_mass_MeV": 0.018228,
+      "Q_exp_MeV": 0.01861
+    },
+    "Z2N4": {
+      "tr_par": 5.622490000295628,
+      "tr_dau": -2.100877519250559,
+      "tr_delta": 7.723367519546188,
+      "tr_ratio": -2.6762578726156896,
+      "n_changed": 7,
+      "Q_mass_MeV": 11.743673,
+      "Q_exp_MeV": 3.5078
+    },
+    "Z6N8": {
+      "tr_par": 302.4372811747109,
+      "tr_dau": -647.7204561866266,
+      "tr_delta": 950.1577373613375,
+      "tr_ratio": -0.4669256286195942,
+      "n_changed": 15,
+      "Q_mass_MeV": 0.454076,
+      "Q_exp_MeV": 0.15648
+    }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
+}

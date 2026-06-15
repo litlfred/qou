@@ -1,0 +1,215 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-23T10:54:21.996320+00:00",
+  "commitSha": "fa81cda5863ea40b349a7173eebe96d2ebc5ed1b",
+  "assertions": [
+    {
+      "name": "spike_completed",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 27,
+  "computation": "explore-q10-selectivity",
+  "scriptFile": "explore_q10_selectivity.py",
+  "scriptHash": "0723ac2e1a9a",
+  "scriptCommitSha": "fa81cda5863ea40b349a7173eebe96d2ebc5ed1b",
+  "description": "Spike: investigate the categorical reason for q^10 selectivity in PR #943's finding 1/(1 − h_q·q_0^10) ≈ λ_p (+19 ppm). Three probes per docs/coordination/explore-q10.md: (P1) q-locality sweep across q_0 ± 0.05 testing residual smoothness; (P2) Φ_q tower-expansion sanity (functional-eq ratio IS the form; no Φ_q tail to close the gap); (P3) adjacent-power composite candidates p(q)-coefficient-guided from the proton braid Markov trace polynomial.",
+  "contentBlock": "conj:lambda-scale-bring-bloch-identity",
+  "parameters": {
+    "dps": 60,
+    "phi_q_K": 400
+  },
+  "data": {
+    "p1_locality_sweep": [
+      {
+        "delta": "-0.05",
+        "q": "1.059978595554181",
+        "lambda_p_q": "0.8023022955835204",
+        "form_q": "1.263751197278583",
+        "residual_rel_ppm": "575155.9"
+      },
+      {
+        "delta": "-0.02",
+        "q": "1.089978595554181",
+        "lambda_p_q": "1.707584179927726",
+        "form_q": "1.690215894125977",
+        "residual_rel_ppm": "-10171.262"
+      },
+      {
+        "delta": "-0.01",
+        "q": "1.099978595554181",
+        "lambda_p_q": "2.070070976140084",
+        "form_q": "1.980085447194275",
+        "residual_rel_ppm": "-43469.78"
+      },
+      {
+        "delta": "-0.005",
+        "q": "1.104978595554181",
+        "lambda_p_q": "2.261691819744193",
+        "form_q": "2.186589431127539",
+        "residual_rel_ppm": "-33206.287"
+      },
+      {
+        "delta": "-0.001",
+        "q": "1.108978595554181",
+        "lambda_p_q": "2.419779132024601",
+        "form_q": "2.398493093969255",
+        "residual_rel_ppm": "-8796.6863"
+      },
+      {
+        "delta": "0.0",
+        "q": "1.109978595554181",
+        "lambda_p_q": "2.459952787689336",
+        "form_q": "2.459999231622393",
+        "residual_rel_ppm": "18.88001"
+      },
+      {
+        "delta": "0.001",
+        "q": "1.110978595554181",
+        "lambda_p_q": "2.500383975184478",
+        "form_q": "2.525583755956546",
+        "residual_rel_ppm": "10078.364"
+      },
+      {
+        "delta": "0.005",
+        "q": "1.114978595554181",
+        "lambda_p_q": "2.664652498387455",
+        "form_q": "2.837863471221091",
+        "residual_rel_ppm": "65003.213"
+      },
+      {
+        "delta": "0.01",
+        "q": "1.119978595554181",
+        "lambda_p_q": "2.875595158432246",
+        "form_q": "3.392325538934989",
+        "residual_rel_ppm": "179695.11"
+      },
+      {
+        "delta": "0.02",
+        "q": "1.129978595554181",
+        "lambda_p_q": "3.315453089945922",
+        "form_q": "5.935849789854492",
+        "residual_rel_ppm": "790358.55"
+      },
+      {
+        "delta": "0.05",
+        "q": "1.159978595554181",
+        "lambda_p_q": "4.766103290531533",
+        "form_q": "-3.185764961529199",
+        "residual_rel_ppm": "-1668421.3"
+      }
+    ],
+    "p1_slope_ppm_per_q": "-15437325.2329",
+    "p1_curvature_ppm": "1243.91768",
+    "p2_phi_q_functional_eq_sanity_err": "4.44197411092e-19",
+    "p2_z_star_form": "0.5934958079883259073055",
+    "p2_z_star_exact": "0.5934881326351832013355",
+    "p2_delta_z": "-0.000007675353142705969950749",
+    "p3_candidates": {
+      "1/(1 − h_q · q^10)": {
+        "value": "2.45999923162239306",
+        "rel_ppm": "18.881363"
+      },
+      "1/(1 − h_q·q^10) · (1 − 1/12·q^{-20}·p(q))": {
+        "value": "2.0846710631822957",
+        "rel_ppm": "-152556.47"
+      },
+      "1/(1 − h_q·q^10) − 2·h_q²·(q+q^{-1})·G": {
+        "value": "2.29899318575012112",
+        "rel_ppm": "-65431.987"
+      },
+      "1/(1 − h_q·q^10) − h_q²·G": {
+        "value": "2.41996583947164287",
+        "rel_ppm": "-16255.168"
+      },
+      "5/2 − h_q²·G (existing benchmark)": {
+        "value": "2.4599666078492498",
+        "rel_ppm": "5.6194119"
+      }
+    },
+    "p3_best_candidate": "5/2 − h_q²·G (existing benchmark)",
+    "p3_best_ppm": "5.61941189253",
+    "p4_benchmark_locality": [
+      {
+        "delta": "-0.05",
+        "residual_ppm": "2100520.6"
+      },
+      {
+        "delta": "-0.01",
+        "residual_ppm": "191567.9"
+      },
+      {
+        "delta": "0.0",
+        "residual_ppm": "5.618059"
+      },
+      {
+        "delta": "0.01",
+        "residual_ppm": "-147043.43"
+      },
+      {
+        "delta": "0.05",
+        "residual_ppm": "-492516.96"
+      }
+    ],
+    "p4_benchmark_slope_ppm_per_q": "-16930566.5387",
+    "p4_benchmark_curvature_ppm": "44513.2387764",
+    "p5_v7_locality": {
+      "rows": [
+        {
+          "delta": "-0.05",
+          "residual_ppm": "2411333.927"
+        },
+        {
+          "delta": "-0.01",
+          "residual_ppm": "311694.4035"
+        },
+        {
+          "delta": "0.0",
+          "residual_ppm": "101041.7216"
+        },
+        {
+          "delta": "0.01",
+          "residual_ppm": "-60641.05275"
+        },
+        {
+          "delta": "0.05",
+          "residual_ppm": "-440325.4626"
+        }
+      ],
+      "slope": "-18616772.8132",
+      "curvature": "48969.9076123",
+      "smooth": false
+    },
+    "p5_strategy_g_locality": {
+      "rows": [
+        {
+          "delta": "-0.05",
+          "residual_ppm": "2119914.086"
+        },
+        {
+          "delta": "-0.01",
+          "residual_ppm": "211382.7855"
+        },
+        {
+          "delta": "0.0",
+          "residual_ppm": "19914.00143"
+        },
+        {
+          "delta": "0.01",
+          "residual_ppm": "-127046.2305"
+        },
+        {
+          "delta": "0.05",
+          "residual_ppm": "-472211.3968"
+        }
+      ],
+      "slope": "-16921450.798",
+      "curvature": "44508.5521601",
+      "smooth": false
+    }
+  }
+}

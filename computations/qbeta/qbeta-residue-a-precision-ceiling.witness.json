@@ -1,0 +1,71 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-06-04T10:26:55.162704+00:00",
+  "commitSha": "cf961e33bdb9907757f42a63d19a5f5edabdf921",
+  "assertions": [
+    {
+      "name": "A_reaches_30_digits_from_current_ck",
+      "computed": false,
+      "expected": false,
+      "passed": true,
+      "tolerance": 0,
+      "source": "A is the k→∞ limit of c_k·u^k sampled at k=8,9,10 only. Default expectation: 3 canonical rungs cannot pin A to 30 digits; the limiter is asymptotic convergence, not precision."
+    },
+    {
+      "name": "spread_is_intrinsic_not_compute_noise",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Tail spread stable as compute dps rises 50→120 ⇒ intrinsic asymptotic spread, confirming compute precision is not the limiter."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 4,
+  "computation": "qbeta-residue-a-precision-ceiling",
+  "scriptFile": "qbeta_residue_a_precision_ceiling.py",
+  "scriptHash": "2c70b6a1e359",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "mpmath": "1.4.1"
+  },
+  "description": "Precision-ceiling analysis of residue A = lim_k c_k·u_subst^k (PR #1727 Step 1). A is the asymptotic limit sampled at k=8,9,10 (spread 0.0001955); the c_k are 50 dps so the limiter is asymptotic convergence, NOT arithmetic precision (spread stable across dps=True). Extrapolation (raw mean, Aitken Δ², 3-pt geometric) gives L ≈ 2.1177442455149e-13 (residue A = u_subst·L ≈ 1.8037324e-15) reliable to ≈ 4.02 sig figs (estimator spread 9.467e-5). ≥30 digits: False; ≥15: False. Genuine unblock = canonical c_11..c_15 extraction (NOT an ansatz fit). Diagnostic-only.",
+  "data": {
+    "u_subst": "0.008517234550156142189255573603309202969194",
+    "x_tail": {
+      "x_7": "1.8582354014547353072317424159e-13",
+      "x_8": "2.11835884447546900532223501033e-13",
+      "x_9": "2.11773078182789377126541171039e-13",
+      "x_10": "2.11774454045655933401469868548e-13"
+    },
+    "spread_vs_dps": {
+      "50": "0.00019553023",
+      "80": "0.00019553023",
+      "120": "0.00019553023"
+    },
+    "spread_intrinsic": "True",
+    "estimators": {
+      "raw_mean_8_9_10": "2.11794472225330737020078e-13",
+      "aitken_8_9_10": "2.11774424551485240651799e-13",
+      "aitken_7_8_9": "2.11773229461950073898172e-13",
+      "geometric_8_9_10": "2.11774424551485240651799e-13"
+    },
+    "geometric_rho": "-0.02190645904",
+    "L_limit_best": "2.11774424551485240651799e-13",
+    "A_residue_best": "1.80373244562934526777237e-15",
+    "note_A_vs_L": "L = lim c_k·u^k ≈ 2.118e-13 (tail limit); residue A = u_subst·L ≈ 1.804e-15 (canonical). u_subst exact ⇒ A and L share the same relative precision / achievable_digits.",
+    "estimator_spread_relative": "9.4665226e-5",
+    "achievable_digits": "4.02381",
+    "reaches_30_digits": "False",
+    "reaches_15_digits": "False",
+    "genuine_unblock_path": "Canonical (proved/near-match) extraction of c_11..c_15, extending the c_2..c_10 ladder — NOT an ansatz fit. With more rungs the asymptote tightens and extrapolation reaches grade."
+  }
+}

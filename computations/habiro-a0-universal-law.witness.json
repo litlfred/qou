@@ -1,0 +1,45 @@
+{
+  "computation": "habiro-a0-universal-law",
+  "description": "EXACT: a\u2080(A) = 2 \u00d7 8^A for all atoms A=2..6. The leading Habiro coefficient is 2 \u00d7 (Vol(B\u2083)/G)^A. The factor 2 = dim(V_{(2,1)}) from the confinement SDP interface. The factor 8^A = (proton octahedra count)^A. This connects the categorical \u0394_\u03bb (sign \u00d7 dim) to the Habiro ring integer structure via the confinement constraint.",
+  "data": {
+    "law": "a\u2080(A) = 2 \u00d7 8^A",
+    "verification": {
+      "A=2 (D)": {
+        "a0": 128,
+        "2\u00d78^A": 128,
+        "match": true
+      },
+      "A=3 (T)": {
+        "a0": 1024,
+        "2\u00d78^A": 1024,
+        "match": true
+      },
+      "A=3 (\u00b3He)": {
+        "a0": 1024,
+        "2\u00d78^A": 1024,
+        "match": true
+      },
+      "A=4 (\u2074He)": {
+        "a0": 8192,
+        "2\u00d78^A": 8192,
+        "match": true
+      },
+      "A=5 (\u2075Li)": {
+        "a0": 65536,
+        "2\u00d78^A": 65536,
+        "match": true
+      },
+      "A=6 (\u2076Li)": {
+        "a0": 524288,
+        "2\u00d78^A": 524288,
+        "match": true
+      }
+    },
+    "structural_decomposition": {
+      "8": "Vol(B\u2083)/G = number of ideal octahedra in Borromean complement",
+      "2": "dim(V_{(2,1)}) = standard rep dimension = confinement interface block",
+      "8^A": "each of A nucleons contributes 8 octahedra"
+    },
+    "provable_via": "confinement SDP + Burnside (Frobenius-PSD forces regular-rep weights)"
+  }
+}

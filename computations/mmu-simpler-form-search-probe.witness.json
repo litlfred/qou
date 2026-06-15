@@ -1,0 +1,130 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-06-04T00:27:26.769615+00:00",
+  "commitSha": "18dc5b6cbcb3b6ba7a0b60860d47ea00d573624a",
+  "assertions": [
+    {
+      "name": "simpler_form_at_least_one_meets_100x_l2",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "12 single-function δ candidates tested. PASS established: S11 (factored R9+V9 form ℏ_q^6·q·(1+ℏ_q²·[3]_q/5)/5) achieves 0.607× L2 miss, making the Habiro factored structure explicit."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 14,
+  "computation": "mmu-simpler-form-search-probe",
+  "scriptFile": "mmu_simpler_form_search_probe.py",
+  "scriptHash": "e13361cf01cf",
+  "scriptCommitSha": "65fe2dd58a0afb580729f87b5ce345954a706519",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.4.0"
+  },
+  "data": {
+    "q_substrate": "1.10997858275138080759166909561",
+    "target_100x_ppb": 0.2176826956799085,
+    "candidates_tested": [
+      "S1.  alpha × hbar_q^4",
+      "S2.  alpha^2 × hbar_q^2",
+      "S3.  alpha^3",
+      "S4.  alpha^3 × q",
+      "S5.  alpha × hbar_q^4 / 2",
+      "S6.  log(Vol) × hbar_q^6 / 10",
+      "S7.  Vol^2 × hbar_q^8",
+      "S8.  hbar_q^6 × (q + hbar^2·0.03) / 5  (factor-out V9)",
+      "S9.  hbar_q^6 × sin(alpha_Kashiwara)",
+      "S10. hbar_q^6 × Vol(4_1) / 10",
+      "S11. hbar_q^6 × q × (1+hbar²[3]_q/5) / 5  (factored R9+V9)",
+      "S12. 1 - cos(hbar_q^3 × (q+1))"
+    ],
+    "per_candidate_results": {
+      "S1.  alpha × hbar_q^4": {
+        "delta": "0.000000703298042284049046258515032974",
+        "err_ppb": -492.1332764354434,
+        "miss_factor": 2260.7827181591906,
+        "passed_100x_l2": false
+      },
+      "S2.  alpha^2 × hbar_q^2": {
+        "delta": "0.000000522778476272114478938278221292",
+        "err_ppb": -311.61367230411014,
+        "miss_factor": 1431.504104314853,
+        "passed_100x_l2": false
+      },
+      "S3.  alpha^3": {
+        "delta": "0.000000388593908730111368788886930988",
+        "err_ppb": -177.42907642703435,
+        "miss_factor": 815.0812165976432,
+        "passed_100x_l2": false
+      },
+      "S4.  alpha^3 × q": {
+        "delta": "0.000000431330916078068442797202205035",
+        "err_ppb": -220.1660927995479,
+        "miss_factor": 1011.4083350166295,
+        "passed_100x_l2": false
+      },
+      "S5.  alpha × hbar_q^4 / 2": {
+        "delta": "0.000000351649021142024523129257516487",
+        "err_ppb": -140.48418103748347,
+        "miss_factor": 645.3621892116699,
+        "passed_100x_l2": false
+      },
+      "S6.  log(Vol) × hbar_q^6 / 10": {
+        "delta": "0.0000000669855366173289445430082759147",
+        "err_ppb": 144.17936359815243,
+        "miss_factor": 662.3372755828096,
+        "passed_100x_l2": false
+      },
+      "S7.  Vol^2 × hbar_q^8": {
+        "delta": "0.0000000382728022792033625310528753526",
+        "err_ppb": 172.89210399940012,
+        "miss_factor": 794.2390802327683,
+        "passed_100x_l2": false
+      },
+      "S8.  hbar_q^6 × (q + hbar^2·0.03) / 5  (factor-out V9)": {
+        "delta": "0.000000210097522496698833614666865322",
+        "err_ppb": 1.0673474985523086,
+        "miss_factor": 4.903226208305457,
+        "passed_100x_l2": false
+      },
+      "S9.  hbar_q^6 × sin(alpha_Kashiwara)": {
+        "delta": "-0.0000000494953460089276668961205722236",
+        "err_ppb": 260.6602708210847,
+        "miss_factor": 1197.4322074932982,
+        "passed_100x_l2": false
+      },
+      "S10. hbar_q^6 × Vol(4_1) / 10": {
+        "delta": "0.000000192057897559926414534491526346",
+        "err_ppb": 19.106976244660583,
+        "miss_factor": 87.77443785773599,
+        "passed_100x_l2": false
+      },
+      "S11. hbar_q^6 × q × (1+hbar²[3]_q/5) / 5  (factored R9+V9)": {
+        "delta": "0.000000211297027433046115274168153415",
+        "err_ppb": -0.13215769108833034,
+        "miss_factor": 0.60711160653147,
+        "passed_100x_l2": true
+      },
+      "S12. 1 - cos(hbar_q^3 × (q+1))": {
+        "delta": "0.00000210613916586492783564753941141",
+        "err_ppb": -1894.974696247148,
+        "miss_factor": 8705.215131264331,
+        "passed_100x_l2": false
+      }
+    },
+    "best_candidate_name": "S11. hbar_q^6 × q × (1+hbar²[3]_q/5) / 5  (factored R9+V9)",
+    "best_miss_factor": 0.60711160653147,
+    "any_meets_100x_l2": true
+  }
+}

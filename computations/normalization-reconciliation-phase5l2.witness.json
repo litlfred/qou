@@ -1,0 +1,86 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-20T18:59:07.658057+00:00",
+  "commitSha": "8786d45872315d24ac7bdbc598e8f3ab0125a8c9",
+  "assertions": [
+    {
+      "name": "phase_5l_2_simple_reconciliation_refuted",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "unit": "dimensionless (refutation-confirmed boolean)",
+      "source": "Phase 5l.2 reconciliation probe: tested two simple hypotheses for relating Phase 5l.1's symbolic T(B_p, q) (Wenzl-bridge SYMBOLIC) to canonical tr_M^3(𝓑_p, q) (Phase 5l, mpfr-50-dps NUMERIC):\n  Hyp A: T evaluated at q — rel.spread = 5.9127e-02\n  Hyp B: T evaluated at q^2 — rel.spread = 8.0881e-01\nBoth spreads exceed 0.1% across the 5-point substrate window, refuting the simple-multiplicative-constant hypothesis for both q and q^2 interpretations.  The Wenzl-bridge symbolic implementation uses a deeper convention mismatch — likely a different normalization of y_λ that depends on partition structure as well as q.  Verdict: both-hypotheses-falsified.  Reconciliation now queued as a research task (no longer a simple normalization-constant fix)."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 82,
+  "computation": "normalization-reconciliation-phase5l2",
+  "scriptFile": "normalization_reconciliation_phase5l2.py",
+  "scriptHash": "12b42c56abf0",
+  "scriptCommitSha": "420e77be1898a681114ab2801cb91b58a276a102",
+  "description": "Phase 5l.2: normalization reconciliation between the Phase 5l.1 structural T(B_p, q) (Wenzl-bridge symbolic) and the canonical Phase 5l tr_M^3(𝓑_p, q) (mpfr-50-dps numeric).  Tests two hypotheses: (A) the ratio tr_M^3(𝓑_p, q) / T(B_p, q) is q-independent (simple multiplicative constant); (B) the symbolic T uses Q = q^2 convention, so tr_M^3(𝓑_p, q) / T(B_p, q^2) is q-independent.  If either holds, gives the closed-form normalization for promoting Phase 5l.1's symbolic T to canonical tr_M^3.",
+  "auditOnly": "docs/audits/2026-05-20-constit-factor-closure-chain.md",
+  "data": {
+    "hypothesis_A_ratios": [
+      {
+        "q": 1.05,
+        "ratio": 1.0919290455372799,
+        "ratio_str": "1.09192904553727983666321632802"
+      },
+      {
+        "q": 1.08,
+        "ratio": 1.1247095256063921,
+        "ratio_str": "1.12470952560639212742406167047"
+      },
+      {
+        "q": 1.1099785955541805,
+        "ratio": 1.1455512568430049,
+        "ratio_str": "1.14555125684300495817267708696"
+      },
+      {
+        "q": 1.13,
+        "ratio": 1.1538528475039436,
+        "ratio_str": "1.15385284750394349474341114791"
+      },
+      {
+        "q": 1.17,
+        "ratio": 1.1590396208204772,
+        "ratio_str": "1.1590396208204771585820614363"
+      }
+    ],
+    "hypothesis_A_relative_spread": 0.05912740272226569,
+    "hypothesis_A_mean_ratio": 1.1350164592622196,
+    "hypothesis_B_ratios": [
+      {
+        "q": 1.05,
+        "ratio": 0.779541187065617,
+        "ratio_str": "0.77954118706561707635901643749"
+      },
+      {
+        "q": 1.08,
+        "ratio": 0.6591026137908015,
+        "ratio_str": "0.659102613790801523829708115665"
+      },
+      {
+        "q": 1.1099785955541805,
+        "ratio": 0.5388074295355761,
+        "ratio_str": "0.53880742953557612296013998567"
+      },
+      {
+        "q": 1.13,
+        "ratio": 0.4628361746498429,
+        "ratio_str": "0.462836174649842876916824887261"
+      },
+      {
+        "q": 1.17,
+        "ratio": 0.33121532584476815,
+        "ratio_str": "0.331215325844768158503781528703"
+      }
+    ],
+    "hypothesis_B_relative_spread": 0.808813673940399,
+    "hypothesis_B_mean_ratio": 0.5543005461773212,
+    "verdict": "both-hypotheses-falsified"
+  }
+}

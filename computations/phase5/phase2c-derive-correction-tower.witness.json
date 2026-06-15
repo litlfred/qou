@@ -1,0 +1,44 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.12.3",
+  "computedAt": "2026-06-01T13:34:32.988093+00:00",
+  "commitSha": "417e511ad96a7416b3b52d2f93704cd0eee0d8f7",
+  "assertions": [
+    {
+      "name": "q_deformation_improves",
+      "computed": 0,
+      "expected": 1,
+      "passed": false,
+      "tolerance": 0,
+      "source": "At least one q-deformed formula should beat the integer form"
+    }
+  ],
+  "allPassed": false,
+  "durationMs": 23,
+  "computation": "phase2c-derive-correction-tower",
+  "scriptFile": "phase2c_derive_correction_tower.py",
+  "scriptHash": "958527466e25",
+  "scriptCommitSha": "2806636dce19b22563cd3431a2b05b9dd6186f74",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.12.3",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Investigates whether the ℏ_q correction tower can be DERIVED (not fitted) by replacing integer coefficients with their q-deformed analogues: 2 → [2]_q, 6 → [3]_q!. Tests multiple q-deformation hypotheses against CODATA.",
+  "contentBlock": "prop:proton-mass-substrate-identity",
+  "data": {
+    "best_q_deformed_formula": {
+      "name": "2·m_μ·F − 12·m_e (current)",
+      "m_p_MeV": "938.27189001064",
+      "residual_ppm": "-0.211185393"
+    }
+  }
+}

@@ -1,0 +1,126 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-06-05T18:41:07.020847+00:00",
+  "commitSha": "75bb53314159c396f6784c7d8154d5f7e7b1f773",
+  "assertions": [
+    {
+      "name": "at_least_one_sinh_candidate_matches_c3_sign",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "source": "bar-odd -sinh forms can reproduce the negative c_3 sign at q₀."
+    },
+    {
+      "name": "observable_swing_gap_is_ladder_order",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "source": "(dc_3/dη)/(dS/dη) ~ 1/u³ ≫ 1 for every sign-matching sinh candidate — the Reeb sinh is fibre-level, not a direct observable c_3 closed form."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 10,
+  "computation": "qbeta-reeb-sinh-parity-probe",
+  "scriptFile": "qbeta_reeb_sinh_parity_probe.py",
+  "scriptHash": "fe2227ad8338",
+  "scriptCommitSha": "9bf168a91db863991f58442e2d9fb54fbe5484f7",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Pruned necessary-condition check on the Reeb-sinh holonomy as a c_3 source. Parity (bar-odd) is the formalize-first invariant proved in QBetaReebSinhParity.lean; here we test sign + cross-anchor swing of sinh-Reeb scalars against the c_3 target and measure the slope ratio (dc_3/dη)/(dS/dη). The ratio is ~1/u³ (≈1.6e6), not ~1, so a direct Reeb sinh matches the c_3 sign but not the observable swing magnitude — it is parity-admissible only at the FIBRE level (pre-f-map), where the ladder supplies the amplification. First non-refuted structural lead since the c_3 bracket closed; consistent with #1880 + #1811. No fits.",
+  "contentBlock": "conj:qbeta-precision-ladder",
+  "data": {
+    "eta_proton": "0.104340720319519512315906279973072397053744280828984303250862",
+    "eta_muon": "0.104340731853795842332313842423389889355843923272577950437907",
+    "c3_target_proton": "-2.06934257711516783787971951724962858902203099810343886691284",
+    "c3_target_muon": "-2.02020023502125517138232674988576251890206061330068660325496",
+    "c3_slope_dc3_deta": "4260548.35933020873656444289752355385282158600925666200152906",
+    "ladder_inv_u3": "1618468.22929443317814446757022999386841248777383784810120158",
+    "candidates": [
+      {
+        "candidate": "-sinh(η)",
+        "S_proton": "-0.104530149397819657715423106564837471929878747631512277690848",
+        "S_muon": "-0.104530160994939730550804211148960953230878151958229341991524",
+        "sign_matches_c3": true,
+        "dS_deta": "-1.00544843395640098615648563271463221332237904334062042753664",
+        "swing_direction_matches": false,
+        "slope_ratio_c3_over_S": -4237460.833834227,
+        "observable_match": false
+      },
+      {
+        "candidate": "-2·sinh(η) [= -h]",
+        "S_proton": "-0.209060298795639315430846213129674943859757495263024555381696",
+        "S_muon": "-0.209060321989879461101608422297921906461756303916458683983049",
+        "sign_matches_c3": true,
+        "dS_deta": "-2.01089686791280197231297126542926442664475808668124085507328",
+        "swing_direction_matches": false,
+        "slope_ratio_c3_over_S": -2118730.4169171136,
+        "observable_match": false
+      },
+      {
+        "candidate": "-sinh(3η)/(2cosh η)",
+        "S_proton": "-0.158217494874297863730468416428746962182475140479351229041767",
+        "S_muon": "-0.158217512742165749923387835101165150096407470576735759768379",
+        "sign_matches_c3": true,
+        "dS_deta": "-1.54911044047854038991779796365790332913954940415776410974220",
+        "swing_direction_matches": false,
+        "slope_ratio_c3_over_S": -2750319.3110066894,
+        "observable_match": false
+      },
+      {
+        "candidate": "-sinh(3η)",
+        "S_proton": "-0.318159064700975756962685624407127286973553855721642826270424",
+        "S_muon": "-0.318159101012934589012078404954335065329959819355108661909587",
+        "sign_matches_c3": true,
+        "dS_deta": "-3.14817833326503448248316982104912093714029296154971845192875",
+        "swing_direction_matches": false,
+        "slope_ratio_c3_over_S": -1353337.6792259142,
+        "observable_match": false
+      },
+      {
+        "candidate": "-sinh(3η)/(2cosh³η)",
+        "S_proton": "-0.156507408515927430695978358213343037110106832145511610358007",
+        "S_muon": "-0.156507425815320728075765940223250172272250454027633607205679",
+        "sign_matches_c3": true,
+        "dS_deta": "-1.49982476597690278445909300359642555048850153862581450221265",
+        "swing_direction_matches": false,
+        "slope_ratio_c3_over_S": -2840697.4307796042,
+        "observable_match": false
+      },
+      {
+        "candidate": "-sinh(5η)/(2cosh η)",
+        "S_proton": "-0.271368221546859946037434807689270106706188198278981701700209",
+        "S_muon": "-0.271368253893120032345705110128607400507276541714668540161971",
+        "sign_matches_c3": true,
+        "dS_deta": "-2.80435973274989655072630704810646239866730903267195001404766",
+        "swing_direction_matches": false,
+        "slope_ratio_c3_over_S": -1519258.8559786528,
+        "observable_match": false
+      },
+      {
+        "candidate": "-tanh(η)·[3]ish=-sinh(3η)/cosh(η)",
+        "S_proton": "-0.316434989748595727460936832857493924364950280958702458083534",
+        "S_muon": "-0.316435025484331499846775670202330300192814941153471519536759",
+        "sign_matches_c3": true,
+        "dS_deta": "-3.09822088095708077983559592731580665827909880831552821948439",
+        "swing_direction_matches": false,
+        "slope_ratio_c3_over_S": -1375159.6555033447,
+        "observable_match": false
+      }
+    ],
+    "verdict": "PARITY_ADMISSIBLE_FIBRE_LEVEL",
+    "fibre_level_gap_confirmed": true,
+    "interpretation": "Reeb sinh is the parity-admissible (bar-odd, Lean-proved) Reeb component for c_3. Numerically it matches the c_3 sign but its observable slope is ~1/u³ too small, so it cannot be a direct observable closed form (consistent with #1880). It is a fibre-level source: the ladder inversion supplies the 1/u³ amplification. This is a non-refuted structural lead — the Reeb→fibre-q-difference route is the way to attack the data-blocked recurrence axis structurally."
+  }
+}

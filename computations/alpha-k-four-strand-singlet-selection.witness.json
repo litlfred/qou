@@ -1,0 +1,83 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-12T19:54:48.336323+00:00",
+  "commitSha": "d39ac22a90e17a28eb1eb78b1350c20d3f6f18e0",
+  "assertions": [
+    {
+      "name": "n=2 singlet multiplicity = 1 (EM uniqueness, cor:gauge-coupling-uniqueness)",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "thm:em-spectral-completeness (V_- ~ 1 unique)"
+    },
+    {
+      "name": "n=4 singlet multiplicity = 2 (two coupling slots = two remaining knot forces)",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "integer CG walk; Catalan(2)"
+    },
+    {
+      "name": "even-strand ladder matches Catalan(m) for m=1..4",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "dim Hom(1, V^{2m}) = Catalan(m), generic q"
+    },
+    {
+      "name": "odd strand counts carry NO scalar coupling (multiplicity 0)",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "half-integer total spin; parity obstruction"
+    },
+    {
+      "name": "n=4 Gram det identity d^2(d^2-1) = product of eigenvalues d(d+1)d(d-1)",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "TL cup-diagram pairing, forced"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 10,
+  "computation": "alpha-k-four-strand-singlet-selection",
+  "scriptFile": "alpha_k_four_strand_singlet_selection.py",
+  "scriptHash": "3eb57907ff3d",
+  "scriptCommitSha": "d39ac22a90e17a28eb1eb78b1350c20d3f6f18e0",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "alpha_{basis-knot} per-force selection scoping: the even-strand singlet ladder dim Hom(1, A^{(x) n}) = 0 (n odd) / Catalan(n/2) (n even) for the SU_q(2) fundamental at generic q (exact integer Clebsch-Gordan walk; pre-archimedean).  n=2 gives the UNIQUE EM coupling slot (matches thm:em-spectral-completeness / cor:gauge-coupling-uniqueness, the trivial/unknot channel V_- ~ 1); n=4 gives exactly TWO independent scalar-coupling slots — the same count as the remaining knot-mediated short-range forces (strong T_{2,9}, weak T_{3,5}) in the established role table (prop:cohomological-embedding consequence 3).  The forced TL Gram matrix [[d^2,d],[d,d^2]] (d=[2]_q) on the n=4 slot space has eigenvalues d(d+/-1) on the symmetric/antisymmetric (bar-odd) combinations.  Tier: structural observation / selection-rule candidate; coupling VALUES not derived (gated on conj:e-hartree-categorical-derivation); nothing compared to measured alpha_s/alpha_W (anti-fishing).",
+  "contentBlock": "thm:em-spectral-completeness",
+  "data": {
+    "q0": "1.109978582751380807591669095610768879874499121873578736072814240181799",
+    "delta_2q": "2.010896866707122299752491978091862815889240748484132916763932425904622",
+    "singlet_ladder": {
+      "1": 0,
+      "2": 1,
+      "3": 0,
+      "4": 2,
+      "5": 0,
+      "6": 5,
+      "7": 0,
+      "8": 14
+    },
+    "gram_n4_cup_basis": {
+      "diag": "4.04370620853252198940201933567738830976821396071350610903595079685529",
+      "off": "2.010896866707122299752491978091862815889240748484132916763932425904622",
+      "eig_symmetric_d_dplus1": "6.054603075239644289154511313769251125657454709197639025799883222759912",
+      "eig_antisymmetric_d_dminus1": "2.032809341825399689649527357585525493878973212229373192272018370950668"
+    },
+    "finding": "Selection-rule candidate (structural, conditional): braid-invariant scalar couplings exist only at even strand counts, with multiplicity 1, 2, 5 at n = 2, 4, 6.  The unique n=2 slot is the established EM coupling (the trivial/unknot channel).  The n=4 sector provides exactly two independent slots — matching the two remaining knot-mediated forces (strong T_{2,9}, weak T_{3,5}); their forced Gram structure [[d^2,d],[d,d^2]] splits into symmetric/antisymmetric channels with eigenvalues d(d+/-1).  Deriving alpha_s/alpha_W VALUES from these slots requires the archimedean trace-ratio functor on the slot space and stays gated on conj:e-hartree-categorical-derivation.  No fitting; no comparison to experiment."
+  }
+}

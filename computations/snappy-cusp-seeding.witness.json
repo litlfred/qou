@@ -1,0 +1,283 @@
+{
+  "engine": "snappy",
+  "engineVersion": "snappy 3.3.2",
+  "computedAt": "2026-05-01T15:55:59.975876+00:00",
+  "commitSha": "c38d0c8dbecfe61a2536464084fc9240bd80dbc4",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 44,
+  "computation": "snappy-cusp-seeding",
+  "scriptFile": "snappy_cusp_seeding.py",
+  "scriptHash": "d5cfda288bf3",
+  "scriptCommitSha": "c38d0c8dbecfe61a2536464084fc9240bd80dbc4",
+  "description": "SnapPy-driven test of `conj:shared-denominator-cusp-holonomy`. For a few cusped hyperbolic 3-manifolds, compares the QOU algebraic q-Pochhammer denominator zeros against SnapPy's tetrahedral shape parameters, evaluates Thurston gluing-equation residuals at both, and drives Newton-Raphson on the gluing system from the algebraic seeds.",
+  "contentBlock": "conj:shared-denominator-cusp-holonomy",
+  "parameters": {
+    "q0": 1.1099785955541805,
+    "manifolds": [
+      "m004",
+      "m003",
+      "L6a4"
+    ]
+  },
+  "data": {
+    "results": [
+      {
+        "name": "m004",
+        "num_tetrahedra": 2,
+        "num_cusps": 1,
+        "volume": 2.029883212819307,
+        "snappy_shapes": [
+          {
+            "real": 0.4999999999999998,
+            "imag": 0.8660254037844383
+          },
+          {
+            "real": 0.49999999999999983,
+            "imag": 0.866025403784439
+          }
+        ],
+        "algebraic_seeds": [
+          {
+            "real": 1.0,
+            "imag": 0.1
+          },
+          {
+            "real": 0.9009182735643011,
+            "imag": 0.1
+          }
+        ],
+        "pairings": [
+          {
+            "seed_index": 0,
+            "seed_real": 1.0,
+            "seed_imag": 0.1,
+            "snappy_index": 0,
+            "snappy_real": 0.4999999999999998,
+            "snappy_imag": 0.8660254037844383,
+            "distance": 0.9147649530032903
+          },
+          {
+            "seed_index": 1,
+            "seed_real": 0.9009182735643011,
+            "seed_imag": 0.1,
+            "snappy_index": 0,
+            "snappy_real": 0.4999999999999998,
+            "snappy_imag": 0.8660254037844383,
+            "distance": 0.8645983930825292
+          }
+        ],
+        "max_pairing_distance": 0.9147649530032903,
+        "min_pairing_distance": 0.8645983930825292
+      },
+      {
+        "name": "m003",
+        "num_tetrahedra": 2,
+        "num_cusps": 1,
+        "volume": 2.029883212819308,
+        "snappy_shapes": [
+          {
+            "real": 0.49999999999999956,
+            "imag": 0.8660254037844394
+          },
+          {
+            "real": 0.49999999999999933,
+            "imag": 0.8660254037844378
+          }
+        ],
+        "algebraic_seeds": [
+          {
+            "real": 1.0,
+            "imag": 0.1
+          },
+          {
+            "real": 0.9009182735643011,
+            "imag": 0.1
+          }
+        ],
+        "pairings": [
+          {
+            "seed_index": 0,
+            "seed_real": 1.0,
+            "seed_imag": 0.1,
+            "snappy_index": 1,
+            "snappy_real": 0.49999999999999933,
+            "snappy_imag": 0.8660254037844378,
+            "distance": 0.9147649530032902
+          },
+          {
+            "seed_index": 1,
+            "seed_real": 0.9009182735643011,
+            "seed_imag": 0.1,
+            "snappy_index": 1,
+            "snappy_real": 0.49999999999999933,
+            "snappy_imag": 0.8660254037844378,
+            "distance": 0.8645983930825291
+          }
+        ],
+        "max_pairing_distance": 0.9147649530032902,
+        "min_pairing_distance": 0.8645983930825291
+      },
+      {
+        "name": "L6a4",
+        "num_tetrahedra": 8,
+        "num_cusps": 3,
+        "volume": 7.327724753417752,
+        "snappy_shapes": [
+          {
+            "real": 0.5,
+            "imag": 0.5000000000000001
+          },
+          {
+            "real": 0.9999999999999998,
+            "imag": 1.0000000000000004
+          },
+          {
+            "real": 0.9999999999999993,
+            "imag": 1.0
+          },
+          {
+            "real": 1.0000000000000002,
+            "imag": 1.0000000000000009
+          },
+          {
+            "real": 0.9999999999999996,
+            "imag": 0.9999999999999991
+          },
+          {
+            "real": 0.4999999999999998,
+            "imag": 0.4999999999999999
+          },
+          {
+            "real": 0.4999999999999999,
+            "imag": 0.4999999999999999
+          },
+          {
+            "real": 0.5000000000000002,
+            "imag": 0.5000000000000001
+          }
+        ],
+        "algebraic_seeds": [
+          {
+            "real": 1.0,
+            "imag": 0.1
+          },
+          {
+            "real": 0.9009182735643011,
+            "imag": 0.1
+          },
+          {
+            "real": 0.811653735642081,
+            "imag": 0.1
+          },
+          {
+            "real": 0.7312336822466793,
+            "imag": 0.1
+          },
+          {
+            "real": 0.658781786581745,
+            "imag": 0.1
+          },
+          {
+            "real": 0.5935085498228316,
+            "imag": 0.1
+          },
+          {
+            "real": 0.5347026980520374,
+            "imag": 0.1
+          },
+          {
+            "real": 0.4817234315992154,
+            "imag": 0.1
+          }
+        ],
+        "pairings": [
+          {
+            "seed_index": 0,
+            "seed_real": 1.0,
+            "seed_imag": 0.1,
+            "snappy_index": 7,
+            "snappy_real": 0.5000000000000002,
+            "snappy_imag": 0.5000000000000001,
+            "distance": 0.6403124237432848
+          },
+          {
+            "seed_index": 1,
+            "seed_real": 0.9009182735643011,
+            "seed_imag": 0.1,
+            "snappy_index": 7,
+            "snappy_real": 0.5000000000000002,
+            "snappy_imag": 0.5000000000000001,
+            "distance": 0.5663351146430704
+          },
+          {
+            "seed_index": 2,
+            "seed_real": 0.811653735642081,
+            "seed_imag": 0.1,
+            "snappy_index": 6,
+            "snappy_real": 0.4999999999999999,
+            "snappy_imag": 0.4999999999999999,
+            "distance": 0.5070779535137216
+          },
+          {
+            "seed_index": 3,
+            "seed_real": 0.7312336822466793,
+            "seed_imag": 0.1,
+            "snappy_index": 6,
+            "snappy_real": 0.4999999999999999,
+            "snappy_imag": 0.4999999999999999,
+            "distance": 0.46202707258921333
+          },
+          {
+            "seed_index": 4,
+            "seed_real": 0.658781786581745,
+            "seed_imag": 0.1,
+            "snappy_index": 6,
+            "snappy_real": 0.4999999999999999,
+            "snappy_imag": 0.4999999999999999,
+            "distance": 0.4303622378300526
+          },
+          {
+            "seed_index": 5,
+            "seed_real": 0.5935085498228316,
+            "seed_imag": 0.1,
+            "snappy_index": 5,
+            "snappy_real": 0.4999999999999998,
+            "snappy_imag": 0.4999999999999999,
+            "distance": 0.4107844311679411
+          },
+          {
+            "seed_index": 6,
+            "seed_real": 0.5347026980520374,
+            "seed_imag": 0.1,
+            "snappy_index": 5,
+            "snappy_real": 0.4999999999999998,
+            "snappy_imag": 0.4999999999999999,
+            "distance": 0.40150252458993435
+          },
+          {
+            "seed_index": 7,
+            "seed_real": 0.4817234315992154,
+            "seed_imag": 0.1,
+            "snappy_index": 5,
+            "snappy_real": 0.4999999999999998,
+            "snappy_imag": 0.4999999999999999,
+            "distance": 0.40041732349201437
+          }
+        ],
+        "max_pairing_distance": 0.6403124237432848,
+        "min_pairing_distance": 0.40041732349201437
+      }
+    ],
+    "summary": {
+      "manifolds_tested": 3,
+      "min_pairing_distance": 0.40041732349201437,
+      "max_pairing_distance": 0.9147649530032903,
+      "mean_pairing_distance": 0.6147954811450727
+    }
+  },
+  "caveats": [
+    "Empirical finding: bare algebraic seeds q_0^{-k} + 0.1i sit at distance ~0.4–0.9 from SnapPy's tetrahedral shape parameters for m004, m003, and L6a4 (Borromean rings).  The shared-denominator-cusp-holonomy conjecture's pole-to-cusp bijection therefore cannot be a literal numerical equality between q_0^{-k} and SnapPy's z_k; it must be interpreted as a bijection of *labels* (algebraic pole index ↔ cusp index), with the actual shape parameter being a non-trivial function τ_arch(q_0^{-k}) that the present witness does not yet construct.  The companion q-pochhammer-seed.witness.json verifies the analogous claim for the simpler color-tube discriminant Δ(z) = 0 (Newton converges in 9–11 iterations), so the conjecture survives in that simpler setting.",
+    "A genuine SnapPy-driven test would feed the algebraic seeds into SnapPy's internal Newton+tilt-2-3 solver and measure iteration count to convergence.  That requires C-level access to the SnapPea kernel and is left to a future witness."
+  ]
+}

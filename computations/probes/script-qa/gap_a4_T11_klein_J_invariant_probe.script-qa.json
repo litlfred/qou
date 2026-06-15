@@ -1,0 +1,45 @@
+{
+  "$schema": "script-qa/v1",
+  "script_path": "folio-assistant/computations/probes/gap_a4_T11_klein_J_invariant_probe.py",
+  "language": "python",
+  "source_hash": "3650120ef87a",
+  "updated_at": "2026-06-09T03:47:37.719Z",
+  "criteria": {
+    "compute_no_mpf_to_float_cast": [
+      {
+        "field_hash": {
+          "ts": "3650120ef87a"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "0bbdf534427b",
+          "script_commit_sha": "76a167e10467a2b0f41dbbd968ea8245d5b4ba33"
+        },
+        "reviewed_at": "2026-06-09T03:37:13.209Z",
+        "reviewed_sha": "76a167e10467a2b0f41dbbd968ea8245d5b4ba33",
+        "severity": "critical",
+        "evidence": "folio-assistant/computations/probes/gap_a4_T11_klein_J_invariant_probe.py:289: mpmath/sympy → float64 cast `float(mp.mpf(degrees[ ]))` — GUARANTEED precision loss; keep the value in mpmath (`mp.mpf(str(...))`) or sympy (`sp.N(..., dps)` without the outer `float()`). | folio-assistant/computations/probes/gap_a4_T11_klein_J_invariant_probe.py:299: mpmath/sympy → float64 cast `float( mp.mpf(syzygy[ ][ ]) - mp.mpf(syzygy[ ][ ]) )` — GUARANTEED precision loss; keep the value in mpmath (`mp.mpf(str(...))`) or sympy (`sp.N(..., dps)` without the outer `float()`). | folio-assistant/computations/probes/gap_a4_T11_klein_J_invariant_probe.py:312: mpmath/sympy → float64 cast `float(mp.mpf(orbits[ ]))` — GUARANTEED precision loss; keep the value in mpmath (`mp.mpf(str(...))`) or sympy (`sp.N(..., dps)` without the outer `float()`)."
+      },
+      {
+        "field_hash": {
+          "ts": "3650120ef87a"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "a08e6e1469fd",
+          "script_commit_sha": "76a167e10467a2b0f41dbbd968ea8245d5b4ba33"
+        },
+        "reviewed_at": "2026-06-09T03:47:37.719Z",
+        "reviewed_sha": "3765bc9aa9274031018ed3d7696fc515f11274be",
+        "severity": "critical",
+        "evidence": "folio-assistant/computations/probes/gap_a4_T11_klein_J_invariant_probe.py:289: mpmath/sympy → float64 cast `float(mp.mpf(degrees[ ]))` — GUARANTEED precision loss; keep the value in mpmath (`mp.mpf(str(...))`) or sympy (`sp.N(..., dps)` without the outer `float()`). | folio-assistant/computations/probes/gap_a4_T11_klein_J_invariant_probe.py:299: mpmath/sympy → float64 cast `float( mp.mpf(syzygy[ ][ ]) - mp.mpf(syzygy[ ][ ]) )` — GUARANTEED precision loss; keep the value in mpmath (`mp.mpf(str(...))`) or sympy (`sp.N(..., dps)` without the outer `float()`). | folio-assistant/computations/probes/gap_a4_T11_klein_J_invariant_probe.py:312: mpmath/sympy → float64 cast `float(mp.mpf(orbits[ ]))` — GUARANTEED precision loss; keep the value in mpmath (`mp.mpf(str(...))`) or sympy (`sp.N(..., dps)` without the outer `float()`)."
+      }
+    ]
+  }
+}

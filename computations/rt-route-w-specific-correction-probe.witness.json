@@ -1,0 +1,200 @@
+{
+  "candidate_corrections": [
+    {
+      "C_W": 1.405,
+      "W_corrected": 0.32648574386922846,
+      "W_over_H_pred": 0.6195795435584416,
+      "W_over_Z_pred": 0.8812098780689845,
+      "deviation_W_over_H_pct": -3.5700855955398207,
+      "deviation_W_over_Z_pct": -0.029343637761939642,
+      "label": "\u00d7 1.405 (empirical W/Z fit)",
+      "total_abs_deviation_pct": 3.5994292333017603
+    },
+    {
+      "C_W": 1.5,
+      "W_corrected": 0.34856129238707667,
+      "W_over_H_pred": 0.661472822304386,
+      "W_over_Z_pred": 0.9407934641305885,
+      "deviation_W_over_H_pct": 2.9500865528044535,
+      "deviation_W_over_Z_pct": 6.7302381091509575,
+      "label": "\u00d7 6/4 (Z/W twist)",
+      "total_abs_deviation_pct": 9.68032466195541
+    },
+    {
+      "C_W": 1.0,
+      "W_corrected": 0.23237419492471778,
+      "W_over_H_pred": 0.44098188153625734,
+      "W_over_Z_pred": 0.6271956427537256,
+      "deviation_W_over_H_pct": -31.366608964797027,
+      "deviation_W_over_Z_pct": -28.8465079272327,
+      "label": "\u00d7 1 (baseline)",
+      "total_abs_deviation_pct": 60.21311689202973
+    },
+    {
+      "C_W": 0.8816,
+      "W_corrected": 0.20486109024563118,
+      "W_over_H_pred": 0.3887696267623645,
+      "W_over_Z_pred": 0.5529356786516846,
+      "deviation_W_over_H_pct": -39.49280246336506,
+      "deviation_W_over_Z_pct": -37.27108138864834,
+      "label": "\u00d7 cos(\u03b8_W) = 0.8816",
+      "total_abs_deviation_pct": 76.76388385201341
+    },
+    {
+      "C_W": 2.0,
+      "W_corrected": 0.46474838984943556,
+      "W_over_H_pred": 0.8819637630725147,
+      "W_over_Z_pred": 1.2543912855074513,
+      "deviation_W_over_H_pct": 37.266782070405945,
+      "deviation_W_over_Z_pct": 42.30698414553461,
+      "label": "\u00d7 2",
+      "total_abs_deviation_pct": 79.57376621594055
+    },
+    {
+      "C_W": 2.0,
+      "W_corrected": 0.46474838984943556,
+      "W_over_H_pred": 0.8819637630725147,
+      "W_over_Z_pred": 1.2543912855074513,
+      "deviation_W_over_H_pct": 37.266782070405945,
+      "deviation_W_over_Z_pct": 42.30698414553461,
+      "label": "\u00d7 \u221a4 = 2 (W \u221atwist)",
+      "total_abs_deviation_pct": 79.57376621594055
+    },
+    {
+      "C_W": 2.0,
+      "W_corrected": 0.46474838984943556,
+      "W_over_H_pred": 0.8819637630725147,
+      "W_over_Z_pred": 1.2543912855074513,
+      "deviation_W_over_H_pct": 37.266782070405945,
+      "deviation_W_over_Z_pct": 42.30698414553461,
+      "label": "\u00d7 8/4 = 2 (H/W twist)",
+      "total_abs_deviation_pct": 79.57376621594055
+    },
+    {
+      "C_W": 2.010844453455889,
+      "W_corrected": 0.46726836099064634,
+      "W_over_H_pred": 0.886745970561725,
+      "W_over_Z_pred": 1.2611928794630305,
+      "deviation_W_over_H_pct": 38.011073685007034,
+      "deviation_W_over_Z_pct": 43.0786048785417,
+      "label": "\u00d7 [4]_q / [2]_q",
+      "total_abs_deviation_pct": 81.08967856354873
+    },
+    {
+      "C_W": 0.816496580927726,
+      "W_corrected": 0.18973273565186502,
+      "W_over_H_pred": 0.36006019852542964,
+      "W_over_Z_pred": 0.5121030978811845,
+      "deviation_W_over_H_pct": -43.96107088228113,
+      "deviation_W_over_Z_pct": -41.90341700151745,
+      "label": "\u00d7 \u221a(4/6) (W/Z twist)",
+      "total_abs_deviation_pct": 85.86448788379857
+    },
+    {
+      "C_W": 0.5,
+      "W_corrected": 0.11618709746235889,
+      "W_over_H_pred": 0.22049094076812867,
+      "W_over_Z_pred": 0.3135978213768628,
+      "deviation_W_over_H_pct": -65.68330448239851,
+      "deviation_W_over_Z_pct": -64.42325396361635,
+      "label": "\u00d7 1/2 (component count factor)",
+      "total_abs_deviation_pct": 130.10655844601484
+    },
+    {
+      "C_W": 0.20855554654411101,
+      "W_corrected": 0.048462927225272304,
+      "W_over_H_pred": 0.09196921731984457,
+      "W_over_Z_pred": 0.13080513006458827,
+      "deviation_W_over_H_pct": -85.68612562147756,
+      "deviation_W_over_Z_pct": -85.16054457224195,
+      "label": "\u00d7 h(q_0) \u2248 0.2086",
+      "total_abs_deviation_pct": 170.8466701937195
+    },
+    {
+      "C_W": 3.0,
+      "W_corrected": 0.6971225847741533,
+      "W_over_H_pred": 1.322945644608772,
+      "W_over_Z_pred": 1.881586928261177,
+      "deviation_W_over_H_pct": 105.90017310560891,
+      "deviation_W_over_Z_pct": 113.4604762183019,
+      "label": "\u00d7 3",
+      "total_abs_deviation_pct": 219.36064932391082
+    },
+    {
+      "C_W": 4.0,
+      "W_corrected": 0.9294967796988711,
+      "W_over_H_pred": 1.7639275261450293,
+      "W_over_Z_pred": 2.5087825710149025,
+      "deviation_W_over_H_pct": 174.5335641408119,
+      "deviation_W_over_Z_pct": 184.6139682910692,
+      "label": "\u00d7 4 (W twist count)",
+      "total_abs_deviation_pct": 359.14753243188113
+    },
+    {
+      "C_W": 4.027136844187829,
+      "W_corrected": 0.9358026820198152,
+      "W_over_H_pred": 1.7758943827539342,
+      "W_over_Z_pred": 2.5258026814475953,
+      "deviation_W_over_H_pct": 176.3960577794165,
+      "deviation_W_over_Z_pct": 186.54484951886778,
+      "label": "\u00d7 [4]_q",
+      "total_abs_deviation_pct": 362.9409072982843
+    },
+    {
+      "C_W": 6.0,
+      "W_corrected": 1.3942451695483067,
+      "W_over_H_pred": 2.645891289217544,
+      "W_over_Z_pred": 3.763173856522354,
+      "deviation_W_over_H_pct": 311.8003462112178,
+      "deviation_W_over_Z_pct": 326.92095243660384,
+      "label": "\u00d7 6 (Z twist count)",
+      "total_abs_deviation_pct": 638.7212986478216
+    },
+    {
+      "C_W": 8.0,
+      "W_corrected": 1.8589935593977422,
+      "W_over_H_pred": 3.5278550522900587,
+      "W_over_Z_pred": 5.017565142029805,
+      "deviation_W_over_H_pct": 449.0671282816238,
+      "deviation_W_over_Z_pct": 469.22793658213845,
+      "label": "\u00d7 8 (H twist count)",
+      "total_abs_deviation_pct": 918.2950648637623
+    }
+  ],
+  "compute": "rt_route_w_specific_correction_probe",
+  "description": "W-specific multiplicative-correction search for the RT-chain Z/H-matches-but-W-diverges finding from PR #1119. Tests 16 candidate corrections (twist counts, quantum dimensions, trigonometric factors, etc.) applied to |J_2(T(2,4))| only. Identifies the best correction by total |deviation| on W/Z and W/H ratios.",
+  "direct_solve": {
+    "C_W_average": 1.4312145720295038,
+    "C_W_difference": 0.05160434581208723,
+    "C_W_to_match_W_over_H": 1.4570167449355473,
+    "C_W_to_match_W_over_Z": 1.4054123991234602,
+    "is_consistent_single_C_W": false
+  },
+  "interpretation": "If a single C_W satisfies BOTH W/Z and W/H ratios (within small \u0394), there exists a structurally-consistent W-only correction. The value of that C_W identifies the missing categorical factor. Candidates: charge \u00b11 (W has |Q|=1 vs Z, H neutral), twist count k=4 (T(2,4) vs T(2,6), T(2,8)), quantum dimensions, or trigonometric factors. If no single C_W works, the W's structural correction is more complex (e.g., depends on N or involves a non-multiplicative modification).",
+  "parameters": {
+    "N_color": 2,
+    "Q_0": "1.1097",
+    "base_J_H": 0.5269472616770358,
+    "base_J_W": 0.23237419492471778,
+    "base_J_Z": 0.3704971448852391,
+    "dps": 50,
+    "precision": "mpfr"
+  },
+  "scriptCommitSha": "49c1fdf348c9cdd8ef0162ee8c33dd71483f0c6d",
+  "status": "exploratory",
+  "tags": [
+    "rt-route",
+    "w-correction",
+    "electroweak",
+    "ratio-mismatch",
+    "structural-search"
+  ],
+  "uncorrected_ratios": {
+    "W_over_H_exp": 0.6425179856115107,
+    "W_over_H_pred": 0.44098188153625734,
+    "W_over_Z_exp": 0.8814685330022942,
+    "W_over_Z_pred": 0.6271956427537256,
+    "Z_over_H_exp": 0.7289176658673061,
+    "Z_over_H_pred": 0.7031009966844
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "computation": "lp-duality-check",
+  "auditOnly": "docs/audits/2026-05-02-lp-dual-infra-scope.md",
+  "timestamp": "2026-05-02T21:54:54.077989+00:00",
+  "q0": 1.1099785955541805,
+  "q0_err": 1.3578965598837824e-09,
+  "corrected_markov_trace": {
+    "tr_M_electron_z3": 0.12449094312996863,
+    "tr_M_electron_old": 0.5514434199198297,
+    "correct": "z^3",
+    "verification": "Markov property chain: tr_M(σ₀σ₁σ₀) = z·z·z = z³"
+  },
+  "lp_feasibility": {
+    "net_B3": 0.9996006459669027,
+    "tr_M_B3": 0.9983666218385048,
+    "frobenius_positive": true,
+    "Gb3": [
+      0.9983666218385048,
+      0.5098263860689201,
+      0.48765722850470195,
+      0.2158502046728741,
+      0.2842542602539225,
+      0.12530652205916962
+    ],
+    "active_constraints": []
+  },
+  "x_star": [
+    -0.21443267575014177,
+    0.4858072314855301,
+    -1.6988795450287395,
+    -0.11286965951076476,
+    4.262451407159967,
+    -1.722476112388948
+  ],
+  "y0_star": 0,
+  "y_star": [
+    1,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "active_set": [
+    0
+  ],
+  "primal_obj": 4.2862988808882365e-17,
+  "dual_obj": 0,
+  "duality_gap": 4.2862988808882365e-17,
+  "feasible": true,
+  "gram_eigenstructure": {
+    "eigenvalues": [
+      -0.9557345134563314,
+      0.4139987135224253,
+      0.4281147970398728,
+      0.9557345134563316,
+      1.2820197506195958,
+      2.893070201351516
+    ],
+    "min_eigenvalue": -0.9557345134563314,
+    "min_abs_eigenvalue": 0.4139987135224253,
+    "indefinite": true
+  },
+  "error_bounds": {
+    "delta_q": 1.3578965598837824e-09,
+    "delta_z": 1.5919574672561445e-11,
+    "delta_tr_electron": 1.1907243087050698e-11
+  },
+  "engine": "python",
+  "scriptFile": "per_atom_lp_binding.py",
+  "commitSha": "06e88b6885fd78860cf1e0d1d01de2a96f5b0811"
+}

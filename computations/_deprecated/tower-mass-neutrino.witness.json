@@ -1,0 +1,42 @@
+{
+  "computation": "tower-mass-neutrino",
+  "timestamp": "2026-05-01T21:27:39.300689+00:00",
+  "q0": 1.1099785955541805,
+  "corrected_traces": {
+    "tr_M_proton": -0.07793779079830437,
+    "tr_M_neutron": -0.20730497405630918,
+    "ratio_abs": 2.65987747321187,
+    "codata_mn_mp": 1.0013784193053599
+  },
+  "neutrino": {
+    "categorical_bare_mass_MeV": 0.0,
+    "categorical_basis": "unknot K_{0,1}, J_nu(q) = 1, no crossings",
+    "L_minus_channel_diagnostic": {
+      "V_hat_L_minus": 0.2493207959794241,
+      "V_hat_e": 0.12449094312996863,
+      "L_minus_over_e_ratio_history": [
+        2.002722364462554,
+        2.0028919367173734,
+        2.003060956855974,
+        2.003229426465574,
+        2.0033973471302415,
+        2.003564720430903,
+        2.0037315479453843,
+        2.0038978312483233,
+        2.004063571911265,
+        2.004228771502591
+      ],
+      "warning": "L_minus channel is NOT the neutrino sector; this tower iteration is a diagnostic of the wrong-channel framing per audit \u00a72\u00b7F, not a m_nu prediction."
+    },
+    "vacuum_drag_prediction": {
+      "form": "m_nu \u221d mu_0 \u00b7 (q - 1)",
+      "candidates_eV": {
+        "m_e_times_hbar_q2": 5016.57302233966,
+        "m_e_times_hbar_q3": 497.0507158441654,
+        "m_e_times_q_minus_1_cubed": 679.7426430317071
+      },
+      "katrin_upper_bound_eV": 0.8,
+      "planck_cosmological_bound_eV": 0.12
+    }
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "engine": "python+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-17T03:16:41.080663+00:00",
+  "commitSha": "746c31aadfd383cffcb451647d2fb7fcf0dfea4c",
+  "assertions": [
+    {
+      "name": "max_dim_q_closes_rho_K_for_any_atom",
+      "computed": 0.0,
+      "expected": 0.0,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 10,
+  "computation": "path4-rho-K-at-h3A",
+  "scriptFile": "path4_rho_K_at_h3A.py",
+  "scriptHash": "c9bf27e04df5",
+  "scriptCommitSha": "unknown",
+  "description": "Path 4 hypothesis test: ρ_K = dim_q(λ*) at H_{3A}",
+  "data": {
+    "q_pinned": "1.1099785955541805752815940796095093779932822799587",
+    "hypothesis_max_dim_q": [
+      {
+        "atom": "proton",
+        "A": 1,
+        "n_0": 3,
+        "max_dim_q_partition": [
+          2,
+          1
+        ],
+        "max_dim_q_value": "2.0108968691184816894615797369210968495248082560009",
+        "rho_K_CODATA": 1723.6,
+        "ratio": "857.1299833768082"
+      },
+      {
+        "atom": "neutron",
+        "A": 1,
+        "n_0": 3,
+        "max_dim_q_partition": [
+          2,
+          1
+        ],
+        "max_dim_q_value": "2.0108968691184816894615797369210968495248082560009",
+        "rho_K_CODATA": 1991.6,
+        "ratio": "990.4038494391108"
+      },
+      {
+        "atom": "D",
+        "A": 2,
+        "n_0": 6,
+        "max_dim_q_partition": [
+          3,
+          2,
+          1
+        ],
+        "max_dim_q_value": "17.344673582613544481493398756536650629922511925192",
+        "rho_K_CODATA": 9453.0,
+        "ratio": "545.0088152408802"
+      },
+      {
+        "atom": "T",
+        "A": 3,
+        "n_0": 9,
+        "max_dim_q_partition": [
+          4,
+          3,
+          1,
+          1
+        ],
+        "max_dim_q_value": "294.51135941144668856380797858191750731361188759194",
+        "rho_K_CODATA": 52828.5,
+        "ratio": "179.37678229312715"
+      },
+      {
+        "atom": "³He",
+        "A": 3,
+        "n_0": 9,
+        "max_dim_q_partition": [
+          4,
+          3,
+          1,
+          1
+        ],
+        "max_dim_q_value": "294.51135941144668856380797858191750731361188759194",
+        "rho_K_CODATA": 26609.2,
+        "ratio": "90.35033505388719"
+      }
+    ],
+    "paper_reference": "atomic-mass-gb-nf.md line 131-142 (binding operator K in H_{3A})"
+  }
+}

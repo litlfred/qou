@@ -1,0 +1,201 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-06-01T13:38:42.602881+00:00",
+  "commitSha": "417e511ad96a7416b3b52d2f93704cd0eee0d8f7",
+  "assertions": [
+    {
+      "name": "muon_canonical_pin_consistency",
+      "computed": "206.768283",
+      "expected": "206.768283",
+      "passed": true,
+      "tolerance": 1e-40,
+      "source": "Q_50_DIGIT_STR + MU_OVER_E (canonical pin)"
+    },
+    {
+      "name": "lean_three_plus_h_sq_eq_bracket3",
+      "computed": "3.0437062085325219894020193356773883097682139607135",
+      "expected": "3.0437062085325219894020193356773883097682139607135",
+      "passed": true,
+      "tolerance": 1e-40,
+      "source": "theorem three_plus_h_sq_eq_bracket3 (muon identity)"
+    },
+    {
+      "name": "lean_two_plus_h_sq_times_bracket2_eq_bracket4",
+      "computed": "4.1096824112079411617605687890963302433643280785864",
+      "expected": "4.1096824112079411617605687890963302433643280785864",
+      "passed": true,
+      "tolerance": 1e-40,
+      "source": "theorem two_plus_h_sq_times_bracket2_eq_bracket4 (muon T6 (c))"
+    },
+    {
+      "name": "lean_bracket6_eq_bracket2_bracket3_times_one_plus_h_sq",
+      "computed": "6.3880865921754520848632551786499227206159032524084",
+      "expected": "6.3880865921754520848632551786499227206159032524084",
+      "passed": true,
+      "tolerance": 1e-40,
+      "source": "theorem bracket6_eq_bracket2_bracket3_times_one_plus_h_sq (tau structural identity)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 17,
+  "computation": "tau-amphichiral-sdp-probe",
+  "scriptFile": "tau_amphichiral_sdp_probe.py",
+  "scriptHash": "96bfa119279f",
+  "scriptCommitSha": "5abc4272f13364a7e93a8dad2cf432d2a573c52f",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.12.3",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Tau amphichiral-candidate SDP-spirit probe per owner directive 2026-05-25: 'tau is not torus knot; knot operator = symmetries → should be same as 1st gen. verify via SDP solutions.' (verbatim quote — original message had typo 'tau in not knot tauris' which was interpreted as 'tau is not torus knot' per context.) Filters 12 amphichiral hyperbolic knots from SnapPy census + tests under Vol/ℏ_q^k and q-bracket-corrected closure formulas analogous to muon's ξ_2 = [3]_q · [2]_q / [4]_q.",
+  "contentBlock": "conj:lepton-tower-h-n-plus-1-branching",
+  "auditOnly": "docs/audits/2026-05-25-t6-f-ell-derivation-attempt.md",
+  "parameters": {
+    "precision_dps": 50,
+    "q_0_source": "Q_50_DIGIT_STR (canonical substrate pin)",
+    "q_0": "1.1099785827513808075916690956107688798744991218736",
+    "hbar_q_sq": "0.0098171864542750738105690571795642528890492845754013",
+    "inv_hbar_q_sq": "101.86217860459721308033002721470054176556805242764",
+    "cal_tau_e_codata": "3477.23",
+    "cal_mu_e_codata": "206.768283"
+  },
+  "data": {
+    "amphichiral_candidates": [
+      {
+        "knot": "4_1",
+        "vol": "2.02988321281931",
+        "ratios": {
+          "k=2": "206.76832637067417040628127231146894393450773014035",
+          "k=3": "2086.8464397438722285927934985132373498153515527773",
+          "k=4": "21061.872190543260202920668921476395750819749607438"
+        }
+      },
+      {
+        "knot": "6_3",
+        "vol": "5.69302109207851",
+        "ratios": {
+          "k=2": "579.90353128104026187298406245316090717183198136593",
+          "k=3": "5852.7804567091362461742197299625487637727392230108",
+          "k=4": "59070.23707678595004803144447967022830372691800171"
+        }
+      },
+      {
+        "knot": "8_3",
+        "vol": "6.55174581471284",
+        "ratios": {
+          "k=2": "667.37510235020158735161937891460281037581979101709",
+          "k=3": "6735.6029850360469113879366370715886198492467995055",
+          "k=4": "67980.281871857579386825091598419098801199979414019"
+        }
+      },
+      {
+        "knot": "8_9",
+        "vol": "7.5881787404257",
+        "ratios": {
+          "k=2": "772.94841814085016799138725830250855907726358008422",
+          "k=3": "7801.1206204339881422475902153110906754242120491735",
+          "k=4": "78734.209820804168346076211855130876994041558871919"
+        }
+      },
+      {
+        "knot": "8_12",
+        "vol": "8.93581640816072",
+        "ratios": {
+          "k=2": "910.22172694595761021961614332647828188919896339607",
+          "k=3": "9186.5761240890646142667022116516188507357406736668",
+          "k=4": "92717.168119954049869336267535095981319814371597714"
+        }
+      },
+      {
+        "knot": "8_17",
+        "vol": "10.78528041739327",
+        "ratios": {
+          "k=2": "1098.6121601771780473878896364038881974261970027888",
+          "k=3": "11087.940379297047612603346038558388678641634626418",
+          "k=4": "111907.02807715007210000062756866180689045817592162"
+        }
+      },
+      {
+        "knot": "8_18",
+        "vol": "12.35090746472085",
+        "ratios": {
+          "k=2": "1258.0903421002481751945704657583239519349150824602",
+          "k=3": "12697.502549696208925780709791099813254229368768863",
+          "k=4": "128151.82312773428810293356616705518636228506563146"
+        }
+      },
+      {
+        "knot": "10_17",
+        "vol": "10.45758935320168",
+        "ratios": {
+          "k=2": "1065.2328344693637765433067922606935905395970923275",
+          "k=3": "10751.053544465642772740847631340449235134401988516",
+          "k=4": "108506.93724019967155484439694602244283737874786207"
+        }
+      },
+      {
+        "knot": "10_33",
+        "vol": "8.93581640816072",
+        "ratios": {
+          "k=2": "910.22172694595761021961614332647828188919896339607",
+          "k=3": "9186.5761240890646142667022116516188507357406736668",
+          "k=4": "92717.168119954049869336267535095981319814371597714"
+        }
+      },
+      {
+        "knot": "10_37",
+        "vol": "11.33222803236",
+        "ratios": {
+          "k=2": "1154.3254358202775664356479989226711716786492511597",
+          "k=3": "11650.236611814993979548818339578603266123044764747",
+          "k=4": "117582.10371135463096635198123908402362633206730202"
+        }
+      },
+      {
+        "knot": "10_43",
+        "vol": "13.83304617",
+        "ratios": {
+          "k=2": "1409.0642196141794227935331852983090969671161855085",
+          "k=3": "14221.233501696406311492773673493632606945335371912",
+          "k=4": "143530.35120368693591847511598154999653814452257456"
+        }
+      },
+      {
+        "knot": "10_45",
+        "vol": "14.55822",
+        "ratios": {
+          "k=2": "1482.9320058050192394103222087975977211423281322131",
+          "k=3": "14966.757389855994118474074864519047006917039756983",
+          "k=4": "151054.68483378446095557727781262229319961464073068"
+        }
+      }
+    ],
+    "best_simple_matches": [],
+    "best_with_q_bracket_correction": [
+      {
+        "knot": "10_37",
+        "q_bracket": "3 (pure)",
+        "predicted_xi_3": 3.0,
+        "rel_err_percent": -0.4099151491033754
+      },
+      {
+        "knot": "10_43",
+        "q_bracket": "[5]_q · [3]_q / [6]_q",
+        "predicted_xi_3": 2.4873628889837542,
+        "rel_err_percent": 0.7944268300677351
+      }
+    ]
+  },
+  "caveats": [
+    "Amphichiral-filter is a heuristic from the owner's 'same symmetries as 1st gen' directive; not a structural theorem. Best hit 10_43 × [5]_q·[3]_q/[6]_q closes m_τ/m_e to +0.79% — empirical foundation only, not a canonical identification of tau."
+  ]
+}

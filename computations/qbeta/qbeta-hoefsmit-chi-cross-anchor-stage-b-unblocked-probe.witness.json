@@ -1,0 +1,97 @@
+{
+  "engine": "python+numpy+scipy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-04T18:27:10.204452+00:00",
+  "commitSha": "89be32d364904d0e0517acd8b69e39063c55d7da",
+  "assertions": [
+    {
+      "name": "stage_b_pass_regression_and_q_stability",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Stage B dual gate: (i) regression — chi at q_p must match PR #1851's published values to 8 dps after the chi_lambda_braid fix (pass q_value through to build_seminormal_matrices); (ii) cross-anchor — all 3 Wedderburn blocks must swing < 1e-6 across q_p/q_μ (substrate scale ~1e-8). PASS unblocks Stage C N=k extraction; the operator-level F(u) is q-stable per block (finer-grained confirmation of PR #1836's scalar q-stability)."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 156,
+  "computation": "qbeta-hoefsmit-chi-cross-anchor-stage-b-unblocked-probe",
+  "scriptFile": "qbeta_hoefsmit_chi_cross_anchor_stage_b_unblocked_probe.py",
+  "scriptHash": "c1937b01c50d",
+  "scriptCommitSha": "89be32d364904d0e0517acd8b69e39063c55d7da",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 10,
+    "truncation_bound": "1e-50"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Stage B test, NOW UNBLOCKED via PR #1856 path C. The chi_lambda_braid Python fallback now passes q_value through to build_seminormal_matrices(q=...). Regression at q_p matches PR #1851 published values exactly. All 3 Wedderburn blocks PASS the q-stability gate (swings at Δq/q level); Stage C (N=k extraction) unblocked.",
+  "contentBlock": "prop:q-beta-c-k-recursion-from-habiro-q-difference",
+  "data": {
+    "anchors": {
+      "q_proton": 1.1099785827513808,
+      "q_muon": 1.10997859555,
+      "delta_q_over_q": 1.1530509914642561e-08
+    },
+    "regression_at_q_proton": {
+      "pr_1851_published": {
+        "(3,)": 1.10997858,
+        "(2, 1)": 0.2090603,
+        "(1, 1, 1)": -0.90091828
+      },
+      "now": {
+        "(3,)": 1.109978582751381,
+        "(2, 1)": 0.20906029879563925,
+        "(1, 1, 1)": -0.9009182839557418
+      },
+      "ok": true
+    },
+    "per_block_cross_anchor": [
+      {
+        "lambda": [
+          3
+        ],
+        "chi_at_q_proton": "1.109978582751381",
+        "chi_at_q_muon": "1.1099785955499997",
+        "relative_swing": 1.1530509596207862e-08,
+        "q_stable": true
+      },
+      {
+        "lambda": [
+          2,
+          1
+        ],
+        "chi_at_q_proton": "0.20906029879563925",
+        "chi_at_q_muon": "0.20906032198230573",
+        "relative_swing": 1.1090898948090304e-07,
+        "q_stable": true
+      },
+      {
+        "lambda": [
+          1,
+          1,
+          1
+        ],
+        "chi_at_q_proton": "-0.9009182839557418",
+        "chi_at_q_muon": "-0.9009182735676939",
+        "relative_swing": 1.1530510685595454e-08,
+        "q_stable": true
+      }
+    ],
+    "swing_threshold": 1e-06,
+    "verdict": {
+      "stage_b_status": "PASS — UNBLOCKED",
+      "all_blocks_q_stable": true,
+      "regression_ok": true,
+      "stage_c_unblocked": true,
+      "interpretation": "Operator-level F(u) is q-stable per Wedderburn block; Stage C N=k extraction is unblocked."
+    }
+  }
+}

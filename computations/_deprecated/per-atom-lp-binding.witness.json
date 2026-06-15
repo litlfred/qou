@@ -1,0 +1,111 @@
+{
+  "computation": "per-atom LP binding via shadow prices",
+  "computedAt": "2026-05-02T21:46:28.458745+00:00",
+  "h3_results": {
+    "proton": {
+      "x_star": [
+        -0.21432527800613296,
+        0.4855639168857279,
+        -1.698028668035108,
+        -0.11281312919533554,
+        4.2603165755002195,
+        -1.7216134171493704
+      ],
+      "y0_star": -0.0,
+      "y_star": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "active_set": [
+        0
+      ],
+      "primal_obj": 1.2376797493243922e-16,
+      "dual_obj": -0.0,
+      "duality_gap": 1.2376797493243922e-16,
+      "feasible": true,
+      "target": "proton",
+      "n_target": 0.9991,
+      "basis_names": [
+        "\u03b3",
+        "\u03c3\u2080",
+        "\u03c3\u2081",
+        "L\u208a",
+        "L\u208b",
+        "e\u207b"
+      ],
+      "active_basis": [
+        "\u03b3"
+      ]
+    },
+    "neutron": {
+      "x_star": [
+        -0.17393147373373327,
+        0.3940498686927717,
+        -1.378001845703999,
+        -0.09155128130475233,
+        3.4573763181018697,
+        -1.3971415860521565
+      ],
+      "y0_star": -0.0,
+      "y_star": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "active_set": [
+        0
+      ],
+      "primal_obj": -5.4996504479418937e-17,
+      "dual_obj": -0.0,
+      "duality_gap": 5.4996504479418937e-17,
+      "feasible": true,
+      "target": "neutron",
+      "n_target": 0.8108,
+      "basis_names": [
+        "\u03b3",
+        "\u03c3\u2080",
+        "\u03c3\u2081",
+        "L\u208a",
+        "L\u208b",
+        "e\u207b"
+      ],
+      "active_basis": [
+        "\u03b3"
+      ]
+    }
+  },
+  "h6_basis": {
+    "names": [
+      "\u03b3\u2297\u03b3"
+    ],
+    "size": 1
+  },
+  "h6_4He_result": {
+    "x_star": [
+      7294.298929753183
+    ],
+    "y0_star": 1.0,
+    "y_star": [
+      0.0
+    ],
+    "active_set": [],
+    "primal_obj": 7294.298929753183,
+    "dual_obj": 7294.298929753183,
+    "duality_gap": 0.0,
+    "feasible": true,
+    "target_atom": "4He",
+    "n_target": 7294.298929753183,
+    "basis_names": [
+      "\u03b3\u2297\u03b3"
+    ],
+    "active_basis": []
+  },
+  "lp_dual_contract": "per \u00a73b LP-dual: includes y0_star, y_star, active_set, primal_obj, dual_obj, duality_gap"
+}

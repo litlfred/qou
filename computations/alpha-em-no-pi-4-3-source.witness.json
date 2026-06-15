@@ -1,0 +1,67 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-10T23:21:40.736323+00:00",
+  "commitSha": "1b143b1019aba6195c8936bc0b4cf6c6fa618c76",
+  "assertions": [
+    {
+      "name": "2/(3pi) = V(B^3)/Vol(S^3) exactly (Hopf 3-ball / 3-sphere)",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "V(B^3)=4pi/3, Vol(S^3)=2pi^2; symbolic simplify"
+    },
+    {
+      "name": "4/3 = H(1)^2/3 with H(1)=[2]_{q=1}=2 (cosh-Habiro classical value)",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "prop:alpha-em-habiro-bar-involution H(1)=2"
+    },
+    {
+      "name": "2/(3pi)*|S^1| = 4/3 and alpha/(4pi)*|S^2| = alpha (numerators isolated)",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "|S^1|=2pi, |S^2|=4pi Hopf periods"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 372,
+  "computation": "alpha-em-no-pi-4-3-source",
+  "scriptFile": "alpha_em_no_pi_4_3_source.py",
+  "scriptHash": "8890b68d0c3d",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "alpha_{basis-knot} step 6b: sources the lone open numerator 4/3 of the 2/(3pi) alpha_EM correction, pre-archimedean.  TWO exact identities: (1) geometric, 2/(3pi) = V(B^3)/Vol(S^3) = (4pi/3)/(2pi^2), so all pi in the alpha_EM correction are Hopf-fibration (S^1->S^3->S^2) volumes (|S^2|, V(B^3), Vol(S^3)) — pi is the tau-image of categorical Hopf objects, never fundamental; the 4/3 is the pi-stripped 3-ball volume.  (2) cosh-Habiro, 4/3 = H(1)^2/3 with H(1)=[2]_{q=1}=2 the SAME classical value that sources alpha/(4pi) (prop:alpha-em-habiro-bar-involution), so both pi-corrections share the e_+ cosh-Habiro origin: alpha/(4pi)=alpha/|S^2|, 2/(3pi)=(H(1)^2/3)/|S^1|.  TIER: the 4/3 is RESOLVED to a Hopf-ball volume + cosh-Habiro value (no longer unexplained); the categorical derivation of vac-pol=[B^3]/[S^3] and the '/3' (coincides with the trefoil T_{2,3} index) stays OPEN — flagged, not derived, not fitted.",
+  "contentBlock": "prop:em-coupling-bring-zero-mode",
+  "data": {
+    "two_over_3pi": "2/(3*pi)",
+    "V_B3": "4*pi/3",
+    "Vol_S3": "2*pi**2",
+    "identity1_geometric_2_3pi_eq_VB3_over_VolS3": true,
+    "identity2_4_3_eq_H1sq_over_3": true,
+    "H1_classical_habiro_value": 2,
+    "hopf_volumes": {
+      "S1": "2*pi",
+      "S2": "4*pi",
+      "B3": "4*pi/3",
+      "S3": "2*pi**2"
+    },
+    "unified_form": {
+      "alpha_over_4pi": "alpha / |S^2|   (numerator alpha)",
+      "two_over_3pi": "(H(1)^2/3) / |S^1| = (4/3)/|S^1|   (numerator 4/3)"
+    },
+    "finding": "The lone open numerator 4/3 of 2/(3pi) is sourced two exact ways: 2/(3pi) = V(B^3)/Vol(S^3) (Hopf 3-ball / 3-sphere; so all alpha_EM-correction pi are Hopf-fibration volumes) and 4/3 = H(1)^2/3 (the e_+ cosh-Habiro classical value squared / 3, the SAME H(1)=2 that sources alpha/(4pi)).  Unified: alpha/(4pi)=alpha/|S^2|, 2/(3pi)=(H(1)^2/3)/|S^1|. The 4/3 is no longer unexplained.  OPEN (not fitted): the categorical derivation of vacuum-polarization=[B^3]/[S^3] and of the '/3' (= trefoil T_{2,3} second index?), the deeper alpha_{basis-knot} frontier."
+  }
+}

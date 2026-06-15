@@ -1,0 +1,212 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11",
+  "computedAt": "2026-05-31T22:29:03.513832+00:00",
+  "computation": "option-e-v8-hecke-involution-isospin-mirror",
+  "description": "Option E v8: isospin-mirror identity test \u03c7_\u03bb(\u03b2_T) vs \u03c7_\u03bb\u1d40(\u03b2_\u00b3He) + cross-isotope bar-(anti)symmetric combinations. Probes whether Z\u2194N + \u03bb\u2194\u03bb\u1d40 together produce the canonical isospin-mirror residual.",
+  "scriptFile": "option_e_v8_hecke_involution_isospin_mirror.py",
+  "precisionMetadata": {
+    "compute_dps": 50,
+    "output_dps": 30
+  },
+  "mirror_target_MeV": "0.76373799999999913978854237939231097698211669921875",
+  "test_A_isospin_mirror_identity": {
+    "total_residual_atom": "72.2237695760274356",
+    "total_residual_free": "556.61988209600388816",
+    "n_chiral_pairs": 14,
+    "pair_examples": [
+      {
+        "lambda": "(9,)",
+        "lambda_T": "(1, 1, 1, 1, 1, 1, 1, 1, 1)",
+        "dim": 1,
+        "chi_T_lambda_atom": "1.5768015283810732",
+        "chi_He3_lambdaT_atom": "-0.4508185556343535",
+        "diff_atom": "2.0276200840154267",
+        "sum_atom": "1.1259829727467197",
+        "ratio_atom": "-3.4976411433693812779281704443416095196777000573083",
+        "diff_free": "2.23841901366080086"
+      },
+      {
+        "lambda": "(8, 1)",
+        "lambda_T": "(2, 1, 1, 1, 1, 1, 1, 1)",
+        "dim": 8,
+        "chi_T_lambda_atom": "3.7402811795852773",
+        "chi_He3_lambdaT_atom": "1.8583356615342188",
+        "diff_atom": "1.8819455180510585",
+        "sum_atom": "5.5986168411194961",
+        "ratio_atom": "2.0127048396075807404045967699685362702962909540409",
+        "diff_free": "8.666609701045908"
+      },
+      {
+        "lambda": "(7, 2)",
+        "lambda_T": "(2, 2, 1, 1, 1, 1, 1)",
+        "dim": 27,
+        "chi_T_lambda_atom": "3.1900195401578064",
+        "chi_He3_lambdaT_atom": "-1.4695203542289228",
+        "diff_atom": "4.6595398943867292",
+        "sum_atom": "1.7204991859288836",
+        "ratio_atom": "-2.1707896260012354756433978399025166309302879964063",
+        "diff_free": "33.516643537731841"
+      },
+      {
+        "lambda": "(7, 1, 1)",
+        "lambda_T": "(3, 1, 1, 1, 1, 1, 1)",
+        "dim": 28,
+        "chi_T_lambda_atom": "-0.5793963030209981",
+        "chi_He3_lambdaT_atom": "-2.381403633756616",
+        "diff_atom": "1.8020073307356179",
+        "sum_atom": "-2.9607999367776141",
+        "ratio_atom": "0.24330033548618222560920513603183272157044653905433",
+        "diff_free": "22.8085640695917318"
+      },
+      {
+        "lambda": "(6, 3)",
+        "lambda_T": "(2, 2, 2, 1, 1, 1)",
+        "dim": 48,
+        "chi_T_lambda_atom": "10.167419521655633",
+        "chi_He3_lambdaT_atom": "-3.7202585601890763",
+        "diff_atom": "13.8876780818447093",
+        "sum_atom": "6.4471609614665567",
+        "ratio_atom": "-2.7329873333155881152168686541106489053531748917948",
+        "diff_free": "53.848482991113671"
+      },
+      {
+        "lambda": "(6, 2, 1)",
+        "lambda_T": "(3, 2, 1, 1, 1, 1)",
+        "dim": 105,
+        "chi_T_lambda_atom": "-6.34025567691464",
+        "chi_He3_lambdaT_atom": "1.1287702869202307",
+        "diff_atom": "-7.4690259638348707",
+        "sum_atom": "-5.2114853899944093",
+        "ratio_atom": "-5.6169583398705292416158667084343871962897577251491",
+        "diff_free": "88.263075429454114"
+      },
+      {
+        "lambda": "(6, 1, 1, 1)",
+        "lambda_T": "(4, 1, 1, 1, 1, 1)",
+        "dim": 56,
+        "chi_T_lambda_atom": "-1.0292774959533015",
+        "chi_He3_lambdaT_atom": "1.0771723348913151",
+        "diff_atom": "-2.1064498308446166",
+        "sum_atom": "0.047894838938013599999999999999999999999999999999999",
+        "ratio_atom": "-0.95553651223056512148367396306361781590702753794737",
+        "diff_free": "28.470417351119295"
+      },
+      {
+        "lambda": "(5, 4)",
+        "lambda_T": "(2, 2, 2, 2, 1)",
+        "dim": 42,
+        "chi_T_lambda_atom": "4.42403846046479",
+        "chi_He3_lambdaT_atom": "6.65920512544118",
+        "diff_atom": "-2.23516666497639",
+        "sum_atom": "11.08324358590597",
+        "ratio_atom": "0.66434932955630982500878394722863033869401535625094",
+        "diff_free": "30.621379104911424"
+      },
+      {
+        "lambda": "(5, 3, 1)",
+        "lambda_T": "(3, 2, 2, 1, 1)",
+        "dim": 162,
+        "chi_T_lambda_atom": "2.0741886151315905",
+        "chi_He3_lambdaT_atom": "2.1104716648439283",
+        "diff_atom": "-0.036283049712337799999999999999999999999999999999999",
+        "sum_atom": "4.1846602799755188",
+        "ratio_atom": "0.98280808488607641580533337913572284304914219013858",
+        "diff_free": "87.702081181270571"
+      },
+      {
+        "lambda": "(5, 2, 2)",
+        "lambda_T": "(3, 3, 1, 1, 1)",
+        "dim": 120,
+        "chi_T_lambda_atom": "-9.370718720007405",
+        "chi_He3_lambdaT_atom": "2.1536654578904386",
+        "diff_atom": "-11.5243841778978436",
+        "sum_atom": "-7.2170532621169664",
+        "ratio_atom": "-4.3510558641666772611423435821660100944717492415502",
+        "diff_free": "70.003894456069605"
+      }
+    ]
+  },
+  "test_B_cross_isotope_bar_combinations": {
+    "sum_y_M_sym_atom": "0.051945601446921095666176582224471456059526668011996",
+    "sum_y_M_asym_atom": "0.051660124758553667922687151737045910674537902274195",
+    "sum_y_M_sym_free": "0.45712559059912629380724225818014478050011595212092",
+    "sum_y_M_asym_free": "0.45069772388542311302288300453429768403413468855419",
+    "diff_sym": "-0.40517998915220519814106567595567332444058928410892",
+    "diff_asym": "-0.39903759912686944510019585279725177335959678627999"
+  },
+  "test_C_results_top10": [
+    {
+      "formula": "m_\u03c0\u00b7\u210f_q \u00b7 \u03a3 y M_sym atom",
+      "value_MeV": 0.7167625537276926,
+      "rel_err_pct": -6.1507279030644755,
+      "closes_2pct": false,
+      "closes_10pct": true
+    },
+    {
+      "formula": "m_\u03c0\u00b7\u210f_q \u00b7 \u03a3 y M_asym atom",
+      "value_MeV": 0.712823452158274,
+      "rel_err_pct": -6.666493986383447,
+      "closes_2pct": false,
+      "closes_10pct": true
+    },
+    {
+      "formula": "\u03bc\u2080 \u00b7 \u03a3 y M_sym atom",
+      "value_MeV": 0.08484411630517245,
+      "rel_err_pct": -88.89093952308612,
+      "closes_2pct": false,
+      "closes_10pct": false
+    },
+    {
+      "formula": "\u03bc\u2080 \u00b7 \u03a3 y M_asym atom",
+      "value_MeV": 0.08437783972591269,
+      "rel_err_pct": -88.95199142560502,
+      "closes_2pct": false,
+      "closes_10pct": false
+    },
+    {
+      "formula": "m_\u03c0\u00b7\u210f_q\u00b2 \u00b7 \u03a3 y M_sym atom",
+      "value_MeV": 0.07086120693790435,
+      "rel_err_pct": -90.72179111974205,
+      "closes_2pct": false,
+      "closes_10pct": false
+    },
+    {
+      "formula": "m_\u03c0\u00b7\u210f_q\u00b2 \u00b7 \u03a3 y M_asym atom",
+      "value_MeV": 0.07047177603082318,
+      "rel_err_pct": -90.7727812376989,
+      "closes_2pct": false,
+      "closes_10pct": false
+    },
+    {
+      "formula": "m_e \u00b7 \u03a3 y M_sym atom",
+      "value_MeV": 0.026544147832337626,
+      "rel_err_pct": -96.52444322106041,
+      "closes_2pct": false,
+      "closes_10pct": false
+    },
+    {
+      "formula": "m_e \u00b7 \u03a3 y M_asym atom",
+      "value_MeV": 0.026398269544135416,
+      "rel_err_pct": -96.54354378803524,
+      "closes_2pct": false,
+      "closes_10pct": false
+    },
+    {
+      "formula": "\u03bc\u2080\u00b7\u210f_q \u00b7 \u03a3 y M_sym atom",
+      "value_MeV": 0.008387933286549099,
+      "rel_err_pct": -98.90172633985095,
+      "closes_2pct": false,
+      "closes_10pct": false
+    },
+    {
+      "formula": "\u03bc\u2080\u00b7\u210f_q \u00b7 \u03a3 y M_asym atom",
+      "value_MeV": 0.008341835843258589,
+      "rel_err_pct": -98.90776210647387,
+      "closes_2pct": false,
+      "closes_10pct": false
+    }
+  ],
+  "best_mirror_formula": "m_\u03c0\u00b7\u210f_q \u00b7 \u03a3 y M_sym atom",
+  "best_mirror_err": -6.1507279030644755
+}

@@ -1,0 +1,53 @@
+{
+  "engine": "python+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-25T02:50:05.386169+00:00",
+  "commitSha": "0367a5bd625fb973eb8ef8422ce3d1cf314268a2",
+  "assertions": [
+    {
+      "name": "production_over_predicts",
+      "computed": 29.95567723908384,
+      "expected": 28.2956912,
+      "passed": true,
+      "tolerance": 2.0,
+      "unit": "MeV",
+      "source": "mass_table_ppb.py default magic A·8G rule"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 14,
+  "computation": "canonical-4he-via-jones-markov-test",
+  "scriptFile": "canonical_4he_via_jones_markov_test.py",
+  "scriptHash": "c8019652fbaa",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 50,
+    "output_dps": 40,
+    "guard_digits": 10,
+    "truncation_bound": "1e-40"
+  },
+  "description": "Tests Jones-Markov + H_{3A} hypothesis for canonical B(⁴He). Uses closed-form tr_M(β_𝓑_3) = (4 + h² − 3h⁴ − h⁶) / (h² + 4) + Markov multiplicativity on 4 disjoint Borromean copies. Combined with framework's linking_weight calibration, computes various candidate B(⁴He) formulas. NEGATIVE result for simple multiplicative correction (B_C still +5.21% off, similar to production +5.87%) — confirms the H_3-vs-H_{3A} legacy bug (sibling commit c70707397) is the real structural issue.",
+  "parameters": {
+    "q_0": 1.1099785955541805,
+    "h": 0.20906032198987945,
+    "tr_M_borromean": 0.9985621631975701,
+    "tr_M_4he_multiplicative": 0.9942610451523872,
+    "linking_weight_canonical": 2.459952787263497,
+    "verdict": "Markov multiplicativity insufficient — H_{3A} structural correction needed"
+  },
+  "data": {
+    "candidates": {
+      "B_prod (production, no correction)": 29.95567723908384,
+      "B_A (m_e·A·8G·linking_canonical)": 36.844775859325,
+      "B_B (m_e·A·8G·tr_M)": 14.891881479989538,
+      "B_C (2·m_e·A·8G·tr_M)": 29.783762959979075
+    },
+    "B_AME_MeV": 28.2956912,
+    "relative_errors_pct": {
+      "B_prod (production, no correction)": 5.866568260696321,
+      "B_A (m_e·A·8G·linking_canonical)": 30.21337983546059,
+      "B_B (m_e·A·8G·tr_M)": -47.37049759721177,
+      "B_C (2·m_e·A·8G·tr_M)": 5.259004805576463
+    }
+  }
+}

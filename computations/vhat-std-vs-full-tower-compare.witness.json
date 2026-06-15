@@ -1,0 +1,131 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-06-02T17:17:29.090418+00:00",
+  "commitSha": "77f2b68af2c9d52ae3d55c1cea746e8e9977db80",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 36,
+  "computation": "vhat-std-vs-full-tower-compare",
+  "scriptFile": "vhat_std_vs_full_tower_compare.py",
+  "scriptHash": "5371fccd57cd",
+  "scriptCommitSha": "5a44813463430491fdc8cd8cd5a97a404b5e7e9d",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.12.3",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "RAW brane-tower m_p / m_n (full T1..T6 endomorphism tower @ MPFR 50 dps) computed with BOTH per-generator V̂_i channels: (a) production 'full' = W-weighted 3-channel Wedderburn average; (b) DERIVED 'std' = thm:markov-trace-product factor V̂_i = z·a_i + b_i whose product reproduces tr_M to 4e-6 (item-2 audit 2026-06-01-vhat-per-crossing-transfer-chain.md, verdict A + RED). ZERO tuning: no channel weight fitted, no correction hard-coded; only CAL-1 (m_e) + CAL-2 (q_0) consumed. Reports m_p/m_n in MeV and rel-diff vs CODATA for each channel and the std−full delta. Production default in derive_m_p_hecke_full_tower_50dps stays 'full' — this is a diagnostic for the owner-gated wiring decision.",
+  "contentBlock": "prop:mass-endomorphism-tower",
+  "parameters": {
+    "q_0_50dps": "1.1099785955541805752815940796095093779932822799587",
+    "M_E_MEV_CAL1": "0.51099895069",
+    "production_default_channel": "full"
+  },
+  "data": {
+    "full_channel": {
+      "channel": "full",
+      "proton_terms": {
+        "T1_descended": "0.96039549118815049651215986149723955840572223004978",
+        "T2_single": "3.0197861226956949690177184962514434358616584788294",
+        "T3_pair": "0.36127482011669798762944100795990428397488191374666",
+        "T4_Frobenius": "1.6362871123836114562916549347613901608045694440399",
+        "T5_chirality": "4.2555548879820595117008466731796263832350759669286",
+        "T6_Habiro": "1.921135702610148536969493791505930264359463199664",
+        "m_hecke": "12.154434136976362958121314765155534086641371233258",
+        "vhat_i": [
+          "0.9890073159292597737327090873425711234998226354167",
+          "0.97107015865274369644467729606208246103317407697938"
+        ]
+      },
+      "neutron_terms": {
+        "T1_descended": "0.83329025047951637547090882116805412808114314357792",
+        "T2_single": "2.677338941109513668366937987436955897064255484275",
+        "T3_pair": "0.2836164128719695006316692095267800756926598689668",
+        "T4_Frobenius": "1.6362871123836114562916549347613901608045694440399",
+        "T5_chirality": "4.1907715304950073432017045050018323295997780222507",
+        "T6_Habiro": "1.921135702610148536969493791505930264359463199664",
+        "m_hecke": "11.542439949949766880932369249400942855601869162774",
+        "vhat_i": [
+          "0.8542103128258389606769442997911669155688329382913",
+          "0.97550947110774594315687948247161058517697160610811"
+        ]
+      },
+      "m_p_MeV": "12.154434136976362958121314765155534086641371233258",
+      "m_n_MeV": "11.542439949949766880932369249400942855601869162774",
+      "rel_diff_p": "-0.98704593870972775526955912642657127160017065893014",
+      "rel_diff_p_percent": "-98.704593870972775526955912642657127160017065893014",
+      "rel_diff_n": "-0.98771512903959190624371833469974397642319708094106",
+      "rel_diff_n_percent": "-98.771512903959190624371833469974397642319708094106"
+    },
+    "std_channel": {
+      "channel": "std",
+      "proton_terms": {
+        "T1_descended": "1.0653062285923892551532775699680661193337632009792",
+        "T2_single": "+inf",
+        "T3_pair": "0.46801568687271106072565630615838353388855760504059",
+        "T4_Frobenius": "1.6362871123836114562916549347613901608045694440399",
+        "T5_chirality": "4.2555548879820595117008466731796263832350759669286",
+        "T6_Habiro": "1.921135702610148536969493791505930264359463199664",
+        "m_hecke": "+inf",
+        "vhat_i": [
+          "1.1461015210575878968469008429289023074744299159316",
+          "0.92950424462342290233741641149664904734925724214108"
+        ]
+      },
+      "neutron_terms": {
+        "T1_descended": "0.92323329716958364246376988091871375932688744507317",
+        "T2_single": "2.9273761260062383540290179003588950638390260755955",
+        "T3_pair": "0.33568242680451438566897440689643167807847218073442",
+        "T4_Frobenius": "1.6362871123836114562916549347613901608045694440399",
+        "T5_chirality": "4.1907715304950073432017045050018323295997780222507",
+        "T6_Habiro": "1.921135702610148536969493791505930264359463199664",
+        "m_hecke": "11.934486195469103718624615419443193256008196367358",
+        "vhat_i": [
+          "1.0038523361470901444758759575846718413377636909819",
+          "0.91969034082549194502116561317939318106318357315345"
+        ]
+      },
+      "m_p_MeV": "+inf",
+      "m_n_MeV": "11.934486195469103718624615419443193256008196367358",
+      "rel_diff_p": "+inf",
+      "rel_diff_p_percent": "+inf",
+      "rel_diff_n": "-0.98729786565701407586895659179187265003028530532434",
+      "rel_diff_n_percent": "-98.729786565701407586895659179187265003028530532434"
+    },
+    "comparison": {
+      "m_p_full_MeV": "12.154434136976362958121314765155534086641371233258",
+      "m_p_std_MeV": "+inf",
+      "delta_m_p_std_minus_full_MeV": "+inf",
+      "rel_diff_p_full": "-0.98704593870972775526955912642657127160017065893014",
+      "rel_diff_p_std": "+inf",
+      "abs_rel_p_full": "0.98704593870972775526955912642657127160017065893014",
+      "abs_rel_p_std": "+inf",
+      "m_n_full_MeV": "11.542439949949766880932369249400942855601869162774",
+      "m_n_std_MeV": "11.934486195469103718624615419443193256008196367358",
+      "rel_diff_n_full": "-0.98771512903959190624371833469974397642319708094106",
+      "rel_diff_n_std": "-0.98729786565701407586895659179187265003028530532434",
+      "m_p_codata_MeV": "938.27208816",
+      "m_n_codata_MeV": "939.56542052",
+      "std_vs_full_m_p_verdict": "REGRESSES"
+    },
+    "upstream_witness_hashes": [
+      {
+        "path": "terms-2-3-atom-per-gen-mpfr-50dps.witness.json",
+        "sha256": "8fdf23e355a0e66c3004895e4dc0c38a51a0f15f722033088b279d809cbafee4",
+        "size_bytes": 10078,
+        "commitSha": "83b19a2f85c270e19890905437a29b4540fd7834",
+        "scriptCommitSha": "17f878e6857f795273cff6fd102ec2ac2a968c7b",
+        "computedAt": "2026-05-17T22:58:19.126946+00:00"
+      }
+    ]
+  }
+}

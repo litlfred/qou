@@ -1,0 +1,60 @@
+{
+  "description": "Symbolic χ^λ_q(β_atomic(1, 2)) — tritium — for the canonical atomic braid word at H_9, per partition λ ⊢ 9.  Incrementally saved per partition so a SIGTERM/timeout mid-loop preserves work done so far. PARTIAL — re-run to continue.",
+  "atom": "tritium",
+  "Z": 1,
+  "N": 2,
+  "n": 9,
+  "n_partitions": 6,
+  "n_partitions_total": 30,
+  "partial": true,
+  "compute_time_sec_so_far": 1157.4373488426208,
+  "workers": 4,
+  "auditOnly": "docs/audits/2026-05-08-per-irrep-pole-18-21-research-note.md",
+  "chi_lambda_symbolic": [
+    {
+      "partition": [
+        9
+      ],
+      "chi_q_symbolic": "(q**14 + 7*q**12 + 21*q**10 + 35*q**8 + 35*q**6 + 21*q**4 + 7*q**2 + 1)/(128*q**3)"
+    },
+    {
+      "partition": [
+        8,
+        1
+      ],
+      "chi_q_symbolic": "(q**34 + 7*q**32 + 21*q**30 + 35*q**28 + 34*q**26 + 22*q**24 + 24*q**22 + 36*q**20 + 24*q**18 - 7*q**16 - 24*q**14 - 26*q**12 - 31*q**10 - 41*q**8 - 41*q**6 - 25*q**4 - 8*q**2 - 1)/(128*q**15)"
+    },
+    {
+      "partition": [
+        7,
+        2
+      ],
+      "chi_q_symbolic": "(q**50 + 4*q**48 + 8*q**46 + 7*q**44 + 3*q**42 + 13*q**40 + 31*q**38 + 29*q**36 + 7*q**34 + 8*q**32 + 30*q**30 + 6*q**28 - 43*q**26 - 55*q**24 - 40*q**22 - 29*q**20 - 35*q**18 - 27*q**16 + 3*q**14 + 18*q**12 + 15*q**10 + 11*q**8 + 12*q**6 + 13*q**4 + 8*q**2 + 2)/(128*q**25)"
+    },
+    {
+      "partition": [
+        7,
+        1,
+        1
+      ],
+      "chi_q_symbolic": "(q**50 + 4*q**48 + 7*q**46 + 2*q**44 - 7*q**42 + 2*q**40 + 20*q**38 + 13*q**36 - 18*q**34 - 30*q**32 - 17*q**30 - 29*q**28 - 52*q**26 - 45*q**24 - 22*q**22 - 10*q**20 - 19*q**18 - 16*q**16 + 8*q**14 + 19*q**12 + 15*q**10 + 11*q**8 + 12*q**6 + 13*q**4 + 8*q**2 + 2)/(128*q**25)"
+    },
+    {
+      "partition": [
+        6,
+        3
+      ],
+      "chi_q_symbolic": "(q**64 + q**62 + 4*q**60 + 12*q**58 + 25*q**56 + 35*q**54 + 27*q**52 + 35*q**50 + 46*q**48 + 30*q**46 + q**44 - 4*q**42 + 39*q**40 + 24*q**38 - 24*q**36 - 30*q**34 - 28*q**32 - 25*q**30 - 44*q**28 - 36*q**26 + 8*q**24 + 32*q**22 + 36*q**20 + 34*q**18 + 32*q**16 + 24*q**14 + 9*q**12 - 2*q**10 - 2*q**8 - q**6 - q**4 - q**2 - 1)/(128*q**35)"
+    },
+    {
+      "partition": [
+        5,
+        4
+      ],
+      "chi_q_symbolic": "(q**68 + 2*q**66 + 6*q**64 + 7*q**62 + 8*q**60 + 7*q**58 + 4*q**56 + 6*q**54 - 6*q**52 + 8*q**50 + 24*q**48 + 16*q**46 + q**44 - 13*q**42 + 12*q**40 - 12*q**38 - 54*q**36 - 50*q**34 - 38*q**32 - 15*q**30 - 17*q**28 - 13*q**26 + 12*q**24 + 16*q**22 + 9*q**20 + 3*q**18 - 6*q**12 - 11*q**10 - 10*q**8 - 10*q**6 - 8*q**4 - 5*q**2 - 2)/(128*q**35)"
+    }
+  ],
+  "engine": "python",
+  "scriptFile": "delta_lambda_empirical_tabulation.py",
+  "commitSha": "06e88b6885fd78860cf1e0d1d01de2a96f5b0811"
+}

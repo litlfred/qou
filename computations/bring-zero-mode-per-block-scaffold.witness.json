@@ -1,0 +1,45 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-01T16:55:59.375359+00:00",
+  "commitSha": "014a03718760074a6f98e6cdf523519efdc178cc",
+  "assertions": [
+    {
+      "name": "scaffold_completed",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Scaffold identifies the actual open derivation question."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 15,
+  "computation": "bring-zero-mode-per-block-scaffold",
+  "scriptFile": "bring_zero_mode_per_block_scaffold.py",
+  "scriptHash": "dc300f6bee2d",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "Item B of PR #1654: scaffolds the Bring-zero-mode derivation of the bare per-block (α_em/π) at the sign-block of H_3. Identifies the open question is NOT 'derive α_em/π from Bring' (it's the standard QED bubble) but 'derive why EM couples to sign block'.",
+  "parameters": {
+    "q_80dps": "1.1099785827513808075916690956107688798744991218735787360728142401817989635744830",
+    "mp_dps_runtime": "80"
+  },
+  "data": {
+    "target": "0.002322819465771719295187741",
+    "verdict": "The 'Bring zero-mode derivation of bare per-block (α_em/π)' open item is structurally CIRCULAR as currently posed: the (α_em/π) IS the standard QED 1-loop coupling, not a Bring-specific derivation. The non-trivial derivation is WHY EM couples to the sign Wedderburn block of H_3 specifically. That requires: (a) substrate-level implementation of QCD color-singlet (Fermi-statistics → sign rep), and (b) categorical Wedderburn-projection of the EM coupling. Neither exists yet at the categorical level — this is the actual multi-session open work behind ProtonMassEMSignBlock."
+  }
+}

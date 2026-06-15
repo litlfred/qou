@@ -1,0 +1,784 @@
+{
+  "all_results": {
+    "N=10": {
+      "candidates": {
+        "H": {
+          "N_color": 10,
+          "[N]_q": 10.452878585440398,
+          "[n]_q": 8.22943568067963,
+          "n_torus": 8,
+          "|J_N|": 85307691.44772317,
+          "|J_N|\u00b7N\u00b7m_e (MeV)": 435921407.5671052,
+          "|J_N|\u00b7[N]_q\u00b7m_e (MeV)": 455663354.609323,
+          "|J_N|\u00b7[n]_q\u00b7m_e (MeV)": 358738718.5404823,
+          "|J_N|\u00b7m_e (MeV)": 43592140.756710514,
+          "|J_N|\u00b7n\u00b7m_e (MeV)": 348737126.0536841
+        },
+        "W\u00b1": {
+          "N_color": 10,
+          "[N]_q": 10.452878585440398,
+          "[n]_q": 4.027136844187829,
+          "n_torus": 4,
+          "|J_N|": 2730.1185183287052,
+          "|J_N|\u00b7N\u00b7m_e (MeV)": 13950.876962415241,
+          "|J_N|\u00b7[N]_q\u00b7m_e (MeV)": 14582.682304854407,
+          "|J_N|\u00b7[n]_q\u00b7m_e (MeV)": 5618.209062407359,
+          "|J_N|\u00b7m_e (MeV)": 1395.087696241524,
+          "|J_N|\u00b7n\u00b7m_e (MeV)": 5580.350784966096
+        },
+        "Z": {
+          "N_color": 10,
+          "[N]_q": 10.452878585440398,
+          "[n]_q": 6.0952365081262245,
+          "n_torus": 6,
+          "|J_N|": 490540.59854401066,
+          "|J_N|\u00b7N\u00b7m_e (MeV)": 2506657.3078836096,
+          "|J_N|\u00b7[N]_q\u00b7m_e (MeV)": 2620178.4494614266,
+          "|J_N|\u00b7[n]_q\u00b7m_e (MeV)": 1527866.9136373575,
+          "|J_N|\u00b7m_e (MeV)": 250665.73078836096,
+          "|J_N|\u00b7n\u00b7m_e (MeV)": 1503994.3847301658
+        }
+      },
+      "ratios": {
+        "|J_N|\u00b7N\u00b7m_e (MeV)": {
+          "deviation_W_over_H_pct": -99.9950190977109,
+          "deviation_W_over_Z_pct": -99.36860704638386,
+          "deviation_Z_over_H_pct": -99.21112482162167,
+          "experimental_W_over_H": 0.6425179856115107,
+          "experimental_W_over_Z": 0.8814685330022942,
+          "experimental_Z_over_H": 0.7289176658673061,
+          "predicted_W_over_H": 3.20031930532516e-05,
+          "predicted_W_over_Z": 0.005565530205720094,
+          "predicted_Z_over_H": 0.005750250536841869
+        },
+        "|J_N|\u00b7[N]_q\u00b7m_e (MeV)": {
+          "deviation_W_over_H_pct": -99.9950190977109,
+          "deviation_W_over_Z_pct": -99.36860704638386,
+          "deviation_Z_over_H_pct": -99.21112482162167,
+          "experimental_W_over_H": 0.6425179856115107,
+          "experimental_W_over_Z": 0.8814685330022942,
+          "experimental_Z_over_H": 0.7289176658673061,
+          "predicted_W_over_H": 3.20031930532516e-05,
+          "predicted_W_over_Z": 0.005565530205720093,
+          "predicted_Z_over_H": 0.005750250536841869
+        },
+        "|J_N|\u00b7[n]_q\u00b7m_e (MeV)": {
+          "deviation_W_over_H_pct": -99.99756255764015,
+          "deviation_W_over_Z_pct": -99.5828372166891,
+          "deviation_Z_over_H_pct": -99.4157095365731,
+          "experimental_W_over_H": 0.6425179856115107,
+          "experimental_W_over_Z": 0.8814685330022942,
+          "experimental_Z_over_H": 0.7289176658673061,
+          "predicted_W_over_H": 1.5661005550961642e-05,
+          "predicted_W_over_Z": 0.0036771586662821426,
+          "predicted_Z_over_H": 0.004258996407896639
+        },
+        "|J_N|\u00b7m_e (MeV)": {
+          "deviation_W_over_H_pct": -99.9950190977109,
+          "deviation_W_over_Z_pct": -99.36860704638386,
+          "deviation_Z_over_H_pct": -99.21112482162167,
+          "experimental_W_over_H": 0.6425179856115107,
+          "experimental_W_over_Z": 0.8814685330022942,
+          "experimental_Z_over_H": 0.7289176658673061,
+          "predicted_W_over_H": 3.2003193053251606e-05,
+          "predicted_W_over_Z": 0.005565530205720093,
+          "predicted_Z_over_H": 0.005750250536841869
+        },
+        "|J_N|\u00b7n\u00b7m_e (MeV)": {
+          "deviation_W_over_H_pct": -99.99750954885545,
+          "deviation_W_over_Z_pct": -99.57907136425591,
+          "deviation_Z_over_H_pct": -99.40834361621626,
+          "experimental_W_over_H": 0.6425179856115107,
+          "experimental_W_over_Z": 0.8814685330022942,
+          "experimental_Z_over_H": 0.7289176658673061,
+          "predicted_W_over_H": 1.6001596526625803e-05,
+          "predicted_W_over_Z": 0.003710353470480062,
+          "predicted_Z_over_H": 0.004312687902631402
+        }
+      }
+    },
+    "N=12": {
+      "candidates": {
+        "H": {
+          "N_color": 12,
+          "[N]_q": 12.789677245501036,
+          "[n]_q": 8.22943568067963,
+          "n_torus": 8,
+          "|J_N|": 663508833512.7365,
+          "|J_N|\u00b7N\u00b7m_e (MeV)": 4068627806888.798,
+          "|J_N|\u00b7[N]_q\u00b7m_e (MeV)": 4336369706848.203,
+          "|J_N|\u00b7[n]_q\u00b7m_e (MeV)": 2790209237117.999,
+          "|J_N|\u00b7m_e (MeV)": 339052317240.73315,
+          "|J_N|\u00b7n\u00b7m_e (MeV)": 2712418537925.865
+        },
+        "W\u00b1": {
+          "N_color": 12,
+          "[N]_q": 12.789677245501036,
+          "[n]_q": 4.027136844187829,
+          "n_torus": 4,
+          "|J_N|": 223224.98353608907,
+          "|J_N|\u00b7N\u00b7m_e (MeV)": 1368812.7864085056,
+          "|J_N|\u00b7[N]_q\u00b7m_e (MeV)": 1458889.4789733111,
+          "|J_N|\u00b7[n]_q\u00b7m_e (MeV)": 459366.3670784248,
+          "|J_N|\u00b7m_e (MeV)": 114067.73220070881,
+          "|J_N|\u00b7n\u00b7m_e (MeV)": 456270.92880283523
+        },
+        "Z": {
+          "N_color": 12,
+          "[N]_q": 12.789677245501036,
+          "[n]_q": 6.0952365081262245,
+          "n_torus": 6,
+          "|J_N|": 388006350.9243331,
+          "|J_N|\u00b7N\u00b7m_e (MeV)": 2379250054.987989,
+          "|J_N|\u00b7[N]_q\u00b7m_e (MeV)": 2535820024.136414,
+          "|J_N|\u00b7[n]_q\u00b7m_e (MeV)": 1208507649.760343,
+          "|J_N|\u00b7m_e (MeV)": 198270837.91566572,
+          "|J_N|\u00b7n\u00b7m_e (MeV)": 1189625027.4939945
+        }
+      },
+      "ratios": {
+        "|J_N|\u00b7N\u00b7m_e (MeV)": {
+          "deviation_W_over_H_pct": -99.99994763865408,
+          "deviation_W_over_Z_pct": -99.93473247381506,
+          "deviation_Z_over_H_pct": -99.91977427522802,
+          "experimental_W_over_H": 0.6425179856115107,
+          "experimental_W_over_Z": 0.8814685330022942,
+          "experimental_Z_over_H": 0.7289176658673061,
+          "predicted_W_over_H": 3.3643106506102624e-07,
+          "predicted_W_over_Z": 0.0005753127055892474,
+          "predicted_Z_over_H": 0.0005847794804330741
+        },
+        "|J_N|\u00b7[N]_q\u00b7m_e (MeV)": {
+          "deviation_W_over_H_pct": -99.99994763865408,
+          "deviation_W_over_Z_pct": -99.93473247381506,
+          "deviation_Z_over_H_pct": -99.91977427522802,
+          "experimental_W_over_H": 0.6425179856115107,
+          "experimental_W_over_Z": 0.8814685330022942,
+          "experimental_Z_over_H": 0.7289176658673061,
+          "predicted_W_over_H": 3.3643106506102624e-07,
+          "predicted_W_over_Z": 0.0005753127055892474,
+          "predicted_Z_over_H": 0.0005847794804330741
+        },
+        "|J_N|\u00b7[n]_q\u00b7m_e (MeV)": {
+          "deviation_W_over_H_pct": -99.99997437657774,
+          "deviation_W_over_Z_pct": -99.95687759464658,
+          "deviation_Z_over_H_pct": -99.94057979362192,
+          "experimental_W_over_H": 0.6425179856115107,
+          "experimental_W_over_Z": 0.8814685330022942,
+          "experimental_Z_over_H": 0.7289176658673061,
+          "predicted_W_over_H": 1.646350965251994e-07,
+          "predicted_W_over_Z": 0.0003801104338640479,
+          "predicted_Z_over_H": 0.0004331243813846047
+        },
+        "|J_N|\u00b7m_e (MeV)": {
+          "deviation_W_over_H_pct": -99.99994763865408,
+          "deviation_W_over_Z_pct": -99.93473247381506,
+          "deviation_Z_over_H_pct": -99.91977427522802,
+          "experimental_W_over_H": 0.6425179856115107,
+          "experimental_W_over_Z": 0.8814685330022942,
+          "experimental_Z_over_H": 0.7289176658673061,
+          "predicted_W_over_H": 3.3643106506102624e-07,
+          "predicted_W_over_Z": 0.0005753127055892475,
+          "predicted_Z_over_H": 0.0005847794804330741
+        },
+        "|J_N|\u00b7n\u00b7m_e (MeV)": {
+          "deviation_W_over_H_pct": -99.99997381932704,
+          "deviation_W_over_Z_pct": -99.95648831587671,
+          "deviation_Z_over_H_pct": -99.939830706421,
+          "experimental_W_over_H": 0.6425179856115107,
+          "experimental_W_over_Z": 0.8814685330022942,
+          "experimental_Z_over_H": 0.7289176658673061,
+          "predicted_W_over_H": 1.6821553253051314e-07,
+          "predicted_W_over_Z": 0.00038354180372616493,
+          "predicted_Z_over_H": 0.0004385846103248056
+        }
+      }
+    },
+    "N=2": {
+      "candidates": {
+        "H": {
+          "N_color": 2,
+          "[N]_q": 2.002709278316723,
+          "[n]_q": 8.22943568067963,
+          "n_torus": 8,
+          "|J_N|": 0.5269472616770358,
+          "|J_N|\u00b7N\u00b7m_e (MeV)": 0.538538994844681,
+          "|J_N|\u00b7[N]_q\u00b7m_e (MeV)": 0.5392685208554022,
+          "|J_N|\u00b7[n]_q\u00b7m_e (MeV)": 2.215936009806081,
+          "|J_N|\u00b7m_e (MeV)": 0.2692694974223405,
+          "|J_N|\u00b7n\u00b7m_e (MeV)": 2.154155979378724
+        },
+        "W\u00b1": {
+          "N_color": 2,
+          "[N]_q": 2.002709278316723,
+          "[n]_q": 4.027136844187829,
+          "n_torus": 4,
+          "|J_N|": 0.23237419492471778,
+          "|J_N|\u00b7N\u00b7m_e (MeV)": 0.23748593922725222,
+          "|J_N|\u00b7[N]_q\u00b7m_e (MeV)": 0.23780764698008972,
+          "|J_N|\u00b7[n]_q\u00b7m_e (MeV)": 0.47819418791930945,
+          "|J_N|\u00b7m_e (MeV)": 0.11874296961362611,
+          "|J_N|\u00b7n\u00b7m_e (MeV)": 0.47497187845450445
+        },
+        "Z": {
+          "N_color": 2,
+          "[N]_q": 2.002709278316723,
+          "[n]_q": 6.0952365081262245,
+          "n_torus": 6,
+          "|J_N|": 0.3704971448852391,
+          "|J_N|\u00b7N\u00b7m_e (MeV)": 0.3786473040287101,
+          "|J_N|\u00b7[N]_q\u00b7m_e (MeV)": 0.3791602344939554,
+          "|J_N|\u00b7[n]_q\u00b7m_e (MeV)": 1.153972435609682,
+          "|J_N|\u00b7m_e (MeV)": 0.18932365201435505,
+          "|J_N|\u00b7n\u00b7m_e (MeV)": 1.1359419120861303
+        }
+      },
+      "ratios": {
+        "|J_N|\u00b7N\u00b7m_e (MeV)": {
+          "deviation_W_over_H_pct": -31.36660896479703,
+          "deviation_W_over_Z_pct": -28.84650792723269,
+          "deviation_Z_over_H_pct": -3.541781245236836,
+          "experimental_W_over_H": 0.6425179856115107,
+          "experimental_W_over_Z": 0.8814685330022942,
+          "experimental_Z_over_H": 0.7289176658673061,
+          "predicted_W_over_H": 0.44098188153625734,
+          "predicted_W_over_Z": 0.6271956427537257,
+          "predicted_Z_over_H": 0.7031009966843998
+        },
+        "|J_N|\u00b7[N]_q\u00b7m_e (MeV)": {
+          "deviation_W_over_H_pct": -31.366608964797024,
+          "deviation_W_over_Z_pct": -28.84650792723269,
+          "deviation_Z_over_H_pct": -3.5417812452368085,
+          "experimental_W_over_H": 0.6425179856115107,
+          "experimental_W_over_Z": 0.8814685330022942,
+          "experimental_Z_over_H": 0.7289176658673061,
+          "predicted_W_over_H": 0.4409818815362574,
+          "predicted_W_over_Z": 0.6271956427537257,
+          "predicted_Z_over_H": 0.7031009966844
+        },
+        "|J_N|\u00b7[n]_q\u00b7m_e (MeV)": {
+          "deviation_W_over_H_pct": -66.41372889901605,
+          "deviation_W_over_Z_pct": -52.988723384754046,
+          "deviation_Z_over_H_pct": -28.55698989869214,
+          "experimental_W_over_H": 0.6425179856115107,
+          "experimental_W_over_Z": 0.8814685330022942,
+          "experimental_Z_over_H": 0.7289176658673061,
+          "predicted_W_over_H": 0.21579783252006304,
+          "predicted_W_over_Z": 0.4143896103260591,
+          "predicted_Z_over_H": 0.520760721655797
+        },
+        "|J_N|\u00b7m_e (MeV)": {
+          "deviation_W_over_H_pct": -31.36660896479703,
+          "deviation_W_over_Z_pct": -28.84650792723269,
+          "deviation_Z_over_H_pct": -3.541781245236836,
+          "experimental_W_over_H": 0.6425179856115107,
+          "experimental_W_over_Z": 0.8814685330022942,
+          "experimental_Z_over_H": 0.7289176658673061,
+          "predicted_W_over_H": 0.44098188153625734,
+          "predicted_W_over_Z": 0.6271956427537257,
+          "predicted_Z_over_H": 0.7031009966843998
+        },
+        "|J_N|\u00b7n\u00b7m_e (MeV)": {
+          "deviation_W_over_H_pct": -65.68330448239851,
+          "deviation_W_over_Z_pct": -52.56433861815512,
+          "deviation_Z_over_H_pct": -27.656335933927622,
+          "experimental_W_over_H": 0.6425179856115107,
+          "experimental_W_over_Z": 0.8814685330022942,
+          "experimental_Z_over_H": 0.7289176658673061,
+          "predicted_W_over_H": 0.22049094076812867,
+          "predicted_W_over_Z": 0.41813042850248383,
+          "predicted_Z_over_H": 0.5273257475132999
+        }
+      }
+    },
+    "N=4": {
+      "candidates": {
+        "H": {
+          "N_color": 4,
+          "[N]_q": 4.027136844187829,
+          "[n]_q": 8.22943568067963,
+          "n_torus": 8,
+          "|J_N|": 4.912846031127211,
+          "|J_N|\u00b7N\u00b7m_e (MeV)": 10.041836653670687,
+          "|J_N|\u00b7[N]_q\u00b7m_e (MeV)": 10.109962592828259,
+          "|J_N|\u00b7[n]_q\u00b7m_e (MeV)": 20.659662214318526,
+          "|J_N|\u00b7m_e (MeV)": 2.510459163417672,
+          "|J_N|\u00b7n\u00b7m_e (MeV)": 20.083673307341375
+        },
+        "W\u00b1": {
+          "N_color": 4,
+          "[N]_q": 4.027136844187829,
+          "[n]_q": 4.027136844187829,
+          "n_torus": 4,
+          "|J_N|": 0.7283906421811358,
+          "|J_N|\u00b7N\u00b7m_e (MeV)": 1.4888274133775445,
+          "|J_N|\u00b7[N]_q\u00b7m_e (MeV)": 1.498927932762393,
+          "|J_N|\u00b7[n]_q\u00b7m_e (MeV)": 1.498927932762393,
+          "|J_N|\u00b7m_e (MeV)": 0.37220685334438613,
+          "|J_N|\u00b7n\u00b7m_e (MeV)": 1.4888274133775445
+        },
+        "Z": {
+          "N_color": 4,
+          "[N]_q": 4.027136844187829,
+          "[n]_q": 6.0952365081262245,
+          "n_torus": 6,
+          "|J_N|": 2.0021101211268117,
+          "|J_N|\u00b7N\u00b7m_e (MeV)": 4.092304678720694,
+          "|J_N|\u00b7[N]_q\u00b7m_e (MeV)": 4.1200677373295855,
+          "|J_N|\u00b7[n]_q\u00b7m_e (MeV)": 6.235891220028534,
+          "|J_N|\u00b7m_e (MeV)": 1.0230761696801736,
+          "|J_N|\u00b7n\u00b7m_e (MeV)": 6.138457018081041
+        }
+      },
+      "ratios": {
+        "|J_N|\u00b7N\u00b7m_e (MeV)": {
+          "deviation_W_over_H_pct": -76.92477656106419,
+          "deviation_W_over_Z_pct": -58.72666302578902,
+          "deviation_Z_over_H_pct": -44.09169422536878,
+          "experimental_W_over_H": 0.6425179856115107,
+          "experimental_W_over_Z": 0.8814685330022942,
+          "experimental_Z_over_H": 0.7289176658673061,
+          "predicted_W_over_H": 0.1482624608152055,
+          "predicted_W_over_Z": 0.363811477947671,
+          "predicted_Z_over_H": 0.40752551747839827
+        },
+        "|J_N|\u00b7[N]_q\u00b7m_e (MeV)": {
+          "deviation_W_over_H_pct": -76.92477656106419,
+          "deviation_W_over_Z_pct": -58.72666302578902,
+          "deviation_Z_over_H_pct": -44.09169422536878,
+          "experimental_W_over_H": 0.6425179856115107,
+          "experimental_W_over_Z": 0.8814685330022942,
+          "experimental_Z_over_H": 0.7289176658673061,
+          "predicted_W_over_H": 0.1482624608152055,
+          "predicted_W_over_Z": 0.36381147794767094,
+          "predicted_Z_over_H": 0.40752551747839827
+        },
+        "|J_N|\u00b7[n]_q\u00b7m_e (MeV)": {
+          "deviation_W_over_H_pct": -88.70796417827637,
+          "deviation_W_over_Z_pct": -72.73061089757098,
+          "deviation_Z_over_H_pct": -58.59080018511385,
+          "experimental_W_over_H": 0.6425179856115107,
+          "experimental_W_over_Z": 0.8814685330022942,
+          "experimental_Z_over_H": 0.7289176658673061,
+          "predicted_W_over_H": 0.07255336109626884,
+          "predicted_W_over_Z": 0.24037108407986857,
+          "predicted_Z_over_H": 0.301838972744997
+        },
+        "|J_N|\u00b7m_e (MeV)": {
+          "deviation_W_over_H_pct": -76.9247765610642,
+          "deviation_W_over_Z_pct": -58.72666302578902,
+          "deviation_Z_over_H_pct": -44.09169422536878,
+          "experimental_W_over_H": 0.6425179856115107,
+          "experimental_W_over_Z": 0.8814685330022942,
+          "experimental_Z_over_H": 0.7289176658673061,
+          "predicted_W_over_H": 0.14826246081520547,
+          "predicted_W_over_Z": 0.36381147794767094,
+          "predicted_Z_over_H": 0.40752551747839827
+        },
+        "|J_N|\u00b7n\u00b7m_e (MeV)": {
+          "deviation_W_over_H_pct": -88.4623882805321,
+          "deviation_W_over_Z_pct": -72.48444201719268,
+          "deviation_Z_over_H_pct": -58.068770669026584,
+          "experimental_W_over_H": 0.6425179856115107,
+          "experimental_W_over_Z": 0.8814685330022942,
+          "experimental_Z_over_H": 0.7289176658673061,
+          "predicted_W_over_H": 0.07413123040760275,
+          "predicted_W_over_Z": 0.2425409852984473,
+          "predicted_Z_over_H": 0.3056441381087987
+        }
+      }
+    },
+    "N=6": {
+      "candidates": {
+        "H": {
+          "N_color": 6,
+          "[N]_q": 6.0952365081262245,
+          "[n]_q": 8.22943568067963,
+          "n_torus": 8,
+          "|J_N|": 232.58099981593054,
+          "|J_N|\u00b7N\u00b7m_e (MeV)": 713.0918801753442,
+          "|J_N|\u00b7[N]_q\u00b7m_e (MeV)": 724.4106102821881,
+          "|J_N|\u00b7[n]_q\u00b7m_e (MeV)": 978.0572937196503,
+          "|J_N|\u00b7m_e (MeV)": 118.8486466958907,
+          "|J_N|\u00b7n\u00b7m_e (MeV)": 950.7891735671255
+        },
+        "W\u00b1": {
+          "N_color": 6,
+          "[N]_q": 6.0952365081262245,
+          "[n]_q": 4.027136844187829,
+          "n_torus": 4,
+          "|J_N|": 5.006051426972462,
+          "|J_N|\u00b7N\u00b7m_e (MeV)": 15.34852213697358,
+          "|J_N|\u00b7[N]_q\u00b7m_e (MeV)": 15.592145412510817,
+          "|J_N|\u00b7[n]_q\u00b7m_e (MeV)": 10.301766500273134,
+          "|J_N|\u00b7m_e (MeV)": 2.55808702282893,
+          "|J_N|\u00b7n\u00b7m_e (MeV)": 10.23234809131572
+        },
+        "Z": {
+          "N_color": 6,
+          "[N]_q": 6.0952365081262245,
+          "[n]_q": 6.0952365081262245,
+          "n_torus": 6,
+          "|J_N|": 35.72335384009866,
+          "|J_N|\u00b7N\u00b7m_e (MeV)": 109.52757781661329,
+          "|J_N|\u00b7[N]_q\u00b7m_e (MeV)": 111.26608182574289,
+          "|J_N|\u00b7[n]_q\u00b7m_e (MeV)": 111.26608182574289,
+          "|J_N|\u00b7m_e (MeV)": 18.25459630276888,
+          "|J_N|\u00b7n\u00b7m_e (MeV)": 109.52757781661329
+        }
+      },
+      "ratios": {
+        "|J_N|\u00b7N\u00b7m_e (MeV)": {
+          "deviation_W_over_H_pct": -96.65006959569601,
+          "deviation_W_over_Z_pct": -84.10222785412896,
+          "deviation_Z_over_H_pct": -78.92830282402791,
+          "experimental_W_over_H": 0.6425179856115107,
+          "experimental_W_over_Z": 0.8814685330022942,
+          "experimental_Z_over_H": 0.7289176658673061,
+          "predicted_W_over_H": 0.021523905353121518,
+          "predicted_W_over_Z": 0.1401338589142569,
+          "predicted_Z_over_H": 0.15359532321372282
+        },
+        "|J_N|\u00b7[N]_q\u00b7m_e (MeV)": {
+          "deviation_W_over_H_pct": -96.65006959569601,
+          "deviation_W_over_Z_pct": -84.10222785412896,
+          "deviation_Z_over_H_pct": -78.92830282402791,
+          "experimental_W_over_H": 0.6425179856115107,
+          "experimental_W_over_Z": 0.8814685330022942,
+          "experimental_Z_over_H": 0.7289176658673061,
+          "predicted_W_over_H": 0.02152390535312152,
+          "predicted_W_over_Z": 0.1401338589142569,
+          "predicted_Z_over_H": 0.15359532321372282
+        },
+        "|J_N|\u00b7[n]_q\u00b7m_e (MeV)": {
+          "deviation_W_over_H_pct": -98.36068611748072,
+          "deviation_W_over_Z_pct": -89.49630521083391,
+          "deviation_Z_over_H_pct": -84.39297870488268,
+          "experimental_W_over_H": 0.6425179856115107,
+          "experimental_W_over_Z": 0.8814685330022942,
+          "experimental_Z_over_H": 0.7289176658673061,
+          "predicted_W_over_H": 0.010532886535812722,
+          "predicted_W_over_Z": 0.0925867643691007,
+          "predicted_Z_over_H": 0.11376233533578262
+        },
+        "|J_N|\u00b7m_e (MeV)": {
+          "deviation_W_over_H_pct": -96.65006959569601,
+          "deviation_W_over_Z_pct": -84.10222785412894,
+          "deviation_Z_over_H_pct": -78.92830282402791,
+          "experimental_W_over_H": 0.6425179856115107,
+          "experimental_W_over_Z": 0.8814685330022942,
+          "experimental_Z_over_H": 0.7289176658673061,
+          "predicted_W_over_H": 0.021523905353121518,
+          "predicted_W_over_Z": 0.14013385891425692,
+          "predicted_Z_over_H": 0.1535953232137228
+        },
+        "|J_N|\u00b7n\u00b7m_e (MeV)": {
+          "deviation_W_over_H_pct": -98.325034797848,
+          "deviation_W_over_Z_pct": -89.40148523608596,
+          "deviation_Z_over_H_pct": -84.19622711802093,
+          "experimental_W_over_H": 0.6425179856115107,
+          "experimental_W_over_Z": 0.8814685330022942,
+          "experimental_Z_over_H": 0.7289176658673061,
+          "predicted_W_over_H": 0.01076195267656076,
+          "predicted_W_over_Z": 0.0934225726095046,
+          "predicted_Z_over_H": 0.11519649241029212
+        }
+      }
+    },
+    "N=8": {
+      "candidates": {
+        "H": {
+          "N_color": 8,
+          "[N]_q": 8.22943568067963,
+          "[n]_q": 8.22943568067963,
+          "n_torus": 8,
+          "|J_N|": 59980.37228344271,
+          "|J_N|\u00b7N\u00b7m_e (MeV)": 245199.25805958663,
+          "|J_N|\u00b7[N]_q\u00b7m_e (MeV)": 252231.44039396686,
+          "|J_N|\u00b7[n]_q\u00b7m_e (MeV)": 252231.44039396686,
+          "|J_N|\u00b7m_e (MeV)": 30649.90725744833,
+          "|J_N|\u00b7n\u00b7m_e (MeV)": 245199.25805958663
+        },
+        "W\u00b1": {
+          "N_color": 8,
+          "[N]_q": 8.22943568067963,
+          "[n]_q": 4.027136844187829,
+          "n_torus": 4,
+          "|J_N|": 77.2702272845564,
+          "|J_N|\u00b7N\u00b7m_e (MeV)": 315.8800400693574,
+          "|J_N|\u00b7[N]_q\u00b7m_e (MeV)": 324.93930907016016,
+          "|J_N|\u00b7[n]_q\u00b7m_e (MeV)": 159.01151846335458,
+          "|J_N|\u00b7m_e (MeV)": 39.485005008669674,
+          "|J_N|\u00b7n\u00b7m_e (MeV)": 157.9400200346787
+        },
+        "Z": {
+          "N_color": 8,
+          "[N]_q": 8.22943568067963,
+          "[n]_q": 6.0952365081262245,
+          "n_torus": 6,
+          "|J_N|": 2217.620541519138,
+          "|J_N|\u00b7N\u00b7m_e (MeV)": 9065.614145717687,
+          "|J_N|\u00b7[N]_q\u00b7m_e (MeV)": 9325.611064755392,
+          "|J_N|\u00b7[n]_q\u00b7m_e (MeV)": 6907.132788695499,
+          "|J_N|\u00b7m_e (MeV)": 1133.201768214711,
+          "|J_N|\u00b7n\u00b7m_e (MeV)": 6799.210609288266
+        }
+      },
+      "ratios": {
+        "|J_N|\u00b7N\u00b7m_e (MeV)": {
+          "deviation_W_over_H_pct": -99.79949844572673,
+          "deviation_W_over_Z_pct": -96.04707894840581,
+          "deviation_Z_over_H_pct": -94.92776223819584,
+          "experimental_W_over_H": 0.6425179856115107,
+          "experimental_W_over_Z": 0.8814685330022942,
+          "experimental_Z_over_H": 0.7289176658673061,
+          "predicted_W_over_H": 0.0012882585476363653,
+          "predicted_W_over_Z": 0.03484375520422621,
+          "predicted_Z_over_H": 0.036972437100583004
+        },
+        "|J_N|\u00b7[N]_q\u00b7m_e (MeV)": {
+          "deviation_W_over_H_pct": -99.79949844572673,
+          "deviation_W_over_Z_pct": -96.04707894840581,
+          "deviation_Z_over_H_pct": -94.92776223819584,
+          "experimental_W_over_H": 0.6425179856115107,
+          "experimental_W_over_Z": 0.8814685330022942,
+          "experimental_Z_over_H": 0.7289176658673061,
+          "predicted_W_over_H": 0.001288258547636365,
+          "predicted_W_over_Z": 0.0348437552042262,
+          "predicted_Z_over_H": 0.03697243710058301
+        },
+        "|J_N|\u00b7[n]_q\u00b7m_e (MeV)": {
+          "deviation_W_over_H_pct": -99.90188304181945,
+          "deviation_W_over_Z_pct": -97.38829592784178,
+          "deviation_Z_over_H_pct": -96.24318240238169,
+          "experimental_W_over_H": 0.6425179856115107,
+          "experimental_W_over_Z": 0.8814685330022942,
+          "experimental_Z_over_H": 0.7289176658673061,
+          "predicted_W_over_H": 0.0006304191032449815,
+          "predicted_W_over_Z": 0.023021349571214187,
+          "predicted_Z_over_H": 0.02738410714345154
+        },
+        "|J_N|\u00b7m_e (MeV)": {
+          "deviation_W_over_H_pct": -99.79949844572673,
+          "deviation_W_over_Z_pct": -96.04707894840581,
+          "deviation_Z_over_H_pct": -94.92776223819584,
+          "experimental_W_over_H": 0.6425179856115107,
+          "experimental_W_over_Z": 0.8814685330022942,
+          "experimental_Z_over_H": 0.7289176658673061,
+          "predicted_W_over_H": 0.001288258547636365,
+          "predicted_W_over_Z": 0.0348437552042262,
+          "predicted_Z_over_H": 0.036972437100583004
+        },
+        "|J_N|\u00b7n\u00b7m_e (MeV)": {
+          "deviation_W_over_H_pct": -99.89974922286336,
+          "deviation_W_over_Z_pct": -97.3647192989372,
+          "deviation_Z_over_H_pct": -96.19582167864688,
+          "experimental_W_over_H": 0.6425179856115107,
+          "experimental_W_over_Z": 0.8814685330022942,
+          "experimental_Z_over_H": 0.7289176658673061,
+          "predicted_W_over_H": 0.0006441292738181827,
+          "predicted_W_over_Z": 0.023229170136150803,
+          "predicted_Z_over_H": 0.027729327825437255
+        }
+      }
+    }
+  },
+  "best_combinations": [
+    {
+      "N_key": "N=2",
+      "W_over_H_dev_pct": -31.366608964797024,
+      "W_over_Z_dev_pct": -28.84650792723269,
+      "Z_over_H_dev_pct": -3.5417812452368085,
+      "formula": "|J_N|\u00b7[N]_q\u00b7m_e (MeV)",
+      "total_deviation_pct": 63.75489813726652
+    },
+    {
+      "N_key": "N=2",
+      "W_over_H_dev_pct": -31.36660896479703,
+      "W_over_Z_dev_pct": -28.84650792723269,
+      "Z_over_H_dev_pct": -3.541781245236836,
+      "formula": "|J_N|\u00b7N\u00b7m_e (MeV)",
+      "total_deviation_pct": 63.75489813726656
+    },
+    {
+      "N_key": "N=2",
+      "W_over_H_dev_pct": -31.36660896479703,
+      "W_over_Z_dev_pct": -28.84650792723269,
+      "Z_over_H_dev_pct": -3.541781245236836,
+      "formula": "|J_N|\u00b7m_e (MeV)",
+      "total_deviation_pct": 63.75489813726656
+    },
+    {
+      "N_key": "N=2",
+      "W_over_H_dev_pct": -65.68330448239851,
+      "W_over_Z_dev_pct": -52.56433861815512,
+      "Z_over_H_dev_pct": -27.656335933927622,
+      "formula": "|J_N|\u00b7n\u00b7m_e (MeV)",
+      "total_deviation_pct": 145.90397903448127
+    },
+    {
+      "N_key": "N=2",
+      "W_over_H_dev_pct": -66.41372889901605,
+      "W_over_Z_dev_pct": -52.988723384754046,
+      "Z_over_H_dev_pct": -28.55698989869214,
+      "formula": "|J_N|\u00b7[n]_q\u00b7m_e (MeV)",
+      "total_deviation_pct": 147.95944218246223
+    },
+    {
+      "N_key": "N=4",
+      "W_over_H_dev_pct": -76.92477656106419,
+      "W_over_Z_dev_pct": -58.72666302578902,
+      "Z_over_H_dev_pct": -44.09169422536878,
+      "formula": "|J_N|\u00b7N\u00b7m_e (MeV)",
+      "total_deviation_pct": 179.743133812222
+    },
+    {
+      "N_key": "N=4",
+      "W_over_H_dev_pct": -76.92477656106419,
+      "W_over_Z_dev_pct": -58.72666302578902,
+      "Z_over_H_dev_pct": -44.09169422536878,
+      "formula": "|J_N|\u00b7[N]_q\u00b7m_e (MeV)",
+      "total_deviation_pct": 179.743133812222
+    },
+    {
+      "N_key": "N=4",
+      "W_over_H_dev_pct": -76.9247765610642,
+      "W_over_Z_dev_pct": -58.72666302578902,
+      "Z_over_H_dev_pct": -44.09169422536878,
+      "formula": "|J_N|\u00b7m_e (MeV)",
+      "total_deviation_pct": 179.74313381222203
+    },
+    {
+      "N_key": "N=4",
+      "W_over_H_dev_pct": -88.4623882805321,
+      "W_over_Z_dev_pct": -72.48444201719268,
+      "Z_over_H_dev_pct": -58.068770669026584,
+      "formula": "|J_N|\u00b7n\u00b7m_e (MeV)",
+      "total_deviation_pct": 219.01560096675138
+    },
+    {
+      "N_key": "N=4",
+      "W_over_H_dev_pct": -88.70796417827637,
+      "W_over_Z_dev_pct": -72.73061089757098,
+      "Z_over_H_dev_pct": -58.59080018511385,
+      "formula": "|J_N|\u00b7[n]_q\u00b7m_e (MeV)",
+      "total_deviation_pct": 220.02937526096122
+    },
+    {
+      "N_key": "N=6",
+      "W_over_H_dev_pct": -96.65006959569601,
+      "W_over_Z_dev_pct": -84.10222785412896,
+      "Z_over_H_dev_pct": -78.92830282402791,
+      "formula": "|J_N|\u00b7N\u00b7m_e (MeV)",
+      "total_deviation_pct": 259.68060027385286
+    },
+    {
+      "N_key": "N=6",
+      "W_over_H_dev_pct": -96.65006959569601,
+      "W_over_Z_dev_pct": -84.10222785412896,
+      "Z_over_H_dev_pct": -78.92830282402791,
+      "formula": "|J_N|\u00b7[N]_q\u00b7m_e (MeV)",
+      "total_deviation_pct": 259.68060027385286
+    },
+    {
+      "N_key": "N=6",
+      "W_over_H_dev_pct": -96.65006959569601,
+      "W_over_Z_dev_pct": -84.10222785412894,
+      "Z_over_H_dev_pct": -78.92830282402791,
+      "formula": "|J_N|\u00b7m_e (MeV)",
+      "total_deviation_pct": 259.68060027385286
+    },
+    {
+      "N_key": "N=6",
+      "W_over_H_dev_pct": -98.325034797848,
+      "W_over_Z_dev_pct": -89.40148523608596,
+      "Z_over_H_dev_pct": -84.19622711802093,
+      "formula": "|J_N|\u00b7n\u00b7m_e (MeV)",
+      "total_deviation_pct": 271.92274715195487
+    },
+    {
+      "N_key": "N=6",
+      "W_over_H_dev_pct": -98.36068611748072,
+      "W_over_Z_dev_pct": -89.49630521083391,
+      "Z_over_H_dev_pct": -84.39297870488268,
+      "formula": "|J_N|\u00b7[n]_q\u00b7m_e (MeV)",
+      "total_deviation_pct": 272.2499700331973
+    },
+    {
+      "N_key": "N=8",
+      "W_over_H_dev_pct": -99.79949844572673,
+      "W_over_Z_dev_pct": -96.04707894840581,
+      "Z_over_H_dev_pct": -94.92776223819584,
+      "formula": "|J_N|\u00b7N\u00b7m_e (MeV)",
+      "total_deviation_pct": 290.7743396323284
+    },
+    {
+      "N_key": "N=8",
+      "W_over_H_dev_pct": -99.79949844572673,
+      "W_over_Z_dev_pct": -96.04707894840581,
+      "Z_over_H_dev_pct": -94.92776223819584,
+      "formula": "|J_N|\u00b7[N]_q\u00b7m_e (MeV)",
+      "total_deviation_pct": 290.7743396323284
+    },
+    {
+      "N_key": "N=8",
+      "W_over_H_dev_pct": -99.79949844572673,
+      "W_over_Z_dev_pct": -96.04707894840581,
+      "Z_over_H_dev_pct": -94.92776223819584,
+      "formula": "|J_N|\u00b7m_e (MeV)",
+      "total_deviation_pct": 290.7743396323284
+    },
+    {
+      "N_key": "N=8",
+      "W_over_H_dev_pct": -99.89974922286336,
+      "W_over_Z_dev_pct": -97.3647192989372,
+      "Z_over_H_dev_pct": -96.19582167864688,
+      "formula": "|J_N|\u00b7n\u00b7m_e (MeV)",
+      "total_deviation_pct": 293.46029020044745
+    },
+    {
+      "N_key": "N=8",
+      "W_over_H_dev_pct": -99.90188304181945,
+      "W_over_Z_dev_pct": -97.38829592784178,
+      "Z_over_H_dev_pct": -96.24318240238169,
+      "formula": "|J_N|\u00b7[n]_q\u00b7m_e (MeV)",
+      "total_deviation_pct": 293.5333613720429
+    }
+  ],
+  "compute": "rt_route_cross_particle_ratio_quantum_dim",
+  "description": "Action items #2 (cross-particle ratio test) + #3 (quantum-dim normalization) from docs/audits/2026-05-24-sm-particle-categorical-map-rt-route.md \u00a79. Tests whether |J_N(T(2,k))| ratios for k \u2208 {4, 6, 8} at fixed (N, q_0) match the experimental m_W:m_Z:m_H ratios. Cheap (~3-min compute) cross-validation: matching ratios validates the RT-chain SM identification; mismatching ratios falsify it. Also tests quantum-dim [N]_q vs naive-dim N normalization.",
+  "interpretation": "Cross-particle ratio test on the RT-chain SM identification. If the W:Z:H assignments to T(2,4):T(2,6):T(2,8) are correct, the |J_N| ratios should match m_W:m_Z:m_H regardless of absolute normalization. Best (N, formula) combination by total deviation reported. Quantum-dim [N]_q normalization tested alongside naive N for the factor-of-2 resolution from Q2 (PR #1116 Higgs probe finding).",
+  "parameters": {
+    "N_test_values": [
+      2,
+      4,
+      6,
+      8,
+      10,
+      12
+    ],
+    "Q_0": "1.1097",
+    "dps": 50,
+    "experimental_masses": {
+      "H": "125100.0",
+      "W": "80379.0",
+      "Z": "91187.6"
+    },
+    "experimental_ratios": {
+      "W_over_H": 0.6425179856115107,
+      "W_over_Z": 0.8814685330022942,
+      "Z_over_H": 0.7289176658673061
+    },
+    "precision": "mpfr"
+  },
+  "scriptCommitSha": "8987923a31aca87a55b22cbc7bb3e5e24b682be3",
+  "status": "exploratory",
+  "tags": [
+    "rt-route",
+    "cross-particle-ratios",
+    "quantum-dimension",
+    "higgs",
+    "electroweak",
+    "W-Z-H-ratios"
+  ]
+}

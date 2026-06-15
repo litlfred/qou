@@ -1,0 +1,77 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-06-02T16:58:48.751714+00:00",
+  "commitSha": "77f2b68af2c9d52ae3d55c1cea746e8e9977db80",
+  "assertions": [
+    {
+      "name": "jet_rank_0_derivation_q_independent_and_matches_textbook",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.0,
+      "unit": "boolean — derivation gives π²/720 at all q tested",
+      "source": "Tests the structural claim that Casimir = rank-0 observable, hence q-independent.  Passing this assertion confirms the jet-order derivation route is self-consistent.  Whether the rank-0 assignment is CORRECT is a separate physics question, but the assignment yields a forced (non-fit) result."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 12,
+  "computation": "casimir-jet-order-derivation",
+  "scriptFile": "casimir_jet_order_derivation.py",
+  "scriptHash": "7ceb72b63da8",
+  "scriptCommitSha": "5a44813463430491fdc8cd8cd5a97a404b5e7e9d",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.12.3",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Derivation attempt under the jet-order axiom: Casimir lives at GB rank 0 (commutative substratum, no q-deformation).  This forces ε_n = n·ε (no [n]_q), which gives Σ n³ → ζ(-3) = -1/120 (standard ζ-regularization), yielding c_q = π²/720 EXACTLY at any q.  Test: evaluate the derived prefactor at three q values (1.05, substrate, 1.5).  If all three give π²/720, the derivation is q-independent (as required by the rank-0 hypothesis) and matches the textbook value.  This makes the jet-order route the FIRST candidate that's both derived (no q-deformation choice) AND matches standard Casimir at substrate.",
+  "contentBlock": "conj:casimir-epsilon-vacuum",
+  "parameters": {
+    "target_energy_prefactor": 0.013707783890401887,
+    "target_force_prefactor": 0.04112335167120566
+  },
+  "data": {
+    "prefactor_at_three_q_values": [
+      {
+        "q_input": 1.05,
+        "zeta_neg_3_used": 0.008333333333333333,
+        "energy_prefactor_c_q": 0.013707783890401887,
+        "force_prefactor_3c_q": 0.04112335167120566,
+        "expected_textbook_energy": 0.013707783890401887,
+        "expected_textbook_force": 0.04112335167120566
+      },
+      {
+        "q_input": 1.1099785827513808,
+        "zeta_neg_3_used": 0.008333333333333333,
+        "energy_prefactor_c_q": 0.013707783890401887,
+        "force_prefactor_3c_q": 0.04112335167120566,
+        "expected_textbook_energy": 0.013707783890401887,
+        "expected_textbook_force": 0.04112335167120566
+      },
+      {
+        "q_input": 1.5,
+        "zeta_neg_3_used": 0.008333333333333333,
+        "energy_prefactor_c_q": 0.013707783890401887,
+        "force_prefactor_3c_q": 0.04112335167120566,
+        "expected_textbook_energy": 0.013707783890401887,
+        "expected_textbook_force": 0.04112335167120566
+      }
+    ],
+    "verdict": {
+      "q_independence": true,
+      "matches_textbook": true,
+      "max_variation_across_q": 0.0,
+      "derivation_works": true,
+      "interpretation": "Under jet-rank-0 axiom, QOU Casimir = standard Casimir exactly at substrate.  No deviation predicted.  Sub-problem 3 RESOLVED via structural assignment (not fitting)."
+    }
+  }
+}

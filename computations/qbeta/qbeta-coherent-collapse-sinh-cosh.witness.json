@@ -1,0 +1,59 @@
+{
+  "computation": "qbeta_coherent_collapse_sinh_cosh",
+  "description": "Mechanism probe for the coherent Markov-trace collapse / sinh-cosh (bar) grading via q=exp(η); Q_β c_3 residue-A S2+S3 (PR #1895).",
+  "discipline": "no fit; mechanism demonstration only; c_3 stays cal-anchored; nothing wired",
+  "results": {
+    "generators": {
+      "h": "2*sinh(eta)",
+      "bracket2": "2*cosh(eta)",
+      "eig_pos": "cosh+sinh",
+      "eig_neg": "cosh-sinh"
+    },
+    "channels_sigma1": {
+      "chi_sym": "q (rotation, χ·χ̄=1)",
+      "chi_anti": "-q⁻¹ (rotation, χ·χ̄=1)",
+      "chi_std": "q-q⁻¹ = 2 sinh η (GROWTH, χ·χ̄=-h²)",
+      "finding": "the bar-odd (sinh) content + the growth channel both live in (2,1), NOT the 1-dim transpose pair"
+    },
+    "torus_pure_cosh": "P_m = cosh((2m+1)η)/(2 cosh η); bar-odd part = 0 ⇒ c_3 needs chirality",
+    "cancellation": {
+      "coherent_opp": "(y1-y2)·s",
+      "observe_last_opp": "(y1+y2)·s",
+      "q0": "4439914331/4000000000",
+      "eta0": 0.10434072031827551,
+      "coherent_at_equal_weight": 0.0,
+      "observe_last_at_equal_weight": 0.20906029879313776
+    },
+    "phi2_reconciliation": {
+      "Phi1": "sqrt(2) (bar-EVEN, cross-anchor swing 0)",
+      "c2": -1.0,
+      "c3_proton": -2.069342577115168,
+      "c3_muon": -2.020200235021255,
+      "Phi2_swing": 0.02374780407912021,
+      "c3_swing": 0.02374780407912021,
+      "finding": "Φ₂ carries the bar-ODD part (its cross-anchor swing EQUALS the c_3 swing); Φ₁=√2 is bar-EVEN ⇒ c_2=-1. Unifies the merged cos(Φ(u)) reframe (#1887, trig avatar) with this sinh/cosh hyperbolic avatar (cheat sheet §4: cos_q↔cosh)."
+    }
+  },
+  "assertions": {
+    "h = q-q⁻¹ = 2 sinh η  (bar-ODD)": true,
+    "[2]_q = q+q⁻¹ = 2 cosh η  (bar-EVEN)": true,
+    "q   = exp(+η) = cosh η + sinh η": true,
+    "q⁻¹ = exp(-η) = cosh η - sinh η": true,
+    "h bar-ODD: h(-η) = -h(η)": true,
+    "[2]_q bar-EVEN: [2](-η) = [2](η)": true,
+    "χ^(2,1)(σ_1) = q - q⁻¹ = h = 2 sinh η  (PURE bar-odd)": true,
+    "χ^(3) rotation channel: χ·χ̄ = 1 > 0": true,
+    "χ^(1³) rotation channel: χ·χ̄ = 1 > 0": true,
+    "χ^(2,1) GROWTH channel: χ·χ̄ = -h² < 0": true,
+    "P_m (m=1..4) pure cosh: bar-odd part = 0": true,
+    "coherent (opposite signs) = (y1-y2)·s  → nulls at y1=y2": true,
+    "observe-last (opposite signs) = (y1+y2)·s  → survives": true,
+    "numeric @q₀: coherent=0, observe-last=2 sinh η₀ > 0": true,
+    "c_2 = -Φ₁²/2 = -1  (Φ₁=√2 anchor-stable ⇒ bar-EVEN)": true,
+    "c_3(proton) = -Φ₁Φ₂_p ≈ -2.0693": true,
+    "c_3(muon)   = -Φ₁Φ₂_m ≈ -2.0202": true,
+    "Φ₂ swing == c_3 swing  ⇒  Φ₂ carries the bar-ODD part (Φ₁ bar-EVEN, swing 0)": true
+  },
+  "allPassed": true,
+  "verdict": "MECHANISM-INGREDIENTS-PROVEN. The exp(kη)=cosh±sinh grading, h=2sinhη (bar-odd), [2]_q=2coshη (bar-even), χ^(2,1)(σ_1)=h (pure sinh, growth channel), torus pure-cosh, and the coherent-vs-observe-last gap are all exact. OPEN (heavy per-λ probe): whether the ACTUAL c_3 cancellation occurs depends on the real Wenzl weights y_λ and the proton↔neutron character difference — and the cancellation is a rotation((1-dim))-vs-growth((2,1)) effect, NOT a 1-dim transpose-pair effect (both 1-dim reps are rotation channels)."
+}

@@ -1,0 +1,74 @@
+{
+  "engine": "python+mpmath",
+  "engineVersion": "python 3.12.3",
+  "computedAt": "2026-06-01T13:37:10.578044+00:00",
+  "commitSha": "417e511ad96a7416b3b52d2f93704cd0eee0d8f7",
+  "assertions": [
+    {
+      "name": "geometric_li2q_towers_wrong_direction",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.0,
+      "source": "Q_β needs a negative scaling correction (Q_codata/Q_A < 1) but both the geometric and Li_2^q E_0 towers give factors > 1 — refuted as the Q_β closure; only the cos eigenphase has the right direction."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 40,
+  "computation": "qbeta-scaling-bridge-investigation",
+  "scriptFile": "qbeta_scaling_bridge_investigation.py",
+  "scriptHash": "433df4e52bcf",
+  "scriptCommitSha": "07ca66e720e742fc58ac0664b9726decf5d0d96a",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.12.3",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Tests whether the Q_β c_k ladder is a 'wrong scaling' artifact: does a closed-form scaling (cos eigenphase, geometric E_0 tower, Li_2^q tower) close Q_β to compute precision at canonical q₀ with NO q₀-dependent c_k? Attributes the residual ladder and checks direction. Answers the user's 'all c_k wired / right scaling' question. Zero free parameters.",
+  "contentBlock": "prop:q-beta-categorical-precision-ladder",
+  "data": {
+    "substrate": {
+      "q0": "1.1099785827513808075916690956107688798744991218736",
+      "hbar_q2": "0.00981718645427507381",
+      "z": "0.499320334183694452",
+      "b": "0.867584066965251156",
+      "alpha": "-0.0523361202682288388",
+      "u": "0.00851723455015614219"
+    },
+    "residual_ladder": {
+      "Q_A_MeV": "0.78364582631647",
+      "Q_A_ppb": "1677566.5",
+      "Q_N1_cos_MeV": "0.78239116644634",
+      "Q_N1_ppb": "73825.872",
+      "Q_N2_c2_MeV": "0.78233440922146",
+      "Q_N2_ppb": "1277.2322"
+    },
+    "scaling_direction": {
+      "needed_factor_Qcodata_over_QA": "0.99832524302128",
+      "geometric_tower_factor": "1.0099145191372",
+      "li2q_tower_factor": "1.0097933257884",
+      "cos_eigenphase_factor": "0.99839894525308",
+      "needed_is_negative_correction": true,
+      "geometric_wrong_direction": true,
+      "li2q_wrong_direction": true,
+      "cos_correct_direction": true
+    },
+    "verdict": {
+      "right_scaling_is_eigenphase_not_delta_net": true,
+      "geometric_and_li2q_E0_towers_wrong_direction": true,
+      "all_ck_wireable_as_derivations": false,
+      "only_c2_taylor_exact": true,
+      "ck_ge3_are_circular_if_extracted": true,
+      "production_residual_ppb": "1277.2322",
+      "conclusion": "Residual is in the scaling (eigenphase/E_0), per neutron-qvalue-symbolic.md. The cos eigenphase is the only closed-form scaling with the right direction; geometric/Li_2^q towers are refuted. Only c_2 wires (Taylor-exact); c_3+ are q₀-dependent and circular if extracted from Q_codata. All-c_k wiring needs the open Taylor-exact eigenphase refinement (the bridge). Production stays Q_N2."
+    }
+  }
+}

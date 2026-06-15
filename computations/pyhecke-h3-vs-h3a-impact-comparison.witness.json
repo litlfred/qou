@@ -1,0 +1,54 @@
+{
+  "compute": "pyhecke_h3_vs_h3a_impact_comparison",
+  "description": "Diagnostic comparison of legacy atom_per_generator_volumes (H_3 weights) vs proper per_generator_V_hat_3A (H_{3A} weights) for atoms A = 1..6. Companion to PR #1238 audit. Quantifies the legacy bug's per-generator V\u0302_full impact.",
+  "interpretation": "A = 1: legacy H_3 weights correct (\u0394 = 0 expected). A > 1: legacy uses wrong H_3 weights for H_{3A} braid; \u0394 measures bug's per-generator V\u0302_full impact. Downstream mass-formula predictions inherit this error.",
+  "legacy_available": true,
+  "next_steps": "Full migration sweep (separate PR): (1) update 15+ caller scripts to use per_generator_V_hat_3A; (2) regenerate affected witnesses; (3) compare before/after PDG-difference per atom.",
+  "proper_available": true,
+  "results": [],
+  "scriptCommitSha": "88f06a42d41d0dfbd72edef3ce5aff04d59a947d",
+  "status": "exploratory",
+  "tags": [
+    "pyhecke-h3-vs-h3a",
+    "impact-quantification",
+    "pr-1238-followup",
+    "migration-prep"
+  ],
+  "test_atoms": [
+    {
+      "N": 0,
+      "Z": 1,
+      "sym": "p"
+    },
+    {
+      "N": 1,
+      "Z": 0,
+      "sym": "n"
+    },
+    {
+      "N": 1,
+      "Z": 1,
+      "sym": "D"
+    },
+    {
+      "N": 2,
+      "Z": 1,
+      "sym": "T"
+    },
+    {
+      "N": 1,
+      "Z": 2,
+      "sym": "\u00b3He"
+    },
+    {
+      "N": 2,
+      "Z": 2,
+      "sym": "\u2074He"
+    },
+    {
+      "N": 3,
+      "Z": 3,
+      "sym": "\u2076Li"
+    }
+  ]
+}

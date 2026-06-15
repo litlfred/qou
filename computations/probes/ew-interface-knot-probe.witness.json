@@ -1,0 +1,93 @@
+{
+  "computedAt": "2026-05-06T00:15:18.181865+00:00",
+  "computation": "ew-interface-knot-probe",
+  "description": "Hoefsmit-action enumeration of β_EW(Δ_I^minimal) on H_6(q) standard tableaux.  Δ_I^minimal := σ_2 · σ_4 · σ_2 (per def:ew-interface-knot).  Quantifies which tableaux remain simultaneous eigenvectors of all five σ_1..σ_5 (and are therefore Higgs-invariant under Δ_I^minimal coupling) vs which acquire off-diagonal mixing from the interface generators σ_2, σ_4.",
+  "auditOnly": "docs/audits/2026-05-06-delta-I-interface-knot-refinement.md",
+  "reference_blocks": [
+    "def:ew-interface-knot",
+    "conj:hoefsmit-ew-cell-content",
+    "conj:categorical-higgs-mechanism",
+    "conj:weinberg-angle-categorical"
+  ],
+  "audit": "docs/audits/2026-05-06-refocused-1ppb-workplan-v2.md",
+  "n_strands": 6,
+  "delta_I_word": "σ_2 σ_4 σ_2",
+  "beta_EW_word": "σ_1^4 · (σ_2 σ_4 σ_2) · σ_3^6 · (σ_2 σ_4 σ_2) · σ_5^8 · (σ_2 σ_4 σ_2)",
+  "total_tableaux": 76,
+  "pure_135_total": 20,
+  "pure_all_5_total": 2,
+  "delta_I_mixed_total": 18,
+  "block_data": {
+    "(6,)": {
+      "f_lambda": 1,
+      "pure_all_5": [
+        {
+          "tab": "123456",
+          "classes": [
+            "sym",
+            "sym",
+            "sym",
+            "sym",
+            "sym"
+          ]
+        }
+      ]
+    },
+    "(5, 1)": {
+      "f_lambda": 5,
+      "pure_all_5": []
+    },
+    "(4, 2)": {
+      "f_lambda": 9,
+      "pure_all_5": []
+    },
+    "(4, 1, 1)": {
+      "f_lambda": 10,
+      "pure_all_5": []
+    },
+    "(3, 3)": {
+      "f_lambda": 5,
+      "pure_all_5": []
+    },
+    "(3, 2, 1)": {
+      "f_lambda": 16,
+      "pure_all_5": []
+    },
+    "(3, 1, 1, 1)": {
+      "f_lambda": 10,
+      "pure_all_5": []
+    },
+    "(2, 2, 2)": {
+      "f_lambda": 5,
+      "pure_all_5": []
+    },
+    "(2, 2, 1, 1)": {
+      "f_lambda": 9,
+      "pure_all_5": []
+    },
+    "(2, 1, 1, 1, 1)": {
+      "f_lambda": 5,
+      "pure_all_5": []
+    },
+    "(1, 1, 1, 1, 1, 1)": {
+      "f_lambda": 1,
+      "pure_all_5": [
+        {
+          "tab": "1/2/3/4/5/6",
+          "classes": [
+            "alt",
+            "alt",
+            "alt",
+            "alt",
+            "alt"
+          ]
+        }
+      ]
+    }
+  },
+  "verdict": "delta-I-trivialises-on-2-of-20-pure-tableaux",
+  "interpretation": "If Δ_I^minimal mixes ALL disjoint-pure tableaux, then the Higgs-vev coupling has no diagonal-invariant subspace in the EW pure-eigenspace decomposition — every state acquires non-trivial Δ_I-induced rotation.  This is structurally consistent with EWSB being a genuinely non-abelian (non-disjoint) coupling.  Quantitative match against Weinberg θ_W requires extracting the actual eigenvalue structure of β_EW(Δ_I^minimal), not just counting which tableaux become mixed.",
+  "engine": "python",
+  "scriptFile": "ew_interface_knot_probe.py",
+  "commitSha": "610a6aa2bde5fabec35796ead6bbb0adb76f6533"
+}

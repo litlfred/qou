@@ -1,0 +1,279 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-06-01T13:21:46.835689+00:00",
+  "commitSha": "417e511ad96a7416b3b52d2f93704cd0eee0d8f7",
+  "assertions": [
+    {
+      "name": "pslq_executed_at_maxcoeff_50",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "PSLQ search on {α/(4π), Cl_3(Bring-symmetric), S_3(Bring-symmetric), ζ(3)} basis at maxcoeff ≤ 50."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 354,
+  "computation": "alpha-em-4pi-q-hyperbolic-b3-pslq",
+  "scriptFile": "alpha_em_4pi_q_hyperbolic_b3_pslq.py",
+  "scriptHash": "8a90c069f802",
+  "scriptCommitSha": "c418cb2c22d88cb007fd9b34027f368254e7323c",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.12.3",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "B_3-via-PSLQ canonical derive-or-refute for the α/(4π) next-order term in the FSC α_EM⁻¹ closure. Promotes the B_2 Bring-zero-mode PSLQ template (bring_zero_mode_bloch_hunt.py) one depth up: searches for an integer relation between α/(4π) and the depth-3 grouplike basis {Cl_3, S_3} at the same Bring-symmetric angles (kπ/n, n ∈ {3,4,5,6,9,10,15,30}) plus ζ(3) as reference. NEGATIVE outcome is structurally meaningful (parallel to the B_2 hunt's own partial refutation): rules out B_3-at-symmetric-angles, points to higher-denominator angles or off-unit-circle classes. Honest derive-or-refute, no fit.",
+  "contentBlock": "prop:em-coupling-bring-zero-mode",
+  "data": {
+    "target_value": "0.000580704866442929781562257812526",
+    "target_formula": "α/(4π) = 1/(4π · 137.035999084)",
+    "candidate_basis": [
+      {
+        "name": "Cl_3(π/3)",
+        "value": "0.40068563438653142846657938717"
+      },
+      {
+        "name": "Cl_3(π/4)",
+        "value": "0.663590714044308562871833719845"
+      },
+      {
+        "name": "Cl_3(π/5)",
+        "value": "0.813697207280144861841180323484"
+      },
+      {
+        "name": "Cl_3(2π/5)",
+        "value": "0.189367915010831683879444804766"
+      },
+      {
+        "name": "Cl_3(π/6)",
+        "value": "0.907485511895002385745240688245"
+      },
+      {
+        "name": "Cl_3(π/9)",
+        "value": "1.0464984618274142543259611211"
+      },
+      {
+        "name": "Cl_3(2π/9)",
+        "value": "0.748119028789536017583670654009"
+      },
+      {
+        "name": "Cl_3(4π/9)",
+        "value": "0.0519888411165636503513240054878"
+      },
+      {
+        "name": "Cl_3(π/10)",
+        "value": "1.07086317217253647609602328083"
+      },
+      {
+        "name": "Cl_3(3π/10)",
+        "value": "0.506799114164755066679229079335"
+      },
+      {
+        "name": "Cl_3(π/15)",
+        "value": "1.13486408858504032332162414275"
+      },
+      {
+        "name": "Cl_3(2π/15)",
+        "value": "0.994015089299907417481226610917"
+      },
+      {
+        "name": "Cl_3(4π/15)",
+        "value": "0.611841820301738791641726116111"
+      },
+      {
+        "name": "Cl_3(7π/15)",
+        "value": "-0.0149710977381933555034157510762"
+      },
+      {
+        "name": "Cl_3(π/30)",
+        "value": "1.18145934773178509689764861939"
+      },
+      {
+        "name": "Cl_3(7π/30)",
+        "value": "0.714605445367450446599716795951"
+      },
+      {
+        "name": "Cl_3(11π/30)",
+        "value": "0.294562114714936587095154815486"
+      },
+      {
+        "name": "Cl_3(13π/30)",
+        "value": "0.085940281129446725541172767823"
+      },
+      {
+        "name": "Cl_3(17π/30)",
+        "value": "-0.296203939685564905433871538295"
+      },
+      {
+        "name": "Cl_3(19π/30)",
+        "value": "-0.460436256123297691988987195853"
+      },
+      {
+        "name": "Cl_3(23π/30)",
+        "value": "-0.71834821980199878547557073372"
+      },
+      {
+        "name": "Cl_3(29π/30)",
+        "value": "-0.897743325585525016067242583706"
+      },
+      {
+        "name": "S_3(π/3)",
+        "value": "0.956983848157401857267787502071"
+      },
+      {
+        "name": "S_3(π/4)",
+        "value": "0.847827877976948207923180490116"
+      },
+      {
+        "name": "S_3(π/5)",
+        "value": "0.74415064032719568421143156161"
+      },
+      {
+        "name": "S_3(2π/5)",
+        "value": "0.992200853769594245615242082147"
+      },
+      {
+        "name": "S_3(π/6)",
+        "value": "0.657926395608213776871603907674"
+      },
+      {
+        "name": "S_3(π/9)",
+        "value": "0.482036308701506120697848519562"
+      },
+      {
+        "name": "S_3(2π/9)",
+        "value": "0.793942155508363022325868149866"
+      },
+      {
+        "name": "S_3(4π/9)",
+        "value": "0.992427694385453777907335187333"
+      },
+      {
+        "name": "S_3(π/10)",
+        "value": "0.441839442694272437500537489706"
+      },
+      {
+        "name": "S_3(3π/10)",
+        "value": "0.922436731238919650220420373246"
+      },
+      {
+        "name": "S_3(π/15)",
+        "value": "0.310828353881524123240577380673"
+      },
+      {
+        "name": "S_3(2π/15)",
+        "value": "0.557347393166870841672759441206"
+      },
+      {
+        "name": "S_3(4π/15)",
+        "value": "0.875831617833654179771479121895"
+      },
+      {
+        "name": "S_3(7π/15)",
+        "value": "0.986076157141386873728728242134"
+      },
+      {
+        "name": "S_3(π/30)",
+        "value": "0.163739936419731457778518441604"
+      },
+      {
+        "name": "S_3(7π/30)",
+        "value": "0.816594317632711004806603075517"
+      },
+      {
+        "name": "S_3(11π/30)",
+        "value": "0.980047158897995242027941180871"
+      },
+      {
+        "name": "S_3(13π/30)",
+        "value": "0.994019123081093309144050878401"
+      },
+      {
+        "name": "S_3(17π/30)",
+        "value": "0.909421750903978984961578463218"
+      },
+      {
+        "name": "S_3(19π/30)",
+        "value": "0.820039459486077651492767110525"
+      },
+      {
+        "name": "S_3(23π/30)",
+        "value": "0.570075278347364286374421014984"
+      },
+      {
+        "name": "S_3(29π/30)",
+        "value": "0.0860328479493504269683740964362"
+      },
+      {
+        "name": "ζ(3)",
+        "value": "1.20205690315959428539973816151"
+      }
+    ],
+    "basis_size": 45,
+    "pslq_result": {
+      "raw_relation": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        -5,
+        -4,
+        2,
+        2,
+        0,
+        -1,
+        0,
+        0,
+        0
+      ],
+      "human_form": null,
+      "verdict": "PARTIAL — basis-internal relation found (c_target = 0); target not in B_3 lattice at maxcoeff ≤ 50",
+      "maxcoeff": 50,
+      "maxsteps": 2000
+    },
+    "relation_residual_abs": "9.05567907882671236750911929089e-72"
+  }
+}

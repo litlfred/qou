@@ -1,0 +1,151 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-10T04:08:59.900344+00:00",
+  "commitSha": "4b3569e5f56cd1138c043f4ac13493e0ef91dca1",
+  "assertions": [
+    {
+      "name": "logratio_form_within_3x_everywhere",
+      "computed": 2.363,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 2.0,
+      "source": "max over nuclei of max(miss, 1/miss) for B=E_0·log(tr_free/tr_atom); within ~3× vs the linear form's 5–40×."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": -1781060196754,
+  "computation": "log-ratio-binding-prototype",
+  "scriptFile": "log_ratio_binding_prototype.py",
+  "scriptHash": "f0f7592a628c",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Prototype extensive binding B = E_0·log(tr_free/tr_atom). The GS finding (tr_atom ≈ tr_free·f^bonds) makes the linear Δtr intensive/saturating (5–40× undershoot); the log-ratio is extensive over bonds. At the E_0 scale the log-ratio binding lands within O(1–2×) of B_AME (vs 5–40× linear) — a functional-form fix, NOT a fitted Δ_λ closure. Also reports per-bond energy under A−1 (chain, as-wired) vs C(A,2) (all-pairs, physical) to scope the bond-topology next step.",
+  "parameters": {
+    "E_0_MeV": 4.186,
+    "Q_beta_MeV": 0.7823
+  },
+  "data": {
+    "rows": [
+      {
+        "atom": "D",
+        "Z": 1,
+        "N": 1,
+        "A": 2,
+        "B_AME_MeV": 2.2246,
+        "tr_atom": 0.38836,
+        "tr_free": 0.98353,
+        "log_ratio_L": 0.9292,
+        "B_linear_Qbeta": 0.4656,
+        "miss_linear_x": 4.78,
+        "B_logratio_E0": 3.8897,
+        "miss_logratio_x": 0.572,
+        "bonds_chain_Am1": 1,
+        "bonds_allpairs_C_A_2": 1,
+        "L_per_bond_chain": 0.9292,
+        "Bame_per_bond_chain_MeV": 2.2246,
+        "Bame_per_bond_allpairs_MeV": 2.2246,
+        "B_logratio_E0_allpairs_est": 3.8897,
+        "miss_logratio_allpairs_x": 0.572
+      },
+      {
+        "atom": "T",
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "B_AME_MeV": 8.4818,
+        "tr_atom": 0.10407,
+        "tr_free": 0.90802,
+        "log_ratio_L": 2.1662,
+        "B_linear_Qbeta": 0.629,
+        "miss_linear_x": 13.49,
+        "B_logratio_E0": 9.0677,
+        "miss_logratio_x": 0.935,
+        "bonds_chain_Am1": 2,
+        "bonds_allpairs_C_A_2": 3,
+        "L_per_bond_chain": 1.0831,
+        "Bame_per_bond_chain_MeV": 4.2409,
+        "Bame_per_bond_allpairs_MeV": 2.8273,
+        "B_logratio_E0_allpairs_est": 13.6015,
+        "miss_logratio_allpairs_x": 0.624
+      },
+      {
+        "atom": "3He",
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "B_AME_MeV": 7.718,
+        "tr_atom": 0.20658,
+        "tr_free": 1.04776,
+        "log_ratio_L": 1.6237,
+        "B_linear_Qbeta": 0.6581,
+        "miss_linear_x": 11.73,
+        "B_logratio_E0": 6.7969,
+        "miss_logratio_x": 1.136,
+        "bonds_chain_Am1": 2,
+        "bonds_allpairs_C_A_2": 3,
+        "L_per_bond_chain": 0.8119,
+        "Bame_per_bond_chain_MeV": 3.859,
+        "Bame_per_bond_allpairs_MeV": 2.5727,
+        "B_logratio_E0_allpairs_est": 10.1953,
+        "miss_logratio_allpairs_x": 0.757
+      },
+      {
+        "atom": "4He",
+        "Z": 2,
+        "N": 2,
+        "A": 4,
+        "B_AME_MeV": 28.2957,
+        "tr_atom": 0.05536,
+        "tr_free": 0.96732,
+        "log_ratio_L": 2.8607,
+        "B_linear_Qbeta": 0.7135,
+        "miss_linear_x": 39.66,
+        "B_logratio_E0": 11.9749,
+        "miss_logratio_x": 2.363,
+        "bonds_chain_Am1": 3,
+        "bonds_allpairs_C_A_2": 6,
+        "L_per_bond_chain": 0.9536,
+        "Bame_per_bond_chain_MeV": 9.4319,
+        "Bame_per_bond_allpairs_MeV": 4.7159,
+        "B_logratio_E0_allpairs_est": 23.9497,
+        "miss_logratio_allpairs_x": 1.181
+      }
+    ],
+    "headline": {
+      "linear_miss_x": {
+        "D": 4.78,
+        "T": 13.49,
+        "3He": 11.73,
+        "4He": 39.66
+      },
+      "logratio_miss_x": {
+        "D": 0.572,
+        "T": 0.935,
+        "3He": 1.136,
+        "4He": 2.363
+      },
+      "logratio_allpairs_miss_x": {
+        "D": 0.572,
+        "T": 0.624,
+        "3He": 0.757,
+        "4He": 1.181
+      },
+      "linear_miss_range": "4.8–39.7×",
+      "logratio_miss_range": "0.57–2.36×",
+      "logratio_allpairs_miss_range": "0.57–1.18×",
+      "verdict": "The log-ratio FORM collapses the undershoot from 5–40× (linear) to 0.57–2.36× (log-ratio @ E_0) — the binding gap was dominated by the wrong functional form (linear vs log), not a scalar. Residual O(1×) scatter is p/n composition + alpha magic + chain-vs-allpairs bond topology; NOT a closed law (no 7th ansatz)."
+    }
+  }
+}

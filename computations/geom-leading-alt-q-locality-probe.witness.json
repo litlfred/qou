@@ -1,0 +1,259 @@
+{
+  "compute": "geom_leading_alt_q_locality_probe",
+  "description": "Alternative `Geom_leading` functional forms probed for q-locality, holding linking weight fixed at Family A (5/2 + 3h\u00b2/4). Tests whether the q-locality failure is architecturally robust or curable by a functional swap.",
+  "interpretation_note": "Per CLAUDE.md three-calibration discipline, this probe does NOT propose production wiring of any variant. Even if a variant passed, it would need separate categorical justification before being eligible for canonical promotion.",
+  "parameters": {
+    "M_E_MEV": "0.51099895",
+    "M_P_CODATA_MEV": "938.27208816",
+    "Q_0": "1.1097",
+    "dps": 50,
+    "precision": "mpfr",
+    "sweep_deltas": [
+      0.001,
+      0.01,
+      0.05
+    ],
+    "tolerance_ppm_per_q": 100000.0
+  },
+  "scriptCommitSha": "b58e00af4a6b8a62d048106cb1e9ee7bafab751b",
+  "status": "exploratory",
+  "summary": {
+    "architectural_robustness": "Q-locality failure is robust to functional form changes of Geom_leading. Implication: the failure is a structural feature of the substrate q_0 (option C \u2014 physical meaning of q-locality at a non-derived substrate point), not a fixable defect of the mass formula's shape.",
+    "n_variants_passing_q_locality": 0,
+    "n_variants_tested": 7,
+    "passing_variant_names": []
+  },
+  "tags": [
+    "q-locality",
+    "geom-leading-architecture",
+    "alternative-forms",
+    "borromean",
+    "architectural-probe"
+  ],
+  "variants": [
+    {
+      "all_pass_q_locality": false,
+      "description": "Vol/\u210f_q\u00b2  (current production baseline)",
+      "gap_target_minus_family_a_ppm_at_q0": 34257.25364363127,
+      "geom_leading_at_q0": 749.8373423744931,
+      "lw_family_a_at_q0": 2.5326215619957346,
+      "lw_target_at_q0": 2.4487346383827124,
+      "m_p_pred_MeV_with_family_a_lw": 970.4147130708367,
+      "max_abs_slope_ppm_per_q": 15661140.098367414,
+      "name": "v0_canonical",
+      "relative_error_pct": 3.425725364363127,
+      "slopes": [
+        {
+          "abs_slope_ppm_per_q": 15661140.098367414,
+          "delta": 0.001,
+          "pass_q_locality": false,
+          "slope_ppm_per_q": -15661140.098367414
+        },
+        {
+          "abs_slope_ppm_per_q": 15650843.618292332,
+          "delta": 0.01,
+          "pass_q_locality": false,
+          "slope_ppm_per_q": -15650843.618292332
+        },
+        {
+          "abs_slope_ppm_per_q": 15400151.030192878,
+          "delta": 0.05,
+          "pass_q_locality": false,
+          "slope_ppm_per_q": -15400151.030192878
+        }
+      ]
+    },
+    {
+      "all_pass_q_locality": false,
+      "description": "Vol/\u210f_q   (first power, not squared)",
+      "gap_target_minus_family_a_ppm_at_q0": -897757.9339238476,
+      "geom_leading_at_q0": 74.12558029961421,
+      "lw_family_a_at_q0": 2.5326215619957346,
+      "lw_target_at_q0": 24.770837084897867,
+      "m_p_pred_MeV_with_family_a_lw": 95.93087683506424,
+      "max_abs_slope_ppm_per_q": 80286253.93778759,
+      "name": "v1_linear_hbar",
+      "relative_error_pct": -89.77579339238476,
+      "slopes": [
+        {
+          "abs_slope_ppm_per_q": 80121110.48692445,
+          "delta": 0.001,
+          "pass_q_locality": false,
+          "slope_ppm_per_q": -80121110.48692445
+        },
+        {
+          "abs_slope_ppm_per_q": 80127639.96481133,
+          "delta": 0.01,
+          "pass_q_locality": false,
+          "slope_ppm_per_q": -80127639.96481133
+        },
+        {
+          "abs_slope_ppm_per_q": 80286253.93778759,
+          "delta": 0.05,
+          "pass_q_locality": false,
+          "slope_ppm_per_q": -80286253.93778759
+        }
+      ]
+    },
+    {
+      "all_pass_q_locality": false,
+      "description": "Vol/h\u00b2    where h = q \u2212 q\u207b\u00b9",
+      "gap_target_minus_family_a_ppm_at_q0": -767626.1948367455,
+      "geom_leading_at_q0": 168.47119600777864,
+      "lw_family_a_at_q0": 2.5326215619957346,
+      "lw_target_at_q0": 10.898911605877599,
+      "m_p_pred_MeV_with_family_a_lw": 218.02985540421182,
+      "max_abs_slope_ppm_per_q": 74557402.62944697,
+      "name": "v2_h_squared",
+      "relative_error_pct": -76.76261948367454,
+      "slopes": [
+        {
+          "abs_slope_ppm_per_q": 74557402.62944697,
+          "delta": 0.001,
+          "pass_q_locality": false,
+          "slope_ppm_per_q": -74557402.62944697
+        },
+        {
+          "abs_slope_ppm_per_q": 74534186.58681716,
+          "delta": 0.01,
+          "pass_q_locality": false,
+          "slope_ppm_per_q": -74534186.58681716
+        },
+        {
+          "abs_slope_ppm_per_q": 73969655.59650542,
+          "delta": 0.05,
+          "pass_q_locality": false,
+          "slope_ppm_per_q": -73969655.59650542
+        }
+      ]
+    },
+    {
+      "all_pass_q_locality": false,
+      "description": "Vol/[2]_q\u00b2  quantum-integer denominator",
+      "gap_target_minus_family_a_ppm_at_q0": -997500.3816545018,
+      "geom_leading_at_q0": 1.8122253148680356,
+      "lw_family_a_at_q0": 2.5326215619957346,
+      "lw_target_at_q0": 1013.203302238919,
+      "m_p_pred_MeV_with_family_a_lw": 2.3453221246336176,
+      "max_abs_slope_ppm_per_q": 74557402.62944697,
+      "name": "v3_quantum_two",
+      "relative_error_pct": -99.75003816545018,
+      "slopes": [
+        {
+          "abs_slope_ppm_per_q": 74557402.62944697,
+          "delta": 0.001,
+          "pass_q_locality": false,
+          "slope_ppm_per_q": -74557402.62944697
+        },
+        {
+          "abs_slope_ppm_per_q": 74534186.58681716,
+          "delta": 0.01,
+          "pass_q_locality": false,
+          "slope_ppm_per_q": -74534186.58681716
+        },
+        {
+          "abs_slope_ppm_per_q": 73969655.59650542,
+          "delta": 0.05,
+          "pass_q_locality": false,
+          "slope_ppm_per_q": -73969655.59650542
+        }
+      ]
+    },
+    {
+      "all_pass_q_locality": false,
+      "description": "Vol\u00b7q/(q\u22121)\u00b2",
+      "gap_target_minus_family_a_ppm_at_q0": -67984.81243252115,
+      "geom_leading_at_q0": 675.711762074879,
+      "lw_family_a_at_q0": 2.5326215619957346,
+      "lw_target_at_q0": 2.717360828213296,
+      "m_p_pred_MeV_with_family_a_lw": 874.4838362357724,
+      "max_abs_slope_ppm_per_q": 18370649.45315217,
+      "name": "v4_symmetric_q_over_qm1sq",
+      "relative_error_pct": -6.798481243252116,
+      "slopes": [
+        {
+          "abs_slope_ppm_per_q": 18370649.45315217,
+          "delta": 0.001,
+          "pass_q_locality": false,
+          "slope_ppm_per_q": -18370649.45315217
+        },
+        {
+          "abs_slope_ppm_per_q": 18364259.368484303,
+          "delta": 0.01,
+          "pass_q_locality": false,
+          "slope_ppm_per_q": -18364259.368484303
+        },
+        {
+          "abs_slope_ppm_per_q": 18209034.939248282,
+          "delta": 0.05,
+          "pass_q_locality": false,
+          "slope_ppm_per_q": -18209034.939248282
+        }
+      ]
+    },
+    {
+      "all_pass_q_locality": false,
+      "description": "Vol\u00b7exp(\u2212\u210f_q)",
+      "gap_target_minus_family_a_ppm_at_q0": -990844.1590414026,
+      "geom_leading_at_q0": 6.637992073453463,
+      "lw_family_a_at_q0": 2.5326215619957346,
+      "lw_target_at_q0": 276.61266435800167,
+      "m_p_pred_MeV_with_family_a_lw": 8.590670015083996,
+      "max_abs_slope_ppm_per_q": 88513321.32071736,
+      "name": "v5_exp",
+      "relative_error_pct": -99.08441590414026,
+      "slopes": [
+        {
+          "abs_slope_ppm_per_q": 88469442.77439046,
+          "delta": 0.001,
+          "pass_q_locality": false,
+          "slope_ppm_per_q": -88469442.77439046
+        },
+        {
+          "abs_slope_ppm_per_q": 88471182.34461673,
+          "delta": 0.01,
+          "pass_q_locality": false,
+          "slope_ppm_per_q": -88471182.34461673
+        },
+        {
+          "abs_slope_ppm_per_q": 88513321.32071736,
+          "delta": 0.05,
+          "pass_q_locality": false,
+          "slope_ppm_per_q": -88513321.32071736
+        }
+      ]
+    },
+    {
+      "all_pass_q_locality": false,
+      "description": "Vol/(\u2212log(q))\u00b2",
+      "gap_target_minus_family_a_ppm_at_q0": -67143.00224335399,
+      "geom_leading_at_q0": 676.3220751404195,
+      "lw_family_a_at_q0": 2.5326215619957346,
+      "lw_target_at_q0": 2.7149086817017354,
+      "m_p_pred_MeV_with_family_a_lw": 875.2736832397967,
+      "max_abs_slope_ppm_per_q": 18337112.101018958,
+      "name": "v6_log",
+      "relative_error_pct": -6.714300224335399,
+      "slopes": [
+        {
+          "abs_slope_ppm_per_q": 18337112.101018958,
+          "delta": 0.001,
+          "pass_q_locality": false,
+          "slope_ppm_per_q": -18337112.101018958
+        },
+        {
+          "abs_slope_ppm_per_q": 18330510.899137076,
+          "delta": 0.01,
+          "pass_q_locality": false,
+          "slope_ppm_per_q": -18330510.899137076
+        },
+        {
+          "abs_slope_ppm_per_q": 18170207.243552197,
+          "delta": 0.05,
+          "pass_q_locality": false,
+          "slope_ppm_per_q": -18170207.243552197
+        }
+      ]
+    }
+  ]
+}

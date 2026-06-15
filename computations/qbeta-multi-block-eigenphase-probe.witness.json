@@ -1,0 +1,73 @@
+{
+  "engine": "python+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-09T03:34:03.898117+00:00",
+  "commitSha": "15377a21b5fb742175d2b26f345c0f9cb4bd81fe",
+  "assertions": [
+    {
+      "name": "q0_stability_test_completed",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.0,
+      "source": "probe completes regardless of pass/fail; discipline lock applied"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 11,
+  "computation": "qbeta-multi-block-eigenphase-probe",
+  "scriptFile": "qbeta_multi_block_eigenphase_probe.py",
+  "scriptHash": "4b68821825e7",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Q_β bridge experiment #3: multi-block eigenphase weighted by fundamental-rep quantum dimensions (informed by PR #1521's fundamental-rep lesson). Tests q₀-stability across canonical and stale q₀ pins. Discipline lock: q₀-drift > 0.01% rules the mechanism OUT (same criterion as the 6 prior bridge mechanisms).",
+  "contentBlock": "prop:q-beta-categorical-precision-ladder",
+  "data": {
+    "pins": {
+      "canonical_mp_pin_q0": "1.1099785827513808075916690956107688798744991218736",
+      "stale_muon_pin_q0": "1.10997859555418057528159407960950937799328227995870"
+    },
+    "fundamental_rep_decomposition": {
+      "dim_qFR_block": {
+        "(3)": "1.0",
+        "(2,1)": "2.01089686670712229975249197809",
+        "(1,1,1)": "1.0"
+      },
+      "Z_q_normaliser": "4.01089686670712229975249197809",
+      "alpha_block_LO_canonical": {
+        "(3)": "-0.219957165502761615183338191222",
+        "(2,1)": "-0.109978582751380807591669095611",
+        "(1,1,1)": "-0.219957165502761615183338191222"
+      },
+      "alpha_eff_LO_canonical": "-0.164818478368877121962398066443",
+      "alpha_eff_LO_stale": "-0.164818497522715490091453961383"
+    },
+    "residuals": {
+      "Q_codata_MeV": "0.78233341",
+      "Q_A_MeV": "0.783645826316467066",
+      "Q_bridge_canonical_MeV": "0.773025979109133288",
+      "Q_bridge_stale_MeV": "0.77302595349298731",
+      "err_canonical_ppb": "-11897013.1812",
+      "err_stale_ppb": "-11897045.9245",
+      "q0_drift_pct": 0.0002752225214249148
+    },
+    "verdict": {
+      "classification": "open (q₀-stable but not Taylor-exact)",
+      "q0_stable": true,
+      "taylor_exact_at_canonical": false,
+      "production_action": "Q_β stays at Q_N2 (1279 ppb)"
+    }
+  }
+}

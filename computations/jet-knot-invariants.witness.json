@@ -1,0 +1,379 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.12.3",
+  "computedAt": "2026-06-02T16:58:57.419246+00:00",
+  "commitSha": "77f2b68af2c9d52ae3d55c1cea746e8e9977db80",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 9,
+  "computation": "jet-knot-invariants",
+  "scriptFile": "jet_knot_invariants.py",
+  "scriptHash": "94c4dd4ada0d",
+  "scriptCommitSha": "5a44813463430491fdc8cd8cd5a97a404b5e7e9d",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.12.3",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Per-level knot invariants from jet-filtered branching. At each k, the nuclear braid's H₃ characters are weighted by the Wedderburn structure of H_k. Key finding: a_k converges by k=4 (topology-independent beyond k=3). For Z=N even-even: a_k = V_inter/(1+W_STD). Stable ratio ≈ W_STD.",
+  "contentBlock": "prop:confined-knot-binding",
+  "parameters": {
+    "q": 1.1099785827513808,
+    "W_STD": 0.6690772299327864,
+    "1_plus_W_STD": 1.6690772299327863
+  },
+  "data": {
+    "³H": {
+      "levels": [
+        {
+          "k": 3,
+          "a_k": 0.09667558,
+          "chi_weighted": 0.15933238,
+          "dim_weighted": 1.648114
+        },
+        {
+          "k": 4,
+          "a_k": 0.06814093,
+          "chi_weighted": 0.17862628,
+          "dim_weighted": 2.62142429
+        },
+        {
+          "k": 5,
+          "a_k": 0.06749596,
+          "chi_weighted": 0.32989506,
+          "dim_weighted": 4.88762659
+        },
+        {
+          "k": 6,
+          "a_k": 0.06839145,
+          "chi_weighted": 0.761843,
+          "dim_weighted": 11.13944754
+        },
+        {
+          "k": 7,
+          "a_k": 0.06591637,
+          "chi_weighted": 1.73449114,
+          "dim_weighted": 26.31351025
+        },
+        {
+          "k": 8,
+          "a_k": 0.06483493,
+          "chi_weighted": 4.30059931,
+          "dim_weighted": 66.33152037
+        }
+      ],
+      "sp": 0.9107622145530744,
+      "V_std": 0.29343157679688703,
+      "ap": -1.122106821602472
+    },
+    "³He": {
+      "levels": [
+        {
+          "k": 3,
+          "a_k": 0.22329921,
+          "chi_weighted": 0.36802255,
+          "dim_weighted": 1.648114
+        },
+        {
+          "k": 4,
+          "a_k": 0.20671172,
+          "chi_weighted": 0.54187912,
+          "dim_weighted": 2.62142429
+        },
+        {
+          "k": 5,
+          "a_k": 0.20633679,
+          "chi_weighted": 1.0084972,
+          "dim_weighted": 4.88762659
+        },
+        {
+          "k": 6,
+          "a_k": 0.20685735,
+          "chi_weighted": 2.30427662,
+          "dim_weighted": 11.13944754
+        },
+        {
+          "k": 7,
+          "a_k": 0.20541856,
+          "chi_weighted": 5.40528344,
+          "dim_weighted": 26.31351025
+        },
+        {
+          "k": 8,
+          "a_k": 0.20478991,
+          "chi_weighted": 13.58402589,
+          "dim_weighted": 66.33152037
+        }
+      ],
+      "sp": 1.122106821602472,
+      "V_std": 0.5047761838462848,
+      "ap": -0.9107622145530744
+    },
+    "⁴He": {
+      "levels": [
+        {
+          "k": 3,
+          "a_k": 0.61229791,
+          "chi_weighted": 1.00913675,
+          "dim_weighted": 1.648114
+        },
+        {
+          "k": 4,
+          "a_k": 0.67006932,
+          "chi_weighted": 1.756536,
+          "dim_weighted": 2.62142429
+        },
+        {
+          "k": 5,
+          "a_k": 0.67137512,
+          "chi_weighted": 3.28143089,
+          "dim_weighted": 4.88762659
+        },
+        {
+          "k": 6,
+          "a_k": 0.66956211,
+          "chi_weighted": 7.45855195,
+          "dim_weighted": 11.13944754
+        },
+        {
+          "k": 7,
+          "a_k": 0.67457317,
+          "chi_weighted": 17.75038791,
+          "dim_weighted": 26.31351025
+        },
+        {
+          "k": 8,
+          "a_k": 0.67676267,
+          "chi_weighted": 44.8906965,
+          "dim_weighted": 66.33152037
+        }
+      ],
+      "sp": 1.021972493807779,
+      "V_std": 1.021972493807779,
+      "ap": 1.021972493807779
+    },
+    "⁶Li": {
+      "levels": [
+        {
+          "k": 3,
+          "a_k": 0.16528924,
+          "chi_weighted": 0.27241551,
+          "dim_weighted": 1.648114
+        },
+        {
+          "k": 4,
+          "a_k": 0.14198051,
+          "chi_weighted": 0.37219116,
+          "dim_weighted": 2.62142429
+        },
+        {
+          "k": 5,
+          "a_k": 0.14145367,
+          "chi_weighted": 0.69137271,
+          "dim_weighted": 4.88762659
+        },
+        {
+          "k": 6,
+          "a_k": 0.14218515,
+          "chi_weighted": 1.58386407,
+          "dim_weighted": 11.13944754
+        },
+        {
+          "k": 7,
+          "a_k": 0.14016337,
+          "chi_weighted": 3.68819025,
+          "dim_weighted": 26.31351025
+        },
+        {
+          "k": 8,
+          "a_k": 0.13927998,
+          "chi_weighted": 9.23865305,
+          "dim_weighted": 66.33152037
+        }
+      ],
+      "sp": 1.050118273241275,
+      "V_std": 0.41232983551147767,
+      "ap": -1.050118273241275
+    },
+    "⁷Li": {
+      "levels": [
+        {
+          "k": 3,
+          "a_k": -0.02715907,
+          "chi_weighted": -0.04476124,
+          "dim_weighted": 1.648114
+        },
+        {
+          "k": 4,
+          "a_k": -0.07121817,
+          "chi_weighted": -0.18669305,
+          "dim_weighted": 2.62142429
+        },
+        {
+          "k": 5,
+          "a_k": -0.07221403,
+          "chi_weighted": -0.35295522,
+          "dim_weighted": 4.88762659
+        },
+        {
+          "k": 6,
+          "a_k": -0.07083134,
+          "chi_weighted": -0.78902204,
+          "dim_weighted": 11.13944754
+        },
+        {
+          "k": 7,
+          "a_k": -0.07465301,
+          "chi_weighted": -1.96438264,
+          "dim_weighted": 26.31351025
+        },
+        {
+          "k": 8,
+          "a_k": -0.07632282,
+          "chi_weighted": -5.06260852,
+          "dim_weighted": 66.33152037
+        }
+      ],
+      "sp": 0.780501646918268,
+      "V_std": 0.10021160205638818,
+      "ap": -1.4596926399409738
+    },
+    "⁹Be": {
+      "levels": [
+        {
+          "k": 3,
+          "a_k": 0.65155501,
+          "chi_weighted": 1.07383694,
+          "dim_weighted": 1.648114
+        },
+        {
+          "k": 4,
+          "a_k": 0.73077241,
+          "chi_weighted": 1.91566454,
+          "dim_weighted": 2.62142429
+        },
+        {
+          "k": 5,
+          "a_k": 0.73256295,
+          "chi_weighted": 3.58049413,
+          "dim_weighted": 4.88762659
+        },
+        {
+          "k": 6,
+          "a_k": 0.7300769,
+          "chi_weighted": 8.13265334,
+          "dim_weighted": 11.13944754
+        },
+        {
+          "k": 7,
+          "a_k": 0.73694817,
+          "chi_weighted": 19.39169332,
+          "dim_weighted": 26.31351025
+        },
+        {
+          "k": 8,
+          "a_k": 0.73995046,
+          "chi_weighted": 49.08203911,
+          "dim_weighted": 66.33152037
+        }
+      ],
+      "sp": 0.7344084053165771,
+      "V_std": 1.0252686022523705,
+      "ap": 1.6922106785846052
+    },
+    "¹²C": {
+      "levels": [
+        {
+          "k": 3,
+          "a_k": 0.72857863,
+          "chi_weighted": 1.20078065,
+          "dim_weighted": 1.648114
+        },
+        {
+          "k": 4,
+          "a_k": 0.79732135,
+          "chi_weighted": 2.09011755,
+          "dim_weighted": 2.62142429
+        },
+        {
+          "k": 5,
+          "a_k": 0.79887513,
+          "chi_weighted": 3.90460331,
+          "dim_weighted": 4.88762659
+        },
+        {
+          "k": 6,
+          "a_k": 0.7967178,
+          "chi_weighted": 8.87499619,
+          "dim_weighted": 11.13944754
+        },
+        {
+          "k": 7,
+          "a_k": 0.80268051,
+          "chi_weighted": 21.12134179,
+          "dim_weighted": 26.31351025
+        },
+        {
+          "k": 8,
+          "a_k": 0.80528581,
+          "chi_weighted": 53.4158323,
+          "dim_weighted": 66.33152037
+        }
+      ],
+      "sp": 1.2160540067849948,
+      "V_std": 1.2160540067849948,
+      "ap": 1.2160540067849945
+    },
+    "¹⁶O": {
+      "levels": [
+        {
+          "k": 3,
+          "a_k": 0.84830276,
+          "chi_weighted": 1.39809966,
+          "dim_weighted": 1.648114
+        },
+        {
+          "k": 4,
+          "a_k": 0.92834166,
+          "chi_weighted": 2.43357738,
+          "dim_weighted": 2.62142429
+        },
+        {
+          "k": 5,
+          "a_k": 0.93015077,
+          "chi_weighted": 4.54622962,
+          "dim_weighted": 4.88762659
+        },
+        {
+          "k": 6,
+          "a_k": 0.92763894,
+          "chi_weighted": 10.33338532,
+          "dim_weighted": 11.13944754
+        },
+        {
+          "k": 7,
+          "a_k": 0.93458147,
+          "chi_weighted": 24.5921191,
+          "dim_weighted": 26.31351025
+        },
+        {
+          "k": 8,
+          "a_k": 0.93761489,
+          "chi_weighted": 62.19342137,
+          "dim_weighted": 66.33152037
+        }
+      ],
+      "sp": 1.41588281968951,
+      "V_std": 1.4158828196895106,
+      "ap": 1.4158828196895106
+    }
+  }
+}

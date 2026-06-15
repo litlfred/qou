@@ -1,0 +1,37 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-05-11T21:31:00.552600+00:00",
+  "commitSha": "d1d1893fbc07a9b4f1a7667bda88420333db5a4d",
+  "assertions": [
+    {
+      "name": "canonical_he4_tr_M_agrees_with_disjoint_at_float64",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 1558,
+  "computation": "tr-m-he4-canonical",
+  "scriptFile": "probe_tr_m_he4_canonical.py",
+  "scriptHash": "ba921f9fc53a",
+  "scriptCommitSha": "f6ad68e027dd44df2eb9b5ff5d4a7054263f8483",
+  "description": "Canonical |tr_M(β_⁴He)| computed via markov_peel.tr_M_atomic(2, 2) — the recursive symbolic Markov-axiom ascent that uses Gröbner-Shirshov reduction + Markov-peel without building Hoefsmit seminormal matrices at H_12.  Replaces the deprecated disjoint-word value in chi-helium-4-h12-numeric.witness.json (which used tr_M(α⊗β) = tr_M(α)·tr_M(β) — invalid for atomic braids with σ_{3k} inter-nucleon interfaces per PR #564 hecke-branching-trace-decomposition.md).  Symbolic result returned in sympy; evaluated at q_0 with mpmath 50dps.  NO FLOAT64 in the pipeline.",
+  "contentBlock": "conj:brane-tower-z-habiro",
+  "parameters": {
+    "mp_dps": 50,
+    "q_0_symbolic": "2219957191108361/2000000000000000"
+  },
+  "data": {
+    "results": {
+      "tr_M_he4_symbolic": "(q**38/512 - q**36/256 + q**34/512 - q**22/256 + q**20/128 - q**18/128 + q**16/128 - q**14/256 + q**6/512 - q**4/256 + 5*q**2/512 - 1/64 + 5/(512*q**2) - 1/(256*q**4) + 1/(512*q**6) - 1/(256*q**14) + 1/(128*q**16) - 1/(128*q**18) + 1/(128*q**20) - 1/(256*q**22) + 1/(512*q**34) - 1/(256*q**36) + 1/(512*q**38))/(sqrt(q) + 1/sqrt(q)) + (-q**37/256 + q**35/256 + q**21/128 - q**19/128 + q**17/128 - q**15/128 - q**5/256 + q**3/256 - q/64 + 1/(64*q) - 1/(256*q**3) + 1/(256*q**5) + 1/(128*q**15) - 1/(128*q**17) + 1/(128*q**19) - 1/(128*q**21) - 1/(256*q**35) + 1/(256*q**37))/(sqrt(q) + 1/sqrt(q))**2 + (-q**37/512 + q**35/512 + q**21/256 - q**19/256 + q**17/256 - q**15/256 - q**5/512 + q**3/512 - q/128 + 1/(128*q) - 1/(512*q**3) + 1/(512*q**5) + 1/(256*q**15) - 1/(256*q**17) + 1/(256*q**19) - 1/(256*q**21) - 1/(512*q**35) + 1/(512*q**37))/(sqrt(q) + 1/sqrt(q))**2 + 2*(-q**37/512 + q**35/256 - q**33/512 + q**29/512 - q**27/512 - q**25/512 + q**23/512 + q**21/256 - 5*q**19/512 + 5*q**17/512 - 3*q**15/512 - q**13/512 + q**11/256 + q**9/512 - q**7/512 + 3*q**3/512 - 7*q/512 + 7/(512*q) - 3/(512*q**3) + 1/(512*q**7) - 1/(512*q**9) - 1/(256*q**11) + 1/(512*q**13) + 3/(512*q**15) - 5/(512*q**17) + 5/(512*q**19) - 1/(256*q**21) - 1/(512*q**23) + 1/(512*q**25) + 1/(512*q**27) - 1/(512*q**29) + 1/(512*q**33) - 1/(256*q**35) + 1/(512*q**37))/(sqrt(q) + 1/sqrt(q))**2 + 2*(q**39/512 - q**37/256 + q**35/512 + q**29/512 - q**27/512 - q**25/512 - q**23/512 + q**21/128 - 3*q**19/512 + 3*q**17/512 - 3*q**15/512 - q**13/512 + q**11/256 + q**9/512 - q**5/512 + q**3/256 - 3*q/256 + 3/(256*q) - 1/(256*q**3) + 1/(512*q**5) - 1/(512*q**9) - 1/(256*q**11) + 1/(512*q**13) + 3/(512*q**15) - 3/(512*q**17) + 3/(512*q**19) - 1/(128*q**21) + 1/(512*q**23) + 1/(512*q**25) + 1/(512*q**27) - 1/(512*q**29) - 1/(512*q**35) + 1/(256*q**37) - 1/(512*q**39))/(sqrt(q) + 1/sqrt(q))**2 + 2*(-q**37/512 + q**35/256 - q**33/512 + q**31/512 - q**29/512 - q**27/512 + q**25/512 - q**23/512 + 3*q**21/512 - 3*q**19/512 + 3*",
+      "tr_M_he4_at_q0_50dps": "0.055348345876697985118410317374226585126529021708268",
+      "abs_tr_M_he4_at_q0_50dps": "0.055348345876697985118410317374226585126529021708268",
+      "deprecated_disjoint_value": "0.05534834587669884",
+      "abs_delta_canonical_minus_deprecated": "8.5488158968262577341487347097829173201471756961903e-16",
+      "relative_difference": 1.544547675529583e-14,
+      "compute_seconds": 10.205072164535522
+    }
+  }
+}

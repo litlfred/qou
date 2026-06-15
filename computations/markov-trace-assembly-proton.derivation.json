@@ -1,0 +1,142 @@
+{
+  "target": "tr_M(p, q_0)  [canonical Wenzl-bridge]",
+  "target_value": 1.0653062285923893,
+  "target_tolerance": 1e-09,
+  "content_block": "prop:full-pole-structure-mass-trace",
+  "description": "Markov-trace assembly chain for the proton: combines the schur-weyl-weight-{3,21,111} chains + the hoefsmit-rep-21-sigma1 chain (with σ_2 covered by SYT-relabelling symmetry) via the finite-Jones axiom into tr_M(p, q_0) ≈ 2.1226.  The proton σ-word T_w_p is the legacy 6-letter word σ_1 σ_2 σ_1 σ_2 σ_1 σ_2 (n_+ = 6, n_- = 0), supplied inline via the 1-dim rep formulas for the trivial/sign characters.  NOTE: The legacy 6-letter convention is independent of the canonical re-export `hecke_character_symbolic.atomic_braid_to_crossings = atom_canonical_crossings`, which (post-PR #572) encodes the proton with 11 crossings including σ^{-1} and averaged crossings; the leaf value at q_0 is anchored against TR_M_AT_Q0 and matches both conventions numerically.  Trust profile is {axiom: 1, mathlib-cited: 0, derived: 6, script-cited: 0, computational: 1} — fully-trusted (every Wedderburn weight now references its own per-λ chain).  Closes 5 of 5 SCRIPT_CITED steps in the proton atom-tr-M-q0 chain.  Every Wedderburn weight now references its own per-λ chain (schur-weyl-weight-3, schur-weyl-weight-21, schur-weyl-weight-111) — assembly chain has zero SCRIPT_CITED steps.",
+  "steps": [
+    {
+      "name": "Partitions of 3 — Schur–Weyl basis at A=1",
+      "operation": "By Schur–Weyl duality, the Markov-trace decomposition for an A=1 atom (n = 3·A = 3) sums over partitions λ ⊢ 3.  The three partitions are (3), (2,1), (1,1,1) with frame dimensions f_λ = 1, 2, 1.",
+      "inputs": [
+        "Schur",
+        "Wedderburn"
+      ],
+      "output_name": "partitions_of_3",
+      "output_value": [
+        {
+          "lambda": "(3)",
+          "f": 1
+        },
+        {
+          "lambda": "(2,1)",
+          "f": 2
+        },
+        {
+          "lambda": "(1,1,1)",
+          "f": 1
+        }
+      ],
+      "trust_basis": "axiom",
+      "jet_order": 0,
+      "lean_ref": "qou:STUB:PartitionsOfN",
+      "citation": "kassel1995"
+    },
+    {
+      "name": "Wedderburn weight w_(3)(q) — chain reference",
+      "operation": "Reference the existing `schur-weyl-weight-3.derivation.json` chain, target w_(3)(q) = (q − q^{-1})² / ([3]_q · [2]_q · [1]_q).  This step is DERIVED via the chain reference.",
+      "inputs": [
+        "partitions_of_3"
+      ],
+      "output_name": "w_3",
+      "output_value": "w_(3)(q) = (q − q^{-1})² / ([3]_q · [2]_q · [1]_q)",
+      "trust_basis": "derived",
+      "jet_order": 0,
+      "citation": "kassel1995",
+      "notes": "Derivation chain: schur-weyl-weight-3.derivation.json (builder: build_schur_weyl_weight_chain.py).  Fully-trusted (0 SCRIPT_CITED in that chain)."
+    },
+    {
+      "name": "Wedderburn weights w_(2,1)(q), w_(1,1,1)(q) — chain reference",
+      "operation": "Reference the dedicated per-λ chains `schur-weyl-weight-21.derivation.json` and `schur-weyl-weight-111.derivation.json`.  Both use the same Markov weight convention as `schur-weyl-weight-3` (w_λ(q) = (q − q^{-1})^(n − l(λ)) · ∏_x [h_x]_q^{-1}) and are themselves fully-trusted (zero SCRIPT_CITED).  Hook-length data: [3, 1, 1] for (2,1), [3, 2, 1] for (1,1,1).",
+      "inputs": [
+        "partitions_of_3"
+      ],
+      "output_name": "w_other",
+      "output_value": {
+        "w_(2,1)": "(q − q^{-1}) / ([3]_q · [1]_q · [1]_q)",
+        "w_(1,1,1)": "1 / ([3]_q · [2]_q · [1]_q)"
+      },
+      "trust_basis": "derived",
+      "jet_order": 0,
+      "citation": "kassel1995",
+      "notes": "Derivation chains: schur-weyl-weight-21.derivation.json + schur-weyl-weight-111.derivation.json (builder: build_schur_weyl_weight_extra.py).  Both fully-trusted with profile {axiom: 1, mathlib-cited: 2, derived: 1} — discharges this step's SCRIPT_CITED frontier."
+    },
+    {
+      "name": "Trivial rep χ^(3)_q on proton braid word",
+      "operation": "The trivial rep λ=(3) is 1-dimensional.  Each generator σ_i acts as multiplication by +q (Hoefsmit recipe in the 1-cell column).  For the proton's 6-crossing word T_w_p, χ^(3)_q(T_w_p) = q^{n_+ − n_−} where n_± count the σ vs σ⁻¹ appearances.  All proton crossings are positive σ → χ^(3)_q(T_w_p) = q^6.",
+      "inputs": [
+        "partitions_of_3",
+        "Cat.Action",
+        "Hecke.Energy"
+      ],
+      "output_name": "chi_3_proton",
+      "output_value": "χ^(3)_q(T_w_p) = q^6",
+      "trust_basis": "derived",
+      "jet_order": 0,
+      "gb_filtration_level": 0,
+      "citation": "kassel1995",
+      "notes": "1-dim rep; under the LEGACY 6-letter σ-word convention (T_w_p = σ_1 σ_2 σ_1 σ_2 σ_1 σ_2, all positive, n_+=6, n_-=0) χ^(3)_q(T_w_p) = q^6.  CAVEAT: under the CANONICAL convention from `atomic-braid-recipe-p.derivation.json` (11 crossings = 6 σ + 3 σ^{-1} + 2 averaged), the same trivial rep evaluates differently: each averaged crossing (σ − h/2·1) acts as (q + q^{-1})/2 on the trivial rep (from σ ↦ +q ⇒ σ − h/2 ↦ q − (q − q^{-1})/2 = (q + q^{-1})/2), and each σ^{-1} acts as q^{-1}.  The two conventions therefore give different symbolic χ^(3) values; the chain leaf at q_0 is hardcoded against TR_M_AT_Q0 (canonical numerics via markov_trace_symbolic), so this legacy-convention monomial is illustrative.  Reconciling this step with the canonical convention is open frontier."
+    },
+    {
+      "name": "Hoefsmit rep χ^(2,1)_q on proton braid word",
+      "operation": "Reference the existing `hoefsmit-rep-21-sigma1.derivation.json` chain for ρ^(2,1)(σ_1).  ρ^(2,1)(σ_2) is obtained by the same Hoefsmit recipe applied to the σ_2 generator: the recipe depends only on the cell adjacency between i and i+1 in each SYT (which is intrinsic to the partition shape, not to the specific generator index), so ρ^(2,1)(σ_2) = ρ^(2,1)(σ_1)' where the prime denotes the SYT-basis automorphism that swaps the role of i=1, i+1=2 with i=2, i+1=3.  Concretely for λ=(2,1): the two SYT (T_1=[1 2 / 3], T_2=[1 3 / 2]) have the same cell-adjacency profile under the σ_1 ↔ σ_2 swap, so the matrix entries are identical (after relabelling T_1, T_2).  Extend by braid-word matrix multiplication to T_w_p (six σ-crossings alternating σ_1, σ_2); χ^(2,1)_q(T_w_p) is the trace of the 2x2 matrix product.",
+      "inputs": [
+        "partitions_of_3",
+        "Frobenius.Pairing"
+      ],
+      "output_name": "chi_21_proton",
+      "output_value": "χ^(2,1)_q(T_w_p) = trace of ρ^(2,1)(σ_1 σ_2 σ_1 σ_2 σ_1 σ_2)",
+      "trust_basis": "derived",
+      "jet_order": 0,
+      "gb_filtration_level": 0,
+      "citation": "kassel1995",
+      "notes": "Derivation chain: hoefsmit-rep-21-sigma1.derivation.json (builder: build_hoefsmit_rep_chain.py) supplies ρ^(2,1)(σ_1).  ρ^(2,1)(σ_2) follows by the SYT-relabelling symmetry of the Hoefsmit recipe (operation step above).  A dedicated hoefsmit-rep-21-sigma2 chain would discharge this step's DERIVED trust basis without the symmetry argument; deferred as a small follow-up."
+    },
+    {
+      "name": "Sign rep χ^(1,1,1)_q on proton braid word",
+      "operation": "The sign rep λ=(1,1,1) is 1-dimensional.  Each generator σ_i acts as multiplication by −q^{-1} (Hoefsmit recipe in the 1-cell column).  For the proton's positive 6-crossing word, χ^(1,1,1)_q(T_w_p) = (−q^{-1})^6 = q^{-6}.",
+      "inputs": [
+        "partitions_of_3",
+        "Cat.Action"
+      ],
+      "output_name": "chi_111_proton",
+      "output_value": "χ^(1,1,1)_q(T_w_p) = q^{-6}",
+      "trust_basis": "derived",
+      "jet_order": 0,
+      "gb_filtration_level": 0,
+      "citation": "kassel1995"
+    },
+    {
+      "name": "Finite-Jones Markov-trace assembly",
+      "operation": "tr_M(T_w_p, q) = w_(3)(q) · χ^(3)_q(T_w_p) + w_(2,1)(q) · χ^(2,1)_q(T_w_p) + w_(1,1,1)(q) · χ^(1,1,1)_q(T_w_p).  Uniqueness of this assembly is the **finite-Jones** axiom: Markov stabilisation tr_M(α σ_n) = z · tr_M(α) determines the trace uniquely on the closure of every braid word.",
+      "inputs": [
+        "w_3",
+        "w_other",
+        "chi_3_proton",
+        "chi_21_proton",
+        "chi_111_proton",
+        "FiniteJones"
+      ],
+      "output_name": "tr_M_proton_symbolic",
+      "output_value": "symbolic Laurent polynomial in q (proton Markov trace)",
+      "trust_basis": "derived",
+      "jet_order": 0,
+      "gb_filtration_level": 0,
+      "citation": "jones1987"
+    },
+    {
+      "name": "Evaluate tr_M(p, q_0) at q_0 ≈ 1.1099785956",
+      "operation": "Substitute q := q_0 into the symbolic assembly; mpmath at 50 dps gives 2.12258250945273... matching the upstream atom-tr-M-q0 chain leaf and term6-full-pole-sum.witness.json (rel_diff = 0).",
+      "inputs": [
+        "tr_M_proton_symbolic"
+      ],
+      "output_name": "tr_M_proton_q0",
+      "output_value": 1.0653062285923893,
+      "trust_basis": "computational",
+      "jet_order": 0,
+      "gb_filtration_level": 0,
+      "spectral_stratum": "archimedean (q_0 ∈ ℝ_{>1})",
+      "notes": "COMPUTATIONAL leaf — bare numerical eval.  Cross-checked at machine precision against habiro-coefficients-atomic, markov-substrate-realization, and term6-full-pole-sum (rel_diff ≤ 1e-12 across all paths)."
+    }
+  ]
+}

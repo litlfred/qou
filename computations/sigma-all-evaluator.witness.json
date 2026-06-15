@@ -1,0 +1,211 @@
+{
+  "computedAt": "2026-05-03T10:30:54.364049+00:00",
+  "computation": "sigma-all-evaluator",
+  "description": "Reference table + precision schedule for the Σ_all closed-form evaluator (sigma_all_evaluator.py). Replaces raw 4^A configuration-sum routes in the β-decay / binding-energy pipeline with a constant-time, cancellation-free evaluator. Closed form verified for A=1..6 in sigma_all_symbolic_decay.py and documented in docs/audits/2026-05-02-nv-frob-filter-conjectures.md lines 683-769.",
+  "auditOnly": "docs/audits/2026-05-03-frob-filter-evaluator-wired.md",
+  "q_parameter": {
+    "q_at_q0": "1.1099785955541805752815940796095093779932822799587",
+    "q_at_q0_f64": 1.1099785955541805,
+    "vol_4_1": "2.02988321281930725004240510855",
+    "mu_over_e": "206.7682830",
+    "dps_used": 60
+  },
+  "closed_form": {
+    "formula": "Σ_all(A) = (-1)^{A-1} · 3^{floor(A/2)} / 2^{a(A)} · (q-1)^A · (q+1)^A · (q^2+1)^{2 floor(A/2)} · (3 q^4 + 4 q^2 + 3) / q^{d(A)}",
+    "a_exponent_rule": "a(A) = (3A+1)/2 if A odd, (3A+2)/2 if A even",
+    "d_exponent_rule": "d(A) = 2A+1 if A odd, 2A+2 if A even",
+    "two_step_ratio": "Σ_all(A+2) / Σ_all(A) = 3 (q^4-1)^2 / (8 q^4)",
+    "two_step_ratio_at_q0": "0.0662756649127730464989480132356",
+    "two_step_ratio_at_q0_f64": 0.06627566491277305
+  },
+  "decay_rate": {
+    "gamma_q0_natural_log": 1.356966247112029,
+    "log10_per_A_decay": -0.5893229532497186,
+    "per_A_geometric_decay_factor": 0.2574406046309965,
+    "audit_reference_value": 1.357
+  },
+  "reference_table_A_1_to_10": [
+    {
+      "A": 1,
+      "a_exp": 2,
+      "d_exp": 3,
+      "sigma_all_at_q0": "0.529503732016871748793519713006",
+      "sigma_all_at_q0_f64": 0.5295037320168717,
+      "ratio_to_A1": "1.00000000000000000000000000000",
+      "ratio_to_A1_f64": 1,
+      "log10_abs": -0.27613097457704017,
+      "precision_digits_required_for_raw_sum": 1
+    },
+    {
+      "A": 2,
+      "a_exp": 4,
+      "d_exp": 6,
+      "sigma_all_at_q0": "-0.335723312574940158962733067979",
+      "sigma_all_at_q0_f64": -0.33572331257494015,
+      "ratio_to_A1": "-0.634033893011811479344323924155",
+      "ratio_to_A1_f64": -0.6340338930118115,
+      "log10_abs": -0.47401850036317406,
+      "precision_digits_required_for_raw_sum": 2
+    },
+    {
+      "A": 3,
+      "a_exp": 5,
+      "d_exp": 7,
+      "sigma_all_at_q0": "0.0350932119132129689597343025048",
+      "sigma_all_at_q0_f64": 0.03509321191321297,
+      "ratio_to_A1": "0.0662756649127730464989480132356",
+      "ratio_to_A1_f64": 0.06627566491277305,
+      "log10_abs": -1.4547768810764774,
+      "precision_digits_required_for_raw_sum": 2
+    },
+    {
+      "A": 4,
+      "a_exp": 7,
+      "d_exp": 10,
+      "sigma_all_at_q0": "-0.0222502857676228995952673973053",
+      "sigma_all_at_q0_f64": -0.0222502857676229,
+      "ratio_to_A1": "-0.0420210178365918137443465819256",
+      "ratio_to_A1_f64": -0.04202101783659181,
+      "log10_abs": -1.6526644068626113,
+      "precision_digits_required_for_raw_sum": 3
+    },
+    {
+      "A": 5,
+      "a_exp": 8,
+      "d_exp": 11,
+      "sigma_all_at_q0": "0.00232582595347303784067435784831",
+      "sigma_all_at_q0_f64": 0.002325825953473038,
+      "ratio_to_A1": "0.00439246375963017630919594417231",
+      "ratio_to_A1_f64": 0.0043924637596301766,
+      "log10_abs": -2.6334227875759146,
+      "precision_digits_required_for_raw_sum": 3
+    },
+    {
+      "A": 6,
+      "a_exp": 10,
+      "d_exp": 14,
+      "sigma_all_at_q0": "-0.00147465248374841849786701613456",
+      "sigma_all_at_q0_f64": -0.0014746524837484184,
+      "ratio_to_A1": "-0.00278497089743161842056343941704",
+      "ratio_to_A1_f64": -0.0027849708974316185,
+      "log10_abs": -2.8313103133620485,
+      "precision_digits_required_for_raw_sum": 4
+    },
+    {
+      "A": 7,
+      "a_exp": 11,
+      "d_exp": 15,
+      "sigma_all_at_q0": "0.000154145661537809930165724541493",
+      "sigma_all_at_q0_f64": 0.00015414566153780992,
+      "ratio_to_A1": "0.000291113456274748856842889435465",
+      "ratio_to_A1_f64": 0.00029111345627474885,
+      "log10_abs": -3.812068694075352,
+      "precision_digits_required_for_raw_sum": 5
+    },
+    {
+      "A": 8,
+      "a_exp": 13,
+      "d_exp": 18,
+      "sigma_all_at_q0": "-0.0000977335738756986850143034549770",
+      "sigma_all_at_q0_f64": -9.773357387569868e-05,
+      "ratio_to_A1": "-0.000184575797990002775877040820128",
+      "ratio_to_A1_f64": -0.00018457579799000277,
+      "log10_abs": -4.009956219861485,
+      "precision_digits_required_for_raw_sum": 5
+    },
+    {
+      "A": 9,
+      "a_exp": 14,
+      "d_exp": 19,
+      "sigma_all_at_q0": "0.0000102161062118376193139895097282",
+      "sigma_all_at_q0_f64": 1.0216106211837619e-05,
+      "ratio_to_A1": "0.0000192937378796644632812442485940",
+      "ratio_to_A1_f64": 1.9293737879664464e-05,
+      "log10_abs": -4.990714600574789,
+      "precision_digits_required_for_raw_sum": 6
+    },
+    {
+      "A": 10,
+      "a_exp": 16,
+      "d_exp": 22,
+      "sigma_all_at_q0": "-0.00000647735759291355578500129758648",
+      "sigma_all_at_q0_f64": -6.477357592913556e-06,
+      "ratio_to_A1": "-0.0000122328837385931127744033016933",
+      "ratio_to_A1_f64": -1.2232883738593112e-05,
+      "log10_abs": -5.188602126360923,
+      "precision_digits_required_for_raw_sum": 6
+    }
+  ],
+  "precision_schedule_for_raw_config_sum": [
+    {
+      "precision_label": "f64",
+      "log10_floor": -16,
+      "max_A_safe_for_raw_sum": 27
+    },
+    {
+      "precision_label": "25 dps",
+      "log10_floor": -25,
+      "max_A_safe_for_raw_sum": 42
+    },
+    {
+      "precision_label": "50 dps",
+      "log10_floor": -50,
+      "max_A_safe_for_raw_sum": 84
+    },
+    {
+      "precision_label": "100 dps",
+      "log10_floor": -100,
+      "max_A_safe_for_raw_sum": 169
+    },
+    {
+      "precision_label": "200 dps",
+      "log10_floor": -200,
+      "max_A_safe_for_raw_sum": 339
+    }
+  ],
+  "closed_form_precision_claim": "The closed-form evaluator has zero catastrophic cancellation (the (q-1)^A · (q+1)^A factors are extracted symbolically). Working precision = output precision, in O(log A) multiplications. Valid for any A ≥ 1 at any mpmath dps. Constant compute time per requested digit.",
+  "pipeline_callers_updated": [
+    {
+      "file": "folio-assistant/computations/full-derivation-verified.py",
+      "case": "A=1 free neutron",
+      "before": "char_sum_n = sum_p - sum_n",
+      "after": "char_sum_n = float(sigma_all_closed(1, mp.mpf(q0)))",
+      "approx_line": 263
+    },
+    {
+      "file": "folio-assistant/computations/full-derivation-verified.py",
+      "case": "A=3 tritium ³H→³He",
+      "before": "for config in cartesian(ch_names, repeat=3): total_3h += me_d - me_p",
+      "after": "total_3h = float(sigma_all_closed(3, mp.mpf(q0)))",
+      "approx_line": 277
+    },
+    {
+      "file": "folio-assistant/computations/full-derivation-verified.py",
+      "case": "A=6 ⁶He→⁶Li (Σ_all only; Σ_FP still enumerates)",
+      "before": "for config in cartesian(ch_names, repeat=6): total_6he_all += dme",
+      "after": "total_6he_all = float(sigma_all_closed(6, mp.mpf(q0)))",
+      "approx_line": 297
+    }
+  ],
+  "pipeline_callers_intentionally_unwired": [
+    {
+      "file": "folio-assistant/computations/frob_filter_cancellation_test.py",
+      "reason": "Test driver for the cancellation diagnostic itself — intentionally exercises the raw config-sum path so the f64 precision-budget crossover can be measured. Wiring this to the closed form would defeat the test."
+    },
+    {
+      "file": "folio-assistant/computations/sigma_all_symbolic_decay.py",
+      "reason": "The symbolic-derivation reference. Per task: do NOT modify; this is the source of truth for the closed form."
+    }
+  ],
+  "tests": {
+    "test_file": "folio-assistant/computations/test_sigma_all_evaluator.py",
+    "test_count": 11,
+    "all_passing_as_of": "2026-05-03T10:30:54.366398+00:00"
+  },
+  "evaluator_module": "folio-assistant/computations/sigma_all_evaluator.py",
+  "audit_doc_reference": "docs/audits/2026-05-02-nv-frob-filter-conjectures.md lines 683-769 (closed form + precision schedule)",
+  "memo_doc_reference": "docs/audits/2026-05-03-frob-filter-evaluator-wired.md (this wiring task)",
+  "engine": "python",
+  "scriptFile": "sigma_all_evaluator.py",
+  "commitSha": "610a6aa2bde5fabec35796ead6bbb0adb76f6533"
+}

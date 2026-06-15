@@ -1,0 +1,312 @@
+{
+  "engine": "python+sympy",
+  "engineVersion": "python 3.12.3",
+  "computedAt": "2026-06-01T13:37:01.714212+00:00",
+  "commitSha": "417e511ad96a7416b3b52d2f93704cd0eee0d8f7",
+  "assertions": [
+    {
+      "name": "cross_pair_quick_dp_completed",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "sympy.factor + sp.gcd on Δa_m for (n-p, D-p, D-n)."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 2963,
+  "computation": "qbeta-habiro-cross-pair-quick-dp",
+  "scriptFile": "qbeta_habiro_cross_pair_quick_dp.py",
+  "scriptHash": "994f8a14cb63",
+  "scriptCommitSha": "d43fbd274a795904571cf4d3bf46169150be7e49",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.12.3",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Quick partial cross-pair validation: factor Δa_m on (D - p), (D - n), (n - p) to compare with the n-p audit's cyclotomic prefactor pattern. Full ³He/⁴He extension deferred (auxiliary witnesses not yet generated).",
+  "contentBlock": "prop:neutron-qvalue-symbolic",
+  "data": {
+    "n_minus_p": {
+      "pair_name": "n - p (reference)",
+      "max_m": 8,
+      "per_m": [
+        {
+          "m": 0,
+          "delta": "0",
+          "factored": "0",
+          "is_zero": true,
+          "is_irreducible": false
+        },
+        {
+          "m": 1,
+          "delta": "10*check_q + 10",
+          "factored": "10*(check_q + 1)",
+          "is_zero": false,
+          "is_irreducible": false
+        },
+        {
+          "m": 2,
+          "delta": "-64*check_q**2 - 69*check_q - 73",
+          "factored": "-64*check_q**2 - 69*check_q - 73",
+          "is_zero": false,
+          "is_irreducible": true
+        },
+        {
+          "m": 3,
+          "delta": "131*check_q**3 + 143*check_q**2 + 160*check_q + 177",
+          "factored": "131*check_q**3 + 143*check_q**2 + 160*check_q + 177",
+          "is_zero": false,
+          "is_irreducible": true
+        },
+        {
+          "m": 4,
+          "delta": "-92*check_q**4 - 114*check_q**3 - 136*check_q**2 - 162*check_q - 189",
+          "factored": "-92*check_q**4 - 114*check_q**3 - 136*check_q**2 - 162*check_q - 189",
+          "is_zero": false,
+          "is_irreducible": true
+        },
+        {
+          "m": 5,
+          "delta": "18*check_q**5 + 28*check_q**4 + 39*check_q**3 + 52*check_q**2 + 69*check_q + 90",
+          "factored": "18*check_q**5 + 28*check_q**4 + 39*check_q**3 + 52*check_q**2 + 69*check_q + 90",
+          "is_zero": false,
+          "is_irreducible": true
+        },
+        {
+          "m": 6,
+          "delta": "-u**4 - 3*check_q**3 - 5*check_q**2 - 8*check_q - 15",
+          "factored": "-u**4 - 3*check_q**3 - 5*check_q**2 - 8*check_q - 15",
+          "is_zero": false,
+          "is_irreducible": true
+        },
+        {
+          "m": 7,
+          "delta": "0",
+          "factored": "0",
+          "is_zero": true,
+          "is_irreducible": false
+        },
+        {
+          "m": 8,
+          "delta": "0",
+          "factored": "0",
+          "is_zero": true,
+          "is_irreducible": false
+        }
+      ],
+      "cross_m_polynomial_gcd": "1",
+      "habiro_sum_factored": "-u**15*(check_q - 1)*(check_q + 1)*(check_q**8 + 2*check_q**7 + 2*check_q**6 + 2*check_q**5 + 4*check_q**4 - 2*check_q**3 + 2*check_q**2 - 2*check_q + 1)",
+      "cyclotomic_u2_minus_1_present": true
+    },
+    "d_minus_p": {
+      "pair_name": "D - p (atomic-step, Z-fixed)",
+      "max_m": 12,
+      "per_m": [
+        {
+          "m": 0,
+          "delta": "28",
+          "factored": "28",
+          "is_zero": false,
+          "is_irreducible": true
+        },
+        {
+          "m": 1,
+          "delta": "-998*check_q - 1030",
+          "factored": "-2*(499*check_q + 515)",
+          "is_zero": false,
+          "is_irreducible": false
+        },
+        {
+          "m": 2,
+          "delta": "10512*check_q**2 + 10827*check_q + 11167",
+          "factored": "10512*check_q**2 + 10827*check_q + 11167",
+          "is_zero": false,
+          "is_irreducible": true
+        },
+        {
+          "m": 3,
+          "delta": "-48489*check_q**3 - 50895*check_q**2 - 53492*check_q - 56193",
+          "factored": "-48489*check_q**3 - 50895*check_q**2 - 53492*check_q - 56193",
+          "is_zero": false,
+          "is_irreducible": true
+        },
+        {
+          "m": 4,
+          "delta": "120599*check_q**4 + 129371*check_q**3 + 138506*check_q**2 + 148148*check_q + 158338",
+          "factored": "120599*check_q**4 + 129371*check_q**3 + 138506*check_q**2 + 148148*check_q + 158338",
+          "is_zero": false,
+          "is_irreducible": true
+        },
+        {
+          "m": 5,
+          "delta": "-178675*check_q**5 - 195320*check_q**4 - 213308*check_q**3 - 232618*check_q**2 - 253312*check_q - 275467",
+          "factored": "-178675*check_q**5 - 195320*check_q**4 - 213308*check_q**3 - 232618*check_q**2 - 253312*check_q - 275467",
+          "is_zero": false,
+          "is_irreducible": true
+        },
+        {
+          "m": 6,
+          "delta": "163204*check_q**6 + 182311*check_q**5 + 203249*check_q**4 + 226225*check_q**3 + 251408*check_q**2 + 278973*check_q + 309045",
+          "factored": "163204*check_q**6 + 182311*check_q**5 + 203249*check_q**4 + 226225*check_q**3 + 251408*check_q**2 + 278973*check_q + 309045",
+          "is_zero": false,
+          "is_irreducible": true
+        },
+        {
+          "m": 7,
+          "delta": "-90867*check_q**7 - 104196*check_q**6 - 119086*check_q**5 - 135784*check_q**4 - 154475*check_q**3 - 175562*check_q**2 - 198979*check_q - 225060",
+          "factored": "-90867*check_q**7 - 104196*check_q**6 - 119086*check_q**5 - 135784*check_q**4 - 154475*check_q**3 - 175562*check_q**2 - 198979*check_q - 225060",
+          "is_zero": false,
+          "is_irreducible": true
+        },
+        {
+          "m": 8,
+          "delta": "28805*check_q**8 + 34129*check_q**7 + 40383*check_q**6 + 47612*check_q**5 + 55905*check_q**4 + 65418*check_q**3 + 76437*check_q**2 + 89019*check_q + 103363",
+          "factored": "28805*check_q**8 + 34129*check_q**7 + 40383*check_q**6 + 47612*check_q**5 + 55905*check_q**4 + 65418*check_q**3 + 76437*check_q**2 + 89019*check_q + 103363",
+          "is_zero": false,
+          "is_irreducible": true
+        },
+        {
+          "m": 9,
+          "delta": "-4162*check_q**9 - 5286*check_q**8 - 6625*check_q**7 - 8243*check_q**6 - 10225*check_q**5 - 12597*check_q**4 - 15410*check_q**3 - 18745*check_q**2 - 22725*check_q - 27433",
+          "factored": "-4162*check_q**9 - 5286*check_q**8 - 6625*check_q**7 - 8243*check_q**6 - 10225*check_q**5 - 12597*check_q**4 - 15410*check_q**3 - 18745*check_q**2 - 22725*check_q - 27433",
+          "is_zero": false,
+          "is_irreducible": true
+        },
+        {
+          "m": 10,
+          "delta": "9*check_q**10 + 65*check_q**9 + 156*check_q**8 + 292*check_q**7 + 466*check_q**6 + 680*check_q**5 + 970*check_q**4 + 1363*check_q**3 + 1851*check_q**2 + 2443*check_q + 3201",
+          "factored": "9*check_q**10 + 65*check_q**9 + 156*check_q**8 + 292*check_q**7 + 466*check_q**6 + 680*check_q**5 + 970*check_q**4 + 1363*check_q**3 + 1851*check_q**2 + 2443*check_q + 3201",
+          "is_zero": false,
+          "is_irreducible": true
+        },
+        {
+          "m": 11,
+          "delta": "32*check_q**11 + 46*check_q**10 + 56*check_q**9 + 65*check_q**8 + 72*check_q**7 + 84*check_q**6 + 94*check_q**5 + 100*check_q**4 + 95*check_q**3 + 98*check_q**2 + 90*check_q + 71",
+          "factored": "32*check_q**11 + 46*check_q**10 + 56*check_q**9 + 65*check_q**8 + 72*check_q**7 + 84*check_q**6 + 94*check_q**5 + 100*check_q**4 + 95*check_q**3 + 98*check_q**2 + 90*check_q + 71",
+          "is_zero": false,
+          "is_irreducible": true
+        },
+        {
+          "m": 12,
+          "delta": "-u**8 - 3*check_q**7 - 6*check_q**6 - 9*check_q**5 - 9*check_q**4 - 13*check_q**3 - 17*check_q**2 - 23*check_q - 30",
+          "factored": "-u**8 - 3*check_q**7 - 6*check_q**6 - 9*check_q**5 - 9*check_q**4 - 13*check_q**3 - 17*check_q**2 - 23*check_q - 30",
+          "is_zero": false,
+          "is_irreducible": true
+        }
+      ],
+      "cross_m_polynomial_gcd": "1",
+      "habiro_sum_factored": "-u*(check_q**24 + check_q**23 + check_q**21 - check_q**3 - check_q + 1)*(check_q**16 - check_q**13 + check_q**11 - check_q**9 + check_q**7 - check_q**5 + check_q**3 + 1)*(check_q**45 + check_q**44 + check_q**43 - check_q**42 - 4*check_q**41 - 2*check_q**39 + check_q**38 - check_q**37 - check_q**36 + 3*check_q**35 - 2*check_q**33 + 2*check_q**31 - 2*check_q**29 - check_q**28 + 2*check_q**27 - check_q**26 + 4*check_q**25 + check_q**24 + 6*check_q**23 - 6*check_q**22 - 6*check_q**21 + check_q**20 - 4*check_q**19 - check_q**18 - 2*check_q**17 - check_q**16 + 2*check_q**15 - 2*check_q**13 + 2*check_q**11 - 3*check_q**9 - check_q**8 + check_q**7 + check_q**6 + 2*check_q**5 + 4*check_q**3 - check_q**2 - check_q + 1)",
+      "cyclotomic_u2_minus_1_present": false
+    },
+    "d_minus_n": {
+      "pair_name": "D - n (atomic-step, N-fixed)",
+      "max_m": 12,
+      "per_m": [
+        {
+          "m": 0,
+          "delta": "28",
+          "factored": "28",
+          "is_zero": false,
+          "is_irreducible": true
+        },
+        {
+          "m": 1,
+          "delta": "-1008*check_q - 1040",
+          "factored": "-16*(63*check_q + 65)",
+          "is_zero": false,
+          "is_irreducible": false
+        },
+        {
+          "m": 2,
+          "delta": "10576*check_q**2 + 10896*check_q + 11240",
+          "factored": "8*(1322*check_q**2 + 1362*check_q + 1405)",
+          "is_zero": false,
+          "is_irreducible": false
+        },
+        {
+          "m": 3,
+          "delta": "-48620*check_q**3 - 51038*check_q**2 - 53652*check_q - 56370",
+          "factored": "-2*(24310*check_q**3 + 25519*check_q**2 + 26826*check_q + 28185)",
+          "is_zero": false,
+          "is_irreducible": false
+        },
+        {
+          "m": 4,
+          "delta": "120691*check_q**4 + 129485*check_q**3 + 138642*check_q**2 + 148310*check_q + 158527",
+          "factored": "120691*check_q**4 + 129485*check_q**3 + 138642*check_q**2 + 148310*check_q + 158527",
+          "is_zero": false,
+          "is_irreducible": true
+        },
+        {
+          "m": 5,
+          "delta": "-178693*check_q**5 - 195348*check_q**4 - 213347*check_q**3 - 232670*check_q**2 - 253381*check_q - 275557",
+          "factored": "-178693*check_q**5 - 195348*check_q**4 - 213347*check_q**3 - 232670*check_q**2 - 253381*check_q - 275557",
+          "is_zero": false,
+          "is_irreducible": true
+        },
+        {
+          "m": 6,
+          "delta": "163204*check_q**6 + 182311*check_q**5 + 203250*check_q**4 + 226228*check_q**3 + 251413*check_q**2 + 278981*check_q + 309060",
+          "factored": "163204*check_q**6 + 182311*check_q**5 + 203250*check_q**4 + 226228*check_q**3 + 251413*check_q**2 + 278981*check_q + 309060",
+          "is_zero": false,
+          "is_irreducible": true
+        },
+        {
+          "m": 7,
+          "delta": "-90867*check_q**7 - 104196*check_q**6 - 119086*check_q**5 - 135784*check_q**4 - 154475*check_q**3 - 175562*check_q**2 - 198979*check_q - 225060",
+          "factored": "-90867*check_q**7 - 104196*check_q**6 - 119086*check_q**5 - 135784*check_q**4 - 154475*check_q**3 - 175562*check_q**2 - 198979*check_q - 225060",
+          "is_zero": false,
+          "is_irreducible": true
+        },
+        {
+          "m": 8,
+          "delta": "28805*check_q**8 + 34129*check_q**7 + 40383*check_q**6 + 47612*check_q**5 + 55905*check_q**4 + 65418*check_q**3 + 76437*check_q**2 + 89019*check_q + 103363",
+          "factored": "28805*check_q**8 + 34129*check_q**7 + 40383*check_q**6 + 47612*check_q**5 + 55905*check_q**4 + 65418*check_q**3 + 76437*check_q**2 + 89019*check_q + 103363",
+          "is_zero": false,
+          "is_irreducible": true
+        },
+        {
+          "m": 9,
+          "delta": "-4162*check_q**9 - 5286*check_q**8 - 6625*check_q**7 - 8243*check_q**6 - 10225*check_q**5 - 12597*check_q**4 - 15410*check_q**3 - 18745*check_q**2 - 22725*check_q - 27433",
+          "factored": "-4162*check_q**9 - 5286*check_q**8 - 6625*check_q**7 - 8243*check_q**6 - 10225*check_q**5 - 12597*check_q**4 - 15410*check_q**3 - 18745*check_q**2 - 22725*check_q - 27433",
+          "is_zero": false,
+          "is_irreducible": true
+        },
+        {
+          "m": 10,
+          "delta": "9*check_q**10 + 65*check_q**9 + 156*check_q**8 + 292*check_q**7 + 466*check_q**6 + 680*check_q**5 + 970*check_q**4 + 1363*check_q**3 + 1851*check_q**2 + 2443*check_q + 3201",
+          "factored": "9*check_q**10 + 65*check_q**9 + 156*check_q**8 + 292*check_q**7 + 466*check_q**6 + 680*check_q**5 + 970*check_q**4 + 1363*check_q**3 + 1851*check_q**2 + 2443*check_q + 3201",
+          "is_zero": false,
+          "is_irreducible": true
+        },
+        {
+          "m": 11,
+          "delta": "32*check_q**11 + 46*check_q**10 + 56*check_q**9 + 65*check_q**8 + 72*check_q**7 + 84*check_q**6 + 94*check_q**5 + 100*check_q**4 + 95*check_q**3 + 98*check_q**2 + 90*check_q + 71",
+          "factored": "32*check_q**11 + 46*check_q**10 + 56*check_q**9 + 65*check_q**8 + 72*check_q**7 + 84*check_q**6 + 94*check_q**5 + 100*check_q**4 + 95*check_q**3 + 98*check_q**2 + 90*check_q + 71",
+          "is_zero": false,
+          "is_irreducible": true
+        },
+        {
+          "m": 12,
+          "delta": "-u**8 - 3*check_q**7 - 6*check_q**6 - 9*check_q**5 - 9*check_q**4 - 13*check_q**3 - 17*check_q**2 - 23*check_q - 30",
+          "factored": "-u**8 - 3*check_q**7 - 6*check_q**6 - 9*check_q**5 - 9*check_q**4 - 13*check_q**3 - 17*check_q**2 - 23*check_q - 30",
+          "is_zero": false,
+          "is_irreducible": true
+        }
+      ],
+      "cross_m_polynomial_gcd": "1",
+      "habiro_sum_factored": "-u*(check_q**4 + 1)**2*(check_q**16 - check_q**13 - check_q**12 + check_q**11 + check_q**8 - check_q**5 - check_q**4 + check_q**3 + 1)*(check_q**16 + check_q**15 + check_q**13 - check_q**12 - check_q**11 - check_q**9 + check_q**8 + check_q**7 + check_q**5 - check_q**4 - check_q**3 - check_q + 1)*(check_q**45 + check_q**44 + check_q**43 - check_q**42 - 4*check_q**41 - 2*check_q**39 + check_q**38 - check_q**37 - check_q**36 + 3*check_q**35 - 2*check_q**33 + 2*check_q**31 + check_q**30 + check_q**28 + 2*check_q**27 - 3*check_q**26 - 4*check_q**25 - check_q**24 - 4*check_q**23 - 4*check_q**22 + 4*check_q**21 - check_q**20 + 4*check_q**19 - 3*check_q**18 - 2*check_q**17 + check_q**16 + check_q**14 - 2*check_q**13 + 2*check_q**11 - 3*check_q**9 - check_q**8 + check_q**7 + check_q**6 + 2*check_q**5 + 4*check_q**3 - check_q**2 - check_q + 1)",
+      "cyclotomic_u2_minus_1_present": false
+    },
+    "verdict": "SPECIFIC to isospin SU(2)_I: cyclotomic only in n-p"
+  }
+}

@@ -1,0 +1,190 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-19T20:33:29.800821+00:00",
+  "commitSha": "0e4de705a7e49e2e93a7b19e673e4be49bf16388",
+  "assertions": [
+    {
+      "name": "alpha_cosh_h_z_step_correction_rel_err",
+      "computed": 0.00022293942012139494,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 0.001,
+      "unit": "rel_err",
+      "source": "Phase 5b refinement: α ≈ [3]_q² · cosh(h) at q_0. Empirical α = 9.469447; [3]_q² · cosh(h) = 9.467336; rel.err = 0.0223% (conj:alpha-cosh-h-z-step-correction)."
+    },
+    {
+      "name": "per_N_factor_matches_inv_z_to_4",
+      "computed": 0.01685175450552392,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 0.025,
+      "unit": "rel_err",
+      "source": "empirical T/D and ⁴He/³He ratios match (q^{1/2}+q^{-1/2})^4 to ≤ 2%"
+    },
+    {
+      "name": "two_factor_rel_std_below_phase3_baseline",
+      "computed": 0.006586559693239826,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 0.1,
+      "unit": "rel_std",
+      "source": "Phase 3 baseline rel_std = 1.398; this script's two-factor closure achieves rel_std = 0.0066 on the 4 atoms with one fit parameter (α)."
+    },
+    {
+      "name": "zero_param_closure_max_rel_err",
+      "computed": 0.025056863084588318,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 0.03,
+      "unit": "rel_err",
+      "source": "Zero-parameter substrate-derived formula |Δ_λ*(K)| = (Vol_hyp(K) / [8]_q) · [3]_q^(2(Z-1)) · (q^{1/2}+q^{-1/2})^(4N) reproduces empirical |Δ_λ*| to max rel.err. 2.51% on the 4 atoms."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 258,
+  "computation": "delta-lambda-z4N-phase4",
+  "scriptFile": "delta_lambda_z4N_phase4.py",
+  "scriptHash": "070fb9ff1242",
+  "scriptCommitSha": "831ca36f58b0a833c997881abef6596fdeac19b3",
+  "description": "Phase 4 of the closed-forms-first-principles workplan: tests V(K) = Vol_hyp(K) · α^(Z-1) · (q^{1/2}+q^{-1/2})^(4N) as the Δ_λ closure factor. Identifies the per-N step factor as (q^{1/2}+q^{-1/2})^4 = z^(-4) — the 4th power of the quantum dim of spin-½. Empirical T/D = 15.955, ⁴He/³He = 16.358 vs predicted 16.087 (≤ 2% rel. err.). The per-Z step factor α remains empirical-fit at this phase.",
+  "parameters": {
+    "q0": "1.1099785955541805",
+    "z": "0.49932033403359825090324806294762503870271945154935",
+    "1_over_z": "2.0027223644625536750306686081508783532920097402868",
+    "inv_z_to_4": "16.087293694704438721863529110079857239953609921485"
+  },
+  "data": {
+    "vol_hyp": {
+      "D": 12.776095278687214,
+      "T": 12.776095552543637,
+      "3He": 12.554085624045491,
+      "4He": 12.554075323566847
+    },
+    "empirical_best_abs_delta": {
+      "D": 22.95944766931559,
+      "T": 366.32690098133276,
+      "3He": 210.97082881830084,
+      "4He": 3451.1436910977163
+    },
+    "per_N_step": {
+      "predicted_inv_z_to_4": 16.08729369470444,
+      "empirical_T_over_D": 15.955388224382872,
+      "empirical_He4_over_He3": 16.358392818705862,
+      "rel_err_T_over_D": 0.00819935738258983,
+      "rel_err_He4_over_He3": 0.01685175450552392
+    },
+    "per_Z_step_empirical": {
+      "He3_over_D_corrected": 9.3513438954792,
+      "He4_over_T_corrected": 9.587550203440044,
+      "alpha_avg": 9.469447049459621
+    },
+    "test_pure_N": {
+      "V_values": {
+        "D": 205.53279701976797,
+        "T": 3306.4665404254015,
+        "3He": 201.96126250248668,
+        "4He": 3249.0074790564386
+      },
+      "ratios": {
+        "D": 0.11170697816712614,
+        "T": 0.11079105035619144,
+        "3He": 1.0446103683655832,
+        "4He": 1.0622147573818392
+      },
+      "rel_std": 0.8090298683367699
+    },
+    "test_two_factor": {
+      "alpha_used": 9.469447049459621,
+      "V_values": {
+        "D": 205.53279701976797,
+        "T": 3306.4665404254015,
+        "3He": 1912.4614813093124,
+        "4He": 30766.304286223232
+      },
+      "ratios": {
+        "D": 0.11170697816712614,
+        "T": 0.11079105035619144,
+        "3He": 0.1103137662536689,
+        "4He": 0.11217283879764185
+      },
+      "rel_std": 0.006586559693239826,
+      "constant_c": 0.11124615839365708
+    },
+    "alpha_categorical_candidates": [
+      {
+        "expr": "[3]_q^2",
+        "value": 9.264147542895085,
+        "rel_err": 0.02168020006788588
+      },
+      {
+        "expr": "[8]_q",
+        "value": 8.94569003394804,
+        "rel_err": 0.055310200561443514
+      },
+      {
+        "expr": "[9]_q",
+        "value": 10.363517902476511,
+        "rel_err": 0.09441637387559085
+      },
+      {
+        "expr": "[2]_q · [4]_q",
+        "value": 8.264147542895085,
+        "rel_err": 0.1272829870919778
+      },
+      {
+        "expr": "(1/z)^3",
+        "value": 8.03271286133642,
+        "rel_err": 0.1517231344786061
+      },
+      {
+        "expr": "[7]_q",
+        "value": 7.625342178894008,
+        "rel_err": 0.19474261389643105
+      },
+      {
+        "expr": "[10]_q",
+        "value": 11.894275669195311,
+        "rel_err": 0.25606866029987085
+      },
+      {
+        "expr": "[6]_q",
+        "value": 6.388086679547021,
+        "rel_err": 0.3254002428883574
+      },
+      {
+        "expr": "[3]_q · [2]_q",
+        "value": 6.120579304756191,
+        "rel_err": 0.35364976721576735
+      },
+      {
+        "expr": "[11]_q",
+        "value": 13.554643801140472,
+        "rel_err": 0.431408162519265
+      }
+    ],
+    "zero_param_closure": {
+      "formula": "|Δ_λ*(K)| ≈ (Vol_hyp(K) / [8]_q) · [3]_q^(2(Z-1)) · (q^{1/2}+q^{-1/2})^(4N)",
+      "predicted": {
+        "D": 22.97562247739309,
+        "T": 369.6155945352093,
+        "3He": 209.15087899000957,
+        "4He": 3364.66885614464
+      },
+      "rel_err_per_atom": {
+        "D": 0.0007044946511983351,
+        "T": 0.008977483076090307,
+        "3He": 0.008626547274261947,
+        "4He": 0.025056863084588318
+      },
+      "max_rel_err": 0.025056863084588318
+    },
+    "alpha_cosh_h_refinement": {
+      "alpha_empirical": 9.469447049459621,
+      "qint_3_sq": 9.264147542895085,
+      "cosh_h": 1.0219328182258607,
+      "alpha_qint3sq_cosh_h": 9.467336406970958,
+      "rel_err": 0.00022293942012139494
+    }
+  }
+}

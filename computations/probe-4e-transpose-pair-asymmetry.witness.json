@@ -1,0 +1,113 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.12.3",
+  "computedAt": "2026-06-02T20:11:11.666275+00:00",
+  "commitSha": "41f1b2a404de0759b15e4ddd8dbfa55deca21f23",
+  "assertions": [
+    {
+      "name": "tall_narrow_systematically_deeper",
+      "computed": "0",
+      "expected": "1",
+      "passed": false,
+      "tolerance": 0,
+      "source": "2/3 pairs have tall-narrow deeper"
+    }
+  ],
+  "allPassed": false,
+  "durationMs": 12,
+  "computation": "probe-4e-transpose-pair-asymmetry",
+  "scriptFile": "probe_4e_transpose_pair_asymmetry.py",
+  "scriptHash": "5e2e4fe005c9",
+  "scriptCommitSha": "5a44813463430491fdc8cd8cd5a97a404b5e7e9d",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.12.3",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Quantifies the bar-involution transpose-pair asymmetry: for each pair (λ, λ^T), the *tall-narrow* shape's min_eig is consistently more negative than the *wide-short* shape's. The bar acts as a swap of shapes but the obstruction depth is NOT preserved — a non-trivial structural fact the categorical derivation must explain.",
+  "contentBlock": "conj:psd-trace-orthogonality",
+  "auditOnly": "docs/audits/2026-05-25-dominant-partition-nucleon-structure.md",
+  "data": {
+    "transpose_pairs": [
+      {
+        "tall_narrow": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "tall_min_eig": -78.70300634879416,
+        "wide_short": [
+          9,
+          9
+        ],
+        "wide_min_eig": -60.48762805369602,
+        "asymmetry": 18.21537829509814,
+        "tall_n_rows": 9,
+        "wide_n_rows": 2
+      },
+      {
+        "tall_narrow": [
+          3,
+          3,
+          3,
+          3,
+          3,
+          3
+        ],
+        "tall_min_eig": -96.51993019552548,
+        "wide_short": [
+          6,
+          6,
+          6
+        ],
+        "wide_min_eig": -95.71991947064697,
+        "asymmetry": 0.8000107248785042,
+        "tall_n_rows": 6,
+        "wide_n_rows": 3
+      },
+      {
+        "tall_narrow": [
+          4,
+          4,
+          4,
+          3,
+          3
+        ],
+        "tall_min_eig": -109.81453938883053,
+        "wide_short": [
+          5,
+          5,
+          5,
+          3
+        ],
+        "wide_min_eig": -110.3082207795835,
+        "asymmetry": -0.49368139075296824,
+        "tall_n_rows": 5,
+        "wide_n_rows": 4
+      }
+    ],
+    "asymmetry_stats": {
+      "n_pairs": 3,
+      "n_tall_narrow_deeper": 2,
+      "n_wide_short_deeper": 1,
+      "frac_tall_narrow_deeper": 0.6666666666666666,
+      "mean_asymmetry": 6.173902543074559,
+      "max_asymmetry": 18.21537829509814,
+      "min_asymmetry": -0.49368139075296824
+    }
+  }
+}

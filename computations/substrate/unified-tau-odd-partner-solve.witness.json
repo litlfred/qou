@@ -1,0 +1,48 @@
+{
+  "engine": "python+sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-06T20:33:06.904262+00:00",
+  "commitSha": "bc3d4840501f261999c67e79e4b40ccfb764c013",
+  "assertions": [
+    {
+      "name": "unified_tau_odd_partner_solve_consistent",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Unified τ + odd-partner solve: cherry-picks PR #1765's selection-rule c=1 (muon=1), c=2 PREDICTION ((q+1)²/(3q), Hopf-link), c=3 (Family-A) anchors, wires them into sl2_tau_solver.tau_from_three, and verifies the SL₂ depth-2 recurrence a_{n+2} = τ·a_{n+1} − a_n holds on the 4-term window (a_D⁽²,³,⁴,⁵⁾) at substrate q₀ to 50 dps precision. PASS confirms the depth-2 prolongation symbol identification is internally consistent on the cherry-picked anchors; the unconditional closure of thm:binding-closure-conditional remains gated on #1765 confirming the c=2 PREDICTION is the actual derived λ(L=Hopf) value."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 365,
+  "computation": "unified-tau-odd-partner-solve",
+  "scriptFile": "unified_tau_odd_partner_solve.py",
+  "scriptHash": "44b6def0284b",
+  "scriptCommitSha": "bc3d4840501f261999c67e79e4b40ccfb764c013",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Unified τ + odd-partner solve: wires PR #1765 selection-rule c=1, c=2 PREDICTION (q+1)²/(3q), c=3 = Family-A anchors into sl2_tau_solver.tau_from_three. Verifies SL₂ recurrence a_{n+2} = τ·a_{n+1} − a_n on the cherry-picked anchor triple at substrate q₀; predicts a_D⁽⁵⁾ as the odd-partner closure of the depth-2 sequence.",
+  "contentBlock": "prop:sl2-prolongation-recurrence",
+  "data": {
+    "anchor_c1_value": "1",
+    "anchor_c2_symbolic": "(q + 1)**2/(3*q)",
+    "anchor_c3_symbolic": "3*q**2/4 + 1 + 3/(4*q**2)",
+    "tau_symbolic_q": "3*(3*q**4 + 8*q**2 + 3)/(4*q*(q**2 + 2*q + 1))",
+    "tau_at_q0": "2.642386309448846394790988704223550229645147866221219464511224592930052",
+    "a_D_c4_predicted_q": "(81*q**8 + 308*q**6 - 64*q**5 + 354*q**4 - 64*q**3 + 308*q**2 + 81)/(48*q**3*(q + 1)**2)",
+    "a_D_c4_predicted_at_q0": "5.35561666668459789885199957629717571386095429944330682972117382889129",
+    "sl2_recurrence_holds": true,
+    "gated_on_pr_1765": "c=2 value is the PREDICTION (q+1)²/(3q) per prop:selection-rule-c2-prediction; awaiting #1765 empirical λ(L=Hopf) confirmation for unconditional closure of thm:binding-closure-conditional"
+  }
+}

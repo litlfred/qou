@@ -1,0 +1,72 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-09T17:42:57.017676+00:00",
+  "commitSha": "f9cfa0cf8eccf383252e241175c9e47c5f01992b",
+  "assertions": [
+    {
+      "name": "figure-eight knot operator is a Reeb rotation (unit-modulus eigs)",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "M_4₁=(σ₁σ₂⁻¹)² on V_(2,1); σ⁻¹=σ−h; det=−1 ⇒ e^{±iθ}"
+    },
+    {
+      "name": "bond operator σ is in the growth channel, not the rotation channel",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "σ eigenvalues q, −q⁻¹ are real with |λ|≠1 — no Reeb phase; the rotation correction needs alternating (4₁) dressing"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 16,
+  "computation": "h2o-angle-knot-correction",
+  "scriptFile": "h2o_angle_knot_correction.py",
+  "scriptHash": "d6836a8f1556",
+  "scriptCommitSha": "5e87619861807526768d28a056934d15231b1098",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "mpmath": "1.4.1"
+  },
+  "description": "H₂O bond-angle knot-hierarchy correction probe (Reeb-rotation framework). Computes the figure-eight Reeb rotation θ_4₁ on V_(2,1) (=117°, lepton-mixing) and the growth/rotation split of the leading bond (σ) and lone (e⁻) operators. Honest finding: the residual ≈2.7° is NOT the next knot's raw rotation; it is the bond↔lone Reeb-phase difference at the alternating-knot level (H₄⁺ compute, blocked by the missing Rust kernel). No fitting. Owner's knot-hierarchy direction.",
+  "contentBlock": "prop:h2o-bond-angle-shift",
+  "parameters": {
+    "q": 1.1099785827513808,
+    "h": 0.20906029879563937
+  },
+  "data": {
+    "leading_angle_deg": 107.19,
+    "observed_angle_deg": 104.5,
+    "residual_deg": 2.6899999999999977,
+    "theta_4_1_reeb_rotation_deg": 117.0867272987433,
+    "theta_4_1_eigenvalues_real": [
+      -0.4553386751353342,
+      -0.4553386751353342
+    ],
+    "theta_4_1_eigenvalues_imag": [
+      0.8903183087671508,
+      -0.8903183087671508
+    ],
+    "bond_sigma_is_rotation_channel": false,
+    "bond_sigma_abs_eigs": [
+      1.109978582751381,
+      0.9009182839557418
+    ],
+    "lone_e_minus_is_rotation_channel": true,
+    "lone_e_minus_abs_eigs": [
+      1.0000000000000004,
+      1.0000000000000007
+    ],
+    "theta_e_minus_lone_reeb_deg": 90.0,
+    "finding": "θ_4₁ = 117.09° (figure-eight Reeb rotation, lepton-mixing) is NOT the 2.69° bond-angle residual and no clean ratio yields it without fitting. The bond σ is growth (|λ|≠1, no phase); the rotation channel opens only for alternating sub-braids, so the angular correction is the bond↔lone Reeb-PHASE DIFFERENCE at the 4₁ level (mirrors Δtr=hz² for the sign). That difference needs the bond/lone braids dressed with the figure-eight block — an H₄⁺ seminormal compute, partly blocked by the missing Rust kernel. Concrete next step (non-abelian Stokes holonomy difference), not a fit."
+  }
+}

@@ -1,0 +1,191 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-06-02T15:02:46.519457+00:00",
+  "commitSha": "b7d13950abf67adb2d335d7b1c6cd3a4bb322fea",
+  "assertions": [
+    {
+      "name": "no_cheap_volume_rule_closes_all_four",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "EXPECTED NEGATIVE: cheap geometric Vol_λ proxies do not reproduce all four bindings; the principled q-6j saddle volume remains the candidate to compute next."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 11,
+  "computation": "probe-volume-wedderburn-delta-lambda",
+  "scriptFile": "probe_volume_wedderburn_delta_lambda.py",
+  "scriptHash": "471067b3528f",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "clarabel": "0.11.1"
+  },
+  "description": "EXPLORATORY: parameter-free per-Wedderburn-block q-hyperbolic volume Vol_λ as a Δ_λ closure candidate. B = m_e·Σ_λ y_λ χ^λ Vol_λ tested on D/T/³He/⁴He with the SAME rule (no per-isotope refit). Clausen/Lobachevsky volume on content & hook angles; dimensionless comparators carry one global scale. Δ_λ remains open (GAP-A-3/A-4).",
+  "parameters": {
+    "tolerance_pct": 5.0,
+    "isotopes": [
+      "deuteron",
+      "tritium",
+      "helium-3",
+      "helium-4"
+    ]
+  },
+  "data": {
+    "rules": {
+      "clausen_content": {
+        "kind": "zero-param (volume units)",
+        "global_scale": "1.0",
+        "worst_rel_err": 0.9964907820751522,
+        "closes_all_within_5pct": false,
+        "per_isotope": {
+          "deuteron": {
+            "B_pred_MeV": "0.32887867062438846921348696344663007129888372446828",
+            "B_AME_MeV": "2.2245662",
+            "rel_err": -0.8521605378053535
+          },
+          "tritium": {
+            "B_pred_MeV": "0.13997402773287238764200337977728850196550375332552",
+            "B_AME_MeV": "8.4818",
+            "rel_err": -0.9834971317723983
+          },
+          "helium-3": {
+            "B_pred_MeV": "0.27657666877652003779921772095198166273304457690246",
+            "B_AME_MeV": "7.718",
+            "rel_err": -0.9641647228846177
+          },
+          "helium-4": {
+            "B_pred_MeV": "0.099295637267400462347198190479966013277218898246172",
+            "B_AME_MeV": "28.29566",
+            "rel_err": -0.9964907820751522
+          }
+        }
+      },
+      "clausen_hook": {
+        "kind": "zero-param (volume units)",
+        "global_scale": "1.0",
+        "worst_rel_err": 0.9956621906976887,
+        "closes_all_within_5pct": false,
+        "per_isotope": {
+          "deuteron": {
+            "B_pred_MeV": "0.43026542353266164731064434129531895828956084170696",
+            "B_AME_MeV": "2.2245662",
+            "rel_err": -0.806584572069529
+          },
+          "tritium": {
+            "B_pred_MeV": "0.1683307031371737525891382274162589037019132076174",
+            "B_AME_MeV": "8.4818",
+            "rel_err": -0.9801538938506952
+          },
+          "helium-3": {
+            "B_pred_MeV": "0.33883651186573806446162571467140553292338991015574",
+            "B_AME_MeV": "7.718",
+            "rel_err": -0.956097886516489
+          },
+          "helium-4": {
+            "B_pred_MeV": "0.12274117716303931368829907151072341342797642474569",
+            "B_AME_MeV": "28.29566",
+            "rel_err": -0.9956621906976887
+          }
+        }
+      },
+      "content_sq": {
+        "kind": "1 global scale",
+        "global_scale": "1.5203516160253682522950055351545774343616241365525",
+        "worst_rel_err": 3.2434447705357408,
+        "closes_all_within_5pct": false,
+        "per_isotope": {
+          "deuteron": {
+            "B_pred_MeV": "9.4398238081005643919400988160666282487433989021708",
+            "B_AME_MeV": "2.2245662",
+            "rel_err": 3.2434447705357408
+          },
+          "tritium": {
+            "B_pred_MeV": "7.862959197481133859145183702797491772190074593085",
+            "B_AME_MeV": "8.4818",
+            "rel_err": -0.07296102272145844
+          },
+          "helium-3": {
+            "B_pred_MeV": "14.984816574989206512496614072413954908646364378402",
+            "B_AME_MeV": "7.718",
+            "rel_err": 0.9415414064510503
+          },
+          "helium-4": {
+            "B_pred_MeV": "8.8540279940678431856178660694371638533895884775375",
+            "B_AME_MeV": "28.29566",
+            "rel_err": -0.6870888329140284
+          }
+        }
+      },
+      "abs_content": {
+        "kind": "1 global scale",
+        "global_scale": "5.0851819256909068416437515197245690556021954265949",
+        "worst_rel_err": 3.7972864393750294,
+        "closes_all_within_5pct": false,
+        "per_isotope": {
+          "deuteron": {
+            "B_pred_MeV": "10.671881264752039364447259554387338998445104224091",
+            "B_AME_MeV": "2.2245662",
+            "rel_err": 3.7972864393750294
+          },
+          "tritium": {
+            "B_pred_MeV": "6.0786786639306187098392953316845102541773832853508",
+            "B_AME_MeV": "8.4818",
+            "rel_err": -0.28332680988344233
+          },
+          "helium-3": {
+            "B_pred_MeV": "11.832564256430548136191220576311928048525547275977",
+            "B_AME_MeV": "7.718",
+            "rel_err": 0.5331127567284981
+          },
+          "helium-4": {
+            "B_pred_MeV": "5.4338006924471730425567677820971446605072889485908",
+            "B_AME_MeV": "28.29566",
+            "rel_err": -0.8079634582671981
+          }
+        }
+      },
+      "uniform": {
+        "kind": "1 global scale (= scalar Path-C)",
+        "global_scale": "46.26874390078345000330904749577757272197516874012",
+        "worst_rel_err": 3.126811098137194,
+        "closes_all_within_5pct": false,
+        "per_isotope": {
+          "deuteron": {
+            "B_pred_MeV": "9.1803644827008843145338252911523175151785951736749",
+            "B_AME_MeV": "2.2245662",
+            "rel_err": 3.126811098137194
+          },
+          "tritium": {
+            "B_pred_MeV": "2.4601330509071390483049918993842065779295382497485",
+            "B_AME_MeV": "8.4818",
+            "rel_err": -0.7099515373025609
+          },
+          "helium-3": {
+            "B_pred_MeV": "4.8833022821318209409503329805340915904414354538652",
+            "B_AME_MeV": "7.718",
+            "rel_err": -0.3672839748468747
+          },
+          "helium-4": {
+            "B_pred_MeV": "1.3041109932870672381246046894667112174267615084027",
+            "B_AME_MeV": "28.29566",
+            "rel_err": -0.9539112714357231
+          }
+        }
+      }
+    },
+    "any_rule_closes_all_within_5pct": false
+  }
+}

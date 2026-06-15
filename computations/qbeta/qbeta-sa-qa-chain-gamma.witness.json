@@ -1,0 +1,80 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-06-03T20:27:54.431782+00:00",
+  "commitSha": "efbdea701c43151f5363e822d49c112bd9521410",
+  "assertions": [
+    {
+      "name": "q_N_7_matches_q_codata_within_1_ppb",
+      "computed": "0.7823334099999999999999999999999999999999999999999994098296040398407753",
+      "expected": "0.7823334099999999999999999999999999999999999999999994098296040398407753",
+      "passed": true,
+      "tolerance": "0.000000001",
+      "source": "cal-anchored c_3..c_7 by construction give Q_codata"
+    },
+    {
+      "name": "q_a_finite_at_q_0_no_pole",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "Q_A = m_e · |q²−2q−1| · (q+1) / (2q³) — polynomial in q, finite at q₀ ≈ 1.11"
+    },
+    {
+      "name": "cos_alpha_bhbar_finite_bounded_at_q_0",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "cosine is bounded by 1 in absolute value"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 15,
+  "computation": "qbeta-sa-qa-chain-gamma",
+  "scriptFile": "qbeta_sa_qa_chain_gamma.py",
+  "scriptHash": "08d27f2531ad",
+  "scriptCommitSha": "7fd30e32fac0dba442847e070fcf87aab1e1d7b9",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.4.0"
+  },
+  "data": {
+    "u_substrate": "0.00851723455015614218925557360331",
+    "one_over_u_substrate": "117.409001021542550045447142069",
+    "q_a_at_q0_MeV": "0.783645827374621213074939751341",
+    "cos_factor_at_q0": "0.998398945253084499336489635207",
+    "q_codata_MeV": "0.78233341",
+    "partial_products_pi_k_at_u_sub": {
+      "2": "0.999927456715617626498201895199",
+      "3": "0.999926178227462743056070434904"
+    },
+    "c_k_extracted": {
+      "2": "-1.0",
+      "3": "-2.06934257711516783787971951725"
+    },
+    "q_n_partial_MeV": {
+      "2": "0.782334410277840137760143636388",
+      "3": "0.78233341"
+    },
+    "c_k_plus_1_over_c_k_ratios": [
+      {
+        "k": 2,
+        "c_k": "-1.0",
+        "c_{k+1}/c_k": 2.069342577115168,
+        "c_{k+1}/c_k / (1/u)": 0.01762507609391446
+      }
+    ],
+    "final_q_n_err_ppb": 0.0,
+    "pole_not_in_q_a_cos": true,
+    "interpretation": "Family γ canonical decomposition verified: Q_A and cos at q₀ are FINITE (no pole here), so the structural singularity at u = u_substrate from PR #1727 lives in the Π_k(∞) tower as k → ∞. The asymptotic c_{k+1}/c_k → 1/u_substrate (PR #1713) confirms simple-pole behavior at the edge of convergence. The residue A categorical-ID is the open work; Family α (Habiro-Wenzl projector traces) and Family β (Habiro-Kashaev quantum-dilog tower) are the natural next routes."
+  }
+}

@@ -1,0 +1,227 @@
+// Nuclear braid Gröbner reduction in Singular (letterplace).
+// Run: Singular folio-assistant/computations/singular-nuclear-braid.sing
+//
+// Manual letterplace multiplication (no lpMult dependency).
+// Variable convention: var((pos-1)*ngens + gen) = x(gen) at position pos
+// For ngens=2, degbound=4:
+//   var(1)=x1@1, var(2)=x2@1, var(3)=x1@2, var(4)=x2@2,
+//   var(5)=x1@3, var(6)=x2@3, var(7)=x1@4, var(8)=x2@4
+
+LIB "freegb.lib";
+
+int AA = 3;
+int ngens = AA - 1;
+int degbd = AA + 1;  // extra room for unreduced products
+
+ring r0 = (0,q), (x(1..ngens)), dp;
+def R = makeLetterplaceRing(degbd);
+setring R;
+
+"Ring:"; R;
+
+// Hecke coefficient
+poly ha = q - 1/q;
+
+// Gröbner ideal
+ideal I;
+int idx = 0;
+int ii;
+
+for (ii = 1; ii <= ngens; ii++)
+{
+    idx++;
+    I[idx] = var(ii) * var(ngens + ii) - ha * var(ii) - 1;
+}
+for (ii = 1; ii <= ngens - 1; ii++)
+{
+    idx++;
+    I[idx] = var(ii) * var(ngens + ii + 1) * var(2*ngens + ii)
+           - var(ii + 1) * var(ngens + ii) * var(2*ngens + ii + 1);
+}
+
+"Ideal:"; I;
+"Computing Gröbner basis...";
+ideal G = twostd(I);
+"G:"; G;
+
+// ── Manual letterplace multiply ─────────────────────────────────
+// To multiply poly f (max degree d1) by poly g (max degree d2):
+// Shift all variables in g by d1 positions:
+//   var(k) in g → var(k + d1*ngens)
+//
+// For a MONOMIAL in letterplace: the variable indices encode both
+// the generator AND the position. A monomial of degree d uses
+// variables var(1..d*ngens). To right-multiply by a monomial of
+// degree e at shifted positions, we need var((d)*ngens+1..(d+e)*ngens).
+//
+// For SCALAR × generator: scalar * var(gen) at position pos
+// = scalar * var((pos-1)*ngens + gen)
+
+// Helper: shift a variable index by `shift` positions
+// var(k) → var(k + shift*ngens)
+// We can't write a general proc for arbitrary poly shifting in
+// letterplace without knowing the structure. Instead, build
+// products term by term.
+
+// For our case: each crossing is either a scalar or (a*x(i) + b)
+// at position 1. To multiply (a*x(i)(1) + b) * (c*x(j)(1) + d),
+// we need x(j) at position 2: var(ngens + j).
+// Result: ac * x(i)(1)*x(j)(2) + ad * x(i)(1) + bc * x(j)(2?) ...
+// Wait — bc * x(j) should be at position 1 if b is scalar.
+// Actually: (a*var(i) + b) * (c*var(ngens+j) + d)
+// = ac*var(i)*var(ngens+j) + ad*var(i) + bc*var(ngens+j) + bd
+// But the positions of the RIGHT factor depend on the LEFT factor's degree!
+// If left factor has max degree 1 (single generator), right shifts by 1.
+// If left factor is scalar (degree 0), right stays at position 1.
+
+// SIMPLEST APPROACH for our A=3 case:
+// Build the full product explicitly for 3 crossings.
+
+"";
+"=== MANUAL MULTIPLICATION FOR N(1,2) ===";
+"";
+
+// N(1,2) = [p, n, n]
+// Crossing 1: (1,2) p-n mixed at x(1): T - ha/2 = var(1) - ha/2
+// Crossing 2: (1,3) p-n mixed at x(1): T - ha/2 = var(1) - ha/2
+// Crossing 3: (2,3) n-n at x(2): T^{-1} = T - ha = var(2) - ha
+//
+// Product: [var(1) - ha/2] * [var(1) - ha/2] * [var(2) - ha]
+//
+// Step 1: [var(1) - ha/2] * [var(1) - ha/2]
+// The second var(1) is at position 2: var(ngens + 1) = var(3)
+// = var(1)*var(3) - (ha/2)*var(1) - (ha/2)*var(3) + (ha/2)^2
+// But wait: for scalar terms, position doesn't shift.
+// Actually in letterplace: scalar * x(1)(2) means the scalar
+// is at degree 0 and x(1) is at position 2? No — in letterplace
+// multiplication, EVERY factor in the right operand shifts.
+//
+// Let me think again. In the letterplace ring:
+// A monomial of degree d is var(i1)*var(i2)*...*var(id) where
+// i_k is in {(k-1)*ngens+1, ..., k*ngens} (generator at position k).
+//
+// So: [a * var(1) + b] * [c * var(1) + d]
+// In the free algebra this is: (a σ_1 + b)(c σ_1 + d)
+// In letterplace: a*c * var(1)*var(3) + a*d * var(1) + b*c * var(3) + b*d
+// where var(3) = x(1) at position 2.
+// BUT: the term b*c*var(3) has x(1) at position 2 with nothing at position 1.
+// In letterplace, this is INVALID — every monomial must use consecutive positions.
+// The term b*c*σ_1 (scalar × generator) should be at position 1: b*c*var(1).
+
+// So the correct letterplace product:
+// (a*var(1) + b) * (c*var(1) + d) means:
+// In the free algebra: ac σ₁² + ad σ₁ + bc σ₁ + bd
+// In letterplace:
+//   ac σ₁² = ac * var(1) * var(3)    [x(1)@pos1 × x(1)@pos2]
+//   ad σ₁  = ad * var(1)             [x(1)@pos1]
+//   bc σ₁  = bc * var(1)             [x(1)@pos1]
+//   bd     = bd                       [scalar]
+// Total: ac*var(1)*var(3) + (ad+bc)*var(1) + bd
+
+poly step1 = (-ha/2)*(-ha/2)*var(1)*var(3) + ((-ha/2)*1 + 1*(-ha/2))*var(1) + 1*1;
+// Wait, let a=1, b=-ha/2, c=1, d=-ha/2:
+// ac=1, ad=-ha/2, bc=-ha/2, bd=ha^2/4
+poly s1_raw = var(1)*var(3) + (-ha)*var(1) + ha^2/4;
+"Step 1 raw (two mixed at x1):"; s1_raw;
+
+poly s1 = reduce(s1_raw, G);
+"Step 1 reduced:"; s1;
+
+// Step 2: multiply s1 by [var(2) - ha] (n-n crossing at x(2))
+// s1 is now a polynomial in {var(1), 1} (after reduction, degree ≤ 1)
+// Say s1 = A*var(1) + B (read off from the reduced form)
+// Multiply by (C*var(2) + D) where C=1, D=-ha:
+// In the free algebra: AC σ₁σ₂ + AD σ₁ + BC σ₂ + BD
+// In letterplace:
+//   AC σ₁σ₂ = AC * var(1) * var(4)   [x(1)@pos1 × x(2)@pos2]
+//   AD σ₁   = AD * var(1)             [x(1)@pos1]
+//   BC σ₂   = BC * var(2)             [x(2)@pos1]
+//   BD      = BD
+
+// Read coefficients of s1:
+// From the output above, s1 should be (q^4+2q^2+1)/(4q^2) = ((q^2+1)/(2q))^2
+// That's a PURE SCALAR — no var(1) term! So A=0, B=s1.
+// Then: AC=0, AD=0, BC=B*1=B, BD=B*(-ha)
+// Result: B*var(2) + B*(-ha) = B*(var(2) - ha)
+
+poly s2_raw = s1 * var(2) - s1 * ha;
+"Step 2 raw (times nn at x2):"; s2_raw;
+
+poly s2 = reduce(s2_raw, G);
+"N(1,2) FINAL:"; s2;
+
+"";
+"=== N(2,1) = [p, p, n] ===";
+"";
+
+// Crossing 1: (1,2) p-p at x(1): var(1)
+// Crossing 2: (1,3) p-n mixed at x(1): var(1) - ha/2
+// Crossing 3: (2,3) p-n mixed at x(2): var(2) - ha/2
+//
+// Step 1: var(1) * (var(1) - ha/2)
+// = var(1)*var(3) - (ha/2)*var(1)
+// a=1,b=0, c=1,d=-ha/2: ac*var(1)*var(3) + (ad+bc)*var(1) + bd
+// = var(1)*var(3) + (-ha/2)*var(1) + 0
+
+poly d1_raw = var(1)*var(3) + (-ha/2)*var(1);
+"D step 1 raw:"; d1_raw;
+poly d1 = reduce(d1_raw, G);
+"D step 1 reduced:"; d1;
+
+// d1 = A*var(1) + B. Read coefficients from output.
+// Multiply by (var(2) - ha/2):
+// A*var(1)*(var(2)@pos2) + A*var(1)*(-ha/2) + B*var(2) + B*(-ha/2)
+// = A*var(1)*var(4) - (ha/2)*A*var(1) + B*var(2) - (ha/2)*B
+
+// I need to read d1 to get A and B. Let me just build the full product.
+// d1 * (var(2) - ha/2) where we need var(2) shifted appropriately.
+
+// If d1 has terms with var(1) (degree 1) and scalar (degree 0):
+// For the var(1) terms: right factor at position 2 → var(ngens+2) = var(4)
+// For the scalar terms: right factor at position 1 → var(2)
+
+// This requires splitting d1 into degree-1 and degree-0 parts.
+// Degree-1 part: coefficient of var(1) times var(1)
+// Degree-0 part: constant term
+
+// In Singular: use subst to extract
+poly d1_deg0 = subst(d1, x(1), 0);  // kill all x(1) terms
+poly d1_deg1_coeff = (d1 - d1_deg0) / var(1);  // not valid in LP...
+
+// Actually, easier: just build both products manually.
+// d1 = reduce of [var(1)*var(3) - (ha/2)*var(1)]
+//    = (ha - ha/2)*var(1) + 1  (from Hecke: var(1)*var(3) = ha*var(1)+1)
+//    = (ha/2)*var(1) + 1
+
+// Let me verify: var(1)*var(3) reduces via G[2] (x(1)²):
+// G[2] = q*x(1)*x(1) + (-q^2+1)*x(1) - q  [at positions 1,2]
+// So x(1)(1)*x(1)(2) = ((q^2-1)/q)*x(1)(1) + 1
+// = ha*x(1) + 1
+// Then d1_raw = ha*var(1) + 1 - (ha/2)*var(1) = (ha/2)*var(1) + 1
+
+// So: A = ha/2, B = 1
+// d1 * (var(2) - ha/2):
+// A*var(1)*var(4) + A*(-ha/2)*var(1) + B*var(2) + B*(-ha/2)
+// = (ha/2)*var(1)*var(4) - (ha^2/4)*var(1) + var(2) - ha/2
+
+poly d2_raw = (ha/2)*var(1)*var(4) - (ha^2/4)*var(1) + var(2) - ha/2;
+"D step 2 raw:"; d2_raw;
+poly d2 = reduce(d2_raw, G);
+"N(2,1) FINAL:"; d2;
+
+"";
+"=== RESULTS ===";
+"";
+"N(1,2):"; s2;
+"N(2,1):"; d2;
+poly delta = s2 - d2;
+"Delta = N(1,2) - N(2,1):"; delta;
+
+"";
+"=== EVALUATE AT q = 11/10 ===";
+map ev = R, 11/10;
+"N(1,2) at q=11/10:"; ev(s2);
+"N(2,1) at q=11/10:"; ev(d2);
+"Delta at q=11/10:"; ev(delta);
+
+exit;

@@ -1,0 +1,162 @@
+{
+  "engine": "python+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-04T00:15:57.193558+00:00",
+  "commitSha": "4a6d05a27851295c04a40d0f24b226dd7ee9ad63",
+  "assertions": [
+    {
+      "name": "depth_sweep_produced_at_least_one_window",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Sanity invariant: the depth sweep must produce at least one fitted window across all depths d ∈ {2,3,4,5}. computed = 1 iff total_windows ≥ 1; expected = 1 with tolerance = 0 enforces a strict boolean predicate (no slack). The integer total_windows itself is recorded as data. Per-depth verdicts (HOLDS / near-match / REFUTED / INSUFFICIENT_DATA) are reported as data, not assertions."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 15,
+  "computation": "qbeta-c-k-recursion-depth-sweep",
+  "scriptFile": "qbeta_c_k_recursion_depth_sweep.py",
+  "scriptHash": "ac2002f19304",
+  "scriptCommitSha": "b123d2d91d4711eaf528ba6aa10526c06d648e93",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 10,
+    "truncation_bound": "1e-50"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Depth-d sweep on the Q_β c_k constant-kernel recurrence test. Extends qbeta_habiro_q_difference_recurrence_probe (which refuted depth-2 with α-spread 318× / β-spread 765×) to depths d = 3, 4, 5. For each d, builds independent linear systems from consecutive (d+1)-element c_k windows, reports the relative spread of the kernel components across windows. Small spread = depth-d recurrence holds structurally. Also tests asymptotic-ratio hypothesis c_{k+1}/c_k → 1/h_q² at q_0. If a depth d* is found, the Lean CKRecursion R scaffold (prop:q-beta-c-k-recursion-from-habiro-q-difference) instantiates directly with that depth + kernel.",
+  "contentBlock": "prop:q-beta-c-k-recursion-from-habiro-q-difference",
+  "data": {
+    "depth_sweep_results": {
+      "depth_2": {
+        "kernels": [
+          [
+            "0.366616016344623",
+            "0.399889412599479"
+          ],
+          [
+            "-7.32799842196319",
+            "4.77810533158168"
+          ],
+          [
+            "11.1144441570493",
+            "-14.9444736946741"
+          ],
+          [
+            "116.340720973839",
+            "286.00544571043"
+          ],
+          [
+            "115.083908863283",
+            "306.541424495395"
+          ],
+          [
+            "117.120682572453",
+            "33.9306767243908"
+          ]
+        ],
+        "spreads": [
+          "2.03262066522811",
+          "2.98316632120618"
+        ],
+        "verdict": "REFUTED",
+        "max_residual": "7.596454197e-65"
+      },
+      "depth_3": {
+        "kernels": [
+          [
+            "12.7989059712431",
+            "-2.6007401784047",
+            "-8.04853597524514"
+          ],
+          [
+            "90.8479984647053",
+            "569.342886449346",
+            "-380.975320943368"
+          ],
+          [
+            "115.146319232299",
+            "299.280557167855",
+            "-17.8497054073123"
+          ],
+          [
+            "145.486916225211",
+            "-3230.5663717642",
+            "-8695.42567148563"
+          ]
+        ],
+        "spreads": [
+          "1.45698868231219",
+          "3.70561022728274",
+          "3.8176627299793"
+        ],
+        "verdict": "REFUTED",
+        "max_residual": "1.593091911e-58"
+      },
+      "depth_4": {
+        "kernels": [
+          [
+            "115.670727552427",
+            "251.63911090595",
+            "-316.417852067275",
+            "199.786628066294"
+          ],
+          [
+            "113.654904980495",
+            "434.772556825957",
+            "831.276389606296",
+            "-568.192023240427"
+          ]
+        ],
+        "spreads": [
+          "0.0175804383458331",
+          "0.533596541344146",
+          "2.0",
+          "2.0"
+        ],
+        "verdict": "REFUTED",
+        "max_residual": "1.244603056e-60"
+      },
+      "depth_5": {
+        "kernels": [],
+        "spreads": [],
+        "verdict": "INSUFFICIENT_DATA",
+        "max_residual": "nan"
+      }
+    },
+    "asymptotic_ratio_test": {
+      "target_1_over_hbar_q_sq": "101.86217860459721308033",
+      "mean_last_3_ratios": "122.8761170671003141019286",
+      "deviation": "0.206297752025055",
+      "per_step_ratios": {
+        "2": "1.97591955286720640526829",
+        "3": "0.5689974402336719400457847",
+        "4": "1.069412521782775474334888",
+        "5": "-2.860026302451923390398447",
+        "6": "16.33973655448709486890614",
+        "7": "133.8443964313164344942075",
+        "8": "117.3741909570329120045269",
+        "9": "117.4097638129515958070514"
+      }
+    },
+    "verdict_summary": {
+      "holding_depths": [],
+      "near_match_depths": [],
+      "refuted_depths": [
+        2,
+        3,
+        4
+      ],
+      "insufficient_data_depths": [
+        5
+      ]
+    },
+    "total_windows_across_all_depths": 12
+  }
+}

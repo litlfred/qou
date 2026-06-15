@@ -1,0 +1,146 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-19T23:19:33.417230+00:00",
+  "commitSha": "77dba8f7663981877aa8960f788259b0f228d903",
+  "assertions": [
+    {
+      "name": "c_8_extracted_finite",
+      "computed": 7649.105892246863,
+      "expected": 7649.105892246863,
+      "passed": true,
+      "tolerance": 1e-10,
+      "source": "c_8 extraction at q_0 from R(q_0)/N_2..N_7 factorization"
+    },
+    {
+      "name": "c_9_extracted_finite",
+      "computed": 897807.6156471489,
+      "expected": 897807.6156471489,
+      "passed": true,
+      "tolerance": 1e-10,
+      "source": "c_9 extraction at q_0 from R(q_0)/N_2..N_8 factorization"
+    },
+    {
+      "name": "c_10_extracted_finite",
+      "computed": 105411380.10260098,
+      "expected": 105411380.10260098,
+      "passed": true,
+      "tolerance": 1e-10,
+      "source": "c_10 extraction at q_0 from R(q_0)/N_2..N_9 factorization"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 4,
+  "computation": "qbeta-decay-sdp-extended-ck",
+  "scriptFile": "qbeta_decay_sdp_extended_ck.py",
+  "scriptHash": "daf1c885abd3",
+  "scriptCommitSha": "654f2dd2f2acbf04f00374319cba7088b3436337",
+  "description": "EXTENDED c_k extraction at rungs k=8, 9, 10 via SDP-T_β. Continues qbeta_decay_sdp_full_ck.py beyond k=7 to test the PR #814 prediction that averaging-resonance rungs carry 1/2 fingerprints. Pell-Lucas-clean test at silver ratio classifies each rung as pure-σ or averaging-resonance.",
+  "parameters": {
+    "q_0_50dps": "1.1099785955541805752815940796095093779932822799587",
+    "Q_AME_50dps": "0.78233341400000004817906074094935320317745208740256",
+    "hoefsmit_b_50dps": "0.86758406730705817865833308252393344606969606677438",
+    "hbar_q_sq_50dps": "0.0098171885134786714364814119414486823004830901220042"
+  },
+  "data": {
+    "R_q0_50dps": "0.99992621502020147815595521647523431679839519968781",
+    "c_k_extracted_50dps": {
+      "c_2": "-1.0171161867712343470999365333251391372386646241367",
+      "c_3": "-2.0097397609790153696787922503175138013288314222251",
+      "c_4": "-1.1435367795328914280030046170383508824096377265705",
+      "c_5": "-1.2229125511516231694582325719630216390770094248572",
+      "c_6": "3.4975620618922254409204038063277500652569095278598",
+      "c_7": "57.14924267428765097944435950385165641298547960818",
+      "c_8": "7649.1058922468629599204947229805869487826730211206",
+      "c_9": "897807.61564714890624967061678984928734626815872785",
+      "c_10": "105411380.10260097857655657126108556120682091433365"
+    },
+    "c_k_extracted_float": {
+      "c_2": -1.0171161867712344,
+      "c_3": -2.0097397609790155,
+      "c_4": -1.1435367795328915,
+      "c_5": -1.2229125511516232,
+      "c_6": 3.4975620618922254,
+      "c_7": 57.14924267428765,
+      "c_8": 7649.105892246863,
+      "c_9": 897807.6156471489,
+      "c_10": 105411380.10260098
+    },
+    "silver_ratio_test": {
+      "method": "Substitute b² = 7/8 (exact at silver q = 1+√2) into natural pattern continuation of the c_k closed form, reduce to a rational a/b in lowest terms, and test the REDUCED numerator |a| via the refined Pell-Lucas-cleanness criterion in ck_sector_classifier.is_pell_lucas_clean (|a| of the form a_n^j · 2^t for some Pell-Lucas a_n > 1, j ∈ {0..4}, t ≥ 0). The `scaled_numerator` field per rung below records |a|·32 for legacy display only — the actual test does not multiply by any common denominator.",
+      "pell_lucas_sequence": [
+        1,
+        1,
+        3,
+        7,
+        17,
+        41,
+        99,
+        239,
+        577,
+        1393,
+        3363,
+        8119,
+        19601
+      ],
+      "common_denominator_for_display_only": 32,
+      "rungs": {
+        "c_8": {
+          "silver_value": "49/16",
+          "scaled_numerator": 98,
+          "scaled_denominator": 1,
+          "scaled_for_test": "98",
+          "pell_lucas_clean": true,
+          "pell_lucas_match": "= a_3^2 Pell-Lucas",
+          "classification": "pure σ-action (= a_3^2 Pell-Lucas)"
+        },
+        "c_9": {
+          "silver_value": "-7",
+          "scaled_numerator": -224,
+          "scaled_denominator": 1,
+          "scaled_for_test": "-224",
+          "pell_lucas_clean": true,
+          "pell_lucas_match": "= a_3 Pell-Lucas",
+          "classification": "pure σ-action (= a_3 Pell-Lucas)"
+        },
+        "c_10": {
+          "silver_value": "343/128",
+          "scaled_numerator": 343,
+          "scaled_denominator": 4,
+          "scaled_for_test": "343/4",
+          "pell_lucas_clean": true,
+          "pell_lucas_match": "= a_3^3 Pell-Lucas",
+          "classification": "pure σ-action (= a_3^3 Pell-Lucas)"
+        }
+      }
+    },
+    "averaging_resonance_rungs": [],
+    "supporting_prediction": {
+      "claim": "PR #814: rungs whose order coincides with an averaging-resonance position pick up 1/2 fingerprints (involution origin from typed-B_3 averaged crossings).",
+      "result": "Rungs in [8, 9, 10] failing Pell-Lucas-clean: NONE",
+      "interpretation": "NOT SUPPORTED — under natural pattern continuation all three new rungs are Pell-Lucas-clean. Either the prediction fails in this range OR the natural-continuation closed forms are not categorical (cf. c_5 outlier at k=5)."
+    },
+    "upstream_witness_hashes": [
+      {
+        "path": "q-beta-operator-valued-N3.witness.json",
+        "sha256": "4732372316e8f59d81ccceff8d7909fa9b459be6e4790e94d4bacc06294173d6",
+        "size_bytes": 4731,
+        "commitSha": "31201ed80a4fdeb3fb994ffe14cee3a0abd5add5",
+        "scriptCommitSha": "unknown",
+        "computedAt": "2026-05-16T01:04:25.932637+00:00"
+      },
+      {
+        "path": "q-pinning-50-digit.witness.json",
+        "sha256": "a2fa7b03063cb6580591b17ce9371714dcaab0907aad489efa54745a059bc41c",
+        "size_bytes": 3939,
+        "commitSha": "610a6aa2bde5fabec35796ead6bbb0adb76f6533",
+        "scriptCommitSha": null,
+        "computedAt": "2026-04-27T20:27:23.154181+00:00"
+      }
+    ]
+  },
+  "caveats": [
+    "Leverage limit: at k=7 any c_k ∈ [-100, 100] closes the residual to ~10⁻⁴ ppb. At k=8, 9, 10 the leverage is even tighter — the 50dps extracted c_k values are numerically near the (R−1) noise floor relative to the canonical-form ambiguity at the chosen q_0. Pell-Lucas classification therefore reads as STRUCTURAL signal at the silver ratio, not as a precision claim at q_0.",
+    "Silver-ratio closed forms at k=8, 9, 10 use natural pattern continuation: c_8 = c_3²·b⁴, c_9 = c_3³·b², c_10 = c_3²·b⁶. These are conjectural — the canonical c_k closed forms beyond k=7 are not yet derived from the SDP-T_β / Hoefsmit-N=3 framework."
+  ]
+}

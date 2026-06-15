@@ -1,0 +1,377 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-06-04T16:51:04.175303+00:00",
+  "commitSha": "6f18f4d2bb737d97b6769e3b12356c8ce27ba205",
+  "assertions": [
+    {
+      "name": "proton_per_block_under_uniform_within_1pct",
+      "computed": 0.4206075098411415,
+      "expected": 0.4209486166007905,
+      "passed": true,
+      "tolerance": 0.01
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 12,
+  "computation": "option-a-vol-per-knot-light-series",
+  "scriptFile": "option_a_vol_per_knot_light_series.py",
+  "scriptHash": "3ed39e0dfea4",
+  "scriptCommitSha": "6f18f4d2bb737d97b6769e3b12356c8ce27ba205",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Option A diagnostic (PR #1762 §5 / scoping #1816): measure the per-knot-vs-uniform VolDensity(K, q₀) gap for the light isotope series {p, n, D, T, ³He, ⁴He} alongside production. DOES NOT change production — flipping uniform → per-block would break m_p (the CAL-2 anchor) by ≈ 2.38× per the `_li_2_q_util.py:298-313` discipline note. Per-knot Vol(K) from `substrate/knot_volumes.py` (small-knot hyperbolic volume); tr_M from `chi-{atom}-h{3A}-at-q0-50dps.witness.json` for every atom — the probe reads whichever schema each cache carries (a pre-summed top-level `tr_M_at_q0`, or a `by_partition` array combined in-probe with `y-lambda-at-q0.witness.json`).",
+  "auditOnly": "docs/audits/2026-06-04-option-a-vol-per-knot-scoping.md",
+  "parameters": {
+    "q_0_50dps": "1.1099785827513808075916690956107688798744991218736",
+    "m_e_MeV": "0.51099895069",
+    "compute_dps": 70,
+    "serialization_dps": 50
+  },
+  "data": {
+    "discipline": "EXPLORATORY",
+    "production_wired": false,
+    "scoping_doc": "docs/audits/2026-06-04-option-a-vol-per-knot-scoping.md",
+    "geom_uniform_borromean": "1890.5123448142975983338372577654540963117690463738",
+    "geom_uniform_description": "vol_density_borromean(q_0) = Vol(𝓑₃)/ℏ_q² · linking_weight_family_a(q_0) = Vol(𝓑₃)/ℏ_q² · (5/2 + (3/4)·h²); applied uniformly to every atom in production (mass_table_comprehensive.py:208).",
+    "m_avg_uniform_MeV": "966.04982446659753565797793103937409734667618179461",
+    "rows": [
+      {
+        "label": "p",
+        "Z": 1,
+        "N": 0,
+        "A": 1,
+        "knot": "L6a4 (Borromean)",
+        "n_strands": 3,
+        "vol_K_50dps": "7.3277247534177521204368281194590728861931949942534",
+        "tr_M_at_q0": "1.0653061442544499756666334037445034130528872534934",
+        "tr_M_source": "chi-proton-h3-at-q0-50dps.witness.json (top-level tr_M_at_q0, pre-summed)",
+        "geom_uniform_50dps": "1890.5123448142975983338372577654540963117690463738",
+        "geom_perknot_50dps": "795.16368967627911894438893936038792895154720239975",
+        "ratio_perknot_over_uniform_50dps": "0.42060750984114147304376004571687126650079466251133",
+        "m_K_uniform_MeV_50dps": "966.04982446659753565797793103937409734667618179461",
+        "m_K_perknot_MeV_50dps": "406.32781105136741556414044847640027144558289227828",
+        "m_K_codata_total_MeV": "938.27208816000000000000000000000000000000000000000",
+        "m_K_codata_per_nucleon_MeV": "938.27208816000000000000000000000000000000000000000",
+        "gap_uniform_pct": "2.96052037113",
+        "gap_perknot_pct": "-56.6940319148",
+        "canonical_braid_word_len": 11,
+        "canonical_braid_word_first_6": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            1.0,
+            -0.10453014939781968,
+            0.0
+          ],
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "…"
+        ]
+      },
+      {
+        "label": "n",
+        "Z": 0,
+        "N": 1,
+        "A": 1,
+        "knot": "L6a4 (Borromean)",
+        "n_strands": 3,
+        "vol_K_50dps": "7.3277247534177521204368281194590728861931949942534",
+        "tr_M_at_q0": "0.92323322991163717797026991200748498402824245608811",
+        "tr_M_source": "chi-neutron-h3-at-q0-50dps.witness.json (top-level tr_M_at_q0, pre-summed)",
+        "geom_uniform_50dps": "1890.5123448142975983338372577654540963117690463738",
+        "geom_perknot_50dps": "689.11790801888014159652537104741085529902656797645",
+        "ratio_perknot_over_uniform_50dps": "0.36451383663753395723034156152046259270058103396380",
+        "m_K_uniform_MeV_50dps": "966.04982446659753565797793103937409734667618179461",
+        "m_K_perknot_MeV_50dps": "352.13852789933568906470308595518985329911800241440",
+        "m_K_codata_total_MeV": "939.56542052000000000000000000000000000000000000000",
+        "m_K_codata_per_nucleon_MeV": "939.56542052000000000000000000000000000000000000000",
+        "gap_uniform_pct": "2.81879296196",
+        "gap_perknot_pct": "-62.5211272990",
+        "canonical_braid_word_len": 11,
+        "canonical_braid_word_first_6": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            1.0,
+            -0.10453014939781968,
+            0.0
+          ],
+          [
+            1.0,
+            -0.10453014939781968,
+            0.0
+          ],
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "…"
+        ]
+      },
+      {
+        "label": "D",
+        "Z": 1,
+        "N": 1,
+        "A": 2,
+        "knot": "6_2",
+        "n_strands": 6,
+        "vol_K_50dps": "4.4008325161230461014412038656409280339834854185165",
+        "tr_M_at_q0": "0.38828642407478887671153751312935209344259947275515",
+        "tr_M_source": "chi-deuteron-h6-at-q0-50dps.witness.json (per-partition χ^λ) × y-lambda-at-q0.witness.json (n=6, summed in-probe via _tr_m_from_chi_cache)",
+        "geom_uniform_50dps": "1890.5123448142975983338372577654540963117690463738",
+        "geom_perknot_50dps": "174.06041217576672648839448687277828564155437236194",
+        "ratio_perknot_over_uniform_50dps": "0.092070497531114740751677557308457426060218094183864",
+        "m_K_uniform_MeV_50dps": "966.04982446659753565797793103937409734667618179461",
+        "m_K_perknot_MeV_50dps": "88.944687978485697081785811254770683487851377737535",
+        "m_K_codata_total_MeV": "1875.6129425700000000000000000000000000000000000000",
+        "m_K_codata_per_nucleon_MeV": "937.80647128500000000000000000000000000000000000000",
+        "gap_uniform_pct": "3.01163982617",
+        "gap_perknot_pct": "-90.5156670697",
+        "canonical_braid_word_len": 23,
+        "canonical_braid_word_first_6": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            1.0,
+            -0.10453014939781968,
+            0.0
+          ],
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "…"
+        ]
+      },
+      {
+        "label": "T",
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "knot": "8_11",
+        "n_strands": 9,
+        "vol_K_50dps": "8.2863168178065925881000000000000000000000000000000",
+        "tr_M_at_q0": "0.10405210674205179940541687876459346194008936103244",
+        "tr_M_source": "chi-tritium-h9-at-q0-50dps.witness.json (top-level tr_M_at_q0, pre-summed)",
+        "geom_uniform_50dps": "1890.5123448142975983338372577654540963117690463738",
+        "geom_perknot_50dps": "87.826458837338876305238834110656023018890855268351",
+        "ratio_perknot_over_uniform_50dps": "0.046456432341342868810448207242956078313574444003321",
+        "m_K_uniform_MeV_50dps": "966.04982446659753565797793103937409734667618179461",
+        "m_K_perknot_MeV_50dps": "44.879228308698643183920748380384207110181713089764",
+        "m_K_codata_total_MeV": "2808.9211329800000000000000000000000000000000000000",
+        "m_K_codata_per_nucleon_MeV": "936.30704432666666666666666666666666666666666666667",
+        "gap_uniform_pct": "3.17660540099",
+        "gap_perknot_pct": "-95.2067830120",
+        "canonical_braid_word_len": 35,
+        "canonical_braid_word_first_6": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            1.0,
+            -0.10453014939781968,
+            0.0
+          ],
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "…"
+        ]
+      },
+      {
+        "label": "3He",
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "knot": "L6a4 (Borromean)",
+        "n_strands": 9,
+        "vol_K_50dps": "7.3277247534177521204368281194590728861931949942534",
+        "tr_M_at_q0": "0.20654081702073964813770987099204950200337250952334",
+        "tr_M_source": "chi-helium-3-h9-at-q0-50dps.witness.json (top-level tr_M_at_q0, pre-summed)",
+        "geom_uniform_50dps": "1890.5123448142975983338372577654540963117690463738",
+        "geom_perknot_50dps": "154.16578512827678726695296212112508139681706119416",
+        "ratio_perknot_over_uniform_50dps": "0.081547092538779628122606710330827268308853625198834",
+        "m_K_uniform_MeV_50dps": "966.04982446659753565797793103937409734667618179461",
+        "m_K_perknot_MeV_50dps": "78.778554432849445341297316557482233276014357776103",
+        "m_K_codata_total_MeV": "2808.3916074300000000000000000000000000000000000000",
+        "m_K_codata_per_nucleon_MeV": "936.13053581000000000000000000000000000000000000000",
+        "gap_uniform_pct": "3.19605947163",
+        "gap_perknot_pct": "-91.5846613886",
+        "canonical_braid_word_len": 35,
+        "canonical_braid_word_first_6": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            1.0,
+            -0.10453014939781968,
+            0.0
+          ],
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "…"
+        ]
+      },
+      {
+        "label": "4He",
+        "Z": 2,
+        "N": 2,
+        "A": 4,
+        "knot": "L6a4_x4 (magic-A: 4·Vol(L6a4))",
+        "n_strands": 12,
+        "vol_K_50dps": "29.310899013671008481747312477836291544772779977014",
+        "tr_M_at_q0": "0.055348335163768566815976434665115729137981241309485",
+        "tr_M_source": "chi-helium-4-h12-at-q0-50dps.witness.json (per-partition χ^λ) × y-lambda-at-q0.witness.json (n=12, summed in-probe via _tr_m_from_chi_cache)",
+        "geom_uniform_50dps": "1890.5123448142975983338372577654540963117690463738",
+        "geom_perknot_50dps": "165.25197622721855151060592345057041472341191346300",
+        "ratio_perknot_over_uniform_50dps": "0.087411212458097449554938412591022545407333112039828",
+        "m_K_uniform_MeV_50dps": "966.04982446659753565797793103937409734667618179461",
+        "m_K_perknot_MeV_50dps": "84.443586451557504839221341289339946005621614356240",
+        "m_K_codata_total_MeV": "3727.3794066000000000000000000000000000000000000000",
+        "m_K_codata_per_nucleon_MeV": "931.84485165000000000000000000000000000000000000000",
+        "gap_uniform_pct": "3.67067251121",
+        "gap_perknot_pct": "-90.9380208194",
+        "canonical_braid_word_len": 47,
+        "canonical_braid_word_first_6": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            1.0,
+            -0.10453014939781968,
+            0.0
+          ],
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "…"
+        ]
+      }
+    ],
+    "interpretation": "Each row's `ratio_perknot_over_uniform_50dps` quantifies how far the per-knot Stage-4 sum `tr_M(β_K, q₀)` is from the global Family-A scalar `linking_weight_family_a(q₀) ≈ 2.53`. For p the docstring (`_li_2_q_util.py:298-313`) quotes a ≈ 2.38× gap (i.e. ratio ≈ 1/2.38 ≈ 0.42) and m_K_perknot ≈ −57% vs CODATA m_p; the proton row counter-pins that quote (within 0.08 %). Row-by-row reading of `m_K_perknot_MeV_50dps` vs CODATA is the diagnostic signal: if production were flipped to per-block today, EVERY light atom mass would shrink by the row's ratio factor — quantifying #1762 §2 Form 2's −57 % gap across {p, n, D, T, ³He, ⁴He} at once."
+  }
+}

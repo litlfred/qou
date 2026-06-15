@@ -1,0 +1,43 @@
+{
+  "compute": "items_1_2_3_mw_strongforce_anchor_asymmetry",
+  "description": "Items 1-3 from prior session queue: derive m_W from substrate, apply formula to T(2,9)/T(3,5) strong-force, investigate W/Z anchor asymmetry. Honestly frames each as derivation OR negative finding.",
+  "item_1_mw_from_substrate": {
+    "g_predicted": 0.6551965728883834,
+    "v_SM_GeV": 246.0,
+    "v_deviation_pct": -0.2608023425399836,
+    "v_required_GeV": 245.35842623735164,
+    "verdict": "m_W cannot be derived from substrate alone without v. Conditional formula: m_W = (\u03c0\u00b7h_0)\u00b7v/2, with v as the open structural quantity."
+  },
+  "item_2_strong_force_torus": {
+    "T29_naive_mass_MeV": 0.6298704142399444,
+    "T29_tr_M_at_q0": 1.2326256526357724,
+    "expected_mass_MeV": 0.0,
+    "verdict": "T(2,9) trace gives non-zero \u2248 0.5 MeV from naive formula. Gauge-massless gluons require a SEPARATE categorical mechanism (gauge invariance projection). Cannot be derived from trace alone."
+  },
+  "item_3_wz_asymmetry": {
+    "P2_over_P3": 0.8912755503198997,
+    "SM_cos_theta_W": 0.8814685330022942,
+    "asymmetry_pct": 1.1125771312791746,
+    "gauge_factor_from_W": 141.96494979390445,
+    "gauge_factor_from_Z": 143.5444193597434,
+    "predicted_vs_SM_pct": 1.1125771312791746,
+    "ratio_Z_W": 1.0111257713127917,
+    "verdict": "The 1% W/Z asymmetry IS the gap between RT-chain prediction (P_2/P_3 \u2248 0.891) and SM cos \u03b8_W (\u2248 0.882). The trace formula captures the structural pattern but doesn't include the SU(2)_L \u00d7 U(1)_Y mixing mechanism. Closing the 1% requires the SM electroweak symmetry breaking chain (Higgs VEV mixing g and g')."
+  },
+  "overall_verdict": "All three items face the same structural barrier: the framework's RT trace chain on H_2(q) cannot fully derive SM electroweak masses without a categorical chain for v (Higgs VEV), g/g' mixing, and gauge-invariance projection (for massless gluons). The trace gives the SHAPE of the mass spectrum (within 1% on W/Z ratio) but the absolute scale and the W/Z 1% gap require SM-electroweak structure.",
+  "parameters": {
+    "H_0": "0.20855554654411102099666576552221321077768766333243",
+    "Q_0": "1.1097",
+    "dps": 50,
+    "precision": "mpfr"
+  },
+  "scriptCommitSha": "07ccc8e9441b6ca5921be5aba62325786c89c862",
+  "status": "exploratory",
+  "tags": [
+    "items-1-2-3",
+    "m_W-derivation",
+    "strong-force-torus",
+    "anchor-asymmetry",
+    "honest-negative"
+  ]
+}

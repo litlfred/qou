@@ -1,0 +1,93 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-06-02T16:58:54.342442+00:00",
+  "commitSha": "77f2b68af2c9d52ae3d55c1cea746e8e9977db80",
+  "assertions": [
+    {
+      "name": "skein_bar_antisymmetry_bar_h_eq_neg_h",
+      "computed": "0.0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": 1e-40,
+      "source": "theorem skein_bar_antisymmetry (bar(q-q⁻¹) = -(q-q⁻¹))"
+    },
+    {
+      "name": "exterior_square_C10_eq_45",
+      "computed": "45",
+      "expected": "45",
+      "passed": true,
+      "tolerance": 0,
+      "source": "theorem exterior_square_C10 (Λ²(C¹⁰) dim = 45)"
+    },
+    {
+      "name": "lambda_2_C10_irreducibles_sum_eq_45",
+      "computed": "45",
+      "expected": "45",
+      "passed": true,
+      "tolerance": 0,
+      "source": "theorem lambda_2_C10_sum ([9, 36].sum = 45)"
+    },
+    {
+      "name": "lusztig_q_0_imaginary_part_zero",
+      "computed": "0.0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": 1e-40,
+      "source": "theorem lusztig_eq_hermitian_on_real (q ∈ ℝ precondition)"
+    },
+    {
+      "name": "polynomial_bar_involutive",
+      "computed": "0.0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": 1e-40,
+      "source": "theorem barPoly_involutive (barPoly ∘ barPoly = id)"
+    },
+    {
+      "name": "polynomial_bar_X_squared_invariant",
+      "computed": "0.0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": 1e-40,
+      "source": "theorem barPoly_X_pow_two (barPoly X² = X²)"
+    },
+    {
+      "name": "polynomial_bar_X_eq_neg_X",
+      "computed": "0.0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": 1e-40,
+      "source": "theorem barPoly_X (barPoly X = -X)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 12,
+  "computation": "four-unwired-theorems-regression",
+  "scriptFile": "four_unwired_theorems_regression.py",
+  "scriptHash": "8a712057444c",
+  "scriptCommitSha": "5a44813463430491fdc8cd8cd5a97a404b5e7e9d",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.12.3",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Bundled numerical regression for 4 Lean-proved theorems that lacked production compute witnesses (per the proven-but-unwired audit, PR #1255): skein-bar-antisymmetry, exterior-square-borromean, lusztig-vs-hermitian-bar (precondition only), polynomial-bar-involution. Each identity is verified at q_0 to ≤ 1e-40 (50 dps) using VIOLATION variables (|computed − expected|) so the tolerance actually binds through the WitnessBuilder float cast.",
+  "contentBlock": "prop:proven-unwired-regression-2026-05-25",
+  "auditOnly": "docs/audits/2026-05-25-option-e-crystal-weight-delta-lambda.md",
+  "parameters": {
+    "precision_dps": 50,
+    "q_0": "1.1099785827513808075916690956107688798744991218736"
+  },
+  "caveats": [
+    "These probes verify the algebraic identities at the canonical substrate q_0 to 50-dps precision. The full Lean theorems are CATEGORICAL (proved over generic [Field R] or [CommRing R]); this witness only verifies the canonical specialisation as a regression guard. Lean ↔ compute drift in either layer will now trip an assertion failure."
+  ]
+}

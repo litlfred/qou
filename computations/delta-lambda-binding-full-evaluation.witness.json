@@ -1,0 +1,69 @@
+{
+  "engine": "python3/mpmath",
+  "engineVersion": "50dps",
+  "computedAt": "2026-05-26T23:32:44Z",
+  "computation": "delta-lambda-binding-full-evaluation",
+  "scriptFile": "delta_lambda_binding_full_evaluation.py",
+  "description": "Full numerical evaluation of the \u0394_\u03bb binding formula B(K) = m_e \u00d7 |\u03a3 y_\u03bb \u00b7 \u03c7^\u03bb(\u03b2_K) \u00b7 sgn(w_0^{S_{\u03bb prime}}) \u00b7 f^\u03bb| for D, T, \u00b3He, \u2074He. Zero free parameters. All factors: y_\u03bb (Wenzl), \u03c7^\u03bb (Hoefsmit+interface), sgn (Macdonald), f^\u03bb (hook-length).",
+  "data": {
+    "D": {
+      "A": 2,
+      "Z": 1,
+      "N": 1,
+      "sum": -0.7439005054492055,
+      "B_pred_MeV": 0.3801323777023046,
+      "B_AME_MeV": 2.22452,
+      "err_MeV": -1.8443876222976954,
+      "err_pct": -82.91171229288544
+    },
+    "T": {
+      "A": 3,
+      "Z": 1,
+      "N": 2,
+      "sum": -3.7347446647642837,
+      "B_pred_MeV": 1.9084506047896248,
+      "B_AME_MeV": 8.4818,
+      "err_MeV": -6.573349395210375,
+      "err_pct": -77.49946232179933
+    },
+    "3He": {
+      "A": 3,
+      "Z": 2,
+      "N": 1,
+      "sum": -4.5880514246742665,
+      "B_pred_MeV": 2.3444894637203095,
+      "B_AME_MeV": 7.71804,
+      "err_MeV": -5.373550536279691,
+      "err_pct": -69.62325326481452
+    },
+    "4He": {
+      "A": 4,
+      "Z": 2,
+      "N": 2,
+      "sum": -5.945489513716075,
+      "B_pred_MeV": 3.038138902847313,
+      "B_AME_MeV": 28.29567,
+      "err_MeV": -25.25753109715269,
+      "err_pct": -89.26288402837851
+    }
+  },
+  "assertions": [
+    {
+      "label": "D computed",
+      "passed": true
+    },
+    {
+      "label": "T computed",
+      "passed": true
+    },
+    {
+      "label": "3He computed",
+      "passed": true
+    },
+    {
+      "label": "4He computed",
+      "passed": true
+    }
+  ],
+  "allPassed": true
+}

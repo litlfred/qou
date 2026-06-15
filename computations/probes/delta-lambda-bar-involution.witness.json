@@ -1,0 +1,128 @@
+{
+  "engine": "python3/mpmath+numpy",
+  "engineVersion": "50dps",
+  "computedAt": "2026-05-26T15:04:51Z",
+  "computation": "delta-lambda-bar-involution-multi-atom",
+  "scriptFile": "delta_lambda_bar_involution_probe.py",
+  "description": "\u0394_\u03bb with bar-involution (\u0394_\u03bb = \u0394_{\u03bb^T}) + minimum-norm selection on the deuteron. Reduces 11 free params to 8 via conjugate-pair identification. Single-atom minimum-norm gives the unique smallest-L2 bar-symmetric \u0394.",
+  "data": {
+    "n_self_conjugate": 1,
+    "n_conjugate_pairs": 5,
+    "n_free_after_bar": 6,
+    "self_conjugate_partitions": [
+      [
+        3,
+        2,
+        1
+      ]
+    ],
+    "conjugate_pairs": [
+      [
+        [
+          6
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      [
+        [
+          5,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      [
+        [
+          4,
+          2
+        ],
+        [
+          2,
+          2,
+          1,
+          1
+        ]
+      ],
+      [
+        [
+          4,
+          1,
+          1
+        ],
+        [
+          3,
+          1,
+          1,
+          1
+        ]
+      ],
+      [
+        [
+          3,
+          3
+        ],
+        [
+          2,
+          2,
+          2
+        ]
+      ]
+    ],
+    "delta_star": {
+      "(3, 2, 1)": 1.1937520287748369,
+      "(6,)": -7.633710438447545,
+      "(5, 1)": -15.694865956287728,
+      "(4, 2)": -5.5980420561688335,
+      "(4, 1, 1)": 0.3661849408823113,
+      "(3, 3)": -4.737331282677337
+    },
+    "mass_eq_residual": 8.881784197001252e-16,
+    "B_D_predicted_MeV": -2952.1389868895894,
+    "B_D_AME_MeV": 2.22452,
+    "option_E_comparison": {
+      "description": "Option E (\u0394_\u03bb = principal specialization) vs bar-inv min-norm",
+      "cosine_similarity": -0.512,
+      "option_E_sum_yc_delta": 614.83,
+      "target": -4.3534,
+      "verdict": "RULED OUT \u2014 wrong sign by 140x, opposite direction (cos=-0.51)",
+      "option_E_all_positive": true,
+      "min_norm_mixed_sign": true
+    },
+    "gap_decomposition": {
+      "description": "The \u00d716 gap between signed-dim_q and target decomposes as color-tube \u00d7 trace \u00d7 factorial",
+      "formula": "gap \u2248 (1/|tr_M|) \u00d7 linking_weight_A \u00d7 sqrt([3]_q!) = 2.575 \u00d7 2.533 \u00d7 2.474 = 16.14",
+      "predicted_gap": 16.14,
+      "observed_gap": 16.44,
+      "miss_pct": 1.8,
+      "caveat": "This decomposition is specific to Borromean baryons. Mesons and Higgs use different Bring divisor coordinates and would have different geometric corrections.",
+      "components": {
+        "inv_tr_M": 2.575,
+        "linking_weight_A": 2.533,
+        "sqrt_3q_fac": 2.474
+      }
+    }
+  },
+  "assertions": [
+    {
+      "label": "mass equation satisfied",
+      "passed": true
+    },
+    {
+      "label": "bar-involution reduces params",
+      "passed": true
+    }
+  ],
+  "allPassed": true
+}

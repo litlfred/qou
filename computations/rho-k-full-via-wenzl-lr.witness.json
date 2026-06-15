@@ -1,0 +1,475 @@
+{
+  "engine": "rust+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-17T07:27:39.870790+00:00",
+  "commitSha": "9ce089d102efff181e8efe0fb7da0d1de1108b03",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "rho-k-full-via-wenzl-lr",
+  "scriptFile": "rho_k_full_via_wenzl_lr.py",
+  "scriptHash": "205905371f93",
+  "scriptCommitSha": "unknown",
+  "description": "ρ_K^full consumer: removes the LO tautology in `atomic_mass_via_rho_k.py` by computing |tr_M(canonical β)| directly via the Wenzl LR bridge (PR #674). For each atom (Z, N), assembles per-nucleon factors via `canonical_factor_spec`, calls `hecke-tr-m-wenzl-lr` to get all χ^λ at H_{3*(Z+N)}, normalises by averaging_denominator, and combines with y_λ(q_0) from `y-lambda-at-q0.witness.json` to yield |tr_M(β)|. ⁴He at H_12 is the first canonical value (prior witness was DEPRECATED_DISJOINT placeholder).",
+  "auditOnly": "docs/audits/2026-05-17-1ppb-workplan-v4.md",
+  "calibration_discipline": "Pure prediction from q_0 (CAL-2 input) and the canonical braid word. No new calibration.",
+  "rows": [
+    {
+      "atom": "D",
+      "Z": 1,
+      "N": 1,
+      "n_strands": 6,
+      "n_partitions": 11,
+      "averaging_denominator": 16,
+      "factor_labels": [
+        "p",
+        "n"
+      ],
+      "tr_M_q0_mp30dps": "0.0793827811227974457551529578229",
+      "abs_tr_M_q0_mp30dps": "0.0793827811227974457551529578229",
+      "chi_lambda_table_top10": [
+        {
+          "lambda": [
+            6
+          ],
+          "chi_q0": "1.56226127199",
+          "y_q0": "0.0591877169321",
+          "contribution_q0": "0.0924666779407"
+        },
+        {
+          "lambda": [
+            5,
+            1
+          ],
+          "chi_q0": "8.70726134822",
+          "y_q0": "0.0589606814015",
+          "contribution_q0": "0.513386062232"
+        },
+        {
+          "lambda": [
+            4,
+            2
+          ],
+          "chi_q0": "16.838104499",
+          "y_q0": "0.0402843869659",
+          "contribution_q0": "0.678312717411"
+        },
+        {
+          "lambda": [
+            4,
+            1,
+            1
+          ],
+          "chi_q0": "-6.17069621068",
+          "y_q0": "0.0101334634921",
+          "contribution_q0": "-0.0625305247716"
+        },
+        {
+          "lambda": [
+            3,
+            3
+          ],
+          "chi_q0": "9.69310442278",
+          "y_q0": "0.014120874005",
+          "contribution_q0": "0.136875106271"
+        },
+        {
+          "lambda": [
+            3,
+            2,
+            1
+          ],
+          "chi_q0": "-24.8260111102",
+          "y_q0": "0.00731845435229",
+          "contribution_q0": "-0.18168802906"
+        },
+        {
+          "lambda": [
+            3,
+            1,
+            1,
+            1
+          ],
+          "chi_q0": "-61.548393775",
+          "y_q0": "-0.000685308885514",
+          "contribution_q0": "0.0421796611431"
+        },
+        {
+          "lambda": [
+            2,
+            2,
+            2
+          ],
+          "chi_q0": "77.4802702621",
+          "y_q0": "0.000773186736905",
+          "contribution_q0": "0.0599067173385"
+        },
+        {
+          "lambda": [
+            2,
+            2,
+            1,
+            1
+          ],
+          "chi_q0": "29.2475727741",
+          "y_q0": "-0.000342051770885",
+          "contribution_q0": "-0.0100041840615"
+        },
+        {
+          "lambda": [
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "chi_q0": "21.1167296233",
+          "y_q0": "9.86355761098e-5",
+          "contribution_q0": "0.00208286079195"
+        }
+      ],
+      "duration_ms_total": 138
+    },
+    {
+      "atom": "T",
+      "Z": 1,
+      "N": 2,
+      "n_strands": 9,
+      "n_partitions": 30,
+      "averaging_denominator": 64,
+      "factor_labels": [
+        "p",
+        "n",
+        "n"
+      ],
+      "tr_M_q0_mp30dps": "0.0194452046684079132393382025279",
+      "abs_tr_M_q0_mp30dps": "0.0194452046684079132393382025279",
+      "chi_lambda_table_top10": [
+        {
+          "lambda": [
+            9
+          ],
+          "chi_q0": "1.68527808084",
+          "y_q0": "0.00655463943094",
+          "contribution_q0": "0.0110463901608"
+        },
+        {
+          "lambda": [
+            8,
+            1
+          ],
+          "chi_q0": "15.1967803182",
+          "y_q0": "0.00730630164063",
+          "contribution_q0": "0.111032260971"
+        },
+        {
+          "lambda": [
+            7,
+            2
+          ],
+          "chi_q0": "56.315814523",
+          "y_q0": "0.00626894501929",
+          "contribution_q0": "0.353040744961"
+        },
+        {
+          "lambda": [
+            7,
+            1,
+            1
+          ],
+          "chi_q0": "15.4612041069",
+          "y_q0": "0.00147254589161",
+          "contribution_q0": "0.022767332587"
+        },
+        {
+          "lambda": [
+            6,
+            3
+          ],
+          "chi_q0": "107.044057228",
+          "y_q0": "0.00445644212552",
+          "contribution_q0": "0.477035645916"
+        },
+        {
+          "lambda": [
+            6,
+            2,
+            1
+          ],
+          "chi_q0": "-7.70204614103",
+          "y_q0": "0.00157979110233",
+          "contribution_q0": "-0.0121676239633"
+        },
+        {
+          "lambda": [
+            6,
+            1,
+            1,
+            1
+          ],
+          "chi_q0": "-160.685825614",
+          "y_q0": "-0.000126324483542",
+          "contribution_q0": "0.0202985539332"
+        },
+        {
+          "lambda": [
+            5,
+            4
+          ],
+          "chi_q0": "97.5014017746",
+          "y_q0": "0.00229561416369",
+          "contribution_q0": "0.223825598894"
+        },
+        {
+          "lambda": [
+            5,
+            3,
+            1
+          ],
+          "chi_q0": "-94.5024968944",
+          "y_q0": "0.00111237867051",
+          "contribution_q0": "-0.105122561856"
+        },
+        {
+          "lambda": [
+            5,
+            2,
+            2
+          ],
+          "chi_q0": "117.268368095",
+          "y_q0": "0.000359423548718",
+          "contribution_q0": "0.0421490130132"
+        }
+      ],
+      "duration_ms_total": 2806
+    },
+    {
+      "atom": "3He",
+      "Z": 2,
+      "N": 1,
+      "n_strands": 9,
+      "n_partitions": 30,
+      "averaging_denominator": 64,
+      "factor_labels": [
+        "p",
+        "p",
+        "n"
+      ],
+      "tr_M_q0_mp30dps": "0.0257256532473469272883322761216",
+      "abs_tr_M_q0_mp30dps": "0.0257256532473469272883322761216",
+      "chi_lambda_table_top10": [
+        {
+          "lambda": [
+            9
+          ],
+          "chi_q0": "2.26250437829",
+          "y_q0": "0.00655463943094",
+          "contribution_q0": "0.0148299004106"
+        },
+        {
+          "lambda": [
+            8,
+            1
+          ],
+          "chi_q0": "19.6908559004",
+          "y_q0": "0.00730630164063",
+          "contribution_q0": "0.143867332771"
+        },
+        {
+          "lambda": [
+            7,
+            2
+          ],
+          "chi_q0": "70.9309157304",
+          "y_q0": "0.00626894501929",
+          "contribution_q0": "0.444662010882"
+        },
+        {
+          "lambda": [
+            7,
+            1,
+            1
+          ],
+          "chi_q0": "23.5504785811",
+          "y_q0": "0.00147254589161",
+          "contribution_q0": "0.03467916048"
+        },
+        {
+          "lambda": [
+            6,
+            3
+          ],
+          "chi_q0": "132.082065825",
+          "y_q0": "0.00445644212552",
+          "contribution_q0": "0.58861608217"
+        },
+        {
+          "lambda": [
+            6,
+            2,
+            1
+          ],
+          "chi_q0": "17.7879115522",
+          "y_q0": "0.00157979110233",
+          "contribution_q0": "0.0281011843992"
+        },
+        {
+          "lambda": [
+            6,
+            1,
+            1,
+            1
+          ],
+          "chi_q0": "-167.790421054",
+          "y_q0": "-0.000126324483542",
+          "contribution_q0": "0.0211960382829"
+        },
+        {
+          "lambda": [
+            5,
+            4
+          ],
+          "chi_q0": "118.822286171",
+          "y_q0": "0.00229561416369",
+          "contribution_q0": "0.272770123097"
+        },
+        {
+          "lambda": [
+            5,
+            3,
+            1
+          ],
+          "chi_q0": "-55.9810398258",
+          "y_q0": "0.00111237867051",
+          "contribution_q0": "-0.0622721146554"
+        },
+        {
+          "lambda": [
+            5,
+            2,
+            2
+          ],
+          "chi_q0": "130.420179308",
+          "y_q0": "0.000359423548718",
+          "contribution_q0": "0.0468760836714"
+        }
+      ],
+      "duration_ms_total": 1895
+    },
+    {
+      "atom": "4He",
+      "Z": 2,
+      "N": 2,
+      "n_strands": 12,
+      "n_partitions": 77,
+      "averaging_denominator": 256,
+      "factor_labels": [
+        "p",
+        "p",
+        "n",
+        "n"
+      ],
+      "tr_M_q0_mp30dps": "0.00630162593829626295207023128654",
+      "abs_tr_M_q0_mp30dps": "0.00630162593829626295207023128654",
+      "chi_lambda_table_top10": [
+        {
+          "lambda": [
+            12
+          ],
+          "chi_q0": "2.44066027366",
+          "y_q0": "0.0006565744608",
+          "contribution_q0": "0.00160247520317"
+        },
+        {
+          "lambda": [
+            11,
+            1
+          ],
+          "chi_q0": "29.6466946602",
+          "y_q0": "0.000767012228447",
+          "contribution_q0": "0.0227393773374"
+        },
+        {
+          "lambda": [
+            10,
+            2
+          ],
+          "chi_q0": "158.0741321",
+          "y_q0": "0.000712129117702",
+          "contribution_q0": "0.112569192224"
+        },
+        {
+          "lambda": [
+            10,
+            1,
+            1
+          ],
+          "chi_q0": "83.7419552356",
+          "y_q0": "0.000164395100773",
+          "contribution_q0": "0.0137667671699"
+        },
+        {
+          "lambda": [
+            9,
+            3
+          ],
+          "chi_q0": "481.588008225",
+          "y_q0": "0.000587053793606",
+          "contribution_q0": "0.282718067184"
+        },
+        {
+          "lambda": [
+            9,
+            2,
+            1
+          ],
+          "chi_q0": "320.367784262",
+          "y_q0": "0.000197856009282",
+          "contribution_q0": "0.0633866912966"
+        },
+        {
+          "lambda": [
+            9,
+            1,
+            1,
+            1
+          ],
+          "chi_q0": "-243.233152568",
+          "y_q0": "-1.53101827957e-5",
+          "contribution_q0": "0.00372394402781"
+        },
+        {
+          "lambda": [
+            8,
+            4
+          ],
+          "chi_q0": "903.624235034",
+          "y_q0": "0.000430967771046",
+          "contribution_q0": "0.389432922435"
+        },
+        {
+          "lambda": [
+            8,
+            3,
+            1
+          ],
+          "chi_q0": "456.06542182",
+          "y_q0": "0.00017559289435",
+          "contribution_q0": "0.0800818474303"
+        },
+        {
+          "lambda": [
+            8,
+            2,
+            2
+          ],
+          "chi_q0": "367.980801821",
+          "y_q0": "5.29802546989e-5",
+          "contribution_q0": "0.0194957166048"
+        }
+      ],
+      "duration_ms_total": 12403
+    }
+  ],
+  "workplan_ref": "docs/audits/2026-05-17-1ppb-workplan-v4.md §3 Item 1"
+}

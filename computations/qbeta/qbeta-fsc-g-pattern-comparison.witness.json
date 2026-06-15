@@ -1,0 +1,45 @@
+{
+  "engine": "python+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-19T23:53:37.427152+00:00",
+  "commitSha": "f201bfb25ef57038c9a99732159ff388e552aa5d",
+  "assertions": [
+    {
+      "name": "polynomial_factor_not_cyclotomic",
+      "computed": 0,
+      "expected": 0,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Roots of q²-2q-1 are 1±√2 with |1+√2|≈2.41 and |1-√2|≈0.41 — neither on the unit circle, so neither is a root of unity"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 10,
+  "computation": "qbeta-fsc-g-pattern-comparison",
+  "scriptFile": "qbeta_fsc_g_pattern_comparison.py",
+  "scriptHash": "58aed3135da0",
+  "scriptCommitSha": "f201bfb25ef57038c9a99732159ff388e552aa5d",
+  "description": "Compares Q_β's algebraic structure (Form A with silver-ratio factor q² - 2q - 1) against FSC's cyclotomic pattern (1/α_EM = q·[9]_q·[10]_q) and G's q-rational pattern (G(q) = q²/(q-1)⁴). Q_β lives outside the cyclotomic landscape — explains why no FSC-like closed-form derivation exists for c_4..c_7.",
+  "data": {
+    "q_0": "1.10997859555418057528159407961",
+    "Q_beta_over_m_e": "1.53098829263739191636303753657",
+    "Form_A_over_m_e": "1.53355658136861149564571193355",
+    "Form_A_miss_pct": 0.16775364929768719,
+    "polynomial_factor": "q^2 - 2q - 1",
+    "polynomial_roots": "1 ± √2 (silver ratio)",
+    "root_plus_abs": 2.414213562373095,
+    "root_minus_abs": 0.41421356237309503,
+    "are_roots_of_unity": false,
+    "conclusion": "Q_β admits NO clean cyclotomic / q-integer closed form. Its categorical source produces an irrational discriminant (q = 1 ± √2), distinct from FSC's cyclotomic torus knots and G's q-rational pole structure. The c_k precision-ladder IS the natural framework; no FSC-style derivation shortcut is available.",
+    "upstream_witness_hashes": [
+      {
+        "path": "q-pinning-50-digit.witness.json",
+        "sha256": "a2fa7b03063cb6580591b17ce9371714dcaab0907aad489efa54745a059bc41c",
+        "size_bytes": 3939,
+        "commitSha": "610a6aa2bde5fabec35796ead6bbb0adb76f6533",
+        "scriptCommitSha": null,
+        "computedAt": "2026-04-27T20:27:23.154181+00:00"
+      }
+    ]
+  }
+}

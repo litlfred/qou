@@ -1,0 +1,325 @@
+{
+  "engine": "scipy",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-11T19:00:50.174121+00:00",
+  "commitSha": "575d1e2d7de758dadff2d5f062ac96f95c86b756",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "e-0-lp-dual-h3",
+  "scriptFile": "derive_e_0_lp_dual_h3.py",
+  "scriptHash": "bcfd5098d206",
+  "scriptCommitSha": "c09f96356c211d251f3608dfef01240965da8a8b",
+  "description": "LP-dual derivation of E_0 at H_3 via the operator-selection LP per prop:operator-selection-lp. Solves min \u03a3 t_i x_i s.t. \u03a3x=n_target, Gx\u22650 on the real H_3 Gram + Markov-trace data from gram-matrix-dual.witness.json (no fitting). Reports y_0^* for four substrate-derived n_target choices: proton net, neutron net, \u03b2-decay transition \u0394(net), and unit target. Compares E_0_LP_dual = y_0^* \u00b7 m_e against convention A's single-tick m_e/(q(q-1)) \u2248 4.186 MeV.",
+  "auditOnly": "docs/audits/2026-05-10-hbar-q-scaling-audit.md",
+  "no_fitting_assertion": "All inputs (t_i, G_ij, n_target choices) loaded from substrate witnesses; LP solved by scipy linprog with no parameter tuning; y_0^* read directly from the dual marginal of the equality constraint.",
+  "parameters": {
+    "basis": [
+      "\u03b3",
+      "\u03c3\u2080",
+      "\u03c3\u2081",
+      "L\u208a",
+      "L\u208b",
+      "e\u207b"
+    ],
+    "t_markov_traces": [
+      1.0,
+      0.4993203340335982,
+      0.4993203340335982,
+      0.2493207959794241,
+      0.2493207959794241,
+      0.12449094312996863
+    ],
+    "n_target_choices": {
+      "proton_net": 0.9991251252427813,
+      "neutron_net": 0.8108345052316609,
+      "delta_net_transition": 0.1882906200111204,
+      "unit_target": 1.0
+    },
+    "m_e_MeV": 0.51099895
+  },
+  "data": {
+    "results_per_target_signed": {
+      "proton_net": {
+        "feasible": true,
+        "x_star": [
+          -0.21433066783162025,
+          0.4855761277868365,
+          -1.6980713698492744,
+          -0.11281596620590502,
+          4.260423713412625,
+          -1.7216567120698807
+        ],
+        "y_0_star": 0.0,
+        "y_star": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "active_set": [
+          0
+        ],
+        "primal_obj": 1.6749355340079397e-17,
+        "dual_obj": 0.0,
+        "duality_gap": 1.6749355340079397e-17,
+        "Gx_at_optimum": [
+          0.0,
+          2.7755575615628914e-17,
+          0.0,
+          2.8071004231037167,
+          -6.938893903907228e-17,
+          -2.220446049250313e-16
+        ],
+        "n_target": 0.9991251252427813
+      },
+      "neutron_net": {
+        "feasible": true,
+        "x_star": [
+          -0.173938875738906,
+          0.39406663828083927,
+          -1.3780604893558435,
+          -0.09155517745444434,
+          3.4575234537343253,
+          -1.3972010442343097
+        ],
+        "y_0_star": 0.0,
+        "y_star": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "active_set": [
+          0
+        ],
+        "primal_obj": -4.6509849538129834e-17,
+        "dual_obj": 0.0,
+        "duality_gap": 4.6509849538129834e-17,
+        "Gx_at_optimum": [
+          1.1102230246251565e-16,
+          6.938893903907228e-18,
+          -2.220446049250313e-16,
+          2.2780869234469616,
+          1.6653345369377348e-16,
+          1.6653345369377348e-16
+        ],
+        "n_target": 0.8108345052316609
+      },
+      "delta_net_transition": {
+        "feasible": true,
+        "x_star": [
+          -0.040391792092714,
+          0.09150948950599724,
+          -0.3200108804934315,
+          -0.02126078875146067,
+          0.8029002596783,
+          -0.32445566783557067
+        ],
+        "y_0_star": 0.0,
+        "y_star": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "active_set": [
+          0
+        ],
+        "primal_obj": -1.3238178062156013e-17,
+        "dual_obj": 0.0,
+        "duality_gap": 1.3238178062156013e-17,
+        "Gx_at_optimum": [
+          0.0,
+          3.469446951953614e-18,
+          0.0,
+          0.5290134996567548,
+          3.469446951953614e-17,
+          1.3877787807814457e-17
+        ],
+        "n_target": 0.1882906200111204
+      },
+      "unit_target": {
+        "feasible": true,
+        "x_star": [
+          -0.21451834451619797,
+          0.4860013180719928,
+          -1.6995582704785386,
+          -0.11291475247256086,
+          4.264154314383165,
+          -1.7231642649878602
+        ],
+        "y_0_star": 0.0,
+        "y_star": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "active_set": [
+          0
+        ],
+        "primal_obj": -3.448090080566395e-17,
+        "dual_obj": 0.0,
+        "duality_gap": 3.448090080566395e-17,
+        "Gx_at_optimum": [
+          0.0,
+          -1.734723475976807e-16,
+          2.220446049250313e-16,
+          2.809558434857305,
+          2.7755575615628914e-17,
+          5.551115123125783e-17
+        ],
+        "n_target": 1.0
+      }
+    },
+    "results_per_target_cone": {
+      "proton_net": {
+        "feasible": true,
+        "x_star": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.9991251252427813
+        ],
+        "y_0_star": -0.12449094312996863,
+        "y_star": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "active_set": [],
+        "primal_obj": 0.12438202914632186,
+        "dual_obj": -0.12438202914632186,
+        "duality_gap": 0.24876405829264372,
+        "Gx_at_optimum": [
+          0.12438202914632186,
+          0.2751060185716566,
+          0.2751060185716566,
+          0.6084747288156518,
+          0.6084747288156518,
+          1.256633138356698
+        ],
+        "n_target": 0.9991251252427813
+      },
+      "neutron_net": {
+        "feasible": true,
+        "x_star": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.8108345052316609
+        ],
+        "y_0_star": -0.12449094312996863,
+        "y_star": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "active_set": [],
+        "primal_obj": 0.10094155227861094,
+        "dual_obj": -0.10094155227861094,
+        "duality_gap": 0.2018831045572219,
+        "Gx_at_optimum": [
+          0.10094155227861094,
+          0.22326077767346486,
+          0.22326077767346486,
+          0.4938043226220756,
+          0.4938043226220756,
+          1.0198137182763478
+        ],
+        "n_target": 0.8108345052316609
+      },
+      "delta_net_transition": {
+        "feasible": true,
+        "x_star": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.1882906200111204
+        ],
+        "y_0_star": -0.12449094312996863,
+        "y_star": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "active_set": [],
+        "primal_obj": 0.023440476867710922,
+        "dual_obj": -0.023440476867710922,
+        "duality_gap": 0.046880953735421844,
+        "Gx_at_optimum": [
+          0.023440476867710922,
+          0.051845240898191786,
+          0.051845240898191786,
+          0.1146704061935762,
+          0.1146704061935762,
+          0.23681942008035017
+        ],
+        "n_target": 0.1882906200111204
+      },
+      "unit_target": {
+        "feasible": true,
+        "x_star": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "y_0_star": -0.12449094312996863,
+        "y_star": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "active_set": [],
+        "primal_obj": 0.12449094312996863,
+        "dual_obj": -0.12449094312996863,
+        "duality_gap": 0.24898188625993725,
+        "Gx_at_optimum": [
+          0.12449094312996863,
+          0.2753469126349991,
+          0.2753469126349991,
+          0.6090075341342218,
+          0.6090075341342218,
+          1.257733497645096
+        ],
+        "n_target": 1.0
+      }
+    },
+    "convention_A_E0_MeV": 4.185922070631897,
+    "convention_A_Q_beta_MeV_single_wrap": 0.7836458,
+    "codata_Q_beta_MeV": 0.78233341,
+    "negative_finding": "Signed-cone LP (per prop's x_i \u2265 -M): y_0^* = 0, primal slides to 0 \u2014 LP unbounded below in cost. Positive-cone LP (x_i \u2265 0): LP picks cheapest channel x^* = (0,\u2026,1) with y_0^* \u2248 0.124 \u2014 NOT the B_3 normal form. In either case, y_0^* \u00b7 m_e is far from convention A's 4.186 MeV. The LP-dual does NOT derive E_0 in MeV; it gives a dimensionless action shadow price. MeV scale comes from CAL-1 (m_e) + structural choice (convention A's single-tick m_e c_q^2 \u210f_q)."
+  },
+  "y0_star": null,
+  "y0_star_status": "STUB \u2014 re-run script through lp_dual_solver.py to populate"
+}

@@ -1,0 +1,74 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-18T17:33:58.772645+00:00",
+  "commitSha": "78e889115cacec6f1f7e370b571171863f8a2558",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 9,
+  "computation": "term6-habiro-residue-mpfr-50dps",
+  "scriptFile": "term6_habiro_residue_mpfr_50dps_bridge.py",
+  "scriptHash": "23554fa21ac4",
+  "scriptCommitSha": "136ea5c94c5f636cd95a605a1f4fa9a657ea0217",
+  "description": "Term 6 (Habiro residue) bridged from the f64 producer 'term6_residues_at_roots.py' into the schema expected by mass_formula_6term_mpfr_50dps.term_6_habiro_residue_mp(A). T6 magnitudes for A=1 are small (~2 MeV / m_e ≈ 4 cat units) relative to m_p_hecke (~1.18e6), so the f64 → 50 dps wrap is precision-safe at the current 1.50 % m_p closure gate. Electron T6 (A=0 / H_2) is surfaced as a null row pending an electron-specific residue derivation.",
+  "contentBlock": "prop:term6-binding-density",
+  "auditOnly": "docs/audits/2026-05-16-t1-t4-tower-closure-plan.md",
+  "parameters": {
+    "m_e_MeV": "0.51099895",
+    "dps": 50
+  },
+  "data": {
+    "results_by_atom": [
+      {
+        "atom": "A=1",
+        "A": 1,
+        "source_particle": "proton",
+        "term6_b_pred_mev_50dps": "0.98169832816688179653645",
+        "term6_cat_units_f64": "1.921135705204251",
+        "precision_note": "Bridged from f64 source 'term6-residues-at-roots'; downstream consumer wraps in mp.mpf for 50-dps arithmetic. Upstream precision is f64 (~10^-15 relative)."
+      },
+      {
+        "atom": "A=2",
+        "A": 2,
+        "source_particle": "deuteron",
+        "term6_b_pred_mev_50dps": "55.8248562969693939956305",
+        "term6_cat_units_f64": "109.24651860237559",
+        "precision_note": "Bridged from f64 source 'term6-residues-at-roots'; downstream consumer wraps in mp.mpf for 50-dps arithmetic. Upstream precision is f64 (~10^-15 relative)."
+      },
+      {
+        "atom": "A=3",
+        "A": 3,
+        "source_particle": "tritium",
+        "term6_b_pred_mev_50dps": "-21375.484107360098258697",
+        "term6_cat_units_f64": "-41830.77892304886",
+        "precision_note": "Bridged from f64 source 'term6-residues-at-roots'; downstream consumer wraps in mp.mpf for 50-dps arithmetic. Upstream precision is f64 (~10^-15 relative)."
+      },
+      {
+        "atom": "A=4",
+        "A": 4,
+        "source_particle": "helium-4",
+        "term6_b_pred_mev_50dps": "692957.91740399035233191",
+        "term6_cat_units_f64": "1356084.8166204458",
+        "precision_note": "Bridged from f64 source 'term6-residues-at-roots'; downstream consumer wraps in mp.mpf for 50-dps arithmetic. Upstream precision is f64 (~10^-15 relative)."
+      },
+      {
+        "atom": "A=0",
+        "A": 0,
+        "source_particle": "electron (NOT YET DERIVED)",
+        "term6_b_pred_mev_50dps": null,
+        "term6_cat_units_f64": null,
+        "precision_note": "Electron T6 at H_2 (σ_1^3 trefoil) is a separate derivation — the upstream f64 producer does not cover non-nucleon braids.  Surfaced as a documented gap pending an electron-specific residue compute."
+      }
+    ],
+    "upstream_witness_hashes": [
+      {
+        "path": "term6-residues-at-roots.witness.json",
+        "sha256": "299c86d8140924eb275e9b7e851b9ce5f47d6a0a964a0779b7f15cf877059303",
+        "size_bytes": 4814,
+        "commitSha": "7b34963df80d979e730863d033d206e0209480ab",
+        "scriptCommitSha": "b426b6e23cc89ac23dd58693004b3ad1bf8b04b1",
+        "computedAt": "2026-05-05T18:19:35.903382+00:00"
+      }
+    ]
+  }
+}

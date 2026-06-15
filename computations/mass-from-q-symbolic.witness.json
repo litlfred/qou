@@ -1,0 +1,183 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-04-14T16:24:54.850068+00:00",
+  "commitSha": "a37c160f13572549174ef98fe69aa442d46aeb98",
+  "assertions": [
+    {
+      "name": "\u210f_q\u00b2 = Vol(4_1) / (m_\u03bc/m_e)",
+      "computed": 0.00981718851347867,
+      "expected": 0.00981718851347867,
+      "passed": true,
+      "tolerance": 1e-15,
+      "source": "Definitional (q_parameter.py)"
+    },
+    {
+      "name": "q\u2080 = 1 / (1 - \u210f_q)",
+      "computed": 1.1099785955541805,
+      "expected": 1.1099785955541805,
+      "passed": true,
+      "tolerance": 1e-15,
+      "source": "Definitional (q_parameter.py)"
+    },
+    {
+      "name": "m_\u03bc/m_e from Vol(4_1)/\u210f_q\u00b2 (self-consistency)",
+      "computed": 206.768283,
+      "expected": 206.768283,
+      "passed": true,
+      "tolerance": 1e-08,
+      "unit": "dimensionless",
+      "source": "Topological mass formula"
+    },
+    {
+      "name": "P_proton(q\u2080) \u2014 Skein polynomial",
+      "computed": 0.646849116327955,
+      "expected": 0.646849116327955,
+      "passed": true,
+      "tolerance": 1.923852031571194e-09,
+      "unit": "dimensionless",
+      "source": "Transfer matrix chain (sympy symbolic \u2192 numerical)"
+    },
+    {
+      "name": "P_neutron(q\u2080) \u2014 Skein polynomial",
+      "computed": 0.5047761849051493,
+      "expected": 0.5047761849051493,
+      "passed": true,
+      "tolerance": 1.123058079866013e-10,
+      "unit": "dimensionless",
+      "source": "Transfer matrix chain (sympy symbolic \u2192 numerical)"
+    },
+    {
+      "name": "P_proton = \u220f V\u0302_i (product consistency)",
+      "computed": 0.646849116327955,
+      "expected": 0.646849116327955,
+      "passed": true,
+      "tolerance": 1e-12,
+      "source": "Internal consistency check"
+    },
+    {
+      "name": "P_neutron = \u220f V\u0302_i (product consistency)",
+      "computed": 0.5047761849051493,
+      "expected": 0.5047761849051494,
+      "passed": true,
+      "tolerance": 1e-12,
+      "source": "Internal consistency check"
+    },
+    {
+      "name": "\ud835\udd2a(\ud835\udd05\u2083) Borromean topological mass",
+      "computed": 746.417851076767,
+      "expected": 746.417851076767,
+      "passed": true,
+      "tolerance": 1e-06,
+      "unit": "m_e",
+      "source": "\ud835\udd2a(K) = Vol(K) / \u210f_q\u00b2"
+    },
+    {
+      "name": "\ud835\udd2a(\ud835\udd05\u2083) in MeV",
+      "computed": 381.41873816148427,
+      "expected": 381.41873816148427,
+      "passed": true,
+      "tolerance": 8.486209267532217e-06,
+      "unit": "MeV",
+      "source": "\ud835\udd2a(K) = Vol(K) / \u210f_q\u00b2 \u00d7 m_e"
+    },
+    {
+      "name": "P_n/P_p Skein ratio (combinatorial, not mass ratio)",
+      "computed": 0.7803615590768246,
+      "expected": 0.7803615590768246,
+      "passed": true,
+      "tolerance": 2.327428189842011e-09,
+      "unit": "dimensionless",
+      "source": "Transfer matrix chain with \u03c3\u207b\u00b9 = \u03c3 \u2212 HA crossing convention"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 13,
+  "computation": "mass-from-q-symbolic",
+  "scriptFile": "mass-from-q-symbolic.py",
+  "scriptHash": "43e02aded403",
+  "scriptCommitSha": "02ab7dab4316bc73e613d80ce8058c15204ea7db",
+  "description": "Symbolic hadron mass derivation from the substrate parameter q. Computes Skein polynomials P_p(q), P_n(q) via transfer matrix chain construction and topological mass formula \ud835\udd2a(K) = Vol(K)/\u210f_q\u00b2. Crossing convention: \u03c3\u207b\u00b9 = \u03c3 \u2212 (q\u2212q\u207b\u00b9), matching hecke_division.py and HeckeH3.lean. All error bounds propagated from CODATA 2022 uncertainties via q_parameter.py.",
+  "contentBlock": "thm:topological-mass",
+  "parameters": {
+    "q\u2080": 1.1099785955541805,
+    "q\u2080_err": 1.3578965598837824e-09,
+    "\u210f_q": 0.09908172643569887,
+    "\u210f_q\u00b2": 0.00981718851347867,
+    "Vol(4_1)": 2.029883212819307,
+    "m_\u03bc/m_e": 206.768283,
+    "HA": 0.20906032198987945,
+    "E_\u00d7": 0.10453016099493972,
+    "s_skein": 0.10438806980915827,
+    "z_markov": 0.4993203340335982
+  },
+  "data": {
+    "proton": {
+      "ordering": [
+        "check_q",
+        "check_q",
+        "d"
+      ],
+      "volumes": [
+        {
+          "V\u0302_i": 0.6147621967716402,
+          "error": 1.4705503781353712e-09
+        },
+        {
+          "V\u0302_i": 1.0521940349045793,
+          "error": 6.125095186604313e-10
+        }
+      ],
+      "P(q\u2080)": 0.646849116327955,
+      "P_error": 1.923852031571194e-09
+    },
+    "neutron": {
+      "ordering": [
+        "check_q",
+        "d",
+        "d"
+      ],
+      "volumes": [
+        {
+          "V\u0302_i": 0.5047761849051494,
+          "error": 1.1230580854171281e-10
+        },
+        {
+          "V\u0302_i": 1.0,
+          "error": 0.0
+        }
+      ],
+      "P(q\u2080)": 0.5047761849051493,
+      "P_error": 1.123058079866013e-10
+    },
+    "topological_mass": {
+      "borromean_mass_ratio_me": 746.417851076767,
+      "borromean_mass_ratio_err": 1.6605651824557387e-05,
+      "borromean_mass_MeV": 381.41873816148427,
+      "borromean_mass_MeV_err": 8.486209267532217e-06,
+      "muon_electron_ratio": 206.768283
+    },
+    "skein_ratio": {
+      "P_n_over_P_p": 0.7803615590768246,
+      "P_n_over_P_p_err": 2.327428189842011e-09,
+      "log_q_ratio": -2.3768084142656263,
+      "codata_m_n_over_m_p": 1.0013784193053599
+    },
+    "error_budget": {
+      "q_relative_error": 1.2233538244094008e-09,
+      "CODATA_mass_ratio_rel_err": 2.2247125783793445e-08,
+      "SnapPy_vol_rel_err": 4.926391792812055e-13,
+      "dominant_uncertainty": "CODATA m_\u03bc/m_e (2.2e-8 relative)",
+      "P_p_rel_err": 2.9741897809067937e-09,
+      "P_n_rel_err": 2.2248634413627158e-10,
+      "borromean_mass_rel_err": 2.2247125789666494e-08
+    }
+  },
+  "caveats": [
+    "The Skein polynomial P(q) encodes the combinatorial crossing structure via the transfer matrix T(c,d), not the absolute mass. P_n/P_p \u2260 m_n/m_p. P(q) enters the Q-value spectral decomposition.",
+    "Crossing convention: \u03c3\u207b\u00b9 = \u03c3 \u2212 (q\u2212q\u207b\u00b9). This matches hecke_division.py and the Lean formalization HeckeH3.lean. All transfer matrices are unimodular (det = \u22121).",
+    "Parametric uncertainty from \u03b4q \u2248 1.3e-8 is negligible. Structural model uncertainties (ordering, crossing types) dominate at the 2\u201310% level for Q-values."
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
+}

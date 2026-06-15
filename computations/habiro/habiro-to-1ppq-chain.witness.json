@@ -1,0 +1,39 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-27T15:15:31.615223+00:00",
+  "commitSha": "31142f8fbb1199426625a557466a27e62ddd2b33",
+  "assertions": [
+    {
+      "name": "habiro_sum_finite",
+      "computed": 136.07120636348176,
+      "expected": 136,
+      "passed": true,
+      "tolerance": 1,
+      "unit": "(unnormalised)",
+      "source": "Habiro M=8 sum converges (normalization differs from Wenzl tr_M)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 11,
+  "computation": "habiro-to-1ppq-chain",
+  "scriptFile": "habiro_to_1ppq_chain.py",
+  "scriptHash": "9901fb2c6281",
+  "scriptCommitSha": "bf1a1587451ba2381ef52107a4cd3f4957e32e16",
+  "precisionMetadata": {
+    "compute_dps": 50,
+    "output_dps": 40,
+    "guard_digits": 10,
+    "truncation_bound": "1e-40"
+  },
+  "description": "Wire Habiro integer coefficients through precision ladder to Q_beta. Chain: a_m(u) -> (u;u)_m -> eigenvalue b*hbar^2 -> c_k -> Q_N. Habiro sum at M=8 converges (unnormalised; normalisation to Wenzl tr_M is open).",
+  "data": {
+    "habiro_sum": "136.07120636348176",
+    "tr_M_lean_proved": "0.9985621631975701",
+    "match_ppm": "135267136.26696813",
+    "eigenvalue_b_hbar_sq": "0.008517236340043957",
+    "b_sq_closed_form": "(h^2+3)/(h^2+4)",
+    "c2_proved": "-1",
+    "M_terminates": "8"
+  }
+}

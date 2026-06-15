@@ -1,0 +1,384 @@
+// Full Markov trace for all 6 nuclei — parent AND daughter.
+// Run: Singular folio-assistant/computations/singular-full-traces.sing
+//
+// The Markov trace is ORDERING-INDEPENDENT (link invariant).
+// tr(N̄) = Π_i (z·a_i + b_i) — proven exact.
+// Q should come from tr(parent) - tr(daughter), not from e(I)/e(R).
+//
+// Uses ground-state ordering (alternating + extra n at end).
+// The trace value is the SAME regardless of ordering (theorem).
+
+LIB "freegb.lib";
+
+ring R = 0, (dummy), dp;
+
+number qn = 111/100;
+number qi = 100/111;
+number han = qn - qi;
+number zn = 4993/10000;
+
+int i; int j;
+
+// ── Macro: compute trace for a given ordering ───────────────────
+// Inline — no procs to avoid ring scoping.
+// Input: intvec ntype, int aa
+// Output: number tr (product of traced volumes)
+
+// ── 3H ──────────────────────────────────────────────────────────
+"========== 3H: N(1,2) → N(2,1) ==========";
+intvec ntype = 1,0,0;
+int aa = 3;
+
+number tr = 1;
+for (i = 1; i <= aa-1; i++)
+{
+    number ai = 0; number bi = 1;
+    for (j = i+1; j <= aa; j++)
+    {
+        number cc; number dd;
+        if (ntype[i]==1 && ntype[j]==1) { cc=1; dd=0; }
+        else { if (ntype[i]==0 && ntype[j]==0) { cc=1; dd=-han; }
+               else { cc=1; dd=-han/2; } }
+        number na = ai*cc*han + ai*dd + bi*cc;
+        number nb = ai*cc + bi*dd;
+        ai=na; bi=nb;
+        kill cc; kill dd; kill na; kill nb;
+    }
+    number vi = zn*ai + bi;
+    tr = tr * vi;
+    kill ai; kill bi; kill vi;
+}
+"Parent trace: " + string(tr);
+number tr_3h_par = tr;
+kill tr; kill ntype;
+
+intvec ntype = 1,1,0;
+number tr = 1;
+for (i = 1; i <= aa-1; i++)
+{
+    number ai = 0; number bi = 1;
+    for (j = i+1; j <= aa; j++)
+    {
+        number cc; number dd;
+        if (ntype[i]==1 && ntype[j]==1) { cc=1; dd=0; }
+        else { if (ntype[i]==0 && ntype[j]==0) { cc=1; dd=-han; }
+               else { cc=1; dd=-han/2; } }
+        number na = ai*cc*han + ai*dd + bi*cc;
+        number nb = ai*cc + bi*dd;
+        ai=na; bi=nb;
+        kill cc; kill dd; kill na; kill nb;
+    }
+    number vi = zn*ai + bi;
+    tr = tr * vi;
+    kill ai; kill bi; kill vi;
+}
+"Daughter trace: " + string(tr);
+number tr_3h_dau = tr;
+kill tr; kill ntype;
+
+number delta_3h = tr_3h_par - tr_3h_dau;
+"Delta: " + string(delta_3h);
+"Q_exp = 0.01861";
+"";
+kill aa; kill tr_3h_par; kill tr_3h_dau; kill delta_3h;
+
+
+// ── 14C ─────────────────────────────────────────────────────────
+"========== 14C: N(6,8) → N(7,7) ==========";
+intvec ntype = 0,1,0,1,0,1,0,1,0,1,0,1,0,0;
+int aa = 14;
+
+number tr = 1;
+for (i = 1; i <= aa-1; i++)
+{
+    number ai = 0; number bi = 1;
+    for (j = i+1; j <= aa; j++)
+    {
+        number cc; number dd;
+        if (ntype[i]==1 && ntype[j]==1) { cc=1; dd=0; }
+        else { if (ntype[i]==0 && ntype[j]==0) { cc=1; dd=-han; }
+               else { cc=1; dd=-han/2; } }
+        number na = ai*cc*han + ai*dd + bi*cc;
+        number nb = ai*cc + bi*dd;
+        ai=na; bi=nb;
+        kill cc; kill dd; kill na; kill nb;
+    }
+    number vi = zn*ai + bi;
+    tr = tr * vi;
+    kill ai; kill bi; kill vi;
+}
+"Parent trace: " + string(tr);
+number tr_14c_par = tr;
+kill tr; kill ntype;
+
+intvec ntype = 0,1,0,1,0,1,0,1,0,1,0,1,1,0;
+number tr = 1;
+for (i = 1; i <= aa-1; i++)
+{
+    number ai = 0; number bi = 1;
+    for (j = i+1; j <= aa; j++)
+    {
+        number cc; number dd;
+        if (ntype[i]==1 && ntype[j]==1) { cc=1; dd=0; }
+        else { if (ntype[i]==0 && ntype[j]==0) { cc=1; dd=-han; }
+               else { cc=1; dd=-han/2; } }
+        number na = ai*cc*han + ai*dd + bi*cc;
+        number nb = ai*cc + bi*dd;
+        ai=na; bi=nb;
+        kill cc; kill dd; kill na; kill nb;
+    }
+    number vi = zn*ai + bi;
+    tr = tr * vi;
+    kill ai; kill bi; kill vi;
+}
+"Daughter trace: " + string(tr);
+number tr_14c_dau = tr;
+kill tr; kill ntype;
+
+number delta_14c = tr_14c_par - tr_14c_dau;
+"Delta: " + string(delta_14c);
+"Q_exp = 0.156";
+"";
+kill aa; kill tr_14c_par; kill tr_14c_dau; kill delta_14c;
+
+
+// ── 60Co ────────────────────────────────────────────────────────
+"========== 60Co: N(27,33) → N(28,32) ==========";
+intvec ntype = 1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,0,0,0,0,0,0;
+int aa = 60;
+
+number tr = 1;
+for (i = 1; i <= aa-1; i++)
+{
+    number ai = 0; number bi = 1;
+    for (j = i+1; j <= aa; j++)
+    {
+        number cc; number dd;
+        if (ntype[i]==1 && ntype[j]==1) { cc=1; dd=0; }
+        else { if (ntype[i]==0 && ntype[j]==0) { cc=1; dd=-han; }
+               else { cc=1; dd=-han/2; } }
+        number na = ai*cc*han + ai*dd + bi*cc;
+        number nb = ai*cc + bi*dd;
+        ai=na; bi=nb;
+        kill cc; kill dd; kill na; kill nb;
+    }
+    number vi = zn*ai + bi;
+    tr = tr * vi;
+    kill ai; kill bi; kill vi;
+}
+"Parent trace: " + string(tr);
+number tr_60_par = tr;
+kill tr; kill ntype;
+
+intvec ntype = 1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,0,0,0,0;
+number tr = 1;
+for (i = 1; i <= aa-1; i++)
+{
+    number ai = 0; number bi = 1;
+    for (j = i+1; j <= aa; j++)
+    {
+        number cc; number dd;
+        if (ntype[i]==1 && ntype[j]==1) { cc=1; dd=0; }
+        else { if (ntype[i]==0 && ntype[j]==0) { cc=1; dd=-han; }
+               else { cc=1; dd=-han/2; } }
+        number na = ai*cc*han + ai*dd + bi*cc;
+        number nb = ai*cc + bi*dd;
+        ai=na; bi=nb;
+        kill cc; kill dd; kill na; kill nb;
+    }
+    number vi = zn*ai + bi;
+    tr = tr * vi;
+    kill ai; kill bi; kill vi;
+}
+"Daughter trace: " + string(tr);
+number tr_60_dau = tr;
+kill tr; kill ntype;
+
+number delta_60 = tr_60_par - tr_60_dau;
+"Delta: " + string(delta_60);
+"Q_exp = 0.318";
+"";
+kill aa; kill tr_60_par; kill tr_60_dau; kill delta_60;
+
+
+// ── 90Sr ────────────────────────────────────────────────────────
+"========== 90Sr: N(38,52) → N(39,51) ==========";
+intvec ntype = 1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;
+int aa = 90;
+
+number tr = 1;
+for (i = 1; i <= aa-1; i++)
+{
+    number ai = 0; number bi = 1;
+    for (j = i+1; j <= aa; j++)
+    {
+        number cc; number dd;
+        if (ntype[i]==1 && ntype[j]==1) { cc=1; dd=0; }
+        else { if (ntype[i]==0 && ntype[j]==0) { cc=1; dd=-han; }
+               else { cc=1; dd=-han/2; } }
+        number na = ai*cc*han + ai*dd + bi*cc;
+        number nb = ai*cc + bi*dd;
+        ai=na; bi=nb;
+        kill cc; kill dd; kill na; kill nb;
+    }
+    number vi = zn*ai + bi;
+    tr = tr * vi;
+    kill ai; kill bi; kill vi;
+}
+"Parent trace: " + string(tr);
+number tr_90_par = tr;
+kill tr; kill ntype;
+
+intvec ntype = 1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0;
+number tr = 1;
+for (i = 1; i <= aa-1; i++)
+{
+    number ai = 0; number bi = 1;
+    for (j = i+1; j <= aa; j++)
+    {
+        number cc; number dd;
+        if (ntype[i]==1 && ntype[j]==1) { cc=1; dd=0; }
+        else { if (ntype[i]==0 && ntype[j]==0) { cc=1; dd=-han; }
+               else { cc=1; dd=-han/2; } }
+        number na = ai*cc*han + ai*dd + bi*cc;
+        number nb = ai*cc + bi*dd;
+        ai=na; bi=nb;
+        kill cc; kill dd; kill na; kill nb;
+    }
+    number vi = zn*ai + bi;
+    tr = tr * vi;
+    kill ai; kill bi; kill vi;
+}
+"Daughter trace: " + string(tr);
+number tr_90_dau = tr;
+kill tr; kill ntype;
+
+number delta_90 = tr_90_par - tr_90_dau;
+"Delta: " + string(delta_90);
+"Q_exp = 0.546";
+"";
+kill aa; kill tr_90_par; kill tr_90_dau; kill delta_90;
+
+
+// ── 137Cs ───────────────────────────────────────────────────────
+"========== 137Cs: N(55,82) → N(56,81) ==========";
+intvec ntype = 1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;
+int aa = 137;
+
+number tr = 1;
+for (i = 1; i <= aa-1; i++)
+{
+    number ai = 0; number bi = 1;
+    for (j = i+1; j <= aa; j++)
+    {
+        number cc; number dd;
+        if (ntype[i]==1 && ntype[j]==1) { cc=1; dd=0; }
+        else { if (ntype[i]==0 && ntype[j]==0) { cc=1; dd=-han; }
+               else { cc=1; dd=-han/2; } }
+        number na = ai*cc*han + ai*dd + bi*cc;
+        number nb = ai*cc + bi*dd;
+        ai=na; bi=nb;
+        kill cc; kill dd; kill na; kill nb;
+    }
+    number vi = zn*ai + bi;
+    tr = tr * vi;
+    kill ai; kill bi; kill vi;
+}
+"Parent trace: " + string(tr);
+number tr_137_par = tr;
+kill tr; kill ntype;
+
+intvec ntype = 1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;
+number tr = 1;
+for (i = 1; i <= aa-1; i++)
+{
+    number ai = 0; number bi = 1;
+    for (j = i+1; j <= aa; j++)
+    {
+        number cc; number dd;
+        if (ntype[i]==1 && ntype[j]==1) { cc=1; dd=0; }
+        else { if (ntype[i]==0 && ntype[j]==0) { cc=1; dd=-han; }
+               else { cc=1; dd=-han/2; } }
+        number na = ai*cc*han + ai*dd + bi*cc;
+        number nb = ai*cc + bi*dd;
+        ai=na; bi=nb;
+        kill cc; kill dd; kill na; kill nb;
+    }
+    number vi = zn*ai + bi;
+    tr = tr * vi;
+    kill ai; kill bi; kill vi;
+}
+"Daughter trace: " + string(tr);
+number tr_137_dau = tr;
+kill tr; kill ntype;
+
+number delta_137 = tr_137_par - tr_137_dau;
+"Delta: " + string(delta_137);
+"Q_exp = 0.514";
+"";
+kill aa; kill tr_137_par; kill tr_137_dau; kill delta_137;
+
+
+// ── 210Bi ───────────────────────────────────────────────────────
+"========== 210Bi: N(83,127) → N(84,126) ==========";
+intvec ntype = 1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;
+int aa = 210;
+
+number tr = 1;
+for (i = 1; i <= aa-1; i++)
+{
+    number ai = 0; number bi = 1;
+    for (j = i+1; j <= aa; j++)
+    {
+        number cc; number dd;
+        if (ntype[i]==1 && ntype[j]==1) { cc=1; dd=0; }
+        else { if (ntype[i]==0 && ntype[j]==0) { cc=1; dd=-han; }
+               else { cc=1; dd=-han/2; } }
+        number na = ai*cc*han + ai*dd + bi*cc;
+        number nb = ai*cc + bi*dd;
+        ai=na; bi=nb;
+        kill cc; kill dd; kill na; kill nb;
+    }
+    number vi = zn*ai + bi;
+    tr = tr * vi;
+    kill ai; kill bi; kill vi;
+}
+"Parent trace: " + string(tr);
+number tr_210_par = tr;
+kill tr; kill ntype;
+
+intvec ntype = 1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;
+number tr = 1;
+for (i = 1; i <= aa-1; i++)
+{
+    number ai = 0; number bi = 1;
+    for (j = i+1; j <= aa; j++)
+    {
+        number cc; number dd;
+        if (ntype[i]==1 && ntype[j]==1) { cc=1; dd=0; }
+        else { if (ntype[i]==0 && ntype[j]==0) { cc=1; dd=-han; }
+               else { cc=1; dd=-han/2; } }
+        number na = ai*cc*han + ai*dd + bi*cc;
+        number nb = ai*cc + bi*dd;
+        ai=na; bi=nb;
+        kill cc; kill dd; kill na; kill nb;
+    }
+    number vi = zn*ai + bi;
+    tr = tr * vi;
+    kill ai; kill bi; kill vi;
+}
+"Daughter trace: " + string(tr);
+number tr_210_dau = tr;
+kill tr; kill ntype;
+
+number delta_210 = tr_210_par - tr_210_dau;
+"Delta: " + string(delta_210);
+"Q_exp = 1.163";
+"";
+kill aa; kill tr_210_par; kill tr_210_dau; kill delta_210;
+
+
+"";
+"Q_exp reference: 3H=0.01861, 14C=0.156, 60Co=0.318, 90Sr=0.546, 137Cs=0.514, 210Bi=1.163";
+
+exit;

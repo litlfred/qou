@@ -1,0 +1,118 @@
+{
+  "engine": "python+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-09T03:43:04.246129+00:00",
+  "commitSha": "7fb7a6ee225937eeee345573cae1bcffaffe135e",
+  "assertions": [
+    {
+      "name": "full_eps_expansion_completed",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.0,
+      "source": "probe completes through ε⁶ with all 3 ansätze; verdict reported"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 13,
+  "computation": "qbeta-multi-block-eigenphase-full-eps-probe",
+  "scriptFile": "qbeta_multi_block_eigenphase_full_eps_probe.py",
+  "scriptHash": "73701b7b1a53",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Q_β bridge experiment #4: extends exp #3 from LO ε-only to full per-block ε-expansion through ε^6 (the documented per-block character expansions from qbeta_per_block_paper_closed_forms.py). Tests THREE bridge ansätze in parallel: cos(α_eff), exp(α_eff), (1+α_eff). Each tested for q₀-stability and compute-precision residual. Order-by-order convergence shown.",
+  "contentBlock": "prop:q-beta-categorical-precision-ladder",
+  "data": {
+    "pins": {
+      "canonical_mp_pin_q0": "1.1099785827513808075916690956107688798744991218736",
+      "stale_muon_pin_q0": "1.10997859555418057528159407960950937799328227995870"
+    },
+    "order_by_order_convergence_canonical": [
+      {
+        "order": 1,
+        "alpha_eff": "-0.164818478368877121962398066443",
+        "err_cos_ppb": "-11897013.1812",
+        "err_exp_ppb": "-150529714.605",
+        "err_lin_ppb": "-163417405.831"
+      },
+      {
+        "order": 2,
+        "alpha_eff": "-0.1557552270377530118681468003",
+        "err_cos_ppb": "-10448084.0277",
+        "err_exp_ppb": "-142795757.452",
+        "err_lin_ppb": "-154338950.293"
+      },
+      {
+        "order": 3,
+        "alpha_eff": "-0.162065653455930734792386747453",
+        "err_cos_ppb": "-11448335.0059",
+        "err_exp_ppb": "-148188050.023",
+        "err_lin_ppb": "-160659962.871"
+      },
+      {
+        "order": 4,
+        "alpha_eff": "-0.161079447145430822033321188514",
+        "err_cos_ppb": "-11289417.3877",
+        "err_exp_ppb": "-147347573.329",
+        "err_lin_ppb": "-159672102.134"
+      },
+      {
+        "order": 5,
+        "alpha_eff": "-0.161268202863775146109421919087",
+        "err_cos_ppb": "-11319759.1407",
+        "err_exp_ppb": "-147508501.162",
+        "err_lin_ppb": "-159861174.503"
+      },
+      {
+        "order": 6,
+        "alpha_eff": "-0.16123596491156575149274343275",
+        "err_cos_ppb": "-11314574.52",
+        "err_exp_ppb": "-147481018.139",
+        "err_lin_ppb": "-159828882.469"
+      }
+    ],
+    "full_eps_6_canonical": {
+      "alpha_eff": "-0.16123596491156575149274343275",
+      "Q_A_MeV": "0.783645826316467066351776832404",
+      "Q_bridge_cos_MeV": "0.773481640333082447095096157705",
+      "Q_bridge_exp_MeV": "0.666954082169127374699960398071",
+      "Q_bridge_lin_MeV": "0.657293935361410233263973932193",
+      "err_cos_ppb": "-11314574.52",
+      "err_exp_ppb": "-147481018.139",
+      "err_lin_ppb": "-159828882.469"
+    },
+    "q0_stability": {
+      "cos": {
+        "drift_pct": 0.00028854984751256043,
+        "stable_under_0.01_pct": true
+      },
+      "exp": {
+        "drift_pct": 2.822495234466091e-05,
+        "stable_under_0.01_pct": true
+      },
+      "1+α": {
+        "drift_pct": 2.7574559502666698e-05,
+        "stable_under_0.01_pct": true
+      }
+    },
+    "verdict": {
+      "classification": "OPEN (cos: q₀-stable but residual -1.131e+7 ppb)",
+      "best_ansatz": "cos",
+      "best_err_ppb_canonical": "-11314574.52",
+      "best_q0_drift_pct": 0.00028854984751256043,
+      "production_action": "Q_β stays at Q_N2 (1279 ppb)"
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "computation": "tau-hat-n-proton-realisation",
+  "description": "Numerical realisation of the descent involution tau_hat_0 = ell_0 . d_1 acting on End_C(A_1) at A=1 (proton scale).  A_0 = H_3(q_0); Omega^1 = ker(m); A_1 = A_0 (x) Omega^1.  Phase A.3 of issue #522.",
+  "auditOnly": "docs/audits/2026-05-03-tau-hat-n-proton-realisation.md",
+  "parameters": {
+    "q0": 1.1099785955541805,
+    "mp_dps": 50,
+    "A": 1
+  },
+  "phase": "A.3",
+  "blocks_audited": [
+    "lifting-and-descent/descent-involution",
+    "lifting-and-descent/descent-lemma",
+    "lifting-and-descent/descent-lemma-proof"
+  ],
+  "verdict": "full-realisation",
+  "stage": "complete",
+  "dimensions": {
+    "dim_A0": 6,
+    "dim_Omega1": 30,
+    "dim_A1": 180,
+    "dim_End_A1": 32400,
+    "dim_descended": 36,
+    "dim_transient": 32364,
+    "rank_P": 6
+  },
+  "checks": {
+    "splitting_R1_L0_eq_I_inf_norm_err": "0.0",
+    "P_idempotent_inf_norm_err": "0.0",
+    "tau_hat_idempotent_sample_inf_norm_err": "0.0",
+    "tau_hat_idempotent_n_samples": 5
+  },
+  "construction": {
+    "A0_basis": "H_3(q_0) on the 6 reduced words of S_3.",
+    "multiplication_m_shape": [
+      6,
+      36
+    ],
+    "kernel_method": "Gaussian elimination (RREF) in mpmath.",
+    "connection_choice": "Trivial / universal derivation d(a) = 1 (x) a - a (x) 1; ell_0(a) := a (x) d(sigma_1) (sigma_1 = e_1, generator).",
+    "descent_phi0": "phi_0 chosen as the dual functional to d(sigma_1) within Omega^1, normalised so that phi_0(d(sigma_1)) = 1.  This is the splitting condition d_1 . ell_0 = id_{A_0}.",
+    "tau_hat_0_form": "P := L0 R1 (180 x 180 rank-6 idempotent).  tau_hat_0(phi) = P phi P, hence tau_hat_0 = P (x) P on End(A_1) ~= A_1 (x) A_1^*."
+  },
+  "math_gaps": [
+    "ell_0 / d_1 are not uniquely specified by the content blocks: the descent-lemma-proof.md describes an object-level Frobenius restriction r_n = epsilon (x) id, but Omega^1 has no canonical unit element (the universal Kahler differential is split-exact but not as a unital A-bimodule).  Realising (ell_0, d_1) requires a chosen connection nabla : A_0 -> Omega^1.  This witness uses the trivial / universal connection."
+  ],
+  "timestamp": "2026-05-03T15:53:08.102708+00:00",
+  "engine": "python",
+  "scriptFile": "tau_hat_n_proton_realisation.py",
+  "commitSha": "610a6aa2bde5fabec35796ead6bbb0adb76f6533"
+}

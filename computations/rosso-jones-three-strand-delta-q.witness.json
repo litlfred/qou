@@ -1,0 +1,127 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-10T20:01:11.012147+00:00",
+  "commitSha": "6a203f28b283cef053d2675308547e228a19960b",
+  "assertions": [
+    {
+      "name": "delta_q(T_{m,p}) = h*[(m-1)p]_q holds symbolically for all 6 force-knots",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "bar-odd part of trivial-channel twist q^{(m-1)p}; identity in R"
+    },
+    {
+      "name": "T_{3,4} writhe exponent = 8 (resolves the OPEN 3-strand item)",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "w(3,4) = (3-1)*4 = 8"
+    },
+    {
+      "name": "T_{3,5} writhe exponent = 10 (confirms corpus Rosso-Jones->[10])",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "w(3,5) = (3-1)*5 = 10"
+    },
+    {
+      "name": "Jones of T_{3,4},T_{3,5} match knotinfo 8_19,10_124 (leading deg = 2p)",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "V_{T_{3,p}} = q^{p-1}(1+q^2-q^{p+1})"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 56,
+  "computation": "rosso-jones-three-strand-delta-q",
+  "scriptFile": "rosso_jones_three_strand_delta_q.py",
+  "scriptHash": "686ad9b4613a",
+  "scriptCommitSha": "6a203f28b283cef053d2675308547e228a19960b",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "alpha_{basis-knot} step 2: the three-strand (Rosso-Jones) delta_q decoration, derived pre-archimedean (no pi).  delta_q(T_{m,p}) = q^{(m-1)p} - q^{-(m-1)p} = h*[(m-1)p]_q is the bar-odd (sinh, e_-) part of the trivial/top Wedderburn channel twist q^{(m-1)p}, where (m-1)p is the writhe of the standard positive braid (sigma_1...sigma_{m-1})^p.  This resolves the OPEN T_{3,4} exponent (w=8 -> delta_q=h[8]_q) and DERIVES the previously-asserted T_{3,5} value (w=10 -> h[10]_q).  It is the same rule as the 2-strand delta_q(T_{2,k})=h[k]_q (w=k), now with the writhe exponent w=(m-1)p, and reduces to the sorry-free Lean identity deltaQ_eq_h_qbracket.  Cross-checked against the Jones polynomials of 8_19=T_{3,4} and 10_124=T_{3,5} (leading twist -q^{2p}).  Nothing fitted.",
+  "contentBlock": "prop:alpha-basis-knot-delta-q",
+  "data": {
+    "rule": "delta_q(T_{m,p}) = q^{(m-1)p} - q^{-(m-1)p} = h*[(m-1)p]_q",
+    "knots": {
+      "T_2_3": {
+        "m": 2,
+        "p": 3,
+        "writhe": 3,
+        "force": "electromagnetic (alpha_EM, trefoil)",
+        "delta_q": "q^3 - q^-3 = h*[3]_q",
+        "delta_q_eq_h_qbracket": true
+      },
+      "T_2_5": {
+        "m": 2,
+        "p": 5,
+        "writhe": 5,
+        "force": "2nd generation",
+        "delta_q": "q^5 - q^-5 = h*[5]_q",
+        "delta_q_eq_h_qbracket": true
+      },
+      "T_2_7": {
+        "m": 2,
+        "p": 7,
+        "writhe": 7,
+        "force": "charm / 3rd generation",
+        "delta_q": "q^7 - q^-7 = h*[7]_q",
+        "delta_q_eq_h_qbracket": true
+      },
+      "T_2_9": {
+        "m": 2,
+        "p": 9,
+        "writhe": 9,
+        "force": "strong binding (force-carrier)",
+        "delta_q": "q^9 - q^-9 = h*[9]_q",
+        "delta_q_eq_h_qbracket": true
+      },
+      "T_3_4": {
+        "m": 3,
+        "p": 4,
+        "writhe": 8,
+        "force": "Hopf-squared / top (was OPEN -> now w=8)",
+        "delta_q": "q^8 - q^-8 = h*[8]_q",
+        "delta_q_eq_h_qbracket": true
+      },
+      "T_3_5": {
+        "m": 3,
+        "p": 5,
+        "writhe": 10,
+        "force": "weak / beta-decay (force-carrier; confirms w=10)",
+        "delta_q": "q^10 - q^-10 = h*[10]_q",
+        "delta_q_eq_h_qbracket": true
+      }
+    },
+    "jones_cross_checks": {
+      "T_3_4": {
+        "jones": "-q**8 + q**5 + q**3",
+        "table": "8_19",
+        "matches_table": true,
+        "leading_degree": 8,
+        "leading_eq_writhe": true
+      },
+      "T_3_5": {
+        "jones": "-q**10 + q**6 + q**4",
+        "table": "10_124",
+        "matches_table": true,
+        "leading_degree": 10,
+        "leading_eq_writhe": true
+      }
+    },
+    "T_3_4_resolved_exponent": 8,
+    "T_3_5_confirmed_exponent": 10,
+    "finding": "The three-strand delta_q decoration is delta_q(T_{m,p}) = h*[(m-1)p]_q (bar-odd part of the trivial-channel twist q^{(m-1)p}; writhe exponent w=(m-1)p).  T_{3,4} -> h[8]_q (was OPEN); T_{3,5} -> h[10]_q (confirms corpus).  Pre-archimedean (no pi); reduces to the sorry-free Lean identity deltaQ_eq_h_qbracket at exponent w.  Next: per-force alpha_K assembly (step 3) and the no-pi correction (step 6)."
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "$schema": "script-qa/v1",
+  "script_path": "folio-assistant/computations/proton_error_anatomy_1ppb.py",
+  "language": "python",
+  "source_hash": "34e12fe05103",
+  "updated_at": "2026-06-09T03:47:37.719Z",
+  "criteria": {
+    "compute_no_mpf_to_float_cast": [
+      {
+        "field_hash": {
+          "ts": "34e12fe05103"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "0bbdf534427b",
+          "script_commit_sha": "76a167e10467a2b0f41dbbd968ea8245d5b4ba33"
+        },
+        "reviewed_at": "2026-06-09T03:37:13.209Z",
+        "reviewed_sha": "76a167e10467a2b0f41dbbd968ea8245d5b4ba33"
+      },
+      {
+        "field_hash": {
+          "ts": "34e12fe05103"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "a08e6e1469fd",
+          "script_commit_sha": "76a167e10467a2b0f41dbbd968ea8245d5b4ba33"
+        },
+        "reviewed_at": "2026-06-09T03:47:37.719Z",
+        "reviewed_sha": "3765bc9aa9274031018ed3d7696fc515f11274be"
+      }
+    ]
+  }
+}

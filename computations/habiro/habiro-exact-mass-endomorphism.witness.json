@@ -1,0 +1,95 @@
+{
+  "engine": "python+mpmath",
+  "engineVersion": "python 3.12.3",
+  "computedAt": "2026-06-01T13:24:46.612179+00:00",
+  "commitSha": "417e511ad96a7416b3b52d2f93704cd0eee0d8f7",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 12,
+  "computation": "habiro-exact-mass-endomorphism",
+  "scriptFile": "habiro_exact_mass_endomorphism.py",
+  "scriptHash": "8cb75c2d7f9e",
+  "scriptCommitSha": "c30da51bea8725add6b37e84c3e6d14cc94ce01e",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.12.3",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Habiro-everywhere mass-endomorphism: mpmath at 50 dps throughout (q_0, V̂_i Hecke recursion, Φ_q infinite product, Wedderburn weights). Eliminates f64 numerical noise from the baseline f64 pipeline. Quantifies how much of the +1.84% m_p/m_e residual is f64 vs structural.",
+  "contentBlock": "prop:mass-endomorphism-tower",
+  "parameters": {
+    "q_0_mpf50": "1.1099785955541805677630215523262746828651420435574",
+    "m_e_MeV": 0.51099895,
+    "mpmath_dps": 70
+  },
+  "data": {
+    "particles": {
+      "electron": {
+        "n_strands": 2,
+        "n_generators": 1,
+        "V_hat_full": [
+          "0.59384900067050960663189736332069870748097299843771"
+        ],
+        "descended_mpf50": "0.59384900067050960663189736332069870748097299843771",
+        "single_mpf50": "629.93541909592063844295681357142936416765002853539",
+        "cross_mpf50": "0.0",
+        "total_mpf50": "630.52926809659114804958871093475006287513100153382",
+        "total_float64": 630.5292680965912
+      },
+      "proton": {
+        "n_strands": 3,
+        "n_generators": 2,
+        "V_hat_full": [
+          "0.98900731592925972090509188167551733805045120936372",
+          "0.97107015865274369307885090576683048369425021764638"
+        ],
+        "descended_mpf50": "0.96039549118815044188401031619394490696618756670282",
+        "single_mpf50": "1096978.3961756815059934982174998045278588222086793",
+        "cross_mpf50": "82016.168865420208499051979733455212355005763759118",
+        "total_mpf50": "1178995.525436592902642992081243575934158734938626",
+        "total_float64": 1178995.525436593
+      },
+      "neutron": {
+        "n_strands": 3,
+        "n_generators": 2,
+        "V_hat_full": [
+          "0.85421031282583891820125336663788675966603634100346",
+          "0.97550947110774593762376678899043210460815640032568"
+        ],
+        "descended_mpf50": "0.83329025047951632930902809923244042336440074066946",
+        "single_mpf50": "511298.27335123820480256358970327858572846020152069",
+        "cross_mpf50": "6137.397714011584219985646201272503705179208279971",
+        "total_mpf50": "517436.50435550026853887854493265032187406277420141",
+        "total_float64": 517436.5043555003
+      }
+    },
+    "ratios_at_50dps": {
+      "m_p_over_m_e": "1869.85059233758184124119289438",
+      "m_n_over_m_e": "820.638359766407968290394711756",
+      "m_n_over_m_p": "0.438879107843847638807591191233",
+      "delta_np_over_m_e": "-1049.21223257117387295079818262",
+      "m_p_over_m_e_codata": "1836.152673425258505912781229785305821078497323722485144049708908403824",
+      "m_n_over_m_e_codata": "1838.683661717895897829144267321880015604728737700928739677449435072225",
+      "m_p_over_m_e_diff_pct": 1.8352460228408685,
+      "m_n_over_m_e_diff_pct": -55.368159469058455
+    },
+    "comparison_to_f64": {
+      "f64_m_p_over_m_e_baseline": 1869.85,
+      "f64_diff_pct_baseline": 1.84,
+      "habiro_50dps_diff_pct": 1.8352460228408685,
+      "diff_change_from_f64_to_50dps": -0.004753977159131688
+    }
+  },
+  "caveats": [
+    "Quantum dilogarithm Φ_q is still evaluated as a series (adaptive truncation to precision floor). The fully-Habiro form would use the cyclotomic expansion Φ_q(z) = Σ_m a_m·(q;q)_m, but that's a separate refactor. For numerical evaluation at q_0 just outside |q|=1, series truncation at ~10⁻⁵⁰ is essentially exact.",
+    "If the diff stays at +1.84%, the residual is STRUCTURAL (mass formula incomplete), not numerical (f64). If it shifts, f64 was contributing some of the gap."
+  ]
+}

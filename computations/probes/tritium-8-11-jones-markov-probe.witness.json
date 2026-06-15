@@ -1,0 +1,88 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-25T21:17:07.700991+00:00",
+  "commitSha": "134aa60f3f95d344c7a478440dd4dbea889c703d",
+  "assertions": [
+    {
+      "name": "braid_index_8_11_is_3",
+      "computed": 3,
+      "expected": 3,
+      "passed": true,
+      "tolerance": 0,
+      "source": "knot_braid_database.HYPERBOLIC_NSTRANDS — corrects the r5_full_canonical_knot_solver.py line 18-19 'B_5/8_11' comment"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 24,
+  "computation": "tritium-8-11-jones-markov-probe",
+  "scriptFile": "tritium_8_11_jones_markov_probe.py",
+  "scriptHash": "9323f93c549a",
+  "scriptCommitSha": "b57caa7e9f0c8487b0e012443e3dd28d0f752ea9",
+  "precisionMetadata": {
+    "compute_dps": 50,
+    "output_dps": 40,
+    "guard_digits": 10,
+    "truncation_bound": "1e-40"
+  },
+  "description": "Phase B-2 probe (EXPLORATORY): corrects the B_5 → B_3 misframing of tritium's canonical knot (8_11 has braid index 3, not 5). Computes |tr_M(8_11, q_0)| via common-infra (markov_trace_for_knot, mp.mpf at 50 dps) under both Wenzl JM and q-Schur conventions and confirms the same bare-|tr_M| << AME pattern documented at 7²_1 (PR #1274) and 𝓑₃ (proton-mass). The framework's VolDensity chain is the correct substrate-pure derivation; bare |tr_M| is not.",
+  "auditOnly": "docs/audits/2026-05-25-track-b-r5-full-sdp-extension-design.md",
+  "parameters": {
+    "q_0_50dps": "1.10997859555418057528159407960950937799328227995870",
+    "m_e_MeV": "0.51099895069",
+    "knot": "8_11 (tritium hyperbolic knot)",
+    "braid_word": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        -1,
+        2
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        -1,
+        2
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        -1,
+        2
+      ],
+      [
+        -1,
+        2
+      ]
+    ],
+    "n_strands_catalogued": 3,
+    "evaluator_precision": "mp.mpf at 50 dps (L1 floor) via markov_trace_for_knot mpf default"
+  },
+  "data": {
+    "tr_M_wenzl": "0.1856426281474071278622884",
+    "tr_M_qschur": "0.1960583585670819702090489",
+    "m_e_times_abs_tr_M_wenzl_MeV": "0.09486318818665890098185604",
+    "m_e_times_abs_tr_M_qschur_MeV": "0.1001856155017826587520418",
+    "AME_binding_3H_MeV": 8.481798,
+    "ratio_AME_to_bare_wenzl": "89.41084694845665077947986",
+    "ratio_AME_to_bare_qschur": "84.66083636376999270020899",
+    "wall_seconds": {
+      "wenzl_jm": 0.0016676690000849703,
+      "q_schur": 0.000478202999943278
+    },
+    "phase_b_2_correction": {
+      "original_assumption": "tritium 8_11 is in B_5 / H_5, requiring new Python Hoefsmit seminormal implementation",
+      "corrected_finding": "8_11 has braid index 3; canonical representative is in B_3 / H_3; R5-full's existing H_3 machinery handles it without new code"
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-01T15:01:31.186914+00:00",
+  "commitSha": "da4c90cc785126e98f87b273a385c201d50aeb0a",
+  "assertions": [
+    {
+      "name": "exotic_basis_pslq_completed",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Exotic-basis PSLQ over 13 elements at 120 dps."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 21,
+  "computation": "mp-residual-exotic-basis-pslq",
+  "scriptFile": "mp_residual_exotic_basis_pslq.py",
+  "scriptHash": "3b7f4f63061a",
+  "scriptCommitSha": "2ca3f0fb8eb0420eb65df3b0695694b9cc70064f",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "Open-work follow-up to PR #1645: PSLQ search for the 54 ppb m_p sub-residual after (α_em/π)/6 correction, over the EXOTIC basis deferred by PR #1629 Task 2 (Bloch-Wigner D(z), Mahler measures of golden/Bring-quintic/Cassini polynomials, hyperbolic volumes, elliptic K). 120 dps, maxcoeff 10⁶, tol 10⁻²².",
+  "parameters": {
+    "q_120dps": "1.10997858275138080759166909561076887987449912187357873607281424018179896357448302113713825718367460865475264918359381182",
+    "mp_dps_runtime": "120"
+  },
+  "data": {
+    "sub_residual": "0.0000006482492877537578766901549",
+    "sub_residual_ppb": "54.0225197389",
+    "basis_size": 13,
+    "matches": 0,
+    "verdict": "DEEPER NULL — even the exotic basis (Bloch-Wigner D(z), Mahler measures of golden/quintic/Cassini polynomials, hyperbolic volumes, elliptic integrals) does NOT identify the 54 ppb sub-residual at 120 dps tol 10⁻²². Strongly suggests the residual is at the **CODATA precision floor** for the input anchors (α_em precision 10⁻¹⁰; m_p 10⁻¹⁰; m_μ 10⁻¹⁰; m_e 10⁻¹⁰). A 54 ppb residual on a kg-scale identity is consistent with ~10⁻¹⁰ × propagation factor. Further structural derivation would need improved CODATA inputs."
+  }
+}

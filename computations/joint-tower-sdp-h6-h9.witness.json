@@ -1,0 +1,7622 @@
+{
+  "computation": "joint-tower-sdp-h6-h9",
+  "computedAt": "2026-06-02T06:28:32.751077+00:00",
+  "description": "Phase 3b: extend joint-tower SDP solver from H_3 ground truth to H_6 (²H), H_9 (³H, ³He). Historical knot identifications (6_2, 8_11, L6a4) consumed; cvxpy SDP feasibility checked on H_3 Hoefsmit blocks for ²H and ³He (B_3 braids); ³H (B_5 braid) deferred to Rust.",
+  "design_spec": "prop:joint-tower-sdp-confinement",
+  "consumed_by": "prop:atom-knot-mass-derivation",
+  "phase": "3b",
+  "q_0_numeric": 1.1099785827513808,
+  "registry": [
+    {
+      "name": "deuteron",
+      "atomic_n_0": 6,
+      "knot_name": "6_2",
+      "knot_braid_word": [
+        1,
+        -2,
+        1,
+        1,
+        1,
+        -2
+      ],
+      "knot_braid_strand_count": 3,
+      "constituents": [
+        "proton",
+        "neutron"
+      ],
+      "binding_link": "L_H (Hopf)",
+      "rho_factor": 1,
+      "B_AME_MeV": 2.2246,
+      "methodology": "manual-historical-volume-match"
+    },
+    {
+      "name": "tritium",
+      "atomic_n_0": 9,
+      "knot_name": "8_11",
+      "knot_braid_word": [
+        -1,
+        2,
+        -3,
+        2,
+        1,
+        -3,
+        -3,
+        4,
+        -3,
+        -2,
+        -3,
+        -4,
+        -3,
+        2
+      ],
+      "knot_braid_strand_count": 5,
+      "constituents": [
+        "proton",
+        "neutron",
+        "neutron"
+      ],
+      "binding_link": "T_3 trefoil-like",
+      "rho_factor": 2,
+      "B_AME_MeV": 8.4818,
+      "methodology": "manual-historical-volume-match"
+    },
+    {
+      "name": "he3",
+      "atomic_n_0": 9,
+      "knot_name": "L6a4",
+      "knot_braid_word": [
+        -1,
+        2,
+        -1,
+        2,
+        -1,
+        2
+      ],
+      "knot_braid_strand_count": 3,
+      "constituents": [
+        "proton",
+        "proton",
+        "neutron"
+      ],
+      "binding_link": "L6a4 (link)",
+      "rho_factor": 2,
+      "B_AME_MeV": 7.718,
+      "methodology": "manual-historical-volume-match"
+    }
+  ],
+  "per_atom_certificates": [
+    {
+      "name": "deuteron",
+      "n_0": 3,
+      "braid_word_input": [
+        1,
+        -2,
+        1,
+        1,
+        1,
+        -2
+      ],
+      "filtration_certificate": {
+        "2": [
+          {
+            "perm": [
+              2,
+              3,
+              1
+            ],
+            "canonical_word": [
+              1,
+              2
+            ],
+            "coefficient_in_q": "-q**4 + 2*q**2 - 2 + 2/q**2 - 1/q**4"
+          },
+          {
+            "perm": [
+              3,
+              1,
+              2
+            ],
+            "canonical_word": [
+              2,
+              1
+            ],
+            "coefficient_in_q": "q**2 - 1 + q**(-2)"
+          }
+        ],
+        "1": [
+          {
+            "perm": [
+              1,
+              3,
+              2
+            ],
+            "canonical_word": [
+              2
+            ],
+            "coefficient_in_q": "-q**3 + 2*q - 2/q + q**(-3)"
+          },
+          {
+            "perm": [
+              2,
+              1,
+              3
+            ],
+            "canonical_word": [
+              1
+            ],
+            "coefficient_in_q": "q**5 - 3*q**3 + 5*q - 5/q + 3/q**3 - 1/q**5"
+          }
+        ],
+        "0": [
+          {
+            "perm": [
+              1,
+              2,
+              3
+            ],
+            "canonical_word": [],
+            "coefficient_in_q": "q**4 - 3*q**2 + 4 - 3/q**2 + q**(-4)"
+          }
+        ]
+      },
+      "filtration_shape": {
+        "2": 2,
+        "1": 2,
+        "0": 1
+      },
+      "max_grade": 2,
+      "jet_log": [
+        {
+          "step": 1,
+          "multiplier": 1,
+          "predecessor": [
+            1,
+            2,
+            3
+          ],
+          "successor": [
+            2,
+            1,
+            3
+          ],
+          "filtration_before": 0,
+          "filtration_after": 1,
+          "relation": "ascending"
+        },
+        {
+          "step": 2,
+          "multiplier": 2,
+          "predecessor": [
+            2,
+            1,
+            3
+          ],
+          "successor": [
+            2,
+            3,
+            1
+          ],
+          "filtration_before": 1,
+          "filtration_after": 2,
+          "relation": "ascending"
+        },
+        {
+          "step": 3,
+          "multiplier": 1,
+          "predecessor": [
+            2,
+            3,
+            1
+          ],
+          "successor": [
+            3,
+            2,
+            1
+          ],
+          "filtration_before": 2,
+          "filtration_after": 3,
+          "relation": "ascending"
+        },
+        {
+          "step": 4,
+          "multiplier": 1,
+          "predecessor": [
+            2,
+            1,
+            3
+          ],
+          "successor": [
+            1,
+            2,
+            3
+          ],
+          "filtration_before": 1,
+          "filtration_after": 0,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 5,
+          "multiplier": 1,
+          "predecessor": [
+            3,
+            2,
+            1
+          ],
+          "successor": [
+            2,
+            3,
+            1
+          ],
+          "filtration_before": 3,
+          "filtration_after": 2,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 6,
+          "multiplier": 1,
+          "predecessor": [
+            2,
+            1,
+            3
+          ],
+          "successor": [
+            1,
+            2,
+            3
+          ],
+          "filtration_before": 1,
+          "filtration_after": 0,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 7,
+          "multiplier": 1,
+          "predecessor": [
+            1,
+            2,
+            3
+          ],
+          "successor": [
+            2,
+            1,
+            3
+          ],
+          "filtration_before": 0,
+          "filtration_after": 1,
+          "relation": "ascending"
+        },
+        {
+          "step": 8,
+          "multiplier": 1,
+          "predecessor": [
+            3,
+            2,
+            1
+          ],
+          "successor": [
+            2,
+            3,
+            1
+          ],
+          "filtration_before": 3,
+          "filtration_after": 2,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 9,
+          "multiplier": 1,
+          "predecessor": [
+            2,
+            3,
+            1
+          ],
+          "successor": [
+            3,
+            2,
+            1
+          ],
+          "filtration_before": 2,
+          "filtration_after": 3,
+          "relation": "ascending"
+        },
+        {
+          "step": 10,
+          "multiplier": 1,
+          "predecessor": [
+            2,
+            1,
+            3
+          ],
+          "successor": [
+            1,
+            2,
+            3
+          ],
+          "filtration_before": 1,
+          "filtration_after": 0,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 11,
+          "multiplier": 1,
+          "predecessor": [
+            1,
+            2,
+            3
+          ],
+          "successor": [
+            2,
+            1,
+            3
+          ],
+          "filtration_before": 0,
+          "filtration_after": 1,
+          "relation": "ascending"
+        },
+        {
+          "step": 12,
+          "multiplier": 2,
+          "predecessor": [
+            3,
+            2,
+            1
+          ],
+          "successor": [
+            3,
+            1,
+            2
+          ],
+          "filtration_before": 3,
+          "filtration_after": 2,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 13,
+          "multiplier": 2,
+          "predecessor": [
+            2,
+            3,
+            1
+          ],
+          "successor": [
+            2,
+            1,
+            3
+          ],
+          "filtration_before": 2,
+          "filtration_after": 1,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 14,
+          "multiplier": 2,
+          "predecessor": [
+            2,
+            1,
+            3
+          ],
+          "successor": [
+            2,
+            3,
+            1
+          ],
+          "filtration_before": 1,
+          "filtration_after": 2,
+          "relation": "ascending"
+        },
+        {
+          "step": 15,
+          "multiplier": 2,
+          "predecessor": [
+            1,
+            2,
+            3
+          ],
+          "successor": [
+            1,
+            3,
+            2
+          ],
+          "filtration_before": 0,
+          "filtration_after": 1,
+          "relation": "ascending"
+        }
+      ],
+      "n_steps": 15,
+      "n_hecke_relations_fired": 7,
+      "constituents": [
+        "proton",
+        "neutron"
+      ],
+      "flavour_tag": null,
+      "rho_factor": 1,
+      "atomic_n_0": 6,
+      "knot_name": "6_2",
+      "binding_link": "L_H (Hopf)",
+      "B_AME_MeV": 2.2246,
+      "methodology": "manual-historical-volume-match",
+      "sdp_feasibility": {
+        "trivial_(3)": {
+          "value": 1.232052454166764,
+          "psd": true
+        },
+        "sign_(1,1,1)": {
+          "value": 0.811653754365758,
+          "psd": true
+        },
+        "standard_(2,1)": {
+          "matrix": [
+            [
+              -0.04111413988407507,
+              -1.2576377663099083
+            ],
+            [
+              0.7683330374494095,
+              -0.8200428148340343
+            ]
+          ],
+          "symmetric_part": [
+            [
+              -0.04111413988407507,
+              -0.2446523644302494
+            ],
+            [
+              -0.2446523644302494,
+              -0.8200428148340343
+            ]
+          ],
+          "eigenvalues_symmetric": [
+            -0.8905102653299845,
+            0.02935331061187517
+          ],
+          "psd_symmetric_part": false,
+          "min_eigenvalue": -0.8905102653299845,
+          "max_eigenvalue": 0.02935331061187517
+        },
+        "all_blocks_psd_or_close": false
+      },
+      "sdp_feasibility_status": "checked"
+    },
+    {
+      "name": "tritium",
+      "n_0": 5,
+      "braid_word_input": [
+        -1,
+        2,
+        -3,
+        2,
+        1,
+        -3,
+        -3,
+        4,
+        -3,
+        -2,
+        -3,
+        -4,
+        -3,
+        2
+      ],
+      "filtration_certificate": {
+        "7": [
+          {
+            "perm": [
+              3,
+              4,
+              5,
+              2,
+              1
+            ],
+            "canonical_word": [
+              1,
+              2,
+              3,
+              4,
+              1,
+              2,
+              3
+            ],
+            "coefficient_in_q": "q**5 - 4*q**3 + 7*q - 7/q + 4/q**3 - 1/q**5"
+          },
+          {
+            "perm": [
+              3,
+              5,
+              2,
+              4,
+              1
+            ],
+            "canonical_word": [
+              1,
+              2,
+              3,
+              4,
+              3,
+              1,
+              2
+            ],
+            "coefficient_in_q": "-q**7 + 5*q**5 - 11*q**3 + 15*q - 15/q + 11/q**3 - 5/q**5 + q**(-7)"
+          },
+          {
+            "perm": [
+              3,
+              5,
+              4,
+              1,
+              2
+            ],
+            "canonical_word": [
+              2,
+              3,
+              4,
+              1,
+              2,
+              3,
+              2
+            ],
+            "coefficient_in_q": "-q**7 + 5*q**5 - 12*q**3 + 18*q - 18/q + 12/q**3 - 5/q**5 + q**(-7)"
+          },
+          {
+            "perm": [
+              4,
+              2,
+              5,
+              3,
+              1
+            ],
+            "canonical_word": [
+              1,
+              2,
+              3,
+              4,
+              2,
+              3,
+              1
+            ],
+            "coefficient_in_q": "-q**3 + 2*q - 2/q + q**(-3)"
+          },
+          {
+            "perm": [
+              4,
+              3,
+              5,
+              1,
+              2
+            ],
+            "canonical_word": [
+              2,
+              3,
+              4,
+              1,
+              2,
+              3,
+              1
+            ],
+            "coefficient_in_q": "-q**3 + 2*q - 2/q + q**(-3)"
+          },
+          {
+            "perm": [
+              4,
+              5,
+              1,
+              3,
+              2
+            ],
+            "canonical_word": [
+              2,
+              3,
+              4,
+              2,
+              3,
+              1,
+              2
+            ],
+            "coefficient_in_q": "q**5 - 3*q**3 + 5*q - 5/q + 3/q**3 - 1/q**5"
+          },
+          {
+            "perm": [
+              4,
+              5,
+              2,
+              1,
+              3
+            ],
+            "canonical_word": [
+              3,
+              4,
+              1,
+              2,
+              3,
+              1,
+              2
+            ],
+            "coefficient_in_q": "q**5 - 3*q**3 + 4*q - 4/q + 3/q**3 - 1/q**5"
+          }
+        ],
+        "6": [
+          {
+            "perm": [
+              1,
+              5,
+              4,
+              3,
+              2
+            ],
+            "canonical_word": [
+              2,
+              3,
+              4,
+              2,
+              3,
+              2
+            ],
+            "coefficient_in_q": "-q**4 + 3*q**2 - 4 + 3/q**2 - 1/q**4"
+          },
+          {
+            "perm": [
+              3,
+              2,
+              5,
+              4,
+              1
+            ],
+            "canonical_word": [
+              1,
+              2,
+              3,
+              4,
+              3,
+              1
+            ],
+            "coefficient_in_q": "-q**6 + 4*q**4 - 7*q**2 + 8 - 7/q**2 + 4/q**4 - 1/q**6"
+          },
+          {
+            "perm": [
+              3,
+              4,
+              2,
+              5,
+              1
+            ],
+            "canonical_word": [
+              1,
+              2,
+              3,
+              4,
+              1,
+              2
+            ],
+            "coefficient_in_q": "-q**4 + 4*q**2 - 6 + 4/q**2 - 1/q**4"
+          },
+          {
+            "perm": [
+              3,
+              4,
+              5,
+              1,
+              2
+            ],
+            "canonical_word": [
+              2,
+              3,
+              4,
+              1,
+              2,
+              3
+            ],
+            "coefficient_in_q": "-q**6 + 4*q**4 - 8*q**2 + 10 - 8/q**2 + 4/q**4 - 1/q**6"
+          },
+          {
+            "perm": [
+              3,
+              5,
+              1,
+              4,
+              2
+            ],
+            "canonical_word": [
+              2,
+              3,
+              4,
+              3,
+              1,
+              2
+            ],
+            "coefficient_in_q": "q**8 - 5*q**6 + 12*q**4 - 19*q**2 + 22 - 19/q**2 + 12/q**4 - 5/q**6 + q**(-8)"
+          },
+          {
+            "perm": [
+              3,
+              5,
+              2,
+              1,
+              4
+            ],
+            "canonical_word": [
+              4,
+              1,
+              2,
+              3,
+              1,
+              2
+            ],
+            "coefficient_in_q": "q**8 - 5*q**6 + 11*q**4 - 15*q**2 + 16 - 15/q**2 + 11/q**4 - 5/q**6 + q**(-8)"
+          },
+          {
+            "perm": [
+              4,
+              1,
+              5,
+              3,
+              2
+            ],
+            "canonical_word": [
+              2,
+              3,
+              4,
+              2,
+              3,
+              1
+            ],
+            "coefficient_in_q": "q**4 - 2*q**2 + 3 - 2/q**2 + q**(-4)"
+          },
+          {
+            "perm": [
+              4,
+              2,
+              3,
+              5,
+              1
+            ],
+            "canonical_word": [
+              1,
+              2,
+              3,
+              4,
+              2,
+              1
+            ],
+            "coefficient_in_q": "q**2 - 2 + q**(-2)"
+          },
+          {
+            "perm": [
+              4,
+              2,
+              5,
+              1,
+              3
+            ],
+            "canonical_word": [
+              3,
+              4,
+              1,
+              2,
+              3,
+              1
+            ],
+            "coefficient_in_q": "q**4 - 2*q**2 + 2 - 2/q**2 + q**(-4)"
+          },
+          {
+            "perm": [
+              4,
+              3,
+              2,
+              1,
+              5
+            ],
+            "canonical_word": [
+              1,
+              2,
+              3,
+              1,
+              2,
+              1
+            ],
+            "coefficient_in_q": "q**2 - 2 + q**(-2)"
+          },
+          {
+            "perm": [
+              4,
+              5,
+              1,
+              2,
+              3
+            ],
+            "canonical_word": [
+              3,
+              4,
+              2,
+              3,
+              1,
+              2
+            ],
+            "coefficient_in_q": "-q**6 + 3*q**4 - 4*q**2 + 4 - 4/q**2 + 3/q**4 - 1/q**6"
+          }
+        ],
+        "5": [
+          {
+            "perm": [
+              1,
+              4,
+              5,
+              3,
+              2
+            ],
+            "canonical_word": [
+              2,
+              3,
+              4,
+              2,
+              3
+            ],
+            "coefficient_in_q": "-q**3 + 2*q - 2/q + q**(-3)"
+          },
+          {
+            "perm": [
+              1,
+              5,
+              3,
+              4,
+              2
+            ],
+            "canonical_word": [
+              2,
+              3,
+              4,
+              3,
+              2
+            ],
+            "coefficient_in_q": "q**5 - 3*q**3 + 4*q - 4/q + 3/q**3 - 1/q**5"
+          },
+          {
+            "perm": [
+              1,
+              5,
+              4,
+              2,
+              3
+            ],
+            "canonical_word": [
+              3,
+              4,
+              2,
+              3,
+              2
+            ],
+            "coefficient_in_q": "q**5 - 4*q**3 + 7*q - 7/q + 4/q**3 - 1/q**5"
+          },
+          {
+            "perm": [
+              3,
+              1,
+              5,
+              4,
+              2
+            ],
+            "canonical_word": [
+              2,
+              3,
+              4,
+              3,
+              1
+            ],
+            "coefficient_in_q": "q**7 - 4*q**5 + 8*q**3 - 11*q + 11/q - 8/q**3 + 4/q**5 - 1/q**7"
+          },
+          {
+            "perm": [
+              3,
+              2,
+              4,
+              5,
+              1
+            ],
+            "canonical_word": [
+              1,
+              2,
+              3,
+              4,
+              1
+            ],
+            "coefficient_in_q": "q**5 - 5*q**3 + 10*q - 10/q + 5/q**3 - 1/q**5"
+          },
+          {
+            "perm": [
+              3,
+              2,
+              5,
+              1,
+              4
+            ],
+            "canonical_word": [
+              4,
+              1,
+              2,
+              3,
+              1
+            ],
+            "coefficient_in_q": "q**7 - 4*q**5 + 7*q**3 - 8*q + 8/q - 7/q**3 + 4/q**5 - 1/q**7"
+          },
+          {
+            "perm": [
+              3,
+              4,
+              1,
+              5,
+              2
+            ],
+            "canonical_word": [
+              2,
+              3,
+              4,
+              1,
+              2
+            ],
+            "coefficient_in_q": "q**5 - 4*q**3 + 7*q - 7/q + 4/q**3 - 1/q**5"
+          },
+          {
+            "perm": [
+              3,
+              4,
+              2,
+              1,
+              5
+            ],
+            "canonical_word": [
+              1,
+              2,
+              3,
+              1,
+              2
+            ],
+            "coefficient_in_q": "2*q**5 - 9*q**3 + 17*q - 17/q + 9/q**3 - 2/q**5"
+          },
+          {
+            "perm": [
+              3,
+              5,
+              1,
+              2,
+              4
+            ],
+            "canonical_word": [
+              4,
+              2,
+              3,
+              1,
+              2
+            ],
+            "coefficient_in_q": "-q**9 + 5*q**7 - 11*q**5 + 15*q**3 - 16*q + 16/q - 15/q**3 + 11/q**5 - 5/q**7 + q**(-9)"
+          },
+          {
+            "perm": [
+              4,
+              1,
+              3,
+              5,
+              2
+            ],
+            "canonical_word": [
+              2,
+              3,
+              4,
+              2,
+              1
+            ],
+            "coefficient_in_q": "-q**3 + 2*q - 2/q + q**(-3)"
+          },
+          {
+            "perm": [
+              4,
+              1,
+              5,
+              2,
+              3
+            ],
+            "canonical_word": [
+              3,
+              4,
+              2,
+              3,
+              1
+            ],
+            "coefficient_in_q": "-q**5 + 2*q**3 - 2*q + 2/q - 2/q**3 + q**(-5)"
+          },
+          {
+            "perm": [
+              4,
+              2,
+              1,
+              5,
+              3
+            ],
+            "canonical_word": [
+              3,
+              4,
+              1,
+              2,
+              1
+            ],
+            "coefficient_in_q": "-q**3 + 3*q - 3/q + q**(-3)"
+          },
+          {
+            "perm": [
+              4,
+              2,
+              3,
+              1,
+              5
+            ],
+            "canonical_word": [
+              1,
+              2,
+              3,
+              2,
+              1
+            ],
+            "coefficient_in_q": "-q**3 + 3*q - 3/q + q**(-3)"
+          },
+          {
+            "perm": [
+              4,
+              3,
+              1,
+              2,
+              5
+            ],
+            "canonical_word": [
+              2,
+              3,
+              1,
+              2,
+              1
+            ],
+            "coefficient_in_q": "-q**3 + 3*q - 3/q + q**(-3)"
+          }
+        ],
+        "4": [
+          {
+            "perm": [
+              1,
+              3,
+              5,
+              4,
+              2
+            ],
+            "canonical_word": [
+              2,
+              3,
+              4,
+              3
+            ],
+            "coefficient_in_q": "q**4 - 2*q**2 + 2 - 2/q**2 + q**(-4)"
+          },
+          {
+            "perm": [
+              1,
+              4,
+              3,
+              5,
+              2
+            ],
+            "canonical_word": [
+              2,
+              3,
+              4,
+              2
+            ],
+            "coefficient_in_q": "q**2 - 2 + q**(-2)"
+          },
+          {
+            "perm": [
+              1,
+              4,
+              5,
+              2,
+              3
+            ],
+            "canonical_word": [
+              3,
+              4,
+              2,
+              3
+            ],
+            "coefficient_in_q": "q**4 - 3*q**2 + 4 - 3/q**2 + q**(-4)"
+          },
+          {
+            "perm": [
+              1,
+              5,
+              2,
+              4,
+              3
+            ],
+            "canonical_word": [
+              3,
+              4,
+              3,
+              2
+            ],
+            "coefficient_in_q": "-q**6 + 4*q**4 - 7*q**2 + 8 - 7/q**2 + 4/q**4 - 1/q**6"
+          },
+          {
+            "perm": [
+              1,
+              5,
+              3,
+              2,
+              4
+            ],
+            "canonical_word": [
+              4,
+              2,
+              3,
+              2
+            ],
+            "coefficient_in_q": "-q**6 + 4*q**4 - 7*q**2 + 8 - 7/q**2 + 4/q**4 - 1/q**6"
+          },
+          {
+            "perm": [
+              3,
+              1,
+              4,
+              5,
+              2
+            ],
+            "canonical_word": [
+              2,
+              3,
+              4,
+              1
+            ],
+            "coefficient_in_q": "-q**6 + 5*q**4 - 11*q**2 + 14 - 11/q**2 + 5/q**4 - 1/q**6"
+          },
+          {
+            "perm": [
+              3,
+              1,
+              5,
+              2,
+              4
+            ],
+            "canonical_word": [
+              4,
+              2,
+              3,
+              1
+            ],
+            "coefficient_in_q": "-q**8 + 4*q**6 - 7*q**4 + 8*q**2 - 8 + 8/q**2 - 7/q**4 + 4/q**6 - 1/q**8"
+          },
+          {
+            "perm": [
+              3,
+              2,
+              1,
+              5,
+              4
+            ],
+            "canonical_word": [
+              4,
+              1,
+              2,
+              1
+            ],
+            "coefficient_in_q": "-q**6 + 5*q**4 - 11*q**2 + 14 - 11/q**2 + 5/q**4 - 1/q**6"
+          },
+          {
+            "perm": [
+              3,
+              2,
+              4,
+              1,
+              5
+            ],
+            "canonical_word": [
+              1,
+              2,
+              3,
+              1
+            ],
+            "coefficient_in_q": "-q**6 + 6*q**4 - 15*q**2 + 20 - 15/q**2 + 6/q**4 - 1/q**6"
+          },
+          {
+            "perm": [
+              3,
+              4,
+              1,
+              2,
+              5
+            ],
+            "canonical_word": [
+              2,
+              3,
+              1,
+              2
+            ],
+            "coefficient_in_q": "-2*q**6 + 10*q**4 - 22*q**2 + 28 - 22/q**2 + 10/q**4 - 2/q**6"
+          },
+          {
+            "perm": [
+              4,
+              1,
+              2,
+              5,
+              3
+            ],
+            "canonical_word": [
+              3,
+              4,
+              2,
+              1
+            ],
+            "coefficient_in_q": "q**4 - 3*q**2 + 4 - 3/q**2 + q**(-4)"
+          },
+          {
+            "perm": [
+              4,
+              1,
+              3,
+              2,
+              5
+            ],
+            "canonical_word": [
+              2,
+              3,
+              2,
+              1
+            ],
+            "coefficient_in_q": "q**4 - 3*q**2 + 4 - 3/q**2 + q**(-4)"
+          },
+          {
+            "perm": [
+              4,
+              2,
+              1,
+              3,
+              5
+            ],
+            "canonical_word": [
+              3,
+              1,
+              2,
+              1
+            ],
+            "coefficient_in_q": "q**4 - 4*q**2 + 6 - 4/q**2 + q**(-4)"
+          }
+        ],
+        "3": [
+          {
+            "perm": [
+              1,
+              2,
+              5,
+              4,
+              3
+            ],
+            "canonical_word": [
+              3,
+              4,
+              3
+            ],
+            "coefficient_in_q": "-q**5 + 3*q**3 - 4*q + 4/q - 3/q**3 + q**(-5)"
+          },
+          {
+            "perm": [
+              1,
+              3,
+              4,
+              5,
+              2
+            ],
+            "canonical_word": [
+              2,
+              3,
+              4
+            ],
+            "coefficient_in_q": "-q**3 + 3*q - 3/q + q**(-3)"
+          },
+          {
+            "perm": [
+              1,
+              3,
+              5,
+              2,
+              4
+            ],
+            "canonical_word": [
+              4,
+              2,
+              3
+            ],
+            "coefficient_in_q": "-q**5 + 3*q**3 - 4*q + 4/q - 3/q**3 + q**(-5)"
+          },
+          {
+            "perm": [
+              1,
+              4,
+              2,
+              5,
+              3
+            ],
+            "canonical_word": [
+              3,
+              4,
+              2
+            ],
+            "coefficient_in_q": "-q**3 + 3*q - 3/q + q**(-3)"
+          },
+          {
+            "perm": [
+              1,
+              4,
+              3,
+              2,
+              5
+            ],
+            "canonical_word": [
+              2,
+              3,
+              2
+            ],
+            "coefficient_in_q": "-q**3 + 3*q - 3/q + q**(-3)"
+          },
+          {
+            "perm": [
+              1,
+              5,
+              2,
+              3,
+              4
+            ],
+            "canonical_word": [
+              4,
+              3,
+              2
+            ],
+            "coefficient_in_q": "q**7 - 4*q**5 + 7*q**3 - 8*q + 8/q - 7/q**3 + 4/q**5 - 1/q**7"
+          },
+          {
+            "perm": [
+              3,
+              1,
+              2,
+              5,
+              4
+            ],
+            "canonical_word": [
+              4,
+              2,
+              1
+            ],
+            "coefficient_in_q": "q**7 - 5*q**5 + 11*q**3 - 15*q + 15/q - 11/q**3 + 5/q**5 - 1/q**7"
+          },
+          {
+            "perm": [
+              3,
+              1,
+              4,
+              2,
+              5
+            ],
+            "canonical_word": [
+              2,
+              3,
+              1
+            ],
+            "coefficient_in_q": "q**7 - 6*q**5 + 16*q**3 - 25*q + 25/q - 16/q**3 + 6/q**5 - 1/q**7"
+          },
+          {
+            "perm": [
+              3,
+              2,
+              1,
+              4,
+              5
+            ],
+            "canonical_word": [
+              1,
+              2,
+              1
+            ],
+            "coefficient_in_q": "q**7 - 6*q**5 + 16*q**3 - 25*q + 25/q - 16/q**3 + 6/q**5 - 1/q**7"
+          },
+          {
+            "perm": [
+              4,
+              1,
+              2,
+              3,
+              5
+            ],
+            "canonical_word": [
+              3,
+              2,
+              1
+            ],
+            "coefficient_in_q": "-q**5 + 3*q**3 - 5*q + 5/q - 3/q**3 + q**(-5)"
+          }
+        ],
+        "2": [
+          {
+            "perm": [
+              1,
+              2,
+              4,
+              5,
+              3
+            ],
+            "canonical_word": [
+              3,
+              4
+            ],
+            "coefficient_in_q": "q**4 - 4*q**2 + 6 - 4/q**2 + q**(-4)"
+          },
+          {
+            "perm": [
+              1,
+              2,
+              5,
+              3,
+              4
+            ],
+            "canonical_word": [
+              4,
+              3
+            ],
+            "coefficient_in_q": "q**6 - 3*q**4 + 4*q**2 - 4 + 4/q**2 - 3/q**4 + q**(-6)"
+          },
+          {
+            "perm": [
+              1,
+              3,
+              2,
+              5,
+              4
+            ],
+            "canonical_word": [
+              4,
+              2
+            ],
+            "coefficient_in_q": "q**4 - 4*q**2 + 6 - 4/q**2 + q**(-4)"
+          },
+          {
+            "perm": [
+              1,
+              3,
+              4,
+              2,
+              5
+            ],
+            "canonical_word": [
+              2,
+              3
+            ],
+            "coefficient_in_q": "q**4 - 4*q**2 + 6 - 4/q**2 + q**(-4)"
+          },
+          {
+            "perm": [
+              1,
+              4,
+              2,
+              3,
+              5
+            ],
+            "canonical_word": [
+              3,
+              2
+            ],
+            "coefficient_in_q": "2*q**4 - 7*q**2 + 10 - 7/q**2 + 2/q**4"
+          },
+          {
+            "perm": [
+              3,
+              1,
+              2,
+              4,
+              5
+            ],
+            "canonical_word": [
+              2,
+              1
+            ],
+            "coefficient_in_q": "-q**8 + 5*q**6 - 12*q**4 + 19*q**2 - 22 + 19/q**2 - 12/q**4 + 5/q**6 - 1/q**8"
+          }
+        ],
+        "1": [
+          {
+            "perm": [
+              1,
+              2,
+              3,
+              5,
+              4
+            ],
+            "canonical_word": [
+              4
+            ],
+            "coefficient_in_q": "-q**5 + 4*q**3 - 7*q + 7/q - 4/q**3 + q**(-5)"
+          },
+          {
+            "perm": [
+              1,
+              2,
+              4,
+              3,
+              5
+            ],
+            "canonical_word": [
+              3
+            ],
+            "coefficient_in_q": "-q**5 + 5*q**3 - 10*q + 10/q - 5/q**3 + q**(-5)"
+          },
+          {
+            "perm": [
+              1,
+              3,
+              2,
+              4,
+              5
+            ],
+            "canonical_word": [
+              2
+            ],
+            "coefficient_in_q": "-2*q**5 + 8*q**3 - 14*q + 14/q - 8/q**3 + 2/q**5"
+          }
+        ],
+        "8": [
+          {
+            "perm": [
+              3,
+              5,
+              4,
+              2,
+              1
+            ],
+            "canonical_word": [
+              1,
+              2,
+              3,
+              4,
+              1,
+              2,
+              3,
+              2
+            ],
+            "coefficient_in_q": "q**6 - 5*q**4 + 11*q**2 - 14 + 11/q**2 - 5/q**4 + q**(-6)"
+          },
+          {
+            "perm": [
+              4,
+              3,
+              5,
+              2,
+              1
+            ],
+            "canonical_word": [
+              1,
+              2,
+              3,
+              4,
+              1,
+              2,
+              3,
+              1
+            ],
+            "coefficient_in_q": "q**2 - 2 + q**(-2)"
+          },
+          {
+            "perm": [
+              4,
+              5,
+              2,
+              3,
+              1
+            ],
+            "canonical_word": [
+              1,
+              2,
+              3,
+              4,
+              2,
+              3,
+              1,
+              2
+            ],
+            "coefficient_in_q": "-q**4 + 3*q**2 - 4 + 3/q**2 - 1/q**4"
+          },
+          {
+            "perm": [
+              4,
+              5,
+              3,
+              1,
+              2
+            ],
+            "canonical_word": [
+              2,
+              3,
+              4,
+              1,
+              2,
+              3,
+              1,
+              2
+            ],
+            "coefficient_in_q": "-q**4 + 3*q**2 - 4 + 3/q**2 - 1/q**4"
+          }
+        ],
+        "0": [
+          {
+            "perm": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "canonical_word": [],
+            "coefficient_in_q": "q**6 - 5*q**4 + 11*q**2 - 14 + 11/q**2 - 5/q**4 + q**(-6)"
+          }
+        ],
+        "9": [
+          {
+            "perm": [
+              4,
+              5,
+              3,
+              2,
+              1
+            ],
+            "canonical_word": [
+              1,
+              2,
+              3,
+              4,
+              1,
+              2,
+              3,
+              1,
+              2
+            ],
+            "coefficient_in_q": "q**3 - 3*q + 3/q - 1/q**3"
+          }
+        ]
+      },
+      "filtration_shape": {
+        "7": 7,
+        "6": 11,
+        "5": 14,
+        "4": 13,
+        "3": 10,
+        "2": 6,
+        "1": 3,
+        "8": 4,
+        "0": 1,
+        "9": 1
+      },
+      "max_grade": 9,
+      "jet_log": [
+        {
+          "step": 1,
+          "multiplier": 1,
+          "predecessor": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "successor": [
+            2,
+            1,
+            3,
+            4,
+            5
+          ],
+          "filtration_before": 0,
+          "filtration_after": 1,
+          "relation": "ascending"
+        },
+        {
+          "step": 2,
+          "multiplier": 2,
+          "predecessor": [
+            2,
+            1,
+            3,
+            4,
+            5
+          ],
+          "successor": [
+            2,
+            3,
+            1,
+            4,
+            5
+          ],
+          "filtration_before": 1,
+          "filtration_after": 2,
+          "relation": "ascending"
+        },
+        {
+          "step": 3,
+          "multiplier": 2,
+          "predecessor": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "successor": [
+            1,
+            3,
+            2,
+            4,
+            5
+          ],
+          "filtration_before": 0,
+          "filtration_after": 1,
+          "relation": "ascending"
+        },
+        {
+          "step": 4,
+          "multiplier": 3,
+          "predecessor": [
+            2,
+            3,
+            1,
+            4,
+            5
+          ],
+          "successor": [
+            2,
+            3,
+            4,
+            1,
+            5
+          ],
+          "filtration_before": 2,
+          "filtration_after": 3,
+          "relation": "ascending"
+        },
+        {
+          "step": 5,
+          "multiplier": 3,
+          "predecessor": [
+            1,
+            3,
+            2,
+            4,
+            5
+          ],
+          "successor": [
+            1,
+            3,
+            4,
+            2,
+            5
+          ],
+          "filtration_before": 1,
+          "filtration_after": 2,
+          "relation": "ascending"
+        },
+        {
+          "step": 6,
+          "multiplier": 2,
+          "predecessor": [
+            2,
+            3,
+            4,
+            1,
+            5
+          ],
+          "successor": [
+            2,
+            4,
+            3,
+            1,
+            5
+          ],
+          "filtration_before": 3,
+          "filtration_after": 4,
+          "relation": "ascending"
+        },
+        {
+          "step": 7,
+          "multiplier": 2,
+          "predecessor": [
+            1,
+            3,
+            4,
+            2,
+            5
+          ],
+          "successor": [
+            1,
+            4,
+            3,
+            2,
+            5
+          ],
+          "filtration_before": 2,
+          "filtration_after": 3,
+          "relation": "ascending"
+        },
+        {
+          "step": 8,
+          "multiplier": 2,
+          "predecessor": [
+            2,
+            3,
+            1,
+            4,
+            5
+          ],
+          "successor": [
+            2,
+            1,
+            3,
+            4,
+            5
+          ],
+          "filtration_before": 2,
+          "filtration_after": 1,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 9,
+          "multiplier": 2,
+          "predecessor": [
+            1,
+            3,
+            2,
+            4,
+            5
+          ],
+          "successor": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "filtration_before": 1,
+          "filtration_after": 0,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 10,
+          "multiplier": 1,
+          "predecessor": [
+            2,
+            4,
+            3,
+            1,
+            5
+          ],
+          "successor": [
+            4,
+            2,
+            3,
+            1,
+            5
+          ],
+          "filtration_before": 4,
+          "filtration_after": 5,
+          "relation": "ascending"
+        },
+        {
+          "step": 11,
+          "multiplier": 1,
+          "predecessor": [
+            1,
+            4,
+            3,
+            2,
+            5
+          ],
+          "successor": [
+            4,
+            1,
+            3,
+            2,
+            5
+          ],
+          "filtration_before": 3,
+          "filtration_after": 4,
+          "relation": "ascending"
+        },
+        {
+          "step": 12,
+          "multiplier": 1,
+          "predecessor": [
+            2,
+            3,
+            1,
+            4,
+            5
+          ],
+          "successor": [
+            3,
+            2,
+            1,
+            4,
+            5
+          ],
+          "filtration_before": 2,
+          "filtration_after": 3,
+          "relation": "ascending"
+        },
+        {
+          "step": 13,
+          "multiplier": 1,
+          "predecessor": [
+            2,
+            1,
+            3,
+            4,
+            5
+          ],
+          "successor": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "filtration_before": 1,
+          "filtration_after": 0,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 14,
+          "multiplier": 1,
+          "predecessor": [
+            1,
+            3,
+            2,
+            4,
+            5
+          ],
+          "successor": [
+            3,
+            1,
+            2,
+            4,
+            5
+          ],
+          "filtration_before": 1,
+          "filtration_after": 2,
+          "relation": "ascending"
+        },
+        {
+          "step": 15,
+          "multiplier": 1,
+          "predecessor": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "successor": [
+            2,
+            1,
+            3,
+            4,
+            5
+          ],
+          "filtration_before": 0,
+          "filtration_after": 1,
+          "relation": "ascending"
+        },
+        {
+          "step": 16,
+          "multiplier": 3,
+          "predecessor": [
+            4,
+            2,
+            3,
+            1,
+            5
+          ],
+          "successor": [
+            4,
+            2,
+            1,
+            3,
+            5
+          ],
+          "filtration_before": 5,
+          "filtration_after": 4,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 17,
+          "multiplier": 3,
+          "predecessor": [
+            4,
+            1,
+            3,
+            2,
+            5
+          ],
+          "successor": [
+            4,
+            1,
+            2,
+            3,
+            5
+          ],
+          "filtration_before": 4,
+          "filtration_after": 3,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 18,
+          "multiplier": 3,
+          "predecessor": [
+            3,
+            2,
+            1,
+            4,
+            5
+          ],
+          "successor": [
+            3,
+            2,
+            4,
+            1,
+            5
+          ],
+          "filtration_before": 3,
+          "filtration_after": 4,
+          "relation": "ascending"
+        },
+        {
+          "step": 19,
+          "multiplier": 3,
+          "predecessor": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "successor": [
+            1,
+            2,
+            4,
+            3,
+            5
+          ],
+          "filtration_before": 0,
+          "filtration_after": 1,
+          "relation": "ascending"
+        },
+        {
+          "step": 20,
+          "multiplier": 3,
+          "predecessor": [
+            3,
+            1,
+            2,
+            4,
+            5
+          ],
+          "successor": [
+            3,
+            1,
+            4,
+            2,
+            5
+          ],
+          "filtration_before": 2,
+          "filtration_after": 3,
+          "relation": "ascending"
+        },
+        {
+          "step": 21,
+          "multiplier": 3,
+          "predecessor": [
+            4,
+            2,
+            1,
+            3,
+            5
+          ],
+          "successor": [
+            4,
+            2,
+            3,
+            1,
+            5
+          ],
+          "filtration_before": 4,
+          "filtration_after": 5,
+          "relation": "ascending"
+        },
+        {
+          "step": 22,
+          "multiplier": 3,
+          "predecessor": [
+            4,
+            1,
+            2,
+            3,
+            5
+          ],
+          "successor": [
+            4,
+            1,
+            3,
+            2,
+            5
+          ],
+          "filtration_before": 3,
+          "filtration_after": 4,
+          "relation": "ascending"
+        },
+        {
+          "step": 23,
+          "multiplier": 3,
+          "predecessor": [
+            3,
+            2,
+            4,
+            1,
+            5
+          ],
+          "successor": [
+            3,
+            2,
+            1,
+            4,
+            5
+          ],
+          "filtration_before": 4,
+          "filtration_after": 3,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 24,
+          "multiplier": 3,
+          "predecessor": [
+            1,
+            2,
+            4,
+            3,
+            5
+          ],
+          "successor": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "filtration_before": 1,
+          "filtration_after": 0,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 25,
+          "multiplier": 3,
+          "predecessor": [
+            3,
+            1,
+            4,
+            2,
+            5
+          ],
+          "successor": [
+            3,
+            1,
+            2,
+            4,
+            5
+          ],
+          "filtration_before": 3,
+          "filtration_after": 2,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 26,
+          "multiplier": 3,
+          "predecessor": [
+            3,
+            2,
+            1,
+            4,
+            5
+          ],
+          "successor": [
+            3,
+            2,
+            4,
+            1,
+            5
+          ],
+          "filtration_before": 3,
+          "filtration_after": 4,
+          "relation": "ascending"
+        },
+        {
+          "step": 27,
+          "multiplier": 3,
+          "predecessor": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "successor": [
+            1,
+            2,
+            4,
+            3,
+            5
+          ],
+          "filtration_before": 0,
+          "filtration_after": 1,
+          "relation": "ascending"
+        },
+        {
+          "step": 28,
+          "multiplier": 3,
+          "predecessor": [
+            3,
+            1,
+            2,
+            4,
+            5
+          ],
+          "successor": [
+            3,
+            1,
+            4,
+            2,
+            5
+          ],
+          "filtration_before": 2,
+          "filtration_after": 3,
+          "relation": "ascending"
+        },
+        {
+          "step": 29,
+          "multiplier": 4,
+          "predecessor": [
+            4,
+            2,
+            3,
+            1,
+            5
+          ],
+          "successor": [
+            4,
+            2,
+            3,
+            5,
+            1
+          ],
+          "filtration_before": 5,
+          "filtration_after": 6,
+          "relation": "ascending"
+        },
+        {
+          "step": 30,
+          "multiplier": 4,
+          "predecessor": [
+            4,
+            1,
+            3,
+            2,
+            5
+          ],
+          "successor": [
+            4,
+            1,
+            3,
+            5,
+            2
+          ],
+          "filtration_before": 4,
+          "filtration_after": 5,
+          "relation": "ascending"
+        },
+        {
+          "step": 31,
+          "multiplier": 4,
+          "predecessor": [
+            3,
+            2,
+            1,
+            4,
+            5
+          ],
+          "successor": [
+            3,
+            2,
+            1,
+            5,
+            4
+          ],
+          "filtration_before": 3,
+          "filtration_after": 4,
+          "relation": "ascending"
+        },
+        {
+          "step": 32,
+          "multiplier": 4,
+          "predecessor": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "successor": [
+            1,
+            2,
+            3,
+            5,
+            4
+          ],
+          "filtration_before": 0,
+          "filtration_after": 1,
+          "relation": "ascending"
+        },
+        {
+          "step": 33,
+          "multiplier": 4,
+          "predecessor": [
+            3,
+            1,
+            2,
+            4,
+            5
+          ],
+          "successor": [
+            3,
+            1,
+            2,
+            5,
+            4
+          ],
+          "filtration_before": 2,
+          "filtration_after": 3,
+          "relation": "ascending"
+        },
+        {
+          "step": 34,
+          "multiplier": 4,
+          "predecessor": [
+            4,
+            2,
+            1,
+            3,
+            5
+          ],
+          "successor": [
+            4,
+            2,
+            1,
+            5,
+            3
+          ],
+          "filtration_before": 4,
+          "filtration_after": 5,
+          "relation": "ascending"
+        },
+        {
+          "step": 35,
+          "multiplier": 4,
+          "predecessor": [
+            4,
+            1,
+            2,
+            3,
+            5
+          ],
+          "successor": [
+            4,
+            1,
+            2,
+            5,
+            3
+          ],
+          "filtration_before": 3,
+          "filtration_after": 4,
+          "relation": "ascending"
+        },
+        {
+          "step": 36,
+          "multiplier": 4,
+          "predecessor": [
+            3,
+            2,
+            4,
+            1,
+            5
+          ],
+          "successor": [
+            3,
+            2,
+            4,
+            5,
+            1
+          ],
+          "filtration_before": 4,
+          "filtration_after": 5,
+          "relation": "ascending"
+        },
+        {
+          "step": 37,
+          "multiplier": 4,
+          "predecessor": [
+            1,
+            2,
+            4,
+            3,
+            5
+          ],
+          "successor": [
+            1,
+            2,
+            4,
+            5,
+            3
+          ],
+          "filtration_before": 1,
+          "filtration_after": 2,
+          "relation": "ascending"
+        },
+        {
+          "step": 38,
+          "multiplier": 4,
+          "predecessor": [
+            3,
+            1,
+            4,
+            2,
+            5
+          ],
+          "successor": [
+            3,
+            1,
+            4,
+            5,
+            2
+          ],
+          "filtration_before": 3,
+          "filtration_after": 4,
+          "relation": "ascending"
+        },
+        {
+          "step": 39,
+          "multiplier": 3,
+          "predecessor": [
+            4,
+            2,
+            3,
+            5,
+            1
+          ],
+          "successor": [
+            4,
+            2,
+            5,
+            3,
+            1
+          ],
+          "filtration_before": 6,
+          "filtration_after": 7,
+          "relation": "ascending"
+        },
+        {
+          "step": 40,
+          "multiplier": 3,
+          "predecessor": [
+            4,
+            1,
+            3,
+            5,
+            2
+          ],
+          "successor": [
+            4,
+            1,
+            5,
+            3,
+            2
+          ],
+          "filtration_before": 5,
+          "filtration_after": 6,
+          "relation": "ascending"
+        },
+        {
+          "step": 41,
+          "multiplier": 3,
+          "predecessor": [
+            3,
+            2,
+            1,
+            5,
+            4
+          ],
+          "successor": [
+            3,
+            2,
+            5,
+            1,
+            4
+          ],
+          "filtration_before": 4,
+          "filtration_after": 5,
+          "relation": "ascending"
+        },
+        {
+          "step": 42,
+          "multiplier": 3,
+          "predecessor": [
+            1,
+            2,
+            3,
+            5,
+            4
+          ],
+          "successor": [
+            1,
+            2,
+            5,
+            3,
+            4
+          ],
+          "filtration_before": 1,
+          "filtration_after": 2,
+          "relation": "ascending"
+        },
+        {
+          "step": 43,
+          "multiplier": 3,
+          "predecessor": [
+            3,
+            1,
+            2,
+            5,
+            4
+          ],
+          "successor": [
+            3,
+            1,
+            5,
+            2,
+            4
+          ],
+          "filtration_before": 3,
+          "filtration_after": 4,
+          "relation": "ascending"
+        },
+        {
+          "step": 44,
+          "multiplier": 3,
+          "predecessor": [
+            4,
+            2,
+            1,
+            5,
+            3
+          ],
+          "successor": [
+            4,
+            2,
+            5,
+            1,
+            3
+          ],
+          "filtration_before": 5,
+          "filtration_after": 6,
+          "relation": "ascending"
+        },
+        {
+          "step": 45,
+          "multiplier": 3,
+          "predecessor": [
+            4,
+            1,
+            2,
+            5,
+            3
+          ],
+          "successor": [
+            4,
+            1,
+            5,
+            2,
+            3
+          ],
+          "filtration_before": 4,
+          "filtration_after": 5,
+          "relation": "ascending"
+        },
+        {
+          "step": 46,
+          "multiplier": 3,
+          "predecessor": [
+            3,
+            2,
+            4,
+            5,
+            1
+          ],
+          "successor": [
+            3,
+            2,
+            5,
+            4,
+            1
+          ],
+          "filtration_before": 5,
+          "filtration_after": 6,
+          "relation": "ascending"
+        },
+        {
+          "step": 47,
+          "multiplier": 3,
+          "predecessor": [
+            1,
+            2,
+            4,
+            5,
+            3
+          ],
+          "successor": [
+            1,
+            2,
+            5,
+            4,
+            3
+          ],
+          "filtration_before": 2,
+          "filtration_after": 3,
+          "relation": "ascending"
+        },
+        {
+          "step": 48,
+          "multiplier": 3,
+          "predecessor": [
+            3,
+            1,
+            4,
+            5,
+            2
+          ],
+          "successor": [
+            3,
+            1,
+            5,
+            4,
+            2
+          ],
+          "filtration_before": 4,
+          "filtration_after": 5,
+          "relation": "ascending"
+        },
+        {
+          "step": 49,
+          "multiplier": 2,
+          "predecessor": [
+            4,
+            2,
+            5,
+            3,
+            1
+          ],
+          "successor": [
+            4,
+            5,
+            2,
+            3,
+            1
+          ],
+          "filtration_before": 7,
+          "filtration_after": 8,
+          "relation": "ascending"
+        },
+        {
+          "step": 50,
+          "multiplier": 2,
+          "predecessor": [
+            4,
+            1,
+            5,
+            3,
+            2
+          ],
+          "successor": [
+            4,
+            5,
+            1,
+            3,
+            2
+          ],
+          "filtration_before": 6,
+          "filtration_after": 7,
+          "relation": "ascending"
+        },
+        {
+          "step": 51,
+          "multiplier": 2,
+          "predecessor": [
+            3,
+            2,
+            5,
+            1,
+            4
+          ],
+          "successor": [
+            3,
+            5,
+            2,
+            1,
+            4
+          ],
+          "filtration_before": 5,
+          "filtration_after": 6,
+          "relation": "ascending"
+        },
+        {
+          "step": 52,
+          "multiplier": 2,
+          "predecessor": [
+            1,
+            2,
+            5,
+            3,
+            4
+          ],
+          "successor": [
+            1,
+            5,
+            2,
+            3,
+            4
+          ],
+          "filtration_before": 2,
+          "filtration_after": 3,
+          "relation": "ascending"
+        },
+        {
+          "step": 53,
+          "multiplier": 2,
+          "predecessor": [
+            3,
+            1,
+            5,
+            2,
+            4
+          ],
+          "successor": [
+            3,
+            5,
+            1,
+            2,
+            4
+          ],
+          "filtration_before": 4,
+          "filtration_after": 5,
+          "relation": "ascending"
+        },
+        {
+          "step": 54,
+          "multiplier": 2,
+          "predecessor": [
+            4,
+            2,
+            5,
+            1,
+            3
+          ],
+          "successor": [
+            4,
+            5,
+            2,
+            1,
+            3
+          ],
+          "filtration_before": 6,
+          "filtration_after": 7,
+          "relation": "ascending"
+        },
+        {
+          "step": 55,
+          "multiplier": 2,
+          "predecessor": [
+            4,
+            1,
+            5,
+            2,
+            3
+          ],
+          "successor": [
+            4,
+            5,
+            1,
+            2,
+            3
+          ],
+          "filtration_before": 5,
+          "filtration_after": 6,
+          "relation": "ascending"
+        },
+        {
+          "step": 56,
+          "multiplier": 2,
+          "predecessor": [
+            3,
+            2,
+            5,
+            4,
+            1
+          ],
+          "successor": [
+            3,
+            5,
+            2,
+            4,
+            1
+          ],
+          "filtration_before": 6,
+          "filtration_after": 7,
+          "relation": "ascending"
+        },
+        {
+          "step": 57,
+          "multiplier": 2,
+          "predecessor": [
+            1,
+            2,
+            5,
+            4,
+            3
+          ],
+          "successor": [
+            1,
+            5,
+            2,
+            4,
+            3
+          ],
+          "filtration_before": 3,
+          "filtration_after": 4,
+          "relation": "ascending"
+        },
+        {
+          "step": 58,
+          "multiplier": 2,
+          "predecessor": [
+            3,
+            1,
+            5,
+            4,
+            2
+          ],
+          "successor": [
+            3,
+            5,
+            1,
+            4,
+            2
+          ],
+          "filtration_before": 5,
+          "filtration_after": 6,
+          "relation": "ascending"
+        },
+        {
+          "step": 59,
+          "multiplier": 2,
+          "predecessor": [
+            4,
+            2,
+            3,
+            5,
+            1
+          ],
+          "successor": [
+            4,
+            3,
+            2,
+            5,
+            1
+          ],
+          "filtration_before": 6,
+          "filtration_after": 7,
+          "relation": "ascending"
+        },
+        {
+          "step": 60,
+          "multiplier": 2,
+          "predecessor": [
+            4,
+            1,
+            3,
+            5,
+            2
+          ],
+          "successor": [
+            4,
+            3,
+            1,
+            5,
+            2
+          ],
+          "filtration_before": 5,
+          "filtration_after": 6,
+          "relation": "ascending"
+        },
+        {
+          "step": 61,
+          "multiplier": 2,
+          "predecessor": [
+            3,
+            2,
+            1,
+            5,
+            4
+          ],
+          "successor": [
+            3,
+            1,
+            2,
+            5,
+            4
+          ],
+          "filtration_before": 4,
+          "filtration_after": 3,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 62,
+          "multiplier": 2,
+          "predecessor": [
+            1,
+            2,
+            3,
+            5,
+            4
+          ],
+          "successor": [
+            1,
+            3,
+            2,
+            5,
+            4
+          ],
+          "filtration_before": 1,
+          "filtration_after": 2,
+          "relation": "ascending"
+        },
+        {
+          "step": 63,
+          "multiplier": 2,
+          "predecessor": [
+            3,
+            1,
+            2,
+            5,
+            4
+          ],
+          "successor": [
+            3,
+            2,
+            1,
+            5,
+            4
+          ],
+          "filtration_before": 3,
+          "filtration_after": 4,
+          "relation": "ascending"
+        },
+        {
+          "step": 64,
+          "multiplier": 2,
+          "predecessor": [
+            4,
+            2,
+            1,
+            5,
+            3
+          ],
+          "successor": [
+            4,
+            1,
+            2,
+            5,
+            3
+          ],
+          "filtration_before": 5,
+          "filtration_after": 4,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 65,
+          "multiplier": 2,
+          "predecessor": [
+            4,
+            1,
+            2,
+            5,
+            3
+          ],
+          "successor": [
+            4,
+            2,
+            1,
+            5,
+            3
+          ],
+          "filtration_before": 4,
+          "filtration_after": 5,
+          "relation": "ascending"
+        },
+        {
+          "step": 66,
+          "multiplier": 2,
+          "predecessor": [
+            3,
+            2,
+            4,
+            5,
+            1
+          ],
+          "successor": [
+            3,
+            4,
+            2,
+            5,
+            1
+          ],
+          "filtration_before": 5,
+          "filtration_after": 6,
+          "relation": "ascending"
+        },
+        {
+          "step": 67,
+          "multiplier": 2,
+          "predecessor": [
+            1,
+            2,
+            4,
+            5,
+            3
+          ],
+          "successor": [
+            1,
+            4,
+            2,
+            5,
+            3
+          ],
+          "filtration_before": 2,
+          "filtration_after": 3,
+          "relation": "ascending"
+        },
+        {
+          "step": 68,
+          "multiplier": 2,
+          "predecessor": [
+            3,
+            1,
+            4,
+            5,
+            2
+          ],
+          "successor": [
+            3,
+            4,
+            1,
+            5,
+            2
+          ],
+          "filtration_before": 4,
+          "filtration_after": 5,
+          "relation": "ascending"
+        },
+        {
+          "step": 69,
+          "multiplier": 3,
+          "predecessor": [
+            4,
+            5,
+            2,
+            3,
+            1
+          ],
+          "successor": [
+            4,
+            5,
+            3,
+            2,
+            1
+          ],
+          "filtration_before": 8,
+          "filtration_after": 9,
+          "relation": "ascending"
+        },
+        {
+          "step": 70,
+          "multiplier": 3,
+          "predecessor": [
+            4,
+            5,
+            1,
+            3,
+            2
+          ],
+          "successor": [
+            4,
+            5,
+            3,
+            1,
+            2
+          ],
+          "filtration_before": 7,
+          "filtration_after": 8,
+          "relation": "ascending"
+        },
+        {
+          "step": 71,
+          "multiplier": 3,
+          "predecessor": [
+            3,
+            5,
+            2,
+            1,
+            4
+          ],
+          "successor": [
+            3,
+            5,
+            1,
+            2,
+            4
+          ],
+          "filtration_before": 6,
+          "filtration_after": 5,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 72,
+          "multiplier": 3,
+          "predecessor": [
+            1,
+            5,
+            2,
+            3,
+            4
+          ],
+          "successor": [
+            1,
+            5,
+            3,
+            2,
+            4
+          ],
+          "filtration_before": 3,
+          "filtration_after": 4,
+          "relation": "ascending"
+        },
+        {
+          "step": 73,
+          "multiplier": 3,
+          "predecessor": [
+            3,
+            5,
+            1,
+            2,
+            4
+          ],
+          "successor": [
+            3,
+            5,
+            2,
+            1,
+            4
+          ],
+          "filtration_before": 5,
+          "filtration_after": 6,
+          "relation": "ascending"
+        },
+        {
+          "step": 74,
+          "multiplier": 3,
+          "predecessor": [
+            4,
+            5,
+            2,
+            1,
+            3
+          ],
+          "successor": [
+            4,
+            5,
+            1,
+            2,
+            3
+          ],
+          "filtration_before": 7,
+          "filtration_after": 6,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 75,
+          "multiplier": 3,
+          "predecessor": [
+            4,
+            5,
+            1,
+            2,
+            3
+          ],
+          "successor": [
+            4,
+            5,
+            2,
+            1,
+            3
+          ],
+          "filtration_before": 6,
+          "filtration_after": 7,
+          "relation": "ascending"
+        },
+        {
+          "step": 76,
+          "multiplier": 3,
+          "predecessor": [
+            3,
+            5,
+            2,
+            4,
+            1
+          ],
+          "successor": [
+            3,
+            5,
+            4,
+            2,
+            1
+          ],
+          "filtration_before": 7,
+          "filtration_after": 8,
+          "relation": "ascending"
+        },
+        {
+          "step": 77,
+          "multiplier": 3,
+          "predecessor": [
+            1,
+            5,
+            2,
+            4,
+            3
+          ],
+          "successor": [
+            1,
+            5,
+            4,
+            2,
+            3
+          ],
+          "filtration_before": 4,
+          "filtration_after": 5,
+          "relation": "ascending"
+        },
+        {
+          "step": 78,
+          "multiplier": 3,
+          "predecessor": [
+            3,
+            5,
+            1,
+            4,
+            2
+          ],
+          "successor": [
+            3,
+            5,
+            4,
+            1,
+            2
+          ],
+          "filtration_before": 6,
+          "filtration_after": 7,
+          "relation": "ascending"
+        },
+        {
+          "step": 79,
+          "multiplier": 3,
+          "predecessor": [
+            4,
+            3,
+            2,
+            5,
+            1
+          ],
+          "successor": [
+            4,
+            3,
+            5,
+            2,
+            1
+          ],
+          "filtration_before": 7,
+          "filtration_after": 8,
+          "relation": "ascending"
+        },
+        {
+          "step": 80,
+          "multiplier": 3,
+          "predecessor": [
+            4,
+            3,
+            1,
+            5,
+            2
+          ],
+          "successor": [
+            4,
+            3,
+            5,
+            1,
+            2
+          ],
+          "filtration_before": 6,
+          "filtration_after": 7,
+          "relation": "ascending"
+        },
+        {
+          "step": 81,
+          "multiplier": 3,
+          "predecessor": [
+            3,
+            1,
+            2,
+            5,
+            4
+          ],
+          "successor": [
+            3,
+            1,
+            5,
+            2,
+            4
+          ],
+          "filtration_before": 3,
+          "filtration_after": 4,
+          "relation": "ascending"
+        },
+        {
+          "step": 82,
+          "multiplier": 3,
+          "predecessor": [
+            1,
+            3,
+            2,
+            5,
+            4
+          ],
+          "successor": [
+            1,
+            3,
+            5,
+            2,
+            4
+          ],
+          "filtration_before": 2,
+          "filtration_after": 3,
+          "relation": "ascending"
+        },
+        {
+          "step": 83,
+          "multiplier": 3,
+          "predecessor": [
+            4,
+            1,
+            2,
+            5,
+            3
+          ],
+          "successor": [
+            4,
+            1,
+            5,
+            2,
+            3
+          ],
+          "filtration_before": 4,
+          "filtration_after": 5,
+          "relation": "ascending"
+        },
+        {
+          "step": 84,
+          "multiplier": 3,
+          "predecessor": [
+            3,
+            4,
+            2,
+            5,
+            1
+          ],
+          "successor": [
+            3,
+            4,
+            5,
+            2,
+            1
+          ],
+          "filtration_before": 6,
+          "filtration_after": 7,
+          "relation": "ascending"
+        },
+        {
+          "step": 85,
+          "multiplier": 3,
+          "predecessor": [
+            1,
+            4,
+            2,
+            5,
+            3
+          ],
+          "successor": [
+            1,
+            4,
+            5,
+            2,
+            3
+          ],
+          "filtration_before": 3,
+          "filtration_after": 4,
+          "relation": "ascending"
+        },
+        {
+          "step": 86,
+          "multiplier": 3,
+          "predecessor": [
+            3,
+            4,
+            1,
+            5,
+            2
+          ],
+          "successor": [
+            3,
+            4,
+            5,
+            1,
+            2
+          ],
+          "filtration_before": 5,
+          "filtration_after": 6,
+          "relation": "ascending"
+        },
+        {
+          "step": 87,
+          "multiplier": 3,
+          "predecessor": [
+            4,
+            2,
+            5,
+            3,
+            1
+          ],
+          "successor": [
+            4,
+            2,
+            3,
+            5,
+            1
+          ],
+          "filtration_before": 7,
+          "filtration_after": 6,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 88,
+          "multiplier": 3,
+          "predecessor": [
+            4,
+            1,
+            5,
+            3,
+            2
+          ],
+          "successor": [
+            4,
+            1,
+            3,
+            5,
+            2
+          ],
+          "filtration_before": 6,
+          "filtration_after": 5,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 89,
+          "multiplier": 3,
+          "predecessor": [
+            3,
+            2,
+            5,
+            1,
+            4
+          ],
+          "successor": [
+            3,
+            2,
+            1,
+            5,
+            4
+          ],
+          "filtration_before": 5,
+          "filtration_after": 4,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 90,
+          "multiplier": 3,
+          "predecessor": [
+            1,
+            2,
+            5,
+            3,
+            4
+          ],
+          "successor": [
+            1,
+            2,
+            3,
+            5,
+            4
+          ],
+          "filtration_before": 2,
+          "filtration_after": 1,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 91,
+          "multiplier": 3,
+          "predecessor": [
+            3,
+            1,
+            5,
+            2,
+            4
+          ],
+          "successor": [
+            3,
+            1,
+            2,
+            5,
+            4
+          ],
+          "filtration_before": 4,
+          "filtration_after": 3,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 92,
+          "multiplier": 3,
+          "predecessor": [
+            4,
+            2,
+            5,
+            1,
+            3
+          ],
+          "successor": [
+            4,
+            2,
+            1,
+            5,
+            3
+          ],
+          "filtration_before": 6,
+          "filtration_after": 5,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 93,
+          "multiplier": 3,
+          "predecessor": [
+            4,
+            1,
+            5,
+            2,
+            3
+          ],
+          "successor": [
+            4,
+            1,
+            2,
+            5,
+            3
+          ],
+          "filtration_before": 5,
+          "filtration_after": 4,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 94,
+          "multiplier": 3,
+          "predecessor": [
+            3,
+            2,
+            5,
+            4,
+            1
+          ],
+          "successor": [
+            3,
+            2,
+            4,
+            5,
+            1
+          ],
+          "filtration_before": 6,
+          "filtration_after": 5,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 95,
+          "multiplier": 3,
+          "predecessor": [
+            1,
+            2,
+            5,
+            4,
+            3
+          ],
+          "successor": [
+            1,
+            2,
+            4,
+            5,
+            3
+          ],
+          "filtration_before": 3,
+          "filtration_after": 2,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 96,
+          "multiplier": 3,
+          "predecessor": [
+            3,
+            1,
+            5,
+            4,
+            2
+          ],
+          "successor": [
+            3,
+            1,
+            4,
+            5,
+            2
+          ],
+          "filtration_before": 5,
+          "filtration_after": 4,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 97,
+          "multiplier": 3,
+          "predecessor": [
+            4,
+            2,
+            3,
+            5,
+            1
+          ],
+          "successor": [
+            4,
+            2,
+            5,
+            3,
+            1
+          ],
+          "filtration_before": 6,
+          "filtration_after": 7,
+          "relation": "ascending"
+        },
+        {
+          "step": 98,
+          "multiplier": 3,
+          "predecessor": [
+            4,
+            1,
+            3,
+            5,
+            2
+          ],
+          "successor": [
+            4,
+            1,
+            5,
+            3,
+            2
+          ],
+          "filtration_before": 5,
+          "filtration_after": 6,
+          "relation": "ascending"
+        },
+        {
+          "step": 99,
+          "multiplier": 3,
+          "predecessor": [
+            3,
+            2,
+            1,
+            5,
+            4
+          ],
+          "successor": [
+            3,
+            2,
+            5,
+            1,
+            4
+          ],
+          "filtration_before": 4,
+          "filtration_after": 5,
+          "relation": "ascending"
+        },
+        {
+          "step": 100,
+          "multiplier": 3,
+          "predecessor": [
+            1,
+            2,
+            3,
+            5,
+            4
+          ],
+          "successor": [
+            1,
+            2,
+            5,
+            3,
+            4
+          ],
+          "filtration_before": 1,
+          "filtration_after": 2,
+          "relation": "ascending"
+        },
+        {
+          "step": 101,
+          "multiplier": 3,
+          "predecessor": [
+            4,
+            2,
+            1,
+            5,
+            3
+          ],
+          "successor": [
+            4,
+            2,
+            5,
+            1,
+            3
+          ],
+          "filtration_before": 5,
+          "filtration_after": 6,
+          "relation": "ascending"
+        },
+        {
+          "step": 102,
+          "multiplier": 3,
+          "predecessor": [
+            3,
+            2,
+            4,
+            5,
+            1
+          ],
+          "successor": [
+            3,
+            2,
+            5,
+            4,
+            1
+          ],
+          "filtration_before": 5,
+          "filtration_after": 6,
+          "relation": "ascending"
+        },
+        {
+          "step": 103,
+          "multiplier": 3,
+          "predecessor": [
+            1,
+            2,
+            4,
+            5,
+            3
+          ],
+          "successor": [
+            1,
+            2,
+            5,
+            4,
+            3
+          ],
+          "filtration_before": 2,
+          "filtration_after": 3,
+          "relation": "ascending"
+        },
+        {
+          "step": 104,
+          "multiplier": 3,
+          "predecessor": [
+            3,
+            1,
+            4,
+            5,
+            2
+          ],
+          "successor": [
+            3,
+            1,
+            5,
+            4,
+            2
+          ],
+          "filtration_before": 4,
+          "filtration_after": 5,
+          "relation": "ascending"
+        },
+        {
+          "step": 105,
+          "multiplier": 4,
+          "predecessor": [
+            4,
+            5,
+            3,
+            2,
+            1
+          ],
+          "successor": [
+            4,
+            5,
+            3,
+            1,
+            2
+          ],
+          "filtration_before": 9,
+          "filtration_after": 8,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 106,
+          "multiplier": 4,
+          "predecessor": [
+            4,
+            5,
+            3,
+            1,
+            2
+          ],
+          "successor": [
+            4,
+            5,
+            3,
+            2,
+            1
+          ],
+          "filtration_before": 8,
+          "filtration_after": 9,
+          "relation": "ascending"
+        },
+        {
+          "step": 107,
+          "multiplier": 4,
+          "predecessor": [
+            3,
+            5,
+            1,
+            2,
+            4
+          ],
+          "successor": [
+            3,
+            5,
+            1,
+            4,
+            2
+          ],
+          "filtration_before": 5,
+          "filtration_after": 6,
+          "relation": "ascending"
+        },
+        {
+          "step": 108,
+          "multiplier": 4,
+          "predecessor": [
+            1,
+            5,
+            3,
+            2,
+            4
+          ],
+          "successor": [
+            1,
+            5,
+            3,
+            4,
+            2
+          ],
+          "filtration_before": 4,
+          "filtration_after": 5,
+          "relation": "ascending"
+        },
+        {
+          "step": 109,
+          "multiplier": 4,
+          "predecessor": [
+            4,
+            5,
+            1,
+            2,
+            3
+          ],
+          "successor": [
+            4,
+            5,
+            1,
+            3,
+            2
+          ],
+          "filtration_before": 6,
+          "filtration_after": 7,
+          "relation": "ascending"
+        },
+        {
+          "step": 110,
+          "multiplier": 4,
+          "predecessor": [
+            3,
+            5,
+            4,
+            2,
+            1
+          ],
+          "successor": [
+            3,
+            5,
+            4,
+            1,
+            2
+          ],
+          "filtration_before": 8,
+          "filtration_after": 7,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 111,
+          "multiplier": 4,
+          "predecessor": [
+            1,
+            5,
+            4,
+            2,
+            3
+          ],
+          "successor": [
+            1,
+            5,
+            4,
+            3,
+            2
+          ],
+          "filtration_before": 5,
+          "filtration_after": 6,
+          "relation": "ascending"
+        },
+        {
+          "step": 112,
+          "multiplier": 4,
+          "predecessor": [
+            3,
+            5,
+            4,
+            1,
+            2
+          ],
+          "successor": [
+            3,
+            5,
+            4,
+            2,
+            1
+          ],
+          "filtration_before": 7,
+          "filtration_after": 8,
+          "relation": "ascending"
+        },
+        {
+          "step": 113,
+          "multiplier": 4,
+          "predecessor": [
+            4,
+            3,
+            5,
+            2,
+            1
+          ],
+          "successor": [
+            4,
+            3,
+            5,
+            1,
+            2
+          ],
+          "filtration_before": 8,
+          "filtration_after": 7,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 114,
+          "multiplier": 4,
+          "predecessor": [
+            4,
+            3,
+            5,
+            1,
+            2
+          ],
+          "successor": [
+            4,
+            3,
+            5,
+            2,
+            1
+          ],
+          "filtration_before": 7,
+          "filtration_after": 8,
+          "relation": "ascending"
+        },
+        {
+          "step": 115,
+          "multiplier": 4,
+          "predecessor": [
+            3,
+            1,
+            5,
+            2,
+            4
+          ],
+          "successor": [
+            3,
+            1,
+            5,
+            4,
+            2
+          ],
+          "filtration_before": 4,
+          "filtration_after": 5,
+          "relation": "ascending"
+        },
+        {
+          "step": 116,
+          "multiplier": 4,
+          "predecessor": [
+            1,
+            3,
+            5,
+            2,
+            4
+          ],
+          "successor": [
+            1,
+            3,
+            5,
+            4,
+            2
+          ],
+          "filtration_before": 3,
+          "filtration_after": 4,
+          "relation": "ascending"
+        },
+        {
+          "step": 117,
+          "multiplier": 4,
+          "predecessor": [
+            4,
+            1,
+            5,
+            2,
+            3
+          ],
+          "successor": [
+            4,
+            1,
+            5,
+            3,
+            2
+          ],
+          "filtration_before": 5,
+          "filtration_after": 6,
+          "relation": "ascending"
+        },
+        {
+          "step": 118,
+          "multiplier": 4,
+          "predecessor": [
+            3,
+            4,
+            5,
+            2,
+            1
+          ],
+          "successor": [
+            3,
+            4,
+            5,
+            1,
+            2
+          ],
+          "filtration_before": 7,
+          "filtration_after": 6,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 119,
+          "multiplier": 4,
+          "predecessor": [
+            1,
+            4,
+            5,
+            2,
+            3
+          ],
+          "successor": [
+            1,
+            4,
+            5,
+            3,
+            2
+          ],
+          "filtration_before": 4,
+          "filtration_after": 5,
+          "relation": "ascending"
+        },
+        {
+          "step": 120,
+          "multiplier": 4,
+          "predecessor": [
+            3,
+            4,
+            5,
+            1,
+            2
+          ],
+          "successor": [
+            3,
+            4,
+            5,
+            2,
+            1
+          ],
+          "filtration_before": 6,
+          "filtration_after": 7,
+          "relation": "ascending"
+        },
+        {
+          "step": 121,
+          "multiplier": 4,
+          "predecessor": [
+            4,
+            2,
+            3,
+            5,
+            1
+          ],
+          "successor": [
+            4,
+            2,
+            3,
+            1,
+            5
+          ],
+          "filtration_before": 6,
+          "filtration_after": 5,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 122,
+          "multiplier": 4,
+          "predecessor": [
+            4,
+            1,
+            3,
+            5,
+            2
+          ],
+          "successor": [
+            4,
+            1,
+            3,
+            2,
+            5
+          ],
+          "filtration_before": 5,
+          "filtration_after": 4,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 123,
+          "multiplier": 4,
+          "predecessor": [
+            3,
+            2,
+            1,
+            5,
+            4
+          ],
+          "successor": [
+            3,
+            2,
+            1,
+            4,
+            5
+          ],
+          "filtration_before": 4,
+          "filtration_after": 3,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 124,
+          "multiplier": 4,
+          "predecessor": [
+            1,
+            2,
+            3,
+            5,
+            4
+          ],
+          "successor": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "filtration_before": 1,
+          "filtration_after": 0,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 125,
+          "multiplier": 4,
+          "predecessor": [
+            3,
+            1,
+            2,
+            5,
+            4
+          ],
+          "successor": [
+            3,
+            1,
+            2,
+            4,
+            5
+          ],
+          "filtration_before": 3,
+          "filtration_after": 2,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 126,
+          "multiplier": 4,
+          "predecessor": [
+            4,
+            2,
+            1,
+            5,
+            3
+          ],
+          "successor": [
+            4,
+            2,
+            1,
+            3,
+            5
+          ],
+          "filtration_before": 5,
+          "filtration_after": 4,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 127,
+          "multiplier": 4,
+          "predecessor": [
+            4,
+            1,
+            2,
+            5,
+            3
+          ],
+          "successor": [
+            4,
+            1,
+            2,
+            3,
+            5
+          ],
+          "filtration_before": 4,
+          "filtration_after": 3,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 128,
+          "multiplier": 4,
+          "predecessor": [
+            3,
+            2,
+            4,
+            5,
+            1
+          ],
+          "successor": [
+            3,
+            2,
+            4,
+            1,
+            5
+          ],
+          "filtration_before": 5,
+          "filtration_after": 4,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 129,
+          "multiplier": 4,
+          "predecessor": [
+            1,
+            2,
+            4,
+            5,
+            3
+          ],
+          "successor": [
+            1,
+            2,
+            4,
+            3,
+            5
+          ],
+          "filtration_before": 2,
+          "filtration_after": 1,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 130,
+          "multiplier": 4,
+          "predecessor": [
+            3,
+            1,
+            4,
+            5,
+            2
+          ],
+          "successor": [
+            3,
+            1,
+            4,
+            2,
+            5
+          ],
+          "filtration_before": 4,
+          "filtration_after": 3,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 131,
+          "multiplier": 4,
+          "predecessor": [
+            4,
+            5,
+            2,
+            3,
+            1
+          ],
+          "successor": [
+            4,
+            5,
+            2,
+            1,
+            3
+          ],
+          "filtration_before": 8,
+          "filtration_after": 7,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 132,
+          "multiplier": 4,
+          "predecessor": [
+            4,
+            5,
+            1,
+            3,
+            2
+          ],
+          "successor": [
+            4,
+            5,
+            1,
+            2,
+            3
+          ],
+          "filtration_before": 7,
+          "filtration_after": 6,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 133,
+          "multiplier": 4,
+          "predecessor": [
+            3,
+            5,
+            2,
+            1,
+            4
+          ],
+          "successor": [
+            3,
+            5,
+            2,
+            4,
+            1
+          ],
+          "filtration_before": 6,
+          "filtration_after": 7,
+          "relation": "ascending"
+        },
+        {
+          "step": 134,
+          "multiplier": 4,
+          "predecessor": [
+            1,
+            5,
+            2,
+            3,
+            4
+          ],
+          "successor": [
+            1,
+            5,
+            2,
+            4,
+            3
+          ],
+          "filtration_before": 3,
+          "filtration_after": 4,
+          "relation": "ascending"
+        },
+        {
+          "step": 135,
+          "multiplier": 4,
+          "predecessor": [
+            4,
+            5,
+            2,
+            1,
+            3
+          ],
+          "successor": [
+            4,
+            5,
+            2,
+            3,
+            1
+          ],
+          "filtration_before": 7,
+          "filtration_after": 8,
+          "relation": "ascending"
+        },
+        {
+          "step": 136,
+          "multiplier": 4,
+          "predecessor": [
+            3,
+            5,
+            2,
+            4,
+            1
+          ],
+          "successor": [
+            3,
+            5,
+            2,
+            1,
+            4
+          ],
+          "filtration_before": 7,
+          "filtration_after": 6,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 137,
+          "multiplier": 4,
+          "predecessor": [
+            1,
+            5,
+            2,
+            4,
+            3
+          ],
+          "successor": [
+            1,
+            5,
+            2,
+            3,
+            4
+          ],
+          "filtration_before": 4,
+          "filtration_after": 3,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 138,
+          "multiplier": 4,
+          "predecessor": [
+            3,
+            5,
+            1,
+            4,
+            2
+          ],
+          "successor": [
+            3,
+            5,
+            1,
+            2,
+            4
+          ],
+          "filtration_before": 6,
+          "filtration_after": 5,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 139,
+          "multiplier": 4,
+          "predecessor": [
+            4,
+            3,
+            2,
+            5,
+            1
+          ],
+          "successor": [
+            4,
+            3,
+            2,
+            1,
+            5
+          ],
+          "filtration_before": 7,
+          "filtration_after": 6,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 140,
+          "multiplier": 4,
+          "predecessor": [
+            4,
+            3,
+            1,
+            5,
+            2
+          ],
+          "successor": [
+            4,
+            3,
+            1,
+            2,
+            5
+          ],
+          "filtration_before": 6,
+          "filtration_after": 5,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 141,
+          "multiplier": 4,
+          "predecessor": [
+            1,
+            3,
+            2,
+            5,
+            4
+          ],
+          "successor": [
+            1,
+            3,
+            2,
+            4,
+            5
+          ],
+          "filtration_before": 2,
+          "filtration_after": 1,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 142,
+          "multiplier": 4,
+          "predecessor": [
+            3,
+            4,
+            2,
+            5,
+            1
+          ],
+          "successor": [
+            3,
+            4,
+            2,
+            1,
+            5
+          ],
+          "filtration_before": 6,
+          "filtration_after": 5,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 143,
+          "multiplier": 4,
+          "predecessor": [
+            1,
+            4,
+            2,
+            5,
+            3
+          ],
+          "successor": [
+            1,
+            4,
+            2,
+            3,
+            5
+          ],
+          "filtration_before": 3,
+          "filtration_after": 2,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 144,
+          "multiplier": 4,
+          "predecessor": [
+            3,
+            4,
+            1,
+            5,
+            2
+          ],
+          "successor": [
+            3,
+            4,
+            1,
+            2,
+            5
+          ],
+          "filtration_before": 5,
+          "filtration_after": 4,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 145,
+          "multiplier": 4,
+          "predecessor": [
+            4,
+            2,
+            5,
+            3,
+            1
+          ],
+          "successor": [
+            4,
+            2,
+            5,
+            1,
+            3
+          ],
+          "filtration_before": 7,
+          "filtration_after": 6,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 146,
+          "multiplier": 4,
+          "predecessor": [
+            4,
+            1,
+            5,
+            3,
+            2
+          ],
+          "successor": [
+            4,
+            1,
+            5,
+            2,
+            3
+          ],
+          "filtration_before": 6,
+          "filtration_after": 5,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 147,
+          "multiplier": 4,
+          "predecessor": [
+            3,
+            2,
+            5,
+            1,
+            4
+          ],
+          "successor": [
+            3,
+            2,
+            5,
+            4,
+            1
+          ],
+          "filtration_before": 5,
+          "filtration_after": 6,
+          "relation": "ascending"
+        },
+        {
+          "step": 148,
+          "multiplier": 4,
+          "predecessor": [
+            1,
+            2,
+            5,
+            3,
+            4
+          ],
+          "successor": [
+            1,
+            2,
+            5,
+            4,
+            3
+          ],
+          "filtration_before": 2,
+          "filtration_after": 3,
+          "relation": "ascending"
+        },
+        {
+          "step": 149,
+          "multiplier": 4,
+          "predecessor": [
+            4,
+            2,
+            5,
+            1,
+            3
+          ],
+          "successor": [
+            4,
+            2,
+            5,
+            3,
+            1
+          ],
+          "filtration_before": 6,
+          "filtration_after": 7,
+          "relation": "ascending"
+        },
+        {
+          "step": 150,
+          "multiplier": 4,
+          "predecessor": [
+            3,
+            2,
+            5,
+            4,
+            1
+          ],
+          "successor": [
+            3,
+            2,
+            5,
+            1,
+            4
+          ],
+          "filtration_before": 6,
+          "filtration_after": 5,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 151,
+          "multiplier": 4,
+          "predecessor": [
+            1,
+            2,
+            5,
+            4,
+            3
+          ],
+          "successor": [
+            1,
+            2,
+            5,
+            3,
+            4
+          ],
+          "filtration_before": 3,
+          "filtration_after": 2,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 152,
+          "multiplier": 4,
+          "predecessor": [
+            3,
+            1,
+            5,
+            4,
+            2
+          ],
+          "successor": [
+            3,
+            1,
+            5,
+            2,
+            4
+          ],
+          "filtration_before": 5,
+          "filtration_after": 4,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 153,
+          "multiplier": 3,
+          "predecessor": [
+            4,
+            5,
+            3,
+            1,
+            2
+          ],
+          "successor": [
+            4,
+            5,
+            1,
+            3,
+            2
+          ],
+          "filtration_before": 8,
+          "filtration_after": 7,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 154,
+          "multiplier": 3,
+          "predecessor": [
+            3,
+            5,
+            1,
+            4,
+            2
+          ],
+          "successor": [
+            3,
+            5,
+            4,
+            1,
+            2
+          ],
+          "filtration_before": 6,
+          "filtration_after": 7,
+          "relation": "ascending"
+        },
+        {
+          "step": 155,
+          "multiplier": 3,
+          "predecessor": [
+            1,
+            5,
+            3,
+            4,
+            2
+          ],
+          "successor": [
+            1,
+            5,
+            4,
+            3,
+            2
+          ],
+          "filtration_before": 5,
+          "filtration_after": 6,
+          "relation": "ascending"
+        },
+        {
+          "step": 156,
+          "multiplier": 3,
+          "predecessor": [
+            4,
+            5,
+            1,
+            3,
+            2
+          ],
+          "successor": [
+            4,
+            5,
+            3,
+            1,
+            2
+          ],
+          "filtration_before": 7,
+          "filtration_after": 8,
+          "relation": "ascending"
+        },
+        {
+          "step": 157,
+          "multiplier": 3,
+          "predecessor": [
+            3,
+            5,
+            4,
+            1,
+            2
+          ],
+          "successor": [
+            3,
+            5,
+            1,
+            4,
+            2
+          ],
+          "filtration_before": 7,
+          "filtration_after": 6,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 158,
+          "multiplier": 3,
+          "predecessor": [
+            1,
+            5,
+            4,
+            3,
+            2
+          ],
+          "successor": [
+            1,
+            5,
+            3,
+            4,
+            2
+          ],
+          "filtration_before": 6,
+          "filtration_after": 5,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 159,
+          "multiplier": 3,
+          "predecessor": [
+            4,
+            3,
+            5,
+            1,
+            2
+          ],
+          "successor": [
+            4,
+            3,
+            1,
+            5,
+            2
+          ],
+          "filtration_before": 7,
+          "filtration_after": 6,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 160,
+          "multiplier": 3,
+          "predecessor": [
+            3,
+            1,
+            5,
+            4,
+            2
+          ],
+          "successor": [
+            3,
+            1,
+            4,
+            5,
+            2
+          ],
+          "filtration_before": 5,
+          "filtration_after": 4,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 161,
+          "multiplier": 3,
+          "predecessor": [
+            1,
+            3,
+            5,
+            4,
+            2
+          ],
+          "successor": [
+            1,
+            3,
+            4,
+            5,
+            2
+          ],
+          "filtration_before": 4,
+          "filtration_after": 3,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 162,
+          "multiplier": 3,
+          "predecessor": [
+            4,
+            1,
+            5,
+            3,
+            2
+          ],
+          "successor": [
+            4,
+            1,
+            3,
+            5,
+            2
+          ],
+          "filtration_before": 6,
+          "filtration_after": 5,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 163,
+          "multiplier": 3,
+          "predecessor": [
+            3,
+            4,
+            5,
+            1,
+            2
+          ],
+          "successor": [
+            3,
+            4,
+            1,
+            5,
+            2
+          ],
+          "filtration_before": 6,
+          "filtration_after": 5,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 164,
+          "multiplier": 3,
+          "predecessor": [
+            1,
+            4,
+            5,
+            3,
+            2
+          ],
+          "successor": [
+            1,
+            4,
+            3,
+            5,
+            2
+          ],
+          "filtration_before": 5,
+          "filtration_after": 4,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 165,
+          "multiplier": 3,
+          "predecessor": [
+            4,
+            2,
+            3,
+            1,
+            5
+          ],
+          "successor": [
+            4,
+            2,
+            1,
+            3,
+            5
+          ],
+          "filtration_before": 5,
+          "filtration_after": 4,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 166,
+          "multiplier": 3,
+          "predecessor": [
+            4,
+            1,
+            3,
+            2,
+            5
+          ],
+          "successor": [
+            4,
+            1,
+            2,
+            3,
+            5
+          ],
+          "filtration_before": 4,
+          "filtration_after": 3,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 167,
+          "multiplier": 3,
+          "predecessor": [
+            3,
+            2,
+            1,
+            4,
+            5
+          ],
+          "successor": [
+            3,
+            2,
+            4,
+            1,
+            5
+          ],
+          "filtration_before": 3,
+          "filtration_after": 4,
+          "relation": "ascending"
+        },
+        {
+          "step": 168,
+          "multiplier": 3,
+          "predecessor": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "successor": [
+            1,
+            2,
+            4,
+            3,
+            5
+          ],
+          "filtration_before": 0,
+          "filtration_after": 1,
+          "relation": "ascending"
+        },
+        {
+          "step": 169,
+          "multiplier": 3,
+          "predecessor": [
+            3,
+            1,
+            2,
+            4,
+            5
+          ],
+          "successor": [
+            3,
+            1,
+            4,
+            2,
+            5
+          ],
+          "filtration_before": 2,
+          "filtration_after": 3,
+          "relation": "ascending"
+        },
+        {
+          "step": 170,
+          "multiplier": 3,
+          "predecessor": [
+            4,
+            2,
+            1,
+            3,
+            5
+          ],
+          "successor": [
+            4,
+            2,
+            3,
+            1,
+            5
+          ],
+          "filtration_before": 4,
+          "filtration_after": 5,
+          "relation": "ascending"
+        },
+        {
+          "step": 171,
+          "multiplier": 3,
+          "predecessor": [
+            4,
+            1,
+            2,
+            3,
+            5
+          ],
+          "successor": [
+            4,
+            1,
+            3,
+            2,
+            5
+          ],
+          "filtration_before": 3,
+          "filtration_after": 4,
+          "relation": "ascending"
+        },
+        {
+          "step": 172,
+          "multiplier": 3,
+          "predecessor": [
+            3,
+            2,
+            4,
+            1,
+            5
+          ],
+          "successor": [
+            3,
+            2,
+            1,
+            4,
+            5
+          ],
+          "filtration_before": 4,
+          "filtration_after": 3,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 173,
+          "multiplier": 3,
+          "predecessor": [
+            1,
+            2,
+            4,
+            3,
+            5
+          ],
+          "successor": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "filtration_before": 1,
+          "filtration_after": 0,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 174,
+          "multiplier": 3,
+          "predecessor": [
+            3,
+            1,
+            4,
+            2,
+            5
+          ],
+          "successor": [
+            3,
+            1,
+            2,
+            4,
+            5
+          ],
+          "filtration_before": 3,
+          "filtration_after": 2,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 175,
+          "multiplier": 3,
+          "predecessor": [
+            4,
+            5,
+            2,
+            1,
+            3
+          ],
+          "successor": [
+            4,
+            5,
+            1,
+            2,
+            3
+          ],
+          "filtration_before": 7,
+          "filtration_after": 6,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 176,
+          "multiplier": 3,
+          "predecessor": [
+            4,
+            5,
+            1,
+            2,
+            3
+          ],
+          "successor": [
+            4,
+            5,
+            2,
+            1,
+            3
+          ],
+          "filtration_before": 6,
+          "filtration_after": 7,
+          "relation": "ascending"
+        },
+        {
+          "step": 177,
+          "multiplier": 3,
+          "predecessor": [
+            3,
+            5,
+            2,
+            4,
+            1
+          ],
+          "successor": [
+            3,
+            5,
+            4,
+            2,
+            1
+          ],
+          "filtration_before": 7,
+          "filtration_after": 8,
+          "relation": "ascending"
+        },
+        {
+          "step": 178,
+          "multiplier": 3,
+          "predecessor": [
+            1,
+            5,
+            2,
+            4,
+            3
+          ],
+          "successor": [
+            1,
+            5,
+            4,
+            2,
+            3
+          ],
+          "filtration_before": 4,
+          "filtration_after": 5,
+          "relation": "ascending"
+        },
+        {
+          "step": 179,
+          "multiplier": 3,
+          "predecessor": [
+            3,
+            5,
+            2,
+            1,
+            4
+          ],
+          "successor": [
+            3,
+            5,
+            1,
+            2,
+            4
+          ],
+          "filtration_before": 6,
+          "filtration_after": 5,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 180,
+          "multiplier": 3,
+          "predecessor": [
+            1,
+            5,
+            2,
+            3,
+            4
+          ],
+          "successor": [
+            1,
+            5,
+            3,
+            2,
+            4
+          ],
+          "filtration_before": 3,
+          "filtration_after": 4,
+          "relation": "ascending"
+        },
+        {
+          "step": 181,
+          "multiplier": 3,
+          "predecessor": [
+            3,
+            5,
+            1,
+            2,
+            4
+          ],
+          "successor": [
+            3,
+            5,
+            2,
+            1,
+            4
+          ],
+          "filtration_before": 5,
+          "filtration_after": 6,
+          "relation": "ascending"
+        },
+        {
+          "step": 182,
+          "multiplier": 3,
+          "predecessor": [
+            4,
+            3,
+            2,
+            1,
+            5
+          ],
+          "successor": [
+            4,
+            3,
+            1,
+            2,
+            5
+          ],
+          "filtration_before": 6,
+          "filtration_after": 5,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 183,
+          "multiplier": 3,
+          "predecessor": [
+            4,
+            3,
+            1,
+            2,
+            5
+          ],
+          "successor": [
+            4,
+            3,
+            2,
+            1,
+            5
+          ],
+          "filtration_before": 5,
+          "filtration_after": 6,
+          "relation": "ascending"
+        },
+        {
+          "step": 184,
+          "multiplier": 3,
+          "predecessor": [
+            1,
+            3,
+            2,
+            4,
+            5
+          ],
+          "successor": [
+            1,
+            3,
+            4,
+            2,
+            5
+          ],
+          "filtration_before": 1,
+          "filtration_after": 2,
+          "relation": "ascending"
+        },
+        {
+          "step": 185,
+          "multiplier": 3,
+          "predecessor": [
+            3,
+            4,
+            2,
+            1,
+            5
+          ],
+          "successor": [
+            3,
+            4,
+            1,
+            2,
+            5
+          ],
+          "filtration_before": 5,
+          "filtration_after": 4,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 186,
+          "multiplier": 3,
+          "predecessor": [
+            1,
+            4,
+            2,
+            3,
+            5
+          ],
+          "successor": [
+            1,
+            4,
+            3,
+            2,
+            5
+          ],
+          "filtration_before": 2,
+          "filtration_after": 3,
+          "relation": "ascending"
+        },
+        {
+          "step": 187,
+          "multiplier": 3,
+          "predecessor": [
+            3,
+            4,
+            1,
+            2,
+            5
+          ],
+          "successor": [
+            3,
+            4,
+            2,
+            1,
+            5
+          ],
+          "filtration_before": 4,
+          "filtration_after": 5,
+          "relation": "ascending"
+        },
+        {
+          "step": 188,
+          "multiplier": 3,
+          "predecessor": [
+            4,
+            2,
+            5,
+            1,
+            3
+          ],
+          "successor": [
+            4,
+            2,
+            1,
+            5,
+            3
+          ],
+          "filtration_before": 6,
+          "filtration_after": 5,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 189,
+          "multiplier": 3,
+          "predecessor": [
+            4,
+            1,
+            5,
+            2,
+            3
+          ],
+          "successor": [
+            4,
+            1,
+            2,
+            5,
+            3
+          ],
+          "filtration_before": 5,
+          "filtration_after": 4,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 190,
+          "multiplier": 3,
+          "predecessor": [
+            3,
+            2,
+            5,
+            4,
+            1
+          ],
+          "successor": [
+            3,
+            2,
+            4,
+            5,
+            1
+          ],
+          "filtration_before": 6,
+          "filtration_after": 5,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 191,
+          "multiplier": 3,
+          "predecessor": [
+            1,
+            2,
+            5,
+            4,
+            3
+          ],
+          "successor": [
+            1,
+            2,
+            4,
+            5,
+            3
+          ],
+          "filtration_before": 3,
+          "filtration_after": 2,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 192,
+          "multiplier": 3,
+          "predecessor": [
+            3,
+            2,
+            5,
+            1,
+            4
+          ],
+          "successor": [
+            3,
+            2,
+            1,
+            5,
+            4
+          ],
+          "filtration_before": 5,
+          "filtration_after": 4,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 193,
+          "multiplier": 3,
+          "predecessor": [
+            1,
+            2,
+            5,
+            3,
+            4
+          ],
+          "successor": [
+            1,
+            2,
+            3,
+            5,
+            4
+          ],
+          "filtration_before": 2,
+          "filtration_after": 1,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 194,
+          "multiplier": 3,
+          "predecessor": [
+            3,
+            1,
+            5,
+            2,
+            4
+          ],
+          "successor": [
+            3,
+            1,
+            2,
+            5,
+            4
+          ],
+          "filtration_before": 4,
+          "filtration_after": 3,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 195,
+          "multiplier": 3,
+          "predecessor": [
+            4,
+            5,
+            3,
+            2,
+            1
+          ],
+          "successor": [
+            4,
+            5,
+            2,
+            3,
+            1
+          ],
+          "filtration_before": 9,
+          "filtration_after": 8,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 196,
+          "multiplier": 3,
+          "predecessor": [
+            1,
+            5,
+            3,
+            2,
+            4
+          ],
+          "successor": [
+            1,
+            5,
+            2,
+            3,
+            4
+          ],
+          "filtration_before": 4,
+          "filtration_after": 3,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 197,
+          "multiplier": 3,
+          "predecessor": [
+            3,
+            5,
+            4,
+            2,
+            1
+          ],
+          "successor": [
+            3,
+            5,
+            2,
+            4,
+            1
+          ],
+          "filtration_before": 8,
+          "filtration_after": 7,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 198,
+          "multiplier": 3,
+          "predecessor": [
+            1,
+            5,
+            4,
+            2,
+            3
+          ],
+          "successor": [
+            1,
+            5,
+            2,
+            4,
+            3
+          ],
+          "filtration_before": 5,
+          "filtration_after": 4,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 199,
+          "multiplier": 3,
+          "predecessor": [
+            4,
+            3,
+            5,
+            2,
+            1
+          ],
+          "successor": [
+            4,
+            3,
+            2,
+            5,
+            1
+          ],
+          "filtration_before": 8,
+          "filtration_after": 7,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 200,
+          "multiplier": 3,
+          "predecessor": [
+            1,
+            3,
+            5,
+            2,
+            4
+          ],
+          "successor": [
+            1,
+            3,
+            2,
+            5,
+            4
+          ],
+          "filtration_before": 3,
+          "filtration_after": 2,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 201,
+          "multiplier": 3,
+          "predecessor": [
+            3,
+            4,
+            5,
+            2,
+            1
+          ],
+          "successor": [
+            3,
+            4,
+            2,
+            5,
+            1
+          ],
+          "filtration_before": 7,
+          "filtration_after": 6,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 202,
+          "multiplier": 3,
+          "predecessor": [
+            1,
+            4,
+            5,
+            2,
+            3
+          ],
+          "successor": [
+            1,
+            4,
+            2,
+            5,
+            3
+          ],
+          "filtration_before": 4,
+          "filtration_after": 3,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 203,
+          "multiplier": 3,
+          "predecessor": [
+            4,
+            5,
+            2,
+            3,
+            1
+          ],
+          "successor": [
+            4,
+            5,
+            3,
+            2,
+            1
+          ],
+          "filtration_before": 8,
+          "filtration_after": 9,
+          "relation": "ascending"
+        },
+        {
+          "step": 204,
+          "multiplier": 3,
+          "predecessor": [
+            4,
+            2,
+            5,
+            3,
+            1
+          ],
+          "successor": [
+            4,
+            2,
+            3,
+            5,
+            1
+          ],
+          "filtration_before": 7,
+          "filtration_after": 6,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 205,
+          "multiplier": 2,
+          "predecessor": [
+            4,
+            5,
+            1,
+            3,
+            2
+          ],
+          "successor": [
+            4,
+            1,
+            5,
+            3,
+            2
+          ],
+          "filtration_before": 7,
+          "filtration_after": 6,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 206,
+          "multiplier": 2,
+          "predecessor": [
+            3,
+            5,
+            4,
+            1,
+            2
+          ],
+          "successor": [
+            3,
+            4,
+            5,
+            1,
+            2
+          ],
+          "filtration_before": 7,
+          "filtration_after": 6,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 207,
+          "multiplier": 2,
+          "predecessor": [
+            1,
+            5,
+            4,
+            3,
+            2
+          ],
+          "successor": [
+            1,
+            4,
+            5,
+            3,
+            2
+          ],
+          "filtration_before": 6,
+          "filtration_after": 5,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 208,
+          "multiplier": 2,
+          "predecessor": [
+            3,
+            5,
+            1,
+            4,
+            2
+          ],
+          "successor": [
+            3,
+            1,
+            5,
+            4,
+            2
+          ],
+          "filtration_before": 6,
+          "filtration_after": 5,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 209,
+          "multiplier": 2,
+          "predecessor": [
+            1,
+            5,
+            3,
+            4,
+            2
+          ],
+          "successor": [
+            1,
+            3,
+            5,
+            4,
+            2
+          ],
+          "filtration_before": 5,
+          "filtration_after": 4,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 210,
+          "multiplier": 2,
+          "predecessor": [
+            4,
+            3,
+            1,
+            5,
+            2
+          ],
+          "successor": [
+            4,
+            1,
+            3,
+            5,
+            2
+          ],
+          "filtration_before": 6,
+          "filtration_after": 5,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 211,
+          "multiplier": 2,
+          "predecessor": [
+            3,
+            1,
+            4,
+            5,
+            2
+          ],
+          "successor": [
+            3,
+            4,
+            1,
+            5,
+            2
+          ],
+          "filtration_before": 4,
+          "filtration_after": 5,
+          "relation": "ascending"
+        },
+        {
+          "step": 212,
+          "multiplier": 2,
+          "predecessor": [
+            1,
+            3,
+            4,
+            5,
+            2
+          ],
+          "successor": [
+            1,
+            4,
+            3,
+            5,
+            2
+          ],
+          "filtration_before": 3,
+          "filtration_after": 4,
+          "relation": "ascending"
+        },
+        {
+          "step": 213,
+          "multiplier": 2,
+          "predecessor": [
+            4,
+            1,
+            3,
+            5,
+            2
+          ],
+          "successor": [
+            4,
+            3,
+            1,
+            5,
+            2
+          ],
+          "filtration_before": 5,
+          "filtration_after": 6,
+          "relation": "ascending"
+        },
+        {
+          "step": 214,
+          "multiplier": 2,
+          "predecessor": [
+            3,
+            4,
+            1,
+            5,
+            2
+          ],
+          "successor": [
+            3,
+            1,
+            4,
+            5,
+            2
+          ],
+          "filtration_before": 5,
+          "filtration_after": 4,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 215,
+          "multiplier": 2,
+          "predecessor": [
+            1,
+            4,
+            3,
+            5,
+            2
+          ],
+          "successor": [
+            1,
+            3,
+            4,
+            5,
+            2
+          ],
+          "filtration_before": 4,
+          "filtration_after": 3,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 216,
+          "multiplier": 2,
+          "predecessor": [
+            4,
+            2,
+            1,
+            3,
+            5
+          ],
+          "successor": [
+            4,
+            1,
+            2,
+            3,
+            5
+          ],
+          "filtration_before": 4,
+          "filtration_after": 3,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 217,
+          "multiplier": 2,
+          "predecessor": [
+            4,
+            1,
+            3,
+            2,
+            5
+          ],
+          "successor": [
+            4,
+            3,
+            1,
+            2,
+            5
+          ],
+          "filtration_before": 4,
+          "filtration_after": 5,
+          "relation": "ascending"
+        },
+        {
+          "step": 218,
+          "multiplier": 2,
+          "predecessor": [
+            4,
+            1,
+            2,
+            3,
+            5
+          ],
+          "successor": [
+            4,
+            2,
+            1,
+            3,
+            5
+          ],
+          "filtration_before": 3,
+          "filtration_after": 4,
+          "relation": "ascending"
+        },
+        {
+          "step": 219,
+          "multiplier": 2,
+          "predecessor": [
+            3,
+            2,
+            4,
+            1,
+            5
+          ],
+          "successor": [
+            3,
+            4,
+            2,
+            1,
+            5
+          ],
+          "filtration_before": 4,
+          "filtration_after": 5,
+          "relation": "ascending"
+        },
+        {
+          "step": 220,
+          "multiplier": 2,
+          "predecessor": [
+            1,
+            2,
+            4,
+            3,
+            5
+          ],
+          "successor": [
+            1,
+            4,
+            2,
+            3,
+            5
+          ],
+          "filtration_before": 1,
+          "filtration_after": 2,
+          "relation": "ascending"
+        },
+        {
+          "step": 221,
+          "multiplier": 2,
+          "predecessor": [
+            3,
+            1,
+            4,
+            2,
+            5
+          ],
+          "successor": [
+            3,
+            4,
+            1,
+            2,
+            5
+          ],
+          "filtration_before": 3,
+          "filtration_after": 4,
+          "relation": "ascending"
+        },
+        {
+          "step": 222,
+          "multiplier": 2,
+          "predecessor": [
+            3,
+            2,
+            1,
+            4,
+            5
+          ],
+          "successor": [
+            3,
+            1,
+            2,
+            4,
+            5
+          ],
+          "filtration_before": 3,
+          "filtration_after": 2,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 223,
+          "multiplier": 2,
+          "predecessor": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "successor": [
+            1,
+            3,
+            2,
+            4,
+            5
+          ],
+          "filtration_before": 0,
+          "filtration_after": 1,
+          "relation": "ascending"
+        },
+        {
+          "step": 224,
+          "multiplier": 2,
+          "predecessor": [
+            3,
+            1,
+            2,
+            4,
+            5
+          ],
+          "successor": [
+            3,
+            2,
+            1,
+            4,
+            5
+          ],
+          "filtration_before": 2,
+          "filtration_after": 3,
+          "relation": "ascending"
+        },
+        {
+          "step": 225,
+          "multiplier": 2,
+          "predecessor": [
+            4,
+            5,
+            2,
+            1,
+            3
+          ],
+          "successor": [
+            4,
+            2,
+            5,
+            1,
+            3
+          ],
+          "filtration_before": 7,
+          "filtration_after": 6,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 226,
+          "multiplier": 2,
+          "predecessor": [
+            4,
+            5,
+            1,
+            2,
+            3
+          ],
+          "successor": [
+            4,
+            1,
+            5,
+            2,
+            3
+          ],
+          "filtration_before": 6,
+          "filtration_after": 5,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 227,
+          "multiplier": 2,
+          "predecessor": [
+            3,
+            5,
+            4,
+            2,
+            1
+          ],
+          "successor": [
+            3,
+            4,
+            5,
+            2,
+            1
+          ],
+          "filtration_before": 8,
+          "filtration_after": 7,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 228,
+          "multiplier": 2,
+          "predecessor": [
+            1,
+            5,
+            4,
+            2,
+            3
+          ],
+          "successor": [
+            1,
+            4,
+            5,
+            2,
+            3
+          ],
+          "filtration_before": 5,
+          "filtration_after": 4,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 229,
+          "multiplier": 2,
+          "predecessor": [
+            3,
+            5,
+            2,
+            1,
+            4
+          ],
+          "successor": [
+            3,
+            2,
+            5,
+            1,
+            4
+          ],
+          "filtration_before": 6,
+          "filtration_after": 5,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 230,
+          "multiplier": 2,
+          "predecessor": [
+            3,
+            5,
+            1,
+            2,
+            4
+          ],
+          "successor": [
+            3,
+            1,
+            5,
+            2,
+            4
+          ],
+          "filtration_before": 5,
+          "filtration_after": 4,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 231,
+          "multiplier": 2,
+          "predecessor": [
+            1,
+            5,
+            3,
+            2,
+            4
+          ],
+          "successor": [
+            1,
+            3,
+            5,
+            2,
+            4
+          ],
+          "filtration_before": 4,
+          "filtration_after": 3,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 232,
+          "multiplier": 2,
+          "predecessor": [
+            4,
+            3,
+            1,
+            2,
+            5
+          ],
+          "successor": [
+            4,
+            1,
+            3,
+            2,
+            5
+          ],
+          "filtration_before": 5,
+          "filtration_after": 4,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 233,
+          "multiplier": 2,
+          "predecessor": [
+            1,
+            3,
+            4,
+            2,
+            5
+          ],
+          "successor": [
+            1,
+            4,
+            3,
+            2,
+            5
+          ],
+          "filtration_before": 2,
+          "filtration_after": 3,
+          "relation": "ascending"
+        },
+        {
+          "step": 234,
+          "multiplier": 2,
+          "predecessor": [
+            3,
+            4,
+            1,
+            2,
+            5
+          ],
+          "successor": [
+            3,
+            1,
+            4,
+            2,
+            5
+          ],
+          "filtration_before": 4,
+          "filtration_after": 3,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 235,
+          "multiplier": 2,
+          "predecessor": [
+            1,
+            4,
+            3,
+            2,
+            5
+          ],
+          "successor": [
+            1,
+            3,
+            4,
+            2,
+            5
+          ],
+          "filtration_before": 3,
+          "filtration_after": 2,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 236,
+          "multiplier": 2,
+          "predecessor": [
+            4,
+            2,
+            1,
+            5,
+            3
+          ],
+          "successor": [
+            4,
+            1,
+            2,
+            5,
+            3
+          ],
+          "filtration_before": 5,
+          "filtration_after": 4,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 237,
+          "multiplier": 2,
+          "predecessor": [
+            4,
+            1,
+            2,
+            5,
+            3
+          ],
+          "successor": [
+            4,
+            2,
+            1,
+            5,
+            3
+          ],
+          "filtration_before": 4,
+          "filtration_after": 5,
+          "relation": "ascending"
+        },
+        {
+          "step": 238,
+          "multiplier": 2,
+          "predecessor": [
+            3,
+            2,
+            4,
+            5,
+            1
+          ],
+          "successor": [
+            3,
+            4,
+            2,
+            5,
+            1
+          ],
+          "filtration_before": 5,
+          "filtration_after": 6,
+          "relation": "ascending"
+        },
+        {
+          "step": 239,
+          "multiplier": 2,
+          "predecessor": [
+            1,
+            2,
+            4,
+            5,
+            3
+          ],
+          "successor": [
+            1,
+            4,
+            2,
+            5,
+            3
+          ],
+          "filtration_before": 2,
+          "filtration_after": 3,
+          "relation": "ascending"
+        },
+        {
+          "step": 240,
+          "multiplier": 2,
+          "predecessor": [
+            3,
+            2,
+            1,
+            5,
+            4
+          ],
+          "successor": [
+            3,
+            1,
+            2,
+            5,
+            4
+          ],
+          "filtration_before": 4,
+          "filtration_after": 3,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 241,
+          "multiplier": 2,
+          "predecessor": [
+            1,
+            2,
+            3,
+            5,
+            4
+          ],
+          "successor": [
+            1,
+            3,
+            2,
+            5,
+            4
+          ],
+          "filtration_before": 1,
+          "filtration_after": 2,
+          "relation": "ascending"
+        },
+        {
+          "step": 242,
+          "multiplier": 2,
+          "predecessor": [
+            3,
+            1,
+            2,
+            5,
+            4
+          ],
+          "successor": [
+            3,
+            2,
+            1,
+            5,
+            4
+          ],
+          "filtration_before": 3,
+          "filtration_after": 4,
+          "relation": "ascending"
+        },
+        {
+          "step": 243,
+          "multiplier": 2,
+          "predecessor": [
+            4,
+            5,
+            2,
+            3,
+            1
+          ],
+          "successor": [
+            4,
+            2,
+            5,
+            3,
+            1
+          ],
+          "filtration_before": 8,
+          "filtration_after": 7,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 244,
+          "multiplier": 2,
+          "predecessor": [
+            1,
+            5,
+            2,
+            3,
+            4
+          ],
+          "successor": [
+            1,
+            2,
+            5,
+            3,
+            4
+          ],
+          "filtration_before": 3,
+          "filtration_after": 2,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 245,
+          "multiplier": 2,
+          "predecessor": [
+            3,
+            5,
+            2,
+            4,
+            1
+          ],
+          "successor": [
+            3,
+            2,
+            5,
+            4,
+            1
+          ],
+          "filtration_before": 7,
+          "filtration_after": 6,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 246,
+          "multiplier": 2,
+          "predecessor": [
+            1,
+            5,
+            2,
+            4,
+            3
+          ],
+          "successor": [
+            1,
+            2,
+            5,
+            4,
+            3
+          ],
+          "filtration_before": 4,
+          "filtration_after": 3,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 247,
+          "multiplier": 2,
+          "predecessor": [
+            4,
+            3,
+            2,
+            5,
+            1
+          ],
+          "successor": [
+            4,
+            2,
+            3,
+            5,
+            1
+          ],
+          "filtration_before": 7,
+          "filtration_after": 6,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 248,
+          "multiplier": 2,
+          "predecessor": [
+            1,
+            3,
+            2,
+            5,
+            4
+          ],
+          "successor": [
+            1,
+            2,
+            3,
+            5,
+            4
+          ],
+          "filtration_before": 2,
+          "filtration_after": 1,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 249,
+          "multiplier": 2,
+          "predecessor": [
+            3,
+            4,
+            2,
+            5,
+            1
+          ],
+          "successor": [
+            3,
+            2,
+            4,
+            5,
+            1
+          ],
+          "filtration_before": 6,
+          "filtration_after": 5,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 250,
+          "multiplier": 2,
+          "predecessor": [
+            1,
+            4,
+            2,
+            5,
+            3
+          ],
+          "successor": [
+            1,
+            2,
+            4,
+            5,
+            3
+          ],
+          "filtration_before": 3,
+          "filtration_after": 2,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 251,
+          "multiplier": 2,
+          "predecessor": [
+            4,
+            2,
+            3,
+            5,
+            1
+          ],
+          "successor": [
+            4,
+            3,
+            2,
+            5,
+            1
+          ],
+          "filtration_before": 6,
+          "filtration_after": 7,
+          "relation": "ascending"
+        },
+        {
+          "step": 252,
+          "multiplier": 2,
+          "predecessor": [
+            4,
+            5,
+            3,
+            1,
+            2
+          ],
+          "successor": [
+            4,
+            3,
+            5,
+            1,
+            2
+          ],
+          "filtration_before": 8,
+          "filtration_after": 7,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 253,
+          "multiplier": 2,
+          "predecessor": [
+            4,
+            2,
+            3,
+            1,
+            5
+          ],
+          "successor": [
+            4,
+            3,
+            2,
+            1,
+            5
+          ],
+          "filtration_before": 5,
+          "filtration_after": 6,
+          "relation": "ascending"
+        },
+        {
+          "step": 254,
+          "multiplier": 2,
+          "predecessor": [
+            4,
+            3,
+            2,
+            1,
+            5
+          ],
+          "successor": [
+            4,
+            2,
+            3,
+            1,
+            5
+          ],
+          "filtration_before": 6,
+          "filtration_after": 5,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 255,
+          "multiplier": 2,
+          "predecessor": [
+            1,
+            3,
+            2,
+            4,
+            5
+          ],
+          "successor": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "filtration_before": 1,
+          "filtration_after": 0,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 256,
+          "multiplier": 2,
+          "predecessor": [
+            3,
+            4,
+            2,
+            1,
+            5
+          ],
+          "successor": [
+            3,
+            2,
+            4,
+            1,
+            5
+          ],
+          "filtration_before": 5,
+          "filtration_after": 4,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 257,
+          "multiplier": 2,
+          "predecessor": [
+            1,
+            4,
+            2,
+            3,
+            5
+          ],
+          "successor": [
+            1,
+            2,
+            4,
+            3,
+            5
+          ],
+          "filtration_before": 2,
+          "filtration_after": 1,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 258,
+          "multiplier": 2,
+          "predecessor": [
+            4,
+            5,
+            3,
+            2,
+            1
+          ],
+          "successor": [
+            4,
+            3,
+            5,
+            2,
+            1
+          ],
+          "filtration_before": 9,
+          "filtration_after": 8,
+          "relation": "hecke-quadratic"
+        }
+      ],
+      "n_steps": 258,
+      "n_hecke_relations_fired": 122,
+      "constituents": [
+        "proton",
+        "neutron",
+        "neutron"
+      ],
+      "flavour_tag": null,
+      "rho_factor": 2,
+      "atomic_n_0": 9,
+      "knot_name": "8_11",
+      "binding_link": "T_3 trefoil-like",
+      "B_AME_MeV": 8.4818,
+      "methodology": "manual-historical-volume-match",
+      "sdp_feasibility_status": "DEFERRED to Rust (tools/hecke-engine): braid in B_5 requires Hoefsmit seminormal at H_5; existing infra in tools/hecke-engine/src/seminormal_mn.rs"
+    },
+    {
+      "name": "he3",
+      "n_0": 3,
+      "braid_word_input": [
+        -1,
+        2,
+        -1,
+        2,
+        -1,
+        2
+      ],
+      "filtration_certificate": {
+        "1": [
+          {
+            "perm": [
+              1,
+              3,
+              2
+            ],
+            "canonical_word": [
+              2
+            ],
+            "coefficient_in_q": "-q**5 + 4*q**3 - 7*q + 7/q - 4/q**3 + q**(-5)"
+          },
+          {
+            "perm": [
+              2,
+              1,
+              3
+            ],
+            "canonical_word": [
+              1
+            ],
+            "coefficient_in_q": "q**3 - 3*q + 3/q - 1/q**3"
+          }
+        ],
+        "0": [
+          {
+            "perm": [
+              1,
+              2,
+              3
+            ],
+            "canonical_word": [],
+            "coefficient_in_q": "-q**4 + 4*q**2 - 5 + 4/q**2 - 1/q**4"
+          }
+        ],
+        "2": [
+          {
+            "perm": [
+              2,
+              3,
+              1
+            ],
+            "canonical_word": [
+              1,
+              2
+            ],
+            "coefficient_in_q": "q**4 - 3*q**2 + 4 - 3/q**2 + q**(-4)"
+          },
+          {
+            "perm": [
+              3,
+              1,
+              2
+            ],
+            "canonical_word": [
+              2,
+              1
+            ],
+            "coefficient_in_q": "-q**2 + 2 - 1/q**2"
+          }
+        ]
+      },
+      "filtration_shape": {
+        "1": 2,
+        "0": 1,
+        "2": 2
+      },
+      "max_grade": 2,
+      "jet_log": [
+        {
+          "step": 1,
+          "multiplier": 1,
+          "predecessor": [
+            1,
+            2,
+            3
+          ],
+          "successor": [
+            2,
+            1,
+            3
+          ],
+          "filtration_before": 0,
+          "filtration_after": 1,
+          "relation": "ascending"
+        },
+        {
+          "step": 2,
+          "multiplier": 2,
+          "predecessor": [
+            2,
+            1,
+            3
+          ],
+          "successor": [
+            2,
+            3,
+            1
+          ],
+          "filtration_before": 1,
+          "filtration_after": 2,
+          "relation": "ascending"
+        },
+        {
+          "step": 3,
+          "multiplier": 2,
+          "predecessor": [
+            1,
+            2,
+            3
+          ],
+          "successor": [
+            1,
+            3,
+            2
+          ],
+          "filtration_before": 0,
+          "filtration_after": 1,
+          "relation": "ascending"
+        },
+        {
+          "step": 4,
+          "multiplier": 1,
+          "predecessor": [
+            2,
+            3,
+            1
+          ],
+          "successor": [
+            3,
+            2,
+            1
+          ],
+          "filtration_before": 2,
+          "filtration_after": 3,
+          "relation": "ascending"
+        },
+        {
+          "step": 5,
+          "multiplier": 1,
+          "predecessor": [
+            1,
+            3,
+            2
+          ],
+          "successor": [
+            3,
+            1,
+            2
+          ],
+          "filtration_before": 1,
+          "filtration_after": 2,
+          "relation": "ascending"
+        },
+        {
+          "step": 6,
+          "multiplier": 2,
+          "predecessor": [
+            3,
+            2,
+            1
+          ],
+          "successor": [
+            3,
+            1,
+            2
+          ],
+          "filtration_before": 3,
+          "filtration_after": 2,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 7,
+          "multiplier": 2,
+          "predecessor": [
+            3,
+            1,
+            2
+          ],
+          "successor": [
+            3,
+            2,
+            1
+          ],
+          "filtration_before": 2,
+          "filtration_after": 3,
+          "relation": "ascending"
+        },
+        {
+          "step": 8,
+          "multiplier": 2,
+          "predecessor": [
+            2,
+            3,
+            1
+          ],
+          "successor": [
+            2,
+            1,
+            3
+          ],
+          "filtration_before": 2,
+          "filtration_after": 1,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 9,
+          "multiplier": 2,
+          "predecessor": [
+            1,
+            3,
+            2
+          ],
+          "successor": [
+            1,
+            2,
+            3
+          ],
+          "filtration_before": 1,
+          "filtration_after": 0,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 10,
+          "multiplier": 1,
+          "predecessor": [
+            3,
+            1,
+            2
+          ],
+          "successor": [
+            1,
+            3,
+            2
+          ],
+          "filtration_before": 2,
+          "filtration_after": 1,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 11,
+          "multiplier": 1,
+          "predecessor": [
+            2,
+            3,
+            1
+          ],
+          "successor": [
+            3,
+            2,
+            1
+          ],
+          "filtration_before": 2,
+          "filtration_after": 3,
+          "relation": "ascending"
+        },
+        {
+          "step": 12,
+          "multiplier": 1,
+          "predecessor": [
+            2,
+            1,
+            3
+          ],
+          "successor": [
+            1,
+            2,
+            3
+          ],
+          "filtration_before": 1,
+          "filtration_after": 0,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 13,
+          "multiplier": 1,
+          "predecessor": [
+            1,
+            3,
+            2
+          ],
+          "successor": [
+            3,
+            1,
+            2
+          ],
+          "filtration_before": 1,
+          "filtration_after": 2,
+          "relation": "ascending"
+        },
+        {
+          "step": 14,
+          "multiplier": 1,
+          "predecessor": [
+            1,
+            2,
+            3
+          ],
+          "successor": [
+            2,
+            1,
+            3
+          ],
+          "filtration_before": 0,
+          "filtration_after": 1,
+          "relation": "ascending"
+        },
+        {
+          "step": 15,
+          "multiplier": 2,
+          "predecessor": [
+            3,
+            1,
+            2
+          ],
+          "successor": [
+            3,
+            2,
+            1
+          ],
+          "filtration_before": 2,
+          "filtration_after": 3,
+          "relation": "ascending"
+        },
+        {
+          "step": 16,
+          "multiplier": 2,
+          "predecessor": [
+            1,
+            3,
+            2
+          ],
+          "successor": [
+            1,
+            2,
+            3
+          ],
+          "filtration_before": 1,
+          "filtration_after": 0,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 17,
+          "multiplier": 2,
+          "predecessor": [
+            3,
+            2,
+            1
+          ],
+          "successor": [
+            3,
+            1,
+            2
+          ],
+          "filtration_before": 3,
+          "filtration_after": 2,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 18,
+          "multiplier": 2,
+          "predecessor": [
+            1,
+            2,
+            3
+          ],
+          "successor": [
+            1,
+            3,
+            2
+          ],
+          "filtration_before": 0,
+          "filtration_after": 1,
+          "relation": "ascending"
+        },
+        {
+          "step": 19,
+          "multiplier": 2,
+          "predecessor": [
+            2,
+            3,
+            1
+          ],
+          "successor": [
+            2,
+            1,
+            3
+          ],
+          "filtration_before": 2,
+          "filtration_after": 1,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 20,
+          "multiplier": 2,
+          "predecessor": [
+            2,
+            1,
+            3
+          ],
+          "successor": [
+            2,
+            3,
+            1
+          ],
+          "filtration_before": 1,
+          "filtration_after": 2,
+          "relation": "ascending"
+        }
+      ],
+      "n_steps": 20,
+      "n_hecke_relations_fired": 8,
+      "constituents": [
+        "proton",
+        "proton",
+        "neutron"
+      ],
+      "flavour_tag": null,
+      "rho_factor": 2,
+      "atomic_n_0": 9,
+      "knot_name": "L6a4",
+      "binding_link": "L6a4 (link)",
+      "B_AME_MeV": 7.718,
+      "methodology": "manual-historical-volume-match",
+      "sdp_feasibility": {
+        "trivial_(3)": {
+          "value": 1.0,
+          "psd": true
+        },
+        "sign_(1,1,1)": {
+          "value": 1.0,
+          "psd": true
+        },
+        "standard_(2,1)": {
+          "matrix": [
+            [
+              1.0112253123656911,
+              0.08047240831252996
+            ],
+            [
+              -0.0746275754525996,
+              0.9829605006142723
+            ]
+          ],
+          "symmetric_part": [
+            [
+              1.0112253123656911,
+              0.0029224164299651786
+            ],
+            [
+              0.0029224164299651786,
+              0.9829605006142723
+            ]
+          ],
+          "eigenvalues_symmetric": [
+            0.9826615027597163,
+            1.0115243102202471
+          ],
+          "psd_symmetric_part": true,
+          "min_eigenvalue": 0.9826615027597163,
+          "max_eigenvalue": 1.0115243102202471
+        },
+        "all_blocks_psd_or_close": true
+      },
+      "sdp_feasibility_status": "checked"
+    }
+  ],
+  "summary": {
+    "n_atoms": 3,
+    "checked_via_cvxpy": 2,
+    "deferred_to_rust": 1,
+    "all_sdp_checks_pass": false,
+    "next_steps": [
+      "Phase 3c: ⁶Li (B_18 atomic) and ⁷Li (B_21 atomic) need the SDP-as-SOLVER (not just verifier) — no historical braid word, so we must SOLVE for canonical T_w. Replaces deprecated li-atom-knot-search.",
+      "Rust integration: extend tools/hecke-engine to emit design-spec joint-tower-SDP certificate format (per-grade filtration, jet log, Wedderburn-block sparsity, cross-level consistency edges).",
+      "Once Rust emitter lands, ³H (B_5 / 8_11) gets its Hoefsmit-PSD check for free."
+    ]
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "computation": "qbeta-gb-filtration-residues",
+  "description": "F.2 via algebraic residues — replace divergent Φ_q (which blows up at proton spectral coords V≈0.989) with the GB-filtration-graded Markov-trace decomposition per prop:mass-endomorphism-tower line 22-42. Each GB level ℓ = height(λ) − 1 contributes a finite Laurent-polynomial residue. For H_3 the partitions are λ ∈ {(3), (2,1), (1,1,1)} at levels ℓ = 0, 1, 2 (sym, std, alt channels). Summing the per-level Markov-trace differences for proton vs neutron gives a structurally-correct algebraic substitute for the Φ_q tower — but the numerical result overshoots Q_β by 20%, indicating the right formula needs an additional regularization beyond simple per-level summation.",
+  "timestamp_utc": "2026-04-25T21:00:00Z",
+  "precision_dps": 50,
+  "wedderburn_weights_H3": {
+    "W_sym (lambda=(3), ell=0)":   0.1633832273,
+    "W_std (lambda=(2,1), ell=1)": 0.6606737723,
+    "W_alt (lambda=(1,1,1), ell=2)": 0.1633832273,
+    "sum": 0.9874402269,
+    "note": "Wedderburn weights do not sum to 1 (sum to 0.987); standard convention has additional normalization factor — pyhecke canonical_isospin uses the proper z-weights and gives tr_M(p)=1.0653 vs my 0.5928."
+  },
+  "per_level_contributions": [
+    {"ell": 0, "channel": "sym", "tr_M_proton": 0.2258764156,  "tr_M_neutron": 0.1833334365,  "delta_n_minus_p": -0.0425429791},
+    {"ell": 1, "channel": "std", "tr_M_proton": 0.4876979319,  "tr_M_neutron": 0.3334923863,  "delta_n_minus_p": -0.1542055456},
+    {"ell": 2, "channel": "alt", "tr_M_proton": -0.1207767288, "tr_M_neutron": -0.1488032686, "delta_n_minus_p": -0.0280265398}
+  ],
+  "delta_M_total":            -0.2247750645,
+  "delta_net_NF":             0.1872072129,
+  "ratio_canonical_over_NF":  1.2007,
+  "Q_beta_attempt": {
+    "method": "Σ_ℓ (tr_M_p − tr_M_n)|_ℓ × E_0_LO",
+    "level_0_contrib_MeV": 0.1780840945,
+    "level_1_contrib_MeV": 0.6455014567,
+    "level_2_contrib_MeV": 0.1173185580,
+    "Q_beta_predicted_MeV": 0.9409041092,
+    "Q_beta_codata_MeV":    0.78233341,
+    "rel_error_pct": +20.27,
+    "ppm_error":     +202689
+  },
+  "verdict": "GB_FILTRATION_DECOMPOSITION_PROVIDES_FINITE_ALGEBRAIC_SUBSTITUTE_FOR_PHI_Q_BUT_DOES_NOT_CLOSE_Q_BETA",
+  "interpretation": "The user's idea — algebraic residues via GB filtration instead of divergent Φ_q — is structurally correct and gives a finite computation at every level. However, the simple sum-over-levels of (tr_M_n − tr_M_p) × E_0_LO overshoots Q_β by 20%. Possible remedies: (a) use the canonical Jones-Markov normalization (z-weights via pyhecke) instead of bare W_λ; (b) take only the SUB-LEADING piece (level 1 alone gives 0.65 MeV — too high; level 2 alone gives 0.12 MeV — too low); (c) per-level Φ_q saturates at large arguments — replace bare per-level sum with an asymmetric weighting that mimics the saturation Φ_q(z→1) = ∞.",
+  "structural_observation": "The level-1 (std channel) carries 65% of the predicted Q_β; level-0 (sym) carries 18%; level-2 (alt) carries 12%. The actual physical Q_β has a different spread — likely because the Φ_q saturation suppresses level-2 (alt) which couples to small spectral coords. A regularized form that respects the Φ_q-pole structure would give the right answer.",
+  "next_steps": [
+    "Replace bare per-level Markov sum with pyhecke canonical_isospin weights (z-Markov normalized).",
+    "Try the BLOCH-WIGNER image: Φ_q regularized = -Cl_2(arg(z)) for z near unit circle. This gives a FINITE residue at z=1.",
+    "Search for the canonical 'jet-order' weighting that interpolates between bare sum (current overshoot) and physical answer."
+  ],
+  "reference_blocks": [
+    "prop:mass-endomorphism-tower",
+    "prop:neutron-qvalue-symbolic",
+    "rem:mass-endomorphism-jet-tower",
+    "def:confinement-level"
+  ]
+}

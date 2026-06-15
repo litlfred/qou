@@ -1,0 +1,116 @@
+{
+  "title": "Tau leptonic decay \u2014 T_{3,5} weak vertex in H\u2083(q)",
+  "computedAt": "2026-04-06T18:35:02.249339+00:00",
+  "commit": "90404e09",
+  "parameters": {
+    "q": 1.1099785955541805,
+    "q_err": 1.3578965598837824e-09,
+    "h": 0.20906032198987945,
+    "hbar_q": 0.09908172643569887,
+    "E_cross": 0.10453016099493972
+  },
+  "leptons": {
+    "electron": {
+      "n": 3,
+      "symbol": "e\u207b",
+      "net": 1.2527665402203916,
+      "trace_2": 0.7302040595096824,
+      "hecke_steps": 2,
+      "yb_steps": 0
+    },
+    "muon": {
+      "n": 5,
+      "symbol": "\u03bc\u207b",
+      "net": 1.5602867682395392,
+      "trace_2": 0.9930022429635025,
+      "hecke_steps": 4,
+      "yb_steps": 0
+    },
+    "tau": {
+      "n": 7,
+      "symbol": "\u03c4\u207b",
+      "net": 1.9360012302535448,
+      "trace_2": 1.2992007991516736,
+      "hecke_steps": 6,
+      "yb_steps": 0
+    }
+  },
+  "weak_vertex_T35": {
+    "n_terms": 6,
+    "net": 2.3157098787382,
+    "trace_3": 0.7035538014797476,
+    "hecke_steps": 38,
+    "yb_steps": 18
+  },
+  "decay_channels": {
+    "\u03c4\u2192e": {
+      "daughter": "electron",
+      "n_daughter": 3,
+      "nf_terms": 6,
+      "hecke_steps": 6,
+      "yb_steps": 0,
+      "net": 6.681922998433054,
+      "trace_3": 2.3294309434404825,
+      "trace_sq": 5.426248520258016,
+      "terms": {
+        "\u03bd (\ud835\udfd9)": 0.42388296331110925,
+        "H\u2070 (\u03c3\u2080)": 0.5190150245547477,
+        "H\u00b9 (\u03c3\u2081)": 1.489690224472164,
+        "L\u208a (\u03c3\u2080\u03c3\u2081)": 2.0627787610387194,
+        "L\u208b (\u03c3\u2081\u03c3\u2080)": 0.9297498728351696,
+        "e\u207b (\u03c3\u2080\u03c3\u2081\u03c3\u2080)": 1.256806152221144
+      }
+    },
+    "\u03c4\u2192\u03bc": {
+      "daughter": "muon",
+      "n_daughter": 5,
+      "nf_terms": 6,
+      "hecke_steps": 6,
+      "yb_steps": 0,
+      "net": 8.197098250729507,
+      "trace_3": 2.804377852635848,
+      "trace_sq": 7.864535140354449,
+      "terms": {
+        "\u03bd (\ud835\udfd9)": 0.53238841146211,
+        "H\u2070 (\u03c3\u2080)": 0.630316317278697,
+        "H\u00b9 (\u03c3\u2081)": 1.684064032257134,
+        "L\u208a (\u03c3\u2080\u03c3\u2081)": 2.3255270599009337,
+        "L\u208b (\u03c3\u2081\u03c3\u2080)": 1.2818208416704207,
+        "e\u207b (\u03c3\u2080\u03c3\u2081\u03c3\u2080)": 1.742981588160211
+      }
+    }
+  },
+  "reverse_order": {
+    "\u03c4\u2192e (rev)": {
+      "trace_3": 2.147012133331131,
+      "trace_sq": 4.609661100671095
+    },
+    "\u03c4\u2192\u03bc (rev)": {
+      "trace_3": 2.715119030363782,
+      "trace_sq": 7.371871349043565
+    }
+  },
+  "branching_ratio": {
+    "product_model": {
+      "M_sq_e": 5.426248520258016,
+      "M_sq_mu": 7.864535140354449,
+      "M_sq_ratio": 0.6899643047450938,
+      "BR_ratio": 0.7094306560016544,
+      "note": "Product T_{2,n}\u00b7T_{3,5}\u00b7T_{2,7} \u2014 breaks universality"
+    },
+    "factorized_model": {
+      "M_sq_universal": 0.494987951576604,
+      "BR_ratio": 1.0282135628215614,
+      "deviation_from_PDG_pct": 0.34025733707604683,
+      "note": "|M|\u00b2 = |tr(T_{3,5})|\u00b2 universal \u2014 PREDICTS lepton universality"
+    },
+    "phase_space_f_e": 0.9999993383585538,
+    "phase_space_f_mu": 0.972559956916359,
+    "phase_space_ratio": 1.0282135628215614,
+    "BR_ratio_SM": 1.0282135628215614,
+    "BR_ratio_PDG": 1.0247268545140886,
+    "net_ratio": 0.8151571195134072
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
+}

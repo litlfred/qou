@@ -1,0 +1,486 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-16T02:44:13.479211+00:00",
+  "commitSha": "0fb976fd71a0b79dba957b4ddb90f488f3c3ea4d",
+  "assertions": [
+    {
+      "name": "closed_form_shift_consistent_D",
+      "computed": 40,
+      "expected": 40,
+      "passed": true,
+      "source": "prop:per-nucleon-shift-additive-linearity"
+    },
+    {
+      "name": "delta_cross_le_lp_bound_D",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "prop:operator-selection-lp (active-set bound)"
+    },
+    {
+      "name": "lp_duality_gap_small_D",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "LP strong duality (mpmath recompute)"
+    },
+    {
+      "name": "closed_form_shift_consistent_T",
+      "computed": 61,
+      "expected": 61,
+      "passed": true,
+      "source": "prop:per-nucleon-shift-additive-linearity"
+    },
+    {
+      "name": "delta_cross_le_lp_bound_T",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "prop:operator-selection-lp (active-set bound)"
+    },
+    {
+      "name": "lp_duality_gap_small_T",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "LP strong duality (mpmath recompute)"
+    },
+    {
+      "name": "closed_form_shift_consistent_3He",
+      "computed": 58,
+      "expected": 58,
+      "passed": true,
+      "source": "prop:per-nucleon-shift-additive-linearity"
+    },
+    {
+      "name": "delta_cross_le_lp_bound_3He",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "prop:operator-selection-lp (active-set bound)"
+    },
+    {
+      "name": "lp_duality_gap_small_3He",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "LP strong duality (mpmath recompute)"
+    },
+    {
+      "name": "closed_form_shift_consistent_4He",
+      "computed": 79,
+      "expected": 79,
+      "passed": true,
+      "source": "prop:per-nucleon-shift-additive-linearity"
+    },
+    {
+      "name": "delta_cross_le_lp_bound_4He",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "prop:operator-selection-lp (active-set bound)"
+    },
+    {
+      "name": "lp_duality_gap_small_4He",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "LP strong duality (mpmath recompute)"
+    },
+    {
+      "name": "closed_form_shift_consistent_5Li",
+      "computed": 97,
+      "expected": 97,
+      "passed": true,
+      "source": "prop:per-nucleon-shift-additive-linearity"
+    },
+    {
+      "name": "delta_cross_le_lp_bound_5Li",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "prop:operator-selection-lp (active-set bound)"
+    },
+    {
+      "name": "lp_duality_gap_small_5Li",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "LP strong duality (mpmath recompute)"
+    },
+    {
+      "name": "closed_form_shift_consistent_6Li",
+      "computed": 118,
+      "expected": 118,
+      "passed": true,
+      "source": "prop:per-nucleon-shift-additive-linearity"
+    },
+    {
+      "name": "delta_cross_le_lp_bound_6Li",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "prop:operator-selection-lp (active-set bound)"
+    },
+    {
+      "name": "lp_duality_gap_small_6Li",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "LP strong duality (mpmath recompute)"
+    },
+    {
+      "name": "alpha_em_chain_50dps_finite",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "prop:alpha-em-shift-multiplicative-chain"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 42,
+  "computation": "compound-shift-nf",
+  "scriptFile": "compound_shift_nf.py",
+  "scriptHash": "e4e2d68a67bd",
+  "scriptCommitSha": "320d17c38b0f52a5d01f39c6567584c3a07a55a0",
+  "description": "Compound-shift NF decomposition for atoms A=2..6 at 50-dps mpmath precision (no floats in emitted values). Composes the closed-form atomic shift (shift(Z,N) = 18Z + 21N + 1, prop:per-nucleon-shift-additive-linearity, PR #539 / w3-w4) with the interface α(I) contributions per canonical pppnnn ordering. NF coefficients at q_0 are computed in mpmath (port of hecke_core.build_atom_nf with mp.mpf arithmetic). LP active-set discovery uses scipy linprog as a discrete oracle, but every numerical field (y_0, y_*, x_*, primal_obj, dual_obj, duality_gap) is recomputed in mpmath via a high-precision linear-system solve restricted to the active basis. Also verifies the α_EM⁻¹ = q · [9]_q · [10]_q chain at 50 dps.",
+  "auditOnly": "docs/audits/2026-05-16-compound-shift-nf-impl.md",
+  "data": {
+    "nf_basis_names": [
+      "γ",
+      "σ₀",
+      "σ₁",
+      "L₊",
+      "L₋",
+      "e⁻"
+    ],
+    "dps": 50,
+    "per_nucleon_shift_p_h3": 19,
+    "per_nucleon_shift_n_h3": 15,
+    "alpha_pn": 1,
+    "alpha_pp": 0,
+    "alpha_nn": 0,
+    "atoms": [
+      {
+        "Z": 1,
+        "N": 1,
+        "atom": "D",
+        "shift_closed_form": 40,
+        "shift_naive_sum": 40,
+        "delta_join_total": 0,
+        "delta_join_within": 0,
+        "delta_join_cross": 0,
+        "n_pp": 0,
+        "n_pn": 1,
+        "n_nn": 0,
+        "nf_coefficients": [
+          "-0.070556736059287183391652177540837092623814401908998",
+          "-0.014505036978519724721838295877102632986195889615033",
+          "0.19302015492965781579481054135822509511962115155647",
+          "0.056119898445863196406967724150506337725415295709024",
+          "1.0768135324659469342892082443194361528746130899649",
+          "-0.086438782087715887843316504282281890869771507755945"
+        ],
+        "categorical_mass": "0.29028251154764911357020196192024741321802139282227",
+        "y0_star": "-0.79845992096252366811907634838766267252177324115990",
+        "y_star": [
+          "0.16780774920757270977881685228068115619931428972547",
+          "0.33664776743029208085103660461171121749977785354149",
+          "0.30012143786486057725682285256816607005975061605274",
+          "0.32768028877042357912258358779772994771187781311558",
+          "0.64353281222321675868004028483262589969621173851736",
+          "0.0"
+        ],
+        "x_star": [
+          "0.19655482679528916847414358172640184237125353340641",
+          "-0.045666418566357812104310457530600979613716162543499",
+          "-0.045666418566357812104310457530600979613716162543499",
+          "-0.69690398163559799951066395164381274623933356155340",
+          "-0.69690398163559799951066395164381274623933356155340",
+          "1.5788684851562715641759836183151644880084553445534"
+        ],
+        "active_set": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "active_card": 5,
+        "primal_obj": "-0.23177895122713877190136823608405077695592036104836",
+        "dual_obj": "-0.23177895122713877190136823608405077695592036104836",
+        "duality_gap": "0.0",
+        "delta_cross_lp_bound": 4
+      },
+      {
+        "Z": 1,
+        "N": 2,
+        "atom": "T",
+        "shift_closed_form": 61,
+        "shift_naive_sum": 61,
+        "delta_join_total": 0,
+        "delta_join_within": 0,
+        "delta_join_cross": 0,
+        "n_pp": 0,
+        "n_pn": 1,
+        "n_nn": 1,
+        "nf_coefficients": [
+          "0.17430189339376446048726238481362440374124691750756",
+          "1.0730539430598772047099870174981491129627183014039",
+          "-0.014532334598321465980417104086704468069750073305233",
+          "0.022025101499708241428634999746730915466110513698985",
+          "0.017349796814085935376523657310257554658214163675524",
+          "0.022345789613854291025753130815115496572604569787845"
+        ],
+        "categorical_mass": "0.71544208592578684147156309336423873901367187500000",
+        "y0_star": "-0.93340304822979489720756701973066237422044871674645",
+        "y_star": [
+          "0.38542729260546011756198675595854710347574243585068",
+          "1.0102434647818832635866003247238847501183344892259",
+          "0.16511528057328707266248773357003442639282693697422",
+          "0.0",
+          "0.42062646036752745690050513214663829578437072980425",
+          "0.24520822962466926422013038459765602630569870828341"
+        ],
+        "x_star": [
+          "-0.15347545187001511799061854017895463239162592874153",
+          "-1.2159355141835876347883856328612979898186416950262",
+          "0.34770579676410820553736889133351649218448866611777",
+          "3.0507554573917334654944952513956144269888057485144",
+          "-0.080783966040763068539481410185304708103683052835555",
+          "-1.2328242361356890497522757992991092133559387733483"
+        ],
+        "active_set": [
+          0,
+          1,
+          2,
+          4,
+          5
+        ],
+        "active_card": 5,
+        "primal_obj": "-0.66779582383501224147514310672258539850713639523466",
+        "dual_obj": "-0.66779582383501224147514310672258539850713639523466",
+        "duality_gap": "0.0",
+        "delta_cross_lp_bound": 4
+      },
+      {
+        "Z": 2,
+        "N": 1,
+        "atom": "3He",
+        "shift_closed_form": 58,
+        "shift_naive_sum": 58,
+        "delta_join_total": 0,
+        "delta_join_within": 0,
+        "delta_join_cross": 0,
+        "n_pp": 1,
+        "n_pn": 1,
+        "n_nn": 0,
+        "nf_coefficients": [
+          "-0.040590606531000322457851005180821739390835515821302",
+          "-0.10242173814751711360652885014332142268275225227296",
+          "0.29079305737090975881326591357517926400389767497230",
+          "0.060156824912204773023312908301794221247836229971492",
+          "1.1116645891290559634774668739750290503121991381598",
+          "0.24938279810790105072496691520217326760985456215656"
+        ],
+        "categorical_mass": "0.37667237093731825714471028732077684253454208374023",
+        "y0_star": "-0.57483051091207975534269191080301240358919610737166",
+        "y_star": [
+          "0.11951256404644364371532499806878211634827587883186",
+          "0.17248940831676209200866666806697388886765163666357",
+          "0.27443498279258305690728719896995997538724470312341",
+          "0.25633381866588796834819661736449691327540081244148",
+          "0.51202929892164290635646889912328660894800320351793",
+          "0.0"
+        ],
+        "x_star": [
+          "0.25505075119209366809281782474814642461050542553486",
+          "-0.059257025378128658737546027151201849372506344210307",
+          "-0.059257025378128658737546027151201849372506344210307",
+          "-0.90430688944638197841508013821392646626362252627605",
+          "-0.90430688944638197841508013821392646626362252627605",
+          "2.0487494493942458962174700790672056857789399583466"
+        ],
+        "active_set": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "active_card": 5,
+        "primal_obj": "-0.21652277143236309460478346189267018295714256858574",
+        "dual_obj": "-0.21652277143236309460478346189267018295714256858574",
+        "duality_gap": "0.0",
+        "delta_cross_lp_bound": 4
+      },
+      {
+        "Z": 2,
+        "N": 2,
+        "atom": "4He",
+        "shift_closed_form": 79,
+        "shift_naive_sum": 79,
+        "delta_join_total": 0,
+        "delta_join_within": 0,
+        "delta_join_cross": 0,
+        "n_pp": 1,
+        "n_pn": 1,
+        "n_nn": 1,
+        "nf_coefficients": [
+          "1.1309727274751838569911749144300091062372114465336",
+          "0.52646762360828076604539166073894483616554203092280",
+          "0.0058442012216451124701364556291584408310723666566011",
+          "-0.0063183194333157861739231062237571799812397659796441",
+          "0.051227798171543886383096419763202937072565370686050",
+          "0.16017470822166115175556512260526138782913849176270"
+        ],
+        "categorical_mass": "1.4279040131374152178267422641511075198650360107422",
+        "y0_star": "-2.0069325030158864757803149378246730684276995028821",
+        "y_star": [
+          "2.5581291465563780110675789511207812093059177128422",
+          "0.41615461411500588597519890241962792245728484463049",
+          "0.0",
+          "0.45432171509806976041580518759649459725566452101779",
+          "0.67889549186143710251931290852265481764081311620643",
+          "0.71850212312278474759489551125346045280977373869430"
+        ],
+        "x_star": [
+          "-2.4437805889380723906282366100959748734629679707949",
+          "-0.31681409470997152362961032003772696009191669198484",
+          "6.1475149911142398221649490595897206883410946425906",
+          "0.71775711284777881471013138675131951586556905888881",
+          "-2.5100138455890712046000025721690268443600114828688",
+          "-0.16675956158748863642170509438926292757109446677841"
+        ],
+        "active_set": [
+          0,
+          1,
+          3,
+          4,
+          5
+        ],
+        "active_card": 5,
+        "primal_obj": "-2.8657069751523012937912793713493851069307596952215",
+        "dual_obj": "-2.8657069751523012937912793713493851069307596952215",
+        "duality_gap": "4.0783152924990778291939338182853422223132276612931e-56",
+        "delta_cross_lp_bound": 4
+      },
+      {
+        "Z": 3,
+        "N": 2,
+        "atom": "5Li",
+        "shift_closed_form": 97,
+        "shift_naive_sum": 97,
+        "delta_join_total": 0,
+        "delta_join_within": 0,
+        "delta_join_cross": 0,
+        "n_pp": 2,
+        "n_pn": 1,
+        "n_nn": 1,
+        "nf_coefficients": [
+          "1.3085888571660152730641803497432213536299125735906",
+          "0.64570439085652885477440348838157168268332372901069",
+          "-0.044615812547039098383899360285147800115340334448518",
+          "0.029390041572642831627741547039189473136681211113728",
+          "0.11788674224329382304392591858651074018867457019232",
+          "0.68698647578047007001682236647526952656229433285510"
+        ],
+        "categorical_mass": "1.7309673661290136958967877944814972579479217529297",
+        "y0_star": "-2.4649953474791003374580361840171305717167525416090",
+        "y_star": [
+          "3.0370985137426100761353156919497696589451225539513",
+          "0.55416475965054127406118343127440128766917839173878",
+          "0.0",
+          "0.53604427057543010687584402223265650365778685429824",
+          "0.83855390046301164295311041571608503031005146372318",
+          "0.94034188275663319403560504054529345107299147134390"
+        ],
+        "x_star": [
+          "-2.9624571473378572006592364423744972259169035690520",
+          "-0.38405582870218616620984115702116764225598662514809",
+          "7.4522851217616024948713457937270350239497581951236",
+          "0.87009639843831752093988418482844343049006901970982",
+          "-3.0427479825484262307174768665785580033829997781829",
+          "-0.20215319548243705258965263597085967300108258298422"
+        ],
+        "active_set": [
+          0,
+          1,
+          3,
+          4,
+          5
+        ],
+        "active_card": 5,
+        "primal_obj": "-4.2668265041461703972323994670763413231611120816803",
+        "dual_obj": "-4.2668265041461703972323994670763413231611120816803",
+        "duality_gap": "0.0",
+        "delta_cross_lp_bound": 4
+      },
+      {
+        "Z": 3,
+        "N": 3,
+        "atom": "6Li",
+        "shift_closed_form": 118,
+        "shift_naive_sum": 118,
+        "delta_join_total": 0,
+        "delta_join_within": 0,
+        "delta_join_cross": 0,
+        "n_pp": 2,
+        "n_pn": 1,
+        "n_nn": 2,
+        "nf_coefficients": [
+          "-0.017805602491820869529331323105687792136448277782419",
+          "0.14960894403494627628223151243903041832578652562033",
+          "0.51791650617057439531193717234633269521965376339120",
+          "0.19126578018782958215845372183611653015935228582772",
+          "1.3073600365395790536480267260757883199890335163238",
+          "0.21733306168435172786414411921669240938397863373847"
+        ],
+        "categorical_mass": "0.71619800760492846603000316463294439017772674560547",
+        "y0_star": "-0.81435549943967849072764369966216797291712169971257",
+        "y_star": [
+          "0.11533614251565246288107201242550836906481901352813",
+          "0.40811142369052945776652905463493443822265844014964",
+          "0.47815526812999029320901345932075732472986109890510",
+          "0.33343758848230054886140581269536728154849495111017",
+          "0.62389440178308065202984707416050790606061890815349",
+          "0.0"
+        ],
+        "x_star": [
+          "0.48494886786457519990889977906666355160394839339790",
+          "-0.11267023224135754848725338675186530500421075335562",
+          "-0.11267023224135754848725338675186530500421075335562",
+          "-1.7194327018816203080324497834661686891714166661930",
+          "-1.7194327018816203080324497834661686891714166661930",
+          "3.8954550079863089957681134156727776345816002800858"
+        ],
+        "active_set": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "active_card": 5,
+        "primal_obj": "-0.58323978618081418838354160575046165145925153693631",
+        "dual_obj": "-0.58323978618081418838354160575046165145925153693631",
+        "duality_gap": "1.0195788231247694572984834545713355555783069153233e-56",
+        "delta_cross_lp_bound": 4
+      }
+    ],
+    "alpha_em_chain": {
+      "q0_50dps": "1.1099785955541805752815940796095093779932822799587",
+      "alpha_em_inv_chain_50dps": "136.82321965456120961044280371018929349341458097588",
+      "alpha_em_chain_50dps": "0.0073087009830985473585589471859729083691129468659659",
+      "alpha_em_inv_codata": "137.035999084",
+      "relative_error": "0.00155273",
+      "agrees_within_1e_minus_2": true
+    }
+  },
+  "caveats": [
+    "Per-nucleon NF shifts (shift_p_h3=19, shift_n_h3=15) are the H_3-context standalone values; the per-NEW-nucleon embedded values in the (18, 21) decomposition come from prop:per-nucleon-shift-additive-linearity (already proven and verified at A=2..6).",
+    "LP active-set is a DISCRETE invariant (the cardinality of {i : y_i^* > 0}) — robust to ~1e-9 float jitter. Scipy linprog (f64) is used as the discrete oracle; every numerical value in the witness is recomputed in mpmath at the requested dps precision via a high-precision linear solve restricted to the active basis.",
+    "The shift_NF symbolic-q computation (build_atom_nf_sym in hecke_core_symbolic) is intractably slow at A≥2 due to expression fan-out across ~25 hm_sym ops × 6 NF entries without intermediate canonicalization. A principled fix routes the shift through the crystal-bases pole-order reading (prop:crystal-pole-order), where the q → 0 Kashiwara crystal collapses fan-out to monomial actions. Pending follow-up; for this witness the shift is read from the closed form 18Z + 21N + 1."
+  ]
+}

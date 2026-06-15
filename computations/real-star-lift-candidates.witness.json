@@ -1,0 +1,564 @@
+{
+  "engine": "real_star_lift_candidate_scanner.py",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-24T19:17:28.530649+00:00",
+  "commitSha": "311cce28af9282f3527544a5a2d3987f0a9709a2",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 12,
+  "computation": "real-star-lift-candidates",
+  "scriptFile": "real_star_lift_candidate_scanner.py",
+  "scriptHash": "3978004d1ec5",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 50,
+    "output_dps": 40,
+    "guard_digits": 10,
+    "truncation_bound": "1e-40"
+  },
+  "description": "Per-file inventory of QOU Lean files classified by lift eligibility under CLAUDE.md §7c base-ring discipline. CANDIDATE = ℝ-specialized signature `(q : ℝ)` present, but no archimedean tactic in the file body (Real.sqrt, Real.rpow, Real.cos/sin/cosh/exp/log/pi, CODATA literals). Such files can be refactored to `{R : Type*} [Field R] (q : R) (hq : IsUnit q)` or `[NormedField R] (hq : 1 < ‖q‖)`. ARCHIMEDEAN = at least one archimedean tactic present; the evidence list records which. ALREADY_GENERIC = §7c-compliant already. MIXED = both signatures present (refactor on a per-declaration basis). OTHER = no q-parameter at all.",
+  "contentBlock": "prop:q-zero-complex-extension",
+  "auditOnly": "docs/audits/2026-05-24-real-star-lift-inventory.md",
+  "parameters": {
+    "scanner_version": "1.0",
+    "scanned_root": "content/quantum-observable-universe",
+    "archimedean_patterns": [
+      "Real.sqrt",
+      "Real.rpow",
+      "Real.cos",
+      "Real.sin",
+      "Real.cosh",
+      "Real.sinh",
+      "Real.tanh",
+      "Real.exp",
+      "Real.log",
+      "Real.pi",
+      "CODATA m_e literal",
+      "CODATA m_p literal",
+      "CODATA m_n literal",
+      "CODATA m_μ/m_e literal",
+      "q_0 numerical pin literal"
+    ]
+  },
+  "data": {
+    "total_files_scanned": 1599,
+    "counts": {
+      "CANDIDATE": 124,
+      "ALREADY_GENERIC": 65,
+      "MIXED": 0,
+      "ARCHIMEDEAN": 144,
+      "OTHER": 1266
+    },
+    "candidate_files": [
+      "content/quantum-observable-universe/appendix-surreals/collatz-contact-boundary.lean",
+      "content/quantum-observable-universe/appendix-surreals/collatz-no-cycles.lean",
+      "content/quantum-observable-universe/archimedean-universe/bar-t-duality-substrate.lean",
+      "content/quantum-observable-universe/archimedean-universe/beta-decay-transfer-matrix.lean",
+      "content/quantum-observable-universe/archimedean-universe/breit-wheeler-pair-production.lean",
+      "content/quantum-observable-universe/archimedean-universe/markov-trace-factorization.lean",
+      "content/quantum-observable-universe/archimedean-universe/q-value-transition.lean",
+      "content/quantum-observable-universe/archimedean-universe/shell-closure-normal-form.lean",
+      "content/quantum-observable-universe/archimedean-universe/torus-knot-shell-binding.lean",
+      "content/quantum-observable-universe/braids-and-knots/alpha-k-categorical-closure.lean",
+      "content/quantum-observable-universe/braids-and-knots/borromean-baryon-mass-formula.lean",
+      "content/quantum-observable-universe/braids-and-knots/brane-tower-z-habiro.lean",
+      "content/quantum-observable-universe/braids-and-knots/chi-per-irrep-cyclotomic-closed-forms.lean",
+      "content/quantum-observable-universe/braids-and-knots/chi-v111-via-sign-substitution.lean",
+      "content/quantum-observable-universe/braids-and-knots/chi-v3-closed-form-proof.lean",
+      "content/quantum-observable-universe/braids-and-knots/chirality-dual-space-derivation.lean",
+      "content/quantum-observable-universe/braids-and-knots/commutative-chirality-vanishes.lean",
+      "content/quantum-observable-universe/braids-and-knots/confinement-grading-correspondence-conditional.lean",
+      "content/quantum-observable-universe/braids-and-knots/confinement-sdp.lean",
+      "content/quantum-observable-universe/braids-and-knots/conj-chirality-ribbon-frobenius.lean",
+      "content/quantum-observable-universe/braids-and-knots/conj-rho-prefactor-structural.lean",
+      "content/quantum-observable-universe/braids-and-knots/degree-two-baryon-weight.lean",
+      "content/quantum-observable-universe/braids-and-knots/demazure-fiber-markov-trace.lean",
+      "content/quantum-observable-universe/braids-and-knots/figure-eight-branching-rule.lean",
+      "content/quantum-observable-universe/braids-and-knots/frobenius-antipode-lean-stub.lean",
+      "content/quantum-observable-universe/braids-and-knots/frobenius-codim-universal.lean",
+      "content/quantum-observable-universe/braids-and-knots/full-pole-structure-mass-trace.lean",
+      "content/quantum-observable-universe/braids-and-knots/gb-residue-spectral-sum.lean",
+      "content/quantum-observable-universe/braids-and-knots/geom-universality.lean",
+      "content/quantum-observable-universe/braids-and-knots/h3-hecke-idempotents.lean",
+      "content/quantum-observable-universe/braids-and-knots/habiro-ring.lean",
+      "content/quantum-observable-universe/braids-and-knots/hecke-1d-irrep-closed-form-character.lean",
+      "content/quantum-observable-universe/braids-and-knots/hecke-algebra-type-scaffold.lean",
+      "content/quantum-observable-universe/braids-and-knots/jet-tower-uniform-delta-max.lean",
+      "content/quantum-observable-universe/braids-and-knots/kashaev-volume-conjecture.lean",
+      "content/quantum-observable-universe/braids-and-knots/knot-mass-formula-unified.lean",
+      "content/quantum-observable-universe/braids-and-knots/lambda-scale-substrate-form.lean",
+      "content/quantum-observable-universe/braids-and-knots/level-sufficiency.lean",
+      "content/quantum-observable-universe/braids-and-knots/markov-closure-map-axiomatic.lean",
+      "content/quantum-observable-universe/braids-and-knots/markov-trace-factorization.lean",
+      "content/quantum-observable-universe/braids-and-knots/markov-trace-inductive-limit.lean",
+      "content/quantum-observable-universe/braids-and-knots/markov-trace-operator-construction.lean",
+      "content/quantum-observable-universe/braids-and-knots/per-wedderburn-block-c5-c6.lean",
+      "content/quantum-observable-universe/braids-and-knots/phi-d-syt-count-conjecture.lean",
+      "content/quantum-observable-universe/braids-and-knots/phi-q-tower-jsj-bridge.lean",
+      "content/quantum-observable-universe/braids-and-knots/q-beta-c3-hopf-three-fold-markov.lean",
+      "content/quantum-observable-universe/braids-and-knots/qmn-recursive-memoized.lean",
+      "content/quantum-observable-universe/braids-and-knots/qz-bicompletion.lean",
+      "content/quantum-observable-universe/braids-and-knots/schur-weyl-mass-decomposition.lean",
+      "content/quantum-observable-universe/braids-and-knots/schur-weyl-vanishing.lean",
+      "content/quantum-observable-universe/braids-and-knots/shell-closure-stability.lean",
+      "content/quantum-observable-universe/braids-and-knots/symbolic-character-table.lean",
+      "content/quantum-observable-universe/braids-and-knots/tau-M-asymptotic-rep-theory.lean",
+      "content/quantum-observable-universe/braids-and-knots/universal-braid-branching.lean",
+      "content/quantum-observable-universe/braids-and-knots/volume-perturbation-formula.lean",
+      "content/quantum-observable-universe/braids-and-knots/wigner-2-coefficient.lean",
+      "content/quantum-observable-universe/braids-and-knots/z-habiro-ring.lean",
+      "content/quantum-observable-universe/fluid-dynamics/core-levi-form.lean",
+      "content/quantum-observable-universe/fluid-dynamics/ns-obstruction-tower.lean",
+      "content/quantum-observable-universe/fluid-dynamics/p4-universality.lean",
+      "content/quantum-observable-universe/fluid-dynamics/root-of-unity-truncation.lean",
+      "content/quantum-observable-universe/fluid-dynamics/vorticity-lower-bound.lean",
+      "content/quantum-observable-universe/information-theory/information-theoretic-time.lean",
+      "content/quantum-observable-universe/information-theory/q-exponential-taylor.lean",
+      "content/quantum-observable-universe/information-theory/q-heat-kernel-peter-weyl.lean",
+      "content/quantum-observable-universe/lean/QOU/AppendixSurreals/ClassicalLimitStpart.lean",
+      "content/quantum-observable-universe/lean/QOU/Archimedean/NuclearGroebnerReduction.lean",
+      "content/quantum-observable-universe/lean/QOU/Archimedean/NuclearNormalForms.lean",
+      "content/quantum-observable-universe/lean/QOU/AtomicMass/MagicNumbersFromQ.lean",
+      "content/quantum-observable-universe/lean/QOU/BraidKnot/ChiralityWritheRibbon.lean",
+      "content/quantum-observable-universe/lean/QOU/BraidKnot/ConditionalCorollaries.lean",
+      "content/quantum-observable-universe/lean/QOU/BraidKnot/ConfinementPhaseStratification.lean",
+      "content/quantum-observable-universe/lean/QOU/BraidKnot/GBResidueSpectralSum.lean",
+      "content/quantum-observable-universe/lean/QOU/BraidKnot/JetTowerUniformDeltaMax.lean",
+      "content/quantum-observable-universe/lean/QOU/BraidKnot/KnotFactorFrobeniusPairing.lean",
+      "content/quantum-observable-universe/lean/QOU/BraidKnot/Li2qPhiqBarSymmetrization.lean",
+      "content/quantum-observable-universe/lean/QOU/BraidKnot/QuantumDilogarithm.lean",
+      "content/quantum-observable-universe/lean/QOU/BraidKnot/ShellNeutrality.lean",
+      "content/quantum-observable-universe/lean/QOU/BraidKnot/ZeqNRhoCorrection.lean",
+      "content/quantum-observable-universe/lean/QOU/BraidKnot/eigenvalue_product_expansion.lean",
+      "content/quantum-observable-universe/lean/QOU/CategoricalReeb/QReebFlowOnCoralCoords.lean",
+      "content/quantum-observable-universe/lean/QOU/FeynmanPathIntegrals.lean",
+      "content/quantum-observable-universe/lean/QOU/HeckeAlgebra/Hoefsmit.lean",
+      "content/quantum-observable-universe/lean/QOU/HeckeAlgebra/JonesMarkovWenzl.lean",
+      "content/quantum-observable-universe/lean/QOU/HeckeAlgebra/MarkovTrace.lean",
+      "content/quantum-observable-universe/lean/QOU/Information/p_bandwidth_bound.lean",
+      "content/quantum-observable-universe/lean/QOU/Interactions/AlgebraicPrimality.lean",
+      "content/quantum-observable-universe/lean/QOU/Interactions/HeckeEnergyPositivity.lean",
+      "content/quantum-observable-universe/lean/QOU/Interactions/ProtonTrefoilSign.lean",
+      "content/quantum-observable-universe/lean/QOU/Kashaev.lean",
+      "content/quantum-observable-universe/lean/QOU/LiftingDescent/BBStratification.lean",
+      "content/quantum-observable-universe/lean/QOU/MassEndomorphism/PhiQConvergence.lean",
+      "content/quantum-observable-universe/lean/QOU/MathConstants.lean",
+      "content/quantum-observable-universe/lean/QOU/Mathlib/HeckeAlgebra.lean",
+      "content/quantum-observable-universe/lean/QOU/Mathlib/WenzlBridgeConcrete.lean",
+      "content/quantum-observable-universe/lean/QOU/MathlibExt/QPartitionCombinatorics.lean",
+      "content/quantum-observable-universe/lean/QOU/MobiusEnergy.lean",
+      "content/quantum-observable-universe/lean/QOU/PhiQJSJ.lean",
+      "content/quantum-observable-universe/lean/QOU/Torsion/MassGap.lean",
+      "content/quantum-observable-universe/lean/QOU/Torsion/TopologicalMass.lean",
+      "content/quantum-observable-universe/lean/QOU/substrate_radial_coordinate.lean",
+      "content/quantum-observable-universe/molecular-construction/ilp-covalent-bond.lean",
+      "content/quantum-observable-universe/observations/borromean-hopf-energy-crossover.lean",
+      "content/quantum-observable-universe/observations/borromean-quark.lean",
+      "content/quantum-observable-universe/observations/building-block-knots.lean",
+      "content/quantum-observable-universe/observations/color-superconductivity-borromean.lean",
+      "content/quantum-observable-universe/observations/eos-borromean-cfl.lean",
+      "content/quantum-observable-universe/observations/hopf-diquark.lean",
+      "content/quantum-observable-universe/observations/strangelet-double-beta.lean",
+      "content/quantum-observable-universe/observations/trace-ratio-observable.lean",
+      "content/quantum-observable-universe/particle-interactions/atomic-braid-mass.lean",
+      "content/quantum-observable-universe/particle-interactions/bar-involution-invariance.lean",
+      "content/quantum-observable-universe/particle-interactions/beta-decay-transfer-matrix.lean",
+      "content/quantum-observable-universe/particle-interactions/box-braid-irreducibility.lean",
+      "content/quantum-observable-universe/particle-interactions/generator-volume-decomposition.lean",
+      "content/quantum-observable-universe/particle-interactions/groebner-shirshov-energy.lean",
+      "content/quantum-observable-universe/particle-interactions/n-equals-1-vacuous-magic.lean",
+      "content/quantum-observable-universe/particle-interactions/per-nucleon-channel-decomposition.lean",
+      "content/quantum-observable-universe/particle-interactions/q-integer-mass-formula.lean",
+      "content/quantum-observable-universe/particle-interactions/skein-polynomial-transfer-matrix.lean",
+      "content/quantum-observable-universe/particle-interactions/spectator-normalization.lean",
+      "content/quantum-observable-universe/particle-interactions/typed-garside-element.lean",
+      "content/quantum-observable-universe/particle-interactions/universal-ilp-algorithm.lean",
+      "content/quantum-observable-universe/quantum-observable-universes/substrate-radial-coordinate.lean"
+    ],
+    "already_generic_files": [
+      "content/quantum-observable-universe/archimedean-universe/alpha-em-categorical-trace-ratio.lean",
+      "content/quantum-observable-universe/archimedean-universe/color-tube-coordinates.lean",
+      "content/quantum-observable-universe/archimedean-universe/force-carrier-knot-vs-link-dichotomy.lean",
+      "content/quantum-observable-universe/archimedean-universe/levi-form-defect.lean",
+      "content/quantum-observable-universe/braids-and-knots/bar-involution.lean",
+      "content/quantum-observable-universe/braids-and-knots/categorical-higgs-mechanism.lean",
+      "content/quantum-observable-universe/braids-and-knots/categorical-linking-operation.lean",
+      "content/quantum-observable-universe/braids-and-knots/chirality-residue-mass-term.lean",
+      "content/quantum-observable-universe/braids-and-knots/confinement-categorical.lean",
+      "content/quantum-observable-universe/braids-and-knots/explicit-central-idempotent.lean",
+      "content/quantum-observable-universe/braids-and-knots/frobenius-self-duality-forces-lp-dual-extraction.lean",
+      "content/quantum-observable-universe/braids-and-knots/gb-depth-period-correspondence.lean",
+      "content/quantum-observable-universe/braids-and-knots/habiro-expansion-atomic.lean",
+      "content/quantum-observable-universe/braids-and-knots/hecke-baer-star-generic.lean",
+      "content/quantum-observable-universe/braids-and-knots/hoefsmit-ew-cell-content.lean",
+      "content/quantum-observable-universe/braids-and-knots/hq-bi-filtration.lean",
+      "content/quantum-observable-universe/braids-and-knots/interface-knot-markov-z.lean",
+      "content/quantum-observable-universe/braids-and-knots/jucys-murphy-central-elements-qou.lean",
+      "content/quantum-observable-universe/braids-and-knots/knot-operator-lp-selection.lean",
+      "content/quantum-observable-universe/braids-and-knots/markov-trace-recursive-reducer.lean",
+      "content/quantum-observable-universe/braids-and-knots/mass-endomorphism-conjecture.lean",
+      "content/quantum-observable-universe/braids-and-knots/pentagon-uv-commutation-woronowicz.lean",
+      "content/quantum-observable-universe/braids-and-knots/per-block-hopf-jones-absorption-pattern.lean",
+      "content/quantum-observable-universe/braids-and-knots/phi-q-categorical-truncation.lean",
+      "content/quantum-observable-universe/braids-and-knots/polynomial-bar-involution.lean",
+      "content/quantum-observable-universe/braids-and-knots/quantum-dilogarithm-stratified.lean",
+      "content/quantum-observable-universe/braids-and-knots/skein-bar-antisymmetry.lean",
+      "content/quantum-observable-universe/braids-and-knots/spin-involution-lp-dual-invariance.lean",
+      "content/quantum-observable-universe/braids-and-knots/topological-mass-formula-algebraic.lean",
+      "content/quantum-observable-universe/braids-and-knots/tower-pair-equality-fixed-level.lean",
+      "content/quantum-observable-universe/braids-and-knots/vhat-pair-commutation-trace.lean",
+      "content/quantum-observable-universe/braids-and-knots/weak-spectral-completeness.lean",
+      "content/quantum-observable-universe/braids-and-knots/weak-symmetric-normalization.lean",
+      "content/quantum-observable-universe/braids-and-knots/weinberg-angle-categorical.lean",
+      "content/quantum-observable-universe/braids-and-knots/wenzl-bridge-applicability-qou.lean",
+      "content/quantum-observable-universe/lean/QOU/Archimedean/frobenius_gram_matrix.lean",
+      "content/quantum-observable-universe/lean/QOU/BraidKnot/BlockMultiplicativityVFree.lean",
+      "content/quantum-observable-universe/lean/QOU/BraidKnot/FreeConfigChiLrEquivalence.lean",
+      "content/quantum-observable-universe/lean/QOU/BraidKnot/IwahoriHeckeAPI.lean",
+      "content/quantum-observable-universe/lean/QOU/BraidKnot/QuaternionFromHecke.lean",
+      "content/quantum-observable-universe/lean/QOU/HeckeAlgebra/Formal.lean",
+      "content/quantum-observable-universe/lean/QOU/Interactions/MarkovPeel.lean",
+      "content/quantum-observable-universe/lean/QOU/Interactions/MarkovPeelH3.lean",
+      "content/quantum-observable-universe/lean/QOU/LiftingDescent/DirectLimitAlgebra.lean",
+      "content/quantum-observable-universe/lean/QOU/MassEndomorphism/MassEndomorphismConjecture.lean",
+      "content/quantum-observable-universe/lean/QOU/MathlibExt/SDP.lean",
+      "content/quantum-observable-universe/lean/QOU/QuantumBloch/PentagonUvCommutation.lean",
+      "content/quantum-observable-universe/lean/QOU/Torsion/GlobalGluing.lean",
+      "content/quantum-observable-universe/lifting-and-descent/brane-boundary-structure.lean",
+      "content/quantum-observable-universe/lifting-and-descent/brane-boundary.lean",
+      "content/quantum-observable-universe/lifting-and-descent/categorical-q-reeb-flow.lean",
+      "content/quantum-observable-universe/lifting-and-descent/descent-eigenspaces.lean",
+      "content/quantum-observable-universe/lifting-and-descent/descent-involution.lean",
+      "content/quantum-observable-universe/lifting-and-descent/descent-lemma.lean",
+      "content/quantum-observable-universe/lifting-and-descent/direct-limit-algebra.lean",
+      "content/quantum-observable-universe/lifting-and-descent/euler-char-stability.lean",
+      "content/quantum-observable-universe/lifting-and-descent/global-gluing.lean",
+      "content/quantum-observable-universe/lifting-and-descent/mass-identity-exists.lean",
+      "content/quantum-observable-universe/lifting-and-descent/mass-identity-unique.lean",
+      "content/quantum-observable-universe/lifting-and-descent/mass-identity.lean",
+      "content/quantum-observable-universe/lifting-and-descent/topological-mass-conjecture.lean",
+      "content/quantum-observable-universe/lifting-and-descent/topological-mass-eigenspace-decomp.lean",
+      "content/quantum-observable-universe/lifting-and-descent/topological-mass.lean",
+      "content/quantum-observable-universe/lifting-and-descent/vacuum-state.lean",
+      "content/quantum-observable-universe/lifting-and-descent/weak-equiv-invariance.lean"
+    ],
+    "mixed_files": [],
+    "archimedean_files_sample": [
+      {
+        "file": "content/quantum-observable-universe/appendix-knot-periodic-table/recursive-atom-knot-atlas.lean",
+        "evidence": [
+          "CODATA m_p literal ×1",
+          "CODATA m_n literal ×1"
+        ]
+      },
+      {
+        "file": "content/quantum-observable-universe/archimedean-universe/bar-self-dual-confinement-band.lean",
+        "evidence": [
+          "Real.sqrt ×6"
+        ]
+      },
+      {
+        "file": "content/quantum-observable-universe/archimedean-universe/beta-decay-skein.lean",
+        "evidence": [
+          "Real.sqrt ×2"
+        ]
+      },
+      {
+        "file": "content/quantum-observable-universe/archimedean-universe/bloch-wigner-mathlib-filler.lean",
+        "evidence": [
+          "Real.pi ×2"
+        ]
+      },
+      {
+        "file": "content/quantum-observable-universe/archimedean-universe/briggs-klein-chart.lean",
+        "evidence": [
+          "Real.pi ×1"
+        ]
+      },
+      {
+        "file": "content/quantum-observable-universe/archimedean-universe/bring-hyperbolic-knot-bloch-decomposition.lean",
+        "evidence": [
+          "Real.pi ×1"
+        ]
+      },
+      {
+        "file": "content/quantum-observable-universe/archimedean-universe/categorical-neutron.lean",
+        "evidence": [
+          "CODATA m_n literal ×4"
+        ]
+      },
+      {
+        "file": "content/quantum-observable-universe/archimedean-universe/categorical-proton.lean",
+        "evidence": [
+          "CODATA m_p literal ×4"
+        ]
+      },
+      {
+        "file": "content/quantum-observable-universe/archimedean-universe/cl2-pentagon-and-faddeev-partial.lean",
+        "evidence": [
+          "Real.log ×2"
+        ]
+      },
+      {
+        "file": "content/quantum-observable-universe/archimedean-universe/clausen-function-mathlib-filler.lean",
+        "evidence": [
+          "Real.sin ×1",
+          "Real.pi ×4"
+        ]
+      },
+      {
+        "file": "content/quantum-observable-universe/archimedean-universe/coral-sector-coords.lean",
+        "evidence": [
+          "Real.cos ×2",
+          "Real.sin ×2",
+          "Real.pi ×7"
+        ]
+      },
+      {
+        "file": "content/quantum-observable-universe/archimedean-universe/descartes-elliptic-curve.lean",
+        "evidence": [
+          "Real.sqrt ×2",
+          "Real.rpow ×1"
+        ]
+      },
+      {
+        "file": "content/quantum-observable-universe/archimedean-universe/em-coupling-bring-zero-mode.lean",
+        "evidence": [
+          "Real.pi ×3"
+        ]
+      },
+      {
+        "file": "content/quantum-observable-universe/archimedean-universe/em-coupling-chern-simons.lean",
+        "evidence": [
+          "Real.pi ×1"
+        ]
+      },
+      {
+        "file": "content/quantum-observable-universe/archimedean-universe/golden-quartet-galois.lean",
+        "evidence": [
+          "Real.sqrt ×5"
+        ]
+      },
+      {
+        "file": "content/quantum-observable-universe/archimedean-universe/golden-skew-dual-node.lean",
+        "evidence": [
+          "Real.sqrt ×8"
+        ]
+      },
+      {
+        "file": "content/quantum-observable-universe/archimedean-universe/hadron-half-life.lean",
+        "evidence": [
+          "Real.log ×1"
+        ]
+      },
+      {
+        "file": "content/quantum-observable-universe/archimedean-universe/hyperelliptic-quintic.lean",
+        "evidence": [
+          "Real.pi ×6"
+        ]
+      },
+      {
+        "file": "content/quantum-observable-universe/archimedean-universe/mass-from-generators.lean",
+        "evidence": [
+          "CODATA m_e literal ×1",
+          "CODATA m_p literal ×1",
+          "CODATA m_n literal ×2"
+        ]
+      },
+      {
+        "file": "content/quantum-observable-universe/archimedean-universe/mass-tower-deeper-fillers.lean",
+        "evidence": [
+          "Real.sin ×1"
+        ]
+      },
+      {
+        "file": "content/quantum-observable-universe/archimedean-universe/mass-tower-open-problems-classes.lean",
+        "evidence": [
+          "Real.pi ×1"
+        ]
+      },
+      {
+        "file": "content/quantum-observable-universe/archimedean-universe/quantum-dilogarithm-volume.lean",
+        "evidence": [
+          "Real.log ×1"
+        ]
+      },
+      {
+        "file": "content/quantum-observable-universe/archimedean-universe/shell-structure-eigenvalues.lean",
+        "evidence": [
+          "Real.sqrt ×4"
+        ]
+      },
+      {
+        "file": "content/quantum-observable-universe/archimedean-universe/skein-coulomb-enhancement.lean",
+        "evidence": [
+          "Real.exp ×42",
+          "Real.pi ×15"
+        ]
+      },
+      {
+        "file": "content/quantum-observable-universe/archimedean-universe/skein-finiteness-bound.lean",
+        "evidence": [
+          "Real.sqrt ×5"
+        ]
+      },
+      {
+        "file": "content/quantum-observable-universe/archimedean-universe/spectral-decomposition-qvalue.lean",
+        "evidence": [
+          "Real.log ×2"
+        ]
+      },
+      {
+        "file": "content/quantum-observable-universe/archimedean-universe/terminal-resolution.lean",
+        "evidence": [
+          "Real.rpow ×2",
+          "CODATA m_p literal ×4",
+          "CODATA m_n literal ×4"
+        ]
+      },
+      {
+        "file": "content/quantum-observable-universe/archimedean-universe/transfer-matrix-operator.lean",
+        "evidence": [
+          "Real.sqrt ×2"
+        ]
+      },
+      {
+        "file": "content/quantum-observable-universe/archimedean-universe/upstream-mathlib-additions.lean",
+        "evidence": [
+          "Real.sin ×4",
+          "Real.log ×3",
+          "Real.pi ×30"
+        ]
+      },
+      {
+        "file": "content/quantum-observable-universe/archimedean-universe/x5-bring-weight-identification.lean",
+        "evidence": [
+          "Real.pi ×3"
+        ]
+      },
+      {
+        "file": "content/quantum-observable-universe/archimedean-universe/x5-z5-automorphism.lean",
+        "evidence": [
+          "Real.pi ×3"
+        ]
+      },
+      {
+        "file": "content/quantum-observable-universe/braids-and-knots/F3-eps6-leading-eq-neg-2b-cubed.lean",
+        "evidence": [
+          "Real.sqrt ×11"
+        ]
+      },
+      {
+        "file": "content/quantum-observable-universe/braids-and-knots/algebraic-geometric-dilog-equivalence.lean",
+        "evidence": [
+          "Real.log ×2"
+        ]
+      },
+      {
+        "file": "content/quantum-observable-universe/braids-and-knots/braid-group-n-strand.lean",
+        "evidence": [
+          "Real.sqrt ×2"
+        ]
+      },
+      {
+        "file": "content/quantum-observable-universe/braids-and-knots/c5-involution-leibniz-decomposition.lean",
+        "evidence": [
+          "Real.sqrt ×8"
+        ]
+      },
+      {
+        "file": "content/quantum-observable-universe/braids-and-knots/categorical-chain-convergence-mechanisms.lean",
+        "evidence": [
+          "Real.sqrt ×2"
+        ]
+      },
+      {
+        "file": "content/quantum-observable-universe/braids-and-knots/chi-std-pernucleon-closed-form.lean",
+        "evidence": [
+          "Real.sqrt ×1"
+        ]
+      },
+      {
+        "file": "content/quantum-observable-universe/braids-and-knots/chi-v21-hoefsmit-matrix-derivation.lean",
+        "evidence": [
+          "Real.sqrt ×5"
+        ]
+      },
+      {
+        "file": "content/quantum-observable-universe/braids-and-knots/ck-extraction-from-algebraic-rules.lean",
+        "evidence": [
+          "Real.sqrt ×1"
+        ]
+      },
+      {
+        "file": "content/quantum-observable-universe/braids-and-knots/conj-qbeta-c-k-closed-forms.lean",
+        "evidence": [
+          "Real.sqrt ×1"
+        ]
+      },
+      {
+        "file": "content/quantum-observable-universe/braids-and-knots/delta-skein-substrate-identity.lean",
+        "evidence": [
+          "CODATA m_e literal ×1"
+        ]
+      },
+      {
+        "file": "content/quantum-observable-universe/braids-and-knots/dilogarithm-archimedean-limit.lean",
+        "evidence": [
+          "Real.log ×3"
+        ]
+      },
+      {
+        "file": "content/quantum-observable-universe/braids-and-knots/eigenvalue-product-expansion.lean",
+        "evidence": [
+          "Real.log ×2"
+        ]
+      },
+      {
+        "file": "content/quantum-observable-universe/braids-and-knots/figure-8-muon-mass-cross-check.lean",
+        "evidence": [
+          "CODATA m_μ/m_e literal ×2"
+        ]
+      },
+      {
+        "file": "content/quantum-observable-universe/braids-and-knots/flavor-dressed-mass-from-substrate-split.lean",
+        "evidence": [
+          "Real.sqrt ×2"
+        ]
+      },
+      {
+        "file": "content/quantum-observable-universe/braids-and-knots/flavor-mass-splitting-bound.lean",
+        "evidence": [
+          "Real.sqrt ×40"
+        ]
+      },
+      {
+        "file": "content/quantum-observable-universe/braids-and-knots/geom-yekutieli-alignment.lean",
+        "evidence": [
+          "Real.pi ×1"
+        ]
+      },
+      {
+        "file": "content/quantum-observable-universe/braids-and-knots/habiro-residue-sum-equivalence.lean",
+        "evidence": [
+          "Real.sqrt ×5",
+          "q_0 numerical pin literal ×1"
+        ]
+      },
+      {
+        "file": "content/quantum-observable-universe/braids-and-knots/hoefsmit-V21-cos-symmetrization.lean",
+        "evidence": [
+          "Real.sqrt ×4",
+          "Real.cos ×7"
+        ]
+      },
+      {
+        "file": "content/quantum-observable-universe/braids-and-knots/hoefsmit-scattering-pipeline.lean",
+        "evidence": [
+          "Real.sqrt ×2"
+        ]
+      }
+    ],
+    "archimedean_files_count_total": 144
+  }
+}

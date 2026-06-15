@@ -1,0 +1,42 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-06-11T00:06:17.015628+00:00",
+  "commitSha": "1b09193017f6c6afaf497dd483b63cb09ed24f55",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "delta-S-chain-audit",
+  "scriptFile": "audit_delta_S_chain.py",
+  "scriptHash": "e5bca470bcc5",
+  "scriptCommitSha": "61df98823eac6df0b4922d850e12d1f2dcb5fba1",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "mpmath": "1.4.1"
+  },
+  "description": "Audit of the ΔS = (Q_β + m_e)/m_e / (Vol(ℬ_3)/ℏ_q²) derivation chain. Verifies algebraically that the 1015 ppm ΔS residual in `derive_m_baryon_volume_form.py` is NOT coincidental — it equals the Q_β closed-form residual damped by the algebraic factor Q_β/(Q_β + m_e) ≈ 0.605. Implication: tightening Q_β's closed form propagates directly to ΔS precision.",
+  "data": {
+    "q_0_50dps": "1.10997858275138080759166909561076887987449912187357873607281",
+    "Vol_Borromean_over_hbar_q_squared": "746.418007597967138987935109264574814215124107541901460272102",
+    "Q_beta_AME_MeV": "0.782333409310000000000000000000000000000000000000032617304163",
+    "Q_beta_predicted_closed_form_MeV": "0.783645827374621213074939751341396890525736441030294877296054",
+    "eps_Q_pct": 0.16775687309311454,
+    "eps_Q_ppm": 1677.5687309311454,
+    "delta_S_target_dimensionless": "0.00339084569699052484374415562804975830876562174170740688074011",
+    "delta_S_derived_dimensionless": "0.00339428658139480393633861009257730802877731725548557975001094",
+    "eps_delta_S_pct": 0.10147569992149683,
+    "eps_delta_S_ppm": 1014.7569992149682,
+    "damping_factor_Q_beta_over_Q_beta_plus_m_e": "0.604897421193420073398611939161562461794430010241151427731763",
+    "predicted_eps_delta_S_from_damping_x_eps_Q": "0.00101475699921496828157902995746344004393150808525522884115034",
+    "predicted_eps_delta_S_ppm": 1014.7569992149682,
+    "chain_match_relative_error": "1.73425153494321104523881400070022088735113245393177150031621e-68",
+    "verdict": "CHAIN VERIFIED EXACTLY: ε_ΔS = (Q_β/(Q_β+m_e)) · ε_Q. The 1015 ppm ΔS residual is the Q_β closed-form residual damped by Q_β/(Q_β+m_e) ≈ 0.605. NOT a coincidence.",
+    "Q_beta_precision_for_1_ppb_on_delta_S": 0.0016531728603290626
+  }
+}

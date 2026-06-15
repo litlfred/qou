@@ -1,0 +1,117 @@
+{
+  "computedAt": "2026-04-14T16:24:53.654234+00:00",
+  "computation": "beta-decay-from-q",
+  "description": "Verification that beta decay half-lives depend on q and μ₀ alone. All standard-physics constants (G_F, m_e) decompose into q-dependent factors times the single dimensional scale μ₀.",
+  "auditOnly": "docs/audits/categorical-vs-fitted-q-decay-ba.md",
+  "substrate_parameter": {
+    "q": 1.1099785955541805,
+    "hbar_q": 0.09908172643569887,
+    "hbar_q_squared": 0.009817188513478669
+  },
+  "fundamental_q_quantities": {
+    "E_cross": {
+      "formula": "½(q - q⁻¹)",
+      "value": 0.10453016099493972
+    },
+    "s_skein_amplitude": {
+      "formula": "q^½ - q^{-½}",
+      "value": 0.10438806980915827
+    },
+    "two_q": {
+      "formula": "q + q⁻¹",
+      "value": 2.010896869118482
+    },
+    "tanh_ln_q": {
+      "formula": "(q-q⁻¹)/(q+q⁻¹)",
+      "value": 0.10396372146201877
+    }
+  },
+  "unit_choice": {
+    "mu_0_MeV": 1.6295103892701275,
+    "description": "μ₀ is the ONLY free parameter (unit choice). Set by m_e = 3 E_× μ₀ = 0.511 MeV."
+  },
+  "G_F_decomposition": {
+    "G_F_standard": 1.1663788e-11,
+    "v_weak_MeV": 246219.64023926202,
+    "N_v_crossing_count": 1445519.4491452205,
+    "note": "G_F = 1/(√2 v²) where v = N_v · E_× · μ₀. N_v is the effective crossing count of the weak scale — a topological invariant to be derived from the brane tower structure. OPEN COMPUTATION."
+  },
+  "rate_scale_check": {
+    "G_F2_m_e5_standard": 7.643630059707079e-26,
+    "243_Ecross_mu0_over_2Nv4": 7.643630059707087e-26,
+    "ratio": 1.000000000000001,
+    "note": "These should agree exactly (algebraic identity)."
+  },
+  "sensitivity": {
+    "formula": "(q²-1)/(q²+1) + 5(q²+1)/(q²-1)",
+    "value": 48.1976634244556,
+    "interpretation": "1% shift in q changes decay rate by ~48%"
+  },
+  "nuclei": [
+    {
+      "name": "³H",
+      "A": 3,
+      "p": 1,
+      "n": 2,
+      "ell_net": -1,
+      "delta_q_eff": 0.002181597447439704,
+      "delta_q_over_q_percent": 0.19654410059596647
+    },
+    {
+      "name": "¹⁴C",
+      "A": 14,
+      "p": 6,
+      "n": 8,
+      "ell_net": -13,
+      "delta_q_eff": 0.0006511400544654219,
+      "delta_q_over_q_percent": 0.058662397371755284
+    },
+    {
+      "name": "⁶⁰Co",
+      "A": 60,
+      "p": 27,
+      "n": 33,
+      "ell_net": -177,
+      "delta_q_eff": 0.0001608928117486782,
+      "delta_q_over_q_percent": 0.014495127418952527
+    },
+    {
+      "name": "⁹⁰Sr",
+      "A": 90,
+      "p": 38,
+      "n": 52,
+      "ell_net": -623,
+      "delta_q_eff": 0.00010786787379007426,
+      "delta_q_over_q_percent": 0.009718013862800563
+    },
+    {
+      "name": "¹³⁷Cs",
+      "A": 137,
+      "p": 55,
+      "n": 82,
+      "ell_net": -1836,
+      "delta_q_eff": 7.11352569573818e-05,
+      "delta_q_over_q_percent": 0.006408705288759735
+    },
+    {
+      "name": "²¹⁰Bi",
+      "A": 210,
+      "p": 83,
+      "n": 127,
+      "ell_net": -4598,
+      "delta_q_eff": 4.652590474641818e-05,
+      "delta_q_over_q_percent": 0.004191603778016019
+    }
+  ],
+  "open_computations": [
+    "Q-values for A > 4 (Level 1 braid B_{3A})",
+    "g_A from Borromean Skein algebra (target: 1.27)",
+    "C_geom from Hopf(trefoil, Borromean) trace (target: 14.25)",
+    "λ_shell from alpha-particle sub-link binding"
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0,
+  "engine": "python",
+  "scriptFile": "beta-decay-from-q.py",
+  "commitSha": "06e88b6885fd78860cf1e0d1d01de2a96f5b0811"
+}

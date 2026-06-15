@@ -1,0 +1,262 @@
+{
+  "engine": "sympy Poly + sequential cyclotomic division (via closed_form_tau_M closed form)",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-01T16:07:41.918954+00:00",
+  "commitSha": "2b3a65d87ea1549a52c6baa4904ac6d36fa5f949",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "habiro-coefficients-beryllium-9",
+  "scriptFile": "_habiro_coefficient_extract.py",
+  "scriptHash": "53ae956b30cd",
+  "scriptCommitSha": "2b3a65d87ea1549a52c6baa4904ac6d36fa5f949",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Habiro / cyclotomic expansion tr_M(A=9, q) = Σ_m a_m·(u;u)_m (u = q^{1/2}) via the Phase 5q closed form. Mass-table-wide extraction (PR #1642 follow-up infrastructure); covers Z=4, N=5 under chi_lambda_braid (production) pn-convention. Feeds (i) mirror-pair Φ_k universality audit, (ii) Φ_8-multiplicity scaling-law table, and (iii) Q_β Habiro element keystone search.",
+  "reference_blocks": [
+    "def:habiro-ring",
+    "prop:full-pole-structure-mass-trace",
+    "prop:constit-factor-tau-M-proton-identity",
+    "prop:interface-knot-markov-z",
+    "thm:knot-mass-formula-unified"
+  ],
+  "parameters": {
+    "q_0": 1.1099785827513808,
+    "pn_convention": "chi_lambda_braid (production default)",
+    "source": "habiro-coefficients-atomic.witness.json (τ_p, τ_n)",
+    "generator": "_habiro_coefficient_extract.py"
+  },
+  "habiro_coefficients": [
+    {
+      "m": 0,
+      "a_m": "262144",
+      "deg_a_m": 0,
+      "integral": true,
+      "remainder_nonzero": false
+    },
+    {
+      "m": 1,
+      "a_m": "-37748736*check_q - 37748736",
+      "deg_a_m": 1,
+      "integral": true,
+      "remainder_nonzero": false
+    },
+    {
+      "m": 2,
+      "a_m": "1755824128*check_q**2 + 1768194048*check_q + 1780989952",
+      "deg_a_m": 2,
+      "integral": true,
+      "remainder_nonzero": false
+    },
+    {
+      "m": 3,
+      "a_m": "-42760273920*check_q**3 - 42339811328*check_q**2 - 37320409088*check_q - 38618890240",
+      "deg_a_m": 3,
+      "integral": true,
+      "remainder_nonzero": false
+    },
+    {
+      "m": 4,
+      "a_m": "513773182448*check_q**4 + 524675355152*check_q**3 + 534809912848*check_q**2 + 539575435824*check_q + 545284777920",
+      "deg_a_m": 4,
+      "integral": true,
+      "remainder_nonzero": false
+    },
+    {
+      "m": 5,
+      "a_m": "-4305196105920*check_q**5 - 4386508697264*check_q**4 - 4469516648640*check_q**3 - 4556511229648*check_q**2 - 4644370680064*check_q - 4730796544192",
+      "deg_a_m": 5,
+      "integral": true,
+      "remainder_nonzero": false
+    },
+    {
+      "m": 6,
+      "a_m": "24401910200874*check_q**6 + 24982139502552*check_q**5 + 25574835765471*check_q**4 + 26177447121008*check_q**3 + 26790553591599*check_q**2 + 27417081426036*check_q + 28056784583980",
+      "deg_a_m": 6,
+      "integral": true,
+      "remainder_nonzero": false
+    },
+    {
+      "m": 7,
+      "a_m": "-98159405442130*check_q**7 - 100967623009916*check_q**6 - 103869383534244*check_q**5 - 106805677614675*check_q**4 - 109786166956051*check_q**3 - 112873277038290*check_q**2 - 116059988789062*check_q - 119286018303170",
+      "deg_a_m": 7,
+      "integral": true,
+      "remainder_nonzero": false
+    },
+    {
+      "m": 8,
+      "a_m": "288348038057774*check_q**8 + 298042941148635*check_q**7 + 308025160496896*check_q**6 + 318326139074658*check_q**5 + 328918688100866*check_q**4 + 339785238223695*check_q**3 + 350967800384647*check_q**2 + 362498973352363*check_q + 374351384029027",
+      "deg_a_m": 8,
+      "integral": true,
+      "remainder_nonzero": false
+    },
+    {
+      "m": 9,
+      "a_m": "-629893854749636*check_q**9 - 654595122270750*check_q**8 - 680143770564255*check_q**7 - 706553168064702*check_q**6 - 733865796154144*check_q**5 - 762120226547436*check_q**4 - 791326783383547*check_q**3 - 821501156967075*check_q**2 - 852688892815246*check_q - 884931578514715",
+      "deg_a_m": 9,
+      "integral": true,
+      "remainder_nonzero": false
+    },
+    {
+      "m": 10,
+      "a_m": "1035221449046566*check_q**10 + 1082020229708332*check_q**9 + 1130694236009492*check_q**8 + 1181323636217758*check_q**7 + 1233975007540804*check_q**6 + 1288704801271726*check_q**5 + 1345587381711915*check_q**4 + 1404711638156689*check_q**3 + 1466152714528899*check_q**2 + 1529975527450232*check_q + 1596263559431979",
+      "deg_a_m": 10,
+      "integral": true,
+      "remainder_nonzero": false
+    },
+    {
+      "m": 11,
+      "a_m": "-1285739267884776*check_q**11 - 1352383871238045*check_q**10 - 1422090726206293*check_q**9 - 1495078594526499*check_q**8 - 1571471603932192*check_q**7 - 1651314832130940*check_q**6 - 1734760207079428*check_q**5 - 1822050508941634*check_q**4 - 1913329406269913*check_q**3 - 2008658135218757*check_q**2 - 2108210588990278*check_q - 2212256202265667",
+      "deg_a_m": 11,
+      "integral": true,
+      "remainder_nonzero": false
+    },
+    {
+      "m": 12,
+      "a_m": "1203781624479763*check_q**12 + 1275205767985710*check_q**11 + 1350452608375576*check_q**10 + 1429672816184396*check_q**9 + 1513107609755900*check_q**8 + 1600991974646605*check_q**7 + 1693484531944164*check_q**6 + 1790767475957495*check_q**5 + 1893119116418459*check_q**4 + 2000812078784294*check_q**3 + 2114039577244084*check_q**2 + 2233020496205025*check_q + 2358075658109807",
+      "deg_a_m": 12,
+      "integral": true,
+      "remainder_nonzero": false
+    },
+    {
+      "m": 13,
+      "a_m": "-840315857870250*check_q**13 - 897454269615260*check_q**12 - 958126274576356*check_q**11 - 1022544112780223*check_q**10 - 1090892236246550*check_q**9 - 1163371986964659*check_q**8 - 1240234110937612*check_q**7 - 1321733758409425*check_q**6 - 1408098117560364*check_q**5 - 1499573529063640*check_q**4 - 1596459773231772*check_q**3 - 1699062786406117*check_q**2 - 1807660596049500*check_q - 1922552950629115",
+      "deg_a_m": 13,
+      "integral": true,
+      "remainder_nonzero": false
+    },
+    {
+      "m": 14,
+      "a_m": "426714462115466*check_q**14 + 460297527717219*check_q**13 + 496288132596074*check_q**12 + 534824651113981*check_q**11 + 576072748669532*check_q**10 + 620223845643905*check_q**9 + 667460598256051*check_q**8 + 717959600518249*check_q**7 + 771927856624213*check_q**6 + 829601105750893*check_q**5 + 891207459141542*check_q**4 + 956970368834298*check_q**3 + 1027147234831293*check_q**2 + 1102027671799955*check_q + 1181895159722214",
+      "deg_a_m": 14,
+      "integral": true,
+      "remainder_nonzero": false
+    },
+    {
+      "m": 15,
+      "a_m": "-149713341016895*check_q**15 - 163683305794087*check_q**14 - 178846249548346*check_q**13 - 195247163275122*check_q**12 - 212981885900425*check_q**11 - 232197433714166*check_q**10 - 253000824930616*check_q**9 - 275459746391174*check_q**8 - 299698526741231*check_q**7 - 325898128511046*check_q**6 - 354197000032713*check_q**5 - 384692332328638*check_q**4 - 417544372669570*check_q**3 - 452976035372941*check_q**2 - 491165390379055*check_q - 532247551187322",
+      "deg_a_m": 15,
+      "integral": true,
+      "remainder_nonzero": false
+    },
+    {
+      "m": 16,
+      "a_m": "31851468216667*check_q**16 + 35632467308429*check_q**15 + 39806317135545*check_q**14 + 44421980768660*check_q**13 + 49496385349573*check_q**12 + 55056564712089*check_q**11 + 61169406889899*check_q**10 + 67898018537255*check_q**9 + 75271034659615*check_q**8 + 83328804851375*check_q**7 + 92156069246636*check_q**6 + 101834220874265*check_q**5 + 112407787192921*check_q**4 + 123934963814897*check_q**3 + 136523358397356*check_q**2 + 150277924397243*check_q + 165264467892996",
+      "deg_a_m": 16,
+      "integral": true,
+      "remainder_nonzero": false
+    },
+    {
+      "m": 17,
+      "a_m": "-2037421500116*check_q**17 - 2556815270062*check_q**16 - 3150911020093*check_q**15 - 3823300164378*check_q**14 - 4592309868842*check_q**13 - 5474455949262*check_q**12 - 6472792509368*check_q**11 - 7594469740844*check_q**10 - 8863172845766*check_q**9 - 10300882451477*check_q**8 - 11915041725130*check_q**7 - 13717943672370*check_q**6 - 15740437319250*check_q**5 - 18011877320935*check_q**4 - 20546058439864*check_q**3 - 23362551674813*check_q**2 - 26501753435198*check_q - 30002941661874",
+      "deg_a_m": 17,
+      "integral": true,
+      "remainder_nonzero": false
+    },
+    {
+      "m": 18,
+      "a_m": "-842031019063*check_q**18 - 872128626239*check_q**17 - 901029401878*check_q**16 - 922438026511*check_q**15 - 934858788049*check_q**14 - 942379359436*check_q**13 - 943629673436*check_q**12 - 930948069379*check_q**11 - 901994949681*check_q**10 - 860534084616*check_q**9 - 804112613774*check_q**8 - 723245101163*check_q**7 - 614315170933*check_q**6 - 480312457962*check_q**5 - 317165836881*check_q**4 - 112934297655*check_q**3 + 137919871037*check_q**2 + 433821487215*check_q + 781220718261",
+      "deg_a_m": 18,
+      "integral": true,
+      "remainder_nonzero": false
+    },
+    {
+      "m": 19,
+      "a_m": "231466414032*check_q**19 + 254783840335*check_q**18 + 282638657083*check_q**17 + 310275366609*check_q**16 + 337017136340*check_q**15 + 368171555654*check_q**14 + 404575325356*check_q**13 + 440620403122*check_q**12 + 475526593734*check_q**11 + 515408848236*check_q**10 + 561091803711*check_q**9 + 605967376847*check_q**8 + 649097808024*check_q**7 + 697451801384*check_q**6 + 751771272036*check_q**5 + 804245593074*check_q**4 + 853696862933*check_q**3 + 907961328790*check_q**2 + 967577155756*check_q + 1023277823893",
+      "deg_a_m": 19,
+      "integral": true,
+      "remainder_nonzero": false
+    },
+    {
+      "m": 20,
+      "a_m": "-17285482685*check_q**20 - 19515904109*check_q**19 - 22487040359*check_q**18 - 27201092731*check_q**17 - 32048054508*check_q**16 - 36023068052*check_q**15 - 41003293342*check_q**14 - 48202031274*check_q**13 - 55691850094*check_q**12 - 62282476385*check_q**11 - 70225421555*check_q**10 - 80971429237*check_q**9 - 92230246156*check_q**8 - 102595070594*check_q**7 - 114749718287*check_q**6 - 130417364301*check_q**5 - 146881557698*check_q**4 - 162493428341*check_q**3 - 180424577643*check_q**2 - 202702158269*check_q - 226125007604",
+      "deg_a_m": 20,
+      "integral": true,
+      "remainder_nonzero": false
+    },
+    {
+      "m": 21,
+      "a_m": "-1513850596*check_q**21 - 1343491812*check_q**20 - 1235504818*check_q**19 - 1434181380*check_q**18 - 1517589608*check_q**17 - 1204112796*check_q**16 - 952701739*check_q**15 - 1064290570*check_q**14 - 1012091273*check_q**13 - 447114187*check_q**12 + 62655694*check_q**11 + 156498303*check_q**10 + 484236072*check_q**9 + 1475798253*check_q**8 + 2435199508*check_q**7 + 2931040118*check_q**6 + 3763593933*check_q**5 + 5453741967*check_q**4 + 7162074857*check_q**3 + 8371391606*check_q**2 + 10062847605*check_q + 12863547259",
+      "deg_a_m": 21,
+      "integral": true,
+      "remainder_nonzero": false
+    },
+    {
+      "m": 22,
+      "a_m": "199708716*check_q**22 + 209090837*check_q**21 + 288594743*check_q**20 + 344635150*check_q**19 + 326224286*check_q**18 + 342343389*check_q**17 + 451525632*check_q**16 + 527642450*check_q**15 + 504233677*check_q**14 + 528418949*check_q**13 + 672304086*check_q**12 + 769351820*check_q**11 + 736842227*check_q**10 + 768250979*check_q**9 + 952457860*check_q**8 + 1069234392*check_q**7 + 1017965054*check_q**6 + 1051901979*check_q**5 + 1277518426*check_q**4 + 1406056156*check_q**3 + 1318380221*check_q**2 + 1337617410*check_q + 1594232657",
+      "deg_a_m": 22,
+      "integral": true,
+      "remainder_nonzero": false
+    },
+    {
+      "m": 23,
+      "a_m": "1846440*check_q**23 + 3413029*check_q**22 - 3536876*check_q**21 - 8169195*check_q**20 - 1989235*check_q**19 - 316982*check_q**18 - 11464591*check_q**17 - 19193474*check_q**16 - 12040959*check_q**15 - 10041594*check_q**14 - 27616738*check_q**13 - 39793527*check_q**12 - 30363841*check_q**11 - 29550820*check_q**10 - 55833708*check_q**9 - 74206263*check_q**8 - 61734122*check_q**7 - 61974726*check_q**6 - 102386029*check_q**5 - 129256490*check_q**4 - 113424484*check_q**3 - 116389258*check_q**2 - 176829929*check_q - 218009633",
+      "deg_a_m": 23,
+      "integral": true,
+      "remainder_nonzero": false
+    },
+    {
+      "m": 24,
+      "a_m": "-284744*check_q**24 - 691703*check_q**23 - 797356*check_q**22 - 565789*check_q**21 - 524324*check_q**20 - 1259682*check_q**19 - 1568649*check_q**18 - 1124360*check_q**17 - 1065879*check_q**16 - 1887230*check_q**15 - 2339015*check_q**14 - 1423257*check_q**13 - 1174946*check_q**12 - 2389594*check_q**11 - 2903720*check_q**10 - 1464276*check_q**9 - 839341*check_q**8 - 2778406*check_q**7 - 3457026*check_q**6 - 772277*check_q**5 + 258134*check_q**4 - 2788089*check_q**3 - 4209185*check_q**2 + 169981*check_q + 2446958",
+      "deg_a_m": 24,
+      "integral": true,
+      "remainder_nonzero": false
+    },
+    {
+      "m": 25,
+      "a_m": "-7619*check_q**25 - 13741*check_q**24 - 2072*check_q**23 + 1710*check_q**22 + 14894*check_q**21 - 10551*check_q**20 - 7983*check_q**19 + 6416*check_q**18 - 12891*check_q**17 + 4275*check_q**16 + 9632*check_q**15 + 64461*check_q**14 + 93107*check_q**13 + 81470*check_q**12 + 156297*check_q**11 + 172934*check_q**10 + 181468*check_q**9 + 134029*check_q**8 + 160713*check_q**7 + 307616*check_q**6 + 248327*check_q**5 + 190218*check_q**4 + 257998*check_q**3 + 442986*check_q**2 + 491177*check_q + 206842",
+      "deg_a_m": 25,
+      "integral": true,
+      "remainder_nonzero": false
+    },
+    {
+      "m": 26,
+      "a_m": "1412*check_q**26 + 772*check_q**25 - 573*check_q**24 - 2050*check_q**23 - 2726*check_q**22 - 2074*check_q**21 - 353*check_q**20 + 1803*check_q**19 + 3389*check_q**18 + 3945*check_q**17 + 2944*check_q**16 + 440*check_q**15 - 784*check_q**14 + 83*check_q**13 + 3682*check_q**12 + 7003*check_q**11 + 5841*check_q**10 + 6345*check_q**9 + 5952*check_q**8 + 5964*check_q**7 + 3456*check_q**6 - 8190*check_q**5 - 8202*check_q**4 - 8957*check_q**3 - 9503*check_q**2 - 6705*check_q - 12289",
+      "deg_a_m": 26,
+      "integral": true,
+      "remainder_nonzero": false
+    },
+    {
+      "m": 27,
+      "a_m": "-u**6 - 10*check_q**5 - 51*check_q**4 - 177*check_q**3 - 455*check_q**2 - 892*check_q - 1331",
+      "deg_a_m": 6,
+      "integral": true,
+      "remainder_nonzero": false
+    }
+  ],
+  "Z": 4,
+  "N": 5,
+  "A": 9,
+  "interface_kinds": [
+    "positive",
+    "positive",
+    "positive",
+    "positive",
+    "negative",
+    "negative",
+    "negative",
+    "negative"
+  ],
+  "include_inter": true,
+  "tr_M_in_q": "(q**(3/2) - q**2*(q + 1) + q + 1)**4*(q**(39/2) + q**(35/2) - q**(33/2) + q**(31/2) - q**(29/2) + q**(27/2) - q**(25/2) - q**(21/2) + q**(19/2) + q**(15/2) - q**(13/2) + q**(11/2) - q**(9/2) + q**(7/2) - q**(5/2) - sqrt(q) + q**20 - q**18 + 4*q**10 - q**2 + 1)**5*(q**(39/2) + q**(35/2) - q**(33/2) + q**(31/2) - q**(29/2) + q**(27/2) + q**(23/2) + q**(21/2) - q**(19/2) - q**(17/2) - q**(13/2) + q**(11/2) - q**(9/2) + q**(7/2) - q**(5/2) - sqrt(q) + q**20 - q**18 + 2*q**12 + 2*q**8 - q**2 + 1)**4/(262144*q**(175/2)*(q + 1)**17)",
+  "shift": 0,
+  "denom_in_u": "262144*check_q**209 + 4456448*check_q**207 + 35651584*check_q**205 + 178257920*check_q**203 + 623902720*check_q**201 + 1622147072*check_q**199 + 3244294144*check_q**197 + 5098176512*check_q**195 + 6372720640*check_q**193 + 6372720640*check_q**191 + 5098176512*check_q**189 + 3244294144*check_q**187 + 1622147072*check_q**185 + 623902720*check_q**183 + 178257920*check_q**181 + 35651584*check_q**179 + 4456448*check_q**177 + 262144*check_q**175",
+  "p_in_u": "check_q**384 + 9*check_q**383 + 40*check_q**382 + 116*check_q**381 + 227*check_q**380 + 261*check_q**379 - 6*check_q**378 - 759*check_q**377 - 1784*check_q**376 - 2251*check_q**375 - 1180*check_q**374 + 1683*check_q**373 + 5005*check_q**372 + 6540*check_q**371 + 5018*check_q**370 + 483*check_q**369 - 5011*check_q**368 - 9457*check_q**367 - 11036*check_q**366 - 6306*check_q**365 + 1799*check_q**364 + 9373*check_q**363 + 10210*check_q**362 + 1505*check_q**361 - 1641*check_q**360 - 3131*check_q**359 - 2056*check_q**358 - 1787*check_q**357 - 10296*check_q**356 + 6732*check_q**355 + 16676*check_q**354 + 17289*check_q**353 + 17810*check_q**352 - 3089*check_q**351 + 16406*check_q**350 - 6338*check_q**349 - 51929*check_q**348 - 51923*check_q**347 - 52588*check_q**346 + 20875*check_q**345 + 23947*check_q**344 + 1214*check_q**343 + 45002*check_q**342 + 8655*check_q**341 + 12939*check_q**340 - 40597*check_q**339 - 23124*check_q**338 + 84516*check_q**337 + 24450*check_q**336 + 73224*check_q**335 + 81466*check_q**334 + 104331*check_q**333 - 1742*check_q**332 - 249855*check_q**331 - 78618*check_q**330 - 15070*check_q**329 - 126327*check_q**328 - 281287*check_q**327 - 118750*check_q**326 + 432947*check_q**325 + 170269*check_q**324 - 364927*check_q**323 - 162364*check_q**322 + 440317*check_q**321 + 458978*check_q**320 - 508855*check_q**319 - 347044*check_q**318 + 836907*check_q**317 + 840248*check_q**316 - 460175*check_q**315 - 730990*check_q**314 + 880459*check_q**313 + 603748*check_q**312 - 1396940*check_q**311 - 1634626*check_q**310 + 905135*check_q**309 + 1230949*check_q**308 - 1941124*check_q**307 - 1588794*check_q**306 + 2356130*check_q**305 + 2285919*check_q**304 - 2844935*check_q**303 - 3059626*check_q**302 + 3974686*check_q**301 + 4324657*check_q**300 - 3888151*check_q**299 - 4230454*check_q**298 + 5549795*check_q**297 + 7099035*check_q**296 - 6378512*check_q**295 - 7907668*check_q**294 + 6497265*check_q**293 + 8521949*check_q**292 - 8527189*check_q**291 - 12196172*check_q**290 + 9412826*check_q**289 + 12437145*check_q**288 - 11714450*check_q**287 - 14964920*check_q**286 + 13302173*check_q**285 + 17048027*check_q**284 - 16287178*check_q**283 - 20015890*check_q**282 + 21256052*check_q**281 + 24051351*check_q**280 - 22245637*check_q**279 - 26099436*check_q**278 + 29364066*check_q**277 + 32501145*check_q**276 - 33568088*check_q**275 - 37219298*check_q**274 + 36558639*check_q**273 + 42559390*check_q**272 - 44750161*check_q**271 - 48843684*check_q**270 + 47989902*check_q**269 + 54052374*check_q**268 - 56509028*check_q**267 - 62053328*check_q**266 + 61390617*check_q**265 + 66860042*check_q**264 - 69924925*check_q**263 - 72643888*check_q**262 + 81097876*check_q**261 + 82097854*check_q**260 - 88578630*check_q**259 - 87547666*check_q**258 + 104096363*check_q**257 + 96199229*check_q**256 - 112786980*check_q**255 - 107349514*check_q**254 + 129611284*check_q**253 + 117029184*check_q**252 - 143550539*check_q**251 - 128407646*check_q**250 + 154465178*check_q**249 + 139023416*check_q**248 - 174237472*check_q**247 - 153909282*check_q**246 + 184267685*check_q**245 + 163569863*check_q**244 - 202240638*check_q**243 - 172706756*check_q**242 + 217749324*check_q**241 + 186774810*check_q**240 - 234940262*check_q**239 - 193808756*check_q**238 + 254658264*check_q**237 + 205796121*check_q**236 - 270575526*check_q**235 - 213878694*check_q**234 + 297583766*check_q**233 + 225558915*check_q**232 - 313476425*check_q**231 - 239819242*check_q**230 + 336414466*check_q**229 + 247292892*check_q**228 - 357562761*check_q**227 - 265191346*check_q**226 + 374131477*check_q**225 + 275818447*check_q**224 - 397791489*check_q**223 - 289116096*check_q**222 + 409132851*check_q**221 + 300567817*check_q**220 - 429823317*check_q**219 - 309459276*check_q**218 + 445628213*check_q**217 + 323284511*check_q**216 - 461704275*check_q**215 - 322366504*check_q**214 + 480072137*check_q**213 + 334292505*check_q**212 - 493532923*check_q**211 - 339715088*check_q**210 + 514483143*check_q**209 + 341783082*check_q**208 - 523686334*check_q**207 - 350303970*check_q**206 + 540255109*check_q**205 + 351915065*check_q**204 - 551087100*check_q**203 - 364513858*check_q**202 + 554201930*check_q**201 + 363572563*check_q**200 - 565038358*check_q**199 - 371160736*check_q**198 + 564252442*check_q**197 + 378221942*check_q**196 - 569396632*check_q**195 - 375661504*check_q**194 + 567435098*check_q**193 + 382253676*check_q**192 - 567435098*check_q**191 - 375661504*check_q**190 + 569396632*check_q**189 + 378221942*check_q**188 - 564252442*check_q**187 - 371160736*check_q**186 + 565038358*check_q**185 + 363572563*check_q**184 - 554201930*check_q**183 - 364513858*check_q**182 + 551087100*check_q**181 + 351915065*check_q**180 - 540255109*check_q**179 - 350303970*check_q**178 + 523686334*check_q**177 + 341783082*check_q**176 - 514483143*check_q**175 - 339715088*check_q**174 + 493532923*check_q**173 + 334292505*check_q**172 - 480072137*check_q**171 - 322366504*check_q**170 + 461704275*check_q**169 + 323284511*check_q**168 - 445628213*check_q**167 - 309459276*check_q**166 + 429823317*check_q**165 + 300567817*check_q**164 - 409132851*check_q**163 - 289116096*check_q**162 + 397791489*check_q**161 + 275818447*check_q**160 - 374131477*check_q**159 - 265191346*check_q**158 + 357562761*check_q**157 + 247292892*check_q**156 - 336414466*check_q**155 - 239819242*check_q**154 + 313476425*check_q**153 + 225558915*check_q**152 - 297583766*check_q**151 - 213878694*check_q**150 + 270575526*check_q**149 + 205796121*check_q**148 - 254658264*check_q**147 - 193808756*check_q**146 + 234940262*check_q**145 + 186774810*check_q**144 - 217749324*check_q**143 - 172706756*check_q**142 + 202240638*check_q**141 + 163569863*check_q**140 - 184267685*check_q**139 - 153909282*check_q**138 + 174237472*check_q**137 + 139023416*check_q**136 - 154465178*check_q**135 - 128407646*check_q**134 + 143550539*check_q**133 + 117029184*check_q**132 - 129611284*check_q**131 - 107349514*check_q**130 + 112786980*check_q**129 + 96199229*check_q**128 - 104096363*check_q**127 - 87547666*check_q**126 + 88578630*check_q**125 + 82097854*check_q**124 - 81097876*check_q**123 - 72643888*check_q**122 + 69924925*check_q**121 + 66860042*check_q**120 - 61390617*check_q**119 - 62053328*check_q**118 + 56509028*check_q**117 + 54052374*check_q**116 - 47989902*check_q**115 - 48843684*check_q**114 + 44750161*check_q**113 + 42559390*check_q**112 - 36558639*check_q**111 - 37219298*check_q**110 + 33568088*check_q**109 + 32501145*check_q**108 - 29364066*check_q**107 - 26099436*check_q**106 + 22245637*check_q**105 + 24051351*check_q**104 - 21256052*check_q**103 - 20015890*check_q**102 + 16287178*check_q**101 + 17048027*check_q**100 - 13302173*check_q**99 - 14964920*check_q**98 + 11714450*check_q**97 + 12437145*check_q**96 - 9412826*check_q**95 - 12196172*check_q**94 + 8527189*check_q**93 + 8521949*check_q**92 - 6497265*check_q**91 - 7907668*check_q**90 + 6378512*check_q**89 + 7099035*check_q**88 - 5549795*check_q**87 - 4230454*check_q**86 + 3888151*check_q**85 + 4324657*check_q**84 - 3974686*check_q**83 - 3059626*check_q**82 + 2844935*check_q**81 + 2285919*check_q**80 - 2356130*check_q**79 - 1588794*check_q**78 + 1941124*check_q**77 + 1230949*check_q**76 - 905135*check_q**75 - 1634626*check_q**74 + 1396940*check_q**73 + 603748*check_q**72 - 880459*check_q**71 - 730990*check_q**70 + 460175*check_q**69 + 840248*check_q**68 - 836907*check_q**67 - 347044*check_q**66 + 508855*check_q**65 + 458978*check_q**64 - 440317*check_q**63 - 162364*check_q**62 + 364927*check_q**61 + 170269*check_q**60 - 432947*check_q**59 - 118750*check_q**58 + 281287*check_q**57 - 126327*check_q**56 + 15070*check_q**55 - 78618*check_q**54 + 249855*check_q**53 - 1742*check_q**52 - 104331*check_q**51 + 81466*check_q**50 - 73224*check_q**49 + 24450*check_q**48 - 84516*check_q**47 - 23124*check_q**46 + 40597*check_q**45 + 12939*check_q**44 - 8655*check_q**43 + 45002*check_q**42 - 1214*check_q**41 + 23947*check_q**40 - 20875*check_q**39 - 52588*check_q**38 + 51923*check_q**37 - 51929*check_q**36 + 6338*check_q**35 + 16406*check_q**34 + 3089*check_q**33 + 17810*check_q**32 - 17289*check_q**31 + 16676*check_q**30 - 6732*check_q**29 - 10296*check_q**28 + 1787*check_q**27 - 2056*check_q**26 + 3131*check_q**25 - 1641*check_q**24 - 1505*check_q**23 + 10210*check_q**22 - 9373*check_q**21 + 1799*check_q**20 + 6306*check_q**19 - 11036*check_q**18 + 9457*check_q**17 - 5011*check_q**16 - 483*check_q**15 + 5018*check_q**14 - 6540*check_q**13 + 5005*check_q**12 - 1683*check_q**11 - 1180*check_q**10 + 2251*check_q**9 - 1784*check_q**8 + 759*check_q**7 - 6*check_q**6 - 261*check_q**5 + 227*check_q**4 - 116*check_q**3 + 40*check_q**2 - 9*check_q + 1",
+  "deg_p_u": 384,
+  "n_nonzero": 28,
+  "all_integral": true,
+  "reconstruction_matches": true,
+  "tr_M_at_q0": 0.0003811718773882293,
+  "tr_M_at_q0_via_u_poly": 0.0003811718773882293,
+  "tr_M_at_q0_rel_err": 0.0
+}

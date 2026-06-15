@@ -1,0 +1,68 @@
+{
+  "computedAt": "2026-05-03T21:09:59.411955+00:00",
+  "computation": "brane-tower-per-channel-phi-q-probe",
+  "description": "Tests whether applying Phi_q per Wedderburn channel (sym/std/alt) and summing with Markov weights y_lambda restores trace-invariance to the T2 brane-tower.  Compares to the legacy literal Phi_q(|V_full|) form that currently produces the -737 MeV T-3He isospin pathology in paper_six_term_isotope_sweep.py.",
+  "auditOnly": "docs/audits/2026-05-03-T2T3-derivation-chain-analysis.md",
+  "rows": [
+    {
+      "iso": "p",
+      "Z": 1,
+      "N": 0,
+      "A": 1,
+      "T2_per_channel": 109923.11401371748,
+      "T2_legacy_full": 1096978.3961756648,
+      "ratio": 0.10020535900883405
+    },
+    {
+      "iso": "n",
+      "Z": 0,
+      "N": 1,
+      "A": 1,
+      "T2_per_channel": 759626.6496080192,
+      "T2_legacy_full": 511298.2733512309,
+      "ratio": 1.4856820161530289
+    },
+    {
+      "iso": "D",
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "T2_per_channel": 1216610.2120012504,
+      "T2_legacy_full": 1608289.7568490189,
+      "ratio": 0.7564620783165641
+    },
+    {
+      "iso": "T",
+      "Z": 1,
+      "N": 2,
+      "A": 3,
+      "T2_per_channel": 1991025.921343145,
+      "T2_legacy_full": 2119592.558095629,
+      "ratio": 0.9393437025142246
+    },
+    {
+      "iso": "3He",
+      "Z": 2,
+      "N": 1,
+      "A": 3,
+      "T2_per_channel": 1341436.3223752764,
+      "T2_legacy_full": 2705308.685944641,
+      "ratio": 0.4958533306548982
+    },
+    {
+      "iso": "4He",
+      "Z": 2,
+      "N": 2,
+      "A": 4,
+      "T2_per_channel": 2115852.031717171,
+      "T2_legacy_full": 3216611.4871912515,
+      "ratio": 0.6577891175675479
+    }
+  ],
+  "isospin_T_minus_3He_per_channel_MeV": 516.4237311794556,
+  "isospin_T_minus_3He_legacy_MeV": -465.6443216399647,
+  "codata_T_minus_3He_MeV": 0.019,
+  "engine": "python",
+  "scriptFile": "brane_tower_per_channel_phi_q.py",
+  "commitSha": "06e88b6885fd78860cf1e0d1d01de2a96f5b0811"
+}

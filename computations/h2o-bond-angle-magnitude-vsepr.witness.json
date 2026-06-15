@@ -1,0 +1,59 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-09T16:58:50.932873+00:00",
+  "commitSha": "8bdcd2925a331ea81e706a78d32fc1f755a86e67",
+  "assertions": [
+    {
+      "name": "model self-validates: equal weights ⇒ tetrahedral 109.47°",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "no built-in angular bias; minimiser of the symmetric Coulomb energy is arccos(−1/3)"
+    },
+    {
+      "name": "trace weights NARROW the angle below tetrahedral (correct sign)",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "θ_pred=107.19° < 109.47°; reverses the |Φ₁| model that opened to ~140°"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 26,
+  "computation": "h2o-bond-angle-magnitude-vsepr",
+  "scriptFile": "h2o_bond_angle_magnitude_vsepr.py",
+  "scriptHash": "490025f01682",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "mpmath": "1.4.1"
+  },
+  "description": "H₂O H–O–H angle magnitude via trace-weighted VSEPR (points-on-a-sphere, Coulomb kernel, NO fit parameter). Domain weights are q-exact Markov traces (w_lone/w_bond = h z + 1). Self-validates at equal weights (θ=109.47°). Trace weights give θ≈107.2° (narrows ≈2.3°): correct sign and order of magnitude vs observed 104.5° (narrows 4.97°); residual reported, not fitted. Supplies the geometric stiffness a for prop:h2o-bond-angle-shift's b/(2a).",
+  "contentBlock": "prop:h2o-bond-angle-shift",
+  "parameters": {
+    "w_bond_tr_M": 0.4993203341836945,
+    "w_lone_tr_M": 0.551443414318456,
+    "weight_ratio_hz_plus_1": 1.1043880582591816
+  },
+  "data": {
+    "theta0_tetrahedral_deg": 109.4712,
+    "theta_observed_deg": 104.5,
+    "theta_control_equal_weights_deg": 109.47121793805628,
+    "theta_pred_coulomb_n1_deg": 107.18964254816454,
+    "phi_LL_coulomb_n1_deg": 111.7853776318765,
+    "theta_pred_n2_deg": 107.47280282069272,
+    "theta_pred_n6_deg": 108.13594123244626,
+    "narrowing_pred_n1_deg": 2.2815574518354538,
+    "narrowing_observed_deg": 4.971199999999996,
+    "finding": "Trace-weighted VSEPR (Coulomb, no fit) predicts θ_HOH ≈ 107.19° — narrowing ≈2.3° vs observed 5.0°. Right sign + order of magnitude; the 10% q-exact trace asymmetry under-predicts the full shift by ~2×. The residual is honest (not fitted): closing it would require a tuned kernel/asymmetry, forbidden by the no-magnitude-fit rule. Self-validates at equal weights (109.47°)."
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "engine": "python+numpy+scipy+sympy",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-04T17:05:18.090203+00:00",
+  "commitSha": "6a6b59895fae9a3b04c42ce51ae49ecd61845924",
+  "assertions": [
+    {
+      "name": "hoefsmit_chi_finite_per_block_for_n3",
+      "computed": 3,
+      "expected": 3,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Stage A operational gate: the Hoefsmit seminormal rep infra (hecke_characters.chi_lambda_braid) produces finite per-block Markov-trace components χ^λ(identity), χ^λ(Hopf), χ^λ(electron-trefoil) for all 3 partitions of n=3, at q_0. Necessary precondition for Stage B (operator-level N=k extraction)."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 140,
+  "computation": "qbeta-hoefsmit-tbeta-matrix-build-probe",
+  "scriptFile": "qbeta_hoefsmit_tbeta_matrix_build_probe.py",
+  "scriptHash": "5d6228e99131",
+  "scriptCommitSha": "6a6b59895fae9a3b04c42ce51ae49ecd61845924",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 10,
+    "truncation_bound": "1e-50"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Stage A of the 1ppQ keystone (Hoefsmit operator construction): compute the per-Wedderburn-block Markov-trace components Tr ρ_λ(electron word) = χ^λ(σ₀σ₁σ₀) for λ ⊢ 3 (proton H_3 blocks); validate the operator-matrix infra by recombining via Wenzl weights against the canonical scalar Δ(net). Foundation for N=k operator-level extraction.",
+  "contentBlock": "prop:q-beta-c-k-recursion-from-habiro-q-difference",
+  "data": {
+    "canonical_free_neutron_scalar_at_q0": {
+      "delta_net": null,
+      "delta_nu": null,
+      "delta_e": null,
+      "canonical_present": false
+    },
+    "partitions_n3": [
+      [
+        3
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        1,
+        1,
+        1
+      ]
+    ],
+    "per_block_chi_at_q0": [
+      {
+        "lambda": [
+          3
+        ],
+        "dim_q": "1.0",
+        "chi_identity": "1.0",
+        "chi_hopf": "1.109978582751381",
+        "chi_electron_trefoil": "1.109978582751381"
+      },
+      {
+        "lambda": [
+          2,
+          1
+        ],
+        "dim_q": "2.010896866707122",
+        "chi_identity": "2.0",
+        "chi_hopf": "0.20906029879563925",
+        "chi_electron_trefoil": "0.20906029879563925"
+      },
+      {
+        "lambda": [
+          1,
+          1,
+          1
+        ],
+        "dim_q": "1.0",
+        "chi_identity": "1.0",
+        "chi_hopf": "-0.9009182839557418",
+        "chi_electron_trefoil": "-0.9009182839557418"
+      }
+    ],
+    "q_0_numeric": 1.1099785827513808,
+    "stage_a_status": "computed only — per-block χ at q_0 (canonical Δ(net) absent/null in upstream witness; recombination check deferred to when canonical values are populated)",
+    "stage_b_next": "build per-block operator T_β,λ via Hoefsmit + confinement SDP; read N=k correction levels off the matrix expansion in b(q)·ℏ_q² scaling; extract c_4..c_8 as the N=k operator-trace components."
+  }
+}

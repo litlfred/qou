@@ -1,0 +1,93 @@
+{
+  "engine": "python+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-17T22:40:02.095851+00:00",
+  "commitSha": "871e899a86eb910b74523f1575f355ebea9f8fad",
+  "assertions": [
+    {
+      "name": "li_2_q_finite_proton",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true
+    },
+    {
+      "name": "m_p_pred_honest_gap_above_50pct",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 10,
+  "computation": "hydrogen-step-by-step",
+  "scriptFile": "hydrogen_step_by_step.py",
+  "scriptHash": "b11cfe2d04ef",
+  "scriptCommitSha": "fb62a66685680ec285c77bfc7c15bf9eeb54a72f",
+  "description": "Full ¹H mass step-by-step under canonical Li_2^q tower",
+  "data": {
+    "convention": "paper canonical (Li_2^q, 2026-05-03 revision)",
+    "q_pinned": "1.1099785955541805752815940796095093779932822799587",
+    "m_e_MeV_anchor": "0.51099894999999995182093925905064679682254791259766",
+    "BE_H_MeV": "0.000013605693",
+    "proton_terms_cat_units": {
+      "T1_descended": "0.96039549118815049651215986149723955840572223004978",
+      "T2_single_Li2q": "1.6183053302953433973652419756639181084511123596369",
+      "T3_pair_Li2q": "0.19831347943187460850945245079488370220301054497464",
+      "T4_Frobenius": "1.6362871034827517326799193655339867440321053551337",
+      "T5_chirality_BW_A_grade": "4.2555566663353856920207709358429786509171184735535",
+      "T6_Habiro_A_nucleon": "1.921135705204251",
+      "T7_sigma_shell": "0.0",
+      "m_hecke_sum": "10.589993775937756927087544589333006764009068963349"
+    },
+    "predictions_MeV": {
+      "m_p_pred": "5.4114757000107285448810084660465616944291795953315",
+      "m_p_CODATA": "938.27208816",
+      "m_p_residual_pct": "-99.423250913216132034610111974105453635427988409689",
+      "m_H_pred": "5.9224610443177284967019477250972084912517275079291",
+      "m_H_CODATA": "938.7830731",
+      "m_H_residual_MeV": "-932.86061205568227150329805227490279150874827249207",
+      "m_H_residual_pct": "-99.369134231962567274722845902887295200076639781083"
+    },
+    "gap_inventory": [
+      {
+        "name": "T7_A1_not_implemented",
+        "kind": "missing_term",
+        "estimated_max_magnitude_MeV": "≲ 10 (by |α_5·S_crystal| scaling from A=2)",
+        "doc": "term7_alpha5_crystal_derivation covers A∈{2,3,4} only; A=1 atoms not added"
+      },
+      {
+        "name": "T8_plus_higher_loop",
+        "kind": "missing_term",
+        "doc": "tower truncation at T6 pre-2026-05; T7+T8 design pending"
+      },
+      {
+        "name": "V_hat_i_convention_mismatch",
+        "kind": "structural",
+        "doc": "additive_wedderburn_volumes was tuned to Faddeev Φ_q (now retired); Li_2^q may need re-derived V̂_i"
+      },
+      {
+        "name": "Faddeev_pole_artifact_pre_revision",
+        "kind": "documented_now_resolved",
+        "doc": "previous 1.50% closure was T2≈1M cat-units from Φ_q near-pole at |V̂|=0.989 > q^{-1}=0.901; Li_2^q gives finite T2≈1.6"
+      }
+    ],
+    "upstream_witness_hashes": [
+      {
+        "path": "proton-mass-full-tower-50dps.witness.json",
+        "sha256": "6173a45dd08499ee38eec24c1401a3853fe8edaee76f4f1c37f7bb462beb8598",
+        "size_bytes": 6682,
+        "commitSha": "cea10508bce11a9849218dce57c040aceff332ee",
+        "scriptCommitSha": "eb63239a8c63e391f2427c1c0002d2e6aaf9c959",
+        "computedAt": "2026-05-17T00:28:43.556139+00:00"
+      },
+      {
+        "path": "q-pinning-50-digit.witness.json",
+        "sha256": "1b3888e92f59381ee8f08868664422b509c5ebcb7d3ee8b3f784429be3f3e877",
+        "size_bytes": 3817,
+        "commitSha": null,
+        "scriptCommitSha": null,
+        "computedAt": "2026-04-27T20:27:23.154181+00:00"
+      }
+    ]
+  }
+}

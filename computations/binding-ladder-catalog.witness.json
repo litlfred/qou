@@ -1,0 +1,271 @@
+{
+  "computedAt": "2026-04-28T01:35:00.922785+00:00",
+  "computation": "binding-ladder-catalog",
+  "description": "29b: Per-isotope binding catalog with ladder corrections. For each light isotope, leading order via mass_table_ppb / cross-fork best knot identification, then ladder correction α·m_e·|(q;q)_r|.  Tests universality of α across isotopes at fixed rank.",
+  "auditOnly": "docs/audits/categorical-vs-fitted-q-decay-ba.md",
+  "isotopes": [
+    {
+      "iso": "D",
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "B_AME_MeV": 2.22456612,
+      "leading_formula": "1·m_e·Vol(6_2)",
+      "leading_MeV": 2.2488207937687203,
+      "leading_err_pct": 1.0903103104312548,
+      "residual_MeV": -0.024254673768720522,
+      "fits": [
+        {
+          "r": 2,
+          "alpha": -1.859863371747553,
+          "B_pred_MeV": 2.22456612,
+          "err_ppb": -3.129131711952432e-10
+        },
+        {
+          "r": 3,
+          "alpha": -5.060138313339242,
+          "B_pred_MeV": 2.22456612,
+          "err_ppb": -6.985286622281375e-10
+        },
+        {
+          "r": 4,
+          "alpha": -9.769487170739698,
+          "B_pred_MeV": 2.22456612,
+          "err_ppb": 5.075947005928128e-10
+        },
+        {
+          "r": 5,
+          "alpha": -14.264197096129106,
+          "B_pred_MeV": 2.22456612,
+          "err_ppb": -9.374352419323443e-11
+        },
+        {
+          "r": 6,
+          "alpha": -16.39189533426364,
+          "B_pred_MeV": 2.22456612,
+          "err_ppb": 6.620880357011884e-10
+        },
+        {
+          "r": 7,
+          "alpha": -15.235803723872715,
+          "B_pred_MeV": 2.22456612,
+          "err_ppb": 3.106214326173845e-10
+        },
+        {
+          "r": 8,
+          "alpha": -11.682265541333736,
+          "B_pred_MeV": 2.22456612,
+          "err_ppb": 5.333755264189583e-10
+        }
+      ],
+      "best_fit_at_rank_4": {
+        "r": 4,
+        "alpha": -9.769487170739698,
+        "B_pred_MeV": 2.22456612,
+        "err_ppb": 5.075947005928128e-10
+      }
+    },
+    {
+      "iso": "T",
+      "Z": 1,
+      "N": 2,
+      "A": 3,
+      "B_AME_MeV": 8.481798,
+      "leading_formula": "2·m_e·Vol(8_11)",
+      "leading_MeV": 8.468599682990007,
+      "leading_err_pct": -0.15560753757626547,
+      "residual_MeV": 0.013198317009992931,
+      "fits": [
+        {
+          "r": 2,
+          "alpha": 1.0120551036747025,
+          "B_pred_MeV": 8.481798,
+          "err_ppb": 3.4961995020788047e-11
+        },
+        {
+          "r": 3,
+          "alpha": 2.7535026943957654,
+          "B_pred_MeV": 8.481798,
+          "err_ppb": -6.234430590580371e-11
+        },
+        {
+          "r": 4,
+          "alpha": 5.31612133537607,
+          "B_pred_MeV": 8.481798,
+          "err_ppb": -2.9732238941872006e-11
+        },
+        {
+          "r": 5,
+          "alpha": 7.761942995519572,
+          "B_pred_MeV": 8.481798,
+          "err_ppb": 4.8129075824525174e-12
+        },
+        {
+          "r": 6,
+          "alpha": 8.919741946611563,
+          "B_pred_MeV": 8.481798,
+          "err_ppb": 1.766089695336639e-11
+        },
+        {
+          "r": 7,
+          "alpha": 8.290648201132685,
+          "B_pred_MeV": 8.481798,
+          "err_ppb": -2.060714523442928e-11
+        },
+        {
+          "r": 8,
+          "alpha": 6.356970432984427,
+          "B_pred_MeV": 8.481798,
+          "err_ppb": -9.34718126202646e-11
+        }
+      ],
+      "best_fit_at_rank_4": {
+        "r": 4,
+        "alpha": 5.31612133537607,
+        "B_pred_MeV": 8.481798,
+        "err_ppb": -2.9732238941872006e-11
+      }
+    },
+    {
+      "iso": "³He",
+      "Z": 2,
+      "N": 1,
+      "A": 3,
+      "B_AME_MeV": 7.718058,
+      "leading_formula": "2·m_e·Vol(L6a4)",
+      "leading_MeV": 7.4889193093528075,
+      "leading_err_pct": -2.9688645854590896,
+      "residual_MeV": 0.2291386906471921,
+      "fits": [
+        {
+          "r": 2,
+          "alpha": 17.57049638550497,
+          "B_pred_MeV": 7.718058,
+          "err_ppb": -2.8550424019226246e-09
+        },
+        {
+          "r": 3,
+          "alpha": 47.80412545096908,
+          "B_pred_MeV": 7.718058,
+          "err_ppb": -1.4065785512533702e-09
+        },
+        {
+          "r": 4,
+          "alpha": 92.29427367045244,
+          "B_pred_MeV": 7.718058,
+          "err_ppb": 2.0622317860303517e-09
+        },
+        {
+          "r": 5,
+          "alpha": 134.75668553232086,
+          "B_pred_MeV": 7.718058,
+          "err_ppb": -1.42218907183218e-09
+        },
+        {
+          "r": 6,
+          "alpha": 154.85747076766907,
+          "B_pred_MeV": 7.718058,
+          "err_ppb": -1.8746923037413046e-09
+        },
+        {
+          "r": 7,
+          "alpha": 143.9356451270039,
+          "B_pred_MeV": 7.718058,
+          "err_ppb": -1.9800383852164966e-09
+        },
+        {
+          "r": 8,
+          "alpha": 110.36466849478605,
+          "B_pred_MeV": 7.718058,
+          "err_ppb": -7.864315403094352e-10
+        }
+      ],
+      "best_fit_at_rank_4": {
+        "r": 4,
+        "alpha": 92.29427367045244,
+        "B_pred_MeV": 7.718058,
+        "err_ppb": 2.0622317860303517e-09
+      }
+    },
+    {
+      "iso": "⁴He",
+      "Z": 2,
+      "N": 2,
+      "A": 4,
+      "B_AME_MeV": 28.29566,
+      "leading_formula": "2·m_e·4·Vol(L6a4)",
+      "leading_MeV": 29.95567723741123,
+      "leading_err_pct": 5.8666849877727945,
+      "residual_MeV": -1.6600172374112316,
+      "fits": [
+        {
+          "r": 2,
+          "alpha": -127.2911475029737,
+          "B_pred_MeV": 28.29566,
+          "err_ppb": 1.3303732544679185e-09
+        },
+        {
+          "r": 3,
+          "alpha": -346.32157512919815,
+          "B_pred_MeV": 28.29566,
+          "err_ppb": 1.5658449498604308e-09
+        },
+        {
+          "r": 4,
+          "alpha": -668.6347241252251,
+          "B_pred_MeV": 28.29566,
+          "err_ppb": 1.5285757457030536e-09
+        },
+        {
+          "r": 5,
+          "alpha": -976.2577424538433,
+          "B_pred_MeV": 28.29566,
+          "err_ppb": -1.5373662153202145e-09
+        },
+        {
+          "r": 6,
+          "alpha": -1121.8798103897898,
+          "B_pred_MeV": 28.29566,
+          "err_ppb": -4.667484422167271e-09
+        },
+        {
+          "r": 7,
+          "alpha": -1042.755596245528,
+          "B_pred_MeV": 28.29566,
+          "err_ppb": 2.739384251054244e-09
+        },
+        {
+          "r": 8,
+          "alpha": -799.5474338491694,
+          "B_pred_MeV": 28.29566,
+          "err_ppb": -1.4613758852117214e-09
+        }
+      ],
+      "best_fit_at_rank_4": {
+        "r": 4,
+        "alpha": -668.6347241252251,
+        "B_pred_MeV": 28.29566,
+        "err_ppb": 1.5285757457030536e-09
+      }
+    },
+    {
+      "iso": "⁶Li",
+      "Z": 3,
+      "N": 3,
+      "A": 6,
+      "B_AME_MeV": 31.99405,
+      "no_leading_rule": true
+    },
+    {
+      "iso": "⁷Li",
+      "Z": 3,
+      "N": 4,
+      "A": 7,
+      "B_AME_MeV": 39.24452,
+      "no_leading_rule": true
+    }
+  ],
+  "engine": "python",
+  "scriptFile": "binding_ladder_catalog.py",
+  "commitSha": "610a6aa2bde5fabec35796ead6bbb0adb76f6533"
+}

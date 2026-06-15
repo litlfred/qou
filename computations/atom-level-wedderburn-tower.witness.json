@@ -1,0 +1,32 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-29T14:34:46.358569+00:00",
+  "commitSha": "4f207588745f901d68703c022c9e38a1d134bb5f",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 2,
+  "computation": "atom-level-wedderburn-tower",
+  "scriptFile": "atom_level_wedderburn_tower.py",
+  "scriptHash": "fc8bb759bc67",
+  "scriptCommitSha": "be9b8366b63ef8ef23284ac52ff61602966a989f",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
+  "description": "Atom-level Wedderburn decomposition (λ ⊢ 3A) with GB filtration level breakdown.  Per user directive: replaces per-generator H_3 projection with full H_{3A} channel sum.  Tests Σ_λ w_λ · Φ_q(|χ^λ(𝒜)|/dim) as atom-level brane tower candidate.",
+  "reference_blocks": [
+    "prop:schur-weyl-mass-decomposition",
+    "thm:frobenius-codim-universal",
+    "thm:frobenius-antipode-unifies-chirality-and-tower",
+    "prop:e-infinity-page-identifications"
+  ],
+  "timestamp": "2026-05-29T14:34:46.259000+00:00",
+  "parameters": {
+    "q_0": 1.1099785827513808,
+    "level_heuristic": "len(λ) - 1 (diagram height - 1)"
+  },
+  "results": {}
+}

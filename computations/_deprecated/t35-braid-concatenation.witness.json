@@ -1,0 +1,67 @@
+{
+  "computation": "t35-braid-concatenation",
+  "computedAt": "2026-03-28T13:34:36.009000+00:00",
+  "description": "T_{3,5} beta decay via correct braid concatenation + Gr\u00f6bner reduction. T_{3,5} appended to END of parent braid, then reduced. Energy of Hecke steps gives transition physics (Gr\u00f6bner-Shirshov energy theorem).",
+  "parameters": {
+    "q": 1.1099785955541805,
+    "s": 0.10438806980915827,
+    "E_cross": 0.10453016099493972,
+    "mu_0_MeV": 1.6295137375860267
+  },
+  "free_neutron": {
+    "neutron": {
+      "n_terms": 4,
+      "hecke_steps": 2,
+      "hecke_energy": 0.35098201987380073,
+      "trace": 0.656266474206132
+    },
+    "proton": {
+      "n_terms": 4,
+      "hecke_steps": 2,
+      "hecke_energy": 0.27390471413779377,
+      "trace": 0.6009811110130129
+    },
+    "neutron_t35": {
+      "n_terms": 6,
+      "hecke_steps": 129,
+      "yb_steps": 56,
+      "fc_steps": 0,
+      "hecke_energy": 3.955555058167994,
+      "trace": 1.9337094561932116
+    },
+    "delta_E_t35": 3.604573038294193,
+    "delta_E_decay": 3.6816503440302
+  },
+  "tritium": {
+    "parent": {
+      "n_terms": 256,
+      "hecke_steps": 1071914,
+      "hecke_energy": 3528.7787922010493,
+      "trace": 17.225739788988225
+    },
+    "daughter": {
+      "n_terms": 256,
+      "hecke_steps": 651236,
+      "hecke_energy": 1312.615990390412,
+      "trace": 9.966809033679755
+    },
+    "parent_t35": {
+      "n_terms": 768,
+      "hecke_steps": 1133657,
+      "yb_steps": 23789,
+      "fc_steps": 82987,
+      "hecke_energy": 5876.121273813554,
+      "trace": 20.45714360215278
+    },
+    "energy_analysis": {
+      "delta_E_parent_daughter": 2216.1628018106376,
+      "delta_E_t35_cost": 2347.3424816125043,
+      "delta_E_total_decay": 4563.505283423142,
+      "delta_E_parent_daughter_MeV": 3611.267730277573,
+      "delta_E_t35_cost_MeV": 3825.0268206068513,
+      "delta_E_total_MeV": 7436.294550884424
+    }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
+}

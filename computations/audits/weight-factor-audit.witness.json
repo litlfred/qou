@@ -1,0 +1,328 @@
+{
+  "engine": "python+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-19T06:37:12.520633+00:00",
+  "commitSha": "610a6aa2bde5fabec35796ead6bbb0adb76f6533",
+  "assertions": [
+    {
+      "name": "all_weight_checks_pass",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "source": "weight_factor_audit"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 23,
+  "computation": "weight-factor-audit",
+  "scriptFile": "weight_factor_audit.py",
+  "scriptHash": "a2ee845bde28",
+  "scriptCommitSha": "unknown",
+  "description": "Cross-consistency audit over partition-indexed weight families used in the QOU mass-prediction pipeline. Implements C1-C8 from docs/audits/2026-05-19-weight-factor-audit.md. Trigger: co-Casimir extension err-vs-n scaling (441 → 2.7 ppm as n=3 → n=9) suggests systematic weight error that averages out at high n — this audit catches single-weight bugs by structural identities (sum to 1, q-limit, Frobenius theorem).",
+  "parameters": {
+    "q_0": "1.10997859555418057528159407960950937799328227995870",
+    "n_max": 12,
+    "n_checks_total": 34,
+    "n_checks_passed": 34,
+    "n_checks_failed": 0
+  },
+  "data": {
+    "checks": [
+      {
+        "check": "C1",
+        "name": "classical Plancherel sums to 1",
+        "n": 2,
+        "computed": 1.0,
+        "expected": 1.0,
+        "tolerance": 1e-12,
+        "passed": true
+      },
+      {
+        "check": "C1",
+        "name": "classical Plancherel sums to 1",
+        "n": 3,
+        "computed": 1.0,
+        "expected": 1.0,
+        "tolerance": 1e-12,
+        "passed": true
+      },
+      {
+        "check": "C1",
+        "name": "classical Plancherel sums to 1",
+        "n": 4,
+        "computed": 1.0,
+        "expected": 1.0,
+        "tolerance": 1e-12,
+        "passed": true
+      },
+      {
+        "check": "C1",
+        "name": "classical Plancherel sums to 1",
+        "n": 5,
+        "computed": 1.0,
+        "expected": 1.0,
+        "tolerance": 1e-12,
+        "passed": true
+      },
+      {
+        "check": "C1",
+        "name": "classical Plancherel sums to 1",
+        "n": 6,
+        "computed": 1.0,
+        "expected": 1.0,
+        "tolerance": 1e-12,
+        "passed": true
+      },
+      {
+        "check": "C1",
+        "name": "classical Plancherel sums to 1",
+        "n": 7,
+        "computed": 1.0,
+        "expected": 1.0,
+        "tolerance": 1e-12,
+        "passed": true
+      },
+      {
+        "check": "C1",
+        "name": "classical Plancherel sums to 1",
+        "n": 8,
+        "computed": 1.0,
+        "expected": 1.0,
+        "tolerance": 1e-12,
+        "passed": true
+      },
+      {
+        "check": "C1",
+        "name": "classical Plancherel sums to 1",
+        "n": 9,
+        "computed": 1.0,
+        "expected": 1.0,
+        "tolerance": 1e-12,
+        "passed": true
+      },
+      {
+        "check": "C1",
+        "name": "classical Plancherel sums to 1",
+        "n": 10,
+        "computed": 1.0,
+        "expected": 1.0,
+        "tolerance": 1e-12,
+        "passed": true
+      },
+      {
+        "check": "C1",
+        "name": "classical Plancherel sums to 1",
+        "n": 11,
+        "computed": 1.0,
+        "expected": 1.0,
+        "tolerance": 1e-12,
+        "passed": true
+      },
+      {
+        "check": "C1",
+        "name": "classical Plancherel sums to 1",
+        "n": 12,
+        "computed": 1.0,
+        "expected": 1.0,
+        "tolerance": 1e-12,
+        "passed": true
+      },
+      {
+        "check": "C4",
+        "name": "tilde-Wedderburn sum (NOT a probability measure at q != 1)",
+        "n": 2,
+        "computed": 0.994581090017183,
+        "expected_at_n12": 1.51,
+        "tolerance_at_n12": 0.05,
+        "passed_at_n12": true
+      },
+      {
+        "check": "C4",
+        "name": "tilde-Wedderburn sum (NOT a probability measure at q != 1)",
+        "n": 3,
+        "computed": 0.9874402270278662,
+        "expected_at_n12": 1.51,
+        "tolerance_at_n12": 0.05,
+        "passed_at_n12": true
+      },
+      {
+        "check": "C4",
+        "name": "tilde-Wedderburn sum (NOT a probability measure at q != 1)",
+        "n": 4,
+        "computed": 0.9821653199599172,
+        "expected_at_n12": 1.51,
+        "tolerance_at_n12": 0.05,
+        "passed_at_n12": true
+      },
+      {
+        "check": "C4",
+        "name": "tilde-Wedderburn sum (NOT a probability measure at q != 1)",
+        "n": 5,
+        "computed": 0.982224144432643,
+        "expected_at_n12": 1.51,
+        "tolerance_at_n12": 0.05,
+        "passed_at_n12": true
+      },
+      {
+        "check": "C4",
+        "name": "tilde-Wedderburn sum (NOT a probability measure at q != 1)",
+        "n": 6,
+        "computed": 0.9910795216969944,
+        "expected_at_n12": 1.51,
+        "tolerance_at_n12": 0.05,
+        "passed_at_n12": true
+      },
+      {
+        "check": "C4",
+        "name": "tilde-Wedderburn sum (NOT a probability measure at q != 1)",
+        "n": 7,
+        "computed": 1.012426090591847,
+        "expected_at_n12": 1.51,
+        "tolerance_at_n12": 0.05,
+        "passed_at_n12": true
+      },
+      {
+        "check": "C4",
+        "name": "tilde-Wedderburn sum (NOT a probability measure at q != 1)",
+        "n": 8,
+        "computed": 1.0505601587147384,
+        "expected_at_n12": 1.51,
+        "tolerance_at_n12": 0.05,
+        "passed_at_n12": true
+      },
+      {
+        "check": "C4",
+        "name": "tilde-Wedderburn sum (NOT a probability measure at q != 1)",
+        "n": 9,
+        "computed": 1.110923159929848,
+        "expected_at_n12": 1.51,
+        "tolerance_at_n12": 0.05,
+        "passed_at_n12": true
+      },
+      {
+        "check": "C4",
+        "name": "tilde-Wedderburn sum (NOT a probability measure at q != 1)",
+        "n": 10,
+        "computed": 1.2009059208563087,
+        "expected_at_n12": 1.51,
+        "tolerance_at_n12": 0.05,
+        "passed_at_n12": true
+      },
+      {
+        "check": "C4",
+        "name": "tilde-Wedderburn sum (NOT a probability measure at q != 1)",
+        "n": 11,
+        "computed": 1.3310774118202766,
+        "expected_at_n12": 1.51,
+        "tolerance_at_n12": 0.05,
+        "passed_at_n12": true
+      },
+      {
+        "check": "C4",
+        "name": "tilde-Wedderburn sum (NOT a probability measure at q != 1)",
+        "n": 12,
+        "computed": 1.517133346680396,
+        "expected_at_n12": 1.51,
+        "tolerance_at_n12": 0.05,
+        "passed_at_n12": true
+      },
+      {
+        "check": "C5",
+        "name": "Σ_λ 1/dim_q(λ) = τ(C_dim_q^{H_n}) (Frobenius co-Casimir)",
+        "n": 2,
+        "computed": 2.0,
+        "well_defined_positive": true,
+        "passed": true
+      },
+      {
+        "check": "C5",
+        "name": "Σ_λ 1/dim_q(λ) = τ(C_dim_q^{H_n}) (Frobenius co-Casimir)",
+        "n": 3,
+        "computed": 2.4972905450085916,
+        "well_defined_positive": true,
+        "passed": true
+      },
+      {
+        "check": "C5",
+        "name": "Σ_λ 1/dim_q(λ) = τ(C_dim_q^{H_n}) (Frobenius co-Casimir)",
+        "n": 4,
+        "computed": 3.1464007588040497,
+        "well_defined_positive": true,
+        "passed": true
+      },
+      {
+        "check": "C5",
+        "name": "Σ_λ 1/dim_q(λ) = τ(C_dim_q^{H_n}) (Frobenius co-Casimir)",
+        "n": 5,
+        "computed": 3.0305252772483846,
+        "well_defined_positive": true,
+        "passed": true
+      },
+      {
+        "check": "C5",
+        "name": "Σ_λ 1/dim_q(λ) = τ(C_dim_q^{H_n}) (Frobenius co-Casimir)",
+        "n": 6,
+        "computed": 3.202133983803197,
+        "well_defined_positive": true,
+        "passed": true
+      },
+      {
+        "check": "C5",
+        "name": "Σ_λ 1/dim_q(λ) = τ(C_dim_q^{H_n}) (Frobenius co-Casimir)",
+        "n": 7,
+        "computed": 2.8644515413913934,
+        "well_defined_positive": true,
+        "passed": true
+      },
+      {
+        "check": "C5",
+        "name": "Σ_λ 1/dim_q(λ) = τ(C_dim_q^{H_n}) (Frobenius co-Casimir)",
+        "n": 8,
+        "computed": 2.7594270102471112,
+        "well_defined_positive": true,
+        "passed": true
+      },
+      {
+        "check": "C5",
+        "name": "Σ_λ 1/dim_q(λ) = τ(C_dim_q^{H_n}) (Frobenius co-Casimir)",
+        "n": 9,
+        "computed": 2.5438838242158344,
+        "well_defined_positive": true,
+        "passed": true
+      },
+      {
+        "check": "C5",
+        "name": "Σ_λ 1/dim_q(λ) = τ(C_dim_q^{H_n}) (Frobenius co-Casimir)",
+        "n": 10,
+        "computed": 2.4273321188418735,
+        "well_defined_positive": true,
+        "passed": true
+      },
+      {
+        "check": "C5",
+        "name": "Σ_λ 1/dim_q(λ) = τ(C_dim_q^{H_n}) (Frobenius co-Casimir)",
+        "n": 11,
+        "computed": 2.313757421000682,
+        "well_defined_positive": true,
+        "passed": true
+      },
+      {
+        "check": "C5",
+        "name": "Σ_λ 1/dim_q(λ) = τ(C_dim_q^{H_n}) (Frobenius co-Casimir)",
+        "n": 12,
+        "computed": 2.251934030169883,
+        "well_defined_positive": true,
+        "passed": true
+      },
+      {
+        "check": "C8",
+        "name": "Markov parameter z = 1/(q^0.5 + q^-0.5) at q_0",
+        "computed_z": "0.499320334033598250020669084676721506369316362634457743523129",
+        "classical_limit_distance": "0.000679665966401749979330915323278493630683637365542256476871061",
+        "expected": "0.499320334033598250020669084676721506369316362634457743523129",
+        "well_defined_positive": true,
+        "passed": true
+      }
+    ]
+  }
+}

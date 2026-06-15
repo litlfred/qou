@@ -1,0 +1,67 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-06-06T20:05:53.215354+00:00",
+  "commitSha": "1b61cf1085627c27361e418f45b691e584c4e698",
+  "assertions": [
+    {
+      "name": "bring_quintic_root_residual_below_threshold",
+      "computed": 0.0,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-40,
+      "source": "The real root of y^5 + 5y + 1 = 0 (computed via mpmath polyroots) satisfies the equation to 40-digit precision."
+    },
+    {
+      "name": "bring_discriminant_at_alpha_1",
+      "computed": 803125.0,
+      "expected": 803125.0,
+      "passed": true,
+      "tolerance": 0.0,
+      "source": "Δ_Bring(α=1) = 256·5^5 + 3125·1^4 = 800000 + 3125 = 803125. Non-zero ⇒ non-degenerate quintic ⇒ Hermite resolvent applies."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 21,
+  "computation": "gap-a4-T14-q-hermite-resolvent-probe",
+  "scriptFile": "gap_a4_T14_q_hermite_resolvent_probe.py",
+  "scriptHash": "71f7ee8e21b9",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "GAP-A-4 T14 — q-Hermite icosahedral resolvent candidate.  Inherits T13's cusp divergence obstruction (Δ_modular built from E_4, E_6 which diverge at q = 1).  REFUTED at expansion-point level.  8th candidate cross-algebra functor refuted in the T4-T14 arc.",
+  "auditOnly": "docs/audits/2026-06-06-gap-a4-T4-T8-functor-search-retrospective.md",
+  "parameters": {
+    "q_0_50dps": "1.1099785827513808075916690956107688798744991218736"
+  },
+  "data": {
+    "discipline": "EXPLORATORY",
+    "production_wired": false,
+    "q_0_recorded": 1.1099785827513808,
+    "classical_hermite_root": {
+      "alpha": "1.0",
+      "real_root": "-0.1999361021712199955503456191533878606321460294521029548354323756239773",
+      "residual_at_root": "0.0",
+      "bring_discriminant": "803125.0",
+      "classical_setup_verified": true
+    },
+    "q_hermite_obstruction": {
+      "inheritance_chain": "q-Hermite resolvent built from Klein invariants (T11) + modular discriminant Δ(q) = (E_4^3 − E_6^2)/1728 (T13). Δ inherits T13's cusp divergence ⇒ q-Hermite inherits it too.",
+      "expansion_point_obstruction": true,
+      "verdict": "q-Hermite resolvent candidate REFUTED at expansion-point level. 8th candidate cross-algebra functor refuted (after T5×3, T7, T8, T10, T13). The h⁴ obstruction stays structurally OPEN.",
+      "structural_conclusion": "All q-modular / icosahedral-algebraic routes that pull back through q = 1 as the h = 0 base point share the same cusp obstruction.  The Borromean h⁴ = −3/4 is a polynomial coefficient, NOT a transcendental q-series coefficient, so the q-modular-form direction is structurally mismatched."
+    },
+    "synthesis_verdict": "T14 refutes the q-Hermite icosahedral resolvent candidate cross-algebra functor at the expansion-point level.  The Hermite resolvent is built from the Klein invariants (T11) AND the modular discriminant Δ(q) = (E_4^3 − E_6^2)/1728 — which T13 showed diverges at q = 1 (the natural h = 0 base point).  Therefore the q-Hermite resolvent inherits T13's cusp obstruction.  Classical sanity verified: at α = 1, the real root of y^5 + 5y + 1 is computed to 40-digit precision and the Bring discriminant Δ = 803125 ≠ 0 confirms non-degeneracy.  8th candidate cross-algebra functor refuted (after T5×3, T7, T8, T10, T13).  STRUCTURAL CONCLUSION: all q-modular / icosahedral-algebraic routes that pull back through q = 1 as the h = 0 base point share the same cusp obstruction.  The Borromean h⁴ = −3/4 is a POLYNOMIAL coefficient — NOT a transcendental q-series coefficient — so the entire q-modular-form direction is STRUCTURALLY MISMATCHED to the h⁴ obstruction.  The remaining open directions point AWAY from q-modular forms entirely (e.g. Bring quintic discriminant locus as a non-modular algebraic variety; or a genuinely new mechanism linking the polynomial reference to a different categorical object)."
+  }
+}

@@ -1,0 +1,117 @@
+[
+  {
+    "decl_name": "QCltNonCommutative",
+    "file_suffix": "QOU/Observations/QCltNonCommutative.lean",
+    "reason": "uses ordering (0 < secondCumulant, qGaussianMeasure_nonneg); LinearOrderedCommRing is not a class in the pinned Mathlib v4.24.0, so LinearOrderedField is the weakest available order+ring class (relaxation attempted 2026-06-09, build failed: invalid binder annotation)"
+  },
+  {
+    "decl_name": "HasReconciliation",
+    "file_suffix": "QOU/Observations/TraceLocalityMeetsGsNonLocality.lean",
+    "reason": "uses ordering; LinearOrderedCommRing is not a class in the pinned Mathlib v4.24.0 (same failed relaxation class as QCltNonCommutative); markovParameter z = 1/(q^{1/2}+q^{-1/2}) also genuinely divides in instances"
+  },
+  {
+    "decl_name": "MarkovTraceAxioms",
+    "file_suffix": "QOU/BraidKnot/MarkovAxiomsPrimitive.lean",
+    "reason": "transitively field: class field tau_stab_factor_eq_z references markovZax u = u/(u²+1), a non-unit (kind-3) division (relaxation attempted 2026-06-09, build failed: failed to synthesize)"
+  },
+  {
+    "decl_name": "markov_iterated_stab_gen",
+    "file_suffix": "QOU/BraidKnot/MarkovAxiomsPrimitive.lean",
+    "reason": "transitively field via [MarkovTraceAxioms u] hypothesis (markovZax non-unit division)"
+  },
+  {
+    "decl_name": "markov_iterated_stab",
+    "file_suffix": "QOU/BraidKnot/MarkovAxiomsPrimitive.lean",
+    "reason": "transitively field via [MarkovTraceAxioms u] hypothesis (markovZax non-unit division)"
+  },
+  {
+    "decl_name": "disjoint_product_factorisation_gen",
+    "file_suffix": "QOU/BraidKnot/MarkovAxiomsPrimitive.lean",
+    "reason": "transitively field via [MarkovTraceAxioms u] hypothesis (markovZax non-unit division)"
+  },
+  {
+    "decl_name": "disjoint_product_factorisation",
+    "file_suffix": "QOU/BraidKnot/MarkovAxiomsPrimitive.lean",
+    "reason": "transitively field via [MarkovTraceAxioms u] hypothesis (markovZax non-unit division)"
+  },
+  {
+    "decl_name": "MarkovTraceAxioms_implies_disjoint_stabilisation",
+    "file_suffix": "QOU/BraidKnot/MarkovAxiomsPrimitive.lean",
+    "reason": "transitively field via [MarkovTraceAxioms u] hypothesis (markovZax non-unit division)"
+  },
+  {
+    "decl_name": "HoefsmitSeminormalBasis",
+    "file_suffix": "QOU/IwahoriHecke/Hoefsmit.lean",
+    "reason": "module pre-existing broken (IwahoriHecke chain: Quotient.lean has deep Mathlib-API bitrot — Ideal.Quotient.mk unknown, type mismatches; chain never built). Relaxation unverifiable until the chain is repaired (own PR). Import-placement fixes landed 2026-06-09; deeper repair deferred."
+  },
+  {
+    "decl_name": "instHoefsmit_default",
+    "file_suffix": "QOU/IwahoriHecke/Hoefsmit.lean",
+    "reason": "module pre-existing broken (see HoefsmitSeminormalBasis entry)"
+  },
+  {
+    "decl_name": "hoefsmit_ew_cell_content_existence",
+    "file_suffix": "QOU/IwahoriHecke/Hoefsmit.lean",
+    "reason": "module pre-existing broken (see HoefsmitSeminormalBasis entry)"
+  },
+  {
+    "decl_name": "branchCoefficientType",
+    "file_suffix": "QOU/IwahoriHecke/Hoefsmit.lean",
+    "reason": "module pre-existing broken (see HoefsmitSeminormalBasis entry); α_T = (q^c − q^{−c})/([2]_q·c) is also kind-3 non-unit division"
+  },
+  {
+    "decl_name": "qBracket_at_one",
+    "file_suffix": "QOU/IwahoriHecke/Hoefsmit.lean",
+    "reason": "module pre-existing broken (see HoefsmitSeminormalBasis entry)"
+  },
+  {
+    "decl_name": "alphaCoefficient_zero_at_zero_diff",
+    "file_suffix": "QOU/IwahoriHecke/Hoefsmit.lean",
+    "reason": "module pre-existing broken (see HoefsmitSeminormalBasis entry)"
+  },
+  {
+    "decl_name": "hoefsmit_sigma1_gen",
+    "file_suffix": "QOU/BraidKnot/HoefsmitV21CosSymmetrization.lean",
+    "reason": "module pre-existing broken (proof bitrot at :87/:132/:148/:164 — unfold/simp failures present at committed baseline). Relaxation unverifiable until repaired."
+  },
+  {
+    "decl_name": "H3.mul",
+    "file_suffix": "QOU/Mathlib/HeckeAlgebra.lean",
+    "reason": "module pre-existing broken (100+ errors at committed baseline: missing ℝ import, Nat.factorial absent, tactic bitrot). Relaxation unverifiable until repaired (own PR)."
+  },
+  {
+    "decl_name": "H3.one_mul",
+    "file_suffix": "QOU/Mathlib/HeckeAlgebra.lean",
+    "reason": "module pre-existing broken (see H3.mul entry)"
+  },
+  {
+    "decl_name": "HeckeRingHom",
+    "file_suffix": "QOU/BraidKnot/IwahoriHeckeAPI.lean",
+    "reason": "module pre-existing broken (failed-to-synthesize at :184+/:268+ and Nat.dist missing at committed baseline; Nat.Dist import added 2026-06-09, deeper failures remain). Relaxation unverifiable until repaired."
+  },
+  {
+    "decl_name": "wedderburn_decomposition_generic",
+    "file_suffix": "QOU/BraidKnot/IwahoriHeckeAPI.lean",
+    "reason": "module pre-existing broken (see HeckeRingHom entry); Wedderburn genuinely field-flavoured besides"
+  },
+  {
+    "decl_name": "failureLocus",
+    "file_suffix": "QOU/BraidKnot/IwahoriHeckeAPI.lean",
+    "reason": "module pre-existing broken (see HeckeRingHom entry)"
+  },
+  {
+    "decl_name": "not_in_failure_locus_iff_generic",
+    "file_suffix": "QOU/BraidKnot/IwahoriHeckeAPI.lean",
+    "reason": "module pre-existing broken (see HeckeRingHom entry)"
+  },
+  {
+    "decl_name": "?",
+    "file_suffix": "QOU/Machinery/DerivedCharacterCatalogue.lean",
+    "reason": "anonymous IsRMatrixDerived instances whose stored witnesses divide (chis = ±1/q^k Laurent forms, genuine [Field]); the class itself IS relaxed to CommRing and the division-free named chis to CommRing — only the dividing-witness instances keep Field (build-verified green 2026-06-09)"
+  },
+  {
+    "decl_name": "HasPartitionFunction",
+    "file_suffix": "QOU/MathlibExt/QPlancherel.lean",
+    "reason": "the class itself IS relaxed to CommRing (build-verified); the remaining [Field R] is the section `variable` binder feeding `measure` (dq²/Z — genuine division), which the block-scanner attributes to the class finding"
+  }
+]

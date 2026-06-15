@@ -1,0 +1,80 @@
+{
+  "computedAt": "2026-05-02T20:41:46.380342+00:00",
+  "computation": "sigma-all-symbolic-decay",
+  "description": "Symbolic factored form of Σ_all(A) (the unfiltered β-decay character sum) for A = 1..6, plus the closed-form two-step decay ratio in ℤ[q^{±1}]. Establishes the cancellation structure: Σ_all is NOT identically zero, but factors with (q-1)^A (q+1)^A as the dominant suppression factor.",
+  "auditOnly": "docs/audits/2026-05-02-nv-frob-filter-conjectures.md",
+  "two_step_ratio_symbolic": "3*(q - 1)**2*(q + 1)**2*(q**2 + 1)**2/(8*q**4)",
+  "two_step_ratio_at_q0": 0.06627566491277298,
+  "per_A_decay_rate": 0.25744060463099633,
+  "log10_per_A_decay": -0.5893229532497188,
+  "rows": [
+    {
+      "A": 1,
+      "par": "n",
+      "dau": "p",
+      "elapsed_s": 0.020572423934936523,
+      "factored_str": "(q - 1)*(q + 1)*(3*q**4 + 4*q**2 + 3)/(4*q**3)",
+      "value_at_q0": 0.5295037320168715,
+      "abs_log10": -0.2761309745770404
+    },
+    {
+      "A": 2,
+      "par": "nn",
+      "dau": "pn",
+      "elapsed_s": 0.07973122596740723,
+      "factored_str": "-3*(q - 1)**2*(q + 1)**2*(q**2 + 1)**2*(3*q**4 + 4*q**2 + 3)/(16*q**6)",
+      "value_at_q0": -0.3357233125749398,
+      "abs_log10": -0.4740185003631745
+    },
+    {
+      "A": 3,
+      "par": "pnn",
+      "dau": "ppn",
+      "elapsed_s": 0.21649479866027832,
+      "factored_str": "3*(q - 1)**3*(q + 1)**3*(q**2 + 1)**2*(3*q**4 + 4*q**2 + 3)/(32*q**7)",
+      "value_at_q0": 0.035093211913212914,
+      "abs_log10": -1.454776881076478
+    },
+    {
+      "A": 4,
+      "par": "pnnn",
+      "dau": "ppnn",
+      "elapsed_s": 0.6902525424957275,
+      "factored_str": "-9*(q - 1)**4*(q + 1)**4*(q**2 + 1)**4*(3*q**4 + 4*q**2 + 3)/(128*q**10)",
+      "value_at_q0": -0.022250285767622852,
+      "abs_log10": -1.6526644068626122
+    },
+    {
+      "A": 5,
+      "par": "ppnnn",
+      "dau": "pppnn",
+      "elapsed_s": 2.5449020862579346,
+      "factored_str": "9*(q - 1)**5*(q + 1)**5*(q**2 + 1)**4*(3*q**4 + 4*q**2 + 3)/(256*q**11)",
+      "value_at_q0": 0.002325825953473032,
+      "abs_log10": -2.6334227875759155
+    },
+    {
+      "A": 6,
+      "par": "ppnnnn",
+      "dau": "pppnnn",
+      "elapsed_s": 11.937029361724854,
+      "factored_str": "-27*(q - 1)**6*(q + 1)**6*(q**2 + 1)**6*(3*q**4 + 4*q**2 + 3)/(1024*q**14)",
+      "value_at_q0": -0.001474652483748414,
+      "abs_log10": -2.83131031336205
+    }
+  ],
+  "precision_schedule": {
+    "f64": 27,
+    "25_dps": 42,
+    "50_dps": 84,
+    "100_dps": 169,
+    "200_dps": 338
+  },
+  "comments": [
+    "Σ_all has clean closed form in ℚ(q); evaluation at q_0 has NO catastrophic cancellation since the (q-1)^A factor is already factored out symbolically.",
+    "For β-decay across known nuclei (A ≤ 240), use 130 dps if computing Σ_all from raw character data, or use the symbolic formula at any precision."
+  ],
+  "engine": "python",
+  "scriptFile": "sigma_all_symbolic_decay.py",
+  "commitSha": "610a6aa2bde5fabec35796ead6bbb0adb76f6533"
+}

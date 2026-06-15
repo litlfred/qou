@@ -1,0 +1,79 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-04T14:19:33.699698+00:00",
+  "commitSha": "26618ba0b67d1aa2e3ad1b3a685b11f9f67cdb98",
+  "assertions": [
+    {
+      "name": "no_purged_form_reentered_production",
+      "computed": 0,
+      "expected": 0,
+      "passed": true,
+      "tolerance": 0
+    },
+    {
+      "name": "no_unparseable_production_scripts",
+      "computed": 0,
+      "expected": 0,
+      "passed": true,
+      "tolerance": 0
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 8,
+  "computation": "noncanonical-reentry-audit",
+  "scriptFile": "noncanonical_reentry_audit.py",
+  "scriptHash": "2eecb36440a5",
+  "scriptCommitSha": "336ca10ed229230147002efb87b1d30491ff3e88",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.5",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "clarabel": "0.11.1"
+  },
+  "description": "NEGATIVE-finding guard. AST-scans production compute (folio-assistant/computations/, excluding _deprecated/, probes/, data/) and fails if any script imports, defines, or uses a PURGED non-canonical form. Registry: lambda_scale_yekutieli_extended (Yekutieli −G·h² correction, falsified PR #985/#1027), lambda_scale_family_a (lambda-scale alias, removed PR #1089), the lambda_scale_* symbol prefix (owner directive 'no lambda-scale ANYWHERE in production'), and the purged module lambda_yekutieli_extended_borromean. Uses AST so historical mentions in comments/docstrings are not false-positives. Detection covers direct imports, module-as-symbol imports (from pkg import <banned-module>), def, bare-name use, and attribute access (mod.<banned>); strict mode also fails on unparseable production scripts so there is no blind spot. Keeps the documented purges durable against silent sibling-branch re-entry.",
+  "contentBlock": "prop:three-calibration-inputs",
+  "data": {
+    "production_scripts_scanned": 916,
+    "banned_symbols": [
+      {
+        "symbol": "lambda_scale_yekutieli_extended",
+        "reason": "Yekutieli per-cell curvature correction λ_Y = λ_A − G·h². Falsified by the S₄↓S₃ half-symmetric bijection (κ = +0.5, not −G) — a substrate-q₀ numerical coincidence, not a categorical theorem. The Yekutieli non-abelian Stokes functor itself stays canonical; only this empirical correction is purged.",
+        "purged_by": "PR #985 (NEGATIVE) / PR #1027 (production revert)",
+        "canonical_replacement": "linking_weight_family_a (Family A, PROVED Wedderburn identity)"
+      },
+      {
+        "symbol": "lambda_scale_family_a",
+        "reason": "Legacy lambda-scale alias. Owner directive 2026-05-24: 'no lambda-scale ANYWHERE in production'. λ_scale was absorbed into the per-knot VolDensity(K) evaluation.",
+        "purged_by": "PR #1080 (absorb into VolDensity) / PR #1089 (alias removal)",
+        "canonical_replacement": "linking_weight_family_a / vol_density_borromean"
+      }
+    ],
+    "banned_modules": [
+      {
+        "module": "lambda_yekutieli_extended_borromean",
+        "reason": "Purged Yekutieli-extended driver script (quarantined in _deprecated/yekutieli-purged/). Importing it re-introduces the falsified −G·h² production refinement.",
+        "purged_by": "commit 71d674da1 (2026-05-24)"
+      }
+    ],
+    "banned_symbol_prefix": "lambda_scale_",
+    "excluded_dirs": [
+      "__pycache__",
+      "_deprecated",
+      "data",
+      "probes",
+      "script-qa"
+    ],
+    "violation_count": 0,
+    "violations": [],
+    "parse_error_count": 0
+  }
+}

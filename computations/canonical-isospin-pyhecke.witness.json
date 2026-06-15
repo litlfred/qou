@@ -1,0 +1,74 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-29T14:42:19.767545+00:00",
+  "commitSha": "4f207588745f901d68703c022c9e38a1d134bb5f",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 839,
+  "computation": "canonical-isospin-pyhecke",
+  "scriptFile": "canonical_isospin_pyhecke.py",
+  "scriptHash": "75190182404c",
+  "scriptCommitSha": "cf3b3f758b936fc3a9bdd2cf38089bbb628ac50e",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
+  "description": "Canonical Markov trace via pyhecke.trace.markov_trace_symbolic_eval for atomic braids p, n, D, T, ³He, ⁴He.  Routes through the optimized backend (CRT/native).  Replaces the symbolic-q SymbolicHeckeDivision path which timed out on ³He at >25 min wallclock.",
+  "reference_blocks": [
+    "prop:categorical-mass-markov",
+    "thm:jones-markov-trace",
+    "rem:commutative-crossing-energy"
+  ],
+  "timestamp": "2026-05-29T14:42:19.667576+00:00",
+  "parameters": {
+    "q_0": 1.1099785827513808,
+    "precision": 30
+  },
+  "results": {
+    "p   (Z=1, N=0)": {
+      "Z": 1,
+      "N": 0,
+      "include_inter": false,
+      "tr_M_q0": 0.41539578633456653,
+      "walltime_sec": 0.7565639019012451
+    },
+    "n   (Z=0, N=1)": {
+      "Z": 0,
+      "N": 1,
+      "include_inter": false,
+      "tr_M_q0": 0.41539578633456653,
+      "walltime_sec": 0.00018286705017089844
+    },
+    "D   (Z=1, N=1)": {
+      "Z": 1,
+      "N": 1,
+      "include_inter": true,
+      "tr_M_q0": 0.07330859093712391,
+      "walltime_sec": 0.0003654956817626953
+    },
+    "T   (Z=1, N=2)": {
+      "Z": 1,
+      "N": 2,
+      "include_inter": true,
+      "tr_M_q0": 0.015497627445745841,
+      "walltime_sec": 0.0009024143218994141
+    },
+    "³He (Z=2, N=1)": {
+      "Z": 2,
+      "N": 1,
+      "include_inter": true,
+      "tr_M_q0": 0.015497627445745841,
+      "walltime_sec": 0.0007796287536621094
+    },
+    "⁴He (Z=2, N=2)": {
+      "Z": 2,
+      "N": 2,
+      "include_inter": true,
+      "tr_M_q0": 0.0026362413989130203,
+      "walltime_sec": 0.0021550655364990234
+    }
+  }
+}

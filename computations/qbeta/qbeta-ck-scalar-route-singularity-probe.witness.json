@@ -1,0 +1,51 @@
+{
+  "engine": "python+sympy",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-04T14:54:27.851515+00:00",
+  "commitSha": "cae0a30ccfc701f493bee948012573a1bef28d5f",
+  "assertions": [
+    {
+      "name": "u_is_quadratic_in_q_minus_1_scalar_route_singular",
+      "computed": 2,
+      "expected": 2,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Decisive structural finding: u = b(q)·ℏ_q² has its lowest nonzero order at t² (t = q-1), since ℏ_q = (q-1)/q ~ t. Hence u has no linear term, the u(t)→t(u) reversion is singular, and the c_k cannot be scalar-q Taylor coefficients. This rules out the scalar exact-Δ(net) shortcut and confirms the c_k are irreducibly operator-valued (T_β matrix ladder), requiring the Hoefsmit-rep construction."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 262,
+  "computation": "qbeta-ck-scalar-route-singularity-probe",
+  "scriptFile": "qbeta_ck_scalar_route_singularity_probe.py",
+  "scriptHash": "26d490553479",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 10,
+    "truncation_bound": "1e-50"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Executes recipe Stage 3 and finds the decisive obstruction: u = b·ℏ_q² ~ (q-1)² has no linear term, so the scalar-q reversion u(t)→t(u) is singular for ANY Q_β model. The c_k are therefore NOT scalar-q Taylor coefficients — they are irreducibly operator-valued (T_β matrix ladder). Rules out the scalar shortcut; validates the Hoefsmit-matrix route.",
+  "contentBlock": "prop:q-beta-c-k-recursion-from-habiro-q-difference",
+  "data": {
+    "u_in_t_expansion": {
+      "t^0": "0",
+      "t^1": "0",
+      "t^2": "sqrt(3)/2",
+      "t^3": "-sqrt(3)",
+      "t^4": "19*sqrt(3)/12"
+    },
+    "u_lowest_order_in_t": 2,
+    "finding": {
+      "scalar_reversion_singular": true,
+      "reason": "u = b·ℏ_q² ~ (q-1)²; no linear term ⟹ t(u) needs u^(1/2)",
+      "consequence": "c_k are NOT scalar-q Taylor coefficients; they are operator-valued T_β ladder coefficients (N=k level → b^k·ℏ^{2k} = u^k via substrate scaling)",
+      "keystone": "Hoefsmit-matrix construction is irreducible; scalar exact-Δ(net) shortcut ruled out"
+    }
+  }
+}

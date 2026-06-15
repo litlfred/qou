@@ -1,0 +1,581 @@
+{
+  "engine": "deuteron_real_sdp",
+  "engineVersion": "0.1.0",
+  "computation": "Deuteron real per-nucleus SDP (Phase A cost + Phase C dual solve) \u2014 replaces the abstract empty-constraint SDP. operator-selection-lp / lp-dual.",
+  "scriptFile": "deuteron_real_sdp.py",
+  "lean_uniqueness_ref": "qou:QOU.BraidKnot.deuteron_uniqueness_closed",
+  "data": {
+    "n_strands": 6,
+    "nucleus": "deuteron (\u00b2H, Z=1, N=1, A=2)",
+    "partitions": [
+      "(6,)",
+      "(5, 1)",
+      "(4, 2)",
+      "(4, 1, 1)",
+      "(3, 3)",
+      "(3, 2, 1)",
+      "(3, 1, 1, 1)",
+      "(2, 2, 2)",
+      "(2, 2, 1, 1)",
+      "(2, 1, 1, 1, 1)",
+      "(1, 1, 1, 1, 1, 1)"
+    ],
+    "irrep_dims": [
+      1,
+      5,
+      9,
+      10,
+      5,
+      16,
+      10,
+      5,
+      9,
+      5,
+      1
+    ],
+    "cost_t_lambda": [
+      0.09231856042608326,
+      0.18961112440391817,
+      0.0674259024909456,
+      -0.004764670071606156,
+      0.060000574814738604,
+      -0.014437996946183564,
+      0.00033579303278878317,
+      -0.002704269630851237,
+      0.00028038523619067305,
+      0.0002126007302405848,
+      8.419588525696766e-06
+    ],
+    "frobenius_gram_diag": [
+      0.05918772109163174,
+      0.29480341772966556,
+      0.3625594911113074,
+      0.1013346251896993,
+      0.07060437132227686,
+      0.11709525690135474,
+      -0.006853090066213158,
+      0.003865933139840229,
+      -0.0030784664472558935,
+      0.0004931780191769845,
+      -1.2437991483744833e-05
+    ],
+    "frobenius_gram_indefinite": true,
+    "forbidden_blocks_negative_norm": [
+      "(3, 1, 1, 1)",
+      "(2, 2, 1, 1)",
+      "(1, 1, 1, 1, 1, 1)"
+    ],
+    "n_target": 0.38828642407479047,
+    "tr_M_beta_D": 0.38828642407479047,
+    "tr_M_rel_err_vs_witness": 1.4296444013856497e-16,
+    "lp": {
+      "x_star": [
+        -0.0,
+        -0.0,
+        -0.0,
+        -0.0,
+        -0.0,
+        3000000.388286424,
+        -1000000.0,
+        -0.0,
+        -1000000.0,
+        -0.0,
+        -1000000.0
+      ],
+      "y0_star": -0.014437996946183564,
+      "y_star": [
+        1.8036943373270138,
+        0.6921531742118898,
+        0.2257943908355624,
+        0.09545924560799289,
+        1.0543054256675402,
+        0.0,
+        0.0,
+        3.035160436276261,
+        0.0,
+        29.706509833656146,
+        0.0
+      ],
+      "active_set": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        7,
+        9
+      ],
+      "primal_obj": -43938.59430213405,
+      "dual_obj": -0.005606078205036361,
+      "duality_gap": 43938.58869605584,
+      "feasible": true
+    },
+    "sdp": {
+      "X_star": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "Z_star": [],
+      "primal_obj": null,
+      "dual_obj": null,
+      "duality_gap": null,
+      "eigenvalues": [],
+      "feasible": false
+    },
+    "y0_star": -0.014437996946183564,
+    "y_star": [
+      1.8036943373270138,
+      0.6921531742118898,
+      0.2257943908355624,
+      0.09545924560799289,
+      1.0543054256675402,
+      0.0,
+      0.0,
+      3.035160436276261,
+      0.0,
+      29.706509833656146,
+      0.0
+    ],
+    "active_set": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      7,
+      9
+    ],
+    "active_blocks": [
+      "(6,)",
+      "(5, 1)",
+      "(4, 2)",
+      "(4, 1, 1)",
+      "(3, 3)",
+      "(2, 2, 2)",
+      "(2, 1, 1, 1, 1)"
+    ],
+    "primal_obj": -43938.59430213405,
+    "dual_obj": -0.005606078205036361,
+    "duality_gap": 43938.58869605584,
+    "strong_duality_holds": false,
+    "real_sdp_well_posed_without_constraints": false,
+    "diagnostic": "Real SDP UNBOUNDED at q_0 \u2014 Frobenius Gram is indefinite (negative-norm blocks forbidden). Phase B color-flavor constraints required for a well-posed bounded program.",
+    "symmetry_conjugate_pairing": [
+      {
+        "block": "(6,)",
+        "conjugate": "(1, 1, 1, 1, 1, 1)",
+        "self_conjugate": false,
+        "trM": 0.05918772109163174,
+        "trM_conjugate": -1.2437991483744833e-05,
+        "sign_flip_under_conjugation": true
+      },
+      {
+        "block": "(5, 1)",
+        "conjugate": "(2, 1, 1, 1, 1)",
+        "self_conjugate": false,
+        "trM": 0.29480341772966556,
+        "trM_conjugate": 0.0004931780191769845,
+        "sign_flip_under_conjugation": false
+      },
+      {
+        "block": "(4, 2)",
+        "conjugate": "(2, 2, 1, 1)",
+        "self_conjugate": false,
+        "trM": 0.3625594911113074,
+        "trM_conjugate": -0.0030784664472558935,
+        "sign_flip_under_conjugation": true
+      },
+      {
+        "block": "(4, 1, 1)",
+        "conjugate": "(3, 1, 1, 1)",
+        "self_conjugate": false,
+        "trM": 0.1013346251896993,
+        "trM_conjugate": -0.006853090066213158,
+        "sign_flip_under_conjugation": true
+      },
+      {
+        "block": "(3, 3)",
+        "conjugate": "(2, 2, 2)",
+        "self_conjugate": false,
+        "trM": 0.07060437132227686,
+        "trM_conjugate": 0.003865933139840229,
+        "sign_flip_under_conjugation": false
+      },
+      {
+        "block": "(3, 2, 1)",
+        "conjugate": "(3, 2, 1)",
+        "self_conjugate": true,
+        "trM": 0.11709525690135474,
+        "trM_conjugate": 0.11709525690135474,
+        "sign_flip_under_conjugation": false
+      },
+      {
+        "block": "(3, 1, 1, 1)",
+        "conjugate": "(4, 1, 1)",
+        "self_conjugate": false,
+        "trM": -0.006853090066213158,
+        "trM_conjugate": 0.1013346251896993,
+        "sign_flip_under_conjugation": true
+      },
+      {
+        "block": "(2, 2, 2)",
+        "conjugate": "(3, 3)",
+        "self_conjugate": false,
+        "trM": 0.003865933139840229,
+        "trM_conjugate": 0.07060437132227686,
+        "sign_flip_under_conjugation": false
+      },
+      {
+        "block": "(2, 2, 1, 1)",
+        "conjugate": "(4, 2)",
+        "self_conjugate": false,
+        "trM": -0.0030784664472558935,
+        "trM_conjugate": 0.3625594911113074,
+        "sign_flip_under_conjugation": true
+      },
+      {
+        "block": "(2, 1, 1, 1, 1)",
+        "conjugate": "(5, 1)",
+        "self_conjugate": false,
+        "trM": 0.0004931780191769845,
+        "trM_conjugate": 0.29480341772966556,
+        "sign_flip_under_conjugation": false
+      },
+      {
+        "block": "(1, 1, 1, 1, 1, 1)",
+        "conjugate": "(6,)",
+        "self_conjugate": false,
+        "trM": -1.2437991483744833e-05,
+        "trM_conjugate": 0.05918772109163174,
+        "sign_flip_under_conjugation": true
+      }
+    ],
+    "self_conjugate_blocks": [
+      "(3, 2, 1)"
+    ],
+    "sign_flip_conjugate_pairs": [
+      [
+        "(1, 1, 1, 1, 1, 1)",
+        "(6,)"
+      ],
+      [
+        "(2, 2, 1, 1)",
+        "(4, 2)"
+      ],
+      [
+        "(3, 1, 1, 1)",
+        "(4, 1, 1)"
+      ]
+    ],
+    "symmetry_note": "Every negative-norm forbidden block is the conjugate \u03bb\u21a6\u03bb' of a dominant positive block with tr_M(P_\u03bb) sign-flipped \u2014 the \u00a77b bar-involution (q\u21a6q\u207b\u00b9) / Type-B-folding signature. (3,2,1) is the self-conjugate fixed point.",
+    "phase_B_interim": {
+      "positive_norm_blocks": [
+        "(6,)",
+        "(5, 1)",
+        "(4, 2)",
+        "(4, 1, 1)",
+        "(3, 3)",
+        "(3, 2, 1)",
+        "(2, 2, 2)",
+        "(2, 1, 1, 1, 1)"
+      ],
+      "n_target": 0.3876618262172853,
+      "bounded": true,
+      "strong_duality_holds": true,
+      "active_blocks": [
+        "(6,)",
+        "(5, 1)",
+        "(4, 2)",
+        "(4, 1, 1)",
+        "(3, 3)",
+        "(2, 2, 2)",
+        "(2, 1, 1, 1, 1)"
+      ],
+      "lp": {
+        "x_star": [
+          -0.0,
+          -0.0,
+          -0.0,
+          -0.0,
+          -0.0,
+          0.3876618262172853,
+          -0.0,
+          -0.0
+        ],
+        "y0_star": -0.014437996946183564,
+        "y_star": [
+          1.8036943373270138,
+          0.6921531742118898,
+          0.2257943908355624,
+          0.09545924560799289,
+          1.0543054256675402,
+          0.0,
+          3.035160436276261,
+          29.706509833656146
+        ],
+        "active_set": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          6,
+          7
+        ],
+        "primal_obj": -0.005597060263077108,
+        "dual_obj": -0.005597060263077108,
+        "duality_gap": 0.0,
+        "feasible": true
+      }
+    },
+    "B_D_AME_MeV": 2.22456607,
+    "nine_pair_multiplicities": {
+      "uu": 2,
+      "ud": 4,
+      "du": 1,
+      "dd": 2
+    },
+    "phase_B_full_methods": {
+      "1_bar_involution_fold": {
+        "description": "x_\u03bb = x_\u03bb' (bar-involution/Type-B fold, \u00a77b) \u2014 symmetry regulariser",
+        "ansatz_flag": false,
+        "result": {
+          "status": 0,
+          "feasible": true,
+          "primal_obj": -0.005606078205036361,
+          "x_star": [
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            0.38828642407479047,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0
+          ],
+          "duality_gap": 0.0,
+          "eq_duals": [
+            -0.014437996946183564,
+            -0.01444641653470926,
+            0.20404912135010173,
+            -0.014718382182374236,
+            -0.014773789978972347,
+            0.07443857176092217
+          ],
+          "ineq_duals": [
+            -2.047772268834868,
+            -0.0,
+            -0.2663901621316326,
+            -0.2412513670207448,
+            -0.0,
+            -0.0,
+            -0.0,
+            -22.290167977353022,
+            -0.0,
+            -443.4498508094338,
+            -0.0
+          ]
+        }
+      },
+      "2_character_projection_colorflavor": {
+        "description": "per-pair \u03c7^\u03bb projection rows + AME-apportioned RHS",
+        "ansatz_flag": true,
+        "ansatz_warning": "UN-VETTED: pair\u2192block map invented here; flag to canonical-watcher / CAL-4 discipline before any production use.",
+        "result": {
+          "status": 2,
+          "feasible": false,
+          "primal_obj": null,
+          "x_star": null,
+          "duality_gap": null
+        }
+      },
+      "3_conservation_laws": {
+        "description": "baryon (net) + charge (sign-weighted) conservation rows",
+        "ansatz_flag": false,
+        "result": {
+          "status": 0,
+          "feasible": true,
+          "primal_obj": -22531.533531451536,
+          "x_star": [
+            -0.0,
+            -0.0,
+            -0.0,
+            1000000.0,
+            -0.0,
+            1000000.0,
+            -1000000.0,
+            999999.694143212,
+            -1000000.0,
+            0.6941432120511308,
+            -1000000.0
+          ],
+          "duality_gap": 0.0,
+          "eq_duals": [
+            -0.0012458344503053261,
+            0.001458435180545911
+          ],
+          "ineq_duals": [
+            -1.5561666845264817,
+            -0.6424570146854806,
+            -0.18538558059722735,
+            -0.0,
+            -0.8468027257348288,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0
+          ]
+        }
+      },
+      "4_ame_binding_equality": {
+        "description": "t\u00b7x = B_D_AME (physical binding-energy target)",
+        "ansatz_flag": false,
+        "production_default": false,
+        "non_default_reason": "imposes the AME binding as an equality (consumes the experimental answer); a validation anchor, not a substrate derivation.",
+        "result": {
+          "status": 0,
+          "feasible": true,
+          "primal_obj": 2.2245660699963015,
+          "x_star": [
+            237140.48622573985,
+            -0.0,
+            -0.0,
+            1000000.0,
+            -0.0,
+            1000000.0,
+            -1000000.0,
+            762859.9020606843,
+            -1000000.0,
+            -0.0,
+            -1000000.0
+          ],
+          "duality_gap": 0.0,
+          "eq_duals": [
+            -0.0,
+            1.0
+          ],
+          "ineq_duals": [
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0
+          ]
+        }
+      },
+      "5_lr_branching_canonical": {
+        "description": "Littlewood-Richardson H_6\u2283H_3\u00d7H_3 branching rows: \u03a3_\u03bb[\u03a3_\u03bd c^\u03bb_{\u03bc\u03bd} \u03c7^\u03bd(n)] x_\u03bb = \u03c7^\u03bc(p)\u00b7tr_M_neutron, tr_M_neutron = \u03a3_\u03bd y_\u03bd \u03c7^\u03bd(n) (canonical, no fit).",
+        "ansatz_flag": false,
+        "canonical": true,
+        "production_default": true,
+        "tr_M_neutron": 0.9232333051313026,
+        "result": {
+          "status": 0,
+          "feasible": true,
+          "primal_obj": -2780.481512442597,
+          "x_star": [
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            0.5285244948718549,
+            -0.4143821044411781,
+            1000000.0,
+            -1000000.0,
+            999999.9047801977,
+            -999999.630636164
+          ],
+          "duality_gap": 0.0,
+          "eq_duals": [
+            -0.0005972694796068979,
+            -0.004357794526575131,
+            -0.001466170153593484,
+            -0.0006650353560872991
+          ],
+          "ineq_duals": [
+            -1.6524667470777024,
+            -0.6925144564619895,
+            -0.2329664543794093,
+            -0.04106238814877611,
+            -0.9628518251959525,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0
+          ]
+        }
+      },
+      "6_scalar_9pair_ratio_fitted": {
+        "description": "single 9-pair weighted-ratio row (FITTED; bar-flip on mixed channel)",
+        "ansatz_flag": true,
+        "production_default": false,
+        "discipline_label": "near-match / exploratory \u2014 NOT substrate-canonical (CAL-4)",
+        "result": {
+          "status": 0,
+          "feasible": true,
+          "primal_obj": -20236.25701587163,
+          "x_star": [
+            -0.0,
+            -0.0,
+            -0.0,
+            519121.2295513709,
+            -0.0,
+            1000000.0,
+            -1000000.0,
+            1000000.0,
+            -1000000.0,
+            -0.0,
+            -519120.8412649468
+          ],
+          "duality_gap": 0.0,
+          "eq_duals": [
+            -0.005220354784547893,
+            -0.005200440115425444
+          ],
+          "ineq_duals": [
+            -1.7363008355162801,
+            -0.6704506648044396,
+            -0.2030363574103727,
+            -0.0,
+            -0.991406391052772,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.8262794345768469,
+            -0.0
+          ]
+        }
+      }
+    },
+    "production_default_encoding": "5_lr_branching_canonical",
+    "production_default_note": "The canonical (substrate-derived, no-fit) LR-branching encoding is the production default. Encoding 4 (AME equality) consumes the experimental binding and is a validation anchor only; encoding 6 is fitted; encoding 2 is an un-vetted ansatz. The canonical encoding does NOT yet reproduce the deuteron binding \u2014 that closure is the open \u0394_\u03bb gate (CLAUDE.md); production reports the honest canonical result, not a fit.",
+    "phase_A_cost": "done",
+    "phase_B_constraints": "interim (bounded subspace) + 4 full encodings compared (method 2 un-vetted ansatz); full color-flavor 9-pair + AME2020 RHS",
+    "phase_C_dual_solve": "diagnostic (unbounded on full space; bounded on positive subspace)",
+    "phase_D_lean_wiring": "pending (deuteron_emptySDP -> deuteron_realSDP)"
+  }
+}

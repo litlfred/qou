@@ -1,0 +1,75 @@
+{
+  "engine": "python+pyhecke-native",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-25T01:48:10.282191+00:00",
+  "commitSha": "8cbb97fc3ad6b87ada704ce8ec06556aa9d09bc7",
+  "assertions": [
+    {
+      "name": "all_partitions_returned_non_null",
+      "computed": 3,
+      "expected": 3,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "partitions",
+      "source": "pyhecke_native.chi_lambda_braid invocations"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 9,
+  "computation": "chi-lambda-multi-block-first-measurement",
+  "scriptFile": "chi_lambda_multi_block_first_measurement.py",
+  "scriptHash": "37a17c3d707a",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 50,
+    "output_dps": 40,
+    "guard_digits": 10,
+    "truncation_bound": "1e-40"
+  },
+  "description": "FIRST concrete multi-block χ_λ measurement using just-wired pyhecke_native.chi_lambda_braid (tier-3 Phase B Python wrapper). Evaluates χ_λ(β_𝓑₃) for all 3 partitions of H_3(q) at q_0 on the standard positive Borromean braid (σ_1 σ_2⁻¹)³. Establishes the multi-block distribution structure that production's single-block ν_SDP projection discards. Foundation for §10.1-§10.2 of the vol-density-derivation-bug-squash audit (PR #1228).",
+  "parameters": {
+    "q_0_f64": 1.1099785955541805,
+    "h_f64": 0.20906032198987945,
+    "h_sq_f64": 0.04370621823051208,
+    "borromean_word": "(σ_1 σ_2^-1)^3 = [(1,1),(2,-1),(1,1),(2,-1),(1,1),(2,-1)]",
+    "partitions_of_3_count": 3
+  },
+  "data": {
+    "per_partition_chi_lambda": [
+      {
+        "partition": [
+          3
+        ],
+        "dim_S_lambda": 1.0,
+        "chi_lambda_borromean": 1.0000000000000027,
+        "chi_over_h": 4.783308427356255,
+        "chi_over_h_sq": 22.88003951121731,
+        "magnitude_class": "h-scale (≈ +4.78 h)"
+      },
+      {
+        "partition": [
+          2,
+          1
+        ],
+        "dim_S_lambda": 2.0,
+        "chi_lambda_borromean": 1.994185810381214,
+        "chi_over_h": 9.538805792510699,
+        "chi_over_h_sq": 45.62705013423096,
+        "magnitude_class": "h-scale (≈ +9.54 h)"
+      },
+      {
+        "partition": [
+          1,
+          1,
+          1
+        ],
+        "dim_S_lambda": 1.0,
+        "chi_lambda_borromean": 1.0,
+        "chi_over_h": 4.783308427356243,
+        "chi_over_h_sq": 22.880039511217248,
+        "magnitude_class": "h-scale (≈ +4.78 h)"
+      }
+    ],
+    "sum_abs_chi": 3.9941858103812167
+  }
+}

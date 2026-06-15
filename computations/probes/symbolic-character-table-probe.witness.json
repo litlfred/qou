@@ -1,0 +1,105 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-19T17:23:20.017699+00:00",
+  "commitSha": "e43d064e4c7f17b63ac1216094cefc2b0e594649",
+  "assertions": [
+    {
+      "name": "self_conjugate_chi_over_h_are_integers",
+      "computed": 7.483741188258148e-50,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-40,
+      "unit": "max over {(2,1), (3,1,1), (3,2,1), (4,1,1,1)} of |χ_λ(σ_1)/h − c_λ|, c_λ ∈ {1, 3, 8, 10}",
+      "source": "Hoefsmit-seminormal single-generator character; claim that c_λ = χ_λ(σ)/h ∈ ℤ for self-conjugate λ."
+    },
+    {
+      "name": "pair_character_311_adjacent_equals_h_squared",
+      "computed": 1.6704779438076223e-51,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-40,
+      "unit": "|χ_(3,1,1)(σ_1 σ_2) − h²|",
+      "source": "prop:symbolic-character-table pair-character row."
+    },
+    {
+      "name": "pair_character_311_nonadjacent_equals_h_squared_minus_2",
+      "computed": 0.0,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-40,
+      "unit": "|χ_(3,1,1)(σ_1 σ_3) − (h² − 2)|",
+      "source": "prop:symbolic-character-table pair-character row."
+    },
+    {
+      "name": "coxeter_triple_311_equals_minus_h",
+      "computed": 5.345529420184391e-51,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-40,
+      "unit": "|χ_(3,1,1)(σ_1 σ_2 σ_3) − (−h)|",
+      "source": "prop:symbolic-character-table Coxeter-triple row."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 23,
+  "computation": "symbolic-character-table-probe",
+  "scriptFile": "symbolic_character_table_probe.py",
+  "scriptHash": "6e119485822b",
+  "scriptCommitSha": "unknown",
+  "description": "I1 probe for prop:symbolic-character-table.  Verifies the single-generator character ratios χ_λ(σ)/h for self-conjugate λ ∈ {(2,1), (3,1,1), (3,2,1), (4,1,1,1)} are integers {1, 3, 8, 10} respectively, and the three pair-character identities for λ = (3,1,1) in H_5: χ(σ_i σ_{i+1}) = h², χ(σ_i σ_j) = h² − 2 for |i−j| ≥ 2, χ(σ_i σ_{i+1} σ_{i+2}) = −h.  LHS computed via canonical Hoefsmit-seminormal (mpmath, 50 dps); RHS from the proposition's symbolic closed forms with h = q − q⁻¹.",
+  "contentBlock": "prop:symbolic-character-table",
+  "parameters": {
+    "q_0_50dps": "1.10997859555418057528159407960950937799328227995870",
+    "h_at_q0": 0.20906032198987945,
+    "max_self_conj_residue": 7.483741188258148e-50
+  },
+  "data": {
+    "self_conjugate_single_generator_table": [
+      {
+        "shape": "(2, 1)",
+        "dim": 2,
+        "chi_lambda_sigma_1": 0.20906032198987945,
+        "chi_over_h": 1.0,
+        "expected_integer": 1,
+        "residue": 1.3363823550460978e-50
+      },
+      {
+        "shape": "(3, 1, 1)",
+        "dim": 6,
+        "chi_lambda_sigma_1": 0.6271809659696383,
+        "chi_over_h": 3.0,
+        "expected_integer": 3,
+        "residue": 2.6727647100921956e-50
+      },
+      {
+        "shape": "(3, 2, 1)",
+        "dim": 16,
+        "chi_lambda_sigma_1": 1.6724825759190356,
+        "chi_over_h": 8.0,
+        "expected_integer": 8,
+        "residue": 7.483741188258148e-50
+      },
+      {
+        "shape": "(4, 1, 1, 1)",
+        "dim": 20,
+        "chi_lambda_sigma_1": 2.0906032198987945,
+        "chi_over_h": 10.0,
+        "expected_integer": 10,
+        "residue": 6.41463530422127e-50
+      }
+    ],
+    "pair_character_identities_lambda_311": {
+      "lambda": "(3, 1, 1)",
+      "adjacent_pair_chi_value": 0.04370621823051208,
+      "adjacent_pair_chi_expected_h2": 0.04370621823051208,
+      "adjacent_pair_residue": 1.6704779438076223e-51,
+      "nonadjacent_pair_chi_value": -1.9562937817694879,
+      "nonadjacent_pair_chi_expected_h2_minus_2": -1.9562937817694879,
+      "nonadjacent_pair_residue": 0.0,
+      "coxeter_triple_chi_value": -0.20906032198987945,
+      "coxeter_triple_chi_expected_minus_h": -0.20906032198987945,
+      "coxeter_triple_residue": 5.345529420184391e-51
+    }
+  }
+}

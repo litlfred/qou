@@ -1,0 +1,123 @@
+{
+  "engine": "python+sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-05T18:55:33.977950+00:00",
+  "commitSha": "730c4f14a2295cf5c01c4f4eb4a28ffbf089a56f",
+  "assertions": [
+    {
+      "name": "mass_theory_formalize_first_invariants_matrix_executed",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Mass-theory §4 invariants 4×3 verdict matrix executed on three published linking_weight candidates. The probe is diagnostic only — it reports per-cell pass/fail/unclear verdicts for invariants (a) anchor-stability, (b) bar-evenness, (c) q=1 shadow, (d) direction sanity. The interpretation in §INTERPRETATION above identifies the structural gap: §4(c) q=1 shadow lacks a registry-level anchor for linking_weight, unlike Q_β's c_2 / c_3 anchors. Closing this gap is owner-gated multi-session research."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 575,
+  "computation": "mass-theory-formalize-first-invariants-probe",
+  "scriptFile": "mass_theory_formalize_first_invariants_probe.py",
+  "scriptHash": "713044416c1a",
+  "scriptCommitSha": "730c4f14a2295cf5c01c4f4eb4a28ffbf089a56f",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 10,
+    "truncation_bound": "1e-50"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Extends the Q_β §4 formalize-first invariant template (PRs #1875/#1889/#1890/#1893) to mass-theory. Tests three published linking_weight candidates (Family A, via-Jones, Bring color-tube) against all four §4 invariants: anchor-stability, bar-evenness, q=1 classical-limit shadow, direction sanity. 4×3 verdict matrix; diagnostic only.",
+  "contentBlock": "prop:q-beta-bar-even-kernel-typeclass",
+  "data": {
+    "anchor_swings": {
+      "Family A": {
+        "v_proton": "2.5327796563993914920515145017580412323261604705351",
+        "v_muon": "2.5327796636705090008848446804778619621983044120952",
+        "swing_relative": "0.0000000028708053977225861480679294971361639202311343207309450110714998292",
+        "passed": true,
+        "is_placeholder": false
+      },
+      "via-Jones": {
+        "v_proton": "2.5327796563993914920515145017580412323261604705351",
+        "v_muon": "2.5327796636705090008848446804778619621983044120952",
+        "swing_relative": "0.0000000028708053977225861480679294971361639202311343207309450110714998292",
+        "passed": true,
+        "is_placeholder": true
+      },
+      "Bring color-tube": {
+        "v_proton": "2.4599984188875483841921478714992912817575499015049",
+        "v_muon": "2.4599992313570057518764212446012818497355337187893",
+        "swing_relative": "0.00000033027234941683266696509220505083496343265409401302899857203430825",
+        "passed": true,
+        "is_placeholder": false
+      }
+    },
+    "bar_even_verdicts": {
+      "Family A": {
+        "delta_simplified": "0",
+        "passed": true,
+        "is_placeholder": false
+      },
+      "via-Jones": {
+        "delta_simplified": "0",
+        "passed": true,
+        "is_placeholder": true
+      },
+      "Bring color-tube": {
+        "delta_simplified": "(-q**22 + q**20 - q**2 + 1)/(q**22 - q**20 + q**13 - 3*q**11 + q**9 - q**2 + 1)",
+        "passed": false,
+        "is_placeholder": false
+      }
+    },
+    "q_eq_one_shadows": {
+      "Family A": {
+        "limit": "5/2",
+        "rational_form": "5/2",
+        "shadow_is_clean_rational": true,
+        "matches_registered_anchor": null,
+        "is_placeholder": false
+      },
+      "via-Jones": {
+        "limit": "5/2",
+        "rational_form": "5/2",
+        "shadow_is_clean_rational": true,
+        "matches_registered_anchor": null,
+        "is_placeholder": true
+      },
+      "Bring color-tube": {
+        "limit": "1",
+        "rational_form": "1",
+        "shadow_is_clean_rational": true,
+        "matches_registered_anchor": null,
+        "is_placeholder": false
+      }
+    },
+    "direction_verdicts": {
+      "Family A": {
+        "v_proton": "2.5327796563993914920515145017580412323261604705351",
+        "ratio_max_to_target": "1.029585226178614427663217277137415135091935150624024390243902439",
+        "passed": true,
+        "is_placeholder": false
+      },
+      "via-Jones": {
+        "v_proton": "2.5327796563993914920515145017580412323261604705351",
+        "ratio_max_to_target": "1.029585226178614427663217277137415135091935150624024390243902439",
+        "passed": true,
+        "is_placeholder": true
+      },
+      "Bring color-tube": {
+        "v_proton": "2.4599984188875483841921478714992912817575499015049",
+        "ratio_max_to_target": "1.000000642729051968583306861473581914085933014683671059551986556",
+        "passed": true,
+        "is_placeholder": false
+      }
+    },
+    "conclusion": "Mass-theory linking_weight candidates pass §4(a), §4(b), §4(d) for the two bar-symmetric forms (Family A, via-Jones); Bring color-tube fails §4(b) (existing finding). §4(c) q=1 shadow is structurally UNCLEAR for all three — no registry-level anchor exists for linking_weight at q=1, unlike Q_β's c_2 → −1 (PR #1786) or c_3 → J_Hopf(1) = −2 (registry §3). This is the open gap on the mass-side §4 chain."
+  }
+}

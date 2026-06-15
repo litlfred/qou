@@ -1,0 +1,296 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-19T17:57:51.553884+00:00",
+  "commitSha": "c4b9049cf0e3a4a15df32c6f58347683e7fff6b2",
+  "assertions": [
+    {
+      "name": "hecke_quadratic_all_irreps_n_2_to_6",
+      "computed": 5.345529420184391e-51,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-40,
+      "unit": "max over partitions λ ⊢ n (2 ≤ n ≤ 6) and generators σ_i of |σ_i² − (q−q⁻¹) σ_i − 𝟙|_∞",
+      "source": "Hoefsmit-seminormal axial-distance formula; the Hecke quadratic is the defining relation per rem:hecke-algebra-from-braiding."
+    },
+    {
+      "name": "braid_relation_all_irreps_n_3_to_6",
+      "computed": 2.6727647100921956e-51,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-40,
+      "unit": "max over partitions λ ⊢ n (3 ≤ n ≤ 6) and adjacent pairs (i, i+1) of |σ_i σ_{i+1} σ_i − σ_{i+1} σ_i σ_{i+1}|_∞",
+      "source": "Hoefsmit's construction is a faithful representation of the braid group on |SYT(λ)|-dimensional space; the braid relation is preserved by construction."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 218,
+  "computation": "hoefsmit-seminormal-form-probe",
+  "scriptFile": "hoefsmit_seminormal_form_probe.py",
+  "scriptHash": "428a4f56b219",
+  "scriptCommitSha": "unknown",
+  "description": "I1 probe for prop:hoefsmit-seminormal-form.  Verifies that for every partition λ ⊢ n with 2 ≤ n ≤ 6, the canonical Hoefsmit-seminormal matrices satisfy both (i) the Hecke quadratic σ² = (q−q⁻¹)σ + 𝟙 on every generator and (ii) the braid relation σ_i σ_{i+1} σ_i = σ_{i+1} σ_i σ_{i+1} on every adjacent pair.  Also confirms dim ρ_λ = |SYT(λ)| (Hoefsmit's seminormal dimension).  This is the foundational gate for the entire H_n probe cluster of PR #818 — a failure here would invalidate downstream character checks.",
+  "contentBlock": "prop:hoefsmit-seminormal-form",
+  "parameters": {
+    "q_0_50dps": "1.10997859555418057528159407960950937799328227995870",
+    "total_irreps_tested": 28,
+    "max_hecke_quadratic_residue": 5.345529420184391e-51,
+    "max_braid_relation_residue": 2.6727647100921956e-51
+  },
+  "data": {
+    "per_irrep_results": [
+      {
+        "n": 2,
+        "shape": "(2,)",
+        "dim_hoefsmit": 1,
+        "dim_syt_count": 1,
+        "dim_matches_syt": true,
+        "hecke_quadratic_max_residue": 5.345529420184391e-51,
+        "braid_relation_max_residue": 0.0
+      },
+      {
+        "n": 2,
+        "shape": "(1, 1)",
+        "dim_hoefsmit": 1,
+        "dim_syt_count": 1,
+        "dim_matches_syt": true,
+        "hecke_quadratic_max_residue": 0.0,
+        "braid_relation_max_residue": 0.0
+      },
+      {
+        "n": 3,
+        "shape": "(3,)",
+        "dim_hoefsmit": 1,
+        "dim_syt_count": 1,
+        "dim_matches_syt": true,
+        "hecke_quadratic_max_residue": 5.345529420184391e-51,
+        "braid_relation_max_residue": 0.0
+      },
+      {
+        "n": 3,
+        "shape": "(2, 1)",
+        "dim_hoefsmit": 2,
+        "dim_syt_count": 2,
+        "dim_matches_syt": true,
+        "hecke_quadratic_max_residue": 5.345529420184391e-51,
+        "braid_relation_max_residue": 2.0045735325691467e-51
+      },
+      {
+        "n": 3,
+        "shape": "(1, 1, 1)",
+        "dim_hoefsmit": 1,
+        "dim_syt_count": 1,
+        "dim_matches_syt": true,
+        "hecke_quadratic_max_residue": 0.0,
+        "braid_relation_max_residue": 0.0
+      },
+      {
+        "n": 4,
+        "shape": "(4,)",
+        "dim_hoefsmit": 1,
+        "dim_syt_count": 1,
+        "dim_matches_syt": true,
+        "hecke_quadratic_max_residue": 5.345529420184391e-51,
+        "braid_relation_max_residue": 0.0
+      },
+      {
+        "n": 4,
+        "shape": "(3, 1)",
+        "dim_hoefsmit": 3,
+        "dim_syt_count": 3,
+        "dim_matches_syt": true,
+        "hecke_quadratic_max_residue": 5.345529420184391e-51,
+        "braid_relation_max_residue": 2.6727647100921956e-51
+      },
+      {
+        "n": 4,
+        "shape": "(2, 2)",
+        "dim_hoefsmit": 2,
+        "dim_syt_count": 2,
+        "dim_matches_syt": true,
+        "hecke_quadratic_max_residue": 5.345529420184391e-51,
+        "braid_relation_max_residue": 2.0045735325691467e-51
+      },
+      {
+        "n": 4,
+        "shape": "(2, 1, 1)",
+        "dim_hoefsmit": 3,
+        "dim_syt_count": 3,
+        "dim_matches_syt": true,
+        "hecke_quadratic_max_residue": 5.345529420184391e-51,
+        "braid_relation_max_residue": 2.6727647100921956e-51
+      },
+      {
+        "n": 4,
+        "shape": "(1, 1, 1, 1)",
+        "dim_hoefsmit": 1,
+        "dim_syt_count": 1,
+        "dim_matches_syt": true,
+        "hecke_quadratic_max_residue": 0.0,
+        "braid_relation_max_residue": 0.0
+      },
+      {
+        "n": 5,
+        "shape": "(5,)",
+        "dim_hoefsmit": 1,
+        "dim_syt_count": 1,
+        "dim_matches_syt": true,
+        "hecke_quadratic_max_residue": 5.345529420184391e-51,
+        "braid_relation_max_residue": 0.0
+      },
+      {
+        "n": 5,
+        "shape": "(4, 1)",
+        "dim_hoefsmit": 4,
+        "dim_syt_count": 4,
+        "dim_matches_syt": true,
+        "hecke_quadratic_max_residue": 5.345529420184391e-51,
+        "braid_relation_max_residue": 2.6727647100921956e-51
+      },
+      {
+        "n": 5,
+        "shape": "(3, 2)",
+        "dim_hoefsmit": 5,
+        "dim_syt_count": 5,
+        "dim_matches_syt": true,
+        "hecke_quadratic_max_residue": 5.345529420184391e-51,
+        "braid_relation_max_residue": 2.6727647100921956e-51
+      },
+      {
+        "n": 5,
+        "shape": "(3, 1, 1)",
+        "dim_hoefsmit": 6,
+        "dim_syt_count": 6,
+        "dim_matches_syt": true,
+        "hecke_quadratic_max_residue": 5.345529420184391e-51,
+        "braid_relation_max_residue": 2.6727647100921956e-51
+      },
+      {
+        "n": 5,
+        "shape": "(2, 2, 1)",
+        "dim_hoefsmit": 5,
+        "dim_syt_count": 5,
+        "dim_matches_syt": true,
+        "hecke_quadratic_max_residue": 5.345529420184391e-51,
+        "braid_relation_max_residue": 2.6727647100921956e-51
+      },
+      {
+        "n": 5,
+        "shape": "(2, 1, 1, 1)",
+        "dim_hoefsmit": 4,
+        "dim_syt_count": 4,
+        "dim_matches_syt": true,
+        "hecke_quadratic_max_residue": 5.345529420184391e-51,
+        "braid_relation_max_residue": 2.6727647100921956e-51
+      },
+      {
+        "n": 5,
+        "shape": "(1, 1, 1, 1, 1)",
+        "dim_hoefsmit": 1,
+        "dim_syt_count": 1,
+        "dim_matches_syt": true,
+        "hecke_quadratic_max_residue": 0.0,
+        "braid_relation_max_residue": 0.0
+      },
+      {
+        "n": 6,
+        "shape": "(6,)",
+        "dim_hoefsmit": 1,
+        "dim_syt_count": 1,
+        "dim_matches_syt": true,
+        "hecke_quadratic_max_residue": 5.345529420184391e-51,
+        "braid_relation_max_residue": 0.0
+      },
+      {
+        "n": 6,
+        "shape": "(5, 1)",
+        "dim_hoefsmit": 5,
+        "dim_syt_count": 5,
+        "dim_matches_syt": true,
+        "hecke_quadratic_max_residue": 5.345529420184391e-51,
+        "braid_relation_max_residue": 2.6727647100921956e-51
+      },
+      {
+        "n": 6,
+        "shape": "(4, 2)",
+        "dim_hoefsmit": 9,
+        "dim_syt_count": 9,
+        "dim_matches_syt": true,
+        "hecke_quadratic_max_residue": 5.345529420184391e-51,
+        "braid_relation_max_residue": 2.6727647100921956e-51
+      },
+      {
+        "n": 6,
+        "shape": "(4, 1, 1)",
+        "dim_hoefsmit": 10,
+        "dim_syt_count": 10,
+        "dim_matches_syt": true,
+        "hecke_quadratic_max_residue": 5.345529420184391e-51,
+        "braid_relation_max_residue": 2.6727647100921956e-51
+      },
+      {
+        "n": 6,
+        "shape": "(3, 3)",
+        "dim_hoefsmit": 5,
+        "dim_syt_count": 5,
+        "dim_matches_syt": true,
+        "hecke_quadratic_max_residue": 5.345529420184391e-51,
+        "braid_relation_max_residue": 2.6727647100921956e-51
+      },
+      {
+        "n": 6,
+        "shape": "(3, 2, 1)",
+        "dim_hoefsmit": 16,
+        "dim_syt_count": 16,
+        "dim_matches_syt": true,
+        "hecke_quadratic_max_residue": 5.345529420184391e-51,
+        "braid_relation_max_residue": 2.6727647100921956e-51
+      },
+      {
+        "n": 6,
+        "shape": "(3, 1, 1, 1)",
+        "dim_hoefsmit": 10,
+        "dim_syt_count": 10,
+        "dim_matches_syt": true,
+        "hecke_quadratic_max_residue": 5.345529420184391e-51,
+        "braid_relation_max_residue": 2.6727647100921956e-51
+      },
+      {
+        "n": 6,
+        "shape": "(2, 2, 2)",
+        "dim_hoefsmit": 5,
+        "dim_syt_count": 5,
+        "dim_matches_syt": true,
+        "hecke_quadratic_max_residue": 5.345529420184391e-51,
+        "braid_relation_max_residue": 2.6727647100921956e-51
+      },
+      {
+        "n": 6,
+        "shape": "(2, 2, 1, 1)",
+        "dim_hoefsmit": 9,
+        "dim_syt_count": 9,
+        "dim_matches_syt": true,
+        "hecke_quadratic_max_residue": 5.345529420184391e-51,
+        "braid_relation_max_residue": 2.6727647100921956e-51
+      },
+      {
+        "n": 6,
+        "shape": "(2, 1, 1, 1, 1)",
+        "dim_hoefsmit": 5,
+        "dim_syt_count": 5,
+        "dim_matches_syt": true,
+        "hecke_quadratic_max_residue": 5.345529420184391e-51,
+        "braid_relation_max_residue": 2.6727647100921956e-51
+      },
+      {
+        "n": 6,
+        "shape": "(1, 1, 1, 1, 1, 1)",
+        "dim_hoefsmit": 1,
+        "dim_syt_count": 1,
+        "dim_matches_syt": true,
+        "hecke_quadratic_max_residue": 0.0,
+        "braid_relation_max_residue": 0.0
+      }
+    ]
+  }
+}

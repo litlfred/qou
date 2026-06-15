@@ -1,0 +1,53 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-29T05:02:48.898346+00:00",
+  "commitSha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+  "assertions": [
+    {
+      "name": "wenzl_matches_binding_canonical",
+      "computed": 3.444033215507615e-12,
+      "expected": 0,
+      "passed": true,
+      "tolerance": 1e-10,
+      "source": "Wenzl-bridge joint-word Δtr = binding_canonical Δtr to 11 digits (3e-12). Both Wenzl JM; the residual is the factorized-product vs joint-word free-trace construction detail, far below the 0.17 Plancherel gap."
+    },
+    {
+      "name": "conventions_differ",
+      "computed": 0.17118713023466037,
+      "expected": 0.171,
+      "passed": true,
+      "tolerance": 0.01,
+      "source": "Wenzl JM (0.5952) ≠ Plancherel (0.4241): per-block weight difference"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 223,
+  "computation": "trace-convention-reconciliation",
+  "scriptFile": "trace_convention_reconciliation.py",
+  "scriptHash": "c7d728685df3",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
+  "description": "Reconcile binding-trace conventions: the 29% Δtr gap between binding_canonical (0.5952) and the per-bond probe (0.4241) is a y_λ weight-scheme difference (Wenzl JM vs normalized-Plancherel), not a framework inconsistency. binding_canonical's factorized Δtr = Wenzl-bridge on the joint word EXACTLY. Wenzl JM is canonical; the deuteron +0.19% result stands.",
+  "data": {
+    "deuteron_delta_tr": {
+      "wenzl_jm_joint_word": "0.5952397103709324332155076151080135706275",
+      "binding_canonical_reported": "0.5952397103674884",
+      "wenzl_matches_canonical_residual": "3.44403e-12",
+      "normalized_plancherel": "0.4240525801362720550159344872363833894444",
+      "wenzl_over_plancherel": "1.403693169794293623578019888127445502174"
+    },
+    "resolution": {
+      "gap_cause": "y_λ weight scheme (Wenzl Jones-Markov vs q-Schur Plancherel)",
+      "canonical_convention": "Wenzl JM (mass/binding chain)",
+      "probe_error": "binding-per-bond used Plancherel weights",
+      "deuteron_result": "+0.19% (Wenzl) is correct and stands",
+      "A_ge_3_status": "genuine open problem — single-link volume fails -60% in the correct Wenzl convention"
+    }
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "engine": "python+sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-12T15:08:28.274246+00:00",
+  "commitSha": "6f008b6d575a739c6e769a6f3d3ab2bc737b2b59",
+  "assertions": [
+    {
+      "name": "markov_trace_convention_invariant_symbolic",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "All four H_3 test words give IDENTICAL tr_M through the NF-algebra route and the Markov-axiom route as symbolic expressions in q (sympy simplify of the difference == 0). The strong, anchor-independent form of the convention-invariance claim."
+    },
+    {
+      "name": "markov_trace_convention_invariant_at_q0",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Numeric cross-check at substrate q_0: both routes agree to 1e-40 at 50 dps for all four words."
+    },
+    {
+      "name": "superseded_z3_distinct_from_corrected",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "The superseded z^3 value differs from the corrected h z^2 + z by > 1e-6, so the historical bug class is detectable by this probe (regression guard)."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 812,
+  "computation": "rigid-monoidal-gap-invariance",
+  "scriptFile": "rigid_monoidal_gap_invariance_check.py",
+  "scriptHash": "9b8138f10c7d",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Convention-invariance of the categorical Markov trace (prop:rigid-monoidal-structural-gap-invariance): tr_M of canonical H_3 braid words evaluated through two structurally independent FULLY SYMBOLIC routes — NF-algebra right-multiplication table vs Markov-axiom derivation (M1 cyclicity + M2 peel + M3 + Hecke quadratic) — must agree symbolically (sympy simplify == 0) and at substrate q_0 to 1e-40 (50 dps). No float64 anywhere. Includes the corrected tr_M(s0 s1 s0) = h z^2 + z with h = q - q^{-1} per CLAUDE.md §7a (the deprecated lp-duality-check.py's z^3 claim used an invalid Markov-move chain and is superseded).",
+  "contentBlock": "prop:rigid-monoidal-structural-gap-invariance",
+  "data": {
+    "results": {
+      "s0": {
+        "route_a_nf_symbolic": "sqrt(q)/(q + 1)",
+        "route_b_axiomatic_symbolic": "sqrt(q)/(q + 1)",
+        "symbolically_equal": true,
+        "at_q0_50dps": "0.499320334183694452413442680258",
+        "abs_diff_at_q0": "0.0"
+      },
+      "s0*s1": {
+        "route_a_nf_symbolic": "q/(q*(q + 2) + 1)",
+        "route_b_axiomatic_symbolic": "q/(q + 1)**2",
+        "symbolically_equal": true,
+        "at_q0_50dps": "0.24932079612931630669979826224",
+        "abs_diff_at_q0": "0.0"
+      },
+      "s0*s1*s0": {
+        "route_a_nf_symbolic": "q/(q + 2 + 1/q) - 1/(q**2 + 2*q + 1) + 1/(sqrt(q) + 1/sqrt(q))",
+        "route_b_axiomatic_symbolic": "(sqrt(q)*(q + 1) + q**2 - 1)/(q + 1)**2",
+        "symbolically_equal": true,
+        "at_q0_50dps": "0.551443414318455993583364700049",
+        "abs_diff_at_q0": "0.0"
+      },
+      "(s0*s1)^3": {
+        "route_a_nf_symbolic": "q**4/(q + 2 + 1/q) + q**3/(sqrt(q) + 1/sqrt(q)) - q**2/(q + 2 + 1/q) + 1 + 1/(q**5 + 2*q**4 + q**3) - 1/(q**3 + 2*q**2 + q) - 1/(q**(7/2) + q**(5/2))",
+        "route_b_axiomatic_symbolic": "q**4/(q + 2 + 1/q) + q**3/(sqrt(q) + 1/sqrt(q)) - q**2/(q + 2 + 1/q) + 1 + 1/(q**5 + 2*q**4 + q**3) - 1/(q**3 + 2*q**2 + q) - 1/(q**(7/2) + q**(5/2))",
+        "symbolically_equal": true,
+        "at_q0_50dps": "1.35089344187014524323528176286",
+        "abs_diff_at_q0": "0.0"
+      }
+    },
+    "hecke_convention": "s^2 = (q - q^{-1}) s + 1 per CLAUDE.md §7a; z = 1/(sqrt(q) + 1/sqrt(q))",
+    "tolerance_at_q0": "1e-40 (both routes symbolic, 50 dps)",
+    "superseded_producer": "lp-duality-check.py (z^3 claim via invalid Markov-move chain; see pyhecke fix be773569, 2026-05-19 catalog)",
+    "z3_superseded_value": "0.124490943242234972573248044324"
+  }
+}

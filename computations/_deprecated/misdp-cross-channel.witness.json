@@ -1,0 +1,188 @@
+{
+  "computation": "misdp-cross-channel",
+  "description": "Mixed-integer SDP for quadratic cross-term z\u00b2\u00b7\u03a6_q(|V\u0302_i V\u0302_j|). Branch-and-bound with continuous SDP lower bound at each node; best-first search; incumbent pruning; most-fractional-variable branching. Replaces the previous single-node continuous-rounding stub.",
+  "computedAt": "2026-04-18T00:48:56.999693+00:00",
+  "parameters": {
+    "q": 1.1099785955541805,
+    "z_squared": 0.2493207959794241
+  },
+  "algorithm": {
+    "relaxation": "continuous SDP with pair PSD coupling (cvxpy, SCS)",
+    "lower_bound": "continuous objective = \u03a3 w_i \u00b7 V\u0302_i",
+    "branching": "most-fractional V\u0302_k (integer cut at floor/ceil)",
+    "queue": "best-first by continuous lower bound (heapq)",
+    "incumbent_prune": "skip nodes with lb \u2265 incumbent.obj"
+  },
+  "results": {
+    "3": {
+      "status": "solved",
+      "root_continuous": {
+        "V": [
+          0.9999999998656638,
+          1.0000000000624931,
+          0.9999999998656669
+        ],
+        "obj": 2.999999999793824
+      },
+      "incumbent": {
+        "m": [
+          1,
+          1,
+          1
+        ],
+        "obj": 2.999999999793824,
+        "V": [
+          0.9999999998656638,
+          1.0000000000624931,
+          0.9999999998656669
+        ],
+        "proxy_tr_M": 0.001097936515278265,
+        "depth": 0
+      },
+      "nodes_explored": 1,
+      "nodes_pruned": 0,
+      "max_nodes": 512,
+      "hit_node_limit": false
+    },
+    "5": {
+      "status": "solved",
+      "root_continuous": {
+        "V": [
+          1.0000002813376832,
+          0.9999984547900082,
+          0.9999995343132819,
+          0.9999984547900082,
+          1.0000002813376871
+        ],
+        "obj": 4.999997006568669
+      },
+      "incumbent": {
+        "m": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "obj": 4.999997006568669,
+        "V": [
+          1.0000002813376832,
+          0.9999984547900082,
+          0.9999995343132819,
+          0.9999984547900082,
+          1.0000002813376871
+        ],
+        "proxy_tr_M": 1.1684999959292651e-05,
+        "depth": 0
+      },
+      "nodes_explored": 1,
+      "nodes_pruned": 0,
+      "max_nodes": 1024,
+      "hit_node_limit": false
+    },
+    "8": {
+      "status": "solved",
+      "root_continuous": {
+        "V": [
+          0.9999859461468851,
+          1.0000041689752686,
+          0.9999798025051936,
+          1.00003578883562,
+          1.0000357888356195,
+          0.999979802505194,
+          1.0000041689752635,
+          0.9999859461468839
+        ],
+        "obj": 8.000011412925929
+      },
+      "incumbent": {
+        "m": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "obj": 8.000011412925929,
+        "V": [
+          0.9999859461468851,
+          1.0000041689752686,
+          0.9999798025051936,
+          1.00003578883562,
+          1.0000357888356195,
+          0.999979802505194,
+          1.0000041689752635,
+          0.9999859461468839
+        ],
+        "proxy_tr_M": 1.2829388136332443e-08,
+        "depth": 0
+      },
+      "nodes_explored": 1,
+      "nodes_pruned": 0,
+      "max_nodes": 2048,
+      "hit_node_limit": false
+    },
+    "12": {
+      "status": "solved",
+      "root_continuous": {
+        "V": [
+          1.0000220271498608,
+          0.9999826794141436,
+          0.9999777176313246,
+          0.9999975455271001,
+          1.000011134686634,
+          0.9999970626123751,
+          0.999997062612373,
+          1.0000111346866345,
+          0.9999975455270993,
+          0.9999777176313209,
+          0.9999826794141421,
+          1.0000220271498645
+        ],
+        "obj": 11.999976334042872
+      },
+      "incumbent": {
+        "m": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "obj": 11.999976334042872,
+        "V": [
+          1.0000220271498608,
+          0.9999826794141436,
+          0.9999777176313246,
+          0.9999975455271001,
+          1.000011134686634,
+          0.9999970626123751,
+          0.999997062612373,
+          1.0000111346866345,
+          0.9999975455270993,
+          0.9999777176313209,
+          0.9999826794141421,
+          1.0000220271498645
+        ],
+        "proxy_tr_M": 1.4531448815564631e-12,
+        "depth": 0
+      },
+      "nodes_explored": 1,
+      "nodes_pruned": 0,
+      "max_nodes": 4096,
+      "hit_node_limit": false
+    }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
+}

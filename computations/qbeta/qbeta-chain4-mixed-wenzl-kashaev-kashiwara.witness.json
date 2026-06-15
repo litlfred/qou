@@ -1,0 +1,137 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-06-04T02:43:05.838101+00:00",
+  "commitSha": "f15b15d40ae1cbf989ec17cba186fcd182275923",
+  "assertions": [
+    {
+      "name": "self_checks_passed",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "Σ_λ(f^λ)²=n! for n∈{3,4,5}; qdim(λ)→f^λ as q→1."
+    },
+    {
+      "name": "genuine_mixed_chain_id_found",
+      "computed": false,
+      "expected": false,
+      "passed": true,
+      "tolerance": 0,
+      "source": "A genuine mixed-chain categorical ID requires a q-DEPENDENT Wenzl factor (qdim/wmarkov) × Kashaev product reaching NEAR-1PCT. Default expectation: none (single-chain families all NEGATIVE). The f^λ×Li2q NEAR-1PCT hits are Kashaev×integer, excluded by construction."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 4,
+  "computation": "qbeta-chain4-mixed-wenzl-kashaev-kashiwara",
+  "scriptFile": "qbeta_chain4_mixed_wenzl_kashaev_kashiwara.py",
+  "scriptHash": "2128030bb854",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "mpmath": "1.4.1"
+  },
+  "description": "Chain 4 mixed chains — products of a Wenzl per-λ-block invariant (f^λ, fake-degree qdim, Markov-normalised z^{n-1}·qdim via closed-form hook specialisation), a Kashaev quantum-dilog evaluation (Rogers Li_2^q, q-Pochhammer / Phi_q at z_λ=q^{-n(λ)} and ℏ_q, base q^{-1}<1 since Faddeev Φ_b needs |q|=1), and a Kashiwara statistic n(λ), for λ ⊢ n, n ∈ {3,4,5}. Target prefactor A/ℏ_q^15 ≈ 2.07173 (proton). 480 candidates. Best: n3_21:f·Li2q_hbar → NEAR-1PCT (ratio 0.9917723). TIERED; cross-anchor emitted; ℏ_q=(q-1)/q; diagnostic-only, no production wiring.",
+  "data": {
+    "residue_target_A": "0.000000000000001804",
+    "prefactor_target_proton": "2.0717327773613738302527359154788178225948053571385",
+    "prefactor_target_muon": "2.07170606313586724432429903273076802257574816656",
+    "h_q_proton": "0.099081716044258507839177117518281999748464888241219",
+    "h_q_muon": "0.099081801219642067642666676041338059183197878086766",
+    "q_proton": "1.10997858275138080759166909561",
+    "q_muon": "1.10997868769193107842185960213",
+    "candidate_count": "480",
+    "tier_histogram": {
+      "MISS": "419",
+      "NEAR-CLOSE": "52",
+      "NEAR-1PCT": "2",
+      "NEAR-FUZZY": "7"
+    },
+    "top10": {
+      "n3_21:f·Li2q_hbar": {
+        "value": "2.054687",
+        "ratio": "0.9917723",
+        "tier": "NEAR-1PCT"
+      },
+      "n4_22:f·Li2q_hbar": {
+        "value": "2.054687",
+        "ratio": "0.9917723",
+        "tier": "NEAR-1PCT"
+      },
+      "n5_311:f/Phi_hbar": {
+        "value": "2.147739",
+        "ratio": "1.036687",
+        "tier": "NEAR-FUZZY"
+      },
+      "n3_21:qdim/Li2q_hbar": {
+        "value": "2.172645",
+        "ratio": "1.048709",
+        "tier": "NEAR-FUZZY"
+      },
+      "n3_21:f/Li2q_hbar": {
+        "value": "1.946768",
+        "ratio": "0.9396812",
+        "tier": "NEAR-FUZZY"
+      },
+      "n4_22:f/Li2q_hbar": {
+        "value": "1.946768",
+        "ratio": "0.9396812",
+        "tier": "NEAR-FUZZY"
+      },
+      "n4_1111:qdim·Li2q_hbar": {
+        "value": "1.921336",
+        "ratio": "0.9274053",
+        "tier": "NEAR-FUZZY"
+      },
+      "n4_4:qdim·qdimT": {
+        "value": "1.870198",
+        "ratio": "0.9027216",
+        "tier": "NEAR-FUZZY"
+      },
+      "n4_1111:qdim·qdimT": {
+        "value": "1.870198",
+        "ratio": "0.9027216",
+        "tier": "NEAR-FUZZY"
+      },
+      "n3_21:qdim·Li2q_hbar": {
+        "value": "2.293085",
+        "ratio": "1.106844",
+        "tier": "NEAR-CLOSE"
+      }
+    },
+    "best_match": {
+      "candidate": "n3_21:f·Li2q_hbar",
+      "tier": "NEAR-1PCT",
+      "ratio": "0.9917723"
+    },
+    "near_1pct_count": "2",
+    "near_1pct_genuine_qmixed_count": "0",
+    "cross_anchor": {
+      "n3_21:f·Li2q_hbar": {
+        "proton_ratio": "0.9917723",
+        "proton_tier": "NEAR-1PCT",
+        "muon_ratio": "0.9917851",
+        "muon_tier": "NEAR-1PCT",
+        "cross_anchor_swing_pct": "0.001292",
+        "genuine_q_mixed": false
+      },
+      "n4_22:f·Li2q_hbar": {
+        "proton_ratio": "0.9917723",
+        "proton_tier": "NEAR-1PCT",
+        "muon_ratio": "0.9917851",
+        "muon_tier": "NEAR-1PCT",
+        "cross_anchor_swing_pct": "0.001292",
+        "genuine_q_mixed": false
+      }
+    },
+    "kashaev_truncation": "400",
+    "note_native_engine": "hecke-engine not built in sandbox; Wenzl values via closed-form hook specialisation, cross-checked Σ(f^λ)²=n! and qdim→f^λ at q→1.",
+    "note_cross_anchor_vacuous": "The proton/muon q₀ anchors differ by ~1e-7, so cross-anchor swing is near-zero for ANY closed-form candidate (unlike the c_3 FITTED-coefficient swing test). Discriminators here: proximity tier + Wenzl-factor q-dependence (genuine mixed vs Kashaev×integer).",
+    "note_best_near_match_is_kashaev_x_integer": "The proton best (f·Li2q_hbar, ratio≈0.9918, NEAR-1PCT) is 2·Li_2^q(ℏ_q): Wenzl factor f^λ=2 is a q-INDEPENDENT integer block-dimension, so all q-structure is the single-chain Kashaev Rogers-dilog. It is NOT a genuine mixed q-product, and at 0.82% off it is a NEAR-1PCT artifact (cf. the 1+q q-binomial artifact of PR #1787), not a closure."
+  }
+}

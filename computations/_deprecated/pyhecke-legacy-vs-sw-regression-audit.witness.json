@@ -1,0 +1,166 @@
+{
+  "computation": "pyhecke-legacy-vs-sw-regression-audit",
+  "description": "Documents the discrepancy between pyhecke's legacy H_3-per-generator path and the proper H_{3A} Schur-Weyl path in markov_trace_symbolic_eval.  Establishes that PR #518's categorical mass results were based on the legacy (buggy) path \u2014 orders-of-magnitude wrong, isospin-violating.  Lists what still holds from PR #518 and what needs re-running.",
+  "computedAt": "2026-05-03T10:30:51.824993+00:00",
+  "commit_introducing_redirect": "afb43af4f (P2.2a, 2026-05-02)",
+  "audit_witness_legacy_diverges": "docs/audits/2026-05-01-p2-2a-schur-weyl-low-a.witness.json",
+  "rows": [
+    {
+      "atom": "D",
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "n_strands": 6,
+      "path": "legacy",
+      "tr_M_q0": 0.3368212289448051,
+      "abs_tr_M": 0.3368212289448051,
+      "log_abs_tr_M": -1.0882029672915512,
+      "walltime_sec": 0.06853413581848145
+    },
+    {
+      "atom": "D",
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "n_strands": 6,
+      "path": "SW(H_3A)",
+      "tr_M_q0": 0.015585759907318543,
+      "abs_tr_M": 0.015585759907318543,
+      "log_abs_tr_M": -4.161397608060365,
+      "walltime_sec": 1.073289155960083
+    },
+    {
+      "atom": "T",
+      "Z": 1,
+      "N": 2,
+      "A": 3,
+      "n_strands": 9,
+      "path": "legacy",
+      "tr_M_q0": 0.078297035873325,
+      "abs_tr_M": 0.078297035873325,
+      "log_abs_tr_M": -2.5472455327258836,
+      "walltime_sec": 0.0006554126739501953
+    },
+    {
+      "atom": "T",
+      "Z": 1,
+      "N": 2,
+      "A": 3,
+      "n_strands": 9,
+      "path": "SW(H_3A)",
+      "tr_M_q0": 0.0008828689329881074,
+      "abs_tr_M": 0.0008828689329881074,
+      "log_abs_tr_M": -7.032333802139748,
+      "walltime_sec": 1.6750731468200684
+    },
+    {
+      "atom": "3He",
+      "Z": 2,
+      "N": 1,
+      "A": 3,
+      "n_strands": 9,
+      "path": "legacy",
+      "tr_M_q0": 0.1791650003435875,
+      "abs_tr_M": 0.1791650003435875,
+      "log_abs_tr_M": -1.7194481080995616,
+      "walltime_sec": 0.0006365776062011719
+    },
+    {
+      "atom": "3He",
+      "Z": 2,
+      "N": 1,
+      "A": 3,
+      "n_strands": 9,
+      "path": "SW(H_3A)",
+      "tr_M_q0": 0.0008828689329881074,
+      "abs_tr_M": 0.0008828689329881074,
+      "log_abs_tr_M": -7.032333802139748,
+      "walltime_sec": 1.0900864601135254
+    },
+    {
+      "atom": "4He",
+      "Z": 2,
+      "N": 2,
+      "A": 4,
+      "n_strands": 12,
+      "path": "legacy",
+      "tr_M_q0": 0.041648468842339324,
+      "abs_tr_M": 0.041648468842339324,
+      "log_abs_tr_M": -3.178490673533894,
+      "walltime_sec": 0.0008084774017333984
+    },
+    {
+      "atom": "4He",
+      "Z": 2,
+      "N": 2,
+      "A": 4,
+      "n_strands": 12,
+      "path": "SW(H_3A)",
+      "tr_M_q0": 4.425191012271548e-06,
+      "abs_tr_M": 4.425191012271548e-06,
+      "log_abs_tr_M": -12.328197113820993,
+      "walltime_sec": 4.95974063873291
+    },
+    {
+      "atom": "6Li",
+      "Z": 3,
+      "N": 3,
+      "A": 6,
+      "n_strands": 18,
+      "path": "legacy",
+      "tr_M_q0": 0.00514989795134189,
+      "abs_tr_M": 0.00514989795134189,
+      "log_abs_tr_M": -5.268778379776236,
+      "walltime_sec": 0.0011172294616699219
+    },
+    {
+      "atom": "6Li",
+      "Z": 3,
+      "N": 3,
+      "A": 6,
+      "n_strands": 18,
+      "path": "SW(H_3A)",
+      "tr_M_q0": 2.661587118068667e-11,
+      "abs_tr_M": 2.661587118068667e-11,
+      "log_abs_tr_M": -24.349513417144184,
+      "walltime_sec": 24.36427879333496
+    },
+    {
+      "atom": "8Be",
+      "Z": 4,
+      "N": 4,
+      "A": 8,
+      "n_strands": 24,
+      "path": "legacy",
+      "tr_M_q0": 0.0006367928917058776,
+      "abs_tr_M": 0.0006367928917058776,
+      "log_abs_tr_M": -7.359066086018579,
+      "walltime_sec": 0.0015594959259033203
+    },
+    {
+      "atom": "8Be",
+      "Z": 4,
+      "N": 4,
+      "A": 8,
+      "n_strands": 24,
+      "path": "SW(H_3A)",
+      "tr_M_q0": 1.1635986403598578e-17,
+      "abs_tr_M": 1.1635986403598578e-17,
+      "log_abs_tr_M": -38.99242910173781,
+      "walltime_sec": 102.80095434188843
+    }
+  ],
+  "pr_518_status": {
+    "still_valid": [
+      "Plan H census probe (independent of pyhecke values)",
+      "Higgs scalar-correction probe (independent of pyhecke)",
+      "pyhecke supports arbitrary (Z, N) \u2014 true on both paths",
+      "\u03b1-cluster phenomenology and non-categorical baseline"
+    ],
+    "needs_rerun_with_sw_path": [
+      "Markov-invariant unified mass formula on full census (the \u221250% miss vs \u03b1-cluster)",
+      "\u00b3He gap diagnosis (the \u221230% gap was based on T \u2260 \u00b3He, but SW path has T = \u00b3He \u2014 the diagnosis is invalid)",
+      "Rust \u2192 canonical bridge analysis (the '\u00b2\u2070\u2078Pb in 40ms' benchmark used the legacy fast path; SW scales exponentially)"
+    ]
+  }
+}

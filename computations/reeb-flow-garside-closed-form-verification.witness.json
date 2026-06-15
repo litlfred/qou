@@ -1,0 +1,308 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.12.3",
+  "computedAt": "2026-06-02T17:03:41.853018+00:00",
+  "commitSha": "77f2b68af2c9d52ae3d55c1cea746e8e9977db80",
+  "assertions": [
+    {
+      "name": "identity__direct_matches_closed",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.0,
+      "source": "direct iterative composition over 1 sub-interval(s) vs closed-form prediction from prop:six-canonical-knot-operators; mpmath max-abs-diff (50 dps) = 0.0 < tol 1.0e-45"
+    },
+    {
+      "name": "identity__center_of_mass_preserved",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.0,
+      "source": "Sum of Δψ^(r) + Δψ^(g) + Δψ^(b) should be 0 for the explicit closed-form trajectories (all six S_3 operators) by the table in prop:six-canonical-knot-operators; mpmath sum (50 dps) = 0.0"
+    },
+    {
+      "name": "sigma_1__direct_matches_closed",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.0,
+      "source": "direct iterative composition over 1 sub-interval(s) vs closed-form prediction from prop:six-canonical-knot-operators; mpmath max-abs-diff (50 dps) = 0.0 < tol 1.0e-45"
+    },
+    {
+      "name": "sigma_1__center_of_mass_preserved",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.0,
+      "source": "Sum of Δψ^(r) + Δψ^(g) + Δψ^(b) should be 0 for the explicit closed-form trajectories (all six S_3 operators) by the table in prop:six-canonical-knot-operators; mpmath sum (50 dps) = 0.0"
+    },
+    {
+      "name": "sigma_2__direct_matches_closed",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.0,
+      "source": "direct iterative composition over 1 sub-interval(s) vs closed-form prediction from prop:six-canonical-knot-operators; mpmath max-abs-diff (50 dps) = 0.0 < tol 1.0e-45"
+    },
+    {
+      "name": "sigma_2__center_of_mass_preserved",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.0,
+      "source": "Sum of Δψ^(r) + Δψ^(g) + Δψ^(b) should be 0 for the explicit closed-form trajectories (all six S_3 operators) by the table in prop:six-canonical-knot-operators; mpmath sum (50 dps) = 0.0"
+    },
+    {
+      "name": "garside_sigma1_sigma2_sigma1__direct_matches_closed",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.0,
+      "source": "direct iterative composition over 3 sub-interval(s) vs closed-form prediction from prop:six-canonical-knot-operators; mpmath max-abs-diff (50 dps) = 1.81114e-71 < tol 1.0e-45"
+    },
+    {
+      "name": "garside_sigma1_sigma2_sigma1__center_of_mass_preserved",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.0,
+      "source": "Sum of Δψ^(r) + Δψ^(g) + Δψ^(b) should be 0 for the explicit closed-form trajectories (all six S_3 operators) by the table in prop:six-canonical-knot-operators; mpmath sum (50 dps) = 0.0"
+    },
+    {
+      "name": "three_cycle_plus_sigma1_sigma2__direct_matches_closed",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.0,
+      "source": "direct iterative composition over 2 sub-interval(s) vs closed-form prediction from prop:six-canonical-knot-operators; mpmath max-abs-diff (50 dps) = 0.0 < tol 1.0e-45"
+    },
+    {
+      "name": "three_cycle_plus_sigma1_sigma2__center_of_mass_preserved",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.0,
+      "source": "Sum of Δψ^(r) + Δψ^(g) + Δψ^(b) should be 0 for the explicit closed-form trajectories (all six S_3 operators) by the table in prop:six-canonical-knot-operators; mpmath sum (50 dps) = 0.0"
+    },
+    {
+      "name": "three_cycle_minus_sigma2_sigma1__direct_matches_closed",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.0,
+      "source": "direct iterative composition over 2 sub-interval(s) vs closed-form prediction from prop:six-canonical-knot-operators; mpmath max-abs-diff (50 dps) = 0.0 < tol 1.0e-45"
+    },
+    {
+      "name": "three_cycle_minus_sigma2_sigma1__center_of_mass_preserved",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.0,
+      "source": "Sum of Δψ^(r) + Δψ^(g) + Δψ^(b) should be 0 for the explicit closed-form trajectories (all six S_3 operators) by the table in prop:six-canonical-knot-operators; mpmath sum (50 dps) = 0.0"
+    },
+    {
+      "name": "all_six_operators_verified",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.0,
+      "source": "All six canonical knot operators (identity, σ_1, σ_2, σ_1σ_2σ_1 Garside, σ_1σ_2, σ_2σ_1) agree with the closed-form trajectory at q_0 to 50 dps."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 13,
+  "computation": "reeb-flow-garside-closed-form-verification",
+  "scriptFile": "reeb_flow_garside_closed_form_verification.py",
+  "scriptHash": "b57646ade4be",
+  "scriptCommitSha": "5a44813463430491fdc8cd8cd5a97a404b5e7e9d",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.12.3",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Compute verification of the Reeb-flow / Garside closed-form trajectory on coral sectors (r, g, b) for the six canonical knot operators in prop:six-canonical-knot-operators. Cross-validates the closed-form trajectory at q_0 (50 dps) against direct iterative composition over the piecewise-affine sub-intervals. Closes cheat-sheet §5 Migration Backlog #5.",
+  "contentBlock": "prop:six-canonical-knot-operators",
+  "parameters": {
+    "q_str": "1.1099785827513808075916690956107688798744991218736",
+    "dps": 50,
+    "q_at_q0": "1.10997858275138"
+  },
+  "data": {
+    "identity": {
+      "s3_class": "identity",
+      "expected_boundary_perm_rgb_to_indices": [
+        0,
+        1,
+        2
+      ],
+      "n_sub_intervals": 1,
+      "predicted_twists_in_q_pi_units": [
+        "0.0",
+        "0.0",
+        "0.0"
+      ],
+      "direct_iterative": {
+        "delta_r": "0.0",
+        "delta_g": "0.0",
+        "delta_b": "0.0"
+      },
+      "closed_form": {
+        "delta_r": "0.0",
+        "delta_g": "0.0",
+        "delta_b": "0.0"
+      },
+      "max_abs_diff": "0.0",
+      "matches_within_tol": true,
+      "centre_of_mass_sum": "0.0",
+      "centre_of_mass_preserved": true
+    },
+    "sigma_1": {
+      "s3_class": "transposition_rg",
+      "expected_boundary_perm_rgb_to_indices": [
+        1,
+        0,
+        2
+      ],
+      "n_sub_intervals": 1,
+      "predicted_twists_in_q_pi_units": [
+        "1.0",
+        "-1.0",
+        "0.0"
+      ],
+      "direct_iterative": {
+        "delta_r": "3.48710056121374833368030633715",
+        "delta_g": "-3.48710056121374833368030633715",
+        "delta_b": "0.0"
+      },
+      "closed_form": {
+        "delta_r": "3.48710056121374833368030633715",
+        "delta_g": "-3.48710056121374833368030633715",
+        "delta_b": "0.0"
+      },
+      "max_abs_diff": "0.0",
+      "matches_within_tol": true,
+      "centre_of_mass_sum": "0.0",
+      "centre_of_mass_preserved": true
+    },
+    "sigma_2": {
+      "s3_class": "transposition_gb",
+      "expected_boundary_perm_rgb_to_indices": [
+        0,
+        2,
+        1
+      ],
+      "n_sub_intervals": 1,
+      "predicted_twists_in_q_pi_units": [
+        "0.0",
+        "1.0",
+        "-1.0"
+      ],
+      "direct_iterative": {
+        "delta_r": "0.0",
+        "delta_g": "3.48710056121374833368030633715",
+        "delta_b": "-3.48710056121374833368030633715"
+      },
+      "closed_form": {
+        "delta_r": "0.0",
+        "delta_g": "3.48710056121374833368030633715",
+        "delta_b": "-3.48710056121374833368030633715"
+      },
+      "max_abs_diff": "0.0",
+      "matches_within_tol": true,
+      "centre_of_mass_sum": "0.0",
+      "centre_of_mass_preserved": true
+    },
+    "garside_sigma1_sigma2_sigma1": {
+      "s3_class": "transposition_rb",
+      "expected_boundary_perm_rgb_to_indices": [
+        2,
+        1,
+        0
+      ],
+      "n_sub_intervals": 3,
+      "predicted_twists_in_q_pi_units": [
+        "2/3",
+        "-1/3",
+        "-1/3"
+      ],
+      "direct_iterative": {
+        "delta_r": "2.3247337074758322224535375581",
+        "delta_g": "-1.16236685373791611122676877905",
+        "delta_b": "-1.16236685373791611122676877905"
+      },
+      "closed_form": {
+        "delta_r": "2.3247337074758322224535375581",
+        "delta_g": "-1.16236685373791611122676877905",
+        "delta_b": "-1.16236685373791611122676877905"
+      },
+      "max_abs_diff": "1.81114e-71",
+      "matches_within_tol": true,
+      "centre_of_mass_sum": "0.0",
+      "centre_of_mass_preserved": true
+    },
+    "three_cycle_plus_sigma1_sigma2": {
+      "s3_class": "three_cycle_rgb",
+      "expected_boundary_perm_rgb_to_indices": [
+        1,
+        2,
+        0
+      ],
+      "n_sub_intervals": 2,
+      "predicted_twists_in_q_pi_units": [
+        "0.5",
+        "0.0",
+        "-0.5"
+      ],
+      "direct_iterative": {
+        "delta_r": "1.74355028060687416684015316858",
+        "delta_g": "0.0",
+        "delta_b": "-1.74355028060687416684015316858"
+      },
+      "closed_form": {
+        "delta_r": "1.74355028060687416684015316858",
+        "delta_g": "0.0",
+        "delta_b": "-1.74355028060687416684015316858"
+      },
+      "max_abs_diff": "0.0",
+      "matches_within_tol": true,
+      "centre_of_mass_sum": "0.0",
+      "centre_of_mass_preserved": true
+    },
+    "three_cycle_minus_sigma2_sigma1": {
+      "s3_class": "three_cycle_rbg",
+      "expected_boundary_perm_rgb_to_indices": [
+        2,
+        0,
+        1
+      ],
+      "n_sub_intervals": 2,
+      "predicted_twists_in_q_pi_units": [
+        "0.5",
+        "0.0",
+        "-0.5"
+      ],
+      "direct_iterative": {
+        "delta_r": "1.74355028060687416684015316858",
+        "delta_g": "0.0",
+        "delta_b": "-1.74355028060687416684015316858"
+      },
+      "closed_form": {
+        "delta_r": "1.74355028060687416684015316858",
+        "delta_g": "0.0",
+        "delta_b": "-1.74355028060687416684015316858"
+      },
+      "max_abs_diff": "0.0",
+      "matches_within_tol": true,
+      "centre_of_mass_sum": "0.0",
+      "centre_of_mass_preserved": true
+    }
+  }
+}

@@ -1,0 +1,184 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-06-09T20:49:41.860279+00:00",
+  "commitSha": "c53ae362b0b0a9f4f6d71d810f70d0fefd1aeb7b",
+  "assertions": [
+    {
+      "name": "a3plus_atoms_bypass_rank_deficiency_blocker",
+      "computed": 3,
+      "expected": 3,
+      "passed": true,
+      "tolerance": 0,
+      "source": "canonical_tr_m_via_branching.py:245-252 returns None for A>=3"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 25,
+  "computation": "binding-combiner-markov-peel-fallback",
+  "scriptFile": "binding_combiner_markov_peel_fallback.py",
+  "scriptHash": "58cbc0070bc3",
+  "scriptCommitSha": "c53ae362b0b0a9f4f6d71d810f70d0fefd1aeb7b",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "Binding energy via the canonical markov_peel Markov-trace difference B = E_0·(|tr_M(free)| − |tr_M(atom)|), closure-path-3 from docs/audits/2026-06-09-binding-canonical-default-depth-stratified.md. Bypasses the A ≥ 3 rank-deficiency blocker in canonical_tr_m_via_branching.py (which returns None for A ≥ 3) by using the exact-symbolic markov_peel trace (Gröbner–Shirshov reduce + Markov-axiom recursive ascent) directly, with no A-operator extracts. Uses pn_convention='strict_averaged' (color-blind) because the exact-symbolic-in-q trace path cannot represent the numeric color-weighting delta of the canonical default; the perturbation is sub-0.1%. RESULT: the trace difference under-binds severely with the wrong A-trend, confirming the audit's diagnosis that a per-atom trace difference carries no magic-A scale factor.",
+  "contentBlock": "prop:atomic-mass-gb-nf",
+  "parameters": {
+    "q0": "1.1099785827513808075916690956107688798744991218736",
+    "E_0_CAL3_MeV": "0.7823334100000222",
+    "m_e_CAL1_MeV": "0.51099895069",
+    "pn_convention": "strict_averaged",
+    "precision_dps": "50"
+  },
+  "data": {
+    "method": "atom_braid_word_3A(include_inter=False/True) + incremental_reduced_element + tr_M_element(simplify=False), evaluated at q0; B = E_0·(|tr_free| − |tr_atom|)",
+    "results": [
+      {
+        "atom": "D",
+        "Z": 1,
+        "N": 1,
+        "A": 2,
+        "free_config": {
+          "tr_M_at_q0": "0.98352603240474833567619342924954522929127781354161",
+          "abs_tr_M_at_q0": "0.98352603240474833567619342924954522929127781354161",
+          "reduced_term_count": 16,
+          "trace_sympy_ops": 619,
+          "word_length": 22,
+          "elapsed_reduce_sec": 0.397,
+          "elapsed_trace_sec": 0.002
+        },
+        "bound_config": {
+          "tr_M_at_q0": "0.38828642407478887671153751312935209344259947275510",
+          "abs_tr_M_at_q0": "0.38828642407478887671153751312935209344259947275510",
+          "reduced_term_count": 32,
+          "trace_sympy_ops": 1449,
+          "word_length": 23,
+          "elapsed_reduce_sec": 0.538,
+          "elapsed_trace_sec": 0.007
+        },
+        "B_dim": "0.59523960832995945896465591612",
+        "B_MeV_E0": "0.465675832552",
+        "B_MeV_me": "0.304166815266",
+        "B_AME_MeV": "2.22456607",
+        "ratio_E0": "0.20933333",
+        "ratio_me": "0.13673085"
+      },
+      {
+        "atom": "T",
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "free_config": {
+          "tr_M_at_q0": "0.90802391559921333752046896916436004544973331138817",
+          "abs_tr_M_at_q0": "0.90802391559921333752046896916436004544973331138817",
+          "reduced_term_count": 64,
+          "trace_sympy_ops": 2423,
+          "word_length": 33,
+          "elapsed_reduce_sec": 2.348,
+          "elapsed_trace_sec": 0.017
+        },
+        "bound_config": {
+          "tr_M_at_q0": "0.10405210674205179940541687876459346194008936103243",
+          "abs_tr_M_at_q0": "0.10405210674205179940541687876459346194008936103243",
+          "reduced_term_count": 256,
+          "trace_sympy_ops": 12164,
+          "word_length": 35,
+          "elapsed_reduce_sec": 12.141,
+          "elapsed_trace_sec": 0.211
+        },
+        "B_dim": "0.8039718088571615381150520904",
+        "B_MeV_E0": "0.628974006767",
+        "B_MeV_me": "0.41082875071",
+        "B_AME_MeV": "8.481798",
+        "ratio_E0": "0.07415574",
+        "ratio_me": "0.048436517"
+      },
+      {
+        "atom": "3He",
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "free_config": {
+          "tr_M_at_q0": "1.0477563253549796717825119652593730124597049284683",
+          "abs_tr_M_at_q0": "1.0477563253549796717825119652593730124597049284683",
+          "reduced_term_count": 64,
+          "trace_sympy_ops": 2402,
+          "word_length": 33,
+          "elapsed_reduce_sec": 2.256,
+          "elapsed_trace_sec": 0.023
+        },
+        "bound_config": {
+          "tr_M_at_q0": "0.20654081702073964813770987099204950200337250952332",
+          "abs_tr_M_at_q0": "0.20654081702073964813770987099204950200337250952332",
+          "reduced_term_count": 128,
+          "trace_sympy_ops": 5420,
+          "word_length": 35,
+          "elapsed_reduce_sec": 3.651,
+          "elapsed_trace_sec": 0.08
+        },
+        "B_dim": "0.841215508334240023644802094267",
+        "B_MeV_E0": "0.65811099718",
+        "B_MeV_me": "0.429860242063",
+        "B_AME_MeV": "7.7180428",
+        "ratio_E0": "0.085269156",
+        "ratio_me": "0.055695499"
+      },
+      {
+        "atom": "4He",
+        "Z": 2,
+        "N": 2,
+        "A": 4,
+        "free_config": {
+          "tr_M_at_q0": "0.96732345641782607325624233590120446904938629621036",
+          "abs_tr_M_at_q0": "0.96732345641782607325624233590120446904938629621036",
+          "reduced_term_count": 256,
+          "trace_sympy_ops": 8377,
+          "word_length": 44,
+          "elapsed_reduce_sec": 11.852,
+          "elapsed_trace_sec": 0.154
+        },
+        "bound_config": {
+          "tr_M_at_q0": "0.055348335163768566815976434665115729137981241309473",
+          "abs_tr_M_at_q0": "0.055348335163768566815976434665115729137981241309473",
+          "reduced_term_count": 1024,
+          "trace_sympy_ops": 38840,
+          "word_length": 47,
+          "elapsed_reduce_sec": 59.366,
+          "elapsed_trace_sec": 2.128
+        },
+        "B_dim": "0.911975121254057506440265901236",
+        "B_MeV_E0": "0.713468606446",
+        "B_MeV_me": "0.466018330016",
+        "B_AME_MeV": "28.295674",
+        "ratio_E0": "0.025214759",
+        "ratio_me": "0.016469596"
+      }
+    ],
+    "atoms_succeeded": [
+      "D",
+      "T",
+      "3He",
+      "4He"
+    ],
+    "a3plus_atoms_succeeded": [
+      "T",
+      "3He",
+      "4He"
+    ],
+    "bypasses_rank_deficiency_blocker": true,
+    "closure_status": "blocker-free baseline; does NOT close binding (under-binds, wrong A-trend) — trace difference has no magic-A scale factor",
+    "color_weighting_note": "strict_averaged used; canonical bring_color_weighted delta is a sub-0.1% numeric perturbation not representable in the exact-symbolic-in-q trace path",
+    "total_wall_sec": 98.5
+  }
+}

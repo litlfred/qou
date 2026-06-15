@@ -1,0 +1,158 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-14T23:42:36.072954+00:00",
+  "commitSha": "96c4de9c94ef659a11c87efc0293c598271531ad",
+  "assertions": [
+    {
+      "name": "active_set_small",
+      "computed": 4,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 5.0,
+      "source": "≤5 partitions carry 90% of tr_M on the cached isotopes (D,T)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 19,
+  "computation": "low-isotopes-binding-sweep",
+  "scriptFile": "low_isotopes_binding_sweep.py",
+  "scriptHash": "b9587242cbe2",
+  "scriptCommitSha": "09f3725ed2ef08b6f7c7a193235fde0181ce750e",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "Low-isotopes binding sweep on the canonical Jones–Markov path (binding_canonical.py): B_AME, B_pred, residual Δ_λ (near-match q₀^(10A−5), not derived), and the tr_M ACTIVE SET (3–4 few-row partitions carry 90% of p(3A)) — the basis for active-set-truncated + nucleon-cached O(A·few) scaling.",
+  "data": {
+    "rows": [
+      {
+        "atom": "D",
+        "Z": 1,
+        "N": 1,
+        "A": 2,
+        "n_strands": 6,
+        "B_AME_MeV": 2.22457,
+        "B_pred_canonical_MeV": 0.46562,
+        "Delta_lambda": 4.7776,
+        "log_q0_Delta": 14.989,
+        "law_10A_minus_5": 15,
+        "dev_from_law": -0.011,
+        "p_3A": 11,
+        "active_set": {
+          "n_partitions_total": 11,
+          "n_in_active_90pct": 3,
+          "active_partitions": [
+            {
+              "partition": "[6]",
+              "dim": 1,
+              "frac": 0.4689
+            },
+            {
+              "partition": "[5, 1]",
+              "dim": 5,
+              "frac": 0.3469
+            },
+            {
+              "partition": "[4, 2]",
+              "dim": 9,
+              "frac": 0.1615
+            }
+          ]
+        }
+      },
+      {
+        "atom": "T",
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "n_strands": 9,
+        "B_AME_MeV": 8.4818,
+        "B_pred_canonical_MeV": 0.62896,
+        "Delta_lambda": 13.4854,
+        "log_q0_Delta": 24.934,
+        "law_10A_minus_5": 25,
+        "dev_from_law": -0.066,
+        "p_3A": 30,
+        "active_set": {
+          "n_partitions_total": 30,
+          "n_in_active_90pct": 4,
+          "active_partitions": [
+            {
+              "partition": "[8, 1]",
+              "dim": 8,
+              "frac": 0.2782
+            },
+            {
+              "partition": "[7, 2]",
+              "dim": 27,
+              "frac": 0.2467
+            },
+            {
+              "partition": "[9]",
+              "dim": 1,
+              "frac": 0.2246
+            },
+            {
+              "partition": "[6, 3]",
+              "dim": 48,
+              "frac": 0.1605
+            }
+          ]
+        }
+      },
+      {
+        "atom": "3He",
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "n_strands": 9,
+        "B_AME_MeV": 7.71804,
+        "B_pred_canonical_MeV": 0.65808,
+        "Delta_lambda": 11.7281,
+        "log_q0_Delta": 23.596,
+        "law_10A_minus_5": 25,
+        "dev_from_law": -1.404,
+        "p_3A": 30,
+        "active_set": null
+      },
+      {
+        "atom": "4He",
+        "Z": 2,
+        "N": 2,
+        "A": 4,
+        "n_strands": 12,
+        "B_AME_MeV": 28.29567,
+        "B_pred_canonical_MeV": 0.71346,
+        "Delta_lambda": 39.6597,
+        "log_q0_Delta": 35.272,
+        "law_10A_minus_5": 35,
+        "dev_from_law": 0.272,
+        "p_3A": 77,
+        "active_set": null
+      }
+    ],
+    "scaling_metric": {
+      "active_set_size_typical": "3–4 partitions",
+      "p_3A_examples": {
+        "A=2": 11,
+        "A=3": 30,
+        "A=4": 77,
+        "A=6": 385,
+        "A=8": 1575
+      },
+      "saving": "compute active set only → O(A·few) vs O(p(3A))",
+      "active_partitions_are": "few-row: [n],[n−1,1],[n−2,2],[n−3,3]"
+    },
+    "delta_lambda_note": "log_q0 Δ_λ ≈ 10A−5 is a LOOSE 4-point near-match (³He off 1.40); no clean crossing/jet derivation (refuted). NOT wired."
+  }
+}

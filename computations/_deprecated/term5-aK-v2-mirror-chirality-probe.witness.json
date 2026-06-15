@@ -1,0 +1,67 @@
+{
+  "engine": "numpy+scipy",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-15T21:40:32.351601+00:00",
+  "commitSha": "3664a872a4ec43d770b1c860048d515bc797c92f",
+  "assertions": [
+    {
+      "name": "v2_t_vs_he3_distinct",
+      "computed": 25.127502044405144,
+      "expected": 0.0,
+      "passed": false,
+      "tolerance": -1.0,
+      "unit": "percent (abs)",
+      "source": "V2 should distinguish isospin mirrors; >0 confirms"
+    }
+  ],
+  "allPassed": false,
+  "durationMs": 34,
+  "computation": "term5-aK-v2-mirror-chirality-probe",
+  "scriptFile": "probe_term5_aK_v2_mirror_chirality.py",
+  "scriptHash": "466cd0586fcc",
+  "scriptCommitSha": "unknown",
+  "description": "V2 mirror-chirality (genuine geometric mirror knot β*) wired via numeric per-irrep Hoefsmit at q_0 — the fast path that the V1 symbolic backfill (term5_aK_audit.py) couldn't handle for A ≥ 3. Confirms the V1 = τ(β²) double-winding finding from `2026-05-15-three-pr-integration.md` §V1≠mirror by exhibiting a structural T ↔ ³He asymmetry under V2 that V1 cannot resolve.",
+  "contentBlock": "prop:chirality-dual-space-derivation",
+  "parameters": {
+    "q_0": 1.1099785955541805
+  },
+  "data": {
+    "v2_per_atom": {
+      "proton": {
+        "aK_v2": 2.4237432400371994,
+        "elapsed_s": 0.18382081100003234,
+        "n_partitions": 3
+      },
+      "neutron": {
+        "aK_v2": 2.1336285766848126,
+        "elapsed_s": 0.00043448899987197365,
+        "n_partitions": 3
+      },
+      "deuteron": {
+        "aK_v2": 5.227873070398749,
+        "elapsed_s": 0.00412674600011087,
+        "n_partitions": 11
+      },
+      "tritium": {
+        "aK_v2": 10.47743342873,
+        "elapsed_s": 0.3311621580000974,
+        "n_partitions": 30
+      },
+      "he3": {
+        "aK_v2": 13.993700911306476,
+        "elapsed_s": 0.39165915300009146,
+        "n_partitions": 30
+      }
+    },
+    "v1_reference_from_audit": {},
+    "spin_involution_asymmetry_pct": {
+      "V1": null,
+      "V2": -25.127502044405144,
+      "interpretation": "V1 = τ(β²) is conjugation-invariant; T ↔ ³He asymmetry under V1 must be 0 (or numerical zero). V2 = τ(β · β_mirror⁻¹) probes the genuine chirality; if T and ³He differ structurally as isospin mirrors, V2 should detect it. A non-zero V2 asymmetry confirms V2 carries information V1 loses by construction."
+    }
+  },
+  "caveats": [
+    "Mirror composition relies on the atom braid words containing only pure crossings ((1, 0) and (1, -h)). Averaged crossings (½(σ + σ⁻¹)) would require V4-style handling; not present in atom_braid_word_3A output.",
+    "V2 a_K is a Markov trace at numeric q_0 (float64 floor ~1e-13 for A=1, ~1e-10 for A=2 per global_wedderburn_sum_q_hecke_seminormal docstring)."
+  ]
+}

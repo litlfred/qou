@@ -1,0 +1,1211 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.12.3",
+  "computedAt": "2026-06-02T06:52:18.082614+00:00",
+  "commitSha": "c4dffb015789e9617ce335c4b7a6c0b865bc7517",
+  "assertions": [
+    {
+      "name": "delta_n_squared_is_placeholder",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "canonical_a_k_method_unknown",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "neutron_error_localised_to_T1_trace_asymmetry",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 11,
+  "computation": "braid-encoding-audit",
+  "scriptFile": "braid_encoding_audit.py",
+  "scriptHash": "be751052d79a",
+  "scriptCommitSha": "c30da51bea8725add6b37e84c3e6d14cc94ce01e",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.12.3",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Phase 1.8 audit per user directive: validate braid encodings of p and n, classify all knot operations (SDP / Lean / fitted / fallback / placeholder), track γγ pair-production per particle, and identify where the structural differences really are.  Findings: (1) Δ_n² is a placeholder (returns 1.0 always); (2) canonical_a_k for ³H/³He/⁴He has method:unknown in source witness; (3) framework's own fresh_derivation_pn_true_sdp.py documents that absolute m_p / m_n are NOT directly derivable — only differences project to observables — but Strategy-3 ignores this and predicts m_n directly, hence the −8.3% error.",
+  "contentBlock": "prop:atomic-mass-gb-nf",
+  "parameters": {
+    "q_0": 1.1099785827513808,
+    "h": 0.20906029879563937
+  },
+  "data": {
+    "braid_inventory": {
+      "electron": {
+        "particle": "e⁻ (trefoil T_{2,3})",
+        "Hecke": "H_2",
+        "n_strands": 2,
+        "n_generators": 1,
+        "word_cd": [
+          [
+            1.0,
+            0.0,
+            0
+          ],
+          [
+            1.0,
+            0.0,
+            0
+          ],
+          [
+            1.0,
+            0.0,
+            0
+          ]
+        ],
+        "word_str": "σ_0 · σ_0 · σ_0",
+        "writhe": 3,
+        "n_gamma_gamma_sites": 1
+      },
+      "proton": {
+        "particle": "proton (uud, B_3 + 2 gluon)",
+        "Hecke": "H_3",
+        "n_strands": 3,
+        "n_generators": 2,
+        "word_cd": [
+          [
+            1.0,
+            0.0,
+            0
+          ],
+          [
+            1.0,
+            0.0,
+            0
+          ],
+          [
+            1.0,
+            0.0,
+            0
+          ],
+          [
+            1.0,
+            0.0,
+            0
+          ],
+          [
+            1.0,
+            -0.10453014939781968,
+            0
+          ],
+          [
+            1.0,
+            0.0,
+            0
+          ],
+          [
+            1.0,
+            0.0,
+            0
+          ],
+          [
+            1.0,
+            -0.20906029879563937,
+            1
+          ],
+          [
+            1.0,
+            -0.20906029879563937,
+            1
+          ],
+          [
+            1.0,
+            -0.20906029879563937,
+            1
+          ],
+          [
+            1.0,
+            -0.10453014939781968,
+            1
+          ]
+        ],
+        "word_str": "σ_0 · σ_0 · σ_0 · σ_0 · ½(σ+σ⁻¹)_0 · σ_0 · σ_0 · σ⁻¹_1 · σ⁻¹_1 · σ⁻¹_1 · ½(σ+σ⁻¹)_1",
+        "word_length": 11,
+        "writhe": 3,
+        "crossing_breakdown": {
+          "gen_0_σ": 6,
+          "gen_0_½(σ+σ⁻¹)": 1,
+          "gen_1_σ⁻¹": 3,
+          "gen_1_½(σ+σ⁻¹)": 1
+        },
+        "n_gamma_gamma_sites": 3
+      },
+      "neutron": {
+        "particle": "neutron (udd, B_3 + 2 gluon)",
+        "Hecke": "H_3",
+        "n_strands": 3,
+        "n_generators": 2,
+        "word_cd": [
+          [
+            1.0,
+            0.0,
+            0
+          ],
+          [
+            1.0,
+            0.0,
+            0
+          ],
+          [
+            1.0,
+            0.0,
+            0
+          ],
+          [
+            1.0,
+            -0.10453014939781968,
+            0
+          ],
+          [
+            1.0,
+            -0.10453014939781968,
+            0
+          ],
+          [
+            1.0,
+            0.0,
+            0
+          ],
+          [
+            1.0,
+            0.0,
+            0
+          ],
+          [
+            1.0,
+            -0.20906029879563937,
+            1
+          ],
+          [
+            1.0,
+            -0.20906029879563937,
+            1
+          ],
+          [
+            1.0,
+            -0.20906029879563937,
+            1
+          ],
+          [
+            1.0,
+            -0.20906029879563937,
+            1
+          ]
+        ],
+        "word_str": "σ_0 · σ_0 · σ_0 · ½(σ+σ⁻¹)_0 · ½(σ+σ⁻¹)_0 · σ_0 · σ_0 · σ⁻¹_1 · σ⁻¹_1 · σ⁻¹_1 · σ⁻¹_1",
+        "word_length": 11,
+        "writhe": 1,
+        "crossing_breakdown": {
+          "gen_0_σ": 5,
+          "gen_0_½(σ+σ⁻¹)": 2,
+          "gen_1_σ⁻¹": 4
+        },
+        "n_gamma_gamma_sites": 2
+      },
+      "deuteron": {
+        "particle": "deuteron (Z=1, N=1)",
+        "Hecke": "H_6",
+        "n_strands": 6,
+        "n_generators": 5,
+        "word_cd": [
+          [
+            1.0,
+            0.0,
+            0
+          ],
+          [
+            1.0,
+            0.0,
+            0
+          ],
+          [
+            1.0,
+            0.0,
+            0
+          ],
+          [
+            1.0,
+            0.0,
+            0
+          ],
+          [
+            1.0,
+            -0.10453014939781968,
+            0
+          ],
+          [
+            1.0,
+            0.0,
+            0
+          ],
+          [
+            1.0,
+            0.0,
+            0
+          ],
+          [
+            1.0,
+            -0.20906029879563937,
+            1
+          ],
+          [
+            1.0,
+            -0.20906029879563937,
+            1
+          ],
+          [
+            1.0,
+            -0.20906029879563937,
+            1
+          ],
+          [
+            1.0,
+            -0.10453014939781968,
+            1
+          ],
+          [
+            1.0,
+            -0.10453014939781968,
+            2
+          ],
+          [
+            1.0,
+            0.0,
+            3
+          ],
+          [
+            1.0,
+            0.0,
+            3
+          ],
+          [
+            1.0,
+            0.0,
+            3
+          ],
+          [
+            1.0,
+            -0.10453014939781968,
+            3
+          ],
+          [
+            1.0,
+            -0.10453014939781968,
+            3
+          ],
+          [
+            1.0,
+            0.0,
+            3
+          ],
+          [
+            1.0,
+            0.0,
+            3
+          ],
+          [
+            1.0,
+            -0.20906029879563937,
+            4
+          ],
+          [
+            1.0,
+            -0.20906029879563937,
+            4
+          ],
+          [
+            1.0,
+            -0.20906029879563937,
+            4
+          ],
+          [
+            1.0,
+            -0.20906029879563937,
+            4
+          ]
+        ],
+        "word_str": "σ_0 · σ_0 · σ_0 · σ_0 · ½(σ+σ⁻¹)_0 · σ_0 · σ_0 · σ⁻¹_1 · σ⁻¹_1 · σ⁻¹_1 · ½(σ+σ⁻¹)_1 · ½(σ+σ⁻¹)_2 · σ_3 · σ_3 · σ_3 · ½(σ+σ⁻¹)_3 · ½(σ+σ⁻¹)_3 · σ_3 · σ_3 · σ⁻¹_4 · σ⁻¹_4 · σ⁻¹_4 · σ⁻¹_4",
+        "word_length": 23,
+        "writhe": 4,
+        "crossing_breakdown": {
+          "gen_0_σ": 6,
+          "gen_0_½(σ+σ⁻¹)": 1,
+          "gen_1_σ⁻¹": 3,
+          "gen_1_½(σ+σ⁻¹)": 1,
+          "gen_2_½(σ+σ⁻¹)": 1,
+          "gen_3_σ": 5,
+          "gen_3_½(σ+σ⁻¹)": 2,
+          "gen_4_σ⁻¹": 4
+        },
+        "n_gamma_gamma_sites": 5
+      },
+      "triton": {
+        "particle": "triton (Z=1, N=2)",
+        "Hecke": "H_9",
+        "n_strands": 9,
+        "n_generators": 8,
+        "word_cd": [
+          [
+            1.0,
+            0.0,
+            0
+          ],
+          [
+            1.0,
+            0.0,
+            0
+          ],
+          [
+            1.0,
+            0.0,
+            0
+          ],
+          [
+            1.0,
+            0.0,
+            0
+          ],
+          [
+            1.0,
+            -0.10453014939781968,
+            0
+          ],
+          [
+            1.0,
+            0.0,
+            0
+          ],
+          [
+            1.0,
+            0.0,
+            0
+          ],
+          [
+            1.0,
+            -0.20906029879563937,
+            1
+          ],
+          [
+            1.0,
+            -0.20906029879563937,
+            1
+          ],
+          [
+            1.0,
+            -0.20906029879563937,
+            1
+          ],
+          [
+            1.0,
+            -0.10453014939781968,
+            1
+          ],
+          [
+            1.0,
+            -0.10453014939781968,
+            2
+          ],
+          [
+            1.0,
+            0.0,
+            3
+          ],
+          [
+            1.0,
+            0.0,
+            3
+          ],
+          [
+            1.0,
+            0.0,
+            3
+          ],
+          [
+            1.0,
+            -0.10453014939781968,
+            3
+          ],
+          [
+            1.0,
+            -0.10453014939781968,
+            3
+          ],
+          [
+            1.0,
+            0.0,
+            3
+          ],
+          [
+            1.0,
+            0.0,
+            3
+          ],
+          [
+            1.0,
+            -0.20906029879563937,
+            4
+          ],
+          [
+            1.0,
+            -0.20906029879563937,
+            4
+          ],
+          [
+            1.0,
+            -0.20906029879563937,
+            4
+          ],
+          [
+            1.0,
+            -0.20906029879563937,
+            4
+          ],
+          [
+            1.0,
+            -0.20906029879563937,
+            5
+          ],
+          [
+            1.0,
+            0.0,
+            6
+          ],
+          [
+            1.0,
+            0.0,
+            6
+          ],
+          [
+            1.0,
+            0.0,
+            6
+          ],
+          [
+            1.0,
+            -0.10453014939781968,
+            6
+          ],
+          [
+            1.0,
+            -0.10453014939781968,
+            6
+          ],
+          [
+            1.0,
+            0.0,
+            6
+          ],
+          [
+            1.0,
+            0.0,
+            6
+          ],
+          [
+            1.0,
+            -0.20906029879563937,
+            7
+          ],
+          [
+            1.0,
+            -0.20906029879563937,
+            7
+          ],
+          [
+            1.0,
+            -0.20906029879563937,
+            7
+          ],
+          [
+            1.0,
+            -0.20906029879563937,
+            7
+          ]
+        ],
+        "word_str": "σ_0 · σ_0 · σ_0 · σ_0 · ½(σ+σ⁻¹)_0 · σ_0 · σ_0 · σ⁻¹_1 · σ⁻¹_1 · σ⁻¹_1 · ½(σ+σ⁻¹)_1 · ½(σ+σ⁻¹)_2 · σ_3 · σ_3 · σ_3 · ½(σ+σ⁻¹)_3 · ½(σ+σ⁻¹)_3 · σ_3 · σ_3 · σ⁻¹_4 · σ⁻¹_4 · σ⁻¹_4 · σ⁻¹_4 · σ⁻¹_5 · σ_6 · σ_6 · σ_6 · ½(σ+σ⁻¹)_6 · ½(σ+σ⁻¹)_6 · σ_6 · σ_6 · σ⁻¹_7 · σ⁻¹_7 · σ⁻¹_7 · σ⁻¹_7",
+        "word_length": 35,
+        "writhe": 4,
+        "crossing_breakdown": {
+          "gen_0_σ": 6,
+          "gen_0_½(σ+σ⁻¹)": 1,
+          "gen_1_σ⁻¹": 3,
+          "gen_1_½(σ+σ⁻¹)": 1,
+          "gen_2_½(σ+σ⁻¹)": 1,
+          "gen_3_σ": 5,
+          "gen_3_½(σ+σ⁻¹)": 2,
+          "gen_4_σ⁻¹": 4,
+          "gen_5_σ⁻¹": 1,
+          "gen_6_σ": 5,
+          "gen_6_½(σ+σ⁻¹)": 2,
+          "gen_7_σ⁻¹": 4
+        },
+        "n_gamma_gamma_sites": 7
+      },
+      "3He": {
+        "particle": "3He (Z=2, N=1)",
+        "Hecke": "H_9",
+        "n_strands": 9,
+        "n_generators": 8,
+        "word_cd": [
+          [
+            1.0,
+            0.0,
+            0
+          ],
+          [
+            1.0,
+            0.0,
+            0
+          ],
+          [
+            1.0,
+            0.0,
+            0
+          ],
+          [
+            1.0,
+            0.0,
+            0
+          ],
+          [
+            1.0,
+            -0.10453014939781968,
+            0
+          ],
+          [
+            1.0,
+            0.0,
+            0
+          ],
+          [
+            1.0,
+            0.0,
+            0
+          ],
+          [
+            1.0,
+            -0.20906029879563937,
+            1
+          ],
+          [
+            1.0,
+            -0.20906029879563937,
+            1
+          ],
+          [
+            1.0,
+            -0.20906029879563937,
+            1
+          ],
+          [
+            1.0,
+            -0.10453014939781968,
+            1
+          ],
+          [
+            1.0,
+            0.0,
+            2
+          ],
+          [
+            1.0,
+            0.0,
+            3
+          ],
+          [
+            1.0,
+            0.0,
+            3
+          ],
+          [
+            1.0,
+            0.0,
+            3
+          ],
+          [
+            1.0,
+            0.0,
+            3
+          ],
+          [
+            1.0,
+            -0.10453014939781968,
+            3
+          ],
+          [
+            1.0,
+            0.0,
+            3
+          ],
+          [
+            1.0,
+            0.0,
+            3
+          ],
+          [
+            1.0,
+            -0.20906029879563937,
+            4
+          ],
+          [
+            1.0,
+            -0.20906029879563937,
+            4
+          ],
+          [
+            1.0,
+            -0.20906029879563937,
+            4
+          ],
+          [
+            1.0,
+            -0.10453014939781968,
+            4
+          ],
+          [
+            1.0,
+            -0.10453014939781968,
+            5
+          ],
+          [
+            1.0,
+            0.0,
+            6
+          ],
+          [
+            1.0,
+            0.0,
+            6
+          ],
+          [
+            1.0,
+            0.0,
+            6
+          ],
+          [
+            1.0,
+            -0.10453014939781968,
+            6
+          ],
+          [
+            1.0,
+            -0.10453014939781968,
+            6
+          ],
+          [
+            1.0,
+            0.0,
+            6
+          ],
+          [
+            1.0,
+            0.0,
+            6
+          ],
+          [
+            1.0,
+            -0.20906029879563937,
+            7
+          ],
+          [
+            1.0,
+            -0.20906029879563937,
+            7
+          ],
+          [
+            1.0,
+            -0.20906029879563937,
+            7
+          ],
+          [
+            1.0,
+            -0.20906029879563937,
+            7
+          ]
+        ],
+        "word_str": "σ_0 · σ_0 · σ_0 · σ_0 · ½(σ+σ⁻¹)_0 · σ_0 · σ_0 · σ⁻¹_1 · σ⁻¹_1 · σ⁻¹_1 · ½(σ+σ⁻¹)_1 · σ_2 · σ_3 · σ_3 · σ_3 · σ_3 · ½(σ+σ⁻¹)_3 · σ_3 · σ_3 · σ⁻¹_4 · σ⁻¹_4 · σ⁻¹_4 · ½(σ+σ⁻¹)_4 · ½(σ+σ⁻¹)_5 · σ_6 · σ_6 · σ_6 · ½(σ+σ⁻¹)_6 · ½(σ+σ⁻¹)_6 · σ_6 · σ_6 · σ⁻¹_7 · σ⁻¹_7 · σ⁻¹_7 · σ⁻¹_7",
+        "word_length": 35,
+        "writhe": 8,
+        "crossing_breakdown": {
+          "gen_0_σ": 6,
+          "gen_0_½(σ+σ⁻¹)": 1,
+          "gen_1_σ⁻¹": 3,
+          "gen_1_½(σ+σ⁻¹)": 1,
+          "gen_2_σ": 1,
+          "gen_3_σ": 6,
+          "gen_3_½(σ+σ⁻¹)": 1,
+          "gen_4_σ⁻¹": 3,
+          "gen_4_½(σ+σ⁻¹)": 1,
+          "gen_5_½(σ+σ⁻¹)": 1,
+          "gen_6_σ": 5,
+          "gen_6_½(σ+σ⁻¹)": 2,
+          "gen_7_σ⁻¹": 4
+        },
+        "n_gamma_gamma_sites": 8
+      },
+      "4He": {
+        "particle": "4He (Z=2, N=2)",
+        "Hecke": "H_12",
+        "n_strands": 12,
+        "n_generators": 11,
+        "word_cd": [
+          [
+            1.0,
+            0.0,
+            0
+          ],
+          [
+            1.0,
+            0.0,
+            0
+          ],
+          [
+            1.0,
+            0.0,
+            0
+          ],
+          [
+            1.0,
+            0.0,
+            0
+          ],
+          [
+            1.0,
+            -0.10453014939781968,
+            0
+          ],
+          [
+            1.0,
+            0.0,
+            0
+          ],
+          [
+            1.0,
+            0.0,
+            0
+          ],
+          [
+            1.0,
+            -0.20906029879563937,
+            1
+          ],
+          [
+            1.0,
+            -0.20906029879563937,
+            1
+          ],
+          [
+            1.0,
+            -0.20906029879563937,
+            1
+          ],
+          [
+            1.0,
+            -0.10453014939781968,
+            1
+          ],
+          [
+            1.0,
+            0.0,
+            2
+          ],
+          [
+            1.0,
+            0.0,
+            3
+          ],
+          [
+            1.0,
+            0.0,
+            3
+          ],
+          [
+            1.0,
+            0.0,
+            3
+          ],
+          [
+            1.0,
+            0.0,
+            3
+          ],
+          [
+            1.0,
+            -0.10453014939781968,
+            3
+          ],
+          [
+            1.0,
+            0.0,
+            3
+          ],
+          [
+            1.0,
+            0.0,
+            3
+          ],
+          [
+            1.0,
+            -0.20906029879563937,
+            4
+          ],
+          [
+            1.0,
+            -0.20906029879563937,
+            4
+          ],
+          [
+            1.0,
+            -0.20906029879563937,
+            4
+          ],
+          [
+            1.0,
+            -0.10453014939781968,
+            4
+          ],
+          [
+            1.0,
+            -0.10453014939781968,
+            5
+          ],
+          [
+            1.0,
+            0.0,
+            6
+          ],
+          [
+            1.0,
+            0.0,
+            6
+          ],
+          [
+            1.0,
+            0.0,
+            6
+          ],
+          [
+            1.0,
+            -0.10453014939781968,
+            6
+          ],
+          [
+            1.0,
+            -0.10453014939781968,
+            6
+          ],
+          [
+            1.0,
+            0.0,
+            6
+          ],
+          [
+            1.0,
+            0.0,
+            6
+          ],
+          [
+            1.0,
+            -0.20906029879563937,
+            7
+          ],
+          [
+            1.0,
+            -0.20906029879563937,
+            7
+          ],
+          [
+            1.0,
+            -0.20906029879563937,
+            7
+          ],
+          [
+            1.0,
+            -0.20906029879563937,
+            7
+          ],
+          [
+            1.0,
+            -0.20906029879563937,
+            8
+          ],
+          [
+            1.0,
+            0.0,
+            9
+          ],
+          [
+            1.0,
+            0.0,
+            9
+          ],
+          [
+            1.0,
+            0.0,
+            9
+          ],
+          [
+            1.0,
+            -0.10453014939781968,
+            9
+          ],
+          [
+            1.0,
+            -0.10453014939781968,
+            9
+          ],
+          [
+            1.0,
+            0.0,
+            9
+          ],
+          [
+            1.0,
+            0.0,
+            9
+          ],
+          [
+            1.0,
+            -0.20906029879563937,
+            10
+          ],
+          [
+            1.0,
+            -0.20906029879563937,
+            10
+          ],
+          [
+            1.0,
+            -0.20906029879563937,
+            10
+          ],
+          [
+            1.0,
+            -0.20906029879563937,
+            10
+          ]
+        ],
+        "word_str": "σ_0 · σ_0 · σ_0 · σ_0 · ½(σ+σ⁻¹)_0 · σ_0 · σ_0 · σ⁻¹_1 · σ⁻¹_1 · σ⁻¹_1 · ½(σ+σ⁻¹)_1 · σ_2 · σ_3 · σ_3 · σ_3 · σ_3 · ½(σ+σ⁻¹)_3 · σ_3 · σ_3 · σ⁻¹_4 · σ⁻¹_4 · σ⁻¹_4 · ½(σ+σ⁻¹)_4 · ½(σ+σ⁻¹)_5 · σ_6 · σ_6 · σ_6 · ½(σ+σ⁻¹)_6 · ½(σ+σ⁻¹)_6 · σ_6 · σ_6 · σ⁻¹_7 · σ⁻¹_7 · σ⁻¹_7 · σ⁻¹_7 · σ⁻¹_8 · σ_9 · σ_9 · σ_9 · ½(σ+σ⁻¹)_9 · ½(σ+σ⁻¹)_9 · σ_9 · σ_9 · σ⁻¹_10 · σ⁻¹_10 · σ⁻¹_10 · σ⁻¹_10",
+        "word_length": 47,
+        "writhe": 8,
+        "crossing_breakdown": {
+          "gen_0_σ": 6,
+          "gen_0_½(σ+σ⁻¹)": 1,
+          "gen_1_σ⁻¹": 3,
+          "gen_1_½(σ+σ⁻¹)": 1,
+          "gen_2_σ": 1,
+          "gen_3_σ": 6,
+          "gen_3_½(σ+σ⁻¹)": 1,
+          "gen_4_σ⁻¹": 3,
+          "gen_4_½(σ+σ⁻¹)": 1,
+          "gen_5_½(σ+σ⁻¹)": 1,
+          "gen_6_σ": 5,
+          "gen_6_½(σ+σ⁻¹)": 2,
+          "gen_7_σ⁻¹": 4,
+          "gen_8_σ⁻¹": 1,
+          "gen_9_σ": 5,
+          "gen_9_½(σ+σ⁻¹)": 2,
+          "gen_10_σ⁻¹": 4
+        },
+        "n_gamma_gamma_sites": 10
+      }
+    },
+    "knot_operation_classifications": [
+      {
+        "operator": "T1: |tr_M_atomic|",
+        "role": "Markov trace of the per-particle braid",
+        "source": "atomic_braid_mass_table.t1_atomic_with_coupling",
+        "classification": "DERIVED (closed-form via Markov axioms + Hecke quadratic)",
+        "evidence": "markov-trace-axiomatic-closed-form.md (proton σ₁⁷σ₂⁴); verified by option_b_proton_mass_full_chain.py to 14 digits (Phase 1.6, commit ac88823)",
+        "concerns": "The encoding `|tr_M(p)|^Z · |tr_M(n)|^N · a(Z,N) · Δ_n²` treats compounds as disjoint products with all interaction structure factored into a single multiplicative `a(Z,N)`. For Z+N≥3 this requires substantial canonical_a_k input; see below."
+      },
+      {
+        "operator": "Δ_I: knot-operator quotient-braid Jones factor a(Z,N)",
+        "role": "Multiplicative coupling between nucleon carriers",
+        "source": "atomic_braid_mass_table.jones_quotient_factor",
+        "classification": "MIXED — fallback for A≤2; canonical for A≥3 from witness with method:unknown",
+        "evidence": "fallback (A=1: 1; A=2: 1; A=3: 1−h²; A=4: (1−h²)²; A≥5: extrapolation); canonical: jet-knot-invariants.witness.json (³H, ³He, ⁴He, ⁶Li, ⁷Li, ⁹Be, ¹²C, ¹⁶O) with `method: unknown` per inspection",
+        "concerns": "FLAGGED: the canonical_a_k witness has `method: unknown`. The values 0.06484 (³H), 0.20479 (³He), 0.67676 (⁴He) are loaded as numbers without documented derivation. These are precisely the values driving the −54%, −50%, −40% errors at A=3, 4. Need to audit jet_knot_invariants.py for SDP/derivation provenance."
+      },
+      {
+        "operator": "Δ_n²: full-twist saturated-shell scalar",
+        "role": "Categorical-neutrality coupling at magic shells",
+        "source": "atomic_braid_mass_table.full_twist_scalar",
+        "classification": "PLACEHOLDER (always returns 1.0)",
+        "evidence": "full_twist_scalar(A) returns 1 unconditionally — both magic shells AND non-magic. Per docstring: 'corrections via T2-T3' — but T2/T3 are identical p/n (verified in neutron_error_diagnostic.py).",
+        "concerns": "FLAGGED: Δ_n² is structurally trivial in the current code. The full_twist_delta_n2_verification.py witness records q^{c(λ)} eigenvalues per Wedderburn block, but these are NOT consumed by the mass-table assembly. The placeholder elides any non-trivial Δ_n² action, including at non-magic shells where the action SHOULD be q^{c(λ)} ≠ 1."
+      },
+      {
+        "operator": "T2: brane-tower single (z² · Σ Φ_q(|V_i|))",
+        "role": "Single-generator brane-tower contribution",
+        "source": "atomic_braid_mass_table.t2_markov",
+        "classification": "DERIVED (closed-form Markov trace at z²)",
+        "evidence": "Numerically identical between p and n at A=1 (0.4986). T2 = z² for any A=1 atomic-braid (no per-quark-flavor dependence beyond the trace value, which is wrapped in T1).",
+        "concerns": "T2 doesn't carry quark-flavor information — it's a generic brane-tower scalar. Doesn't help discriminate p from n."
+      },
+      {
+        "operator": "T3: brane-tower pair (z⁴ · Σ Φ_q(|V_i V_j|))",
+        "role": "Pair-generator brane-tower contribution",
+        "source": "atomic_braid_mass_table.t3_markov",
+        "classification": "DERIVED (closed-form at z⁴)",
+        "evidence": "Identical p vs n (0.0622). Same comment as T2.",
+        "concerns": "(same as T2)"
+      },
+      {
+        "operator": "T4: Frobenius co-Casimir (m_e · Σ 1/dim_q(λ))",
+        "role": "Wedderburn-block dimension sum",
+        "source": "atomic_braid_mass_terms.t4_raw, then ·m_e",
+        "classification": "DERIVED (q-hook-length explicit; Lean-closed n=2..7)",
+        "evidence": "frobenius-codim-universal.lean closes n=2..5; my Phase 2 / T1 extends to n=6, n=7 (commit 4e876b6). Mathematical content verified at q=1 against S_n character-degree sums.",
+        "concerns": "Identical p vs n (2.4973) — Frobenius co-Casimir depends only on n=3A, not on quark flavor. Doesn't discriminate p from n."
+      },
+      {
+        "operator": "T5: chirality factor (a_K · B_bulk)",
+        "role": "Multiplicative chirality on T1",
+        "source": "atomic_braid_mass_table (uses bw_chirality_isotopes)",
+        "classification": "PARTIAL — a_K from chirality_map literal; B_bulk from bw_chirality formula",
+        "evidence": "chirality_map = {chiral+, chiral-, amphichiral, borromean, none} → literal mp.mpf values per knot type. For proton: a_K = 1 (none) ⇒ T5 = 0 in Strategy-3.",
+        "concerns": "FLAGGED: 'amphichiral' for triton + ³He, 'chiral+' for deuteron, 'borromean' for ⁴He+ — these knot-type labels are hardcoded per atom in atomic_braid_mass_table.py. Need audit of where these labels come from (knot-type identification should be SDP-driven per conj:canonical-knot-id-sdp)."
+      },
+      {
+        "operator": "T6: cyclotomic residue tail",
+        "role": "Habiro residue at roots of unity",
+        "source": "atomic_braid_mass_terms.t6_canonical_MeV (in MeV)",
+        "classification": "DERIVED — Habiro residue per A from witness",
+        "evidence": "term6-habiro-residue-mpfr-50dps.witness.json. Identical p vs n (0.6807 MeV) since T6 depends on A=1 only.",
+        "concerns": "(same — A-only, no quark-flavor)"
+      },
+      {
+        "operator": "E_0: cat-unit → MeV calibration",
+        "role": "Single-parameter dimensional fit",
+        "source": "atomic_braid_mass_table.main: E_0 = (M_p − T6_p) / total_hecke_p",
+        "classification": "FITTED (1 parameter against CODATA m_p)",
+        "evidence": "By construction M_pred[p] = M_p_codata = 938.272 MeV. E_0 = 199.86 MeV/cat-unit.",
+        "concerns": "Single-parameter fit. With proton anchor fixed, neutron and compound predictions are 'genuine' (no further fits) — but the proton anchor itself is a calibration, not a derivation."
+      }
+    ],
+    "gamma_gamma_per_particle": {
+      "electron": {
+        "particle": "e⁻ (trefoil T_{2,3})",
+        "n_sigma_per_gen": {
+          "0": 3
+        },
+        "n_gamma_gamma_sites": 1,
+        "n_sigma_inverse": 0,
+        "n_averaged": 0,
+        "writhe": 3
+      },
+      "proton": {
+        "particle": "proton (uud, B_3 + 2 gluon)",
+        "n_sigma_per_gen": {
+          "0": 6
+        },
+        "n_gamma_gamma_sites": 3,
+        "n_sigma_inverse": 5,
+        "n_averaged": 2,
+        "writhe": 3
+      },
+      "neutron": {
+        "particle": "neutron (udd, B_3 + 2 gluon)",
+        "n_sigma_per_gen": {
+          "0": 5
+        },
+        "n_gamma_gamma_sites": 2,
+        "n_sigma_inverse": 6,
+        "n_averaged": 2,
+        "writhe": 1
+      },
+      "deuteron": {
+        "particle": "deuteron (Z=1, N=1)",
+        "n_sigma_per_gen": {
+          "0": 6,
+          "3": 5
+        },
+        "n_gamma_gamma_sites": 5,
+        "n_sigma_inverse": 12,
+        "n_averaged": 5,
+        "writhe": 4
+      },
+      "triton": {
+        "particle": "triton (Z=1, N=2)",
+        "n_sigma_per_gen": {
+          "0": 6,
+          "3": 5,
+          "6": 5
+        },
+        "n_gamma_gamma_sites": 7,
+        "n_sigma_inverse": 19,
+        "n_averaged": 7,
+        "writhe": 4
+      },
+      "3He": {
+        "particle": "3He (Z=2, N=1)",
+        "n_sigma_per_gen": {
+          "0": 6,
+          "2": 1,
+          "3": 6,
+          "6": 5
+        },
+        "n_gamma_gamma_sites": 8,
+        "n_sigma_inverse": 17,
+        "n_averaged": 7,
+        "writhe": 8
+      },
+      "4He": {
+        "particle": "4He (Z=2, N=2)",
+        "n_sigma_per_gen": {
+          "0": 6,
+          "2": 1,
+          "3": 6,
+          "6": 5,
+          "9": 5
+        },
+        "n_gamma_gamma_sites": 10,
+        "n_sigma_inverse": 24,
+        "n_averaged": 9,
+        "writhe": 8
+      }
+    },
+    "tr_M_cross_check": {
+      "proton": {
+        "strategy_3_tr_M": NaN,
+        "phase_1_6_closed_form": 1.6331535640480805,
+        "markov_trace_assembly_chain": 1.0653062285923893,
+        "axiomatic_content_block": 1.63315
+      },
+      "neutron": {
+        "strategy_3_tr_M": NaN,
+        "phase_1_6_closed_form": null,
+        "axiomatic_content_block": "(σ₁⁷σ₂⁴ used for proton; udd encoding differs — needs separate closed form)"
+      },
+      "electron": {
+        "strategy_3_tr_M": "(not in Strategy-3 mass table — uses bare nucleon braids only)",
+        "phase_1_6_closed_form": 0.7302040595096823
+      }
+    },
+    "structural_finding": {
+      "source": "folio-assistant/computations/fresh_derivation_pn_true_sdp.py:1-26",
+      "claim": "Per the framework's own SDP audit (commit history pre-dates this audit): 'Absolute m_p and m_n are NOT directly derivable from γγ → target Hecke-energy distance because entanglement energy (pre-observable complex-q sector) is gauged away. Only DIFFERENCES/RATIOS project to observables. The clean prior result is: m_n − m_p = S_dd − S_uu = ((q+q⁻¹)/(q^{1/2}+q^{-1/2})) · (μ_d − μ_u), giving < 1 ppm on Δm across isotopes once μ_d − μ_u is calibrated from CODATA.'",
+      "implication": "Strategy-3 (atomic_braid_mass_table.py) computes |tr_M(p)| and |tr_M(n)| separately and combines via E_0 calibration. This violates the framework's own claim — the bare absolute traces are not observables. The −8.3% neutron error is a direct consequence: the σ↔σ⁻¹ asymmetry between uud and udd is real in the Hecke algebra but does NOT correspond to a physical absolute-mass observable in the framework's stated semantics.",
+      "actionable_path": "The framework predicts m_n − m_p (an observable) via the (q+q⁻¹)/(q^{1/2}+q^{-1/2})·(μ_d − μ_u) formula at < 1 ppm. Strategy-3 should consume this difference formula directly rather than deriving m_n independently from |tr_M(n)|. A two-step calibration: (a) anchor m_p via CODATA (or via a different absolute-mass channel), (b) derive m_n = m_p + (q+q⁻¹)/(q^{1/2}+q^{-1/2})·(μ_d − μ_u)."
+    }
+  }
+}

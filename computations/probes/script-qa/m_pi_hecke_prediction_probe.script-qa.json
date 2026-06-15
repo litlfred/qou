@@ -1,0 +1,185 @@
+{
+  "$schema": "script-qa/v1",
+  "script_path": "folio-assistant/computations/probes/m_pi_hecke_prediction_probe.py",
+  "language": "python",
+  "source_hash": "db28c49516a7",
+  "updated_at": "2026-06-09T03:47:37.719Z",
+  "criteria": {
+    "does_not_default_to_float": [
+      {
+        "field_hash": {
+          "ts": "db28c49516a7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "69537a0de0e5",
+          "script_commit_sha": "3f3c2564e4028a6d8d7dcc4f24e1dadb8854990a"
+        },
+        "reviewed_at": "2026-06-04T18:24:03.689Z",
+        "reviewed_sha": "afce870d3c949d2018a034615c153abcca9000e6",
+        "severity": "major",
+        "evidence": "folio-assistant/computations/probes/m_pi_hecke_prediction_probe.py:465: bare `float(M_PI_PDG_ERR_MEV / M_PI_PDG_MEV * mpf(\"1…)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/probes/m_pi_hecke_prediction_probe.py:385: bare float literal `1.3` — wrap in `mpmath.mpf(\"1.3\")` / `Decimal(\"1.3\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/probes/m_pi_hecke_prediction_probe.py:465: bare float literal `1000.0` — wrap in `mpmath.mpf(\"1000.0\")` / `Decimal(\"1000.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/probes/m_pi_hecke_prediction_probe.py:481: bare float literal `1.3` — wrap in `mpmath.mpf(\"1.3\")` / `Decimal(\"1.3\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/probes/m_pi_hecke_prediction_probe.py:511: bare float literal `0.0` — wrap in `mpmath.mpf(\"0.0\")` / `Decimal(\"0.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+      }
+    ],
+    "respects_archimedean_wall": [
+      {
+        "field_hash": {
+          "ts": "db28c49516a7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "69537a0de0e5",
+          "script_commit_sha": "3f3c2564e4028a6d8d7dcc4f24e1dadb8854990a"
+        },
+        "reviewed_at": "2026-06-04T18:24:03.689Z",
+        "reviewed_sha": "afce870d3c949d2018a034615c153abcca9000e6"
+      }
+    ],
+    "code_is_commented": [
+      {
+        "field_hash": {
+          "ts": "db28c49516a7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "69537a0de0e5",
+          "script_commit_sha": "3f3c2564e4028a6d8d7dcc4f24e1dadb8854990a"
+        },
+        "reviewed_at": "2026-06-04T18:24:03.689Z",
+        "reviewed_sha": "afce870d3c949d2018a034615c153abcca9000e6"
+      }
+    ],
+    "variables_typed": [
+      {
+        "field_hash": {
+          "ts": "db28c49516a7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "69537a0de0e5",
+          "script_commit_sha": "3f3c2564e4028a6d8d7dcc4f24e1dadb8854990a"
+        },
+        "reviewed_at": "2026-06-04T18:24:03.689Z",
+        "reviewed_sha": "afce870d3c949d2018a034615c153abcca9000e6",
+        "severity": "minor",
+        "evidence": "folio-assistant/computations/probes/m_pi_hecke_prediction_probe.py:101: `def q_int(…)` has 2 parameters without type annotation: q, n — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/probes/m_pi_hecke_prediction_probe.py:106: `def qfact_three(…)` has 1 parameter without type annotation: q — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/probes/m_pi_hecke_prediction_probe.py:111: `def trM_borromean(…)` has 1 parameter without type annotation: q — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/probes/m_pi_hecke_prediction_probe.py:117: `def F_Bor(…)` has 1 parameter without type annotation: q — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/probes/m_pi_hecke_prediction_probe.py:351: `def miss_ppm(…)` has 1 parameter without type annotation: pred — add `: type` (or `: Any` if the type genuinely is untyped)"
+      }
+    ],
+    "has_references_to_paper": [
+      {
+        "field_hash": {
+          "ts": "db28c49516a7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "69537a0de0e5",
+          "script_commit_sha": "3f3c2564e4028a6d8d7dcc4f24e1dadb8854990a"
+        },
+        "reviewed_at": "2026-06-04T18:24:03.689Z",
+        "reviewed_sha": "afce870d3c949d2018a034615c153abcca9000e6",
+        "severity": "minor",
+        "evidence": "folio-assistant/computations/probes/m_pi_hecke_prediction_probe.py:1: script's sidecar has no `references` field — the criterion reads metadata only and does not grep source for citations. Add an explicit `references: [...]` entry to the script's `.script-qa.json` (content-block labels like `prop:foo`, bibliography keys like `wenzl1988`), or set `references: []` if the script is pure infrastructure with no paper backing"
+      }
+    ],
+    "connected_to_ci_pipeline": [
+      {
+        "field_hash": {
+          "ts": "db28c49516a7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "69537a0de0e5",
+          "script_commit_sha": "3f3c2564e4028a6d8d7dcc4f24e1dadb8854990a"
+        },
+        "reviewed_at": "2026-06-04T18:24:03.689Z",
+        "reviewed_sha": "afce870d3c949d2018a034615c153abcca9000e6",
+        "severity": "minor",
+        "evidence": "folio-assistant/computations/probes/m_pi_hecke_prediction_probe.py:1: script `m_pi_hecke_prediction_probe.py` is not referenced from any `.github/workflows/*.yml` and is not imported by any sibling script — likely never exercised in CI. Either add a workflow invocation, mark as a library by adding `from <this-module> import` somewhere, or move to `_deprecated/`"
+      }
+    ],
+    "deprecated": [
+      {
+        "field_hash": {
+          "ts": "db28c49516a7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "69537a0de0e5",
+          "script_commit_sha": "3f3c2564e4028a6d8d7dcc4f24e1dadb8854990a"
+        },
+        "reviewed_at": "2026-06-04T18:24:03.689Z",
+        "reviewed_sha": "afce870d3c949d2018a034615c153abcca9000e6"
+      }
+    ],
+    "uses_library_framework_appropriately": [
+      {
+        "field_hash": {
+          "ts": "db28c49516a7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "69537a0de0e5",
+          "script_commit_sha": "3f3c2564e4028a6d8d7dcc4f24e1dadb8854990a"
+        },
+        "reviewed_at": "2026-06-04T18:24:03.689Z",
+        "reviewed_sha": "afce870d3c949d2018a034615c153abcca9000e6"
+      }
+    ],
+    "compute_no_mpf_to_float_cast": [
+      {
+        "field_hash": {
+          "ts": "db28c49516a7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "0bbdf534427b",
+          "script_commit_sha": "76a167e10467a2b0f41dbbd968ea8245d5b4ba33"
+        },
+        "reviewed_at": "2026-06-09T03:37:13.209Z",
+        "reviewed_sha": "76a167e10467a2b0f41dbbd968ea8245d5b4ba33"
+      },
+      {
+        "field_hash": {
+          "ts": "db28c49516a7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "a08e6e1469fd",
+          "script_commit_sha": "76a167e10467a2b0f41dbbd968ea8245d5b4ba33"
+        },
+        "reviewed_at": "2026-06-09T03:47:37.719Z",
+        "reviewed_sha": "3765bc9aa9274031018ed3d7696fc515f11274be"
+      }
+    ]
+  }
+}

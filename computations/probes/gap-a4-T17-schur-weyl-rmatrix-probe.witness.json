@@ -1,0 +1,77 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-06-13T14:00:22.314937+00:00",
+  "commitSha": "efecc27385c6918b2c36ebd9fec86f23ee05162a",
+  "assertions": [
+    {
+      "name": "hecke_relation_holds_on_V_tensor_V",
+      "computed": 3.969255501699688e-72,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-40,
+      "source": "(R − q)(R + q⁻¹) = 0 on V⊗V — the defining Hecke quotient relation for σ_i.  Verified to 50 dps."
+    },
+    {
+      "name": "direct_rmatrix_matches_schur_weyl_prediction",
+      "computed": 7.24454326306137e-71,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-40,
+      "source": "tr_{V^⊗3}(β_Bor) via direct 8×8 R-matrix computation equals the Schur-Weyl prediction dim(V_{3/2})·χ^{(3)}(β_Bor) + dim(V_{1/2})·χ^{(2,1)}(β_Bor) = 4·1 + 2·(2 − 3h⁴ − h⁶) = 8 − 6h⁴ − 2h⁶ (classical integer sl_2 dims 4, 2 — NOT q-deformed [4]_q/[2]_q, per gotcha 1; χ^{(3)}(β_Bor) = 1 from writhe 0 + T15 polynomial)."
+    },
+    {
+      "name": "trace_at_q_one_equals_dim_8",
+      "computed": 8.0,
+      "expected": 8.0,
+      "passed": true,
+      "tolerance": 1e-30,
+      "source": "At q = 1, β_Bor → identity ∈ S_3, so tr_{V^⊗3}(β_Bor) = tr_{V^⊗3}(id) = dim V^⊗3 = 2³ = 8."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 10,
+  "computation": "gap-a4-T17-schur-weyl-rmatrix-probe",
+  "scriptFile": "gap_a4_T17_schur_weyl_rmatrix_probe.py",
+  "scriptHash": "96e742b29501",
+  "scriptCommitSha": "efecc27385c6918b2c36ebd9fec86f23ee05162a",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "mpmath": "1.4.1"
+  },
+  "description": "GAP-A-4 T17 — First categorical / topological distinguisher in the T4-T17 arc.  Derives tr_{V^⊗3}(β_Bor) directly from the U_q(sl_2) R-matrix action on V_{1/2}^⊗3 and cross-checks against the Schur-Weyl prediction 4·χ^{(3)} + 2·χ^{(2,1)} = 8 − 6h⁴ − 2h⁶ (classical sl_2 dims 4, 2 — not q-deformed [4]_q/[2]_q; combining T15 polynomial χ^{(2,1)} with the trivial rep's χ^{(3)}(β_Bor) = 1 for writhe-0 braids).",
+  "auditOnly": "docs/audits/2026-06-06-gap-a4-T9-T14-followup-retrospective.md",
+  "parameters": {
+    "q_0_50dps": "1.1099785827513808075916690956107688798744991218736"
+  },
+  "data": {
+    "discipline": "EXPLORATORY",
+    "production_wired": false,
+    "hecke_relation_check": {
+      "max_residual_entry": "3.969255501699687924927868094974035157593321389893982133930769055262409e-72",
+      "hecke_relation_holds": true
+    },
+    "direct_vs_schur_weyl": {
+      "tr_direct_rmatrix": "7.988371625959928173456398736037433400178279165023621036935259467654594",
+      "tr_schur_weyl_prediction": "7.988371625959928173456398736037433400178279165023621036935259467654594",
+      "absolute_difference": "7.244543263061369894007295432710233424546024958511310551666091911948401e-71",
+      "categorical_derivation_succeeds": true,
+      "components": {
+        "dim_V_3_2_times_chi_3": "4.0",
+        "dim_V_1_2_times_chi_2_1": "3.988371625959928173456398736037433400178279165023621036935259467654594",
+        "chi_2_1_at_q0": "1.994185812979964086728199368018716700089139582511810518467629733827297"
+      }
+    },
+    "classical_limit_check": {
+      "tr_at_q1": "8.0",
+      "matches_dim_8": true
+    },
+    "synthesis_verdict": "T17 SUCCEEDS as the FIRST first-principles categorical derivation in the T4-T17 arc: the direct 8×8 R-matrix computation of tr_{V^⊗3}(β_Bor) reproduces the Schur-Weyl Wedderburn-block prediction tr = dim(V_{3/2}) · χ^{(3)} + dim(V_{1/2}) · χ^{(2,1)} = 4 + 2·(2 − 3h⁴ − h⁶) = 8 − 6h⁴ − 2h⁶ to 50 dps at q_0. Subtle: the H_n(q)-side dim in the q-Schur centralizer is the CLASSICAL integer dim (4 for V_{3/2}, 2 for V_{1/2}), NOT the q-deformed [4]_q / [2]_q — same convention as T8's sl_2 q-Schur centralizer identity.  This confirms (a) the T15 polynomial χ^{(2,1)}(β_Bor) = 2 − 3h⁴ − h⁶ is the correct (2,1)-block character, and (b) the categorical Schur-Weyl decomposition picks out the (2,1) block correctly from the 8-dim V^⊗3 trace.  This is the FIRST distinguisher in the T16 enumeration: the Schur-Weyl projector is the correct category-theoretic source of the (2, 0, −3, −1) coefficient 4-tuple at the (2,1) block, NOT the other combinatorial candidates that happened to match values.  Subtle gotcha (worth recording for future probes): the braided R-matrix inverse Ř⁻¹ = Ř − (q − q⁻¹)·I, NOT Ř(q → q⁻¹) — initial v1 of this probe had the wrong inverse and produced a 0.39 numerical discrepancy."
+  }
+}

@@ -1,0 +1,495 @@
+{
+  "computation": "rho-k-h3a-crystal",
+  "computedAt": "2026-05-09T05:37:11.529320+00:00",
+  "description": "Option E for the H_{3A} per-block binding fraction Delta_lambda(K): plug in the Kashiwara symmetric-crystal weight c_lambda(q) := s_lambda(1, q, ..., q^{n-1}) (Macdonald hook-content; equals the Demazure character D_{w_0}(lambda) at principal specialisation, verified by demazure-markov-trace.witness.json) as Delta_lambda. Independent of Occam single-partition heuristic in rho_k_h3a_refinement.py; deuteron-only proof of concept. Reports residual honestly (no scaling).",
+  "engine": "mpmath numeric Hoefsmit at q_0 (50 dps), multiprocessing.Pool(4); Macdonald hook-content for c_lambda; crystal_basis.crystal_B BFS for self-test",
+  "scriptFile": "rho_k_h3a_crystal.py",
+  "scriptHash": "sha256:b8969c41cf63e0650f405c61cbeb6c72d9804b862891d3dd273a5c3ba2d4f3af",
+  "parameters": {
+    "q_0_50dps": "1.1099785955541805752815940796095093779932822799587",
+    "atom": "deuteron",
+    "Z": 1,
+    "N": 1,
+    "A": 2,
+    "n_strands": 6,
+    "braid_word_source": "mass_at_3A_proper.atom_braid_word_3A(1, 1)",
+    "braid_word_str": "beta_p . I . beta_n  (canonical: H_3 (x) H_3 c H_6 with interface I = sigma_3 - h/2 . 1 at gen_idx=2)",
+    "crossings_typed": [
+      [
+        0,
+        "sigma"
+      ],
+      [
+        0,
+        "sigma"
+      ],
+      [
+        0,
+        "sigma"
+      ],
+      [
+        0,
+        "sigma"
+      ],
+      [
+        0,
+        "averaged"
+      ],
+      [
+        0,
+        "sigma"
+      ],
+      [
+        0,
+        "sigma"
+      ],
+      [
+        1,
+        "sigma_inv"
+      ],
+      [
+        1,
+        "sigma_inv"
+      ],
+      [
+        1,
+        "sigma_inv"
+      ],
+      [
+        1,
+        "averaged"
+      ],
+      [
+        2,
+        "averaged"
+      ],
+      [
+        3,
+        "sigma"
+      ],
+      [
+        3,
+        "sigma"
+      ],
+      [
+        3,
+        "sigma"
+      ],
+      [
+        3,
+        "averaged"
+      ],
+      [
+        3,
+        "averaged"
+      ],
+      [
+        3,
+        "sigma"
+      ],
+      [
+        3,
+        "sigma"
+      ],
+      [
+        4,
+        "sigma_inv"
+      ],
+      [
+        4,
+        "sigma_inv"
+      ],
+      [
+        4,
+        "sigma_inv"
+      ],
+      [
+        4,
+        "sigma_inv"
+      ]
+    ],
+    "n_crossings": 23,
+    "n_partitions": 11,
+    "compute_status": "deuteron",
+    "M_codata_MeV": "1875.61294257",
+    "m_e_MeV": "0.51099895",
+    "m_p_MeV": "938.27208816",
+    "m_n_MeV": "939.56542052"
+  },
+  "data": {
+    "abs_tr_M_at_q0_50dps": "0.3882864715477132785110659223165687998713135876719",
+    "rho_K_LO": "9464.2399476222402644936590084821725363213426591396",
+    "rho_K_codata": "9453.0282068049061232379807700611810852137428762323",
+    "delta_rho_residual": "-11.211740817334141255678238420991451107599782907313",
+    "M_LO_pred_MeV": "1877.83750868",
+    "M_LO_err_pct": "0.11860475365199057707203929661780804716149661389866",
+    "binding_gap_MeV": "2.2245661099999999999999999999999999999999999999955",
+    "target_sum_y_chi_Delta": "-4.3533672818701486568612322980311407684888589301318",
+    "schur_weyl_check": {
+      "sum_y_chi": "0.3882864715477132785110659223165687998713135876719",
+      "tr_M": "0.3882864715477132785110659223165687998713135876719",
+      "abs_residual": "3.3409558876152445576756705839393523485189961001313e-51",
+      "match_at_1e_40": true
+    },
+    "crystal_self_test": {
+      "rows": [
+        {
+          "partition": [
+            6
+          ],
+          "c_lambda_at_1_macdonald": "462.0",
+          "B_lambda_n_cardinality": 462,
+          "agree": true
+        },
+        {
+          "partition": [
+            5,
+            1
+          ],
+          "c_lambda_at_1_macdonald": "1050.0",
+          "B_lambda_n_cardinality": 1050,
+          "agree": true
+        },
+        {
+          "partition": [
+            4,
+            2
+          ],
+          "c_lambda_at_1_macdonald": "1134.0",
+          "B_lambda_n_cardinality": 1134,
+          "agree": true
+        },
+        {
+          "partition": [
+            4,
+            1,
+            1
+          ],
+          "c_lambda_at_1_macdonald": "840.0",
+          "B_lambda_n_cardinality": 840,
+          "agree": true
+        },
+        {
+          "partition": [
+            3,
+            3
+          ],
+          "c_lambda_at_1_macdonald": "490.0",
+          "B_lambda_n_cardinality": 490,
+          "agree": true
+        },
+        {
+          "partition": [
+            3,
+            2,
+            1
+          ],
+          "c_lambda_at_1_macdonald": "896.0",
+          "B_lambda_n_cardinality": 896,
+          "agree": true
+        },
+        {
+          "partition": [
+            3,
+            1,
+            1,
+            1
+          ],
+          "c_lambda_at_1_macdonald": "280.0",
+          "B_lambda_n_cardinality": 280,
+          "agree": true
+        },
+        {
+          "partition": [
+            2,
+            2,
+            2
+          ],
+          "c_lambda_at_1_macdonald": "175.0",
+          "B_lambda_n_cardinality": 175,
+          "agree": true
+        },
+        {
+          "partition": [
+            2,
+            2,
+            1,
+            1
+          ],
+          "c_lambda_at_1_macdonald": "189.0",
+          "B_lambda_n_cardinality": 189,
+          "agree": true
+        },
+        {
+          "partition": [
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "c_lambda_at_1_macdonald": "35.0",
+          "B_lambda_n_cardinality": 35,
+          "agree": true
+        },
+        {
+          "partition": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "c_lambda_at_1_macdonald": "1.0",
+          "B_lambda_n_cardinality": 1,
+          "agree": true
+        }
+      ],
+      "all_match": true,
+      "comment": "c_lambda(q=1) closed form vs |B(lambda, 6)| BFS enumeration (Weyl dimension formula). Validates the Macdonald hook-content c_lambda implementation against the Kashiwara crystal primitives in crystal_basis.py (PR #599)."
+    },
+    "per_lambda": [
+      {
+        "partition": [
+          6
+        ],
+        "y_lambda_at_q0": "0.059187716932148631726632017481638432709061246964529",
+        "chi_lambda_beta_D_at_q0": "1.5597587394180613474788665244555934948534877939985",
+        "y_chi_product": "0.092318558751121195077358729185788532393727977834903",
+        "c_lambda_at_q0_macdonald": "2597.994261715933429651112888219270407857561831498",
+        "c_lambda_at_one_macdonald": "462.0",
+        "B_lambda_n_cardinality": 462,
+        "Delta_lambda_q0": "2597.994261715933429651112888219270407857561831498",
+        "Delta_lambda_one": "462.0",
+        "contribution_q0": "239.84308588529813451357738767392608776259289492271",
+        "contribution_one": "42.651174143017992125739732883834301965902325759725"
+      },
+      {
+        "partition": [
+          5,
+          1
+        ],
+        "y_lambda_at_q0": "0.058960681401453730785485915659443199470465849311845",
+        "chi_lambda_beta_D_at_q0": "3.2158914339386873128784472462978051568372154356128",
+        "y_chi_product": "0.18961115025812313016914536057171259868832724451837",
+        "c_lambda_at_q0_macdonald": "5717.8815011985559179404036460227575387686176395956",
+        "c_lambda_at_one_macdonald": "1050.0",
+        "B_lambda_n_cardinality": 1050,
+        "Delta_lambda_q0": "5717.8815011985559179404036460227575387686176395956",
+        "Delta_lambda_one": "1050.0",
+        "contribution_q0": "1084.1740884819020369656087000319231899341935708404",
+        "contribution_one": "199.09170777102928667760262860029822862274360674429"
+      },
+      {
+        "partition": [
+          4,
+          2
+        ],
+        "y_lambda_at_q0": "0.040284386965935211236296233398315147983734378748849",
+        "chi_lambda_beta_D_at_q0": "1.6737481247387004963839340269207117288136410247938",
+        "y_chi_product": "0.067425917140482208360553363912676662585540529909909",
+        "c_lambda_at_q0_macdonald": "6044.2471825083261935489735007101711147642633593417",
+        "c_lambda_at_one_macdonald": "1134.0",
+        "B_lambda_n_cardinality": 1134,
+        "Delta_lambda_q0": "6044.2471825083261935489735007101711147642633593417",
+        "Delta_lambda_one": "1134.0",
+        "contribution_q0": "407.53890970439944581098131872117372311197403865979",
+        "contribution_one": "76.460990037306824280867514676975335372002960917837"
+      },
+      {
+        "partition": [
+          4,
+          1,
+          1
+        ],
+        "y_lambda_at_q0": "0.010133463492072934671136866135432127585911899823022",
+        "chi_lambda_beta_D_at_q0": "-0.47019148000472144246476155275233920272035694259016",
+        "y_chi_product": "-0.0047646681969115859858117404189352329560631255475315",
+        "c_lambda_at_q0_macdonald": "4429.0188402773449227173369479737051919541038297622",
+        "c_lambda_at_one_macdonald": "840.0",
+        "B_lambda_n_cardinality": 840,
+        "Delta_lambda_q0": "4429.0188402773449227173369479737051919541038297622",
+        "Delta_lambda_one": "840.0",
+        "contribution_q0": "-21.102805211791700678286368007264823836627903592076",
+        "contribution_one": "-4.0023212854057322280818619519055956830930254599265"
+      },
+      {
+        "partition": [
+          3,
+          3
+        ],
+        "y_lambda_at_q0": "0.014120874004975287300431630623435029775788893853587",
+        "chi_lambda_beta_D_at_q0": "4.2490702926236505900647331330454182072731397862965",
+        "y_chi_product": "0.060000586240422044867861509735170570422375244722244",
+        "c_lambda_at_q0_macdonald": "2583.8180742168265953175403727237685531703378505344",
+        "c_lambda_at_one_macdonald": "490.0",
+        "B_lambda_n_cardinality": 490,
+        "Delta_lambda_q0": "2583.8180742168265953175403727237685531703378505344",
+        "Delta_lambda_one": "490.0",
+        "contribution_q0": "155.03059919160791174918668245272454447460313691249",
+        "contribution_one": "29.4002872578068019852521397702335795069638699139"
+      },
+      {
+        "partition": [
+          3,
+          2,
+          1
+        ],
+        "y_lambda_at_q0": "0.0073184543522857307843666769029052172957683238888947",
+        "chi_lambda_beta_D_at_q0": "-1.9728210551001285049496437509574067414460258016939",
+        "y_chi_product": "-0.014438000836978462960296828680734165283580943741507",
+        "c_lambda_at_q0_macdonald": "4648.6370411314641390128057833643607062537120991676",
+        "c_lambda_at_one_macdonald": "896.0",
+        "B_lambda_n_cardinality": 896,
+        "Delta_lambda_q0": "4648.6370411314641390128057833643607062537120991676",
+        "Delta_lambda_one": "896.0",
+        "contribution_q0": "-67.117025490665164785581893065643622332610125100211",
+        "contribution_one": "-12.93644874993270281242595849793781209408852559239"
+      },
+      {
+        "partition": [
+          3,
+          1,
+          1,
+          1
+        ],
+        "y_lambda_at_q0": "-0.0006853088855144667846371853194123257721618416390897",
+        "chi_lambda_beta_D_at_q0": "-0.48998813829170552523126588270765227788218253200051",
+        "y_chi_product": "0.00033579322496799714026187243306333341606849317753425",
+        "c_lambda_at_q0_macdonald": "1429.2756775849864139965556889266692904485495440764",
+        "c_lambda_at_one_macdonald": "280.0",
+        "B_lambda_n_cardinality": 280,
+        "Delta_lambda_q0": "1429.2756775849864139965556889266692904485495440764",
+        "Delta_lambda_one": "280.0",
+        "contribution_q0": "0.4799410891445818905002190145751741250235471449306",
+        "contribution_one": "0.09402210299103919927332428125773335649917808970959"
+      },
+      {
+        "partition": [
+          2,
+          2,
+          2
+        ],
+        "y_lambda_at_q0": "0.00077318673690538012239285368505156904988009656817756",
+        "chi_lambda_beta_D_at_q0": "-3.4975646652884290952655280198503765208286836804627",
+        "y_chi_product": "-0.0027042706106699185154715449299092262561365192603624",
+        "c_lambda_at_q0_macdonald": "893.34395355797603719265810564245600915651074869313",
+        "c_lambda_at_one_macdonald": "175.0",
+        "B_lambda_n_cardinality": 175,
+        "Delta_lambda_q0": "893.34395355797603719265810564245600915651074869313",
+        "Delta_lambda_one": "175.0",
+        "contribution_q0": "-2.4158437988265071836374123080741861269919785712167",
+        "contribution_one": "-0.47324735686723574020752036273411459482389087056342"
+      },
+      {
+        "partition": [
+          2,
+          2,
+          1,
+          1
+        ],
+        "y_lambda_at_q0": "-0.00034205177088540122561375790932120435273011553866567",
+        "chi_lambda_beta_D_at_q0": "-0.81971595589104680333865394268852609738826066586904",
+        "y_chi_product": "0.00028038529433555199823591444804738865188314582854933",
+        "c_lambda_at_q0_macdonald": "954.40394529077460114512396495056191022783999515013",
+        "c_lambda_at_one_macdonald": "189.0",
+        "B_lambda_n_cardinality": 189,
+        "Delta_lambda_q0": "954.40394529077460114512396495056191022783999515013",
+        "Delta_lambda_one": "189.0",
+        "contribution_q0": "0.26760083111536590299636810792853163690213510643556",
+        "contribution_one": "0.052992820629419327666587830680956455205914561595823"
+      },
+      {
+        "partition": [
+          2,
+          1,
+          1,
+          1,
+          1
+        ],
+        "y_lambda_at_q0": "0.000098635576109803375181019479569565757727074496247923",
+        "chi_lambda_beta_D_at_q0": "2.1554159875264378405157641866290182935325203505091",
+        "y_chi_product": "0.00021260069768595096197700159456262478286170814490355",
+        "c_lambda_at_q0_macdonald": "172.94895452511298993507028162785522615907376507799",
+        "c_lambda_at_one_macdonald": "35.0",
+        "B_lambda_n_cardinality": 35,
+        "Delta_lambda_q0": "172.94895452511298993507028162785522615907376507799",
+        "Delta_lambda_one": "35.0",
+        "contribution_q0": "0.036769068396094827393367885046587375164200405989558",
+        "contribution_one": "0.0074410244190082836691950558096918674001597850716243"
+      },
+      {
+        "partition": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "y_lambda_at_q0": "-0.000012437986974301155095032726762240527202951067098518",
+        "chi_lambda_beta_D_at_q0": "-0.67692506452720922588632538437367541966217634834114",
+        "y_chi_product": "0.0000084195851351673972522844651257134263098320848925795",
+        "c_lambda_at_q0_macdonald": "4.7832057361239276156010885083423656469480500745541",
+        "c_lambda_at_one_macdonald": "1.0",
+        "B_lambda_n_cardinality": 1,
+        "Delta_lambda_q0": "4.7832057361239276156010885083423656469480500745541",
+        "Delta_lambda_one": "1.0",
+        "contribution_q0": "0.000040272607914316448967469356729996914738437222078601",
+        "contribution_one": "0.0000084195851351673972522844651257134263098320848925795"
+      }
+    ],
+    "crystal_q0": {
+      "sum_y_chi_c_lambda_at_q0": "1796.7353600231881133291873379756719361211382551665",
+      "residual_target_minus_sum": "-1801.0887273050582619860485702737030768896271140966",
+      "alpha_E_diagnostic": "-0.0024229318233120126489598216831759845499327031861229",
+      "ratio_sum_over_target": "-412.72312756743430815085811680321943091292023737464",
+      "M_pred_MeV": "2795.9673910797211015636957340588634849023687211949",
+      "closure_err_MeV": "920.35444850972110156369573405886348490236872119491",
+      "closure_err_ppm": "490695.29625266617652698837766842414421310116924617"
+    },
+    "crystal_at_one": {
+      "sum_y_chi_c_lambda_at_one": "330.34660618457983626675303457097743048813888368133",
+      "residual_target_minus_sum": "-334.69997346644998492361426686900857125662774261146",
+      "alpha_E_diagnostic": "-0.0131781807361378558080031489656312733258758648381",
+      "ratio_sum_over_target": "-75.883008438164061810454678092296914229776231291986",
+      "M_pred_MeV": "2046.6442775763838025234827205750831674531369570153",
+      "closure_err_MeV": "171.03133500638380252348272057508316745313695701533",
+      "closure_err_ppm": "91186.902758323613631387632430397367650393647931337"
+    },
+    "outcome": "WRONG_SIGN",
+    "comparison_to_occam": {
+      "occam_picks_partition": [
+        5,
+        1
+      ],
+      "occam_Delta_lambda": "-22.959447669315776828012250177531034211830483407403",
+      "occam_M_pred_MeV": "1875.61294257",
+      "occam_closure_err_MeV": "2.7369110631344083416479093423631174439067616052276e-48",
+      "balanced_321_Delta_lambda": "301.52147316132217071432397223258345677672421364287",
+      "crystal_q0_M_pred_MeV": "2795.9673910797211015636957340588634849023687211949",
+      "crystal_q0_closure_err_MeV": "920.35444850972110156369573405886348490236872119491",
+      "crystal_q0_ratio_sum_over_target": "-412.72312756743430815085811680321943091292023737464",
+      "interpretation": "Occam reproduces M(D) exactly because it solves 1 equation in 1 unknown (free Delta_lambda for the selected partition). Option E is over-determined: Delta_lambda is FIXED by the crystal weight c_lambda, leaving NO free parameter, so the mass equation has a residual measuring the gap between the structural prediction and the empirical binding. A residual of 0 ppm would be an exact match; the magnitude reported is the falsification metric for this option."
+    }
+  },
+  "audit_reference": "AUDIT-DEEP-2026-05.md sec.7 P3' (option E)",
+  "pr_parent": "#600",
+  "pr_prerequisite": "#599",
+  "related_commits": {
+    "type_b_fold_orbit_closure": [
+      "4ca31f17",
+      "657a4f82"
+    ],
+    "crystal_bases_primitives": [
+      "3d22baee",
+      "1eca8880",
+      "6b4a4e21"
+    ]
+  },
+  "notes": "Definition: c_lambda(q) := s_lambda(1, q, ..., q^{n_strands-1}) = principal q-specialisation of the Schur polynomial = Macdonald hook-content formula = Demazure character D_{w_0}(lambda) at x_i := q^{i-1} (verified by demazure-markov-trace witness). At q -> 1 this equals dim V_lambda for sl_n = |B(lambda, n)| from crystal_basis.crystal_B (Weyl dimension formula). We report BOTH the q-deformed (q_0) and the q -> 1 variants, since CLAUDE.md sec.7b shortcut #3 leaves the choice open for the symmetric-crystal case (the Type-B fold-orbit closure work uses crystal *cardinality* at q=1, while the Demazure-fiber Markov-trace functional uses the q-deformed character).",
+  "honest_reporting": "Per protocol: c_lambda is NOT scaled to force the mass equation to close. The residual (target - sum) and the diagnostic scalar alpha_E (the would-close-it factor) are both reported. If alpha_E differs significantly from 1, the Kashiwara crystal weights are NOT the correct closed form for Delta_lambda; a flat-transport correction (q -> 0 -> q_0 connection curvature, per rem:ontological-agnosticism) would have to make up the difference, OR a different structural weight (Plancherel-truncated, jet-knot, ...) applies.",
+  "follow_up": "If option E shows |alpha_E - 1| << 1 (close to closure), extend to (T, 3He) at n=9 and 4He at n=12. If alpha_E is far from 1, compare the residual to the four other options (A: crystal-truncated minimum-norm, B: Plancherel bound, C: jet-knot Hochschild, D: Type-B fold-orbit projection) in the parent PR #600 brief; the smallest residual wins.",
+  "commitSha": "610a6aa2bde5fabec35796ead6bbb0adb76f6533"
+}

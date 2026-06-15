@@ -1,0 +1,85 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-06-06T20:07:05.532972+00:00",
+  "commitSha": "1b61cf1085627c27361e418f45b691e584c4e698",
+  "assertions": [
+    {
+      "name": "E_4_at_q_zero_is_one",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 1e-30,
+      "source": "E_4(q) = 1 + O(q); at q = 0 the constant term is 1."
+    },
+    {
+      "name": "E_6_at_q_zero_is_one",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 1e-30,
+      "source": "E_6(q) = 1 + O(q); at q = 0 the constant term is 1."
+    },
+    {
+      "name": "sigma_3_of_2_is_9",
+      "computed": 9.0,
+      "expected": 9.0,
+      "passed": true,
+      "tolerance": 0.0,
+      "source": "σ_3(2) = 1^3 + 2^3 = 1 + 8 = 9."
+    },
+    {
+      "name": "sigma_3_of_3_is_28",
+      "computed": 28.0,
+      "expected": 28.0,
+      "passed": true,
+      "tolerance": 0.0,
+      "source": "σ_3(3) = 1^3 + 3^3 = 1 + 27 = 28."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 16,
+  "computation": "gap-a4-T13-q-eisenstein-probe",
+  "scriptFile": "gap_a4_T13_q_eisenstein_probe.py",
+  "scriptHash": "5579484a3b64",
+  "scriptCommitSha": "1b61cf1085627c27361e418f45b691e584c4e698",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "GAP-A-4 T13 — q-Eisenstein candidate.  Computes classical E_4, E_6 at q_inner = 1/q_0 ≈ 0.901, then shows the natural h-expansion point q = 1 is a SINGULARITY of the Eisenstein series.  Standard q-Eisenstein candidate REFUTED at the expansion-point level — no finite Taylor h-coefficient to compare to the polynomial Borromean h⁴ = −3/4.  7th candidate functor refuted in the T4-T13 arc.",
+  "auditOnly": "docs/audits/2026-06-06-gap-a4-T4-T8-functor-search-retrospective.md",
+  "parameters": {
+    "q_0_50dps": "1.1099785827513808075916690956107688798744991218736"
+  },
+  "data": {
+    "discipline": "EXPLORATORY",
+    "production_wired": false,
+    "q_0_recorded": 1.1099785827513808,
+    "eisenstein_at_q0": {
+      "q_0": "1.1099785827513808075916690956107688798744991218736",
+      "q_inner": "0.9009182839557414921608228824810939360147416266105369217447853036583221",
+      "E_4_at_q_inner": "12725874.77283219161555552863091156960140164091233617438017492394797616",
+      "E_6_at_q_inner": "-40184100351.39471070807725693503670933518863866914807843574765484159191",
+      "modular_discriminant_at_q_inner": "258198281655107607.4439526488869720451847589145011503233542053152063251",
+      "J_invariant_at_q_inner": "7981.960757213341958309685382602272625354348778290993563108768546303885"
+    },
+    "h_expansion_obstruction": {
+      "expansion_point_q_equals_1_is_singular": true,
+      "E_4_E_6_diverge_at_h_zero": true,
+      "verdict": "q-Eisenstein candidate REFUTED at expansion-point level: Eisenstein series E_{2k}(q) diverges at q = 1 (the natural h = 0 base point), so no Taylor h-coefficient is comparable to the polynomial Borromean h⁴ = −3/4.  This is the 7th candidate cross-algebra functor refuted in the T4-T13 arc.",
+      "E_4_at_q_inner_0.901": "12768076.81847803239151778081954787731453827325607477938875768141968713",
+      "E_6_at_q_inner_0.901": "-40366854106.96880732208066910325696424247927868610013323356813227122131"
+    },
+    "synthesis_verdict": "T13 refutes the q-Eisenstein candidate cross-algebra functor at the expansion-point level: Eisenstein series E_{2k}(q) diverges at q = 1 (the natural h = 0 base point for the Borromean reference), so no Taylor h-coefficient exists to compare to the polynomial h⁴ = −3/4.  Numerical sanity: E_4(0.901) ≈ 12768076 and E_6(0.901) ≈ -4036685 are finite far from the cusp, but the cusp at q = 1 IS the h-expansion point.  The icosahedral q-Eisenstein analogue inherits the same obstruction: the icosahedral modular discriminant Δ_I, being a polynomial in E_4 and E_6, also diverges at the cusp.  This is the 7th candidate cross-algebra functor refuted (after T5 F1/F2/F3, T7 Bratteli, T8 RT/q-Schur, T10 McKay-character).  The h⁴ = −3/4 obstruction stays structurally OPEN; the remaining direction is q-Hermite icosahedral resolvent (T14)."
+  }
+}

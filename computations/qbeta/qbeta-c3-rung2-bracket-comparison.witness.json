@@ -1,0 +1,66 @@
+{
+  "engine": "python+sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-04T02:37:27.984964+00:00",
+  "commitSha": "21e24854279794770364f969f35d83d99dac83e1",
+  "assertions": [
+    {
+      "name": "T3_equals_T8_symbolically",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "T3 = ℏ_q³ · [2]_q / 4 and T8 = ℏ_q³ · (q+q⁻¹) / 4 are identical Laurent polynomials in q because [2]_q ≡ q + q⁻¹.  Sympy.simplify of the difference equals 0.  Confirms the audit doc's 4-candidate bracket is structurally a 3-candidate bracket."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 55,
+  "computation": "qbeta-c3-rung2-bracket-comparison",
+  "scriptFile": "qbeta_c3_rung2_bracket_comparison.py",
+  "scriptHash": "3fe715389d47",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 10,
+    "truncation_bound": "1e-50"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Symbolic comparison of the 3 distinct rung-2 candidates in the c_3 closure bracket. Verifies T3 = T8 algebraically, compares T1/T3/T7 by structural cleanliness (T7 alone has a q-integer denominator), lists 3 candidate categorical sources for the structural lift. Does NOT prove lift.",
+  "contentBlock": "prop:q-beta-c-2-eq-neg-one-structural",
+  "data": {
+    "bracket_candidates": {
+      "T1": "hbar_q^3 / 2",
+      "T3_equals_T8": "hbar_q^3 * [2]_q / 4  (T3 and T8 algebraically identical)",
+      "T7": "hbar_q^3 / [2]_q  ★ cleanest categorical"
+    },
+    "T3_minus_T8_symbolic_difference": "0",
+    "structural_cleanliness_ranking": {
+      "T1_denominator": "2 (empirical, no q-content)",
+      "T3_T8_denominator": "4 (empirical, no q-content)",
+      "T7_denominator": "[2]_q (quantum integer, full q-content) ★",
+      "principle": "minimize empirical content",
+      "winner": "T7"
+    },
+    "numerical_at_q0": {
+      "T1": "0.0004863518403080119364115189",
+      "T3": "0.0004890016958963119547139864",
+      "T7": "0.0004837163440454520352282205"
+    },
+    "eps_ppm_per_audit_doc": {
+      "T1": "5.25 ppm",
+      "T3_equals_T8": "7.87 ppm",
+      "T7": "2.65 ppm"
+    },
+    "structural_lift_hypotheses": [
+      "Hyp-A: T7 = (3-strand Markov-trace at identity) / dim_q(V_1) = (3-strand component) / [2]_q",
+      "Hyp-B: T7 = Wenzl projector p_3 contribution at order h^3 / Temperley-Lieb loop value [2]_q",
+      "Hyp-C: T7 = (Kauffman bracket order-h^3 coefficient) / (unknot Kauffman bracket in [2]_q normalization)"
+    ],
+    "status": "All 3 hypotheses unproven; c_3 remains NEAR-MATCH (2.65 ppm)"
+  }
+}

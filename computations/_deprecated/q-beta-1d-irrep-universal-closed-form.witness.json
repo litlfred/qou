@@ -1,0 +1,183 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-15T23:07:47.208350+00:00",
+  "commitSha": "42b34dc85668f7fcbdcac3eb78939954536dab93",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "q-beta-1d-irrep-universal-closed-form",
+  "scriptFile": "probe_q_beta_1d_irrep_universal.py",
+  "scriptHash": "3d3fd083f5ab",
+  "scriptCommitSha": "unknown",
+  "description": "Universal closed form for 1-d Hecke irreps across H_n: χ_(n)(β) = q^w · ([2]_q/2)^m and χ_(1^n)(β) = (-1/q)^w · (-[2]_q/2)^m, independent of n. Verified bit-exact at 50 dps for atoms with n ∈ {3, 5, 8}: proton, neutron (H_3), deuteron (H_5), tritium and ³He (H_8). Only writhe w and averaged-crossing count m of the typed braid enter — substrate-derivable structural data.",
+  "auditOnly": "Generalisation of probe_q_beta_three_irrep_closed_form.py to confirm the H_3 closed forms are the H_3 specialisation of an n-universal formula. Supports the new content block prop:hecke-1d-irrep-closed-form-character.",
+  "data": {
+    "q_0_50dps": "1.1099785955541805752815940796095093779932822799587",
+    "qint2_over_2_50dps": "1.0054484345592408447307898684605484247624041280005",
+    "all_bit_exact": true,
+    "results": [
+      {
+        "atom": "proton",
+        "n": 3,
+        "writhe": 3,
+        "averaged_count": 2,
+        "irrep": "trivial",
+        "partition": [
+          3
+        ],
+        "chi_closed_form": "1.3824945145464393547806624464013105882821307618533",
+        "chi_symbolic": "1.3824945145464393547806624464013105882821307618533",
+        "match_bit_exact": true
+      },
+      {
+        "atom": "neutron",
+        "n": 3,
+        "writhe": 1,
+        "averaged_count": 2,
+        "irrep": "trivial",
+        "partition": [
+          3
+        ],
+        "chi_closed_form": "1.1221068372363026551223526641335560818322822424759",
+        "chi_symbolic": "1.1221068372363026551223526641335560818322822424759",
+        "match_bit_exact": true
+      },
+      {
+        "atom": "deuteron",
+        "n": 6,
+        "writhe": 4,
+        "averaged_count": 5,
+        "irrep": "trivial",
+        "partition": [
+          6
+        ],
+        "chi_closed_form": "1.5597587394180613474788665244555934948534877939986",
+        "chi_symbolic": "1.5597587394180613474788665244555934948534877939986",
+        "match_bit_exact": true
+      },
+      {
+        "atom": "tritium",
+        "n": 9,
+        "writhe": 4,
+        "averaged_count": 7,
+        "irrep": "trivial",
+        "partition": [
+          9
+        ],
+        "chi_closed_form": "1.5768015283810499000326609909288005214541861312812",
+        "chi_symbolic": "1.5768015283810499000326609909288005214541861312812",
+        "match_bit_exact": true
+      },
+      {
+        "atom": "helium-3",
+        "n": 9,
+        "writhe": 8,
+        "averaged_count": 7,
+        "irrep": "trivial",
+        "partition": [
+          9
+        ],
+        "chi_closed_form": "2.3935111147542213695648938476321147771366613008399",
+        "chi_symbolic": "2.3935111147542213695648938476321147771366613008399",
+        "match_bit_exact": true
+      },
+      {
+        "atom": "proton",
+        "n": 3,
+        "writhe": 3,
+        "averaged_count": 2,
+        "irrep": "sign",
+        "partition": [
+          1,
+          1,
+          1
+        ],
+        "chi_closed_form": "-0.73922354697012274905685548301864787492537037072882",
+        "chi_symbolic": "-0.73922354697012274905685548301864787492537037072882",
+        "match_bit_exact": true
+      },
+      {
+        "atom": "neutron",
+        "n": 3,
+        "writhe": 1,
+        "averaged_count": 2,
+        "irrep": "sign",
+        "partition": [
+          1,
+          1,
+          1
+        ],
+        "chi_closed_form": "-0.91076220623236549534091135608190807255186325681918",
+        "chi_symbolic": "-0.91076220623236549534091135608190807255186325681918",
+        "match_bit_exact": true
+      },
+      {
+        "atom": "deuteron",
+        "n": 6,
+        "writhe": 4,
+        "averaged_count": 5,
+        "irrep": "sign",
+        "partition": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "chi_closed_form": "-0.67692506452720922588632538437367541966217634834113",
+        "chi_symbolic": "-0.67692506452720922588632538437367541966217634834113",
+        "match_bit_exact": true
+      },
+      {
+        "atom": "tritium",
+        "n": 9,
+        "writhe": 4,
+        "averaged_count": 7,
+        "irrep": "sign",
+        "partition": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "chi_closed_form": "-0.68432152317619164500358130048391895991995719543462",
+        "chi_symbolic": "-0.68432152317619164500358130048391895991995719543462",
+        "match_bit_exact": true
+      },
+      {
+        "atom": "helium-3",
+        "n": 9,
+        "writhe": 8,
+        "averaged_count": 7,
+        "irrep": "sign",
+        "partition": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "chi_closed_form": "-0.45081855563435251239161701425244538272449981920007",
+        "chi_symbolic": "-0.45081855563435251239161701425244538272449981920007",
+        "match_bit_exact": true
+      }
+    ],
+    "universal_closed_forms": {
+      "trivial_irrep_V_(n)": "chi_(n)(beta) = q^w · ([2]_q / 2)^m",
+      "sign_irrep_V_(1^n)": "chi_(1^n)(beta) = (-1/q)^w · (-[2]_q / 2)^m",
+      "parameters": "w = #(sigma) - #(sigma^-1) writhe, m = #(averaged) operator-valued crossings",
+      "n_dependence": "None — formula is identical for n = 2, 3, 4, ..., depending only on substrate q and typed-braid (w, m)."
+    }
+  }
+}

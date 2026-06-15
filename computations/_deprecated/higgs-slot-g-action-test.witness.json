@@ -1,0 +1,122 @@
+{
+  "computation": "higgs-slot-g-action-test",
+  "computedAt": "2026-05-03T01:01:14.274536+00:00",
+  "description": "HIGGS-SLOT test from G-action axioms. 6 zero-free-parameter EW mass-ratio formulas tested. Verdict: G-action q-dim assignments alone do not pin EW mass ratios; the Higgs self-coupling λ is needed.",
+  "q_0": "1.10997859555418051695830018899",
+  "ew_mass_pdg_GeV": {
+    "W": 80.379,
+    "Z": 91.188,
+    "H": 125.25
+  },
+  "tested_forms": [
+    {
+      "name": "(i) m_X ∝ tr_M(T_X)",
+      "m_Z_over_m_W": {
+        "pred": "1.10482017179",
+        "pdg": "1.13447542269",
+        "err_pct": -2.6140055838258007
+      },
+      "m_H_over_m_W": {
+        "pred": "1.25792785511",
+        "pdg": "1.55824282462",
+        "err_pct": -19.27266821077257
+      },
+      "m_H_over_m_Z": {
+        "pred": "1.13858154226",
+        "pdg": "1.37353599158",
+        "err_pct": -17.10580944089024
+      }
+    },
+    {
+      "name": "(ii) m_X ∝ dim_q(A^X)",
+      "m_Z_over_m_W": {
+        "pred": "1.55439910007",
+        "pdg": "1.13447542269",
+        "err_pct": 37.01478842049837
+      },
+      "m_H_over_m_W": {
+        "pred": "0.489307118156",
+        "pdg": "1.55824282462",
+        "err_pct": -68.59878894190318
+      },
+      "m_H_over_m_Z": {
+        "pred": "0.314788601031",
+        "pdg": "1.37353599158",
+        "err_pct": -77.0818818756071
+      }
+    },
+    {
+      "name": "(iii) m_X² ∝ dim_q(A^X)",
+      "m_Z_over_m_W": {
+        "pred": "1.24675542913",
+        "pdg": "1.13447542269",
+        "err_pct": 9.897085842808947
+      },
+      "m_H_over_m_W": {
+        "pred": "0.699504909315",
+        "pdg": "1.55824282462",
+        "err_pct": -55.10937716100093
+      },
+      "m_H_over_m_Z": {
+        "pred": "0.561060247238",
+        "pdg": "1.37353599158",
+        "err_pct": -59.15212628730822
+      }
+    },
+    {
+      "name": "(iv) m_X ∝ tr_M(T_X) for W,Z; m_H ∝ [2]_q",
+      "m_Z_over_m_W": {
+        "pred": "1.10482017179",
+        "pdg": "1.13447542269",
+        "err_pct": -2.6140055838258007
+      },
+      "m_H_over_m_W": {
+        "pred": "1.85769329776",
+        "pdg": "1.55824282462",
+        "err_pct": 19.21718928621593
+      },
+      "m_H_over_m_Z": {
+        "pred": "1.6814440442",
+        "pdg": "1.37353599158",
+        "err_pct": 22.417181239375353
+      }
+    },
+    {
+      "name": "(vi) m_H ∝ √([2]_q · [8]_q); W,Z ∝ tr_M",
+      "m_Z_over_m_W": {
+        "pred": "1.10482017179",
+        "pdg": "1.13447542269",
+        "err_pct": -2.6140055838258007
+      },
+      "m_H_over_m_W": {
+        "pred": "3.91819492907",
+        "pdg": "1.55824282462",
+        "err_pct": 151.4495730167804
+      },
+      "m_H_over_m_Z": {
+        "pred": "3.54645491558",
+        "pdg": "1.37353599158",
+        "err_pct": 158.19890685946396
+      }
+    }
+  ],
+  "best_m_H_over_m_W": {
+    "name": "(iv) m_X ∝ tr_M(T_X) for W,Z; m_H ∝ [2]_q",
+    "m_Z_over_m_W": {
+      "pred": "1.10482017179",
+      "pdg": "1.13447542269",
+      "err_pct": -2.6140055838258007
+    },
+    "m_H_over_m_W": {
+      "pred": "1.85769329776",
+      "pdg": "1.55824282462",
+      "err_pct": 19.21718928621593
+    },
+    "m_H_over_m_Z": {
+      "pred": "1.6814440442",
+      "pdg": "1.37353599158",
+      "err_pct": 22.417181239375353
+    }
+  },
+  "verdict": "HIGGS-SLOT NOT closed by G-action axioms alone — mass ratios require the categorical Higgs self-coupling λ (not specified by axioms G-1 to G-4)"
+}

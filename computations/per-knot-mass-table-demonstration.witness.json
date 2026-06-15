@@ -1,0 +1,162 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.2.1",
+  "computedAt": "2026-06-13T19:04:14.869079+00:00",
+  "commitSha": "782b75d8a21015413016c4b28f9467f12449ccf5",
+  "assertions": [
+    {
+      "name": "n_atoms_with_per_block_prediction",
+      "computed": 6,
+      "expected": 6,
+      "passed": true,
+      "source": "all 6 atoms with Vol(K) witness data should have chi cache"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 12420,
+  "computation": "per-knot-mass-table-demonstration",
+  "scriptFile": "per_knot_mass_table_demonstration.py",
+  "scriptHash": "c82b6c134b3a",
+  "scriptCommitSha": "b355671a40f0166f118ad431886163c13de15ec9",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.2",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.11.1",
+    "mpmath": "0.0.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
+  },
+  "description": "Per-block reading of m(K) = m_e · VolDensity(K, q₀) for the 6 atoms with Vol(K) data, using vol_density_per_block(vol_K, tr_M_K, q). EXPLORATORY truth-tracking, NOT a closure — validates the vol_density_per_block_wiring.py RED verdict across the atomic table.",
+  "data": {
+    "rows": [
+      {
+        "atom": "p",
+        "Z": 1,
+        "N": 0,
+        "A": 1,
+        "knot": "B_3 (Borromean)",
+        "vol_K": 7.327724753417753,
+        "tr_M_K": 1.2203627853716912,
+        "vol_density_per_block": 910.9007588038436,
+        "vol_density_uniform_production": 1890.5123448142979,
+        "m_pred_per_block_MeV": 465.46933193148885,
+        "m_pred_production_MeV": 966.0498244665977,
+        "m_observed_MeV": 938.27208816,
+        "err_per_block_pct": -50.39079411982741,
+        "err_production_pct": 2.9605203711293626,
+        "delta_per_block_vs_production_pct": -53.351314490956774,
+        "delta_abs_per_block_vs_production_pct": 47.43027374869805
+      },
+      {
+        "atom": "n",
+        "Z": 0,
+        "N": 1,
+        "A": 1,
+        "knot": "B_3 (Borromean)",
+        "vol_K": 7.327724753417753,
+        "tr_M_K": 1.1948623149512354,
+        "vol_density_per_block": 891.8667484797961,
+        "vol_density_uniform_production": 1890.5123448142979,
+        "m_pred_per_block_MeV": 455.74297262847796,
+        "m_pred_production_MeV": 966.0498244665977,
+        "m_observed_MeV": 939.56542052,
+        "err_per_block_pct": -51.49427994314135,
+        "err_production_pct": 2.8187929619568086,
+        "delta_per_block_vs_production_pct": -54.31307290509816,
+        "delta_abs_per_block_vs_production_pct": 48.67548698118454
+      },
+      {
+        "atom": "D",
+        "Z": 1,
+        "N": 1,
+        "A": 2,
+        "knot": "6_2",
+        "vol_K": 4.400832516123044,
+        "tr_M_K": 0.57577437475886,
+        "vol_density_per_block": 258.1072084340192,
+        "vol_density_uniform_production": 1890.5123448142979,
+        "m_pred_per_block_MeV": 131.89251267530892,
+        "m_pred_production_MeV": 966.0498244665977,
+        "m_observed_MeV": 1875.61294257,
+        "err_per_block_pct": -92.96803142685786,
+        "err_production_pct": -48.49418008691612,
+        "delta_per_block_vs_production_pct": -44.473851339941746,
+        "delta_abs_per_block_vs_production_pct": 44.473851339941746
+      },
+      {
+        "atom": "T",
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "knot": "8_11",
+        "vol_K": 8.286316817806592,
+        "tr_M_K": 0.1996905165036127,
+        "vol_density_per_block": 168.5512333872198,
+        "vol_density_uniform_production": 1890.5123448142979,
+        "m_pred_per_block_MeV": 86.12950339837462,
+        "m_pred_production_MeV": 966.0498244665977,
+        "m_observed_MeV": 2808.92113298,
+        "err_per_block_pct": -96.93371585313969,
+        "err_production_pct": -65.60779819966999,
+        "delta_per_block_vs_production_pct": -31.325917653469705,
+        "delta_abs_per_block_vs_production_pct": 31.325917653469705
+      },
+      {
+        "atom": "3He",
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "knot": "L6a4",
+        "vol_K": 7.327724753417752,
+        "tr_M_K": 0.3508492402171518,
+        "vol_density_per_block": 261.880190850147,
+        "vol_density_uniform_production": 1890.5123448142979,
+        "m_pred_per_block_MeV": 133.82050273092207,
+        "m_pred_production_MeV": 966.0498244665977,
+        "m_observed_MeV": 2808.39155747,
+        "err_per_block_pct": -95.23497703249481,
+        "err_production_pct": -65.60131289751902,
+        "delta_per_block_vs_production_pct": -29.633664134975795,
+        "delta_abs_per_block_vs_production_pct": 29.633664134975795
+      },
+      {
+        "atom": "4He",
+        "Z": 2,
+        "N": 2,
+        "A": 4,
+        "knot": "A·8G magic-A",
+        "vol_K": 29.31089901367101,
+        "tr_M_K": 0.12168180639022966,
+        "vol_density_per_block": 363.30196594686726,
+        "vol_density_uniform_production": 1890.5123448142979,
+        "m_pred_per_block_MeV": 185.64692338246329,
+        "m_pred_production_MeV": 966.0498244665977,
+        "m_observed_MeV": 3727.3794102,
+        "err_per_block_pct": -95.01937144165042,
+        "err_production_pct": -74.08233189723065,
+        "delta_per_block_vs_production_pct": -20.93703954441977,
+        "delta_abs_per_block_vs_production_pct": 20.93703954441977
+      }
+    ],
+    "summary": {
+      "n_atoms_evaluated": 6,
+      "n_atoms_total": 6,
+      "mean_abs_err_per_block_pct": 80.34019496951859,
+      "mean_abs_err_production_pct": 43.26082273573699,
+      "worst_abs_err_per_block_pct": 96.93371585313969,
+      "worst_abs_err_production_pct": 74.08233189723065,
+      "verdict": "Per-block reading makes predictions worse on average — consistent with the vol_density_per_block_wiring.py RED verdict that H_3 tr_M(K) is NOT the H_4 Family-A linking_weight scalar. To 'wire up properly' for closure requires a per-knot generalization of linking_weight(K), not just per-knot Vol(K). Open research."
+    },
+    "parameters": {
+      "q_0": "1.1099785827513808",
+      "m_e_MeV": "0.51099895069"
+    }
+  }
+}

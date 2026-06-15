@@ -1,0 +1,94 @@
+{
+  "computation": "qbeta-closed-form-wiring-n4-to-n10",
+  "description": "Closed-form wiring probe extending Q_\u03b2 production from N=4 (current 1ppQ achievement) to N=10 using documented + this-session-derived closed forms for c_5..c_10. Measures the precision delta at each depth. EXPLORATORY. No production-script edit made.",
+  "inputs_provenance": "q-beta-operator-valued-N3.witness.json",
+  "Q_AME_from_provenance": "0.78233341331",
+  "Q_A_cos_at_q0": "0.782391167502802550786875247288",
+  "b_at_q0": "0.867584066965251155651162891536",
+  "hbar_q_squared_at_q0": "0.00981718645427507381056905717956",
+  "closed_form_c_k_at_q0": {
+    "c_2": "-1.0",
+    "c_3": "-2.0",
+    "c_4": "-1.13312094258794909885709826968",
+    "c_5": "-1.25270211325196540159377935162",
+    "c_6": "3.01080845300786160637511740648",
+    "c_7": "-8.0",
+    "c_8": "2.26624188517589819771419653936",
+    "c_9": "-6.02161690601572321275023481296",
+    "c_10": "1.70580505611201649679935628739"
+  },
+  "Q_beta_at_depth": {
+    "2": {
+      "Q_beta_N": "0.782334410277840137760143636388",
+      "delta_vs_AME": "1.27435160403e-6",
+      "delta_vs_AME_ppQ": "1.2743516e+9"
+    },
+    "3": {
+      "Q_beta_N": "0.782333443518782261292966096403",
+      "delta_vs_AME": "3.86136930206e-8",
+      "delta_vs_AME_ppQ": "38613693.0"
+    },
+    "4": {
+      "Q_beta_N": "0.782333438853664716250762426773",
+      "delta_vs_AME": "3.26506119791e-8",
+      "delta_vs_AME_ppQ": "32650612.0"
+    },
+    "5": {
+      "Q_beta_N": "0.782333438809737595367159028496",
+      "delta_vs_AME": "3.25944631298e-8",
+      "delta_vs_AME_ppQ": "32594463.0"
+    },
+    "6": {
+      "Q_beta_N": "0.782333438810636816827420466361",
+      "delta_vs_AME": "3.25956125393e-8",
+      "delta_vs_AME_ppQ": "32595613.0"
+    },
+    "7": {
+      "Q_beta_N": "0.782333438810616466465823897847",
+      "delta_vs_AME": "3.25955865269e-8",
+      "delta_vs_AME_ppQ": "32595587.0"
+    },
+    "8": {
+      "Q_beta_N": "0.782333438810616515566448027333",
+      "delta_vs_AME": "3.25955865897e-8",
+      "delta_vs_AME_ppQ": "32595587.0"
+    },
+    "9": {
+      "Q_beta_N": "0.782333438810616514455247394554",
+      "delta_vs_AME": "3.25955865883e-8",
+      "delta_vs_AME_ppQ": "32595587.0"
+    },
+    "10": {
+      "Q_beta_N": "0.782333438810616514457928459672",
+      "delta_vs_AME": "3.25955865883e-8",
+      "delta_vs_AME_ppQ": "32595587.0"
+    },
+    "12": {
+      "Q_beta_N": "0.782333438810616514457867930642",
+      "delta_vs_AME": "3.25955865883e-8",
+      "delta_vs_AME_ppQ": "32595587.0"
+    },
+    "14": {
+      "Q_beta_N": "0.782333438810616514457867927337",
+      "delta_vs_AME": "3.25955865883e-8",
+      "delta_vs_AME_ppQ": "32595587.0"
+    },
+    "16": {
+      "Q_beta_N": "0.782333438810616514457867927336",
+      "delta_vs_AME": "3.25955865883e-8",
+      "delta_vs_AME_ppQ": "32595587.0"
+    },
+    "18": {
+      "Q_beta_N": "0.782333438810616514457867927336",
+      "delta_vs_AME": "3.25955865883e-8",
+      "delta_vs_AME_ppQ": "32595587.0"
+    },
+    "20": {
+      "Q_beta_N": "0.782333438810616514457867927336",
+      "delta_vs_AME": "3.25955865883e-8",
+      "delta_vs_AME_ppQ": "32595587.0"
+    }
+  },
+  "N4_baseline_ppQ_from_production": "1.79168782798e-11",
+  "verdict": "WIRING DOES NOT IMPROVE: N=10 has |\u0394| \u2265 N=4 baseline. At q\u2080 the SDP-extracted noise-floor values (per upstream caveat) add no precision; closed forms maintain ~baseline."
+}

@@ -1,0 +1,141 @@
+{
+  "computation": "hecke-division-instrumented",
+  "description": "Instrumented Gr\u00f6bner division in H_n(q) with step-by-step energy logging",
+  "computedAt": "2026-03-26T23:54:07.896116+00:00",
+  "engine": "custom (hecke_division.py)",
+  "parameters": {
+    "q": 1.11
+  },
+  "groebner_basis": [
+    "\u03c3_i\u00b2 - (q-q\u207b\u00b9)\u03c3_i - 1  (Hecke, energy-changing)",
+    "\u03c3_i\u03c3_{i+1}\u03c3_i - \u03c3_{i+1}\u03c3_i\u03c3_{i+1}  (Yang-Baxter, energy-preserving)",
+    "\u03c3_i\u03c3_j - \u03c3_j\u03c3_i for |i-j|\u22652  (far commutativity, energy-preserving)"
+  ],
+  "results": [
+    {
+      "nucleus": "2H",
+      "p": 1,
+      "n": 1,
+      "n_terms": 2,
+      "max_word_length": 1,
+      "trace": 0.4993200830735895,
+      "summary": {
+        "total_steps": 0,
+        "hecke_steps": 0,
+        "yang_baxter_steps": 0,
+        "far_comm_steps": 0,
+        "total_energy_change": 0,
+        "hecke_energy_change": 0,
+        "energy_per_hecke_step": 0
+      },
+      "tr_L0": -4.0523155253483205,
+      "delta_energy": 0,
+      "word_histogram": {
+        "0": 1,
+        "1": 1
+      }
+    },
+    {
+      "nucleus": "3H",
+      "p": 1,
+      "n": 2,
+      "n_terms": 4,
+      "max_word_length": 2,
+      "trace": 0.6563008263336221,
+      "summary": {
+        "total_steps": 1,
+        "hecke_steps": 1,
+        "yang_baxter_steps": 0,
+        "far_comm_steps": 0,
+        "total_energy_change": 0.2604470635497751,
+        "hecke_energy_change": 0.2604470635497751,
+        "energy_per_hecke_step": 0.2604470635497751
+      },
+      "tr_L0": 2.0833984923339166,
+      "delta_energy": -0.027082014000225252,
+      "word_histogram": {
+        "0": 1,
+        "1": 2,
+        "2": 1
+      }
+    },
+    {
+      "nucleus": "3He",
+      "p": 2,
+      "n": 1,
+      "n_terms": 4,
+      "max_word_length": 2,
+      "trace": 0.6010017279694253,
+      "summary": {
+        "total_steps": 1,
+        "hecke_steps": 1,
+        "yang_baxter_steps": 0,
+        "far_comm_steps": 0,
+        "total_energy_change": 0.23336504954954984,
+        "hecke_energy_change": 0.23336504954954984,
+        "energy_per_hecke_step": 0.23336504954954984
+      },
+      "tr_L0": 1.5253803179315686,
+      "delta_energy": -0.024265950450450546,
+      "word_histogram": {
+        "0": 1,
+        "1": 2,
+        "2": 1
+      }
+    },
+    {
+      "nucleus": "4He",
+      "p": 2,
+      "n": 2,
+      "n_terms": 8,
+      "max_word_length": 3,
+      "trace": 0.504306467133743,
+      "summary": {
+        "total_steps": 4,
+        "hecke_steps": 4,
+        "yang_baxter_steps": 0,
+        "far_comm_steps": 0,
+        "total_energy_change": 0.6408666185699342,
+        "hecke_energy_change": 0.6408666185699342,
+        "energy_per_hecke_step": 0.16021665464248355
+      },
+      "tr_L0": -0.3747413586451856,
+      "delta_energy": -0.07302756419272927,
+      "word_histogram": {
+        "0": 1,
+        "1": 3,
+        "2": 3,
+        "3": 1
+      }
+    },
+    {
+      "nucleus": "6Li",
+      "p": 3,
+      "n": 3,
+      "n_terms": 32,
+      "max_word_length": 5,
+      "trace": 1.0795576323253446,
+      "summary": {
+        "total_steps": 26,
+        "hecke_steps": 26,
+        "yang_baxter_steps": 0,
+        "far_comm_steps": 0,
+        "total_energy_change": 4.233075891729007,
+        "hecke_energy_change": 4.233075891729007,
+        "energy_per_hecke_step": 0.1628106112203464
+      },
+      "tr_L0": 4.131140967650222,
+      "delta_energy": -0.8275645905817748,
+      "word_histogram": {
+        "0": 1,
+        "1": 5,
+        "2": 10,
+        "3": 10,
+        "4": 5,
+        "5": 1
+      }
+    }
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
+}

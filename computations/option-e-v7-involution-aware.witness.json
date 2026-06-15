@@ -1,0 +1,262 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11",
+  "computedAt": "2026-05-31T22:29:03.432729+00:00",
+  "computation": "option-e-v7-involution-aware",
+  "description": "Option E v7: involution-aware \u0394_\u03bb probe. Tests partition-transpose \u03bb \u2194 \u03bb\u1d40 symmetry (self-conjugate + bar-(anti)symmetric combinations) with 5 scale candidates (m_e, \u03bc\u2080, \u03bc\u2080\u00b7\u210f_q, m_\u03c0, m_\u03c0\u00b7\u210f_q) \u00d7 7 involution sums. Addresses user question 'are we using involution / bar / skew symmetry appropriately?'",
+  "scriptFile": "option_e_v7_involution_aware.py",
+  "precisionMetadata": {
+    "compute_dps": 50,
+    "output_dps": 30
+  },
+  "scales": {
+    "m_e": "0.51099895069000000891179524842300452291965484619141",
+    "\u03bc\u2080": "1.6333262863818724941467053213273175060749053955078",
+    "\u03bc\u2080\u00b7\u210f_q": "0.1614753329041734736136017447800284802014617268324",
+    "m_\u03c0": "139.570390000000003283275873400270938873291015625",
+    "m_\u03c0\u00b7\u210f_q": "13.798330056108655656869474261213813301609253526212"
+  },
+  "partition_classification": {
+    "D": {
+      "n_self_conj": 1,
+      "n_chiral_pairs": 5,
+      "self_conj_partitions": [
+        "(3, 2, 1)"
+      ]
+    },
+    "T": {
+      "n_self_conj": 2,
+      "n_chiral_pairs": 14,
+      "self_conj_partitions": [
+        "(5, 1, 1, 1, 1)",
+        "(3, 3, 3)"
+      ]
+    },
+    "3He": {
+      "n_self_conj": 2,
+      "n_chiral_pairs": 14,
+      "self_conj_partitions": [
+        "(5, 1, 1, 1, 1)",
+        "(3, 3, 3)"
+      ]
+    }
+  },
+  "absolute_energy_results_top10": [
+    {
+      "formula": "m_\u03c0\u00b7\u210f_q \u00b7 bar_sym_sum_atom",
+      "D": {
+        "B_pred": 1.3994983095270273,
+        "err_pct": -37.08892837852294
+      },
+      "T": {
+        "B_pred": 0.35832487576208516,
+        "err_pct": -95.77536654654962
+      },
+      "3He": {
+        "B_pred": 0.7117844020036084,
+        "err_pct": -90.77767726600197
+      },
+      "max_err_pct": 95.77536654654962
+    },
+    {
+      "formula": "m_\u03c0\u00b7\u210f_q \u00b7 bar_asym_sum_atom",
+      "D": {
+        "B_pred": 1.414839472732177,
+        "err_pct": -36.399303381775276
+      },
+      "T": {
+        "B_pred": 0.35311663897239115,
+        "err_pct": -95.83677141365084
+      },
+      "3He": {
+        "B_pred": 0.7055263558343663,
+        "err_pct": -90.85876041603244
+      },
+      "max_err_pct": 95.83677141365084
+    },
+    {
+      "formula": "m_\u03c0\u00b7\u210f_q \u00b7 pair_phase_sum",
+      "D": {
+        "B_pred": 1.1639863914289599,
+        "err_pct": -47.67579872078599
+      },
+      "T": {
+        "B_pred": 0.2610116832855492,
+        "err_pct": -96.92268451470373
+      },
+      "3He": {
+        "B_pred": 0.24294524862660713,
+        "err_pct": -96.85224980595373
+      },
+      "max_err_pct": 96.92268451470373
+    },
+    {
+      "formula": "\u03bc\u2080 \u00b7 bar_sym_sum_atom",
+      "D": {
+        "B_pred": 0.16566043625587326,
+        "err_pct": -92.55313457744687
+      },
+      "T": {
+        "B_pred": 0.04241538188076835,
+        "err_pct": -99.499924640026
+      },
+      "3He": {
+        "B_pred": 0.08425484600684789,
+        "err_pct": -98.90834165571597
+      },
+      "max_err_pct": 99.499924640026
+    },
+    {
+      "formula": "\u03bc\u2080 \u00b7 bar_asym_sum_atom",
+      "D": {
+        "B_pred": 0.16747638971000534,
+        "err_pct": -92.47150276907921
+      },
+      "T": {
+        "B_pred": 0.04179887611378662,
+        "err_pct": -99.50719321405926
+      },
+      "3He": {
+        "B_pred": 0.08351407293734957,
+        "err_pct": -98.91793957370959
+      },
+      "max_err_pct": 99.50719321405926
+    },
+    {
+      "formula": "\u03bc\u2080 \u00b7 pair_phase_sum",
+      "D": {
+        "B_pred": 0.1377825840069707,
+        "err_pct": -93.8063161979923
+      },
+      "T": {
+        "B_pred": 0.03089629264045128,
+        "err_pct": -99.63573416107704
+      },
+      "3He": {
+        "B_pred": 0.02875774525756802,
+        "err_pct": -99.62739671293605
+      },
+      "max_err_pct": 99.63573416107704
+    },
+    {
+      "formula": "m_e \u00b7 bar_sym_sum_atom",
+      "D": {
+        "B_pred": 0.051828167956030256,
+        "err_pct": -97.67018969290953
+      },
+      "T": {
+        "B_pred": 0.013269985192120286,
+        "err_pct": -99.84354749792296
+      },
+      "3He": {
+        "B_pred": 0.026359789993596373,
+        "err_pct": -99.65846611721604
+      },
+      "max_err_pct": 99.84354749792296
+    },
+    {
+      "formula": "m_e \u00b7 bar_asym_sum_atom",
+      "D": {
+        "B_pred": 0.052396303249817124,
+        "err_pct": -97.64465054083281
+      },
+      "T": {
+        "B_pred": 0.013077106523204807,
+        "err_pct": -99.84582152836929
+      },
+      "3He": {
+        "B_pred": 0.026128033323561034,
+        "err_pct": -99.66146890120625
+      },
+      "max_err_pct": 99.84582152836929
+    },
+    {
+      "formula": "m_e \u00b7 pair_phase_sum",
+      "D": {
+        "B_pred": 0.04310636303226535,
+        "err_pct": -98.06225740066758
+      },
+      "T": {
+        "B_pred": 0.009666147695727795,
+        "err_pct": -99.88603657272046
+      },
+      "3He": {
+        "B_pred": 0.008997086358892924,
+        "err_pct": -99.88342813661862
+      },
+      "max_err_pct": 99.88603657272046
+    },
+    {
+      "formula": "\u03bc\u2080\u00b7\u210f_q \u00b7 bar_sym_sum_atom",
+      "D": {
+        "B_pred": 0.016377667044546396,
+        "err_pct": -99.26378147267619
+      },
+      "T": {
+        "B_pred": 0.004193306607846638,
+        "err_pct": -99.9505611120679
+      },
+      "3He": {
+        "B_pred": 0.008329676330553318,
+        "err_pct": -99.89207551728603
+      },
+      "max_err_pct": 99.9505611120679
+    }
+  ],
+  "mirror_pair_results_top10": [
+    {
+      "formula": "m_\u03c0 \u00b7 (bar_asym_sum_diff)",
+      "diff_MeV": 1.2095165865171493,
+      "err_pct": 58.36799877931316
+    },
+    {
+      "formula": "m_\u03c0 \u00b7 (pair_phase_sum)",
+      "diff_MeV": 0.18274235512591988,
+      "err_pct": -76.07263811334252
+    },
+    {
+      "formula": "m_\u03c0\u00b7\u210f_q \u00b7 (bar_sym_sum_diff)",
+      "diff_MeV": 0.13851434801969362,
+      "err_pct": -81.86363019521174
+    },
+    {
+      "formula": "m_\u03c0 \u00b7 (bar_sym_sum_diff)",
+      "diff_MeV": 1.401075455877045,
+      "err_pct": 83.44975055281348
+    },
+    {
+      "formula": "m_\u03c0\u00b7\u210f_q \u00b7 (bar_asym_sum_diff)",
+      "diff_MeV": 0.11957628741383847,
+      "err_pct": -84.34328429201655
+    },
+    {
+      "formula": "m_\u03c0\u00b7\u210f_q \u00b7 (pair_phase_sum)",
+      "diff_MeV": 0.01806643465894207,
+      "err_pct": -97.63447220657581
+    },
+    {
+      "formula": "\u03bc\u2080 \u00b7 (bar_sym_sum_diff)",
+      "diff_MeV": 0.016396123642618204,
+      "err_pct": -97.85317430288683
+    },
+    {
+      "formula": "\u03bc\u2080 \u00b7 (bar_asym_sum_diff)",
+      "diff_MeV": 0.014154400762033654,
+      "err_pct": -98.14669418543615
+    },
+    {
+      "formula": "m_\u03c0 \u00b7 (sc_sum_y_chi_diff)",
+      "diff_MeV": 0.010092722321622255,
+      "err_pct": -98.67850986573639
+    },
+    {
+      "formula": "m_e \u00b7 (bar_sym_sum_diff)",
+      "diff_MeV": 0.005129655995019312,
+      "err_pct": -99.32834872757158
+    }
+  ],
+  "best_absolute": "m_\u03c0\u00b7\u210f_q \u00b7 bar_sym_sum_atom",
+  "best_absolute_max_err": 95.77536654654962,
+  "best_mirror": "m_\u03c0 \u00b7 (bar_asym_sum_diff)",
+  "best_mirror_err": 58.36799877931316
+}

@@ -1,0 +1,98 @@
+{
+  "engine": "python-decimal",
+  "computedAt": "2026-05-31T20:42:09.654579+00:00",
+  "computation": "probe-isospin-mirror-v9-generalization",
+  "exploratory": true,
+  "description": "EXPLORATORY falsification probe (Option 3 of the PR #1570 discipline gate). Tests whether the v9 scale*(1+q)/2*Sigma y_lambda chi^lambda(atom) structure that hit the 3H/3He binding DIFFERENCE to 0.11% also reproduces the ABSOLUTE binding energies of D, T, 3He. If absolute errors stay large, the (1+q)/2 factor did not generalize -> 0.11% was specific to the back-solved difference (overfitting tell).",
+  "scriptFile": "probe_isospin_mirror_v9_generalization.py",
+  "precisionMetadata": {
+    "compute": "decimal-40",
+    "note": "coarse %-level comparison; inputs from 50-dps witnesses"
+  },
+  "per_atom_base_sum_y_chi": {
+    "D": "0.3882864901773286189783692203359970864434",
+    "T": "0.1040521289938959661344715548743919267060",
+    "3He": "0.2065408753306753453297207083054854506399"
+  },
+  "AME_MeV": {
+    "D": "2.224566",
+    "T": "8.481798",
+    "3He": "7.71806"
+  },
+  "absolute_energy_results": {
+    "m_pi*hbar_q": {
+      "D": {
+        "pred_MeV": 5.357705147794776,
+        "err_pct": 140.8427148394238
+      },
+      "T": {
+        "pred_MeV": 1.4357456188985707,
+        "err_pct": -83.07262659522696
+      },
+      "3He": {
+        "pred_MeV": 2.849919167890251,
+        "err_pct": -63.07466943907859
+      },
+      "max_abs_err_pct": 140.8427148394238
+    },
+    "m_pi*hbar_q*(1+q)/2": {
+      "D": {
+        "pred_MeV": 5.651599451527914,
+        "err_pct": 154.05402453907476
+      },
+      "T": {
+        "pred_MeV": 1.5145027448254753,
+        "err_pct": -82.14408378004904
+      },
+      "3He": {
+        "pred_MeV": 3.0062500943667803,
+        "err_pct": -61.04914843410416
+      },
+      "max_abs_err_pct": 154.05402453907476
+    },
+    "mu_0": {
+      "D": {
+        "pred_MeV": 0.6341985310535869,
+        "err_pct": -71.4911344031336
+      },
+      "T": {
+        "pred_MeV": 0.1699510774397275,
+        "err_pct": -97.99628478018779
+      },
+      "3He": {
+        "pred_MeV": 0.33734864088991295,
+        "err_pct": -95.62910056555776
+      },
+      "max_abs_err_pct": 97.99628478018779
+    },
+    "mu_0*(1+q)/2": {
+      "D": {
+        "pred_MeV": 0.6689871822710377,
+        "err_pct": -69.92729448031491
+      },
+      "T": {
+        "pred_MeV": 0.17927366093303596,
+        "err_pct": -97.88637195871635
+      },
+      "3He": {
+        "pred_MeV": 0.35585373611159926,
+        "err_pct": -95.38933700811344
+      },
+      "max_abs_err_pct": 97.88637195871635
+    }
+  },
+  "mirror_difference_err_pct_PR1570": 0.1131772975,
+  "absolute_max_err_with_1plusq_over_2_pct": 154.05402453907476,
+  "absolute_max_err_without_factor_pct": 140.8427148394238,
+  "generalize_threshold_pct": 2.0,
+  "assertions": [
+    {
+      "name": "v9_structure_does_not_generalize_to_absolute_energies",
+      "computed": 1,
+      "expected": 1,
+      "tolerance": null,
+      "source": "Option-3 falsification: (1+q)/2 was back-solved for the difference; it does not reproduce absolute B(D,T,3He)."
+    }
+  ],
+  "allPassed": true
+}

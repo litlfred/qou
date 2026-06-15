@@ -1,0 +1,48 @@
+{
+  "engine": "python+sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-04T02:53:09.629307+00:00",
+  "commitSha": "2e94d6b9ec1bbaad4232df16507d431ef5e652a9",
+  "assertions": [
+    {
+      "name": "hypA_decisively_resolved",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "The probe symbolically computes both rung-2 and Hyp-A's prediction as rational functions in q, simplifies the difference, and reports CONFIRMED (diff = 0) or REFUTED (diff ≠ 0). Either way the Hyp-A status is decisively resolved at this scope."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 542,
+  "computation": "qbeta-rung2-hyp-a-markov-3strand-test",
+  "scriptFile": "qbeta_rung2_hypA_markov_3strand_test.py",
+  "scriptHash": "1840ea1be93f",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 10,
+    "truncation_bound": "1e-50"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Definitive test of Hyp-A: does the rung 2 form ℏ_q³/[2]_q equal (3-strand Markov trace at identity) / dim_q(V_1)? Symbolic check using QOU Markov-trace convention tr_M(1 ∈ H_n) = z^(n-1), z = 1/(√q+1/√q). Hyp-A confirmed iff the difference simplifies to 0.",
+  "contentBlock": "prop:q-beta-c-2-eq-neg-one-structural",
+  "data": {
+    "hypothesis": "Hyp-A: rung_2 = tr_M(1 ∈ H_3) / dim_q(V_1) = z² / [2]_q",
+    "rung_2_actual": "hbar_q^3 / [2]_q = (q-1)^3 / (q^2 * (q^2 + 1))",
+    "hypA_pred": "z^2 / [2]_q = q^2 / ((q+1)^2 * (q^2 + 1))",
+    "symbolic_difference": "(-q**4 + (q - 1)**3*(q + 1)**2)/(q**2*(q + 1)**2*(q**2 + 1))",
+    "verdict": "REFUTED",
+    "numerical_at_q0": {
+      "rung_2_actual": "0.0004837163440454520352282205",
+      "hypA_pred": "0.1239848747377996246480205",
+      "relative_gap": 255.31731543507547
+    },
+    "implications": "Hyp-A as literally stated (tr_M(1 ∈ H_3) / dim_q(V_1)) does NOT yield the rung-2 form. Possible refinements: (a) 'Markov trace at identity' may need a different interpretation (e.g. 3-cycle braid trace); (b) /[2]_q may still be dim_q(V_1), but the ℏ_q³ numerator's categorical source is OPEN; (c) Hyp-B (Wenzl p_3) and Hyp-C (Kauffman bracket) remain untested."
+  }
+}

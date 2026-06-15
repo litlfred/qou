@@ -1,0 +1,269 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-06-01T13:23:55.719042+00:00",
+  "commitSha": "417e511ad96a7416b3b52d2f93704cd0eee0d8f7",
+  "assertions": [
+    {
+      "name": "zero_nontrivial_substrate_combinations_within_one_percent",
+      "computed": 10.0,
+      "expected": 0.0,
+      "passed": false,
+      "tolerance": 0.5,
+      "unit": "count of non-structurally-trivial 2- or 3-term substrate-primitive combinations within 1% of π²/720",
+      "source": "Comprehensive brute-force grid sweep.  Passing this assertion is the final empirical evidence that the Casimir prefactor π²/720 is not recoverable from any low-degree substrate expression at q_0."
+    }
+  ],
+  "allPassed": false,
+  "durationMs": 241,
+  "computation": "casimir-grid-sweep-probe",
+  "scriptFile": "casimir_grid_sweep_probe.py",
+  "scriptHash": "3b27b3ef43e8",
+  "scriptCommitSha": "6a4d908426c740e5e8cca336a33b8f53cf6ac4aa",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.12.3",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Brute-force grid sweep over substrate-primitive combinations searching for a sub-1% match to π²/720.  Primitives: q-integers [k]_q (k=2..12), substrate constants (ℏ_q, h_q, α_em), hyperbolic volumes (Vol(4_1), Vol(𝓑₃)), Jones polynomial values, Φ_q(1), and constants (π², ζ(2), integers).  Tests 2-term products A·B^b and 3-term ratios π²·A^a/B^b.  Filters structurally-trivial near-matches.  After 4 prior sweeps (q-rationals, Carlitz, Φ_q+Markov, Macdonald) all gave null results, this is a last-resort comprehensive search.  A 5th null result reinforces the empirical case for the 'revised conjecture' framing (substrate c_q ≠ π²/240, predicting a measurable deviation from standard Casimir).",
+  "contentBlock": "conj:casimir-epsilon-vacuum",
+  "parameters": {
+    "substrate_q": 1.1099785827513808,
+    "target_pi_sq_720": 0.013707783890401887,
+    "primitive_count": 44
+  },
+  "data": {
+    "primitive_values_at_substrate": {
+      "π²": 9.869604401089358,
+      "π": 3.141592653589793,
+      "ζ(2)": 1.6449340668482264,
+      "ℏ_q": 0.09908171604425853,
+      "ℏ_q²": 0.009817186454275078,
+      "h_q": 0.20906029879563937,
+      "h_q²": 0.04370620853252201,
+      "α_em": 0.007308701560055655,
+      "Vol(4_1)": 2.0298832128193074,
+      "Vol(𝓑₃)": 7.327724753417752,
+      "J_{3_1}": 0.9733701745291449,
+      "J_{4_1}": 1.0328093418253996,
+      "log Φ_q(1)": 13.711692171758878,
+      "[2]_q": 2.0108968667071223,
+      "[3]_q": 3.043706208532522,
+      "[4]_q": 4.109682411207941,
+      "[5]_q": 5.220441275326898,
+      "[6]_q": 6.388086592175452,
+      "[7]_q": 7.625342037132497,
+      "[8]_q": 8.945689817864391,
+      "[9]_q": 10.363517588144814,
+      "[10]_q": 11.89427522820017,
+      "[11]_q": 13.55464319999505,
+      "[12]_q": 15.362714312002877,
+      "(1)": 1.0,
+      "(2)": 2.0,
+      "(3)": 3.0,
+      "(4)": 4.0,
+      "(5)": 5.0,
+      "(6)": 6.0,
+      "(7)": 7.0,
+      "(8)": 8.0,
+      "(9)": 9.0,
+      "(10)": 10.0,
+      "(11)": 11.0,
+      "(12)": 12.0,
+      "const_120": 120.0,
+      "const_240": 240.0,
+      "const_360": 360.0,
+      "const_720": 720.0,
+      "const_12": 12.0,
+      "const_24": 24.0,
+      "const_48": 48.0,
+      "const_6": 6.0
+    },
+    "all_within_2pct_matches": [
+      {
+        "form": "π² · const_720^-1",
+        "value": 0.013707783890401887,
+        "rel_residue": 0.0,
+        "n_terms": 2
+      },
+      {
+        "form": "ζ(2) · (11)^-2",
+        "value": 0.013594496420233276,
+        "rel_residue": 0.008264462809917356,
+        "n_terms": 2
+      },
+      {
+        "form": "ζ(2) · const_120^-1",
+        "value": 0.013707783890401887,
+        "rel_residue": 0.0,
+        "n_terms": 2
+      },
+      {
+        "form": "ℏ_q · Vol(𝓑₃)^-1",
+        "value": 0.013521484414114415,
+        "rel_residue": 0.013590780083563873,
+        "n_terms": 2
+      },
+      {
+        "form": "h_q · [12]_q^-1",
+        "value": 0.013608291773824156,
+        "rel_residue": 0.007258074490610835,
+        "n_terms": 2
+      },
+      {
+        "form": "[2]_q · (12)^-2",
+        "value": 0.013964561574355015,
+        "rel_residue": 0.018732253587169793,
+        "n_terms": 2
+      },
+      {
+        "form": "[2]_q · const_12^-2",
+        "value": 0.013964561574355015,
+        "rel_residue": 0.018732253587169793,
+        "n_terms": 2
+      },
+      {
+        "form": "(2) · (12)^-2",
+        "value": 0.013888888888888888,
+        "rel_residue": 0.013211836423377714,
+        "n_terms": 2
+      },
+      {
+        "form": "(2) · const_12^-2",
+        "value": 0.013888888888888888,
+        "rel_residue": 0.013211836423377714,
+        "n_terms": 2
+      },
+      {
+        "form": "(5) · const_360^-1",
+        "value": 0.013888888888888888,
+        "rel_residue": 0.013211836423377714,
+        "n_terms": 2
+      },
+      {
+        "form": "(8) · const_24^-2",
+        "value": 0.013888888888888888,
+        "rel_residue": 0.013211836423377714,
+        "n_terms": 2
+      },
+      {
+        "form": "(10) · const_720^-1",
+        "value": 0.013888888888888888,
+        "rel_residue": 0.013211836423377714,
+        "n_terms": 2
+      },
+      {
+        "form": "ζ(2)·ℏ_q/[10]_q",
+        "value": 0.013702633157215562,
+        "rel_residue": 0.0003757524358063161,
+        "n_terms": 3
+      },
+      {
+        "form": "ζ(2)·h_q^3/J_{4_1}^3",
+        "value": 0.013642775192169755,
+        "rel_residue": 0.004742465941387488,
+        "n_terms": 3
+      },
+      {
+        "form": "ζ(2)·h_q^2/[5]_q",
+        "value": 0.013771600436864635,
+        "rel_residue": 0.004655496976971787,
+        "n_terms": 3
+      },
+      {
+        "form": "ζ(2)·h_q/(5)^2",
+        "value": 0.013755616300576657,
+        "rel_residue": 0.003489434219068977,
+        "n_terms": 3
+      },
+      {
+        "form": "ζ(2)·h_q²/[5]_q",
+        "value": 0.013771600436864635,
+        "rel_residue": 0.004655496976971787,
+        "n_terms": 3
+      },
+      {
+        "form": "ζ(2)·Vol(4_1)^3/(10)^3",
+        "value": 0.013758201028831568,
+        "rel_residue": 0.003677993381919488,
+        "n_terms": 3
+      },
+      {
+        "form": "ζ(2)·[3]_q^2/[9]_q^3",
+        "value": 0.01369091231488421,
+        "rel_residue": 0.0012308025609807055,
+        "n_terms": 3
+      }
+    ],
+    "top10_nontrivial_matches": [
+      {
+        "form": "ζ(2) · const_120^-1",
+        "value": 0.013707783890401887,
+        "rel_residue": 0.0,
+        "n_terms": 2
+      },
+      {
+        "form": "ζ(2)·ℏ_q/[10]_q",
+        "value": 0.013702633157215562,
+        "rel_residue": 0.0003757524358063161,
+        "n_terms": 3
+      },
+      {
+        "form": "ζ(2)·[3]_q^2/[9]_q^3",
+        "value": 0.01369091231488421,
+        "rel_residue": 0.0012308025609807055,
+        "n_terms": 3
+      },
+      {
+        "form": "ζ(2)·h_q/(5)^2",
+        "value": 0.013755616300576657,
+        "rel_residue": 0.003489434219068977,
+        "n_terms": 3
+      },
+      {
+        "form": "ζ(2)·Vol(4_1)^3/(10)^3",
+        "value": 0.013758201028831568,
+        "rel_residue": 0.003677993381919488,
+        "n_terms": 3
+      },
+      {
+        "form": "ζ(2)·h_q^2/[5]_q",
+        "value": 0.013771600436864635,
+        "rel_residue": 0.004655496976971787,
+        "n_terms": 3
+      },
+      {
+        "form": "ζ(2)·h_q²/[5]_q",
+        "value": 0.013771600436864635,
+        "rel_residue": 0.004655496976971787,
+        "n_terms": 3
+      },
+      {
+        "form": "ζ(2)·h_q^3/J_{4_1}^3",
+        "value": 0.013642775192169755,
+        "rel_residue": 0.004742465941387488,
+        "n_terms": 3
+      },
+      {
+        "form": "h_q · [12]_q^-1",
+        "value": 0.013608291773824156,
+        "rel_residue": 0.007258074490610835,
+        "n_terms": 2
+      },
+      {
+        "form": "ζ(2) · (11)^-2",
+        "value": 0.013594496420233276,
+        "rel_residue": 0.008264462809917356,
+        "n_terms": 2
+      }
+    ]
+  }
+}

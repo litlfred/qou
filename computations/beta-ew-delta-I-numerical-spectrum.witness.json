@@ -1,0 +1,626 @@
+{
+  "computation": "beta-ew-delta-I-numerical-spectrum",
+  "computedAt": "2026-05-06T01:08:52.359477+00:00",
+  "description": "Numerical-at-q_0 spectrum extraction of β_EW(Δ_I^minimal) across all 11 partitions of 6, using PR #546's _hoefsmit_build directly at q = q_0 = Rational specialization. Avoids the symbolic-q combinatorial blowup that timed out on partitions with f_λ ≥ 5.  Tests Weinberg-angle candidate readings using the full Δ_I-coupled spectrum + invariants.",
+  "reference_blocks": [
+    "def:ew-interface-knot",
+    "conj:hoefsmit-ew-cell-content",
+    "conj:weinberg-angle-categorical",
+    "conj:categorical-linking-operation"
+  ],
+  "audit": "docs/audits/2026-05-06-delta-I-interface-knot-refinement.md",
+  "n_strands": 6,
+  "delta_I": "σ_2 · σ_4 · σ_2",
+  "beta_EW_word_indices": [
+    0,
+    0,
+    0,
+    0,
+    1,
+    3,
+    1,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    1,
+    3,
+    1,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    1,
+    3,
+    1
+  ],
+  "q_0": "1.1099785955541805169583001889887986763787613849839",
+  "per_partition": [
+    {
+      "shape": [
+        6
+      ],
+      "f_lambda": 1,
+      "chi_at_q0": 16.729937179867242,
+      "det_at_q0": 16.729937179867242,
+      "eigenvalues": [
+        {
+          "real": 16.729937179867242,
+          "imag": 0.0,
+          "multiplicity": 1
+        }
+      ]
+    },
+    {
+      "shape": [
+        5,
+        1
+      ],
+      "f_lambda": 5,
+      "chi_at_q0": 24.948703957191395,
+      "det_at_q0": -4682.55546847066,
+      "eigenvalues": [
+        {
+          "real": 13.80348092492008,
+          "imag": 0.0,
+          "multiplicity": 1
+        },
+        {
+          "real": -3.853429512319214,
+          "imag": 0.0,
+          "multiplicity": 1
+        },
+        {
+          "real": 7.939083101938769,
+          "imag": 0.0,
+          "multiplicity": 1
+        },
+        {
+          "real": 4.700589830924958,
+          "imag": 0.0,
+          "multiplicity": 1
+        },
+        {
+          "real": 2.3589796117268342,
+          "imag": 0.0,
+          "multiplicity": 1
+        }
+      ]
+    },
+    {
+      "shape": [
+        4,
+        2
+      ],
+      "f_lambda": 9,
+      "chi_at_q0": 17.874790515521404,
+      "det_at_q0": -4682.55546847066,
+      "eigenvalues": [
+        {
+          "real": 11.034598172063655,
+          "imag": 0.0,
+          "multiplicity": 1
+        },
+        {
+          "real": -4.588636204229977,
+          "imag": 0.0,
+          "multiplicity": 1
+        },
+        {
+          "real": 6.741341915859774,
+          "imag": 0.0,
+          "multiplicity": 1
+        },
+        {
+          "real": -2.4458875787723504,
+          "imag": 0.0,
+          "multiplicity": 1
+        },
+        {
+          "real": -0.72212449000129,
+          "imag": 0.0,
+          "multiplicity": 1
+        },
+        {
+          "real": 3.4911770267093916,
+          "imag": 0.0,
+          "multiplicity": 1
+        },
+        {
+          "real": 0.6619367689744897,
+          "imag": 0.0,
+          "multiplicity": 1
+        },
+        {
+          "real": 1.594320167211705,
+          "imag": 0.0,
+          "multiplicity": 1
+        },
+        {
+          "real": 2.1080647377060298,
+          "imag": 0.0,
+          "multiplicity": 1
+        }
+      ]
+    },
+    {
+      "shape": [
+        4,
+        1,
+        1
+      ],
+      "f_lambda": 10,
+      "chi_at_q0": 9.753875669618477,
+      "det_at_q0": 279.8907980423043,
+      "eigenvalues": [
+        {
+          "real": 6.550352280512044,
+          "imag": 0.0,
+          "multiplicity": 1
+        },
+        {
+          "real": -3.1793748055929325,
+          "imag": 0.0,
+          "multiplicity": 1
+        },
+        {
+          "real": 3.8783470236294555,
+          "imag": 0.0,
+          "multiplicity": 1
+        },
+        {
+          "real": -1.8286199641311707,
+          "imag": 0.0,
+          "multiplicity": 1
+        },
+        {
+          "real": -1.0826933409882364,
+          "imag": 0.0,
+          "multiplicity": 1
+        },
+        {
+          "real": -0.5433470285666459,
+          "imag": 0.0,
+          "multiplicity": 1
+        },
+        {
+          "real": 2.230634394775268,
+          "imag": 0.0,
+          "multiplicity": 1
+        },
+        {
+          "real": 1.9463390521233945,
+          "imag": 0.0,
+          "multiplicity": 1
+        },
+        {
+          "real": 0.6627995942260009,
+          "imag": 0.0,
+          "multiplicity": 1
+        },
+        {
+          "real": 1.1194384636312884,
+          "imag": 0.0,
+          "multiplicity": 1
+        }
+      ]
+    },
+    {
+      "shape": [
+        3,
+        3
+      ],
+      "f_lambda": 5,
+      "chi_at_q0": 7.665459542411026,
+      "det_at_q0": 16.729937179867242,
+      "eigenvalues": [
+        {
+          "real": 8.434325767746524,
+          "imag": 0.0,
+          "multiplicity": 1
+        },
+        {
+          "real": -2.63699720647009,
+          "imag": 0.0,
+          "multiplicity": 1
+        },
+        {
+          "real": 2.2455981410557992,
+          "imag": 0.0,
+          "multiplicity": 1
+        },
+        {
+          "real": -0.7974925821077841,
+          "imag": 0.0,
+          "multiplicity": 1
+        },
+        {
+          "real": 0.4200254221865785,
+          "imag": 0.0,
+          "multiplicity": 1
+        }
+      ]
+    },
+    {
+      "shape": [
+        3,
+        2,
+        1
+      ],
+      "f_lambda": 16,
+      "chi_at_q0": 4.236525868720982,
+      "det_at_q0": 1.0,
+      "eigenvalues": [
+        {
+          "real": 5.240325308166744,
+          "imag": 0.0,
+          "multiplicity": 1
+        },
+        {
+          "real": -3.5272780003860804,
+          "imag": 0.0,
+          "multiplicity": 1
+        },
+        {
+          "real": 2.938800957513241,
+          "imag": 0.0,
+          "multiplicity": 1
+        },
+        {
+          "real": -2.1229304488064056,
+          "imag": 0.0,
+          "multiplicity": 1
+        },
+        {
+          "real": -1.9439356409304807,
+          "imag": 0.0,
+          "multiplicity": 1
+        },
+        {
+          "real": 1.8703311844733297,
+          "imag": 0.0,
+          "multiplicity": 1
+        },
+        {
+          "real": 1.600282955779474,
+          "imag": 0.0,
+          "multiplicity": 1
+        },
+        {
+          "real": 1.3457141866509479,
+          "imag": 0.0,
+          "multiplicity": 1
+        },
+        {
+          "real": 0.514420322846357,
+          "imag": 0.0,
+          "multiplicity": 1
+        },
+        {
+          "real": 0.471046990994097,
+          "imag": 0.0,
+          "multiplicity": 1
+        },
+        {
+          "real": 0.2835047308124128,
+          "imag": 0.0,
+          "multiplicity": 1
+        },
+        {
+          "real": -0.7430998423882845,
+          "imag": 0.0,
+          "multiplicity": 1
+        },
+        {
+          "real": -0.19082784773715347,
+          "imag": 0.0,
+          "multiplicity": 1
+        },
+        {
+          "real": -0.6248894899420567,
+          "imag": 0.0,
+          "multiplicity": 1
+        },
+        {
+          "real": -0.3402748312856756,
+          "imag": 0.0,
+          "multiplicity": 1
+        },
+        {
+          "real": -0.534664667039485,
+          "imag": 0.0,
+          "multiplicity": 1
+        }
+      ]
+    },
+    {
+      "shape": [
+        3,
+        1,
+        1,
+        1
+      ],
+      "f_lambda": 10,
+      "chi_at_q0": -0.14919540443475338,
+      "det_at_q0": 0.0035728219969877475,
+      "eigenvalues": [
+        {
+          "real": 1.8404444073946737,
+          "imag": 6.650902701840766e-18,
+          "multiplicity": 1
+        },
+        {
+          "real": -1.508751678051005,
+          "imag": -1.514978611631815e-18,
+          "multiplicity": 1
+        },
+        {
+          "real": 0.923622564342405,
+          "imag": 4.042771968882138e-19,
+          "multiplicity": 1
+        },
+        {
+          "real": -0.8933050207656369,
+          "imag": -5.5601552197300964e-18,
+          "multiplicity": 1
+        },
+        {
+          "real": 0.546860484745462,
+          "imag": -6.125895834228163e-18,
+          "multiplicity": 1
+        },
+        {
+          "real": 0.31452724549520594,
+          "imag": 7.299423843543367e-18,
+          "multiplicity": 1
+        },
+        {
+          "real": -0.5137850976730047,
+          "imag": 1.6197544536512964e-17,
+          "multiplicity": 1
+        },
+        {
+          "real": -0.44830295916814544,
+          "imag": 2.125449984734396e-17,
+          "multiplicity": 1
+        },
+        {
+          "real": -0.15266354497835133,
+          "imag": 1.331693788650797e-17,
+          "multiplicity": 1
+        },
+        {
+          "real": -0.2578418057763629,
+          "imag": -3.763424716206305e-18,
+          "multiplicity": 1
+        }
+      ]
+    },
+    {
+      "shape": [
+        2,
+        2,
+        2
+      ],
+      "f_lambda": 5,
+      "chi_at_q0": -1.3115376777988321,
+      "det_at_q0": -0.05977308756445285,
+      "eigenvalues": [
+        {
+          "real": -2.380808272971138,
+          "imag": 9.86623976961809e-18,
+          "multiplicity": 1
+        },
+        {
+          "real": 1.2539301586442178,
+          "imag": -2.464912198624317e-18,
+          "multiplicity": 1
+        },
+        {
+          "real": 0.37921921098225575,
+          "imag": 3.404083166869834e-17,
+          "multiplicity": 1
+        },
+        {
+          "real": -0.44531565186005956,
+          "imag": 5.2000254765337224e-17,
+          "multiplicity": 1
+        },
+        {
+          "real": -0.11856312259411096,
+          "imag": 2.0847314790471743e-18,
+          "multiplicity": 1
+        }
+      ]
+    },
+    {
+      "shape": [
+        2,
+        2,
+        1,
+        1
+      ],
+      "f_lambda": 9,
+      "chi_at_q0": -1.126130467288509,
+      "det_at_q0": 0.0002135586020781519,
+      "eigenvalues": [
+        {
+          "real": 1.3848027782553354,
+          "imag": 0.0,
+          "multiplicity": 1
+        },
+        {
+          "real": -1.510718314604671,
+          "imag": 0.0,
+          "multiplicity": 1
+        },
+        {
+          "real": 0.4088495353093553,
+          "imag": 0.0,
+          "multiplicity": 1
+        },
+        {
+          "real": -0.6272265888406171,
+          "imag": 0.0,
+          "multiplicity": 1
+        },
+        {
+          "real": 0.21792967572329272,
+          "imag": 0.0,
+          "multiplicity": 1
+        },
+        {
+          "real": -0.4743687336130807,
+          "imag": 0.0,
+          "multiplicity": 1
+        },
+        {
+          "real": -0.28643634864387,
+          "imag": 0.0,
+          "multiplicity": 1
+        },
+        {
+          "real": -0.14833841874232565,
+          "imag": 0.0,
+          "multiplicity": 1
+        },
+        {
+          "real": -0.09062405213193066,
+          "imag": 0.0,
+          "multiplicity": 1
+        }
+      ]
+    },
+    {
+      "shape": [
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "f_lambda": 5,
+      "chi_at_q0": -0.5755468898116456,
+      "det_at_q0": 0.0002135586020781519,
+      "eigenvalues": [
+        {
+          "real": 0.25950909360169994,
+          "imag": 0.0,
+          "multiplicity": 1
+        },
+        {
+          "real": -0.4239120995488275,
+          "imag": 0.0,
+          "multiplicity": 1
+        },
+        {
+          "real": -0.07244549439660934,
+          "imag": 0.0,
+          "multiplicity": 1
+        },
+        {
+          "real": -0.12595912993476482,
+          "imag": 0.0,
+          "multiplicity": 1
+        },
+        {
+          "real": -0.2127392595331439,
+          "imag": 0.0,
+          "multiplicity": 1
+        }
+      ]
+    },
+    {
+      "shape": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "f_lambda": 1,
+      "chi_at_q0": -0.05977308756445285,
+      "det_at_q0": -0.05977308756445285,
+      "eigenvalues": [
+        {
+          "real": -0.05977308756445285,
+          "imag": 0.0,
+          "multiplicity": 1
+        }
+      ]
+    }
+  ],
+  "invariants_found": [
+    {
+      "name": "b_+ (q^27)",
+      "shape": [
+        6
+      ],
+      "value": 16.729937179867242
+    },
+    {
+      "name": "b_- (-q^-27)",
+      "shape": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "value": -0.05977308756445285
+    }
+  ],
+  "n_real_eigenvalues": 76,
+  "n_complex_eigenvalues": 0,
+  "candidate_cot_theta_W_readings": [
+    {
+      "form": "max/min positive real eigval",
+      "value": 76.76759543803202,
+      "rel_err": 41.10901670593085
+    },
+    {
+      "form": "|χ^(6) / χ^(1^6)|",
+      "value": 279.8907980423043,
+      "rel_err": 152.52736038363335
+    },
+    {
+      "form": "max/min |real ev| in 18-mixed",
+      "value": 190.5360856446322,
+      "rel_err": 103.51398363739307
+    },
+    {
+      "form": "|sum χ^λ unweighted|",
+      "value": 77.98710920643234,
+      "rel_err": 41.77795163027837
+    },
+    {
+      "form": "|sum χ^λ · f_λ|",
+      "value": 484.87471573773155,
+      "rel_err": 264.96635453776855
+    },
+    {
+      "form": "|Σ_{χ>0} χ^λ / Σ_{χ<0} χ^λ|",
+      "value": 25.203186614111313,
+      "rel_err": 12.824601384486357
+    }
+  ],
+  "best": {
+    "form": "|Σ_{χ>0} χ^λ / Σ_{χ<0} χ^λ|",
+    "value": 25.203186614111313,
+    "rel_err": 12.824601384486357
+  },
+  "codata_cot_theta_W": 1.8230678710486174,
+  "verdict": "no-clean-fit",
+  "auditOnly": "docs/audits/2026-05-06-staircase-ew-predictions.md",
+  "engine": "python",
+  "scriptFile": "beta_ew_delta_I_numerical_spectrum.py",
+  "commitSha": "610a6aa2bde5fabec35796ead6bbb0adb76f6533"
+}

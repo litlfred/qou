@@ -1,0 +1,48 @@
+{
+  "computation": "chi-neutron-h3-at-q0-50dps",
+  "description": "Numerical χ^λ_q(β_atomic(0, 1)) = neutron per partition λ ⊢ 3, evaluated at q = q_0 at 50 decimal places via the Hoefsmit seminormal basis. Companion to the symbolic chi-neutron-h3.witness.json emitted by per_irrep_pole_atom.py; this numerical cache is used by canonical_tr_m_via_chi_cache.py and the 3-way 1ppb cross-check (cross_check_trM_1ppb.py) when full symbolic data is not yet available. ~100× faster to build than the symbolic counterpart (no sympy poly arithmetic).",
+  "q_0_50dps": "1.1099785827513808075916690956107688798744991218736",
+  "dps": 50,
+  "n_strands": 3,
+  "atom": "neutron",
+  "Z": 0,
+  "N": 1,
+  "n_partitions": 3,
+  "compute_time_sec": 0.0,
+  "tr_M_at_q0": "0.92323322991163717797026991200748498402824245608811",
+  "by_partition": [
+    {
+      "partition": [
+        3
+      ],
+      "dim": 1,
+      "y_lambda": "0.41539579536061340131043751972541446062496615551882",
+      "chi_lambda": "1.1221068216024720738277212759029981741187093477827",
+      "contribution": "0.46611845563912881864467675555791747642724423835585",
+      "compute_time_sec": 0.0
+    },
+    {
+      "partition": [
+        2,
+        1
+      ],
+      "dim": 2,
+      "y_lambda": "0.28092963103101970777815130637822107959502749332953",
+      "chi_lambda": "1.7008886061270429791873531548743888917445154859717",
+      "contribution": "0.47783000854413559078949177051793673673103621352666",
+      "compute_time_sec": 0.0
+    },
+    {
+      "partition": [
+        1,
+        1,
+        1
+      ],
+      "dim": 1,
+      "y_lambda": "0.022744942577347183133259867518143380184978857822109",
+      "chi_lambda": "-0.91076221455307436648866691041701579466699304610602",
+      "contribution": "-0.020715234271627231463898614068369229130037995794411",
+      "compute_time_sec": 0.0
+    }
+  ]
+}

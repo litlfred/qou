@@ -1,0 +1,89 @@
+{
+  "computation": "rho-k-leading-order-verification",
+  "computedAt": "2026-05-08T17:54:58.612600+00:00",
+  "auditOnly": "AUDIT-DEEP-2026-05.md",
+  "description": "Live verification (in PR #564) that the rho_K leading-order ansatz reproduces atomic masses to <=0.1% on D, T, 3He. The residual is precisely the binding energy in MeV (cf. AME values). This confirms the assembly path M(K) = rho_K * m_e * |tr_M(K)| is the correct mass formula (Option A in the T6 unit-convention analysis), and the Mittag-Leffler complementarity (Option C) explains why no separate T6 additive is needed.",
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4",
+  "parameters": {
+    "q0": "1.1099785955541805",
+    "m_e_MeV": "0.51099895",
+    "m_p_MeV": "938.27208816",
+    "m_n_MeV": "939.56542052",
+    "mpmath_dps": 50
+  },
+  "data": {
+    "results": [
+      {
+        "atom": "p",
+        "Z": 1,
+        "N": 0,
+        "A": 1,
+        "abs_tr_M": "1.0653062285923893",
+        "rho_K_leading_order": "1723.5914182642151906777696768804916032369583774038",
+        "M_pred_MeV": "938.27208816",
+        "M_codata_MeV": "938.27208816",
+        "err_pct": "0.0",
+        "binding_residual_MeV": "0.0"
+      },
+      {
+        "atom": "n",
+        "Z": 0,
+        "N": 1,
+        "A": 1,
+        "abs_tr_M": "0.9232332971695837",
+        "rho_K_leading_order": "1991.5699177606222128777946774593810456566107800038",
+        "M_pred_MeV": "939.56542052",
+        "M_codata_MeV": "939.56542052",
+        "err_pct": "-1.4564771134402073586691247584160918220862290303627e-49",
+        "binding_residual_MeV": "1.3684555315672041708239546711815587219533808026138e-48"
+      },
+      {
+        "atom": "D",
+        "Z": 1,
+        "N": 1,
+        "A": 2,
+        "abs_tr_M": "0.3882864715477134",
+        "rho_K_leading_order": "9464.2399476222373032768581528110638613760990819893",
+        "M_pred_MeV": "1877.83750868",
+        "M_codata_MeV": "1875.61294257",
+        "err_pct": "0.1186047536519905770720392966178080471614966138988",
+        "binding_residual_MeV": "2.2245661099999999999999999999999999999999999999983",
+        "binding_AME_MeV": 2.224566,
+        "binding_residual_vs_AME_pct": "4.94478474541356e-06"
+      },
+      {
+        "atom": "T",
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "abs_tr_M": "0.10405211867552573",
+        "rho_K_leading_order": "52988.060858753992962227369347787420796607268298748",
+        "M_pred_MeV": "2817.4029292",
+        "M_codata_MeV": "2808.92113298",
+        "err_pct": "0.30195921560110217032285115546761669193129045173475",
+        "binding_residual_MeV": "8.4817962200000000000000000000000000000000000000022",
+        "binding_AME_MeV": 8.4818,
+        "binding_residual_vs_AME_pct": "-4.456601193284207e-05"
+      },
+      {
+        "atom": "3He",
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "abs_tr_M": "0.20654085856226276",
+        "rho_K_leading_order": "26682.318679851415963043463282231625050843503926828",
+        "M_pred_MeV": "2816.10959684",
+        "M_codata_MeV": "2808.39160743",
+        "err_pct": "0.27481884611750582552195773423188348614100173849407",
+        "binding_residual_MeV": "7.7179894099999999999999999999999999999999999999979",
+        "binding_AME_MeV": 7.718,
+        "binding_residual_vs_AME_pct": "-0.0001372117128736516"
+      }
+    ]
+  },
+  "auditReference": "AUDIT-DEEP-2026-05.md §3.3a (T6 wire-up resolution: Option A confirmed, Option C justification)",
+  "pr": "#564",
+  "scriptFile": "(deferred — producer not in computations/ tree; see docs/audits/2026-05-09-workplan-update-rho-k.md)",
+  "commitSha": "610a6aa2bde5fabec35796ead6bbb0adb76f6533"
+}

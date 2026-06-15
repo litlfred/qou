@@ -1,0 +1,101 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-06-04T03:31:34.051686+00:00",
+  "commitSha": "296c700d13b5131fc8525367f472bb6758395413",
+  "assertions": [
+    {
+      "name": "meaningful_period_relation_found",
+      "computed": false,
+      "expected": false,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Tests the period reframe with an ENTROPY-based meaningfulness criterion (precision > n_terms·log10(2·height)+margin). At A's ~11-digit precision a 12-constant basis cannot yield a non-spurious relation; the 2-term sub-basket probes are the genuinely testable ones. Default: none. A hit is surfaced, not a closure (needs A to ≥30 digits)."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 4,
+  "computation": "qbeta-residue-followup-pslq-periods",
+  "scriptFile": "qbeta_residue_followup_pslq_periods.py",
+  "scriptHash": "61b3959a21a1",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "mpmath": "1.4.1"
+  },
+  "description": "Direction 3 of the residue-A follow-up: PSLQ integer-relation probe testing whether residue A / prefactor P=A/ℏ_q^15 ≈ 2.0716216 is a period (ℚ-combination of 12 transcendental/volume constants). PRECISION CEILING: A is empirically known to ~12 sig figs (tail_mean limiter), so PSLQ tol=1.0e-11 and a relation is meaningful only if precision exceeds the n_terms·log10(2·height) search-entropy + margin. The full 12-basis relation is SPURIOUS (entropy ≈15 ≫ 11 digits); 0 MEANINGFUL relation(s) (incl. 2-term probes) found. Every relation reported with height + entropy (falsifiable). Diagnostic-only.",
+  "data": {
+    "residue_A": "1.8039031963669e-15",
+    "prefactor_P": "2.07162160704",
+    "A_sigfigs": "12",
+    "tail_mean": "2.11794472225e-13",
+    "pslq_tol": "1.0e-11",
+    "pslq_maxcoeff": "1000000",
+    "precision_digits": "11.0",
+    "period_basis": [
+      "1",
+      "pi",
+      "pi^2",
+      "zeta3",
+      "Catalan",
+      "ln(q0)",
+      "Li2(hbar)",
+      "Li2(1-hbar)",
+      "Li2(-hbar)",
+      "BlochWigner(q0)",
+      "Vol(4_1)",
+      "Vol(Borromean)"
+    ],
+    "bloch_wigner_q0": "0.0",
+    "pslq_P_A_hbar15": {
+      "target": "P=A/hbar^15",
+      "dropped_zero_basis": [
+        "BlochWigner(q0)"
+      ],
+      "relation_found": true,
+      "coeffs": {
+        "P=A/hbar^15": "4",
+        "1": "-2",
+        "pi": "-5",
+        "pi^2": "-5",
+        "zeta3": "-3",
+        "Catalan": "-6",
+        "ln(q0)": "-5",
+        "Li2(hbar)": "4",
+        "Li2(1-hbar)": "4",
+        "Li2(-hbar)": "-1",
+        "Vol(4_1)": "2",
+        "Vol(Borromean)": "8"
+      },
+      "height": 8,
+      "n_terms": 12,
+      "residual": "-1.15e-10",
+      "entropy_digits": "14.765",
+      "precision_digits": "11.0",
+      "meaningful": false,
+      "note": "height 8 over 12 terms ⇒ search-entropy ≈14.77 digits vs 11.0 precision digits. SPURIOUS — search-space entropy ≥ precision, so a relation of this height exists by chance; NOT structural."
+    },
+    "pslq_A": {
+      "target": "A",
+      "dropped_zero_basis": [
+        "BlochWigner(q0)"
+      ],
+      "relation_found": false,
+      "note": "No integer relation with height ≤ 1000000 at tol 1.0e-11 (A's ~12-digit ceiling). Target is generic w.r.t. this basis up to that height."
+    },
+    "meaningful_relation_count": "0",
+    "pairwise_meaningful_hits": [],
+    "entropy_framing": {
+      "precision_digits": "11.0",
+      "safety_margin_digits": "3.0",
+      "full_basis_terms": "12",
+      "note": "A PSLQ relation among k terms with height h is non-spurious only if precision > k·log10(2h) + margin. The 12-term basis needs ≥~15 digits; A has ~11 — so any full-basis relation is a degrees-of-freedom artifact, not structure."
+    }
+  }
+}

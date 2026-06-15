@@ -1,0 +1,180 @@
+{
+  "$schema": "script-qa/v1",
+  "script_path": "folio-assistant/computations/audits/fitted_labelled_canonical_audit.py",
+  "references": [
+    "prop:three-calibration-inputs"
+  ],
+  "language": "python",
+  "source_hash": "aaff0df25751",
+  "updated_at": "2026-06-09T03:47:37.719Z",
+  "criteria": {
+    "does_not_default_to_float": [
+      {
+        "field_hash": {
+          "ts": "aaff0df25751"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "69537a0de0e5",
+          "script_commit_sha": "3f3c2564e4028a6d8d7dcc4f24e1dadb8854990a"
+        },
+        "reviewed_at": "2026-06-04T14:56:44.188Z",
+        "reviewed_sha": "16df31930b5cf3b0cb8bee9d4be86b42d2033a21"
+      }
+    ],
+    "respects_archimedean_wall": [
+      {
+        "field_hash": {
+          "ts": "aaff0df25751"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "69537a0de0e5",
+          "script_commit_sha": "3f3c2564e4028a6d8d7dcc4f24e1dadb8854990a"
+        },
+        "reviewed_at": "2026-06-04T14:56:44.188Z",
+        "reviewed_sha": "16df31930b5cf3b0cb8bee9d4be86b42d2033a21"
+      }
+    ],
+    "code_is_commented": [
+      {
+        "field_hash": {
+          "ts": "aaff0df25751"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "69537a0de0e5",
+          "script_commit_sha": "3f3c2564e4028a6d8d7dcc4f24e1dadb8854990a"
+        },
+        "reviewed_at": "2026-06-04T14:56:44.188Z",
+        "reviewed_sha": "16df31930b5cf3b0cb8bee9d4be86b42d2033a21"
+      }
+    ],
+    "variables_typed": [
+      {
+        "field_hash": {
+          "ts": "aaff0df25751"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "69537a0de0e5",
+          "script_commit_sha": "3f3c2564e4028a6d8d7dcc4f24e1dadb8854990a"
+        },
+        "reviewed_at": "2026-06-04T14:56:44.188Z",
+        "reviewed_sha": "16df31930b5cf3b0cb8bee9d4be86b42d2033a21"
+      }
+    ],
+    "has_references_to_paper": [
+      {
+        "field_hash": {
+          "ts": "aaff0df25751"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "69537a0de0e5",
+          "script_commit_sha": "3f3c2564e4028a6d8d7dcc4f24e1dadb8854990a"
+        },
+        "reviewed_at": "2026-06-04T17:18:03.758Z",
+        "reviewed_sha": "8ef7c80fdccc637a06f185ebf77f2f6b1288d900"
+      }
+    ],
+    "connected_to_ci_pipeline": [
+      {
+        "field_hash": {
+          "ts": "aaff0df25751"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "69537a0de0e5",
+          "script_commit_sha": "3f3c2564e4028a6d8d7dcc4f24e1dadb8854990a"
+        },
+        "reviewed_at": "2026-06-04T14:56:44.188Z",
+        "reviewed_sha": "16df31930b5cf3b0cb8bee9d4be86b42d2033a21"
+      }
+    ],
+    "deprecated": [
+      {
+        "field_hash": {
+          "ts": "aaff0df25751"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "69537a0de0e5",
+          "script_commit_sha": "3f3c2564e4028a6d8d7dcc4f24e1dadb8854990a"
+        },
+        "reviewed_at": "2026-06-04T14:56:44.188Z",
+        "reviewed_sha": "16df31930b5cf3b0cb8bee9d4be86b42d2033a21"
+      }
+    ],
+    "uses_library_framework_appropriately": [
+      {
+        "field_hash": {
+          "ts": "aaff0df25751"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "69537a0de0e5",
+          "script_commit_sha": "3f3c2564e4028a6d8d7dcc4f24e1dadb8854990a"
+        },
+        "reviewed_at": "2026-06-04T14:56:44.188Z",
+        "reviewed_sha": "16df31930b5cf3b0cb8bee9d4be86b42d2033a21"
+      }
+    ],
+    "compute_no_mpf_to_float_cast": [
+      {
+        "field_hash": {
+          "ts": "aaff0df25751"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "0bbdf534427b",
+          "script_commit_sha": "76a167e10467a2b0f41dbbd968ea8245d5b4ba33"
+        },
+        "reviewed_at": "2026-06-09T03:37:13.209Z",
+        "reviewed_sha": "76a167e10467a2b0f41dbbd968ea8245d5b4ba33"
+      },
+      {
+        "field_hash": {
+          "ts": "aaff0df25751"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "a08e6e1469fd",
+          "script_commit_sha": "76a167e10467a2b0f41dbbd968ea8245d5b4ba33"
+        },
+        "reviewed_at": "2026-06-09T03:47:37.719Z",
+        "reviewed_sha": "3765bc9aa9274031018ed3d7696fc515f11274be"
+      }
+    ]
+  }
+}

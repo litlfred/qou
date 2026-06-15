@@ -1,0 +1,42 @@
+{
+  "engine": "codata_2022_source",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-29T14:42:16.116070+00:00",
+  "commitSha": "4f207588745f901d68703c022c9e38a1d134bb5f",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 10,
+  "computation": "cal-3-q-beta",
+  "scriptFile": "build_cal_3_q_beta_witness.py",
+  "scriptHash": "a9f518338289",
+  "scriptCommitSha": "cf3b3f758b936fc3a9bdd2cf38089bbb628ac50e",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
+  "description": "CAL-3 calibration input: free-neutron β-decay Q-value Q_β(n). Per the QOU three-calibration discipline (content/quantum-observable-universe/braids-and-knots/three-calibration-inputs.md), Q_β(n) is one of exactly three external inputs to the framework — alongside m_e (CAL-1) and m_μ/m_e (CAL-2) — used to fix the hadronic energy scale E_0 via E_0 = Q_β(n) / |Δ(net)|, where Δ(net) = h(h-2)/2 is the symbolic NF difference between neutron and proton braids. This witness exists so codata_constants.py loads the CAL-3 value from a source-of-truth JSON instead of hardcoding it. Q_β here is the PRIMARY DEFINITION of the input; it must agree (within combined CODATA σ) with the algebraic identity m_n - m_p - m_e computed from the validation witness, but that identity is a CONSISTENCY CHECK, not the definition.",
+  "contentBlock": "prop:three-calibration-inputs",
+  "auditOnly": "docs/audits/2026-05-10-1ppb-workplan-update.md",
+  "parameters": {
+    "calibration_id": "CAL-3",
+    "role": "Hadronic energy scale E_0 via E_0 = Q_β(n) / |Δ(net)|",
+    "data_source": "PDG 2024 free-neutron β-decay Q-value (n → p + e⁻ + ν̄_e), consistent with AME 2020 mass-difference computation. Sourced from codata_2022_source.Q_BETA_MEV_AME.",
+    "uncertainty_convention": "one-sigma combined standard uncertainty, k=1",
+    "units": "MeV"
+  },
+  "data": {
+    "Q_beta_n_MeV": "0.78233341",
+    "Q_beta_n_MeV_err": "6.1e-7",
+    "Q_beta_n_MeV_quoted": "0.78233341(61) MeV (PDG 2024 / AME 2020 cross-check)",
+    "decay_channel": "n → p + e⁻ + ν̄_e",
+    "downstream_consumers": [
+      "codata_constants.Q_BETA_MEV",
+      "E_0_MeV anchor in canonical-mass-table.witness.json",
+      "free_neutron_decay.py NF-coefficient extraction",
+      "c_alpha_from_Q_beta_trace.py β-chain α-cluster derivation",
+      "neutron-gap-probes-round3.witness.json 3-input mass split: m_n_pred = m_p_pred + Q_β + m_e"
+    ]
+  }
+}

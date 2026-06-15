@@ -1,0 +1,5963 @@
+{
+  "computedAt": "2026-05-02T06:08:27.540143+00:00",
+  "computation": "p2-5-symbolic-q-audit",
+  "auditOnly": "docs/audits/2026-05-02-p2-5-symbolic-q-audit.md",
+  "purpose": "P2.5 audit: triage every Python script in folio-assistant/computations/ as compliant / mpmath-only / partial / early-substitution / no-q-dependence. Emits the prioritised refactor target list (top-20 by witness-JSON visibility).",
+  "narrative_block": "audit §3·E + workplan P2.5",
+  "n_files_total": 610,
+  "category_counts": {
+    "mpmath-only": 169,
+    "uncategorised": 307,
+    "compliant": 44,
+    "early-substitution": 41,
+    "no-q-dependence": 33,
+    "partial": 16
+  },
+  "top_refactor_targets": [
+    {
+      "path": "folio-assistant/computations/garside-irrep-qvalues.py",
+      "size_lines": 487,
+      "emits_witness": true
+    },
+    {
+      "path": "folio-assistant/computations/gram-matrix-dual.py",
+      "size_lines": 468,
+      "emits_witness": true
+    },
+    {
+      "path": "folio-assistant/computations/probe_proton_mass_scale.py",
+      "size_lines": 364,
+      "emits_witness": true
+    },
+    {
+      "path": "folio-assistant/computations/hecke/hecke_engine.py",
+      "size_lines": 358,
+      "emits_witness": true
+    },
+    {
+      "path": "folio-assistant/computations/electron-proton-skein-weight.py",
+      "size_lines": 343,
+      "emits_witness": true
+    },
+    {
+      "path": "folio-assistant/computations/beta-decay-matrix.py",
+      "size_lines": 327,
+      "emits_witness": true
+    },
+    {
+      "path": "folio-assistant/computations/t35-generator-volumes.py",
+      "size_lines": 319,
+      "emits_witness": true
+    },
+    {
+      "path": "folio-assistant/computations/jet_tower_proton_explore.py",
+      "size_lines": 300,
+      "emits_witness": true
+    },
+    {
+      "path": "folio-assistant/computations/level1_vhat_brane_tower.py",
+      "size_lines": 294,
+      "emits_witness": true
+    },
+    {
+      "path": "folio-assistant/computations/knot-operator-table.py",
+      "size_lines": 288,
+      "emits_witness": true
+    },
+    {
+      "path": "folio-assistant/computations/hbar_vs_q_parametrization.py",
+      "size_lines": 286,
+      "emits_witness": true
+    },
+    {
+      "path": "folio-assistant/computations/markov_convention_parallel.py",
+      "size_lines": 270,
+      "emits_witness": true
+    },
+    {
+      "path": "folio-assistant/computations/mass_table_best.py",
+      "size_lines": 269,
+      "emits_witness": true
+    },
+    {
+      "path": "folio-assistant/computations/jet_level1_and_residual_search.py",
+      "size_lines": 264,
+      "emits_witness": true
+    },
+    {
+      "path": "folio-assistant/computations/p_n_error_isolate.py",
+      "size_lines": 260,
+      "emits_witness": true
+    },
+    {
+      "path": "folio-assistant/computations/jet_level_geometric_series.py",
+      "size_lines": 252,
+      "emits_witness": true
+    },
+    {
+      "path": "folio-assistant/computations/probe_atom_shell_self_duality.py",
+      "size_lines": 247,
+      "emits_witness": true
+    },
+    {
+      "path": "folio-assistant/computations/atomic_chirality_residue.py",
+      "size_lines": 245,
+      "emits_witness": true
+    },
+    {
+      "path": "folio-assistant/computations/explicit_alpha_k_h3.py",
+      "size_lines": 218,
+      "emits_witness": true
+    },
+    {
+      "path": "folio-assistant/computations/probe_per_nucleon_self_duality.py",
+      "size_lines": 218,
+      "emits_witness": true
+    }
+  ],
+  "classifications": [
+    {
+      "path": "folio-assistant/computations/_phi_q_util.py",
+      "size_lines": 39,
+      "emits_witness": false,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/probes/adjacent_vs_full_probe.py",
+      "size_lines": 390,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/all-nuclei-transfer-matrix.py",
+      "size_lines": 273,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/all_isotopes_chirality_residue.py",
+      "size_lines": 288,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/all_isotopes_chirality_residue_extended.py",
+      "size_lines": 182,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/all_subsets_tower.py",
+      "size_lines": 171,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/alpha4_universality_test.py",
+      "size_lines": 217,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/alpha_ansatz_isotopes.py",
+      "size_lines": 249,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/alpha_blend_isotopes.py",
+      "size_lines": 217,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/alpha/alpha_blend_tower.py",
+      "size_lines": 409,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/alpha_derivation_probe.py",
+      "size_lines": 179,
+      "emits_witness": true,
+      "category": "compliant",
+      "details": {
+        "symbolic_q": true,
+        "subs_at_end": true,
+        "emits_symbolic_field": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/alpha/alpha_em_pslq_uniqueness.py",
+      "size_lines": 193,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/alpha_em_pslq_uniqueness_2000dps.py",
+      "size_lines": 186,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/alpha_em_q9_q10_derivation.py",
+      "size_lines": 148,
+      "emits_witness": true,
+      "category": "early-substitution",
+      "details": {
+        "float_q_near_top": true,
+        "no_symbolic_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/alpha/alpha_high_precision.py",
+      "size_lines": 302,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/alpha/alpha_k_jones_markov_h3.py",
+      "size_lines": 197,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/alpha_k_via_wenzl_bridge.py",
+      "size_lines": 105,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/alpha_lambda_mev_bridge_probe.py",
+      "size_lines": 203,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/alpha_per_transition_catalog.py",
+      "size_lines": 163,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/alpha_vol_chirality_correlation.py",
+      "size_lines": 177,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/asymmetric_pair_correction.py",
+      "size_lines": 213,
+      "emits_witness": false,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/atom-builder-lp.py",
+      "size_lines": 307,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/atom-stability-check.py",
+      "size_lines": 264,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/atom_braid_electron.py",
+      "size_lines": 211,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/atom_braid_sdp_gluon.py",
+      "size_lines": 174,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/atom_colored_jones_volume.py",
+      "size_lines": 322,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/atom_crossing_lp.py",
+      "size_lines": 194,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/atom_electron_insert.py",
+      "size_lines": 164,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/atom_frobenius_volume.py",
+      "size_lines": 355,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/atom_full_partition_3A.py",
+      "size_lines": 290,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/atom_jones_vs_knots_D.py",
+      "size_lines": 282,
+      "emits_witness": true,
+      "category": "compliant",
+      "details": {
+        "symbolic_q": true,
+        "subs_at_end": true,
+        "emits_symbolic_field": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/atom_knot_search.py",
+      "size_lines": 300,
+      "emits_witness": true,
+      "category": "no-q-dependence"
+    },
+    {
+      "path": "folio-assistant/computations/atom_level_wedderburn_tower.py",
+      "size_lines": 204,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/atom_link_derivation.py",
+      "size_lines": 306,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/atom_mass_archimedean.py",
+      "size_lines": 323,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/atom_mass_atomic_braid.py",
+      "size_lines": 303,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/atom_mass_branching.py",
+      "size_lines": 378,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/atom_mass_combined.py",
+      "size_lines": 327,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/atom_mass_derived.py",
+      "size_lines": 409,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/atom_mass_exact.py",
+      "size_lines": 537,
+      "emits_witness": false,
+      "category": "partial",
+      "details": {
+        "symbolic_q": true,
+        "missing_subs_or_emit": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/atom_mass_functionals.py",
+      "size_lines": 343,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/atom_mass_gram_full.py",
+      "size_lines": 185,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/atom_mass_gs_cost.py",
+      "size_lines": 421,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/atom_mass_integrated.py",
+      "size_lines": 452,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/atom_mass_partition.py",
+      "size_lines": 321,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/atom_mass_physical_filter.py",
+      "size_lines": 218,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/atom_mass_pure.py",
+      "size_lines": 374,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/atom_mass_shell_corrected.py",
+      "size_lines": 323,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/atom_mass_symbolic_partition.py",
+      "size_lines": 387,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/atom_mass_two_term.py",
+      "size_lines": 212,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/atom_mass_volume.py",
+      "size_lines": 354,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/atom_nf_symbolic_D.py",
+      "size_lines": 272,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/atom_nf_symbolic_He3.py",
+      "size_lines": 78,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/atom_nf_symbolic_T.py",
+      "size_lines": 85,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/atom_per_generator_volumes_sym.py",
+      "size_lines": 265,
+      "emits_witness": true,
+      "category": "compliant",
+      "details": {
+        "symbolic_q": true,
+        "subs_at_end": true,
+        "emits_symbolic_field": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/atom_rt_fusion.py",
+      "size_lines": 445,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/atom_sdp_gluon_search.py",
+      "size_lines": 339,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/atom_vol_hecke_unified.py",
+      "size_lines": 452,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/atom_wedderburn_blend.py",
+      "size_lines": 207,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/atomic_braid_b3_band_scanner.py",
+      "size_lines": 254,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/atomic_chirality_residue.py",
+      "size_lines": 245,
+      "emits_witness": true,
+      "category": "early-substitution",
+      "details": {
+        "float_q_near_top": true,
+        "no_symbolic_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/atomic_frobenius_codim.py",
+      "size_lines": 183,
+      "emits_witness": false,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/atomic_tr_m_mpfr_50dps.py",
+      "size_lines": 235,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/atomic_tr_m_via_wenzl_bridge.py",
+      "size_lines": 226,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/b_over_a_evaluator.py",
+      "size_lines": 348,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/baryon_product_from_alt.py",
+      "size_lines": 239,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/basis_knot_tables.py",
+      "size_lines": 196,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/benzene_resonance.py",
+      "size_lines": 186,
+      "emits_witness": false,
+      "category": "no-q-dependence"
+    },
+    {
+      "path": "folio-assistant/computations/beta-decay-energy-scale.py",
+      "size_lines": 317,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/beta-decay-from-q.py",
+      "size_lines": 163,
+      "emits_witness": true,
+      "category": "early-substitution",
+      "details": {
+        "float_q_near_top": true,
+        "no_symbolic_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/beta-decay-matrix.py",
+      "size_lines": 327,
+      "emits_witness": true,
+      "category": "early-substitution",
+      "details": {
+        "float_q_near_top": true,
+        "no_symbolic_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/bigraded_e_infinity_h3.py",
+      "size_lines": 204,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/binding_canonical.py",
+      "size_lines": 225,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/binding_fast_pipeline.py",
+      "size_lines": 193,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/binding_from_level_walk.py",
+      "size_lines": 130,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/binding_full_content_pair.py",
+      "size_lines": 279,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/binding_full_jm_cells.py",
+      "size_lines": 219,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/binding_full_pipeline.py",
+      "size_lines": 229,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/binding_ladder_catalog.py",
+      "size_lines": 156,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/binding_per_block_log.py",
+      "size_lines": 779,
+      "emits_witness": true,
+      "category": "partial",
+      "details": {
+        "symbolic_q": true,
+        "missing_subs_or_emit": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/borromean-axial-coupling.py",
+      "size_lines": 336,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/borromean-full-transition.py",
+      "size_lines": 386,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/borromean-qvalue.py",
+      "size_lines": 363,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/borromean-shell-qvalues.py",
+      "size_lines": 431,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/braid-registry.py",
+      "size_lines": 349,
+      "emits_witness": false,
+      "category": "early-substitution",
+      "details": {
+        "float_q_near_top": true,
+        "no_symbolic_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/branch_phase_fit_to_mass_tower.py",
+      "size_lines": 141,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/branching-lp.py",
+      "size_lines": 259,
+      "emits_witness": false,
+      "category": "compliant",
+      "details": {
+        "symbolic_q": true,
+        "subs_at_end": true,
+        "emits_symbolic_field": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/branching-qvalue-chain.py",
+      "size_lines": 348,
+      "emits_witness": true,
+      "category": "compliant",
+      "details": {
+        "symbolic_q": true,
+        "subs_at_end": true,
+        "emits_symbolic_field": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/brane_tower_distance_weighted.py",
+      "size_lines": 151,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/breit-wheeler-nucleon-nf.py",
+      "size_lines": 661,
+      "emits_witness": true,
+      "category": "partial",
+      "details": {
+        "symbolic_q": true,
+        "missing_subs_or_emit": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/build_alpha_k_h3_chains.py",
+      "size_lines": 376,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/build_atom_tr_M_chains.py",
+      "size_lines": 305,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/build_c_q_chain.py",
+      "size_lines": 216,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/build_hoefsmit_rep_chain.py",
+      "size_lines": 230,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/build_hoefsmit_rep_sigma2_chain.py",
+      "size_lines": 228,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/build_markov_trace_assembly_chain.py",
+      "size_lines": 301,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/build_proton_mass_50dps_chain.py",
+      "size_lines": 304,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/build_schur_weyl_weight_chain.py",
+      "size_lines": 198,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/build_schur_weyl_weight_extra.py",
+      "size_lines": 237,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/build_schur_weyl_weight_general.py",
+      "size_lines": 275,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/build_sigma_shell_chain.py",
+      "size_lines": 266,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/bw_chirality_isotopes.py",
+      "size_lines": 305,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/c_alpha_from_Q_beta_trace.py",
+      "size_lines": 208,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/c_alpha_via_knot_operators.py",
+      "size_lines": 293,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/canonical_isospin_profile.py",
+      "size_lines": 182,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/canonical_isospin_pyhecke.py",
+      "size_lines": 127,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/canonical_isospin_test.py",
+      "size_lines": 151,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/canonical_plus_multibrane.py",
+      "size_lines": 664,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/audits/canonical_script_input_audit.py",
+      "size_lines": 179,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/canonical_tower.py",
+      "size_lines": 616,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/carbon-atom-nf.py",
+      "size_lines": 520,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/catalan_binding.py",
+      "size_lines": 241,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/categorical_bypass_volmatch_demo.py",
+      "size_lines": 264,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/categorical_q_decay_ba_low_isotopes.py",
+      "size_lines": 589,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/certificate-to-mass.py",
+      "size_lines": 533,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/ch-bond-lp.py",
+      "size_lines": 355,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/ch-bond-writhe-lp.py",
+      "size_lines": 323,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/ch-valence-ilp.py",
+      "size_lines": 175,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/channel_product_mass.py",
+      "size_lines": 301,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/substrate/char_fast.py",
+      "size_lines": 195,
+      "emits_witness": false,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/character-support-qvalues.py",
+      "size_lines": 391,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/chi_inter_and_nchir_rank.py",
+      "size_lines": 274,
+      "emits_witness": true,
+      "category": "partial",
+      "details": {
+        "symbolic_q": true,
+        "missing_subs_or_emit": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/chi_std_pernucleon_derivation.py",
+      "size_lines": 155,
+      "emits_witness": true,
+      "category": "compliant",
+      "details": {
+        "symbolic_q": true,
+        "subs_at_end": true,
+        "emits_symbolic_field": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/chi_sym_alt_closed_form.py",
+      "size_lines": 273,
+      "emits_witness": false,
+      "category": "compliant",
+      "details": {
+        "symbolic_q": true,
+        "subs_at_end": false,
+        "emits_symbolic_field": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/chi_via_factorization.py",
+      "size_lines": 156,
+      "emits_witness": false,
+      "category": "early-substitution",
+      "details": {
+        "float_q_near_top": true,
+        "no_symbolic_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/chirality_convergence_bound.py",
+      "size_lines": 321,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/chirality_variants_probe.py",
+      "size_lines": 179,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/co-molecular-binding.py",
+      "size_lines": 303,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/co2-molecular-binding.py",
+      "size_lines": 215,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/colored-pair-energy-alignment.py",
+      "size_lines": 392,
+      "emits_witness": true,
+      "category": "partial",
+      "details": {
+        "symbolic_q": true,
+        "missing_subs_or_emit": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/combined_tower_isotope_sweep.py",
+      "size_lines": 161,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/combined_with_merged_tools.py",
+      "size_lines": 215,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/commutative_case_diagnostic.py",
+      "size_lines": 214,
+      "emits_witness": false,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/comparison-table.py",
+      "size_lines": 189,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/compound_beta_shell.py",
+      "size_lines": 119,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/comprehensive_low_isotope_structural_table.py",
+      "size_lines": 229,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/confined_knot_binding.py",
+      "size_lines": 307,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/confinement-lp.py",
+      "size_lines": 559,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/confinement-operator-selection.py",
+      "size_lines": 589,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/confinement_adaptive.py",
+      "size_lines": 220,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/confinement_level_walk.py",
+      "size_lines": 412,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/confinement_sdp.py",
+      "size_lines": 251,
+      "emits_witness": true,
+      "category": "no-q-dependence"
+    },
+    {
+      "path": "folio-assistant/computations/confinement_shortcuts.py",
+      "size_lines": 334,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/conjugate_symmetry.py",
+      "size_lines": 308,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/content_weighted_pair_probe.py",
+      "size_lines": 266,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/correlated_channel_mass.py",
+      "size_lines": 378,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/coulomb_subtracted_binding.py",
+      "size_lines": 169,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/coxeter_h4_depth_test.py",
+      "size_lines": 79,
+      "emits_witness": false,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/crt_markov.py",
+      "size_lines": 469,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/cup_product_tower_probe.py",
+      "size_lines": 160,
+      "emits_witness": true,
+      "category": "compliant",
+      "details": {
+        "symbolic_q": true,
+        "subs_at_end": true,
+        "emits_symbolic_field": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/curvature_rank_mass.py",
+      "size_lines": 254,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/d_chirality_probe.py",
+      "size_lines": 161,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/d_colored_jones_qtr.py",
+      "size_lines": 407,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/d_colored_jones_tower.py",
+      "size_lines": 277,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/d_density_derivation.py",
+      "size_lines": 269,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/d_from_scratch.py",
+      "size_lines": 254,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/d_inter_correction_test.py",
+      "size_lines": 201,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/d_inter_nucleon_piece.py",
+      "size_lines": 264,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/d_jsj_interface_scan.py",
+      "size_lines": 121,
+      "emits_witness": true,
+      "category": "no-q-dependence"
+    },
+    {
+      "path": "folio-assistant/computations/d_knot_extended_search.py",
+      "size_lines": 263,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/d_mixed_sign_sweep.py",
+      "size_lines": 204,
+      "emits_witness": true,
+      "category": "no-q-dependence"
+    },
+    {
+      "path": "folio-assistant/computations/d_nf_knot_identification.py",
+      "size_lines": 157,
+      "emits_witness": true,
+      "category": "no-q-dependence"
+    },
+    {
+      "path": "folio-assistant/computations/d_nf_weighted_vol.py",
+      "size_lines": 209,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/d_phi_q_series.py",
+      "size_lines": 342,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/d_specific_diagnostic.py",
+      "size_lines": 208,
+      "emits_witness": false,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/d_tighten_k3.py",
+      "size_lines": 184,
+      "emits_witness": false,
+      "category": "early-substitution",
+      "details": {
+        "float_q_near_top": true,
+        "no_symbolic_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/d_wedderburn_mass.py",
+      "size_lines": 273,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/d_wedderburn_profile.py",
+      "size_lines": 244,
+      "emits_witness": true,
+      "category": "partial",
+      "details": {
+        "symbolic_q": true,
+        "missing_subs_or_emit": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/deformation_cohomology_s3.py",
+      "size_lines": 243,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/delta_mn_mp_spectral_ladder_extension.py",
+      "size_lines": 223,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/depth_resolved_phi_k_hoefsmit.py",
+      "size_lines": 197,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/depth_resolved_phi_k_test.py",
+      "size_lines": 205,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/derivation_chain.py",
+      "size_lines": 325,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/derivation_chain_validator.py",
+      "size_lines": 424,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/derivation_checks.py",
+      "size_lines": 211,
+      "emits_witness": true,
+      "category": "early-substitution",
+      "details": {
+        "float_q_near_top": true,
+        "no_symbolic_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/derive-crossing-budget.py",
+      "size_lines": 215,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/derived_characters.py",
+      "size_lines": 200,
+      "emits_witness": true,
+      "category": "early-substitution",
+      "details": {
+        "float_q_near_top": true,
+        "no_symbolic_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/derived_only_extended_A12.py",
+      "size_lines": 203,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/derived_only_formula.py",
+      "size_lines": 179,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/descent_rate_probe.py",
+      "size_lines": 260,
+      "emits_witness": true,
+      "category": "no-q-dependence"
+    },
+    {
+      "path": "folio-assistant/computations/deuterium-optimal-nf.py",
+      "size_lines": 493,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/deuteron_error.py",
+      "size_lines": 52,
+      "emits_witness": false,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/deuteron_first_principles.py",
+      "size_lines": 249,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/deuteron_residual_probe.py",
+      "size_lines": 145,
+      "emits_witness": true,
+      "category": "no-q-dependence"
+    },
+    {
+      "path": "folio-assistant/computations/diagnose_4he_blowup.py",
+      "size_lines": 94,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/electron-proton-skein-weight.py",
+      "size_lines": 343,
+      "emits_witness": true,
+      "category": "early-substitution",
+      "details": {
+        "float_q_near_top": true,
+        "no_symbolic_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/electron-shell-ilp.py",
+      "size_lines": 327,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/electron-shell-quotient.py",
+      "size_lines": 417,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/electron_chiral_probe.py",
+      "size_lines": 523,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/end-to-end-halflife.py",
+      "size_lines": 281,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/entanglement_orders.py",
+      "size_lines": 174,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/exact_binding_per_operation.py",
+      "size_lines": 265,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/substrate/experimental_constants.py",
+      "size_lines": 156,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/explicit_alpha_k_h3.py",
+      "size_lines": 218,
+      "emits_witness": true,
+      "category": "early-substitution",
+      "details": {
+        "float_q_near_top": true,
+        "no_symbolic_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/explore_items_1_and_2.py",
+      "size_lines": 277,
+      "emits_witness": false,
+      "category": "early-substitution",
+      "details": {
+        "float_q_near_top": true,
+        "no_symbolic_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/f1_spectral_reconciliation.py",
+      "size_lines": 165,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/family_4_motivic_probe.py",
+      "size_lines": 142,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/fast_k6_characters.py",
+      "size_lines": 370,
+      "emits_witness": false,
+      "category": "compliant",
+      "details": {
+        "symbolic_q": true,
+        "subs_at_end": true,
+        "emits_symbolic_field": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/feynman_qou_comparison.py",
+      "size_lines": 374,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/final_formula_5isotope.py",
+      "size_lines": 213,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/four-term-photon-to-atoms.py",
+      "size_lines": 585,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/free-neutrino-groebner-nf.py",
+      "size_lines": 942,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/free-neutron-decay.py",
+      "size_lines": 497,
+      "emits_witness": true,
+      "category": "compliant",
+      "details": {
+        "symbolic_q": true,
+        "subs_at_end": true,
+        "emits_symbolic_field": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/fresh_derivation_gamma_gamma_bfs.py",
+      "size_lines": 323,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/fresh_derivation_gamma_gamma_sdp.py",
+      "size_lines": 447,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/fresh_derivation_pn.py",
+      "size_lines": 281,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/fresh_derivation_pn_AB.py",
+      "size_lines": 355,
+      "emits_witness": true,
+      "category": "compliant",
+      "details": {
+        "symbolic_q": true,
+        "subs_at_end": false,
+        "emits_symbolic_field": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/fresh_derivation_pn_EFG.py",
+      "size_lines": 284,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/fresh_derivation_pn_true_sdp.py",
+      "size_lines": 219,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/fresh_jsj_and_inter_skein.py",
+      "size_lines": 161,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/fresh_tower_gamma_gamma_chirality.py",
+      "size_lines": 197,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/frobenius-bond-all.py",
+      "size_lines": 328,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/frobenius_antipode_symmetry.py",
+      "size_lines": 149,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/frobenius_high_prec.py",
+      "size_lines": 159,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/frobenius_partition_sum.py",
+      "size_lines": 249,
+      "emits_witness": true,
+      "category": "compliant",
+      "details": {
+        "symbolic_q": true,
+        "subs_at_end": true,
+        "emits_symbolic_field": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/full-derivation-verified.py",
+      "size_lines": 326,
+      "emits_witness": false,
+      "category": "compliant",
+      "details": {
+        "symbolic_q": true,
+        "subs_at_end": true,
+        "emits_symbolic_field": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/full-pipeline.py",
+      "size_lines": 279,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/full-tower-mass.py",
+      "size_lines": 147,
+      "emits_witness": true,
+      "category": "compliant",
+      "details": {
+        "symbolic_q": true,
+        "subs_at_end": false,
+        "emits_symbolic_field": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/garside-irrep-qvalues.py",
+      "size_lines": 487,
+      "emits_witness": true,
+      "category": "early-substitution",
+      "details": {
+        "float_q_near_top": true,
+        "no_symbolic_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/gb_filtration_gauge_invariance_test.py",
+      "size_lines": 170,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/gb_filtration_jet_tracker.py",
+      "size_lines": 386,
+      "emits_witness": true,
+      "category": "partial",
+      "details": {
+        "symbolic_q": true,
+        "missing_subs_or_emit": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/gb_prefix_probe.py",
+      "size_lines": 189,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/gb_residue_tower.py",
+      "size_lines": 270,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/gram-matrix-dual.py",
+      "size_lines": 468,
+      "emits_witness": true,
+      "category": "early-substitution",
+      "details": {
+        "float_q_near_top": true,
+        "no_symbolic_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/groebner-beta-decay.py",
+      "size_lines": 166,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/groebner-finish.py",
+      "size_lines": 171,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/groebner-qvalues.py",
+      "size_lines": 153,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/gs_branch_bound.py",
+      "size_lines": 209,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/gs_search_fast.py",
+      "size_lines": 243,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/h2-full-tower.py",
+      "size_lines": 286,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/h2-integer-lp.py",
+      "size_lines": 355,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/h2-molecular-binding.py",
+      "size_lines": 399,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/h2_error_breakdown.py",
+      "size_lines": 244,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/h6-full-computation.py",
+      "size_lines": 547,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/h6_spectral_sequence_derivation.py",
+      "size_lines": 238,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/habiro/habiro_coefficients_atomic.py",
+      "size_lines": 281,
+      "emits_witness": true,
+      "category": "compliant",
+      "details": {
+        "symbolic_q": true,
+        "subs_at_end": true,
+        "emits_symbolic_field": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/habiro/habiro_coefficients_interpolate.py",
+      "size_lines": 350,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/habiro/habiro_exact_mass_endomorphism.py",
+      "size_lines": 306,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/habiro/habiro_interpolate_cross_validator.py",
+      "size_lines": 182,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/habiro_interpolation_recovery_demo.py",
+      "size_lines": 198,
+      "emits_witness": true,
+      "category": "no-q-dependence"
+    },
+    {
+      "path": "folio-assistant/computations/habiro/habiro_residue_symbolic.py",
+      "size_lines": 221,
+      "emits_witness": true,
+      "category": "compliant",
+      "details": {
+        "symbolic_q": true,
+        "subs_at_end": true,
+        "emits_symbolic_field": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/habiro/habiro_types.py",
+      "size_lines": 127,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/habiro/habiro_witness_validator.py",
+      "size_lines": 189,
+      "emits_witness": true,
+      "category": "no-q-dependence"
+    },
+    {
+      "path": "folio-assistant/computations/hadron_knot_table.py",
+      "size_lines": 225,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/halflife-from-transfer-matrix.py",
+      "size_lines": 182,
+      "emits_witness": true,
+      "category": "early-substitution",
+      "details": {
+        "float_q_near_top": true,
+        "no_symbolic_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/hbar_vs_q_parametrization.py",
+      "size_lines": 286,
+      "emits_witness": true,
+      "category": "early-substitution",
+      "details": {
+        "float_q_near_top": true,
+        "no_symbolic_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/he3_tighten_pp.py",
+      "size_lines": 184,
+      "emits_witness": false,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/he4-full-word.py",
+      "size_lines": 467,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/he4_tighten_doubly_magic.py",
+      "size_lines": 191,
+      "emits_witness": false,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/heavy_atom_opts.py",
+      "size_lines": 357,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/hecke/hecke_3a_weights.py",
+      "size_lines": 298,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/hecke/hecke_character_symbolic.py",
+      "size_lines": 361,
+      "emits_witness": true,
+      "category": "compliant",
+      "details": {
+        "symbolic_q": true,
+        "subs_at_end": true,
+        "emits_symbolic_field": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/hecke/hecke_characters.py",
+      "size_lines": 720,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/substrate/hecke_core.py",
+      "size_lines": 3154,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/hecke/hecke_division.py",
+      "size_lines": 930,
+      "emits_witness": true,
+      "category": "partial",
+      "details": {
+        "symbolic_q": true,
+        "missing_subs_or_emit": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/hecke/hecke_engine.py",
+      "size_lines": 358,
+      "emits_witness": true,
+      "category": "early-substitution",
+      "details": {
+        "float_q_near_top": true,
+        "no_symbolic_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/hecke_knot_ideal_tracker.py",
+      "size_lines": 236,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/hecke/hecke_rust_bridge.py",
+      "size_lines": 209,
+      "emits_witness": false,
+      "category": "no-q-dependence"
+    },
+    {
+      "path": "folio-assistant/computations/hecke_startup_cache.py",
+      "size_lines": 249,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/hecke/hecke_symbolic.py",
+      "size_lines": 904,
+      "emits_witness": false,
+      "category": "compliant",
+      "details": {
+        "symbolic_q": true,
+        "subs_at_end": true,
+        "emits_symbolic_field": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/hh-trefoil-corrected.py",
+      "size_lines": 227,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/hh-vertex-volume.py",
+      "size_lines": 252,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/higher_a_bigraded_stratification.py",
+      "size_lines": 180,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/higher_a_binding_refinement.py",
+      "size_lines": 191,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/higher_a_shell_diagnostic.py",
+      "size_lines": 317,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/hochschild_h3.py",
+      "size_lines": 396,
+      "emits_witness": true,
+      "category": "compliant",
+      "details": {
+        "symbolic_q": true,
+        "subs_at_end": true,
+        "emits_symbolic_field": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/hoefsmit_witness.py",
+      "size_lines": 140,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/hp_volume.py",
+      "size_lines": 70,
+      "emits_witness": false,
+      "category": "no-q-dependence"
+    },
+    {
+      "path": "folio-assistant/computations/hybrid_phi_extraction.py",
+      "size_lines": 188,
+      "emits_witness": false,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/hyperbolic_knot_db_extended.py",
+      "size_lines": 376,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/ilp-chain.py",
+      "size_lines": 329,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/inductive-atom-witness.py",
+      "size_lines": 373,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/inductive-quark-atoms.py",
+      "size_lines": 357,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/inductive-symbolic-atoms.py",
+      "size_lines": 686,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/integer-lp-gluon.py",
+      "size_lines": 289,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/inter_nucleon_crossing_sweep.py",
+      "size_lines": 134,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/intermediate_knot_detection.py",
+      "size_lines": 214,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/inverse-markov-qvalues.py",
+      "size_lines": 349,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/irrep-resolved-qvalues.py",
+      "size_lines": 603,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/isospin_mass_tower_collapse.py",
+      "size_lines": 154,
+      "emits_witness": true,
+      "category": "no-q-dependence"
+    },
+    {
+      "path": "folio-assistant/computations/isotope-abundance.py",
+      "size_lines": 467,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/isotope-mass-table.py",
+      "size_lines": 431,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/isotope_mass_from_y_lambda_tower.py",
+      "size_lines": 120,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/isotope_mass_structural_y_lambda.py",
+      "size_lines": 208,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/iterative-nf-construction.py",
+      "size_lines": 260,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/iterative_tower_unified_mass.py",
+      "size_lines": 223,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/jet-stratified-benchmark.py",
+      "size_lines": 425,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/jet_gb_pl_correspondence.py",
+      "size_lines": 196,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/jet_knot_invariants.py",
+      "size_lines": 199,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/jet_level1_and_residual_search.py",
+      "size_lines": 264,
+      "emits_witness": true,
+      "category": "early-substitution",
+      "details": {
+        "float_q_near_top": true,
+        "no_symbolic_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/jet_level_geometric_series.py",
+      "size_lines": 252,
+      "emits_witness": true,
+      "category": "early-substitution",
+      "details": {
+        "float_q_near_top": true,
+        "no_symbolic_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/jet_lifted_hecke.py",
+      "size_lines": 302,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/jet_tower_delta_max.py",
+      "size_lines": 155,
+      "emits_witness": true,
+      "category": "no-q-dependence"
+    },
+    {
+      "path": "folio-assistant/computations/jet_tower_proton_explore.py",
+      "size_lines": 300,
+      "emits_witness": true,
+      "category": "early-substitution",
+      "details": {
+        "float_q_near_top": true,
+        "no_symbolic_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/jing_liu_characters.py",
+      "size_lines": 278,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/joint_tower_sdp_solver.py",
+      "size_lines": 299,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/joint_tower_sdp_solver_v2.py",
+      "size_lines": 374,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/jsj_alpha_clustering.py",
+      "size_lines": 189,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/jsj_atom_volume.py",
+      "size_lines": 271,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/jsj_verification.py",
+      "size_lines": 206,
+      "emits_witness": true,
+      "category": "no-q-dependence"
+    },
+    {
+      "path": "folio-assistant/computations/k_max_extraction.py",
+      "size_lines": 206,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/kahler_lift.py",
+      "size_lines": 334,
+      "emits_witness": true,
+      "category": "compliant",
+      "details": {
+        "symbolic_q": true,
+        "subs_at_end": true,
+        "emits_symbolic_field": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/kerov_knot_factor.py",
+      "size_lines": 286,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/kerov_walk_verify.py",
+      "size_lines": 231,
+      "emits_witness": true,
+      "category": "no-q-dependence"
+    },
+    {
+      "path": "folio-assistant/computations/knot-operator-lp.py",
+      "size_lines": 334,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/knot-operator-symbolic.py",
+      "size_lines": 387,
+      "emits_witness": false,
+      "category": "compliant",
+      "details": {
+        "symbolic_q": true,
+        "subs_at_end": true,
+        "emits_symbolic_field": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/knot-operator-table.py",
+      "size_lines": 288,
+      "emits_witness": true,
+      "category": "early-substitution",
+      "details": {
+        "float_q_near_top": true,
+        "no_symbolic_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/knot-ops-on-6he.py",
+      "size_lines": 413,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/knot-volumes.py",
+      "size_lines": 241,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/knot_ideals_gb_jet_locations.py",
+      "size_lines": 283,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/knot_operation_cache.py",
+      "size_lines": 256,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/lambda_descartes_q0.py",
+      "size_lines": 268,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/level1-c14.py",
+      "size_lines": 232,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/level1-qvalues.py",
+      "size_lines": 248,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/level1_vhat_brane_tower.py",
+      "size_lines": 294,
+      "emits_witness": true,
+      "category": "early-substitution",
+      "details": {
+        "float_q_near_top": true,
+        "no_symbolic_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/level_k_3A_matched.py",
+      "size_lines": 219,
+      "emits_witness": false,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/level_k_binding.py",
+      "size_lines": 561,
+      "emits_witness": false,
+      "category": "early-substitution",
+      "details": {
+        "float_q_near_top": true,
+        "no_symbolic_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/level_k_branching.py",
+      "size_lines": 334,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/li_atom_knot_search.py",
+      "size_lines": 242,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/sweeps/light_isotope_sweep.py",
+      "size_lines": 326,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/sweeps/low_isotope_binding_sweep.py",
+      "size_lines": 271,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/low_isotope_mass_table.py",
+      "size_lines": 192,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/lp-constrained-6he.py",
+      "size_lines": 316,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/lp-duality-check.py",
+      "size_lines": 243,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/m_p_breakdown_derived_vs_guessed.py",
+      "size_lines": 330,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/markov-free-energy-qvalues.py",
+      "size_lines": 470,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/markov_convention_parallel.py",
+      "size_lines": 270,
+      "emits_witness": true,
+      "category": "early-substitution",
+      "details": {
+        "float_q_near_top": true,
+        "no_symbolic_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/markov_invariant_unified_mass.py",
+      "size_lines": 275,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/markov/markov_pipeline_cross_validator.py",
+      "size_lines": 233,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/markov/markov_substrate_realizer.py",
+      "size_lines": 241,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/markov/markov_trace_canonical.py",
+      "size_lines": 283,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/markov_weight_verification.py",
+      "size_lines": 231,
+      "emits_witness": false,
+      "category": "early-substitution",
+      "details": {
+        "float_q_near_top": true,
+        "no_symbolic_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/mass-from-q-symbolic.py",
+      "size_lines": 589,
+      "emits_witness": false,
+      "category": "compliant",
+      "details": {
+        "symbolic_q": true,
+        "subs_at_end": true,
+        "emits_symbolic_field": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/mass_at_3A_proper.py",
+      "size_lines": 711,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/mass_endomorphism.py",
+      "size_lines": 285,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/mass_endomorphism_atom.py",
+      "size_lines": 275,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/mass_endomorphism_atom_exact.py",
+      "size_lines": 127,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/mass_endomorphism_magic_interpolation.py",
+      "size_lines": 243,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/mass_formula_6term.py",
+      "size_lines": 417,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/mass_formula_6term_mpfr_50dps.py",
+      "size_lines": 407,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/mass_formula_integrated.py",
+      "size_lines": 180,
+      "emits_witness": true,
+      "category": "early-substitution",
+      "details": {
+        "float_q_near_top": true,
+        "no_symbolic_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/mass_table_best.py",
+      "size_lines": 269,
+      "emits_witness": true,
+      "category": "early-substitution",
+      "details": {
+        "float_q_near_top": true,
+        "no_symbolic_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/mass_table_combined.py",
+      "size_lines": 281,
+      "emits_witness": true,
+      "category": "no-q-dependence"
+    },
+    {
+      "path": "folio-assistant/computations/mass_table_no_fit.py",
+      "size_lines": 260,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/mass_table_ppb.py",
+      "size_lines": 273,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/meson-nucleon-nf.py",
+      "size_lines": 517,
+      "emits_witness": true,
+      "category": "partial",
+      "details": {
+        "symbolic_q": true,
+        "missing_subs_or_emit": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/migrate_witness_timestamp_to_computedAt.py",
+      "size_lines": 91,
+      "emits_witness": true,
+      "category": "no-q-dependence"
+    },
+    {
+      "path": "folio-assistant/computations/misdp_cross_channel.py",
+      "size_lines": 351,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/mobius_limit_from_thimble.py",
+      "size_lines": 129,
+      "emits_witness": true,
+      "category": "early-substitution",
+      "details": {
+        "float_q_near_top": true,
+        "no_symbolic_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/molecular-frobenius-lp.py",
+      "size_lines": 431,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/molecular-full-ilp.py",
+      "size_lines": 128,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/molecular-ilp.py",
+      "size_lines": 276,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/molecular-integer-lp.py",
+      "size_lines": 660,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/molecular-trefoil-scan.py",
+      "size_lines": 256,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/molecular-valence-channel.py",
+      "size_lines": 246,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/molecular-vertex-volume.py",
+      "size_lines": 266,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/molecular_binding_level_k.py",
+      "size_lines": 297,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/molecule_nf.py",
+      "size_lines": 381,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/multi_level_jet_sum.py",
+      "size_lines": 194,
+      "emits_witness": true,
+      "category": "no-q-dependence"
+    },
+    {
+      "path": "folio-assistant/computations/multi_level_sdp.py",
+      "size_lines": 263,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/murnaghan_nakayama.py",
+      "size_lines": 277,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/neutron-from-photons.py",
+      "size_lines": 804,
+      "emits_witness": true,
+      "category": "compliant",
+      "details": {
+        "symbolic_q": true,
+        "subs_at_end": true,
+        "emits_symbolic_field": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/neutron_alt_tower_shapes.py",
+      "size_lines": 217,
+      "emits_witness": true,
+      "category": "early-substitution",
+      "details": {
+        "float_q_near_top": true,
+        "no_symbolic_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/neutron_tower_fixes.py",
+      "size_lines": 253,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/next_partition_levels.py",
+      "size_lines": 703,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/nf-qvalues.py",
+      "size_lines": 359,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/nf_transition_lifting.py",
+      "size_lines": 145,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/np_splitting_chirality_residue.py",
+      "size_lines": 145,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/nuclear-binding-lp.py",
+      "size_lines": 439,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/nuclear-braid-exact.py",
+      "size_lines": 398,
+      "emits_witness": true,
+      "category": "compliant",
+      "details": {
+        "symbolic_q": true,
+        "subs_at_end": true,
+        "emits_symbolic_field": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/nuclear-braid-level1.py",
+      "size_lines": 399,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/nuclear-braid-reduction.py",
+      "size_lines": 407,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/nuclear-braid.py",
+      "size_lines": 381,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/nuclear-markov-trace.py",
+      "size_lines": 613,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/nuclear_ilp.py",
+      "size_lines": 115,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/nucleon-with-gluons-nf.py",
+      "size_lines": 791,
+      "emits_witness": true,
+      "category": "partial",
+      "details": {
+        "symbolic_q": true,
+        "missing_subs_or_emit": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/ocneanu_weights.py",
+      "size_lines": 610,
+      "emits_witness": false,
+      "category": "partial",
+      "details": {
+        "symbolic_q": true,
+        "missing_subs_or_emit": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/odd_a_census_search.py",
+      "size_lines": 163,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/odd_a_decomposition_search.py",
+      "size_lines": 174,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/ordering_cache.py",
+      "size_lines": 123,
+      "emits_witness": false,
+      "category": "no-q-dependence"
+    },
+    {
+      "path": "folio-assistant/computations/audits/p2_5_symbolic_q_audit.py",
+      "size_lines": 169,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/p_n_error_isolate.py",
+      "size_lines": 260,
+      "emits_witness": true,
+      "category": "early-substitution",
+      "details": {
+        "float_q_near_top": true,
+        "no_symbolic_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/pair-production-nf.py",
+      "size_lines": 353,
+      "emits_witness": true,
+      "category": "partial",
+      "details": {
+        "symbolic_q": true,
+        "missing_subs_or_emit": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/pair-production.py",
+      "size_lines": 589,
+      "emits_witness": true,
+      "category": "partial",
+      "details": {
+        "symbolic_q": true,
+        "missing_subs_or_emit": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/pair_factorisation_probe.py",
+      "size_lines": 245,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/sweeps/paper_six_term_isotope_sweep.py",
+      "size_lines": 357,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/sweeps/paper_six_term_shadow_price_sweep.py",
+      "size_lines": 339,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/particle_knot_dictionary_audit.py",
+      "size_lines": 138,
+      "emits_witness": false,
+      "category": "no-q-dependence"
+    },
+    {
+      "path": "folio-assistant/computations/path_a_extended_light_isotopes.py",
+      "size_lines": 212,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/pauli-witness.py",
+      "size_lines": 144,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/per-channel-garside.py",
+      "size_lines": 406,
+      "emits_witness": true,
+      "category": "compliant",
+      "details": {
+        "symbolic_q": true,
+        "subs_at_end": true,
+        "emits_symbolic_field": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/per_block_phi_q.py",
+      "size_lines": 314,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/phase_space.py",
+      "size_lines": 204,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/photon_operator_table.py",
+      "size_lines": 205,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/picard_lefschetz_thimble.py",
+      "size_lines": 1050,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/piece6_jet_prefix.py",
+      "size_lines": 198,
+      "emits_witness": false,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/plancherel_higher_a.py",
+      "size_lines": 83,
+      "emits_witness": false,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/plancherel_term_7.py",
+      "size_lines": 368,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/plancherel_trace_witness.py",
+      "size_lines": 196,
+      "emits_witness": true,
+      "category": "early-substitution",
+      "details": {
+        "float_q_near_top": true,
+        "no_symbolic_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/pn_alpha_lp_dual.py",
+      "size_lines": 536,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/poiseuille-qvalues.py",
+      "size_lines": 287,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/polarized-pair-production.py",
+      "size_lines": 309,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/positron_lifted_sdp.py",
+      "size_lines": 448,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/precision_budget_audit.py",
+      "size_lines": 163,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/precision_scalar.py",
+      "size_lines": 127,
+      "emits_witness": false,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/predictive_binding_from_braid.py",
+      "size_lines": 218,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/prefix_all_variants.py",
+      "size_lines": 181,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/probe_atom_shell_self_duality.py",
+      "size_lines": 247,
+      "emits_witness": true,
+      "category": "early-substitution",
+      "details": {
+        "float_q_near_top": true,
+        "no_symbolic_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/probe_atom_shell_self_duality_mpfr.py",
+      "size_lines": 179,
+      "emits_witness": true,
+      "category": "early-substitution",
+      "details": {
+        "float_q_near_top": true,
+        "no_symbolic_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/probe_brane_tower_finite_laurent.py",
+      "size_lines": 201,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/probe_brane_tower_prefactor_sweep.py",
+      "size_lines": 152,
+      "emits_witness": false,
+      "category": "early-substitution",
+      "details": {
+        "float_q_near_top": true,
+        "no_symbolic_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/probe_canonical_multi_term_D.py",
+      "size_lines": 214,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/probe_d_height_stratification.py",
+      "size_lines": 182,
+      "emits_witness": true,
+      "category": "early-substitution",
+      "details": {
+        "float_q_near_top": true,
+        "no_symbolic_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/probe_d_term23_binding.py",
+      "size_lines": 164,
+      "emits_witness": true,
+      "category": "no-q-dependence"
+    },
+    {
+      "path": "folio-assistant/computations/probe_gamma_gamma_h3_psd_scan.py",
+      "size_lines": 144,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/probe_gamma_gamma_lr_embed_h6.py",
+      "size_lines": 187,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/probe_multi_term_canonical.py",
+      "size_lines": 181,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/probe_multi_term_tau_M_corrected.py",
+      "size_lines": 264,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/probe_neutron_gap.py",
+      "size_lines": 356,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/probe_neutron_gap_round2.py",
+      "size_lines": 207,
+      "emits_witness": true,
+      "category": "compliant",
+      "details": {
+        "symbolic_q": true,
+        "subs_at_end": true,
+        "emits_symbolic_field": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/probe_neutron_gap_round3.py",
+      "size_lines": 242,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/probe_neutron_gap_round4.py",
+      "size_lines": 240,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/probe_neutron_gap_round5.py",
+      "size_lines": 282,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/probe_neutron_gap_round6.py",
+      "size_lines": 186,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/probe_neutron_gap_round6_canonical.py",
+      "size_lines": 159,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/probe_neutron_gap_round7.py",
+      "size_lines": 187,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/probe_per_nucleon_self_duality.py",
+      "size_lines": 218,
+      "emits_witness": true,
+      "category": "early-substitution",
+      "details": {
+        "float_q_near_top": true,
+        "no_symbolic_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/probe_phiq_uniform_k.py",
+      "size_lines": 171,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/probe_phiq_yekutieli_truncation.py",
+      "size_lines": 172,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/probe_proton_crossing_budget.py",
+      "size_lines": 251,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/probe_proton_mass_scale.py",
+      "size_lines": 364,
+      "emits_witness": true,
+      "category": "early-substitution",
+      "details": {
+        "float_q_near_top": true,
+        "no_symbolic_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/probe_proton_with_wenzl_weights.py",
+      "size_lines": 292,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/probe_round6_tau_M_canonical.py",
+      "size_lines": 246,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/probe_sdp_canonical_paper_formula.py",
+      "size_lines": 155,
+      "emits_witness": true,
+      "category": "early-substitution",
+      "details": {
+        "float_q_near_top": true,
+        "no_symbolic_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/probe_term4_conventions.py",
+      "size_lines": 157,
+      "emits_witness": true,
+      "category": "compliant",
+      "details": {
+        "symbolic_q": true,
+        "subs_at_end": true,
+        "emits_symbolic_field": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/probe_tritium_k_star.py",
+      "size_lines": 176,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/probe_wedderburn_weight_scheme.py",
+      "size_lines": 223,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/probe_wenzl_bridge_witness_audit.py",
+      "size_lines": 237,
+      "emits_witness": true,
+      "category": "compliant",
+      "details": {
+        "symbolic_q": true,
+        "subs_at_end": true,
+        "emits_symbolic_field": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/profiling.py",
+      "size_lines": 146,
+      "emits_witness": false,
+      "category": "no-q-dependence"
+    },
+    {
+      "path": "folio-assistant/computations/protium-deep-trace.py",
+      "size_lines": 259,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/protium-witness.py",
+      "size_lines": 268,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/proton_braid_sweep_gg.py",
+      "size_lines": 289,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/proton_mass_mpfr_50dps.py",
+      "size_lines": 114,
+      "emits_witness": true,
+      "category": "compliant",
+      "details": {
+        "symbolic_q": true,
+        "subs_at_end": false,
+        "emits_symbolic_field": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/proton_mass_tower_derivation.py",
+      "size_lines": 296,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/proton_neutron_mass_error.py",
+      "size_lines": 227,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/pruned-normal-forms.py",
+      "size_lines": 178,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/pure_hecke_binding.py",
+      "size_lines": 196,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/pure_hecke_binding_prefix.py",
+      "size_lines": 206,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/q_beta_path_a_extended.py",
+      "size_lines": 119,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/q_dirac_cell_scanner.py",
+      "size_lines": 208,
+      "emits_witness": true,
+      "category": "early-substitution",
+      "details": {
+        "float_q_near_top": true,
+        "no_symbolic_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/q_mn_canonical.py",
+      "size_lines": 184,
+      "emits_witness": false,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/q_mn_recursive_memoized.py",
+      "size_lines": 298,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/q_mpmath.py",
+      "size_lines": 64,
+      "emits_witness": false,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/substrate/q_parameter.py",
+      "size_lines": 201,
+      "emits_witness": false,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/q_pinning_50_digit.py",
+      "size_lines": 306,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/q_pochhammer_seed.py",
+      "size_lines": 369,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/q_variant_partition_sum.py",
+      "size_lines": 179,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/qmn_vs_hoefsmit_cross_check.py",
+      "size_lines": 132,
+      "emits_witness": false,
+      "category": "early-substitution",
+      "details": {
+        "float_q_near_top": true,
+        "no_symbolic_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/qvalue-garside-gram.py",
+      "size_lines": 347,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/qvalue-representation-theory.py",
+      "size_lines": 331,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/qvalue-unified.py",
+      "size_lines": 322,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/qvalues-categorical.py",
+      "size_lines": 342,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/qvalues-from-q.py",
+      "size_lines": 252,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/r_k_h4_symbolic.py",
+      "size_lines": 224,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/r_k_h5_h6_adaptive.py",
+      "size_lines": 206,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/r_k_h5_h6_numeric.py",
+      "size_lines": 327,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/r_k_h5_symbolic.py",
+      "size_lines": 300,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/r_k_h6_symbolic.py",
+      "size_lines": 309,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/r_k_h7_symbolic.py",
+      "size_lines": 332,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/recursive_alpha.py",
+      "size_lines": 273,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/recursive_atom_knot_atlas_render.py",
+      "size_lines": 478,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/relabel_witnesses.py",
+      "size_lines": 73,
+      "emits_witness": true,
+      "category": "no-q-dependence"
+    },
+    {
+      "path": "folio-assistant/computations/residual_closed_form_search.py",
+      "size_lines": 204,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/residual_partition_sum.py",
+      "size_lines": 201,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/residual_probe_pn.py",
+      "size_lines": 279,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/rho_f_complexity_sweep.py",
+      "size_lines": 263,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/rho_f_derived_vs_observed.py",
+      "size_lines": 140,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/ribbon_content_average.py",
+      "size_lines": 193,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/rosso-jones-qvalues.py",
+      "size_lines": 546,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/run_all_feeders.py",
+      "size_lines": 126,
+      "emits_witness": false,
+      "category": "no-q-dependence"
+    },
+    {
+      "path": "folio-assistant/computations/run_pipeline.py",
+      "size_lines": 458,
+      "emits_witness": true,
+      "category": "no-q-dependence"
+    },
+    {
+      "path": "folio-assistant/computations/schur_element_identify.py",
+      "size_lines": 246,
+      "emits_witness": false,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/schur_element_symmetrising.py",
+      "size_lines": 126,
+      "emits_witness": false,
+      "category": "compliant",
+      "details": {
+        "symbolic_q": true,
+        "subs_at_end": false,
+        "emits_symbolic_field": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/schur_weyl_mn_witness.py",
+      "size_lines": 201,
+      "emits_witness": true,
+      "category": "compliant",
+      "details": {
+        "symbolic_q": true,
+        "subs_at_end": true,
+        "emits_symbolic_field": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/schur_weyl_symbolic.py",
+      "size_lines": 353,
+      "emits_witness": true,
+      "category": "compliant",
+      "details": {
+        "symbolic_q": true,
+        "subs_at_end": true,
+        "emits_symbolic_field": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/schur_weyl_uq_sl2.py",
+      "size_lines": 309,
+      "emits_witness": true,
+      "category": "compliant",
+      "details": {
+        "symbolic_q": true,
+        "subs_at_end": true,
+        "emits_symbolic_field": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/sdp_cross_channel.py",
+      "size_lines": 724,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/sdp_gamma_gamma_to_qqbar.py",
+      "size_lines": 286,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/sdp_knot_match.py",
+      "size_lines": 335,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/sdp_lift_audit.py",
+      "size_lines": 253,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/sdp_moment_lift.py",
+      "size_lines": 218,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/sdp_on_shadows.py",
+      "size_lines": 277,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/sdp_q_algebraic_identifier.py",
+      "size_lines": 467,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/self_conjugate_partition_corrections.py",
+      "size_lines": 270,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/sequential-nucleus-builder.py",
+      "size_lines": 314,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/shadow_price_c_321_q0.py",
+      "size_lines": 172,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/shell-aware-halflife.py",
+      "size_lines": 287,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/shell-corrected-qvalues.py",
+      "size_lines": 208,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/shell-correction-lambda.py",
+      "size_lines": 194,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/shell-knot-qvalues.py",
+      "size_lines": 532,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/shell-level-qvalues.py",
+      "size_lines": 382,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/shell_closure.py",
+      "size_lines": 29,
+      "emits_witness": false,
+      "category": "no-q-dependence"
+    },
+    {
+      "path": "folio-assistant/computations/shell_closure_compute.py",
+      "size_lines": 283,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/shell_closure_iterative.py",
+      "size_lines": 258,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/sigma_shell_characterization.py",
+      "size_lines": 341,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/six_term_consumer.py",
+      "size_lines": 476,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/snappy_cusp_seeding.py",
+      "size_lines": 205,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/snappy_tower.py",
+      "size_lines": 451,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/spectral_predictor_no_fit.py",
+      "size_lines": 227,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/spectral_sequence_unified_h3.py",
+      "size_lines": 321,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/std_matrix_trace_closed_form.py",
+      "size_lines": 233,
+      "emits_witness": true,
+      "category": "partial",
+      "details": {
+        "symbolic_q": true,
+        "missing_subs_or_emit": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/strict_3cal_unified_mass.py",
+      "size_lines": 235,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/sw_period_baryon.py",
+      "size_lines": 328,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/sw_period_thimble_equivalence.py",
+      "size_lines": 240,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/sym_alt_loo_validation.py",
+      "size_lines": 135,
+      "emits_witness": true,
+      "category": "no-q-dependence"
+    },
+    {
+      "path": "folio-assistant/computations/sym_alt_mirror_probe.py",
+      "size_lines": 258,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/symbolic-atom-builder.py",
+      "size_lines": 312,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/symbolic-lp.py",
+      "size_lines": 365,
+      "emits_witness": false,
+      "category": "compliant",
+      "details": {
+        "symbolic_q": true,
+        "subs_at_end": true,
+        "emits_symbolic_field": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/symbolic-sparse.py",
+      "size_lines": 372,
+      "emits_witness": false,
+      "category": "compliant",
+      "details": {
+        "symbolic_q": true,
+        "subs_at_end": true,
+        "emits_symbolic_field": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/symbolic_k6_characters.py",
+      "size_lines": 381,
+      "emits_witness": false,
+      "category": "compliant",
+      "details": {
+        "symbolic_q": true,
+        "subs_at_end": true,
+        "emits_symbolic_field": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/symbolic_k6_shadow.py",
+      "size_lines": 384,
+      "emits_witness": false,
+      "category": "compliant",
+      "details": {
+        "symbolic_q": true,
+        "subs_at_end": true,
+        "emits_symbolic_field": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/systematic-qvalues.py",
+      "size_lines": 276,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/syt_cell_tower.py",
+      "size_lines": 340,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/syt_prefix_cache.py",
+      "size_lines": 141,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/t35-braid-concatenation.py",
+      "size_lines": 319,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/t35-exact-halflife.py",
+      "size_lines": 467,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/t35-full-calculation.py",
+      "size_lines": 442,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/t35-generator-volumes.py",
+      "size_lines": 319,
+      "emits_witness": true,
+      "category": "early-substitution",
+      "details": {
+        "float_q_near_top": true,
+        "no_symbolic_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/t35-transfer-matrix.py",
+      "size_lines": 347,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/t35-weak-vertex.py",
+      "size_lines": 240,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/tau-lepton-nf.py",
+      "size_lines": 271,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/tau-leptonic-decay.py",
+      "size_lines": 473,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/tbeta-dual-action.py",
+      "size_lines": 824,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/term4_frobenius_mpfr_50dps.py",
+      "size_lines": 211,
+      "emits_witness": true,
+      "category": "compliant",
+      "details": {
+        "symbolic_q": true,
+        "subs_at_end": false,
+        "emits_symbolic_field": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/term5_chirality_mpfr_50dps.py",
+      "size_lines": 101,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/term6_full_pole_sum.py",
+      "size_lines": 287,
+      "emits_witness": true,
+      "category": "compliant",
+      "details": {
+        "symbolic_q": true,
+        "subs_at_end": true,
+        "emits_symbolic_field": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/term6_habiro_residue_mpfr_50dps.py",
+      "size_lines": 112,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/term_7_shell_correction_test.py",
+      "size_lines": 348,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/term_seven_exact.py",
+      "size_lines": 317,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/term_seven_plancherel_lagrangian.py",
+      "size_lines": 218,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/terminal-resolution-deuteron.py",
+      "size_lines": 324,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/terms_2_3_atom_per_gen_mpfr_50dps.py",
+      "size_lines": 240,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/terms_2_3_brane_tower_mpfr_50dps.py",
+      "size_lines": 213,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/test_conjugate_symmetry.py",
+      "size_lines": 142,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/test_jing_liu_characters.py",
+      "size_lines": 119,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/test_six_term_consumer.py",
+      "size_lines": 256,
+      "emits_witness": true,
+      "category": "no-q-dependence"
+    },
+    {
+      "path": "folio-assistant/computations/test_syt_prefix_cache.py",
+      "size_lines": 114,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/test_three_term_wedderburn.py",
+      "size_lines": 266,
+      "emits_witness": false,
+      "category": "no-q-dependence"
+    },
+    {
+      "path": "folio-assistant/computations/three_E0_fit.py",
+      "size_lines": 311,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/toffoli-braid.py",
+      "size_lines": 342,
+      "emits_witness": true,
+      "category": "compliant",
+      "details": {
+        "symbolic_q": true,
+        "subs_at_end": true,
+        "emits_symbolic_field": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/toffoli-lp-stability.py",
+      "size_lines": 228,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/topological-mass-table.py",
+      "size_lines": 538,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/tower-mass-neutrino.py",
+      "size_lines": 285,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/tower-qvalues.py",
+      "size_lines": 466,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/tower_binding_full.py",
+      "size_lines": 180,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/tower_binding_symbolic.py",
+      "size_lines": 258,
+      "emits_witness": true,
+      "category": "compliant",
+      "details": {
+        "symbolic_q": true,
+        "subs_at_end": false,
+        "emits_symbolic_field": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/tower_full_jet_filtration.py",
+      "size_lines": 148,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/tower_isotope_absolute.py",
+      "size_lines": 275,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/tower_volume_extractor.py",
+      "size_lines": 200,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/tower_with_frobenius_fix.py",
+      "size_lines": 199,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/tr_m_canonical_3he_borromean.py",
+      "size_lines": 112,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/tr_m_plus_tower_and_log.py",
+      "size_lines": 196,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/tr_m_wenzl_bridge_mpfr.py",
+      "size_lines": 354,
+      "emits_witness": false,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/transfer_matrix_6x6.py",
+      "size_lines": 236,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/transfer_matrix_symbolic.py",
+      "size_lines": 804,
+      "emits_witness": false,
+      "category": "compliant",
+      "details": {
+        "symbolic_q": true,
+        "subs_at_end": true,
+        "emits_symbolic_field": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/transition_nf.py",
+      "size_lines": 268,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/trefoil-quark-nucleon-nf.py",
+      "size_lines": 646,
+      "emits_witness": true,
+      "category": "partial",
+      "details": {
+        "symbolic_q": true,
+        "missing_subs_or_emit": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/tritium-he3-groebner-nf.py",
+      "size_lines": 1164,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/tritium_q_spectral_extension.py",
+      "size_lines": 170,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/unified-lp.py",
+      "size_lines": 280,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/unified-mass-molecular.py",
+      "size_lines": 370,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/unified_binding.py",
+      "size_lines": 213,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/unified_formula_test.py",
+      "size_lines": 268,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/unified_lift.py",
+      "size_lines": 267,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/unified_low_isotope_predictor.py",
+      "size_lines": 371,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/unified_mass_table_50dps.py",
+      "size_lines": 254,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/universal-ilp.py",
+      "size_lines": 251,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/v_hat_gram_projection_probe.py",
+      "size_lines": 160,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/v_hat_pair_ratio_probe.py",
+      "size_lines": 183,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/validate_isotope_nf_stability.py",
+      "size_lines": 500,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/sweeps/wall_violations_sweep.py",
+      "size_lines": 262,
+      "emits_witness": true,
+      "category": "no-q-dependence"
+    },
+    {
+      "path": "folio-assistant/computations/wedderburn-strata-witness.py",
+      "size_lines": 202,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/wedderburn_3term_avg_baseline.py",
+      "size_lines": 222,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/wedderburn_3term_inter_gen_direct.py",
+      "size_lines": 253,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/wedderburn_3term_inter_only.py",
+      "size_lines": 262,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/wedderburn_block_fingerprint_feeder.py",
+      "size_lines": 226,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/wedderburn_coarse_feeder.py",
+      "size_lines": 197,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/wedderburn_discovery_feeder.py",
+      "size_lines": 195,
+      "emits_witness": false,
+      "category": "no-q-dependence"
+    },
+    {
+      "path": "folio-assistant/computations/wedderburn_mass_3term.py",
+      "size_lines": 235,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/wedderburn_orthogonal_r_k.py",
+      "size_lines": 184,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/wedderburn_per_isotope.py",
+      "size_lines": 226,
+      "emits_witness": true,
+      "category": "partial",
+      "details": {
+        "symbolic_q": true,
+        "missing_subs_or_emit": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/weight-space-correct.py",
+      "size_lines": 372,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/weight-space-qvalues.py",
+      "size_lines": 367,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/wenzl_qmn_cross_validation.py",
+      "size_lines": 178,
+      "emits_witness": false,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/wenzl_vs_mpfr_cross_check.py",
+      "size_lines": 89,
+      "emits_witness": false,
+      "category": "no-q-dependence"
+    },
+    {
+      "path": "folio-assistant/computations/substrate/witness_base.py",
+      "size_lines": 423,
+      "emits_witness": true,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/witness_staleness_tracker.py",
+      "size_lines": 315,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/y_lambda_bratteli_extract.py",
+      "size_lines": 97,
+      "emits_witness": false,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/y_lambda_cyclotomic_factor.py",
+      "size_lines": 162,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/y_lambda_jones_markov_witness.py",
+      "size_lines": 201,
+      "emits_witness": false,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/y_lambda_mpfr_witness.py",
+      "size_lines": 184,
+      "emits_witness": false,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/y_lambda_pslq_rationalize.py",
+      "size_lines": 169,
+      "emits_witness": false,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/y_lambda_recipe_from_partition.py",
+      "size_lines": 175,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/y_lambda_sdp.py",
+      "size_lines": 172,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/y_lambda_simplified_small_n.py",
+      "size_lines": 137,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/y_lambda_symbolic.py",
+      "size_lines": 208,
+      "emits_witness": false,
+      "category": "compliant",
+      "details": {
+        "symbolic_q": true,
+        "subs_at_end": false,
+        "emits_symbolic_field": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/y_lambda_symbolic_validate.py",
+      "size_lines": 401,
+      "emits_witness": false,
+      "category": "compliant",
+      "details": {
+        "symbolic_q": true,
+        "subs_at_end": false,
+        "emits_symbolic_field": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/y_lambda_wenzl_bridge.py",
+      "size_lines": 411,
+      "emits_witness": false,
+      "category": "mpmath-only",
+      "details": {
+        "mpmath_canonical_q": true
+      }
+    },
+    {
+      "path": "folio-assistant/computations/y_lambda_wenzl_bridge_extended.py",
+      "size_lines": 196,
+      "emits_witness": false,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    },
+    {
+      "path": "folio-assistant/computations/z_power_scan.py",
+      "size_lines": 147,
+      "emits_witness": true,
+      "category": "uncategorised",
+      "details": {
+        "has_mpmath": false,
+        "has_early_float": false
+      }
+    }
+  ]
+}

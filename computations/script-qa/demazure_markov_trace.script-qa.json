@@ -1,0 +1,330 @@
+{
+  "$schema": "script-qa/v1",
+  "script_path": "folio-assistant/computations/demazure_markov_trace.py",
+  "language": "python",
+  "source_hash": "359ae8082a0f",
+  "updated_at": "2026-06-09T03:47:37.719Z",
+  "criteria": {
+    "does_not_default_to_float": [
+      {
+        "field_hash": {
+          "ts": "3275dd59c4d7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "13ca48443f4b",
+          "script_commit_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2"
+        },
+        "reviewed_at": "2026-05-22T18:27:38.070Z",
+        "reviewed_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2",
+        "severity": "major",
+        "evidence": "folio-assistant/computations/demazure_markov_trace.py:368: bare float literal `0.0` — wrap in `mpmath.mpf(\"0.0\")` / `Decimal(\"0.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+      },
+      {
+        "field_hash": {
+          "ts": "3275dd59c4d7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "d63813af716d",
+          "script_commit_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab"
+        },
+        "reviewed_at": "2026-05-22T19:00:32.111Z",
+        "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
+        "severity": "major",
+        "evidence": "folio-assistant/computations/demazure_markov_trace.py:368: bare float literal `0.0` — wrap in `mpmath.mpf(\"0.0\")` / `Decimal(\"0.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+      },
+      {
+        "field_hash": {
+          "ts": "3275dd59c4d7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "fd3f75eadd30",
+          "script_commit_sha": "64d373b02f78e041146b6379cd20718622fb67df"
+        },
+        "reviewed_at": "2026-05-24T05:15:37.031Z",
+        "reviewed_sha": "b918c27dba807cf5d0bb65ef8b3e49d37d4ca55a",
+        "severity": "major",
+        "evidence": "folio-assistant/computations/demazure_markov_trace.py:368: bare float literal `0.0` — wrap in `mpmath.mpf(\"0.0\")` / `Decimal(\"0.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+      }
+    ],
+    "respects_archimedean_wall": [
+      {
+        "field_hash": {
+          "ts": "3275dd59c4d7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "d63813af716d",
+          "script_commit_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab"
+        },
+        "reviewed_at": "2026-05-22T19:00:32.111Z",
+        "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab"
+      },
+      {
+        "field_hash": {
+          "ts": "3275dd59c4d7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "fd3f75eadd30",
+          "script_commit_sha": "64d373b02f78e041146b6379cd20718622fb67df"
+        },
+        "reviewed_at": "2026-05-24T05:15:37.031Z",
+        "reviewed_sha": "b918c27dba807cf5d0bb65ef8b3e49d37d4ca55a"
+      }
+    ],
+    "code_is_commented": [
+      {
+        "field_hash": {
+          "ts": "3275dd59c4d7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "d63813af716d",
+          "script_commit_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab"
+        },
+        "reviewed_at": "2026-05-22T19:00:32.111Z",
+        "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
+        "severity": "minor",
+        "evidence": "folio-assistant/computations/demazure_markov_trace.py:1: script lacks both a module docstring and ≥10% comment density (got 21/307 = 6.8%) — add a top-of-file `\"\"\"…\"\"\"` docstring describing purpose and inputs / outputs, or increase inline commentary"
+      },
+      {
+        "field_hash": {
+          "ts": "3275dd59c4d7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "fd3f75eadd30",
+          "script_commit_sha": "64d373b02f78e041146b6379cd20718622fb67df"
+        },
+        "reviewed_at": "2026-05-24T05:15:37.031Z",
+        "reviewed_sha": "b918c27dba807cf5d0bb65ef8b3e49d37d4ca55a",
+        "severity": "minor",
+        "evidence": "folio-assistant/computations/demazure_markov_trace.py:1: script lacks both a module docstring and ≥10% comment density (got 21/307 = 6.8%) — add a top-of-file `\"\"\"…\"\"\"` docstring describing purpose and inputs / outputs, or increase inline commentary"
+      }
+    ],
+    "variables_typed": [
+      {
+        "field_hash": {
+          "ts": "3275dd59c4d7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "d63813af716d",
+          "script_commit_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab"
+        },
+        "reviewed_at": "2026-05-22T19:00:32.111Z",
+        "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
+        "severity": "minor",
+        "evidence": "folio-assistant/computations/demazure_markov_trace.py:62: `def demazure_operator(…)` has 3 parameters without type annotation: f, x, i — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/demazure_markov_trace.py:79: `def demazure_character(…)` has 3 parameters without type annotation: weight, word, x — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/demazure_markov_trace.py:91: `def perm_to_reduced_word(…)` has 1 parameter without type annotation: perm — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/demazure_markov_trace.py:111: `def all_permutations(…)` has 1 parameter without type annotation: n — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/demazure_markov_trace.py:121: `def w0_word(…)` has 1 parameter without type annotation: n — add `: type` (or `: Any` if the type genuinely is untyped)"
+      },
+      {
+        "field_hash": {
+          "ts": "3275dd59c4d7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "fd3f75eadd30",
+          "script_commit_sha": "64d373b02f78e041146b6379cd20718622fb67df"
+        },
+        "reviewed_at": "2026-05-24T05:15:37.031Z",
+        "reviewed_sha": "b918c27dba807cf5d0bb65ef8b3e49d37d4ca55a",
+        "severity": "minor",
+        "evidence": "folio-assistant/computations/demazure_markov_trace.py:62: `def demazure_operator(…)` has 3 parameters without type annotation: f, x, i — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/demazure_markov_trace.py:79: `def demazure_character(…)` has 3 parameters without type annotation: weight, word, x — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/demazure_markov_trace.py:91: `def perm_to_reduced_word(…)` has 1 parameter without type annotation: perm — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/demazure_markov_trace.py:111: `def all_permutations(…)` has 1 parameter without type annotation: n — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/demazure_markov_trace.py:121: `def w0_word(…)` has 1 parameter without type annotation: n — add `: type` (or `: Any` if the type genuinely is untyped)"
+      }
+    ],
+    "has_references_to_paper": [
+      {
+        "field_hash": {
+          "ts": "3275dd59c4d7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "d63813af716d",
+          "script_commit_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab"
+        },
+        "reviewed_at": "2026-05-22T19:00:32.111Z",
+        "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
+        "severity": "minor",
+        "evidence": "folio-assistant/computations/demazure_markov_trace.py:1: script contains no `# Ref: [key] …` citation. Add a bibliographic citation pointing to the proposition / theorem / paper section this script computes (matching the entries in `content/schema/references.ts`), or override with a `human` reviewer `result: \"n/a\"` entry if the script is pure infrastructure"
+      },
+      {
+        "field_hash": {
+          "ts": "3275dd59c4d7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "fd3f75eadd30",
+          "script_commit_sha": "64d373b02f78e041146b6379cd20718622fb67df"
+        },
+        "reviewed_at": "2026-05-24T05:15:37.031Z",
+        "reviewed_sha": "b918c27dba807cf5d0bb65ef8b3e49d37d4ca55a",
+        "severity": "minor",
+        "evidence": "folio-assistant/computations/demazure_markov_trace.py:1: script contains no `# Ref: [key] …` citation. Add a bibliographic citation pointing to the proposition / theorem / paper section this script computes (matching the entries in `content/schema/references.ts`), or override with a `human` reviewer `result: \"n/a\"` entry if the script is pure infrastructure"
+      }
+    ],
+    "connected_to_ci_pipeline": [
+      {
+        "field_hash": {
+          "ts": "3275dd59c4d7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "d63813af716d",
+          "script_commit_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab"
+        },
+        "reviewed_at": "2026-05-22T19:00:32.111Z",
+        "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab"
+      },
+      {
+        "field_hash": {
+          "ts": "3275dd59c4d7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "fd3f75eadd30",
+          "script_commit_sha": "64d373b02f78e041146b6379cd20718622fb67df"
+        },
+        "reviewed_at": "2026-05-24T05:15:37.031Z",
+        "reviewed_sha": "b918c27dba807cf5d0bb65ef8b3e49d37d4ca55a"
+      }
+    ],
+    "deprecated": [
+      {
+        "field_hash": {
+          "ts": "3275dd59c4d7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "d63813af716d",
+          "script_commit_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab"
+        },
+        "reviewed_at": "2026-05-22T19:00:32.111Z",
+        "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab"
+      },
+      {
+        "field_hash": {
+          "ts": "3275dd59c4d7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "fd3f75eadd30",
+          "script_commit_sha": "64d373b02f78e041146b6379cd20718622fb67df"
+        },
+        "reviewed_at": "2026-05-24T05:15:37.031Z",
+        "reviewed_sha": "b918c27dba807cf5d0bb65ef8b3e49d37d4ca55a"
+      }
+    ],
+    "uses_library_framework_appropriately": [
+      {
+        "field_hash": {
+          "ts": "3275dd59c4d7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "d63813af716d",
+          "script_commit_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab"
+        },
+        "reviewed_at": "2026-05-22T19:00:32.111Z",
+        "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab"
+      },
+      {
+        "field_hash": {
+          "ts": "3275dd59c4d7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "fd3f75eadd30",
+          "script_commit_sha": "64d373b02f78e041146b6379cd20718622fb67df"
+        },
+        "reviewed_at": "2026-05-24T05:15:37.031Z",
+        "reviewed_sha": "b918c27dba807cf5d0bb65ef8b3e49d37d4ca55a"
+      }
+    ],
+    "compute_no_mpf_to_float_cast": [
+      {
+        "field_hash": {
+          "ts": "359ae8082a0f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "0bbdf534427b",
+          "script_commit_sha": "76a167e10467a2b0f41dbbd968ea8245d5b4ba33"
+        },
+        "reviewed_at": "2026-06-09T03:37:13.209Z",
+        "reviewed_sha": "76a167e10467a2b0f41dbbd968ea8245d5b4ba33"
+      },
+      {
+        "field_hash": {
+          "ts": "359ae8082a0f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "a08e6e1469fd",
+          "script_commit_sha": "76a167e10467a2b0f41dbbd968ea8245d5b4ba33"
+        },
+        "reviewed_at": "2026-06-09T03:47:37.719Z",
+        "reviewed_sha": "3765bc9aa9274031018ed3d7696fc515f11274be"
+      }
+    ]
+  }
+}

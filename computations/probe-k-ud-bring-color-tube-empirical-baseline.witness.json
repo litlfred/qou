@@ -1,0 +1,83 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-30T12:56:33.718243+00:00",
+  "commitSha": "2a83182a641af1ddfbf35afd75279befb9fbea03",
+  "assertions": [
+    {
+      "name": "scan_produced_results",
+      "computed": 7,
+      "expected": 7,
+      "passed": true,
+      "tolerance": 0,
+      "source": "k ∈ {-3, -2, -1, 0, 1, 2, 3} all evaluated"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 10,
+  "computation": "probe-k-ud-bring-color-tube-empirical-baseline",
+  "scriptFile": "probe_k_ud_bring_color_tube_empirical_baseline.py",
+  "scriptHash": "2191bdcca9d9",
+  "scriptCommitSha": "c1ab91e71370e7a2408cb4d24d1658e35a549b35",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
+  "description": "EXPLORATORY probe: empirical baseline for the flavor-displacement exponent k_ud in the Bring color-tube weight refinement. Scans k_ud ∈ {-3..3} and reports implied m_d/m_u vs PDG 2.16(7). Best k_ud = 3. NOT a categorical derivation — this is the data-side baseline that Direction 2 Step 2 must explain. Audit-only.",
+  "auditOnly": "docs/workplans/2026-05-30-mass-asymmetric-flavor-split.md",
+  "data": {
+    "q_0": "1.1099785827513808075916690956107688798744991218736",
+    "bring_base_exponent": 10,
+    "pdg_md_mu_target": "2.160000000000000142108547152020037174224853515625",
+    "pdg_md_mu_err": "0.070000000000000006661338147750939242541790008544921875",
+    "scan_results": [
+      {
+        "k": -3,
+        "avg_weight": "1.31779544405377",
+        "implied_md_mu": "0.9048256853",
+        "pdg_residual_pct": -58.109921975042695
+      },
+      {
+        "k": -2,
+        "avg_weight": "1.33829712997495",
+        "implied_md_mu": "0.9313486187",
+        "pdg_residual_pct": -56.88200839333522
+      },
+      {
+        "k": -1,
+        "avg_weight": "1.36250836556653",
+        "implied_md_mu": "0.9626705788",
+        "pdg_residual_pct": -55.43191764825611
+      },
+      {
+        "k": 0,
+        "avg_weight": "1.39136324592916",
+        "implied_md_mu": "1.0",
+        "pdg_residual_pct": -53.70370370370371
+      },
+      {
+        "k": 1,
+        "avg_weight": "1.42612991692197",
+        "implied_md_mu": "1.044977477",
+        "pdg_residual_pct": -51.621413121994564
+      },
+      {
+        "k": 2,
+        "avg_weight": "1.46857489420186",
+        "implied_md_mu": "1.099888341",
+        "pdg_residual_pct": -49.07924345469913
+      },
+      {
+        "k": 3,
+        "avg_weight": "1.5212350605536",
+        "implied_md_mu": "1.168014548",
+        "pdg_residual_pct": -45.9252524255282
+      }
+    ],
+    "best_integer_k_ud": 3,
+    "best_pdg_residual_pct": -45.9252524255282,
+    "best_pdg_residual_pct_abs": 45.9252524255282
+  }
+}

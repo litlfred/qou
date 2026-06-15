@@ -1,0 +1,156 @@
+{
+  "engine": "python+sympy+mpmath",
+  "engineVersion": "python 3.11.2",
+  "computedAt": "2026-06-14T02:20:22.006336+00:00",
+  "commitSha": "e6cc581cd706edabc6f9f36824122bddb0381a2e",
+  "assertions": [
+    {
+      "name": "at_least_one_candidate_respects_c2_structural",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Structural filter: the proven c_2 = -1 (PR #1786) must be reproduced by any canonical operator candidate. This probe confirms ≥1 bounded candidate respects it. The exact c_4..c_8 (for 1 ppQ) require the Hoefsmit-rep T_β matrix — symbolic-candidate expansion narrows but does not uniquely pin them."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 628,
+  "computation": "qbeta-symbolic-tbeta-ck4-8-probe",
+  "scriptFile": "qbeta_symbolic_tbeta_ck4_8_probe.py",
+  "scriptHash": "dc1404cbf96d",
+  "scriptCommitSha": "ba1cdd52b5cd9d23ce0a01533ed73c490023089d",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 10,
+    "truncation_bound": "1e-50"
+  },
+  "environment": {
+    "python": "3.11.2",
+    "numpy": "1.26.4",
+    "scipy": "1.17.1",
+    "sympy": "1.11.1",
+    "mpmath": "0.0.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
+  },
+  "description": "1 ppQ keystone: compute c_4..c_8 symbolically (unbiased) from canonical operator-valued T_β candidates using PR #1786's exact α(q),b(q) chain. Filters by c_2=-1 (structural), evaluates Q_β(q_0) ppQ vs CODATA, and cross-anchor stability. Reports which candidate reaches 1 ppQ + is q-stable.",
+  "contentBlock": "prop:q-beta-c-k-recursion-from-habiro-q-difference",
+  "data": {
+    "substrate": {
+      "u_at_q_proton": "0.008517234550156142189255574",
+      "u_at_q_muon": "0.008517236339459495239237414",
+      "Q_A_q_proton_MeV": "0.7836458273746212130749398",
+      "Q_beta_codata_MeV": "0.78233"
+    },
+    "candidates": [
+      {
+        "candidate": "C0: (1-u²) only [proven N=2]",
+        "c_2": -1.0,
+        "c_3": 0.0,
+        "c2_structural_ok": true,
+        "q_stable": true,
+        "ck_2_to_8": {
+          "2": "-1",
+          "3": "0",
+          "4": "0",
+          "5": "0",
+          "6": "0",
+          "7": "0",
+          "8": "0"
+        },
+        "Q_beta_qp_MeV": "0.782334410277840138",
+        "eps_qp_ppm": 5.6373625453935805,
+        "cross_anchor_swing": 3.035282532325721e-08
+      },
+      {
+        "candidate": "C1: cos(√2·u) [matrix-exp tail]",
+        "c_2": -1.0,
+        "c_3": 0.0,
+        "c2_structural_ok": true,
+        "q_stable": true,
+        "ck_2_to_8": {
+          "2": "-1",
+          "3": "0",
+          "4": "1/6",
+          "5": "0",
+          "6": "7/45",
+          "7": "0",
+          "8": "131/840"
+        },
+        "Q_beta_qp_MeV": "0.782334410964062738",
+        "eps_qp_ppm": 5.6382396977459175,
+        "cross_anchor_swing": 3.035282458614641e-08
+      },
+      {
+        "candidate": "C2: exp(-u²/(1-u))",
+        "c_2": -1.0,
+        "c_3": -1.0,
+        "c2_structural_ok": true,
+        "q_stable": true,
+        "ck_2_to_8": {
+          "2": "-1",
+          "3": "-1",
+          "4": "-1/2",
+          "5": "-1",
+          "6": "-1/6",
+          "7": "-1",
+          "8": "-5/8"
+        },
+        "Q_beta_qp_MeV": "0.782333924804665807",
+        "eps_qp_ppm": 5.0168147275539665,
+        "cross_anchor_swing": 3.035321698766789e-08
+      },
+      {
+        "candidate": "C3: 1/(1+u²)",
+        "c_2": -1.0,
+        "c_3": 0.0,
+        "c2_structural_ok": true,
+        "q_stable": true,
+        "ck_2_to_8": {
+          "2": "-1",
+          "3": "0",
+          "4": "1",
+          "5": "0",
+          "6": "0",
+          "7": "0",
+          "8": "1"
+        },
+        "Q_beta_qp_MeV": "0.782334414394896984",
+        "eps_qp_ppm": 5.642625103197036,
+        "cross_anchor_swing": 3.0352820901041584e-08
+      },
+      {
+        "candidate": "C4: exp(-u²-2u³)",
+        "c_2": -1.0,
+        "c_3": -2.0,
+        "c2_structural_ok": true,
+        "q_stable": true,
+        "ck_2_to_8": {
+          "2": "-1",
+          "3": "-2",
+          "4": "1/2",
+          "5": "0",
+          "6": "7/3",
+          "7": "0",
+          "8": "3/8"
+        },
+        "Q_beta_qp_MeV": "0.782333445578005022",
+        "eps_qp_ppm": 4.404251409280223,
+        "cross_anchor_swing": 3.0353601923780886e-08
+      }
+    ],
+    "c2_respecting_candidates": [
+      "C4: exp(-u²-2u³)",
+      "C2: exp(-u²/(1-u))",
+      "C0: (1-u²) only [proven N=2]",
+      "C1: cos(√2·u) [matrix-exp tail]",
+      "C3: 1/(1+u²)"
+    ],
+    "verdict": {
+      "keystone_status": "bounded operator candidates share proven c_2=-1 N=2 (~5.6 ppm); none of the simple closed forms is the exact T_β at N≥3",
+      "next_step": "probe 6.d' — build Hoefsmit-rep ρ_λ(𝓑₃) per Wedderburn block, form net(T_w), take Tr symbolically for exact unbiased c_4..c_8",
+      "cross_anchor": "all bounded candidates q-stable (swing ~1e-8)"
+    }
+  }
+}

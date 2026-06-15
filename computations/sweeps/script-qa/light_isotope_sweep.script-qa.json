@@ -1,0 +1,187 @@
+{
+  "$schema": "script-qa/v1",
+  "script_path": "folio-assistant/computations/sweeps/light_isotope_sweep.py",
+  "language": "python",
+  "source_hash": "ec81820a56d8",
+  "updated_at": "2026-06-09T03:47:37.719Z",
+  "criteria": {
+    "does_not_default_to_float": [
+      {
+        "field_hash": {
+          "ts": "ec81820a56d8"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "69537a0de0e5",
+          "script_commit_sha": "3f3c2564e4028a6d8d7dcc4f24e1dadb8854990a"
+        },
+        "reviewed_at": "2026-06-04T18:24:03.689Z",
+        "reviewed_sha": "afce870d3c949d2018a034615c153abcca9000e6",
+        "severity": "major",
+        "evidence": "folio-assistant/computations/sweeps/light_isotope_sweep.py:70: bare `float(Q0 - 1.0 / Q0)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/sweeps/light_isotope_sweep.py:71: bare `float(Q0)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/sweeps/light_isotope_sweep.py:103: bare `float(product.diagonal().sum())` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/sweeps/light_isotope_sweep.py:104: bare `float(np.trace(product))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/sweeps/light_isotope_sweep.py:141: bare `float(w[\"y_lambda_numeric\"])` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision"
+      }
+    ],
+    "respects_archimedean_wall": [
+      {
+        "field_hash": {
+          "ts": "ec81820a56d8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "69537a0de0e5",
+          "script_commit_sha": "3f3c2564e4028a6d8d7dcc4f24e1dadb8854990a"
+        },
+        "reviewed_at": "2026-06-04T18:24:03.689Z",
+        "reviewed_sha": "afce870d3c949d2018a034615c153abcca9000e6"
+      }
+    ],
+    "code_is_commented": [
+      {
+        "field_hash": {
+          "ts": "ec81820a56d8"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "69537a0de0e5",
+          "script_commit_sha": "3f3c2564e4028a6d8d7dcc4f24e1dadb8854990a"
+        },
+        "reviewed_at": "2026-06-04T18:24:03.689Z",
+        "reviewed_sha": "afce870d3c949d2018a034615c153abcca9000e6",
+        "severity": "minor",
+        "evidence": "folio-assistant/computations/sweeps/light_isotope_sweep.py:1: script lacks both a module docstring and ≥10% comment density (got 14/312 = 4.5%) — add a top-of-file `\"\"\"…\"\"\"` docstring describing purpose and inputs / outputs, or increase inline commentary"
+      }
+    ],
+    "variables_typed": [
+      {
+        "field_hash": {
+          "ts": "ec81820a56d8"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "69537a0de0e5",
+          "script_commit_sha": "3f3c2564e4028a6d8d7dcc4f24e1dadb8854990a"
+        },
+        "reviewed_at": "2026-06-04T18:24:03.689Z",
+        "reviewed_sha": "afce870d3c949d2018a034615c153abcca9000e6",
+        "severity": "minor",
+        "evidence": "folio-assistant/computations/sweeps/light_isotope_sweep.py:74: `def chi_lambda_numeric(…)` has 2 parameters without type annotation: shape, crossings — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/sweeps/light_isotope_sweep.py:107: `def tr_M_at_q0(…)` has 4 parameters without type annotation: Z, N, include_inter, convention — add `: type` (or `: Any` if the type genuinely is untyped)"
+      }
+    ],
+    "has_references_to_paper": [
+      {
+        "field_hash": {
+          "ts": "ec81820a56d8"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "69537a0de0e5",
+          "script_commit_sha": "3f3c2564e4028a6d8d7dcc4f24e1dadb8854990a"
+        },
+        "reviewed_at": "2026-06-04T18:24:03.689Z",
+        "reviewed_sha": "afce870d3c949d2018a034615c153abcca9000e6",
+        "severity": "minor",
+        "evidence": "folio-assistant/computations/sweeps/light_isotope_sweep.py:1: script's sidecar has no `references` field — the criterion reads metadata only and does not grep source for citations. Add an explicit `references: [...]` entry to the script's `.script-qa.json` (content-block labels like `prop:foo`, bibliography keys like `wenzl1988`), or set `references: []` if the script is pure infrastructure with no paper backing"
+      }
+    ],
+    "connected_to_ci_pipeline": [
+      {
+        "field_hash": {
+          "ts": "ec81820a56d8"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "69537a0de0e5",
+          "script_commit_sha": "3f3c2564e4028a6d8d7dcc4f24e1dadb8854990a"
+        },
+        "reviewed_at": "2026-06-04T18:24:03.689Z",
+        "reviewed_sha": "afce870d3c949d2018a034615c153abcca9000e6",
+        "severity": "minor",
+        "evidence": "folio-assistant/computations/sweeps/light_isotope_sweep.py:1: script `light_isotope_sweep.py` is not referenced from any `.github/workflows/*.yml` and is not imported by any sibling script — likely never exercised in CI. Either add a workflow invocation, mark as a library by adding `from <this-module> import` somewhere, or move to `_deprecated/`"
+      }
+    ],
+    "deprecated": [
+      {
+        "field_hash": {
+          "ts": "ec81820a56d8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "69537a0de0e5",
+          "script_commit_sha": "3f3c2564e4028a6d8d7dcc4f24e1dadb8854990a"
+        },
+        "reviewed_at": "2026-06-04T18:24:03.689Z",
+        "reviewed_sha": "afce870d3c949d2018a034615c153abcca9000e6"
+      }
+    ],
+    "uses_library_framework_appropriately": [
+      {
+        "field_hash": {
+          "ts": "ec81820a56d8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "69537a0de0e5",
+          "script_commit_sha": "3f3c2564e4028a6d8d7dcc4f24e1dadb8854990a"
+        },
+        "reviewed_at": "2026-06-04T18:24:03.689Z",
+        "reviewed_sha": "afce870d3c949d2018a034615c153abcca9000e6"
+      }
+    ],
+    "compute_no_mpf_to_float_cast": [
+      {
+        "field_hash": {
+          "ts": "ec81820a56d8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "0bbdf534427b",
+          "script_commit_sha": "76a167e10467a2b0f41dbbd968ea8245d5b4ba33"
+        },
+        "reviewed_at": "2026-06-09T03:37:13.209Z",
+        "reviewed_sha": "76a167e10467a2b0f41dbbd968ea8245d5b4ba33"
+      },
+      {
+        "field_hash": {
+          "ts": "ec81820a56d8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "a08e6e1469fd",
+          "script_commit_sha": "76a167e10467a2b0f41dbbd968ea8245d5b4ba33"
+        },
+        "reviewed_at": "2026-06-09T03:47:37.719Z",
+        "reviewed_sha": "3765bc9aa9274031018ed3d7696fc515f11274be"
+      }
+    ]
+  }
+}

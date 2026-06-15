@@ -1,0 +1,136 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.12.3",
+  "computedAt": "2026-06-01T13:38:49.452120+00:00",
+  "commitSha": "417e511ad96a7416b3b52d2f93704cd0eee0d8f7",
+  "assertions": [
+    {
+      "name": "single_element_traces_match_closed_forms",
+      "computed": 9.036693901603673e-41,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-30,
+      "unit": "max over {𝟙, σ_0, σ_1, L_+, L_-, e^-} of |tr_M(b) − closed_form(b)|",
+      "source": "Ocneanu-Wenzl recursion + Hecke quadratic + Markov axiom."
+    },
+    {
+      "name": "gram_matrix_symmetric",
+      "computed": 0.0,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-30,
+      "unit": "max over (i,j) of |G_{ij} − G_{ji}|",
+      "source": "Cyclicity of the Markov trace tr_M(ab) = tr_M(ba)."
+    },
+    {
+      "name": "gram_matrix_nondegenerate",
+      "computed": 0.0,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 0.0,
+      "unit": "boolean (0 = non-degenerate, 1 = degenerate)",
+      "source": "Frobenius self-duality A ≅ A^∨ implies the Markov-trace pairing is non-degenerate at generic q."
+    },
+    {
+      "name": "gram_matrix_indefinite_signature",
+      "computed": 0.0,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 0.0,
+      "unit": "boolean (0 = has both positive AND negative eigvals, 1 = same-sign)",
+      "source": "Proposition states G has indefinite signature, NOT positive definite — confirmed empirically."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 679,
+  "computation": "frobenius-gram-matrix-probe",
+  "scriptFile": "frobenius_gram_matrix_probe.py",
+  "scriptHash": "3e050aee2643",
+  "scriptCommitSha": "6ddb5f8bef53fed344fe0dcfec7234eeb1697b57",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.12.3",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "I1 probe for prop:frobenius-gram-matrix.  Verifies the 6×6 Markov-trace Gram matrix G_{ij} = tr_M(b_i · b_j) over the NF basis {𝟙, σ_0, σ_1, L_+, L_-, e^-} of H_3(R, q): (1) the six single-element traces match the corrected closed forms (1, z, z, z², z², hz² + z) at q_0; (2) G is symmetric to ~1e-40; (3) det G ≠ 0 (non-degenerate); (4) signature is indefinite (G has both positive and negative eigenvalues).  Reproduces the corrected Gram-matrix structure after the Markov-bug fix in audit 2026-05-19-trm5-markov-bug (stale `tr_M(e^-) = z³` replaced by `hz² + z`).",
+  "contentBlock": "prop:frobenius-gram-matrix",
+  "parameters": {
+    "q_0_50dps": "1.1099785827513808075916690956107688798744991218736",
+    "z_at_q0": 0.4993203341836944,
+    "h_at_q0": 0.2090602987956393,
+    "max_single_trace_residue": 9.036693901603673e-41,
+    "symmetry_residue": 0.0,
+    "det_G_at_q0": -0.18920521914403676,
+    "num_positive_eigenvalues": 5,
+    "num_negative_eigenvalues": 1,
+    "num_zero_eigenvalues": 0,
+    "is_indefinite": true,
+    "is_nondegenerate": true
+  },
+  "data": {
+    "single_element_traces": [
+      {
+        "basis_element": "γ = 𝟙",
+        "expected_closed_form": "1",
+        "expected_at_q0": 1.0,
+        "computed_at_q0": 1.0,
+        "residue": 0.0
+      },
+      {
+        "basis_element": "σ_0",
+        "expected_closed_form": "sqrt(q)/(q + 1)",
+        "expected_at_q0": 0.4993203341836944,
+        "computed_at_q0": 0.4993203341836944,
+        "residue": 0.0
+      },
+      {
+        "basis_element": "σ_1",
+        "expected_closed_form": "sqrt(q)/(q + 1)",
+        "expected_at_q0": 0.4993203341836944,
+        "computed_at_q0": 0.4993203341836944,
+        "residue": 0.0
+      },
+      {
+        "basis_element": "L_+ = σ_0 σ_1",
+        "expected_closed_form": "q/(q**2 + 2*q + 1)",
+        "expected_at_q0": 0.24932079612931632,
+        "computed_at_q0": 0.24932079612931632,
+        "residue": 9.036693901603673e-41
+      },
+      {
+        "basis_element": "L_- = σ_1 σ_0",
+        "expected_closed_form": "q/(q**2 + 2*q + 1)",
+        "expected_at_q0": 0.24932079612931632,
+        "computed_at_q0": 0.24932079612931632,
+        "residue": 9.036693901603673e-41
+      },
+      {
+        "basis_element": "e^- = σ_0 σ_1 σ_0",
+        "expected_closed_form": "(q**(5/2) - sqrt(q) + q**2 + q)/(q**(5/2) + 2*q**(3/2) + sqrt(q))",
+        "expected_at_q0": 0.551443414318456,
+        "computed_at_q0": 0.551443414318456,
+        "residue": 4.471169652270873e-42
+      }
+    ],
+    "gram_matrix_eigenvalues": [
+      -0.8550672621298653,
+      3.4769498054701455,
+      0.1017966708498729,
+      0.8550672621298653,
+      0.8550672621298653,
+      0.8550672621298653
+    ],
+    "notes": {
+      "errata_fix_propagated": "tr_M(e^-) corrected from stale z³ to canonical hz² + z",
+      "audit_reference": "docs/audits/2026-05-19-trm5-markov-bug.md"
+    }
+  }
+}

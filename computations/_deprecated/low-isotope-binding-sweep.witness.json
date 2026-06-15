@@ -1,0 +1,298 @@
+{
+  "name": "low-isotope-binding-sweep",
+  "description": "Low-isotope (Z = 1..10) binding-energy sweep using the mass-volume factorization framework (Ch 11 \u00a78).  Three strategies applied in order: (A) census-knot match for A \u2264 3, (B) \u03b1-cluster unfolding for Z = N, A = 4n, (C) partial-shell linear interpolation for odd-A and non-N=Z atoms.  Zero free parameters per strategy.",
+  "computedAt": "2026-04-23T19:04:37.683706+00:00",
+  "framework_refs": [
+    "conj:mass-volume-factorization",
+    "conj:crossing-graded-mass-expansion",
+    "conj:lifted-crossing-locality",
+    "rem:frobenius-packing-density",
+    "rem:soft-confinement-at-q0"
+  ],
+  "constants": {
+    "q_0": 1.1099785955541805,
+    "hbar_q_sq": 0.00981718851347867,
+    "M_E_MEV": 0.51099895,
+    "CATALAN_G": 0.915965594177219,
+    "VOL_BORROMEAN_8G": 7.327724753417752,
+    "VOL_6_2": 4.40083,
+    "VOL_8_11": 8.28632,
+    "VOL_7_2_1": 4.7495,
+    "B_4HE_MEV": 28.295674,
+    "c_alpha_alpha_MEV": 2.426989513025
+  },
+  "rows": [
+    {
+      "symbol": "1H",
+      "Z": 1,
+      "N": 0,
+      "A": 1,
+      "B_AME_MeV": 0.0,
+      "B_pred_MeV": 0.0,
+      "residual_MeV": 0.0,
+      "error_pct": 0.0,
+      "strategy": "none"
+    },
+    {
+      "symbol": "2H",
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "B_AME_MeV": 2.22458,
+      "B_pred_MeV": 2.2488195091285,
+      "residual_MeV": 0.024239509128499925,
+      "error_pct": 1.0896218220293235,
+      "strategy": "census:6_2,\u03c1=m_e"
+    },
+    {
+      "symbol": "3H",
+      "Z": 1,
+      "N": 2,
+      "A": 3,
+      "B_AME_MeV": 8.4818,
+      "B_pred_MeV": 8.468601638728,
+      "residual_MeV": -0.013198361271999914,
+      "error_pct": -0.15560802273102306,
+      "strategy": "census:8_11,\u03c1=2m_e"
+    },
+    {
+      "symbol": "3He",
+      "Z": 2,
+      "N": 1,
+      "A": 3,
+      "B_AME_MeV": 7.718,
+      "B_pred_MeV": 7.48891930977096,
+      "residual_MeV": -0.22908069022903987,
+      "error_pct": -2.96813540073905,
+      "strategy": "census:Borromean,\u03c1=2m_e"
+    },
+    {
+      "symbol": "4He",
+      "Z": 2,
+      "N": 2,
+      "A": 4,
+      "B_AME_MeV": 28.29566,
+      "B_pred_MeV": 28.295674,
+      "residual_MeV": 1.4000000000180535e-05,
+      "error_pct": 4.947755238853073e-05,
+      "strategy": "\u03b1-cluster:n_\u03b1=1,pairs=0"
+    },
+    {
+      "symbol": "6Li",
+      "Z": 3,
+      "N": 3,
+      "A": 6,
+      "B_AME_MeV": 31.9941,
+      "B_pred_MeV": 43.657005756512504,
+      "residual_MeV": 11.662905756512504,
+      "error_pct": 36.45330156657791,
+      "strategy": "partial-shell:f=0.500 from A=4\u21928"
+    },
+    {
+      "symbol": "7Li",
+      "Z": 3,
+      "N": 4,
+      "A": 7,
+      "B_AME_MeV": 39.2446,
+      "B_pred_MeV": 51.33767163476875,
+      "residual_MeV": 12.093071634768755,
+      "error_pct": 30.81461305445528,
+      "strategy": "partial-shell:f=0.750 from A=4\u21928"
+    },
+    {
+      "symbol": "8Be",
+      "Z": 4,
+      "N": 4,
+      "A": 8,
+      "B_AME_MeV": 56.4995,
+      "B_pred_MeV": 59.018337513025,
+      "residual_MeV": 2.518837513025005,
+      "error_pct": 4.45815894481368,
+      "strategy": "\u03b1-cluster:n_\u03b1=2,pairs=1"
+    },
+    {
+      "symbol": "9Be",
+      "Z": 4,
+      "N": 5,
+      "A": 9,
+      "B_AME_MeV": 58.1651,
+      "B_pred_MeV": 67.3057507695375,
+      "residual_MeV": 9.140650769537494,
+      "error_pct": 15.715009119794333,
+      "strategy": "partial-shell:f=0.250 from A=8\u219212"
+    },
+    {
+      "symbol": "10Be",
+      "Z": 4,
+      "N": 6,
+      "A": 10,
+      "B_AME_MeV": 64.9775,
+      "B_pred_MeV": 75.59316402605,
+      "residual_MeV": 10.615664026049998,
+      "error_pct": 16.337446079104303,
+      "strategy": "partial-shell:f=0.500 from A=8\u219212"
+    },
+    {
+      "symbol": "10B",
+      "Z": 5,
+      "N": 5,
+      "A": 10,
+      "B_AME_MeV": 64.7512,
+      "B_pred_MeV": 75.59316402605,
+      "residual_MeV": 10.841964026050007,
+      "error_pct": 16.744035672003,
+      "strategy": "partial-shell:f=0.500 from A=8\u219212"
+    },
+    {
+      "symbol": "11B",
+      "Z": 5,
+      "N": 6,
+      "A": 11,
+      "B_AME_MeV": 76.2054,
+      "B_pred_MeV": 83.88057728256251,
+      "residual_MeV": 7.675177282562515,
+      "error_pct": 10.071697389637107,
+      "strategy": "partial-shell:f=0.750 from A=8\u219212"
+    },
+    {
+      "symbol": "12C",
+      "Z": 6,
+      "N": 6,
+      "A": 12,
+      "B_AME_MeV": 92.1617,
+      "B_pred_MeV": 92.167990539075,
+      "residual_MeV": 0.006290539075010315,
+      "error_pct": 0.006825545834126666,
+      "strategy": "\u03b1-cluster:n_\u03b1=3,pairs=3"
+    },
+    {
+      "symbol": "13C",
+      "Z": 6,
+      "N": 7,
+      "A": 13,
+      "B_AME_MeV": 97.1081,
+      "B_pred_MeV": 101.06215117384376,
+      "residual_MeV": 3.954051173843766,
+      "error_pct": 4.071803664003071,
+      "strategy": "partial-shell:f=0.250 from A=12\u219216"
+    },
+    {
+      "symbol": "14N",
+      "Z": 7,
+      "N": 7,
+      "A": 14,
+      "B_AME_MeV": 104.6589,
+      "B_pred_MeV": 109.9563118086125,
+      "residual_MeV": 5.297411808612495,
+      "error_pct": 5.061597063042411,
+      "strategy": "partial-shell:f=0.500 from A=12\u219216"
+    },
+    {
+      "symbol": "15N",
+      "Z": 7,
+      "N": 8,
+      "A": 15,
+      "B_AME_MeV": 115.4919,
+      "B_pred_MeV": 118.85047244338125,
+      "residual_MeV": 3.3585724433812487,
+      "error_pct": 2.9080588711253763,
+      "strategy": "partial-shell:f=0.750 from A=12\u219216"
+    },
+    {
+      "symbol": "16O",
+      "Z": 8,
+      "N": 8,
+      "A": 16,
+      "B_AME_MeV": 127.6193,
+      "B_pred_MeV": 127.74463307815,
+      "residual_MeV": 0.12533307815000683,
+      "error_pct": 0.09820856104837343,
+      "strategy": "\u03b1-cluster:n_\u03b1=4,pairs=6"
+    },
+    {
+      "symbol": "17O",
+      "Z": 8,
+      "N": 9,
+      "A": 17,
+      "B_AME_MeV": 131.7629,
+      "B_pred_MeV": 137.245541091175,
+      "residual_MeV": 5.482641091174997,
+      "error_pct": 4.160989998835027,
+      "strategy": "partial-shell:f=0.250 from A=16\u219220"
+    },
+    {
+      "symbol": "18O",
+      "Z": 8,
+      "N": 10,
+      "A": 18,
+      "B_AME_MeV": 139.8074,
+      "B_pred_MeV": 146.7464491042,
+      "residual_MeV": 6.939049104199995,
+      "error_pct": 4.963291717176626,
+      "strategy": "partial-shell:f=0.500 from A=16\u219220"
+    },
+    {
+      "symbol": "19F",
+      "Z": 9,
+      "N": 10,
+      "A": 19,
+      "B_AME_MeV": 147.8013,
+      "B_pred_MeV": 156.24735711722502,
+      "residual_MeV": 8.446057117225024,
+      "error_pct": 5.714467408084384,
+      "strategy": "partial-shell:f=0.750 from A=16\u219220"
+    },
+    {
+      "symbol": "20Ne",
+      "Z": 10,
+      "N": 10,
+      "A": 20,
+      "B_AME_MeV": 160.6449,
+      "B_pred_MeV": 165.74826513025002,
+      "residual_MeV": 5.103365130250012,
+      "error_pct": 3.1767987220571654,
+      "strategy": "\u03b1-cluster:n_\u03b1=5,pairs=10"
+    },
+    {
+      "symbol": "21Ne",
+      "Z": 10,
+      "N": 11,
+      "A": 21,
+      "B_AME_MeV": 167.406,
+      "B_pred_MeV": 175.85592052153126,
+      "residual_MeV": 8.449920521531254,
+      "error_pct": 5.047561330855079,
+      "strategy": "partial-shell:f=0.250 from A=20\u219224"
+    },
+    {
+      "symbol": "22Ne",
+      "Z": 10,
+      "N": 12,
+      "A": 22,
+      "B_AME_MeV": 177.77,
+      "B_pred_MeV": 185.96357591281253,
+      "residual_MeV": 8.19357591281252,
+      "error_pct": 4.6090880985613545,
+      "strategy": "partial-shell:f=0.500 from A=20\u219224"
+    }
+  ],
+  "stats_by_strategy": {
+    "census": {
+      "n": 3,
+      "mean_abs_err_pct": 1.404455081833132,
+      "max_abs_err_pct": 2.96813540073905
+    },
+    "\u03b1-cluster": {
+      "n": 5,
+      "mean_abs_err_pct": 1.5480082502611467,
+      "max_abs_err_pct": 4.45815894481368
+    },
+    "partial-shell": {
+      "n": 14,
+      "mean_abs_err_pct": 11.619497216661088,
+      "max_abs_err_pct": 36.45330156657791
+    }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
+}

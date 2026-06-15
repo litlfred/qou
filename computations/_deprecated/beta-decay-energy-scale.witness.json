@@ -1,0 +1,96 @@
+{
+  "computedAt": "2026-04-14T22:24:03.511682+00:00",
+  "computation": "beta-decay-energy-scale",
+  "description": "Derives the energy scale E₀ (MeV) converting dimensionless Hecke NF coefficient differences to physical decay energy. E₀ = Q_decay / |Δ(net)| where Q = m_n − m_p − m_e. Includes NF₊/NF₋ decomposition and observable-only (ℓ≥2) scenarios.",
+  "auditOnly": "docs/audits/categorical-vs-fitted-q-decay-ba.md",
+  "q0": 1.1099785955541805,
+  "crossing_type": "typed (u-u, d-d, u-d)",
+  "observed": {
+    "m_n_MeV": 939.56542052,
+    "m_p_MeV": 938.27208816,
+    "m_e_MeV": 0.51099895,
+    "delta_m_MeV": 1.2933323600000222,
+    "Q_decay_MeV": 0.7823334100000222,
+    "Q_decay_MeV_err": 6.129437351829285e-07
+  },
+  "nucleon_nf": {
+    "neutron": {
+      "ν": -0.20170383884270415,
+      "σ₀": 0.04813038950468018,
+      "σ₁": 1.008995448774928,
+      "L₊": -0.009640792161232925,
+      "L₋": 0.009237074564505066,
+      "e⁻": -0.0441837766085153
+    },
+    "proton": {
+      "ν": -0.0996576638783706,
+      "σ₀": 0.03572941527166762,
+      "σ₁": 0.99757046356861,
+      "L₊": 0.0993537847899173,
+      "L₋": 0.009336913072779618,
+      "e⁻": -0.04320778758182264
+    },
+    "neutron_net": 0.8108345052316609,
+    "proton_net": 0.9991251252427813,
+    "sign_pattern_neutron": "−++−+−",
+    "sign_pattern_proton": "−++++−"
+  },
+  "hecke_nf_differences": {
+    "per_channel": {
+      "ν": -0.10204617496433355,
+      "σ₀": 0.012400974233012563,
+      "σ₁": 0.011424985206317961,
+      "L₊": -0.10899457695115022,
+      "L₋": -9.983850827455232e-05,
+      "e⁻": -0.0009759890266926585
+    },
+    "delta_net": -0.1882906200111204
+  },
+  "nf_pos_neg": {
+    "NF_pos_neutron": 1.066362912844113,
+    "NF_neg_neutron": -0.2555284076124524,
+    "NF_pos_proton": 1.1419905767029745,
+    "NF_neg_proton": -0.14286545146019325,
+    "delta_NF_pos": -0.07562766385886155,
+    "delta_NF_neg": -0.11266295615225913
+  },
+  "observable_split": {
+    "obs_neutron": -0.04458749420524316,
+    "obs_proton": 0.06548291028087427,
+    "delta_obs": -0.11007040448611743,
+    "virt_neutron": 0.855421999436904,
+    "virt_proton": 0.933642214961907,
+    "delta_virt": -0.07822021552500302
+  },
+  "energy_scales": {
+    "E0_from_net_MeV": 4.154925030008493,
+    "E0_from_obs_MeV": 7.107572772649287,
+    "E0_from_pos_MeV": 10.344540212957451,
+    "E0_from_debt_MeV": 7.5938359251332335
+  },
+  "cross_predictions": {
+    "Q_ge2_from_E0net": 0.45733427866252846,
+    "Q_pos_from_E0net": 0.3142272735282525,
+    "Q_neg_from_E0net": 0.4681061364717708,
+    "Q_net_from_E0obs": 1.3382892841362923,
+    "ratio_Q_ge2_over_Q": 0.5845772055964163
+  },
+  "full_budget_MeV": {
+    "ν": 0.4239942065759355,
+    "σ₀": -0.05152511823723427,
+    "σ₁": -0.04746995700120724,
+    "L₊": 0.4528642959095208,
+    "L₋": 0.0004148215169886475,
+    "e⁻": 0.004055161236018954
+  },
+  "verification": {
+    "delta_net_times_E0": 0.7823334100000222,
+    "Q_observed": 0.7823334100000222,
+    "match": true
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0,
+  "engine": "python",
+  "scriptFile": "trefoil-quark-nucleon-nf.py",
+  "commitSha": "06e88b6885fd78860cf1e0d1d01de2a96f5b0811"
+}

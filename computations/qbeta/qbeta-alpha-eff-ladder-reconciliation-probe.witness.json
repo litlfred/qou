@@ -1,0 +1,90 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-06-06T04:07:44.663902+00:00",
+  "commitSha": "72af368c0c14dc14f45cfd88ed38a6dd825fb8b6",
+  "assertions": [
+    {
+      "name": "decisive_c2_compared_to_minus1_both_anchors",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true
+    },
+    {
+      "name": "verdict_matches_c2_reconciliation",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true
+    },
+    {
+      "name": "c2_is_structural_minus_9_over_8_both_anchors",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true
+    },
+    {
+      "name": "no_single_rescale_reconciles_both_rungs",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 14,
+  "computation": "qbeta-alpha-eff-ladder-reconciliation-probe",
+  "scriptFile": "qbeta_alpha_eff_ladder_reconciliation_probe.py",
+  "scriptHash": "2f62245fc48d",
+  "scriptCommitSha": "72af368c0c14dc14f45cfd88ed38a6dd825fb8b6",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Reconciliation tranche: test whether the on-main α_eff-based phase (canonical producer model cos(alpha-u/2)(1-u²), alpha=(z-1)h/2) reproduces the #1887 ladder c_1=0, c_2=-1 (Φ₁=√2), i.e. whether Φ₂ follows from the symbolic alpha. Uses the CANONICAL N=2 model (not the line-144 exploratory candidate of the prior probe). Verdict records whether α_eff reconciles with #1887 Φ(u) or is a distinct phase parametrisation. No fit; nothing wired.",
+  "contentBlock": "conj:qbeta-precision-ladder",
+  "data": {
+    "anchors": [
+      {
+        "anchor": "proton",
+        "alpha": "-0.0523361202682288387988645268899341706130483170063913394628427",
+        "c_1_canonical": "-0.0261919783849526458881447520799114166806472431690071355069875",
+        "c_2_canonical": "-1.12500000000000000000000000000000000000000000000000000000000",
+        "c_3_canonical": "0.0272833108176590061334841167499077257090075449677157661531119",
+        "c_2_equals_minus_1": false,
+        "c_2_equals_minus_9_over_8": true,
+        "phi_lead_from_c2": "1.50000000000000000000000000000000000000000000000000000000000",
+        "phi_lead_equals_sqrt2": false,
+        "lambda_to_force_c2_minus1": "1.06066017177982128660126654315727355892725390653271105488251",
+        "c_1_after_rescale": "-0.0246940340382553239976963513612423181069070430014155876618998",
+        "single_rescale_reconciles_both": false,
+        "c_3_true_target": "-2.06934257711516783787971951724962858902203099810343886691284"
+      },
+      {
+        "anchor": "muon",
+        "alpha": "-0.0523361260903606214984978719186009478482274064726426866441063",
+        "c_1_canonical": "-0.0261919813040067326954198299964887289365672841945524231022027",
+        "c_2_canonical": "-1.12500000000000000000000000000000000000000000000000000000000",
+        "c_3_canonical": "0.0272833138583403465577289895796757593089242543693254407314611",
+        "c_2_equals_minus_1": false,
+        "c_2_equals_minus_9_over_8": true,
+        "phi_lead_from_c2": "1.50000000000000000000000000000000000000000000000000000000000",
+        "phi_lead_equals_sqrt2": false,
+        "lambda_to_force_c2_minus1": "1.06066017177982128660126654315727355892725390653271105488251",
+        "c_1_after_rescale": "-0.0246940367903659099066685663121486836468735186641697278468205",
+        "single_rescale_reconciles_both": false,
+        "c_3_true_target": "-2.02020023502125517138232674988576251890206061330068660325496"
+      }
+    ],
+    "verdict": "NOT_RECONCILED_ALPHA_EFF_IS_DISTINCT_PHASE_FROM_1887_PHI",
+    "phi1_sqrt2": "1.41421356237309504880168872420969807856967187537694807317668",
+    "interpretation": "If c_2 != -1 (canonical α_eff model), the on-main alpha=(z-1)h/2 is a different phase decomposition than the #1887 Φ(u); Φ₂ does not follow from it by reparametrisation, and the closure stays the kernel (SW-residue/KLR) frontier. The bar-odd parity of alpha (prior probe) is unaffected — it remains an independent confirmation of #1900."
+  }
+}

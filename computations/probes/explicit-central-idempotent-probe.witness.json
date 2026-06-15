@@ -1,0 +1,166 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-06-01T13:44:31.900480+00:00",
+  "commitSha": "417e511ad96a7416b3b52d2f93704cd0eee0d8f7",
+  "assertions": [
+    {
+      "name": "e_lambda_eigenvalue_1_on_own_block",
+      "computed": 0.0,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-40,
+      "unit": "max over (λ ⊢ 3, T' ∈ SYT(λ)) of |e_λ · v_{T'} − 1|",
+      "source": "Lagrange interpolation gives the unique projector with eigenvalue 1 on the desired tableau slot."
+    },
+    {
+      "name": "e_lambda_orthogonality_off_block",
+      "computed": 0.0,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-40,
+      "unit": "max over (λ ⊢ 3, μ ⊢ 3 with μ ≠ λ, T' ∈ SYT(μ)) of |e_λ · v_{T'} − 0|",
+      "source": "Cells of distinct partitions have distinct content multisets in this regime; the Lagrange product vanishes when JM eigenvalues for T' miss the cell set of λ."
+    },
+    {
+      "name": "completeness_sum_e_lambda_equals_1",
+      "computed": 0.0,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-40,
+      "unit": "max over T' ∈ ∪_μ SYT(μ) of |Σ_λ e_λ · v_{T'} − 1|",
+      "source": "Σ_λ e_λ = 1 in H_n(q) — partition into Wedderburn blocks is complete."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 27,
+  "computation": "explicit-central-idempotent-probe",
+  "scriptFile": "explicit_central_idempotent_probe.py",
+  "scriptHash": "10b537e02c04",
+  "scriptCommitSha": "ac8f844015e912da2eb00b14b04edfb8fe8197e6",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.12.3",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "I1 probe for prop:explicit-central-idempotent.  Verifies the Lagrange-interpolation formula for the central primitive idempotents e_λ in H_3(q) — with a scope correction surfaced by the probe.  The proposition's literal statement has the inner product range over cells of λ only; with that scope, the off-block projection does NOT vanish (off-block residue ~3.24e+01).  The CORRECTED formula ranges the inner product over the UNION of cell contents across every μ ⊢ n (= {-2, -1, 0, 1, 2} for n = 3), and gives the actual central idempotent structure: e_λ on v_{T'} = δ_{λ,μ}, with completeness Σ_λ e_λ = 1, both to ~1e-50 numerical precision.  Surfacing the correction is a paper-level note flagged via the small-moderate-fix-rides-on-active-PR rule.",
+  "contentBlock": "prop:explicit-central-idempotent",
+  "parameters": {
+    "q_0_50dps": "1.1099785827513808075916690956107688798744991218736",
+    "num_syts_tested": 4,
+    "max_idempotent_value_residue": 0.0,
+    "max_off_block_residue": 0.0,
+    "max_completeness_residue": 0.0
+  },
+  "data": {
+    "per_lambda_mu_T_prime_corrected_formula": [
+      {
+        "mu": "(3,)",
+        "T_prime_index": 0,
+        "e_lambda_values": {
+          "(3,)": 1.0,
+          "(2, 1)": 0.0,
+          "(1, 1, 1)": 0.0
+        },
+        "sum_over_lambda": 1.0,
+        "completeness_residue": 0.0
+      },
+      {
+        "mu": "(2, 1)",
+        "T_prime_index": 0,
+        "e_lambda_values": {
+          "(3,)": 0.0,
+          "(2, 1)": 1.0,
+          "(1, 1, 1)": 0.0
+        },
+        "sum_over_lambda": 1.0,
+        "completeness_residue": 0.0
+      },
+      {
+        "mu": "(2, 1)",
+        "T_prime_index": 1,
+        "e_lambda_values": {
+          "(3,)": 0.0,
+          "(2, 1)": 1.0,
+          "(1, 1, 1)": 0.0
+        },
+        "sum_over_lambda": 1.0,
+        "completeness_residue": 0.0
+      },
+      {
+        "mu": "(1, 1, 1)",
+        "T_prime_index": 0,
+        "e_lambda_values": {
+          "(3,)": 0.0,
+          "(2, 1)": 0.0,
+          "(1, 1, 1)": 1.0
+        },
+        "sum_over_lambda": 1.0,
+        "completeness_residue": 0.0
+      }
+    ],
+    "per_lambda_mu_T_prime_literal_formula": [
+      {
+        "mu": "(3,)",
+        "T_prime_index": 0,
+        "e_lambda_values": {
+          "(3,)": 1.0,
+          "(2, 1)": 1.870198026749108,
+          "(1, 1, 1)": -32.40265891289326
+        },
+        "sum_over_lambda": -29.532460886144154,
+        "completeness_residue": 30.532460886144154
+      },
+      {
+        "mu": "(2, 1)",
+        "T_prime_index": 0,
+        "e_lambda_values": {
+          "(3,)": 0.5347027350564907,
+          "(2, 1)": 1.0,
+          "(1, 1, 1)": 0.0
+        },
+        "sum_over_lambda": 1.5347027350564908,
+        "completeness_residue": 0.5347027350564907
+      },
+      {
+        "mu": "(2, 1)",
+        "T_prime_index": 1,
+        "e_lambda_values": {
+          "(3,)": 0.0,
+          "(2, 1)": 1.0,
+          "(1, 1, 1)": 1.870198026749108
+        },
+        "sum_over_lambda": 2.870198026749108,
+        "completeness_residue": 1.870198026749108
+      },
+      {
+        "mu": "(1, 1, 1)",
+        "T_prime_index": 0,
+        "e_lambda_values": {
+          "(3,)": -2.648684752489514,
+          "(2, 1)": 0.5347027350564907,
+          "(1, 1, 1)": 1.0
+        },
+        "sum_over_lambda": -1.1139820174330233,
+        "completeness_residue": 2.113982017433023
+      }
+    ],
+    "formula_scope_correction_note": {
+      "literal_proposition_scope": "Inner Lagrange product ranges over cells of λ only.",
+      "literal_off_block_residue": 32.40265891289326,
+      "literal_completeness_residue": 30.532460886144154,
+      "corrected_scope": "Inner Lagrange product ranges over the UNION of distinct cell contents across all μ ⊢ n.  For n = 3 this is {-2, -1, 0, 1, 2}.",
+      "corrected_off_block_residue": 0.0,
+      "corrected_completeness_residue": 0.0,
+      "interpretation": "The proposition's literal formula projects within the JM-eigenvalue lattice of λ but does not automatically vanish on off-block JM eigenvalues drawn from cells of distinct partitions.  The standard literature formula extends the inner product over the full distinct-content set so that the Lagrange factor (J_k - q^{2c(T'(k))}) appears literally when T' ∈ SYT(μ ≠ λ), forcing off-block vanishing.  Recommendation: update the proposition to make the inner-product scope explicit."
+    }
+  }
+}

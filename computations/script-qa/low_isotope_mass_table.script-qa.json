@@ -1,0 +1,330 @@
+{
+  "$schema": "script-qa/v1",
+  "script_path": "folio-assistant/computations/low_isotope_mass_table.py",
+  "language": "python",
+  "source_hash": "aba55d1a489d",
+  "updated_at": "2026-06-09T03:47:37.719Z",
+  "criteria": {
+    "does_not_default_to_float": [
+      {
+        "field_hash": {
+          "ts": "6c7fd39791de"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "13ca48443f4b",
+          "script_commit_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2"
+        },
+        "reviewed_at": "2026-05-22T18:27:38.070Z",
+        "reviewed_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2",
+        "severity": "major",
+        "evidence": "folio-assistant/computations/low_isotope_mass_table.py:108: bare `float(_M_P_REF_MEV_raw)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/low_isotope_mass_table.py:109: bare `float(_M_N_REF_MEV_raw)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/low_isotope_mass_table.py:146: bare `float(_proton_w[\"data\"][\"predictions_MeV\"][\"m_…)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/low_isotope_mass_table.py:149: bare `float(_proton_w[\"data\"][\"comparisons\"][\"rel_di…)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/low_isotope_mass_table.py:156: bare `float(_proton_w[\"data\"][\"m_p_pred_MeV\"])` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision"
+      },
+      {
+        "field_hash": {
+          "ts": "6c7fd39791de"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "d63813af716d",
+          "script_commit_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab"
+        },
+        "reviewed_at": "2026-05-22T19:00:32.111Z",
+        "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
+        "severity": "major",
+        "evidence": "folio-assistant/computations/low_isotope_mass_table.py:108: bare `float(_M_P_REF_MEV_raw)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/low_isotope_mass_table.py:109: bare `float(_M_N_REF_MEV_raw)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/low_isotope_mass_table.py:146: bare `float(_proton_w[\"data\"][\"predictions_MeV\"][\"m_…)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/low_isotope_mass_table.py:149: bare `float(_proton_w[\"data\"][\"comparisons\"][\"rel_di…)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/low_isotope_mass_table.py:156: bare `float(_proton_w[\"data\"][\"m_p_pred_MeV\"])` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision"
+      },
+      {
+        "field_hash": {
+          "ts": "6c7fd39791de"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "fd3f75eadd30",
+          "script_commit_sha": "64d373b02f78e041146b6379cd20718622fb67df"
+        },
+        "reviewed_at": "2026-05-24T05:15:37.031Z",
+        "reviewed_sha": "b918c27dba807cf5d0bb65ef8b3e49d37d4ca55a",
+        "severity": "major",
+        "evidence": "folio-assistant/computations/low_isotope_mass_table.py:108: bare `float(_M_P_REF_MEV_raw)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/low_isotope_mass_table.py:109: bare `float(_M_N_REF_MEV_raw)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/low_isotope_mass_table.py:146: bare `float(_proton_w[\"data\"][\"predictions_MeV\"][\"m_…)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/low_isotope_mass_table.py:149: bare `float(_proton_w[\"data\"][\"comparisons\"][\"rel_di…)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/low_isotope_mass_table.py:156: bare `float(_proton_w[\"data\"][\"m_p_pred_MeV\"])` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision"
+      }
+    ],
+    "respects_archimedean_wall": [
+      {
+        "field_hash": {
+          "ts": "6c7fd39791de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "d63813af716d",
+          "script_commit_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab"
+        },
+        "reviewed_at": "2026-05-22T19:00:32.111Z",
+        "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab"
+      },
+      {
+        "field_hash": {
+          "ts": "6c7fd39791de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "fd3f75eadd30",
+          "script_commit_sha": "64d373b02f78e041146b6379cd20718622fb67df"
+        },
+        "reviewed_at": "2026-05-24T05:15:37.031Z",
+        "reviewed_sha": "b918c27dba807cf5d0bb65ef8b3e49d37d4ca55a"
+      }
+    ],
+    "code_is_commented": [
+      {
+        "field_hash": {
+          "ts": "6c7fd39791de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "d63813af716d",
+          "script_commit_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab"
+        },
+        "reviewed_at": "2026-05-22T19:00:32.111Z",
+        "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab"
+      },
+      {
+        "field_hash": {
+          "ts": "6c7fd39791de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "fd3f75eadd30",
+          "script_commit_sha": "64d373b02f78e041146b6379cd20718622fb67df"
+        },
+        "reviewed_at": "2026-05-24T05:15:37.031Z",
+        "reviewed_sha": "b918c27dba807cf5d0bb65ef8b3e49d37d4ca55a"
+      }
+    ],
+    "variables_typed": [
+      {
+        "field_hash": {
+          "ts": "6c7fd39791de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "d63813af716d",
+          "script_commit_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab"
+        },
+        "reviewed_at": "2026-05-22T19:00:32.111Z",
+        "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab"
+      },
+      {
+        "field_hash": {
+          "ts": "6c7fd39791de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "fd3f75eadd30",
+          "script_commit_sha": "64d373b02f78e041146b6379cd20718622fb67df"
+        },
+        "reviewed_at": "2026-05-24T05:15:37.031Z",
+        "reviewed_sha": "b918c27dba807cf5d0bb65ef8b3e49d37d4ca55a"
+      }
+    ],
+    "has_references_to_paper": [
+      {
+        "field_hash": {
+          "ts": "6c7fd39791de"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "d63813af716d",
+          "script_commit_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab"
+        },
+        "reviewed_at": "2026-05-22T19:00:32.111Z",
+        "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
+        "severity": "minor",
+        "evidence": "folio-assistant/computations/low_isotope_mass_table.py:1: script contains no `# Ref: [key] …` citation. Add a bibliographic citation pointing to the proposition / theorem / paper section this script computes (matching the entries in `content/schema/references.ts`), or override with a `human` reviewer `result: \"n/a\"` entry if the script is pure infrastructure"
+      },
+      {
+        "field_hash": {
+          "ts": "6c7fd39791de"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "fd3f75eadd30",
+          "script_commit_sha": "64d373b02f78e041146b6379cd20718622fb67df"
+        },
+        "reviewed_at": "2026-05-24T05:15:37.031Z",
+        "reviewed_sha": "b918c27dba807cf5d0bb65ef8b3e49d37d4ca55a",
+        "severity": "minor",
+        "evidence": "folio-assistant/computations/low_isotope_mass_table.py:1: script contains no `# Ref: [key] …` citation. Add a bibliographic citation pointing to the proposition / theorem / paper section this script computes (matching the entries in `content/schema/references.ts`), or override with a `human` reviewer `result: \"n/a\"` entry if the script is pure infrastructure"
+      }
+    ],
+    "connected_to_ci_pipeline": [
+      {
+        "field_hash": {
+          "ts": "6c7fd39791de"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "d63813af716d",
+          "script_commit_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab"
+        },
+        "reviewed_at": "2026-05-22T19:00:32.111Z",
+        "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
+        "severity": "minor",
+        "evidence": "folio-assistant/computations/low_isotope_mass_table.py:1: script `low_isotope_mass_table.py` is not referenced from any `.github/workflows/*.yml` and is not imported by any sibling script — likely never exercised in CI. Either add a workflow invocation, mark as a library by adding `from <this-module> import` somewhere, or move to `_deprecated/`"
+      },
+      {
+        "field_hash": {
+          "ts": "6c7fd39791de"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "fd3f75eadd30",
+          "script_commit_sha": "64d373b02f78e041146b6379cd20718622fb67df"
+        },
+        "reviewed_at": "2026-05-24T05:15:37.031Z",
+        "reviewed_sha": "b918c27dba807cf5d0bb65ef8b3e49d37d4ca55a",
+        "severity": "minor",
+        "evidence": "folio-assistant/computations/low_isotope_mass_table.py:1: script `low_isotope_mass_table.py` is not referenced from any `.github/workflows/*.yml` and is not imported by any sibling script — likely never exercised in CI. Either add a workflow invocation, mark as a library by adding `from <this-module> import` somewhere, or move to `_deprecated/`"
+      }
+    ],
+    "deprecated": [
+      {
+        "field_hash": {
+          "ts": "6c7fd39791de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "d63813af716d",
+          "script_commit_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab"
+        },
+        "reviewed_at": "2026-05-22T19:00:32.111Z",
+        "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab"
+      },
+      {
+        "field_hash": {
+          "ts": "6c7fd39791de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "fd3f75eadd30",
+          "script_commit_sha": "64d373b02f78e041146b6379cd20718622fb67df"
+        },
+        "reviewed_at": "2026-05-24T05:15:37.031Z",
+        "reviewed_sha": "b918c27dba807cf5d0bb65ef8b3e49d37d4ca55a"
+      }
+    ],
+    "uses_library_framework_appropriately": [
+      {
+        "field_hash": {
+          "ts": "6c7fd39791de"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "d63813af716d",
+          "script_commit_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab"
+        },
+        "reviewed_at": "2026-05-22T19:00:32.111Z",
+        "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
+        "severity": "major",
+        "evidence": "folio-assistant/computations/low_isotope_mass_table.py:140: script writes `.witness.json` (\"proton-mass-full-tower-50dps.witness.json\") but does not import `WitnessBuilder` from `witness_base` — add `from witness_base import WitnessBuilder` and stamp the payload via `WitnessBuilder.stamp_staleness_metadata(...)` for provenance / staleness tracking"
+      },
+      {
+        "field_hash": {
+          "ts": "6c7fd39791de"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "fd3f75eadd30",
+          "script_commit_sha": "64d373b02f78e041146b6379cd20718622fb67df"
+        },
+        "reviewed_at": "2026-05-24T05:15:37.031Z",
+        "reviewed_sha": "b918c27dba807cf5d0bb65ef8b3e49d37d4ca55a",
+        "severity": "major",
+        "evidence": "folio-assistant/computations/low_isotope_mass_table.py:140: script writes `.witness.json` (\"proton-mass-full-tower-50dps.witness.json\") but does not import `WitnessBuilder` from `witness_base` — add `from witness_base import WitnessBuilder` and stamp the payload via `WitnessBuilder.stamp_staleness_metadata(...)` for provenance / staleness tracking"
+      }
+    ],
+    "compute_no_mpf_to_float_cast": [
+      {
+        "field_hash": {
+          "ts": "aba55d1a489d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "0bbdf534427b",
+          "script_commit_sha": "76a167e10467a2b0f41dbbd968ea8245d5b4ba33"
+        },
+        "reviewed_at": "2026-06-09T03:37:13.209Z",
+        "reviewed_sha": "76a167e10467a2b0f41dbbd968ea8245d5b4ba33"
+      },
+      {
+        "field_hash": {
+          "ts": "aba55d1a489d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "a08e6e1469fd",
+          "script_commit_sha": "76a167e10467a2b0f41dbbd968ea8245d5b4ba33"
+        },
+        "reviewed_at": "2026-06-09T03:47:37.719Z",
+        "reviewed_sha": "3765bc9aa9274031018ed3d7696fc515f11274be"
+      }
+    ]
+  }
+}

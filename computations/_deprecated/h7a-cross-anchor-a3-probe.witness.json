@@ -1,0 +1,91 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-05-15T21:25:07.963051+00:00",
+  "commitSha": "3c1a7575bc3de01a88f2ac420ed0e453c105382e",
+  "assertions": [
+    {
+      "name": "h7a_a4_gap_pct",
+      "computed": -0.16862246046762489,
+      "expected": 0.169,
+      "passed": false,
+      "tolerance": 0.05,
+      "unit": "percent",
+      "source": "anchor_22_doubly_magic.gap_pct vs PR #645 H7a finding"
+    },
+    {
+      "name": "h7a_a3_z_n_asymmetry_pct",
+      "computed": -11.667985188776488,
+      "expected": 0.0,
+      "passed": false,
+      "tolerance": 0.5,
+      "unit": "percent",
+      "source": "If H7a is universal, (2,1) and (1,2) anchors must agree (both depend only on A=3). Asymmetry > 0.5% refutes naive universality."
+    }
+  ],
+  "allPassed": false,
+  "durationMs": 5,
+  "computation": "h7a-cross-anchor-a3-probe",
+  "scriptFile": "probe_h7a_cross_anchor_a3.py",
+  "scriptHash": "f8dc3eaec1d3",
+  "scriptCommitSha": "unknown",
+  "description": "F2 forward step from #644⊕#645⊕#652 three-PR integration: test whether H7a's [A−2]_q · E_0 · log(1/h) closed form generalises from the (2,2) doubly-magic anchor to the A=3 anchors (³He = D+p) and (1,2) (T = D+n). Diagnostic — NOT a fit (three-cal discipline).",
+  "contentBlock": "conj:magic-shell-stabilization",
+  "parameters": {
+    "mp_dps": 50,
+    "delta_cat_source": "magic-shell-empirical-instantiation.witness.json#per_atom_delta_cat",
+    "q_0_50dps": "1.1099785955541805677630215523262746828651420435574",
+    "E_0_MeV_50dps": "4.1859808277148385734460236982827215126887330583474",
+    "h_50dps": "0.20906032198987944748055841654932851331250607120014",
+    "log_one_over_h_50dps": "1.5651324466994860050452486808569605310688790457387",
+    "q_int_1": "1.0",
+    "q_int_2": "2.0108968691184816880454846881032208524177780159146"
+  },
+  "data": {
+    "delta_cat_inputs_MeV_50dps": {
+      "proton": "-0.54437036423917058263733689153015507974946711209669",
+      "neutron": "-0.47177124545869496666441105243836818013858771594415",
+      "D": "2.0261520207399138011298712368453333598767483337084",
+      "T": "8.3754569532230620810379021939616551573195173471667",
+      "He3": "7.5069756762851708429567762113101864364275472851682",
+      "He4": "28.210825160118311508412024060171328089127144741572"
+    },
+    "anchor_22_doubly_magic": {
+      "Z": 2,
+      "N": 2,
+      "A": 4,
+      "decomposition": "Δ_cat(⁴He) − 2·Δ_cat(³He)",
+      "value_MeV_50dps": "13.196873807547969822498471637550955216272050171236",
+      "H7a_prediction_MeV_50dps": "13.174620914228874905756620082346683265318911481854",
+      "gap_pct_50dps": "-0.168622460468"
+    },
+    "anchor_21_he3_eq_d_plus_p": {
+      "Z": 2,
+      "N": 1,
+      "A": 3,
+      "decomposition": "Δ_cat(³He) − Δ_cat(D) − Δ_cat(p)",
+      "value_MeV_50dps": "6.0251940197844276244642418659950081563002660635565",
+      "H7a_prediction_MeV_50dps": "6.5516144147184648933269815433734843355626126086596",
+      "gap_pct_50dps": "8.7369866133"
+    },
+    "anchor_12_t_eq_d_plus_n": {
+      "Z": 1,
+      "N": 2,
+      "A": 3,
+      "decomposition": "Δ_cat(T) − Δ_cat(D) − Δ_cat(n)",
+      "value_MeV_50dps": "6.8210761779418432465724420095546899775813567294024",
+      "H7a_prediction_MeV_50dps": "6.5516144147184648933269815433734843355626126086596",
+      "gap_pct_50dps": "-3.95042887946"
+    },
+    "z_n_asymmetry_a3": {
+      "description": "Under H7a's [A−2]_q · E_0 · log(1/h), the (2,1) and (1,2) anchors must be identical — H7a depends only on A, not on (Z, N) separately. Any non-zero ratio_minus_one signals that H7a is missing a Z↔N-symmetry-breaking term (or that the decomposition convention itself is non-trivial).",
+      "anchor_21_minus_anchor_12_MeV": "-0.79588215815741562210820014355968182128109066584595",
+      "ratio_21_over_12": "0.88332014811223512134122937919657637928073371945477",
+      "ratio_minus_one_pct": "-11.6679851888"
+    }
+  },
+  "caveats": [
+    "H7a's quantum-integer prefactor [A−2]_q is Z↔N-symmetric by construction (depends only on A). The A=3 anchors are NOT Z↔N-symmetric (T = mirror of ³He but the bound-state spectra differ via Q_β-encoded charge structure). This probe verifies the magnitude of the asymmetry against the H7a baseline.",
+    "Three-cal discipline: the Δ_cat inputs depend on m_e (CAL-1), q_0 (CAL-2), and Q_β (CAL-3) only. No Δ_coupling AME fit."
+  ]
+}

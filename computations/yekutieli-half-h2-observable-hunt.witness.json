@@ -1,0 +1,46 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-01T05:15:00.228660+00:00",
+  "commitSha": "25d4e2a0a0060d10a4d6e0df31af95539bd38168",
+  "assertions": [
+    {
+      "name": "observable_hunt_completed",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Scanned 5 obs × 13 normalizers at 60 dps."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 9,
+  "computation": "yekutieli-half-h2-observable-hunt",
+  "scriptFile": "yekutieli_half_h2_observable_hunt.py",
+  "scriptHash": "d5a6ca4739e9",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "Task 3 of PR #1617: search for physical observables that exhibit +0.5·h² (the Yekutieli natural-reading H_4 partition quantity) at their h² coefficient. Tests deuteron/⁴He/³He/tritium binding energies, multi-nucleon non-additive residuals, isospin mirror residuals under various natural normalizations.",
+  "parameters": {
+    "q_60dps": "1.1099785827513808075916690956107688798744991218736"
+  },
+  "data": {
+    "matches_count": 0,
+    "candidates_count": 5,
+    "normalizers_count": 13,
+    "verdict": "NULL — none of 5 candidate observables (deuteron/⁴He/³He/T binding, multi-nucleon residuals, isospin mirrors) normalizes to +0.5·h² under 13 natural normalizers. The Yekutieli +0.5 may be a STRUCTURAL quantity without a corresponding L2 observable — common for partition-combinatoric quantities."
+  }
+}

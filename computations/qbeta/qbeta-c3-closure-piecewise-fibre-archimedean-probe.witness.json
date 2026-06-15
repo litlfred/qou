@@ -1,0 +1,76 @@
+{
+  "engine": "python+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-04T13:17:19.044986+00:00",
+  "commitSha": "40e16057fb15b4bb1f9742c3087f399a7796ab7d",
+  "assertions": [
+    {
+      "name": "pr1811_div25_finding_confirmed_reverse_test",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Reverse confirmation of PR #1811's central finding: swapping /25 (q=1 fibre) → /[5]_q² (q_0 archimedean) must DEGRADE the c_3 match (since /25 wins at proton anchor). This is the inverse of #1811's test and must agree with it. Sanity invariant."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 12,
+  "computation": "qbeta-c3-closure-piecewise-fibre-archimedean-probe",
+  "scriptFile": "qbeta_c3_closure_piecewise_fibre_archimedean_probe.py",
+  "scriptHash": "f3e6c9a71ae4",
+  "scriptCommitSha": "40e16057fb15b4bb1f9742c3087f399a7796ab7d",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 10,
+    "truncation_bound": "1e-50"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Piece-by-piece fibre (q=1) vs archimedean (q=q_0) test of the c_3 closure. Extends PR #1811's finding (/25 is fibre-evaluated [5]_q² at q=1) to the other 5 categorical pieces. Reports which pieces (if any) also fit q=1 fibre evaluation, vs q_0 archimedean. Honest test of the mixed fibre/archimedean structural reading.",
+  "contentBlock": "prop:q-beta-c-k-recursion-from-habiro-q-difference",
+  "data": {
+    "baseline_eps_ppm": 2.6508286033940096,
+    "piece_tests": [
+      {
+        "piece": "base = -(q²+q⁻²)",
+        "q_0_value": "-2.043706208532521989402019",
+        "q_1_fibre_value": "-2.0",
+        "delta_eps_ppm": -21385.81573403984
+      },
+      {
+        "piece": "[3]_q",
+        "q_0_value": "3.043706208532521989402019",
+        "q_1_fibre_value": "3.0",
+        "delta_eps_ppm": -171.07349000923716
+      },
+      {
+        "piece": "[2]_q",
+        "q_0_value": "2.010896866707122299752492",
+        "q_1_fibre_value": "2.0",
+        "delta_eps_ppm": 2.602846012169945
+      },
+      {
+        "piece": "/25 → /[5]_q²|_{q=q_0} (cross-check NOT fibre test)",
+        "q_0_value_main": "25.0",
+        "alt_q0_value": "27.25300710913673180653988",
+        "delta_eps_ppm": -984.8961609053113,
+        "purpose": "reverse-direction confirmation of PR #1811"
+      }
+    ],
+    "verdict": {
+      "fibre_pieces": [
+        "/25 = [5]_q²|_{q=1}"
+      ],
+      "archimedean_pieces": [
+        "base = -(q²+q⁻²)",
+        "[3]_q",
+        "[2]_q"
+      ],
+      "interpretation": "c_3 closure structural reading: /25 is the unique testable fibre-point factor; all other testable pieces evaluate archimedean at q_0. (5 archimedean) × (1 fibre) tensor."
+    }
+  }
+}

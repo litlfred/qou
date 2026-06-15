@@ -1,0 +1,119 @@
+{
+  "engine": "python+sympy",
+  "engineVersion": "python 3.12.3",
+  "computedAt": "2026-06-01T13:36:58.106291+00:00",
+  "commitSha": "417e511ad96a7416b3b52d2f93704cd0eee0d8f7",
+  "assertions": [
+    {
+      "name": "eigenphase_u_series_extracted",
+      "computed": 4.0,
+      "expected": 4.0,
+      "passed": true,
+      "tolerance": 0.0,
+      "source": "cos(α−bℏ²/2) Taylor-expanded in u = b·ℏ² to order 3; coefficients are exact symbolic radicals, directly comparable to the ladder c_k."
+    },
+    {
+      "name": "eigenphase_a1_equals_neg_sqrt3_over_12",
+      "computed": -0.14433756729740643,
+      "expected": -0.14433756729740643,
+      "passed": true,
+      "tolerance": 1e-25,
+      "source": "Numeric u¹ coefficient matches the exact radical -√3/12."
+    },
+    {
+      "name": "eigenphase_a2_equals_neg_11_32_minus_sqrt3_over_12",
+      "computed": -0.48808756729740643,
+      "expected": -0.48808756729740643,
+      "passed": true,
+      "tolerance": 1e-25,
+      "source": "Numeric u² coefficient matches the exact radical -11/32 - √3/12."
+    },
+    {
+      "name": "eigenphase_a1_nonzero_falsifies_eigenphase_eq_f",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.0,
+      "source": "The u¹ coefficient is nonzero (a_1 = -√3/12), but the Q_β ladder has no c_1 rung — this is the falsification of the 'eigenphase = f' hypothesis at order u¹."
+    },
+    {
+      "name": "symbolic_numeric_crosscheck_agree",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.0,
+      "source": "Symbolic-exact path certified 3 leading coefficients in radicals; each agrees with the numeric path to < 1e-30."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 18336,
+  "computation": "qbeta-eigenphase-taylor-in-u",
+  "scriptFile": "qbeta_eigenphase_taylor_in_u.py",
+  "scriptHash": "8db63b1d58b5",
+  "scriptCommitSha": "a6b6d3193902354d8f57d677be729e2c23b4f015",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.12.3",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Taylor expansion of the N=1 cos eigenphase scaling cos(α − bℏ²/2) in the ladder variable u = b·ℏ², to determine which Q_β ladder coefficients c_k the single-block eigenphase generates exactly and where it breaks. Tests whether the eigenphase DERIVES c_2 = -1 (currently proved via a separate Kashiwara argument) and quantifies its prediction for c_3 vs the empirical value at both q₀ anchors — fixing the size of the multi-Wedderburn-block refinement the true scaling map f must add. 1ppQ-Q_β keystone (probe-qbeta-habiro-element-search). No fitting; eigenphase is the witness-cited closed form.",
+  "contentBlock": "prop:q-beta-categorical-precision-ladder",
+  "data": {
+    "eigenphase_definition": {
+      "N1": "cos(α − b·ℏ²/2)",
+      "alpha": "(z-1)·h/2",
+      "z": "1/(√q + 1/√q)",
+      "b": "√(q⁴+q²+1)/(q²+1)",
+      "u": "b·ℏ²",
+      "source_witness": "qbeta-scaling-bridge-investigation.witness.json"
+    },
+    "eigenphase_u_taylor_coeffs_numeric": {
+      "u^0": "1.0",
+      "u^1": "-0.144337567297406441127287195125",
+      "u^2": "-0.488087567297406441127287195125",
+      "u^3": "-0.468215502975651437658036668792"
+    },
+    "eigenphase_u_taylor_coeffs_symbolic": {
+      "u^0": "1",
+      "u^1": "-sqrt(3)/12",
+      "u^2": "-11/32 - sqrt(3)/12"
+    },
+    "symbolic_numeric_crosscheck": {
+      "orders_certified_symbolic": 3,
+      "agree": true,
+      "note": "Symbolic-exact path (eigenphase_u_coeffs_symbolic) certifies the leading coefficients in exact radicals; numeric path (eigenphase_u_coeffs) covers all orders. Both share the exact symbolic ε-series. Kept dual for later verification."
+    },
+    "anchor_comparison": {
+      "rows": [
+        {
+          "anchor": "m_p-pin",
+          "eigenphase_N1_minus_1_over_u2": "-22.07033719",
+          "empirical_c3": -2.0693
+        },
+        {
+          "anchor": "muon-pin",
+          "eigenphase_N1_minus_1_over_u2": "-22.07033315",
+          "empirical_c3": -2.0097
+        }
+      ],
+      "empirical_c2": "-1.0"
+    },
+    "interpretation": {
+      "eigenphase_equals_f_hypothesis": "FALSIFIED at u^1",
+      "reason": "cos(α−bℏ²/2) has a nonzero u^1 coefficient (a_1 = -√3/12 ≈ -0.1443); the Q_β ladder starts at u² (c_2·u², no c_1 term). So the eigenphase carries an odd-order correction the ladder lacks — it is NOT the c_k generating factor by itself.",
+      "a1_exact": "-sqrt(3)/12",
+      "a2_exact": "-11/32 - sqrt(3)/12",
+      "new_constraint_on_f": "the true scaling map f must (a) cancel the u^1 term and (b) give u² coefficient = -1 exactly; the u^1 cancellation is the concrete new structural constraint",
+      "tier": "eigenphase: proved closed form; eigenphase=f: falsified at u^1",
+      "no_fitted_form_proposed": true
+    }
+  }
+}

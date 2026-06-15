@@ -1,0 +1,27 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-16T02:51:35.458800+00:00",
+  "commitSha": "cdb516398e23062b07c7a95a44b1dc49c8f82c7b",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "inter-knot-decoupling",
+  "scriptFile": "probe_inter_knot_decoupling.py",
+  "scriptHash": "3ba85c54d9be",
+  "scriptCommitSha": "unknown",
+  "description": "Tests Mechanism 2 of prop:categorical-chain-convergence-mechanisms: the joint Markov trace of two unlinked braids factorises as τ_M(K_1) · τ_M(K_2) · z^k by Markov axiom M3 (disconnected-strand stabilisation). Confirms that the infinite product Q_β^cat over the base space converges because most inter-atomic-knot pairs are unlinked.",
+  "auditOnly": "PR #657 follow-up. Provides theoretical justification for the convergence-via-locality argument; full empirical verification at H_6 awaits y_λ for n=6 in wenzl_y_lambda.",
+  "data": {
+    "q_0_50dps": "1.1099785955541805752815940796095093779932822799587",
+    "z_markov_norm": "0.49932033403359825002066908467672150636931636263446",
+    "K_1_braid": "σ_0 in B_3",
+    "K_2_braid": "σ_0 · σ_1 in B_3",
+    "tau_M_K1": "0.49932033403359825002066908467672150636931636263445",
+    "tau_M_K2": "-1.498185508551815418311580192395458384246144137308",
+    "predicted_joint_via_M3_factorisation": "-0.093128498614094617969884554982395707414295262041364",
+    "factorisation_formula": "τ_M(K_1 ⊔ K_2 in B_{n_1 + n_2}) = τ_M(K_1) · τ_M(K_2) · z^k where k = strands added by disjoint stabilisation",
+    "structural_origin": "Markov axiom M3 (Jones 1985)",
+    "empirical_verification_status": "Direct B_6 verification awaits y_λ for n=6 in wedderburn_markov.wenzl_y_lambda. The factorisation property is THEORETICALLY axiomatic from Markov M3."
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "engine": "python+sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-01T11:54:34.532527+00:00",
+  "commitSha": "87619d8dc8289407e47046a49d68f56230f67ee0",
+  "assertions": [
+    {
+      "name": "cross_anchor_completion_emitted",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.0,
+      "source": "Completes PR #1609 deferred q_muon evaluation using upstream symbolic chi_lambda(q)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 84,
+  "computation": "qbeta-li2q-spectral-combiner-crossanchor",
+  "scriptFile": "qbeta_li2q_spectral_combiner_crossanchor_probe.py",
+  "scriptHash": "9249af77f2d9",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Cross-anchor completion of PR #1609 Li_2^q × spectral combiner deferred test. Evaluates candidate at BOTH q_proton and q_muon using symbolic χ_λ(q) from upstream witness. Tests structural vs anchor-precision-limited refutation.",
+  "auditOnly": "docs/audits/2026-06-01-qbeta-li2q-spectral-crossanchor-completion.md",
+  "data": {
+    "q_proton": "1.109978582751380807591669095610768879874499121873578736072814240181799",
+    "q_muon": "1.109978595554180575281594079609509377993282279958686225466751689153746",
+    "q_anchor_gap_abs": "0.0000000128027997676899249839987404981187831580851074893939374489719466139291",
+    "symbolic_chi_lambda_q_forms": {
+      "(3)": "-(q**2 - 1)*(q**2 + 1)**2/(4*q)",
+      "(2,1)": "(q**2 - 1)*(-q**4 - 1)/(4*q**3)",
+      "(1,1,1)": "-(q**2 - 1)*(q**2 + 1)**2/(4*q**5)"
+    },
+    "at_q_proton": {
+      "chi_lambda": {
+        "(3)": "-0.26038764179012080207328534278800868339582395384801",
+        "(2,1)": "-0.10681445765157804962363125892114490752183755404506",
+        "(1,1,1)": "-0.17153864377659950567184053169442511515877870210905"
+      },
+      "mu_lambda": {
+        "(3)": "0.4770363211999476390494968075766741868494998312300526228380806740061073",
+        "(2,1)": "0.2025154087811513006645526973657397989076630271362427652112811043793274",
+        "(1,1,1)": "0.3204482700189010602859504950575860142428371416337046119506382216145653"
+      },
+      "c3_candidate": "-1.797484591218848699335447302634260201092336972863757234788718895620673",
+      "c3_empirical": "-2.0693",
+      "err_pct": 13.135621165667196
+    },
+    "at_q_muon": {
+      "chi_lambda": {
+        "(3)": "-0.26038767731013669965830978226775450644984851937734",
+        "(2,1)": "-0.10681447000899742923063709690268705604954083369844",
+        "(1,1,1)": "-0.17153865926224274628405587306326019762649288609035"
+      },
+      "mu_lambda": {
+        "(3)": "0.4770363291722737851811450563037655354621262676026664978873240173413867",
+        "(2,1)": "0.2025154089202521252922874635671856722762858397865447285822429921929981",
+        "(1,1,1)": "0.3204482619074740895265674801290487922615878926107887735304329904656153"
+      },
+      "c3_candidate": "-1.797484591079747874707712536432814327723714160213455271417757007807002",
+      "c3_empirical": "-2.0097",
+      "err_pct": 10.559556596519487
+    },
+    "cross_anchor_analysis": {
+      "candidate_swing_abs": "-0.0000000001391008246277347662014458733686228126503019633709618878136706295771389",
+      "candidate_swing_pct": -7.738637944785523e-09,
+      "empirical_swing_abs": "-0.05959999999999999999999999999999999999999999999999999999999999999999999",
+      "empirical_swing_pct": -2.8802010341661433,
+      "swing_ratio_candidate_to_empirical": 2.686839513279309e-09,
+      "interpretation_pre_stated": "If swing_ratio << 1: candidate q-independent ⟹ structural refutation strong (13% mismatch is real). If swing_ratio ≈ 1: anchor-precision-limited (extraction noise). If swing_ratio >> 1: candidate has wrong q-dependence direction.",
+      "verdict": "STRUCTURAL REFUTATION CONFIRMED — candidate is essentially q-independent (swing 7.74e-09% << empirical -2.8802%). The 13% miss at q_proton reflects a TRUE structural mismatch, not extraction noise. Refutation stands strong."
+    },
+    "upstream_witness_hashes": [
+      {
+        "path": "qbeta-per-block-paper-closed-forms.witness.json",
+        "sha256": "ade7228b078f970780b54f587449fbd8764609ae533e6e7219a4d802163dce00",
+        "size_bytes": 2924,
+        "commitSha": "18e46c1c0c0ad4b7f0327c7f4783a0ec73fb8448",
+        "scriptCommitSha": "cf3b3f758b936fc3a9bdd2cf38089bbb628ac50e",
+        "computedAt": "2026-05-31T04:44:06.333077+00:00"
+      }
+    ]
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-05-17T07:04:39.573482+00:00",
+  "commitSha": "057b619802141257e7b6aa44dcba6bd8304c3867",
+  "assertions": [
+    {
+      "name": "trM_sigma1_sq_closed_form_holds",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "tr_M(σ_1²) = 1 + (q-1)·q^(-1/2), confirmed symbolically"
+    },
+    {
+      "name": "bare_markov_F_3_NOT_equal_to_framework_F_3",
+      "computed": false,
+      "expected": false,
+      "passed": true,
+      "source": "bare-Markov ε^6 = -63/256 ≈ -0.246; framework F_3 = -2·b³(q=1) = -3√3/4 ≈ -1.299. Different by ~5×. The Q_β precision-ladder F_n are not the bare-Markov Taylor coefficients."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 182,
+  "computation": "F-n-categorical-derivation-probe",
+  "scriptFile": "probe_F_n_categorical_derivation.py",
+  "scriptHash": "019bc5cfd269",
+  "scriptCommitSha": "64e447349614d19b6139a288f7afcea15c22186f",
+  "description": "F_n categorical derivation probe via canonical Markov trace of σ_1² (Hopf+ braid). Confirms Markov-invariance across H_n for n=3-6; verifies the closed form tr_M(σ_1²) = 1 + (q-1)·q^(-1/2); verifies the C(-1/2, k-1) binomial pattern in the ε^k Taylor coefficients; SHOWS the bare-Markov coefficients DO NOT equal the framework's claimed F_n values, surfacing the open work on which categorical object actually produces each F_n.",
+  "auditOnly": "docs/audits/2026-05-17-F-n-derivation-analysis.md",
+  "data": {
+    "trM_sigma1_sq_closed_form": "1 + (q-1)/q^(1/2)",
+    "trM_sigma1_sq_symbolic": "(q**(5/2) - sqrt(q) + q**2 + q)/(q**2 + q)",
+    "markov_invariant_across_n_3_to_6": true,
+    "epsilon_taylor_coefficients_k_0_to_10": {
+      "eps_0": "1",
+      "eps_1": "1",
+      "eps_2": "-1/2",
+      "eps_3": "3/8",
+      "eps_4": "-5/16",
+      "eps_5": "35/128",
+      "eps_6": "-63/256",
+      "eps_7": "231/1024",
+      "eps_8": "-429/2048",
+      "eps_9": "6435/32768",
+      "eps_10": "-12155/65536"
+    },
+    "bare_markov_F_n_candidates": {
+      "F_2_eps4_coeff": "-5/16",
+      "F_3_eps6_coeff": "-63/256",
+      "F_4_eps8_coeff": "-429/2048"
+    },
+    "framework_F_n_values_at_q1": {
+      "F_2_b_sq": "3/4",
+      "F_3_minus_2_b_cubed": "-3*sqrt(3)/4",
+      "F_4_b_sq_plus_half": "5/4"
+    }
+  },
+  "caveats": [
+    "This probe does NOT derive F_n from the canonical Markov framework. It surfaces the GAP between bare-Markov tr_M(σ_1²) Taylor coefficients and the framework's claimed F_n values. A genuine F_n derivation requires identifying which categorical object β_n produces each F_n factor — specifically for F_3, PR #657 Track-C's claim is V_(2,2,2) channel inside Hoefsmit V_(2,1)⊗V_(2,1) in H_6. This probe does not perform that projection — that's the genuine derivation work pending."
+  ]
+}

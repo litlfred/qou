@@ -1,0 +1,64 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-11T19:07:17.395943+00:00",
+  "commitSha": "575d1e2d7de758dadff2d5f062ac96f95c86b756",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "beta-decay-n1-brane-tower-probe",
+  "scriptFile": "probe_beta_decay_n1_brane_tower.py",
+  "scriptHash": "ddb1980ca8c0",
+  "scriptCommitSha": "5732dad052080159e3430d82e2817a9880b65028",
+  "description": "β-decay N=1 brane-tower probe at n_⋆=2 (substrate-derived). Tests whether the N=1 extension of convention A closes the +0.168% / 1.31 keV residual. Three multiplicative ansatze tried (all substrate-derived; no fitting). Reports residual for each ansatz honestly — outcome could close, worsen, or be inconclusive depending on which (if any) lift formula matches the framework's brane-tower structure.",
+  "auditOnly": "docs/audits/2026-05-10-hbar-q-scaling-audit.md; content/.../brane-tower-z-habiro.md (open conjecture on n_⋆)",
+  "no_fitting_assertion": "All inputs (q_0, h, V̂_i, n_⋆) derived from substrate. Three ansatze for the lift are MULTIPLICATIVE, ADDITIVE, and RELATIVE forms — all natural choices, no parameter tuning. Per-ansatz residuals reported honestly.",
+  "parameters": {
+    "q_0_50dps": "1.1099785955541805752815940796095093779932822799587",
+    "h_50dps": "0.20906032198987946110160842229792190646175630391648",
+    "delta_net_50dps": "-0.18720721287462342222246847816060944426144010286654",
+    "m_e_MeV": "0.51099894999999995182093925905064679682254791259766",
+    "Q_beta_codata_MeV": "0.78233341",
+    "n_star_derived": 2,
+    "n_star_sources": [
+      "Habiro m_max(deg_u Δ=2) = ⌈√4⌉ = 2",
+      "Coxeter length ℓ(T_β = σ_0σ_1^{-1}) = 2",
+      "Generator rank of H_3 = 2"
+    ]
+  },
+  "data": {
+    "per_channel_volumes": {
+      "γ": "0.021853109115256038879139944137312462200316201049946",
+      "σ_0": "0.10453016099493973055080421114896095323087815195824",
+      "σ_1": "0.10453016099493973055080421114896095323087815195824"
+    },
+    "phi_N0_per_channel": {
+      "γ": "1.020083261891764018900893888370546608157289273675",
+      "σ_0": "1.1039637214620187783185987649430473734807473765335",
+      "σ_1": "1.1039637214620187783185987649430473734807473765335"
+    },
+    "phi_N1_per_channel": {
+      "γ": "1.0385033597015908374583307337722572166726980042707",
+      "σ_0": "1.2063098154833859108920441763134704598843344657544",
+      "σ_1": "1.2063098154833859108920441763134704598843344657544"
+    },
+    "delta_phi_per_channel": {
+      "γ": "0.018420097809826818557436845401710608515408730595728",
+      "σ_0": "0.1023460940213671325734454113704230864035870892209",
+      "σ_1": "0.1023460940213671325734454113704230864035870892209"
+    },
+    "lift_ratio_multiplicative": "1.0691175792941778465734475508446021219712111813864",
+    "E_0_N0_MeV": "4.1859808220625233786272433144399559497946537802031",
+    "E_0_N1_multiplicative_MeV": "4.4753056834553376052209615709214145842072699958556",
+    "E_0_N1_additive_MeV": "5.119924571807875728521845070263649624651422958196",
+    "E_0_N1_relative_MeV": "4.4753056834553376052209615709214145842072699958556",
+    "Q_beta_N0_MeV": "0.78364580284494996334757268660565115526909401233058",
+    "Q_beta_N1_multiplicative_MeV": "0.83780950376163545194754346479681586742486388700341",
+    "Q_beta_N1_additive_MeV": "0.95848680921645216529455432071772915015961370559303",
+    "Q_beta_N1_relative_MeV": "0.83780950376163545194754346479681586742486388700341",
+    "residual_N0_keV": 1.3123928449499633,
+    "residual_N1_multiplicative_keV": 55.476093761635454,
+    "residual_N1_additive_keV": 176.15339921645216,
+    "residual_N1_relative_keV": 55.476093761635454
+  }
+}

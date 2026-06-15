@@ -1,0 +1,156 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-25T23:38:15.521159+00:00",
+  "commitSha": "5a6801138de2775f08d37516cec8fe41c450755b",
+  "assertions": [
+    {
+      "name": "prescreen_completed",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Sanity: q-Dirac prescreen completed without error."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 43,
+  "computation": "q-dirac-linking-weight-h4-50dps",
+  "scriptFile": "q_dirac_linking_weight_probe_50dps.py",
+  "scriptHash": "94104afdb266",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 50,
+    "output_dps": 40,
+    "guard_digits": 10,
+    "truncation_bound": "1e-40"
+  },
+  "description": "Tests ~9 q-Dirac-derived linking-weight candidates at H_4 (mp.mpf 50 dps). Per author 'is there a PDE/ODE from Dirac?' direction — explores whether the q-Dirac operator D_q²(λ) = [c_λ]_q² acting on Z(H_n(q)) can produce h² ≈ -G (Reading-A) via natural combinations of dim_q V_λ and D_q²(λ).",
+  "auditOnly": "docs/audits/2026-05-25-path-c-categorical-principle-hunt.md",
+  "parameters": {
+    "sample_q_strs": [
+      "1.05",
+      "1.08",
+      "1.11",
+      "1.14",
+      "1.17"
+    ],
+    "target_h2_minus_G": "-0.9159655941772190150546035"
+  },
+  "data": {
+    "partition_data_H4": {
+      "(4,)": {
+        "c_lambda": 6,
+        "D_q2_at_q0": "40.8095178644"
+      },
+      "(3, 1)": {
+        "c_lambda": 2,
+        "D_q2_at_q0": "4.04372243324"
+      },
+      "(2, 2)": {
+        "c_lambda": 0,
+        "D_q2_at_q0": "0.0"
+      },
+      "(2, 1, 1)": {
+        "c_lambda": -2,
+        "D_q2_at_q0": "4.04372243324"
+      },
+      "(1, 1, 1, 1)": {
+        "c_lambda": -6,
+        "D_q2_at_q0": "40.8095178644"
+      }
+    },
+    "per_scheme_results": {
+      "1_family_A": {
+        "a_0": "2.5",
+        "a_2": "0.75",
+        "a_4": "2.5347673298e-47",
+        "a_2_normalized": "0.75",
+        "delta_vs_minus_G": "1.6659656"
+      },
+      "2_chirality_kernel_only": {
+        "a_0": "2.0",
+        "a_2": "1.0",
+        "a_4": "7.63678293722e-48",
+        "a_2_normalized": "1.25",
+        "delta_vs_minus_G": "2.1659656"
+      },
+      "3_non_chirality_over_4": {
+        "a_0": "2.0",
+        "a_2": "0.5",
+        "a_4": "2.42332819403e-47",
+        "a_2_normalized": "0.625",
+        "delta_vs_minus_G": "1.5409656"
+      },
+      "4_family_A_minus_chirality": {
+        "a_0": "2.0",
+        "a_2": "0.5",
+        "a_4": "2.42332819403e-47",
+        "a_2_normalized": "0.625",
+        "delta_vs_minus_G": "1.5409656"
+      },
+      "5_family_A_plus_2_chirality": {
+        "a_0": "3.5",
+        "a_2": "1.25",
+        "a_4": "3.85787951544e-47",
+        "a_2_normalized": "0.892857142857",
+        "delta_vs_minus_G": "1.8088227"
+      },
+      "6_dirac_weighted_normalized": {
+        "a_0": "1.19999573562",
+        "a_2": "-0.379272074371",
+        "a_4": "0.43825000419",
+        "a_2_normalized": "-0.790152962867",
+        "delta_vs_minus_G": "0.12581263"
+      },
+      "7_inverse_dirac_excl_kernel": {
+        "a_0": "0.388887895673",
+        "a_2": "-0.00908910158609",
+        "a_4": "0.0591627294881",
+        "a_2_normalized": "-0.0584300879972",
+        "delta_vs_minus_G": "0.85753551"
+      },
+      "8_signed_content_weighted": {
+        "a_0": "-8.74664318224e-51",
+        "a_2": "7.42223219351e-49",
+        "a_4": "-1.10022150544e-47",
+        "a_2_normalized": "7.42223219351e-49",
+        "delta_vs_minus_G": "0.91596559"
+      },
+      "9_abs_content_weighted": {
+        "a_0": "6.0",
+        "a_2": "1.0",
+        "a_4": "4.84665638805e-47",
+        "a_2_normalized": "0.416666666667",
+        "delta_vs_minus_G": "1.3326323"
+      },
+      "10_dirac_index_alt": {
+        "a_0": "-1.90557930735e-50",
+        "a_2": "0.5",
+        "a_4": "-1.6596499003e-47",
+        "a_2_normalized": "0.5",
+        "delta_vs_minus_G": "1.4159656"
+      },
+      "11_family_A_minus_chirality_inv": {
+        "a_0": "0.813512661341",
+        "a_2": "0.251796735628",
+        "a_4": "0.0531044169428",
+        "a_2_normalized": "0.773794765571",
+        "delta_vs_minus_G": "1.6897604"
+      }
+    },
+    "negative_a2_count": 2,
+    "closest_to_minus_G": {
+      "scheme": "6_dirac_weighted_normalized",
+      "absolute_delta": "0.12581263131",
+      "data": {
+        "a_0": "1.19999573562",
+        "a_2": "-0.379272074371",
+        "a_4": "0.43825000419",
+        "a_2_normalized": "-0.790152962867",
+        "delta_vs_minus_G": "0.12581263"
+      }
+    },
+    "verdict": "Tested 11 q-Dirac-derived linking-weight candidates at H_4 at mp.mpf 50 dps. Found 2 scheme(s) with negative h² coefficient. Closest to target -G after a_0 normalization: '6_dirac_weighted_normalized' at |Δ| = 0.12581263. Still far from -G — Dirac structure alone doesn't naturally produce Reading-A's h² coefficient via simple weighted-sum combinations."
+  }
+}

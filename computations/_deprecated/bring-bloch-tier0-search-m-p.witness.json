@@ -1,0 +1,63 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-20T05:37:01.894505+00:00",
+  "commitSha": "2b8d065db24f65a30c93808827059b0a09d75413",
+  "assertions": [
+    {
+      "name": "Tier 0 PSLQ NO-relation at CODATA target (expected negative)",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "unit": "boolean",
+      "source": "mpmath.pslq at max_coef=10^30. Negative result is the substantive falsifiable outcome documented in the .md; a positive find would warrant a paper-level update."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 19,
+  "computation": "bring-bloch-tier0-search-m-p",
+  "scriptFile": "bring_bloch_tier0_search.py",
+  "scriptHash": "dcd542ca497f",
+  "scriptCommitSha": "a8069c43fba179ee629babdb3ecd74cf3f25c4e9",
+  "description": "Tier 0 Bring-Bloch K-search for the proton effective volume. Searches for ℤ-linear combinations of hyperbolic volumes in the Tier 0 set {4_1, 5_2, 6_1, 6_2, 6_3, 7_4, 𝓑₃, L_6a4, 8_11, Whitehead} equaling Vol(K_p^eff) = λ_p_scale · 8·G, where λ_p_scale is either the CODATA-closure value (2.4599527843613) or the C2-inflection value (2.4616, PR #690 substrate-pure). Per prop:bring-hyperbolic-knot-bloch-decomposition (on main, sorry-free conditional Lean), an integer relation in B(F)⊗ℚ with F ⊆ ℚ(ζ_60) is the categorical identity for λ_p_scale.",
+  "auditOnly": "docs/audits/2026-05-18-lambda-scale-derivation-search.md",
+  "parameters": {
+    "compute_dps": "80",
+    "max_coef": "30"
+  },
+  "data": {
+    "tier0_basis": {
+      "4_1": "2.02988321281930725004240510855",
+      "5_2": "2.8281220883307886093",
+      "6_1": "3.1639632288821502117",
+      "6_2": "4.4008325136513705074",
+      "6_3": "5.6930211935087547922",
+      "7_4": "5.1374458566012050948",
+      "B_3": "7.32772475341775212043682811946",
+      "L_6a4": "7.32772475341775212043682811946",
+      "8_11": "8.286321502579377362",
+      "Whitehead": "3.6638623767088654"
+    },
+    "targets": {
+      "Vol(K_p^eff)_CODATA": {
+        "lambda_p": "2.45995278436131828924824573395",
+        "vol_K_p_eff": "18.0258569102033538156774041366",
+        "source": "implied λ_p from CODATA m_p with Vol(𝓑₃) = 8G"
+      },
+      "Vol(K_p^eff)_C2_inflection": {
+        "lambda_p": "2.4615",
+        "vol_K_p_eff": "18.037194480537796844455252416",
+        "source": "PR #690 C2 inflection a* = 0.4064; m_p = 938.918 MeV (+0.069%)"
+      }
+    },
+    "search_codata_target": {
+      "result": "no_pslq_relation_found"
+    },
+    "search_c2_target": {
+      "result": "no_pslq_relation_found"
+    },
+    "relation_found_codata": false,
+    "relation_found_c2": false
+  }
+}

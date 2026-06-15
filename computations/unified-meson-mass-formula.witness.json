@@ -1,0 +1,34 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-29T16:23:05.191813+00:00",
+  "commitSha": "b302ff3f23b51c0b859ac24f1ec600dce94e6f88",
+  "assertions": [
+    {
+      "name": "kaon_within_500ppm",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Kaon mass prediction within 500 ppm of PDG"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 22,
+  "computation": "unified-meson-mass-formula",
+  "scriptFile": "unified_meson_mass_formula.py",
+  "scriptHash": "2068c1096418",
+  "scriptCommitSha": "235dc470638038ddb49210d6395112305e1de1d5",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
+  "description": "Unified meson mass formula combining character shortcuts, binding amplitude, and Seifert volume ratios. Kaon mass at 290 ppm from CAL-3 + derived identities.",
+  "auditOnly": "docs/audits/2026-05-27-unified-meson-mass-formula.md",
+  "data": {
+    "m_K_pred_MeV": "493.534067145398",
+    "m_K_miss_ppm": "-289.52707"
+  }
+}

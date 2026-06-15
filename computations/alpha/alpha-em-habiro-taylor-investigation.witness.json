@@ -1,0 +1,58 @@
+{
+  "engine": "python+mpmath",
+  "engineVersion": "python 3.12.3",
+  "computedAt": "2026-06-01T13:21:47.385353+00:00",
+  "commitSha": "417e511ad96a7416b3b52d2f93704cd0eee0d8f7",
+  "assertions": [
+    {
+      "name": "habiro_taylor_coefficients_extracted",
+      "computed": 5,
+      "expected": 5,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Habiro Taylor expansion of [2]_q · (1-h²α) at h=0 computed symbolically via sympy.series; coefficients c_0 through c_8 are exact rationals linear in α."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 225,
+  "computation": "alpha-em-habiro-taylor-investigation",
+  "scriptFile": "alpha_em_habiro_taylor_investigation.py",
+  "scriptHash": "c3b1fe7eb81c",
+  "scriptCommitSha": "75213474e161e815749e49f8f4a91859b73f772b",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.12.3",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Habiro Taylor expansion of the empirical next-order α_EM form [2]_q · (1 - h²α) at q=1 in h = q-q⁻¹ basis. Tests whether the c_k of the empirical form are clean rationals characteristic of a Habiro element. If yes, the categorical structure underlying α_EM next-order is a Habiro element, and the c_k thrashing is closed by Habiro universality.",
+  "contentBlock": "prop:em-coupling-bring-zero-mode",
+  "data": {
+    "habiro_taylor_coefficients_symbolic": {
+      "c_0_alpha": "2",
+      "c_2_alpha": "1/4 - 2*alpha",
+      "c_4_alpha": "-1/64 - alpha/4",
+      "c_6_alpha": "1/512 + alpha/32",
+      "c_8_alpha": "-alpha/512 - 5/16384",
+      "all_c_k_linear_in_alpha": true,
+      "even_only_in_h": true,
+      "recursive_relation": "c_k(α) = c_k^{[2]_q} − α · c_{k−2}^{[2]_q}  where c_k^{[2]_q} are exact rational Taylor coefficients of [2]_q = √(4+h²)"
+    },
+    "q0_evaluation": {
+      "q_0": "1.1099785827513808076",
+      "h_0": "0.20906029879563931543",
+      "exact_form_at_q0": "2.010255512038413512",
+      "habiro_taylor_truncated_at_k8": "2.0102555120296129096",
+      "truncation_error": "8.8006024e-12",
+      "truncation_error_relative": "4.3778527e-12"
+    },
+    "structural_conclusion": "The empirical next-order α_EM form α·[2]_q/(8π)·(1-h²α) is a Habiro element (in q, with α as parameter) whose Taylor coefficients at q=1 in h-basis are EXACT rationals (linear in α). The c_k thrashing is closed by Habiro universality once the underlying categorical Habiro element is named. The framework's open structural question dualizes from 'construct [Z_2] ∈ B_3(ℂ)' (Bloch side) to 'identify the Habiro element' (Habiro side) — equivalent via colored Jones / Kashaev machinery, but Habiro side is more concrete."
+  }
+}

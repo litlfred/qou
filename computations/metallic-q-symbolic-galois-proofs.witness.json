@@ -1,0 +1,765 @@
+{
+  "description": "Symbolic verification of closed-form identities surfaced by the metallic-q probes.  Each verified identity is a candidate Lean theorem.  These are what we can PROVE from the probe findings.",
+  "computed_at": "2026-06-09T05:29:40.533863+00:00",
+  "identities": {
+    "I1_galois_pair_character_sum": {
+      "statement": "\u03c7^\u03bb(\u03c3_i) + \u03c7^{\u03bb'}(\u03c3_i) = dim(\u03bb) \u00b7 (q \u2212 q\u207b\u00b9)",
+      "scope": "all real q > 0, all partitions \u03bb of n=3, n=4",
+      "results": [
+        {
+          "lambda": [
+            3
+          ],
+          "lambda_prime": [
+            1,
+            1,
+            1
+          ],
+          "self_conjugate": false,
+          "dim": 0,
+          "lhs": "q - 1/q",
+          "rhs": "0",
+          "difference": "q - 1/q",
+          "verified": false
+        },
+        {
+          "lambda": [
+            2,
+            1
+          ],
+          "lambda_prime": [
+            2,
+            1
+          ],
+          "self_conjugate": true,
+          "dim": 0,
+          "lhs": "2*q - 2/q",
+          "rhs": "0",
+          "difference": "2*q - 2/q",
+          "verified": false
+        },
+        {
+          "lambda": [
+            4
+          ],
+          "lambda_prime": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "self_conjugate": false,
+          "dim": 0,
+          "lhs": "q - 1/q",
+          "rhs": "0",
+          "difference": "q - 1/q",
+          "verified": false
+        },
+        {
+          "lambda": [
+            3,
+            1
+          ],
+          "lambda_prime": [
+            2,
+            1,
+            1
+          ],
+          "self_conjugate": false,
+          "dim": 0,
+          "lhs": "3*q - 3/q",
+          "rhs": "0",
+          "difference": "3*q - 3/q",
+          "verified": false
+        },
+        {
+          "lambda": [
+            2,
+            2
+          ],
+          "lambda_prime": [
+            2,
+            2
+          ],
+          "self_conjugate": true,
+          "dim": 0,
+          "lhs": "2*q - 2/q",
+          "rhs": "0",
+          "difference": "2*q - 2/q",
+          "verified": false
+        }
+      ],
+      "all_verified": false,
+      "proposed_lean": "theorem galois_pair_character_sum {q : \u211d} (hq : 0 < q) (\u03bb : Partition n) : \u03c7^\u03bb q + \u03c7^{\u03bb.transpose} q = \u03bb.dim * (q - q\u207b\u00b9)"
+    },
+    "I2_metallic_integer": {
+      "statement": "\u03c7^\u03bb(\u03c3_i) + \u03c7^{\u03bb'}(\u03c3_i) at q = \u03b4_n equals dim(\u03bb) \u00b7 n  \u2208 \u2124",
+      "scope": "n \u2208 {1, 2, 3} (golden, silver, bronze), partitions of n=3, n=4",
+      "results": [
+        {
+          "n_metallic": 1,
+          "delta_n": "1/2 + sqrt(5)/2",
+          "lambda": [
+            3
+          ],
+          "lambda_prime": [
+            1,
+            1,
+            1
+          ],
+          "lhs_at_delta_n": "1",
+          "rhs": 0,
+          "difference": "1",
+          "verified": false
+        },
+        {
+          "n_metallic": 1,
+          "delta_n": "1/2 + sqrt(5)/2",
+          "lambda": [
+            2,
+            1
+          ],
+          "lambda_prime": [
+            2,
+            1
+          ],
+          "lhs_at_delta_n": "2",
+          "rhs": 0,
+          "difference": "2",
+          "verified": false
+        },
+        {
+          "n_metallic": 1,
+          "delta_n": "1/2 + sqrt(5)/2",
+          "lambda": [
+            4
+          ],
+          "lambda_prime": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "lhs_at_delta_n": "1",
+          "rhs": 0,
+          "difference": "1",
+          "verified": false
+        },
+        {
+          "n_metallic": 1,
+          "delta_n": "1/2 + sqrt(5)/2",
+          "lambda": [
+            3,
+            1
+          ],
+          "lambda_prime": [
+            2,
+            1,
+            1
+          ],
+          "lhs_at_delta_n": "3",
+          "rhs": 0,
+          "difference": "3",
+          "verified": false
+        },
+        {
+          "n_metallic": 1,
+          "delta_n": "1/2 + sqrt(5)/2",
+          "lambda": [
+            2,
+            2
+          ],
+          "lambda_prime": [
+            2,
+            2
+          ],
+          "lhs_at_delta_n": "2",
+          "rhs": 0,
+          "difference": "2",
+          "verified": false
+        },
+        {
+          "n_metallic": 2,
+          "delta_n": "1 + sqrt(2)",
+          "lambda": [
+            3
+          ],
+          "lambda_prime": [
+            1,
+            1,
+            1
+          ],
+          "lhs_at_delta_n": "2",
+          "rhs": 0,
+          "difference": "2",
+          "verified": false
+        },
+        {
+          "n_metallic": 2,
+          "delta_n": "1 + sqrt(2)",
+          "lambda": [
+            2,
+            1
+          ],
+          "lambda_prime": [
+            2,
+            1
+          ],
+          "lhs_at_delta_n": "4",
+          "rhs": 0,
+          "difference": "4",
+          "verified": false
+        },
+        {
+          "n_metallic": 2,
+          "delta_n": "1 + sqrt(2)",
+          "lambda": [
+            4
+          ],
+          "lambda_prime": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "lhs_at_delta_n": "2",
+          "rhs": 0,
+          "difference": "2",
+          "verified": false
+        },
+        {
+          "n_metallic": 2,
+          "delta_n": "1 + sqrt(2)",
+          "lambda": [
+            3,
+            1
+          ],
+          "lambda_prime": [
+            2,
+            1,
+            1
+          ],
+          "lhs_at_delta_n": "6",
+          "rhs": 0,
+          "difference": "6",
+          "verified": false
+        },
+        {
+          "n_metallic": 2,
+          "delta_n": "1 + sqrt(2)",
+          "lambda": [
+            2,
+            2
+          ],
+          "lambda_prime": [
+            2,
+            2
+          ],
+          "lhs_at_delta_n": "4",
+          "rhs": 0,
+          "difference": "4",
+          "verified": false
+        },
+        {
+          "n_metallic": 3,
+          "delta_n": "3/2 + sqrt(13)/2",
+          "lambda": [
+            3
+          ],
+          "lambda_prime": [
+            1,
+            1,
+            1
+          ],
+          "lhs_at_delta_n": "3",
+          "rhs": 0,
+          "difference": "3",
+          "verified": false
+        },
+        {
+          "n_metallic": 3,
+          "delta_n": "3/2 + sqrt(13)/2",
+          "lambda": [
+            2,
+            1
+          ],
+          "lambda_prime": [
+            2,
+            1
+          ],
+          "lhs_at_delta_n": "6",
+          "rhs": 0,
+          "difference": "6",
+          "verified": false
+        },
+        {
+          "n_metallic": 3,
+          "delta_n": "3/2 + sqrt(13)/2",
+          "lambda": [
+            4
+          ],
+          "lambda_prime": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "lhs_at_delta_n": "3",
+          "rhs": 0,
+          "difference": "3",
+          "verified": false
+        },
+        {
+          "n_metallic": 3,
+          "delta_n": "3/2 + sqrt(13)/2",
+          "lambda": [
+            3,
+            1
+          ],
+          "lambda_prime": [
+            2,
+            1,
+            1
+          ],
+          "lhs_at_delta_n": "9",
+          "rhs": 0,
+          "difference": "9",
+          "verified": false
+        },
+        {
+          "n_metallic": 3,
+          "delta_n": "3/2 + sqrt(13)/2",
+          "lambda": [
+            2,
+            2
+          ],
+          "lambda_prime": [
+            2,
+            2
+          ],
+          "lhs_at_delta_n": "6",
+          "rhs": 0,
+          "difference": "6",
+          "verified": false
+        }
+      ],
+      "all_verified": false,
+      "proposed_lean": "theorem metallic_integer_specialisation (n : \u2115) (\u03bb : Partition k) : (\u03c7^\u03bb (\u03b4 n) + \u03c7^{\u03bb.transpose} (\u03b4 n)) = \u2191(\u03bb.dim * n)"
+    },
+    "I3_algebraic_integer_landing": {
+      "statement": "\u03c7^\u03bb(\u03c3_i) at q = \u03b4_n lies in \u2124[\u03b4_n]",
+      "scope": "all partitions \u03bb, all metallic ratios \u03b4_n",
+      "results": [
+        {
+          "n_metallic": 1,
+          "lambda": [
+            3
+          ],
+          "A_lambda": 1,
+          "B_lambda": 0,
+          "chi_at_delta_n": "1/2 + sqrt(5)/2",
+          "rational_part": "1/2",
+          "sqrt_part_coefficient": "1/2",
+          "in_Z_delta_n": false
+        },
+        {
+          "n_metallic": 1,
+          "lambda": [
+            2,
+            1
+          ],
+          "A_lambda": 1,
+          "B_lambda": 1,
+          "chi_at_delta_n": "1",
+          "rational_part": "1",
+          "sqrt_part_coefficient": "0",
+          "in_Z_delta_n": true
+        },
+        {
+          "n_metallic": 1,
+          "lambda": [
+            1,
+            1,
+            1
+          ],
+          "A_lambda": 0,
+          "B_lambda": 1,
+          "chi_at_delta_n": "1/2 - sqrt(5)/2",
+          "rational_part": "1/2",
+          "sqrt_part_coefficient": "-1/2",
+          "in_Z_delta_n": false
+        },
+        {
+          "n_metallic": 1,
+          "lambda": [
+            4
+          ],
+          "A_lambda": 1,
+          "B_lambda": 0,
+          "chi_at_delta_n": "1/2 + sqrt(5)/2",
+          "rational_part": "1/2",
+          "sqrt_part_coefficient": "1/2",
+          "in_Z_delta_n": false
+        },
+        {
+          "n_metallic": 1,
+          "lambda": [
+            3,
+            1
+          ],
+          "A_lambda": 2,
+          "B_lambda": 1,
+          "chi_at_delta_n": "sqrt(5)/2 + 3/2",
+          "rational_part": "3/2",
+          "sqrt_part_coefficient": "1/2",
+          "in_Z_delta_n": false
+        },
+        {
+          "n_metallic": 1,
+          "lambda": [
+            2,
+            2
+          ],
+          "A_lambda": 1,
+          "B_lambda": 1,
+          "chi_at_delta_n": "1",
+          "rational_part": "1",
+          "sqrt_part_coefficient": "0",
+          "in_Z_delta_n": true
+        },
+        {
+          "n_metallic": 1,
+          "lambda": [
+            2,
+            1,
+            1
+          ],
+          "A_lambda": 1,
+          "B_lambda": 2,
+          "chi_at_delta_n": "3/2 - sqrt(5)/2",
+          "rational_part": "3/2",
+          "sqrt_part_coefficient": "-1/2",
+          "in_Z_delta_n": false
+        },
+        {
+          "n_metallic": 1,
+          "lambda": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "A_lambda": 0,
+          "B_lambda": 1,
+          "chi_at_delta_n": "1/2 - sqrt(5)/2",
+          "rational_part": "1/2",
+          "sqrt_part_coefficient": "-1/2",
+          "in_Z_delta_n": false
+        },
+        {
+          "n_metallic": 2,
+          "lambda": [
+            3
+          ],
+          "A_lambda": 1,
+          "B_lambda": 0,
+          "chi_at_delta_n": "1 + sqrt(2)",
+          "rational_part": "1 + sqrt(2)",
+          "sqrt_part_coefficient": "0",
+          "in_Z_delta_n": false
+        },
+        {
+          "n_metallic": 2,
+          "lambda": [
+            2,
+            1
+          ],
+          "A_lambda": 1,
+          "B_lambda": 1,
+          "chi_at_delta_n": "2",
+          "rational_part": "2",
+          "sqrt_part_coefficient": "0",
+          "in_Z_delta_n": true
+        },
+        {
+          "n_metallic": 2,
+          "lambda": [
+            1,
+            1,
+            1
+          ],
+          "A_lambda": 0,
+          "B_lambda": 1,
+          "chi_at_delta_n": "1 - sqrt(2)",
+          "rational_part": "1 - sqrt(2)",
+          "sqrt_part_coefficient": "0",
+          "in_Z_delta_n": false
+        },
+        {
+          "n_metallic": 2,
+          "lambda": [
+            4
+          ],
+          "A_lambda": 1,
+          "B_lambda": 0,
+          "chi_at_delta_n": "1 + sqrt(2)",
+          "rational_part": "1 + sqrt(2)",
+          "sqrt_part_coefficient": "0",
+          "in_Z_delta_n": false
+        },
+        {
+          "n_metallic": 2,
+          "lambda": [
+            3,
+            1
+          ],
+          "A_lambda": 2,
+          "B_lambda": 1,
+          "chi_at_delta_n": "sqrt(2) + 3",
+          "rational_part": "sqrt(2) + 3",
+          "sqrt_part_coefficient": "0",
+          "in_Z_delta_n": false
+        },
+        {
+          "n_metallic": 2,
+          "lambda": [
+            2,
+            2
+          ],
+          "A_lambda": 1,
+          "B_lambda": 1,
+          "chi_at_delta_n": "2",
+          "rational_part": "2",
+          "sqrt_part_coefficient": "0",
+          "in_Z_delta_n": true
+        },
+        {
+          "n_metallic": 2,
+          "lambda": [
+            2,
+            1,
+            1
+          ],
+          "A_lambda": 1,
+          "B_lambda": 2,
+          "chi_at_delta_n": "3 - sqrt(2)",
+          "rational_part": "3 - sqrt(2)",
+          "sqrt_part_coefficient": "0",
+          "in_Z_delta_n": false
+        },
+        {
+          "n_metallic": 2,
+          "lambda": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "A_lambda": 0,
+          "B_lambda": 1,
+          "chi_at_delta_n": "1 - sqrt(2)",
+          "rational_part": "1 - sqrt(2)",
+          "sqrt_part_coefficient": "0",
+          "in_Z_delta_n": false
+        },
+        {
+          "n_metallic": 3,
+          "lambda": [
+            3
+          ],
+          "A_lambda": 1,
+          "B_lambda": 0,
+          "chi_at_delta_n": "3/2 + sqrt(13)/2",
+          "rational_part": "3/2",
+          "sqrt_part_coefficient": "1/2",
+          "in_Z_delta_n": false
+        },
+        {
+          "n_metallic": 3,
+          "lambda": [
+            2,
+            1
+          ],
+          "A_lambda": 1,
+          "B_lambda": 1,
+          "chi_at_delta_n": "3",
+          "rational_part": "3",
+          "sqrt_part_coefficient": "0",
+          "in_Z_delta_n": true
+        },
+        {
+          "n_metallic": 3,
+          "lambda": [
+            1,
+            1,
+            1
+          ],
+          "A_lambda": 0,
+          "B_lambda": 1,
+          "chi_at_delta_n": "3/2 - sqrt(13)/2",
+          "rational_part": "3/2",
+          "sqrt_part_coefficient": "-1/2",
+          "in_Z_delta_n": false
+        },
+        {
+          "n_metallic": 3,
+          "lambda": [
+            4
+          ],
+          "A_lambda": 1,
+          "B_lambda": 0,
+          "chi_at_delta_n": "3/2 + sqrt(13)/2",
+          "rational_part": "3/2",
+          "sqrt_part_coefficient": "1/2",
+          "in_Z_delta_n": false
+        },
+        {
+          "n_metallic": 3,
+          "lambda": [
+            3,
+            1
+          ],
+          "A_lambda": 2,
+          "B_lambda": 1,
+          "chi_at_delta_n": "sqrt(13)/2 + 9/2",
+          "rational_part": "9/2",
+          "sqrt_part_coefficient": "1/2",
+          "in_Z_delta_n": false
+        },
+        {
+          "n_metallic": 3,
+          "lambda": [
+            2,
+            2
+          ],
+          "A_lambda": 1,
+          "B_lambda": 1,
+          "chi_at_delta_n": "3",
+          "rational_part": "3",
+          "sqrt_part_coefficient": "0",
+          "in_Z_delta_n": true
+        },
+        {
+          "n_metallic": 3,
+          "lambda": [
+            2,
+            1,
+            1
+          ],
+          "A_lambda": 1,
+          "B_lambda": 2,
+          "chi_at_delta_n": "9/2 - sqrt(13)/2",
+          "rational_part": "9/2",
+          "sqrt_part_coefficient": "-1/2",
+          "in_Z_delta_n": false
+        },
+        {
+          "n_metallic": 3,
+          "lambda": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "A_lambda": 0,
+          "B_lambda": 1,
+          "chi_at_delta_n": "3/2 - sqrt(13)/2",
+          "rational_part": "3/2",
+          "sqrt_part_coefficient": "-1/2",
+          "in_Z_delta_n": false
+        }
+      ],
+      "all_verified": false,
+      "proposed_lean": "theorem character_in_Z_delta_n (n : \u2115) (\u03bb : Partition k) : \u2203 a b : \u2124, \u03c7^\u03bb (\u03b4 n) = (a : \u211d) + (b : \u211d) * (\u03b4 n)"
+    },
+    "I5_silver_cost_coincidence": {
+      "statement": "For the n=2 LP cost vector, t_1(q) = t_2(q) \u21d4 q = \u03b4_silver",
+      "scope": "n=2 LP basis {\u03b3, \u03c3_0}",
+      "result": {
+        "t1": "2*q + 2/q",
+        "t2": "q**2 - 1/q**2",
+        "equation": "t_1(q) = t_2(q)",
+        "all_solutions": [
+          "1 + sqrt(2)"
+        ],
+        "expected": "\u03b4_silver = 1 + \u221a2",
+        "expected_in_solutions": true,
+        "proof_step_1": "t_1 = t_2  \u21d4  2(q+q\u207b\u00b9) = (q+q\u207b\u00b9)(q\u2212q\u207b\u00b9)",
+        "proof_step_2": "  divide by (q+q\u207b\u00b9) (positive for q > 0):",
+        "proof_step_3": "  q \u2212 q\u207b\u00b9 = 2  \u21d4  q\u00b2 \u2212 2q \u2212 1 = 0  \u21d4  q = 1 + \u221a2 = \u03b4_silver"
+      },
+      "verified": true,
+      "proposed_lean": "theorem silver_lp_coincidence : (2 * (q + 1/q) = q^2 - 1/q^2) \u2194 (q = 1 + Real.sqrt 2)"
+    },
+    "I6_pisot_property": {
+      "statement": "\u03b4_n is a Pisot number: minimal poly x\u00b2 \u2212 nx \u2212 1, Galois conjugate -1/\u03b4_n has |\u00b7| < 1",
+      "scope": "n \u2208 {1, 2, 3, 4, 5}",
+      "results": [
+        {
+          "n": 1,
+          "delta_n": "1/2 + sqrt(5)/2",
+          "minimal_polynomial": "x**2 - x - 1",
+          "expected_minpoly": "x\u00b2 \u2212 1x \u2212 1",
+          "minpoly_correct": true,
+          "conjugate_root": "1/2 - sqrt(5)/2",
+          "conjugate_abs": "-1/2 + sqrt(5)/2",
+          "conjugate_less_than_1": true,
+          "pisot": true
+        },
+        {
+          "n": 2,
+          "delta_n": "1 + sqrt(2)",
+          "minimal_polynomial": "x**2 - 2*x - 1",
+          "expected_minpoly": "x\u00b2 \u2212 2x \u2212 1",
+          "minpoly_correct": true,
+          "conjugate_root": "1 - sqrt(2)",
+          "conjugate_abs": "-1 + sqrt(2)",
+          "conjugate_less_than_1": true,
+          "pisot": true
+        },
+        {
+          "n": 3,
+          "delta_n": "3/2 + sqrt(13)/2",
+          "minimal_polynomial": "x**2 - 3*x - 1",
+          "expected_minpoly": "x\u00b2 \u2212 3x \u2212 1",
+          "minpoly_correct": true,
+          "conjugate_root": "3/2 - sqrt(13)/2",
+          "conjugate_abs": "-3/2 + sqrt(13)/2",
+          "conjugate_less_than_1": true,
+          "pisot": true
+        },
+        {
+          "n": 4,
+          "delta_n": "2 + sqrt(5)",
+          "minimal_polynomial": "x**2 - 4*x - 1",
+          "expected_minpoly": "x\u00b2 \u2212 4x \u2212 1",
+          "minpoly_correct": true,
+          "conjugate_root": "2 - sqrt(5)",
+          "conjugate_abs": "-2 + sqrt(5)",
+          "conjugate_less_than_1": true,
+          "pisot": true
+        },
+        {
+          "n": 5,
+          "delta_n": "5/2 + sqrt(29)/2",
+          "minimal_polynomial": "x**2 - 5*x - 1",
+          "expected_minpoly": "x\u00b2 \u2212 5x \u2212 1",
+          "minpoly_correct": true,
+          "conjugate_root": "5/2 - sqrt(29)/2",
+          "conjugate_abs": "-5/2 + sqrt(29)/2",
+          "conjugate_less_than_1": true,
+          "pisot": true
+        }
+      ],
+      "all_verified": true,
+      "proposed_lean": "theorem delta_n_pisot (n : \u2115) (hn : n \u2265 1) : IsPisot (delta n)",
+      "note": "Already proved unconditionally in Lean per PR #1999 (QOU.AlgebraicSubstrate.MetallicHierarchy); this probe re-verifies as a sanity check."
+    }
+  },
+  "what_we_can_now_lean_formalize": [
+    "(I.1) Galois-pair character sum identity \u2014 pure algebraic",
+    "(I.2) Metallic-q integer specialisation of (I.1)",
+    "(I.5) Silver LP cost-coincidence as algebraic identity",
+    "All three are sorry-free in Lean once the character formula is in place (via the AB_TABLE encoding)."
+  ]
+}

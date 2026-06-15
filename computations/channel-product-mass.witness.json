@@ -1,0 +1,706 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.12.3",
+  "computedAt": "2026-06-02T16:58:57.590128+00:00",
+  "commitSha": "77f2b68af2c9d52ae3d55c1cea746e8e9977db80",
+  "assertions": [
+    {
+      "name": "He-4 mass",
+      "computed": 3736.373,
+      "expected": 3728.401,
+      "passed": true,
+      "tolerance": 74.56802,
+      "unit": "MeV",
+      "source": "AME2020 + CODATA 2022"
+    },
+    {
+      "name": "Li-7 mass",
+      "computed": 6542.418,
+      "expected": 6535.367,
+      "passed": true,
+      "tolerance": 130.70734000000002,
+      "unit": "MeV",
+      "source": "AME2020 + CODATA 2022"
+    },
+    {
+      "name": "Be-9 mass",
+      "computed": 8410.604,
+      "expected": 8394.794,
+      "passed": true,
+      "tolerance": 167.89588,
+      "unit": "MeV",
+      "source": "AME2020 + CODATA 2022"
+    },
+    {
+      "name": "B-11 mass",
+      "computed": 10278.791,
+      "expected": 10255.103,
+      "passed": true,
+      "tolerance": 205.10206,
+      "unit": "MeV",
+      "source": "AME2020 + CODATA 2022"
+    },
+    {
+      "name": "C-12 mass",
+      "computed": 11209.118,
+      "expected": 11177.93,
+      "passed": true,
+      "tolerance": 223.5586,
+      "unit": "MeV",
+      "source": "AME2020 + CODATA 2022"
+    },
+    {
+      "name": "N-14 mass",
+      "computed": 13077.304,
+      "expected": 13043.781,
+      "passed": true,
+      "tolerance": 260.87562,
+      "unit": "MeV",
+      "source": "AME2020 + CODATA 2022"
+    },
+    {
+      "name": "O-16 mass",
+      "computed": 14945.49,
+      "expected": 14899.169,
+      "passed": true,
+      "tolerance": 297.98338,
+      "unit": "MeV",
+      "source": "AME2020 + CODATA 2022"
+    },
+    {
+      "name": "F-19 mass",
+      "computed": 17751.536,
+      "expected": 17696.901,
+      "passed": true,
+      "tolerance": 353.93802000000005,
+      "unit": "MeV",
+      "source": "AME2020 + CODATA 2022"
+    },
+    {
+      "name": "Ne-20 mass",
+      "computed": 18681.863,
+      "expected": 18622.835,
+      "passed": true,
+      "tolerance": 372.4567,
+      "unit": "MeV",
+      "source": "AME2020 + CODATA 2022"
+    },
+    {
+      "name": "Na-23 mass",
+      "computed": 21487.909,
+      "expected": 21414.835,
+      "passed": true,
+      "tolerance": 428.2967,
+      "unit": "MeV",
+      "source": "AME2020 + CODATA 2022"
+    },
+    {
+      "name": "Mg-24 mass",
+      "computed": 22418.236,
+      "expected": 22341.925,
+      "passed": true,
+      "tolerance": 446.8385,
+      "unit": "MeV",
+      "source": "AME2020 + CODATA 2022"
+    },
+    {
+      "name": "Al-27 mass",
+      "computed": 25224.281,
+      "expected": 25133.143,
+      "passed": true,
+      "tolerance": 502.66286,
+      "unit": "MeV",
+      "source": "AME2020 + CODATA 2022"
+    },
+    {
+      "name": "Si-28 mass",
+      "computed": 26154.608,
+      "expected": 26060.344,
+      "passed": true,
+      "tolerance": 521.2068800000001,
+      "unit": "MeV",
+      "source": "AME2020 + CODATA 2022"
+    },
+    {
+      "name": "P-31 mass",
+      "computed": 28960.654,
+      "expected": 28851.876,
+      "passed": true,
+      "tolerance": 577.03752,
+      "unit": "MeV",
+      "source": "AME2020 + CODATA 2022"
+    },
+    {
+      "name": "S-32 mass",
+      "computed": 29890.981,
+      "expected": 29781.794,
+      "passed": true,
+      "tolerance": 595.63588,
+      "unit": "MeV",
+      "source": "AME2020 + CODATA 2022"
+    },
+    {
+      "name": "Cl-35 mass",
+      "computed": 32697.026,
+      "expected": 32573.276,
+      "passed": true,
+      "tolerance": 651.4655200000001,
+      "unit": "MeV",
+      "source": "AME2020 + CODATA 2022"
+    },
+    {
+      "name": "Ar-40 mass",
+      "computed": 37378.79,
+      "expected": 37224.719,
+      "passed": true,
+      "tolerance": 744.49438,
+      "unit": "MeV",
+      "source": "AME2020 + CODATA 2022"
+    },
+    {
+      "name": "K-39 mass",
+      "computed": 36433.399,
+      "expected": 36294.464,
+      "passed": true,
+      "tolerance": 725.88928,
+      "unit": "MeV",
+      "source": "AME2020 + CODATA 2022"
+    },
+    {
+      "name": "Ca-40 mass",
+      "computed": 37363.726,
+      "expected": 37224.918,
+      "passed": true,
+      "tolerance": 744.4983599999999,
+      "unit": "MeV",
+      "source": "AME2020 + CODATA 2022"
+    },
+    {
+      "name": "Sc-45 mass",
+      "computed": 42045.49,
+      "expected": 41876.16,
+      "passed": true,
+      "tolerance": 837.5232000000001,
+      "unit": "MeV",
+      "source": "AME2020 + CODATA 2022"
+    },
+    {
+      "name": "Ti-48 mass",
+      "computed": 44851.535,
+      "expected": 44663.23,
+      "passed": true,
+      "tolerance": 893.2646000000001,
+      "unit": "MeV",
+      "source": "AME2020 + CODATA 2022"
+    },
+    {
+      "name": "V-51 mass",
+      "computed": 47657.581,
+      "expected": 47454.001,
+      "passed": true,
+      "tolerance": 949.08002,
+      "unit": "MeV",
+      "source": "AME2020 + CODATA 2022"
+    },
+    {
+      "name": "Cr-52 mass",
+      "computed": 48587.908,
+      "expected": 48382.274,
+      "passed": true,
+      "tolerance": 967.64548,
+      "unit": "MeV",
+      "source": "AME2020 + CODATA 2022"
+    },
+    {
+      "name": "Mn-55 mass",
+      "computed": 51393.954,
+      "expected": 51174.47,
+      "passed": true,
+      "tolerance": 1023.4894,
+      "unit": "MeV",
+      "source": "AME2020 + CODATA 2022"
+    },
+    {
+      "name": "Fe-56 mass",
+      "computed": 52324.281,
+      "expected": 52103.06,
+      "passed": true,
+      "tolerance": 1042.0611999999999,
+      "unit": "MeV",
+      "source": "AME2020 + CODATA 2022"
+    },
+    {
+      "name": "Co-59 mass",
+      "computed": 55130.326,
+      "expected": 54895.925,
+      "passed": true,
+      "tolerance": 1097.9185,
+      "unit": "MeV",
+      "source": "AME2020 + CODATA 2022"
+    },
+    {
+      "name": "Ni-58 mass",
+      "computed": 54184.935,
+      "expected": 53966.421,
+      "passed": true,
+      "tolerance": 1079.32842,
+      "unit": "MeV",
+      "source": "AME2020 + CODATA 2022"
+    },
+    {
+      "name": "Cu-63 mass",
+      "computed": 58866.699,
+      "expected": 58618.545,
+      "passed": true,
+      "tolerance": 1172.3709,
+      "unit": "MeV",
+      "source": "AME2020 + CODATA 2022"
+    },
+    {
+      "name": "Zn-64 mass",
+      "computed": 59797.026,
+      "expected": 59549.639,
+      "passed": true,
+      "tolerance": 1190.99278,
+      "unit": "MeV",
+      "source": "AME2020 + CODATA 2022"
+    },
+    {
+      "name": "Sn-120 mass",
+      "computed": 112166.5,
+      "expected": 111688.134,
+      "passed": true,
+      "tolerance": 2233.7626800000003,
+      "unit": "MeV",
+      "source": "AME2020 + CODATA 2022"
+    },
+    {
+      "name": "Pb-208 mass",
+      "computed": 194457.083,
+      "expected": 193729.016,
+      "passed": true,
+      "tolerance": 3874.58032,
+      "unit": "MeV",
+      "source": "AME2020 + CODATA 2022"
+    },
+    {
+      "name": "U-238 mass",
+      "computed": 222517.539,
+      "expected": 221742.888,
+      "passed": true,
+      "tolerance": 4434.85776,
+      "unit": "MeV",
+      "source": "AME2020 + CODATA 2022"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 13,
+  "computation": "channel-product-mass",
+  "scriptFile": "channel_product_mass.py",
+  "scriptHash": "a8968837f709",
+  "scriptCommitSha": "5a44813463430491fdc8cd8cd5a97a404b5e7e9d",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.12.3",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Exact per-nucleon channel product mass formula. Uses the T_{2,3} eigendecomposition of H₃(q) to factor the nuclear Garside element as a product of per-nucleon channel sums: a = -HA/2 (proton), b = -3(q²-1)(q²+1)²/(4q³) (neutron). Mass = constituents - α·(Z·ln|a| + N·ln|b|) with α = m_e × 8G. Zero fitted parameters.",
+  "contentBlock": "rem:q-integer-mass-table",
+  "parameters": {
+    "q₀": 1.1099785827513808,
+    "α (MeV)": 3.74445965488548,
+    "a (proton sum)": -0.10453014939781968,
+    "b (neutron sum)": -0.6340338211481932,
+    "ln|a|": -2.2582797382046413,
+    "ln|b|": -0.45565298030812956
+  },
+  "data": {
+    "results": [
+      {
+        "atom": "H",
+        "Z": 1,
+        "N": 0,
+        "A": 1,
+        "M_pred_MeV": 930.327,
+        "M_obs_MeV": 938.783,
+        "B_pred_MeV": 8.456,
+        "B_obs_MeV": 0.0,
+        "error_pct": -0.9007
+      },
+      {
+        "atom": "He",
+        "Z": 2,
+        "N": 2,
+        "A": 4,
+        "M_pred_MeV": 3736.373,
+        "M_obs_MeV": 3728.401,
+        "B_pred_MeV": 20.324,
+        "B_obs_MeV": 28.296,
+        "error_pct": 0.2138
+      },
+      {
+        "atom": "Li",
+        "Z": 3,
+        "N": 4,
+        "A": 7,
+        "M_pred_MeV": 6542.418,
+        "M_obs_MeV": 6535.367,
+        "B_pred_MeV": 32.193,
+        "B_obs_MeV": 39.244,
+        "error_pct": 0.1079
+      },
+      {
+        "atom": "Be",
+        "Z": 4,
+        "N": 5,
+        "A": 9,
+        "M_pred_MeV": 8410.604,
+        "M_obs_MeV": 8394.794,
+        "B_pred_MeV": 42.355,
+        "B_obs_MeV": 58.165,
+        "error_pct": 0.1883
+      },
+      {
+        "atom": "B",
+        "Z": 5,
+        "N": 6,
+        "A": 11,
+        "M_pred_MeV": 10278.791,
+        "M_obs_MeV": 10255.103,
+        "B_pred_MeV": 52.517,
+        "B_obs_MeV": 76.205,
+        "error_pct": 0.231
+      },
+      {
+        "atom": "C",
+        "Z": 6,
+        "N": 6,
+        "A": 12,
+        "M_pred_MeV": 11209.118,
+        "M_obs_MeV": 11177.93,
+        "B_pred_MeV": 60.973,
+        "B_obs_MeV": 92.161,
+        "error_pct": 0.279
+      },
+      {
+        "atom": "N",
+        "Z": 7,
+        "N": 7,
+        "A": 14,
+        "M_pred_MeV": 13077.304,
+        "M_obs_MeV": 13043.781,
+        "B_pred_MeV": 71.135,
+        "B_obs_MeV": 104.658,
+        "error_pct": 0.257
+      },
+      {
+        "atom": "O",
+        "Z": 8,
+        "N": 8,
+        "A": 16,
+        "M_pred_MeV": 14945.49,
+        "M_obs_MeV": 14899.169,
+        "B_pred_MeV": 81.298,
+        "B_obs_MeV": 127.619,
+        "error_pct": 0.3109
+      },
+      {
+        "atom": "F",
+        "Z": 9,
+        "N": 10,
+        "A": 19,
+        "M_pred_MeV": 17751.536,
+        "M_obs_MeV": 17696.901,
+        "B_pred_MeV": 93.166,
+        "B_obs_MeV": 147.801,
+        "error_pct": 0.3087
+      },
+      {
+        "atom": "Ne",
+        "Z": 10,
+        "N": 10,
+        "A": 20,
+        "M_pred_MeV": 18681.863,
+        "M_obs_MeV": 18622.835,
+        "B_pred_MeV": 101.622,
+        "B_obs_MeV": 160.65,
+        "error_pct": 0.317
+      },
+      {
+        "atom": "Na",
+        "Z": 11,
+        "N": 12,
+        "A": 23,
+        "M_pred_MeV": 21487.909,
+        "M_obs_MeV": 21414.835,
+        "B_pred_MeV": 113.491,
+        "B_obs_MeV": 186.564,
+        "error_pct": 0.3412
+      },
+      {
+        "atom": "Mg",
+        "Z": 12,
+        "N": 12,
+        "A": 24,
+        "M_pred_MeV": 22418.236,
+        "M_obs_MeV": 22341.925,
+        "B_pred_MeV": 121.947,
+        "B_obs_MeV": 198.257,
+        "error_pct": 0.3416
+      },
+      {
+        "atom": "Al",
+        "Z": 13,
+        "N": 14,
+        "A": 27,
+        "M_pred_MeV": 25224.281,
+        "M_obs_MeV": 25133.143,
+        "B_pred_MeV": 133.815,
+        "B_obs_MeV": 224.953,
+        "error_pct": 0.3626
+      },
+      {
+        "atom": "Si",
+        "Z": 14,
+        "N": 14,
+        "A": 28,
+        "M_pred_MeV": 26154.608,
+        "M_obs_MeV": 26060.344,
+        "B_pred_MeV": 142.271,
+        "B_obs_MeV": 236.536,
+        "error_pct": 0.3617
+      },
+      {
+        "atom": "P",
+        "Z": 15,
+        "N": 16,
+        "A": 31,
+        "M_pred_MeV": 28960.654,
+        "M_obs_MeV": 28851.876,
+        "B_pred_MeV": 154.139,
+        "B_obs_MeV": 262.917,
+        "error_pct": 0.377
+      },
+      {
+        "atom": "S",
+        "Z": 16,
+        "N": 16,
+        "A": 32,
+        "M_pred_MeV": 29890.981,
+        "M_obs_MeV": 29781.794,
+        "B_pred_MeV": 162.595,
+        "B_obs_MeV": 271.782,
+        "error_pct": 0.3666
+      },
+      {
+        "atom": "Cl",
+        "Z": 17,
+        "N": 18,
+        "A": 35,
+        "M_pred_MeV": 32697.026,
+        "M_obs_MeV": 32573.276,
+        "B_pred_MeV": 174.464,
+        "B_obs_MeV": 298.214,
+        "error_pct": 0.3799
+      },
+      {
+        "atom": "Ar",
+        "Z": 18,
+        "N": 22,
+        "A": 40,
+        "M_pred_MeV": 37378.79,
+        "M_obs_MeV": 37224.719,
+        "B_pred_MeV": 189.745,
+        "B_obs_MeV": 343.816,
+        "error_pct": 0.4139
+      },
+      {
+        "atom": "K",
+        "Z": 19,
+        "N": 20,
+        "A": 39,
+        "M_pred_MeV": 36433.399,
+        "M_obs_MeV": 36294.464,
+        "B_pred_MeV": 194.788,
+        "B_obs_MeV": 333.723,
+        "error_pct": 0.3828
+      },
+      {
+        "atom": "Ca",
+        "Z": 20,
+        "N": 20,
+        "A": 40,
+        "M_pred_MeV": 37363.726,
+        "M_obs_MeV": 37224.918,
+        "B_pred_MeV": 203.244,
+        "B_obs_MeV": 342.052,
+        "error_pct": 0.3729
+      },
+      {
+        "atom": "Sc",
+        "Z": 21,
+        "N": 24,
+        "A": 45,
+        "M_pred_MeV": 42045.49,
+        "M_obs_MeV": 41876.16,
+        "B_pred_MeV": 218.525,
+        "B_obs_MeV": 387.855,
+        "error_pct": 0.4044
+      },
+      {
+        "atom": "Ti",
+        "Z": 22,
+        "N": 26,
+        "A": 48,
+        "M_pred_MeV": 44851.535,
+        "M_obs_MeV": 44663.23,
+        "B_pred_MeV": 230.393,
+        "B_obs_MeV": 418.699,
+        "error_pct": 0.4216
+      },
+      {
+        "atom": "V",
+        "Z": 23,
+        "N": 28,
+        "A": 51,
+        "M_pred_MeV": 47657.581,
+        "M_obs_MeV": 47454.001,
+        "B_pred_MeV": 242.262,
+        "B_obs_MeV": 445.842,
+        "error_pct": 0.429
+      },
+      {
+        "atom": "Cr",
+        "Z": 24,
+        "N": 28,
+        "A": 52,
+        "M_pred_MeV": 48587.908,
+        "M_obs_MeV": 48382.274,
+        "B_pred_MeV": 250.718,
+        "B_obs_MeV": 456.352,
+        "error_pct": 0.425
+      },
+      {
+        "atom": "Mn",
+        "Z": 25,
+        "N": 30,
+        "A": 55,
+        "M_pred_MeV": 51393.954,
+        "M_obs_MeV": 51174.47,
+        "B_pred_MeV": 262.586,
+        "B_obs_MeV": 482.07,
+        "error_pct": 0.4289
+      },
+      {
+        "atom": "Fe",
+        "Z": 26,
+        "N": 30,
+        "A": 56,
+        "M_pred_MeV": 52324.281,
+        "M_obs_MeV": 52103.06,
+        "B_pred_MeV": 271.042,
+        "B_obs_MeV": 492.262,
+        "error_pct": 0.4246
+      },
+      {
+        "atom": "Co",
+        "Z": 27,
+        "N": 32,
+        "A": 59,
+        "M_pred_MeV": 55130.326,
+        "M_obs_MeV": 54895.925,
+        "B_pred_MeV": 282.911,
+        "B_obs_MeV": 517.312,
+        "error_pct": 0.427
+      },
+      {
+        "atom": "Ni",
+        "Z": 28,
+        "N": 30,
+        "A": 58,
+        "M_pred_MeV": 54184.935,
+        "M_obs_MeV": 53966.421,
+        "B_pred_MeV": 287.954,
+        "B_obs_MeV": 506.468,
+        "error_pct": 0.4049
+      },
+      {
+        "atom": "Cu",
+        "Z": 29,
+        "N": 34,
+        "A": 63,
+        "M_pred_MeV": 58866.699,
+        "M_obs_MeV": 58618.545,
+        "B_pred_MeV": 303.235,
+        "B_obs_MeV": 551.389,
+        "error_pct": 0.4233
+      },
+      {
+        "atom": "Zn",
+        "Z": 30,
+        "N": 34,
+        "A": 64,
+        "M_pred_MeV": 59797.026,
+        "M_obs_MeV": 59549.639,
+        "B_pred_MeV": 311.691,
+        "B_obs_MeV": 559.078,
+        "error_pct": 0.4154
+      },
+      {
+        "atom": "Sn",
+        "Z": 50,
+        "N": 70,
+        "A": 120,
+        "M_pred_MeV": 112166.5,
+        "M_obs_MeV": 111688.134,
+        "B_pred_MeV": 542.234,
+        "B_obs_MeV": 1020.6,
+        "error_pct": 0.4283
+      },
+      {
+        "atom": "Pb",
+        "Z": 82,
+        "N": 126,
+        "A": 208,
+        "M_pred_MeV": 194457.083,
+        "M_obs_MeV": 193729.016,
+        "B_pred_MeV": 908.373,
+        "B_obs_MeV": 1636.44,
+        "error_pct": 0.3758
+      },
+      {
+        "atom": "U",
+        "Z": 92,
+        "N": 146,
+        "A": 238,
+        "M_pred_MeV": 222517.539,
+        "M_obs_MeV": 221742.888,
+        "B_pred_MeV": 1027.057,
+        "B_obs_MeV": 1801.708,
+        "error_pct": 0.3493
+      }
+    ],
+    "statistics": {
+      "MAE_pct": 0.3522,
+      "worst_pct": 0.429,
+      "n_atoms": 32
+    },
+    "channel_sums": {
+      "a_proton": -0.10453014939781968,
+      "b_neutron": -0.6340338211481932,
+      "a_proton_formula": "-HA/2 = -(q-q⁻¹)/2",
+      "b_neutron_formula": "-3(q²-1)(q²+1)²/(4q³)"
+    }
+  },
+  "caveats": [
+    "The channel sum factorization a^Z · b^N assumes independent nucleon contributions. This misses inter-nucleon correlations (surface, Coulomb, pairing, shell effects). The 7-term BW formula captures these corrections. A full computation would use the per-generator vertex volumes with inter-nucleon crossing matrices, not the summed factorization."
+  ]
+}

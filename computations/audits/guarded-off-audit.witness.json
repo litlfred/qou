@@ -1,0 +1,45 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.12.3",
+  "computedAt": "2026-06-01T13:24:06.315553+00:00",
+  "commitSha": "417e511ad96a7416b3b52d2f93704cd0eee0d8f7",
+  "assertions": [
+    {
+      "name": "no_guarded_off_candidates",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.0,
+      "unit": "boolean (1.0 = no script contains guarded-off shapes)",
+      "source": "Closure gate: when this passes, every canonical-witness consumer runs unconditionally (or behind a gate the watcher has explicitly approved)."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 11,
+  "computation": "guarded-off-audit",
+  "scriptFile": "guarded_off_audit.py",
+  "scriptHash": "3f3f9bcf888f",
+  "scriptCommitSha": "48c4d805bfe3a20c894bdd7f4eed14b81246db56",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.12.3",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "I3 audit per local/compute-integration-watcher: scripts that contain `if False:` / `if 0:` blocks, env-var-defaulting-to-off gates, or explicit `# DEAD`/`# DISABLED`/`# LEGACY` markers where a canonical-witness consumer may have been disabled.  Candidates only — review the per-line context to confirm the block actually wraps a canonical-path call (vs being a debug toggle / leftover scaffolding).",
+  "contentBlock": "I3 antipattern (compute-integration-watcher.md §antipatterns)",
+  "parameters": {
+    "scripts_with_hits": 0,
+    "total_guard_lines_flagged": 0
+  },
+  "data": {
+    "rows": []
+  }
+}

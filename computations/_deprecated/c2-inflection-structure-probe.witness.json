@@ -1,0 +1,42 @@
+{
+  "engine": "numpy+scipy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-18T16:52:27.593566+00:00",
+  "commitSha": "e8174dd9f48a1134e850faf99364f624d4d4dc26",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 4032,
+  "computation": "c2-inflection-structure-probe",
+  "scriptFile": "probe_c2_inflection_structure.py",
+  "scriptHash": "c07c478f7b91",
+  "scriptCommitSha": "unknown",
+  "description": "Explore the structural meaning of C2 inflection (d²A/da² = 0). Tests 4 hypotheses for why this criterion picks the substrate m_p value at 0.07% precision.",
+  "contentBlock": "prop:flavor-dressed-mass-from-substrate-split",
+  "data": {
+    "a_C2_numerical": 0.40719544723565404,
+    "a_post_hoc_formula_at_q0": 0.38844820732799046,
+    "ratio_a_C2_to_a_post_hoc": 1.0482618777844794,
+    "H1_close_match_a_C2_to_integrand_feature": false,
+    "H2_min_pairwise_root_distance_at_a_C2": 1.6139331731365683,
+    "H4_substrate_candidates": {
+      "(4-q)/(4q+3)": 0.38844820732799046,
+      "1/(q+2)": 0.3215456213845117,
+      "(q-1)/(q+1)": 0.05212308588623144,
+      "1 - 1/q²": 0.18834626435791912,
+      "q/(q² + 1)": 0.49729054500859154,
+      "1/[3]_q": 0.32854682032399296,
+      "h·2": 0.4181206439797589,
+      "h/(2-h)": 0.11673219626367452
+    },
+    "inflection_d3A": -1.7434758417501413,
+    "h4_best_match": {
+      "form": "h·2",
+      "value": 0.4181206439797589
+    },
+    "verdicts": {
+      "H1_integrand_feature": "NO match",
+      "H2_picard_lefschetz_collision": "no collision",
+      "H4_substrate_laurent_best_match": "h·2"
+    }
+  }
+}

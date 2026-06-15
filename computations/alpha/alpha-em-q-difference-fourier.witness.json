@@ -1,0 +1,112 @@
+{
+  "engine": "python+sympy",
+  "engineVersion": "python 3.12.3",
+  "computedAt": "2026-06-01T18:15:11.746109+00:00",
+  "commitSha": "18ac6def75acf693c516f28e4a8e625e698c5307",
+  "assertions": [
+    {
+      "name": "alpha_em_habiro_is_bar_involution_fixed_point",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.0,
+      "source": "H = [2]_q·(1−h²α) satisfies H(1/q) = H(q) exactly over the FORMAL fibre variable (no reality assumed) — it is a fixed point of the bar involution q↦q⁻¹ (the framework/tower involution structure). This is the clean charge-conjugation sector PR #1602 requires; reality enters only at q₀."
+    },
+    {
+      "name": "alpha_em_habiro_zero_at_zeta4",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.0,
+      "source": "H(ζ_4) = H(q=i) = 0 exactly — α_EM's modular node, the dual of Q_β's ζ_4 pole (PR #1622)."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 569,
+  "computation": "alpha-em-q-difference-fourier",
+  "scriptFile": "alpha_em_q_difference_fourier.py",
+  "scriptHash": "b512c073edb2",
+  "scriptCommitSha": "f85a6e5f67328219a98e79758b687c5b4d9d2d31",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.12.3",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Apply the Q_β q-difference / root-of-unity / Fourier machinery (PRs #1593/#1602/#1622) to the α_EM Habiro element H = [2]_q·(1−h²α) = (q+q⁻¹)(1−(q−q⁻¹)²α). Computes the exact root-of-unity spectrum H(ζ_d) (the Fourier modes of σ_q), the special values H(ζ_1)=2 (classical α/4π), H(ζ_2)=−2 (bar mode), H(ζ_4)=0 (a ZERO — vs Q_β's pole), confirms H is a fixed point of the bar involution q↦q⁻¹ over the FORMAL fibre variable (the charge-conjugation-symmetric sector PR #1602 requires; not a reality assumption — reality enters only at the archimedean q₀ step), and reproduces the established h-Taylor recursion + q₀ truncation. Exact symbolic; sharpens the α_EM modular target, no closure of the open derived form.",
+  "contentBlock": "prop:em-coupling-bring-zero-mode",
+  "data": {
+    "habiro_element": {
+      "H": "[2]_q·(1−h²α) = (q+q⁻¹)(1−(q−q⁻¹)²α)",
+      "h_basis": "h = q − q⁻¹ (Hecke differential; distinct from Habiro u=q^{1/2} and ladder u_ladder=b·ℏ²)",
+      "is_bar_involution_fixed_point": true,
+      "level_note": "fibre-level: q,α formal (Im unconstrained), bar involution q↦q⁻¹ is the structural object; reality of observable component imposed ONLY at archimedean q₀ evaluation. Per CLAUDE.md Im(q) fibre-vs-observable."
+    },
+    "root_of_unity_spectrum": [
+      {
+        "d": 1,
+        "H_symbolic_cyclotomic": "2"
+      },
+      {
+        "d": 2,
+        "H_symbolic_cyclotomic": "-2"
+      },
+      {
+        "d": 3,
+        "H_symbolic_cyclotomic": "alpha*(-2 - (-1)**(1/3) + (-1)**(2/3)) - (-1)**(1/3) + exp(2*I*pi/3)"
+      },
+      {
+        "d": 4,
+        "H_symbolic_cyclotomic": "0"
+      },
+      {
+        "d": 5,
+        "H_symbolic_cyclotomic": "alpha*(-(-1)**(4/5) + (-1)**(1/5) + (-1)**(2/5)) - (-1)**(3/5)*(alpha + 1) + exp(2*I*pi/5)"
+      },
+      {
+        "d": 6,
+        "H_symbolic_cyclotomic": "alpha*(2 - (-1)**(2/3) + (-1)**(1/3)) - (-1)**(2/3) + exp(I*pi/3)"
+      },
+      {
+        "d": 7,
+        "H_symbolic_cyclotomic": "alpha*(-(-1)**(6/7) + (-1)**(1/7) + (-1)**(2/7)) - (-1)**(5/7)*(alpha + 1) + exp(2*I*pi/7)"
+      },
+      {
+        "d": 8,
+        "H_symbolic_cyclotomic": "alpha*(-2*(-1)**(3/4) + 2*(-1)**(1/4)) - (-1)**(3/4) + exp(I*pi/4)"
+      }
+    ],
+    "special_values": {
+      "H_zeta1": "2",
+      "H_zeta2": "-2",
+      "H_zeta4": "0",
+      "zeta4_is_zero": true,
+      "contrast_with_qbeta": "α_EM has a ZERO at ζ_4; Q_β had a POLE at ζ_4 (PR #1622) — dual modular nodes"
+    },
+    "h_taylor_coefficients": {
+      "c_0": "2",
+      "c_2": "1/4 - 2*alpha",
+      "c_4": "-alpha/4 - 1/64",
+      "c_6": "alpha/64 + 1/512",
+      "c_8": "-alpha/512 - 5/16384"
+    },
+    "q0_truncation": {
+      "exact": "2.010255512038413512",
+      "truncated_k8": "2.0102555120296129096",
+      "relative_error": "4.3778527e-12"
+    },
+    "interpretation": {
+      "alpha_em_is_clean_bar_even_case": true,
+      "qbeta_is_same_machinery_with_bar_odd_to_cancel": true,
+      "open": "α_EM next-order derived form (alpha-em ledger) — modular target sharpened (H(ζ_4)=0 node), not closed",
+      "no_fitted_form_proposed": true
+    }
+  }
+}

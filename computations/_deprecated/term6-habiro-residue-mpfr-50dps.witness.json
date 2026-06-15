@@ -1,0 +1,42 @@
+{
+  "computation": "term6-habiro-residue-mpfr-50dps",
+  "description": "Plan F \u2014 Term 6 Habiro residue tail at MPFR @ 50 dps. Re-evaluates the global Schur-Weyl symbolic sums \u03a3_{\u03bb\u22a23A} w_\u03bb(q) from schur_weyl_symbolic.py at q_0 to 50 dps via sympy.evalf(50). Replaces the prior 30-dps value inherited from habiro-residue-symbolic.witness.json.",
+  "computedAt": "2026-04-27T21:27:59.156076+00:00",
+  "precision": "mpfr_50dps",
+  "q_0_50dps": "1.1099785955541805752815940796095093779667618976181",
+  "m_e_mev_50dps": "0.51099894999999995182093925905064679682254791259766",
+  "results_by_atom": [
+    {
+      "atom": "A=1",
+      "partition_count": 3,
+      "global_sum_at_q0_50dps": "1.3321269520243567789928274585968629293002507280650",
+      "h3_additive_at_q0_50dps": "1.7745622163097029475210989972479958625294713167007",
+      "ratio_global_over_h3_50dps": "0.75067920402057586515459916906703888068016263073015",
+      "term6_b_pred_mev_50dps": "0.68071547375114662431009155263695522669682305422661"
+    },
+    {
+      "atom": "A=2",
+      "partition_count": 11,
+      "global_sum_at_q0_50dps": "0.083158588968703574035263810013138852397220628982015",
+      "h3_additive_at_q0_50dps": "4.1949624322717883263360370592055063666679218049985",
+      "ratio_global_over_h3_50dps": "0.019823440688995375076622392905104506957173490512589",
+      "term6_b_pred_mev_50dps": "0.042493951646489105186764360834903114469966849815457"
+    },
+    {
+      "atom": "A=3",
+      "partition_count": 30,
+      "global_sum_at_q0_50dps": "0.0011327078701722973167322372643972891003751726717857",
+      "h3_additive_at_q0_50dps": "9.9166485381205834144497473637725716657645740021293",
+      "ratio_global_over_h3_50dps": "0.00011422285117981701080720398272303598610268496929239",
+      "term6_b_pred_mev_50dps": "0.00057881253231478019336518939447540058014430036837556"
+    },
+    {
+      "atom": "A=4",
+      "partition_count": 77,
+      "global_sum_at_q0_50dps": "0.0000052888140349902449194110645565418415033284522651199",
+      "h3_additive_at_q0_50dps": "23.442383529368812697977501181331692518644644867428",
+      "ratio_global_over_h3_50dps": "0.00000022560905670553400809516025834073612120221722861019",
+      "term6_b_pred_mev_50dps": "0.0000027025784186252781592517959673946488143573221365216"
+    }
+  ]
+}

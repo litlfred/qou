@@ -1,0 +1,77 @@
+{
+  "computation": "beta-ew-delta-I-eigenvalues",
+  "computedAt": "2026-05-06T00:46:15.133563+00:00",
+  "description": "Symbolic eigenvalue extraction of β_EW(Δ_I^minimal) on the 2 Δ_I-invariant tableaux of partitions of 6 (b_+ = row shape (6), b_- = column shape (1^6)).  Eigenvalues exactly q^27 and -q^{-27} respectively — bar-anti-self-dual pair: ι(eig_+) = -eig_-.  Tests candidate cot θ_W readings from this 2-dim spectrum; structural conclusion: invariant subspace alone is insufficient to close Weinberg angle, the rotation lives in the 18-dim Δ_I-mixed complement.",
+  "reference_blocks": [
+    "def:ew-interface-knot",
+    "conj:hoefsmit-ew-cell-content",
+    "conj:weinberg-angle-categorical",
+    "conj:categorical-linking-operation"
+  ],
+  "audit": "docs/audits/2026-05-06-delta-I-interface-knot-refinement.md",
+  "delta_I_word": "σ_2 σ_4 σ_2",
+  "beta_EW_word": "σ_1^4 · (σ_2 σ_4 σ_2) · σ_3^6 · (σ_2 σ_4 σ_2) · σ_5^8 · (σ_2 σ_4 σ_2)",
+  "invariant_eigenvalues_R": {
+    "b_plus_row_tableau_shape_6": "q^27",
+    "b_minus_column_tableau_shape_1_to_6": "-q^{-27}"
+  },
+  "invariant_eigenvalues_at_q0": {
+    "b_plus": 16.729937179867242,
+    "b_minus": -0.05977308756445285
+  },
+  "bar_involution_pairing": {
+    "iota_of_eig_plus": "q^{-27}",
+    "minus_eig_minus": "q^{-27}",
+    "iota_eig_plus_equals_minus_eig_minus": true,
+    "interpretation": "bar-anti-self-dual pair — the photon (b_+) and fully-broken extreme (b_-) are interchanged by ι with a sign, consistent with the Higgs-vev rotation flipping orientation."
+  },
+  "candidate_cot_theta_W_readings": [
+    {
+      "form": "|eig_+| / |eig_-| = q_0^54",
+      "value": 279.8907980423043,
+      "rel_err": 152.52736038363335
+    },
+    {
+      "form": "(|eig_+|)^{1/27} = q_0",
+      "value": 1.1099785955541805,
+      "rel_err": 0.3911479582404534
+    },
+    {
+      "form": "q_0 / q_0^{-1} = q_0^2",
+      "value": 1.2320524825884311,
+      "rel_err": 0.32418726578744317
+    },
+    {
+      "form": "(eig_+ − eig_-)/(eig_+ + eig_-) = coth(27 ln q_0)",
+      "value": 1.0071712656496348,
+      "rel_err": 0.4475404445198653
+    },
+    {
+      "form": "(eig_+ + eig_-)/(eig_+ − eig_-) = tanh(27 ln q_0)",
+      "value": 0.9928797952302489,
+      "rel_err": 0.45537968662727263
+    },
+    {
+      "form": "log_q_0(|eig_+|^2 /|eig_-|^2) / 27 = 2",
+      "value": 2.0,
+      "rel_err": 0.09705186063622101
+    },
+    {
+      "form": "[27]_q / [1]_q",
+      "value": 79.7385363881234,
+      "rel_err": 42.7386548544999
+    }
+  ],
+  "best_candidate": {
+    "form": "log_q_0(|eig_+|^2 /|eig_-|^2) / 27 = 2",
+    "value": 2.0,
+    "rel_err": 0.09705186063622101
+  },
+  "codata_cot_theta_W": 1.8230678710486174,
+  "verdict": "no-clean-fit-on-2dim-invariant-only",
+  "next_step": "Extract eigenvalue spectrum of β_EW(Δ_I^minimal) on the 18 Δ_I-mixed tableaux (off-diagonal Hoefsmit blocks); the Weinberg rotation lives there, not in the 2-dim invariant subspace.  This is a substantive categorical-physics computation requiring the full Hoefsmit seminormal-form action on multi-dim irreps.",
+  "auditOnly": "docs/audits/2026-05-06-close-321-weinberg-gap.md",
+  "engine": "python",
+  "scriptFile": "beta_ew_delta_I_eigenvalues.py",
+  "commitSha": "610a6aa2bde5fabec35796ead6bbb0adb76f6533"
+}

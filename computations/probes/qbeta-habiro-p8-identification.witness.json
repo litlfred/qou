@@ -1,0 +1,424 @@
+{
+  "engine": "python+sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-31T22:42:21+00:00",
+  "commitSha": "auto",
+  "assertions": [
+    {
+      "name": "p8_irreducible_over_Q",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "sympy.factor on the parent audit's polynomial."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 1210,
+  "computation": "qbeta-habiro-p8-identification",
+  "scriptFile": "qbeta_habiro_p8_identification_probe.py",
+  "scriptHash": "auto",
+  "scriptCommitSha": "auto",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Identify the irreducible degree-8 polynomial P_8(u) appearing in the n-p Habiro element factorization \u03a3_m \u0394a_m\u00b7(u;u)_m = -u^15\u00b7(u-1)(u+1)\u00b7P_8(u). Tests 7 axes: roots/symmetries/cyclotomics/substrate-eval/known-categorical-polynomials/extension probes/integer-sequence patterns.",
+  "contentBlock": "prop:neutron-qvalue-symbolic",
+  "data": {
+    "P8_polynomial": {
+      "polynomial_string": "check_q**8 + 2*check_q**7 + 2*check_q**6 + 2*check_q**5 + 4*check_q**4 - 2*check_q**3 + 2*check_q**2 - 2*check_q + 1",
+      "coeffs_descending": [
+        1,
+        2,
+        2,
+        2,
+        4,
+        -2,
+        2,
+        -2,
+        1
+      ],
+      "factored_form": "check_q**8 + 2*check_q**7 + 2*check_q**6 + 2*check_q**5 + 4*check_q**4 - 2*check_q**3 + 2*check_q**2 - 2*check_q + 1",
+      "is_irreducible_over_Q": true,
+      "degree": 8,
+      "leading_coeff": 1,
+      "constant_coeff": 1,
+      "leading_eq_constant": true
+    },
+    "roots_analysis": {
+      "n_roots": 8,
+      "n_real": 0,
+      "n_on_unit_circle": 0,
+      "n_roots_of_unity": 0,
+      "modulus_min": 0.5499501636371791,
+      "modulus_max": 1.8183465814181197,
+      "classified_roots": [
+        {
+          "root_str": "(0.47814129429361024543539510291101717928162914629399835982325732187 - 0.27170956033196774853478179416141406429770019813612919507040839127j)",
+          "re": "0.478141294293610245435395102911017179281629146294",
+          "im": "-0.27170956033196774853478179416141406429770019813613",
+          "modulus": "0.5499501636371790582920871302254570952220971139909",
+          "argument_radians": "-0.51675580133049260033544719323",
+          "is_real": false,
+          "is_on_unit_circle": false,
+          "root_of_unity_order": null
+        },
+        {
+          "root_str": "(0.47814129429361024543539510291101717928162914629399835982325732187 + 0.27170956033196774853478179416141406429770019813612919507040839127j)",
+          "re": "0.478141294293610245435395102911017179281629146294",
+          "im": "0.27170956033196774853478179416141406429770019813613",
+          "modulus": "0.5499501636371790582920871302254570952220971139909",
+          "argument_radians": "0.51675580133049260033544719323",
+          "is_real": false,
+          "is_on_unit_circle": false,
+          "root_of_unity_order": null
+        },
+        {
+          "root_str": "(-0.21896290792248228302094129577590403193666432103087763523206643508 + 0.79536959015944454516302405230231099777909963798971325043600856781j)",
+          "re": "-0.21896290792248228302094129577590403193666432103088",
+          "im": "0.79536959015944454516302405230231099777909963798971",
+          "modulus": "0.82495911413613234872297565305731663627185957306642",
+          "argument_radians": "1.83943868886185232851153534423",
+          "is_real": false,
+          "is_on_unit_circle": false,
+          "root_of_unity_order": null
+        },
+        {
+          "root_str": "(-0.21896290792248228302094129577590403193666432103087763523206643508 - 0.79536959015944454516302405230231099777909963798971325043600856781j)",
+          "re": "-0.21896290792248228302094129577590403193666432103088",
+          "im": "-0.79536959015944454516302405230231099777909963798971",
+          "modulus": "0.82495911413613234872297565305731663627185957306642",
+          "argument_radians": "-1.83943868886185232851153534423",
+          "is_real": false,
+          "is_on_unit_circle": false,
+          "root_of_unity_order": null
+        },
+        {
+          "root_str": "(-1.5809188639267533904028181209984794107278586153312220712467905824 + 0.89837622176653006013447039688124032710425220901182621573129022451j)",
+          "re": "-1.5809188639267533904028181209984794107278586153312",
+          "im": "0.89837622176653006013447039688124032710425220901183",
+          "modulus": "1.8183465814181195862348832928517893328218986674994",
+          "argument_radians": "2.62483685225930063812719619005",
+          "is_real": false,
+          "is_on_unit_circle": false,
+          "root_of_unity_order": null
+        },
+        {
+          "root_str": "(-1.5809188639267533904028181209984794107278586153312220712467905824 - 0.89837622176653006013447039688124032710425220901182621573129022451j)",
+          "re": "-1.5809188639267533904028181209984794107278586153312",
+          "im": "-0.89837622176653006013447039688124032710425220901183",
+          "modulus": "1.8183465814181195862348832928517893328218986674994",
+          "argument_radians": "-2.62483685225930063812719619005",
+          "is_real": false,
+          "is_on_unit_circle": false,
+          "root_of_unity_order": null
+        },
+        {
+          "root_str": "(0.32174047755562542798836431386336626338289379006810134665559969557 + 1.1687029287248822335633354495824847349725476271140162297751267346j)",
+          "re": "0.3217404775556254279883643138633662633828937900681",
+          "im": "1.168702928724882233563335449582484734972547627114",
+          "modulus": "1.2121812861564226738605238673005689889036515857287",
+          "argument_radians": "1.30215396472794090995110803905",
+          "is_real": false,
+          "is_on_unit_circle": false,
+          "root_of_unity_order": null
+        },
+        {
+          "root_str": "(0.32174047755562542798836431386336626338289379006810134665559969557 - 1.1687029287248822335633354495824847349725476271140162297751267346j)",
+          "re": "0.3217404775556254279883643138633662633828937900681",
+          "im": "-1.168702928724882233563335449582484734972547627114",
+          "modulus": "1.2121812861564226738605238673005689889036515857287",
+          "argument_radians": "-1.30215396472794090995110803905",
+          "is_real": false,
+          "is_on_unit_circle": false,
+          "root_of_unity_order": null
+        }
+      ]
+    },
+    "symmetry_tests": {
+      "palindromic_strict": false,
+      "anti_palindromic_strict": false,
+      "bar_invariant_plus": false,
+      "bar_invariant_minus": false,
+      "P8_bar_form": "check_q**8 - 2*check_q**7 + 2*check_q**6 - 2*check_q**5 + 4*check_q**4 + 2*check_q**3 + 2*check_q**2 + 2*check_q + 1",
+      "coefficient_pattern": "+1 +2 +2 +2 +4 -2 +2 -2 +1",
+      "abs_value_pattern": [
+        1,
+        2,
+        2,
+        2,
+        4,
+        2,
+        2,
+        2,
+        1
+      ],
+      "abs_palindromic": true
+    },
+    "cyclotomic_analysis": {
+      "gcd_with_phi": {
+        "1": "1",
+        "2": "1",
+        "3": "1",
+        "4": "1",
+        "5": "1",
+        "6": "1",
+        "7": "1",
+        "8": "1",
+        "9": "1",
+        "10": "1",
+        "11": "1",
+        "12": "1",
+        "13": "1",
+        "14": "1",
+        "15": "1",
+        "16": "1",
+        "17": "1",
+        "18": "1",
+        "19": "1",
+        "20": "1",
+        "21": "1",
+        "22": "1",
+        "23": "1",
+        "24": "1"
+      },
+      "mod_phi": {
+        "3": {
+          "quotient": "check_q**6 + check_q**5 + check_q**3 + 3*check_q**2 - 6*check_q + 5",
+          "remainder": "-u - 4",
+          "remainder_degree": 1
+        },
+        "4": {
+          "quotient": "check_q**6 + 2*check_q**5 + check_q**4 + 3*check_q**2 - 2*check_q - 1",
+          "remainder": "2",
+          "remainder_degree": 0
+        },
+        "5": {
+          "quotient": "check_q**4 + check_q**3 + 2",
+          "remainder": "-5*check_q**3 - 4*check_q - 1",
+          "remainder_degree": 3
+        },
+        "6": {
+          "quotient": "check_q**6 + 3*check_q**5 + 4*check_q**4 + 3*check_q**3 + 3*check_q**2 - 2*check_q - 3",
+          "remainder": "4 - 3*check_q",
+          "remainder_degree": 1
+        },
+        "8": {
+          "quotient": "check_q**4 + 2*check_q**3 + 2*check_q**2 + 2*check_q + 3",
+          "remainder": "-4*check_q**3 - 4*check_q - 2",
+          "remainder_degree": 3
+        },
+        "12": {
+          "quotient": "check_q**4 + 2*check_q**3 + 3*check_q**2 + 4*check_q + 6",
+          "remainder": "5*check_q**2 - 6*check_q - 5",
+          "remainder_degree": 2
+        }
+      },
+      "divisible_by_phi_k": []
+    },
+    "substrate_numerical": {
+      "u_0": "1.05356473",
+      "q_0": "1.1099986402999729",
+      "P8_at_u0": "13.43361265858509329172980837025287307343596221727",
+      "P8_at_q0": "18.14889378764392775060587913562056218359707733186",
+      "P8_at_1": 10,
+      "P8_at_minus_1": 10,
+      "scalar_candidates": {
+        "h_q (= u - 1/u)": "0.10440615290906036689364117191",
+        "h_q^2": "0.0109006447652700945125372867125",
+        "[2]_q (= u + 1/u)": "2.00272330709093963310635882809",
+        "[3]_q": "3.01090064476527009451253728671",
+        "[2]_q^4": "16.0873239821784593664141916563",
+        "[2]_q^8": "258.801992907574203614286949299",
+        "(1 + q_0)^4": "19.821143318336444708514338816",
+        "(1 + q_0)^8": "392.877722446033486696204084103"
+      },
+      "ratio_tests": {
+        "h_q (= u - 1/u)": {
+          "value": "0.10440615290906036689364117191",
+          "p8/value": "128.6668676537292876704726",
+          "close_to_small_integer": null
+        },
+        "h_q^2": {
+          "value": "0.0109006447652700945125372867125",
+          "p8/value": "1232.368630283700221770055",
+          "close_to_small_integer": null
+        },
+        "[2]_q (= u + 1/u)": {
+          "value": "2.00272330709093963310635882809",
+          "p8/value": "6.707672802838709854811788",
+          "close_to_small_integer": null
+        },
+        "[3]_q": {
+          "value": "3.01090064476527009451253728671",
+          "p8/value": "4.461659232077509532564675",
+          "close_to_small_integer": null
+        },
+        "[2]_q^4": {
+          "value": "16.0873239821784593664141916563",
+          "p8/value": "0.8350433343337183987444494",
+          "close_to_small_integer": null
+        },
+        "[2]_q^8": {
+          "value": "258.801992907574203614286949299",
+          "p8/value": "0.05190691349653799269456031",
+          "close_to_small_integer": null
+        },
+        "(1 + q_0)^4": {
+          "value": "19.821143318336444708514338816",
+          "p8/value": "0.6777415632809497215010096",
+          "close_to_small_integer": null
+        },
+        "(1 + q_0)^8": {
+          "value": "392.877722446033486696204084103",
+          "p8/value": "0.03419285923097958979924928",
+          "close_to_small_integer": null
+        }
+      }
+    },
+    "categorical_family_match": {
+      "chebyshev_T8": {
+        "form": "128*check_q**8 - 256*check_q**6 + 160*check_q**4 - 32*check_q**2 + 1",
+        "matches_P8": false,
+        "P8_minus_T8": "-127*check_q**8 + 2*check_q**7 + 258*check_q**6 + 2*check_q**5 - 156*check_q**4 - 2*check_q**3 + 34*check_q**2 - 2*check_q"
+      },
+      "chebyshev_U8": {
+        "form": "256*check_q**8 - 448*check_q**6 + 240*check_q**4 - 40*check_q**2 + 1",
+        "matches_P8": false,
+        "P8_minus_U8": "-255*check_q**8 + 2*check_q**7 + 450*check_q**6 + 2*check_q**5 - 236*check_q**4 - 2*check_q**3 + 42*check_q**2 - 2*check_q"
+      },
+      "jones_trefoil_squared": {
+        "form": "check_q**8 - 2*check_q**7 + check_q**6 - 2*check_q**5 + 2*check_q**4 + check_q**2",
+        "matches_P8": false,
+        "P8_minus_J3sq": "4*check_q**7 + check_q**6 + 4*check_q**5 + 2*check_q**4 - 2*check_q**3 + check_q**2 - 2*check_q + 1"
+      },
+      "jones_2_5_torus_shift_u": {
+        "form": "-u**8 + check_q**7 - check_q**6 + check_q**5 + check_q**3",
+        "matches_P8": false
+      },
+      "u_squared_minus_1_to_4": {
+        "form": "check_q**8 - 4*check_q**6 + 6*check_q**4 - 4*check_q**2 + 1",
+        "matches_P8": false,
+        "P8_minus": "2*check_q**7 + 6*check_q**6 + 2*check_q**5 - 2*check_q**4 - 2*check_q**3 + 6*check_q**2 - 2*check_q"
+      },
+      "plus_one_8": {
+        "form": "check_q**8 + 8*check_q**7 + 28*check_q**6 + 56*check_q**5 + 70*check_q**4 + 56*check_q**3 + 28*check_q**2 + 8*check_q + 1",
+        "matches_P8": false
+      },
+      "phi4_to_4": {
+        "form": "check_q**8 + 4*check_q**6 + 6*check_q**4 + 4*check_q**2 + 1",
+        "matches_P8": false,
+        "P8_minus": "2*check_q**7 - 2*check_q**6 + 2*check_q**5 - 2*check_q**4 - 2*check_q**3 - 2*check_q**2 - 2*check_q"
+      },
+      "1_plus_u_plus_..._u8": {
+        "form": "check_q**8 + check_q**7 + check_q**6 + check_q**5 + check_q**4 + check_q**3 + check_q**2 + check_q + 1",
+        "matches_P8": false
+      },
+      "q_pochhammer_ratio_matches": "(none of (u;u)_a/(u;u)_b for a,b\u22646 match)",
+      "phi8_squared": {
+        "form": "check_q**8 + 2*check_q**4 + 1",
+        "matches_P8": false
+      },
+      "J_Hopf^2": {
+        "form": "check_q**4 + 2*check_q**2 + 1",
+        "matches_P8": false
+      },
+      "J_Hopf^4": {
+        "form": "check_q**8 + 4*check_q**6 + 6*check_q**4 + 4*check_q**2 + 1",
+        "matches_P8": false
+      }
+    },
+    "extension_probes": {
+      "P8_div_JHopf_sq": {
+        "quotient": "check_q**4 + 2*check_q**3 - 2*check_q + 3",
+        "remainder": "-4*check_q**2 - 2",
+        "is_exact_division": false
+      },
+      "P8_div_phi4": {
+        "quotient": "check_q**6 + 2*check_q**5 + check_q**4 + 3*check_q**2 - 2*check_q - 1",
+        "remainder": "2",
+        "is_exact_division": false
+      },
+      "P8_minus_um1_to_4": {
+        "raw_diff": "2*check_q**7 + 6*check_q**6 + 2*check_q**5 - 2*check_q**4 - 2*check_q**3 + 6*check_q**2 - 2*check_q",
+        "factored": "2*check_q*(check_q**6 + 3*check_q**5 + check_q**4 - check_q**3 - check_q**2 + 3*check_q - 1)",
+        "degree": 7
+      },
+      "P8_minus_up1_to_8": {
+        "raw_diff": "-6*check_q**7 - 26*check_q**6 - 54*check_q**5 - 66*check_q**4 - 58*check_q**3 - 26*check_q**2 - 10*check_q",
+        "factored": "-2*check_q*(3*check_q**6 + 13*check_q**5 + 27*check_q**4 + 33*check_q**3 + 29*check_q**2 + 13*check_q + 5)"
+      },
+      "reciprocal_P8_u8": {
+        "form": "check_q**8 - 2*check_q**7 + 2*check_q**6 - 2*check_q**5 + 4*check_q**4 + 2*check_q**3 + 2*check_q**2 + 2*check_q + 1",
+        "equals_P8": false,
+        "equals_neg_P8": false
+      },
+      "even_odd_decomposition": {
+        "even_part": "check_q**8 + 2*check_q**6 + 4*check_q**4 + 2*check_q**2 + 1",
+        "odd_part": "2*check_q**7 + 2*check_q**5 - 2*check_q**3 - 2*check_q",
+        "even_factored": "check_q**8 + 2*check_q**6 + 4*check_q**4 + 2*check_q**2 + 1",
+        "odd_factored": "2*check_q*(check_q - 1)*(check_q + 1)*(check_q**2 + 1)**2"
+      }
+    },
+    "integer_sequence_pattern": {
+      "raw": [
+        1,
+        2,
+        2,
+        2,
+        4,
+        -2,
+        2,
+        -2,
+        1
+      ],
+      "absolute_values": [
+        1,
+        2,
+        2,
+        2,
+        4,
+        2,
+        2,
+        2,
+        1
+      ],
+      "differences": [
+        1,
+        0,
+        0,
+        2,
+        -6,
+        4,
+        -4,
+        3
+      ],
+      "sign_pattern": [
+        "+",
+        "+",
+        "+",
+        "+",
+        "+",
+        "-",
+        "+",
+        "-",
+        "+"
+      ],
+      "sum_of_coeffs": 10,
+      "alternating_sum": 10,
+      "abs_max": 4,
+      "abs_min": 1,
+      "matches_catalan_first_9": false,
+      "matches_powers_of_2": false,
+      "matches_pascal_row_8": false
+    }
+  }
+}

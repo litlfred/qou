@@ -1,0 +1,51 @@
+{
+  "engine": "python+sympy",
+  "computedAt": "2026-06-01T03:36:08+00:00",
+  "computation": "qbeta-habiro-delta6-partition",
+  "scriptFile": "qbeta_habiro_delta6_partition_check.py",
+  "scriptHash": "auto",
+  "scriptCommitSha": "auto",
+  "precisionMetadata": {
+    "compute_dps": 50,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0"
+  },
+  "description": "Check whether -\u0394a_6 = u^4 + 3u^3 + 5u^2 + 8u + 15 (coeffs (1,3,5,8,15)) has a partition-function or other categorical interpretation, paralleling the a_8 = p(1..5) match.",
+  "contentBlock": "prop:neutron-qvalue-symbolic",
+  "data": {
+    "candidates_tried": {
+      "p_b=1(n=0..4)": "[1, 1, 2, 3, 5]",
+      "p_b=2(n=0..4)": "[1, 2, 5, 10, 20]",
+      "p_b=3(n=0..4)": "[1, 3, 9, 22, 51]",
+      "p_b=4(n=0..4)": "[1, 4, 14, 40, 105]",
+      "p_b=5(n=0..4)": "[1, 5, 20, 65, 190]",
+      "p_atmost_1_parts(n=0..7)": "[1, 1, 1, 1, 1, 1, 1, 1]",
+      "p_atmost_2_parts(n=0..7)": "[1, 1, 2, 2, 3, 3, 4, 4]",
+      "p_atmost_3_parts(n=0..7)": "[1, 1, 2, 3, 4, 5, 7, 8]",
+      "p_atmost_4_parts(n=0..7)": "[1, 1, 2, 3, 5, 6, 9, 11]",
+      "p_atmost_5_parts(n=0..7)": "[1, 1, 2, 3, 5, 7, 10, 13]",
+      "partition_p(n=0..14)": "[1, 1, 2, 3, 5, 7, 11, 15, 22, 30, 42, 56, 77, 101, 135]",
+      "sigma_1_of_1_to_15": "[1, 3, 4, 7, 6, 12, 8, 15, 13, 18, 12, 28, 14, 24, 24]",
+      "Phi_5": "check_q**4 + check_q**3 + check_q**2 + check_q + 1",
+      "neg_delta_a_6_minus_Phi_5": "2*check_q**3 + 4*check_q**2 + 7*check_q + 14",
+      "diff_phi5_factored": "(check_q + 2)*(2*check_q**2 + 7)"
+    }
+  },
+  "assertions": [
+    {
+      "name": "neg_delta_a_6_at_u_eq_1_is_32",
+      "computed": 32,
+      "expected": 32,
+      "passed": true,
+      "tolerance": 0,
+      "source": "u^4 + 3u^3 + 5u^2 + 8u + 15 evaluated at u=1 = 32 = 2^5."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 94
+}

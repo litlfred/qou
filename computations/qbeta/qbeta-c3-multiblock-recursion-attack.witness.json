@@ -1,0 +1,58 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-03T20:58:21.403138+00:00",
+  "commitSha": "124a2633f52723b208e22e912a3909509fdf5564",
+  "assertions": [
+    {
+      "name": "delta_tau_M_rational_in_q",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 18,
+  "computation": "qbeta-c3-multiblock-recursion-attack",
+  "scriptFile": "qbeta_c3_multiblock_recursion_attack.py",
+  "scriptHash": "e03423a5bf16",
+  "scriptCommitSha": "124a2633f52723b208e22e912a3909509fdf5564",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.4",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Multi-block Δτ_M probe (NOT a c_3 derivation). Combines the exact pre-archimedean per-block closed forms χ_λ(Δ_T_β)(q) (from qbeta-per-block-paper-closed-forms.witness.json) with a NON-CANONICAL rational surrogate for the Wenzl y_λ(q) weights (canonical y_λ involves √q) to emit Δτ_M(q) as a rational function of q. Reports: (1) the closed form, (2) its Taylor expansion around q=1 in w=q−1 to 12 orders, (3) the cross-anchor swing of Δτ_M between q_proton and q_muon (the NEAR-MATCH diagnostic for the Δτ_M object — NOT for c_3, which requires the open f-map). c_3 is explicitly recorded as NOT_DERIVED. NO FITS.",
+  "contentBlock": "conj:qbeta-precision-ladder",
+  "data": {
+    "delta_tau_M_symbolic_q": "(-q**11 + q**10 - 2*q**9 + q**8 + q**6 - q**5 - q**3 + 2*q**2 - q + 1)/(4*q**5*(q**2 + q + 1))",
+    "taylor_coeffs_w_expansion": {
+      "0": "0",
+      "1": "-5/6",
+      "2": "5/6",
+      "3": "-41/9",
+      "4": "149/18",
+      "5": "-1729/108",
+      "6": "111/4",
+      "7": "-3665/81",
+      "8": "5690/81",
+      "9": "-101815/972",
+      "10": "146771/972",
+      "11": "-616733/2916"
+    },
+    "delta_tau_M_q_proton": "-0.0866343003075774469231990712235120102643082384354311681854708",
+    "delta_tau_M_q_muon": "-0.0866343103039084848769073653295830185285068338931397380935875",
+    "cross_anchor_swing": "0.00000000999633103795370829410607100826419859545770856990811670559882",
+    "c_3_value": "NOT_DERIVED",
+    "c_3_status": "NEAR-MATCH (open). The Δτ_M closed form computed here does NOT yield c_3 directly. The f-map transform between Δτ_M's w = q-1 expansion and the Q_β ladder's u = b·ℏ_q² expansion is the missing keystone (open). Per the 1ppQ-Q_β ledger, c_3 = -2 remains a NEAR-MATCH (flip-flop history #1-5) — NOT wired as Taylor-exact. Also note: the y_λ used here is a NON-CANONICAL rational surrogate (canonical y_λ involves √q).",
+    "structural_note": "Δτ_M(q) is a rational function of q (no √ — symbolic in q²). Per the per-block witness, the linear-in-h structure of (2,1) and the symmetric (3) ↔ (1,1,1) ↔ q ↔ 1/q pairing under antipode are exact at the rational-function level. The cross-anchor swing IS the order-of-magnitude diagnostic for whether c_3 derives from this object exactly or is a near-match."
+  }
+}

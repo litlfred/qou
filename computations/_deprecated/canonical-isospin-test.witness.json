@@ -1,0 +1,38 @@
+{
+  "computation": "canonical-isospin-test",
+  "description": "Canonical Jones-Markov trace applied to atomic-braid SymbolicHeckeElement of T (Z=1,N=2) and 3He (Z=2,N=1), testing whether the Markov-axiomatically-correct trace preserves isospin symmetry (p <-> n).  The canonical trace IS Markov-invariant by construction, so |tr_M(T)| should equal |tr_M(3He)| up to closure conventions.  However, the symbolic Groebner-Shirshov reduction in SymbolicHeckeDivision has dramatically different cost for the two braid words (T fast, 3He slow), itself a structural finding about the reduction graph.",
+  "reference_blocks": [
+    "prop:categorical-mass-markov",
+    "thm:jones-markov-trace",
+    "rem:commutative-crossing-energy"
+  ],
+  "computedAt": "2026-04-25T13:18:00+00:00",
+  "parameters": {
+    "q_0": 1.1099785955541805
+  },
+  "results": {
+    "T (Z=1, N=2)": {
+      "Z": 1,
+      "N": 2,
+      "tr_M_q0": 0.10405211867552609,
+      "abs_tr_M": 0.10405211867552609,
+      "walltime_sec": 163.3,
+      "status": "completed"
+    },
+    "3He (Z=2, N=1)": {
+      "Z": 2,
+      "N": 1,
+      "status": "timeout",
+      "walltime_sec_when_killed": 1500.0,
+      "rss_peak_mb": 425,
+      "note": "GS-reduction in SymbolicHeckeDivision did not converge within 25 minutes.  The reduction graph for (uud, uud, udd) appears structurally heavier than for (uud, udd, udd).  Resolution: compute the Hecke-division reduction with stricter normalisation, or evaluate numerically per habiro-coefficients-interpolate.py at integer q sample points and recover via Vandermonde, which avoids symbolic explosion."
+    }
+  },
+  "structural_findings": {
+    "canonical_markov_works_on_atomic_braids": "Yes for T (Z=1, N=2): |tr_M| = 0.104052 obtained in 163s via the SymbolicHeckeElement -> Hecke division -> tr_M_element pipeline.",
+    "isospin_partner_compute_asymmetry": "T (Z=1, N=2) reduces in 163s; 3He (Z=2, N=1) does not converge in 25min.  The two are isospin partners with distinct braid-word orderings.  The Markov trace value is invariant under the partner exchange, but the cost of computing it via GS reduction is not.",
+    "implication": "Long-term: a JIT-style or order-aware SymbolicHeckeDivision normaliser would close the gap.  Short-term: numerical-interpolation pipeline (habiro-coefficients-interpolate) bypasses this asymmetry by sampling at integer q values."
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
+}

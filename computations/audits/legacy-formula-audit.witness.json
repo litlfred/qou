@@ -1,0 +1,46 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.12.3",
+  "computedAt": "2026-06-01T13:27:56.799723+00:00",
+  "commitSha": "417e511ad96a7416b3b52d2f93704cd0eee0d8f7",
+  "assertions": [
+    {
+      "name": "no_i10_violations",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.0,
+      "unit": "boolean (1.0 = no script has both legacy + canonical called)",
+      "source": "Closure gate: when this passes, no script keeps a legacy formula reachable alongside its canonical counterpart."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 11,
+  "computation": "legacy-formula-audit",
+  "scriptFile": "legacy_formula_audit.py",
+  "scriptHash": "6549759454a0",
+  "scriptCommitSha": "e1379b1a4113d77639230e2e5d49985136af4bd7",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.12.3",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "I10 audit (heuristic) per local/compute-integration-watcher: scripts where a `<name>_legacy` / `_old` / `_v1` / `_v0` / `_pre_canonical` / `_deprecated` / `_orig` / `_original` / `_first` function coexists with a canonical sibling (`<name>`), AND both are still CALLED in the script body.  Strategy 2 also flags banner-marked defs (`# LEGACY`, `# DEPRECATED`, `# OBSOLETE`, `# SUPERSEDED`, `# OLD` above a `def`).  Per-script evidence in `rows[]` lets reviewers triage real I10 violations from intentional A/B cross-validation scripts.",
+  "contentBlock": "I10 antipattern (compute-integration-watcher.md §antipatterns)",
+  "parameters": {
+    "scripts_with_signals": 0,
+    "i10_violation_count": 0,
+    "i10_candidate_count": 0
+  },
+  "data": {
+    "rows": []
+  }
+}

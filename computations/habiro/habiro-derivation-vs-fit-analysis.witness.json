@@ -1,0 +1,46 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-05-28T04:41:01.210056+00:00",
+  "commitSha": "bc44957b45c651c81245f367871ed18da68f5d13",
+  "assertions": [
+    {
+      "name": "R_alg_is_algebraic",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "R_alg(q) computed as exact polynomial ratio in u"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 910,
+  "computation": "habiro-derivation-vs-fit-analysis",
+  "scriptFile": "habiro_derivation_vs_fit.py",
+  "scriptHash": "bdf484a39e56",
+  "scriptCommitSha": "3168ca553cfb4a3a9ca6c5137318a609a2a483f6",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
+  "description": "Symbolic analysis of Habiro correction: the bridge R_alg(q) is algebraic but S = R_alg/(Vol/ℏ²) is transcendental. The third-factor coefficient is fitted: tightest numerical fit 1/1256, structural near-match 1/1260 = 1/(C(9,4)·10). Neither is derived.",
+  "auditOnly": "docs/audits/2026-05-28-habiro-product-correction-7ppm.md",
+  "data": {
+    "R_alg_deg_numer": 258,
+    "R_alg_deg_denom": 129,
+    "derived": [
+      "Pochhammer factorisation",
+      "bridge = ⟨Π(1+u^k)⟩",
+      "R_alg(q) exact"
+    ],
+    "fitted": [
+      "S correction",
+      "c₂=29/30",
+      "c₃ tightest=1/1256",
+      "c₃ structural=1/1260"
+    ],
+    "reason": "Vol(4₁) is transcendental; S = R_alg/(Vol/ℏ²) inherits it"
+  }
+}

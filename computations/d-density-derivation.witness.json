@@ -1,0 +1,86 @@
+{
+  "engine": "closed-form",
+  "engineVersion": "python 3.12.3",
+  "computedAt": "2026-06-02T17:07:38.812508+00:00",
+  "commitSha": "77f2b68af2c9d52ae3d55c1cea746e8e9977db80",
+  "assertions": [
+    {
+      "name": "ρ_F(D) from weight criterion matches paper (ρ_F = m_e)",
+      "computed": 0.51099895,
+      "expected": 0.51099895,
+      "passed": true,
+      "tolerance": 1e-12,
+      "source": "Plancherel-weighted χ contributions"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 9,
+  "computation": "d-density-derivation",
+  "scriptFile": "d_density_derivation.py",
+  "scriptHash": "02a6e96c32c1",
+  "scriptCommitSha": "5a44813463430491fdc8cd8cd5a97a404b5e7e9d",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.12.3",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Derivation of Deuterium's Frobenius packing density ρ_F(D) from n_chir(β_D), using the closed-form χ_sym/χ_alt characters from docs/chi-sym-alt-theorem.md. Both the character-criterion (I) and the Plancherel-weight-criterion (II) readings of 'alt ∈ Λ' are computed.",
+  "contentBlock": "conj:mass-volume-factorization",
+  "parameters": {
+    "q_0": 1.1099785827513808,
+    "H_A": 0.20906029879563937,
+    "m_e_MeV": 0.51099895
+  },
+  "data": {
+    "factor_counts": {
+      "n_sigma": 11,
+      "n_sigma_inv": 7,
+      "n_ud": 5,
+      "expected_n_ud": 5,
+      "word_length": 23
+    },
+    "characters_closed_form": {
+      "chi_sym": 1.5597586581034164,
+      "chi_alt": -0.676925091699912,
+      "chi_sym_times_chi_alt": -1.0558397726663868
+    },
+    "reading_I_character": {
+      "chi_alt_nonzero": true,
+      "n_chir": 2,
+      "rho_F_MeV": 1.0219979,
+      "verdict": "alt ∈ Λ (character non-vanishing)"
+    },
+    "reading_II_weight": {
+      "w_sym": 0.16546138503360688,
+      "w_alt": 0.16546138503360688,
+      "contribution_sym": 0.25807982788795136,
+      "contribution_alt": -0.11200496323666878,
+      "ratio_alt_over_sym": 0.4339934823782398,
+      "alt_saturated": false,
+      "n_chir": 1,
+      "rho_F_MeV": 0.51099895,
+      "verdict": "alt ∉ Λ (weight suppressed vs sym)"
+    },
+    "paper_claim": {
+      "rho_F_MeV": 0.51099895,
+      "n_chir": 1,
+      "source": "rem:frobenius-packing-density §topological triggers"
+    },
+    "lean_uniqueness_ref": {
+      "generic": "qou:QOU.BraidKnot.@nucleus_uniqueness_closed (3*A)",
+      "framework_doc": "content/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
+      "note": "Certifies T_w uniqueness at the abstract empty-constraint SDP level (PR #1537 parameterised module). Workplan: docs/workplans/2026-05-31-witness-lean-uniqueness-ref-wiring.md."
+    }
+  },
+  "caveats": [
+    "The rule ρ_F(P) = m_e · n_chir(P) is a conjecture (conj:mass-volume-factorization). The criterion for 'alt ∈ Λ' is ambiguous in the manuscript between character non-vanishing and Plancherel-weight order. Both readings are reported."
+  ]
+}

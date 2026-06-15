@@ -1,0 +1,104 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-16T01:53:07.636292+00:00",
+  "commitSha": "c8a8e81c03e29a6da84a2e5eba429b7552188785",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "q-beta-cos-sweep-three-irrep",
+  "scriptFile": "probe_q_beta_cos_sweep_and_three_irrep.py",
+  "scriptHash": "0dcdeac968a2",
+  "scriptCommitSha": "f4a123237d4141575fa035ec5396c4ae9bc89522",
+  "description": "Two-part probe extending PR #655's cos-resummation finding: (A) cos vs cos_q across a q-sweep to verify the classical-cos preference is q_0-independent (it is — both forms degenerate at q→1, gap grows quadratically); (B) 3-irrep extended cos with natural eigenphases {log(q)/2, (z-1)h/2, -log(q)/2} for {V_(3), V_(2,1), V_(1,1,1)}. The 3-irrep extension does NOT improve over the V_(2,1)-only cos because the 1-dim irreps carry no angular structure per character. Implication: the 305 ppm residual is at the 2-wrap (N=1) tower depth, not in additional 1-wrap eigenphase contributions.",
+  "auditOnly": "Follow-up to PR #655's cos resummation + per-irrep probe. Confirms cos > cos_q across the q-sweep and rules out a 3-irrep eigenphase extension as the closure path.",
+  "data": {
+    "q_0_50dps": "1.1099785955541805752815940796095093779932822799587",
+    "q_sweep": [
+      {
+        "q": "1.001",
+        "alpha": "-0.0004997503121566129046836871689809641593268781062841",
+        "cos_classical": "0.99999987512481534865269017263834771839420703766591",
+        "cos_q": "0.99999987512487772382868957045714604429679987946845",
+        "gap_ppm_cos_q_vs_cos_cl": 6.237518378851041e-08
+      },
+      {
+        "q": "1.01",
+        "alpha": "-0.0049753090984550048167231361818021900064628596683044",
+        "cos_classical": "0.99998762317521846496734113574370037777998770283715",
+        "cos_q": "0.9999876237878925450654382231013746555536600940731",
+        "gap_ppm_cos_q_vs_cos_cl": 0.0006126816631516887
+      },
+      {
+        "q": "1.05",
+        "alpha": "-0.024412021985810480039949907903521304783964207944155",
+        "cos_classical": "0.99970204138901357861942235125578594678265267416616",
+        "cos_q": "0.99970239554577389988939998053503006346481984898497",
+        "gap_ppm_cos_q_vs_cos_cl": 0.3542623158288192
+      },
+      {
+        "q": "1.075",
+        "alpha": "-0.036215509267451649637397116046773384318583992420031",
+        "cos_classical": "0.99934429011602424012133675843989518362201844230593",
+        "cos_q": "0.99934599974425115931604449382366869629793868263668",
+        "gap_ppm_cos_q_vs_cos_cl": 1.7107499825917916
+      },
+      {
+        "q": "1.1",
+        "alpha": "-0.047781415992265838773115749378184654614760370105387",
+        "cos_classical": "0.99885868530885644636385918446131899584925522220143",
+        "cos_q": "0.99886384226347575978769037254198093110661215036066",
+        "gap_ppm_cos_q_vs_cos_cl": 5.162847052502572
+      },
+      {
+        "q": "1.10998",
+        "alpha": "-0.052336764768190205734756984814111138506048222313676",
+        "cos_classical": "0.99863074411789115610833880081180306895564509324643",
+        "cos_q": "0.99863815153117879235349930641286798513266972779906",
+        "gap_ppm_cos_q_vs_cos_cl": 7.417569838768933
+      },
+      {
+        "q": "1.125",
+        "alpha": "-0.059129990456676595188818525380151468948485894081516",
+        "cos_classical": "0.9982523314092575867038269633735738742837907756672",
+        "cos_q": "0.99826435827833082849779467592180524123259748465225",
+        "gap_ppm_cos_q_vs_cos_cl": 12.047924853091166
+      },
+      {
+        "q": "1.15",
+        "alpha": "-0.070279530686324293664255480398993795401585574855106",
+        "cos_classical": "0.99753141010839164910419165018562371337537454694511",
+        "cos_q": "0.99755525347075847955366845476899019103466171610915",
+        "gap_ppm_cos_q_vs_cos_cl": 23.90236750965028
+      },
+      {
+        "q": "1.175",
+        "alpha": "-0.081246604403855534078230121614295374729850743398647",
+        "cos_classical": "0.99670130979292781345170807744801839399741571858241",
+        "cos_q": "0.99674357708644577184504315370193006340647770643577",
+        "gap_ppm_cos_q_vs_cos_cl": 42.40718167285216
+      },
+      {
+        "q": "1.2",
+        "alpha": "-0.092046240415805647757171702866532977674542550833669",
+        "cos_classical": "0.99576673494441842004741199184251943657637879543565",
+        "cos_q": "0.9958357862296132884308303326232981970071165777999",
+        "gap_ppm_cos_q_vs_cos_cl": 69.34484028402764
+      }
+    ],
+    "per_irrep_eigenphases_at_q0": {
+      "[3]": "0.052170365926897921166156921211694944677921961636295",
+      "[2, 1]": "-0.052336126090360621498497871918600947848227406472649",
+      "[1, 1, 1]": "-0.052170365926897921166156921211694944677921961636295"
+    },
+    "tau_M_proton_at_q0": "1.7338506712341109630653269233682994288034327048923",
+    "tau_M_neutron_at_q0": "1.778436699567191365994430976183579549905112753347",
+    "tau_M_ratio_p_over_n": "0.97492965122462268893988844414916980796263716506922",
+    "residuals_ppm": {
+      "form_A_bare": 1677.5364929767159,
+      "form_A_cos_winning": 306.0171010752255,
+      "form_A_3irrep_cos": -855029.0802869806
+    },
+    "interpretation": "3-irrep extension with natural per-irrep eigenphases {log(q)/2, (z-1)h/2, -log(q)/2} does not improve over the V_(2,1)-only cos((z-1)h/2). The 1-dim irreps carry no angular content (single eigenvalue), so cos of their 'eigenphase' is just q-power. The residual 305 ppm lives at the 2-wrap tower depth, not at the 1-wrap level."
+  }
+}

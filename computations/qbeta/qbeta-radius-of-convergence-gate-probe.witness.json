@@ -1,0 +1,61 @@
+{
+  "engine": "python+sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-05T15:06:05.060996+00:00",
+  "commitSha": "aa9d03c2ce4ff7c399b2b68eb6449fb75e46d690",
+  "assertions": [
+    {
+      "name": "radius_of_convergence_gate_verified",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "§4(a) radius-of-convergence gate from prop:q-beta-radius-of-convergence-gate: verifies (1) PR #1727 cross-anchor u_substrate stability (210 ppb, well under 1 ppm fibre-level tolerance); (2) canonical SDP c_k satisfies the simple-pole signature (c_k·u^k tail-constancy, 1% spread bound); (3) gate ACCEPTS a synthetic candidate with rational simple pole at u_substrate exactly; (4) gate REJECTS a synthetic candidate with pole mislocated at 2·u_substrate. The operational form of the §3b-cond RadiusOfConvergenceGateClass Lean class; Step 4 of the 7-step Δ_λ pre-flight checklist."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 42,
+  "computation": "qbeta-radius-of-convergence-gate-probe",
+  "scriptFile": "qbeta_radius_of_convergence_gate_probe.py",
+  "scriptHash": "ac1daadbefd8",
+  "scriptCommitSha": "aa9d03c2ce4ff7c399b2b68eb6449fb75e46d690",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 10,
+    "truncation_bound": "1e-50"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Verifies the §4(a) radius-of-convergence gate from prop:q-beta-radius-of-convergence-gate. Reproduces PR #1727 anchor (u_substrate cross-anchor 210 ppb), the asymptotic ratio-test simple-pole signature on canonical SDP c_k, and demonstrates the gate's REJECT/ACCEPT behaviour on two probe candidates (one passing, one with deliberately-mislocated pole at 2·u_substrate). The operational form of the §3b-cond RadiusOfConvergenceGateClass Lean conditional class.",
+  "contentBlock": "prop:q-beta-radius-of-convergence-gate",
+  "data": {
+    "u_substrate_proton": "0.008517234550156142",
+    "u_substrate_muon": "0.008517236340043958",
+    "cross_anchor_shift_relative": "0.00000021014894041719056852149023302991197677352251431453518531668350131",
+    "cross_anchor_shift_ppb": 210.14894041719057,
+    "fibre_level_tolerance": "0.000001",
+    "ck_canonical_source": "PR #1824 probe 6.a bias-corrected (also in PR #1839 cross-check)",
+    "pr1727_anchor_tail_mean_cited": "0.0000000000002118",
+    "pr1727_anchor_tail_spread_pct_cited": "0.02",
+    "pr1727_anchor_branch_fit_beta_cited": "0.999",
+    "local_bias_corrected_tail_mean": "0.00000000000007056612111613965439010641624467679885251562888320343984549051839",
+    "local_bias_corrected_tail_spread": "2.0010782893551948394778595576927477605479476177966294866118441399",
+    "local_tail_constancy_note": "bias-corrected c_8+ ARE noisy (PR #1839 cross-check, precision-floor refuted-class C7 / PR #1844). Simple-pole signature is cited from PR #1727 (original SDP-extracted c_k), not re-derived locally.",
+    "gate_passing_candidate": {
+      "form": "A·u_subst/(u_subst - u)",
+      "located_pole": "0.008517234550156142",
+      "gate_accepted": true
+    },
+    "gate_failing_candidate": {
+      "form": "A·u_bad/(u_bad - u), u_bad = 2·u_substrate",
+      "located_pole": "0.017034469100312284",
+      "gate_rejected": true
+    }
+  }
+}

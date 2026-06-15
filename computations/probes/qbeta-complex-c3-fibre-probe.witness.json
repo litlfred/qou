@@ -1,0 +1,73 @@
+{
+  "engine": "python+sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-01T05:38:07.304574+00:00",
+  "commitSha": "65982e10f45b1c4ff0fcb0b6d67800a5106f686f",
+  "assertions": [
+    {
+      "name": "all_4_candidates_have_verdicts",
+      "computed": 4.0,
+      "expected": 4.0,
+      "passed": true,
+      "tolerance": 0.0,
+      "source": "Diagnostic probe enumerates 4 candidates with explicit verdicts"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 31,
+  "computation": "qbeta-complex-c3-fibre-probe",
+  "scriptFile": "qbeta_complex_c3_fibre_probe.py",
+  "scriptHash": "b2fbc8a12055",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "DIAGNOSTIC: tests whether c_3 cross-anchor swing fits a complex-c_3(q) Habiro fibre object. Enumerates 4 projection rules + 3 complex-c_3 candidates; reports structural fit OR refutation. NOT a candidate-fishing run.",
+  "auditOnly": "docs/audits/2026-06-01-qbeta-complex-c3-fibre-diagnostic.md",
+  "data": {
+    "candidate_1_im_delta": {
+      "form": "c_3(q) = -2 + i·δ(q), δ real",
+      "delta_proton": "-0.0693",
+      "delta_muon": "-0.0097",
+      "delta_ratio": "7.144329896907216",
+      "hbar_q_ratio": "0.9999998951225342",
+      "log_ratio_exponent": "-18748726.450864747",
+      "verdict": "INCONCLUSIVE — q_proton and q_muon differ by only ~1e-8 in absolute terms, so the ratio test has little discriminatory power. δ(q_proton) ≈ 7× δ(q_muon) but the anchors are nearly identical — suggests δ is NOT a simple power of ℏ_q (which would give a near-unit ratio). Could be due to numerical noise in the empirical c_3 extraction at this precision."
+    },
+    "candidate_2_complex_q": {
+      "form": "c_3(q) = J_Hopf(q) at complex q",
+      "verdict": "N/A — substrate Im(q_0) = 0 by Lusztig"
+    },
+    "candidate_3_re_im_via_bar_decomp": {
+      "form": "bar-decomposition sym/antisym = Re/Im of complex Δtr_M",
+      "sym_at_proton": "-0.0109117",
+      "antisym_at_proton": "-0.13116116",
+      "sum_squares": "0.0173223150894356",
+      "delta_tr_M_squared": "0.0201846975485796",
+      "ratio_sum_sq_to_delta_sq": "0.8581904706644748",
+      "verdict": "REFUTED. If sym and antisym were Re/Im, then |Δtr_M|² = sym² + antisym² should hold. Instead: sum_squares = 1.733e-2, |Δtr_M|² = (sym+antisym)² = (−0.1421)² = 2.019e-2. Ratio = 0.858 ≠ 1. The bar-decomposition is NOT a Re/Im split of a complex Δtr_M. It IS the eigenspace decomposition under the bar-involution acting on a REAL function — different from complex conjugation of a complex function."
+    },
+    "candidate_4_re_projection_minus_2": {
+      "form": "c_3 = Re[fibre c_3(q)], Im part unobservable at u^3 order",
+      "verdict": "REFUTED — empirical c_3 at q_proton = -2.0693 NOT -2. If Re[c_3] were exactly -2 and Im were the deviation, the u^3 projection would give -2 exactly. The observed deviation IS AT u^3 order, ruling out the Re-only projection of c_3 = -2 + i·δ."
+    },
+    "q_proton": "1.109978582751380807591669095610768879874499121873578736072814240181799",
+    "q_muon": "1.109978595554180575281594079609509377993282279958686225466751689153746",
+    "q_anchor_gap_abs": "0.0000000128027997676899249839987404981187831580851074893939374489719466139291",
+    "empirical_c3_proton": "-2.0693",
+    "empirical_c3_muon": "-2.0097",
+    "swing_pct": -2.8802010341661433,
+    "overall_conclusion": "Complex-c_3 framing PLAUSIBLE structurally but specific candidates REFUTED by data. Bar-decomposition is NOT Re/Im of complex Δtr_M (sum-of-squares mismatch). Anchors too close to discriminate. The fibre/observable distinction (PR #1616) stays correct as discipline guard; complex-c_3 attack needs wider-spaced anchors to be testable.",
+    "recommended_next_step": "Either (a) construct a third q-anchor at a different observable (e.g., m_e/m_K) for wider spacing, OR (b) examine the Habiro q-difference equation directly for Im content rather than relying on numerical c_3 extraction at near-identical anchors."
+  }
+}

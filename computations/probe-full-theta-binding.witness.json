@@ -1,0 +1,123 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-06-02T17:27:01.110128+00:00",
+  "commitSha": "96f0ac0cfb4929526bdfedbf87bd7dde4b225a0b",
+  "assertions": [
+    {
+      "name": "full_theta_does_not_close_A3plus_absolute_one_param",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "best component |Δθ.re| worst |err| = 185.7% with one global scale; full-order θ_λ (incl. growth) does not close A≥3 absolute binding to 5% — the gate stands."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 10,
+  "computation": "probe-full-theta-binding",
+  "scriptFile": "probe_full_theta_binding.py",
+  "scriptHash": "3338cd3b8477",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "clarabel": "0.11.1"
+  },
+  "description": "EXPLORATORY: full-order per-block θ_λ = arccos(χ^λ/d_λ) ∈ ℂ (Re=rotation phase, Im=growth/volume). Tests which component of Σ_λ y_λ |Δθ_λ| reproduces ABSOLUTE binding D/T/³He/⁴He (1 global scale). Carries the growth (Im) channels the rotation-only probe excluded. Δ_λ / A≥3-absolute remains open.",
+  "data": {
+    "components": {
+      "abs": {
+        "global_scale": 50.016501319002415,
+        "worst_err": 1.988133915838371,
+        "per_isotope": {
+          "D": {
+            "S": 0.13290217298190393,
+            "B_pred": 6.647301710247684,
+            "err": 1.988133915838371
+          },
+          "T": {
+            "S": 0.03345271168637526,
+            "B_pred": 1.6731875981857958,
+            "err": -0.8027320146447928
+          },
+          "3He": {
+            "S": 0.03386261954765297,
+            "B_pred": 1.6936897552700616,
+            "err": -0.7805532838468435
+          },
+          "4He": {
+            "S": 0.0055689407178584486,
+            "B_pred": 0.27853893076021335,
+            "err": -0.99015612532946
+          }
+        },
+        "t_he3_diff_err": -1.0268423109246738
+      },
+      "re": {
+        "global_scale": 52.347037039659,
+        "worst_err": 1.8573855757307338,
+        "per_isotope": {
+          "D": {
+            "S": 0.12142890470233075,
+            "B_pred": 6.356443372138131,
+            "err": 1.8573855757307338
+          },
+          "T": {
+            "S": 0.02980331186910468,
+            "B_pred": 1.5601150703165312,
+            "err": -0.8160632094229372
+          },
+          "3He": {
+            "S": 0.026280626552525117,
+            "B_pred": 1.375712931570478,
+            "err": -0.8217526649947554
+          },
+          "4He": {
+            "S": 0.004589521125353229,
+            "B_pred": 0.2402478323431629,
+            "err": -0.9915093752065454
+          }
+        },
+        "t_he3_diff_err": -0.7585727431971024
+      },
+      "im": {
+        "global_scale": 213.22536255524574,
+        "worst_err": 2.577956164069587,
+        "per_isotope": {
+          "D": {
+            "S": 0.037328581610963904,
+            "B_pred": 7.959400347670858,
+            "err": 2.577956164069587
+          },
+          "T": {
+            "S": 0.011408311271438296,
+            "B_pred": 2.4325413069955273,
+            "err": -0.7132045901818568
+          },
+          "3He": {
+            "S": 0.01724224091971119,
+            "B_pred": 3.6764830713703125,
+            "err": -0.5236482156814832
+          },
+          "4He": {
+            "S": 0.0027196285766667326,
+            "B_pred": 0.579893789275371,
+            "err": -0.979505910472653
+          }
+        },
+        "t_he3_diff_err": -2.6286223676024947
+      }
+    },
+    "best_component": "re"
+  }
+}

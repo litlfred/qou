@@ -1,0 +1,104 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-18T04:26:51.201672+00:00",
+  "commitSha": "dc0f9394feecab82403453af071b11b80d144ac5",
+  "assertions": [
+    {
+      "name": "m_p_within_1_percent",
+      "computed": "0.98704593683410262110702335315967219754323103681738",
+      "expected": "0",
+      "passed": false,
+      "tolerance": 0.01
+    },
+    {
+      "name": "m_p_within_2_percent",
+      "computed": "0.98704593683410262110702335315967219754323103681738",
+      "expected": "0",
+      "passed": false,
+      "tolerance": 0.02
+    }
+  ],
+  "allPassed": false,
+  "durationMs": 24,
+  "computation": "proton-mass-full-tower-50dps",
+  "scriptFile": "derive_m_p_hecke_full_tower_50dps.py",
+  "scriptHash": "50f94145cf99",
+  "scriptCommitSha": "0b3ecf45a699aeec7670cc6745e7aff56e75bc02",
+  "description": "Full mass-endomorphism tower derivation of m_p, m_n, m_e at MPFR @ 50 dps. Sums T1 (descended) + T2 (single brane tower) + T3 (pair brane tower) + T4 (Frobenius co-Casimir) using the MPFR-native per-generator volumes from terms-2-3-atom-per-gen-mpfr-50dps.witness.json. m_p prediction in MeV computed as (m_p_hecke / m_e_hecke) × M_E_MEV. Three-cal discipline respected: only CAL-1 (M_E_MEV) and CAL-2 (q_0) consumed; no CODATA m_p / m_n / Q_β injection. The residual (+1.835 % vs CODATA m_p) is the framework's actual prediction error at this truncation; closure of T5 / T6 for the electron at MPFR is the next research step.",
+  "contentBlock": "prop:mass-endomorphism-tower",
+  "parameters": {
+    "q_0_50dps": "1.1099785955541805752815940796095093779932822799587",
+    "M_E_MEV_CAL1": "0.51099895"
+  },
+  "data": {
+    "particles": {
+      "proton": {
+        "atom": "proton",
+        "A_categorical_max_grade": 2,
+        "A_derivation": "max filtration grade of GS normal form (gb_filtration_jet_tracker.reduce_braid)",
+        "Z": 1,
+        "N": 0,
+        "knot_type": "none",
+        "T1_descended_50dps": "0.96039549118815049651215986149723955840572223004978",
+        "T2_single_Li2q_50dps": "3.0197861117679249111604485653244203934689300373208",
+        "T3_pair_Li2q_50dps": "0.361274818844610361810608860790607963192717115974",
+        "T4_Frobenius_50dps": "1.6362871034827517326799193655339867440321053551337",
+        "T5_chirality_BW_50dps_cat_units": "4.2555566663353856920207709358429786509171184735535",
+        "T6_Habiro_residue_50dps_cat_units": "1.921135705204251",
+        "tower_convention": "Paper canon: m(β) = |Π V̂_i| − Σ Li_2^q(−|V̂_i|) − Σ_{i<j} z² Li_2^q(−|V̂_i V̂_j|) + T4 + T5 + T6 + …. T2/T3 via symmetric q-dilogarithm (NOT Faddeev Φ_q). T5 categorical via A_max_grade. T6 from Habiro residue bridge.  T7+ pending (σ-shell α_5 for A=1 atoms is research-scope).",
+        "m_hecke_50dps": "12.154435896823074194183907588989233310016593212032",
+        "wedderburn_vols_full_50dps": [
+          "0.9890073159292597737327090873425711234998226354167",
+          "0.97107015865274369644467729606208246103317407697938"
+        ]
+      },
+      "neutron": {
+        "atom": "neutron",
+        "A_categorical_max_grade": 2,
+        "A_derivation": "max filtration grade of GS normal form (gb_filtration_jet_tracker.reduce_braid)",
+        "Z": 0,
+        "N": 1,
+        "knot_type": "none",
+        "T1_descended_50dps": "0.83329025047951637547090882116805412808114314357792",
+        "T2_single_Li2q_50dps": "2.677338934461750667882700352331817273267449762642",
+        "T3_pair_Li2q_50dps": "0.28361641237186968971094272424261886701109257208723",
+        "T4_Frobenius_50dps": "1.6362871034827517326799193655339867440321053551337",
+        "T5_chirality_BW_50dps_cat_units": "4.1907731474505720271944113268389195959283535915388",
+        "T6_Habiro_residue_50dps_cat_units": "1.921135705204251",
+        "tower_convention": "Paper canon: m(β) = |Π V̂_i| − Σ Li_2^q(−|V̂_i|) − Σ_{i<j} z² Li_2^q(−|V̂_i V̂_j|) + T4 + T5 + T6 + …. T2/T3 via symmetric q-dilogarithm (NOT Faddeev Φ_q). T5 categorical via A_max_grade. T6 from Habiro residue bridge.  T7+ pending (σ-shell α_5 for A=1 atoms is research-scope).",
+        "m_hecke_50dps": "11.54244155345071149293888259011539660832014442498",
+        "wedderburn_vols_full_50dps": [
+          "0.8542103128258389606769442997911669155688329382913",
+          "0.97550947110774594315687948247161058517697160610811"
+        ]
+      },
+      "electron": {
+        "m_hecke_50dps": "0.51099895"
+      }
+    },
+    "ratios": {
+      "m_p_over_m_e_50dps": "23.785637713782140245462163061175044117050716468267",
+      "m_n_over_m_e_50dps": "22.587994659188069746403358735111679991358386206038"
+    },
+    "predictions_MeV": {
+      "m_p_pred_50dps": "12.154435896823074194183907588989233310016593212032",
+      "m_n_pred_50dps": "11.54244155345071149293888259011539660832014442498"
+    },
+    "comparisons": {
+      "m_p_codata_MeV": "938.27208816",
+      "rel_diff_p": "0.98704593683410262110702335315967219754323103681738",
+      "rel_diff_p_ppm": "987045.93683410262110702335315967219754323103681738"
+    },
+    "upstream_witness_hashes": [
+      {
+        "path": "terms-2-3-atom-per-gen-mpfr-50dps.witness.json",
+        "sha256": "8fdf23e355a0e66c3004895e4dc0c38a51a0f15f722033088b279d809cbafee4",
+        "size_bytes": 10078,
+        "commitSha": "83b19a2f85c270e19890905437a29b4540fd7834",
+        "scriptCommitSha": "17f878e6857f795273cff6fd102ec2ac2a968c7b",
+        "computedAt": "2026-05-17T22:58:19.126946+00:00"
+      }
+    ]
+  }
+}

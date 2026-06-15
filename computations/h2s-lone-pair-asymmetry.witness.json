@@ -1,0 +1,62 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-09T21:26:13.431613+00:00",
+  "commitSha": "79723ba35ff96c8d209fdc77b496e84b6fa7fab0",
+  "assertions": [
+    {
+      "name": "H₂O lones are symmetric (equal defects), H₂S lones are asymmetric",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "H₂O (s,s) defects equal; H₂S (s,p) defects 0 vs 2 — self-dual vs chiral lone"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 5,
+  "computation": "h2s-lone-pair-asymmetry",
+  "scriptFile": "h2s_lone_pair_asymmetry.py",
+  "scriptHash": "2a607b41ca93",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "mpmath": "1.4.1"
+  },
+  "description": "The H₂S +2.1° residual is a lone-pair braid-word asymmetry. H₂O's two lone pairs are equivalent self-dual e⁻=σ₀σ₁σ₀ (palindromic defect 0,0 — symmetric). H₂S's are inequivalent: the inert 3s² (self-dual, defect 0) and the 3p_z (chiral, non-palindrome, defect 2ℓ=2). The defect mismatch (0 vs 2) is the asymmetry; the chiral p-lone's directional bias opens the orbital-locked 90° base. The asymmetry exists iff the s-channel is inert (pure-p, third row) — H₂O (s active) has none.",
+  "contentBlock": "prop:symmetric-block-domain-weight",
+  "parameters": {
+    "q": 1.1099785827513808
+  },
+  "data": {
+    "s_lone_word": [
+      0,
+      1,
+      0
+    ],
+    "p_lone_word": [
+      0,
+      0,
+      1
+    ],
+    "s_lone_defect": 0,
+    "p_lone_defect": 2,
+    "h2o_lone_defects": [
+      0,
+      0
+    ],
+    "h2s_lone_defects": [
+      0,
+      2
+    ],
+    "h2s_defect_mismatch": 2,
+    "finding": "The H₂S +2.1° is a braid-word asymmetry between its two lone pairs: the inert 3s² is the self-dual e⁻ (palindromic defect 0, ℓ=0), the 3p_z is chiral (defect 2, ℓ=1). H₂O has two EQUAL self-dual lones (defects 0,0) — symmetric, no tilt, clean 104.5°. The defect mismatch (0 vs 2) in H₂S — present only because the s-channel is inert (pure-p, third row) — gives the chiral p-lone a directional bias that opens the orbital-locked 90° base by ~+2°. So the residual is the structural signature of the inert s-pair, not a fit; exact magnitude needs the chiral-lone directional-repulsion model."
+  }
+}

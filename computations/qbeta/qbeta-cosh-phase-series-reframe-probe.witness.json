@@ -1,0 +1,59 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-06-05T18:41:07.183658+00:00",
+  "commitSha": "75bb53314159c396f6784c7d8154d5f7e7b1f773",
+  "assertions": [
+    {
+      "name": "phi1_equals_sqrt2_from_proved_c2",
+      "computed": 1.4142135623730951,
+      "expected": 1.4142135623730951,
+      "passed": true,
+      "tolerance": 1e-12,
+      "source": "Φ_1 = √(−2·c_2) with c_2 = −1 (Lean-proved) ⇒ Φ_1 = √2 exactly."
+    },
+    {
+      "name": "phase_roundtrip_reproduces_c3",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "source": "cos(Φ_1 u+Φ_2 u²) reproduces c_3 to 1.67e-06 ppm."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 11,
+  "computation": "qbeta-cosh-phase-series-reframe-probe",
+  "scriptFile": "qbeta_cosh_phase_series_reframe_probe.py",
+  "scriptHash": "0bde28f66a01",
+  "scriptCommitSha": "53281e0fb9488a18c68046b50730bd93cec8c5ca",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Reframe the Q_β c_k ladder as the u-Taylor expansion of cos(Φ(u)) (cosh of an imaginary fibre phase), the structure PR #1871 §3 derived (m_avg=m₀cosh θ / Δ_pn=m₀sinh θ). c_2=-1 (proved) ⇒ Φ_1=√2 anchor-exact; c_3=-Φ_1·Φ_2 ⇒ Φ_2=-c_3/√2. Extracts the concrete Φ_2(q) targets at both anchors that #1871's fibre-level q-difference recurrence must reproduce — the closure test for the axis #1880 showed is data-blocked at the c_k level. Unifies #1866 (even cos slice), #1880 (c_3=g), #1887 (sinh parity), #1871 (cosh/sinh series + q-difference). No fits — algebraic read-off.",
+  "contentBlock": "conj:qbeta-precision-ladder",
+  "data": {
+    "c2": "-1.00000000000000000000000000000000000000000000000000000000000",
+    "c3_proton": "-2.06934257711516783787971951724962858902203099810343886691284",
+    "c3_muon": "-2.02020023502125517138232674988576251890206061330068660325496",
+    "phi1": "1.41421356237309504880168872420969807856967187537694807317668",
+    "phi1_anchor_independent": true,
+    "phi2_proton_target": "1.46324616887618133101595626132628776444588125646036720700247",
+    "phi2_muon_target": "1.42849728553818656345297950252664350443837181697858104828750",
+    "phi2_cross_anchor_swing": "0.0347488833379947675629767587996442600075094394817861587149628",
+    "roundtrip_c2_err": 9.038780086976849e-13,
+    "roundtrip_c3_err_ppm": 1.6666666666734603e-06,
+    "verdict": "CONSISTENT_PHASE_REFRAME_PHI2_HANDOFF_TO_QDIFFERENCE",
+    "handoff_to_pr": 1871,
+    "interpretation": "The cosh/sinh series structure (PR #1871) is the correct framing for the c_k: they are u-Taylor coefficients of cos(Φ(u)). c_2=-1 fixes Φ_1=√2 (anchor-exact); the open coefficient Φ_2(q)=-c_3(q)/√2 is the concrete target a fibre-level q-difference recurrence must predict at both anchors. This relocates the open question from the (data-blocked, #1880) c_k level to the Φ/recurrence level (#1871's G-equation)."
+  }
+}

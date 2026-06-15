@@ -1,0 +1,627 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-04T22:27:56.130454+00:00",
+  "commitSha": "7a2d4c1bed83351406a3b19e6fb878d7a6ff5137",
+  "assertions": [
+    {
+      "name": "phase4_amplitude_A_D_matches_table",
+      "computed": 0.000699132482365097,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 0.001,
+      "source": "Sanity check: re-derived A(D) from the Phase-4 formula must match the Phase-4 doc's tabulated |Δ_λ*(D)| = 22.9594 to ≤ 0.1 % (the doc's quoted 0.07 % rel.err.)."
+    },
+    {
+      "name": "zero_control_C5_sums_to_zero",
+      "computed": 0.0,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-40,
+      "source": "C5 control with P_λ ≡ 0 must give |S| = 0 exactly."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 54,
+  "computation": "gap-a3-deuteron-p-lambda-channels-probe",
+  "scriptFile": "gap_a3_deuteron_p_lambda_channels_probe.py",
+  "scriptHash": "b1fd19253328",
+  "scriptCommitSha": "7a2d4c1bed83351406a3b19e6fb878d7a6ff5137",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "GAP-A-3 deuteron P_λ content-channel probe (PR #1762 / post-#1864 productive direction). Tests the two-layer factorisation Δ_λ(D) = A(D)·P_λ(D), taking the Phase-4 substrate-derived A(D) ≈ 22.97 as already-known and probing whether P_λ(D) follows a natural brane-tower content channel. Five candidates (C1 sl_2 Schur–Weyl mult, C2 sl_3 Schur–Weyl mult, C3 sl_2 q-dim, C4 ≤2-row indicator, C5 zero control); each P_λ closed-form, no fit. EXPLORATORY.",
+  "auditOnly": "docs/audits/2026-06-04-gap-a3-brane-tower-level-selection-scope.md",
+  "parameters": {
+    "q_0_50dps": "1.1099785827513808075916690956107688798744991218736",
+    "vol_hyp_D_phase4": "12.776",
+    "A_D_at_q0": "22.975451662315613206466261572364816994981714298291",
+    "B_D_MeV": "2.2245",
+    "m_e_MeV": "0.51099895069",
+    "target_signed": "-4.353237901949242454715460190762295046543669840974952707294765736733141",
+    "target_after_A_factored": "-0.1894734417382284989104672294731036662590919611610931919935792110238943"
+  },
+  "data": {
+    "discipline": "EXPLORATORY",
+    "production_wired": false,
+    "scope_doc": "docs/audits/2026-06-04-gap-a3-brane-tower-level-selection-scope.md",
+    "channels": [
+      {
+        "code": "C1",
+        "name": "sl2_schur_weyl_mult",
+        "formula": "P_λ = f^λ if rows(λ) ≤ 2 else 0  (V_{1/2}^{⊗6} mult)",
+        "S_at_q0": "1.94721017893787071067644424758604957460029292966479403889779288282224",
+        "target": "-0.1894734417382284989104672294731036662590919611610931919935792110238943",
+        "delta": "2.136683620676099209586911477059153240859384890825887230891372093846134",
+        "relative_error": "-11.27695576263445326175047326284299125882093903827117881297149429790764",
+        "verdict": "REFUTED",
+        "per_lambda": [
+          {
+            "partition": [
+              6
+            ],
+            "p_lambda": "1.0",
+            "y_chi_p": "0.09231856042608279416236327918789714098694034347894616731037903493193572"
+          },
+          {
+            "partition": [
+              5,
+              1
+            ],
+            "p_lambda": "5.0",
+            "y_chi_p": "0.9480556220195869436592761652700361577698895197117049011972982570571711"
+          },
+          {
+            "partition": [
+              4,
+              2
+            ],
+            "p_lambda": "9.0",
+            "y_chi_p": "0.606833122418508992261368164281494336288374149581762638187355191189112"
+          },
+          {
+            "partition": [
+              4,
+              1,
+              1
+            ],
+            "p_lambda": "0.0",
+            "y_chi_p": "0.0"
+          },
+          {
+            "partition": [
+              3,
+              3
+            ],
+            "p_lambda": "5.0",
+            "y_chi_p": "0.3000028740736919805934366388466219395550889168923803322027603996440212"
+          },
+          {
+            "partition": [
+              3,
+              2,
+              1
+            ],
+            "p_lambda": "0.0",
+            "y_chi_p": "0.0"
+          },
+          {
+            "partition": [
+              3,
+              1,
+              1,
+              1
+            ],
+            "p_lambda": "0.0",
+            "y_chi_p": "0.0"
+          },
+          {
+            "partition": [
+              2,
+              2,
+              2
+            ],
+            "p_lambda": "0.0",
+            "y_chi_p": "0.0"
+          },
+          {
+            "partition": [
+              2,
+              2,
+              1,
+              1
+            ],
+            "p_lambda": "0.0",
+            "y_chi_p": "0.0"
+          },
+          {
+            "partition": [
+              2,
+              1,
+              1,
+              1,
+              1
+            ],
+            "p_lambda": "0.0",
+            "y_chi_p": "0.0"
+          },
+          {
+            "partition": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "p_lambda": "0.0",
+            "y_chi_p": "0.0"
+          }
+        ]
+      },
+      {
+        "code": "C2",
+        "name": "sl3_schur_weyl_mult",
+        "formula": "P_λ = f^λ if rows(λ) ≤ 3 else 0  (V_1^{⊗?} mult)",
+        "S_at_q0": "1.655034178928616892398426983579654602694465657794232954067526630403605",
+        "target": "-0.1894734417382284989104672294731036662590919611610931919935792110238943",
+        "delta": "1.844507620666845391308894213052758268953557618955326146061105841427499",
+        "relative_error": "-9.734913789211515917296652813207924195185557355016210801822130002205334",
+        "verdict": "REFUTED",
+        "per_lambda": [
+          {
+            "partition": [
+              6
+            ],
+            "p_lambda": "1.0",
+            "y_chi_p": "0.09231856042608279416236327918789714098694034347894616731037903493193572"
+          },
+          {
+            "partition": [
+              5,
+              1
+            ],
+            "p_lambda": "5.0",
+            "y_chi_p": "0.9480556220195869436592761652700361577698895197117049011972982570571711"
+          },
+          {
+            "partition": [
+              4,
+              2
+            ],
+            "p_lambda": "9.0",
+            "y_chi_p": "0.606833122418508992261368164281494336288374149581762638187355191189112"
+          },
+          {
+            "partition": [
+              4,
+              1,
+              1
+            ],
+            "p_lambda": "10.0",
+            "y_chi_p": "-0.04764670071606141849953791397736852314029504039387537262158443828259706"
+          },
+          {
+            "partition": [
+              3,
+              3
+            ],
+            "p_lambda": "5.0",
+            "y_chi_p": "0.3000028740736919805934366388466219395550889168923803322027603996440212"
+          },
+          {
+            "partition": [
+              3,
+              2,
+              1
+            ],
+            "p_lambda": "16.0",
+            "y_chi_p": "-0.2310079511389362574674192527104058446280176986850743484865070751771428"
+          },
+          {
+            "partition": [
+              3,
+              1,
+              1,
+              1
+            ],
+            "p_lambda": "0.0",
+            "y_chi_p": "0.0"
+          },
+          {
+            "partition": [
+              2,
+              2,
+              2
+            ],
+            "p_lambda": "5.0",
+            "y_chi_p": "-0.01352134815425614231106009731862060413751453279161136372217473895889553"
+          },
+          {
+            "partition": [
+              2,
+              2,
+              1,
+              1
+            ],
+            "p_lambda": "0.0",
+            "y_chi_p": "0.0"
+          },
+          {
+            "partition": [
+              2,
+              1,
+              1,
+              1,
+              1
+            ],
+            "p_lambda": "0.0",
+            "y_chi_p": "0.0"
+          },
+          {
+            "partition": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "p_lambda": "0.0",
+            "y_chi_p": "0.0"
+          }
+        ]
+      },
+      {
+        "code": "C3",
+        "name": "sl2_qdim",
+        "formula": "P_λ = [λ_1 − λ_2 + 1]_q at q₀ if rows(λ) ≤ 2 else 0",
+        "S_at_q0": "1.959039552566256823768952944301672486068730728747419368848693372661181",
+        "target": "-0.1894734417382284989104672294731036662590919611610931919935792110238943",
+        "delta": "2.148512994304485322679420173774776152327822689908512560842272583685075",
+        "relative_error": "-11.33938864779167367661718949045677694626165699918421261680825240354152",
+        "verdict": "REFUTED",
+        "per_lambda": [
+          {
+            "partition": [
+              6
+            ],
+            "p_lambda": "7.6253420371324969567014176298925592462313698621",
+            "y_chi_p": "0.7039605996245656898721988151362830030045359147739247868219273558145875"
+          },
+          {
+            "partition": [
+              5,
+              1
+            ],
+            "p_lambda": "5.2204412753268982449604332529939014512324483022232",
+            "y_chi_p": "0.9898537400993536516186119360724782292143880255072014265927594956385274"
+          },
+          {
+            "partition": [
+              4,
+              2
+            ],
+            "p_lambda": "3.0437062085325219894020193356773883097682139607135",
+            "y_chi_p": "0.205224638027599086159454865323586865938789005087817088993454441279262"
+          },
+          {
+            "partition": [
+              4,
+              1,
+              1
+            ],
+            "p_lambda": "0.0",
+            "y_chi_p": "0.0"
+          },
+          {
+            "partition": [
+              3,
+              3
+            ],
+            "p_lambda": "1.0",
+            "y_chi_p": "0.06000057481473839611868732776932438791101778337847606644055207992880424"
+          },
+          {
+            "partition": [
+              3,
+              2,
+              1
+            ],
+            "p_lambda": "0.0",
+            "y_chi_p": "0.0"
+          },
+          {
+            "partition": [
+              3,
+              1,
+              1,
+              1
+            ],
+            "p_lambda": "0.0",
+            "y_chi_p": "0.0"
+          },
+          {
+            "partition": [
+              2,
+              2,
+              2
+            ],
+            "p_lambda": "0.0",
+            "y_chi_p": "0.0"
+          },
+          {
+            "partition": [
+              2,
+              2,
+              1,
+              1
+            ],
+            "p_lambda": "0.0",
+            "y_chi_p": "0.0"
+          },
+          {
+            "partition": [
+              2,
+              1,
+              1,
+              1,
+              1
+            ],
+            "p_lambda": "0.0",
+            "y_chi_p": "0.0"
+          },
+          {
+            "partition": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "p_lambda": "0.0",
+            "y_chi_p": "0.0"
+          }
+        ]
+      },
+      {
+        "code": "C4",
+        "name": "sl2_indicator",
+        "formula": "P_λ = 1 if rows(λ) ≤ 2 else 0  (channel baseline)",
+        "S_at_q0": "0.4093561621356840225975023027091725755950887140866257293445413430709644",
+        "target": "-0.1894734417382284989104672294731036662590919611610931919935792110238943",
+        "delta": "0.5988296038739125215079695321822762418541806752477189213381205540948587",
+        "relative_error": "-3.160493620531998783969539237435547788018453016814252159176214973432784",
+        "verdict": "REFUTED",
+        "per_lambda": [
+          {
+            "partition": [
+              6
+            ],
+            "p_lambda": "1.0",
+            "y_chi_p": "0.09231856042608279416236327918789714098694034347894616731037903493193572"
+          },
+          {
+            "partition": [
+              5,
+              1
+            ],
+            "p_lambda": "1.0",
+            "y_chi_p": "0.1896111244039173887318552330540072315539779039423409802394596514114342"
+          },
+          {
+            "partition": [
+              4,
+              2
+            ],
+            "p_lambda": "1.0",
+            "y_chi_p": "0.06742590249094544358459646269794381514315268328686251535415057679879022"
+          },
+          {
+            "partition": [
+              4,
+              1,
+              1
+            ],
+            "p_lambda": "0.0",
+            "y_chi_p": "0.0"
+          },
+          {
+            "partition": [
+              3,
+              3
+            ],
+            "p_lambda": "1.0",
+            "y_chi_p": "0.06000057481473839611868732776932438791101778337847606644055207992880424"
+          },
+          {
+            "partition": [
+              3,
+              2,
+              1
+            ],
+            "p_lambda": "0.0",
+            "y_chi_p": "0.0"
+          },
+          {
+            "partition": [
+              3,
+              1,
+              1,
+              1
+            ],
+            "p_lambda": "0.0",
+            "y_chi_p": "0.0"
+          },
+          {
+            "partition": [
+              2,
+              2,
+              2
+            ],
+            "p_lambda": "0.0",
+            "y_chi_p": "0.0"
+          },
+          {
+            "partition": [
+              2,
+              2,
+              1,
+              1
+            ],
+            "p_lambda": "0.0",
+            "y_chi_p": "0.0"
+          },
+          {
+            "partition": [
+              2,
+              1,
+              1,
+              1,
+              1
+            ],
+            "p_lambda": "0.0",
+            "y_chi_p": "0.0"
+          },
+          {
+            "partition": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "p_lambda": "0.0",
+            "y_chi_p": "0.0"
+          }
+        ]
+      },
+      {
+        "code": "C5",
+        "name": "zero_control",
+        "formula": "P_λ ≡ 0  (control; should give S = 0)",
+        "S_at_q0": "0.0",
+        "target": "-0.1894734417382284989104672294731036662590919611610931919935792110238943",
+        "delta": "0.1894734417382284989104672294731036662590919611610931919935792110238943",
+        "relative_error": "-1.0",
+        "verdict": "CONTROL OK (|S| ≈ 0)",
+        "per_lambda": [
+          {
+            "partition": [
+              6
+            ],
+            "p_lambda": "0.0",
+            "y_chi_p": "0.0"
+          },
+          {
+            "partition": [
+              5,
+              1
+            ],
+            "p_lambda": "0.0",
+            "y_chi_p": "0.0"
+          },
+          {
+            "partition": [
+              4,
+              2
+            ],
+            "p_lambda": "0.0",
+            "y_chi_p": "0.0"
+          },
+          {
+            "partition": [
+              4,
+              1,
+              1
+            ],
+            "p_lambda": "0.0",
+            "y_chi_p": "0.0"
+          },
+          {
+            "partition": [
+              3,
+              3
+            ],
+            "p_lambda": "0.0",
+            "y_chi_p": "0.0"
+          },
+          {
+            "partition": [
+              3,
+              2,
+              1
+            ],
+            "p_lambda": "0.0",
+            "y_chi_p": "0.0"
+          },
+          {
+            "partition": [
+              3,
+              1,
+              1,
+              1
+            ],
+            "p_lambda": "0.0",
+            "y_chi_p": "0.0"
+          },
+          {
+            "partition": [
+              2,
+              2,
+              2
+            ],
+            "p_lambda": "0.0",
+            "y_chi_p": "0.0"
+          },
+          {
+            "partition": [
+              2,
+              2,
+              1,
+              1
+            ],
+            "p_lambda": "0.0",
+            "y_chi_p": "0.0"
+          },
+          {
+            "partition": [
+              2,
+              1,
+              1,
+              1,
+              1
+            ],
+            "p_lambda": "0.0",
+            "y_chi_p": "0.0"
+          },
+          {
+            "partition": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "p_lambda": "0.0",
+            "y_chi_p": "0.0"
+          }
+        ]
+      }
+    ],
+    "synthesis_verdict": "All four target-match channels (C1-C4) REFUTED and the C5 zero-control passes (|S| ≈ 0 as required) — none of the natural brane-tower content projections (sl_2 / sl_3 Schur-Weyl mult, sl_2 q-dim, ≤2-row indicator) reproduces the deuteron P_λ(D) target. The remaining direction is GAP-A-4 — the ρ general rule / per-atom λ(K) substrate-derivation in Path B, which bypasses the Δ_λ gate entirely by re-opening the per-atom λ(K) question."
+  }
+}

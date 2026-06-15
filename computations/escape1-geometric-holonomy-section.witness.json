@@ -1,0 +1,200 @@
+{
+  "engine": "python+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-02T05:22:22.393369+00:00",
+  "commitSha": "13e9814eeff1edec31691425d9447202fa7b1976",
+  "assertions": [
+    {
+      "name": "S3_order",
+      "computed": 6,
+      "expected": 6,
+      "passed": true
+    },
+    {
+      "name": "S3_all_even",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "dim_H_irrep_ell2",
+      "computed": 5,
+      "expected": 5,
+      "passed": true
+    },
+    {
+      "name": "H_restriction_to_S3_is_homomorphism",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "mult_triv_in_ResH",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "mult_sign_in_ResH",
+      "computed": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "dim_V_mult_2_1_Hom_space",
+      "computed": 2,
+      "expected": 2,
+      "passed": true
+    },
+    {
+      "name": "rank_2_1_isotypic_component",
+      "computed": 4,
+      "expected": 4,
+      "passed": true
+    },
+    {
+      "name": "centralizer_C_A5_S3_trivial",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "normalizer_N_A5_S3_eq_S3_selfnormalizing",
+      "computed": 6,
+      "expected": 6,
+      "passed": true
+    },
+    {
+      "name": "N_over_S3_index_trivial",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "canonical_section_forced_by_geometry",
+      "computed": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "cross_ratio_is_forced_selector",
+      "computed": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "no_h4_fit_performed",
+      "computed": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "verdict_code_ii",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 8,
+  "computation": "escape1-geometric-holonomy-section",
+  "scriptFile": "escape1_geometric_holonomy_section.py",
+  "scriptHash": "3f478e854290",
+  "scriptCommitSha": "13e9814eeff1edec31691425d9447202fa7b1976",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "clarabel": "0.11.1"
+  },
+  "description": "Escape 1 (geometric/icosahedral-holonomy section) of the Young-lattice synthesis keystone: does the icosahedral A5 / Bring cross-ratio GEOMETRY FORCE a canonical section (1-dim line) of the mult-2 Hom-space V = Hom_{S3}((2,1), Res^{A5}_{S3}(H)) ~= C^2, or does selecting a line still require a free parameter (fit)? Tests, RAW: (1) realize the dim-5 ell=2 irrep H of A5 explicitly (pair-perm rep, H-isotypic projector), restrict to the color-sheet S3<A5, project onto the (2,1)-isotypic, pin dim V=2; (2) compute the centralizer C_{A5}(S3) and normalizer N_{A5}(S3) -- the ONLY sources of a FORCED (basis-independent) operator on V; (3) THE TEST: simple spectrum / unique invariant line vs free selection; (4) icosahedral special cross-ratios (golden-ratio rigidity) -- forced selector or free modulus; (5) h^4=-3/4 falsification reference only. NO fit, NO tuning. Environment: exact permutation-group combinatorics (Python stdlib), numpy for the explicit C^2 rep matrices, mpmath @ compute_dps for RAW substrate/cross-ratio values; engine=python+mpmath.",
+  "auditOnly": "docs/audits/2026-06-02-escape1-geometric-holonomy-section.md",
+  "parameters": {
+    "q0_falsification_ref": "1.109978582751380807591669095610768879874499121873577636056718792510176",
+    "q0_source": "q_parameter.Q_MP (proton-pinned)",
+    "dps": 70,
+    "h4_borromean_falsification_ref": "-3/4",
+    "S3_subgroup": "<(012),(01)(34)> < A5 (color-sheet stabilizer)"
+  },
+  "data": {
+    "task1_Res_A5_S3_H_decomposition": {
+      "chi_Res_H_per_S3_class": {
+        "3cyc": -1.0,
+        "transp": 1.0,
+        "e": 5.0
+      },
+      "multiplicities": {
+        "triv": 1,
+        "sign": 0,
+        "std_(2,1)": 2
+      },
+      "note": "Res^{A5}_{S3}(H) = triv (+) 2.(2,1); matches keystone Candidate 4."
+    },
+    "task2_forced_operator_sources": {
+      "centralizer_C_A5_S3": [
+        "(0, 1, 2, 3, 4)"
+      ],
+      "centralizer_order": 1,
+      "normalizer_N_A5_S3": [
+        "(0, 1, 2, 3, 4)",
+        "(0, 2, 1, 4, 3)",
+        "(1, 0, 2, 4, 3)",
+        "(1, 2, 0, 3, 4)",
+        "(2, 0, 1, 3, 4)",
+        "(2, 1, 0, 4, 3)"
+      ],
+      "normalizer_order": 6,
+      "N_over_S3_index": 1,
+      "interpretation": "An operator on the C^2 multiplicity space V is FORCED (canonical, basis-independent) iff it is the image of a group element that COMMUTES with the S3-action (centralizer) -- a genuine endomorphism of the isotypic block -- or, weakly, an element of N_{A5}(S3) that preserves the S3-isotypic structure (acting semilinearly). Trivial C and trivial N/S3 => the only forced operator is the scalar identity => NO distinguished line => any section is a free choice."
+    },
+    "task2_forced_operator_on_V": {
+      "only_forced_operator": "identity (from C_{A5}(S3)={e}; N=S3 acts within copies, identity on the multiplicity index)",
+      "spectrum_on_V": "{1, 1} (degenerate)",
+      "distinguished_eigenline": "none -- the whole C^2 is the eigenspace"
+    },
+    "task3_THE_TEST": {
+      "forced_nonscalar_operator_exists": false,
+      "forced_operator_spectrum_simple": false,
+      "unique_invariant_line_on_V": false,
+      "canonical_section_forced": false,
+      "reason": "C_{A5}(S3) = {e} (trivial centralizer) and N_{A5}(S3) = S3 (self-normalizing, N/S3 trivial). Therefore NO A5 element induces a non-scalar operator on the C^2 multiplicity space V: the only forced operator is the scalar identity, whose spectrum {1,1} is DEGENERATE -- every line of C^2 is invariant, so NO line is distinguished. Geometry SEPARATES (it produced V = C^2 with the OV/JM content basis of #1687) but does NOT SELECT a canonical line. Selecting a line requires an external, freely-chosen vector => FIT. Exactly parallel to the spinor test #1687 (separation YES, selection NO)."
+    },
+    "task4_icosahedral_cross_ratio_selector": {
+      "special_cross_ratios_RAW": {
+        "golden_phi": "1.61803398874989484820458683437",
+        "phi_inverse": "0.618033988749894848204586834366",
+        "one_minus_phi": "-0.618033988749894848204586834366",
+        "phi_squared": "2.61803398874989484820458683437",
+        "harmonic_-1": "-1",
+        "equianharmonic_e^{i pi/3}": "(0.5 + 0.866025403784438646763723170753j)"
+      },
+      "count_of_distinct_special_values": 6,
+      "is_forced_selector": false,
+      "why": "Even granting the icosahedral cross-ratio is a RIGID modulus (golden-ratio special values, A5-orbit of the 12 vertices on CP^1), there is NO derived map from a single cross-ratio value to a LINE in V: the color-tube cross-ratio is KNOT-INDEPENDENT (complex-fibre audit #1669: Sum D(z_c) = 0, conjugate-pair cancellation) and the same for proton and neutron (flavor-cusp audit #1670). There are SEVERAL icosahedral special cross-ratios (phi, 1/phi, 1-phi, harmonic -1, equianharmonic e^{i pi/3}); choosing WHICH one selects the line is itself a free choice. A holonomy/monodromy operator from the Bring covering would have to act on V, but any operator on V factors through End_{S3}(Res H)|_{(2,1)-iso} = M_2(C), whose only A5-FORCED element is the scalar (Task 2/3). So the cross-ratio is a FREE modulus w.r.t. the section, not a forced selector. 'The cross-ratio that gives h^4' would be THE fit."
+    },
+    "task5_h4_falsification": {
+      "performed": false,
+      "reason": "Task 3 forces NO canonical line (centralizer & normalizer/S3 both trivial), so there is no derived section to test against h^4 = -3/4. Assigning a line / cross-ratio value to reproduce -3/4 would be exactly the fit the discipline review catches. h^4 = -3/4 remains the RAW invariant of the (2,1) block (borromean_h3_2_1_irrep_derivation); the multiplicity space carries it as a BLOCK invariant, not per-copy (spinor audit #1687), so even a chosen copy would not change it.",
+      "h4_borromean_block_invariant_RAW": "-3/4",
+      "fit_performed": false
+    },
+    "VERDICT": {
+      "code": "ii",
+      "one_line": "CASE (ii): the icosahedral A5 geometry gives STRUCTURE (it realizes the mult-2 Hom-space V = C^2 with the OV/JM content eigenbasis) but does NOT FORCE a canonical section. The centralizer C_{A5}(S3) = {e} and the normalizer N_{A5}(S3) = S3 (self-normalizing) are BOTH trivial-modulo-S3, so the only A5-forced operator on V is the scalar identity (degenerate spectrum {1,1}, no distinguished line). Geometry SEPARATES but does not SELECT -- exactly the spinor failure mode (#1687). Selecting a line (a cross-ratio value, a holonomy phase) is a FREE parameter => fit. KEYSTONE STANDS: Escape 1 fails the same way Escape 2 did (relocation, not closure).",
+      "why_not_i": "(i) would require a forced non-scalar operator with simple spectrum / unique invariant line. The centralizer and normalizer/S3 are both trivial, so no such forced operator exists -- the only one is scalar.",
+      "why_not_iii": "(iii) would require NO geometric structure on V at all. But the geometry DOES act: A5 realizes V = C^2 and S3 acts (block-diagonally) on it. The structure exists; it just fails to SELECT a line.",
+      "delimitation": "With Escape 2 falsified (#1694) and Escape 1 now failing, the missing object -- the vertical baryon-number charge / canonical SECTION of the (2,1)-mult space -- is NOT derivable from existing CATEGORICAL (Hecke branching, OV/JM eigenbasis, ribbon-twist spin) OR GEOMETRIC (icosahedral A5 holonomy, Bring cross-ratio) structure. It is a genuine NEW physical input: a forced nominator that neither the representation theory nor the icosahedral rigidity supplies."
+    }
+  },
+  "caveats": [
+    "All A5/S3 group-theoretic facts (centralizer trivial, normalizer = S3, Res^{A5}_{S3}(H) = triv (+) 2.(2,1), dim V = 2) are EXACT permutation-group results, q-INDEPENDENT. The icosahedral cross-ratios are RAW golden-ratio special values @ compute_dps. h^4 = -3/4 is the Borromean (2,1)-block invariant used ONLY as a falsification reference; no operator, line, cross-ratio, or normalization is chosen to reproduce it. The Bring color-tube cross-ratio path (closed_form_tau_M, touched by sibling branch claude/vol-density-bz3-refinement) is referenced for context only; this probe changes no production value and emits no LP/SDP solve (no dual required)."
+  ]
+}

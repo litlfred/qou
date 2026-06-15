@@ -1,0 +1,20 @@
+{
+  "computation": "hoefsmit-h3-std-matrices",
+  "description": "Explicit 2\u00d72 Hoefsmit matrices for H_3 standard (2,1) representation. \u03c3_1 = diag(q, -q\u207b\u00b9). \u03c3_2 from braid relation: a = (h/q-1)/[2]_q, b\u00b2=a(h-a)+1. Hecke \u03c3\u00b2=h\u03c3+I: exact. Braid \u03c3\u2081\u03c3\u2082\u03c3\u2081=\u03c3\u2082\u03c3\u2081\u03c3\u2082: exact (10\u207b\u2075\u00b9). Proton trace (UNTYPED): \u03c7^(2,1)(\u03c3\u2081\u03c3\u2082\u207b\u00b9)\u00b3 = 1.994 (witness typed: 1.808). Difference = flavor typing effect (down-quark eigenvalue shift).",
+  "data": {
+    "sigma_1": "diag(q, -q\u207b\u00b9)",
+    "sigma_2_diagonal": "(h/q - 1)/[2]_q = -0.4036",
+    "sigma_2_offdiag_sq": "a(h-a)+1 = 1.167",
+    "hecke_check": "exact (10\u207b\u2075\u00b9)",
+    "braid_check": "exact (10\u207b\u2075\u00b9)",
+    "proton_trace_untyped": 1.994,
+    "proton_trace_typed_witness": 1.808,
+    "typing_effect": "1.994 \u2192 1.808 via down-quark eigenvalue shift",
+    "typed_crossing_analysis": {
+      "finding": "Typing is applied at NF level (algebraic), not at representation matrices (geometric). Production code modifies NF coefficients before Wedderburn decomposition.",
+      "chi_cache_status": "The Rust chi-cache values ARE typed characters \u2014 already correct in witnesses.",
+      "markov_std_characters": "Markov-derived \u03c7_std values are WRONG (bad z-parameter normalization). Need direct Hoefsmit seminormal computation for correct per-block characters.",
+      "binding_gap_confirmation": "Triple-confirmed: the 70-89% gap is the Geom linking weight, not missing typing."
+    }
+  }
+}

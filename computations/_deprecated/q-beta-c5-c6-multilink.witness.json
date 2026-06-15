@@ -1,0 +1,25 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-16T02:07:26.990248+00:00",
+  "commitSha": "17d5438e6f2ec5a71cf063ed4894da2ce40868d8",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "q-beta-c5-c6-multilink",
+  "scriptFile": "probe_q_beta_c5_c6_multilink.py",
+  "scriptHash": "f3e2d7595a4d",
+  "scriptCommitSha": "17d5438e6f2ec5a71cf063ed4894da2ce40868d8",
+  "description": "Multi-link Jones investigation for the c_5 and c_6 coefficients in the τ_M asymptotic expansion. The simple alternating 'Kashiwara b^k / integer Jones at q=1' pattern from prop:q-beta-categorical-precision-ladder breaks at c_5 ≈ 0.154 (not a simple integer) and c_6 ≈ 18.1 (much larger than b³). This probe sweeps multi-link Jones candidates + structural rationals to identify the source.",
+  "auditOnly": "PR #655 follow-up. The structural origin of c_5, c_6 is unresolved. Open R&D recorded for future investigation.",
+  "data": {
+    "q_0_50dps": "1.1099785955541805752815940796095093779932822799587",
+    "hoefsmit_b": "0.8675840673070581786583330825239334460696960667743846357106239338298807725916397",
+    "empirical_c5": "-395.410790486022296562653308293696282109430420287865105368098276050340696611268",
+    "empirical_c6_given_best_c5": "-45485.504353509553393301043145661969139950402882843061151800791658235641405190434",
+    "best_c5_candidate": "J_Borromean alt = -8",
+    "best_c5_value": "-8.0",
+    "best_c6_candidate": "J_Hopf · J_Borromean = -8",
+    "best_c6_value": "-8.0"
+  }
+}

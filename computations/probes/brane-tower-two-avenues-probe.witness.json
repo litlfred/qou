@@ -1,0 +1,124 @@
+{
+  "computedAt": "2026-05-03T21:14:51.581626+00:00",
+  "computation": "brane-tower-two-avenues-probe",
+  "description": "Concrete numerical exploration of two avenues for restoring Markov-invariance to T2/T3.  Avenue 2 (Frobenius-antipode T2_sym = (T2(beta) + T2(S(beta)))/2) and Avenue 1 (Kahler derivative of global tr_M(beta)).",
+  "auditOnly": "docs/audits/2026-05-03-T2T3-derivation-chain-analysis.md",
+  "avenue_2_T2_sym": [
+    {
+      "iso": "p",
+      "Z": 1,
+      "N": 0,
+      "A": 1,
+      "T2_legacy": 1096978.3961756648,
+      "T2_S_image": 450.5488542057494,
+      "T2_S_symmetrized": 548714.4725149353
+    },
+    {
+      "iso": "n",
+      "Z": 0,
+      "N": 1,
+      "A": 1,
+      "T2_legacy": 511298.2733512309,
+      "T2_S_image": 2049.9559421125205,
+      "T2_S_symmetrized": 256674.1146466717
+    },
+    {
+      "iso": "D",
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "T2_legacy": 1608289.7568490189,
+      "T2_S_image": 2502.166033359049,
+      "T2_S_symmetrized": 805395.9614411889
+    },
+    {
+      "iso": "T",
+      "Z": 1,
+      "N": 2,
+      "A": 3,
+      "T2_legacy": 2119592.558095629,
+      "T2_S_image": 4553.698103618333,
+      "T2_S_symmetrized": 1062073.1280996236
+    },
+    {
+      "iso": "3He",
+      "Z": 2,
+      "N": 1,
+      "A": 3,
+      "T2_legacy": 2705308.685944641,
+      "T2_S_image": 2957.242782944013,
+      "T2_S_symmetrized": 1354132.9643637927
+    },
+    {
+      "iso": "4He",
+      "Z": 2,
+      "N": 2,
+      "A": 4,
+      "T2_legacy": 3216611.4871912515,
+      "T2_S_image": 5008.774853203297,
+      "T2_S_symmetrized": 1610810.1310222272
+    }
+  ],
+  "avenue_2_isospin_T_minus_3He_legacy_MeV": -465.6443216399647,
+  "avenue_2_isospin_T_minus_3He_sym_MeV": -232.1875698300144,
+  "avenue_1_kahler_derivatives": [
+    {
+      "iso": "p",
+      "Z": 1,
+      "N": 0,
+      "A": 1,
+      "tr_M_global_at_q0": 0.9603954911881503,
+      "d_dq_tr_M": 8.510140792629334,
+      "d2_dq2_tr_M": 45.94346622942609
+    },
+    {
+      "iso": "n",
+      "Z": 0,
+      "N": 1,
+      "A": 1,
+      "tr_M_global_at_q0": 0.8332902504795161,
+      "d_dq_tr_M": 7.831426613915388,
+      "d2_dq2_tr_M": 38.47967275983138
+    },
+    {
+      "iso": "D",
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "tr_M_global_at_q0": 0.21139221893970656,
+      "d_dq_tr_M": 4.09348501575922,
+      "d2_dq2_tr_M": 63.37233938245551
+    },
+    {
+      "iso": "T",
+      "Z": 1,
+      "N": 2,
+      "A": 3,
+      "tr_M_global_at_q0": 0.0281163458493008,
+      "d_dq_tr_M": 0.8601204350585808,
+      "d2_dq2_tr_M": 22.865800624897677
+    },
+    {
+      "iso": "3He",
+      "Z": 2,
+      "N": 1,
+      "A": 3,
+      "tr_M_global_at_q0": 0.07484850403356987,
+      "d_dq_tr_M": 2.171900014080989,
+      "d2_dq2_tr_M": 54.98971425392305
+    },
+    {
+      "iso": "4He",
+      "Z": 2,
+      "N": 2,
+      "A": 4,
+      "tr_M_global_at_q0": 0.009955269102458657,
+      "d_dq_tr_M": 0.40064329389641035,
+      "d2_dq2_tr_M": 14.583453673226252
+    }
+  ],
+  "codata_T_minus_3He_MeV": 0.019,
+  "engine": "python",
+  "scriptFile": "brane_tower_two_avenues_probe.py",
+  "commitSha": "610a6aa2bde5fabec35796ead6bbb0adb76f6533"
+}

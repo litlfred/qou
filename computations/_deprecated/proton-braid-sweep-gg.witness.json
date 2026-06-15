@@ -1,0 +1,243 @@
+{
+  "computation": "proton-braid-sweep-gg",
+  "description": "Proton braid sweep informed by \u03b3\u03b3 pair-production structure. Baseline 11-factor braid is compared to minimal 6-factor (QCD-backbone only), 9-factor (no gluon), and each of these with 1 or 2 \u03b3\u03b3 radiative-correction insertions.  \u03b3\u03b3 factor encoded as (c=1, d=HA) from the Hecke reduction \u03c3\u00b2 = HA\u00b7\u03c3+I. Also tests a \u03c3\u00b7\u03c3\u207b\u00b9 virtual-pair loop.  Reports m_p/m_e categorical ratio (calibration-independent) vs CODATA 1836.152.",
+  "computedAt": "2026-04-20T15:32:12.433230+00:00",
+  "parameters": {
+    "q0": 1.1099785955541805,
+    "HA": 0.20906032198987945,
+    "w_sym": 0.16546138476810043,
+    "w_std": 0.6690772304637992,
+    "w_alt": 0.16546138476810043,
+    "electron_cat_fixed": 630.5292680965878,
+    "CODATA_m_p_over_m_e": 1836.152,
+    "CODATA_m_e_MeV": 0.510999,
+    "gamma_gamma_factor": [
+      0.20906032198987945,
+      1.0
+    ]
+  },
+  "gamma_gamma_threshold": {
+    "net_eminus": 1.0,
+    "net_eplus": 0.4510942344351552,
+    "net_gamma2": 1.2320524825884311,
+    "delta_pair": 0.21904175184672403,
+    "delta_pair_via_E0_proton_tower_MeV": 0.00017431850940995055,
+    "two_m_e_MeV": 1.021998
+  },
+  "variants": [
+    {
+      "label": "minimal_6",
+      "n_strands": 3,
+      "n_factors": 6,
+      "V_per_gen": [
+        {
+          "full": 0.5938490006705097
+        },
+        {
+          "full": -0.04246920135535953
+        }
+      ],
+      "desc": 0.025220292784154916,
+      "single": 631.4125714216748,
+      "cross": 0.314016545822602,
+      "cat_mass": 631.7518082602816,
+      "cat_ratio_to_electron": 1.0019389110475145,
+      "err_vs_CODATA_pct": -99.94543268144209,
+      "E_0_MeV_per_cat": 1.4851908419285953,
+      "m_e_pred_MeV": 936.4562945449921
+    },
+    {
+      "label": "no_gluon_9",
+      "n_strands": 3,
+      "n_factors": 9,
+      "V_per_gen": [
+        {
+          "full": 0.719413309722418
+        },
+        {
+          "full": 0.9710701586527439
+        }
+      ],
+      "desc": 0.6986007968090441,
+      "single": 429527.0178585687,
+      "cross": 686.8741912194527,
+      "cat_mass": 430214.59065058496,
+      "cat_ratio_to_electron": 682.3070909131571,
+      "err_vs_CODATA_pct": -62.84038081198305,
+      "E_0_MeV_per_cat": 0.0021809395134207645,
+      "m_e_pred_MeV": 1.375146195160123
+    },
+    {
+      "label": "baseline_11",
+      "n_strands": 3,
+      "n_factors": 11,
+      "V_per_gen": [
+        {
+          "full": 0.98900731592926
+        },
+        {
+          "full": 0.9710701586527439
+        }
+      ],
+      "desc": 0.9603954911881509,
+      "single": 1096978.396175676,
+      "cross": 82016.16886542024,
+      "cat_mass": 1178995.5254365874,
+      "cat_ratio_to_electron": 1869.850592337583,
+      "err_vs_CODATA_pct": 1.8352833718332153,
+      "E_0_MeV_per_cat": 0.000795823206922311,
+      "m_e_pred_MeV": 0.5017898241950041
+    },
+    {
+      "label": "base + 1\u03b3\u03b3",
+      "n_strands": 3,
+      "n_factors": 13,
+      "V_per_gen": [
+        {
+          "full": 1.3018270917176786
+        },
+        {
+          "full": 0.983315423098871
+        }
+      ],
+      "desc": 1.280106657493942,
+      "single": null,
+      "cross": null,
+      "cat_mass": null,
+      "cat_ratio_to_electron": null,
+      "err_vs_CODATA_pct": null,
+      "E_0_MeV_per_cat": 0.0,
+      "m_e_pred_MeV": 0.0
+    },
+    {
+      "label": "base + 2\u03b3\u03b3",
+      "n_strands": 3,
+      "n_factors": 15,
+      "V_per_gen": [
+        {
+          "full": 1.671544806475103
+        },
+        {
+          "full": 1.0385376860163855
+        }
+      ],
+      "desc": 1.7359622753893604,
+      "single": null,
+      "cross": null,
+      "cat_mass": null,
+      "cat_ratio_to_electron": null,
+      "err_vs_CODATA_pct": null,
+      "E_0_MeV_per_cat": 0.0,
+      "m_e_pred_MeV": 0.0
+    },
+    {
+      "label": "base + pair_loop",
+      "n_strands": 3,
+      "n_factors": 15,
+      "V_per_gen": [
+        {
+          "full": 0.98900731592926
+        },
+        {
+          "full": 0.9710701586527439
+        }
+      ],
+      "desc": 0.9603954911881509,
+      "single": 1096978.396175676,
+      "cross": 82016.16886542024,
+      "cat_mass": 1178995.5254365874,
+      "cat_ratio_to_electron": 1869.850592337583,
+      "err_vs_CODATA_pct": 1.8352833718332153,
+      "E_0_MeV_per_cat": 0.000795823206922311,
+      "m_e_pred_MeV": 0.5017898241950041
+    },
+    {
+      "label": "minimal + 1\u03b3\u03b3",
+      "n_strands": 3,
+      "n_factors": 8,
+      "V_per_gen": [
+        {
+          "full": 0.8449776187743266
+        },
+        {
+          "full": 0.15961495459608993
+        }
+      ],
+      "desc": 0.13487106425537634,
+      "single": 30415.594420368678,
+      "cross": 0.8859608106970214,
+      "cat_mass": 30416.61525224363,
+      "cat_ratio_to_electron": 48.23981501138541,
+      "err_vs_CODATA_pct": -97.37277659957425,
+      "E_0_MeV_per_cat": 0.030847350772561385,
+      "m_e_pred_MeV": 19.450157505341842
+    },
+    {
+      "label": "minimal + 2\u03b3\u03b3",
+      "n_strands": 3,
+      "n_factors": 10,
+      "V_per_gen": [
+        {
+          "full": 1.133037013084193
+        },
+        {
+          "full": 0.36867527658596944
+        }
+      ],
+      "desc": 0.4177227341809555,
+      "single": null,
+      "cross": 17.657046199086178,
+      "cat_mass": null,
+      "cat_ratio_to_electron": null,
+      "err_vs_CODATA_pct": null,
+      "E_0_MeV_per_cat": 0.0,
+      "m_e_pred_MeV": 0.0
+    },
+    {
+      "label": "no_gluon + 1\u03b3\u03b3",
+      "n_strands": 3,
+      "n_factors": 11,
+      "V_per_gen": [
+        {
+          "full": 0.98900731592926
+        },
+        {
+          "full": 0.983315423098871
+        }
+      ],
+      "desc": 0.972506147310859,
+      "single": 1250284.7774716169,
+      "cross": 109974.1513697163,
+      "cat_mass": 1360259.9013474805,
+      "cat_ratio_to_electron": 2157.3303099057866,
+      "err_vs_CODATA_pct": 17.49192386609532,
+      "E_0_MeV_per_cat": 0.0006897740638171742,
+      "m_e_pred_MeV": 0.43492273561065187
+    },
+    {
+      "label": "no_gluon + 2\u03b3\u03b3",
+      "n_strands": 3,
+      "n_factors": 13,
+      "V_per_gen": [
+        {
+          "full": 1.3018270917176786
+        },
+        {
+          "full": 1.0385376860163855
+        }
+      ],
+      "desc": 1.351996495425919,
+      "single": null,
+      "cross": null,
+      "cat_mass": null,
+      "cat_ratio_to_electron": null,
+      "err_vs_CODATA_pct": null,
+      "E_0_MeV_per_cat": 0.0,
+      "m_e_pred_MeV": 0.0
+    }
+  ],
+  "best_variant": "baseline_11",
+  "best_err_pct": 1.8352833718332153,
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
+}

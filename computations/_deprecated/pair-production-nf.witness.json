@@ -1,0 +1,165 @@
+{
+  "name": "pair-production-nf",
+  "description": "Gr\u00f6bner--Shirshov NF for \u03b3\u03b3 \u2192 e\u207b + e\u207a pair production in H\u2083(q). Photon \u03b3 = \u03c3\u2080, e\u207b = \u03c3\u2080\u03c3\u2081\u03c3\u2080 (trefoil), e\u207a = \u03c3\u2080\u207b\u00b9\u03c3\u2081\u207b\u00b9\u03c3\u2080\u207b\u00b9 (mirror trefoil). Threshold energy \u0394(pair) \u00d7 E\u2080 compared to 2m\u2091 = 1.022 MeV.",
+  "timestamp": "2026-05-02T06:25:52.276013+00:00",
+  "git_sha": "ee6c063f1f5cc3b5cd26590e80cfbc956acf326b",
+  "parameters": {
+    "q0": 1.1099785955541805,
+    "HA": 0.20906032198987945,
+    "E0_MeV": 4.154925030008493,
+    "m_e_MeV": 0.51099895,
+    "threshold_MeV": 1.0219979
+  },
+  "particle_braid_words": {
+    "gamma": "\u03c3\u2080",
+    "gamma2": "\u03c3\u2080\u00b2",
+    "e_minus": "\u03c3\u2080\u03c3\u2081\u03c3\u2080  (trefoil, Garside \u0394\u2083)",
+    "e_plus": "\u03c3\u2080\u207b\u00b9\u03c3\u2081\u207b\u00b9\u03c3\u2080\u207b\u00b9  (mirror trefoil, \u0394\u2083\u207b\u00b9)"
+  },
+  "nf_gamma": {
+    "s0": {
+      "word": "\u03c3_0",
+      "particle": "\u03c3\u2080",
+      "at_q0": 1.0
+    },
+    "_net": 1.0
+  },
+  "nf_gamma2": {
+    "identity": {
+      "word": "\ud835\udfcf",
+      "particle": "\u03bd",
+      "at_q0": 1.0
+    },
+    "s0": {
+      "word": "\u03c3_0",
+      "particle": "\u03c3\u2080",
+      "at_q0": 0.20906032198987945
+    },
+    "_net": 1.2090603219898794
+  },
+  "nf_eminus": {
+    "s0s1s0": {
+      "word": "\u03c3_0\u00b7\u03c3_1\u00b7\u03c3_0",
+      "particle": "e\u207b",
+      "at_q0": 1.0
+    },
+    "_net": 1.0
+  },
+  "nf_eplus": {
+    "identity": {
+      "word": "\ud835\udfcf",
+      "particle": "\u03bd",
+      "at_q0": -0.21819755804611018
+    },
+    "s0": {
+      "word": "\u03c3_0",
+      "particle": "\u03c3\u2080",
+      "at_q0": 0.04370621823051213
+    },
+    "s1": {
+      "word": "\u03c3_1",
+      "particle": "\u03c3\u2081",
+      "at_q0": 0.04370621823051213
+    },
+    "s0s1": {
+      "word": "\u03c3_0\u00b7\u03c3_1",
+      "particle": "L\u208a",
+      "at_q0": -0.20906032198987945
+    },
+    "s1s0": {
+      "word": "\u03c3_1\u00b7\u03c3_0",
+      "particle": "L\u208b",
+      "at_q0": -0.20906032198987945
+    },
+    "s0s1s0": {
+      "word": "\u03c3_0\u00b7\u03c3_1\u00b7\u03c3_0",
+      "particle": "e\u207b",
+      "at_q0": 1.0
+    },
+    "_net": 0.4510942344351552
+  },
+  "symbolic_q_form": {
+    "engine": "sympy",
+    "q_symbol": "q (sp.Symbol('q', positive=True))",
+    "h_symbol_definition": "h = q - 1/q  (Hecke parameter)",
+    "sample_particle": "e_plus",
+    "nf_eplus_polynomials_q": {
+      "identity": {
+        "word": "\ud835\udfcf",
+        "particle": "\u03bd",
+        "coefficient_polynomial_q": "-q**3 + 2*q - 2/q + q**(-3)"
+      },
+      "s0": {
+        "word": "\u03c3_0",
+        "particle": "\u03c3\u2080",
+        "coefficient_polynomial_q": "q**2 - 2 + q**(-2)"
+      },
+      "s1": {
+        "word": "\u03c3_1",
+        "particle": "\u03c3\u2081",
+        "coefficient_polynomial_q": "q**2 - 2 + q**(-2)"
+      },
+      "s0s1": {
+        "word": "\u03c3_0\u00b7\u03c3_1",
+        "particle": "L\u208a",
+        "coefficient_polynomial_q": "-q + 1/q"
+      },
+      "s1s0": {
+        "word": "\u03c3_1\u00b7\u03c3_0",
+        "particle": "L\u208b",
+        "coefficient_polynomial_q": "-q + 1/q"
+      },
+      "s0s1s0": {
+        "word": "\u03c3_0\u00b7\u03c3_1\u00b7\u03c3_0",
+        "particle": "e\u207b",
+        "coefficient_polynomial_q": "1"
+      }
+    },
+    "nf_gamma2_polynomials_q": {
+      "identity": {
+        "word": "\ud835\udfcf",
+        "particle": "\u03bd",
+        "coefficient_polynomial_q": "1"
+      },
+      "s0": {
+        "word": "\u03c3_0",
+        "particle": "\u03c3\u2080",
+        "coefficient_polynomial_q": "q - 1/q"
+      }
+    },
+    "note": "Symbolic \u211a(q) NF coefficients after Gr\u00f6bner--Shirshov reduction.  e\u207a = \u03c3\u2080\u207b\u00b9\u03c3\u2081\u207b\u00b9\u03c3\u2080\u207b\u00b9 (mirror trefoil) and \u03b3\u03b3 = \u03c3\u2080\u00b2 are exposed because their NFs carry non-trivial Laurent polynomial coefficients in q (via \u03c3\u1d62\u207b\u00b9 \u2192 \u03c3\u1d62 \u2212 (q\u2212q\u207b\u00b9) and \u03c3\u1d62\u00b2 \u2192 (q\u2212q\u207b\u00b9)\u03c3\u1d62 + 1).  e\u207b = \u03c3\u2080\u03c3\u2081\u03c3\u2080 is already in NF (coefficient 1) and is available numerically in nf_eminus.  Numerical values at q_0 for every term are in nf_gamma / nf_gamma2 / nf_eminus / nf_eplus above."
+  },
+  "energy_budget": {
+    "net_eminus": 1.0,
+    "net_eplus": 0.4510942344351552,
+    "net_gamma2": 1.2090603219898794,
+    "delta_pair": 0.24203391244527572,
+    "E_pair_predicted_MeV": 1.0056327609297602,
+    "E_threshold_2me_MeV": 1.0219979,
+    "ratio": 0.9839871108636918,
+    "residual_MeV": 0.01636513907023973,
+    "residual_percent": 1.6012889136308142
+  },
+  "reduction_steps": {
+    "gamma": {
+      "hecke": 0,
+      "yb": 0,
+      "total": 0
+    },
+    "gamma2": {
+      "hecke": 1,
+      "yb": 0,
+      "total": 1
+    },
+    "eminus": {
+      "hecke": 0,
+      "yb": 0,
+      "total": 0
+    },
+    "eplus": {
+      "hecke": 1,
+      "yb": 0,
+      "total": 1
+    }
+  }
+}

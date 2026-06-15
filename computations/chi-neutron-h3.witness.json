@@ -1,0 +1,39 @@
+{
+  "description": "Symbolic χ^λ_q(β_atomic(0, 1)) — neutron — for the canonical atomic braid word at H_3, per partition λ ⊢ 3.  Incrementally saved per partition so a SIGTERM/timeout mid-loop preserves work done so far.",
+  "atom": "neutron",
+  "Z": 0,
+  "N": 1,
+  "n": 3,
+  "n_partitions": 3,
+  "n_partitions_total": 3,
+  "partial": false,
+  "compute_time_sec_so_far": 0.2515861988067627,
+  "workers": 4,
+  "auditOnly": "docs/audits/2026-05-08-per-irrep-pole-18-21-research-note.md",
+  "chi_lambda_symbolic": [
+    {
+      "partition": [
+        3
+      ],
+      "chi_q_symbolic": "(q**4 + 2*q**2 + 1)/(4*q)"
+    },
+    {
+      "partition": [
+        2,
+        1
+      ],
+      "chi_q_symbolic": "(q**22 + q**20 + q**18 + q**12 - q**10 - q**4 - q**2 - 1)/(4*q**11)"
+    },
+    {
+      "partition": [
+        1,
+        1,
+        1
+      ],
+      "chi_q_symbolic": "(-q**4 - 2*q**2 - 1)/(4*q**3)"
+    }
+  ],
+  "engine": "python",
+  "scriptFile": "delta_lambda_empirical_tabulation.py",
+  "commitSha": "06e88b6885fd78860cf1e0d1d01de2a96f5b0811"
+}

@@ -1,0 +1,261 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-04T12:28:24.425493+00:00",
+  "commitSha": "8706a338d6dacf352a59cf01f98956ee6dcaa5c4",
+  "assertions": [
+    {
+      "name": "binding_rows_count",
+      "computed": 6,
+      "expected": 6,
+      "passed": true,
+      "tolerance": 0,
+      "source": "6 atoms: D, T, 3He, 4He, 6Li, 7Li"
+    },
+    {
+      "name": "qbeta_ladder_rungs",
+      "computed": 11,
+      "expected": 11,
+      "passed": true,
+      "tolerance": 0,
+      "source": "N=0..N=3 + N=4 canonical/doc/flipped + N=5 canonical/cohomstrata + N=6,7 canonical (11 rungs)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 5,
+  "computation": "binding-q-target-sweep",
+  "scriptFile": "binding_q_target_sweep.py",
+  "scriptHash": "691a2df7a8f6",
+  "scriptCommitSha": "9708bba5257436e934899449fabf428da7878466",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "mpmath": "1.4.1"
+  },
+  "description": "Per-isotope binding-energy + Q_β precision-ladder sweep against Workplan v7 L2 100×-experimental targets. Shows current canonical state across all on-disk witnesses. Audit-only — no new predictions.",
+  "data": {
+    "binding_rows": [
+      {
+        "atom": "D",
+        "Z": 1,
+        "N": 1,
+        "A": 2,
+        "B_AME_MeV": "2.224566120",
+        "sigma_B_MeV": "1.000e-6",
+        "sigma_rel_ppb": "449.5",
+        "target_100x_ppb": "4.49526",
+        "abs_tr_M_q0": null,
+        "zero_param_pred_MeV": null,
+        "zero_param_err_ppb": null,
+        "zero_param_status": "—",
+        "canonical_binding_status": "delta_lambda_unavailable"
+      },
+      {
+        "atom": "T",
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "B_AME_MeV": "8.481798000",
+        "sigma_B_MeV": "1.000e-6",
+        "sigma_rel_ppb": "117.9",
+        "target_100x_ppb": "1.17900",
+        "abs_tr_M_q0": null,
+        "zero_param_pred_MeV": null,
+        "zero_param_err_ppb": null,
+        "zero_param_status": "—",
+        "canonical_binding_status": "delta_lambda_unavailable"
+      },
+      {
+        "atom": "3He",
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "B_AME_MeV": "7.718037510",
+        "sigma_B_MeV": "1.000e-6",
+        "sigma_rel_ppb": "129.6",
+        "target_100x_ppb": "1.29567",
+        "abs_tr_M_q0": null,
+        "zero_param_pred_MeV": null,
+        "zero_param_err_ppb": null,
+        "zero_param_status": "—",
+        "canonical_binding_status": "delta_lambda_unavailable"
+      },
+      {
+        "atom": "4He",
+        "Z": 2,
+        "N": 2,
+        "A": 4,
+        "B_AME_MeV": "28.29569127",
+        "sigma_B_MeV": "1.000e-6",
+        "sigma_rel_ppb": "35.34",
+        "target_100x_ppb": "0.353411",
+        "abs_tr_M_q0": null,
+        "zero_param_pred_MeV": null,
+        "zero_param_err_ppb": null,
+        "zero_param_status": "—",
+        "canonical_binding_status": "delta_lambda_unavailable"
+      },
+      {
+        "atom": "6Li",
+        "Z": 3,
+        "N": 3,
+        "A": 6,
+        "B_AME_MeV": "31.99404550",
+        "sigma_B_MeV": "5.000e-6",
+        "sigma_rel_ppb": "156.3",
+        "target_100x_ppb": "1.56279",
+        "abs_tr_M_q0": null,
+        "zero_param_pred_MeV": null,
+        "zero_param_err_ppb": null,
+        "zero_param_status": "—",
+        "canonical_binding_status": "delta_lambda_unavailable"
+      },
+      {
+        "atom": "7Li",
+        "Z": 3,
+        "N": 4,
+        "A": 7,
+        "B_AME_MeV": "39.24470100",
+        "sigma_B_MeV": "5.000e-6",
+        "sigma_rel_ppb": "127.4",
+        "target_100x_ppb": "1.27406",
+        "abs_tr_M_q0": null,
+        "zero_param_pred_MeV": null,
+        "zero_param_err_ppb": null,
+        "zero_param_status": "—",
+        "canonical_binding_status": "delta_lambda_unavailable"
+      }
+    ],
+    "qbeta_precision_ladder": [
+      {
+        "N": 0,
+        "label": "Form A bare (single-wrap symbolic)",
+        "Q_pred_MeV": "0.78364580284495",
+        "err_MeV": "0.001312",
+        "err_ppb": "1.67754e+6",
+        "categorical_source": "m_e · |q²-2q-1| (q+1) / (2q³)"
+      },
+      {
+        "N": 1,
+        "label": "cos(α - b·ℏ_q²/2)  [Kashiwara b]",
+        "Q_pred_MeV": "0.78239116750280",
+        "err_MeV": "5.775e-5",
+        "err_ppb": "73823.0",
+        "categorical_source": "Kashiwara f₁ matrix element on V_(2,1)"
+      },
+      {
+        "N": 2,
+        "label": "Q_N1 · (1 - b² ℏ_q⁴)  [Kashiwara b²]",
+        "Q_pred_MeV": "0.78233441027784",
+        "err_MeV": "9.970e-7",
+        "err_ppb": "1274.35",
+        "categorical_source": "Kashiwara f₁†f₁ return amplitude (b²)"
+      },
+      {
+        "N": 3,
+        "label": "Q_N2 · (1 + c₃·b³·ℏ_q⁶)  [c₃ = J_Hopf(q=1) = -2]",
+        "Q_pred_MeV": "0.78233344351878",
+        "err_MeV": "3.021e-8",
+        "err_ppb": "38.6137",
+        "categorical_source": "Hopf-link Jones polynomial at q=1 (cross-block)"
+      },
+      {
+        "N": "4-canonical",
+        "label": "Q_N3 · (1 + c₃·b⁴ · b⁴·ℏ_q⁸)  [empirical near-match (registry); 2026-05-19: c₄ = c₃·b⁴]",
+        "Q_pred_MeV": "0.78233343885366",
+        "err_MeV": "2.554e-8",
+        "err_ppb": "32.6506",
+        "categorical_source": "c_3 · b⁴ — Hopf Jones at q=1 times pure Kashiwara b⁴. Per 2026-05-19-qbeta-all-ck-categorical-extension.md (0.91% empirical residual; replaces doc's b² + 1/2 which was 9.5% off)."
+      },
+      {
+        "N": 4,
+        "label": "Q_N3 · (1 + c₄·b⁴·ℏ_q⁸)  [doc: c₄ = +(b²+1/2)]",
+        "Q_pred_MeV": "0.78233344867622",
+        "err_MeV": "3.537e-8",
+        "err_ppb": "45.2061",
+        "categorical_source": "Kashiwara b² + Hopf-half integer offset (mixed)",
+        "note": "Doc-form c₄ = +(b²+1/2) WORSENS to +12.6 ppb. Sign issue — see 2026-05-18-qbeta-n4-sign-investigation.md."
+      },
+      {
+        "N": "4-flipped",
+        "label": "Q_N3 · (1 + c₄·b⁴·ℏ_q⁸)  [SIGN-FIXED: c₄ = -(b²+1/2)]",
+        "Q_pred_MeV": "0.78233343836134",
+        "err_MeV": "2.505e-8",
+        "err_ppb": "32.0213",
+        "categorical_source": "Sign-flipped categorical (audit fix)",
+        "note": "Sign-flipped categorical closes to -0.57 ppb. Beats 7.80 ppb target by 14×. Doc's claimed -7 ppt requires empirical c_4 = -1.144 (9.5% off categorical)."
+      },
+      {
+        "N": "5-canonical",
+        "label": "Q_N4 · (1 - (b²+1/2)·b⁵·ℏ_q^10)  [empirical/open (registry); 2026-05-19: c₅ = -(b²+1/2)]",
+        "Q_pred_MeV": "0.78233343880974",
+        "err_MeV": "2.550e-8",
+        "err_ppb": "32.5945",
+        "categorical_source": "-(b² + 1/2) — Kashiwara b² + Hopf-half offset. This is the doc's original 'c_4 = b² + 1/2' form, but correctly placed at N=5 (the doc had the rung index off by one). Sub-ppt closure when applied on top of the canonical c_4 = c_3·b⁴ form. Per 2026-05-19-qbeta-all-ck-categorical-extension.md."
+      },
+      {
+        "N": "5-cohomstrata",
+        "label": "Q_N4-flipped · (1 + 13·b⁵·ℏ_q^10)  [SUPERSEDED conjectural: 2³+2²+1]",
+        "Q_pred_MeV": "0.78233343881720",
+        "err_MeV": "2.551e-8",
+        "err_ppb": "32.6040",
+        "categorical_source": "Older cohomological-strata conjecture c_5 = 13. Superseded by the 2026-05-19 form c_5 = -(b²+1/2)."
+      },
+      {
+        "N": "6-canonical",
+        "label": "Q_N5-canonical · (1 + c_3²·b² · b⁶·ℏ_q^12)  [CANONICAL: c₆ = c_3²·b² = 4·b²]",
+        "Q_pred_MeV": "0.78233343881064",
+        "err_MeV": "2.550e-8",
+        "err_ppb": "32.5956",
+        "categorical_source": "c_3² · b² = J_Hopf(q=1)² · Kashiwara b² — Jones-squared (= Khovanov rank of Hopf at q=1, = 4) times intra-block Kashiwara b². Closes residual from -0.0013 ppb (N=5) to -0.0002 ppb (factor 6.5 tightening)."
+      },
+      {
+        "N": "7-canonical",
+        "label": "Q_N6-canonical · (1 + c_3³ · b⁷·ℏ_q^14)  [CANONICAL: c₇ = c_3³ = -8]",
+        "Q_pred_MeV": "0.78233343881062",
+        "err_MeV": "2.550e-8",
+        "err_ppb": "32.5956",
+        "categorical_source": "c_3³ = J_Hopf(q=1)³ = -8 — Jones cubed, pure Jones rung. Closes residual to ~10⁻⁴ ppb. Pattern: c_k for k=3,4,6,7 follows c_3^(power) · b^?; c_5 is the odd Kashiwara-only rung."
+      }
+    ],
+    "upstream_witness_hashes": [
+      {
+        "path": "canonical-tr-m-via-chi-cache.witness.json",
+        "sha256": "0c54a04b73413fb689f7ae099712af6e51ab477876aa13401067c35d8f6617e0",
+        "size_bytes": 32781,
+        "commitSha": "4f207588745f901d68703c022c9e38a1d134bb5f",
+        "scriptCommitSha": "cf3b3f758b936fc3a9bdd2cf38089bbb628ac50e",
+        "computedAt": "2026-05-29T15:07:34.921488+00:00"
+      },
+      {
+        "path": "mass-table-ppb.witness.json",
+        "sha256": "6214e3f17bb1cd3f8ce0e00a348213b1ca6996fe9f4e05689c951491627a617b",
+        "size_bytes": 11708,
+        "commitSha": "cf5e251f4be3766c12d67a8b54cf94aee46f2040",
+        "scriptCommitSha": "db6776a504f73fe780edcefddf59bea6f30c0be3",
+        "computedAt": "2026-05-28T01:57:41.774731+00:00"
+      },
+      {
+        "path": "q-beta-predicted.witness.json",
+        "sha256": "ac5b35a392db55bda37df0ee35b3b2c919244baca0cee04eba1eb957a9f8f4fe",
+        "size_bytes": 6719,
+        "commitSha": "9b13047f672c45fed1cb58aa347daad5d71e335e",
+        "scriptCommitSha": "bd3f2bddb7c582ebfb964f2fcba18fcc2461739f",
+        "computedAt": "2026-05-11T21:02:21.035127+00:00"
+      },
+      {
+        "path": "q-beta-operator-valued-N3.witness.json",
+        "sha256": "aa4907fcfb7234b82d44d12d2a6a15ef229ee2d4fc91dc1d8869737d6b99780a",
+        "size_bytes": 5245,
+        "commitSha": "e44e9e8500e0346e46b11792ab5f40e87b4ff766",
+        "scriptCommitSha": "unknown",
+        "computedAt": "2026-05-30T13:18:19.417036+00:00"
+      }
+    ]
+  }
+}

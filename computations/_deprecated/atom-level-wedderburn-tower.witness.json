@@ -1,0 +1,295 @@
+{
+  "computation": "atom-level-wedderburn-tower",
+  "description": "Atom-level Wedderburn decomposition (\u03bb \u22a2 3A) with GB filtration level breakdown.  Per user directive: replaces per-generator H_3 projection with full H_{3A} channel sum.  Tests \u03a3_\u03bb w_\u03bb \u00b7 \u03a6_q(|\u03c7^\u03bb(\ud835\udc9c)|/dim) as atom-level brane tower candidate.",
+  "reference_blocks": [
+    "prop:schur-weyl-mass-decomposition",
+    "thm:frobenius-codim-universal",
+    "thm:frobenius-antipode-unifies-chirality-and-tower",
+    "prop:e-infinity-page-identifications"
+  ],
+  "computedAt": "2026-04-25T02:13:11.583519+00:00",
+  "parameters": {
+    "q_0": 1.1099785955541805,
+    "level_heuristic": "len(\u03bb) - 1 (diagram height - 1)"
+  },
+  "results": {
+    "p": {
+      "Z": 1,
+      "N": 0,
+      "A": 1,
+      "n_partitions": 3,
+      "descended_tr_M": 0.7022507726245337,
+      "phi_q_atom_sum": 63486.72717051725,
+      "by_level": {
+        "0": {
+          "count": 1,
+          "sum_w_chi": 0.22587641556611068,
+          "sum_phi_q": 0.0
+        },
+        "1": {
+          "count": 1,
+          "sum_w_chi": 0.5971510858879452,
+          "sum_phi_q": 62650.30316811137
+        },
+        "2": {
+          "count": 1,
+          "sum_w_chi": -0.12077672882952212,
+          "sum_phi_q": 836.424002405885
+        }
+      },
+      "walltime_sec": 1.639512300491333
+    },
+    "n": {
+      "Z": 0,
+      "N": 1,
+      "A": 1,
+      "n_partitions": 3,
+      "descended_tr_M": 0.45250578897205723,
+      "phi_q_atom_sum": 18576.76814233484,
+      "by_level": {
+        "0": {
+          "count": 1,
+          "sum_w_chi": 0.18333343648767686,
+          "sum_phi_q": 0.0
+        },
+        "1": {
+          "count": 1,
+          "sum_w_chi": 0.41797562107770275,
+          "sum_phi_q": 705.8176100363617
+        },
+        "2": {
+          "count": 1,
+          "sum_w_chi": -0.14880326859332244,
+          "sum_phi_q": 17870.950532298477
+        }
+      },
+      "walltime_sec": 0.00691676139831543
+    },
+    "D atom": {
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "n_partitions": 11,
+      "descended_tr_M": -0.00512654141305666,
+      "phi_q_atom_sum": 77.7783634769498,
+      "by_level": {
+        "0": {
+          "count": 1,
+          "sum_w_chi": 0.0018594247811841865,
+          "sum_phi_q": 0.0
+        },
+        "1": {
+          "count": 3,
+          "sum_w_chi": 0.05968895250903594,
+          "sum_phi_q": 52.86595726799327
+        },
+        "2": {
+          "count": 3,
+          "sum_w_chi": -0.07161386190757707,
+          "sum_phi_q": 20.231898966260932
+        },
+        "3": {
+          "count": 2,
+          "sum_w_chi": -0.007319065086272661,
+          "sum_phi_q": 0.3698158694806855
+        },
+        "4": {
+          "count": 1,
+          "sum_w_chi": 0.013064986452116187,
+          "sum_phi_q": 1.9229931835129501
+        },
+        "5": {
+          "count": 1,
+          "sum_w_chi": -0.0008069781615432384,
+          "sum_phi_q": 2.387698189701972
+        }
+      },
+      "walltime_sec": 0.03358268737792969
+    },
+    "T atom": {
+      "Z": 1,
+      "N": 2,
+      "A": 3,
+      "n_partitions": 30,
+      "descended_tr_M": 0.0003097540266663153,
+      "phi_q_atom_sum": 1.4015637417777473,
+      "by_level": {
+        "0": {
+          "count": 1,
+          "sum_w_chi": 2.658996920703369e-06,
+          "sum_phi_q": 0.0
+        },
+        "1": {
+          "count": 4,
+          "sum_w_chi": 0.0015846961447666377,
+          "sum_phi_q": 0.04858364089884728
+        },
+        "2": {
+          "count": 7,
+          "sum_w_chi": -0.00033511007277013476,
+          "sum_phi_q": 0.3814209473527426
+        },
+        "3": {
+          "count": 6,
+          "sum_w_chi": -0.004958487820578041,
+          "sum_phi_q": 0.584636158762801
+        },
+        "4": {
+          "count": 5,
+          "sum_w_chi": 0.005304768679826832,
+          "sum_phi_q": 0.3149972786020646
+        },
+        "5": {
+          "count": 3,
+          "sum_w_chi": -0.0011582849680592776,
+          "sum_phi_q": 0.05993312474319967
+        },
+        "6": {
+          "count": 2,
+          "sum_w_chi": -0.00016953274487071813,
+          "sum_phi_q": 0.00570680808581032
+        },
+        "7": {
+          "count": 1,
+          "sum_w_chi": 4.019979865708004e-05,
+          "sum_phi_q": 0.0025233428729635526
+        },
+        "8": {
+          "count": 1,
+          "sum_w_chi": -1.1539872267657914e-06,
+          "sum_phi_q": 0.0037624404593184614
+        }
+      },
+      "walltime_sec": 0.27810192108154297
+    },
+    "3He atom": {
+      "Z": 2,
+      "N": 1,
+      "A": 3,
+      "n_partitions": 30,
+      "descended_tr_M": -0.0003768389794272582,
+      "phi_q_atom_sum": 2.105147578768191,
+      "by_level": {
+        "0": {
+          "count": 1,
+          "sum_w_chi": 4.036233203258765e-06,
+          "sum_phi_q": 0.0
+        },
+        "1": {
+          "count": 4,
+          "sum_w_chi": 0.003272551056556358,
+          "sum_phi_q": 0.6439743147515217
+        },
+        "2": {
+          "count": 7,
+          "sum_w_chi": 0.0032784554865040033,
+          "sum_phi_q": 0.43694352301861966
+        },
+        "3": {
+          "count": 6,
+          "sum_w_chi": -0.01206585542447172,
+          "sum_phi_q": 0.646886640520012
+        },
+        "4": {
+          "count": 5,
+          "sum_w_chi": 0.005506934620270249,
+          "sum_phi_q": 0.31509911652826056
+        },
+        "5": {
+          "count": 3,
+          "sum_w_chi": -0.00018245966928260486,
+          "sum_phi_q": 0.05446682844127652
+        },
+        "6": {
+          "count": 2,
+          "sum_w_chi": -0.00021946257510547092,
+          "sum_phi_q": 0.006479000288859886
+        },
+        "7": {
+          "count": 1,
+          "sum_w_chi": 2.9721518665611557e-05,
+          "sum_phi_q": 0.001122163527726221
+        },
+        "8": {
+          "count": 1,
+          "sum_w_chi": -7.602257669412812e-07,
+          "sum_phi_q": 0.00017599169191433699
+        }
+      },
+      "walltime_sec": 0.2827286720275879
+    },
+    "4He atom": {
+      "Z": 2,
+      "N": 2,
+      "A": 4,
+      "n_partitions": 77,
+      "descended_tr_M": 2.7725932551947156e-05,
+      "phi_q_atom_sum": 1.558564185290135,
+      "by_level": {
+        "0": {
+          "count": 1,
+          "sum_w_chi": 1.647410270174878e-09,
+          "sum_phi_q": 0.0
+        },
+        "1": {
+          "count": 6,
+          "sum_w_chi": 3.9796328797848374e-05,
+          "sum_phi_q": 0.0011627108803407807
+        },
+        "2": {
+          "count": 12,
+          "sum_w_chi": 0.0003106325085629434,
+          "sum_phi_q": 0.08157788875610784
+        },
+        "3": {
+          "count": 15,
+          "sum_w_chi": -0.0005850182041762519,
+          "sum_phi_q": 0.5133076342981004
+        },
+        "4": {
+          "count": 13,
+          "sum_w_chi": 0.00011799272585028151,
+          "sum_phi_q": 0.6330457507243195
+        },
+        "5": {
+          "count": 11,
+          "sum_w_chi": 0.0002973851032666627,
+          "sum_phi_q": 0.269898508104224
+        },
+        "6": {
+          "count": 7,
+          "sum_w_chi": -0.00018068581887474656,
+          "sum_phi_q": 0.053668026752535146
+        },
+        "7": {
+          "count": 5,
+          "sum_w_chi": 2.735602859506295e-05,
+          "sum_phi_q": 0.005567589033008084
+        },
+        "8": {
+          "count": 3,
+          "sum_w_chi": 6.331851039578251e-07,
+          "sum_phi_q": 0.0003221547870616804
+        },
+        "9": {
+          "count": 2,
+          "sum_w_chi": -3.9017138290385323e-07,
+          "sum_phi_q": 1.31312652395059e-05
+        },
+        "10": {
+          "count": 1,
+          "sum_w_chi": 2.2909689054481372e-08,
+          "sum_phi_q": 7.153508819341733e-07
+        },
+        "11": {
+          "count": 1,
+          "sum_w_chi": -3.102902317684396e-10,
+          "sum_phi_q": 7.533831565019035e-08
+        }
+      },
+      "walltime_sec": 173.70351576805115
+    }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
+}

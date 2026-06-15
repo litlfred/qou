@@ -1,0 +1,66 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-09T00:16:39.728055+00:00",
+  "commitSha": "1f2abe696ba8ad67921f7fa7139f9a159a9d8bd6",
+  "assertions": [
+    {
+      "name": "lateral weighting (w_perp<1) reduces the equal-channel overbind",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "E(σ+2π) = b_σ·(1 + 2·w_perp) is monotone increasing in w_perp"
+    },
+    {
+      "name": "cardinality (3 channels) independent of overlap weight",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "multiple_bond builds order operators regardless of w_perp"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 3,
+  "computation": "embeddable-knot-operator",
+  "scriptFile": "embeddable_knot_operator.py",
+  "scriptHash": "42b8ea2b218e",
+  "scriptCommitSha": "1f2abe696ba8ad67921f7fa7139f9a159a9d8bd6",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "clarabel": "0.11.1"
+  },
+  "description": "Generic embeddable knot operator with geometric overlap weighting (axial σ w=1, transverse π w=w_perp<1). Demonstrates the lateral-π energy reduction on the σ+2π triple bond; reusable downstream.",
+  "contentBlock": "def:embeddable-knot-operator",
+  "parameters": {
+    "sigma_channel_eV": 4.623136967742963,
+    "D0_N2_eV": 9.79
+  },
+  "data": {
+    "triple_bond_energy_vs_w_perp": {
+      "1.00": 13.86941090322889,
+      "0.70": 11.095528722583111,
+      "0.50": 9.246273935485926,
+      "0.30": 7.397019148388741
+    },
+    "upstream_witness_hashes": [
+      {
+        "path": "co-bond-order-active-set.witness.json",
+        "sha256": "0ddce3f86094a9ef4c9202ed511c731e7b5f20916525ef6fd1b29ec83d189766",
+        "size_bytes": 4752,
+        "commitSha": "1f2abe696ba8ad67921f7fa7139f9a159a9d8bd6",
+        "scriptCommitSha": "1f2abe696ba8ad67921f7fa7139f9a159a9d8bd6",
+        "computedAt": "2026-06-09T00:16:39.566663+00:00"
+      }
+    ]
+  }
+}

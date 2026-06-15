@@ -1,0 +1,50 @@
+-- Gröbner basis witness for beta decay computation
+-- Generated: 2026-04-03T20:31:19.689994+00:00
+-- q = 1.1099785955541805
+
+-- Neutron normal form in H_3(q)
+-- N_n = B_3(u, d, d)
+--   -0.1447048325 * 1
+--   -0.0151875090 * sigma_0
+--   +1.5386745543 * sigma_1
+--   +0.1614917288 * sigma_0.sigma_1
+-- Markov trace = 0.6562664742
+-- Hecke energy = 0.2603876773
+-- Hecke steps = 1
+-- YB steps = 0
+
+-- Proton normal form in H_3(q)
+-- N_p = B_3(u, u, d)
+--   -0.0646561562 * 1
+--   -0.0101606582 * sigma_0
+--   +1.2455145713 * sigma_1
+--   +0.1957315211 * sigma_0.sigma_1
+-- Markov trace = 0.6009811110
+-- Hecke energy = 0.2333168054
+
+-- T_{3,5} weak vertex = (sigma_0.sigma_1)^5
+--   +0.0893226700 * 1
+--   +0.2368713842 * sigma_0
+--   +0.2368713842 * sigma_1
+--   +0.1388430778 * sigma_0.sigma_1
+--   +1.1388430778 * sigma_1.sigma_0
+--   +0.4749582847 * sigma_0.sigma_1.sigma_0
+-- Markov trace W(q) = 0.7035538015
+-- 38 Hecke + 18 YB reduction steps
+
+-- Beta decay: N_n × T_{3,5} reduced
+--   +0.5318588007 * 1
+--   +1.7926255852 * sigma_0
+--   +0.2539510309 * sigma_1
+--   +0.7451339539 * sigma_0.sigma_1
+--   +0.5972540159 * sigma_1.sigma_0
+--   +0.3636256388 * sigma_0.sigma_1.sigma_0
+-- 13 Hecke + 4 YB steps
+-- Hecke energy = 0.7230233945
+-- Markov trace = 1.9337094562
+
+-- Q-value comparisons
+-- Q(trace ratio) = 0.014990 MeV
+-- Q(Hecke diff)  = 0.044112 MeV
+-- Q(decay Hecke) = 1.178174 MeV
+-- Q_exp          = 0.782343 MeV

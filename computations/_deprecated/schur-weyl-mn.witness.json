@@ -1,0 +1,273 @@
+{
+  "computation": "schur-weyl-mn",
+  "description": "Schur-Weyl global mass trace with classical Murnaghan-Nakayama Specht characters on the S_{3A}-projection of the atomic braid. This plugs in real atomic-braid cycle types, replacing the trivial \u03c7^\u03bb = 1 of schur_weyl_symbolic.py. q is kept symbolic; final evaluation at q_0 uses sympy.evalf(30).",
+  "reference_blocks": [
+    "prop:schur-weyl-mass-decomposition",
+    "prop:full-pole-structure-mass-trace"
+  ],
+  "method_notes": [
+    "Classical \u03c7^\u03bb (q=1 limit of Hecke character \u03c7^\u03bb_q).",
+    "S_{3A} permutation obtained by projecting braid word (sign-ignoring, since \u03c3^\u00b11 \u2192 same transposition).",
+    "Full q-deformed Hecke character requires ribbon q-weights (next iteration)."
+  ],
+  "computedAt": "2026-04-24T21:48:14.555014+00:00",
+  "parameters": {
+    "q_0": "1.1099785955541805",
+    "evalf_dps": 30,
+    "engine": "sympy + custom Murnaghan-Nakayama"
+  },
+  "results_by_atom": {
+    "p": {
+      "Z": 1,
+      "N": 0,
+      "A": 1,
+      "braid_word_length": 11,
+      "cycle_type": [
+        2,
+        1
+      ],
+      "n_partitions_total": 3,
+      "n_partitions_nonzero_chi": 1,
+      "total_mn_symbolic": "(q**4 + 1)/(q**4 + q**2 + 1)",
+      "total_mn_at_q0": 0.671453179676007,
+      "total_trivial_at_q0": 1.3321269520243568,
+      "mn_vs_trivial_ratio": 0.5040459384562697,
+      "top_contributions": [
+        {
+          "partition": [
+            3
+          ],
+          "weight_at_q0": 0.671453179676007,
+          "character": 1,
+          "contribution_at_q0": 0.671453179676007
+        }
+      ]
+    },
+    "n": {
+      "Z": 0,
+      "N": 1,
+      "A": 1,
+      "braid_word_length": 11,
+      "cycle_type": [
+        2,
+        1
+      ],
+      "n_partitions_total": 3,
+      "n_partitions_nonzero_chi": 1,
+      "total_mn_symbolic": "(q**4 + 1)/(q**4 + q**2 + 1)",
+      "total_mn_at_q0": 0.671453179676007,
+      "total_trivial_at_q0": 1.3321269520243568,
+      "mn_vs_trivial_ratio": 0.5040459384562697,
+      "top_contributions": [
+        {
+          "partition": [
+            3
+          ],
+          "weight_at_q0": 0.671453179676007,
+          "character": 1,
+          "contribution_at_q0": 0.671453179676007
+        }
+      ]
+    },
+    "D": {
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "braid_word_length": 23,
+      "cycle_type": [
+        3,
+        2,
+        1
+      ],
+      "n_partitions_total": 11,
+      "n_partitions_nonzero_chi": 2,
+      "total_mn_symbolic": "q**9*(q**2 - 1)**5*((q**4 - 1)*(q**6 - 1)*(q**6*(q**6 + q**4 + q**2 + 1) + q**4 + q**2 + 1) + (q**10 - 1)*(q**12 - 1))/((q**4 - 1)**2*(q**6 - 1)**2*(q**8 - 1)*(q**10 - 1)*(q**12 - 1))",
+      "total_mn_at_q0": 0.01558575990731854,
+      "total_trivial_at_q0": 0.08315858896870357,
+      "mn_vs_trivial_ratio": 0.18742213042099817,
+      "top_contributions": [
+        {
+          "partition": [
+            6
+          ],
+          "weight_at_q0": 0.009090348304593833,
+          "character": 1,
+          "contribution_at_q0": 0.009090348304593833
+        },
+        {
+          "partition": [
+            3,
+            3
+          ],
+          "weight_at_q0": 0.006495411602724708,
+          "character": 1,
+          "contribution_at_q0": 0.006495411602724708
+        }
+      ]
+    },
+    "T": {
+      "Z": 1,
+      "N": 2,
+      "A": 3,
+      "braid_word_length": 35,
+      "cycle_type": [
+        3,
+        3,
+        2,
+        1
+      ],
+      "n_partitions_total": 30,
+      "n_partitions_nonzero_chi": 3,
+      "total_mn_symbolic": "q**18*(q**2 - 1)**6*(q**9*(q**2 - 1)**2*(q**4 - 1)*(q**6 - 1)*(q**10*(q**8 + q**6 + q**4 + q**2 + 1) + q**8 + q**6 + q**4 + q**2 + 1) + 2*(q**8 - 1)**2*(q**16 - 1)*(q**18 - 1))/((q**4 - 1)**2*(q**6 - 1)**2*(q**8 - 1)*(q**10 - 1)*(q**12 - 1)*(q**14 - 1)*(q**16 - 1)*(q**18 - 1))",
+      "total_mn_at_q0": 0.0008828689329881071,
+      "total_trivial_at_q0": 0.0011327078701722972,
+      "mn_vs_trivial_ratio": 0.7794321521345244,
+      "top_contributions": [
+        {
+          "partition": [
+            6,
+            3
+          ],
+          "weight_at_q0": 0.000431405670285675,
+          "character": 2,
+          "contribution_at_q0": 0.00086281134057135
+        },
+        {
+          "partition": [
+            9
+          ],
+          "weight_at_q0": 2.0057592416757134e-05,
+          "character": 1,
+          "contribution_at_q0": 2.0057592416757134e-05
+        },
+        {
+          "partition": [
+            3,
+            3,
+            3
+          ],
+          "weight_at_q0": 0.0,
+          "character": 1,
+          "contribution_at_q0": 0.0
+        }
+      ]
+    },
+    "3He": {
+      "Z": 2,
+      "N": 1,
+      "A": 3,
+      "braid_word_length": 35,
+      "cycle_type": [
+        3,
+        3,
+        2,
+        1
+      ],
+      "n_partitions_total": 30,
+      "n_partitions_nonzero_chi": 3,
+      "total_mn_symbolic": "q**18*(q**2 - 1)**6*(q**9*(q**2 - 1)**2*(q**4 - 1)*(q**6 - 1)*(q**10*(q**8 + q**6 + q**4 + q**2 + 1) + q**8 + q**6 + q**4 + q**2 + 1) + 2*(q**8 - 1)**2*(q**16 - 1)*(q**18 - 1))/((q**4 - 1)**2*(q**6 - 1)**2*(q**8 - 1)*(q**10 - 1)*(q**12 - 1)*(q**14 - 1)*(q**16 - 1)*(q**18 - 1))",
+      "total_mn_at_q0": 0.0008828689329881071,
+      "total_trivial_at_q0": 0.0011327078701722972,
+      "mn_vs_trivial_ratio": 0.7794321521345244,
+      "top_contributions": [
+        {
+          "partition": [
+            6,
+            3
+          ],
+          "weight_at_q0": 0.000431405670285675,
+          "character": 2,
+          "contribution_at_q0": 0.00086281134057135
+        },
+        {
+          "partition": [
+            9
+          ],
+          "weight_at_q0": 2.0057592416757134e-05,
+          "character": 1,
+          "contribution_at_q0": 2.0057592416757134e-05
+        },
+        {
+          "partition": [
+            3,
+            3,
+            3
+          ],
+          "weight_at_q0": 0.0,
+          "character": 1,
+          "contribution_at_q0": 0.0
+        }
+      ]
+    },
+    "4He": {
+      "Z": 2,
+      "N": 2,
+      "A": 4,
+      "braid_word_length": 47,
+      "cycle_type": [
+        3,
+        3,
+        3,
+        2,
+        1
+      ],
+      "n_partitions_total": 77,
+      "n_partitions_nonzero_chi": 5,
+      "total_mn_symbolic": "q**36*(q**2 - 1)**9*(q**18*(q**2 - 1)**2*(q**4 - 1)*(q**6 - 1)*(q**8 - 1)*(q**10 - 1)*(q**12 - 1)*(q**12*(q**12 + q**10 + q**8 + q**6 + q**4 + q**2 + 1) + q**10 + q**8 + q**6 + q**4 + q**2 + 1) + 2*(q**2 - 1)**2*(q**16 - 1)*(q**18 - 1)*(q**20 - 1)*(q**22 - 1)*(q**24 - 1) + 3*(q**8 - 1)*(q**10 - 1)*(q**12 - 1)*(q**14 - 1)**2*(q**22 - 1)*(q**24 - 1))/((q**4 - 1)**2*(q**6 - 1)**2*(q**8 - 1)**2*(q**10 - 1)**2*(q**12 - 1)**2*(q**14 - 1)*(q**16 - 1)*(q**18 - 1)*(q**20 - 1)*(q**22 - 1)*(q**24 - 1))",
+      "total_mn_at_q0": 4.425191012271545e-06,
+      "total_trivial_at_q0": 5.288814034990244e-06,
+      "mn_vs_trivial_ratio": 0.8367076215943576,
+      "top_contributions": [
+        {
+          "partition": [
+            9,
+            3
+          ],
+          "weight_at_q0": 1.3468801325263934e-06,
+          "character": 3,
+          "contribution_at_q0": 4.040640397579181e-06
+        },
+        {
+          "partition": [
+            6,
+            6
+          ],
+          "weight_at_q0": 1.8637301758824094e-07,
+          "character": 2,
+          "contribution_at_q0": 3.7274603517648187e-07
+        },
+        {
+          "partition": [
+            12
+          ],
+          "weight_at_q0": 1.1804579515882457e-08,
+          "character": 1,
+          "contribution_at_q0": 1.1804579515882457e-08
+        },
+        {
+          "partition": [
+            6,
+            3,
+            3
+          ],
+          "weight_at_q0": 0.0,
+          "character": 3,
+          "contribution_at_q0": 0.0
+        },
+        {
+          "partition": [
+            3,
+            3,
+            3,
+            3
+          ],
+          "weight_at_q0": 0.0,
+          "character": 1,
+          "contribution_at_q0": 0.0
+        }
+      ]
+    }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
+}

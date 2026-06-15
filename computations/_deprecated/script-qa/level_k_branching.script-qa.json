@@ -1,0 +1,206 @@
+{
+  "$schema": "script-qa/v1",
+  "script_path": "folio-assistant/computations/_deprecated/level_k_branching.py",
+  "language": "python",
+  "source_hash": "1ed2bd1edeed",
+  "updated_at": "2026-06-09T03:47:37.719Z",
+  "criteria": {
+    "does_not_default_to_float": [
+      {
+        "field_hash": {
+          "ts": "1ed2bd1edeed"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "13ca48443f4b",
+          "script_commit_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2"
+        },
+        "reviewed_at": "2026-05-22T18:27:38.070Z",
+        "reviewed_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2",
+        "severity": "major",
+        "evidence": "folio-assistant/computations/_deprecated/level_k_branching.py:54: bare `float(Z_MARKOV)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision"
+      },
+      {
+        "field_hash": {
+          "ts": "1ed2bd1edeed"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "d63813af716d",
+          "script_commit_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab"
+        },
+        "reviewed_at": "2026-05-22T19:00:32.111Z",
+        "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
+        "severity": "major",
+        "evidence": "folio-assistant/computations/_deprecated/level_k_branching.py:54: bare `float(Z_MARKOV)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision"
+      }
+    ],
+    "respects_archimedean_wall": [
+      {
+        "field_hash": {
+          "ts": "1ed2bd1edeed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "d63813af716d",
+          "script_commit_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab"
+        },
+        "reviewed_at": "2026-05-22T19:00:32.111Z",
+        "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab"
+      }
+    ],
+    "code_is_commented": [
+      {
+        "field_hash": {
+          "ts": "1ed2bd1edeed"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "d63813af716d",
+          "script_commit_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab"
+        },
+        "reviewed_at": "2026-05-22T19:00:32.111Z",
+        "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
+        "severity": "minor",
+        "evidence": "folio-assistant/computations/_deprecated/level_k_branching.py:1: script lacks both a module docstring and ≥10% comment density (got 21/278 = 7.6%) — add a top-of-file `\"\"\"…\"\"\"` docstring describing purpose and inputs / outputs, or increase inline commentary"
+      }
+    ],
+    "variables_typed": [
+      {
+        "field_hash": {
+          "ts": "1ed2bd1edeed"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "d63813af716d",
+          "script_commit_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab"
+        },
+        "reviewed_at": "2026-05-22T19:00:32.111Z",
+        "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
+        "severity": "minor",
+        "evidence": "folio-assistant/computations/_deprecated/level_k_branching.py:60: `def q_int(…)` has 1 parameter without type annotation: n — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/_deprecated/level_k_branching.py:64: `def q_fact(…)` has 1 parameter without type annotation: n — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/_deprecated/level_k_branching.py:71: `def transpose_partition(…)` has 1 parameter without type annotation: lam — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/_deprecated/level_k_branching.py:77: `def hook_product_q(…)` has 1 parameter without type annotation: lam — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/_deprecated/level_k_branching.py:84: `def dim_q_lam(…)` has 1 parameter without type annotation: lam — add `: type` (or `: Any` if the type genuinely is untyped)"
+      }
+    ],
+    "has_references_to_paper": [
+      {
+        "field_hash": {
+          "ts": "1ed2bd1edeed"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "d63813af716d",
+          "script_commit_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab"
+        },
+        "reviewed_at": "2026-05-22T19:00:32.111Z",
+        "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
+        "severity": "minor",
+        "evidence": "folio-assistant/computations/_deprecated/level_k_branching.py:1: script contains no `# Ref: [key] …` citation. Add a bibliographic citation pointing to the proposition / theorem / paper section this script computes (matching the entries in `content/schema/references.ts`), or override with a `human` reviewer `result: \"n/a\"` entry if the script is pure infrastructure"
+      }
+    ],
+    "connected_to_ci_pipeline": [
+      {
+        "field_hash": {
+          "ts": "1ed2bd1edeed"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "d63813af716d",
+          "script_commit_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab"
+        },
+        "reviewed_at": "2026-05-22T19:00:32.111Z",
+        "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab"
+      }
+    ],
+    "deprecated": [
+      {
+        "field_hash": {
+          "ts": "1ed2bd1edeed"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "d63813af716d",
+          "script_commit_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab"
+        },
+        "reviewed_at": "2026-05-22T19:00:32.111Z",
+        "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
+        "severity": "minor",
+        "evidence": "folio-assistant/computations/_deprecated/level_k_branching.py:1: script lives under `_deprecated/` — consumers must not depend on its output. Move to the canonical path if still active, or delete if truly retired"
+      }
+    ],
+    "uses_library_framework_appropriately": [
+      {
+        "field_hash": {
+          "ts": "1ed2bd1edeed"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "d63813af716d",
+          "script_commit_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab"
+        },
+        "reviewed_at": "2026-05-22T19:00:32.111Z",
+        "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
+        "severity": "major",
+        "evidence": "folio-assistant/computations/_deprecated/level_k_branching.py:327: script writes `.witness.json` (\"level-k-branching.witness.json\") but does not import `WitnessBuilder` from `witness_base` — add `from witness_base import WitnessBuilder` and stamp the payload via `WitnessBuilder.stamp_staleness_metadata(...)` for provenance / staleness tracking"
+      }
+    ],
+    "compute_no_mpf_to_float_cast": [
+      {
+        "field_hash": {
+          "ts": "1ed2bd1edeed"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "0bbdf534427b",
+          "script_commit_sha": "76a167e10467a2b0f41dbbd968ea8245d5b4ba33"
+        },
+        "reviewed_at": "2026-06-09T03:37:13.209Z",
+        "reviewed_sha": "76a167e10467a2b0f41dbbd968ea8245d5b4ba33"
+      },
+      {
+        "field_hash": {
+          "ts": "1ed2bd1edeed"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "a08e6e1469fd",
+          "script_commit_sha": "76a167e10467a2b0f41dbbd968ea8245d5b4ba33"
+        },
+        "reviewed_at": "2026-06-09T03:47:37.719Z",
+        "reviewed_sha": "3765bc9aa9274031018ed3d7696fc515f11274be"
+      }
+    ]
+  }
+}

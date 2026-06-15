@@ -1,0 +1,61 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-18T17:33:56.977861+00:00",
+  "commitSha": "78e889115cacec6f1f7e370b571171863f8a2558",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 24,
+  "computation": "kappa-categorical-via-canonical-brane",
+  "scriptFile": "probe_kappa_categorical_via_canonical_brane.py",
+  "scriptHash": "f7ed748d6f52",
+  "scriptCommitSha": "4e17b6b4b57073aeadc2195bc452a8c288b7711e",
+  "description": "Categorical κ derivation by extracting per-interface-type Vol_q^({i})(β_atom) from the canonical Markov-invariant brane-tower form (prop:mass-endomorphism-tower §Algebraic). No empirical fit. Tests whether κ · h · E_0 = α · z · (V_pp − V_nn) per unit interface excess, with V_pp and V_nn the per-pp- and per-nn-interface generator's Vol_q^({i}).",
+  "contentBlock": "prop:magic-shell-coupling-kappa",
+  "parameters": {
+    "q_0": "1.1099785955541805752815940796095093779932822799587"
+  },
+  "data": {
+    "per_atom_vols": [
+      {
+        "atom": "D",
+        "Z": 1,
+        "N": 1,
+        "V_pp": null,
+        "V_pn": 0.3947901730386589,
+        "V_nn": null
+      },
+      {
+        "atom": "T",
+        "Z": 1,
+        "N": 2,
+        "V_pp": null,
+        "V_pn": 0.3947901730386589,
+        "V_nn": 0.2902600120437191
+      },
+      {
+        "atom": "3He",
+        "Z": 2,
+        "N": 1,
+        "V_pp": 0.4993203340335985,
+        "V_pn": 0.3947901730386589,
+        "V_nn": null
+      },
+      {
+        "atom": "4He",
+        "Z": 2,
+        "N": 2,
+        "V_pp": 0.4993203340335985,
+        "V_pn": 0.3947901730386589,
+        "V_nn": 0.2902600120437191
+      }
+    ],
+    "V_pp_4He": 0.4993203340335985,
+    "V_nn_4He": 0.2902600120437191,
+    "V_pp_plus_V_nn": 0.7895803460773176,
+    "V_nn_over_V_pp_ratio": 0.5813102176291262,
+    "kappa_categorical_MeV": 0.446653944470657,
+    "kappa_empirical_MeV": -1.0707907503265857,
+    "ratio_to_empirical": -0.41712532942073866
+  }
+}

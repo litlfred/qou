@@ -1,0 +1,140 @@
+{
+  "engine": "python+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-01T12:49:42.499803+00:00",
+  "commitSha": "6d87db16cce6fc76a25f0e2589d9f22cbb6adc62",
+  "assertions": [
+    {
+      "name": "no_cosh_q_sinh_q_candidate_within_0.01_pct",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.0,
+      "source": "Refutation: all 16 candidates miss empirical c_3 by > 0.01% at q_proton"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 17,
+  "computation": "qbeta-cosh-q-sinh-q-candidate-scan",
+  "scriptFile": "qbeta_cosh_q_sinh_q_candidate_scan.py",
+  "scriptHash": "ddfe9ac86516",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "User-raised 2026-06-01: is c_3 deviation a missing cosh_q/sinh_q correction? Scan of 16 natural q-hyperbolic candidates at q_proton against empirical c_3 = -2.0693. Expected: ALL REFUTED (closest match ~0.7%).",
+  "auditOnly": "docs/audits/2026-06-01-qbeta-cosh-q-sinh-q-candidate-scan.md",
+  "data": {
+    "q_proton": "1.109978582751380807591669095610768879874499121873578736072814240181799",
+    "empirical_c3_at_proton": "-2.0693",
+    "nominal_c3": "-2.0",
+    "deviation": "-0.06930000000000000000000000000000000000000000000000000000000000000000001",
+    "substrate_quantities": {
+      "h_full_q": "0.2090602987956393154308462131296749438597574952630245553816960544589759",
+      "h_tilde_half_q": "0.1043880582591816378331171593498066026336608612502418764560106353271153",
+      "hbar_q": "0.09908171604425850783917711751890606398525837338944581930888181427717694",
+      "two_q_full": "2.010896866707122299752491978091862815889240748484132916763932425904622",
+      "two_q_half": "2.002722363860533290507820237991631762534105085090696373596481167900831"
+    },
+    "candidate_scan": {
+      "-[2]_q (bar-sym)": {
+        "value": "-2.010896866707122299752491978091862815889240748484132916763932425904622",
+        "err_pct": 2.822361827327004,
+        "abs_err_pct": 2.822361827327004
+      },
+      "-[2]_q * (1 + hbar_q^2)": {
+        "value": "-2.030638216187903649442729975476421744720147857315289623178715261906207",
+        "err_pct": 1.8683508341997948,
+        "abs_err_pct": 1.8683508341997948
+      },
+      "-2 * cosh(h)": {
+        "value": "-2.043865626682933069498976136613047999036286252867926064651758145998732",
+        "err_pct": 1.2291293344158378,
+        "abs_err_pct": 1.2291293344158378
+      },
+      "-2 * cosh(h/2)": {
+        "value": "-2.010936504885953148104487131030964836893881639653690947302971577999796",
+        "err_pct": 2.820446291695107,
+        "abs_err_pct": 2.820446291695107
+      },
+      "-2 * cosh(hbar_q)": {
+        "value": "-2.009825220512093616843455513984994644525450102949732680237882180191326",
+        "err_pct": 2.874149687715961,
+        "abs_err_pct": 2.874149687715961
+      },
+      "-2 - sinh(h)": {
+        "value": "-2.210586502378487406037923222955078137131935301501167161230003999262947",
+        "err_pct": -6.82774379637981,
+        "abs_err_pct": 6.82774379637981
+      },
+      "-2 - sinh(h)*h": {
+        "value": "-2.044025277109575186486931215854243757529843501867947851524431723291157",
+        "err_pct": 1.221414144417185,
+        "abs_err_pct": 1.221414144417185
+      },
+      "-2 - h*hbar_q": {
+        "value": "-2.020714053161397373563061035271427068778290033059530862934359925146982",
+        "err_pct": 2.347941180041687,
+        "abs_err_pct": 2.347941180041687
+      },
+      "-2 - h_tilde^2": {
+        "value": "-2.010896866707122299752491978091862815889240748484132916763932425904622",
+        "err_pct": 2.822361827327004,
+        "abs_err_pct": 2.822361827327004
+      },
+      "-2 - h^2": {
+        "value": "-2.04370620853252198940201933567738830976821396071350610903595079685529",
+        "err_pct": 1.2368332995446774,
+        "abs_err_pct": 1.2368332995446774
+      },
+      "-2 - 2*h^2": {
+        "value": "-2.087412417065043978804038671354776619536427921427012218071901593710581",
+        "err_pct": -0.8752919859393987,
+        "abs_err_pct": 0.8752919859393987
+      },
+      "-2 - h^2 * [2]_q": {
+        "value": "-2.08788867779369656225558483291260461158584658161811718390703501394936",
+        "err_pct": -0.8983075336440614,
+        "abs_err_pct": 0.8983075336440614
+      },
+      "-2 * (1 + h^2/2 * [2]_q)": {
+        "value": "-2.08788867779369656225558483291260461158584658161811718390703501394936",
+        "err_pct": -0.8983075336440614,
+        "abs_err_pct": 0.8983075336440614
+      },
+      "-[2]_q - sinh(h)/h": {
+        "value": "-3.018197169976754500846882827120024966734930943678791418715691701610595",
+        "err_pct": -45.855949836986156,
+        "abs_err_pct": 45.855949836986156
+      },
+      "-2 * cosh(h) * cosh(hbar_q)": {
+        "value": "-2.053906341922557183880567008629447872260407541332983149773095210079157",
+        "err_pct": 0.7439065421854162,
+        "abs_err_pct": 0.7439065421854162
+      },
+      "-[2]_q^2 / 2": {
+        "value": "-2.021853104266260994701009667838694154884106980356753054517975398427645",
+        "err_pct": 2.2928959422867154,
+        "abs_err_pct": 2.2928959422867154
+      }
+    },
+    "closest_3_candidates": [
+      "-2 * cosh(h) * cosh(hbar_q)",
+      "-2 - 2*h^2",
+      "-2 - h^2 * [2]_q"
+    ],
+    "min_abs_err_pct": 0.7439065421854162,
+    "verdict": "ALL 16 CANDIDATES REFUTED at compute precision. Closest match -2 * cosh(h) * cosh(hbar_q) at +0.7439% — far from the 10⁻⁵⁰ compute precision a Taylor-exact candidate would need to satisfy. The empirical c_3 deviation does NOT cleanly factor through any natural q-hyperbolic correction.",
+    "anti_pattern_guard": "DO NOT wire any of these candidates. The 0.7-0.9% best matches are 'interesting' but well within the 8th-ansatz fit-trap zone. Per CLAUDE.md no-7th-ansatz discipline."
+  }
+}

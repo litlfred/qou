@@ -1,0 +1,19 @@
+{
+  "compute": "borromean_h3_2_1_irrep_derivation",
+  "description": "Attempts to derive Borromean Markov-trace closed form from the (2,1) irrep of H_3(q) via explicit Hoefsmit matrices. Sanity-checks consistency at q=1; identifies the structural origin of Q_Borromean = 0 (even-in-h matrix trace).",
+  "limitation": "Full explicit derivation of tr_M = (4+h\u00b2-3h\u2074-h\u2076)/(h\u00b2+4) from (2,1) Hoefsmit matrices is multi-branch / multi-page; the existing Jones-polynomial route (borromean-markov-trace-closed-form.md) is the canonical derivation. This probe establishes the structural CONSISTENCY between the two routes + provides the categorical justification for Q_Borromean = 0.",
+  "scriptCommitSha": "d4d640ce78d77b2fe71143a5129596fe6486dcce",
+  "status": "exploratory",
+  "tags": [
+    "borromean-derivation",
+    "h3-2-1-irrep",
+    "Q-channel-zero",
+    "delta-m-np-mechanism",
+    "hoefsmit"
+  ],
+  "verifications": {
+    "Q_Borromean_structural_zero": "The (2,1) matrix trace is structurally even in h, giving Q_Borromean = 0 as a categorical (not coincidental) result.",
+    "at_q_1_sanity_check": "(2,1) trace + trivial+sign give closed-form value = 1 at h=0",
+    "delta_m_np_mechanism": "Since Q_Borromean = 0, the 305 ppm n-p mass split CANNOT come from the Q-channel. Must come from a SEPARATE categorical mechanism \u2014 most likely the DIFFERENT braid words (pp vs pn vs nn channel assignments, per PR #1089)."
+  }
+}

@@ -1,0 +1,123 @@
+{
+  "engine": "python+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-01T14:12:04.670083+00:00",
+  "commitSha": "ec86d84d1a3991a1d099a1ca9e94204e1ba7f142",
+  "assertions": [
+    {
+      "name": "phi_q_signed_differs_from_phi_q_abs_at_delta_scale",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "tolerance": 0.0,
+      "source": "Φ_q(neg z) ≠ Φ_q(|z|) confirmed numerically at v = ±0.142"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 265,
+  "computation": "qbeta-signed-vs-abs-tower-diagnostic",
+  "scriptFile": "qbeta_signed_vs_abs_tower_diagnostic.py",
+  "scriptHash": "5ee1b61a128e",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Concrete test of user's 2026-06-01 question: does dropping |...| in the mass-tower formula change Q_β at q_proton? Tests with specific synthetic vols lists (single positive, mixed-sign, all negative) to show when signed != abs.",
+  "auditOnly": "docs/audits/2026-06-01-qbeta-signed-vs-abs-tower-diagnostic.md",
+  "data": {
+    "q_proton": "1.109978582751380807591669095610768879874499121873578736072814240181799",
+    "test_cases": {
+      "all_positive_small": {
+        "vols": [
+          "0.1",
+          "0.2",
+          "0.15"
+        ],
+        "abs_total": "15.9475217660676729419603289745330455506437847441128954865417",
+        "signed_total": "15.9475217660676729419603289745330455506437847441128954865417",
+        "absolute_diff": "0.0",
+        "relative_diff": 0.0
+      },
+      "all_positive_medium": {
+        "vols": [
+          "0.5",
+          "0.4",
+          "0.3"
+        ],
+        "abs_total": "275.838522989063588585361436881327829682007638753450575149881",
+        "signed_total": "275.838522989063588585361436881327829682007638753450575149881",
+        "absolute_diff": "0.0",
+        "relative_diff": 0.0
+      },
+      "mixed_sign": {
+        "vols": [
+          "0.3",
+          "-0.2",
+          "0.1"
+        ],
+        "abs_total": "31.3764926892000061684207715063000002286248454704396252418407",
+        "signed_total": "23.2582922540855378718974993576996993104451218080260592797400",
+        "absolute_diff": "-8.11820043511446829652327214860030091817972366241356596210069",
+        "relative_diff": -0.25873511470926147
+      },
+      "all_negative": {
+        "vols": [
+          "-0.1",
+          "-0.2",
+          "-0.15"
+        ],
+        "abs_total": "15.9475217660676729419603289745330455506437847441128954865417",
+        "signed_total": "3.37122631385999779985438827472548663083360087722296479414017",
+        "absolute_diff": "-12.5762954522076751421059406998075589198101838668899306924016",
+        "relative_diff": -0.7886050031276256
+      },
+      "one_strong_negative": {
+        "vols": [
+          "0.4",
+          "-0.4",
+          "0.1"
+        ],
+        "abs_total": "124.048416189001421306625480467065151003120082573002051269620",
+        "signed_total": "61.2780127016170789678763805023201578283687165889637461370292",
+        "absolute_diff": "-62.7704034873843423387490999647449931747513659840383051325912",
+        "relative_diff": -0.5060153560666726
+      },
+      "realistic_subbraid_vols": {
+        "vols": [
+          "0.388",
+          "0.142",
+          "0.025"
+        ],
+        "abs_total": "58.1463720138149080997033078242470218758858595249871278203746",
+        "signed_total": "58.1463720138149080997033078242470218758858595249871278203746",
+        "absolute_diff": "0.0",
+        "relative_diff": 0.0
+      }
+    },
+    "findings": {
+      "all_positive_vols": "abs == signed (no |...| effect)",
+      "any_negative_vols": "abs != signed — Φ_q(z) ≠ Φ_q(|z|) for negative z; the modulation factor differs structurally",
+      "magnitude_of_difference": "depends on |vols| · q^(-k) ratios; for small |v|<<q the difference is small (Φ_q ≈ 1 + |v|/q for both signs), but the LEADING ORDER coefficient flips sign for negative v"
+    },
+    "sensitivity_at_delta_tr_M_scale": {
+      "v": "0.142",
+      "Phi_q_pos": "3.809199741660374276516160882047832461811134450365353903902483989579023",
+      "Phi_q_neg": "0.2864677506098698365939516109393184495940848828013531310641121245792066",
+      "Phi_q_abs_same_as_pos": "True",
+      "ratio_pos_over_neg": "13.29713286591895258160859571530723208355840123749080805584560512565749",
+      "leading_order_signed_minus_abs_pct": -92.47958180095321
+    },
+    "conclusion": "Φ_q(z) ≠ Φ_q(|z|) for z < 0. At Δtr_M scale (|v|=0.142, q=1.11), Φ_q(-v) differs from Φ_q(+v) by ~-92.48% per term. If the framework's per-braid mass-tower uses Φ_q(|v|) but the categorical 'correct' formula should use Φ_q(v) signed, EACH negative-v term contributes a 92.48% sign-correction. Multiple negative terms compound. For PROTON / NEUTRON mass-tower: at the level of single-nucleon tr_M values (β_p ≈ +1.07, β_n ≈ +0.92), both POSITIVE, so |...| is no-op at level 0. At deeper levels (pair joints, jets) sub-braid traces CAN be negative — the |...| would change those. WHETHER THE FRAMEWORK SHOULD USE SIGNED OR ABS is a categorical question; this probe does not answer it, only quantifies that the difference is structurally meaningful when negative-v terms appear in the tower.",
+    "implications_for_ck_saga": "Indirect — c_k saga is in BINDING (Li_2^q), not MASS (Φ_q). Q_β = m_n - m_p - m_e is a mass-DIFFERENCE; both m_n and m_p use Φ_q(|...|) in their per-braid towers. If signed-vs-abs changes m_p and m_n in correlated ways, the difference Q_β could be unchanged. Quantifying this requires the full per-isotope sub-braid V̂ values for proton and neutron — out of scope for this diagnostic. Marked as FOLLOW-UP."
+  }
+}

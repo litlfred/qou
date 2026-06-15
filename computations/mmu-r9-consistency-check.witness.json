@@ -1,0 +1,61 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-06-03T22:51:29.171743+00:00",
+  "commitSha": "fc1da255c2c3c6b9e477342adafd0369c4bfa21e",
+  "assertions": [
+    {
+      "name": "r9_within_codata_sigma_exp",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "R9's residual error against CODATA m_μ should be ≤ σ_exp = 21.77 ppb if R9 is an experimentally-consistent candidate."
+    },
+    {
+      "name": "r9_meets_100x_l2_target",
+      "computed": false,
+      "expected": true,
+      "passed": false,
+      "source": "R9's residual error against CODATA m_μ should be ≤ σ_exp/100 = 0.2177 ppb for the 100× L2 target."
+    }
+  ],
+  "allPassed": false,
+  "durationMs": 10,
+  "computation": "mmu-r9-consistency-check",
+  "scriptFile": "mmu_r9_consistency_check.py",
+  "scriptHash": "25372ebb51c3",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.4.0"
+  },
+  "data": {
+    "q_substrate": "1.10997858275138080759166909561",
+    "m_mu_codata_MeV": "105.6583755",
+    "sigma_exp_MeV": "0.0000023",
+    "sigma_exp_ppb": 21.76826956799085,
+    "target_100x_ppb": 0.2176826956799085,
+    "m_mu_pred_bare_MeV": "105.65839781134181392456707179",
+    "bare_err_ppb": 211.1649143604765,
+    "bare_miss_factor": 970.0583397358508,
+    "delta_r9": "0.000000210041791166587192453879270148",
+    "m_mu_pred_r9_MeV": "105.658375618662685838516511318",
+    "r9_err_ppb": 1.1230788404324512,
+    "r9_miss_factor": 5.1592472103702836,
+    "improvement_factor": 188.0232328828897,
+    "r9_within_codata_sigma_exp": true,
+    "r9_meets_l2_100x": false,
+    "delta_lambda_gate_status": "near-match (fit pattern, not derived)",
+    "derivation_status": "R9 = ℏ_q^6 × q / 5 is empirically suggestive but NOT structurally derived. The 'q' multiplier (anti-bar-invariant) and '5' divisor (matching T(2,5) muon knot crossings) hint at categorical content but have no Lean theorem yet. Promotion from 'near-match' to 'derived' requires: (1) Lean ℏ_q^6 categorical origin, (2) Lean q × (1/5) T(2,5)-factor derivation, (3) cross-anchor electron/tau consistency check."
+  }
+}

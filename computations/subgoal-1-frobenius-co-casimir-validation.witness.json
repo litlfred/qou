@@ -1,0 +1,72 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-06-02T15:45:47.561052+00:00",
+  "commitSha": "05563751272a73fbea4999822fea6d7819cea3cd",
+  "assertions": [
+    {
+      "name": "frobenius_co_casimir_n3_matches_documented",
+      "computed": 1.2761128483721695,
+      "expected": 1.276,
+      "passed": true,
+      "tolerance": 0.001,
+      "source": "knot-mass-formula-unified.md (n=3, A=1)"
+    },
+    {
+      "name": "frobenius_co_casimir_n6_matches_documented",
+      "computed": 1.6362871145930835,
+      "expected": 1.636,
+      "passed": true,
+      "tolerance": 0.001,
+      "source": "knot-mass-formula-unified.md (n=6, A=2)"
+    },
+    {
+      "name": "frobenius_co_casimir_n9_matches_documented",
+      "computed": 1.2999219764847678,
+      "expected": 1.3,
+      "passed": true,
+      "tolerance": 0.001,
+      "source": "knot-mass-formula-unified.md (n=9, A=3)"
+    },
+    {
+      "name": "frobenius_co_casimir_n12_matches_documented",
+      "computed": 1.1507359355710247,
+      "expected": 1.151,
+      "passed": true,
+      "tolerance": 0.001,
+      "source": "knot-mass-formula-unified.md (n=12, A=4)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 42,
+  "computation": "subgoal-1-frobenius-co-casimir-validation",
+  "scriptFile": "subgoal_1_frobenius_co_casimir_validation.py",
+  "scriptHash": "014872cf81c3",
+  "scriptCommitSha": "5ca5758574e67d2bdd6bc4c02a4ec7e4559a5550",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
+  },
+  "description": "Independent reproduction of the Frobenius co-Casimir term (T4) of the unified knot mass formula: m_e·Σ_{λ⊢3A} 1/dim_q(λ). Validates against documented values (D=1.636, T=1.300, 4He=1.151, proton=1.276 MeV per knot-mass-formula-unified.md). This term is omitted by the single-term SDP flagship, which is why deuteron 6_2 fails single-term PSD-feasibility.",
+  "data": {
+    "frobenius_sum_n3": "2.49729054560491555634944117466",
+    "m_e_times_sum_n3_MeV": "1.27611284837216944060062200722",
+    "frobenius_sum_n6": "3.20213400122174625511635583548",
+    "m_e_times_sum_n6_MeV": "1.63628711459308351437389487579",
+    "frobenius_sum_n9": "2.54388384698146238754074784309",
+    "m_e_times_sum_n9_MeV": "1.29992197648476780391502427744",
+    "frobenius_sum_n12": "2.25193404803902283417357322915",
+    "m_e_times_sum_n12_MeV": "1.15073593557102472043564579342"
+  }
+}

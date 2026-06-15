@@ -1,0 +1,75 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-30T20:07:15.827511+00:00",
+  "commitSha": "ae14160fe162c3a3a8c23f588f9472010ed61e5b",
+  "assertions": [
+    {
+      "name": "bring_shift_closes_bare_to_4ppm",
+      "computed": 4.26,
+      "expected": 4.18,
+      "passed": true,
+      "tolerance": 0.2,
+      "source": "Tree q·[9]_q·[10]_q + Bring zero-mode shift 2/(3π) at g=4 leaves residual ~4.2 ppm vs CODATA 137.035999084 — matches em-coupling-bring-zero-mode.md numerical table."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 12,
+  "computation": "alpha-em-categorical-reidentification",
+  "scriptFile": "alpha_em_categorical_reidentification.py",
+  "scriptHash": "2c9d79c0904c",
+  "scriptCommitSha": "8cd964a992dbca7519eef126557382589371d3a5",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
+  },
+  "description": "Categorical re-identification of the framework's α_EM⁻¹ formula. The bare q·[9]_q·[10]_q is the TREE term; the framework's em-coupling-bring-zero-mode proposition adds a derived Bring zero-mode shift 2g/(4π(g−1)) = 2/(3π) at genus g=4 (Hodge/Gauss-Bonnet ratio), closing the residual from −1553 ppm to ~−4 ppm. A tentative α/(4π) next term reaches ~57 ppb but its derived form is open (the candidate 1/(2π·[2]_q) is 1.4% off — not it).",
+  "data": {
+    "inputs": {
+      "q0": "1.10997858275138080759166909561",
+      "CODATA_alpha_inv": "137.035999084",
+      "CODATA_sigma_ppb": 0.15,
+      "g_Bring": 4
+    },
+    "A_bare_tree": {
+      "formula": "q · [9]_q · [10]_q",
+      "value": "136.82320885358",
+      "residual_ppm": -1552.8053346550205
+    },
+    "B_tree_plus_bring": {
+      "formula": "A + 2g/(4π(g−1))  at g=4 = 2/(3π)",
+      "bring_shift": "0.21220659078919",
+      "value": "137.03541544437",
+      "residual_ppm": -4.259024140541004,
+      "residual_ppb": -4259.024140541004,
+      "hodge_gb_check": "0.21220659078919",
+      "sphere_vol_check": "0.21220659078919"
+    },
+    "C_full_tentative": {
+      "formula": "B + α/(4π)  with α taken from CODATA (next-order is OPEN)",
+      "alpha_over_4pi": "0.00058070486644293",
+      "candidate_inv_2pi_bra2": "0.079146248485888",
+      "ratio_check": "0.0073371117",
+      "value": "137.03599614924",
+      "residual_ppb": -21.415991408083972,
+      "experimental_sigma_ppb": 0.15
+    },
+    "conclusion": {
+      "yekutieli_h2_status": "REFUTED for α_EM (see alpha-em-yekutieli-h2-extraction.witness.json) — T(2,9) trivially vanishes, T(3,5) closed-form exact",
+      "categorical_re_identification": "ALREADY IN PAPER — Bring zero-mode shift 2/(3π) at g=4 closes residual from −1553 ppm to ~−4 ppm",
+      "remaining_to_100x_target": "α/(4π) next term — currently a numerical near-match (candidate 1/(2π[2]_q) is 1.4% off); deriving it would push to ≪57 ppb",
+      "implication_for_meson_EM_closure": "the m_K/m_π 290-ppm meson residual can be derived from α_EM to ~4 ppm precision NOW (via Bring shift) — previously thought blocked."
+    }
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-06-05T14:24:39.775698+00:00",
+  "commitSha": "153ee3bb9e0b4546d30a845272697fb952cc9213",
+  "assertions": [
+    {
+      "name": "c3_experimental_uncertainty_is_order_unity",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "source": "δc_3/|c_3| = 0.610 (~61% experimental uncertainty from δQ/u³) — c_3 is a low-significance datum, confirming the data-block."
+    },
+    {
+      "name": "c4_unmeasured_uncertainty_exceeds_value",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "source": "c_4 extracts to 0 (no residual datum) with nominal error bar δc_4 = 1.5e+02 — c_4 is experimentally unmeasured; recurrence-fitting to c_4+ is circular."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 9,
+  "computation": "qbeta-qdifference-recurrence-datablock-probe",
+  "scriptFile": "qbeta_qdifference_recurrence_datablock_probe.py",
+  "scriptHash": "38de90548c0d",
+  "scriptCommitSha": "153ee3bb9e0b4546d30a845272697fb952cc9213",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Quantifies why the q-difference / C-finite recurrence axis for the Q_β c_k ladder (PR #1824 §3.b) is DATA-BLOCKED. Propagates the CODATA Q_β experimental uncertainty through the ladder inversion c_k = (Q_codata/Q_{N(k-1)}−1)/u^k: δc_k ≈ (δQ/Q)/u^k explodes with k (u≈0.0085), so c_2 (proved-exact) is the only reliable coefficient, c_3 is a ~1–2σ datum, and c_4+ are experimentally unmeasured. A recurrence (order ≥2) needs ≳4 reliable coefficients ⇒ unidentifiable; the earlier c_{k+1}/c_k→1/u asymptotic is a circular-extraction artifact. No fits. Completes PR #1824's generating-function axis triage (closed-form refuted in #1866/#1880).",
+  "contentBlock": "conj:qbeta-precision-ladder",
+  "data": {
+    "u_substrate": "0.00851723455015614218925557360330920296919422161162716337301758",
+    "dQ_rel_codata": 7.797187135341695e-07,
+    "ck_with_uncertainty": [
+      {
+        "k": 2,
+        "c_k": "-1.00000000000000000000000000000000000000000000000000000000000",
+        "exp_uncertainty": "exact",
+        "rel_uncertainty": 0.0,
+        "status": "PROVED exact (q-indep)"
+      },
+      {
+        "k": 3,
+        "c_k": "-2.06934257711516783787971951724962858902203099810343886691284",
+        "exp_uncertainty": "1.26194996564138074924874449352776108556020577216699571398609",
+        "rel_uncertainty": 0.609831344310637,
+        "status": "~1.6σ hint"
+      },
+      {
+        "k": 4,
+        "c_k": "0.0",
+        "exp_uncertainty": "148.164284805124458319606337721311413562478333266308763847712",
+        "rel_uncertainty": null,
+        "status": "UNMEASURED (unc > value)"
+      },
+      {
+        "k": 5,
+        "c_k": "0.0",
+        "exp_uncertainty": "17395.8206660409788523333960257633831672234522155855412254742",
+        "rel_uncertainty": null,
+        "status": "UNMEASURED (unc > value)"
+      },
+      {
+        "k": 6,
+        "c_k": "0.0",
+        "exp_uncertainty": "2042425.92634977628939440196851074092285073547053437159750704",
+        "rel_uncertainty": null,
+        "status": "UNMEASURED (unc > value)"
+      },
+      {
+        "k": 7,
+        "c_k": "0.0",
+        "exp_uncertainty": "239799187.673225873443792424558218143854077854074338258081953",
+        "rel_uncertainty": null,
+        "status": "UNMEASURED (unc > value)"
+      },
+      {
+        "k": 8,
+        "c_k": "0.0",
+        "exp_uncertainty": "28154583070.4908502496961380088758694595132932036438909232792",
+        "rel_uncertainty": null,
+        "status": "UNMEASURED (unc > value)"
+      }
+    ],
+    "n_reliable_coefficients": 1,
+    "recurrence_order_identifiable": 0,
+    "verdict": "DATA_BLOCKED_RECURRENCE_UNIDENTIFIABLE",
+    "interpretation": "Only c_2 is reliably measured (and it is a proved constant). c_3 carries ~60% experimental uncertainty; c_4+ have error bars far larger than their values. The q-difference recurrence axis is therefore undetermined by data, not refutable or confirmable numerically. Fitting to extracted c_4..c_k is circular. Resolvable only by sub-CAL-2 Q_β precision (declined) or structural Habiro derivation (the keystone)."
+  }
+}

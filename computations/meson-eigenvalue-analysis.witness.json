@@ -1,0 +1,55 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-05-27T02:08:57.304580+00:00",
+  "commitSha": "50b055263fe9d5788cbd2c8c5da09363d3d81eb6",
+  "assertions": [
+    {
+      "name": "trace_ratio_computed",
+      "computed": 1.4609353553922129,
+      "expected": 1.461,
+      "passed": true,
+      "tolerance": 0.01,
+      "source": "|tr_M(sigma_1^5)|/|tr_M(sigma_1^3)|"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 3,
+  "computation": "meson-eigenvalue-analysis",
+  "scriptFile": "meson_eigenvalue_analysis.py",
+  "scriptHash": "d271fa24ca16",
+  "scriptCommitSha": "3e11b0795f9eab59bb14f92436005d8b42e3c784",
+  "precisionMetadata": {
+    "compute_dps": 50,
+    "output_dps": 40,
+    "guard_digits": 10,
+    "truncation_bound": "1e-40"
+  },
+  "description": "Apply baryon eigenvalue structure (b*hbar^2, b^2=(h^2+3)/(h^2+4)) to mesons. Eigenvalue carries over (same H_3(q)), but trace ratio misses m_K/m_pi by 2.4x. Meson SDP selects different Wedderburn blocks than baryon (all-positive crossings → symmetric dominance).",
+  "data": {
+    "eigenvalue_shared": {
+      "b_sq": "0.752702113845058",
+      "eigenvalue": "0.008517236340043957",
+      "note": "Same for mesons and baryons — depends on H_3(q), not braid"
+    },
+    "character_structure": {
+      "c1_on_21": "1 (exact)",
+      "c2_on_21": "1 (exact)",
+      "chi_21_sigma1n": "q^n + (-q^{-1})^n"
+    },
+    "trace_ratios": {
+      "tr_sigma1_3": "0.27017941877711965",
+      "tr_sigma1_5": "0.3947146651908128",
+      "ratio": "1.4609353553922129",
+      "m_K_over_m_pi_CODATA": "3.53713",
+      "miss_factor": "2.4211406664536486"
+    },
+    "structural_difference": {
+      "baryon_braid": "beta_Bor = (sigma_1 sigma_2^{-1})^3 [mixed sign]",
+      "meson_braid": "M+ = (sigma_0 sigma_1)^2 sigma_1 sigma_0 [all positive]",
+      "baryon_SDP": "regular rep (all blocks, PROVED)",
+      "meson_SDP": "OPEN — all-positive crossings → symmetric channel dominance",
+      "gamma_gamma_chain": "gamma gamma → e-e+ → qq-bar → M (Hopf link operators)"
+    }
+  }
+}

@@ -1,0 +1,691 @@
+{
+  "engine": "numpy",
+  "engineVersion": "numpy 2.4.5",
+  "computedAt": "2026-05-23T10:13:09.976218+00:00",
+  "commitSha": "69cfe08dca9c66910be1a750a1267eb0c7d634ec",
+  "assertions": [
+    {
+      "name": "Phase-1 over-determined λ subset reaches consistency",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "unit": "boolean",
+      "source": "per-λ numpy.linalg.lstsq at rcond=args.rank_tol; consistency threshold rel res < 1e-6"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 105715,
+  "computation": "sublemma-2-1-A-operator-extract-h12-nn",
+  "scriptFile": "sublemma_2_1_A_operator_extract_h12_nn_streamed.py",
+  "scriptHash": "e2bd271a32ba",
+  "scriptCommitSha": "69cfe08dca9c66910be1a750a1267eb0c7d634ec",
+  "description": "Phase-1 operator-valued A^λ_{ξν''}(I_2=nn) extraction at H_{12} ↓ H_9 × H_3 — STREAMED variant. K_9=24, K_3=12 test words (288 equations / λ). Processes λ ⊢ 12 one at a time, writing per-λ checkpoint to avoid OOM at high d_λ. max_lambda_dim filter: 55.",
+  "auditOnly": "docs/coordination/2026-05-20-lambda-p-followons-ledger.md",
+  "data": {
+    "interface_type": "nn",
+    "interface_coefs": [
+      1.0,
+      -0.20906032198987945
+    ],
+    "q_0": 1.1099785955541805,
+    "h": 0.20906032198987945,
+    "K_9_h9_test_words": 24,
+    "K_3_h3_test_words": 12,
+    "n_test_pairs": 288,
+    "n_partitions_12": 77,
+    "n_overdetermined": 4,
+    "n_consistent": 4,
+    "n_underdetermined": 4,
+    "n_no_support": 0,
+    "n_error": 0,
+    "n_skipped": 69,
+    "max_lambda_dim_filter": 55,
+    "results_per_lambda": {
+      "[12]": {
+        "status": "solved",
+        "d_lam": 1,
+        "support_size": 1,
+        "n_unknowns": 1,
+        "n_equations": 288,
+        "rank": 1,
+        "underdetermined": false,
+        "max_relative_residual": 9.530521581305635e-16,
+        "consistent": true,
+        "multiplicity_incomplete": false,
+        "A_per_pair_summary": {
+          "((9,),(3,))": {
+            "frobenius_norm": 0.9009182735643002,
+            "max_abs_entry": 0.9009182735643002,
+            "trace_real": 0.9009182735643002,
+            "is_scalar_multiple_of_id": true,
+            "c_lr": 1,
+            "d_xi": 1,
+            "d_nu": 1
+          }
+        }
+      },
+      "[11, 1]": {
+        "status": "solved",
+        "d_lam": 11,
+        "support_size": 3,
+        "n_unknowns": 69,
+        "n_equations": 288,
+        "rank": 22,
+        "underdetermined": false,
+        "max_relative_residual": 3.0135573537247445e-15,
+        "consistent": true,
+        "multiplicity_incomplete": false,
+        "A_per_pair_summary": {
+          "((9,),(3,))": {
+            "frobenius_norm": 0.6079682061913112,
+            "max_abs_entry": 0.6079682061913112,
+            "trace_real": 0.6079682061913112,
+            "is_scalar_multiple_of_id": true,
+            "c_lr": 1,
+            "d_xi": 1,
+            "d_nu": 1
+          },
+          "((9,),(2, 1))": {
+            "frobenius_norm": 0.932400748608976,
+            "max_abs_entry": 0.737535046224542,
+            "trace_real": 1.1411627747802515,
+            "is_scalar_multiple_of_id": false,
+            "c_lr": 1,
+            "d_xi": 1,
+            "d_nu": 2
+          },
+          "((8, 1),(3,))": {
+            "frobenius_norm": 2.2713463799182048,
+            "max_abs_entry": 0.9009182735643031,
+            "trace_real": 6.150073159117276,
+            "is_scalar_multiple_of_id": false,
+            "c_lr": 1,
+            "d_xi": 8,
+            "d_nu": 1
+          }
+        }
+      },
+      "[10, 2]": {
+        "status": "solved",
+        "d_lam": 54,
+        "support_size": 5,
+        "n_unknowns": 1054,
+        "n_equations": 288,
+        "rank": 93,
+        "underdetermined": true,
+        "max_relative_residual": 1.0884317419713838e-14,
+        "consistent": true,
+        "multiplicity_incomplete": false,
+        "A_per_pair_summary": {
+          "((9,),(3,))": {
+            "frobenius_norm": 0.3958142799487243,
+            "max_abs_entry": 0.3958142799487243,
+            "trace_real": 0.3958142799487243,
+            "is_scalar_multiple_of_id": true,
+            "c_lr": 1,
+            "d_xi": 1,
+            "d_nu": 1
+          },
+          "((9,),(2, 1))": {
+            "frobenius_norm": 0.5448813760772806,
+            "max_abs_entry": 0.4036277285557212,
+            "trace_real": 0.7663074743094413,
+            "is_scalar_multiple_of_id": false,
+            "c_lr": 1,
+            "d_xi": 1,
+            "d_nu": 2
+          },
+          "((8, 1),(3,))": {
+            "frobenius_norm": 1.529088510582026,
+            "max_abs_entry": 0.6308618343706941,
+            "trace_real": 4.124811506774671,
+            "is_scalar_multiple_of_id": false,
+            "c_lr": 1,
+            "d_xi": 8,
+            "d_nu": 1
+          },
+          "((8, 1),(2, 1))": {
+            "frobenius_norm": 2.36054815453918,
+            "max_abs_entry": 0.7375350462245422,
+            "trace_real": 8.153934401942669,
+            "is_scalar_multiple_of_id": false,
+            "c_lr": 1,
+            "d_xi": 8,
+            "d_nu": 2
+          },
+          "((7, 2),(3,))": {
+            "frobenius_norm": 3.4868774872758848,
+            "max_abs_entry": 0.8870876322164281,
+            "trace_real": 17.110647287430297,
+            "is_scalar_multiple_of_id": false,
+            "c_lr": 1,
+            "d_xi": 27,
+            "d_nu": 1
+          }
+        }
+      },
+      "[10, 1, 1]": {
+        "status": "solved",
+        "d_lam": 55,
+        "support_size": 5,
+        "n_unknowns": 1109,
+        "n_equations": 288,
+        "rank": 95,
+        "underdetermined": true,
+        "max_relative_residual": 3.5474871723977787e-15,
+        "consistent": true,
+        "multiplicity_incomplete": false,
+        "A_per_pair_summary": {
+          "((9,),(2, 1))": {
+            "frobenius_norm": 0.6102484874568898,
+            "max_abs_entry": 0.44458497885155746,
+            "trace_real": 0.5552626400342782,
+            "is_scalar_multiple_of_id": false,
+            "c_lr": 1,
+            "d_xi": 1,
+            "d_nu": 2
+          },
+          "((9,),(1, 1, 1))": {
+            "frobenius_norm": 0.2402445012159513,
+            "max_abs_entry": 0.2402445012159513,
+            "trace_real": 0.2402445012159513,
+            "is_scalar_multiple_of_id": true,
+            "c_lr": 1,
+            "d_xi": 1,
+            "d_nu": 1
+          },
+          "((8, 1),(3,))": {
+            "frobenius_norm": 1.5631257977280522,
+            "max_abs_entry": 0.6374224016085861,
+            "trace_real": 3.984930812353791,
+            "is_scalar_multiple_of_id": false,
+            "c_lr": 1,
+            "d_xi": 8,
+            "d_nu": 1
+          },
+          "((8, 1),(2, 1))": {
+            "frobenius_norm": 2.384022515493996,
+            "max_abs_entry": 0.7375350462245412,
+            "trace_real": 7.014756139447716,
+            "is_scalar_multiple_of_id": false,
+            "c_lr": 1,
+            "d_xi": 8,
+            "d_nu": 2
+          },
+          "((7, 1, 1),(3,))": {
+            "frobenius_norm": 3.6827743086978697,
+            "max_abs_entry": 0.9009182735643021,
+            "trace_real": 17.646342261799973,
+            "is_scalar_multiple_of_id": false,
+            "c_lr": 1,
+            "d_xi": 28,
+            "d_nu": 1
+          }
+        }
+      },
+      "[9, 3]": {
+        "status": "skipped_dim_filter",
+        "d_lam": 154
+      },
+      "[9, 2, 1]": {
+        "status": "skipped_dim_filter",
+        "d_lam": 320
+      },
+      "[9, 1, 1, 1]": {
+        "status": "skipped_dim_filter",
+        "d_lam": 165
+      },
+      "[8, 4]": {
+        "status": "skipped_dim_filter",
+        "d_lam": 275
+      },
+      "[8, 3, 1]": {
+        "status": "skipped_dim_filter",
+        "d_lam": 891
+      },
+      "[8, 2, 2]": {
+        "status": "skipped_dim_filter",
+        "d_lam": 616
+      },
+      "[8, 2, 1, 1]": {
+        "status": "skipped_dim_filter",
+        "d_lam": 945
+      },
+      "[8, 1, 1, 1, 1]": {
+        "status": "skipped_dim_filter",
+        "d_lam": 330
+      },
+      "[7, 5]": {
+        "status": "skipped_dim_filter",
+        "d_lam": 297
+      },
+      "[7, 4, 1]": {
+        "status": "skipped_dim_filter",
+        "d_lam": 1408
+      },
+      "[7, 3, 2]": {
+        "status": "skipped_dim_filter",
+        "d_lam": 1925
+      },
+      "[7, 3, 1, 1]": {
+        "status": "skipped_dim_filter",
+        "d_lam": 2376
+      },
+      "[7, 2, 2, 1]": {
+        "status": "skipped_dim_filter",
+        "d_lam": 2079
+      },
+      "[7, 2, 1, 1, 1]": {
+        "status": "skipped_dim_filter",
+        "d_lam": 1728
+      },
+      "[7, 1, 1, 1, 1, 1]": {
+        "status": "skipped_dim_filter",
+        "d_lam": 462
+      },
+      "[6, 6]": {
+        "status": "skipped_dim_filter",
+        "d_lam": 132
+      },
+      "[6, 5, 1]": {
+        "status": "skipped_dim_filter",
+        "d_lam": 1155
+      },
+      "[6, 4, 2]": {
+        "status": "skipped_dim_filter",
+        "d_lam": 2673
+      },
+      "[6, 4, 1, 1]": {
+        "status": "skipped_dim_filter",
+        "d_lam": 3080
+      },
+      "[6, 3, 3]": {
+        "status": "skipped_dim_filter",
+        "d_lam": 1650
+      },
+      "[6, 3, 2, 1]": {
+        "status": "skipped_dim_filter",
+        "d_lam": 5632
+      },
+      "[6, 3, 1, 1, 1]": {
+        "status": "skipped_dim_filter",
+        "d_lam": 3696
+      },
+      "[6, 2, 2, 2]": {
+        "status": "skipped_dim_filter",
+        "d_lam": 1925
+      },
+      "[6, 2, 2, 1, 1]": {
+        "status": "skipped_dim_filter",
+        "d_lam": 3564
+      },
+      "[6, 2, 1, 1, 1, 1]": {
+        "status": "skipped_dim_filter",
+        "d_lam": 2100
+      },
+      "[6, 1, 1, 1, 1, 1, 1]": {
+        "status": "skipped_dim_filter",
+        "d_lam": 462
+      },
+      "[5, 5, 2]": {
+        "status": "skipped_dim_filter",
+        "d_lam": 1320
+      },
+      "[5, 5, 1, 1]": {
+        "status": "skipped_dim_filter",
+        "d_lam": 1485
+      },
+      "[5, 4, 3]": {
+        "status": "skipped_dim_filter",
+        "d_lam": 2112
+      },
+      "[5, 4, 2, 1]": {
+        "status": "skipped_dim_filter",
+        "d_lam": 5775
+      },
+      "[5, 4, 1, 1, 1]": {
+        "status": "skipped_dim_filter",
+        "d_lam": 3520
+      },
+      "[5, 3, 3, 1]": {
+        "status": "skipped_dim_filter",
+        "d_lam": 4158
+      },
+      "[5, 3, 2, 2]": {
+        "status": "skipped_dim_filter",
+        "d_lam": 4455
+      },
+      "[5, 3, 2, 1, 1]": {
+        "status": "skipped_dim_filter",
+        "d_lam": 7700
+      },
+      "[5, 3, 1, 1, 1, 1]": {
+        "status": "skipped_dim_filter",
+        "d_lam": 3564
+      },
+      "[5, 2, 2, 2, 1]": {
+        "status": "skipped_dim_filter",
+        "d_lam": 3520
+      },
+      "[5, 2, 2, 1, 1, 1]": {
+        "status": "skipped_dim_filter",
+        "d_lam": 3696
+      },
+      "[5, 2, 1, 1, 1, 1, 1]": {
+        "status": "skipped_dim_filter",
+        "d_lam": 1728
+      },
+      "[5, 1, 1, 1, 1, 1, 1, 1]": {
+        "status": "skipped_dim_filter",
+        "d_lam": 330
+      },
+      "[4, 4, 4]": {
+        "status": "skipped_dim_filter",
+        "d_lam": 462
+      },
+      "[4, 4, 3, 1]": {
+        "status": "skipped_dim_filter",
+        "d_lam": 2970
+      },
+      "[4, 4, 2, 2]": {
+        "status": "skipped_dim_filter",
+        "d_lam": 2640
+      },
+      "[4, 4, 2, 1, 1]": {
+        "status": "skipped_dim_filter",
+        "d_lam": 4455
+      },
+      "[4, 4, 1, 1, 1, 1]": {
+        "status": "skipped_dim_filter",
+        "d_lam": 1925
+      },
+      "[4, 3, 3, 2]": {
+        "status": "skipped_dim_filter",
+        "d_lam": 2970
+      },
+      "[4, 3, 3, 1, 1]": {
+        "status": "skipped_dim_filter",
+        "d_lam": 4158
+      },
+      "[4, 3, 2, 2, 1]": {
+        "status": "skipped_dim_filter",
+        "d_lam": 5775
+      },
+      "[4, 3, 2, 1, 1, 1]": {
+        "status": "skipped_dim_filter",
+        "d_lam": 5632
+      },
+      "[4, 3, 1, 1, 1, 1, 1]": {
+        "status": "skipped_dim_filter",
+        "d_lam": 2079
+      },
+      "[4, 2, 2, 2, 2]": {
+        "status": "skipped_dim_filter",
+        "d_lam": 1485
+      },
+      "[4, 2, 2, 2, 1, 1]": {
+        "status": "skipped_dim_filter",
+        "d_lam": 3080
+      },
+      "[4, 2, 2, 1, 1, 1, 1]": {
+        "status": "skipped_dim_filter",
+        "d_lam": 2376
+      },
+      "[4, 2, 1, 1, 1, 1, 1, 1]": {
+        "status": "skipped_dim_filter",
+        "d_lam": 945
+      },
+      "[4, 1, 1, 1, 1, 1, 1, 1, 1]": {
+        "status": "skipped_dim_filter",
+        "d_lam": 165
+      },
+      "[3, 3, 3, 3]": {
+        "status": "skipped_dim_filter",
+        "d_lam": 462
+      },
+      "[3, 3, 3, 2, 1]": {
+        "status": "skipped_dim_filter",
+        "d_lam": 2112
+      },
+      "[3, 3, 3, 1, 1, 1]": {
+        "status": "skipped_dim_filter",
+        "d_lam": 1650
+      },
+      "[3, 3, 2, 2, 2]": {
+        "status": "skipped_dim_filter",
+        "d_lam": 1320
+      },
+      "[3, 3, 2, 2, 1, 1]": {
+        "status": "skipped_dim_filter",
+        "d_lam": 2673
+      },
+      "[3, 3, 2, 1, 1, 1, 1]": {
+        "status": "skipped_dim_filter",
+        "d_lam": 1925
+      },
+      "[3, 3, 1, 1, 1, 1, 1, 1]": {
+        "status": "skipped_dim_filter",
+        "d_lam": 616
+      },
+      "[3, 2, 2, 2, 2, 1]": {
+        "status": "skipped_dim_filter",
+        "d_lam": 1155
+      },
+      "[3, 2, 2, 2, 1, 1, 1]": {
+        "status": "skipped_dim_filter",
+        "d_lam": 1408
+      },
+      "[3, 2, 2, 1, 1, 1, 1, 1]": {
+        "status": "skipped_dim_filter",
+        "d_lam": 891
+      },
+      "[3, 2, 1, 1, 1, 1, 1, 1, 1]": {
+        "status": "skipped_dim_filter",
+        "d_lam": 320
+      },
+      "[3, 1, 1, 1, 1, 1, 1, 1, 1, 1]": {
+        "status": "solved",
+        "d_lam": 55,
+        "support_size": 5,
+        "n_unknowns": 1109,
+        "n_equations": 288,
+        "rank": 95,
+        "underdetermined": true,
+        "max_relative_residual": 4.81641159629052e-15,
+        "consistent": true,
+        "multiplicity_incomplete": false,
+        "A_per_pair_summary": {
+          "((3, 1, 1, 1, 1, 1, 1),(1, 1, 1))": {
+            "frobenius_norm": 4.693441370345119,
+            "max_abs_entry": 1.1099785955541792,
+            "trace_real": -23.42419045235941,
+            "is_scalar_multiple_of_id": false,
+            "c_lr": 1,
+            "d_xi": 28,
+            "d_nu": 1
+          },
+          "((2, 1, 1, 1, 1, 1, 1, 1),(2, 1))": {
+            "frobenius_norm": 3.0521921958581415,
+            "max_abs_entry": 0.946595368214417,
+            "trace_real": -10.359721291285764,
+            "is_scalar_multiple_of_id": false,
+            "c_lr": 1,
+            "d_xi": 8,
+            "d_nu": 2
+          },
+          "((2, 1, 1, 1, 1, 1, 1, 1),(1, 1, 1))": {
+            "frobenius_norm": 2.1305155873120047,
+            "max_abs_entry": 0.8568984903487098,
+            "trace_real": -5.733254213430004,
+            "is_scalar_multiple_of_id": false,
+            "c_lr": 1,
+            "d_xi": 8,
+            "d_nu": 1
+          },
+          "((1, 1, 1, 1, 1, 1, 1, 1, 1),(3,))": {
+            "frobenius_norm": 0.4493048232058301,
+            "max_abs_entry": 0.4493048232058301,
+            "trace_real": -0.4493048232058301,
+            "is_scalar_multiple_of_id": true,
+            "c_lr": 1,
+            "d_xi": 1,
+            "d_nu": 1
+          },
+          "((1, 1, 1, 1, 1, 1, 1, 1, 1),(2, 1))": {
+            "frobenius_norm": 0.8318548103686629,
+            "max_abs_entry": 0.6536453008414393,
+            "trace_real": -0.9733832840140448,
+            "is_scalar_multiple_of_id": false,
+            "c_lr": 1,
+            "d_xi": 1,
+            "d_nu": 2
+          }
+        }
+      },
+      "[2, 2, 2, 2, 2, 2]": {
+        "status": "skipped_dim_filter",
+        "d_lam": 132
+      },
+      "[2, 2, 2, 2, 2, 1, 1]": {
+        "status": "skipped_dim_filter",
+        "d_lam": 297
+      },
+      "[2, 2, 2, 2, 1, 1, 1, 1]": {
+        "status": "skipped_dim_filter",
+        "d_lam": 275
+      },
+      "[2, 2, 2, 1, 1, 1, 1, 1, 1]": {
+        "status": "skipped_dim_filter",
+        "d_lam": 154
+      },
+      "[2, 2, 1, 1, 1, 1, 1, 1, 1, 1]": {
+        "status": "solved",
+        "d_lam": 54,
+        "support_size": 5,
+        "n_unknowns": 1054,
+        "n_equations": 288,
+        "rank": 93,
+        "underdetermined": true,
+        "max_relative_residual": 1.0405005570843718e-14,
+        "consistent": true,
+        "multiplicity_incomplete": false,
+        "A_per_pair_summary": {
+          "((2, 2, 1, 1, 1, 1, 1),(1, 1, 1))": {
+            "frobenius_norm": 4.521930642773489,
+            "max_abs_entry": 1.096474825726645,
+            "trace_real": -22.73719532605456,
+            "is_scalar_multiple_of_id": false,
+            "c_lr": 1,
+            "d_xi": 27,
+            "d_nu": 1
+          },
+          "((2, 1, 1, 1, 1, 1, 1, 1),(2, 1))": {
+            "frobenius_norm": 3.111400871745012,
+            "max_abs_entry": 0.9465953682144247,
+            "trace_real": -11.498899553780806,
+            "is_scalar_multiple_of_id": false,
+            "c_lr": 1,
+            "d_xi": 8,
+            "d_nu": 2
+          },
+          "((2, 1, 1, 1, 1, 1, 1, 1),(1, 1, 1))": {
+            "frobenius_norm": 2.106921909904245,
+            "max_abs_entry": 0.84897228707767,
+            "trace_real": -5.81268730456036,
+            "is_scalar_multiple_of_id": false,
+            "c_lr": 1,
+            "d_xi": 8,
+            "d_nu": 1
+          },
+          "((1, 1, 1, 1, 1, 1, 1, 1, 1),(2, 1))": {
+            "frobenius_norm": 0.8394743147360912,
+            "max_abs_entry": 0.6126880505455857,
+            "trace_real": -1.184428118289174,
+            "is_scalar_multiple_of_id": false,
+            "c_lr": 1,
+            "d_xi": 1,
+            "d_nu": 2
+          },
+          "((1, 1, 1, 1, 1, 1, 1, 1, 1),(1, 1, 1))": {
+            "frobenius_norm": 0.6075620351744349,
+            "max_abs_entry": 0.6075620351744349,
+            "trace_real": -0.6075620351744349,
+            "is_scalar_multiple_of_id": true,
+            "c_lr": 1,
+            "d_xi": 1,
+            "d_nu": 1
+          }
+        }
+      },
+      "[2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]": {
+        "status": "solved",
+        "d_lam": 11,
+        "support_size": 3,
+        "n_unknowns": 69,
+        "n_equations": 288,
+        "rank": 22,
+        "underdetermined": false,
+        "max_relative_residual": 4.209712286608155e-15,
+        "consistent": true,
+        "multiplicity_incomplete": false,
+        "A_per_pair_summary": {
+          "((2, 1, 1, 1, 1, 1, 1, 1),(1, 1, 1))": {
+            "frobenius_norm": 2.842558121344988,
+            "max_abs_entry": 1.1099785955541837,
+            "trace_real": -7.822555735036297,
+            "is_scalar_multiple_of_id": false,
+            "c_lr": 1,
+            "d_xi": 8,
+            "d_nu": 1
+          },
+          "((1, 1, 1, 1, 1, 1, 1, 1, 1),(2, 1))": {
+            "frobenius_norm": 1.1974670378530081,
+            "max_abs_entry": 0.9465953682144226,
+            "trace_real": -1.5592834187600135,
+            "is_scalar_multiple_of_id": false,
+            "c_lr": 1,
+            "d_xi": 1,
+            "d_nu": 2
+          },
+          "((1, 1, 1, 1, 1, 1, 1, 1, 1),(1, 1, 1))": {
+            "frobenius_norm": 0.8170285281811853,
+            "max_abs_entry": 0.8170285281811853,
+            "trace_real": -0.8170285281811853,
+            "is_scalar_multiple_of_id": true,
+            "c_lr": 1,
+            "d_xi": 1,
+            "d_nu": 1
+          }
+        }
+      },
+      "[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]": {
+        "status": "solved",
+        "d_lam": 1,
+        "support_size": 1,
+        "n_unknowns": 1,
+        "n_equations": 288,
+        "rank": 1,
+        "underdetermined": false,
+        "max_relative_residual": 3.741037083539593e-16,
+        "consistent": true,
+        "multiplicity_incomplete": false,
+        "A_per_pair_summary": {
+          "((1, 1, 1, 1, 1, 1, 1, 1, 1),(1, 1, 1))": {
+            "frobenius_norm": 1.1099785955541803,
+            "max_abs_entry": 1.1099785955541803,
+            "trace_real": -1.1099785955541803,
+            "is_scalar_multiple_of_id": true,
+            "c_lr": 1,
+            "d_xi": 1,
+            "d_nu": 1
+          }
+        }
+      }
+    },
+    "streamed": true
+  },
+  "caveats": [
+    "Phase 1 streamed run: K_9·K_3 = 288 equations is insufficient for high-dim λ; under-determined entries report least-squares projections. Phase 2 requires K ≥ 3500 and a larger memory budget."
+  ]
+}

@@ -1,0 +1,145 @@
+{
+  "engine": "numpy",
+  "engineVersion": "numpy 2.4.4",
+  "computedAt": "2026-05-09T00:53:02.825715+00:00",
+  "commitSha": "1d068aa544b72ce722545243741cc1e5b2ee9b5e",
+  "assertions": [
+    {
+      "name": "rho_3 dimension",
+      "computed": 16,
+      "expected": 16,
+      "passed": true
+    },
+    {
+      "name": "rho_3 exact 8-bucket spectrum",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "rho_4 dimension",
+      "computed": 768,
+      "expected": 768,
+      "passed": true
+    },
+    {
+      "name": "rho_4 exact 8-bucket spectrum",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "rho_5 total SYT count",
+      "computed": 292864,
+      "expected": 292864,
+      "passed": true
+    },
+    {
+      "name": "rho_5 pure diagonal sector",
+      "computed": 52224,
+      "expected": 52224,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 212,
+  "computation": "staircase-ew-disjoint-spectrum",
+  "scriptFile": "staircase_ew_disjoint_spectrum.py",
+  "scriptHash": "896720d5bfb4",
+  "scriptCommitSha": "1d068aa544b72ce722545243741cc1e5b2ee9b5e",
+  "description": "Restored staircase EW probe for the disjoint braid β_EW = σ₁⁴σ₃⁶σ₅⁸ on ρ₃, ρ₄, and the diagonal sector of ρ₅.",
+  "auditOnly": "docs/audits/2026-05-07-staircase-ew-disjoint-spectrum.md",
+  "parameters": {
+    "q": 1.1099785955541805,
+    "betaEWWord": "σ₁^4 · σ₃^6 · σ₅^8"
+  },
+  "data": {
+    "rho3": {
+      "shape": [
+        3,
+        2,
+        1
+      ],
+      "dimension": 16,
+      "bucketCounts": {
+        "6.5412820173": 2,
+        "0.352252398713": 2,
+        "1.870198156177": 2,
+        "1.232052482588": 2,
+        "0.534702698052": 2,
+        "2.838873499951": 2,
+        "0.152875231087": 2,
+        "0.811653735642": 2
+      },
+      "bestResidualScan": {
+        "relativeError": 0.02065191334381632,
+        "ratio": 1.0000000000000033,
+        "target": 1.0210874086805357,
+        "numeratorIndex": 6,
+        "denominatorIndex": 7
+      }
+    },
+    "rho4": {
+      "shape": [
+        4,
+        3,
+        2,
+        1
+      ],
+      "dimension": 768,
+      "bucketCounts": {
+        "0.152875231087": 96,
+        "0.811653735642": 96,
+        "0.534702698052": 96,
+        "2.838873499951": 96,
+        "6.5412820173": 96,
+        "1.232052482588": 96,
+        "1.870198156177": 96,
+        "0.352252398713": 96
+      },
+      "bestResidualScan": {
+        "relativeError": 0.014795277038867845,
+        "ratio": 1.0000000000000269,
+        "target": 1.015017464587894,
+        "numeratorIndex": 672,
+        "denominatorIndex": 767
+      }
+    },
+    "rho5": {
+      "shape": [
+        5,
+        4,
+        3,
+        2,
+        1
+      ],
+      "dimension": 292864,
+      "pureDiagonalCount": 52224,
+      "bucketExponents": {
+        "18": 9600,
+        "2": 9600,
+        "6": 3456,
+        "-10": 3456,
+        "10": 3456,
+        "-6": 3456,
+        "-2": 9600,
+        "-18": 9600
+      },
+      "bucketCounts": {
+        "6.5412820173": 9600,
+        "2.838873499951": 3456,
+        "1.870198156177": 3456,
+        "1.232052482588": 9600,
+        "0.811653735642": 9600,
+        "0.534702698052": 3456,
+        "0.352252398713": 3456,
+        "0.152875231087": 9600
+      },
+      "note": "Only the diagonal pure sector is counted at k=5; the exact disjoint β_EW buckets remain q^{±18}, q^{±10}, q^{±6}, q^{±2}."
+    }
+  },
+  "caveats": [
+    "The stale q^(1/(2k-1)) residual claim is not reproduced for the current disjoint β_EW implementation.",
+    "Any nontrivial residual must come from an interface contribution such as Δ_I, not from σ₁⁴σ₃⁶σ₅⁸ alone."
+  ]
+}

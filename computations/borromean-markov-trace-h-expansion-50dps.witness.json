@@ -1,0 +1,77 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-25T21:29:59.389316+00:00",
+  "commitSha": "8a2bbbb6837d6d32ad9bd89b7d9da9efd8bdd07c",
+  "assertions": [
+    {
+      "name": "family_a_fit_recovers_truncated_coefficients",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Family A is symbolically 5/2 + (3/4)h², so the mpf fit must recover a_0 = 5/2, a_2 = 3/4, a_4 = a_6 = a_8 = 0 to 1e-25 precision (50 dps L1 floor)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 29,
+  "computation": "borromean-markov-trace-h-expansion-50dps",
+  "scriptFile": "borromean_markov_trace_h_expansion_50dps.py",
+  "scriptHash": "69d9b8206f9d",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 50,
+    "output_dps": 40,
+    "guard_digits": 10,
+    "truncation_bound": "1e-40"
+  },
+  "description": "Independent mp.mpf 50-dps verification of the Borromean Markov-trace h-expansion. Uses PR #1285's precision-fixed markov_trace_for_knot to compute tr_M(β_𝓑, q) at 5 sampled q values, then fits Σ_{j even} a_j · h^j via mpf-precision linear algebra. Compares against PR #1272's f64 'via_jones' coefficients and PR #1276's 'Bring + Faddeev h⁴' candidate. EXPLORATORY — does not change production linking_weight or any blocks.",
+  "auditOnly": "docs/canonical-derivation-cheat-sheet.md",
+  "parameters": {
+    "q_sample_points": [
+      "1.05",
+      "1.07",
+      "1.09",
+      "1.11",
+      "1.13"
+    ],
+    "braid": "β_𝓑 = (σ₁σ₂⁻¹)³ in B_3",
+    "convention": "Wenzl JM (mass-formula)",
+    "h_expansion_method": "5×5 mp.mpf Vandermonde linear solve on q ∈ {1.05, 1.07, 1.09, 1.11, 1.13} at 50 dps"
+  },
+  "data": {
+    "actual_h_coefficients_wenzl_jm": {
+      "a_0": "0.9999988934098679922888297",
+      "a_2": "0.0003284149657056204579457187",
+      "a_4": "-0.8082796734157335935195086",
+      "a_6": "-1.393979396555135912963702",
+      "a_8": "3.770832218094011235252646"
+    },
+    "family_a_h_coefficients": {
+      "a_0": "2.5",
+      "a_2": "0.75",
+      "a_4": "3.422632678816410286993285e-47",
+      "a_6": "-6.547887588689163080509853e-46",
+      "a_8": "3.825431945267676278740814e-45"
+    },
+    "bring_faddeev_h_coefficients": {
+      "a_0": "1.354893314384330638818134",
+      "a_2": "-54.50339971639727051589004",
+      "a_4": "5149.40429516155915569658",
+      "a_6": "-147206.0974503435750052691",
+      "a_8": "1628531.87276113124726844"
+    },
+    "pr1272_via_jones_f64_values": {
+      "a_0": "2.5",
+      "a_2": "0.75",
+      "a_4": "-3.03125",
+      "a_6": "-0.8096",
+      "a_8": "0.0387"
+    },
+    "structural_finding": {
+      "wenzl_vs_via_jones_h0_ratio": "2.5 (= Family A h⁰)",
+      "interpretation": "wenzl tr_M has a_0=1, via_jones has a_0=2.5; they use different normalizations. The factor 2.5 is the Family A h⁰ leading coefficient. Even after scaling, the a_4, a_6 do not match — different h-expansion structure.",
+      "bring_faddeev_h_expansion_singular": "PR #1276's 1/(1−h·q^10) + 1/(1−h⁴) − 1 expands as a rational with wildly growing h-coefficients (a_0=1.35, a_2=-54, a_4=5149, a_6=-147206). The candidate is NOT an h-series modification of Family A; it's a rational evaluation matching at q_0 specifically."
+    }
+  }
+}

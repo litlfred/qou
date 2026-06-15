@@ -1,0 +1,88 @@
+{
+  "name": "binding-alpha-shift-witness",
+  "description": "Numerical cross-check of the light-nuclei BindingForceCarrierKnot candidates against experimental B(A). Honest gap report; the candidate identifications are agent-survey hypotheses, not derived uniqueness theorems (Phase 3 open math).",
+  "computation": "B(A) = m_e · ρ_0 · α_shift(T(p_A, k_A))",
+  "generator": "folio-assistant/computations/binding_alpha_shift_witness.py",
+  "timestamp_utc": "2026-05-31T04:35:11.916322+00:00",
+  "inputs": {
+    "m_e_MeV": 0.5109989461,
+    "m_e_source": "CODATA 2018",
+    "B_experimental_source": "AME 2020 / NIST",
+    "alpha_shift_inputs": {
+      "rho_0_dimensionless": 1.451122,
+      "rho_0_pinned_by": "deuteron (D) at α_shift(T(2,3)) = 3",
+      "alpha_shift_formula": "k · (p - 1)"
+    },
+    "magic_A_inputs": {
+      "formula": "B = ρ_F · m_e · A · 8G",
+      "source": "magic_A_formula.magic_A_binding (canonical)",
+      "rho_F_per_nucleus": {
+        "⁴He": 2.0
+      },
+      "vol_borromean_8G_source": "knot_volumes.VOL_BORROMEAN (mpmath 50dps = 8 · Catalan_G ≈ 7.32772475...)",
+      "applicable_nuclei": [
+        "⁴He"
+      ]
+    }
+  },
+  "lean_reference": "content/quantum-observable-universe/mass-theory/binding-alpha-shift-extension.lean::lightNucleiForceCarrierKnot",
+  "predictions": [
+    {
+      "A": 2,
+      "nucleus": "D",
+      "torus_knot": "T(2,3)",
+      "p": 2,
+      "k": 3,
+      "alpha_shift": 3,
+      "B_predicted_MeV": 2.224566,
+      "B_experimental_MeV": 2.224566,
+      "ratio_pred_over_exp": 1.0,
+      "relative_error": 0.0
+    },
+    {
+      "A": 3,
+      "nucleus": "T",
+      "torus_knot": "T(2,5)",
+      "p": 2,
+      "k": 5,
+      "alpha_shift": 5,
+      "B_predicted_MeV": 3.70761,
+      "B_experimental_MeV": 8.481798,
+      "ratio_pred_over_exp": 0.4371,
+      "relative_error": -0.5629
+    },
+    {
+      "A": 3,
+      "nucleus": "³He",
+      "torus_knot": "T(2,5)",
+      "p": 2,
+      "k": 5,
+      "alpha_shift": 5,
+      "B_predicted_MeV": 3.70761,
+      "B_experimental_MeV": 7.718058,
+      "ratio_pred_over_exp": 0.4804,
+      "relative_error": -0.5196
+    },
+    {
+      "A": 4,
+      "nucleus": "⁴He",
+      "torus_knot": "T(3,4)",
+      "p": 3,
+      "k": 4,
+      "alpha_shift": 8,
+      "B_predicted_MeV": 5.932176,
+      "B_experimental_MeV": 28.295674,
+      "ratio_pred_over_exp": 0.2096,
+      "relative_error": -0.7904,
+      "B_predicted_magic_A_MeV": 29.955677,
+      "ratio_magic_A_over_exp": 1.0587,
+      "relative_error_magic_A": 0.0587,
+      "magic_A_inputs": {
+        "Z": 2,
+        "N": 2,
+        "rho_F": 2.0
+      }
+    }
+  ],
+  "honest_gap_report": "Deuteron-pinned ρ_0 reproduces B(D) by construction. For heavier nuclei the simple alpha_shift proportionality miss is substantial: worst case ⁴He at α_shift = 8 predicts 5.932 MeV vs experimental 28.296 MeV (-79% from 1×). Consistent with the file's narrative that ρ may not be substrate-universal; per-A scaling (or a richer force-carrier identification) is needed for A ≥ 3. For doubly-magic ⁴He the existing-but-unwired magic_A formula B = ρ_F·m_e·A·8G predicts 29.956 MeV (+5.9% miss), closing the alpha_shift gap by 13.5× (|rel_err| 0.7904 → 0.0587) — wiring this in is the next concrete step (see audit docs/audits/2026-05-31-binding-magic-A-wireup.md)."
+}

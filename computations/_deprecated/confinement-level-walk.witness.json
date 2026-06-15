@@ -1,0 +1,753 @@
+{
+  "computation": "confinement-level-walk",
+  "description": "Iterative ILP walk through confinement levels 1..7. Each level enumerates integer LP solutions for primitive operators, picks minimum |tr_M| ground state. Cached.",
+  "parameters": {
+    "q": 1.1099785955541805,
+    "magic": [
+      2,
+      8,
+      20,
+      28,
+      50,
+      82,
+      126
+    ]
+  },
+  "levels": {
+    "1": {
+      "level": 1,
+      "name": "meson",
+      "operator": "\u03c3_ud",
+      "n_strands": 2,
+      "ilp_solutions": [
+        {
+          "m": 1,
+          "tr_M": 0.4993203340335982,
+          "tr_M_positive": true
+        }
+      ],
+      "n_ilp_solutions": 1,
+      "ground_state": {
+        "m": 1,
+        "tr_M": 0.4993203340335982
+      }
+    },
+    "2": {
+      "level": 2,
+      "name": "nucleon",
+      "proton": {
+        "operator": "B_3 (Borromean)",
+        "n_strands": 3,
+        "n_generators": 2,
+        "vols": [
+          {
+            "std": 1.146101521057588,
+            "full": 0.98900731592926
+          },
+          {
+            "std": 0.929504244623423,
+            "full": 0.9710701586527439
+          }
+        ],
+        "tower_mass": 1178995.525436587,
+        "tower_breakdown": {
+          "desc": 0.9603954911881509,
+          "single": 1096978.3961756756,
+          "cross": 82016.16886542017
+        },
+        "n_ilp_solutions": 1,
+        "ground_state": {
+          "tower_mass": 1178995.525436587
+        }
+      },
+      "neutron": {
+        "operator": "B_3 (Borromean)",
+        "n_strands": 3,
+        "n_generators": 2,
+        "vols": [
+          {
+            "std": 0.8616031512365923,
+            "full": 0.719413309722418
+          },
+          {
+            "std": 0.929504244623423,
+            "full": 0.9710701586527439
+          }
+        ],
+        "tower_mass": 430214.5906505845,
+        "tower_breakdown": {
+          "desc": 0.6986007968090441,
+          "single": 429527.01785856823,
+          "cross": 686.8741912194522
+        },
+        "n_ilp_solutions": 1,
+        "ground_state": {
+          "tower_mass": 430214.5906505845
+        }
+      }
+    },
+    "3": {
+      "level": 3,
+      "name": "pair",
+      "operator": "inter-nucleon \u03c3_{pp,pn,nn} in H_A(q)",
+      "atoms": {
+        "D": {
+          "Z": 1,
+          "N": 1,
+          "A": 2,
+          "n_ilp_solutions": 64,
+          "ground_state": {
+            "m_pp": 1,
+            "m_pn": 1,
+            "m_nn": 1,
+            "tr_M": 1.005448434559241
+          },
+          "top_5": [
+            {
+              "m_pp": 1,
+              "m_pn": 1,
+              "m_nn": 1,
+              "tr_M": 1.005448434559241
+            },
+            {
+              "m_pp": 1,
+              "m_pn": 1,
+              "m_nn": 2,
+              "tr_M": 1.005448434559241
+            },
+            {
+              "m_pp": 1,
+              "m_pn": 1,
+              "m_nn": 3,
+              "tr_M": 1.005448434559241
+            },
+            {
+              "m_pp": 1,
+              "m_pn": 1,
+              "m_nn": 4,
+              "tr_M": 1.005448434559241
+            },
+            {
+              "m_pp": 2,
+              "m_pn": 1,
+              "m_nn": 1,
+              "tr_M": 1.005448434559241
+            }
+          ]
+        },
+        "T": {
+          "Z": 1,
+          "N": 2,
+          "A": 3,
+          "n_ilp_solutions": 32,
+          "ground_state": {
+            "m_pp": 1,
+            "m_pn": 1,
+            "m_nn": 2,
+            "tr_M": 0.49188098724315193
+          },
+          "top_5": [
+            {
+              "m_pp": 1,
+              "m_pn": 1,
+              "m_nn": 2,
+              "tr_M": 0.49188098724315193
+            },
+            {
+              "m_pp": 2,
+              "m_pn": 1,
+              "m_nn": 2,
+              "tr_M": 0.49188098724315193
+            },
+            {
+              "m_pp": 3,
+              "m_pn": 1,
+              "m_nn": 2,
+              "tr_M": 0.49188098724315193
+            },
+            {
+              "m_pp": 4,
+              "m_pn": 1,
+              "m_nn": 2,
+              "tr_M": 0.49188098724315193
+            },
+            {
+              "m_pp": 1,
+              "m_pn": 3,
+              "m_nn": 2,
+              "tr_M": 0.5492279561942087
+            }
+          ]
+        },
+        "3He": {
+          "Z": 2,
+          "N": 1,
+          "A": 3,
+          "n_ilp_solutions": 32,
+          "ground_state": {
+            "m_pp": 1,
+            "m_pn": 2,
+            "m_nn": 1,
+            "tr_M": 0.5700738100821309
+          },
+          "top_5": [
+            {
+              "m_pp": 1,
+              "m_pn": 2,
+              "m_nn": 1,
+              "tr_M": 0.5700738100821309
+            },
+            {
+              "m_pp": 1,
+              "m_pn": 2,
+              "m_nn": 2,
+              "tr_M": 0.5700738100821309
+            },
+            {
+              "m_pp": 1,
+              "m_pn": 2,
+              "m_nn": 3,
+              "tr_M": 0.5700738100821309
+            },
+            {
+              "m_pp": 1,
+              "m_pn": 2,
+              "m_nn": 4,
+              "tr_M": 0.5700738100821309
+            },
+            {
+              "m_pp": 1,
+              "m_pn": 4,
+              "m_nn": 1,
+              "tr_M": 0.6094239279959098
+            }
+          ]
+        },
+        "4He": {
+          "Z": 2,
+          "N": 2,
+          "A": 4,
+          "n_ilp_solutions": 32,
+          "ground_state": {
+            "m_pp": 1,
+            "m_pn": 3,
+            "m_nn": 2,
+            "tr_M": 0.24149865465283846
+          },
+          "top_5": [
+            {
+              "m_pp": 1,
+              "m_pn": 3,
+              "m_nn": 2,
+              "tr_M": 0.24149865465283846
+            },
+            {
+              "m_pp": 2,
+              "m_pn": 3,
+              "m_nn": 2,
+              "tr_M": 0.26805833751978164
+            },
+            {
+              "m_pp": 3,
+              "m_pn": 3,
+              "m_nn": 2,
+              "tr_M": 0.2975390170067957
+            },
+            {
+              "m_pp": 1,
+              "m_pn": 3,
+              "m_nn": 4,
+              "tr_M": 0.30233161710886075
+            },
+            {
+              "m_pp": 1,
+              "m_pn": 1,
+              "m_nn": 2,
+              "tr_M": 0.31694796186901447
+            }
+          ]
+        },
+        "6Li": {
+          "Z": 3,
+          "N": 3,
+          "A": 6,
+          "n_ilp_solutions": 38,
+          "ground_state": {
+            "m_pp": 1,
+            "m_pn": 3,
+            "m_nn": 3,
+            "tr_M": 0.02349054036312277
+          },
+          "top_5": [
+            {
+              "m_pp": 1,
+              "m_pn": 3,
+              "m_nn": 3,
+              "tr_M": 0.02349054036312277
+            },
+            {
+              "m_pp": 3,
+              "m_pn": 3,
+              "m_nn": 3,
+              "tr_M": 0.03471152891618223
+            },
+            {
+              "m_pp": 4,
+              "m_pn": 2,
+              "m_nn": 1,
+              "tr_M": 0.09158212094902787
+            },
+            {
+              "m_pp": 4,
+              "m_pn": 4,
+              "m_nn": 1,
+              "tr_M": 0.0963400453046206
+            },
+            {
+              "m_pp": 2,
+              "m_pn": 2,
+              "m_nn": 1,
+              "tr_M": 0.09864172950573104
+            }
+          ]
+        },
+        "7Li": {
+          "Z": 3,
+          "N": 4,
+          "A": 7,
+          "n_ilp_solutions": 48,
+          "ground_state": {
+            "m_pp": 2,
+            "m_pn": 4,
+            "m_nn": 3,
+            "tr_M": 0.05885536451477125
+          },
+          "top_5": [
+            {
+              "m_pp": 2,
+              "m_pn": 4,
+              "m_nn": 3,
+              "tr_M": 0.05885536451477125
+            },
+            {
+              "m_pp": 2,
+              "m_pn": 2,
+              "m_nn": 3,
+              "tr_M": 0.06000445643441773
+            },
+            {
+              "m_pp": 1,
+              "m_pn": 1,
+              "m_nn": 3,
+              "tr_M": 0.06122079314767371
+            },
+            {
+              "m_pp": 4,
+              "m_pn": 4,
+              "m_nn": 3,
+              "tr_M": 0.06501046355050322
+            },
+            {
+              "m_pp": 4,
+              "m_pn": 2,
+              "m_nn": 3,
+              "tr_M": 0.06773987925642765
+            }
+          ]
+        },
+        "12C": {
+          "Z": 6,
+          "N": 6,
+          "A": 12,
+          "n_ilp_solutions": 58,
+          "ground_state": {
+            "m_pp": 1,
+            "m_pn": 3,
+            "m_nn": 1,
+            "tr_M": 0.003986423089994932
+          },
+          "top_5": [
+            {
+              "m_pp": 1,
+              "m_pn": 3,
+              "m_nn": 1,
+              "tr_M": 0.003986423089994932
+            },
+            {
+              "m_pp": 3,
+              "m_pn": 3,
+              "m_nn": 1,
+              "tr_M": 0.011582396001789029
+            },
+            {
+              "m_pp": 1,
+              "m_pn": 4,
+              "m_nn": 3,
+              "tr_M": 0.04034083870576313
+            },
+            {
+              "m_pp": 1,
+              "m_pn": 2,
+              "m_nn": 3,
+              "tr_M": 0.041212950932705224
+            },
+            {
+              "m_pp": 1,
+              "m_pn": 1,
+              "m_nn": 3,
+              "tr_M": 0.07245169372691948
+            }
+          ]
+        },
+        "14C": {
+          "Z": 6,
+          "N": 8,
+          "A": 14,
+          "n_ilp_solutions": 60,
+          "ground_state": {
+            "m_pp": 1,
+            "m_pn": 1,
+            "m_nn": 1,
+            "tr_M": 0.0065496286921312005
+          },
+          "top_5": [
+            {
+              "m_pp": 1,
+              "m_pn": 1,
+              "m_nn": 1,
+              "tr_M": 0.0065496286921312005
+            },
+            {
+              "m_pp": 1,
+              "m_pn": 3,
+              "m_nn": 1,
+              "tr_M": 0.009709308794837649
+            },
+            {
+              "m_pp": 3,
+              "m_pn": 1,
+              "m_nn": 1,
+              "tr_M": 0.018936272236787902
+            },
+            {
+              "m_pp": 3,
+              "m_pn": 3,
+              "m_nn": 1,
+              "tr_M": 0.02774580289150997
+            },
+            {
+              "m_pp": 1,
+              "m_pn": 4,
+              "m_nn": 3,
+              "tr_M": 0.04074254482554834
+            }
+          ]
+        },
+        "16O": {
+          "Z": 8,
+          "N": 8,
+          "A": 16,
+          "n_ilp_solutions": 60,
+          "ground_state": {
+            "m_pp": 1,
+            "m_pn": 1,
+            "m_nn": 1,
+            "tr_M": 0.006926042947499541
+          },
+          "top_5": [
+            {
+              "m_pp": 1,
+              "m_pn": 1,
+              "m_nn": 1,
+              "tr_M": 0.006926042947499541
+            },
+            {
+              "m_pp": 1,
+              "m_pn": 3,
+              "m_nn": 1,
+              "tr_M": 0.010256354178804042
+            },
+            {
+              "m_pp": 3,
+              "m_pn": 1,
+              "m_nn": 1,
+              "tr_M": 0.030505165409067943
+            },
+            {
+              "m_pp": 1,
+              "m_pn": 4,
+              "m_nn": 3,
+              "tr_M": 0.043517634529213346
+            },
+            {
+              "m_pp": 1,
+              "m_pn": 2,
+              "m_nn": 3,
+              "tr_M": 0.04366494417699387
+            }
+          ]
+        },
+        "20Ne": {
+          "Z": 10,
+          "N": 10,
+          "A": 20,
+          "n_ilp_solutions": 60,
+          "ground_state": {
+            "m_pp": 1,
+            "m_pn": 1,
+            "m_nn": 1,
+            "tr_M": 0.011201749906027856
+          },
+          "top_5": [
+            {
+              "m_pp": 1,
+              "m_pn": 1,
+              "m_nn": 1,
+              "tr_M": 0.011201749906027856
+            },
+            {
+              "m_pp": 1,
+              "m_pn": 3,
+              "m_nn": 1,
+              "tr_M": 0.01388183775883838
+            },
+            {
+              "m_pp": 1,
+              "m_pn": 2,
+              "m_nn": 3,
+              "tr_M": 0.035041494644619406
+            },
+            {
+              "m_pp": 1,
+              "m_pn": 4,
+              "m_nn": 3,
+              "tr_M": 0.03510379310432565
+            },
+            {
+              "m_pp": 1,
+              "m_pn": 1,
+              "m_nn": 3,
+              "tr_M": 0.04267821809968513
+            }
+          ]
+        }
+      }
+    },
+    "4": {
+      "level": 4,
+      "name": "shell-magic",
+      "atoms": {
+        "T": {
+          "Z": 1,
+          "N": 2,
+          "A": 3,
+          "magic_Z": false,
+          "magic_N": true,
+          "n_level3_solutions": 32,
+          "level4_activity": "active",
+          "shell_ilp_degeneracy": 8
+        },
+        "3He": {
+          "Z": 2,
+          "N": 1,
+          "A": 3,
+          "magic_Z": true,
+          "magic_N": false,
+          "n_level3_solutions": 32,
+          "level4_activity": "active",
+          "shell_ilp_degeneracy": 8
+        },
+        "4He": {
+          "Z": 2,
+          "N": 2,
+          "A": 4,
+          "magic_Z": true,
+          "magic_N": true,
+          "n_level3_solutions": 32,
+          "level4_activity": "active",
+          "shell_ilp_degeneracy": 16
+        },
+        "14C": {
+          "Z": 6,
+          "N": 8,
+          "A": 14,
+          "magic_Z": false,
+          "magic_N": true,
+          "n_level3_solutions": 60,
+          "level4_activity": "active",
+          "shell_ilp_degeneracy": 15
+        },
+        "16O": {
+          "Z": 8,
+          "N": 8,
+          "A": 16,
+          "magic_Z": true,
+          "magic_N": true,
+          "n_level3_solutions": 60,
+          "level4_activity": "active",
+          "shell_ilp_degeneracy": 30
+        }
+      }
+    },
+    "5": {
+      "level": 5,
+      "name": "cross-shell",
+      "atoms": {
+        "D": {
+          "Z": 1,
+          "N": 1,
+          "A": 2,
+          "cross_shell_active": true,
+          "nearest_magic_below_Z": null,
+          "nearest_magic_above_Z": 2
+        },
+        "6Li": {
+          "Z": 3,
+          "N": 3,
+          "A": 6,
+          "cross_shell_active": true,
+          "nearest_magic_below_Z": 2,
+          "nearest_magic_above_Z": 8
+        },
+        "7Li": {
+          "Z": 3,
+          "N": 4,
+          "A": 7,
+          "cross_shell_active": true,
+          "nearest_magic_below_Z": 2,
+          "nearest_magic_above_Z": 8
+        },
+        "12C": {
+          "Z": 6,
+          "N": 6,
+          "A": 12,
+          "cross_shell_active": true,
+          "nearest_magic_below_Z": 2,
+          "nearest_magic_above_Z": 8
+        },
+        "20Ne": {
+          "Z": 10,
+          "N": 10,
+          "A": 20,
+          "cross_shell_active": true,
+          "nearest_magic_below_Z": 8,
+          "nearest_magic_above_Z": 20
+        }
+      }
+    },
+    "6": {
+      "level": 6,
+      "name": "atom-electron",
+      "atoms": {
+        "D": {
+          "Z": 1,
+          "N": 1,
+          "A": 2,
+          "n_electron_strands": 1,
+          "n_electron_pairs": 0,
+          "n_total_strands": 7
+        },
+        "T": {
+          "Z": 1,
+          "N": 2,
+          "A": 3,
+          "n_electron_strands": 1,
+          "n_electron_pairs": 0,
+          "n_total_strands": 10
+        },
+        "3He": {
+          "Z": 2,
+          "N": 1,
+          "A": 3,
+          "n_electron_strands": 2,
+          "n_electron_pairs": 1,
+          "n_total_strands": 11
+        },
+        "4He": {
+          "Z": 2,
+          "N": 2,
+          "A": 4,
+          "n_electron_strands": 2,
+          "n_electron_pairs": 1,
+          "n_total_strands": 14
+        },
+        "6Li": {
+          "Z": 3,
+          "N": 3,
+          "A": 6,
+          "n_electron_strands": 3,
+          "n_electron_pairs": 1,
+          "n_total_strands": 21
+        },
+        "7Li": {
+          "Z": 3,
+          "N": 4,
+          "A": 7,
+          "n_electron_strands": 3,
+          "n_electron_pairs": 1,
+          "n_total_strands": 24
+        },
+        "12C": {
+          "Z": 6,
+          "N": 6,
+          "A": 12,
+          "n_electron_strands": 6,
+          "n_electron_pairs": 3,
+          "n_total_strands": 42
+        },
+        "14C": {
+          "Z": 6,
+          "N": 8,
+          "A": 14,
+          "n_electron_strands": 6,
+          "n_electron_pairs": 3,
+          "n_total_strands": 48
+        },
+        "16O": {
+          "Z": 8,
+          "N": 8,
+          "A": 16,
+          "n_electron_strands": 8,
+          "n_electron_pairs": 4,
+          "n_total_strands": 56
+        },
+        "20Ne": {
+          "Z": 10,
+          "N": 10,
+          "A": 20,
+          "n_electron_strands": 10,
+          "n_electron_pairs": 5,
+          "n_total_strands": 70
+        }
+      }
+    },
+    "7": {
+      "level": 7,
+      "name": "molecule",
+      "examples": {
+        "H_2": {
+          "atoms": [
+            "H",
+            "H"
+          ],
+          "covalent_bonds": 1,
+          "n_total_strands": 8,
+          "bond_type": "\u03c3-bond (paired electrons)"
+        },
+        "H_2O": {
+          "atoms": [
+            "H",
+            "H",
+            "O"
+          ],
+          "covalent_bonds": 2,
+          "n_total_strands": 64,
+          "bond_type": "2 \u00d7 \u03c3-bond"
+        }
+      }
+    }
+  },
+  "computedAt": "2026-04-17T20:22:17.391795+00:00",
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
+}

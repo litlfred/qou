@@ -1,0 +1,307 @@
+{
+  "computation": "rho-k-h3a-refinement",
+  "computedAt": "2026-05-09T01:10:21.509663+00:00",
+  "description": "Deuteron proof-of-concept for the H_{3A} Wedderburn refinement of ρ_K per prop:rho-k-h3a-refinement (PR #564). Computes y_λ(q_0) χ^λ(β_D) for all 11 partitions λ ⊢ 6, verifies the Schur-Weyl identity Σ_λ y_λ χ^λ = tr_M(β_D) to 50 dps, then extracts Δ_λ(D) under the singleton-support hypothesis (Δ supported on one partition).  Reports the Occam's-razor pick (smallest |Δ|) and the prior heuristic (balanced partition (3,2,1)).  Both reconstruct M(D) = 1875.61294257 MeV exactly by construction (single equation, single unknown).",
+  "engine": "mpmath numeric Hoefsmit at q_0 (50 dps), multiprocessing.Pool(4)",
+  "scriptFile": "rho_k_h3a_refinement.py",
+  "scriptHash": "sha256:25f6b7d00fa64948d194d50f28da4c5281d2c930c027102fc5827707ad770661",
+  "parameters": {
+    "q_0_50dps": "1.1099785955541805752815940796095093779932822799587",
+    "atom": "deuteron",
+    "Z": 1,
+    "N": 1,
+    "A": 2,
+    "n_strands": 6,
+    "braid_word_source": "mass_at_3A_proper.atom_braid_word_3A(1, 1)",
+    "braid_word_str": "β_p · I · β_n  (canonical: H_3 ⊗ H_3 ⊂ H_6 with interface I = σ_3 - h/2·1 at gen_idx=2)",
+    "crossings_typed": [
+      [
+        0,
+        "sigma"
+      ],
+      [
+        0,
+        "sigma"
+      ],
+      [
+        0,
+        "sigma"
+      ],
+      [
+        0,
+        "sigma"
+      ],
+      [
+        0,
+        "averaged"
+      ],
+      [
+        0,
+        "sigma"
+      ],
+      [
+        0,
+        "sigma"
+      ],
+      [
+        1,
+        "sigma_inv"
+      ],
+      [
+        1,
+        "sigma_inv"
+      ],
+      [
+        1,
+        "sigma_inv"
+      ],
+      [
+        1,
+        "averaged"
+      ],
+      [
+        2,
+        "averaged"
+      ],
+      [
+        3,
+        "sigma"
+      ],
+      [
+        3,
+        "sigma"
+      ],
+      [
+        3,
+        "sigma"
+      ],
+      [
+        3,
+        "averaged"
+      ],
+      [
+        3,
+        "averaged"
+      ],
+      [
+        3,
+        "sigma"
+      ],
+      [
+        3,
+        "sigma"
+      ],
+      [
+        4,
+        "sigma_inv"
+      ],
+      [
+        4,
+        "sigma_inv"
+      ],
+      [
+        4,
+        "sigma_inv"
+      ],
+      [
+        4,
+        "sigma_inv"
+      ]
+    ],
+    "n_crossings": 23,
+    "n_partitions": 11,
+    "compute_status": "deuteron",
+    "M_codata_MeV": "1875.61294257",
+    "m_e_MeV": "0.51099895",
+    "m_p_MeV": "938.27208816",
+    "m_n_MeV": "939.56542052"
+  },
+  "data": {
+    "abs_tr_M_at_q0_50dps": "0.3882864715477132785110659223165687998713135876719",
+    "rho_K_LO": "9464.2399476222402644936590084821725363213426591396",
+    "rho_K_codata": "9453.0282068049061232379807700611810852137428762323",
+    "delta_rho_residual": "-11.211740817334141255678238420991451107599782907313",
+    "M_LO_pred_MeV": "1877.83750868",
+    "M_LO_err_pct": "0.11860475365199057707203929661780804716149661389866",
+    "binding_gap_MeV": "2.2245661099999999999999999999999999999999999999955",
+    "schur_weyl_check": {
+      "sum_y_chi": "0.3882864715477132785110659223165687998713135876719",
+      "tr_M": "0.3882864715477132785110659223165687998713135876719",
+      "abs_residual": "3.3409558876152445576756705839393523485189961001313e-51",
+      "match_at_1e_40": true
+    },
+    "per_lambda": [
+      {
+        "partition": [
+          6
+        ],
+        "y_lambda_at_q0": "0.059187716932148631726632017481638432709061246964529",
+        "chi_lambda_beta_D_at_q0": "1.5597587394180613474788665244555934948534877939985",
+        "y_chi_product": "0.092318558751121195077358729185788532393727977834903",
+        "abs_y_chi": "0.092318558751121195077358729185788532393727977834903",
+        "Delta_lambda_solo_assumption": "-47.155927700369105500743037957270511922129059678509",
+        "abs_Delta_solo": "47.155927700369105500743037957270511922129059678509"
+      },
+      {
+        "partition": [
+          5,
+          1
+        ],
+        "y_lambda_at_q0": "0.058960681401453730785485915659443199470465849311845",
+        "chi_lambda_beta_D_at_q0": "3.2158914339386873128784472462978051568372154356128",
+        "y_chi_product": "0.18961115025812313016914536057171259868832724451837",
+        "abs_y_chi": "0.18961115025812313016914536057171259868832724451837",
+        "Delta_lambda_solo_assumption": "-22.959447669315776828012250177531034211830483407403",
+        "abs_Delta_solo": "22.959447669315776828012250177531034211830483407403"
+      },
+      {
+        "partition": [
+          4,
+          2
+        ],
+        "y_lambda_at_q0": "0.040284386965935211236296233398315147983734378748849",
+        "chi_lambda_beta_D_at_q0": "1.6737481247387004963839340269207117288136410247938",
+        "y_chi_product": "0.067425917140482208360553363912676662585540529909909",
+        "abs_y_chi": "0.067425917140482208360553363912676662585540529909909",
+        "Delta_lambda_solo_assumption": "-64.565191939471700621902528900083662885196976425657",
+        "abs_Delta_solo": "64.565191939471700621902528900083662885196976425657"
+      },
+      {
+        "partition": [
+          4,
+          1,
+          1
+        ],
+        "y_lambda_at_q0": "0.010133463492072934671136866135432127585911899823022",
+        "chi_lambda_beta_D_at_q0": "-0.47019148000472144246476155275233920272035694259016",
+        "y_chi_product": "-0.0047646681969115859858117404189352329560631255475315",
+        "abs_y_chi": "0.0047646681969115859858117404189352329560631255475315",
+        "Delta_lambda_solo_assumption": "913.67690297762207417873233466783819024637361433378",
+        "abs_Delta_solo": "913.67690297762207417873233466783819024637361433378"
+      },
+      {
+        "partition": [
+          3,
+          3
+        ],
+        "y_lambda_at_q0": "0.014120874004975287300431630623435029775788893853587",
+        "chi_lambda_beta_D_at_q0": "4.2490702926236505900647331330454182072731397862965",
+        "y_chi_product": "0.060000586240422044867861509735170570422375244722244",
+        "abs_y_chi": "0.060000586240422044867861509735170570422375244722244",
+        "Delta_lambda_solo_assumption": "-72.555412449242212894109458119106579083072028465123",
+        "abs_Delta_solo": "72.555412449242212894109458119106579083072028465123"
+      },
+      {
+        "partition": [
+          3,
+          2,
+          1
+        ],
+        "y_lambda_at_q0": "0.0073184543522857307843666769029052172957683238888947",
+        "chi_lambda_beta_D_at_q0": "-1.9728210551001285049496437509574067414460258016939",
+        "y_chi_product": "-0.014438000836978462960296828680734165283580943741507",
+        "abs_y_chi": "0.014438000836978462960296828680734165283580943741507",
+        "Delta_lambda_solo_assumption": "301.52147316132217071432397223258345677672421364287",
+        "abs_Delta_solo": "301.52147316132217071432397223258345677672421364287"
+      },
+      {
+        "partition": [
+          3,
+          1,
+          1,
+          1
+        ],
+        "y_lambda_at_q0": "-0.0006853088855144667846371853194123257721618416390897",
+        "chi_lambda_beta_D_at_q0": "-0.48998813829170552523126588270765227788218253200051",
+        "y_chi_product": "0.00033579322496799714026187243306333341606849317753425",
+        "abs_y_chi": "0.00033579322496799714026187243306333341606849317753425",
+        "Delta_lambda_solo_assumption": "-12964.428577393267675988762886953866193755086610274",
+        "abs_Delta_solo": "12964.428577393267675988762886953866193755086610274"
+      },
+      {
+        "partition": [
+          2,
+          2,
+          2
+        ],
+        "y_lambda_at_q0": "0.00077318673690538012239285368505156904988009656817756",
+        "chi_lambda_beta_D_at_q0": "-3.4975646652884290952655280198503765208286836804627",
+        "y_chi_product": "-0.0027042706106699185154715449299092262561365192603624",
+        "abs_y_chi": "0.0027042706106699185154715449299092262561365192603624",
+        "Delta_lambda_solo_assumption": "1609.812000579226718455117517982123315126616421858",
+        "abs_Delta_solo": "1609.812000579226718455117517982123315126616421858"
+      },
+      {
+        "partition": [
+          2,
+          2,
+          1,
+          1
+        ],
+        "y_lambda_at_q0": "-0.00034205177088540122561375790932120435273011553866567",
+        "chi_lambda_beta_D_at_q0": "-0.81971595589104680333865394268852609738826066586904",
+        "y_chi_product": "0.00028038529433555199823591444804738865188314582854933",
+        "abs_y_chi": "0.00028038529433555199823591444804738865188314582854933",
+        "Delta_lambda_solo_assumption": "-15526.375205185484626025667146658380112395291833953",
+        "abs_Delta_solo": "15526.375205185484626025667146658380112395291833953"
+      },
+      {
+        "partition": [
+          2,
+          1,
+          1,
+          1,
+          1
+        ],
+        "y_lambda_at_q0": "0.000098635576109803375181019479569565757727074496247923",
+        "chi_lambda_beta_D_at_q0": "2.1554159875264378405157641866290182935325203505091",
+        "y_chi_product": "0.00021260069768595096197700159456262478286170814490355",
+        "abs_y_chi": "0.00021260069768595096197700159456262478286170814490355",
+        "Delta_lambda_solo_assumption": "-20476.730929175248084201949573219742380758227773337",
+        "abs_Delta_solo": "20476.730929175248084201949573219742380758227773337"
+      },
+      {
+        "partition": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "y_lambda_at_q0": "-0.000012437986974301155095032726762240527202951067098518",
+        "chi_lambda_beta_D_at_q0": "-0.67692506452720922588632538437367541966217634834114",
+        "y_chi_product": "0.0000084195851351673972522844651257134263098320848925795",
+        "abs_y_chi": "0.0000084195851351673972522844651257134263098320848925795",
+        "Delta_lambda_solo_assumption": "-517052.46897341284432159665207105745873712158600471",
+        "abs_Delta_solo": "517052.46897341284432159665207105745873712158600471"
+      }
+    ],
+    "occam_pick": {
+      "partition": [
+        5,
+        1
+      ],
+      "Delta_lambda": "-22.959447669315776828012250177531034211830483407403",
+      "abs_Delta": "22.959447669315776828012250177531034211830483407403",
+      "y_chi": "0.18961115025812313016914536057171259868832724451837",
+      "M_pred_MeV": "1875.61294257",
+      "closure_err_MeV": "2.7369110631344083416479093423631174439067616052276e-48",
+      "closure_err_ppm": "1.459208881009448312642600545756329683518281932191e-45"
+    },
+    "balanced_321_heuristic": {
+      "partition": [
+        3,
+        2,
+        1
+      ],
+      "Delta_lambda": "301.52147316132217071432397223258345677672421364287",
+      "abs_Delta": "301.52147316132217071432397223258345677672421364287"
+    }
+  },
+  "audit_reference": "AUDIT-DEEP-2026-05.md §7 P3 / P3'",
+  "pr": "#564",
+  "notes": "The single mass equation  ρ_K^codata - ρ_K^LO = (1/|tr_M|) Σ_λ y_λ χ^λ Δ_λ  is **underdetermined**: 11 unknowns (Δ_λ for λ ⊢ 6), 1 constraint.  This proof-of-concept assumes singleton support for Δ_λ and reports (a) the Occam's-razor pick (minimum |Δ|), and (b) the balanced-partition heuristic (3,2,1).  Both reproduce M(D) exactly by construction.  The categorical question — *which* λ carries the binding, and why — is the open P3' problem.  Likely resolution paths: (i) Plancherel-truncation bound MAE(k) ≤ C₀·[2]_q^{-2(k-3)} via k_max = 12; (ii) jet-knot Hochschild-cohomology obstruction selecting a privileged Wedderburn block; (iii) variational principle minimising Σ_λ |Δ_λ|² subject to the mass constraint (Tikhonov / minimum-norm solution = Moore-Penrose pseudoinverse).",
+  "follow_up": "Extend to (T, ³He) at n=9 (p(9)=30) using the same pipeline; then to ⁴He at n=12 (p(12)=77).  Add a minimum-norm Δ_λ extraction (least-squares against all atoms simultaneously) once ≥ 2 atoms are wired.",
+  "commitSha": "610a6aa2bde5fabec35796ead6bbb0adb76f6533"
+}

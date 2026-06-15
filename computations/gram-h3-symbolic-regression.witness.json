@@ -1,0 +1,115 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-06-02T16:58:54.486710+00:00",
+  "commitSha": "77f2b68af2c9d52ae3d55c1cea746e8e9977db80",
+  "assertions": [
+    {
+      "name": "gram_h3_symbolic_matches_pyhecke",
+      "computed": "0.000000043612236956764718237137074050450353923961627156896",
+      "expected": "0",
+      "passed": false,
+      "tolerance": 1e-14,
+      "source": "36-entry comparison vs gram-matrix-dual.witness.json"
+    },
+    {
+      "name": "gram_h3_symbolic_is_symmetric",
+      "computed": "0.0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": 1e-40,
+      "source": "closed-form symmetry of Lean gramEntry definitions"
+    },
+    {
+      "name": "gram_h3_symbolic_det_ne_zero_at_q_0",
+      "computed": "0.18920521914403675053363670351381782792722732748199",
+      "expected": "0.189",
+      "passed": true,
+      "tolerance": 0.01,
+      "source": "numerical witness for gramMatrix_det_ne_zero (Phase 1b-2 sorry)"
+    }
+  ],
+  "allPassed": false,
+  "durationMs": 12,
+  "computation": "gram-h3-symbolic-regression",
+  "scriptFile": "gram_h3_symbolic_regression.py",
+  "scriptHash": "93accc13fe19",
+  "scriptCommitSha": "5a44813463430491fdc8cd8cd5a97a404b5e7e9d",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.12.3",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Regression guard for symbolic H_3(q) Hoefsmit Gram closed-form entries (Phase 1b of Option E). Compares the 36 sympy-derived Lean `gramEntry` definitions in `gram-matrix-h3-symbolic.lean` against the production pyhecke Gram at q_0 to detect Lean ↔ compute drift. Also verifies symmetry (numerically) and reports determinant at q_0 (non-zero; gramMatrix_det_ne_zero sorry to be discharged in Phase 1b-2).",
+  "contentBlock": "prop:gram-matrix-h3-symbolic",
+  "auditOnly": "docs/audits/2026-05-25-option-e-crystal-weight-delta-lambda.md",
+  "parameters": {
+    "precision_dps": 50,
+    "q_0": "1.1099785827513808075916690956107688798744991218736",
+    "u_0_sqrt_q_0": "1.0535552110598574641704686986707191825838829731705"
+  },
+  "data": {
+    "gram_symbolic_at_q_0": [
+      [
+        "1.0",
+        "0.49932033418369445241344268025766630375194816404153",
+        "0.49932033418369445241344268025766630375194816404153",
+        "0.24932079612931630669979826223970084703755773163161",
+        "0.24932079612931630669979826223970084703755773163161",
+        "0.55144341431845599358336470004912935953295209339788"
+      ],
+      [
+        "0.49932033418369445241344268025766630375194816404153",
+        "1.1043880582591816378331171593498066026336608612503",
+        "0.24932079612931630669979826223970084703755773163161",
+        "0.55144341431845599358336470004912935953295209339788",
+        "0.55144341431845599358336470004912935953295209339788",
+        "0.36460572109562024428540739968137026556045934136601"
+      ],
+      [
+        "0.49932033418369445241344268025766630375194816404153",
+        "0.24932079612931630669979826223970084703755773163161",
+        "1.1043880582591816378331171593498066026336608612503",
+        "0.55144341431845599358336470004912935953295209339788",
+        "0.55144341431845599358336470004912935953295209339788",
+        "0.36460572109562024428540739968137026556045934136601"
+      ],
+      [
+        "0.24932079612931630669979826223970084703755773163161",
+        "0.55144341431845599358336470004912935953295209339788",
+        "0.55144341431845599358336470004912935953295209339788",
+        "0.36460572109562024428540739968137026556045934136601",
+        "1.2196729832254855754187262967914760211565624709847",
+        "0.62766799531330589468319410296075835982830114024264"
+      ],
+      [
+        "0.24932079612931630669979826223970084703755773163161",
+        "0.55144341431845599358336470004912935953295209339788",
+        "0.55144341431845599358336470004912935953295209339788",
+        "1.2196729832254855754187262967914760211565624709847",
+        "0.36460572109562024428540739968137026556045934136601",
+        "0.62766799531330589468319410296075835982830114024264"
+      ],
+      [
+        "0.55144341431845599358336470004912935953295209339788",
+        "0.36460572109562024428540739968137026556045934136601",
+        "0.36460572109562024428540739968137026556045934136601",
+        "0.62766799531330589468319410296075835982830114024264",
+        "0.62766799531330589468319410296075835982830114024264",
+        "1.3508934418701452432352817628629259495496460760384"
+      ]
+    ],
+    "det_at_q_0": "-0.18920521914403675053363670351381782792722732748199"
+  },
+  "caveats": [
+    "The Lean symbolic definitions are CATEGORICAL (Laurent polynomials in u = √q over generic positive u); this witness only verifies the q_0-specialisation matches pyhecke and that the determinant is non-zero at q_0. Phase 1b-2 follow-up will discharge the gramMatrix_det_ne_zero sorry via symbolic determinant factorisation."
+  ]
+}

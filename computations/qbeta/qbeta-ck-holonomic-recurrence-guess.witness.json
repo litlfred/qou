@@ -1,0 +1,67 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-06-04T21:47:48.104663+00:00",
+  "commitSha": "33836c97ed160cbb502d16647f6ee8beaef350ce",
+  "assertions": [
+    {
+      "name": "holonomic_search_evaluated",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "tolerance": 0,
+      "source": "≥1 (order,deg) SVD case must evaluate; all-fail ⇒ inconclusive run."
+    },
+    {
+      "name": "low_order_holonomic_recurrence_found",
+      "computed": false,
+      "expected": false,
+      "passed": true,
+      "tolerance": 0,
+      "source": "No order≤2 deg≤2 holonomic recurrence on the available c_k. Expected False (and not decisive — free rungs unreliable)."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 13,
+  "computation": "qbeta-ck-holonomic-recurrence-guess",
+  "scriptFile": "qbeta_ck_holonomic_recurrence_guess.py",
+  "scriptHash": "a2afc19debd2",
+  "scriptCommitSha": "4964d97ff919101b1c526d2fc18f88b10cfd42fa",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "c_11+ attempt: tests whether the c_k are HOLONOMIC (D-finite) — a polynomial-coefficient recurrence, the class subsuming the cosh-avatar / generating-function hypothesis (#1824) and one level above the rational case Step 2 refuted. No low-order (order≤2, deg≤2) holonomic recurrence fits the over-determined system: False. NOT decisive — the only FREE rungs (c_8..c_10) are single-anchor-unreliable (c6-c10 falsification on main), so a negative is consistent with F non-holonomic OR extraction noise. The c_11+ keystone is blocked at the data level — the precision-floor probe (this PR) proves WHY: σ(c_k)=σ_R/u^k, so only c_2,c_3 clear the measured-Q_β floor and c_4+ are below it at any anchor count. The genuine unblock is a FRAMEWORK DERIVATION of the c_k (Habiro element), not an extraction. Formalize-first structural test, not a fit. Diagnostic-only.",
+  "data": {
+    "ck_source": "#1824 probe 6.a bias-corrected (cleaner available)",
+    "applied_rungs": "c_2..c_7 (imposed); c_8..c_10 free/unreliable",
+    "compute_dps": 70,
+    "evaluations": 4,
+    "holonomic_fits": {
+      "applied c2..c7|o1d1": {
+        "rel_sv": "0.0281912",
+        "holonomic": false
+      },
+      "full c2..c10|o1d1": {
+        "rel_sv": "1.00299e-7",
+        "holonomic": false
+      },
+      "full c2..c10|o1d2": {
+        "rel_sv": "6.53862e-10",
+        "holonomic": false
+      },
+      "full c2..c10|o2d1": {
+        "rel_sv": "1.33787e-8",
+        "holonomic": false
+      }
+    },
+    "genuine_unblock": "framework derivation of the c_k (Habiro element, parallel α_EM #1521): the precision-floor probe (this PR) shows extraction — single- OR multi-anchor — cannot reach c_4+ (σ(c_k)=σ_R/u^k below the measured-Q_β floor), so the c_k must be DERIVED from Hecke/SDP structure, not fitted."
+  }
+}

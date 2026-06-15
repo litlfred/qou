@@ -1,0 +1,1075 @@
+{
+  "computation": "sublemma-2-1-A-recursive-formula",
+  "description": "Recursive corner-formula prediction for A^\u03bb_{\u03bc\u03bd}(\u03c3_{n_1}) matrix entries. Claim: A^\u03bb_{\u03bc\u03bd}(\u03c3_{n_1}) is diagonal in the (T_\u03bc, T_\u03bd, \u03c0) SYT basis of V_\u03bc \u2297 V_\u03bd^\u2295c with diagonal entries h_q(c(q_\u03bd^\u03c0) - c(\u03c9(T_\u03bc))), where \u03c9(T_\u03bc) is the corner of \u03bc containing entry n_1 in T_\u03bc and q_\u03bd^\u03c0 is the LR-Yamanouchi extending corner for multiplicity copy \u03c0. This gives an explicit recursive Hoefsmit formula based on sub-partition corner combinatorics \u2014 closing the computational step of the categorical proof in docs/audits/2026-05-04-sublemma-2-1-categorical-proof.md.",
+  "reference_blocks": [
+    "conj:confinement-nf-structure-forcing",
+    "prop:atomic-mass-gb-nf",
+    "prop:alpha-shift-torus-knot"
+  ],
+  "computedAt": "2026-05-05T16:54:58.208172+00:00",
+  "parameters": {
+    "q_0": 1.1099785955541805,
+    "interface_d": -0.10453016099493972,
+    "n_1": 3
+  },
+  "predictions": {
+    "(6,)|(3,)|(3,)": {
+      "(0, 0, 0)": {
+        "T_mu_last_cell": [
+          0,
+          2
+        ],
+        "q_nu_corner": [
+          0,
+          3
+        ],
+        "axial_distance": 1,
+        "h_q": 1.109978595554181,
+        "A_diag_predicted": 1.0054484345592414
+      }
+    },
+    "(5, 1)|(3,)|(3,)": {
+      "(0, 0, 0)": {
+        "T_mu_last_cell": [
+          0,
+          2
+        ],
+        "q_nu_corner": [
+          1,
+          0
+        ],
+        "axial_distance": -3,
+        "h_q": -0.24024450121595148,
+        "A_diag_predicted": -0.3447746622108912
+      }
+    },
+    "(5, 1)|(3,)|(2, 1)": {
+      "(0, 0, 0)": {
+        "T_mu_last_cell": [
+          0,
+          2
+        ],
+        "q_nu_corner": [
+          1,
+          0
+        ],
+        "axial_distance": -3,
+        "h_q": -0.24024450121595148,
+        "A_diag_predicted": -0.3447746622108912
+      },
+      "(0, 1, 0)": {
+        "T_mu_last_cell": [
+          0,
+          2
+        ],
+        "q_nu_corner": [
+          1,
+          0
+        ],
+        "axial_distance": -3,
+        "h_q": -0.24024450121595148,
+        "A_diag_predicted": -0.3447746622108912
+      }
+    },
+    "(5, 1)|(2, 1)|(3,)": {
+      "(0, 0, 0)": {
+        "T_mu_last_cell": [
+          1,
+          0
+        ],
+        "q_nu_corner": [
+          0,
+          2
+        ],
+        "axial_distance": 3,
+        "h_q": 0.44930482320583087,
+        "A_diag_predicted": 0.34477466221089115
+      },
+      "(1, 0, 0)": {
+        "T_mu_last_cell": [
+          0,
+          1
+        ],
+        "q_nu_corner": [
+          0,
+          2
+        ],
+        "axial_distance": 1,
+        "h_q": 1.109978595554181,
+        "A_diag_predicted": 1.0054484345592414
+      }
+    },
+    "(4, 2)|(3,)|(3,)": {
+      "(0, 0, 0)": {
+        "T_mu_last_cell": [
+          0,
+          2
+        ],
+        "q_nu_corner": [
+          1,
+          0
+        ],
+        "axial_distance": -3,
+        "h_q": -0.24024450121595148,
+        "A_diag_predicted": -0.3447746622108912
+      }
+    },
+    "(4, 2)|(3,)|(2, 1)": {
+      "(0, 0, 0)": {
+        "T_mu_last_cell": [
+          0,
+          2
+        ],
+        "q_nu_corner": [
+          1,
+          0
+        ],
+        "axial_distance": -3,
+        "h_q": -0.24024450121595148,
+        "A_diag_predicted": -0.3447746622108912
+      },
+      "(0, 1, 0)": {
+        "T_mu_last_cell": [
+          0,
+          2
+        ],
+        "q_nu_corner": [
+          1,
+          0
+        ],
+        "axial_distance": -3,
+        "h_q": -0.24024450121595148,
+        "A_diag_predicted": -0.3447746622108912
+      }
+    },
+    "(4, 2)|(2, 1)|(3,)": {
+      "(0, 0, 0)": {
+        "T_mu_last_cell": [
+          1,
+          0
+        ],
+        "q_nu_corner": [
+          1,
+          1
+        ],
+        "axial_distance": 1,
+        "h_q": 1.109978595554181,
+        "A_diag_predicted": 1.0054484345592414
+      },
+      "(1, 0, 0)": {
+        "T_mu_last_cell": [
+          0,
+          1
+        ],
+        "q_nu_corner": [
+          1,
+          1
+        ],
+        "axial_distance": -1,
+        "h_q": -0.9009182735643012,
+        "A_diag_predicted": -1.005448434559241
+      }
+    },
+    "(4, 2)|(2, 1)|(2, 1)": {
+      "(0, 0, 0)": {
+        "T_mu_last_cell": [
+          1,
+          0
+        ],
+        "q_nu_corner": [
+          1,
+          1
+        ],
+        "axial_distance": 1,
+        "h_q": 1.109978595554181,
+        "A_diag_predicted": 1.0054484345592414
+      },
+      "(0, 1, 0)": {
+        "T_mu_last_cell": [
+          1,
+          0
+        ],
+        "q_nu_corner": [
+          1,
+          1
+        ],
+        "axial_distance": 1,
+        "h_q": 1.109978595554181,
+        "A_diag_predicted": 1.0054484345592414
+      },
+      "(1, 0, 0)": {
+        "T_mu_last_cell": [
+          0,
+          1
+        ],
+        "q_nu_corner": [
+          1,
+          1
+        ],
+        "axial_distance": -1,
+        "h_q": -0.9009182735643012,
+        "A_diag_predicted": -1.005448434559241
+      },
+      "(1, 1, 0)": {
+        "T_mu_last_cell": [
+          0,
+          1
+        ],
+        "q_nu_corner": [
+          1,
+          1
+        ],
+        "axial_distance": -1,
+        "h_q": -0.9009182735643012,
+        "A_diag_predicted": -1.005448434559241
+      }
+    },
+    "(4, 1, 1)|(3,)|(2, 1)": {
+      "(0, 0, 0)": {
+        "T_mu_last_cell": [
+          0,
+          2
+        ],
+        "q_nu_corner": [
+          1,
+          0
+        ],
+        "axial_distance": -3,
+        "h_q": -0.24024450121595148,
+        "A_diag_predicted": -0.3447746622108912
+      },
+      "(0, 1, 0)": {
+        "T_mu_last_cell": [
+          0,
+          2
+        ],
+        "q_nu_corner": [
+          1,
+          0
+        ],
+        "axial_distance": -3,
+        "h_q": -0.24024450121595148,
+        "A_diag_predicted": -0.3447746622108912
+      }
+    },
+    "(4, 1, 1)|(3,)|(1, 1, 1)": {
+      "(0, 0, 0)": {
+        "T_mu_last_cell": [
+          0,
+          2
+        ],
+        "q_nu_corner": [
+          1,
+          0
+        ],
+        "axial_distance": -3,
+        "h_q": -0.24024450121595148,
+        "A_diag_predicted": -0.3447746622108912
+      }
+    },
+    "(4, 1, 1)|(2, 1)|(3,)": {
+      "(0, 0, 0)": {
+        "T_mu_last_cell": [
+          1,
+          0
+        ],
+        "q_nu_corner": [
+          2,
+          0
+        ],
+        "axial_distance": -1,
+        "h_q": -0.9009182735643012,
+        "A_diag_predicted": -1.005448434559241
+      },
+      "(1, 0, 0)": {
+        "T_mu_last_cell": [
+          0,
+          1
+        ],
+        "q_nu_corner": [
+          2,
+          0
+        ],
+        "axial_distance": -3,
+        "h_q": -0.24024450121595148,
+        "A_diag_predicted": -0.3447746622108912
+      }
+    },
+    "(4, 1, 1)|(2, 1)|(2, 1)": {
+      "(0, 0, 0)": {
+        "T_mu_last_cell": [
+          1,
+          0
+        ],
+        "q_nu_corner": [
+          2,
+          0
+        ],
+        "axial_distance": -1,
+        "h_q": -0.9009182735643012,
+        "A_diag_predicted": -1.005448434559241
+      },
+      "(0, 1, 0)": {
+        "T_mu_last_cell": [
+          1,
+          0
+        ],
+        "q_nu_corner": [
+          2,
+          0
+        ],
+        "axial_distance": -1,
+        "h_q": -0.9009182735643012,
+        "A_diag_predicted": -1.005448434559241
+      },
+      "(1, 0, 0)": {
+        "T_mu_last_cell": [
+          0,
+          1
+        ],
+        "q_nu_corner": [
+          2,
+          0
+        ],
+        "axial_distance": -3,
+        "h_q": -0.24024450121595148,
+        "A_diag_predicted": -0.3447746622108912
+      },
+      "(1, 1, 0)": {
+        "T_mu_last_cell": [
+          0,
+          1
+        ],
+        "q_nu_corner": [
+          2,
+          0
+        ],
+        "axial_distance": -3,
+        "h_q": -0.24024450121595148,
+        "A_diag_predicted": -0.3447746622108912
+      }
+    },
+    "(4, 1, 1)|(1, 1, 1)|(3,)": {
+      "(0, 0, 0)": {
+        "T_mu_last_cell": [
+          2,
+          0
+        ],
+        "q_nu_corner": [
+          0,
+          1
+        ],
+        "axial_distance": 3,
+        "h_q": 0.44930482320583087,
+        "A_diag_predicted": 0.34477466221089115
+      }
+    },
+    "(3, 3)|(3,)|(3,)": {
+      "(0, 0, 0)": {
+        "T_mu_last_cell": [
+          0,
+          2
+        ],
+        "q_nu_corner": [
+          1,
+          0
+        ],
+        "axial_distance": -3,
+        "h_q": -0.24024450121595148,
+        "A_diag_predicted": -0.3447746622108912
+      }
+    },
+    "(3, 3)|(2, 1)|(2, 1)": {
+      "(0, 0, 0)": {
+        "T_mu_last_cell": [
+          1,
+          0
+        ],
+        "q_nu_corner": [
+          1,
+          1
+        ],
+        "axial_distance": 1,
+        "h_q": 1.109978595554181,
+        "A_diag_predicted": 1.0054484345592414
+      },
+      "(0, 1, 0)": {
+        "T_mu_last_cell": [
+          1,
+          0
+        ],
+        "q_nu_corner": [
+          1,
+          1
+        ],
+        "axial_distance": 1,
+        "h_q": 1.109978595554181,
+        "A_diag_predicted": 1.0054484345592414
+      },
+      "(1, 0, 0)": {
+        "T_mu_last_cell": [
+          0,
+          1
+        ],
+        "q_nu_corner": [
+          1,
+          1
+        ],
+        "axial_distance": -1,
+        "h_q": -0.9009182735643012,
+        "A_diag_predicted": -1.005448434559241
+      },
+      "(1, 1, 0)": {
+        "T_mu_last_cell": [
+          0,
+          1
+        ],
+        "q_nu_corner": [
+          1,
+          1
+        ],
+        "axial_distance": -1,
+        "h_q": -0.9009182735643012,
+        "A_diag_predicted": -1.005448434559241
+      }
+    },
+    "(3, 2, 1)|(3,)|(2, 1)": {
+      "(0, 0, 0)": {
+        "T_mu_last_cell": [
+          0,
+          2
+        ],
+        "q_nu_corner": [
+          1,
+          0
+        ],
+        "axial_distance": -3,
+        "h_q": -0.24024450121595148,
+        "A_diag_predicted": -0.3447746622108912
+      },
+      "(0, 1, 0)": {
+        "T_mu_last_cell": [
+          0,
+          2
+        ],
+        "q_nu_corner": [
+          1,
+          0
+        ],
+        "axial_distance": -3,
+        "h_q": -0.24024450121595148,
+        "A_diag_predicted": -0.3447746622108912
+      }
+    },
+    "(3, 2, 1)|(2, 1)|(3,)": {
+      "(0, 0, 0)": {
+        "T_mu_last_cell": [
+          1,
+          0
+        ],
+        "q_nu_corner": [
+          2,
+          0
+        ],
+        "axial_distance": -1,
+        "h_q": -0.9009182735643012,
+        "A_diag_predicted": -1.005448434559241
+      },
+      "(1, 0, 0)": {
+        "T_mu_last_cell": [
+          0,
+          1
+        ],
+        "q_nu_corner": [
+          2,
+          0
+        ],
+        "axial_distance": -3,
+        "h_q": -0.24024450121595148,
+        "A_diag_predicted": -0.3447746622108912
+      }
+    },
+    "(3, 2, 1)|(2, 1)|(2, 1)": {
+      "(0, 0, 0)": {
+        "T_mu_last_cell": [
+          1,
+          0
+        ],
+        "q_nu_corner": [
+          2,
+          0
+        ],
+        "axial_distance": -1,
+        "h_q": -0.9009182735643012,
+        "A_diag_predicted": -1.005448434559241
+      },
+      "(0, 1, 0)": {
+        "T_mu_last_cell": [
+          1,
+          0
+        ],
+        "q_nu_corner": [
+          2,
+          0
+        ],
+        "axial_distance": -1,
+        "h_q": -0.9009182735643012,
+        "A_diag_predicted": -1.005448434559241
+      },
+      "(1, 0, 0)": {
+        "T_mu_last_cell": [
+          0,
+          1
+        ],
+        "q_nu_corner": [
+          2,
+          0
+        ],
+        "axial_distance": -3,
+        "h_q": -0.24024450121595148,
+        "A_diag_predicted": -0.3447746622108912
+      },
+      "(1, 1, 0)": {
+        "T_mu_last_cell": [
+          0,
+          1
+        ],
+        "q_nu_corner": [
+          2,
+          0
+        ],
+        "axial_distance": -3,
+        "h_q": -0.24024450121595148,
+        "A_diag_predicted": -0.3447746622108912
+      },
+      "(0, 0, 1)": {
+        "T_mu_last_cell": [
+          1,
+          0
+        ],
+        "q_nu_corner": [
+          1,
+          1
+        ],
+        "axial_distance": 1,
+        "h_q": 1.109978595554181,
+        "A_diag_predicted": 1.0054484345592414
+      },
+      "(0, 1, 1)": {
+        "T_mu_last_cell": [
+          1,
+          0
+        ],
+        "q_nu_corner": [
+          1,
+          1
+        ],
+        "axial_distance": 1,
+        "h_q": 1.109978595554181,
+        "A_diag_predicted": 1.0054484345592414
+      },
+      "(1, 0, 1)": {
+        "T_mu_last_cell": [
+          0,
+          1
+        ],
+        "q_nu_corner": [
+          1,
+          1
+        ],
+        "axial_distance": -1,
+        "h_q": -0.9009182735643012,
+        "A_diag_predicted": -1.005448434559241
+      },
+      "(1, 1, 1)": {
+        "T_mu_last_cell": [
+          0,
+          1
+        ],
+        "q_nu_corner": [
+          1,
+          1
+        ],
+        "axial_distance": -1,
+        "h_q": -0.9009182735643012,
+        "A_diag_predicted": -1.005448434559241
+      }
+    },
+    "(3, 2, 1)|(2, 1)|(1, 1, 1)": {
+      "(0, 0, 0)": {
+        "T_mu_last_cell": [
+          1,
+          0
+        ],
+        "q_nu_corner": [
+          2,
+          0
+        ],
+        "axial_distance": -1,
+        "h_q": -0.9009182735643012,
+        "A_diag_predicted": -1.005448434559241
+      },
+      "(1, 0, 0)": {
+        "T_mu_last_cell": [
+          0,
+          1
+        ],
+        "q_nu_corner": [
+          2,
+          0
+        ],
+        "axial_distance": -3,
+        "h_q": -0.24024450121595148,
+        "A_diag_predicted": -0.3447746622108912
+      }
+    },
+    "(3, 2, 1)|(1, 1, 1)|(2, 1)": {
+      "(0, 0, 0)": {
+        "T_mu_last_cell": [
+          2,
+          0
+        ],
+        "q_nu_corner": [
+          0,
+          1
+        ],
+        "axial_distance": 3,
+        "h_q": 0.44930482320583087,
+        "A_diag_predicted": 0.34477466221089115
+      },
+      "(0, 1, 0)": {
+        "T_mu_last_cell": [
+          2,
+          0
+        ],
+        "q_nu_corner": [
+          0,
+          1
+        ],
+        "axial_distance": 3,
+        "h_q": 0.44930482320583087,
+        "A_diag_predicted": 0.34477466221089115
+      }
+    },
+    "(3, 1, 1, 1)|(3,)|(1, 1, 1)": {
+      "(0, 0, 0)": {
+        "T_mu_last_cell": [
+          0,
+          2
+        ],
+        "q_nu_corner": [
+          1,
+          0
+        ],
+        "axial_distance": -3,
+        "h_q": -0.24024450121595148,
+        "A_diag_predicted": -0.3447746622108912
+      }
+    },
+    "(3, 1, 1, 1)|(2, 1)|(2, 1)": {
+      "(0, 0, 0)": {
+        "T_mu_last_cell": [
+          1,
+          0
+        ],
+        "q_nu_corner": [
+          2,
+          0
+        ],
+        "axial_distance": -1,
+        "h_q": -0.9009182735643012,
+        "A_diag_predicted": -1.005448434559241
+      },
+      "(0, 1, 0)": {
+        "T_mu_last_cell": [
+          1,
+          0
+        ],
+        "q_nu_corner": [
+          2,
+          0
+        ],
+        "axial_distance": -1,
+        "h_q": -0.9009182735643012,
+        "A_diag_predicted": -1.005448434559241
+      },
+      "(1, 0, 0)": {
+        "T_mu_last_cell": [
+          0,
+          1
+        ],
+        "q_nu_corner": [
+          2,
+          0
+        ],
+        "axial_distance": -3,
+        "h_q": -0.24024450121595148,
+        "A_diag_predicted": -0.3447746622108912
+      },
+      "(1, 1, 0)": {
+        "T_mu_last_cell": [
+          0,
+          1
+        ],
+        "q_nu_corner": [
+          2,
+          0
+        ],
+        "axial_distance": -3,
+        "h_q": -0.24024450121595148,
+        "A_diag_predicted": -0.3447746622108912
+      }
+    },
+    "(3, 1, 1, 1)|(2, 1)|(1, 1, 1)": {
+      "(0, 0, 0)": {
+        "T_mu_last_cell": [
+          1,
+          0
+        ],
+        "q_nu_corner": [
+          2,
+          0
+        ],
+        "axial_distance": -1,
+        "h_q": -0.9009182735643012,
+        "A_diag_predicted": -1.005448434559241
+      },
+      "(1, 0, 0)": {
+        "T_mu_last_cell": [
+          0,
+          1
+        ],
+        "q_nu_corner": [
+          2,
+          0
+        ],
+        "axial_distance": -3,
+        "h_q": -0.24024450121595148,
+        "A_diag_predicted": -0.3447746622108912
+      }
+    },
+    "(3, 1, 1, 1)|(1, 1, 1)|(3,)": {
+      "(0, 0, 0)": {
+        "T_mu_last_cell": [
+          2,
+          0
+        ],
+        "q_nu_corner": [
+          3,
+          0
+        ],
+        "axial_distance": -1,
+        "h_q": -0.9009182735643012,
+        "A_diag_predicted": -1.005448434559241
+      }
+    },
+    "(3, 1, 1, 1)|(1, 1, 1)|(2, 1)": {
+      "(0, 0, 0)": {
+        "T_mu_last_cell": [
+          2,
+          0
+        ],
+        "q_nu_corner": [
+          3,
+          0
+        ],
+        "axial_distance": -1,
+        "h_q": -0.9009182735643012,
+        "A_diag_predicted": -1.005448434559241
+      },
+      "(0, 1, 0)": {
+        "T_mu_last_cell": [
+          2,
+          0
+        ],
+        "q_nu_corner": [
+          3,
+          0
+        ],
+        "axial_distance": -1,
+        "h_q": -0.9009182735643012,
+        "A_diag_predicted": -1.005448434559241
+      }
+    },
+    "(2, 2, 2)|(2, 1)|(2, 1)": {
+      "(0, 0, 0)": {
+        "T_mu_last_cell": [
+          1,
+          0
+        ],
+        "q_nu_corner": [
+          2,
+          0
+        ],
+        "axial_distance": -1,
+        "h_q": -0.9009182735643012,
+        "A_diag_predicted": -1.005448434559241
+      },
+      "(0, 1, 0)": {
+        "T_mu_last_cell": [
+          1,
+          0
+        ],
+        "q_nu_corner": [
+          2,
+          0
+        ],
+        "axial_distance": -1,
+        "h_q": -0.9009182735643012,
+        "A_diag_predicted": -1.005448434559241
+      },
+      "(1, 0, 0)": {
+        "T_mu_last_cell": [
+          0,
+          1
+        ],
+        "q_nu_corner": [
+          2,
+          0
+        ],
+        "axial_distance": -3,
+        "h_q": -0.24024450121595148,
+        "A_diag_predicted": -0.3447746622108912
+      },
+      "(1, 1, 0)": {
+        "T_mu_last_cell": [
+          0,
+          1
+        ],
+        "q_nu_corner": [
+          2,
+          0
+        ],
+        "axial_distance": -3,
+        "h_q": -0.24024450121595148,
+        "A_diag_predicted": -0.3447746622108912
+      }
+    },
+    "(2, 2, 2)|(1, 1, 1)|(1, 1, 1)": {
+      "(0, 0, 0)": {
+        "T_mu_last_cell": [
+          2,
+          0
+        ],
+        "q_nu_corner": [
+          0,
+          1
+        ],
+        "axial_distance": 3,
+        "h_q": 0.44930482320583087,
+        "A_diag_predicted": 0.34477466221089115
+      }
+    },
+    "(2, 2, 1, 1)|(2, 1)|(2, 1)": {
+      "(0, 0, 0)": {
+        "T_mu_last_cell": [
+          1,
+          0
+        ],
+        "q_nu_corner": [
+          2,
+          0
+        ],
+        "axial_distance": -1,
+        "h_q": -0.9009182735643012,
+        "A_diag_predicted": -1.005448434559241
+      },
+      "(0, 1, 0)": {
+        "T_mu_last_cell": [
+          1,
+          0
+        ],
+        "q_nu_corner": [
+          2,
+          0
+        ],
+        "axial_distance": -1,
+        "h_q": -0.9009182735643012,
+        "A_diag_predicted": -1.005448434559241
+      },
+      "(1, 0, 0)": {
+        "T_mu_last_cell": [
+          0,
+          1
+        ],
+        "q_nu_corner": [
+          2,
+          0
+        ],
+        "axial_distance": -3,
+        "h_q": -0.24024450121595148,
+        "A_diag_predicted": -0.3447746622108912
+      },
+      "(1, 1, 0)": {
+        "T_mu_last_cell": [
+          0,
+          1
+        ],
+        "q_nu_corner": [
+          2,
+          0
+        ],
+        "axial_distance": -3,
+        "h_q": -0.24024450121595148,
+        "A_diag_predicted": -0.3447746622108912
+      }
+    },
+    "(2, 2, 1, 1)|(2, 1)|(1, 1, 1)": {
+      "(0, 0, 0)": {
+        "T_mu_last_cell": [
+          1,
+          0
+        ],
+        "q_nu_corner": [
+          2,
+          0
+        ],
+        "axial_distance": -1,
+        "h_q": -0.9009182735643012,
+        "A_diag_predicted": -1.005448434559241
+      },
+      "(1, 0, 0)": {
+        "T_mu_last_cell": [
+          0,
+          1
+        ],
+        "q_nu_corner": [
+          2,
+          0
+        ],
+        "axial_distance": -3,
+        "h_q": -0.24024450121595148,
+        "A_diag_predicted": -0.3447746622108912
+      }
+    },
+    "(2, 2, 1, 1)|(1, 1, 1)|(2, 1)": {
+      "(0, 0, 0)": {
+        "T_mu_last_cell": [
+          2,
+          0
+        ],
+        "q_nu_corner": [
+          3,
+          0
+        ],
+        "axial_distance": -1,
+        "h_q": -0.9009182735643012,
+        "A_diag_predicted": -1.005448434559241
+      },
+      "(0, 1, 0)": {
+        "T_mu_last_cell": [
+          2,
+          0
+        ],
+        "q_nu_corner": [
+          3,
+          0
+        ],
+        "axial_distance": -1,
+        "h_q": -0.9009182735643012,
+        "A_diag_predicted": -1.005448434559241
+      }
+    },
+    "(2, 2, 1, 1)|(1, 1, 1)|(1, 1, 1)": {
+      "(0, 0, 0)": {
+        "T_mu_last_cell": [
+          2,
+          0
+        ],
+        "q_nu_corner": [
+          3,
+          0
+        ],
+        "axial_distance": -1,
+        "h_q": -0.9009182735643012,
+        "A_diag_predicted": -1.005448434559241
+      }
+    },
+    "(2, 1, 1, 1, 1)|(2, 1)|(1, 1, 1)": {
+      "(0, 0, 0)": {
+        "T_mu_last_cell": [
+          1,
+          0
+        ],
+        "q_nu_corner": [
+          2,
+          0
+        ],
+        "axial_distance": -1,
+        "h_q": -0.9009182735643012,
+        "A_diag_predicted": -1.005448434559241
+      },
+      "(1, 0, 0)": {
+        "T_mu_last_cell": [
+          0,
+          1
+        ],
+        "q_nu_corner": [
+          2,
+          0
+        ],
+        "axial_distance": -3,
+        "h_q": -0.24024450121595148,
+        "A_diag_predicted": -0.3447746622108912
+      }
+    },
+    "(2, 1, 1, 1, 1)|(1, 1, 1)|(2, 1)": {
+      "(0, 0, 0)": {
+        "T_mu_last_cell": [
+          2,
+          0
+        ],
+        "q_nu_corner": [
+          3,
+          0
+        ],
+        "axial_distance": -1,
+        "h_q": -0.9009182735643012,
+        "A_diag_predicted": -1.005448434559241
+      },
+      "(0, 1, 0)": {
+        "T_mu_last_cell": [
+          2,
+          0
+        ],
+        "q_nu_corner": [
+          3,
+          0
+        ],
+        "axial_distance": -1,
+        "h_q": -0.9009182735643012,
+        "A_diag_predicted": -1.005448434559241
+      }
+    },
+    "(2, 1, 1, 1, 1)|(1, 1, 1)|(1, 1, 1)": {
+      "(0, 0, 0)": {
+        "T_mu_last_cell": [
+          2,
+          0
+        ],
+        "q_nu_corner": [
+          3,
+          0
+        ],
+        "axial_distance": -1,
+        "h_q": -0.9009182735643012,
+        "A_diag_predicted": -1.005448434559241
+      }
+    },
+    "(1, 1, 1, 1, 1, 1)|(1, 1, 1)|(1, 1, 1)": {
+      "(0, 0, 0)": {
+        "T_mu_last_cell": [
+          2,
+          0
+        ],
+        "q_nu_corner": [
+          3,
+          0
+        ],
+        "axial_distance": -1,
+        "h_q": -0.9009182735643012,
+        "A_diag_predicted": -1.005448434559241
+      }
+    }
+  }
+}

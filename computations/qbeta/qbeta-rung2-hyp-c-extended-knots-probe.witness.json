@@ -1,0 +1,96 @@
+{
+  "engine": "python+sympy",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-04T12:44:18.171657+00:00",
+  "commitSha": "bc5f2b49a2a5db8d5a80aee97669c40e4fc8708a",
+  "assertions": [
+    {
+      "name": "trefoil_cubic_taylor_equals_9",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Concrete mathematical-correctness check: the right-handed trefoil 3_1 (= T(2,3)) Jones polynomial has cubic Taylor coefficient = 9 at q=1, a known value consistent with PR #1806's Hyp-C probe result. Confirms the probe's Jones polynomials are correctly encoded and Taylor extraction is correct, beyond merely 'the probe ran'."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 365,
+  "computation": "qbeta-rung2-hyp-c-extended-knots-probe",
+  "scriptFile": "qbeta_rung2_hypC_extended_knots_probe.py",
+  "scriptHash": "5360d2e94e16",
+  "scriptCommitSha": "bc5f2b49a2a5db8d5a80aee97669c40e4fc8708a",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 10,
+    "truncation_bound": "1e-50"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Extends the Hyp-C concrete test from PR #1806 to 9 natural knot candidates: T(2,n) for n ∈ {3,5,7,9,11} + twist knots 4_1, 6_1, 6_2. Reports V_K cubic Taylor coefficient at q=1 for each; Hyp-C is CONFIRMED iff coefficient = 1.",
+  "contentBlock": "prop:q-beta-c-k-recursion-from-habiro-q-difference",
+  "data": {
+    "required_cubic_coefficient": "1",
+    "results_per_knot": [
+      {
+        "knot": "T(2,3) = 3_1",
+        "V_at_q1": "1",
+        "cubic_taylor_coefficient": "9",
+        "hyp_c_confirmed": false
+      },
+      {
+        "knot": "T(2,5) = 5_1",
+        "V_at_q1": "1",
+        "cubic_taylor_coefficient": "39",
+        "hyp_c_confirmed": false
+      },
+      {
+        "knot": "T(2,7) = 7_1",
+        "V_at_q1": "1",
+        "cubic_taylor_coefficient": "102",
+        "hyp_c_confirmed": false
+      },
+      {
+        "knot": "T(2,9) = 9_1",
+        "V_at_q1": "1",
+        "cubic_taylor_coefficient": "210",
+        "hyp_c_confirmed": false
+      },
+      {
+        "knot": "T(2,11) = 11a367",
+        "V_at_q1": "1",
+        "cubic_taylor_coefficient": "375",
+        "hyp_c_confirmed": false
+      },
+      {
+        "knot": "4_1 (figure-eight)",
+        "V_at_q1": "1",
+        "cubic_taylor_coefficient": "-3",
+        "hyp_c_confirmed": false
+      },
+      {
+        "knot": "6_1 (stevedore)",
+        "V_at_q1": "1",
+        "cubic_taylor_coefficient": "-12",
+        "hyp_c_confirmed": false
+      },
+      {
+        "knot": "6_2",
+        "V_at_q1": "1",
+        "cubic_taylor_coefficient": "-9",
+        "hyp_c_confirmed": false
+      },
+      {
+        "knot": "Unknot",
+        "V_at_q1": "1",
+        "cubic_taylor_coefficient": "0",
+        "hyp_c_confirmed": false
+      }
+    ],
+    "matching_knots": [],
+    "verdict": "REFUTED for 9-knot extended set"
+  }
+}

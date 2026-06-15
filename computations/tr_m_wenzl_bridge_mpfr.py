@@ -1,0 +1,528 @@
+#!/usr/bin/env python3
+# polynomial_q_not_applicable: library / no own witness output; sympy used internally by callers.
+"""
+Hoefsmit + Wenzl-bridge tr_M evaluation at 50 dps.
+
+Replaces the recursive sympy `tr_M_word` path used by
+`atomic_tr_m_mpfr_50dps.py` for atoms at A >= 3 (where the recursion
+times out at H_9 with 100+ NF terms).
+
+Master-prop closed form (Wenzl bridge):
+
+    tr_M(W) = Σ_{λ ⊢ n} y_λ(q) · χ_λ(W)
+
+with χ_λ(W) = trace(ρ_λ(W)) and y_λ(q) precomputed at 50 dps in
+`y-lambda-mpfr-witness.json`.
+
+For the 3A-strand atom braid `W = Π_k (c_k σ_{g_k} + d_k I)` the
+character per partition is
+
+    M_λ = Π_k (c_k · σ_{g_k}^λ  +  d_k · I)
+    χ_λ(W) = tr(M_λ)
+
+Per-σ matrices σ_g^λ are built in the Hoefsmit (Young seminormal)
+basis at 50 dps mpf, then multiplied by the Hecke factors.
+
+Cost at A=3 (n=9): 30 partitions × 33 word factors × max-d_λ² (=42²)
+≈ 1.7 M mpf ops — sub-second wall time, vs. the symbolic path's
+>4 minutes.
+
+Public entry point:
+
+    tr_M_via_wenzl_bridge_mpfr(word, n, q_str, *, dps=50,
+                               y_lambda_path=None)
+        word: list of (c, d, g) Hecke factors (e.g. atom_braid_word_3A).
+        n:    strand count of the ambient H_n (e.g. n = 3A).
+        q_str: q_0 as a decimal string at >= dps precision.
+        Returns: mpf at the chosen dps.
+"""
+from __future__ import annotations
+
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+import functools
+from q_parameter import Q_50_DIGIT_STR
+import json
+import sys
+from pathlib import Path
+from typing import Iterable, Sequence
+
+import mpmath as mp
+
+sys.path.insert(0, str(Path(__file__).parent))
+from hecke_characters import (partitions_of, standard_young_tableaux)
+
+
+_HERE = Path(__file__).parent
+_Y_LAMBDA_DEFAULT = _HERE / "y-lambda-mpfr-witness.json"
+
+
+# Hoefsmit matrices are reused across consecutive calls to
+# tr_M_via_wenzl_bridge_mpfr that share the same (shape, q) — e.g.
+# the Habiro extension running tritium → helium-3 both at H_9, or
+# helium-3 → helium-4 sharing partition shapes. Cache the build
+# output once per (shape, q-string repr, current dps) tuple so the
+# expensive Bruhat-traversal + sqrt-of-axial-distance only runs
+# once per (shape, q) lifetime.
+_SEMINORMAL_CACHE: dict[tuple, tuple[list, int]] = {}
+
+
+def _build_seminormal_matrices_mpf_cached(
+    shape: tuple[int, ...], q: mp.mpf
+) -> tuple[list, int]:
+    """Cached wrapper for `_build_seminormal_matrices_mpf`. Key
+    includes `mp.mp.dps` so a precision bump invalidates the cache.
+    """
+    key = (tuple(shape), repr(q), mp.mp.dps)
+    cached = _SEMINORMAL_CACHE.get(key)
+    if cached is not None:
+        return cached
+    result = _build_seminormal_matrices_mpf_impl(shape, q)
+    _SEMINORMAL_CACHE[key] = result
+    return result
+
+
+def _build_seminormal_matrices_mpf(shape: tuple[int, ...],
+                                    q: mp.mpf) -> tuple[list, int]:
+    """Public name kept for back-compat; delegates to the cached
+    wrapper. The actual implementation is `_build_seminormal_matrices_mpf_impl`."""
+    return _build_seminormal_matrices_mpf_cached(shape, q)
+
+
+def _build_seminormal_matrices_mpf_impl(shape: tuple[int, ...],
+                                         q: mp.mpf) -> tuple[list, int]:
+    """Hoefsmit YSN matrices σ_1 .. σ_{n-1} at mpf precision.
+
+    Mirrors `hecke_characters.build_seminormal_matrices` but in pure
+    mpmath arithmetic so every entry inherits the active dps.
+
+    Returns (sigmas, dim) where each `sigma` is the SPARSE COO list
+    `[(i, j, val), ...]` for σ_k acting on the seminormal basis
+    (sigmas[k-1] = σ_k).  Each Hoefsmit matrix has at most 2 nonzeros
+    per row (block-diagonal with 1×1 and 2×2 blocks), so a sparse
+    representation buys an O(d) factor over `mp.matrix` density.
+    """
+    n = sum(shape)
+    syts, _, contents = standard_young_tableaux(shape)
+    dim = len(syts)
+    if dim == 0:
+        return [], 0
+
+    h = q - mp.mpf(1) / q
+    one = mp.mpf(1)
+
+    sigmas: list[list[tuple[int, int, mp.mpf]]] = []
+    for k in range(1, n):
+        coo: list[tuple[int, int, mp.mpf]] = []
+        processed = set()
+        for i in range(dim):
+            if i in processed:
+                continue
+            ci_k = syts[i][k]
+            ci_k1 = syts[i][k + 1]
+            rho = contents[ci_k1] - contents[ci_k]
+            a = h / (one - q ** (-2 * rho))
+
+            swap_map = dict(syts[i])
+            swap_map[k] = ci_k1
+            swap_map[k + 1] = ci_k
+            j = None
+            for jj in range(dim):
+                if jj == i:
+                    continue
+                if syts[jj] == swap_map:
+                    j = jj
+                    break
+
+            if j is None:
+                coo.append((i, i, a))
+                processed.add(i)
+            else:
+                a_prime = h / (one - q ** (2 * rho))
+                b_sq = a * a_prime + one
+                # b_sq is real-positive in the Young seminormal basis
+                # for any real q > 1 (the regime of the substrate q_0
+                # ≈ 1.11) — Hoefsmit, “Representations of Hecke
+                # algebras of finite groups with BN-pairs of classical
+                # type” (1974), §3.  A negative b_sq here indicates
+                # either a non-real substrate parameter or a bug;
+                # raise instead of masking with abs() so the bridge
+                # never silently emits the wrong square root.
+                if b_sq < 0:
+                    raise ValueError(
+                        f"Hoefsmit b_sq = {mp.nstr(b_sq, 6)} < 0 for "
+                        f"shape={shape}, k={k}, ρ={rho}; YSN positivity "
+                        f"violated — check that q ({mp.nstr(q, 8)}) is "
+                        f"real with q > 1.")
+                b = mp.sqrt(b_sq)
+                coo.append((i, i, a))
+                coo.append((j, j, a_prime))
+                coo.append((i, j, b))
+                coo.append((j, i, b))
+                processed.add(i)
+                processed.add(j)
+        sigmas.append(coo)
+    return sigmas, dim
+
+
+def _hecke_factor_coo(sigma_coo, c: mp.mpf, d: mp.mpf, dim: int):
+    """Build COO of (c · σ + d · I).
+
+    σ rows have 1 or 2 nonzeros.  The 1-nz rows (1×1 blocks) collapse
+    with the d·I diagonal; the 2-nz rows (2×2 blocks) get d added to
+    their diagonal entry only.  Output: list of (j, k, v) triples,
+    grouped here as columns-by-row for efficient left-multiplication.
+    """
+    # Group sigma entries by row
+    by_row: dict[int, list[tuple[int, mp.mpf]]] = {}
+    for (i, j, v) in sigma_coo:
+        by_row.setdefault(i, []).append((j, v))
+
+    out: list[tuple[int, int, mp.mpf]] = []
+    diag_seen = set()
+    for i in range(dim):
+        entries = by_row.get(i, [])
+        if not entries:
+            # σ has zero row i — Hecke factor reduces to d at (i, i).
+            if d != 0:
+                out.append((i, i, d))
+            diag_seen.add(i)
+            continue
+        for (j, v) in entries:
+            if i == j:
+                out.append((i, i, c * v + d))
+                diag_seen.add(i)
+            else:
+                out.append((i, j, c * v))
+        if i not in diag_seen and d != 0:
+            out.append((i, i, d))
+            diag_seen.add(i)
+    return out
+
+
+def _chi_lambda_of_word_mpf(sigmas: list, dim: int,
+                              word: Sequence[tuple[float, float, int]],
+                              q: mp.mpf | None = None
+                              ) -> mp.mpf:
+    """χ_λ(W) at mpf precision for a Hecke-factor word.
+
+    word is a list of (c, d, g) triples — each contributes a factor
+    c · σ_g + d · I to the matrix product.  Multiplications are
+    dense × sparse: P_new[r, k] += P[r, j] · M[j, k] for each (j, k, v)
+    in the sparse COO of M = c·σ_g + d·I.  Cost per matmul:
+    O(d × nnz(M)) ≈ O(d × 2d) = O(d²) instead of O(d³) for dense.
+
+    PRECISION SNAP (PR #564, 2026-05-08).  The atom_braid_word_3A
+    builder produces (c, d) values where c ∈ {1.0} and
+    d ∈ {0.0, -h, -h/2} with h = hecke_core.h, a Python f64 with
+    ~16-digit precision.  The previous `mp.mpf(str(d))` round-trip
+    inherited that 16-digit truncation, capping χ^λ accuracy at f64
+    even when the working dps is 50.  When q is provided, we now
+    recompute h_mp = q - 1/q at full mpmath precision and snap each
+    f64 d-value to its canonical mpmath counterpart based on which
+    of the three Hecke crossing types it represents.  This recovers
+    the full 50-dps precision in the matrix product.
+
+    Returns trace(P) after all multiplications.
+    """
+    if dim == 0:
+        return mp.mpf(0)
+    zero = mp.mpf(0)
+    one = mp.mpf(1)
+
+    # If q is provided, build the canonical mpmath d-values once.
+    # Otherwise fall back to the legacy (f64-truncating) path.
+    snap = None
+    if q is not None:
+        h_mp = q - one / q
+        # Map f64 d-value → canonical mpmath value, keyed by the f64
+        # value (rounded to 9 dp to avoid float-eq pitfalls).
+        snap = {
+            round(0.0, 9): zero,
+            round(float(-h_mp), 9): -h_mp,
+            round(float(-h_mp / 2), 9): -h_mp / 2,
+        }
+
+    # P starts as the identity, stored as a dict-of-dicts for sparsity.
+    # After the first multiplication it generally becomes dense, so
+    # switch to a flat row-major list of mpf for speed.
+    P = [[zero] * dim for _ in range(dim)]
+    for i in range(dim):
+        P[i][i] = one
+
+    for (c, d, g) in word:
+        if g >= len(sigmas):
+            raise IndexError(
+                f"word uses generator σ_{g} but only {len(sigmas)} "
+                f"seminormal matrices were provided (partition λ has "
+                f"too few cells)")
+        c_mp = c if isinstance(c, mp.mpf) else mp.mpf(str(c))
+        if isinstance(d, mp.mpf):
+            d_mp = d
+        elif snap is not None and round(float(d), 9) in snap:
+            d_mp = snap[round(float(d), 9)]
+        else:
+            d_mp = mp.mpf(str(d))
+        M_coo = _hecke_factor_coo(sigmas[g], c_mp, d_mp, dim)
+
+        # P_new = P @ M.  For each (j, k, v) in M_coo:
+        #   P_new[r, k] += P[r, j] * v   (for all r)
+        P_new = [[zero] * dim for _ in range(dim)]
+        for (j, k, v) in M_coo:
+            for r in range(dim):
+                P_new[r][k] += P[r][j] * v
+        P = P_new
+
+    tr = zero
+    for i in range(dim):
+        tr += P[i][i]
+    return tr
+
+
+# Memoize parsed y_λ tables across calls — same n at same dps reuses
+# the parsed mpf dict instead of re-parsing the witness JSON. Mirrors
+# the 30-dps `_y_lambda_cached` pattern in `tr_m_q_hecke_seminormal.py`
+# but at 50 dps for the mpfr consumer (atomic_tr_m_mpfr_50dps.py and
+# any other 50-dps caller). Key includes mp.dps so a precision change
+# invalidates the cached parse.
+_Y_LAMBDA_CACHE: dict[tuple[str, int, int], dict] = {}
+
+
+def _load_y_lambda(n: int, path: Path | None = None) -> dict:
+    """Load y_λ table for H_n from the mpfr witness.
+
+    Returns dict: tuple(partition) -> mpf(y_lambda).
+    """
+    p = Path(path) if path else _Y_LAMBDA_DEFAULT
+    key = (str(p), n, mp.mp.dps)
+    cached = _Y_LAMBDA_CACHE.get(key)
+    if cached is not None:
+        return cached
+    with open(p) as f:
+        W = json.load(f)
+    table = W["tables_by_n"].get(str(n))
+    if table is None:
+        raise KeyError(
+            f"y-lambda-mpfr-witness.json has no table for n={n}; "
+            f"available: {sorted(W['tables_by_n'].keys(), key=int)}")
+    parsed = {tuple(w["partition"]): mp.mpf(w["y_lambda"])
+              for w in table["weights"]}
+    _Y_LAMBDA_CACHE[key] = parsed
+    return parsed
+
+
+def tr_M_via_wenzl_bridge_mpfr(
+    word: Sequence[tuple[float, float, int]],
+    n: int,
+    q_str: str,
+    *,
+    dps: int = 50,
+    y_lambda_path: Path | None = None,
+    return_breakdown: bool = False,
+) -> mp.mpf | dict:
+    """Compute tr_M(W) at mpf precision via Σ_λ y_λ · χ_λ(W).
+
+    Args:
+        word: Hecke-factor list [(c, d, g), ...] (e.g. from
+              atom_braid_word_3A).
+        n: strand count of H_n.
+        q_str: q_0 as decimal string at >= dps precision.
+        dps: working precision (default 50).
+        y_lambda_path: override path to y-lambda witness JSON.
+        return_breakdown: if True, return a dict with per-λ χ_λ and
+            running partial sums; if False (default), return the mpf
+            result only.
+    """
+    with mp.workdps(dps):
+        q = mp.mpf(q_str)
+        y_table = _load_y_lambda(n, y_lambda_path)
+
+        # n_gens needed in any partition's representation = max generator
+        # index in the word + 1 (because g is 0-indexed for σ_{g+1}).
+        # Validate up front: every partition λ ⊢ n carries n-1 generators
+        # σ_1..σ_{n-1}, so a word using a generator with index ≥ n-1
+        # cannot be evaluated in H_n at any partition.  Skipping
+        # silently would yield a meaningless trace of 0 — raise instead.
+        max_g = max((g for _, _, g in word), default=-1)
+        if max_g >= n - 1:
+            raise IndexError(
+                f"word uses generator σ_{max_g} (0-indexed) which is "
+                f"out of bounds for H_{n}: valid generator indices are "
+                f"0..{n - 2}.  Either pass a larger n or trim the word.")
+
+        total = mp.mpf(0)
+        breakdown = []
+
+        # Fast path: Rust hecke-engine rayon-parallel MPFR
+        # χ_λ-over-all-partitions. Falls back to pure Python below if
+        # pyhecke_native is unavailable (no native wheel built) or
+        # raises during the call.
+        #
+        # Word-encoding bridge: the Python convention is `(c, d, g)`
+        # where the factor is `c·σ_g + d·I` and `g` is **0-based**
+        # (per `mass_at_3A_proper.atom_braid_word_3A` docstring).
+        # The Rust kernel takes `(sign, gen_1based)` with sign ∈
+        # {-1, 0, +1} for {σ⁻¹, averaged, σ}; the σ⁻¹ and averaged
+        # cases are encoded on the Python side as `(1.0, -h, g)` and
+        # `(1.0, -h/2, g)` respectively. We translate the
+        # `d`-coefficient to Rust's `sign` enum, asserting `c ≈ 1.0`
+        # (the only case the Rust kernel supports) and shifting the
+        # generator index by +1.
+        rust_chi_by_partition: dict[tuple[int, ...], mp.mpf] | None = None
+        try:
+            from pyhecke_native import (
+                chi_lambda_all_partitions_mpfr as _rust_chi_all,
+            )
+            # Build the sign-from-d map at the active dps so the
+            # round(d, 9) lookup is stable.
+            h_f64 = float(q - mp.mpf(1) / q)
+            sign_map = {
+                round(0.0, 9): 1,       # σ_g
+                round(-h_f64, 9): -1,    # σ_g^{-1} = σ_g - h
+                round(-h_f64 / 2, 9): 0,  # averaged = σ_g - h/2
+            }
+
+            def _translate(factor: tuple[float, float, int]):
+                c, d, g = factor
+                if abs(float(c) - 1.0) > 1e-9:
+                    raise ValueError(
+                        f"Rust path requires c == 1.0; got c={c}"
+                    )
+                sign = sign_map.get(round(float(d), 9))
+                if sign is None:
+                    raise ValueError(
+                        f"unrecognised d={d}; expected one of "
+                        f"{{0.0, -h, -h/2}} with h={h_f64}"
+                    )
+                return (sign, int(g) + 1)
+
+            word_signed = [_translate(factor) for factor in word]
+            rust_results = _rust_chi_all(n, word_signed, q_str, dps)
+            rust_chi_by_partition = {
+                tuple(lam): mp.mpf(chi_str)
+                for lam, chi_str in rust_results
+            }
+        except (ImportError, ValueError, RuntimeError, KeyError,
+                AssertionError):
+            # ImportError: pyhecke_native wheel not built.
+            # ValueError: unsupported factor encoding (c != 1.0 or
+            #   unrecognised d); ValueError is also raised by the
+            #   Rust kernel on invalid (sign, gen) tuples.
+            # RuntimeError: Rust panic / FFI boundary error.
+            # KeyError/AssertionError: defensive against future API
+            #   changes in the Rust kernel.
+            rust_chi_by_partition = None
+
+        # `d_lambda` (= dim of Specht module) is the combinatorial
+        # partition dimension; computing it via Murnaghan-Nakayama
+        # avoids the heavy Hoefsmit seminormal build when the Rust
+        # fast path has already supplied χ_λ and we only need `dim`
+        # for the breakdown payload.
+        _d_lambda_combinatorial = None
+        if return_breakdown and rust_chi_by_partition is not None:
+            try:
+                from murnaghan_nakayama import d_lambda as _d_lambda_combinatorial  # noqa: E501
+            except ImportError:
+                _d_lambda_combinatorial = None
+
+        for shape in partitions_of(n):
+            shape_t = tuple(shape)
+            y_lam = y_table.get(shape_t)
+            if y_lam is None:
+                # Should never happen for a complete witness, but guard.
+                continue
+            if rust_chi_by_partition is not None:
+                # Fast path: Rust already computed χ_λ for every partition.
+                chi = rust_chi_by_partition.get(shape_t)
+                if chi is None:
+                    # Partition skipped on the Rust side (e.g. dim 0);
+                    # fall back to Python for this single λ.
+                    sigmas, dim = _build_seminormal_matrices_mpf(shape_t, q)
+                    if dim == 0:
+                        continue
+                    chi = _chi_lambda_of_word_mpf(sigmas, dim, word, q=q)
+                else:
+                    dim = 0
+                    if return_breakdown:
+                        # Prefer combinatorial d_lambda over the heavy
+                        # _build_seminormal_matrices_mpf call.
+                        if _d_lambda_combinatorial is not None:
+                            dim = int(_d_lambda_combinatorial(shape_t))
+                        else:
+                            _, dim = _build_seminormal_matrices_mpf(shape_t, q)
+            else:
+                sigmas, dim = _build_seminormal_matrices_mpf(shape_t, q)
+                if dim == 0:
+                    continue
+                chi = _chi_lambda_of_word_mpf(sigmas, dim, word, q=q)
+            contrib = y_lam * chi
+            total += contrib
+            if return_breakdown:
+                breakdown.append({
+                    "partition": list(shape_t),
+                    "dim": dim,
+                    "y_lambda": str(y_lam),
+                    "chi_lambda": str(chi),
+                    "contribution": str(contrib),
+                })
+
+        if return_breakdown:
+            return {
+                "tr_M": str(total),
+                "n": n,
+                "q": q_str,
+                "dps": dps,
+                "n_partitions_used": len(breakdown),
+                "by_partition": breakdown,
+            }
+        return total
+
+
+# ── Self-test against the canonical prop table ──────────────────
+
+if __name__ == "__main__":
+    # The prop table in markov_trace_canonical sets:
+    #   tr_M(1) = 1
+    #   tr_M(σ_0) = z
+    #   tr_M(σ_0 σ_1) = z²
+    #   tr_M(σ_0 σ_1 σ_0) = h z² + z
+    #   tr_M(σ_0²)  = h z + 1
+    Q_STR = Q_50_DIGIT_STR
+    with mp.workdps(60):
+        q = mp.mpf(Q_STR)
+        h = q - 1 / q
+        z = 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))
+
+    # All cases evaluated at n=3 (minimum n with a y_λ table).  The
+    # canonical Markov trace is consistent across the tower, so any
+    # H_2 element embeds into H_3 with the same tr_M.
+    cases = [
+        ("identity",      [],                                  3, lambda: 1),
+        ("σ_0",           [(1.0, 0.0, 0)],                     3, lambda: z),
+        ("σ_0 σ_1",       [(1.0, 0.0, 0), (1.0, 0.0, 1)],      3, lambda: z * z),
+        ("σ_0 σ_1 σ_0",   [(1.0, 0.0, 0), (1.0, 0.0, 1),
+                            (1.0, 0.0, 0)],                     3, lambda: h * z * z + z),
+        ("σ_0²",          [(1.0, 0.0, 0), (1.0, 0.0, 0)],      3, lambda: h * z + 1),
+    ]
+
+    print("=" * 78)
+    print("Hoefsmit + Wenzl-bridge tr_M @ 50 dps — prop-table self-test")
+    print(f"q_0 = {Q_STR[:40]}...")
+    print("=" * 78)
+    # Threshold reflects the precision of the y-lambda-mpfr-witness.json
+    # input q (currently stored at f64 ≈ 1e-16); regenerating that witness
+    # with a 50-dps q_str would tighten this to ~1e-45.
+    TOL = mp.mpf("1e-14")
+    n_pass = 0
+    for name, word, n_strands, expected_fn in cases:
+        with mp.workdps(60):
+            expected = expected_fn()
+        got = tr_M_via_wenzl_bridge_mpfr(word, n_strands, Q_STR, dps=50)
+        diff = abs(got - expected)
+        ok_str = "✓" if diff < TOL else "✗"
+        if diff < TOL:
+            n_pass += 1
+        print(f"  {name:<14}  got={mp.nstr(got, 20):<25}  "
+              f"want={mp.nstr(expected, 20):<25}  |Δ|={mp.nstr(diff, 3)}  {ok_str}")
+    print(f"\n  {n_pass}/{len(cases)} cases match within {mp.nstr(TOL, 2)}")
+    print("  (f64-limited by y-lambda witness input q; structural agreement OK)")
+    sys.exit(0 if n_pass == len(cases) else 1)

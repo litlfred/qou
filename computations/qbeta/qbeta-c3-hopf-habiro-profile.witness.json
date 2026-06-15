@@ -1,0 +1,145 @@
+{
+  "engine": "pyhecke.trace_formal",
+  "engineVersion": "sympy-1.14.0+mpmath",
+  "computedAt": "2026-06-04T14:23:18.763669+00:00",
+  "computation": "qbeta-c3-hopf-habiro-profile",
+  "scriptFile": "qbeta_c3_hopf_habiro_profile_probe.py",
+  "tier": "NEGATIVE/exploratory",
+  "precisionMetadata": {
+    "compute_dps": 50
+  },
+  "assertions": [
+    {
+      "name": "hopf_classical_limit_is_minus_2_both_framings",
+      "computed": [
+        -2.0,
+        -2.0
+      ],
+      "expected": [
+        -2,
+        -2
+      ],
+      "passed": true,
+      "source": "Step-3 classical_limit of both corpus framings of J_Hopf (balanced -(q+q\u207b\u00b9), writhe -q\u00b2(1+q\u00b2)) returns -2 = the proven c_3 = J_Hopf(q=1) (framing-independent at q=1)."
+    },
+    {
+      "name": "j_bal_equals_minus_quantum_int_4_over_2",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "Symbolic identity J_bal = -[2]_q = -quantum_int(4)/quantum_int(2) (Step-3 quantum_int); residual simplifies to 0 in \u211a(s)."
+    },
+    {
+      "name": "habiro_profile_real_only_N1_hits_structural",
+      "computed": {
+        "n1": -2.0,
+        "only_N1": true,
+        "max_im": 8.156630584998156e-56
+      },
+      "expected": "only N=1 (=q=1) \u2192 -2; family real",
+      "passed": true,
+      "source": "Step-3 habiro_profile(J_bal, 12): the root-of-unity family is REAL (max|Im|<1e-12) and pole-free; only N=1 (which is q=1) returns -2 \u2014 the #1811 lesson on the Hopf object. No finite root N>1 reproduces the structural -2."
+    },
+    {
+      "name": "real_q_hopf_framing_rigid_across_anchors",
+      "computed": 24721755.153546486,
+      "expected": ">1e6 (rigid)",
+      "passed": true,
+      "source": "Bare real-q Hopf framing J_Hopf(q\u2080) swings 4.05e-08 of the empirical proton-vs-muon residue spread \u2192 residue A is fibre-level, not real-q. Re-confirms docs/audits/2026-06-04-c3-habiro-3rung-crossanchor-rigidity-falsification.md."
+    }
+  ],
+  "data": {
+    "classical_limit": {
+      "J_bal_minus_q_plus_qinv": -2.0,
+      "J_wr_minus_q2_1_plus_q2": -2.0,
+      "proven_value": -2
+    },
+    "quantum_int_identity": "J_bal = -[2]_q = -quantum_int(4)/quantum_int(2)",
+    "habiro_profile_J_bal": {
+      "N_max": 12,
+      "n1_equals_q1_value": -2.0,
+      "only_N1_hits_structural_minus2": true,
+      "max_imaginary_part": 8.156630584998156e-56,
+      "samples": [
+        {
+          "N": 1,
+          "re": -2.0,
+          "im": 0.0
+        },
+        {
+          "N": 2,
+          "re": 2.0,
+          "im": 0.0
+        },
+        {
+          "N": 3,
+          "re": 1.0,
+          "im": 8.156630584998156e-56
+        },
+        {
+          "N": 4,
+          "re": 0.0,
+          "im": 0.0
+        },
+        {
+          "N": 5,
+          "re": -0.6180339887498949,
+          "im": 8.156630584998156e-56
+        },
+        {
+          "N": 6,
+          "re": -1.0,
+          "im": 8.156630584998156e-56
+        },
+        {
+          "N": 7,
+          "re": -1.246979603717467,
+          "im": 8.156630584998156e-56
+        },
+        {
+          "N": 8,
+          "re": -1.4142135623730951,
+          "im": 8.156630584998156e-56
+        },
+        {
+          "N": 9,
+          "re": -1.532088886237956,
+          "im": 8.156630584998156e-56
+        },
+        {
+          "N": 10,
+          "re": -1.618033988749895,
+          "im": 8.156630584998156e-56
+        },
+        {
+          "N": 11,
+          "re": -1.6825070656623624,
+          "im": 8.156630584998156e-56
+        },
+        {
+          "N": 12,
+          "re": -1.7320508075688772,
+          "im": 8.156630584998156e-56
+        }
+      ]
+    },
+    "cross_anchor_rigidity": {
+      "q0_proton": "1.10997858275",
+      "q0_muon": "1.10997859555",
+      "empirical_residue_proton": "-0.069299999999999999999999999999999999999999999999998",
+      "empirical_residue_muon": "-0.0097",
+      "model_residue_proton": "-0.010896866706862229826659238754577672503294073130622",
+      "model_residue_muon": "-0.010896869117694293724437216243399298223521495905121",
+      "empirical_swing": "-0.059599999999999999999999999999999999999999999999998",
+      "model_swing": "0.0000000024108320638977779774888216257202274227744988020151",
+      "swing_ratio_model_over_empirical": -4.045020241439225e-08,
+      "rigidity_factor": 24721755.153546486
+    }
+  },
+  "deltaLambdaGate": {
+    "fittedForms": false,
+    "wiredToProduction": false,
+    "productionC3": "c_3 = -2 (proven J_Hopf(1), 112\u00d7 tightening)"
+  },
+  "allPassed": true
+}

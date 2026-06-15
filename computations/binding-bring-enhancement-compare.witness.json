@@ -1,0 +1,74 @@
+{
+  "name": "binding-bring-enhancement-compare",
+  "description": "Re-runs the T vs ³He f-factor comparison with pn_convention='bring_color_weighted' to test whether the substrate-pure δ = Δm/M_N at q_0 closes the 15% single-magic A=3 p/n asymmetry. Per the audit docs/audits/2026-05-31-binding-magic-A-wireup.md.",
+  "computation": "closed_form_ratio(Z, N, q_0, pn_convention) compared across 'strict_averaged' and 'bring_color_weighted'; f required to close B_endo to B_AME under each.",
+  "generator": "folio-assistant/computations/binding_bring_enhancement_compare.py",
+  "timestamp_utc": "2026-05-31T13:39:50.555513+00:00",
+  "inputs": {
+    "q_0_50dps": "1.1099785827513808075916690956107688798744991218736",
+    "m_e_MeV": 0.51099895069,
+    "delta_flavor_split_subleading": 0.0013770489659925545,
+    "vol_borromean_8G": 7.327724753417752,
+    "AME": {
+      "D": 2.224566,
+      "T": 8.481798,
+      "³He": 7.718058,
+      "⁴He": 28.295674
+    }
+  },
+  "predictions": [
+    {
+      "atom": "D",
+      "Z": 1,
+      "N": 1,
+      "tau_M_ratio_strict": 0.3947901847858748,
+      "tau_M_ratio_bring": 0.39486215635294647,
+      "tau_M_ratio_delta_ppm": 182.30333439189513,
+      "B_endo_strict_MeV": 2.266183738870008,
+      "B_endo_bring_MeV": 2.2659142442404456,
+      "B_AME_MeV": 2.224566,
+      "f_required_strict": 0.9816353201392398,
+      "f_required_bring": 0.9817520701211241
+    },
+    {
+      "atom": "T",
+      "Z": 1,
+      "N": 2,
+      "tau_M_ratio_strict": 0.11459181300680485,
+      "tau_M_ratio_bring": 0.11461270347640999,
+      "tau_M_ratio_delta_ppm": 182.30333439189513,
+      "B_endo_strict_MeV": 3.3153752387780573,
+      "B_endo_bring_MeV": 3.3152970152573435,
+      "B_AME_MeV": 8.481798,
+      "f_required_strict": 2.5583221774697584,
+      "f_required_bring": 2.558382540377492
+    },
+    {
+      "atom": "³He",
+      "Z": 2,
+      "N": 1,
+      "tau_M_ratio_strict": 0.19712676699972548,
+      "tau_M_ratio_bring": 0.19716270386664744,
+      "tau_M_ratio_delta_ppm": 182.30333439189513,
+      "B_endo_strict_MeV": 3.006326433016429,
+      "B_endo_bring_MeV": 3.006191868867935,
+      "B_AME_MeV": 7.718058,
+      "f_required_strict": 2.5672721083239143,
+      "f_required_bring": 2.5673870254018247
+    },
+    {
+      "atom": "⁴He",
+      "Z": 2,
+      "N": 2,
+      "tau_M_ratio_strict": 0.05721802236527322,
+      "tau_M_ratio_bring": 0.05722845340153772,
+      "tau_M_ratio_delta_ppm": 182.30333439189513,
+      "B_endo_strict_MeV": 3.530209083373208,
+      "B_endo_bring_MeV": 3.530170024778704,
+      "B_AME_MeV": 28.295674,
+      "f_required_strict": 8.015296922006312,
+      "f_required_bring": 8.015385605052769
+    }
+  ],
+  "f_spread_summary": "T vs ³He f-factor spread (single-magic A=3 p/n asymmetry): strict_averaged = 0.35%, bring_color_weighted = 0.35%. The Bring weighting at q_0 produces a substantially identical f-spread — the 180.9 ppm uniform correction cancels out of the T vs ³He ratio because both have exactly one pn arc. The 15%+ T vs ³He spread is at the arc-COMPOSITION layer (T = pn+nn vs ³He = pp+pn, distinct factors f_nn ≠ f_pp), NOT at the pn-arc weighting layer; Bring weighting cannot close it. The actual closure path is the operator-valued Wenzl branching with full per-arc operator extracts (canonical_tr_m_via_branching.py + A_operator_extract_at_level.py), not a scalar pn-weighting refinement."
+}

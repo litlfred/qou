@@ -1,0 +1,91 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-29T14:40:36.414380+00:00",
+  "commitSha": "4f207588745f901d68703c022c9e38a1d134bb5f",
+  "assertions": [
+    {
+      "name": "deuteron_below_ceiling",
+      "computed": 1.0,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "B(²H)=2.22 < ceiling 3.74 ⟹ deuteron works; A≥3 clipped"
+    },
+    {
+      "name": "A3_exceeds_ceiling",
+      "computed": 1.0,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "B(³He)=7.72 > ceiling 3.74 ⟹ structurally clipped"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 26,
+  "computation": "binding-error-source",
+  "scriptFile": "binding_error_source.py",
+  "scriptHash": "bca9a598d0d4",
+  "scriptCommitSha": "d001bdd580afd4b028db07d787bfd2af47d94184",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
+  "description": "Error-source diagnosis for the A≥3 binding undershoot: Δtr is an intensive, saturating observable (≤ |tr_free| ≈ 1), capping B = m_e·Vol·Δtr at ~3.74 MeV for any A, while physical binding is extensive. Deuteron sits below the ceiling (+0.2%); A≥3 is clipped (−59%/−88%). Structural pointer: the extensive analog is -log(tr), which grows with A — but no recalibrated formula is claimed (fitting).",
+  "data": {
+    "ceiling_MeV": "3.74445966",
+    "isotopes": {
+      "2H": {
+        "tr_free": "0.983526015189",
+        "tr_atom": "0.388286417278",
+        "delta_tr": "0.595239597911",
+        "B_cat_MeV": "2.228850662",
+        "B_AME_MeV": "2.224566",
+        "clip_pct": 0.19260666470616097,
+        "neg_log_ratio": "0.929400832963",
+        "B_over_dtr": "3.737261445",
+        "B_over_log": "2.393548533"
+      },
+      "3H": {
+        "tr_free": "0.908023891874",
+        "tr_atom": "0.104052104023",
+        "delta_tr": "0.803971787851",
+        "B_cat_MeV": "3.010439927",
+        "B_AME_MeV": "8.481798",
+        "clip_pct": -64.50705466766112,
+        "neg_log_ratio": "2.16637891698",
+        "B_over_dtr": "10.54987019",
+        "B_over_log": "3.915195968"
+      },
+      "3He": {
+        "tr_free": "1.04775629771",
+        "tr_atom": "0.206540811571",
+        "delta_tr": "0.841215486139",
+        "B_cat_MeV": "3.149897453",
+        "B_AME_MeV": "7.718043",
+        "clip_pct": -59.18787375030138,
+        "neg_log_ratio": "1.62390826989",
+        "B_over_dtr": "9.174870324",
+        "B_over_log": "4.752757987"
+      },
+      "4He": {
+        "tr_free": "0.967323422553",
+        "tr_atom": "0.0553483332261",
+        "delta_tr": "0.911975089327",
+        "B_cat_MeV": "3.414853933",
+        "B_AME_MeV": "28.295673",
+        "clip_pct": -87.9315330903853,
+        "neg_log_ratio": "2.86088635391",
+        "B_over_dtr": "31.02680471",
+        "B_over_log": "9.890526746"
+      }
+    },
+    "conclusion": {
+      "error_source": "Δtr is intensive/saturating (bounded by |tr_free|≈1); binding is extensive — mismatch caps B at ~3.74 MeV.",
+      "structural_fix_direction": "binding observable must be log(tr)-based (free-energy / additive over subsystems), not Δtr",
+      "not_done": "scale recalibration for the log observable (would be a fit)"
+    }
+  }
+}

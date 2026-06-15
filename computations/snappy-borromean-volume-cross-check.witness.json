@@ -1,0 +1,76 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-30T12:56:33.619868+00:00",
+  "commitSha": "2a83182a641af1ddfbf35afd75279befb9fbea03",
+  "assertions": [
+    {
+      "name": "all_precision_tiers_match_canonical",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Producer witness snappy-borromean-volume.witness.json agrees with 8·G at every emitted precision tier within 5 ULP of declared precision."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 11,
+  "computation": "snappy-borromean-volume-cross-check",
+  "scriptFile": "snappy_borromean_volume_catalan_cross_check.py",
+  "scriptHash": "6500d7c47236",
+  "scriptCommitSha": "c1ab91e71370e7a2408cb4d24d1658e35a549b35",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
+  "description": "Cross-check witness for Vol(L6a4) = 8·G: verifies that `snappy-borromean-volume.witness.json` agrees with an independent 8·G recomputation at every emitted precision tier (15 / 30 / 50 / 100 / 200 dps). Independence layer of the SnapPy migration pattern — if the producer is drift-modified the disagreement surfaces here.",
+  "data": {
+    "producer_witness": "snappy-borromean-volume.witness.json",
+    "cross_check_results": [
+      {
+        "tier_dps": 15,
+        "producer_value": "7.32772475341775",
+        "canonical_8G": "7.32772475341775",
+        "delta": "2.1204e-15",
+        "tolerance": "1.0e-13",
+        "passes": true
+      },
+      {
+        "tier_dps": 30,
+        "producer_value": "7.32772475341775212043682811946",
+        "canonical_8G": "7.32772475341775212043682811946",
+        "delta": "9.2711e-31",
+        "tolerance": "1.0e-28",
+        "passes": true
+      },
+      {
+        "tier_dps": 50,
+        "producer_value": "7.3277247534177521204368281194590728861931949942534",
+        "canonical_8G": "7.3277247534177521204368281194590728861931949942534",
+        "delta": "2.2926e-50",
+        "tolerance": "1.0e-48",
+        "passes": true
+      },
+      {
+        "tier_dps": 100,
+        "producer_value": "7.327724753417752120436828119459072886193194994253377074131984956974104158210038155834852103408920850",
+        "canonical_8G": "7.327724753417752120436828119459072886193194994253377074131984956974104158210038155834852103408920850",
+        "delta": "1.1405e-101",
+        "tolerance": "1.0e-98",
+        "passes": true
+      },
+      {
+        "tier_dps": 200,
+        "producer_value": "7.3277247534177521204368281194590728861931949942533770741319849569741041582100381558348521034089208499885953809535695966322871904266068724754527578998492672559626562301865556841523098198253127029272722",
+        "canonical_8G": "7.3277247534177521204368281194590728861931949942533770741319849569741041582100381558348521034089208499885953809535695966322871904266068724754527578998492672559626562301865556841523098198253127029272722",
+        "delta": "2.3481e-201",
+        "tolerance": "1.0e-198",
+        "passes": true
+      }
+    ],
+    "all_tiers_pass": true,
+    "identity_under_test": "Vol(L6a4) = 8·mpmath.catalan (Adams 1985)"
+  }
+}

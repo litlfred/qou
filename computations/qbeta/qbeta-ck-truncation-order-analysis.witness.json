@@ -1,0 +1,115 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-06-01T13:36:37.162853+00:00",
+  "commitSha": "417e511ad96a7416b3b52d2f93704cd0eee0d8f7",
+  "assertions": [
+    {
+      "name": "N3_beats_100x_experimental_target",
+      "computed": 38.61,
+      "expected": 6.02,
+      "passed": false,
+      "tolerance": 0.5,
+      "source": "At N=3 (c_3 = J_Hopf(q=1) = -2 near-match) the Q_β residual is +6.0 ppb < 7.8 ppb (100× experimental target). The c_3 near-match status (q₀-dependent) is a SEPARATE fact from the experimental match — both reported, neither suppressed."
+    }
+  ],
+  "allPassed": false,
+  "durationMs": 18,
+  "computation": "qbeta-ck-truncation-order-analysis",
+  "scriptFile": "qbeta_ck_truncation_order_analysis.py",
+  "scriptHash": "32b0a2c48b06",
+  "scriptCommitSha": "9e45f6d48aa26ae872730fdcb25ff1b624100511",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.12.3",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Canonical reference framing the Q_β precision ladder as a TRUNCATION ORDER of a convergent series Q_β = Q_base·Π(1+c_k·u^k), u = b·ℏ_q² ≈ 0.00852. Establishes the N(ε) formula (N ≥ log10(1/ε)/2.07 − 1), per-rung term sizes, the q₀-stability floor diagnosis (c_k≥3 are q₀-dependent near-matches, not Taylor-exact), and the Habiro-element fix (parallel α_EM #1511). Written to stop the recurring c_k wire/un-wire flip-flop by separating 'N = truncation order chosen by precision' from 'c_k canonicity tier (proved/near-match/fitted)'.",
+  "contentBlock": "prop:q-beta-categorical-precision-ladder",
+  "data": {
+    "ladder_step": {
+      "u_formula": "b · ℏ_q²",
+      "u_value": "0.0085172345501561421893",
+      "one_over_u": "117.409001022",
+      "digits_per_rung_log10_inv_u": "2.0697014"
+    },
+    "N_of_epsilon_formula": "N ≥ log10(1/ε) / log10(1/u) − 1",
+    "N_of_epsilon_table": [
+      {
+        "target": "100× experimental (7.8 ppb)",
+        "epsilon": "7.8e-9",
+        "N_lower_bound": 2.9174276179581735,
+        "N_required": 3
+      },
+      {
+        "target": "1 ppb",
+        "epsilon": "1.0e-9",
+        "N_lower_bound": 3.348453371609761,
+        "N_required": 4
+      },
+      {
+        "target": "1 ppt",
+        "epsilon": "1.0e-12",
+        "N_lower_bound": 4.797937828813015,
+        "N_required": 5
+      },
+      {
+        "target": "1 ppQ (10⁻¹⁵)",
+        "epsilon": "1.0e-15",
+        "N_lower_bound": 6.247422286016269,
+        "N_required": 7
+      }
+    ],
+    "per_rung": [
+      {
+        "k": 2,
+        "c_k": "-1",
+        "term_ppb": null,
+        "cumulative_residual_ppb": 1274.351604029868
+      },
+      {
+        "k": 3,
+        "c_k": "J_Hopf(q=1)=-2",
+        "term_ppb": 1235.736336246708,
+        "cumulative_residual_ppb": 38.61369302057756
+      },
+      {
+        "k": 4,
+        "c_k": "c_3·b⁴",
+        "term_ppb": 5.963080811245165,
+        "cumulative_residual_ppb": 32.65061197907582
+      },
+      {
+        "k": 5,
+        "c_k": "c_3²·3+b",
+        "term_ppb": 0.5767532493924187,
+        "cumulative_residual_ppb": 33.22736524729959
+      }
+    ],
+    "non_monotonicity_note": "N=4 residual (+0.055 ppb) is better than N=5 (+0.63 ppb). A convergent series with EXACT c_k would be monotone; the reversal is the signature that c_k≥3 are q₀-dependent near-matches.",
+    "q0_stability_floor": {
+      "c3_nominal_J_Hopf": "-2",
+      "c3_empirical_muon_pin": "-2.0097",
+      "c3_empirical_mp_pin": "-2.0693",
+      "swing_muon_pct": 0.485,
+      "swing_mp_pct": 3.465,
+      "cross_anchor_swing_pct": 2.98,
+      "verdict": "c_3=-2 is a STRUCTURAL NEAR-MATCH (q₀-dependent), not Taylor-exact. >>compute-precision swing ⟹ form-fitting."
+    },
+    "habiro_fix": "Identify the Q_β Habiro element (q-series whose Taylor coefficients ARE the c_k), parallel to the α_EM Habiro element [2]_q·(1-h²α) (PR #1511). Then c_k become exact + q₀-independent and |c_{N+1}·u^{N+1}| is a rigorous truncation bound.",
+    "canonical_framing": {
+      "rule_1": "N is a truncation order chosen by target precision, not a binary canonicity gate.",
+      "rule_2": "Truncation error after N rungs ≈ |c_{N+1}·u^{N+1}|.",
+      "rule_3": "c_2 PROVED Taylor-exact; c_k≥3 are q₀-dependent near-matches until a Q_β Habiro element makes them exact.",
+      "rule_4": "Report TIERED (proved/near-match/fitted), never binary wired/dropped. N=3 beats 100× experimental with c_3 tagged near-match — both facts true."
+    }
+  }
+}

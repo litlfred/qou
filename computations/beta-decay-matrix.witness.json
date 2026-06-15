@@ -1,0 +1,112 @@
+{
+  "computedAt": "2026-04-07T14:54:36.548821+00:00",
+  "computation": "beta-decay-matrix",
+  "description": "Beta decay as matrix-valued polynomial in q",
+  "auditOnly": "docs/audits/categorical-vs-fitted-q-decay-ba.md",
+  "parameters": {
+    "q": 1.11,
+    "hecke_coeff": 0.2090990990990993,
+    "skein_amplitude": 0.10440737953277479,
+    "markov_z": 0.4993200830735895,
+    "hbar_q2": 0.009820631442253083
+  },
+  "crossing_coefficients": {
+    "pp": {
+      "c": 1,
+      "d": 0
+    },
+    "nn": {
+      "c": 1,
+      "d": -0.2090990990990993
+    },
+    "mixed": {
+      "c": 1,
+      "d": -0.10454954954954965
+    }
+  },
+  "transfer_matrices": {
+    "T_pp": [
+      [
+        0.2090990990990993,
+        1
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    "T_nn": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        -0.2090990990990993
+      ]
+    ],
+    "T_mix": [
+      [
+        0.10454954954954965,
+        1
+      ],
+      [
+        1,
+        -0.10454954954954965
+      ]
+    ]
+  },
+  "decay_matrices": {
+    "Delta_nn_mix": [
+      [
+        0.10454954954954965,
+        0
+      ],
+      [
+        0,
+        0.10454954954954965
+      ]
+    ],
+    "Delta_mix_pp": [
+      [
+        0.10454954954954965,
+        0
+      ],
+      [
+        0,
+        0.10454954954954965
+      ]
+    ],
+    "identical": true
+  },
+  "tritium": {
+    "parent": "3H (p,n,n)",
+    "daughter": "3He (p,p,n)",
+    "sigma_0": {
+      "crossings": 2,
+      "parent_type": "mix × mix",
+      "daughter_type": "pp × mix",
+      "V_par": 0.5047779553234897,
+      "V_dau": 0.6147853771229397,
+      "log_ratio": 0.1971545864572573
+    },
+    "sigma_1": {
+      "crossings": 1,
+      "parent_type": "nn",
+      "daughter_type": "mix",
+      "V_par": 1,
+      "V_dau": 1.0522036897663876,
+      "log_ratio": 0.05088671702424296
+    },
+    "P_par": 0.5047779553234897,
+    "P_dau": 0.6468794422231772,
+    "ratio": 1.28151286204371,
+    "ln_ratio": 0.24804130348150033,
+    "Q_q_hecke_units": 25.25716446442611
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0,
+  "engine": "python",
+  "scriptFile": "beta-decay-matrix.py",
+  "commitSha": "06e88b6885fd78860cf1e0d1d01de2a96f5b0811"
+}

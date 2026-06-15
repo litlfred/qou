@@ -1,0 +1,45 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-17T23:08:44.289051+00:00",
+  "commitSha": "83b19a2f85c270e19890905437a29b4540fd7834",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "proton-m_e-derivation",
+  "scriptFile": "derive_m_p_hecke_path_a.py",
+  "scriptHash": "093ffad9916b",
+  "scriptCommitSha": "bd3f2bddb7c582ebfb964f2fcba18fcc2461739f",
+  "description": "Workplan 2 Phase 2 — partial Path A derivation of m_p_Hecke at 50 dps from the trustable subset (T1 + T4) of the six-term unified mass formula. NO FITTING per owner directive 2026-05-10. Replaces the DEPRECATED placeholder literal M_HECKE_PIPELINE_AT_Q0['p']=1.4283 (which was numerologically tuned to (m_p − m_e)/m_e + 470 ppb per the proton-m_e anomaly audit). The derived value will not match CODATA m_p (~938 MeV) until the T2/T3/T5/T6 R&D closes; the point of this Phase 2 deliverable is to expose the residual honestly rather than hide it behind a tuned literal.",
+  "auditOnly": "docs/audits/2026-05-10-1ppb-workplan-update.md (Phase 2); docs/audits/2026-05-09-proton-m_e-anomaly.md (motivates removing the placeholder)",
+  "owner_directive_2026_05_10": "do workplans 2 phase 2; make sure no fitting; all should be derived",
+  "data": {
+    "proton": {
+      "atom": "proton",
+      "t1_descended_50dps": "1.0653062285923887036108498526519307688964161791863",
+      "t2_single_50dps": "1096978.3961756918763451545425331467139400777901298",
+      "t3_pair_50dps": "82016.168865420969044289474029381394711672021690575",
+      "t4_frobenius_co_casimir_50dps": "1.2761128463443181177567435067352497395009951716945",
+      "m_p_hecke_T1_plus_T4": "2.3414190749367068213675933593871805083974113508808",
+      "m_p_hecke_T1_T2_T3_T4_50dps": "1178996.9064601877820962653841558874958322582092317",
+      "quarantined": {
+        "t2_t3_brane_tower": {
+          "value_T2_single_50dps": "1096978.3961756918763451545425331467139400777901298",
+          "value_T3_pair_50dps": "82016.168865420969044289474029381394711672021690575",
+          "reason": "Item A closed 2026-05-17: A=1 entries now in terms-2-3-atom-per-gen-mpfr-50dps.witness.json. Loaded but flagged 'near-pole' — legacy Φ_q tower form gives megaelectronvolt-divergent values (T2 ~ 1.097M for proton). PR #682 ships the Li₂^q production replacement (matches AME within 1% at tritium); until that merges, T2+T3 values are documentation only and m_p_hecke_T1_plus_T4 remains the trustable partial.",
+          "raw_error": "(none — Item A closed 2026-05-17)"
+        },
+        "t5_chirality_bw": {
+          "value_50dps": "-18.42226291573287653470777494998015026578105151667",
+          "reason": "Sign-indefinite (-7.79 for proton, -7.47 for neutron). Magnitude inflated, no known structural ansatz matches. Excluded from trustable subset."
+        },
+        "t6_habiro_residue": {
+          "value_50dps": "0.0",
+          "reason": "Small tail correction (~0.68), separately derived. Consistent with a residue tail; not yet integrated into the partial Path A subset."
+        }
+      },
+      "construction": "T1 (descended Markov trace) + T4 (Frobenius co-Casimir per-vortex) at 50 dps, mpmath",
+      "no_fitting_assertion": "T1 read directly from canonical Wenzl-bridge witness (atomic-tr-m-mpfr-50dps via mass-formula-6term-mpfr-50dps); T4 from explicit m_e · tr_M(C_dim_q) at H_3. No CODATA tuning, no algebraic +1, no fitted scale factor."
+    }
+  }
+}

@@ -1,0 +1,340 @@
+{
+  "engine": "numpy+scipy",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-16T23:52:45.099323+00:00",
+  "commitSha": "d91d2000a47ea5db5fd2f176b46ded22b1325dae",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 34,
+  "computation": "delta-lambda-closure-v3-full-vs-filtered",
+  "scriptFile": "probe_delta_lambda_closure_v3_full_vs_filtered.py",
+  "scriptHash": "9e280ab10b70",
+  "scriptCommitSha": "unknown",
+  "description": "Δ_λ closure v3: compare unfiltered Σ_(ALL λ) y·χ vs crystal-shift-max filter vs combined-pole filter (v1/v2). Tests whether numerically-dominant partitions (often non-column-like, with O(1) y·χ) carry the binding-energy signal that the pole-order filters miss.",
+  "contentBlock": "prop:rho-k-h3a-refinement",
+  "parameters": {
+    "q_0": 1.1099785955541805
+  },
+  "data": {
+    "rows": [
+      {
+        "atom": "D",
+        "Z": 1,
+        "N": 1,
+        "A": 2,
+        "n_strands": 6,
+        "n_partitions": 11,
+        "binding_MeV": -2.2245661099998415,
+        "target": -4.353367281869839,
+        "crystal_max": 23,
+        "combined_max": 12,
+        "sum_all": 0.38828647154771606,
+        "sum_crystal_max": 0.10613574225564805,
+        "sum_combined_max": 0.2819297090092468,
+        "Delta_full": -11.211740817333263,
+        "Delta_crystal": -41.016976838810145,
+        "Delta_combined": -15.441321516516927,
+        "top5_by_abs_y_chi": [
+          {
+            "lambda": [
+              5,
+              1
+            ],
+            "crystal_shift": 18,
+            "ord_y_u": 3,
+            "combined_pole": 12,
+            "y_at_q0": 0.05896068140145373,
+            "chi_at_q0": 3.2158914339387135,
+            "y_times_chi": 0.18961115025812467
+          },
+          {
+            "lambda": [
+              6
+            ],
+            "crystal_shift": 12,
+            "ord_y_u": 0,
+            "combined_pole": 12,
+            "y_at_q0": 0.05918771693214863,
+            "chi_at_q0": 1.559758739418077,
+            "y_times_chi": 0.09231855875112212
+          },
+          {
+            "lambda": [
+              4,
+              2
+            ],
+            "crystal_shift": 23,
+            "ord_y_u": 7,
+            "combined_pole": 9,
+            "y_at_q0": 0.04028438696593521,
+            "chi_at_q0": 1.6737481247387067,
+            "y_times_chi": 0.06742591714048246
+          },
+          {
+            "lambda": [
+              3,
+              3
+            ],
+            "crystal_shift": 23,
+            "ord_y_u": 11,
+            "combined_pole": 1,
+            "y_at_q0": 0.014120874004975288,
+            "chi_at_q0": 4.249070292623656,
+            "y_times_chi": 0.06000058624042212
+          },
+          {
+            "lambda": [
+              3,
+              2,
+              1
+            ],
+            "crystal_shift": 23,
+            "ord_y_u": 10,
+            "combined_pole": 3,
+            "y_at_q0": 0.00731845435228573,
+            "chi_at_q0": -1.9728210551001428,
+            "y_times_chi": -0.014438000836978567
+          }
+        ]
+      },
+      {
+        "atom": "T",
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "n_strands": 9,
+        "n_partitions": 30,
+        "binding_MeV": -8.481796219999978,
+        "target": -16.598461151436766,
+        "crystal_max": 35,
+        "combined_max": 32,
+        "sum_all": 0.1040521186755268,
+        "sum_crystal_max": 0.047252172803237805,
+        "sum_combined_max": -6.511671532597979e-06,
+        "Delta_full": -159.52064564102668,
+        "Delta_crystal": -351.2740296738145,
+        "Delta_combined": 2549032.313491776,
+        "top5_by_abs_y_chi": [
+          {
+            "lambda": [
+              6,
+              3
+            ],
+            "crystal_shift": 35,
+            "ord_y_u": 11,
+            "combined_pole": 13,
+            "y_at_q0": 0.004456442125519775,
+            "chi_at_q0": 10.16741952165563,
+            "y_times_chi": 0.04531051666413827
+          },
+          {
+            "lambda": [
+              8,
+              1
+            ],
+            "crystal_shift": 25,
+            "ord_y_u": 3,
+            "combined_pole": 19,
+            "y_at_q0": 0.007306301640626688,
+            "chi_at_q0": 3.7402811795852773,
+            "y_times_chi": 0.027327622518809037
+          },
+          {
+            "lambda": [
+              7,
+              2
+            ],
+            "crystal_shift": 30,
+            "ord_y_u": 7,
+            "combined_pole": 16,
+            "y_at_q0": 0.006268945019291352,
+            "chi_at_q0": 3.1900195401578078,
+            "y_times_chi": 0.01999805710771438
+          },
+          {
+            "lambda": [
+              9
+            ],
+            "crystal_shift": 19,
+            "ord_y_u": 0,
+            "combined_pole": 19,
+            "y_at_q0": 0.006554639430939804,
+            "chi_at_q0": 1.5768015283810746,
+            "y_times_chi": 0.01033536547269274
+          },
+          {
+            "lambda": [
+              5,
+              4
+            ],
+            "crystal_shift": 35,
+            "ord_y_u": 15,
+            "combined_pole": 5,
+            "y_at_q0": 0.0022956141636942726,
+            "chi_at_q0": 4.424038460464791,
+            "y_times_chi": 0.01015588535057118
+          }
+        ]
+      },
+      {
+        "atom": "3He",
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "n_strands": 9,
+        "n_partitions": 30,
+        "binding_MeV": -7.717989409999973,
+        "target": -15.103728510596692,
+        "crystal_max": 35,
+        "combined_max": 32,
+        "sum_all": 0.2065408585622648,
+        "sum_crystal_max": 0.09297367257766587,
+        "sum_combined_max": -6.34086541195913e-06,
+        "Delta_full": -73.12707333422577,
+        "Delta_crystal": -162.451671444728,
+        "Delta_combined": 2381966.424032664,
+        "top5_by_abs_y_chi": [
+          {
+            "lambda": [
+              6,
+              3
+            ],
+            "crystal_shift": 35,
+            "ord_y_u": 11,
+            "combined_pole": 13,
+            "y_at_q0": 0.004456442125519775,
+            "chi_at_q0": 16.06473221702975,
+            "y_times_chi": 0.07159154938716607
+          },
+          {
+            "lambda": [
+              8,
+              1
+            ],
+            "crystal_shift": 24,
+            "ord_y_u": 3,
+            "combined_pole": 18,
+            "y_at_q0": 0.007306301640626688,
+            "chi_at_q0": 6.567663928203207,
+            "y_times_chi": 0.047985333733715815
+          },
+          {
+            "lambda": [
+              7,
+              2
+            ],
+            "crystal_shift": 30,
+            "ord_y_u": 7,
+            "combined_pole": 16,
+            "y_at_q0": 0.006268945019291352,
+            "chi_at_q0": 7.5675725819338036,
+            "y_times_chi": 0.04744069644563972
+          },
+          {
+            "lambda": [
+              5,
+              4
+            ],
+            "crystal_shift": 35,
+            "ord_y_u": 15,
+            "combined_pole": 5,
+            "y_at_q0": 0.0022956141636942726,
+            "chi_at_q0": 7.695237783827572,
+            "y_times_chi": 0.0176652968495499
+          },
+          {
+            "lambda": [
+              9
+            ],
+            "crystal_shift": 17,
+            "ord_y_u": 0,
+            "combined_pole": 17,
+            "y_at_q0": 0.006554639430939804,
+            "chi_at_q0": 2.3935111147542574,
+            "y_times_chi": 0.015688602331160942
+          }
+        ]
+      },
+      {
+        "atom": "4He",
+        "Z": 2,
+        "N": 2,
+        "A": 4,
+        "n_strands": 12,
+        "n_partitions": 77,
+        "binding_MeV": -28.295610759999818,
+        "target": -55.37312896631161,
+        "crystal_max": 47,
+        "combined_max": 47,
+        "sum_all": 0.055348345876698825,
+        "sum_crystal_max": 0.025779501534756957,
+        "sum_combined_max": -1.808278615461717e-05,
+        "Delta_full": -1000.447765677912,
+        "Delta_crystal": -2147.9518869538783,
+        "Delta_combined": 3062201.172587163,
+        "top5_by_abs_y_chi": [
+          {
+            "lambda": [
+              9,
+              3
+            ],
+            "crystal_shift": 42,
+            "ord_y_u": 11,
+            "combined_pole": 20,
+            "y_at_q0": 0.0005870537936059484,
+            "chi_at_q0": 27.331191373309558,
+            "y_times_chi": 0.016044879579471545
+          },
+          {
+            "lambda": [
+              8,
+              4
+            ],
+            "crystal_shift": 47,
+            "ord_y_u": 15,
+            "combined_pole": 17,
+            "y_at_q0": 0.00043096777104569076,
+            "chi_at_q0": 30.262869451455778,
+            "y_times_chi": 0.013042321392940624
+          },
+          {
+            "lambda": [
+              10,
+              2
+            ],
+            "crystal_shift": 37,
+            "ord_y_u": 7,
+            "combined_pole": 23,
+            "y_at_q0": 0.0007121291177018274,
+            "chi_at_q0": 10.461121094404168,
+            "y_times_chi": 0.0074496689351300155
+          },
+          {
+            "lambda": [
+              7,
+              5
+            ],
+            "crystal_shift": 47,
+            "ord_y_u": 19,
+            "combined_pole": 9,
+            "y_at_q0": 0.0002617832038206581,
+            "chi_at_q0": 21.773345101891422,
+            "y_times_chi": 0.005699896038665969
+          },
+          {
+            "lambda": [
+              11,
+              1
+            ],
+            "crystal_shift": 31,
+            "ord_y_u": 3,
+            "combined_pole": 25,
+            "y_at_q0": 0.0007670122284469952,
+            "chi_at_q0": 7.390200966330934,
+            "y_times_chi": 0.005668374511856627
+          }
+        ]
+      }
+    ]
+  }
+}

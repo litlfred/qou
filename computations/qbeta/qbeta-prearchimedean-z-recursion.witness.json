@@ -1,0 +1,67 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-06-03T15:55:59.174001+00:00",
+  "commitSha": "b7f186ae9f29610e186936db1f15396f3bc8a469",
+  "assertions": [
+    {
+      "name": "recursion_matches_sympy_series_exactly",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "tolerance": 0,
+      "source": "3-term recursion vs sympy series of √q/(1+q), 12 orders"
+    },
+    {
+      "name": "ode_residual_is_zero",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "tolerance": 0,
+      "source": "(4+6w+2w^2)z' + wz simplifies to 0"
+    },
+    {
+      "name": "zk_recursion_family_matches_series_k1_k2_k3",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "tolerance": 0,
+      "source": "z^k recursion family vs sympy series for k=1,2,3 (τ_M powers)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 17,
+  "computation": "qbeta-prearchimedean-z-recursion",
+  "scriptFile": "qbeta_prearchimedean_z_recursion.py",
+  "scriptHash": "718c410b747b",
+  "scriptCommitSha": "12d2d01eabc4af6619d02a16916704527a9a62ae",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
+  },
+  "description": "Pre-archimedean (symbolic, formal q) derivation of the explicit 3-term recursion for the Taylor coefficients of the Markov parameter z(q)=√q/(1+q) around q=1: 4(n+1)a_{n+1} + 6n·a_n + (2n−1)a_{n−1} = 0, from the ODE (4+6w+2w²)z'+wz=0. This is the recursion↔q-difference identity. Coefficients are EXACT rationals, extend to all orders with no q_0 / no CODATA fitting. τ_M(T_β) = A(q)+B(q)·z(q) inherits this structure (z² ∈ ℚ(q)).",
+  "data": {
+    "ode": "(4+6w+2w^2)*z' + w*z = 0",
+    "recursion": "4(n+1)a_{n+1} + 6n*a_n + (2n-1)a_{n-1} = 0",
+    "a_0": "1/2",
+    "a_1": "0",
+    "a_2": "-1/16",
+    "a_5": "5/128",
+    "a_10": "-6223/524288",
+    "a_15": "383099/67108864",
+    "a_20": "-1937622659/549755813888",
+    "a_30": "-265142156521029/144115188075855872",
+    "zk_recursion": "4(n+1)b_{n+1} + 6n*b_n + (2(n-1)+k)*b_{n-1} = 0"
+  }
+}

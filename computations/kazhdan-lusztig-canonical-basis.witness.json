@@ -1,0 +1,177 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-06-02T17:44:50.270758+00:00",
+  "commitSha": "23619918613b6d5885212f46594c9b4a1e057226",
+  "assertions": [
+    {
+      "name": "bruhat_count_n=2",
+      "computed": 2,
+      "expected": 2,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Bjorner-Brenti, Combinatorics of Coxeter Groups §2.6"
+    },
+    {
+      "name": "roundtrip_T_to_C_to_T_n=2",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "canonical-basis change-of-basis is invertible"
+    },
+    {
+      "name": "bar_invariant_coef_sum_w0_n=2",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Lusztig, Hecke algebras with unequal parameters §5"
+    },
+    {
+      "name": "bruhat_count_n=3",
+      "computed": 6,
+      "expected": 6,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Bjorner-Brenti, Combinatorics of Coxeter Groups §2.6"
+    },
+    {
+      "name": "roundtrip_T_to_C_to_T_n=3",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "canonical-basis change-of-basis is invertible"
+    },
+    {
+      "name": "bar_invariant_coef_sum_w0_n=3",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Lusztig, Hecke algebras with unequal parameters §5"
+    },
+    {
+      "name": "bruhat_count_n=4",
+      "computed": 24,
+      "expected": 24,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Bjorner-Brenti, Combinatorics of Coxeter Groups §2.6"
+    },
+    {
+      "name": "roundtrip_T_to_C_to_T_n=4",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "canonical-basis change-of-basis is invertible"
+    },
+    {
+      "name": "bar_invariant_coef_sum_w0_n=4",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Lusztig, Hecke algebras with unequal parameters §5"
+    },
+    {
+      "name": "bruhat_count_n=5",
+      "computed": 120,
+      "expected": 120,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Bjorner-Brenti, Combinatorics of Coxeter Groups §2.6"
+    },
+    {
+      "name": "roundtrip_T_to_C_to_T_n=5",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "canonical-basis change-of-basis is invertible"
+    },
+    {
+      "name": "bar_invariant_coef_sum_w0_n=5",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Lusztig, Hecke algebras with unequal parameters §5"
+    },
+    {
+      "name": "bruhat_count_n=6",
+      "computed": 720,
+      "expected": 720,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Bjorner-Brenti, Combinatorics of Coxeter Groups §2.6"
+    },
+    {
+      "name": "roundtrip_T_to_C_to_T_n=6",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "canonical-basis change-of-basis is invertible (longest-50 subset)"
+    },
+    {
+      "name": "bar_invariant_coef_sum_w0_n=6",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Lusztig, Hecke algebras with unequal parameters §5"
+    },
+    {
+      "name": "literature_P_e_3412_equals_1_plus_q",
+      "computed": "q + 1",
+      "expected": "q + 1",
+      "passed": true,
+      "source": "Bjorner-Brenti, Combinatorics of Coxeter Groups §5.1"
+    },
+    {
+      "name": "literature_P_e_4231_equals_1_plus_q_in_S5",
+      "computed": "q + 1",
+      "expected": "q + 1",
+      "passed": true,
+      "source": "Bjorner-Brenti, Combinatorics of Coxeter Groups §5.1"
+    },
+    {
+      "name": "literature_P_e_w0_equals_1_in_S6",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Bjorner-Brenti, Combinatorics of Coxeter Groups §5.1"
+    },
+    {
+      "name": "literature_P_e_3412xS2_equals_1_plus_q_in_S6",
+      "computed": "q + 1",
+      "expected": "q + 1",
+      "passed": true,
+      "source": "Bjorner-Brenti, Combinatorics of Coxeter Groups §5.1"
+    },
+    {
+      "name": "kl_cache_size_below_300k_sanity",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "design-doc acceptance criterion: S_6 KL cache ≤ 300k. Self-test recorded 42374 entries (actual size in `data.kl_cache_size`)."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 54850,
+  "computation": "kazhdan-lusztig-canonical-basis",
+  "scriptFile": "kazhdan_lusztig.py",
+  "scriptHash": "e18dd312256e",
+  "scriptCommitSha": "fda363a5525b91e056935535d0b89ad399bfa67a",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.4",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "clarabel": "0.11.1"
+  },
+  "description": "Kazhdan–Lusztig polynomials and the canonical basis C_w of H_n(q) for n ≤ 6.  Closed form at n ≤ 3 (dihedral / Brenti §5.1); full K-L 1979 §1.1 recursion at n ∈ {4, 5, 6}.  Validates Bruhat-order cardinality, T→C→T round-trip, bar-invariance of C_{w_0} coefficient sum, and two literature cross-checks (P_{e, 3412} = 1+q and P_{e, 4231 in S_5} = 1+q).",
+  "data": {
+    "kl_cache_size": 42374
+  }
+}

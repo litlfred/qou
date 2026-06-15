@@ -1,0 +1,84 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-11T01:38:18.486271+00:00",
+  "commitSha": "a5b15892be0954027d71ebea704d9b9f09de001e",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "ab-methodology-metrics",
+  "scriptFile": "ab_methodology_metrics.py",
+  "scriptHash": "062b564c4c16",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "mpmath": "1.4.1"
+  },
+  "description": "EXPLORATORY v1 A/B methodology metrics: first-verdict proof-quality aggregates per monthly cohort from the append-only .qa.json sidecars (proofs-only, aggregates only).  Adoption dates detected from data.  v2 adds the git-history walk (M3 sorry-citation at first commit, deleted-block survivorship) and model-version stratification via the session archive.",
+  "exploratory": true,
+  "scope_doc": "docs/workplans/2026-06-11-ab-methodology-metrics-scope.md",
+  "data": {
+    "n_first_verdicts": 9381,
+    "n_blocks": 2157,
+    "adoption_dates": {
+      "proof-build-green": "2026-05-25T07:06:37.458Z",
+      "proof-conditional-class-banner": "2026-05-25T07:06:37.458Z",
+      "proof-lean-compiles": "2026-05-27T08:55:11.920Z",
+      "proof-narrative-lean-equiv": "2026-05-26T14:25:22.698Z",
+      "proof-no-axiom-growth": "2026-05-25T07:06:37.458Z",
+      "proof-no-bare-sorries": "2026-05-27",
+      "proof-no-conj-propagation-violation": "2026-05-25T07:06:37.458Z",
+      "proof-no-trivial-skeleton": "2026-05-25T07:06:37.458Z",
+      "proof-rater-goal-plausibility": "2026-06-07T01:25:48.290Z",
+      "proof-rater-novelty": "2026-06-07T01:25:48.321Z",
+      "proof-rater-strategy-clarity": "2026-06-07T01:24:52.427Z",
+      "proof-statement-integrity": "2026-06-07T01:25:48.351Z",
+      "proof-substantive": "2026-05-25T07:06:37.458Z"
+    },
+    "criteria_counts": {
+      "proof-no-trivial-skeleton": 2122,
+      "proof-narrative-lean-equiv": 1088,
+      "proof-no-bare-sorries": 1083,
+      "proof-lean-compiles": 1026,
+      "proof-build-green": 852,
+      "proof-no-axiom-growth": 631,
+      "proof-substantive": 631,
+      "proof-no-conj-propagation-violation": 631,
+      "proof-conditional-class-banner": 631,
+      "proof-rater-goal-plausibility": 185
+    },
+    "cohort_table": [
+      {
+        "cohort": "2026-05",
+        "n_blocks": 1028,
+        "M1_pass_pct": 40.8,
+        "M1_n": 152,
+        "M2_mean_score": 0.586,
+        "M2_n": 384,
+        "M4_median_revisions_to_green": 1,
+        "M5_pass_pct": 63.8
+      },
+      {
+        "cohort": "2026-06",
+        "n_blocks": 1129,
+        "M1_pass_pct": 86.7,
+        "M1_n": 15,
+        "M2_mean_score": 0.801,
+        "M2_n": 42,
+        "M4_median_revisions_to_green": 1,
+        "M5_pass_pct": 51.9
+      }
+    ],
+    "caveats": [
+      "cohort key is the block's earliest proof verdict (proxy for creation until the v2 git walk)",
+      "M3 + survivorship deferred to v2",
+      "model-version stratification deferred to v2 (needs #2115 archive metadata)"
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "computation": "binding-lp-delta-audit",
+  "description": "AUDIT: The LP-dual \u0394_\u03bb is SPARSE \u2014 only \u03bb=(5,1) has \u0394\u22600. \u0394_LP((5,1)) = -22.96, all others = 0. B = m_e \u00d7 |0.190 \u00d7 (-22.96)| = 2.22 MeV (matches AME exactly). The linking weight 5.85 = \u0394_LP / (sgn\u00d7f) = -22.96/(-5) = 4.59 (concentrated on the highest-leverage partition). The sgn\u00d7f ansatz has the right SIGN but spreads weight across all partitions instead of concentrating on (5,1).",
+  "data": {
+    "LP_solution": "SPARSE: \u0394((5,1)) = -22.96, all others = 0",
+    "B_from_LP": "2.22 MeV (exact match to AME)",
+    "linking_weight_origin": "\u0394_LP / sgn\u00d7f on (5,1) = 4.59",
+    "key_insight": "Binding concentrates on the (5,1) partition \u2014 the standard rep twisted by one box."
+  },
+  "y0_star": null,
+  "y0_star_status": "STUB \u2014 re-run script through lp_dual_solver.py to populate",
+  "dual_obj": null,
+  "dual_obj_status": "STUB \u2014 re-run script through lp_dual_solver.py to populate",
+  "duality_gap": null,
+  "duality_gap_status": "STUB \u2014 re-run script through lp_dual_solver.py to populate",
+  "y_star": null,
+  "active_set": null,
+  "primal_obj": null
+}

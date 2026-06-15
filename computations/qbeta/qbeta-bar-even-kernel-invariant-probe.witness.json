@@ -1,0 +1,46 @@
+{
+  "engine": "python+sympy",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-05T14:19:48.405382+00:00",
+  "commitSha": "2555dc4d140dd0f715c5c15d8b89c1171d7760ad",
+  "assertions": [
+    {
+      "name": "bar_even_invariant_holds_for_N2_factor",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Bar-even kernel invariant (§4(b) formalize-first gate from refuted-class map): the N=2 ladder factor (1 - b²·ℏ_q⁴) = (1 - u²) is the bar-even prototype. Verified: (1) PR #1786 anchor reproduces; (2) b² is bar-symmetric; (3) ℏ_q²(q⁻¹) = q²·ℏ_q²(q) formal scaling holds; (4) bar-asymmetry measure is b²·ℏ⁴·(q⁴-1), vanishing iff q⁴=1 (cyclotomic anchor — matches fibre-level framing); (5) α_EM kernel IS bar-symmetric (consistent with PR #1521 scalar Habiro success); (6) N=2 leading t-Taylor coefficients up to t^3 all vanish (bar-even prototype). Complements PR #1839's CFinite.recurrence_step: this gates the input kernel; that engine produces the next c_k from it."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 574,
+  "computation": "qbeta-bar-even-kernel-invariant-probe",
+  "scriptFile": "qbeta_bar_even_kernel_invariant_probe.py",
+  "scriptHash": "3565fef8c0d9",
+  "scriptCommitSha": "2555dc4d140dd0f715c5c15d8b89c1171d7760ad",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 10,
+    "truncation_bound": "1e-50"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Verifies the bar-even kernel invariant from prop:q-beta-bar-even-kernel-invariant — the §4(b) formalize-first gate of the refuted-class map. Confirms (1) the N=2 factor (1 - b²·ℏ_q⁴) is the structural bar-even prototype (matches PR #1786); (2) the bar-asymmetry measure under q↦q⁻¹ is b²·ℏ_q⁴·(q⁴-1) — vanishes IFF q⁴=1 (cyclotomic anchor); (3) α_EM is Taylor-bar-even, Q_β trace-difference is not.",
+  "contentBlock": "prop:q-beta-bar-even-kernel-invariant",
+  "data": {
+    "anchor_n2_factor_equals_one_minus_u_squared": "0",
+    "b_sq_bar_symmetric": true,
+    "hbar_sq_bar_scaling": true,
+    "bar_asymmetry_form_factored": "(q - 1)**5*(q + 1)*(q**2 - q + 1)*(q**2 + q + 1)/(q**4*(q**2 + 1))",
+    "bar_asymmetry_vanishes_iff": "q^4 = 1 (cyclotomic anchor)",
+    "alpha_em_bar_symmetric": true,
+    "n2_factor_taylor_in_t_leading_orders_even": true
+  }
+}

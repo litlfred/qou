@@ -1,0 +1,177 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-06-01T18:24:56.910792+00:00",
+  "commitSha": "5fee9accfea645b3d9516411173d8e535dd8818b",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 70,
+  "computation": "complex-fibre-cross-ratio",
+  "scriptFile": "complex_fibre_cross_ratio.py",
+  "scriptHash": "47279f02d6eb",
+  "scriptCommitSha": "2563f18bae13a7d6cfc6fb64138e5be9d2b1cfdb",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "clarabel": "0.11.1"
+  },
+  "auditOnly": "docs/audits/2026-06-01-complex-fibre-cross-ratio.md",
+  "q0": "1.1099785827513808075916690956107688798744991218736",
+  "dps": 70,
+  "color_tube_cubic": {
+    "note": "Universal cubic F(c,z)=c³+(4z+1)c²+(6z²+3z+1)c+(4z³+3z²+2z+1). Coeffs 4,6,4 = C(4,k); constant = d/dz[z⁴+z³+z²+z]. KNOT-INDEPENDENT: identical for every particle, so Σ D(z_c) is NOT p/n-distinguishing.",
+    "discriminant_roots": [
+      {
+        "index": 0,
+        "z_c_real": "-0.9748155329780386030712390939418967983613",
+        "z_c_imag": "-0.2230127275846437709422265606405869739665",
+        "abs_im": "0.22301272758464377094",
+        "is_complex": true,
+        "D_z_c": "-0.1554169329751514205187127723320686224217"
+      },
+      {
+        "index": 1,
+        "z_c_real": "-0.9748155329780386030712390939418967983613",
+        "z_c_imag": "0.2230127275846437709422265606405869739665",
+        "abs_im": "0.22301272758464377094",
+        "is_complex": true,
+        "D_z_c": "0.1554169329751514205187127723320686224217"
+      },
+      {
+        "index": 2,
+        "z_c_real": "0.1058295861882680209909387311570727599005",
+        "z_c_imag": "-0.9371389378389034369148781152522105760335",
+        "abs_im": "0.93713893783890343691",
+        "is_complex": true,
+        "D_z_c": "-0.9506955656774491245806102827874166982075"
+      },
+      {
+        "index": 3,
+        "z_c_real": "0.1058295861882680209909387311570727599005",
+        "z_c_imag": "0.9371389378389034369148781152522105760335",
+        "abs_im": "0.93713893783890343691",
+        "is_complex": true,
+        "D_z_c": "0.9506955656774491245806102827874166982075"
+      },
+      {
+        "index": 4,
+        "z_c_real": "0.1189859467897705820803003627848240384608",
+        "z_c_imag": "1.053640742712109145029459350650498996145",
+        "abs_im": "1.053640742712109145",
+        "is_complex": true,
+        "D_z_c": "0.9506955656774491245806102827874166982075"
+      },
+      {
+        "index": 5,
+        "z_c_real": "0.1189859467897705820803003627848240384608",
+        "z_c_imag": "-1.053640742712109145029459350650498996145",
+        "abs_im": "1.053640742712109145",
+        "is_complex": true,
+        "D_z_c": "-0.9506955656774491245806102827874166982075"
+      }
+    ],
+    "num_complex_roots": 6,
+    "sum_D_over_complex_roots": "0.0",
+    "sum_D_is_real": true,
+    "sum_D_is_finite": true,
+    "sum_D_cancels_note": "Σ D(z_c) ≈ 0: the discriminant roots come in complex-CONJUGATE pairs, and D(z̄)=−D(z), so the net Bloch-Wigner volume of the universal color-tube cubic vanishes. The cubic is an unoriented/amphichiral structure — it locates branch points but carries no net hyperbolic volume. This reinforces Q3: the universal cubic cannot supply a p/n volume signal."
+  },
+  "derived_hyperbolic_shapes": {
+    "note": "Genuine Thurston/Neumann-Zagier ideal-tetrahedron shapes. These ARE complex (Im≠0) and D(z)≠0 — the canonical archimedean-volume object per prop:thurston-volume-additivity.",
+    "figure8_4_1": {
+      "shape_z": "e^{iπ/3} (×2 ideal tetrahedra)",
+      "z_real": "0.5",
+      "z_imag": "0.866025403784438646763723170753",
+      "sum_D": "2.029883212819307250042405108549040571883",
+      "expected_2_Cl2_pi3": "2.029883212819307250042405108549040571883",
+      "role": "muon/electron amphichiral mass knot"
+    },
+    "borromean_B3": {
+      "shape_z": "2 regular ideal octahedra (shape i) → 8·[e^{iπ/3}] Bloch class",
+      "sum_D": "7.327724753417752120436828119459072886193",
+      "expected_8G": "7.327724753417752120436828119459072886193",
+      "role": "canonical baryon (3-quark) complement — SAME for proton and neutron (derive_m_baryon_volume_form.py)"
+    }
+  },
+  "pn_complex_shape_test": {
+    "proton_shapes": "ℬ_3 octahedra, e^{iπ/3}",
+    "neutron_shapes": "ℬ_3 octahedra, e^{iπ/3}  (IDENTICAL)",
+    "sum_D_proton": "7.32772475341775212043682811946",
+    "sum_D_neutron": "7.32772475341775212043682811946",
+    "pn_difference_in_sum_D": "0  (same complement → same volume)",
+    "conclusion": "The DERIVED complex shape parameters do NOT distinguish proton from neutron: both are the 3-quark Borromean linking with the same ideal-octahedral shapes. The complex-z object carries the absolute VOLUME (mass scale), not isospin."
+  },
+  "real_vhat_K1_object": {
+    "note": "Per quantum-bloch-group.md: the REAL V̂_i map to K_1(ℂ) via the BOREL regulator r_1 = Σ ln|V̂_i| — NOT to K_3/B(ℂ) via the Beilinson r_2 = D. Confirmed: D(real V̂_i) ≈ 0 (1e-60), so the V̂_i carry NO Bloch-Wigner content. The p/n signal in the V̂_i lives in the K_1 (log-magnitude) sector, which is what the production tr_M tower uses — orthogonal to the K_3 volume.",
+    "proton": {
+      "vhat": [
+        "1.88038767605581210567886391749",
+        "0.735217785670894188071759278341"
+      ],
+      "abs_vhat": [
+        "1.88038767605581210567886391749",
+        "0.735217785670894188071759278341"
+      ],
+      "vhat_is_real": true,
+      "D_on_vhat": [
+        "-1.81113581577e-71",
+        "0.0"
+      ],
+      "sum_D_on_vhat": "-1.81113581577e-71",
+      "borel_regulator_r1_sum_ln_abs": "0.3238894496270156701899800518843975396861",
+      "prod_vhat_tr_M": "1.38249446339259287590100661869"
+    },
+    "neutron": {
+      "vhat": [
+        "1.70330569649480742985084029606",
+        "0.65878181697603031801130373454"
+      ],
+      "abs_vhat": [
+        "1.70330569649480742985084029606",
+        "0.65878181697603031801130373454"
+      ],
+      "vhat_is_real": true,
+      "D_on_vhat": [
+        "0.0",
+        "0.0"
+      ],
+      "sum_D_on_vhat": "0.0",
+      "borel_regulator_r1_sum_ln_abs": "0.1152080089879766455581674919382527455786",
+      "prod_vhat_tr_M": "1.1221068216024720738277212759"
+    },
+    "electron_4_1": {
+      "vhat": [
+        "1.23205245416676393126980451354",
+        "0.811653754365758058132214822142"
+      ],
+      "abs_vhat": [
+        "1.23205245416676393126980451354",
+        "0.811653754365758058132214822142"
+      ],
+      "vhat_is_real": true,
+      "D_on_vhat": [
+        "0.0",
+        "0.0"
+      ],
+      "sum_D_on_vhat": "0.0",
+      "borel_regulator_r1_sum_ln_abs": "-4.527839539413356183754559645443895890341e-72",
+      "prod_vhat_tr_M": "1.0"
+    },
+    "pn_borel_split_percent": "181.13449"
+  },
+  "missing_map_vhat_to_z": {
+    "status": "NOT DERIVED",
+    "evidence": "conj:shared-denominator-cusp-holonomy proposes the algebraic denominator roots q_0^{-k} label the cusps z_k, but snappy-cusp-seeding.witness.json shows the bare seeds sit at distance 0.4–0.9 from SnapPy's true shapes z_k. The actual shape is a non-trivial function τ_arch(q_0^{-k}) whose form is EXPLICITLY 'the subject of further work'. There is NO derived, knot/braid-dependent, flavor-sensitive map V̂_i → z_i ∈ ℂ∖ℝ.",
+    "precise_missing_object": "A DERIVED complex shape map z_i = Z(braid_word, flavor_content) ∈ ℂ∖ℝ such that (a) Σ_i D(z_i) = Vol of the actual nucleon complement, (b) z_i depends on the uud-vs-udd flavor content (so proton and neutron get DIFFERENT shapes/volumes), (c) the real V̂_i are its Borel-r_1 shadow. The framework derives (c)-direction (V̂→K_1) and has the universal Bring color-tube cubic, but NOT the flavor-dependent Z map giving distinct p/n shapes. This flavor-dependent complex shape is exactly the categorical input L2 isospin requires."
+  },
+  "VERDICT": "The framework HAS a derived complex cross-ratio / shape-parameter object: the universal color-tube cubic z_c (Im≠0, def:color-tube-cubic) and the Thurston ideal-tetrahedron shapes z_k (figure-8 e^{iπ/3}, Borromean octahedra), with Σ D(z) finite, real, and zero-parameter (Vol(4_1)=2Cl₂(π/3), Vol(ℬ_3)=8G reproduced). BUT this complex-z object carries the absolute VOLUME (mass scale), NOT the p/n distinction: the color-tube cubic is knot-independent and the canonical baryon complement is the SAME Borromean linking ℬ_3 for proton (uud) and neutron (udd) — identical shapes, identical Σ D. The flavor-dependent (p/n) content lives in the REAL sector: the V̂_i map to K_1(ℂ) via the Borel regulator Σln|V̂| (D(real V̂)=0), and the isospin refinement is the conjectural REAL color-sheet weighting (conj:inter-nucleon-channel-color-tube). The map V̂_i → flavor-dependent complex z_i is NOT derived (snappy-cusp-seeding: bare seeds at distance 0.4–0.9 from true z_k; τ_arch map 'subject of further work'). CONCLUSION: the complex-fibre cross-ratio is NOT the L2 isospin path. It is the right object for absolute VOLUME but is p/n-blind. The precise MISSING object is a DERIVED flavor-dependent complex shape map Z(braid,flavor)→z_i∈ℂ∖ℝ giving DISTINCT proton/neutron complements — categorical input the framework does not currently supply. This is a CLEAN NEGATIVE that delimits exactly what L2 needs, not a free resolution."
+}

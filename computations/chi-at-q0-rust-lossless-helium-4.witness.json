@@ -1,0 +1,34 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-10T04:12:24.866276+00:00",
+  "commitSha": "89633ba23dd0db4d3a37cd8f7e2455fb714b532d",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": -1781060193623,
+  "computation": "chi-at-q0-rust-lossless-helium-4",
+  "scriptFile": "chi_4he_via_rust_lossless.py",
+  "scriptHash": "61af0e4bfe7b",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "Lossless ⁴He per-λ χ at q_0 via Rust chi_q_via_gp (all 77 partitions, no max_dim cap). Completes the lossless matrix-M active-set inputs for A≤4. Sign-only convention; matches the matrix-M backend.",
+  "data": {
+    "atom": "helium-4",
+    "n_strands": 12,
+    "n_partitions": 77,
+    "tr_M_at_q0": "0.88561640150646835082823112792182169011355641811642",
+    "cache_path": "/home/user/qou/folio-assistant/computations/chi-helium-4-h12-at-q0-50dps-matrix-m.witness.json"
+  }
+}

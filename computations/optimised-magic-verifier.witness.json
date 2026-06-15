@@ -1,0 +1,268 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.12.3",
+  "computedAt": "2026-06-02T20:11:03.523567+00:00",
+  "commitSha": "41f1b2a404de0759b15e4ddd8dbfa55deca21f23",
+  "assertions": [
+    {
+      "name": "Optimised pair count ≤ naive pair count",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "Every result has a status field",
+      "computed": 19,
+      "expected": 19,
+      "passed": true,
+      "tolerance": 0
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 11,
+  "computation": "optimised-magic-verifier",
+  "scriptFile": "optimised_magic_verifier.py",
+  "scriptHash": "729aeb267733",
+  "scriptCommitSha": "d2e9d5e463796608e088af545751396188cb2461",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.12.3",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Empirical Δi ≤ 1 selection rule: LR-fusion sweep of shell-pair indices restricted to |i_N − i_Z| ≤ 1 (13 pairs of 49); supports conj:double-magic-delta-i-bound.",
+  "contentBlock": "conj:double-magic-delta-i-bound",
+  "parameters": {
+    "naive_pair_count": 49,
+    "optimised_pair_count": 19,
+    "computed_pair_count": 3
+  },
+  "data": {
+    "results": [
+      {
+        "i_Z": 1,
+        "i_N": 1,
+        "n_Z": 2,
+        "n_N": 2,
+        "status": "degenerate",
+        "dominant_nu": null,
+        "dominant_is_self_conj": null,
+        "elapsed_sec": null
+      },
+      {
+        "i_Z": 1,
+        "i_N": 2,
+        "n_Z": 2,
+        "n_N": 8,
+        "status": "degenerate",
+        "dominant_nu": null,
+        "dominant_is_self_conj": null,
+        "elapsed_sec": null
+      },
+      {
+        "i_Z": 2,
+        "i_N": 1,
+        "n_Z": 8,
+        "n_N": 2,
+        "status": "degenerate",
+        "dominant_nu": null,
+        "dominant_is_self_conj": null,
+        "elapsed_sec": null
+      },
+      {
+        "i_Z": 2,
+        "i_N": 2,
+        "n_Z": 8,
+        "n_N": 8,
+        "status": "computed",
+        "dominant_nu": [
+          6,
+          5,
+          3,
+          2
+        ],
+        "dominant_is_self_conj": false,
+        "elapsed_sec": 0.003482341766357422
+      },
+      {
+        "i_Z": 2,
+        "i_N": 3,
+        "n_Z": 8,
+        "n_N": 20,
+        "status": "computed",
+        "dominant_nu": [
+          8,
+          8,
+          8,
+          3,
+          1
+        ],
+        "dominant_is_self_conj": false,
+        "elapsed_sec": 16.190733671188354
+      },
+      {
+        "i_Z": 3,
+        "i_N": 2,
+        "n_Z": 20,
+        "n_N": 8,
+        "status": "computed",
+        "dominant_nu": [
+          8,
+          5,
+          5,
+          4,
+          4,
+          2
+        ],
+        "dominant_is_self_conj": false,
+        "elapsed_sec": 0.01712942123413086
+      },
+      {
+        "i_Z": 3,
+        "i_N": 3,
+        "n_Z": 20,
+        "n_N": 20,
+        "status": "deferred",
+        "dominant_nu": null,
+        "dominant_is_self_conj": null,
+        "elapsed_sec": null
+      },
+      {
+        "i_Z": 3,
+        "i_N": 4,
+        "n_Z": 20,
+        "n_N": 28,
+        "status": "deferred",
+        "dominant_nu": null,
+        "dominant_is_self_conj": null,
+        "elapsed_sec": null
+      },
+      {
+        "i_Z": 4,
+        "i_N": 3,
+        "n_Z": 28,
+        "n_N": 20,
+        "status": "deferred",
+        "dominant_nu": null,
+        "dominant_is_self_conj": null,
+        "elapsed_sec": null
+      },
+      {
+        "i_Z": 4,
+        "i_N": 4,
+        "n_Z": 28,
+        "n_N": 28,
+        "status": "deferred",
+        "dominant_nu": null,
+        "dominant_is_self_conj": null,
+        "elapsed_sec": null
+      },
+      {
+        "i_Z": 4,
+        "i_N": 5,
+        "n_Z": 28,
+        "n_N": 50,
+        "status": "deferred",
+        "dominant_nu": null,
+        "dominant_is_self_conj": null,
+        "elapsed_sec": null
+      },
+      {
+        "i_Z": 5,
+        "i_N": 4,
+        "n_Z": 50,
+        "n_N": 28,
+        "status": "deferred",
+        "dominant_nu": null,
+        "dominant_is_self_conj": null,
+        "elapsed_sec": null
+      },
+      {
+        "i_Z": 5,
+        "i_N": 5,
+        "n_Z": 50,
+        "n_N": 50,
+        "status": "deferred",
+        "dominant_nu": null,
+        "dominant_is_self_conj": null,
+        "elapsed_sec": null
+      },
+      {
+        "i_Z": 5,
+        "i_N": 6,
+        "n_Z": 50,
+        "n_N": 82,
+        "status": "deferred",
+        "dominant_nu": null,
+        "dominant_is_self_conj": null,
+        "elapsed_sec": null
+      },
+      {
+        "i_Z": 6,
+        "i_N": 5,
+        "n_Z": 82,
+        "n_N": 50,
+        "status": "deferred",
+        "dominant_nu": null,
+        "dominant_is_self_conj": null,
+        "elapsed_sec": null
+      },
+      {
+        "i_Z": 6,
+        "i_N": 6,
+        "n_Z": 82,
+        "n_N": 82,
+        "status": "deferred",
+        "dominant_nu": null,
+        "dominant_is_self_conj": null,
+        "elapsed_sec": null
+      },
+      {
+        "i_Z": 6,
+        "i_N": 7,
+        "n_Z": 82,
+        "n_N": 126,
+        "status": "deferred",
+        "dominant_nu": null,
+        "dominant_is_self_conj": null,
+        "elapsed_sec": null
+      },
+      {
+        "i_Z": 7,
+        "i_N": 6,
+        "n_Z": 126,
+        "n_N": 82,
+        "status": "deferred",
+        "dominant_nu": null,
+        "dominant_is_self_conj": null,
+        "elapsed_sec": null
+      },
+      {
+        "i_Z": 7,
+        "i_N": 7,
+        "n_Z": 126,
+        "n_N": 126,
+        "status": "deferred",
+        "dominant_nu": null,
+        "dominant_is_self_conj": null,
+        "elapsed_sec": null
+      }
+    ],
+    "summary": {
+      "naive_pair_count": 49,
+      "optimised_pair_count": 19,
+      "computed_pair_count": 3,
+      "dominant_self_conj_count": 0,
+      "actual_optimised_sec": 16.211345434188843,
+      "estimated_naive_sec": 264.7853087584178,
+      "empirical_speedup": 16.333333333333336
+    }
+  }
+}

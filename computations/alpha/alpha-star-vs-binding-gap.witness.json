@@ -1,0 +1,105 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.12.3",
+  "computedAt": "2026-06-01T13:21:49.781603+00:00",
+  "commitSha": "417e511ad96a7416b3b52d2f93704cd0eee0d8f7",
+  "assertions": [
+    {
+      "name": "dominant_partition_obstruction_tracks_binding_gap",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "|Spearman ρ| = 0.8000 on 4 atoms (D, T, ³He, ⁴He), threshold 0.5"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 12,
+  "computation": "alpha-star-vs-binding-gap",
+  "scriptFile": "alpha_star_vs_binding_gap.py",
+  "scriptHash": "61e1f4aafcff",
+  "scriptCommitSha": "55ea517d29ec84a52377b36db1033d83be2f00de",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.12.3",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Tests whether the PSD-cone obstruction depth (1 − α*) per canonical atom-braid correlates with the fractional binding-energy gap |B_pred − B_AME| / B_AME. If yes, the residual binding-energy gap is concentrated in the dominant Wedderburn block λ* identified in alpha_star_dominant_partitions.py. If no, the dominant-partition obstruction is structurally distinct from the binding-energy gap and Probes (1)/(2) are likely weak.",
+  "contentBlock": "conj:atom-braid-exterior-algebra",
+  "auditOnly": "docs/audits/2026-05-25-dominant-partition-nucleon-structure.md",
+  "data": {
+    "per_atom": [
+      {
+        "name": "deuteron-canonical-3A",
+        "sym": "2H",
+        "alpha_star": 0.19266570174841036,
+        "one_minus_alpha_star": 0.8073342982515896,
+        "B_AME_MeV": 2.22456612,
+        "B_pred_MeV": 2.2488207948647343,
+        "err_MeV": 0.024254674864734316,
+        "abs_err_MeV": 0.024254674864734316,
+        "abs_frac_err": 0.010903103596999093,
+        "signed_frac_err": 0.010903103596999093,
+        "formula": "1·m_e · Vol(6_2)"
+      },
+      {
+        "name": "tritium-canonical-3A",
+        "sym": "3H",
+        "alpha_star": 0.09555752435881004,
+        "one_minus_alpha_star": 0.90444247564119,
+        "B_AME_MeV": 8.4817984,
+        "B_pred_MeV": 8.46859838653302,
+        "err_MeV": -0.013200013466979854,
+        "abs_err_MeV": 0.013200013466979854,
+        "abs_frac_err": 0.0015562753138508754,
+        "signed_frac_err": -0.0015562753138508754,
+        "formula": "2·m_e · Vol(8_11)"
+      },
+      {
+        "name": "helium3-canonical-3A",
+        "sym": "3He",
+        "alpha_star": 0.0911497765173408,
+        "one_minus_alpha_star": 0.9088502234826592,
+        "B_AME_MeV": 7.7180375,
+        "B_pred_MeV": 7.48891930977096,
+        "err_MeV": -0.22911819022904023,
+        "abs_err_MeV": 0.22911819022904023,
+        "abs_frac_err": 0.02968606854126327,
+        "signed_frac_err": -0.02968606854126327,
+        "formula": "2·m_e · Vol(L6a4)"
+      },
+      {
+        "name": "helium4-4He",
+        "sym": "4He",
+        "alpha_star": 0.047994116051086166,
+        "one_minus_alpha_star": 0.9520058839489138,
+        "B_AME_MeV": 28.2956912,
+        "B_pred_MeV": 29.95567723908384,
+        "err_MeV": 1.6599860390838401,
+        "abs_err_MeV": 1.6599860390838401,
+        "abs_frac_err": 0.05866568260696314,
+        "signed_frac_err": 0.05866568260696314,
+        "formula": "2·m_e · 4·8G"
+      }
+    ],
+    "spearman_correlations": {
+      "rho_alpha_star_vs_abs_frac_err": -0.8,
+      "rho_one_minus_alpha_vs_abs_frac_err": 0.8,
+      "rho_one_minus_alpha_vs_signed_frac_err": 0.19999999999999996,
+      "rho_one_minus_alpha_vs_abs_err_MeV": 0.8,
+      "n_samples": 4,
+      "note": "n=4 sample is small; |ρ|=1 is the only convincing signal."
+    }
+  },
+  "caveats": [
+    "Sample size n=4. With only 4 atoms (D, T, ³He, ⁴He), Spearman ρ has 24 possible permutations; |ρ|=1 corresponds to p≈1/12 (weak significance). Treat as exploratory diagnostic, not rigorous statistical evidence. The structural question — does the dominant Wedderburn block carry the gap — needs Probe (1) (project mass on (4,4,4)) for direct verification."
+  ]
+}

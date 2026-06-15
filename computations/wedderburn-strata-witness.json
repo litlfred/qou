@@ -1,0 +1,2384 @@
+{
+  "description": "Wedderburn-strata enumeration for H_n(R, q) at q = q_0 \u2248 1.109979. For each n, lists every partition \u03bb \u22a2 n with depth, classical and q-deformed dimensions, signed content (chirality marker), the canonical Plancherel weight w_\u03bb = (dim_classical)\u00b2/n! (q-independent, sums to exactly 1), and the q-deformed alternative dim_q\u00b2/[n]_q! recorded as `q_deformed_weight` (does NOT sum to 1 at finite q \u2260 1). Strata are grouped by curvature-rank depth = height(\u03bb) - 1.",
+  "references": [
+    "prop:plancherel-weight-boundedness",
+    "prop:unified-curvature-rank-mass-formula",
+    "prop:plancherel-term-7-formulation",
+    "rem:mass-formula-wedderburn-enumeration"
+  ],
+  "tables": {
+    "3": {
+      "n": 3,
+      "q_0": 1.1099785955541805,
+      "num_partitions": 3,
+      "strata_by_depth": {
+        "0": [
+          {
+            "partition": [
+              3
+            ],
+            "height": 1,
+            "depth": 0,
+            "dim_classical": 1,
+            "dim_q_at_q0": 1.0,
+            "signed_content": 3,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.16666666666666666,
+            "q_deformed_weight": 0.16338322733975827
+          }
+        ],
+        "1": [
+          {
+            "partition": [
+              2,
+              1
+            ],
+            "height": 2,
+            "depth": 1,
+            "dim_classical": 2,
+            "dim_q_at_q0": 2.0108968691184814,
+            "signed_content": 0,
+            "is_chirality_cell": true,
+            "plancherel_weight": 0.6666666666666666,
+            "q_deformed_weight": 0.6606737723483498
+          }
+        ],
+        "2": [
+          {
+            "partition": [
+              1,
+              1,
+              1
+            ],
+            "height": 3,
+            "depth": 2,
+            "dim_classical": 1,
+            "dim_q_at_q0": 1.0,
+            "signed_content": -3,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.16666666666666666,
+            "q_deformed_weight": 0.16338322733975827
+          }
+        ]
+      },
+      "weight_sum_check": 0.9999999999999999,
+      "strata_weight_sums": {
+        "0": 0.16666666666666666,
+        "1": 0.6666666666666666,
+        "2": 0.16666666666666666
+      }
+    },
+    "4": {
+      "n": 4,
+      "q_0": 1.1099785955541805,
+      "num_partitions": 5,
+      "strata_by_depth": {
+        "0": [
+          {
+            "partition": [
+              4
+            ],
+            "height": 1,
+            "depth": 0,
+            "dim_classical": 1,
+            "dim_q_at_q0": 1.0,
+            "signed_content": 6,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.041666666666666664,
+            "q_deformed_weight": 0.03975568183151011
+          }
+        ],
+        "1": [
+          {
+            "partition": [
+              3,
+              1
+            ],
+            "height": 2,
+            "depth": 1,
+            "dim_classical": 3,
+            "dim_q_at_q0": 3.0437062182305112,
+            "signed_content": 2,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.375,
+            "q_deformed_weight": 0.36830250215550303
+          },
+          {
+            "partition": [
+              2,
+              2
+            ],
+            "height": 2,
+            "depth": 1,
+            "dim_classical": 2,
+            "dim_q_at_q0": 2.043706218230512,
+            "signed_content": 0,
+            "is_chirality_cell": true,
+            "plancherel_weight": 0.16666666666666666,
+            "q_deformed_weight": 0.1660489519858911
+          }
+        ],
+        "2": [
+          {
+            "partition": [
+              2,
+              1,
+              1
+            ],
+            "height": 3,
+            "depth": 2,
+            "dim_classical": 3,
+            "dim_q_at_q0": 3.0437062182305112,
+            "signed_content": -2,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.375,
+            "q_deformed_weight": 0.36830250215550303
+          }
+        ],
+        "3": [
+          {
+            "partition": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "height": 4,
+            "depth": 3,
+            "dim_classical": 1,
+            "dim_q_at_q0": 1.0,
+            "signed_content": -6,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.041666666666666664,
+            "q_deformed_weight": 0.03975568183151011
+          }
+        ]
+      },
+      "weight_sum_check": 1.0,
+      "strata_weight_sums": {
+        "0": 0.041666666666666664,
+        "1": 0.5416666666666666,
+        "2": 0.375,
+        "3": 0.041666666666666664
+      }
+    },
+    "5": {
+      "n": 5,
+      "q_0": 1.1099785955541805,
+      "num_partitions": 7,
+      "strata_by_depth": {
+        "0": [
+          {
+            "partition": [
+              5
+            ],
+            "height": 1,
+            "depth": 0,
+            "dim_classical": 1,
+            "dim_q_at_q0": 0.9999999999999998,
+            "signed_content": 10,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.008333333333333333,
+            "q_deformed_weight": 0.007615387159641052
+          }
+        ],
+        "1": [
+          {
+            "partition": [
+              4,
+              1
+            ],
+            "height": 2,
+            "depth": 1,
+            "dim_classical": 4,
+            "dim_q_at_q0": 4.109682435637708,
+            "signed_content": 5,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.13333333333333333,
+            "q_deformed_weight": 0.12862000316020217
+          },
+          {
+            "partition": [
+              3,
+              2
+            ],
+            "height": 2,
+            "depth": 1,
+            "dim_classical": 5,
+            "dim_q_at_q0": 5.220441324664571,
+            "signed_content": 2,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.20833333333333334,
+            "q_deformed_weight": 0.20754220432343184
+          }
+        ],
+        "2": [
+          {
+            "partition": [
+              3,
+              1,
+              1
+            ],
+            "height": 3,
+            "depth": 2,
+            "dim_classical": 6,
+            "dim_q_at_q0": 6.22044132466457,
+            "signed_content": 0,
+            "is_chirality_cell": true,
+            "plancherel_weight": 0.3,
+            "q_deformed_weight": 0.29466895514609304
+          },
+          {
+            "partition": [
+              2,
+              2,
+              1
+            ],
+            "height": 3,
+            "depth": 2,
+            "dim_classical": 5,
+            "dim_q_at_q0": 5.220441324664571,
+            "signed_content": -2,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.20833333333333334,
+            "q_deformed_weight": 0.20754220432343184
+          }
+        ],
+        "3": [
+          {
+            "partition": [
+              2,
+              1,
+              1,
+              1
+            ],
+            "height": 4,
+            "depth": 3,
+            "dim_classical": 4,
+            "dim_q_at_q0": 4.109682435637708,
+            "signed_content": -5,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.13333333333333333,
+            "q_deformed_weight": 0.12862000316020217
+          }
+        ],
+        "4": [
+          {
+            "partition": [
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "height": 5,
+            "depth": 4,
+            "dim_classical": 1,
+            "dim_q_at_q0": 0.9999999999999998,
+            "signed_content": -10,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.008333333333333333,
+            "q_deformed_weight": 0.007615387159641052
+          }
+        ]
+      },
+      "weight_sum_check": 0.9999999999999999,
+      "strata_weight_sums": {
+        "0": 0.008333333333333333,
+        "1": 0.3416666666666667,
+        "2": 0.5083333333333333,
+        "3": 0.13333333333333333,
+        "4": 0.008333333333333333
+      }
+    },
+    "6": {
+      "n": 6,
+      "q_0": 1.1099785955541805,
+      "num_partitions": 11,
+      "strata_by_depth": {
+        "0": [
+          {
+            "partition": [
+              6
+            ],
+            "height": 1,
+            "depth": 0,
+            "dim_classical": 1,
+            "dim_q_at_q0": 0.9999999999999998,
+            "signed_content": 15,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.001388888888888889,
+            "q_deformed_weight": 0.0011921233292002014
+          }
+        ],
+        "1": [
+          {
+            "partition": [
+              5,
+              1
+            ],
+            "height": 2,
+            "depth": 1,
+            "dim_classical": 5,
+            "dim_q_at_q0": 5.22044132466457,
+            "signed_content": 9,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.034722222222222224,
+            "q_deformed_weight": 0.032488946179757956
+          },
+          {
+            "partition": [
+              4,
+              2
+            ],
+            "height": 2,
+            "depth": 1,
+            "dim_classical": 9,
+            "dim_q_at_q0": 9.669048397124513,
+            "signed_content": 5,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.1125,
+            "q_deformed_weight": 0.11145220242008573
+          },
+          {
+            "partition": [
+              3,
+              3
+            ],
+            "height": 2,
+            "depth": 1,
+            "dim_classical": 5,
+            "dim_q_at_q0": 5.448607072459946,
+            "signed_content": 3,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.034722222222222224,
+            "q_deformed_weight": 0.03539094559714428
+          }
+        ],
+        "2": [
+          {
+            "partition": [
+              4,
+              1,
+              1
+            ],
+            "height": 3,
+            "depth": 2,
+            "dim_classical": 10,
+            "dim_q_at_q0": 10.669048397124516,
+            "signed_content": 3,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.1388888888888889,
+            "q_deformed_weight": 0.1356977220800419
+          },
+          {
+            "partition": [
+              3,
+              2,
+              1
+            ],
+            "height": 3,
+            "depth": 2,
+            "dim_classical": 16,
+            "dim_q_at_q0": 17.344673582613535,
+            "signed_content": 0,
+            "is_chirality_cell": true,
+            "plancherel_weight": 0.35555555555555557,
+            "q_deformed_weight": 0.35863564248453456
+          },
+          {
+            "partition": [
+              2,
+              2,
+              2
+            ],
+            "height": 3,
+            "depth": 2,
+            "dim_classical": 5,
+            "dim_q_at_q0": 5.448607072459945,
+            "signed_content": -3,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.034722222222222224,
+            "q_deformed_weight": 0.035390945597144265
+          }
+        ],
+        "3": [
+          {
+            "partition": [
+              3,
+              1,
+              1,
+              1
+            ],
+            "height": 4,
+            "depth": 3,
+            "dim_classical": 10,
+            "dim_q_at_q0": 10.669048397124515,
+            "signed_content": -3,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.1388888888888889,
+            "q_deformed_weight": 0.13569772208004188
+          },
+          {
+            "partition": [
+              2,
+              2,
+              1,
+              1
+            ],
+            "height": 4,
+            "depth": 3,
+            "dim_classical": 9,
+            "dim_q_at_q0": 9.669048397124513,
+            "signed_content": -5,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.1125,
+            "q_deformed_weight": 0.11145220242008573
+          }
+        ],
+        "4": [
+          {
+            "partition": [
+              2,
+              1,
+              1,
+              1,
+              1
+            ],
+            "height": 5,
+            "depth": 4,
+            "dim_classical": 5,
+            "dim_q_at_q0": 5.22044132466457,
+            "signed_content": -9,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.034722222222222224,
+            "q_deformed_weight": 0.032488946179757956
+          }
+        ],
+        "5": [
+          {
+            "partition": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "height": 6,
+            "depth": 5,
+            "dim_classical": 1,
+            "dim_q_at_q0": 0.9999999999999998,
+            "signed_content": -15,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.001388888888888889,
+            "q_deformed_weight": 0.0011921233292002014
+          }
+        ]
+      },
+      "weight_sum_check": 1.0,
+      "strata_weight_sums": {
+        "0": 0.001388888888888889,
+        "1": 0.18194444444444446,
+        "2": 0.5291666666666667,
+        "3": 0.2513888888888889,
+        "4": 0.034722222222222224,
+        "5": 0.001388888888888889
+      }
+    },
+    "9": {
+      "n": 9,
+      "q_0": 1.1099785955541805,
+      "num_partitions": 30,
+      "strata_by_depth": {
+        "0": [
+          {
+            "partition": [
+              9
+            ],
+            "height": 1,
+            "depth": 0,
+            "dim_classical": 1,
+            "dim_q_at_q0": 1.0,
+            "signed_content": 36,
+            "is_chirality_cell": false,
+            "plancherel_weight": 2.7557319223985893e-06,
+            "q_deformed_weight": 1.6863231502784015e-06
+          }
+        ],
+        "1": [
+          {
+            "partition": [
+              8,
+              1
+            ],
+            "height": 2,
+            "depth": 1,
+            "dim_classical": 8,
+            "dim_q_at_q0": 8.945690033948036,
+            "signed_content": 27,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.0001763668430335097,
+            "q_deformed_weight": 0.00013494863434999657
+          },
+          {
+            "partition": [
+              7,
+              2
+            ],
+            "height": 2,
+            "depth": 1,
+            "dim_classical": 27,
+            "dim_q_at_q0": 32.92215114695502,
+            "signed_content": 20,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.0020089285714285712,
+            "q_deformed_weight": 0.0018277517611946462
+          },
+          {
+            "partition": [
+              6,
+              3
+            ],
+            "height": 2,
+            "depth": 1,
+            "dim_classical": 48,
+            "dim_q_at_q0": 62.249631178564805,
+            "signed_content": 15,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.006349206349206349,
+            "q_deformed_weight": 0.006534530169715588
+          },
+          {
+            "partition": [
+              5,
+              4
+            ],
+            "height": 2,
+            "depth": 1,
+            "dim_classical": 42,
+            "dim_q_at_q0": 56.5157361597554,
+            "signed_content": 12,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.004861111111111111,
+            "q_deformed_weight": 0.005386164090360501
+          }
+        ],
+        "2": [
+          {
+            "partition": [
+              7,
+              1,
+              1
+            ],
+            "height": 3,
+            "depth": 2,
+            "dim_classical": 28,
+            "dim_q_at_q0": 33.92215114695502,
+            "signed_content": 18,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.0021604938271604936,
+            "q_deformed_weight": 0.0019404728556170743
+          },
+          {
+            "partition": [
+              6,
+              2,
+              1
+            ],
+            "height": 3,
+            "depth": 2,
+            "dim_classical": 105,
+            "dim_q_at_q0": 135.54110634323268,
+            "signed_content": 12,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.030381944444444444,
+            "q_deformed_weight": 0.030980102804028978
+          },
+          {
+            "partition": [
+              5,
+              3,
+              1
+            ],
+            "height": 3,
+            "depth": 2,
+            "dim_classical": 162,
+            "dim_q_at_q0": 218.12051661384473,
+            "signed_content": 8,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.07232142857142858,
+            "q_deformed_weight": 0.08022945414719777
+          },
+          {
+            "partition": [
+              5,
+              2,
+              2
+            ],
+            "height": 3,
+            "depth": 2,
+            "dim_classical": 120,
+            "dim_q_at_q0": 161.60478045408934,
+            "signed_content": 6,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.03968253968253968,
+            "q_deformed_weight": 0.044040192567248615
+          },
+          {
+            "partition": [
+              4,
+              4,
+              1
+            ],
+            "height": 3,
+            "depth": 2,
+            "dim_classical": 84,
+            "dim_q_at_q0": 115.50156141756707,
+            "signed_content": 6,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.019444444444444445,
+            "q_deformed_weight": 0.022496580645223172
+          },
+          {
+            "partition": [
+              4,
+              3,
+              2
+            ],
+            "height": 3,
+            "depth": 2,
+            "dim_classical": 168,
+            "dim_q_at_q0": 232.26172823288167,
+            "signed_content": 3,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.07777777777777778,
+            "q_deformed_weight": 0.09096956304401314
+          },
+          {
+            "partition": [
+              3,
+              3,
+              3
+            ],
+            "height": 3,
+            "depth": 2,
+            "dim_classical": 42,
+            "dim_q_at_q0": 58.98582525781173,
+            "signed_content": 0,
+            "is_chirality_cell": true,
+            "plancherel_weight": 0.004861111111111111,
+            "q_deformed_weight": 0.005867270647824401
+          }
+        ],
+        "3": [
+          {
+            "partition": [
+              6,
+              1,
+              1,
+              1
+            ],
+            "height": 4,
+            "depth": 3,
+            "dim_classical": 56,
+            "dim_q_at_q0": 71.19532121251284,
+            "signed_content": 9,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.008641975308641974,
+            "q_deformed_weight": 0.00854759053931668
+          },
+          {
+            "partition": [
+              5,
+              2,
+              1,
+              1
+            ],
+            "height": 4,
+            "depth": 3,
+            "dim_classical": 189,
+            "dim_q_at_q0": 251.04266776079976,
+            "signed_content": 4,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.0984375,
+            "q_deformed_weight": 0.10627616758037382
+          },
+          {
+            "partition": [
+              4,
+              3,
+              1,
+              1
+            ],
+            "height": 4,
+            "depth": 3,
+            "dim_classical": 216,
+            "dim_q_at_q0": 294.51135941144645,
+            "signed_content": 1,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.12857142857142856,
+            "q_deformed_weight": 0.14626651129310408
+          },
+          {
+            "partition": [
+              4,
+              2,
+              2,
+              1
+            ],
+            "height": 4,
+            "depth": 3,
+            "dim_classical": 216,
+            "dim_q_at_q0": 294.5113594114465,
+            "signed_content": -1,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.12857142857142856,
+            "q_deformed_weight": 0.1462665112931041
+          },
+          {
+            "partition": [
+              3,
+              3,
+              2,
+              1
+            ],
+            "height": 4,
+            "depth": 3,
+            "dim_classical": 168,
+            "dim_q_at_q0": 232.26172823288172,
+            "signed_content": -3,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.07777777777777778,
+            "q_deformed_weight": 0.09096956304401319
+          },
+          {
+            "partition": [
+              3,
+              2,
+              2,
+              2
+            ],
+            "height": 4,
+            "depth": 3,
+            "dim_classical": 84,
+            "dim_q_at_q0": 115.50156141756707,
+            "signed_content": -6,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.019444444444444445,
+            "q_deformed_weight": 0.022496580645223172
+          }
+        ],
+        "4": [
+          {
+            "partition": [
+              5,
+              1,
+              1,
+              1,
+              1
+            ],
+            "height": 5,
+            "depth": 4,
+            "dim_classical": 70,
+            "dim_q_at_q0": 90.43788730671041,
+            "signed_content": 0,
+            "is_chirality_cell": true,
+            "plancherel_weight": 0.013503086419753086,
+            "q_deformed_weight": 0.013792456372235619
+          },
+          {
+            "partition": [
+              4,
+              2,
+              1,
+              1,
+              1
+            ],
+            "height": 5,
+            "depth": 4,
+            "dim_classical": 189,
+            "dim_q_at_q0": 251.04266776079976,
+            "signed_content": -4,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.0984375,
+            "q_deformed_weight": 0.10627616758037382
+          },
+          {
+            "partition": [
+              3,
+              3,
+              1,
+              1,
+              1
+            ],
+            "height": 5,
+            "depth": 4,
+            "dim_classical": 120,
+            "dim_q_at_q0": 161.60478045408937,
+            "signed_content": -6,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.03968253968253968,
+            "q_deformed_weight": 0.044040192567248636
+          },
+          {
+            "partition": [
+              3,
+              2,
+              2,
+              1,
+              1
+            ],
+            "height": 5,
+            "depth": 4,
+            "dim_classical": 162,
+            "dim_q_at_q0": 218.12051661384473,
+            "signed_content": -8,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.07232142857142858,
+            "q_deformed_weight": 0.08022945414719777
+          },
+          {
+            "partition": [
+              2,
+              2,
+              2,
+              2,
+              1
+            ],
+            "height": 5,
+            "depth": 4,
+            "dim_classical": 42,
+            "dim_q_at_q0": 56.5157361597554,
+            "signed_content": -12,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.004861111111111111,
+            "q_deformed_weight": 0.005386164090360501
+          }
+        ],
+        "5": [
+          {
+            "partition": [
+              4,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "height": 6,
+            "depth": 5,
+            "dim_classical": 56,
+            "dim_q_at_q0": 71.19532121251284,
+            "signed_content": -9,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.008641975308641974,
+            "q_deformed_weight": 0.00854759053931668
+          },
+          {
+            "partition": [
+              3,
+              2,
+              1,
+              1,
+              1,
+              1
+            ],
+            "height": 6,
+            "depth": 5,
+            "dim_classical": 105,
+            "dim_q_at_q0": 135.54110634323268,
+            "signed_content": -12,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.030381944444444444,
+            "q_deformed_weight": 0.030980102804028978
+          },
+          {
+            "partition": [
+              2,
+              2,
+              2,
+              1,
+              1,
+              1
+            ],
+            "height": 6,
+            "depth": 5,
+            "dim_classical": 48,
+            "dim_q_at_q0": 62.249631178564805,
+            "signed_content": -15,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.006349206349206349,
+            "q_deformed_weight": 0.006534530169715588
+          }
+        ],
+        "6": [
+          {
+            "partition": [
+              3,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "height": 7,
+            "depth": 6,
+            "dim_classical": 28,
+            "dim_q_at_q0": 33.922151146955,
+            "signed_content": -18,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.0021604938271604936,
+            "q_deformed_weight": 0.0019404728556170728
+          },
+          {
+            "partition": [
+              2,
+              2,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "height": 7,
+            "depth": 6,
+            "dim_classical": 27,
+            "dim_q_at_q0": 32.92215114695502,
+            "signed_content": -20,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.0020089285714285712,
+            "q_deformed_weight": 0.0018277517611946462
+          }
+        ],
+        "7": [
+          {
+            "partition": [
+              2,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "height": 8,
+            "depth": 7,
+            "dim_classical": 8,
+            "dim_q_at_q0": 8.945690033948036,
+            "signed_content": -27,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.0001763668430335097,
+            "q_deformed_weight": 0.00013494863434999657
+          }
+        ],
+        "8": [
+          {
+            "partition": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "height": 9,
+            "depth": 8,
+            "dim_classical": 1,
+            "dim_q_at_q0": 1.0,
+            "signed_content": -36,
+            "is_chirality_cell": false,
+            "plancherel_weight": 2.7557319223985893e-06,
+            "q_deformed_weight": 1.6863231502784015e-06
+          }
+        ]
+      },
+      "weight_sum_check": 0.9999999999999998,
+      "strata_weight_sums": {
+        "0": 2.7557319223985893e-06,
+        "1": 0.013395612874779542,
+        "2": 0.24662973985890654,
+        "3": 0.4614445546737213,
+        "4": 0.2288056657848325,
+        "5": 0.045373126102292764,
+        "6": 0.004169422398589065,
+        "7": 0.0001763668430335097,
+        "8": 2.7557319223985893e-06
+      }
+    },
+    "12": {
+      "n": 12,
+      "q_0": 1.1099785955541805,
+      "num_partitions": 77,
+      "strata_by_depth": {
+        "0": [
+          {
+            "partition": [
+              12
+            ],
+            "height": 1,
+            "depth": 0,
+            "dim_classical": 1,
+            "dim_q_at_q0": 1.0,
+            "signed_content": 66,
+            "is_chirality_cell": false,
+            "plancherel_weight": 2.08767569878681e-09,
+            "q_deformed_weight": 6.808425913426603e-10
+          }
+        ],
+        "1": [
+          {
+            "partition": [
+              11,
+              1
+            ],
+            "height": 2,
+            "depth": 1,
+            "dim_classical": 11,
+            "dim_q_at_q0": 13.55464380114047,
+            "signed_content": 54,
+            "is_chirality_cell": false,
+            "plancherel_weight": 2.52608759553204e-07,
+            "q_deformed_weight": 1.2509009856430418e-07
+          },
+          {
+            "partition": [
+              10,
+              2
+            ],
+            "height": 2,
+            "depth": 1,
+            "dim_classical": 54,
+            "dim_q_at_q0": 79.17450941638269,
+            "signed_content": 44,
+            "is_chirality_cell": false,
+            "plancherel_weight": 6.087662337662338e-06,
+            "q_deformed_weight": 4.267931870669848e-06
+          },
+          {
+            "partition": [
+              9,
+              3
+            ],
+            "height": 2,
+            "depth": 1,
+            "dim_classical": 154,
+            "dim_q_at_q0": 259.43161179812677,
+            "signed_content": 36,
+            "is_chirality_cell": false,
+            "plancherel_weight": 4.951131687242798e-05,
+            "q_deformed_weight": 4.582394802522537e-05
+          },
+          {
+            "partition": [
+              8,
+              4
+            ],
+            "height": 2,
+            "depth": 1,
+            "dim_classical": 275,
+            "dim_q_at_q0": 514.0442567205241,
+            "signed_content": 30,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.0001578804747207525,
+            "q_deformed_weight": 0.0001799068661482768
+          },
+          {
+            "partition": [
+              7,
+              5
+            ],
+            "height": 2,
+            "depth": 1,
+            "dim_classical": 297,
+            "dim_q_at_q0": 594.9712865162447,
+            "signed_content": 26,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.00018415178571428573,
+            "q_deformed_weight": 0.00024101203521981882
+          },
+          {
+            "partition": [
+              6,
+              6
+            ],
+            "height": 2,
+            "depth": 1,
+            "dim_classical": 132,
+            "dim_q_at_q0": 273.7387759786052,
+            "signed_content": 24,
+            "is_chirality_cell": false,
+            "plancherel_weight": 3.637566137566137e-05,
+            "q_deformed_weight": 5.101752171004429e-05
+          }
+        ],
+        "2": [
+          {
+            "partition": [
+              10,
+              1,
+              1
+            ],
+            "height": 3,
+            "depth": 2,
+            "dim_classical": 55,
+            "dim_q_at_q0": 80.17450941638268,
+            "signed_content": 42,
+            "is_chirality_cell": false,
+            "plancherel_weight": 6.3152189888301e-06,
+            "q_deformed_weight": 4.376423469579857e-06
+          },
+          {
+            "partition": [
+              9,
+              2,
+              1
+            ],
+            "height": 3,
+            "depth": 2,
+            "dim_classical": 320,
+            "dim_q_at_q0": 537.0529310277485,
+            "signed_content": 33,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.00021377799155576933,
+            "q_deformed_weight": 0.00019637260361815776
+          },
+          {
+            "partition": [
+              8,
+              3,
+              1
+            ],
+            "height": 3,
+            "depth": 2,
+            "dim_classical": 891,
+            "dim_q_at_q0": 1668.1535597853542,
+            "signed_content": 26,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.0016573660714285714,
+            "q_deformed_weight": 0.0018946053928511582
+          },
+          {
+            "partition": [
+              8,
+              2,
+              2
+            ],
+            "height": 3,
+            "depth": 2,
+            "dim_classical": 616,
+            "dim_q_at_q0": 1154.1093030648299,
+            "signed_content": 24,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.0007921810699588477,
+            "q_deformed_weight": 0.0009068607376704439
+          },
+          {
+            "partition": [
+              7,
+              4,
+              1
+            ],
+            "height": 3,
+            "depth": 2,
+            "dim_classical": 1408,
+            "dim_q_at_q0": 2849.813555848588,
+            "signed_content": 21,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.004138741916519694,
+            "q_deformed_weight": 0.005529420418868442
+          },
+          {
+            "partition": [
+              7,
+              3,
+              2
+            ],
+            "height": 3,
+            "depth": 2,
+            "dim_classical": 1925,
+            "dim_q_at_q0": 3919.7633525892325,
+            "signed_content": 18,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.007736143261316873,
+            "q_deformed_weight": 0.01046083645578717
+          },
+          {
+            "partition": [
+              6,
+              5,
+              1
+            ],
+            "height": 3,
+            "depth": 2,
+            "dim_classical": 1155,
+            "dim_q_at_q0": 2449.507811834677,
+            "signed_content": 18,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.002785011574074074,
+            "q_deformed_weight": 0.004085115816404941
+          },
+          {
+            "partition": [
+              6,
+              4,
+              2
+            ],
+            "height": 3,
+            "depth": 2,
+            "dim_classical": 2673,
+            "dim_q_at_q0": 5752.806164225007,
+            "signed_content": 14,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.014916294642857143,
+            "q_deformed_weight": 0.022532334933011842
+          },
+          {
+            "partition": [
+              6,
+              3,
+              3
+            ],
+            "height": 3,
+            "depth": 2,
+            "dim_classical": 1650,
+            "dim_q_at_q0": 3577.0371283689365,
+            "signed_content": 12,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.00568369708994709,
+            "q_deformed_weight": 0.008711513460268876
+          },
+          {
+            "partition": [
+              5,
+              5,
+              2
+            ],
+            "height": 3,
+            "depth": 2,
+            "dim_classical": 1320,
+            "dim_q_at_q0": 2920.532249085363,
+            "signed_content": 12,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.0036375661375661374,
+            "q_deformed_weight": 0.005807252750323004
+          },
+          {
+            "partition": [
+              5,
+              4,
+              3
+            ],
+            "height": 3,
+            "depth": 2,
+            "dim_classical": 2112,
+            "dim_q_at_q0": 4747.909716253077,
+            "signed_content": 9,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.009312169312169312,
+            "q_deformed_weight": 0.015347993977037356
+          },
+          {
+            "partition": [
+              4,
+              4,
+              4
+            ],
+            "height": 3,
+            "depth": 2,
+            "dim_classical": 462,
+            "dim_q_at_q0": 1065.9957237669316,
+            "signed_content": 6,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.00044560185185185187,
+            "q_deformed_weight": 0.0007736733565467315
+          }
+        ],
+        "3": [
+          {
+            "partition": [
+              9,
+              1,
+              1,
+              1
+            ],
+            "height": 4,
+            "depth": 3,
+            "dim_classical": 165,
+            "dim_q_at_q0": 272.9862555992672,
+            "signed_content": 30,
+            "is_chirality_cell": false,
+            "plancherel_weight": 5.6836970899470896e-05,
+            "q_deformed_weight": 5.0737408274511515e-05
+          },
+          {
+            "partition": [
+              8,
+              2,
+              1,
+              1
+            ],
+            "height": 4,
+            "depth": 3,
+            "dim_classical": 945,
+            "dim_q_at_q0": 1747.3280692017368,
+            "signed_content": 22,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.001864346590909091,
+            "q_deformed_weight": 0.0020787182216579644
+          },
+          {
+            "partition": [
+              7,
+              3,
+              1,
+              1
+            ],
+            "height": 4,
+            "depth": 3,
+            "dim_classical": 2376,
+            "dim_q_at_q0": 4774.166250903601,
+            "signed_content": 16,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.011785714285714287,
+            "q_deformed_weight": 0.015518216006911178
+          },
+          {
+            "partition": [
+              7,
+              2,
+              2,
+              1
+            ],
+            "height": 4,
+            "depth": 3,
+            "dim_classical": 2079,
+            "dim_q_at_q0": 4179.194964387359,
+            "signed_content": 14,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.0090234375,
+            "q_deformed_weight": 0.011891372397044738
+          },
+          {
+            "partition": [
+              6,
+              4,
+              1,
+              1
+            ],
+            "height": 4,
+            "depth": 3,
+            "dim_classical": 3080,
+            "dim_q_at_q0": 6540.589196924137,
+            "signed_content": 12,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.019804526748971193,
+            "q_deformed_weight": 0.029125974262945463
+          },
+          {
+            "partition": [
+              6,
+              3,
+              2,
+              1
+            ],
+            "height": 4,
+            "depth": 3,
+            "dim_classical": 5632,
+            "dim_q_at_q0": 12027.47089869267,
+            "signed_content": 9,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.0662198706643151,
+            "q_deformed_weight": 0.09849072753985016
+          },
+          {
+            "partition": [
+              6,
+              2,
+              2,
+              2
+            ],
+            "height": 4,
+            "depth": 3,
+            "dim_classical": 1925,
+            "dim_q_at_q0": 4091.08138508946,
+            "signed_content": 6,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.007736143261316873,
+            "q_deformed_weight": 0.011395226298169359
+          },
+          {
+            "partition": [
+              5,
+              5,
+              1,
+              1
+            ],
+            "height": 4,
+            "depth": 3,
+            "dim_classical": 1485,
+            "dim_q_at_q0": 3241.764759623003,
+            "signed_content": 10,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.004603794642857143,
+            "q_deformed_weight": 0.007155001179654945
+          },
+          {
+            "partition": [
+              5,
+              4,
+              2,
+              1
+            ],
+            "height": 4,
+            "depth": 3,
+            "dim_classical": 5775,
+            "dim_q_at_q0": 12787.511805990438,
+            "signed_content": 6,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.06962528935185185,
+            "q_deformed_weight": 0.11133169249049184
+          },
+          {
+            "partition": [
+              5,
+              3,
+              3,
+              1
+            ],
+            "height": 4,
+            "depth": 3,
+            "dim_classical": 4158,
+            "dim_q_at_q0": 9272.008270388831,
+            "signed_content": 4,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.03609375,
+            "q_deformed_weight": 0.05853213110246008
+          },
+          {
+            "partition": [
+              5,
+              3,
+              2,
+              2
+            ],
+            "height": 4,
+            "depth": 3,
+            "dim_classical": 4455,
+            "dim_q_at_q0": 9866.979556905073,
+            "signed_content": 2,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.04143415178571429,
+            "q_deformed_weight": 0.06628498659791177
+          },
+          {
+            "partition": [
+              4,
+              4,
+              3,
+              1
+            ],
+            "height": 4,
+            "depth": 3,
+            "dim_classical": 2970,
+            "dim_q_at_q0": 6760.966865786827,
+            "signed_content": 2,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.018415178571428572,
+            "q_deformed_weight": 0.031121773030285297
+          },
+          {
+            "partition": [
+              4,
+              4,
+              2,
+              2
+            ],
+            "height": 4,
+            "depth": 3,
+            "dim_classical": 2640,
+            "dim_q_at_q0": 5968.709917998501,
+            "signed_content": 0,
+            "is_chirality_cell": true,
+            "plancherel_weight": 0.01455026455026455,
+            "q_deformed_weight": 0.024255356434209858
+          },
+          {
+            "partition": [
+              4,
+              3,
+              3,
+              2
+            ],
+            "height": 4,
+            "depth": 3,
+            "dim_classical": 2970,
+            "dim_q_at_q0": 6760.966865786827,
+            "signed_content": -2,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.018415178571428572,
+            "q_deformed_weight": 0.031121773030285297
+          },
+          {
+            "partition": [
+              3,
+              3,
+              3,
+              3
+            ],
+            "height": 4,
+            "depth": 3,
+            "dim_classical": 462,
+            "dim_q_at_q0": 1065.9957237669319,
+            "signed_content": -6,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.00044560185185185187,
+            "q_deformed_weight": 0.0007736733565467319
+          }
+        ],
+        "4": [
+          {
+            "partition": [
+              8,
+              1,
+              1,
+              1,
+              1
+            ],
+            "height": 5,
+            "depth": 4,
+            "dim_classical": 330,
+            "dim_q_at_q0": 594.2187661369069,
+            "signed_content": 18,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.00022734788359788359,
+            "q_deformed_weight": 0.0002404027561637846
+          },
+          {
+            "partition": [
+              7,
+              2,
+              1,
+              1,
+              1
+            ],
+            "height": 5,
+            "depth": 4,
+            "dim_classical": 1728,
+            "dim_q_at_q0": 3386.8664868763362,
+            "signed_content": 11,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.006233766233766234,
+            "q_deformed_weight": 0.007809853179154444
+          },
+          {
+            "partition": [
+              6,
+              3,
+              1,
+              1,
+              1
+            ],
+            "height": 5,
+            "depth": 4,
+            "dim_classical": 3696,
+            "dim_q_at_q0": 7694.698499988965,
+            "signed_content": 6,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.02851851851851852,
+            "q_deformed_weight": 0.040311590276516776
+          },
+          {
+            "partition": [
+              6,
+              2,
+              2,
+              1,
+              1
+            ],
+            "height": 5,
+            "depth": 4,
+            "dim_classical": 3564,
+            "dim_q_at_q0": 7420.959724010359,
+            "signed_content": 4,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.02651785714285714,
+            "q_deformed_weight": 0.0374944394404775
+          },
+          {
+            "partition": [
+              5,
+              4,
+              1,
+              1,
+              1
+            ],
+            "height": 5,
+            "depth": 4,
+            "dim_classical": 3520,
+            "dim_q_at_q0": 7597.7232721016635,
+            "signed_content": 3,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.02586713697824809,
+            "q_deformed_weight": 0.039301910186597074
+          },
+          {
+            "partition": [
+              5,
+              3,
+              2,
+              1,
+              1
+            ],
+            "height": 5,
+            "depth": 4,
+            "dim_classical": 7700,
+            "dim_q_at_q0": 16707.275158579658,
+            "signed_content": 0,
+            "is_chirality_cell": true,
+            "plancherel_weight": 0.12377829218106996,
+            "q_deformed_weight": 0.19004566447832655
+          },
+          {
+            "partition": [
+              5,
+              2,
+              2,
+              2,
+              1
+            ],
+            "height": 5,
+            "depth": 4,
+            "dim_classical": 3520,
+            "dim_q_at_q0": 7597.723272101664,
+            "signed_content": -3,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.02586713697824809,
+            "q_deformed_weight": 0.03930191018659708
+          },
+          {
+            "partition": [
+              4,
+              4,
+              2,
+              1,
+              1
+            ],
+            "height": 5,
+            "depth": 4,
+            "dim_classical": 4455,
+            "dim_q_at_q0": 9866.979556905075,
+            "signed_content": -2,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.04143415178571429,
+            "q_deformed_weight": 0.06628498659791178
+          },
+          {
+            "partition": [
+              4,
+              3,
+              3,
+              1,
+              1
+            ],
+            "height": 5,
+            "depth": 4,
+            "dim_classical": 4158,
+            "dim_q_at_q0": 9272.008270388833,
+            "signed_content": -4,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.03609375,
+            "q_deformed_weight": 0.058532131102460104
+          },
+          {
+            "partition": [
+              4,
+              3,
+              2,
+              2,
+              1
+            ],
+            "height": 5,
+            "depth": 4,
+            "dim_classical": 5775,
+            "dim_q_at_q0": 12787.511805990438,
+            "signed_content": -6,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.06962528935185185,
+            "q_deformed_weight": 0.11133169249049184
+          },
+          {
+            "partition": [
+              4,
+              2,
+              2,
+              2,
+              2
+            ],
+            "height": 5,
+            "depth": 4,
+            "dim_classical": 1485,
+            "dim_q_at_q0": 3241.7647596230036,
+            "signed_content": -10,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.004603794642857143,
+            "q_deformed_weight": 0.007155001179654947
+          },
+          {
+            "partition": [
+              3,
+              3,
+              3,
+              2,
+              1
+            ],
+            "height": 5,
+            "depth": 4,
+            "dim_classical": 2112,
+            "dim_q_at_q0": 4747.909716253079,
+            "signed_content": -9,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.009312169312169312,
+            "q_deformed_weight": 0.015347993977037367
+          },
+          {
+            "partition": [
+              3,
+              3,
+              2,
+              2,
+              2
+            ],
+            "height": 5,
+            "depth": 4,
+            "dim_classical": 1320,
+            "dim_q_at_q0": 2920.532249085364,
+            "signed_content": -12,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.0036375661375661374,
+            "q_deformed_weight": 0.0058072527503230074
+          }
+        ],
+        "5": [
+          {
+            "partition": [
+              7,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "height": 6,
+            "depth": 5,
+            "dim_classical": 462,
+            "dim_q_at_q0": 867.9575421155118,
+            "signed_content": 6,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.00044560185185185187,
+            "q_deformed_weight": 0.0005129129669788226
+          },
+          {
+            "partition": [
+              6,
+              2,
+              1,
+              1,
+              1,
+              1
+            ],
+            "height": 6,
+            "depth": 5,
+            "dim_classical": 2100,
+            "dim_q_at_q0": 4196.8358810364125,
+            "signed_content": 0,
+            "is_chirality_cell": true,
+            "plancherel_weight": 0.009206649831649831,
+            "q_deformed_weight": 0.011991974285223774
+          },
+          {
+            "partition": [
+              5,
+              3,
+              1,
+              1,
+              1,
+              1
+            ],
+            "height": 6,
+            "depth": 5,
+            "dim_classical": 3564,
+            "dim_q_at_q0": 7420.9597240103585,
+            "signed_content": -4,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.02651785714285714,
+            "q_deformed_weight": 0.03749443944047749
+          },
+          {
+            "partition": [
+              5,
+              2,
+              2,
+              1,
+              1,
+              1
+            ],
+            "height": 6,
+            "depth": 5,
+            "dim_classical": 3696,
+            "dim_q_at_q0": 7694.6984999889655,
+            "signed_content": -6,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.02851851851851852,
+            "q_deformed_weight": 0.04031159027651679
+          },
+          {
+            "partition": [
+              4,
+              4,
+              1,
+              1,
+              1,
+              1
+            ],
+            "height": 6,
+            "depth": 5,
+            "dim_classical": 1925,
+            "dim_q_at_q0": 4091.081385089461,
+            "signed_content": -6,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.007736143261316873,
+            "q_deformed_weight": 0.011395226298169364
+          },
+          {
+            "partition": [
+              4,
+              3,
+              2,
+              1,
+              1,
+              1
+            ],
+            "height": 6,
+            "depth": 5,
+            "dim_classical": 5632,
+            "dim_q_at_q0": 12027.47089869267,
+            "signed_content": -9,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.0662198706643151,
+            "q_deformed_weight": 0.09849072753985016
+          },
+          {
+            "partition": [
+              4,
+              2,
+              2,
+              2,
+              1,
+              1
+            ],
+            "height": 6,
+            "depth": 5,
+            "dim_classical": 3080,
+            "dim_q_at_q0": 6540.589196924137,
+            "signed_content": -12,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.019804526748971193,
+            "q_deformed_weight": 0.029125974262945463
+          },
+          {
+            "partition": [
+              3,
+              3,
+              3,
+              1,
+              1,
+              1
+            ],
+            "height": 6,
+            "depth": 5,
+            "dim_classical": 1650,
+            "dim_q_at_q0": 3577.0371283689374,
+            "signed_content": -12,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.00568369708994709,
+            "q_deformed_weight": 0.008711513460268881
+          },
+          {
+            "partition": [
+              3,
+              3,
+              2,
+              2,
+              1,
+              1
+            ],
+            "height": 6,
+            "depth": 5,
+            "dim_classical": 2673,
+            "dim_q_at_q0": 5752.806164225007,
+            "signed_content": -14,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.014916294642857143,
+            "q_deformed_weight": 0.022532334933011842
+          },
+          {
+            "partition": [
+              3,
+              2,
+              2,
+              2,
+              2,
+              1
+            ],
+            "height": 6,
+            "depth": 5,
+            "dim_classical": 1155,
+            "dim_q_at_q0": 2449.507811834677,
+            "signed_content": -18,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.002785011574074074,
+            "q_deformed_weight": 0.004085115816404941
+          },
+          {
+            "partition": [
+              2,
+              2,
+              2,
+              2,
+              2,
+              2
+            ],
+            "height": 6,
+            "depth": 5,
+            "dim_classical": 132,
+            "dim_q_at_q0": 273.73877597860513,
+            "signed_content": -24,
+            "is_chirality_cell": false,
+            "plancherel_weight": 3.637566137566137e-05,
+            "q_deformed_weight": 5.101752171004427e-05
+          }
+        ],
+        "6": [
+          {
+            "partition": [
+              6,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "height": 7,
+            "depth": 6,
+            "dim_classical": 462,
+            "dim_q_at_q0": 867.9575421155117,
+            "signed_content": -6,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.00044560185185185187,
+            "q_deformed_weight": 0.0005129129669788223
+          },
+          {
+            "partition": [
+              5,
+              2,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "height": 7,
+            "depth": 6,
+            "dim_classical": 1728,
+            "dim_q_at_q0": 3386.8664868763367,
+            "signed_content": -11,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.006233766233766234,
+            "q_deformed_weight": 0.007809853179154446
+          },
+          {
+            "partition": [
+              4,
+              3,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "height": 7,
+            "depth": 6,
+            "dim_classical": 2079,
+            "dim_q_at_q0": 4179.194964387359,
+            "signed_content": -14,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.0090234375,
+            "q_deformed_weight": 0.011891372397044738
+          },
+          {
+            "partition": [
+              4,
+              2,
+              2,
+              1,
+              1,
+              1,
+              1
+            ],
+            "height": 7,
+            "depth": 6,
+            "dim_classical": 2376,
+            "dim_q_at_q0": 4774.166250903601,
+            "signed_content": -16,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.011785714285714287,
+            "q_deformed_weight": 0.015518216006911178
+          },
+          {
+            "partition": [
+              3,
+              3,
+              2,
+              1,
+              1,
+              1,
+              1
+            ],
+            "height": 7,
+            "depth": 6,
+            "dim_classical": 1925,
+            "dim_q_at_q0": 3919.7633525892315,
+            "signed_content": -18,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.007736143261316873,
+            "q_deformed_weight": 0.010460836455787164
+          },
+          {
+            "partition": [
+              3,
+              2,
+              2,
+              2,
+              1,
+              1,
+              1
+            ],
+            "height": 7,
+            "depth": 6,
+            "dim_classical": 1408,
+            "dim_q_at_q0": 2849.813555848588,
+            "signed_content": -21,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.004138741916519694,
+            "q_deformed_weight": 0.005529420418868442
+          },
+          {
+            "partition": [
+              2,
+              2,
+              2,
+              2,
+              2,
+              1,
+              1
+            ],
+            "height": 7,
+            "depth": 6,
+            "dim_classical": 297,
+            "dim_q_at_q0": 594.9712865162447,
+            "signed_content": -26,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.00018415178571428573,
+            "q_deformed_weight": 0.00024101203521981882
+          }
+        ],
+        "7": [
+          {
+            "partition": [
+              5,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "height": 8,
+            "depth": 7,
+            "dim_classical": 330,
+            "dim_q_at_q0": 594.2187661369069,
+            "signed_content": -18,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.00022734788359788359,
+            "q_deformed_weight": 0.0002404027561637846
+          },
+          {
+            "partition": [
+              4,
+              2,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "height": 8,
+            "depth": 7,
+            "dim_classical": 945,
+            "dim_q_at_q0": 1747.3280692017365,
+            "signed_content": -22,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.001864346590909091,
+            "q_deformed_weight": 0.0020787182216579644
+          },
+          {
+            "partition": [
+              3,
+              3,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "height": 8,
+            "depth": 7,
+            "dim_classical": 616,
+            "dim_q_at_q0": 1154.1093030648299,
+            "signed_content": -24,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.0007921810699588477,
+            "q_deformed_weight": 0.0009068607376704439
+          },
+          {
+            "partition": [
+              3,
+              2,
+              2,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "height": 8,
+            "depth": 7,
+            "dim_classical": 891,
+            "dim_q_at_q0": 1668.153559785354,
+            "signed_content": -26,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.0016573660714285714,
+            "q_deformed_weight": 0.0018946053928511576
+          },
+          {
+            "partition": [
+              2,
+              2,
+              2,
+              2,
+              1,
+              1,
+              1,
+              1
+            ],
+            "height": 8,
+            "depth": 7,
+            "dim_classical": 275,
+            "dim_q_at_q0": 514.0442567205241,
+            "signed_content": -30,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.0001578804747207525,
+            "q_deformed_weight": 0.0001799068661482768
+          }
+        ],
+        "8": [
+          {
+            "partition": [
+              4,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "height": 9,
+            "depth": 8,
+            "dim_classical": 165,
+            "dim_q_at_q0": 272.9862555992672,
+            "signed_content": -30,
+            "is_chirality_cell": false,
+            "plancherel_weight": 5.6836970899470896e-05,
+            "q_deformed_weight": 5.0737408274511515e-05
+          },
+          {
+            "partition": [
+              3,
+              2,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "height": 9,
+            "depth": 8,
+            "dim_classical": 320,
+            "dim_q_at_q0": 537.0529310277485,
+            "signed_content": -33,
+            "is_chirality_cell": false,
+            "plancherel_weight": 0.00021377799155576933,
+            "q_deformed_weight": 0.00019637260361815776
+          },
+          {
+            "partition": [
+              2,
+              2,
+              2,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "height": 9,
+            "depth": 8,
+            "dim_classical": 154,
+            "dim_q_at_q0": 259.4316117981267,
+            "signed_content": -36,
+            "is_chirality_cell": false,
+            "plancherel_weight": 4.951131687242798e-05,
+            "q_deformed_weight": 4.582394802522535e-05
+          }
+        ],
+        "9": [
+          {
+            "partition": [
+              3,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "height": 10,
+            "depth": 9,
+            "dim_classical": 55,
+            "dim_q_at_q0": 80.17450941638268,
+            "signed_content": -42,
+            "is_chirality_cell": false,
+            "plancherel_weight": 6.3152189888301e-06,
+            "q_deformed_weight": 4.376423469579857e-06
+          },
+          {
+            "partition": [
+              2,
+              2,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "height": 10,
+            "depth": 9,
+            "dim_classical": 54,
+            "dim_q_at_q0": 79.17450941638269,
+            "signed_content": -44,
+            "is_chirality_cell": false,
+            "plancherel_weight": 6.087662337662338e-06,
+            "q_deformed_weight": 4.267931870669848e-06
+          }
+        ],
+        "10": [
+          {
+            "partition": [
+              2,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "height": 11,
+            "depth": 10,
+            "dim_classical": 11,
+            "dim_q_at_q0": 13.55464380114047,
+            "signed_content": -54,
+            "is_chirality_cell": false,
+            "plancherel_weight": 2.52608759553204e-07,
+            "q_deformed_weight": 1.2509009856430418e-07
+          }
+        ],
+        "11": [
+          {
+            "partition": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "height": 12,
+            "depth": 11,
+            "dim_classical": 1,
+            "dim_q_at_q0": 1.0,
+            "signed_content": -66,
+            "is_chirality_cell": false,
+            "plancherel_weight": 2.08767569878681e-09,
+            "q_deformed_weight": 6.808425913426603e-10
+          }
+        ]
+      },
+      "weight_sum_check": 1.0,
+      "strata_weight_sums": {
+        "0": 2.08767569878681e-09,
+        "1": 0.00043425950978034315,
+        "2": 0.05132486613823419,
+        "3": 0.32007408534752274,
+        "4": 0.40171677714646464,
+        "5": 0.18187054698773447,
+        "6": 0.03954755683488322,
+        "7": 0.004699122090615146,
+        "8": 0.00032012627932766826,
+        "9": 1.2402881326492438e-05,
+        "10": 2.52608759553204e-07,
+        "11": 2.08767569878681e-09
+      }
+    }
+  }
+}

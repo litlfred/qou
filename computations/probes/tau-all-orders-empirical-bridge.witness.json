@@ -1,0 +1,60 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-06-04T14:48:32.879851+00:00",
+  "commitSha": "a0bdb1910041172333a48e84c3580926b8e17f5e",
+  "assertions": [
+    {
+      "name": "alpha_is_degree_4_in_h",
+      "computed": 0.0,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-09,
+      "unit": "|α₆|+|α₈| (must be 0: algebraic side is degree-4 in h)",
+      "source": "alg multiplicative integral over 6 Q₈ crossings; order-6 full product is traceless ⇒ α₆=0"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 20,
+  "computation": "tau-all-orders-empirical-bridge",
+  "scriptFile": "tau_all_orders_h6_empirical.py",
+  "scriptHash": "e53823f2e638",
+  "scriptCommitSha": "a0bdb1910041172333a48e84c3580926b8e17f5e",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.5",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "clarabel": "0.11.1"
+  },
+  "description": "Empirical h⁶ test for conj:tau-all-orders-bridge. Computes the algebraic (Q₈ crossed-module) coefficients α_{2k} and the Markov-trace (Borromean Jones, skein h = q − q⁻¹) coefficients κ_{2k} for k=1..4. FINDING (negative/methodological): (i) α is DEGREE-4 in h (α₆=α₈=0 despite 6 crossings; the order-6 full product is traceless) while κ is infinite — a 2-vs-∞ structural asymmetry; (ii) at fixed q₀ both are constant sequences so a non-diagonal lower-triangular fit trivially solves the under-determined system, making the dichotomy's hypothesis (1) trivially true at the NUMBER level. The naive empirical fit is NON-DISCRIMINATING; the genuine open content needs a categorical naturality / banded-kernel constraint on T. Refines (does not resolve) conj:tau-all-orders-bridge.",
+  "contentBlock": "conj:tau-all-orders-bridge",
+  "parameters": {
+    "alpha_h2": "-12.0",
+    "kappa_h2": "0.1875",
+    "kappa_over_alpha_h2": "-0.015625",
+    "alpha_over_kappa_h2": "-64.0",
+    "alpha_h4": "-6.0",
+    "kappa_h4": "-0.7578125",
+    "kappa_over_alpha_h4": "0.126302083333",
+    "alpha_over_kappa_h4": "7.9175257732",
+    "alpha_h6": "0.0",
+    "kappa_h6": "-0.202392578125",
+    "kappa_over_alpha_h6": "+inf",
+    "alpha_over_kappa_h6": "0.0",
+    "alpha_h8": "0.0",
+    "kappa_h8": "0.00967407226563",
+    "kappa_over_alpha_h8": "+inf",
+    "alpha_over_kappa_h8": "0.0",
+    "alpha_degree4": "True",
+    "diagonal_fit_exists": "False",
+    "any_lower_tri_fit_exists": "True"
+  }
+}

@@ -1,0 +1,158 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-09T00:56:11.142663+00:00",
+  "commitSha": "5af5cc13345ad32d0738d36aece6a43d0e5b1179",
+  "assertions": [
+    {
+      "name": "ab-initio covalent valence (cap=10-Z) -> active-set (O2,N2,CO) = (2,3,2)",
+      "computed": [
+        2,
+        3,
+        2
+      ],
+      "expected": [
+        2,
+        3,
+        2
+      ],
+      "passed": true,
+      "source": "octet cap=10-Z; O2/N2 exact; CO observed 3 = 2 covalent + 1 dative"
+    },
+    {
+      "name": "bond-selection LP strong duality (gap ~ 0)",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "HiGHS box LP, y_k = max(m_k,0) at optimum"
+    },
+    {
+      "name": "interleaved single-chain topology under-binds pi pairs (active-set < 3)",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "only m_1 > 0; m_2, m_3 < 0 — single-chain topology falsified"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 25,
+  "computation": "co-bond-order-active-set",
+  "scriptFile": "co_bond_order_active_set.py",
+  "scriptHash": "2c07eecb1738",
+  "scriptCommitSha": "5af5cc13345ad32d0738d36aece6a43d0e5b1179",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "clarabel": "0.11.1"
+  },
+  "description": "CO bond order from the bond-selection LP active set. Computes per-shared-pair marginal binding via the reduced (2k+2)-strand covalent channel, solves max sum_k k*y_k s.t. 0<=y_k<=max(m_k,0), and reports |active_set| as the predicted bond order. Probe of the 'SDP active-set = bond order' hypothesis. Zero fitted parameters.",
+  "contentBlock": "prop:co-lp-dual-binding",
+  "parameters": {
+    "q": 1.1099785827513808,
+    "TWO_Q": 2.0108968667071223,
+    "E_MOL_eV": 6.729338575040661,
+    "dress": 5
+  },
+  "data": {
+    "binding_per_k": [
+      0.0,
+      0.6870120913354443,
+      -1.0464300231287709,
+      -2.8316389106257405,
+      -4.901876495821373
+    ],
+    "marginals_phi1": [
+      0.6870120913354443,
+      -1.7334421144642151,
+      -1.7852088874969696,
+      -2.0702375851956325
+    ],
+    "marginals_eV": [
+      4.623136967742963,
+      -11.664918888464092,
+      -12.01327503113878,
+      -13.931329641555996
+    ],
+    "sigma_channel_eV": 4.623136967742963,
+    "observed_D0_CO_eV": 11.09,
+    "y_star": [
+      0.6870120913354443,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "y0_star": 0.0,
+    "active_set": [
+      0
+    ],
+    "primal_obj": 0.6870120913354443,
+    "dual_obj": 0.6870120913354443,
+    "duality_gap": 0.0,
+    "single_chain_active_set": 1,
+    "observed_bond_order": 3,
+    "orthogonal_channel_model": {
+      "single_channel_eV": 4.623136967742963,
+      "N_spatial_dim": 3,
+      "valence_rule": "bonding_capacity = 10 - Z (octet, 2nd row); no input",
+      "diatomics": {
+        "O2": {
+          "Z": [
+            8,
+            8
+          ],
+          "bonding_capacity": [
+            2,
+            2
+          ],
+          "covalent_valence_pairs": 2,
+          "cap": 2,
+          "active_set_size": 2,
+          "observed_bond_order": 2,
+          "covalent_matches_obs": true
+        },
+        "N2": {
+          "Z": [
+            7,
+            7
+          ],
+          "bonding_capacity": [
+            3,
+            3
+          ],
+          "covalent_valence_pairs": 3,
+          "cap": 3,
+          "active_set_size": 3,
+          "observed_bond_order": 3,
+          "covalent_matches_obs": true
+        },
+        "CO": {
+          "Z": [
+            6,
+            8
+          ],
+          "bonding_capacity": [
+            4,
+            2
+          ],
+          "covalent_valence_pairs": 2,
+          "cap": 2,
+          "active_set_size": 2,
+          "observed_bond_order": 3,
+          "covalent_matches_obs": false
+        }
+      },
+      "co_active_set": 2,
+      "caveat": "ab-initio octet valence: O2/N2 active-set = observed (2/3); CO covalent = 2, observed 3 includes 1 DATIVE bond (O->C, isoelectronic with N2) not yet derived. cap=3=dim(R^3) [non-circular]. Equal-channel energy overbinds pending lateral-pi reduction."
+    },
+    "finding": "Interleaved (2k+2)-chain gives active_set=1: only sigma binds; the pi pairs anti-bind (ee-repulsion accumulates in one chain). 'Bond order = active-set cardinality' holds for ORTHOGONAL orbital channels (sigma _|_ pi_x _|_ pi_y), each an independent ~H2-like channel — NOT a single growing chain. co-lp-dual-binding.md's one-chain decreasing-marginal mechanism needs correction (WS-F/WS-B follow-up)."
+  }
+}

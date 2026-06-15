@@ -1,0 +1,69 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-06-12T19:24:45.383804+00:00",
+  "commitSha": "7af29f260fb7d9cf51ad3e2e229abbcd73bb5f09",
+  "assertions": [
+    {
+      "name": "vol_4_1_in_cao_meyerhoff_window",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "source": "hyperbolic_volumes"
+    },
+    {
+      "name": "vol_4_1_matches_5dps_literature",
+      "computed": "2.0299",
+      "expected": "2.0299",
+      "passed": true,
+      "source": "hyperbolic_volumes"
+    },
+    {
+      "name": "vol_5_2_above_vol_4_1",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "source": "hyperbolic_volumes"
+    },
+    {
+      "name": "gap_lower_bound_below_computed_gap",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "source": "hyperbolic_volumes"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 14,
+  "computation": "hyperbolic-volumes",
+  "scriptFile": "hyperbolic_volumes.py",
+  "scriptHash": "eb4cef12dbe2",
+  "scriptCommitSha": "91ec507378a633aa41664fb1ba12f71fec15e6fb",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Hyperbolic volumes used by the MostowRigidity class instances in the encounter chapter.  Vol(4_1) computed via the Clausen-function identity at 50 decimal digits (Vol(4_1) = 2 · Cl_2(pi/3)); Vol(5_2) at 50 dps from SnapPy ManifoldHP 3.3.2 (replaces the 15-dps AHW-1991 anchor whose digits 13-15 were a transcription error).  Source of truth for the Lean literals MostowRigidity.figureEight.volume / .mostow_gap and MostowRigidity.knot5_2.volume via the :leanval[vol_4_1], :leanval[vol_5_2], :leanval[mostow_gap_4_1] tags.",
+  "contentBlock": "prop:mostow-confinement",
+  "parameters": {
+    "dps": 50,
+    "guard_digits": 10
+  },
+  "data": {
+    "vol_4_1_decimal_50": "2.0298832128193072500424051085490405718833786150606",
+    "vol_4_1_decimal_15": "2.02988321281931",
+    "vol_5_2_decimal_50": "2.8281220883307831627638988092766349427709813173006",
+    "vol_5_2_decimal_15": "2.82812208833078",
+    "vol_5_2_source": "SnapPy ManifoldHP 3.3.2 (in-sandbox 2026-06-12); Adams-Hildebrand-Weeks 1991; cross-check: snappy-census-volume-verification witness",
+    "gap_5_2_minus_4_1_15": "0.798238875511476",
+    "gap_lower_bound": "0.5",
+    "gap_note": "gap_lower_bound is a conservative under-approximation of Vol(5_2) - Vol(4_1); see gap_5_2_minus_4_1_15 for the computed value at 15 dps.  Both volumes are now 50-dps (Clausen identity / SnapPy ManifoldHP)."
+  }
+}

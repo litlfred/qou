@@ -1,0 +1,252 @@
+{
+  "engine": "numpy",
+  "engineVersion": "numpy 2.4.4",
+  "computedAt": "2026-05-09T02:49:17.042217+00:00",
+  "commitSha": "2b2345de4f0f914e84ac0b8827d3b28e66700d08",
+  "assertions": [
+    {
+      "name": "type_b_fold_denominator_nonzero",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.0,
+      "source": "non-degenerate folded denominator"
+    },
+    {
+      "name": "amphicheiral_4_1_full_average_small",
+      "computed": 0.1660677628172449,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "4_1 amphichirality (full average channel)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 7,
+  "computation": "chirality-braid-average",
+  "scriptFile": "chirality_braid_average.py",
+  "scriptHash": "4d09353cee40",
+  "scriptCommitSha": "2b2345de4f0f914e84ac0b8827d3b28e66700d08",
+  "description": "v3 #3 chirality ⟨c⟩_β concrete computation: Wedderburn-weighted character average on canonical T_w for the four hyperbolic 3-braid knots already on main (4_1, 6_2, 8_11, L6a4). Both the full sum and the Type-B folded version (self-conjugate partitions dropped — they cancel under Demazure imbalance) are emitted.",
+  "auditOnly": "docs/audits/2026-05-09-refocused-1ppb-workplan-v3.md",
+  "data": {
+    "narrative_block": "prop:chirality-braid-average",
+    "conditional_on": [
+      "conj:crystal-graph-realization",
+      "prop:type-b-folded-crystal-combinatorics"
+    ],
+    "q_0": 1.1099785955541805,
+    "h3_partitions": [
+      [
+        3
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        1,
+        1,
+        1
+      ]
+    ],
+    "self_conjugate_h3": [
+      [
+        2,
+        1
+      ]
+    ],
+    "knots": [
+      {
+        "knot": "4_1 (figure-eight)",
+        "n_strands": 3,
+        "word": [
+          1,
+          -2,
+          1,
+          -2
+        ],
+        "c_full": -0.1660677628172449,
+        "c_typeB_folded": 1.0000000000000007,
+        "denom_fold": 0.3267664546795165,
+        "denom_full": 1.6553132750035098,
+        "per_partition": [
+          {
+            "lambda": [
+              3
+            ],
+            "self_conjugate": false,
+            "chi_lambda": 1.0000000000000016,
+            "w_lambda": 0.16338322733975824,
+            "dim_q_lambda": 1.0
+          },
+          {
+            "lambda": [
+              2,
+              1
+            ],
+            "self_conjugate": true,
+            "chi_lambda": -0.9106773300269624,
+            "w_lambda": 0.6606737723483499,
+            "dim_q_lambda": 2.010896869118482
+          },
+          {
+            "lambda": [
+              1,
+              1,
+              1
+            ],
+            "self_conjugate": false,
+            "chi_lambda": 1.0,
+            "w_lambda": 0.16338322733975824,
+            "dim_q_lambda": 1.0
+          }
+        ]
+      },
+      {
+        "knot": "6_2 (deuteron)",
+        "n_strands": 3,
+        "word": [
+          -1,
+          2,
+          -1,
+          2,
+          2
+        ],
+        "c_full": 0.11517557670180398,
+        "c_typeB_folded": 0.10453016099494086,
+        "denom_fold": 0.3267664546795165,
+        "denom_full": 1.6553132750035098,
+        "per_partition": [
+          {
+            "lambda": [
+              3
+            ],
+            "self_conjugate": false,
+            "chi_lambda": 1.109978595554183,
+            "w_lambda": 0.16338322733975824,
+            "dim_q_lambda": 1.0
+          },
+          {
+            "lambda": [
+              2,
+              1
+            ],
+            "self_conjugate": true,
+            "chi_lambda": 0.23687138419166887,
+            "w_lambda": 0.6606737723483499,
+            "dim_q_lambda": 2.010896869118482
+          },
+          {
+            "lambda": [
+              1,
+              1,
+              1
+            ],
+            "self_conjugate": false,
+            "chi_lambda": -0.9009182735643012,
+            "w_lambda": 0.16338322733975824,
+            "dim_q_lambda": 1.0
+          }
+        ]
+      },
+      {
+        "knot": "8_11 (tritium)",
+        "n_strands": 3,
+        "word": [
+          -1,
+          2,
+          -1,
+          -1,
+          2,
+          2,
+          2
+        ],
+        "c_full": -0.1725789722694647,
+        "c_typeB_folded": 0.10453016099494113,
+        "denom_fold": 0.3267664546795165,
+        "denom_full": 1.6553132750035098,
+        "per_partition": [
+          {
+            "lambda": [
+              3
+            ],
+            "self_conjugate": false,
+            "chi_lambda": 1.1099785955541837,
+            "w_lambda": 0.16338322733975824,
+            "dim_q_lambda": 1.0
+          },
+          {
+            "lambda": [
+              2,
+              1
+            ],
+            "self_conjugate": true,
+            "chi_lambda": -0.48409552079338314,
+            "w_lambda": 0.6606737723483499,
+            "dim_q_lambda": 2.010896869118482
+          },
+          {
+            "lambda": [
+              1,
+              1,
+              1
+            ],
+            "self_conjugate": false,
+            "chi_lambda": -0.9009182735643014,
+            "w_lambda": 0.16338322733975824,
+            "dim_q_lambda": 1.0
+          }
+        ]
+      },
+      {
+        "knot": "L6a4 (Borromean)",
+        "n_strands": 3,
+        "word": [
+          1,
+          -2,
+          1,
+          -2,
+          1,
+          -2
+        ],
+        "c_full": 0.9933302303662964,
+        "c_typeB_folded": 1.000000000000001,
+        "denom_fold": 0.3267664546795165,
+        "denom_full": 1.6553132750035098,
+        "per_partition": [
+          {
+            "lambda": [
+              3
+            ],
+            "self_conjugate": false,
+            "chi_lambda": 1.0000000000000024,
+            "w_lambda": 0.16338322733975824,
+            "dim_q_lambda": 1.0
+          },
+          {
+            "lambda": [
+              2,
+              1
+            ],
+            "self_conjugate": true,
+            "chi_lambda": 1.9941858103812145,
+            "w_lambda": 0.6606737723483499,
+            "dim_q_lambda": 2.010896869118482
+          },
+          {
+            "lambda": [
+              1,
+              1,
+              1
+            ],
+            "self_conjugate": false,
+            "chi_lambda": 1.0,
+            "w_lambda": 0.16338322733975824,
+            "dim_q_lambda": 1.0
+          }
+        ]
+      }
+    ]
+  }
+}

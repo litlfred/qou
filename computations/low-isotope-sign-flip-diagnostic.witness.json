@@ -1,0 +1,156 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-24T14:40:45.555813+00:00",
+  "commitSha": "f4dd9f71013f512939bbb1df1c57a6ac0e017d5b",
+  "assertions": [
+    {
+      "name": "diagnostic_emitted_for_all_isotopes_with_predictions",
+      "computed": 5,
+      "expected": 5,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "rows",
+      "source": "low-isotope-mass-table.witness.json projection"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 10,
+  "computation": "low-isotope-sign-flip-diagnostic",
+  "scriptFile": "low_isotope_sign_flip_diagnostic.py",
+  "scriptHash": "ef1be5d263ca",
+  "scriptCommitSha": "4480eeca12ecd81902a9ad4863f614dec791af8a",
+  "precisionMetadata": {
+    "compute_dps": 50,
+    "output_dps": 40,
+    "guard_digits": 10,
+    "truncation_bound": "1e-40"
+  },
+  "description": "Per-isotope diagnostic correlating B_E (or mass) error against inter-nucleon channel counts (pp / pn / nn) and the signed h-weight sum.  Tests whether the +2.89 % residual is uniform (PR #1063 single-knot VolDensity refinement framing) or whether channel-assignment effects drive sign-flips across the low-isotope sequence.  KLR-positivity (observables ≥ 0) is checked separately; sign-flips in PREDICTION error are not a KLR violation per se (the underlying tr_M values remain positive) but they DO indicate weighting miscalibration.",
+  "parameters": {
+    "input_witness": "low-isotope-mass-table.witness.json",
+    "q_0_at_50dps": "1.1099785955541805752815940796095093779932822799587",
+    "h_q0": "0.20906032198987945",
+    "channel_d_coefficients": "pp:0, pn:-h/2, nn:-h (per isotope_record_schema.py CrossingType: SIGMA=(1,0), AVERAGED=(1,-h/2), SIGMA_INV=(1,-h))"
+  },
+  "data": {
+    "per_isotope": [
+      {
+        "Z": 1,
+        "N": 0,
+        "A": 1,
+        "atom_label": "p",
+        "err_pct": 2.8896082230968543,
+        "err_MeV": 27.112387414493924,
+        "prediction_type": "mass",
+        "channels_pp": 0,
+        "channels_pn": 0,
+        "channels_nn": 0,
+        "n_inter_total": 0,
+        "signed_h_weight": 0.0
+      },
+      {
+        "Z": 0,
+        "N": 1,
+        "A": 1,
+        "atom_label": "n",
+        "err_pct": 2.8895649549085816,
+        "err_MeV": 27.14935311978536,
+        "prediction_type": "mass",
+        "channels_pp": 0,
+        "channels_pn": 0,
+        "channels_nn": 0,
+        "n_inter_total": 0,
+        "signed_h_weight": 0.0
+      },
+      {
+        "Z": 1,
+        "N": 1,
+        "A": 2,
+        "atom_label": "²H",
+        "err_pct": 1.090320811524007,
+        "err_MeV": 0.02425490486473425,
+        "prediction_type": "binding_energy",
+        "channels_pp": 0,
+        "channels_pn": 1,
+        "channels_nn": 0,
+        "n_inter_total": 1,
+        "signed_h_weight": -0.10453016099493972
+      },
+      {
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "atom_label": "³H",
+        "err_pct": -0.15562635422465407,
+        "err_MeV": -0.013199913466978686,
+        "prediction_type": "binding_energy",
+        "channels_pp": 0,
+        "channels_pn": 1,
+        "channels_nn": 1,
+        "n_inter_total": 2,
+        "signed_h_weight": -0.3135904829848192
+      },
+      {
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "atom_label": "³He",
+        "err_pct": -2.968673485835554,
+        "err_MeV": -0.22912349022904,
+        "prediction_type": "binding_energy",
+        "channels_pp": 1,
+        "channels_pn": 1,
+        "channels_nn": 0,
+        "n_inter_total": 2,
+        "signed_h_weight": -0.10453016099493972
+      }
+    ],
+    "linear_fit_err_pct_vs_n_inter": {
+      "slope": -2.225868254516411,
+      "intercept_pct": 2.974907084410258,
+      "R_squared": 0.8285041713207202
+    },
+    "linear_fit_err_pct_vs_signed_h_weight": {
+      "slope": 9.710795156289198,
+      "intercept_pct": 1.764109810969638,
+      "R_squared": 0.25845198487665916
+    },
+    "klr_positivity_check": {
+      "trace_level_violations": [],
+      "prediction_error_sign_flips": [
+        {
+          "atom": "p",
+          "err_pct": 2.8896082230968543,
+          "interpretation": "OVER-prediction (err > 0) → extra positive contributions OR under-weighted negative channels"
+        },
+        {
+          "atom": "n",
+          "err_pct": 2.8895649549085816,
+          "interpretation": "OVER-prediction (err > 0) → extra positive contributions OR under-weighted negative channels"
+        },
+        {
+          "atom": "²H",
+          "err_pct": 1.090320811524007,
+          "interpretation": "OVER-prediction (err > 0) → extra positive contributions OR under-weighted negative channels"
+        },
+        {
+          "atom": "³H",
+          "err_pct": -0.15562635422465407,
+          "interpretation": "UNDER-prediction (err < 0) → missing positive contributions OR over-weighted negative channels"
+        },
+        {
+          "atom": "³He",
+          "err_pct": -2.968673485835554,
+          "interpretation": "UNDER-prediction (err < 0) → missing positive contributions OR over-weighted negative channels"
+        }
+      ],
+      "n_under_predictions": 2,
+      "n_over_predictions": 3
+    },
+    "verdict": "STRONG correlation between err_pct and inter-nucleon channel counts/weights — the per-isotope error is dominated by the channel-assignment layer, NOT by a single-knot VolDensity(𝓑₃) refinement.  This FALSIFIES the PR #1063 framing for the low-isotope cluster.  R&D should redirect to the categorical backing of the pp/pn/nn channel assignment (no `prop:` block currently formalises the rule)."
+  },
+  "caveats": [
+    "This diagnostic is purely empirical/statistical — it correlates observed prediction error against structural channel counts to surface miscalibration patterns.  It does NOT introduce any new calibration or fit.  A high R² indicates WHERE the miscalibration lives (channel weights vs VolDensity refinement); the FIX must still come from a categorical derivation, not from this regression."
+  ]
+}

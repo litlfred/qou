@@ -1,0 +1,36 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-09T16:24:13.175692+00:00",
+  "commitSha": "e84c52a0a91f571f4f3187b5649fdbe493a0ea77",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 5,
+  "computation": "molecular-experimental-refs",
+  "scriptFile": "molecular_experimental_refs.py",
+  "scriptHash": "24c45543b3c4",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "mpmath": "1.4.1"
+  },
+  "description": "Experimental molecular comparison references (bond dissociation energies, benzene bond lengths, benzene resonance energy) — the single source of truth for the :val-pinned literals in the molecular-construction .md blocks. All values are experimental (NIST / standard), NOT derived from q₀. De-hardcodes the inline literals flagged in organic-chem-redo WS-B (B1).",
+  "data": {
+    "d0_co_ev": 11.09,
+    "d0_co2_double_ev": 8.28,
+    "d0_h2_ev": 4.478,
+    "d0_cc_ev": 3.6,
+    "bond_len_benzene_ang": 1.4,
+    "bond_len_cc_single_ang": 1.54,
+    "bond_len_cc_double_ang": 1.34,
+    "benzene_resonance_kcal": 36.0,
+    "provenance": "All experimental (NIST Chemistry WebBook / standard organic-chemistry references); comparison targets only, not derivation inputs. Pulled from folio-assistant/computations/substrate/experimental_constants.py."
+  }
+}

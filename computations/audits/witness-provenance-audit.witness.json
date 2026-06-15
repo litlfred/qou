@@ -1,0 +1,180 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-02T03:16:44.535921+00:00",
+  "commitSha": "fea548307a3b11f838f60c7c87919c85f074075a",
+  "assertions": [
+    {
+      "name": "no_missing_provenance",
+      "computed": 0,
+      "expected": 0,
+      "passed": true,
+      "tolerance": 0,
+      "source": "every witness must declare engine/scriptFile/commitSha"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 11,
+  "computation": "witness-provenance-audit",
+  "scriptFile": "witness_provenance_audit.py",
+  "scriptHash": "f3d73c3709af",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "I14 audit per repo-owner directive 2026-05-19: every witness JSON must declare engine, scriptFile, commitSha (WitnessBuilder convention) so it can be reproduced and traced. Witnesses ending in -audit/-scan/-compliance are exempt by glob (state-tracking outputs). Files listed under methodology-deprecation's removed_legacy_compute_artifacts.removed_witnesses are skipped (deleted by design).",
+  "parameters": {
+    "required_fields": [
+      "engine",
+      "scriptFile",
+      "commitSha"
+    ],
+    "audit_suffixes": [
+      "-audit.witness.json",
+      "-scan.witness.json",
+      "-compliance.witness.json"
+    ],
+    "legacy_removed_count": 0
+  },
+  "data": {
+    "counts": {
+      "total_scanned": 29,
+      "prov_ok": 0,
+      "prov_audit_exempt": 29,
+      "prov_missing": 0,
+      "prov_parse_error": 0,
+      "completeness_ratio": 1.0
+    },
+    "by_verdict": {
+      "PROV_OK": [],
+      "PROV_MISSING": [],
+      "PROV_AUDIT_EXEMPT": [
+        {
+          "witness": "braid-encoding-audit.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "brundan-kleshchev-audit.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "canonical-a-k-magnitude-audit.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "canonical-script-input-audit.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "content-block-label-audit.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "delta-n2-placeholder-audit.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "deuteron-delta-i-audit.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "e0-calibration-audit.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "fitted-labelled-canonical-audit.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "float64-leak-audit.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "vol-density-compute-vs-paper-audit.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "guarded-off-audit.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "hardcoded-literal-audit.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "i1-no-probe-audit.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "i2-probe-only-audit.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "incomplete-coverage-audit.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "lean-ref-resolution-audit.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "legacy-formula-audit.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "m-k-m-pi-closure-pattern-audit.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "option-e-v9-one-plus-q-structural-audit.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "proton-identity-extension-audit.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "proton-m_e-anomaly-audit.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "qbeta-multiblock-order-audit.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "rho-k-proton-substrate-audit.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "stale-probe-audit.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "term5-aK-audit.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "validation-as-input-audit.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "weight-factor-audit.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "witness-provenance-audit.witness.json",
+          "missing_fields": []
+        }
+      ],
+      "PROV_PARSE_ERROR": []
+    }
+  }
+}

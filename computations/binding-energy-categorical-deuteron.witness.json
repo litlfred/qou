@@ -1,0 +1,45 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-29T22:42:21.253362+00:00",
+  "commitSha": "5f5e7107d54440ae8bd5d2de9571831ac92a3508",
+  "assertions": [
+    {
+      "name": "bare_perlambda_undershoots_deuteron",
+      "computed": -82.9,
+      "expected": -82.9,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "Bare per-λ B(D) = m_e·|sum| misses AME by -82.9%; C_knot = 5.852 is the FITTED deficit ratio, not a derived layer. Δ_λ gate remains open."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 15,
+  "computation": "binding-energy-categorical-deuteron",
+  "scriptFile": "binding_energy_categorical_deuteron.py",
+  "scriptHash": "22e6dc3e4030",
+  "scriptCommitSha": "896dc50806c859a055550305fd3f56235cd0cd9c",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
+  "data": {
+    "formula": "B(K) = m_e × |Σ_λ y_λ · χ^λ(β_K) · sgn(w_0) · f^λ|",
+    "sum_with_interface": "-0.7439",
+    "sum_without_interface": "1.6601",
+    "B_D_pred_MeV": "0.380132118905",
+    "B_D_AME_MeV": "2.22456600000",
+    "C_knot_deuteron": "5.85209",
+    "err_pct": "-82.9121",
+    "free_parameters": 0,
+    "status": "delta_lambda_gate_open",
+    "note": "RETRACTED (2026-05-29): the per-λ formula does NOT close the deuteron. Bare B(D) = m_e·|sum| undershoots AME by -82.9%. C_knot = B_AME/(m_e·|sum|) = 5.852 is a FITTED deficit ratio, not a derived geometric layer; the χ^λ here is already interface-inclusive (include_inter=True) and still misses by -83%. The Δ_λ gate remains open. See docs/audits/2026-05-18-delta-lambda-gating-context.md (CORRECTION 2026-05-29).",
+    "lean_proofs": {
+      "sgn_formula": "commit 25cb9f38 — (-1)^{n(λ)} = sgn(w_0^{S_{λ'}}), 2712 partitions verified",
+      "dim_formula": "commit 60be505b — dim(V_λ) = regular-rep multiplicity (Burnside)",
+      "bar_pair_orbit": "commit 0166a17a — factor 2 = |Orb_bar(triv)| (bar-pair orbit size)"
+    }
+  }
+}

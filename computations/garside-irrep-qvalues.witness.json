@@ -1,0 +1,233 @@
+{
+  "computedAt": "2026-04-12T09:15:16.900639+00:00",
+  "auditOnly": "docs/audits/categorical-vs-fitted-q-decay-ba.md",
+  "parameters": {
+    "q": 1.1099785955541805,
+    "h": 0.20906032198987945,
+    "z": 0.4993203340335982,
+    "m_e_MeV": 0.51099895
+  },
+  "title": "Per-irrep Garside Q-values (quark level, 2-row)",
+  "decays": [
+    {
+      "name": "n→p",
+      "A": 1,
+      "n_quarks": 3,
+      "Z_par": 0,
+      "N_par": 1,
+      "Z_dau": 1,
+      "N_dau": 0,
+      "Q_exp": 0.7823334100000222,
+      "sum_weighted_dtr": 0.10643375183998782,
+      "sum_dtr": 0.31815910101293465,
+      "sum_abs_weighted_dtr": 0.10643375183998782,
+      "weight_coverage": 1,
+      "irreps": [
+        {
+          "partition": [
+            3
+          ],
+          "dim": 1,
+          "tr_par": 0.9107622062323656,
+          "tr_dau": 1.1221068372363028,
+          "skipped": false
+        },
+        {
+          "partition": [
+            2,
+            1
+          ],
+          "dim": 2,
+          "tr_par": -0.4226892620078743,
+          "tr_dau": -0.31587479199887686,
+          "skipped": false
+        }
+      ]
+    },
+    {
+      "name": "³H→³He",
+      "A": 3,
+      "n_quarks": 9,
+      "Z_par": 1,
+      "N_par": 2,
+      "Z_dau": 2,
+      "N_dau": 1,
+      "Q_exp": 0.01861,
+      "sum_weighted_dtr": 0.008720129904319255,
+      "sum_dtr": 3.6403492907938593,
+      "sum_abs_weighted_dtr": 0.008720129904319255,
+      "weight_coverage": 1,
+      "irreps": [
+        {
+          "partition": [
+            9
+          ],
+          "dim": 1,
+          "tr_par": 0.7344083890463615,
+          "tr_dau": 1.6922107972424738,
+          "skipped": false
+        },
+        {
+          "partition": [
+            8,
+            1
+          ],
+          "dim": 8,
+          "tr_par": -0.9118679739783934,
+          "tr_dau": -0.8491598372275122,
+          "skipped": false
+        },
+        {
+          "partition": [
+            7,
+            2
+          ],
+          "dim": 27,
+          "tr_par": 3.277965455954771,
+          "tr_dau": 5.065984029161773,
+          "skipped": false
+        },
+        {
+          "partition": [
+            6,
+            3
+          ],
+          "dim": 48,
+          "tr_par": -2.4356208099715593,
+          "tr_dau": -1.716003602352124,
+          "skipped": false
+        },
+        {
+          "partition": [
+            5,
+            4
+          ],
+          "dim": 42,
+          "tr_par": 3.111800799886392,
+          "tr_dau": 3.2240037649068203,
+          "skipped": false
+        }
+      ]
+    },
+    {
+      "name": "⁶He→⁶Li",
+      "A": 6,
+      "n_quarks": 18,
+      "Z_par": 2,
+      "N_par": 4,
+      "Z_dau": 3,
+      "N_dau": 3,
+      "Q_exp": 3.508,
+      "sum_weighted_dtr": 9.02079542785348e-11,
+      "sum_dtr": 26.119044237188202,
+      "sum_abs_weighted_dtr": 9.083737743993915e-11,
+      "weight_coverage": 3.8763609397647214e-05,
+      "irreps": [
+        {
+          "partition": [
+            18
+          ],
+          "dim": 1,
+          "tr_par": 0.2620812263991248,
+          "tr_dau": 1.552901766596129,
+          "skipped": false
+        },
+        {
+          "partition": [
+            17,
+            1
+          ],
+          "dim": 17,
+          "tr_par": -1.5217642827038969,
+          "tr_dau": -8.493740577429586,
+          "skipped": false
+        },
+        {
+          "partition": [
+            16,
+            2
+          ],
+          "dim": 135,
+          "tr_par": 8.034425930995548,
+          "tr_dau": 39.83462592271243,
+          "skipped": false
+        },
+        {
+          "partition": [
+            15,
+            3
+          ],
+          "dim": 663,
+          "tr_par": null,
+          "tr_dau": null,
+          "skipped": true
+        },
+        {
+          "partition": [
+            14,
+            4
+          ],
+          "dim": 2244,
+          "tr_par": null,
+          "tr_dau": null,
+          "skipped": true
+        },
+        {
+          "partition": [
+            13,
+            5
+          ],
+          "dim": 5508,
+          "tr_par": null,
+          "tr_dau": null,
+          "skipped": true
+        },
+        {
+          "partition": [
+            12,
+            6
+          ],
+          "dim": 9996,
+          "tr_par": null,
+          "tr_dau": null,
+          "skipped": true
+        },
+        {
+          "partition": [
+            11,
+            7
+          ],
+          "dim": 13260,
+          "tr_par": null,
+          "tr_dau": null,
+          "skipped": true
+        },
+        {
+          "partition": [
+            10,
+            8
+          ],
+          "dim": 11934,
+          "tr_par": null,
+          "tr_dau": null,
+          "skipped": true
+        },
+        {
+          "partition": [
+            9,
+            9
+          ],
+          "dim": 4862,
+          "tr_par": null,
+          "tr_dau": null,
+          "skipped": true
+        }
+      ]
+    }
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0,
+  "engine": "python",
+  "scriptFile": "garside-irrep-qvalues.py",
+  "commitSha": "06e88b6885fd78860cf1e0d1d01de2a96f5b0811"
+}

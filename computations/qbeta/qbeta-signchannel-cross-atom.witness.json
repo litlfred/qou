@@ -1,0 +1,46 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-02T02:16:23.253359+00:00",
+  "commitSha": "f6b575cb432ea84dc22d9a39e1c314ea460cf5c5",
+  "assertions": [
+    {
+      "name": "cross_atom_scan_completed",
+      "computed": 11,
+      "expected": 11,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Scanned 11 atoms (A=2 to A=12) at 50 dps."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 14,
+  "computation": "qbeta-signchannel-cross-atom",
+  "scriptFile": "qbeta_signchannel_cross_atom_probe.py",
+  "scriptHash": "98fa0cd8176b",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "Item II of PR #1680: tests cross-atom scaling of the PR #1654 sign-channel × dim H_n pattern against sibling Φ_8 multiplicity A-1 scaling. Coordination probe — discriminates whether they're competing or complementary framework attacks.",
+  "parameters": {
+    "q_50dps": "1.1099785827513808075916690956107688798744991218736",
+    "mp_dps_runtime": "50"
+  },
+  "data": {
+    "atoms_tested": "[(2, 6, '720.0'), (3, 9, '362880.0'), (4, 12, '479001600.0'), (5, 15, '1.307674368e+12'), (6, 18, '6.40237370573e+15'), (7, 21, '5.10909421717e+19'), (8, 24, '6.20448401733e+23'), (9, 27, '1.08888694504e+28'), (10, 30, '2.65252859812e+32'), (11, 33, '8.68331761881e+36'), (12, 36, '3.7199332679e+41')]",
+    "verdict": "STRUCTURAL DISCRIMINATION CLEAR: dim H_(3A) and A-1 are vastly DIFFERENT scalings (factorial vs linear). They are NOT competing for the same Q_β phenomenon — the dim H_n × σ_1(sign) form is a PR #1654 result specific to the H_2 Hopf-link Jones evaluation (not generalizable to mass-table sweep), while the sibling Φ_8 multiplicity A-1 scaling is a different categorical mechanism (per-atom Habiro coefficient at higher A). \n\nCoordination finding: the sign-channel × dim H_n pattern from PR #1654 Item 3 is HOPF-LINK-SPECIFIC (a 2-strand observation) and does NOT compete with Habiro mass-table scaling. The campaigns address different observables — both legitimate, complementary.",
+    "framework_assessment": "complementary: dim H_n × σ_sign is H_2-Hopf-specific; Φ_8 A-1 is Habiro mass-table scaling"
+  }
+}

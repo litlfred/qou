@@ -1,0 +1,76 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-18T19:53:44.738280+00:00",
+  "commitSha": "8197914ddf2974fb11c2cfdd93804010ecbd5029",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 16,
+  "computation": "family-a-extended-variants",
+  "scriptFile": "probe_family_a_extended.py",
+  "scriptHash": "c2d4f7e90ddb",
+  "scriptCommitSha": "9d0f6cfd499823887ba88cea6116c66d8a283630",
+  "description": "Extended Family A variants. V7 = Σ dim_q V_λ / [4]_q gives 5/2 - (13/16)h² + O(h^4) — within 11% of empirical -G and matches CODATA factor to 0.144% (20× better than V1).",
+  "contentBlock": "prop:flavor-dressed-mass-from-substrate-split",
+  "data": {
+    "target": 2.4616482108893916,
+    "variants": [
+      {
+        "name": "V7:  Σ dim_q / [4]_q",
+        "leading": "5/2",
+        "h2_coeff": "-13/16",
+        "at_q0": 2.4651828488834235,
+        "rel_pct": 0.14358826652793386
+      },
+      {
+        "name": "V9:  Σ dim_q / [3]_q",
+        "leading": "10/3",
+        "h2_coeff": "-1/9",
+        "at_q0": 3.3285468203239925,
+        "rel_pct": 35.216185870904404
+      },
+      {
+        "name": "V10: Σ dim_q / [2]_q²",
+        "leading": "5/2",
+        "h2_coeff": "1/8",
+        "at_q0": 2.5054042276901156,
+        "rel_pct": 1.7775089310960088
+      },
+      {
+        "name": "V11: Σ dim_q · q/[4]_q²",
+        "leading": "5/8",
+        "h2_coeff": "-19/32",
+        "at_q0": 0.6658179164063021,
+        "rel_pct": -72.95235308355686
+      },
+      {
+        "name": "V12: Σ dim_q² / Σ dim_q",
+        "leading": "12/5",
+        "h2_coeff": "22/25",
+        "at_q0": 2.4385293504369114,
+        "rel_pct": -0.9391618327188718
+      },
+      {
+        "name": "V13: Σ dim_q² / [4]_q!",
+        "leading": "1",
+        "h2_coeff": "-5/12",
+        "at_q0": 0.9821653199599174,
+        "rel_pct": -60.10131278648212
+      },
+      {
+        "name": "V14: Σ dim_q · q^c / 4",
+        "leading": "5/2",
+        "h2_coeff": "3/2",
+        "at_q0": 2.566036885723771,
+        "rel_pct": 4.240600845100612
+      },
+      {
+        "name": "V14b: Σ w_λ · dim_q / (32/5)",
+        "leading": "5/2",
+        "h2_coeff": "25/32",
+        "at_q0": 2.534145482992588,
+        "rel_pct": 2.9450703712454116
+      }
+    ]
+  }
+}

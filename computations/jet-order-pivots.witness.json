@@ -1,0 +1,53 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-06-08T09:58:24.127956+00:00",
+  "commitSha": "78ce3174ecd7aeeb498c1ac0a2ae6d56255449d1",
+  "assertions": [
+    {
+      "name": "jet_order_independence_base_case",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "h-jet expansion of canonical Markov traces tr_M(4_1/5_2/Borromean) about q=1 has non-singular 3x3 jet-Jacobian (det = 1/16) ⇒ jet-order independent at order 2"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 2365,
+  "computation": "jet-order-pivots",
+  "scriptFile": "jet_order_pivots.py",
+  "scriptHash": "380671554d5b",
+  "scriptCommitSha": "9ce80195f72c6a408815676ad07a8de5351746cc",
+  "contentBlock": "conj:three-knot-jet-order-independence",
+  "data": {
+    "knots": [
+      "4_1",
+      "5_2",
+      "Borromean"
+    ],
+    "jet_order": 2,
+    "jet_jacobian": {
+      "4_1": [
+        "1/4",
+        "-1",
+        "55/16"
+      ],
+      "5_2": [
+        "1/2",
+        "0",
+        "-1/16"
+      ],
+      "Borromean": [
+        "1",
+        "0",
+        "0"
+      ]
+    },
+    "elimination_det": "1/16",
+    "lu_pivots": [
+      "1/4",
+      "2",
+      "1/8"
+    ]
+  }
+}

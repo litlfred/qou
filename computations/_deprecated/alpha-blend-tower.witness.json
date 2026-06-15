@@ -1,0 +1,8 @@
+{
+  "computation": "alpha-blend-tower",
+  "description": "\u03b1-blend formula V\u0302_std = \u03b1\u00b7V\u0302_Frobenius_avg + (1-\u03b1)\u00b7\u221a|det| closes neutron tower to sub-ppm at \u03b1*=0.305807.  det is Frobenius-antipode-invariant (verified algebraically); the blend spans the 2-dim Frobenius-invariant subspace for 2\u00d72 std-channel.",
+  "computedAt": "2026-04-27T21:14:58.013647+00:00",
+  "q_0": 1.1099785955541805,
+  "alpha_optimal": 0.305807430741242,
+  "err_n_at_optimal_pct": -3.6299815395088624e-14
+}
