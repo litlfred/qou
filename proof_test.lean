@@ -1,16 +1,13 @@
-import Mathlib.Analysis.SpecialFunctions.Pow.Real
-import Mathlib.Tactic
+import Mathlib.Algebra.Field.Basic
+import Mathlib.Tactic.Ring
+import Mathlib.Tactic.LinearCombination
 
-noncomputable def bringZeroModeValue : ℝ := 2 / (3 * Real.pi)
+def IsOrderThreeTermRec {K : Type*} [Field K] (b a : ℕ → K) : Prop :=
+  ∀ n, a (n + 2) = b n * a (n + 1) - a n
 
-noncomputable def bringFundamentalTriangleArea : ℝ := Real.pi - (Real.pi / 2 + Real.pi / 4 + Real.pi / 5)
-
-noncomputable def bringSurfaceArea : ℝ := 240 * bringFundamentalTriangleArea
-
-noncomputable def bringGroupHomologyRatio : ℝ := (2 * 4) / bringSurfaceArea
-
-theorem bring_group_homology_ratio_exact : bringGroupHomologyRatio = bringZeroModeValue := by
-  unfold bringGroupHomologyRatio bringSurfaceArea bringFundamentalTriangleArea bringZeroModeValue
-  have hπ : Real.pi ≠ 0 := Real.pi_ne_zero
-  ring_nf
-  sorry
+theorem two_root_geometric {K : Type*} [Field K] (r s α β : K) (hrs : r * s = 1) :
+    IsOrderThreeTermRec (fun _ => r + s) (fun n => α * r ^ n + β * s ^ n) := by
+  intro n
+  dsimp
+  simp only [pow_succ']
+  linear_combination (-(α * r ^ n + β * s ^ n)) * hrs

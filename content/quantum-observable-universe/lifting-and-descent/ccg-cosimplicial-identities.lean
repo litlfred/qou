@@ -16,7 +16,7 @@ categorical identities (`δʲ ∘ δⁱ = δⁱ ∘ δʲ⁻¹` for `i < j`, etc.
 encoded structurally inside the CCG type and discharged by the same
 fields at the level abstraction.
 
-LaTeX label: `lem:ccg-cosimplicial-identities`
+LaTeX label: `def:ccg-cosimplicial-identities`
 
 ## References
 
@@ -40,7 +40,7 @@ namespace QOU.LiftingDescent
     immediately discharged from the structure. -/
 -- Ref: [yekutieli2010] §4, Theorem 4.2
 -- Ref: [manuscript] §3, Lemma: CCG cosimplicial identities
-theorem ccg_cosimplicial_identities
+def ccg_cosimplicial_identities
     {M : Type*} (ccg : CosimplicialCrossedGroupoid M) :
     (∀ (n : ℕ) (t : YekutieliTriple M),
       (ccg.coface (n + 1) (ccg.coface n t)).level =

@@ -1,7 +1,7 @@
 /-!
 # QOU.LiftingDescent.ccg_cosimplicial_identities — cosimplicial identities
 
-**Lemma** ([`lem:ccg-cosimplicial-identities`](../../../quantum-observable-universe/lifting-and-descent/ccg-cosimplicial-identities.md)).
+**Definition** ([`def:ccg-cosimplicial-identities`](../../../quantum-observable-universe/lifting-and-descent/ccg-cosimplicial-identities.md)).
 
 *The coface maps `δⁱ` (composites of jet prolongation with Čech face
 maps) and codegeneracy maps `σⁱ` (composites of descent with Čech
@@ -56,11 +56,11 @@ class CcgCosimplicialIdentitiesContext where
   cech_deg_comm : ∀ n i j y, i ≤ j →
     cech_deg n j (cech_deg (n + 1) i y) = cech_deg n i (cech_deg (n + 1) (j + 1) y)
 
-/-- **Cosimplicial identities** ([`lem:ccg-cosimplicial-identities`]).
+/-- **Cosimplicial identities** ([`def:ccg-cosimplicial-identities`]).
 
     Two main identities (face-face, degeneracy-degeneracy). -/
 -- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/ccg-cosimplicial-identities.md
-theorem ccg_cosimplicial_identities
+def ccg_cosimplicial_identities
     [ctx : CcgCosimplicialIdentitiesContext] (n i j : ℕ) (x : ctx.Obj n) (y : ctx.Obj (n + 2)) :
     -- Face-face: `δʲ ∘ δⁱ = δⁱ ∘ δ^{j−1}` for `i < j`.
     (i < j →

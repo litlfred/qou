@@ -88,13 +88,7 @@ is the recurrence half that the exponent derivation feeds. -/
 theorem two_root_geometric (r s α β : K) (hrs : r * s = 1) :
     IsOrderThreeTermRec (fun _ => r + s) (fun n => α * r ^ n + β * s ^ n) := by
   intro n
-  show α * r ^ (n + 2) + β * s ^ (n + 2)
-      = (r + s) * (α * r ^ (n + 1) + β * s ^ (n + 1)) - (α * r ^ n + β * s ^ n)
-  have hr2 : r ^ (n + 2) = r ^ n * r * r := by rw [pow_succ, pow_succ]
-  have hr1 : r ^ (n + 1) = r ^ n * r := by rw [pow_succ]
-  have hs2 : s ^ (n + 2) = s ^ n * s * s := by rw [pow_succ, pow_succ]
-  have hs1 : s ^ (n + 1) = s ^ n * s := by rw [pow_succ]
-  rw [hr2, hr1, hs2, hs1]
+  simp only [pow_succ']
   linear_combination (-(α * r ^ n + β * s ^ n)) * hrs
 
 /-- **Double-root / C-finite linear expansion.** The special case `r = s = 1`,
@@ -105,7 +99,6 @@ recurrence found in the extended alpha-cluster tower where `b_ν ≈ 2` and `ρ 
 theorem double_root_linear (α β : K) :
     IsOrderThreeTermRec (fun _ => 2) (fun n => α + β * (n : K)) := by
   intro n
-  show α + β * (n + 2 : K) = 2 * (α + β * (n + 1 : K)) - (α + β * (n : K))
   push_cast
   ring
 
