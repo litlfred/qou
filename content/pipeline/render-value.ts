@@ -330,9 +330,12 @@ export function renderValue(
     body = formatScalar(scalar, precision, fmt);
   }
 
-  // Units handling.
+  // Units handling. Escape a LaTeX-special `%` in the unit string: a bare
+  // `%` (e.g. units="%") starts a comment that eats the closing `$`/brace,
+  // producing "! Missing $ inserted". (Other specials don't occur in units.)
   const showUnits = (attrs.units ?? "plain") !== "none";
-  const units = showUnits && entry.units ? entry.units : null;
+  const rawUnits = showUnits && entry.units ? entry.units : null;
+  const units = rawUnits ? rawUnits.replace(/%/g, "\\%") : null;
 
   if (mode === "math") {
     return units ? `${body}\\;\\text{${units}}` : body;

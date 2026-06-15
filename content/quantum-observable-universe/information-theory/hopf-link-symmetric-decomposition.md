@@ -21,7 +21,7 @@ $$
 Thus the van der Waals correlation — the Hopf link
 ([`prop:trm-hopf-sigma1-sq-closed-form`](#prop:trm-hopf-sigma1-sq-closed-form)) —
 is **dominantly the symmetric $e_+$ block**: its symmetric fraction
-$q^2/(q^2+q^{-2})$ is $\approx :val[vdw_sigma1sq_pct_symmetric]{precision=1, witness=folio-assistant/computations/hbond-vdw-sdp.witness.json}\%$
+$q^2/(q^2+q^{-2})$ is $\approx :val[vdw_sigma1sq_pct_symmetric]{precision=1, witness=folio-assistant/computations/hbond-vdw-sdp.witness.json}$
 at $q_0$. The operator-selection SDP (witness `hbond-vdw-sdp`) confirms the
 independent-channel reading: the symmetric block $e_+$ has Markov
 $q$-dimension $\approx :val[vdw_e_plus_qdim]{precision=3, witness=folio-assistant/computations/hbond-vdw-sdp.witness.json}$
