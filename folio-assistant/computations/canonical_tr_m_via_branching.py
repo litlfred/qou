@@ -391,7 +391,27 @@ def compute_tr_m_via_branching(
         # docs/audits/2026-06-10-binding-active-set-compute-optimization.md.
         from tr_m_atom_via_transfer import tr_m_atom_zn
         t0 = time.time()
-        tr_atom_mp, _tr_free, _chi, _wall = tr_m_atom_zn(Z, N, dps=mp.mp.dps)
+        # Forward a custom q_val (q-sensitivity probes) to the transfer.
+        # When q_val is the canonical substrate Q0 (the default), pass
+        # q=None so the transfer uses the full 50-digit Q_50_DIGIT_STR
+        # rather than the ~16-digit float q_val — preserving the validated
+        # default precision (the canonical production path).
+        q_arg = (None if abs(float(q_val) - float(Q_FLOAT)) < 1e-30
+                 else mp.mpf(str(q_val)))
+        try:
+            tr_atom_mp, _tr_free, _chi, _wall = tr_m_atom_zn(
+                Z, N, dps=mp.mp.dps, q=q_arg)
+        except ValueError as e:
+            # The canonical color-weighted atom word is q0-baked (its
+            # interface d carries flavor_split_subleading(q0)), so the
+            # transfer can only re-lift it at q0. A true q≠q0 sweep needs a
+            # q-parameterised word builder (not yet wired) — fail with a
+            # clean err rather than the old native path's silent q0/q_val
+            # hybrid. (Production always uses q0, so this never fires there.)
+            return None, time.time() - t0, (
+                f"transfer path supports q=q0 only (q0-baked color-weighted "
+                f"word); custom q_val={q_val} unsupported: {e}"
+            )
         return abs(tr_atom_mp), time.time() - t0, None
 
     # Load required extracts
