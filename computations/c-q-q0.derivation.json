@@ -1,6 +1,6 @@
 {
   "target": "c_q(q_0)",
-  "target_value": 9.092679456150243,
+  "target_value": 9.092678397394828,
   "target_tolerance": 1e-12,
   "content_block": "prop:full-pole-structure-mass-trace",
   "description": "Step-by-step derivation of c_q \u2248 9.0926 at the substrate parameter q_0 from first principles (categorical action + Frobenius pairing + nonabelian Stokes).  All intermediate steps are AXIOM, MATHLIB_CITED, or DERIVED \u2014 no SCRIPT_CITED frontier.  This is a fully-trusted chain modulo the three AXIOM entrypoints.",
@@ -68,13 +68,13 @@
       "notes": "Pure algebra: q^{-1}/(1 \u2212 q^{-1}) \u00b7 (q/q) = 1/(q \u2212 1).  The DERIVED trust basis records that this step has no new axiom input; it is a one-line manipulation of the previous step."
     },
     {
-      "name": "Evaluate c_q at q_0 = 1.1099785827513808",
-      "operation": "Substitute q := q_0 = 1.1099785827513808 into c_q = 1/(q \u2212 1); compute c_q(q_0) = 1/0.10997858275138076 \u2248 9.0926794562.",
+      "name": "Evaluate c_q at q_0 = 1.1099785955573347",
+      "operation": "Substitute q := q_0 = 1.1099785955573347 into c_q = 1/(q \u2212 1); compute c_q(q_0) = 1/0.1099785955573347 \u2248 9.0926783974.",
       "inputs": [
         "c_q_symbolic"
       ],
       "output_name": "c_q_at_q0",
-      "output_value": 9.092679456150243,
+      "output_value": 9.092678397394828,
       "trust_basis": "computational",
       "jet_order": 0,
       "spectral_stratum": "archimedean (q_0 \u2208 \u211d_{>1})",
