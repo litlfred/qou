@@ -93,14 +93,12 @@ function emitPerDocPreambleTail(paper: Paper, memoize?: boolean): string[] {
     lines.push("% ── Diagram memoization (per-render; needs -shell-escape) ───────────────────");
     // Resilient load: skip gracefully if memoize.sty is absent (older TeX
     // distributions predate it) rather than aborting the compile.
-    // Direct memoize's cache files to .memo/ (matches the actions/cache path;
-    // default is CWD → clutter + CI miss) and register tikzcd (not auto-
-    // memoized; only tikzpicture is). Gemini #2310. Verified against the
-    // installed memoize on the first TeX run.
-    lines.push("\\IfFileExists{memoize.sty}{%");
-    lines.push("  \\usepackage[dir=.memo]{memoize}%");
-    lines.push("  \\memoizeenvironment{tikzcd}%");
-    lines.push("}{}% memoize.sty absent -> diagram caching disabled (compile continues)");
+    // Direct memoize's cache files to .memo/ via the `prefix` option (a path
+    // segment ending in / is the memo dir; default is CWD → clutter + CI miss).
+    // The package auto-memoizes tikzpicture, and tikzcd expands to one. (The
+    // earlier dir=.memo / \memoizeenvironment form was wrong — not memoize's
+    // API; confirmed against the installed package on a real TeX run.)
+    lines.push("\\IfFileExists{memoize.sty}{\\usepackage[prefix=.memo/]{memoize}}{}% memoize.sty absent -> diagram caching disabled");
     lines.push("");
   }
 
