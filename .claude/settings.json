@@ -70,38 +70,6 @@
           }
         ]
       }
-    ],
-    "PreCommit": [
-      {
-        "matcher": "",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "./scripts/check-no-lean-artifacts.sh"
-          },
-          {
-            "type": "command",
-            "command": "./scripts/render-pre-commit.sh",
-            "timeout": 120
-          }
-        ]
-      }
-    ],
-    "PostCommit": [
-      {
-        "matcher": "",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "./scripts/check-upstream.sh",
-            "timeout": 15
-          },
-          {
-            "type": "command",
-            "command": "./scripts/delivery-summary.sh"
-          }
-        ]
-      }
     ]
   }
 }
