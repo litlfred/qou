@@ -326,6 +326,23 @@ jobs:
           sudo apt-get install -y --no-install-recommends \
             texlive-full texlive-extra-utils latexdiff latexmk
 
+      - name: Restore LaTeX cache (qou.fmt + memoize boxes)
+        # Layer 3: persist the precompiled format + memoized diagram boxes
+        # across CI runs. qou.fmt restores whenever latex/preamble.tex is
+        # unchanged (hash in the restore-key prefix) — build-fmt.sh then
+        # skips the rebuild (its .sha matches); .memo/ restores the most
+        # recent diagram-box cache so unchanged tikz pictures are reused.
+        uses: actions/cache@v4
+        with:
+          path: |
+            qou.fmt
+            qou.fmt.sha
+            .memo
+          key: latex-cache-${{ hashFiles('latex/preamble.tex') }}-${{ github.sha }}
+          restore-keys: |
+            latex-cache-${{ hashFiles('latex/preamble.tex') }}-
+            latex-cache-
+
       - name: Build preamble format (qou.fmt — precompiled preamble cache)
         run: |
           # Precompile latex/preamble.tex → qou.fmt so the %&qou main.tex
