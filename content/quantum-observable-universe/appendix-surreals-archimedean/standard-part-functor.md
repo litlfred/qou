@@ -126,7 +126,7 @@ flowchart TD
     
     B_sym -.->|"Q-CLT Limit (A → ∞)"| B_qCLT
     
-    B_sym == "Archimedean Functor 𝓕_Arch (Standard-Part)" ==> M_sym
+    B_sym == "Archimedean Functor F_Arch (Standard-Part)" ==> M_sym
     B_qCLT == "Asymptotic Convergence" ==> M_qclt
     
     M_sym -.->|"Perfect mapping in algebraic limit"| M_obs
