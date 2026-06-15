@@ -9,6 +9,11 @@ Thanks for your interest in the **Quantum Observable Universe** repository. This
 git clone https://github.com/litlfred/qou.git
 cd qou
 
+# 1b. Wire up the Folio Assistant platform (separate repo litlfred/folio-assistant).
+#     Clones it as a sibling (../folio-assistant) + symlinks ./folio-assistant -> it,
+#     so the content pipeline + schema imports resolve. Idempotent; re-runnable.
+./scripts/setup-folio-assistant.sh
+
 # 2. Install content-pipeline deps (TypeScript via bun)
 cd content && bun install && cd ..
 
@@ -28,12 +33,24 @@ cd content && bun run validate
 | Path | What |
 |---|---|
 | `content/` | Authoritative content objects (`.ts` + `.md` + `.lean` triples) |
-| `folio-assistant/` | Platform package — MCP server, viewer, computations |
+| `folio-assistant/` | **Symlink** to the external platform repo [`litlfred/folio-assistant`](https://github.com/litlfred/folio-assistant) (pipeline, schemas, viewer, compute) — created by `scripts/setup-folio-assistant.sh`; not tracked |
 | `tools/` | Reusable libraries (see below) |
 | `chapters/` | LaTeX rendered from content (generated; do not edit) |
 | `docs/` | Design docs, audits, workplans |
 | `.github/workflows/` | CI/CD pipelines |
 | `.claude/` | Skill definitions, settings, decision log |
+
+### The Folio Assistant platform (external repo)
+
+`qou` is **content only**. The platform it consumes — content pipeline, schemas, LaTeX rendering, viewer, computations — lives in the separate repo [`litlfred/folio-assistant`](https://github.com/litlfred/folio-assistant). Local checkouts wire it through a single in-repo path, `./folio-assistant`, a symlink to a sibling clone created by `scripts/setup-folio-assistant.sh`:
+
+| Consumer | Path it resolves through |
+|---|---|
+| `content/schema/*.ts` shims + content blocks | `folio-assistant/schemas/…` |
+| `package.json` scripts (`validate`, `build:content`, `export-json`, `test`, `lint`) | `folio-assistant/content/pipeline/…` (and `folio-assistant/` for tests) |
+| CI ([`.github/workflows/build.yml`](.github/workflows/build.yml)) | the platform's reusable workflow on GitHub — **no local clone needed** |
+
+Re-run the setup script any time to update the platform clone or repair the symlink. Override the source via env vars: `FOLIO_ASSISTANT_REPO`, `FOLIO_ASSISTANT_REF`, `FOLIO_ASSISTANT_DIR`.
 
 ### `tools/` packages
 
