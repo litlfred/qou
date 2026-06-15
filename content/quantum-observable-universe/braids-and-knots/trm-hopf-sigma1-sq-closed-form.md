@@ -123,7 +123,7 @@ for the derivation status).
    the **archimedean side**: it specialises $q$ to $\mathbb{R}$ in the
    Wenzl positivity regime $q > 1$ and discharges the identity by the
    substitution $u := \sqrt{q}$ (`Real.sqrt`), reducing
-   $(u^5 - u + u^4 + u^2)/(u^4 + u^2) = 1 + (u^2 - 1)\,u^{-1}$ via
+   $\frac{u^5 - u + u^4 + u^2}{u^4 + u^2} = 1 + (u^2 - 1)\,u^{-1}$ via
    `field_simp; ring` under $u > 0$. The square-root substitution and the
    $q > 1$ ordering are the archimedean constructs that pin the
    formalisation to $\mathbb{R}$; the underlying identity itself is
