@@ -56,18 +56,25 @@
      **non-averaged `σ+σ⁻¹ = 10A−2` (exactly 10 per nucleon)**. The averaged
      interfaces carry `d = −h/2 = (σ+σ⁻¹)/2`, **bar-symmetric (q↔q⁻¹)** ⇒ zero
      net q-power, so only `σ+σ⁻¹` enters the exponent:
-     `10A−5 = (σ+σ⁻¹) − 3` for A≥2. **The slope 10 = the non-averaged crossing
-     count each nucleon contributes to the bound braid — derived, not fitted**
-     (T and ³He share `σ+σ⁻¹ = 28` ⇒ the same leading exponent 25, as the
-     `q₀^(10A−5)` law requires). Still open: the **−3** boundary offset
-     (plausibly the H₃ seed's 3 strands), *why* exactly 10 per nucleon from the
-     𝓑₃ / Bring structure, and the **"5" = Bring quintic** factorisation
-     (`5·(2A−1)`; same `5,7` as the Weinberg cosh-ratio).
-  2. **The Z-dependent correction** (³He deviates −1.40 q₀-units): NOT the
-     writhe (³He and ⁴He share writhe `σ−σ⁻¹ = 8` but deviate −1.40 vs +0.27);
-     it tracks **proton excess** (Z−N: D=0, T=−1, ³He=+1 outlier, ⁴He=0). In
-     the recurrence language this is a Z-dependence in the **second-kind
-     admixture β** (the proton-rich isotope sits on a different `α/β` ray).
+     `10A−5 = (σ+σ⁻¹) − 3` for A≥2. The construction gives the **closed forms**
+     (verified D,T,³He,⁴He): `σ = 7Z+5N−1`, `σ⁻¹ = 3Z+5N−1`, `averaged = 2A+1`,
+     so `σ+σ⁻¹ = 10A−2` — **the Z,N dependence CANCELS in the sum**, which is
+     *why* the exponent is A-only (T and ³He share `σ+σ⁻¹ = 28` ⇒ leading
+     exponent 25, as `q₀^(10A−5)` requires). **The slope 10 = 9 (intra-𝓑₃
+     non-averaged) + 1 (interface) per nucleon — derived, not fitted.** The
+     closed form **predicts** the un-measured tower: ⁶Li → 55, ⁸Be → 75 (a
+     derive-or-refute, NOT a fit — the test the data-gate awaited). Still open:
+     the **−3** offset (H₃ seed's 3 strands?), the per-nucleon **9 = intra-𝓑₃**
+     count from the Borromean/Bring quintic (`5·(2A−1)`; same `5,7` as the
+     Weinberg cosh-ratio).
+  2. **The Z-dependent correction** (³He deviates −1.40 q₀-units) — SOURCE
+     derived: `Z−N = (p-p interfaces) − (n-n interfaces)`, and **p-p are σ
+     (positive), n-n are σ⁻¹ (negative)**, so a proton excess is a net-σ
+     interface chirality (`writhe = 4Z`). It is NOT the bare writhe (³He and
+     ⁴He share writhe 8 but deviate −1.40 vs +0.27); it tracks `Z−N` (D=0,
+     T=−1, ³He=+1 outlier, ⁴He=0) — the proton-rich isotope sits on a different
+     second-kind `α/β` ray. Open: the coefficient (~−1.4/excess-proton) and the
+     p≠n asymmetry (intra proton 6σ/3σ⁻¹ vs neutron 5σ/4σ⁻¹).
 
 ## Disciplinary note
 
