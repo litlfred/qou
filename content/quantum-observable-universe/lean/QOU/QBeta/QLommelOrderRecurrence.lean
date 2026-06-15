@@ -91,6 +91,26 @@ theorem two_root_geometric (r s α β : K) (hrs : r * s = 1) :
   simp only [pow_succ']
   linear_combination (-(α * r ^ n + β * s ^ n)) * hrs
 
+/-- **The recurrence coefficient depends only on the geometric RATIO, never on the
+normalization** — the formal content of "the b ladder is fixed by the exponent
+SLOPE alone". For any offset `C` and any nonzero ratio `r`, the (pure first-kind)
+geometric ladder `A ↦ C · rᴬ` solves the order recurrence with `b = r + r⁻¹`.
+
+Writing the binding residual as `Δ_λ(A) = C · (q₀¹⁰)ᴬ` — slope `10` (so
+`r = q₀¹⁰`, DERIVED from the A-only crossing count `σ+σ⁻¹ = 10A−2`, verified
+`A = 2..12` in `qlommel_b_ladder_slope_derivation.py`) — the coefficient is
+`b = q₀¹⁰ + q₀⁻¹⁰ = 2cosh(10 log q₀)` **regardless of the prefactor `C`**. The
+open exponent OFFSET (the `−5` in `10A−5`, equivalently the `−3` crossing-vs-site
+puzzle) is exactly this `C = q₀⁻⁵`; it folds into the two seed constants
+(`two_seed_unique`) and therefore does NOT gate the recurrence. Hence the b ladder
+is derivable from the (derived) slope even while the offset remains open. -/
+theorem first_kind_geometric_b (r C : K) (hr : r ≠ 0) :
+    IsOrderThreeTermRec (fun _ => r + r⁻¹) (fun A => C * r ^ A) := by
+  have key : (fun A => C * r ^ A) = (fun n => C * r ^ n + 0 * (r⁻¹) ^ n) := by
+    funext n; ring
+  rw [key]
+  exact two_root_geometric r r⁻¹ C 0 (mul_inv_cancel₀ hr)
+
 /-- **Double-root / C-finite linear expansion.** The special case `r = s = 1`,
 corresponding to the recurrence coefficient `b = 2`. The general solution
 is the linear sequence `a n = α + β * n`. This formalises the decisive C-finite
@@ -99,6 +119,9 @@ recurrence found in the extended alpha-cluster tower where `b_ν ≈ 2` and `ρ 
 theorem double_root_linear (α β : K) :
     IsOrderThreeTermRec (fun _ => 2) (fun n => α + β * (n : K)) := by
   intro n
+  -- Goal is `(fun n => α + β·↑n) (n+2) = …`; `push_cast` beta-reduces and turns
+  -- each `↑(n+k)` into `↑n + k` (the old `show … (n+2 : K) …` wrote `↑n + 2`,
+  -- which is not definitionally `↑(n+2)`, so the `show` failed to match).
   push_cast
   ring
 
