@@ -152,6 +152,8 @@ edit when CI can't, or run [`/integration-audit`](integration-audit.md).
 
 ## References
 
+- **Testing instructions** (Track A no-engine + Track B with TeX Live, copy-paste):
+  [`docs/latex-build-cache-testing.md`](../../../docs/latex-build-cache-testing.md)
 - Strategy + verdicts (incl. why concat fails, LuaTeX, CI-image swap):
   [`docs/workplans/2026-06-14-latex-build-caching-strategy.md`](../../../docs/workplans/2026-06-14-latex-build-caching-strategy.md)
 - CI billing signature: `CLAUDE.md` §"CI billing failures".
