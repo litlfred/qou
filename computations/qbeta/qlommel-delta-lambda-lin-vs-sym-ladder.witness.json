@@ -1,0 +1,77 @@
+{
+  "engine": "python+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-15T21:51:47.810052+00:00",
+  "commitSha": "2b12e1f50f4ceae2f90d4f955f6dd34176080112",
+  "assertions": [
+    {
+      "name": "lin_ladder_geometric_ratio_matches_r_within_15pct",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "|Δ_λ^lin(T)/Δ_λ^lin(D) − q0^10| / q0^10 < 0.15 (first-kind branch)"
+    },
+    {
+      "name": "sym_ladder_geometric_ratio_departs_from_r_gt_25pct",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "|Δ_λ^sym(T)/Δ_λ^sym(D) − q0^10| / q0^10 > 0.25 (B_sym spends it)"
+    },
+    {
+      "name": "log_trace_absorbs_gt_2x_at_A3_T",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "Δ_λ^lin(T)/Δ_λ^sym(T) > 2 (exact log-trace spends the exp-vs-lin gap)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 8,
+  "computation": "qlommel-delta-lambda-lin-vs-sym-ladder",
+  "scriptFile": "qlommel_delta_lambda_lin_vs_sym_ladder.py",
+  "scriptHash": "7b16b3a55482",
+  "scriptCommitSha": "2096a5a52af46f928876f2d410547a1e280d51e7",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "mpmath": "1.4.1"
+  },
+  "description": "EXPLORATORY derive-or-refute (no fit): which binding ladder the 2nd-kind q-Lommel order coefficient b=q0^10+q0^-10=2cosh(10η) governs. Reads the recorded Δ_λ^lin (B_AME/B_lin) and Δ_λ^sym (B_AME/B_sym, exact log-trace) from binding-single-pipeline-comparison.witness.json. Finding: the geometric first-kind ratio r=q0^10 is carried by Δ_λ^lin (D→T within ~8%) and ABSENT from Δ_λ^sym (D→T ~40% below r; Δ_λ^sym≈1 on A=3) — B_sym (m_symbolic) already realizes the exponential, so the 2nd-kind correction belongs to the LINEAR binding (m_qCLT), not on top of B_sym. The interior-b test is data-limited (one interior point; ⁴He magic-contaminates sym) and is reported, NOT used as the discriminator. Not a closure: the linear match is the open-keystone near-match (10A−5 from Bring crossings, #2316).",
+  "parameters": {
+    "q0": "1.109979",
+    "r_geometric_ratio": "2.83888384405",
+    "b_derived_2cosh10eta": "3.19113495925",
+    "source_witness": "binding-single-pipeline-comparison.witness.json",
+    "source_scriptCommitSha": "32f3f7314e11c8beb610f8d3972bbf1ab4f0ec50"
+  },
+  "data": {
+    "ladders": {
+      "lin": {
+        "ratio_DT": "2.60706",
+        "ratio_DT_vs_r_pct": "-8.166",
+        "interior_b_emp_NgeZ": "3.51595",
+        "interior_b_vs_derived_pct": "-9.2382"
+      },
+      "sym": {
+        "ratio_DT": "1.63462",
+        "ratio_DT_vs_r_pct": "-42.42",
+        "interior_b_emp_NgeZ": "3.13904",
+        "interior_b_vs_derived_pct": "1.6597"
+      }
+    },
+    "log_trace_absorption_A3": {
+      "T": "2.4481",
+      "3He": "2.022",
+      "note": "Δ_λ^lin/Δ_λ^sym at A=3: the factor of the exp-vs-linear gap the exact log-trace B_sym already absorbs (Δ_λ^sym≈1)."
+    },
+    "discipline": "EXPLORATORY; derive-or-refute, no fit; data-limited interior-b reported not asserted; the lin-ladder match is itself near-match tier (open keystone 10A−5), nothing wired.",
+    "verdict": "2nd-kind b governs the LINEAR ladder (m_qCLT); B_sym (m_symbolic) already realizes the exponential — do not double-apply on B_sym."
+  }
+}
