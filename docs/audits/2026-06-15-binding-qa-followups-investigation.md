@@ -78,10 +78,40 @@ Recorded already in #2316 (`docs/audits/2026-06-15-delta-lambda-q5-per-site-mech
 + bean `qb5s`). Honest framing (per #2320 coordination): `B_sym` (the
 Kashaev/exp form) already absorbs most of `Δ_λ` (Δ_λ^sym ≈ 1 on T/³He), so the
 "5-per-site" residual must be measured against `B_sym`, not `B_lin` — otherwise
-the `s → −ln(1−s)` linearization is read as a `q⁵` factor. The real keystone
-(why exponential, why exactly 5 = Bring-quintic degree) needs the complex-q /
-Kashaev volume (real-q gives Vol ≈ 0). Not a session-sized chip; no derivation
-is asserted.
+the `s → −ln(1−s)` linearization is read as a `q⁵` factor.
+
+**Magnitude check (2026-06-15) — the literal `q₀^{5(2A−1)}` exponent fails.** A
+back-of-envelope test against #2320's own one-pipeline numbers
+(`B_sym/B_lin = Δ_λ^lin ÷ Δ_λ^sym`, q₀ ≈ 1.10998):
+
+| nucleus | A | 2A−1 | `q₀^{5(2A−1)}` *(claim)* | `B_sym/B_lin` *(#2320)* | off | fit exp/site |
+|---|---|---|---|---|---|---|
+| D | 2 | 3 | 4.8 | 1.54 | 3× | 1.39 |
+| T | 3 | 5 | 13.6 | 2.44 | 6× | 1.71 |
+| ³He | 3 | 5 | 13.6 | 2.02 | 7× | 1.35 |
+| ⁴He | 4 | 7 | 38.6 | 3.04 | 13× | 1.52 |
+| ⁶Li | 6 | 11 | 310.7 | 4.85 | 64× | 1.38 |
+| ⁷Li | 7 | 13 | 882.0 | 6.06 | **145×** | 1.33 |
+
+Two failures: **(i) wrong functional form** — the miss is not a constant
+offset, it grows 3×→145× with A (`q₀^{5(2A−1)} ~ 2.7^A` explodes; the actual
+ratio grows ~linearly, 1.5→6 over A=2→7); **(ii) the exponent that fits is
+≈ 1.4 per site, not 5** (last column; roughly constant modulo the
+deuteron/bond-type anomalies). That ≈ 1.4/site is just the `−ln(1−s)/s`
+exp-vs-linear correction #2320 already named (s grows ≈ with site count), **not**
+a q₀-power law — so "5 = Bring-quintic degree, q₀⁵/site" reads as **fitted**
+(to a couple of small-A points, or to `B_lin`, which folds in the
+linearization). **Before investing in the complex-q/Kashaev "why q₀⁵"
+mechanism, the exponent has to be shown to exist; by this check it largely does
+not.** The real keystone — and any genuine residual — should be re-derived
+against `B_sym` (where Δ_λ^sym ≈ 1 already), with the deuteron over-binding and
+the magic-shell deficit as the actual targets.
+
+Caveats: back-of-envelope from #2320's transcribed table + q₀ ≈ 1.110, and the
+real binding compute can't run in this qou-only sandbox (`qou_substrate` /
+`pyhecke` blocked, §2) — the full-env numbers should confirm. But a 145×
+runaway at ⁷Li is far outside any transcription/precision slack. This is a
+**pruning, not a derivation**.
 
 ## Root cause + how to finish 2/3/4
 
