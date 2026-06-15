@@ -73,28 +73,44 @@ git_retry() {
 }
 
 # --- clone or update the platform repo -----------------------------------
-if [ -d "$CLONE_DIR/.git" ]; then
-  info "platform clone exists at $CLONE_DIR — fetching $REF"
-  git_retry git -C "$CLONE_DIR" fetch --tags origin \
-    || info "fetch failed (offline?) — using existing clone as-is"
-  # Only move to $REF if it resolves; never clobber uncommitted local work.
-  if git -C "$CLONE_DIR" rev-parse --verify --quiet "$REF^{commit}" >/dev/null; then
-    if git -C "$CLONE_DIR" diff --quiet && git -C "$CLONE_DIR" diff --cached --quiet; then
-      git -C "$CLONE_DIR" checkout --quiet "$REF" 2>/dev/null || true
-      git -C "$CLONE_DIR" merge --ff-only --quiet "origin/$REF" 2>/dev/null || true
-    else
-      info "clone has local changes — leaving its checkout untouched"
-    fi
-  fi
-elif [ -e "$CLONE_DIR" ]; then
+# A non-git path already sitting at the clone location is a mistake.
+if [ -e "$CLONE_DIR" ] && [ ! -d "$CLONE_DIR/.git" ]; then
   die "$CLONE_DIR exists but is not a git clone — move it aside or set FOLIO_ASSISTANT_DIR"
-else
+fi
+
+if [ ! -d "$CLONE_DIR/.git" ]; then
   info "cloning $REPO_URL -> $CLONE_DIR (ref: $REF)"
+  # --branch accepts a branch or tag but NOT a SHA; on a SHA ref this first
+  # clone fails and we fall back to a default-branch clone — the unified
+  # checkout below then moves to $REF.
   git_retry git clone --branch "$REF" "$REPO_URL" "$CLONE_DIR" \
     || git_retry git clone "$REPO_URL" "$CLONE_DIR" \
     || die "clone failed after retries (check network / repo access)"
+else
+  info "platform clone exists at $CLONE_DIR — fetching $REF"
+  git_retry git -C "$CLONE_DIR" fetch --tags origin \
+    || info "fetch failed (offline?) — using existing clone as-is"
 fi
-[ -d "$CLONE_DIR" ] || die "clone directory $CLONE_DIR not present after setup"
+[ -d "$CLONE_DIR/.git" ] || die "clone directory $CLONE_DIR not present after setup"
+
+# Move to $REF in ALL cases (fresh clone or existing). Checking both the
+# local ref and origin/$REF handles a SHA ref (which --branch can't clone)
+# and a new remote branch not yet checked out locally. Never clobber
+# uncommitted local work in the clone.
+if git -C "$CLONE_DIR" rev-parse --verify --quiet "$REF^{commit}" >/dev/null 2>&1 \
+   || git -C "$CLONE_DIR" rev-parse --verify --quiet "origin/$REF^{commit}" >/dev/null 2>&1; then
+  if git -C "$CLONE_DIR" diff --quiet && git -C "$CLONE_DIR" diff --cached --quiet; then
+    git -C "$CLONE_DIR" checkout --quiet "$REF" 2>/dev/null || true
+    # Fast-forward to the remote tip only when $REF names a branch (not a SHA/tag).
+    if git -C "$CLONE_DIR" show-ref --verify --quiet "refs/remotes/origin/$REF"; then
+      git -C "$CLONE_DIR" merge --ff-only --quiet "origin/$REF" 2>/dev/null || true
+    fi
+  else
+    info "clone has local changes — leaving its checkout untouched"
+  fi
+else
+  info "ref '$REF' not found locally or on origin — leaving clone on its current branch"
+fi
 
 # absolute, normalized path to the clone
 CLONE_ABS="$(cd "$CLONE_DIR" && pwd)" || die "cannot resolve $CLONE_DIR"
@@ -114,26 +130,41 @@ if TARGET="$(realpath --relative-to="$ROOT" "$CLONE_ABS" 2>/dev/null)"; then :; 
   TARGET="$CLONE_ABS"
 fi
 
-if [ -L "$LINK" ]; then
-  cur="$(readlink "$LINK" 2>/dev/null || true)"
-  if [ "$cur" = "$TARGET" ]; then
-    info "symlink already correct: folio-assistant -> $TARGET"
-  else
-    rm -f "$LINK" && ln -s "$TARGET" "$LINK" || die "could not refresh symlink $LINK"
-    info "repaired symlink: folio-assistant -> $TARGET"
-  fi
-elif [ -e "$LINK" ]; then
-  # Untracked husk dir/file (e.g. leftover bun.lock + node_modules). Move
-  # aside rather than rm (repo convention: prefer mv over rm).
+# Move an untracked husk (leftover bun.lock + node_modules, or a stale
+# non-symlink) aside before (re)creating the link. mv, not rm (convention).
+if [ -e "$LINK" ] && [ ! -L "$LINK" ]; then
   bak="$LINK.husk.$(date +%s)"
   mv "$LINK" "$bak" || die "could not move aside existing $LINK"
   info "moved leftover husk $LINK -> $bak"
-  ln -s "$TARGET" "$LINK" || die "could not create symlink $LINK"
-  info "created symlink: folio-assistant -> $TARGET"
-else
-  ln -s "$TARGET" "$LINK" || die "could not create symlink $LINK"
-  info "created symlink: folio-assistant -> $TARGET"
 fi
+
+case "${OSTYPE:-}" in
+  msys*|cygwin*|win32)
+    # Native Windows Bun/Node cannot follow MSYS emulation symlinks, so use a
+    # directory junction (mklink /j — no admin needed). NOTE: Linux-first repo
+    # (Crostini); this branch is unverified here — Windows devs should report
+    # issues or use WSL.
+    [ -e "$LINK" ] && rm -rf "$LINK"
+    win_link="$(cygpath -w "$LINK")"; win_target="$(cygpath -w "$CLONE_ABS")"
+    cmd //c mklink //j "$win_link" "$win_target" >/dev/null \
+      || die "could not create directory junction (use WSL, or run 'mklink /j' manually)"
+    info "created Windows directory junction: folio-assistant -> $CLONE_ABS"
+    ;;
+  *)
+    if [ -L "$LINK" ]; then
+      cur="$(readlink "$LINK" 2>/dev/null || true)"
+      if [ "$cur" = "$TARGET" ]; then
+        info "symlink already correct: folio-assistant -> $TARGET"
+      else
+        rm -f "$LINK" && ln -s "$TARGET" "$LINK" || die "could not refresh symlink $LINK"
+        info "repaired symlink: folio-assistant -> $TARGET"
+      fi
+    else
+      ln -s "$TARGET" "$LINK" || die "could not create symlink $LINK"
+      info "created symlink: folio-assistant -> $TARGET"
+    fi
+    ;;
+esac
 
 # --- best-effort: install the platform's own deps ------------------------
 if [ "${FOLIO_SKIP_INSTALL:-0}" != "1" ] && [ -f "$CLONE_ABS/package.json" ]; then
