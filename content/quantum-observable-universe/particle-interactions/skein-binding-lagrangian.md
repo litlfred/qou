@@ -1,5 +1,5 @@
 The **Skein binding Lagrangian** is not a new Lagrangian: it is
-the categorical action $\mathcal{S}_q = \mathrm{tr}(\mathcal{L}_q)$
+the categorical action $\mathfrak{S}_q = \mathrm{tr}(\mathcal{L}_q)$
 ([canonical action](#prop:qou-canonical-action)) evaluated on the
 field configuration $\psi = Z\mathfrak{p} \oplus N\mathfrak{n}$.
 
@@ -14,7 +14,7 @@ familiar nuclear binding terms.
 
 Let $L = Z\mathfrak{p} \oplus N\mathfrak{n}$ be a multi-nucleon
 Hopf link with $Z$ protons and $n$ neutrons, $A = Z + N$.  Evaluating
-$\mathcal{S}_q$ on $L$ gives the **Skein binding Lagrangian**
+$\mathfrak{S}_q$ on $L$ gives the **Skein binding Lagrangian**
 
 $$
   \mathcal{L}_{\mathrm{bind}}[L]
@@ -112,7 +112,7 @@ controls the balance between the strong and electromagnetic
 interactions.
 
 **Derivation from the canonical action.**
-The five terms arise from the three sectors of $\mathcal{S}_q$
+The five terms arise from the three sectors of $\mathfrak{S}_q$
 ([canonical action](#prop:qou-canonical-action)) as follows:
 
 | Canonical sector | Evaluation on $L$ | Nuclear term |

@@ -80,7 +80,7 @@ there exists a unique minimal-norm supply that satisfies it.*
 on-shell condition $\star_q F_\nabla = F_\nabla$
 ([instanton on-shell](#rem\:instanton-on-shell)), the physical
 interaction selects the $\Phi$ minimizing the categorical
-action $|\mathcal{S}| = |\mathrm{tr}(\Phi)|$.  The dominant
+action $|\mathfrak{S}| = |\mathrm{tr}(\Phi)|$.  The dominant
 channel is the irrep $\lambda_*$ with largest
 $|d_{\lambda_*}(q) \cdot \mathrm{tr}_{\lambda_*}(\gamma_1 \cdot \beta(\tau_{\lambda_*}) \cdot \gamma_2)|$.*
 

@@ -1,9 +1,9 @@
-Let $\mathcal{S}_q$ be the
+Let $\mathfrak{S}_q$ be the
 ([categorical action](#def\:categorical-action)).  The three variational
 equations are:
 
 1. *Gravity (vary $\int_A$)*:
-   $\delta\mathcal{S}_q / \delta\!\int_A = 0$ yields the
+   $\delta\mathfrak{S}_q / \delta\!\int_A = 0$ yields the
    *categorical Einstein equation*:
 
    $$
@@ -15,7 +15,7 @@ equations are:
    gauge and matter terms.
 
 2. *Gauge (vary $\nabla$)*:
-   $\delta\mathcal{S}_q / \delta\nabla = 0$ yields the
+   $\delta\mathfrak{S}_q / \delta\nabla = 0$ yields the
    *categorical Yang--Mills equation*:
 
    $$
@@ -27,7 +27,7 @@ equations are:
    is the matter current.
 
 3. *Matter (vary $\psi$)*:
-   $\delta\mathcal{S}_q / \delta\psi = 0$ yields the
+   $\delta\mathfrak{S}_q / \delta\psi = 0$ yields the
    *:refterm[categorical transport]{#categorical-transport} equation*:
 
    $$
@@ -37,7 +37,7 @@ equations are:
 ```tex
 \begin{equation}\label{eq:variational-equations-diagram}
 \begin{tikzcd}[row sep=2.5em, column sep=3em]
-  \mathcal{S}_q \ar[r, "\delta/\delta\!\int_A"]
+  \mathfrak{S}_q \ar[r, "\delta/\delta\!\int_A"]
     \ar[d, "\delta/\delta\nabla"']
     \ar[dr, "\delta/\delta\psi"]
   & R_{\int} - \tfrac{1}{2}\mathrm{tr}(R_{\int})\mathrm{id} = T_q \\

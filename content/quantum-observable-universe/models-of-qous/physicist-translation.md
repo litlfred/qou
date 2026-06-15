@@ -22,7 +22,7 @@ The three-term decomposition
 ([Proposition](#prop:qou-canonical-action)) then reads
 
 $$
-  \mathcal{S}_q
+  \mathfrak{S}_q
    \longrightarrow 
   \frac{1}{16\pi G}\!\int_M R\mathrm{dvol}
   - 

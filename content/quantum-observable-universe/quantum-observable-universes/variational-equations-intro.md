@@ -1,4 +1,4 @@
-_[draft]_ The canonical action $\mathcal{S}_q$ depends on three
+_[draft]_ The canonical action $\mathfrak{S}_q$ depends on three
 inputs — the Frobenius form $\int_A$, the connection $\nabla$,
 and the state $\psi$ — and varying each gives one of the three
 classical field equations in categorical form. **Variational

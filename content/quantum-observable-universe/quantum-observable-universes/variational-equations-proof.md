@@ -1,13 +1,13 @@
 
 Each equation is obtained by computing
-$\delta\mathcal{S}_q = 0$ with respect to the indicated variable, using
+$\delta\mathfrak{S}_q = 0$ with respect to the indicated variable, using
 the non-degeneracy of $\int_A$.
 
 *Item (1): Vary $\int_A$.*
 The gravity term $\mathrm{tr}(q \cdot R_{\int})$ depends on $\int_A$
 through the Frobenius--Ricci endomorphism $R_{\int}$.  Varying
 $\int_A \mapsto \int_A + \delta\!\int_A$ and requiring
-$\delta\mathcal{S}_q = 0$ for all $\delta\!\int_A$ gives, by
+$\delta\mathfrak{S}_q = 0$ for all $\delta\!\int_A$ gives, by
 non-degeneracy of the categorical trace,
 $R_{\int} - \tfrac{1}{2}\mathrm{tr}(R_{\int})\mathrm{id}_A = T_q[\nabla, \psi]$,
 where the stress-energy $T_q$ collects the $\int_A$-dependence of the
