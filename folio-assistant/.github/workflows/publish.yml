@@ -73,6 +73,7 @@ concurrency:
 permissions:
   contents: read
   pull-requests: write
+  packages: read   # pull the prebuilt ghcr.io/litlfred/qou-paper-builder image (TeX jobs)
 
 jobs:
   # ── 1. content-pipeline (sequential prerequisite) ──────────────
@@ -310,6 +311,17 @@ jobs:
     name: Compile main paper PDF
     needs: content-pipeline
     runs-on: ubuntu-latest
+    # Prebuilt image bakes in TeX Live + latexmk/latexdiff/latexpand, so the
+    # per-job ~5 min `apt-get install texlive-full` becomes a ~2-3 min image
+    # pull. Built + pushed by paper-builder-image.yml on every main commit
+    # touching the Dockerfile (+ monthly cron). Falls back nowhere: if the
+    # image is missing the job fails fast (pull error) rather than silently
+    # compiling against a different TeX.
+    container:
+      image: ghcr.io/litlfred/qou-paper-builder:latest
+      credentials:
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -318,12 +330,6 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           name: content-pipeline-${{ needs.content-pipeline.outputs.filename-base }}
-
-      - name: Install TeX Live
-        run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y --no-install-recommends \
-            texlive-full texlive-extra-utils latexdiff latexmk
 
       - name: Quick LaTeX syntax check (draftmode)
         run: |
@@ -403,18 +409,18 @@ jobs:
     name: Compile standalone appendix PDFs
     needs: content-pipeline
     runs-on: ubuntu-latest
+    # See paper-pdf: prebuilt image replaces the per-job texlive-full install.
+    container:
+      image: ghcr.io/litlfred/qou-paper-builder:latest
+      credentials:
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - uses: actions/checkout@v4
 
       - uses: actions/download-artifact@v4
         with:
           name: content-pipeline-${{ needs.content-pipeline.outputs.filename-base }}
-
-      - name: Install TeX Live
-        run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y --no-install-recommends \
-            texlive-full texlive-extra-utils latexmk
 
       - name: Compile standalone appendix PDFs
         run: |
@@ -469,6 +475,12 @@ jobs:
     needs: [content-pipeline, paper-pdf]
     runs-on: ubuntu-latest
     if: github.event_name == 'pull_request'
+    # See paper-pdf: prebuilt image replaces the per-job texlive-full install.
+    container:
+      image: ghcr.io/litlfred/qou-paper-builder:latest
+      credentials:
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -477,12 +489,6 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           name: paper-pdf-${{ needs.content-pipeline.outputs.filename-base }}
-
-      - name: Install TeX Live
-        run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y --no-install-recommends \
-            texlive-full texlive-extra-utils latexdiff latexmk
 
       - name: Fetch base branch + flatten + latexdiff
         continue-on-error: true

@@ -20,6 +20,19 @@ name: Build paper-builder Docker image
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    # Rebuild + push the image only when the image's own inputs change.
+    # (The :latest / :<sha> tags are gated to main pushes in the metadata
+    # step, so this is the only event that refreshes the pinned image.)
+    paths:
+      - '.github/docker/Dockerfile.paper-builder'
+      - '.github/workflows/paper-builder-image.yml'
+  schedule:
+    # Monthly rebuild (1st, 04:00 UTC) so the baked TeX Live + bun +
+    # Python stack picks up security patches even when the Dockerfile
+    # is unchanged. Emits the :<yyyymm> rollback anchor (see meta step).
+    - cron: '0 4 1 * *'
 
 # Job-level permissions per PR #1104 review (Copilot, least-privilege).
 # PR runs build the image without pushing, so they don't need
