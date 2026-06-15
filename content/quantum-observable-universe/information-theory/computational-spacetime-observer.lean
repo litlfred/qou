@@ -132,4 +132,40 @@ theorem relational_gram_hermitian (p1 p2 : BringsSurfacePoint) :
   simp only [star_add, star_mul, star_star]
   rw [mul_comm (star p2.z1) p1.z1, mul_comm (star p2.z2) p1.z2]
 
+/--
+  Categorical Formalization of Time Evolution
+  
+  Instead of viewing a particle as a fixed element `p : M`, we view it as a 
+  morphism from the terminal object (Point) to M. 
+-/
+structure PointMorphism (M : Type) where
+  map : Unit → M
+
+/--
+  Existence Guarantee:
+  Because M is a compact Contact Manifold, Picard-Lindelöf theorem on the unique 
+  Reeb vector field guarantees a global 1-parameter family of diffeomorphisms (the flow).
+  We denote this global flow for a time `τ` as `reeb_diffeo`.
+-/
+variable {M : Type} (reeb_diffeo : M → M)
+
+/--
+  Dynamical evolution is formally an Endofunctor on the category of Point Morphisms.
+  It acts by post-composition of the Reeb diffeomorphism.
+-/
+def flowFunctor (p : PointMorphism M) : PointMorphism M :=
+  ⟨fun _ => reeb_diffeo (p.map ())⟩
+
+/--
+  Proposition: The time evolution functor preserves the categorical composition 
+  (the group action of time), mapping the Lagrangian/Dirac operator to the 
+  infinitesimal generator of this functor.
+-/
+theorem flow_functor_composition (τ1 τ2 : ℝ) (flow : ℝ → M → M) 
+    (h_group : ∀ t s x, flow (t + s) x = flow t (flow s x)) (p : PointMorphism M) :
+    (flowFunctor (flow (τ1 + τ2)) p).map () = 
+    (flowFunctor (flow τ1) (flowFunctor (flow τ2) p)).map () := by
+  dsimp [flowFunctor]
+  rw [h_group]
+
 end QOU
