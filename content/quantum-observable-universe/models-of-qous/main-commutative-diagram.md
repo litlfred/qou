@@ -2,7 +2,7 @@ Let $(\mathbf{C}, \varTheta, G, \mathcal{S})$ be an archimedean quantum observab
 with instanton connection $A$ ([instanton](#ex:instanton)) and substrate
 parameter $q$ ([substrate parameter](#def:substrate-parameter)).  Let
 $\mathfrak{E}$ denote the Euler--Lagrange operator of the
-$q$-weighted Yang--Mills--Levi functional $S_q$
+$q$-weighted Yang--Mills--Levi functional $\mathfrak{S}_q$
 ([$q$-Yang--Mills--Levi functional](#def:q-yang-mills-levi)), and let $\nabla^A$ denote
 parallel transport along $A$.  The following diagram commutes:
 
@@ -10,7 +10,7 @@ parallel transport along $A$.  The following diagram commutes:
 \[
 \begin{tikzcd}[row sep=2.5em, column sep=2.5em]
   J^1\mathcal{S}
-    \ar[r, "{\mathfrak{E}[S_q]}"]
+    \ar[r, "{\mathfrak{E}[\mathfrak{S}_q]}"]
     \ar[d, "\text{jet evaluation}"']
   & \bigl\{ L_\varTheta : \mathrm{Ric}_{g_\varTheta} = T^{(q)} \bigr\}
     \ar[d, "{q = 1 + \lvert\langle L_\varTheta, F_A^+\rangle\rvert}"]

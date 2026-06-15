@@ -13,7 +13,7 @@ $$
 $1$-form on a $3$-manifold $M$, unrelated to the QOU observable
 object $A \in \mathbf{C}$) and the
 [categorical action](#def:categorical-action)
-$\mathcal{S} = \mathrm{tr}(\Phi)$ share a common skeleton: a scalar
+$\mathfrak{S} = \mathrm{tr}(\Phi)$ share a common skeleton: a scalar
 functional built by tracing an internal morphism.  They differ in
 how integration and trace are encoded:
 
@@ -38,7 +38,7 @@ $\Phi_q = \mathcal{D}_\nabla^2 + \cdots$ in fluctuations
 
 Classical Chern--Simons itself is **not** recovered as the bulk
 categorical action: the archimedean image of
-$\mathcal{S}_q = \mathrm{tr}(\mathcal{L}_q)$ is
+$\mathfrak{S}_q = \mathrm{tr}(\mathcal{L}_q)$ is
 Einstein--Hilbert + Yang--Mills + Dirac, not CS
 ([physicist translation](#rem:physicist-translation)).  Classical
 CS re-enters the framework elsewhere as a geometric *knot*

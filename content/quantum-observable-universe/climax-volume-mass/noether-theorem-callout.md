@@ -3,14 +3,14 @@ $q$-momentum ([q-momentum](#def:q-momentum)),
 $q$-angular momentum ([q-angular momentum](#def:q-angular-momentum)),
 and $q$-energy ([q-energy](#def:q-energy)) — form a **$q$-deformed
 Noether dictionary**.  Each arises from a symmetry of the categorical
-action $\mathcal{S}_q$ ([categorical action](#def:categorical-action))
+action $\mathfrak{S}_q$ ([categorical action](#def:categorical-action))
 through the variational equations
 ([variational equations](#prop:variational-equations)), in direct
 analogy with Noether's theorem.
 
 | Symmetry | Generator | Conserved quantity ($q = 1$) | $q$-Deformed quantity | Source |
 |----------|-----------|-------|---------|--------|
-| Time translation | Reeb flow $\xi_R$ | Energy $E$ | $\mathfrak{E}_q(K)$ | Categorical action $S_q$ |
+| Time translation | Reeb flow $\xi_R$ | Energy $E$ | $\mathfrak{E}_q(K)$ | Categorical action $\mathfrak{S}_q$ |
 | Spatial translation | Braid stabilisation | Momentum $p$ | $p_q(\beta)$ (writhe) | Markov II shift |
 | Rotation | $\mathrm{SU}(2)$ action | Angular momentum $J^2$ | $J_q^2 = [j]_q[j+1]_q$ | $\mathrm{SU}_q(2)$ Casimir |
 | Gauge | Quantum gauge group $G_q$ | Charge | Coulomb charge $Q(K)$ | Tannaka–Krein reconstruction |

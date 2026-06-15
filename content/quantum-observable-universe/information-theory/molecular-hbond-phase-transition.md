@@ -1,5 +1,5 @@
 The critical temperatures of [`prop:phase-transition-boundary`](#prop:phase-transition-boundary)
-are fixed by the $S^3$-boundary action $S_q^{(\partial)}$. For a **molecular
+are fixed by the $S^3$-boundary action $\mathfrak{S}_q^{(\partial)}$. For a **molecular
 liquid** this boundary action has an explicit braid realization: it is the
 **hydrogen-bond network cohesion**, and it is gated by the same
 sp$^3 \leftrightarrow$ pure-$p$ flip that sets the bond angle.
@@ -22,14 +22,14 @@ $\approx 460\ \mathrm{kJ/mol}$ for water). The boundary action is then the sum
 over the molecule's net hydrogen bonds,
 
 $$
-  S_q^{(\partial)} \;=\; n_{\mathrm{HB}}\, h^2\, E_{\mathrm{cov}},
+  \mathfrak{S}_q^{(\partial)} \;=\; n_{\mathrm{HB}}\, h^2\, E_{\mathrm{cov}},
 $$
 
 with $n_{\mathrm{HB}}$ the net hydrogen-bond count from the braid / VSEPR
 lone-pair structure ([`tetrahedral-hbond-directions`](#prop:tetrahedral-hbond-directions)).
 
 **The sp$^3$ gate (one flip, two observables).** A directional hydrogen bond
-requires a directional (sp$^3$) acceptor lone pair. So $S_q^{(\partial)}$ is gated
+requires a directional (sp$^3$) acceptor lone pair. So $\mathfrak{S}_q^{(\partial)}$ is gated
 by the *same* discrete sp$^3 \leftrightarrow$ pure-$p$ flip that sets the bond-angle base
 ([`prop:symmetric-block-domain-weight`](#prop:symmetric-block-domain-weight);
 penetration gap $\Delta(n)\propto(n-1)$, flip at $n=2\to3$): period-2 atoms are
@@ -37,9 +37,9 @@ sp$^3$ and hydrogen-bond; period-3+ are pure-$p$ and do **not** (their latent he
 is dispersion, outside this model). The flip that opens the H–O–H angle and the
 flip that makes water boil high are one mechanism.
 
-**Boiling and freezing.** With $T_q^{(g\to l)} = S_q^{(\partial)}/[2]_q$, the
+**Boiling and freezing.** With $T_q^{(g\to l)} = \mathfrak{S}_q^{(\partial)}/[2]_q$, the
 entropy of vaporisation is the pure $q$-number $[2]_q = q+q^{-1}$ (no separate
-input), and the latent heat $L = S_q^{(\partial)}$ follows with no fit:
+input), and the latent heat $L = \mathfrak{S}_q^{(\partial)}$ follows with no fit:
 
 | | $n_{\mathrm{HB}}$ | sp$^3$? | $L^{\mathrm{pred}}$ (kJ/mol) | $L^{\mathrm{obs}}$ | tier |
 |---|---|---|---|---|---|
@@ -51,7 +51,7 @@ The water latent heat lands within $\approx 1\%$ of measured, giving
 $T_{\mathrm{boil}}(\mathrm{H_2O}) \approx 369\ \mathrm{K}$ (observed $373$) once
 $L$ is converted to kelvin by the bridge $k_B T_{\mathrm{phys}} = \hbar_q$
 ([`boltzmann-constant`](#prop:boltzmann-constant)). The freezing point follows
-from the second relation $T_q^{(l\to s)} = S_q^{(\partial)}/([2]_q[n_K]_q)$, i.e.
+from the second relation $T_q^{(l\to s)} = \mathfrak{S}_q^{(\partial)}/([2]_q[n_K]_q)$, i.e.
 $T_{\mathrm{melt}}/T_{\mathrm{boil}} = 1/[n_K]_q$ in the crossing number $n_K$ of
 the molecular knot.
 

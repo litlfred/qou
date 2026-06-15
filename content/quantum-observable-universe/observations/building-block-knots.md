@@ -84,7 +84,7 @@ to the categorical action.
 
 ## Table 5: Categorical action at $q = q_0$
 
-The categorical action $S_q(K) = \mathrm{tr}_\tau(\rho(\mathcal{B}_K))$
+The categorical action $\mathfrak{S}_q(K) = \mathrm{tr}_\tau(\rho(\mathcal{B}_K))$
 decomposes into a hyperbolic volume term and a crossing energy
 term.  For torus knots ($\mathrm{Vol} = 0$), the entire action
 comes from crossings.  All quantities below are functions of
@@ -103,11 +103,11 @@ arises from the pair Skein asymmetry between $\mathfrak{d}\mathfrak{d}$ and $\ma
 crossings — a pure function of $q$.
 
 **Key consequence for beta decay.**  The electron's categorical
-action $S_q(e) = 3\mathfrak{E}_{\times}(q) \cdot \mu_0$, the neutrino's
-$S_q(\nu) = 0$, and the nuclear actions $S_q(\mathcal{N})$
+action $\mathfrak{S}_q(e) = 3\mathfrak{E}_{\times}(q) \cdot \mu_0$, the neutrino's
+$\mathfrak{S}_q(\nu) = 0$, and the nuclear actions $\mathfrak{S}_q(\mathcal{N})$
 from the Markov trace product are all computable from $q$.
 The $Q$-value
 ([transition energy](#def:Q-value-transition))
-$Q = S_q(\mathrm{par}) - S_q(\mathrm{dau}) - S_q(e)$
+$Q = \mathfrak{S}_q(\mathrm{par}) - \mathfrak{S}_q(\mathrm{dau}) - \mathfrak{S}_q(e)$
 therefore depends on $q$ and $\mu_0$ alone — no external
 constants.

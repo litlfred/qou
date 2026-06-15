@@ -1,7 +1,7 @@
 Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe
 ([Definition](#def:quantum-observable-universe)) with substrate
 parameter $q$ ([Definition](#def:substrate-parameter)),
-categorical action $\mathcal{S}_q$
+categorical action $\mathfrak{S}_q$
 ([Definition](#def:categorical-action)), and $q$-Hodge star
 $\star_q$ ([Definition](#def:q-hodge-star)).
 

@@ -14,11 +14,11 @@ $$
   \;=\; N \, T_q
   \left(
     1 \;+\; \frac{\hbar_q^2}{[2]_q}
-    \,\langle S_q \rangle
+    \,\langle \mathfrak{S}_q \rangle
   \right),
 $$
 
-where $\langle S_q \rangle$ is the thermal expectation of
+where $\langle \mathfrak{S}_q \rangle$ is the thermal expectation of
 the categorical action
 ([categorical action](#def:categorical-action)) and
 $[2]_q = q + q^{-1}$.
@@ -31,7 +31,7 @@ $$
   z_q
   \;=\;
   \sum_{K \,\in\, \mathrm{Conf}_p}
-  e^{-\beta_q \, S_q(K)}.
+  e^{-\beta_q \, \mathfrak{S}_q(K)}.
 $$
 
 For $N$ non-interacting knots across $|U|$ brane points:
@@ -55,5 +55,5 @@ $$
 
 at leading order.  The $q$-anomaly correction from
 $d_q^2 \neq 0$ at $\partial U$ shifts the single-fibre
-partition function by $\delta \ln z_q = \hbar_q^2 \langle S_q \rangle / [2]_q$, producing the full
+partition function by $\delta \ln z_q = \hbar_q^2 \langle \mathfrak{S}_q \rangle / [2]_q$, producing the full
 equation of state.  $\square$

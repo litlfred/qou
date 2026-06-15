@@ -5,7 +5,7 @@ $$
   P_q \, V_q
   \;=\; N \, T_q
   \left(
-    1 + \frac{\hbar_q^2}{[2]_q}\,\langle S_q \rangle
+    1 + \frac{\hbar_q^2}{[2]_q}\,\langle \mathfrak{S}_q \rangle
   \right)
 $$
 
@@ -40,7 +40,7 @@ $\mathcal{R}^{\circ}$ --- the polynomial observable subcategory
 
 **The $q$-correction is degree-$1$ leakage.**
 
-The correction term $\hbar_q^2 \langle S_q \rangle / [2]_q$
+The correction term $\hbar_q^2 \langle \mathfrak{S}_q \rangle / [2]_q$
 is the first piece of boundary information that crosses from
 the microstate into the macroscopic equation.  It arises from
 the $S^3$ boundary action --- the Frobenius pairing at

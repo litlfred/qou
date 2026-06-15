@@ -1,7 +1,7 @@
 *Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
 
 Every braid move acts on the three sectors of the categorical
-action $\mathcal{S}_q = \mathcal{S}_q^{\mathrm{grav}} + \mathcal{S}_q^{\mathrm{gauge}} + \mathcal{S}_q^{\mathrm{matter}}$
+action $\mathfrak{S}_q = \mathfrak{S}_q^{\mathrm{grav}} + \mathfrak{S}_q^{\mathrm{gauge}} + \mathfrak{S}_q^{\mathrm{matter}}$
 ([canonical action](#prop:qou-canonical-action)).  This table
 gives the complete accounting: what each move preserves, what it
 changes, and what must be tracked for mass and energy calculations.
@@ -11,13 +11,13 @@ For a nucleus $\mathcal{N}(Z, N)$ evaluated at the braid
 representative $\beta \in B_A$:
 
 $$
-  \mathcal{S}_q[\beta]
+  \mathfrak{S}_q[\beta]
   = 
   \underbrace{E_0}_{\text{gravity}}
   + 
   \underbrace{\sum_{\text{crossings}} \mathcal{S}_{ij}(q)}_{\text{gauge}}
   + 
-  \underbrace{\mathcal{S}_q^{\mathrm{matter}}}_{\text{matter (Pauli + pairing)}}
+  \underbrace{\mathfrak{S}_q^{\mathrm{matter}}}_{\text{matter (Pauli + pairing)}}
 $$
 
 The gauge sector decomposes via the Iwahori--Hecke algebra:
@@ -32,9 +32,9 @@ $q^{-1}$ (negative), or $(q + q^{-1})/2$ (mixed).
 \begin{tabular}{l|c|c|c|c|c|c}
 \toprule
 \textbf{Move} & \textbf{Algebra} &
-  $\mathcal{S}^{\mathrm{grav}}$ &
-  $\mathcal{S}^{\mathrm{gauge}}$ &
-  $\mathcal{S}^{\mathrm{matter}}$ &
+  $\mathfrak{S}^{\mathrm{grav}}$ &
+  $\mathfrak{S}^{\mathrm{gauge}}$ &
+  $\mathfrak{S}^{\mathrm{matter}}$ &
   \textbf{Vol} & \textbf{tr} \\
 \midrule
 R1 (self-twist) &
@@ -99,7 +99,7 @@ Skein ($\mathfrak{d} \to \mathfrak{u}$) &
   $= (q^{1/2}{-}q^{-1/2})[L_0]$ &
   $0$ &
   \textbf{emits} $L_0$ &
-  $\Delta\mathcal{S}_q^{\mathrm{matter}}$ &
+  $\Delta\mathfrak{S}_q^{\mathrm{matter}}$ &
   \textbf{changes} &
   \textbf{changes} \\
 \bottomrule
@@ -114,7 +114,7 @@ Skein ($\mathfrak{d} \to \mathfrak{u}$) &
    - R2 ($q$-deformed) and R1 and Skein change Vol $\to$ change mass.
    - R3, far-comm, Markov I preserve Vol $\to$ preserve mass.
 
-2. **Binding energy** $= \mathcal{S}_q^{\mathrm{gauge}}$ evaluated
+2. **Binding energy** $= \mathfrak{S}_q^{\mathrm{gauge}}$ evaluated
    on the Gröbner--Shirshov normal form.
    - R2 ($q$-deformed) is the ONLY Gröbner--Shirshov relation that changes
      the gauge sector.  Each application splits
@@ -122,7 +122,7 @@ Skein ($\mathfrak{d} \to \mathfrak{u}$) &
      $(q - q^{-1})$ of Coulomb energy and $1$ of volume binding.
    - R3 and far-comm rearrange crossings without energy cost.
 
-3. **$Q$-value** $= \mathcal{S}_q[\text{parent}] - \mathcal{S}_q[\text{daughter}]$.
+3. **$Q$-value** $= \mathfrak{S}_q[\text{parent}] - \mathfrak{S}_q[\text{daughter}]$.
    - The Skein crossing change ($\mathfrak{d} \to \mathfrak{u}$) produces the transition.
    - The $L_0$ emission carries the electron + antineutrino.
    - The energy released = difference in gauge sector between

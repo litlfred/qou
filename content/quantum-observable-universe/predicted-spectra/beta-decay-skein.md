@@ -178,9 +178,9 @@ crossings of the $T_{3,5}$ insertion:
 $$
   Q
   = 
-  \mathcal{S}_q[\mathcal{N}(Z, N)]
+  \mathfrak{S}_q[\mathcal{N}(Z, N)]
   - 
-  \mathcal{S}_q[\mathcal{N}(Z \pm 1, N \mp 1)]
+  \mathfrak{S}_q[\mathcal{N}(Z \pm 1, N \mp 1)]
   - 
   m_e
 $$

@@ -26,10 +26,10 @@ locus is not contained in any triangular cone.
 **The $q$-deformed color space.**
 
 In the Descartes universe, the "color space" is the Skein module
-$\mathcal{S}_q(\mathbf{C})$.  The three coral tubes
+$\mathrm{Sk}_q(\mathbf{C})$.  The three coral tubes
 $(r, g, b) = (w_2 - z, w_3 - z, w_4 - z)$ provide three
 distinguished directions — the "primaries" of the categorical
-color space.  An arbitrary element of $\mathcal{S}_q$ is a formal
+color space.  An arbitrary element of $\mathrm{Sk}_q$ is a formal
 linear combination of knot types with $q$-polynomial coefficients.
 
 The Skein relation
@@ -87,7 +87,7 @@ evaluations under the fibre functor $\tau$.  The fibre functor
 maps the Skein module to non-negative reals:
 
 $$
-  \tau \colon \mathcal{S}_q(\mathbf{C}) \to \mathbb{R}_{\geq 0}
+  \tau \colon \mathrm{Sk}_q(\mathbf{C}) \to \mathbb{R}_{\geq 0}
 $$
 
 but this map is positive only on the **$S_5$-invariant** submodule.
@@ -117,7 +117,7 @@ result.
 
 By analogy with the CIE chromaticity diagram, define the
 $q$-chromaticity coordinates of a Skein element
-$\psi \in \mathcal{S}_q$:
+$\psi \in \mathrm{Sk}_q$:
 
 $$
   (\hat{c}_r, \hat{c}_g, \hat{c}_b)

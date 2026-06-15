@@ -1,4 +1,4 @@
-The categorical action $\mathcal{S}_q = \mathrm{tr}(\mathcal{L}_q)$
+The categorical action $\mathfrak{S}_q = \mathrm{tr}(\mathcal{L}_q)$
 ([canonical action](#prop:qou-canonical-action)) evaluated on a nuclear
 link $\mathcal{N}(Z, N)$ produces observables at two levels.
 

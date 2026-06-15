@@ -77,7 +77,7 @@ and refreshed in
 [-math-framework-deep-audit](../../../docs/audits/-math-framework-deep-audit.md)).
 At each step:
 
-* **Base.** The categorical action $\mathcal{S} = \mathrm{tr}(\Phi)$
+* **Base.** The categorical action $\mathfrak{S} = \mathrm{tr}(\Phi)$
   is a $\mathbb{Q}(q)$-valued endomorphism trace
   ([categorical-action](#def\:categorical-action)) — dimensionless,
   living in $H^1$.

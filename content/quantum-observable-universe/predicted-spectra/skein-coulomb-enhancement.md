@@ -41,19 +41,19 @@ with $\alpha_{\mathrm{EM}}(q) = q^{-1}/([9]_q \cdot [10]_q)$
 $\beta_e = v_e / c$ the velocity of the emitted electron.
 
 **Derivation.**
-The canonical action $\mathcal{S}_q$
+The canonical action $\mathfrak{S}_q$
 ([canonical action](#prop:qou-canonical-action)) evaluated on the
 full outgoing state $\psi = T_{2,3} \cup \mathcal{N}(p\!+\!1, n\!-\!1)$
 decomposes as
 
 $$
-  \mathcal{S}_q\big|_\psi
+  \mathfrak{S}_q\big|_\psi
   = 
-  \mathcal{S}_q\big|_{\mathcal{N}}
+  \mathfrak{S}_q\big|_{\mathcal{N}}
   + 
   \sum_{j=1}^{Z} \mathcal{S}_{e\text{-}p_j}
   + 
-  \mathcal{S}_q\big|_{T_{2,3}}
+  \mathfrak{S}_q\big|_{T_{2,3}}
 $$
 
 where the middle sum runs over electron-proton crossings.  Each

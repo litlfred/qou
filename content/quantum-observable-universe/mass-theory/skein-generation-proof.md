@@ -5,7 +5,7 @@ the particle dictionary, the fundamental knots are the fermions:
 the unknot (neutrino), trefoil $3_1$ (electron), cinquefoil $5_1$
 (tau), and the torus$(p,2)$ family.
 
-**Generation.** The Skein module $\mathcal{S}_q$ is generated as an
+**Generation.** The Skein module $\mathrm{Sk}_q$ is generated as an
 algebra by the fundamental knot types $\{K_i\}_{i \in \mathcal{F}}$
 and the Hopf link $\mathcal{L}_{\mathrm{Hopf}}$.  Every hadron
 $H \in \mathrm{Sym}^n(K) \otimes \mathcal{L}_{\mathrm{Hopf}}$

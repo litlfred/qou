@@ -31,8 +31,8 @@ operations.
 Not every knot reachable from $T_{1,0}$ by crossing changes has
 genus $\leq 4$ — intermediate steps may pass through arbitrarily
 high genus.  However, the Bring's surface imposes a spectral filter:
-in the Skein module $\mathcal{S}_q(\mathbf{C})$, the mass functional
-$\mathcal{M} \colon \mathcal{S}_q \to \mathbb{R}_{\geq 0}$ annihilates
+in the Skein module $\mathrm{Sk}_q(\mathbf{C})$, the mass functional
+$\mathcal{M} \colon \mathrm{Sk}_q \to \mathbb{R}_{\geq 0}$ annihilates
 any term whose knot type has $g > 4$
 ([embeddability closure](#thm:embeddability-closure)).  The physical
 content of the Skein resolution is the projection onto the submodule

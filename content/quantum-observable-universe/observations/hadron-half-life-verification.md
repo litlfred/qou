@@ -24,8 +24,8 @@ From $q$ and $\mu_0$ alone:
 2. **$Q$-value**
    ([transition energy](#def:Q-value-transition)) — the
    categorical action difference
-   $Q = S_q(\mathrm{par}) - S_q(\mathrm{dau}) - S_q(e)$
-   where $S_q(e) = 3m_e/3$
+   $Q = \mathfrak{S}_q(\mathrm{par}) - \mathfrak{S}_q(\mathrm{dau}) - \mathfrak{S}_q(e)$
+   where $\mathfrak{S}_q(e) = 3m_e/3$
    ([building blocks](#rem:building-block-knots)).
    This is NOT defined by classical energy conservation
    ($E_{\mathrm{before}} = E_{\mathrm{after}}$ fails at $q \neq 1$).

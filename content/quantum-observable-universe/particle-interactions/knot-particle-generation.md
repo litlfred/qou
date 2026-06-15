@@ -51,7 +51,7 @@ change.
 ([Skein generation](#prop:skein-generation)) admits a presentation
 
 $$
-  \mathcal{S}_q(\mathbf{C}) = 
+  \mathrm{Sk}_q(\mathbf{C}) = 
   \mathbb{Z}[q^{\pm 1}]\bigl\langle
     \mathcal{G},
     \mathcal{L}_{\mathrm{Hopf}},

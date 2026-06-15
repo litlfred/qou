@@ -12,7 +12,7 @@ varying the $q$-Yang--Mills--Levi functional
 ([$q$-YM-Levi](#def\:q-yang-mills-levi))
 
 $$
-  S_q[A, \varTheta]
+  \mathfrak{S}_q[A, \varTheta]
   =  \int_M q(p)\lVert F_A^+|_H \rVert^2
   \varTheta \wedge (d\varTheta)^n
 $$

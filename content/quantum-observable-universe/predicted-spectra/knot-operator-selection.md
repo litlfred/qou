@@ -80,7 +80,7 @@ there exists a unique minimal-norm supply that satisfies it.*
 on-shell condition $\star_q F_\nabla = F_\nabla$
 ([instanton on-shell](#rem\:instanton-on-shell)), the physical
 interaction selects the $\Phi$ minimizing the categorical
-action $|\mathcal{S}| = |\mathrm{tr}(\Phi)|$.  The dominant
+action $|\mathfrak{S}| = |\mathrm{tr}(\Phi)|$.  The dominant
 channel is the irrep $\lambda_*$ with largest
 $|d_{\lambda_*}(q) \cdot \mathrm{tr}_{\lambda_*}(\gamma_1 \cdot \beta(\tau_{\lambda_*}) \cdot \gamma_2)|$.*
 
@@ -94,7 +94,7 @@ weight $d_\lambda(q)$ by Schur orthogonality
 ([RJ inner product](#prop\:rj-canonical-inner-product)).
 
 **(ii)** The categorical action
-$\mathcal{S} = \mathrm{ev}_A \circ (\mathrm{id}_{A^\vee} \otimes \Phi) \circ \mathrm{coev}_A = \mathrm{tr}(\Phi)$
+$\mathfrak{S} = \mathrm{ev}_A \circ (\mathrm{id}_{A^\vee} \otimes \Phi) \circ \mathrm{coev}_A = \mathrm{tr}(\Phi)$
 is linear in $\Phi$.  Substituting the spectral decomposition
 (i) and using the identification
 $\mathrm{tr} = \mathrm{tr}_M$ (archimedean :refterm[descent]{#descent},

@@ -29,12 +29,12 @@ integral $\int_A : A \to R$ (the Markov trace).  Then:*
 
 3. *(Observables are Wedderburn residues.)
    Every physical observable
-   $\mathfrak{O}(\mathcal{K}, \mathcal{T}) = \int_A \rho(\beta_\mathcal{K}) \cdot \mathcal{T}$
+   $\mathfrak{W}(\mathcal{K}, \mathcal{T}) = \int_A \rho(\beta_\mathcal{K}) \cdot \mathcal{T}$
    factors as a sum of Wedderburn residues
    ([universal residue](#prop:plancherel-term-7-formulation)):*
 
    $$
-     \mathfrak{O}(\mathcal{K}, \mathcal{T})
+     \mathfrak{W}(\mathcal{K}, \mathcal{T})
      \;=\; \sum_\lambda \int_{A_\lambda}\!\!\rho(\beta_\mathcal{K}) \cdot \mathcal{T}.
    $$
 

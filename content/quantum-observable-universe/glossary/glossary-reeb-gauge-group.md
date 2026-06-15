@@ -47,7 +47,7 @@ arising from the single datum $T \subset G$:
    In the adjoint bundle $\mathrm{Ad}(J^1\mathcal{S})$,
    the $U_1(R)$-direction is the Cartan subalgebra — the
    **one direction** in the colour fibre where intents
-   commute: $[\mathfrak{I}_1, \mathfrak{I}_2] = 0$
+   commute: $[\mathfrak{O}_1, \mathfrak{O}_2] = 0$
    when both act along $\xi$.  The remaining two
    directions (the off-diagonal generators $E_{\pm}$ of
    $\mathfrak{su}(2)$) are where fermionic uncertainty

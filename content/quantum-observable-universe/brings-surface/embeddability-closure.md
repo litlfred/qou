@@ -70,9 +70,9 @@ $$
   = (q^{1/2} - q^{-1/2}) [L_0]
 $$
 
-in the Skein module $\mathcal{S}_q(\mathbf{C})$.  Terms whose knot
+in the Skein module $\mathrm{Sk}_q(\mathbf{C})$.  Terms whose knot
 type has $g > 4$ lie in the kernel of the mass functional
-$\mathcal{M} \colon \mathcal{S}_q \to \mathbb{R}_{\geq 0}$, because
+$\mathcal{M} \colon \mathrm{Sk}_q \to \mathbb{R}_{\geq 0}$, because
 $\mathcal{M}$ is defined via the fibre functor, which requires
 localizability.  The physical mass receives contributions only from
 the embeddable terms.

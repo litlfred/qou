@@ -5,7 +5,7 @@ formulation).**
 commutative ring $R$ with substrate parameter $q > 1$.  Let
 $\nabla$ be a ([categorical connection](#def:categorical-connection)) on
 the Frobenius--Hopf object $A$ with curvature $F_\nabla = \nabla^2$,
-and let $S_q[\nabla]$ be the
+and let $\mathfrak{S}_q[\nabla]$ be the
 ([$q$-weighted Yang--Mills--Levi functional](#def:q-yang-mills-levi)).
 Let $\Omega_0 \colon R \to \mathrm{End}_{\mathbf{C}}(A)$ be the
 ([vacuum state](#prop:vacuum-state)) --- the unique
@@ -15,7 +15,7 @@ $\mathcal{A}_\infty = \varinjlim \mathrm{End}_{\mathbf{C}}(A_n)$.*
 *Then:*
 
 1. **Existence.**  *There exists a connection $\nabla$ that is a
-   critical point of $S_q[\nabla]$ (a categorical Yang--Mills
+   critical point of $\mathfrak{S}_q[\nabla]$ (a categorical Yang--Mills
    connection), and the vacuum state $\Omega_0$ extends to a
    positive-definite sesquilinear form on the Hilbert completion
    $\overline{\mathcal{A}_\infty}$, defining a physical Hilbert

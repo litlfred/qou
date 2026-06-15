@@ -56,6 +56,42 @@ paper to keep them disambiguated:
   letter $H$: $\mathcal{H}_q$ (shuffle Hopf algebra), $\hat{H}_q$
   (Hamiltonian operator), $H_n(q)$ or $H_q(\lambda)$ (Hecke /
   hook-length, always with argument).
+- **$\mathfrak{S}$** = categorical action (fraktur, Hamilton's $S$).
+  The action was historically written two ways — calligraphic
+  $\mathcal{S}_q$ and plain $S_q$ — **both now unified to $\mathfrak{S}_q$
+  throughout the paper**. This frees calligraphic $\mathcal{S}$ for the
+  **state bundle** alone (QOU tuple
+  $(\mathbf{C}, \varTheta, G, \mathcal{S})$). Three other objects
+  deliberately keep $S$ / $\mathrm{Sk}$ and are **not** the action:
+    - the Hopf **antipode** $S$ (plain $S$, or $S_q$ on the $q$-shuffle
+      Hopf algebra);
+    - the q-**entropy** $S_q(U)$ (`quantum-temperature`, with
+      $\partial S_q/\partial \mathfrak{E}_q = 1/T_q$) and the
+      Bekenstein–Hawking entropy $S_{BH}$ — entropy is a distinct
+      thermodynamic observable, never the action;
+    - the **Skein module** $\mathrm{Sk}_q(\mathbf{C})$ — the
+      $\mathbb{Z}[q^{\pm 1}]$-algebra of knot classes, with mass
+      functional $\mathcal{M}\colon \mathrm{Sk}_q \to \mathbb{R}_{\geq 0}$.
+      Moved off calligraphic $\mathcal{S}$ (where it collided with the
+      state bundle) to roman $\mathrm{Sk}$, since single-letter
+      calligraphic was blocked: $\mathcal{S}$ = state bundle,
+      $\mathcal{K}$ = knot.
+- **$\mathfrak{O}$** = observation / intent morphism — the section
+  $(\mathfrak{O}, \epsilon)$ of $\mathrm{Ad}(J^1\mathcal{S})$ and its
+  germ endomorphism $\mathfrak{O}_p$. Never an **ideal**: the
+  genus-filtration ideal keeps $\mathfrak{I}$
+  ($\mathfrak{I}_4 = (u^5)$). Intent moved off $\mathfrak{I}$ to
+  disambiguate the two.
+- **$\mathfrak{W}$** = confinement observable / $q$-Wilson loop
+  $\mathfrak{W}(\mathcal{K}, \mathcal{T})$. Never the observation
+  morphism (now $\mathfrak{O}$); the abstract Wilson-loop functional is
+  plain $W(\gamma)$.
+- **$S_n$ vs $H_n(q)$** — $q$-deformed braiding decompositions
+  (eigenvalues $\{q, -q^{-1}\}$) are actions of the Iwahori–Hecke
+  algebra $H_n(q)$, **not** the symmetric group $S_n$, even when the
+  block dimensions match the classical $S_n$ irreps (§7a–7b). Write
+  classical $S_n$ only for a genuine $\epsilon = \pm 1$ flip; never
+  fraktur $\mathfrak{S}_n$ (fraktur $\mathfrak{S}$ is the action).
 - **Three partition-weight families** — Markov $y_\lambda$,
   Plancherel $w_\lambda$, q-deformed Wedderburn $\tilde w_\lambda$ —
   are distinct at $q \neq 1$ and must not be conflated. They

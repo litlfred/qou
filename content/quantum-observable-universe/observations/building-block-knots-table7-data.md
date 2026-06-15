@@ -1,4 +1,4 @@
-| Particle | Knot | $n_c$ | $\mathrm{Vol}$ | $\mathfrak{E}_{\mathrm{cross}}(q)$ | $S_q(K)$ | Mass ($\mu_0$ units) |
+| Particle | Knot | $n_c$ | $\mathrm{Vol}$ | $\mathfrak{E}_{\mathrm{cross}}(q)$ | $\mathfrak{S}_q(K)$ | Mass ($\mu_0$ units) |
 |----------|------|:-----:|:---------------:|:-----------------------:|:---------:|:--------------------:|
 | $\nu$ | $0_1$ | $0$ | $0$ | $0$ | $0$ | $0$ |
 | $e^-$ | $T_{2,3}$ | $3$ | $0$ | $3q = 3.330$ | $3\mathfrak{E}_{\times}$ | $3\mathfrak{E}_{\times}\mu_0$ |

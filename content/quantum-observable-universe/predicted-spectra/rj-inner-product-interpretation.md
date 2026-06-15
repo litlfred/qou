@@ -9,7 +9,7 @@ The chain of identifications is:
 
 | Level               | Object                                                                                                                                     | Role                                                                   |
 | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------- |
-| Categorical         | $\mathrm{tr} = \mathrm{ev}_A \circ (\mathrm{id}_{A^\vee} \otimes -) \circ \mathrm{coev}_A$                                                 | Integration in the action $\mathcal{S}_q = \mathrm{tr}(\mathcal{L}_q)$ |
+| Categorical         | $\mathrm{tr} = \mathrm{ev}_A \circ (\mathrm{id}_{A^\vee} \otimes -) \circ \mathrm{coev}_A$                                                 | Integration in the action $\mathfrak{S}_q = \mathrm{tr}(\mathcal{L}_q)$ |
 | Archimedean         | Markov trace $\mathrm{tr}_M$ on $H_r(q)$                                                                                                   | :refterm[Descent]{#descent} of $\mathrm{tr}$ to the Hecke algebra      |
 | Representation ring | $\langle -, - \rangle_{\mathrm{RJ}} = \sum_\lambda d_\lambda(q) \cdot \mathrm{tr}_\lambda(-) \cdot \mathrm{tr}_\lambda(-)$                 | Diagonal form via Schur orthogonality                                  |
 | Q-value             | $F_{\mathrm{deg2}} = \sum_\tau J(\tau) \cdot \mathrm{tr}_M(\tau \cdot \Delta_\beta) / \sum_\tau J(\tau) \cdot \mathrm{tr}_M(\Delta_\beta)$ | RJ-weighted spectral projection                                        |

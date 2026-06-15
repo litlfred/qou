@@ -13,7 +13,7 @@ $$
   \;+\;
   \underbrace{p_q(\beta)^2 \cdot \hbar_q / (2\,[n]_q)}_{\text{translational}}
   \;+\;
-  \underbrace{S_q(K)}_{\text{action (rest mass)}}
+  \underbrace{\mathfrak{S}_q(K)}_{\text{action (rest mass)}}
 $$
 
 where:
@@ -22,7 +22,7 @@ where:
   ([q-angular momentum](#def:q-angular-momentum)),
 - $p_q(\beta)$ is the $q$-momentum (writhe)
   ([q-momentum](#def:q-momentum)),
-- $S_q(K) = \mathrm{tr}_\tau(\rho(\beta))$ is the categorical
+- $\mathfrak{S}_q(K) = \mathrm{tr}_\tau(\rho(\beta))$ is the categorical
   action — the Markov trace of the braid in the Hecke
   algebra $H_n(R, q)$,
 - $\hbar_q = 1 - q^{-1}$ is the quantum Planck constant,
@@ -41,13 +41,13 @@ where:
    The $[n]_q$ in the denominator is the $q$-deformed
    "number of strands" (inertia).
 
-3. **Action term** $S_q(K)$: The categorical action
-   $S_q = \mathrm{tr}(\mathscr{L}_q)$ evaluated on the knot.
+3. **Action term** $\mathfrak{S}_q(K)$: The categorical action
+   $\mathfrak{S}_q = \mathrm{tr}(\mathscr{L}_q)$ evaluated on the knot.
    This is the **rest mass energy** — the categorical
    action (Markov trace of the braid representation):
 
 $$
-  S_q(K) = \mathrm{tr}_M(\rho(\beta))
+  \mathfrak{S}_q(K) = \mathrm{tr}_M(\rho(\beta))
 $$
 
 At a single brane level this equals $|\mathrm{tr}_M(\rho(\beta))|$
@@ -60,13 +60,13 @@ action is nonzero but the hyperbolic volume vanishes; the mass
 arises from the quantum dilogarithm contributions across the tower
 ([mass endomorphism conjecture](#conj:mass-endomorphism)).
 
-The action term dominates: for hadrons, $S_q \sim 10^3$ MeV
+The action term dominates: for hadrons, $\mathfrak{S}_q \sim 10^3$ MeV
 while the rotational and translational terms are $O(\hbar_q) \sim 0.1$.
 
 **At rest** ($p_q = 0$, $J_q = 0$):
 
 $$
-  \mathfrak{E}_q(K)\big|_{\text{rest}} \;=\; S_q(K) \;=\; \mathfrak{m}(K) c^2
+  \mathfrak{E}_q(K)\big|_{\text{rest}} \;=\; \mathfrak{S}_q(K) \;=\; \mathfrak{m}(K) c^2
 $$
 
 recovering the topological mass formula.
@@ -75,9 +75,9 @@ recovering the topological mass formula.
 
 | Limit | $\mathfrak{E}_q$ |
 |-------|-------|
-| $q = 1$ (classical) | $j(j+1) \cdot 0 + w^2 \cdot 0 + S_1 = S_1$ |
-| $q \to \infty$ (deep-quantum) | $J_q^2 \to q^{2j+1}, \; p_q \to w \cdot q, \; S_q \to \infty$ |
-| Rest frame | $S_q(K)$ (mass) |
+| $q = 1$ (classical) | $j(j+1) \cdot 0 + w^2 \cdot 0 + \mathfrak{S}_1 = \mathfrak{S}_1$ |
+| $q \to \infty$ (deep-quantum) | $J_q^2 \to q^{2j+1}, \; p_q \to w \cdot q, \; \mathfrak{S}_q \to \infty$ |
+| Rest frame | $\mathfrak{S}_q(K)$ (mass) |
 
 **Relation to crossing energy.**
 
@@ -86,7 +86,7 @@ $\mathfrak{E}_\times(q) = \frac{1}{2}(q - q^{-1}) = 0.1045$ (in units
 of the mass scale $\mu_0$).  The total action is:
 
 $$
-  S_q(K) \;=\; \sum_{j=1}^{k} \mathfrak{E}_\times^{(\epsilon_j)}(q)
+  \mathfrak{S}_q(K) \;=\; \sum_{j=1}^{k} \mathfrak{E}_\times^{(\epsilon_j)}(q)
 $$
 
 where $\epsilon_j = \pm 1$ is the crossing sign.  For a

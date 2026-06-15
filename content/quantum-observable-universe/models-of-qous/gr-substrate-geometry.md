@@ -6,11 +6,11 @@ where $d_H$ differentiates along the base $M$ and $d_V$ along the
 fibre — as the back-reaction of the gauge fields on the CR manifold
 $M$.
 
-Variation of $S_q$ ([$q$-Yang--Mills--Levi functional](#def:q-yang-mills-levi)) with respect
+Variation of $\mathfrak{S}_q$ ([$q$-Yang--Mills--Levi functional](#def:q-yang-mills-levi)) with respect
 to the Levi form $L_\varTheta$ yields field equations of the schematic form
 
 $$
-  \frac{\delta S_q}{\delta L_\varTheta}
+  \frac{\delta \mathfrak{S}_q}{\delta L_\varTheta}
   =  0
   \qquad\Longrightarrow\qquad
   \mathrm{Ric}_{g_\varTheta} =  T^{(q)},

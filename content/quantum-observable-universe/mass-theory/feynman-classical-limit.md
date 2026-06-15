@@ -20,10 +20,10 @@ the following degenerations occur:*
 
 3. **(Categorical action $\to$ classical action.)**
    *The categorical action
-   $S_q(K) = \mathrm{tr}_M(\rho(\beta)) \to S_1(\beta)$, the
+   $\mathfrak{S}_q(K) = \mathrm{tr}_M(\rho(\beta)) \to \mathfrak{S}_1(\beta)$, the
    character of the permutation $\pi(\beta) \in S_n$ obtained by
    imposing $\sigma_i^2 = 1$ on the braid word.  The $q$-energy
-   reduces to $\mathfrak{E}_1 = S_1$ because the rotational and
+   reduces to $\mathfrak{E}_1 = \mathfrak{S}_1$ because the rotational and
    translational terms vanish with $\hbar_q = 1 - q^{-1} \to 0$
    ([$q$-energy](#def\:q-energy)).*
 

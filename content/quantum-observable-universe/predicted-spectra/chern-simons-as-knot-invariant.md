@@ -1,6 +1,6 @@
 Classical Chern--Simons does not survive as the bulk categorical
 action ([comparison](#rem:categorical-action-vs-chern-simons)):
-that role is filled by $\mathcal{S}_q = \mathrm{tr}(\mathcal{L}_q)$,
+that role is filled by $\mathfrak{S}_q = \mathrm{tr}(\mathcal{L}_q)$,
 whose archimedean image is Einstein--Hilbert + Yang--Mills + Dirac.
 The Chern--Simons functional instead re-enters the framework as
 one entry in a dictionary of *geometric knot invariants*, selected
