@@ -4,6 +4,11 @@ __pycache__/
 .folio-prefs.json
 build/
 
+# The platform lives in the external repo litlfred/folio-assistant.
+# scripts/setup-folio-assistant.sh symlinks <root>/folio-assistant to a
+# local clone of it; the symlink (and any in-place clone) is not tracked.
+/folio-assistant
+
 # Generated LaTeX chapters (from content pipeline)
 chapters/*.tex
 chapters/*.md
