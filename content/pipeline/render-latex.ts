@@ -636,6 +636,29 @@ const ENV_NAMES: Record<string, string> = {
   simulator: "remark",  // simulators render as remarks in LaTeX with snapshot
 };
 
+// ── Fixed (declarative) numbering + per-section page break ────────────
+// Both DEFAULT-ON (owner directive 2026-06-15). They make each (sub)section a
+// self-contained, position-independent, cacheable unit:
+//   • FIXED_NUMBERING injects \setcounter before each chapter/section/
+//     subsection/numbered-block so the number is pipeline-computed and
+//     position-controlled — a block's .tex is then deterministic given its
+//     source + number (cacheable; native \ref/\label still resolve). Kill with
+//     QOU_NO_FIXED_NUMBERING=1.
+//   • SECTION_PAGEBREAK \clearpage's before each section/subsection so its
+//     internal layout doesn't depend on prior content. Kill with
+//     QOU_NO_SECTION_PAGEBREAK=1.
+// Compile-unverified in the dev sandbox (no TeX engine); see
+// docs/latex-build-cache-testing.md. Numbers are forced explicitly, so the
+// worst failure mode is wrong numbers (debug later), not a broken compile.
+const FIXED_NUMBERING = process.env.QOU_NO_FIXED_NUMBERING !== "1";
+const SECTION_PAGEBREAK = process.env.QOU_NO_SECTION_PAGEBREAK !== "1";
+// Kinds rendered as a NUMBERED amsthm env (they share the `theorem` counter,
+// declared \newtheorem{theorem}{Theorem}[section]). `proof` is unnumbered;
+// prose/equation/diagram/table do not touch the theorem counter.
+const THEOREM_LIKE_KINDS = new Set(
+  Object.entries(ENV_NAMES).filter(([, env]) => env !== "proof").map(([k]) => k),
+);
+
 /**
  * Render a single block to LaTeX.
  *
@@ -997,9 +1020,16 @@ export function renderSection(
   blocks: Map<string, { block: Block; mdContent: string; sourceDir?: string }>,
   opts: RenderOptions = {},
   chapterReferencedLabels?: Set<string>,
+  sectionNumber?: number,
 ): string {
   const lines: string[] = [];
   const sectionLabel = section.label ? `\\label{${section.label}}` : "";
+  // Page break + fixed section number (default-on): make this section a
+  // self-contained, position-independent cacheable unit.
+  if (SECTION_PAGEBREAK) lines.push("\\clearpage");
+  if (FIXED_NUMBERING && sectionNumber != null) {
+    lines.push(`\\setcounter{section}{${sectionNumber - 1}}`);
+  }
   // Section heading + margin annotation (tracker + comment-stub for the
   // whole section).  Only emit \sectionannot when the section carries a
   // label — anonymous sections have nothing to filter the tracker by.
@@ -1025,6 +1055,10 @@ export function renderSection(
     ? new Set([...sectionRefs, ...chapterReferencedLabels])
     : sectionRefs;
 
+  // Shared theorem counter across this section AND its subsections (the amsthm
+  // `theorem` counter is [section], so subsection blocks continue it). Only
+  // INCLUDED theorem-like blocks increment it — matching what is emitted.
+  let thm = 0;
   const renderBlockList = (blockNames: string[]) => {
     for (const rootName of blockNames) {
       const entry = blocks.get(rootName);
@@ -1044,6 +1078,13 @@ export function renderSection(
         }
         continue;
       }
+      const kind = (entry.block && typeof entry.block === "object" && "kind" in entry.block)
+        ? (entry.block as { kind?: string }).kind
+        : undefined;
+      if (FIXED_NUMBERING && kind && THEOREM_LIKE_KINDS.has(kind)) {
+        thm += 1;
+        lines.push(`\\setcounter{theorem}{${thm - 1}}`);
+      }
       lines.push(renderBlock(entry.block, entry.mdContent, entry.sourceDir, rootName));
       lines.push(""); // blank line between blocks
     }
@@ -1051,7 +1092,11 @@ export function renderSection(
 
   renderBlockList(section.blocks);
 
+  let subNo = 0;
   for (const sub of subsections) {
+    subNo += 1;
+    if (SECTION_PAGEBREAK) lines.push("\\clearpage");
+    if (FIXED_NUMBERING) lines.push(`\\setcounter{subsection}{${subNo - 1}}`);
     lines.push(`\\subsection{${escapeLatex(sub.title)}}`);
     if (sub.label) {
       lines.push(`\\label{${sub.label}}`);
@@ -1076,6 +1121,7 @@ export function renderChapter(
   opts: RenderOptions = {},
   chapterDir?: string,
   paperSlug?: string,
+  chapterNumber?: number,
 ): string {
   const lines: string[] = [];
   // Each chapter starts on a new page
@@ -1083,6 +1129,10 @@ export function renderChapter(
   const labelLine = chapter.label ? `\\label{${chapter.label}}\n` : "";
   // Chapters with tabLabel are unnumbered (\chapter*); all others are auto-numbered by LaTeX.
   const star = chapter.tabLabel != null ? "*" : "";
+  // Fixed chapter number (numbered chapters only; \chapter* is unnumbered).
+  if (FIXED_NUMBERING && !star && chapterNumber != null) {
+    lines.push(`\\setcounter{chapter}{${chapterNumber - 1}}`);
+  }
   lines.push(`\\chapter${star}{${escapeLatex(chapter.title)}}\n${labelLine}`);
   // Chapter-level margin annotation: link to the chapter directory + tracker.
   // We use the chapter's own label as the tracker filter; if the chapter
@@ -1114,9 +1164,11 @@ export function renderChapter(
   }
   const chapterReferencedLabels = collectReferencedLabels(allChapterBlockNames, blocks);
 
+  let sectionNo = 0;
   for (const section of chapter.sections) {
     if (!("blocks" in section)) continue;
     const sec = section as Section;
+    sectionNo += 1;
     for (const rootName of sectionAllBlocks(sec)) {
       const entry = blocks.get(rootName);
       if (!entry) continue;
@@ -1130,7 +1182,7 @@ export function renderChapter(
         }
       }
     }
-    lines.push(renderSection(sec, blocks, opts, chapterReferencedLabels));
+    lines.push(renderSection(sec, blocks, opts, chapterReferencedLabels, sectionNo));
   }
 
   // Per-chapter bibliography removed — all references are collected in
