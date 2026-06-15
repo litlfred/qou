@@ -93,7 +93,7 @@ function emitPerDocPreambleTail(paper: Paper, memoize?: boolean): string[] {
     lines.push("% ── Diagram memoization (per-render; needs -shell-escape) ───────────────────");
     // Resilient load: skip gracefully if memoize.sty is absent (older TeX
     // distributions predate it) rather than aborting the compile.
-    lines.push("\\IfFileExists{memoize.sty}{\\usepackage{memoize}}{\\PackageWarning{qou}{memoize.sty not found; diagram caching disabled}}");
+    lines.push("\\IfFileExists{memoize.sty}{\\usepackage{memoize}}{}% memoize.sty absent -> diagram caching disabled (compile continues)");
     lines.push("");
   }
 
