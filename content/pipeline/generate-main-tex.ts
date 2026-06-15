@@ -75,6 +75,19 @@ function emitPerDocPreambleTail(paper: Paper): string[] {
   lines.push("\\IfFileExists{print-mode.tex}{\\input{print-mode.tex}}{}");
   lines.push("");
 
+  // Fast preview (QOU_FAST_PREVIEW=1): the ~2944 per-block margin
+  // annotations (the ∇ / # / + source-and-issue icons, emitted as
+  // \blockannot → \marginnote) cost ~50% of compile time — measured on a
+  // real engine: one full pass 19.5 s → 9.2 s with them disabled.
+  // No-op \marginnote for preview / iteration builds; the body (text,
+  // math, labels, cross-refs) is byte-identical. The PUBLISHED build
+  // leaves this flag unset and keeps every margin icon.
+  if (process.env.QOU_FAST_PREVIEW === "1") {
+    lines.push("% ── Fast preview: margin annotations disabled (~2x faster; preview only) ──");
+    lines.push("\\renewcommand{\\marginnote}[2][]{}");
+    lines.push("");
+  }
+
   return lines;
 }
 
