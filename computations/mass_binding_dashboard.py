@@ -1,0 +1,238 @@
+#!/usr/bin/env python3
+"""Mass-binding dashboard — B_AME vs the standard-part binding forms + masses.
+
+Powers the `/dashboard-low` and `/dashboard-sweep` commands. Every binding form
+is evaluated from the ONE canonical Jones–Markov transfer trace (`tr_m_atom_zn`,
+the fine-Bratteli path); B_AME comes from the vendored AME2020 table
+(`data/ame2020.json`). This is the multi-isotope view of the single-pipeline
+probe `binding_single_pipeline_comparison.py` (PR #2320); see the appendix
+`standard-part-functor.md` for the form definitions.
+
+Feasibility: the trace forms (B_lin / B_sym / B_qCLT-uniform) need the full
+per-knot trace `tr_M(W_atom)`, whose partition sum p(3A) explodes with A, so they
+are computed only when `n = 3A ≤ --max-strands` (default 21, i.e. A ≤ 7; each
+≲ 3 s). The factorized q-CLT and the ⁴He magic volume are cheap (combinatorics +
+three fixed 2-nucleon sub-braid ratios) and are shown across the whole sweep as
+the A→∞ extrapolation — which is also where the method's breakdown beyond the
+light nuclei is meant to be visible, NOT a validated prediction.
+
+EXPLORATORY presentation tool — no production rewire, no fit, no witness emitted
+(the canonical witness is the probe's). α = E₀ throughout.
+
+Usage:
+    python3 mass_binding_dashboard.py --group low      # /dashboard-low
+    python3 mass_binding_dashboard.py --group sweep    # /dashboard-sweep
+    python3 mass_binding_dashboard.py 6Li 12C 56Fe     # explicit isotopes
+    python3 mass_binding_dashboard.py --group sweep --max-strands 27   # more trace rows
+"""
+from __future__ import annotations
+
+import argparse
+import json
+import math
+import sys
+from math import comb
+from pathlib import Path
+
+HERE = Path(__file__).resolve().parent
+sys.path.insert(0, str(HERE))
+sys.path.insert(0, str(HERE / "substrate"))
+
+# (name, Z, N) grouped by mass band. The sweep is a curated spread low→high so
+# the trend (and the breakdown past the light nuclei) is visible in one view.
+GROUPS = {
+    "low":     [("2H", 1, 1), ("3H", 1, 2), ("3He", 2, 1), ("4He", 2, 2),
+                ("6Li", 3, 3), ("7Li", 3, 4)],
+    "low-mid": [("9Be", 4, 5), ("12C", 6, 6)],
+    "mid":     [("16O", 8, 8), ("24Mg", 12, 12), ("40Ca", 20, 20)],
+    "high":    [("56Fe", 26, 30)],
+}
+SWEEP = [("2H", 1, 1), ("4He", 2, 2),
+         ("7Li", 3, 4), ("9Be", 4, 5), ("12C", 6, 6),
+         ("16O", 8, 8), ("24Mg", 12, 12), ("40Ca", 20, 20),
+         ("56Fe", 26, 30)]
+
+
+def _ame_table():
+    """(Z, A) → total binding energy (MeV) from the vendored AME2020 table."""
+    d = json.loads((HERE / "data" / "ame2020.json").read_text())
+    entries = d["entries"] if isinstance(d, dict) and "entries" in d else d
+    rows = entries.values() if isinstance(entries, dict) else entries
+    out = {}
+    for r in rows:
+        b = r.get("binding_energy_total_keV")
+        if b is not None:
+            out[(r["Z"], r["A"])] = b / 1000.0
+    return out
+
+
+def _constants():
+    from q_parameter import Q as q0
+    from knot_volumes import VOL_BORROMEAN
+    from codata_constants import M_E_MEV as me
+    me, q0, g8 = float(me), float(q0), float(VOL_BORROMEAN)
+    return me, q0, me / (q0 * (q0 - 1.0)), g8        # me, q0, E0, 8G
+
+
+def _bond_type_L():
+    """Per-bond-type 2-nucleon sub-braid log-suppression: p-p (2,0), p-n (1,1),
+    n-n (0,2). The V_i of the factorized q-CLT, computed once."""
+    from tr_m_atom_via_transfer import tr_m_atom_zn
+    out = {}
+    for key, (Z, N) in (("pp", (2, 0)), ("pn", (1, 1)), ("nn", (0, 2))):
+        ta, tf, _, _ = tr_m_atom_zn(Z, N, dps=50)
+        out[key] = math.log(float(tf) / float(ta))
+    return out
+
+
+def _row(name, Z, N, alpha, me, g8, Lbond, ame, max_strands):
+    A = Z + N
+    n = 3 * A
+    bame = ame.get((Z, A))
+    # ---- cheap forms (any A): factorized q-CLT + ⁴He magic volume -----------
+    n_pp, n_pn, n_nn = comb(Z, 2), Z * N, comb(N, 2)
+    sigma_L = n_pp * Lbond["pp"] + n_pn * Lbond["pn"] + n_nn * Lbond["nn"]
+    Lbar = sigma_L / comb(A, 2) if A >= 2 else 0.0
+    B_fac = alpha * (A - 1) * Lbar
+    B_magic = (2.0 * me * A * g8) if (Z, N) == (2, 2) else None
+    # ---- colour-weighting decomposition of the factorized q-CLT ------------
+    #   B_qCLT_fac = isospin-symmetric baseline (every bond = p-n) + the p↔n
+    #   chirality correction (n-n stronger / p-p weaker than p-n). The baseline
+    #   equals the uniform B_qCLT; the correction is what splits mirror nuclei.
+    B_base = alpha * (A - 1) * Lbond["pn"]
+    B_chir = B_fac - B_base
+    # ---- trace forms (only when the per-knot tr_M is feasible) --------------
+    B_lin = B_sym = B_qCLT = None
+    m_sym_atom = m_sym_free = None
+    if n <= max_strands:
+        from tr_m_atom_via_transfer import tr_m_atom_zn
+        ta, tf, _, _ = tr_m_atom_zn(Z, N, dps=50)
+        ta, tf = float(ta), float(tf)
+        s = 1.0 - ta / tf
+        L = math.log(tf / ta)
+        ell_bond = Lbond["pn"]                       # deuteron p-n bond
+        B_lin = alpha * s
+        B_sym = alpha * L
+        B_qCLT = alpha * (A - 1) * ell_bond          # uniform per-bond
+        # compositional: per-braid mass m_sym(W) = −α·ln tr_M(W); the free word
+        # factorizes over GB components (tr_free = tr_p^Z·tr_n^N), so
+        # B_sym = m_sym(atom) − m_sym(free GB components) exactly.
+        m_sym_atom = -alpha * math.log(ta)
+        m_sym_free = -alpha * math.log(tf)
+    return {"name": name, "Z": Z, "N": N, "A": A, "n": n, "B_AME": bame,
+            "n_pp": n_pp, "n_pn": n_pn, "n_nn": n_nn,
+            "B_lin": B_lin, "B_sym": B_sym, "B_qCLT": B_qCLT,
+            "B_qCLT_fac": B_fac, "B_base": B_base, "B_chir": B_chir,
+            "B_magic": B_magic,
+            "m_sym_atom": m_sym_atom, "m_sym_free": m_sym_free}
+
+
+def _fmt(v, w=8, p=2):
+    return f"{v:>{w}.{p}f}" if v is not None else f"{'—':>{w}}"
+
+
+def _err(bame, b):
+    return (bame / b) if (bame is not None and b is not None and b > 0) else None
+
+
+def main(argv=None) -> int:
+    ap = argparse.ArgumentParser(description="Mass-binding low-isotope dashboard")
+    ap.add_argument("isotopes", nargs="*", help="explicit isotopes e.g. 6Li 12C")
+    ap.add_argument("--group", choices=["low", "low-mid", "mid", "high", "sweep"],
+                    help="named isotope band")
+    ap.add_argument("--max-strands", type=int, default=21,
+                    help="trace forms (B_lin/B_sym/B_qCLT) computed only when "
+                         "n=3A ≤ this (default 21 = A≤7; raise for more rows, slower)")
+    args = ap.parse_args(argv)
+
+    # resolve the isotope list
+    by_name = {nm: (nm, Z, N) for grp in GROUPS.values() for (nm, Z, N) in grp}
+    by_name.update({nm: (nm, Z, N) for (nm, Z, N) in SWEEP})
+    if args.isotopes:
+        sel = []
+        for nm in args.isotopes:
+            if nm not in by_name:
+                print(f"  unknown isotope {nm!r}; known: {', '.join(sorted(by_name))}")
+                return 2
+            sel.append(by_name[nm])
+    elif args.group == "sweep":
+        sel = SWEEP
+    elif args.group:
+        sel = GROUPS[args.group]
+    else:
+        sel = GROUPS["low"]
+
+    me, q0, E0, g8 = _constants()
+    Lbond = _bond_type_L()
+    ame = _ame_table()                       # parse AME2020 once, not per row
+    rows = [_row(nm, Z, N, E0, me, g8, Lbond, ame, args.max_strands)
+            for (nm, Z, N) in sel]
+
+    title = (args.group or ("custom" if args.isotopes else "low")).upper()
+    print(f"\n  MASS-BINDING DASHBOARD [{title}]   α = E₀ = {E0:.4f} MeV"
+          f"   (bond-type L: pp={Lbond['pp']:.3f} pn={Lbond['pn']:.3f} "
+          f"nn={Lbond['nn']:.3f})")
+    print(f"  trace forms (lin/sym/qCLT) shown for n=3A ≤ {args.max_strands} "
+          f"(A ≤ {args.max_strands // 3}); fac/magic are the A→∞ extrapolation.\n")
+
+    # 1. BINDING
+    print("### Binding  B (MeV)")
+    print("| iso | A | B_AME | B_lin | B_sym | B_qCLT | B_qCLT_fac | B_magic |")
+    print("|---|--:|--:|--:|--:|--:|--:|--:|")
+    for r in rows:
+        print(f"| {r['name']} | {r['A']} | {_fmt(r['B_AME'])} | {_fmt(r['B_lin'])} "
+              f"| {_fmt(r['B_sym'])} | {_fmt(r['B_qCLT'])} | {_fmt(r['B_qCLT_fac'])} "
+              f"| {_fmt(r['B_magic'])} |")
+
+    # 2. ERROR  B_AME / B
+    print("\n### Error  (B_AME / B_model; 1.00 = perfect, >1 under-binds)")
+    print("| iso | A | lin | sym | qCLT | qCLT_fac | magic |")
+    print("|---|--:|--:|--:|--:|--:|--:|")
+    for r in rows:
+        e = {k: _err(r["B_AME"], r[k]) for k in
+             ("B_lin", "B_sym", "B_qCLT", "B_qCLT_fac", "B_magic")}
+        print(f"| {r['name']} | {r['A']} | {_fmt(e['B_lin'],6)} | {_fmt(e['B_sym'],6)} "
+              f"| {_fmt(e['B_qCLT'],6)} | {_fmt(e['B_qCLT_fac'],6)} "
+              f"| {_fmt(e['B_magic'],6)} |")
+
+    # 3. MASS  M = Z*m_p + N*m_n - B
+    from codata_constants import M_P_MEV_VALIDATION as mp_, M_N_MEV_VALIDATION as mn_
+    mp_, mn_ = float(mp_), float(mn_)
+    print("\n### Mass  M = Z·m_p + N·m_n − B (MeV)")
+    print("| iso | A | m_unbound | M_AME | m_sym | m_qCLT_fac |")
+    print("|---|--:|--:|--:|--:|--:|")
+    for r in rows:
+        mu = r["Z"] * mp_ + r["N"] * mn_
+        mame = (mu - r["B_AME"]) if r["B_AME"] is not None else None
+        msym = (mu - r["B_sym"]) if r["B_sym"] is not None else None
+        mfac = mu - r["B_qCLT_fac"]
+        print(f"| {r['name']} | {r['A']} | {mu:>9.1f} | {_fmt(mame,9,1)} "
+              f"| {_fmt(msym,9,1)} | {mfac:>9.1f} |")
+
+    # 4. COLOUR-WEIGHTING decomposition (B_qCLT_fac = baseline + p↔n chirality)
+    print("\n### Colour-weighting  (B_qCLT_fac = isospin-symmetric baseline + p↔n chirality)")
+    print("| iso | A | bonds pp/pn/nn | sym baseline | + chirality | = B_qCLT_fac |")
+    print("|---|--:|:--:|--:|--:|--:|")
+    for r in rows:
+        print(f"| {r['name']} | {r['A']} | {r['n_pp']}/{r['n_pn']}/{r['n_nn']} "
+              f"| {r['B_base']:>8.2f} | {r['B_chir']:>+8.2f} | {r['B_qCLT_fac']:>8.2f} |")
+
+    # 5. COMPOSITIONAL B_sym (atom GB-braid mass − free GB-component masses)
+    if any(r["m_sym_atom"] is not None for r in rows):
+        print("\n### Compositional B_sym  (m_sym(W) = −α·ln tr_M(W); free = GB components)")
+        print("| iso | A | m_sym(free comps) | m_sym(atom) | B_sym = atom−free |")
+        print("|---|--:|--:|--:|--:|")
+        for r in rows:
+            if r["m_sym_atom"] is None:
+                continue
+            print(f"| {r['name']} | {r['A']} | {r['m_sym_free']:>8.3f} "
+                  f"| {r['m_sym_atom']:>8.3f} | {r['B_sym']:>8.3f} |")
+
+    print("\n  Forms: B_lin=α·s · B_sym=α·ln(tr_free/tr_atom) · "
+          "B_qCLT=α·(A−1)·ℓ̄(D) · B_qCLT_fac=α·(A−1)·⟨bond-type L⟩ · "
+          "B_magic=2·m_e·A·8G (⁴He). Defn: standard-part-functor.md.")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
