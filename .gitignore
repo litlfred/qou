@@ -16,6 +16,11 @@ chapters/*.md
 *.fls
 *.fdb_latexmk
 *.synctex.gz
+# LaTeX preamble format cache + memoize box cache (regenerable build outputs;
+# CI persists them via actions/cache, not git — see local/latex-build-cache)
+*.fmt
+qou.fmt.sha
+.memo/
 *.pdf
 # Whitelist authored figure PDFs (SVG→PDF companions for the
 # LaTeX renderer; see content/pipeline/render-latex.ts image case).
@@ -38,6 +43,7 @@ print-mode.tex
 main.tex
 standalone-*.tex
 build-warnings.log
+build-feature/
 _site/
 
 # Lean build artifacts (all paper packages + root workspace)
