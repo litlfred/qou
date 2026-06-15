@@ -52,6 +52,21 @@ Layer 1 maps onto the repo's existing **sidecar staleness model**
 (`*.qa.json` / `*.witness.json`): the format is stale iff its recorded
 `sha256(preamble.tex)` drifts — a one-line compare.
 
+**Enabler — fixed (declarative) numbering + per-section page break
+(default-on, 2026-06-15).** Block output normally bakes in a
+position-dependent number (Theorem 3.4.2), so it can't be cached across
+edits. `render-latex.ts` removes that by computing numbers in the
+pipeline and forcing them with `\setcounter` before each
+chapter/section/subsection/numbered block (matching `report` + amsthm
+`theorem`[section]); a block's `.tex` is then deterministic given its
+source + number → cacheable, and native `\ref`/`\label` still resolve.
+A `\clearpage` before each section/subsection makes a (sub)section's
+internal layout independent of prior content (self-contained cacheable
+unit). Kill-switches: `QOU_NO_FIXED_NUMBERING=1`,
+`QOU_NO_SECTION_PAGEBREAK=1`. Residuals (debug later): equation numbers
+(in block `.md`, not yet forced), TOC/page numbers (recomputed each
+build), memoize-cross-ref-in-box (needs a TeX run).
+
 ## Components (the moving parts)
 
 | File | Role |

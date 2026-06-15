@@ -343,7 +343,45 @@ memoize, when enabled, additionally needs `-shell-escape` on every
 
 1. **Fix Actions billing / raise the spending limit** (only the owner
    can) — this is the gate on *all* CI verification.
-2. Then a `workflow_dispatch` run of `publish.yml` with `use_fmt=true`
-   settles the `\endofdump`/`hyperref` boundary and measures the real
-   wall-clock delta.
+2. Then a run of `publish.yml` settles the `\endofdump`/`hyperref`
+   boundary and measures the real wall-clock delta.
+
+---
+
+## Update 2026-06-15 — shipped DEFAULT-ON (supersedes the "staged / `use_fmt`" framing above)
+
+Per owner directive ("make ideal behaviour default; will debug later"),
+the cache is **on by default** in `publish.yml` (no `use_fmt` opt-in
+gate): content-pipeline generates with `--use-format qou --memoize`;
+`paper-pdf` + `diff-pdf` restore the caches (format keyed on the
+preamble hash → populated from main head; `.memo` per-SHA) and build
+`qou.fmt`; the draft gate is a single `pdflatex -draftmode` pass.
+
+### Block-level caching via FIXED (declarative) numbering
+
+The cascade that blocks block-level caching (a block's number depends on
+position) is removed by computing numbers in the **pipeline** and forcing
+them with `\setcounter`, so a block's `.tex` is deterministic given its
+source + number → cacheable by `memoize`. Combined with a **page break
+per section/subsection** (each (sub)section's internal layout is then
+independent of prior content), a section becomes a self-contained
+cacheable unit whose only global dependency is its start-page number
+(computed cheaply at assembly). Both **default-on**:
+
+| Behaviour | Where | Kill-switch |
+|-----------|-------|-------------|
+| Fixed numbering (`\setcounter` before each chapter/section/subsection/numbered block; matches `report` + amsthm `theorem`[section]) | `render-latex.ts` | `QOU_NO_FIXED_NUMBERING=1` |
+| Page break before each section/subsection | `render-latex.ts` | `QOU_NO_SECTION_PAGEBREAK=1` |
+
+Numbers are forced explicitly, so the worst failure mode is *wrong
+numbers* (debug later), not a broken compile. Native `\ref`/`\label`
+still resolve (the counter is set, not bypassed).
+
+**Known residuals (debug later):** equation numbers (inside block `.md`,
+not yet `\setcounter`-forced → still position-dependent); page
+numbers / TOC / `\pageref` (recomputed each build by the pagination
+pass — correct, just not skippable); `memoize` cross-refs inside cached
+boxes need a TeX run to confirm. Compile-unverified in the sandbox (no
+engine); CI verifies once Actions billing clears. Testing recipe:
+[`docs/latex-build-cache-testing.md`](../latex-build-cache-testing.md).
 
