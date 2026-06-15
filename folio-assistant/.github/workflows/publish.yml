@@ -266,8 +266,7 @@ jobs:
             --out-dir ../chapters/ \
             --generate-main \
             --main-out ../main.tex \
-            --preamble ../latex/preamble.tex \
-            --use-format qou --memoize 2>&1 | tail -20 || \
+            --preamble ../latex/preamble.tex 2>&1 | tail -20 || \
             echo "::warning::Content build reported issues (chapters/main.tex still generated)"
           echo "── Generated artefacts ──"
           ls -la ../main.tex ../chapters/*.tex 2>/dev/null | head -20 || \
@@ -326,47 +325,6 @@ jobs:
           sudo apt-get install -y --no-install-recommends \
             texlive-full texlive-extra-utils latexdiff latexmk
 
-      - name: Cache preamble format (qou.fmt — populated from main head)
-        # Keyed ONLY on the preamble hash (no commit SHA): the format depends
-        # solely on latex/preamble.tex, so the FIRST build for a given
-        # preamble — in practice main, whose caches are visible to every
-        # branch/PR — populates it and everyone else restores it. On a hit
-        # build-fmt.sh sees its .sha match and skips the rebuild.
-        uses: actions/cache@v4
-        with:
-          path: |
-            qou.fmt
-            qou.fmt.sha
-          key: latex-fmt-${{ hashFiles('latex/preamble.tex') }}
-
-      - name: Cache memoized diagram boxes (.memo)
-        # Per-commit save; restore-keys fall back to the most recent cache
-        # (incl. main's), so unchanged tikz/tikz-cd boxes carry over run to
-        # run instead of being re-rendered.
-        uses: actions/cache@v4
-        with:
-          path: .memo
-          # Main → draft cache propagation: main builds save the canonical
-          # ("blessed") cache latex-memo-main-<run_id>; draft/feature builds
-          # restore their own branch cache first, then fall back to main's. So
-          # every draft builds on main's cache, and each main build refreshes
-          # (squash-consolidates) the boxes for subsequent drafts. Main caches
-          # are visible to all branches (default-branch scope); branch caches
-          # are not, so drafts can iterate without polluting main's blessed set.
-          key: ${{ (github.event_name == 'push' && github.ref_name == 'main') && format('latex-memo-main-{0}', github.run_id) || format('latex-memo-{0}-{1}', github.head_ref || github.ref_name, github.sha) }}
-          restore-keys: |
-            latex-memo-${{ github.head_ref || github.ref_name }}-
-            latex-memo-main-
-
-      - name: Build preamble format (qou.fmt — precompiled preamble cache)
-        run: |
-          # Precompile latex/preamble.tex → qou.fmt so the %&qou main.tex
-          # (generated with --use-format) compiles without re-reading the
-          # heavy preamble (pgf/tikz/tikz-cd/hyperref + unicode shims) on
-          # every pass. Fails loudly with the \endofdump guidance if a
-          # package is not dump-safe (docs/workplans/2026-06-14-latex-build-caching-strategy.md §3).
-          bash scripts/build-fmt.sh --preamble latex/preamble.tex --name qou
-
       - name: Quick LaTeX syntax check (draftmode)
         run: |
           # -f so undefined-citation warnings (the first pass runs before
@@ -377,11 +335,10 @@ jobs:
           # ^^Y) into main.log, so without -a grep treats it as binary and
           # silently misses the '! ' lines, letting a broken compile pass.
           # Fast draft gate: a SINGLE pdflatex -draftmode pass (not a full
-          # multi-pass latexmk run) is enough to surface fatal '! ' errors,
-          # and it runs against the warm qou.fmt (%&qou first line). It does
-          # NOT write a latexmk .fdb, so it can't confuse the real (full
-          # latexmk) main build below. This is the draft-vs-main split: cheap
-          # syntax gate, full build only once.
+          # multi-pass latexmk run) is enough to surface fatal '! ' errors.
+          # It does NOT write a latexmk .fdb, so it can't confuse the real
+          # (full latexmk) main build below. This is the draft-vs-main split:
+          # cheap syntax gate, full build only once.
           pdflatex -shell-escape -draftmode -interaction=nonstopmode main.tex \
             > latex-syntax.log 2>&1 || true
           if grep -aqE '^! ' main.log 2>/dev/null; then
@@ -526,33 +483,6 @@ jobs:
           sudo apt-get update -qq
           sudo apt-get install -y --no-install-recommends \
             texlive-full texlive-extra-utils latexdiff latexmk
-
-      - name: Cache preamble format (qou.fmt — populated from main head)
-        uses: actions/cache@v4
-        with:
-          path: |
-            qou.fmt
-            qou.fmt.sha
-          key: latex-fmt-${{ hashFiles('latex/preamble.tex') }}
-
-      - name: Cache memoized diagram boxes (.memo)
-        uses: actions/cache@v4
-        with:
-          path: .memo
-          # Main → draft cache propagation: main builds save the canonical
-          # ("blessed") cache latex-memo-main-<run_id>; draft/feature builds
-          # restore their own branch cache first, then fall back to main's. So
-          # every draft builds on main's cache, and each main build refreshes
-          # (squash-consolidates) the boxes for subsequent drafts. Main caches
-          # are visible to all branches (default-branch scope); branch caches
-          # are not, so drafts can iterate without polluting main's blessed set.
-          key: ${{ (github.event_name == 'push' && github.ref_name == 'main') && format('latex-memo-main-{0}', github.run_id) || format('latex-memo-{0}-{1}', github.head_ref || github.ref_name, github.sha) }}
-          restore-keys: |
-            latex-memo-${{ github.head_ref || github.ref_name }}-
-            latex-memo-main-
-
-      - name: Build preamble format (qou.fmt)
-        run: bash scripts/build-fmt.sh --preamble latex/preamble.tex --name qou || true
 
       - name: Fetch base branch + flatten + latexdiff
         continue-on-error: true

@@ -185,12 +185,8 @@ export async function buildPaper(
   // Paper slug = the last path segment of paperDir, used to build the
   // `\sourcebase`-relative chapter URL inside \chapterannot{}.
   const paperSlug = paperDir.split("/").filter(Boolean).pop() ?? "";
-  // Numbered-chapter index for fixed numbering (tabLabel chapters are
-  // unnumbered \chapter* and don't advance it).
-  let chapterNo = 0;
   for (const { chapter, manifestIdx, dir } of resolvedChapters) {
-    const chapterNumber = chapter.tabLabel == null ? ++chapterNo : undefined;
-    const latex = renderChapter(chapter, blocks, opts, dir, paperSlug, chapterNumber);
+    const latex = renderChapter(chapter, blocks, opts, dir, paperSlug);
     chapters.set(manifestIdx, latex);
 
     // AST validation
