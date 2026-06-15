@@ -79,5 +79,24 @@ minimal-crossing braid that implements a full Reeb rotation on
 $V_{(2,1)}$.  Its volume is the rotation angle, and the rotation
 is the mechanism that connects the two lepton generations.
 
+## Lean realisation (archimedean specialisation, §7c)
+
+The unitarity statement is realised on the **archimedean side**. The
+structural inputs — $\det(M_{4_1}) = 1$ (a product of generator
+determinants $q\cdot(-q^{-1}) = -1$, an exact identity over the formal
+field $\mathbb{Q}(q^{1/2})$) and the reality of the trace — are
+substrate/categorical and base-ring-agnostic. The *conclusion*
+$|\lambda_{4_1}| = 1$, however, is an archimedean assertion: it says the
+eigenvalues lie on the unit circle of $\mathbb{C}$. The Lean
+`QOU.BraidsAndKnots.figure_eight_unitary_on_standard` proves it over
+$\mathbb{R}$ via the complex norm $\lVert\cdot\rVert$ /
+`Complex.normSq` and the ordering hypothesis $t^2 < 4$ (forcing a
+non-real root), discharged by `nlinarith`. The complex modulus, the
+unit circle, and the real trace bound $t^2 < 4$ are the archimedean
+constructs that pin this formalisation to $\mathbb{R}$; the determinant
+identity itself stays on the substrate side (`figure_eight_det_one` for
+the $\mathbb{R}$ specialisation used here, with the generic
+Hecke-generator determinant lemma belonging in the algebraic layer).
+
 
 **Mathematical Novelty:** The q-Reeb-rotation-phase reading of the figure-eight eigenvalue on $V_{2,1}$, which connects to $\mathrm{Vol}(4_1)$ and the muon anchor, is a genuinely framework-specific and novel conceptual idea. (Note that this connection is asserted conceptually rather than fully established in the formalization).
