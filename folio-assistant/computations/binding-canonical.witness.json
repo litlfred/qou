@@ -1,15 +1,15 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-15T00:48:07.900770+00:00",
-  "commitSha": "8ad76d00d18ed3d6f95879192f5f37c901e6c005",
+  "computedAt": "2026-06-15T01:12:00.686104+00:00",
+  "commitSha": "e929f5abb181533e5d45ff0af9e603d998c90e0d",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 19,
+  "durationMs": 18,
   "computation": "binding-canonical",
   "scriptFile": "binding_canonical.py",
   "scriptHash": "4afc47c2a929",
-  "scriptCommitSha": "342ee0c0f7070ba38fcb86dd56879fc5561d0fbb",
+  "scriptCommitSha": "67c9136b3a88984d430ab91034209f6e0a7d6dca",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -44,7 +44,7 @@
         "use_closed_form": false,
         "use_transfer": true,
         "n_partitions": 11,
-        "wall_sec": 0.0019843578338623047,
+        "wall_sec": 0.0018095970153808594,
         "atom": "D",
         "B_AME_MeV": 2.224566,
         "delta_m_over_m_pct": 0.09373322989761522
@@ -63,7 +63,7 @@
         "use_closed_form": false,
         "use_transfer": true,
         "n_partitions": 30,
-        "wall_sec": 0.0049097537994384766,
+        "wall_sec": 0.006371498107910156,
         "atom": "T",
         "B_AME_MeV": 8.481798,
         "delta_m_over_m_pct": 0.27898228284104454
@@ -82,7 +82,7 @@
         "use_closed_form": false,
         "use_transfer": true,
         "n_partitions": 30,
-        "wall_sec": 0.004853963851928711,
+        "wall_sec": 0.004817962646484375,
         "atom": "3He",
         "B_AME_MeV": 7.718043,
         "delta_m_over_m_pct": 0.2508142852391523
@@ -101,7 +101,7 @@
         "use_closed_form": false,
         "use_transfer": true,
         "n_partitions": 77,
-        "wall_sec": 0.017451047897338867,
+        "wall_sec": 0.017230987548828125,
         "atom": "4He",
         "B_AME_MeV": 28.295673,
         "delta_m_over_m_pct": 0.7349204029668349
