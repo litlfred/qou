@@ -375,6 +375,7 @@ if __name__ == "__main__":
         ("T",    1, 2, float(AME_B_TRITIUM_MEV_VALIDATION)),
         ("3He",  2, 1, float(AME_B_HE3_MEV_VALIDATION)),
         ("4He",  2, 2, float(AME_B_HE4_MEV_VALIDATION)),
+        ("6Li",  3, 3, 31.994526),
     ]
     print("=" * 100)
     print("BINDING via CANONICAL Jones-Markov trace "

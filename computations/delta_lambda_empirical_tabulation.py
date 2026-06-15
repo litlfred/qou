@@ -126,6 +126,10 @@ ATOMS_CODATA = {
             "chi_witness": "chi-helium-3-h9.witness.json"},
     "4He": {"Z": 2, "N": 2, "n": 12, "M_MeV": "3727.379378",
             "chi_witness": "chi-helium-4-h12-numeric.witness.json"},
+    "5Li": {"Z": 3, "N": 2, "n": 15, "M_MeV": "4668.0",
+            "chi_witness": "chi-lithium-5-h15-at-q0-50dps-matrix-m.witness.json"},
+    "6Li": {"Z": 3, "N": 3, "n": 18, "M_MeV": "5601.518",
+            "chi_witness": "chi-lithium-6-h18-at-q0-50dps-matrix-m.witness.json"},
 }
 
 
@@ -223,6 +227,17 @@ def load_chi_per_lambda(witness_file: str) -> list[dict]:
     # Shape A: 4He-style `per_partition` with numeric y_at_q0 + chi_q_at_q0.
     if "per_partition" in d:
         return d["per_partition"]
+    if "by_partition" in d:
+        # Reformat by_partition to look like per_partition
+        out = []
+        for entry in d["by_partition"]:
+            out.append({
+                "partition": entry["partition"],
+                "y_at_q0": entry["y_lambda"],
+                "chi_q_at_q0": entry["chi_lambda"],
+                "contribution": entry["contribution"]
+            })
+        return out
     # Shape B: deuteron / T / ³He chi_lambda_symbolic; needs y_at_q0
     # from y-lambda-wenzl-bridge-symbolic-witness.json + symbolic
     # chi evaluated at q_0.

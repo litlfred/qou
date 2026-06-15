@@ -58,6 +58,7 @@ def _add_to_path(p: Path) -> None:
     if s not in sys.path:
         sys.path.insert(0, s)
 
+_add_to_path(_HERE.parent / "tools" / "qou-substrate" / "python")
 
 # 1. Add the package root itself (so bare-name imports like
 #    `from q_parameter import Q` work for the substrate cluster
