@@ -4,7 +4,7 @@ with instanton connection $A$ and substrate parameter $q$
 *$q$-weighted Yang--Mills--Levi functional* is
 
 $$
-  S_q[A, \varTheta]
+  \mathfrak{S}_q[A, \varTheta]
   =  \int_M q(p)\lVert F_A^+|_H \rVert^2
         \varTheta \wedge (d\varTheta)^n,
 $$

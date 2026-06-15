@@ -2,7 +2,7 @@
 We verify commutativity by tracing both paths around the diagram.
 
 **Top-right path** (variational $\to$ coupling). The Euler--Lagrange
-operator $\mathfrak{E}[S_q]$ applied to a jet $j^1_p \sigma$ yields the
+operator $\mathfrak{E}[\mathfrak{S}_q]$ applied to a jet $j^1_p \sigma$ yields the
 variational equation
 $\mathrm{Ric}_{g_\varTheta} = T^{(q)}$
 ([GR substrate geometry](#rem:gr-substrate-geometry)). Solving for
@@ -23,12 +23,12 @@ $J\hbar_q\iota_{\xi_q} D_A\psi = \hat{H}_q\psi$
 **Commutativity.** Both paths share the same input ($j^1_p \sigma$)
 and the same output (a section $\psi$ satisfying the transport
 equation at substrate parameter $q$). The key identity is that the
-chain rule for the composite $S_q[\nabla, L_\varTheta, \psi]$ factorises
+chain rule for the composite $\mathfrak{S}_q[\nabla, L_\varTheta, \psi]$ factorises
 the variation into two coupled equations:
 
-1. $\delta S_q / \delta L_\varTheta = 0$ determines $L_\varTheta$ (hence
+1. $\delta \mathfrak{S}_q / \delta L_\varTheta = 0$ determines $L_\varTheta$ (hence
    $q$ and $\hat{H}_q$) — this is the top row;
-2. $\delta S_q / \delta \psi = 0$ gives $D_\nabla\psi = 0$
+2. $\delta \mathfrak{S}_q / \delta \psi = 0$ gives $D_\nabla\psi = 0$
    ([variational equations](#prop:variational-equations), Item 3) —
    this is the bottom row.
 
