@@ -1,0 +1,107 @@
+{
+  "engine": "python+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-15T02:09:31.749690+00:00",
+  "commitSha": "7d24dd86ca3e223f4407ad9a84f2c13d97e41481",
+  "assertions": [
+    {
+      "name": "B_depth_beats_B_lin_on_DT3He",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "depth-stratified less undershoot than linear"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 12,
+  "computation": "low-isotope-binding-model-comparison",
+  "scriptFile": "low_isotope_binding_model_comparison.py",
+  "scriptHash": "17c8670216a0",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Fresh side-by-side of the best low-isotope binding models vs AME 2020. B_lin (linear-truncation) undershoots -79..-97.5% (it is the linearization of B_sym; deficit = Δ_λ ≈ q₀^(10A−5)). B_depth (tower) undershoots -66..-73% (⁴He deferred, H_12 RAM). B_magic best on ⁴He (+5.9%). B_lin·q₀^(10A−5) is the Δ_λ-law near-match (q₀^5/site; exponent not yet derived — open keystone). No fit; NOT wired.",
+  "parameters": {
+    "q0": "1.10997859556"
+  },
+  "data": {
+    "rows": [
+      {
+        "atom": "D",
+        "Z": 1,
+        "N": 1,
+        "A": 2,
+        "B_AME_MeV": "2.22457",
+        "B_lin_MeV": "0.46562",
+        "err_lin_pct": "-79.069",
+        "B_depth_MeV": "0.606879",
+        "err_depth_pct": "-72.7",
+        "B_magic_MeV": "—",
+        "err_magic_pct": "  —",
+        "B_lin_x_q0_10A5_MeV": "2.22716",
+        "err_dlaw_pct": "0.11626"
+      },
+      {
+        "atom": "T",
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "B_AME_MeV": "8.4818",
+        "B_lin_MeV": "0.62896",
+        "err_lin_pct": "-92.585",
+        "B_depth_MeV": "2.80777",
+        "err_depth_pct": "-66.9",
+        "B_magic_MeV": "—",
+        "err_magic_pct": "  —",
+        "B_lin_x_q0_10A5_MeV": "8.5406",
+        "err_dlaw_pct": "0.69319"
+      },
+      {
+        "atom": "3He",
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "B_AME_MeV": "7.71804",
+        "B_lin_MeV": "0.65808",
+        "err_lin_pct": "-91.473",
+        "B_depth_MeV": "2.65298",
+        "err_depth_pct": "-65.6",
+        "B_magic_MeV": "—",
+        "err_magic_pct": "  —",
+        "B_lin_x_q0_10A5_MeV": "8.93601",
+        "err_dlaw_pct": "15.781"
+      },
+      {
+        "atom": "4He",
+        "Z": 2,
+        "N": 2,
+        "A": 4,
+        "B_AME_MeV": "28.2957",
+        "B_lin_MeV": "0.71346",
+        "err_lin_pct": "-97.479",
+        "B_depth_MeV": "deferred",
+        "err_depth_pct": "  —",
+        "B_magic_MeV": "29.9557",
+        "err_magic_pct": "+5.87",
+        "B_lin_x_q0_10A5_MeV": "27.503",
+        "err_dlaw_pct": "-2.8012"
+      }
+    ],
+    "summary": {
+      "B_lin": "linear-truncation; -79..-97.5%; the worst (linearization)",
+      "B_depth": "depth-stratified tower; -66..-73%; ⁴He deferred (RAM)",
+      "B_magic": "⁴He flat magic-A; +5.9%; best for ⁴He only",
+      "B_lin_x_q0_law": "Δ_λ-law near-match; ~±few%; exponent 10A−5 not derived"
+    }
+  }
+}
