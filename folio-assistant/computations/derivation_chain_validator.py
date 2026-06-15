@@ -321,7 +321,10 @@ def audit_witness_trust(chains_dir: Path) -> dict:
                 data = json.load(f)
         except (json.JSONDecodeError, OSError):
             continue
-        script_file = data.get("scriptFile")
+        # Some witnesses are top-level JSON arrays (e.g. iterative-knot-builder),
+        # not objects; tolerate them — scriptFile is optional and falls back to a
+        # name-based guess in _is_in_set.
+        script_file = data.get("scriptFile") if isinstance(data, dict) else None
         if _is_in_set(wp.name, script_file, fully_trusted_basenames, fully_trusted):
             out["derivation-fully-trusted"].append(wp.name)
         elif _is_in_set(wp.name, script_file, referenced_basenames, referenced):
