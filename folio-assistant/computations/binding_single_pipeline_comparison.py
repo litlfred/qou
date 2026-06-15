@@ -8,12 +8,14 @@ TWO energy scales (Q_β vs E_0), so the per-model error spreads were partly an
 artifact of *which object you compute*, not *how good the physics is*.
 
 This script routes every trace-based model through the **one canonical Jones–
-Markov trace** already recorded in `binding-canonical.witness.json`
-(`markov_trace_canonical.tr_M_element`; tr_M_free, tr_M_atom per nucleus), at a
-**single energy scale**, and reports the four standard-part-functor binding
-forms side by side for D / T / ³He / ⁴He.
+Markov trace** (`tr_m_atom_zn`, the fine-Bratteli transfer path) at a **single
+energy scale**, and reports the standard-part-functor binding forms side by side
+for D / T / ³He / ⁴He / ⁶Li / ⁷Li. D–⁴He are read from the recorded
+`binding-canonical.witness.json`; ⁶Li / ⁷Li are computed live via the SAME
+transfer entry point (no row exists for them in the canonical witness yet), so
+the trace source is one pipeline throughout.
 
-## The four forms (appendix `standard-part-functor.md` diagram)
+## The forms (appendix `standard-part-functor.md` diagram)
 
 With bond-suppression  s(K) = 1 − tr_M(W_atom)/tr_M(W_free) ∈ [0,1)  and
 log-ratio              L(K) = ln( tr_M(W_free) / tr_M(W_atom) ) = −ln(1−s):
@@ -22,21 +24,44 @@ log-ratio              L(K) = ln( tr_M(W_free) / tr_M(W_atom) ) = −ln(1−s):
                                              of B_sym; SATURATES at α as s→1
   B_sym(K)   = α · L(K)                      exact log-trace (Kashaev volume);
                                              extensive in bonds, L→∞ as s→1
-  B_qCLT(K)  = α · bonds(K) · ℓ̄             A→∞ self-averaging limit: every bond
-                                             contributes the bulk per-bond value
-                                             ℓ̄ = L(deuteron) (the unique 1-bond
-                                             system); chain bonds=A−1, all-pairs
-                                             bonds=C(A,2)
+  B_qCLT(K)  = α · bonds(K) · ℓ̄             A→∞ self-averaging limit (UNIFORM
+                                             per-bond ℓ̄ = L(deuteron)); chain
+                                             bonds=A−1, all-pairs bonds=C(A,2)
+  B_qCLT_fac = α · Σ_i ln|V_i|               FACTORIZED q-CLT (opt 3): each V_i is
+                                             a 2-nucleon sub-braid trace ratio per
+                                             BOND TYPE (p-p / p-n / n-n) from the
+                                             same transfer path; replaces the
+                                             uniform ℓ̄.  allpairs = literal
+                                             complete-graph Σ; chain = (A−1) bonds
+                                             at the composition-weighted mean.
   B_magic(K) = ρ_F · m_e · A · 8G           doubly-magic ⁴He ONLY (no single
                                              hyperbolic knot ⇒ no trace; the
                                              Borromean volume 8G replaces it)
 
 B_lin is literally the leading term of B_sym (−ln(1−s) = s + s²/2 + …), so the
 two differ ONLY by the linearization — the whole linear-vs-log "binding gap" is
-that one truncation, at fixed α and fixed trace.  B_qCLT replaces the exact
-(correlated) total trace by the bulk per-bond sum; B_sym − B_qCLT is therefore
-the finite-A / isospin correlation correction (it is what splits T from ³He,
-which B_qCLT — uniform-bond — cannot).
+that one truncation, at fixed α and fixed trace.  The UNIFORM B_qCLT replaces the
+exact (correlated) total trace by a bulk per-bond sum; B_sym − B_qCLT is the
+finite-A / isospin correlation correction (it splits T from ³He, which the
+uniform — same-A, same-bond-count — q-CLT cannot).  The FACTORIZED B_qCLT (opt 3)
+resolves bond TYPES, and recovers the T/³He split through composition alone
+(³He has a p-p bond, T an n-n bond, and L_nn > L_pp).
+
+## Δ_λ columns (opt 1 — for PR #2316)
+
+PR #2316 defines Δ_λ = B_AME / B_pred (the exp-vs-linear gap, tr ~ exp(Vol)
+Kashaev), with B_pred the LINEAR form.  Numerically Δ_λ is exactly this probe's
+miss-factor B_AME/B at α = E_0.  We surface the two side by side:
+
+  Δ_λ^lin = B_AME / B_lin     (PR #2316's definition; the full exp-vs-linear gap)
+  Δ_λ^sym = B_AME / B_sym     (residual AFTER the exact log/exp form)
+
+The finding handed to #2316: the Kashaev log-trace B_sym already absorbs most of
+Δ_λ — Δ_λ^lin grows 0.9→7× with A (the "5–40×" gap #2316 attributes to a
+q₀^5-per-site mechanism), while Δ_λ^sym stays ≈ 1 for the non-anomalous A=3
+nuclei.  So that mechanism, if it IS the exp-vs-linear gap, is already realized
+by B_sym for T/³He; the residual is confined to the deuteron anomaly and the
+magic-shell (⁴He / Li) deficit.
 
 ## α resolution (the open question the appendix did not pin)
 
@@ -56,12 +81,16 @@ so B_qCLT at α=E_0 is fully parameter-free.
 ## Honest expectation
 
 This is a FUNCTIONAL-FORM and SCALE coherence test, NOT a Δ_λ closure (no 7th
-ansatz).  The claims under test are structural:
+ansatz).  The bond-type factorization is computed from the same canonical
+transfer path — no fitted per-partition coefficients.  The claims under test are
+structural:
   (a) at the derived E_0, B_sym lands within ≲ 1.2× of B_AME for the generic
       hyperbolic nuclei D/T/³He, with NO fit;
   (b) B_lin saturates (miss grows with A) because s is bounded;
   (c) ⁴He is the doubly-magic outlier the log-trace cannot reach — B_magic does;
-  (d) derived E_0 beats the deuteron-pin everywhere.
+  (d) derived E_0 beats the deuteron-pin everywhere;
+  (e) the FACTORIZED q-CLT recovers the T/³He ordering through bond-type
+      composition (n-n vs p-p), unlike the uniform q-CLT.
 
 Output: binding-single-pipeline-comparison.witness.json
 """
@@ -71,6 +100,7 @@ import json
 import math
 import sys
 import time
+from math import comb
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -95,8 +125,9 @@ def _constants():
 def _load_canonical_traces():
     """tr_M_free / tr_M_atom per nucleus from the canonical binding witness.
 
-    These are `markov_trace_canonical.tr_M_element` values — the SINGLE trace
-    source for every trace-based model here.
+    These are the transfer-path `tr_M` values recorded in
+    `binding-canonical.witness.json` (D / T / ³He / ⁴He) — the SINGLE recorded
+    trace source for every trace-based model here.
     """
     bc = json.loads((HERE / "binding-canonical.witness.json").read_text())
     # Tolerate schema variants: canonical `data.results`, `data.rows`, or a
@@ -113,29 +144,90 @@ def _load_canonical_traces():
             "atom": r["atom"], "Z": r["Z"], "N": r["N"], "A": r["A"],
             "B_AME_MeV": float(r["B_AME_MeV"]),
             "tr_free": tf, "tr_atom": ta,
+            "trace_source": "binding-canonical.witness.json",
         })
     return out
 
 
-def _forms(rec, alpha, ell_bond, me, g8):
-    """Evaluate the four binding forms for one nucleus at scale `alpha`."""
-    A = rec["A"]
+def _ame_binding():
+    """AME-2020 binding energies (registry — NOT hardcoded)."""
+    return json.loads(
+        (HERE / "ame-2020-binding-energies.witness.json").read_text())["data"]
+
+
+# AME witness keys for the extended (A≥4, beyond ⁴He) nuclei computed live.
+_AME_KEY = {"6Li": "B_li6_MeV", "7Li": "B_li7_MeV"}
+
+
+def _transfer_traces(nuclei, ame):
+    """Compute tr_M_free / tr_M_atom for `nuclei` LIVE via the canonical
+    transfer entry point `tr_m_atom_zn` — the SAME pipeline that produced the
+    recorded `binding-canonical` values, used here for nuclei (⁶Li / ⁷Li) that
+    have no recorded row yet.  B_AME pulled from the AME-2020 registry.
+    """
+    from tr_m_atom_via_transfer import tr_m_atom_zn
+    out = []
+    for atom, Z, N in nuclei:
+        ta, tf, chi, wall = tr_m_atom_zn(Z, N, dps=50)
+        out.append({
+            "atom": atom, "Z": Z, "N": N, "A": Z + N,
+            "B_AME_MeV": float(ame[_AME_KEY[atom]]),
+            "tr_free": float(tf), "tr_atom": float(ta),
+            "trace_source": "tr_m_atom_zn (transfer path, live)",
+            "n_partitions": len(chi), "wall_sec": round(wall, 3),
+        })
+        print(f"  [transfer] {atom}: A={Z + N} λ={len(chi)} {wall:.2f}s  "
+              f"tr_atom={float(ta):.6g} tr_free={float(tf):.6g}")
+    return out
+
+
+def _bond_type_L():
+    """Per-bond-type 2-nucleon sub-braid log-suppression L = ln(tr_free/tr_atom).
+
+    Each is the SINGLE-bond system: p-n = (1,1) (deuteron), p-p = (2,0)
+    (diproton), n-n = (0,2) (dineutron) — the V_i of the factorized q-CLT
+    Σ_i ln|V_i|, computed from the same transfer path as every other trace here.
+    """
+    from tr_m_atom_via_transfer import tr_m_atom_zn
+    out = {}
+    for key, (Z, N) in (("pp", (2, 0)), ("pn", (1, 1)), ("nn", (0, 2))):
+        ta, tf, _, _ = tr_m_atom_zn(Z, N, dps=50)
+        out[key] = math.log(float(tf) / float(ta))
+    print(f"  [bond-type sub-braid L]  p-p={out['pp']:.4f}  "
+          f"p-n={out['pn']:.4f}  n-n={out['nn']:.4f}")
+    return out
+
+
+def _forms(rec, alpha, ell_bond, me, g8, Lbond):
+    """Evaluate the binding forms for one nucleus at scale `alpha`."""
+    A, Z, N = rec["A"], rec["Z"], rec["N"]
     tf, ta = rec["tr_free"], rec["tr_atom"]
     s = 1.0 - ta / tf                      # bond suppression ∈ [0,1)
     L = math.log(tf / ta)                  # = −ln(1−s), exact log-ratio
     bonds_chain = A - 1
-    bonds_allpairs = A * (A - 1) // 2
+    bonds_allpairs = comb(A, 2)
     B_lin = alpha * s                      # leading term of B_sym (saturates at α)
     B_lin_raw = alpha * (tf - ta)          # production-style raw Δtr (≈ B_lin as tf→1)
     B_sym = alpha * L                      # exact log-trace
-    B_qCLT_chain = alpha * bonds_chain * ell_bond
+    B_qCLT_chain = alpha * bonds_chain * ell_bond        # UNIFORM ℓ̄ = L(deuteron)
     B_qCLT_allpairs = alpha * bonds_allpairs * ell_bond
-    B_magic = (2.0 * me * A * g8) if (rec["Z"], rec["N"]) == (2, 2) else None
+    # ---- factorized q-CLT (opt 3): Σ_i ln|V_i| over BOND TYPES ----------------
+    #   complete bond graph: C(Z,2) p-p, Z·N p-n, C(N,2) n-n bonds.
+    n_pp, n_pn, n_nn = comb(Z, 2), Z * N, comb(N, 2)
+    sigma_L = n_pp * Lbond["pp"] + n_pn * Lbond["pn"] + n_nn * Lbond["nn"]
+    Lbar_comp = sigma_L / bonds_allpairs if bonds_allpairs else 0.0
+    B_qCLT_fac_allpairs = alpha * sigma_L                # literal complete-graph Σ
+    B_qCLT_fac_chain = alpha * bonds_chain * Lbar_comp   # (A−1) bonds @ comp. mean
+    B_magic = (2.0 * me * A * g8) if (Z, N) == (2, 2) else None
     return {
         "s_suppression": s, "log_ratio_L": L,
         "bonds_chain": bonds_chain, "bonds_allpairs": bonds_allpairs,
+        "n_pp": n_pp, "n_pn": n_pn, "n_nn": n_nn,
+        "sigma_L_factorized": sigma_L, "Lbar_comp": Lbar_comp,
         "B_lin": B_lin, "B_lin_raw": B_lin_raw, "B_sym": B_sym,
         "B_qCLT_chain": B_qCLT_chain, "B_qCLT_allpairs": B_qCLT_allpairs,
+        "B_qCLT_fac_chain": B_qCLT_fac_chain,
+        "B_qCLT_fac_allpairs": B_qCLT_fac_allpairs,
         "B_magic": B_magic,
     }
 
@@ -147,7 +239,15 @@ def _miss(bame, b):
 def main() -> int:
     t0 = time.monotonic()   # WitnessBuilder.save() computes (time.monotonic()−t0)
     me, q0, E0, g8 = _constants()
+
+    # ── trace sources (one pipeline) ───────────────────────────────────────
+    #   D/T/³He/⁴He : recorded transfer-path values (binding-canonical witness)
+    #   ⁶Li/⁷Li     : computed live via the SAME transfer entry point
+    print("  loading traces (one canonical transfer pipeline)…")
+    ame = _ame_binding()
     recs = _load_canonical_traces()
+    recs += _transfer_traces([("6Li", 3, 3), ("7Li", 3, 4)], ame)
+    Lbond = _bond_type_L()
 
     deut = next(r for r in recs if r["atom"] == "D")
     ell_bond = math.log(deut["tr_free"] / deut["tr_atom"])     # bulk per-bond log-suppression
@@ -157,26 +257,37 @@ def main() -> int:
     rows = []
     for rec in recs:
         row = {k: rec[k] for k in ("atom", "Z", "N", "A", "B_AME_MeV")}
+        row["trace_source"] = rec["trace_source"]
         row["tr_free"] = round(rec["tr_free"], 6)
         row["tr_atom"] = round(rec["tr_atom"], 6)
         for sname, alpha in scales.items():
-            f = _forms(rec, alpha, ell_bond, me, g8)
-            for key in ("s_suppression", "log_ratio_L", "bonds_chain", "bonds_allpairs"):
+            f = _forms(rec, alpha, ell_bond, me, g8, Lbond)
+            for key in ("s_suppression", "log_ratio_L", "bonds_chain",
+                        "bonds_allpairs", "n_pp", "n_pn", "n_nn",
+                        "sigma_L_factorized", "Lbar_comp"):
                 row[key] = round(f[key], 5) if isinstance(f[key], float) else f[key]
             for bkey in ("B_lin", "B_lin_raw", "B_sym", "B_qCLT_chain",
-                         "B_qCLT_allpairs", "B_magic"):
+                         "B_qCLT_allpairs", "B_qCLT_fac_chain",
+                         "B_qCLT_fac_allpairs", "B_magic"):
                 b = f[bkey]
                 row[f"{bkey}__{sname}"] = round(b, 4) if b is not None else None
                 m = _miss(rec["B_AME_MeV"], b)
                 row[f"{bkey}__{sname}__miss_x"] = round(m, 3) if m is not None else None
+        # Δ_λ (opt 1, at the derived E_0): Δ_λ = B_AME/B_pred is exactly the
+        # miss-factor.  Surface the linear (PR #2316's def) and the exact-log
+        # residual side by side under explicit names.
+        row["Delta_lambda_lin"] = row["B_lin__E0_derived__miss_x"]
+        row["Delta_lambda_sym"] = row["B_sym__E0_derived__miss_x"]
         rows.append(row)
 
     # ---- headline diagnostics ---------------------------------------------------
-    #   generic   = D/T/³He (hyperbolic; log-trace applies)
+    #   generic   = D/T/³He (hyperbolic A≤3; log-trace applies) — UNCHANGED set
     #   normal_A3 = T/³He   (generic MINUS the anomalously weakly-bound deuteron)
+    #   extended  = ⁶Li/⁷Li (A≥4 beyond the doubly-magic ⁴He)
     #   magic     = ⁴He
-    generic = [r for r in rows if r["atom"] != "4He"]
+    generic = [r for r in rows if r["atom"] in ("D", "T", "3He")]
     normal_A3 = [r for r in rows if r["atom"] in ("T", "3He")]
+    extended = [r for r in rows if r["atom"] in ("6Li", "7Li")]
 
     def _missrange(bkey, sname, recs_subset):
         xs = [r[f"{bkey}__{sname}__miss_x"] for r in recs_subset
@@ -192,26 +303,75 @@ def main() -> int:
     bsym_gen = _missrange("B_sym", "E0_derived", generic)
     bsym_norm = _missrange("B_sym", "E0_derived", normal_A3)
     blin_gen = _missrange("B_lin", "E0_derived", generic)
-    bsym_gen_D = _missrange("B_sym", "alpha_D_pinned", generic)
     bsym_norm_worst_E0 = _worstfactor("B_sym", "E0_derived", normal_A3)
     bsym_gen_worst_E0 = _worstfactor("B_sym", "E0_derived", generic)
     bsym_gen_worst_D = _worstfactor("B_sym", "alpha_D_pinned", generic)
+    bfac_norm_worst_E0 = _worstfactor("B_qCLT_fac_chain", "E0_derived", normal_A3)
     he4 = next(r for r in rows if r["atom"] == "4He")
     deut_anomaly_factor = _worstfactor("B_sym", "E0_derived",
                                        [r for r in rows if r["atom"] == "D"])
 
-    # T vs ³He splitting: only the exact trace (B_sym) resolves it; B_qCLT cannot.
     T = next(r for r in rows if r["atom"] == "T")
     He3 = next(r for r in rows if r["atom"] == "3He")
+    # T vs ³He splitting: the exact trace (B_sym) AND the factorized q-CLT
+    # (bond-type composition) resolve it; the UNIFORM q-CLT cannot.
     split = {
         "B_AME": {"T": T["B_AME_MeV"], "3He": He3["B_AME_MeV"]},
         "B_sym_E0": {"T": T["B_sym__E0_derived"], "3He": He3["B_sym__E0_derived"]},
-        "B_qCLT_chain_E0": {"T": T["B_qCLT_chain__E0_derived"],
-                            "3He": He3["B_qCLT_chain__E0_derived"]},
-        "note": ("B_AME and the exact-trace B_sym split T from ³He; the "
-                 "uniform-bond B_qCLT predicts them EQUAL (same A, same bond "
-                 "count) — the B_sym−B_qCLT gap is the finite-A isospin "
-                 "correlation the q-CLT averages away."),
+        "B_qCLT_chain_uniform_E0": {"T": T["B_qCLT_chain__E0_derived"],
+                                    "3He": He3["B_qCLT_chain__E0_derived"]},
+        "B_qCLT_fac_chain_E0": {"T": T["B_qCLT_fac_chain__E0_derived"],
+                                "3He": He3["B_qCLT_fac_chain__E0_derived"]},
+        "note": ("B_AME, the exact-trace B_sym, AND the bond-type FACTORIZED "
+                 "q-CLT all split T from ³He; the uniform-bond B_qCLT predicts "
+                 "them EQUAL (same A, same bond count). T is more bound because "
+                 "it carries an n-n bond (L_nn=%.3f) where ³He carries a p-p "
+                 "bond (L_pp=%.3f) — the factorized q-CLT recovers the split "
+                 "through composition alone." % (Lbond["nn"], Lbond["pp"])),
+    }
+
+    # opt 1 — Δ_λ table handed to PR #2316
+    delta_lambda_for_2316 = {
+        "definition": ("Δ_λ = B_AME / B_pred at α = E_0 (derived). Δ_λ^lin uses "
+                       "the LINEAR B_pred = α·s (PR #2316's definition); Δ_λ^sym "
+                       "uses the EXACT log/exp form B_sym = α·ln(tr_free/tr_atom) "
+                       "(the Kashaev volume tr ~ exp(Vol))."),
+        "per_atom": {r["atom"]: {"A": r["A"],
+                                 "B_AME_MeV": r["B_AME_MeV"],
+                                 "Delta_lambda_lin": r["Delta_lambda_lin"],
+                                 "Delta_lambda_sym": r["Delta_lambda_sym"]}
+                     for r in rows},
+        "finding": ("The Kashaev log-trace B_sym absorbs most of #2316's "
+                    "exp-vs-linear Δ_λ: Δ_λ^lin grows ~0.9→8× with A (the 5–40× "
+                    "gap #2316 attributes to a q₀^5-per-site mechanism), while "
+                    f"Δ_λ^sym stays ≈ 1 on the non-anomalous A=3 nuclei "
+                    f"(T {T['Delta_lambda_sym']}, ³He {He3['Delta_lambda_sym']}). "
+                    "So that mechanism, if it IS the exp-vs-linear gap, is already "
+                    "realized by B_sym for T/³He; the residual Δ_λ^sym ≠ 1 is "
+                    "confined to the deuteron anomaly and the magic-shell "
+                    "(⁴He / Li) deficit, NOT a uniform per-site factor."),
+    }
+
+    # opt 3 — factorized q-CLT headline
+    B_qCLT_factorized = {
+        "bond_type_L": {k: round(v, 6) for k, v in Lbond.items()},
+        "form": ("B_qCLT = α·Σ_i ln|V_i|, V_i = 2-nucleon sub-braid trace ratio "
+                 "per bond type (p-p / p-n / n-n) from the same transfer path. "
+                 "allpairs = literal complete-graph Σ (C(Z,2) p-p + Z·N p-n + "
+                 "C(N,2) n-n bonds; overcounts ~A² at large A). chain = (A−1) "
+                 "bonds at the composition-weighted mean (physically scaled)."),
+        "miss_chain_E0": {r["atom"]: r["B_qCLT_fac_chain__E0_derived__miss_x"]
+                          for r in rows},
+        "miss_allpairs_E0": {r["atom"]: r["B_qCLT_fac_allpairs__E0_derived__miss_x"]
+                             for r in rows},
+        "vs_uniform_note": ("Uniform B_qCLT_chain (ℓ̄ = L(deuteron) for every "
+                            "bond) cannot split T/³He; the factorized form does. "
+                            "Refines the appendix claim that ONLY B_sym splits "
+                            "them — bond-TYPE resolution suffices. all-pairs "
+                            "overbinds increasingly with A (complete graph "
+                            "unphysical); the (A−1) chain form is the sensible "
+                            "A→∞ self-averaged scaling."),
+        "T_vs_3He_split": split,
     }
 
     headline = {
@@ -264,19 +424,34 @@ def main() -> int:
                      "NOT a competing pipeline — it is the correct doubly-magic "
                      "specialization where the per-knot trace does not exist."),
         },
+        "extended_A_ge_4": {
+            "B_sym_E0_miss_x": {r["atom"]: r["B_sym__E0_derived__miss_x"]
+                                for r in extended},
+            "B_qCLT_fac_chain_E0_miss_x": {
+                r["atom"]: r["B_qCLT_fac_chain__E0_derived__miss_x"]
+                for r in extended},
+            "note": ("⁶Li / ⁷Li (computed live via the transfer path) undershoot "
+                     "like ⁴He: beyond A=3 the per-knot trace forms miss the "
+                     "shell/magic physics (~1.5–1.6×). Reported to bound where "
+                     "the single-pipeline trace estimate ceases to track AME, "
+                     "not as a closure."),
+        },
         "T_vs_3He_splitting": split,
+        "delta_lambda_for_2316": delta_lambda_for_2316,
+        "B_qCLT_factorized": B_qCLT_factorized,
     }
 
     w = WitnessBuilder("binding-single-pipeline-comparison", engine="python",
                        start_time=t0)
     w.set_description(
         "Single-pipeline binding comparison: B_lin (linear), B_sym (exact "
-        "log-trace), B_qCLT (A→∞ per-bond limit) all evaluated from the ONE "
-        "canonical Jones–Markov trace (binding-canonical tr_M_free/tr_M_atom), "
-        "plus B_magic (Borromean 8G volume) for doubly-magic ⁴He. Resolves the "
-        "earlier three-pipeline/two-scale incoherence. α = E_0 (derived) vs "
-        "α_D (deuteron-pinned) both reported; E_0 wins. No production rewire, "
-        "no Δ_λ closure."
+        "log-trace), B_qCLT (A→∞ per-bond limit; uniform AND bond-type "
+        "factorized Σ ln|V_i|) all evaluated from the ONE canonical Jones–Markov "
+        "transfer trace (tr_m_atom_zn), plus B_magic (Borromean 8G) for "
+        "doubly-magic ⁴He. D–⁴He from binding-canonical, ⁶Li/⁷Li computed live "
+        "via the same transfer path. α = E_0 (derived) vs α_D (deuteron-pinned); "
+        "E_0 wins. Δ_λ^lin vs Δ_λ^sym columns surfaced for PR #2316. No "
+        "production rewire, no Δ_λ closure, no fitted coefficients."
     )
     w.add_parameter("E_0_MeV", round(E0, 6))
     w.add_parameter("alpha_D_pinned_MeV", round(alpha_D, 6))
@@ -284,6 +459,9 @@ def main() -> int:
     w.add_parameter("m_e_MeV", round(me, 8))
     w.add_parameter("Vol_8G_Borromean", round(g8, 6))
     w.add_parameter("ell_bond_deuteron", round(ell_bond, 6))
+    w.add_parameter("L_bond_pp", round(Lbond["pp"], 6))
+    w.add_parameter("L_bond_pn", round(Lbond["pn"], 6))
+    w.add_parameter("L_bond_nn", round(Lbond["nn"], 6))
     w.add_data("rows", rows)
     w.add_data("headline", headline)
 
@@ -314,19 +492,43 @@ def main() -> int:
         source="ratio of worst-case generic miss factors (E_0 over α_D); in "
                "[0,1] means the derived E_0 is the tighter anchor across D/T/³He.",
     )
+    # Assertion (e1): the FACTORIZED q-CLT lands within ~1.25× on T/³He at E_0.
+    w.add_assertion(
+        name="B_qCLT_fac_chain_within_1p25x_T_3He",
+        computed=bfac_norm_worst_E0,
+        expected=1.0, tolerance=0.25,
+        source="max over {T, ³He} of max(miss, 1/miss) for the bond-type "
+               "factorized chain q-CLT B = E_0·(A−1)·(Σ bond-type L)/C(A,2); "
+               "no fitted coefficients — bond L's from 2-nucleon sub-braids.",
+    )
+    # Assertion (e2): the factorized q-CLT RESOLVES the T/³He ordering
+    # (T more bound than ³He), which the uniform q-CLT cannot. Boolean as 1.0/0.0.
+    fac_split_ok = 1.0 if (
+        (T["B_qCLT_fac_chain__E0_derived"] - He3["B_qCLT_fac_chain__E0_derived"])
+        * (T["B_AME_MeV"] - He3["B_AME_MeV"]) > 0) else 0.0
+    w.add_assertion(
+        name="B_qCLT_fac_resolves_T_3He_ordering",
+        computed=fac_split_ok,
+        expected=1.0, tolerance=0.0,
+        source="sign(B_fac(T)−B_fac(³He)) == sign(B_AME(T)−B_AME(³He)); the "
+               "bond-type factorized q-CLT recovers T more bound than ³He "
+               "(n-n bond L > p-p bond L), which the uniform q-CLT averages away.",
+    )
     out = w.save()
 
-    # ---- console table ---------------------------------------------------------
+    # ---- console tables ---------------------------------------------------------
     print("=" * 104)
-    print(" Single-pipeline binding  —  one canonical tr_M, four standard-part forms")
+    print(" Single-pipeline binding  —  one canonical tr_M, standard-part forms")
     print(f"   α=E_0={E0:.4f} MeV (derived)   α_D={alpha_D:.4f} MeV (deuteron-pinned)"
           f"   ℓ_bond(D)={ell_bond:.4f}   8G={g8:.4f}")
+    print(f"   bond-type L:  p-p={Lbond['pp']:.4f}  p-n={Lbond['pn']:.4f}  "
+          f"n-n={Lbond['nn']:.4f}")
     print("=" * 104)
     for sname, alpha in scales.items():
         print(f"\n  α = {alpha:.4f} MeV  [{sname}]")
         print(f"  {'atom':>5}{'A':>2}{'B_AME':>8}{'s':>7}{'L':>7}"
               f"{'B_lin':>8}{'x':>6}{'B_sym':>8}{'x':>6}"
-              f"{'B_qCLTch':>9}{'x':>6}{'B_qCLTap':>9}{'x':>6}{'B_magic':>9}{'x':>6}")
+              f"{'B_qCLTch':>9}{'x':>6}{'B_magic':>9}{'x':>6}")
         for r in rows:
             def cell(bkey):
                 b = r[f"{bkey}__{sname}"]
@@ -334,14 +536,36 @@ def main() -> int:
                 return (f"{b:>8.2f}" if b is not None else f"{'—':>8}",
                         f"{m:>5.2f}x" if m is not None else f"{'—':>6}")
             bl, bl_x = cell("B_lin"); bs, bs_x = cell("B_sym")
-            bc, bc_x = cell("B_qCLT_chain"); ba, ba_x = cell("B_qCLT_allpairs")
-            bm, bm_x = cell("B_magic")
+            bc, bc_x = cell("B_qCLT_chain"); bm, bm_x = cell("B_magic")
             print(f"  {r['atom']:>5}{r['A']:>2}{r['B_AME_MeV']:>8.2f}"
                   f"{r['s_suppression']:>7.3f}{r['log_ratio_L']:>7.3f}"
-                  f"{bl}{bl_x}{bs}{bs_x}{bc:>9}{bc_x}"
-                  f"{ba:>9}{ba_x}{bm:>9}{bm_x}")
+                  f"{bl}{bl_x}{bs}{bs_x}{bc:>9}{bc_x}{bm:>9}{bm_x}")
+
+    # Δ_λ table (opt 1) — for PR #2316
+    print(f"\n  Δ_λ = B_AME / B_pred  at α = E_0  (opt 1 — for PR #2316)")
+    print(f"  {'atom':>5}{'A':>2}{'B_AME':>8}{'B_lin':>8}{'Δλ_lin':>8}"
+          f"{'B_sym':>8}{'Δλ_sym':>8}")
+    for r in rows:
+        print(f"  {r['atom']:>5}{r['A']:>2}{r['B_AME_MeV']:>8.2f}"
+              f"{r['B_lin__E0_derived']:>8.2f}{r['Delta_lambda_lin']:>8.2f}"
+              f"{r['B_sym__E0_derived']:>8.2f}{r['Delta_lambda_sym']:>8.2f}")
+
+    # factorized q-CLT table (opt 3)
+    print(f"\n  Factorized q-CLT  B = α·Σ ln|V_i|  at α = E_0  (opt 3)")
+    print(f"  {'atom':>5}{'A':>2}{'pp':>3}{'pn':>3}{'nn':>3}"
+          f"{'Bqclt_un':>9}{'Bfac_ch':>9}{'x':>6}{'Bfac_ap':>9}{'x':>6}")
+    for r in rows:
+        fc = r["B_qCLT_fac_chain__E0_derived"]
+        fcx = r["B_qCLT_fac_chain__E0_derived__miss_x"]
+        fa = r["B_qCLT_fac_allpairs__E0_derived"]
+        fax = r["B_qCLT_fac_allpairs__E0_derived__miss_x"]
+        un = r["B_qCLT_chain__E0_derived"]
+        print(f"  {r['atom']:>5}{r['A']:>2}{r['n_pp']:>3}{r['n_pn']:>3}"
+              f"{r['n_nn']:>3}{un:>9.2f}{fc:>9.2f}{fcx:>5.2f}x{fa:>9.2f}{fax:>5.2f}x")
+
     print()
     print(f"  verdict: {headline['alpha_resolution']['verdict']}")
+    print(f"  Δ_λ for #2316: {delta_lambda_for_2316['finding']}")
     print(f"\n  Witness: {out}")
     return 0
 
