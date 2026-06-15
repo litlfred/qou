@@ -270,3 +270,80 @@ artifact.
 
 LuaTeX migration (§4) is tracked separately as a maintenance cleanup,
 not part of this speed work.
+
+---
+
+## Implementation status & CI billing blocker (2026-06-15)
+
+### Landed + verified on PR #2310
+
+| Piece | State | Verification |
+|-------|-------|--------------|
+| Decision doc (this file) | ✅ | — |
+| **print-mode split** — per-render `\IfFileExists{print-mode.tex}` moved out of the dumpable `latex/preamble.tex` into the per-document section (`generate-main-tex.ts`) | ✅ | bun check; default output order-equivalent |
+| **`--use-format <name>` codegen** — `generate-main-tex` / `build.ts` emit `%&<name>` instead of inlining the preamble; per-doc tail stays live; default unchanged | ✅ | bun check, 14 assertions (both modes + standalone) |
+| **`scripts/build-fmt.sh`** — hash-keyed (`sha256(preamble.tex)` → `<name>.fmt.sha`) preamble→`.fmt` cache; rebuild only on drift / `--force` | ✅ cache logic | stubbed-engine test, 8/8 (cold/warm/drift/force/failure-safety) |
+
+### Blocked — needs a TeX run AND/OR Actions billing to clear
+
+**CI billing diagnosis (definitive).** The repo is **private**, and every
+recent push triggers a `paper-builder-image` run that completes in **0 s
+with 0 jobs** (`run 27512169900`: `conclusion=failure`, `total_jobs=0`,
+`run_started_at == updated_at`). A run created with **no job launched** is
+a *startup failure* — on a private repo across all branches, the
+Actions-minutes/spending-limit signature from CLAUDE.md
+§"CI billing failures". (The `publish.yml` runs that show *real*
+durations are from **2026-06-11**, before the exhaustion, so they don't
+contradict this.) **Consequences:** ① none of the LaTeX work can be
+compile-verified in CI; ② the `paper-builder-image` is not building, so
+the **CI-image swap has no fresh image to consume**; ③ per the billing
+rule, **do not push retrigger commits** — this clears only when the
+**owner** fixes billing / raises the spending limit. There is also no
+local TeX engine in the dev sandbox, so local compile-verify is
+unavailable too.
+
+| Piece | Why blocked |
+|-------|-------------|
+| The actual `.fmt` *dump* (`build-fmt.sh` running real `pdflatex -ini … mylatexformat`) | no TeX engine locally; CI billing-blocked. The `\endofdump` boundary (does `hyperref`/`pgf` dump cleanly?) is the empirical question to settle on first real run. |
+| `publish.yml` `.fmt` wiring | spans 4 jobs (content-pipeline regen → paper-pdf / appendix-pdfs / diff-pdf each need `qou.fmt`); unverifiable + unrunnable now. Recipe below; apply when a TeX run is available. |
+| **memoize** | needs `-shell-escape` (else compile errors) + must load *live* per-render, not in the dumped preamble (same freeze hazard as print-mode). Unverifiable now. |
+| CI-image swap + `_build` cache | gated on `paper-builder-image` building, which is the thing billing-failing. |
+
+### Ready-to-apply CI wiring (`.fmt`), for when a TeX run is available
+
+Gate behind a default-`false` `workflow_dispatch` input so the normal
+pipeline is provably unchanged:
+
+```yaml
+# publish.yml  on.workflow_dispatch.inputs:
+use_fmt:
+  description: "Compile via a precompiled preamble format (qou.fmt)."
+  required: false
+  default: false
+  type: boolean
+```
+
+1. **content-pipeline** (has `bun`, no TeX) — after preflight, before
+   artifact upload, regenerate when `inputs.use_fmt`:
+   `bun run pipeline/build.ts … --generate-main --use-format qou`
+   (emits `%&qou` main.tex + standalone appendices).
+2. **paper-pdf / appendix-pdfs / diff-pdf** (have TeX) — before each
+   compile, when `inputs.use_fmt`:
+   `bash scripts/build-fmt.sh --preamble latex/preamble.tex --name qou`
+   so `qou.fmt` exists in the compile CWD (pdflatex resolves `%&qou`).
+3. **Fallback:** if `build-fmt.sh` exits non-zero, re-run the
+   content build *without* `--use-format` (inline preamble) so the PDF
+   still emits — `.fmt` is a pure optimization, never a hard dependency.
+
+memoize, when enabled, additionally needs `-shell-escape` on every
+`latexmk` invocation and a persisted `.memo/` cache dir
+(`actions/cache`); load `memoize` live (per-render), not in `qou.fmt`.
+
+### What the owner needs to do to unblock
+
+1. **Fix Actions billing / raise the spending limit** (only the owner
+   can) — this is the gate on *all* CI verification.
+2. Then a `workflow_dispatch` run of `publish.yml` with `use_fmt=true`
+   settles the `\endofdump`/`hyperref` boundary and measures the real
+   wall-clock delta.
+
