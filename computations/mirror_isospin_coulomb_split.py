@@ -18,7 +18,6 @@ constants), and is skipped with a note when the substrate package is absent.
 """
 from __future__ import annotations
 
-import importlib.util
 import json
 import math
 import sys
@@ -28,6 +27,19 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 sys.path.insert(0, str(HERE / "substrate"))
+
+# The categorical comparison needs the canonical Markov trace, which transitively
+# pulls in the substrate package. Attempt the import once here (EAFP); when it is
+# absent — e.g. the post-#2310 content-repo sandbox — the categorical section is
+# skipped with a note (its numbers are recorded in the audit doc). noqa: E402 —
+# these bare-name imports require the sys.path inserts above.
+try:
+    from tr_m_atom_via_transfer import tr_m_atom_zn  # noqa: E402
+    from q_parameter import Q as _Q0  # noqa: E402
+    from codata_constants import M_E_MEV as _ME_MEV  # noqa: E402
+    _HAS_SUBSTRATE = True
+except ImportError:
+    _HAS_SUBSTRATE = False
 
 AHC = 1.43996  # alpha_EM * hbar*c  [MeV.fm]  (= e^2/4 pi eps0)
 
@@ -87,10 +99,7 @@ def _cat_split(Z, N, L, E0):
 
 def categorical_comparison(ame):
     """The categorical kappa is A-dependent (inconsistent) — recompute live."""
-    from tr_m_atom_via_transfer import tr_m_atom_zn
-    from q_parameter import Q as q0
-    from codata_constants import M_E_MEV as me
-    me, q0 = float(me), float(q0)
+    me, q0 = float(_ME_MEV), float(_Q0)
     E0 = me / (q0 * (q0 - 1.0))
     L = {}
     for key, (Z, N) in (("pp", (2, 0)), ("pn", (1, 1)), ("nn", (0, 2))):
@@ -109,12 +118,12 @@ def main() -> int:
     symbolic_proof()
     ame = _ame()
     coulomb_validation(ame)
-    if importlib.util.find_spec("qou_substrate") is not None:
+    if _HAS_SUBSTRATE:
         categorical_comparison(ame)
     else:
-        print("\n[categorical] skipped: substrate trace package (qou_substrate) not "
-              "available in this env; values are recorded in the audit doc Findings "
-              "1/3 (A=3 kappa=0.504, A=7 kappa=0.845 — inconsistent, as proven).")
+        print("\n[categorical] skipped: substrate trace package not available in "
+              "this env; values are recorded in the audit doc Findings 1/3 "
+              "(A=3 kappa=0.504, A=7 kappa=0.845 — inconsistent, as proven).")
     return 0
 
 
