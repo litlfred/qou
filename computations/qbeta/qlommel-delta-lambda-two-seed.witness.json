@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-15T01:08:01.946862+00:00",
-  "commitSha": "0b793d024b0e1810988f4e116429eb40f660bf4e",
+  "engineVersion": "python 3.11.2",
+  "computedAt": "2026-06-15T23:14:36.244429+00:00",
+  "commitSha": "1d14bdfe2fbe5264f6499152a136337bf2563173",
   "assertions": [
     {
       "name": "derived_b_matches_NgeZ_chain_within_5pct",
@@ -24,14 +24,21 @@
       "expected": true,
       "passed": true,
       "source": "proton-rich 3He needs the Z-dependent correction"
+    },
+    {
+      "name": "alpha_cluster_b_matches_2_within_5pct",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "extended alpha-cluster tower b ≈ 2"
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 65,
   "computation": "qlommel-delta-lambda-two-seed",
   "scriptFile": "qlommel_delta_lambda_two_seed_test.py",
-  "scriptHash": "213efacc3dd2",
-  "scriptCommitSha": "aa119f6ebf8c1de6a8432ebb3f20d9f5569a23ff",
+  "scriptHash": "9ee1c4635d2f",
+  "scriptCommitSha": "d27b00274555af33d374d2929cab883aa273ee9d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -39,12 +46,15 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "python": "3.11.2",
+    "numpy": "1.26.4",
+    "scipy": "1.17.1",
+    "sympy": "1.11.1",
+    "mpmath": "0.0.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
   },
-  "description": "Derive-or-refute (no fit of b) of the binding Δ_λ ladder via the q-Lommel ORDER recurrence in its second-kind/hyperbolic regime. Derived coefficient b = q0^10 + q0^-10 = 2cosh(10 log q0) from the q0^(10A-5) canonical residual (Bring quintic '5'); Lean QOU.QBeta.two_root_geometric + two_seed_unique. Verdict NEAR-MATCH, gate-respecting, NOT wired: derived-b + two N≥Z seeds predicts Δ(4He) to ~-3.5%; 3He is the Z-dependent outlier. Open keystone: derive 10A-5 from W_free/W_atom crossing-jet bookkeeping on Bring's surface.",
+  "description": "Derive-or-refute (no fit of b) of the binding Δ_λ ladder via the q-Lommel ORDER recurrence in its second-kind/hyperbolic regime. Derived coefficient b = q0^10 + q0^-10 = 2cosh(10 log q0) from the q0^(10A-5) canonical residual (Bring quintic '5'); Lean QOU.QBeta.two_root_geometric + two_seed_unique. Verdict NEAR-MATCH, gate-respecting, NOT wired: derived-b + two N≥Z seeds predicts Δ(4He) to ~-3.5%; 3He is the Z-dependent outlier. Extended α-cluster tower shows decisive b≈2 double-root behavior. Open keystone: derive 10A-5 from W_free/W_atom crossing-jet bookkeeping on Bring's surface.",
   "parameters": {
     "q0": "1.10997859556",
     "b_derived": "3.19112589873",
@@ -64,11 +74,11 @@
       {
         "atom": "T",
         "A": 3,
-        "Delta_lambda": "13.4855",
+        "Delta_lambda": "13.4854",
         "q0_pow_10A_5": "13.578916",
         "exp_actual": "24.9338",
         "exp_law": 25,
-        "exp_dev": "-0.06616"
+        "exp_dev": "-0.06623"
       },
       {
         "atom": "3He",
@@ -87,12 +97,21 @@
         "exp_actual": "35.2723",
         "exp_law": 35,
         "exp_dev": "0.2723"
+      },
+      {
+        "atom": "6Li",
+        "A": 6,
+        "Delta_lambda": "43.3454",
+        "q0_pow_10A_5": "310.67279",
+        "exp_actual": "36.124",
+        "exp_law": 55,
+        "exp_dev": "-18.88"
       }
     ],
     "chains": {
       "T": {
-        "interior_b_emp": "3.2951911",
-        "b_derived_rel_err_pct": "-3.1581"
+        "interior_b_emp": "3.2952156",
+        "b_derived_rel_err_pct": "-3.1588"
       },
       "3He": {
         "interior_b_emp": "3.7889598",
@@ -101,9 +120,9 @@
     },
     "two_seed_predictions": {
       "T": {
-        "pred_4He": "38.256328",
+        "pred_4He": "38.256009",
         "actual_4He": "39.6597",
-        "err_pct": "-3.5385"
+        "err_pct": "-3.5393"
       },
       "3He": {
         "pred_4He": "32.648244",
@@ -112,9 +131,31 @@
       }
     },
     "second_kind_admixture": {
-      "alpha": "0.58894565",
-      "beta": "0.25118608",
-      "beta_over_alpha": "0.426501"
+      "alpha": "0.58894066",
+      "beta": "0.25151018",
+      "beta_over_alpha": "0.427055"
+    },
+    "alpha_cluster_recurrence": {
+      "8Be": {
+        "b_emp": "2.0889151",
+        "err_pct": "4.4458"
+      },
+      "12C": {
+        "b_emp": "1.9564076",
+        "err_pct": "-2.1796"
+      },
+      "16O": {
+        "b_emp": "1.9708842",
+        "err_pct": "-1.4558"
+      },
+      "20Ne": {
+        "b_emp": "2.0226904",
+        "err_pct": "1.1345"
+      },
+      "24Mg": {
+        "b_emp": "1.9184958",
+        "err_pct": "-4.0752"
+      }
     },
     "discipline": "derived b (no fit); near-match tier; NOT wired; open keystone = derive 10A-5 from Bring crossings"
   }
