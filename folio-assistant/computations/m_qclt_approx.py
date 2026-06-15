@@ -70,7 +70,10 @@ def _rows():
     import json
     src = json.loads(SOURCE_WITNESS.read_text())
     data = src.get("witness", src).get("data", src.get("data", {}))
-    return data["rows"], src
+    rows = data.get("rows") or src.get("rows") or []  # tolerate legacy schemas
+    if not rows:
+        raise KeyError(f"no per-atom rows in {SOURCE_WITNESS.name}")
+    return rows, src
 
 
 def main() -> int:
@@ -190,16 +193,16 @@ def main() -> int:
         expected=True,
         source="derived θ/(8ℏ²) ≈ 0.9711 closes +2.89% → ~-819 ppm",
     )
-    # Leading term is NOT exact: its error exceeds the binding-corrected one.
-    leading_exceeds = all(
-        abs((Z * m_p + N * m_n - m_p_ame * Z - m_n_ame * N + ame(Z, N))) >= 0
-        for (_, Z, N) in compound
-    )
+    # Leading term is NOT exact: err_leading = err_full + binding_fraction, and
+    # the binding fraction B/m is strictly positive for every bound nucleus
+    # (the bound state is lighter than the free nucleon sum). Non-vacuous.
+    binding_fracs = [mp.mpf(r["binding_fraction_pct"]) for r in out_rows]
+    leading_not_exact = all(bf > mp.mpf("1e-3") for bf in binding_fracs)
     builder.add_assertion(
         "leading_term_not_exact",
-        computed=bool(leading_exceeds),
+        computed=bool(leading_not_exact),
         expected=True,
-        source="err_leading = err_full + binding_fraction > err_full",
+        source="err_leading − err_full = binding_fraction B/m > 0 (mass defect positive)",
     )
 
     out = builder.save()
