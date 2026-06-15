@@ -57,6 +57,11 @@ Installed `texlive-full` via `install-tex.sh`; measured the real paper:
   single-pass global typeset — **intrinsically uncacheable** in pdflatex.
 - Hotspots: `mass-theory` (3.5 s) + `quantum-observable-universes`
   (3.3 s) ≈ 40% (math/table-heavy); the rest a ~1 s/chapter tail.
+- **~50% of the body is the 2944 `\marginnote` annotations, not math:**
+  one pass 19.5 s → **9.2 s** with `\marginnote` no-op'd (→ 8.9 s also
+  dropping hyperlinks). Parallel per-chapter compile (4 cores) = **1.85 s**
+  (~10×). Both are *preview* levers — the published PDF is unchanged. The
+  first is wired as `QOU_FAST_PREVIEW=1` (see What works).
 - `.fmt` saves only ~0.45 s of startup = **~3% of a pass** (and is broken
   on this preamble: per-doc macro drop + `^^H` unicode corruption). Skip.
 
@@ -75,7 +80,8 @@ only ran on `workflow_dispatch`, so the image was never actually built.
 | Tool | Role |
 |------|------|
 | [`scripts/install-tex.sh`](../../../scripts/install-tex.sh) | Get a TeX engine into the sandbox (the base Ubuntu repos are reachable; only launchpad PPAs are firewalled). Idempotent. **This is how you compile/verify at all.** |
-| [`scripts/feature-build.sh`](../../../scripts/feature-build.sh) | Quick draft: compiles ONLY the changed chapters (not the full 1712-pp paper) with the **inline** preamble, + per-chapter latexdiff (colored + plain). Speedup is from fewer chapters, not a format. |
+| [`scripts/feature-build.sh`](../../../scripts/feature-build.sh) | Quick draft: compiles ONLY the changed chapters (not the full 1712-pp paper) with the **inline** preamble, + per-chapter latexdiff (colored + plain). Speedup is from fewer chapters, not a format. **Sets `QOU_FAST_PREVIEW=1` by default** (margins off, ~2× on top). |
+| **`QOU_FAST_PREVIEW=1`** env flag | Read by `generate-main-tex.ts`: no-ops `\marginnote`, skipping the 2944 per-block source/issue/Lean icons that cost **~50%** of compile (19.5 s → 9.2 s). Body byte-identical; **published builds leave it unset**. The biggest single *preview* speedup. |
 
 ## Getting a TeX engine in the sandbox
 

@@ -398,9 +398,27 @@ uncacheable.** This refutes the diagram-cache premise (§5) *and* caps the
 **Per-chapter profile** (each row incl. ~0.7 s shared startup): the body
 is *concentrated*, not uniform — `mass-theory` **3.5 s** +
 `quantum-observable-universes` **3.3 s** are ~40% of the 14 s
-(math/table-heavy), the other 31 chapters a ~1 s/chapter tail. That is
-display-math + `amsmath`/table typesetting — intrinsic, **uncacheable** in
-pdflatex.
+(math/table-heavy), the other 31 chapters a ~1 s/chapter tail.
+
+**What in the body is expensive — and what's AVOIDABLE (the real preview
+lever).** The body cost is *not* mostly math: **~50% is the 2944 per-block
+`\marginnote` source/issue/Lean annotations.** Measured (one pass):
+
+| Variant | Wall | |
+|---|---|---|
+| full `main.tex` | 19.5 s | baseline |
+| `\marginnote` → no-op | **9.2 s** | **−53%** |
+| + `\href`/`\hyperref` → no-op | 8.9 s | hyperref adds little beyond it |
+| **parallel per-chapter** (4 cores) | **1.85 s** | **~10×** |
+
+Two real preview levers (neither changes the *published* PDF):
+1. **`QOU_FAST_PREVIEW=1`** — implemented in `generate-main-tex.ts`
+   (no-ops `\marginnote`), default-on in `feature-build.sh`: **~2×**.
+2. **Parallel per-chapter compile** → **~10×** (cross-refs degrade to
+   `??` unless one full pass generates a shared `.aux` first).
+
+The math/table typeset that remains (~9 s) is the intrinsic,
+**uncacheable** single-pass floor.
 
 **Whole-pipeline ranking (where the CI wall-clock actually is)** — LaTeX
 is *not* the dominant cost: witness regen (Python, ~36 min, gated by

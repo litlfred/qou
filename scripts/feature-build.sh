@@ -36,6 +36,14 @@ while [ $# -gt 0 ]; do case "$1" in
 esac; done
 PAPERDIR="content/$PAPER"
 
+# Preview tool → drop the ~2944 per-block margin annotations by default
+# (~2x faster compile: 19.5s → 9.1s, measured on a real engine). The
+# no-op rides in the inline preamble we extract below, so both the
+# changed-chapters PDF and the latexdiffs get it. QOU_FAST_PREVIEW=0 keeps
+# the margin icons. (generate-main-tex.ts reads this; published builds
+# leave it unset.)
+export QOU_FAST_PREVIEW="${QOU_FAST_PREVIEW:-1}"
+
 echo "feature-build: [1/3] render chapters + inline main.tex (cheap)…"
 ( cd content && bun run pipeline/build.ts "$PAPER/$PAPER.ts" \
     --out-dir ../chapters/ --generate-main --main-out ../main.tex \
