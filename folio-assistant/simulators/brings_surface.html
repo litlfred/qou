@@ -916,6 +916,7 @@ document.querySelectorAll('.pill[data-mode]').forEach(pill => {
       if (!isNaN(g) && g > 0) val = (4 / g).toString();
     }
     if (val !== null) {
+      if (isNaN(parseFloat(val))) return;
       const el = document.getElementById(param);
       if (el) el.value = val;
     }
@@ -943,7 +944,7 @@ document.querySelectorAll('.pill[data-mode]').forEach(pill => {
   });
 
   // Mode
-  const modeVal = p.get('mode');
+  const modeVal = p.get('mode') || p.get('projection');
   if (modeVal !== null) {
     projMode = modeVal;
     // Update UI pills
@@ -958,7 +959,7 @@ document.querySelectorAll('.pill[data-mode]').forEach(pill => {
 })();
 
 // ── Boot ──────────────────────────────────────────────────────────
-buildSurface();
+window.addEventListener('DOMContentLoaded', () => setTimeout(buildSurface, 100));
 
 let frame = 0;
 function animate() {

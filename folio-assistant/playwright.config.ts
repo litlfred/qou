@@ -2,6 +2,7 @@ import { defineConfig, devices } from '@playwright/test';
 
 export default defineConfig({
   testDir: './tests',
+  timeout: 120000,
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
   retries: 0,
@@ -22,8 +23,12 @@ export default defineConfig({
     },
   ],
   webServer: {
-    command: 'npx -y http-server -p 8080 -c-1 .',
+    command: 'node test-server.cjs',
     port: 8080,
     reuseExistingServer: !process.env.CI,
+  },
+  timeout: 60000,
+  expect: {
+    timeout: 10000,
   },
 });
