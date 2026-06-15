@@ -1,15 +1,15 @@
 {
   "engine": "sympy+mpmath",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-15T01:12:00.686104+00:00",
-  "commitSha": "e929f5abb181533e5d45ff0af9e603d998c90e0d",
+  "engineVersion": "python 3.11.2",
+  "computedAt": "2026-06-15T23:03:36.584114+00:00",
+  "commitSha": "1d14bdfe2fbe5264f6499152a136337bf2563173",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 18,
+  "durationMs": 1133,
   "computation": "binding-canonical",
   "scriptFile": "binding_canonical.py",
-  "scriptHash": "4afc47c2a929",
-  "scriptCommitSha": "67c9136b3a88984d430ab91034209f6e0a7d6dca",
+  "scriptHash": "f569caeec813",
+  "scriptCommitSha": "d27b00274555af33d374d2929cab883aa273ee9d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -17,10 +17,13 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "python": "3.11.2",
+    "numpy": "1.26.4",
+    "scipy": "1.17.1",
+    "sympy": "1.11.1",
+    "mpmath": "0.0.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
   },
   "description": "Atom binding via the canonical Jones-Markov trace (Direction 1 of validity audit): matches the prop's explicit-values table tr_M(σ_0)=z, tr_M(σ_0σ_1)=z², tr_M(σ_0σ_1σ_0)=hz²+z. Replaces the Plancherel-weighted trace used in binding_3A and atom_markov_trace. Binding = Q_β(n)·(tr_M_free − tr_M_atom) [SIGNED categorical difference; the double-modulus |·|−|·| was a non-archimedean misuse] with Q_β(n) = 0.78233341 MeV (free-neutron β-decay Q-value, CAL-3 calibration input — NOT the canonical E_0 = m_e/(q_0(q_0-1)) ≈ 4.186 MeV). DIAGNOSTIC ONLY: predicted B values are 5–40× smaller than AME because Q_β is the wrong energy scale; the primary canonical mass-prediction pipeline is canonical-mass-table-extended.witness.json. This witness is retained for the Direction 1 validity audit of the Jones-Markov trace itself.",
   "auditOnly": "docs/audits/categorical-vs-fitted-q-decay-ba.md",
@@ -44,7 +47,7 @@
         "use_closed_form": false,
         "use_transfer": true,
         "n_partitions": 11,
-        "wall_sec": 0.0018095970153808594,
+        "wall_sec": 0.012923717498779297,
         "atom": "D",
         "B_AME_MeV": 2.224566,
         "delta_m_over_m_pct": 0.09373322989761522
@@ -63,7 +66,7 @@
         "use_closed_form": false,
         "use_transfer": true,
         "n_partitions": 30,
-        "wall_sec": 0.006371498107910156,
+        "wall_sec": 0.05299854278564453,
         "atom": "T",
         "B_AME_MeV": 8.481798,
         "delta_m_over_m_pct": 0.27898228284104454
@@ -82,7 +85,7 @@
         "use_closed_form": false,
         "use_transfer": true,
         "n_partitions": 30,
-        "wall_sec": 0.004817962646484375,
+        "wall_sec": 0.035407304763793945,
         "atom": "3He",
         "B_AME_MeV": 7.718043,
         "delta_m_over_m_pct": 0.2508142852391523
@@ -101,10 +104,29 @@
         "use_closed_form": false,
         "use_transfer": true,
         "n_partitions": 77,
-        "wall_sec": 0.017230987548828125,
+        "wall_sec": 0.30016493797302246,
         "atom": "4He",
         "B_AME_MeV": 28.295673,
         "delta_m_over_m_pct": 0.7349204029668349
+      },
+      {
+        "status": "solved",
+        "Z": 3,
+        "N": 3,
+        "A": 6,
+        "tr_M_atom": "0.0078910755112011044204335152304831930206374785256206",
+        "tr_M_free": "0.95138823513453149707134793544153405321618362921612",
+        "Q_beta_n_MeV": 0.7823334100000222,
+        "B_MeV": 0.7381293502134554,
+        "n_atom_terms": -1,
+        "n_free_terms": -1,
+        "use_closed_form": false,
+        "use_transfer": true,
+        "n_partitions": 385,
+        "wall_sec": 3.4237923622131348,
+        "atom": "6Li",
+        "B_AME_MeV": 31.994526,
+        "delta_m_over_m_pct": 0.555212022969477
       }
     ]
   }

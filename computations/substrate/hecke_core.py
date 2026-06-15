@@ -53,7 +53,7 @@ except ImportError:
     import os as _os
     import sys as _sys
     _PYHECKE_PATH = _os.path.normpath(
-        _os.path.join(_os.path.dirname(__file__), "..", "..", "..", "tools", "pyhecke", "python")  # +1 level: substrate/ subdir (Phase 6)
+        _os.path.join(_os.path.dirname(__file__), "..", "..", "tools", "pyhecke", "python")
     )
     if _os.path.isdir(_PYHECKE_PATH) and _PYHECKE_PATH not in _sys.path:
         _sys.path.insert(0, _PYHECKE_PATH)

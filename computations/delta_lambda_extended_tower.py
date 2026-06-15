@@ -14,8 +14,7 @@ from pathlib import Path
 HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE))
 sys.path.insert(0, str(HERE / "substrate"))
-sys.path.insert(0, str(HERE.parents[1] / "tools" / "qou-substrate" / "python"))
-
+sys.path.insert(0, str(HERE.parent / "tools" / "qou-substrate" / "python"))
 from qou_substrate.witness import WitnessBuilder
 from qou_substrate.constants import q_at
 

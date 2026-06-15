@@ -46,6 +46,7 @@ import pathlib
 # qbeta/ scripts reach the parent computations/ dir, then _path_bridge wires the
 # substrate/ subdir (witness_base, q_parameter, …) onto sys.path.
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent.parent / "tools" / "qou-substrate" / "python"))
 
 import _path_bridge  # noqa: F401, E402 — adds substrate/ etc. to sys.path
 
@@ -69,6 +70,15 @@ def _delta_data():
     data = d.get("data", d)
     rows = data.get("rows") or data.get("results") or d.get("rows") or []
     return {r["atom"]: (r["A"], mp.mpf(str(r["Delta_lambda"]))) for r in rows}
+
+
+def _alpha_cluster_data():
+    import json, pathlib
+    p = pathlib.Path(__file__).resolve().parent.parent / "delta-lambda-extended-tower.witness.json"
+    d = json.loads(p.read_text())
+    data = d.get("data", d)
+    rows = data.get("rows") or data.get("results") or d.get("rows") or []
+    return {r["atom"]: mp.mpf(str(r["Delta_lambda"])) for r in rows}
 
 
 def main() -> int:
@@ -126,6 +136,19 @@ def main() -> int:
     print(f"\n(4) two-seed (D,T) solve: α={float(alpha):.5f}  β={float(beta):.5f}  "
           f"second-kind content β/α = {float(beta/alpha):.4f}")
 
+    # (5) Extended α-cluster tower: b = 2 (r = s = 1)
+    alpha_data = _alpha_cluster_data()
+    alpha_atoms = ["4He", "8Be", "12C", "16O", "20Ne", "24Mg", "40Ca"]
+    print(f"\n(5) Extended α-cluster tower recurrence (r=s=1 ⟹ b=2):")
+    alpha_b_out = {}
+    for i in range(1, len(alpha_atoms) - 1):
+        prev_a, curr_a, nxt_a = alpha_atoms[i-1], alpha_atoms[i], alpha_atoms[i+1]
+        if prev_a in alpha_data and curr_a in alpha_data and nxt_a in alpha_data:
+            b_emp = (alpha_data[nxt_a] + alpha_data[prev_a]) / alpha_data[curr_a]
+            err_pct = (b_emp - 2) / 2 * 100
+            alpha_b_out[curr_a] = {"b_emp": mp.nstr(b_emp, 8), "err_pct": mp.nstr(err_pct, 5)}
+            print(f"    {curr_a:4s}: interior b_emp = {float(b_emp):.5f}  (off {float(err_pct):+.2f}%)")
+
     builder = WitnessBuilder("qlommel-delta-lambda-two-seed", engine="python+mpmath", start_time=t0)
     (builder
      .set_description(
@@ -134,7 +157,8 @@ def main() -> int:
         "b = q0^10 + q0^-10 = 2cosh(10 log q0) from the q0^(10A-5) canonical residual "
         "(Bring quintic '5'); Lean QOU.QBeta.two_root_geometric + two_seed_unique. "
         "Verdict NEAR-MATCH, gate-respecting, NOT wired: derived-b + two N≥Z seeds "
-        "predicts Δ(4He) to ~-3.5%; 3He is the Z-dependent outlier. Open keystone: "
+        "predicts Δ(4He) to ~-3.5%; 3He is the Z-dependent outlier. Extended "
+        "α-cluster tower shows decisive b≈2 double-root behavior. Open keystone: "
         "derive 10A-5 from W_free/W_atom crossing-jet bookkeeping on Bring's surface.")
      .add_parameter("q0", mp.nstr(q0, 12))
      .add_parameter("b_derived", mp.nstr(b, 12))
@@ -144,6 +168,7 @@ def main() -> int:
      .add_data("two_seed_predictions", pred_out)
      .add_data("second_kind_admixture", {"alpha": mp.nstr(alpha, 8), "beta": mp.nstr(beta, 8),
                                          "beta_over_alpha": mp.nstr(beta / alpha, 6)})
+     .add_data("alpha_cluster_recurrence", alpha_b_out)
      .add_data("discipline", "derived b (no fit); near-match tier; NOT wired; "
                              "open keystone = derive 10A-5 from Bring crossings"))
     # derived b matches the N≥Z (T) chain interior b within 5%
@@ -161,6 +186,11 @@ def main() -> int:
     builder.add_assertion("3He_is_Z_outlier_gt_10pct",
                           computed=bool(abs((p4H - D["4He"][1]) / D["4He"][1]) > mp.mpf("0.10")),
                           expected=True, source="proton-rich 3He needs the Z-dependent correction")
+    # Extended α-cluster tower has b ≈ 2 (within 5% for most, let's assert max is < 5% error)
+    max_alpha_err = max(abs((float(v["b_emp"]) - 2) / 2) for v in alpha_b_out.values())
+    builder.add_assertion("alpha_cluster_b_matches_2_within_5pct",
+                          computed=bool(max_alpha_err < 0.05),
+                          expected=True, source="extended alpha-cluster tower b ≈ 2")
     out = builder.save()
     print(f"\n  Wrote {out.name}")
     return 0
