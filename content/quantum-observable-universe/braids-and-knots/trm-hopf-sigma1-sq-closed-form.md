@@ -115,5 +115,19 @@ for the derivation status).
    and is verified empirically across H_3, H_4, H_5, H_6 in
    [`probe_F_n_categorical_derivation.py`](folio-assistant/computations/probe_F_n_categorical_derivation.py).
 
+4. **Lean realisation (archimedean specialisation, §7c).** The
+   propositional content above is the exact algebraic identity over the
+   formal field $\mathbb{Q}(q^{1/2})$ — categorical/fibre level, holding
+   for all $q$ with no ordering or analytic hypothesis. The Lean
+   formalisation `QOU.Braiding.TrMHopfSigma1SqClosedForm` realises it on
+   the **archimedean side**: it specialises $q$ to $\mathbb{R}$ in the
+   Wenzl positivity regime $q > 1$ and discharges the identity by the
+   substitution $u := \sqrt{q}$ (`Real.sqrt`), reducing
+   $\frac{u^5 - u + u^4 + u^2}{u^4 + u^2} = 1 + (u^2 - 1)\,u^{-1}$ via
+   `field_simp; ring` under $u > 0$. The square-root substitution and the
+   $q > 1$ ordering are the archimedean constructs that pin the
+   formalisation to $\mathbb{R}$; the underlying identity itself is
+   substrate-side and base-ring-agnostic.
+
 
 **Mathematical Novelty:** While the derivation itself follows a standard Hecke/Markov calculation, this closed form represents the simplest nontrivial derived Markov-trace in the framework. The value-driven finding that the bare-Markov $\epsilon^{2n}$ coefficients are *not* the $Q_\beta$ precision-ladder $c_n$ (meaning $F_n$ is a separate categorical decomposition) adds substantive novel mathematical content to the framework.
