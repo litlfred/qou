@@ -59,13 +59,9 @@ class GeomYekutieliAlignmentContext where
       `conj:geom-yekutieli-alignment`; the class instance is the
       §3b-cond axiomatisation (the only `sorry` in the chain). -/
   claim_iv_holonomy_equals_trM : boundaryHolonomy = trM
-  /-- **Manuscript sub-claim (v) — Stage-4 per-block mass factor.**
-      The mass factor is `Geom(K)` times the per-block sum `trM` — the
-      paper's FORCED per-block form. (Production's `vol_density_borromean`
-      drops `trM` and substitutes a global H₄ scalar; the per-block /
-      global discrepancy is quantified in
-      `vol-density-per-block-wiring.witness.json`.) -/
-  claim_v_mass_factor_per_block : massFactor = Geom * trM
+  /-- **Definition — Stage-4 per-block mass factor.**
+      The mass factor is defined as `Geom(K)` times the boundary holonomy. -/
+  mass_factor_def : massFactor = Geom * boundaryHolonomy
 
 /-- **Yekutieli alignment + Stage-4 per-block mass factor.**
 
@@ -86,7 +82,8 @@ theorem geom_yekutieli_per_block_alignment
     [ctx : GeomYekutieliAlignmentContext] :
     ctx.boundaryHolonomy = ctx.trM ∧
       ctx.massFactor = ctx.Geom * ctx.trM :=
-  ⟨ctx.claim_iv_holonomy_equals_trM, ctx.claim_v_mass_factor_per_block⟩
+  ⟨ctx.claim_iv_holonomy_equals_trM,
+   by rw [ctx.mass_factor_def, ctx.claim_iv_holonomy_equals_trM]⟩
 
 /-- **Manuscript statement** (full body):
 

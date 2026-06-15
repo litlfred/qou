@@ -7,6 +7,7 @@ export default algorithm({
     "prop:mass-identity-exists",
     "prop:mass-identity-unique",
     "thm:knot-mass-formula-unified",
+    "conj:geom-yekutieli-alignment",
   ],
   computation: {
     engine: "python+mpmath",

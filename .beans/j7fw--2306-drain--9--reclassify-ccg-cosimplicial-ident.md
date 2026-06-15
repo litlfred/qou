@@ -1,7 +1,7 @@
 ---
 # j7fw
 title: '#2306 drain #9: reclassify ccg_cosimplicial_identities lemma→definition (cosimplicial-object axioms)'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-06-14T17:29:07Z
