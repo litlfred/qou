@@ -6,6 +6,21 @@
 collapses to a **single** conjectural number — the per-site q-power `5` (Bring quintic).
 Gate-respecting (no fit). **Not wired.**
 
+> **⚠ Skeptical cross-check — the per-site `5` is a `B_pred` artifact, not a
+> fundamental law (2026-06-15, added same day).** A sibling
+> ([`2026-06-15-binding-qa-followups-investigation.md` §5](2026-06-15-binding-qa-followups-investigation.md))
+> refuted the `q₀^{5(2A−1)}` law against `B_sym/B_lin`, and direct measurement
+> confirms the problem: the per-site q₀-exponent is **5.00 only when referenced
+> to `B_pred`** (the framework's weaker binding prediction); against `B_sym` (the
+> exact Kashaev log-trace, the *better* form) it **collapses to ≈0–1** (D −1.78,
+> T −0.13, ³He 0.24, ⁴He 1.18 — D is *over*-bound). So the exact per-site-5 is the
+> exp-vs-linear gap of `B_pred`'s linearization, **not** a Bring-quintic q₀⁵. This
+> agrees with this PR's own item-3 finding (`B_sym` already realizes the
+> exponential). The algebra below (`10A−5 = 5(2A−1)`, open-chain) is correct, but
+> it describes the **`B_pred` residual**, whose physical depth is what the
+> cross-check removes. The real binding target is the small `B_sym` residual
+> (deuteron over-binding + magic-shell), not "why 5".
+
 ## The offset dissolves under the chain-site reading
 
 The canonical residual exponent factors exactly:

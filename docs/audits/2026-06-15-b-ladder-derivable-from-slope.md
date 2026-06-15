@@ -8,6 +8,20 @@ now verified A=2..12), and the open keystone (the exponent **offset**) provably
 cannot affect it. Gate-respecting (no fit). **Not wired** (the binding *production*
 formula stays gated on the absolute scale + nucleon gap — a different question).
 
+> **⚠ Significance caveat — the ladder describes the `B_pred` residual, which the
+> better `B_sym` form dissolves (2026-06-15, added same day).** Everything below is
+> mathematically correct and Lean-verified, but it rests on `Δ_λ = B_AME/B_pred ≈
+> q₀^(10A−5)`. Direct measurement shows this exponent (per-site 5.00) is exact
+> **only against `B_pred`** (the weaker binding prediction); against `B_sym` (the
+> exact log-trace) the per-site exponent collapses to ≈0–1 (D over-binds). So the
+> slope-10 / b coefficient describe `B_pred`'s exp-vs-linear gap, **not** a
+> fundamental q₀-power — consistent with this PR's item-3 (`B_sym` already realizes
+> the exponential) and the sibling refutation
+> ([`2026-06-15-delta-lambda-offset-open-chain-boundary.md`](2026-06-15-delta-lambda-offset-open-chain-boundary.md) ⚠).
+> The Lean lemma, the `double_root_linear` fix, the A=2..12 slope verification, and
+> the offset-independence all stand; what is downgraded is the claim that this is
+> the *fundamental* binding law.
+
 ## The argument in one line
 
 `Δ_λ(A) ≈ q₀^(10A−5) = q₀^(−5)·(q₀¹⁰)^A` is geometric in A with ratio `r = q₀¹⁰`;
