@@ -80,10 +80,16 @@ Solving the Coulomb split for `r₀` per pair:
 |---|--:|--:|--:|
 | ³H/³He (A=3) | 0.764 | 1.569 | 0.504 |
 | ⁷Li/⁷Be (A=7) | 1.644 | 1.648 | 0.845 |
+| ¹¹B/¹¹C (A=11) | 2.764 | 1.405 | (A-dep.) |
+| ¹³C/¹³N (A=13) | 3.003 | 1.468 | (A-dep.) |
+| ¹⁵N/¹⁵O (A=15) | 3.537 | 1.387 | (A-dep.) |
 
-A single `r₀ ≈ 1.61 fm` reproduces both mirror splits to **4.9%**, where the
-categorical `κ` is inconsistent (0.50 vs 0.85). The over-split A-scaling prediction
-`(7/3)^(2/3) = 1.76` matches the observed `1.98/1.18 = 1.68` to ~5%.
+A single `r₀ = 1.387–1.648 fm` (mean **1.50 fm**, spread **17%**) reproduces all
+five mirror splits, with a mild downward `A`-trend consistent with the liquid-drop
+surface/exchange corrections the leading `(3/5)αℏc/r₀·A^(−1/3)` term omits. The
+categorical `κ` is inconsistent (0.50 at A=3, 0.85 at A=7) and provably A-dependent
+(Finding 2); the observed q-CLT over-split `1.98×→1.18×` from A=3→7 tracks the
+predicted `(7/3)^(2/3)=1.76` ratio to ~5%.
 
 ## Verdict
 
@@ -98,17 +104,21 @@ B_qCLT_corrected(Z,N) = B_base(trace, isospin-symmetric)
 ```
 
 The functional form is parameter-free; the single remaining degree of freedom is
-the length `r₀ ≈ 1.61 fm`, currently fitted to the mirror splits. **Whether `r₀`
-derives from the framework's substrate length** (the hyperbolic-volume scale that
-sets `E₀`) is the open question this analysis isolates. The result independently
-reproduces the merged q-Bessel audit (#2318): the Z-dependent (isospin) coefficient
-is not derivable from the categorical bond ratios alone.
+the length `r₀ ≈ 1.50 fm`. **It is not an `E₀` length:** `ℏc/E₀ = 47 fm` is off by
+30×. `r₀` instead sits at the **pion Compton wavelength** `ℏc/m_π = 1.414 fm` — the
+textbook "nuclear size ≈ pion range." Since `m_π` is the framework's CAL-3
+calibration input, `r₀ ~ ℏc/m_π` is *consistent* with the calibration but is **not a
+new substrate derivation** (the classical electron radius `αℏc/m_e = 2.818 fm` and
+`ℏc/E₀` are both well off). The result independently reproduces the merged q-Bessel
+audit (#2318): the Z-dependent (isospin) coefficient is not derivable from the
+categorical bond ratios alone — it is electromagnetic.
 
 ## Honesty / caveats
 
-- Two mirror pairs (A=3, A=7). The `r₀` consistency (4.9%) is encouraging but
-  `n = 2`; more pairs (¹¹B/¹¹C, ¹³C/¹³N, …) would test the single-`r₀` claim and are
-  computable from AME alone.
+- Five mirror pairs (A=3–15). The `r₀` consistency (mean 1.50 fm, spread 17%, mild
+  A-trend) is far tighter than the categorical `κ` and is the expected liquid-drop
+  behaviour; a fuller Coulomb model (surface + exchange) would flatten the residual
+  A-trend.
 - The Coulomb correction is standard nuclear physics; the contribution here is the
   symbolic proof that the categorical trace has the *wrong A-scaling* to be it, and
   the identification of `r₀` as the sole missing input.
@@ -120,8 +130,10 @@ is not derivable from the categorical bond ratios alone.
 
 ## Follow-ups
 
-1. Extend the Coulomb-`r₀` test to ¹¹B/¹¹C, ¹³C/¹³N, ¹⁵N/¹⁵O (AME-only, no trace).
-2. Ask whether `r₀ ≈ 1.61 fm` is fixed by the substrate hyperbolic-volume length
-   (would make the isospin correction fully parameter-free).
+1. ~~Extend the Coulomb-`r₀` test to ¹¹B/¹¹C, ¹³C/¹³N, ¹⁵N/¹⁵O~~ — **done** (five
+   pairs above; one `r₀ ~ 1.5 fm`, spread 17%).
+2. ~~Is `r₀` fixed by the substrate length that sets `E₀`?~~ — **answered: no.**
+   `r₀` is the pion Compton wavelength `ℏc/m_π = 1.414 fm`, not an `E₀` length
+   (`ℏc/E₀ = 47 fm`); consistent with CAL-3, not a new substrate derivation.
 3. Formalize Findings 1–2 (the `(Z−N)(A−1)` factorization + `A^(−2/3)` over-split)
    in Lean — elementary algebra over ℤ, env-permitting.
