@@ -24,9 +24,22 @@ build` — it wipes the restored oleans). See
 `.claude/skills/local/lean-environment-setup.md` §"VERIFY a single file with
 lean-direct".
 
-## 2 — c-q-q0 derivation-chain "staleness": ⛔ BLOCKED (q₀-source disagreement)
+## 2 — c-q-q0 derivation-chain staleness: ✅ RESOLVED (chain re-pinned)
 
-Not a simple chain re-pin. Two q₀ sources disagree by ~1.2e-7:
+**Resolved 2026-06-15.** The self-contained proton-anchor solver in
+`computations/substrate/q_parameter.py` (`_solve_q_proton_f64`: m_p/m_e +
+Vol(4₁) → q, needs **no** `qou_substrate`/`pyhecke`) yields q₀ =
+**1.1099785955573347** — exactly `qou_substrate.Q` / the validator's `Q_0`. So
+the canonical proton-anchor q₀ is `…955573347`, and the `c-q-q0.derivation.json`
++ `q-pinning-50-digit.witness.json` (both `…827513808`) were stale
+(pre-2026-05-28 re-pin). The chain is now re-pinned (target_value
+`9.092678397394828`, q₀ `…955573347`; `1/(q₀−1)` matches to 2e-17 ≪ the 1e-12
+gate). **Still stale (separate, full-env regen):**
+`q-pinning-50-digit.witness.json` at 50-dps + any downstream `*_at_q0_50dps`
+witnesses — those need `qou_substrate`'s exact high-precision inputs to
+regenerate faithfully.
+
+The original disagreement that flagged this:
 
 | source | q₀ | c_q = 1/(q₀−1) |
 |---|---|---|
