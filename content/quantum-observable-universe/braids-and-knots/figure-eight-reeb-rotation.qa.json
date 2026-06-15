@@ -8,9 +8,9 @@
     "lean": "content/quantum-observable-universe/braids-and-knots/figure-eight-reeb-rotation.lean"
   },
   "source_hashes": {
-    "md": "edf765e91ace",
+    "md": "7b015340f5c5",
     "ts": "3916b2547bf3",
-    "lean": "24222df9f428"
+    "lean": "685b2fd1a808"
   },
   "criteria": {
     "voice-author-notes-pollution": [
@@ -984,6 +984,23 @@
         "reviewed_sha": "e138518ae1368fc556abef02d0b7a1691559967d",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/braids-and-knots/figure-eight-reeb-rotation.lean:1: Lean file contains both archimedean (ℝ / Real.* / linarith) AND generic-R (CommRing / {R : Type*}) markers — split into two files per CLAUDE.md §7c. | content/quantum-observable-universe/braids-and-knots/figure-eight-reeb-rotation.lean:1: Lean file uses archimedean constructs but .md narrative does not acknowledge archimedean specialisation. Add a §7c-style banner or move the archimedean evaluation to a sibling block."
+      },
+      {
+        "field_hash": {
+          "md": "7b015340f5c5",
+          "ts": "3916b2547bf3",
+          "lean": "685b2fd1a808"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "d735760f2b64",
+          "script_commit_sha": "71e01b4cfaeedc9dff3f2e7b3b6437c6967f9706"
+        },
+        "reviewed_at": "2026-06-15T19:07:00.880Z",
+        "reviewed_sha": "010d2178b49ced20565a522e2afd64e2eac1e889"
       }
     ],
     "wall-base-ring-minimal": [
@@ -2963,5 +2980,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-15T13:25:43.317Z"
+  "updated_at": "2026-06-15T19:07:00.880Z"
 }

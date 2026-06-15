@@ -15,13 +15,6 @@ import Mathlib.Tactic.LinearCombination
 
 namespace QOU.BraidsAndKnots
 
-/-- The determinant of any Hecke generator σ_i on a 2-dim
-  representation is −1 (product of eigenvalues q·(−q⁻¹) = −1).
-  Stated over a generic field (q⁻¹ needs an inverse). -/
-theorem hecke_generator_det_neg_one {R : Type*} [Field R] (q : R) (hq : q ≠ 0) :
-    q * (-1 * q⁻¹) = -1 := by
-  field_simp
-
 /-- The determinant of the figure-eight knot operator
   M_{4₁} = (σ₁σ₂⁻¹)² on a 2-dim representation is 1.
   det(σ₁) = −1, det(σ₂⁻¹) = −1, so det(M) = (−1)⁴ = 1. -/
