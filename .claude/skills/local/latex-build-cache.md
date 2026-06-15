@@ -113,6 +113,26 @@ latexmk -pdf -shell-escape main.tex
    that package* after `\endofdump` in `build-fmt.sh`'s driver — do NOT
    exclude `pgf`/`tikz` wholesale (that forfeits the biggest win).
 
+## Getting a TeX engine in the sandbox (apt fallback)
+
+The dev sandbox usually ships **no `pdflatex`**, but the base Ubuntu
+repos are reachable (only the launchpad PPAs — `ondrej/php`, `deadsnakes`
+— are firewalled and break `apt-get update`). Run the scripted installer:
+
+```bash
+scripts/install-tex.sh     # run with run_in_background: true (~5 GB, ~10-20 min)
+```
+
+[`scripts/install-tex.sh`](../../../scripts/install-tex.sh) disables the
+firewalled PPAs, `apt-get update`s the base repos, installs `texlive-full`
++ `latexmk` (texlive-full 2023+ bundles BOTH required packages —
+mylatexformat + memoize), and verifies them. Idempotent (no-op if
+`pdflatex` + `memoize.sty` already resolve). `pdflatex` unpacks early but
+isn't usable until the post-install format build finishes (`kpsewhich
+memoize.sty` returning a path is the ready signal). Once installed,
+**Track B below is runnable in-sandbox** — prefer it over the no-engine
+track. (`texlive-full` is ~5 GB; check `df -h /`.)
+
 ## Verifying WITHOUT a TeX engine (the dev-sandbox reality)
 
 There is usually **no `pdflatex` locally** and CI is often
