@@ -117,14 +117,114 @@ standard-part chain**: exact trace (`B_sym`) → its linearization (`B_lin`),
 its A→∞ per-bond limit (`B_qCLT`), and its doubly-magic volume endpoint
 (`B_magic`), with `B_depth` the depth-resolved interpolation across them.
 
+## Extensions — ⁶Li/⁷Li, Δ_λ columns, factorized q-CLT (2026-06-15, second pass)
+
+Rebased onto the transfer-path rewire on `main` (commits `b7d44378`…`8da3fb39`:
+`binding_canonical` routes A≥3 through the fine-Bratteli transfer path,
+`binding-canonical.witness.json` regenerated at full 50-dps). The D–⁴He numbers
+are **byte-stable to the factor level** after the rewire (the probe's witness
+re-run reproduced the committed values), so every finding above survives. Three
+extensions then land on the same one canonical trace.
+
+### Opt 2 — ⁶Li / ⁷Li (extend past A=4)
+
+Computed live via the SAME transfer entry point (`tr_m_atom_zn`, ~1–3 s each; no
+recorded `binding-canonical` row exists yet); B_AME from the AME-2020 registry
+(`ame-2020-binding-energies.witness.json`).
+
+| atom | A | B_AME | B_sym(E₀) | B_qCLT_fac(chain) |
+|---|---|---|---|---|
+| ⁶Li | 6 | 31.99 | 20.06 (1.59×) | 19.75 (1.62×) |
+| ⁷Li | 7 | 39.24 | 25.24 (1.55×) | 24.70 (1.59×) |
+
+Both **undershoot ~1.6×** — like ⁴He, beyond A=3 the per-knot trace forms miss
+the shell/magic physics. Reported to bound where the single-trace estimate stops
+tracking AME, **not** as a closure.
+
+### Opt 1 — Δ_λ columns (for PR #2316)
+
+PR #2316 frames `Δ_λ = B_AME/B_pred` as the exp-vs-linear gap (`tr ~ exp(Vol)`,
+Kashaev) with `B_pred` the **linear** form; numerically Δ_λ is exactly this
+probe's miss-factor at α=E₀. Surfacing Δ_λ^lin (vs `B_lin`) and Δ_λ^sym (vs
+`B_sym`) side by side:
+
+| atom | A | Δ_λ^lin = B_AME/B_lin | Δ_λ^sym = B_AME/B_sym |
+|---|---|---|---|
+| D   | 2 | 0.88 | 0.57 |
+| T   | 3 | 2.29 | **0.94** |
+| ³He | 3 | 2.30 | **1.14** |
+| ⁴He | 4 | 7.17 | 2.36 |
+| ⁶Li | 6 | 7.71 | 1.59 |
+| ⁷Li | 7 | 9.40 | 1.55 |
+
+**Finding for #2316:** the Kashaev log-trace `B_sym` already absorbs most of the
+exp-vs-linear Δ_λ. Δ_λ^lin grows 0.9→9× with A (the 5–40× gap #2316 attributes
+to a q₀⁵-per-site mechanism); Δ_λ^sym stays ≈1 on the non-anomalous A=3 nuclei.
+So **if** the q₀⁵-per-site mechanism IS the exp-vs-linear gap, it is *already
+realized* by the exact log-trace for T/³He — the residual Δ_λ^sym ≠ 1 is confined
+to the deuteron anomaly (0.57) and the magic-shell deficit (⁴He/Li > 1.5), not a
+uniform per-site factor. This **sharpens #2316's target**: the mechanism must
+explain the *residual over B_sym*, not the full linear gap.
+
+### Opt 3 — factorized q-CLT `B = α Σ_i ln|V_i|`
+
+The appendix names the A→∞ form `B_qCLT = α Σ_i ln|V_i|`, but the first pass used
+a uniform `ℓ̄ = L(deuteron)` for every bond. The factorized form takes each `V_i`
+to be the trace ratio of the actual **2-nucleon sub-braid** for that bond type,
+from the same transfer path:
+
+| bond type | sub-braid (Z,N) | `L = ln(tr_free/tr_atom)` |
+|---|---|---|
+| p–p | (2,0) diproton  | 0.6945 |
+| p–n | (1,1) deuteron  | 0.9292 |
+| n–n | (0,2) dineutron | 1.2370 |
+
+Complete bond graph: `C(Z,2)` p–p, `Z·N` p–n, `C(N,2)` n–n bonds. Two scalings —
+the literal complete-graph sum (all-pairs) and the physically-scaled `(A−1)`-bond
+chain at the composition-weighted mean:
+
+| atom | A | bonds pp/pn/nn | B_fac chain (A−1) | all-pairs C(A,2) |
+|---|---|---|---|---|
+| D   | 2 | 0/1/0 | 3.89 (0.57×) | 3.89 (0.57×) |
+| T   | 3 | 0/2/1 | **8.64 (0.98×)** | 12.96 (0.66×) |
+| ³He | 3 | 1/2/0 | **7.12 (1.08×)** | 10.69 (0.72×) |
+| ⁴He | 4 | 1/4/1 | 11.82 (2.39×) | 23.64 (1.20×) |
+| ⁶Li | 6 | 3/9/3 | 19.75 (1.62×) | 59.26 (0.54×) |
+| ⁷Li | 7 | 3/12/6 | 24.70 (1.59×) | 86.47 (0.45×) |
+
+**Findings:**
+
+1. **The factorized chain q-CLT RESOLVES the T/³He split** — the uniform form
+   could not. Tritium (2 p–n, **1 n–n**) gets the strong n–n bond (L=1.24);
+   ³He (**1 p–p**, 2 p–n) gets the weak p–p bond (L=0.69). Since `L_nn > L_pp`,
+   the factorized form predicts T (8.64) > ³He (7.12), matching B_AME (8.48 >
+   7.72). This **refines the appendix claim** that *only* `B_sym` splits T/³He:
+   bond-**type** resolution suffices — the split is *composition*, not only
+   correlation. (Chain-factorized is in fact *tighter* on T/³He, 0.98/1.08×,
+   than `B_sym`'s 0.94/1.14×.)
+
+2. **All-pairs overbinds with A** (0.66→0.45× from T to ⁷Li): the complete bond
+   graph `C(A,2) ~ A²/2` overcounts bonds. The `(A−1)`-bond chain form
+   (composition-weighted mean bond) is the sensible A→∞ self-averaged scaling.
+
+3. **A≥4 still needs magic/shell physics** — ⁴He/⁶Li/⁷Li undershoot ~1.6–2.4× in
+   both trace forms, confirming the per-knot-trace ceiling beyond A=3.
+
+The witness now records **5 assertions, all green**: B_sym within 1.25× on
+T/³He; B_magic ⁴He within 10%; E₀ beats the deuteron pin; the factorized chain
+q-CLT within 1.25× on T/³He; and the factorized q-CLT resolves the T/³He
+ordering.
+
 ## Caveats / honesty
 
-- Four light nuclei only (D/T/³He/⁴He — the isotopes with a canonical binding
-  trace in `binding-canonical.witness.json`). Not a law; a functional-form and
-  scale coherence test.
-- `ℓ̄` for `B_qCLT` is taken from the deuteron bond (the unique 1-bond datum);
-  a per-nucleon-factorized `Σ ln|V_i|` needs the sub-braid decomposition (the
-  appendix's exact `B_qCLT` form) — a follow-up.
-- Consumes `binding-canonical.witness.json`; PR #2314 regenerates that file to
-  full 50-dps (native-free). The shifts are ~1e-8 and do not affect any
-  factor-level conclusion here, but a refresh after #2314 lands is noted.
+- Six light nuclei (D through ⁷Li). Still a functional-form and scale coherence
+  test, **not a law** — A≥4 undershoots, and the bond graph (chain vs all-pairs)
+  is a modeling choice, not derived.
+- The factorized `B_qCLT` uses the three 2-nucleon bond-type ratios as the only
+  `V_i` values (no per-bond geometry within a nucleus); the chain count `(A−1)`
+  and all-pairs `C(A,2)` bracket the true effective bond number.
+- `B_magic` covers only the doubly-magic ⁴He; ⁶Li/⁷Li have no analogous
+  trace-free volume here, which is why they undershoot.
+- Consumes `binding-canonical.witness.json` (transfer path, 50-dps on `main`);
+  ⁶Li/⁷Li recomputed live from the same `tr_m_atom_zn` entry point, so the trace
+  source is one pipeline throughout.
