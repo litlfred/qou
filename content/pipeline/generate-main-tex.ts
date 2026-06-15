@@ -91,7 +91,9 @@ function emitPerDocPreambleTail(paper: Paper, memoize?: boolean): string[] {
   // auto-caches tikz / tikz-cd pictures to per-box PDFs keyed on box source.
   if (memoize) {
     lines.push("% ── Diagram memoization (per-render; needs -shell-escape) ───────────────────");
-    lines.push("\\usepackage{memoize}");
+    // Resilient load: skip gracefully if memoize.sty is absent (older TeX
+    // distributions predate it) rather than aborting the compile.
+    lines.push("\\IfFileExists{memoize.sty}{\\usepackage{memoize}}{\\PackageWarning{qou}{memoize.sty not found; diagram caching disabled}}");
     lines.push("");
   }
 
