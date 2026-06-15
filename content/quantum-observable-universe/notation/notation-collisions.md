@@ -59,10 +59,24 @@ paper to keep them disambiguated:
 - **$\mathfrak{S}$** = categorical action (fraktur, Hamilton's $S$).
   Never the **state bundle**, which keeps calligraphic $\mathcal{S}$
   (QOU tuple $(\mathbf{C}, \varTheta, G, \mathcal{S})$). The action was
-  historically written $\mathcal{S}_q$ and plain $S_q$, colliding with
-  the state bundle and the Hopf **antipode** $S$ respectively — both
-  resolved by $\mathfrak{S}$. The antipode stays plain $S$ (or $S_q$ on
-  the $q$-shuffle Hopf algebra).
+  historically written $\mathcal{S}_q$ and plain $S_q$. The plain-$S_q$
+  form is now $\mathfrak{S}_q$ throughout the physics/computation
+  chapters. Three other objects deliberately keep plain or calligraphic
+  $S$ and are **not** the action:
+    - the Hopf **antipode** $S$ (plain $S$, or $S_q$ on the $q$-shuffle
+      Hopf algebra);
+    - the q-**entropy** $S_q(U)$ (`quantum-temperature`, with
+      $\partial S_q/\partial \mathfrak{E}_q = 1/T_q$) and the
+      Bekenstein–Hawking entropy $S_{BH}$ — entropy is a distinct
+      thermodynamic observable, never the action;
+    - the **Skein module** $\mathcal{S}_q(\mathbf{C})$, which keeps
+      calligraphic $\mathcal{S}$ (a module of knot classes, not a scalar
+      functional).
+  Note: the *calligraphic* action $\mathcal{S}_q = \mathrm{tr}(\mathcal{L}_q)$
+  still appears in several chapters; migrating it to $\mathfrak{S}_q$ is a
+  follow-up that must dodge the Skein module $\mathcal{S}_q$ above (which
+  legitimately retains calligraphic $\mathcal{S}$ and still brushes the
+  state bundle — a residual collision the action rename does not fix).
 - **$\mathfrak{O}$** = observation / intent morphism — the section
   $(\mathfrak{O}, \epsilon)$ of $\mathrm{Ad}(J^1\mathcal{S})$ and its
   germ endomorphism $\mathfrak{O}_p$. Never an **ideal**: the
