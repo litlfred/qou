@@ -44,7 +44,9 @@ except ImportError:
 AHC = 1.43996  # alpha_EM * hbar*c  [MeV.fm]  (= e^2/4 pi eps0)
 
 # mirror pairs as ((Z,N) of the n-rich member, (Z,N) of the p-rich member, A, name)
-PAIRS = [((1, 2), (2, 1), 3, "3H/3He"), ((3, 4), (4, 3), 7, "7Li/7Be")]
+PAIRS = [((1, 2), (2, 1), 3, "3H/3He"), ((3, 4), (4, 3), 7, "7Li/7Be"),
+         ((5, 6), (6, 5), 11, "11B/11C"), ((6, 7), (7, 6), 13, "13C/13N"),
+         ((7, 8), (8, 7), 15, "15N/15O")]
 
 
 def symbolic_proof():
@@ -86,9 +88,28 @@ def coulomb_validation(ame):
         out[name] = (split, r0)
         print(f"  {name:9s} A={A}  AME split={split:.3f} MeV  ->  r0={r0:.3f} fm")
     r0s = [v[1] for v in out.values()]
-    print(f"  => one r0 ~ {sum(r0s) / len(r0s):.2f} fm fits both "
-          f"(spread {abs(r0s[0] - r0s[1]) / (sum(r0s) / len(r0s)) * 100:.1f}%)")
+    mean = sum(r0s) / len(r0s)
+    spread = (max(r0s) - min(r0s)) / mean * 100
+    print(f"  => r0 = {min(r0s):.3f}-{max(r0s):.3f} fm (mean {mean:.3f}, "
+          f"spread {spread:.0f}%) across {len(r0s)} mirror pairs")
     return out
+
+
+def substrate_length_check():
+    """Is the fitted Coulomb r0 ~ 1.5 fm a framework/substrate length? Compare the
+    candidate scales. Answer: r0 ~ the pion Compton wavelength hbar c / m_pi, NOT a
+    length built from E0 — i.e. the textbook 'nuclear size ~ pion range'. Since
+    m_pi is CAL-3, this is consistent with the calibration, not a new derivation."""
+    hbarc = 197.3269804  # MeV.fm
+    me, m_pi, q0, alpha = 0.51099895, 139.57039, 1.1097, 1.0 / 137.035999
+    E0 = me / (q0 * (q0 - 1.0))
+    print("\n[substrate-length] is r0 ~ 1.5 fm a framework length?")
+    for name, v in (("hbar c / E0", hbarc / E0),
+                    ("alpha hbar c / m_e (classical r_e)", alpha * hbarc / me),
+                    ("hbar c / m_pi (pion Compton)", hbarc / m_pi)):
+        print(f"    {name:36s} = {v:8.3f} fm")
+    print("    => r0 ~ pion Compton (1.414 fm), NOT E0 (47 fm). m_pi is CAL-3, so "
+          "this is 'nuclear size ~ pion range' — consistent, not a new derivation.")
 
 
 def _cat_split(Z, N, L, E0):
@@ -118,6 +139,7 @@ def main() -> int:
     symbolic_proof()
     ame = _ame()
     coulomb_validation(ame)
+    substrate_length_check()
     if _HAS_SUBSTRATE:
         categorical_comparison(ame)
     else:
