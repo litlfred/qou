@@ -67,10 +67,22 @@ def _trM(chi: dict, y: dict) -> "mp.mpf":
 
 
 def tr_m_atom_zn(Z: int, N: int, *, m_pp: int = 1, m_pn: int = 1,
-                 m_nn: int = 1, dps: int = 50):
+                 m_nn: int = 1, dps: int = 50, q=None):
     """`(tr_M_atom, tr_M_free, chi_atom, wall_sec)` for nucleon counts
     `(Z, N)` at q₀ — the (Z,N)-keyed entry point for binding consumers
     (`binding_canonical`, `canonical_tr_m_via_branching`).
+
+    `q` defaults to the canonical substrate q₀ at full 50-digit precision
+    (`Q_50_DIGIT_STR`, via `chi_all_lambda_reduced_block`; y_λ at `Q0`).
+    When `q` is
+    given it is threaded to BOTH the y_λ Jones–Markov weights and the
+    transfer χ^λ. NOTE: the canonical color-weighted atom word is
+    **q₀-baked** — its interface `d` carries `flavor_split_subleading(q₀)`
+    — so `chi_all_lambda_reduced_block`'s `word_to_mpfr` can only re-lift
+    it at q₀;
+    passing q ≠ q₀ with that convention raises `ValueError` (a true q-sweep
+    needs a q-parameterised word builder). q-agnostic conventions
+    (σ / σ⁻¹ / averaged) re-lift at any q.
 
     Canonical color-weighted p-n convention, summed over ALL `p(3A)`
     partitions — LOSSLESS: no `max_dim` cap, no active-set truncation
@@ -85,14 +97,19 @@ def tr_m_atom_zn(Z: int, N: int, *, m_pp: int = 1, m_pn: int = 1,
     if mp.mp.dps < dps:
         mp.mp.dps = dps
     n = 3 * (Z + N)
-    y = {tuple(k): mp.mpf(str(v)) for k, v in y_lambda_at(n, Q0).items()}
+    # q=None → canonical q₀: y_λ at Q0 and χ at the 50-digit Q_50_DIGIT_STR
+    # (chi_all_lambda's own default — NOT the ~16-digit float Q0, which
+    # would regress the validated 50-dps χ). A custom q is threaded to
+    # BOTH y_λ and χ so the trace is evaluated consistently at that q.
+    y_q = Q0 if q is None else q
+    y = {tuple(k): mp.mpf(str(v)) for k, v in y_lambda_at(n, y_q).items()}
     t0 = time.time()
     chi_atom = chi_all_lambda_reduced_block(
         atom_braid_word_3A(Z, N, m_pp=m_pp, m_pn=m_pn, m_nn=m_nn,
-                           include_inter=True), n)
+                           include_inter=True), n, q=q)
     chi_free = chi_all_lambda_reduced_block(
         atom_braid_word_3A(Z, N, m_pp=m_pp, m_pn=m_pn, m_nn=m_nn,
-                           include_inter=False), n)
+                           include_inter=False), n, q=q)
     wall = time.time() - t0
     return _trM(chi_atom, y), _trM(chi_free, y), chi_atom, wall
 
