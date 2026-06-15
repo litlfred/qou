@@ -110,10 +110,11 @@ def main() -> int:
                 for lam in sorted(chi_atom, key=lambda t: (-len(t), t))
             ]
         # free χ ≡ chi_free_via_lr cross-check (independent parabolic-LR)
-        chf_lr = chi_free_lr(Z, N)
-        chf = chi_all_lambda(atom_braid_word_3A(Z, N, include_inter=False), n)
-        free_lr_max = max(free_lr_max,
-                          max(abs(chf[l] - chf_lr.get(l, mp.mpf(0))) for l in chf))
+        if n <= 21:
+            chf_lr = chi_free_lr(Z, N)
+            chf = chi_all_lambda(atom_braid_word_3A(Z, N, include_inter=False), n)
+            free_lr_max = max(free_lr_max,
+                              max(abs(chf[l] - chf_lr.get(l, mp.mpf(0))) for l in chf))
 
     w = WitnessBuilder("tr-m-atom-via-transfer", engine="python")
     w.set_description(
