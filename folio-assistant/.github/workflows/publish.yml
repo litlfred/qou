@@ -326,22 +326,29 @@ jobs:
           sudo apt-get install -y --no-install-recommends \
             texlive-full texlive-extra-utils latexdiff latexmk
 
-      - name: Restore LaTeX cache (qou.fmt + memoize boxes)
-        # Layer 3: persist the precompiled format + memoized diagram boxes
-        # across CI runs. qou.fmt restores whenever latex/preamble.tex is
-        # unchanged (hash in the restore-key prefix) — build-fmt.sh then
-        # skips the rebuild (its .sha matches); .memo/ restores the most
-        # recent diagram-box cache so unchanged tikz pictures are reused.
+      - name: Cache preamble format (qou.fmt — populated from main head)
+        # Keyed ONLY on the preamble hash (no commit SHA): the format depends
+        # solely on latex/preamble.tex, so the FIRST build for a given
+        # preamble — in practice main, whose caches are visible to every
+        # branch/PR — populates it and everyone else restores it. On a hit
+        # build-fmt.sh sees its .sha match and skips the rebuild.
         uses: actions/cache@v4
         with:
           path: |
             qou.fmt
             qou.fmt.sha
-            .memo
-          key: latex-cache-${{ hashFiles('latex/preamble.tex') }}-${{ github.sha }}
+          key: latex-fmt-${{ hashFiles('latex/preamble.tex') }}
+
+      - name: Cache memoized diagram boxes (.memo)
+        # Per-commit save; restore-keys fall back to the most recent cache
+        # (incl. main's), so unchanged tikz/tikz-cd boxes carry over run to
+        # run instead of being re-rendered.
+        uses: actions/cache@v4
+        with:
+          path: .memo
+          key: latex-memo-${{ github.sha }}
           restore-keys: |
-            latex-cache-${{ hashFiles('latex/preamble.tex') }}-
-            latex-cache-
+            latex-memo-
 
       - name: Build preamble format (qou.fmt — precompiled preamble cache)
         run: |
@@ -361,7 +368,13 @@ jobs:
           # NOTE: grep -a — a failing compile injects control bytes (e.g.
           # ^^Y) into main.log, so without -a grep treats it as binary and
           # silently misses the '! ' lines, letting a broken compile pass.
-          latexmk -pdf -shell-escape -draftmode -f -interaction=nonstopmode main.tex \
+          # Fast draft gate: a SINGLE pdflatex -draftmode pass (not a full
+          # multi-pass latexmk run) is enough to surface fatal '! ' errors,
+          # and it runs against the warm qou.fmt (%&qou first line). It does
+          # NOT write a latexmk .fdb, so it can't confuse the real (full
+          # latexmk) main build below. This is the draft-vs-main split: cheap
+          # syntax gate, full build only once.
+          pdflatex -shell-escape -draftmode -interaction=nonstopmode main.tex \
             > latex-syntax.log 2>&1 || true
           if grep -aqE '^! ' main.log 2>/dev/null; then
             echo "::error::Fatal LaTeX error(s) in draftmode syntax check:"
@@ -505,6 +518,22 @@ jobs:
           sudo apt-get update -qq
           sudo apt-get install -y --no-install-recommends \
             texlive-full texlive-extra-utils latexdiff latexmk
+
+      - name: Cache preamble format (qou.fmt — populated from main head)
+        uses: actions/cache@v4
+        with:
+          path: |
+            qou.fmt
+            qou.fmt.sha
+          key: latex-fmt-${{ hashFiles('latex/preamble.tex') }}
+
+      - name: Cache memoized diagram boxes (.memo)
+        uses: actions/cache@v4
+        with:
+          path: .memo
+          key: latex-memo-${{ github.sha }}
+          restore-keys: |
+            latex-memo-
 
       - name: Build preamble format (qou.fmt)
         run: bash scripts/build-fmt.sh --preamble latex/preamble.tex --name qou || true
