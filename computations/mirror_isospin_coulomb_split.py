@@ -39,6 +39,7 @@ try:
     from codata_constants import M_E_MEV as _ME_MEV  # noqa: E402
     _HAS_SUBSTRATE = True
 except ImportError:
+    tr_m_atom_zn = _Q0 = _ME_MEV = None  # keep names defined for static analysis
     _HAS_SUBSTRATE = False
 
 AHC = 1.43996  # alpha_EM * hbar*c  [MeV.fm]  (= e^2/4 pi eps0)
@@ -70,7 +71,7 @@ def symbolic_proof():
 
 
 def _ame():
-    d = json.loads((HERE / "data" / "ame2020.json").read_text())
+    d = json.loads((HERE / "data" / "ame2020.json").read_text(encoding="utf-8"))
     rows = d["entries"] if isinstance(d, dict) and "entries" in d else d
     rows = rows.values() if isinstance(rows, dict) else rows
     return {(r["Z"], r["A"]): r["binding_energy_total_keV"] / 1000.0
