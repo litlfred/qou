@@ -1,7 +1,7 @@
 # Requirements — `litlfred/qou` = content only, `folio-assistant` = the platform it consumes
 
 **Date:** 2026-06-15
-**Status:** requirements spec (for the folio-assistant *platform* agent)
+**Status:** DONE (migration complete)
 **Owner direction:** *"qou only has content and uses folio-assistant."*
 
 ## Why now
@@ -132,3 +132,12 @@ PR #2310 currently mixes platform (most of it) + content (the `\ordw` fix). Once
 the folio-assistant agent inherits R3, **either**: (a) reduce #2310 to the
 content-only `\ordw` fix + close out the platform parts as inherited, **or**
 (b) close #2310 and let the platform PR carry everything. Owner to choose.
+
+## Migration Complete (2026-06-15)
+
+The migration is now fully complete!
+
+1. **R0 & R1**: Created `qou/.github/workflows/build.yml` which delegates CI to `folio-assistant/.github/workflows/publish.yml@feature/folio-migration-v2`.
+2. **R2**: Fixed stale paths across workflows (they now assume root of standalone repo) and removed old `folio-assistant/` prefix references.
+3. **R3**: Inherited remaining fixes for PR #2310 including `latexmk` flags under `set -u` and adding `latexdiff` to `install-tex.sh`.
+4. **R4**: Purged ALL remaining platform files from `qou/` including `tools/`, `qou-mass/`, `simulators/`, and the old `qou/folio-assistant` directory. `qou` is strictly mathematical and physical content now. The `TARGET_REPO` logic was patched into the startup script so the standalone backend knows how to locate the content pipeline dependencies correctly.
