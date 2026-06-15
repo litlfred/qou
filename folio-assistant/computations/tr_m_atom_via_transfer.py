@@ -66,7 +66,8 @@ def _trM(chi: dict, y: dict) -> "mp.mpf":
     return mp.fsum(y[lam] * chi.get(lam, mp.mpf(0)) for lam in y)
 
 
-def tr_m_atom_zn(Z: int, N: int, *, dps: int = 50):
+def tr_m_atom_zn(Z: int, N: int, *, m_pp: int = 1, m_pn: int = 1,
+                 m_nn: int = 1, dps: int = 50):
     """`(tr_M_atom, tr_M_free, chi_atom, wall_sec)` for nucleon counts
     `(Z, N)` at q₀ — the (Z,N)-keyed entry point for binding consumers
     (`binding_canonical`, `canonical_tr_m_via_branching`).
@@ -86,8 +87,12 @@ def tr_m_atom_zn(Z: int, N: int, *, dps: int = 50):
     n = 3 * (Z + N)
     y = {tuple(k): mp.mpf(str(v)) for k, v in y_lambda_at(n, Q0).items()}
     t0 = time.time()
-    chi_atom = chi_all_lambda_reduced_block(atom_braid_word_3A(Z, N, include_inter=True), n)
-    chi_free = chi_all_lambda_reduced_block(atom_braid_word_3A(Z, N, include_inter=False), n)
+    chi_atom = chi_all_lambda_reduced_block(
+        atom_braid_word_3A(Z, N, m_pp=m_pp, m_pn=m_pn, m_nn=m_nn,
+                           include_inter=True), n)
+    chi_free = chi_all_lambda_reduced_block(
+        atom_braid_word_3A(Z, N, m_pp=m_pp, m_pn=m_pn, m_nn=m_nn,
+                           include_inter=False), n)
     wall = time.time() - t0
     return _trM(chi_atom, y), _trM(chi_free, y), chi_atom, wall
 
