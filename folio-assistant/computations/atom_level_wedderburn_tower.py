@@ -2,6 +2,19 @@
 """
 ATOM-LEVEL Wedderburn tower (λ ⊢ 3A, NOT per-generator H_3 projection).
 
+⚠ SUPERSEDED for production tr_M (2026-06-15) — kept as a cross-check.
+    This is the BRUTE-FORCE atom-level path: it materialises the full
+    Hoefsmit seminormal V_λ for every λ ⊢ 3A (O(d_λ) per partition, with
+    d_λ ~ 1.6×10⁷ at n=18 — the 3.6-year ⁶Li wall). The canonical
+    production tr_M(β_atom) = Σ_λ y_λ χ^λ is now computed by the
+    fine-Bratteli TRANSFER MATRIX (tr_m_atom_via_transfer.tr_m_atom_zn →
+    chi_monotone_transfer), which is LOSSLESS (all p(3A) partitions, same
+    convention, 50 dps) but NEVER forms a d_λ×d_λ matrix: ⁶Li in ~0.16 s
+    vs this script's wall. binding_canonical and canonical_tr_m_via_
+    branching both route through the transfer path. Use THIS script only
+    as an independent d_λ-explicit cross-check of the transfer χ^λ on
+    small A — do not wire it into a production binding pipeline.
+
 Per user directive: use atom-level Wedderburn decomposition rather
 than per-generator H_3 projection.  The atomic braid 𝒜 ∈ H_{3A}(q)
 decomposes via Wedderburn at level 3A:
