@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-15T17:06:18.273419+00:00",
-  "commitSha": "aad1fb504d51019e48f14cae7d1891d298d546bb",
+  "computedAt": "2026-06-15T17:27:53.286505+00:00",
+  "commitSha": "0fa83306db2a8e4156f0991c97c969ceaa607037",
   "assertions": [
     {
       "name": "B_sym_E0_within_1p25x_T_3He",
@@ -46,11 +46,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4581,
+  "durationMs": 4591,
   "computation": "binding-single-pipeline-comparison",
   "scriptFile": "binding_single_pipeline_comparison.py",
-  "scriptHash": "30124f53727a",
-  "scriptCommitSha": "ec74888681de0011e2eeba50cda470fb9df46761",
+  "scriptHash": "dc752e6dffd2",
+  "scriptCommitSha": "32f3f7314e11c8beb610f8d3972bbf1ab4f0ec50",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
