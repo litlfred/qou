@@ -376,3 +376,79 @@ the first real compile (`ż`/`𝓕`/`📝` + an unescaped `%` in `:val` units).
 (render each tikzcd → its own PDF → `\includegraphics`); large, deferred
 to a future PR.
 
+---
+
+## MEASURED 2026-06-15 — real-engine numbers settle the priority (texlive-full 2023, in-sandbox)
+
+With a real `pdflatex` (installed via `scripts/install-tex.sh`), the
+previously *estimated* split was finally measured. **The body, not the
+preamble or the diagrams, is ~95% of the cost — and it is intrinsically
+uncacheable.** This refutes the diagram-cache premise (§5) *and* caps the
+`.fmt` win (§3) at a few percent.
+
+| Measurement | Wall | Note |
+|-------------|------|------|
+| Real `main.tex`, **one `pdflatex -draftmode` pass** (33 chapters, 2944 blocks) | **14.0 s** | the actual unit cost |
+| Preamble/startup portion (toy doc, inline preamble) | ~0.7 s | ≈ 5% of a real pass |
+| 10 `tikzcd` **inline** vs baseline | **~0 ms** (within noise) | commutative diagrams are light; **not** the bottleneck |
+| 1 `standalone` diagram build (subprocess) | **0.63 s** | caching a diagram *costs* 0.63 s to save ~0 ms → **net-negative** |
+| `%&qou` format load vs inline preamble (toy) | 0.28 s vs 0.73 s | `.fmt` saves ~0.45 s of **startup** … |
+| …same 0.45 s as a fraction of a real 14 s pass | **~3%** | …which the 14 s body dwarfs |
+
+**Per-chapter profile** (each row incl. ~0.7 s shared startup): the body
+is *concentrated*, not uniform — `mass-theory` **3.5 s** +
+`quantum-observable-universes` **3.3 s** are ~40% of the 14 s
+(math/table-heavy), the other 31 chapters a ~1 s/chapter tail. That is
+display-math + `amsmath`/table typesetting — intrinsic, **uncacheable** in
+pdflatex.
+
+**Whole-pipeline ranking (where the CI wall-clock actually is)** — LaTeX
+is *not* the dominant cost: witness regen (Python, ~36 min, gated by
+`skip_witnesses`) ≫ `texlive-full` install ×3 (~3–6 min, fixed by the CI
+image) ≫ LaTeX compile (14 s × passes × ~7 units ≈ 2–3 min) ≫ bun render.
+The diagram/`.fmt` caching effort was optimizing the ~2 min item.
+
+**Diagram-cache mechanisms, re-confirmed on the real engine** (probe
+battery, [`/tmp/texprobe`]): `memoize` ❌ fatal (`Extraction of externs …
+no output PDF` — texlive-2023 ships no memoize tikz library, dir holds
+only `memoize.sty`/`memoizable.sty`/`nomemoize.sty`); `\tikzexternalize`
+❌ fatal (`Runaway argument … collect@until@end@tikzpicture` — tikzcd ends
+`\end{tikzcd}`); `standalone` `\includestandalone` ✅ compiles — but per
+the timing above it would *slow the build down*, so even the "viable" path
+is not worth wiring. Corpus diagram census: **94 `tikzcd` blocks vs 6
+`tikzpicture`** (79 vs 2 files) — tikzcd-only, as the revert said.
+
+**`.fmt` re-confirmed broken** on this preamble: the format builds only
+with `\endofdump` *before* `hyperref` (Gemini's review note was right),
+and then per-doc macros **drop** (`\ordwtest` absent from the PDF) with
+`Unicode character ^^H/^^G` corruption — the `inputenc` + 128×
+`\newunicodechar` active-char machinery does not survive the dump/`%&qou`
+reload. Even if fixed, the win is ~3% of a pass. **Not pursued.**
+
+### Revised priority (measured, not estimated)
+
+1. **Prebuilt CI image (§6) — the only big win.** `texlive-full` is
+   `apt-get install`ed in **3** jobs (~3–6 min/run total). Wiring those
+   jobs to `container: ghcr.io/litlfred/qou-paper-builder` removes it
+   with zero output risk. **Implemented this PR** (+ fixed
+   `paper-builder-image.yml`, which only triggered on `workflow_dispatch`
+   so the image was never actually built — now builds on main pushes that
+   touch the Dockerfile + monthly cron).
+2. **Cut redundant full-compiles in CI** — the body is 14 s/pass; the
+   pipeline runs draftmode + full + appendices + diff (each ≥1 pass).
+   Eliminating duplicated 14 s passes beats any in-engine cache.
+3. **`skip_witnesses`** for preview builds — Python witness regen
+   (~36 min), not LaTeX, dominates `content-pipeline`.
+4. **Diagram cache / `.fmt`: do NOT re-attempt** — measured non-wins /
+   broken (this section). The next agent reading "cache the diagrams"
+   should stop here.
+5. Sub-second *rebuilds* (the original ask) require an **incremental
+   engine (Typst)** — a separate migration, not a pdflatex cache; the
+   single-pass global typeset (§1) is confirmed uncacheable by the 14 s
+   measurement.
+
+> Pre-existing content bug surfaced by the real compile (out of scope for
+> this cache work, not introduced here): **14 `! Double subscript` math
+> errors** in the generated chapters (e.g. `x_i_j` / `q^a_b`-style nested
+> sub/superscripts). Worth a separate `fix(latex)` pass.
+
