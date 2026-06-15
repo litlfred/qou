@@ -1,7 +1,7 @@
 {
   "mcpServers": {
     "paper-assistant": {
-      "command": "./scripts/start-folio-assistant.sh",
+      "command": "/home/litlfred/folio-assistant/scripts/start-folio-assistant.sh",
       "args": ["--stdio"]
     },
     "paper-search-mcp": {

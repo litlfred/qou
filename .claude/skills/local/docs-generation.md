@@ -65,7 +65,8 @@ cd content && bun run pipeline/build.ts \
   --main-out ../main.tex \
   --preamble ../latex/preamble.tex
 
-# Compile PDF (requires TeX Live)
+# Compile PDF (requires TeX Live). No engine in the sandbox? Run
+# scripts/install-tex.sh first (installs texlive-full + latexmk).
 cd .. && latexmk -pdf main.tex
 ```
 

@@ -19,7 +19,7 @@ Conversely, the gauge bosons and leptons evade this structural collapse. The ele
 
 ---
 
-### 📝 Formalization Tracker (Beans)
+### Formalization Tracker (Beans)
 
 - [x] **Nucleon SDP Rank Drop**: Formalize the explicit evaluation of the $(2,1)$ self-conjugate block for the Proton/Neutron $H_3(q)$ braid words, proving that its regime change occurs exactly at the Supergolden Ratio $q = \psi$ ($u = 1/\psi$).
 - [x] **Cross-Coupling Non-Vanishing**: Prove that the cross-channel coherence between the conjugate YSN sectors $(3) \leftrightarrow (1,1,1)$ for the nucleon remains strictly non-vanishing over the physical $q$-regime, due to the algebraic $q^6$ character ratio.

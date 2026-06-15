@@ -738,6 +738,7 @@ When a user request arrives, route to the right skill(s):
 | "set up lean / install lean / lean not working" | `local/lean-environment-setup` | collaborator |
 | "generate docs / build docs / schema docs" | `local/docs-generation` | reader |
 | "build paper / compile PDF / render HTML" | `local/docs-generation` | reader |
+| "latex build cache / slow latex build / faster pdf / install tex / get a TeX engine / quick feature build / changed-chapter preview / why isn't the preamble or diagram cached" | `local/latex-build-cache` (findings: caches that failed + what works — install-tex, feature-build) | collaborator |
 | "TypeDoc / type docs / dependency graph" | `local/docs-generation` | reader |
 | "diff / changes / what changed / undo" | `local/diff` | reader |
 | "watch / watch main / watch upstream / watch this PR / watch branch X / what's landing" | `local/watch` | reader |

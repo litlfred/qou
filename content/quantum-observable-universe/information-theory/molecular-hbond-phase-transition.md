@@ -43,7 +43,7 @@ input), and the latent heat $L = \mathfrak{S}_q^{(\partial)}$ follows with no fi
 
 | | $n_{\mathrm{HB}}$ | sp$^3$? | $L^{\mathrm{pred}}$ (kJ/mol) | $L^{\mathrm{obs}}$ | tier |
 |---|---|---|---|---|---|
-| $\mathrm{H_2O}$ | $2$ | yes | $:val[hbond_h2o_L_pred]{precision=1, witness=folio-assistant/computations/hbond-categorical-action.witness.json}$ | $40.7$ | near-match ($:val[hbond_h2o_err_pct]{precision=1, witness=folio-assistant/computations/hbond-categorical-action.witness.json}\%$) |
+| $\mathrm{H_2O}$ | $2$ | yes | $:val[hbond_h2o_L_pred]{precision=1, witness=folio-assistant/computations/hbond-categorical-action.witness.json}$ | $40.7$ | near-match ($:val[hbond_h2o_err_pct]{precision=1, witness=folio-assistant/computations/hbond-categorical-action.witness.json}$) |
 | $\mathrm{HF}$ | $1$ | yes | $24.7$ | $25.2$ | near-match ($1.9\%$) |
 | $\mathrm{H_2S}$ | $-$ | no (pure-$p$) | $0$ (H-bond off) | $18.7$ | dispersion |
 

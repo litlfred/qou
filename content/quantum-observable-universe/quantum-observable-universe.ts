@@ -44,7 +44,9 @@ export default paper({
     // Direct analogue of p-adic ord_p; used in the surreal-numbers
     // appendix as the surreal replacement for classical Big-O.
     // See: app:surreals/rem:conway-normal-form.
-    ordw:  { tex: "\\mathrm{ord}_{\\omega}",  unicode: "ord_ω" },
+    // Braced so a place-subscript composes: `\ordw_v` / `\ordw_{\mathbb{A}}`
+    // would otherwise be `\mathrm{ord}_{\omega}_v` → "! Double subscript".
+    ordw:  { tex: "{\\mathrm{ord}_{\\omega}}",  unicode: "ord_ω" },
   },
   chapters: [
     // ── Front matter (intro first, then notation register) ──────────
