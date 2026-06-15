@@ -52,7 +52,7 @@ import _path_bridge  # noqa: F401, E402 — adds substrate/ etc. to sys.path
 import time  # noqa: E402
 import mpmath as mp  # noqa: E402
 
-from witness_base import WitnessBuilder  # noqa: E402
+from qou_substrate.witness import WitnessBuilder  # noqa: E402
 
 mp.mp.dps = 40
 

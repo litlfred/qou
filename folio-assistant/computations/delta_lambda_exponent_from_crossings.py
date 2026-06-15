@@ -58,7 +58,7 @@ import _path_bridge  # noqa: F401, E402
 import time
 from collections import Counter
 
-from witness_base import WitnessBuilder  # noqa: E402
+from qou_substrate.witness import WitnessBuilder  # noqa: E402
 
 
 def crossing_counts(Z, N):

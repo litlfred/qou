@@ -52,7 +52,7 @@ from pathlib import Path
 
 import mpmath as mp  # noqa: E402
 
-from witness_base import WitnessBuilder  # noqa: E402
+from qou_substrate.witness import WitnessBuilder  # noqa: E402
 from _li_2_q_util import spectral_correction_borromean  # noqa: E402
 
 HERE = Path(__file__).resolve().parent
