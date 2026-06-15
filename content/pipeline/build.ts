@@ -308,6 +308,8 @@ if (import.meta.main) {
     // (the format must be precompiled first via scripts/build-fmt.sh).
     const useFormatIdx = args.indexOf("--use-format");
     const useFormat = useFormatIdx >= 0 ? args[useFormatIdx + 1] : undefined;
+    // --memoize: load memoize live to cache tikz/tikz-cd boxes (needs -shell-escape).
+    const memoize = args.includes("--memoize");
 
     const paperMod = await import(paperPath);
     const paperData: Paper = paperMod.default;
@@ -322,6 +324,7 @@ if (import.meta.main) {
       excludeChapterIndices,
       phantomLabels: result.appendixPhantomLabels,
       useFormat,
+      memoize,
     });
     writeFileSync(mainOutPath, mainTex);
     console.log(`\n  → main.tex: ${mainOutPath}`);
@@ -334,6 +337,7 @@ if (import.meta.main) {
         preamblePath,
         chaptersDir,
         useFormat,
+        memoize,
       });
       const appendixPath = join(mainOutDir, `standalone-${info.slug}.tex`);
       writeFileSync(appendixPath, appendixTex);
